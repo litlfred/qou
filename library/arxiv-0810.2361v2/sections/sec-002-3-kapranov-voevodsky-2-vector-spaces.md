@@ -7,10 +7,10 @@ section_number: 3
 pages: 8-14
 source_pdf: 0810.2361v2.pdf
 source_sha256: 77d6d59a29596484
-text_source: latex
-latex_prose_ratio: 0.885
-latex_coverage_ratio: 0.981
 doc_brief: "2-VECTOR SPACES AND GROUPOIDS JEFFREY C. MORTON — This paper describes a relationship between essentially ﬁn ite groupoids and 2-vector spaces."
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.885
 ---
 []{#sec:KV label="sec:KV"}
 
@@ -26,11 +26,11 @@ Indeed, Elgueta [@elgueta] shows several different types of "generalized" 2-vect
 
 The standard example of this approach is the Kapranov-Voevodsky (KV) definition of a 2-vector space [@KV], which is the form we shall use (at least when the situation is finite-dimensional). To motivate the KV definition, consider the idea that, in categorifying, one should replace the base field $\mathbb{C}$ with a monoidal category. Specifically, it turns out, with $\boldsymbol{\operatorname{{Vect}}}$, the category of finite dimensional complex vector spaces. This leads to the following replacements for concepts in elementary linear algebra:
 
-- Vectors = $k$-tuples of scalars $\mapsto$ 2-vectors = $k$-tuples of vector spaces
+-   Vectors = $k$-tuples of scalars $\mapsto$ 2-vectors = $k$-tuples of vector spaces
 
-- Addition $\mapsto$ Direct Sum
+-   Addition $\mapsto$ Direct Sum
 
-- Multiplication $\mapsto$ Tensor Product
+-   Multiplication $\mapsto$ Tensor Product
 
 So just as $\mathbb{C}^k$ is the standard example of a complex vector space, $\boldsymbol{\operatorname{{Vect}}}^k$ will be the standard example of a 2-vector space. But we should define these precisely.
 
@@ -38,13 +38,9 @@ To begin with, a KV 2-vector space is a $\mathbb{C}$-linear additive category wi
 
 ::: definition
 If a category $\boldsymbol{\operatorname{{C}}}$ is enriched in abelian groups, a **biproduct** is an operation giving, for any objects $x$ and $y$ in $\boldsymbol{\operatorname{{C}}}$ an object $x \oplus y$ equipped with morphisms $\iota_x,\iota_y$ from $x$ and $y$ respectively into $x \oplus y$; and morphisms $\pi_x, \pi_y$ from $x
-\oplus y$ into $x$ and $y$ respectively, which satisfy the biproduct relations: $$\begin{equation}
-\label{eq:biproduct1}
-\pi_x \circ \iota_x = \operatorname{id}_x \text{  and  } \pi_y \circ \iota_y = \operatorname{id}_y
-\end{equation}$$ and $$\begin{equation}
-\label{eq:biproduct2}
-\iota_x \circ \pi_x + \iota_y \circ \pi_y = \operatorname{id}_{x \oplus y}
-\end{equation}$$
+\oplus y$ into $x$ and $y$ respectively, which satisfy the biproduct relations: $$\label{eq:biproduct1}
+\pi_x \circ \iota_x = \operatorname{id}_x \text{  and  } \pi_y \circ \iota_y = \operatorname{id}_y$$ and $$\label{eq:biproduct2}
+\iota_x \circ \pi_x + \iota_y \circ \pi_y = \operatorname{id}_{x \oplus y}$$
 :::
 
 Whenever biproducts exist, they are always both products and coproducts.
@@ -66,8 +62,7 @@ It is a consequence of $\mathbb{C}$-linearity that a 2-linear map also preserves
 ::: example
 The standard example [@KV] of a KV 2-vector space highlights the analogy with the familiar vector space $\mathbb{C}^k$. The 2-vector space $\boldsymbol{\operatorname{{Vect}}}^k$ is a category whose objects are $k$-tuples of vector spaces, maps are $k$-tuples of linear maps. The *additive* structure of the 2-vector space $\boldsymbol{\operatorname{{Vect}}}^k$ comes from applying the direct sum in $\boldsymbol{\operatorname{{Vect}}}$ component-wise.
 
-Note that there is an equivalent of *scalar multiplication*, using the tensor product: $$\begin{equation}
-V \otimes 
+Note that there is an equivalent of *scalar multiplication*, using the tensor product: $$V \otimes 
 \begin{pmatrix}
   V_1 \\ 
   \vdots \\
@@ -78,9 +73,7 @@ V \otimes
   V \otimes V_1 \\
   \vdots \\
   V \otimes V_k
-\end{pmatrix}
-\end{equation}$$ and $$\begin{equation}
-\begin{pmatrix}
+\end{pmatrix}$$ and $$\begin{pmatrix}
   V_1 \\ 
   \vdots \\
   V_k
@@ -96,11 +89,9 @@ V \otimes
   V_1 \oplus W_1 \\
   \vdots \\
   V_k \oplus W_k
-\end{pmatrix}
-\end{equation}$$
+\end{pmatrix}$$
 
-As the correspondence with linear algebra would suggest, 2-linear maps $T: \boldsymbol{\operatorname{{Vect^k}}} \mathop{\rightarrow}\boldsymbol{\operatorname{{Vect^l}}}$ amount to $k \times l$ matrices of vector spaces, acting by matrix multiplication using the direct sum and tensor product instead of operations in $\mathbb{C}$: $$\begin{equation}
-\label{eq:kv2linmatrix}
+As the correspondence with linear algebra would suggest, 2-linear maps $T: \boldsymbol{\operatorname{{Vect^k}}} \mathop{\rightarrow}\boldsymbol{\operatorname{{Vect^l}}}$ amount to $k \times l$ matrices of vector spaces, acting by matrix multiplication using the direct sum and tensor product instead of operations in $\mathbb{C}$: $$\label{eq:kv2linmatrix}
 \begin{pmatrix}
 T_{1,1} & \dots & T_{1,k} \\
 \vdots & & \vdots \\
@@ -116,11 +107,9 @@ T_{l,1} & \dots & T_{l,k} \\
   \bigoplus_{i=1}^k T_{1,i} \otimes V_i \\ 
   \vdots \\
   \bigoplus_{i=1}^k T_{l,i} \otimes V_i \\ 
-\end{pmatrix}
-\end{equation}$$
+\end{pmatrix}$$
 
-The natural transformations between these are matrices of linear transformations: $$\begin{equation}
-\label{eq:kvnattransmatrix}
+The natural transformations between these are matrices of linear transformations: $$\label{eq:kvnattransmatrix}
 \alpha = \begin{pmatrix}
 \alpha_{1,1} & \dots & \alpha_{1,k} \\
 \vdots & & \vdots \\
@@ -137,27 +126,22 @@ T_{l,1} & \dots & T_{l,k} \\
 T'_{1,1} & \dots & T'_{1,k} \\
 \vdots & & \vdots \\
 T'_{l,1} & \dots & T'_{l,k} \\
-\end{pmatrix}
-\end{equation}$$ where each $\alpha_{i,j} : T_{i,j} \mathop{\rightarrow}T'_{i,j}$ is a linear map in the usual sense.
+\end{pmatrix}$$ where each $\alpha_{i,j} : T_{i,j} \mathop{\rightarrow}T'_{i,j}$ is a linear map in the usual sense.
 
-These natural transformations give 2-morphisms between 2-linear maps, so that $\boldsymbol{\operatorname{{Vect}}}^k$ is a bicategory with these as 2-cells: $$\begin{equation}
-\label{xy:2vs2cell}
+These natural transformations give 2-morphisms between 2-linear maps, so that $\boldsymbol{\operatorname{{Vect}}}^k$ is a bicategory with these as 2-cells: $$\label{xy:2vs2cell}
     \xymatrix{
       \boldsymbol{\operatorname{{Vect^k}}} \ar@/^1pc/[r]^{F}="0"
       \ar@/_1pc/[r]_{G}="1" & \boldsymbol{\operatorname{{Vect^l}}} \\ \ar@{=>}"0"
       ;"1"^{\alpha}
-    }
-\end{equation}$$
+    }$$
 
-In our example above, the finite set of simple objects of which every object is a sum is the set of 2-vectors of the form $$\begin{equation}
-\begin{pmatrix}
+In our example above, the finite set of simple objects of which every object is a sum is the set of 2-vectors of the form $$\begin{pmatrix}
 0 \\
 \vdots \\
 \mathbb{C} \\
 \vdots \\
 0
-\end{pmatrix}
-\end{equation}$$ which have the zero vector space in all components except one (which can be arbitrary). We can call these *standard basis 2-vectors*. Clearly every object of $\boldsymbol{\operatorname{{Vect}}}^k$ is a finite biproduct of these objects, and each is simple (its vector space of endomorphisms is 1-dimensional).
+\end{pmatrix}$$ which have the zero vector space in all components except one (which can be arbitrary). We can call these *standard basis 2-vectors*. Clearly every object of $\boldsymbol{\operatorname{{Vect}}}^k$ is a finite biproduct of these objects, and each is simple (its vector space of endomorphisms is 1-dimensional).
 :::
 
 ## Classification Theorems
@@ -202,33 +186,19 @@ And finally, the analogous fact holds for natural transformations between 2-line
 ::: proof
 *Proof.* By Lemma [\[lemma:kv2linmatrix\]](#lemma:kv2linmatrix){reference-type="ref" reference="lemma:kv2linmatrix"}, the 2-linear maps $T$ and $T'$ can be represented as matrices of vector spaces, which act on an object in $\boldsymbol{\operatorname{{Vect}}}^n$ as in ([\[eq:kv2linmatrix\]](#eq:kv2linmatrix){reference-type="ref" reference="eq:kv2linmatrix"}). A natural transformation $\alpha$ between these should assign, to every object $X \in \boldsymbol{\operatorname{{Vect}}}^n$, a morphism $\alpha_X : T(X) \mathop{\rightarrow}T'(X)$ in $\boldsymbol{\operatorname{{Vect}}}^m$, such that the usual naturality square commutes for every morphism $f : X \mathop{\rightarrow}Y$ in $\boldsymbol{\operatorname{{Vect}}}^n$.
 
-Suppose $X$ is the $n$-tuple $(X_1, \dots , X_n)$, where the $X_i$ are finite dimensional vector spaces. Then $$\begin{equation}
-\label{eq:TX}
-T(X) = (\oplus_{k=1}^{n} V_{1,k} \otimes X_k, \dots,\oplus_{k=1}^{n} V_{m,k} \otimes X_k )
-\end{equation}$$ where the $V_{i,j}$ are the components of $T$, and similarly $$\begin{equation}
-T'(X) = (\oplus_{k=1}^{n} V'_{1,k} \otimes X_k, \dots,\oplus_{k=1}^{n} V'_{m,k} \otimes X_k )
-\end{equation}$$ where the $V'_{i,j}$ are the components of $T'$.
+Suppose $X$ is the $n$-tuple $(X_1, \dots , X_n)$, where the $X_i$ are finite dimensional vector spaces. Then $$\label{eq:TX}
+T(X) = (\oplus_{k=1}^{n} V_{1,k} \otimes X_k, \dots,\oplus_{k=1}^{n} V_{m,k} \otimes X_k )$$ where the $V_{i,j}$ are the components of $T$, and similarly $$T'(X) = (\oplus_{k=1}^{n} V'_{1,k} \otimes X_k, \dots,\oplus_{k=1}^{n} V'_{m,k} \otimes X_k )$$ where the $V'_{i,j}$ are the components of $T'$.
 
-Then a morphism $\alpha_X : T(X) \mathop{\rightarrow}T'(X)$ consists of an $m$-tuple of linear maps: $$\begin{equation}
-\alpha_j : \oplus_{k=1}^{n} V_{j,k} \otimes X_k \mathop{\rightarrow}\oplus_{k=1}^{n} V'_{j,k} \otimes X_k
-\end{equation}$$ but by the universal property of the biproduct, this is the same as having an $(n \times m)$-indexed set of maps $$\begin{equation}
-\alpha_{jk} : V_{j,k} \otimes X_k \mathop{\rightarrow}\oplus_{r=1}^{n} V'_{j,r} \otimes X_r
-\end{equation}$$ and by the dual universal property, this is the same as having $(n
-\times n \times m)$-indexed maps $$\begin{equation}
-\alpha_{jkr} : V_{j,k} \otimes X_k \mathop{\rightarrow}V'_{j,r} \otimes X_r
-\end{equation}$$ However, we must have the naturality condition for every morphism $f:X \mathop{\rightarrow}X'$: $$\begin{equation}
-\xymatrix{
+Then a morphism $\alpha_X : T(X) \mathop{\rightarrow}T'(X)$ consists of an $m$-tuple of linear maps: $$\alpha_j : \oplus_{k=1}^{n} V_{j,k} \otimes X_k \mathop{\rightarrow}\oplus_{k=1}^{n} V'_{j,k} \otimes X_k$$ but by the universal property of the biproduct, this is the same as having an $(n \times m)$-indexed set of maps $$\alpha_{jk} : V_{j,k} \otimes X_k \mathop{\rightarrow}\oplus_{r=1}^{n} V'_{j,r} \otimes X_r$$ and by the dual universal property, this is the same as having $(n
+\times n \times m)$-indexed maps $$\alpha_{jkr} : V_{j,k} \otimes X_k \mathop{\rightarrow}V'_{j,r} \otimes X_r$$ However, we must have the naturality condition for every morphism $f:X \mathop{\rightarrow}X'$: $$\xymatrix{
   T(X) \ar[d]_{\alpha_{X}} \ar[r]^{T(f)} & T(X') \ar[d]^{\alpha_{X'}} \\
   T'(X) \ar[r]_{T'(f)} & T'(X')\\ 
-}
-\end{equation}$$ Note that each of the arrows in this diagram is a morphism in $\boldsymbol{\operatorname{{Vect}}}^m$, which are linear maps in each component---so in fact we have a separate naturality square for each component.
+}$$ Note that each of the arrows in this diagram is a morphism in $\boldsymbol{\operatorname{{Vect}}}^m$, which are linear maps in each component---so in fact we have a separate naturality square for each component.
 
 Also, since $T$ and $T'$ act on $X$ and $X'$ by tensoring with fixed vector spaces as in ([\[eq:TX\]](#eq:TX){reference-type="ref" reference="eq:TX"}), one has $T(f)_i =
 \oplus_j 1_{V_{ij}} \otimes f_j$, having no effect on the $V_{ij}$. We want to show that the components of $\alpha$ affect *only* the $V_{ij}$.
 
-Additivity of all the functors involved implies that the assignment $\alpha$ of maps to objects in $\boldsymbol{\operatorname{{Vect}}}^n$ is additive. So consider the case when $X$ is one of the standard basis 2-vectors, having $\mathbb{C}$ in one position (say, the $k^{th}$), and the zero vector space in every other position. Then, restricting to the naturality square in the $k^{th}$ position, the above condition amounts to having $m$ maps (indexed by $j$): $$\begin{equation}
-\alpha_{j,k} : V_{j,k} \mathop{\rightarrow}V'_{j,k}
-\end{equation}$$ So by linearity, a natural transformation is determined by an $n\times
+Additivity of all the functors involved implies that the assignment $\alpha$ of maps to objects in $\boldsymbol{\operatorname{{Vect}}}^n$ is additive. So consider the case when $X$ is one of the standard basis 2-vectors, having $\mathbb{C}$ in one position (say, the $k^{th}$), and the zero vector space in every other position. Then, restricting to the naturality square in the $k^{th}$ position, the above condition amounts to having $m$ maps (indexed by $j$): $$\alpha_{j,k} : V_{j,k} \mathop{\rightarrow}V'_{j,k}$$ So by linearity, a natural transformation is determined by an $n\times
 m$ matrix of maps as in ([\[eq:kvnattransmatrix\]](#eq:kvnattransmatrix){reference-type="ref" reference="eq:kvnattransmatrix"}). ◻
 :::
 
@@ -244,77 +214,26 @@ W$, there is a 2-linear map $F^{\dagger} : W \mathop{\rightarrow}V$ which is bot
 :::
 
 ::: proof
-*Proof.* By Theorem [\[thm:kvvn\]](#thm:kvvn){reference-type="ref" reference="thm:kvvn"}, we have $V \simeq \boldsymbol{\operatorname{{Vect}}}^n$ and $W \simeq \boldsymbol{\operatorname{{Vect}}}^m$ for some $n$ and $m$. By composition with these equivalences, we can restrict to this case. But then we have by Lemma [\[lemma:kv2linmatrix\]](#lemma:kv2linmatrix){reference-type="ref" reference="lemma:kv2linmatrix"} that $F$ is naturally isomorphic to some 2-linear map given by matrix multiplication by some matrix of vector spaces $[F_{i,j}]$: $$\begin{equation}
-\begin{pmatrix}
+*Proof.* By Theorem [\[thm:kvvn\]](#thm:kvvn){reference-type="ref" reference="thm:kvvn"}, we have $V \simeq \boldsymbol{\operatorname{{Vect}}}^n$ and $W \simeq \boldsymbol{\operatorname{{Vect}}}^m$ for some $n$ and $m$. By composition with these equivalences, we can restrict to this case. But then we have by Lemma [\[lemma:kv2linmatrix\]](#lemma:kv2linmatrix){reference-type="ref" reference="lemma:kv2linmatrix"} that $F$ is naturally isomorphic to some 2-linear map given by matrix multiplication by some matrix of vector spaces $[F_{i,j}]$: $$\begin{pmatrix}
 F_{1,1} & \dots & F_{1,n} \\
 \vdots & & \vdots \\
 F_{m,1} & \dots & F_{m,n} \\
-\end{pmatrix}
-\end{equation}$$
+\end{pmatrix}$$
 
-We claim that a (two-sided) adjoint functor $F^{\dagger}$ is given by the "dual transpose matrix" of vector spaces $[F_{i,j}]^{\dagger}$: $$\begin{equation}
-\begin{pmatrix}
+We claim that a (two-sided) adjoint functor $F^{\dagger}$ is given by the "dual transpose matrix" of vector spaces $[F_{i,j}]^{\dagger}$: $$\begin{pmatrix}
 F^{\dagger}_{1,1} & \dots & F^{\dagger}_{1,m}\\
 \vdots & & \vdots \\
 F^{\dagger}_{n,1} & \dots & F^{\dagger}_{n,m} \\
-\end{pmatrix}
-\end{equation}$$ where $F^{\dagger}_{i,j}$ is the vector space dual $(F_{j,i})^{\ast}$ (note the transposition of the matrix).
+\end{pmatrix}$$ where $F^{\dagger}_{i,j}$ is the vector space dual $(F_{j,i})^{\ast}$ (note the transposition of the matrix).
 
 We note that this prescription is symmetric, since $[T]^{\dagger
 \dagger} = [T]$, so if $F^{\dagger}$ is always a left adjoint of $F$, then $F$ is also a left-adjoint of $F^{\dagger}$, hence $F^{\dagger}$ a right adjoint of $F$. So if this prescription gives a left adjoint, it gives a two-sided adjoint. Next we check that it does.
 
-Suppose $x=(X_i) \in \boldsymbol{\operatorname{{Vect}}}^n$ is the 2-vector with vector space $X_i$ in the $i^{th}$ component, and $y=(Y_j) \in \boldsymbol{\operatorname{{Vect}}}^m$ has vector space $Y_j$ in the $j^{th}$ component. Then $F(x) \in \boldsymbol{\operatorname{{Vect}}}^m$ has $j^{th}$ component $\oplus_{i=1}^n F_{i,j} \otimes X_i$. Now, a map in $\boldsymbol{\operatorname{{Vect}}}^m$ from $F(x)$ to $y$ consists of a linear map in each component, so it is an $m$-tuple of maps: $$\begin{equation}
-f_j: \bigoplus_{i=1}^n F_{i,j} \otimes X_i \mathop{\rightarrow}Y_j
-\end{equation}$$ for $j = 1 \dots m$. But since the direct sum (biproduct) is a categorical coproduct, this is the same as an $m \times n$ matrix of maps: $$\begin{equation}
-f_{ij}: V_{i,j} \otimes X_i \mathop{\rightarrow}Y_j
-\end{equation}$$ for $k = 1 \dots n$ and $j = 1 \dots m$, and $\hom(F(x),y)$ is the vector space of all such maps.
+Suppose $x=(X_i) \in \boldsymbol{\operatorname{{Vect}}}^n$ is the 2-vector with vector space $X_i$ in the $i^{th}$ component, and $y=(Y_j) \in \boldsymbol{\operatorname{{Vect}}}^m$ has vector space $Y_j$ in the $j^{th}$ component. Then $F(x) \in \boldsymbol{\operatorname{{Vect}}}^m$ has $j^{th}$ component $\oplus_{i=1}^n F_{i,j} \otimes X_i$. Now, a map in $\boldsymbol{\operatorname{{Vect}}}^m$ from $F(x)$ to $y$ consists of a linear map in each component, so it is an $m$-tuple of maps: $$f_j: \bigoplus_{i=1}^n F_{i,j} \otimes X_i \mathop{\rightarrow}Y_j$$ for $j = 1 \dots m$. But since the direct sum (biproduct) is a categorical coproduct, this is the same as an $m \times n$ matrix of maps: $$f_{ij}: V_{i,j} \otimes X_i \mathop{\rightarrow}Y_j$$ for $k = 1 \dots n$ and $j = 1 \dots m$, and $\hom(F(x),y)$ is the vector space of all such maps.
 
-By the same argument, a map in $\boldsymbol{\operatorname{{Vect}}}^n$ from $x$ to $F^{\dagger}(y)$ consists of an $n \times m$ matrix of maps: $$\begin{equation}
-g_{ji}: X_i \mathop{\rightarrow}V_{j,i}^{\ast} \otimes Y_j \cong \hom(V_{j,i},Y_j)
-\end{equation}$$ for $i = 1 \dots n$ and $j = 1 \dots m$, and $\hom(x,F^{\dagger}(y))$ is the vector space of all such maps.
+By the same argument, a map in $\boldsymbol{\operatorname{{Vect}}}^n$ from $x$ to $F^{\dagger}(y)$ consists of an $n \times m$ matrix of maps: $$g_{ji}: X_i \mathop{\rightarrow}V_{j,i}^{\ast} \otimes Y_j \cong \hom(V_{j,i},Y_j)$$ for $i = 1 \dots n$ and $j = 1 \dots m$, and $\hom(x,F^{\dagger}(y))$ is the vector space of all such maps.
 
 But then we have a natural isomorphism $\hom(F(x),y) \cong \hom(x,F^{\dagger}(y))$ by the duality of $\hom$ and $\otimes$, so in fact $F^{\dagger}$ is a right adjoint for $F$, and by the above argument, also a left adjoint.
 
 Moreover, no other non-isomorphic matrix defines a 2-linear map with these properties, and since any functor is naturally isomorphic to some matrix, this is the sole $F^{\dagger}$ which works. ◻
 :::
-
-## Example: Group 2-Algebra
-
-We conclude this section by giving an example of a 2-vector space:
-
-::: example
-[]{#ex:grp2alg label="ex:grp2alg"} As an example of a KV 2-vector space, consider the *group 2-algebra* on a finite group $G$, defined by analogy with the group algebra:
-
-The group algebra $\mathbb{C}[G]$ consists of the set of elements formed as formal linear combinations elements of $G$: $$\begin{equation}
-b = \sum_{g \in G} b_g \cdot g
-\end{equation}$$ where all but finitely many $b_g$ are zero. We can think of these as complex functions on $G$. The algebra multiplication on $\mathbb{C}[G]$ is given by the multiplication in $G$: $$\begin{equation}
-b \star b' = \sum_{g,g' \in G} (b_g b'_{g'}) \cdot g g' \\
-\end{equation}$$ This does not correspond to the multiplication of functions on $G$, but to *convolution*: $$\begin{equation}
-(b \star b')_g = \sum_{h\cdot h' = g}b_h b'_{h'}
-\end{equation}$$
-
-Similarly, the *group 2-algebra* $A=\boldsymbol{\operatorname{{Vect}}}[G]$ is the *category* of $G$-graded vector spaces. That is, direct sums of vector spaces associated to elements of $G$: $$\begin{equation}
-V = \bigoplus_{g \in G} V_g
-\end{equation}$$ where $V_g \in \boldsymbol{\operatorname{{Vect}}}$ is a vector space. This is a $G$-graded vector space. We can take direct sums of these pointwise, so that $(V
-\oplus V')_g = V_g \oplus V'_g)$, and there is a "scalar" product with elements of $\boldsymbol{\operatorname{{Vect}}}$ given by $(W \otimes V)_g = W \otimes V_g$. There is also a *group 2-algebra* product of $G$-graded vector spaces, involving a convolution on $G$: $$\begin{equation}
-(V \star V')_h = \bigoplus_{g \cdot g' = h}V_g \otimes V'_{g'}
-\end{equation}$$
-
-The category of $G$-graded vector spaces is clearly a KV 2-vector space, since it is equivalent to $\boldsymbol{\operatorname{{Vect}}}^k$ where $k = |G|$. However, it has the additional structure of a 2-algebra because of the group operation on the finite set $G$.
-:::
-
-::: example
-Given a finite group $G$, the category $\boldsymbol{\operatorname{{Rep(G)}}}$ has:
-
-- **Objects**: Complex representations of $G$ (i.e. functors $\rho : G \mathop{\rightarrow}\boldsymbol{\operatorname{{Vect}}}$, where $G$ is seen as a one-object groupoid)
-
-- **Morphisms**: Intertwining operators between reps (i.e. natural transformations)
-
-This is clearly a 2-vector space generated by the irreducible representations of $G$.
-:::
-
-In the next section, we will see that a similar construction shows that the representation categories of finite groupoids are KV 2-vector spaces. This will be the beginning of our definition of $\Lambda$.
-
-This highlights one motivation for thinking of 2-vector spaces: the fact that, in quantum mechanics, one often "quantizes" a classical system by taking the Hilbert space of (square integrable) $\mathbb{C}$-valued functions on its phase space. Similarly, one approach to finding a higher-categorical version of a quantum theory is to take $\boldsymbol{\operatorname{{Vect}}}$-valued functors, as we discuss in more detail in Section [\[sec:kv2vsgrpd\]](#sec:kv2vsgrpd){reference-type="ref" reference="sec:kv2vsgrpd"}.
-
-By restricting our attention to the (essentially) finite case, we avoid here the analytical issues involved in finding an analog for $L^2(X)$.

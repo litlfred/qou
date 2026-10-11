@@ -8,107 +8,142 @@ pages: 22-23
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
 doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
+text_source: latex
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 0.964
 ---
-orem we used the fact that if f ∈ SR[x]MA is multiaﬃne and real stable, then
-∆ijf(a)≥ 0 for all {i,j}⊆ E and a∈ Rm, by Theorem 3.1. In fact, we only
-needed the weaker hypothesis that ∆ ijf(a)≥ 0 for all {i,j}⊆ E and a∈ Rm
-with a > 0. A multiaﬃne real polynomial satisfying this weaker condition is a
-Rayleigh polynomial. (This terminology is by analogy with the Rayleigh mono-
-tonicity property of electrical networks – see Deﬁnition 2.5 of [7] and the references
-cited there. Multiaﬃne real stable polynomials are also called strongly Rayleigh.)
-The class of probability distributionsϕ such thatZ(ϕ) is homogeneous, multiaﬃne,
-and Rayleigh meets all the conditions of the Feder-Mihail Theorem. It follows that
-all such distributions are NA.
-Claim (2) above can be generalized in another way – the hypothesis of ho-
-mogeneity can be removed, as follows. Let y = (y1,...,y m) and let ej(y) be
-the j-th elementary symmetric function of the y. Given a multiaﬃne polyno-
-mial f = ∑
-S⊆[m]c(S)xS, the symmetric homogenization of f is the polynomial
-fsh(x, y)∈ C[x, y]MA deﬁned by
-fsh(x, y) =
-∑
-S⊆[m]
-c(S)xS
-(m
-|S|
-)−1
-em−|S|(y).
-Note that fsh is homogeneous of degree m, and fsh(x, 1) =f(x).
-Proposition 7.2 (Theorem 4.2 of [7]) . If f ∈ SR[x]MA is multiaﬃne and real
-stable then fsh∈ SR[x, y]MA is homogeneous, multiaﬃne and real stable.
+In verifying the hypotheses of the Feder-Mihail Theorem we used the 
+fact that if $f\in\StabR[\x]^{\ma}$ is multiaffine and real stable, 
+then $\Delta_{ij}f(\a)\geq 0$ for all $\{i,j\}\subseteq E$ and
+$\a\in\RR^{m}$, by Theorem 3.1.  In fact, we only needed the
+weaker hypothesis that $\Delta_{ij}f(\a)\geq 0$ for all $\{i,j\}\subseteq E$
+and $\a\in\RR^{m}$ with $\a>\zero$.  A multiaffine real polynomial 
+satisfying this weaker condition is a \emph{Rayleigh} polynomial.
+(This terminology is by analogy with the Rayleigh monotonicity 
+property of electrical networks -- see Definition 2.5 of \cite{BBL}
+and the references cited there.  Multiaffine real stable polynomials 
+are also called \emph{strongly Rayleigh}.)  The class of probability
+distributions $\varphi$ such that $Z(\varphi)$ is homogeneous, multiaffine,
+and Rayleigh meets all the conditions of the Feder-Mihail Theorem.
+It follows that all such distributions are NA.
+
+Claim (2) above can be generalized in another way --
+the hypothesis of homogeneity can be removed, as follows.
+Let $\y=(y_{1},\ldots,y_{m})$ and let $e_{j}(\y)$
+be the $j$-th elementary symmetric function of the $\y$.
+Given a multiaffine polynomial $f=\sum_{S\subseteq[m]}c(S)\x^{S}$,
+the \emph{symmetric homogenization} of $f$ is the polynomial 
+$f_{\mathrm{sh}}(\x,\y)\in\CC[\x,\y]^{\ma}$ defined by
+$$
+f_{\mathrm{sh}}(\x,\y) = \sum_{S\subseteq[m]} c(S)\x^{S}\binom{m}{|S|}^{-1}
+e_{m-|S|}(\y).
+$$
+Note that $f_{\mathrm{sh}}$ is homogeneous of degree $m$, and
+$f_{\mathrm{sh}}(\x,\one)=f(\x)$.
+
+\begin{prop}[Theorem 4.2 of \cite{BBL}]
+If $f\in\StabR[\x]^{\ma}$ is multiaffine and real stable then
+$f_{\mathrm{sh}}\in\StabR[\x,\y]^{\ma}$ is homogeneous, multiaffine and real stable.
+\end{prop}
 (We omit the proof.)
-Corollary 7.3 (Theorem 4.9 of [7]) . Let ϕ : Ω → [0,∞) be such that Z(ϕ) is
-nonzero, multiaﬃne, and real stable. Then for all a∈ Rm with a> 0, ϕa is NA.
-Proof. By Proposition 7.2, Zsh(ϕ; x, y) is nonzero, homogeneous, multiaﬃne, and
-real stable. This is the partition function for ψ :{0, 1}[2m] → [0,∞) given by
-ψ(S) =
-( m
-|S∩[m]|
-)−1
-ϕ(S∩ [m]). By claim (2) above, ψa is NA for all a∈ R2m with
-a> 0. By considering those a∈ R2m for which ai = 1 for all m + 1≤i≤ 2m, it
-follows that ϕa is NA for all a∈ Rm with a> 0. □
-Corollary 7.4 (Theorem 5.2 of [7]). If the initial distribution ϕ0 of a SEP is such
-that Z(ϕ) is stable (but not necessarily homogeneous), then Z(ϕt) is stable, and
-henceϕt is NA, for all t≥ 0.
+
+\begin{coro}[Theorem 4.9 of \cite{BBL}]
+Let $\varphi:\Omega\goesto[0,\infty)$ be such that
+$Z(\varphi)$ is nonzero, multiaffine, and real stable.  Then for all 
+$\a\in\RR^{m}$ with $\a>0$, $\varphi^{\a}$ is NA.
+\end{coro}
+\begin{proof}
+By Proposition 7.2, $Z_{\mathrm{sh}}(\varphi;\x,\y)$ is nonzero, homogeneous,
+multiaffine, and real stable.  This is the partition function for
+$\psi:\{0,1\}^{[2m]}\goesto[0,\infty)$ given by
+$\psi(S)=\binom{m}{|S\cap[m]|}^{-1}\varphi(S\cap[m])$.  By
+claim (2) above, $\psi^{\a}$ is NA for all $\a\in\RR^{2m}$ 
+with $\a>\zero$.  By considering those $\a\in\RR^{2m}$ for which
+$a_{i}=1$ for all $m+1\leq i\leq 2m$, it follows that $\varphi^{\a}$ is NA
+for all $\a\in\RR^{m}$ with $\a>0$.
+\end{proof}
+
+\begin{coro}[Theorem 5.2 of \cite{BBL}]
+If the initial distribution $\varphi_0$ of a SEP is such that $Z(\varphi)$
+is stable (but not necessarily homogeneous), then
+$Z(\varphi_t)$ is stable, and hence $\varphi_t$ is NA, for all $t\geq 0$.
+\end{coro}
+
 It is natural to try extending these results to asymmetric exclusion processes.
-For (i,j )∈ Λ2 deﬁne tij ∈ E by tij(S) = S◦τij if S(i) = 1 and S(j) = 0, and
-tij(S) = S otherwise, for all S∈ Ω. That is, tij makes a particle hop from site i
-to site j, if possible. Let E be a set of ordered pairs in Λ 2, and for (i,j )∈ E let
-λij > 0. An asymmetric exclusion process is a Markov chain on Ω with semigroup
-T (t) = exp(tL) generated by something of the form
-L =
-∑
-(i,j)∈E
-λij(tij− 1).
-By the argument for claim (3) above, in order to show that T (t) preserves sta-
-bility for all t ≥ 0, it suﬃces to do so for the two-site semigroup T{1,2}(t) =
-MULTIVARIATE STABLE POLYNOMIALS 23
-exp(tL{1,2}) generated by
-L{1,2} =λ12(t12− 1) +λ21(t21− 1).
-Exercise 7.5 (Strengthening Remark 5.3 of [7]) . With the notation above, let
-λ =λ12 +λ21, β12 =λ12/λ, and β21 =λ21/λ.
-(a) In A, t12 + t21 = 1 +τ12.
-(b) If ω is any word in{t12, t21}n, then t12ω = t12 and t21ω = t21.
-(c) The semigroup generated by L{1,2} is
-T{1,2}(t) = e−λt + (1− e−λt)(β12t12 +β21t21)
-(d) The semigroup T{1,2}(t) preserves stability for all t≥ 0 if and only if β12 =
-β21 = 1/2, in which case it reduces to the SEP (of rate λ/2).
-Thus, even the slightest asymmetry ruins preservation of stability by the SEP!
-Finally, we consider a SEP in which particle number is not conserved. For i∈ Λ
-deﬁne ai, a∗
-i∈ E as follows: forS∈ Ω andj∈ Λ, let (ai(S))(j) = (a∗
-i (S))(j) =S(j)
-ifj⁄=i, and (ai(S))(i) = 0 and (a∗
-i (S))(i) = 1. That is, ai annihilates a particle at
-site i, and a∗
-i creates a particle at site i, if possible.
-A SEP with particle creation and annihilation is a Markov chain on Ω with
-semigroup T (t) = exp(tL) generated by something of the form
-L =
-∑
-{i,j}∈E
-λij(τij− 1) +
-∑
-i∈Λ
-[θi(ai− 1) +θ∗
-i (a∗
-i− 1)],
-in which the ﬁrst sum is the generator of the SEP in Theorem 7.1 and θi,θ∗
-i ≥ 0
-for each i∈ Λ.
-By the argument for claim (3) above, to show that thisT (t) preserves stability for
-allt≥ 0, it suﬃces to do so for the one-site semigroups generated by L1 =θ(a1−1)
-and L∗
-1 =θ(a∗
-1− 1), respectively.
-Exercise 7.6. The semigroups generated by L1 and L∗
-1 are
-T1(t) = e−θt + (1− e−θt)a1 and T∗
-1 (t) = e−θt + (1− e−θt)a∗
-1,
-respectively. Both T1(t) and T∗
-1 (t) preserve stability.
-Corollary 7.7. If the initial distribution ϕ0 of a SEP with particle creation and
-annihilation is such that Z(ϕ) is stable, then Z(ϕt) is stable, and hence ϕt is NA,
-for all t≥ 0.
+For $(i,j)\in \Lambda^{2}$ define $\pp_{ij}\in\EE$ by
+$\pp_{ij}(S)=S\circ\tau_{ij}$ if $S(i)=1$ and $S(j)=0$,
+and $\pp_{ij}(S)=S$ otherwise, for all $S\in\Omega$.
+That is, $\pp_{ij}$ makes a particle hop from site $i$ to site $j$, if possible.
+Let $E$ be a set of ordered pairs in $\Lambda^2$,
+and for $(i,j)\in E$ let $\lambda_{ij}>0$.  An asymmetric exclusion process
+is a Markov chain on $\Omega$ with semigroup $T(t)=\exp(t\L)$
+generated by something of the form
+$$
+\L = \sum_{(i,j)\in E} \lambda_{ij} (\pp_{ij}-1).
+$$
+
+By the argument for claim (3) above, in order to show that $T(t)$
+preserves stability for all $t\geq 0$, it suffices to do so for the two-site
+semigroup $T_{\{1,2\}}(t)=\exp(t\L_{\{1,2\}})$ generated by
+$$
+\L_{\{1,2\}} = \lambda_{12}(\pp_{12}-1)+\lambda_{21}(\pp_{21}-1).
+$$
+
+\begin{exercise}[Strengthening Remark 5.3 of \cite{BBL}]
+With the notation above, let $\lambda=\lambda_{12}+\lambda_{21}$,
+$\beta_{12}=\lambda_{12}/\lambda$, and 
+$\beta_{21}=\lambda_{21}/\lambda$.\\
+\textup{(a)}\  In $\Alg$, $\pp_{12}+\pp_{21}=1+\tau_{12}$.\\
+\textup{(b)}\  If $\omega$ is any word in $\{\pp_{12},\pp_{21}\}^n$,
+then $\pp_{12}\omega=\pp_{12}$ and $\pp_{21}\omega=\pp_{21}$.\\
+\textup{(c)}\  The semigroup generated by $\L_{\{1,2\}}$ is
+$$
+T_{\{1,2\}}(t) = \e^{-\lambda t} + (1-\e^{-\lambda t})
+(\beta_{12}\pp_{12} + \beta_{21}\pp_{21})
+$$
+\textup{(d)}\  The semigroup $T_{\{1,2\}}(t)$ preserves stability for
+all $t\geq 0$ if and only if $\beta_{12}=\beta_{21}=1/2$, in
+which case it reduces to the SEP (of rate $\lambda/2$).\\
+Thus, even the \underline{slightest} asymmetry ruins preservation
+of stability by the SEP!
+\end{exercise}
+
+Finally, we consider a SEP in which particle number is not conserved.
+For $i\in\Lambda$ define $\aa_{i},\aa_{i}^{*}\in
+\EE$ as follows:\ for $S\in\Omega$ and 
+$j\in\Lambda$, let $(\aa_{i}(S))(j)=(\aa_{i}^{*}(S))(j)=S(j)$ if 
+$j\neq i$, and $(\aa_{i}(S))(i)=0$ and $(\aa_{i}^{*}(S))(i)=1$.
+That is, $\aa_{i}$ annihilates a particle at site $i$, and
+$\aa_{i}^{*}$ creates a particle at site $i$, if possible.
+
+A SEP with particle creation and annihilation is a Markov chain on
+$\Omega$ with semigroup $T(t)=\exp(t\L)$ generated by something of
+the form
+$$
+\L = \sum_{\{i,j\}\in E} \lambda_{ij} (\tau_{ij}-1) +
+\sum_{i\in \Lambda}
+\left[ \theta_{i}(\aa_{i}-1) + \theta_{i}^{*}(\aa_{i}^{*}-1) \right],
+$$
+in which the first sum is the generator of the SEP in Theorem 7.1 and
+$\theta_{i},\theta_{i}^{*}\geq 0$ for each $i\in\Lambda$.
+
+By the argument for claim (3) above, to show that this $T(t)$
+preserves stability for all $t\geq 0$, it suffices to do so for the
+one-site semigroups generated by $\L_{1} = \theta(\aa_{1}-1)$ and
+$\L_{1}^{*} = \theta(\aa_{1}^{*}-1)$, respectively.
+
+\begin{exercise}
+The semigroups generated by $\L_1$ and $\L_1^*$ are
+$$
+T_{1}(t) = \e^{-\theta t} + (1-\e^{-\theta t})\aa_{1}
+\ \ \ \mathrm{and}\ \ \ 
+T_{1}^{*}(t) = \e^{-\theta t} + (1-\e^{-\theta t})\aa_{1}^{*},
+$$
+respectively.  Both $T_{1}(t)$ and $T_{1}^{*}(t)$ preserve stability.
+\end{exercise}
+
+\begin{coro}
+If the initial distribution $\varphi_0$ of a SEP with particle
+creation and annihilation is such that $Z(\varphi)$ is stable, then
+$Z(\varphi_t)$ is stable, and hence $\varphi_t$ is NA, for all $t\geq 0$.
+\end{coro}

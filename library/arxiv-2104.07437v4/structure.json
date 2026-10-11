@@ -404,8 +404,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "GM_peacockTS_21v4.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 19,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -415,36 +415,47 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-21-perturbative-series-in-topological-string-the",
      "title": "Perturbative series in topological string theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-22-resurgence-and-stokes-constants",
      "title": "Resurgence and Stokes constants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-23-stokes-constants-in-topological-string-theory",
      "title": "Stokes constants in topological string theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.168,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-3-examples",
      "title": "Examples",
-     "prose_ratio": 0.203,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.68,
+     "coverage_ratio": 0.19,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-005-31-the-tsst-correspondence",
      "title": "The TS/ST correspondence",
-     "result": "no matching \\section"
+     "prose_ratio": 0.681,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-32-local-f0",
@@ -454,12 +465,16 @@
     {
      "id": "sec-007-322-spectral-trace-and-its-factorisation",
      "title": "Spectral trace and its factorisation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-323-radial-asymptotic-analysis",
      "title": "Radial asymptotic analysis",
-     "result": "no matching \\section"
+     "prose_ratio": 0.583,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-009-33-local-p2",
@@ -469,23 +484,32 @@
     {
      "id": "sec-010-332-the-second-resurgent-structure",
      "title": "The second resurgent structure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-333-second-spectral-trace-and-its-factorisation",
      "title": "Second spectral trace and its factorisation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-334-radial-asymptotic-analysis-for-the-second-tr",
      "title": "Radial asymptotic analysis for the second trace",
-     "result": "no matching \\section"
+     "prose_ratio": 0.926,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-4-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.842,
+     "prose_ratio": 0.849,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

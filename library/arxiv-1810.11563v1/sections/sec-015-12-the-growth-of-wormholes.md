@@ -7,10 +7,10 @@ section_number: 12
 pages: 35-40
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
-text_source: latex
-latex_prose_ratio: 0.716
-latex_coverage_ratio: 1.0
 doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.713
 ---
 Wormholes or Einstein-Rosen bridges grow with time.
 To illustrate this fact we  examine the Penrose diagram \ref{Foliated-BTZ2} of an AdS ``eternal" black hole, or what is really two entangled black holes connected by an Einstein-Rosen bridge.
@@ -93,104 +93,3 @@ To reiterate, the important virtue of maximal slicing is that it is defined in a
 \label{no-fol}
 \end{center}
 \end{figure}
-
-
-
-\subsection{Properties of Growth}
-
-Let's review some facts about  the growth of wormhole volume that follow from the black hole geometry. First of all, except for an early transient, lasting about a thermal time, the growth  is linear with time. In the two-sided case the rate of growth of the volume satisfies,
-\be 
-\frac{dV(t)}{dt} \sim l_{ads}A T 
-\label{Vdot}
-\ee
-where $t$ is the anchoring time, $A$ is the horizon area, $T$ is the black hole temperature, and $\l$ is the AdS length scale. This is not hard to show using the AdS black hole metric but an easier argument is just dimensional analysis. 
-In the one-sided case the asymptotic  rate of growth is half that of the two-sided case.
-
-Let's define a geometric quantity $C$ (yes, we will eventually identify it with complexity, but not yet),
-\be 
-C \equiv \frac{V}{G\l}
-\label{CV}
-\ee
-Then \ref{Vdot} gives
-\be 
-\frac{dC}{dt}=\frac{A}{G}T
-\ee
-and using the Hawking-Bekenstein area-entropy relation
-\be  
-\frac{dC}{dt}=ST
-\label{dCdt=ST1}
-\ee
-In a little while we will see that this is  the expected rate of growth of complexity for a circuit with $K\sim S$ qubits. 
-
-\subsection{Rindler Time and CV}
-
-The standard architecture for quantum circuits (explained in Lecture I) is illustrated in figure \ref{cirkuit}.
- 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale=.4]{cirkuit.pdf}
-\caption{}
-\label{cirkuit}
-\end{center}
-\end{figure}
-We assume that the circuit comes equipped with a clock, and in each time-step $K/2$ gates act. For sub-exponential time the number of gates in a circuit corresponds to the complexity\footnote{This is the no-collisions assumption discussed at length in Lecture I. It is expected to be correct for sub-exponential time.} $\CC$ of the unitary operator prepared by the circuit satisfies,
-\be 
-\frac{d\CC}{\d\t} = \frac{K}{2}
-\ee
-or, assuming $K\sim S$,
-\be 
-\frac{d\CC}{\d\t} \sim S.
-\label{dC-dtau=S}
-\ee
-
-
-If  black holes can be viewed as quantum circuits one may ask what the time-coordinate $\tau$ corresponds to on the black hole side. One hint is that since complexity and entropy are dimensionless, $\tau$ is also dimensionless. The ordinary Schwarzschild coordinate $t$ of a black hole has dimensions of time and therefore cannot be the same as $\t.$ There is however a universal dimensionless time for all non-extremal black holes, namely the Rindler time. The near-horizon geometry has the universal form,
-\be 
-ds^2 = -\rho^2 d\tau^2 + d\rho^2 +r(\rho)^2 d\Omega^2
-\ee
-where $\rho$ is proper distance from the horizon and $\tau $ is a hyperbolic boost angle. 
-The natural candidate for the circuit time for a black hole is the Rindler time. For now let's accept this identification but 
-later, in section \ref{Sec: Lyap and Rind} I will give a precise quantitative argument for identifying circuit time with Rindler time.
-
-Thus I will therefore use the 
- same symbol $\t$ for circuit time, and for Rindler time. We may therefore assume that in the context of  black hole evolution the complexity grows according to \ref{dC-dtau=S} with $\tau$ being Rindler time.
-
-An asymptotic   observer at infinity sees  rate of computation  red-shifted. It is a universal fact for all non-extremal black holes, that the asymptotic time $t$ is related to Rindler time by 
-\be 
-\t = \frac{2\pi t}{\beta} = 2\pi Tt.
-\ee
-
-
-
-It follows that the rate of computation as seen from infinity, is
-\be 
-\frac{d\CC}{dt}  
-= ST.
-\ee
-Compare this with \ref{dCdt=ST1} and one sees that  the quantity $C$ is in fact the complexity $\CC.$ Accordingly \ref{CV} may be written in the form,
-\be 
-\CC =\frac{V}{G \l }.
-\label{CV-dualtiy}
-\ee
-This formula connecting  complexity and the volume of the the wormhole is the called
- CV  correspondence. It is one of two versions of the complexity-geometry correspondence, the other being  complexity-action formulation. Time will not permit me to go over the CA correspondence, but there are many papers that you can consult.
-
-\bn
-
-Let me summarize and emphasize two points:
-\begin{enumerate}
-\item Circuit time, measured in steps, corresponds to the Rindler time of a black hole. 
-Now repeat and memorize: 
-
- 
-\it
-Circuit time, measured in steps, corresponds to the Rindler time of a black hole. \rm
-
-\bn 
-
-\item Complexity is proportional to the wormhole volume through
-\ref{CV-dualtiy}
-\end{enumerate}
-
-
-Of course this latter point is a conjecture; it was not derived from  first-principles. The argument is due to Sherlock Holmes; I quote the great detective:  ``When you have excluded the impossible whatever remains, however improbable, must be the truth." We  can and will subject item 2 to rigorous testing.

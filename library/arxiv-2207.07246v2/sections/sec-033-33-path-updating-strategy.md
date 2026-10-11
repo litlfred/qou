@@ -7,16 +7,16 @@ section_number: 3.3
 pages: 87-88
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
-text_source: latex
-latex_prose_ratio: 0.926
-latex_coverage_ratio: 0.99
 doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES"
+text_source: latex
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.949
 ---
 []{#secUpdateStrat label="secUpdateStrat"}
 
 In each type of sampling, after we judge whether to accept the new $l$ and $r$ order in the trial wave function or not, we mark the order after judgement as $l$ and $r$. In order to make the computation fast, as illustrated in Fig. [1](#PIMCpathstore){reference-type="ref" reference="PIMCpathstore"} by the blue and yellow bands with texture, we store all the states from $| \psi^r_0 (\mathcal{R}) \rangle$ to $| \psi^r_N (\mathcal{R}) \rangle$ and $| \psi^l_0 (\mathcal{R}) \rangle$ to $| \psi^l_N (\mathcal{R}) \rangle$, by storing all the coefficients from $\phi^r_{0}(\mathcal{R},S)$ to $\phi^r_{N}(\mathcal{R},S)$ and from $\phi^l_{0}(\mathcal{R},S)$ to $\phi^l_{N}(\mathcal{R},S) | S \rangle$ in the arrays. We also store $f^V_{lr}(\mathcal{R})$ which is calculated by Eq.([\[fVRlrN2LOdef2\]](#fVRlrN2LOdef2){reference-type="ref" reference="fVRlrN2LOdef2"}).
 
-<figure id="PIMCpathstore" data-latex-placement="hptb!">
+<figure id="PIMCpathstore">
 <embed src="Figures/PIMCpathstore.eps" />
 <figcaption>Illustration of the path updating.</figcaption>
 </figure>

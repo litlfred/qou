@@ -180,8 +180,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "manuscript-final-prsa.tex",
-   "tex_sections": 4,
-   "overlaid": 2,
+   "tex_sections": 8,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -191,8 +191,8 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.816,
-     "coverage_ratio": 0.674,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.965,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -205,28 +205,36 @@
     {
      "id": "sec-002-trajectories-for-the-dse",
      "title": "Trajectories for the DSE",
-     "result": "no matching \\section"
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-first-passage-distribution",
      "title": "First-passage distribution",
-     "result": "no matching \\section"
+     "prose_ratio": 0.597,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-dynamic-dse",
      "title": "Dynamic DSE",
-     "result": "no matching \\section"
+     "prose_ratio": 0.162,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-numerical-dse",
      "title": "Numerical DSE",
-     "result": "no matching \\section"
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.61,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-comparison-to-the-kpm-experiment",
      "title": "Comparison to the KPM experiment",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },

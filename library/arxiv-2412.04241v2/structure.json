@@ -652,8 +652,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "text131.tex",
-   "tex_sections": 6,
-   "overlaid": 1,
+   "tex_sections": 36,
+   "overlaid": 18,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -669,22 +669,28 @@
     {
      "id": "sec-001-11-prologue",
      "title": "Prologue",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-12-integrality-and-congruence-experiments",
      "title": "Integrality and congruence experiments",
-     "result": "no matching \\section"
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.638,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-13-the-original-habiro-ring",
      "title": "The original Habiro ring",
-     "result": "no matching \\section"
+     "prose_ratio": 0.463,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-14-the-habiro-ring-of-a-number-field",
      "title": "The Habiro ring of a number field",
-     "result": "no matching \\section"
+     "prose_ratio": 0.562,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-15-modules-over-the-habiro-ring-of-k-indexed-by",
@@ -694,38 +700,56 @@
     {
      "id": "sec-006-16-admissible-series-and-formal-gaussian-integra",
      "title": "Admissible series and formal Gaussian integration",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-17-the-main-theorems",
      "title": "The main theorems",
-     "result": "no matching \\section"
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.924,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-18-the-relation-with-perturbative-chernsimons-th",
      "title": "The relation with perturbative Chern\u2013Simons theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-19-future-extensions",
      "title": "Future extensions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-2-two-complementary-collections-of-power-series",
      "title": "Two complementary collections of power series at roots of unity",
-     "prose_ratio": 0.169,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.903,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-21-the-infinite-pochhammer-symbol",
      "title": "The infinite Pochhammer symbol",
-     "result": "no matching \\section"
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.88,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-22-admissible-series",
      "title": "Admissible series",
-     "result": "no matching \\section"
+     "prose_ratio": 0.527,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-23-admissibility-of-q-hypergeometric-series",
@@ -740,17 +764,24 @@
     {
      "id": "sec-015-25-formal-gaussian-integration",
      "title": "Formal Gaussian integration",
-     "result": "no matching \\section"
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.866,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-26-algebraicity-via-wkb",
      "title": "Algebraicity via WKB",
-     "result": "no matching \\section"
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.869,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-27-synthesis",
      "title": "Synthesis",
-     "result": "no matching \\section"
+     "prose_ratio": 0.369,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-018-3-integrality-and-gluing-of-p-adic-series",
@@ -770,7 +801,10 @@
     {
      "id": "sec-021-33-proof-of-the-main-theorems",
      "title": "Proof of the main theorems",
-     "result": "no matching \\section"
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-4-examples-and-computations",
@@ -781,17 +815,24 @@
     {
      "id": "sec-023-41-symmetrisation-and-a-residue-formula",
      "title": "Symmetrisation and a residue formula",
-     "result": "no matching \\section"
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.904,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-42-a-rank-one-admissible-series",
      "title": "A rank one admissible series",
-     "result": "no matching \\section"
+     "prose_ratio": 0.856,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-43-torsion-in-the-bloch-group-from-admissible-se",
      "title": "Torsion in the Bloch group from admissible series",
-     "result": "no matching \\section"
+     "prose_ratio": 0.391,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-026-44-some-p-adic-computations",
@@ -801,39 +842,54 @@
     {
      "id": "sec-027-47-a-note-on-modularity",
      "title": "A note on modularity",
-     "result": "no matching \\section"
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-028-5-alternative-approach-habiro-rings-via-congruen",
      "title": "Alternative approach: Habiro rings via congruences",
-     "prose_ratio": 0.189,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-029-51-functions-near-roots-of-unity-and-the-naive-h",
      "title": "Functions near roots of unity and the naive Habiro ring",
-     "result": "no matching \\section"
+     "prose_ratio": 0.635,
+     "coverage_ratio": 0.9,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-030-52-the-habiro-ring-of-a-number-field",
      "title": "The Habiro ring of a number field",
-     "result": "no matching \\section"
+     "prose_ratio": 0.284,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-031-53-examples",
      "title": "Examples",
-     "result": "no matching \\section"
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-032-54-some-wilder-habiro-like-elements",
      "title": "Some wilder Habiro-like elements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.906,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-033-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

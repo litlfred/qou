@@ -7,10 +7,10 @@ section_number: 4
 pages: 24-25
 source_pdf: 2012.00062v3.pdf
 source_sha256: 2aacb7fa43f5e0da
-text_source: latex
-latex_prose_ratio: 0.952
-latex_coverage_ratio: 0.895
 doc_brief: "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY — The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional"
+text_source: latex
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 1.0
 ---
 \label{sec.elliptic}
 
@@ -115,3 +115,10 @@ theta divisor.
   $ \re^{\pi \ri r u^2 + 2 \pi \ri s c_\bb u} = \re^{(r-s)\pi \ri
     u^2}\re^{s\pi i(u+c_\bb)^2}\re^{-s\pi \ri c_\bb^2}$.
 \end{proof}
+
+
+
+
+
+\section{The $\knot{4}_1$ knot}
+\label{sec.41}

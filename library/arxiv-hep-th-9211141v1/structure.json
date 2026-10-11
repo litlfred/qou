@@ -7,7 +7,8 @@
   "bytes": 268162,
   "pages": 34,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -261,6 +262,94 @@
   "likely_scanned": false,
   "toc_entries": 13,
   "sections": 13,
-  "chars_total": 40826
+  "chars_total": 40826,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 18,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-i-introduction-and-summary-of-results",
+     "title": "INTRODUCTION AND SUMMARY OF RESULTS",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.862,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-c-the-ordinary-di\ufb00erential-equations",
+     "title": "The Ordinary Di\ufb00erential Equations",
+     "prose_ratio": 0.487,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-ii-the-system-of-partial-differential-equations",
+     "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
+     "prose_ratio": 0.581,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-iii-the-ordinary-differential-equations",
+     "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
+     "prose_ratio": 0.168,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-iv-asymptotics",
+     "title": "ASYMPTOTICS",
+     "prose_ratio": 0.781,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-1-the-region-x-t12",
+     "title": "The region x << t\u22121/2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-3-the-region-x-t-t14",
+     "title": "The region x \u2212t >> t1/4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-4-the-region-x-t-t",
+     "title": "The region |x \u2212t| << t",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-5-the-asymptotics-of-\u03bbi",
+     "title": "The asymptotics of \u03bbi",
+     "prose_ratio": 0.221,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-1-x-ax-2t-ax-2tf",
+     "title": "(x) = \u2212A\u2032(x \u22122t) + A(x \u22122t)f \u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-1-xf2x-dx-\u03bdf",
+     "title": "(x)f2(x) dx = \u2212\u03bdf \u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

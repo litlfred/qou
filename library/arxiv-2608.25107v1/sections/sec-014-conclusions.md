@@ -7,10 +7,10 @@ section_number: null
 pages: 17-17
 source_pdf: 2608.25107v1.pdf
 source_sha256: 6dca8b99a1f32db4
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.98
 doc_brief: "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples César Jesús-Valls1,∗ 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland — 17 sections: ADoNIS: A Differe"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.99
 ---
 We have presented [ADoNIS]{.smallcaps}, a fully differentiable neutrino interaction event generator. By separating stochastic event generation from the differentiable reweighting of the resulting event bank, [ADoNIS]{.smallcaps} propagates exact derivatives through the nuclear ground state, hard-scattering amplitudes and intranuclear cascade without modifying the underlying interaction physics. Its agreement with ACHILLES across neutrino, electron and hadron probes demonstrates that differentiability can be introduced without loss of physical fidelity.
 

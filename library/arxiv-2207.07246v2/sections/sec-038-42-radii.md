@@ -7,33 +7,28 @@ section_number: 4.2
 pages: 103-105
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
-text_source: latex
-latex_prose_ratio: 0.918
-latex_coverage_ratio: 0.989
 doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES"
+text_source: latex
+latex_prose_ratio: 0.959
+latex_coverage_ratio: 0.991
 ---
-The root mean square (rms) radius $r_m$ can be interpreted as the average distance between any one of the particles and the system's center of mass. The label of the nucleon does not matter, so we can just take nucleon number 1 as reference. The operator can be written as[^1], $$\begin{eqnarray}
+The root mean square (rms) radius $r_m$ can be interpreted as the average distance between any one of the particles and the system's center of mass. The label of the nucleon does not matter, so we can just take nucleon number 1 as reference. The operator can be written as[^1], $$\begin{aligned}
 \hat{r}_m = \left| \hat{\bm{r}}_1 - \frac{1}{A}\sum_{j=1}^A \hat{\bm{r}}_j \right|,
-\end{eqnarray}$$ and we calculate $\langle {r}_m^2 \rangle$ for its ground state expectation value as $$\begin{flalign}
-\langle {r}_m^2 \rangle &=
-\frac{ Re \langle \Phi_0 | \hat{r}_m^2  | \Phi_0  \rangle }   { Re \langle \Phi_0 | \Phi_0  \rangle  } \nonumber \\
-&= \frac{ Re  \langle \Psi_T| e^{-H \Delta \tau}...e^{-H \Delta \tau}
-\Big| {\bm{r}}_1 - \frac{1}{A}\sum_{j=1}^A {\bm{r}}_j \Big|^2
-e^{-H \Delta \tau} ...e^{-H \Delta \tau}| \Psi_T \rangle  }
-{ Re \langle \Psi_T| e^{-H \Delta \tau}...e^{-H \Delta \tau} e^{-H \Delta \tau} ...e^{-H \Delta \tau} | \Psi_T \rangle} .
-\label{rmdef}
-\end{flalign}$$
+\end{aligned}$$ and we calculate $\langle {r}_m^2 \rangle$ for its ground state expectation value as
 
-Note that $\hat{r}_m$ does not commute with $H$, so PIMC is well suited to calculate it. Eq.([\[rmdef\]](#rmdef){reference-type="ref" reference="rmdef"}) can be recast into the form of Eq.([\[OABP\]](#OABP){reference-type="ref" reference="OABP"}) in section [\[Recast\]](#Recast){reference-type="ref" reference="Recast"}. We put the operator $\hat{r}_m^2$ at the middle bead M, the corresponding $g^V_{lr,M}(\mathcal{R})$ can be written as, $$\begin{eqnarray}
+::: flalign
+\_m\^2 &= Re \_0 \| \_0 \
+&= Re \_T\| e\^-H \...e\^-H e\^-H \...e\^-H \| \_T . []{#rmdef label="rmdef"}
+:::
+
+Note that $\hat{r}_m$ does not commute with $H$, so PIMC is well suited to calculate it. Eq.([\[rmdef\]](#rmdef){reference-type="ref" reference="rmdef"}) can be recast into the form of Eq.([\[OABP\]](#OABP){reference-type="ref" reference="OABP"}) in section [\[Recast\]](#Recast){reference-type="ref" reference="Recast"}. We put the operator $\hat{r}_m^2$ at the middle bead M, the corresponding $g^V_{lr,M}(\mathcal{R})$ can be written as, $$\begin{aligned}
 g^V_{lr,M}(\mathcal{R})  = \langle \psi^l_{M\!-\!1}  (\mathcal{R}) | \bm{\mathcal{G}} e^{\frac{- \mathcal{V}_M  \Delta \tau }{2}}
 \left| {\bm{r}}_1 - \frac{1}{A}\sum_{j=1}^A {\bm{r}}_j \right|^2
    e^{\frac{- \mathcal{V}^\dagger_M  \Delta \tau }{2}} \bm{\mathcal{G}} | \psi^r_{M\!+\!1} (\mathcal{R}) \rangle,
 \label{gVRlrradiidef}
-\end{eqnarray}$$ while other functions remain the same as in section [\[Recast\]](#Recast){reference-type="ref" reference="Recast"}. Once we calculated $\langle {r}_m^2 \rangle$, the rms value is simply $r_m=\sqrt{\langle {r}_m^2 \rangle}$. Note that these are point nucleon radii.
+\end{aligned}$$ while other functions remain the same as in section [\[Recast\]](#Recast){reference-type="ref" reference="Recast"}. Once we calculated $\langle {r}_m^2 \rangle$, the rms value is simply $r_m=\sqrt{\langle {r}_m^2 \rangle}$. Note that these are point nucleon radii.
 
-Similarly, we can define the proton(neutron) radii operator $\hat{r}_{p(n)}$ as[^2], $$\begin{equation}
-\hat{r}_{p(n)} = \left| \hat{\bm{r}}_1 - \frac{1}{A}\sum_{j=1}^A \hat{\bm{r}}_j \right| P^1_{p(n)},
-\end{equation}$$ where $P^1_{p}=\frac{1+\tau_{1z}}{2}$ and $P^1_{n}=\frac{1-\tau_{1z}}{2}$ are the proton and neutron projection operator respectively for nucleon whose label is 1.
+Similarly, we can define the proton(neutron) radii operator $\hat{r}_{p(n)}$ as[^2], $$\hat{r}_{p(n)} = \left| \hat{\bm{r}}_1 - \frac{1}{A}\sum_{j=1}^A \hat{\bm{r}}_j \right| P^1_{p(n)},$$ where $P^1_{p}=\frac{1+\tau_{1z}}{2}$ and $P^1_{n}=\frac{1-\tau_{1z}}{2}$ are the proton and neutron projection operator respectively for nucleon whose label is 1.
 
 ::: {#TablePIMC3}
    $^A$Z    $r_m$ (fm)    $r_p$ (fm)   $r_n$ (fm)

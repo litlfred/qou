@@ -7,10 +7,10 @@ section_number: 5
 pages: 11-13
 source_pdf: 1012.4941v2.pdf
 source_sha256: 1932a359f3bafb83
-text_source: latex
-latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.939
 doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linea r and integer programming problems."
+text_source: latex
+latex_prose_ratio: 0.988
+latex_coverage_ratio: 0.964
 ---
 []{#sec:searching label="sec:searching"} The question remaining is how to test ILP-feasibility of a $c$-layer in an efficient way. Our key observation is that some optimal integral solution is close to the fixed space if the group of symmetries acts sufficiently transitive.
 
@@ -57,15 +57,14 @@ Due to the invariance of ${\mathbb{Z}}^n$ under translation by integer vectors w
 
     Letting $x'=\gamma x$ we observe that $x_i$ and $x'_i$ are congruent modulo two for all $i\in[n]$. Since $x_u\ne x_v=x_{\gamma(u)}=x'_u$ we have $x\ne x'$, and hence $$y \ = \ \frac{1}{2}(x+x') \ = \ \frac{1}{2}(x+\gamma x)$$ is an integer point in the interval $[x,\gamma x]$.
 
-2.  Otherwise the point $x$ has exactly two different coordinates $x_u$ and $x_v$, one of them being even, the other one odd. Without loss of generality, $x_i=x_u$ for all $i\in I$ and $x_j=x_v$ for all $j\in J$. Due to the transitivity of $\Gamma$ there is an automorphism $\gamma\in\Gamma$ with $\gamma e_u=e_v$. Then $x$ and $\gamma x$ are distinct points. Consider an interior point $$\begin{equation}
-          y \ = \ \lambda x + (1-\lambda)\gamma x \quad \text{for } 0<\lambda<1 \label{eq:y}
-    \end{equation}$$ in the line segment $[x,\gamma x]$. We want to find a parameter $\lambda$ such that $y$ is integral. As $x$ has only two distinct coordinates the $i$-th coordinate of $y$ can attain the following values only: $$\begin{align}
+2.  Otherwise the point $x$ has exactly two different coordinates $x_u$ and $x_v$, one of them being even, the other one odd. Without loss of generality, $x_i=x_u$ for all $i\in I$ and $x_j=x_v$ for all $j\in J$. Due to the transitivity of $\Gamma$ there is an automorphism $\gamma\in\Gamma$ with $\gamma e_u=e_v$. Then $x$ and $\gamma x$ are distinct points. Consider an interior point $$y \ = \ \lambda x + (1-\lambda)\gamma x \quad \text{for } 0<\lambda<1 \label{eq:y}$$ in the line segment $[x,\gamma x]$. We want to find a parameter $\lambda$ such that $y$ is integral. As $x$ has only two distinct coordinates the $i$-th coordinate of $y$ can attain the following values only: $$\begin{aligned}
           y_i \ &= \ \lambda x_u + (1-\lambda) x_u \ = \ x_u \quad \text{or} \label{eq:yi:uu}\\
           y_i \ &= \ \lambda x_v + (1-\lambda) x_v \ = \ x_v \quad \text{or} \label{eq:yi:vv}\\
           y_i \ &= \ \lambda x_u + (1-\lambda) x_v \ = \ \lambda(x_u-x_v)+x_v \quad
           \text{or} \label{eq:yi:uv} \\
           y_i \ &= \ \lambda x_v + (1-\lambda) x_u \ = \ \lambda(x_v-x_u)+x_u \, . \label{eq:yi:vu}
-    \end{align}$$ Since $x$ is integral coordinates of types [\[eq:yi:uu\]](#eq:yi:uu){reference-type="eqref" reference="eq:yi:uu"} and [\[eq:yi:vv\]](#eq:yi:vv){reference-type="eqref" reference="eq:yi:vv"} are integers for arbitrary parameters $\lambda\in(0,1)$. The coordinates of types [\[eq:yi:uv\]](#eq:yi:uv){reference-type="eqref" reference="eq:yi:uv"} and [\[eq:yi:vu\]](#eq:yi:vu){reference-type="eqref" reference="eq:yi:vu"} are integral if $\lambda\cdot|x_u-x_v|\in{\mathbb{Z}}$.
+        
+    \end{aligned}$$ Since $x$ is integral coordinates of types [\[eq:yi:uu\]](#eq:yi:uu){reference-type="eqref" reference="eq:yi:uu"} and [\[eq:yi:vv\]](#eq:yi:vv){reference-type="eqref" reference="eq:yi:vv"} are integers for arbitrary parameters $\lambda\in(0,1)$. The coordinates of types [\[eq:yi:uv\]](#eq:yi:uv){reference-type="eqref" reference="eq:yi:uv"} and [\[eq:yi:vu\]](#eq:yi:vu){reference-type="eqref" reference="eq:yi:vu"} are integral if $\lambda\cdot|x_u-x_v|\in{\mathbb{Z}}$.
 
     We assumed that $x$ is contained in the $k$-th $\mathbbm{1}$-layer for some $k=0,1,\dots,n-1$ and that it is not a core point. In Example [\[exmp:core\]](#exmp:core){reference-type="ref" reference="exmp:core"} it has been observed that the core points in these layers are the vertices of a translated hypersimplex. We learned that some coordinate difference $|x_i-x_k|$ must exceed one. Since all coefficients are equal to either $x_u$ or $x_v$ it follows that $|x_u-x_v|\ge 2$. We can now set $$\lambda \ = \ \frac{1}{|x_u-x_v|}$$ in the formula [\[eq:y\]](#eq:y){reference-type="eqref" reference="eq:y"}.
 

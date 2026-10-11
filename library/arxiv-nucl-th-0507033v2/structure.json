@@ -362,8 +362,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "virial_nuc_rev2.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 14,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -378,16 +378,18 @@
     {
      "id": "sec-000-i-introduction",
      "title": "INTRODUCTION",
-     "prose_ratio": 0.953,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-ii-formalism",
      "title": "FORMALISM",
-     "prose_ratio": 0.569,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.71,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-2-qnqp",
@@ -407,7 +409,8 @@
     {
      "id": "sec-005-c-virial-coe\ufb03cients",
      "title": "Virial Coe\ufb03cients",
-     "result": "no matching \\section"
+     "prose_ratio": 0.02,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-2-qnqp-9",
@@ -427,7 +430,7 @@
     {
      "id": "sec-009-iii-results",
      "title": "RESULTS",
-     "prose_ratio": 0.215,
+     "prose_ratio": 0.251,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -443,7 +446,10 @@
     {
      "id": "sec-012-c-pressure",
      "title": "Pressure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.839,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-8-t-\u03bb3nbbpn-2t-b",
@@ -463,8 +469,8 @@
     {
      "id": "sec-016-iv-conclusions",
      "title": "CONCLUSIONS",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

@@ -7,10 +7,10 @@ section_number: 3
 pages: 8-14
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
-text_source: latex
-latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.957
 doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.986
 ---
 []{#s:main label="s:main"} In this section we prove the main result, Theorem [\[t:volumedecreases\]](#t:volumedecreases){reference-type="ref" reference="t:volumedecreases"}. The strategy is to modify an efficient relative fundamental cycle for $(M,\partial M)$ to a fundamental cycle on the filling, without increasing norm by too much.
 
@@ -59,9 +59,7 @@ We now must define the homotopies $f_t(\sigma)$. For each $x\in
 
 2.  $\tau(x)$ has minimal dimension subject to [\[containsx\]](#containsx){reference-type="eqref" reference="containsx"}.
 
-Since $\tau(x)$ lies in the open star neighborhood of $\tau$, the simplex $\tau$ is a face of $\tau(x)$. Thus both $\sigma(x)$ and $a(\sigma)(x)$ lie in $\tau(x)$. Convex combination is well-defined for points in the same simplex, so we may take, for $t\in [0,1]$, $$\begin{equation*}
-  f_t(\sigma)(x) = (1-t)\sigma(x) + t\, a(\sigma)(x).
-\end{equation*}$$ The reader may check that $f_t$ is well-defined, continuous, and satisfies the property $f_t(\sigma|F)=f_t(\sigma)|F$ for each face $F$ of $\Delta^n$.
+Since $\tau(x)$ lies in the open star neighborhood of $\tau$, the simplex $\tau$ is a face of $\tau(x)$. Thus both $\sigma(x)$ and $a(\sigma)(x)$ lie in $\tau(x)$. Convex combination is well-defined for points in the same simplex, so we may take, for $t\in [0,1]$, $$f_t(\sigma)(x) = (1-t)\sigma(x) + t\, a(\sigma)(x).$$ The reader may check that $f_t$ is well-defined, continuous, and satisfies the property $f_t(\sigma|F)=f_t(\sigma)|F$ for each face $F$ of $\Delta^n$.
 
 Finally, we note that if $\tau$ is some affine map from $\Delta^n$ to itself so that $\sigma\circ \tau = \sigma$, then $a(\sigma\circ\tau) = a(\sigma)$ and therefore $f_t(\sigma\circ\tau)
   = f_t(\sigma)$ for all $t$. ◻
@@ -74,10 +72,8 @@ Finally, we note that if $\tau$ is some affine map from $\Delta^n$ to itself so 
 ::: proof
 *Proof.* The chain $c$ is a finite linear combination $c = \sum_{i=1}^{m'}\lambda_i\sigma_i$ of singular simplices $\sigma_i\colon\thinspace\Delta^k\to N$. The idea is to "preassemble" the simplices to get a map $\phi\colon\thinspace K_c \to N$ from a certain CW complex $K_c$, so that $c$ is $\phi_\sharp$ of a linear combination of characteristic maps. We can use Lemma [\[l:affine\]](#l:affine){reference-type="ref" reference="l:affine"} to homotope the "boundary" of $K_c$ to a simplicial map, and then apply the homotopy extension property of CW pairs.
 
-More precisely, let $J = \{1,\ldots m'\}/\sim$, where $i\sim j$ if $\sigma_i = \sigma_j\circ q$ for some permutation $q$. We define $$\begin{equation}
-\label{kcdef}
-    K_c = \left( \coprod_{[i]\in J} \Delta^k_{[i]} \right)/\sim
-\end{equation}$$ where $x_1\sim x_2$ whenever there are $(k-1)$--dimensional faces $F_1\subset \Delta^k_{[i_1]}$ and $F_2\subset \Delta^k_{[i_2]}$ satisfying
+More precisely, let $J = \{1,\ldots m'\}/\sim$, where $i\sim j$ if $\sigma_i = \sigma_j\circ q$ for some permutation $q$. We define $$\label{kcdef}
+    K_c = \left( \coprod_{[i]\in J} \Delta^k_{[i]} \right)/\sim$$ where $x_1\sim x_2$ whenever there are $(k-1)$--dimensional faces $F_1\subset \Delta^k_{[i_1]}$ and $F_2\subset \Delta^k_{[i_2]}$ satisfying
 
 1.  $x_j\in F_i$ for $j\in \{1,2\}$, and
 
@@ -139,16 +135,14 @@ The boundary $a(\mathrm{trans}(z))$ bounds an $(s+1)$--chain $c_2$ in $T$ of $l^
 
 We now prove the main theorem.
 
-::::: proof
+::: proof
 *Proof of Theorem [\[t:volumedecreases\]](#t:volumedecreases){reference-type="ref" reference="t:volumedecreases"}.* We suppose that $M$ is a compact $n$--manifold with boundary a union of tori, so that the interior admits a complete hyperbolic metric of finite volume. We fix a $2\pi$--filling $M(T_1,\ldots,T_m)$. To prove the theorem we must show $$0< \|M(T_1,\ldots,T_m)\| \leq \frac{\mathrm{Vol}(V)}{v_n},$$ where $v_n$ is the volume of a regular ideal hyperbolic $n$--simplex.
 
 The lower bound follows from [@MY] and is given above in Corollary [\[c:lowerbound\]](#c:lowerbound){reference-type="ref" reference="c:lowerbound"}.
 
 We now establish the upper bound. The strategy is to first choose a symmetric representative $c_0$ for the (relative) fundamental class of $(M,\partial M)$ which is close to optimal, and then modify it to obtain a fundamental class $c_0'$ for $M(T_1,\ldots,T_m)$. If such a modification can be done in such a way that $|c_0'|_1$ is within some arbitrarily small constant of $\|M,\partial M\|$, then we will have shown: $$\|M(T_1,\ldots,T_m)\|\leq \|M,\partial M\|$$
 
-The first step is to pass to a rational cycle. Let $\epsilon>0$. Let $c_0\in C_n(M;\mathbb{R})$ be a real symmetric singular relative cycle representing $[M,\partial M]$, and satisfying $$\begin{equation}
-\|c_0\|_1<\|M,\partial M\|+\epsilon
-\end{equation}$$ By Lemma [\[l:rational\]](#l:rational){reference-type="ref" reference="l:rational"}, there is a symmetric rational singular relative cycle $c_1\in C_n(M;\mathbb{Q})$ homologous to $c_0$ with $\|c_1-c_0\|_1<\epsilon$.
+The first step is to pass to a rational cycle. Let $\epsilon>0$. Let $c_0\in C_n(M;\mathbb{R})$ be a real symmetric singular relative cycle representing $[M,\partial M]$, and satisfying $$\|c_0\|_1<\|M,\partial M\|+\epsilon$$ By Lemma [\[l:rational\]](#l:rational){reference-type="ref" reference="l:rational"}, there is a symmetric rational singular relative cycle $c_1\in C_n(M;\mathbb{Q})$ homologous to $c_0$ with $\|c_1-c_0\|_1<\epsilon$.
 
 We now pick a finite cover and triangulation of the boundary so that $\partial c_1$ lifts to a chain which is small with respect to that triangulation. Let $t_{n-1}
 = 2^{n-1}(n-1)!$.
@@ -197,4 +191,4 @@ q\|c_1\|_1,$$ and with $$\|\partial c_4\|_1\leq \|\partial c_3\|_1 \leq
 Now we will take this relative cycle $c$ for $[ M,\partial M]$, and modify it to an honest cycle in $M(T_1,\ldots,T_m)$. We start by pushing it forward from $M$ to $M(T_1,\ldots,T_m)$ by a map of pairs $$h\colon\thinspace(M,\partial M)\to
  (M(T_1,\ldots,T_m),Z),$$ where $Z$ is the singular set of $M(T_1,\ldots,T_m)$ and $h$ is the quotient map described in Definition [\[d:filling\]](#d:filling){reference-type="ref" reference="d:filling"}. (Here we are implicitly identifying $M$ with the space $\overline{M}$ described before Definition [\[d:filling\]](#d:filling){reference-type="ref" reference="d:filling"}.) Let $\partial h$ be $h$ restricted to $\partial M$. The chain $(\partial h)_\sharp(\partial c)$ is an $(n-1)$--cycle in $Z$. Lemma [\[l:thurstonlemma\]](#l:thurstonlemma){reference-type="ref" reference="l:thurstonlemma"} implies there is some $K$ depending only on $n$ so that $(\partial h)_\sharp(\partial c)$ can be filled in $Z$ with a $n$--chain $c'$ satisfying $\|c'\|_1\leq K \|(\partial h)_\sharp(\partial c)\|_1
 \leq K t_{n-1}\epsilon$. It is easy to check that $h_\sharp c-c'$ is a fundamental cycle for $M(T_1,\ldots,T_m)$. Moreover, we have $$\|h_\sharp c-c'\|_1 \leq \| M,\partial M\|+(2+Kt_{n-1})\epsilon.$$ Letting $\epsilon$ tend to zero, we have established $$\|M(T_1,\ldots,T_m)\| \leq \| M,\partial M\|.$$ An application of the proportionality theorem for finite volume hyperbolic manifolds (Theorem [\[t:proportionality\]](#t:proportionality){reference-type="ref" reference="t:proportionality"}) gives the upper bound: $$\|M(T_1,\ldots,T_m)\| \leq \frac{\mathrm{Vol}(V)}{v_n}.$$ ◻
-:::::
+:::

@@ -7,10 +7,10 @@ section_number: null
 pages: 6-9
 source_pdf: 0305275v1.pdf
 source_sha256: 9b356a9d716a0d3e
-text_source: latex
-latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.995
 doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2 , C)."
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.969
 ---
 []{#s due label="s due"}
 

@@ -7,10 +7,10 @@ section_number: null
 pages: 1-3
 source_pdf: 0405249v5.pdf
 source_sha256: bc699482e5cd7679
-text_source: latex
-latex_prose_ratio: 0.918
-latex_coverage_ratio: 0.962
 doc_brief: "Twisted homology of quantum SL(2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra o f the quan- tum SL(2) group"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.991
 ---
 Cyclic homology and cohomology were independently discovered by Alain Connes [@connes0] and Boris Tsygan [@tsygan] in the early 1980's, and should be thought of as extensions of de Rham (co)homology to various categories of noncommutative algebras. Quantum groups also appeared in the same period, with the first example of a "compact quantum group" in the C\*-algebraic setting being Woronowicz's "quantum $SU(2)$" [@wo_suq2].
 
@@ -21,7 +21,7 @@ One candidate is twisted Hochschild and cyclic (co)homology defined by Kusterman
 In this paper we compute the twisted Hochschild and cyclic homologies $HH_\ast^\sigma(\mathcal{A})$, $HC_\ast^\sigma(\mathcal{A})$ for the coordinate algebra $\mathcal{A}=\mathcal{A}(SL_q(2))$ of the quantum $SL(2)$ group, with generic deformation parameter $q$. We consider all automorphisms $\sigma$ of the form $a,b,c,d \mapsto \lambda a, \mu b, \mu^{-1} c, \lambda^{-1} d$, where $a, b, c, d$ are the standard generators, and $\lambda$, $\mu$ are nonzero elements of $k$. As an overview we collect the dimensions of $HH_n^\sigma(\mathcal{A})$ as a $k$-vector space, see the main text for explicit formulas for generators:
 
 ::: thm
-[]{#erga label="erga"} We have $$\begin{eqnarray}
+[]{#erga label="erga"} We have $$\begin{aligned}
 && \mathrm{dim}\,HH_n^\sigma(\mathcal{A})=0,\quad n > 3,\nonumber\\   
 && \mathrm{dim}\,HH_3^\sigma(\mathcal{A})=\left\{
     \begin{array}{ll}
@@ -51,23 +51,17 @@ In this paper we compute the twisted Hochschild and cyclic homologies $HH_\ast^\
     \infty \quad & \mu=1,\\
     2 \quad & \lambda=q^{-(N+1)},\mu=q^{\pm(M+1)},\\
     0 \quad & \mathrm{otherwise},
-    \end{array}\right.\nonumber
-\end{eqnarray}$$ for $M, N \in \mathbb{N}$.
+    \end{array}\right.\nonumber 
+\end{aligned}$$ for $M, N \in \mathbb{N}$.
 :::
 
 Strikingly (Theorem [\[HH_3_for_any_sigma\]](#HH_3_for_any_sigma){reference-type="ref" reference="HH_3_for_any_sigma"}), there exists a family of automorphisms for which the twisted Hochschild dimension takes the classical value three (note also that the homological dimension of $\mathcal{A}(SL_q(2))$ is three [@ls]) - the twisted theory avoids the "dimension drop\". Remarkably, the simplest such automorphism ($\lambda= q^{-2},\mu=1$) is the canonical modular automorphism associated to the Haar functional on $\mathcal{A}$. Similar results were obtained for $\mathrm{Podle{\acute{s}}}$ quantum spheres [@tom] and quantum hyperplanes [@si].
 
-In [@FT], Feng and Tsygan considered formal quantizations, with $\mathcal{A}(G_q)$ a Hopf algebra over $\mathbb{C}[[\hbar]]$ with $q=e^\hbar$. They showed that for a Hopf algebra $\mathcal{A}$ over a field $k$, with coproduct $\Delta$, counit $\varepsilon$ and antipode $S$, and an $\mathcal{A}$-bimodule $\mathcal{M}$, there is an isomorphism $$\begin{equation}
-H_n(\mathcal{A},\mathcal{M}) \simeq 
-\mathrm{Tor}_n^\mathcal{A}(\mathcal{M}',k)
-\end{equation}$$ Here, $\mathcal{M}'$ is $\mathcal{M}$ as a linear space with right action given by $$\begin{equation}
-m \blacktriangleleft a:= \sum \; S(a_{(2)})ma_{(1)}
-\end{equation}$$ using Sweedler's notation for the coproduct, and $k=\mathcal{A}/ \mathrm{ker}\,\varepsilon$ is the trivial left $\mathcal{A}$-module. Then they computed these $\mathrm{Tor}$-groups using the spectral sequence associated to the filtration induced by $\hbar$.
+In [@FT], Feng and Tsygan considered formal quantizations, with $\mathcal{A}(G_q)$ a Hopf algebra over $\mathbb{C}[[\hbar]]$ with $q=e^\hbar$. They showed that for a Hopf algebra $\mathcal{A}$ over a field $k$, with coproduct $\Delta$, counit $\varepsilon$ and antipode $S$, and an $\mathcal{A}$-bimodule $\mathcal{M}$, there is an isomorphism $$H_n(\mathcal{A},\mathcal{M}) \simeq 
+\mathrm{Tor}_n^\mathcal{A}(\mathcal{M}',k)$$ Here, $\mathcal{M}'$ is $\mathcal{M}$ as a linear space with right action given by $$m \blacktriangleleft a:= \sum \; S(a_{(2)})ma_{(1)}$$ using Sweedler's notation for the coproduct, and $k=\mathcal{A}/ \mathrm{ker}\,\varepsilon$ is the trivial left $\mathcal{A}$-module. Then they computed these $\mathrm{Tor}$-groups using the spectral sequence associated to the filtration induced by $\hbar$.
 
-In this paper we compute $\mathrm{Tor}_n^\mathcal{A}(\mathcal{M}',k)$ from a Koszul-type free resolution $$\begin{equation}
-    0 \rightarrow \mathcal{A}\rightarrow \mathcal{A}^3 \rightarrow \mathcal{A}^3 
-    \rightarrow \mathcal{A}\rightarrow k \rightarrow 0
-\end{equation}$$ of $k$. Noncommutative Koszul resolutions were studied by several authors, in particular Wambst [@wambst], but as far as we know were not applied to quantum groups. In our opinion this resolution shows very clearly the geometric mechanisms behind the computations. We will see that the maps of the resulting complex computing the twisted Hochschild homology become zero for $q=1$, so one obtains the Hochschild-Kostant-Rosenberg theorem for $SL(2)$ (the algebraic cotangent bundle of $SL(2)$ is trivial). However, for $q \neq 1$ this does not happen for any twisting automorphism.
+In this paper we compute $\mathrm{Tor}_n^\mathcal{A}(\mathcal{M}',k)$ from a Koszul-type free resolution $$0 \rightarrow \mathcal{A}\rightarrow \mathcal{A}^3 \rightarrow \mathcal{A}^3 
+    \rightarrow \mathcal{A}\rightarrow k \rightarrow 0$$ of $k$. Noncommutative Koszul resolutions were studied by several authors, in particular Wambst [@wambst], but as far as we know were not applied to quantum groups. In our opinion this resolution shows very clearly the geometric mechanisms behind the computations. We will see that the maps of the resulting complex computing the twisted Hochschild homology become zero for $q=1$, so one obtains the Hochschild-Kostant-Rosenberg theorem for $SL(2)$ (the algebraic cotangent bundle of $SL(2)$ is trivial). However, for $q \neq 1$ this does not happen for any twisting automorphism.
 
 A summary of this paper is as follows. In section [\[section_thch\]](#section_thch){reference-type="ref" reference="section_thch"} we recall how the twisted theory was discovered [@kmt], then give the definitions of $HH_\ast^\sigma(\mathcal{A})$ and $HC_\ast^\sigma(\mathcal{A})$, and the underlying cyclic object. We specialize to Hopf algebras and explain the methods adapted from [@FT]. We then present the general scheme of the noncommutative Koszul complexes used here. In section [\[section_slq2_suq2\]](#section_slq2_suq2){reference-type="ref" reference="section_slq2_suq2"} we introduce the quantum $SL(2)$ group. In section [\[section_th_slq2\]](#section_th_slq2){reference-type="ref" reference="section_th_slq2"} we present our calculations of $HH_\ast^\sigma(\mathcal{A})$ for $\mathcal{A}=\mathcal{A}(SL_q (2))$.
 

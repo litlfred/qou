@@ -8,123 +8,226 @@ pages: 6-9
 source_pdf: 9805116v3.pdf
 source_sha256: 65ce47d232d61de4
 doc_brief: "Weak Hopf Algebras — We give an introduction to the theory of weak Hopf algebras pr oposed recently as a coassociative alternative of weak quasi-Hopf algebras."
+text_source: latex
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 0.954
 ---
-In a WBA deﬁne the maps ⊓L, ⊓R:A →A by the formulae
-⊓L (x) := ε(1(1)x)1(2) , ⊓R(x) := 1 (1)ε(x1(2)) (2.1)
-and introduce the notation AL := ⊓L(A),AR := ⊓R(A) for their images. The analogue objects
-in the dual bialgebra ˆA will be denoted by ˆ⊓L, ˆ⊓R, ˆAL, and ˆAR, respectively.
-Substituting y = 1 in Axiom (A.6b) one obtains immediately the identities
-ε(x ⊓L (y)) = ε(xy) (2 .2a) ε(⊓R(x)y) = ε(xy) (2 .2b)
-⊓L ◦ ⊓L = ⊓L (2.3a) ⊓R ◦ ⊓R = ⊓R (2.3b)
-As a ﬁrst application of the duality principle take 1 the duals of Eqns(2.2a-b),
-1(1) ⊗ ⊓L(1(2)) = 1 (1) ⊗ 1(2) = ⊓R(1(1)) ⊗ 1(2) .
+In a WBA define the maps $\PL,\PR\colon A\to A$ by the formulae
+\beq                              \label{Pi}
+\PL(x):=\eps(\1\c x)\1\cc\ ,\qquad
+\PR(x):=\1\c\eps(x\1\cc)
+\eeq
+and introduce the notation $A^L:=\PL(A)$, $A^R:=\PR(A)$ for their
+images. The analogue objects in the dual bialgebra $\duA$ will be
+denoted by $\duPL,\duPR,\duA^L,$ and $\duA^R$, respectively.
+ 
+Substituting $y=\1$ in Axiom (A.6b) one obtains
+immediately the identities
+\begin{lrarray}
+\eps(x\PL(y))=\eps(xy)\eql&
+\eps(\PR(x)y)=\eps(xy)\eqr\label{5}\\
+\PL\circ\PL=\PL\eql&\PR\circ\PR=\PR\eqr\label{6}
+\end{lrarray}
+As a first application of the duality principle
+take\footnote{In taking the transpose of a statement with
+$\PLR$ use the fact that in a WBA\hfill\break
+$\bra\varphi,\PL(x)\ket=\bra\du1\c\o\du1\cc,\1\c\o
+x\ket\bra\varphi,\1\cc\ket=\bra\duPL(\varphi),x\ket$ and similarly
+$\bra\varphi,\PR(x)\ket=\bra\duPR(\varphi),x\ket$.}
+the duals of Eqns(\ref{5}a-b),
+\[\1\c\o\PL(\1\cc)\ =\ \1\c\o\1\cc\ =\ \PR(\1\c)\o\1\cc\ .\]
 Then these are identities in any WBA. It follows that
-∆(1) ∈ AR ⊗ AL . (2.4)
-Lemma 2.2 The counit deﬁnes a non-degenerate bilinear form
-xL ∈AL,yR ∈AR ↦→ε(yRxL) ∈K .
-HenceAL ∼=AR as K-spaces.
-Proof:
-ε(yRxL) = 0 ∀yR ∈AR =⇒ xL =ε(1(1)xL)1(2) = 0
-ε(yRxL) = 0 ∀xL ∈AL =⇒ yR = 1(1)ε(yR1(2)) = 0
-where we used (2.4). Q.e.d.
-Returning to Eqns(2.2a-b) and substituting them into the de ﬁnitions (2.1) one obtains
-⊓L(x ⊓L (y)) = ⊓L(xy) (2 .5a) ⊓R(⊓R(x)y) = ⊓R(xy) (2 .5b)
+\beq
+\cop(\1)\ \in\ A^R\ \o\ A^L\ .              \label{9}
+\eeq
+\begin{lem}
+The counit defines a non-degenerate bilinear form
+$$x^L\in A^L, y^R\in A^R\ \mapsto\ \eps(y^Rx^L)\in K\ .$$
+Hence $A^L\cong A^R$ as $K$-spaces.
+\end{lem}
+\Proof
+\beanon
+\eps(y^Rx^L)=0\ \forall y^R\in A^R &\Longrightarrow&
+x^L=\eps(\1\c x^L)\1\cc=0\\
+\eps(y^Rx^L)=0\ \forall x^L\in A^L &\Longrightarrow&
+y^R=\1\c\eps(y^R\1\cc)=0
+\eeanon
+where we used (\ref{9}).\qed
+ 
+Returning to Eqns(\ref{5}a-b) and substituting them into the
+definitions (\ref{Pi}) one obtains
+\begin{lrarray}
+\PL(x\PL(y))=\PL(xy)\eql&
+\PR(\PR(x)y)=\PR(xy)\eqr\label{10}
+\end{lrarray}
 The duals of (2.5a-b),
-∆( AL) ⊂A ⊗AL (2.6a) ∆( AR) ⊂AR ⊗A (2.6b)
-tell us that AL and AR are left, respectively right coideals in the coalgebra A. Using Axiom
-(A.7b) we can obtain explicit expressions for these coprodu cts
-∆( xL) = ε(1(1)xL)1(2) ⊗ 1(3) =ε(1(1′ )xL)1(1)1(2′) ⊗ 1(2) = 1 (1)xL ⊗ 1(2) (2.7a)
-∆( xR) = 1 (1) ⊗ 1(2)ε(xR1(3)) = 1 (1) ⊗ 1(1′)1(2)ε(xR1(2′)) = 1 (1) ⊗xR1(2) (2.7b)
-where xL and xR are meant to denote arbitrary elements of AL, resp. AR.
-1In taking the transpose of a statement with ⊓L/R use the fact that in a WBA
-⟨ϕ, ⊓L(x)⟩= ⟨ˆ1(1) ⊗ ˆ1(2), 1(1) ⊗ x⟩⟨ϕ, 1(2)⟩= ⟨ˆ⊓L(ϕ), x⟩ and similarly ⟨ϕ, ⊓R(x)⟩= ⟨ˆ⊓R(ϕ), x⟩.
-6
-Lemma 2.3 For all x ∈A we have the identities
-x(1) ⊗ ⊓L(x(2)) = 1 (1)x ⊗ 1(2) (2.8a)
-⊓R(x(1)) ⊗x(2) = 1 (1) ⊗x1(2) (2.8b)
-Proof: Using Axiom (A.7b) one obtains
-x(1) ⊗ε(1(1)x(2))1(2) = 1 (1′)x(1)ε(1(1)1(2′)x(2)) ⊗ 1(2) = 1(1)x(1)ε(1(2)x(2)) ⊗ 1(3) =
-= 1 (1)x ⊗ 1(2)
-1(1)ε(x(1)1(2)) ⊗x(2) = 1 (1) ⊗ε(x(1)1(1′)1(2))x(2)1(2′) = 1(1) ⊗ε(x(1)1(2))x(2)1(3) =
-= 1 (1) ⊗x1(2)
-Q.e.d.
+\begin{lrarray}
+\cop(A^L)\subset A\o A^L\eql&
+\cop(A^R)\subset A^R\o A\eqr\label{11}
+\end{lrarray}
+tell us that $A^L$ and $A^R$ are left, respectively right coideals
+in the coalgebra $A$. Using Axiom (A.7b) we can obtain explicit
+expressions for these coproducts
+\beabc
+\cop(x^L)&=\eps(\1\c x^L)\1\cc\o\1\ccc=\eps(\1\cp x^L)\1\c\1\ccp
+\o\1\cc=&\1\c x^L\o\1\cc\label{12a}\\
+\cop(x^R)&=\1\c\o\1\cc\eps(x^R\1\ccc)=\1\c\o\1\cp\1\cc\eps(x^R\1\ccp)
+       =&\1\c\o x^R\1\cc\label{12b}
+\eeabc
+where $x^L$ and $x^R$ are meant to denote arbitrary elements of
+$A^L$, resp. $A^R$.
+ 
+\begin{lem}
+For all $x\in A$ we have the identities
+\beabc
+x\c\o\PL(x\cc)&=&\1\c x\o\1\cc\label{13a}\\
+\PR(x\c)\o x\cc&=&\1\c\o x\1\cc\label{13b}
+\eeabc
+\end{lem}
+\Proof Using Axiom (A.7b) one obtains
+\beanon
+x\c\o\eps(\1\c x\cc)\1\cc&=&\1\cp x\c\eps(\1\c\1\ccp x\cc)\o\1\cc
+   =\1\c x\c\eps(\1\cc x\cc)\o\1\ccc=\\
+   &=&\1\c x\o\1\cc\\
+\1\c\eps(x\c\1\cc)\o x\cc&=&\1\c\o\eps(x\c\1\cp\1\cc)x\cc\1\ccp
+   =\1\c\o\eps(x\c\1\cc)x\cc\1\ccc=\\
+   &=&\1\c\o x\1\cc
+\eeanon
+\qed
+ 
 As a consequence we obtain the dual statements
-x ⊓L (y) = ε(x(1)y)x(2) (2.9a) ⊓R(x)y =y(1)ε(xy(2)) . (2.9b)
-Proposition 2.4 LetA be a WBA. Then AL and AR are subalgebras of A containing 1 and
-xLyR = yRxL for all xL ∈AL and yR ∈AR . (2.10)
-Proof: Eqns(2.8a-b) imply the relations
-1(1)1(1′) ⊗ 1(2) ⊗ 1(2′) = 1 (1) ⊗ ⊓L(1(2)) ⊗ 1(3) (2.11a)
-1(1) ⊗ 1(1′) ⊗ 1(2)1(2′) = 1 (1) ⊗ ⊓R(1(2)) ⊗ 1(3) (2.11b)
-Now either Axiom (A.7a) or (A.7b) show that on the RHS of (2.11 a) the ﬁrst tensor factor
-belongs to AR and on the RHS of (2.11b) the last factor belongs to AL. This is suﬃcient for
-AR, respectively AL to be closed under multiplication. Hence they are algebras. Obviously
-1 ∈AL ∩AR since ⊓L(1) = 1 = ⊓R(1). In order to see commutativity of left and right elements
-just compare Axioms (A.7a) and (A.7b). Q.e.d.
-As the duals of the statements that AL andAR are subalgebras we obtain that Ker ⊓L and
-Ker ⊓R are coideals of the coalgebra A, i.e.
-∆(Ker ⊓C) ⊂ A ⊗ Ker ⊓C + Ker ⊓C ⊗A , (2.12)
-ε(Ker ⊓C) = 0 , C =L,R .
-On the other hand, being the annihilator of the left coideal ˆAL, Ker ⊓L is a left ideal of the
-algebra A and similarly, Ker ⊓R is a right ideal.
-Lemma 2.5 Consider AL and A as left AL-modules by left multiplication. Then ⊓L: A →AL
-is a left AL-module map. Analogously, ⊓R:A → AR is a right AR-module map. That is to
-say
-⊓L (⊓L(x)y) = ⊓L(x) ⊓L (y) (2.13a)
-⊓R(x ⊓R (y)) = ⊓R(x) ⊓R (y) (2.13b)
-hold true for all x,y ∈A.
-7
-Proof: At ﬁrst use the deﬁnition of ⊓L/R, then Eqn(2.2a-b), and ﬁnally Eqn(2.7a-b):
-⊓L(⊓L(x)y) = ε(1(1) ⊓L (x)y)1(2) =ε(1(1) ⊓L (x) ⊓L (y))1(2) = ⊓L(x) ⊓L (y)
-⊓R(x ⊓R (y)) = 1 (1)ε(x ⊓R (y)1(2)) = 1 (1)ε(⊓R(x) ⊓R (y)1(2)) = ⊓R(x) ⊓R (y)
-Q.e.d.
-Our next assertion about WBA-s establishes a canonical isom orphism between the left
-(right) subalgebra of A and the right (left) subalgebra of ˆA. Since the existence of a common
-non-trivial subalgebra of A and ˆA for Hopf algebras is by far not typical, this result is the ﬁrs t
-hint towards the fundamental role AL and AR will play in the theory of WHAs.
-In order to formulate the statement we introduce the Sweedle r arrow notation
-x⇀ϕ :=ϕ(1)⟨ϕ(2),x ⟩, ϕ↼x := ⟨ϕ(1),x ⟩ϕ(2) . (2.14)
-Since A is the dual WBA of ˆA, the Sweedler arrows ϕ⇀x and x↼ϕ are also deﬁned.
-Lemma 2.6 The map κL
-A:xL ↦→(xL⇀ ˆ1) is an algebra isomorphism from AL onto ˆAR. The
-map κR
-A:xR ↦→(ˆ1 ↼ xR) is an algebra isomorphism from AR onto ˆAL. Furthermore, the
-restriction of the canonical pairing to ˆAL ×AL, ˆAR ×AR, ˆAL ×AR, or to ˆAR ×AL is non-
-degenerate.
-Proof: Using Eqns(2.11a-b) and the deﬁning properties ⟨ϕ↼x,y ⟩ = ⟨ϕ,xy ⟩,. . . etc. of the
+\begin{lrarray}
+x\PL(y)=\eps(x\c y)x\cc\eql&
+\PR(x)y=y\c\eps(x y\cc)\ .\eqr\label{14}
+\end{lrarray}
+ 
+\begin{prop}
+Let $A$ be a WBA. Then $A^L$ and $A^R$ are subalgebras of $A$
+containing $\1$ and
+\beq                       \label{LR=RL}
+x^Ly^R\ =\ y^Rx^L\qquad\mbox{for all }x^L\in A^L\ \mbox{and }
+           y^R\in A^R\ .
+\eeq
+\end{prop}
+\Proof Eqns(\ref{13a}-b) imply the relations
+\beabc
+\1\c\1\cp\o\1\cc\o\1\ccp&=&\1\c\o\PL(\1\cc)\o\1\ccc\label{15a}\\
+\1\c\o\1\cp\o\1\cc\1\ccp&=&\1\c\o\PR(\1\cc)\o\1\ccc\label{15b}
+\eeabc
+Now either Axiom (A.7a) or (A.7b) show that on the RHS of
+(\ref{15a}) the first tensor factor belongs to $A^R$ and on the
+RHS of (\ref{15b}) the last factor belongs to $A^L$. This is
+sufficient for $A^R$, respectively $A^L$ to be closed under
+multiplication. Hence they are algebras. Obviously $\1\in A^L\cap
+A^R$ since $\PL(\1)=\1=\PR(\1)$. In order to see commutativity of
+left and right elements just compare Axioms (A.7a) and (A.7b).
+\qed
+ 
+As the duals of the statements that $A^L$ and $A^R$ are
+subalgebras we obtain that $\Ker\PL$ and $\Ker\PR$ are coideals of
+the coalgebra $A$, i.e.
+\bea
+\cop(\Ker\sqcap^C)&\subset& A\o\Ker\sqcap^C\ +\ \Ker\sqcap^C\o A\
+,\\
+\eps(\Ker\sqcap^C)&=&0\ ,\qquad\qquad C=L,R\ .\nonumber
+\eea
+On the other hand, being the annihilator of the left coideal
+$\duA^L$, $\Ker\PL$ is a left ideal of the algebra $A$ and
+similarly, $\Ker\PR$ is a right ideal.
+\begin{lem}
+Consider $A^L$ and $A$ as left $A^L$-modules by left
+multiplication. Then $\PL\colon$ $A\to A^L$ is a left $A^L$-module
+map. Analogously, $\PR\colon A\to A^R$ is a right $A^R$-module
+map. That is to say
+\beabc
+\PL(\PL(x)y)&=&\PL(x)\PL(y)\label{17a}\\
+\PR(x\PR(y))&=&\PR(x)\PR(y)\label{17b}
+\eeabc
+hold true for all $x,y\in A$.
+\end{lem}
+\Proof At first use the definition of $\PLR$, then
+Eqn(\ref{5}a-b), and finally Eqn(\ref{12a}-b):
+\beanon
+\PL(\PL(x)y)&=\eps(\1\c\PL(x)y)\1\cc=\eps(\1\c\PL(x)\PL(y))\1\cc
+             =&\PL(x)\PL(y)\\
+\PR(x\PR(y))&=\1\c\eps(x\PR(y)\1\cc)=\1\c\eps(\PR(x)\PR(y)\1\cc)
+             =&\PR(x)\PR(y)
+\eeanon
+\qed
+ 
+Our next assertion about WBA-s establishes a canonical
+isomorphism between the left (right) subalgebra of $A$ and the
+right (left) subalgebra of $\duA$. Since the existence of a common
+non-trivial subalgebra of $A$ and $\duA$ for Hopf algebras is by
+far not typical, this result is the first hint towards the
+fundamental role $A^L$ and $A^R$ will play in the theory of WHAs.
+ 
+In order to formulate the statement we introduce the Sweedler
+arrow notation
+\beq                                            \label{Sw arrow}
+x\la\varphi:=\varphi\c\bra\varphi\cc,x\ket\ ,\qquad
+  \varphi\ra x:=\bra\varphi\c,x\ket\varphi\cc\ .
+\eeq
+Since $A$ is the dual WBA of $\duA$, the Sweedler arrows
+$\varphi\la x$ and $x\ra\varphi$ are also defined.
+\begin{lem} \label{kappa}
+The map $\kappa_A^L\colon x^L\mapsto (x^L\la\du1)$ is an algebra
+isomorphism from $A^L$ onto $\duA^R$.
+The map $\kappa_A^R\colon x^R\mapsto(\du1\ra x^R)$ is an algebra
+isomorphism from $A^R$ onto $\duA^L$. Furthermore, the restriction
+of the canonical pairing to $\duA^L\x A^L$, $\duA^R\x A^R$,
+$\duA^L\x A^R$, or to $\duA^R\x A^L$ is non-degenerate.
+\end{lem}
+\Proof Using Eqns(\ref{15a}-b) and the defining properties
+$\bra\varphi\ra x,y\ket=\bra\varphi,xy\ket$,\dots etc. of the
 Sweedler arrows one can easily verify that
-(xL⇀ ˆ1)(yL⇀ ˆ1) = ˆ1(1)ˆ1(1′)⟨ˆ1(2),xL⟩⟨ˆ1(2′),yL⟩= ˆ1(1)⟨ˆ1(2),xL⟩⟨ˆ1(3),yL⟩=
-= xLyL⇀ ˆ1 (2.15)
-(ˆ1↼xR)(ˆ1↼yR) = ⟨ˆ1(1),xR⟩⟨ˆ1(1′ ),yL⟩ˆ1(2)ˆ1(2′) = ⟨ˆ1(1),xR⟩⟨ˆ1(2),yR⟩ˆ1(3)
-= ˆ1↼xRyR (2.16)
-(ˆ1↼xR)⇀ 1 = 1 (1)⟨ˆ1↼xR, 1(2)⟩= 1(1)ε(xR1(2)) = xR (2.17)
-1↼ (xL⇀ ˆ1) = ⟨1(1),xL⇀ ˆ1⟩1(2) =ε(1(1)xL)1(2) =xL (2.18)
-ThusκL
-A (κR
-A) is an algebra map with inverse κR
-ˆA (κL
-ˆA). As for the non-degeneracy
-⟨ϕR,xL⟩= 0 ∀ϕR =⇒ xL = ⟨ˆ1,xL1(1))1(2) = ⟨1(1)⇀ ˆ1,xL⟩1(2) = 0
-⟨ϕL,xL⟩= 0 ∀ϕL =⇒ xL = ⟨ˆ1, 1(1)xL⟩1(2) = ⟨ˆ1↼ 1(1),xL⟩1(2) = 0
-and the transpose of these prove the claim. Q.e.d.
-If {bi} is a K-basis of A and {βi} ⊂ ˆA is its dual basis, ⟨βi,bj⟩=δij, then
-∑
-i
-⊓L(bi) ⊗βi =
-∑
-i
-bi ⊗ ˆ⊓L(βi) = 1 ↼ ˆ1(1) ⊗ ˆ1(2) (2.19a)
-∑
-i
-⊓R(bi) ⊗βi =
-∑
-i
-bi ⊗ ˆ⊓R(βi) = 1 (1) ⊗ 1(2)⇀ ˆ1 (2.19b)
-This can be easily seen by pairing both hand sides of any of the se equations with ϕ ⊗x and
-apply the deﬁnitions (2.1).
-The four arrow identities of the next Scholium will be freque ntly used in later computations.
-8
-Scholium 2.7 LetA be a WBA. Then for all ϕ ∈ ˆA, xL ∈AL, and xR ∈AR
-xL⇀ϕ = ( xL⇀ ˆ1)ϕ (2.20a)
-ϕ↼xR = ϕ(ˆ1↼xR) . (2.20b)
-ϕ↼xL = ( ˆ1↼xL)ϕ (2.21a)
-xR⇀ϕ = ϕ(xR⇀ ˆ1) . (2.21b)
+\bea
+(x^L\la\du1)(y^L\la\du1)&=&\du1\c\du1\cp\bra\du1\cc,x^L\ket
+                           \bra\du1\ccp,y^L\ket=
+              \du1\c\bra\du1\cc,x^L\ket\bra\du1\ccc,y^L\ket=\nn
+              &=&x^Ly^L\la\du1\\
+(\du1\ra x^R)(\du1\ra y^R)&=&\bra\du1\c,x^R\ket\bra\du1\cp,y^L\ket
+                             \du1\cc\du1\ccp=
+              \bra\du1\c,x^R\ket\bra\du1\cc,y^R\ket\du1\ccc\nn
+              &=&\du1\ra x^Ry^R\\
+(\du1\ra x^R)\la \1&=&\1\c\bra\du1\ra x^R,\1\cc\ket=
+                     \1\c\eps(x^R\1\cc)=x^R\\
+\1\ra(x^L\la\du1)&=&\bra\1\c,x^L\la\du1\ket\1\cc=
+                     \eps(\1\c x^L)\1\cc=x^L
+\eea
+Thus $\kappa_A^L$ ($\kappa_A^R$) is an algebra map with inverse
+$\kappa_{\duA}^R$ ($\kappa_{\duA}^L$). As for the non-degeneracy
+\beanon
+\bra\varphi^R,x^L\ket=0\ \forall\varphi^R&\Longrightarrow&
+     x^L=\bra\du1,x^L\1\c)\1\cc=\bra\1\c\la\du1,x^L\ket\1\cc=0\\
+\bra\varphi^L,x^L\ket=0\ \forall\varphi^L&\Longrightarrow&
+     x^L=\bra\du1,\1\c x^L\ket\1\cc=\bra\du1\ra\1\c,x^L\ket\1\cc=0
+\eeanon
+and the transpose of these prove the claim. \qed
+ 
+ 
+If $\{b_i\}$ is a $K$-basis of $A$ and $\{\beta^i\}\subset\duA$ is
+its dual basis, $\langle\beta^i,b_j\rangle=\delta_{ij}$, then
+\beabc
+\sum_i\PL(b_i)\o\beta^i&=&\sum_ib_i\o\duPL(\beta^i)\ =\
+\1\ra\du1\c\o\du1\cc \label{piba}\\
+\sum_i\PR(b_i)\o\beta^i&=&\sum_i b_i\o\duPR(\beta^i)\ =\
+\1\c\o\1\cc\la\du1 \label{pibb}
+\eeabc
+This can be easily seen by pairing both hand sides of any of these
+equations with $\varphi\o x$ and apply the definitions (\ref{Pi}).
+ 
+The four arrow identities of the next Scholium will be
+frequently used in later computations.
+\begin{scho} \label{sch: arrow}
+Let $A$ be a WBA. Then for all $\varphi\in\duA$, $x^L\in A^L$, and
+$x^R\in A^R$
+\beabc \label{44-45}
+x^L\la\varphi&=&(x^L\la\du1)\varphi\\
+\varphi\ra x^R&=&\varphi(\du1\ra x^R)\ .
+\eeabc
+\beabc \label{46-47}
+\varphi\ra x^L&=&(\du1\ra x^L)\varphi\\
+x^R\la\varphi&=&\varphi(x^R\la\du1)\ .
+\eeabc
+\end{scho}

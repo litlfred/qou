@@ -774,8 +774,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 11,
-   "overlaid": 4,
+   "tex_sections": 46,
+   "overlaid": 36,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -791,209 +791,301 @@
     {
      "id": "sec-001-21-twisted-reidemeister-torsion",
      "title": "Twisted Reidemeister torsion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.361,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-2-definition-and-basic-properties",
      "title": "Definition and basic properties",
-     "prose_ratio": 0.506,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.023,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-22-computation-of-twisted-reidemeister-torsion",
      "title": "Computation of twisted Reidemeister torsion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.925,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-24-twisted-alexander-invariants",
      "title": "Twisted Alexander invariants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-25-computation-of-twisted-alexander-polynomials",
      "title": "Computation of twisted Alexander polynomials",
-     "result": "no matching \\section"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-3-basic-properties-of-twisted-invariants",
      "title": "Basic properties of twisted invariants",
-     "prose_ratio": 0.059,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-31-relationship-between-twisted-invariants",
      "title": "Relationship between twisted invariants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-32-twisted-invariants-for-conjugate-representati",
      "title": "Twisted invariants for conjugate representations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-33-change-of-variables",
      "title": "Change of variables",
-     "result": "no matching \\section"
+     "prose_ratio": 0.917,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-34-duality-for-twisted-invariants",
      "title": "Duality for twisted invariants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-36-twisted-invariants-of-knots-and-links",
      "title": "Twisted invariants of knots and links",
-     "result": "no matching \\section"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-4-distinguishing-knots-and-links",
      "title": "Distinguishing knots and links",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-013-5-twisted-alexander-polynomials-and-concordance",
      "title": "Twisted Alexander polynomials and concordance",
-     "prose_ratio": 0.11,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-51-twisted-alexander-polynomials-of-zerosurgerie",
      "title": "Twisted Alexander polynomials of zero\u2013surgeries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-52-twisted-alexander-polynomials-and-knot-concor",
      "title": "Twisted Alexander polynomials and knot concordance",
-     "prose_ratio": 0.676,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.703,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-016-53-ribbon-knots-and-doubly-slice-knots",
      "title": "Ribbon knots and doubly slice knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-54-twisted-invariants-and-slice-links",
      "title": "Twisted invariants and slice links",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-6-twisted-alexander-polynomials-the-thurston-nor",
      "title": "Twisted Alexander polynomials, the Thurston norm and fibered manifolds",
-     "prose_ratio": 0.74,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.763,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-019-62-twisted-alexander-polynomials-and-the-thursto",
      "title": "Twisted Alexander polynomials and the Thurston norm",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-020-63-normalized-twisted-reidemeister-torsion-and-t",
      "title": "Normalized twisted Reidemeister torsion and the free genus of a knot",
-     "result": "no matching \\section"
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-021-7-twisted-invariants-of-knots-and-special-repres",
      "title": "Twisted invariants of knots and special representations",
-     "prose_ratio": 0.13,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.913,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-71-parabolic-representations",
      "title": "Parabolic representations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-72-twisted-alexander-polynomials-and-the-space-o",
      "title": "Twisted Alexander polynomials and the space of 2\u2013dimensional representations",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-73-twisted-invariants-of-hyperbolic-knots-and-li",
      "title": "Twisted invariants of hyperbolic knots and links",
-     "result": "no matching \\section"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-74-metabelian-representations",
      "title": "Metabelian representations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-026-8-miscellaneous-applications-of-twisted-reidemei",
      "title": "Miscellaneous applications of twisted Reidemeister torsion to knot theory",
-     "prose_ratio": 0.062,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-027-81-a-partial-order-on-knots",
      "title": "A Partial order on knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-028-82-periodic-and-freely-periodic-knots",
      "title": "Periodic and freely periodic knots",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-029-83-zeroes-of-twisted-alexander-polynomials-and-n",
      "title": "Zeroes of twisted Alexander polynomials and non\u2013abelian representations",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-030-85-homology-of-cyclic-covers",
      "title": "Homology of cyclic covers",
-     "result": "no matching \\section"
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-031-9-twisted-alexander-polynomials-of-cwcomplexes-a",
      "title": "Twisted Alexander polynomials of CW\u2013complexes and groups",
-     "prose_ratio": 0.494,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-032-92-twisted-alexander-polynomials-of-groups",
      "title": "Twisted Alexander polynomials of groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-033-93-plane-algebraic-curves",
      "title": "Plane algebraic curves",
-     "result": "no matching \\section"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-034-10-alexander-polynomials-and-representations-ove",
      "title": "Alexander polynomials and representations over non\u2013commutative rings",
-     "prose_ratio": 0.28,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-035-101-noncommutative-alexander-polynomials",
      "title": "Non\u2013commutative Alexander polynomials",
-     "result": "no matching \\section"
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-036-102-higher-order-alexander-polynomials",
      "title": "Higher order Alexander polynomials",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-037-104-miscellaneous-applications-of-higher-order-a",
      "title": "Miscellaneous applications of higher order Alexander polynomials",
-     "result": "no matching \\section"
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-038-11-open-questions-and-problems",
      "title": "Open questions and problems",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

@@ -199,8 +199,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "article.tex",
-   "tex_sections": 6,
-   "overlaid": 3,
+   "tex_sections": 11,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -210,10 +210,8 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.573,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.446,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-1-what-is-the-distance-scale-l-on-which-the-lowe",
@@ -228,16 +226,16 @@
     {
      "id": "sec-003-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 0.962,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-acknowledgments",
      "title": "Acknowledgments",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.604,
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

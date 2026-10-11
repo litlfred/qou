@@ -1771,8 +1771,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "PR-April-10.tex",
-   "tex_sections": 22,
-   "overlaid": 3,
+   "tex_sections": 62,
+   "overlaid": 35,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1797,15 +1797,15 @@
     {
      "id": "sec-003-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.999,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-2-experimental-bounds-and-future-searches",
      "title": "Experimental bounds and future searches",
-     "prose_ratio": 0.934,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -1813,13 +1813,16 @@
     {
      "id": "sec-005-3-nucleon-decay-in-non-supersymmetric-sce",
      "title": "Nucleon decay in non-supersymmetric sce-",
-     "prose_ratio": 0.242,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-31-baryon-number-violation-in-the-standard-model",
      "title": "Baryon number violation in the Standard Model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.262,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-32-grand-uni\ufb01cation-and-gauge-contributions-to-t",
@@ -1859,7 +1862,8 @@
     {
      "id": "sec-014-33-proton-decay-induced-by-scalar-leptoquarks",
      "title": "Proton decay induced by scalar leptoquarks",
-     "result": "no matching \\section"
+     "prose_ratio": 0.424,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-015-4-nucleon-decay-in-susy-and-sugra-uni",
@@ -1869,7 +1873,8 @@
     {
      "id": "sec-016-41-r-parity-violation-and-the-decay-of-the-proto",
      "title": "R-parity violation and the decay of the proton",
-     "result": "no matching \\section"
+     "prose_ratio": 0.44,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-017-1-gev-in-the-case-of-the-decay-channels-into-ant",
@@ -1879,7 +1884,8 @@
     {
      "id": "sec-018-42-supersymmetry-breaking-and-sugra-uni\ufb01cation",
      "title": "Supersymmetry breaking and SUGRA uni\ufb01cation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.531,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-019-8-h12-h222-v1",
@@ -1889,48 +1895,72 @@
     {
      "id": "sec-020-43-e\ufb00ect-of-cp-violating-phases-on-proton-lifeti",
      "title": "E\ufb00ect of CP violating phases on proton lifetime",
-     "result": "no matching \\section"
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-021-44-doublet-triplet-splitting-problem",
      "title": "Doublet-triplet splitting problem",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-45-proton-decay-in-su-5-supersymmetric-grand-uni",
      "title": "Proton decay in SU (5) supersymmetric grand uni-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-46-nucleon-decay-in-so10-theories",
      "title": "Nucleon decay in SO(10) theories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-47-proton-decay-in-models-with-uni\ufb01ed-symmetry",
      "title": "Proton decay in models with uni\ufb01ed symmetry",
-     "result": "no matching \\section"
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-5-testing-grand-uni\ufb01cation",
      "title": "Testing grand uni\ufb01cation",
-     "prose_ratio": 0.195,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-026-51-textures-planck-scale-e\ufb00ects-and-proton-decay",
      "title": "Textures, Planck scale e\ufb00ects and proton decay",
-     "result": "no matching \\section"
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-027-52-gravitational-smearing-e\ufb00ects",
      "title": "Gravitational smearing e\ufb00ects",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-028-53-constraints-from-gauge-coupling-uni\ufb01cation",
      "title": "Constraints from gauge coupling uni\ufb01cation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.17,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-029-3-c2gi-151",
@@ -1945,28 +1975,42 @@
     {
      "id": "sec-031-54-testing-guts-through-proton-decay",
      "title": "Testing GUTs through proton decay",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-032-55-proton-decay-in-\ufb02ipped-su-5",
      "title": "Proton decay in \ufb02ipped SU (5)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-033-56-upper-bound-on-the-proton-lifetime-in-guts",
      "title": "Upper bound on the proton lifetime in GUTs",
-     "result": "no matching \\section"
+     "prose_ratio": 0.888,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-034-6-uni\ufb01cation-in-extra-dimensions-and-pro",
      "title": "Uni\ufb01cation in Extra Dimensions and Pro-",
-     "prose_ratio": 0.146,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-035-61-proton-decay-in-models-with-5d",
      "title": "Proton decay in models with 5D",
-     "result": "no matching \\section"
+     "prose_ratio": 0.754,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-036-1-matter-on-the-su5-brane",
@@ -1996,7 +2040,8 @@
     {
      "id": "sec-041-62-so10-models-in-5d",
      "title": "SO(10) models in 5D",
-     "result": "no matching \\section"
+     "prose_ratio": 0.205,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-042-2-bl-now-under-the-su-4c",
@@ -2036,33 +2081,46 @@
     {
      "id": "sec-049-65-gauge-higgs-uni\ufb01cation",
      "title": "Gauge-Higgs uni\ufb01cation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.993,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-050-66-proton-decay-in-universal-extra-dimension-ued",
      "title": "Proton decay in universal extra dimension (UED)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-051-67-proton-decay-in-warped-geometry",
      "title": "Proton decay in warped geometry",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-052-68-proton-stability-in-kink-backgrounds",
      "title": "Proton stability in kink backgrounds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-053-7-proton-decay-in-string-models",
      "title": "Proton Decay in String Models",
-     "prose_ratio": 0.127,
+     "prose_ratio": 0.534,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-054-71-proton-stability-in-calabi-yau-models",
      "title": "Proton Stability in Calabi-Yau Models",
-     "result": "no matching \\section"
+     "prose_ratio": 0.032,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-055-3-baryon-and-lepton-number-violating-dimension-f",
@@ -2072,27 +2130,40 @@
     {
      "id": "sec-056-72-kac-moody-level-k-1-string-models-and-proton",
      "title": "Kac-Moody level k > 1 string models and proton",
-     "result": "no matching \\section"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-057-73-a-new-class-of-heterotic-string-models",
      "title": "A new class of heterotic string models",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-058-74-proton-decay-in-m-theory-compacti\ufb01cations",
      "title": "Proton decay in M theory compacti\ufb01cations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-059-75-proton-decay-in-intersecting-d-brane-models",
      "title": "Proton decay in intersecting D brane models",
-     "result": "no matching \\section"
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-060-76-nucleon-stability-in-string-landscape-models",
      "title": "Nucleon stability in string landscape models",
-     "result": "no matching \\section"
+     "prose_ratio": 0.555,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-061-l-this-results-in-the-number-of",
@@ -2107,68 +2178,96 @@
     {
      "id": "sec-063-77-proton-decay-from-black-hole-and-wormhole-e\ufb00e",
      "title": "Proton decay from black hole and wormhole e\ufb00ects",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-064-78-u-1-string-symmetries-and-proton-stability",
      "title": "U (1) string symmetries and proton stability",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-065-79-discrete-symmetries-and-proton-stability",
      "title": "Discrete Symmetries and proton stability",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-066-8-other-aspects",
      "title": "Other Aspects",
-     "prose_ratio": 0.134,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-067-81-neutrino-masses-and-proton-decay",
      "title": "Neutrino masses and proton decay",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-068-82-proton-stability-and-dark-matter",
      "title": "Proton stability and dark matter",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-069-83-exotic-b-l-violation",
      "title": "Exotic B & L violation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-070-832-b-l-violation-involving-higher-generations",
      "title": "B & L violation involving higher generations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-071-833-monopole-catalyzed-proton-decay",
      "title": "Monopole catalyzed proton decay",
-     "result": "no matching \\section"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-072-84-proton-decay-and-the-ultimate-fate-of-the-uni",
      "title": "Proton decay and the ultimate fate of the universe",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-073-9-summary-and-outlook",
      "title": "Summary and Outlook",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-074-10-summary-table-of-p-decay-predictions",
      "title": "Summary Table of p decay predictions",
-     "prose_ratio": 0.893,
-     "coverage_ratio": 0.298,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.441,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-075-6-pij-362",

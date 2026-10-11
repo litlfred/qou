@@ -7,10 +7,10 @@ section_number: 5
 pages: 28-37
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
+doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
 text_source: latex
 latex_prose_ratio: 0.997
-latex_coverage_ratio: 0.551
-doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
+latex_coverage_ratio: 0.985
 ---
 []{#sec.concl label="sec.concl"}
 
@@ -55,8 +55,7 @@ Let now $G$ be a group. A *$G$-gerbe* over $\Delta$ is a pair
 
 $\check \EuFrak{G}= (i,\delta)_\Delta$,
 
-$$\begin{equation}
-\label{eq.CON1}
+$$\label{eq.CON1}
 i : \Sigma_1(\Delta) \to {\bf aut}G
 \ \ , \ \
 \delta : \Sigma_2(\Delta) \to G
@@ -64,19 +63,16 @@ i : \Sigma_1(\Delta) \to {\bf aut}G
 {\mathrm{ad}}\delta_c \circ i_{\partial_1c} = i_{\partial_0c} \circ i_{\partial_2c}
 \ , \
 \forall c \in \Sigma_2(\Delta)
-\ .
-\end{equation}$$
+\ .$$
 
 The basic idea is that $i$ is a ${\bf aut}G$-cocycle (in the sense of [@RRV07]) only up to inner automorphisms, and the obstacle to get the cocycle relations is encoded by $\delta$.
 
 If $\EuFrak{R}$ is a Haag-Kastler net, then any sector $z \in {\bf obj \ }Z^{1,\bullet}(\EuFrak{R})$ defines a gerbe $\check \EuFrak{G}_z=(i_z,\delta_z)_\Delta$, by means of the cochain $u_z : \Sigma_1(\Delta) \to NG_z$ defined by Theorem [\[thm.gerbe\]](#thm.gerbe){reference-type="ref" reference="thm.gerbe"}:
 
-$$\begin{equation}
-\label{eq.CON1a}
+$$\label{eq.CON1a}
 i_z(b) := {\mathrm{ad}}u_z(b) \ \ , \ \ \delta_z(c) := du_z(c)
 \ \ , \ \qquad
-b \in \Sigma_1(\Delta) \ , \ c \in \Sigma_2(\Delta) \ .
-\end{equation}$$
+b \in \Sigma_1(\Delta) \ , \ c \in \Sigma_2(\Delta) \ .$$
 
 A *$\check \EuFrak{G}$-*C\**-gerbe* $\check \EuFrak{F}$ is given by a family of *C\**-dynamical systems
 
@@ -88,13 +84,11 @@ $\jmath_{a'a} : F_a \to F_{a'}$, $a \subseteq a'$,
 
 are defined in such a way that
 
-$$\begin{equation}
-\label{eq.CON2}
+$$\label{eq.CON2}
 \jmath_{|c| c_1} \circ \jmath_{c_1 c_0} = \alpha_{|c|}(\delta_c) \circ \jmath_{|c| c_0}
 \ \ \ , \ \ \
 \jmath_{|b| b_0} \circ \alpha_{b_0}(g)  = \alpha_{|b|}(i_b(g)) \circ \jmath_{|b|b_0}
-\ ,
-\end{equation}$$
+\ ,$$
 
 for any
 
@@ -131,23 +125,19 @@ $$V^\downarrow_b := \chi( p_{\omega \, {\partial_0 b}} * b * p_{{\partial_1 b}\,
 
 By homotopy invariance of $\chi$, the relations
 
-$$\begin{equation}
-\label{eq.gauge3.1}
+$$\label{eq.gauge3.1}
 V^\downarrow_{\partial_0c} V^\downarrow_{\partial_2c} = V^\downarrow_{\partial_1c}
 \ \ , \ \
 c \in \Sigma_2(\Delta)
-\ ,
-\end{equation}$$
+\ ,$$
 
 are fulfilled (see [@Ruz05 §2.2]). For any $b \in \Sigma_1(b)$ we pick a $V_b \in N^\lambda G_0$ such that $V_b \,{\mathrm{mod}}G_0 = V^\downarrow_b$, so ([\[eq.gauge3.1\]](#eq.gauge3.1){reference-type="ref" reference="eq.gauge3.1"}) implies
 
-$$\begin{equation}
-\label{eq.gauge3.2}
+$$\label{eq.gauge3.2}
 \delta_c := V_{\partial_0c} V_{\partial_2c} V_{\partial_1c}^{-1} \in G_0
 \ \ , \ \
 c \in \Sigma_2(\Delta)
-\ .
-\end{equation}$$
+\ .$$
 
 We define
 

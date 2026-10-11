@@ -177,8 +177,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 3,
-   "overlaid": 1,
+   "tex_sections": 9,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -188,37 +188,49 @@
     {
      "id": "sec-000--categories",
      "title": "-Categories",
-     "prose_ratio": 0.532,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.603,
+     "coverage_ratio": 0.464,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-001--categories",
      "title": "-Categories",
-     "prose_ratio": 0.693,
-     "coverage_ratio": 0.901,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.809,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002--categories-of-modules",
      "title": "-Categories of modules",
-     "result": "no matching \\section"
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.881,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-tannaka-duality",
      "title": "Tannaka duality",
-     "prose_ratio": 0.037,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.812,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004--categories-of-quasi-coherent-and-ind-perfect-sh",
      "title": "-Categories of quasi-coherent and ind-perfect sheaves",
-     "result": "no matching \\section"
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.81,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-the-tannakian-duality-theorem",
      "title": "The Tannakian duality theorem",
-     "result": "no matching \\section"
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.9,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-positive-tor-dimension-descent",

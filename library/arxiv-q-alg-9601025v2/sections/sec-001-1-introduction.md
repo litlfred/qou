@@ -7,10 +7,10 @@ section_number: 1
 pages: 2-3
 source_pdf: 9601025v2.pdf
 source_sha256: 369b0a1a92ce67a8
-text_source: latex
-latex_prose_ratio: 0.993
-latex_coverage_ratio: 1.0
 doc_brief: "The hyperbolic volume of knots from the quantum dilogarithm — The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N ."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.987
 ---
 Many known knot and link invariants, including Alexander [@A] and Jones [@J] polynomials, can be obtained from $R$-matrices, solutions to the Yang-Baxter equation (YBE) [@Y; @B1]. Remarkably, many $R$-matrices in turn appear in quantum 3-dimensional Chern-Simons (CS) theory as partition functions of a 3-manifold with boundary, and with properly chosen Wilson lines [@W1]. The corresponding knot invariant acquires an interpretation in terms of a meanvalue of a Wilson loop. Note, that the quantum CS theory is an example of the topological quantum field theory (TQFT) defined axiomatically in [@At].
 

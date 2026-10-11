@@ -7,10 +7,10 @@ section_number: 8
 pages: 35-40
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
-text_source: latex
-latex_prose_ratio: 0.942
-latex_coverage_ratio: 0.968
 doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.987
 ---
 []{#quantum label="quantum"}
 
@@ -27,34 +27,26 @@ V_{\lambda}^q$$ as $\mathcal{U}_q$-modules. Furthermore, for $\mu\in P_d^+$ we r
 We fix generic $\sigma,\tau\in\mathbb{R}$ unless specified differently (the case $\sigma=\infty$ and/or $\tau=\infty$ will subsequently be analyzed as degeneration of the theory for $\sigma, \tau \in\mathbb{R}$). For $\lambda\in\Lambda_n$ we choose a nonzero $\mathfrak{k}_\sigma$-fixed vector $v_\sigma(\lambda)\in \bigl(V_\lambda^q\bigr)^{\mathfrak{k}_\sigma}$ which we normalize by requiring $$v_\sigma(\lambda)=\sum_{\nu\in\mathbb{Z}^{d}}v_\sigma(\lambda;\nu),\qquad
 v_\sigma(\lambda;\lambda^\natural)=u_{\lambda^\natural},$$ where $v_\sigma(\lambda;\nu)\in V_\lambda^q$ is the weight $\nu$ component of $v_\sigma(\lambda)$ in $V_\lambda^q$ and $u_{\lambda^\natural}$ is the highest weight vector of $V_\lambda^q=L_{\lambda^\natural}^q$ (it is known that $v_\sigma(\lambda)$ has a weight $\lambda^\natural$ component, hence such a normalization is possible). From the analysis in [@DS Section 6] it furthermore follows that $\bigl(V_\lambda^q\bigr)^{\mathfrak{k}_\sigma^*}$ is spanned by $K^{-\delta}v_{\sigma+d-2n}(\lambda)$ for $\lambda\in\Lambda_n$ (see also [@OS] for the special case $d=2n$).
 
-The normalized quantum zonal spherical functions $\varphi_\lambda^{\sigma,\tau}$ ($\sigma,\tau\in\mathbb{R}$) associated to the one-parameter family of quantum Grassmannians are now defined by $$\begin{equation}
-\label{zsf}
+The normalized quantum zonal spherical functions $\varphi_\lambda^{\sigma,\tau}$ ($\sigma,\tau\in\mathbb{R}$) associated to the one-parameter family of quantum Grassmannians are now defined by $$\label{zsf}
 \varphi_\lambda^{\sigma,\tau}(\,\cdot\,)=q^{\langle \delta,\lambda^\natural\rangle}
 \frac{\langle \cdot\, v_\sigma(\lambda),
 K^{-\delta}v_{\tau+d-2n}(\lambda)\rangle_{\lambda}}
-{\langle u_{\lambda^\natural},u_{\lambda^\natural}\rangle_{\lambda}},\qquad \lambda\in\Lambda_n.
-\end{equation}$$ The $\varphi_\lambda^{\sigma,\tau}$ ($\lambda\in\Lambda_n$) form a basis of $$\mathcal{H}_{\sigma,\tau}:=\{f\in \mathbb{C}_q(\mathcal{K}) \,\, | \,\, f(YZ)=0=f(ZX),\quad
+{\langle u_{\lambda^\natural},u_{\lambda^\natural}\rangle_{\lambda}},\qquad \lambda\in\Lambda_n.$$ The $\varphi_\lambda^{\sigma,\tau}$ ($\lambda\in\Lambda_n$) form a basis of $$\mathcal{H}_{\sigma,\tau}:=\{f\in \mathbb{C}_q(\mathcal{K}) \,\, | \,\, f(YZ)=0=f(ZX),\quad
 Z\in\mathcal{U}_q,\,\, X\in \mathfrak{k}_\sigma,\,\,
 Y\in\mathfrak{k}_\tau \}.$$ The analogue of the quantum dimension formula [\[dimforquantum\]](#dimforquantum){reference-type="eqref" reference="dimforquantum"} in terms of the quantum zonal spherical functions $\varphi_\lambda^{\sigma,\tau}$ ($\lambda\in\Lambda_n$) reads as follows.
 
 ::: lem
-For $\lambda\in\Lambda_n$ and generic $\sigma,\tau\in\mathbb{R}$ we have $$\begin{equation}
-\label{dimforquantumst}
+For $\lambda\in\Lambda_n$ and generic $\sigma,\tau\in\mathbb{R}$ we have $$\label{dimforquantumst}
 \textup{Dim}_q\bigl(V_\lambda^q\bigr)=\frac{\varphi_\lambda^{\sigma,\sigma+2n-d}(K^{\delta})\varphi_\lambda^{\tau+d-2n,\tau}(K^\delta)}
-{\|\varphi_\lambda^{\sigma,\tau}\|_h^2}.
-\end{equation}$$
+{\|\varphi_\lambda^{\sigma,\tau}\|_h^2}.$$
 :::
 
 ::: proof
-*Proof.* By the quantum Schur orthogonality relations (see Proposition [\[Schur\]](#Schur){reference-type="ref" reference="Schur"}**b**) we have $$\begin{equation}
-\label{ato}
+*Proof.* By the quantum Schur orthogonality relations (see Proposition [\[Schur\]](#Schur){reference-type="ref" reference="Schur"}**b**) we have $$\label{ato}
 \|\varphi_\lambda^{\sigma,\tau}\|_h^2=\frac{q^{2\langle\delta,\lambda^\natural\rangle}}{\textup{Dim}_q(V_\lambda^q)}
-\frac{\|v_\sigma(\lambda)\|_\lambda^2 \|v_{\tau+d-2n}(\lambda)\|_\lambda^2}{\|u_{\lambda^\natural}\|_\lambda^4},
-\end{equation}$$ where $\|v\|_{\lambda}^2:=\langle v, v\rangle_{\lambda}$. On the other hand, from the definition [\[zsf\]](#zsf){reference-type="eqref" reference="zsf"} of the quantum zonal spherical function $\varphi_\lambda^{\sigma,\tau}$ we have $$\begin{equation}
-\label{bto}
+\frac{\|v_\sigma(\lambda)\|_\lambda^2 \|v_{\tau+d-2n}(\lambda)\|_\lambda^2}{\|u_{\lambda^\natural}\|_\lambda^4},$$ where $\|v\|_{\lambda}^2:=\langle v, v\rangle_{\lambda}$. On the other hand, from the definition [\[zsf\]](#zsf){reference-type="eqref" reference="zsf"} of the quantum zonal spherical function $\varphi_\lambda^{\sigma,\tau}$ we have $$\label{bto}
 \varphi_\lambda^{\sigma,\sigma+2n-d}(K^\delta)=\frac{\|v_\sigma(\lambda)\|_\lambda^2}{\|u_{\lambda^\natural}\|_\lambda^2}\,
-q^{\langle\delta,\lambda^\natural\rangle}.
-\end{equation}$$ The desired quantum dimension formula follows directly from [\[ato\]](#ato){reference-type="eqref" reference="ato"} and [\[bto\]](#bto){reference-type="eqref" reference="bto"}. ◻
+q^{\langle\delta,\lambda^\natural\rangle}.$$ The desired quantum dimension formula follows directly from [\[ato\]](#ato){reference-type="eqref" reference="ato"} and [\[bto\]](#bto){reference-type="eqref" reference="bto"}. ◻
 :::
 
 To arrive at an explicit evaluation of the quantum dimensions, we now translate [\[dimforquantumst\]](#dimforquantumst){reference-type="eqref" reference="dimforquantumst"} into an expression involving the evaluations and the quadratic norms of Macdonald-Koornwinder polynomials.
@@ -68,18 +60,14 @@ q^{-\sigma+\tau+2(d-2n)+1};q^2,q^2),\qquad\lambda\in\Lambda_n$$ (the particular 
 q^{-\sigma+\tau+2(d-2n)+1},q^2,q^2).$$ We set $\|p\|_{\sigma,\tau}^2=\langle p,p\rangle_{\sigma,\tau}^2$ for the corresponding quadratic norm of $p\in\mathbb{C}[z^{\pm 1}]^W$.
 
 ::: lem
-For $\lambda\in\Lambda_n$ and generic $\sigma,\tau\in\mathbb{R}$ we have $$\begin{equation*}
-\begin{split}
+For $\lambda\in\Lambda_n$ and generic $\sigma,\tau\in\mathbb{R}$ we have $$\begin{split}
 \varphi_\lambda^{\sigma,\tau}(K^\delta)&=P_\lambda^{\sigma,\tau}(q^{d-2n+1}q^{2\rho}),\\
 \|\varphi_{\lambda}^{\sigma,\tau}\|_h^2&=
 \|P_\lambda^{\sigma,\tau}\|_{\sigma,\tau}^2.
-\end{split}
-\end{equation*}$$ In particular, $$\begin{equation}
-\label{normevaluationcombi}
+\end{split}$$ In particular, $$\label{normevaluationcombi}
 \hbox{Dim}_q\bigl(V_\lambda^q\bigr)=\frac{P_\lambda^{\sigma,\sigma+2n-d}(q^{d-2n+1}q^{2\rho})
 P_\lambda^{\tau+d-2n,\tau}(q^{d-2n+1}q^{2\rho})}
-{\|P_\lambda^{\sigma,\tau}\|_{\sigma,\tau}^2}.
-\end{equation}$$
+{\|P_\lambda^{\sigma,\tau}\|_{\sigma,\tau}^2}.$$
 :::
 
 ::: proof
@@ -95,8 +83,7 @@ We are now in a position to derive the explicit quantum dimension formulas for t
 ::: proof
 *Proof.* Observe that the value of the Macdonald-Koornwinder polynomial $$P_\lambda^{\sigma,\sigma+2n-d}(z)=
 P_{\lambda}(z;-q^{2\sigma+2n-d+1}, -q^{-2\sigma-2n+d+1},
-q^{d-2n+1}, q^{d-2n+1};q^2,q^2),$$ at $z=q^{d-2n+1}q^{2\rho}$ can be evaluated in closed form by the evaluation formula [\[evalK\]](#evalK){reference-type="eqref" reference="evalK"} for Macdonald-Koornwinder polynomials. The resulting expression is $$\begin{equation*}
-\begin{split}
+q^{d-2n+1}, q^{d-2n+1};q^2,q^2),$$ at $z=q^{d-2n+1}q^{2\rho}$ can be evaluated in closed form by the evaluation formula [\[evalK\]](#evalK){reference-type="eqref" reference="evalK"} for Macdonald-Koornwinder polynomials. The resulting expression is $$\begin{split}
 P_\lambda^{\sigma, \sigma+2n-d}(q^{d-2n+1}q^{2\rho})
 &=q^{(2n-d-1)|\lambda|-2\langle\rho,\lambda\rangle}\\
 &\times\prod_{1\leq
@@ -109,9 +96,7 @@ n}\frac{(1-q^{2(d-2n+1+\lambda_j+\lambda_k+\rho_j+\rho_k)})
 -q^{2(\sigma+1+\rho_i)},
 -q^{2(-\sigma+d-2n+1+\rho_i)};q^2\bigr)_{\lambda_i}}
 {\bigl(q^{2(d-2n+1+2\rho_i)};q^2\bigr)_{2\lambda_i}}.
-\end{split}
-\end{equation*}$$ On the other hand, by the closed expression [\[normKoorn\]](#normKoorn){reference-type="eqref" reference="normKoorn"} for the quadratic norms of the Macdonald-Koornwinder polynomials we have $$\begin{equation*}
-\begin{split}
+\end{split}$$ On the other hand, by the closed expression [\[normKoorn\]](#normKoorn){reference-type="eqref" reference="normKoorn"} for the quadratic norms of the Macdonald-Koornwinder polynomials we have $$\begin{split}
 \|P_\lambda^{\sigma,\tau}\|_{\sigma,\tau}^2&=\prod_{j=1}^n
 \left\{\frac{\bigl(q^{2(1+\rho_j)},
 q^{2(d-2n+1+\rho_j)};q^2\bigr)_{\lambda_j}^2}{\bigl(q^{2(d-2n+1+2\rho_j)},
@@ -119,8 +104,7 @@ q^{2(d-2n+2+2\rho_j)};q^2\bigr)_{2\lambda_j}}\right.\\
 &\left.\times\bigl(-q^{2(\sigma+1+\rho_j)},
 -q^{2(-\sigma+d-2n+1+\rho_j)}, -q^{2(\tau+d-2n+1+\rho_j)},
 -q^{2(-\tau+1+\rho_j)};q^2\bigr)_{\lambda_j}\right\}.
-\end{split}
-\end{equation*}$$ Combining these explicit formulas with [\[normevaluationcombi\]](#normevaluationcombi){reference-type="eqref" reference="normevaluationcombi"} we obtain an explicit expression for $\hbox{Dim}_q(V_\lambda^q)$, which results in Proposition [\[quantumcomplexformula\]](#quantumcomplexformula){reference-type="ref" reference="quantumcomplexformula"}. ◻
+\end{split}$$ Combining these explicit formulas with [\[normevaluationcombi\]](#normevaluationcombi){reference-type="eqref" reference="normevaluationcombi"} we obtain an explicit expression for $\hbox{Dim}_q(V_\lambda^q)$, which results in Proposition [\[quantumcomplexformula\]](#quantumcomplexformula){reference-type="ref" reference="quantumcomplexformula"}. ◻
 :::
 
 We end this section by considering the $\sigma\rightarrow \infty$ and $\sigma=\tau\rightarrow\infty$ degenerations in the above representation theoretic formulas. This in particular leads to the interpretation of $D_q(\lambda;a,b;t)$ for special values of the parameters as quantum dimensions of $V_\lambda^q$ ($\lambda\in\Lambda_n$), see [\[qcfcons\]](#qcfcons){reference-type="eqref" reference="qcfcons"}.
@@ -128,23 +112,17 @@ We end this section by considering the $\sigma\rightarrow \infty$ and $\sigma=\t
 In [@DS] the limit $\sigma\rightarrow\infty$ (respectively $\sigma,\tau\rightarrow\infty$) is considered, leading to the interpretation of the multivariable big $q$-Jacobi polynomials $P_\lambda^B(\cdot;1,q^{2(d-2n)},1,q^{2\tau+2(d-2n)};q^2,q^2)$ (respectively the multivariable little $q$-Jacobi polynomials $P_\lambda^L(\cdot;q^{2(d-2n)},1;q^2,q^2)$) as radial parts of quantum zonal spherical functions associated to the standard quantum Grassmann representation $\mathbb{C}_q^\infty(\mathcal{K}/\mathcal{M})=\mathbb{C}_q(\mathcal{K}/\mathcal{M})$. In these degenerations, the quantum dimensions $\hbox{Dim}_q(V_\lambda^q)$ are naturally expressed in terms of the multivariable big and little $q$-Jacobi polynomials as follows.
 
 ::: prop
-[]{#propdim label="propdim"} We have $$\begin{equation*}
-\textup{Dim}_q(V_\lambda^q)=
+[]{#propdim label="propdim"} We have $$\textup{Dim}_q(V_\lambda^q)=
 \bigl(-q^{2\tau+d-2n-1}\bigr)^{|\lambda|}\frac{P_\lambda^L(0;q^{2(d-2n)},1;q^2,q^2)P_\lambda^{\tau+d-2n,\tau}(q^{d-2n+1}q^{2\rho})}
-{N_B(\lambda;1,q^{2(d-2n)},1,q^{2\tau+2(d-2n)};q^2,q^2)},\qquad \forall\,\lambda\in\Lambda_n.
-\end{equation*}$$ Furthermore, in terms of the generalized quantum dimension $D_q(\lambda;a,b;t)$, see [\[Dgeneralized\]](#Dgeneralized){reference-type="eqref" reference="Dgeneralized"}, we have $$\textup{Dim}_q(V_\lambda^q)=
+{N_B(\lambda;1,q^{2(d-2n)},1,q^{2\tau+2(d-2n)};q^2,q^2)},\qquad \forall\,\lambda\in\Lambda_n.$$ Furthermore, in terms of the generalized quantum dimension $D_q(\lambda;a,b;t)$, see [\[Dgeneralized\]](#Dgeneralized){reference-type="eqref" reference="Dgeneralized"}, we have $$\textup{Dim}_q(V_\lambda^q)=
 \frac{\bigl(P_\lambda^L(0;q^{2(d-2n)},1;q^2,q^2)\bigr)^2}{N_L(\lambda;q^{2(d-2n)},1;q^2,q^2)}=
 D_{q^2}(\lambda;q^{2(d-2n+1)}, q^2;q^2),\qquad \forall\,\lambda\in\Lambda_n.$$
 :::
 
 ::: proof
-*Proof.* We degenerate the expression [\[normevaluationcombi\]](#normevaluationcombi){reference-type="eqref" reference="normevaluationcombi"} of the quantum dimension $\hbox{Dim}_q(V_\lambda^q)$ by taking the limit $\sigma\rightarrow\infty$ (respectively $\sigma=\tau\rightarrow\infty$). In order to parallel the particular degeneration scheme from [@DS], we make use of the elementary symmetry $$\begin{equation}
-\label{symmKo}
-P_\lambda(-z;-a,-b,-c,-d;q,t)=(-1)^{|\lambda|}P_\lambda(z;a,b,c,d;q,t)
-\end{equation}$$ for the monic Macdonald-Koornwinder polynomials, which implies the symmetry $$\begin{equation}
-\label{symmnorm}
-N_K(\lambda;-a,-b,-c,-d;q,t)=N_K(\lambda;a,b,c,d;q,t),\qquad\lambda\in\Lambda_n
-\end{equation}$$ for the corresponding quadratic norms (which also immediately follows from its explicit evaluation [\[evalK\]](#evalK){reference-type="eqref" reference="evalK"}). Combined with the limit formula [\[limitBnorms\]](#limitBnorms){reference-type="eqref" reference="limitBnorms"} in base $q^2$, with parameters $(a,b,c,d,t)$ specialized to $(1,q^{2(d-2n)},1,q^{2\tau+2(d-2n)},q^2)$ and with $\epsilon=q^{\sigma+\tau-1}$, we obtain $$\lim_{\sigma\rightarrow\infty}q^{2(\sigma+\tau-1)|\lambda|}\|P_\lambda^{\sigma,\tau}\|_{\sigma,\tau}^2=
+*Proof.* We degenerate the expression [\[normevaluationcombi\]](#normevaluationcombi){reference-type="eqref" reference="normevaluationcombi"} of the quantum dimension $\hbox{Dim}_q(V_\lambda^q)$ by taking the limit $\sigma\rightarrow\infty$ (respectively $\sigma=\tau\rightarrow\infty$). In order to parallel the particular degeneration scheme from [@DS], we make use of the elementary symmetry $$\label{symmKo}
+P_\lambda(-z;-a,-b,-c,-d;q,t)=(-1)^{|\lambda|}P_\lambda(z;a,b,c,d;q,t)$$ for the monic Macdonald-Koornwinder polynomials, which implies the symmetry $$\label{symmnorm}
+N_K(\lambda;-a,-b,-c,-d;q,t)=N_K(\lambda;a,b,c,d;q,t),\qquad\lambda\in\Lambda_n$$ for the corresponding quadratic norms (which also immediately follows from its explicit evaluation [\[evalK\]](#evalK){reference-type="eqref" reference="evalK"}). Combined with the limit formula [\[limitBnorms\]](#limitBnorms){reference-type="eqref" reference="limitBnorms"} in base $q^2$, with parameters $(a,b,c,d,t)$ specialized to $(1,q^{2(d-2n)},1,q^{2\tau+2(d-2n)},q^2)$ and with $\epsilon=q^{\sigma+\tau-1}$, we obtain $$\lim_{\sigma\rightarrow\infty}q^{2(\sigma+\tau-1)|\lambda|}\|P_\lambda^{\sigma,\tau}\|_{\sigma,\tau}^2=
 N_B(\lambda;1,q^{2(d-2n)},1,q^{2\tau+2(d-2n)};q^2,q^2),\qquad \forall\,\lambda\in\Lambda_n.$$ On the other hand, from [\[L1\]](#L1){reference-type="eqref" reference="L1"} and the explicit evaluation formula from the proof of Corollary [\[quantumcomplexformulacor\]](#quantumcomplexformulacor){reference-type="ref" reference="quantumcomplexformulacor"} we obtain $$\lim_{\sigma\rightarrow\infty}\bigl(-q^{2\sigma}\bigr)^{|\lambda|}P_\lambda^{\sigma,\sigma+2n-d}(q^{d-2n+1}q^{2\rho})=
 q^{(d-2n+1)|\lambda|}P_\lambda^L(0;q^{2(d-2n)},1;q^2;q^2),\qquad \forall\,\lambda\in\Lambda_n.$$ Taking the limit $\sigma\rightarrow\infty$ in [\[normevaluationcombi\]](#normevaluationcombi){reference-type="eqref" reference="normevaluationcombi"} now leads to the expression of the quantum dimension as mixture of factors involving Macdonald-Koornwinder, multivariable big and multivariable little $q$-Jacobi polynomials.
 

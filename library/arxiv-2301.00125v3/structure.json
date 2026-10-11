@@ -349,8 +349,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 6,
-   "overlaid": 3,
+   "tex_sections": 11,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -360,50 +360,62 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-11-extended-abstract",
      "title": "Extended abstract",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-12-set-up",
      "title": "Set-up",
-     "result": "no matching \\section"
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-14-motivation-for-exact-solutions",
      "title": "Motivation for exact solutions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-15-outline-for-the-remainder-of-the-paper",
      "title": "Outline for the remainder of the paper",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-3-the-diagonal-contour-integral-method",
      "title": "The diagonal (contour integral) method",
-     "prose_ratio": 0.833,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-4-main-result",
      "title": "Main result",
-     "prose_ratio": 0.915,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-5-summary-and-outlook",
      "title": "Summary and outlook",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.931,
+     "prose_ratio": 0.938,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

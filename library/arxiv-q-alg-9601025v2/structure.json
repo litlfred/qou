@@ -217,8 +217,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 5,
-   "overlaid": 4,
+   "tex_sections": 8,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -233,8 +233,8 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -242,20 +242,23 @@
      "id": "sec-002-2-the-quantum-invariant-for-three-hyper",
      "title": "The quantum invariant for three hyper-",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-3-the-classical-limit",
      "title": "The classical limit",
-     "prose_ratio": 0.589,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-31-knot-41-\ufb01gure-eight-knot",
      "title": "Knot 41 (\ufb01gure-eight knot)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.534,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-32-knot-52",
@@ -270,15 +273,15 @@
     {
      "id": "sec-007-4-summary",
      "title": "Summary",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.939,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-008-5-acknowlegements",
      "title": "Acknowlegements",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.947,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"

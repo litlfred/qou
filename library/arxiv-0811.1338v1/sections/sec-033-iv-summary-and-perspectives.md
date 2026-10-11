@@ -7,10 +7,10 @@ section_number: IV
 pages: 45-45
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
-text_source: latex
-latex_prose_ratio: 0.967
-latex_coverage_ratio: 1.0
 doc_brief: "Modern theory of nuclear forces — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \def\theequation{\arabic{section}.\arabic{equation}}
 \setcounter{equation}{0}

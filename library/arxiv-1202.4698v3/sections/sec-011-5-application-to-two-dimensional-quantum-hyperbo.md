@@ -8,94 +8,136 @@ pages: 12-14
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
 doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
+text_source: latex
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.909
 ---
-It is known that the Racah-Wigner symbols of the modular double play an important role when
-the quantum Teichm¨ uller theory [Fo97, Ka98, CF99] is studi ed in the length representation
-[T03, T05]. Having ﬁxed a particular normalization in our deﬁnition of the b-6j symbols above
-naturally leads to question what it corresponds to in this context. We are going to show that the
-deﬁnition of the b-6j symbols corresponds to the quantization of a particular choice of Darboux-
-coordinates for the classical Teichm¨ uller spaces. The Teichm¨ uller spacesT (C) are well-known
-to be related to a connected component in the moduli space of ﬂ at SL(2, R)-connections on
-Riemann surfaces. Natural Darboux coordinates for this spa ce have recently been discussed in
-[NRS].
-The quantization of the Teichm¨ uller spaces will be discussed in terms of the Darboux coor-
-dinates of [NRS] in a self-contained manner in [TeVa]. In the following we will collect some
-relevant observations that can fairly easily be extracted from the existing literature.
-13
-5.1 Classical Teichm ¨uller theory of the four-holed sphere
-To be speciﬁc, let us restrict attention to four-holed spher esC0,4. The holes are assumed to be
-represented by geodesics with lengths L = (l1,...,l 4). There are three simple closed curves
-γs, γt, and γu encircling pairs of points (z1,z 2), (z2,z 3) and (z1,z 3), respectively. A set of
-useful coordinate functions are deﬁned in terms of the hyper bolic cosines Lσ = 2 cosh lσ
-2 ,
-σ ∈ {s,t,u }, of the geodesic length functionslσ on T0,4 ≡ T (C0,4). lσ is deﬁned as the length
-of the geodesicγσ, deﬁned by means of the constant negative curvature metric onC0,4.
-The well-known relations between Teichm¨ uller spacesT (C) and the moduli spaces MG(C)
-of ﬂatG =SL(2, R)-connections on Riemann surfaces imply that the geodesic length functions
-Lσ are related to the holonomies gσ along γσ as Lσ = −Tr(gσ). This allows us to use the
-description given in [NRS], which may be brieﬂy summarized a s follows. The structure of
-MG(C0,4) as an algebraic variety is expressed by the fact that the thre e coordinate functions
-Ls, Lt and Lu satisfy one algebraic relation of the form PL(Ls,L t,L t) = 0 . The Poisson
-bracket {Lσ1,L σ2} deﬁned by the Weil-Petersson symplectic form is also algebraic in the length
-variablesLσ, and can be written elegantly in the form
-{Ls,L t } = ∂
-∂Lu
-PL(Ls,L t,L t). (5.1)
-As shown in [NRS] one may representLs,Lt andLu in terms of Darboux-coordinatesls andks
-which have Poisson bracket {ls,k s} = 2. The expressions forLs andLt are, in particular,
-Ls = 2 cosh(ls/2), (5.2)
-Lt(L2
-s − 4) = 2( L2L3 +L1L4) +Ls(L1L3 +L2L4) + 2 cosh(ks)
-√
-c12(Ls)c34(Ls),
-whereLi = 2 cosh li
-2 , andcij(Ls) is deﬁned as
-cij(Ls) = L2
-s +L2
-i +L2
-j +LsLiLj − 4 (5.3)
-= 2 cosh ls+li+lj
-4 2 cosh ls+li−lj
-4 2 cosh ls−li+lj
-4 2 cosh ls−li−lj
-4 .
-Together with a similar formula forLu, these expressions ensure that both the algebraic relation
-PL(Ls,L t,L t) = 0 and the Poisson structure (5.1) are satisﬁed. These Darboux coordinates are
-identical to the Fenchel-Nielsen length-twist coordinates well-known in hyperbolic geometry.2
-Similar Darboux coordinates (lt,k t) and (lu,k u) can be associated to the curves γt and γu,
-respectively. The change of coordinates between the Darboux-coordinates (ls,k s) and (lt,k t) is
-represented by a generating function S st
-L (ls,l t) such that
-∂
-∂ls
-S st
-L (ls,l t) = −ks, ∂
-∂lt
-S st
-L (ls,l t) = kt. (5.4)
-2This can be inferred from [ALPS]. We thank T. Dimofte for pointing this reference out to us
-14
-Other natural sets of Darboux-coordinates (lσ,k ′
-σ) can be obtained by means of canonical
-transformationsk′
-σ = kσ +f (lσ). By a suitable choice of f (σ), one gets Darboux coordinates
-(ls,k ′
-s) in which the expression forLt in (5.2) is replaced by
-Lt(L2
-s − 4) = 2( L2L3 +L1L4) +Ls(L1L3 +L2L4) (5.5)
-+ 2 cosh ls+l1−l2
-4 2 cosh ls+l2−l1
-4 2 cosh ls+l3−l4
-4 2 cosh ls+l4−l3
-4 e+k′
-s
-+ 2 cosh ls+l1+l2
-4 2 cosh ls−l1−l2
-4 2 cosh ls+l3+l4
-4 2 cosh ls−l3−l4
-4 e−k′
-s.
-The Darboux coordinates (ls,k ′
-s) are equally good to represent the Poisson structure of
-MG(C0,4), but they have the advantage that the expressions forLσ do not contain square-roots.
-This will later turn out to be important.
+\label{sec:2hyp}
+
+
+\setcounter{equation}{0}
+
+It is known that the Racah-Wigner symbols of the modular
+double play an important role when the 
+quantum Teichm\"uller theory \cite{Fo97,Ka97,CF99} 
+is studied in the length 
+representation \cite{Teschner:2003at,T05}. 
+Having fixed a particular
+normalization in our definition of the b-$6j$ symbols above
+naturally leads to question what it corresponds to in this
+context. We are going to show that 
+the definition of the b-$6j$ symbols corresponds to 
+the quantization of a particular
+choice of Darboux-coordinates for the classical Teichm\"uller
+spaces.
+The Teichm\"uller spaces $\CT(C)$ 
+are well-known to be related to a connected
+component in the moduli space of flat $SL(2,\BR)$-connections
+on Riemann surfaces. Natural
+Darboux coordinates for this space have recently been
+discussed in \cite{NRS}.
+
+The quantization of the Teichm\"uller spaces will be discussed 
+in terms of the Darboux coordinates of \cite{NRS} in a 
+self-contained manner in \cite{TV}. In the following we will 
+collect some relevant observations that can fairly easily 
+be extracted from the existing literature.
+
+
+
+\subsection{Classical Teichm\"uller theory of the four-holed sphere}
+
+To be
+specific, let us restrict attention to four-holed spheres $C_{0,4}$.
+The holes are assumed to be represented by geodesics
+with lengths $L=(l_1, \dots,l_4)$.
+There are three simple closed curves $\ga_s$, $\ga_t$, and $\ga_u$
+encircling pairs of points $(z_1,z_2)$, $(z_2,z_3)$ and $(z_1,z_3)$,
+respectively. A set of useful coordinate functions are defined
+in terms of the hyperbolic cosines
+$L_\si=2\cosh\frac{l_\si}{2}$, $\si\in\{s,t,u\}$, 
+of the geodesic length functions
+$l_\si$ on $\CT_{0,4}\equiv \CT(C_{0,4})$. $l_\si$ is defined
+as the length of the geodesic $\ga_\si$, defined
+by means of the constant negative
+curvature metric on $C_{0,4}$. 
+
+The well-known relations
+between Teichm\"uller spaces $\CT(C)$ 
+and the moduli spaces $\CM_G(C)$ of 
+flat $G=SL(2,\BR)$-connections on Riemann surfaces imply 
+that the geodesic length functions $L_\si$ are related to the 
+holonomies $g_\si$ along $\ga_\si$ as $L_{\si}=-{\rm Tr}(g_\si)$.
+This allows us to use the description given in \cite{NRS}, 
+which may be briefly summarized as follows. The structure of
+$\CM_G(C_{0,4})$ as an algebraic variety is expressed by the fact
+that the three
+coordinate functions $L_s$, $L_t$ and $L_u$ satisfy one algebraic
+relation of the form $\CP_L(L_s,L_t,L_t)=0$. 
+The Poisson bracket $\{L_{\si_1},L_{\si_2}\}$ defined
+by the Weil-Petersson symplectic form is also algebraic in 
+the length variables $L_\si$, and
+can be written elegantly in the form 
+\begin{equation}\label{loopPB}
+\{\,L_s\,,L_t\,\}\,=\,\frac{\pa}{\pa L_u}\CP_L(L_s,L_t,L_t)\,.
+\end{equation}
+As shown in \cite{NRS} one may represent $L_s$, $L_t$ and $L_u$ 
+in terms of Darboux-coordinates $l_s$ and $k_s$ which have
+Poisson bracket $\{l_s,k_s\}=2$. The expressions for $L_s$ and $L_t$
+are, in particular,
+\begin{align}\label{FN-FK}
+& L_s\,=\,2\cosh(l_s/2)\,,\\
+& L_t(L_s^2-4)\,=\,
+2({L}_2L_3+L_1L_4)+L_s(L_1L_3+L_2L_4) 
+
++2\cosh(k_s)
+\sqrt{c_{12}(L_s)c_{34}(L_s)}\,,
+\notag\end{align}
+where $L_i=2\cosh\frac{l_i}{2}$, and $c_{ij}(L_s)$ is defined as
+\begin{align}\label{cijdef}
+c_{ij}(L_s) & \,=\,L_s^2+L_i^2+L_j^2+L_sL_iL_j-4\ \\ \nonumber & = 
+2 \cosh \fr{l_s+l_i+l_j}{4} 2 \cosh \fr{l_s+l_i-l_j}{4} 
+2 \cosh \fr{l_s-l_i+l_j}{4} 2 \cosh \fr{l_s-l_i-l_j}{4}.
+\end{align}
+Together with a similar formula for $L_u$, these expressions
+ensure that both the algebraic relation $\CP_L(L_s,L_t,L_t)=0$ and 
+the Poisson structure \rf{loopPB} are satisfied.
+These Darboux coordinates
+are identical to the Fenchel-Nielsen length-twist coordinates
+well-known in hyperbolic geometry.\footnote{This can be
+inferred from \cite{ALPS}. We thank T. Dimofte for 
+pointing this reference out to us}
+
+Similar Darboux coordinates $(l_t,k_t)$ and  $(l_u,k_u)$
+can be associated to the 
+curves $\ga_t$ and $\ga_u$, respectively.  
+The change of coordinates between the Darboux-coordinates 
+$(l_s,k_s)$ and  $(l_t,k_t)$
+is represented by a generating function $\CS^{st}_L(l_s,l_t)$ 
+such that 
+\begin{equation}\label{cantrsf}
+\frac{\pa}{\pa l_s}\CS^{st}_L(l_s,l_t)\,=\,-k_s\,,\qquad 
+\frac{\pa}{\pa l_t}\CS^{st}_L(l_s,l_t)\,=\,k_t\,. 
+\end{equation}
+
+Other natural sets of 
+Darboux-coordinates $(l_\si,k_\si')$ can be obtained by means of 
+canonical transformations $k_\si'=k_\si+f(l_\si)$. By a suitable 
+choice of $f(\si)$, one gets Darboux coordinates $(l_s,k_s')$
+in which 
+the expression for $L_t$ in \rf{FN-FK} is replaced by 
+\begin{align}\label{FN-FK'}
+L_t(L_s^2-4)\,=\,&
+\;2({L}_2L_3+L_1L_4)+L_s(L_1L_3+L_2L_4) \\
+& +
+2 \cosh \fr{l_s+l_1-l_2}{4} 2 \cosh \fr{l_s+l_2-l_1}{4} 
+2 \cosh \fr{l_s+l_3-l_4}{4} 2 \cosh \fr{l_s+l_4-l_3}{4} \;e^{+k_s'}\notag  \\
+& +
+2 \cosh \fr{l_s+l_1+l_2}{4} 2 \cosh \fr{l_s-l_1-l_2}{4} 
+2 \cosh \fr{l_s+l_3+l_4}{4} 2 \cosh \fr{l_s-l_3-l_4}{4} \;e^{-k_s'}
+\,. \notag
+\end{align}
+The Darboux coordinates $(l_s,k_s')$ are equally good to 
+represent the Poisson structure of $\CM_G(C_{0,4})$, but they 
+have the advantage that the expressions for $L_\si$ do not 
+contain square-roots. This will later turn out to be important.

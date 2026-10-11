@@ -673,8 +673,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 8,
-   "overlaid": 2,
+   "tex_sections": 40,
+   "overlaid": 23,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -684,8 +684,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.937,
-     "coverage_ratio": 0.922,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -698,32 +698,46 @@
     {
      "id": "sec-002-21-words-and-automata",
      "title": "Words and Automata",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-22-number-systems",
      "title": "Number Systems",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-23-automatic-words",
      "title": "Automatic Words",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-24-automata-accepting-predicates",
      "title": "Automata accepting Predicates",
-     "result": "no matching \\section"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-33-variables",
      "title": "Variables",
-     "result": "no matching \\section"
+     "prose_ratio": 0.429,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-34-operators",
      "title": "Operators",
-     "result": "no matching \\section"
+     "prose_ratio": 0.182,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-3-syntax-and-semantic-of-predicates-in-walnut",
@@ -734,62 +748,92 @@
     {
      "id": "sec-009-31-alphabets",
      "title": "Alphabets",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-32-arithmetic-and-alphabetic-constants",
      "title": "Arithmetic and Alphabetic Constants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-35-arithmetic-expressions",
      "title": "Arithmetic Expressions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.434,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-012-36-indexing-expressions-and-their-semantic-rules",
      "title": "Indexing Expressions and Their Semantic Rules",
-     "result": "no matching \\section"
+     "prose_ratio": 0.111,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-39-predicates",
      "title": "Predicates",
-     "result": "no matching \\section"
+     "prose_ratio": 0.276,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-014-37-calling-expressions-and-their-semantic-rules",
      "title": "Calling Expressions and Their Semantic Rules",
-     "result": "no matching \\section"
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-38-relative-expressions",
      "title": "Relative Expressions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.323,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-016-41-cross-product",
      "title": "Cross Product",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-43-complement-and-reverse",
      "title": "Complement and Reverse",
-     "result": "no matching \\section"
+     "prose_ratio": 0.833,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-44-arithmetic-and-comparison-operators",
      "title": "Arithmetic and Comparison Operators",
-     "result": "no matching \\section"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-019-45-calling-an-automaton",
      "title": "Calling an Automaton",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-020-46-indexing-an-automatic-word",
      "title": "Indexing an Automatic Word",
-     "result": "no matching \\section"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-021-5-special-automata-in-walnut",
@@ -800,59 +844,85 @@
     {
      "id": "sec-022-51-true-and-false-automata",
      "title": "True and False Automata",
-     "result": "no matching \\section"
+     "prose_ratio": 0.935,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-52-non-arithmetic-automata",
      "title": "Non-arithmetic Automata",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-6-installation",
      "title": "Installation",
-     "prose_ratio": 0.484,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.936,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-61-eclipse",
      "title": "Eclipse",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-026-7-commands",
      "title": "Commands",
-     "prose_ratio": 0.31,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.597,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-027-71-eval-eval-name-predicate",
      "title": "eval: eval <name> <predicate>",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-028-72-def-def-name-predicate",
      "title": "def: def <name> <predicate>",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-029-73-macro-macro-name-template",
      "title": "macro: macro <name> <template>",
-     "result": "no matching \\section"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-030-74-matrices-with-eval-and-def",
      "title": "Matrices with eval and def",
-     "result": "no matching \\section"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-031-75-reg",
      "title": "reg",
-     "result": "no matching \\section"
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-032-8-working-with-inputoutput",
      "title": "Working with Input/Output",
-     "prose_ratio": 0.942,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"

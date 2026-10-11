@@ -8,6 +8,8 @@ pages: 15-16
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
 doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Finally, we arrive at the motivating idea for this work: values of Feynm an diagrams.
-14
+Finally, we arrive at the motivating idea for this work: values of Feynman diagrams.

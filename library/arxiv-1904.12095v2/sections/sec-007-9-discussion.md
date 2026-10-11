@@ -7,10 +7,10 @@ section_number: 9
 pages: 21-25
 source_pdf: 1904.12095v2.pdf
 source_sha256: 7006b250f0d3c991
-text_source: latex
-latex_prose_ratio: 0.916
-latex_coverage_ratio: 0.991
 doc_brief: "Verified computations for closed hyperbolic 3-manifolds Matthias Goerner — Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed"
+text_source: latex
+latex_prose_ratio: 0.979
+latex_coverage_ratio: 0.978
 ---
 []{#sec:discussion label="sec:discussion"}
 
@@ -87,11 +87,11 @@ Consider a 1-vertex triangulation $\mathcal{T}$ admitting a hyperbolic structure
 It is imaginable that there is a 1-vertex triangulation such that $|\{F_e : e\in E(\mathcal{T})\}|=2$ and gimbal lock occurs for each choice of $E^\sim$ giving a counterexample to Conjecture [\[conjecture:main\]](#conjecture:main){reference-type="ref" reference="conjecture:main"}.
 :::
 
-<figure id="fig:edgeSingVertTrig" data-latex-placement="h">
+<figure id="fig:edgeSingVertTrig">
 <div class="center">
 
 </div>
-<figcaption>Edge in 1-vertex triangulation.<span id="fig:edgeSingVertTrig" data-label="fig:edgeSingVertTrig"></span></figcaption>
+<figcaption>Edge in 1-vertex triangulation.<span id="fig:edgeSingVertTrig" label="fig:edgeSingVertTrig"></span></figcaption>
 </figure>
 
 ::: proof

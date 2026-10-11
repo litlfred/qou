@@ -7,10 +7,10 @@ section_number: 6
 pages: 34-38
 source_pdf: 0904.1247v3.pdf
 source_sha256: 4a6f4dee6af66dac
-text_source: latex
-latex_prose_ratio: 0.838
-latex_coverage_ratio: 0.964
 doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — W e apply the ideas of derived algebraic geometry and topolog ical ﬁeld theory to the representation theory of reductive groups."
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.984
 ---
 []{#character section label="character section"}
 
@@ -97,20 +97,18 @@ For $\mathfrak L, \mathfrak M, \mathfrak N\in \mathcal H$ compact objects, we wi
  \simeq \mathop{\mathrm{Hom}}_{\mathcal H}(\mathbb C_{X \times_Y X}, \mathbb D_{X \times_Y X}(\mathfrak L)\otimes (\mathfrak N\star \iota(\mathfrak M)))
 }$$
 
-Since $p_{13}$ is a base change of $p$, it is proper and hence $p_{13*}$ commutes with Verdier duality. Since $p_{12}\times p_{23}$ is a base change of $\delta$, it is smooth of relative dimension $-\dim X$ and hence $(p_{12} \times p_{13})^* \simeq (p_{12} \times p_{13})^![2\dim X]$. Hence we have the identity $$\begin{eqnarray*}
+Since $p_{13}$ is a base change of $p$, it is proper and hence $p_{13*}$ commutes with Verdier duality. Since $p_{12}\times p_{23}$ is a base change of $\delta$, it is smooth of relative dimension $-\dim X$ and hence $(p_{12} \times p_{13})^* \simeq (p_{12} \times p_{13})^![2\dim X]$. Hence we have the identity $$\begin{aligned}
  \mathbb D_{X \times_Y X}(\mathfrak L\star \mathfrak M)
 &\simeq  &  \mathbb D_{X \times_Y X}(p_{13*}((p_{12} \times p_{13})^!(\mathfrak L\boxtimes  \mathfrak M)))\\
 &\simeq  &  p_{13*}\mathbb D_{X \times_Y X}(p_{12} \times p_{13})^!(\mathfrak L\boxtimes  \mathfrak M)\\
 &\simeq  &  p_{13*}(p_{12} \times p_{13})^*(\mathbb D_{X \times_Y X}(\mathfrak L) \boxtimes  \mathbb D_{X \times_Y X}(\mathfrak M))\\
 &\simeq  &  p_{13*}(p_{12} \times p_{13})^!(\mathbb D_{X \times_Y X}(\mathfrak L) \boxtimes  \mathbb D_{X \times_Y X}(\mathfrak M)) [2\dim X]\\
 &\simeq  &  \mathbb D_{X \times_Y X}(\mathfrak L) \star  \mathbb D_{X \times_Y X}(\mathfrak M) [2\dim X]\\
-\end{eqnarray*}$$
+\end{aligned}$$
 
-Substituting this into the above sought after identity and renaming objects, we seek to establish the following general identity $$\begin{equation}
-\label{general eq}
+Substituting this into the above sought after identity and renaming objects, we seek to establish the following general identity $$\label{general eq}
 \Gamma_{X \times_Y X}((\mathfrak L\star \mathfrak M)\otimes \mathfrak N)
-  \simeq  \Gamma_{X \times_Y X}(\mathfrak L\otimes (\mathfrak N\star \sigma(\mathfrak M)))
-\end{equation}$$
+  \simeq  \Gamma_{X \times_Y X}(\mathfrak L\otimes (\mathfrak N\star \sigma(\mathfrak M)))$$
 
 Let us first modestly reformulate how to calculate each side, in particular the quantities obtained before taking global sections. For the left hand side, consider the commutative diagram whose right hand square is Cartesian $$\xymatrix{
  && 

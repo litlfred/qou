@@ -7,10 +7,10 @@ section_number: 6
 pages: 23-25
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
-text_source: latex
-latex_prose_ratio: 0.643
-latex_coverage_ratio: 0.892
 doc_brief: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices)"
+text_source: latex
+latex_prose_ratio: 0.763
+latex_coverage_ratio: 1.0
 ---
 \label{sec.pachner}
 
@@ -278,6 +278,7 @@ where $\mbfQ_{ij}$ are matrices of size $1\times 1$, $\mbfQ_{j}^{*}$
 are matrices of size $1\times N$ and $\mbfQ^{*}$ is a matrix of size
 $N\times N$.
 
+
 \subsection{\texorpdfstring{The case of $B$ with full rank}{The case of B with full rank}}
 \label{sub.case0}
 
@@ -536,6 +537,7 @@ B^{-1}\nu
 \ee
 and we recall we choose $f_i=\widetilde{f}_0+\widetilde{f}_i$ for $i=1,2$.
 \end{proof}
+
 
 \subsection{\texorpdfstring{The case of $B$ with nullity one}{The case of B with nullity one}}
 \label{sub.case1}
@@ -1153,6 +1155,7 @@ Equation~\eqref{eq.23sr} for the shapes, we have
 $\widetilde{f}_1'+\widetilde{f}_2=f_1'=\mathbf{f}_1$ and
 $\widetilde{f}_0-\widetilde{f}_2=f_2=\mathbf{f}_2$.
 \end{proof}
+
 
 \subsection{\texorpdfstring{The case of $B$ with nullity two}{The case of B with nullity two}}
 \label{sub.case2}
@@ -1803,3 +1806,160 @@ Equation~\eqref{eq.23sr} for the shapes, we have
 $\widetilde{f}_1'+\widetilde{f}_2=f_1'=\mathbf{f}_1$ and
 $\widetilde{f}_1+\widetilde{f}_2'=f_2'=\mathbf{f}_2$.
 \end{proof}
+
+
+
+
+
+\section{\texorpdfstring{The series of the simplest hyperbolic $4_1$ knot}{The series of the simplest hyperbolic 4\_1 knot}}
+\label{sec.41}
+
+In this section, we discuss an effective computation of the power series
+$\Phi^{\Xi}(\hbar)$ for the simplest hyperbolic knot, namely the $4_1$ knot.
+This example was studied extensively in~\cite{DG}. From~\cite[Ex. 2.6]{DG},
+we obtain that the NZ datum $\Xi_{4_1}$ is given by
+\be
+A\=
+\begin{pmatrix}
+2 & 2\\
+1 & 1
+\end{pmatrix},\quad
+B\=
+\begin{pmatrix}
+1 & 1\\
+1 & 0
+\end{pmatrix},\quad
+\nu\=
+\begin{pmatrix}
+2\\
+1
+\end{pmatrix},\quad
+f\=
+\begin{pmatrix}
+0\\
+1
+\end{pmatrix},\quad
+f''\=
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix},\quad
+\ee
+and $z_1=z_2=\z_6=e^{2\pi i/6}$. Therefore, we have
+\be
+\Phi^{\Xi_{4_1}}(\hbar) \= e^{\frac{\hbar}{8}}
+\langle
+\psi_{\hb}(x_1,\z_6)\psi_{\hb}(x_2,\z_6)\rangle_{(x_1,x_2),
+\Lambda_0}\,,
+\ee
+where
+\be
+\Lambda_0
+\=
+\begin{pmatrix}
+\z_6-1 & -1\\
+-1 & \z_6-1
+\end{pmatrix}\,.
+\ee
+This is a two dimensional formal Gaussian integral which can be simplified. 
+Using $\z_6=1/(1-\z_6)=1-\z_6^{-1}$ and applying a change of coordinates
+$x_1\mapsto x_1-\z_6x_2$, we find that
+\be
+\Phi^{\Xi_{4_1}}(\hbar) \= e^{\frac{\hbar}{8}}
+\langle
+\psi_{\hb}(x_1-\z_6x_2,\z_6)\psi_{\hb}(x_2,\z_6)\rangle_{(x_1,x_2),
+\Lambda_1}\,,
+\ee
+where
+\be
+\Lambda_1
+\=
+\begin{pmatrix}
+\z_6-1 & 0\\
+0 & 2\z_6-1
+\end{pmatrix}\,.
+\ee
+We can apply Fubini's theorem~\cite[Prop.2.13]{AarhusII} and
+Corollary~\ref{cor.fourier} to perform the integral over $x_1$. After
+renaming the variable $x_2$ by $x$, we express $\Phi^{\Xi_{4_1}}(\hbar)$ by a
+one-dimensional formal Gaussian integral
+\be
+\label{eq.phi41.1d}
+\Phi^{\Xi_{4_1}}(\hbar) \= e^{\frac{\hbar}{6}}
+\Big\langle
+\exp\Big(\frac{x}{2}\hbar^{\frac{1}{2}}\Big)\psi_{\hb}(x,\z_6)^2\Big\rangle_{x,
+2\z_6-1}\,.
+\ee
+Using the definition of $\psi_\hbar$ from Equation~\eqref{psih} and expanding
+to $O(\hbar^{5/2})$, we obtain that
+\be
+\begin{small}
+\begin{aligned}
+&\exp\Big(\frac{x}{2}\hbar^{\frac{1}{2}}\Big)\psi_{\hb}(x,\z_6)^2\\
+&\=
+1
++\bigg(\frac{1}{3}x^3 + \Big(\z_6 - \frac{1}{2}\Big)x\bigg)\hbar^{1/2}
++\bigg(\frac{1}{18}x^6 + \Big(\frac{1}{2}\z_6 - \frac{1}{4}\Big)x^4
+- \frac{7}{8}x^2 + \Big(-\frac{1}{6}\z_6 + \frac{1}{6}\Big)\bigg)\hbar\\
+&\qquad+ \bigg(\frac{1}{162}x^9 + \Big(\frac{1}{9}\z_6 - \frac{1}{18}\Big)x^7
+- \frac{1}{2}x^5 + \Big(-\frac{73}{72}\z_6 + \frac{77}{144}\Big)x^3
++ \Big(\frac{1}{12}\z_6 + \frac{1}{4}\Big)x\bigg)\hbar^{3/2}\\
+&\qquad+ \bigg(\frac{1}{1944}x^{12} + \Big(\frac{5}{324}\z_6
+- \frac{5}{648}\Big)x^{10} - \frac{37}{288}x^8 + \Big(-\frac{1337}{2160}\z_6
++ \frac{1357}{4320}\Big)x^6\\
+&\qquad+ \Big(\frac{1}{24}\z_6 + \frac{1027}{1152}\Big)x^4
++ \Big(\frac{23}{48}\z_6 - \frac{5}{16}\Big)x^2
+- \frac{1}{72}\z_6\bigg)\hbar^{2}+O(\hbar^{5/2})\,.
+\end{aligned}
+\end{small}
+\ee
+Noting that $2\z_6-1=\sqrt{-3}$, we can then evaluate Equation~\eqref{eq.phi41.1d}
+with Equation~\eqref{formalG1} to obtain that
+\be
+e^{-\frac{\hbar}{4}}\Phi^{\Xi_{4_1}}(\hbar) \=
+1 + \frac{11}{72\sqrt{-3}}\hbar + \frac{697}{2(72\sqrt{-3})^2}\hbar^{2}+O(\hbar^{4})\,.
+\ee
+This is in agreement with computations in~\cite{DG,DGLZ,GZ:kashaev}.
+The one-dimensional formal Gaussian integral~\eqref{eq.phi41.1d} gives an effective
+computation of the series $\Phi^{\Xi_{4_1}}(\hbar)$.
+
+
+
+
+Indeed, using a \texttt{pari-gp} program one can compute one
+hundred coefficients in a few seconds and two hundred coefficients in a few minutes,
+the first few of them are given by
+\be
+\begin{tiny}
+\begin{aligned}
+&e^{-\frac{\hbar}{4}}\Phi^{\Xi_{4_1}}(\hbar)\\
+&=\;
+1
+- \frac{11}{216}\sqrt{-3}\,\hbar - \frac{697}{31104}\hbar^2
++ \frac{724351}{100776960}\sqrt{-3}\,\hbar^3
++ \frac{278392949}{29023764480}\hbar^4
+- \frac{244284791741}{43883931893760}\sqrt{-3}\,\hbar^5\\
+&\qquad- \frac{1140363907117019}{94789292890521600}\hbar^6
++ \frac{212114205337147471}{20474487264352665600}\sqrt{-3}\,\hbar^7
++ \frac{367362844229968131557}{11793304664267135385600}\hbar^8\\
+&\qquad- \frac{44921192873529779078383921}{1260940134703442115428352000}\sqrt{-3}\,
+\hbar^9
+- \frac{3174342130562495575602143407}{23109593741473993679123251200}\hbar^{10}
++O(\hbar^{11})\,.
+\end{aligned}
+\end{tiny}
+\ee
+Similar to the case of the $4_1$, one can obtain one-dimensional formal Gaussian
+integrals for the next two simplest hyperbolic knots, the $5_2$ and the
+$(-2,3,7)$-pretzel knot, whose details we omit.
+
+
+
+\newpage
+
+\addcontentsline{toc}{section}{Acknowledgements}
+\noindent \textbf{Acknowledgements.} The authors wish to thank Don Zagier for enlightening conversations.
+The work of M.S. and C.W. has been supported by the Max-Planck-Gesellschaft.
+C.W. wishes to thank the Southern University of Science and Technology's
+International Center for Mathematics in
+Shenzhen for their hospitality where the paper was completed.

@@ -7,10 +7,10 @@ section_number: 7
 pages: 44-48
 source_pdf: 0111205v1.pdf
 source_sha256: 66325a21651aff89
-text_source: latex
-latex_prose_ratio: 0.822
-latex_coverage_ratio: 0.988
 doc_brief: "From Subfactors to Categories and Topology II — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{moddoub}
 For the moment, let $\2C$ be any (strict) braided monoidal category. Given such a category

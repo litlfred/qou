@@ -206,8 +206,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 8,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -222,14 +222,14 @@
     {
      "id": "sec-000-3-energy-minimization",
      "title": "Energy Minimization",
-     "prose_ratio": 0.123,
+     "prose_ratio": 0.135,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -243,18 +243,24 @@
     {
      "id": "sec-003-32-equicontinuity-at-the-boundary",
      "title": "Equicontinuity at the Boundary",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-33-convergence-in-the-interior",
      "title": "Convergence in the Interior",
-     "result": "no matching \\section"
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-5-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.953,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

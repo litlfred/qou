@@ -7,10 +7,10 @@ section_number: 9
 pages: 44-53
 source_pdf: 2104.04941v2.pdf
 source_sha256: 84426ed37754aa78
-text_source: latex
-latex_prose_ratio: 0.863
-latex_coverage_ratio: 0.971
 doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES — Fock and Goncharov [FG06b] introduced cluster ensembles, p roviding a framework for coordi- nates on varieties of surface"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:examples}
 
@@ -39,7 +39,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
   
   
 
-  \subsection{\texorpdfstring{$A_5$}{A\_5}}
+  
+\subsection{\texorpdfstring{$A_5$}{A\_5}}
 
   We use the Dynkin diagram \inldynkinAfive. The Coxeter element is $c =
   \set{3, 2, 4, 1, 5}$, and the partitions are $T_0 = \set{3}$, $T_1 =
@@ -135,7 +136,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
     \end{gathered}
   \end{equation*}
 
-  \subsection{\texorpdfstring{$B_3$}{B\_3}}
+  
+\subsection{\texorpdfstring{$B_3$}{B\_3}}
 
   We use the Dynkin diagram \inldynkinBthree. This is linear, so the
   Coxeter element and partitions are trivially $c = \set{1, 2, 3}$ and
@@ -203,7 +205,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
     \end{gathered}
   \end{equation*}
 
-  \subsection{\texorpdfstring{$D_5$}{D\_5}}
+  
+\subsection{\texorpdfstring{$D_5$}{D\_5}}
 
   Based on the Dynkin diagram \inldynkinDfive, the following quiver is
   of well-rooted Dynkin type for $D_5$ (recall that $\sigma_G$ is
@@ -349,7 +352,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
     \end{gathered}
   \end{equation*}
 
-  \subsection{\texorpdfstring{$G_2$}{G\_2}}
+  
+\subsection{\texorpdfstring{$G_2$}{G\_2}}
 
   Based on the Dynkin diagram \inldynkinGtwo, (with $c = \set{1, 2}$ and
   trivial linear partitioning) we use the following quiver for Dynkin
@@ -406,7 +410,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
     \end{gathered}
   \end{equation*}
 
-  \subsection{\texorpdfstring{$E_6$}{E\_6}}
+  
+\subsection{\texorpdfstring{$E_6$}{E\_6}}
 
   Based on the Dynkin diagram \inldynkinEsix, the following quiver is of
   well-rooted Dynkin type for $E_6$. It admits an induced Coxeter
@@ -736,7 +741,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
     \end{gathered}
   \end{equation*}
 
-  \subsection{\texorpdfstring{$E_7$}{E\_7}}
+  
+\subsection{\texorpdfstring{$E_7$}{E\_7}}
 
   Based on the Dynkin diagram \inldynkinEseven, the following quiver is
   of well-rooted Dynkin type for $E_7$. It admits an induced Coxeter
@@ -757,7 +763,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
     }
   \end{figure}
 
-  \subsection{\texorpdfstring{$E_8$}{E\_8}}
+  
+\subsection{\texorpdfstring{$E_8$}{E\_8}}
 
   Based on the Dynkin diagram \inldynkinEeight, the following quiver is
   of well-rooted Dynkin type for $E_8$. It admits an induced Coxeter
@@ -778,7 +785,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
     }
   \end{figure}
 
-  \subsection{\texorpdfstring{$D_2 = A_1 \times A_1$}{D\_2 = A\_1 x
+  
+\subsection{\texorpdfstring{$D_2 = A_1 \times A_1$}{D\_2 = A\_1 x
       A\_1}}
 
   Using the Dynkin diagram \inldynkinDtwo, we use the following quiver.
@@ -812,7 +820,8 @@ doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES —
     \end{gathered}
   \end{equation*}
 
-  \subsection{\texorpdfstring{$A_3 \times C_2$}{A\_3 x C\_2}}
+  
+\subsection{\texorpdfstring{$A_3 \times C_2$}{A\_3 x C\_2}}
 
   To demonstrate \cref{lem:fgcs-exists-for-products} for a less trivial
   type, consider $G = G_1 \oplus G_2$, with $G_1$ of type $A_3$ and

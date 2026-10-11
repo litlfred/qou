@@ -6,7 +6,7 @@
   "sha256": "955e3eda48672e2869a025a83565121851b8ccef1494aeaddac7b4231526460e",
   "bytes": 3132867,
   "pages": 76,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -1049,8 +1049,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "NFreview.tex",
-   "tex_sections": 6,
-   "overlaid": 0,
+   "tex_sections": 70,
+   "overlaid": 29,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1065,157 +1065,246 @@
     {
      "id": "sec-001-1-two-body-scattering-amplitude",
      "title": "Two-body scattering amplitude",
-     "result": "no matching \\section"
+     "prose_ratio": 0.051,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-2-power-counting",
      "title": "Power counting",
-     "result": "no matching \\section"
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.72,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-3-regularization-and-renormalization",
      "title": "Regularization and renormalization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-4-renormalization-group",
      "title": "Renormalization group",
-     "result": "no matching \\section"
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-6-spin-isospin-projection-and-parametrizations",
      "title": "Spin-isospin projection and parametrizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-8-external-currents",
      "title": "External currents",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-1-extension-to-three-particles",
      "title": "Extension to three particles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-3-more-neutron-deuteron-scattering",
      "title": "More neutron-deuteron scattering",
-     "result": "no matching \\section"
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-4-proton-deuteron-scattering-and-helion",
      "title": "Proton-deuteron scattering and helion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-5-infrared-regulators",
      "title": "Infrared regulators",
-     "result": "no matching \\section"
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-6-four-nucleons",
      "title": "Four nucleons",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-7-beyond-four-nucleons",
      "title": "Beyond four nucleons",
-     "result": "no matching \\section"
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-8-external-currents-and-reactions",
      "title": "External currents and reactions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-1-form-factors",
      "title": "Form Factors",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-2-e1-transition-and-photodisintegration",
      "title": "E1 transition and photodisintegration",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-3-correlations",
      "title": "Correlations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-4-neutron-capture",
      "title": "Neutron capture",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-1-degrees-of-freedom-and-symmetries",
      "title": "Degrees of freedom and symmetries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.82,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-019-1-power-counting",
      "title": "Power counting",
-     "result": "no matching \\section"
+     "prose_ratio": 0.114,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-020-2-chiral-lagrangian",
      "title": "Chiral Lagrangian",
-     "result": "no matching \\section"
+     "prose_ratio": 0.886,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-021-2-nuclear-potential",
      "title": "Nuclear potential",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-2-renormalization-of-singular-potentials",
      "title": "Renormalization of singular potentials",
-     "result": "no matching \\section"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-3-connection-with-pionless-eft",
      "title": "Connection with Pionless EFT",
-     "result": "no matching \\section"
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-4-perturbative-pions",
      "title": "Perturbative pions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-5-partly-perturbative-pions",
      "title": "Partly perturbative pions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-026-6-other-approaches",
      "title": "Other approaches",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-027-1-nuclear-physics-at-large-quark-masses",
      "title": "Nuclear physics at large quark masses",
-     "result": "no matching \\section"
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-028-2-fine-tuning-in-chiral-eft-and-infrared-limit-c",
      "title": "Fine-tuning in Chiral EFT and infrared limit cycle",
-     "result": "no matching \\section"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-029-1-parity-violation",
      "title": "Parity violation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-030-2-time-reversal-violation",
      "title": "Time-reversal violation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-031-3-other-symmetries",
      "title": "Other symmetries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-032-acknowledgments",

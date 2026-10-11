@@ -8,11 +8,36 @@ pages: 27-27
 source_pdf: 0511710v2.pdf
 source_sha256: f88f50d459080490
 doc_brief: "Higher gauge theory — Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge theory describe s the parallel transport of 1-dimensional"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-We are grateful to Orlando Alvarez, Paolo Aschieri, Toby Bar tels, Larry Breen,
-Dan Christensen, James Dolan, Jens Fjelstad, Ezra Getzler, Branislav Jurˇ co,
-Mikhail Kapranov, Anders Kock, Amitabha Lahiri, Thomas Lar sson, Hendryk
-Pfeiﬀer, and Danny Stevenson for comments and helpful discu ssion. The ﬁrst
-author thanks the Streetfest organizers for inviting him to speak on higher gauge
-theory along with Alissa Crans and Danny Stevenson [41]. The second author
-was supported by SFB/TR 12.
+We are grateful to
+Orlando Alvarez,
+Paolo Aschieri,
+Toby Bartels,
+Larry Breen,
+Dan Christensen,
+James Dolan,
+Jens Fjelstad,
+Ezra Getzler,
+Branislav Jur{\v c}o,
+Mikhail Kapranov,
+Anders Kock,
+Amitabha Lahiri,
+Thomas Larsson,
+Hendryk Pfeiffer,
+and 
+Danny Stevenson
+for comments and helpful discussion. 
+The first author thanks the Streetfest organizers for inviting
+him to speak on higher gauge theory along with Alissa Crans and
+Danny Stevenson \cite{BCS}.
+The second author was supported by SFB/TR 12.
+
+
+
+
+
+
+\small{

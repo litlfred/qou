@@ -132,7 +132,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 8,
-   "overlaid": 2,
+   "overlaid": 1,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -142,16 +142,14 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.591,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.549,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-5-w2-triality-and-the-3-generations",
      "title": "W2-triality and the 3 generations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.634,
+     "prose_ratio": 0.638,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },

@@ -8,198 +8,287 @@ pages: 9-11
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
 doc_brief: "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills"
+text_source: latex
+latex_prose_ratio: 0.895
+latex_coverage_ratio: 1.0
 ---
-The TBA equations we will obtain are conformal limits [7] of the integral equations proposed
-by Gaiotto–Moore–Neitzke (GMN) in [5] to describe the hyperK¨ ahler metric on the Coulomb
-branch ofN = 2 theories compactiﬁed on R3× S1
-R, where R is the compactiﬁcation radius. We
-will now review some basic aspects of these equations which will be useful in the following. The
-basic ingredients in these equations are the central charges of the N = 2 supersymmetric gauge
-theory
-Z(u) = (a,aD), (3.1)
+The TBA equations we will obtain are conformal limits \cite{oper} of
+the integral equations proposed by Gaiotto--Moore--Neitzke (GMN) in
+\cite{gmn} to describe the hyperK\"ahler metric on the Coulomb branch
+of $\CN=2$ theories compactified on $\IR^3 \times \IS^1_R$, where $R$
+is the compactification radius. We will now review some basic aspects
+of these equations which will be useful in the following.  The basic
+ingredients in these equations are the central charges of the $\CN=2$
+supersymmetric gauge theory
+ 
+\begin{equation}
+  Z(\bs{u})=\left(\bs{a},  \bs{a}_D \right), 
+\end{equation}
+
 where
-aD = ∂F0
-∂a . (3.2)
-We deﬁne the period associated to a vector γ∈ Γ in the lattice of electromagnetic charges as
-Zγ =Z(u)·γ. (3.3)
-This is just a linear combination of A periods and B periods.
+
+\begin{equation}
+  \bs{a}_D={\partial F_0 \over \partial \bs{a}}. 
+\end{equation}
+
+ 
+We define the period associated to a vector
+$\bs{\gamma}\in\Gamma$ in the lattice of electromagnetic charges as
+
+
+\begin{equation}
+  Z_{\bs{\gamma}}= Z(\bs{u}) \cdot {\boldsymbol{\gamma}}.
+\end{equation}
+
+This is just a linear combination of $A$ periods and $B$ periods. 
+
 To such a central charge we associate a ray
-𝓁γ =
-{
-ζ : Zγ(u)
-ζ ∈ R−
-}
-. (3.4)
-The semiﬂat coordinate on the Coulomb branch is given by
-χsf
-γ (ζ) = exp
-[
-πRζ−1Zγ + iθγ +πRζZγ
-]
-, (3.5)
-where R is the compactiﬁcation radius, and
-θγ =θ·γ (3.6)
-is the angular coordinate on the ﬁber. The semiﬂat coordinate is the “uncorrected” or “classical”
-coordinate, and it is corrected by exponentially small eﬀects in the large R limit. These eﬀects
-are encoded in a non-linear, TBA-like integral equation, which reads as
-χγ(ζ) =χsf
-γ (ζ) exp
-
-− 1
-2πi
-∑
-γ′∈Γ
-Ω(γ′;u)⟨γ,γ′⟩Iγ′(ζ)
-
-, (3.7)
-where Ω(γ;u) is the number of BPS states with electromagnetic charge γ at the point u of the
-Coulomb branch, and
-Iγ =
-∫
-𝓁γ
-dζ′
-ζ′
-ζ′ +ζ
-ζ′−ζ log
-(
-1−σ(γ)χγ(ζ′)
-)
-. (3.8)
-Here, σ(γ) is the quadratic reﬁnement. It has been argued in [6] that, for BPS hypermulti-
-plets/vectormultiplets, one has, respectively,
-σ(γ) =∓1. (3.9)
-We have used the normalization of [34], which is more appropriate for our normalization of
-charges/periods. An important feature of (3.7) is that only those states whose charge γ′ has a
-non-vanishing Dirac pairing with γ contributes to the equation of χγ(ζ). The quantities χγ(ζ)
-– 8 –
-characterize in a precise way the hyperK¨ ahler metric of the moduli space of the N = 2 theory
-compactiﬁed on R3× S1
-R, and they can be realized as cluster coordinates on this moduli space
-[6]. They satisfy the property
-χγ+γ′(ζ) =χγ(ζ)χγ′(ζ). (3.10)
-Very often we have both charges ±γ appearing in the sum in the r.h.s. of (3.7). If θγ = 0,
-we have an extra symmetry [7],
-χγ(ζ) =χ−γ(−ζ), (3.11)
+
+\begin{equation}
+  \ell_{\bs{\gamma}}= \left\{ \zeta: {Z_{\bs{\gamma}}(\bs{u}) \over
+      \zeta} \in \IR_-\right\}.  
+\end{equation}
+
+
+
+
+
+
+
+The {\it semiflat coordinate} on the Coulomb branch is given by
+
+\begin{equation}
+\chi_{\bs{\gamma}}^{\rm sf}(\zeta)= \exp\left[ \pi R \zeta^{-1}
+  Z_{\bs{\gamma}} + \ri \theta_{\bs{\gamma}} + \pi R \overline \zeta
+  Z_{\bs{\gamma}} \right],  
+\end{equation}
+
+where $R$ is the compactification radius, and 
+
+\begin{equation}
+ \theta_{\bs{\gamma}}= \boldsymbol{\theta} \cdot {\bs{\gamma}}
+ \end{equation}
+ 
+ is the angular coordinate on the fiber.  The semiflat coordinate is
+ the ``uncorrected" or ``classical" coordinate, and it is corrected by
+ exponentially small effects in the large $R$ limit. These
+ effects are encoded in a non-linear, TBA-like integral equation,
+ which reads as
+
+\begin{equation}
+\label{tba-equation}
+\chi_{\bs{\gamma}}(\zeta)=\chi_{\bs{\gamma}}^{\rm sf}(\zeta)\exp\left[
+  -{1\over2 \pi \ri} \sum_{\bs{\gamma}' \in \Gamma}  
+\Omega(\bs{\gamma}'; \bs{u}) \langle \bs{\gamma}, \bs{\gamma}'\rangle
+\CI_{\bs{\gamma}'} (\zeta) \right],  
+\end{equation}
+
+where $\Omega(\gamma;u)$ is the number of BPS states with
+electromagnetic charge $\gamma$ at the point $u$ of the Coulomb branch, and
+
+\begin{equation}
+  \CI_{\bs{\gamma}}= \int_{\ell_{\bs{\gamma}}} {\rd \zeta' \over
+    \zeta'} {\zeta '+\zeta \over \zeta'- \zeta} \log\left(1-
+    \sigma(\bs{\gamma}) \chi_{\bs{\gamma}} (\zeta') \right).  
+\end{equation}
+
+Here, $\sigma(\bs{\gamma})$ is the quadratic refinement. It has been
+argued in \cite{gmn2} that, for BPS hypermultiplets/vectormultiplets,
+one has, respectively,
+
+\begin{equation}
+  \sigma(\bs{\gamma})=\mp 1. 
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+We have used the normalization of \cite{cdorey}, which is more
+appropriate for our normalization of charges/periods. An important
+feature of \eqref{tba-equation} is that only those states whose charge
+$\bs{\gamma'}$ has a non-vanishing Dirac pairing with $\bs{\gamma}$
+contributes to the equation of $\chi_{\bs{\gamma}}(\zeta)$.  The
+quantities $\chi_{\bs{\gamma}}(\zeta)$ characterize in a precise way
+the hyperK\"ahler metric of the moduli space of the $\CN=2$ theory
+compactified on $\IR^3 \times \IS^1_R$, and they can be realized as
+cluster coordinates on this moduli space \cite{gmn2}. They satisfy the
+property
+
+\begin{equation}
+  \label{product}
+  \chi_{\bs{\gamma}+\bs{\gamma}'}(\zeta) =
+  \chi_{\bs{\gamma}}(\zeta)\chi_{\bs{\gamma}'}(\zeta). 
+\end{equation}
+
+ 
+Very often we have both charges $\pm \bs{\gamma}$ appearing in the sum
+in the r.h.s. of (\ref{tba-equation}). If $\theta_{\bs{\gamma}}=0$, we
+have an extra symmetry \cite{oper},
+
+\begin{equation}
+\label{sym}
+\chi_{\bs{\gamma}}(\zeta)=\chi_{-\bs{\gamma}}(-\zeta), 
+\end{equation}
+
 and we can combine
-Cγ =Iγ−I−γ =
-∫
-𝓁γ
-dζ′
-ζ′
-ζ′ +ζ
-ζ′−ζ log
-(
-1−σ(γ)χγ(ζ′)
-)
-−
-∫
-𝓁−γ
-dζ′
-ζ′
-ζ′ +ζ
-ζ′−ζ log
-(
-1−σ(−γ)χ−γ(ζ′)
-)
-=
-∫
-𝓁γ
-dζ′
-ζ′
-(ζ′ +ζ
-ζ′−ζ− ζ′−ζ
-ζ′ +ζ
-)
-log
-(
-1−σ(γ)χγ(ζ′)
-)
-= 4ζ
-∫
-𝓁γ
-dζ′
-(ζ′)2−ζ2 log
-(
-1−σ(γ)χγ(ζ′)
-)
-.
-(3.12)
-In going from the ﬁrst to the second line we have changed variables ζ′→−ζ′, and we used the
-symmetry (3.11).
-In order to put the equations in a form similar to the TBA equations, we will perform a
-change of variables akin to the one made in [5]. If
-Zγ = eiφ′
-|Zγ| (3.13)
-then we change variables in (3.12) as follows:
-ζ =−eiφ−θ, ζ ′ =−eiφ′−θ′
-, (3.14)
+ 
+ \begin{equation}
+   \ba
+   \label{cintegral}
+   \CC_{\bs{\gamma}}= \CI_{\bs{\gamma}} -\CI_{-\bs{\gamma}}
+   &=
+   \int_{\ell_{\bs{\gamma}}} {\rd \zeta' \over \zeta'} {\zeta '+\zeta
+     \over \zeta'- \zeta} \log\left(1- \sigma(\bs{\gamma})
+     \chi_{\bs{\gamma}} (\zeta') \right)-
+   \int_{\ell_{-\bs{\gamma}}} {\rd \zeta' \over \zeta'} {\zeta '+\zeta
+     \over \zeta'- \zeta} \log\left(1- \sigma(-\bs{\gamma})
+     \chi_{-\bs{\gamma}} (\zeta') \right)\\
+   &= \int_{\ell_{\bs{\gamma}}} {\rd \zeta' \over \zeta'} \left(
+     {\zeta '+\zeta \over \zeta'- \zeta}-{\zeta '-\zeta \over \zeta'+
+       \zeta} \right) \log\left(1- \sigma(\bs{\gamma})
+     \chi_{\bs{\gamma}} (\zeta') \right)\\
+   &=4 \zeta  \int_{\ell_{\bs{\gamma}}} {\rd \zeta' \over \left(
+       \zeta' \right)^2-\zeta^2} \log\left(1- \sigma(\bs{\gamma})
+     \chi_{\bs{\gamma}} (\zeta') \right).  
+   \ea 
+\end{equation}
+ 
+In going from the first to the second line we have changed variables
+$\zeta'\rightarrow -\zeta'$, and we used the symmetry (\ref{sym}).
+ 
+In order to put the equations in a form similar to the TBA equations,
+we will perform a change of variables akin to the one made in
+\cite{gmn}. If
+ 
+\begin{equation}
+  Z_{\bs{\gamma}}= \re^{\ri \phi'} \left|  Z_{\bs{\gamma}} \right|
+\end{equation}
+ 
+then we change variables in (\ref{cintegral}) as follows:
+ 
+\begin{equation}
+  \zeta= -\re^{\ri \phi -\theta}, \qquad \zeta'=  -\re^{\ri \phi' -\theta'}, 
+\end{equation}
+ 
 and we obtain
-Cγ = 2
-∫
-R
-log (1−σ(γ)χγ(θ′))
-sinh(θ−θ′ + iφ′− iφ)dθ′. (3.15)
-3.2 TBA equations for the modiﬁed Mathieu equation
-Building on [7, 8], we expect to have a general correspondence between the mathematical descrip-
-tion of BPS states in [5, 6], and the “resurgent” properties of the quantum periods associated to
-the corresponding SW curve. As noted in [7], this correspondence involves the conformal limit
-of the TBA equations of [5], which is given by
-R→ 0 , ζ → 0 , ζ/R ﬁnite . (3.16)
-In this correspondence, the classical limit of the WKB periods Π (0)
-γ corresponds to the central
-charge Zγ, while the full quantum period is obtained as the logarithm of the Coulomb branch
-coordinatesχγ(ζ) (in the conformal limit). The Borel singularities of the Borel transformsˆΠγ are
-closely related to the BPS spectrum of the theory, and the Stokes discontinuities of the quantum
-periods are closely related to the so-called Kontsevich–Soibelman symplectomorphisms [5, 6, 35].
-This correspondence is summarized in Table 1, and it can be used to obtain integral equations of
-the TBA type governing the quantum periods. We will now apply this correspondence to obtain
-such equations for the modiﬁed Mathieu operator.
-– 9 –
-Resurgence BPS states
-WKB curve SW curve
-classical limit Π (0)
-γ central charge Z(γ)
-quantum period Πγ cluster coordinate log χγ
-Borel singularities BPS spectrum
-Stokes discontinuities KS symplectomorphisms
-Table 1: Correspondence between the mathematical structures in the resurgent approach to the
-WKB method, and those in the theory of BPS states.
-Let us then consider the SW theory [27], i.e. pure N = 2 SYM with gauge group SU (2). We
-will denote the charge by
-γ =γ = (ne,nm). (3.17)
-We will use the conventions of [34] for the symplectic product,
-⟨γ,γ′⟩ =⟨(ne,nm), (n′
-e,n′
-m)⟩ =−nen′
-m +nmn′
-e. (3.18)
+ 
+\begin{equation}
+  \CC_{\bs{\gamma}}= 2\int_\IR { \log\left(1- \sigma(\bs{\gamma})
+      \chi_{\bs{\gamma}} (\theta') \right) \over \sinh(
+    \theta-\theta'+ \ri \phi'-\ri \phi)} \rd \theta'.  
+\end{equation}
+ 
+
+
+\subsection{TBA equations for the modified Mathieu equation}
+\label{sc:SW-TBA}
+
+Building on \cite{oper, ims}, we expect to have a general
+correspondence between the mathematical description of BPS states in \cite{gmn,gmn2}, and the ``resurgent"
+properties of the quantum periods associated to the corresponding SW curve. As noted in \cite{oper}, this correspondence involves the conformal limit of the 
+TBA equations of \cite{gmn}, which is given by
+
+\begin{equation}
+  R\to 0 \ , \quad \zeta \to 0\ ,\quad  \zeta/R\;\; \text{finite} \ .
+\end{equation}
+
+In this correspondence, the classical limit of the WKB periods
+$\Pi_\gamma ^{(0)}$ corresponds to the central charge $Z_\gamma$,
+while the full quantum period is obtained as the logarithm of the
+Coulomb branch coordinates $\chi_\gamma(\zeta)$ (in the conformal
+limit). The Borel singularities of the Borel transforms
+$\widehat \Pi_\gamma$ are closely related to the BPS spectrum of the
+theory, and the Stokes discontinuities of the quantum periods are
+closely related to the so-called Kontsevich--Soibelman
+symplectomorphisms \cite{ks, gmn,gmn2}. This correspondence is
+summarized in Table \ref{table-cor}, and it can be used to obtain
+integral equations of the TBA type governing the quantum periods. We
+will now apply this correspondence to obtain such equations for the
+modified Mathieu operator.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l | r|}
+\hline
+Resurgence & BPS states \\ \hline\hline
+WKB curve &  SW curve\\ \hline
+classical limit $\Pi_\gamma^{(0)}$ & central charge $Z(\gamma)$  \\ \hline
+quantum period $\Pi_\gamma$ &  cluster coordinate $\log \, \chi_\gamma$ \\\hline
+Borel singularities  & BPS spectrum  \\\hline
+Stokes discontinuities  & KS symplectomorphisms  \\\hline
+\end{tabular}
+\end{center}
+\caption{Correspondence between the mathematical structures in the
+  resurgent approach to the WKB method, and those in the theory of BPS
+  states.}
+\label{table-cor}
+\end{table}
+
+
+
+Let us then consider the SW theory \cite{sw}, i.e.\ pure $\CN=2$ SYM with
+gauge group $SU(2)$. We will denote the charge by 
+
+\begin{equation}
+  \bs{\gamma}=\gamma=(n_e, n_m). 
+\end{equation}
+
+We will use the conventions of \cite{cdorey} for the symplectic product, 
+
+\begin{equation}
+  \langle \gamma, \gamma'\rangle = \langle (n_e, n_m), (n'_e, n'_m)
+  \rangle= -n_e n_m'+ n_m n'_e.  
+\end{equation}
+
 We will denote
-χe(ζ) =χ(1,0)(ζ), χ m(ζ) =χ(0,1)(ζ), χ d(ζ) =χ(1,1)(ζ), (3.19)
-and because of (3.10) we have
-χd(ζ) =χe(ζ)χm(ζ). (3.20)
-We will write TBA equations for χe(ζ) and χm(ζ), as in [34]. We have
-χe(ζ) =χsf
-e (ζ) exp
-
-− 1
-2πi
-∑
-γ′
-ce(γ′)Iγ′(ζ)
-
-,
-χm(ζ) =χsf
-m(ζ) exp
-
-− 1
-2πi
-∑
-γ′
-cm(γ′)Iγ′(ζ)
-
-,
-(3.21)
+
+\begin{equation}
+  \chi_{e} (\zeta)= \chi_{(1,0)} (\zeta), \qquad  \chi_{m} (\zeta)=
+  \chi_{(0,1)} (\zeta), \qquad \chi_{d} (\zeta)= \chi_{(1,1)} (\zeta),  
+\end{equation}
+
+and because of (\ref{product}) we have
+
+\begin{equation}
+  \chi_{d} (\zeta)= \chi_{e} (\zeta) \chi_{m} (\zeta).
+\end{equation}
+ 
+We will write TBA equations for $ \chi_{e} (\zeta)$ and
+$ \chi_{m} (\zeta)$, as in \cite{cdorey}. We have
+ 
+\begin{equation}
+  \label{su2tba}
+  \ba
+  \chi_e (\zeta)&=  \chi^{\rm sf}_{e} (\zeta)\exp\left[-{1\over 2 \pi
+      \ri} \sum_{\gamma'} c_e(\gamma') \CI_{\gamma'}(\zeta) \right],\\ 
+  \chi_m (\zeta)&=  \chi^{\rm sf}_{m} (\zeta)\exp\left[-{1\over 2 \pi
+      \ri} \sum_{\gamma'} c_m(\gamma') \CI_{\gamma'}(\zeta)\right], 
+  \ea
+\end{equation}
+  
 where
-ce(γ) = Ω(γ;u)⟨(1, 0),γ⟩, c m(γ) = Ω(γ;u)⟨(0, 1),γ⟩. (3.22)
-In order to write the integral equations, we need to know the structure of the BPS spectrum
-in SW theory. It is known that there is a curve of marginal stability C in the Coulomb branch of
+  
+\begin{equation}
+  \label{cem}
+  c_e(\gamma)= \Omega(\gamma; u) \langle (1,0), \gamma\rangle, \qquad
+  c_m(\gamma)= \Omega(\gamma; u) \langle (0,1), \gamma\rangle. 
+\end{equation}
+  
+
+In order to write the integral equations, we need to know the
+structure of the BPS spectrum in SW theory. It is known that there is
+a curve of marginal stability ${\cal C}$ in the Coulomb branch of the
+SW theory, separating a strong coupling region or chamber ${\cal S}$
+inside ${\cal C}$, from a weak coupling region or chamber ${\cal W}$
+outside ${\cal C}$ \cite{sw,fb,selfdual}. As we move from the strong
+coupling region to the weak coupling region, the spectrum of BPS
+states changes drastically by the famous wall-crossing phenomenon. We
+consider the two chambers in turn.

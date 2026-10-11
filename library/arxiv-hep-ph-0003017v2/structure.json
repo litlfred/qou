@@ -7,7 +7,8 @@
   "bytes": 1052130,
   "pages": 61,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -178,6 +179,66 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 8,
-  "chars_total": 171445
+  "chars_total": 171445,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "arnps.tex",
+   "tex_sections": 53,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.55,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-4-tr-vw-w",
+     "title": "Tr v(W \u2020W ) ,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-4-str-\u00b5u\u00b5u1",
+     "title": "Str \u2202\u00b5U\u2202\u00b5U\u22121\u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-2-str-mumu1",
+     "title": "Str (MU+M\u2020U\u22121)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-tr-\u03c9\u03c3",
+     "title": "Tr \u2126(\u03c3) ,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.859,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-4-c-detar-quark-gluon-plasma-in-numerical-simula",
+     "title": "C. DeTar, Quark-gluon plasma in numerical simulations of QCD, in Quark gluon plasma",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -8,267 +8,118 @@ pages: 1-6
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
 doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
+text_source: latex
+latex_prose_ratio: 0.843
+latex_coverage_ratio: 0.788
 ---
-1.3. Plan of the paper 6
-1.4. Acknowledgements 6
-2. Preliminaries 7
-2.1. Convexity 7
-2.2. Projective geometry 7
-2.3. Finsler geometry 8
-3. A projective outlook on the Funk metric 8
-3.1. The projective co-nomadic Finsler structure 8
-3.2. The volume in Funk geometry 11
-4. Funk billiards and duality 13
-5. Integrability of Funk billiard in conics 18
-Date: April 23, 2021.
-MSC classiﬁcation: 52A40, 37C83, 52A20, 53D25, 51N15, 52A38, 52A10, 52A55.
-The research was partially supported by ISF Grant 1750/20.
-1
-arXiv:2012.12159v3  [math.DG]  22 Apr 2021
-2 A Funk perspective on billiards, projective geometry and Mahler volume
-6. Sch¨ aﬀer’s dual girth conjecture 21
-7. Mahler volumes of every Funk scale 22
-8. Maximizing the Funk-Mahler volume 26
-9. Regularizing the total Funk volume 34
-References 41
-1. Introduction
-1.1. Funk and Hilbert metrics. The Hilbert metric in the interior of a convex
-set K⊂ Rn is given by
-dH
-K(x,y ) = 1
-2 log|ay||xb|
-|ax||yb|,
-where a,x,y,b appear in that order on the line through x,y with a,b∈ ∂K. It is
-evidently invariant under invertible projective maps. Hilbert discovered this metric
-while attempting to generalize the Beltrami-Klein model of hyperbolic geometry.
-It is moreover a projective metric, meaning that straight segments are geodesic.
-Hilbert’s fourth problem [15] asks for a construction of all projective metrics.
-A diﬀerent example of a projective metric, which we now recall, was discovered
-by Funk [13]. It is given by the non-symmetric distance function
-dF
-K(x,y ) = log|xb|
-|yb|,
-where b is the intersection of the ray # »xy with ∂K.
-Various problems in Hilbert geometry have been raised and studied, notably
-those of volume growth [11, 30, 9, 29] and Gromov hyperbolicity [8]. The Funk
-metric, on the other hand, has been for the most part denied the spotlight. In this
-paper we attempt to argue that at least from the perspectives of convex geometry
-and billiard dynamics, it is the Funk metric that is most natural to study.
-Let K⊂ Rn be a convex compact set with non-empty interior, placed in the
-aﬃne space Rn. The Funk metric on K is arguably the simplest (non-symmetric)
-metric one can deﬁne naturally in its interior. Indeed, it is the non-reversible Finsler
-metric whose tangent unit ball at x∈ int(K) is BxK =K⊂TxRn = Rn, namely
-K itself with the origin ﬁxed at x.
-The Funk and Hilbert metrics are closely related:
-dH
-K(x,y ) = 1
-2(dF
-K(x,y ) +dF
-K(y,x )).
-It is a remarkable fact that the symmetrization of the Funk metric is already projec-
-tively invariant. This hints that the Funk metric comes close to being projectively
-invariant itself. We shall pursue this idea along several paths.
-1.2. Summary of results. IfK⊂ RPn is a convex body with interior, we may ﬁx
-a hyperplane at inﬁnity η that is disjoint from K, and consider the corresponding
-η-Funk metric on K, denoted Funkη
-K. Changing η results in a change to the Funk
-metric, but of a very particular type: the Finsler norm is changed by an exact
-1-form. This is the core reason behind the projective invariance of many metric
-invariants associated to the Funk metric, as follows.
-For a submanifold X⊂ int(K), let Funkη
-K(X) stand for the Finsler metric that
-is induced on X from Funkη
-K, that is it is the intrinsic metric induced on X from
-3 A Funk perspective on billiards, projective geometry and Mahler volume
-the Funk metric. When η is clear from context, e.g. when K belongs to an aﬃne
-space, we simply write FunkK(X).
-Theorem A. Assume K⊂ Rn is C2-smooth and strictly convex. Let Ω⊂ int(K)
-be a smooth k-dimensional submanifold with boundary. The following are invariant
-under the action of any invertible projective map g keepingK compact.
-i) Thek-dimensional Holmes-Thompson volume of FunkK(Ω), denoted volF
-K(Ω).
-ii) The geodesics of FunkK(Ω), as well as the length of closed geodesics.
-iii) Assume k =n, that is Ω is a smooth domain. Then the Finsler billiard or-
-bits in FunkK(Ω), as well as the length of the periodic orbits, are invariant.
-Therefore, whenever we discuss any of those invariants, we may assumeK⊂ RPn
-is a convex set, without specifying an aﬃne chart. Here and in the following,
-smoothness and strict convexity assumptions in statements concerning volumes
-can be relaxed through a continuity argument.
-The reverse Funk metric is deﬁned similarly to the Funk metric by settingBxK =
-ax(K), whereax is the antipodal map with respect tox, or equivalentlydRF
-K (x,y ) =
-dF
-K(y,x ). For K,η as before we denote the corresponding reverse Funk metric on
-int(K) by RFunkη
-K. Theorem A applies equally to RFunk.
-In a sense, those invariants are more natural than the corresponding ones for the
-Hilbert metric, which is most clearly manifested by their invariance under projective
-duality. Recall that the polar convex body K∨⊂ P∨ = ( RPn)∨ is the closure of
-the set of all hyperplanes disjoint from K.
-Theorem B. Assume K⊂ int(L) are C2-smooth, strictly convex bodies in RPn.
-Then
-i) volF
-L(K) = volF
-K∨(L∨).
-ii) The billiard orbits in FunkL(K) and RFunkK∨(L∨) are in a natural bijective
-correspondence. Moreover, a periodic orbit corresponds to a periodic orbit,
-and they have equal length.
-iii) The Holmes-Thompson volumes of FunkL(∂K) and FunkK∨(∂L∨) coincide.
-iv) The geodesics of FunkL(∂K) and RFunkK∨(∂L∨) are in a natural bijective
-correspondence, and the respective closed geodesics have equal length.
-In the limit where K is shrinking to a ﬁxed point inside L through homotheties,
-we get corresponding statements for linear spaces with Minkowski norms, as follows.
-Let K,L ⊂ V = Rn be ﬁxed convex sets with 0 in their interior, and consider
-K⊂ (V,‖•‖L) andLo⊂ (V∗,‖•‖Ko). The ﬁrst statement becomes a tautology, as
-both volumes, when properly rescaled, approach the symplectic volume ofK×Lo⊂
-V⊕V∗. The second statement is the duality of the Minkowski billiards ( K,L ) and
-(Lo,−Ko), ﬁrst established in [14], and which permeates the work of Artstein-
-Avidan and Ostrover on the relationship between Minkowski billiards, symplectic
-geometry and the Mahler conjecture [6, 5], see also [23] for a survey. It is the
-approach of [6] that we take to establish the duality. The third statement was
-established in [16] in the particular case of K = L. The fourth statement is the
-(non-symmetric) Sch¨ aﬀer dual girth conjecture [26], which can also be understood
-as a duality of gliding billiard orbits. It was established in [1] together with the
-general case of the third statement.
-The ﬁrst statement implies an isomorphic form of duality in Hilbert geometry.
-Let volH
-K be the Holmes-Thompson volume of the Hilbert metric in K.
-4 A Funk perspective on billiards, projective geometry and Mahler volume
-Corollary 1. Given K⊂ int(L) in RPn, volH
-L (K)≤ 1
-2n
-(2n
-n
-)
-volH
-K∨(L∨). Equality
-is attained if and only if K is an ellipsoid, and L is a simplex.
+If $K\subset\mathbb{R}\mathbb{P}^n$ is a convex body with interior, we may fix a hyperplane at infinity $\eta$ that is disjoint from $K$, and consider the corresponding $\eta$-Funk metric on $K$, denoted $\mathop{\mathrm{Funk}}_K^\eta$. Changing $\eta$ results in a change to the Funk metric, but of a very particular type: the Finsler norm is changed by an exact 1-form. This is the core reason behind the projective invariance of many metric invariants associated to the Funk metric, as follows.
+
+For a submanifold $X\subset \mathop{\mathrm{int}}(K)$, let $\mathop{\mathrm{Funk}}^\eta_K(X)$ stand for the Finsler metric that is induced on $X$ from $\mathop{\mathrm{Funk}}_K^\eta$, that is it is the intrinsic metric induced on $X$ from the Funk metric. When $\eta$ is clear from context, e.g. when $K$ belongs to an affine space, we simply write $\mathop{\mathrm{Funk}}_K(X)$.
+
+::: MainTheorem
+[]{#main:projective_invariants label="main:projective_invariants"} Assume $K\subset \mathbb{R}^n$ is $C^2$-smooth and strictly convex. Let $\Omega\subset \mathop{\mathrm{int}}(K)$ be a smooth $k$-dimensional submanifold with boundary. The following are invariant under the action of any invertible projective map $g$ keeping $K$ compact.
+
+::: enumerate
+The $k$-dimensional Holmes-Thompson volume of $\mathop{\mathrm{Funk}}_K(\Omega)$, denoted $\mathop{\mathrm{vol}}^{F}_K(\Omega)$.
+
+The geodesics of $\mathop{\mathrm{Funk}}_K(\Omega)$, as well as the length of closed geodesics.
+
+Assume $k=n$, that is $\Omega$ is a smooth domain. Then the Finsler billiard orbits in $\mathop{\mathrm{Funk}}_K(\Omega)$, as well as the length of the periodic orbits, are invariant.
+:::
+:::
+
+Therefore, whenever we discuss any of those invariants, we may assume $K\subset\mathbb{R}\mathbb{P}^n$ is a convex set, without specifying an affine chart. Here and in the following, smoothness and strict convexity assumptions in statements concerning volumes can be relaxed through a continuity argument.
+
+The *reverse Funk metric* is defined similarly to the Funk metric by setting $B_xK=a_x(K)$, where $a_x$ is the antipodal map with respect to $x$, or equivalently $d_K^{RF}(x,y)=d_K^F(y,x)$. For $K, \eta$ as before we denote the corresponding reverse Funk metric on $\mathop{\mathrm{int}}(K)$ by $\mathop{\mathrm{RFunk}}_K^\eta$. Theorem [\[main:projective_invariants\]](#main:projective_invariants){reference-type="ref" reference="main:projective_invariants"} applies equally to $\mathop{\mathrm{RFunk}}$.
+
+In a sense, those invariants are more natural than the corresponding ones for the Hilbert metric, which is most clearly manifested by their invariance under projective duality. Recall that the *polar* convex body $K^\vee\subset \mathbb{P}^\vee=(\mathbb{R}\mathbb P^n)^\vee$ is the closure of the set of all hyperplanes disjoint from $K$.
+
+::: MainTheorem
+[]{#main:duality label="main:duality"} Assume $K\subset \mathop{\mathrm{int}}(L)$ are $C^2$-smooth, strictly convex bodies in $\mathbb{R}\mathbb{P}^n$. Then
+
+1.  $\mathop{\mathrm{vol}}^F_L(K)=\mathop{\mathrm{vol}}^{F}_{K^\vee}(L^\vee)$.
+
+2.  The billiard orbits in $\mathop{\mathrm{Funk}}_L(K)$ and $\mathop{\mathrm{RFunk}}_{K^\vee}(L^\vee)$ are in a natural bijective correspondence. Moreover, a periodic orbit corresponds to a periodic orbit, and they have equal length.
+
+3.  The Holmes-Thompson volumes of $\mathop{\mathrm{Funk}}_L(\partial K)$ and $\mathop{\mathrm{Funk}}_{K^\vee}(\partial L^\vee)$ coincide.
+
+4.  The geodesics of $\mathop{\mathrm{Funk}}_L(\partial K)$ and $\mathop{\mathrm{RFunk}}_{K^\vee}(\partial L^\vee)$ are in a natural bijective correspondence, and the respective closed geodesics have equal length.
+:::
+
+In the limit where $K$ is shrinking to a fixed point inside $L$ through homotheties, we get corresponding statements for linear spaces with Minkowski norms, as follows.
+
+Let $K, L\subset V=\mathbb{R}^n$ be fixed convex sets with $0$ in their interior, and consider $K\subset (V, \|\bullet\|_L)$ and $L^o\subset (V^*, \|\bullet\|_{K^o})$. The first statement becomes a tautology, as both volumes, when properly rescaled, approach the symplectic volume of $K\times L^o\subset V\oplus V^*$. The second statement is the duality of the Minkowski billiards $(K, L)$ and $(L^o,-K^o)$, first established in [@gutkin_tabachnikov], and which permeates the work of Artstein-Avidan and Ostrover on the relationship between Minkowski billiards, symplectic geometry and the Mahler conjecture [@artstein_ostrover; @artstein_karasev_ostrover], see also [@ostrover] for a survey. It is the approach of [@artstein_ostrover] that we take to establish the duality. The third statement was established in [@holmes_thompson] in the particular case of $K=L$. The fourth statement is the (non-symmetric) Schäffer dual girth conjecture [@schaeffer], which can also be understood as a duality of gliding billiard orbits. It was established in [@alvarez-paiva] together with the general case of the third statement.
+
+The first statement implies an isomorphic form of duality in Hilbert geometry. Let $\mathop{\mathrm{vol}}_K^H$ be the Holmes-Thompson volume of the Hilbert metric in $K$.
+
+::: MainCorollary
+[]{#cor:hilbert_volume label="cor:hilbert_volume"} Given $K\subset \mathop{\mathrm{int}}(L)$ in $\mathbb{R}\mathbb{P}^n$, $\mathop{\mathrm{vol}}^H_L(K)\leq \frac{1}{2^n}{2n\choose n} \mathop{\mathrm{vol}}_{K^\vee}^H(L^\vee)$. Equality is attained if and only if $K$ is an ellipsoid, and $L$ is a simplex.
+:::
+
 The third statement implies a duality in Hilbert geometry in the projective plane.
-Corollary 2. LetK⊂ int(L) be two convex sets in RP2. Then the Hilbert lengths
-volH
-L (∂K) and volH
-K∨(∂L∨) coincide.
-It is not hard to verify that for an ellipsoid B⊂ RPn, the Funk billiard (though
-not the metric itself) in a domain Ω ⊂ int(B) coincides with that of the Beltrami-
-Klein hyperbolic metric. It follows in particular that for an ellipsoid K ⊂ B⊂
-RPn, the Funk billiard in K is completely integrable, see [34]. We provide a Funk
-perspective and an alternative proof of this result in the projective plane, as follows.
-Theorem C. Let K⊂ int(B) be nested ellipses in RP2. Then every orbit of the
-B-Funk billiard in K has a caustic, which is a conic in the dual pencil deﬁned by
-∂K,∂B . Furthermore, if Q is a caustic for FunkB(K), and ˆQ⊂ P∨ is the caustic of
-the dual orbit in RFunkK∨(B∨), then ˆQ∗,∂B,∂K,Q form a harmonic quadruplet
-of conics.
-HereQ∗⊂ P∨ denotes the dual quadric, consisting of all tangent hyperplanes to
-Q⊂ P. For a harmonic quadruplet of quadrics, see Deﬁnition 2.1. In particular,
-we can interpret the Poncelet porism of any pair of nested conics in terms of closed
-Funk (equivalently, hyperbolic) billiard orbits.
-In the second part of this note, we consider the Holmes-Thompson volume of
-balls in the Funk metric. Assume K⊂ Rn, and let BF
-r (q,K ) denote the outward
-r-ball in the Funk metric on K centered at q. Denoting by Kz⊂ (Rn)∗ the dual
-body with respect to z, and byωn the volume of the Euclidean unit ball in Rn, one
-has volF
-K(BF
-r (0,K )) = 1
-ωn
-∫
-(1−e−r)K|Kz|dz. We show that for K unconditional
-and any r, the volume of BF
-r (0,K ) is maximized when K is an ellipsoid, which
-translates into the following equivalent systems of aﬃne inequalities.
-Theorem D. For an unconditional convex body K⊂ Rn, one has
-• For all 0<ρ< 1
-∫
-ρK
-|Kz|dz≤nω2
-n
-∫ ρ
-0
-tn−1dt
-(1−t2)
-n+1
-2
-.
-• For all j≥ 0,
-∫
-K×Ko
-⟨x,ξ⟩2jdxdξ≤ (2π)n
-n + 2j
-1
-(n + 2j)!!(n− 2)!!(2j− 1)!!
-( 2
-π
-) 1−(−1)n
-2
-.
+
+::: MainCorollary
+[]{#cor:hilbert_plane label="cor:hilbert_plane"} Let $K\subset\mathop{\mathrm{int}}(L)$ be two convex sets in $\mathbb{R}\mathbb{P}^2$. Then the Hilbert lengths $\mathop{\mathrm{vol}}^H_L(\partial K)$ and $\mathop{\mathrm{vol}}^H_{K^\vee}(\partial L^\vee)$ coincide.
+:::
+
+It is not hard to verify that for an ellipsoid $B\subset\mathbb{R}\mathbb{P}^n$, the Funk billiard (though not the metric itself) in a domain $\Omega\subset \mathop{\mathrm{int}}(B)$ coincides with that of the Beltrami-Klein hyperbolic metric. It follows in particular that for an ellipsoid $K\subset B\subset \mathbb{R}\mathbb P^n$, the Funk billiard in $K$ is completely integrable, see [@veselov]. We provide a Funk perspective and an alternative proof of this result in the projective plane, as follows.
+
+::: MainTheorem
+[]{#main:conics label="main:conics"} Let $K\subset \mathop{\mathrm{int}}(B)$ be nested ellipses in $\mathbb{R}\mathbb{P}^2$. Then every orbit of the $B$-Funk billiard in $K$ has a caustic, which is a conic in the dual pencil defined by $\partial K, \partial B$. Furthermore, if $Q$ is a caustic for $\mathop{\mathrm{Funk}}_B(K)$, and $\widehat Q\subset \mathbb P^\vee$ is the caustic of the dual orbit in $\mathop{\mathrm{RFunk}}_{K^\vee}(B^\vee)$, then $\widehat Q^*, \partial B, \partial K, Q$ form a harmonic quadruplet of conics.
+:::
+
+Here $Q^*\subset\mathbb P^\vee$ denotes the dual quadric, consisting of all tangent hyperplanes to $Q\subset\mathbb{P}$. For a harmonic quadruplet of quadrics, see Definition [\[def:harmonic_quadrics\]](#def:harmonic_quadrics){reference-type="ref" reference="def:harmonic_quadrics"}. In particular, we can interpret the Poncelet porism of any pair of nested conics in terms of closed Funk (equivalently, hyperbolic) billiard orbits.
+
+In the second part of this note, we consider the Holmes-Thompson volume of balls in the Funk metric. Assume $K\subset\mathbb{R}^n$, and let $B_r^F(q, K)$ denote the outward $r$-ball in the Funk metric on $K$ centered at $q$. Denoting by $K^z\subset (\mathbb{R}^n)^*$ the dual body with respect to $z$, and by $\omega_n$ the volume of the Euclidean unit ball in $\mathbb{R}^n$, one has $\mathop{\mathrm{vol}}^{F}_K(B_r^F(0,K))=\frac{1}{\omega_n}\int_{(1-e^{-r})K}|K^z|dz$. We show that for $K$ unconditional and any $r$, the volume of $B_r^F(0, K)$ is maximized when $K$ is an ellipsoid, which translates into the following equivalent systems of affine inequalities.
+
+::: MainTheorem
+[]{#main:bodies_inequality label="main:bodies_inequality"} For an unconditional convex body $K\subset \mathbb{R}^n$, one has
+
+-   For all $0< \rho<1$ $$\int_{\rho K} |K^z|dz\leq n\omega_n^2\int_0^\rho\frac{t^{n-1}dt}{(1-t^2)^{\frac{n+1}{2}}}.$$
+
+-   For all $j\geq 0$, $$\int_{K\times K^o}\langle x, \xi\rangle^{2j}dxd\xi\leq \frac{(2\pi)^n}{n+2j}\frac{1}{ (n+2j)!!(n-2)!!(2j-1)!!} \left(\frac2\pi\right)^{\frac{1-(-1)^n}{2} }.$$
+
 Equality in each case is attained uniquely by ellipsoids.
-Forj = 1, this is a theorem of Ball [7].
-In the limit ρ→ 0, which corresponds to Funk balls of inﬁnitesimal radius, the
-Blaschke-Santal´ o inequality is recovered:
-|K×Ko|≤| Bn× (Bn)o| =ω2
-n.
-On the other end of the scale, one has the following result of [9].
-5 A Funk perspective on billiards, projective geometry and Mahler volume
-Proposition 1. AssumeK⊂ Rn isC2-smooth and strictly convex, and 0∈ int(K).
-Then as ρ→ 1−, ∫
-ρK
-|Kz|dz∼ 2−n−1
-2
-ωn
-n− 1
-1
-(1−ρ)
-n−1
-2
-Ωn(K),
-where Ωn(K) is the centro-aﬃne surface area of K.
-For the deﬁnition of centro-aﬃne surface area, see eq. (5). Therefore in the limit
-of large Funk balls, Theorem D yields the centro-aﬃne isoperimetric inequality:
-Ωn(K)≤ Ωn(Bn) =nωn.
-Thus Funk geometry interpolates between those two extremes through a continuum
-of aﬃne inequalities. As both the Blaschke-Santal´ o and the centro-aﬃne inequali-
-ties are valid for arbitrary convex bodies with centroid at the origin, we naturally
-conjecture that Theorem D remains true in this generality.
-The Colbois-Verovic volume entropy conjecture [11] asserts that the volume
-growth entropy of metric balls in Hilbert geometry is maximized by ellipsoids,
-or equivalently by smooth strictly convex bodies. This was recently proved by
-Tholozan [29] and Vernicos-Walsh [32] using very diﬀerent methods, and previ-
-ously established up to dimension 3 in [31]. Theorem D yields yet another proof
-of the volume entropy conjecture, albeit only for unconditional bodies. We write
-BH
-r (q,K ) for the metric ball in the Hilbert metric.
-Corollary 3. ForK⊂ Rn a convex unconditional body,
-lim sup
-R→∞
-1
-R log volH
-K(BH
-R (q,K ))≤n− 1.
-Theorem D follows from a more general functional form of the same inequalities.
-BelowL is the Legendre transform, deﬁned in eq. (1).
-Theorem E. For an unconditional Borel function f =e−φ : Rn→ [0,∞), one has
-the equivalent systems of inequalities
-• For all j≥ 0,
-∫
-Rn×Rn
-⟨x,ξ⟩2je−φ(x)−Lφ(ξ)dxdξ≤ (2π)n (n− 2 + 2j)!!
-(n− 2)!!(2j− 1)!!.
-• For all 0≤ρ< 1,
-∫
-Rn×Rn
-e−φ(x)−Lφ(ξ)+ρ⟨x,ξ⟩dxdξ≤ (2π)n
-(1−ρ2)
-n
-2
-.
-Equality in each case is attained uniquely, up to equality a.e., by f that is a multiple
-of a gaussian.
-In the limit ρ→ 0 we recover the functional Blaschke-Santal´ o inequality for
-unconditional functions. For j = 1, this is a theorem of Huang and Li [17]. The
-proof we give is inspired by, and largely the same as the proof of the functional
-Blaschke-Santal´ o inequality of Lehec [19].
-By Proposition 1, the centro-aﬃne surface area of K can be viewed as a regular-
-ization of the total Holmes-Thompson volume of K equipped with its Funk metric.
-It excels at capturing the volume growth of the metric, but has the drawback of be-
-ing dependent on the precise way in which the volume is exhausted, namely through
-metric balls centered at a point. As a consequence, it depends on the choice of a
+:::
+
+For $j=1$, this is a theorem of Ball [@ball_remarks].
+
+In the limit $\rho\to0$, which corresponds to Funk balls of infinitesimal radius, the Blaschke-Santaló inequality is recovered: $$|K\times K^o|\leq |B^n\times (B^n)^o|=\omega_n^2.$$ On the other end of the scale, one has the following result of [@berck_bernig_vernicos].
+
+::: MainProposition
+[]{#prop:centro_affine_main label="prop:centro_affine_main"} Assume $K\subset\mathbb{R}^n$ is $C^2$-smooth and strictly convex, and $0\in\mathop{\mathrm{int}}(K)$. Then as $\rho\to 1^{-}$, $$\int_{\rho K}|K^z|dz\sim 2^{-\frac{n-1}{2}}\frac{\omega_n}{n-1}\frac{1}{(1-\rho)^{\frac{n-1}{2}}}\Omega_n(K),$$ where $\Omega_n(K)$ is the centro-affine surface area of $K$.
+:::
+
+For the definition of centro-affine surface area, see eq. [\[eq:centro_affine\]](#eq:centro_affine){reference-type="eqref" reference="eq:centro_affine"}. Therefore in the limit of large Funk balls, Theorem [\[main:bodies_inequality\]](#main:bodies_inequality){reference-type="ref" reference="main:bodies_inequality"} yields the centro-affine isoperimetric inequality: $$\Omega_n(K)\leq \Omega_n(B^n)=n\omega_n.$$ Thus Funk geometry interpolates between those two extremes through a continuum of affine inequalities. As both the Blaschke-Santaló and the centro-affine inequalities are valid for arbitrary convex bodies with centroid at the origin, we naturally conjecture that Theorem [\[main:bodies_inequality\]](#main:bodies_inequality){reference-type="ref" reference="main:bodies_inequality"} remains true in this generality.
+
+The Colbois-Verovic volume entropy conjecture [@colbois_verovic] asserts that the volume growth entropy of metric balls in Hilbert geometry is maximized by ellipsoids, or equivalently by smooth strictly convex bodies. This was recently proved by Tholozan [@tholozan] and Vernicos-Walsh [@vernicos_walsh] using very different methods, and previously established up to dimension $3$ in [@vernicos3d]. Theorem [\[main:bodies_inequality\]](#main:bodies_inequality){reference-type="ref" reference="main:bodies_inequality"} yields yet another proof of the volume entropy conjecture, albeit only for unconditional bodies. We write $B^H_r(q,K)$ for the metric ball in the Hilbert metric.
+
+::: MainCorollary
+[]{#cor:entropy label="cor:entropy"} For $K\subset \mathbb{R}^n$ a convex unconditional body, $$\limsup_{R\to \infty}\frac{1}{R}\log \mathop{\mathrm{vol}}_K^H (B^H_R(q,K))\leq n-1.$$
+:::
+
+Theorem [\[main:bodies_inequality\]](#main:bodies_inequality){reference-type="ref" reference="main:bodies_inequality"} follows from a more general functional form of the same inequalities. Below $\mathcal L$ is the Legendre transform, defined in eq. [\[eq:legendre\]](#eq:legendre){reference-type="eqref" reference="eq:legendre"}.
+
+::: MainTheorem
+[]{#main:inequality_functional label="main:inequality_functional"} For an unconditional Borel function $f=e^{-\phi}:\mathbb{R}^n\to[0,\infty)$, one has the equivalent systems of inequalities
+
+-   For all $j\geq 0$, $$\int_{\mathbb{R}^n\times\mathbb{R}^n}\langle x,\xi\rangle ^{2j}e^{-\phi(x)-\mathcal L\phi(\xi)}dx d\xi\leq (2\pi)^n \frac{(n-2+2j)!!}{(n-2)!!(2j-1)!!}.$$
+
+-   For all $0\leq \rho<1$, $$\int_{\mathbb{R}^n\times\mathbb{R}^n}e^{-\phi(x)-\mathcal L \phi (\xi)+\rho\langle x,\xi\rangle}dxd\xi\leq \frac{(2\pi)^n}{(1-\rho^2)^{\frac n 2}}.$$
+
+Equality in each case is attained uniquely, up to equality a.e., by $f$ that is a multiple of a gaussian.
+:::
+
+In the limit $\rho\to0$ we recover the functional Blaschke-Santaló inequality for unconditional functions. For $j=1$, this is a theorem of Huang and Li [@huang_li]. The proof we give is inspired by, and largely the same as the proof of the functional Blaschke-Santaló inequality of Lehec [@lehec].
+
+By Proposition [\[prop:centro_affine_main\]](#prop:centro_affine_main){reference-type="ref" reference="prop:centro_affine_main"}, the centro-affine surface area of $K$ can be viewed as a regularization of the total Holmes-Thompson volume of $K$ equipped with its Funk metric. It excels at capturing the volume growth of the metric, but has the drawback of being dependent on the precise way in which the volume is exhausted, namely through metric balls centered at a point. As a consequence, it depends on the choice of a center point; worse yet, it is not a projective invariant, defying the expectations one might entertain in light of Theorem [\[main:projective_invariants\]](#main:projective_invariants){reference-type="ref" reference="main:projective_invariants"} i).
+
+In an attempt to remedy this situation, in section [\[sec:projective_total_volume\]](#sec:projective_total_volume){reference-type="ref" reference="sec:projective_total_volume"} we propose a different regularization of the total volume, which turns out to be a projective invariant of the body alone. For simplicity we focus on the projective plane, although it is likely that a similar procedure can be carried out in greater generality. To state precisely, we use the standard Euclidean structure on $\mathbb{R}^{3}$, and locally identify $\mathbb{R}\mathbb{P}^2$ with $S^2$. Given $\Omega\subset \mathop{\mathrm{int}}(K)$ in $S^2$, it then holds that $$\mathop{\mathrm{vol}}^F_K(\Omega)=\frac{1}{\omega_n}\int_{\Omega\times K^\vee}\frac{dxd\xi}{\langle x,\xi\rangle^3},$$ where $K^\vee\subset S^2$ is the polar set given by $K^\vee=\{\xi\in S^2:\forall x\in K, \langle x,\xi\rangle\geq 0\}$.
+
+For a convex set $K\subset S^2$ we define, borrowing a term from [@brylinski], the *Beta function of $K$* by the integral $$B_K(z)=\int_{K\times K^\vee}\langle x,\xi\rangle^zdxd\xi, \quad \mathrm {Re}z>-1.$$
+
+::: MainTheorem
+[]{#main:beta label="main:beta"} Let $K\subset S^2$ be $C^2$-smooth and strictly convex. Then $B_K(z)$ extends as a meromorphic function with simple poles contained in $\{-\frac52,-\frac72,-\frac 92,\dots\}$. Moreover, the value $B_K(-3)$ is a projective invariant of $K\subset\mathbb{R}\mathbb{P}^2$.
+:::
+
+While the affinity to Funk volume is transparent, an explicit description of $B_K(-3)$ in terms of the Funk metric on $K$ remains to be found. The regularized total volume was inspired by the theory of Möbius energy of knots [@ohara_knots], and particularly its extensions to linking and Riesz energy [@ohara_solanes_linking; @ohara_solanes_riesz].

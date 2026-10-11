@@ -235,8 +235,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Semi-Adequate_Closed_Braids_and_Volume_FINAL_DRAFT.tex",
-   "tex_sections": 4,
-   "overlaid": 1,
+   "tex_sections": 12,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -246,57 +246,76 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.934,
-     "coverage_ratio": 0.863,
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-volume-bounds-for-a-adequate-closed-braids",
      "title": "Volume bounds for A-adequate closed braids",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-21-preliminaries",
      "title": "Preliminaries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-22-braids-and-a-adequacy",
      "title": "Braids and A-adequacy",
-     "result": "no matching \\section"
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-23-a-lemma-for-closed-braids",
      "title": "A lemma for closed braids",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-24-diagrammatic-volume-bounds",
      "title": "Diagrammatic volume bounds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.966,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-25-volume-bounds-in-terms-of-the-colored-jones-p",
      "title": "Volume bounds in terms of the colored Jones polynomial",
-     "result": "no matching \\section"
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-3-volume-bounds-for-a-adequate-closed-3-braids-i",
      "title": "Volume bounds for A-adequate closed 3-braids in terms of the Schreier normal form",
-     "prose_ratio": 0.008,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-31-the-schreier-normal-form-for-3-braids-and-vol",
      "title": "The Schreier normal form for 3-braids and volume",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-32-volume-bounds-in-terms-of-the-schreier-normal",
      "title": "Volume bounds in terms of the Schreier normal form",
-     "result": "no matching \\section"
+     "prose_ratio": 0.32,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-010-33-the-proof-of-theorem-31",

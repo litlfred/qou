@@ -8,91 +8,136 @@ pages: 24-25
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
 doc_brief: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — W e study a computational method of the hyperbolic Reidemeister torsion (also called in the"
+text_source: latex
+latex_prose_ratio: 0.837
+latex_coverage_ratio: 1.0
 ---
-∂M (t). By using the Multiplicativity Lemma, we have
-∆ ϕ⊗Ad◦ρ
-∪b
-ℓ=1T 2
-ℓ
-(t) = ( −1)b−1∆ ϕ⊗Ad◦ρ
-T 2
-b
-(t) · ∆ ϕ⊗Ad◦ρ
-∪b−1
-ℓ=1 T 2
-ℓ
-(t).
+By using the Multiplicativity Lemma, we have 
+\[
+\PolyTors{\cup_{\ell=1}^b T^2_\ell}{\otAd{\varphi}{\rho}}(t) 
+= (-1)^{b-1}
+\PolyTors{T^2_b}{\otAd{\varphi}{\rho}}(t)
+\cdot
+\PolyTors{\cup_{\ell=1}^{b-1} T^2_\ell}{\otAd{\varphi}{\rho}}(t).
+\]
 Hence we have
-∆ ϕ⊗Ad◦ρ
-∂M (t) = ( −1)b(b−1)/2
-b∏
-ℓ=1
-∆ ϕ⊗Ad◦ρ
-T 2
-ℓ
-(t).
+$$
+
+  \PolyTors{\bord M}{\otAd{\varphi}{\rho}}(t) = 
+  (-1)^{b(b-1)/2}
+  \prod_{\ell=1}^b
+  \PolyTors{T^2_\ell}{\otAd{\varphi}{\rho}}(t).
+$$
 Furthermore a direct computation provides the following lemma:
-Lemma 15. The torsion ∆ ϕ⊗Ad◦ρ
-T 2
-ℓ
-(t) of the ℓ-th component of ∂M with the homology
-orientation given by the ordered basis {[ [T 2
-ℓ ] ], [ [λℓ] ], [ [µℓ] ], [ [pℓ] ]} is equal to +1.
-As a consequence, the twisted Alexander invariant of ∂M is given by:
-(35) ∆ ϕ⊗Ad◦ρ
-∂M (t) = ( −1)b(b−1)/2.
-8.2.3. Computation of ∆ ϕ⊗Ad◦ρ
-(M,∂M )(t). Here we use the duality properties of torsion proved
-by M. Farber and V. Turaev in [FT00]. We write the torsion ∆ ϕ⊗Ad◦ρ
-(M,∂M )(t) in the right
-hand side of Equation (34) as the torsion in the left hand side with a sig n term. Let
-(M ′, ∂M ′) denotes the dual cell decomposition of ( M, ∂M ). Using the invariance of the
-Reidemeister torsion under subdivisions of CW–pairs we obtain :
-∆ ϕ⊗Ad◦ρ
-(M,∂M )(t) = ∆ ϕ⊗Ad◦ρ
-(M ′,∂M ′)(t).
-Let ρ⋆ : π1(M ) → SL2(C) be the following representation
-ρ⋆ =
-( 0 1
-−1 0
-)
-ρ
-( 0 1
-−1 0
-) −1
-.
-Using the invariance of the Reidemeister torsion under conjugation of representations we
-thus have
-∆ ϕ⊗Ad◦ρ
-(M,∂M )(t) = ∆ ϕ⊗Ad◦ρ
-(M ′,∂M ′)(t) = ∆ ϕ⊗Ad◦ρ⋆
-(M ′,∂M ′)(t).
-Observe that the pair ( M ′, ∂M ′) and the representation ϕ ⊗ Ad ◦ ρ⋆ give the dual
-chain complex of M twisted by the representation
-ϕ ⊗ Ad ◦ ρ, i.e., the sl2(C(t))ρ⋆ -twisted
-chain complex C∗(M ′, ∂M ′; sl2(C(t))ρ⋆ ) can be identiﬁed with the dual chain complex
-of C∗(M ; sl2(t)ρ). By using this identiﬁcation and the duality of torsion in [FT00], the
-torsion ∆ ϕ⊗Ad◦ρ
-(M,∂M )(t) is expressed as
-∆ ϕ⊗Ad◦ρ
-(M,∂M )(t) = ∆ ϕ⊗Ad◦ρ⋆
-(M ′,∂M ′)(t)
-= (−1)s(H∗(M;R))+s(C∗(M;R)) · (−1)s(C∗(M;sl2(C(t))ρ)) · ∆ ϕ⊗Ad◦ρ
-M (t).(36)
-Here s(C∗) = ∑ m
-q=1 αq−1(C∗)αq(C∗) for a chain complex C∗ = Cm ⊕ · · · ⊕ C0, with
-αq(C∗) = ∑ q
-j=0 dim Cj . Further observe the sign term diﬀerence between Farber–
-Turaev’s formula and Equation (36): here the sign term ∑ (m−1)/2
-q=0 α2q(C∗) used in [FT00]
-is omitted from s(C∗) because we use the complex C∗(M ′, ∂M ′; sl2(C(t))ρ) instead of the
-dual complex of C∗(M ; sl2(C(t))ρ).
-24
-The ﬁrst sign ( −1)s(H∗(M;R))+s(C∗(M;R)) in Equation (36) comes from the duality of
-the sign terms τ0 in ∆ ϕ⊗Ad◦ρ
-(M,∂M )(t) and the second one ( −1)s(C∗(M;sl2(C(t))ρ)) in Equa-
-tion (36) comes from the duality of torsions for C∗(M ; sl2(C(t))ρ). Since s(C∗(M ; R))
-and s(C∗(M ; sl2(C(t))ρ)) are equal in Z/2Z, it turns out that
-(37) ∆ ϕ⊗Ad◦ρ
-(M,∂M )(t) = ( −1)s(H∗(M;R))∆ ϕ⊗Ad◦ρ
-M (t).
+\begin{lemma}\label{lemma:Torus}
+  The torsion $\PolyTors{T^2_\ell}{\otAd{\varphi}{\rho}}(t)$ of the
+  $\ell$-th component of $\bord M$ with the homology orientation given by
+  the ordered basis $\{\bbrack{T^2_\ell}, \bbrack{\lambda_\ell},
+  \bbrack{\mu_\ell},\bbrack{p_\ell}\}$ is equal to $+1$.
+\end{lemma}
+
+As a consequence, the twisted Alexander invariant of $\partial M$ is given by:
+\begin{equation}\label{Eq:torsionbound}
+\PolyTors{\bord M}{\otAd{\varphi}{\rho}}(t) = (-1)^{b(b-1)/2}.
+\end{equation}
+
+
+\subsubsection{Computation of $\PolyTors{(M, \bord M)}{\otAd{\varphi}{\rho}}(t)$.}
+Here we use the duality properties of torsion proved by M. Farber and
+V. Turaev in ~\cite{FarberTuraev:PR_metric}. We write the torsion
+$\PolyTors{(M, \bord M)}{\otAd{\varphi}{\rho}}(t)$ in the right hand
+side of Equation~$(\ref{eqn:1st_step_duality})$ as the torsion in the left
+hand side with a sign term. Let $(M', \bord M')$ denotes the dual cell
+decomposition of $(M, \bord M)$. Using the invariance of the Reidemeister torsion under
+subdivisions of CW--pairs we obtain :
+\[
+\PolyTors{(M, \bord M)}{\otAd{\varphi}{\rho}}(t) = \PolyTors{(M',
+  \bord M')}{\otAd{\varphi}{\rho}}(t).
+\]
+Let ${\rho}^{\star}\colon \pi_1(M) \to \SL$ be the following
+representation
+\[
+{\rho}^{\star} = \left(
+  \begin{smallmatrix}
+    0 & 1\\
+    -1& 0
+  \end{smallmatrix}
+\right)\rho \left(
+  \begin{smallmatrix}
+    0 & 1\\
+    -1& 0
+  \end{smallmatrix}
+\right)^{-1}.
+\]
+Using the invariance of the Reidemeister torsion under conjugation of representations
+we thus have
+\[
+  \PolyTors{(M, \bord M)}{\otAd{\varphi}{\rho}}(t)
+  = \PolyTors{(M', \bord M')}{\otAd{\varphi}{\rho}}(t) 
+  = \PolyTors{(M', \bord
+    M')}{\otAd{\varphi}{{\rho}^{\star}}}(t).
+\]
+
+Observe that the pair $(M', \bord M')$ and the representation
+$\otAd{\varphi}{{\rho}^{\star}}$ give the dual chain complex
+of $M$ twisted by the representation $\otAd{\overline{\varphi}}{\rho}$, \ie, the
+$\sllt_{{\rho}^{\star}}$-twisted chain complex $C_*(M', \bord
+M';\sllt_{{\rho}^{\star}})$ can be identified with the dual chain complex of
+$C_*(M;\msllrho{\overline{t}})$.  By using this identification and the
+duality of torsion in~\cite{FarberTuraev:PR_metric}, the torsion
+$\PolyTors{(M, \bord M)}{\otAd{\varphi}{\rho}}(t)$ is expressed as
+\begin{align}\label{eqn:dualtorsion}
+  \PolyTors{(M, \bord M)}{\otAd{\varphi}{\rho}}(t) &=
+  \PolyTors{(M', \bord M')}{\otAd{\varphi}{{\rho}^{\star}}}(t) \nonumber \\
+  &=
+  (-1)^{s(H_*(M;\IR))+s(C_*(M;\IR))}\cdot(-1)^{s(C_*(M;\sllrhot))}\cdot
+  \PolyTors{M}{\otAd{\overline{\varphi}}{\rho}}(t).
+\end{align}
+Here $s(C_*) = \sum_{q=1}^m \alpha_{q-1}(C_*)\alpha_q(C_*)$ for a chain
+complex $C_*=C_m\oplus \cdots \oplus C_0$, with
+$\alpha_q(C_*)=\sum_{j=0}^q\dim C_j$.  Further observe the sign term
+difference between Farber--Turaev's formula and
+Equation~(\ref{eqn:dualtorsion}): here the sign term
+$\sum_{q=0}^{(m-1)/2}\alpha_{2q}(C_*)$ used
+in~\cite{FarberTuraev:PR_metric} is omitted from $s(C_*)$ because we use
+the complex $C_*(M', \bord M';\sllrhot)$ instead of the dual complex
+of $C_*(M;\sllrhot)$.
+
+The first sign $(-1)^{s(H_*(M;\IR))+s(C_*(M;\IR))}$
+in~Equation~(\ref{eqn:dualtorsion}) comes from the duality of the sign
+terms $\tau_0$ in $\PolyTors{(M, \bord M)}{\otAd{\varphi}{\rho}}(t)$
+and the second one $(-1)^{s(C_*(M;\sllrhot))}$
+in~Equation~(\ref{eqn:dualtorsion}) comes from the duality of torsions for
+$C_*(M; \sllrhot)$.  Since $s(C_*(M;\IR))$ and $s(C_*(M;\sllrhot))$
+are equal in $\ZZ/2\ZZ$, it turns out that
+\begin{equation}\label{eqn:duality_torsion}
+  \PolyTors{(M, \bord M)}{\otAd{\varphi}{\rho}}(t)
+  =
+  (-1)^{s(H_*(M;\IR))}
+  \PolyTors{M}{\otAd{\overline{\varphi}}{\rho}}(t).
+\end{equation}
+
+
+\subsubsection{Conclusion}
+Substituting $\nu =1$, $s(H_*(M;\IR)) = b+1$ and
+Equation~(\ref{eqn:duality_torsion}) into
+Equation~$(\ref{eqn:1st_step_duality})$ we obtain that
+\begin{equation}\label{eqn:2nd_step_duality}
+  \PolyTors{M}{\otAd{\varphi}{\rho}}(t)
+  =\epsilon (-1)^{b}
+  \PolyTors{\bord M}{\otAd{\varphi}{\rho}}(t)
+  \PolyTors{M}{\otAd{\overline{\varphi}}{\rho}}(t).
+\end{equation}
+Finally, using
+
+Equation~(\ref{Eq:torsionbound}),
+we can see that Equation~(\ref{eqn:2nd_step_duality}) turns into
+$$
+\PolyTors{M}{\otAd{\varphi}{\rho}}(t)
+=\epsilon (-1)^{b+b(b-1)/2}
+\PolyTors{M}{\otAd{\overline{\varphi}}{\rho}}(t)
+=\epsilon (-1)^{b(b+1)/2}
+\PolyTors{M}{\otAd{\overline{\varphi}}{\rho}}(t)
+$$
+which achieves the proof of Theorem~\ref{theorem:symmetry_torsion}.
+\qed

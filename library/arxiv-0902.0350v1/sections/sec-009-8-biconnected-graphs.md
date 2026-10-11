@@ -7,10 +7,10 @@ section_number: 8
 pages: 22-35
 source_pdf: 0902.0350v1.pdf
 source_sha256: 4591687132c93973
-text_source: latex
-latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.889
 doc_brief: "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:biconnected}
 
@@ -76,6 +76,7 @@ We wish to rigidly slide the triangle containing the vertex $w$ until a new visi
 two vertices (say $w$ and $v$)  to the minimum distance $2$.}
 \label{fig:biconnected}
 \end{figure}
+
 
 
 \subsection{Context}
@@ -178,6 +179,7 @@ of $\Gamma$ (if $\Gamma$ is not connected) and different connected components of
 is an articulation vertex of a connected graph $\Gamma$).  When this situation occurs, we say that $v,w$ belong to
 different bicomponents.  Without loss of generality, we may also assume that $\{v,w\}$ crosses some edge of $E'$.
 
+
 \subsection{Preliminary lemmas}\label{sec:pre}
 
 Lemma~\ref{lemma:1} below shows that a vertex does not cross over an edge during a deformation; the halting conditions for the vertex are met before it reaches the edge.  Recall that the term {\it geometric considerations} refers to a specific collection of methods introduced in \cite[\S4.2]{Hales:2006:DCG} to prove the existence and non-existence of various simple configurations of points in $\ring{R}^3$.
@@ -247,6 +249,7 @@ subregions.    There are possibly other subregions partitioning the unshaded por
 $v$ and $w$ to be more than the minimum distance apart.}
 \label{fig:biconnectedloop}
 \end{figure}
+
 
 
 \subsection{Case (a): Edge crossings with distinct endpoints}\label{sec:22}
@@ -345,6 +348,7 @@ passes through $\{u_1,u_1',u_2\}$.  Otherwise, $u_2'$ lies in the convex hull of
 In the second case, $\{v,w\}$ passes through $\{u_1,u_1',u_2\}$ and through $\{u_1',u_2',u_2\}$.  Geometric considerations give $\|u_1-u_1'\|>2.85$ and $\|u_2-u_2'\|> 2.85$.  Assuming that B does not hold gives $\|u_1-u_2'\|< 2.91$.  The first paragraph of the proof now gives that $\{u_2,u_2',u_1\}$ links around the triangle $\{0,v,w\}$.  The edge $\{v,w\}$ does not pass through $\{u_2,u_2',u_1\}$.  (This can be seen by drawing the relative positions of $p(u)$, for $u\in S$, in the projection $p$ of the points to a plane orthogonal to $\{v,w\}$.)  Thus, we are in the first case, which has already been treated.
 \end{proof}
 
+
 \subsection{Case (b): Triple edge crossings}\label{sec:13}
 
 By Lemma~\ref{lemma:double-edge}, there is a common endpoint $u_2$ such that every edge
@@ -383,6 +387,7 @@ give $d(w_2,w_3),d(w_3,w_4)\ge 0.7$
 and $d(w_1,w_5)< 1.4$. We obtain an immediate contradiction:
 $$1.4 > d(w_1,w_5) \ge 0.7 + 0.7.$$
 \end{proof}
+
 
 \subsection{Case (c): Double edge crossings}\label{sec:12}
 
@@ -546,6 +551,7 @@ $$
 1.3 > d(1,4) = d(1,2) +d(2,3)+d (3,4) > 0.5 + 0.8 + 0 = 1.3.
 $$
 \end{proof}
+
 
 \subsection{Case (d): Single edge crossings}\label{sec:11}
 

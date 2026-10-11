@@ -155,8 +155,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 4,
-   "overlaid": 1,
+   "tex_sections": 6,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -166,32 +166,40 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.279,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.912,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-11-prior-work",
      "title": "Prior work",
-     "result": "no matching \\section"
+     "prose_ratio": 0.435,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-2-notions-of-negative-dependence",
      "title": "Notions of negative dependence",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.755,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-3-concentration-under-negative-regression",
      "title": "Concentration under negative regression",
-     "prose_ratio": 0.383,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-31-adaptive-martingale-analysis",
      "title": "Adaptive martingale analysis",
-     "result": "no matching \\section"
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-4-discussion-and-conclusion",

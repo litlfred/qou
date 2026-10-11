@@ -8,375 +8,427 @@ pages: 34-38
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
 doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
+text_source: latex
+latex_prose_ratio: 0.946
+latex_coverage_ratio: 0.985
 ---
-The TS/ST correspondence allows us to write down an integral representation of the second
-trace. In principle the second bosonic trace Tr ρ2
-P2 involves a double integral of a product of the
-integral kernel (3.109), but it was shown in [59] that it can be converted into a one-dimensional
-integral. Using the result of the ﬁrst trace (3.113), this translates into the following integral
+\label{sc:block-P2}
+
+The TS/ST correspondence allows us to write down an integral
+representation of the second trace. In principle the second bosonic
+trace $\tr\rho_{\IP^2}^2$ involves a double integral of a product of
+the integral kernel \eqref{eq:iker-P2}, but it was shown in
+\cite{kama} that it can be converted into a
+one-dimensional integral.  Using the result of the first trace
+\eqref{eq:tr1-P2}, this translates into the following integral
 representation of the normalised second trace
-Tr′ρ2
-P2 =
-√
-3bΦb(− ib
-6− ib−1
-2 )2
-Φb( ib
-6 + ib−1
-2 )2
-∫
-R
-sinh(2πhx)
-sinh(πbx)
-Φb(x− ib
-3 +cb)2
-Φb(x + ib
-3−cb)2 e2πx( 1
-3 b+b−1)dx. (3.141)
-In order to perform the large b expansion of the integral (3.141), one can ﬁrst do the scaling
-x→ b−1x and then use the formula of semi-classical expansion of the quantum dilogarithm (A.16)
-for large b (or equivalently (A.15) for small bD = 1/b). After evaluating convergent integrals
-∫
-R
-sinh( 1
-3πx)
-sinh(πx) x2ndx = 2(−1)n−1
-2n + 1 B2n+1( 1
-3)32n+1/2, n = 0, 1, 2,..., (3.142)
-one ﬁnds that
-Tr′ρ2
-P2∼ Φ0;2(gs) = 1 + 8π2
-9
-√
-3gs + 16π4
-81 g2
-s +..., g s =− 3
-2π b−2→ 0, (3.143)
-justifying the prediction (3.121) of the TS/ST correspondence. Using the technique explained
-in Appendix B, we are able to compute 700 terms of this series, which allows us to perform in
-detail the resurgence analysis.
-The integral form (3.141) of the normalised second trace can be evaluated explicitly by closing
-the contour of integral from above and summing up residues of poles. Following the exercise in
-Section 3.2.2, it is helpful to introduce artiﬁcially a “mass” deformation of the integral so that
-the integrand only has simple poles, and then turn oﬀ the mass deformation.
+
+\begin{equation}
+  \tr' \rho_{\IP^2}^2 =
+  \sqrt{3}\bb\frac{\fad(-\frac{\ri\bb}{6}-\frac{\ri\bb^{-1}}{2})^2}
+  {\fad(\frac{\ri\bb}{6}+\frac{\ri\bb^{-1}}{2})^2}
+  \int_{\IR}\frac{\sinh(2\pi h x)}{\sinh(\pi\bb x)}
+  \frac{\Phi_\bb(x-\frac{\ri\bb}{3}+c_\bb)^2}
+  {\Phi_\bb(x+\frac{\ri\bb}{3}-c_\bb)^2}
+  \re^{2\pi x(\frac{1}{3}\bb+\bb^{-1})}\rd x.
+  \label{eq:tr2-P2}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+In order to perform the large $\bb$ expansion of the integral
+\eqref{eq:tr2-P2}, one can first do the scaling
+$x\rightarrow \bb^{-1}x$ and then use the formula of semi-classical
+expansion of the quantum dilogarithm \eqref{as-fd2} for large $\bb$
+(or equivalently \eqref{as-fd} for small $\bb_D = 1/\bb$).
+
+
+
+
+
+
+After evaluating convergent integrals
+\begin{equation}
+  \int_{\IR} \frac{\sinh(\frac{1}{3}\pi x)}{\sinh(\pi x)} x^{2n}\rd x
+  = \frac{2(-1)^{n-1}}{2n+1}B_{2n+1}(\tfrac{1}{3})3^{2n+1/2},
+  \quad n=0,1,2,\ldots,
+\end{equation}
+one finds that
+
+
+
+
+
+
+\begin{equation}
+  \tr'\rho_{\IP^2}^2 \sim \Phi_{0;2}(g_s) = 1+ \frac{8\pi^2}{9\sqrt{3}}g_s +
+  \frac{16\pi^4}{81}g_s^2 + \ldots,\quad
+  g_s=-\frac{3}{2\pi}\bb^{-2}\rightarrow 0,
+  \label{eq:tr2asymp-P2}
+\end{equation}
+justifying the prediction
+\eqref{eq:NPhi2}
+
+of the TS/ST correspondence.
+
+
+
+
+
+
+
+
+
+
+Using the technique explained in Appendix~\ref{sc:fastZ2}, we are able to
+compute 700 terms of this series, which allows us to perform in detail the resurgence
+analysis.
+
+The integral form \eqref{eq:tr2-P2} of the normalised second trace can
+be evaluated explicitly by closing the contour of integral from above
+and summing up residues of poles.  Following the exercise in
+Section~\ref{sc:block-F0}, it is helpful to introduce artificially a
+``mass'' deformation of the integral so that the integrand only has
+simple poles, and then turn off the mass deformation.
+
 We consider the following integral
-I(ξ, b) =
-∫
-R
-sinh(2πhx)
-sinh(πbx)
-Φb(x + ξb
-2π− 2ia +cb)Φb(x− ξb
-2π− 2ia +cb)
-Φb(x + ξb
-2π + 2ia−cb)Φb(x− ξb
-2π + 2ia−cb)
-e2πx( 1
-3 b+b−1)dx. (3.144)
-– 33 –
-We only consider the case ξ is small and Im b2 > 0. Since Re b> 0, the poles in the upper half
-plane are
-ib−1k, ±ξb
-2π + 2ia + irb + isb−1, k = 1, 2, 3,..., r,s = 0, 1, 2, 3,... (3.145)
-After summing up the residues at these poles, by using (A.6), we arrive at
-I(ξ, b) =ib−1h0(x,q )˜h0(˜x, ˜q)
-+ibw−1
-a
-(
-h+
-1 (x,q )˜h+
-1 (˜x, ˜q)−h+
-2 (x,q )˜h+
-2 (˜x, ˜q)
-+h−
-1 (x,q )˜h−
-1 (˜x, ˜q)−h−
-2 (x,q )˜h−
-2 (˜x, ˜q)
-)
-, (3.146)
-where we deﬁned
-x := eξb2
-, ˜x := eξ. (3.147)
+\begin{equation}
+  I(\xi,\bb) =  \int_\IR
+  \frac{\sinh(2\pi h x)}{\sinh(\pi\bb x)}
+  \frac{\Phi_\bb(x+\frac{\xi\bb}{2\pi}-2\ri a+c_\bb)
+    \Phi_\bb(x-\frac{\xi\bb}{2\pi}-2\ri a + c_\bb)}
+  {\Phi_\bb(x+\frac{\xi\bb}{2\pi}+2\ri a -c_\bb)
+    \Phi_\bb(x-\frac{\xi\bb}{2\pi}+2\ri a-c_\bb)}
+  \re^{2\pi x(\frac{1}{3}\bb+\bb^{-1})}\rd x.
+\end{equation}
+We only consider the case $\xi$ is small and $\imag\bb^2>0$.  Since
+$\real \bb >0$, the poles in the upper half plane are
+\begin{equation}
+  \ri\bb^{-1}k, \quad \pm\frac{\xi\bb}{2\pi}+2\ri a+\ri r \bb +\ri s
+  \bb^{-1},\quad k = 1,2,3,\ldots,\;r,s = 0,1,2,3,\ldots
+\end{equation}
+
+After summing up the residues at these poles, by using \eqref{eq:fad-res}, we
+arrive at
+
+\begin{align}
+  I(\xi,\bb) =
+  &\ri\bb^{-1}h_0(x,q)\tilde{h}_0(\tx,\tq) \nn+
+  &\ri\bb \,w_a^{-1}\Big(h^+_1(x,q)\tilde{h}^+_1(\tx,\tq)
+    -h^+_2(x,q)\tilde{h}^+_2(\tx,\tq)\nn
+  &\phantom{=====}+h^-_1(x,q)\tilde{h}^-_1(\tx,\tq)
+    -h^-_2(x,q)\tilde{h}^-_2(\tx,\tq)
+    \Big),
+    \label{eq:mass-fac}
+\end{align}
+where we defined
+
+\begin{equation}
+  x := \re^{\xi\bb^2},\quad \tx:= \re^{\xi}.
+\end{equation}
 The holomorphic blocks are
-h0(x,q ) =(q2/3x;q)∞(q2/3x−1;q)∞
-(q1/3x;q)∞(q1/3x−1;q)∞
-, (3.148a)
-h+
-1 (x,q ) =q1/3x (q;q)∞
-(q2/3;q)∞
-(qx2;q)∞(q4/3x;q)∞
-(q2/3x2;q)∞(q1/3x;q)∞
-3φ2
-(q2/3,q 2/3x2,q 1/3x
-qx2,q 4/3x ;q,q
-)
-, (3.148b)
-h+
-2 (x,q ) =q2/9x2/3 (q;q)∞
-(q2/3;q)∞
-(qx2;q)∞(q4/3x;q)∞
-(q2/3x2;q)∞(q1/3x;q)∞
-3φ2
-(q2/3,q 2/3x2,q 1/3x
-qx2,q 4/3x ;q,q 2/3
-)
-, (3.148c)
-as well as
-h−
-1 (x,q ) =h+
-1 (x−1,q ), h −
-2 (x,q ) =h+
-2 (x−1,q ). (3.149)
+\begin{subequations}
+\begin{align}
+  h_0(x,q) =
+  &\frac{(q^{2/3}x;q)_\infty(q^{2/3}x^{-1};q)_\infty}
+    {(q^{1/3}x;q)_\infty(q^{1/3}x^{-1};q)_\infty},\\
+  h^+_1(x,q) =
+  &q^{1/3}x\frac{(q;q)_\infty}{(q^{2/3};q)_\infty}
+    \frac{(qx^2;q)_\infty(q^{4/3}x;q)_\infty}
+    {(q^{2/3}x^2;q)_\infty(q^{1/3}x;q)_\infty}
+    \qhg{3}{2}{q^{2/3},q^{2/3}x^2,q^{1/3}x}{qx^2,q^{4/3}x}{q}{q},\\
+  h^+_2(x,q) =
+  &q^{2/9}x^{2/3}\frac{(q;q)_\infty}{(q^{2/3};q)_\infty}
+    \frac{(qx^2;q)_\infty(q^{4/3}x;q)_\infty}
+    {(q^{2/3}x^2;q)_\infty(q^{1/3}x;q)_\infty}
+    \qhg{3}{2}{q^{2/3},q^{2/3}x^2,q^{1/3}x}{qx^2,q^{4/3}x}{q}{q^{2/3}},
+    \end{align}
+    \end{subequations}
+  
+  as well as
+  
+  \be h^-_1(x,q) = h^+_1(x^{-1},q),\qquad 
+  h^-_2(x,q) = h^+_2(x^{-1},q).
+\ee
+
 The anti-holomorphic blocks are
-˜h0(˜x, ˜q) =(˜qw−1
-a ˜x; ˜q)∞(˜qw−1
-a ˜x−1; ˜q)∞
-(wa˜x; ˜q)∞(wa˜x−1; ˜q)∞
-×
-(
-3φ2
-( ˜q,wa˜x,wa˜x−1
-˜qw−1
-a ˜x, ˜qw−1
-a ˜x−1; ˜q, ˜qw−1
-a
-)
-− 3φ2
-( ˜q,wa˜x,wa˜x−1
-˜qw−1
-a ˜x, ˜qw−1
-a ˜x−1; ˜q, ˜q
-))
-, (3.150a)
-˜h+
-1 (˜x, ˜q) =˜x(˜qwa; ˜q)∞
-(˜q; ˜q)∞
-(˜qwa˜x2; ˜q)∞
-(˜x2; ˜q)∞
-2φ1
-(w−1
-a ,w−1
-a ˜x−2
-˜q˜x−2 ; ˜q, ˜qw−1
-a
-)
-, (3.150b)
-˜h+
-2 (˜x, ˜q) =˜x(˜qwa; ˜q)∞
-(˜q; ˜q)∞
-(˜qwa˜x2; ˜q)∞
-(˜x2; ˜q)∞
-2φ1
-(w−1
-a ,w−1
-a ˜x−2
-˜q˜x−2 ; ˜q, ˜q
-)
-, (3.150c)
-as well as
-˜h−
-1 (˜x, ˜q) = ˜h+
-1 (˜x−1, ˜q), ˜h−
-2 (˜x, ˜q) = ˜h+
-2 (˜x−1, ˜q). (3.151)
-In the equations above,
-wa = e−4πia/b = e−2πi/3. (3.152)
-The factorisation formula (3.146) can be further simpliﬁed. The holomorphic blocks h+
-1 (x,q )
-and h+
-2 (x,q ) can also be expressed in terms of q-Appell functions, deﬁned in (A.24),
-h+
-1 (x,q ) =q1/3x(q5/3;q)∞
-(q2/3;q)∞
-Φ(1)(q;q1/3,q ;q5/3;q;q2/3x2,q 1/3x), (3.153a)
-h+
-2 (x,q ) =q2/9x2/3 (q;q)∞(q4/3;q)∞
-(q2/3;q)2∞
-Φ(1)(q2/3;q1/3,q ;q4/3;q;q2/3x2,q 1/3x). (3.153b)
-– 34 –
-The summand of a q-Appell function Φ (1)(a;b,b′;c;q;x,y ) is q-holonomic. By using Takayama’s
-algorithm [88, 89] of creative telescoping, implemented in the HolonomicFunctions package of
-Koutschan [90, 91], we ﬁnd thath+
-1 (x,q ),h+
-2 (x,q ), together with the remaining three holomorphic
-blocks, satisfy a third order linear diﬀerence equation
-C3(x;q)h(q3x;q) +C2(x;q)h(q2x;q) +C1(x;q)h(qx;q) +C0(x;q)h(x;q) = 0, (3.154)
+
+\begin{subequations}
+\begin{align}
+  \tilde{h}_0(\tx,\tq) =
+  &\frac{(\tq w_a^{-1} \tx;\tq)_\infty
+    (\tq w_a^{-1}\tx^{-1};\tq)_\infty}
+    {(w_a \tx;\tq)_\infty(w_a \tx^{-1};\tq)_\infty} \nn
+    &\times 
+    \left(
+    \qhg{3}{2}{\tq,w_a\tx,w_a\tx^{-1}}
+    {\tq w_a^{-1}\tx,\tq  w_a^{-1}\tx^{-1}}{\tq}{\tq w_a^{-1}} -
+    \qhg{3}{2}{\tq,w_a\tx,w_a\tx^{-1}}
+    {\tq w_a^{-1}\tx,\tq w_a^{-1}\tx^{-1}}{\tq}{\tq} 
+    \right),\\
+  \tilde{h}^+_1(\tx,\tq) =
+  &\tx\frac{(\tq w_a;\tq)_\infty}{(\tq;\tq)_\infty}
+    \frac{(\tq w_a\tx^2;\tq)_\infty}{(\tx^2;\tq)_\infty}
+    \qhg{2}{1}{w_a^{-1},w_a^{-1}\tx^{-2}}{\tq\tx^{-2}}{\tq}{\tq w_a^{-1}},
+  \\
+  \tilde{h}^+_2(\tx,\tq) =
+  &\tx\frac{(\tq w_a;\tq)_\infty}{(\tq;\tq)_\infty}
+    \frac{(\tq w_a\tx^2;\tq)_\infty}{(\tx^2;\tq)_\infty}
+    \qhg{2}{1}{w_a^{-1},w_a^{-1}\tx^{-2}}{\tq\tx^{-2}}{\tq}{\tq},
+ \end{align}
+\end{subequations}
+
+as well as 
+  
+  \be
+  \tilde{h}^-_1(\tx,\tq) =
+  \tilde{h}^+_1(\tx^{-1},\tq),\qquad
+    \tilde{h}^-_2(\tx,\tq) = \tilde{h}^+_2(\tx^{-1},\tq). 
+    \ee
+    
+In the equations above, 
+
+\begin{equation}
+  w_a = \re^{-4\pi\ri a/\bb} = \re^{-2\pi\ri/3}.
+\end{equation}
+
+
+The factorisation formula \eqref{eq:mass-fac} can be further
+simplified.  The holomorphic blocks $h_1^+(x,q)$ and $h_2^+(x,q)$ can
+also be expressed in terms of $q$-Appell functions, defined in (\ref{def-qappell}), 
+\begin{subequations}
+  \begin{align}
+    h_1^+(x,q) =
+    &q^{1/3}x\frac{(q^{5/3};q)_\infty}{(q^{2/3};q)_\infty}
+      \Phi^{(1)}(q;q^{1/3},q;q^{5/3};q;q^{2/3}x^2,q^{1/3}x),  \\
+    h_2^+(x,q) =
+    &q^{2/9}x^{2/3}\frac{(q;q)_\infty(q^{4/3};q)_\infty}
+      {(q^{2/3};q)_\infty^2}
+      \Phi^{(1)}(q^{2/3};q^{1/3},q;q^{4/3};q;q^{2/3}x^2,q^{1/3}x).
+  \end{align}
+\end{subequations}
+The summand of a $q$-Appell function $\Phi^{(1)}(a;b,b';c;q;x,y)$ is
+$q$-holonomic. By using Takayama's algorithm
+\cite{Takayama1990:grobner,Takayama1990:algo} of creative telescoping,
+implemented in the \texttt{HolonomicFunctions} package of Koutschan
+\cite{Koutschan:holofunctions,Koutschan}, we find that
+$h_1^+(x,q)$, $h_2^+(x,q)$, together with the remaining three holomorphic
+blocks, satisfy a third order linear difference equation
+\begin{equation}
+  C_3(x;q) h(q^3x;q) + C_2(x;q) h(q^2x;q)+C_1(x;q) h(q x;q)+C_0(x;q)
+  h(x;q) = 0,
+\end{equation}
 where
-C3(x;q) =(1−qx)(1 +qx)(1−q5/3x)(1−q8/3x)2(1 +q8/3x)(1−qx2)(1−q13/3x2),
-C2(x;q) =−q1/3(1−q5/3x)(1−q2x)(1 +q2x)(1−qx2)
-(
-1 +q1/3 +q2/3−q4/3(1−q1/3 +q2/3 + 2q)x
-− (1 +q1/3)q2(1 +q−q4/3 + 2q2− 3q7/3 + 2q8/3 +q10/3)x2
-+ (1 +q1/3)q4(1 + 2q2/3− 3q + 2q4/3−q2 +q7/3 +q10/3)x3
-+q22/3(2 +q1/3−q2/3 +q)x4− (1 +q1/3 +q2/3)q9x5
-)
-,
-C1(x;q) =q(1−qx)(1 +qx)(1−q4/3x)(1−q5x2)
-(
-1 +q1/3 +q2/3−q4/3(2 +q1/3−q2/3 +q)x
-− (1 +q1/3)q(1 + 2q2/3− 3q + 2q4/3−q2 +q7/3 +q10/3)x2
-+ (1 +q1/3)q2(1 +q−q4/3 + 2q2− 3q7/3 + 2q8/3 +q10/3)x3
-+q13/3(1−q1/3 +q2/3 + 2q)x4− (1 +q1/3 +q2/3)q6x5
-)
-,
-C0(x;q) =−q2(1−q1/3x)2(1 +q1/3x)(1−q4/3x)(1−q2x)(1 +q2x)(1−q5/3x2)(1−q5x2).
-(3.155)
-Therefore there are only three linearly independent holomorphic blocks. By making the ansatz
-that
-hi0(x,q ) =f1(x,q )hi1(x,q ) +f2(x,q )hi2(x,q ) +f3(x,q )hi3(x,q ), (3.156)
-where hi0(x,q ),hi1(x,q ),hi2(x,q ),hi3(x,q ) are any four holomorphic blocks and the coeﬃcients
-fj(x,q ) are elliptic functions satsifying fj(qx,q ) =fj(x,q ), we ﬁnd
-h+
-2 (x,q ) =− q2/9(q;q)2
-∞θ(−q−1/2x;q)
-x1/3θ(−q−1/6;q)∞θ(−q−1/6x;q)h0(x,q )
-− x2/3θ(−q−1/6x2;q)
-q1/9θ(−q−1/2x2;q) (h+
-1 (x,q )−h−
-1 (x,q )), (3.157a)
-h−
-2 (x,q ) =− q2/9x1/3(q;q)2
-∞θ(−q−1/2/x;q)
-θ(−q−1/6;q)θ(−q−1/6/x;q) h0(x,q )
-+ θ(−q−1/6/x2;q)
-q1/9x2/3θ(−q−1/2/x2;q)(h+
-1 (x,q )−h−
-1 (x,q )), (3.157b)
-– 35 –
+\begin{align}
+  C_3(x;q) =
+  &(1- q x) (1+q x) (1-q^{5/3} x)
+    (1-q^{8/3} x)^2 (1+q^{8/3} x) (1-q x^2) (1-q^{13/3} x^2),\nn
+    C_2(x;q) =
+  &-q^{1/3} (1-q^{5/3} x) (1-q^2 x)
+    (1+q^2 x) (1-q x^2)\nn
+  &\Big(1 + q^{1/3} + q^{2/3} -
+    q^{4/3} (1 - q^{1/3} + q^{2/3} + 2 q) x\nn
+  &- (1 + q^{1/3}) q^2
+    (1 + q -  q^{4/3} + 2 q^2 - 3 q^{7/3} + 2 q^{8/3} + q^{10/3}) x^2\nn
+  &+ (1 + q^{1/3}) q^4 (1 + 2 q^{2/3} - 3 q + 2 q^{4/3}
+    - q^2 + q^{7/3} + q^{10/3}) x^3\nn
+  &+ q^{22/3} (2 + q^{1/3} - q^{2/3} + q) x^4
+    - (1 + q^{1/3} + q^{2/3}) q^9 x^5\Big),\nn
+    C_1(x;q) =
+  &q (1 - q x) (1 + q x) (1 - q^{4/3} x) (1 - q^5 x^2) \nn
+  &\Big(
+    1 + q^{1/3} + q^{2/3} - 
+    q^{4/3} (2 + q^{1/3} - q^{2/3} + q) x \nn
+  &- (1 + q^{1/3}) q
+    (1 + 2 q^{2/3} - 3 q + 2 q^{4/3} - q^2 + q^{7/3} + q^{10/3})x^2\nn
+  &+ (1 + q^{1/3}) q^2 (1 + q - q^{4/3} + 2 q^2 - 3 q^{7/3} + 2 q^{8/3} + 
+    q^{10/3}) x^3 \nn
+  &+ q^{13/3} (1 - q^{1/3} + q^{2/3} + 2 q) x^4
+    - (1 + q^{1/3} + q^{2/3}) q^6 x^5
+    \Big),\nn
+    C_0(x;q) =
+  &-q^2 (1 - q^{1/3} x)^2 (1 + q^{1/3} x) (1 - q^{4/3} x)
+    (1 - q^2 x) (1 + q^2 x) (1 - q^{5/3} x^2) (1 - q^5 x^2).
+\end{align}
+Therefore there are only three linearly independent holomorphic blocks.
+By making the ansatz that
+\begin{equation}
+  h_{i_0}(x,q) =
+  f_1(x,q)h_{i_1}(x,q)+f_2(x,q)h_{i_2}(x,q)+f_3(x,q)h_{i_3}(x,q),
+\end{equation}
+where $h_{i_0}(x,q),h_{i_1}(x,q),h_{i_2}(x,q),h_{i_3}(x,q)$ are any
+four holomorphic blocks and the coefficients $f_j(x,q)$ are elliptic
+functions satsifying $f_j(qx,q) = f_j(x,q)$, we find
+\begin{subequations}
+  \begin{align}
+    h_2^+(x,q) =
+    &-\frac{q^{2/9}(q;q)_\infty^2\theta(-q^{-1/2}x;q)}
+      {x^{1/3}\theta(-q^{-1/6};q)_\infty\theta(-q^{-1/6}x;q)}h_0(x,q)\nn
+    & -\frac{x^{2/3}\theta(-q^{-1/6}x^2;q)}
+      {q^{1/9}\theta(-q^{-1/2}x^2;q)}(h_1^+(x,q)-h_1^-(x,q)),
+      \label{eq:h2p-h0h1}\\
+    h_2^-(x,q) =
+    &-\frac{q^{2/9}x^{1/3}(q;q)_\infty^2\theta(-q^{-1/2}/x;q)}
+      {\theta(-q^{-1/6};q)\theta(-q^{-1/6}/x;q)}h_0(x,q)
+      \nn
+    &+\frac{\theta(-q^{-1/6}/x^2;q)}
+      {q^{1/9}x^{2/3}\theta(-q^{-1/2}/x^2;q)}(h_1^+(x,q)-h_1^-(x,q)),
+      \label{eq:h2n-h0h1}
+  \end{align}
+\end{subequations}
 where we have used the notation
-θ(x;q) = (−q1/2x;q)∞(−q1/2/x;q)∞. (3.158)
-Notice thath+
-1 (x,q ) andh−
-1 (x,q ) always appear in these relations by the combination h+
-1 (x,q )−
-h−
-1 (x,q ), which is also true in the factorisation (3.146) once we take into account the fact that
-˜h−
-1 (˜x, ˜q) =−˜h+
-1 (˜x, ˜q). We can therefore write down a simpliﬁed factorisation of I(ξ, b) by using
-only two reduced (anti-)holomorphic blocks
-I(ξ, b) = ib−1h0(x,q )~hred
-0 (˜x, ˜q) + ibw−1
-a hred
-1 (x,q )~hred
-1 (˜x, ˜q), (3.159)
+\begin{equation}
+  \theta(x;q) = (-q^{1/2}x;q)_\infty(-q^{1/2}/x;q)_\infty.
+\end{equation}
+Notice that $h^+_1(x,q)$ and $h^-_1(x,q)$ always appear in these
+relations by the combination $h^+_1(x,q) -h^-_1(x,q) $, which is also
+true in the factorisation \eqref{eq:mass-fac} once we take into
+account the fact that
+$\tilde{h}^-_1(\tx,\tq) = -\tilde{h}^+_1(\tx,\tq)$.  We can therefore
+write down a simplified factorisation of $I(\xi,\bb)$ by using only two
+reduced (anti-)holomorphic blocks
+
+\begin{equation}
+  I(\xi,\bb) = \ri\bb^{-1} h_0(x,q) \wt{h}_0^{\text{red}}(\tx,\tq)
+  +\ri\bb w_a^{-1} h_1^{\text{red}}(x,q)
+  \wt{h}_1^{\text{red}}(\tx,\tq),
+\end{equation}
+
 where
-hred
-1 (x,q ) =h+
-1 (x,q )−h−
-1 (x,q ), (3.160)
+
+\begin{equation}
+  h_1^{\text{red}}(x,q) = h_1^+(x,q) - h_1^-(x,q),
+\end{equation}
+
 and
-~hred
-0 (˜x, ˜q) =~h0(˜x, ˜q) +w−1
-a
-(˜q; ˜q)2
-∞θ(−˜q1/2˜x; ˜q)
-θ(−˜q1/2wa; ˜q)θ(−˜q1/2w−1a ˜x; ˜q)
-~h+
-2 (˜x, ˜q)
-+w−1
-a
-(˜q; ˜q)2
-∞θ(−˜q1/2˜x−1; ˜q)
-θ(−˜q1/2wa; ˜q)θ(−˜q1/2w−1a ˜x−1; ˜q)
-~h−
-2 (˜x, ˜q), (3.161a)
-~hred
-1 (˜x, ˜q) =~h+
-1 (˜x, ˜q)−wa
-θ(−˜q1/2w−1
-a ˜x2; ˜q)
-θ(−˜q1/2˜x2;tq)
-~h+
-2 (˜x, ˜q)
-+wa
-θ(−˜q1/2w−1
-a ˜x−2; ˜q)
-θ(−˜q1/2˜x−2;tq)
-~h−
-2 (˜x, ˜q). (3.161b)
-Finally, taking the massless limit ξ→ 0 and using the relation
-Tr′ρ2
-P2 =
-√
-3bΦb(− ib
-6− ib−1
-2 )2
-Φb( ib
-6 + ib−1
-2 )2 I(0, b), (3.162)
-we ﬁnd the following elegant factorisation formula for the normalised second trace
-Tr′ρ2
-P2 = i
-√
-3
-(
-~H0(˜q) + 3b4H1(q)~H1(˜q)
-)
-, (3.163)
+
+\begin{subequations}
+  \begin{align}
+    \wt{h}_0^{\text{red}}(\tx,\tq) =
+    \wt{h}_0(\tx,\tq)
+    &+w_a^{-1}\frac{(\tq;\tq)_\infty^2\theta(-\tq^{1/2}\tx;\tq)}
+      {\theta(-\tq^{1/2}w_a;\tq)\theta(-\tq^{1/2}w_a^{-1}\tx;\tq)}
+      \wt{h}_2^+(\tx,\tq)\nn
+    &+w_a^{-1}\frac{(\tq;\tq)_\infty^2\theta(-\tq^{1/2}\tx^{-1};\tq)}
+      {\theta(-\tq^{1/2}w_a;\tq)\theta(-\tq^{1/2}w_a^{-1}\tx^{-1};\tq)}
+      \wt{h}_2^-(\tx,\tq),\\
+    \wt{h}_1^{\text{red}}(\tx,\tq) =
+    \wt{h}_1^+(\tx,\tq)
+    &-w_a\frac{\theta(-\tq^{1/2}w_a^{-1}\tx^2;\tq)}
+      {\theta(-\tq^{1/2}\tx^2;tq)}\wt{h}_2^+(\tx,\tq)\nn
+    &+w_a\frac{\theta(-\tq^{1/2}w_a^{-1}\tx^{-2};\tq)}
+      {\theta(-\tq^{1/2}\tx^{-2};tq)}\wt{h}_2^-(\tx,\tq).
+  \end{align}
+\end{subequations}
+
+Finally, taking the massless limit $\xi\rightarrow 0$  and using the relation
+
+\begin{equation}
+  \tr' \rho_{\IP^2}^2 =
+  \sqrt{3}\bb\frac{\fad(-\frac{\ri\bb}{6}-\frac{\ri\bb^{-1}}{2})^2}
+  {\fad(\frac{\ri\bb}{6}+\frac{\ri\bb^{-1}}{2})^2} I(0,\bb),
+\end{equation}
+we find the following elegant factorisation formula for the normalised
+second trace
+
+\begin{align}
+  \tr'\rho_{\IP^2}^2=
+  \ri\sqrt{3}\left( \wt{H}_0(\tq)
+  +3\bb^4  H_1(q)\wt{H}_1(\tq)\right),
+  \label{eq:redfac}
+\end{align}
 where the only non-trivial massless holomorphic block is
-H1(q) =q1/3 (q;q)4
-∞(q1/3;q)2
-∞
-(q2/3;q)5∞(q4/3;q)∞
-3φ2
-(q1/3,q 2/3,q 2/3
-q,q 4/3 ;q,q 2/3
-)
-, (3.164)
+\begin{align}
+  H_1(q) =
+  
+  
+  
+  &q^{1/3}\frac{(q;q)_\infty^4(q^{1/3};q)_\infty^2}
+    {(q^{2/3};q)_\infty^5(q^{4/3};q)_\infty}
+    \qhg{3}{2}{q^{1/3},q^{2/3},q^{2/3}}{q,q^{4/3}}{q}{q^{2/3}},
+    \label{eq:Hred1}
+\end{align}
 and the massless anti-holomorphic blocks are
-~H0(˜q) =3φ2
-( wa,wa, ˜q
-w−1
-a ˜q,w−1
-a ˜q; ˜q,w−1
-a ˜q
-)
-− 3φ2
-( wa,wa, ˜q
-w−1
-a ˜q,w−1
-a ˜q; ˜q, ˜q
-)
-+ (˜q; ˜q)2
-∞(˜qwa; ˜q)2
-∞
-(˜qw−1a ; ˜q)4∞
-2φ1
-(w−1
-a ,w−1
-a
-˜q ; ˜q, ˜q
-)
-, (3.165a)
-~H1(˜q) = 2(˜qwa; ˜q)6
-(˜q; ˜q)3(˜qw−1a ; ˜q)3. (3.165b)
-The simple factorisation formula (3.163) enables us to rapidly and accurately calculate the
-value of the normalised second trace for gs in the upper half plane. Through a high precision
-numerical calculation we ﬁnd the following relationship between the normalised second trace and
-the Borel resummation of Φ 0;2(gs), Φ1;2(gs).
-– 36 –
-• Forgs in sector II
-Tr′ρ2
-P2 =sII (Φ0;2)(gs), (3.166)
-thus Tr′ρ2
-P2(b) furnishes a holomorphic lift of sII (Φ0;2)(gs).
-• Forgs in sector I
-Tr′ρ2
-P2 =sI(Φ0;2)(gs) +sI(Φ1;2)(gs)K2(q), (3.167)
-where
-K2(q) =q1/6(1− 3q1/3 + 10q2/3 +... ). (3.168)
+\begin{subequations}
+  \begin{align}
+    \wt{H}_0(\tq) =
+    
+    
+    
+    &\qhg{3}{2}{w_a,w_a,\tq}{w_a^{-1}\tq,w_a^{-1}\tq}{\tq}{w_a^{-1}\tq}
+      -\qhg{3}{2}{w_a,w_a,\tq}{w_a^{-1}\tq,w_a^{-1}\tq}{\tq}{\tq}\nn
+    &+\frac{(\tq;\tq)_\infty^2(\tq w_a;\tq)_\infty^2}
+      {(\tq w_a^{-1};\tq)_\infty^4}
+      \qhg{2}{1}{w_a^{-1},w_a^{-1}}{\tq}{\tq}{\tq},
+      \label{eq:tHred0}\\
+    \wt{H}_1(\tq)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        =
+      &\frac{2(\tq w_a;\tq)^6}{(\tq;\tq)^3(\tq w_a^{-1};\tq)^3}.\qquad
+      
+      \label{eq:tHred1}
+  \end{align}
+\end{subequations}
+
+The simple factorisation formula \eqref{eq:redfac} enables us to
+rapidly and accurately calculate the value of the normalised second
+trace for $g_s$ in the upper half plane. Through a high precision
+numerical calculation we find the following relationship between the
+normalised second trace and the Borel resummation of
+$\Phi_{0;2}(g_s), \Phi_{1;2}(g_s)$.
+\begin{itemize}
+\item For $g_s$ in sector $II$
+  \begin{equation}
+    \tr'\rho_{\IP^2}^2 = s_{II}(\Phi_{0;2})(g_s),
+    \label{eq:hlift-P2}
+  \end{equation}
+  thus $\tr'\rho_{\IP^2}^2(\bb)$ furnishes a holomorphic lift of
+  $s_{II}(\Phi_{0;2})(g_s)$.
+\item For $g_s$ in sector $I$
+  \begin{equation}
+    \tr'\rho_{\IP^2}^2 = s_{I}(\Phi_{0;2})(g_s) +
+    s_{I}(\Phi_{1;2})(g_s) K_2(q),
+    \label{eq:hlift2-P2}
+  \end{equation}
+  where
+  \begin{equation}
+    K_2(q) = q^{1/6}(1-3q^{1/3}+10q^{2/3} + \ldots).
+  \end{equation}
+\end{itemize}
 By comparing these two identities we conclude immediately
-S+
-01;2(q) =K2(q). (3.169)
-We comment that the two relations (3.166), (3.167) also justify the claim (3.143). When gs is
-in the second quadrant, (3.166) clearly implies (3.143). When gs is in the ﬁrst quadrant, (3.167)
-indicates that in the leading order
-Tr′ρ2
-P2(b)∼ Φ0;2(gs) + e−(3VP2+ i
-2 )/gs(... ) (3.170)
-and the series Φ 0;2(gs) clearly dominates.
-In the next subsection we consider the radial asymptotic analysis of the anti-holomorphic
-blocks, which is a more eﬃcient way to compute the q-series S+
-01;2.
+\begin{equation}
+  \ms{S}^+_{01;2}(q) =K_2(q).
+\end{equation}
+We comment that the two relations
+\eqref{eq:hlift-P2}, \eqref{eq:hlift2-P2} also justify the claim
+\eqref{eq:tr2asymp-P2}.
+When $g_s$ is in the second quadrant, \eqref{eq:hlift-P2} clearly
+implies \eqref{eq:tr2asymp-P2}.
+When $g_s$ is in the first quadrant, \eqref{eq:hlift2-P2} indicates
+that in the leading order
+\begin{equation}
+  \tr'\rho_{\IP^2}^2(\bb) \sim \Phi_{0;2}(g_s) +
+  \re^{-(3\CV_{\IP^2}+\frac{\ri}{2})/g_s} (\ldots)
+\end{equation}
+and the series $\Phi_{0;2}(g_s)$ clearly dominates.
+
+In the next subsection we consider the radial asymptotic analysis of
+the anti-holomorphic blocks, which is a more efficient way to compute
+the $q$-series $\ms{S}_{01;2}^+$.

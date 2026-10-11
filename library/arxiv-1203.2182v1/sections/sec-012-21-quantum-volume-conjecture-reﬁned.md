@@ -8,30 +8,34 @@ pages: 7-7
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
 doc_brief: "Volume Conjecture: Refined and Categorified — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the"
+text_source: latex
+latex_prose_ratio: 0.771
+latex_coverage_ratio: 0.953
 ---
-The fact that a q-diﬀerence operator ˆA(ˆx,ˆy;q) annihilates the partition function of Chern-
-Simons theory / matrix model / B-model / instanton partition function is easy to reﬁne. Just
-like each of these partition functions becomes t-dependent, so does the operator ˆA(ˆx,ˆy;q,t )
-that annihilates it. The commutation relations (1.7) do not change and, therefore, our pro-
-posal for the reﬁnement of (1.5) is easy to state:
-ˆAref(ˆx,ˆy;q,t )P∗(K;q,t ) ≃ 0 (knots) (2.1a)
+The fact that a $q$-difference operator $\widehat A (\widehat x, \widehat y; q)$ annihilates the partition function of Chern-Simons theory / matrix model / B-model / instanton partition function is easy to refine. Just like each of these partition functions becomes $t$-dependent, so does the operator $\widehat A (\widehat x, \widehat y; q,t)$ that annihilates it. The commutation relations [\[xycomm\]](#xycomm){reference-type="eqref" reference="xycomm"} do not change and, therefore, our proposal for the refinement of [\[VCquant\]](#VCquant){reference-type="eqref" reference="VCquant"} is easy to state: $$\label{VCquantref}
+\begin{equation}
+\widehat A^{\text{ref}} (\widehat x, \widehat y; q, t) \; P_* (K;q,t) \; \simeq \; 0 \qquad \qquad \text{(knots)}
+\end{equation}
 or
-ˆAref(ˆx,ˆy;q,t )Z open
-BPS (u,q,t ) ≃ 0 (BPS states) (2.1b)
-While the formulation of this reﬁned / homological version i s simple and follows the lines
-of the ordinary quantum volume conjecture (1.5), its interp retation is rather deep and non-
-trivial. It involves details of the framework in which (2.1) arises and will be given a proper
-treatment in the following sections. Here, we only remark th at polynomials Pn(K;q,t ) which
-appear in (2.1a) ast-dependent analogs of the colored Jones polynomialsJn(K;q) are Poincar´ e
-polynomials of the n-colored sl(2) knot homology groups Hsl(2),Vn(K):
-Pn(K;q,t ) =
-∑
-i,j
-qitj dim Hsl(2),Vn
-i,j (K), (2.2)
-such that
-Jn(K;q) = Pn(K;q,t = −1). (2.3)
-Because the t-deformation does not aﬀect the commutation relation (1.7), the operators ˆx
-andˆy act on Pn exactly as in (1.6):
-ˆxPn = qnPn (2.4)
-ˆyPn = Pn+1
+\begin{equation}
+\widehat A^{\text{ref}} (\widehat x, \widehat y; q, t) \; Z_{\text{BPS}}^{\text{open}} (u,q,t) \; \simeq \; 0 \qquad \qquad \text{(BPS states)}
+\end{equation}$$ While the formulation of this refined / homological version is simple and follows the lines of the ordinary quantum volume conjecture [\[VCquant\]](#VCquant){reference-type="eqref" reference="VCquant"}, its interpretation is rather deep and non-trivial. It involves details of the framework in which [\[VCquantref\]](#VCquantref){reference-type="eqref" reference="VCquantref"} arises and will be given a proper treatment in the following sections. Here, we only remark that polynomials $P_n (K;q,t)$ which appear in ([\[VCquantref\]](#VCquantref){reference-type="ref" reference="VCquantref"}a) as $t$-dependent analogs of the colored Jones polynomials $J_n (K;q)$ are Poincaré polynomials of the $n$-colored $sl(2)$ knot homology groups ${\cal H }^{sl(2),V_n} (K)$: $$P_n (K;q,t) \; = \; \sum_{i,j} q^i t^j \dim {\cal H }_{i,j}^{sl(2),V_n} (K) \,,
+\label{Pnoptimistic}$$ such that $$J_n (K;q) \; = \; P_n (K;q,t=-1) \,.$$ Because the $t$-deformation does not affect the commutation relation [\[xycomm\]](#xycomm){reference-type="eqref" reference="xycomm"}, the operators $\widehat x$ and $\widehat y$ act on $P_n$ exactly as in [\[xyactionJ\]](#xyactionJ){reference-type="eqref" reference="xyactionJ"}: $$\begin{aligned}
+& \widehat x P_n \; = \; q^n P_n \label{xyactionP} \\
+& \widehat y P_n \; = \; P_{n+1} \notag
+\end{aligned}$$
+
+::: {#table-qt}
+    **Model**                                           $\widehat{A}^{\text{ref}} (\widehat{x},\widehat{y};q,t)$
+  ------------- ----------------------------------------------------------------------------------------------------------------------------------------
+     unknot                                 $(1 + t^3 q \widehat{x}) ( - q^{-1} t^{-3})^{1/2} - (1 - \widehat{x})\widehat y$
+                                                         $\frac{1}{q + \widehat{x}^2 q^{2} t^3} \; \widehat{y}
+                              + \frac{\widehat{x}^3 (x - q) t^4}{q (q + \widehat{x}^2 t^3) (1 + \widehat{x} q t^3)} \; \widehat{y}^{-1} +$
+                                                        $-   \frac{t^2 \widehat{x}^2}{1 + \widehat{x}^2 q t^3} -
+                                                          \frac{ q - \widehat{x} q t^2 + \widehat{x}^{4} t^6 +
+                                          \widehat{x}^{2} t^2 (1 + t + q t)}{(q + \widehat{x}^{2} t^3) (1 + \widehat{x} q t^3)}$
+   tetrahedron                            $1 + t \widehat{y} - t \sqrt{q} \, \widehat{x}(-\widehat{y})^f  \; \simeq  \; 1 + t$
+    conifold     $1 + t \widehat{y} - t \sqrt{q} \, \widehat{x}(-\widehat{y})^f  + Q \sqrt{-tq} \, \widehat{x}(-\widehat{y})^{f+1} \; \simeq \; 1 + t$ 
+
+  : Refined quantum curves derived in this paper. The notation "$\ldots \simeq 1 + t$" should be understood as $\widehat{A}^{\text{ref}} Z_{\text{BPS}}^{\text{open}} = 1 + t$. Note that in section [\[sec:Bmodel\]](#sec:Bmodel){reference-type="ref" reference="sec:Bmodel"} the quantization parameter $q$ is identified with $q_2$, and the deformation parameter is $t= - \frac{q_1}{q_2}$.
+:::

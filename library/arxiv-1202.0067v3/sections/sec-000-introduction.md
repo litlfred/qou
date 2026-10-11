@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-7
 source_pdf: 1202.0067v3.pdf
 source_sha256: 2ce621c8982ee764
-text_source: latex
-latex_prose_ratio: 0.964
-latex_coverage_ratio: 0.943
 doc_brief: "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON — 8 sections: Introduction; Deflation by averaging; Skew characters"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.972
 ---
 []{#sec:intro label="sec:intro"}
 
@@ -48,9 +48,9 @@ Recall that a skew-partition $\sigma / \tau$ is said to be a *border strip* (or 
 []{#def:sgn label="def:sgn"} Let $T$ be a border-strip tableau. The *sign* of $T$ is defined by $\mathrm{sgn}(T) = (-1)^h$, where $h$ is the sum of the heights of the border strips forming $T$.
 :::
 
-<figure id="fig:border_strip" data-latex-placement="b">
+<figure id="fig:border_strip">
 <p><span class="math display">$$\young(::112444,::122,:11,:1,:3,33)$$</span></p>
-<figcaption>A border-strip tableau of shape <span class="math inline">(8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1)</span> and type <span class="math inline">(6, 3, 3, 3)</span>. The heights of the border strips labelled <span class="math inline">1, 2, 3, 4</span> are <span class="math inline">3, 1, 1, 0</span> respectively, and the sign of this border-strip tableau is thus <span class="math inline">−1</span>. </figcaption>
+<figcaption>A border-strip tableau of shape <span class="math inline">(8,5,3,2,2,2)/(2,2,1,1,1)</span> and type <span class="math inline">(6,3,3,3)</span>. The heights of the border strips labelled <span class="math inline">1, 2, 3, 4</span> are <span class="math inline">3, 1, 1, 0</span> respectively, and the sign of this border-strip tableau is thus <span class="math inline"> − 1</span>. </figcaption>
 </figure>
 
 ::: definition
@@ -67,11 +67,9 @@ Note that if $T$ is a border-strip tableau of shape $\lambda / \mu$ and type $(\
 \ldots ,
 \lambda^{jm} / \lambda^{jm-1}$$
 
-corresponding to the $m$ parts in $\gamma^{\star m}$ of length $\gamma_j$ satisfy $$\begin{equation}
-\label{eq:row_numbers} 
+corresponding to the $m$ parts in $\gamma^{\star m}$ of length $\gamma_j$ satisfy $$\label{eq:row_numbers} 
 N(\lambda^{(j-1)m+1} / \lambda^{jm}) 
-\ge \cdots \ge N(\lambda^{jm} / \lambda^{jm-1}).
-\end{equation}$$ Let $$a_{\lambda/ \mu, \gamma} = \sum_{T} \mathrm{sgn}(T)$$ where the sum is over all $m$-border-strip tableaux $T$ of shape $\lambda / \mu$ and type $\gamma$.
+\ge \cdots \ge N(\lambda^{jm} / \lambda^{jm-1}).$$ Let $$a_{\lambda/ \mu, \gamma} = \sum_{T} \mathrm{sgn}(T)$$ where the sum is over all $m$-border-strip tableaux $T$ of shape $\lambda / \mu$ and type $\gamma$.
 :::
 
 ::: theorem
@@ -98,10 +96,8 @@ It is clear than if $m=1$ then $\mathop{\mathrm{Def\hskip-0.3pt res}}_{S_n} \chi
 As Stanley observes in [@StanleyII page 348], it is far from obvious that the character values given by the Murnaghan--Nakayama rule applied to a skew-partition $\lambda / \mu$ and a composition $\gamma$ are independent of the order of the parts of $\gamma$. This remark applies even more strongly to Theorem [\[thm:cd\]](#thm:cd){reference-type="ref" reference="thm:cd"}. For example, the reader may check that if $\lambda / \mu = (6,5,3,2) / (3,1)$, as in Example [\[example:border_strip\]](#example:border_strip){reference-type="ref" reference="example:border_strip"}, and $\gamma' = (2,1,3)$, then there is a unique $2$-border-strip tableau of shape $(6,5,3,2) / (3,1)$ and type $\gamma'$. Thus $a_{\lambda/\mu,\gamma'} = 1$, but the sums defining $a_{\lambda/ \mu,\gamma}$ and $a_{\lambda / \mu, \gamma'}$ are different.
 
 Another special case of Theorem [\[thm:cd\]](#thm:cd){reference-type="ref" reference="thm:cd"} worth noting occurs when $g$ is the identity element of $S_n$. If $\xi$ is an irreducible character of $S_m \wr S_n$ then either the base group $B = S_m \times \cdots \times S_m$ is contained in the kernel of $\xi$ and $\left<\mathop{\mathrm{Res}}_B \xi, 1_B\right>
-= \xi(1)$, or $\left<\mathop{\mathrm{Res}}_B \xi, 1_B\right> = 0$. Hence, by linearity, we have $$\begin{equation}
-\label{eq:deflation_special} 
-(\mathop{\mathrm{Def\hskip-0.3pt res}}_{S_n} \chi)(1) = \left<\mathop{\mathrm{Res}}_B \chi ,1_B\right>
-\end{equation}$$ for any character $\chi$ of $S_{mn}$. It now follows from Theorem [\[thm:cd\]](#thm:cd){reference-type="ref" reference="thm:cd"} and Frobenius reciprocity that $$a_{\lambda / \mu, (1^n)} =
+= \xi(1)$, or $\left<\mathop{\mathrm{Res}}_B \xi, 1_B\right> = 0$. Hence, by linearity, we have $$\label{eq:deflation_special} 
+(\mathop{\mathrm{Def\hskip-0.3pt res}}_{S_n} \chi)(1) = \left<\mathop{\mathrm{Res}}_B \chi ,1_B\right>$$ for any character $\chi$ of $S_{mn}$. It now follows from Theorem [\[thm:cd\]](#thm:cd){reference-type="ref" reference="thm:cd"} and Frobenius reciprocity that $$a_{\lambda / \mu, (1^n)} =
 \left< \chi^{\lambda / \mu},
  \mathop{\mathrm{Ind}}_{S_m \times \cdots \times S_m}^{S_{mn}}
 1_{S_m} \times \cdots \times 1_{S_m} \right>$$ for any skew-partition $\lambda / \mu$ of $mn$. It is clear from Definition [\[def:a\]](#def:a){reference-type="ref" reference="def:a"} that $a_{\lambda / \mu, (1^n)}$ is the number of semi-standard tableaux of shape $\lambda / \mu$ and type $(m^n)$. Therefore, by setting $\mu = \varnothing$ in the previous equation, we obtain a special case of Young's rule (see [@JK 2.8.5] or [@StanleyII Proposition 7.18.7]).
@@ -110,11 +106,9 @@ Another special case of Theorem [\[thm:cd\]](#thm:cd){reference-type="ref" refe
 
 The remainder of the paper proceeds as follows. Throughout, we shall adopt the convention that if $\alpha$ is a partition of $r \in \mathbf{N}$, then $g_\alpha \in S_r$ is an element of cycle type $\alpha$, and $z_\alpha$ is the size of the centralizer of $g_\alpha$ in $S_r$. (The choice of $g_\alpha$ within the conjugacy class is irrelevant.) If $\alpha = (\alpha_1,\ldots,\alpha_k)$, we write $n\alpha = (n\alpha_1,\ldots,n\alpha_k)$.
 
-In §[\[sec:averaging\]](#sec:averaging){reference-type="ref" reference="sec:averaging"} we prove Proposition [\[prop:deflation\]](#prop:deflation){reference-type="ref" reference="prop:deflation"}, which implies that if $\chi$ is a character of $S_{mn}$ and $g\in S_n$, then $(\mathop{\mathrm{Def\hskip-0.3pt res}}_{S_n} \chi)(g)$ is the average value of $\chi$ on the coset of the base group $S_m \times \cdots \times S_m$ in $S_m \wr S_n$ corresponding to $g$. Equation [\[eq:deflation_special\]](#eq:deflation_special){reference-type="eqref" reference="eq:deflation_special"} above is a special case of this result. In the case when $g \in S_n$ is an $n$-cycle, we obtain Proposition [\[prop:omega\]](#prop:omega){reference-type="ref" reference="prop:omega"}(ii), which implies that if $\lambda / \mu$ is a skew-partition of $mn$, then $$\begin{equation}
-\label{eq:cycle_deflation}
+In §[\[sec:averaging\]](#sec:averaging){reference-type="ref" reference="sec:averaging"} we prove Proposition [\[prop:deflation\]](#prop:deflation){reference-type="ref" reference="prop:deflation"}, which implies that if $\chi$ is a character of $S_{mn}$ and $g\in S_n$, then $(\mathop{\mathrm{Def\hskip-0.3pt res}}_{S_n} \chi)(g)$ is the average value of $\chi$ on the coset of the base group $S_m \times \cdots \times S_m$ in $S_m \wr S_n$ corresponding to $g$. Equation [\[eq:deflation_special\]](#eq:deflation_special){reference-type="eqref" reference="eq:deflation_special"} above is a special case of this result. In the case when $g \in S_n$ is an $n$-cycle, we obtain Proposition [\[prop:omega\]](#prop:omega){reference-type="ref" reference="prop:omega"}(ii), which implies that if $\lambda / \mu$ is a skew-partition of $mn$, then $$\label{eq:cycle_deflation}
  \mathop{\mathrm{Def\hskip-0.3pt res}}_{S_n} \chi^{\lambda / \mu}(g) = 
-\sum_{\alpha}\frac{\chi^{\lambda / \mu}(g_{n\alpha})}{z_\alpha}
-\end{equation}$$ where the sum is over all partitions $\alpha$ of $m$, and $n\alpha$ denotes the partition obtained from $\alpha$ by multiplying each of its parts by $n$.
+\sum_{\alpha}\frac{\chi^{\lambda / \mu}(g_{n\alpha})}{z_\alpha}$$ where the sum is over all partitions $\alpha$ of $m$, and $n\alpha$ denotes the partition obtained from $\alpha$ by multiplying each of its parts by $n$.
 
 In §[\[sec:skew\]](#sec:skew){reference-type="ref" reference="sec:skew"} we state a theorem of Farahat (see [@Farahat1954 Section 4]), which gives a formula for the character values $\chi^{\lambda/\mu}(g_{n\alpha})$ appearing on the right-hand side of [\[eq:cycle_deflation\]](#eq:cycle_deflation){reference-type="eqref" reference="eq:cycle_deflation"}. We then give a character-theoretic proof of this theorem.
 

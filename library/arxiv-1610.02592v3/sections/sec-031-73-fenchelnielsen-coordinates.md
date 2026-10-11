@@ -7,12 +7,13 @@ section_number: 7.3
 pages: 210-219
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.948
-latex_coverage_ratio: 0.878
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 It is now time to fix a global set of coordinates for the Teichm\"uller space when $g\geqslant 2$. These are the \emph{Fenchel--Nielsen coordinates} and they identify $\Teich(S_g)$ with $\matR^{6g-6}$, more precisely with $\matR_{>0}^{3g-3} \times \matR^{3g-3}$. 
+
 
 \subsection{The coordinates}
 We want to construct a parametrisation for $\Teich(S_g)$ when $g\geqslant 2$. To identify a finite-dimensional vector space with $\matR^n$ one needs to fix a basis; likewise, here the parametrisation depends on the choice of a  frame.\index{Fenchel--Nielsen coordinates} 
@@ -84,6 +85,7 @@ As shown in the proof, the torsion parameters for $m$ are zero if and only if th
 \end{oss}
 
 
+
 \subsection{Length functions of $9g-9$ curves}
 It is now natural to ask whether the length functions determine every point in $\Teich(S_g)$. The answer is positive; as usual, to warm up we start by examining the torus.
 
@@ -145,6 +147,7 @@ A strictly convex proper function $f\colon\matR \to \matR$ is at most 2 to 1, he
 is injective. Therefore $L$ is injective. 
 \end{proof}
 
+
 \subsection{Collar lemma}
 The thick-thin decomposition theorem implies that the closed geodesics of length smaller than a Margulis constant $\varepsilon_2$ on a complete hyperbolic surface are simple and have disjoint $R$-neighbourhoods (see Corollary \ref{simple:small:geodesics:cor}). When the curves are very short, one may choose $R$ to be very large: this fact is called the \emph{collar lemma} and we prove it directly using elementary tools.\index{collar lemma}
 
@@ -197,6 +200,7 @@ $$L(\eta)\geqslant 2i(\eta, \gamma) \cdot f(L(\gamma)).$$
 \begin{proof}
 The geodesic $\gamma$ has a tubular $f(L(\gamma))$-neighbourhood. The geodesic $\eta$ intersects $\gamma$ in $i(\eta,\gamma)$ points and hence crosses the tubular neighbourhood at least $i(\eta,\gamma)$ times, each with a segment of length $\geqslant 2f(L(\gamma))$.
 \end{proof}
+
 
 \subsection{A topology for the Teichm\"uller space} \label{Topology:Teich:subsection}
 There are various equivalent ways to assign a topology to the Teichm\"uller space. 
@@ -289,6 +293,7 @@ furnished by Proposition \ref{9g-9:prop} is a homeomorphism onto its image.
 \begin{proof}
 Using Fenchel-Nielsen coordinates the map is clearly continuous. The proof that it is proper is as in Proposition \ref{FN:omeom:prop}.
 \end{proof}
+
 
 \subsection{Surfaces of finite type} \label{Teich:finite:type:subsection}
 We have considered only closed surfaces $S_g$ for simplicity, but most of the arguments exposed in this chapter extend easily to all surfaces $S_{g,b,p}$ of finite type with negative Euler characteristic. 

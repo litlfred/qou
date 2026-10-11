@@ -154,7 +154,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "cltinfinity.tex",
-   "tex_sections": 8,
+   "tex_sections": 27,
    "overlaid": 6,
    "thresholds": {
     "title": 0.85,
@@ -165,48 +165,48 @@
     {
      "id": "sec-000-2-quasi-symmetric-functions-and-a-link-with-rand",
      "title": "Quasi-symmetric functions and a link with random permutations",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.833,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-3-observables-of-young-diagrams-and-their-cumula",
      "title": "Observables of Young diagrams and their cumulants",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.858,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-4-kerov-vershik-law-of-large-numbers",
      "title": "Kerov-Vershik law of large numbers",
-     "prose_ratio": 0.962,
-     "coverage_ratio": 0.903,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-5-central-limit-theorems-for-characters-and-for",
      "title": "Central limit theorems for characters and for partitions",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.874,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-6-pitman-operators-and-a-link-with-conditioned-r",
      "title": "Pitman operators and a link with conditioned random walks and brownian matrices",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.823,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-7-jones-ocneanu-traces-of-hecke-algebras-and-qt",
      "title": "Jones-Ocneanu traces of Hecke algebras and (q,t)-Plancherel measures",
-     "prose_ratio": 0.952,
-     "coverage_ratio": 0.522,
+     "prose_ratio": 0.806,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "pandoc"
     }

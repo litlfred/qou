@@ -7,10 +7,10 @@ section_number: 4
 pages: 4-5
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
-text_source: latex
-latex_prose_ratio: 0.912
-latex_coverage_ratio: 0.962
 doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Given an integer $m\geq 1$, an $m\times m$ matrix $A$ with coefficients in $R$ is
 {\sf diagonalizable} if there exist matrices $S$ and $T$ in $\GL_m(R)$ such that

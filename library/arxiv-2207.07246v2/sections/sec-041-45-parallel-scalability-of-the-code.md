@@ -7,12 +7,12 @@ section_number: 4.5
 pages: 116-118
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
-text_source: latex
-latex_prose_ratio: 0.961
-latex_coverage_ratio: 0.993
 doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES"
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.94
 ---
-<figure id="figscaling" data-latex-placement="hptb!">
+<figure id="figscaling">
 <embed src="Figures/scaling.eps" />
 <figcaption>The scaling efficiency of our PIMC code. It is based on sampling <span class="math inline">4 × 10<sup>5</sup></span> samples of <span class="math inline"><sup>4</sup></span>He for <span class="math inline"><em>τ</em> = 0.3 MeV<sup>−1</sup></span> with <span class="math inline"><em>Δ</em><em>τ</em> = 2 × 10<sup>−4</sup> MeV<sup>−1</sup></span>.</figcaption>
 </figure>

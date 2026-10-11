@@ -8,153 +8,76 @@ pages: 8-10
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
 doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.963
 ---
-diagram and N ≥ r(λ), c(λ). We consider a random matrixTλ = (tij)1≤i,j≤N
-such that
-• its entries (tij) are independent random variables;
-• if (i, j) ∈ λ then tij is a complex centered Gaussian variable, that is
-to say that
-E(tij) = 0 , E(tij
-tij) = 1 , E(t2
-ij) = 0;
-• otherwise, if (i, j) /∈ λ then tij = 0.
-The moments of TλT ⋆
-λ are given by a formula which is very similar to the
-Stanley formula for characters (Theorem 2):
-ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS 9
-Theorem 7. With the deﬁnitions above and π ∈ Sl with a cycle decompo-
-sition k1, . . . , kr
-(14) E
-(
-Tr(TλT ⋆
-λ )k1 · · ·Tr(TλT ⋆
-λ )kr
-)
-=
-∑
-σ1,σ2∈Sl
-σ1σ2=π
-N λ(σ1, σ2).
-Proof. The ﬁrst step is to expand the product and the trace on the left -hand
-side:
-E
-(
-Tr(TλT ⋆
-λ )k1 . . . Tr(TλT ⋆
-λ )kr
-)
-= E
-[( ∑
-i1
-1,j1
-1,...,i1
-k1 ,j1
-k1
-ti1
-1j1
-1
-ti1
-2j1
-1
-. . . ti1
-k1 j1
-k1
-ti1
-1j1
-k1
-)
-. . .
-( ∑
-ir
-1,jr
-1,...,ir
-kr ,jr
-kr
-tir
-1jr
-1
-tir
-2jr
-1 . . . tir
-kr jr
-kr
-tir
-1jr
-kr
-) ]
-=
-∑
-i1,j1,...,il,jl
-E
-[ l∏
-m=1
-timjm
-tiπ (m)jm
-]
-.
-Since random variables (tij) are Gaussian, we can apply Wick formula (see
-[Zvo97]) to each summand; in order to do this we need to consider all ways
-of pairing factors (tim,jm) with factors (tiπ (m)jm). Each such a pairing can
-be identiﬁed with a permutation σ ∈ Sl: therefore
-E
-[ l∏
-m=1
-timjmtiπ (m)jm
-]
-=
-∑
-σ∈Sl
-[ l∏
-m=1
-E
-(
-tiσ (m)jσ (m)tiπ (m)jm
-) ]
-Using the deﬁnition of T , this is equal to
-∑
-σ∈Sl
-l∏
-m=1
-[iσ(m) = iπ(m)] [jσ(m) = jm] [(iσ(m), jσ(m)) ∈ λ].
-If we plug this in our calculation, the left-hand side of (14) is equal to
-∑
-σ∈Sl
-∑
-i1,j1,...,il,jl
-( l∏
-m=1
-[iσ(m) = iπ(m)] [jσ(m) = jm] [(iσ(m), jσ(m)) ∈ λ]
-)
-.
-If we denote σ1 = πσ −1
-2 , σ2 = σ then the sum over σ can be seen as
-a sum over all σ1, σ2 ∈ Sl such that σ1σ2 = π. If a sequence i1, . . . , il
-(respectively, sequence j1, . . . , jl) contributes to the above sum then it must
-be constant on each cycle of σ1 (respecively, each cycle of σ2). It follows
-that there is a bijective correspondence between sequences i1, j1, . . . , il, jl
-which contribute to the above sum and colorings of the cycles of σ1 and σ2
-which are compatible with λ. □
-10 V ALENTIN FÉRAY AND PIOTR ´SNIADY
-By comparing the above result with Theorem 2, we obtain the following
-corollary.
-Corollary 8. Let λ be a Young diagram. Then for any permutation π ∈ Sl
-with a cycle decomposition k1, . . . , kr
-|Σ λ(π)| ≤ E
-(
-Tr(TλT ⋆
-λ )k1 · · · Tr(TλT ⋆
-λ )kr
-)
-.
-We shall not follow this idea in this article and we will proveall estimates
-from scratch, but it is worth noticing that the above Corolla ry shows that
-the asymptotics of characters of symmetric groups can be ded uced from
-the corresponding asymptotics of random matrices. In parti cular it follows
-that when the lengths k1, . . . , kr of the cycles of π are big enough then the
-asymptotics of the corresponding character is related to the limit distribution
-of the largest eigenvalue of TλT ∗
-λ [SS98]. Notice, however, that due to
-the minus sign in Theorem 2 and the resulting cancelations th e character
-|Σ λ(π)| could, at least in priciple, be much smaller than the appropr iate
-moment of the random matrix TλT ∗
-λ .
+Let $\lambda$ be a Young diagram and $N\geq r(\lambda),c(\lambda)$. We consider a random matrix $T_\lambda=(t_{ij})_{1\leq i,j\leq N}$ such that
+
+-   its entries $(t_{ij})$ are independent random variables;
+
+-   if $(i,j) \in \lambda$ then $t_{ij}$ is a complex centered Gaussian variable, that is to say that $$\mathbb{E}(t_{ij}) =0, \quad 
+    \mathbb{E}(t_{ij} \overline{t_{ij}}) = 1, \quad
+    \mathbb{E}(t_{ij}^2) =0;$$
+
+-   otherwise, if $(i,j) \notin \lambda$ then $t_{ij}=0$.
+
+The moments of $T_\lambda
+T_\lambda^\star$ are given by a formula which is very similar to the Stanley formula for characters (Theorem [\[theo:character-sniady\]](#theo:character-sniady){reference-type="ref" reference="theo:character-sniady"}):
+
+::: theorem
+[]{#theo:random-matrices label="theo:random-matrices"} With the definitions above and $\pi \in S_l$ with a cycle decomposition $k_1,\ldots,k_r$ $$\label{eq:moments-matrix}
+\mathbb{E}\big(\mathop{\mathrm{Tr}}(T_\lambda T_\lambda^\star)^{k_1} \cdots \mathop{\mathrm{Tr}}(T_\lambda
+T_\lambda^\star)^{k_r} \big)=\sum_{\substack{\sigma_1,\sigma_2 \in S_l \\
+\sigma_1 \sigma_2=\pi}} N^\lambda(\sigma_1,\sigma_2).$$
+:::
+
+::: proof
+*Proof.* The first step is to expand the product and the trace on the left-hand side: $$\begin{aligned}
+\mathbb{E}\big(\mathop{\mathrm{Tr}}(T_\lambda T_\lambda^\star)^{k_1} \ldots \mathop{\mathrm{Tr}}(T_\lambda T_\lambda^\star)^{k_r} \big) \hspace{-5cm}\\
+&=&\mathbb{E}\Bigg[ \Big(\sum_{i^1_1,j^1_1,\ldots,i^1_{k_1},j^1_{k_1}} t_{i^1_1 j^1_1}
+\overline{t_{i^1_2 j^1_1}} \ldots t_{i^1_{k_1} j^1_{k_1}} \overline{t_{i^1_1
+j^1_{k_1}}} \Big)\\
+& &\hspace{1,5cm} \ldots \Big(\sum_{i^r_1,j^r_1,\ldots,i^r_{k_r},j^r_{k_r}}
+t_{i^r_1 j^r_1} \overline{t_{i^r_2 j^r_1}} \ldots t_{i^r_{k_r} j^r_{k_r}}
+\overline{t_{i^r_1 j^r_{k_r}}} \Big) \Bigg]\\
+&= &
+
+
+\sum_{i_1,j_1,\ldots,i_l,j_l} \mathbb{E}\left[
+\prod_{m=1}^l t_{i_m j_m} \overline{t_{i_{\pi(m)} j_m}} \right].
+\end{aligned}$$ Since random variables $(t_{ij})$ are Gaussian, we can apply Wick formula (see [@Zvonkin1997]) to each summand; in order to do this we need to consider all ways of pairing factors $(t_{i_m,j_m})$ with factors $(\overline{t_{i_{\pi(m)} j_m}})$. Each such a pairing can be identified with a permutation $\sigma\in S_l$: therefore
+
+$$\mathbb{E}\left[ \prod_{m=1}^l t_{i_m j_m} \overline{t_{i_{\pi(m)}
+j_m}} \right]=\sum_{\sigma \in S_l} \left[ \prod_{m=1}^l
+\mathbb{E}\left(t_{i_{\sigma(m)} j_{\sigma(m)}} \overline{t_{i_{\pi(m)} j_m}}\right)
+\right]$$
+
+Using the definition of $T$, this is equal to $$\sum_{\sigma \in S_l} \prod_{m=1}^l  [i_{\sigma(m)}=i_{\pi(m)}] \  [j_{\sigma(m)}=j_m] \
+[(i_{\sigma(m)},j_{\sigma(m)}) \in \lambda].$$
+
+If we plug this in our calculation, the left-hand side of [\[eq:moments-matrix\]](#eq:moments-matrix){reference-type="eqref" reference="eq:moments-matrix"} is equal to $$\begin{gathered}
+
+
+
+
+
+\sum_{\sigma \in S_l} \sum_{i_1,j_1,\ldots,i_l,j_l} \left( \prod_{m=1}^l
+[i_{\sigma(m)}=i_{\pi(m)}] \  [j_{\sigma(m)}=j_m] \
+[(i_{\sigma(m)},j_{\sigma(m)}) \in \lambda] \right).
+\end{gathered}$$ If we denote $\sigma_1=\pi \sigma_2^{-1}$, $\sigma_2=\sigma$ then the sum over $\sigma$ can be seen as a sum over all $\sigma_1,\sigma_2\in S_l$ such that $\sigma_1\sigma_2=\pi$. If a sequence $i_1,\dots,i_l$ (respectively, sequence $j_1,\dots,j_l$) contributes to the above sum then it must be constant on each cycle of $\sigma_1$ (respecively, each cycle of $\sigma_2$). It follows that there is a bijective correspondence between sequences $i_1,j_1,\dots,i_l,j_l$ which contribute to the above sum and colorings of the cycles of $\sigma_1$ and $\sigma_2$ which are compatible with $\lambda$. ◻
+:::
+
+By comparing the above result with Theorem [\[theo:character-sniady\]](#theo:character-sniady){reference-type="ref" reference="theo:character-sniady"}, we obtain the following corollary.
+
+::: corollary
+Let $\lambda$ be a Young diagram.
+
+Then for any permutation $\pi\in S_l$ with a cycle decomposition $k_1,\dots,k_r$ $$|\Sigma^{\lambda}(\pi)| \leq  \mathbb{E}\big(\mathop{\mathrm{Tr}}(T_\lambda T_\lambda^\star)^{k_1}
+\cdots \mathop{\mathrm{Tr}}(T_\lambda
+T_\lambda^\star)^{k_r} \big).$$
+:::
+
+We shall not follow this idea in this article and we will prove all estimates from scratch, but it is worth noticing that the above Corollary shows that the asymptotics of characters of symmetric groups can be deduced from the corresponding asymptotics of random matrices. In particular it follows that
+
+when the lengths $k_1,\dots,k_r$ of the cycles of $\pi$ are big enough then the asymptotics of the corresponding character is related to the limit distribution of the largest eigenvalue of $T_{\lambda}T^\ast_{\lambda}$ [@SinaiSoshnikov1998]. Notice, however, that due to the minus sign in Theorem [\[theo:character-sniady\]](#theo:character-sniady){reference-type="ref" reference="theo:character-sniady"} and the resulting cancelations the character $|\Sigma^{\lambda}(\pi)|$ could, at least in priciple, be much smaller than the appropriate moment of the random matrix $T_{\lambda}T_{\lambda}^\ast$.

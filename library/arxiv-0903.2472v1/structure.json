@@ -6,7 +6,7 @@
   "sha256": "637cfd1d4d833c029b7c05ca0da874c71320e19c4c695425163beabb83d14f7d",
   "bytes": 808783,
   "pages": 61,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -1299,8 +1299,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "statesum.tex",
-   "tex_sections": 4,
-   "overlaid": 0,
+   "tex_sections": 21,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1335,13 +1335,18 @@
     {
      "id": "sec-005-2-perturbation-theory-around-a-non-trivial-\ufb02at-c",
      "title": "Perturbation theory around a non-trivial \ufb02at connection",
-     "prose_ratio": 0.055,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-21-f-eynman-diagrams-and-arithmetic-tqft",
      "title": "F eynman diagrams and arithmetic TQFT",
-     "result": "no matching \\section"
+     "prose_ratio": 0.736,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-22-quantization-of-m\ufb02at-gc-\u03c3",
@@ -1356,12 +1361,16 @@
     {
      "id": "sec-009-221-analytic-continuation",
      "title": "Analytic continuation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-222-a-hierarchy-of-di\ufb00erential-equations",
      "title": "A hierarchy of di\ufb00erential equations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.3,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-0-u-j\u210f-1",
@@ -1401,7 +1410,8 @@
     {
      "id": "sec-018-23-classical-and-quantum-symmetries",
      "title": "Classical and quantum symmetries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.515,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-019-3-a-a-a",
@@ -1441,18 +1451,26 @@
     {
      "id": "sec-026-24-brane-quantization",
      "title": "Brane quantization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-027-3-a-state-integral-model-for-perturbative-sl2c-c",
      "title": "A state integral model for perturbative SL(2,C) Chern-Simons theory",
-     "prose_ratio": 0.106,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.825,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-028-31-ideal-triangulations-of-hyperbolic-3-manifold",
      "title": "Ideal triangulations of hyperbolic 3-manifolds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.919,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-029-2-logz-\u03c0iqlog1z-\u03c0ir-\u03c02qr",
@@ -1462,12 +1480,16 @@
     {
      "id": "sec-030-32-hikamis-invariant",
      "title": "Hikami\u2019s invariant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.613,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-031-33-quantum-dilogarithm",
      "title": "Quantum dilogarithm",
-     "result": "no matching \\section"
+     "prose_ratio": 0.37,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-032-1-the-asymptotic-formula-318-can-be-re\ufb01ned-to-th",
@@ -1507,7 +1529,8 @@
     {
      "id": "sec-039-34-a-state-integral-model-for-z-\u03c1m-\u210f",
      "title": "A state integral model for Z (\u03c1)(M ; \u210f)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.231,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-040-0-u-v-pgeomuu-345",
@@ -1532,13 +1555,16 @@
     {
      "id": "sec-044-4-examples-and-computations",
      "title": "Examples and computations",
-     "prose_ratio": 0.208,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-045-41-numerical-veri\ufb01cation-of-the-arithmeticity-co",
      "title": "Numerical veri\ufb01cation of the arithmeticity conjecture",
-     "result": "no matching \\section"
+     "prose_ratio": 0.258,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-046-1-0-s1-1",
@@ -1548,7 +1574,8 @@
     {
      "id": "sec-047-42-perturbative-sl2-c-invariants-for-the-\ufb01gure-8",
      "title": "Perturbative SL(2, C) invariants for the \ufb01gure-8 knot complement",
-     "result": "no matching \\section"
+     "prose_ratio": 0.363,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-048-3-re-z-im-z-im-z-1",
@@ -1583,7 +1610,8 @@
     {
      "id": "sec-054-421-quantization",
      "title": "Quantization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.583,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-055-2-vol-41-0",
@@ -1653,7 +1681,8 @@
     {
      "id": "sec-068-422-state-integral-model",
      "title": "State integral model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.595,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-069-0-u-v-\u03b1u-457",

@@ -8,116 +8,52 @@ pages: 9-11
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
 doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.942
 ---
-The second option for generalizing the volume conjecture (1.14) is to ask for higher-
-order terms in the asymptotic expansion of the colored Jones polynomial. Let us deﬁne
-a new “quantum” parameter ℏ as
-ℏ = iπ
-k , (2.13)
+The second option for generalizing the volume conjecture [\[VC\]](#VC){reference-type="eqref" reference="VC"} is to ask for higher-order terms in the asymptotic expansion of the colored Jones polynomial. Let us define a new "quantum" parameter $\hbar$ as
+
+$$\hbar = \frac{i\pi}{k}\,,$$
+
 so that
-q =e2ℏ. (2.14)
-The two parameters N andk of the colored Jones polynomial can be traded for ℏ and
-u, and the limit (2.1) is simply ℏ→ 0. At u = iπ, higher-order asymptotics are then
-predicted [10, 11] to have the form
-VN(K;q =e
-2πi
-N )
-N→∞
-∼ exp
-(
-1
-2ℏ(Vol +iCS)− 3
-2 log ℏ + 1
-2 log−iπTK
-4 +
-∞∑
-n=2
-˜Snℏn−1
-)
-.
-(2.15)
-Here, for example, TK is the Ray-Singer torsion of the knot complement S3\K. It can
-be deﬁned after putting any background metric on S3\K [25] as
-T (M) = exp
-(
-−1
-2
-3∑
-n=0
-n(−1)n log det′∆n
-)
-= (det′ ∆0)
-3
-2
-(det′ ∆1)
-1
-2
-, (2.16)
-where ∆n is the Laplacian acting on n-forms.
-7We thank E. Witten for useful observations on this subject.
-8
-It is fairly straightforward to combine the present quantum deformation with the
-parametrization of the volume conjecture in u. The expectation is that
-JN(K;q)
-N,k→∞
-∼ exp
-(
-− 1
-4ℏICS(A(u))− 3
-2 log ℏ + 1
-2 logiTK(u)
-4π +
-∞∑
-n=2
-Sn(u)ℏn−1
-)
-.
-(2.17)
-Here, TK(u) is a u-deformed torsion, and is related to the Alexander polynomial of K
-[26]. The higher-order coeﬃcients in (2.15) are related to those in (2.17) as
-∑
-n≥2
-˜Snℏn−1 =
-∑
-n≥2
-Sn(iπ)ℏn−1− log sinh ℏ
-ℏ . (2.18)
-For the ﬁgure-eight knot, the quantum volume conjecture (2.17) was tested to ﬁrst
-subleading order in [27], using the Ray-Singer torsion
-T41(u) = 4π2
-√
-−m−4 + 2m−2 + 1 + 2m2−m4. (2.19)
-Higher-order coeﬃcients Sn(u) can also be computed [11]. For example,
-S2(u) = −i(T41)3
-12(4π2)3m6
-(
-1−m2− 2m4 + 15m6− 2m8−m10 +m12)
-, (2.20)
-S3(u) =−2(T41)6
-(4π2)6m6
-(
-1−m2− 2m4 + 5m6− 2m8−m10 +m12)
-− 1
-6. (2.21)
-These expressions appear to be new, unexplored knot invariants with distinctive number-
-theoretic properties. Needless to say, it would be interesting to test the quantum volume
-conjecture (2.17) for other hyperbolic knots and/or to higher order in the ℏ-expansion.
-Just as the generalization of the volume conjecture to u⁄= 0 was interpreted in
-terms of the SL(2, C) Chern-Simons functional, there is also a Chern-Simons inter-
-pretation of the quantum volume conjecture. One must consider how the functional
-ICS(A) behaves when the connection A undergoes “quantum ﬂuctuations” away from
-the ﬂat connection A(u). This is accomplished in physics via perturbative quantum
-ﬁeld theory. Symbolically, we can write A =A(u) +A′, whereA′ contains the ﬂuctu-
-ations away from ﬂatness, and deﬁne a perturbative “partition function” via the path
-integral
-Z(S3\K;u; ℏ)pert =
-∫
-DA′e− 1
-4ℏICS (A(u)+A′). (2.22)
-The exponent in the integrand has a critical point at A′ = 0, and a saddle point
-expansion around this point yields the right-hand-side of (2.17). (To be very precise,
-JN(K;q)∼ Z(S3\K; ℏ;u)/Z(S3; ℏ), where Z(S3; ℏ) =
-√
-2/k sin(π/k) is the partition
-function of the three-sphere S3.)
-9
+
+$$q = e^{2\hbar}\,.$$
+
+The two parameters $N$ and $k$ of the colored Jones polynomial can be traded for $\hbar$ and $u$, and the limit [\[lim\]](#lim){reference-type="eqref" reference="lim"} is simply $\hbar\to 0$. At $u=i\pi$, higher-order asymptotics are then predicted [@gukov-2003; @DGLZ] to have the form
+
+$$V_N(K;q=e^{\frac{2\pi i}{N}}) \;\overset{N\to\infty}{\sim}\;
+ \exp\left(\frac{1}{2\hbar}({\rm Vol}+i{\rm CS})-\frac{3}{2}\log\hbar+\frac{1}{2}\log\frac{-i\pi T_K}{4} + \sum_{n=2}^\infty \tilde{S}_n\hbar^{n-1}\right)\,. \label{VCh0}$$
+
+Here, for example, $T_K$ is the Ray-Singer torsion of the knot complement $S^3\backslash K$. It can be defined after putting any background metric on $S^3\backslash K$ [@Porti] as
+
+$$T(M) = \exp\left(-\frac12\sum_{n=0}^3n(-1)^n\log{\rm det}'\Delta_n\right) = \frac{(\det'\Delta_0)^\frac32}{(\det'\Delta_1)^\frac12}\,,$$
+
+where $\Delta_n$ is the Laplacian acting on $n$-forms.
+
+It is fairly straightforward to combine the present quantum deformation with the parametrization of the volume conjecture in $u$. The expectation is that
+
+$$\boxed{J_N(K;q) \;\overset{N,k\to\infty}{\sim}\;
+ \exp\left( -\frac{1}{4\hbar}I_{CS}({\cal A}(u)) -\frac{3}{2}\log\hbar + \frac{1}{2}\log \frac{iT_K(u)}{4\pi}+\sum_{n=2}^\infty S_n(u)\hbar^{n-1}\right)}\,. \label{VCh}$$
+
+Here, $T_K(u)$ is a $u$-deformed torsion, and is related to the Alexander polynomial of $K$ [@Mur-Alex]. The higher-order coefficients in [\[VCh0\]](#VCh0){reference-type="eqref" reference="VCh0"} are related to those in [\[VCh\]](#VCh){reference-type="eqref" reference="VCh"} as
+
+$$\sum_{n\geq2}\tilde{S}_n\hbar^{n-1}=\sum_{n\geq2}S_n(i\pi)\hbar^{n-1}-\log\frac{\sinh\hbar}{\hbar}\,.$$
+
+For the figure-eight knot, the quantum volume conjecture [\[VCh\]](#VCh){reference-type="eqref" reference="VCh"} was tested to first subleading order in [@gukov-2006], using the Ray-Singer torsion
+
+$$T_{\mathbf{4_1}}(u) = \frac{4\pi^2}{\sqrt{-m^{-4}+2m^{-2}+1+2m^{2}-m^{4}}}\,.$$
+
+Higher-order coefficients $S_n(u)$ can also be computed [@DGLZ]. For example,
+
+$$\begin{aligned}
+ S_2(u) &= \frac{-i(T_{\mathbf{4_1}})^3}{12(4\pi^2)^3m^6}\big(1-m^2-2m^4+15m^6-2m^8-m^{10}+m^{12}\big)\,, \\
+  S_3(u) &= \frac{-2(T_{\mathbf{4_1}})^6}{(4\pi^2)^6m^6}\big(1-m^2-2m^4+5m^6-2m^8-m^{10}+m^{12}\big)-\frac16\,.
+\end{aligned}$$
+
+These expressions appear to be new, unexplored knot invariants with distinctive number-theoretic properties. Needless to say, it would be interesting to test the quantum volume conjecture [\[VCh\]](#VCh){reference-type="eqref" reference="VCh"} for other hyperbolic knots and/or to higher order in the $\hbar$-expansion.\
+Just as the generalization of the volume conjecture to $u\neq 0$ was interpreted in terms of the $SL(2,{\mathbb{C}})$ Chern-Simons functional, there is also a Chern-Simons interpretation of the quantum volume conjecture. One must consider how the functional $I_{CS}({\cal A})$ behaves when the connection ${\cal A}$ undergoes "quantum fluctuations" away from the flat connection ${\cal A}(u)$. This is accomplished in physics via perturbative quantum field theory. Symbolically, we can write ${\cal A}={\cal A}(u)+{\cal A}'$, where ${\cal A}'$ contains the fluctuations away from flatness, and define a perturbative "partition function" via the path integral
+
+$$Z(S^3\backslash K;u;\hbar)_{\rm pert} = \int {\cal D}{\cal A}'\,e^{-\frac{1}{4\hbar}I_{CS}({\cal A}(u)+{\cal A}')}\,. \label{path2}$$
+
+The exponent in the integrand has a critical point at ${\cal A}'=0$, and a saddle point expansion around this point yields the right-hand-side of [\[VCh\]](#VCh){reference-type="eqref" reference="VCh"}. (To be very precise, $J_N(K;q)\sim Z(S^3\backslash K;\hbar;u)/Z(S^3;\hbar)$, where $Z(S^3;\hbar) = \sqrt{2/k}\sin(\pi/k)$ is the partition function of the three-sphere $S^3$.)

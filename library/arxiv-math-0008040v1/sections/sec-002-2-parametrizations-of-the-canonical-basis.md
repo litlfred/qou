@@ -7,10 +7,10 @@ section_number: 2
 pages: 3-4
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
-text_source: latex
-latex_prose_ratio: 0.642
-latex_coverage_ratio: 0.93
 doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 For positive integers $p<q$ we denote by $[p,q]$ the set $\{p,p+1,\ldots ,q\}$, and for a rational number $x$ we denote by $\lceil x \rceil$ the smallest element of $\{y\in \mathbb{Z}\,:\,x\leq y\}$.
 

@@ -7,10 +7,10 @@ section_number: 1
 pages: 7-11
 source_pdf: 1312.6411v4.pdf
 source_sha256: ceac22eb8ffe87e6
-text_source: latex
-latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.78
 doc_brief: "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — We consider commutative DG rings (better known as nonpositive stronglycommutativeassociativeunitalDGalgebras)."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:resol}
  

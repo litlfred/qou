@@ -7,10 +7,10 @@ section_number: 9
 pages: 27-34
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
-text_source: latex
-latex_prose_ratio: 0.945
-latex_coverage_ratio: 0.966
 doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
+text_source: latex
+latex_prose_ratio: 0.998
+latex_coverage_ratio: 0.995
 ---
 []{#sec:typeA label="sec:typeA"}
 
@@ -48,13 +48,9 @@ Let $y$ be a point in the interior or lower closure of a given alcove. The follo
 
 Observe that if $y$ is a point in the standard facet $F_0(\lambda)$, the coordinates of $y$ can be written as a disjoint union $\bigcup_j \Gamma_j$ of strict chains where $|\Gamma_j|=\lambda_j^T$. Namely $\Gamma_j$ consists of all the coordinates of $y$ which are congruent to $x_{j-1}$ mod $\ell$, where $x_0=0$.
 
-There is a more general procedure to produce facets from any standard tableau of shape $\lambda$, i.e. for any filling of the boxes of $\lambda$ such that the numbers increase along the rows and down the columns. Let $i(r,c)$ be the number in the box in the $r$-th row and $c$-th column. Then we define the facet $F_t$ by the points $y$ satisfying the equalities $$y_{i(r,c)}-y_{i(r+1,c)}=\ell$$ for any pair of boxes $(r,c)$ and $(r+1,c)$ of our tableau. In general, these equations may describe a collection of facets. In this case, we pick the lowest one. It can be obtained by adding the additional inequalities $y_i-y_{i+1}<\ell$, $1\leq i<n$. We now say that $$\begin{equation}
-\label{faceconjugate}
- F\sim F_0(\lambda)
-\end{equation}$$ if $F=F_t$ for some standard tableau of shape $\lambda$. We now also define the region $D(\lambda)$ by $$\begin{equation}
-\label{Dlambdadef}
-D(\lambda)\ =\ \bigcup_{F\sim F_0(\lambda)} C_+(F).
-\end{equation}$$
+There is a more general procedure to produce facets from any standard tableau of shape $\lambda$, i.e. for any filling of the boxes of $\lambda$ such that the numbers increase along the rows and down the columns. Let $i(r,c)$ be the number in the box in the $r$-th row and $c$-th column. Then we define the facet $F_t$ by the points $y$ satisfying the equalities $$y_{i(r,c)}-y_{i(r+1,c)}=\ell$$ for any pair of boxes $(r,c)$ and $(r+1,c)$ of our tableau. In general, these equations may describe a collection of facets. In this case, we pick the lowest one. It can be obtained by adding the additional inequalities $y_i-y_{i+1}<\ell$, $1\leq i<n$. We now say that $$\label{faceconjugate}
+ F\sim F_0(\lambda)$$ if $F=F_t$ for some standard tableau of shape $\lambda$. We now also define the region $D(\lambda)$ by $$\label{Dlambdadef}
+D(\lambda)\ =\ \bigcup_{F\sim F_0(\lambda)} C_+(F).$$
 
 ::: remark
 1\. Not every minimal facet is of the form $F_t$ for a standard tableau. E.g. for $\mathfrak{sl}_3$ the facet given by $y_2-y_3=\ell$ and $y_1-y_2<\ell$ is minimal, but can not be defined via a standard tableau $t$. However, we will see that any strongly minimal facet can be obtained from a standard tableau.
@@ -66,10 +62,8 @@ D(\lambda)\ =\ \bigcup_{F\sim F_0(\lambda)} C_+(F).
 
 Shi has given several algorithms how to identify the 2-sided cell to which a given alcove belongs. We review one of the here, and another one in the next section, following the presentation in [@Cooper], [@Cooper-journal].
 
-Given a point $y$ in the interior of the dominant Weyl chamber, define a Young diagram $\mu=\mu(y)$ as follows: $\mu_1$ is the maximum of $|\Gamma_1|$, for all possible $y$-chains $\Gamma_1$. Assuming we know $\mu_1$ up to $\mu_i$ we then define $\mu_{i+1}$ by the condition $$\begin{equation}
-\label{mudef}
-\sum_{j=1}^{i+1}\ \mu_j\ =\ max\{\ \sum_{j=1}^{i+1} |\Gamma_j|\ \},
-\end{equation}$$ where the $\Gamma_j$s are mutually disjoint $y$-chains, and the maximum is taken over all possible collection of $i+1$ disjoint $y$-chains.
+Given a point $y$ in the interior of the dominant Weyl chamber, define a Young diagram $\mu=\mu(y)$ as follows: $\mu_1$ is the maximum of $|\Gamma_1|$, for all possible $y$-chains $\Gamma_1$. Assuming we know $\mu_1$ up to $\mu_i$ we then define $\mu_{i+1}$ by the condition $$\label{mudef}
+\sum_{j=1}^{i+1}\ \mu_j\ =\ max\{\ \sum_{j=1}^{i+1} |\Gamma_j|\ \},$$ where the $\Gamma_j$s are mutually disjoint $y$-chains, and the maximum is taken over all possible collection of $i+1$ disjoint $y$-chains.
 
 ::: proposition
 []{#identifyideals label="identifyideals"} If $y$ is a point on a facet $F\sim F_0(\lambda)$ for the Young diagram $\lambda$, we have $\mu(y)=\lambda^T$. Moreover, $F_0(\lambda)$ is a minimal facet.

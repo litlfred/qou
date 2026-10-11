@@ -7,10 +7,10 @@ section_number: IV
 pages: 6-7
 source_pdf: 0507064v2.pdf
 source_sha256: dcfad7240ba81bf5
-text_source: latex
-latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.993
 doc_brief: "The Virial Equation of State of Low-Density Neutron Matter — 9 sections: Front matter; VIRIAL EQUATION OF STATE; INTRODUCTION"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.987
 ---
 []{#conclusions label="conclusions"}
 

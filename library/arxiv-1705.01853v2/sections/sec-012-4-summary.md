@@ -7,10 +7,10 @@ section_number: 4
 pages: 15-16
 source_pdf: 1705.01853v2.pdf
 source_sha256: 895e0b22c93bca1b
-text_source: latex
-latex_prose_ratio: 0.819
-latex_coverage_ratio: 1.0
 doc_brief: "Line operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.836
 ---
 The global structure of the Standard Model gauge group depends on the choice of quotient $\Gamma$. The differences in these theories described above are rather formal in nature. Just because a line operator exists in a theory does not mean that it is available to experimenters.  It is clearly interesting to better understand the physical implications of the different choices of $\Gamma$ to see if they may reveal themselves in some way in our world. 
 
@@ -27,40 +27,3 @@ The further requirement that elementary particles should not form black holes \c
 
 \para
 One can ask if there are more subtle ways to distinguish between the theories. As explained in \cite{ast}, and reviewed in Section \ref{reviewsec}, after confinement the Yang-Mills theory with gauge group $SU(N)/{\bf Z}_N$ exhibits topological order, with an emergent ${\bf Z}_N$ magnetic gauge symmetry. This gives rise to the possibility of more interesting physics arising  in spacetimes with non-trivial topologies or boundaries. For the Standard Model, there exists a magnetic ${\bf Z}_3$ symmetry arising when $\Gamma = {\bf Z}_3$ or ${\bf Z}_6$ but the states which carry charge under this also carry magnetic charge under under $U(1)_{em}$. It would be interesting to see if this has any implications for physics in the presence of non-trivial topology or, more interestingly, in dynamical spacetime.  This may allow us to answer the basic  question: what is the gauge group of the Standard Model?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection*{Acknowledgements}
-
-My thanks to Bobby Acharya, Nick Dorey, Zohar Komargodski, Tony Padilla and John Terning for useful discussions. 
- This work was supported by STFC grant ST/L000385/1 and by the European Research Council under
-the European Union's Seventh Framework Programme (FP7/2007-2013), ERC grant
-agreement STG 279943, �Strongly Coupled Systems�. I am a  Wolfson Royal Society Research Merit Award holder.

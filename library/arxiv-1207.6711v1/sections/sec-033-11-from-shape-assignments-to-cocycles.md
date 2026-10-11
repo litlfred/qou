@@ -7,10 +7,10 @@ section_number: 11
 pages: 39-41
 source_pdf: 1207.6711v1.pdf
 source_sha256: 320c4301ac66fff1
-text_source: latex
-latex_prose_ratio: 0.913
-latex_coverage_ratio: 0.88
 doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:ReconstructRep}
 

@@ -665,8 +665,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ehmrmp.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 24,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -676,29 +676,32 @@
     {
      "id": "sec-000-i-qcd-and-nuclear-f-orces-1",
      "title": "QCD and Nuclear F orces 1",
-     "prose_ratio": 0.005,
+     "prose_ratio": 0.009,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-c-conventional-approaches-to-the-nuclear-force-p",
      "title": "Conventional approaches to the nuclear force problem 4",
-     "result": "no matching \\section"
+     "prose_ratio": 0.016,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-ii-eft-for-f-ew-nucleon-systems-f-oundations-and",
      "title": "EFT for F ew-Nucleon Systems: F oundations and",
-     "prose_ratio": 0.009,
+     "prose_ratio": 0.012,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-c-chiral-eft-for-few-nucleons-applications-21",
      "title": "Chiral EFT for few nucleons: applications 21",
-     "result": "no matching \\section"
+     "prose_ratio": 0.022,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-c-eft-for-halo-nuclei-42",
      "title": "EFT for halo nuclei 42",
-     "result": "no matching \\section"
+     "prose_ratio": 0.021,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-iv-summary-and-perspectives-45",
@@ -709,8 +712,10 @@
     {
      "id": "sec-006-i-qcd-and-nuclear-forces",
      "title": "QCD AND NUCLEAR FORCES",
-     "prose_ratio": 0.445,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.769,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-2-uu-dd-mu-md",
@@ -725,7 +730,10 @@
     {
      "id": "sec-009-c-conventional-approaches-to-the-nuclear-force-p",
      "title": "Conventional approaches to the nuclear force problem",
-     "result": "no matching \\section"
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-ii-eft-for-few-nucleon-systems",
@@ -770,7 +778,8 @@
     {
      "id": "sec-018-c-chiral-eft-for-few-nucleons-applications",
      "title": "Chiral EFT for few nucleons: applications",
-     "result": "no matching \\section"
+     "prose_ratio": 0.335,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-019-2830-mev-these-numbers-are-similar-to-the-ones-o",
@@ -815,7 +824,7 @@
     {
      "id": "sec-027-iii-towards-a-many-body-eft-for-nuclei",
      "title": "TOWARDS A MANY-BODY EFT FOR NUCLEI",
-     "prose_ratio": 0.164,
+     "prose_ratio": 0.27,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -841,12 +850,15 @@
     {
      "id": "sec-032-c-eft-for-halo-nuclei",
      "title": "EFT for halo nuclei",
-     "result": "no matching \\section"
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-033-iv-summary-and-perspectives",
      "title": "SUMMARY AND PERSPECTIVES",
-     "prose_ratio": 0.967,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"

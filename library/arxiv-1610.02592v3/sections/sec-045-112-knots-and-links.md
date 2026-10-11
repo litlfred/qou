@@ -7,12 +7,13 @@ section_number: 11.2
 pages: 353-360
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.953
-latex_coverage_ratio: 0.742
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Knots and links are fundamental and beautiful objects in geometric topology. Knots and links in $S^3$ have a combinatorial and mildly two-dimensional nature because they can be treated as planar diagrams, but they should be considered as intrinsically three-dimensional objects.
+
 
 \subsection{Definition}
 A \emph{link} in a 3-manifold $M$ is a compact submanifold of dimension one. Being compact, it consists of finitely many circles, and a connected link is called a \emph{knot}. Links and knots are usually considered up to ambient isotopy.\index{link}\index{knot}
@@ -29,11 +30,13 @@ A \emph{link} in a 3-manifold $M$ is a compact submanifold of dimension one. Bei
 
 Every link in $S^3$ can be projected to a plane: if the link is generic with respect to the projection, its image is a \emph{diagram} as in Figure \ref{trefoil_knots:fig}-(left). Every link in $S^3$ can be described via a diagram and can be thus treated combinatorially, but it is important to note that the same link can be represented via infinitely many diagrams and it is hard in general to tell whether two given diagrams represent the same link. The \emph{trivial knot} (or \emph{unknot}) $K\subset S^3$ is the one that has a planar diagram without crossings.\index{unknot}
 
+
 \subsection{Chirality}
 The \emph{mirror image} of a knot or link is obtained by reflecting it with respect to any plane in $S^3$. On a diagram, this operation is realised simply by inverting all crossings simultaneously.
 
 A knot is \emph{chiral} if it is not isotopic to its mirror image, and \emph{achiral} otherwise. For instance, the trivial knot is achiral, but the trefoil knot (shown in Figure \ref{trefoil_knots:fig}) is chiral.\index{knot!trefoil knot}
 As in the rest of this book, we mostly ignore orientation issues and often consider implicitly two mirrored knots or links as equivalent.\index{knot!achiral and chiral knot}
+
 
 \subsection{Link complement}
 The tubular neighbourhood of a link $L$ in an orientable $M$ consists of solid tori by Proposition \ref{S1:bundle:prop}, and the \emph{link complement} of $L$ is the three-manifold with boundary obtained from $M$ by removing the interiors of these solid tori. If $M$ is compact, the link complement also is.\index{link complement}
@@ -68,6 +71,7 @@ Let $L\subset S^3$ be a non-trivial knot or non-split link. The link complement 
 \begin{proof}
 The link complement $M$ is irreducible by assumption; by Proposition \ref{irreducible:solid:torus:prop}, if $M$ contains an essential disc then it is a solid torus and hence $L$ is the trivial knot, which is excluded. Now $M$ is Haken by Corollary \ref{boundary:implies:Haken:cor}.
 \end{proof}
+
 
 \subsection{Prime knots}
 There is an operation on knots in $S^3$ called \emph{connected sum}, similar to the one on manifolds and described in Figure \ref{sum_of_knots:fig}. 
@@ -116,6 +120,7 @@ A connected sum gives rise to a sphere which intersects the new knot in two poin
 \label{sum_of_knots3:fig}
 \end{center}
 \end{figure}
+
 
 \subsection{Torus knots}
 We now introduce a simple and natural family of prime knots. 
@@ -180,6 +185,7 @@ The $(2,2)$-torus link is called the \emph{Hopf link} and is drawn in Figure \re
 \end{center}
 \end{figure}
 
+
 \subsection{Satellite knots}
 We have discovered that che composite knots contain essential annuli in their complement, and we now look for essential tori. It is convenient to introduce the following definition.
 
@@ -209,6 +215,7 @@ The non-trivial embedding $\varphi$ sends the core curve of $D^2\times S^1$ to s
 \label{satellites:fig}
 \end{center}
 \end{figure}
+
 
 
 

@@ -7,14 +7,15 @@ section_number: 4
 pages: 21-36
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
-text_source: latex
-latex_prose_ratio: 0.924
-latex_coverage_ratio: 0.96
 doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:ex}
 
 We now go though two explicit examples. One is associated to the figure eight knot $4_1$, where $(A,B)=(1,2)$ and the other is for $(A,B)=(4,1)$. The first was studied in~\cite{GGM:I} and full conjectural answers were given for the resurgent structures. We will prove the exact formulas given in~\cite{GGM:I} are correct by applying our method to compute the Borel--Laplace resummation. A similar analysis for the example $(A,B)=(4,1)$ was carried out in~\cite{Wh:thesis}. Here again conjectural formulas were given and we will also prove them.
+
 
 \subsection{\texorpdfstring{The $4_1$ knot}{The 4\_1 knot}}\label{sec:4_1}
 This example corresponds to $A=1$ and $B=2$. See for example~\cite[Sec.~7]{GSW}. We will compute the Borel--Laplace resummation of $\Phi_\Xi$ with the algorithm described in Section~\ref{sec:alg}. We will see that this exactly matches the numerical predictions of~\cite{GGM:I}. The critical points for the volume $V$ are at $p_1=(-5/6,0)$ and $p_2=(-1/6,0)$ and their critical values are respectively at $V_1=-0.0514175\ldots i$ and $V_2=0.0514175\ldots i$. Thus the first Stokes line is at $e^{i\vartheta}\BR_{>0}$ with $\vartheta=3.1416$ and it separates the regions $\mathrm{I}$ and $\mathrm{II}$. While the second one is at $\vartheta=1.6733$ and separates the regions $\mathrm{II}$ and $\mathrm{III}$ (see Figure~\ref{fig:41.stokes}).
@@ -53,6 +54,7 @@ This example corresponds to $A=1$ and $B=2$. See for example~\cite[Sec.~7]{GSW}.
 
 
 To perform the computation, we plot the set $\calC_{p_0,\vartheta}$ and keep track of the branching of the function $V$. In the plots, this will be noted at the end point with $(m,n)$ keeping track of the sheet of $\Sigma$ by $m\in\BZ$ and analytic continuation of the function $V$ with values $n\in\BZ$ so that for $\Im(z)>0$ we have $V(z)=B\tfrac{\Li_{2}(\e(z))}{(2\pi i)^2}+\tfrac{B}{24}+\tfrac{A}{2}z(z+1)+mz+n$ while for $\Im(z)<0$ we have $V(z)=-B\tfrac{\Li_{2}(\e(-z))}{(2\pi i)^2}+\tfrac{B}{12}-\tfrac{B}{2}(z-\tfrac{1}{2})^2+\tfrac{A}{2}z(z+1)+mz+n$. This allows us to read off the state integrals given by the algorithm.
+
 
 \subsubsection{The critical point $p_2=(-1/6,0)$}
 
@@ -94,6 +96,7 @@ We can see that this steepest descent contour is equivalent to the state integra
 \ee
 where for example $\mathrm{Y}=\mathrm{I},\mathrm{II},\mathrm{III}$.
 This is the original Andersen--Kashaev invariant for $4_1$~\cite[Eq.~(38)]{AK:I} and~\cite[Sec.~1.3]{GK:qser}. Therefore, our results gives a refined version of their volume conjecture. In particular, not only does the Andersen--Kashaev invariant have exponential decay determined by the volume of the figure eight knot but it is in fact the resummation of its own all order asymptotics.
+
 
 \subsubsection{State integrals decomposition in $\mathrm{I}$}
 Let $\vartheta\in\mathrm{I}$. We plot the set $\calC_{p_1,\vartheta}$ in Figure~\ref{fig:thimb.41.I}.
@@ -143,6 +146,7 @@ We can decompose the thimble in terms on state integrals contours. We have contr
 \calI_{0,0}+\calI_{1,0}\,,
 \ee
 where the second equality follows from Equation~\eqref{eq:state_integral_1}.
+
 \subsubsection{The saddle connection between $\mathrm{I}$ and $\mathrm{II}$}
 The saddle connection is depicted in Figure~\ref{fig:thimb.41.saddleI.II}.
 \begin{figure}[ht]
@@ -182,6 +186,7 @@ The saddle connection is depicted in Figure~\ref{fig:thimb.41.saddleI.II}.
 \end{tiny}
 \caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{(-5/6,0),\vartheta}$ for $\vartheta=\arg(-1/\tau)=3.1416$ and $(A,B)=(1,2)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$.}\label{fig:thimb.41.saddleI.II}
 \end{figure}
+
 
 \subsubsection{State integrals decomposition in $\mathrm{II}$}
 Let $\vartheta\in\mathrm{II}$ then $\calC_{p_1,\vartheta}$ is depicted in Figure~\ref{fig:thimb.41.II}.
@@ -234,6 +239,7 @@ We can decompose the thimble in terms on state integrals contours. We have contr
 -\calI_{0,0}-\calI_{-1,0}\,,
 \ee
 where the equality follows from Equation~\eqref{eq:state_integral_1}.
+
 \subsubsection{The saddle connection between II and III}
 The saddle connection is depicted in Figure~\ref{fig:thimb.41.saddle.II.III}.
 \begin{figure}[ht]
@@ -274,6 +280,7 @@ The saddle connection is depicted in Figure~\ref{fig:thimb.41.saddle.II.III}.
 \caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{(-5/6,0),\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.6733$, and $(A,B)=(1,2)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$.
 }\label{fig:thimb.41.saddle.II.III}
 \end{figure}
+
 \subsubsection{State integrals decomposition in $\mathrm{III}$}
 Let $\vartheta\in\mathrm{III}$ then $\calC_{p_1,\vartheta}$ is depicted in Figure~\ref{fig:thimb.41.III}.
 \begin{figure}[ht]
@@ -470,6 +477,7 @@ All together the algorithm produces the function
   -\calI_{0,0}-\calI_{-1,0}-9q\calI_{0,0}\,,
 \ee
 where the second equality follows from Equation~\eqref{eq:state_integral_1}.
+
 \subsubsection{First few Stokes constants}
 We can now describe the Stokes matrices. We see from Equation~\eqref{eq:Iarb.41}, Equation~\eqref{eq:I1.41}, Equation~\eqref{eq:I2.41}, and Equation~\eqref{eq:I3.41} that
 \be
@@ -514,6 +522,7 @@ These agree with the Stokes constants computed in~\cite{GGM:I}. Therefore, we se
     -9q & 1
   \end{pmatrix}\,.
 \ee
+
 
 \subsubsection{Computing all Stokes constants}
 
@@ -642,6 +651,7 @@ Then we find\footnote{To really prove this, one needs to make a full matrix equa
 \ee
 One can see exact agreement with the previous computations of the first two Stokes constants $-3$ and $-9$. To compute the next constant $-75$ using the methods we have described would presumably involve many iterations of the algorithm and would be best done via computer implementation, which we have not attempted.
 
+
 \subsection{\texorpdfstring{The case of $(A,B)=(4,1)$}{The case of (A,B)=(4,1)}}\label{sec:A4B1}
 We will compute the Borel--Laplace resummation of $\Phi_\Xi$ with the algorithm described in Section~\ref{sec:alg}. We will see that this exactly matches the numerical predictions of~\cite[Example~39]{Wh:thesis}. The critical points for the function $V$ and their critical values are listed below 
 \begin{center}
@@ -718,6 +728,7 @@ Taking the relative difference between volumes, the first non trivial\footnote{B
 \medskip
 
 To perform the computation, we plot the set $\calC_{p_0,\vartheta}$ and keep track of the branching of the function $V$. We adopt the same conventions as in Section~\ref{sec:4_1}. 
+
 
 
 
@@ -885,6 +896,7 @@ We can decompose the thimble in terms on state integrals contours, hence the alg
 \end{aligned}
 \ee
 
+
 \subsubsection{The \emph{false} saddle connection}
 Let $\vartheta=1.87141$, which corresponds to the Stokes line at the angle $\arg\big(-\frac{2\pi i}{V_4}\big)$. We plot the set $\calC_{p_4,\vartheta}$ in Figure~\ref{fig:FAKE_saddle.A4B1}.
 \begin{figure}[ht]
@@ -968,6 +980,7 @@ Moving away from this apparent saddle, we plot the set $\calC_{p_4,\vartheta}$ i
 where in the last equality follows from Equation~\eqref{eq:state_integral_1}. Notice that the set $\calC_{p_4,\vartheta}$ intersects the interval $(0,1)$ twice, thus there is no contribution coming from the state integral $\calI_{-3,1}$. 
 
 
+
 \subsubsection{The saddle connection between $\mathrm{I}$ and $\mathrm{II}$}
 The saddle connection is depicted in Figure~\ref{fig:saddle.A4B1.I-II}.
 \begin{figure}[ht]
@@ -1014,6 +1027,7 @@ The saddle connection is depicted in Figure~\ref{fig:saddle.A4B1.I-II}.
 \label{fig:saddle.A4B1.I-II}
 \end{figure}
 Notice that the magenta line hits the critical point $p_2$. This suggests that in the state integral decomposition we should see the contribution from $\calI_{-2,0}$, as we indeed verify in Section~\ref{sec:region_II}.
+
 
 \subsubsection{State integrals decomposition in $\mathrm{II}$}\label{sec:region_II}
 Let $\vartheta\in\mathrm{II}$. We plot the curve $\calC_{p_4,\vartheta}$ in Figure~\ref{fig:thimb.A4B1.II}.
@@ -1065,6 +1079,7 @@ where the second equality follows from Equation~\eqref{eq:state_integral_1}.
 \caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{p_4,\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.74159$, and $(A,B)=(4,1)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} curve represents the tail at the intersection of the set $\calC_{p_4,\vartheta}$ with the green lines. The \textcolor{violet}{violet} contour represents half of the contour that appears when we run the algorithm a second time.}
 \label{fig:thimb.A4B1.II}
 \end{figure}
+
 
 
 
@@ -1139,6 +1154,7 @@ The saddle connection is depicted in Figure~\ref{fig:saddle.A4B1.II-III}. Note t
 \label{fig:saddle.A4B1.II-III}
 \end{figure}
 
+
 \subsubsection{State integrals decomposition in $\mathrm{III}$}
 
 Let $\vartheta\in\mathrm{III}$. We plot the curve $\calC_{p_2,\vartheta}$ in Figure~\ref{fig:thimb.A4B1.III}.
@@ -1194,6 +1210,7 @@ We can decompose the thimble in terms on state integrals contours. We have contr
 \=
 \calI_{0,0}-\calI_{-1,0}\,.
 \ee
+
 
 \subsubsection{The saddle connection between $\mathrm{III}$ and $\mathrm{IV}$}
 The saddle connection is depicted in Figure~\ref{fig:saddle.A4B1.III-IV}.
@@ -1251,6 +1268,7 @@ vector(78,k,pts(0.01*k,1.52112/2/Pi-0.25,-0.2,0,-5,2))
 \caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{p_4,\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.62047$, and $(A,B)=(4,1)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} curve represents the tail at the intersection of the set $\calC_{p_4,\vartheta}$ with the green lines. The \textcolor{violet}{violet} contour represents half of the contour that appears when we run the algorithm a second time. While it is hard to see at this scale, the violet contour hits the critical point $\textcolor{blue}{p_3+1}$, which is just above the green line. Therefore, at this critical angle the violet contour splits at this point.}
 \label{fig:saddle.A4B1.III-IV}
 \end{figure}
+
 
 \subsubsection{State integrals decomposition in $\mathrm{IV}$}
 
@@ -1360,6 +1378,7 @@ where the second equality follows from Equation~\eqref{eq:state_integral_1}. Not
 \caption{This figure depicts in \textcolor{violet}{violet} the tail that contributes in the decomposition of the set $\calC_{p_4,\vartheta}$ given by state integral contours.}
 \label{fig:thimb.A4B1.IV--no_magenta}
 \end{figure}
+
 
 
 \subsubsection{First few Stokes constants}\label{sec:stokes_A4B1}
@@ -1482,6 +1501,7 @@ Therefore, we see that
   \end{pmatrix}.&\,&
   \end{aligned}
 \ee
+
 
 
 \subsubsection{Computing all Stokes constants}

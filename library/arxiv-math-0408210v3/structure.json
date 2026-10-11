@@ -7,7 +7,8 @@
   "bytes": 191026,
   "pages": 17,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -238,6 +239,94 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 12,
-  "chars_total": 37478
+  "chars_total": 37478,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 8,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-21-the-feigin-felder-shoikhet-cocycles",
+     "title": "The Feigin-Felder-Shoikhet cocycles",
+     "prose_ratio": 0.806,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-2-2ub2uc1bbc\u03c02na0-\u03b1-du1-du2n",
+     "title": "(2ub\u22122uc+1)Bbc\u03c02n(a0 \u2297\u03b1 )du1 \u2227... \u2227du2n",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-22-the-chern-weil-homomorphism",
+     "title": "The Chern-Weil homomorphism",
+     "prose_ratio": 0.748,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-1-one-can-construct-a-nilpotent-derivation-d-\u210f1r",
+     "title": "One can construct a nilpotent derivation D = \u2207+\u210f\u22121[r\u2212dxi\u03c9 ij(x)yj, \u00b7 ] whose Fedosov-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-2-given-a-fedosov-connection-17-one-can-construc",
+     "title": "Given a Fedosov connection (17) one can construct a vector space isomorphism \u03bb",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-3-two-fedosov-connections-d-and-d-whose-fedosov",
+     "title": "Two Fedosov connections D and ~D whose Fedosov-Weyl curvatures represent the same",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-3-the-local-version-of-the-algebraic-index-theor",
+     "title": "The local version of the algebraic index theorem",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

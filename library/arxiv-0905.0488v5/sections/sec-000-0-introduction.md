@@ -7,13 +7,14 @@ section_number: 0
 pages: 1-11
 source_pdf: 0905.0488v5.pdf
 source_sha256: fcf8dee7cd3849b9
-text_source: latex
-latex_prose_ratio: 0.995
-latex_coverage_ratio: 0.858
 doc_brief: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI — Let X be a smooth algebraic variety over a ﬁeldK containing the real numbers."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:Int}
 \numberwithin{equation}{subsection}
+
 
 \subsection{Deformation Quantization}
 Let $\K$ be a field of characteristic $0$, and let $X$ be a
@@ -84,6 +85,7 @@ algebro-geometric setup. There were cohomological obstructions, indicating that
 the same result (namely \cite[Theorem 0.1]{Ye1}) would not hold for more
 complicated smooth algebraic varieties. 
 
+
 \subsection{Twisted Quantization: Overview}
 In the paper \cite{Ko2}, Kontsevich suggested that on {\em any smooth algebraic
 variety} $X$, every Poisson $R$-deformation $\mcal{A}$ of $\mcal{O}_X$ can be
@@ -118,6 +120,7 @@ We should mention that the first occurrence of twisted quantization was in
 the paper \cite{Ka} of M. Kashiwara from 1996, that concerned contact 
 manifolds. We discuss this work, and several other papers related to twisted
 deformations, in Subsection \ref{subsec:discuss}. 
+
 
 
 \subsection{Twisted Deformations} \label{subsec:tw.defs}
@@ -225,6 +228,7 @@ completely new -- there does not seem to be any similar definition in the
 literature. 
 
 
+
 \subsection{Gauge Gerbes}
 There is a benefit in working with gauge gerbes: it is easier
 to study the combinatorial structure of a twisted deformation.
@@ -245,6 +249,7 @@ $\opn{H}^1(U, \OX) = \opn{H}^2(U, \OX) = 0$
 \tup{(}for instance an affine open set\tup{)}. 
 Then the groupoid $\gerbe{G}(U)$ is nonempty and connected.
 \end{thm}
+
 
 
 \subsection{Combinatorial Descent} \label{subsec:combinat}
@@ -300,6 +305,7 @@ cosimplicial crossed groupoids. Then the function
 \ol{\opn{Desc}}(H) \]
 is bijective.
 \end{thm}
+
 
 
 \subsection{Lie Descent}
@@ -358,6 +364,7 @@ This is repeated with more details as Theorem \ref{thm:Lie-desc.101} in the body
 of the paper. The proof uses Theorem
 \ref{thm:intro.100}, and results from \cite{Ye7} on the Deligne crossed groupoid
 and on the {\em bar-cobar construction} for DG Lie algebras.
+
 
 
 
@@ -437,6 +444,7 @@ implicitly), or else they are forced to deal with hypercoverings.
 
 What Theorem \ref{thm:intro.101} says is that we can replace the study of
 twisted deformations with that of geometric descent data. 
+
 
 
 \subsection{DG Lie Algebras and Deformations} \label{subsec:geom}
@@ -535,6 +543,7 @@ is also covariant with respect to homomorphisms $R \to R'$ of parameter
 algebras. See Theorem \ref{thm:7} for the precise statement.
 
 
+
 \subsection{The Formality Morphism}
 Given a finite affine open covering $\bsym{U}$ of $X$,
 we can form the {\em mixed resolution} 
@@ -597,6 +606,7 @@ $X' \to X$.
 The reason for the condition $\R \subset \K$ is because in \cite{Ye1}
 we used the original universal quantization morphism of Konstevich \cite{Ko1}. 
 See Remark \ref{rem:TDQ.101} for a discussion on how to relax this condition.
+
 
 
 \subsection{The Twisted Quantization Theorem} \label{subsec:TDQ}
@@ -721,6 +731,7 @@ $\gerbe{B}$ really twisted?
 
 This question is repeated (with a few more details) at the end of Section
 \ref{sec:TDQ}, along with a some other questions.
+
 
 
 \subsection{Discussion of Related Work} \label{subsec:discuss}

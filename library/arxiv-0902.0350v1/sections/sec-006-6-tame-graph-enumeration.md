@@ -7,10 +7,10 @@ section_number: 6
 pages: 16-19
 source_pdf: 0902.0350v1.pdf
 source_sha256: 4591687132c93973
-text_source: latex
-latex_prose_ratio: 0.986
-latex_coverage_ratio: 0.932
 doc_brief: "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:graph}
 
@@ -57,6 +57,7 @@ see~\cite{NipkowBS-IJCAR06}. The the complete machine-checked proof, over
 17000 lines, is available online in the Archive of Formal Proofs at
 \url{afp.sf.net}~\cite{BauerN-AFP06}.
 
+
 \subsection{Plane graphs}
 
 Following the original proof, we represent finite, undirected, plane graphs as lists
@@ -67,6 +68,7 @@ and \emph{non-final} faces. Hence a face is really a pair of a list
 of vertices and a Boolean.
 A plane graph is \emph{final} iff each of its faces is.
 In final graphs we can ignore the Boolean component of the faces.
+
 
 \subsection{Enumeration of plane graphs}
 
@@ -94,6 +96,7 @@ The HOL formalization defines an executable function
 graph to a list of graphs, the successor graphs reachable by subdividing one
 non-final face.  The plane graphs are the final graphs reachable from
 \textit{Seed$_p$} via \textit{next-plane$_p$} for some $p$.
+
 
 \subsection{Enumeration of tame graphs}
 
@@ -154,6 +157,7 @@ of all graphs reachable from a seed graph is easily defined on top of it. We
 call this function \textit{tameEnum$_p$}. By definition, tame graphs may
 contain only triangles up to octagons, which corresponds to the parameters $p
 = 0,\dots,5$.
+
 
 \subsection{Archive}
 

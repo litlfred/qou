@@ -7,10 +7,10 @@ section_number: 7
 pages: 34-35
 source_pdf: 2208.13448v2.pdf
 source_sha256: 8bfa244cf7ca867d
-text_source: latex
-latex_prose_ratio: 0.935
-latex_coverage_ratio: 0.978
 doc_brief: "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:appliDiffalTranscendence}
 

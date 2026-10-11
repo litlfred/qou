@@ -8,288 +8,73 @@ pages: 24-26
 source_pdf: 9910147v1.pdf
 source_sha256: 1feefdb019e76ea7
 doc_brief: "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir ∗ — We study the tensor product of principal unitary representa tions of the"
+text_source: latex
+latex_prose_ratio: 0.96
+latex_coverage_ratio: 0.987
 ---
-tations
-In this section we will compute the R-matrix in the tensor product of two irreducible inﬁnite
-dimensional representations (
-(X0 X1 )
-Π ⊗
-(Y0 Y1 )
-Π ). We will in particular show that the expression of
-(
-(X0 X1 )
-Π ⊗
-(Y0 Y1)
-Π )( R) is an operator which domain contains all the vectors of the form
-A
-em(X0X1)⊗
-B
-e n(Y0Y1), and more precisely we have the following proposition:
-Proposition 13 The expression of the R matrix of Uq(sl(2, C)R) represented on
-(X0 X1)
-V ⊗
-(Y0 Y1)
-V
-is given by the following action:
-(
-(X0 X1)
-Π ⊗
-(Y0 Y1)
-Π )( R)(
-B
-e m ⊗
-C
-e n) =
-∑
-DF
-B
-e j ⊗
-F
-e p
-( p j
-F B
-D
-x
-)( x
-D
-B C
-m n
-)
-Λ BD
-F C (X0,X 1). (84)
-In particular this expression is a ﬁnite sum although the uni versal formula for R is an inﬁnite
-sum.
-Proof:
-The element
-A
-L are multipliers of ˜Uq(sl(2, C)R) and we have the trivial relation
-A
-L(±)i
-j =
-∑ ⊕
-B
-AB
-R ik
-jl
-B
-X l
-k. The R matrix of Uq(sl(2, C)R) is written as: R = ∑
-A
-A
-X i
-j ⊗ 1 ⊗ 1 ⊗
-A
-g j
-i. From
-the expression of a representation ˜Π of ˜Uq(sl(2, C)R), associated to ( X0,X 1) a straightforward
-computation of the representation of the R-matrix gives the form ula of the statement. □
-Remark. This situation is in sharp contrast with the case of SUq(1, 1) for q real. The
-structure of Hopf algebra on Uq(su(1, 1)) is the same as Uq(su(2)), the only diﬀerence is in
-the deﬁnition of the star structure: J ⋆
-z = Jz,J ⋆
-+ = −J−,J ⋆
-− = −J+. It is easy to classify the
-irreducible unitary representations, the principal unitary repres entation of U(su(1, 1)) being now
-easily quantized as follows:
-Jz.em =mem J+.em = [m −τ +ǫ]em+1 J−.em = −[m +τ +ǫ]em+1
-where as usual ǫ ∈ {0, 1
-2 },τ =iν − 1
-2,ν ∈ R, andem is an orthonormal basis of the representation.
-The universal R matrix is still formally deﬁned by R =q2Jz⊗Jze(q−q−1) ( qJz J+⊗J−q−Jz )
-q−1 . It is easy
-to see that (π⊗π′)(R)(em⊗e′
-n) has no meaning in the l2 sense except in the trivial case where q =
-1. Indeed a straightforward computation shows that a formal expa nsion of (π ⊗π′)(R)(em ⊗e′
-n)
-gives (π⊗π′)(R)(em⊗e′
-n) =∑ +∞
-p=0ap(em+p⊗e′
-n−p) withap ∼ (q−q−1)γq −2p2+αp+β for 0<q < 1
-with γ ⁄= 0.
-24
-5.3 Connection with Askey-Wilson Polynomials.
-In the sequel, we will show that we can reexpress N
-(X0X1 ) ( Y0 Y1)
-(Z0 Z1 )
-[ X0X1 Y0Y1
-A B
-C
-Z0Z1
-]
-in terms
-of q-Racah polynomials and Askey-Wilson polynomials, and that the re lation (81) is an orthog-
-onality property mixing q-Racah polynomials and Askey-Wilson polynom ials in a non trivial
-way.
-Lemma 3 The following three identities are satisﬁed:
-1)
-[ X0X1 Y0Y1
-A B
-C
-Z0Z1
-]
-=ψ2
-[ X1X0 Y1Y0
-A B
-C
-Z1Z0
-]
-2)
-[ X1X0 Y1Y0
-A B
-C
-Z1Z0
-]
-=ψ3
-[ X1X0 Y1Y0
-A B
-C
-Z1Z0
-]
-3)
-[
-X1X0 Y1Y0
-A B
-C
-Z1Z0
-]
-=e−iπB√
-[dB]
-∑
-X2
-{
-T Z 1
-Y0 X0
-Z0
-X2
-}
-(3)
-{
-C B
-X1 X0
-A
-X2
-}
-(1)
-×
-×
-{
-B Y 1
-Z1 X2
-Y0
-X1
-}
-(3)
-v1/4
-A v1/2
-X2
-v1/4
-B v1/4
-C v1/4
-X0v1/4
-X1
-(85)
-whereψ2 =eiπ(B+C+mX +A), and ψ3 is such that
-ψ1ψ2ψ3 =eiπ(mX +mY −mZ )ϕ(2X1+1,−1)ϕ(2Y1+1,−1)ϕ(2Z1+1,−1)
-Proof:
-The identity 1) follows from a very simple computation. The identity 2) follows from the
-use of propositions (2) and (9). Identity 3) is a direct consequenc e of a Racah and a pentagonal
-equation on 6j(3) symbols. □
-Using these identities theorem (3) can be reformulated as follows
-Proposition 14
-∫
-d(Z0Z1)Γ
-(X0 X1)(Y0 Y1 )
-(Z0 Z1)
-{ A Z 1
-Y0 X0
-Z0
-X2
-}
-(3)
-{ A Z 1
-Y0 X0
-Z0
-X3
-}
-(3)
-{ B Y 1
-Z1 X2
-Y0
-X1
-}
-(3)
-{ C Y 1
-Z1 X3
-Y0
-X1
-}
-(3)
-=
-=δX2,X3δB,CY (1)
-(A,X0−X2)Y (1)
-(B,X1−X3)Y (1)
-(B,Y0−Y1). (86)
-with
-Γ
-(X0 X1 )(Y0 Y1 )
-(Z0 Z1 ) = q2Z0−2Z1+2Y0−2Y1 (1)2
-∞(1 −q2)[dB]
-(2X1 +1)1(2Y0 +1)1(2Z0+1)1
-×
-× ξ(2X1 +1, 2Y1+1, 2Z1+1)
-ξ(Y1 +X1−Z1+1,X 1+Z1−Y1+1,Y 1+Z1−X1+1,X 1+Y1+Z1+2) (87)
-Proof:
-Straightforward using a Racah-Wigner symmetry on 6 j(3) and an orthogonality relation on
-6j(1) symbols. □
-Theorem 5 Using the notations (102) we have
-√
-P(Z0Z1)
-√
-Γ
-(X0 X1)(Y0 Y1)
-(Z0 Z1)
-{
-B Y 1
-Z1 X2
-Y0
-X1
-}
-(3)
-=
-√
-ℏ
-√
-w(AW )(z;a,b,c,d )
-h(AW )
-n (a,b,c,d )
-p(AW )
-n (τ (z);a,b,c,d )(88)
-with n =B +Y0 −Y1,a =q2X1+2Y1+3,b =q2Y1−2X1+1,c =q2X2−2Y0+1,d =q−2Y0−2X2−1, 2z =
-2Z1 + 1.
-25
-Proof:
-Using two Sears transformations we can turn the parameters of t he hypergeometric functions
-of the left handside into those of the right handside. Checking now t he identity (88) is therefore
-reduced to straightforward but tedious manipulations on ν∞ functions. □
-Note that the relation (86) when A = 0 reduces to the identity:
-∫
-dρZ P(0,ρ Z) Γ (X0X1) ( Y0Y1)
-(Z0Z0)
-{ B Y 1
-Z0 X0
-Y0
-X1
-}
-(3)
-{ C Y 1
-Z0 X0
-Y0
-X1
-}
-(3)
-=δB,C (89)
-which is exactly, using (88), the orthogonality condition on Askey-W ilson polynomials for the
-family of parameters n = B +Y0 −Y1,a = q2X1+2Y1+3,b = q2Y1−2X1+1,c = q2X0−2Y0+1,d =
-q−2Y0−2X0−1, 2z = 2Z0 + 1.
-Although one would suspect that the relation (86) can be proved fo r any A by disentangling
-the sum over mZ and the integration over ρZ, we have not been able to prove it in this way.
+In this section we will compute the $R$-matrix in the tensor product of two irreducible infinite dimensional representations $({\buildrel {_{(X_0X_1)}}\over \Pi}\otimes  
+ {\buildrel {_{(Y_0Y_1)}}\over \Pi})$. We will in particular show that the expression of $({\buildrel {_{(X_0X_1)}}\over \Pi}\otimes  
+ {\buildrel {_{(Y_0 Y_1)}}\over \Pi})({\cal R})$ is an operator which domain contains all the vectors of the form ${\buildrel A\over e}_m(X_0X_1)\otimes {\buildrel B\over e}_n(Y_0Y_1)$, and more precisely we have the following proposition:
+
+::: proposition
+The expression of the $R$ matrix of $\mathfrak{U}_{q}(sl(2,\mathbb{C})_{\RR})$ represented on ${\buildrel {_{(X_0X_1)}}\over V}\otimes {\buildrel {_{(Y_0Y_1)}}\over V}$ is given by the following action: $$({\buildrel {_{(X_0X_1)}}\over \Pi}\otimes  {\buildrel {_{(Y_0Y_1)}}\over \Pi})({\cal R}) 
+({\buildrel B\over e}_m \otimes {\buildrel C\over e}_n)= 
+\sum_{DF}{\buildrel B\over e}_j\otimes {\buildrel F\over e}_p 
+\Clebphi{F}{B}{D}{p}{j}{x}\Clebpsi{B}{C}{D}{m}{n}{x} \coefclambda{B}{D}{F}{C}{X_0}{X_1}.$$ In particular this expression is a finite sum although the universal formula for ${\cal R}$ is an infinite sum.
+:::
+
+The element ${\buildrel A\over L}$ are multipliers of ${\tilde \mathfrak{U}}{}_{q}(sl(2,\mathbb{C})_{\mathbb{R}})$ and we have the trivial relation ${\buildrel A\over L}{}^{(\pm)}{}^i_j= 
+\sum_{B}^{\oplus}{\buildrel {AB}\over R}{}^{ik}_{jl} {\buildrel B\over X}{}^l_k.$ The $R$ matrix of ${\mathfrak U}_q(sl(2,\CC)_{\RR})$ is written as: ${\cal R}=\sum_{A}{\buildrel A\over X}{}^i_j\otimes 1\otimes 1\otimes {\buildrel A\over g}{}^j_i.$ From the expression of a representation $\tilde{\Pi}$ of ${\tilde \mathfrak{U}}{}_{q}(sl(2,\mathbb{C})_{\mathbb{R}})$, associated to $(X_0,X_1)$ a straightforward computation of the representation of the R-matrix gives the formula of the statement.
+
+Remark. This situation is in sharp contrast with the case of $SU_{q}(1,1)$ for $q$ real. The structure of Hopf algebra on $\mathfrak{U}_{q}(su(1,1))$ is the same as $\mathfrak{U}_{q}(su(2)),$ the only difference is in the definition of the star structure: $J_z^{\star}=J_z, J_+^{\star}=-J_-,J_-^{\star}=-J_+.$ It is easy to classify the irreducible unitary representations, the principal unitary representation of $\mathfrak{U}(su(1,1))$ being now easily quantized as follows: $$\begin{aligned}
+&&\hskip -1cmJ_z.e_m=m e_m\;\;\;\;\;\;J_+.e_m=[m-\tau+\epsilon]e_{m+1}\;\;\;\;\;\;J_-.e_m=-[m+\tau+\epsilon]e_{m+1}\nonumber 
+\end{aligned}$$ where as usual $\epsilon\in\{0,\onehalf\}, \tau=i\nu-\onehalf, \nu\in \mathbb{R},$ and $e_m$ is an orthonormal basis of the representation. The universal $R$ matrix is still formally defined by $R=q^{2 J_z \otimes J_z}e_{q^{-1}}^{(q-q^{-1})\;(q^{J_z}J_+ \otimes J_-q^{-J_z})}.$ It is easy to see that $(\pi\otimes \pi')(R)(e_m\otimes e_n')$ has no meaning in the $l^2$ sense except in the trivial case where $q=1.$ Indeed a straightforward computation shows that a formal expansion of $(\pi\otimes \pi')(R)(e_m\otimes e_n')$ gives $(\pi\otimes \pi')(R)(e_m\otimes e_n')=\sum_{p=0}^{+\infty}a_{p}(e_{m+p}\otimes e_{n-p}')$ with $a_{p}\sim (q-q^{-1})\gamma q^{-2p^2+\alpha p+\beta}$ for $0<q<1$ with $\gamma\not=0.$
+
+## Connection with Askey-Wilson Polynomials.
+
+In the sequel, we will show that we can reexpress $N^{{}_{(X_0X_1)\;(Y_0Y_1)}}_{\;\;\;{}_{(Z_0Z_1)}}\ElemRed{A}{B}{C}{X_0X_1}{Y_0Y_1}{Z_0Z_1}$ in terms of q-Racah polynomials and Askey-Wilson polynomials, and that the relation ([\[completeness\]](#completeness){reference-type="ref" reference="completeness"}) is an orthogonality property mixing q-Racah polynomials and Askey-Wilson polynomials in a non trivial way.
+
+::: lemma
+The following three identities are satisfied: $$\begin{aligned}
+&&\hskip -1.5cm 1)\;\;\;\overline{\ElemRed{A}{B}{C}{X_0X_1}{Y_0Y_1}{Z_0Z_1}}=\psi_2\ElemRed{A}{B}{C}{\underline{X_1}\underline{X_0}}{\underline{Y_1}\underline{Y_0}}{\underline{Z_1}\underline{Z_0}}\nonumber\\  
+&&\hskip -1.5cm 2)\;\;\;\ElemRed{A}{B}{C}{\underline{X_1}\underline{X_0}}{\underline{Y_1}\underline{Y_0}}{\underline{Z_1}\underline{Z_0}}=\psi_3\ElemRed{A}{B}{C}{X_1X_0}{Y_1Y_0}{Z_1Z_0}\nonumber\\ 
+&&\hskip -1.5cm 3)\;\;\;\ElemRed{A}{B}{C}{X_1X_0}{Y_1Y_0}{Z_1Z_0}=e^{-i\pi B}\sqrt{[d_B]}\;  
+\sum_{X_2}\sixjn{Y_0}{X_0}{Z_0}{T}{Z_1}{X_2}{3}\!\!  
+\sixjn{X_1}{X_0}{A}{C}{B}{X_2}{1}\times\nonumber\\  
+&&\hskip 5cm\times\sixjn{Z_1}{X_2}{Y_0}{B}{Y_1}{X_1}{3}\!\!  
+\frac{v^{1/4}_{A}v^{1/2}_{X_2}}{v^{1/4}_{B}v^{1/4}_{C}v^{1/4}_{X_0}v^{1/4}_{X_1}}  
+\end{aligned}$$ where $\psi_2=e^{i \pi (B+C+m_X+A)}$, and $\psi_3$ is such that $$\begin{aligned}
+&&\psi_1 \psi_2 \psi_3=e^{i \pi (m_X+m_Y-m_Z)}\varphi_{(2X_1+1,-1)}\varphi_{(2Y_1+1,-1)}\varphi_{(2Z_1+1,-1)}\nonumber 
+\end{aligned}$$
+:::
+
+The identity $1)$ follows from a very simple computation. The identity $2)$ follows from the use of propositions ([\[propsym6j1\]](#propsym6j1){reference-type="ref" reference="propsym6j1"}) and ([\[propsym6j3\]](#propsym6j3){reference-type="ref" reference="propsym6j3"}). Identity $3)$ is a direct consequence of a Racah and a pentagonal equation on $6j(3)$ symbols.
+
+Using these identities theorem ([\[isometrytheorem\]](#isometrytheorem){reference-type="ref" reference="isometrytheorem"}) can be reformulated as follows
+
+::: proposition
+[]{#askeyproof label="askeyproof"} $$\begin{aligned}
+&&\hskip -1cm\int \!d(Z_0Z_1)\Gamma^{\!{}_{(X_0X_1)(Y_0Y_1)}}_{\;\;\;{}_{(Z_0Z_1)}}\!\sixjn{Y_0}{X_0}{Z_0}{A}{Z_1}{X_2}{3}\!\!\sixjn{Y_0}{X_0}{Z_0}{A}{Z_1}{X_3}{3}\!\!\sixjn{Z_1}{X_2}{Y_0}{B}{Y_1}{X_1}{3}\!\!\sixjn{Z_1}{X_3}{Y_0}{C}{Y_1}{X_1}{3}\!\!=\nonumber\\   
+&&=\delta_{X_2,X_3}\delta_{B,C}Y^{(1)}_{(A,X_0-X_2)}Y^{(1)}_{(B,X_1-X_3)}Y^{(1)}_{(B,Y_0-Y_1)}\label{O3}.  
+\end{aligned}$$ with $$\begin{aligned}
+&&\Gamma^{\!{}_{(X_0X_1)(Y_0Y_1)}}_{\;\;{}_{(Z_0Z_1)}}=  
+\frac{q^{2Z_0-2 Z_1+2Y_0-2 Y_1}(1)_{\infty}^2(1-q^2)[d_B]}{(2X_1\!+\!1)_1(2Y_0\!+\!1)_1(2Z_0\!+\!1)_1}\times\nonumber\\ 
+&&\times \frac{\xi(2X_1\!+\!1,2Y_1\!+\!1,2Z_1\!+\!1)} 
+{\xi(Y_1\!+\!X_1\!-\!Z_1\!+\!1,X_1\!+\!Z_1\!-\!Y_1\!+\!1,Y_1\!+\!Z_1\!-\!X_1\!+\!1,X_1\!+\!Y_1\!+\!Z_1\!+\!2)} 
+\end{aligned}$$
+:::
+
+Straightforward using a Racah-Wigner symmetry on $6j(3)$ and an orthogonality relation on $6j(1)$ symbols.
+
+::: theorem
+Using the notations ([\[defaskeypol\]](#defaskeypol){reference-type="ref" reference="defaskeypol"}) we have $$\begin{aligned}
+&&\hskip -1cm\sqrt{{\cal P}(Z_0Z_1)}\sqrt{\Gamma^{\!{}_{(X_0X_1)(Y_0Y_1)}}_{\;\;{}_{(Z_0Z_1)}}}\sixjn{Z_1}{X_2}{Y_0}{B}{Y_1}{X_1}{3}\!\!\!= \!\sqrt{\hbar}  
+\sqrt{\frac{w^{(AW)}(z;a,b,c,d)}{h^{(AW)}_n(a,b,c,d)}}p^{(AW)}_n(\tau(z);a,b,c,d) \label{expressionaskey} 
+\end{aligned}$$ with $n=B+Y_0-Y_1, a=q^{2X_1+2Y_1+3}, b=q^{2Y_1-2X_1+1}, c=q^{2X_2-2Y_0+1}, d=q^{-2Y_0-2X_2-1}, 2z=2 Z_1+1.$
+:::
+
+Using two Sears transformations we can turn the parameters of the hypergeometric functions of the left handside into those of the right handside. Checking now the identity ([\[expressionaskey\]](#expressionaskey){reference-type="ref" reference="expressionaskey"}) is therefore reduced to straightforward but tedious manipulations on $\nu_{\infty}$ functions.
+
+Note that the relation ([\[O3\]](#O3){reference-type="ref" reference="O3"}) when $A=0$ reduces to the identity: $$\int d\rho_Z \;{\cal P}(0,\rho_Z)\;\Gamma^{(X_0X_1)\;(Y_0Y_1)}_{(Z_0Z_0)} \sixjn{Z_0}{X_0}{Y_0}{B}{Y_1}{X_1}{3}\sixjn{Z_0}{X_0}{Y_0}{C}{Y_1}{X_1}{3}=\delta_{B,C}$$ which is exactly, using ([\[expressionaskey\]](#expressionaskey){reference-type="ref" reference="expressionaskey"}), the orthogonality condition on Askey-Wilson polynomials for the family of parameters $n=B+Y_0-Y_1, a=q^{2X_1+2Y_1+3}, b=q^{2Y_1-2X_1+1}, c=q^{2X_0-2Y_0+1}, d=q^{-2Y_0-2X_0-1}, 2z=2 Z_0+1.$
+
+Although one would suspect that the relation ([\[O3\]](#O3){reference-type="ref" reference="O3"}) can be proved for any $A$ by disentangling the sum over $m_Z$ and the integration over $\rho_Z,$ we have not been able to prove it in this way.

@@ -499,8 +499,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ceb_wagner.tex",
-   "tex_sections": 9,
-   "overlaid": 2,
+   "tex_sections": 28,
+   "overlaid": 22,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -510,133 +510,191 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction.",
-     "prose_ratio": 0.699,
-     "coverage_ratio": 0.911,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-stable-polynomials",
      "title": "Stable polynomials.",
-     "prose_ratio": 0.347,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.489,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-21-examples",
      "title": "Examples.",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.828,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-22-elementary-properties",
      "title": "Elementary properties.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.92,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-23-univariate-stable-polynomials",
      "title": "Univariate stable polynomials.",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-24-multivariate-analogues-of-the-hko-and-hb-theo",
      "title": "Multivariate analogues of the HKO and HB Theorems.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.903,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-3-multiaffine-stable-polynomials",
      "title": "Multiaffine stable polynomials.",
-     "prose_ratio": 0.184,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.84,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-31-a-criterion-for-real-stability",
      "title": "A criterion for real stability.",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.658,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-32-linear-transformations-preserving-stability-m",
      "title": "Linear transformations preserving stability \u2013 multiaffine case.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-41-reduction-to-the-case-of-stable-polynomials",
      "title": "Reduction to the case of stable polynomials.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.832,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-42-partial-symmetrization",
      "title": "Partial symmetrization.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-43-convergence-to-the-polarization",
      "title": "Convergence to the polarization.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.867,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-5-polarization-arguments-and-stability-preserver",
      "title": "Polarization arguments and stability preservers.",
-     "prose_ratio": 0.138,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-51-the-real-stability-criterion-revisited",
      "title": "The real stability criterion revisited.",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-52-linear-transformations-preserving-stability-p",
      "title": "Linear transformations preserving stability \u2013 polynomial case.",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-7-the-symmetric-exclusion-process",
      "title": "The symmetric exclusion process.",
-     "prose_ratio": 0.358,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-71-negative-correlation-and-negative-association",
      "title": "Negative correlation and negative association.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-72-a-conjecture-of-liggett-and-pemantle",
      "title": "A conjecture of Liggett and Pemantle.",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-73-further-observations",
      "title": "Further observations.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-019-8-inequalities-for-mixed-discriminants",
      "title": "Inequalities for mixed discriminants.",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.873,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-020-9-further-directions",
      "title": "Further Directions.",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-021-91-other-circular-regions",
      "title": "Other circular regions.",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-92-applications-of-theorem-54",
      "title": "Applications of Theorem 5.4.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.903,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-94-phase-and-support-theorems",
      "title": "Phase and support theorems.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-references",

@@ -7,13 +7,12 @@ section_number: 2
 pages: 2-4
 source_pdf: 0008027v1.pdf
 source_sha256: 8bce0b8a1bca372e
-text_source: latex
-latex_prose_ratio: 0.86
-latex_coverage_ratio: 0.985
 doc_brief: "KASHAEV’S INVARIANT AND THE VOLUME OF A — I follow Y."
+text_source: latex
+latex_prose_ratio: 0.979
+latex_coverage_ratio: 0.956
 ---
-[]{#sec:algebra label="sec:algebra"} In this section I describe Kashaev's link invariant [@Kashaev:MODPLA95] following Yokota. We fix an integer $N\ge2$ and put $q=\exp\left(2\pi\sqrt{-1}/N\right)$. Put $(x)_n=\prod_{k=1}^{n}(1-x^k)$ for $n\ge 0$. For integers $0{\le}k,l,m,n{\le}N-1$ we put $$\begin{equation*}
-  \theta\!\left(\begin{smallmatrix} k & n \\ l & m \end{smallmatrix}\right)
+[]{#sec:algebra label="sec:algebra"} In this section I describe Kashaev's link invariant [@Kashaev:MODPLA95] following Yokota. We fix an integer $N\ge2$ and put $q=\exp\left(2\pi\sqrt{-1}/N\right)$. Put $(x)_n=\prod_{k=1}^{n}(1-x^k)$ for $n\ge 0$. For integers $0{\le}k,l,m,n{\le}N-1$ we put $$\theta\!\left(\begin{smallmatrix} k & n \\ l & m \end{smallmatrix}\right)
   =
   \begin{cases}
     1\;&\text{if ${l}\ne{m}$ and $q^{k},q^{l},q^{m},q^{n}$ are on the unit
@@ -22,15 +21,12 @@ doc_brief: "KASHAEV’S INVARIANT AND THE VOLUME OF A — I follow Y."
     &\hfill\text{(other pairs may be the same)},
     \\
     0\;&\text{otherwise}.
-  \end{cases}
-\end{equation*}$$ Note that $\theta\!\left(\begin{smallmatrix} k & n \\ l & m \end{smallmatrix}\right)=1$ if and only if $$\begin{equation*}
-  {k}\le{l}<{m}\le{n},\quad
+  \end{cases}$$ Note that $\theta\!\left(\begin{smallmatrix} k & n \\ l & m \end{smallmatrix}\right)=1$ if and only if $${k}\le{l}<{m}\le{n},\quad
   {n}\le{k}\le{l}<{m},\quad
   {m}\le{n}\le{k}\le{l}\;(m<l),\;\text{or}\quad
-  {l}<{m}\le{n}\le{k}.
-\end{equation*}$$ For an integer $x$, we denote by $[x]\in\{0,1,2,\dots,N-1\}$ the residue modulo $N$.
+  {l}<{m}\le{n}\le{k}.$$ For an integer $x$, we denote by $[x]\in\{0,1,2,\dots,N-1\}$ the residue modulo $N$.
 
-Now Kashaev's $R$-matrix $R=\left(R_{l,m}^{k,n}\right)$ is an $N^2\times N^2$-matrix given by $$\begin{align*}
+Now Kashaev's $R$-matrix $R=\left(R_{l,m}^{k,n}\right)$ is an $N^2\times N^2$-matrix given by $$\begin{aligned}
   R_{l,m}^{k,n}
   =
   \frac
@@ -44,10 +40,10 @@ Now Kashaev's $R$-matrix $R=\left(R_{l,m}^{k,n}\right)$ is an $N^2\times N^2$-ma
   {Nq^{-1+(m-k-1)(l-n)}
   \theta\!\left(\begin{smallmatrix} k & n \\ l & m \end{smallmatrix}\right)}
   {(q^{-1})_{[m-l-1]}(q)_{[n-m]}(q^{-1})_{[k-n]}(q)_{[l-k]}}.
-\end{align*}$$ Let $\mu$ be an $N\times N$-matrix with $\mu_l^k=-\delta_{k,l+1}q^{1/2}$, where $\delta_{i,j}$ is Kronecker's delta. Then $(R,\mu,-q^{1/2},1)$ is an enhanced Yang--Baxter operator [@Turaev:INVEM88], i.e. the following equalities hold. (See [@Murakami/Murakami:volume] for a proof.)
+\end{aligned}$$ Let $\mu$ be an $N\times N$-matrix with $\mu_l^k=-\delta_{k,l+1}q^{1/2}$, where $\delta_{i,j}$ is Kronecker's delta. Then $(R,\mu,-q^{1/2},1)$ is an enhanced Yang--Baxter operator [@Turaev:INVEM88], i.e. the following equalities hold. (See [@Murakami/Murakami:volume] for a proof.)
 
 ::: prop
-$$\begin{gather*}
+$$\begin{gathered}
     \left({R}\otimes{id}_{\mathbb{C}^N}\right)
     \left({id}_{\mathbb{C}^N}\otimes{R}\right)
     \left({R}\otimes{id}_{\mathbb{C}^N}\right)
@@ -60,13 +56,13 @@ $$\begin{gather*}
     \\
     \sum_{m=0}^{N-1}\left(R^{\pm1}({id}_{\mathbb{C}^N}\otimes\mu)\right)_{lm}^{km}
     =\left(-q^{1/2}\right)^{\pm1}\delta_{k,l}
-\end{gather*}$$ with ${id}_{\mathbb{C}^N}$ the identity on $\mathbb{C}^N$.
+  
+\end{gathered}$$ with ${id}_{\mathbb{C}^N}$ the identity on $\mathbb{C}^N$.
 :::
 
 Now I will describe how to calculate Kashaev's invariant for knots using this enhanced Yang-Baxter operator.
 
-First we present a knot in a $(1,1)$-tangle formula so that the string comes from above and goes down and at each crossing both arcs also go down. We decompose the string into edges so that at each crossing four edges meet and at each maximum/minimum where the string go from the left to the right two edges meet. See Figure [1](#fig:label){reference-type="ref" reference="fig:label"} for example. A *labeling* is an assignment of an element in $\{0,1,2,\dots,N-1\}$ to each edge. Here we assign $0$ to the edge from the starting point and to the edge to the end point. We call the number assigned to an edge its label. Given a labeling we assign the following quantities to crossings and maxima/minima: $$\begin{equation*}
-\raisebox{-5mm}{\begin{picture}(10,10)
+First we present a knot in a $(1,1)$-tangle formula so that the string comes from above and goes down and at each crossing both arcs also go down. We decompose the string into edges so that at each crossing four edges meet and at each maximum/minimum where the string go from the left to the right two edges meet. See Figure [1](#fig:label){reference-type="ref" reference="fig:label"} for example. A *labeling* is an assignment of an element in $\{0,1,2,\dots,N-1\}$ to each edge. Here we assign $0$ to the edge from the starting point and to the edge to the end point. We call the number assigned to an edge its label. Given a labeling we assign the following quantities to crossings and maxima/minima: $$\raisebox{-5mm}{\begin{picture}(10,10)
   \put(10,10){\vector(-1,-1){10}}
   \put( 6, 4){\vector( 1,-1){ 4}}
   \put( 4, 6){\line(-1, 1){ 4}}
@@ -99,8 +95,7 @@ First we present a knot in a $(1,1)$-tangle formula so that the string comes fro
   \put(1,4){\makebox(0,0)[br]{$k$}}
   \put(9,4){\makebox(0,0)[bl]{$l$}}
 \end{picture}}
-\,:\,\left(\mu^{-1}\right)_{l}^{k}.
-\end{equation*}$$
+\,:\,\left(\mu^{-1}\right)_{l}^{k}.$$
 
 The *weight* for a labeling is the product of all the quantities above. Then the Kashaev invariant $\langle{K}\rangle_N$ of a knot $K$ is defined to be the sum of all the weights up to some power of $q$ (which does not matter in our case), where the summation runs over all the labelings.
 
@@ -120,12 +115,9 @@ We will calculate the Kashaev invariant for the figure-eight knot.
 
 From Proposition [\[prop:angle\]](#prop:angle){reference-type="ref" reference="prop:angle"} (3), we can assume that labels are as in Figure [1](#fig:label){reference-type="ref" reference="fig:label"}.
 
-<figure id="fig:label" data-latex-placement="h">
-<embed src="fig8_2.eps" />
-<figcaption>Figure-eight knot with a labeling.</figcaption>
-</figure>
+![Figure-eight knot with a labeling.](fig8_2.eps){#fig:label}
 
-Then the Kashaev invariant $\langle{4_1}\rangle_{N}$ is $$\begin{align*}
+Then the Kashaev invariant $\langle{4_1}\rangle_{N}$ is $$\begin{aligned}
   &\sum_{j=0}^{N-1}\sum_{k\in[0,j-1]}\sum_{i\in[1,j]}
   \left(R^{-1}\right)_{0,i}^{0,0}\left(R^{-1}\right)_{0,1}^{j,i}
   R_{N-1,0}^{\phantom{N}k\phantom{1},0}R_{k,j}^{0,0}
@@ -150,10 +142,10 @@ Then the Kashaev invariant $\langle{4_1}\rangle_{N}$ is $$\begin{align*}
   \sum_{i\in[1,j]}
   \frac{q^{ij}}
        {(q)_{[i-1]}(q^{-1})_{[j-i]}}
-\end{align*}$$ up to some power of $q$, since $(q^{-1})_{[i-1]}(q)_{[-i]}=(q^{-1})_{i-1}(q)_{N-i}
+\end{aligned}$$ up to some power of $q$, since $(q^{-1})_{[i-1]}(q)_{[-i]}=(q^{-1})_{i-1}(q)_{N-i}
 =\dfrac{N}{(q)_{N-i}}(q)_{N-i}=N$ and $(q)_{[k]}(q^{-1})_{[-k-1]}=(q)_{k}\dfrac{N}{(q)_{k}}=N$. Here $a\in[b,c]$ means that $q^{b}$, $q^{a}$, and $q^{c}$ are on the unit circle counterclockwise (any pair may be the same). Note that $a\in[b,c]$ if and only if $[a-b]+[c-a]=[c-b]$.
 
-From the lemma below we have $$\begin{align*}
+From the lemma below we have $$\begin{aligned}
   \langle{4_1}\rangle_{N}
   &=
   N^2\sum_{j=0}^{N-1}
@@ -171,35 +163,29 @@ From the lemma below we have $$\begin{align*}
   \\
   &=
   \sum_{j=0}^{N-1}(q)_{j}(q^{-1})_{j}.
-\end{align*}$$ Note that the final formula coincides with Kashaev's [@Kashaev:LETMP97 (2.2)].
+\end{aligned}$$ Note that the final formula coincides with Kashaev's [@Kashaev:LETMP97 (2.2)].
 
 The following lemma is a key to reduce the summations of the Kashaev's invariant.
 
 ::: lem
-Let $0\le{k},{l},{m}\le{N-1}$ be integers. Then $$\begin{equation*}
-  \sum_{k\in[l,m]}
+Let $0\le{k},{l},{m}\le{N-1}$ be integers. Then $$\sum_{k\in[l,m]}
   \frac{q^{-(m-l+1)k}}{(q)_{[m-k]}(q^{-1})_{[k-l]}}
   =
-  (-1)^{[m-l]}q^{([m-l]+1)([m-l]-2m)/2}.
-\end{equation*}$$
+  (-1)^{[m-l]}q^{([m-l]+1)([m-l]-2m)/2}.$$
 :::
 
 ::: proof
-*Proof.* We use the following equality [@Murakami/Murakami:volume Lemma 3.2]. $$\begin{equation*}
-\begin{split}
+*Proof.* We use the following equality [@Murakami/Murakami:volume Lemma 3.2]. $$\begin{split}
   &\sum_{i=0}^{N-1-\alpha}
   \frac{q^{(\beta-\alpha)i/2}}{(q)_{i}(q^{-1})_{N-1-\alpha-i}}
   \\
   &\quad=\frac{(-1)^{N-1-\alpha}q^{-N(N-1)/2-\beta(\alpha+1)/2}}{N}
    \frac{(q)_{\alpha}(q)_{N-1-\alpha+[(\alpha-\beta)/2]}}
         {(q)_{[(\alpha-\beta)/2]}}.
-\end{split}
-\end{equation*}$$
+\end{split}$$
 
-To prove the lemma, we put $\beta=-\alpha$. Then we have $$\begin{equation*}
-  \sum_{i=0}^{N-1-\alpha}
+To prove the lemma, we put $\beta=-\alpha$. Then we have $$\sum_{i=0}^{N-1-\alpha}
   \frac{q^{-\alpha i}}{(q)_{i}(q^{-1})_{N-\alpha-i-1}}
   =
-  (-1)^{N-1-\alpha}q^{-N(N-1)/2+\alpha(\alpha+1)/2}.
-\end{equation*}$$ Putting $i=[m-k]$ and $N-\alpha-1=[m-l]$, the conclusion follows. ◻
+  (-1)^{N-1-\alpha}q^{-N(N-1)/2+\alpha(\alpha+1)/2}.$$ Putting $i=[m-k]$ and $N-\alpha-1=[m-l]$, the conclusion follows. ◻
 :::

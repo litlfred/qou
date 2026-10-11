@@ -6,7 +6,7 @@
   "sha256": "2fe21af194f652278168c8637f0e6256e8994d2efb1e1be8bdb0ebea7fe750a5",
   "bytes": 1026952,
   "pages": 92,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -1330,8 +1330,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "refined.tex",
-   "tex_sections": 4,
-   "overlaid": 0,
+   "tex_sections": 30,
+   "overlaid": 19,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1377,7 +1377,8 @@
     {
      "id": "sec-007-11-generalized-volume-conjecture",
      "title": "Generalized volume conjecture",
-     "result": "no matching \\section"
+     "prose_ratio": 0.137,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-c-re\ufb01ned-a-polynomials-78",
@@ -1387,39 +1388,58 @@
     {
      "id": "sec-009-12-quantum-volume-conjecture",
      "title": "Quantum volume conjecture",
-     "result": "no matching \\section"
+     "prose_ratio": 0.848,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-13-quantization-and-deformation-of-algebraic-cur",
      "title": "Quantization and deformation of algebraic curves",
-     "result": "no matching \\section"
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-2-the-new-conjectures-incorporating-t",
      "title": "The new conjectures: incorporating t",
-     "prose_ratio": 0.263,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-21-quantum-volume-conjecture-re\ufb01ned",
      "title": "Quantum volume conjecture: re\ufb01ned",
-     "result": "no matching \\section"
+     "prose_ratio": 0.771,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-22-generalized-volume-conjecture-re\ufb01ned",
      "title": "Generalized volume conjecture: re\ufb01ned",
-     "result": "no matching \\section"
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.677,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-3-examples-coming-from-knots",
      "title": "Examples coming from knots",
-     "prose_ratio": 0.296,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-31-sr-homological-invariants-of-2-2p-1-torus-kno",
      "title": "Sr homological invariants of (2, 2p + 1) torus knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.725,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-2-c2r1c2r2c2q-323",
@@ -1434,7 +1454,10 @@
     {
      "id": "sec-018-311-re\ufb01ned-braid-operators-and-gamma-factors",
      "title": "Re\ufb01ned braid operators and gamma factors",
-     "result": "no matching \\section"
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-2-aq1r\u2113",
@@ -1449,7 +1472,10 @@
     {
      "id": "sec-021-312-f-rom-partition-functions-to-superpolynomial",
      "title": "F rom partition functions to superpolynomials",
-     "result": "no matching \\section"
+     "prose_ratio": 0.711,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-2-z-ref",
@@ -1459,7 +1485,8 @@
     {
      "id": "sec-023-313-homological-algebra-of-colored-knot-invarian",
      "title": "Homological algebra of colored knot invariants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.511,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-024-2-the-milnor-conjecture",
@@ -1484,32 +1511,46 @@
     {
      "id": "sec-028-32-recursion-relations-for-homological-knot-inva",
      "title": "Recursion relations for homological knot invariants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.3,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-029-321-unknot",
      "title": "Unknot",
-     "result": "no matching \\section"
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.72,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-030-322-t-refoil",
      "title": "T refoil",
-     "result": "no matching \\section"
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-031-323-recursion-in-various-limits",
      "title": "Recursion in various limits",
-     "result": "no matching \\section"
+     "prose_ratio": 0.926,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-032-33-re\ufb01ned-a-polynomials-and-the-re\ufb01ned-volume-s0",
      "title": "Re\ufb01ned A-polynomials and the re\ufb01ned \u201cvolume\u201d S0(u,t )",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-033-331-re\ufb01ned-a-polynomial-and-s0ut-for-the-unknot",
      "title": "Re\ufb01ned A-polynomial and S0(u,t ) for the unknot",
-     "result": "no matching \\section"
+     "prose_ratio": 0.286,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-034-2-t3",
@@ -1519,7 +1560,10 @@
     {
      "id": "sec-035-332-re\ufb01ned-a-polynomial-and-s0ut-for-the-trefoil",
      "title": "Re\ufb01ned A-polynomial and S0(u,t ) for the trefoil",
-     "result": "no matching \\section"
+     "prose_ratio": 0.688,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-036-0-u",
@@ -1569,7 +1613,8 @@
     {
      "id": "sec-045-333-saddle-point-analysis-of-the-homological-tor",
      "title": "Saddle point analysis of the homological torus knot invariants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.411,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-046-0-1-t2z01-t3xz0",
@@ -1594,7 +1639,10 @@
     {
      "id": "sec-050-334-asymptotic-behavior-in-di\ufb00erent-grading-conv",
      "title": "Asymptotic behavior in di\ufb00erent grading conventions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-051-0-u-log-x4p2x-\u03bej1-x\u03bej",
@@ -1604,17 +1652,23 @@
     {
      "id": "sec-052-34-relation-to-algebraic-k-theory",
      "title": "Relation to algebraic K-theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-053-341-quantizability-of-re\ufb01ned-a-polynomials",
      "title": "Quantizability of re\ufb01ned A-polynomials",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-054-4-examples-coming-from-re\ufb01ned-bps-invariants",
      "title": "Examples coming from re\ufb01ned BPS invariants",
-     "prose_ratio": 0.173,
+     "prose_ratio": 0.407,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -1625,12 +1679,16 @@
     {
      "id": "sec-056-41-re\ufb01ned-quantum-mirror-curves",
      "title": "Re\ufb01ned quantum mirror curves",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-057-42-re\ufb01ned-mirror-curves-s0ut-and-quantizability",
      "title": "Re\ufb01ned mirror curves, S0(u,t ) and quantizability",
-     "result": "no matching \\section"
+     "prose_ratio": 0.397,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-058-2-logz2",
@@ -1650,7 +1708,10 @@
     {
      "id": "sec-061-43-re\ufb01nement-as-a-twisted-mass-parameter",
      "title": "Re\ufb01nement as a twisted mass parameter",
-     "result": "no matching \\section"
+     "prose_ratio": 0.775,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-062-acknowledgments",

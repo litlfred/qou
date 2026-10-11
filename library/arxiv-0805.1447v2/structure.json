@@ -219,8 +219,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
-   "tex_sections": 5,
-   "overlaid": 4,
+   "tex_sections": 12,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -230,47 +230,56 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.966,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-braid-ordering-and-dehornoy-floor",
      "title": "Braid ordering and Dehornoy floor",
-     "prose_ratio": 0.737,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.723,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-22-the-geometric-meaning-of-dehornoy-ordering-an",
      "title": "The geometric meaning of Dehornoy ordering and Dehornoy floor",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-3-braid-foliation",
      "title": "Braid Foliation",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.9,
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-41-tiled-essential-surface",
      "title": "Tiled essential surface",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-42-mixed-foliated-surface",
      "title": "Mixed foliated surface",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-5-nielsen-thurston-classification-and-the-geomet",
      "title": "Nielsen-Thurston classification and the geometry of closed braid complements",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },

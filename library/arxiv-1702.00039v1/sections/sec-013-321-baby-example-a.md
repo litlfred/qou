@@ -8,21 +8,18 @@ pages: 14-14
 source_pdf: 1702.00039v1.pdf
 source_sha256: b47ca7d1cf7b44be
 doc_brief: "Gentle introduction to Soergel bimodules I: The basics NICOLAS LIBEDINSKY — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.627
 ---
-It is clear thatbid = 1. We have seen thaths +v is self-dual and it is of the form
-(6), sobs = (hs +v). By symmetry betweens andr we have thatbr = (hr +v).
-It is easy to see thatbsr =bsbr . It is self-dual becaused is a ring morphism and
-bs andbr both are. On the other hand it is of the form (6)
-bsbr =hsr +vhs +vhr +v2,
-and again we obtainbrs by symmetry.
-If we were very optimistic we would believe that bsrs = bsbrbs, which is self-
-dual. Let us calculate
-bsbrbs = ( hsr +vhs +vhr +v2)(hs +v)
-= ( hsrs + vh2
-s|{z} +vhrs +v2hs) + (vhsr +v2hs +v2hr +v3) (7)
-But vh2
-s = (1−v2)hs +v, so bsbrbs is not of the form (6), we have a term that
-ishs. To solve this issue we substractbs. We still have a self-dual element and
-we eliminate thehs from the sum, so ﬁnally we obtain
-bsrs = bsbrbs−bs
-= hsrs +vhrs +vhsr +v2hs +v2hr +v3 (8)
+It is clear that $b_{\mathrm{id}}=1$. We have seen that $h_s+v$ is self-dual and it is of the form ([\[KL\]](#KL){reference-type="ref" reference="KL"}), so $b_s=(h_s+v).$ By symmetry between $s$ and $r$ we have that $b_r=(h_r+v).$
+
+It is easy to see that $b_{sr}=b_{s}b_{r}$. It is self-dual because $d$ is a ring morphism and $b_{s}$ and $b_{r}$ both are. On the other hand it is of the form ([\[KL\]](#KL){reference-type="ref" reference="KL"}) $$b_{s}b_{r}=h_{sr}+vh_s+vh_r+v^2,$$ and again we obtain $b_{rs}$ by symmetry.
+
+If we were very optimistic we would believe that $b_{srs}=b_{s}b_{r}b_{s}$, which is self-dual. Let us calculate $$\begin{aligned}
+b_{s}b_{r}b_{s}&=&(h_{sr}+vh_s+vh_r+v^2)(h_s+v)\nonumber\\
+&=&(h_{srs}+\underbrace{vh_s^2}+vh_{rs}+v^2h_s)+(vh_{sr}+v^2h_s+v^2h_r+v^3)
+\end{aligned}$$ But $vh_s^2=(1-v^2)h_s +v,$ so $b_{s}b_{r}b_{s}$ is not of the form ([\[KL\]](#KL){reference-type="ref" reference="KL"}), we have a term that is $h_s$. To solve this issue we substract $b_{s}.$ We still have a self-dual element and we eliminate the $h_s$ from the sum, so finally we obtain $$\begin{aligned}
+b_{srs}&=&b_{s}b_{r}b_{s}-b_{s}\nonumber\\
+&=&h_{srs}+vh_{rs}+vh_{sr}+v^2h_s+v^2h_r+v^3
+\end{aligned}$$

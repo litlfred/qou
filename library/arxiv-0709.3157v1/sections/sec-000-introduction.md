@@ -7,10 +7,10 @@ section_number: null
 pages: 1-2
 source_pdf: 0709.3157v1.pdf
 source_sha256: 22a0d9a93c9dcb8d
-text_source: latex
-latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.894
 doc_brief: "V . Mateu — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents , that is, quark bilinears of the form ¯qi"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Chiral perturbation theory ($\chi$PT for short) is regarded nowadays as the effective field theory dual to QCD at very low energies. It describes the dynamics of the pseudo--Goldstone bosons ($\pi,\, K,\,\eta$) in an expansion in powers of external momenta and masses. It incorporates the assumed QCD symmetries such as parity, charge conjugation and, most important, the spontaneous breakdown of chiral symmetry.
 

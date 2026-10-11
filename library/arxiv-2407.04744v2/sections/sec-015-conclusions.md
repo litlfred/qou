@@ -7,10 +7,10 @@ section_number: null
 pages: 19-20
 source_pdf: 2407.04744v2.pdf
 source_sha256: fc6fda3138296fb1
-text_source: latex
-latex_prose_ratio: 0.758
-latex_coverage_ratio: 1.0
 doc_brief: "Magnetic structure of A≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods G. Chambers-Wall 1,∗ A. Gnech 2,3,† G. B. King 1,‡ S — 21 sections: Front matter; Theory; Introduct"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 []{#sec:conclusion label="sec:conclusion"} In this work we presented QMC calculations of magnetic moments and magnetic form factors of nuclei for $A\leq10$ based on chiral effective field theory. For the calculation we used the Norfolk two- and three- body interaction and consistent one- and two-body current operators.
 

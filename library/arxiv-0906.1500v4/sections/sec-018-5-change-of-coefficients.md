@@ -7,10 +7,10 @@ section_number: 5
 pages: 14-15
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
-text_source: latex
-latex_prose_ratio: 0.932
-latex_coverage_ratio: 0.965
 doc_brief: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — W e study a computational method of the hyperbolic Reidemeister torsion (also called in the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{section:naturality}
 

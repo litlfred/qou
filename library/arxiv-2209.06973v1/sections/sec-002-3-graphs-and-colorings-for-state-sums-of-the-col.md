@@ -7,10 +7,10 @@ section_number: 3
 pages: 5-17
 source_pdf: 2209.06973v1.pdf
 source_sha256: cc3393a17c48b9df
-text_source: latex
-latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.867
 doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
+text_source: latex
+latex_prose_ratio: 0.906
+latex_coverage_ratio: 1.0
 ---
 We will first consider *part arc-graphs* and *arc-graphs* following [@GL], which are defined from Morse projections $\mathcal{K}$. We will also introduce a third type of graph representation (and the corresponding colorings), which we call chord graphs, closely related to the chord diagrams in Vassiliev theory.
 
@@ -36,7 +36,7 @@ There will be additional decorations $\pm$, called *rotation numbers* along the 
 The order of incoming red and blue arcs at a fat vertex is according to the corresponding order of overcrossings in $\mathcal{K}$. We call this enhanced graph the *arc graph* for the given projection $\mathcal{K}$. In the setting of [@GL] no preferred ordering between the outgoing edges is given. But, our correspondence between states will suggest that the outgoing red edge precedes the outgoing blue edge. There is a graph defined from undercrossing arcs in the same way, denoted $G_-\mathcal{K}$.
 :::
 
-:::: rem
+::: rem
 \(a\) There is exactly one red edge $e_v^r$ and one blue edge $e_v^b$ out of each vertex $v$ of $G\mathcal{K}$ corresponding to an overcrossing arc. For an overcrossing *circle* there are no outgoing edges and there is no incoming blue edge. Depending on possible overcrossings, there will be an even number of incoming red edges. A special case of an overcrossing arc is the projection of a figure eight. In this case there are one blue edge and one red edge incident with this vertex, which are both outgoing and ingoing. There can be additional incoming red edges corresponding to the figure eight component overcrossing other components of $\mathcal{K}$. We will usually not consider projections of this form because we could isotope into a *split* projection.
 
 \(b\) We divide the boundary of each fat vertex corresponding to an overcrossing arc into an *active half-circle*, starting at the incoming blue edge and ending at the outgoing red edge. The complementary half-circle is the *passive* half-circle, and is colored yellow in Figure 1. The boundary of the fat vertex corresponding to an overcrossing circle will be considered active. Note that the part-arcs of the active part of the boundaries of fat vertices of $G\mathcal{K}$ exactly correspond to the part-arcs of $P\mathcal{K}$.
@@ -54,7 +54,7 @@ In this case we can open the projection naturally to include a long component, a
 \(d\) A Morse projection $\mathcal{K}$ is alternating if and only if each fat vertex of $G\mathcal{K}$ has exactly one incoming red edge, or no incoming red edge for a circle arc without crossings.
 
 \(e\) Note that $P\mathcal{K}$ is a planar graph while $G\mathcal{K}$ is an abstract graph. Not every bichromatic enhanced graph as defined above is the arc graph of a Morse projection. This is due to the missing horizontal compatibility of red edges in the graph. Below we define chord graphs, which will include this information. It seems interesting to extend arc graphs to the setting of virtual projections by adding undirected red edges corresponding to virtual crossings.
-::::
+:::
 
 ::: defn
 A coloring of $G\mathcal{K}$ is a coloring of all blue and red edges. Moreover, for each fat vertex corresponding to an overcrossing circle there will be a color assigned to a part-arc of the boundary, if there are incoming red edges, or to the whole boundary circle otherwise. The coloring will be $n$-bounded at each vertex corresponding to an overcrossing arc, and it will satisfy that the sum of all incoming red edge colors is $0$. Note that if we run through a component of $\mathcal{K}$ we run through the active edges of $G\mathcal{K}$ (we will jump across blue edges whenever we switch from one overcrossing arc to the next one), thereby traversing a connected component of $G\mathcal{K}$. While traversing the active boundaries of the corresponding fat vertices following the orientations we cross red incoming edges. We require that the sum of the colors of all incoming red edges minus the sum of the colors of all outgoing red edges adds to zero for each component. We require additionally that the $n$-flow condition is met at each vertex corresponding to an arc. See the definition of potential below to understand these conditions. The set of all those colorings of $G\mathcal{K}$ is denoted $\mathcal{F}_n(G\mathcal{K})$. This is a subset of the set of functions $f: E\rightarrow \underline{n}$, except if $G$ contains vertices corresponding to overcrossing circles. In this case $f$ is defined on the union of the set of all red and blue edges and a part arc in the boundary of the fat vertex or the whole boundary of the fat vertex as discussed above.
@@ -96,7 +96,7 @@ If $\mathcal{K}$ is defined from a closed braid projection then we will furtherm
 
 Note that switching sign and orientation of the chord and replacing $r$ by $-r$ simultaneously, we get both the same jumps in colors and horizontal positions on the two circle segments. Using negative chord colors $r$ will be essential for some of our arguments.
 
-::::: exmp
+::: exmp
 Below is the braid (long) projection of $\sigma_1\sigma_2^{-1}\sigma_1$, which is a $2$-component link. The cycle relation is $r_2=r_3$. For contributing states we further have to restrict to $r_1\leq r_3\leq \beta_2$. The chord graph gives a very transparent way of recording the coloring of all part-arcs. Note that we use the overcrossing arc ordering of the vertices and corresponding values for $r(i)=r_i$. In this case we placed the base color on the part arc following the first undercrossing from the bottom on the second component. Where the base values are placed is not important for part arc graph or chord graph. But since we color blue edges of the arc graph we usually place base values on the specific part arcs leaving the crossing on the undercrossing.
 
 ::: center
@@ -112,11 +112,11 @@ Figure 5 below shows the corresponding arc graph as defined in section 2. Note t
 :::
 
 *Figure 5*
-:::::
+:::
 
 From the colored arc-graph the corresponding Garoufalidis-Loebl state-sum contribution will be determined without reference to the part arc-graph, see section 6.
 
-:::: rem
+::: rem
 For each Morse projection $\mathcal{K}$, $P\mathcal{K}$ determines $C\mathcal{K}$, from which $G\mathcal{K}$ can be deduced as follows. Just cut the fat vertices from disks bounding the circles of the chord graph by introducing cut arcs (see Figure 6) following each outgoing chord. The blue edges then are easily added like in the picture. Note that the cut arcs added correspond to the passive half arcs in the boundaries of fat vertices. Also colorings of $C\mathcal{K}$ induce the colorings on $G\mathcal{K}$.
 
 ::: center
@@ -124,4 +124,30 @@ For each Morse projection $\mathcal{K}$, $P\mathcal{K}$ determines $C\mathcal{K}
 :::
 
 *Figure 6*
-::::
+:::
+
+# The flow lemma
+
+::: lem
+[]{#lem: flow lemma label="lem: flow lemma"} Let $\mathcal{K}$ be the Morse projection of a link. Then there is a natural bijection $\phi_{\pm }$ from the set of $\mathbb{Z}$-flows on $G_{\pm}\mathcal{K}$ to the set of $\mathbb{Z}$-flows of $P\mathcal{K}$. For $(+)$ it assigns the color of a blue edge of $G\mathcal{K}$ to the color of the part arc of $P\mathcal{K}$ following the transition, and assigns the red edge colors to the changes in the colors of the two incoming part arcs at the crossing corresponding to the transition. This map restricts for each $n\geq 1$ and $\pm$ to bijections of flows: $$\phi_{\pm}: \mathcal{F}_n(G_{\pm}\mathcal{K})\rightarrow \mathcal{F}^n_{\pm}(P\mathcal{K})$$
+:::
+
+::: proof
+*Proof.* We will only consider the $(+)$-case and let $\mu$ be the number of components of the link in the morse projection. A given general potential as above defines a $(+)$-coloring on $P\mathcal{K}$ in $\mathbb{Z}$ as explained following Definition 3.3. But it also defines a corresponding coloring $f$ of the arc graph $G\mathcal{K}$. In fact, define $f(e_v^r)=r(v)$ for all vertices $v$, with vertices identified with overcrossing arcs. Define $f(e_v^b)=\beta_j$ for the vertex $v$ corresponding to the overcrossing arc containing the specific part arc chosen for the basing of the projection in Definition 3.3 for all $v$ of $G\mathcal{K}$ corresponding to overcrossing arcs. There can be vertices of $G\mathcal{K}$ corresponding to overcrossing circles. Assign the corresponding base value $\beta_i$ if this vertex represents the $i$-th component. Note that the part arcs of $P\mathcal{K}$ uniquely correspond to part arcs in the boundaries of the fat vertices. So $(+)$-coloring of $G\mathcal{K}$ defined following Definition 3.3 also defines a coloring of all part-arcs, which are following a vertex $v$ at which an overcrossing arc $v$ ends. So this defines $f(e_v^b)$ for all vertices $v$ of $G\mathcal{K}$. Note that conversely the coloring of $G\mathcal{K}$ extends to all part arcs in the boundaries of fat vertices by using red arcs adjacent to the vertex. In fact, using the orientation of the boundary of each fat vertex, add the value $f(e_w^r)$ for each edge $e_w^r$ ending at vertex $v$. Figure 7 below shows how the colors are mapped *locally*. The left hand side shows the overcrossing arc $u$ and the colorings of $P\mathcal{K}$ defining the corresponding colorings of the edges at the vertex $u$ of $G\mathcal{K}$. If we are given $i,j,k,\ell$ then the colorings of $G\mathcal{K}$ are as given in the Figure. Conversely if we have given the edge colorings of the blue and red edges at the vertex $u$ of $G\mathcal{K}$ with the $f(e_u^r)=r$ then the color $i$ is determined by considering the segment of the overcrossing arc $w$ from its beginning until the crossing $w$. The coloring at the beginning is given by $f(e_{w'}^b)$ where $w'$ is the overcrossing arc preceding $w$. Then $i$ is defined by adding the jumps at all overcrossings before reaching the vertex $w$. Then $\ell =i+r$ and $j,k$ are defined as $j_0+r_1+\ldots +r_{\rho }$ and $k=j-r$. Since $r\leq j$ it follows $k\geq 0$. It also follows immediately that the flow conditions correspond to each other, and moreover a flow in $\mathcal{F}_+^n(P\mathcal{K})$ defined in this way, corresponds to a flow in $\mathcal{F}_n(G\mathcal{K})$. For contributing states we assume that all colorings are nonnegative. We have $i,j,k,\ell \leq n$ for the coloring of the edges at vertex $u$ of $P\mathcal{K}$ (corresponding to the overcrossing arc vertex of $G\mathcal{K})$). Because we have a $(+)$-coloring of $P\mathcal{K}$ it follows $i+j=k+\ell$ and $\ell \geq i$. It follows $\ell -i\geq 0$. The numbers $r_1,\ldots ,r_{\rho }\geq 0$ are the jumps along the overcrossing arc $u$. It follows that $j=j_0+r_1+\ldots +r_{\rho }=\ell -i+k$. This is the flow condition also at the vertex $u$ of $G\mathcal{K}$. Moreover $j\leq n \Longleftrightarrow (\ell -i)+k\leq n$. If we begin with an $n$-flow on $G\mathcal{K}$ we have $j\leq n$, which implies $k=j-r\leq n$. Also $\ell =i_0+r_1'+\ldots +r_{\rho '}'+r\leq n$ because this is a sum of colorings of incoming edges at the vertex $w$, and $i=\ell -r\leq n$. So the $n$-bounded $(+)$-flows on $P\mathcal{K}$ exactly correspond to the $n$-flows on $G\mathcal{K}$.
+
+::: center
+![image](Figure7.pdf){width="99%"}
+:::
+
+*Figure 7* ◻
+:::
+
+::: rem
+\(a\) The boundedness restrictions determine the contributing states in each model.
+
+\(b\) It was pointed out in the proof of [@GL] in the knot case that colorings of the arc graph are determined by the colors of the red edges through the flow condition. Similarly Garoufalidis and Le point out that in the knot case the jumps at the crossings determine the part arc colorings of a long knot. It is in fact only this basic observation, which we generalize in the above lemma.
+
+\(e\) Our formula generalization for [@GL] differs from the formula by the replacement of $t$ with $t^{-1}$, corresponding to the various conventions for the skein relation of the Jones polynomial.
+
+\(f\) The flow condition is not special to the colored Jones polynomial. The $R$-matrix for the standard representation of $\mathfrak{sl}(N)$ given in [@T], 4.2.1 gives non-trivial contributions only $i=j\leq k=\ell$, with $i,j$ denoting the incoming colors and $k,\ell$ the outgoing colors at a crossing. Note that this condition transfers to $$f(e_v^b)=\sum_{e<e_v^r}f(e)$$ for the vertex colorings of $G\mathcal{K}$, additionally to the flow condition.
+:::

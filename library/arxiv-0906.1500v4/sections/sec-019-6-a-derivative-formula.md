@@ -8,33 +8,39 @@ pages: 15-15
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
 doc_brief: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — W e study a computational method of the hyperbolic Reidemeister torsion (also called in the"
+text_source: latex
+latex_prose_ratio: 0.929
+latex_coverage_ratio: 1.0
 ---
-We prove a relation between the polynomial torsion and the non–abe lian Reidemeis-
-ter torsion. More precisely, we prove that the non–abelian Reideme ister is a sort of
-“diﬀerential coeﬃcient” associated to the polynomial torsion.
-We review the deﬁnition of the non–abelian Reidemeister torsion (for more details, we
-refer to [Por97, Chap. 3]).
-Deﬁnition 3. Let M be a compact hyperbolic three–dimensional manifold whose bound-
-ary is the disjoint union of b tori ∂M = ∪b
-ℓ=1T 2
-ℓ . Consider an SL 2(C)-representation
-ρ : π1(M ) → SL2(C) which is λ -regular for a set of closed loops λ = {λℓ ⊂ T 2
-ℓ | 1 ⩽ ℓ ⩽ b}.
-The non–abelian Reidemeister torsion TM
-λ (ρ) is deﬁned to be the sign–reﬁned Reidemeis-
-ter torsion for C∗(M ; sl2(C)ρ) and the basis
-h∗
-λ =
-{
-[ [P ρ
-1 ⊗ T 2
-1 ] ], . . . ,[ [P ρ
-b ⊗ T 2
-b ] ], [ [P ρ
-1 ⊗ λ1] ], . . . ,[ [P ρ
-b ⊗ λb] ]
-}
-as
-TM
-λ (ρ) = τ0 · Tor(C∗(M ; sl2(C)ρ), c∗, h∗
-λ ).
+\label{section:derform}
+
+We prove a relation between the polynomial torsion and 
+the non--abelian Reidemeister torsion. 
+More precisely, we prove that
+the non--abelian Reidemeister is a sort of ``differential coefficient''
+associated to the polynomial torsion.
+
+We review the definition of the non--abelian Reidemeister torsion (for
+more details, we refer to~\cite[Chap.~3]{Porti:1997}).
+\begin{definition}\label{def:torsion}
+  Let $M$ be a compact hyperbolic three--dimensional manifold whose
+  boundary is the disjoint union of $b$ tori $\partial M = \cup_{\ell = 1}^b T^2_\ell$. Consider an
+  $\SL$-representation $\rho \colon \pi_1(M) \to \SL$ which is
+  $\bm{\lambda}$-regular for a set of closed loops $\bm{\lambda} =
+  \{\lambda_\ell \subset T^2_\ell\,|\, 1 \myleq \ell \myleq b \}$.
+  The non--abelian Reidemeister torsion
+  $\RTors{M}{\smallbm{\lambda}}(\rho)$ is defined to be the sign--refined
+  Reidemeister torsion for $C_*(M; \sllrho)$ and the basis
+  $$\hbasis{*}_{\smallbm{\lambda}} = \big\{ 
+    \bbrack{P^\rho_1 \otimes T^2_1},
+      \ldots, 
+    \bbrack{P^\rho_b \otimes T^2_b}, 
+    \bbrack{P^\rho_1 \otimes \lambda_1},
+      \ldots, 
+    \bbrack{P^\rho_b \otimes \lambda_b}
+                              \big\}$$ as
+  \[
+  \RTors{M}{\smallbm{\lambda}}(\rho) = \tau_0 \cdot \Tor{C_*(M;
+    \sllrho)}{\cbasis{*}}{\hbasis{*}_{\smallbm{\lambda}}}.
+  \]
+\end{definition}

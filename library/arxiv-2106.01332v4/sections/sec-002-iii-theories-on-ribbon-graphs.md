@@ -7,10 +7,10 @@ section_number: III
 pages: 4-5
 source_pdf: 2106.01332v4.pdf
 source_sha256: 44c19a99624997bf
+doc_brief: "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS"
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.988
-doc_brief: "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS"
+latex_coverage_ratio: 1.0
 ---
 We now define and summarise the class of theories that we focus on. Much of what follows in this section can be found discussed at greater length in \cite{BT2}. We are interested in theories of ribbon graphs. These relate closely to LQG and spin foam models, but in which the graphs that comprise the states in these theories are framed. The states of these theories then are represented by the embedding of a two surface into the spatial manifold. \\
 
@@ -24,6 +24,7 @@ where the label $t$ runs over all trinions. The state space of the theory is sub
 \begin{equation}
     \mathcal{H}=\bigoplus_{\Gamma}\mathcal{H}_{\Gamma}.
 \end{equation}
+
 
 \subsection{The evolution algebra}
 

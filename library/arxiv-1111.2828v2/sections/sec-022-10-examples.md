@@ -7,10 +7,10 @@ section_number: 10
 pages: 35-40
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
-text_source: latex
-latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.837
 doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
+text_source: latex
+latex_prose_ratio: 0.833
+latex_coverage_ratio: 1.0
 ---
 \lbl{sec.examples}
 
@@ -314,3 +314,106 @@ When $n=2$, examples of Conjecture~\ref{newconjecture} are abundant. E.g.~for th
 If the face pairings do not respect the vertex orderings, one can still 
 define a Ptolemy variety by introducing more signs. See~Garoufalidis--Goerner--Zickert~\cite{GaroufalidisGoernerZickert} for details.
 \end{remark}
+
+
+
+
+\section{The irreducible representations of $\SL(2,\C)$}
+\lbl{sec.adjoint}
+
+Let $\phi_n\colon\SL(2,\C)\to\SL(n,\C)$ denote the canonical irreducible 
+representation. It is induced by the Lie algebra homomorphism 
+$\mathfrak{sl}(2,\C)\to\mathfrak{sl}(n,\C)$ given by
+\begin{equation}
+\left[\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\right]
+\mapsto\diag^+(n-1,\dots,1),\quad 
+\left[\begin{smallmatrix}0&0\\1&0\end{smallmatrix}\right]
+\mapsto\diag^-(1,\dots,n-1),\quad \left[\begin{smallmatrix}1&0\\0&-1
+\end{smallmatrix}\right]\mapsto\diag(n-1,n-3,\dots,-n+1),
+\end{equation}
+where $\diag^+(v)$ and $\diag^-(v)$ denote matrices whose first upper 
+(resp.~lower) diagonal is $v$ and all other entries are zero. One has
+\begin{align}
+\phi_n\left(\left[\begin{smallmatrix}0&-a^{-1}\\a&0\end{smallmatrix}
+\right]\right)&=q(a^{n-1},-a^{n-3},\dots,(-1)^{n-1}a^{-(n-1)})\lbl{phinlong}\\
+\phi_n\left(\left[\begin{smallmatrix}1&x\\0&1\end{smallmatrix}\right]\right)&
+=\pi_{n-1}(x,\dots ,x)\pi_{n-2}(x,\dots,x)\cdots\pi_1(x)\lbl{phinshort}.
+\end{align}
+
+\begin{proposition}
+\lbl{adjointPtolemy} 
+Let $c$ be a Ptolemy assignment on $\Delta_2^3$, and let $\tau$ denote the 
+corresponding cocycle. The assignment 
+\begin{equation}
+\phi_n(c)\colon\dot\Delta^3_n(\Z)\to \C^*,\qquad t\mapsto\phi_n(c)_t
+=\prod_{i<j}c_{ij}^{t_it_j}
+\end{equation}
+is a Ptolemy assignment on $\Delta_n^3$. If $c$ is a $\PSL(2,\C)$-Ptolemy 
+assignment with obstruction cocycle $\sigma$, $\phi_n(c)$ is a 
+$p\SL(n,\C)$-Ptolemy assignment with obstruction cocycle $\sigma$. Moreover, 
+$\phi_n(c)$ is the Ptolemy assignment corresponding to $\phi_n(\tau)$.
+\end{proposition}
+
+\begin{proof}
+Let $\alpha=(a_0,\dots,a_3)\in \Delta^3_{n-2}(\Z)$. Letting 
+$k_\alpha=\prod_{i<j}c_{ij}^{a_ia_j}$, and $l_\alpha=\prod_{i<j}c_{ij}^{a_i+a_j}$, we have
+\begin{equation}
+\phi_n(c)_{\alpha_{03}}\phi_n(c)_{\alpha_{12}}=k_\alpha^2l_\alpha c_{03}c_{12},\quad 
+\phi_n(c)_{\alpha_{01}}\phi_n(c)_{\alpha_{23}}=k_\alpha^2l_\alpha c_{01}c_{23},\quad 
+\phi_n(c)_{\alpha_{02}}\phi_n(c)_{\alpha_{13}}=k_\alpha^2l_\alpha c_{02}c_{13}.
+\end{equation}
+Hence, the appropriate Ptolemy relations are satisfied, proving the first 
+two statements. The long and short edges of the cocycle corresponding to 
+$\phi_n(c)$ are given by \eqref{qij} and \eqref{alphaijk}, and we must 
+prove that these agree with those of $\phi_n(\tau)$. For the long edges, 
+this follows immediately from \eqref{phinlong}. For the short edges, an 
+easy computation shows that all the diamond coordinates of a face are equal, 
+and equal to the corresponding diamond coordinate of $c$. For example, the 
+type $1$ diamond coordinate on face $3$ whose left vertex is 
+$t=(t_0,t_1,t_2,0)$ is given by
+\begin{equation}
+\begin{aligned}
+\frac{\phi_n(c)_{t+(0,-1,1,0)}\phi_n(c)_{t+(-1,1,0,0)}}{\phi_n(c)_{t}\phi_n(c)_{t+(-1,0,1,0)}}&=\frac{c_{01}^{t_0(t_1-1)}c_{02}^{t_0(t_2+1)}c_{12}^{(t_1-1)(t_2+1)}c_{01}^{(t_0-1)(t_1+1)}c_{02}^{(t_0-1)t_2}c_{12}^{(t_1+1)t_2}}{c_{01}^{t_0t_1}c_{02}^{t_0t_2}c_{12}^{t_1t_2}c_{01}^{(t_0-1)t_1}c_{02}^{(t_0-1)(t_2+1)}c_{12}^{t_1(t_2+1)}}\\&=\frac{c_{02}}{c_{01}c_{12}},
+\end{aligned}
+\end{equation}
+which is a diamond coordinate for $c$. By~\eqref{phinshort} the short edges 
+thus agree with those of $\phi_n(\tau)$, proving the result.  
+\end{proof}
+
+\begin{corollary}\label{adjointPtolemycor} If a representation $\rho\colon\pi_1(M)\to\PSL(2,\C)$ is detected by $P_2^\sigma(K)$ then $\phi_{2k+1}\circ\rho$ is detected by $P_{2k+1}(K)$ and $\phi_{2k}\circ\rho$ is detected by $P_{2k}^\sigma(K)$.\qed
+\end{corollary}
+
+\begin{theorem}
+Let $\rho$ be a boundary-unipotent representation in $\SL(2,\C)$ or 
+$\PSL(2,\C)$. The extended Bloch group element of $\phi_n\circ \rho$ 
+is $\binom{n+1}{3}$ times that of $\rho$. In fact, the shapes of all subsimplices are equal.
+\end{theorem}
+
+\begin{proof}
+By refining the triangulation if necessary, we may represent $\rho$ by a 
+Ptolemy assignment $c$ on $K$. Then $\phi=\phi_n(c)$ is a Ptolemy assignment 
+representing $\phi_n\circ \rho$, and the extended Bloch group element of 
+$\phi_n\circ\rho$ is given by
+\begin{equation}
+[\phi_n(\rho)]=\sum_i\epsilon_i\sum_{\alpha\in \Delta^3_{n-2}(\Z)}
+(\widetilde{\phi}^i_{\alpha_{03}}+\widetilde{\phi}^i_{\alpha_{12}}
+-\widetilde{\phi}^i_{\alpha_{02}}-\widetilde{\phi}^i_{\alpha_{13}},
+\widetilde{\phi}^i_{\alpha_{01}}+\widetilde{\phi}^i_{\alpha_{23}}
+-\widetilde{\phi}^i_{\alpha_{02}}-\widetilde{\phi}^i_{\alpha_{13}}).
+\end{equation} 
+By Proposition~\ref{independenceoflog}, we may choose the logarithms 
+independently as long as we use the same logarithm for identified points. 
+Defining $\widetilde{\phi}^i_t=\sum_{j<k}t_jt_k\widetilde c^i_{jk}$,
+we see that
+\begin{equation}
+(\widetilde{\phi}^i_{\alpha_{03}}+\widetilde{\phi}^i_{\alpha_{12}}
+-\widetilde{\phi}^i_{\alpha_{02}}-\widetilde{\phi}^i_{\alpha_{13}},
+\widetilde{\phi}^i_{\alpha_{01}}+\widetilde{\phi}^i_{\alpha_{23}}
+-\widetilde{\phi}^i_{\alpha_{02}}-\widetilde{\phi}^i_{\alpha_{13}})
+=(\widetilde c_{03}+\widetilde c_{12}-\widetilde c_{02}-\widetilde c_{13},
+\widetilde c_{01}+\widetilde c_{23}-\widetilde c_{02}-\widetilde c_{13}),
+\end{equation}
+which means that the flattenings assigned to each subsimplex of $\Delta^i_n$ 
+are equal. By Lemma~\ref{numberofsubsimplices}, 
+$\Norm{\Delta^3_{n-2}(\Z)}=\binom{n+1}{3}$, and the result follows.
+\end{proof}

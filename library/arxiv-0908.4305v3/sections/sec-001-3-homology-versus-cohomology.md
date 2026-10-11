@@ -7,10 +7,10 @@ section_number: 3
 pages: 25-29
 source_pdf: 0908.4305v3.pdf
 source_sha256: ab8d2b335b026a36
-text_source: latex
-latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.969
 doc_brief: "Higher Dimensional Algebra VII: Groupoidification — Groupoidiﬁcation is a form of categoriﬁcation in which vect or spaces are replaced by groupoids and linear operators are replaced by spans of"
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 0.979
 ---
 []{#homology label="homology"}
 
@@ -56,9 +56,9 @@ The most interesting choices of $\alpha$ are $\alpha = 0$, $\alpha =
 ::: proposition
 []{#alphaspancompose label="alphaspancompose"} For any $\alpha \in {\mathbb R}$ there is a functor from the category of groupoids and equivalence classes of tame spans to the category of real vector spaces and linear operators, sending:
 
-- each groupoid $X$ to its zeroth cohomology ${\mathbb R}^{\underline{X}}\,$, and
+-   each groupoid $X$ to its zeroth cohomology ${\mathbb R}^{\underline{X}}\,$, and
 
-- each tame span $S$ from $X$ to $Y$ to the operator $\utilde{S_\alpha} \colon{\mathbb R}^{\underline{X}} \rightarrow{\mathbb R}^{\underline{Y}}\,$.
+-   each tame span $S$ from $X$ to $Y$ to the operator $\utilde{S_\alpha} \colon{\mathbb R}^{\underline{X}} \rightarrow{\mathbb R}^{\underline{Y}}\,$.
 
 In particular, if we have composable tame spans: $$\xymatrix{
 & T\ar[dl]_{} \ar[dr]^{} & & S \ar[dl]_{} \ar[dr]^{}& \\
@@ -72,10 +72,8 @@ Z & & Y & & X
 We omit the proof because it mimics that of Theorem [\[functor\]](#functor){reference-type="ref" reference="functor"}. Note that a groupoid $\Psi$ over $X$ can be seen as a special case of a span, namely a span $$\xymatrix{
  & \Psi \ar[dl]_{v} \ar[dr]^{} & \\
  X & & 1 \\
-}$$ where $1$ is the terminal groupoid---that is, the groupoid with one object and one morphism. So, $\alpha$-degroupoidification also gives a recipe for turning $\Psi$ into a vector in ${\mathbb R}^{\underline{X}}\,$: $$\begin{equation}
-\label{alpha_degroupoidification_formula}
-\utilde{\Psi_\alpha}{[x]} = |{\rm Aut}(x)|^\alpha {|v^{-1}(x)|} \,.
-\end{equation}$$ This idea yields the following result as a special case of Proposition [\[alphaspancompose\]](#alphaspancompose){reference-type="ref" reference="alphaspancompose"}:
+}$$ where $1$ is the terminal groupoid---that is, the groupoid with one object and one morphism. So, $\alpha$-degroupoidification also gives a recipe for turning $\Psi$ into a vector in ${\mathbb R}^{\underline{X}}\,$: $$\label{alpha_degroupoidification_formula}
+\utilde{\Psi_\alpha}{[x]} = |{\rm Aut}(x)|^\alpha {|v^{-1}(x)|} \,.$$ This idea yields the following result as a special case of Proposition [\[alphaspancompose\]](#alphaspancompose){reference-type="ref" reference="alphaspancompose"}:
 
 ::: proposition
 []{#alpha_degroupoidification_vector label="alpha_degroupoidification_vector"} Given a tame span: $$\xymatrix{
@@ -133,9 +131,9 @@ With these definitions, we can refine the previous propositions so they apply to
 ::: proposition
 []{#alphaspancomposefinite label="alphaspancomposefinite"} For any $\alpha \in {\mathbb R}$ there is a functor from the category of groupoids and equivalence classes of spans of finite type to the category of real vector spaces and linear operators, sending:
 
-- each groupoid $X$ to its zeroth homology ${\mathbb R}[\underline{X}]$, and
+-   each groupoid $X$ to its zeroth homology ${\mathbb R}[\underline{X}]$, and
 
-- each span $S$ of finite type from $X$ to $Y$ to the operator $\utilde{S_\alpha}\colon{\mathbb R}[\underline{X}] \rightarrow{\mathbb R}[\underline{Y}]$.
+-   each span $S$ of finite type from $X$ to $Y$ to the operator $\utilde{S_\alpha}\colon{\mathbb R}[\underline{X}] \rightarrow{\mathbb R}[\underline{Y}]$.
 
 Moreover, for all values of $\alpha \in {\mathbb R}$, these functors are naturally isomorphic.
 :::
@@ -149,3 +147,7 @@ Y & & X
 :::
 
 The moral of this section is that we have several choices to make before we apply degroupoidification to any specific example. The choice of $\alpha$ is merely a matter of convenience, but there is a real difference between homology and cohomology, at least for groupoids with infinitely many nonisomorphic objects. The process described in Section [\[degroupoidification\]](#degroupoidification){reference-type="ref" reference="degroupoidification"} is the combination of choosing to work with cohomology and the convention $\alpha=0$ for degroupoidifying spans. This will suffice for the majority of this paper. However, we will use a different choice in our study of Hall algebras.
+
+# Groupoidification {#applications}
+
+Degroupoidification is a systematic process; groupoidification is the attempt to undo this process. The previous section explains degroupoidification---but not why groupoidification is interesting. The interest lies in its applications to concrete examples. So, let us sketch three: Feynman diagrams, Hecke algebras, and Hall algebras.

@@ -7,10 +7,10 @@ section_number: null
 pages: 60-70
 source_pdf: 2605.20846v1.pdf
 source_sha256: db27cb6d01c4f2fb
-text_source: latex
-latex_prose_ratio: 0.934
-latex_coverage_ratio: 0.876
 doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:legsnecessary}
 This section exhibits all coherence data. See notation \ref{coherencenotations}. The reader is urged to reference the graphical summary of the proofs whenever possible.

@@ -7,15 +7,13 @@ section_number: null
 pages: 1-2
 source_pdf: 0006156v1.pdf
 source_sha256: b799d4ef150291cf
-text_source: latex
-latex_prose_ratio: 0.951
-latex_coverage_ratio: 0.976
 doc_brief: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.992
 ---
-The Liouville equation[@liouville] $$\begin{equation}
- \label{liouville}
-\phi_{tt} -\phi_{xx}-4e^{-2\phi}=0
-\end{equation}$$ has plenty of important applications in Mathematics and Physics. In particular, it describes the surfaces of constant negative curvature and plays the indispensable role in uniformization theory of Riemannian surfaces [@poinc] (for some recent approach see [@takhtajan; @takhtajan1; @takhtajan2]).
+The Liouville equation[@liouville] $$\label{liouville}
+\phi_{tt} -\phi_{xx}-4e^{-2\phi}=0$$ has plenty of important applications in Mathematics and Physics. In particular, it describes the surfaces of constant negative curvature and plays the indispensable role in uniformization theory of Riemannian surfaces [@poinc] (for some recent approach see [@takhtajan; @takhtajan1; @takhtajan2]).
 
 In modern physics the Liouville equation defines one parameter family of models in conformal field theory (CFT), which usually is identified with 2-dimensional gravity [@jackiw]. It plays even more important role in Polyakov's theory of noncritical Bosonic string in dimensions $d<26$ [@polyakov]. For these reasons the Liouville model, especially in its quantum version, attracted wide attention during the last 25 years [@curtho; @dhoker; @gernev1; @gernev2].
 

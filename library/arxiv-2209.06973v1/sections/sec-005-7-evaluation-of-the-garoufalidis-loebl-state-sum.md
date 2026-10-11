@@ -7,10 +7,10 @@ section_number: 7
 pages: 38-47
 source_pdf: 2209.06973v1.pdf
 source_sha256: cc3393a17c48b9df
-text_source: latex
-latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.96
 doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.995
 ---
 Note that the arc-graphs are *abstract* enhanced graphs representing the data necessary to calculate the state-sum [\[eq=main formula\]](#eq=main formula){reference-type="eqref" reference="eq=main formula"}. For explicit computations it will be helpful to present the data in non-geometritc way so that it can easily be implemented as an algorithm.
 
@@ -46,31 +46,21 @@ We will next describe how to use the data $G'\mathcal{K}$ to construct the set o
 
 *Figure 19*
 
-The flow equation using the above notation now is $$\begin{equation}
-\label{eq=local 1}
-i_v+j_v=i_{\sigma ^{-1}(v)}+j_{\tau ^{-1}(v)}
-\end{equation}$$
+The flow equation using the above notation now is $$\label{eq=local 1}
+i_v+j_v=i_{\sigma ^{-1}(v)}+j_{\tau ^{-1}(v)}$$
 
 This is a recursion to calculate the state colorings from the potential, for each cycle of $\sigma$ at a time. We show how to use the recursion to find the function $\mathbf{i}: V\rightarrow \mathbb{N}_0$ in the cycle case. Below we will show for a $2$-component example how to find the function $\mathbf{i}$ from the function $\mathbf{j}$ with base values $(0,\beta )$ for the two components.
 
-Now suppose $\mu =1$ and let $\mathfrak{c}=|V|$ be the number of crossings of $\mathcal{K}$. Then for each $v\in V$ let $k_v\in \underline{\mathfrak{c}}$ be the unique number such that $\sigma ^{-k_v}(v)=v^1$. Suppose that $i_{v^1}=\beta_1$ is given. Then $$\begin{equation}
-\label{eq=solved recursion}
-i_v=i_{v^1}+\sum_{k=0}^{k_v-1}j_{\tau^{-1}\sigma^{-k}(v)}-j_{\sigma^{-k}(v)}
-\end{equation}$$ The recursion will start with equation [\[eq=local 1\]](#eq=local 1){reference-type="eqref" reference="eq=local 1"}: $$i_v=i_{\sigma^{-1}(v)}+j_{\tau^{-1}(v)}-j_v$$ and then substitute the recursion with $v$ replaced by $\sigma ^{-1}(v)$ to substitute for $i_{\sigma ^{-1}(v)}$: $$i_v=i_{\sigma^{-2}(v)}+(j_{\tau^{-1}\sigma^{-1}(v)}-j_{\sigma^{-1}(v)})+(j_{\tau^{-1}(v)}-j_v)$$ After $k_v$ steps we have the solution for $v$. This solution is in fact compatible because if we apply to $v^1$ the recursion step $\mathfrak{c}$ times, recall that $\sigma^{-\mathfrak{c}}(v)=v$ since $\sigma^{\mathfrak{c}}=\textrm{id}$, then we get $$i_{\sigma^{-\mathfrak{c}}(v^1)}=i_{v^1}+\sum_{k=0}^{\mathfrak{c}-1}j_{\tau^{-1}\sigma^{-k}(v^1)}-j_{\sigma^{-k}(v^1)}=i_{v^1}$$ This follows from $$\begin{equation}
-\label{eq=cyclic}
-\sum_{k=0}^{\mathfrak{c}-1}j_{\tau^{-1}\sigma^{-k}(v)}=\sum_{k=0}^{\mathfrak{c}-1}j_{\sigma^{-k}(v)}
-\end{equation}$$ because $\{\sigma^{-k}(v):k=0,\ldots ,\mathfrak{c}-1\}=V$ and $V=\sqcup \tau^{-1}(v)$ as we observed above. Note that formula [\[eq=solved recursion\]](#eq=solved recursion){reference-type="eqref" reference="eq=solved recursion"} just formally states how to calculate the part arc colors from a potential, just following along a component. In the link case, the above discussion has to be done for each cycle of $\sigma$ separately, noting that the final argument uses the cycle conditions. In fact, in the process of computing the part arc color by following a component, overcrossings of distinct components are in the left sum while undercrossing a distinct component is in the right hand sum, and those contributions cancel for each component. Thus for each $v\in V$ such that $\sigma ^{-k_v}v=v^{\ell }$ with $\ell \in \{1,\ldots ,\mu\}$ we have $$\begin{equation}
-\label{eq=solved recursion link}
-i_v=\beta_{\ell }+\sum_{k=0}^{k_v-1}j_{\tau^{-1}\sigma^{-k}(v)}-j_{\sigma^{-k}(v)}
-\end{equation}$$ The contributing states are determined by the $n$-flow conditions [\[defn:edge coloring\]](#defn:edge coloring){reference-type="ref" reference="defn:edge coloring"} for colorings of $G\mathcal{K}$, and are $$i_v,j_v\geq 0\ \textrm{and} \ i_v+j_v\leq n$$ for all $v\in V$. These conditions are equivalent, see the proof of [\[lem: flow lemma\]](#lem: flow lemma){reference-type="ref" reference="lem: flow lemma"} to the flows on $P\mathcal{K}$ being $n$-bounded, i. e. all part arc colors take values in $\{0,\ldots ,n\}$, see [\[defn:edge coloring\]](#defn:edge coloring){reference-type="ref" reference="defn:edge coloring"}. Obviously the equations are satisfied if for all $v\in V$: $$j_v\geq 0, i_{\sigma ^{-1}(v)}\geq 0 \ \textrm{and}\ i_{\sigma^{-1}(v)}+j_{\tau^{-1}(v)}\leq n,$$ because the part arc colors along the overcrossing arc $v$ are increasing from $i_{\sigma^{-1}(v)}$ to $i_{\sigma^{-1}(v)}+j_{\tau^{-1}(v)}$, then jump down to $i_v$. The last inequalities are equivalent to $$j_v, i_v\geq 0 \ \textrm{and}  \ i_v\leq n-j_v$$ So, using the recursion [\[eq=solved recursion link\]](#eq=solved recursion link){reference-type="eqref" reference="eq=solved recursion link"} we get the system of inequalities for each $v\in V$ in terms of the potential, for all $v^{\ell }\neq v\in V$, $\ell \in \{1,\ldots ,\mu\}$ depending on $v$,
+Now suppose $\mu =1$ and let $\mathfrak{c}=|V|$ be the number of crossings of $\mathcal{K}$. Then for each $v\in V$ let $k_v\in \underline{\mathfrak{c}}$ be the unique number such that $\sigma ^{-k_v}(v)=v^1$. Suppose that $i_{v^1}=\beta_1$ is given. Then $$\label{eq=solved recursion}
+i_v=i_{v^1}+\sum_{k=0}^{k_v-1}j_{\tau^{-1}\sigma^{-k}(v)}-j_{\sigma^{-k}(v)}$$ The recursion will start with equation [\[eq=local 1\]](#eq=local 1){reference-type="eqref" reference="eq=local 1"}: $$i_v=i_{\sigma^{-1}(v)}+j_{\tau^{-1}(v)}-j_v$$ and then substitute the recursion with $v$ replaced by $\sigma ^{-1}(v)$ to substitute for $i_{\sigma ^{-1}(v)}$: $$i_v=i_{\sigma^{-2}(v)}+(j_{\tau^{-1}\sigma^{-1}(v)}-j_{\sigma^{-1}(v)})+(j_{\tau^{-1}(v)}-j_v)$$ After $k_v$ steps we have the solution for $v$. This solution is in fact compatible because if we apply to $v^1$ the recursion step $\mathfrak{c}$ times, recall that $\sigma^{-\mathfrak{c}}(v)=v$ since $\sigma^{\mathfrak{c}}=\textrm{id}$, then we get $$i_{\sigma^{-\mathfrak{c}}(v^1)}=i_{v^1}+\sum_{k=0}^{\mathfrak{c}-1}j_{\tau^{-1}\sigma^{-k}(v^1)}-j_{\sigma^{-k}(v^1)}=i_{v^1}$$ This follows from $$\label{eq=cyclic}
+\sum_{k=0}^{\mathfrak{c}-1}j_{\tau^{-1}\sigma^{-k}(v)}=\sum_{k=0}^{\mathfrak{c}-1}j_{\sigma^{-k}(v)}$$ because $\{\sigma^{-k}(v):k=0,\ldots ,\mathfrak{c}-1\}=V$ and $V=\sqcup \tau^{-1}(v)$ as we observed above. Note that formula [\[eq=solved recursion\]](#eq=solved recursion){reference-type="eqref" reference="eq=solved recursion"} just formally states how to calculate the part arc colors from a potential, just following along a component. In the link case, the above discussion has to be done for each cycle of $\sigma$ separately, noting that the final argument uses the cycle conditions. In fact, in the process of computing the part arc color by following a component, overcrossings of distinct components are in the left sum while undercrossing a distinct component is in the right hand sum, and those contributions cancel for each component. Thus for each $v\in V$ such that $\sigma ^{-k_v}v=v^{\ell }$ with $\ell \in \{1,\ldots ,\mu\}$ we have $$\label{eq=solved recursion link}
+i_v=\beta_{\ell }+\sum_{k=0}^{k_v-1}j_{\tau^{-1}\sigma^{-k}(v)}-j_{\sigma^{-k}(v)}$$ The contributing states are determined by the $n$-flow conditions [\[defn:edge coloring\]](#defn:edge coloring){reference-type="ref" reference="defn:edge coloring"} for colorings of $G\mathcal{K}$, and are $$i_v,j_v\geq 0\ \textrm{and} \ i_v+j_v\leq n$$ for all $v\in V$. These conditions are equivalent, see the proof of [\[lem: flow lemma\]](#lem: flow lemma){reference-type="ref" reference="lem: flow lemma"} to the flows on $P\mathcal{K}$ being $n$-bounded, i. e. all part arc colors take values in $\{0,\ldots ,n\}$, see [\[defn:edge coloring\]](#defn:edge coloring){reference-type="ref" reference="defn:edge coloring"}. Obviously the equations are satisfied if for all $v\in V$: $$j_v\geq 0, i_{\sigma ^{-1}(v)}\geq 0 \ \textrm{and}\ i_{\sigma^{-1}(v)}+j_{\tau^{-1}(v)}\leq n,$$ because the part arc colors along the overcrossing arc $v$ are increasing from $i_{\sigma^{-1}(v)}$ to $i_{\sigma^{-1}(v)}+j_{\tau^{-1}(v)}$, then jump down to $i_v$. The last inequalities are equivalent to $$j_v, i_v\geq 0 \ \textrm{and}  \ i_v\leq n-j_v$$ So, using the recursion [\[eq=solved recursion link\]](#eq=solved recursion link){reference-type="eqref" reference="eq=solved recursion link"} we get the system of inequalities for each $v\in V$ in terms of the potential, for all $v^{\ell }\neq v\in V$, $\ell \in \{1,\ldots ,\mu\}$ depending on $v$,
 
-$$\begin{equation}
-\label{eq=contributing}
+$$\label{eq=contributing}
 \begin{aligned}
 0&\leq j_v\leq \beta_{\ell }+j_{\tau^{-1}(v)}+\sum_{k=1}^{k_v-1}j_{\tau^{-1}\sigma^{-k}(v)}-j_{\sigma^{-k}(v)}\leq n \\
 0&\leq j_{v^{\ell }},\beta_{\ell } \ \textrm{and}\ \beta_{\ell }+j_{v^{\ell }}\leq n \ \textrm{for the starting vertex}\ v^{\ell }
-\end{aligned}
-\end{equation}$$
+\end{aligned}$$
 
 Note that the part arc coloring preceding the base vertex on the $\ell$-th component is $i_{\sigma^{-1}(v^{\ell })}+j_{\tau^{-1}(v^{\ell })}\leq n$ because $i_{\sigma^{-1}(v^{\ell })}+j_{\tau^{-1}(v^{\ell })}-j_{v^{\ell }}=\beta _{\ell }$ and the part arc color following the crossing $v^{\ell }$ is just $\beta_{\ell }$.
 
@@ -90,43 +80,27 @@ Note that for $k=0$ the inequality $$j_v\leq a_v+j_1+\ldots +j_s\leq n$$ holds. 
 
 In order to determine $\mathcal{F}_n^*G\mathcal{K}$ in [\[thm:main\]](#thm:main){reference-type="ref" reference="thm:main"} for a long component projection, note that the part arc color $0$ on the part arc corresponding to the long half arcs in general does not imply $\beta_1=0$ if we take for the base vertex on the first component, which we choose to be the long one, but in fact it will imply that the vertex preceding this bottom vertex has color $0$. This follows because overcrossing can only increase the colors. So depending on the projection this will imply that the jumps are zero up this part-arc. To simplify, and actual be able to work with the reduced graph we assume that the first crossing of the bottom long arc is an undercrossing and is the base vertex of the first cycle. This will imply $\beta_1=0$ because at the base crossing the value can only decrease. This implies $j_{v^1}=0$ and by the flow condition of course also that $i_{\sigma^{-1}(v^1)}=j_{\tau^{-1}(v^1)}=0$. Note that $j_{\tau^{-1}(v)}=0 \Longleftrightarrow j_w=0$ for all $w\in \tau^{-1}(v)$. But note that $i_w\neq 0$ is possible for $w\in \tau^{-1}(v)$ in this case (and thus also $i_{\sigma ^{-1}(w)}$ and $j_{\tau^{-1}(w)}$ can be nonzero for $w\in \tau^{-1}(v)$ in this case), so these vertices cannot be discarded. If we delete the base vertex on the long component including all edges of $G\mathcal{K}$ incident to that vertex we will not change state contributions because $0$-colorings factor in as multiplication by $1$. While computationally comfortable, some of the symmetry is lost because $\tau$ is no longer defined for the vertices in $\tau^{-1}(v^1)$. Also $\sigma$ will no longer be defined on $\sigma ^{-1}(v^1)$ if we delete the base vertex $v^1$. In all recursively defined formulas we will still include the base vertex $v^1$ so that the maps $\sigma ,\tau$ are always defined.
 
-Let $V^*:=V\setminus (\{v^1\}\cup \tau^{-1}(v^1))$ and $V':=V\setminus \{v^1\}$. Then we can parametrize the set of contributing states as follows: $$\begin{equation}
-\label{eq=contributing states}
-\mathcal{F}_n^*G\mathcal{K}\leftrightarrow \{\mathbf{j}:=(j_v,\beta_{\ell }): v\in V^*,\ell =2,\ldots \mu, \eqref{eq=contributing}, \textrm{cycle relations} \ \ref{defn=potential} \}
-\end{equation}$$ In order to write formula [\[thm:main\]](#thm:main){reference-type="ref" reference="thm:main"} for the data $G'\mathcal{K}$ from a long component projection we need to determine the contributions from right oriented extrema. For this let $v\in V^*$ define $$\begin{equation}
-\label{eq=rot}
-\textrm{rot}(v,\mathbf{j})=\mathfrak{r}_{\tau }(v)j_v+\mathfrak{r}_{\sigma }(v)i_v
-\end{equation}$$ and $$\textrm{rot}(\mathbf{j}):=\sum_{v\in V^*}\textrm{rot}(v,\mathbf{j})$$
+Let $V^*:=V\setminus (\{v^1\}\cup \tau^{-1}(v^1))$ and $V':=V\setminus \{v^1\}$. Then we can parametrize the set of contributing states as follows: $$\label{eq=contributing states}
+\mathcal{F}_n^*G\mathcal{K}\leftrightarrow \{\mathbf{j}:=(j_v,\beta_{\ell }): v\in V^*,\ell =2,\ldots \mu, \eqref{eq=contributing}, \textrm{cycle relations} \ \ref{defn=potential} \}$$ In order to write formula [\[thm:main\]](#thm:main){reference-type="ref" reference="thm:main"} for the data $G'\mathcal{K}$ from a long component projection we need to determine the contributions from right oriented extrema. For this let $v\in V^*$ define $$\label{eq=rot}
+\textrm{rot}(v,\mathbf{j})=\mathfrak{r}_{\tau }(v)j_v+\mathfrak{r}_{\sigma }(v)i_v$$ and $$\textrm{rot}(\mathbf{j}):=\sum_{v\in V^*}\textrm{rot}(v,\mathbf{j})$$
 
 ::: rem
 In order to see that $\textrm{rot}(\mathbf{j})$ for a state determined by $\mathbf{j}$ and Definition [\[eq=rot\]](#eq=rot){reference-type="eqref" reference="eq=rot"} determines the contributions resulting from right oriented extrema, consider first a right oriented extremum on an overcrossing arc $\sigma (v)$, and assume that this is the only right oriented extremum on the overcrossing arc. The part arc color of the part arc containing the maximum is given by $i_v+\sum j_w$, where the sum runs through those $w\in \tau^{-1}(\sigma (v))$ preceding the maximum. Recall from above that a choice of element in $\tau^{-1}(v)$ determines a unique part arc if $\tau^{-1}(v)\neq \emptyset$, and otherwise there is only one part-arc on the given overcrossing arc. The contribution $i_v=\mathfrak{r}_{\sigma }(v)i_v$, while the $j_w$ are contributions $\mathfrak{r}_{\tau }(w)j_w$ for the $w$ along the overcrossing arc $\sigma (v)$ preceding the maximum. It is not hard to see that the result for the rotation of a state persists, even though contributions for individual extrema will show up differently in the formula for $\textrm{rot}(\mathbf{j})$ given above. For example, if right oriented maximum is followed by an right oriented minimum, then the part arc color before the maximum will count with factor $+1$ while the part arc color before the minimum will contribute with factor $-1$ in the definition by ribbon functor [@L]. In the formula for $\textrm{rot}(\mathbf{j})$ given above this will be counted correctly because in this case, if no further right oriented extrema follow on the part arc considered, the rotation numbers of part arcs preceding the maximum will be $0$. In the braid projection case this cannot occur but it is possible to have overcrossing arcs rotating through several maxima, in which case the above analysis similarly proceeds.
 :::
 
-Finally the last item to be considered is the excess of a state in terms of the potential. We will use the following definition for $v\in V$: $$\begin{equation}
-\label{eq=tilde}
-\tilde{j}_v:=\sum_{\substack{w\in \tau^{-1}(\tau (v))\\ w<v}}j_w+i_{\sigma^{-1}(\tau(v))}
-\end{equation}$$ Then $$\begin{equation}
-\label{eq=excess}
-\textrm{exc}(\mathbf{j}):=\sum_{v\in V^*}\varepsilon (v)i_v\tilde{j}_v
-\end{equation}$$
+Finally the last item to be considered is the excess of a state in terms of the potential. We will use the following definition for $v\in V$: $$\label{eq=tilde}
+\tilde{j}_v:=\sum_{\substack{w\in \tau^{-1}(\tau (v))\\ w<v}}j_w+i_{\sigma^{-1}(\tau(v))}$$ Then $$\label{eq=excess}
+\textrm{exc}(\mathbf{j}):=\sum_{v\in V^*}\varepsilon (v)i_v\tilde{j}_v$$
 
-Let $$\begin{equation}
-\delta (\mathbf{j}):=-(\textrm{exc}(\mathbf{j})+\textrm{rot}(\mathbf{j}).
-\end{equation}$$
+Let $$\delta (\mathbf{j}):=-(\textrm{exc}(\mathbf{j})+\textrm{rot}(\mathbf{j}).$$
 
-We can now restate Theorem [\[thm:main\]](#thm:main){reference-type="ref" reference="thm:main"} using the graph sextuple $G'\mathcal{K}$. Note that this description does not use any ordering of the vertex set $V$. For a long component projection $\textrm{rot}(\mathcal{K})$ let the *rotation number* of $\mathcal{K}$ be the sum of the rotation numbers of all components. This is a sum over the rotation numbers of all part arcs and thus is also the sum of the rotation numbers of all circle components resulting from smoothing all crossings. Let $$\begin{equation}
-\label{eq=delta'}
-\delta '(\mathcal{K},n):=-\frac{n^2}{4}\omega (\mathcal{K})+\frac{n}{2}\textrm{rot}(\mathcal{K}).
-\end{equation}$$ Note that our rotation numbers are positive in clockwise direction.
+We can now restate Theorem [\[thm:main\]](#thm:main){reference-type="ref" reference="thm:main"} using the graph sextuple $G'\mathcal{K}$. Note that this description does not use any ordering of the vertex set $V$. For a long component projection $\textrm{rot}(\mathcal{K})$ let the *rotation number* of $\mathcal{K}$ be the sum of the rotation numbers of all components. This is a sum over the rotation numbers of all part arcs and thus is also the sum of the rotation numbers of all circle components resulting from smoothing all crossings. Let $$\label{eq=delta'}
+\delta '(\mathcal{K},n):=-\frac{n^2}{4}\omega (\mathcal{K})+\frac{n}{2}\textrm{rot}(\mathcal{K}).$$ Note that our rotation numbers are positive in clockwise direction.
 
 ::: thm
-[]{#thm:GL2 label="thm:GL2"} Let $\mathcal{K}$ be a long component projection of an oriented link $K$ with data quintuple $G'\mathcal{K}$ and $\delta '(\mathcal{K},n)$ defined in equation [\[eq=delta\'\]](#eq=delta'){reference-type="eqref" reference="eq=delta'"}. Let $$\beta_n(\mathbf{j})=\prod_{v\in V'}\beta_n(\mathbf{j},v)$$ for $\mathbf{j}\in \mathcal{F}_n^*G\mathcal{K}$ as defined in [\[eq=contributing states\]](#eq=contributing states){reference-type="eqref" reference="eq=contributing states"}, and for each $v\in V^*$ $$\begin{equation}
-\label{eq=vertex contribution}
-\beta_n(\mathbf{j},v)=t^{n\varepsilon (v)i_v}{i_v+j_v \choose i_v}_{t^{-\varepsilon (v)}} \{n-\tilde{j}_v\}_{j_v,t^{\varepsilon (v)}}
-\end{equation}$$ with $\tilde{j}_v$ defined in [\[eq=tilde\]](#eq=tilde){reference-type="eqref" reference="eq=tilde"}. Then $$\begin{equation}
-\label{eqn=GL2}
-J_n'(K)=t^{\delta '(\mathcal{K},n)}\sum_{\mathbf{j}\in \mathcal{F}_n^*G\mathcal{K}}t^{\delta (\mathbf{j})}\beta_n(\mathbf{j})
-\end{equation}$$
+[]{#thm:GL2 label="thm:GL2"} Let $\mathcal{K}$ be a long component projection of an oriented link $K$ with data quintuple $G'\mathcal{K}$ and $\delta '(\mathcal{K},n)$ defined in equation [\[eq=delta\'\]](#eq=delta'){reference-type="eqref" reference="eq=delta'"}. Let $$\beta_n(\mathbf{j})=\prod_{v\in V'}\beta_n(\mathbf{j},v)$$ for $\mathbf{j}\in \mathcal{F}_n^*G\mathcal{K}$ as defined in [\[eq=contributing states\]](#eq=contributing states){reference-type="eqref" reference="eq=contributing states"}, and for each $v\in V^*$ $$\label{eq=vertex contribution}
+\beta_n(\mathbf{j},v)=t^{n\varepsilon (v)i_v}{i_v+j_v \choose i_v}_{t^{-\varepsilon (v)}} \{n-\tilde{j}_v\}_{j_v,t^{\varepsilon (v)}}$$ with $\tilde{j}_v$ defined in [\[eq=tilde\]](#eq=tilde){reference-type="eqref" reference="eq=tilde"}. Then $$\label{eqn=GL2}
+J_n'(K)=t^{\delta '(\mathcal{K},n)}\sum_{\mathbf{j}\in \mathcal{F}_n^*G\mathcal{K}}t^{\delta (\mathbf{j})}\beta_n(\mathbf{j})$$
 :::
 
 ::: rem

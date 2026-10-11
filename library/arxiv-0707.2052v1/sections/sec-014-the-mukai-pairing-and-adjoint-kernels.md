@@ -7,10 +7,10 @@ section_number: null
 pages: 20-21
 source_pdf: 0707.2052v1.pdf
 source_sha256: 0a1d1cca848706be
-text_source: latex
-latex_prose_ratio: 0.957
-latex_coverage_ratio: 1.0
 doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasiz ing the importance of a pairing which generalizes Mukai’s pairi ng on the cohomology of K3"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.867
 ---
 []{#sec:adjoint label="sec:adjoint"}
 
@@ -26,7 +26,7 @@ The *Mukai pairing* on the Hochschild homology of a space $X$ is the map $${\ens
 
 Observe that as $\tau_R$ and $\tau_L$ are both isomorphisms and as the Serre pairing is non-degenerate, it follows that the Mukai pairing is non-degenerate.
 
-We can now easily show that adjoint kernels give rise to adjoint maps between the corresponding Hoch­schild homology groups.
+We can now easily show that adjoint kernels give rise to adjoint maps between the corresponding Hochschild homology groups.
 
 ::: Theorem
 []{#thm:adjointness label="thm:adjointness"} If $\Phi\colon X\to Y$ and $\Psi\colon Y\to X$ are adjoint kernels, $\Psi\dashv\Phi$, then the corresponding push forwards are adjoint with respect to the Mukai pairing in the sense that for all $w\in
@@ -34,13 +34,14 @@ We can now easily show that adjoint kernels give rise to adjoint maps between th
 :::
 
 ::: Proof
-Note first that $\Psi_*=\Phi^*$, by Theorem [\[thm:adjadj\]](#thm:adjadj){reference-type="ref" reference="thm:adjadj"}. Thus $$\begin{align*}
+Note first that $\Psi_*=\Phi^*$, by Theorem [\[thm:adjadj\]](#thm:adjadj){reference-type="ref" reference="thm:adjadj"}. Thus $$\begin{aligned}
     {\ensuremath{\left\langle \Psi_*(v),\, w\right\rangle_{\rm M}}}&={\ensuremath{\left\langle \Phi^*(v),\, w\right\rangle_{\rm M}}}
     =\mathop{\mathrm{Tr}}\left(\raisebox{-.45\height}{}\raisebox{-.45\height}{}\right)\\
     &=\mathop{\mathrm{Tr}}\left(\raisebox{-.45\height}{}\raisebox{-.45\height}{}\raisebox{-.45\height}{}\right)
     =\mathop{\mathrm{Tr}}\left(\raisebox{-.45\height}{}\raisebox{-.45\height}{}\right)\\
     &={\ensuremath{\left\langle v,\, \Phi_*(w)\right\rangle_{\rm M}}}.\qedhere
-\end{align*}$$
+  
+\end{aligned}$$
 :::
 
 ::: Corollary

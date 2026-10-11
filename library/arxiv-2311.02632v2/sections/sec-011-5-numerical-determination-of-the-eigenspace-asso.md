@@ -7,19 +7,17 @@ section_number: 5
 pages: 32-37
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
-text_source: latex
-latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.969
 doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
+text_source: latex
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.995
 ---
-Having established that the first eigenvalue of the Fricke-Macbeath surface has a multiplicity of 7, our objective in this section is to numerically determine which 7-dimensional representation of $\Aut(\X)=\Delp/\Gamma$ corresponds to the eigenspace associated to $\la_1$. There are four 7-dimensional irreducible representations of $\Aut(\X)\cong \PSL_2(8)$. Refer to Table [1](#table:character_table){reference-type="ref" reference="table:character_table"} for the character table of $\Aut(\X)$. You can find the GAP code in Appendix [\[sec:appB\]](#sec:appB){reference-type="ref" reference="sec:appB"} to obtain the character table. See [@MR0827219 p. 6] for more information about the character table. In the character table, $A, B, C, D, E,$ and $F$ are defined as follows: $$\begin{equation}
- \label{eq:abcdef}
+Having established that the first eigenvalue of the Fricke-Macbeath surface has a multiplicity of 7, our objective in this section is to numerically determine which 7-dimensional representation of $\Aut(\X)=\Delp/\Gamma$ corresponds to the eigenspace associated to $\la_1$. There are four 7-dimensional irreducible representations of $\Aut(\X)\cong \PSL_2(8)$. Refer to Table [1](#table:character_table){reference-type="ref" reference="table:character_table"} for the character table of $\Aut(\X)$. You can find the GAP code in Appendix [\[sec:appB\]](#sec:appB){reference-type="ref" reference="sec:appB"} to obtain the character table. See [@MR0827219 p. 6] for more information about the character table. In the character table, $A, B, C, D, E,$ and $F$ are defined as follows: $$\label{eq:abcdef}
 \begin{aligned}
 A &= \zeta_7^3 + \zeta_7^4, & B &= \zeta_7^2 + \zeta_7^5, & C &= \zeta_7 + \zeta_7^6, \\
 D &= -\zeta_9^4 - \zeta_9^5, & E &= -\zeta_9^2 - \zeta_9^7, \\
 F &= \zeta_9^2 + \zeta_9^4 + \zeta_9^5 + \zeta_9^7.
-\end{aligned}
-\end{equation}$$ Here, $\zeta_n = e^{2\pi \i /n}$.
+\end{aligned}$$ Here, $\zeta_n = e^{2\pi \i /n}$.
 
 ::: {#table:character_table}
               **1A**   **2A**   **3A**   **7A**   **7B**   **7C**   **9A**   **9B**   **9C**
@@ -69,31 +67,27 @@ For our numerical evaluations, we have utilized Mathematica [@Mathematica]. Wit
 
 To begin, we initiate the following preliminary procedures:
 
-- Select an interior point $z_0$ within $\F$ that is not fixed by any element of $\Del$. Additionally, ensure that the orbits of $z_0$ under $\Del$ do not intersect the boundary of $\F$. An appropriate point can readily be located within the fundamental triangle of $\Del$, as shown in Figure [\[fig:237_tri\]](#fig:237_tri){reference-type="ref" reference="fig:237_tri"}.
+-   Select an interior point $z_0$ within $\F$ that is not fixed by any element of $\Del$. Additionally, ensure that the orbits of $z_0$ under $\Del$ do not intersect the boundary of $\F$. An appropriate point can readily be located within the fundamental triangle of $\Del$, as shown in Figure [\[fig:237_tri\]](#fig:237_tri){reference-type="ref" reference="fig:237_tri"}.
 
-- Determine representatives $S=\{M_1,\dots, M_d\}\subseteq \Delp$ for $\Aut(\X) = \Delp/\Gamma$ such that each $z_k : = M_k z_0$ lies within $\F$ for all $k\in \{1,\dots, d\}$. Here, $d=|\Aut(\X)|$. We can find such a list, for example, as follows :
+-   Determine representatives $S=\{M_1,\dots, M_d\}\subseteq \Delp$ for $\Aut(\X) = \Delp/\Gamma$ such that each $z_k : = M_k z_0$ lies within $\F$ for all $k\in \{1,\dots, d\}$. Here, $d=|\Aut(\X)|$. We can find such a list, for example, as follows :
 
-  - Enumerate elements of the Coxeter group $\Del$ based on length.
+    -   Enumerate elements of the Coxeter group $\Del$ based on length.
 
-  - Collect all elements $M\in \Del$ of even length such $M z_0$ is contained in the interior of $\F$.
+    -   Collect all elements $M\in \Del$ of even length such $M z_0$ is contained in the interior of $\F$.
 
-  - Given our choice of $z_0$, these collected elements serve as representatives for $\Aut(\X) = \Delp/\Gamma$.
+    -   Given our choice of $z_0$, these collected elements serve as representatives for $\Aut(\X) = \Delp/\Gamma$.
 
-- For each eigenfunction $f$ in $L$, compute the approximate values of $f(z_k)$ for all $k\in \{1,\dots, d\}$.
+-   For each eigenfunction $f$ in $L$, compute the approximate values of $f(z_k)$ for all $k\in \{1,\dots, d\}$.
 
 Given $M_l\in S$ and $f_i \in L$, we want to express the transformed function $M_l\cdot f_i$ as a linear combination of $\{f_1,\dots, f_n\}$, meaning that $$(M_l\cdot f_i)(z) = f_i(M_l^{-1}z) = \sum_{j=1}^n \rho(M_l,i,j)f_j(z),\, z\in \F.$$ Here, the matrix $\left(\rho(M_l,i,j)\right)_{i,j}$ serves as the representation matrix for $M_l$. Our goal is to approximate these matrix entries, treating $\{\rho(M_l,i,j)\}$ as the unknowns we want to determine.
 
-For a given pair $(l,i)$, the equation $$\begin{equation}
-\sum_{j=1}^n \rho(M_l,i,j)f_j(z_k) = f_i(M_l^{-1}z_k), \, k=1,\dots, d
-\label{eq:rho_equation}
-\end{equation}$$ yields $d$ relations with $n$ unknowns $\{\rho(M_l,i,j) : j=1, \dots, n\}$. Therefore, when $d$ significantly exceeds $n$, we obtain an overdetermined system of linear equations for those unknowns. For our particular case, the values are $d=504$ and $n=7$. To handle such overdetermined systems, a common approach is to use the least squares method. This method seeks to minimize the sum of the squares of the residuals, which are the differences between the left and the right sides of [\[eq:rho_equation\]](#eq:rho_equation){reference-type="eqref" reference="eq:rho_equation"}. By applying this method, we can approximate the values of $\{\rho(M_l,i,j)\}$.
+For a given pair $(l,i)$, the equation $$\sum_{j=1}^n \rho(M_l,i,j)f_j(z_k) = f_i(M_l^{-1}z_k), \, k=1,\dots, d
+\label{eq:rho_equation}$$ yields $d$ relations with $n$ unknowns $\{\rho(M_l,i,j) : j=1, \dots, n\}$. Therefore, when $d$ significantly exceeds $n$, we obtain an overdetermined system of linear equations for those unknowns. For our particular case, the values are $d=504$ and $n=7$. To handle such overdetermined systems, a common approach is to use the least squares method. This method seeks to minimize the sum of the squares of the residuals, which are the differences between the left and the right sides of [\[eq:rho_equation\]](#eq:rho_equation){reference-type="eqref" reference="eq:rho_equation"}. By applying this method, we can approximate the values of $\{\rho(M_l,i,j)\}$.
 
 To enhance the system's robustness further, one could perturb the initial point $z_0$ to obtain $z_0'$ and then consider its orbits $z_k'$ under the action of $\Aut(\X)$. This leads to an extended set of relations, in addition to those in [\[eq:rho_equation\]](#eq:rho_equation){reference-type="eqref" reference="eq:rho_equation"}: $$\sum_{j=1}^n \rho(M_l,i,j)f_j(z_k') = f_i(M_l^{-1}z_k'), \, k=1,\dots, d.$$ By doing so, we can also increase the number of equations, even when $d$ is small compared to $n$.
 
-Note that on the right-hand side of [\[eq:rho_equation\]](#eq:rho_equation){reference-type="eqref" reference="eq:rho_equation"}, $M_l^{-1}z_k=M_l^{-1}M_k z_0$ may not be a point in $\F$. Since our approach relies on knowing approximate values of $f_i(z_j)$ for orbits $z_j\in \F$ of $z_0$, calculating $f_i(M_l^{-1}z_k)$ presents a challenge. Given $(l, k)$, we need to find $p\in \{1,\dots, d\}$ and $\gamma\in \Gamma$ such that $$\begin{equation}
-\gamma M_l^{-1}M_k = M_p.
-\label{eq:findp}
-\end{equation}$$ Once we find $(p,\gamma)$, we can simply set $f_i(M_l^{-1}z_k)=f_i(M_p z_0) = f_i(z_p)$ due to the $\Gamma$-invariance of $f_i$.
+Note that on the right-hand side of [\[eq:rho_equation\]](#eq:rho_equation){reference-type="eqref" reference="eq:rho_equation"}, $M_l^{-1}z_k=M_l^{-1}M_k z_0$ may not be a point in $\F$. Since our approach relies on knowing approximate values of $f_i(z_j)$ for orbits $z_j\in \F$ of $z_0$, calculating $f_i(M_l^{-1}z_k)$ presents a challenge. Given $(l, k)$, we need to find $p\in \{1,\dots, d\}$ and $\gamma\in \Gamma$ such that $$\gamma M_l^{-1}M_k = M_p.
+\label{eq:findp}$$ Once we find $(p,\gamma)$, we can simply set $f_i(M_l^{-1}z_k)=f_i(M_p z_0) = f_i(z_p)$ due to the $\Gamma$-invariance of $f_i$.
 
 Equation [\[eq:findp\]](#eq:findp){reference-type="eqref" reference="eq:findp"} can be equivalently stated as: $$\gamma M_l^{-1}M_kz_0 = M_p z_0.$$ This formulation is essentially about moving the point $M_l^{-1}M_kz_0 = M_l^{-1}z_k$ into the fundamental domain $\F$ through the action of $\Gamma$. Notably, $\F$ is also the Dirichlet domain $D(0)$ from Theorem [\[thm:dirichlet\]](#thm:dirichlet){reference-type="ref" reference="thm:dirichlet"}. In [@MR2541438], Voight explored various algorithms related to such fundamental domains for Fuchsian groups. Of particular interest is an algorithm that, when given a point $z \in \disk$, returns a point $z' \in \F$ and an element $\gamma \in \Gamma$ such that $z' = \gamma(z)$. This algorithm is detailed further in [@MR2541438 Algorithm 4.3]. In the context of our study, we begin by setting $z = M_l^{-1}z_k$. Subsequently, we identify a side-pairing transformation $\gamma_i$ such that $\gamma_i z$ is closer to the fundamental polygon $\F$ than the original location of $z$, meeting the condition: $$\distD(0, \gamma_i z) \leq \distD(0, z).$$ As long as the point $z$ is not located inside the fundamental domain $\F$, such a transformation $\gamma_i$ exists. This procedure can be iterated until we identify a $\Gamma$-orbit of $z$ inside $\F$. By employing this method, we can effectively relocate $z$ to $\F$ using the generators $\{\gamma_i\}$ of $\Gamma$. While determining $\gamma$ and $M_p$ for [\[eq:findp\]](#eq:findp){reference-type="eqref" reference="eq:findp"} may involve numerical calculations, we can verify its correctness in a symbolic manner using [\[eq:coxrelation\]](#eq:coxrelation){reference-type="eqref" reference="eq:coxrelation"}.
 

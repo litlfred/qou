@@ -6,7 +6,7 @@
   "sha256": "af6234179a1345327e0796c811992b8caa632733fe5b96ec8a74307125ba53de",
   "bytes": 124013,
   "pages": 8,
-  "math_source": "latex"
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -116,8 +116,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ustron07.tex",
-   "tex_sections": 4,
-   "overlaid": 1,
+   "tex_sections": 6,
+   "overlaid": 0,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -127,15 +127,13 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.564,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.576,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-status-and-prospects",
      "title": "Status and Prospects",
-     "prose_ratio": 0.042,
+     "prose_ratio": 0.037,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {

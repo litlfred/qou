@@ -192,7 +192,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "KS4.tex",
    "tex_sections": 10,
-   "overlaid": 4,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -202,46 +202,48 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.421,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.866,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-001-3-the-congruence-subgroups-of-the-hecke-groups",
      "title": "The congruence subgroups of the Hecke groups",
-     "prose_ratio": 0.972,
-     "coverage_ratio": 0.795,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-4-universal-q-gonal-maps",
      "title": "Universal q-gonal maps",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.598,
+     "prose_ratio": 0.775,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-6-hecke-farey-fractions-for-the-cube",
      "title": "Hecke-Farey fractions for the cube",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.733,
+     "prose_ratio": 0.833,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-8-poles",
      "title": "Poles",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.246,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.848,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-10-equivalence-classes-of-vertices",
      "title": "Equivalence classes of vertices",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.846,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

@@ -5,7 +5,8 @@
   "file": "1707.02991v1.pdf",
   "sha256": "f4f539f74403dd24e5641276bbf7b131e32820662ea471f296e6fd3515cd36fe",
   "bytes": 414008,
-  "pages": 6
+  "pages": 6,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,7 +17,7 @@
   },
   "doi": null,
   "title": "BPS states, knots and quivers",
-  "authors_raw": "Piotr Kucharski 1, Markus Reineke 2, Marko Stoˇ sić3,4, and Piotr Su lkowski 1,5",
+  "authors_raw": "Piotr Kucharski 1, Markus Reineke 2, Marko Sto\u02c7 si\u01073,4, and Piotr Su lkowski 1,5",
   "abstract": null,
   "docinfo": {
    "Author": "",
@@ -67,7 +68,7 @@
   },
   {
    "level": 3,
-   "title": "Example – trefoil knot",
+   "title": "Example \u2013 trefoil knot",
    "page": 4,
    "source": "outline",
    "number": null
@@ -122,7 +123,7 @@
   {
    "id": "sec-003-example-trefoil-knot",
    "number": null,
-   "title": "Example – trefoil knot",
+   "title": "Example \u2013 trefoil knot",
    "level": 3,
    "page_start": 4,
    "page_end": 5,
@@ -145,6 +146,56 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 5,
-  "chars_total": 25942
+  "chars_total": 25942,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "knots-quivers-short-arXiv.tex",
+   "tex_sections": 5,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-bps-states-knots-and-quivers",
+     "title": "BPS states, knots and quivers",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-moduli-of-quiver-representations",
+     "title": "Moduli of quiver representations",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-knot-invariants-from-quiver-representation-theor",
+     "title": "Knot invariants from quiver representation theory",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-example-trefoil-knot",
+     "title": "Example \u2013 trefoil knot",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-summary",
+     "title": "Summary",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.67,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

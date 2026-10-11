@@ -7,10 +7,10 @@ section_number: 5
 pages: 14-14
 source_pdf: 0006156v1.pdf
 source_sha256: b799d4ef150291cf
-text_source: latex
-latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.995
 doc_brief: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.99
 ---
 We have shown, that the appropriate lattice regularization of the quantum Liouville model allows to enter the "forbidden region" of the Virasoro central charge $1\le c\le25$. The key for this is using the double family of dual quantum fields, which are not selfadjoint, but normal and adjoint to each other. The results are still rather modest, but proving the point quite persuasively.
 

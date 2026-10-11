@@ -7,10 +7,10 @@ section_number: 3
 pages: 7-10
 source_pdf: 1203.6531v1.pdf
 source_sha256: 29541f28c1c62d8f
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.873
 doc_brief: "Groebner-Shirshov basis and reduced words for affine Weyl group A_n — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨ obner-Shirshov bases of ~An and"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.988
 ---
 ::: thm
 []{#reduced label="reduced"} Let $\widehat{w}=a_{i_{s}}a_{i_{s-1}}\ldots a_{i_{1}}v^{(b_t)}$ where $a_{i_{j}}=r_{0}r_{nk_{j}}r_{nl_{j}}$.Then $a_{i_{j}}$'s are marked components of an arranged word $w=uv^{(b_t)}$ where $b_t=r_0r_{np}r_{1q}$ if and only if $k_{s}<k_{s-1}<\ldots<k_{1}<p$ and $q<l_{1}<l_{2}<\ldots<l_{s}<n$
@@ -50,15 +50,15 @@ We prove the last equation by induction on $m$.
 
 Let $m=2$, Since $l_1 -1 \geq l_2$,
 
-$$\begin{eqnarray*}
+$$\begin{aligned}
 
   a_{1}\oplus a_{2} &=& (k_{1},\underaccent{l_{1}}{\underbrace{1,\ldots,1}},0,\ldots,0)+(0,k_{2},\underaccent{l_{2}}{\underbrace{1,\ldots,1}},0,\ldots,0)  \\
  &=& (k_{1},k_{2}+1,\underaccent{l_{2}}{\underbrace{2,\ldots,2}},\underaccent{l_{1}-(l_{2}+1)}{\underbrace{1,\ldots,1}},0,\ldots,0)
-\end{eqnarray*}$$
+\end{aligned}$$
 
 Let us assume that $$\bigoplus_{i=1}^{m-1}a_{i}=(k_{1},k_{2}+1,\ldots,k_{m-1}+m-2,\underaccent{l_{m-1}}{\underbrace{m-1,\ldots,m-1}},\ldots,\underaccent{l_{1}-(l_{2}+1)}{\underbrace{1,\ldots,1}},0,\ldots,0).$$
 
-$$\begin{eqnarray*}
+$$\begin{aligned}
 
   \bigoplus_{i=1}^{m}a_{i} &=& \sum_{i=1}^{m}\sigma^{i-1}(a_{i}) \\
    &=& \sum_{i=1}^{m-1}\sigma^{i-1}(a_{i})+\sigma^{m-1}(a_{m})  \\
@@ -66,7 +66,7 @@ $$\begin{eqnarray*}
    &=& (k_{1},k_{2}+1,\ldots,k_{m-1}+m-2,\underaccent{l_{m-1}}{\underbrace{m-1,\ldots,m-1}},\ldots,\underaccent{l_{1}}{\underbrace{1,\ldots,1}},0,\ldots,0) \\
    &&  + \: (\underaccent{m-1}{\underbrace{0,0,\ldots,0}},k_{m},\underaccent{l_{m}}{\underbrace{1,\ldots,1}},0,\ldots,0) \\
    &=& (k_{1},k_{2}+1,\ldots,k_{m}+m-1,\underaccent{l_{m}}{\underbrace{m,\ldots,m}},\ldots,\underaccent{l_{1}-(l_{2}+1)}{\underbrace{1,\ldots,1}},0,\ldots,0)
-\end{eqnarray*}$$
+\end{aligned}$$
 
 The last equality easily follows from the fact $l_{m-1}-1 \geq l_{m}$. Since $n \geq k_1 \geq k_2+1 \geq \cdots > k_{m}+(m-1) \geq m$, the last line corresponds to a partition of $2n$ fits into a $n$ by $n$ box.
 
@@ -98,7 +98,7 @@ Then the reduced Gröbner-Shirshov basis of the affine Weyl group $\widetilde{A}
 
 The reduced words not including $r_0$ is given in Lemma [\[ri\]](#ri){reference-type="ref" reference="ri"}. It is easy to see that the number of such words given by the generating function $$(1+x)(1+x+x^2)\cdots(1+x+ \cdots +x^n).$$ Theorem [\[reduced\]](#reduced){reference-type="ref" reference="reduced"} and Theorem [\[qbinomial\]](#qbinomial){reference-type="ref" reference="qbinomial"} imply that the number of arranged words given by the generating function
 
-$$\begin{eqnarray*}
+$$\begin{aligned}
 
   \frac{\left(
   \begin{array}{c}
@@ -107,6 +107,6 @@ $$\begin{eqnarray*}
   \end{array}
 \right)_x}{(1-x^{2n})(1-x^{2n-1})\cdots (1-x^{n+1})} &=& \frac{\frac{(1-x^{2n})(1-x^{2n-1}) \cdots (1-x^{n+1})}{(1-x)(1-x^2) \cdots (1-x^{n})}}{(1-x^{2n})(1-x^{2n-1})\cdots (1-x^{n+1})} \\
    &=& \frac{1}{(1-x)(1-x^2)\cdots(1-x^n)}.
-\end{eqnarray*}$$
+\end{aligned}$$
 
 By Lemma [\[rir0\]](#rir0){reference-type="ref" reference="rir0"}, the reduced words of $\widetilde{A}_n$ are in the form $rw$. Hence the number of reduced words given by the generating function $$\frac{(1+x)(1+x+x^2)\cdots(1+x+ \cdots +x^n)}{(1-x)(1-x^2)\cdots(1-x^n)}$$ which is well known Poincaré polynomial of the affine Weyl group $\widetilde{A}_n$. (see [@humphreys]). Therefore these are all reduced words of $\widetilde{A}_n$. Hence by Composition-Diamond Lemma, $G'$ is a Gröbner-Shirshov basis of $\widetilde{A}_n$. In fact, $G'$ is a reduced Gröbner-Shirshov basis.

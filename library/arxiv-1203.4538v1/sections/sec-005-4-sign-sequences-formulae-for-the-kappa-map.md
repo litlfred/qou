@@ -7,26 +7,26 @@ section_number: 4
 pages: 9-13
 source_pdf: 1203.4538v1.pdf
 source_sha256: 5e44909e355c78d6
-text_source: latex
-latex_prose_ratio: 0.921
-latex_coverage_ratio: 0.952
 doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 7 sections: Introduction.; Preliminaries on surreal numbers.; Sign sequences."
+text_source: latex
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.987
 ---
 []{#sect:kappa-sign label="sect:kappa-sign"} For any $a\in\textbf{No}$ and $n\in\mathbb{N}$, we denote by $\kappa_{a,n}:=\log^n(\kappa_a)$ and $\kappa_{a,-n}=\exp^n(\kappa_a)$, where $\log^0$ and $\exp^0$ are equal to the identity map on $\textbf{No}$. The aim of this section is to show that $\kappa_{a,n}$ and $\kappa_{a,-n}$ for any $n$ are elements of $\omega^{\omega^{No}}$, and to give their sign sequence. In order to do so, we introduce the following auxiliary map $\iota$ and give its sign sequence.
 
 ::: nota
 []{#nota:gamma label="nota:gamma"}
 
-- Consider a surreal number $a=\alpha_0\oplus\binampersand \beta_0\ominus\binampersand \alpha_1\oplus\binampersand \beta_1\ominus\binampersand\cdots$. For any ordinal $\mu\in\textbf{On}$ intervening in the writing of $a$, we set:
+-   Consider a surreal number $a=\alpha_0\oplus\binampersand \beta_0\ominus\binampersand \alpha_1\oplus\binampersand \beta_1\ominus\binampersand\cdots$. For any ordinal $\mu\in\textbf{On}$ intervening in the writing of $a$, we set:
 
-  ::: center
-  $\gamma_\mu:=\displaystyle\sum_{\lambda\leq\mu}\alpha_\lambda\ \  \textrm{ (ordinal sum).}$
-  :::
+    ::: center
+    $\gamma_\mu:=\displaystyle\sum_{\lambda\leq\mu}\alpha_\lambda\ \  \textrm{ (ordinal sum).}$
+    :::
 
-- We set $\Omega^0$ to be the constant map equal to 1 in $\textbf{No}$ and $\epsilon_{\flat 0}:=0$.
+-   We set $\Omega^0$ to be the constant map equal to 1 in $\textbf{No}$ and $\epsilon_{\flat 0}:=0$.
 :::
 
-:::::: lem
+::: lem
 []{#lemme:iota label="lemme:iota"} The recursive formula:
 
 ::: center
@@ -49,9 +49,9 @@ $\iota_a=\epsilon_{\flat\gamma_{0}}\oplus\binampersand\omega\beta_0\ominus \bina
 :::
 
 A uniformity property holds for this map.
-::::::
+:::
 
-::::: demo
+::: demo
 We proceed by transfinite induction on $l(a)\in\textbf{On}$. We have $\iota_0=\langle\emptyset\ |\ \emptyset\rangle=0$.\
 Given a surreal number $a\in\textbf{No}$ with $l(a)>0$, we suppose that for any $b$ with $l(b)<l(a)$, $\iota_b$ is well defined, with the corresponding sign sequence. Consider a canonical representation $a=\langle a^L\ |\ a^R\rangle$ of $a$. For instance, in the case where $l(a)$ is a successor ordinal and $a=a^L\binampersand\oplus$. So $a^R<_sa^L$ et $a^R>a^L$. More precisely, either $a^L$ is only made of $\oplus$'s in which case $a^R=\emptyset$ (case (i)), or $a^R$ is a truncation of $a^L$, ending with a group of $\ominus$'s of $a^L$ of smaller number than the corresponding one in $a^L$ (case (ii)). In the case (i), the sign sequence formula of $\iota_a$ is:
 
@@ -78,7 +78,7 @@ $\begin{array}{lcl}
 
 The other cases for $l(a)$ and $a$ are analogous. They are left to the reader as an exercise.\
 Concerning the uniformity property, by the sign sequence formula for $\iota$, we note that for any surreal numbers $a,b\in\textbf{No}$, $a<b\Rightarrow\iota_a<\iota_b$. So the uniformity property follows from Theorem [\[theo:cofin\]](#theo:cofin){reference-type="ref" reference="theo:cofin"} in the same way as in [@gonshor_surreal Theorem 3.2, 3.5, Corollary au Theorem 5.2] and in Theorem [\[theo:kappa-defi\]](#theo:kappa-defi){reference-type="ref" reference="theo:kappa-defi"}.
-:::::
+:::
 
 The main result of this section is:
 
@@ -111,7 +111,7 @@ The main result of this section is:
 
 The second point of the theorem follows directly from the first one and the sign sequences for the maps $\Omega$ (Theorem [\[theo:signe-omega\]](#theo:signe-omega){reference-type="ref" reference="theo:signe-omega"}) and $\iota$ (Lemma [\[lemme:iota\]](#lemme:iota){reference-type="ref" reference="lemme:iota"}). The first point will be deduced from the following lemma.
 
-:::: lem
+::: lem
 []{#lemme:h-iota label="lemme:h-iota"} For any $a\in\textbf{No}$ and any $\lambda\in\textbf{On}$, if we set $\lambda =\epsilon_\nu +\mu$ where $\epsilon_\nu$ is the unique epsilon number (possibly 0) such that $\epsilon_\nu<\lambda\leq \epsilon_{\nu+1}$, we have:
 
 ::: center
@@ -121,9 +121,9 @@ h(\iota_a\binampersand \lambda\ominus)&=&\omega^{\iota_a\binampersand(\lambda+1)
 h(\iota_a\binampersand \lambda\oplus)&=&\omega^{\iota_a}\binampersand \epsilon\oplus\binampersand\flat\mu\oplus\textrm{ avec }\lambda>0.
 \end{array}$
 :::
-::::
+:::
 
-::::::: demo
+::: demo
 We proceed by transfinite induction on $(l(a),\lambda)\in \overrightarrow{\textbf{On}\times\textbf{On}}$ (the lexicographical product of $\textbf{On}$ with itself).\
 Suppose that $l(a)=0$ i.e. $a=0$. By the definition of the map $h$ (see Theorem [\[theo:exp\]](#theo:exp){reference-type="ref" reference="theo:exp"} (2.)), we have $h(0)=\langle 0\ |\ 1/2^n\rangle=\omega^{-1}$.\
 Moreover, $1=\oplus=\langle 0\ |\ \emptyset\rangle$. So:
@@ -176,9 +176,9 @@ h(\iota_a)&=&\langle 0,\ h((\iota_a)^L)\ |\ h((\iota_a)^R),\ \omega^{\iota_a}/2^
 &=& \omega^{\iota_a\binampersand\ominus}\textrm{ (Theorem \ref{theo:signe-omega})}.
 \end{array}$
 :::
-:::::::
+:::
 
-***Proof of Theorem [\[theo:kappa-signe\]](#theo:kappa-signe){reference-type="ref" reference="theo:kappa-signe"} (1.).*** $\ \$ We proceed by tranfinite induction on $(l(a),n)\in\overrightarrow{\textbf{On}\times\mathbb{N}}$.
+***Proof of Theorem [\[theo:kappa-signe\]](#theo:kappa-signe){reference-type="ref" reference="theo:kappa-signe"} (1.).*** $\ \ $ We proceed by tranfinite induction on $(l(a),n)\in\overrightarrow{\textbf{On}\times\mathbb{N}}$.
 
 Suppose that $l(a)=0$, i.e. $a =0$. In the proof of the Theorem [\[theo:kappa-defi\]](#theo:kappa-defi){reference-type="ref" reference="theo:kappa-defi"}, we proved that $\kappa_0=\omega$. So $\kappa_0=\omega^{\omega^0}$ as desired.
 

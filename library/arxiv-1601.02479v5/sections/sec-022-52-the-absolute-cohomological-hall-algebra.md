@@ -8,621 +8,77 @@ pages: 46-50
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
 doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
+text_source: latex
+latex_prose_ratio: 0.944
+latex_coverage_ratio: 0.963
 ---
-W,µ ), a monoid in the
-monoidal category (D≥,lf (MMHM(NQ0 )), ⊠tw
-+ ), deﬁned by Kontsevich and Soibel-
-man (we recall the deﬁnition below). I.e. we obtain the “ambi ent perverse associated
-graded” monoid
-(86) Gr P(H(Aζ ,S
-W,µ )) = H
-(
-dim∗ ˜ωζ ,!
-µ H
-(
-Aζ ,S
-W,µ
-))
-.
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 47
-See Proposition 5.7 for a more precise statement. The notati on in the left hand
-side of (86) will be justiﬁed after we introduce the (ambient ) perverse ﬁltration in
-Section 5.3.
-5.2. The absolute cohomological Hall algebra. We start to complete Remark
-5.4 by recalling the deﬁnition of the cohomological algebra structure on H( Aζ ,S
-W,µ )
-from [30]. Extending (78, 79) we set
-Xζ -ss
-d′ ■ d′′,N :=Xζ -ss
-d′,d′′ ×Gd′ ×Gd′′ UN
-Xζ -ss
-d′ □ d′′,N :=(Xζ -ss
-d′ × Xζ -ss
-d′′ ) ×Gd′ ×Gd′′ UN .
-We denote by
-ω■ ,N : Xζ -ss,S
-d′ ■ d′′,N → Xζ -ss
-d′ ■ d′′,N
-ω□ ,N : Xζ -ss,S
-d′ □ d′′,N → Xζ -ss
-d′ □ d′′,N
-ω◦,N : Xζ -ss,S
-d′,d′′,N → Xζ -ss
-d′,d′′,N
-the inclusions, and we denote by φ mon
-■ ,□ ,◦ the vanishing cycle functors induced by
-Tr(W ) on the targets of these three maps. Then for n ∈ Z and N ∈ N there is an
-isomorphism
-Φ : H n
-c
-(
-r1,N,!ω∗
-■ ,Nφ mon
-■ QXζ -ss
-d′ ■ d′′ ,N
-→ ω∗
-□ ,N r1,N,!φ mon
-■ QXζ -ss
-d′ ■ d′′ ,N
-→ ω∗
-□ ,Nφ mon
-□ Lv
-Xζ -ss
-d′ □ d′′ ,N
-) ∨
-where v =∑
-a∈Q1 d′′
-s(a) d′
-t(a), provided by base change and the Verdier dual of the
-morphism
-QXζ -ss
-d′ □ d′′ ,N
-→ r1,N,∗QXζ -ss
-d′ ■ d′′,N
-.
-Similarly, we deﬁne the isomorphism
-Ψ : H n
-c
-(
-r2,N,!ω∗
-■ ,Nφ mon
-■ QXζ -ss
-d′ ■ d′′ ,N
-→ ω∗
-◦,N r2,N,!φ mon
-■ QXζ -ss
-d′ ■ d′′ ,N
-→ ω∗
-◦,Nφ mon
-◦ Lu
-Xζ -ss
-d′, d′′ ,N
-) ∨
-where u = ∑
-i∈Q0 d′
-i d′′
-i . Taking N suﬃciently large (for each cohomological de-
-gree), and composing the appropriate twist of Φ with Ψ −1, we deﬁne the isomor-
-phism
-αζ
-d′,d′′ : H c
-(
-Mζ -ss,S
-d′ ,φ mon
-Tr(W )ζ
-d′
-IC Mζ -ss
-d′
-(Q)
-) ∨
-⊠+ Hc
-(
-Mζ -ss,S
-d′′ ,φ mon
-Tr(W )ζ
-d′′
-IC Mζ -ss
-d′′
-(Q)
-) ∨
-→
-L−(d′′,d′)/2 ⊗ Hc
-(
-Mζ -ss,S
-d′,d′′ ,φ mon
-Tr(W )ζ
-d′ , d′
-IC Mζ -ss
-d′, d′′
-(Q)
-) ∨
-.
-Similarly, with notation as in (80), applying H c
-(
-ω∗
-Nφ mon
-Tr(W )ζ
-d,N
-) ∨
-to
-QXζ -ss
-d,N
-→ sζ
-d′,d′′,N,!QXζ -ss
-d′, d′′ ,N
-and passing to the limit, we obtain the morphism
-β
-ζ
-d′,d′′ : H c
-(
-Mζ -ss,S
-d′,d′′ ,φ mon
-Tr(W )ζ
-d′, d′
-IC Mζ -ss
-d′, d′′
-(Q)
-) ∨
-→ L(d′,d′′)/2⊗Hc
-(
-Mζ -ss,S
-d ,φ mon
-Tr(W )ζ
-d
-IC Mζ -ss
-d
-(Q)
-) ∨
-.
-We set
-H(Aζ ,S
-W,µ ) := H c(Mζ -ss,S
-µ , ICζ
-W,µ )∨
-and
-H(∗ζ ,S
-W,µ ) :=
-⨁
-d′,d′′∈NQ0
-(L−(d′,d′′)/2 ⊗
-β
-ζ
-d′,d′′ ) ◦ (L⟨d′′,d′⟩/2 ⊗
-αζ
-d′,d′′ )
-48 BEN DA VISON AND SVEN MEINHARDT
-to obtain the “absolute cohomological Hall algebra” in the sense of S ection 1.2.
-This is precisely the CoHA deﬁned and studied by Kontsevich and Soibe lman in
-[30, Sec.7].
-5.3. The ambient perverse ﬁltration. For f , d ∈ NQ0 set
-γ (f , d) = ( d, d)/2 − f · d .
-Since Mζ
-f ,d is smooth, and πζ
-f ,d : Mζ
-f ,d → Mζ -ss
-d is proper, by the decomposition
-theorem there is an isomorphism
-πζ
-f ,d,!Lγ (f ,d)
-Mζ
-f , d
-∼
-= H
-(
-πζ
-f ,d,!Lγ (f ,d)
-Mζ
-f , d
-)
-.
-This decomposition is not canonical, but the mere existence of such a decomposition
-implies that the natural map
-Γ :πζ
-f ,d,!Lγ (f ,d)
-Mζ
-f , d
-→τ≥pπζ
-f ,d,!Lγ (f ,d)
-Mζ
-f , d
-admits a right inverse, where τ≥p is the truncation functor with respect to the
-natural t-structure on the category of monodromic mixed Hodge modules. We
-deduce that the morphism Γ′ given by the composition of natural maps
-πζ
-f ,d,!φ mon
-T r(W )ζ
-f , d
-Lγ (f ,d)
-Mζ
-f , d
-∼= /d47/d47
-φ mon
-T r(W )ζ
-d
-πζ
-f ,d,!Lγ (f ,d)
-Mζ
-f , d
-φ mon
-T r(W )ζ
-d
-Γ
-/d117/d117❥❥❥❥❥❥❥❥❥❥❥❥❥❥❥
-φ mon
-T r(W )ζ
-d
-τ≥pπζ
-f ,d,!Lγ (f ,d)
-Mζ
-f , d
-∼= /d47/d47
-τ≥pπζ
-f ,d,!φ mon
-T r(W )ζ
-f , d
-Lγ (f ,d)
-Mζ
-f , d
-admits a right inverse Σ. With
-˜ωζ
-d : Mζ -ss,S
-d → Mζ -ss
-d
-˜ωζ
-f ,d : Mζ ,S
-f ,d → Mζ
-f ,d
-the natural inclusions, there is a natural isomorphism given by base change
-Ω : πζ ,S
-f ,d,! ˜ωζ ,∗
-f ,dφ mon
-T r(W )ζ
-f , d
-Lγ (f ,d)
-Mζ
-f , d
-→ ˜ωζ ,∗
-d πζ
-f ,d,!φ mon
-T r(W )ζ
-f , d
-Lγ (f ,d)
-Mζ
-f , d
-.
-Setting
-Pp
-(
-Hc
-(
-Mζ ,S
-f ,d ,φ mon
-T r(W )ζ
-f , d
-Lγ (f ,d)
-) ∨)
-:= Hc
-(
-Mζ ,S
-f ,d , ˜ωζ ,∗
-d τ≥−pπζ
-f ,d,!φ mon
-T r(W )ζ
-f , d
-Lγ (f ,d)
-) ∨
-∼
-= H
-(
-Mζ ,S
-f ,d , ˜ωζ ,!
-d τ≤pπζ
-f ,d,∗φ mon
-T r(W )ζ
-f , d
-L−(d,d)/2
-)
-we consider the morphism ιp := H c
-(
-˜ωζ ,∗
-f ,dΓ′ ◦ Ω
-) ∨
-. This is a split injection, since it
-is the dual of a split surjection with right inverse H c(Ω −1 ◦ ˜ωζ ,∗
-f ,dΣ). We thus arrive
-at a canonical ﬁltration, indexed by p ∈ Z, which we call the ambient perverse
-ﬁltration:
-Pp
-(
-Hc
-(
-Mζ ,S
-f ,d ,φ mon
-T r(W )ζ
-f , d
-Lγ (f ,d)
-) ∨)
-⊂ Hc
-(
-Mζ ,S
-f ,d ,φ mon
-T r(W )ζ
-f , d
-Lγ (f ,d)
-) ∨
-.
-Warning 5.5. Throughout the paper, we always consider the perverse trunc ation
-functors for Mζ
-d, and never the truncation functors for monodromic mixed Hod ge
-modules on Mζ ,S
-d . As a result, the associated graded of
-Hc
-(
-Mζ ,S
-f ,d ,φ mon
-T r(W )ζ
-f , d
-Lγ (f ,d)
-) ∨
-∼
-= H
-(
-Mζ ,S
-d , ˜ωζ ,!
-d πζ
-f ,d,∗φ mon
-T r(W )ζ
-f , d
-L−(d,d)/2
-)
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 49
-is in general not isomorphic as a graded object to the hyperco homology of the total
-perverse cohomology of ˜ωζ ,!
-d πζ
-f ,d,∗φ mon
-T r(W )ζ
-f , d
-L−(d,d)/2, for which the grading comes
-from the perverse truncation functors for Mζ ,S
-d . For example, let Q be the one loop
-quiver, let W = 0 , let MS ⊂ M(Q) be the reduced substack, the closed points of
-which correspond to nilpotent CQ-representations, let d = f = 1 , and let ζ be any
-stability condition on Q. Then there are isomorphisms
-Mζ
-f ,d
-∼
-= Mζ -ss
-d
-∼
-= A1
-Mζ ,S
-f ,d
-∼
-= Mζ -ss,S
-d
-∼
-= {0}
-and we may identify the (reduced) nilpotent locus with 0 ∈ A1, and the map πζ
-f ,d
-with the identity map. We have (d, d) = 0 , and so the perverse cohomology of
-πζ
-f ,dL−(d,d)
-Mζ
-f , d
-∼
-= QA1 is concentrated in degree 1, and so
-GrP
-(
-H
-(
-Mζ ,S
-f ,d , ˜ωζ ,!
-d πζ
-f ,d,∗φ mon
-T r(W )ζ
-f , d
-L−(d,d)/2
-))
-is concentrated in degree 1. On the other hand ˜ωζ ,!
-d QA1 ∼
-= L{0} is concentrated in
-perverse degree 2.
-Furthermore, since ˜ωζ ,!
-d is in general not exact, there is no obvious way to use the
-decomposition theorem to deduce that ˜ωζ ,!
-d πζ
-f ,d,∗φ mon
-T r(W )ζ
-f , d
-L−(d,d)/2 is isomorphic
-to its total perverse cohomology, for the perverse truncati on functors associated to
-Mζ ,S
-d . In fact it is not hard to produce examples in which this state ment is false,
-for instance by modifying the above example by setting MS ⊂ M(Q) to be the open
-substack of Q-representations for which the loop of Q acts invertibly.
-Remark 5.6. The distinction between diﬀerent perverse ﬁltrations exem pliﬁed by
-Warning 5.5 is the reason for our being explicit about pickin g the ambient perverse
-ﬁltration. Since this is the only type of ﬁltration we consid er, we will omit the word
-ambient from now on.
-The perverse ﬁltration is well-deﬁned in the limit f ≫ 0, as for ﬁxed d ∈ NQ0 ,
-ﬁxed cohomological degree n, and for f ′ > f ≫ 0, in the commutative diagram
-Hn
-c
-(
-Mζ ,S
-f ′,d,πζ
-f ′,d,!Lγ (f ′,d)
-Mζ
-f ′ , d
-)
-/d15/d15
-Hn
-c
-(
-Mζ ,S
-f ,d ,πζ
-f ,d,!Lγ (f ,d)
-Mζ
-f , d
-)
-/d111/d111
-/d15/d15
-Hn
-c
-(
-Mζ ,S
-f ′,d,τ≥p
-(
-πζ
-f ′,d,!Lγ (f ′,d)
-Mζ
-f ′ , d
-))
-Hn
-c
-(
-Mζ ,S
-f ,d ,τ≥p
-(
-πζ
-f ,d,!Lγ (f ,d)
-Mζ
-f , d
-))
-/d111/d111
-the horizontal maps are isomorphisms by the argument of Lemma 4.1 .
-Since the constituent morphisms of H( ∗ζ ,S
-W,µ ) lift to morphisms of monodromic
-mixed Hodge modules on Mζ -ss
-µ , it follows that H( ∗ζ ,S
-W,µ ) respects the perverse
-ﬁltration, and from the deﬁnitions we obtain the ﬁrst statement of the following
-proposition, while the second is Proposition 4.4.
-Proposition 5.7. There is a natural isomorphism of monoids in D≥,lf (MMHM(NQ0 ))
-(87)
-GrP
-(
-H(Aζ ,S
-W,µ ), H(∗ζ ,S
-W,µ ), H(Aζ
-W,0)
-)
-∼
-= H
-(
-dim∗ ˜ωζ ,!
-µ
-(
-H(Aζ
-W,µ ), H(˜∗ζ
-W,µ ), ICζ -ss
-M0 (Q)
-))
-.
-Furthermore, forgetting the algebra structure, there is a n oncanonical isomorphism
-of underlying monodromic mixed Hodge modules GrP(H(Aζ ,S
-W,µ )) ∼
-= H(Aζ ,S
-W,µ ).
-50 BEN DA VISON AND SVEN MEINHARDT
-The isomorphism of algebras is what justiﬁes the notation of (86). T he following
-technical lemma is what will enable us to use the localised coproduct on H(Aζ ,S
-W,µ )
-to induce a Hopf algebra structure on the associated graded algeb ra (87). It is only
-a very slight variation of [14, Prop.1.4.4], but we include the proof for c ompleteness.
-Lemma 5.8. Let V be a vector bundle on Md, and let eu(V ) ∈ H(Md, Q) be the
-corresponding equivariant Euler class. Then
-eu(V ) · Pp(Hc(MS,ζ -ss
-d , ICζ
-W,d)∨) ⊂ Pp+2 dim(V )(Hc(MS,ζ -ss
-d , ICζ
-W,d)∨).
-Proof. Let pr : T (V ) → Mζ -ss
-d be the projection from the total space of V restricted
-to Mζ -ss
-d , and let i : Mζ -ss
-d → T (V ) be the inclusion of the zero section. Let Tf (V )
-be the total space of the bundle V pulled back along the map Mζ
-f ,d → Mζ -ss
-d deﬁned
-by forgetting the framing, and let pr f and if denote the corresponding projections
-and inclusions. Let T r(W )V,f be the function induced by Tr( W ) on Tf (V ) and let
-N = H c(Mζ ,S
-f ,d ,φ mon
-T r(W )ζ
-f , d
-QMζ
-f , d
-)∨. Then we have the equality of morphisms
-(88)
-· eu(V )|N = H
-(
-˜ωζ ,!
-f ,d prf ,∗φ mon
-T r(W )V, f
-(
-if ,∗QMζ
-f , d
-→ L− dim(V )
-Tf (V ) → if ,∗L− dim(V )
-Mζ
-f , d
-))
-and the action of ·eu(V ) on H c(Mζ -ss,S
-d , ICζ
-W,d)∨ is given by letting f ≫ 0 in
-(88) and twisting by L(d,d)/2. This morphism respects the perverse ﬁltration on
-H(Mζ ,S
-f ,d ,φ mon
-T r(W )ζ
-f , d
-L(d,d)/2
-Mζ
-f , d
-) (with the shift by 2 dim C(V )) since
-πζ
-f ,d,∗ prf ,∗φ mon
-T r(W )V, f
-(
-if ,∗L(d,d)/2
-Mζ
-f , d
-→ if ,∗L− dim(V )+(d,d)/2
-Mζ
-f , d
-)
-is a map of complexes of mixed Hodge modules on Mζ -ss
-d . The result then follows
-from the deﬁnition of the perverse ﬁltration on H c(Mζ -ss,S
-d , ICζ
-W,d)∨. □
-We ﬁnish this section with the “absolute” version of Corollary 4.11.
-Corollary 5.9. There is a canonical inclusion
-(89) Υ ζ ,S,abs
-W,µ : H(B C*)vir ⊗ BPSζ ,S
-W,µ → H
-(
-Aζ ,S
-W,µ
-)
-Proof. There is a natural inclusion L1/2 ⊗ BPSζ ,S
-W,µ → H
-(
-pζ
-µ ,∗ICζ
-W,µ
-)
-since BPSζ ,S
-W,µ
-is precisely the ﬁrst piece of the perverse ﬁltration of the target. Via the H(B C*)-
-action on H
-(
-Aζ ,S
-W,µ
-)
-, this gives rise to a map Υ ζ ,S,abs
-W,µ , which respects the perverse
-ﬁltration by Lemma 5.8. After passing to the associated graded of t he perverse
-ﬁltration, it is an injection, since it is obtained by restricting the (split ) injection
-of Corollary 4.11 to the locus of points in S. Therefore Υ ζ ,S,abs
-W,µ is an injection. □
+We start to complete Remark [\[absRem\]](#absRem){reference-type="ref" reference="absRem"} by recalling the definition of the cohomological algebra structure on $\mathop{\mathrm{H}}(\mathcal{A}^{\upzeta,\mathcal{S}}_{W,\upmu})$ from [@KS2]. Extending ([\[XNdef\]](#XNdef){reference-type="ref" reference="XNdef"}, [\[XXNdef\]](#XXNdef){reference-type="ref" reference="XXNdef"}) we set $$\begin{aligned}
+X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\blacksquare\mathop{\mathrm{\mathbf{d}}}'',N} \colonequals &X_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}}}\times_{G_{\mathop{\mathrm{\mathbf{d}}}'}\times G_{\mathop{\mathrm{\mathbf{d}}}''}}U_N\\
+X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\square\mathop{\mathrm{\mathbf{d}}}'',N} \colonequals &(X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'}\times X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}''})\times _{G_{\mathop{\mathrm{\mathbf{d}}}'}\times G_{\mathop{\mathrm{\mathbf{d}}}''}}U_N.
+\end{aligned}$$ We denote by $$\begin{aligned}
+\omega_{\blacksquare,N}\colon &X^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}'\blacksquare\mathop{\mathrm{\mathbf{d}}}'',N}\rightarrow X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\blacksquare\mathop{\mathrm{\mathbf{d}}}'',N}\\
+\omega_{\square,N}\colon &X^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}'\square\mathop{\mathrm{\mathbf{d}}}'',N}\rightarrow X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\square\mathop{\mathrm{\mathbf{d}}}'',N}\\
+\omega_{\circ,N}\colon &X^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}\rightarrow X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}
+\end{aligned}$$ the inclusions, and we denote by $\upphi^{\mathop{\mathrm{mon}}}_{\blacksquare,\square,\circ}$ the vanishing cycle functors induced by $\mathop{\mathrm{Tr}}(W)$ on the targets of these three maps. Then for $n\in\mathbb{Z}$ and $N\in\mathbb{N}$ there is an isomorphism $$\Phi\colon \mathop{\mathrm{H}}_c^n\left(r_{1,N,!}\omega_{\blacksquare,N}^*\upphi^{\mathop{\mathrm{mon}}}_{\blacksquare}\mathbb{Q}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\blacksquare\mathop{\mathrm{\mathbf{d}}}'',N}}\rightarrow\omega_{\square,N}^*r_{1,N,!}\upphi^{\mathop{\mathrm{mon}}}_{\blacksquare}\mathbb{Q}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\blacksquare\mathop{\mathrm{\mathbf{d}}}'',N}}\rightarrow \omega_{\square,N}^*\upphi^{\mathop{\mathrm{mon}}}_{\square}\mathbb{L}^{v}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\square\mathop{\mathrm{\mathbf{d}}}'',N}}\right)^{\vee}$$ where $v=\sum_{a\in Q_1}\mathop{\mathrm{\mathbf{d}}}''_{s(a)}\mathop{\mathrm{\mathbf{d}}}'_{t(a)}$, provided by base change and the Verdier dual of the morphism $$\mathbb{Q}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\square\mathop{\mathrm{\mathbf{d}}}'',N}}\rightarrow r_{1,N,*}\mathbb{Q}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\blacksquare\mathop{\mathrm{\mathbf{d}}}'',N}}.$$ Similarly, we define the isomorphism $$\Psi\colon \mathop{\mathrm{H}}_c^n\left(r_{2,N,!}\omega_{\blacksquare,N}^*\upphi^{\mathop{\mathrm{mon}}}_{\blacksquare}\mathbb{Q}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\blacksquare\mathop{\mathrm{\mathbf{d}}}'',N}}\rightarrow\omega_{\circ,N}^*r_{2,N,!}\upphi^{\mathop{\mathrm{mon}}}_{\blacksquare}\mathbb{Q}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'\blacksquare\mathop{\mathrm{\mathbf{d}}}'',N}}\rightarrow \omega_{\circ,N}^*\upphi^{\mathop{\mathrm{mon}}}_{\circ}\mathbb{L}^{u}_{X^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}}\right)^{\vee}$$ where $u=\sum_{i\in Q_0}\mathop{\mathrm{\mathbf{d}}}'_i\mathop{\mathrm{\mathbf{d}}}''_i$. Taking $N$ sufficiently large (for each cohomological degree), and composing the appropriate twist of $\Phi$ with $\Psi^{-1}$, we define the isomorphism $$\begin{aligned}
+&\overline{\upalpha}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\colon \mathop{\mathrm{H}}_c\left(\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}'}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}'}}\mathcal{IC}_{\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}'}}(\mathbb{Q})\right)^{\vee}\boxtimes_+\mathop{\mathrm{H}}_c\left(\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}''}}\mathcal{IC}_{\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}''}}(\mathbb{Q})\right)^{\vee}\rightarrow\\&\mathbb{L}^{-(\mathop{\mathrm{\mathbf{d}}}'',\mathop{\mathrm{\mathbf{d}}}')/2}\otimes\mathop{\mathrm{H}}_c\left(\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'}}\mathcal{IC}_{\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}}(\mathbb{Q})\right)^{\vee}.
+\end{aligned}$$ Similarly, with notation as in ([\[preLim\]](#preLim){reference-type="ref" reference="preLim"}), applying $\mathop{\mathrm{H}}_c\left(\omega_N^*\upphi^{\mathop{\mathrm{mon}}}_{\mathrm{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}},N}^{\upzeta}}\right)^{\vee}$ to $$\mathbb{Q}_{X_{\mathop{\mathrm{\mathbf{d}}},N}^{\upzeta\mathop{\mathrm{-ss}}}}\rightarrow s^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N,!}\mathbb{Q}_{X_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'',N}^{\upzeta\mathop{\mathrm{-ss}}}}$$ and passing to the limit, we obtain the morphism $$\overline{\upbeta}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}\colon\mathop{\mathrm{H}}_c\left(\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'}}\mathcal{IC}_{\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}}(\mathbb{Q})\right)^{\vee}\rightarrow \mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'')/2}\otimes \mathop{\mathrm{H}}_c\left(\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}},\upphi^{\mathop{\mathrm{mon}}}_{\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}}\mathcal{IC}_{\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}}(\mathbb{Q})\right)^{\vee}.$$ We set $$\mathop{\mathrm{H}}(\mathop{\mathrm{\mathcal{A}}}_{W,\upmu}^{\upzeta,\mathcal{S}})\colonequals \mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\upmu},\mathfrak{IC}^{\upzeta}_{W,\upmu})^{\vee}$$ and $$\mathop{\mathrm{H}}(\ast_{W,\upmu}^{\upzeta,\mathcal{S}})\colonequals \bigoplus_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''\in\mathbb{N}^{Q_0}} (\mathbb{L}^{-(\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}'')/2}\otimes\overline{\upbeta}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''})\circ(\mathbb{L}^{\langle \mathop{\mathrm{\mathbf{d}}}'',\mathop{\mathrm{\mathbf{d}}}'\rangle/2}\otimes\overline{\upalpha}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''})$$ to obtain the "absolute cohomological Hall algebra" in the sense of Section [\[abvsrel\]](#abvsrel){reference-type="ref" reference="abvsrel"}. This is precisely the CoHA defined and studied by Kontsevich and Soibelman in [@KS2 Sec.7].
+
+## The ambient perverse filtration {#PervSec}
+
+For $\mathbf{f},\mathop{\mathrm{\mathbf{d}}}\in \mathbb{N}^{Q_0}$ set $$\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})=(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2-\mathbf{f}\cdot\mathop{\mathrm{\mathbf{d}}}.$$ Since $\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}$ is smooth, and $\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\colon \mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\rightarrow \mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}$ is proper, by the decomposition theorem there is an isomorphism $$\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\cong\mathop{\mathrm{\mathcal{H}}}\left(\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\right).$$ This decomposition is not canonical, but the mere existence of such a decomposition implies that the natural map $$\Upgamma\colon \uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\rightarrow \uptau_{\geq p}\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}$$ admits a right inverse, where $\uptau_{\geq p}$ is the truncation functor with respect to the natural t-structure on the category of monodromic mixed Hodge modules. We deduce that the morphism $\Upgamma'$ given by the composition of natural maps $$\xymatrix{
+\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\ar[r]^-{\cong}&\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\ar[dl]_>>>>>{\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\Upgamma}\\
+\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\uptau_{\geq p}\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\ar[r]^-{\cong}&\uptau_{\geq p}\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}
+}$$ admits a right inverse $\Sigma$. With $$\begin{aligned}
+\tilde{\omega}^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}\colon &\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}\rightarrow \mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}\\
+\tilde{\omega}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\colon &\mathcal{M}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\rightarrow \mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}
+\end{aligned}$$ the natural inclusions, there is a natural isomorphism given by base change $$\Omega\colon \uppi\hspace{0.05em}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\tilde{\omega}^{\upzeta,*}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\rightarrow  \tilde{\omega}^{\upzeta,*}_{\mathop{\mathrm{\mathbf{d}}}}\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}.$$ Setting $$\begin{aligned}
+\mathop{\mathrm{\mathfrak{P}}}^p\left(\mathop{\mathrm{H}}_c\left(\mathcal{M}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}},\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}\right)^{\vee}\right)\colonequals &\mathop{\mathrm{H}}_c\left(\mathcal{M}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}},\tilde{\omega}^{\upzeta,*}_{\mathop{\mathrm{\mathbf{d}}}}\uptau_{\geq {}-p}\uppi\hspace{0.05em}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}\right)^{\vee}\\
+\cong&\mathop{\mathrm{H}}\left(\mathcal{M}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}},\tilde{\omega}^{\upzeta,!}_{\mathop{\mathrm{\mathbf{d}}}}\uptau_{\leq p}\uppi\hspace{0.05em}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}^{-(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}\right)
+\end{aligned}$$ we consider the morphism $\iota_p\colonequals\mathop{\mathrm{H}}_c\left(\tilde{\omega}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,*}\Upgamma'\circ \Omega\right)^{\vee}$. This is a split injection, since it is the dual of a split surjection with right inverse $\mathop{\mathrm{H}}_c(\Omega^{-1}\circ\tilde{\omega}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,*}\Sigma)$. We thus arrive at a canonical filtration, indexed by $p\in\mathbb{Z}$, which we call the ambient perverse filtration: $$\mathop{\mathrm{\mathfrak{P}}}^p\left(\mathop{\mathrm{H}}_c\left(\mathcal{M}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}},\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}\right)^{\vee}\right)\subset \mathop{\mathrm{H}}_c\left(\mathcal{M}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}},\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}\right)^{\vee}.$$
+
+::: warning
+[]{#PervWarning label="PervWarning"} Throughout the paper, we always consider the perverse truncation functors for $\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}$, and never the truncation functors for monodromic mixed Hodge modules on $\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}}$. As a result, the associated graded of $$\mathop{\mathrm{H}}_c\left(\mathcal{M}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}},\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}\right)^{\vee}\cong \mathop{\mathrm{H}}\left(\mathcal{M}^{\upzeta,\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}},\tilde{\omega}^{\upzeta,!}_{\mathop{\mathrm{\mathbf{d}}}}\uppi\hspace{0.05em}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}^{{}-(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}\right)$$ is in general *not* isomorphic as a graded object to the hypercohomology of the total perverse cohomology of $\tilde{\omega}^{\upzeta,!}_{\mathop{\mathrm{\mathbf{d}}}}\uppi\hspace{0.05em}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}^{{}-(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}$, for which the grading comes from the perverse truncation functors for $\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}}$. For example, let $Q$ be the one loop quiver, let $W=0$, let $\mathfrak{M}^{\mathcal{S}}\subset \mathfrak{M}(Q)$ be the reduced substack, the closed points of which correspond to nilpotent $\mathbb{C}Q$-representations, let $\mathop{\mathrm{\mathbf{d}}}=\mathbf{f}=1$, and let $\upzeta$ be any stability condition on $Q$. Then there are isomorphisms $$\begin{aligned}
+\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\cong\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}\cong\mathbb{A}^1\\
+\mathcal{M}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\cong\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}}\cong \{0\}
+\end{aligned}$$ and we may identify the (reduced) nilpotent locus with $0\in\mathbb{A}^1$, and the map $\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$ with the identity map. We have $(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})=0$, and so the perverse cohomology of $\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\mathbb{L}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}^{-(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})}\cong\mathbb{Q}_{\mathbb{A}^1}$ is concentrated in degree 1, and so $$\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}\left(\mathop{\mathrm{H}}\left(\mathcal{M}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}},\tilde{\omega}^{\upzeta,!}_{\mathop{\mathrm{\mathbf{d}}}}\uppi\hspace{0.05em}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}^{{}-(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}\right)\right)$$ is concentrated in degree 1. On the other hand $\tilde{\omega}^{\upzeta,!}_{\mathop{\mathrm{\mathbf{d}}}}\mathbb{Q}_{\mathbb{A}^1}\cong \mathbb{L}_{\{0\}}$ is concentrated in perverse degree 2.
+
+Furthermore, since $\tilde{\omega}^{\upzeta,!}_{\mathop{\mathrm{\mathbf{d}}}}$ is in general not exact, there is no obvious way to use the decomposition theorem to deduce that $\tilde{\omega}^{\upzeta,!}_{\mathop{\mathrm{\mathbf{d}}}}\uppi\hspace{0.05em}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}^{\upzeta}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\mathbb{L}^{-(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}$ is isomorphic to its total perverse cohomology, for the perverse truncation functors associated to $\mathcal{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}}$. In fact it is not hard to produce examples in which this statement is false, for instance by modifying the above example by setting $\mathfrak{M}^{\mathcal{S}}\subset \mathfrak{M}(Q)$ to be the open substack of $Q$-representations for which the loop of $Q$ acts invertibly.
+:::
+
+::: remark
+The distinction between different perverse filtrations exemplified by Warning [\[PervWarning\]](#PervWarning){reference-type="ref" reference="PervWarning"} is the reason for our being explicit about picking the *ambient* perverse filtration. Since this is the only type of filtration we consider, we will omit the word ambient from now on.
+:::
+
+The perverse filtration is well-defined in the limit $\mathbf{f}\gg0$, as for fixed $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$, fixed cohomological degree $n$, and for $\mathbf{f}'>\mathbf{f}\gg 0$, in the commutative diagram $$\xymatrix{
+\mathop{\mathrm{H}}_c^n\left(\mathcal{M}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}},\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}},!}\mathbb{L}^{\upgamma(\mathbf{f}',\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\right)\ar[d] &\mathop{\mathrm{H}}_c^n\left(\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}},\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\right)\ar[l]\ar[d]\\
+\mathop{\mathrm{H}}_c^n\left(\mathcal{M}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}},\uptau_{\geq p}\left(\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}},!}\mathbb{L}^{\upgamma(\mathbf{f}',\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f}',\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\right)\right)& \mathop{\mathrm{H}}_c^n\left(\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}},\uptau_{\geq p}\left(\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},!}\mathbb{L}^{\upgamma(\mathbf{f},\mathop{\mathrm{\mathbf{d}}})}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\right)\right)\ar[l],
+}$$ the horizontal maps are isomorphisms by the argument of Lemma [\[appLem\]](#appLem){reference-type="ref" reference="appLem"}.
+
+Since the constituent morphisms of $\mathop{\mathrm{H}}(\ast_{W,\upmu}^{\upzeta,\mathcal{S}})$ lift to morphisms of monodromic mixed Hodge modules on $\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu}$, it follows that $\mathop{\mathrm{H}}(\ast_{W,\upmu}^{\upzeta,\mathcal{S}})$ respects the perverse filtration, and from the definitions we obtain the first statement of the following proposition, while the second is Proposition [\[bcprop\]](#bcprop){reference-type="ref" reference="bcprop"}.
+
+::: proposition
+[]{#PCoha label="PCoha"} There is a natural isomorphism of monoids in $\mathcal{D}^{\geq, \mathrm{lf}}(\mathop{\mathrm{MMHM}}(\mathbb{N}^{Q_0}))$ $$\label{AGA}
+\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}\left(\mathop{\mathrm{H}}(\mathop{\mathrm{\mathcal{A}}}_{W,\upmu}^{\upzeta,\mathcal{S}}),\mathop{\mathrm{H}}(\ast_{W,\upmu}^{\upzeta,\mathcal{S}}),\mathop{\mathrm{H}}(\mathop{\mathrm{\mathcal{A}}}_{W,0}^{\upzeta})\right)\cong\mathop{\mathrm{\mathcal{H}}}\left(\dim_*\tilde{\omega}^{\upzeta,!}_{\upmu} \left(\mathop{\mathrm{\mathcal{H}}}(\mathcal{A}^{\upzeta}_{W,\upmu}),\mathop{\mathrm{\mathcal{H}}}(\mathop{\mathrm{\tilde{\ast}}}^{\upzeta}_{W,\upmu}),\mathcal{IC}_{\mathcal{M}_0}^{\upzeta\mathop{\mathrm{-ss}}}(\mathbb{Q})\right)\right).$$ Furthermore, forgetting the algebra structure, there is a noncanonical isomorphism of underlying monodromic mixed Hodge modules $\mathop{\mathrm{Gr}}_{\mathop{\mathrm{\mathfrak{P}}}}(\mathop{\mathrm{H}}(\mathop{\mathrm{\mathcal{A}}}_{W,\upmu}^{\upzeta,\mathcal{S}}))\cong\mathop{\mathrm{H}}(\mathop{\mathrm{\mathcal{A}}}_{W,\upmu}^{\upzeta,\mathcal{S}})$.
+:::
+
+The isomorphism of algebras is what justifies the notation of ([\[premdef\]](#premdef){reference-type="ref" reference="premdef"}). The following technical lemma is what will enable us to use the localised coproduct on $\mathop{\mathrm{H}}(\mathop{\mathrm{\mathcal{A}}}^{\upzeta,\mathcal{S}}_{W,\upmu})$ to induce a Hopf algebra structure on the associated graded algebra ([\[AGA\]](#AGA){reference-type="ref" reference="AGA"}). It is only a very slight variation of [@deCat12 Prop.1.4.4], but we include the proof for completeness.
+
+::: lemma
+[]{#HCM label="HCM"} Let $V$ be a vector bundle on $\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}$, and let $\mathfrak{eu}(V)\in\mathop{\mathrm{H}}(\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}},\mathbb{Q})$ be the corresponding equivariant Euler class. Then $$\mathfrak{eu}(V)\cdot \mathop{\mathrm{\mathfrak{P}}}^p(\mathop{\mathrm{H}}_c(\mathfrak{M}^{\mathcal{S},\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta})^{\vee})\subset \mathop{\mathrm{\mathfrak{P}}}^{p+2\dim(V)}(\mathop{\mathrm{H}}_c(\mathfrak{M}^{\mathcal{S},\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta})^{\vee}).$$
+:::
+
+::: proof
+*Proof.* Let $\mathop{\mathrm{pr}}\colon T(V)\rightarrow \mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$ be the projection from the total space of $V$ restricted to $\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$, and let $i\colon \mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}\rightarrow T(V)$ be the inclusion of the zero section. Let $T_\mathbf{f}(V)$ be the total space of the bundle $V$ pulled back along the map $\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\rightarrow\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}$ defined by forgetting the framing, and let $\mathop{\mathrm{pr}}_{\mathbf{f}}$ and $i_{\mathbf{f}}$ denote the corresponding projections and inclusions. Let $\mathcal{T}r(W)_{V,\mathbf{f}}$ be the function induced by $\mathop{\mathrm{Tr}}(W)$ on $T_{\mathbf{f}}(V)$ and let $\mathcal{N}=\mathop{\mathrm{H}}_c(\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}},\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{\mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}})^{\vee}$. Then we have the equality of morphisms $$\label{euup}
+\cdot \mathfrak{eu}(V)|_{\mathcal{N}}=\mathop{\mathrm{H}}\left(\tilde{\omega}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,!}\mathop{\mathrm{pr}}_{\mathbf{f},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{V,\mathbf{f}}}\left(i_{\mathbf{f},*}\mathbb{Q}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\rightarrow \mathbb{L}^{-\dim(V)}_{T_{\mathbf{f}}(V)}\rightarrow  i_{\mathbf{f},*}\mathbb{L}^{-\dim(V)}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\right)\right)$$ and the action of $\cdot\mathfrak{eu}(V)$ on $\mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta})^{\vee}$ is given by letting $\mathbf{f}\gg 0$ in ([\[euup\]](#euup){reference-type="ref" reference="euup"}) and twisting by $\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}$. This morphism respects the perverse filtration on $\mathop{\mathrm{H}}(\mathcal{M}^{\upzeta,\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}},\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}})$ (with the shift by $2\dim_{\mathbb{C}}(V)$) since $$\uppi\hspace{0.05em}^{\upzeta} _{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}\mathop{\mathrm{pr}}_{\mathbf{f},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{V,\mathbf{f}}}\left(i_{\mathbf{f},*}\mathbb{L}^{(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\rightarrow i_{\mathbf{f},*}\mathbb{L}^{-\dim(V)+(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\right)$$ is a map of complexes of mixed Hodge modules on $\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$. The result then follows from the definition of the perverse filtration on $\mathop{\mathrm{H}}_c(\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathop{\mathrm{\mathbf{d}}}},\mathfrak{IC}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta})^{\vee}$. ◻
+:::
+
+We finish this section with the "absolute" version of Corollary [\[inccor\]](#inccor){reference-type="ref" reference="inccor"}.
+
+::: corollary
+[]{#Inccor label="Inccor"} There is a canonical inclusion $$\label{caninc2}
+\Upsilon_{W,\upmu}^{\upzeta,\mathcal{S},\mathtt{abs}}\colon\mathop{\mathrm{H}}(\mathop{\mathrm{B\mathbb{C}^*}})_{\mathop{\mathrm{vir}}}\otimes \mathop{\mathrm{BPS}}^{\upzeta,\mathcal{S}}_{W,\upmu}\rightarrow \mathop{\mathrm{H}}\left(\mathcal{A}^{\upzeta,\mathcal{S}}_{W,\upmu}\right)$$
+:::
+
+::: proof
+*Proof.* There is a natural inclusion $\mathbb{L}^{1/2}\otimes\mathop{\mathrm{BPS}}^{\upzeta,\mathcal{S}}_{W,\upmu}\rightarrow \mathop{\mathrm{H}}\left(p_{\upmu,*}^{\upzeta}\mathfrak{IC}_{W,\upmu}^{\upzeta}\right)$ since $\mathop{\mathrm{BPS}}^{\upzeta,\mathcal{S}}_{W,\upmu}$ is precisely the first piece of the perverse filtration of the target. Via the $\mathop{\mathrm{H}}(\mathop{\mathrm{B\mathbb{C}^*}})$-action on $\mathop{\mathrm{H}}\left(\mathcal{A}^{\upzeta,\mathcal{S}}_{W,\upmu}\right)$, this gives rise to a map $\Upsilon_{W,\upmu}^{\upzeta,\mathcal{S},\mathtt{abs}}$, which respects the perverse filtration by Lemma [\[HCM\]](#HCM){reference-type="ref" reference="HCM"}. After passing to the associated graded of the perverse filtration, it is an injection, since it is obtained by restricting the (split) injection of Corollary [\[inccor\]](#inccor){reference-type="ref" reference="inccor"} to the locus of points in $\mathcal{S}$. Therefore $\Upsilon_{W,\upmu}^{\upzeta,\mathcal{S},\mathtt{abs}}$ is an injection. ◻
+:::

@@ -7,10 +7,10 @@ section_number: 6
 pages: 16-18
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
-text_source: latex
-latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.904
 doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru ncated"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.976
 ---
 []{#distinct-reg label="distinct-reg"}
 
@@ -27,25 +27,25 @@ We denote by $\mathcal D_5(n)$ the set of distinct $5$-regular partitions of $n$
 ::: proof
 *Proof.* If $m\geq 2$ and $0<s<m$, we use the notation $$\theta(q^s;q^m):=(q^s;q^m)_\infty(q^{m-s};q^s)_\infty.$$
 
-As explained in [@KMR pg. 225], if we first replace $q$ by $q^{10}$ and then take $u=-q^3$, $v=q$, $x=q^4$ and $y=q^3$, in [@KMR Identity (8.1)], we obtain $$\begin{align}
+As explained in [@KMR pg. 225], if we first replace $q$ by $q^{10}$ and then take $u=-q^3$, $v=q$, $x=q^4$ and $y=q^3$, in [@KMR Identity (8.1)], we obtain $$\begin{aligned}
    \notag \theta(q^2;q^{10})\theta(q^4;q^{10})& \theta(-q;q^{10})\theta(-q^3;q^{10})\\\notag  &  + \theta(q;q^{10})\theta(q^3;q^{10})\theta(-q^2;q^{10})\theta(-q^4;q^{10})\\ \label{WSF1} &\ \ \  = \theta(q^3;q^{10})\theta(-q^4;q^{10})\theta(q^5;q^{10})\theta(-1;q^{10}).
-\end{align}$$
+\end{aligned}$$
 
-We give a combinatorial interpretation of [\[WSF1\]](#WSF1){reference-type="eqref" reference="WSF1"}. The $q$-series $$\theta(q^2;q^{10})\theta(q^4;q^{10})\theta(-q;q^{10})\theta(-q^3;q^{10})$$ is the generating function for $$\begin{align*}
+We give a combinatorial interpretation of [\[WSF1\]](#WSF1){reference-type="eqref" reference="WSF1"}. The $q$-series $$\theta(q^2;q^{10})\theta(q^4;q^{10})\theta(-q;q^{10})\theta(-q^3;q^{10})$$ is the generating function for $$\begin{aligned}
 & |\{\lambda \in \mathcal D_5(n) \mid \ell_e(\lambda) \text{ even}\}|-|\{\lambda \in \mathcal D_5(n) \mid \ell_e(\lambda) \text{ odd}\}|\\ & \ \ \ \ \ = (-1)^n\left(|\{\lambda \in \mathcal D_5(n) \mid \ell(\lambda) \text{ even}\}|-|\{\lambda \in \mathcal D_5(n) \mid \ell(\lambda) \text{ odd}\}|\right),
-\end{align*}$$ and the $q$-series $$\theta(q;q^{10})\theta(q^3;q^{10})\theta(-q^2;q^{10})\theta(-q^4;q^{10})$$ is the generating function for $$|\{\lambda \in \mathcal D_5(n) \mid \ell_o(\lambda) \text{ even}\}|-|\{\lambda \in \mathcal D_5(n) \mid \ell_o(\lambda) \text{ odd}\}|=(-1)^n |\mathcal D_5(n)|.$$ Here, we used the fact that $\ell_0(\lambda)\equiv |\lambda|\mod 2$.
+\end{aligned}$$ and the $q$-series $$\theta(q;q^{10})\theta(q^3;q^{10})\theta(-q^2;q^{10})\theta(-q^4;q^{10})$$ is the generating function for $$|\{\lambda \in \mathcal D_5(n) \mid \ell_o(\lambda) \text{ even}\}|-|\{\lambda \in \mathcal D_5(n) \mid \ell_o(\lambda) \text{ odd}\}|=(-1)^n |\mathcal D_5(n)|.$$ Here, we used the fact that $\ell_0(\lambda)\equiv |\lambda|\mod 2$.
 
-The $q$-series $$\begin{align*}
+The $q$-series $$\begin{aligned}
 & \theta(q^3;q^{10})\theta(-q^4;q^{10})\theta(q^5;q^{10})\theta(-1;q^{10})\\ & =  2(q^3; q^{10})_\infty(q^7; q^{10})_\infty(-q^4; q^{10})_\infty(-q^6; q^{10})_\infty(q^5; q^{10})^2_\infty(-q^{10}; q^{10})^2_\infty
-\end{align*}$$ is the generating function for $$\begin{align*}
+\end{aligned}$$ is the generating function for $$\begin{aligned}
 2 (|\{(\lambda, \mu)\in \mathcal C_{1,2}(n) \mid \ell_o(\lambda)+\ell_o(\mu) \text{ even}\}|&-|\{(\lambda, \mu)\in \mathcal C_{1,2}(n) \mid \ell_o(\lambda)+\ell_o(\mu) \text{ odd}\}|)\\ & = 2(-1)^n | \mathcal C_{1,2}(n)|.
-\end{align*}$$
+\end{aligned}$$
 
 Hence, the combinatorial interpretation of [\[WSF1\]](#WSF1){reference-type="eqref" reference="WSF1"} is $$|\{\lambda \in \mathcal D_5(n) \mid \ell(\lambda) \text{ even}\}|=| \mathcal C_{1,2}(n)|.$$
 
-If we now follow [@KMR pg. 226] and first replace $q$ by $q^{10}$ and then take $u=q^5$, $v=q^2$, $x=q^6$ and $y=q^4$, in [@KMR Identity (8.1)], we obtain $$\begin{align}
+If we now follow [@KMR pg. 226] and first replace $q$ by $q^{10}$ and then take $u=q^5$, $v=q^2$, $x=q^6$ and $y=q^4$, in [@KMR Identity (8.1)], we obtain $$\begin{aligned}
    \notag \theta(q^2;q^{10})\theta(q^4;q^{10})& \theta(-q;q^{10})\theta(-q^3;q^{10})\\\notag  &  - \theta(q;q^{10})\theta(q^3;q^{10})\theta(-q^2;q^{10})\theta(-q^4;q^{10})\\ \label{WSF2} &\ \ \  = q\theta(-q^2;q^{10})\theta(-1;q^{10})\theta(q^5;q^{10})\theta(q;q^{10}).
-\end{align}$$ By the same argument as above, $$\begin{align*}
+\end{aligned}$$ By the same argument as above, $$\begin{aligned}
 \theta(-q^2;q^{10})\theta(-1;q^{10})\theta(q^5;q^{10})\theta(q;q^{10})
-\end{align*}$$ is the generating function for $2(-1)^n|\mathcal C_{3,4}(n)|$ and the combinatorial interpretation of [\[WSF2\]](#WSF2){reference-type="eqref" reference="WSF2"} is $$|\{\lambda \in \mathcal D_5(n) \mid \ell(\lambda) \text{ odd}\}|=| \mathcal C_{3,4}(n-1)|.$$ ◻
+\end{aligned}$$ is the generating function for $2(-1)^n|\mathcal C_{3,4}(n)|$ and the combinatorial interpretation of [\[WSF2\]](#WSF2){reference-type="eqref" reference="WSF2"} is $$|\{\lambda \in \mathcal D_5(n) \mid \ell(\lambda) \text{ odd}\}|=| \mathcal C_{3,4}(n-1)|.$$ ◻
 :::

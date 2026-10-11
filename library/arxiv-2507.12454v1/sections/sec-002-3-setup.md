@@ -7,10 +7,10 @@ section_number: 3
 pages: 8-9
 source_pdf: 2507.12454v1.pdf
 source_sha256: 156fd9080847b4e7
-text_source: latex
-latex_prose_ratio: 0.954
-latex_coverage_ratio: 0.897
 doc_brief: "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of"
+text_source: latex
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 0.992
 ---
 After reviewing in detail the basic example, we turn to the general setup and precise definitions. There is no reason to consider only genus $0$ surfaces, and the classical motivation directly extends to the more general case, for instance ODEs can be studied on complex curves of arbitrary genus.
 

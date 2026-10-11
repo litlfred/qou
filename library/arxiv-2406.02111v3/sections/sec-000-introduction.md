@@ -7,10 +7,10 @@ section_number: null
 pages: 1-2
 source_pdf: 2406.02111v3.pdf
 source_sha256: d7be0c3f08b4d42a
-text_source: latex
-latex_prose_ratio: 0.765
-latex_coverage_ratio: 0.945
 doc_brief: "Categorical Quantum Volume Operator — 10 sections: Introduction; Quantum tetrahedron; Volume operator"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:introduction}
 In the search for an all-encompassing theory of quantum gravity that successfully reconciles general relativity and quantum field theory, background-independent theories such as loop quantum gravity (LQG)~\cite{Thiemann2007,Rovelli2014,Bilson-Thompson2024} and causal dynamical triangulations~\cite{Ambjorn2012,Loll2020} are widely regarded as the main contenders to string theory/M-theory. 
@@ -42,3 +42,7 @@ While we have motivated our volume operator mainly for applications in quantum g
 
    	
 The remainder of this article is organized as follows: In Sec.~\ref{sec:vol_op}, we briefly review the construction of the volume operator in LQG. In Sec.~\ref{sec:Qvol}, we provide a derivation for the generalization of the volume operator based on the properties of (spherical) fusion categories and demonstrate that this generalized version is Hermitian in the unitary case. In Sec.~\ref{sec:recovery}, we show that the generalized $\SU(2)_k$ volume operator reduces to the $\SU(2)$ volume operator in the limit $k\to\infty$. In Sec.~\ref{sec:spectrum}, we investigate the spectral properties of the $\SU(2)_k$ volume operator. Lastly, in Sec.~\ref{sec:discussion_conclusions}, we summarize our results, discuss their physical implications, and outline possible avenues for applications and directions for future research in this domain. The most relevant concepts and definitions from category theory that are used throughout this manuscript are reviewed in the \hyperref[sec:category_theory]{Appendix}\@.
+	
+	
+
+\section{The Volume Operator in Loop Quantum Gravity} \label{sec:vol_op}

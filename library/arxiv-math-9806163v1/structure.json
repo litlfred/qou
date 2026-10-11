@@ -470,8 +470,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 6,
-   "overlaid": 2,
+   "tex_sections": 11,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -496,13 +496,18 @@
     {
      "id": "sec-003-1-preliminaries-and-notation",
      "title": "Preliminaries and Notation",
-     "prose_ratio": 0.308,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-11-partitions-and-standard-tableaux",
      "title": "Partitions and Standard Tableaux",
-     "result": "no matching \\section"
+     "prose_ratio": 0.782,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-4-r-c-orellana",
@@ -512,7 +517,10 @@
     {
      "id": "sec-006-12-schur-functions",
      "title": "Schur Functions",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.911,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-6-r-c-orellana",
@@ -522,12 +530,15 @@
     {
      "id": "sec-008-13-the-braid-group",
      "title": "The Braid Group",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-2-hecke-algebra-of-type-bn",
      "title": "Hecke Algebra of type Bn",
-     "prose_ratio": 0.128,
+     "prose_ratio": 0.101,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -543,7 +554,7 @@
     {
      "id": "sec-012-31-the-hecke-algebra-of-type-a",
      "title": "The Hecke Algebra of type A",
-     "prose_ratio": 0.248,
+     "prose_ratio": 0.447,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -554,7 +565,8 @@
     {
      "id": "sec-014-32-a-homomorphism-of-hnq-qr1m-onto-a-reduced-alg",
      "title": "A Homomorphism of Hn(q, \u2212qr1+m) onto a reduced algebra of",
-     "result": "no matching \\section"
+     "prose_ratio": 0.448,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-015-12-r-c-orellana",
@@ -570,7 +582,7 @@
      "id": "sec-017-4-markov-traces-on-the-hecke-algebra-of-type-b",
      "title": "Markov Traces on the Hecke Algebra of type B",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.986,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -598,8 +610,8 @@
     {
      "id": "sec-022-6-markov-trace-for-the-hecke-algebra-of-type-d",
      "title": "Markov Trace for the Hecke algebra of type D",
-     "prose_ratio": 0.727,
-     "coverage_ratio": 0.949,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

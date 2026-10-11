@@ -7,10 +7,10 @@ section_number: 7
 pages: 52-55
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
-text_source: latex
-latex_prose_ratio: 0.811
-latex_coverage_ratio: 0.957
 doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
+text_source: latex
+latex_prose_ratio: 0.869
+latex_coverage_ratio: 0.971
 ---
 []{#sec:lines label="sec:lines"}
 
@@ -26,60 +26,36 @@ In particular, in the previous section we identified the $S^3_b$ partition funct
 
 [^2]
 
-$$\begin{equation}
-\mathcal{Z}(\tilde m_Z + ib \big) = \left( 1 - e^{-2\pi b \tilde m_Z} \right) \mathcal{Z}(\tilde m_Z ) \,.
-\end{equation}$$ Using $\hat Z''= ib\partial_{\tilde m_Z}$ and $\hat Z=2\pi b\tilde{m}_Z$, we can write this equation in a more convenient form: $$\begin{equation}
-\left( e^{\hat Z''} + e^{-\hat Z} - 1 \right) \mathcal{Z}(\tilde m_Z) \; = \; 0 \,,
-\label{psiAhat}
-\end{equation}$$ which is clearly reminiscent of the familiar equation [\[Aone\]](#Aone){reference-type="eqref" reference="Aone"} that describes the space of SUSY moduli in the theory $T_{\Delta, \Pi_{Z'}}$. Indeed, for reasons that we reviewed at the end of section [\[sec:S3b\]](#sec:S3b){reference-type="ref" reference="sec:S3b"}, in the semi-classical limit $\hbar \sim b^2 \to 0$ the equation [\[psiAhat\]](#psiAhat){reference-type="eqref" reference="psiAhat"} gives precisely [\[Aone\]](#Aone){reference-type="eqref" reference="Aone"}: $$\begin{equation}
-\mathcal{M}_{{\rm SUSY}}
+$$\mathcal{Z}(\tilde m_Z + ib \big) = \left( 1 - e^{-2\pi b \tilde m_Z} \right) \mathcal{Z}(\tilde m_Z ) \,.$$ Using $\hat Z''= ib\partial_{\tilde m_Z}$ and $\hat Z=2\pi b\tilde{m}_Z$, we can write this equation in a more convenient form: $$\left( e^{\hat Z''} + e^{-\hat Z} - 1 \right) \mathcal{Z}(\tilde m_Z) \; = \; 0 \,,
+\label{psiAhat}$$ which is clearly reminiscent of the familiar equation [\[Aone\]](#Aone){reference-type="eqref" reference="Aone"} that describes the space of SUSY moduli in the theory $T_{\Delta, \Pi_{Z'}}$. Indeed, for reasons that we reviewed at the end of section [\[sec:S3b\]](#sec:S3b){reference-type="ref" reference="sec:S3b"}, in the semi-classical limit $\hbar \sim b^2 \to 0$ the equation [\[psiAhat\]](#psiAhat){reference-type="eqref" reference="psiAhat"} gives precisely [\[Aone\]](#Aone){reference-type="eqref" reference="Aone"}: $$\mathcal{M}_{{\rm SUSY}}
 ~:~ \quad
 e^Z + e^{- Z'} - 1 \; = \; 0 \,.
-\label{apoltetr}
-\end{equation}$$
+\label{apoltetr}$$
 
 In terms of geometry, we know from Section [\[sec:geom\]](#sec:geom){reference-type="ref" reference="sec:geom"} that $Z$ and $Z'$ are the complexified "shear coordinates" or edge parameters on the boundary $\partial\Delta$ of the tetrahedron; and indeed [\[psiAhat\]](#psiAhat){reference-type="eqref" reference="psiAhat"} is just the quantization of the tetrahedron's classical Lagrangian [\[LDelta\]](#LDelta){reference-type="eqref" reference="LDelta"} [@Dimofte-QRS]. More generally, if a 3-manifold $M$ has a triangulated geodesic boundary, it is the quantization of external edge coordinates $\exp(\hat X_E)$ on the boundary that appears in the operator equations [\[AZclaim\]](#AZclaim){reference-type="eqref" reference="AZclaim"}.
 
 From a different perspective, the classical external edge coordinates $x_E=\exp(X_E)$ on a triangulated geodesic boundary $\mathcal{C}=\partial M$ also correspond to vevs of line operators in the *four-dimensional* $\mathcal{N}=2$ theory $T[\mathcal{C},\mathfrak{su}(2)]$; and the quantized $\hat x_E=\exp(\hat X_E)$ correspond to the quantum line operators themselves [@DMO; @AGGTV; @DGOT; @GMNIII]. To be more precise, it was shown in [@GMNII; @GMNIII] that every edge $E$ of $\mathcal{C}$ determines an IR line operator $\exp(\hat X_E)$ in the abelian $\mathcal{N}=2$ theory on the Coulomb branch of $T[\mathcal{C},\mathfrak{su}(2)]$. This operator carries the electric and magnetic charges associated to the edge $E$, exactly as described in Section [\[sec:gauge4d\]](#sec:gauge4d){reference-type="ref" reference="sec:gauge4d"}. Using this relation, we propose to interpret operator equations [\[AZclaim\]](#AZclaim){reference-type="eqref" reference="AZclaim"} as Ward identities for line operators in a 4d theory coupled to the 3d boundary theory $T_M$.
 
-<figure id="fig:bdyop" data-latex-placement="htb">
-<img src="bdyop" style="width:2.5in" />
-<figcaption>Line operators in 4d becoming identified in the boundary theory <span class="math inline"><em>T</em><sub><em>M</em></sub></span>.</figcaption>
-</figure>
+![Line operators in 4d becoming identified in the boundary theory $T_M$.](bdyop){#fig:bdyop width="2.5in"}
 
-In the presence of boundary conditions, not all line operators of the bulk $\mathcal{N}=2$ gauge theory in four dimensions are independent. Indeed, one can start with a line operator $L$ (or, more generally, a collection of line operators $L_i$) in the 4d $\mathcal{N}=2$ gauge theory and then bring it to the three-dimensional boundary where the theory $T_M$ lives (Figure [1](#fig:bdyop){reference-type="ref" reference="fig:bdyop"}). Due to the boundary conditions (which *e.g.* may identify some of the 4d fields), vevs of line operators that were independent in the bulk become related on the boundary. This can be summarized in the form of Ward identities $$\begin{equation}
-\sum c_i L_i \; = \; 0 \,.
-\label{cLi}
-\end{equation}$$ For example, in our favorite example of the theory $T_{\Delta}$ the equation [\[psiAhat\]](#psiAhat){reference-type="eqref" reference="psiAhat"} can be written in the form [\[cLi\]](#cLi){reference-type="eqref" reference="cLi"} as $$\begin{equation}
-W + H^{-1} - 1 \; \simeq \; 0
-\label{WHinT1}
-\end{equation}$$ where we used the identification of $\hat Z$, $\hat Z'$, and $\hat Z''$ with the corresponding abelian Wilson / 't Hooft line operators:
+In the presence of boundary conditions, not all line operators of the bulk $\mathcal{N}=2$ gauge theory in four dimensions are independent. Indeed, one can start with a line operator $L$ (or, more generally, a collection of line operators $L_i$) in the 4d $\mathcal{N}=2$ gauge theory and then bring it to the three-dimensional boundary where the theory $T_M$ lives (Figure [1](#fig:bdyop){reference-type="ref" reference="fig:bdyop"}). Due to the boundary conditions (which *e.g.* may identify some of the 4d fields), vevs of line operators that were independent in the bulk become related on the boundary. This can be summarized in the form of Ward identities $$\sum c_i L_i \; = \; 0 \,.
+\label{cLi}$$ For example, in our favorite example of the theory $T_{\Delta}$ the equation [\[psiAhat\]](#psiAhat){reference-type="eqref" reference="psiAhat"} can be written in the form [\[cLi\]](#cLi){reference-type="eqref" reference="cLi"} as $$W + H^{-1} - 1 \; \simeq \; 0
+\label{WHinT1}$$ where we used the identification of $\hat Z$, $\hat Z'$, and $\hat Z''$ with the corresponding abelian Wilson / 't Hooft line operators:
 
-$$\begin{equation}
-\begin{array}{l@{\qquad}l}
+$$\begin{array}{l@{\qquad}l}
 \underline{\text{edge}} & \underline{\text{line operator}} \\[.1cm]
 \hat z = e^{\hat Z} & W=\text{Wilson} \\[.1cm]
 \hat z' = e^{\hat Z'} & \text{Wilson-'t Hooft} \\[.1cm]
 \hat z'' = e^{\hat Z''} & H=\text{'t Hooft}
 \end{array}
-\label{whhlines}
-\end{equation}$$
+\label{whhlines}$$
 
 (Thus, $\hat z^{-1}=H^{-1}$ denotes an 't Hooft operator of magnetic charge $-1$. Similarly, $W^0=H^0=1$ denotes a trivial line operator.) The above dictionary [\[whhlines\]](#whhlines){reference-type="eqref" reference="whhlines"} corresponds to the polarization $\Pi_{Z}$ for $T_\Delta$. The triality symmetry of $T_\Delta$ [\[STonT1\]](#STonT1){reference-type="eqref" reference="STonT1"}, generated by the $ST$ element of the 4d electric-magnetic duality group $SL(2,{\mathbb Z})$, permutes Wilson, 't Hooft, and Wilson-'t Hooft operators.
 
-To explain the origin of Ward identities like [\[WHinT1\]](#WHinT1){reference-type="eqref" reference="WHinT1"}, it is instructive to simplify the theory $T_{\Delta}$ (which consists of a chiral multiplet and Chern-Simons coupling) even further and consider only the Chern-Simons part of the theory. As we discussed in section [\[sec:S3b\]](#sec:S3b){reference-type="ref" reference="sec:S3b"}, a supersymmetric Chern-Simons interaction at level $k$ for the background gauge field contributes to the partition function a factor [\[z3dCSk\]](#z3dCSk){reference-type="eqref" reference="z3dCSk"}: $$\begin{equation}
-\mathcal{Z}_{CS_k} = e^{- i \pi k \tilde m^2} \,.
-\end{equation}$$ Much like the partition function of the theory $T_{\Delta}$, it obeys the following $q$-difference equation: $$\begin{equation}
-\left( \hat z'' - q^{\frac k2} \, \hat z^k \right) \mathcal{Z}_{CS_k} =
-\left( e^{ib \partial_{\tilde m}} - e^{i\pi b^2 k+2\pi bk\tilde m} \right) \mathcal{Z}_{CS_k} = 0 \,.
-\end{equation}$$ According to [\[whhlines\]](#whhlines){reference-type="eqref" reference="whhlines"}, this identity should be interpreted as a statement that at a 3d boundary with Chern-Simons term at level $k$ a 't Hooft operator with one unit of a magnetic flux is equivalent to a Wilson operator of electric charge $k$, $$\begin{equation}
-H - e^{i\pi b^2 k} \, W^{k} \; \simeq \; 0 \,.
-\end{equation}$$ This is indeed correct, as one can easily verify by doing a direct path integral manipulation. Notice, it is important here that supersymmetric Chern-Simons theory lives on the boundary of the 4d space-time where Wilson and 't Hooft operators belong.
+To explain the origin of Ward identities like [\[WHinT1\]](#WHinT1){reference-type="eqref" reference="WHinT1"}, it is instructive to simplify the theory $T_{\Delta}$ (which consists of a chiral multiplet and Chern-Simons coupling) even further and consider only the Chern-Simons part of the theory. As we discussed in section [\[sec:S3b\]](#sec:S3b){reference-type="ref" reference="sec:S3b"}, a supersymmetric Chern-Simons interaction at level $k$ for the background gauge field contributes to the partition function a factor [\[z3dCSk\]](#z3dCSk){reference-type="eqref" reference="z3dCSk"}: $$\mathcal{Z}_{CS_k} = e^{- i \pi k \tilde m^2} \,.$$ Much like the partition function of the theory $T_{\Delta}$, it obeys the following $q$-difference equation: $$\left( \hat z'' - q^{\frac k2} \, \hat z^k \right) \mathcal{Z}_{CS_k} =
+\left( e^{ib \partial_{\tilde m}} - e^{i\pi b^2 k+2\pi bk\tilde m} \right) \mathcal{Z}_{CS_k} = 0 \,.$$ According to [\[whhlines\]](#whhlines){reference-type="eqref" reference="whhlines"}, this identity should be interpreted as a statement that at a 3d boundary with Chern-Simons term at level $k$ a 't Hooft operator with one unit of a magnetic flux is equivalent to a Wilson operator of electric charge $k$, $$H - e^{i\pi b^2 k} \, W^{k} \; \simeq \; 0 \,.$$ This is indeed correct, as one can easily verify by doing a direct path integral manipulation. Notice, it is important here that supersymmetric Chern-Simons theory lives on the boundary of the 4d space-time where Wilson and 't Hooft operators belong.
 
-<figure id="fig:MTMop" data-latex-placement="htb">
-<img src="bdyop2" style="width:5.2in" />
-<figcaption>Line operators in both <span class="math inline"><em>M</em></span> and <span class="math inline"><em>T</em><sub><em>M</em></sub></span>.</figcaption>
-</figure>
+![Line operators in both $M$ and $T_M$.](bdyop2){#fig:MTMop width="5.2in"}
 
 Most of our discussion in this section was based on interpreting $T_M$ as a boundary theory in the 4d $\mathcal{N}=2$ theory on the Coulomb branch of $T[\mathcal{C},\mathfrak{su}(2)]$, where $\mathcal{C}= \partial M$ is the geodesic boundary of $M$. This interpretation can be easily extended to 3-manifolds with "small" boundaries (*a.k.a.* cusps) and also to 3-manifolds with several boundary components. For example, in the latter case, each boundary component is a 2-dimensional Riemann surface $\mathcal{C}$ to which we associate either IR or UV limit of the 4d $\mathcal{N}= 2$ gauge theory $T[\mathcal{C}]$ depending on whether the boundary $\mathcal{C}$ is "big" or "small."
 

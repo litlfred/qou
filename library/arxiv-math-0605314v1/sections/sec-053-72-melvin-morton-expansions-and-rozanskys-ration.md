@@ -8,114 +8,59 @@ pages: 26-28
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
 doc_brief: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the polynomial ring"
+text_source: latex
+latex_prose_ratio: 0.875
+latex_coverage_ratio: 0.95
 ---
-sky [74] proved that the colored Jones polynomials of a knot K can be repackaged
-into one invariant J MMR
-K ∈ Z[[q− 1,α 2]], which is an integer-coeﬃcient version of
-the Melvin-Morton expansion [61]. (In fact, Rozansky prove d much stronger results
-there, see below.)
-Let
-γ : Λ → Z[[q− 1,α 2]]
-be the ring homomorphism induced by id Z[q,q−1,α2]. This is well-deﬁned since σ2k∈
-(α2k, (q−1)2k) in Z[q,q −1,α 2] fork≥ 0. As mentioned in [17, Section 3.3], γ(JK)∈
-Z[[q− 1,α 2]] is equal to the Rozansky’s integral version of the Melvin- Morton
-expansion.
-The ﬁrst half of the following proposition was mentioned in [ 17] without proof,
-and implies that JK and J MMR
-K have the same strength.
-Proposition 7.2. The map γ is injective and non-surjective.
-Proof. Let us prove injectivity. Let f = ∑ ∞
-n=0fn(q)σn∈ Λ, where fn(q)∈ Z[q,q −1]
-for n≥ 0, and suppose that γ(f ) = 0. We can express each σn as
-σn =
-n∑
-k=0
-gn,k(q)(2−q−q−1)2n−2kα2k,
-where gn,k(q)∈ Z[q,q −1]. Hence, we obtain
-γ(f ) =
-∞∑
-k=0
-( ∞∑
-n=k
-fn(q)gn,k(q)(2−q−q−1)2n−2k
-)
-α2k.
-Sinceγ(f ) = 0, we have
-∞∑
-n=k
-fn(q)gn,k(q)(2−q−q−1)2n−2k = 0 (7.3)
-for all k≥ 0.
-One can show that gn,k(q) is not divisible by q−1. (Indeed, one can use induction
-onn to show that gn,k(1)∈ Z is positive.) Using this fact and (7.3), one can prove
-using induction that for any n,d≥ 0,fn(q) is divisible by (q− 1)d. Hence fn(q) = 0
-for all n.
-Non-surjectivity of γ can be veriﬁed in several ways. For example, let u : Z[[q−
-1,α 2]]→ Z[[q− 1]] be the continuous Z[[q− 1]]-algebra homomorphism such that
-u(α2) = 0. Then we have
-uγ(Λ) = Z[q,q −1] ⊊ Z [[q− 1]] = u(Z[[q− 1,α 2]]).
-It follows that γ is not surjective.
-Rozansky [74] also proved that the coeﬃcient of ( q− 1)n of the integral Melvin-
-Morton expansion of a knot K is a rational function in α2 with denominator a power
-of the Alexander polynomial ∆ K(t)∈ Z[t +t−1] of K. (This result generalizes a
-conjecture of Melvin and Morton [61], proved in [2].) More pr ecisely, Rozansky
-proved that J MMR
-K has the following power series expansion
-J MMR
-K =
-∑
-n≥0
-PK,n(t)
-∆ K(t)2n+1 (q− 1)n∈ Z[t +t−1, 1
-∆ K(t) ][[q− 1]],
-A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT 27
-where PK,n(t)∈ Z[t +t−1] for n≥ 0. The PK,n(t) are uniquely determined by K
-and n. Thus γ(JK) is contained in a much smaller ring than Z[[q− 1,α 2]]. Melvin
-and Morton’s conjecture (essentially) states that
-J MMR
-K
-⏐
-⏐
-q=1= 1
-∆ K(t).
-Thus we have PK,0(t) = 1.
-The following conjecture (supported by some computer calcu lations) generalizes
-Rozansky’s rationality theorem.
-Conjecture 7.3. LetK be a knot and let d : N→{ 0, 1, 2,... } be a function which
-vanishes for all but ﬁnitely many elements of N. Set
-∆ d
-K(t) =
-∏
-r∈N,d(r)>0
-∆ K (tr)2d(r)−1∈ Z[t +t−1].
-Then we have
-∆ d
-K(t)JK∈ Z[t +t−1,q,q −1] + Φ d(q)Λ .
-Conjecture 7.3 implies that J MMR
-K is contained in the image of the natural (in-
-jective) homomorphism
-lim
-←−kZ[q,q −1,t +t−1, 1
-∆ K(ti) (i≥ 1)]/((q)k)→ Z[[q− 1,α 2]].
-Conjecture 7.3 also implies the following conjecture, in wh ich the case ζ = 1 is
-Rozansky’s rationality theorem.
-Conjecture 7.4. Letζ∈Z with r = ord(ζ). Let
-γζ : Λ → Z[ζ][[α2,q−ζ]]
-be the homomorphism induced by Z[q,q −1,α 2]⊂ Z[ζ][q,q −1,α 2]. Deﬁne PK,ζ,k (t)∈
-Z[ζ][[α2]] for k≥ 0 by
-γζ(JK) =
-∑
-k≥0
-PK,ζ,k (t)
-∆ K (tr)2k+1 (q−ζ)k.
-Then we have PK,ζ,k (t)∈ Z[ζ][t +t−1].
-Using the injectivity of γ = γ1, one can prove that the homomorphism γζ is
-injective.
-Conjecture 7.4 implies that
-JK(t,ζ ) = PK,ζ,0(t)
-∆ K(tr) ∈ 1
-∆ K (tr) Z[ζ][t +t−1].
-Some computer calculations support the following conjectu re.
-Conjecture 7.5. We have
-JK(t,−1) = ∆ K (−t)
-∆ K(t2).
-Thus we have PK,−1,0(t) = ∆ K(−t) in the notation of Conjecture 7.4.
+[]{#sec:melv-mort-expans label="sec:melv-mort-expans"}
+
+Rozansky [@Rozansky3] proved that the colored Jones polynomials of a knot $K$ can be repackaged into one invariant $J^\MMR_K\in \modZ [[q-1,\alpha ^2]]$, which is an integer-coefficient version of the Melvin-Morton expansion [@Melvin-Morton]. (In fact, Rozansky proved much stronger results there, see below.)
+
+Let $$\gamma \zzzcolon \Lambda \rightarrow \modZ [[q-1,\alpha ^2]]$$ be the ring homomorphism induced by $\id_{\modZ [q,q^{-1},\alpha ^2]}$. This is well-defined since $\sigma _{2k}\in (\alpha ^{2k},(q-1)^{2k})$ in $\modZ [q,q^{-1},\alpha ^2]$ for $k\ge 0$. As mentioned in [@H:rims2001 Section 3.3], $\gamma (J_K)\in \modZ [[q-1,\alpha ^2]]$ is equal to the Rozansky's integral version of the Melvin-Morton expansion.
+
+The first half of the following proposition was mentioned in [@H:rims2001] without proof, and implies that $J_K$ and $J^\MMR_K$ have the same strength.
+
+::: proposition
+[]{#r72 label="r72"} The map $\gamma$ is injective and non-surjective.
+:::
+
+::: proof
+*Proof.* Let us prove injectivity. Let $f=\sum_{n=0}^\infty f_n(q)\sigma _n\in \Lambda$, where $f_n(q)\in \modZ [q,q^{-1}]$ for $n\ge 0$, and suppose that $\gamma (f)=0$. We can express each $\sigma _n$ as $$\sigma _n= \sum_{k=0}^n g_{n,k}(q)(2-q-q^{-1})^{2n-2k}\alpha ^{2k},$$ where $g_{n,k}(q)\in \modZ [q,q^{-1}]$. Hence, we obtain $$\gamma (f)=\sum_{k=0}^\infty 
+    \Bigl(\sum_{n=k}^\infty f_n(q)g_{n,k}(q)(2-q-q^{-1})^{2n-2k}\Bigr)\alpha ^{2k}.$$ Since $\gamma (f)=0$, we have $$\label{e82}
+    \sum_{n=k}^\infty f_n(q)g_{n,k}(q)(2-q-q^{-1})^{2n-2k}=0$$ for all $k\ge 0$.
+
+One can show that $g_{n,k}(q)$ is not divisible by $q-1$. (Indeed, one can use induction on $n$ to show that $g_{n,k}(1)\in \modZ$ is positive.) Using this fact and [\[e82\]](#e82){reference-type="eqref" reference="e82"}, one can prove using induction that for any $n,d\ge 0$, $f_n(q)$ is divisible by $(q-1)^d$. Hence $f_n(q)=0$ for all $n$.
+
+Non-surjectivity of $\gamma$ can be verified in several ways. For example, let $u\zzzcolon \modZ [[q-1,\alpha ^2]]\rightarrow \modZ [[q-1]]$ be the continuous $\modZ [[q-1]]$-algebra homomorphism such that $u(\alpha ^2)=0$. Then we have $$u\gamma (\Lambda )=\modZ [q,q^{-1}]\subsetneq\modZ [[q-1]]=u(\modZ [[q-1,\alpha ^2]]).$$ It follows that $\gamma$ is not surjective. ◻
+:::
+
+Rozansky [@Rozansky3] also proved that the coefficient of $(q-1)^n$ of the integral Melvin-Morton expansion of a knot $K$ is a rational function in $\alpha ^2$ with denominator a power of the Alexander polynomial $\Delta _K(t)\in \modZ [t+t^{-1}]$ of $K$. (This result generalizes a conjecture of Melvin and Morton [@Melvin-Morton], proved in [@Bar-Natan-Garoufalidis].) More precisely, Rozansky proved that $J^\MMR_K$ has the following power series expansion $$J_K^\MMR = \sum_{n\ge 0}\frac{P_{K,n}(t)}{\Delta _K(t)^{2n+1}}(q-1)^n
+  \in \modZ [t+t^{-1},\frac{1}{\Delta _K(t)}][[q-1]],$$ where $P_{K,n}(t)\in \modZ [t+t^{-1}]$ for $n\ge 0$. The $P_{K,n}(t)$ are uniquely determined by $K$ and $n$. Thus $\gamma (J_K)$ is contained in a much smaller ring than $\modZ [[q-1,\alpha ^2]]$. Melvin and Morton's conjecture (essentially) states that $$J_K^\MMR\bigl|_{q=1}=\frac{1}{\Delta _K(t)}.$$ Thus we have $P_{K,0}(t)=1$.
+
+The following conjecture (supported by some computer calculations) generalizes Rozansky's rationality theorem.
+
+::: conjecture
+[]{#r44 label="r44"} Let $K$ be a knot and let $d\zzzcolon \modN \rightarrow \{0,1,2,\ldots \}$ be a function which vanishes for all but finitely many elements of $\modN$. Set $$\Delta ^d_K(t) = \prod_{r\in \modN ,d(r)>0}\Delta _K(t^r)^{2d(r)-1}\in \modZ [t+t^{-1}].$$ Then we have $$\Delta ^d_K(t)J_K \in \modZ [t+t^{-1},q,q^{-1}] + \Phi _d(q)\Lambda .$$
+:::
+
+Conjecture [\[r44\]](#r44){reference-type="ref" reference="r44"} implies that $J_K^\MMR$ is contained in the image of the natural (injective) homomorphism $$\varprojlim_k \modZ [q,q^{-1},t+t^{-1},\frac{1}{\Delta _K(t^i)}\quad  (i\ge 1)]/((q)_k)
+    \rightarrow \modZ [[q-1,\alpha ^2]].$$
+
+Conjecture [\[r44\]](#r44){reference-type="ref" reference="r44"} also implies the following conjecture, in which the case $\zeta =1$ is Rozansky's rationality theorem.
+
+::: conjecture
+[]{#r58 label="r58"} Let $\zeta \in \calZ$ with $r=\ord(\zeta )$. Let $$\gamma _\zeta \zzzcolon \Lambda \rightarrow \modZ [\zeta ][[\alpha ^2,q-\zeta ]]$$ be the homomorphism induced by $\modZ [q,q^{-1},\alpha ^2]\subset \modZ [\zeta ][q,q^{-1},\alpha ^2]$. Define $P_{K,\zeta ,k}(t)\in \modZ [\zeta ][[\alpha ^2]]$ for $k\ge 0$ by $$\gamma _\zeta (J_K)=\sum_{k\ge 0}\frac{P_{K,\zeta ,k}(t)}{\Delta _K(t^r)^{2k+1}}(q-\zeta )^k.$$ Then we have $P_{K,\zeta ,k}(t)\in \modZ [\zeta ][t+t^{-1}]$.
+:::
+
+Using the injectivity of $\gamma =\gamma _1$, one can prove that the homomorphism $\gamma _\zeta$ is injective.
+
+Conjecture [\[r58\]](#r58){reference-type="ref" reference="r58"} implies that $$J_K(t,\zeta )=\frac{P_{K,\zeta ,0}(t)}{\Delta _K(t^r)}
+  \in \frac{1}{\Delta _K(t^r)}\modZ [\zeta ][t+t^{-1}].$$
+
+Some computer calculations support the following conjecture.
+
+::: conjecture
+[]{#r64 label="r64"} We have $$J_K(t,-1)=\frac{\Delta _K(-t)}{\Delta _K(t^2)}.$$ Thus we have $P_{K,-1,0}(t)=\Delta _K(-t)$ in the notation of Conjecture [\[r58\]](#r58){reference-type="ref" reference="r58"}.
+:::
+
+Presumably, $P_{K,\zeta _r,0}(t)$ with $\zeta _r=\exp\frac{2\pi \sqrt{-1}}{r}$ is the $r$th Akutsu-Deguchi-Ohtsuki invariant [@Akutsu-Deguchi-Ohtsuki], after suitable change of variables. (Recall that the second Akutsu-Deguchi-Ohtsuki invariant of a knot is the Alexander polynomial [@MurakamiJ].) If this is true, then it follows that the Akutsu-Deguchi-Ohtsuki invariants of a knot $K$ determine $J_K$, hence also the colored Jones polynomials $J_K(\V_m)$, $m\ge 0$.

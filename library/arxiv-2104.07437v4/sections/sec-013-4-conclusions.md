@@ -7,10 +7,10 @@ section_number: 4
 pages: 39-41
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
-text_source: latex
-latex_prose_ratio: 0.986
-latex_coverage_ratio: 0.842
 doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
+text_source: latex
+latex_prose_ratio: 0.849
+latex_coverage_ratio: 1.0
 ---
 \label{sec-conclude}
 In this paper we have identified an infinite family of asymptotic power series arising naturally in topological string theory, 
@@ -66,4 +66,21 @@ open problem to ``decode" this spectral determinant in terms of the Borel resumm
 The similarities with complex CS theory underlined in this work also suggest many questions: what is the $q$-difference 
 equation satisfied by the spectral determinant $\Xi_X$? Is it 
 possible to write $\Xi_X$ in terms of moduli-dependent, holomorphic blocks, similar to what was done in \cite{bdp,ggm2}? The answers 
-to these questions would shed new light on the structures appearing in the TS/ST correspondence, which are not yet fully understood.
+to these questions would shed new light on the structures appearing in the TS/ST correspondence, which are not yet fully understood. 
+
+
+
+
+\section{Acknowledgements}
+We would like to thank Jorgen Andersen, Tom Bridgeland, Bertrand Eynard, Rinat Kashaev, 
+Maxim Kontsevich and Greg Moore for useful 
+comments. We are specially grateful to Stavros Garoufalidis for many discussions on 
+these topics and for collaboration 
+in a related project. We also thank Claudia Rella for a detailed reading of the manuscript. 
+This work has been supported in part by the Fonds National Suisse, 
+subsidy 200020-175539, by the NCCR 51NF40-182902 ``The Mathematics of Physics'' (SwissMAP), 
+and by the ERC-SyG project 
+``Recursive and Exact New Quantum Theory" (ReNewQuantum), which 
+received funding from the European Research Council (ERC) under the European 
+Union's Horizon 2020 research and innovation program, 
+grant agreement No. 810573.

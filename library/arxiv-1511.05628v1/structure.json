@@ -555,8 +555,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "text13.tex",
-   "tex_sections": 7,
-   "overlaid": 1,
+   "tex_sections": 32,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -572,42 +572,66 @@
     {
      "id": "sec-001-11-quantum-modular-forms",
      "title": "Quantum modular forms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.882,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-21-ideal-triangulations-and-neumann-zagier-data",
      "title": "Ideal triangulations and Neumann-Zagier data",
-     "result": "no matching \\section"
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.908,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-22-the-1-loop-invariant-at-level-k",
      "title": "The 1-loop invariant at level k",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.884,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-24-feynman-diagrams-for-the-n-loop-invariant",
      "title": "Feynman diagrams for the n-loop invariant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.912,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-25-the-2-loop-invariant-in-detail",
      "title": "The 2-loop invariant in detail",
-     "result": "no matching \\section"
+     "prose_ratio": 0.836,
+     "coverage_ratio": 0.81,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-26-the-3-loop-invariant",
      "title": "The 3-loop invariant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-27-matching-with-the-numerical-asymptotics-of-th",
      "title": "Matching with the numerical asymptotics of the Kashaev invariant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.882,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-28-topological-invariance",
      "title": "Topological invariance",
-     "result": "no matching \\section"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-3-proofs",
@@ -618,48 +642,69 @@
     {
      "id": "sec-010-31-proof-of-theorem-26",
      "title": "Proof of Theorem 2.6",
-     "result": "no matching \\section"
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.84,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-32-some-identities-of-the-cyclic-dilogarithm",
      "title": "Some identities of the cyclic dilogarithm",
-     "result": "no matching \\section"
+     "prose_ratio": 0.149,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-012-33-proof-of-theorem-22",
      "title": "Proof of Theorem 2.2",
-     "result": "no matching \\section"
+     "prose_ratio": 0.102,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-4-complex-chern-simons-theory",
      "title": "Complex Chern-Simons theory",
-     "prose_ratio": 0.105,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.418,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-014-41-basic-structure",
      "title": "Basic structure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.844,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-42-a-singular-limit",
      "title": "A singular limit",
-     "result": "no matching \\section"
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-43-state-integrals",
      "title": "State integrals",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-44-derivation-of-the-torsion",
      "title": "Derivation of the torsion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.889,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-45-ambiguities",
      "title": "Ambiguities",
-     "result": "no matching \\section"
+     "prose_ratio": 0.879,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-5-computations",
@@ -670,12 +715,18 @@
     {
      "id": "sec-020-51-how-the-data-was-computed",
      "title": "How the data was computed",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.904,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-52-a-sample-computation",
      "title": "A sample computation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.896,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-6-data",

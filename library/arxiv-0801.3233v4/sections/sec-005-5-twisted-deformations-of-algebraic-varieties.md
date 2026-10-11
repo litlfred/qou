@@ -7,10 +7,10 @@ section_number: 5
 pages: 6-7
 source_pdf: 0801.3233v4.pdf
 source_sha256: d98f9d4a9ecb4c5e
-text_source: latex
-latex_prose_ratio: 0.637
-latex_coverage_ratio: 0.867
 doc_brief: "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) Amnon Yekutieli — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:twdefs}
 

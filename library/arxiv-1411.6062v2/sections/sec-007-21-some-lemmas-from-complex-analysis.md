@@ -8,419 +8,180 @@ pages: 7-10
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
 doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
+text_source: latex
+latex_prose_ratio: 0.982
+latex_coverage_ratio: 0.907
 ---
-Lemma 2.1. Let f :U→ C be an analytic function satisfying the functional equation
-(26) f( z− a) f(z + a) = f( z)2,
-with some ﬁxed a∈ C\{ 0}, the domain U⊂ C being a translationally invariant open set,
-U = a +U, and C⊂U an oriented path such that f( z)(f(z)− f(z + a))⁄= 0 for all z∈C .
-Then
-(27)
-∫
-C
-f(z) dz =
-(∫
-C
-−
-∫
-a+C
-) f(z)
-1− f(z + a)/ f(z) dz.
-Proof. We have
-(28)
-(∫
-C
-−
-∫
-a+C
-) f(z)
-1− f(z + a)/ f(z) dz =
-∫
-C
-f(z)
-1− f(z + a)/ f(z) dz
-−
-∫
-a+C
-f(z)
-1− f(z)/ f(z− a) dz =
-∫
-C
-f(z)− f(z + a)
-1− f(z + a)/ f(z) dz =
-∫
-C
-f(z) dz.
-□
-Given a rational function r( z)∈ C(z), a nonzero complex number q∈ C\{ 0} and an
-integer k we deﬁne r k(z; q)∈ C(z), k∈ Z, by:
-(29) rk+1(z; q)
-rk(z; q) = r(zq k), r0(z; q) = 1 .
-Note that
-(30) r 1(z; q) = r( z)
-and
-(31) r k+l(z; q) = r k(zq l; q) rl(z; q) = r l(zq k; q) rk(z; q) ,
-for all integers k, l . In particular, in the case of roots of unity this implies a quasi-period icity
-property:
-(32) r k+N (z; q) = r k(z; q) rN (z; q), if qN = 1,
-8 STA VROS GAROUF ALIDIS AND RINAT KASHAEV
-and the invariance property
-(33) r N (zq; q) = r N (z; q), if qN = 1.
-Let ( M, N ) be an admissible pair, and recall b and s from Equation (
-11). Choose two
-integers P and Q which satisfy the equation M P + N Q = 1. Let f( z) be a meromorphic
-function and g ±(z)∈ C(z) two rational functions such that
-(34) f(z + b±1i)
-f(z) = g ±
-(
-e2πb±1z
-)
-.
-Then, for k∈ /CI we have
-(35) g ±
-k
-(
-e2πb±1z; q±
-)
-= f(z + b±1ik)
-f(z) ,
-and, in particular,
-(36) g +
-N
-(
-e2πbz; q+
-)
-= f(z + biN)
-f(z) = f(z + si)
-f(z) = f(z + b−1iM)
-f(z) = g –
-M
-(
-e2πb−1z; q−
-)
-.
-Deﬁne
-g(x) = g +
-N
-(
-x
-1
-N ; q+
-)
-= g –
-M
-(
-x
-1
-M ; q−
-)
-(37)
-S(x, y ) =
-s2−1∑
-k=0
-g+
-kP (x; q+) g–
-kQ(y; q−)(38)
-Lemma 2.2. (a) We have g( x)∈ C(x) and S( x, y )∈ C(x, y ).
-(b) The function S( x, y ) is independent of P and Q provided xN = yM .
-Proof. Since
-(39) g +
-N (xq+; q+) = g +
-N (x; q+) , g–
-M (xq−; q−) = g –
-M (x; q−) ,
-it follows that g( x)∈ C(x), and consequently, S( x, y )∈ C(x, y ).
-For (b), let P ′, Q ′ be another pair satisfying the equation M P′ + N Q′ = 1. Then there
-exists an integer R such that P ′ = P + RN and Q′ = Q− RM . Denoting the function (
-38)
-with P and Q replaced by P ′ and Q′ as S ′(x, y ), we have
-S′(x, y ) =
-s2−1∑
-k=0
-g+
-kP ′(x; q+) g–
-kQ′(y; q−) =
-s2−1∑
-k=0
-g+
-kP +kRN (x; q+) g–
-kQ−kRM (y; q−)
-=
-s2−1∑
-k=0
-g+
-kP (x; q+) g+
-N (x; q+)kR g–
-kQ(y; q−) g–
-M (y; q−)−kR
-=
-s2−1∑
-k=0
-g+
-kP (x; q+)
-(g+
-N (x; q+)
-g– M (y; q−)
-) kR
-g–
-kQ(y; q−) =
-s2−1∑
-k=0
-g+
-kP (x; q+) g–
-kQ(y; q−)
-= S(x, y )
-where we used the second equality in ( 37). □
-EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS 9
-For a complex number x, we denote Cx = xi/ s + R⊂ /BV .
-Lemma 2.3. Let f( z), g( z), S( x, y ) be as above and λ a real number in general position
-such that the form f( z) dz is absolutely integrable along Cλ,
-(40) lim
-x→±∞
-sup
-y∈[ λ
-s , λ
-s +s]
-| f(x + iy)| = 0,
-and
-(41) g(0) ⁄= 1⁄= g(∞) .
-Then the following equalities hold
-∫
-Cλ
-f(z) dz =
-(∫
-Cλ
-−
-∫
-Cλ +1
-) f(z) S
-(
-e2πbz, e 2πb−1z
-)
-1− g(e2πsz) dz(42)
-= 2πi
-∑
-0<sImα−λ<1
-Resz=α
-f(z) S
-(
-e2πbz, e 2πb−1z
-)
-1− g(e2πsz) .
-Proof. Let us derive the ﬁrst equality. We denote
-(43) q± = e2πib±2
-,
-so that we have
-(44) q+ = e2πi M
-N , q − = e2πi N
-M .
-We also have
-(45) f( z + kb±1i) = f( z) g±
-k
-(
-e2πb±1z; q±
-)
-, ∀k∈ Z.
-In particular,
-(46) f( z + si) = f( z + Nbi) = f( z + Mb−1i) = f( z) g
-(
-e2πsz)
-.
-The function
-(47) h( z) = f
-( z
-2πs
-)
-has the properties
-(48) h(z + k2πi)
-h(z) = g +
-P k
-(
-ez/N; q+
-)
-g–
-Qk
-(
-ez/M ; q−
-)
-, ∀k∈ Z.
-From equation ( 48), it follows that
-(49)
-s2−1∑
-k=0
-h(z + k2πi)
-h(z) = S
-(
-ez/N , e z/M)
-.
-10 STA VROS GAROUF ALIDIS AND RINAT KASHAEV
-As λ is generic, the contour Cλ satisﬁes the conditions of Lemma
-2.1 with a = si. Thus, we
-write
-(50)
-∫
-Cλ
-f(z) dz =
-(∫
-Cλ
-−
-∫
-si+Cλ
-) f(z)
-1− g(e2πsz) dz
-=
-(∫
-Cλ 2π s
-−
-∫
-C(λ +s2)2π s
-)
-h(z)
-1− g(ez)
-dz
-2πs
-=
-s2−1∑
-k=0
-(∫
-C(λ +k)2π s
-−
-∫
-C(λ +k+1)2π s
-)
-h(z)
-1− g(ez)
-dz
-2πs
-=
-s2−1∑
-k=0
-(∫
-Cλ 2π s
-−
-∫
-C(λ +1)2π s
-)
-h(z + k2πi)
-1− g(ez)
-dz
-2πs
-=
-(∫
-Cλ 2π s
-−
-∫
-C(λ +1)2π s
-)
-h(z) S
-(
-ez/N, e z/M)
-1− g(ez)
-dz
-2πs
-=
-(∫
-Cλ
-−
-∫
-Cλ +1
-) f(z) S
-(
-e2πbz, e 2πb−1z
-)
-1− g(e2πsz) dz.
-The second equality in Equation ( 42) follows from the residue theorem. To justify its
-application note that Cλ−C λ+1 union two vertical segments is the boundary of a disk.
-Conditions ( 40), ( 41) imply that for suﬃciently large negative or positive x the integrand in
-last part of ( 50) is regular on the vertical segment C′ = x + i[λ, λ + 1]/ s and the following
-estimate holds⏐
-⏐
-⏐
-⏐
-⏐
-⏐
-∫
-C′
-f(z) S
-(
-e2πbz, e 2πb−1z
-)
-1− g(e2πsz) dz
-⏐
-⏐
-⏐
-⏐
-⏐
-⏐
-≤
-s2−1∑
-k=0
-∫ λ+1
-λ
-⏐
-⏐
-⏐
-⏐
-⏐
-f
-(
-x + i y+k
-s
-)
-1− g(e2π(sx+iy))
-⏐
-⏐
-⏐
-⏐
-⏐
-dy
-s
-≤ 1
-s
-s2−1∑
-k=0
-sup
-y∈[λ,λ+1]
-⏐
-⏐
-⏐
-⏐
-⏐
-f
-(
-x + i y+k
-s
-)
-1− g(e2π(sx+iy))
-⏐
-⏐
-⏐
-⏐
-⏐
-≤ 1
-s sup
-y∈[λ,λ+1]
-1
-|1− g(e2π(sx+iy))|
-s2−1∑
-k=0
-sup
-t∈[λ,λ+1]
-⏐
-⏐
-⏐
-⏐f
-(
-x + i t + k
-s
-) ⏐
-⏐
-⏐
-⏐
-≤ s
-supz∈x+i[ λ
-s , λ
-s +s]|f(z)|
-inf |w|=e2π sx|1− g(w)|
-|x|→∞
-−−−−→0
-□
+[]{#sub.two.lemmas label="sub.two.lemmas"}
+
+::: lemma
+[]{#lem1 label="lem1"} Let $\operatorname{f}\colon \mathcal{U}\to\mathbb{C}$ be an analytic function satisfying the functional equation $$\label{per}
+\operatorname{f}(z-a)\operatorname{f}(z+a)=\operatorname{f}(z)^2,$$ with some fixed $a\in\mathbb{C}\setminus\{0\}$, the domain $\mathcal{U}\subset\mathbb{C}$ being a translationally invariant open set, $\mathcal{U}=a+\mathcal{U}$, and $\mathcal{C}\subset \mathcal{U}$ an oriented path such that $\operatorname{f}(z)(\operatorname{f}(z)-\operatorname{f}(z+a))\ne0$ for all $z\in \mathcal{C}$. Then $$\label{residue1}
+\int_{\mathcal{C}}\operatorname{f}(z)\operatorname{d}\!z = 
+\left(\int_{\mathcal{C}}- \int_{a+\mathcal{C}}\right)
+\frac{\operatorname{f}(z)}{1-\operatorname{f}(z+a)/\operatorname{f}(z)}
+\operatorname{d}\!z.$$
+:::
+
+::: proof
+*Proof.* We have $$\begin{gathered}
+\left(\int_{\mathcal{C}}- \int_{a+\mathcal{C}}\right)
+\frac{\operatorname{f}(z)}{1-\operatorname{f}(z+a)/
+\operatorname{f}(z)}\operatorname{d}\!z 
+=\int_{\mathcal{C}}\frac{\operatorname{f}(z)}{
+1-\operatorname{f}(z+a)/\operatorname{f}(z)}\operatorname{d}\!z\\ 
+-\int_{a+\mathcal{C}}\frac{\operatorname{f}(z)}{
+1-\operatorname{f}(z)/\operatorname{f}(z-a)}\operatorname{d}\!z
+=\int_{\mathcal{C}}\frac{\operatorname{f}(z)-\operatorname{f}(z+a)}{
+1-\operatorname{f}(z+a)/\operatorname{f}(z)}\operatorname{d}\!z= 
+\int_{\mathcal{C}}\operatorname{f}(z)\operatorname{d}\!z .
+\end{gathered}$$ ◻
+:::
+
+Given a rational function $\operatorname{r}(z)\in\mathbb{C}(z)$, a nonzero complex number $q\in\mathbb{C}\setminus\{0\}$ and an integer $k$ we define $\operatorname{r}_k(z;q)\in\mathbb{C}(z)$, $k\in\mathbb{Z}$, by: $$\label{rk}
+\frac{\operatorname{r}_{k+1}(z;q)}{\operatorname{r}_k(z;q)}
+=\operatorname{r}(zq^k),\quad \operatorname{r}_0(z;q)=1.$$ Note that $$\operatorname{r}_{1}(z;q)=\operatorname{r}(z)$$ and $$\operatorname{r}_{k+l}(z;q)
+=\operatorname{r}_k(zq^l;q)\operatorname{r}_l(z;q)
+=\operatorname{r}_l(zq^k;q)\operatorname{r}_k(z;q)\,,$$ for all integers $k,l$. In particular, in the case of roots of unity this implies a quasi-periodicity property: $$\operatorname{r}_{k+N}(z;q)=\operatorname{r}_k(z;q)\operatorname{r}_N(z;q),
+\quad \text{if}\quad q^N=1,$$ and the invariance property $$\operatorname{r}_{N}(zq;q)=\operatorname{r}_N(z;q),\quad \text{if}\quad q^N=1.$$
+
+Let $(M,N)$ be an admissible pair, and recall $\mathsf{b}$ and $\mathsf{s}$ from Equation [\[eq.bs\]](#eq.bs){reference-type="eqref" reference="eq.bs"}. Choose two integers $P$ and $Q$ which satisfy the equation $MP+NQ=1$. Let $\operatorname{f}(z)$ be a meromorphic function and $\operatorname{g^\pm}(z)\in\mathbb{C}(z)$ two rational functions such that $$\frac{\operatorname{f}(z+\mathsf{b}^{\pm1}\mathsf{i})}{\operatorname{f}(z)}=
+\operatorname{g^\pm}\!\left(e^{2\pi\mathsf{b}^{\pm1}z}\right).$$ Then, for $k \in \mathbbm Z$ we have $$\operatorname{g^\pm}_k\!\left(e^{2\pi\mathsf{b}^{\pm1}z};q_{\pm}\right)
+=\frac{\operatorname{f}(z+\mathsf{b}^{\pm1}\mathsf{i}k)}{\operatorname{f}(z)}\,,$$ and, in particular, $$\operatorname{g^+}_{N}\!\left(e^{2\pi\mathsf{b}z};q_+\right)
+= \frac{\operatorname{f}(z+\mathsf{b}\mathsf{i}N)}{\operatorname{f}(z)}
+=\frac{\operatorname{f}(z+\mathsf{s}\mathsf{i})}{\operatorname{f}(z)}
+=\frac{\operatorname{f}(z+\mathsf{b}^{-1}\mathsf{i}M)}{\operatorname{f}(z)}=
+\operatorname{g^{--}}_{M}\!\left(e^{2\pi\mathsf{b}^{-1}z};q_-\right).$$ Define $$\begin{aligned}
+\label{gx}\operatorname{g}\!\left(x\right) &= 
+\operatorname{g^+}_{N}\!\left(x^{\frac1N};q_+\right)= 
+\operatorname{g^{--}}_{M}\!\left(x^{\frac1M};q_-\right)
+\\
+\label{sxy}\operatorname{S}(x,y)&= 
+\sum_{k=0}^{\mathsf{s}^2-1}\operatorname{g^+}_{kP}\!
+\left(x;q_+\right)\operatorname{g^{--}}_{kQ}\!
+\left(y;q_-\right)
+\end{aligned}$$
+
+::: lemma
+[]{#lem.gg label="lem.gg"} (a) We have $\operatorname{g}\!\left(x\right) \in\mathbb{C}(x)$ and $\operatorname{S}(x,y) \in\mathbb{C}(x,y)$. (b) The function $\operatorname{S}(x,y)$ is independent of $P$ and $Q$ provided $x^N=y^M$.
+:::
+
+::: proof
+*Proof.* Since $$\operatorname{g^+}_{N}\!\left(xq_+;q_+\right)
+=\operatorname{g^+}_{N}\!\left(x;q_+\right),\qquad 
+\operatorname{g^{--}}_{M}\!\left(xq_-;q_-\right)
+=\operatorname{g^{--}}_{M}\!\left(x;q_-\right),$$ it follows that $\operatorname{g}\!\left(x\right) \in\mathbb{C}(x)$, and consequently, $\operatorname{S}(x,y) \in\mathbb{C}(x,y)$.
+
+For (b), let $P', Q'$ be another pair satisfying the equation $MP'+NQ'=1$. Then there exists an integer $R$ such that $P'=P+RN$ and $Q'=Q-RM$. Denoting the function [\[sxy\]](#sxy){reference-type="eqref" reference="sxy"} with $P$ and $Q$ replaced by $P'$ and $Q'$ as $\operatorname{S}'(x,y)$, we have $$\begin{aligned}
+ \operatorname{S}'(x,y) 
+&=\sum_{k=0}^{\mathsf{s}^2-1}\operatorname{g^+}_{kP'}\!
+\left(x;q_+\right)\operatorname{g^{--}}_{kQ'}\!
+\left(y;q_-\right)
+=\sum_{k=0}^{\mathsf{s}^2-1}\operatorname{g^+}_{kP+kRN}\!
+\left(x;q_+\right)\operatorname{g^{--}}_{kQ-kRM}\!
+\left(y;q_-\right)\\
+&=\sum_{k=0}^{\mathsf{s}^2-1}\operatorname{g^+}_{kP}\!
+\left(x;q_+\right) \operatorname{g^+}_{N}\!
+\left(x;q_+\right)^{kR}\operatorname{g^{--}}_{kQ}\!
+\left(y;q_-\right)\operatorname{g^{--}}_{M}\!
+\left(y;q_-\right)^{-kR}\\
+&=\sum_{k=0}^{\mathsf{s}^2-1}\operatorname{g^+}_{kP}\!
+\left(x;q_+\right) \left(\frac{\operatorname{g^+}_{N}\!
+\left(x;q_+\right)}{\operatorname{g^{--}}_{M}\!
+\left(y;q_-\right)}\right)^{kR}\operatorname{g^{--}}_{kQ}\!
+\left(y;q_-\right)
+=\sum_{k=0}^{\mathsf{s}^2-1}\operatorname{g^+}_{kP}\!
+\left(x;q_+\right)\operatorname{g^{--}}_{kQ}\!
+\left(y;q_-\right) \\
+&=\operatorname{S}(x,y)
+\end{aligned}$$ where we used the second equality in [\[gx\]](#gx){reference-type="eqref" reference="gx"}. ◻
+:::
+
+For a complex number $x$, we denote $\mathcal{C}_x= x\mathsf{i}/\mathsf{s}+\mathbb{R}\subset \mathbbm C$.
+
+::: lemma
+[]{#lem.main label="lem.main"} Let $\operatorname{f}(z)$, $\operatorname{g}\!\left(z\right)$, $\operatorname{S}\!\left(x,y\right)$ be as above and $\lambda$ a real number in general position such that the form $\operatorname{f}(z)\operatorname{d}\!z$ is absolutely integrable along $\mathcal{C}_{\lambda}$, $$\label{cii}
+\lim_{x\to\pm\infty}
+\sup_{y\in \left[{\lambda\over \mathsf{s}},{\lambda\over \mathsf{s}}+\mathsf{s}\right]}|
+\operatorname{f}(x+\mathsf{i}y)|=0,$$ and $$\label{ciii}
+\operatorname{g}\!\left(0\right)\ne 1\ne \operatorname{g}\!\left(\infty\right).$$ Then the following equalities hold
+
+$$\begin{aligned}
+\label{eq.main}
+\int_{\mathcal{C}_{\lambda}}\operatorname{f}(z)\operatorname{d}\!z &=
+\left(\int_{\mathcal{C}_{\lambda}}-\int_{\mathcal{C}_{\lambda+1}}\right)
+\frac{\operatorname{f}(z)\operatorname{S}\!
+\left(e^{2\pi\mathsf{b}z},e^{2\pi\mathsf{b}^{-1}z}\right)}{1-\operatorname{g}\!
+\left(e^{2\pi\mathsf{s}z}\right)}\operatorname{d}\!z \\ \notag
+& =2\pi\mathsf{i}\sum_{0<\mathsf{s}\mathrm{Im}\alpha-\lambda<1}\operatorname{Res}_{z=\alpha}
+\frac{\operatorname{f}(z)\operatorname{S}\!
+\left(e^{2\pi\mathsf{b}z},e^{2\pi\mathsf{b}^{-1}z}\right)}{1-\operatorname{g}\!
+\left(e^{2\pi\mathsf{s}z}\right)} \,.
+\end{aligned}$$
+:::
+
+::: proof
+*Proof.* Let us derive the first equality. We denote $$q_\pm= e^{2\pi\mathsf{i}\mathsf{b}^{\pm2}},$$ so that we have $$q_+=e^{2\pi\mathsf{i}\frac MN},\quad q_-=e^{2\pi\mathsf{i}\frac NM}.$$ We also have $$\operatorname{f}(z+k\mathsf{b}^{\pm1}\mathsf{i})=\operatorname{f}(z)
+\operatorname{g^\pm}_{k}\!\left(e^{2\pi\mathsf{b}^{\pm1}z};q_\pm\right), 
+\quad \forall k\in\mathbb{Z}.$$ In particular, $$\operatorname{f}(z+\mathsf{s}\mathsf{i})=\operatorname{f}(z+N\mathsf{b}\mathsf{i})=
+\operatorname{f}(z+M\mathsf{b}^{-1}\mathsf{i})=
+\operatorname{f}(z)\operatorname{g}\!\left(e^{2\pi\mathsf{s}z}\right).$$ The function $$\label{hf}
+\operatorname{h}(z)= \operatorname{f}\!
+\left(\frac z{2\pi\mathsf{s}}\right)$$ has the properties $$\label{g+g-}
+\frac{\operatorname{h}(z+k2\pi \mathsf{i})}{\operatorname{h}(z)}=
+\operatorname{g^+}_{Pk}\!\left(e^{z/N};q_+\right)
+\operatorname{g^{--}}_{Qk}\!\left(e^{z/M};q_-\right),\quad \forall k\in\mathbb{Z}.$$ From equation [\[g+g-\]](#g+g-){reference-type="eqref" reference="g+g-"}, it follows that $$\label{Sh}
+\sum_{k=0}^{\mathsf{s}^2-1}
+\frac{\operatorname{h}(z+k2\pi\mathsf{i})}{\operatorname{h}(z)}=
+\operatorname{S}\!\left(e^{z/N},e^{z/M}\right).$$ As $\lambda$ is generic, the contour $\mathcal{C}_\lambda$ satisfies the conditions of Lemma [\[lem1\]](#lem1){reference-type="ref" reference="lem1"} with $a=\mathsf{s}\mathsf{i}$. Thus, we write $$\begin{gathered}
+\label{pro1}
+\int_{\mathcal{C}_\lambda}\operatorname{f}(z)\operatorname{d}\!z=
+\!\left(\int_{\mathcal{C}_\lambda}-\int_{\mathsf{s}\mathsf{i}+\mathcal{C}_\lambda}\right)
+\frac{\operatorname{f}(z)}{1-\operatorname{g}\!\left(e^{2\pi\mathsf{s}z}\right)}
+\operatorname{d}\!z \\
+=\left(\int_{\mathcal{C}_{\lambda 2\pi\mathsf{s}}}
+-\int_{\mathcal{C}_{(\lambda+\mathsf{s}^2) 2\pi\mathsf{s}}}\right)
+\frac{\operatorname{h}(z)}{1-\operatorname{g}\!\left(e^{z}\right)}
+\frac{\operatorname{d}\!z}{2\pi\mathsf{s}} \\
+=\sum_{k=0}^{\mathsf{s}^2-1}\left(\int_{\mathcal{C}_{(\lambda +k)2\pi\mathsf{s}}}
+-\int_{\mathcal{C}_{(\lambda+k+1) 2\pi\mathsf{s}}}\right)
+\frac{\operatorname{h}(z)}{1-\operatorname{g}\!\left(e^{z}\right)}
+\frac{\operatorname{d}\!z}{2\pi\mathsf{s}} \\
+=\sum_{k=0}^{\mathsf{s}^2-1}\left(\int_{\mathcal{C}_{\lambda 2\pi\mathsf{s}}}
+-\int_{\mathcal{C}_{(\lambda+1) 2\pi\mathsf{s}}}\right)
+\frac{\operatorname{h}(z+k2\pi\mathsf{i})}{1-\operatorname{g}\!
+\left(e^{z}\right)}\frac{\operatorname{d}\!z}{2\pi\mathsf{s}} \\
+=\left(\int_{\mathcal{C}_{\lambda 2\pi\mathsf{s}}}-
+\int_{\mathcal{C}_{(\lambda+1) 2\pi\mathsf{s}}}\right)
+\frac{\operatorname{h}(z)\operatorname{S}\!
+\left(e^{z/N},e^{z/M}\right)}{1-\operatorname{g}\!\left(e^{z}\right)}
+\frac{\operatorname{d}\!z}{2\pi\mathsf{s}} \\
+=\left(\int_{\mathcal{C}_{\lambda}}-\int_{\mathcal{C}_{\lambda+1}}\right)
+\frac{\operatorname{f}(z)\operatorname{S}\!
+\left(e^{2\pi\mathsf{b}z},e^{2\pi\mathsf{b}^{-1}z}\right)}{1-\operatorname{g}\!
+\left(e^{2\pi\mathsf{s}z}\right)}\operatorname{d}\!z.
+\end{gathered}$$
+
+The second equality in Equation [\[eq.main\]](#eq.main){reference-type="eqref" reference="eq.main"} follows from the residue theorem. To justify its application note that $\mathcal{C}_{\lambda}-
+\mathcal{C}_{\lambda+1}$ union two vertical segments is the boundary of a disk. Conditions [\[cii\]](#cii){reference-type="eqref" reference="cii"}, [\[ciii\]](#ciii){reference-type="eqref" reference="ciii"} imply that for sufficiently large negative or positive $x$ the integrand in last part of [\[pro1\]](#pro1){reference-type="eqref" reference="pro1"} is regular on the vertical segment $\mathcal C'= x+\mathsf{i}[\lambda,\lambda+1]/\mathsf{s}$ and the following estimate holds $$\begin{aligned}
+\left|\int_{\mathcal C'}{\operatorname{f}(z)\operatorname{S}\!
+\left(e^{2\pi\mathsf{b}z},e^{2\pi\mathsf{b}^{-1}z}\right)\over 1-\operatorname{g}\!
+\left(e^{2\pi\mathsf{s}z}\right)}\operatorname{d}\!z\right|
+ & \le
+\sum_{k=0}^{\mathsf{s}^2-1}\int_{\lambda}^{\lambda+1}
+\left |{\operatorname{f}\left(x+\mathsf{i}{y+k\over\mathsf{s}}\right)\over1-\operatorname{g}\!
+\left(e^{2\pi(\mathsf{s}x+\mathsf{i}y)}\right)} \right |{\operatorname{d}\!y\over \mathsf{s}}\\
+ & \le
+{1\over\mathsf{s}}\sum_{k=0}^{\mathsf{s}^2-1}
+\sup_{y\in [\lambda,\lambda+1]}\left |{\operatorname{f}\left(x+\mathsf{i}{y+k\over\mathsf{s}}\right)\over1-\operatorname{g}\!
+\left(e^{2\pi(\mathsf{s}x+\mathsf{i}y)}\right)} \right |\\
+& \le
+{1\over\mathsf{s}}\sup_{y\in [\lambda,\lambda+1]}{1\over\left|1-\operatorname{g}\!
+\left(e^{2\pi(\mathsf{s}x+\mathsf{i}y)}\right) \right |} 
+\sum_{k=0}^{\mathsf{s}^2-1}
+\sup_{t\in [\lambda,\lambda+1]}\left |\operatorname{f}\left(x+\mathsf{i}{t+k\over\mathsf{s}}\right)\right| \\
+& \le\mathsf{s}{\sup_{z\in x+\mathsf{i}\left[{\lambda\over\mathsf{s}},{\lambda\over\mathsf{s}}+\mathsf{s}\right]}\left|\operatorname{f}(z)\right|\over\inf_{|w|=e^{2\pi\mathsf{s}x}}\left|1-\operatorname{g}\!
+\left(w\right) \right |}
+\xrightarrow{|x|\to\infty} 0
+\end{aligned}$$ ◻
+:::

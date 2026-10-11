@@ -488,8 +488,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 6,
-   "overlaid": 1,
+   "tex_sections": 21,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -505,107 +505,155 @@
     {
      "id": "sec-001-the-hurwitz-topological-quantum-field-theory",
      "title": "The Hurwitz Topological Quantum Field Theory",
-     "prose_ratio": 0.342,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.167,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-the-hurwitz-theory-at-fixed-degree",
      "title": "The Hurwitz Theory at Fixed Degree",
-     "result": "no matching \\section"
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-the-extended-hurwitz-theory",
      "title": "The Extended Hurwitz Theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-the-string-dual",
      "title": "The String Dual",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-from-two-dimensional-yang-mills-to-hurwitz",
      "title": "From Two-dimensional Yang-Mills to Hurwitz",
-     "prose_ratio": 0.123,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.833,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-the-observables-of-two-dimensional-yang-mills-th",
      "title": "The Observables of Two-dimensional Yang-Mills Theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-the-schur-weyl-dictionary",
      "title": "The Schur-Weyl Dictionary",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-the-gross-taylor-expansion",
      "title": "The Gross-Taylor Expansion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-chiral-yang-mills-theory-as-a-deformed-hurwitz-t",
      "title": "Chiral Yang-Mills Theory as a Deformed Hurwitz Theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-the-stringy-structure-of-chiral-yang-mills-theor",
      "title": "The Stringy Structure of Chiral Yang-Mills Theory",
-     "prose_ratio": 0.053,
+     "prose_ratio": 0.354,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-a-double-expansion",
      "title": "A Double Expansion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.026,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-012-vertex-operators",
      "title": "Vertex Operators",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.677,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-a-stringy-deformation",
      "title": "A Stringy Deformation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-a-deformed-gromov-witten-theory",
      "title": "A Deformed Gromov-Witten Theory",
-     "prose_ratio": 0.152,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-the-partial-permutation-algebra-of-yang-mills-th",
      "title": "The Partial Permutation Algebra of Yang-Mills Theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-the-duality-map",
      "title": "The Duality Map",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-the-gromov-witten-formulation",
      "title": "The Gromov-Witten Formulation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-the-inverse-map",
      "title": "The Inverse Map",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-remarks-on-wilson-loops",
      "title": "Remarks on Wilson Loops",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-020-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

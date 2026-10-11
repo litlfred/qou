@@ -7,10 +7,10 @@ section_number: null
 pages: 7-8
 source_pdf: 0702263v1.pdf
 source_sha256: 8ae381b4eba60286
-text_source: latex
-latex_prose_ratio: 0.916
-latex_coverage_ratio: 1.0
 doc_brief: "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna — The progress in determining the coupling constants of meson ic chi- ral Lagrangians is reviewed, with emphasis on the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The chiral Lagrangian of lowest order, $O(G_F p^2)$, contains two LECs
 $g_8,g_{27}$ to describe nonleptonic weak decays of kaons

@@ -99,7 +99,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 3,
-   "overlaid": 2,
+   "overlaid": 1,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -109,18 +109,16 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.892,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.938,
-     "coverage_ratio": 0.871,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.564,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-proof-of-theorem-11",

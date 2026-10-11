@@ -8,220 +8,70 @@ pages: 6-10
 source_pdf: 1011.6483v3.pdf
 source_sha256: 7a425e51860c37a4
 doc_brief: "DERIVED HIGHER HOCHSCHILD HOMOLOGY — W e study the higher Hochschild chain functor, factorizatio n alge- bras and their relationship with topological chiral homolo gy."
+text_source: latex
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.864
 ---
-graded algebras will be respectively denoted by sSet and CDGA. The
-category of commutative graded algebra will be denoted CGA. Unless
-otherwise stated, all algebras will be assumed to be unital.
-(3) We will simply refer to commutative diﬀerential graded algebras a s CDGAs.
-(4) The (∞, 1)-categories of simplicial sets and commutative diﬀerential grade d
-algebras will be respectively denoted by sSet∞ and CDGA ∞.
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 7
-(5) Let n≥ 1 be an integer. By an En-algebra we mean an algebra over an
-En-operad. Unless otherwise stated, we work in the context of oper ads
-of diﬀerential graded k-modules or ∞-operads in k-Mod ∞. We will write
-En-Alg∞ for the (∞, 1)-category of En-algebras.
-(6) We work with a cohomological grading (unless otherwise stated) for all our
-(co)homology groups and graded spaces, even when we use subsc ripts to
-denote the grading. In particular, all diﬀerentials are of degree +1 , of the
-form d : Ai → Ai+1 and the homology groups Hi(X) of a space X are
-concentrated in non-positive degree.
-(7) We will denote by CHn
-X• (A) the Hochschild chain complex over X• with
-value in A of total degree n. This Hochschild chain complex was noted
-diﬀerently in the papers [12, 13]. We choose this notation in order to p ut
-emphasis on the covariance of the Hochschild chain functor with respect to
-X• and the fact that we are considering cohomological degree.
-2.1. Simplicial sets. Denote by ∆ the category whose objects are the ordered sets
-[k] ={0, 1,...,k }, and morphisms f : [k]→ [l] are non-decreasing maps f (i)≥f (j)
-fori>j . In particular, we have the morphisms δi : [k− 1]→ [k],i = 0,...,k , which
-are injections that miss i and we have surjections σj : [k + 1]→ [k],i = 0,...,k ,
-which send j and j + 1 to j.
-A simplicial set is by deﬁnition a contravariant functor from ∆ to the category of
-setsSets or written as a formula, Y• : ∆ op→S ets. Denote by Yk =Y•([k]), and call
-its elements simplicies. The image of δi underY• is denoted by di :=Y•(δi) : Yk→
-Yk−1, fori = 0,...,k , and is called the ith face. Similarly, si :=Y•(σi) : Yk→Yk+1,
-fori = 0,...,k , is called the ith degeneracy. An element in Yk is called a degenerate
-simplex, if it is in the image of some si, otherwise it is called non-degenerate.
-A simplicial set is said to be ﬁnite if Yk is ﬁnite for every object [ k]∈ ∆. A
-pointed simplicial set is a contravariant functor into the category Sets∗ of pointed
-ﬁnite sets, Y• : ∆ op →S ets∗. In particular, each Yk = Y•([k]) has a preferred
-element called the base point, and all diﬀerentials di and degeneracies si preserve
-this base point.
-A morphism of (ﬁnite or not, pointed or not) simplicial sets is a natura l trans-
-formation of functors f• : X• → Y•. Thus f• is given by a sequence of maps
-fk : Xk → Yk (preserving the base point in the pointed case), which commute
-with the faces fkdi = difk+1, and degeneracies fk+1si = sifk for all k≥ 0 and
-i = 0,...,k .
+[]{#S:Delta label="S:Delta"} Denote by $\Delta$ the category whose objects are the ordered sets $[k]=\{0,1,\dots,k\}$, and morphisms $f:[k]\to [l]$ are non-decreasing maps $f(i)\geq f(j)$ for $i>j$. In particular, we have the morphisms $\delta_i:[k-1]\to[k], i=0,\dots, k$, which are injections that miss $i$ and we have surjections $\sigma_j:[k+1]\to [k], i=0,\dots,k$, which send $j$ and $j+1$ to $j$.
+
+A *simplicial set* is by definition a contravariant functor from $\Delta$ to the category of sets $\mathcal Sets$ or written as a formula, $Y_{\scriptstyle\bullet}:\Delta^{op}\to\mathcal Sets$. Denote by $Y_k=Y_{\scriptstyle\bullet}([k])$, and call its elements simplicies. The image of $\delta_i$ under $Y_{\scriptstyle\bullet}$ is denoted by $d_i:=Y_{\scriptstyle\bullet}(\delta_i):Y_{k}\to Y_{k-1}$, for $i=0,\dots,k$, and is called the $i$th face. Similarly, $s_i:=Y_{\scriptstyle\bullet}(\sigma_i):Y_{k}\to Y_{k+1}$, for $i=0,\dots,k$, is called the $i$th degeneracy. An element in $Y_k$ is called a degenerate simplex, if it is in the image of some $s_i$, otherwise it is called non-degenerate.
+
+A simplicial set is said to be *finite* if $Y_k$ is finite for every object $[k]\in \Delta$. A *pointed* simplicial set is a contravariant functor into the category $\mathcal Sets_*$ of pointed finite sets, $Y_{\scriptstyle\bullet}:\Delta^{op}\to \mathcal Sets_*$. In particular, each $Y_k=Y_{\scriptstyle\bullet}([k])$ has a preferred element called the base point, and all differentials $d_i$ and degeneracies $s_i$ preserve this base point.
+
+A morphism of (finite or not, pointed or not) simplicial sets is a natural transformation of functors $f_{\scriptstyle\bullet}:X_{\scriptstyle\bullet}\to Y_{\scriptstyle\bullet}$. Thus $f_{\scriptstyle\bullet}$ is given by a sequence of maps $f_k:X_k\to Y_k$ (preserving the base point in the pointed case), which commute with the faces $f_k d_i = d_i f_{k+1}$, and degeneracies $f_{k+1} s_i=s_i f_{k}$ for all $k\geq 0$ and $i=0,\dots, k$.
+
 One of the most important construction for us is the pushout.
-Deﬁnition 1. Let X•,Y •, and Z• be simplicial sets, and let f• : Z•→ X• and
-g• :Z•→Y• be maps of simplicial sets. We deﬁne the wedge W• =X•∪Z• Y• of
-X• and Y• along Z• as the simplicial space given by Wk = (Xk∪Yk)/∼, where
-∼ identiﬁes fk(z) = gk(z) for all z∈ Zk. The face maps are deﬁned as dW•
-i (x) =
-dX•
-i (x),dW•
-i (y) = dY•
-i (y) and the degeneracies are sW•
-i (x) = sX•
-i (x),sW•
-i (y) =
-sY•
-i (y) for any x∈Xk֒→Wk and y∈Yk֒→Wk. It is clear that W• is well-deﬁned
-and there are simplicial maps X•
-i•→W• and Y•
-j•→W•.
-If X• is a pointed simplicial set, then we can make W• into a pointed simplicial
-set by declaring the base point to be the one induced from the inclusio nX•→W•.
-(Note that this is in particular the case, when X•,Y •,Z •,f • and g• are in the
-pointed setting.)
-8 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-2.2. Commutative Diﬀerential Graded Algebras. We let CDGA be the cat-
-egory of commutative diﬀerential graded algebras (over the char acteristic zero ﬁeld
-k). We do not assume the underlying chain complexes of our algebras t o be bounded
-since in practice, it happens that one has to consider the Hochschild chains of de
-Rham forms on a space, which is generally Z-graded. We follow the approach of [32,
-Chapter 1.1] and [16] for the model category properties of CDGA and modules over
-CDGAs. Recall from [19, Section 2.3], that there is a standard coﬁbr antly generated
-closed model category structure on the category of unbounded chain complexes for
-which ﬁbrations are epimorphisms and (weak) equivalences are quas i-isomorphisms.
-It is further a symmetric monoidal model category with respect to the tensor prod-
-ucts of chain complexes.
-Since we work in characteristic zero, there is a standard closed mod el category
-structure on CDGA [16, Theorem 4.1.1] as well, for which ﬁbrations are epimor-
-phisms and (weak) equivalences are quasi-isomorphisms (of CDGAs) . The category
-CDGA also has a monoidal structure given by the tensor product (over t he ground
-ﬁeld k) of diﬀerential graded commutative algebras, which makes CDGA a sym-
-metric monoidal model category. Note that since k is assumed to be a ﬁeld, this
-monoidal structure is given by an exact bifunctor.
-Also note that CDGA is simplicially enriched. Indeed, given A,B ∈ CDGA,
-we can form Map CDGA (A,B ) the simplicial set of maps [ n]↦→HomCDGA (A,B⊗
-Ω ∗(∆ n)) (where Ω ∗(∆ n) is the CDGA of forms on the n-dimensional standard
-simplex).
-For any CDGA A, one can consider its category of diﬀerential graded (left)
-modules, that we will denote by A-Mod . Again it has a natural model category
-structure with ﬁbrations being epimorphisms and weak equivalences being quasi-
-isomorphisms. Further all assumptions in [32, Chapter 1.1] are satis ﬁed. In partic-
-ular, the tensor product of A-modules makes A-Mod a symmetric monoidal model
-category (in the sense of [19]) such that the functor M⊗A− preserves weak equiv-
-alences when M is coﬁbrant. Moreover, for any CDGA A, the category A−CDGA
-of diﬀerential graded commutative A-algebra, in other words commutative monoid
-objects in A-Mod , has a natural structure of proper model category such that, for
-any coﬁbrant A-algebra B, the base change functor B⊗A− : A-Mod→ B-Mod
-preserves weak equivalences [32, Chapter 1.1].
-2.3. Dwyer-Kan localization and (∞, 1)-categories. The (∞, 1)-categories that
-we are concerned about in this paper arise from model categories s tructures via the
-Dwyer-Kan localization turning them into simplicial categories. Indee d simplicial
-categories are model for (∞, 1)-categories [5]. We now explain brieﬂy how one gets
-(∞, 1)-categories out of model categories such as those considered in Section 2.1, 2.2
-above.
-Following [31, 26], by an ( ∞, 1)-category we mean a complete Segal space. Rezk
-has shown that the category of simplicial spaces has a (simplicial clos ed) model
-structure, denoted CSeSp such that a complete Segal space is precisely a ﬁbrant
-object for this model structure [31, Theorem 7.2]. Note that the re is also a (simpli-
-cial closed) model category structure, denoted SeSp, on the category of simplicial
-spaces such that a ﬁbrant object in the SeSp structure is precisely a Segal space.
-We let R :SeSp→S eSp be a ﬁbrant replacement functor. Rezk [31] has deﬁned a
-completion functor X•→ ˆX• which, to a Segal space, associates an equivalent com-
-plete Segal space. Thus, the composition X•↦→ˆR(X•) gives a (ﬁbrant replacement
-DERIVED HIGHER HOCHSCHILD, TCH, F ACTORIZATION ALGEBRAS 9
-in the model category CSeSp) functor LCSeSp from simplicial spaces to complete
-Segal spaces.
-It remains to explain how to go from a model category to a simplicial sp ace. The
-standard key idea is to use Dwyer-Kan localization. Let M be a model category
-andW be its subcategory of weak-equivalences. We denote LH (M,W) its ham-
-mock localization, see [10]. One of the main property of LH(M,W) is that it is a
-simplicial category and that the (usual) category π0(LH (M,W)) is the homotopy
-category ofM. Further, every weak equivalence has a (weak) inverse in LH(M,W).
-WhenM is further a simplicial model category, then for every pair ( x,y ) of objects
-HomLH (M,W)(x,y ) is naturally homotopy equivalent to the derived mapping space
-RHom(x,y ).
-It follows that any model category M gives functorially rise to the simplicial
-category LH (M,W). Taking the nerve N•(LH (M,W)) we obtain a simplicial
-space. Composing with the complete Segal Space replacement func tor we get
-a functor M →L∞(M) := LCSeSp(N•(LH(M,W))) from model categories to
-(∞, 1)-categories (that is complete Segal spaces).
-Example 1. Applying the above procedure to the model category of simplicial
-setssSet, we obtain the (∞, 1)-categorysSet∞. Similarly from the model category
-CDGA of CDGAs we obtain the ( ∞, 1)-category CDGA ∞. Note that a simplicial
-set is determined by its (∞, 0) path groupoid and therefore the category of simplicial
-sets should be thought of as the ( ∞, 1) category of all ( ∞, 0) groupoids. Further,
-the tensor product (over k) of algebras is a monoidal functor which gives CDGA
-a structure of monoidal model category, see [19]. Thus CDGA ∞ also inherits the
-structure of a symmetric monoidal ( ∞, 1)-category in the sense of [31, 26]. Simi-
-larly, the disjoint union of simplicial sets endows sSet and sSet∞ with symmetric
-monoidal structures.
-The model category of topological spaces yields the ( ∞, 1)-categoryTop ∞. Since
-sSet and Top are Quillen equivalent [14, 19], the associated ( ∞, 1)-categories are
-equivalent (as (∞, 1)-categories): sSet∞
-∼
-⇄
-∼
-Top ∞, where the left and right equiva-
-lences are respectively induced by the singular set and geometric re alization func-
-tors.
-One can also consider the pointed versions sSet∞∗ and Top ∞∗ of the above
-(∞, 1)-categories (using the model categories of these pointed vers ions [19]).
-Example 2. As recalled in Section 2.2, there are model categories categories
-A-Mod and A-CDGA of modules and commutative algebras over a CDGA A.
-Thus the above procedure gives us (∞, 1)-categoriesA-Mod ∞ andA-CDGA ∞ and
-the base change functor lifts to an ( ∞, 1)-functor. Further, if f :A→B is a weak
-equivalence, the natural functor f∗ : B-Mod → A-Mod induces an equivalence
-B-Mod ∞
-∼
-→A-Mod ∞ of (∞, 1)-categories since it is a Quillen equivalence.
-Moreover, if f : A→B is a morphism of CDGAs, it induces a natural functor
-f ∗ :A-Mod→B-Mod,M ↦→M⊗AB, which is an equivalence of ( ∞, 1)-categories
-when f is a quasi-isomorphism, and is a (weak) inverse of f∗ (see [32] or [20]).
-Here we also (abusively) denote f ∗ : A-Mod ∞→ B-Mod ∞ and f∗ : B-Mod ∞→
-A-Mod ∞ the (derived) functors of ( ∞, 1)-categories induced by f . Since we are
-working over a ﬁeld of characteristic zero, the same results applies to monoids in
-A-Mod and B-Mod , that is to the categories A-CDGA ∞ and B-CDGA ∞. Also
-10 G. GINOT, T. TRADLER, AND M. ZEINALIAN
-note that, if f :A→B, g :A→C are CDGAs homomorphisms, we can form the
-(homotopy) pushout D∼=B⊗L
-AC.
-Let us denote p : B→ D and q : C→ D the natural CDGAs maps. We thus
-get two natural base change ((∞, 1)-)functorsC-Mod ∞
-f ∗◦g∗
-⇒
-p∗◦q∗
-B-Mod ∞. Given any
-M ∈ C-Mod , the natural map f ∗◦g∗(M )→ p∗◦q∗(M ) is an equivalence [32,
-Proposition 1.1.0.8].
-The (∞, 1)-categoryCDGA ∞ is tensored oversSet∞ (and thusTop ∞ as well) as
-follows from [22, §4.4.4]. We refer to [22, 25] for tensored ( ∞, 1)-categories (which
-is the obvious analogue of the classical notion of tensored categor ies over Top or
-sSet); we simply recall that an ( ∞, 1)-categoryC is tensored over sSet∞ if there
-exists an (∞, 1)-functorC× sSet∞→C , denoted (C,X •)↦→C ⊠X•, together with
-natural equivalences
-Map C
-(
-C ⊠X•,D
-) ∼= MapsSet∞
-(
-X•,Map C
-(
-C,D
-))
-.
-In fact, the tensor A ⊠X• is precisely realized by the Hochschild derived functor,
-see Theorem 1.
-Example 3. We denote En-Alg∞ the (∞, 1)-category of En-algebras which is
-given by algebras over any En-(∞-)operads as introduced in [25, Section 5.1] in
-the symmetric monoidal (( ∞, 1)-)category (k-Mod ∞,⊗). It is equivalent to the
-(∞, 1)-category associated to model categories (deduced for insta nce from [16,
-Theorem 4.1.1]) of algebras over the usual operad of singular chains on the lit-
-tlen-dimensional disk operad or as algebras over the Barratt-Eccles o perad (which
-is an Hopf operad) [4].
-Remark 1. There are other functors that yields a complete Segal space out o f a
-model category. For instance, one can use the classiﬁcation diagr am of Rezk [31].
-Let againM be a model category and, for any integer n, letM[n] be the (model)
-category of n-composables morphisms, that is the category fo functors from t he
-poset [n] to M. The classiﬁcation diagram ofM is the simplicial space n ↦→
-N•(We(M[n])) where We(M[n]) is the subcategory of weak equivalences of M[n].
-Then taking a Reedy ﬁbrant replacement yields another complete Segal space
-N•(We(M[n]))f [6, Theorem 6.2], [31, Theorem 8.3]. It is known that the Segal
-spaceN•(We(M[n]))f is equivalent to LCSeSp(N•(LH (M,W))) [6].
-More generally, there are several model for ( ∞, 1)-categories and several equiv-
-alent ways to obtain an ( ∞, 1)-category out of a “homotopy theory”. We believe
-the results of this paper can easily be applied to the favorite model o f the reader.
+
+::: definition
+[]{#D:wedge label="D:wedge"} Let $X_{\scriptstyle\bullet}, Y_{\scriptstyle\bullet}$, and $Z_{\scriptstyle\bullet}$ be simplicial sets, and let $f_{\scriptstyle\bullet}:Z_{\scriptstyle\bullet}\to X_{\scriptstyle\bullet}$ and $g_{\scriptstyle\bullet}:Z_{\scriptstyle\bullet}\to Y_{\scriptstyle\bullet}$ be maps of simplicial sets. We define the wedge $W_{\scriptstyle\bullet}=X_{\scriptstyle\bullet}\cup_{Z_{\scriptstyle\bullet}} Y_{\scriptstyle\bullet}$ of $X_{\scriptstyle\bullet}$ and $Y_{\scriptstyle\bullet}$ along $Z_{\scriptstyle\bullet}$ as the simplicial space given by $W_k= (X_k \cup Y_k)/\sim$, where $\sim$ identifies $f_k(z)=g_k(z)$ for all $z\in Z_k$. The face maps are defined as $d^{W_{\scriptstyle\bullet}}_i(x)=d^{X_{\scriptstyle\bullet}}_i(x), d^{W_{\scriptstyle\bullet}}_i(y)=d^{Y_{\scriptstyle\bullet}}_i(y)$ and the degeneracies are $s^{W_{\scriptstyle\bullet}}_i(x)=s^{X_{\scriptstyle\bullet}}_i(x), s^{W_{\scriptstyle\bullet}}_i(y)=s^{Y_{\scriptstyle\bullet}}_i(y)$ for any $x\in X_k \hookrightarrow W_k$ and $y\in Y_k \hookrightarrow W_k$. It is clear that $W_{\scriptstyle\bullet}$ is well-defined and there are simplicial maps $X_{\scriptstyle\bullet}\stackrel{i_{\scriptstyle\bullet}}\to W_{\scriptstyle\bullet}$ and $Y_{\scriptstyle\bullet}\stackrel{j_{\scriptstyle\bullet}}\to W_{\scriptstyle\bullet}$.
+
+If $X_{\scriptstyle\bullet}$ is a pointed simplicial set, then we can make $W_{\scriptstyle\bullet}$ into a pointed simplicial set by declaring the base point to be the one induced from the inclusion $X_{\scriptstyle\bullet}\to W_{\scriptstyle\bullet}$. (Note that this is in particular the case, when $X_{\scriptstyle\bullet}, Y_{\scriptstyle\bullet}, Z_{\scriptstyle\bullet}, f_{\scriptstyle\bullet}$ and $g_{\scriptstyle\bullet}$ are in the pointed setting.)
+:::
+
+## Commutative Differential Graded Algebras {#S:CDGA}
+
+We let $CDGA$ be the category of commutative differential graded algebras (over the characteristic zero field $k$). We do not assume the underlying chain complexes of our algebras to be bounded since in practice, it happens that one has to consider the Hochschild chains of de Rham forms on a space, which is generally $\mathbb Z$-graded. We follow the approach of [@ToVe Chapter 1.1] and [@Hi] for the model category properties of $CDGA$ and modules over CDGAs. Recall from [@Ho Section 2.3], that there is a standard cofibrantly generated closed model category structure on the category of unbounded chain complexes for which fibrations are epimorphisms and (weak) equivalences are quasi-isomorphisms. It is further a symmetric monoidal model category with respect to the tensor products of chain complexes.
+
+Since we work in characteristic zero, there is a standard closed model category structure on $CDGA$ [@Hi Theorem 4.1.1] as well, for which fibrations are epimorphisms and (weak) equivalences are quasi-isomorphisms (of CDGAs). The category $CDGA$ also has a monoidal structure given by the tensor product (over the ground field $k$) of differential graded commutative algebras, which makes $CDGA$ a symmetric monoidal model category. Note that since $k$ is assumed to be a field, this monoidal structure is given by an exact bifunctor.
+
+Also note that $CDGA$ is simplicially enriched. Indeed, given $A,B \in CDGA$, we can form $\text{Map}_{CDGA}(A,B)$ the simplicial set of maps $[n]\mapsto \mathop{Hom}_{CDGA}(A, B\otimes \Omega^*(\Delta^n))$ (where $\Omega^*(\Delta^n)$ is the CDGA of forms on the $n$-dimensional standard simplex).
+
+For any CDGA $A$, one can consider its category of *differential graded (left) modules*, that we will denote by $A\textit{-}Mod$. Again it has a natural model category structure with fibrations being epimorphisms and weak equivalences being quasi-isomorphisms. Further all assumptions in [@ToVe Chapter 1.1] are satisfied. In particular, the tensor product of $A$-modules makes $A\textit{-}Mod$ a symmetric monoidal model category (in the sense of [@Ho]) such that the functor $M\otimes_A -$ preserves weak equivalences when $M$ is cofibrant. Moreover, for any CDGA $A$, the category $A-CDGA$ of differential graded commutative $A$-algebra, in other words commutative monoid objects in $A\textit{-}Mod$, has a natural structure of proper model category such that, for any cofibrant $A$-algebra $B$, the base change functor $B\otimes_A -: A\textit{-}Mod \to B\textit{-}Mod$ preserves weak equivalences [@ToVe Chapter 1.1].
+
+## Dwyer-Kan localization and $(\infty,1)$-categories {#S:DKL}
+
+The $(\infty,1)$-categories that we are concerned about in this paper arise from model categories structures via the Dwyer-Kan localization turning them into simplicial categories. Indeed simplicial categories are model for $(\infty,1)$-categories [@Be1]. We now explain briefly how one gets $(\infty,1)$-categories out of model categories such as those considered in Section [\[S:Delta\]](#S:Delta){reference-type="ref" reference="S:Delta"}, [0.1](#S:CDGA){reference-type="ref" reference="S:CDGA"} above.
+
+Following [@Re; @L-TFT], by an $(\infty,1)$-category we mean a *complete Segal space*. Rezk has shown that the category of simplicial spaces has a (simplicial closed) model structure, denoted $\mathcal{CS}e\mathcal{S}p$ such that a complete Segal space is precisely a fibrant object for this model structure [@Re Theorem 7.2]. Note that there is also a (simplicial closed) model category structure, denoted $\mathcal{S}e\mathcal{S}p$, on the category of simplicial spaces such that a fibrant object in the $\mathcal{S}e\mathcal{S}p$ structure is precisely a Segal space. We let $\mathbb{R}:\mathcal{S}e\mathcal{S}p\to \mathcal{S}e\mathcal{S}p$ be a fibrant replacement functor. Rezk [@Re] has defined a completion functor $X_\bullet \to \widehat{X_\bullet}$ which, to a Segal space, associates an equivalent complete Segal space. Thus, the composition $X_\bullet \mapsto \widehat{\mathbb{R}(X_\bullet)}$ gives a (fibrant replacement in the model category $\mathcal{CS}e\mathcal{S}p$) functor $L_{\mathcal{CS}e\mathcal{S}p}$ from simplicial spaces to complete Segal spaces.
+
+It remains to explain how to go from a model category to a simplicial space. The standard key idea is to use Dwyer-Kan localization. Let $\mathcal{M}$ be a model category and $\mathcal{W}$ be its subcategory of weak-equivalences. We denote $L^H(\mathcal{M},\mathcal{W})$ its *hammock localization*, see [@DK]. One of the main property of $L^H(\mathcal{M},\mathcal{W})$ is that it is a simplicial category and that the (usual) category $\pi_0(L^H(\mathcal{M},\mathcal{W}))$ is the homotopy category of $\mathcal{M}$. Further, every weak equivalence has a (weak) inverse in $L^H(\mathcal{M},\mathcal{W})$. When $\mathcal{M}$ is further a simplicial model category, then for every pair $(x,y)$ of objects $\mathop{Hom}_{L^H(\mathcal{M},\mathcal{W})}(x,y)$ is naturally homotopy equivalent to the derived mapping space $\mathbb{R}Hom (x,y)$.
+
+It follows that any model category $\mathcal{M}$ gives functorially rise to the simplicial category $L^H(\mathcal{M},\mathcal{W})$. Taking the nerve $N_\bullet(L^H(\mathcal{M},\mathcal{W}))$ we obtain a simplicial space. Composing with the complete Segal Space replacement functor we get a functor $\mathcal{M}\to L_\infty(\mathcal{M}):= L_{\mathcal{CS}e\mathcal{S}p}(N_\bullet(L^H(\mathcal{M},\mathcal{W})))$ from model categories to $(\infty,1)$-categories (that is complete Segal spaces).
+
+::: example
+[]{#E:hsset label="E:hsset"}Applying the above procedure to the model category of simplicial sets $sSet$, we obtain the $(\infty,1)$-category $sSet_\infty$. Similarly from the model category $CDGA$ of CDGAs we obtain the $(\infty,1)$-category $CDGA_\infty$. Note that a simplicial set is determined by its $(\infty, 0)$ path groupoid and therefore the category of simplicial sets should be thought of as the $(\infty, 1)$ category of all $(\infty, 0)$ groupoids. Further, the tensor product (over $k$) of algebras is a monoidal functor which gives $CDGA$ a structure of monoidal model category, see [@Ho]. Thus $CDGA_\infty$ also inherits the structure of a symmetric monoidal $(\infty,1)$-category in the sense of [@Re; @L-TFT]. Similarly, the disjoint union of simplicial sets endows $sSet$ and $sSet_\infty$ with symmetric monoidal structures.
+
+The model category of topological spaces yields the $(\infty,1)$-category $Top_{\infty}$. Since $sSet$ and $Top$ are Quillen equivalent [@GoJa; @Ho], the associated $(\infty,1)$-categories are equivalent (as $(\infty,1)$-categories): $sSet_\infty\stackrel{\sim}{\underset{\sim}{\rightleftarrows}} Top_{\infty}$, where the left and right equivalences are respectively induced by the singular set and geometric realization functors.
+
+One can also consider the pointed versions ${sSet_\infty}_*$ and ${Top_{\infty}}_*$ of the above $(\infty,1)$-categories (using the model categories of these pointed versions [@Ho]).
+:::
+
+::: example
+[]{#E:Amod label="E:Amod"} As recalled in Section [0.1](#S:CDGA){reference-type="ref" reference="S:CDGA"}, there are model categories categories $A\textit{-}Mod$ and $A\text{-}CDGA$ of modules and commutative algebras over a CDGA $A$. Thus the above procedure gives us $(\infty,1)$-categories $A\textit{-}Mod_\infty$ and $A\textit{-}CDGA_\infty$ and the base change functor lifts to an $(\infty,1)$-functor. Further, if $f: A\to B$ is a weak equivalence, the natural functor $f_*:B\textit{-}Mod \to A\textit{-}Mod$ induces an equivalence $B\textit{-}Mod_\infty \stackrel{\sim}\to A\textit{-}Mod_\infty$ of $(\infty,1)$-categories since it is a Quillen equivalence.
+
+Moreover, if $f:A\to B$ is a morphism of CDGAs, it induces a natural functor $f^*:A\textit{-}Mod \to B\textit{-}Mod, M\mapsto M\otimes_A B$, which is an equivalence of $(\infty,1)$-categories when $f$ is a quasi-isomorphism, and is a (weak) inverse of $f_*$ (see [@ToVe] or [@KM]). Here we also (abusively) denote $f^*:A\textit{-}Mod_\infty \to B\textit{-}Mod_\infty$ and $f_*:B\textit{-}Mod_\infty \to A\textit{-}Mod_\infty$ the (derived) functors of $(\infty,1)$-categories induced by $f$. Since we are working over a field of characteristic zero, the same results applies to monoids in $A\textit{-}Mod$ and $B\textit{-}Mod$, that is to the categories $A\text{-}CDGA_\infty$ and $B\text{-}CDGA_\infty$. Also note that, if $f:A\to B$, $g:A\to C$ are CDGAs homomorphisms, we can form the (homotopy) pushout $D\cong B\otimes^{\mathbb{L}}_{A} C$.
+
+Let us denote $p: B\to D$ and $q:C\to D$ the natural CDGAs maps. We thus get two natural base change ($(\infty,1)$-)functors $C\textit{-}Mod_\infty \underset{p_*\circ q^*}{\stackrel{f^*\circ g_*}\rightrightarrows} B\textit{-}Mod_\infty$. Given any $M\in C\textit{-}Mod$, the natural map $f^*\circ g_*(M) \to p_*\circ q^*(M)$ is an equivalence [@ToVe Proposition 1.1.0.8].
+
+The $(\infty,1)$-category $CDGA_\infty$ is *tensored* over $sSet_\infty$ (and thus $Top_{\infty}$ as well) as follows from [@Lu11 §4.4.4]. We refer to [@Lu11; @L-VI] for tensored $(\infty,1)$-categories (which is the obvious analogue of the classical notion of tensored categories over $Top$ or $sSet$); we simply recall that an $(\infty,1)$-category $\mathcal{C}$ is tensored over $sSet_\infty$ if there exists an $(\infty,1)$-functor $\mathcal{C} \times sSet_\infty\to \mathcal{C}$, denoted $(C, X_\bullet)\mapsto C\boxtimes X_\bullet$, together with natural equivalences $$Map_{\mathcal{C}}\big(C\boxtimes X_\bullet, D\big) \; \cong \; Map_{sSet_\infty}\big(X_{\scriptstyle\bullet}, Map_{\mathcal{C}}\big(C, D\big)\big).$$ In fact, the tensor $A\boxtimes X_\bullet$ is precisely realized by the Hochschild derived functor, see Theorem [\[T:derivedfunctor\]](#T:derivedfunctor){reference-type="ref" reference="T:derivedfunctor"}.
+:::
+
+::: example
+[]{#E:EnOperad label="E:EnOperad"} We denote $E_n\textit{-}Alg_\infty$ the $(\infty,1)$-category of $E_n$-algebras which is given by algebras over any $E_n$-($\infty$-)operads as introduced in [@L-VI Section 5.1] in the symmetric monoidal ($(\infty,1)$-)category $(k\textit{-}Mod_\infty,\otimes)$. It is equivalent to the $(\infty,1)$-category associated to model categories (deduced for instance from [@Hi Theorem 4.1.1]) of algebras over the usual operad of singular chains on the little $n$-dimensional disk operad or as algebras over the Barratt-Eccles operad (which is an Hopf operad) [@BF].
+:::
+
+::: remark
+[]{#R:non-unique label="R:non-unique"} There are other functors that yields a complete Segal space out of a model category. For instance, one can use the classification diagram of Rezk [@Re]. Let again $\mathcal{M}$ be a model category and, for any integer $n$, let $\mathcal{M}^{[n]}$ be the (model) category of $n$-composables morphisms, that is the category fo functors from the poset $[n]$ to $\mathcal{M}$. The *classification diagram* of $\mathcal{M}$ is the simplicial space $n\mapsto N_\bullet(\mathcal{W}e(\mathcal{M}^{[n]}))$ where $\mathcal{W}e(\mathcal{M}^{[n]})$ is the subcategory of weak equivalences of $\mathcal{M}^{[n]}$. Then taking a *Reedy* fibrant replacement yields another complete Segal space $N_\bullet(\mathcal{W}e(\mathcal{M}^{[n]}))^{f}$ [@Be2 Theorem 6.2], [@Re Theorem 8.3]. It is known that the Segal space $N_\bullet(\mathcal{W}e(\mathcal{M}^{[n]}))^{f}$ is equivalent to $L_{\mathcal{CS}e\mathcal{S}p}(N_\bullet(L^H(\mathcal{M},\mathcal{W})))$ [@Be2].
+
+More generally, there are several model for $(\infty,1)$-categories and several equivalent ways to obtain an $(\infty,1)$-category out of a "homotopy theory". We believe the results of this paper can easily be applied to the favorite model of the reader.
+:::

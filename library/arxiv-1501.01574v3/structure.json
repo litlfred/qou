@@ -407,8 +407,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Papermergedaexiv/papermerged.tex",
-   "tex_sections": 6,
-   "overlaid": 2,
+   "tex_sections": 22,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -418,108 +418,150 @@
     {
      "id": "sec-000-11-the-slope-conjecture",
      "title": "The Slope Conjecture",
-     "result": "no matching \\section"
+     "prose_ratio": 0.309,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.445,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-12-cable-knots",
      "title": "Cable knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-13-organization",
      "title": "Organization.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.88,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-2-boundary-slopes-of-cable-knots",
      "title": "Boundary Slopes of Cable Knots",
-     "prose_ratio": 0.112,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.938,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-21-preliminaries-and-statement-of-main-result",
      "title": "Preliminaries and statement of main result",
-     "result": "no matching \\section"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-22-boundary-slopes-and-homology-of-cable-spaces",
      "title": "Boundary slopes and homology of cable spaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-3-cables-of-knots-with-period-at-most-two",
      "title": "Cables of Knots with period at most two",
-     "prose_ratio": 0.108,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-31-the-colored-jones-polynomial",
      "title": "The colored Jones polynomial",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-32-cables-of-knots-of-period-at-most-2",
      "title": "Cables of knots of period at most 2",
-     "prose_ratio": 0.462,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-33-strong-slope-conjecture-for-iterated-cables-o",
      "title": "Strong Slope Conjecture for iterated cables of adequate knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-35-low-crossing-knots-with-period-two",
      "title": "Low crossing knots with period two",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-4-cabling-knots-with-constant-an",
      "title": "Cabling knots with constant a(n)",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-013-5-conjectures",
      "title": "Conjectures",
-     "prose_ratio": 0.632,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.632,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-014-51-non-alternating-montesinos-knots-up-to-nine-c",
      "title": "Non-alternating Montesinos knots up to nine crossings",
-     "result": "no matching \\section"
+     "prose_ratio": 0.907,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-52-a-family-of-pretzel-knots",
      "title": "A family of pretzel knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.906,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-6-two-fusion-knots",
      "title": "Two-fusion knots",
-     "prose_ratio": 0.348,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.939,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-61-the-highest-degree",
      "title": "The highest degree.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.81,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-62-calculating-the-linear-term",
      "title": "Calculating the linear term",
-     "result": "no matching \\section"
+     "prose_ratio": 0.847,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-019-references",

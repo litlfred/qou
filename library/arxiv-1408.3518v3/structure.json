@@ -178,8 +178,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "SIAMOPT.tex",
-   "tex_sections": 4,
-   "overlaid": 2,
+   "tex_sections": 14,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -189,29 +189,32 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction.",
-     "prose_ratio": 0.643,
-     "coverage_ratio": 0.998,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.67,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-11-our-contributions",
      "title": "Our Contributions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-2-proofs",
      "title": "Proofs",
-     "prose_ratio": 0.938,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-3-concluding-remarks",
      "title": "Concluding remarks",
-     "prose_ratio": 0.926,
-     "coverage_ratio": 0.346,
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.427,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]

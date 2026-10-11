@@ -7,10 +7,10 @@ section_number: 5
 pages: 14-17
 source_pdf: 1508.01627v4.pdf
 source_sha256: 778e60219862e371
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.979
 doc_brief: "A Murnaghan-Nakayama rule for values of unipotent characters in classical groups — 7 sections: Introduction; Maximal tori in classical groups; A Murnaghan–Nakayama rule"
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.984
 ---
 []{#sec:endotriv label="sec:endotriv"} In this section we prove Theorem 2 on the classification of simple endotrivial modules for finite classical groups. Note that the case of linear and unitary groups has already been treated in [@LM15], so we only need to consider symplectic groups and spin groups as in the previous section.
 
@@ -88,11 +88,11 @@ The next reducibility result for characters of specialisations of the Hecke alge
 
 We will use the fact shown in [@LMS13 Thm. 1.3] that any endotrivial module is liftable to a characteristic 0 representation. Therefore, we can investigate endotrivial modules by the ordinary character of their lift. These characters have the following properties:
 
-- they are irreducible modulo $\ell$,
+-   they are irreducible modulo $\ell$,
 
-- their values on $\ell$-singular classes are of absolute value $1$,
+-   their values on $\ell$-singular classes are of absolute value $1$,
 
-- their degree is congruent to $\pm 1$ modulo $|G|_\ell$.
+-   their degree is congruent to $\pm 1$ modulo $|G|_\ell$.
 
 Theorem 2 is now a consequence of:
 

@@ -7,10 +7,10 @@ section_number: 6
 pages: 23-25
 source_pdf: 2103.07383v1.pdf
 source_sha256: 9dca35ea16490ad8
-text_source: latex
-latex_prose_ratio: 0.939
-latex_coverage_ratio: 0.752
 doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
+text_source: latex
+latex_prose_ratio: 0.827
+latex_coverage_ratio: 1.0
 ---
 \label{sec:Consequences}
 
@@ -93,3 +93,12 @@ As a direct consequence of \thref{lemma:zerosAnalyticFunctions} and  \thref{coro
     Note that by assumption, $\gamma$ and $\eta$ are analytic.
     Then, the statement follows from the fact that $A\eta + x_0$ is analytic as well and applying \thref{propositionRealIdentityTheorem}.
 \end{proof}
+    
+
+
+
+\section{Acknowledgements}
+
+Daniel Steenebrügge acknowledges support by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) – project number 320021702/GRK2326 –  \emph{Energy, Entropy, and Dissipative Dynamics (EDDy)} and Nicole Vorderobermeier by the Austrian Science Fund (FWF), Grant P29487. Funding from RWTH Aachen University for Nicole Vorderobermeier's research visit is also gratefully acknowledged.
+
+In addition, the authors would like to sincerely thank Simon Blatt for his constant support and indispensable discussions throughout the development of this research paper, Heiko von der Mosel for his generous support and hospitality as well as fruitful discussions, from which Section \thref{sec:Consequences} emerged, and Philipp Reiter for having a sympathetic ear for the authors and giving important hints to deal with some filthy estimates in Section \thref{subsec:FractionalLeibnizRule}.

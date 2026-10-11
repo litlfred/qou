@@ -7,10 +7,10 @@ section_number: 3
 pages: 17-20
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
-text_source: latex
-latex_prose_ratio: 0.752
-latex_coverage_ratio: 0.918
 doc_brief: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F"
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.784
 ---
 []{#sec.chern label="sec.chern"}
 
@@ -20,13 +20,9 @@ In this section, we will define the Chern class map [\[eq.cmap\]](#eq.cmap){ref
 
 In the following discussion, certain isomorphisms will depend on a choice of some primitive $n$th root of unity $\zeta$. In order to make this clear, we shall write (in this section only) either $=_{\zeta}$ or $=$ to denote isomorphisms which respectively do or do not depend on such a choice. Let $F$ be a number field, and let $\mathcal{O}:=\mathcal{O}_F$ denote the ring of integers of $F$. The Tate twist $\mathbf Z_p(1)$ is defined to be the projective limit $\projlim \mu_{p^n}$ of the $p^n$th roots of unity over all $n$, and $\mathbf Z_p(m):= \mathbf Z_p(1)^{\otimes m}$. The Galois group $G_F$ acts on $\mathbf Z_p(m)$ via the $m$th power $\chi^m$ of the cyclotomic character. For all $m\ge1$, there exists a Chern class map: $$c: K_{2m-1}(F) \rightarrow H^1(F,\mathbf Z_p(m))\,.$$ These Chern class maps arise as the boundary map of a spectral sequence, specifically, the Atiyah--Hirzebruch spectral sequence for étale $K$-theory. These maps were originally constructed by Soulé [@Soule2 Section II]. We may compose this map with reduction mod $p^i$ to obtain a map: $$c: K_{2m-1}(F) \rightarrow H^1(F,\mathbf Z/p^i\mathbf Z(m)).$$ By the Chinese remainder theorem, we may also piece these maps together to obtain a map: $$c: K_{2m-1}(F) \rightarrow H^1(F,\mathbf Z/n\mathbf Z(m) )$$ for any integer $n$.
 
-Let $\zeta$ be a primitive $n$th root of unity, $F_n=F(\zeta)$ and write $G$ for the (possibly trivial) Galois group $\mathrm{Gal}(F_n/F)$. Let $\mu$ denote the module of $n$ roots of unity. There is a canonical injection $$\chi: G \rightarrow  \mathrm{Aut}({\mu}) = (\mathbf Z/n\mathbf Z)^{\times} \,.$$ By inflation--restriction, there is a canonical map: $$\begin{equation}
-\label{winj}
-H^1(F,\mathbf Z/n\mathbf Z(m) ) \rightarrow H^1(F_n,\mathbf Z/n\mathbf Z(m) )^{G}
-\end{equation}$$ For $m \ge 1$, there is an invariant $w_m(F)\in\mathbf N$ that we will need. It is defined in terms of Galois cohomology by $$w_m(F) \;=\; \prod_{p} \bigl|H^0(F,\mathbf Q_p/\mathbf Z_p(m) )\bigr|\,,$$ Note that $w_1(F)$ is equal to $w_F$, the number of roots of unity in $F$, and $w_2(F)$ agrees with [\[eq.w2F\]](#eq.w2F){reference-type="eqref" reference="eq.w2F"} because the action of $G_F$ on $\mathbf Z/n\mathbf Z(2) \subset \mathbf Q_p/\mathbf Z_p(2)$ for any $n$ precisely factors through $\mathrm{Gal}(F(\zeta+ \zeta^{-1})/F)$ for a primitive $n$th root of unity $\zeta$. We also define $$\begin{equation}
-\label{wtwiddle}
-\widetilde w_F\;=\; \prod_{p} \bigl|H^0(\widetilde{F}(\zeta_p + \zeta^{-1}_p),\mathbf Q_p/\mathbf Z_p(1))\bigr|\,.
-\end{equation}$$ where $\widetilde{F}$ is the Galois closure of $F$ over $\mathbf Q$. Thus $\widetilde w_F$ is divisible only by the finitely many primes $p$ such $\zeta_p$ belongs to $\widetilde{F}(\zeta_p + \zeta^{-1}_p)$. If $p|\widetilde w_F$ and $p > 2$, then $p$ necessarily ramifies in $F$. Note that $\widetilde w_F$ is always divisible by $w_F$.
+Let $\zeta$ be a primitive $n$th root of unity, $F_n=F(\zeta)$ and write $G$ for the (possibly trivial) Galois group $\mathrm{Gal}(F_n/F)$. Let $\mu$ denote the module of $n$ roots of unity. There is a canonical injection $$\chi: G \rightarrow  \mathrm{Aut}({\mu}) = (\mathbf Z/n\mathbf Z)^{\times} \,.$$ By inflation--restriction, there is a canonical map: $$\label{winj}
+H^1(F,\mathbf Z/n\mathbf Z(m) ) \rightarrow H^1(F_n,\mathbf Z/n\mathbf Z(m) )^{G}$$ For $m \ge 1$, there is an invariant $w_m(F)\in\mathbf N$ that we will need. It is defined in terms of Galois cohomology by $$w_m(F) \;=\; \prod_{p} \bigl|H^0(F,\mathbf Q_p/\mathbf Z_p(m) )\bigr|\,,$$ Note that $w_1(F)$ is equal to $w_F$, the number of roots of unity in $F$, and $w_2(F)$ agrees with [\[eq.w2F\]](#eq.w2F){reference-type="eqref" reference="eq.w2F"} because the action of $G_F$ on $\mathbf Z/n\mathbf Z(2) \subset \mathbf Q_p/\mathbf Z_p(2)$ for any $n$ precisely factors through $\mathrm{Gal}(F(\zeta+ \zeta^{-1})/F)$ for a primitive $n$th root of unity $\zeta$. We also define $$\label{wtwiddle}
+\widetilde w_F\;=\; \prod_{p} \bigl|H^0(\widetilde{F}(\zeta_p + \zeta^{-1}_p),\mathbf Q_p/\mathbf Z_p(1))\bigr|\,.$$ where $\widetilde{F}$ is the Galois closure of $F$ over $\mathbf Q$. Thus $\widetilde w_F$ is divisible only by the finitely many primes $p$ such $\zeta_p$ belongs to $\widetilde{F}(\zeta_p + \zeta^{-1}_p)$. If $p|\widetilde w_F$ and $p > 2$, then $p$ necessarily ramifies in $F$. Note that $\widetilde w_F$ is always divisible by $w_F$.
 
 ::: lemma
 []{#lemma:sahinj label="lemma:sahinj"} The map [\[winj\]](#winj){reference-type="eqref" reference="winj"} is injective for integers $n$ prime to $w_m(F)$.
@@ -37,25 +33,19 @@ H^1(F,\mathbf Z/n\mathbf Z(m) ) \rightarrow H^1(F_n,\mathbf Z/n\mathbf Z(m) )^{G
 :::
 
 There is an isomorphism $\mathbf Z/n\mathbf Z(1) = \mu$. A choice of primitive $n$th root of unity $\zeta$ gives a trivialization $t_{\zeta}:  
-\mathbf Z/n\mathbf Z(1)   =_{\zeta} \mathbf Z/n\mathbf Z(m)$ defined by sending $\zeta$ to $\zeta^{\otimes n}$. This isomorphism is not, in general, $G$-equivariant, but rather satisfies $$\begin{equation}
-t_{\zeta}(\sigma x) =  \chi^{1-m}(\sigma) \sigma t_{\zeta}(x)
-\end{equation}$$ The dependence of $t_{\zeta}$ on $\zeta$ is given by $t_{\zeta^k} = k^{m-1} t_{\zeta}$.
+\mathbf Z/n\mathbf Z(1)   =_{\zeta} \mathbf Z/n\mathbf Z(m)$ defined by sending $\zeta$ to $\zeta^{\otimes n}$. This isomorphism is not, in general, $G$-equivariant, but rather satisfies $$t_{\zeta}(\sigma x) =  \chi^{1-m}(\sigma) \sigma t_{\zeta}(x)$$ The dependence of $t_{\zeta}$ on $\zeta$ is given by $t_{\zeta^k} = k^{m-1} t_{\zeta}$.
 
 By Hilbert $90$, for a number field $L$, there is a canonical isomorphism $H^1(L,\mu) = L^{\times}/L^{\times n}$, and hence (given $\zeta$) an isomorphism $$H^1(F_n,\mathbf Z/n\mathbf Z(m) )^{G}
  =_{\zeta}  H^1(F_n,\mathbf Z/n\mathbf Z(1))^{\chi^{1-m}}
- = \left(F_n^{\times}/F_n^{\times n}\right)^{\chi^{1-m}} \,,$$ where the first isomorphism is induced by $t_{\zeta}$. Thus $c$ and $\zeta$ give rise to a map: $$\begin{equation}
-\label{defc}
+ = \left(F_n^{\times}/F_n^{\times n}\right)^{\chi^{1-m}} \,,$$ where the first isomorphism is induced by $t_{\zeta}$. Thus $c$ and $\zeta$ give rise to a map: $$\label{defc}
 c_\zeta: K_{2m-1}(F) \rightarrow 
-\left(F_n^{\times}/F_n^{\times n}\right)^{\chi^{1-m}}\,.
-\end{equation}$$
+\left(F_n^{\times}/F_n^{\times n}\right)^{\chi^{1-m}}\,.$$
 
 ## The relation between étale cohomology and Galois cohomology {#section:relations}
 
-There are isomorphisms that can be found in Sections 5.2 and 5.4 of [@Weibel] $$\begin{equation}
-\label{useful}
+There are isomorphisms that can be found in Sections 5.2 and 5.4 of [@Weibel] $$\label{useful}
 K_{2m-1}(F) \otimes \mathbf Z_p \simeq K_{2m-1}(\mathcal{O}_F[1/p]) \simeq 
-K_{2m-1}(\mathcal{O}_F) \otimes \mathbf Z_p
-\end{equation}$$ for $m > 1$. These isomorphisms are also reflected in the following isomorphism between étale cohomology groups and Galois cohomology groups: $$H^1_{\text{\'{e}t}}(\mathcal{O}_F[1/p],\mathbf Z_p(m) ) \simeq H^1(F,\mathbf Z_p(m) )$$ for $m \ge 2$. In particular, we may also view the Chern class maps considered above as morphisms $$c: K_{2m-1}(F) \otimes \mathbf Z_p \simeq
+K_{2m-1}(\mathcal{O}_F) \otimes \mathbf Z_p$$ for $m > 1$. These isomorphisms are also reflected in the following isomorphism between étale cohomology groups and Galois cohomology groups: $$H^1_{\text{\'{e}t}}(\mathcal{O}_F[1/p],\mathbf Z_p(m) ) \simeq H^1(F,\mathbf Z_p(m) )$$ for $m \ge 2$. In particular, we may also view the Chern class maps considered above as morphisms $$c: K_{2m-1}(F) \otimes \mathbf Z_p \simeq
 K_{2m-1}(\mathcal{O}_F) \otimes \mathbf Z_p \rightarrow H^1_{\text{\'{e}t}}(\mathcal{O}_F[1/p],\mathbf Z_p(m) ).$$
 
 ::: theorem
@@ -68,11 +58,9 @@ K_{2m-1}(\mathcal{O}_F) \otimes \mathbf Z_p \rightarrow H^1_{\text{\'{e}t}}(\mat
 :::
 
 ::: lemma
-[]{#lemma:sahinj2 label="lemma:sahinj2"} Suppose that $p \nmid w_2(F)$ for every prime $p$ with $p^2|n$. Then the map $$\begin{equation}
-\label{eq.cnv1}
+[]{#lemma:sahinj2 label="lemma:sahinj2"} Suppose that $p \nmid w_2(F)$ for every prime $p$ with $p^2|n$. Then the map $$\label{eq.cnv1}
 c_\zeta: K_3(F) \rightarrow K_3(F)/nK_3(F) \rightarrow
-\left(F_n^{\times}/F_n^{\times n}\right)^{\chi^{-1}}
-\end{equation}$$ is injective on $K_3(F)/nK_3(F)$.
+\left(F_n^{\times}/F_n^{\times n}\right)^{\chi^{-1}}$$ is injective on $K_3(F)/nK_3(F)$.
 :::
 
 ::: proof
@@ -93,28 +81,3 @@ The following is a consequence of the finite generation of $K_3(F)$:
 \rightarrow H^1_{\text{\'{e}t}}(\mathcal{O}_{F_n}[1/S],\mu)
 \rightarrow \mathrm{Pic}(\mathcal{O}_{F_n}[1/S])[n]$$ where $M[n]$ denotes the $n$-torsion of $M$ and $\mathrm{Pic}$ is the Picard group, which may be identified with the class group of $\mathcal{O}_{F_n}[1/S]$. On the other hand, it is well known that one can represent generators in the class group by a set of primes avoiding any given finite set of primes, and hence for a set $S$ including primes for each generator of the class group, the last term vanishes. ◻
 :::
-
-## Upgrading from $S$-units to units {#sub.updrading2}
-
-We give the following slight improvement on Lemma [\[lemma:avoidS\]](#lemma:avoidS){reference-type="ref" reference="lemma:avoidS"}.
-
-::: lemma
-[]{#lemma:avoidS2 label="lemma:avoidS2"} Suppose that any prime divisor $p$ of $n$ is odd and divides neither the discriminant of $F$ nor the order of $K_2(\mathcal{O}_F)$. Then the image of $c_\zeta$ on $K_3(F)/nK_3(F)$ may be realized by an element of $\mathcal{O}^{\times}_n$.
-:::
-
-::: proof
-*Proof.* By Lemma [\[lem.mab\]](#lem.mab){reference-type="ref" reference="lem.mab"}, it suffices to consider the case when $n$ is a power of $p$. Let $\zeta= \zeta_n$. The fact that $p$ is prime to the discriminant of $F$ implies that $F(\zeta)/F$ is totally ramified at $p$. The image of $c_{\zeta}$ factors through $H^1_{\text{\'{e}t}}(\mathcal{O}[1/p],\mathbf Z/n\mathbf Z(2))$, and, via inflation--restriction, through $H^1_{\text{\'{e}t}}(\mathcal{O}_{F(\zeta)}[1/p],\mathbf Z/n\mathbf Z(1))$. The Kummer sequence for étale cohomology gives a short exact sequence: $$\mathcal{O}_{F(\zeta)}[1/p]^{\times}/\mathcal{O}_{F(\zeta)}[1/p]^{\times n}
-\rightarrow   H^1_{\text{\'{e}t}}(\mathcal{O}_{F(\zeta)}[1/p],\mathbf Z/n(1))
-\rightarrow \mathrm{Pic}(\mathcal{O}_F(\zeta)[1/p])[n]\,.$$ The image of $c_{\zeta}$ lands in the $\chi^{-1}$-invariant part of the second group. The $\chi^{-1}$-invariant part $M^{\chi^{-1}}$ of a $G$-module $M$ is non-zero if and only if the largest $\chi^{-1}$-invariant quotient $M_{\chi^{-1}}$ is non-zero. However, by results of Keune [@Keune], there is an injection $$\left(\mathrm{Pic}(\mathcal{O}_F(\zeta)[1/p])/p^{m} \right)_{\chi^{-1}} 
-\rightarrow K_2(\mathcal{O}_F)/p^{m} \,.$$ In particular, the pushforward of the image of $c_{\zeta}$ to the Picard group is trivial whenever $K_2(\mathcal{O}_F) \otimes \mathbf Z_p$ is trivial. Since we are assuming that $p$ does not divide the order of $K_2(\mathcal{O}_F)$, we deduce that the image of $c_{\zeta}$ is realized by $p$-units. We now upgrade this to actual units. There is an exact sequence: $$(\mathcal{O}_{F(\zeta)})^{\times}/ (\mathcal{O}_{F(\zeta)})^{\times n} \rightarrow 
-(\mathcal{O}_{F(\zeta)}[1/p])^{\times}/(\mathcal{O}_{F(\zeta)}[1/p])^{\times n} 
-\rightarrow \bigoplus_{v|p} \mathbf Z/n\mathbf Z\,,$$ where the last map is the valuation map. Since $p$ is totally ramified in $F(\zeta)/F$, the action of $G$ on the final term is trivial. By assumption, the quotient $\mathrm{Gal}(F(\zeta_p)/F)$ is non-trivial, and hence the $\chi^{-1}$-invariants of the final term are zero. Hence, after taking $\chi^{-1}$-invariants, we see that the image of $c_\zeta$ comes from a unit. ◻
-:::
-
-## Proof of Theorem [\[thm.c\]](#thm.c){reference-type="ref" reference="thm.c"} {#sub.thm.c}
-
-We have all the ingredients to give a proof of Theorem [\[thm.c\]](#thm.c){reference-type="ref" reference="thm.c"}. Fix an odd natural number $n$ and a primitive $n$th root of unity $\zeta$. Consider the Chern class map $$c_\zeta: K_3(F)/nK_3(F) \to 
-\left(F_n^{\times}/F_n^{\times n}\right)^{\chi^{-1}} \,.$$ from [\[eq.cnv1\]](#eq.cnv1){reference-type="eqref" reference="eq.cnv1"}. When $n$ is either square-free or if any prime $p^2 | n$ is coprime to $w_2(F)$, the above map is injective by Lemma [\[lemma:sahinj2\]](#lemma:sahinj2){reference-type="ref" reference="lemma:sahinj2"}. When $n$ is furthermore coprime to the discriminant $\Delta_F$ of $F$ and the order of $K_2(\mathcal O_F)$, Lemma [\[lemma:avoidS2\]](#lemma:avoidS2){reference-type="ref" reference="lemma:avoidS2"} implies that the above map factors through a map $$c_\zeta: K_3(F)/nK_3(F) \to 
-\left(\mathcal O_n^{\times}/\mathcal O_n^{\times n}\right)^{\chi^{-1}},$$ where $\mathcal O_n$ is the ring of integers of $F_n$. If $p^2 | n$ and $p | w_2(F)$ is odd, then either $p | \Delta_F$ or $p = 3$, hence the assumptions $(n, w_2(F) \Delta_F |K_2(\mathcal{O}_F)|) = 1$ and $n$ odd are equivalent to $(n,6 \Delta_F |K_2(\mathcal{O}_F)|) = 1$, and if $n$ is furthermore not divisible by $9$, they are equivalent to $(n, 2 \Delta_F |K_2(\mathcal{O}_F)|) = 1$, justifying the claims made concerning $M_F$ in Remark [\[quotableremark\]](#quotableremark){reference-type="ref" reference="quotableremark"}. When $n$ is prime (or more generally square-free),
-
-then [\[K3F\]](#K3F){reference-type="eqref" reference="K3F"} and Proposition [\[prop.calOm\]](#prop.calOm){reference-type="ref" reference="prop.calOm"}[\[partb.calOm\]](#partb.calOm){reference-type="ref" reference="partb.calOm"} imply that both sides of the above equation are abelian groups isomorphic to $(\mathbf Z/n\mathbf Z)^{r_2(F)}$. It follows that when $n$ is square-free and coprime to $2 \Delta_F |K_2(\mathcal O_F)|$, then the above map is an injection of finite abelian groups of the same order, and hence an isomorphism. This concludes the proof of Theorem [\[thm.c\]](#thm.c){reference-type="ref" reference="thm.c"}. 0◻

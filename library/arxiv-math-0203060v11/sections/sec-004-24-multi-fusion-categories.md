@@ -8,36 +8,30 @@ pages: 7-7
 source_pdf: 0203060v11.pdf
 source_sha256: fa7e21ceab3e9933
 doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in pa rtic- ular, the theory of weak Hopf algebras), we prove a number of g eneral results about fusion categories in"
+text_source: latex
+latex_prose_ratio: 0.988
+latex_coverage_ratio: 0.977
 ---
-posable if it is not a direct sum of two nonzero multi-fusion categories .
-Let C be a multi-fusion category. Then for any simple object X ∈ C there
-exist unique i,j ∈ J such that 1i ⊗X ⁄= 0 and X ⊗ 1j ⁄= 0; moreover, we have
-1i ⊗X = X ⊗ 1j = X. Thus, as an additive category, C = ⊕m,nCmn, where
-Cmn is the full abelian subcategory of C with simple objects having i = m,j = n.
-It is easy to check that Cii are fusion categories for all i, and Cij are ( Cii, Cjj )-
-bimodule categories, equipped with product functors Cij × Cjl → C il satisfying
-some compatibility conditions. We will refer to Cii as the component categories of
-C.
-Since Cii are fusion categories, they have well deﬁned global dimensions. In
-fact, the oﬀ-diagonal subcategories Cij can also be assigned global dimensions, even
-though they are not tensor categories. To do this, observe that for any simple object
-V ∈ Cij, and any morphism g : V → V ∗∗ one can deﬁne Tr V (g) ∈ End(1i) = k.
-Therefore, we can deﬁne |V |2 by the usual formula |V |2 = TrV (g)TrV ∗ ((g−1)∗),
-and set dim( Cij) := ∑
-V ∈IrrCij |V |2.
-Proposition 2.17. If C is an indecomposable multi-fusion category, then all the
-categories Cij have the same global dimensions.
-The setup of the previous section can be generalized to the multi-fu sion case.
-Namely, we have the following generalization of Theorem 2.16 to the mu lti-fusion
-case:
-Theorem 2.18. If C is a multi-fusion category, and M1, M2 are module categories
-over C, then the category FunC(M1, M2) is semisimple. In particular, the category
-C∗
-M is semisimple for any module category M.
-Proposition 2.17 and Theorem 2.18 is proved in Section 5.
-Remark 2.19. We note that it follows from the arguments of [O, Mu1] that if C
-is a multifusion category and M is a faithful module category of M, then M is a
-faithful module category over C∗
-M, and ( C∗
-M)∗
-M = C.
+We say that a multi-fusion category ${\mathcal C}$ is indecomposable if it is not a direct sum of two nonzero multi-fusion categories.
+
+Let ${\mathcal C}$ be a multi-fusion category. Then for any simple object $X\in {\mathcal C}$ there exist unique $i,j\in J$ such that $\mathbf 1_i\otimes X\ne 0$ and $X\otimes \mathbf 1_j\ne 0$; moreover, we have $\mathbf 1_i\otimes X=X\otimes \mathbf 1_j=X$. Thus, as an additive category, ${\mathcal C}=\oplus_{m,n}{\mathcal C}_{mn}$, where ${\mathcal C}_{mn}$ is the full abelian subcategory of ${\mathcal C}$ with simple objects having $i=m,j=n$. It is easy to check that ${\mathcal C}_{ii}$ are fusion categories for all $i$, and ${\mathcal C}_{ij}$ are $({\mathcal C}_{ii},{\mathcal C}_{jj})$-bimodule categories, equipped with product functors ${\mathcal C}_{ij}\times {\mathcal C}_{jl}\to {\mathcal C}_{il}$ satisfying some compatibility conditions. We will refer to ${\mathcal C}_{ii}$ as *the component categories* of ${\mathcal C}$.
+
+Since ${\mathcal C}_{ii}$ are fusion categories, they have well defined global dimensions. In fact, the off-diagonal subcategories ${\mathcal C}_{ij}$ can also be assigned global dimensions, even though they are not tensor categories. To do this, observe that for any simple object $V\in {\mathcal C}_{ij}$, and any morphism $g:V\to V^{**}$ one can define $\text{Tr}_V(g)\in 
+\text{End}(\mathbf 1_i)=k$. Therefore, we can define $|V|^2$ by the usual formula $|V|^2=\text{Tr}_V(g)\text{Tr}_{V^*}((g^{-1})^*)$, and set $\dim({\mathcal C}_{ij}):=
+\sum_{V\in {\rm Irr}{\mathcal C}_{ij}}|V|^2$.
+
+::: proposition
+[]{#samedim label="samedim"} If ${\mathcal C}$ is an indecomposable multi-fusion category, then all the categories ${\mathcal C}_{ij}$ have the same global dimensions.
+:::
+
+The setup of the previous section can be generalized to the multi-fusion case. Namely, we have the following generalization of Theorem [\[m1m2\]](#m1m2){reference-type="ref" reference="m1m2"} to the multi-fusion case:
+
+::: theorem
+[]{#multi-fus label="multi-fus"} If ${\mathcal C}$ is a multi-fusion category, and ${\mathcal M}_1,{\mathcal M}_2$ are module categories over ${\mathcal C}$, then the category ${\rm Fun}_{{\mathcal C}}({\mathcal M}_1,{\mathcal M}_2)$ is semisimple. In particular, the category ${\mathcal C}^*_{\mathcal M}$ is semisimple for any module category ${\mathcal M}$.
+:::
+
+Proposition [\[samedim\]](#samedim){reference-type="ref" reference="samedim"} and Theorem [\[multi-fus\]](#multi-fus){reference-type="ref" reference="multi-fus"} is proved in Section 5.
+
+::: remark
+We note that it follows from the arguments of [@O; @Mu1] that if ${\mathcal C}$ is a multifusion category and ${\mathcal M}$ is a faithful module category of ${\mathcal M}$, then ${\mathcal M}$ is a faithful module category over ${\mathcal C}^*_{\mathcal M}$, and $({\mathcal C}^*_{\mathcal M})^*_{\mathcal M}={\mathcal C}$.
+:::

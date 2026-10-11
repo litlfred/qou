@@ -8,14 +8,15 @@ pages: 21-22
 source_pdf: 2208.13448v2.pdf
 source_sha256: 8bfa244cf7ca867d
 doc_brief: "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large"
+text_source: latex
+latex_prose_ratio: 0.789
+latex_coverage_ratio: 0.842
 ---
-Consider a diﬀerence equation of order 2
-φ2(y) + a1φ(y) + a0y = 0, where ai ∈ k and a0 ⁄= 0.
-Let
-L := φ2 + a1φ + a0 ∈ k
-⟨
-φ, φ−1⟩
-22 THOMAS DREYFUS AND MARINA POULET
-be the corresponding diﬀerence operator and let G ⊂ GL2(C) be its Galois group.
-We want to compute G. An algorithm in the cases (Q), (S), (E), (M) is presented in
-[Hen97, Hen98, DR15, Roq18] respectively.
+\label{secord2}
+Consider a difference equation of order $2$
+$$  \phi^2 (y)+a_1 \phi (y)+a_0 y=0, \quad \text{where}\quad  a_i\in \k\quad \text{and}\quad  a_0  \neq 0.$$
+ Let 
+ $$
+ L :=   \phi^2 +a_1 \phi +a_0\in \k\left< \phi,\phi^{-1}\right>
+ $$ 
+be the corresponding difference operator and let $G\subset \GL_{2}(C)$ be its Galois group.  We want to compute $G$.  An algorithm in the cases (Q), (S), (E), (M) is presented in \cite{hendriks1997algorithm, hendriks1998algorithm,  dreyfus2015galois,roques2018algebraic} respectively.

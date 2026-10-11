@@ -8,78 +8,16 @@ pages: 3-5
 source_pdf: 9601025v2.pdf
 source_sha256: 369b0a1a92ce67a8
 doc_brief: "The hyperbolic volume of knots from the quantum dilogarithm — The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N ."
+text_source: latex
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 1.0
 ---
-Here we calculate explicitly the leading asymptotics at N → ∞ of the
-invariant for the hyperbolic knots from section 2 and justify formu la
-(1.1).
-3
-First, for a positive real γ and complex p with
-|Re p| < π + γ, (3.1)
-deﬁne two functions
-fγ (p) = Sγ (γ − π )/S γ (p), f γ (p) = Sγ (−p)/S γ (π − γ), (3.2)
-where
-Sγ (p) = exp 1
-4
-∫ +∞
-−∞
-epx
-sinh(πx) sinh(γx)
-dx
-x , (3.3)
-the singularity of the integrand at x = 0 being put below the contour
-of integration. In [13] the function (3.3) is shown to be a particular
-solution to the functional equation:
-(1 + eip)Sγ (p + γ) = Sγ (p − γ). (3.4)
-Via this functional equation the deﬁnition of the function Sγ (p) can
-be extended to the whole complex plane.
-For ﬁxed p the leading asymptotics of Sγ (p) at γ → 0 is given by
-Euler’s dilogarithm:
-Sγ (p) ∼ exp 1
-2iγ Li2(−eip), γ → 0, (3.5)
-where
-Li2(z) = −
-∫ z
-0
-log(1 − u)
-u du. (3.6)
-For numerical calculations the following formula will be useful (see, f or
-example, [21]) :
-Im Li 2(reiθ ) = ϕ log(r) + Λ( ϕ ) + Λ( θ) − Λ( ϕ + θ), (3.7)
-where 0 < r ≤ 1,
-ϕ = ϕ (r, θ ) = arctan
-( r sin θ
-1 − r cos θ
-)
-, (3.8)
-and
-Λ( θ) = −
-∫ θ
-0
-log |2 sin φ| dφ, (3.9)
-is Lobachevsky’s function.
-From (3.2) and (3.4) it is easy to see that fγ (p) and f γ (p) are
-analytic continuations of the symbols ( ω )k and ( ω )∗
-k in the sense that
-(ω )k = fγ (−π + γ + 2kγ ), (ω )∗
-k =
-f γ (−π + γ + 2kγ ), (3.10)
-4
-where
-γ = π/N. (3.11)
-Formulae (3.10) enable us to rewrite the summations in (2.2), (2.3),
-(2.4) as contour integrals, one has just to replace symbols ( ω )k and
-(ω )∗
-k by their analytic continuations, and each summation, by a contour
-integral:
-∑
-k
-→ i
-4γ
-∮
-dp tan
-( π 2 + πp
-2γ
-)
-(3.12)
-with an appropriately chosen contour.
-In what follows γ will be assumed to be speciﬁed as in (3.11).
+Here we calculate explicitly the leading asymptotics at $N\to\infty$ of the invariant for the hyperbolic knots from section [\[sec1\]](#sec1){reference-type="ref" reference="sec1"} and justify formula ([\[main\]](#main){reference-type="ref" reference="main"}).
+
+First, for a positive real $\gamma$ and complex $p$ with \|Re p\|\<+, define two functions []{#mainfun label="mainfun"} f\_(p)=S\_(-)/S\_(p), f\_(p)=S\_(-p)/S\_(-), where []{#fad label="fad"} S\_(p)=\_-\^+ (x)(x), the singularity of the integrand at $x=0$ being put below the contour of integration. In [@F1] the function ([\[fad\]](#fad){reference-type="ref" reference="fad"}) is shown to be a particular solution to the functional equation: []{#funeq label="funeq"} (1+e\^ip)S\_(p+)=S\_(p-). Via this functional equation the definition of the function $S_\gamma(p)$ can be extended to the whole complex plane.
+
+For fixed $p$ the leading asymptotics of $S_\gamma(p)$ at $\gamma\to 0$ is given by Euler's dilogarithm: []{#as label="as"} S\_(p)\~Li_2(-e\^ip),, where Li_2(z)=-\_0\^zdu. For numerical calculations the following formula will be useful (see, for example, [@K]) : Im Li_2(re\^i)= (r)+()+()-(+), where $0<r\le1$, =(r,)=(), and []{#lob label="lob"} ()=-\_0\^\|2\| d, is Lobachevsky's function.
+
+From ([\[mainfun\]](#mainfun){reference-type="ref" reference="mainfun"}) and ([\[funeq\]](#funeq){reference-type="ref" reference="funeq"}) it is easy to see that $f_\gamma(p)$ and $\overline f_\gamma(p)$ are analytic continuations of the symbols $(\omega)_k$ and $(\omega)_k^*$ in the sense that []{#anal label="anal"} ()\_k=f\_(-++2k), ()\_k\^\*=f\_(-++2k), where []{#gamma label="gamma"} =/N. Formulae ([\[anal\]](#anal){reference-type="ref" reference="anal"}) enable us to rewrite the summations in ([\[4_1\]](#4_1){reference-type="ref" reference="4_1"}), ([\[5_2\]](#5_2){reference-type="ref" reference="5_2"}), ([\[6_1\]](#6_1){reference-type="ref" reference="6_1"}) as contour integrals, one has just to replace symbols $(\omega)_k$ and $(\omega)_k^*$ by their analytic continuations, and each summation, by a contour integral: \_kdp () with an appropriately chosen contour.
+
+In what follows $\gamma$ will be assumed to be specified as in ([\[gamma\]](#gamma){reference-type="ref" reference="gamma"}).

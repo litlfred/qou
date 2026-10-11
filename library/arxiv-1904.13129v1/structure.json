@@ -184,8 +184,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 7,
-   "overlaid": 1,
+   "tex_sections": 11,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -200,28 +200,34 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.888,
-     "coverage_ratio": 0.961,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.535,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.541,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-22-properties-of-analytic-functions",
      "title": "Properties of analytic functions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-6-the-form-of-the-lower-order-remainder-terms-r1",
      "title": "The form of the lower order remainder terms R1 and R2",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.35,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-references",

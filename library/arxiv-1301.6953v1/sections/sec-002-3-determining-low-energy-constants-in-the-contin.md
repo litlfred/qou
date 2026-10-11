@@ -7,10 +7,10 @@ section_number: 3
 pages: 5-7
 source_pdf: 1301.6953v1.pdf
 source_sha256: 8c9231d0832df3b6
-text_source: latex
-latex_prose_ratio: 0.955
-latex_coverage_ratio: 0.974
 doc_brief: "LU TP 13-03 Januray 2013 — 12 sections: Chiral Perturbation Theory; Introduction; Determining low-energy-constants i"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Lattice QCD has now reached the stage where they can start determining
 the ChPT LECs. A review is the FLAG collaboration \cite{FLAG} and

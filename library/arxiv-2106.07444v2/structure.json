@@ -301,7 +301,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "trinh_trace.tex",
-   "tex_sections": 11,
+   "tex_sections": 89,
    "overlaid": 11,
    "thresholds": {
     "title": 0.85,
@@ -317,88 +317,88 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-1-purity-mixedness-and-realization",
      "title": "Purity, Mixedness, and Realization",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.966,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-2-mixed-categories-in-representation-theory",
      "title": "Mixed Categories in Representation Theory",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-3-the-aw-trace",
      "title": "The AW Trace",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.928,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-4-steinberg-schemes",
      "title": "Steinberg Schemes",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.945,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-5-steinberg-schemes-of-braids",
      "title": "Steinberg Schemes of Braids",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.943,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-6-khovanovrozansky-homology",
      "title": "Khovanov\u2013Rozansky Homology",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.95,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-7-the-decategorified-trace",
      "title": "The Decategorified Trace",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-008-8-delignelusztig-theory",
      "title": "Deligne\u2013Lusztig Theory",
-     "prose_ratio": 0.924,
-     "coverage_ratio": 0.944,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-009-9-periodic-braids",
      "title": "Periodic Braids",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.953,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-010-10-the-rational-daha",
      "title": "The Rational DAHA",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.966,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },

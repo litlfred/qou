@@ -522,7 +522,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "fig8.tex",
-   "tex_sections": 6,
+   "tex_sections": 9,
    "overlaid": 2,
    "thresholds": {
     "title": 0.85,
@@ -538,8 +538,8 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.752,
-     "coverage_ratio": 0.885,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -551,8 +551,8 @@
     {
      "id": "sec-003-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.734,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },

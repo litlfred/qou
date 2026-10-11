@@ -7,10 +7,10 @@ section_number: 4
 pages: 7-7
 source_pdf: 1002.4860v2.pdf
 source_sha256: a2cfe924f7a9f5a0
-text_source: latex
-latex_prose_ratio: 0.818
-latex_coverage_ratio: 0.944
 doc_brief: "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL — We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum."
+text_source: latex
+latex_prose_ratio: 0.864
+latex_coverage_ratio: 0.917
 ---
 []{#sec ex label="sec ex"}
 
@@ -65,6 +65,4 @@ Let's use the braid presentation $w = \sigma_2^{-1} \sigma_1 \sigma_2^{-1} \sigm
 &&&& \\
 &+ \, - \, + & \frac {[1]} {[2]} \cdot v \cdot \frac {[3]} {[2]} \cdot (-v^{-1}) &=& \frac {-[3]} {[2]^2}
 \end {array}$$\
-Now, we calculate the sum, minding the signs associated to each state and the global rescaling. $$\begin{equation*}
-A(w) = \dfrac {1} {[3]} \left( 2 - \dfrac {v^6 + v^{-6}} {[2]^2} + \dfrac {2 [3]} {[2]^2} \right) = -v^2+3-v^{-2} = 1 - (v-v^{-1})^2
-\end{equation*}$$
+Now, we calculate the sum, minding the signs associated to each state and the global rescaling. $$A(w) = \dfrac {1} {[3]} \left( 2 - \dfrac {v^6 + v^{-6}} {[2]^2} + \dfrac {2 [3]} {[2]^2} \right) = -v^2+3-v^{-2} = 1 - (v-v^{-1})^2$$

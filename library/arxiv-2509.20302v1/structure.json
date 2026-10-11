@@ -215,8 +215,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
-   "tex_sections": 5,
-   "overlaid": 3,
+   "tex_sections": 8,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -237,37 +237,48 @@
     {
      "id": "sec-002-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.853,
-     "coverage_ratio": 0.649,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-3-trans-series-expansion",
      "title": "Trans-series expansion",
-     "prose_ratio": 0.54,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.901,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-31-resurgence-relations-between-d-and-d1",
      "title": "Resurgence relations between D{} and D{1}",
-     "result": "no matching \\section"
+     "prose_ratio": 0.831,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-32-generic-relations",
      "title": "Generic relations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-33-example",
      "title": "Example",
-     "result": "no matching \\section"
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-4-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },

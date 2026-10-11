@@ -8,98 +8,38 @@ pages: 42-44
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
 doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
+text_source: latex
+latex_prose_ratio: 0.974
+latex_coverage_ratio: 0.856
 ---
-We consider here the nearest-neighbour Ising model on a ﬁnite subsetΛ of Zd with a quadratic
-potential, i.e. for aspin conﬁgurationσ in{−1, +1}Λ, its energy is given by
-HΛ
-β,h(w) =−β
-∑
-i,j∈Λ
-{i,j}∈EZd
-σiσj −h
-∑
-i∈Λ
-σi,
-where EZd is the set of edges of the latticeZd and h and β are two real parameters withβ > 0. The
-probabilityµβ,h,Λ[σ] of taking a conﬁgurationσ is then proportional toexp(−HΛ
-β,h(σ)).
-We now want to makeΛ grow to the whole latticeZd. It is well known that forh⁄= 0 orβ smaller than
-a critical valueβc(d) (thus, at high temperature), there is a unique limiting probability measureµβ,h on
-spin conﬁgurations onZd, seee.g. [FV16, Theorem 3.41]. In the following, we take parameters(β,h ) in
-this domain of uniqueness and consider a random spin conﬁgurationσ, whose law isµβ,h.
-In [DIS74], Duneau, Iagolnitzer and Souillard proved what they call thestrong cluster propertiesfor
-spins in the Ising model forh⁄= 0 or suﬃciently smallβ. Their result is actually more general (it holds
-for other models than the Ising model) but for simplicity, we stick to the Ising model here. Reformulated
-with the terminology of the present article, we have:
-Theorem 48 (Duneau,IagolnitzerandSouillard,1974). Fix the dimensiond≥ 1 andh⁄= 0, β >0.
-Mod-φ convergence, II: Estimates on the speed of convergence 43
-1. There existC = C(d,β,h ) and ε = ε(d,β,h ) < 1 such that under the probability measureµβ,h, the
-family{σi, i∈ Zd} has aC-uniform weighted dependency graphG, where the weight of the edge{i,j}
-in G is ε‖i−j‖1.
-2. The same holds forh = 0 and β is suﬃciently small (i.e. β < β1(d), for someβ1(d) depending on
-the dimension; this is sometimes refered to as the very high temperature regime).
-Note that the maximal weighted degree of this graph is a constantC′ <∞.
-We now consider the magnetization in a ﬁnite box∆ deﬁned asM∆ = ∑
-i∈∆σi. We seeM∆ as
-a sequence of random variables (indexed by the countably many ﬁnite subsets ofZd). Restricting the
-uniform weighted dependency graph above to{σi, i∈ ∆}, each M∆ is the sum of random variables
-with aC-uniform weighted dependency graph and maximal weighted degree at mostC′. Therefore, using
-Proposition 44, we know thatM|∆| admits uniform bounds on cumulants with parameters(C′
-2 ,|∆|,C ).
-Moreover, since all spins are positively correlated by the FKG inequality (see [FV16, Section 3.6]), we
-have, using translation invariance
-Var(M∆)≥
-∑
-i∈∆
-Var(σi) = Var(σ0)|∆|.
-Note that Var(σ0) is independent of∆. With the notation of Section 4, this inequality ensures that~σ∆
-is bounded from below by a constant. Applying Corollary 30, we get:
-Proposition 49.Fix the dimensiond≥ 1 and parametersh⁄= 0, β >0. The exists a constantK =
-K(d,β,h ) such that, for all subsets∆ of Zd, we have underµβ,h
-dKol
-(
-M∆− E[M∆]√
-Var(M∆)
-,NR(0, 1)
-)
-≤ K√
-|∆|
-.
-The same holds forh = 0 and β suﬃciently small (very high temperature).
-Remark 50.In this remark, we discuss mod-Gaussian convergence in this setting. Consider a sequence
-∆n of subsets ofZd, tending toZd in the Van Hove sense (i.e. the sequence is increasing with unionZd,
-and the size of the boundary of∆n is asymptotic negligible, compared to the size of∆n itself). Then it
-is known from [Ell85, Lemma 5.7.1] that
-lim
-n→∞
-1
-|∆| Var(M∆) =
-∑
-k∈Zd
-Cov(σ0,σk),
-and the right-hand side has a ﬁnite value~σ2(β,h ) for parameters (β,h ) for which Theorem 48 applies.
-Similarly, we have
-lim
-n→∞
-1
-|∆|κ(3)(M∆) =
-∑
-k,l∈Zd
-κ(σ0,σk,σl)<∞.
-We callρ(β,h ) this quantity, and denoteL = ρ(β,h)
-~σ3(β,h). Let us then consider the rescaled variables
-Xn = M∆n− E[M∆n]
-(Var(M∆n))1/3.
-From [FMN16, Section 5] (withαn = Var(M∆) andβn = 1), we know thatXn converges in the complex
-mod-Gaussian sense with parameterstn = (Var(M∆n))1/3 and limiting functionψ(z) = exp(Lz3
-6 ). This
-mod-Gaussian convergence takes place on the whole complex plane. Using the results of [FMN16], this
-implies a normality zone for(M∆− E[M∆])/
-√
-Var(M∆) of sizeo(|∆|1/6), see Proposition 4.4.1 inloc.
-cit.; and moderate deviation estimates at the edge of this normality zone, see Proposition 5.2.1.
-Remark 51.Forh = 0 and β >βc(d) (low temperature regime), there is no weighted dependency graph
-as above. Indeed, this would imply the analycity of the partition function in terms of the magnetic ﬁeld
-44 Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali
-h, and the latter is known not to be analytic ath = 0 for β > βc(d); see [MM91, Chapter 6, §5] for
-details.
+[]{#subsec:Ising label="subsec:Ising"} We consider here the nearest-neighbour Ising model on a finite subset $\Lambda$ of $\mathbb{Z}^d$ with a quadratic potential, *i.e.* for a *spin configuration* $\sigma$ in $\{-1,+1\}^{\Lambda}$, its energy is given by $$\mathcal{H}^\Lambda_{\beta,h}(w)=  - \beta\!\!\! \sum_{\substack{ i,j \in \Lambda \\ \{i,j\} \in E_{\mathbb{Z}^d}}} \!\!\! \sigma_i\sigma_j\,\,\,-h \sum_{i \in \Lambda} \sigma_i,$$ where $E_{\mathbb{Z}^d}$ is the set of edges of the lattice $\mathbb{Z}^d$ and $h$ and $\beta$ are two real parameters with $\beta > 0$. The probability $\mu_{\beta,h,\Lambda}[\sigma]$ of taking a configuration $\sigma$ is then proportional to $\exp(- \mathcal{H}^\Lambda_{\beta,h}(\sigma))$.
+
+We now want to make $\Lambda$ grow to the whole lattice $\mathbb{Z}^d$. It is well known that for $h \ne 0$ or $\beta$ smaller than a critical value $\beta_c(d)$ (thus, at high temperature), there is a unique limiting probability measure $\mu_{\beta,h}$ on spin configurations on $\mathbb{Z}^d$, see *e.g.* [@Velenik Theorem 3.41]. In the following, we take parameters $(\beta,h)$ in this domain of uniqueness and consider a random spin configuration $\sigma$, whose law is $\mu_{\beta,h}$.
+
+In [@Duneau2], Duneau, Iagolnitzer and Souillard proved what they call the *strong cluster properties* for spins in the Ising model for $h \ne 0$ or sufficiently small $\beta$. Their result is actually more general (it holds for other models than the Ising model) but for simplicity, we stick to the Ising model here. Reformulated with the terminology of the present article, we have:
+
+::: theorem
+Fix the dimension $d\geq 1$ and $h \ne 0,\,\beta>0$.
+
+1.  There exist $C=C(d,\beta,h)$ and $\varepsilon=\varepsilon(d,\beta,h)<1$ such that under the probability measure $\mu_{\beta,h}$, the family $\{\sigma_i,\, i \in \mathbb{Z}^d\}$ has a $C$-uniform weighted dependency graph $G$, where the weight of the edge $\{i,j\}$ in $G$ is $\varepsilon^{\|i-j\|_1}$.
+
+2.  The same holds for $h=0$ and $\beta$ is sufficiently small (*i.e.* $\beta<\beta_1(d)$, for some $\beta_1(d)$ depending on the dimension; this is sometimes refered to as the very high temperature regime).
+
+[]{#thm:Cumu_Ising label="thm:Cumu_Ising"}
+:::
+
+Note that the maximal weighted degree of this graph is a constant $C' < \infty$.
+
+We now consider the magnetization in a finite box $\Delta$ defined as $M_{\Delta}= \sum_{i \in \Delta} \sigma_i$. We see $M_\Delta$ as a sequence of random variables (indexed by the countably many finite subsets of $\mathbb{Z}^d$). Restricting the uniform weighted dependency graph above to $\{\sigma_i,\, i \in \Delta\}$, each $M_\Delta$ is the sum of random variables with a $C$-uniform weighted dependency graph and maximal weighted degree at most $C'$. Therefore, using Proposition [\[Prop:BoundCumulantUWDG\]](#Prop:BoundCumulantUWDG){reference-type="ref" reference="Prop:BoundCumulantUWDG"}, we know that $M_{|\Delta|}$ admits uniform bounds on cumulants with parameters $(\tfrac{C'}{2},|\Delta|,C)$. Moreover, since all spins are positively correlated by the FKG inequality (see [@Velenik Section 3.6]), we have, using translation invariance $$\mathop{\mathrm{Var}}(M_\Delta) \ge \sum_{i \in \Delta} \mathop{\mathrm{Var}}(\sigma_i) = \mathop{\mathrm{Var}}(\sigma_0) |\Delta|.$$ Note that $\mathop{\mathrm{Var}}(\sigma_0)$ is independent of $\Delta$. With the notation of Section [\[sec:dependency\]](#sec:dependency){reference-type="ref" reference="sec:dependency"}, this inequality ensures that $\widetilde{\sigma}_\Delta$ is bounded from below by a constant. Applying Corollary [\[cor:Cumulants_Kol\]](#cor:Cumulants_Kol){reference-type="ref" reference="cor:Cumulants_Kol"}, we get:
+
+::: proposition
+Fix the dimension $d \geq 1$ and parameters $h \ne 0,\,\beta>0$. The exists a constant $K=K(d,\beta,h)$ such that, for all subsets $\Delta$ of $\mathbb{Z}^d$, we have under $\mu_{\beta,h}$ $$d_\mathrm{Kol}\left( \frac{M_\Delta-\mathbb{E}[M_\Delta]}{\sqrt{\mathop{\mathrm{Var}}(M_\Delta)}}\,,\, \mathcal{N}_{\mathbb{R}}(0,1)\right) \le \frac{K}{\sqrt{|\Delta|}}.$$ The same holds for $h=0$ and $\beta$ sufficiently small (very high temperature). []{#prop:Kol_Ising label="prop:Kol_Ising"}
+:::
+
+::: remark
+In this remark, we discuss mod-Gaussian convergence in this setting. Consider a sequence $\Delta_n$ of subsets of $\mathbb{Z}^d$, tending to $\mathbb{Z}^d$ in the Van Hove sense (*i.e.* the sequence is increasing with union $\mathbb{Z}^d$, and the size of the boundary of $\Delta_n$ is asymptotic negligible, compared to the size of $\Delta_n$ itself). Then it is known from [@Ellis Lemma 5.7.1] that $$\lim_{n \to \infty} \tfrac{1}{|\Delta|} \mathop{\mathrm{Var}}(M_\Delta) = \sum_{k \in \mathbb{Z}^d} \mathop{\mathrm{Cov}}(\sigma_0,\sigma_k),$$ and the right-hand side has a finite value $\widetilde{\sigma}^2(\beta,h)$ for parameters $(\beta,h)$ for which Theorem [\[thm:Cumu_Ising\]](#thm:Cumu_Ising){reference-type="ref" reference="thm:Cumu_Ising"} applies. Similarly, we have $$\lim_{n \to \infty} \tfrac{1}{|\Delta|} \,\kappa^{(3)}(M_\Delta) = \sum_{k,l \in \mathbb{Z}^d} \kappa(\sigma_0,\sigma_k,\sigma_l) < \infty.$$ We call $\rho(\beta,h)$ this quantity, and denote $L=\tfrac{\rho(\beta,h)}{\widetilde{\sigma}^3(\beta,h)}$. Let us then consider the rescaled variables $$X_n=\frac{M_{\Delta_n}-\mathbb{E}[M_{\Delta_n}]}{(\mathop{\mathrm{Var}}(M_{\Delta_n}))^{1/3}}.$$ From [@FMN16 Section 5] (with $\alpha_n=\mathop{\mathrm{Var}}(M_\Delta)$ and $\beta_n=1$), we know that $X_n$ converges in the complex mod-Gaussian sense with parameters $t_n=(\mathop{\mathrm{Var}}(M_{\Delta_n}))^{1/3}$ and limiting function $\psi(z)=\exp(\frac{L z^3}{6})$. This mod-Gaussian convergence takes place on the whole complex plane. Using the results of [@FMN16], this implies a normality zone for $(M_\Delta-\mathbb{E}[M_\Delta])/\sqrt{\mathrm{Var}(M_\Delta)}$ of size $o(|\Delta|^{1/6})$, see Proposition 4.4.1 in *loc. cit.*; and moderate deviation estimates at the edge of this normality zone, see Proposition 5.2.1.
+:::
+
+::: remark
+For $h=0$ and $\beta>\beta_c(d)$ (low temperature regime), there is no weighted dependency graph as above. Indeed, this would imply the analycity of the partition function in terms of the magnetic field $h$, and the latter is known not to be analytic at $h=0$ for $\beta>\beta_c(d)$; see [@MM91 Chapter 6, §5] for details.
+:::

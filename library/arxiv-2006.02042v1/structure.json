@@ -260,8 +260,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 3,
-   "overlaid": 1,
+   "tex_sections": 14,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -271,48 +271,72 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-11-the-colored-jones-polynomial-and-recurrence-i",
      "title": "The colored Jones polynomial and recurrence ideal",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-12-the-aj-conjecture",
      "title": "The AJ conjecture",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.881,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-13-main-result",
      "title": "Main result",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-21-step-1-applying-symmetric-conditions",
      "title": "Step 1: Applying symmetric conditions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.826,
+     "coverage_ratio": 0.792,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-22-step-2-applying-polynomial-conditions",
      "title": "Step 2: Applying polynomial conditions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-26-step-6-applying-initial-conditions",
      "title": "Step 6: Applying initial conditions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.906,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-27-step-7-explicit-solution",
      "title": "Step 7: Explicit solution",
-     "result": "no matching \\section"
+     "prose_ratio": 0.931,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-28-double-checking-the-recurrence-relation",
      "title": "Double-checking the recurrence relation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.906,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-acknowledgements",

@@ -166,8 +166,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 5,
-   "overlaid": 3,
+   "tex_sections": 7,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -177,39 +177,46 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.845,
-     "coverage_ratio": 0.855,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-applications",
      "title": "Applications",
-     "prose_ratio": 0.101,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.036,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-high-dimensional-transportation-problems",
      "title": "High dimensional transportation problems",
-     "result": "no matching \\section"
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-some-packing-problems",
      "title": "Some packing problems",
-     "result": "no matching \\section"
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-graver-bases-and-directed-augmentation",
      "title": "Graver bases and directed augmentation",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-graver-bases-of-n-fold-matrices",
      "title": "Graver bases of n-fold matrices",
-     "prose_ratio": 0.993,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"

@@ -1140,8 +1140,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 12,
-   "overlaid": 3,
+   "tex_sections": 32,
+   "overlaid": 19,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1156,8 +1156,10 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.406,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.633,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-2-7\u03b63-3-2g\u03c0-12",
@@ -1167,7 +1169,8 @@
     {
      "id": "sec-003-11-preliminaries",
      "title": "Preliminaries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.479,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-2-lix-2-lix-lix2-5",
@@ -1213,23 +1216,32 @@
     {
      "id": "sec-012-3-applications",
      "title": "Applications",
-     "prose_ratio": 0.052,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.9,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-31-a-full-solution-to-a-problem-due-to-sun",
      "title": "A full solution to a problem due to Sun",
-     "result": "no matching \\section"
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-32-on-an-identity-attributed-to-lima",
      "title": "On an identity attributed to Lima",
-     "result": "no matching \\section"
+     "prose_ratio": 0.935,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-33-zagiers-four-term-identity",
      "title": "Zagier\u2019s four-term identity",
-     "result": "no matching \\section"
+     "prose_ratio": 0.248,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-016-27-li2",
@@ -1239,26 +1251,32 @@
     {
      "id": "sec-017-34-identities-related-of-an-evaluation-for-the-i",
      "title": "Identities related of an evaluation for the inverse tangent in-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-35-a-series-of-convergence-rate-1",
      "title": "A series of convergence rate 1",
-     "result": "no matching \\section"
+     "prose_ratio": 0.913,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-4-elliptic-4f3-series",
      "title": "Elliptic 4F3-series",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-020-5-hypergeometric-series-for-\u03c02",
      "title": "Hypergeometric series for \u03c02",
-     "prose_ratio": 0.747,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1270,15 +1288,16 @@
     {
      "id": "sec-022-6-a-proof-of-campbells-conjecture",
      "title": "A proof of Campbell\u2019s conjecture",
-     "prose_ratio": 0.655,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.727,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-023-61-related-dilogarithm-identities",
      "title": "Related dilogarithm identities",
-     "result": "no matching \\section"
+     "prose_ratio": 0.479,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-024-4-li2",
@@ -1288,13 +1307,16 @@
     {
      "id": "sec-025-7-higher-order-fields",
      "title": "Higher-order fields",
-     "prose_ratio": 0.508,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-026-71-a-two-term-ladder-identity-for-the-plastic-ra",
      "title": "A two-term ladder identity for the Plastic Ratio/Constant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.241,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-027-2-li22zz2-\u03c02",
@@ -1309,7 +1331,7 @@
     {
      "id": "sec-029-8-applications-of-rogers-identity",
      "title": "Applications of Roger\u2019s identity",
-     "prose_ratio": 0.359,
+     "prose_ratio": 0.152,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -1335,7 +1357,10 @@
     {
      "id": "sec-034-91-derivation-of-the-loxton-lewin-four-term-\u03c0",
      "title": "Derivation of the Loxton-Lewin four-term \u03c0",
-     "result": "no matching \\section"
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-035-10-two-term-complex-identities-of-the-imaginary",
@@ -1366,28 +1391,40 @@
     {
      "id": "sec-040-11-miscellaneous-results",
      "title": "Miscellaneous results",
-     "prose_ratio": 0.16,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-041-111-a-cubic-single-term-identity",
      "title": "A cubic single-term identity",
-     "result": "no matching \\section"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-042-112-a-sextic-two-term-identity",
      "title": "A sextic two-term identity",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-043-113-a-two-term-identity-over-q",
      "title": "A two-term identity over Q(",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-044-114-a-ladder-related-to-cl2",
      "title": "A ladder related to Cl2",
-     "result": "no matching \\section"
+     "prose_ratio": 0.248,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-045-115-a-modified-watson-\u03c0",
@@ -1397,18 +1434,26 @@
     {
      "id": "sec-046-12-new-ladders",
      "title": "New Ladders",
-     "prose_ratio": 0.19,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-047-121-a-three-term-ladder-relation",
      "title": "A three-term ladder relation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.943,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-048-122-five-term-ladder-relations-part-1",
      "title": "Five-term ladder relations, part 1",
-     "result": "no matching \\section"
+     "prose_ratio": 0.822,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-049-2-li2h2-4-li2h-3",
@@ -1428,7 +1473,8 @@
     {
      "id": "sec-052-123-a-six-term-ladder-relation",
      "title": "A six-term ladder relation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.464,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-053-2-li2h8-3",
@@ -1443,7 +1489,8 @@
     {
      "id": "sec-055-124-using-the-radius-method-to-derive-new-ladder",
      "title": "Using the \u201cradius method\u201d to derive new ladders",
-     "result": "no matching \\section"
+     "prose_ratio": 0.301,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-056-3-li2r3",
@@ -1478,7 +1525,10 @@
     {
      "id": "sec-062-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-063-references",

@@ -413,8 +413,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "M2317.tex",
-   "tex_sections": 7,
-   "overlaid": 4,
+   "tex_sections": 14,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -454,16 +454,16 @@
     {
      "id": "sec-005-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.928,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-2-observations-and-reductions",
      "title": "Observations and reductions",
-     "prose_ratio": 0.713,
-     "coverage_ratio": 0.817,
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -480,12 +480,16 @@
     {
      "id": "sec-009-31-model-atmosphere-and-stellar-parameters",
      "title": "Model atmosphere and stellar parameters",
-     "result": "no matching \\section"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.876,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-32-abundances-of-light-and-iron-peak-elements",
      "title": "Abundances of light and iron-peak elements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.363,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-2-in-the-classical-notation-where-log-\u01ebh-12-and",
@@ -495,46 +499,61 @@
     {
      "id": "sec-012-4-neutron-capture-elements",
      "title": "Neutron-capture elements",
-     "prose_ratio": 0.097,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-013-41-linelists-and-physical-data",
-     "title": "Linelists and physical data",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-014-42-error-budget",
-     "title": "Error budget",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-015-43-the-lighter-elements-38-z48",
-     "title": "The lighter elements, 38 \u2264Z\u226448",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-44-the-second-peak-elements-56-z72",
-     "title": "The second-peak elements, 56 \u2264Z\u226472",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-017-45-the-third-peak-elements-and-the-actinides",
-     "title": "The third-peak elements and the actinides,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-018-5-is-the-r-process-universal",
-     "title": "Is the r-process universal ?",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.572,
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.687,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
+     "id": "sec-013-41-linelists-and-physical-data",
+     "title": "Linelists and physical data",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-42-error-budget",
+     "title": "Error budget",
+     "prose_ratio": 0.912,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-43-the-lighter-elements-38-z48",
+     "title": "The lighter elements, 38 \u2264Z\u226448",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-44-the-second-peak-elements-56-z72",
+     "title": "The second-peak elements, 56 \u2264Z\u226472",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-45-the-third-peak-elements-and-the-actinides",
+     "title": "The third-peak elements and the actinides,",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-5-is-the-r-process-universal",
+     "title": "Is the r-process universal ?",
+     "prose_ratio": 0.565,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
      "id": "sec-019-7-conclusions-and-future-work",
      "title": "Conclusions and future work",
-     "prose_ratio": 0.995,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"

@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-2
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
-text_source: latex
-latex_prose_ratio: 0.96
-latex_coverage_ratio: 0.858
 doc_brief: "An introduction to the volume conjecture — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.981
 ---
 In 1995 Kashaev introduced a complex valued link invariant for an integer $N\ge 2$ by using the quantum dilogarithm [@Kashaev:MODPLA95] and then he observed that his invariant grows exponentially with growth rate proportional to the volume of the knot complement for several hyperbolic knots [@Kashaev:LETMP97]. He also conjectured that this also holds for any hyperbolic knot, where a knot in the three-sphere is called hyperbolic if its complement possesses a complete hyperbolic structure with finite volume.
 

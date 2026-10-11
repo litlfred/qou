@@ -385,7 +385,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "nagoya99.tex",
-   "tex_sections": 4,
+   "tex_sections": 7,
    "overlaid": 3,
    "thresholds": {
     "title": 0.85,
@@ -401,16 +401,16 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.89,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-2-algebra",
      "title": "Algebra",
-     "prose_ratio": 0.86,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -463,8 +463,8 @@
     {
      "id": "sec-012-4-analysis-and-harmony",
      "title": "Analysis, and Harmony",
-     "prose_ratio": 0.962,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },

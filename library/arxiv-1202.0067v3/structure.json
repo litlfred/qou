@@ -112,7 +112,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Deflation23.tex",
-   "tex_sections": 8,
+   "tex_sections": 15,
    "overlaid": 4,
    "thresholds": {
     "title": 0.85,
@@ -123,24 +123,24 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.943,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-deflation-by-averaging",
      "title": "Deflation by averaging",
-     "prose_ratio": 0.938,
-     "coverage_ratio": 0.912,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-skew-characters",
      "title": "Skew characters",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.765,
+     "prose_ratio": 0.799,
+     "coverage_ratio": 0.954,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -163,16 +163,16 @@
     {
      "id": "sec-006-generalized-deflations",
      "title": "Generalized deflations",
-     "prose_ratio": 0.961,
-     "coverage_ratio": 0.941,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-symmetric-functions",
      "title": "Symmetric functions",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.396,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.442,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]

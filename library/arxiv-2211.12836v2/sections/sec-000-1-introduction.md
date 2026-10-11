@@ -7,17 +7,14 @@ section_number: 1
 pages: 1-3
 source_pdf: 2211.12836v2.pdf
 source_sha256: 4ffbb8b21f8b175d
-text_source: latex
-latex_prose_ratio: 0.987
-latex_coverage_ratio: 0.974
 doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION — We study a class of commuting Markov kernels whose simplest element describes the movement ofk particles on a discrete"
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.984
 ---
 The present paper gives a probabilistic study of an integrable class of rooted graphs which describe movements of particles on a discrete circle conditioned to not intersect. The simplest example of this class is the graph $B_{k,n}$ encoding the transitions of $k$ particles moving clockwise with small steps on a discrete circle of $n$ sites without intersecting each other. This graph is rooted at a particular configuration where the $k$ particles are stacked next to each other after some chosen origin. We present such a graph for $k=2$ particles on a discrete circle of size $n=4$ in the figure below (where the dashed line gives the origin of the circle).
 
-<figure id="figPart" data-latex-placement="h!">
-<embed src="graph_Bkn.pdf" />
-<figcaption><span id="figPart" data-label="figPart"></span>Graph <span class="math inline"><em>B</em><sub>2, 4</sub></span> encoding the movement of <span class="math inline">2</span> nonintersecting particles on a discrete circle of size <span class="math inline">4</span>. The dashed line marks the origin of the circle.</figcaption>
-</figure>
+![[]{#figPart label="figPart"}Graph $B_{2,4}$ encoding the movement of $2$ nonintersecting particles on a discrete circle of size $4$. The dashed line marks the origin of the circle.](graph_Bkn.pdf){#figPart}
 
 As we will see, the adjacency matrix of the graph $B_{k,n}$ generates an algebra which can be seen as a finite version of the algebra of symmetric functions in $k$ variables, and this algebra has a distinguished basis for which structure coefficients are nonnegative. Graphs whose adjacency matrices generate algebras having such properties have been studied in [@GLT] under the name of positively multiplicative graphs. In the case of $B_{k,n}$, the corresponding algebra is the small quantum cohomology of the Grassmannian, see [@B; @BCF]. This algebra describes the geometry of the moduly space of rational maps from $\mathbb{P}^1(\mathbb{C})$ to the Grassmannian variety $G_{k,n}$, the latter describing the space of $k$-dimensional vector subspaces of $\mathbb{C}^n$.
 

@@ -7,10 +7,10 @@ section_number: 6
 pages: 18-19
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
-text_source: latex
-latex_prose_ratio: 0.983
-latex_coverage_ratio: 0.956
 doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 So far, in particle terms, we have only considered a limited segment of the Standard Model, and there is much still to do in terms of having a complete version expressible in the STA. An interesting feature concerning this is that recently, following Furey's work,  Gording and Schmidt-May\cite{gording2020unified} report that they have fitted the entire SM, with all three generations, into the 64-dimensional octonionic left multiplication space. This is carried out, however, using a complex $8\times 8$ matrix approach, rather than using either Clifford algebras or octonions, and so is not immediately interpretable in the current context. Nevertheless it does bode well for the basic enterprise here.
 

@@ -430,8 +430,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 8,
-   "overlaid": 3,
+   "tex_sections": 21,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -447,41 +447,49 @@
     {
      "id": "sec-001-21-tensor-ideals",
      "title": "Tensor ideals",
-     "result": "no matching \\section"
+     "prose_ratio": 0.224,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.475,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-23-generalization-to-pivotal-karoubian-categorie",
      "title": "Generalization to pivotal Karoubian categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-3-general-results-on-semisimplification-of-tenso",
      "title": "General results on semisimplification of tensor categories",
-     "prose_ratio": 0.911,
-     "coverage_ratio": 0.961,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.908,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-33-compatibility-of-negligible-morphisms-with-su",
      "title": "Compatibility of negligible morphisms with surjective tensor functors",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-41-the-result",
      "title": "The result",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-4-semisimplification-of-representation-categorie",
      "title": "Semisimplification of representation categories of finite groups in characteristic p.",
-     "prose_ratio": 0.152,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -492,42 +500,56 @@
     {
      "id": "sec-009-43-the-case-of-sylow-subgroup-of-prime-order",
      "title": "The case of Sylow subgroup of prime order",
-     "result": "no matching \\section"
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-44-the-case-of-the-symmetric-group-spn-where-np",
      "title": "The case of the symmetric group Sp+n, where n<p",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-5-semisimplification-of-some-non-symmetric-categ",
      "title": "Semisimplification of some non-symmetric categories",
-     "prose_ratio": 0.146,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-51-generic-q",
      "title": "Generic q",
-     "result": "no matching \\section"
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-52-roots-of-unity",
      "title": "Roots of unity",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-6-surjective-symmetric-tensor-functors-between-v",
      "title": "Surjective symmetric tensor functors between Verlinde categories Verp(G)",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 0.959,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-015-7-objects-of-finite-type-in-semisimplifications",
      "title": "Objects of finite type in semisimplifications",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.955,
+     "prose_ratio": 0.714,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },

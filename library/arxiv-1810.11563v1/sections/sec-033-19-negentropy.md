@@ -7,10 +7,10 @@ section_number: 19
 pages: 67-69
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.709
 doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \bn
 

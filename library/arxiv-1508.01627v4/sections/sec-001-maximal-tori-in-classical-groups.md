@@ -7,10 +7,10 @@ section_number: 2
 pages: 2-5
 source_pdf: 1508.01627v4.pdf
 source_sha256: 778e60219862e371
-text_source: latex
-latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.966
 doc_brief: "A Murnaghan-Nakayama rule for values of unipotent characters in classical groups — 7 sections: Introduction; Maximal tori in classical groups; A Murnaghan–Nakayama rule"
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.984
 ---
 []{#sec:maxtor label="sec:maxtor"}
 
@@ -38,13 +38,13 @@ We need to know that certain maximal tori contain regular elements. As before, l
 
 Let $(\la,\mu) = ((\la_1, \ldots, \la_r),(\mu_1, \ldots, \mu_s))$ be a pair of partitions of $n$, and ${\mathbf{T}}$ a corresponding $F$-stable maximal torus of ${\mathbf{G}}$. Then ${\mathbf{T}}^F$ contains regular elements if one of the following conditions is fulfilled.
 
-- $q>3$, $\la_1 < \la_2 < \ldots < \la_r$ and $\mu_1 < \mu_2 <
-      \ldots < \mu_s$;
+-   $q>3$, $\la_1 < \la_2 < \ldots < \la_r$ and $\mu_1 < \mu_2 <
+        \ldots < \mu_s$;
 
-- $q \in \{2,3\}$, $\la_1 < \la_2 < \ldots < \la_r$, $\mu_1 < \mu_2 <
-       \ldots < \mu_s$, all $\la_i \neq 2$, and if ${\mathbf{G}}$ is of type $B_n$ or $C_n$ then also all $\la_i \neq 1$; or
+-   $q \in \{2,3\}$, $\la_1 < \la_2 < \ldots < \la_r$, $\mu_1 < \mu_2 <
+         \ldots < \mu_s$, all $\la_i \neq 2$, and if ${\mathbf{G}}$ is of type $B_n$ or $C_n$ then also all $\la_i \neq 1$; or
 
-- ${\mathbf{G}}$ is of type $D_n$, $2 < \la_1 < \la_2 < \ldots < \la_r$ and $1 = \mu_1 = \mu_2 < \mu_3 < \ldots < \mu_s$.
+-   ${\mathbf{G}}$ is of type $D_n$, $2 < \la_1 < \la_2 < \ldots < \la_r$ and $1 = \mu_1 = \mu_2 < \mu_3 < \ldots < \mu_s$.
 :::
 
 ::: proof

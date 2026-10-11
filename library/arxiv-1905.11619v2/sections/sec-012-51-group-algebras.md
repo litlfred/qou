@@ -8,369 +8,189 @@ pages: 18-23
 source_pdf: 1905.11619v2.pdf
 source_sha256: f634f9ec4357d5f3
 doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an anal ysis of quantum Markov semi-groups."
+text_source: latex
+latex_prose_ratio: 0.941
+latex_coverage_ratio: 0.95
 ---
-discussed in [BrOz08, Section 15], but we include all proofs for reader’s convenience.
-Let Γ be a discrete group. Let π : Γ →U (H) be a unitary representation and b : Γ → H a
-1-cocycle for π in the sense that b(xy) = b(x) + πxb(y) for all x, y∈ Γ. Consider left and right
-actions of Γ on H⊗ ℓ2(Γ) given by πx⊗ λx and 1⊗ ρy for all x, y∈ Γ respectively. Then using the
-canonical basis ( δx)x∈Γ for ℓ2(Γ), one can construct a closable derivation by
-∂ : C[Γ]→ H⊗ ℓ2(Γ); ∂(x) = b(x)⊗ ex, x ∈ Γ .
-As above, put A := C[Γ] and deﬁne S :A→ H⊗ ℓ2(Γ) by Sex := ∂(x)‖∂(x)‖−1 (and put Sex =
-ξ⊗ ex for any ﬁxed unit vector ξ∈ H if ∂(x) = 0). Recall that b is proper if‖b(g)‖→ 0 whenever
-g→∞ . In this setting, we prove the following.
-Proposition 5.3. Suppose that b is proper and that π is weakly contained in the left regular
-representation. Then ∂ and S satisfy all the assumptions in Proposition 5.2.
-Proof. Since S is an isometry, Assumption 2 is trivially satisﬁed. Since π≺ λ, it holds that the
-representation Γ×Γ∋ (x, y)↦→πx⊗λxρy is weakly contained in the one of Γ×Γ∋ (x, y)↦→λx⊗λxρy,
-which is in turn unitarily equivalent to Γ × Γ∋ (x, y)↦→πx⊗ ρy via the unitary ex⊗ ey↦→ex⊗ exy
-on ℓ2(Γ)⊗ ℓ2(Γ). We conclude that H⊗ ℓ2(Γ) is weakly contained in the coarse bimodule as A-A
-bimodules.
-It remains to show that Tx,y is compact for all x, y∈A . For this we can assume x, y∈ Γ. Using
-Lemma 5.4 below and using the properness of b, one has ‖Tx,y (eg)‖→ 0 as g →∞ . Observe
-that Tx,y (eg)∈ H⊗ Cexgy, hence T ∗
-x,y Tx,y ∈ ℓ∞(Γ), so T ∗
-x,y Tx,y ∈ c0(Γ). We conclude that Tx,y is
-compact. □
-L2-COHOMOLOGY, DERIV ATIONS AND SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS 19
-Lemma 5.4. For every γ1, γ2∈ Λ , there is a constant Cγ1,γ 2 > 0 such that
-‖Tγ1,γ 2(µ)‖ ⩽ Cγ1,γ 2‖∂(µ)‖−1.
-Proof. We have,
-Tγ1,γ 2(µ) =‖∂(µ)‖−1γ1∂(µ)γ2−‖ ∂(γ1µγ2)‖−1∂(γ1µγ2)
-=(‖∂(µ)‖−1−‖ ∂(γ1µγ2)‖−1)γ1∂(µ)γ2−‖ ∂(γ1µγ2)‖−1(γ1∂(µ)γ2 + γ1µ∂(γ2)).
-(5.4)
-We have that,
-‖∂(γ1µγ2)‖−‖ ∂(µ)‖ ⩽ ‖∂(γ2)‖ +‖∂(γ1)‖,
-so
-‖∂(µ)‖−1−‖ ∂(γ1µγ2)‖−1 ⩽ ‖∂(γ2)‖ +‖∂(γ1)‖
-‖∂(γ1µγ2)‖‖∂(µ)‖ ,
-converges to 0 with order O(‖∂(µ)‖−2) as ∂ is proper. We conclude that ‖Tγ1,γ 2(µ)‖ converges to
-0 with order O(‖∂(µ)‖−1). □
-5.2. V on Neumann algebras with ﬁltration. We ﬁx again ( M, τ ) a ﬁnite von Neumann algebra
-with (Φ t)t≥0 = (exp(−t∆)) t≥0 a quantum Markov semi-group. Let
-∂ :A→ L2(M )∇ : a↦→a⊗ Ω τ
-be the derivation of Corollary 3.12. We shall assume that ∆ sa tisﬁes certain properties that are
-close to being a length function.
-Deﬁnition 5.5. We say that ∆ is ﬁltered if it has a compact resolvent and for every eigenvalue
-λ of ∆ there exists a (necessarily ﬁnite dimensional) subspac eA(λ)⊆A such thatA(λ)Ω τ equals
-the eigenspace of ∆ at eigenvalue λ≥ 0. Moreover, let λn, n∈ N be an increasing enumeration of
-the eigenvalues of ∆, and we assume the spaces A(λn), n∈ N, to be ﬁltered in the sense that
-(5.5)
-∞⨁
-k=0
-A(λk) =A and A(λn)A(λm)⊆
-m+n⨁
-k=0
-A(λk) for all n, m∈ N,
-where ⨁ means the algebraic direct sum.
-Suppose now that ∆ has a compact resolvent with a complete set of eigenvectors ( ei)i inA which
-is an orthonormal basis in L2(M ) (for example if ∆ is ﬁltered this holds). Then since it is als o a
-linear basis for A, we can deﬁne the map S by ( ei)i and ∂ as in (5.1). Observe that if ei∈A (λn),
-then‖∂(ei)‖2 =⟨∆( ei), ei⟩ = λn. Using this, it is easy to see that
-(5.6) S(a) = λ
-− 1
-2
-n ∂(a), for all a∈A (λn) and all eigenvalues λn.
-In particular, the map S does not depend on the choice of ( ei)i.
-Lemma 5.6. Suppose that ∆ has a compact resolvent with a complete set of eigenvectors i nA.
-Then the map S in (5.6) is an isometry and hence satisﬁes Assumption 2.
-Proof. By deﬁnition, S is given by eigenvectors ( ei)i. Then we have,
-⟨S(ei), S(ej)⟩ =‖∂(ei)‖−1‖∂(ej )‖−1⟨∂(ei), ∂(ej )⟩ =‖∂(ei)‖−1‖∂(ej)‖−1⟨∆
-1
-2 ei, ∆
-1
-2 ej⟩ = δi,j .
-So S is an isometry. □
-Lemma 5.7. Suppose that ∆ is ﬁltered, then in fact we have A(λm)A(λn)⊂ ⨁ m+n
-k=|m−n|A(λk).
-20 MARTIJN CASPERS, YUSUKE ISONO, AND MATEUSZ W ASILEWSKI
-Proof. As ∆( x∗) = ∆( x)∗ for x∈ A, the spaces A(λ) are self-adjoint. Now take x∈ A(λm),
-y∈A (λn) and z∈A (λk). Assume that m > n and that k < m − n. By assumption we ﬁnd
-that y∗z∈ ⨁ n+k
-l=0A(λl). As n + k < m this shows that 0 = ⟨y∗zΩ τ , xΩ τ⟩ =⟨zΩ τ , yxΩ τ⟩. So yx is
-orthogonal toA(λk). The same holds for xy, which yields the lemma. □
-Example 5.8. Let Λ be a discrete ﬁnitely generated group and let L : Λ → N be the length
-function given by the graph distance to the identity in the Ca yley graph of Λ. Set ∆ to be the
-closure of γ↦→L(γ)γ as an unbounded operator on ℓ2(Λ). Suppose that L is conditionally positive
-deﬁnite so that
-Q(ξ) =
-∑
-γ ∈Γ
-L(γ)‖ξ(γ)‖2 =⟨∆
-1
-2 ξ, ∆
-1
-2 ξ⟩
-is a quantum Dirichlet form (see [CiSa03]), i.e. the generat or of a quantum Markov semi-group.
-Then ∆ is easily seen to be ﬁltered.
-Remark 5.9. Let Γ q(HR) be the q-Gaussian algebra for −1 < q < 1 with the Ornstein-Uhlenbeck
-semi-group e−t∆ , see Section 4. Then it follows from the Wick product formula of Lemma 4.3 that
-∆ is ﬁltered.
-Deﬁnition 5.10. We say that ∆ has subexponential growth if it has a complete set of eigen-
-values λ0 < λ 1 < λ 2 < . . . for which
-(5.7) lim
-n→∞
-λn+1
-λn
-= 1.
-Remark 5.11. Subexponential growth of a generator of a quantum Markov sem i-group should be
-compared to the amenability results obtained in [CiSa03] an d [Cas18, Appendix]. These results
-show that often one cannot expect a growth on the eigenvalues that is more than linear and so in
-particular (5.7) holds.
-Theorem 5.12. Let M be a ﬁnite von Neumann algebra and let (Φ t)t≥0 = (exp(−t∆)) t≥0 be a
-quantum Markov semi-group such that ∆ is ﬁltered with subexponential growth. Let S be as in
-(5.6). Then for every x, y∈A the operator Tx,y in (5.2) is compact.
-Proof. Fix x, y∈ ⨁ K
-k=0A(λk) for some K∈ N. For each eigenvalue λ, let Pλ be the orthogonal
-projection onto A(λ)Ω τ and we also regard it as a map A→A (λ). Only in this proof, we will
-use the notation ‖a‖∞ for the operator norm for a∈A . Our ﬁrst goal is to prove ‖Tx,y Pλ n‖→ 0
-as n→∞ . For this, we have only to prove that ‖Tx,y (an)‖→ 0 as n→∞ , where ( an)n is any
-sequence such that an∈A (λn) and‖anΩ τ‖ = 1 for all n∈ N.
-Take such a sequence ( an)n and ﬁx n∈ N. Then since xany∈ ⨁ 2K
-k=−2KA(λn+k) by Lemma 5.7
-(whereA(l) = 0 if l < 0), one has xany = ∑ 2K
-k=−2K Pλ n+k (xany) (where Pl = 0 if l < 0), so that
-S(xany) =
-2K∑
-k=−2K
-λ
-− 1
-2
-n+k∂(Pλ n+k (xany)).
-Using this, we can write
-Tx,y (an) = xS(an)y− S(xany) = λ
-− 1
-2
-n x∂(an)y−
-2K∑
-k=−2K
-λ
-− 1
-2
-n+k∂(Pλ n+k (xany))
-L2-COHOMOLOGY, DERIV ATIONS AND SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS 21
-and further using ∂(xany) = ∑ 2K
-k=−2K ∂(Pλ n+k (xany)), this translates into
-(5.8) Tx,y (an) = λ
-− 1
-2
-n (x∂(an)y− ∂(xany)) +
-2K∑
-k=−2K
-(λ
-− 1
-2
-n − λ
-− 1
-2
-n+k)∂(Pλ n+k (xany)).
-We will show that the ﬁrst and the second term on the right hand side converges to 0 as n→∞ .
-We see the second term. Observe that for each −2K ⩽ k ⩽ 2K,
-‖∂(Pλ n+k (xany))‖ =‖∆
-1
-2 (Pλ n+k (xany))‖ = λ
-1
-2
-n+k‖Pλ n+k (xany)‖ ⩽ λ
-1
-2
-n+k‖x‖∞‖y‖∞.
-The subexponential growth condition then shows that for any such k,
-‖(λ
-− 1
-2
-n − λ
-− 1
-2
-n+k)∂(Pλ n+k (xany))‖ ⩽ λ
-1
-2
-n+k|λ
-− 1
-2
-n − λ
-− 1
-2
-n+k|‖x‖∞‖y‖∞→ 0
-as n→∞ . This ﬁnishes the case of the second term.
-We next see the ﬁrst term. By using the Leibniz rule, our term i s
-(5.9) λ
-− 1
-2
-n (x∂(an)y− ∂(xany)) =−λ
-− 1
-2
-n (∂(x)any + xan∂(y)) .
-To estimate this term we ﬁrstly ﬁnd
-‖∂(x)any‖2 =‖x⊗∇ anyΩ τ‖2 ⩽ ‖Γ( x, x)‖∞‖anΩ τ‖2‖y‖2
-∞ =‖Γ( x, x)‖∞‖y‖2
-∞,
-hence, as n→∞ ,
-(5.10) λ
-− 1
-2
-n ‖∂(x)any‖ ⩽ λ
-− 1
-2
-n ‖Γ( x, x)‖
-1
-2
-∞‖y‖∞→ 0.
-This shows that the ﬁrst summand on the right hand side of (5.9 ) converges to 0. For the sec-
-ond summand, we ﬁrst observe a couple of preliminary estimat es. Using the equation any =∑ K
-k=−K Pλ n+k (any) by Lemma 5.7 (where Pl = 0 if l < 0), we have
-‖(∆( an)y− ∆( any))Ω τ‖2 =
-‖‖‖‖‖
-K∑
-k=−K
-λnPλ n+k (any)−
-K∑
-k=−K
-λn+kPλ n+k (any)
-‖‖‖‖‖
-2
-=
-K∑
-k=−K
-|λn− λn+k|2 ‖‖Pλ n+k (any)
-‖‖2
-⩽
-K∑
-k=−K
-|λn− λn+k|2‖y‖2
-∞ ,
-so that by combining with the subexponential growth conditi on, as n→∞ ,
-(5.11) λ−1
-n ‖(∆( an)y− ∆( any))Ω τ‖→ 0.
-Secondly, as ∆ is self adjoint,
-(5.12) λ−1
-n τ (∆( y∗a∗
-nan)y) = λ−1
-n τ (y∗a∗
-nan∆( y)) =
-K∑
-k=0
-λk
-λn
-τ (y∗a∗
-nanPλ k (y))→ 0,
-as n→∞ , where we used the estimate for each summand as
-λk
-λn
-|τ (y∗a∗
-nanPλ k (y))| = λk
-λn
-|τ (anPλ k (y)y∗a∗
-n)| ⩽ λk
-λn
-‖Pλ k (y)y∗‖∞,
-which converges to 0 as n→∞ . Similarly,
-(5.13) λ−1
-n τ (y∗∆( a∗
-nan)y) = λ−1
-n τ (a∗
-nan∆( yy ∗))→ 0,
-22 MARTIJN CASPERS, YUSUKE ISONO, AND MATEUSZ W ASILEWSKI
-as n→∞ . Now we ﬁnd that
-2|λ−1
-n τ (Γ( an, any)y− y∗Γ( an, an)y)|
-⩽ λ−1
-n |τ (∆( any)∗any− y∗∆( an)∗any)| + λ−1
-n |τ (∆( y∗a∗
-nan)y)| + λ−1
-n |τ (y∗∆( a∗
-nan)y)|
-⩽ λ−1
-n ‖(∆( any)− ∆( an)y)Ω τ‖‖y‖∞ + λ−1
-n |τ (∆( y∗a∗
-nan)y)| + λ−1
-n |τ (y∗∆( a∗
-nan)y)|
-which converges to 0 as n→∞ by (5.11), (5.12) and (5.13). Essentially the same estimate s show
-that
-λ−1
-n τ (Γ( any, any)− y∗Γ( any, an))→ 0.
-We therefore get that, as n→∞ ,
-λ−1
-n ‖an∂(y)‖2 =λ−1
-n τ (Γ( any, any) + y∗Γ( an, an)y− y∗Γ( any, an)− Γ( an, any)y)→ 0.
-This shows that, as n→∞ ,
-(5.14) λ
-− 1
-2
-n ‖xan∂(y)‖ ⩽ λ
-− 1
-2
-n ‖x‖∞‖an∂(y)‖→ 0.
-In all, the convergences (5.14) and (5.10) show that (5.9) an d hence (5.8) goes to 0. We conclude
-that Tx,y (an)→ 0 as n→∞ and therefore‖Tx,y Pλ n‖→ 0 as n→∞ .
-By Lemma 5.7, for any n, m with|n− m| > 2K, xany and xamy are orthogonal, so that
-⟨xan⊗∇ y, xam⊗∇ y⟩ =⟨xan⊗∇ y, xamy⊗∇ 1⟩ =⟨x⊗∇ any, xamy⊗∇ 1⟩ = 0.
-This implies⟨x∂(an)y, x∂(am)y⟩ =⟨x∂(an)y, ∂(xamy)⟩ = 0. We obtain
-⟨Tx,y (an), Tx,y (am)⟩ = 0, for all n, m with|n− m| > 2K.
-It turns out that T ∗
-x,y Tx,y Pλ n = ∑ 2K
-k=−2K Pλ n+k T ∗
-x,y Tx,y Pλ n for all n∈ N (where Pl = 0 if l < 0).
-By putting T := T ∗
-x,y Tx,y , we see that
-T =
-∑
-n∈N
-T Pλ n =
-∑
-n∈N
-2K∑
-k=−2K
-Pλ n+k T Pλ n =
-2K∑
-k=−2K
-∑
-n∈N
-Pλ n+k T Pλ n,
-where the sum is in the strong topology. For each ﬁxed −2K ⩽ k ⩽ 2K and m∈ N, since Pλ n+k is
-orthogonal for diﬀerent n, it holds that‖‖‖‖‖‖
-∑
-m⩽ n∈N
-Pλ n+k T Pλ n
-‖‖‖‖‖‖
-= sup
-m⩽ n∈N
-‖Pλ n+k T Pλ n‖ ⩽ sup
-m⩽ n∈N
-‖Tx,y Pλ n+k‖‖Tx,y Pλ n‖,
-which converges to 0 as m→∞ . Thus the sum ∑
-n∈N Pλ n+k T Pλ n converges in the norm topology,
-hence it is a compact operator. We conclude that T is compact, so Tx,y is also compact. □
+We first consider group von Neumann algebras. This case was (essentially) discussed in [@NateTaka Section 15], but we include all proofs for reader's convenience.
+
+Let $\Gamma$ be a discrete group. Let $\pi\colon \Gamma \to \mathcal{U}(H)$ be a unitary representation and $b\colon \Gamma \to H$ a 1-cocycle for $\pi$ in the sense that $b(xy)=b(x)+\pi_xb(y)$ for all $x,y\in \Gamma$. Consider left and right actions of $\Gamma$ on $H\otimes \ell^2(\Gamma)$ given by $\pi_x \otimes \lambda_x$ and $1\otimes \rho_y$ for all $x,y\in \Gamma$ respectively. Then using the canonical basis $(\delta_x)_{x\in \Gamma}$ for $\ell^2(\Gamma)$, one can construct a closable derivation by $$\partial\colon \mathbb{C}[\Gamma] \to H\otimes \ell^2(\Gamma); \ \partial(x)=b(x)\otimes e_x, \quad x\in \Gamma.$$ As above, put $\mathcal{A}:=\mathbb{C}[\Gamma]$ and define $S\colon \mathcal{A}\to H\otimes \ell^2(\Gamma)$ by $S e_x := \partial(x)\|\partial(x)\|^{-1}$ (and put $Se_x =\xi\otimes e_x$ for any fixed unit vector $\xi \in H$ if $\partial(x)=0$). Recall that $b$ is **proper** if $\|b(g)\|\to0$ whenever $g\to \infty$. In this setting, we prove the following.
+
+::: prop
+Suppose that $b$ is proper and that $\pi$ is weakly contained in the left regular representation. Then $\partial$ and $S$ satisfy all the assumptions in Proposition [\[Prop=Action\]](#Prop=Action){reference-type="ref" reference="Prop=Action"}.
+:::
+
+::: proof
+*Proof.* Since $S$ is an isometry, Assumption 2 is trivially satisfied. Since $\pi \prec \lambda$, it holds that the representation $\Gamma \times \Gamma \ni (x,y )\mapsto \pi_x\otimes \lambda_x\rho_y$ is weakly contained in the one of $\Gamma \times \Gamma \ni (x,y )\mapsto \lambda_x\otimes \lambda_x\rho_y$, which is in turn unitarily equivalent to $\Gamma \times \Gamma \ni (x,y )\mapsto \pi_x\otimes \rho_y$ via the unitary $e_x\otimes e_y \mapsto e_x \otimes e_{xy}$ on $\ell^2(\Gamma) \otimes \ell^2(\Gamma)$. We conclude that $H\otimes \ell^2(\Gamma)$ is weakly contained in the coarse bimodule as $\mathcal{A}$-$\mathcal{A}$ bimodules.
+
+It remains to show that $T_{x,y}$ is compact for all $x,y\in \mathcal A$. For this we can assume $x,y\in \Gamma$. Using Lemma [\[Lem=OrderEstimate\]](#Lem=OrderEstimate){reference-type="ref" reference="Lem=OrderEstimate"} below and using the properness of $b$, one has $\|T_{x,y} (e_g)\| \to 0$ as $g \to \infty$. Observe that $T_{x,y} (e_g) \in  H\otimes \mathbb{C}e_{xgy}$, hence $T_{x,y}^*T_{x,y} \in \ell^\infty(\Gamma)$, so $T_{x,y}^* T_{x,y} \in c_0(\Gamma)$. We conclude that $T_{x,y}$ is compact. ◻
+:::
+
+::: lem
+[]{#Lem=OrderEstimate label="Lem=OrderEstimate"} For every $\gamma_1, \gamma_2 \in \Lambda$, there is a constant $C_{\gamma_1,\gamma_2}>0$ such that $$\Vert T_{\gamma_1, \gamma_2}(\mu) \Vert \leqslant C_{\gamma_1, \gamma_2} \Vert \partial(\mu) \Vert^{-1}.$$
+:::
+
+::: proof
+*Proof.* We have, $$\label{Eqn=TxyEstimate}
+    \begin{split}
+       T_{\gamma_1, \gamma_2}(\mu) = & \Vert \partial(\mu) \Vert^{-1} \gamma_1 \partial(\mu) \gamma_2 -   \Vert \partial(\gamma_1 \mu \gamma_2) \Vert^{-1}  \partial(\gamma_1 \mu \gamma_2)  \\
+            =   &  ( \Vert \partial(\mu) \Vert^{-1}  -
+            \Vert \partial(\gamma_1 \mu \gamma_2) \Vert^{-1}) \gamma_1 \partial(\mu) \gamma_2
+            -       
+            \Vert \partial(\gamma_1 \mu \gamma_2) \Vert^{-1} ( \gamma_1  \partial(\mu) \gamma_2 +  \gamma_1    \mu  \partial(\gamma_2) ). \\
+    \end{split}$$ We have that, $$\Vert \partial(\gamma_1 \mu \gamma_2) \Vert -   \Vert \partial( \mu ) \Vert \leqslant   \Vert   \partial( \gamma_2) \Vert + \Vert   \partial( \gamma_1) \Vert,$$ so $$\Vert \partial(\mu) \Vert^{-1}  - \Vert \partial(\gamma_1 \mu \gamma_2) \Vert^{-1} \leqslant \frac{\Vert   \partial( \gamma_2) \Vert + \Vert   \partial( \gamma_1) \Vert }{ \Vert \partial(\gamma_1 \mu \gamma_2) \Vert     \Vert \partial( \mu ) \Vert},$$ converges to 0 with order $O(\Vert \partial(\mu) \Vert^{-2})$ as $\partial$ is proper. We conclude that $\Vert T_{\gamma_1, \gamma_2}(\mu) \Vert$ converges to 0 with order $O(\Vert \partial(\mu) \Vert^{-1})$. ◻
+:::
+
+## Von Neumann algebras with filtration
+
+We fix again $(M, \tau)$ a finite von Neumann algebra with $(\Phi_t)_{t \geq 0} = (\exp(-t \Delta))_{t \geq 0}$ a quantum Markov semi-group. Let $$\partial: \mathcal{A}\rightarrow L_2(M)_\nabla: a \mapsto a \otimes \Omega_\tau$$ be the derivation of Corollary [\[Cor=Derivation\]](#Cor=Derivation){reference-type="ref" reference="Cor=Derivation"}. We shall assume that $\Delta$ satisfies certain properties that are close to being a length function.
+
+::: dfn
+We say that $\Delta$ is **filtered** if it has a compact resolvent and for every eigenvalue $\lambda$ of $\Delta$ there exists a (necessarily finite dimensional) subspace $\mathcal{A}(\lambda) \subseteq \mathcal{A}$ such that $\mathcal{A}(\lambda)\Omega_\tau$ equals the eigenspace of $\Delta$ at eigenvalue $\lambda \geq 0$. Moreover, let $\lambda_n, n \in \mathbb{N}$ be an increasing enumeration of the eigenvalues of $\Delta$, and we assume the spaces $\mathcal{A}(\lambda_n), n \in \mathbb{N}$, to be filtered in the sense that $$\label{Eqn=Filter}
+        \bigoplus_{k=0}^{\infty} \mathcal{A}(\lambda_{k})=\mathcal{A}\quad \text{and} \quad \mathcal{A}(\lambda_n) \mathcal{A}(\lambda_m) \subseteq  \bigoplus_{k=0}^{m+n} \mathcal{A}(\lambda_{k}) \quad \text{for all }n,m\in \mathbb{N},$$ where $\bigoplus$ means the algebraic direct sum.
+:::
+
+Suppose now that $\Delta$ has a compact resolvent with a complete set of eigenvectors $(e_i)_i$ in $\mathcal A$ which is an orthonormal basis in $L^2(M)$ (for example if $\Delta$ is filtered this holds). Then since it is also a linear basis for $\mathcal{A}$, we can define the map $S$ by $(e_i)_i$ and $\partial$ as in [\[Eqn=S\]](#Eqn=S){reference-type="eqref" reference="Eqn=S"}. Observe that if $e_i \in \mathcal{A}(\lambda_{n})$, then $\|\partial(e_i)\|^2 = \langle \Delta(e_i),e_i\rangle = \lambda_{n}$. Using this, it is easy to see that $$\label{Eqn=S2}
+    S(a) = {\lambda_n^{-\frac{1}{2}}}{\partial(a)}, \quad \text{for all }a\in \mathcal{A}(\lambda_n) \text{ and all eigenvalues }\lambda_n.$$ In particular, the map $S$ does not depend on the choice of $(e_i)_i$.
+
+::: lem
+[]{#Lem=AO label="Lem=AO"} Suppose that $\Delta$ has a compact resolvent with a complete set of eigenvectors in $\mathcal{A}$. Then the map $S$ in [\[Eqn=S2\]](#Eqn=S2){reference-type="eqref" reference="Eqn=S2"} is an isometry and hence satisfies Assumption 2.
+:::
+
+::: proof
+*Proof.* By definition, $S$ is given by eigenvectors $(e_i)_i$. Then we have, $$\begin{split}
+    \langle  S(e_i), S(e_j) \rangle  = &
+    \Vert \partial(e_i) \Vert^{-1} \Vert \partial(e_j) \Vert^{-1}   \langle \partial(e_i), \partial(e_j) \rangle =
+    \Vert \partial(e_i) \Vert^{-1} \Vert \partial(e_j) \Vert^{-1}   \langle \Delta^{\frac{1}{2}} e_i, \Delta^{\frac{1}{2}} e_j \rangle = \delta_{i,j}.
+    \end{split}$$ So $S$ is an isometry. ◻
+:::
+
+::: lem
+[]{#Lem=filtered label="Lem=filtered"} Suppose that $\Delta$ is filtered, then in fact we have $\mathcal{A}(\lambda_m)\mathcal{A}(\lambda_n) \subset \bigoplus_{k= \vert m - n \vert}^{m+n} \mathcal{A}(\lambda_k)$.
+:::
+
+::: proof
+*Proof.* As $\Delta(x^\ast) = \Delta(x)^\ast$ for $x \in \mathcal{A}$, the spaces $\mathcal{A}(\lambda)$ are self-adjoint. Now take $x \in \mathcal{A}(\lambda_m)$, $y \in \mathcal{A}(\lambda_n)$ and $z \in \mathcal{A}(\lambda_k)$. Assume that $m > n$ and that $k <  m - n$. By assumption we find that $y^\ast z \in \bigoplus_{l=0}^{n+k} \mathcal{A}(\lambda_{l})$. As $n+k < m$ this shows that $0 = \langle y^\ast z \Omega_\tau, x \Omega_\tau \rangle = \langle z \Omega_\tau, y x \Omega_\tau \rangle$. So $yx$ is orthogonal to $\mathcal{A}(\lambda_k)$. The same holds for $xy$, which yields the lemma. ◻
+:::
+
+::: example
+Let $\Lambda$ be a discrete finitely generated group and let $L: \Lambda \rightarrow \mathbb{N}$ be the length function given by the graph distance to the identity in the Cayley graph of $\Lambda$. Set $\Delta$ to be the closure of $\gamma \mapsto L(\gamma) \gamma$ as an unbounded operator on $\ell_2(\Lambda)$. Suppose that $L$ is conditionally positive definite so that $$Q(\xi) = \sum_{\gamma \in \Gamma}  L(\gamma)  \Vert \xi(\gamma ) \Vert^2 = \langle \Delta^{\frac{1}{2}} \xi, \Delta^{\frac{1}{2}} \xi\rangle$$ is a quantum Dirichlet form (see [@CiprianiSauvageot]), i.e. the generator of a quantum Markov semi-group. Then $\Delta$ is easily seen to be filtered.
+:::
+
+::: rmk
+[]{#Rmk=FilteredExample label="Rmk=FilteredExample"} Let $\Gamma_q(H_{\mathbb{R}})$ be the $q$-Gaussian algebra for $-1 < q < 1$ with the Ornstein-Uhlenbeck semi-group $e^{-t \Delta}$, see Section [\[Sect=Orhnstein-Uhlenbeck\]](#Sect=Orhnstein-Uhlenbeck){reference-type="ref" reference="Sect=Orhnstein-Uhlenbeck"}. Then it follows from the Wick product formula of Lemma [\[Lem=WickProduct\]](#Lem=WickProduct){reference-type="ref" reference="Lem=WickProduct"} that $\Delta$ is filtered.
+:::
+
+::: dfn
+We say that $\Delta$ has **subexponential growth** if it has a complete set of eigenvalues $\lambda_0 < \lambda_1 < \lambda_2 < \ldots$ for which $$\label{Eqn=Subexponential}
+    \lim_{n\rightarrow \infty} \frac{\lambda_{n+1}}{\lambda_n} = 1.$$
+:::
+
+::: rmk
+Subexponential growth of a generator of a quantum Markov semi-group should be compared to the amenability results obtained in [@CiprianiSauvageot] and [@CaspersGradient Appendix]. These results show that often one cannot expect a growth on the eigenvalues that is more than linear and so in particular [\[Eqn=Subexponential\]](#Eqn=Subexponential){reference-type="eqref" reference="Eqn=Subexponential"} holds.
+:::
+
+::: thm
+[]{#Thm=Compact label="Thm=Compact"} Let $M$ be a finite von Neumann algebra and let $(\Phi_t)_{t \geq 0} = (\exp(-t \Delta))_{t \geq 0}$ be a quantum Markov semi-group such that $\Delta$ is filtered with subexponential growth. Let $S$ be as in [\[Eqn=S2\]](#Eqn=S2){reference-type="eqref" reference="Eqn=S2"}. Then for every $x,y \in \mathcal{A}$ the operator $T_{x,y}$ in [\[Eqn=Txy\]](#Eqn=Txy){reference-type="eqref" reference="Eqn=Txy"} is compact.
+:::
+
+::: proof
+*Proof.* Fix $x,y \in \bigoplus_{k = 0}^K \mathcal{A}(\lambda_k)$ for some $K \in \mathbb{N}$. For each eigenvalue $\lambda$, let $P_{\lambda}$ be the orthogonal projection onto $\mathcal{A}(\lambda) \Omega_\tau$ and we also regard it as a map $\mathcal{A}\to \mathcal{A}(\lambda)$. Only in this proof, we will use the notation $\|a\|_\infty$ for the operator norm for $a\in \mathcal{A}$. Our first goal is to prove $\|T_{x,y}P_{\lambda_n}\| \to 0$ as $n \to \infty$. For this, we have only to prove that $\|T_{x,y} (a_n) \|  \to 0$ as $n\to \infty$, where $(a_n)_n$ is any sequence such that $a_n\in \mathcal{A}(\lambda_n)$ and $\|a_n\Omega_\tau\|=1$ for all $n\in \mathbb{N}$.
+
+Take such a sequence $(a_n)_n$ and fix $n\in \mathbb{N}$. Then since $xa_n y\in \bigoplus_{k=-2K}^{2K} \mathcal{A}(\lambda_{n + k})$ by Lemma [\[Lem=filtered\]](#Lem=filtered){reference-type="ref" reference="Lem=filtered"} (where $\mathcal{A}(l)=0$ if $l<0$), one has $xa_ny = \sum_{k=-2K}^{2K}P_{\lambda_{n + k}}(xa_ny)$ (where $P_l=0$ if $l<0$), so that $$S(xa_ny) = \sum_{k=-2K}^{2K}{\lambda_{n + k}^{-\frac{1}{2}}}\partial(P_{\lambda_{n + k}}(xa_ny)) .$$ Using this, we can write $$T_{x,y}(a_n) =  x S(a_n) y - S(x a_n y) =  \lambda_{n}^{-\frac{1}{2}}{x \partial(a_n) y} -
+ \sum_{k=-2K}^{2K}\lambda_{n + k}^{-\frac{1}{2}}\partial(P_{\lambda_{n + k}}(xa_ny) )$$ and further using $\partial(xa_ny) = \sum_{k=-2K}^{2K}\partial(P_{\lambda_{n + k}}(xa_ny))$, this translates into $$\label{Eqn=VStep}
+ T_{x,y}(a_n)
+ =  \lambda_{n}^{-\frac{1}{2}} \left(  x \partial(a_n) y  -
+ \partial(xa_ny)  \right)  + \sum_{k=-2K}^{2K}(\lambda_{n}^{-\frac{1}{2}}- \lambda_{n + k}^{-\frac{1}{2}})\partial(P_{\lambda_{n + k}}(xa_ny)) .$$ We will show that the first and the second term on the right hand side converges to $0$ as $n \to \infty$.
+
+We see the second term. Observe that for each $-2K \leqslant k\leqslant 2K$, $$\begin{aligned}
+    \|\partial(P_{\lambda_{n + k}}(xa_ny))\|
+    =  \|\Delta^{\frac{1}{2}}(P_{\lambda_{n + k}}(xa_ny))\|
+    = \lambda_{n + k}^{\frac{1}{2}} \|P_{\lambda_{n + k}}(xa_ny)\|
+    \leqslant \lambda_{n + k}^{\frac{1}{2}} \|x\|_\infty \|y\|_\infty.
+\end{aligned}$$ The subexponential growth condition then shows that for any such $k$, $$\begin{aligned}
+    \|(\lambda_{n}^{-\frac{1}{2}}- \lambda_{n + k}^{-\frac{1}{2}})\partial(P_{\lambda_{n + k}}(xa_ny))\|
+    \leqslant   \lambda_{n +k}^{\frac{1}{2}}|\lambda_{n}^{-\frac{1}{2}}- \lambda_{n + k}^{-\frac{1}{2}}|\|x\|_\infty\|y\|_\infty \to 0
+\end{aligned}$$ as $n\to \infty$. This finishes the case of the second term.
+
+We next see the first term. By using the Leibniz rule, our term is $$\label{Eqn=RemainderTerm}
+ \lambda_{n}^{-\frac{1}{2}}\left( x \partial(a_n) y - \partial(x a_n y) \right)
+ =
+ -\lambda_{n}^{-\frac{1}{2}}\left(   \partial(x)  a_n y + x a_n \partial(y) \right).$$ To estimate this term we firstly find $$\Vert \partial(x)  a_n y \Vert^2 = \Vert x  \otimes_\nabla a_n y \Omega_\tau \Vert^2  \leqslant \Vert \Gamma(x, x) \Vert_\infty \Vert  a_n \Omega_\tau \Vert^2 \Vert y \Vert^2_\infty = \Vert \Gamma(x, x)  \Vert_\infty  \Vert y \Vert^2_\infty,$$ hence, as $n\to \infty$, $$\label{Eqn=ConvergenceTwo}
+ \lambda_{n}^{-\frac{1}{2}}  \Vert \partial(x)  a_n y \Vert \leqslant  \lambda_{n}^{-\frac{1}{2}} \Vert \Gamma(x, x)  \Vert^{\frac{1}{2}}_\infty  \Vert y \Vert_\infty \rightarrow 0.$$ This shows that the first summand on the right hand side of [\[Eqn=RemainderTerm\]](#Eqn=RemainderTerm){reference-type="eqref" reference="Eqn=RemainderTerm"} converges to 0. For the second summand, we first observe a couple of preliminary estimates. Using the equation $a_ny = \sum_{k=-K}^K P_{\lambda_{n+k}}(a_ny)$ by Lemma [\[Lem=filtered\]](#Lem=filtered){reference-type="ref" reference="Lem=filtered"} (where $P_l=0$ if $l<0$), we have $$\begin{aligned}
+    \Vert ( \Delta(a_n ) y   - \Delta(a_n y)) \Omega_\tau \Vert^2
+    &= \left\Vert \sum_{k = - K}^K \lambda_{n } P_{\lambda_{n + k}} (a_n y) - \sum_{k = - K}^K \lambda_{n + k} P_{\lambda_{n + k}} (a_n y)   \right\Vert^2 \\
+    &=  \sum_{k = - K}^K |\lambda_{n}- \lambda_{n+k}|^2\left\Vert P_{\lambda_{n + k}} (a_n y)\right\Vert^2 \\
+    &\leqslant \sum_{k = - K}^K |\lambda_{n}- \lambda_{n+k}|^2\left\Vert y\right\Vert^2_\infty,
+\end{aligned}$$ so that by combining with the subexponential growth condition, as $n \rightarrow \infty$, $$\label{Eqn=Lim1}
+    \lambda_{n}^{-1} \Vert ( \Delta(a_n ) y   - \Delta(a_n y)) \Omega_\tau \Vert \rightarrow 0.$$ Secondly, as $\Delta$ is self adjoint, $$\label{Eqn=Lim2}
+\lambda_{n}^{-1} \tau(  \Delta(y^\ast a_n^\ast a_n)  y) = \lambda_{n}^{-1} \tau(  y^\ast a_n^\ast a_n  \Delta(y))=
+\sum_{k=0}^K \frac{\lambda_k}{\lambda_{n}} \tau(       y^\ast a_n^\ast a_n  P_{\lambda_k}(y)) \to 0,$$ as $n\to \infty$, where we used the estimate for each summand as $$\begin{split}
+ \frac{\lambda_k}{\lambda_{n}} |\tau(y^\ast a_n^\ast a_n P_{\lambda_k}(  y) )|
+=\frac{\lambda_k}{\lambda_{n}} |\tau(     a_n P_{\lambda_k}(  y) y^\ast a_n^\ast ) |
+\leqslant    \frac{\lambda_k}{\lambda_{n}} \Vert P_{\lambda_k}(  y) y^\ast \Vert_\infty,
+\end{split}$$ which converges to 0 as $n \rightarrow \infty$. Similarly, $$\label{Eqn=Lim3}
+\lambda_{n}^{-1} \tau(  y^\ast \Delta(a_n^\ast a_n ) y )=\lambda_{n}^{-1} \tau(   a_n^\ast a_n  \Delta(y y^\ast) )
+\rightarrow 0,$$ as $n \rightarrow \infty$. Now we find that $$\begin{split}
+& 2|\lambda_{n}^{-1} \tau( \Gamma(a_n, a_n y) y - y^\ast \Gamma(a_n, a_n) y  )| \\
+\leqslant \  &
+\lambda_{n}^{-1}  |\tau(  \Delta(  a_n y)^* a_n y   -  y^\ast \Delta(a_n)^* a_n y)| + \lambda_{n}^{-1}  |\tau(\Delta(y^\ast a_n^\ast a_n) y)| + \lambda_{n}^{-1} | \tau(y^\ast \Delta(a_n^\ast a_n) y )| \\
+\leqslant \ &
+\lambda_{n}^{-1}  \|(\Delta(a_ny )  -  \Delta(a_n)y )\Omega_\tau\| \|y\|_\infty + \lambda_{n}^{-1}  |\tau(\Delta(y^\ast a_n^\ast a_n) y)| + \lambda_{n}^{-1} | \tau(y^\ast \Delta(a_n^\ast a_n) y )|
+\end{split}$$ which converges to 0 as $n \rightarrow \infty$ by [\[Eqn=Lim1\]](#Eqn=Lim1){reference-type="eqref" reference="Eqn=Lim1"}, [\[Eqn=Lim2\]](#Eqn=Lim2){reference-type="eqref" reference="Eqn=Lim2"} and [\[Eqn=Lim3\]](#Eqn=Lim3){reference-type="eqref" reference="Eqn=Lim3"}. Essentially the same estimates show that $$\begin{split}
+& \lambda_{n}^{-1} \tau( \Gamma(a_n y, a_n y)  - y^\ast \Gamma(a_n y, a_n)   ) \rightarrow 0.
+\end{split}$$ We therefore get that, as $n\to \infty$, $$\begin{split}
+\lambda_{n}^{-1} \Vert  a_n \partial(y) \Vert^2 = &  \lambda_{n}^{-1}\tau\left( \Gamma (a_n y, a_n y )  + y^\ast \Gamma(a_n, a_n) y - y^\ast \Gamma(a_n y, a_n) - \Gamma(a_n, a_n y) y
+\right) \rightarrow 0.
+\end{split}$$ This shows that, as $n\to \infty$, $$\label{Eqn=ConvergenceThree}
+\lambda_{n}^{-\frac{1}{2}}{\Vert x a_n \partial( y) \Vert}
+\leqslant
+\lambda_{n}^{-\frac{1}{2}}{ \Vert x \Vert_\infty \Vert  a_n \partial( y) \Vert} \rightarrow 0.$$ In all, the convergences [\[Eqn=ConvergenceThree\]](#Eqn=ConvergenceThree){reference-type="eqref" reference="Eqn=ConvergenceThree"} and [\[Eqn=ConvergenceTwo\]](#Eqn=ConvergenceTwo){reference-type="eqref" reference="Eqn=ConvergenceTwo"} show that [\[Eqn=RemainderTerm\]](#Eqn=RemainderTerm){reference-type="eqref" reference="Eqn=RemainderTerm"} and hence [\[Eqn=VStep\]](#Eqn=VStep){reference-type="eqref" reference="Eqn=VStep"} goes to 0. We conclude that $T_{x,y}(a_n) \to 0$ as $n\to \infty$ and therefore $\|T_{x,y} P_{\lambda_n}\| \to 0$ as $n\to \infty$.
+
+By Lemma [\[Lem=filtered\]](#Lem=filtered){reference-type="ref" reference="Lem=filtered"}, for any $n,m$ with $|n-m|>2K$, $xa_n y$ and $xa_m y$ are orthogonal, so that $$\langle xa_n\otimes_\nabla y, xa_m\otimes_\nabla y \rangle = \langle xa_n\otimes_\nabla y, xa_m y \otimes_\nabla 1 \rangle = \langle x\otimes_\nabla a_n y, xa_my\otimes_\nabla 1 \rangle = 0.$$ This implies $\langle x \partial(a_n)y, x\partial(a_m)y\rangle = \langle x \partial(a_n)y, \partial(xa_my)\rangle=0$. We obtain $$\langle T_{x,y}(a_n), T_{x,y} (a_m) \rangle=0, \quad \text{for all }n,m \text{ with }|n-m|>2K.$$ It turns out that $T_{x,y}^* T_{x,y} P_{\lambda_n} = \sum_{k=-2K}^{2K} P_{\lambda_{n+k}} T_{x,y}^* T_{x,y} P_{\lambda_n}$ for all $n\in \mathbb{N}$ (where $P_l=0$ if $l<0$). By putting $T:=T_{x,y}^*T_{x,y}$, we see that $$\begin{aligned}
+    T
+    = \sum_{n\in \mathbb{N}} T P_{\lambda_n}
+    = \sum_{n\in \mathbb{N}} \sum_{k=-2K}^{2K} P_{\lambda_{n+k}} T P_{\lambda_n}
+    = \sum_{k=-2K}^{2K} \sum_{n\in \mathbb{N}}  P_{\lambda_{n+k}} T P_{\lambda_n},
+\end{aligned}$$ where the sum is in the strong topology. For each fixed $-2K \leqslant k \leqslant 2K$ and $m\in \mathbb{N}$, since $P_{\lambda_{n+k}}$ is orthogonal for different $n$, it holds that $$\begin{aligned}
+    \left\|\sum_{m\leqslant n\in \mathbb{N}} P_{\lambda_{n+k}} T P_{\lambda_n}\right\|
+    = \sup_{m\leqslant n\in \mathbb{N}}\|P_{\lambda_{n+k}} T P_{\lambda_n}\|
+    \leqslant \sup_{m\leqslant n\in \mathbb{N}}\|T_{x,y}P_{\lambda_{n+k}}\| \|T_{x,y} P_{\lambda_n}\|,
+\end{aligned}$$ which converges to 0 as $m \to \infty$. Thus the sum $\sum_{n\in \mathbb{N}} P_{\lambda_{n+k}} T P_{\lambda_n}$ converges in the norm topology, hence it is a compact operator. We conclude that $T$ is compact, so $T_{x,y}$ is also compact. ◻
+:::
+
 We conclude as follows.
-Theorem 5.13. Let M be a ﬁnite von Neumann algebra and let (Φ t)t≥0 = (exp(−t∆)) t≥0 be a
-quantum Markov semi-group that is gradient coarse and suppo se that ∆ is ﬁltered with subexponen-
-tial growth. Assume further that A as deﬁned above is locally reﬂexive. Then M satisﬁes AO +.
-Proof. Lemma 5.6 and Theorem 5.12 show that the assumptions of Propo sition 5.2 are satisﬁed.
-Therefore this proposition together with local reﬂexivity of A implies that M satisﬁes AO +. □
-The following corollary is then a consequence of [Iso15] (se e also [PoVa14]).
-Corollary 5.14. Suppose M has the W ∗CMAP. Then under the assumptions of Theorem 5.13, M
-is strongly solid.
-L2-COHOMOLOGY, DERIV ATIONS AND SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS 23
-The following examples are covered by Theorem 5.13.
-Corollary 5.15. For|q| ⩽ dim(H)− 1
-2 the q-Gaussian algebra Γ q(HR) satisﬁes Condition AO +.
-Proof. In case|q| < dim(H)− 1
-2 we verify the conditions of Theorem 5.13 as follows. From The orem
-4.14 and Remark 5.9 we see that a Γ q(HR) admits a ﬁltered quantum Markov semi-group that is
-gradient-S2. From Corollary 3.10 this semi-group is gradient coarse and the conditions of Theorem
-5.13 are veriﬁed. In case |q| ⩽ dim(H)− 1
-2 we have that Theorem 4.14 and Remark 5.9 show that
-Γ q(HR) admits a ﬁltered quantum Markov semi-group that is immedia tely gradient-S2. Then from
-[Cas18, Proposition 4.3] and Proposition 4.16 we see that th e semi-group is gradient coarse. We
-conclude again by Theorem 5.13. □
-As mentioned before, Shlyakhtenko [Shl04] obtained the sam e result for |q| <
-√
-2− 1 so that up
-to dimension 5 we ﬁnd a new range. Other examples include the f ollowing.
-Example 5.16. Free group factors with the natural radial semi-group comin g from the length
-function. Here conditon AO + is known, see [BrOz08].
-Example 5.17. Free orthogonal quantum groups O+
-N (tracial case). In [Cas18] a gradient coarse
-quantum Markov semi-group was constructed which has the ﬁlt er and subexponential growth prop-
-erty. Together with local reﬂexivity (which follows from th e CMAP of [Fre13] or [CFY14]) one
-obtains AO +. Here AO + was obtained already in [VaVe07] using boundary actions.
+
+::: thm
+[]{#Thm=AO label="Thm=AO"} Let $M$ be a finite von Neumann algebra and let $(\Phi_t)_{t \geq 0} = (\exp(-t \Delta))_{t \geq 0}$ be a quantum Markov semi-group that is gradient coarse and suppose that $\Delta$ is filtered with subexponential growth. Assume further that $A$ as defined above is locally reflexive. Then $M$ satisfies AO$^+$.
+:::
+
+::: proof
+*Proof.* Lemma [\[Lem=AO\]](#Lem=AO){reference-type="ref" reference="Lem=AO"} and Theorem [\[Thm=Compact\]](#Thm=Compact){reference-type="ref" reference="Thm=Compact"} show that the assumptions of Proposition [\[Prop=Action\]](#Prop=Action){reference-type="ref" reference="Prop=Action"} are satisfied. Therefore this proposition together with local reflexivity of $A$ implies that $M$ satisfies AO$^+$. ◻
+:::
+
+The following corollary is then a consequence of [@IsonoTransactions] (see also [@PopaVaesCrelle]).
+
+::: cor
+Suppose $M$ has the W$^*$CMAP. Then under the assumptions of Theorem [\[Thm=AO\]](#Thm=AO){reference-type="ref" reference="Thm=AO"}, $M$ is strongly solid.
+:::
+
+The following examples are covered by Theorem [\[Thm=AO\]](#Thm=AO){reference-type="ref" reference="Thm=AO"}.
+
+::: cor
+For $\vert q \vert \leqslant \dim(H)^{-\frac{1}{2}}$ the $q$-Gaussian algebra $\Gamma_q(H_{\mathbb{R}})$ satisfies Condition AO$^+$.
+:::
+
+::: proof
+*Proof.* In case $\vert q \vert < \dim(H)^{-\frac{1}{2}}$ we verify the conditions of Theorem [\[Thm=AO\]](#Thm=AO){reference-type="ref" reference="Thm=AO"} as follows. From Theorem [\[Thm=QGaussianSp\]](#Thm=QGaussianSp){reference-type="ref" reference="Thm=QGaussianSp"} and Remark [\[Rmk=FilteredExample\]](#Rmk=FilteredExample){reference-type="ref" reference="Rmk=FilteredExample"} we see that a $\Gamma_q(H_{\mathbb{R}})$ admits a filtered quantum Markov semi-group that is gradient-$\mathcal{S}_2$. From Corollary [\[Cor=GradientCoarseConsequence\]](#Cor=GradientCoarseConsequence){reference-type="ref" reference="Cor=GradientCoarseConsequence"} this semi-group is gradient coarse and the conditions of Theorem [\[Thm=AO\]](#Thm=AO){reference-type="ref" reference="Thm=AO"} are verified. In case $\vert q \vert \leqslant  \dim(H)^{-\frac{1}{2}}$ we have that Theorem [\[Thm=QGaussianSp\]](#Thm=QGaussianSp){reference-type="ref" reference="Thm=QGaussianSp"} and Remark [\[Rmk=FilteredExample\]](#Rmk=FilteredExample){reference-type="ref" reference="Rmk=FilteredExample"} show that $\Gamma_q(H_{\mathbb{R}})$ admits a filtered quantum Markov semi-group that is immediately gradient-$\mathcal{S}_2$. Then from [@CaspersGradient Proposition 4.3] and Proposition [\[Prop=NormalExtension\]](#Prop=NormalExtension){reference-type="ref" reference="Prop=NormalExtension"} we see that the semi-group is gradient coarse. We conclude again by Theorem [\[Thm=AO\]](#Thm=AO){reference-type="ref" reference="Thm=AO"}. ◻
+:::
+
+As mentioned before, Shlyakhtenko [@Shlyakhtenko] obtained the same result for $\vert q \vert < \sqrt{2} -1$ so that up to dimension 5 we find a new range. Other examples include the following.
+
+::: example
+Free group factors with the natural radial semi-group coming from the length function. Here conditon AO$^+$ is known, see [@NateTaka].
+:::
+
+::: example
+Free orthogonal quantum groups $O_N^+$ (tracial case). In [@CaspersGradient] a gradient coarse quantum Markov semi-group was constructed which has the filter and subexponential growth property. Together with local reflexivity (which follows from the CMAP of [@FreslonJFA] or [@CFY]) one obtains AO$^+$. Here AO$^+$ was obtained already in [@VaesVergnioux] using boundary actions.
+:::

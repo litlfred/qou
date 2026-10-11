@@ -144,7 +144,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 7,
-   "overlaid": 5,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -154,23 +154,23 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.954,
-     "coverage_ratio": 0.971,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-strong-interactions",
      "title": "Strong interactions",
-     "prose_ratio": 0.938,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-nonleptonic-weak-interactions",
      "title": "Nonleptonic weak interactions",
-     "prose_ratio": 0.916,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -178,7 +178,7 @@
     {
      "id": "sec-003-dynamical-photons",
      "title": "Dynamical photons",
-     "prose_ratio": 0.935,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -186,8 +186,8 @@
     {
      "id": "sec-004-dynamical-photons-and-leptons",
      "title": "Dynamical photons and leptons",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -195,8 +195,9 @@
      "id": "sec-005-outlook",
      "title": "Outlook",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.407,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.552,
+     "result": "overlaid",
+     "converter": "latex"
     }
    ]
   }

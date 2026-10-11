@@ -7,16 +7,17 @@ section_number: 10.4
 pages: 339-351
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.951
-latex_coverage_ratio: 0.859
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.869
 ---
 In the previous section we have classified the Seifert fibrations up to isomorphism and the Seifert manifolds up to commensurability. We now want to complete our study by classifying Seifert manifolds up to diffeomorphism: our final achievement will be Theorem \ref{Seifert:teo} that determines precisely the Seifert manifolds that admit non-isomorphic fibrations.
 
 The proof of Theorem \ref{Seifert:teo} is not straightforward: we will apply different techniques to different classes of Seifert manifolds. We start by studying the fundamental group of Seifert manifolds, showing in particular that it fits into a nice short exact sequence. Then we study essential surfaces: we show that these can always be isotoped to be either in ``vertical'' or ``horizontal'' position with respect to the fibration.
 
 In ``most'' cases, a Seifert manifold contains many incompressible vertical tori and these can be used to characterise the manifold. When the Seifert manifold is ``small'' it contains no such tori, and we must use different techniques: for instance we look at its fundamental group, which may be finite or infinite. 
+
 
 
 
@@ -88,6 +89,7 @@ Use Propositions \ref{central:prop} and \ref{infinite:K:prop}.
 
 We have collected some important information on the fundamental group of Seifert manifolds. We now move from algebra to topology and study the essential surfaces in Seifert manifolds: we will prove a theorem analogous to Proposition \ref{line:bundles:prop}, namely that every essential surface in a Seifert manifold is either horizontal or vertical.
 
+
 \subsection{Horizontal and vertical surfaces}
 We now want to study how Seifert manifolds may contain interesting surfaces.
 Let $M \to S$ be a Seifert fibration. A properly embedded surface $\Sigma \subset M$ is
@@ -128,6 +130,7 @@ Suppose $M\to S$ contains a horizontal surface $\Sigma$. We pull-back the fibrat
 
 Conversely, suppose $e(M)=0$. Drill one open fibered solid torus from $M$: we know by the previous proposition that the resulting fibration has a horizontal surface $\Sigma$. Its boundary consists of parallel curves of some type $(p,q)$ with $p>0$. If we Dehn-fill the manifold by killing these curves we get another Seifert manifold $M'$, to which the fibration and the section extend: therefore $e(M')=0$. At most one pair $(p,q)$ may produce a manifold with $e=0$, and hence $M=M'$.
 \end{proof}
+
 
 \subsection{Essential surfaces}
 Recall the definition of essential surface from Sections \ref{essential:discs:subsection} and \ref{essential:subsection}. We now show that essential surfaces in irreducible Seifert manifolds are either vertical or horizontal. 
@@ -200,6 +203,7 @@ Let $M\to S$ be a Seifert fibration and $M$ be irreducible. If $M$ is not covere
 Horizontal tori or annuli may arise only when $\chi=0$ and $\partial M\neq 0$ or $e=0$.
 \end{proof}
 
+
 \subsection{Simple Seifert manifolds} \label{simple:Seifert:subsection}
 We want to classify Seifert manifolds up to diffeomorphism. To do so, we group them into some classes, and use different techniques on each class. Recall that a 3-manifold is \emph{simple} if it contains no essential sphere, disc, annulus, or torus. 
 
@@ -217,6 +221,7 @@ We note in particular that all the simple Seifert manifolds are closed.
 \begin{rem}
 Among the nine commensurability classes of Seifert manifolds, three contain simple manifolds: those with empty boundary and $e\neq 0$. The Euler characteristic $\chi$ of a sphere with 3 singular fibres may in fact be positive, null, or negative. In particular there are simple Seifert manifolds with finite and with infinite fundamental group.
 \end{rem}
+
 
 \subsection{Seifert manifolds with boundary}
 To classify Seifert manifolds up to diffeomorphism, we will show that (except a few explicit exceptions) a generic Seifert manifold has a unique fibration up to isomorphism. We start with the easier non-empty-boundary case.
@@ -238,6 +243,7 @@ By Proposition \ref{incompressible:vertical:prop} these annuli are essential and
 
 The complement of this neighbourhood consists of solid tori. The two fibrations are obtained from the same fibration by Dehn-filling along the same slopes, and hence they are isomorphic.
 \end{proof}
+
 
 \subsection{Seifert manifolds with infinite fundamental group}
 We now turn to closed Seifert manifolds. We start by examining the $\chi\leqslant 0$ case.
@@ -271,6 +277,7 @@ and the three generators $r_1, r_2, r_3$ are intrinsically determined up to simu
 
 The centre $K$ is infinite since $\pi_1(M)$ is, see Proposition \ref{infinite:K:prop}. Therefore $m_i^{p_i} \in K$ equals $l^{q_i''}$ for some unique $q_i''\in \matZ$. By construction we have $q_i'' = q_i$ and $q_i'' = q_i'$, hence $q_i=q_i'$. The two fibrations $M\to S$ and $M\to S'$ are isomorphic.
 \end{proof}
+
 
 \subsection{Seifert manifolds with finite fundamental group} \label{Seifert:finite:subsection}
 This long journey through Seifert manifolds is almost finished: it remains to classify the Seifert manifolds with finite fundamental group, that is that are covered by the three-sphere.
@@ -324,38 +331,3 @@ Therefore $d_{\rm v} = d_{\rm h}\cdot e(M)$ and
 $$d = d_{\rm h} \cdot d_{\rm v} = d_{\rm h}^2 \cdot e(M) = \frac{4e(M)}{\chi(S)^2}$$
 as required.
 \end{proof}
-
-\subsection{Summary} \label{summary:Seifert:subsection}
-We now summarise the topological classification of Seifert manifolds in a single statement. 
-
-The Seifert fibrations $M\to S$ are fully classified by Proposition \ref{S:moves:prop} and Corollary \ref{classification:Seifert:cor}. The latter says that two Seifert fibrations
-$$\big(S, (p_1,q_1), \ldots, (p_h, q_h)\big), \quad \big(S', (p_1',q_1'), \ldots, (p_{h'}', q_{h'}')\big)$$
-with $p_i, p_i'\geqslant 2$ are orientation-preservingly isomorphic if and only if $S=S'$, $h=h'$, $e=e'$, and up to reordering $p_i=p_i'$ and $q_i \equiv q_i'$ (mod $p_i$) for all $i$.
-
-We easily understand when two Seifert fibrations are isomorphic. To classify Seifert manifolds up to diffeomorphism it only remains to understand which Seifert manifolds can have non-isomorphic fibrations. A long discussion has shown the following. We write $S^2\times S^1$ as the lens space $L(0,1)$.
-
-\begin{teo} \label{Seifert:teo}
-Every Seifert manifold has a unique Seifert fibration up to isomorphism, except the following:
-\begin{itemize}
-\item $L(p,q)$ fibres over $S^2$ with $\leqslant 2$ singular points in many ways,
-\item $D\times S^1$ fibres over $D$ with $\leqslant 1$ singular point in many ways,
-\item $\big( D, (2,1), (2,-1)\big) \isom S\timtil S^1$,
-\item $\big(S^2,(2,1),(2,-1),(p,q)\big) \isom \big(\matRP^2, (q,p)\big)$, 
-\item $\big(S^2,(2,1),(2,1),(2,-1),(2,-1)\big) \isom K\timtil S^1. $
-\end{itemize}
-Here $S$ and $K$ are the M\"obius strip and the Klein bottle.
-\end{teo}
-
-\subsection{References}
-The main sources that we have consulted for this long chapter are Hatcher \cite{H} and Scott \cite{S}. Some material can also be found in Fomenko -- Matveev \cite{FM}. Two classical references are Seifert's original paper \cite{Se} and Orlik \cite{O}.
-
-\chapter{Constructions of three-manifolds} \label{construction:chapter}
-
-In the previous chapter we have introduced and fully classified an important family of three-manifolds called \emph{Seifert manifolds}, and we now address the following question: how can we construct more three-manifolds?
-
-The most popular techniques employed for the construction and manipulation of three-manifolds are of cut-and-paste type: we build three-manifolds by gluing some blocks altogether, and we try to describe both the blocks and their gluing with some reasonable combinatorial formalism.
-
-The choice of the right blocks is of course fundamental, and different choices lead to quite different environments.
-The first reasonable option may be to use tetrahedra as blocks, and in that case we talk about \emph{triangulations} of three-manifolds: this construction has a strong combinatorial flavour and can be easily carried on by a computer. Other choices involve blocks without ``ridges'', that is manifolds with boundary: by using handlebodies we get \emph{Heegaard splittings}, with knot/link complements and solid tori we get \emph{Dehn surgery}, and with product manifolds $\Sigma \times [-1,1]$ we get \emph{surface bundles}. We introduce here all these topological constructions.
-
-We end this chapter by showing that every prime three-manifold has a canonical decomposition along disjoint embedded tori, called the \emph{geometric decomposition} -- the reason for adopting this name will be evident in the next chapters.

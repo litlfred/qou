@@ -7,14 +7,15 @@ section_number: 4.2
 pages: 123-131
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.951
-latex_coverage_ratio: 0.846
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We state and prove the \emph{Margulis Lemma}, that concerns arbitrary discrete groups in Lie groups and more specifically in $\Iso(\matH^n)$. The lemma implies that there is a constant $\varepsilon>0$, which depends only on the dimension $n$, such that the $\varepsilon$-thin part of any complete hyperbolic $n$-manifold consists of truncated cusps and tubes only. The $\varepsilon$-thin part is by definition the set of all the points with injectivity radius smaller than $\varepsilon$.
 
 The proof of the lemma for general Lie groups is surprisingly simple and elegant; its application to the hyperbolic case needs however a more technical argument. We start by exposing some preliminary facts on the isometries of the hyperbolic space that are of independent interest.
+
 
 \subsection{Isometries that commute or generate discrete groups} \label{that:commute:subsection}
 Two isometries of $\matH^n$ that commute or generate a discrete group must be of a particular kind. We let $\Fix(\varphi)$ denote the fixed points in $\overline{\matH^n}$ of an isometry $\varphi$. 
@@ -73,6 +74,7 @@ The fundamental group $\pi_1(M)$ of a closed hyperbolic manifold $M$ does not co
 The torus has no hyperbolic structure.
 \end{cor}
 
+
 \subsection{The Margulis Lemma}
 We now introduce the main character of this chapter, the Margulis Lemma. We first state a general version for Lie groups and then turn more specifically to $\Iso(\matH^n)$.
 
@@ -123,6 +125,7 @@ For a discrete group $\Gamma < \Iso(\matH^n)$ and a point $x\in \matH^n$, we den
 
 A \emph{Margulis constant} in a fixed dimension $n$ is any number $\varepsilon_n>0$ for which Lemma \ref{Margulis:lemma} holds. Every sufficiently small number is a Margulis constant.\index{Margulis constant} 
 
+
 \subsection{Elementary groups}
 A non-trivial discrete group $\Gamma < \Iso(\matH^n)$ is \emph{elementary} if it preserves a finite set of points in $\overline{\matH^n}$.\index{group!elementary group}
 
@@ -156,6 +159,7 @@ Let $\varepsilon_n$ be a Margulis constant. We can strengthen the Margulis Lemma
 \begin{cor}
 Let $\Gamma<\Iso(\matH^n)$ be discrete and acting freely. For every point $x\in \matH^n$ the subgroup $\Gamma_{\varepsilon_n}(x)$ is either trivial or elementary.
 \end{cor}
+
 
 \subsection{Thick-thin decomposition}
 A notable geometric consequence of the Margulis Lemma is that every complete hyperbolic manifold decomposes into a thick and a thin part, where the thin part consists only of particularly simple star-shaped pieces. This decomposition is known as the \emph{thick-thin decomposition} of hyperbolic manifolds.\index{thick-thin decomposition}
@@ -225,6 +229,7 @@ Let $M$ be a complete hyperbolic $n$-manifold. The closed geodesics in $M$ of le
 These closed geodesics lie in the thin part. Star-shaped cusp neighbourhoods contain no closed geodesics, and each star-shaped geodesic neighbourhood contains only one closed geodesic, its core, which is simple.
 \end{proof}
 
+
 \subsection{Finite-volume hyperbolic manifolds} \label{finite-volume:subsection}
 A specific feature of hyperbolic geometry is the existence of complete hyperbolic manifolds that have finite volume without being compact. The thin-thick decomposition furnishes a nice topological description of such manifolds.
 
@@ -253,6 +258,7 @@ We briefly discuss the effects of Corollary \ref{tame:cor} on low-dimensional ma
 Let $M$ be a complete hyperbolic manifold of finite volume of dimension $n$. If $n=2$, the manifold $M$ is diffeomorphic to the interior of a compact surface $N$ with boundary. Every boundary component of $N$ is of course a circle.
 
 If $n=3$, the manifold $M$ is diffeomorphic to the interior of a compact 3-manifold $N$ with boundary, and every boundary component $X$ of $N$ is a flat surface: if $M$ is orientable, then $\partial N$ also is, and by Proposition \ref{flat:is:torus:prop} it consists of tori.
+
 
 \subsection{Geodesic boundary and cusps}
 Most of the arguments of this chapter extend to hyperbolic manifolds with compact geodesic boundary.

@@ -7,10 +7,10 @@ section_number: 2
 pages: 3-7
 source_pdf: 1508.07379v2.pdf
 source_sha256: c3dbf93d1cac198e
-text_source: latex
-latex_prose_ratio: 0.966
-latex_coverage_ratio: 0.98
 doc_brief: "Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity — We establish new lower bounds for the convergence radius of the Ma yer series and the Virial series of a continuous"
+text_source: latex
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.993
 ---
 []{#sec2 label="sec2"}
 
@@ -83,3 +83,7 @@ The proof of Theorem [\[teo1\]](#teo1){reference-type="ref" reference="teo1"} re
 
 \
 The proofs of Proposition [\[pro1\]](#pro1){reference-type="ref" reference="pro1"} and Theorem [\[teo1\]](#teo1){reference-type="ref" reference="teo1"} are given in sections 3 and 4 respectively.
+
+# Proof of Proposition [\[pro1\]](#pro1){reference-type="ref" reference="pro1"} {#sec3}
+
+In this section we set $[n]:=\{1, ... ,n\}$ and $E_n:=\{\{i,j\} :\; i,j \in [n], \ i <j \}$. We recall also that ${\mathcal G}_n$ is the set of all connected graphs with vertex set $[n]$ (i.e labeled connected graphs with $n$ vertices) and ${\mathcal T}_n$ is the set of all trees with vertex set $[n]$ (i.e labeled trees with $n$ vertices). Given $g\in {\mathcal G}_n$, we denote $E_g$ its edge set. Given $g\in {\mathcal G}_n$ and $g'\in {\mathcal G}_n$ such that $E_g\subset E_{g'}$, we say that $g$ is a subgraph of $g'$ and write $g\subset g'$. Note that the pair $({\mathcal G}_n, \subset)$ is a partially ordered set. Given $g,g'\in {\mathcal G}_n$ such that $g\subset g'$, we denote $[g,g'] =\{g''\in {\mathcal G}_n: g\subseteq g''\subseteq g'\}$. In other words $[g,g']$ is an interval in $({\mathcal G}_n,\subset)$. Given a set $S$, we denote by $|S|$ its cardinality.

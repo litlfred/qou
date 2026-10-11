@@ -7,10 +7,10 @@ section_number: 5.3
 pages: 43-46
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-text_source: latex
-latex_prose_ratio: 0.951
-latex_coverage_ratio: 0.987
 doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 One might not criticize the standard model too harshly, for simply remaining silent about many of the open problems in physics.  However, what is less benign is that the standard model does at times account for various aspects of nature, and yet fails to explain them.
 

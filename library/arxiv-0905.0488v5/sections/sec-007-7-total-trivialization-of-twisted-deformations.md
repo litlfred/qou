@@ -7,10 +7,10 @@ section_number: 7
 pages: 33-36
 source_pdf: 0905.0488v5.pdf
 source_sha256: fcf8dee7cd3849b9
-text_source: latex
-latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.749
 doc_brief: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI — Let X be a smooth algebraic variety over a ﬁeldK containing the real numbers."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:tttf}
 

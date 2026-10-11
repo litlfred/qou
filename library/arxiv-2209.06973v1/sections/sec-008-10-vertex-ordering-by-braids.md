@@ -7,10 +7,10 @@ section_number: 10
 pages: 58-64
 source_pdf: 2209.06973v1.pdf
 source_sha256: cc3393a17c48b9df
-text_source: latex
-latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.989
 doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.99
 ---
 In the previous section we used symmetry and did appeal to the geometry of the projections in order to find the formulas for the jump map (and thereby colored Jones polynomial).
 
@@ -53,7 +53,7 @@ The second important ingredient in order to apply [\[thm:main\]](#thm:main){refe
 \(b\) The vertex ordering defined from the braid presentation and the corresponding two maps $\sigma ,\tau$ are closely related to the noncommutative state models discussed in [@A], [@GL], [@H] and [@B].
 :::
 
-::::: exmp
+::: exmp
 We will conclude with an example: $\beta =\sigma_1^{-3}\sigma_2\sigma_1\sigma_2^2\sigma_1^{-1}$. The contracted sequence is $\sigma_1\sigma_2$ and thus the closure is a knot and the braid permutation is $(132)$, $\mathfrak{c}=9$ and so the vertex set is identified with $\{0,1,\ldots ,7\}$. We have vectors $\mathbf{j},\mathbf{i}$ as before, the difference now is just that the component number corresponds to the ordering induced from the braid.
 
 ::: center
@@ -91,17 +91,17 @@ $\sigma (4)=7$, $\tau^{-1}(7)=\emptyset$, so $i_7+j_7=i_4$, or $i_7=j_1-j_2-j_5-
 
 $\sigma (7)=1, \tau (0)=1$, so $i_1+j_1=i_7+j_0$, or $i_1=j_6-j_2-j_5-j_4$
 
-$$\begin{align*}
+$$\begin{aligned}
 \sigma (1)=6, \tau (2)=\tau (4)=\tau (5)=6, & \ \textrm{so} \ i_6+j_6=i_1+j_2+j_4+j_5, \\
 & \textrm{or} \ i_6=0
-\end{align*}$$
+\end{aligned}$$
 
-Note that $i_6=0$ is required by the color of the top left string to be $0$. So we get $$\begin{align*}
+Note that $i_6=0$ is required by the color of the top left string to be $0$. So we get $$\begin{aligned}
 \mathbf{i}'=&(-j_2-j_4-j_5+j_6,j_1-j_2,j_1-j_2-j_5+j_6,j_1-j_2-j_4-j_5+j_6,\\
 \ & j_1-j_2+j_3-j_5,j_1-j_2-j_4-j_5+j_6)
-\end{align*}$$
+\end{aligned}$$
 
 The rotation of a state is given by the part-arc colors at the maxima as usual, and thus are: $$\textrm{rot}(\mathbf{j}')=(i_3+j_4)+(i_5+j_6)=2(j_1-j_2-j_5+j_6)+j_3+j_4$$
-:::::
+:::
 
 We conclude with a list of questions we developed during this work.

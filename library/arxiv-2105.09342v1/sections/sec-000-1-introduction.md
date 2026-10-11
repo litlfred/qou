@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-4
 source_pdf: 2105.09342v1.pdf
 source_sha256: 57ae12327da7b9a1
-text_source: latex
-latex_prose_ratio: 0.945
-latex_coverage_ratio: 0.909
 doc_brief: "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:intro}
 

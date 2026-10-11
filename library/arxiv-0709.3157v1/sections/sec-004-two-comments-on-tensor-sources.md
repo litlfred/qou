@@ -7,10 +7,10 @@ section_number: null
 pages: 5-5
 source_pdf: 0709.3157v1.pdf
 source_sha256: 22a0d9a93c9dcb8d
-text_source: latex
-latex_prose_ratio: 0.987
-latex_coverage_ratio: 1.0
 doc_brief: "V . Mateu — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents , that is, quark bilinears of the form ¯qi"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.976
 ---
 So far we have restricted ourselves to the even--intrinsic sector. The odd--intrinsic sector involving external sources is characterized by being proportional to the Levi--Civitá symbol $\varepsilon_{\mu\nu\sigma\rho}$. Using the fact that this symbol appears on the definition of the tensor chiral projectors, Eq. ([\[chiral-projector\]](#chiral-projector){reference-type="ref" reference="chiral-projector"}), in Ref. [@Cata:2007ns] it was demonstrated that when acting on a tensor source it can be written in a form which is manifestly even--intrinsic. Then the odd--intrinsic--parity sector with tensor sources necessarily starts at $\mathcal{O}(p^8)$.
 

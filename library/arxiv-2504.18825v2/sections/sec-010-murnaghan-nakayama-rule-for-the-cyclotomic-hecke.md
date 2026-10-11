@@ -7,13 +7,14 @@ section_number: 3
 pages: 12-18
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
-text_source: latex
-latex_prose_ratio: 0.949
-latex_coverage_ratio: 0.968
 doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{s:M-N}
 In this section, we will present our Murnaghan--Nakayama rule for the cyclotomic Hecke algebra.
+
 
 \subsection{Murnaghan--Nakayama rule}
 A skew diagram $\lambda/\mu$ is a {\it vertical} (resp. {\it horizontal}) {\it strip} if each row (resp. column) contains at most one box. We say a skew diagram of $\la/\mu$ is a {\it ribbon} (also known as {\it border strip} or {\it rim hook}) if it is connected and contains no $2\times 2$ blocks \begin{tikzpicture}
@@ -338,6 +339,7 @@ summed over all generalized $m$-multi-ribbon tableaux of shape $\bm{\la}$ with c
 \begin{proof}
 It is straightforward by using Corollary \ref{t:m-n2} repeatedly.
 \end{proof}
+
 
 \subsection{Examples and numerical relations} Now we apply our Murnaghan--Nakayama rule to compute some irreducible characters in special cases and establish an equality relation. 
 We use the short-hand notation $\bvar^{1}_j$ (resp. $\bvar^{n}_j$) to present the multipartition with $(1^n)$ (resp. $(n)$) in the $j$-th entry and $\varnothing$ anywhere else.

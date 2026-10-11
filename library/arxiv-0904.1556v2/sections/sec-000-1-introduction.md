@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-4
 source_pdf: 0904.1556v2.pdf
 source_sha256: a1a43786d817f085
-text_source: latex
-latex_prose_ratio: 0.751
-latex_coverage_ratio: 0.996
 doc_brief: "The Algebra of Grand Unified Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
+text_source: latex
+latex_prose_ratio: 0.998
+latex_coverage_ratio: 0.796
 ---
 []{#sec:introduction label="sec:introduction"}
 
@@ -41,7 +41,7 @@ This is how we shall proceed. In Section [\[sec:sm\]](#sec:sm){reference-type="
 After this warmup we tour the Standard Model in its current form. In Section [\[sec:fermions\]](#sec:fermions){reference-type="ref" reference="sec:fermions"} we describe the particles called 'fundamental fermions', which constitute matter. In Section [\[sec:forces\]](#sec:forces){reference-type="ref" reference="sec:forces"} we describe the particles called 'gauge bosons', which carry forces. Apart from the elusive Higgs boson, all particles in the Standard Model are of these two kinds. In Section [\[sec:smrep\]](#sec:smrep){reference-type="ref" reference="sec:smrep"} we give a more mathematical treatment of these ideas: the gauge bosons are determined by the Standard Model gauge group $${G_{\mbox{\rm SM}}}= {\rm U}(1) \times {\rm SU}(2) \times {\rm SU}(3) ,$$ while the fundamental fermions and their antiparticles are basis vectors of a highly reducible representation of this group, which we call $F \oplus F^*$. Here $F$ describes the fermions, while $F^*$ describes their antiparticles.
 
 Amazingly, using the ideas of gauge theory and quantum field theory, plus the 'Higgs mechanism' for symmetry breaking, we can recover the dynamical laws obeyed by these particles from the representation of ${G_{\mbox{\rm SM}}}$ on $F
-\oplus F^*$. This information is enough to decode the physics of these particles and make predictions about what is seen in the gigantic accelerators that experimental physicists use to probe the natural world at high energies. Unfortunately, to explain all this would go far beyond the modest goals of this paper. For a guide to further study, see Section [0.1](#subsec:reading){reference-type="ref" reference="subsec:reading"}.
+\oplus F^*$. This information is enough to decode the physics of these particles and make predictions about what is seen in the gigantic accelerators that experimental physicists use to probe the natural world at high energies. Unfortunately, to explain all this would go far beyond the modest goals of this paper. For a guide to further study, see Section [\[subsec:reading\]](#subsec:reading){reference-type="ref" reference="subsec:reading"}.
 
 Having acquainted the reader with the Standard Model of particle physics in Section [\[sec:sm\]](#sec:sm){reference-type="ref" reference="sec:sm"}, we then go on to talk about grand unified theories in Section [\[sec:guts\]](#sec:guts){reference-type="ref" reference="sec:guts"}. These theories go beyond the Standard Model by 'extending' the gauge group. That is, we pick a way to include ${G_{\mbox{\rm SM}}}$ in some larger group $G$, and choose a representation $V$ of $G$ which reduces to the Standard Model representation $F \oplus F^*$ when we restrict it to ${G_{\mbox{\rm SM}}}$. We describe how this works for the ${\rm SU}(5)$ theory (Section [\[sec:su(5)\]](#sec:su(5)){reference-type="ref" reference="sec:su(5)"}), the ${\rm SO}(10)$ theory (Section [\[sec:so(10)\]](#sec:so(10)){reference-type="ref" reference="sec:so(10)"}), and the Pati--Salam model (Section [\[sec:g(2,2,4)\]](#sec:g(2,2,4)){reference-type="ref" reference="sec:g(2,2,4)"}). Of course, since we do not discuss the dynamics, a lot will go unsaid about these GUTs.
 
@@ -51,39 +51,23 @@ In Section [\[sec:conclusion\]](#sec:conclusion){reference-type="ref" reference
 
 Throughout the course of the paper, we occasionally summarize our progress in theorems, most phrased in terms of commutative diagrams:
 
-- Section 3.1, Theorem [\[thm:su(5)\]](#thm:su(5)){reference-type="ref" reference="thm:su(5)"}: the ${\rm SU}(5)$ theory extends the Standard Model.
+-   Section 3.1, Theorem [\[thm:su(5)\]](#thm:su(5)){reference-type="ref" reference="thm:su(5)"}: the ${\rm SU}(5)$ theory extends the Standard Model.
 
-- Section 3.2, Theorem [\[thm:spinor\]](#thm:spinor){reference-type="ref" reference="thm:spinor"}: the ${\rm Spin}(10)$ theory extends the ${\rm SU}(5)$ theory.
+-   Section 3.2, Theorem [\[thm:spinor\]](#thm:spinor){reference-type="ref" reference="thm:spinor"}: the ${\rm Spin}(10)$ theory extends the ${\rm SU}(5)$ theory.
 
-- Section 3.3, Theorem [\[thm:Pati\--Salam\]](#thm:Pati--Salam){reference-type="ref" reference="thm:Pati--Salam"}: the Pati--Salam model extends the Standard Model.
+-   Section 3.3, Theorem [\[thm:Pati\--Salam\]](#thm:Pati--Salam){reference-type="ref" reference="thm:Pati--Salam"}: the Pati--Salam model extends the Standard Model.
 
-- Section 3.4, Theorem [\[thm:Pati\--Salam2\]](#thm:Pati--Salam2){reference-type="ref" reference="thm:Pati--Salam2"}: the Pati--Salam model is isomorphic to a theory involving ${\rm Spin}(4) \times {\rm Spin}(6)$.
+-   Section 3.4, Theorem [\[thm:Pati\--Salam2\]](#thm:Pati--Salam2){reference-type="ref" reference="thm:Pati--Salam2"}: the Pati--Salam model is isomorphic to a theory involving ${\rm Spin}(4) \times {\rm Spin}(6)$.
 
-- Section 3.4, Theorem [\[thm:Pati\--Salam3\]](#thm:Pati--Salam3){reference-type="ref" reference="thm:Pati--Salam3"}: the ${\rm Spin}(4) \times 
-  {\rm Spin}(6)$ theory extends the Standard Model.
+-   Section 3.4, Theorem [\[thm:Pati\--Salam3\]](#thm:Pati--Salam3){reference-type="ref" reference="thm:Pati--Salam3"}: the ${\rm Spin}(4) \times 
+    {\rm Spin}(6)$ theory extends the Standard Model.
 
-- Section 3.4, Theorem [\[thm:Spin(10)\]](#thm:Spin(10)){reference-type="ref" reference="thm:Spin(10)"}: the ${\rm Spin}(10)$ theory extends the ${\rm Spin}(4) \times {\rm Spin}(6)$ theory.
+-   Section 3.4, Theorem [\[thm:Spin(10)\]](#thm:Spin(10)){reference-type="ref" reference="thm:Spin(10)"}: the ${\rm Spin}(10)$ theory extends the ${\rm Spin}(4) \times {\rm Spin}(6)$ theory.
 
-- Section 3.5, Theorem [\[thm:cube\]](#thm:cube){reference-type="ref" reference="thm:cube"}: the Standard Model, the ${\rm SU}(5)$ theory, the ${\rm Spin}(4) \times {\rm Spin}(6)$ theory and the ${\rm Spin}(10)$ theory fit together in a commutative cube.
+-   Section 3.5, Theorem [\[thm:cube\]](#thm:cube){reference-type="ref" reference="thm:cube"}: the Standard Model, the ${\rm SU}(5)$ theory, the ${\rm Spin}(4) \times {\rm Spin}(6)$ theory and the ${\rm Spin}(10)$ theory fit together in a commutative cube.
 
-- Section 4, Theorem [\[thm:pullbackSO(10)\]](#thm:pullbackSO(10)){reference-type="ref" reference="thm:pullbackSO(10)"}: The true gauge group of the Standard Model is the intersection of ${\rm SU}(5)$ and ${\rm SO}(4) \times
-  {\rm SO}(6)$ in ${\rm SO}(10)$.
+-   Section 4, Theorem [\[thm:pullbackSO(10)\]](#thm:pullbackSO(10)){reference-type="ref" reference="thm:pullbackSO(10)"}: The true gauge group of the Standard Model is the intersection of ${\rm SU}(5)$ and ${\rm SO}(4) \times
+    {\rm SO}(6)$ in ${\rm SO}(10)$.
 
-- Section 4, Theorem [\[thm:pullbackSpin(10)\]](#thm:pullbackSpin(10)){reference-type="ref" reference="thm:pullbackSpin(10)"}: The true gauge group of the Standard Model is the intersection of ${\rm SU}(5)$ and $({\rm Spin}(4) \times
-  {\rm Spin}(6))/\mathbb{Z}_2$ in ${\rm Spin}(10)$.
-
-## Guide to Further Reading {#subsec:reading}
-
-We have tried to limit our prerequisites to the bare minimum. This includes basic facts about Lie groups, Lie algebras, and their representations---especially finite-dimensional unitary representations of compact Lie groups. We will not need the structure theory for simple Lie groups. We do, however, assume a little familiarity with the classical Lie groups ${\rm{GL}}(n)$, ${\rm{SL}}(n)$, ${\rm O}(n)$, ${\rm SO}(n)$, ${\rm U}(n)$, and ${\rm SU}(n)$, as well as their Lie algebras.
-
-There are countless books on Lie groups, Lie algebras and their representations, but the text by Hall [@hall] has everything we need, and more. Sternberg's introduction to group theory and physics [@sternberg] includes an excellent account of applications to particle physics. To see the subject more through the eyes of a physicist, try the books by Lipkin [@lipkin] or Tinkham [@tinkham]. Georgi's text [@georgi:lie] shows how the subject looks to one of the inventors of grand unified theories.
-
-Starting in Section [\[sec:su(5)\]](#sec:su(5)){reference-type="ref" reference="sec:su(5)"} we assume familiarity with exterior algebras, and in Section [\[sec:so(10)\]](#sec:so(10)){reference-type="ref" reference="sec:so(10)"} we also use Clifford algebras. For what we need, Chevalley's book [@Chevalley] is more than sufficient.
-
-For the interested reader, there are many introductions to particle physics where one can learn the dynamics after getting a taste of the algebra here. It might be good to start by reading Griffiths' introductory book [@griffiths:intro] together with Sudbery's text specially designed for mathematicians [@sudbery]. The book by Huang [@huang:qlgf] delves as deep as one can go into the Standard Model without a heavy dose of quantum field theory, and the book by Lee [@lee:pp] is full of practical wisdom. For more information on grand unified theories, see the textbooks by Ross [@ross:gut] and Mohapatra [@mohapatra:us].
-
-Particle physics relies heavily on quantum field theory. There are many books on this subject, none of which make it easy. Prerequisites include a good understanding of classical mechanics, classical field theory and quantum mechanics. Many physicists consider the books by Brown [@Brown] and Ryder [@Ryder] to be the most approachable. The text by Peskin and Schroeder [@PeskinSchroeder:qft] offers a lot of physical insight, and we have also found Zee's book [@zee:nutshell] very useful in this respect. Srednicki's text [@srednicki:qft] is clear about many details that other books gloss over---and it costs nothing! Of course, these books are geared toward physicists: mathematicians may find the lack of rigor frustrating. Ticciati [@ticciati:qft] provides a nice introduction for mathematicians, but anyone serious about this subject should quickly accept the fact that quantum field theory has not been made rigorous: this is a project for the century to come.
-
-Particle physics also relies heavily on geometry, especially gauge theory. This subject is easier to develop in a rigorous way, so there are plenty of texts that describe the applications to physics, but which a mathematician can easily understand. Naber's books are a great place to start [@naber:foundations; @naber:interactions], and one of us has also written an elementary introduction [@BaezMuniain]. Isham's text is elegant and concise [@isham], and many people swear by Nakahara [@nakahara]. The quantum field theory texts mentioned above also discuss gauge theory, but in language less familiar to mathematicians.
-
-Finally, few things are more enjoyable than the history of nuclear and particle physics---a romantic tale full of heroic figures and tightly linked to the dark drama of World War II, the Manhattan Project, and the ensuing Cold War. Crease and Mann [@CreaseMann:sc] give a very readable introduction. To dig deeper, try the book by Segrè [@segre:modern], or the still more detailed treatments by Pais [@pais:ib] and Hoddeson *et al* [@hoddeson].
+-   Section 4, Theorem [\[thm:pullbackSpin(10)\]](#thm:pullbackSpin(10)){reference-type="ref" reference="thm:pullbackSpin(10)"}: The true gauge group of the Standard Model is the intersection of ${\rm SU}(5)$ and $({\rm Spin}(4) \times
+    {\rm Spin}(6))/\mathbb{Z}_2$ in ${\rm Spin}(10)$.

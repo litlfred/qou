@@ -8,12 +8,10 @@ pages: 6-7
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
 doc_brief: "Volume Conjecture: Refined and Categorified — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the"
+text_source: latex
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 1.0
 ---
-In this section we describe general aspects of the mathemati cal structure shared by a wide
-variety of examples, ranging from the counting of reﬁned BPS invariants to categoriﬁcation
-of quantum group invariants. Then, in later sections we focu s on each class of examples
-separately.
-In particular, one of our goals is to promote the volume conje ctures (1.2) and (1.5) to
-the corresponding reﬁned / categoriﬁed versions, both for k nots and for the reﬁned BPS
-invariants.
-– 5 –
+In this section we describe general aspects of the mathematical structure shared by a wide variety of examples, ranging from the counting of refined BPS invariants to categorification of quantum group invariants. Then, in later sections we focus on each class of examples separately.
+
+In particular, one of our goals is to promote the volume conjectures [\[VCparam\]](#VCparam){reference-type="eqref" reference="VCparam"} and [\[VCquant\]](#VCquant){reference-type="eqref" reference="VCquant"} to the corresponding refined / categorified versions, both for knots and for the refined BPS invariants.

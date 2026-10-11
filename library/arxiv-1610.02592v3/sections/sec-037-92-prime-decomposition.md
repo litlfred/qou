@@ -7,12 +7,13 @@ section_number: 9.2
 pages: 280-295
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.955
-latex_coverage_ratio: 0.826
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 In this section we study spheres and discs in three-manifolds. We prove that every sphere in $\matR^3$ bounds a disc, and we call \emph{irreducible} a three-manifold that has this property. Then we study the connected sum of three-manifolds, and we show that it behaves like multiplication of natural numbers: every closed oriented three-manifold decomposes uniquely into some \emph{prime} factors.
+
 
 \subsection{Balls}
 In general dimension $n$, we have used the term \emph{disc} to denote the closed Euclidean disc $D^n$, and the term \emph{ball} for its open interior. Speaking about three-dimensional spaces, we will henceforth use a more intuitive terminology and call \emph{disc} and \emph{ball} respectively the closed discs $D^2$ and $D^3$, and we will use the symbols $D$ and $B$ for them.
@@ -29,6 +30,7 @@ There are only two diffeomorphisms up to isotopy, see Theorem \ref{S2:omotopi:te
 \end{proof}
 
 In dimension 3 we can therefore freely remove and add balls without affecting much the topology of the manifold. In particular, by removing the interior of a ball from $S^3$ we get another ball $B$, and by attaching a ball to $B$ we get $S^3$ back. We must thank Smale's Theorem \ref{Smale:teo} for that: the situation in higher dimensions is more complicated.
+
 
 \subsection{Connected sums}
 Connected sums exist in any dimension $n$, but when $n\leqslant 3$ they may be redefined in slightly simpler terms:\index{connected sum} 
@@ -62,6 +64,7 @@ Use Van Kampen.
 We have $H_1(M,\matZ) = H_1(M_1,\matZ) \oplus H_1(M_2,\matZ)$.
 \end{cor}
 
+
 \subsection{Irreducible 3-manifolds}
 We introduce an important definition. Let $M$ be a connected, oriented 3-manifold with (possibly empty) boundary.\index{three-manifold!irreducible three-manifold}
 \begin{defn}
@@ -84,6 +87,7 @@ It is important to recall here that the sphere must be a smooth surface. If we a
 \label{Morse_torus:fig}
 \end{center}
 \end{figure}
+
 
 \subsection{Alexander theorem} The first 3-manifold to look at is of course $\matR^3$. We prove here that $\matR^3$ is irreducible. 
 
@@ -140,6 +144,7 @@ Choose two points $p, q \not \in S$ on opposite sides with respect to $S$. We ha
 
 Alexander's Theorem generalises the smooth Jordan curve Theorem to dimension $3$. The situation in higher dimensions is much more problematic: it is still unknown whether every smooth 3-sphere in $\matR^4$ bounds a smooth 4-disc (this is usually called the \emph{Sch\"onflies problem}).\index{Sch\"onflies problem}
 
+
 \subsection{Prime manifolds}
 A connected sum $M_1\# M_2$ is \emph{trivial} if either $M_1$ or $M_2$ is a sphere. \index{three-manifold!prime three-manifold}
 
@@ -168,6 +173,7 @@ If $M$ is irreducible, then it is clearly prime. If $M$ is prime and not irreduc
 We now prove that $M=S^2\times S^1$. We embed $S\cup \alpha$ naturally in $S^2\times S^1$ as $S = S^2\times y$ and $\alpha = x \times S^1$. Decompose $S^2= D\cup D'$ in two discs and $S^1 = I\cup I'$ in two intervals. The manifold
 $N$ also embeds as $S^2\times I \cup D \times S^1$ and its complement $B=D'\times I'$ is a ball. Therefore $M = S^2\times S^1$.
 \end{proof}
+
 
 \subsection{Some irreducible manifolds}
 The Alexander theorem generates many more examples of irreducible 3-manifolds.
@@ -207,6 +213,7 @@ Let $S\subset S^2\times S^1$ be a separating sphere: we must prove that it bound
 Since $M$ is simply connected, a copy $M'$ of $M$ lifts to the universal cover $S^2\times \matR$ of $S^2\times S^1$. We identify $S^2\times\matR = \matR^3\setminus 0$. This copy $M'$ now lies in $\matR^3$, and $\partial M' = S^2$ implies that $M'$ is a ball by Alexander theorem.
 \end{proof}
 
+
 \subsection{Handlebodies and line bundles}
 We now introduce some basic, but important, compact 3-manifolds with boundary. A \emph{handlebody} is a connected orientable 3-manifold that decomposes into 0- and 1- handles.\index{handlebody} 
 
@@ -243,6 +250,7 @@ Its universal cover $\matR^2 \times [0,1]$ is irreducible, because its interior 
 \begin{ex}
 If $b\geqslant 1$ the manifold $S_{g,b}\times [0,1]$ is homeomorphic to a handlebody of genus $2g+b-1 = -\chi(S_{g,b}) +1$.
 \end{ex}
+
 
 \subsection{Normal surfaces}
 Let $M$ be a compact 3-manifold with (possibly empty) boundary. As every smooth compact manifold, $M$ has a triangulation $T$, made of a certain number $t$ of tetrahedra. We now show that $T$ can be used to treat combinatorially many interesting surfaces in $M$.
@@ -341,6 +349,7 @@ After finitely many steps we get a surface $S$ intersecting every tetrahedron $\
 \end{center}
 \end{figure}
 
+
 \subsection{Interesting surfaces cannot have too many components}
 We know from Proposition \ref{non:ori:prop} that a compact orientable $M$ cannot contain too many disjoint non-orientable surfaces. It can however contain arbitrarily many orientable surfaces: for instance, small surfaces contained in disjoint balls. A crucial aspect of 3-manifolds theory is that $M$ cannot contain arbitrarily many ``interesting'' surfaces, as we now see.
 
@@ -374,6 +383,7 @@ By our hypothesis on $M$ the spheres $S_0, S_1$, and $S_2$ are separating. Let $
 
 This proves that the final normal surface $S'$ contains a sphere system with the same number $\geqslant K$ of components as $S$. Lemma \ref{non:parallel:lemma} gives a contradiction.
 \end{proof}
+
 
 \subsection{Prime decomposition}
 We now show that the connected sum operation on oriented three-manifolds behaves like the product of natural numbers: every object decomposes uniquely into prime factors.\index{prime decomposition of three-manifolds} 
@@ -413,6 +423,7 @@ This important result is known as the \emph{Prime decomposition Theorem} for 3-m
 
 The strategy of cutting canonically a three-manifold along surfaces has proved successful with spheres, so we now try to do the same with other surfaces. We start by studying properly embedded discs, which of course occur only in manifolds with boundary. It is tempting to guess that discs should behave roughly like spheres, because by doubling a 3-manifold along its boundary we transform properly embedded discs into spheres. We now see that this is indeed the case. As for spheres, we need to distinguish the interesting ones, that we call \emph{essential}, from the others.
 
+
 \subsection{Essential discs} \label{essential:discs:subsection}
 Let $M$ be a compact 3-manifold with (possibly empty) boundary. A properly embedded surface $S\subset M$ is \emph{$\partial$-parallel} if it is obtained by slightly pushing inside $M$ the interior of a compact surface $S'\subset \partial M$, possibly with boundary.\index{surface!$\partial$-parallel surface} 
 
@@ -442,6 +453,7 @@ If $\partial D$ bounds a disc $D'\subset \Sigma$ then $D\cup D'$ is a sphere, wh
 
 If $\Sigma$ is a torus, by surgerying $\Sigma$ along $D$ we get a sphere which must bound a ball $B$. Therefore $M$ is obtained by adding a one-handle to $B$, that is it is a solid torus.
 \end{proof}
+
 
 \subsection{Decomposition along discs}
 We now show that essential discs behave roughly like essential spheres, in the sense that there is a kind of prime decomposition theorem also for discs. After stating and proving this theorem, we will essentially forget about essential spheres and discs and focus on the 3-manifolds that do not contain them.
@@ -489,6 +501,7 @@ We are left to consider the arcs in $S\cap S'$. We end precisely as in Theorem \
 
 Thanks to an innermost argument, we may surger some disc $D_0\subset S$ along an arc in $D_0\cap S'$ and transform it into two discs $D_1 \sqcup D_2$, both disjoint from $S$ and with less intersections with $S'$. The set $S\sqcup D_1 \sqcup D_2$ is still a reducing set for the $M_i$'s. If we remove $D_0$ from this new system, in the complement we only remove a ball: hence we can replace $D_0$ with $D_1\sqcup D_2$. After finitely many steps we get $S\cap S' = \emptyset$ and therefore $S\cup S'$ is a reducing set producing the same $M_i$'s of $S$ and $S'$, up to balls.
 \end{proof}
+
 
 \subsection{Projective planes}
 The previous discussions show how to deal with spheres and discs, and we now turn to the only remaining compact surface with $\chi>0$: the projective plane. There is not much to say about it.

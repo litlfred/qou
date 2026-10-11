@@ -5206,7 +5206,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 22,
+   "tex_sections": 108,
    "overlaid": 0,
    "thresholds": {
     "title": 0.85,
@@ -6078,7 +6078,8 @@
     {
      "id": "sec-170-iii-sections",
      "title": "Sections",
-     "result": "no matching \\section"
+     "prose_ratio": 0.058,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-171-11-c-ohomologie-de-hochschild--mitchell",
@@ -6150,7 +6151,7 @@
     {
      "id": "sec-184-13-s-ections-mono-idales",
      "title": "S ECTIONS MONO \u00a8IDALES",
-     "prose_ratio": 0.163,
+     "prose_ratio": 0.272,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -6196,7 +6197,8 @@
     {
      "id": "sec-193-136-au-c\u0153ur-du-probl-eme-d-emonstration-de-la-pr",
      "title": "Au c\u0153ur du probl `eme : d \u00b4emonstration de la proposition 13.4.2. Compte",
-     "result": "no matching \\section"
+     "prose_ratio": 0.235,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-194-1361-debut-de-la-preuve-de-c-soits-une-section-k",
@@ -6221,7 +6223,8 @@
     {
      "id": "sec-198-1364-une-relation-de-cocycle-iii-\ufb01n-de-la-preuve",
      "title": "Une relation de cocycle, III \u2013 \ufb01n de la preuve de c). Nous sommes main-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.183,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-199-1365-debut-de-la-preuve-de-a-soits-une-sectionk",
@@ -6571,7 +6574,7 @@
     {
      "id": "sec-267-19-a-u-del-a-de-jacobson--morozov-enveloppes-pro",
      "title": "A U-DEL `A DE JACOBSON -MOROZOV : ENVELOPPES PRO -R \u00b4EDUCTIVES",
-     "prose_ratio": 0.136,
+     "prose_ratio": 0.155,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -6677,7 +6680,8 @@
     {
      "id": "sec-288-197-enveloppes-pro-reductives-des-groupes-pro-un",
      "title": "Enveloppes pro-r\u00b4eductives des groupes pro-unipotents. Si G est un K-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.302,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-289-1971-th-eoreme-soit-g-un-k-groupe-pro-unipotent",

@@ -7,47 +7,37 @@ section_number: 3
 pages: 2-5
 source_pdf: 0603444v2.pdf
 source_sha256: 46edfcddca963d08
+doc_brief: "QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — W e characterize quasihomogeneity of isolated hypersurfac e singu- larities by the injectivity of the map induced"
 text_source: latex
 latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.933
-doc_brief: "QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — W e characterize quasihomogeneity of isolated hypersurfac e singu- larities by the injectivity of the map induced"
+latex_coverage_ratio: 0.944
 ---
 We denote the $n$th local cohomology module of $\mathcal{O}$ supported at the origin by $$H:=H_0^n(\mathcal{O})
 =H^{n-1}(\mathbb{C}^n\smallsetminus\{0\},\mathcal{O})
-=\frac{\mathcal{O}[\frac{1}{x_1\cdots x_n}]}{\sum_{i=1}^n\mathcal{O}[\frac{1}{x_1\cdots\widehat{x_i}\cdots x_n}]}.$$ By right exactness of the tensor product $\otimes:=\otimes_\mathcal{O}$, this implies $$H_0^n(\Omega^1(\log D))=H^{n-1}(\mathbb{C}^n\smallsetminus\{0\},\Omega^1(\log D))=\Omega^1(\log D)\otimes H.$$ The total differential $d:\mathcal{O}\to\Omega^1(\log D)$ induces a natural map $$d_1:H=H_0^n(\mathcal{O})\to H_0^n(\Omega^1(\log D))=\Omega^1(\log D)\otimes H$$ in local cohomology. The perfect pairing $\mathop{\mathrm{Der}}(-\log D)\otimes\Omega^1(\log D)\to\mathcal{O}$ [@Sai80 Lem. 1.6] identifies $\Omega^1(\log D)$ to $\mathop{\mathrm{Hom}}(\mathop{\mathrm{Der}}(-\log D),\mathcal{O})$. Applying $\otimes H$, it induces a pairing $$\begin{equation}
-\label{2}
-\langle,\rangle:\mathop{\mathrm{Der}}(-\log D)\otimes H_0^n(\Omega^1(\log D))=\mathop{\mathrm{Der}}(-\log D)\otimes(\Omega^1(\log D)\otimes H)\to H.
-\end{equation}$$ such that $\langle\delta,(\omega\otimes[g])\rangle=\langle\delta,\omega\rangle [g]$. In particular, $d_1([g])=\sum_{i=1}^ndx_i\otimes[\partial_i(g)]$ for $g\in\mathcal{O}[\frac{1}{x_1\cdots x_n}]$ and hence $$\begin{equation}
-\label{3}
-\langle\delta,d_1([g])\rangle=\sum_{i=1}^n\langle\delta,dx_i\rangle[\partial_i(g)]=\delta([g]).
-\end{equation}$$ Denoting $\mathop{\mathrm{Hom}}=\mathop{\mathrm{Hom}}_\mathcal{O}$, the pairing ([\[2\]](#2){reference-type="ref" reference="2"}) corresponds to the natural map $$\begin{equation}
-\label{5}
+=\frac{\mathcal{O}[\frac{1}{x_1\cdots x_n}]}{\sum_{i=1}^n\mathcal{O}[\frac{1}{x_1\cdots\widehat{x_i}\cdots x_n}]}.$$ By right exactness of the tensor product $\otimes:=\otimes_\mathcal{O}$, this implies $$H_0^n(\Omega^1(\log D))=H^{n-1}(\mathbb{C}^n\smallsetminus\{0\},\Omega^1(\log D))=\Omega^1(\log D)\otimes H.$$ The total differential $d:\mathcal{O}\to\Omega^1(\log D)$ induces a natural map $$d_1:H=H_0^n(\mathcal{O})\to H_0^n(\Omega^1(\log D))=\Omega^1(\log D)\otimes H$$ in local cohomology. The perfect pairing $\mathop{\mathrm{Der}}(-\log D)\otimes\Omega^1(\log D)\to\mathcal{O}$ [@Sai80 Lem. 1.6] identifies $\Omega^1(\log D)$ to $\mathop{\mathrm{Hom}}(\mathop{\mathrm{Der}}(-\log D),\mathcal{O})$. Applying $\otimes H$, it induces a pairing $$\label{2}
+\langle,\rangle:\mathop{\mathrm{Der}}(-\log D)\otimes H_0^n(\Omega^1(\log D))=\mathop{\mathrm{Der}}(-\log D)\otimes(\Omega^1(\log D)\otimes H)\to H.$$ such that $\langle\delta,(\omega\otimes[g])\rangle=\langle\delta,\omega\rangle [g]$. In particular, $d_1([g])=\sum_{i=1}^ndx_i\otimes[\partial_i(g)]$ for $g\in\mathcal{O}[\frac{1}{x_1\cdots x_n}]$ and hence $$\label{3}
+\langle\delta,d_1([g])\rangle=\sum_{i=1}^n\langle\delta,dx_i\rangle[\partial_i(g)]=\delta([g]).$$ Denoting $\mathop{\mathrm{Hom}}=\mathop{\mathrm{Hom}}_\mathcal{O}$, the pairing ([\[2\]](#2){reference-type="ref" reference="2"}) corresponds to the natural map $$\label{5}
 \SelectTips{cm}{}\xymatrix{
 \mathop{\mathrm{Hom}}(\mathop{\mathrm{Der}}(-\log D),\mathcal{O})\otimes H=\Omega^1(\log D)\otimes H\ar[r]^-\pi&\mathop{\mathrm{Hom}}(\mathop{\mathrm{Der}}(-\log D),H).
-}
-\end{equation}$$ According to [@HM98 Lem. 1.11], $\Omega^1(\log D)=\mathcal{O}\cdot\frac{df}{f}+\Omega ^1$ and there is an exact sequence $$\begin{equation}
-\label{4}
+}$$ According to [@HM98 Lem. 1.11], $\Omega^1(\log D)=\mathcal{O}\cdot\frac{df}{f}+\Omega ^1$ and there is an exact sequence $$\label{4}
 \SelectTips{cm}{}\xymatrix{
 0\ar[r]&\mathcal{O}\ar[r]^-{\alpha^t}&\mathcal{O}^{n+1}\cong\mathcal{O}\oplus\Omega^1\ar[r]^-\beta&\Omega^1(\log D)\ar[r]&0
-}
-\end{equation}$$ where $\alpha=(f,f_1,\dots,f_n)$ and $\beta=(\frac{df}{f},-dx_1,\dots,-dx_n)$. Dualizing against $\mathcal{O}$ yields $$\SelectTips{cm}{}\xymatrix{
+}$$ where $\alpha=(f,f_1,\dots,f_n)$ and $\beta=(\frac{df}{f},-dx_1,\dots,-dx_n)$. Dualizing against $\mathcal{O}$ yields $$\SelectTips{cm}{}\xymatrix{
 0\ar[r]&\mathop{\mathrm{Der}}(-\log D)\ar[r]^-{\beta^t}&\mathcal{O}^{n+1}\ar[r]^-\alpha&J\ar[r]&0,\quad J:=\langle f,f_1,\dots,f_n\rangle,
-}$$ and $\mathop{\mathrm{Ext}}^1(\Omega^1(\log D),\mathcal{O})\cong\mathcal{O}/J$. Dualizing against $\mathcal{O}$ and $H$ yields the sequences $$\begin{gather}
+}$$ and $\mathop{\mathrm{Ext}}^1(\Omega^1(\log D),\mathcal{O})\cong\mathcal{O}/J$. Dualizing against $\mathcal{O}$ and $H$ yields the sequences $$\begin{gathered}
 \label{6}
-\SelectTips{cm}{}\xymatrix@C=22pt{
+\xymat@C=22pt{
 0\ar[r]&\mathop{\mathrm{Hom}}(J,\mathcal{O})\ar[r]&\mathcal{O}^{n+1}\ar[r]^-{(\beta^t)^t}&\mathop{\mathrm{Hom}}(\mathop{\mathrm{Der}}(-\log D),\mathcal{O})\ar[r]&0,
 }\\
 \label{7}
-\SelectTips{cm}{}\xymatrix@C=14pt{
+\xymat@C=14pt{
 0\ar[r]&\mathop{\mathrm{Hom}}(J,H)\ar[r]&H^{n+1}\ar[r]&\mathop{\mathrm{Hom}}(\mathop{\mathrm{Der}}(-\log D),H)\ar[r]&\mathop{\mathrm{Ext}}^1(J,H)\ar[r]&0.
 }
-\end{gather}$$ By reflexivity of $\mathop{\mathrm{Der}}(-\log D)$ [@Sai80 Cor. 1.7], the sequences ([\[4\]](#4){reference-type="ref" reference="4"}) and ([\[6\]](#6){reference-type="ref" reference="6"}) coincide. In particular, $(\beta^t)^t=\beta$ is surjective and $\mathop{\mathrm{Hom}}(J,\mathcal{O})=\mathcal{O}$ as the kernel of $\beta$ which is directly obvious. From sequences ([\[6\]](#6){reference-type="ref" reference="6"}) and ([\[7\]](#7){reference-type="ref" reference="7"}), we obtain the commutative diagram $$\begin{equation}
-\label{8}
+\end{gathered}$$ By reflexivity of $\mathop{\mathrm{Der}}(-\log D)$ [@Sai80 Cor. 1.7], the sequences ([\[4\]](#4){reference-type="ref" reference="4"}) and ([\[6\]](#6){reference-type="ref" reference="6"}) coincide. In particular, $(\beta^t)^t=\beta$ is surjective and $\mathop{\mathrm{Hom}}(J,\mathcal{O})=\mathcal{O}$ as the kernel of $\beta$ which is directly obvious. From sequences ([\[6\]](#6){reference-type="ref" reference="6"}) and ([\[7\]](#7){reference-type="ref" reference="7"}), we obtain the commutative diagram $$\label{8}
 \SelectTips{cm}{}\xymatrix{
 \mathop{\mathrm{Hom}}(J,\mathcal{O})\otimes H \ar[r]\ar[d]&H^{n+1} \ar@{->>}[r]^-{\beta\otimes1}\ar@{=}[d]&\mathop{\mathrm{Hom}}(\mathop{\mathrm{Der}}(-\log D),\mathcal{O})\otimes H\ar[d]^-\pi\\
 \mathop{\mathrm{Hom}}(J,H)\ar@{^(->}[r]^-\iota&H^{n+1}\ar[r]^-\gamma&\mathop{\mathrm{Hom}}(\mathop{\mathrm{Der}}(-\log D),H)
-}
-\end{equation}$$ involving the map $\pi$ in ([\[5\]](#5){reference-type="ref" reference="5"}).
+}$$ involving the map $\pi$ in ([\[5\]](#5){reference-type="ref" reference="5"}).
 
 ::: lem
 []{#1 label="1"} If $D$ is not Euler homogeneous then $\mathop{\mathrm{tr}}\delta_0=0$ for all $\delta\in\mathop{\mathrm{Der}}(-\log D)$. In particular, $\pi(d_1([\frac{1}{x_1\dots x_n}]))(\delta)=\langle\delta,d_1([\frac{1}{x_1\dots x_n}])\rangle=0$ for all $\delta\in\mathop{\mathrm{Der}}(-\log D)$.
@@ -57,10 +47,8 @@ We denote the $n$th local cohomology module of $\mathcal{O}$ supported at the or
 *Proof.* By the formal structure theorem [@GS06 Thm. 5.4], there is a system of generators $\mathcal S$ of the $\mathfrak{m}$-adic completion $\widehat\mathop{\mathrm{Der}}(-\log D)$ of $\mathop{\mathrm{Der}}(-\log D)$ such that, for $\delta\in\mathcal S$, either $\delta_0$ is nilpotent and hence $\mathop{\mathrm{tr}}\delta_0=0$ or $\delta=\delta_0$ is semisimple and $\delta(\hat f)\in\mathbb{Q}\cdot\hat f$ where $\hat f:=\hat u\cdot f$ for some unit $\hat u\in\widehat\mathcal{O}^\star$. In the second case, $\delta\in\mathop{\mathrm{Ann}}_{\widehat\mathop{\mathrm{Der}}}(\hat f)$ if $D$ and hence $\hat f$ is not Euler homogeneous. Since $D$ is an isolated singularity, $$\mathop{\mathrm{Ann}}_{\widehat\mathop{\mathrm{Der}}}(\hat f)=\langle\hat f_i\partial_j-\hat f_j\partial_i\mid 1\le i<j\le n\rangle,\quad\hat f_i:=\partial_i(\hat f).$$ By a formal coordinate change [@Arn73 Lem. 4.1], $\hat f=x_1^2+\cdots+x_k^2+g(x_{k+1},\dots,x_n)$ with $g\in\widehat\mathfrak{m}^3$ and $\mathop{\mathrm{tr}}\delta_0=0$ follows also in the second case from $$\delta_0\in\mathop{\mathrm{Ann}}_{\widehat\mathop{\mathrm{Der}}}(\hat f)_0=\langle x_i\partial_j-x_j\partial_i\mid 1\le i<j\le k\rangle.$$ Since $\mathop{\mathrm{Der}}(-\log D)_0=\widehat\mathop{\mathrm{Der}}(-\log D)_0$ and by additivity and coordinate invariance of $\mathop{\mathrm{tr}}\delta_0$, this proves the first claim. The second follows from ([\[3\]](#3){reference-type="ref" reference="3"}) and the obvious formula $\delta([\frac{1}{x_1\dots x_n}])=\mathop{\mathrm{tr}}(\delta_0)[\frac{1}{x_1\dots x_n}]$ for any $\delta\in\mathfrak{m}\cdot\mathop{\mathrm{Der}}$. ◻
 :::
 
-We continue our study of diagram ([\[8\]](#8){reference-type="ref" reference="8"}) under the assumption that $D$ is not Euler homogeneous. By Lemma [\[1\]](#1){reference-type="ref" reference="1"}, $\pi(d_1([\frac{1}{x_1\cdots x_n}]))=0$ and $d_1([\frac{1}{x_1\cdots x_n}])=(\beta\otimes1)(\psi)$ where $\psi=(0,u_1,\dots,u_n)\in H^{n+1}$ and $u_i=-\partial_i([\frac{1}{x_1\cdots x_n}])=[\frac{1}{x_1\cdots x_i^2\cdots x_n}]$. Then $\gamma(\psi)=0$ and hence $\psi=\iota(\varphi)$ where $\varphi\in\mathop{\mathrm{Hom}}(J,H)$ is characterised by $$\begin{equation}
-\label{9}
-\varphi(f_i)=\left[\frac{1}{x_1\cdots x_i^2\cdots x_n}\right],\quad\varphi(f)=0.
-\end{equation}$$ By injectivity of $\iota$, $d_1([\frac{1}{x_1\cdots x_n}])=0$ if and only if $\varphi$ extends to $\mathcal{O}$.
+We continue our study of diagram ([\[8\]](#8){reference-type="ref" reference="8"}) under the assumption that $D$ is not Euler homogeneous. By Lemma [\[1\]](#1){reference-type="ref" reference="1"}, $\pi(d_1([\frac{1}{x_1\cdots x_n}]))=0$ and $d_1([\frac{1}{x_1\cdots x_n}])=(\beta\otimes1)(\psi)$ where $\psi=(0,u_1,\dots,u_n)\in H^{n+1}$ and $u_i=-\partial_i([\frac{1}{x_1\cdots x_n}])=[\frac{1}{x_1\cdots x_i^2\cdots x_n}]$. Then $\gamma(\psi)=0$ and hence $\psi=\iota(\varphi)$ where $\varphi\in\mathop{\mathrm{Hom}}(J,H)$ is characterised by $$\label{9}
+\varphi(f_i)=\left[\frac{1}{x_1\cdots x_i^2\cdots x_n}\right],\quad\varphi(f)=0.$$ By injectivity of $\iota$, $d_1([\frac{1}{x_1\cdots x_n}])=0$ if and only if $\varphi$ extends to $\mathcal{O}$.
 
 ::: lem
 []{#10 label="10"} The map $\varphi\in\mathop{\mathrm{Hom}}(J,H)$ which fulfils ([\[9\]](#9){reference-type="ref" reference="9"}) extends to a $\tilde\varphi\in\mathop{\mathrm{Hom}}(\mathcal{O},H)$.

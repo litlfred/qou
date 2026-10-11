@@ -7,10 +7,10 @@ section_number: 6.10
 pages: 62-63
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.985
-doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+latex_coverage_ratio: 1.0
 ---
 Using only the complex octonions acting on themselves, we were able to recover a number of aspects of the standard model's structure.
 

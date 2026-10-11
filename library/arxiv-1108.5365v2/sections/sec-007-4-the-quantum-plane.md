@@ -8,68 +8,34 @@ pages: 22-23
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 0.966
 ---
-In this section, we will deﬁne the main object of study in this paper, t he C∗-
-algebraA of “functions vanishing at inﬁnity” on the quantum plane. Its Haar
-functional is established, and we obtain the GNS construction of A on a Hilbert
-spaceH≃ L2(R× R). Finally we construct the multiplicative unitary W , and show
-that it is in fact manageable.
-Note that in analogy to the classical semi-group with inverses absen t, in our
-context we don’t have a well-deﬁned antipode S due to positivity. Hence we may
-also call the object informally as a “quantum semigroup”. However, as we see in
-Deﬁnition 4.6, there is instead a well-deﬁned unitary antipode R.
-With the existence of the coproduct (Corollary 4.5), a left invariant faithful
-KMS Haar functional (Theorem 4.7, Theorem 4.9, Corollary 4.15), a r ight invariant
-Haar functional (Proposition 4.16) and the density condition (Theo rem 5.8), the
-C∗-algebraA can be put in the context of “locally compact quantum group” in the
-sense of [24, 25]. This allows us to apply the theory developed in those papers.
-22
-4.1 Motivations from classical ax + b group
-Recall that the classical ax +b group is the group G of aﬃne transformations on
-the real line R, where a> 0 and b∈ R, and they can be represented by a matrix of
-the form (we use the transposed version):
-g(a,b ) =
-( a 0
-b 1
-)
-, (4.1)
+\label{sec:QPlane}
+In this section, we will define the main object of study in this paper, the $C^*$-algebra $\cA$ of ``functions vanishing at infinity" on the quantum plane. Its Haar functional is established, and we obtain the GNS construction of $\cA$ on a Hilbert space $\cH\simeq L^2(\R\x\R)$. Finally we construct the multiplicative unitary $W$, and show that it is in fact manageable.
+
+Note that in analogy to the classical semi-group with inverses absent, in our context we don't have a well-defined antipode $S$ due to positivity. Hence we may also call the object informally as a ``quantum semigroup". However, as we see in Definition \ref{unitaryantipode}, there is instead a well-defined unitary antipode $R$.
+
+With the existence of the coproduct (Corollary \ref{coproductM}), a left invariant faithful KMS Haar functional (Theorem \ref{Haar}, Theorem \ref{GNSmap}, Corollary \ref{KMS}), a right invariant Haar functional (Proposition \ref{right}) and the density condition (Theorem \ref{density}), the $C^*$-algebra $\cA$ can be put in the context of ``locally compact quantum group" in the sense of \cite{KV1,KV2}. This allows us to apply the theory developed in those papers.
+
+
+
+
+
+\subsection{Motivations from classical $ax+b$ group}\label{sec:QPlane:ax+b}
+Recall that the classical $ax+b$ group is the group $G$ of affine transformations on the real line $\R$, where $a>0$ and $b\in\R$, and they can be represented by a matrix of the form (we use the transposed version):
+\Eq{g(a,b)=\veca{a&0\\b&1},}
 where the multiplication is given by
-g(a1,b 1)g(a2,b 2) =
-( a1a2 0
-b1a2 +b2 1
-)
-. (4.2)
-We can then talk about the space C∞(G) of functions on G vanishing at inﬁnity,
-and a dense subspace of functions WG of the form
-WG ={g(loga)f (b) : f,g ∈W⊂ L2(R)}, (4.3)
-wheref,g ∈W are the rapidly decaying functions deﬁned in Deﬁnition 2.23. Then
-C∞(G) is the sup-norm closure of WG.
-In the study of quantum plane, it is necessary to consider the semig roup G+
-of positive elements. Restricting f (a,b )∈W G to b > 0, we can use the Mellin
-transform and express the functions as
-f (a,b ) =
-∫
-R+i0
-∫
-R
-F (s,t )aisbitdsdt. (4.4)
-Since the function is continuous at b = 0, it has at most O(1) growth as b−→ 0+.
-Hence from Theorem 2.2, we conclude that F (s,t ) is entire analytic with respect
-to s, and holomorphic on Im( t)> 0. Furthermore, it has rapid decay in s,t along
-the real direction, and can be analytically continued to Im( t) ≤ 0. Moreover,
-since f (a,b ) is analytic at b = 0, the analytic structure of f (a,b ) on b is given
-by∑ ∞
-k=0Akbk for some constants Ak. Hence F (s,t ) has possible simple poles at
-t =−in,n = 0, 1, 2,... .
-Finally according to the Parseval’s Formula for Mellin transform, ther e is an L2
-norm on functions of G+ given by
-‖f (a,b )‖2 =
-∫
-R
-∫
-R
-|F (s,t + 1
-2i)|2dtds (4.5)
-induced from the Haar measure da
-a db. However, it is no longer left invariant due to
-the lack of inverses.
+\Eq{\label{ax+bprod} g(a_1,b_1)g(a_2,b_2)=\veca{a_1a_2&0\\b_1a_2+b_2&1}.}
+We can then talk about the space $C_\oo(G)$ of functions on $G$ vanishing at infinity, and a dense subspace of functions $\cW_G$ of the form
+\Eq{\cW_G=\{g(\log a)f(b): f,g\in \cW\sub L^2(\R)\},}
+where $f,g\in \cW$ are the rapidly decaying functions defined in Definition \ref{WDef}. Then $C_\oo(G)$ is the sup-norm closure of $\cW_G$.
+
+In the study of quantum plane, it is necessary to consider the semigroup $G_+$ of positive elements. Restricting $f(a,b)\in\cW_G$ to $b>0$, we can use the Mellin transform and express the functions as
+\Eq{f(a,b)=\int_{\R+i0}\int_\R  F(s,t)a^{is}b^{it}dsdt.}
+Since the function is continuous at $b=0$, it has at most $O(1)$ growth as $b\to 0^+$. Hence from Theorem \ref{MTpole}, we conclude that $F(s,t)$ is entire analytic with respect to $s$, and holomorphic on Im$(t)>0$. Furthermore, it has rapid decay in $s,t$ along the real direction, and can be analytically continued to Im$(t)\leq 0$. Moreover, since $f(a,b)$ is analytic at $b=0$, the analytic structure of $f(a,b)$ on $b$ is given by $\sum_{k=0}^\oo A_k b^k$ for some constants $A_k$. Hence $F(s,t)$ has possible simple poles at $t=-in, n=0,1,2,...$.
+
+Finally according to the Parseval's Formula for Mellin transform, there is an $L^2$ norm on functions of $G_+$ given by
+\Eq{\|f(a,b)\|^2 = \int_\R \int_\R|F(s,t+\frac{1}{2}i)|^2 dt ds}
+induced from the Haar measure $\frac{da}{a} db$. However, it is no longer left invariant due to the lack of inverses.

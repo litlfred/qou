@@ -8,72 +8,70 @@ pages: 13-15
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.951
 ---
-Multiplicative unitaries are fundamental to the theory of quantum g roups in the
-setting of C∗-algebras and von Neumann algebras, and to generalization of Pon-
-tryagin duality. In particular, a multiplicative unitary encodes all the structure
-maps of a quantum group and its dual. A very good exposition is given in [40].
-First let us deﬁne the leg notation.
-Deﬁnition 2.16. LetH be a Hilbert space and W ∈ B(H⊗H ) be a bounded
-operator. Then we deﬁne Wij∈B (H⊗k) by letting W acts on the factors at the
-positioni,j . In particular, the operators W12,W 23,W 13∈B (H⊗H⊗H ) are given
-by the formulas
-T12 :=T⊗Id H, T 23 :=Id H⊗T, (2.27)
-T13 := Σ 12T23Σ 12 = Σ 23T12Σ 23, (2.28)
-where Σ∈B (H⊗H ) denotes the ﬂip f⊗g↦→g⊗f .
-Deﬁnition 2.17. LetH be a Hilbert space. A unitary operator W∈B (H⊗H ) is
-called a multiplicative unitary if it satisﬁes the pentagon equation
-W23W12 =W12W13W23, (2.29)
+\label{sec:pre:mu}
+Multiplicative unitaries are fundamental to the theory of quantum groups in the setting of $C^*$-algebras and von Neumann algebras, and to generalization of Pontryagin duality. In particular, a multiplicative unitary encodes all the structure maps of a quantum group and its dual. A very good exposition is given in \cite{T}.
+
+First let us define the leg notation.
+\begin{Def}Let $\cH$ be a Hilbert space and $W\in \cB(\cH\ox\cH)$ be a bounded operator. Then we define
+$W_{ij}\in\cB(\cH^{\ox k})$ by letting $W$ acts on the factors at the position $i,j$. In particular, the operators
+ $W_{12},W_{23},W_{13}\in \cB(\cH\ox\cH\ox\cH)$ are given by the formulas
+\Eq{T_{12}:=T\ox Id_H,\tab T_{23}:=Id_H\ox T,}
+\Eq{T_{13}:=\S_{12}T_{23}\S_{12}=\S_{23}T_{12}\S_{23},}
+where $\S\in\cB(\cH\ox\cH)$ denotes the flip $f\ox g\mapsto g\ox f$.
+\end{Def}
+
+\begin{Def} Let $\cH$ be a Hilbert space. A unitary operator $W\in \cB(\cH\ox \cH)$ is called a multiplicative unitary if it satisfies the pentagon equation
+\Eq{W_{23}W_{12}=W_{12}W_{13}W_{23},}
 where the leg notation is used.
-Given a GNS representation ( H,π, Λ) of a locally compact quantum group A,
-we can deﬁne a unitary operator
-W ∗(Λ(a)⊗ Λ(b)) = (Λ ⊗ Λ)(∆( b)(a⊗ 1)). (2.30)
-It is known that W is a multiplicative unitary [24, Thm 3.16, Thm 3.18], and
-the coproduct on A deﬁning it can be recovered from W :
-Proposition 2.18. Letx∈A֒B (H) as operator. Then
-W ∗(1⊗x)W = ∆( x) (2.31)
-as operators on H⊗H .
-13
-Proof. Forx,f,g ∈A , we have x· Λ(f ) = Λ( xf ), hence
-W ∗((1⊗x)· (Λ(f )⊗ Λ(g))) = W ∗(Λ(f )⊗ Λ(xg))
-= (Λ ⊗ Λ)(∆( xg)(f⊗ 1))
-= (Λ ⊗ Λ)(∆( x)∆( g)(f⊗ 1))
-= ∆( x)· (Λ⊗ Λ)(∆( g)(f⊗ 1))
-= ∆( x)W ∗(f⊗g).
+\end{Def}
+
+Given a GNS representation $(\cH,\pi, \L)$ of a locally compact quantum group $\cA$, we can define a unitary operator \Eq{\label{WW}W^*(\L(a)\ox \L(b)) = (\L\ox \L)(\D(b)(a\ox 1)).}
+
+It is known that $W$ is a multiplicative unitary \cite[Thm 3.16, Thm 3.18]{KV1}, and the coproduct on $\cA$ defining it can be recovered from $W$:
+\begin{Prop} Let $x\in\cA \inj \cB(\cH)$ as operator. Then 
+\Eq{W^*(1\ox x)W = \D(x)} as operators on $\cH\ox \cH$.
+\end{Prop}
+\begin{proof} For $x, f,g\in \cA$, we have $x\cdot \L(f)=\L(xf)$, hence
+\begin{eqnarray*}
+W^*((1\ox x)\cdot (\L(f)\ox \L(g)))&=&W^* (\L(f)\ox \L(xg))\\
+&=&(\L\ox \L)(\D(xg)(f\ox 1))\\
+&=&(\L\ox \L)(\D(x)\D(g)(f\ox 1))\\
+&=&\D(x)\cdot (\L\ox \L)(\D(g)(f\ox 1))\\
+&=&\D(x)W^*(f\ox g).
+\end{eqnarray*}
+\end{proof}
+
 As a motivation, let us consider an example involving classical group:
-Example 2.19. [40, Ex 7.1.4][45] Let G be a locally compact group with right Haar
-measureλ. Then the operator
-(Wf )(x,y ) := f (xy,y ) (2.32)
-is a multiplicative unitary in B(L2(G,λ )⊗L2(G,λ )) =B(L2(G×G,λ×λ)). The
-pentagon equation for W is equivalent to the associativity of the multiplication in
-G. Indeed, for f∈L2(G×G×G,λ×λ×λ)≃L2(G,λ )⊗3 and x,y,z ∈G, we have
-(W23W12f )(x,y,z ) = f (x(yz),yz,z ),
-(W12W13W23f )(x,y,z ) = f ((xy)z,yz,z ).
-An important property of W is that it encodes the information of the dual
-quantum group ˆA. By deﬁnition, ˆA is the closure of the linear span of
-{(ω⊗ 1)W :ω∈B (H)∗}⊂B (H), (2.33)
-and we actually have
-W∈M (A⊗ ˆA), (2.34)
-where M stands for the multiplier algebra.
-Similarly, the multiplicative unitary for the dual ˆA is given by ˆW :=W ∗
-21, hence
-it is known from the Pontryagin duality that ˆW ∈ M ( ˆA⊗A ) as well. From the
-pentagon equation, we then obtain:
-Corollary 2.20. As an element W∈M (A⊗ ˆA), together with the pentagon equa-
-tion, we have
-(∆ ⊗ 1)W =W13W23, (2.35)
-(1⊗ ˆ∆) W =W13W12. (2.36)
-Finally let us deﬁne the notion of “manageability” introduced by Woron owicz
-[45, 46] that describes a class of well-behaved multiplicative unitary. It is shown
-that any manageable multiplicative unitary gives rise to a quantum gro up on the
-C∗-algebraic level.
-14
-Deﬁnition 2.21. A multiplicative unitary W is manageable if there exists a positive
-self-adjoint operator Q acting on H and a unitary operator ~W acting on H⊗H
-such that ker(Q) ={0},
-(Q⊗Q)W =W (Q⊗Q), (2.37)
+\begin{Ex}\cite[Ex 7.1.4]{T}\cite{W} Let $G$ be a locally compact group with right Haar measure $\l$. Then the operator 
+\Eq{(W f)(x,y):=f(xy,y)}
+is a multiplicative unitary in $\cB(L^2(G,\l)\ox L^2(G,\l))=\cB(L^2(G\x G,\l\x\l))$. The pentagon equation for $W$ is equivalent to the associativity of the multiplication in $G$. Indeed, for $f\in L^2(G\x G\x G, \l \x \l \x \l)\simeq L^2(G,\l)^{\ox 3}$ and $x,y,z\in G$, we have
+\begin{eqnarray*}
+(W_{23}W_{12}f)(x,y,z)&=&f(x(yz),yz,z),\\
+(W_{12}W_{13}W_{23}f)(x,y,z)&=&f((xy)z,yz,z).
+\end{eqnarray*}
+\end{Ex}
+
+An important property of $W$ is that it encodes the information of the dual quantum group $\hat{\cA}$. By definition, $\hat{\cA}$ is the closure of the linear span of \Eq{\{(\w\ox 1)W: \w\in \cB(\cH)^*\}\sub\cB(\cH),} and we actually have 
+\Eq{W\in M(\cA\ox \hat{\cA}),} where $M$ stands for the multiplier algebra.
+
+Similarly, the multiplicative unitary for the dual $\hat{\cA}$ is given by $\hat{W}:=W_{21}^*$, hence it is known from the Pontryagin duality that $\hat{W}\in M(\hat{\cA}\ox \cA)$ as well. From the pentagon equation, we then obtain:
+
+\begin{Cor}\label{DWW}
+As an element $W\in M(\cA\ox \hat{\cA})$, together with the pentagon equation, we have 
+\Eq{\label{DW}(\D\ox 1)W=W_{13}W_{23},}
+\Eq{(1\ox \hat{\D})W=W_{13}W_{12}.}
+\end{Cor}
+
+Finally let us define the notion of ``manageability" introduced by Woronowicz \cite{W, WZ} that describes a class of well-behaved multiplicative unitary. It is shown that any manageable multiplicative unitary gives rise to a quantum group on the $C^*$-algebraic level.
+\begin{Def}\label{manageable}
+A multiplicative unitary $W$ is manageable if there exists a positive self-adjoint operator $Q$ acting on $\cH$ and a unitary operator $\til[W]$ acting on $\over[\cH]\ox \cH$ such that $\ker(Q)=\{0\}$,
+\Eq{(Q\ox Q)W = W(Q\ox Q),} 
 and
-⟨x⊗u,W (z⊗y)⟩H⊗H = (z⊗Qu,~W (x⊗Q−1y)⟩H⊗H (2.38)
-for any x,z∈H,y∈D(Q−1),u∈D(Q).
-HereH denote the complex conjugate of H, so that the map x∈H−→ x∈H
-is an anti-unitary map. The inner product on H is given by ⟨x,y⟩H :=⟨y,x⟩H.
+\Eq{\<x\ox u, W(z\ox y)\>_{\cH\ox \cH} = (\over[z]\ox Qu, \til[W](\over[x]\ox Q\inv y)\>_{\over[\cH]\ox \cH}}
+for any $x,z\in \cH, y\in D(Q\inv), u\in D(Q)$.
+\end{Def}
+Here $\over[\cH]$ denote the complex conjugate of $\cH$, so that the map $x\in \cH \to \over[x]\in \over[\cH]$ is an anti-unitary map. The inner product on $\over[\cH]$ is given by $\<\over[x],\over[y]\>_{\over[\cH]}:=\<y,x\>_\cH$.

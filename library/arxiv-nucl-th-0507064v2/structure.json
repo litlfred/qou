@@ -192,8 +192,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "virial_neut_rev.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 9,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -214,15 +214,15 @@
     {
      "id": "sec-001-i-introduction",
      "title": "INTRODUCTION",
-     "prose_ratio": 0.616,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-iii-results",
      "title": "RESULTS",
-     "prose_ratio": 0.478,
+     "prose_ratio": 0.53,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -233,7 +233,10 @@
     {
      "id": "sec-004-c-scaling-and-energy",
      "title": "Scaling and Energy",
-     "result": "no matching \\section"
+     "prose_ratio": 0.761,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-2-t-1-bn\u03bb3n2-12",
@@ -243,8 +246,8 @@
     {
      "id": "sec-006-iv-conclusions",
      "title": "CONCLUSIONS",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },

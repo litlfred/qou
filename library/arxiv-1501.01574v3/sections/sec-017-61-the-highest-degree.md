@@ -8,35 +8,40 @@ pages: 26-27
 source_pdf: 1501.01574v3.pdf
 source_sha256: 8af5d6264a0ad5e0
 doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polyn omial and the boundary slopes of knots under the operation of cabling."
+text_source: latex
+latex_prose_ratio: 0.81
+latex_coverage_ratio: 1.0
 ---
-According to [11] for the 2-fusion knot K = K(m1, m2), with m2 /∈ {− 1, 0}, we have the
-following possibilities:
-Case A. Suppose that m1, m2 ≥ 1. Then
-δK(n) = Q(n, k1, −k1),
-where
-c1 = 1 − m1 + m2 + m2n
-2(−1 + m1 + m2) ,
-and k1 is of the integers closest to c1 satisfying k1 ≤ n/2.
-Case B. Suppose that m1 ≤ 0, m2 ≥ 1. There are 2 subcases.
-(B-1) We have (1 + m1 + m2 ≤ 0) or (1 + m1 + m2 > 0 and 1 + 2 m1 + m2 < 0). Then
-δK (n) = Q(n, n, 0).
-(B-2) We have 1 + m1 + m2 > 0 and 1 + 2 m1 + m2 ≥ 0. Then
-δK (n) = Q(n, k1, k1 − n),
-where
-c2 = 1 − m1 − m2 + (1 + m2)n
-2(1 + m1 + m2) .
-and k1 is one of the integers closest to c2.
-Case C. Suppose that m2 ≤ −2. There are 2 subcases.
-(C-1) We have m1 ≤ −3m2/2. Then
-δK (n) = Q(n, n, n).
-(C-2) We have m1 > −3m2/2. Let
-c3 = −3/2 + m1 + m2 + (1 + m2)n
-1 − 2m1 − 2m2
-and let k1 be one of the integers closest to c3. Then
-δK (n) =
-{
-Q(n, k1, k1) if c3 /∈ 1
-2 + Z,
-Q(n, k1, k1) − (c3 + 1/2) if c3 ∈ 1
-2 + Z.
-27
+The quantity  $Q(n,k_1,k_2)$ is closely related
+to the degree $\delta_K(n)$. According to \cite{GV}  for the 2-fusion knot $K=K(m_1,m_2)$, with $m_2 \notin \{-1, 0\}$, we have the following possibilities:
+\vskip 0.04in
+
+
+\textbf{Case A.} Suppose that $m_1, m_2 \ge 1$. Then
+$$\delta_K(n) = Q(n,k_1,-k_1),$$
+
+\noindent where $$c_1=\frac{1 - m_1 + m_2 + m_2 n}{2 (-1 + m_1 + m_2)},$$ 
+and  $k_1$ is of the integers closest to $c_1$ satisfying $k_1 \le n/2$. 
+
+\vskip 0.04in
+
+\textbf{Case B.} Suppose that $m_1 \le 0, m_2 \ge 1$. There are 2 subcases.
+
+\textbf{(B-1)} We have ($1 + m_1 + m_2 \le 0$) or ($1 + m_1 + m_2 > 0$ and $1 + 2m_1 + m_2 < 0$). Then
+$$\delta_K(n) = Q(n,n,0).$$
+
+\textbf{(B-2)}  We have $1 + m_1 + m_2 > 0$ and $1 + 2m_1 + m_2 \ge 0$. 
+ Then
+$$\delta_K(n) = Q(n,k_1,k_1-n),$$
+\noindent where  $$c_2=\frac{1 - m_1 - m_2 + (1 + m_2) n}{2 (1 + m_1 + m_2)}.$$
+and $k_1$ is one of the integers closest to $c_2$.
+
+\textbf{Case C.} Suppose that  $m_2 \le -2$. There are 2 subcases.
+
+\textbf{(C-1)} We have $m_1 \le -3m_2/2$. Then 
+$$\delta_K(n) = Q(n,n,n).$$
+
+\textbf{(C-2)} We have $m_1 > -3m_2/2$. Let $$c_3=\frac{-3/2 + m_1 + m_2 + (1+m_2 ) n}{1-2m_1-2m_2}$$
+and let $k_1$ be one of the integers closest to $c_3$. Then
+$$\delta_K(n) = \begin{cases} Q(n,k_1,k_1) &\mbox{if } c_3 \notin \frac{1}{2} + \BZ, \\ 
+Q(n,k_1,k_1)-(c_3 + 1/2) & \mbox{if } c_3 \in \frac{1}{2} + \BZ. \end{cases}$$

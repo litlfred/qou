@@ -241,8 +241,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "reciprocity13.tex",
-   "tex_sections": 7,
-   "overlaid": 3,
+   "tex_sections": 14,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -252,15 +252,18 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.741,
-     "coverage_ratio": 0.953,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.78,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs",
      "title": "Outline of the paper and sketch of the proofs",
-     "result": "no matching \\section"
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-acknowledgment",
@@ -274,33 +277,41 @@
      "id": "sec-003-notation",
      "title": "Notation",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.955,
+     "coverage_ratio": 0.893,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-2-two-reciprocity-formulae-for-the-q-pochhammer",
      "title": "Two reciprocity formulae for the q-Pochhammer symbol",
-     "prose_ratio": 0.222,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.79,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-22-first-reciprocity-formula-for-the-q-pochhamme",
      "title": "First reciprocity formula for the q-Pochhammer symbol",
-     "prose_ratio": 0.475,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-23-sums-of-cotangents",
      "title": "Sums of cotangents",
-     "result": "no matching \\section"
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-24-second-reciprocity-formula-for-the-q-pochhamm",
      "title": "Second reciprocity formula for the q-Pochhammer symbol",
-     "prose_ratio": 0.609,
-     "coverage_ratio": 0.404,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.921,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-references",

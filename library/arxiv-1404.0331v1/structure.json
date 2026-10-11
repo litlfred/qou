@@ -244,8 +244,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 7,
-   "overlaid": 2,
+   "tex_sections": 13,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -255,52 +255,63 @@
     {
      "id": "sec-000-03-the-aj-conjecture",
      "title": "The AJ conjecture",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-01-the-colored-jones-polynomial",
      "title": "The colored Jones polynomial",
-     "result": "no matching \\section"
+     "prose_ratio": 0.116,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.205,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-02-the-recurrence-ideal-and-recurrence-polynomia",
      "title": "The recurrence ideal and recurrence polynomial",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.443,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-004-04-main-result",
      "title": "Main result",
-     "result": "no matching \\section"
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-05-plan-of-the-paper",
      "title": "Plan of the paper",
-     "result": "no matching \\section"
+     "prose_ratio": 0.783,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-06-acknowledgment",
      "title": "Acknowledgment",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-1-the-colored-jones-polynomial-of-cabled-knots",
      "title": "The Colored Jones polynomial of cabled knots",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.926,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-2-on-the-strong-aj-conjecture",
      "title": "On the strong AJ conjecture",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 0.782,
+     "prose_ratio": 0.854,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

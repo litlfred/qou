@@ -7,10 +7,10 @@ section_number: 5
 pages: 24-28
 source_pdf: 9911033v1.pdf
 source_sha256: 196c05d2e3419565
-text_source: latex
-latex_prose_ratio: 0.768
-latex_coverage_ratio: 0.951
 doc_brief: "On the lower bound estimates of sections of the canonical bundles over a Riemann surface — 18 sections: Introductions 1; A lower bound estimate 4; A counterexample 11"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Let $M$ be a Riemann surface of genus $g\geq 2$. It is well known 
 that the coordinate ring $\oplus_{m=0}^\infty H^0(M,K_M^m)$

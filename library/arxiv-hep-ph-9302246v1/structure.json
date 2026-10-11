@@ -5,7 +5,8 @@
   "file": "9302246v1.pdf",
   "sha256": "2d352297255be8de72594e79b5c2e828ec8636b3517794b4dcfc197715425401",
   "bytes": 299835,
-  "pages": 44
+  "pages": 44,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -613,6 +614,214 @@
   "likely_scanned": false,
   "toc_entries": 34,
   "sections": 34,
-  "chars_total": 56949
+  "chars_total": 56949,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 12,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-the-low-energy-chiral-lagrangians",
+     "title": "The low-energy chiral Lagrangians",
+     "prose_ratio": 0.175,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-6-k-0",
+     "title": "K 0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-0-b0-1-om-27",
+     "title": "B0 (1 + O(M)). (2.7)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-8-x",
+     "title": "(x):",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-8-x",
+     "title": "(x) \u2261",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-6-k-0",
+     "title": "K \u22170",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-1-k",
+     "title": "K +",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-1-k-0",
+     "title": "K 0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-2-c-2-tr-sa\u00b5-a\u00b5-1",
+     "title": "C (2) tr (SA\u00b5 A\u00b5 ) + 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-3-the-enjl-cut-o\ufb00-model-of-qcd",
+     "title": "The ENJL cut-o\ufb00 model of QCD",
+     "prose_ratio": 0.18,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-2-1-\u03b35-\u03c8-the-couplings-gs-and-gv-are",
+     "title": "(1 \u00b1 \u03b35) \u03a8. The couplings GS and GV are",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-2-w",
+     "title": "W +",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-2-\u03c3-\u03b35-311",
+     "title": "(\u03a3 \u2212 \u03b35 \u2206) (3.11)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-4-the-anomalous-sector",
+     "title": "The anomalous sector",
+     "prose_ratio": 0.272,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-4-u-l-\u00b5-u-r\u03bd-u-l-\u03b1-u-r\u03b2-i-u-\u00b5-l\u03bd-l\u03b1-u-r\u03b2",
+     "title": "U l \u00b5 U \u2020 r\u03bd U l \u03b1 U \u2020 r\u03b2 + i U \u2202\u00b5 l\u03bd l\u03b1 U \u2020 r\u03b2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-3-1-ga",
+     "title": "(1 \u2212 gA)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-5-the-non-anomalous-sector",
+     "title": "The non-anomalous sector",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-6-phenomenological-applications",
+     "title": "Phenomenological applications",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-61-vector-resonance-decays",
+     "title": "Vector resonance decays",
+     "prose_ratio": 0.186,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-2-in-both-cases-we-assume-nonet",
+     "title": "In both cases we assume nonet",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-3-the-amplitude-for-\u03c9-\u03c0\u03c0\u03c00-has-the-form",
+     "title": "The amplitude for \u03c9 \u2192 \u03c0+\u03c0\u2212\u03c00 has the form,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-1-p2-k\u03b1-pb",
+     "title": "(p2 + k)\u03b1 pb",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-62-the-decay-\u03c00\u03b7-\u03b3\u2113\u2113",
+     "title": "The decay \u03c00(\u03b7) \u2192 \u03b3\u2113+\u2113\u2212",
+     "prose_ratio": 0.775,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-3-mev-if-we-assume-that-the-reported-partial-wid",
+     "title": "MeV. If we assume that the reported partial width for the decay a1 \u2192 (\u03c0\u03c0)S \u03c0 is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-3-h-\u01eb\u00b5\u03bd\u03b1\u03b2-\u03b5\u00b5",
+     "title": "H \u01eb\u00b5\u03bd\u03b1\u03b2 \u03b5\u00b5",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-27-h-2-ma1",
+     "title": "H 2 Ma1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-076-given-the-poor-experimental-information-we-h",
+     "title": "Given the poor experimental information we have on a1-decays, both sets of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-64-kl-\u03c00\u03b3\u03b3-\u03c00ee",
+     "title": "KL \u2192 \u03c00\u03b3\u2217\u03b3\u2217 \u2192 \u03c00e+e\u2212",
+     "prose_ratio": 0.715,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-030-9-m-2",
+     "title": "M 2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-7-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-032-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-033-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

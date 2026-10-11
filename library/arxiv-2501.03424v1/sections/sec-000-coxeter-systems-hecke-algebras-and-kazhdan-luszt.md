@@ -8,16 +8,15 @@ pages: 4-4
 source_pdf: 2501.03424v1.pdf
 source_sha256: 53e00a30fd850a5b
 doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner — This paper presents an exposition of Soergel bimodules, the categ oriﬁcation of Hecke alge- bras, and their applications to"
+text_source: latex
+latex_prose_ratio: 0.974
+latex_coverage_ratio: 0.974
 ---
-preliminaries
-1.1 Coxeter Systems
-Suppose W is a group, and S⊂ W is a ﬁnite subset consisting of generators of W. Let (mst)s,t ∈S
-be a matrix satisfying
-mst = mts∈{ 1, 2, . . .}∪{∞}
-with mss = 1 for every s∈ S. We say that the pair ( W, S) is a Coxeter system , and W a Coxeter
-group, if W admits the presentation
-W =⟨s∈ S| (st)mst = e for any s, t∈ S, mst <∞⟩,
-where e denotes the identity element in W . It turns out that the value mst is the order of the
-element st∈ W , and, if mst is not ﬁnite, no correlation exists between s and t. One will often see
-generators s∈ S submitted to the condition that it is involutive, i.e. s2 = e. These generators are
-sometimes called reﬂections, and so it may not be a surprise that
+\end{center}
+
+\subsection{Coxeter Systems}
+
+Suppose $W$ is a group, and $S \subset W$ is a finite subset consisting of generators of $W.$ Let $(m_{st})_{s,t \in S}$ be a matrix satisfying 
+$$m_{st} = m_{ts} \in \{1,2,\ldots\} \cup \{\infty\} $$ with $m_{ss} = 1$ for every $s \in S$. We say that the pair $(W,S)$ is a \textit{Coxeter system}, and $W$ a \textit{Coxeter group}, if $W$ admits the presentation 
+$$W = \langle s \in S \st (st)^{m_{st}} = e \text{ for any } s,t \in S, m_{st} < \infty\rangle,$$
+where $e$ denotes the identity element in $W$. It turns out that the value $m_{st}$ is the order of the element $st \in W$, and, if $m_{st}$ is not finite, no correlation exists between $s$ and $t$. One will often see generators $s \in S$ submitted to the condition that it is involutive, i.e. $s^2 = e$. These generators are sometimes called reflections, and so it may not be a surprise that

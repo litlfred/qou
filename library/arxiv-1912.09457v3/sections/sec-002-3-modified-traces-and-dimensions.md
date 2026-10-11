@@ -7,10 +7,10 @@ section_number: 3
 pages: 10-12
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
-text_source: latex
-latex_prose_ratio: 0.945
-latex_coverage_ratio: 0.934
 doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.957
 ---
 []{#sec:traces label="sec:traces"}
 
@@ -18,9 +18,9 @@ We recall the definition of a modified trace function. The existence of such tra
 
 ## The concept of a modified trace
 
-Let $\mathcal C_R$ be rigid spherical monoidal over a local ring $R$. As in Section [\[sec:prel\]](#sec:prel){reference-type="ref" reference="sec:prel"} we assume that $\mathcal C_R$ is braided in order to identify left and right duals. We follow [@Geer-Kujawa-Patureau-Mirand] [@Geer-Kujawa-Patureau-Mirand-ambidextrous] [@Geer-Patureau-Mirand-Virelizer] [@Geer-Patureau-Mirand-projective] in the definition of a trace function. Recall that for any objects $X,Y \in \mathcal C$ and any endomorphism $f \in End_\mathcal{C}(X \otimes Y)$ we have the left trace $t_L(f) \in End_{\mathcal C}(X)$ and the right trace $t_R(f) \in End_{\mathcal C}(Y)$ defined as follows $$\begin{align*}
+Let $\mathcal C_R$ be rigid spherical monoidal over a local ring $R$. As in Section [\[sec:prel\]](#sec:prel){reference-type="ref" reference="sec:prel"} we assume that $\mathcal C_R$ is braided in order to identify left and right duals. We follow [@Geer-Kujawa-Patureau-Mirand] [@Geer-Kujawa-Patureau-Mirand-ambidextrous] [@Geer-Patureau-Mirand-Virelizer] [@Geer-Patureau-Mirand-projective] in the definition of a trace function. Recall that for any objects $X,Y \in \mathcal C$ and any endomorphism $f \in End_\mathcal{C}(X \otimes Y)$ we have the left trace $t_L(f) \in End_{\mathcal C}(X)$ and the right trace $t_R(f) \in End_{\mathcal C}(Y)$ defined as follows $$\begin{aligned}
  tr_L(f) & = (d_X \otimes id_Y) \circ (id_{X^*} \otimes f) \circ (\tilde{i}_X \otimes id_Y) \in End_{\mathcal{C}} (X) \\ tr_R(f) & = (id_X \otimes \tilde{d}_Y) \circ (f \otimes id_{Y^*}) \circ (id_X \otimes i_{Y}) \in End_{\mathcal{C}}(Y).
-\end{align*}$$
+\end{aligned}$$
 
 ::: definition
 []{#D:trace label="D:trace"} If $I$ is a thick ideal in $\mathcal{C}$ then a *trace on $I$* is a family of linear functions $$\{\operatorname{\mathsf{t}}_V:{\rm End}_\mathcal{C}(V)\rightarrow R\}$$ where $V$ runs over all objects of $I$ and such that the following two conditions hold.
@@ -30,9 +30,7 @@ Let $\mathcal C_R$ be rigid spherical monoidal over a local ring $R$. As in Sect
 2.  If $X,Y\in I$ then for any morphisms $f:X\rightarrow Y$ and $g:Y\rightarrow X$ in $\mathcal{C}$ we have $$\operatorname{\mathsf{t}}_X(g\circ f)=\operatorname{\mathsf{t}}_Y(f \circ g).$$
 :::
 
-Given such a trace on a thick ideal $I$, $\{t_{V} \}_{V \in I}$, define the *modified dimension* function on objects of $I$ as the modified trace of the identity morphism: $$\begin{equation*}
-d\left(V \right) =t_{V}(id_{V}).
-\end{equation*}$$
+Given such a trace on a thick ideal $I$, $\{t_{V} \}_{V \in I}$, define the *modified dimension* function on objects of $I$ as the modified trace of the identity morphism: $$d\left(V \right) =t_{V}(id_{V}).$$
 
 ## Existence of modified traces
 

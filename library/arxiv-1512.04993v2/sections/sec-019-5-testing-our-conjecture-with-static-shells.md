@@ -7,10 +7,10 @@ section_number: 5
 pages: 30-31
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
-text_source: latex
-latex_prose_ratio: 0.965
-latex_coverage_ratio: 0.993
 doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:staticshells}
 So far we have considered the complexification rate of an isolated black hole. We would like to test our proposal by adding controlled complications. One test is an ingoing shell (a shock wave), which will be considered in \S\ref{sec:shockwaves}; in this section we will instead consider a static shell (a Dyson sphere), see Fig.~\ref{fig-sarcophagus}.

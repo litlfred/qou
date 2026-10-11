@@ -7,10 +7,10 @@ section_number: 3
 pages: 13-17
 source_pdf: 1111.6782v2.pdf
 source_sha256: 5acfde49432e59e3
-text_source: latex
-latex_prose_ratio: 0.928
-latex_coverage_ratio: 0.975
 doc_brief: "Stationary Points of O’Hara’s Knot Energies — In this article we study the regularity of stationary points of the knot ener- gies E(α) introduced by O’Hara in [ 14, 15, 16] in the range α∈ (2, 3)."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sect:bootstrap}
 

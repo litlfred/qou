@@ -164,7 +164,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 6,
+   "tex_sections": 13,
    "overlaid": 6,
    "thresholds": {
     "title": 0.85,
@@ -175,48 +175,48 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.957,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-torsion-pairs-and-decompositions-of-derived-ca",
      "title": "Torsion pairs and decompositions of derived categories",
-     "prose_ratio": 0.962,
-     "coverage_ratio": 0.967,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-gerbes",
      "title": "Gerbes",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.928,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-twisted-sheaves",
      "title": "Twisted sheaves",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.947,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-5-the-derived-category-of-a-gerbe",
      "title": "The derived category of a gerbe",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.957,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-6-semi-orthogonal-decompositions-for-brauersever",
      "title": "Semi-orthogonal decompositions for Brauer\u2013Severi schemes",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.954,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },

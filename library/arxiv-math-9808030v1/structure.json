@@ -6,7 +6,8 @@
   "sha256": "7889d6481b876b122db7d7b347b534e45a66cc2023da0f777ba1974591251daa",
   "bytes": 133415,
   "pages": 17,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -260,6 +261,94 @@
   "likely_scanned": false,
   "toc_entries": 13,
   "sections": 13,
-  "chars_total": 18013
+  "chars_total": 18013,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-tubitak-feza-g-ursey-institute-po-box-6-81220",
+     "title": "TUBITAK, Feza G\u00a8 ursey Institute, P.O. Box 6, 81220 Cengel koy, Istanbul,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-2-invariant-integral-on-eq2",
+     "title": "Invariant Integral on Eq(2)",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-3-scalar-product-on-eq2",
+     "title": "Scalar Product on Eq(2)",
+     "prose_ratio": 0.59,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-4-matrix-elements-of-the-irreducible-repre",
+     "title": "Matrix Elements of the Irreducible Repre-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-0-pv",
+     "title": "( (pv)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-0-iv5",
+     "title": "(IV.5)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-5-planscherel-measure-on-eq2",
+     "title": "Planscherel Measure on Eq(2)",
+     "prose_ratio": 0.712,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-appendix",
+     "title": "Appendix",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-0-b6",
+     "title": "(B.6)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-c-unitary-representations-of-e2-from-su-2-by-con",
+     "title": "Unitary Representations of E(2) from SU (2) by Contraction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

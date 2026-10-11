@@ -7,10 +7,10 @@ section_number: null
 pages: 14-18
 source_pdf: 0806.2317v1.pdf
 source_sha256: c54e80d460413a5e
-text_source: latex
-latex_prose_ratio: 0.935
-latex_coverage_ratio: 0.91
 doc_brief: "Bounds for codes and designs in complex subspaces Aidan Roy ∗ — We introduce the concepts of complex Grassmannian codes and designs."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:bounds}
 

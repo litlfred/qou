@@ -7,10 +7,10 @@ section_number: 6
 pages: 24-28
 source_pdf: 0105039v1.pdf
 source_sha256: 850e6a00721e38d0
-text_source: latex
-latex_prose_ratio: 0.926
-latex_coverage_ratio: 0.984
 doc_brief: "Hyperbolic Structure Arising from a Knot Invariant — We study the knot invariant based on the quantum dilogarithm function."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:eight}
 

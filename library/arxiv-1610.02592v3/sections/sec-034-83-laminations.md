@@ -7,12 +7,13 @@ section_number: 8.3
 pages: 246-266
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.952
-latex_coverage_ratio: 0.863
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 In this section we characterize geometrically the currents $\alpha\in\calC$ contained in the ``light cone,'' \emph{i.e.}~those with $i(\alpha,\alpha)=0$. Every such current may be represented as a \emph{measured geodesic lamination}, a closed subset of $S_g$ foliated by geodesics and equipped with a transverse measure. These unexpected objects play an important part in the topology of manifolds of dimension two and three.
+
 
 \subsection{Geodesic laminations.}
 Let $S = \matH^2/_\Gamma$ be a hyperbolic surface. Recall that in this chapter we consider geodesics only as subsets of $S$, neglecting their parametrisation. 
@@ -40,6 +41,7 @@ A set $\lambda$ of disjoint lines in $\matH^2$ forms a closed set in $\matH^2$ i
 \end{ex}
 If a set of disjoint lines in $\matH^2$ is not closed, it suffices to take its closure to get a lamination. Every lamination in $S=\matH^2/_\Gamma$ lifts to a $\Gamma$-invariant lamination  in $\matH^2$, hence the laminations in $S$ are in natural bijection with the $\Gamma$-invariant laminations in $\matH^2$. 
 
+
 \subsection{Local behaviour}
 A geodesic lamination is often too complicated to be determined with full precision. In fact, its topology is already quite involved, and we now start by examining it locally. Let $\lambda$ be a geodesic lamination on a hyperbolic surface $S=\matH^2/_\Gamma$. The following exercise may be proved by passing to the universal cover $\matH^2$.
 
@@ -61,6 +63,7 @@ Suppose by contradiction that $J$ contains some open interval. This open interva
 If $S$ has finite volume, every geodesic lamination $\lambda$ in $S$ has empty interior and is determined by its support.
 \end{cor}
 
+
 \subsection{Complementary regions}
 Let $\lambda \subset S$ be a geodesic lamination in a hyperbolic surface $S=\matH^2/_\Gamma$.
 A \emph{complementary region} (shortly, a \emph{region}) is a connected component of the open complement $S\setminus \lambda$. The abstract completion of a complementary region is a hyperbolic surface with non-empty geodesic boundary consisting of lines and/or circles. 
@@ -75,6 +78,7 @@ Every complementary region has area at least $\pi$ (the area of an ideal triangl
 \end{proof}
 
 We say that a lamination $\lambda \subset S_g$ is \emph{full} if every region is an ideal polygon.\index{geodesic lamination!full}
+
 
 
 
@@ -105,6 +109,7 @@ A geodesic multicurve $\lambda \subset S$ has a natural transverse measure: for 
 More generally, we may assign a positive weight $a_i>0$ at each component $\lambda_i$ of $\lambda$ and define a measured geodesic lamination by giving the weight $a_i$ at each intersection $\alpha \cap \gamma_i$. By varying weights we get distinct measured geodesic laminations with the same support.
 \end{example}
 
+
 \subsection{Currents and measured geodesic laminations}
 Let $S_g=\matH^2/_\Gamma$ be a closed hyperbolic surface. We now construct a natural bijection between the measured geodesic laminations on $S_g$ and the geodesic currents $\lambda$ with $i(\lambda,\lambda)=0$, \emph{i.e.}~those lying in the ``light cone.'' We see a measured geodesic lamination in $S_g$ as a $\Gamma$-invariant measured geodesic lamination in $\matH^2$.
 
@@ -129,6 +134,7 @@ Recall that a multicurve on $S_g$ is a finite collection of disjoint non-trivial
 $$\calS \subset \calM \subset \ML \subset \calC$$ 
 where $\calS$ and $\calM$ are the sets of simple closed curves and multicurves in $S_g$.\index{$\calM$} 
 
+
 \subsection{Some properties}
 We can now use our knowledge of the geodesic currents to get some information about the measured geodesic laminations. 
 
@@ -147,6 +153,7 @@ There are some geodesic laminations in $S_g$ that do not support any transverse 
 \begin{proof}[Hint]
 Construct a geodesic lamination $\lambda \subset S_g$ consisting of some disjoint simple closed curves and finitely many open leaves that wind around them (see Section \ref{incomplete:metrics:subsection}). The pre-image $\tilde\lambda\subset\matH^2$ contradicts Proposition \ref{at:most:two:prop}.
 \end{proof}
+
 
 
 
@@ -180,6 +187,7 @@ If $\lambda \in \calML$ is full, we have $i(\lambda, \alpha)>0$ for every curren
 If $i(\lambda, \alpha)=0$ then every line $l$ in the support of $\alpha$ is either a leaf of $\lambda$ or an infinite diagonal in some complementary ideal polygon; a diagonal would be an atomic point in $\alpha$ that would cover a closed geodesic and could be added to $\lambda$ contradicting 
 Proposition \ref{at:most:two:prop}.
 \end{proof}
+
 
 \subsection{Train tracks}
 How can one construct a measured geodesic lamination, concretely? There are some nice combinatorial tools designed to this purpose, called train tracks.\index{train track} 
@@ -226,6 +234,7 @@ There are only finitely many combinatorial types for $\tau$, its complementary r
 \end{proof}
 
 
+
 \subsection{Weight systems}
 
 A \emph{weight system} on a train track $\tau\subset S_g$ is the assignment of a non-negative real number, called \emph{weight}, to each branch of $\tau$, such that at every vertex the \emph{switch condition} holds: the sum of the weights on the left branches should be equal to the sum of the weights on the right branches. 
@@ -240,6 +249,7 @@ Since no complementary region of $\tau$ is a disc or monogon, the complementary 
 \end{proof}
 
 Our aim now is to use the train tracks to parametrise all the multicurves in $S_g$. Later on, we will extend everything from multicurves to measured geodesic laminations.
+
 
 \subsection{A parametrisation for $\calM$} \label{parametrisation:M:subsection}
 
@@ -307,6 +317,7 @@ The injectivity is surprisingly simple to prove: the configuration of $\mu$ that
 
 We have found a complete combinatorial parametrisation for the set $\calM$, and we now want to extend it to $\calML$.
 
+
 \subsection{Topological laminations} \label{topological:laminations:subsection}
 
 \begin{figure}
@@ -330,6 +341,7 @@ After this cut we get a closed subset of $S_g$, which we still name $\lambda$, n
 The set $J$ inherits from $[0,a]$ a Borel measure with total mass $a$. This measure gives a transverse measure to the leaves of the rectangle $L\times J$, and $\lambda$ inherits the structure of a measured topological lamination (the notion of a transverse measure is exactly the same as in the geodesic case).
 
 It only remains to promote the topological lamination to a geodesic lamination: this is usually done by \emph{straightening} its leaves. We describe this procedure only for a particular class of train tracks: the ones introduced in the previous section to parametrise $\calM$.
+
 
 \subsection{A parametrisation for $\ML$} \label{parametrizzazione:subsection}
 We now extend the arguments of Section \ref{parametrisation:M:subsection}
@@ -372,6 +384,7 @@ The choices of the colours $(a_i,b_i,c_i)$ were forced by the intersection of $\
 We have parametrised $\calML$, and we now investigate its topology. The space of all colourings $(a_i,b_i,c_i)$ forms the subset $C\times \ldots \times C \subset \matR^3 \times \ldots \times \matR^3$ where $C \subset \matR^3$ is the cone based on the origin over the sides of the triangle with vertices $(1,1,0)$, $(0,1,1)$, and $(1,0,1)$, and is homeomorphic to $\matR^2$. The space of colourings is homeomorphic to $\matR^{2\cdot (3g-3)} = \matR^{6g-6}$, that is to the Teichm\"uller space itself!
 
 The parametrisation identifies $\calML$ with  $C\times \ldots \times C$. We want to show that this identification is a homeomorphism, and to this purpose we study the intersection form.
+
 
 \subsection{Intersection form}
 We now show that the intersection form $i$ between curves and laminations has a surprisingly simple behaviour after that we parametrise the space $\calML$ as $C\times \ldots \times C$. 
@@ -435,6 +448,7 @@ There exist finitely many simple closed curves $\gamma_j$ whose intersections $i
 and compute their intersections with $\lambda$.
 \end{proof}
 
+
 \subsection{The Thurston boundary}
 We can finally determine the topology of the measured geodesic laminations space $\calML$ and of the Thurston boundary of the Teichm\"uller space.
 
@@ -466,6 +480,7 @@ The mapping class group $\MCG(S_g)$ acts naturally on the whole set $\calC$ of c
 
 The identification of $\partial\Teich(S_g) = \matP\calML$ with the projectivisation of $C\times \ldots \times C$ is of course not canonical because it depends on a decomposition of $S_g$ into pairs of pants and annuli. However, Proposition \ref{integral:PL:map:prop} and Exercise \ref{abc:ex} imply that any two different identifications differ by some projective integral piecewise-linear homeomorphisms, hence the Thurston boundary has a natural \emph{projective integral piecewise linear} structure, called PIP for short, which is preserved by $\MCG(S_g)$. In particular $\matP\calML$ contains some natural rational points, and these are $\matP\calM$.\index{PIP structure}
 
+
 \subsection{A projection}
 The reader has probably noted that the coordinates that yield the homeomorphisms $\Teich(S_g) \cong \matR^{6g-6}$ and $\partial \Teich(S_g)\cong S^{6g-7}$ are quite similar: they both depend on a pants decomposition $\mu$ plus some additional marking, and every curve of the pants decomposition contributes roughly with two parameters, a ``length'' and a ``twist''. It would now be reasonable to expect that both these coordinates merge nicely to give a global homeomorphism $\overline{\Teich(S_g)} \cong D^{6g-6}$, but this is unfortunately not the case. 
 
@@ -496,6 +511,7 @@ $$q\colon \Teich(S_g) \longrightarrow \big\{\lambda \in \ML \ \big|\ i(\lambda, 
 Compare the coordinates $(l_i, \theta_i)$ for $\Teich(S_g)$ and $(a_i,b_i,c_i)$ for $\ML$. The map $q$ sends $(l_i,\theta_i)$ to $(l_i,b_i,c_i)$ for some $(b_i,c_i)$ that depends homeomorphically on $\theta_i\in\matR$ for each $i$.
 Note that $a_i = i(\lambda, \gamma_i)$.
 \end{proof}
+
 
 \subsection{The fundamental lemma}
 We now show that the projection $q$ distorts very little the lengths of the simple closed curves, as long as we put a lower bound on the lengths of the curves $\gamma_1,\ldots \gamma_{3g-3}$ of the fixed pants decomposition $\mu$. This technical fact is called the Fundamental Lemma \cite{FLP}.
@@ -529,6 +545,7 @@ Therefore $\lambda_iq(m_i)$ converges (on a subsequence) to a $\beta\in\calML$ s
 
 The other implication is analogous.
 \end{proof}
+
 
 \subsection{A topological chart}
 Pick an arbitrary $[\lambda]\in \PML = \partial \Teich(S_g)$. We now construct an explicit neighbourhood of $[\lambda]$ in $\overline{\Teich(S_g)}$. 
@@ -574,6 +591,7 @@ By similar methods one proves that the image of $\phi$ is open and the inverse t
 
 \begin{cor} The space $\overline{\Teich(S_g)}$ is a topological manifold with boundary $\partial \Teich(S_g)$.
 \end{cor}
+
 
 \subsection{Conclusion} \label{MCG:conclusion:subsection}
 We have discovered that $\overline{\Teich(S_g)}$ is a compact topological manifold with boundary, and we now invoke Theorem \ref{topological:disc:teo} to deduce that it is a disc. We have finally completed the proof of the following theorem, which is the main achievement of the whole chapter.

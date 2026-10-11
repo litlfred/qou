@@ -7,10 +7,10 @@ section_number: 7
 pages: 29-34
 source_pdf: 0707.3682v2.pdf
 source_sha256: 609a6f67a0cd5fc8
-text_source: latex
-latex_prose_ratio: 0.897
-latex_coverage_ratio: 0.826
 doc_brief: "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS — We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.994
 ---
 []{#examplesection label="examplesection"}
 
@@ -189,14 +189,10 @@ to 10 pt $p$&to 330 pt$R_{3,p}(M_\pi^E)/D(M_\pi^E)^{1/2,p}$ 2 & 1((1.10110011010
 ::: example
 []{#S3computation label="S3computation"} Let $k$ be a totally real $S_3$-extension of $\Q$. Use notation as in Case 1 of Example [\[S3example\]](#S3example){reference-type="ref" reference="S3example"}, and let $\pi$ be the primitive idempotent corresponding to $\pi_2$ of that example. Since $E=\Q$ we shall write $M_\pi$ instead of $M_\pi^E$ in all notation referring to Conjecture [\[motiveconjecture\]](#motiveconjecture){reference-type="ref" reference="motiveconjecture"}.
 
-Since $\pi \Kn k = \pi_2 \Kn c$ by Remark [\[galoisdescent\]](#galoisdescent){reference-type="ref" reference="galoisdescent"} we computed the $K$-theory of $c$ using the (numerical) methods of Section [\[practical\]](#practical){reference-type="ref" reference="practical"} and tried to recognize the number $$\begin{equation}
-\label{enM}
-e(n,M_\pi)= \L n {\chi_\pi} {\Q} \cdot D(M_\pi)^{1/2,\infty} / R_{n,\infty}(M_\pi)
-\end{equation}$$ for $n = 3$ and 5 as an element of $\Q^*$ by employing the same methods as described in Section [\[practical\]](#practical){reference-type="ref" reference="practical"} for number fields, where $\L n {\chi_\pi} {\Q}$ was computed as $\z_c(n)/\z_\Q(n)$ (see Example [\[S3L\]](#S3L){reference-type="ref" reference="S3L"}) using Pari-GP [@PARI2]. We succeeded in all cases, and then verified numerically for $p=2$, 3, 5, 7 and 11 if $\Lp p n {\chi_\pi\omega_p^{1-n}} {\Q} \ne 0$ and $$\begin{equation}
-\label{quotientexp}
+Since $\pi \Kn k = \pi_2 \Kn c$ by Remark [\[galoisdescent\]](#galoisdescent){reference-type="ref" reference="galoisdescent"} we computed the $K$-theory of $c$ using the (numerical) methods of Section [\[practical\]](#practical){reference-type="ref" reference="practical"} and tried to recognize the number $$\label{enM}
+e(n,M_\pi)= \L n {\chi_\pi} {\Q} \cdot D(M_\pi)^{1/2,\infty} / R_{n,\infty}(M_\pi)$$ for $n = 3$ and 5 as an element of $\Q^*$ by employing the same methods as described in Section [\[practical\]](#practical){reference-type="ref" reference="practical"} for number fields, where $\L n {\chi_\pi} {\Q}$ was computed as $\z_c(n)/\z_\Q(n)$ (see Example [\[S3L\]](#S3L){reference-type="ref" reference="S3L"}) using Pari-GP [@PARI2]. We succeeded in all cases, and then verified numerically for $p=2$, 3, 5, 7 and 11 if $\Lp p n {\chi_\pi\omega_p^{1-n}} {\Q} \ne 0$ and $$\label{quotientexp}
 e(n,M_\pi) \cdot \Eul_p(n, \chi_\pi, \Q) \cdot \dfrac{R_{n,p}(M_\pi)}{D(M_\pi)^{1/2,p}} 
-\cdot \Lp p n {\chi_\pi\omega_p^{1-n}} {\Q} ^{-1}
-\end{equation}$$ in $\Q_p^*$ was equal to 1.
+\cdot \Lp p n {\chi_\pi\omega_p^{1-n}} {\Q} ^{-1}$$ in $\Q_p^*$ was equal to 1.
 
 We put our results for the four totally real $S_3$-extensions $k$ of $\Q$ with smallest discriminants in Tables 1 through 4. Note that by Lemma [\[Qpquot\]](#Qpquot){reference-type="ref" reference="Qpquot"} $R_{n,p}(M_\pi) / D(M_\pi)^{1/2,p}$ is in $\Q_p$ and the same holds for $\Lp p n {\chi_\pi\omega_p^{1-n}} {\Q}$ by Lemma [\[pLvalueslemma\]](#pLvalueslemma){reference-type="ref" reference="pLvalueslemma"}, so that (approximations of) those numbers can be easily represented in our tables. We have denoted an element $(a_0+a_1p+a_2p^2+\cdots) \times p^s$ in $\Q_p^*$ with all $a_j$ in $\{0,\dots,p-1\}$ and $a_0\ne0$ by $(a_0.a_1a_2\cdots)_p \times p^s$, writing $A$ to represent 10 when $p = 11$.
 
@@ -218,18 +214,16 @@ The other examples proceed mostly along the same lines as Example [\[S3computat
 ::: example
 []{#sexticcomputation label="sexticcomputation"} Let $k$ be a totally real $S_3 \times \Z/3\Z$ extension of $\Q$, as in Case 1 of Example [\[sexticexample\]](#sexticexample){reference-type="ref" reference="sexticexample"}. We use notation as in that example, taking $E=\Q(\z_3)$ for a primitive cubic root of unity $\z_3$. A different identification of $\Gal(k/\Q)$ with $S_3 \times \Z/3\Z$ might interchange $\pi_3$ and $\pi_4$ as well as corresponding primitive idempotents, but, as we noted before, the validity of the conjecture for either is equivalent.
 
-Since $\pi \KnE k = \pi_3 \KnE s_1$ we computed $\Kn s_1$ as before. Also, in order to speed up the calculations of the regulator we note that the action of $(e,1)$ and $(\s^2,0)$ on $s_1 = k^{\langle (\s,1) \rangle }$ is the same, so that $\pi = \pi_3 \pi_{H_1}$ and $$\begin{equation*}
-(1-\pi_1) ((e,0) + \z_3 (\s,0) + \z_3^2 (\s^2,0))/3 
+Since $\pi \KnE k = \pi_3 \KnE s_1$ we computed $\Kn s_1$ as before. Also, in order to speed up the calculations of the regulator we note that the action of $(e,1)$ and $(\s^2,0)$ on $s_1 = k^{\langle (\s,1) \rangle }$ is the same, so that $\pi = \pi_3 \pi_{H_1}$ and $$(1-\pi_1) ((e,0) + \z_3 (\s,0) + \z_3^2 (\s^2,0))/3 
 =
-((e,0) + \z_3 (\s,0) + \z_3^2 (\s^2,0))/3
-\end{equation*}$$ give the same result when applied to $\KnE s_1$. We put our results for the first four $s_1$, when ordered according to their discriminant, for $n=3$ and 5 in Tables 13 through 16. In Table 16 the number $e(5,M_\pi^E)^{-1}$ is given by $$-2^5\cdot3^{10}\cdot5^{-2}\cdot13^{4}\cdot(7+3\z_3)\cdot(68-43\z_3)\cdot(1547202-1603487\z_3)\cdot(a+b\z_3)$$ with $$\begin{alignat*}
+((e,0) + \z_3 (\s,0) + \z_3^2 (\s^2,0))/3$$ give the same result when applied to $\KnE s_1$. We put our results for the first four $s_1$, when ordered according to their discriminant, for $n=3$ and 5 in Tables 13 through 16. In Table 16 the number $e(5,M_\pi^E)^{-1}$ is given by $$-2^5\cdot3^{10}\cdot5^{-2}\cdot13^{4}\cdot(7+3\z_3)\cdot(68-43\z_3)\cdot(1547202-1603487\z_3)\cdot(a+b\z_3)$$ with $$\begin{aligned}
 {1}
 a & = 8482255892311139091186217686741233 
 \\
 \intertext{and}
 b & = 3527440500058817421018094757947617
 \,,
-\end{alignat*}$$ presumably because we experimentally found a subgroup of $\Kn s_1$ that is not close to actually being $K_{2n-1}(s_1)$. In all cases $\Lp p n \chi_\pi\tensor\omega_p^{1-n} {\Q}$ is a unit in $E\tensor_\Q\Qp$, and when we write the equivalent of [\[quotientexp\]](#quotientexp){reference-type="eqref" reference="quotientexp"} in the form $1 \tensor \a  + \z_3 \tensor \b$ then we find that $\a-1$ and $\b$ are $O(p^{N(p)})$ with $N(2) \ge 50$, $N(3) \ge 24$, $N(5) \ge 20$, $N(7) \ge 14$ and $N(11) \ge 12$, with in this case the precision bounded by that of the $R_{n,p}(M_\pi^E)$. Since $e(n,M_\pi^E)$, $D(M_\pi^E)^{1/2,p}$ and $\Eul_p(n, \chi_\pi\tensor\id,\Q)$ are units in $E\tensor_\Q\Qpbar$ this also shows that $R_{n,p}(M_\pi^E)$ is a unit in $E\tensor_\Q F$, as conjectured in Conjecture [\[motiveconjecture\]](#motiveconjecture){reference-type="ref" reference="motiveconjecture"}(4).
+\end{aligned}$$ presumably because we experimentally found a subgroup of $\Kn s_1$ that is not close to actually being $K_{2n-1}(s_1)$. In all cases $\Lp p n \chi_\pi\tensor\omega_p^{1-n} {\Q}$ is a unit in $E\tensor_\Q\Qp$, and when we write the equivalent of [\[quotientexp\]](#quotientexp){reference-type="eqref" reference="quotientexp"} in the form $1 \tensor \a  + \z_3 \tensor \b$ then we find that $\a-1$ and $\b$ are $O(p^{N(p)})$ with $N(2) \ge 50$, $N(3) \ge 24$, $N(5) \ge 20$, $N(7) \ge 14$ and $N(11) \ge 12$, with in this case the precision bounded by that of the $R_{n,p}(M_\pi^E)$. Since $e(n,M_\pi^E)$, $D(M_\pi^E)^{1/2,p}$ and $\Eul_p(n, \chi_\pi\tensor\id,\Q)$ are units in $E\tensor_\Q\Qpbar$ this also shows that $R_{n,p}(M_\pi^E)$ is a unit in $E\tensor_\Q F$, as conjectured in Conjecture [\[motiveconjecture\]](#motiveconjecture){reference-type="ref" reference="motiveconjecture"}(4).
 
 Such calculations were also carried out for the next four such $s_1$ with similar results.
 :::
@@ -238,7 +232,7 @@ Such calculations were also carried out for the next four such $s_1$ with simila
 By Proposition [\[abelprop\]](#abelprop){reference-type="ref" reference="abelprop"} and Remark [\[consequencesremark\]](#consequencesremark){reference-type="ref" reference="consequencesremark"}(1), the conjecture for $\pi$ in Example [\[S3computation\]](#S3computation){reference-type="ref" reference="S3computation"} is equivalent to Conjecture [\[pborel\]](#pborel){reference-type="ref" reference="pborel"} for the field $k_1$ in the example. The same statement holds for $\pi$ and $k_1$ in Example [\[D8realcomputation\]](#D8realcomputation){reference-type="ref" reference="D8realcomputation"} below.
 :::
 
-:::: remark
+::: remark
 []{#constantremark label="constantremark"} In the tables we have also included the value of the constant $C(\chi_\pi\tensor\id) = C(\chi_\pi^\vee\tensor\id)$ in the functional equation [\[newfuneq\]](#newfuneq){reference-type="eqref" reference="newfuneq"} of $\L s {\chi_\pi\tensor\id} {\Q}$ to make possible a comparison between its prime factors and those of $e(n,M_\pi)$. Namely, for the $D(M_\pi^E)^{1/2,\infty}$ used in the calculations, the $e_n$ in [\[edef\]](#edef){reference-type="eqref" reference="edef"} (which in our case are independent of $n$) are as follows.
 
 ::: center
@@ -262,7 +256,5 @@ $$\begin{array}{cc@{\qquad\quad}cc@{\qquad\quad}cc@{\qquad\quad}cc}
 \end{array}$$
 :::
 
-As can be seen from these values and Tables 1-16, in the number $$\begin{equation*}
-\delta_n e_n ((n-1)!/2)^m C(\chi_\pi^\vee\tensor\id)^{n-1} e(n,M_\pi^E)
-\end{equation*}$$ of [\[newe\]](#newe){reference-type="eqref" reference="newe"} the larger prime factors occurring in $e(n,M_\pi^E)$ are often cancelled by those of $C(\chi_\pi^\vee\tensor\id)^{n-1}$. This suggests that the formulation of Beilinson's conjecture at $s=1-n$ normally involves simpler prime factors in $E^*$ than the formulation at $s=n$ in Conjecture [\[motiveconjecture\]](#motiveconjecture){reference-type="ref" reference="motiveconjecture"}(1), with the remaining complicated factors in our examples quite possibly due to an awkward choice of basis for $\KMn M_\pi^E$.
-::::
+As can be seen from these values and Tables 1-16, in the number $$\delta_n e_n ((n-1)!/2)^m C(\chi_\pi^\vee\tensor\id)^{n-1} e(n,M_\pi^E)$$ of [\[newe\]](#newe){reference-type="eqref" reference="newe"} the larger prime factors occurring in $e(n,M_\pi^E)$ are often cancelled by those of $C(\chi_\pi^\vee\tensor\id)^{n-1}$. This suggests that the formulation of Beilinson's conjecture at $s=1-n$ normally involves simpler prime factors in $E^*$ than the formulation at $s=n$ in Conjecture [\[motiveconjecture\]](#motiveconjecture){reference-type="ref" reference="motiveconjecture"}(1), with the remaining complicated factors in our examples quite possibly due to an awkward choice of basis for $\KMn M_\pi^E$.
+:::

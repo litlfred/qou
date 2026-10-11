@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-4
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
-text_source: latex
-latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.817
 doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.98
 ---
 Let $\mathcal{C}$ be a finite tensor category over an algebraically closed field ${\Bbbk}$ of characteristic zero. A *fiber functor* on $\mathcal{C}$ is a ${\Bbbk}$-linear exact faithful tensor functor $F:\mathcal{C}\to\mathop{\mathrm{Vec}}_{{\Bbbk}}$. Classical neutral Tannakian duality reconstructs affine group schemes from symmetric tensor categories equipped with a fiber functor [@Saavedra72; @DM82]. In the non-symmetric setting relevant here, Tannaka--Krein reconstruction instead produces a Hopf algebra [@JS91; @Schauenburg92; @BV07]: for every fiber functor $F$ on a finite tensor category $\mathcal{C}$, there is a finite-dimensional Hopf algebra $A_F$ with $\mathcal{C}\simeq\operatorname{Rep}(A_F)$, under which $F$ becomes the forgetful functor [@EGNO15 Theorem 5.3.12]. The fiber-functor problem is thus the problem of *Hopf realization*: deciding when a finite tensor category is the representation category of a finite-dimensional Hopf algebra, and counting the realizations arising from inequivalent forgetful functors.
 

@@ -266,8 +266,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Contact_Graphs_Revisited.tex",
-   "tex_sections": 7,
-   "overlaid": 1,
+   "tex_sections": 13,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -277,10 +277,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.889,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.565,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-2-proof-of-i-in-theorem-1",
@@ -321,23 +319,32 @@
     {
      "id": "sec-008-61-an-upper-bound-on-touching-triplets-on-s2",
      "title": "An upper bound on touching triplets on S2",
-     "result": "no matching \\section"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-62-an-upper-bound-on-touching-pairs-on-s2",
      "title": "An upper bound on touching pairs on S2",
-     "result": "no matching \\section"
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-7-explicit-constructions",
      "title": "Explicit Constructions",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-71-the-octahedral-construction",
      "title": "The Octahedral Construction",
-     "result": "no matching \\section"
+     "prose_ratio": 0.752,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-72-tightness-of-the-estimates-in-problem-2",

@@ -207,8 +207,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 4,
-   "overlaid": 2,
+   "tex_sections": 12,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -219,46 +219,61 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.83,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-21-the-lattice-of-partitions",
      "title": "The lattice of partitions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-22-permutations",
      "title": "Permutations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-23-a-triangle-inequality",
      "title": "A triangle inequality",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-24-haar-distributed-unitary-random-matrices-and",
      "title": "Haar distributed unitary random matrices and the Weingarten function",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-25-second-order-freeness",
      "title": "Second order freeness",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-3-asymptotic-second-order-freeness-for-unitary-r",
      "title": "Asymptotic second order freeness for unitary random matrices",
-     "prose_ratio": 0.972,
-     "coverage_ratio": 0.823,
+     "prose_ratio": 0.831,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

@@ -8,22 +8,11 @@ pages: 6-7
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
 doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.855
 ---
-some ﬁnite-dimensional representation ρq of the symmetric group Sq . We
-can treat any commuting family of elements of the group algebra C(Sq ) as
-a family of random variables equipped with the mean value giv en by the
-normalized character:
-(2.4) EX := χ ρ q (X) = Tr ρq (X)
-Tr ρq (1) .
-It should be stressed that in the general case we treat elemen ts of C(Sq ) as
-random variables only on a purely formal level; in particular we do not treat
-them as functions on some Kolmogorov probability space.
-Usually by the product of such random variables we understan d the nat-
-ural product in the group algebra C(Sq ) and we denote the resulting cumu-
-lants (called natural cumulants) by k(X1, . . . , X n). However, sometimes it
-is more convenient to take as the product of random variables the disjoint
-product •; we denote the resulting cumulants (called disjoint cumulants) by
-k•(X1, . . . , X n).
-GAUSSIAN FLUCTUATIONS OF CHARACTERS OF SYMMETRIC GROUPS 7
-FIGURE 2.1. Young diagram associated with a partition 8 =
-4 + 3 + 1.
+Let us fix some finite-dimensional representation $\rho_q$ of the symmetric group $S_q$. We can treat any commuting family of elements of the group algebra ${\mathbb{C}}(S_q)$ as a family of random variables equipped with the mean value given by the normalized character: $$\label{eq:wartoscoczekiwana} {\mathbb{E}}X:= \chi^{\rho_q}(X)= \frac{\mathop{\mathrm{Tr}}
+\rho_q(X)}{\mathop{\mathrm{Tr}}\rho_q(1)}.$$ It should be stressed that in the general case we treat elements of ${\mathbb{C}}(S_q)$ as random variables only on a purely formal level; in particular we do not treat them as functions on some Kolmogorov probability space.
+
+Usually by the product of such random variables we understand the natural product in the group algebra ${\mathbb{C}}(S_q)$ and we denote the resulting cumulants (called natural cumulants) by $k(X_1,\dots,X_n)$. However, sometimes it is more convenient to take as the product of random variables the disjoint product $\bullet$; we denote the resulting cumulants (called disjoint cumulants) by $k^{\bullet}(X_1,\dots,X_n)$.

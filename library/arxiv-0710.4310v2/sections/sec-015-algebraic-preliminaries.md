@@ -8,32 +8,17 @@ pages: 18-19
 source_pdf: 0710.4310v2.pdf
 source_sha256: 9a7757f998b7f680
 doc_brief: "On Two-Dimensional Holonomy João Faria Martins Centro de Matemática da Universidade do Porto — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold ( M, ∗) as the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.966
 ---
-LetM be a smooth manifold. Consider a diﬀerential crossed module G = (∂ : e → g,⊲ ).
-In particular the map ( X,e ) ∈ g × e ↦→X⊲e ∈ e is bilinear.
-Leta ∈ An(M, g) and b ∈ Am(M, e) be g- and e-valued (respectively) diﬀer-
-ential forms on M . We deﬁne a ⊗⊲b as being the e-valued covariant tensor ﬁeld
-on M such that
-(a⊗⊲b)(A1,...,A n,B 1,...B m) = a(A1,...,A n)⊲b(B1,...,B m);Ai,Bj ∈ X(M ).
-We also deﬁne an alternating tensor ﬁeld a ∧⊲b ∈ An+m(M, e), being given by
-a ∧⊲b = (n +m)!
-n!m! Alt(a ⊗⊲b).
-Here Alt denotes the natural projection from the vector space o f e-valued co-
-variant tensor ﬁelds on M onto the vector space of e-valued diﬀerential forms
-on M .
-For example, if a ∈ A1(M, g) and b ∈ A2(M, e), then a ∧⊲b satisﬁes:
-(a ∧⊲b)(X,Y,Z ) = a(X)⊲b (Y,Z ) +a(Y )⊲b (Z,X ) +a(Z)⊲b (X,Y ), (10)
-18
-where X,Y,Z ∈ X(M ).
-Note that the formula:
-d(a ∧⊲b) = da ∧⊲b + (−1)na ∧⊲db,
-where a ∈ An(M, g) and b ∈ Am(M, e), holds trivially.
-As as example of this notation, let P → M be a principal G-bundle over
-the manifold M . Let ω ∈ A1(P, g) be a connection 1-form on M . Then the
-structure equation for the curvature form Ω = Dω of ω can be written as:
-Ω = dω + 1
-2ω ∧adω,
-where ad denotes the adjoint action of g on g. Furthermore the Bianchi identity
-can be written as:
-dΩ + ω ∧ad Ω = 0;
-see 1.1.2.
+Let $M$ be a smooth manifold. Consider a differential crossed module ${\mathfrak{G}=(\d\colon \le \to \lg,\tr)}$. In particular the map $(X,e) \in \lg \times \le  \mapsto X \tr e \in \le$ is bilinear.
+
+Let $a \in \A^n(M,\lg )$ and $b \in \A^m(M,\le)$ be $\lg$- and $\le$-valued (respectively) differential forms on $M$. We define $a \tn^\tr b$ as being the $\le$-valued covariant tensor field on $M$ such that $$(a \tn^\tr b)(A_1,\ldots, A_n,B_1,\ldots B_m)= a (A_1,\ldots, A_n)\tr b(B_1,\ldots, B_m);A_i,B_j \in \X(M).$$ We also define an alternating tensor field $a \wedge^\tr b \in \A^{n+m}(M,\le)$, being given by $${ a \wedge^\tr b=\frac{(n+m)!}{n! m!}{\rm Alt}(a  \tn^\tr b).}$$ Here ${\rm Alt}$ denotes the natural projection from the vector space of $\le$-valued covariant tensor fields on $M$ onto the vector space of $\le$-valued differential forms on $M$.
+
+For example, if $a \in \A^1(M,\lg)$ and $b \in \A^2(M,\le)$, then $a \wedge^\tr b$ satisfies: $$\label{BB}
+(a \wedge^\tr b)(X,Y,Z)=a(X) \tr b(Y,Z)+a(Y) \tr b(Z,X)+a(Z) \tr b(X,Y),$$ where $X,Y,Z \in \X(M).$
+
+Note that the formula: $$d (a  \wedge^\tr b)=d a  \wedge^\tr b  +(-1)^n a  \wedge^\tr d b,$$ where $a \in \A^n(M,\lg)$ and $b \in \A^m(M,\le)$, holds trivially.
+
+As as example of this notation, let $P\to M$ be a principal $G$-bundle over the manifold $M$. Let $\w \in \A^1(P,\lg)$ be a connection 1-form on $M$. Then the structure equation for the curvature form $\W=D \w$ of $\w$ can be written as: $$\W=d\w+{\frac{1}{2}}\w \wedge^{\ad} \w,$$ where $\ad$ denotes the adjoint action of $\lg$ on $\lg$. Furthermore the Bianchi identity can be written as: $$d \W+\w\wedge^{\ad} \W=0;$$ see [\[curv\]](#curv){reference-type="ref" reference="curv"}.

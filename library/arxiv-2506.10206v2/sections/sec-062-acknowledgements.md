@@ -8,6 +8,8 @@ pages: 38-38
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
 doc_brief: "Analytic dilogarithm identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-The author thanks John Maxwell Campbell for help with the exposition in this paper and
-for help with the typesetting and formatting for this paper.
+The author thanks John Maxwell Campbell for help with the exposition in this paper and for help with the typesetting and formatting for this paper.

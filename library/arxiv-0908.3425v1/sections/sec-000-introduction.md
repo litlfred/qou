@@ -7,10 +7,10 @@ section_number: null
 pages: 1-3
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
-text_source: latex
-latex_prose_ratio: 0.602
-latex_coverage_ratio: 0.786
 doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.994
 ---
 Effective field theory (EFT) is a powerful tool in the description of the strong interactions at low energies. The central idea is due to Weinberg [@Weinberg:1978kz]:
 
@@ -22,7 +22,7 @@ For the low-energy properties of the strong interactions and the setting up of a
 
 According to the Goldstone theorem, a breakdown of the chiral $\mbox{SU(3)}_L\times\mbox{SU(3)}_R$ symmetry at the Lagrangian level to the $\mbox{SU(3)}_V$ symmetry in the ground state implies the existence of eight massless pseudoscalar Goldstone bosons. The finite masses of the pseudoscalar octet of the real world are attributed to the explicit chiral symmetry breaking due to the quark masses in the QCD Lagrangian. Due to the vanishing of the Goldstone boson masses in the chiral limit in combination with their vanishing interactions in the zero-energy limit, a derivative and quark-mass expansion is the natural scenario for an EFT. The corresponding method is called (mesonic) chiral perturbation theory (ChPT) [@Gasser:1983yg], with the Goldstone bosons as the relevant effective degrees of freedom (see Table [1](#1:table_QCD_EFT){reference-type="ref" reference="1:table_QCD_EFT"}).
 
-:::: center
+::: center
 ::: {#1:table_QCD_EFT}
                             Fundamental theory               Effective field theory
   ----------------------- ---------------------- ----------------------------------------------
@@ -34,7 +34,7 @@ According to the Goldstone theorem, a breakdown of the chiral $\mbox{SU(3)}_L\ti
 :::
 
 []{#1:table_QCD_EFT label="1:table_QCD_EFT"}
-::::
+:::
 
 Using these effective degrees of freedom, physical quantities are calculated in terms of an expansion in $q/\Lambda_\chi$, where $q$ stands for momenta or masses of the pseudoscalar octet that are smaller than the energy/mass scale $\Lambda_\chi={\cal O}(1\,\mbox{GeV})$ associated with spontaneous symmetry breaking. Since an EFT is based on the most general Lagrangian, which includes all terms that are compatible with the symmetries of the underlying theory, the corresponding Lagrangian contains an infinite number of terms, where each term is accompanied by a low-energy coupling constant (LEC). The method that allows one to decide which terms contribute in a calculation up to a certain accuracy is called Weinberg's power counting. In the mesonic sector, the combination of dimensional regularization with the modified minimal subtraction scheme of ChPT leads to a straightforward correspondence between the loop expansion and the chiral expansion in terms of momenta and quark masses at a fixed ratio. In actual calculations only a finite number of terms in the expansion in $q/\Lambda_\chi$ has to be considered and thus one has predictive power. What distinguishes the EFT approach from purely phenomenological approaches is the possibility of a systematic improvement. Mesonic ChPT has been tremendously successful and may be considered as a full-grown and mature area of low-energy particle physics.
 

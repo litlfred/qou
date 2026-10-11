@@ -5,7 +5,8 @@
   "file": "9308276v1.pdf",
   "sha256": "498931b15afb3f650b39794aa3624328e154dd4ae3ee83e68564ee4b11000aff",
   "bytes": 206018,
-  "pages": 24
+  "pages": 24,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -598,6 +599,173 @@
   "likely_scanned": false,
   "toc_entries": 39,
   "sections": 29,
-  "chars_total": 46113
+  "chars_total": 46113,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 11,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.266,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-2-the-electroweak-chiral-lagrangian",
+     "title": "The electroweak chiral Lagrangian",
+     "prose_ratio": 0.384,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-4-t-r",
+     "title": "T r",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-b\u00b5-\u03c4-3-2",
+     "title": "B\u00b5 \u03c4 3. (2)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-2-\u03c02\u03c41-\u03c01\u03c42",
+     "title": "(\u03c02\u03c41 \u2212 \u03c01\u03c42) +",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-2-b\u00b5\u03bdt-r",
+     "title": "B\u00b5\u03bdT r",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-2-b\u00b5\u03bdt-r-t-v-\u00b5-v-\u03bd",
+     "title": "B\u00b5\u03bdT r (T [V \u00b5, V \u03bd])",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-2-the-relation-with-longhitanos-notation-is-the",
+     "title": "The relation with Longhitano\u2019s notation is the following: a0 = g2\u03b21 ; a1 = g",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-3-e\ufb00ective-lagrangian-parameters-for-a-heavy-hig",
+     "title": "E\ufb00ective Lagrangian parameters for a heavy Higgs",
+     "prose_ratio": 0.794,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-0-\u00b5-g2-1",
+     "title": "(\u00b5) = g\u20322 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-1-\u00b5-1",
+     "title": "(\u00b5) = 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-3-\u00b5-1",
+     "title": "(\u00b5) = \u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-8-\u00b5-0-\u03b4a-8-0",
+     "title": "(\u00b5) = 0 , \u03b4a 8 = 0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-9-\u00b5-0-\u03b4a-9-0",
+     "title": "(\u00b5) = 0 , \u03b4a 9 = 0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-12-\u00b5-0-\u03b4a-12-0",
+     "title": "(\u00b5) = 0 , \u03b4a 12 = 0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-13-\u00b5-0-\u03b4a-13-0",
+     "title": "(\u00b5) = 0 , \u03b4a 13 = 0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-10-\u00b5-l",
+     "title": "(\u00b5) = L",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-10-\u00b5-1",
+     "title": "(\u00b5) \u2212 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-3-\u00b5",
+     "title": "(\u00b5)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-9-\u00b5-1",
+     "title": "(\u00b5) + 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-3-\u00b5-a",
+     "title": "(\u00b5) \u2212 a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-4-some-physical-consequences",
+     "title": "Some physical consequences",
+     "prose_ratio": 0.393,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-0-mz",
+     "title": "(MZ)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-8-mz-a",
+     "title": "(MZ) + a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-3-\u00b5-g2",
+     "title": "(\u00b5) + g\u20322",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-5-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.886,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-4-m-2",
+     "title": "M 2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

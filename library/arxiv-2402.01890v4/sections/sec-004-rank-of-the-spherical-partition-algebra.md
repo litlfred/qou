@@ -7,10 +7,10 @@ section_number: null
 pages: 7-9
 source_pdf: 2402.01890v4.pdf
 source_sha256: e1eeb2865f0b53e1
-text_source: latex
-latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.916
 doc_brief: "On the spherical partition algebra — For k ∈ N we introduce an idempotent subalgebra, the spherical partition algebra SP k, of the partition algebra Pk, that we define using an embedding associated"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{Rank of the}
 As a $ \CC[x]$-module $ \SpheAlg $ is automatically free,

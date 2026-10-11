@@ -7,10 +7,10 @@ section_number: 3
 pages: 6-9
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
-text_source: latex
-latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.978
 doc_brief: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz"
+text_source: latex
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 0.966
 ---
 []{#sec:results label="sec:results"}
 
@@ -22,31 +22,27 @@ The chief consequence of the strong Rayleigh property that we use to prove conce
 :::
 
 ::: unremarks
-$(i)$ Replacing $f$ with $-f$ gives immediate two-sided bounds: $$\begin{equation}
- \label{eq:two sided}
-{\mathbb P}(|f - {\mathbb E}f| > a) \leq 2 \exp \left ( \frac{-a^2}{8 k} \right )  \, .
-\end{equation}$$ $(ii)$ Replacing every $X_i$ by $1 - X_i$ if necessary, we may assume without loss of generality that $k \leq n/2$, whence $$\begin{equation}
- \label{eq:k to n}
-{\mathbb P}(f - {\mathbb E}f > a) \leq \exp \left ( \frac{-a^2}{4 n} \right ) \, .
-\end{equation}$$
+$(i)$ Replacing $f$ with $-f$ gives immediate two-sided bounds: $$\label{eq:two sided}
+{\mathbb P}(|f - {\mathbb E}f| > a) \leq 2 \exp \left ( \frac{-a^2}{8 k} \right )  \, .$$ $(ii)$ Replacing every $X_i$ by $1 - X_i$ if necessary, we may assume without loss of generality that $k \leq n/2$, whence $$\label{eq:k to n}
+{\mathbb P}(f - {\mathbb E}f > a) \leq \exp \left ( \frac{-a^2}{4 n} \right ) \, .$$
 :::
 
 For strong Rayleigh measures that are not necessarily homogeneous, we have the following result.
 
 ::: thm
-[]{#th:general label="th:general"} Let ${\mathbb P}$ be strong Rayleigh with mean $\mu= {\mathbb E}N$. Let $f : {\mathcal B}_n \to \mathbb{R}$ be Lipschitz-1. Then $$\begin{eqnarray*}
+[]{#th:general label="th:general"} Let ${\mathbb P}$ be strong Rayleigh with mean $\mu= {\mathbb E}N$. Let $f : {\mathcal B}_n \to \mathbb{R}$ be Lipschitz-1. Then $$\begin{aligned}
 {\mathbb P}(f - {\mathbb E}f > a) & \leq &
    3 \exp \left ( - \frac{a^2}{16 (a + 2 \mu)} \right ) \, ;  \\[1ex]
 {\mathbb P}(|f - {\mathbb E}f| > a) & \leq &
    5 \exp \left ( - \frac{a^2}{16 (a + 2 \mu)} \right ) \, .
-\end{eqnarray*}$$
+\end{aligned}$$
 :::
 
 ::: unremark
 Because $a, \mu\leq n$, the denominator in these inequalities may be replaced by $48 n$.
 :::
 
-## Continuous versions {#continuous-versions .unnumbered}
+## Continuous versions
 
 Continuous versions of these results may be stated in terms of point processes, which we now briefly review. Formally, a point process on a space $S$ is a random counting measure on $S$. In other words, a point process is a map ${\cal Z}$ defined on a probability space $(\Omega , {\mathcal F}, {\mathbb P})$ taking values in the space of counting measures on $S$, a counting measure being one that takes only integer values or $+\infty$. Intuitively, one envisions the sample counting measure ${\cal Z}(\omega)$ as a set of points such that the sum of delta functions at these points is the sample counting measure.
 
@@ -83,11 +79,11 @@ Next, given a $k$-homogeneous point process ${\cal Z}$ on a space $S$, we let ${
 For point processes that are not homogeneous, as in the discrete case, we require more than the SCP. Rather than defining a notion of strong Rayleigh here, we will stick to the case of determinantal point processes, this being where all of our examples arise; see Section [\[s:continuous\]](#s:continuous){reference-type="ref" reference="s:continuous"} for definitions.
 
 ::: thm
-[]{#th:continuous label="th:continuous"} Let ${\cal Z}$ be a determinantal point process with ${\mathbb E}N = \mu< \infty$. Let $f$ be a Lipschitz-1 function on finite counting measures. Then $$\begin{eqnarray*}
+[]{#th:continuous label="th:continuous"} Let ${\cal Z}$ be a determinantal point process with ${\mathbb E}N = \mu< \infty$. Let $f$ be a Lipschitz-1 function on finite counting measures. Then $$\begin{aligned}
 {\mathbb P}(f - {\mathbb E}f \geq a )
    & \leq & 3 \exp \left ( - \frac{a^2}{16 (a + 2\mu)} \right )
    \, ; \\[1ex]
 {\mathbb P}(|f - {\mathbb E}f \geq a )
    & \leq & 5 \exp \left ( - \frac{a^2}{16 (a + 2\mu)} \right ) \, .
-\end{eqnarray*}$$
+\end{aligned}$$
 :::

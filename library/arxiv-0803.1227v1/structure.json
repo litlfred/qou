@@ -160,7 +160,7 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.951,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
@@ -168,32 +168,32 @@
     {
      "id": "sec-001-the-linear-programming-method-on-homogeneous-spa",
      "title": "The linear programming method on homogeneous spaces",
-     "prose_ratio": 0.941,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-the-case-of-unitary-codes",
      "title": "The case of unitary codes",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-analytic-bounds-of-low-degree",
      "title": "Analytic bounds of low degree",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-numerical-bounds",
      "title": "Numerical bounds",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -201,7 +201,7 @@
      "id": "sec-005-conclusions",
      "title": "Conclusions",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.236,
+     "coverage_ratio": 0.312,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]

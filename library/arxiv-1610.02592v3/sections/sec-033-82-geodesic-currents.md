@@ -7,10 +7,10 @@ section_number: 8.2
 pages: 230-246
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.968
-latex_coverage_ratio: 0.803
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We will prove Thurston's compactification Theorem \ref{compattificazione:teo} using a slightly different perspective. We are guided by the analogy with the hyperbolic space: when we embed (actually, define) the space $\matH^n$ in $\matR^{n+1}$, we make an essential use of the lorentzian form $\langle,\rangle$ in $\matR^{n+1}$, so that $\matH^n$ consists of some points $v$ with $\langle v,v \rangle = -1$, and $\partial \matH^n$ may be identified with the light cone rays, that is the rays spanned by vectors $v$ with $\langle v , v \rangle = 0$.
 
@@ -19,6 +19,7 @@ It would be nice to have a similar nice bilinear form $\langle,\rangle$ on $\mat
 In geometric measure theory, a \emph{current} is a measure on some space, which generalises the notion of $m$-dimensional submanifold in a $n$-manifold. A \emph{geodesic current} is a similar tool introduced by Bonahon in 1988 specifically designed for geodesics on hyperbolic surfaces.
 
 We will see that the geodesic currents are indeed equipped with a bilinear form, which generalises beautifully both the intersection number $i(\alpha, \beta)$ of curves and the length functions $\ell^\gamma$ on the Teichm\"uller space.
+
 
 \subsection{Geodesics}
 From now on, and through all the rest of this chapter, we will consider geodesics only as subsets, neglecting their parametrisation.
@@ -72,6 +73,7 @@ Proposition \ref{orbit:discrete:prop} implies in particular that the $\Gamma$-or
 
 Recall from Corollary \ref{unique:closed:geodesic:cor} that every homotopically non-trivial closed curve in $S_g$ is homotopic to a unique closed geodesic. 
 
+
 \subsection{Geodesic currents} \label{correnti:subsection}
 We now introduce a measure-theoretical notion which is at first sight unrelated with everything we have seen up to now; we will later show that, on the contrary, it generalises many of the geometric objects that we have encountered in the last pages. The basic notions of measure theory that we will need are summarised in Section \ref{measure:theory:section}.
 
@@ -83,6 +85,7 @@ A \emph{geodesic current} on $S_g$ is a locally finite $\Gamma$-invariant Borel 
 We denote by $\calC = \calC (S_g)$ the set of all the geodesic currents in $S_g$. It is a subset of the space $\calM(\calG)$ of all the locally finite Borel measures on $\calG$, closed with respect to sums and products with non-negative scalars, and it inherits its topology, see Section \ref{topology:measure:subsection}.
 
 The currents space $\calC$ is independent of the auxiliary hyperbolic metric on $S_g$ up to canonical isomorphisms, since the pair $(\calG, \Gamma)$ is.
+
 
 \subsection{Closed geodesics}
 We now introduce a fundamental example of geodesic current.
@@ -107,6 +110,7 @@ Since $l$ is atomic and $\mu$ is $\Gamma$-invariant and locally finite, the $\Ga
 
 It is an important aspect of the theory that atomic points may be only of a very specific type. We remind that many closed geodesics are not simple.
 
+
 \subsection{Pencils} \label{pencils:subsection}
 We have determined the 0-dimensional subsets of $\calG$ that may have positive mass, and we now look at some natural 1-dimensional ones. Let a \emph{pencil} $p\subset\calG$ of lines centred at $a\in\partial \matH^2$ be some Borel set of lines all having one endpoint at $a$, as in Figure \ref{pencil-box:fig}-(left).\index{pencil}
 
@@ -129,6 +133,7 @@ It suffices to consider the case where $p$ contains no axis, and consists of all
 As the lines in $p$ point to $a$, they project in $S_g$ to a narrow beam of lines that go on running forever and exponentially-narrowing in $S_g$ but never close up. There is a disc $D\subset S_g$ intersecting them infinitely many times, hence a lift $D\subset \matH^2$ intersects infinitely many disjoint $\Gamma$-translates of $p$. The lines intersecting $D$ form a compact subset of $\calG$, hence $\mu(p)=0$.
 \end{proof}
 
+
 \subsection{Boxes}
 We now investigate some natural 2-dimensional subsets of $\calG$. Let $a,b,c,d \in \partial \matH^2$ be four distinct counterclockwise-ordered points as in Figure \ref{pencil-box:fig}-(right): these determine two disjoint arcs $[a,b], [c,d] \subset \partial \matH^2$ and hence a compact set $B=[a,b] \times [c,d] \subset \calG$ consisting of all lines with endpoints in $[a,b]$ and $[c,d]$, see Figure \ref{pencil-box:fig}-(right). We call this compact set $B$ a \emph{box}.\index{box}
 
@@ -142,6 +147,7 @@ If $\mu_i \rightharpoonup \mu$ is a converging sequence of geodesic currents and
 \begin{proof}
 By Proposition \ref{delta:zero:prop} it suffices to prove that $\mu(\partial B) = 0$, and this follows from Proposition \ref{pencils:prop}.
 \end{proof}
+
 
 \subsection{Rigidity of atoms}
 We now use boxes to prove that the atomic points in $\calC$ are somehow rigid. 
@@ -175,6 +181,7 @@ By contradiction, suppose $U$ contains a closed geodesic $\eta$. Since $\eta(B)>
 \end{proof}
 
 We have classified the elements in $\calC$ supported on discrete sets, and it is now time to  introduce some geodesic currents supported on the whole of $\calG$.
+
 
 \subsection{The Liouville measure}
 There is a continuous measure on $\calG = \calG(\matH^2)$ that is invariant under the action of the whole isometry group $\Iso(\matH^2)$. This measure is called the \emph{Liouville measure}, and is defined as follows.\index{Liouville measure}
@@ -254,6 +261,7 @@ $$L(B) = \big| \log \beta(a,b,c,d) \big|$$
 where $\beta$ is the cross-ratio of the four points.
 \end{ex}
 
+
 \subsection{The Liouville current}
 Let now $S_g=\matH^2/_\Gamma$ be equipped with a hyperbolic metric. The Liouville measure on $\calG$ is $\Iso(\matH^2)$-invariant: in particular it is $\Gamma$-invariant and hence defines a current $L \in \calC(S_g)$, called the \emph{Liouville current}.\index{Liouville current} 
 
@@ -268,6 +276,7 @@ We constructed the Liouville current $L_m$ by assigning to $\calG$ a differentia
 
 The crucial feature that makes $\calC$ preferable to $\matP(\matR^\calS)$ as a comfortable ambient space for both $\calS$ and $\Teich(S_g)$ is the existence of a nice bilinear form in $\calC$ that extends both the length and the geometric intersection of closed geodesics. We now introduce this bilinear form.
 
+
 \subsection{The projective frame bundle}
 We denote by $\calI \subset \calG \times \calG$ the open subset consisting of all the pairs of \emph{incident} distinct lines in $\matH^2$. We give $\calI$ the topology induced by $\calG \times \calG$, hence $\calI$ is an open topological 4-manifold. Since two distinct incident lines intersect in a single point $p\in\matH^2$, the set $\calI$ can be interpreted as the set of triples $(p,l_1,l_2)$ with $p\in \matH^2$ and $l_1,l_2$ two distinct vector lines in the tangent plane $T_p\matH^2$.
 
@@ -280,6 +289,7 @@ The group $\Gamma$ acts freely and properly discontinuously on $\matH^2$, and he
 \end{proof}
 
 In particular $\calI/_\Gamma$ is a four-manifold, and it is naturally a bundle over $S_g$, whose fibre above $p\in S_g$ consists of the ordered pairs of distinct vector lines $l_1,l_2$ in $T_pS_g$. Recall that the \emph{frame bundle} on a manifold $M$ is a bundle whose fibre above $p\in M$ is the set of all \emph{frames} (i.e.~basis) in $T_pM$. The space $\calI/_\Gamma$ can be seen as some projective quotient of the frame bundle on $S_g$.
+
 
 \subsection{Intersection form}
 Two geodesic currents $\alpha, \beta \in \calC = \calC(S_g)$ induce a $\Gamma$-invariant product measure $\alpha\times \beta$ on $\calG\times \calG$ and hence on $\calI$. This measure descends via the covering $\calI \to \calI/_\Gamma$ to a measure on $\calI/_\Gamma$ which we still indicate by $\alpha\times \beta$, see Section \ref{measure:descends:subsection}.\index{intersection form on currents}
@@ -299,6 +309,7 @@ Therefore $i(\alpha,\beta) = (\alpha\times \beta) (\calI/_\Gamma) < \alpha(X) \c
 \end{proof}
 
 The form $i$ is clearly bilinear and symmetric. 
+
 
 \subsection{Geometric intersection and length of closed geodesics}
 We now show that this abstract-looking intersection form generalises both the geometric intersection and the length of simple closed geodesics.
@@ -355,6 +366,7 @@ As we mentioned, there is an evident analogy between the embeddings $\Teich(S_g)
 
 We may compactify $\matH^n$ by projecting the hyperboloid to the Klein model $K^n\subset \matRP^{n}$. Now $K^n$ is an open disc, whose boundary is the image of the light cone. We would like to apply the same compactification strategy to $\Teich(S_g)$. Before doing that, we need to prove a slightly technical fact: that the bilinear form $i$ is continuous. 
 
+
 \subsection{Continuity of the intersection form}
 Let $S_g=\matH^2/_\Gamma$ be a closed hyperbolic surface.
 The following theorem is not obvious because $\calI$ is not compact: the proof relies on the fact that closed geodesics form a discrete rigid set in $\calC$ and therefore atomic points cannot ``escape to infinity'' on a converging sequence of currents.
@@ -389,6 +401,7 @@ $$(\beta_1 \times \beta_2) (\Psi(B)) \leqslant \beta_1(B' \sqcup B'') \cdot \bet
 is smaller than $\varepsilon' (\beta_1(B) + \beta_2(B))$ and hence by summing on the $B_i$ we get again a contribution smaller than $2\varepsilon' K < \varepsilon$.
 \end{proof}
 
+
 \subsection{Filling geodesic currents}
 We now define an interesting class of currents, whose importance will be evident in the next section.
 
@@ -412,6 +425,7 @@ Let $\alpha$ and $\beta$ be currents. We have $i(\alpha,\beta)>0$ if and only if
 \begin{cor} \label{riempie:cor}
 If $\alpha$ fills $S_g$ then $i(\alpha,\beta)>0$ for every non-trivial $\beta\in\calC$.
 \end{cor}
+
 
 \subsection{A compactness criterion}
 We now state a simple and general compactness criterion for subsets of $\calC$ that has various nice (and apparently unrelated) geometric consequences.
@@ -462,6 +476,7 @@ Let $\gamma_1,\ldots, \gamma_k$ be some simple closed curves that fill $S_g$. Fo
 
 We are finally ready to construct Thurston's compactification of the Teichm\"uller space, using Bonahon's geodesic currents. 
 
+
 \subsection{Projective currents}
 As usual, we pick a hyperbolic closed surface $S_g=\matH^2/_\Gamma$.
 The currents space $\calC$ is equipped with a multiplication by positive scalars, hence we can define its projectivisation
@@ -497,6 +512,7 @@ In particular $[\alpha]\not\in \pi(\Teich(S_g))$. Therefore the restriction $\pi
 
 We will since now consider both $\calS$ and $\Teich(S_g)$ embedded in $\matP\calC$. 
 
+
 \subsection{Thurston's compactification}
 We consider the closure $\overline{\Teich(S_g)}$ of $\Teich(S_g)$ inside $\matP\calC$. This closure is compact since $\matP\calC$ is, and it is called the \emph{Thurston compactification} of Teichm\"uller space. We define its \emph{boundary} simply as
 $$\partial\Teich(S_g) = \overline{\Teich(S_g)} \setminus \Teich(S_g).$$ 
@@ -508,6 +524,7 @@ The Thurston boundary consists of projective currents $[\alpha]$ with $i(\alpha,
 \end{prop}
 
 We will later prove that the Thurston boundary actually consists of \emph{all} the projective currents $[\alpha]$ with $i(\alpha,\alpha)=0$. For the moment we content ourselves with some examples. 
+
 
 \subsection{Weighted pants decompositions}
 We construct some geodesic currents based on geodesic pants decompositions. We will need the following.
@@ -540,6 +557,7 @@ Let $\gamma\in\calS$ be a simple closed curve and $\mu\in\calC$ be a non-trivial
 \begin{proof}
 Extend $\gamma=\gamma_1$ to a geodesic pants decomposition $\beta = \sum_i\gamma_i$. The previous lemma implies that $\mu = \sum_i\lambda_i\gamma_i$ and by letting the pants decomposition vary we get $\mu = \lambda_1\gamma_1$.
 \end{proof}
+
 
 \subsection{Pinching and twisting} \label{pinching:twisting:subsection}
 How can we construct sequences of hyperbolic metrics on $S_g$ that converge to some point at infinity? We can do this quite easily by \emph{pinching} a simple geodesic, or by \emph{twisting} along it. 

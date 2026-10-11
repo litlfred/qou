@@ -7,10 +7,10 @@ section_number: 9
 pages: 26-30
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
-text_source: latex
-latex_prose_ratio: 0.819
-latex_coverage_ratio: 0.979
 doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.823
 ---
 I'm not sure why complexity theorists never remarked on the similarity of quantum complexity and classical entropy, or the existence of a second law of complexity\footnote{There is a very interesting paper by Zurek  in which he argues that that the classical entopy of a system is the ensemble average of the Kolmogorov algorithmic complexity of states in phase space. [W. Zurek,  Phys.\ Rev.\ A {\bf 40}, 4731 (1989)] The idea is very similar to the connection between quantum-computational-complexity and entropy described by Brown et.al in  \url{https://arxiv.org/pdf/1701.0110.pdf}}. 
  Just to be clear, although ensemble-averaged complexity is a kind of entropy it is NOT conventional entropy. The conventional entropy of a system of $K$ qubits is bounded by $K\log{2}$, the logarithm of the maximum number of mutually orthogonal vectors in the Hilbert space. By contrast the maximum  complexity is exponential in $K$.  Maximum complexity $\sim 4^K\log{1/\epsilon}$, the number of $\epsilon$-balls in $\suk.$ 
@@ -87,81 +87,4 @@ From there the dynamical red trajectory continues. With overwhelming likelihood 
 
 Eventually the auxiliary particle will find its way back to low complexity and the cycle will repeat but this takes a quantum-recurrence time, $\exp \exp K$.
 
-Note that the transition from linearly increasing complexity to equilibrium at the top of the curve is sudden. It's similar to a first order phase transition where another local minimum crosses over and becomes the global minimum.  
-
-
-\subsection{Hamiltonian Evolution}
-
-In the live lectures at PiTP I ran out of time before I had a chance to discuss how complexity evolves when a system's dynamics is governed by a time independent \kl \ Hamiltonian. In that case the constraint of energy conservation restricts the motion of $U(t)$ to lie on a relatively low dimensional subspace of \Suk. Let's write $U(t)$ in the form,
-\bea
-U(t) \eq e^{\-iHt}  \cr \cr
-\eq \sum_{i=1}^{2^K} |E_i\ra \la E_i| e^{-iE_i t}
-\eea
-For a given Hamiltonian the motion is restricted to a torus defined by the set of $2^K$ phases,
-\be 
-e^{i\theta_i} = e^{-iE_i t}.
-\ee
-In other words $U(t)$ moves on a $2^K$-dimensional torus embedded in the $(4^K-1)$-dimensional group \Suk. Although in itself a very large space the torus can only cover a tiny fraction of the full \Suk \ space. 
-
-The first question is whether $U(t)$ fills the torus? Typically the answer is yes. If the energy levels are incommensurate, as will be the case if the system is chaotic, then the motion will be ergodic on the torus. The recurrence time for $U$ to return to the neighborhood of the identity  is the time for all the phases to get simultaneously close to $1$, and that takes time,
-\be 
-t_{recur}\sim \exp{2^K}.
-\ee
-This is in contrast to the recurrence time $\sim \exp{4^K}$  random (Brownian) circuits which fill the entire $4^K$-dimensional unitary group. Therefore it is not possible for $U(t)$ to visit any but an infinitesimal  fraction of the  maximally complex unitaries with $\CC\sim 4^K.$ 
-
-On the other hand the unitaries of complexity $\leq 2^K$ comprise a set with volume comparable to the torus. It is therefore likely that for a Hamiltonian system the growth of complexity in figure \ref{2nd-law}  reaches $2^K$.
-
-\bn
-
-This raises an interesting question: In equation \ref{N=expC} I estimated the volume of the portion of \Suk \ with complexity $\CC$ and got,
-$$e^{\CC \log{K}}.$$  That was the basis for the connection between complexity and the entropy of the auxiliary system, \ref{CsimS},
-$$
-S_{\CA} \approx \CC \log{K}.
-$$
-
-A similar question can be formulated for motion restricted to the torus: What is the volume of the torus occupied by unitaries of complexity $\CC?$ I expect that the answer is exponential,
-$e^{ \alpha \CC}$,
- but with $\alpha$ parametrically smaller than $ \log {K}$. My guess is that $\alpha$ is independent of $K.$ In that case \ref{CsimS} would be replaced by,
- \be 
- S_{\CA} \approx \CC.
- \ee
-
-
-
-
-\bn
-
-This concludes lecture I. In the next lecture I will explain what   complexity and its second law has to do with black holes.
-
-
-
-
-
-
-
-
-
-
-\rightline{}
-\bigskip
-\bigskip\bigskip\bigskip\bigskip
-\bigskip
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-\part{Lecture II: Black Holes and the Second Law of Complexity}
+Note that the transition from linearly increasing complexity to equilibrium at the top of the curve is sudden. It's similar to a first order phase transition where another local minimum crosses over and becomes the global minimum.

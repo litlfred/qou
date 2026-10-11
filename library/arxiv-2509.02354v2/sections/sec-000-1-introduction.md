@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-3
 source_pdf: 2509.02354v2.pdf
 source_sha256: 14680221e597fe61
-text_source: latex
-latex_prose_ratio: 0.957
-latex_coverage_ratio: 0.858
 doc_brief: "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms — We derive an explicit formula for the holonomyR-matrix of quantumsl2 at a root of unity."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.991
 ---
 []{#sec:Introduction label="sec:Introduction"}
 
@@ -28,8 +28,8 @@ In [@McPhailSnyderVolume] our $R$-matrices are used to define knot and tangle in
 
 This paper is a mix of an overview of known material and original results. We include the overview to collect material scattered over a large number of papers.
 
-In [\[sec:q-algebra\]](#sec:q-algebra){reference-type="ref+label" reference="sec:q-algebra"} we establish conventions on quantum $\sla$ and its presentation in terms of Weyl algebras. [\[sec:root of unity\]](#sec:root of unity){reference-type="ref+Label" reference="sec:root of unity"} is an overview of elements of representation theory of quantum $\sla$ and its braiding. In [\[sec:R-matrix\]](#sec:R-matrix){reference-type="ref+label" reference="sec:R-matrix"} we construct the braiding matrix (the holonomy $R$-matrix) using $q$-dilogarithms and prove it satisfies holonomy braid relations. [\[sec:R-matrix-computations\]](#sec:R-matrix-computations){reference-type="ref+Label" reference="sec:R-matrix-computations"} contains some technical computations involving the $R$-matrix that we use elsewhere in the paper. [\[sec:quantum-dilogarithms\]](#sec:quantum-dilogarithms){reference-type="ref+label" reference="sec:quantum-dilogarithms"} has technical details on quantum dilogarithms and collects properties used throughout the paper.
+In [\[sec:q-algebra\]](#sec:q-algebra){reference-type="ref" reference="sec:q-algebra"} we establish conventions on quantum $\sla$ and its presentation in terms of Weyl algebras. is an overview of elements of representation theory of quantum $\sla$ and its braiding. In [\[sec:R-matrix\]](#sec:R-matrix){reference-type="ref" reference="sec:R-matrix"} we construct the braiding matrix (the holonomy $R$-matrix) using $q$-dilogarithms and prove it satisfies holonomy braid relations. contains some technical computations involving the $R$-matrix that we use elsewhere in the paper. [\[sec:quantum-dilogarithms\]](#sec:quantum-dilogarithms){reference-type="ref" reference="sec:quantum-dilogarithms"} has technical details on quantum dilogarithms and collects properties used throughout the paper.
 
-### Acknowledgements {#acknowledgements .unnumbered}
+### Acknowledgements
 
 We would like to thank Nathan Geer, Rinat Kashaev, and Bertrand Patureau-Mirand for helpful discussions. The work of N. R. was supported by the Collaboration Grant "Categorical Symmetries" from the Simons Foundation, by the Changjiang fund, and by the project 075-15-2024-631 funded by the Ministry of Science and Higher Education of the Russian Federation.

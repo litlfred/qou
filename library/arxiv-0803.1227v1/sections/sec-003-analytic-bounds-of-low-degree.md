@@ -7,39 +7,27 @@ section_number: null
 pages: 5-7
 source_pdf: 0803.1227v1.pdf
 source_sha256: cf72e0fcdc7f3ddf
-text_source: latex
-latex_prose_ratio: 0.959
-latex_coverage_ratio: 1.0
 doc_brief: "Linear programming bounds for unitary space time codes — The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.968
 ---
 From the explicit description of the zonal functions [\[P1\]](#P1){reference-type="eqref" reference="P1"}, we have deduced convenient polynomials of low degree which verify the positivity property. Using formula ([\[FUNDA\]](#FUNDA){reference-type="ref" reference="FUNDA"}) we derive the analytic bounds of Theorems [\[THM1\]](#THM1){reference-type="ref" reference="THM1"} and [\[THM2\]](#THM2){reference-type="ref" reference="THM2"}.\
 
 ::: theorem
-[]{#THM1 label="THM1"} Let $\Code$ be a unitary space time code with diversity sum $\Sigma \Nu$, the following upper bounds hold : $$\begin{equation}
-     \noindent  \quad |\Code|\le  \frac{2(\Sigma \Nu)^2}{2(\Sigma \Nu)^2-1},
-    \quad \text{if }(\Sigma \Nu)^2 >\frac{1}{2}
-\end{equation}$$ $$\begin{equation}
-\label{DEG2SUM}
+[]{#THM1 label="THM1"} Let $\Code$ be a unitary space time code with diversity sum $\Sigma \Nu$, the following upper bounds hold : $$\noindent  \quad |\Code|\le  \frac{2(\Sigma \Nu)^2}{2(\Sigma \Nu)^2-1},
+    \quad \text{if }(\Sigma \Nu)^2 >\frac{1}{2}$$ $$\label{DEG2SUM}
    \quad |\Code| \le \frac{8n^2(\Sigma \Nu)^2}{4n^2(\Sigma \Nu)^2-(2n^2-1)}, 
-     \text{if }(\Sigma \Nu)^2 > \frac{2n^2-1}{4n^2}
-\end{equation}$$ $$\begin{equation}
-   \quad |\Code| \le \frac{16 n^2 (\Sigma \Nu)^2} {2n(2n-1)(\Sigma \Nu)^2-(2n^2-n-2)},
-\end{equation}$$ $$\\ \quad \text{if } (\Sigma \Nu)^2 \ge \frac{2n^2-n-2}{2n(2n-1)}$$\
+     \text{if }(\Sigma \Nu)^2 > \frac{2n^2-1}{4n^2}$$ $$\quad |\Code| \le \frac{16 n^2 (\Sigma \Nu)^2} {2n(2n-1)(\Sigma \Nu)^2-(2n^2-n-2)},$$ $$\\ \quad \text{if } (\Sigma \Nu)^2 \ge \frac{2n^2-n-2}{2n(2n-1)}$$\
 :::
 
 ::: theorem
-[]{#THM2 label="THM2"} Let $\Code$ be a unitary space time code with diversity product $\Pi \Nu$, the following upper bounds hold : $$\begin{equation}
-   |\Code| \le \frac{2(\Pi \Nu)^2}{2(\Pi \Nu)^2-1}, \quad \text{if }(\Pi \Nu)^2 > \frac{1}{{2}}
-\end{equation}$$
+[]{#THM2 label="THM2"} Let $\Code$ be a unitary space time code with diversity product $\Pi \Nu$, the following upper bounds hold : $$|\Code| \le \frac{2(\Pi \Nu)^2}{2(\Pi \Nu)^2-1}, \quad \text{if }(\Pi \Nu)^2 > \frac{1}{{2}}$$
 
-$$\begin{equation}
-\label{DEG2PROD}
-   |\Code| \le \frac{8n(\Pi \Nu)^2 }{4n(\Pi \Nu)^2-(2n-1) },  \text{if }(\Pi \Nu)^2 > \frac{2n-1}{4n}, \ n \ge 3
-\end{equation}$$
+$$\label{DEG2PROD}
+   |\Code| \le \frac{8n(\Pi \Nu)^2 }{4n(\Pi \Nu)^2-(2n-1) },  \text{if }(\Pi \Nu)^2 > \frac{2n-1}{4n}, \ n \ge 3$$
 
-$$\begin{equation}
-   |\Code| \le \frac{8(\Pi \Nu)^6+4(\Pi \Nu)^4+8(\Pi \Nu)^2}{8(\Pi \Nu)^6-\frac{1}{4}},
-\end{equation}$$\
+$$|\Code| \le \frac{8(\Pi \Nu)^6+4(\Pi \Nu)^4+8(\Pi \Nu)^2}{8(\Pi \Nu)^6-\frac{1}{4}},$$\
 $$\text{if }(\Pi \Nu)^2 \ge \frac{1}{2}, \ n=2.$$\
 :::
 

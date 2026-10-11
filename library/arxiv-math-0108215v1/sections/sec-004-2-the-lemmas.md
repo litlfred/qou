@@ -7,10 +7,10 @@ section_number: 2
 pages: 3-7
 source_pdf: 0108215v1.pdf
 source_sha256: 191784d2ccb3415a
-text_source: latex
-latex_prose_ratio: 0.875
-latex_coverage_ratio: 0.992
 doc_brief: "Möbius Energy of Thick Knots Eric J. Rawdon 2 — The M¨ obius energy of a knot is an energy functional for smoot h curves based on an idea of self-repelling."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.997
 ---
 []{#thelemmas label="thelemmas"}
 
@@ -63,13 +63,13 @@ For a fixed point $s$ on a circle $C$ of radius $R$, $$\int\nolimits_{t\in C} \f
 :::
 
 ::: pf
-Fix $s$ on a circle $C$ of radius $R$. Note that if $\mathrm{arc}(s,t)=\theta$, then $|s-t|^2=R^2(2- 2 \cos\theta)$. Thus, $$\begin{align*}
+Fix $s$ on a circle $C$ of radius $R$. Note that if $\mathrm{arc}(s,t)=\theta$, then $|s-t|^2=R^2(2- 2 \cos\theta)$. Thus, $$\begin{aligned}
 \int\nolimits_{t\in C} \frac{1}{|s-t|^2} -
 \frac{1}{\mathrm{arc}(s,t)^2} &= 
 2\int\nolimits_0^{\pi
 R}\frac{1}{R^2(2-2\cos(t/R))}-\frac{1}{t^2}\,\d t \\ 
 &= \frac{2}{\pi R}\;.
-\end{align*}$$ 0◻
+\end{aligned}$$ 0◻
 :::
 
 ::: lem
@@ -80,18 +80,16 @@ K}\int\nolimits_{\mathrm{arc}(x,y)\leq \pi R(K)}
 :::
 
 ::: pf
-We begin by rescaling $K$ to have $R(K)=1$; note this leaves each side of the inequality unchanged. Then $E_L(K)$ is just the new total arclength of $K$, which we abbreviate $L$. By Lemma [\[lsdr\]](#lsdr){reference-type="ref" reference="lsdr"}, the curvature of $K$ everywhere is $\leq \frac{1}{R(K)}=1$. For points $x,y$ on $K$ with $\mathrm{arc}(x,y) \leq \pi$, let $s,t$ be points on the circle, $C$, of radius $1=R(K)$, for which $\mathrm{arc}(s,t) = \mathrm{arc}(x,y)$. By Schur's Theorem (Lemma [\[schursthm\]](#schursthm){reference-type="ref" reference="schursthm"}), we have $|x-y| \geq |s-t|$, so $$\begin{equation}
-\frac{1}{|x-y|^2}-\frac{1}{\mathrm{arc}(x,y)^2} \leq 
+We begin by rescaling $K$ to have $R(K)=1$; note this leaves each side of the inequality unchanged. Then $E_L(K)$ is just the new total arclength of $K$, which we abbreviate $L$. By Lemma [\[lsdr\]](#lsdr){reference-type="ref" reference="lsdr"}, the curvature of $K$ everywhere is $\leq \frac{1}{R(K)}=1$. For points $x,y$ on $K$ with $\mathrm{arc}(x,y) \leq \pi$, let $s,t$ be points on the circle, $C$, of radius $1=R(K)$, for which $\mathrm{arc}(s,t) = \mathrm{arc}(x,y)$. By Schur's Theorem (Lemma [\[schursthm\]](#schursthm){reference-type="ref" reference="schursthm"}), we have $|x-y| \geq |s-t|$, so $$\frac{1}{|x-y|^2}-\frac{1}{\mathrm{arc}(x,y)^2} \leq 
 \frac{1}{|s-t|^2}-\frac{1}{\mathrm{arc}(x,y)^2} = 
 \frac{1}{|s-t|^2}-\frac{1}{\mathrm{arc}(s,t)^2}\;.
-\label{arccircles}
-\end{equation}$$ For a fixed $x$ on $K$ and a fixed $s$ on $C$, ([\[arccircles\]](#arccircles){reference-type="ref" reference="arccircles"}) and Lemma [\[circle\]](#circle){reference-type="ref" reference="circle"} give us $$\begin{align*}
+\label{arccircles}$$ For a fixed $x$ on $K$ and a fixed $s$ on $C$, ([\[arccircles\]](#arccircles){reference-type="ref" reference="arccircles"}) and Lemma [\[circle\]](#circle){reference-type="ref" reference="circle"} give us $$\begin{aligned}
 \int\nolimits_{\mathrm{arc}(x,y)\leq \pi} 
 \frac{1}{|x-y|^2} - \frac{1}{\mathrm{arc}(x,y)^2} &\leq
 \int\nolimits_{\mathrm{arc}(s,t)\leq \pi}
 \frac{1}{|s-t|^2}-\frac{1}{\mathrm{arc}(s,t)^2} \\ 
 &= \frac{2}{\pi}\,.
-\end{align*}$$ Thus, $$\int\nolimits_{x\in
+\end{aligned}$$ Thus, $$\int\nolimits_{x\in
 K}\int\nolimits_{\mathrm{arc}(x,y)\leq \pi} 
 \frac{1}{|x-y|^2} - \frac{1}{\mathrm{arc}(x,y)^2} \leq
 \int\nolimits_{x\in K} \frac{2}{\pi} = \frac{2}{\pi}\,L\;.$$ 0◻

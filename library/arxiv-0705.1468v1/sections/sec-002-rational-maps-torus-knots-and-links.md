@@ -7,10 +7,10 @@ section_number: null
 pages: 7-11
 source_pdf: 0705.1468v1.pdf
 source_sha256: 4ff578cb3657e4a4
-text_source: latex
-latex_prose_ratio: 0.984
-latex_coverage_ratio: 1.0
 doc_brief: "Knots in the Skyrme-Faddeev model Paul Sutcliffe — The Skyrme-Faddeev model is a modiﬁed sigma model in three-d imensional space, which has string-like topological solitons classiﬁed by th e"
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.976
 ---
 Torus knots are classified by a pair $(a,b)$ of coprime positive integers with $a>b.$ A knot is a torus knot if it lies on the surface of a torus, in which case the integers $a$ and $b$ count the number of times that the knot winds around the two cycles of the torus. The simplest example is the trefoil knot, which is the $(3,2)$-torus knot and has three crossings. In the standard knot catalogue notation it is $3_1,$ where the number refers to the crossing number of the knot and the subscript labels its position in the knot catalogue. Other torus knots which will be of interest in this paper include the $(5,2)$-torus knot, also known as Solomon's seal knot, which has five crossings (knot $5_1$ in the catalogue), and the $(4,3)$-torus knot which has crossing number eight (knot $8_{19}$ in the catalogue). In general the $(a,b)$-torus knot has crossing number $C=a(b-1).$
 
@@ -18,30 +18,18 @@ Denote by ${\cal K}_{a,b}$ any field configuration in which the position curve i
 
 The first step is to recall the standard description [@BK] of a torus knot as the intersection of a complex algebraic curve with the three-sphere. Consider $(Z_1,Z_0)\in \hbox{\mybb C}^2$ and the unit three-sphere $S^3\subset \hbox{\mybb C}^2$ given by $|Z_1|^2+|Z_0|^2=1.$ Then the intersection of this three-sphere with the complex algebraic curve $Z_1^a+Z_0^b=0$ is indeed the $(a,b)$-torus knot.
 
-To use the above description to produce a field configuration, the spatial coordinates $(x_1,x_2,x_3)\in \hbox{\mybb R}^3$ are mapped to the unit three-sphere via a degree one spherically equivariant map. Explicitly, $$\begin{equation}
-(Z_1,Z_0)=((x_1+ix_2)\frac{\sin f}{r},\cos
-f+i\frac{\sin f}{r}x_3),
-\end{equation}$$where $r^2=x_1^2+x_2^2+x_3^2$ and the profile function $f(r)$ is a monotonically decreasing function of the radius $r$, with boundary conditions $f(0)=\pi$ and $f(\infty)=0.$ The precise form of this function will be specified shortly.
+To use the above description to produce a field configuration, the spatial coordinates $(x_1,x_2,x_3)\in \hbox{\mybb R}^3$ are mapped to the unit three-sphere via a degree one spherically equivariant map. Explicitly, $$(Z_1,Z_0)=((x_1+ix_2)\frac{\sin f}{r},\cos
+f+i\frac{\sin f}{r}x_3),$$where $r^2=x_1^2+x_2^2+x_3^2$ and the profile function $f(r)$ is a monotonically decreasing function of the radius $r$, with boundary conditions $f(0)=\pi$ and $f(\infty)=0.$ The precise form of this function will be specified shortly.
 
-A Riemann sphere coordinate $W,$ is used on the target two-sphere of the field $\mbox{\boldmath $\phi$},$ determined via stereographic projection as $$\begin{equation}
-W=\frac{\phi_1+i\phi_2}{1+\phi_3}.
-\end{equation}$$With these definitions, then constructing a map $\mbox{\boldmath $\phi$}:\hbox{\mybb R}^3\mapsto S^2$ is equivalent to specifying $W(Z_1,Z_0),$ that is, $W:S^3\mapsto \hbox{\mybb C}\hbox{\mybb P}^1,$ a map from the three-sphere to the complex projective line. This map will be taken to be a rational map, which means that $W=p/q,$ where both $p$ and $q$ are polynomials in the variables $Z_1$ and $Z_0.$
+A Riemann sphere coordinate $W,$ is used on the target two-sphere of the field $\mbox{\boldmath $\phi$},$ determined via stereographic projection as $$W=\frac{\phi_1+i\phi_2}{1+\phi_3}.$$With these definitions, then constructing a map $\mbox{\boldmath $\phi$}:\hbox{\mybb R}^3\mapsto S^2$ is equivalent to specifying $W(Z_1,Z_0),$ that is, $W:S^3\mapsto \hbox{\mybb C}\hbox{\mybb P}^1,$ a map from the three-sphere to the complex projective line. This map will be taken to be a rational map, which means that $W=p/q,$ where both $p$ and $q$ are polynomials in the variables $Z_1$ and $Z_0.$
 
-For an $(a,b)$-torus knot the mapping is chosen to have the form $$\begin{equation}
-W=\frac{p}{q}=\frac{Z_1^\alpha Z_0^\beta}{Z_1^a+Z_0^b},
-\label{ratmap}
-\end{equation}$$where $\alpha$ is a positive integer and $\beta$ is a non-negative integer. A map of this form has the correct boundary conditions at spatial infinity, since as $r\rightarrow\infty$ then $(Z_1,Z_0)\rightarrow(0,1)$ and, because $\alpha>0,$ this gives $W\rightarrow 0,$ which is the stereographic projection of the point $\mbox{\boldmath $\phi$}=(0,0,1)={\bf e}_3.$ Furthermore, the position curve is the preimage of the point $-{\bf e}_3,$ which corresponds to $W=\infty,$ and hence is given by $q=0=Z_1^a+Z_0^b.$ As the coordinates $(Z_1,Z_0)$ automatically lie on the unit three-sphere then the position curve is the $(a,b)$-torus knot, for all values of $\alpha$ and $\beta.$
+For an $(a,b)$-torus knot the mapping is chosen to have the form $$W=\frac{p}{q}=\frac{Z_1^\alpha Z_0^\beta}{Z_1^a+Z_0^b},
+\label{ratmap}$$where $\alpha$ is a positive integer and $\beta$ is a non-negative integer. A map of this form has the correct boundary conditions at spatial infinity, since as $r\rightarrow\infty$ then $(Z_1,Z_0)\rightarrow(0,1)$ and, because $\alpha>0,$ this gives $W\rightarrow 0,$ which is the stereographic projection of the point $\mbox{\boldmath $\phi$}=(0,0,1)={\bf e}_3.$ Furthermore, the position curve is the preimage of the point $-{\bf e}_3,$ which corresponds to $W=\infty,$ and hence is given by $q=0=Z_1^a+Z_0^b.$ As the coordinates $(Z_1,Z_0)$ automatically lie on the unit three-sphere then the position curve is the $(a,b)$-torus knot, for all values of $\alpha$ and $\beta.$
 
-The Hopf charge of the map determined by ([\[ratmap\]](#ratmap){reference-type="ref" reference="ratmap"}) is given by the cross ratio $$\begin{equation}
-Q=\alpha b+\beta a.\label{charge}
-\end{equation}$$To see this note that a rational map $$\begin{equation}
-W:S^3\mapsto \hbox{\mybb C}\hbox{\mybb P}^1, \quad
-\mbox{given\ by} \quad W(Z_1,Z_0)=\frac{p(Z_1,Z_0)}{q(Z_1,Z_0)},
-\end{equation}$$ has a natural extension to a map $$\begin{equation}
-(p,q):\hbox{\mybb B}^4\subset
+The Hopf charge of the map determined by ([\[ratmap\]](#ratmap){reference-type="ref" reference="ratmap"}) is given by the cross ratio $$Q=\alpha b+\beta a.\label{charge}$$To see this note that a rational map $$W:S^3\mapsto \hbox{\mybb C}\hbox{\mybb P}^1, \quad
+\mbox{given\ by} \quad W(Z_1,Z_0)=\frac{p(Z_1,Z_0)}{q(Z_1,Z_0)},$$ has a natural extension to a map $$(p,q):\hbox{\mybb B}^4\subset
 \hbox{\mybb C}^2\mapsto \hbox{\mybb C}^2, \quad \mbox{given\ by} \quad
-(p(Z_1,Z_0),q(Z_1,Z_0)).
-\end{equation}$$Here $\hbox{\mybb B}^4$ denotes the 4-ball with boundary $S^3,$ and is obtained by replacing the constraint $|Z_1|^2+|Z_0|^2=1$ by the inequality $|Z_1|^2+|Z_0|^2\le 1.$ The map $(p,q)$ is between manifolds of the same dimension and has a degree, defined by counting preimages of a generic point of the target space, weighted by the signs of the Jacobian. As all the other mappings involved in the ansatz have degree one, and the standard Hopf map $(p,q)\mapsto p/q$ is employed, then the Hopf charge $Q$ of the combined mapping is equal to the degree of the mapping $(p,q).$ Furthermore, as the mapping $(p,q)$ is holomorphic then the sign of the Jacobian of all generic preimage points is positive, so the degree is simply the number of preimages.
+(p(Z_1,Z_0),q(Z_1,Z_0)).$$Here $\hbox{\mybb B}^4$ denotes the 4-ball with boundary $S^3,$ and is obtained by replacing the constraint $|Z_1|^2+|Z_0|^2=1$ by the inequality $|Z_1|^2+|Z_0|^2\le 1.$ The map $(p,q)$ is between manifolds of the same dimension and has a degree, defined by counting preimages of a generic point of the target space, weighted by the signs of the Jacobian. As all the other mappings involved in the ansatz have degree one, and the standard Hopf map $(p,q)\mapsto p/q$ is employed, then the Hopf charge $Q$ of the combined mapping is equal to the degree of the mapping $(p,q).$ Furthermore, as the mapping $(p,q)$ is holomorphic then the sign of the Jacobian of all generic preimage points is positive, so the degree is simply the number of preimages.
 
 For the mapping $(p,q)$ given by ([\[ratmap\]](#ratmap){reference-type="ref" reference="ratmap"}) take the generic point in target space to be $(\epsilon,0),$ so the Hopf charge is the number of solutions of the equation $(Z_1^\alpha
 Z_0^\beta,Z_1^a+Z_0^b)=(\epsilon, 0).$ Writing $Z_0$ in terms of $Z_1$ from the first component of this equation and substituting into the second component yields the polynomial equation $Z_1^{\alpha b+\beta a}=(-1)^\beta\epsilon^b,$ which clearly has $Q=\alpha b+\beta a$ solutions, as stated.
@@ -65,96 +53,56 @@ As mentioned above, the profile function could be optimized to find the minimal 
 
 So far only knot initial conditions have been considered, but the ansatz can also be used to construct a variety of unknots and links by choosing suitable rational maps. For example, axial fields of the form ${\cal A}_{n,m}$ are generated by a rational map $W=Z_1^n/Z_0^m.$
 
-Links correspond to rational maps in which the curve determined by the denominator is reducible. The torus knot maps with $(a,b)$ coprime degenerate to links if $(a,b)$ are not coprime. As an example, links of the type ${\cal L}_{n,n}^{1,1}$ (which have Hopf charge $Q=2n+2$) are derived from the rational map $$\begin{equation}
-W=\frac{Z_1^{n+1}}{Z_1^2-Z_0^2} =
-\frac{Z_1^n}{2(Z_1-Z_0)}+\frac{Z_1^n}{2(Z_1+Z_0)},\label{links}
-\end{equation}$$ where the partial fraction decomposition reveals the charges of the constituent links by comparison with the axial maps. The $Q=6$ field constructed using the rational map $(\ref{links})$ with $n=2$ is displayed in Figure [1](#fig-approx){reference-type="ref" reference="fig-approx"}b. As can be seen from this figure, the field is qualitatively similar to the minimal energy $Q=6$ soliton, which is of the type ${\cal L}_{2,2}^{1,1}.$ More examples of rational maps associated to linked configurations will appear in the following section.
+Links correspond to rational maps in which the curve determined by the denominator is reducible. The torus knot maps with $(a,b)$ coprime degenerate to links if $(a,b)$ are not coprime. As an example, links of the type ${\cal L}_{n,n}^{1,1}$ (which have Hopf charge $Q=2n+2$) are derived from the rational map $$W=\frac{Z_1^{n+1}}{Z_1^2-Z_0^2} =
+\frac{Z_1^n}{2(Z_1-Z_0)}+\frac{Z_1^n}{2(Z_1+Z_0)},\label{links}$$ where the partial fraction decomposition reveals the charges of the constituent links by comparison with the axial maps. The $Q=6$ field constructed using the rational map $(\ref{links})$ with $n=2$ is displayed in Figure [1](#fig-approx){reference-type="ref" reference="fig-approx"}b. As can be seen from this figure, the field is qualitatively similar to the minimal energy $Q=6$ soliton, which is of the type ${\cal L}_{2,2}^{1,1}.$ More examples of rational maps associated to linked configurations will appear in the following section.
 
 ::: {#tab-relax}
-+:--:+:--------------------------:+:------------------------------:+:----------------------:+:----------------------:+:----------------------:+:----------------------:+
-|    | initial                                                                                                                                                         |
-+----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Q  | $\downarrow$                                                                                                                                                    |
-+----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|    | final                                                                                                                                                           |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{3,2}$           |                                |                        |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 5  | $\downarrow$               |                                |                        |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal L}_{1,2}^{1,1}$     |                                |                        |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{3,2}$           |                                |                        |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 6  | $\downarrow$               |                                |                        |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal L}_{2,2}^{1,1}$     |                                |                        |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{3,2}$           | ${\cal L}_{2,3}^{1,1}$         |                        |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 7  | $\downarrow$               | $\downarrow$                   |                        |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{3,2}$           | ${\cal K}_{3,2}$               |                        |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal L}_{3,3}^{1,1}$     | ${\cal L}_{2,2}^{2,2}$         | ${\cal L}_{4,2}^{1,1}$ | ${\cal K}_{5,2}$       | ${\cal K}_{3,2}$       |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 8  | $\downarrow$               | $\downarrow$                   | $\downarrow$           | $\downarrow$           | $\downarrow$           |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal L}_{3,3}^{1,1}$     | ${\cal L}_{3,3}^{1,1}$         | ${\cal L}_{3,3}^{1,1}$ | ${\cal L}_{3,3}^{1,1}$ | ${\cal K}_{3,2}$       |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal L}_{1,1,1}^{2,2,2}$ | ${\cal K}_{4,3}$               | ${\cal                 | ${\cal K}_{5,2}$       | ${\cal L}_{2,3}^{2,2}$ | ${\cal L}_{3,4}^{1,1}$ |
-|    |                            |                                | K}_{3,2}$              |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 9  | $\downarrow$               | $\downarrow$                   | $\downarrow$           | $\downarrow$           | $\downarrow$           | $\downarrow$           |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal L}_{1,1,1}^{2,2,2}$ | ${\cal L}_{1,1,1}^{2,2,2}$     | ${\cal K}_{3,2}$       | ${\cal K}_{3,2}$       | ${\cal K}_{3,2}$       | ${\cal K}_{3,2}$       |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal L}_{1,1,2}^{2,2,2}$ | ${\cal K}_{4,3}$               | ${\cal                 | ${\cal L}_{5,3}^{1,1}$ | ${\cal K}_{5,2}$       | ${\cal K}_{3,2}$       |
-|    |                            |                                | L}_{3,3}^{2,2}$        |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 10 | $\downarrow$               | $\downarrow$                   | $\downarrow$           | $\downarrow$           | $\downarrow$           | $\downarrow$           |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal L}_{1,1,2}^{2,2,2}$ | ${\cal L}_{1,1,2}^{2,2,2}$     | ${\cal L}_{3,3}^{2,2}$ | ${\cal L}_{3,3}^{2,2}$ | ${\cal L}_{3,3}^{2,2}$ | ${\cal K}_{3,2}$       |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{4,3}$           | ${\cal K}_{5,2}$               | ${\cal K}_{7,2}$       | ${\cal                 |                        |                        |
-|    |                            |                                |                        | K}_{3,2}$              |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 11 | $\downarrow$               | $\downarrow$                   | $\downarrow$           | $\downarrow$           |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal L}_{1,2,2}^{2,2,2}$ | ${\cal K}_{5,2}$               | ${\cal L}_{3,4}^{2,2}$ | ${\cal K}_{3,2}$       |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{5,3}$           | ${\cal K}_{3,2}$               | ${\cal K}_{5,2}$       | ${\cal                 |                        |                        |
-|    |                            |                                |                        | K}_{7,2}$              |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 12 | $\downarrow$               | $\downarrow$                   | $\downarrow$           | $\downarrow$           |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal L}_{2,2,2}^{2,2,2}$ | ${\cal K}_{4,3}$               | ${\cal K}_{5,2}$       | ${\cal L}_{4,4}^{2,2}$ |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{3,2}$           | ${\cal K}_{5,3}$               | ${\cal K}_{5,2}$       | ${\cal                 |                        |                        |
-|    |                            |                                |                        | K}_{7,2}$              |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 13 | $\downarrow$               | $\downarrow$                   | $\downarrow$           | $\downarrow$           |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{4,3}$           | ${\cal X}_{13}$                | ${\cal K}_{5,2}$       | ${\cal L}_{3,4}^{3,3}$ |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{4,3}$           | ${\cal K}_{5,3}$               | ${\cal K}_{3,2}$       |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 14 | $\downarrow$               | $\downarrow$                   | $\downarrow$           |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{4,3}$           | ${\cal K}_{5,3}$               | ${\cal K}_{5,2}$       |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{5,3}$           | ${\cal K}_{4,3}$               | ${\cal K}_{3,2}$       |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 15 | $\downarrow$               | $\downarrow$                   | $\downarrow$           |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal X}_{15}$            | ${\cal L}_{1,1,1}^{4,4,4}$     | ${\cal K}_{5,3}$       |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal K}_{4,3}$           | ${\cal L}_{1,1,1,1}^{3,3,3,3}$ | ${\cal K}_{3,2}$       |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-| 16 | $\downarrow$               | $\downarrow$                   | $\downarrow$           |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
-|    | ${\cal X}_{16}$            | ${\cal X}_{16}$                | ${\cal X}_{16}$        |                        |                        |                        |
-+----+----------------------------+--------------------------------+------------------------+------------------------+------------------------+------------------------+
+  ---- ---------------------------- -------------------------------- ------------------------ ------------------------ ------------------------ ------------------------
+                 initial                                                                                                                        
+   Q           $\downarrow$                                                                                                                     
+                  final                                                                                                                         
+             ${\cal K}_{3,2}$                                                                                                                   
+   5           $\downarrow$                                                                                                                     
+          ${\cal L}_{1,2}^{1,1}$                                                                                                                
+             ${\cal K}_{3,2}$                                                                                                                   
+   6           $\downarrow$                                                                                                                     
+          ${\cal L}_{2,2}^{1,1}$                                                                                                                
+             ${\cal K}_{3,2}$            ${\cal L}_{2,3}^{1,1}$                                                                                 
+   7           $\downarrow$                   $\downarrow$                                                                                      
+             ${\cal K}_{3,2}$               ${\cal K}_{3,2}$                                                                                    
+          ${\cal L}_{3,3}^{1,1}$         ${\cal L}_{2,2}^{2,2}$       ${\cal L}_{4,2}^{1,1}$      ${\cal K}_{5,2}$         ${\cal K}_{3,2}$     
+   8           $\downarrow$                   $\downarrow$                 $\downarrow$             $\downarrow$             $\downarrow$       
+          ${\cal L}_{3,3}^{1,1}$         ${\cal L}_{3,3}^{1,1}$       ${\cal L}_{3,3}^{1,1}$   ${\cal L}_{3,3}^{1,1}$      ${\cal K}_{3,2}$     
+        ${\cal L}_{1,1,1}^{2,2,2}$          ${\cal K}_{4,3}$                  ${\cal              ${\cal K}_{5,2}$      ${\cal L}_{2,3}^{2,2}$   ${\cal L}_{3,4}^{1,1}$
+                                                                            K}_{3,2}$                                                           
+   9           $\downarrow$                   $\downarrow$                 $\downarrow$             $\downarrow$             $\downarrow$             $\downarrow$
+        ${\cal L}_{1,1,1}^{2,2,2}$     ${\cal L}_{1,1,1}^{2,2,2}$        ${\cal K}_{3,2}$         ${\cal K}_{3,2}$         ${\cal K}_{3,2}$         ${\cal K}_{3,2}$
+        ${\cal L}_{1,1,2}^{2,2,2}$          ${\cal K}_{4,3}$                  ${\cal           ${\cal L}_{5,3}^{1,1}$      ${\cal K}_{5,2}$         ${\cal K}_{3,2}$
+                                                                         L}_{3,3}^{2,2}$                                                        
+   10          $\downarrow$                   $\downarrow$                 $\downarrow$             $\downarrow$             $\downarrow$             $\downarrow$
+        ${\cal L}_{1,1,2}^{2,2,2}$     ${\cal L}_{1,1,2}^{2,2,2}$     ${\cal L}_{3,3}^{2,2}$   ${\cal L}_{3,3}^{2,2}$   ${\cal L}_{3,3}^{2,2}$      ${\cal K}_{3,2}$
+             ${\cal K}_{4,3}$               ${\cal K}_{5,2}$             ${\cal K}_{7,2}$              ${\cal                                   
+                                                                                                     K}_{3,2}$                                  
+   11          $\downarrow$                   $\downarrow$                 $\downarrow$             $\downarrow$                                
+        ${\cal L}_{1,2,2}^{2,2,2}$          ${\cal K}_{5,2}$          ${\cal L}_{3,4}^{2,2}$      ${\cal K}_{3,2}$                              
+             ${\cal K}_{5,3}$               ${\cal K}_{3,2}$             ${\cal K}_{5,2}$              ${\cal                                   
+                                                                                                     K}_{7,2}$                                  
+   12          $\downarrow$                   $\downarrow$                 $\downarrow$             $\downarrow$                                
+        ${\cal L}_{2,2,2}^{2,2,2}$          ${\cal K}_{4,3}$             ${\cal K}_{5,2}$      ${\cal L}_{4,4}^{2,2}$                           
+             ${\cal K}_{3,2}$               ${\cal K}_{5,3}$             ${\cal K}_{5,2}$              ${\cal                                   
+                                                                                                     K}_{7,2}$                                  
+   13          $\downarrow$                   $\downarrow$                 $\downarrow$             $\downarrow$                                
+             ${\cal K}_{4,3}$               ${\cal X}_{13}$              ${\cal K}_{5,2}$      ${\cal L}_{3,4}^{3,3}$                           
+             ${\cal K}_{4,3}$               ${\cal K}_{5,3}$             ${\cal K}_{3,2}$                                                       
+   14          $\downarrow$                   $\downarrow$                 $\downarrow$                                                         
+             ${\cal K}_{4,3}$               ${\cal K}_{5,3}$             ${\cal K}_{5,2}$                                                       
+             ${\cal K}_{5,3}$               ${\cal K}_{4,3}$             ${\cal K}_{3,2}$                                                       
+   15          $\downarrow$                   $\downarrow$                 $\downarrow$                                                         
+             ${\cal X}_{15}$           ${\cal L}_{1,1,1}^{4,4,4}$        ${\cal K}_{5,3}$                                                       
+             ${\cal K}_{4,3}$        ${\cal L}_{1,1,1,1}^{3,3,3,3}$      ${\cal K}_{3,2}$                                                       
+   16          $\downarrow$                   $\downarrow$                 $\downarrow$                                                         
+             ${\cal X}_{16}$                ${\cal X}_{16}$              ${\cal X}_{16}$                                                        
+  ---- ---------------------------- -------------------------------- ------------------------ ------------------------ ------------------------ ------------------------
 :::
 
   Table 1: Initial conditions and final solutions. []{#tab-relax label="tab-relax"}

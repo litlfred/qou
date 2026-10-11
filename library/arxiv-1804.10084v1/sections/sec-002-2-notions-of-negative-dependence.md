@@ -7,10 +7,10 @@ section_number: 2
 pages: 1-3
 source_pdf: 1804.10084v1.pdf
 source_sha256: 716da9708f06d930
-text_source: latex
-latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.755
 doc_brief: "Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random var iables under various forms of negative correlation satisfy"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.989
 ---
 []{#sec:neg-dep label="sec:neg-dep"}
 

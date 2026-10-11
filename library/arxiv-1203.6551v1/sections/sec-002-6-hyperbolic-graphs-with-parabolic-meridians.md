@@ -7,10 +7,10 @@ section_number: 6
 pages: 15-18
 source_pdf: 1203.6551v1.pdf
 source_sha256: a8e84f8ed63dbcca
-text_source: latex
-latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.974
 doc_brief: "On the number of hyperbolic 3-manifolds of a given volume — The work of Jørgensen and Thurston shows that there is a ﬁnite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v."
+text_source: latex
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.972
 ---
 []{#sec.Vol label="sec.Vol"} In this section, we recall some results on hyperbolic graphs in $S^3$ with parabolic meridians; for details see [@HHMP] and [@Mas]. In this paper, spatial graphs may contain link components, and we regard every link as a spatial graph without vertices. We use the word *link* to emphasize that the graph does not have any vertices. Let $G$ be a spatial trivalent graph in $S^3$ and let $N$ be a manifold obtained from $S^3\setminus G$ by removing an open regular neighbourhood of each vertex. Then $N$ is a manifold with boundary consisting of thrice punctured spheres, one corresponding to each vertex of $G$. We say that $G$ is *hyperbolic* if $N$ admits a hyperbolic metric of finite volume with geodesic boundary; then the meridians of the graph correspond to parabolic isometries. We can construct a hyperbolic link from a hyperbolic graph by using the following.
 
@@ -18,20 +18,14 @@ doc_brief: "On the number of hyperbolic 3-manifolds of a given volume — The wo
 []{#Vol label="Vol"} For hyperbolic graphs, the moves shown in Figure [1](#fig.move1){reference-type="ref" reference="fig.move1"} are volume preserving, where regular neighbourhoods of the two trivalent vertices have been removed in middle diagram.
 :::
 
-<figure id="fig.move1" data-latex-placement="h">
-<embed src="move1.eps" />
-<figcaption>Volume preserving moves on hyperbolic graphs</figcaption>
-</figure>
+![Volume preserving moves on hyperbolic graphs](move1.eps){#fig.move1}
 
 ::: proof
 *Proof.* Note that each vertex in a hyperbolic graph corresponds to a totally geodesic thrice punctured sphere and each edge corresponds to an annulus cusp. Moreover, the hyperbolic structure on a thrice punctured sphere is unique by [@Ada]; hence any orientation preserving homeomorphism between hyperbolic thrice punctured spheres is isotopic to an isometry. Since any homeomorphism between thrice punctured spheres is uniquely determined by its action on the cusps, we may denote homeomorphisms as elements of $S_3$, the symmetry group of degree 3.
 
 Fix labels for the cusps of the thrice punctured spheres as in Figure [1](#fig.move1){reference-type="ref" reference="fig.move1"}. If we glue the boundaries via the homeomorphism corresponding to the identity permutation, then we get the tangle on the left of Figure [1](#fig.move1){reference-type="ref" reference="fig.move1"}. If we glue the boundaries via the homeomorphism corresponding to the permutation interchanging 2 and 3, we get the tangle on the right of Figure [1](#fig.move1){reference-type="ref" reference="fig.move1"}.
 
-<figure id="fig.seq" data-latex-placement="h">
-<embed src="seq.eps" />
-<figcaption>Gluing by a homeomorphism</figcaption>
-</figure>
+![Gluing by a homeomorphism](seq.eps){#fig.seq}
 
 This is illustrated in Figure [2](#fig.seq){reference-type="ref" reference="fig.seq"}. Here we regard $S^3$ as $B^3\cup B^3$ where one ball $B^3$ is a regular neighbourhood of a vertex of the graph shown in the middle of Figure [1](#fig.move1){reference-type="ref" reference="fig.move1"}. We then reverse the inside and the outside with respect to the boundary sphere $S^2 = {\partial}B^3$. After gluing, we get a link or graph in $S^2\times S^1$. The component coming from the cusp labelled by $1$ is a loop which corresponds to a generator of the fundamental group of $S^2\times S^1$, and its complement is homeomorphic to a solid torus. Thus we get a tangle as shown on the left or right of Figure [1](#fig.move1){reference-type="ref" reference="fig.move1"}.
 
@@ -60,9 +54,6 @@ Step 2
 
 Let $L$ be a fully augmented link which is obtained from $D$ by the gluing moves of Lemma [\[Vol\]](#Vol){reference-type="ref" reference="Vol"}. Then this decomposition is exactly equal to the decomposition of $S^3\setminus L$ found by Agol-Thurston in [@Lac] (see also [@FP], [@Pur]).
 
-<figure id="fig.ATdecomp" data-latex-placement="h">
-<embed src="ATdecomp.eps" />
-<figcaption>Polyhedral decomposition of a graph complement</figcaption>
-</figure>
+![Polyhedral decomposition of a graph complement](ATdecomp.eps){#fig.ATdecomp}
 
 We shade the faces coming from the thrice punctured sphere boundaries of $N_P$ and leave the faces on $\Pi$ white as in [@FP], [@Pur]. Note that every shaded face is an ideal triangle, and since reflection $\phi$ about $\Pi$ leaves each thrice punctured sphere boundary invariant, the shaded faces are all orthogonal to the adjacent white faces. Hence the dihedral angle of each edge is $\pi /2$. Since $\phi$ preserves white faces, each face of these polyhedra is totally geodesic. Hence each white face extends to the boundary at infinity $S^2_{\infty}$ of hyperbolic space to give a Euclidean circle and such circles corresponding to adjacent faces are tangent to each other. Therefore the white faces of each polyhedron determine a circle packing of $S^2_{\infty}$ whose nerve is isomorphic to the dual of the original graph diagram $D$.

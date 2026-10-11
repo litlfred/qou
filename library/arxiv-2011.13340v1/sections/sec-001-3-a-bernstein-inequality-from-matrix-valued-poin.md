@@ -7,10 +7,10 @@ section_number: 3
 pages: 10-15
 source_pdf: 2011.13340v1.pdf
 source_sha256: e73876ed2c923608
-text_source: latex
-latex_prose_ratio: 0.946
-latex_coverage_ratio: 0.72
 doc_brief: "A Matrix Bernstein Inequality for Strong Rayleigh Distributions* — The Entropy method provides a powerful framework for provin g scalar concentration in- equalities by establishing functional"
+text_source: latex
+latex_prose_ratio: 0.737
+latex_coverage_ratio: 1.0
 ---
 In this section we show how to use Matrix valued Poincare inequalities to obtain matrix Bernstein style inequalities.
 
@@ -170,3 +170,21 @@ where the fourth inequality follows from $(1-x)^n\geq(1-nx)$ and the last line f
 \end{proof}
 \begin{proof}{[of Theorem \ref{thm:srBern}]} Since our function $\mathbf{F}$ is L-Lipshitz, we know that $v(\mathbf{F})\leq 2L$ as the Hamming distance between any pair of connected states in the Markov Chain is 2. Hence, using Theorem \ref{thm:mgfBound} and the fact that $\lambda\geq1/{2k}$ (from \ref{thm:mpc}), we are done.
 \end{proof}
+
+\section{Comparison with \cite{KyngSong18}}\label{sec:ks}
+We first state the main result of \cite{KyngSong18} below.
+\begin{theorem}\label{thm:kyngsong} Suppose $(x_1,\ldots,x_n)\in\{0,1\}^n$ is a random subset whose distribution is a $k$-homogenous strong Rayleigh distribution. Given a collection of PSD matrices $A_1,\ldots,A_n\in\mathbb{R}^{d\times d}$ s.t. for all $e \in [n]$ we have $\|A_e\|\leq 1$ and $\|\mathbb{E}[\sum_e x_e A_e]\|\leq\mu$. Then for any $\varepsilon > 0$,
+  \begin{align*}
+    \mathsf{Pr}[\|\sum_e x_e A_e - \mathbb{E}[\sum_e x_e A_e]\|\geq \varepsilon \mu]\leq de^{-\varepsilon^2\mu/(\log k + \varepsilon) \Theta(1)}
+  \end{align*}
+\end{theorem}
+Compared to our Theorem \ref{thm:srBern}, immediate differences is that our theorem can handle any symmetric matrix valued Lipshitz function rather than just sums of random matrices associated to each element. Furthermore, \cite{KyngSong18} require their matrices to be PSD whereas we just require the matrices to be symmetric. Finally, in the special case of sums of PSD matrices. While Theorem \ref{thm:kyngsong} is concerned with multiplicative errors whereas we are concerned with additive errors, we can take $t=\varepsilon \mu$ and plugging this into Theorem \ref{thm:srBern}, noticing that sums of spectral norm 1 random matrices have $\Theta(1)$ Lipshitz constant and ignoring constants in both bounds we get that our bound is better when
+\begin{align*}
+  \frac{\varepsilon^2\mu}{\log(k)+\varepsilon}&\leq \frac{\varepsilon^2\mu^2}{k+\varepsilon\mu\sqrt{k}}\\
+  k+\varepsilon\mu\sqrt{k}\leq \mu \log k+\varepsilon\mu
+\end{align*}
+Now assuming $\varepsilon \leq \frac{1}{\sqrt{k}}$, we get that the above equation is approximately
+\begin{align*}
+  \mu\geq k/(\log(k))
+\end{align*}
+Also notice that in this case, $\mu\leq k$ but it is conceivable that $\mu = \Theta(k)$ when there is no strong relation between the underlying strong Rayleigh measure and the matrices for each element. So our bound is better when such a condition is satisfied and we are looking for small error of the form $\varepsilon \leq 1/\sqrt{k}$. If one could establish a Matrix valued modified log-Sobolev and a Matrix Herbst argument, the $\sqrt{k}\varepsilon$ term in our bound will not appear which would allow us to get rid of the $\varepsilon \leq 1/\sqrt{k}$ condition and just require $\mu\geq k/\log(k)$. However, we are not aware of any strategy to get multiplicative bounds even in the scalar concentration settings using log-Sobolev or any other functional inequalities.

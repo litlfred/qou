@@ -7,10 +7,10 @@ section_number: 6
 pages: 15-19
 source_pdf: 0707.2003v2.pdf
 source_sha256: 0b8fe37aabeee412
-text_source: latex
-latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.986
 doc_brief: "A geometric model for Hochschild homology of Soergel bimodules BEN WEBSTER GEORDIE WILLIAMSON School of Mathematics Mathematisches Institut Institute for Advanced Study der Universität Freiburg — An"
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.997
 ---
 []{#sec:equiv-form label="sec:equiv-form"}
 
@@ -23,9 +23,7 @@ Of course, the best setting in which to compute equivariant cohomology of a vari
 
 1.  The $S$ module $\hc_T(X,\mc F)$ is free.
 
-2.  The differentials in the spectral sequence $$\begin{equation*}
-          \hc(X,\mc F)\otimes\HT\Rightarrow\hc_{T}(X,\mc F)
-    \end{equation*}$$ are trivial, that is, if $\hc(X,\mc F)\otimes\HT\cong\hc_{T}(X,\mc
+2.  The differentials in the spectral sequence $$\hc(X,\mc F)\otimes\HT\Rightarrow\hc_{T}(X,\mc F)$$ are trivial, that is, if $\hc(X,\mc F)\otimes\HT\cong\hc_{T}(X,\mc
         F)$ as $\HT$-modules.
 
 3.  We have the equality $\dim_\C H^*(X)= \dim_{\C}H^*(X^T)$.
@@ -46,9 +44,7 @@ This in turn implies that $m_*\Cs{\BSi}$ is equivariantly formal, where $m:\BSi\
 While the most obvious consequence of equivariant formality, calculating the equivariant cohomology from ordinary or vice versa, is a rather useful one, it has less obvious ones as well.
 
 ::: prop
-*(Goresky, Kottwitz, MacPherson [@GKM Theorem 6.3])* If $\mc F$ is equivariantly formal, then the pullback map $$\begin{equation*}
-    i^*_T:H_T^*(X,\mc F)\to H_T^*(X^T,\mc F)
-\end{equation*}$$ is injective.
+*(Goresky, Kottwitz, MacPherson [@GKM Theorem 6.3])* If $\mc F$ is equivariantly formal, then the pullback map $$i^*_T:H_T^*(X,\mc F)\to H_T^*(X^T,\mc F)$$ is injective.
 :::
 
 As we mentioned earlier, we are interested in the Hochschild homology of Soergel bimodules as a bigraded object (so that we get a triply-graded knot homology theory), but the grading on equivariant hypercohomology is only one of these. From now on, we consider $H^*_T(\Gw)$ as a bigraded $\HT$-module, with the bigrading defined by the isomorphism with Hochschild homology given by Proposition [\[formal-isom\]](#formal-isom){reference-type="ref" reference="formal-isom"}.
@@ -61,25 +57,17 @@ This case follows immediately from applying $\HH_0$ to the Koszul resolution of 
 
 Let us turn to the case where $\Gw$ is smooth. Since $H^*_T(\Gw)\cong S\otimes H^*(\Gw)$, it will prove very interesting to understand $H^*(\Gw)$. Surprisingly, no description of this cohomology seems to be in the literature, but in fact there is a very beautiful one.
 
-As is well known (and we reprove in the course of Lemma [\[schub-lemma\]](#schub-lemma){reference-type="ref" reference="schub-lemma"} below), there exists a unique decreasing sequence of positive integers $k_1,\cdots k_{n}$ such that the Hilbert series of $H^*(\Gw/B)$ is of the form $$\begin{equation*}
-  \sum_{i=1}^{\ell(w)}q^{i/2}\dim H^i(\Gw/B)=\prod_{j=1}^n\frac{1-q^{k_j}}{1-q}
-\end{equation*}$$
+As is well known (and we reprove in the course of Lemma [\[schub-lemma\]](#schub-lemma){reference-type="ref" reference="schub-lemma"} below), there exists a unique decreasing sequence of positive integers $k_1,\cdots k_{n}$ such that the Hilbert series of $H^*(\Gw/B)$ is of the form $$\sum_{i=1}^{\ell(w)}q^{i/2}\dim H^i(\Gw/B)=\prod_{j=1}^n\frac{1-q^{k_j}}{1-q}$$
 
 ::: thm
-[]{#equiv-form label="equiv-form"} If $\Gw$ is smooth, then as an algebra, $$\begin{equation}
-\label{eq:1}
-    H^*(\Gw)\cong \land^{\bullet}(\ga_1,\ldots \ga_n)
-\end{equation}$$ where $\deg(\ga_i)=2k_i-1$, and as an $\HT$-algebra, $$\begin{equation*}
-    H^*_T(\Gw)\cong\HH_i(\S w)\cong \HT\otimes H^*(\Gw).
-\end{equation*}$$ In the standard double grading on $\HH_i(\S w)$, we have $\deg(1\otimes \ga_i)=(1,2k_i)$.
+[]{#equiv-form label="equiv-form"} If $\Gw$ is smooth, then as an algebra, $$\label{eq:1}
+    H^*(\Gw)\cong \land^{\bullet}(\ga_1,\ldots \ga_n)$$ where $\deg(\ga_i)=2k_i-1$, and as an $\HT$-algebra, $$H^*_T(\Gw)\cong\HH_i(\S w)\cong \HT\otimes H^*(\Gw).$$ In the standard double grading on $\HH_i(\S w)$, we have $\deg(1\otimes \ga_i)=(1,2k_i)$.
 :::
 
 This explicitly describes the Hilbert series of $\HH_i(\S w)$, proving a conjecture of Rasmussen.
 
 ::: cor
-The Hilbert series of $\HH_i(\S w)$ is given by $$\begin{equation*}
-    \sum_{i,j}a^iq^j \HH_i(\S w)_{2j}=\prod_{\ell=1}^{n}\frac{1+aq^{k_\ell}}{1-q}
-\end{equation*}$$
+The Hilbert series of $\HH_i(\S w)$ is given by $$\sum_{i,j}a^iq^j \HH_i(\S w)_{2j}=\prod_{\ell=1}^{n}\frac{1+aq^{k_\ell}}{1-q}$$
 :::
 
 Since $\dim H^*(\Gw)=2^{\rank G}$, Definition/Theorem [\[eq-for-def\]](#eq-for-def){reference-type="ref" reference="eq-for-def"}(3) establishes the equivariant formality of $\Gw$ independently of the earlier results of this paper (and for all types).
@@ -99,9 +87,7 @@ The number of times the integer $m$ appears in the list $k_1,\ldots,
 In this grading, $\C[BwB/B]$ is a polynomial algebra generated by elements of degree $2h(\al)$ for each root $\al\in R^+\cap
   w^{-1}(R_-)$, and the degrees of $g_i$ are given by $2h(\al)+2$ as $\al$ ranges over the same roots. Corresponding to the simple roots are $n-1$ generators $x_1,\ldots x_{n}$ of degree 2, which are the first Chern classes of line bundles on $G/B$ corresponding the fundamental weights, and for the other roots we have $\ell(w)-n+1$ other generators $y_n,\cdots y_{\ell(w)}$ of higher degree. Here, we assume these are in increasing order by degree.
 
-It is a well known fact that the cohomology ring $H^*(G/B)$ is generated by the Chern classes $x_i$. Since the natural pullback map $H^*(G/B)\to H^*(\Gw/B)$ is onto, the ring $H^*(\Gw/B)$ is as well. That is, if $p=\deg y_{k}>2$, then $$\begin{equation*}
-    y_k-\sum_{\deg(g_i)=p}\be_ig_i\in \sum_{\deg(g_j)<p} \HT g_j.
-\end{equation*}$$ Since $y_k\notin \sum_{\deg(g_j)<p}\HT g_j$, we can eliminate $y_k$ and any single relation $g_i$ such that $\be_i\neq 0$. Obviously, $(g_1,\ldots,g_n)\setminus\{g_i\}$ is again a regular sequence in $\C[x_1,\ldots,x_{n},y_n,\ldots, y_{k-1}].$ Applying this argument inductively, we obtain a subsequence $(g_{i_1},\ldots, g_{i_{n}})$ which is regular in $\HT$, which is the desired sequence.
+It is a well known fact that the cohomology ring $H^*(G/B)$ is generated by the Chern classes $x_i$. Since the natural pullback map $H^*(G/B)\to H^*(\Gw/B)$ is onto, the ring $H^*(\Gw/B)$ is as well. That is, if $p=\deg y_{k}>2$, then $$y_k-\sum_{\deg(g_i)=p}\be_ig_i\in \sum_{\deg(g_j)<p} \HT g_j.$$ Since $y_k\notin \sum_{\deg(g_j)<p}\HT g_j$, we can eliminate $y_k$ and any single relation $g_i$ such that $\be_i\neq 0$. Obviously, $(g_1,\ldots,g_n)\setminus\{g_i\}$ is again a regular sequence in $\C[x_1,\ldots,x_{n},y_n,\ldots, y_{k-1}].$ Applying this argument inductively, we obtain a subsequence $(g_{i_1},\ldots, g_{i_{n}})$ which is regular in $\HT$, which is the desired sequence.
 
 Since the number of relations of degree $j$ which have been eliminated is the number of generators of degree $j$, the remaining number of relations is precisely the difference between these, which is also the number of roots of height $j/2-1$ minus the number of height $j/2$ in $R^+\cap w^{-1}(R^-)$. ◻
 :::
@@ -114,7 +100,5 @@ Since $(f_1,\ldots, f_{n})$ is regular, $H^*(\Gw/B)$ is quasi-isomorphic to the 
 Since we used a Koszul complex, the generators $\ga$ land in Hochschild degree 1 under the restriction map to $T$, so the degree of $\gamma_i$ is $(2k_i,1)$.
 
 If $w\in W'$, where $W'$ is a proper parabolic subgroup of $W$ (with corresponding Levi subgroup $G'\subset G$), and $W'$ is the minimal such parabolic. Then $G_w\cong G'_w\times T/T'\times N\cap
-  w_0'Nw_0'$. Since $N\cap w_0'Nw_0'$ is unipotent and thus contractible, by Künneth, we have $$\begin{equation*}
-\dim_\C H^*(G_w)\cong \dim_\C H^*(G_{w'})\dim_\C H^*(T/T')=2^{\dim T'}2^{\dim T/T'}=2^{\dim T}. \qedhere
-\end{equation*}$$ Thus, $G_w$ is equivariantly formal and the degrees $k_i$ for $G_w$ are simply those of $G_{w'}$ extended by adding 1's. ◻
+  w_0'Nw_0'$. Since $N\cap w_0'Nw_0'$ is unipotent and thus contractible, by Künneth, we have $$\dim_\C H^*(G_w)\cong \dim_\C H^*(G_{w'})\dim_\C H^*(T/T')=2^{\dim T'}2^{\dim T/T'}=2^{\dim T}. \qedhere$$ Thus, $G_w$ is equivariantly formal and the degrees $k_i$ for $G_w$ are simply those of $G_{w'}$ extended by adding 1's. ◻
 :::

@@ -150,7 +150,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "note.tex",
-   "tex_sections": 5,
+   "tex_sections": 8,
    "overlaid": 5,
    "thresholds": {
     "title": 0.85,
@@ -161,40 +161,40 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.78,
-     "coverage_ratio": 0.873,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-octahedral-colorings",
      "title": "Octahedral colorings",
-     "prose_ratio": 0.837,
-     "coverage_ratio": 0.731,
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-the-holonomy-of-an-octahedral-coloring",
      "title": "The holonomy of an octahedral coloring",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.751,
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-gauge-transformations",
      "title": "Gauge transformations",
-     "prose_ratio": 0.655,
-     "coverage_ratio": 0.897,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-shape-parameters-and-the-potential-function",
      "title": "Shape parameters and the potential function",
-     "prose_ratio": 0.84,
-     "coverage_ratio": 0.818,
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },

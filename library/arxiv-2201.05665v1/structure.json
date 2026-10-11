@@ -180,8 +180,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "widom_06_09_21.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 7,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -204,32 +204,39 @@
     {
      "id": "sec-002-3-the-tracy-widom-distribution-functions",
      "title": "The Tracy-Widom distribution functions",
-     "prose_ratio": 0.87,
-     "coverage_ratio": 0.963,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-universality-of-the-tracy-widom-distributions",
      "title": "Universality of the Tracy-Widom Distributions",
-     "prose_ratio": 0.161,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.299,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-004-41-general-invariant-ensembles-and-the-wigner-en",
      "title": "General invariant ensembles and the Wigner ensembles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-42-random-permutations",
      "title": "Random permutations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-5-the-asymmetric-simple-exclusion-process-harold",
      "title": "The asymmetric simple exclusion process. Harold Widom's papers 133,134,135",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.998,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },

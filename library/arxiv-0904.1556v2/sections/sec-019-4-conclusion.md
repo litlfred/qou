@@ -7,10 +7,10 @@ section_number: 4
 pages: 65-73
 source_pdf: 0904.1556v2.pdf
 source_sha256: a1a43786d817f085
-text_source: latex
-latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.676
 doc_brief: "The Algebra of Grand Unified Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.978
 ---
 []{#sec:conclusion label="sec:conclusion"}
 
@@ -92,7 +92,7 @@ We can also reverse the order of these processes. Imposing a $2+3$ splitting on 
 
 The direct summands in ${\mathbb R}^4 \oplus {\mathbb R}^6$ came from forgetting the complex structure on ${\mathbb C}^2 \oplus {\mathbb C}^3$. The subgroup of ${\rm S}({\rm O}(4) \times {\rm O}(6))$ preserving the original complex structure is ${\rm U}(2) \times {\rm U}(3)$, and the subgroup of this that also fixes a volume form on ${\mathbb C}^5$ is ${\rm S}({\rm U}(2) \times {\rm U}(3))$. This group is connected, so it must lie entirely in the connected component of the identity, and we get the inclusions: $${\rm S}({\rm U}(2) \times {\rm U}(3)) \hookrightarrow{\rm SO}(4) \times {\rm SO}(6) \hookrightarrow{\rm SO}(10).$$ These maps form the left and bottom sides of our square.
 
-It follows that ${G_{\mbox{\rm SM}}}/{\mathbb Z}_6$ is precisely the subgroup of ${\rm SO}(10)$ that preserves a complex structure on ${\mathbb R}^{10}$, a chosen volume form on the resulting complex vector space, and a $2 + 3$ splitting on this space. But this $2 + 3$ splitting is the same as a *compatible* $4 + 6$ splitting of ${\mathbb R}^{10}$, one in which each summand is a complex vector subspace as well as a real subspace. This means that $${G_{\mbox{\rm SM}}}/{\mathbb Z}_6 = {\rm SU}(5) \cap {\rm S}({\rm O}(4) \times {\rm O}(6)) \subseteq {\rm SO}(10),$$ and since ${G_{\mbox{\rm SM}}}/{\mathbb Z}_6$ is connected, $${G_{\mbox{\rm SM}}}/{\mathbb Z}_6 = {\rm SU}(5) \cap ( {\rm SO}(4) \times {\rm SO}(6) ) \subseteq {\rm SO}(10)$$ as desired. $\sqcap$ $\sqcup$
+It follows that ${G_{\mbox{\rm SM}}}/{\mathbb Z}_6$ is precisely the subgroup of ${\rm SO}(10)$ that preserves a complex structure on ${\mathbb R}^{10}$, a chosen volume form on the resulting complex vector space, and a $2 + 3$ splitting on this space. But this $2 + 3$ splitting is the same as a *compatible* $4 + 6$ splitting of ${\mathbb R}^{10}$, one in which each summand is a complex vector subspace as well as a real subspace. This means that $${G_{\mbox{\rm SM}}}/{\mathbb Z}_6 = {\rm SU}(5) \cap {\rm S}({\rm O}(4) \times {\rm O}(6)) \subseteq {\rm SO}(10),$$ and since ${G_{\mbox{\rm SM}}}/{\mathbb Z}_6$ is connected, $${G_{\mbox{\rm SM}}}/{\mathbb Z}_6 = {\rm SU}(5) \cap ( {\rm SO}(4) \times {\rm SO}(6) ) \subseteq {\rm SO}(10)$$ as desired. 3em $\sqcap$ -1em $\sqcup$ 2ex
 
 From this, a little diagram chase proves our earlier claim:
 
@@ -109,7 +109,7 @@ From this, a little diagram chase proves our earlier claim:
 {\rm SO}(4) \times {\rm SO}(6)  \ar@{^{(}->}[r]^-i & {\rm SO}(10) 
 }$$ where both the bottom vertical arrows are two-to-one, but the composite vertical maps $q \tilde{\theta}$ and $p \psi$ are one-to-one. Our previous theorem says that the big square with $q \tilde{\theta}$ and $p \psi$ as vertical sides is a pullback. Now we must show that the upper square is also a pullback. So, suppose we are given $g \in ({\rm Spin}(4) \times {\rm Spin}(6))/{{\mathbb Z}_2}$ and $g' \in {\rm SU}(5)$ with $$\tilde{\eta}(g) = \psi(g').$$ We need to show there exists $x \in {G_{\mbox{\rm SM}}}/{\mathbb Z}_6$ such that $$\tilde{\theta} (x) = g, \qquad  \tilde{\phi}(x) = g'.$$ Now, we know that $$i q (g) =  p \tilde{\eta}(g) = p \psi(g')$$ so since the big square is a pullback, there exists $x \in  {G_{\mbox{\rm SM}}}/{\mathbb Z}_6$ with $$q \tilde{\theta} (x) = q(g), \qquad  \tilde{\phi}(x) = g'.$$ The second equation is half of what we need to show. So, we only need to check that the first equation implies $\tilde{\theta} (x) = g$.
 
-The kernel of $q$ consists of two elements, which we will simply call $\pm 1$. Since $q \tilde{\theta} (x) = q(g)$, we know $$\pm \tilde{\theta}(x) = g .$$ Since $\tilde{\eta}(g) = \psi(g')$, we thus have $$\tilde{\eta} (\pm \tilde{\theta}(x)) = \psi(g') = \psi \tilde{\phi}(x) .$$ The one-to-one map $\tilde{\eta}$ sends the kernel of $q$ to the kernel of $p$, which consists of two elements that we may again call $\pm 1$. So, $\pm \tilde{\eta} \tilde{\theta}(x) = \psi \tilde{\phi}(x)$. On the other hand, since the top square commutes we know $\tilde{\eta} \tilde{\theta}(x) = \psi \tilde{\phi}(x)$. Thus the element $\pm 1$ must actually be $1$, so $g = \tilde{\theta}(x)$ as desired. $\sqcap$ $\sqcup$
+The kernel of $q$ consists of two elements, which we will simply call $\pm 1$. Since $q \tilde{\theta} (x) = q(g)$, we know $$\pm \tilde{\theta}(x) = g .$$ Since $\tilde{\eta}(g) = \psi(g')$, we thus have $$\tilde{\eta} (\pm \tilde{\theta}(x)) = \psi(g') = \psi \tilde{\phi}(x) .$$ The one-to-one map $\tilde{\eta}$ sends the kernel of $q$ to the kernel of $p$, which consists of two elements that we may again call $\pm 1$. So, $\pm \tilde{\eta} \tilde{\theta}(x) = \psi \tilde{\phi}(x)$. On the other hand, since the top square commutes we know $\tilde{\eta} \tilde{\theta}(x) = \psi \tilde{\phi}(x)$. Thus the element $\pm 1$ must actually be $1$, so $g = \tilde{\theta}(x)$ as desired. 3em $\sqcap$ -1em $\sqcup$ 2ex
 
 In short, the Standard Model has precisely the symmetries shared by both the ${\rm SU}(5)$ theory and the ${\rm Spin}(4) \times {\rm Spin}(6)$ theory. Now let us see what this means for the Standard Model representation.
 
@@ -129,6 +129,6 @@ We can draw this alternate symmetry breaking process in the following diagram: $
 \ar@{<~}[r]^{\mbox{grading and}}_{\mbox{volume form}} & \ar@{<~}[r]^{\mbox{ splitting}} &
 }$$ Will these tantalizing patterns help us understand physics beyond the Standard Model? Only time will tell.
 
-### Acknowledgements {#acknowledgements .unnumbered}
+### Acknowledgements
 
 We thank the denizens of the $n$-Category Café for catching mistakes and suggesting stylistic improvements. This research was supported by a grant from the Foundational Questions Institute.

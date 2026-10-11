@@ -8,21 +8,18 @@ pages: 36-37
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
 doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
+text_source: latex
+latex_prose_ratio: 0.966
+latex_coverage_ratio: 0.722
 ---
-Just as 2− 3 moves change the internal triangulation of a 3-manifold, the ﬂips described in
-Section 2.5 can change the triangulation of its (geodesic) boundary. This has a very simple
-eﬀect on a theory TM,Π.
-For example, suppose that TM,Π has an operatorOX, charged under a global symmetry
-U(1)X, that corresponds to an external edge with position coordinate X. We want to add a
-tetrahedron ∆Z to ﬂip this edge, as in Figure 16. Following our gauge theory dictionary, this
-means that we form the combined theory TM,Π⊗T∆Z,ΠZ, and add a superpotential coupling
-W =OXφZ. (4.15)
-The new theory now has a chiral operator φZ that transforms under the anti-diagonal sub-
-group of U(1)X×U(1)Z that is unbroken by ( 4.15).
-This transformation simply describes theF operation of Section 3.2. Just as F 2 is a trivial
-operation on a 3d SCFT, ﬂipping a diagonal twice is a trivial operation on the boundary of
-a 3-manifold.
-14Strictly speaking, we should only consider triangulations that have easy edges, as discussed in Section 4.1.
-It is very plausible — although not mathematically proven — that to connect two “easy” triangulations, one
-can always ﬁnd a chain of 2− 3 moves that only pass through other easy triangulations.
-– 35 –
+[]{#sec:flip label="sec:flip"}
+
+Just as $2-3$ moves change the internal triangulation of a 3-manifold, the flips described in Section [\[sec:geom23\]](#sec:geom23){reference-type="ref" reference="sec:geom23"} can change the triangulation of its (geodesic) boundary. This has a very simple effect on a theory $T_{M,\Pi}$.
+
+For example, suppose that $T_{M,\Pi}$ has an operator $\mathcal{O}_X$, charged under a global symmetry $U(1)_X$, that corresponds to an external edge with position coordinate $X$. We want to add a tetrahedron $\Delta_Z$ to flip this edge, as in Figure [\[fig:flip\]](#fig:flip){reference-type="ref" reference="fig:flip"}. Following our gauge theory dictionary, this means that we form the combined theory $T_{M,\Pi}\otimes T_{\Delta_Z,\Pi_Z}$, and add a superpotential coupling
+
+$$\mathcal{W}= \mathcal{O}_X\phi_Z\,. \label{Wflip}$$
+
+The new theory now has a chiral operator $\phi_Z$ that transforms under the anti-diagonal subgroup of $U(1)_X\times U(1)_Z$ that is unbroken by [\[Wflip\]](#Wflip){reference-type="eqref" reference="Wflip"}.
+
+This transformation simply describes the $F$ operation of Section [\[sec:F\]](#sec:F){reference-type="ref" reference="sec:F"}. Just as $F^2$ is a trivial operation on a 3d SCFT, flipping a diagonal twice is a trivial operation on the boundary of a 3-manifold.

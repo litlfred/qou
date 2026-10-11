@@ -7,10 +7,10 @@ section_number: null
 pages: 25-26
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
-text_source: latex
-latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.984
 doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 []{#Conclusions label="Conclusions"} It was well-known that two-dimensional Yang-Mills theory allows for a large $N$ expansion that resembles a string theory. A sum over covering maps reproduces the expansion and the description of the covering maps of degree $d$ is closely related to the description of $S_d$ principal bundles that are part of the configuration space of a two-dimensional topological quantum field theory. There were several open questions in the gauge/string duality. We have attempted to address some of them using new tools.
 

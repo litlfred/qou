@@ -118,7 +118,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 6,
-   "overlaid": 3,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -128,16 +128,14 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.526,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.534,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-5-commutation-relations-for-octonion-valued-shif",
      "title": "Commutation relations for Octonion Valued Shift Operators",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.951,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -145,7 +143,7 @@
      "id": "sec-002-6-discussion-and-conclusion",
      "title": "Discussion and Conclusion",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.631,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     }

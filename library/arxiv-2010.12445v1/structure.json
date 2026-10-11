@@ -254,8 +254,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Tannaka5.tex",
-   "tex_sections": 8,
-   "overlaid": 5,
+   "tex_sections": 13,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -265,26 +265,24 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.907,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-notation",
      "title": "Notation",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 0.942,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-acknowledgments",
      "title": "Acknowledgments",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.105,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-1-preliminaries",
@@ -299,23 +297,23 @@
     {
      "id": "sec-005-2-pseudo-affine-stacks",
      "title": "Pseudo-affine stacks",
-     "prose_ratio": 0.921,
-     "coverage_ratio": 0.938,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-3-tannaka-reconstruction",
      "title": "Tannaka Reconstruction",
-     "prose_ratio": 0.931,
-     "coverage_ratio": 0.674,
+     "prose_ratio": 0.732,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-5-the-stack-of-fiber-functors",
      "title": "The stack of fiber functors",
-     "prose_ratio": 0.28,
+     "prose_ratio": 0.456,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -326,7 +324,8 @@
     {
      "id": "sec-009-52-comparing-vector-bundles",
      "title": "Comparing vector bundles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.575,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-010-references",

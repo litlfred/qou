@@ -8,42 +8,57 @@ pages: 7-8
 source_pdf: 2505.02719v2.pdf
 source_sha256: 1803d10aa55c18cf
 doc_brief: "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy"
+text_source: latex
+latex_prose_ratio: 0.94
+latex_coverage_ratio: 0.887
 ---
-In Section 2 we develop sufficient criteria for the validity of the (PS)-condition in the abstract
-settingofgeneralsubmanifoldsofHilbertspaces,notonlyforasingleenergyasinTheorem2.1
-butalsofortotalenergieswithaleadingordertermandsomeadditionalenergyoflowerorder;
-seeCorollary2.3. Moreover,withTheorem2.4weprovidealong-timeexistenceresultforthe
-gradient flow and subconvergence to critical points for energies of class𝐶1,1
-loc. That this flow
-preservessymmetryisshowninProposition2.5. Thenwededuceassimpleconsequencesthe
-existenceofminimizing(PS)-sequencesandenergyminimizers;seeCorollaries2.6and2.7,as
-wellasCorollary2.8foranalternativeproofthatworksforenergiesthatareonly𝐶 1. Section3
-contains the proofs that the setsA1+𝑠 andA 1+𝑠
-z defined in (1.7) and (1.8) are actually smooth
-submanifolds of the Hilbert space𝐻1+𝑠(R/Z,R𝑛)for any𝑠∈( 1
-2,1]andz∈R 𝑛 (Theorem 3.1
-and Theorem 3.2). We also define suitable projections onto the respective tangent spaces that
-areneededintheabstractTheorem2.1. ThenweproveinSection3.2thattheopensetofregular
-knots strongly deformation retracts onto the arclength submanifolds (see Theorem 3.7), and
-that connected components of the arclength submanifolds correspond to different knot classes
-(Theorem 3.9). In Section 3.3 we prove that arclength constrained critical knots are also
-critical under the more relaxed fixed-length constraint, still in the abstract general setting; see
-Theorem 3.10 and Corollary 3.12.
-Section 4 is dedicated to the proofs of our main results on the Palais–Smale condition.
-We start in Section 4.1, however, with the pure bending energy𝐸b as a prototype example,
-bothfortheverificationofthe(PS)-condition(Corollary4.2)anditsconsequences(arclength-
-constrained𝐸 b-critical points via minimization or gradient flows, see Corollary 4.3). Sec-
-7
-tion 4.1 is meant as a comprehensible blueprint for the more complicated proofs involving
-non-local terms in the following Section 4.2 on total energies, and in Section 4.3 on the pure
-tangent-point energies. Theorems 1.1 and 1.2 are shown in Section 4.2, whereas Theorem 1.3
-is proven in Section 4.3.
-Finally, Section 5 is devoted to the proof of Theorem 1.8. This regularity theorem follows
-from the combination of the smoothness result for critical points of the pure bending energy
-𝐸b (Theorem 5.1) with those for critical knots of total energies where𝐸b is the leading order
-term (Theorem 5.3) and of the pure tangent-point energiesTP(𝑝,2) (Theorem 5.6).
-For notational convenience, we use combinations of the indicesi,r,ato denote injective,
-regular, or arclength parametrized curves in a function spaceℱ, e.g.,ℱi,ℱ r,ℱ ir,orℱ ia.
-Furthermore, we denote by𝐿(𝑉,𝑊)the space of bounded linear maps between normed
-spaces, abbreviating𝐿(𝑉,𝑉)=𝐿(𝑉). Unless otherwise specified, ⟨·,·⟩ and|·|, refer to the
-Euclidean inner product and its induced Euclidean norm, respectively.
+In \Cref{sec:PS-abstract} we develop sufficient criteria for the  validity of the (PS)-condition
+in the abstract setting of general submanifolds of Hilbert spaces, not only
+for a single energy as in \Cref{thm:PS-abstract} but also for total energies with a leading order term and
+some additional energy of lower order; see \Cref{cor:PS-total-energy}. Moreover, with
+\Cref{thm:gradflow_subconvergence} we
+provide a long-time existence result for the gradient flow and subconvergence
+to critical points  for energies of class $C^{1,1}_\loc$. 
+That this flow preserves symmetry is shown in 
+\Cref{prop:symmetry-preserving-grad-flow}. Then we
+deduce as simple
+consequences the existence of minimizing (PS)-sequences and energy minimizers;
+see \cref{koro:critpoint_lowerenergy,koro:minimizer_existence}, as well as \cref{cor:critical+minimizers}
+ for an alternative proof 
+that works for energies that are only $C^1$. \Cref{sec:arclength} contains the proofs
+that the sets $\AL^{1+s}$ and $\AL^{1+s}_\bz$ defined in \cref{eq:ALs}
+and \cref{eq:ALsz} are actually smooth submanifolds of the Hilbert space
+$H^{1+s}(\R/\Z,\R^n)$ for any $s\in (\frac{1}{2},1]$ and
+$\bz\in\R^n$ 
+(\Cref{thm:arclength-manifold} and \Cref{thm:arclength-manifold-point}).
+We also define suitable projections onto the respective tangent spaces that are needed
+in the abstract \Cref{thm:PS-abstract}. Then we prove in \Cref{sec:AL-toplogy} that the open set
+of regular knots strongly deformation retracts onto the arclength submanifolds (see \Cref{thm:strong-deformation-ALs}), 
+and that connected components
+of the arclength submanifolds correspond to 
+different knot classes (\Cref{thm:components-knot-classes}). 
+In \Cref{sec:AL-critical} we prove that
+arclength constrained critical knots are also critical under the more
+relaxed fixed-length constraint, still in the abstract general setting; see \Cref{thm:critical-points} and \Cref{cor:critical-points}. 
+
+
+\Cref{sec:PS-bending+knot-energies} is dedicated to the proofs of
+our main results on the Palais--Smale condition. We start in  \Cref{sec:PS-bending}, however,
+ with the pure bending energy $\BendingEnergy$
+as a prototype example, both for the verification of the (PS)-condition (\Cref{cor:PS_elastic}) and its consequences (arclength-constrained $\BendingEnergy$-critical 
+points via minimization
+or gradient flows, see \Cref{cor:elastic_crit_gradient-flow}). \Cref{sec:PS-bending} is meant as a
+comprehensible blueprint for the more complicated proofs involving non-local terms
+in the following \cref{sec:PS-elastic-knot} on total energies, and in
+\cref{sec:tanpoint} on the pure tangent-point energies. 
+\Cref{thm:bending-knot-energy,thm:bending-moebius-energy} are shown in \cref{sec:PS-elastic-knot}, whereas \Cref{thm:PS-TP} is proven in \cref{sec:tanpoint}.
+
+Finally, \cref{sec:Smoothness} is devoted to the proof of \cref{thm:smoothness}. 
+This regularity theorem follows from the combination of the smoothness result for critical points of the pure bending energy $ \BendingEnergy $ (\cref{thm:elastic-smoothness-new}) with those for critical knots of total energies where $ \BendingEnergy $ is the leading order term (\cref{thm:smoothness-T-critical-new}) and of the pure tangent-point energies $ \TPp $ (\cref{thm:smoothness-TP-new}). 
+
+For notational convenience, we use combinations of the indices $\inj,\reg,\mathrm{a}$ to denote \underline{i}njective,
+\underline{r}egular, or \underline{a}rclength parametrized
+curves in a function space 
+$\mathscr{F}$, e.g., $\FS_\inj,$ $\FS_\reg,$ $\FS_\injreg, $
+or $\FS_\injunitspeed$.
+Furthermore, we denote by $ L(V,W) $ the space of bounded linear maps between normed spaces, abbreviating $ L(V,V)=L(V) $. Unless otherwise specified, $ \left\langle \cdot,\cdot \right\rangle  $ and $ \left|\cdot \right| $, refer to the Euclidean inner product and its induced Euclidean norm, respectively.

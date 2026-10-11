@@ -7,10 +7,10 @@ section_number: null
 pages: 12-14
 source_pdf: 2602.15276v1.pdf
 source_sha256: 18d77d6aa140fc50
-text_source: latex
-latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.759
 doc_brief: "Compact Q-balls and Q-shells within aCP N Skyrme-Faddeev type model — 11 sections: Introduction; The Lagrangian and Euler-Lagrange ; Radial reduction"
+text_source: latex
+latex_prose_ratio: 0.824
+latex_coverage_ratio: 0.996
 ---
 []{#sec3 label="sec3"}
 
@@ -20,32 +20,30 @@ The stability of Q-balls, a class of non-topological solitons, is critically dep
 
 The presence of additional terms in the Lagrangian, specifically the quartic interactions, can potentially alter this relationship ($E \sim Q^{\delta}$). It is not immediately obvious that such terms would necessarily preserve the critical inequality $\delta < 1$. Consequently, a thorough examination of the precise scaling relationship between the energy and the Noether charge is essential to ascertain the stability of Q-balls in models that incorporate these more complex interactions.
 
-The Noether charge of the field configurations is introduced by considering the Lagrangian density's invariance under the $U(1)^{N}$ global symmetry transformation: $$u_m\rightarrow e^{i\alpha_m}u_m,\qquad m=-l,\ldots,l.$$ Here, the $\alpha_m$ are $2l+1$ independent, real-valued parameters. The Noether currents $J_{\mu}^{(m)}(x)$ associated with this symmetry are first rewritten in the dimensionless Cartesian coordinates $\tilde{x}^{\mu}$. The relationship is given by $\widetilde{J}_{\mu}^{(m)}(\tilde{x})=r_0^3J_{\mu}^{(m)}(x)$, where: $$\begin{equation}
-\widetilde J_{\mu}^{(m)}(\tilde x)=-\frac{4i}{(1+u^{\dagger}\cdot u)^2}\sum_{m'=-l}^l \left[u^*_m \widetilde C_{\mu\nu}(\widetilde x)\Delta^2_{mm'}\frac{\partial u_{m'}}{\partial \tilde x_{\nu}}-{\rm c.c}\right].\label{NC}
-\end{equation}$$ When subsequently expressed in the curvilinear coordinates $\xi^{\mu}=(t,r,\theta,\phi)$, the currents from Equation [\[NC\]](#NC){reference-type="eqref" reference="NC"} transform as a linear combination: $\widetilde{J}_{\mu}^{(m)}(\tilde{x})=\frac{\partial\xi^{\alpha}}{\partial \tilde{x}^{\mu}}\widetilde{J}_{\alpha}^{(m)}(\xi)$, where $\widetilde{J}_{\alpha}^{(m)}(\xi)$ is defined by the expression: $$\begin{equation}
-\widetilde J_{\alpha}^{(m)}(\xi)=-\frac{4i}{(1+u^{\dagger}\cdot u)^2}\left[ \widetilde C_{\alpha\beta}(\xi)g^{\beta\sigma}K^{(m)}_{\sigma}-{\rm c.c}\right],\label{NC1}
-\end{equation}$$ with the tensor $K^{(m)}_{\sigma}$ (with further specification provided in Appendix [\[appendB\]](#appendB){reference-type="eqref" reference="appendB"}) given by: $$\begin{equation}
-K^{(m)}_{\sigma}=u^*_m\sum_{m'=-l}^l \Delta^2_{mm'}\frac{\partial u_{m'}}{\partial\xi^{\sigma}}.\nonumber
-\end{equation}$$ The symbol $\widetilde{C}_{\alpha\beta}(\xi)$ is defined by Equation [\[Cxi\]](#Cxi){reference-type="eqref" reference="Cxi"}.
+The Noether charge of the field configurations is introduced by considering the Lagrangian density's invariance under the $U(1)^{N}$ global symmetry transformation: $$u_m\rightarrow e^{i\alpha_m}u_m,\qquad m=-l,\ldots,l.$$ Here, the $\alpha_m$ are $2l+1$ independent, real-valued parameters. The Noether currents $J_{\mu}^{(m)}(x)$ associated with this symmetry are first rewritten in the dimensionless Cartesian coordinates $\tilde{x}^{\mu}$. The relationship is given by $\widetilde{J}_{\mu}^{(m)}(\tilde{x})=r_0^3J_{\mu}^{(m)}(x)$, where: $$\widetilde J_{\mu}^{(m)}(\tilde x)=-\frac{4i}{(1+u^{\dagger}\cdot u)^2}\sum_{m'=-l}^l \left[u^*_m \widetilde C_{\mu\nu}(\widetilde x)\Delta^2_{mm'}\frac{\partial u_{m'}}{\partial \tilde x_{\nu}}-{\rm c.c}\right].\label{NC}$$ When subsequently expressed in the curvilinear coordinates $\xi^{\mu}=(t,r,\theta,\phi)$, the currents from Equation [\[NC\]](#NC){reference-type="eqref" reference="NC"} transform as a linear combination: $\widetilde{J}_{\mu}^{(m)}(\tilde{x})=\frac{\partial\xi^{\alpha}}{\partial \tilde{x}^{\mu}}\widetilde{J}_{\alpha}^{(m)}(\xi)$, where $\widetilde{J}_{\alpha}^{(m)}(\xi)$ is defined by the expression: $$\widetilde J_{\alpha}^{(m)}(\xi)=-\frac{4i}{(1+u^{\dagger}\cdot u)^2}\left[ \widetilde C_{\alpha\beta}(\xi)g^{\beta\sigma}K^{(m)}_{\sigma}-{\rm c.c}\right],\label{NC1}$$ with the tensor $K^{(m)}_{\sigma}$ (with further specification provided in Appendix [\[appendB\]](#appendB){reference-type="eqref" reference="appendB"}) given by: $$K^{(m)}_{\sigma}=u^*_m\sum_{m'=-l}^l \Delta^2_{mm'}\frac{\partial u_{m'}}{\partial\xi^{\sigma}}.\nonumber$$ The symbol $\widetilde{C}_{\alpha\beta}(\xi)$ is defined by Equation [\[Cxi\]](#Cxi){reference-type="eqref" reference="Cxi"}.
 
-For the chosen radial ansatz, the spatial components $\widetilde{J}_{r}^{(m)}(\xi)$ and $\widetilde{J}_{\theta}^{(m)}(\xi)$ vanish. The remaining non-zero components are the time and angular currents: $$\begin{align}
+For the chosen radial ansatz, the spatial components $\widetilde{J}_{r}^{(m)}(\xi)$ and $\widetilde{J}_{\theta}^{(m)}(\xi)$ vanish. The remaining non-zero components are the time and angular currents: $$\begin{aligned}
 \widetilde J_{t}^{(m)}(\xi)&=8\omega\frac{f^2}{(1+f^2)^2}\left[1+\kappa\left(F_1(r)+3\frac{f'}{f}F_3(r)\right)\right]\frac{(l-m)!}{(l+m)!}(P^m_l)^2,\\
 \widetilde J_{\phi}^{(m)}(\xi)&=8m\frac{f^2}{1+f^2}(1-\kappa F_4(r))\,\frac{(l-m)!}{(l+m)!}(P^m_l)^2.
-\end{align}$$ Here, $P^m_l(\cos\theta)$ denotes the associated Legendre polynomials. The continuity equation, $$\frac{1}{\sqrt{-g}}\partial_{\alpha}(\sqrt{-g}g^{\alpha\beta}\widetilde{J}_{\beta}^{(m)})=0,$$ simplifies to $\partial_t\widetilde{J}_{t}^{(m)}+\frac{1}{r^2\sin^2\theta}\partial_{\phi}\tilde{J}_{\phi}^{(m)}=0$. This condition is explicitly satisfied because both $\widetilde{J}_{t}^{(m)}$ and $\widetilde{J}_{\phi}^{(m)}$ are exclusively functions of the spatial coordinates $r$ and $\theta$, rendering them independent of $t$ and $\phi$.
+\end{aligned}$$ Here, $P^m_l(\cos\theta)$ denotes the associated Legendre polynomials. The continuity equation, $$\frac{1}{\sqrt{-g}}\partial_{\alpha}(\sqrt{-g}g^{\alpha\beta}\widetilde{J}_{\beta}^{(m)})=0,$$ simplifies to $\partial_t\widetilde{J}_{t}^{(m)}+\frac{1}{r^2\sin^2\theta}\partial_{\phi}\tilde{J}_{\phi}^{(m)}=0$. This condition is explicitly satisfied because both $\widetilde{J}_{t}^{(m)}$ and $\widetilde{J}_{\phi}^{(m)}$ are exclusively functions of the spatial coordinates $r$ and $\theta$, rendering them independent of $t$ and $\phi$.
 
-Based on the work of [@Klimas:2017eft], the Noether charges $Q_t^{(m)}$ are defined as the integral of the time component of the dimensionless Noether current, $\widetilde{J}_t^{(m)}(\xi)$, over the entire spatial volume: $$\begin{equation}
-Q_t^{(m)}:=\frac{1}{2}\int_{{\mathbb{R}}^3}d^3\xi\sqrt{-g}\widetilde J^{(m)}_t(\xi)
-\end{equation}$$ Upon applying the ${Q}$-ball ansatz from Equation [\[ansatz\]](#ansatz){reference-type="eqref" reference="ansatz"} and integrating over the angular coordinates, the expression for the Noether charge simplifies to: $$\begin{align}
+Based on the work of [@Klimas:2017eft], the Noether charges $Q_t^{(m)}$ are defined as the integral of the time component of the dimensionless Noether current, $\widetilde{J}_t^{(m)}(\xi)$, over the entire spatial volume: $$Q_t^{(m)}:=\frac{1}{2}\int_{{\mathbb{R}}^3}d^3\xi\sqrt{-g}\widetilde J^{(m)}_t(\xi)$$ Upon applying the ${Q}$-ball ansatz from Equation [\[ansatz\]](#ansatz){reference-type="eqref" reference="ansatz"} and integrating over the angular coordinates, the expression for the Noether charge simplifies to: $$\begin{aligned}
 Q_t^{(m)}&=\omega\frac{16\pi}{2l+1}\int_0^{\infty}dr\, r^2\frac{f^2}{(1+f^2)^2}\left[1+\kappa\left(F_1+3\frac{f'}{f}F_3\right)\right]\label{Qt}
-\end{align}$$ It is important to note that all Noether charges $Q_t^{(m)}$ are independent of the field index $m$. When the term proportional to $\kappa$ is excluded (i.e., $\kappa \to 0$), this expression recovers the Noether charges previously derived for the ${C}P^N$ model in the absence of quartic interactions (as discussed following the ansatz definition).
+\end{aligned}$$ It is important to note that all Noether charges $Q_t^{(m)}$ are independent of the field index $m$. When the term proportional to $\kappa$ is excluded (i.e., $\kappa \to 0$), this expression recovers the Noether charges previously derived for the ${C}P^N$ model in the absence of quartic interactions (as discussed following the ansatz definition).
 
-For completeness, we also define the quantities $Q_{\phi}^{(m)}$; these, however, do not represent conserved Noether charges. They are defined by the volume integral: $$\begin{align*}
+For completeness, we also define the quantities $Q_{\phi}^{(m)}$; these, however, do not represent conserved Noether charges. They are defined by the volume integral: $$\begin{aligned}
 Q_\phi^{(m)}:=\frac{3}{2}\int_{{\mathbb{R}}^3}d^3\xi\sqrt{-g}\,\frac{\widetilde J^{(m)}_\phi(\xi)}{r^2}.
-\end{align*}$$ Integrating this expression over the angular coordinates yields the final radial form: $$\begin{equation}
-Q_\phi^{(m)}=m\frac{48\pi}{2l+1}\int_0^{\infty}dr\,\frac{f^2}{1+f^2}\left[1-\kappa F_4\right].\label{Qphi}
-\end{equation}$$
+\end{aligned}$$ Integrating this expression over the angular coordinates yields the final radial form: $$Q_\phi^{(m)}=m\frac{48\pi}{2l+1}\int_0^{\infty}dr\,\frac{f^2}{1+f^2}\left[1-\kappa F_4\right].\label{Qphi}$$
 
-The total energy $E$, defined by the volume integral $E=\int_{{\mathbb{R}}^3}d^3\xi\sqrt{-g}\,\widetilde {\cal H}$, can be expressed in terms of the Noether charge $Q_t^{(m)}$ and the non-conserved charge $Q_\phi^{(m)}$, as detailed in Equation [\[engC2\]](#engC2){reference-type="eqref" reference="engC2"}. Under the constraint ${\beta e^2+2\gamma e^2=0}$, the expression for the total energy is: $$\begin{align}
+The total energy $E$, defined by the volume integral $E=\int_{{\mathbb{R}}^3}d^3\xi\sqrt{-g}\,\widetilde {\cal H}$, can be expressed in terms of the Noether charge $Q_t^{(m)}$ and the non-conserved charge $Q_\phi^{(m)}$, as detailed in Equation [\[engC2\]](#engC2){reference-type="eqref" reference="engC2"}. Under the constraint ${\beta e^2+2\gamma e^2=0}$, the expression for the total energy is: $$\begin{aligned}
 E&=\sum_{m=-l}^l\omega Q_t^{(m)}+\sum_{m=-l}^lm Q_\phi^{(m)}+\int_{{\mathbb{R}}^3}d^3\xi\sqrt{-g}\left[\frac{4f'^2}{(1+f^2)^2}+\tilde\mu^2V\right]\nonumber\\
 &-\kappa(\beta e^2-1)\int_{{\mathbb{R}}^3}d^3\xi\sqrt{-g}\,\Bigg[\frac{l(l+1)}{r^2}\frac{4\omega^2f^4}{(1+f^2)^3}-\frac{l^2(l+1)^2}{r^4}\frac{f^4}{(1+f^2)^2}\Bigg].
-\end{align}$$
+\end{aligned}$$
+
+# Compactons {#sec4}
+
+In [@Klimas:2017eft], the authors demonstrated that the $\mathbb{C}P^N$ model, utilizing the potential defined in Equation [\[potencjal\]](#potencjal){reference-type="eqref" reference="potencjal"}, yields compact solutions for odd values of $N$. This implies that the field solutions possess a finite spatial size, characterized by a specific outer radius, $R_{\text{out}}$. At this radius, the field solution and its first derivative smoothly approach a vacuum state (i.e., they approach zero). Beyond this boundary ($r > R_{\text{out}}$), the field is identically zero, meaning the solution is non-trivial only within the region $r<R_{\text{out}}$. These compact solutions are further classified into two distinct types--Q-balls and Q-shells--based on the behavior of their radial functions.
+
+The Q-ball solutions are specifically observed for odd field numbers, namely $N=1$ and $N=3$. For the $N=1$ case, the radial function $f(r)$ possesses a non-zero value at the center and a negative slope there, defined by the boundary conditions $f(0)>0$ and $f'(0)<0$. Conversely, when $N=3$, the radial function is zero at the origin but starts with a positive slope, characterized by the boundary conditions $f(0)=0$ and $f'(0)>0$.
+
+For higher odd values of $N$, specifically $N=5, 7, 9, \ldots$, the resulting solutions are qualitatively distinct from Q-balls and are consequently designated as Q-shells. A key characteristic of these solutions is the presence of a vacuum state within a spherical region, spanning from the origin up to a radius $R$ ($0 \le r \le R$).

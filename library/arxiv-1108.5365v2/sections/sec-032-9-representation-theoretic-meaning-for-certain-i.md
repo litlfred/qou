@@ -7,10 +7,10 @@ section_number: 9
 pages: 88-89
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
-text_source: latex
-latex_prose_ratio: 0.943
-latex_coverage_ratio: 0.977
 doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:meaning}
 In this section, we state without proof certain integral transformations of $G_b$ that arise in the calculations of certain representation relations.

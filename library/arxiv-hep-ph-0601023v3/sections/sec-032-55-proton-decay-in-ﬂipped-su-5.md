@@ -8,152 +8,130 @@ pages: 68-71
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
 doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.992
 ---
-In the previous section we have shown the possibility to make a clear test of
-realistic grand uniﬁed theories with symmetric Yukawa coup lings through the
-proton decay into a meson and antineutrinos. It is thus inter esting to investi-
-gate how these conclusions change if one departs from the ﬂav or structure of
-the minimal renormalizable theories. It is well known that t he gauge d = 6
-proton decay cannot be rotated away, i.e., set to zero via par ticular choice of
-parameters entering in a grand uniﬁed theory, in the framewo rk of conven-
-tionalSU (5) theory with the Standard Model particle content [218, 21 9]. So,
-it would appear that the gauge d = 6 operators and proton decay induced
-by them are genuine features of matter uniﬁcation. Now this c onclusion has
-some caveats as we now discuss. To understand the issues more clearly it
-is useful to investigate the constraints that might allow on e to rotate away
-the baryon and lepton number violating dimension six operat ors induced by
-gauge interactions. Thus consider the model based on conven tional SU (5).
-68
-Setting k2 = 0 in Eqs. (9)-(10) the relevant coeﬃcients that enter in the
-decay rate formulas are:
-c(eC
-α,dβ)SU (5) = k2
-1
-[
-V 11
-1 Vαβ
-2 + (V1VUD )1β(V2V †
-UD )α1
-]
-(177)
-c(eα,dC
-β )SU (5) = k2
-1V 11
-1 Vβα
-3 (178)
-c(νl,dα,dC
-β )SU (5) = k2
-1(V1VUD )1α(V3VEN )βl, α = 1 or β = 1 (179)
-c(νC
-l ,dα,dC
-β )SU (5) = 0 (180)
-It is now easy to see that the demand to rotate away proton deca y leads to
-conﬂict with experiment. In order to set Eq. (178) to zero, th e only possible
-choice is V 11
-1 = 0. [Setting ( V3)βα to zero would violate unitarity.] If we
-now look at Eq. (179), there is only one way to set to zero the co eﬃcient
-entering in the decay channel into antineutrinos. Namely, w e have to choose
-(V1VUD )1α = 0. This, however, is not possible since it would imply that, at
-least, V 13
-CKM is zero in conﬂict with experiment.
-Next we investigate the same issue in ﬂipped SU (5). However, before
-doing so we give a brief discussion of it. The gauge group in th is case is
-SU (5) ×U(1) and the hypercharge is a linear combination of generator s in
-SU (5) and in U(1), and so strictly speaking one does not have a uniﬁed
-gauge group. The particles reside in the multiplets ¯5, 10 and in an SU(5)
-singlet and the assignments diﬀer from those of the usual SU( 5) as given in
-Appendix A. Thus in the ﬂipped SU (5) ×U(1) case the particle content of
-the multiplets is as below: For the ¯5 of SU(5) we have
-5 =
-
-
-uc
-La
-e−
-L
-−νeL
-
- (181)
-where subscript a is the color index. For the 10 plet of SU (5) and for the
-singlet we have
-10 =
-
-
-0 dc
-3 −dc
-2 −u1 −d1
-−dc
-3 0 dc
-1 −u2 −d2
-dc
-2 −dc
-1 0 −u3 −d3
-u1 u2 u3 0 νC
-d1 d2 d3 −νC 0
-
-
-L
-, 1 = e+ (182)
-69
-The d = 6 proton decay from gauge interactions is again mediated by lepto
-quarks but their quantum number assignments are diﬀerent so we label them
-with a prime: V ′ = (X ′,Y ′). This time the relevant d = 6 coeﬃcients are:
-c(eC
-α,dβ)SU (5)′ = 0 (183)
-c(eα,dC
-β )SU (5)′ = k2
-2(V4V †
-UD )β1(V1VUDV †
-4V3)1α (184)
-c(νl,dα,dC
-β )SU (5)′ = k2
-2Vβα
-4 (V1VUDV †
-4V3VEN )1l, α = 1 or β = 1 (185)
-c(νC
-l ,dα,dC
-β )SU (5)′ = k2
-2
-[
-(V4V †
-UD )β1(U †
-ENV2)lα +Vβα
-4 (U †
-ENV2V †
-UD )l1
-]
-,
-α = 1 or β = 1 (186)
-where the subscripts SU (5)′ stands for ﬂipped SU (5). Let us see if it is
-possible to rotate away the proton decay in ﬂipped SU (5). To set Eq. (185)
-to zero, we can only choose Vβα
-4 = (D†
-CD)βα = 0, where α = 1 or β = 1.
-We could think about the possibility of making both Eqs. (184 ) and (186)
-zero, choosing ( V4V †
-UD )β1 = 0, however, this is in contradiction with the
-measurements of the CKM angles. Since in ﬂipped SU (5) the neutrino is
-Majorana, we only have to suppress Eq. (184). This can be acco mplished by
-setting (V1VUDV †
-4V3)1α = (U †
-CE)1α = 0 [220]. We note that this constraint
-is unrelated to the constraint on V4. Thus, there is no contradiction with
-the unitarity constrains nor conﬂict with any experimental measurements of
-mixing angles. Consequently in the context of ﬂipped SU (5), it is possible
-to completely eliminate or rotate away the gauge d = 6 contributions in a
-consistent way, by imposing the necessary conditions at 1 Ge V [220].
-In contrast in the minimal renormalizable ﬂipped SU (5) it is not possible
-to satisfy the ﬁrst condition, since YD = YT
-D implies V4 = K ∗
-d, where Kd is
-a diagonal matrix containing three phases. However, as disc ussed already
-we have to take into account the nonrenormalizable operator s, which are
-important for fermion masses and which invariably lead to mo diﬁcation of
-naive predictions. Thus in general, in the context of ﬂipped SU (5), one is
-allowed to impose the necessary constraints and remove the g auge operators
-for proton decay. In summary the main diﬀerence between SU (5) and ﬂipped
-SU (5) is that the unitary constraint that prevents one to elimi nate proton
-decay in conventional SU (5) does not operate in the latter case. In other
-words, the coeﬃcients which depend on α and β with α = 1 or β = 1 have
-diﬀerent consequences in those two scenarios [see Eqs. (178 ) and (185)].
-70
+In the previous section we have shown the possibility to 
+make a clear test of realistic grand unified theories with symmetric 
+Yukawa couplings through the proton decay into a meson and antineutrinos.
+It is thus interesting to investigate how these conclusions change if
+one departs from the flavor structure of the minimal renormalizable theories.
+It is well known that the gauge $d=6$ proton decay cannot be
+rotated away, i.e., set to zero via particular choice of
+parameters entering in a grand unified theory, in the framework of
+conventional $SU(5)$ theory with the Standard Model particle 
+content~\cite{Mohapatra:1979yj,Nandi:1982ew}. So, it 
+would appear 
+ that the gauge $d=6$ operators and proton decay induced by 
+ them are genuine features of matter unification. Now 
+this conclusion has some caveats as we now discuss.
+To understand the issues more clearly it is useful to investigate
+the constraints that might allow one to rotate away the baryon and
+lepton number violating dimension six operators induced by gauge
+interactions. Thus  consider the model based on conventional $SU(5)$. 
+Setting $k_2=0$ in Eqs.~(9)-(10) the relevant coefficients that enter 
+in the decay rate formulas are:
+
+
+\begin{eqnarray}
+\label{5a} c(e^C_{\alpha}, d_{\beta})_{SU(5)}&=& k_1^2 \left[
+V^{11}_1 V^{\alpha \beta}_2 + ( V_1 V_{UD})^{1
+\beta}( V_2 V^{\dagger}_{UD})^{\alpha 1}\right] \\
+\label{5b} c(e_{\alpha}, d_{\beta}^C)_{SU(5)} &=& k_1^2 V^{11}_1
+V^{\beta \alpha}_3 \\
+\label{5c} c(\nu_l, d_{\alpha}, d^C_{\beta})_{SU(5)}&=& k_1^2 (
+V_1 V_{UD} )^{1 \alpha} ( V_3 V_{EN})^{\beta l}, \
+\textrm{$\alpha=1$ or $\beta = 1$}\\
+\label{5d} c(\nu_l^C, d_{\alpha}, d^C_{\beta})_{SU(5)}&=&0
+\end{eqnarray}
+
+It is now easy to see that the demand to rotate away proton decay leads
+to conflict with experiment. In order to
+set Eq.~(\ref{5b}) to zero, the only possible choice is
+$V_1^{11}=0$. [Setting $(V_3)^{\beta\alpha}$ to zero would violate
+unitarity.] If we now look at Eq.~(\ref{5c}), there is only one
+way to set to zero the coefficient entering in the decay channel
+into antineutrinos. Namely, we have to choose $(V_1 V_{UD})^{1
+\alpha}=0$. This, however, is not possible since it would imply
+that, at least, $V_{CKM}^{13}$ is zero in conflict with experiment.
+
+
+Next we investigate the same issue in flipped
+$SU(5)$.  However, before doing so we give a brief discussion of  it.
+  The gauge group in this case is  $SU(5)\times U(1)$ and the hypercharge 
+is a linear combination of generators in $SU(5)$ and in $U(1)$, and so strictly speaking one does not
+have  a unified gauge group.  The particles  reside in the multiplets $\bar 5$, $10$ 
+and in an SU(5)  singlet and the assignments differ from those  of the usual SU(5) as
+given in Appendix A. Thus in the flipped $SU(5)\times U(1)$ case the particle
+content of the multiplets  is as below: For the $\bar 5$ of  SU(5) we have  
+
+\begin{eqnarray}
+{\overline {5}}= \left(\begin{array}{c}u_{ L a}^c\\
+e^-_L\\  -\nu_{eL}
+  \end{array}\right)
+\end{eqnarray}
+where  subscript  a is the color  index. For the 10 plet of $SU(5)$ and for the singlet we have
+
+\begin{eqnarray}
+10 =\left(\begin{array}{ccccc}0 & d_3^c &-d_2^c  &-u^1 &-d^1\\ -d_3^c &0
+&d_1^c  &-u^2 &-d^2\\ d_2^c &-d_1^c &0  &-u^3 &-d^3 \\
+ u^1 &u^2 &u^3  &0 &\nu^C \\ d^1 &d^2 &d^3 &-\nu^C
+&0
+  \end{array}
+ \right)_L
+, ~~1=e^+
+\end{eqnarray}
+The $d=6$ proton decay  from gauge interactions  is again mediated by lepto quarks but
+their quantum number assignments are different so we label them with a prime: 
+ $V'=(X', Y')$. This time the relevant $d=6$ coefficients are: 
+\begin{eqnarray}
+\label{7a} c(e^C_{\alpha}, d_{\beta})_{SU(5)'}&=&0\\
+ \label{7b}
+c(e_{\alpha}, d_{\beta}^C)_{SU(5)'} &=&
+k_2^2 (V_4 V^{\dagger}_{UD} )^{\beta 1} ( V_1 V_{UD} V_4^{\dagger} V_3)^{1 \alpha}\\
+\label{7c} c(\nu_l, d_{\alpha}, d^C_{\beta})_{SU(5)'}&=&  k_2^2
+V_4^{\beta \alpha}( V_1 V_{UD} V^{\dagger}_4 V_3 V_{EN})^{1l}, \
+\textrm{$\alpha=1$ or $\beta = 1$}\\
+\label{7d} c(\nu_l^C, d_{\alpha}, d^C_{\beta})_{SU(5)'}&=& k_2^2
+\left[ ( V_4 V^{\dagger}_{UD} )^{\beta
+ 1} ( U^{\dagger}_{EN} V_2)^{l \alpha }+ V^{\beta \alpha}_4
+ (U^{\dagger}_{EN} V_2 V^{\dagger}_{UD})^{l1}\right], \nonumber \\
+\textrm{$\alpha=1$ or $\beta = 1$}
+\end{eqnarray}
+where the subscripts $SU(5)'$ stands for flipped $SU(5)$. 
+Let us see if it is possible to rotate away the proton decay in
+flipped $SU(5)$. To set Eq.~(\ref{7c}) to zero, we can only choose
+$V_4^{\beta\alpha}= (D_C^{\dagger} D)^{\beta \alpha}=0$, where
+$\alpha=1$ or $\beta=1$. We could think about the possibility of
+making both Eqs.~(\ref{7b}) and (\ref{7d}) zero, choosing $(V_4
+V_{UD}^\dagger)^{\beta 1}=0$, however, this is in contradiction
+with the measurements of the CKM angles. Since in flipped $SU(5)$
+the neutrino is Majorana, we only have to suppress Eq.~(\ref{7b}).
+This can be accomplished by setting
+$(V_1 V_{UD} V_4^{\dagger} V_3)^{1 \alpha}=(U_C^{\dagger} E)^{1
+  \alpha}=0$~\cite{Dorsner:2004jj}.
+We note that this constraint is unrelated to the  constraint on
+$V_4$. Thus, there is no contradiction with the unitarity constrains
+nor conflict with any experimental measurements of mixing angles.
+Consequently in the context of flipped $SU(5)$, it is
+possible to \textit{completely} eliminate or rotate away the gauge $d=6$
+contributions in a consistent way, by imposing the necessary conditions 
+at 1\,GeV~\cite{Dorsner:2004jj}.
+
+In contrast in the minimal renormalizable flipped $SU(5)$ it is not possible
+to satisfy the first condition, since $Y_D=Y_D^T$ implies
+$V_4=K^*_d$, where $K_d$ is a diagonal matrix containing three 
+phases. However, as discussed already we have to take
+into account the nonrenormalizable operators, which are 
+important for fermion masses and which invariably lead to
+modification of naive predictions. Thus in general, in the
+context of flipped $SU(5)$, one is allowed to impose the
+necessary constraints and remove the gauge operators for proton decay.
+In summary the main difference between $SU(5)$  and
+flipped $SU(5)$ is that the unitary constraint that prevents
+one to eliminate proton decay in conventional $SU(5)$ does not
+operate in the latter case. In other words, the coefficients which
+depend on $\alpha$ and $\beta$ with $\alpha=1$ or $\beta =1$ have
+different consequences in those two scenarios [see Eqs.~(\ref{5b}) and
+(\ref{7c})].

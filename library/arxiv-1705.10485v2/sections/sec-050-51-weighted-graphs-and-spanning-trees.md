@@ -8,49 +8,23 @@ pages: 40-41
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
 doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
+text_source: latex
+latex_prose_ratio: 0.822
+latex_coverage_ratio: 0.764
 ---
-An edge-weighted graphG, orweighted graphfor short, is a graphG in which each edgee is assigned a
-weightwG(e). Here we restrict ourselves to weightswG(e) withwG(e)∈ R+. Edges not in the graph can
-be thought of as edges of weight0, all our deﬁnitions being consistent with this convention.
-If B is a multiset of vertices ofG, we can consider the graphG[B] induced byG on B and deﬁned as
-follows: the vertices ofG[B] correspond to elements ofB (if B contains an element with multiplicitym,
-thenmvertices correspond to this element), and there is an edge between two vertices if the corresponding
-vertices of G are equal or connected by an edge inG. This new graph has a natural weighted graph
-structure: put on each edge ofG[B] the weight of the corresponding edge inG (if the edge connects two
-copies of the same vertex ofG, we put weight1).
-Deﬁnition 42.A spanning tree of a graphG = (V,E ) is a subsetE′ of E such that(V,E′) is a tree. In
-other words, it is a subgraph ofG that is a tree and covers all vertices.
-The set of spanning trees ofT is denoted ST(G). IfG is a weighted graph, we say that the weightw(T )
-of a spanning tree ofG is deﬁned as theproductof the weights of the edges inT.
-1
-w12
-2
-w23
-w13 3 w34
-4
-w45
-5
-6
-w67
-7
-G
-G[B]
-1
-w12
-2
-w23
-w13 3
-4
-4
-w34
-w34
-1
-T
-1
-2
-3
-4
-4
-Fig. 10 A weighted dependency graphG for 7 random variables; the induced graphG[B] with B ={1, 2, 3, 4, 4}; and a
-spanning treeT of G[B], withw(T ) = w12w23w34.
-Mod-φ convergence, II: Estimates on the speed of convergence 41
+An *edge-weighted graph* $G$, or *weighted graph* for short, is a graph $G$ in which each edge $e$ is assigned a weight $w_G(e)$. Here we restrict ourselves to weights $w_G(e)$ with $w_G(e) \in \mathbb{R}_+$. Edges not in the graph can be thought of as edges of weight $0$, all our definitions being consistent with this convention.
+
+If $B$ is a multiset of vertices of $G$, we can consider the graph $G[B]$ induced by $G$ on $B$ and defined as follows: the vertices of $G[B]$ correspond to elements of $B$ (if $B$ contains an element with multiplicity $m$, then $m$ vertices correspond to this element), and there is an edge between two vertices if the corresponding vertices of $G$ are equal or connected by an edge in $G$. This new graph has a natural weighted graph structure: put on each edge of $G[B]$ the weight of the corresponding edge in $G$ (if the edge connects two copies of the same vertex of $G$, we put weight $1$).
+
+::: definition
+A spanning tree of a graph $G=(V,E)$ is a subset $E'$ of $E$ such that $(V,E')$ is a tree. In other words, it is a subgraph of $G$ that is a tree and covers all vertices.
+:::
+
+The set of spanning trees of $T$ is denoted $\mathop{\mathrm{ST}}(G)$. If $G$ is a weighted graph, we say that the weight $w(T)$ of a spanning tree of $G$ is defined as the *product* of the weights of the edges in $T$.
+
+<figure id="fig:weighteddependency">
+<div class="center">
+
+</div>
+<figcaption>A weighted dependency graph <span class="math inline"><em>G</em></span> for <span class="math inline">7</span> random variables; the induced graph <span class="math inline"><em>G</em>[<em>B</em>]</span> with <span class="math inline"><em>B</em> = {1, 2, 3, 4, 4}</span>; and a spanning tree <span class="math inline"><em>T</em></span> of <span class="math inline"><em>G</em>[<em>B</em>]</span>, with <span class="math inline"><em>w</em>(<em>T</em>) = <em>w</em><sub>12</sub><em>w</em><sub>23</sub><em>w</em><sub>34</sub></span>.<span id="fig:weighteddependency" label="fig:weighteddependency"></span></figcaption>
+</figure>

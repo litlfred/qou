@@ -291,8 +291,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 14,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -303,7 +303,7 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.95,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -336,7 +336,7 @@
     {
      "id": "sec-006-3-a-polynomial-regulator-and-k2-of-a-curve",
      "title": "A-polynomial, regulator and K2 of a curve",
-     "prose_ratio": 0.127,
+     "prose_ratio": 0.253,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -347,7 +347,8 @@
     {
      "id": "sec-008-32-the-regulator-map-of-k2",
      "title": "The regulator map of K2",
-     "result": "no matching \\section"
+     "prose_ratio": 0.481,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-009-33",
@@ -357,18 +358,24 @@
     {
      "id": "sec-010-41-the-curve-of-characters",
      "title": "The curve of characters",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-42-invariant-and-dehn-surgery-of-hyperbolic-knot",
      "title": "Invariant and Dehn Surgery of Hyperbolic Knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-5-an-example-the-figure-eight-knot",
      "title": "An Example: The Figure Eight Knot",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.985,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },

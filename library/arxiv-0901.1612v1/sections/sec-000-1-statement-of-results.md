@@ -7,18 +7,18 @@ section_number: 1
 pages: 2-4
 source_pdf: 0901.1612v1.pdf
 source_sha256: b4f3efcadd1e5caf
-text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.941
 doc_brief: "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John"
 duplicate_of: "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.954
 ---
 []{#sec:results label="sec:results"}
 
 Consider the configuration space $$\mathrm{Conf}_3S^3\subset S^3 \times S^3 \times S^3$$ of ordered triples $(x,y,z)$ of distinct points in the unit $3$-sphere $S^3$ in $\mathbb R^4$. Since $x$, $y$ and $z$ are distinct, they span a $2$-plane in $\mathbb R^4$. Orient this plane so that the vectors from $x$ to $y$ and from $x$ to $z$ form a positive basis, and then move it parallel to itself until it passes through the origin. The result is an element $G(x,y,z)$ of the Grassmann manifold $\mathrm{G}_2\mathbb R^4$ of all oriented 2-planes through the origin in $\mathbb R^4$. This defines the ***Grassmann map*** $$G: \mathrm{Conf}_3S^3\longrightarrow \mathrm{G}_2\mathbb R^4.$$ It is equivariant with respect to the diagonal $O(4)$ action on $S^3 \times S^3 \times S^3$ and the usual $O(4)$ action on $\mathrm{G}_2\mathbb R^4$.
 
-<figure id="fig:gras" data-latex-placement="h!">
-<p><embed src="FgGR.pdf" style="height:120pt" /> (-70,27)<span><span class="math inline"><em>G</em>(<em>x</em>, <em>y</em>, <em>z</em>)</span></span> (-135,95)<span><span class="math inline"><em>x</em></span></span> (-108,86)<span><span class="math inline"><em>y</em></span></span> (-85,80)<span><span class="math inline"><em>z</em></span></span> (-140,75)<span><span class="math inline"><em>X</em></span></span> (-114,55)<span><span class="math inline"><em>Y</em></span></span> (-80,55)<span><span class="math inline"><em>Z</em></span></span> (-125,15)<span><span class="math inline"><em>S</em><sup>3</sup></span></span> (-190,23)<span><span class="math inline">ℝ<sup>4</sup></span></span></p>
+<figure id="fig:gras">
+<p><embed src="FgGR.pdf" style="height:1.66667in" /> (-70,27)<span><span class="math inline"><em>G</em>(<em>x</em>,<em>y</em>,<em>z</em>)</span></span> (-135,95)<span><span class="math inline"><em>x</em></span></span> (-108,86)<span><span class="math inline"><em>y</em></span></span> (-85,80)<span><span class="math inline"><em>z</em></span></span> (-140,75)<span><span class="math inline"><em>X</em></span></span> (-114,55)<span><span class="math inline"><em>Y</em></span></span> (-80,55)<span><span class="math inline"><em>Z</em></span></span> (-125,15)<span><span class="math inline"><em>S</em><sup>3</sup></span></span> (-190,23)<span><span class="math inline">ℝ<sup>4</sup></span></span></p>
 <figcaption>The Grassmann map</figcaption>
 </figure>
 

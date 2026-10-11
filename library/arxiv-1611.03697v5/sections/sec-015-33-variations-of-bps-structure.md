@@ -8,35 +8,36 @@ pages: 11-12
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
 doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+text_source: latex
+latex_prose_ratio: 0.949
+latex_coverage_ratio: 0.993
 ---
-ory under changes in stability parameters is controlled by the Konts evich-Soibelman wall-crossing
-formula. This forms the main ingredient in the following deﬁnition of a va riation of BPS structures,
-which is a special case of the notion of a continuous family of stability s tructures from [ 23, Section
-2.3]. Full details can be found in Appendix A; here we just give the rough idea.
-Deﬁnition 3.3. A variation of BPS structure over a complex manifold M consists of a collection
-of BPS structures (Γ p, Zp, Ω p) indexed by the points p∈ M, such that
-(a) The charge lattices Γ p form a local system of abelian groups, and the intersection forms
-⟨−,−⟩p are covariantly constant.
-(b) Given a covariantly constant family of elements γp∈ Γ p, the central charges Zp(γp)∈ C
-are holomorphic functions of p∈ M.
-(c) The constant in the support property ( 1) can be chosen uniformly on compact subsets.
-12 TOM BRIDGELAND
-(d) For each acute sector ∆ ⊂ C∗, the anti-clockwise product over active rays in ∆
-Sp(∆) =
-∏
-ℓ⊂∆
-Sp(ℓ)∈ Aut(Tp), (15)
-is covariantly constant as p∈ M varies, providing the boundary rays of ∆ are never active.
-Note that the local system in (a) induces a ﬂat Ehresmann connect ion on the bundle of tori
-(T+)p = Hom Z(Γ p, C∗),
-over the manifold M, and hence also on the associated bundle of twisted tori Tp. It will require
-some work to make rigorous sense of the wall-crossing formula, con dition (d). We do this using
-formal completions in Appendix A following [ 23]. This needs no convergence assumptions and
-completely describes the behaviour of the BPS invariants as the poin t p∈ M varies: knowing all
-the invariants Ω( γ) at some point of M determines them at all other points.
-The material of Section 2.9 gives interesting examples of variations of BPS structures. For a
-ﬁxed k≥ 1 the corresponding BPS structure (Γ , Z, Ω) is determined by the pair
-(Z(e1), Z(e2))∈ h2,
-where h denotes the upper half-plane. As this point varies we obtain a variat ion of BPS structures.
-In particular, the BPS invariants for ν < 0 are completely determined by the trivial case ν > 0
-and the wall-crossing formula ( 15).
+\label{vbpss}
+
+The variation of BPS invariants in Donaldson-Thomas theory under changes in stability parameters is controlled by the Kontsevich-Soibelman wall-crossing formula. This forms the main ingredient in the following  definition of a variation of BPS structures, which is a special case of the  notion of a continuous family of stability structures  from \cite[Section 2.3]{KS1}.
+Full details can be found in Appendix \ref{two}; here we just give the rough idea.
+
+
+
+\begin{defn}
+\label{co}
+A variation of BPS structure over a complex manifold $M$ consists of a collection of BPS structures $(\Gamma_p,Z_p,\Omega_p)$ indexed by the points  $p\in M$, such that
+
+\begin{itemize}
+\item[(a)] The charge lattices  $\Gamma_p$ form a local system of abelian groups, and the intersection forms $\<-,-\>_p$ are covariantly  constant.\smallskip
+
+\item[(b)] Given a covariantly constant family of elements $\gamma_p\in \Gamma_p$, the central charges $Z_p(\gamma_p)\in \bC$ are holomorphic functions of $p\in M$.\smallskip
+
+\item[(c)] The constant in the support property \eqref{support} can be chosen uniformly on compact subsets.\smallskip
+
+\item[(d)] For each acute sector $\Delta\subset \bC^*$, the anti-clockwise product over active rays in $\Delta$\begin{equation}\label{wcw} \bS_p(\Delta)=\prod_{\ell\subset \Delta} \bS_p(\ell) \in \Aut(\bT_p),\end{equation}
+is covariantly constant as $p\in M$ varies, providing the boundary rays of $\Delta$ are never active.
+\end{itemize}
+\end{defn}
+
+
+Note that the local system in (a) induces a flat Ehresmann connection on the bundle of tori \[(\bT_+)_p=\Hom_\bZ(\Gamma_p,\bC^*),\]
+ over the manifold $M$, and hence also on the associated bundle of twisted tori $\bT_p$.
+It will require some work to make rigorous sense of the wall-crossing formula, condition (d). We do this using formal completions in Appendix \ref{two} following  \cite{KS1}. This needs no convergence assumptions and completely describes the behaviour of the BPS invariants as the point $p\in M$ varies: knowing all the  invariants $\Omega(\gamma)$ at some point of $M$ determines them at all other points.
+
+The material of Section \ref{newnew} gives interesting examples of variations of BPS structures. For a fixed $k\geq 1$ the corresponding BPS structure $(\Gamma,Z,\Omega)$ is determined by the pair \[(Z(e_1), Z(e_2))\in \mathfrak{h}^2,\] where $\mathfrak{h}$ denotes the upper half-plane.  As this point varies we obtain a variation of BPS structures. In particular, the BPS invariants for $\nu<0$ are completely determined by the trivial case $\nu>0$ and the wall-crossing formula \eqref{wcw}.

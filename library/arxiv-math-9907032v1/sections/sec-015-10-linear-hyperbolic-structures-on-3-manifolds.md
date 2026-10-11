@@ -7,10 +7,10 @@ section_number: 10
 pages: 23-26
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
-text_source: latex
-latex_prose_ratio: 0.87
-latex_coverage_ratio: 0.993
 doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.994
 ---
 []{#lhyp label="lhyp"}
 
@@ -38,15 +38,11 @@ The variables
 
 Simplex conditions
 
-:   For each simplex $S$, the sum of the dihedral angles is equal to $\pi$: $$\begin{equation}
-    f_S: \alpha + \beta + \gamma = \pi.
-    \end{equation}$$
+:   For each simplex $S$, the sum of the dihedral angles is equal to $\pi$: $$f_S: \alpha + \beta + \gamma = \pi.$$
 
 Edge conditions
 
-:   For each edge $e$ of $T$ the sum of the dihedral angles of all simplices incident to $e$ equals $2\pi:$ $$\begin{equation}
-    f_e: \sum \lambda_i = 2\pi.
-    \end{equation}$$
+:   For each edge $e$ of $T$ the sum of the dihedral angles of all simplices incident to $e$ equals $2\pi:$ $$f_e: \sum \lambda_i = 2\pi.$$
 
 ::: definition
 We say that if the above linear program has a non-negative solution, then the pair $(M^3, T)$ admits a *weak linear hyperbolic structure*. If the linear program has a strictly positive solution, then we say that the pair $(M^3, T)$ admits a *linear hyperbolic structure.*
@@ -58,7 +54,7 @@ It is clear that the existence of a linear hyperbolic structure is, in general, 
 []{#hext label="hext"} In order for there to exist a weak linear hyperbolic structure for $(M^3, T)$, every normal surface with respect to $T$ must have non-negative Euler characteristic. In order for there to exist a linear hyperbolic structure for $(M^3, T)$, every non-boundary-parallel normal surface with respect to $T$ must have strictly negative Euler characteristic.
 :::
 
-::::::::: proof
+::: proof
 *Proof.* We will use the method of Section [\[suff\]](#suff){reference-type="ref" reference="suff"}. First, let us write the dual program of the linear program (referred to as $L_h$ in the sequel) for weak hyperbolic structure: Our variables are $\{v_S\}$, where $S$ ranges over all the simplices of $T$, and $\{v_e\}$ where $S$ ranges over all the edges of $T$.
 
 The dual program $L_h^*$ is:
@@ -82,10 +78,8 @@ i_e -\frac 12 \sum_{S \in S(T)} u_S$. This is seen to be very similar in form to
 :::
 
 ::: proof
-*of lemma.* We need to check that for $S$ a simplex and $e_1, e_2$ a pair of disjoint edges of $S$. We need to check that $$\begin{equation}
-\label{normineq}
-i_{e_1} + i_{e_2} \leq u_S.
-\end{equation}$$ By linearity, we need just check the inequality [\[normineq\]](#normineq){reference-type="ref" reference="normineq"} for connected components of $\mathcal{S} \cap S$. If that component is a triangle $t$, then $t$ contributes $1$ to $i_{e_1} + i_{e_2}$ (since a "normal triangle" intersects exactly one of each pair of opposite edge). Also, $t$ contributes $1$ to $u_S$, so for a triangular face, the right and left hand sides of ([\[normineq\]](#normineq){reference-type="ref" reference="normineq"}) are equal.
+*of lemma.* We need to check that for $S$ a simplex and $e_1, e_2$ a pair of disjoint edges of $S$. We need to check that $$\label{normineq}
+i_{e_1} + i_{e_2} \leq u_S.$$ By linearity, we need just check the inequality [\[normineq\]](#normineq){reference-type="ref" reference="normineq"} for connected components of $\mathcal{S} \cap S$. If that component is a triangle $t$, then $t$ contributes $1$ to $i_{e_1} + i_{e_2}$ (since a "normal triangle" intersects exactly one of each pair of opposite edge). Also, $t$ contributes $1$ to $u_S$, so for a triangular face, the right and left hand sides of ([\[normineq\]](#normineq){reference-type="ref" reference="normineq"}) are equal.
 
 Suppose now we have a quadrilateral component $q$. It contributes $2$ to the right hand side of ([\[normineq\]](#normineq){reference-type="ref" reference="normineq"}). As for the left hand sides, $q$ hits two pairs of opposite sides of $S$, so if $e_1$ and $e_2$ is one of those pairs, then we have a contribution of $2$ to the left hand side, and otherwise we have a contribution of $0$. ◻
 :::
@@ -123,7 +117,7 @@ and the new constraint $3\sum_{S \in S(T)} v_S + \sum_{e\in
 In order for $(M^3, T)$ to be linearly hyperbolic, the objective must be strictly negative.
 
 Observe that the sum of the left hand sides of the old constraints is *equal* to the left hand side of the new constraint. Indeed, each $v_S$ occurs three times (once for each pair of opposite edges), and each $v_e$ occurs the number of times equal to the valence of $e$. Hence, the new constraints simply says that in at least one of the old constraints the inequality must be *strict*. Keeping in mind Remark [\[rmkkk\]](#rmkkk){reference-type="ref" reference="rmkkk"}, this implies that every non-boundary-parallel normal surface must have strictly negative Euler characteristic, thus proving the second part of Theorem [\[hext\]](#hext){reference-type="ref" reference="hext"} ◻
-:::::::::
+:::
 
 Some remarks may be in order: It is easy to see (and not surprising) that an identical theorem can be proved if the cone angles around the edges of $T$ are required to not be smaller than $2\pi$, while if the angles are smaller than $2\pi$, one can show an analogous "orbifold" version of the theorem. A more interesting question is whether theconverse of Theorem [\[hext\]](#hext){reference-type="ref" reference="hext"} holds. This is equivalent to asking whether every assignment of variables satisfying the constraints of programs $L_h^*$ and $L_s^*$ comes from a normal surface.
 

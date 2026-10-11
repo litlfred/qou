@@ -7,20 +7,20 @@ section_number: null
 pages: 8-11
 source_pdf: 2510.21576v1.pdf
 source_sha256: 17a79b59d590c8da
-text_source: latex
-latex_prose_ratio: 0.758
-latex_coverage_ratio: 0.935
 doc_brief: "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 7 sections: Relativistic corrections for lepto; Introduction; Short-time approximation"
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.744
 ---
 []{#sec:results label="sec:results"} In this section, we present our results for both response functions and inclusive double differential cross sections for electron scattering from $^3$He and $^4$He based on the *high-$q$ nonrelativistic reduction of the single-nucleon covariant electromagnetic current* and *inclusive of relativistic kinematics in the two-nucleon final states*. These results will be denoted in what follows with 'STA($n$)' with $n=0$ or $1$ depending on whether we use the one-body currents up to $(p/m)^0$ -- Eqs. [\[eq:rho_p0\]](#eq:rho_p0){reference-type="eqref" reference="eq:rho_p0"} and [\[eq:current_p0\]](#eq:current_p0){reference-type="eqref" reference="eq:current_p0"} -- or $(p/m)^1$ -- Eqs. [\[eq:rho_p1\]](#eq:rho_p1){reference-type="eqref" reference="eq:rho_p1"} and [\[eq:current_p1\]](#eq:current_p1){reference-type="eqref" reference="eq:current_p1"} -- corrections in the high-$q$ expansion scheme. The STA($n$) results are obtained using the free-propagator implying an inconsistency in the implementation of the interference term, discussed in detail in Ref. [@Pastore:2019urn]. In order to isolate the effect of using relativistic final-state kinematics, we will denote with 'STA($n$)NR$\delta$' results that use nonrelativistic kinematics in the delta conserving delta function, corresponding to kinematics indicated by the red dashed line in the right panel of Fig. [\[fig:density_e1e2\]](#fig:density_e1e2){reference-type="ref" reference="fig:density_e1e2"}.
 
 We will compare the STA($n$) with those of Refs. [@Pastore:2019urn; @Andreoli:2021cxo] obtained using the correlated-propagator along with one- and two-body electromagnetic currents, denoted with 'STA'. We stress that the STA calculations are based on the low-$q$ nonrelativistic reduction of the single-nucleon current at LO, Eqs. [\[eq:charge_NR_LO\]](#eq:charge_NR_LO){reference-type="eqref" reference="eq:charge_NR_LO"} and [\[eq:transverse_NR_LO\]](#eq:transverse_NR_LO){reference-type="eqref" reference="eq:transverse_NR_LO"}, with the charge operator including also the Darwin-Foldy and spin-orbit terms in Eq. [\[eq:charge_DF\]](#eq:charge_DF){reference-type="eqref" reference="eq:charge_DF"}.
 
-:::: widetext
+::: widetext
 ::: center
 ![image](figures/longitudinal_he3_delta_700.pdf){width="48%"} ![image](figures/transverse_he3_delta_700.pdf){width="48%"} []{#fig:responses_delta label="fig:responses_delta"}
 :::
-::::
+:::
 
 ## High-$q$ expansion scheme and relativistic final-state kinematics
 
@@ -30,31 +30,10 @@ The transverse response function is shown in the right panel of Fig. [\[fig:res
 
 ## Convergence of the high-$q$ expansion scheme
 
-Next, we examine the convergence of the high-$q$ expansion scheme by comparing the STA(0) and STA(1) calculations for the $^3$He and $^4$He response functions at two values of momentum transfer, namely $q=500$ and $700$ MeV/$c$. The $^3$He ($^4$He) longitudinal and transverse response functions are shown in the top (bottom) panels of Fig. [1](#fig:responses_final){reference-type="ref" reference="fig:responses_final"}, along with the experimental data. In the case of $^3$He, we also show the Spectral Function results from Ref. [@Andreoli:2021cxo] (orange solid lines).
+Next, we examine the convergence of the high-$q$ expansion scheme by comparing the STA(0) and STA(1) calculations for the $^3$He and $^4$He response functions at two values of momentum transfer, namely $q=500$ and $700$ MeV/$c$. The $^3$He ($^4$He) longitudinal and transverse response functions are shown in the top (bottom) panels of Fig. [\[fig:responses_final\]](#fig:responses_final){reference-type="ref" reference="fig:responses_final"}, along with the experimental data. In the case of $^3$He, we also show the Spectral Function results from Ref. [@Andreoli:2021cxo] (orange solid lines).
 
 The original STA calculations are given by the blue solid lines, while STA(0) and STA(1) calculations are shown by the purple dashed lines and red solid lines, respectively. In all the considered cases, there is a negligible difference between the STA(0) and STA(1) calculations, implying that the high-$q$ expansion is rapidly converging.
 
 The difference between the STA and STA($n$) calculations is clearly more remarked at $q=700$ MeV/$c$ where relativistic effects are more pronounced. Here is where relativistic corrections, both in the single-nucleon currents and final-state energies, are required to reach an improved agreement with the data.
 
 The STA(1) under-prediction of the $^4$He transverse response function at $q=700$ MeV/$c$ is due to pion-production mechanisms currently lacking in our formalism. At $q=500$ MeV/$c$, both the $^3$He and $^4$He longitudinal response functions are slightly over-predicted by the STA(1) formulation. This is likely due to the use of the free-propagator as opposed to the correlated-propagator. Indeed, at $q=500$ MeV/$c$ where relativistic effects are less pronounced, the original STA calculations -- based on the correlated-propagator -- are slightly suppressed with respect to the STA(1) results.
-
-## Cross Sections
-
-To calculate double differential cross sections, response functions are evaluated for a set of values of $q$ in the range 300-1400 MeV/$c$, using the interpolation scheme described in Ref. [@Andreoli:2024ovl]. This allows us to generate response functions for arbitrary values of $q$ on a finer grid required for the determination of the cross section. In Figs. [2](#fig:cross_sections_he3_p1){reference-type="ref" reference="fig:cross_sections_he3_p1"} and [3](#fig:cross_sections_he4_p1){reference-type="ref" reference="fig:cross_sections_he4_p1"}, we present cross sections for electron scattering from $^3$He and $^4$He, for selected values of beam energies and scattering angle. Solid red lines correspond to STA(1), while dashed blue lines correspond to the original STA calculations. The figures also show the position of the peak with a vertical black dashed line.
-
-In all the considered kinematics, the inclusion of relativistic final-state energies improves the description of the position of the quasi-elastic peak. Their main effect is a redistribution of the cross section strength towards the 'left' and closer to the observed peak. These effects are clearly more pronounced as the position of the peak corresponds to higher values of $q$. In backward scattering (*e.g.*, $\theta=144.5^\circ$), where the cross section is dominated by the transverse response function, the STA(1) results are suppressed with respect to the original calculations due to the suppression factor induced by the high-$q$ expansion scheme adopted for the single-nucleon current.
-
-Overall, STA(1) calculations show good agreement with the experimental data in the quasi-elastic region, for all the kinematics considered. However, they do not reproduce experimental data at higher values of $\omega$ as the current formalism does not include resonances and meson-production. Compared to the original STA calculations, the present STA(1) results provide a more accurate description of the experimental data, as the apparent better agreement of previous STA calculations for certain cross sections (see *e.g.*, results in Fig. [3](#fig:cross_sections_he4_p1){reference-type="ref" reference="fig:cross_sections_he4_p1"} for $\epsilon=0.5-0.6$ GeV) would be compromised by the inclusion of pion production mechanisms.
-
-In some instances, the STA(1) results slightly over-predict the height of the peak. This behavior requires further attention, but it is likely attributable to the fact that the STA(1) results are based on the free-propagator and are missing the effect of the two-nucleon correlations at the vertex. The inclusion of final-state two-nucleon interactions is expected to reduce the height of the peak and improve agreement with experiment. Additionally, the current treatment lacks consistent relativistic one- and two-body currents, as we employ relativistic one-body currents while retaining nonrelativistic two-body currents from previous calculations. Work along these lines is on the way.
-
-<figure id="fig:responses_final">
-<p><embed src="figures/longitudinal_he3.pdf" style="width:49.0%" /> <embed src="figures/transverse_he3.pdf" style="width:49.0%" /> <embed src="figures/longitudinal_he4.pdf" style="width:49.0%" /> <embed src="figures/transverse_he4.pdf" style="width:49.0%" /></p>
-<figcaption>Longitudinal (left) and transverse (right) response functions for <span class="math inline"><sup>3</sup></span>He (top panels) and <span class="math inline"><sup>4</sup></span>He (bottom panels), at <span class="math inline"><em>q</em> = 500</span> and <span class="math inline"><em>q</em> = 700</span> MeV/<span class="math inline"><em>c</em></span>. The solid blue lines are STA calculations without the relativistic treatment discussed in this work. The solid red (dashed purple) lines use the new currents up to NLO (LO). Orange solid lines show the calculations of the spectral function approach for <span class="math inline"><sup>3</sup></span>He from Ref. <span class="citation" data-cites="Andreoli:2021cxo"></span>. Experimental data is from Ref. <span class="citation" data-cites="Carlson:2001mp"></span>.</figcaption>
-</figure>
-
-![](figures/cross_sections_he3_1.pdf){width="100%"}
-
-![Inclusive double-differential cross sections for electron scattering on $^3$He for different values of beam energy $\varepsilon$ and scattering angle $\theta$ . The dashed blue (solid red) lines are STA calculations without (with) the relativistic treatment discussed in this work. Units are in nb/sr GeV. Experimental data is from [@virginiaarchive].](figures/cross_sections_he3_2.pdf){#fig:cross_sections_he3_p1 width="100%"}
-
-![The same as Fig. [2](#fig:cross_sections_he3_p1){reference-type="ref" reference="fig:cross_sections_he3_p1"}, but for $^4$He.](figures/cross_sections_he4.pdf){#fig:cross_sections_he4_p1 width="100%"}

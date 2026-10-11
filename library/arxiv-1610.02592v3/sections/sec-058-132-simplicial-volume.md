@@ -7,12 +7,13 @@ section_number: 13.2
 pages: 418-424
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.909
-latex_coverage_ratio: 0.839
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Gromov has introduced a topological invariant on closed manifolds of any dimension called the \emph{simplicial volume}. This nice invariant can be used, among other things, to prove Mostow's rigidity theorem.\index{simplicial volume}
+
 
 \subsection{Definition}
 Gromov has introduced a measure of ``volume'' of a closed manifold $M$ which makes use only of the homology of $M$. Quite surprisingly, this notion of volume coincides (up to a factor) with the Riemannian one when $M$ is hyperbolic. 
@@ -41,6 +42,7 @@ $$\|M\| = |[M]|$$
 \end{defn}
 Since $|[M]| = |-[M]|$ the simplicial volume actually does not depend on the orientation. 
 When $M$ is non-orientable we set $\|M\| = \big\|\tilde M\big\|/2$ where $\tilde M$ is the orientable double cover of $M$. The definition of $\|M\|$ is relatively simple but has various non-obvious consequences.
+
 
 \subsection{Properties}
 A continuous map $f\colon M \to N$ between closed oriented $n$-manifolds induces a homomorphism $f_*\colon H_n(M,\matZ) \to H_n(N,\matZ)$, and recall that the \emph{degree} of $f$ is the integer $\deg f$ such that
@@ -93,6 +95,7 @@ We would like to say that $s_1+\ldots + s_k$ is a fundamental cycle, however thi
 We can fix this problem easily by averaging each $s_i$ on all its permutations, that is we substitute each $s_i$ with $\frac{1}{(n+1)!}\sum_{\sigma \in S_{n+1}} (-1)^{{\rm sgn}(\sigma)} s_i \circ \sigma$. Now $s=s_1+\ldots + s_k$ is a fundamental cycle and $|s| = k$.
 \end{proof}
 
+
 \subsection{Seifert manifolds}
 We can now calculate the simplicial volume of Seifert manifolds.
 
@@ -111,6 +114,7 @@ as $e \to \infty$.
 \end{proof}
 
 
+
 \subsection{Simplicial and hyperbolic volume}
 In the next pages we will prove the following theorem. Let $v_3$ be the volume of the regular ideal tetrahedron in $\matH^3$.
 
@@ -121,6 +125,7 @@ $$\Vol(M) = v_3\|M\|.$$
 The theorem furnishes in particular some examples of manifolds with positive simplicial volume and shows that $\Vol(M)$ is a topological invariant of $M$, thus generalising the Gauss-Bonnet theorem to dimension $n=3$. Mostow rigidity will then strengthen this result in dimension $n = 3$, showing that the hyperbolic metric itself (not only its volume) is a topological invariant.
 
 Both quantities $\Vol(M)$ and $\|M\|$ are multiplied by $d$ if we substitute $M$ with a degree-$d$ covering. In particular, up to substituting $M$ with its orientable double cover we can suppose that $M$ is orientable. 
+
 
 \subsection{Cycle straightening}
 The \emph{straight singular $k$-simplex} with vertices $v_0,\ldots, v_{k} \in \matH^n$ is the map
@@ -166,6 +171,7 @@ This holds for all $\alpha$, hence $\Vol(M) \leqslant v_3 \|M\|$.
 \end{proof}
 
 The proof of the converse inequality is less immediate.
+
 
 \subsection{Efficient cycles} \label{efficienti:subsection}
 Let $M=\matH^3/_\Gamma$ be a closed oriented hyperbolic 3-manifold. 

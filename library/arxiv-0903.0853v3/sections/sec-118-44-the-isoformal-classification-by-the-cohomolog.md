@@ -7,10 +7,10 @@ section_number: 4.4
 pages: 71-73
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
-text_source: latex
-latex_prose_ratio: 0.657
-latex_coverage_ratio: 0.949
 doc_brief: "Local analytic classification of q-difference equations — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symmetric square of the q-Eule"
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.984
 ---
 []{#section:theisoformalclassificationJP label="section:theisoformalclassificationJP"}
 

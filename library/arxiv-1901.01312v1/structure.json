@@ -421,8 +421,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Proceedings_paper_Gresnigt_v2.tex",
-   "tex_sections": 8,
-   "overlaid": 2,
+   "tex_sections": 18,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -432,37 +432,46 @@
     {
      "id": "sec-000-2-hurwitz-algebras",
      "title": "Hurwitz algebras",
-     "prose_ratio": 0.183,
+     "prose_ratio": 0.202,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.829,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-21-cli\ufb00ord-and-lie-algebras-from-hurwitz-algebra",
      "title": "Cli\ufb00ord and Lie algebras from Hurwitz algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.697,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-3-unbroken-fermion-symmetries-from-hurwitz-algeb",
      "title": "Unbroken fermion symmetries from Hurwitz algebras",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-31-primitive-idempotents-and-orthogonal-subspace",
      "title": "Primitive idempotents and orthogonal subspaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.735,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-32-minimal-left-ideals-of-c\ud835\udcc16",
      "title": "Minimal left ideals of C\ud835\udcc1(6)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.856,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-1-the-\ufb01rst-ideal-is-then",
@@ -472,34 +481,46 @@
     {
      "id": "sec-007-4-representation-of-fermions-as-three-strand-rib",
      "title": "Representation of fermions as three strand ribbon braids",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-41-the-helon-model",
      "title": "The Helon model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.779,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-42-braid-group-representations-from-cli\ufb00ord-alge",
      "title": "Braid group representations from Cli\ufb00ord algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.855,
+     "coverage_ratio": 0.663,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-43-braid-group-representations-from-hurwitz-alge",
      "title": "Braid group representations from Hurwitz algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.871,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-5-relating-hurwitz-algebras-to-the-helon-model",
      "title": "Relating Hurwitz algebras to the Helon model",
-     "prose_ratio": 0.407,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-51-helon-braids-as-the-basis-states-of-minimal-l",
      "title": "Helon braids as the basis states of minimal left ideals of C\ud835\udcc1(6)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.521,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-3-letting-b-\u03c31",
@@ -509,18 +530,24 @@
     {
      "id": "sec-014-6-extending-the-connections-between-the-braid-an",
      "title": "Extending the connections between the braid and Hurwitz algebraic models",
-     "prose_ratio": 0.138,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-61-electric-charge-structure-of-fermions-from-th",
      "title": "Electric charge structure of fermions from the C representation of B2",
-     "result": "no matching \\section"
+     "prose_ratio": 0.826,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-62-equivalence-classes-of-braids-from-h",
      "title": "Equivalence classes of braids from H",
-     "result": "no matching \\section"
+     "prose_ratio": 0.569,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-017-3-written-in-pure-twist-form-\u03c32",
@@ -530,13 +557,16 @@
     {
      "id": "sec-018-63-from-one-generation-to-exactly-three",
      "title": "From one generation to exactly three",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-7-discussion",
      "title": "Discussion",
-     "prose_ratio": 0.937,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

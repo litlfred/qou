@@ -7,10 +7,10 @@ section_number: 0
 pages: 1-5
 source_pdf: 2002.04901v5.pdf
 source_sha256: f1320c4b87229215
-text_source: latex
-latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.835
 doc_brief: "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS — 2 sections: Introduction; Idealistic Derived Completion and"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Let $A$ be a commutative ring. Various authors have previously considered two 
 kinds of derived completions of complexes of $A$-modules, without a careful 

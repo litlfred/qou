@@ -7,10 +7,10 @@ section_number: 3
 pages: 7-13
 source_pdf: 2607.03827v1.pdf
 source_sha256: 965d69603381942a
-text_source: latex
-latex_prose_ratio: 0.917
-latex_coverage_ratio: 0.701
 doc_brief: "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS — The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The purpose of this section is to show that for affine cellular algebras, whose determinants are not zero-divisors and whose cell ideals are idempotent, there are no non-zero homomorphisms between different cell modules. In particular,
 Theorem \ref{TheoremE} will be established. At the end of the section, two

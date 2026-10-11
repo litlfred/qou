@@ -7,10 +7,10 @@ section_number: 3
 pages: 6-10
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
-text_source: latex
-latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.969
 doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.986
 ---
 []{#CQG label="CQG"}
 
@@ -51,10 +51,8 @@ A second key property of [CQG ]{.sans-serif}algebras is the generalized Schur o
     {\textup{Dim}_A(V)}.$$
 :::
 
-Let $A$ be a [CQG ]{.sans-serif}algebra. A quantum subgroup of $A$ is a pair $(B,p)$ with $B$ a Hopf $*$-algebra and $p: A\rightarrow B$ a surjective Hopf $*$-algebra homomorphism. In this situation, we write $$A_B=\{a\in A \, | \, \bigl(\hbox{Id}_A\otimes p\bigr)\bigl(\Delta(a)\bigr)=a\otimes 1_B \}$$ for the $*$-subalgebra of right $B$-invariant elements in $A$. The $*$-subalgebra $A_B\subset A$ is a right $A$-comodule under the right regular co-action $$\rho_B(a)=\sum_{(a)}a_{(2)}\otimes S(a_{(1)}),\qquad a\in A_B.$$ By the Peter-Weyl Theorem for $A$, the right $A$-comodule $A_B$ decomposes into irreducibles as $$\begin{equation}
-\label{PWB}
-A_B\simeq \bigoplus_{\alpha\in\Sigma} L_\alpha^*\,{}^{ \textup{Dim}_{\mathbb{C}}(L_\alpha^B)},
-\end{equation}$$ where for a right $A$-comodule $(\pi, V)$, $$V^B=\{v\in V \, | \, \bigl(1\otimes p)\bigl(\pi(v)\bigr)=v\otimes 1_B\}$$ is the space of $B$-invariant elements in $V$.
+Let $A$ be a [CQG ]{.sans-serif}algebra. A quantum subgroup of $A$ is a pair $(B,p)$ with $B$ a Hopf $*$-algebra and $p: A\rightarrow B$ a surjective Hopf $*$-algebra homomorphism. In this situation, we write $$A_B=\{a\in A \, | \, \bigl(\hbox{Id}_A\otimes p\bigr)\bigl(\Delta(a)\bigr)=a\otimes 1_B \}$$ for the $*$-subalgebra of right $B$-invariant elements in $A$. The $*$-subalgebra $A_B\subset A$ is a right $A$-comodule under the right regular co-action $$\rho_B(a)=\sum_{(a)}a_{(2)}\otimes S(a_{(1)}),\qquad a\in A_B.$$ By the Peter-Weyl Theorem for $A$, the right $A$-comodule $A_B$ decomposes into irreducibles as $$\label{PWB}
+A_B\simeq \bigoplus_{\alpha\in\Sigma} L_\alpha^*\,{}^{ \textup{Dim}_{\mathbb{C}}(L_\alpha^B)},$$ where for a right $A$-comodule $(\pi, V)$, $$V^B=\{v\in V \, | \, \bigl(1\otimes p)\bigl(\pi(v)\bigr)=v\otimes 1_B\}$$ is the space of $B$-invariant elements in $V$.
 
 ::: defi
 []{#qGelfandPair label="qGelfandPair"} A [CQG ]{.sans-serif}algebra $A$ with quantum subgroup $(B,p)$ is called a quantum Gelfand pair if $$\textup{Dim}_{\mathbb{C}}(L_\alpha^B)\leq 1\qquad
@@ -66,10 +64,8 @@ We fix a quantum Gelfand pair $(A,B)$. We call a finite dimensional, irreducible
 In the various examples associated to (quantum) Grassmannians which we discuss in the following sections, we will identify $\Sigma_B$ with a certain fixed set of partitions. An important, but case-by-case different, aspect is the concrete characterization of the spherical irreducibles in terms of their parameterizing set $\Sigma_B$. To maintain uniform notations as much as possible, it will therefore be convenient to denote irreducible comodules labeled by $\Sigma_B$ by new symbols $\{V_{\alpha}~|~ \alpha \in \Sigma_B \}$.
 
 We write $\langle \cdot,\cdot\rangle_\alpha$ for a scalar product on $V_\alpha$ that turns $V_\alpha$ into a unitary right $A$-comodule. Note that $\Sigma_B$ is invariant under $\circ$, were $\circ$ is the involution on $\Sigma$ such that $V_\alpha^*\simeq V_{\alpha^\circ}$ for all $\alpha\in \Sigma$. In fact, if we fix a nonzero vector $v_\alpha\in V_\alpha^B$ ($\alpha\in\Sigma_B$), then $\langle
-\cdot,v_\alpha\rangle_\alpha\in V_\alpha^*{}^B$. Combined with [\[PWB\]](#PWB){reference-type="eqref" reference="PWB"}, we obtain the multiplicity free irreducible decomposition $$\begin{equation}
-\label{AB}
-A_B=\bigoplus_{\alpha\in\Sigma_B}V_\alpha
-\end{equation}$$ as right $A$-comodules.
+\cdot,v_\alpha\rangle_\alpha\in V_\alpha^*{}^B$. Combined with [\[PWB\]](#PWB){reference-type="eqref" reference="PWB"}, we obtain the multiplicity free irreducible decomposition $$\label{AB}
+A_B=\bigoplus_{\alpha\in\Sigma_B}V_\alpha$$ as right $A$-comodules.
 
 From the present perspective, the natural definition of the quantum zonal spherical functions would be $$\widetilde{\varphi}_\alpha=\langle\pi_\alpha(v_\alpha), v_\alpha\rangle_\alpha, \qquad
 \forall\,\alpha\in\Sigma_B,$$ since they form a $\mathbb{C}$-basis of the $*$-algebra $${}_BA_B=\{a\in A \, | \, \bigl(\hbox{Id}_A\otimes p\otimes p\bigr)R(a)=a\otimes 1_B\otimes 1_B\}$$ of $B$-biinvariant elements in $A$. It turns out though that the following slightly modified definition of the quantum zonal spherical functions is a better choice.

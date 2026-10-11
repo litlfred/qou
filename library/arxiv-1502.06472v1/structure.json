@@ -305,8 +305,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 7,
-   "overlaid": 4,
+   "tex_sections": 17,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -316,61 +316,85 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.847,
-     "coverage_ratio": 0.869,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-3-pbw-theorems",
      "title": "PBW theorems",
-     "prose_ratio": 0.125,
+     "prose_ratio": 0.083,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-21-composition-diamond-lemma-for-associative-alg",
      "title": "Composition-Diamond lemma for associative algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-22-composition-diamond-lemma-for-lie-algebras-ov",
      "title": "Composition-Diamond lemma for Lie algebras over a field",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.783,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-31-lie-algebrasassociative-algebras-shirshov",
      "title": "Lie algebras\u2013associative algebras (Shirshov)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-32-lie-algebraspre-lie-algebras-segal",
      "title": "Lie algebras\u2013pre-Lie algebras (Segal)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.9,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-33-leibniz-algebrasdialgebras-aymon-grivel",
      "title": "Leibniz algebras\u2013dialgebras (Aymon, Grivel)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-34-akivis-algebrasnon-associative-algebras-shest",
      "title": "Akivis algebras\u2013non-associative algebras (Shestekov)",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-35-sabinin-algebrasmodules-perez-izquierdo",
      "title": "Sabinin algebras\u2013modules (Perez-Izquierdo)",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-36-dendriform-algebrasrota-baxter-algebras-chen",
      "title": "Dendriform algebras\u2013Rota-Baxter algebras (Chen-Mo, Kolesnikov)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-4-linear-bases-of-free-universal-algebras",
      "title": "Linear bases of free universal algebras",
-     "prose_ratio": 0.902,
+     "prose_ratio": 0.976,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
@@ -378,7 +402,7 @@
     {
      "id": "sec-011-5-normal-forms-for-groups-and-semigroups",
      "title": "Normal forms for groups and semigroups",
-     "prose_ratio": 0.957,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"

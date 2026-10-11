@@ -8,78 +8,103 @@ pages: 11-12
 source_pdf: 2104.04941v2.pdf
 source_sha256: 84426ed37754aa78
 doc_brief: "FOCK–GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES — Fock and Goncharov [FG06b] introduced cluster ensembles, p roviding a framework for coordi- nates on varieties of surface"
+text_source: latex
+latex_prose_ratio: 0.918
+latex_coverage_ratio: 1.0
 ---
-of geometric type), studied in [FZ02], [FZ03], and [BFZ05]. The quiver interpretation, ﬁrst discussed in
-[MRZ03], is given a complete introduction in [Mar13], which we follow. The only departure we need from
-Marsh’s deﬁnition is to allow some edge weights to be in 1
-2 Z instead of Z. We also give a name to the
-symmetrized edge weights σ(v,w ), and encode the symmetrizability of edge weights into verte x weights dv.
-Deﬁnition 2.26. A quiver is a directed graph with no 1- or 2-cycles or multiple edges, with weights on
-edges and vertices. Vertex weights are in N>0, and edge weights are in 1
-2 Z. The edge weights are denoted
-σ(v,w ), and the vertex weights dv. Also deﬁned is the auxiliary quantity ǫ(v,w ), by
-ǫ(v,w ) = dw
-gcd(dv,d w)σ(v,w ).
-Vertices are either frozen or non-frozen, and edge weights are integral unless the edge is between two
-frozen vertices, in which case they are half-integral.
-01
-2
-B1
-B2
-A2 A1
-C1
-C2
-v11
-v21
-Figure 7. A quiver. Larger vertices are of weight 2, and dotted edges correspond to
-σ(i,j ) = 1
-2 .
-11
-Remark 2.27. Almost all of the time, σ(i,j ) will lie in { −1, 0, +1 }. In this case, the edge weights σ(i,j ) are
-just the incidence matrix of the graph underlying the quiver .
-Remark 2.28. The term quiver occurs in other areas of literature as a multi-digraph. We us e it here
-as a edge-weighted digraph with skew-symmetrizable adjace ncy matrix, encoding the exchange matrix of
-Fomin–Zelevinsky’s cluster algebras.
-Deﬁnition 2.29. For each non-frozen v, a quiver µv(Q) is deﬁned. This is the mutation of Q atv. Edges
-in µv(Q) are deﬁned by ǫ′(·, ·), with
-ǫ′(x,y ) =
-
-
-
-ǫ(x,y ) if ǫ(x,v )ǫ(v,y ) ≤ 0,v /∈ {x,y }
-−ǫ(x,y ) if v ∈ {x,y }
-ǫ(x,y ) + |ǫ(x,v )|ǫ(v,y ) if ǫ(x,v )ǫ(v,y )> 0,v /∈ {x,y }.
-Customarily, the vertex v is renamed in µv(Q), e.g. to v′. This is because µv induces a map on the seed
-torus of Q which changes the coordinate associated to v (see Deﬁnition 2.32). For very long sequences, we
-will usually ignore the renamings for readability and think of v as a vertex in a graph, not as a coordinate
-function.
-Notation 2.30. Sequences of mutations are performed left to right: that is µv,w =µw ◦µv. When subscripts
-would be awkward, we will also write mutation sequences as µ {v1,v 2,... }. We shall also employ ∏
-v∈Iµv
-to mean mutating at all vertices in I, in the order given by I.
-Remark 2.31. When depicting quivers, we shall assume that all black edges have weight σ = 1 , and gray,
-dashed edges have weight σ = 1
-2 .
-Vertex weights will be depicted by the relative size of circl es; we will only use weights 1, 2, and (only in
-the case of G2) 3. Frozen vertices will be colored blue, but this will also b e described in the text if at all
-relevant.
-01
-2
-B1
-B2
-A2 A1
-C1
-C2
-v11
-v21 µ{v11}
-01
-2
-B1
-B2
-A2 A1
-C1
-C2
-v′
-11
-v21
-Figure 8. Mutating the quiver of Figure 7 at v11.
+\label{sec:quivers}
+
+  We review quivers. These are graphical encodings of cluster algebras
+  (specifically, those of geometric type), studied in
+  \cite{fominzelevinsky2002}, \cite{fominzelevinsky2003}, and
+  \cite{fominzelevinsky2005}. The quiver interpretation, first discussed
+  in \cite{marshreinekezelevinsky2003}, is given a complete introduction
+  in \cite{marsh2013}, which we follow. The only departure we need from
+  Marsh's definition is to allow some edge weights to be in $\frac{1}{2}
+  \mathbb{Z}$ instead of $\mathbb{Z}$. We also give a name to the
+  symmetrized edge weights $\sigma(v,w)$, and encode the
+  symmetrizability of edge weights into vertex weights $d_v$.
+
+  \begin{definition}
+    \label{def:quiver}
+    A \defined{quiver} is a directed graph with no $1$- or $2$-cycles or
+    multiple edges, with weights on edges and vertices. Vertex weights
+    are in $\mathbb{N}_{>0}$, and edge weights are in
+    $\frac{1}{2}\mathbb{Z}$. The edge weights are denoted $\sigma(v,w)$,
+    and the vertex weights $d_v$. Also defined is the auxiliary quantity
+    $\epsilon(v,w)$, by \[ \epsilon(v,w) = \frac{d_w}{\gcd(d_v,d_w)}
+      \sigma(v,w). \] Vertices are either \defined{frozen} or
+    \defined{non-frozen}, and edge weights are integral unless the edge
+    is between two frozen vertices, in which case they are
+    half-integral.
+  \end{definition}
+
+  \begin{figure}[h]
+    \centering \includestandalone[mode=image|tex]{fig/QC2}
+
+    \caption{A quiver. Larger vertices are of weight $2$, and dotted
+      edges correspond to $\sigma(i,j) = \frac{1}{2}$.
+      \label{fig:QC2}
+    }
+  \end{figure}
+
+  \begin{remark}
+    Almost all of the time, $\sigma(i,j)$ will lie in $\set{-1,0,+1}$.
+    In this case, the edge weights $\sigma(i,j)$ are just the incidence
+    matrix of the graph underlying the quiver.
+  \end{remark}
+
+  \begin{remark}
+    The term \defined{quiver} occurs in other areas of literature as a
+    multi-digraph. We use it here as a edge-weighted digraph with
+    skew-symmetrizable adjacency matrix, encoding the exchange matrix of
+    Fomin--Zelevinsky's cluster algebras.
+  \end{remark}
+
+  \begin{definition}
+    For each non-frozen $v$, a quiver $\mu_{v}(Q)$ is defined. This is
+    the \defined{mutation} of $Q$ at $v$. Edges in $\mu_{v}(Q)$ are
+    defined by $\epsilon'(\cdot, \cdot)$, with \[ \epsilon'(x,y) =
+      \begin{cases} \epsilon(x,y) & \text{if } \epsilon(x,v)
+        \epsilon(v,y) \le 0, v \notin \set{x,y} \\ -\epsilon(x,y) &
+        \text{if } v \in \set{x,y} \\ \epsilon(x,y) + |\epsilon(x,v)|
+        \epsilon(v,y) & \text{if } \epsilon(x,v) \epsilon(v,y) > 0, v
+        \notin \set{x,y}. \end{cases} \]
+  \end{definition}
+
+  Customarily, the vertex $v$ is renamed in $\mu_v(Q)$, e.g. to $v'$.
+  This is because $\mu_v$ induces a map on the seed torus of $Q$ which
+  changes the coordinate associated to $v$ (see
+  \cref{def:cluster-ensemble}). For very long sequences, we will usually
+  ignore the renamings for readability and think of $v$ as a vertex in a
+  graph, not as a coordinate function.
+
+  \begin{notation}
+    \label{not:writing-mutations}
+    Sequences of mutations are performed left to right: that is
+    $\mu_{v,w} = \mu_{w} \circ \mu_{v}$. When subscripts would be
+    awkward, we will also write mutation sequences as $\mu\set{v_1, v_2,
+      \dotsc}$. We shall also employ $\prod_{v \in I} \mu_{v}$ to mean
+    mutating at all vertices in $I$, in the order given by $I$.
+  \end{notation}
+
+  \begin{remark}
+    When depicting quivers, we shall assume that all black edges have
+    weight $\sigma = 1$, and gray, dashed edges have weight $\sigma =
+    \frac{1}{2}$.
+
+    Vertex weights will be depicted by the relative size of circles; we
+    will only use weights 1, 2, and (only in the case of $G_2$) 3.
+    Frozen vertices will be colored blue, but this will also be
+    described in the text if at all relevant.
+
+    \begin{figure}[h]
+      \centering
+      \includestandalone[mode=image|tex]{fig/quiver-mutation-example}
+
+      \caption{Mutating the quiver of \cref{fig:QC2} at $v_{11}$.
+        \label{fig:quiver-mutation-example}
+      }
+    \end{figure}
+
+  \end{remark}

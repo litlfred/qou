@@ -7,10 +7,10 @@ section_number: 3
 pages: 8-12
 source_pdf: 2301.00125v3.pdf
 source_sha256: 7ecd0cff7d6c2ec4
-text_source: latex
-latex_prose_ratio: 0.833
-latex_coverage_ratio: 0.994
 doc_brief: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:PinskyDiagonal}
 

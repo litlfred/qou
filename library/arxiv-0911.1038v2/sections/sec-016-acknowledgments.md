@@ -7,10 +7,10 @@ section_number: null
 pages: 25-25
 source_pdf: 0911.1038v2.pdf
 source_sha256: 3bc566efaefd44c6
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 text_source: latex
 latex_prose_ratio: 0.964
-latex_coverage_ratio: 0.931
-doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
+latex_coverage_ratio: 1.0
 ---
 Research is supported by the Polish Ministry of Higher Education research grant N N201 364436 for the years 2009--2012.
 

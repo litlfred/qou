@@ -177,8 +177,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "spherical.tex",
-   "tex_sections": 9,
-   "overlaid": 4,
+   "tex_sections": 10,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -188,8 +188,8 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.782,
-     "coverage_ratio": 0.896,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -209,26 +209,24 @@
     {
      "id": "sec-003-the-partition-algebra-and-the-spherical-partitio",
      "title": "The partition algebra and the spherical partition algebra",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.886,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-rank-of-the-spherical-partition-algebra",
      "title": "Rank of the Spherical Partition Algebra",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.916,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-schur-weyl-duality-for-sp-kn",
      "title": "Schur-Weyl duality for SP k(n)",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.889,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.594,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-cellularity-of-sp-kt",

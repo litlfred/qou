@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-5
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
-text_source: latex
-latex_prose_ratio: 0.877
-latex_coverage_ratio: 0.998
 doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.998
 ---
 The suggestion that octonions may provide a useful language for describing elementary particles is almost as old as the Standard Model (SM) itself, see [@Gunaydin:1973rs] and references therein.[^1] Thus, it was observed early on that the 8-dimensional space of octonions, after a complex structure is chosen, splits as ${\mathbb O}={\mathbb C}\oplus{\mathbb C}^3$, with the first factor naturally corresponding to leptons and the second one describing quarks. The subgroup of the group of automorphisms of the octonions $G_2$ preserving this split is precisely the strong gauge group ${\rm SU}(3)$.
 
@@ -29,18 +29,18 @@ What seems to be the most natural description of ${\rm Spin}(7,7), {\rm Spin}(11
 The resulting model for ${\rm Spin}(7,7), {\rm Spin}(11,3)$ can be phrased more generally, as it describes some other pseudo-orthogonal groups as well. It can be summarised in the following proposition:
 
 ::: theorem
-Let ${\mathbb X},{\mathbb Y}$ be a pair of division algebras from the set ${\mathbb C},\tilde{{\mathbb C}},{\mathbb H},\tilde{{\mathbb H}},{\mathbb O},\tilde{{\mathbb O}}$, where ${\mathbb C},\tilde{{\mathbb C}}$ are the usual and split complex numbers, and ${\mathbb H}$ and $\tilde{{\mathbb H}}$ are the usual and split quaternions respectively. The matrices taking values in ${\rm End}(({\mathbb X}\otimes{\mathbb Y})^2)$ $$\begin{eqnarray}
+Let ${\mathbb X},{\mathbb Y}$ be a pair of division algebras from the set ${\mathbb C},\tilde{{\mathbb C}},{\mathbb H},\tilde{{\mathbb H}},{\mathbb O},\tilde{{\mathbb O}}$, where ${\mathbb C},\tilde{{\mathbb C}}$ are the usual and split complex numbers, and ${\mathbb H}$ and $\tilde{{\mathbb H}}$ are the usual and split quaternions respectively. The matrices taking values in ${\rm End}(({\mathbb X}\otimes{\mathbb Y})^2)$ $$\begin{aligned}
 \label{Gammas}
 \Gamma_x = \left( \begin{array}{cc} 0 & L_x\otimes {\mathbb I}\\ L_{\bar{x}}\otimes {\mathbb I}& 0 \end{array}\right), \quad x\in{\rm Im}({\mathbb X}), \qquad
 \Gamma_y = \left( \begin{array}{cc} 0 & -{\mathbb I}\otimes L_y \\ {\mathbb I}\otimes L_{\bar{y}} & 0 \end{array}\right), \quad y\in{\rm Im}({\mathbb Y})
-\end{eqnarray}$$ where $L_x, L_y$ are the operators of left multiplication by $x\in{\rm Im}({\mathbb X}), y\in{\rm Im}({\mathbb Y})$, and bar denotes conjugation in ${\mathbb X},{\mathbb Y}$, satisfy $$\begin{eqnarray}
+\end{aligned}$$ where $L_x, L_y$ are the operators of left multiplication by $x\in{\rm Im}({\mathbb X}), y\in{\rm Im}({\mathbb Y})$, and bar denotes conjugation in ${\mathbb X},{\mathbb Y}$, satisfy $$\begin{aligned}
 \label{cliff-XY-rels}
 \Gamma_x^2=|x|^2 {\mathbb I}, \quad \Gamma_y^2= -|y|^2 {\mathbb I}, \\ \nonumber
 \Gamma_x\Gamma_y + \Gamma_y \Gamma_x=0.
-\end{eqnarray}$$ They thus generate the Clifford algebra of signature that can be symbolically expressed as $$\begin{eqnarray}
+\end{aligned}$$ They thus generate the Clifford algebra of signature that can be symbolically expressed as $$\begin{aligned}
 \label{signature}
 | {\rm Im}({\mathbb X})|^2 - | {\rm Im}({\mathbb Y})|^2.
-\end{eqnarray}$$
+\end{aligned}$$
 :::
 
 A proof is by direct verification.
@@ -89,7 +89,9 @@ There exist two complex structures $J, \tilde{J}$ on the space of semi-spinors o
 
 While it is perhaps not very surprising that complex structures breaking ${\rm Spin}(11,3)$ to Pati-Salam and Lorentz groups exist, we find it striking that both of these are parametrised by the same data -- a unit imaginary octonion in either ${\mathbb O}$ or $\tilde{{\mathbb O}}$. Further, the fact that there are two such natural complex structures is explained by the fact that there exists an ${\mathbb O}\otimes\tilde{{\mathbb O}}$ model for ${\rm Spin}(11,3)$. While this does not yet give a sought mechanism of symmetry breaking from ${\rm Spin}(11,3)$ to the groups that we see in Nature, the similarity of the complex structures $J, \tilde{J}$ suggests that maybe the dynamical mechanism that selects them is one and the same. In any case, the result in Theorem 2 puts the symmetry breaking needed to single out the Lorentz group from ${\rm Spin}(11,3)$ on a very similar footing with the symmetry breaking that is needed to select the Pati-Salam group from ${\rm Spin}(10)$ GUT group. This suggests that unconventional descriptions that \"unify\" the internal (colour, isospin) with the Lorentz spin degrees of freedom should be taken more seriously.
 
-The organisation of the rest of the paper is as follows. We start by reviewing in Section [\[sec:spin7\]](#sec:spin7){reference-type="ref" reference="sec:spin7"} how the group ${\rm Spin}(7)$ is described using the usual octonions. The spinor representation of ${\rm Spin}(7)$ is naturally the octonions ${\mathbb O}$. We also explain here how a natural complex structure $J$ on ${\mathbb O}$ arise from a choice of a unit imaginary octonion, and how the subgroups ${\rm SU}(3)$ and ${\rm U}(1)$ of ${\rm Spin}(7)$ arise in the process. We repeat similar analysis for ${\rm Spin}(4,3)$ in Section [\[sec:spin43\]](#sec:spin43){reference-type="ref" reference="sec:spin43"}. The novelty here is that a new type of complex structure arises, one related to a timelike unit octonion. The commutant of this complex structure $\tilde{J}$ is then the product of the Lorentz ${\rm Spin}(1,3)$ and \"weak\" ${\rm SU}(2)$ gauge groups. We put everything together in Section [\[sec:spin11-3\]](#sec:spin11-3){reference-type="ref" reference="sec:spin11-3"}, where the octonionic model for ${\rm Spin}(11,3)$ is described. We then interrupt our representation theoretic discussion by a review of some aspects of the left/right symmetric extension of the SM in Section [\[sec:left-right\]](#sec:left-right){reference-type="ref" reference="sec:left-right"}. This becomes a very useful starting point when we describe an explicit dictionary between particles and octonions in Section [\[sec:dictionary\]](#sec:dictionary){reference-type="ref" reference="sec:dictionary"}. We then apply the developed octonionic formalism to the problem of characterising the symmetry breaking and possible fermion mass terms. We make a small step in this direction and show how the 3-form field in $\Lambda^3({\mathbb R}^{11,3})$ can be used to break the symmetry down to the product of the SM gauge group, Lorentz group, and ${\rm U}(1)_{B-L}$, which remains unbroken. This Higgs also produces the Dirac mass terms for all the particles. We conclude with a discussion.
+The organisation of the rest of the paper is as follows. We start by reviewing in Section [1](#sec:spin7){reference-type="ref" reference="sec:spin7"} how the group ${\rm Spin}(7)$ is described using the usual octonions. The spinor representation of ${\rm Spin}(7)$ is naturally the octonions ${\mathbb O}$. We also explain here how a natural complex structure $J$ on ${\mathbb O}$ arise from a choice of a unit imaginary octonion, and how the subgroups ${\rm SU}(3)$ and ${\rm U}(1)$ of ${\rm Spin}(7)$ arise in the process. We repeat similar analysis for ${\rm Spin}(4,3)$ in Section [\[sec:spin43\]](#sec:spin43){reference-type="ref" reference="sec:spin43"}. The novelty here is that a new type of complex structure arises, one related to a timelike unit octonion. The commutant of this complex structure $\tilde{J}$ is then the product of the Lorentz ${\rm Spin}(1,3)$ and \"weak\" ${\rm SU}(2)$ gauge groups. We put everything together in Section [\[sec:spin11-3\]](#sec:spin11-3){reference-type="ref" reference="sec:spin11-3"}, where the octonionic model for ${\rm Spin}(11,3)$ is described. We then interrupt our representation theoretic discussion by a review of some aspects of the left/right symmetric extension of the SM in Section [\[sec:left-right\]](#sec:left-right){reference-type="ref" reference="sec:left-right"}. This becomes a very useful starting point when we describe an explicit dictionary between particles and octonions in Section [\[sec:dictionary\]](#sec:dictionary){reference-type="ref" reference="sec:dictionary"}. We then apply the developed octonionic formalism to the problem of characterising the symmetry breaking and possible fermion mass terms. We make a small step in this direction and show how the 3-form field in $\Lambda^3({\mathbb R}^{11,3})$ can be used to break the symmetry down to the product of the SM gauge group, Lorentz group, and ${\rm U}(1)_{B-L}$, which remains unbroken. This Higgs also produces the Dirac mass terms for all the particles. We conclude with a discussion.
+
+# ${\rm Spin}(7)$ and octonions {#sec:spin7}
 
 [^1]: Note, however, that in this reference, somewhat confusingly, the usual octonion division algebra written in a complex basis is referred to as the split octonion algebra.
 

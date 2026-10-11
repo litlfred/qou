@@ -7,13 +7,14 @@ section_number: 6.2
 pages: 165-176
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.964
-latex_coverage_ratio: 0.79
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{surface:geometrisation:section}
 We now prove that every surface $S_{g,b,p}$ of finite type can be \emph{geometrised}, that is it may be equipped with a hyperbolic, flat, or elliptic metric. The metric type is prescribed by the sign of the Euler characteristic of the surface.
+
 
 \subsection{Hyperbolic pair-of-pants} \label{pantaloni:subsection}
 The sphere has of course an elliptic structure, and the torus has many flat structures, see Section \ref{piatte:subsection}. We now construct hyperbolic structures on all the surfaces $S_g$ of genus $g\geqslant 2$, and more generally on all the surfaces $S_{g,b,p}$ of negative Euler characteristic.
@@ -88,6 +89,7 @@ The fact that $\gamma_1,\gamma_2,\gamma_3$ have minimal length easily implies th
 We can extend the argument to the more general case $2a, 2b, 2c \geqslant 0$ as follows. If $a=0$, a neighbourhood of the puncture is a cusp, and we truncate it at some small horocycle $C_1$ (we do the same if $b=0$ or $c=0$). After these truncations we get a compact pair-of-pants (whose boundary is \emph{not} geodesic at the horocycles) and decompose it into two hexagons as above. The resulting curve $\gamma_3$ is orthogonal to the horocycle $C_1$, hence it extends to a half-line pointing towards the puncture. The curves $\gamma_1, \gamma_2, \gamma_3$ decompose the surface into degenerate hexagons.
 \end{proof}
 
+
 \subsection{Hyperbolic surfaces} \label{hyperbolic:surfaces:subsection}
 The pairs-of-pants can be used as building blocks to construct topologically all finite type surfaces with $\chi<0$.
 
@@ -116,6 +118,7 @@ Decompose $S_{g,b,p}$ in pair-of-pants, assign an arbitrary length to all the cl
 \end{proof}
 
 Can we geometrise the few orientable surfaces with $\chi \geqslant 0$? Yes, but since there are no cusps in the elliptic and flat geometries we do not consider surfaces with punctures. The compact orientable surfaces with $\chi >0$ are the sphere and the disc, and they all have an elliptic metric with geodesic boundary (represent the disc as a hemisphere). Those with $\chi = 0$ are the torus and the annulus, and they admit flat metrics with geodesic boundary.
+
 
 \subsection{Non-orientable surfaces}
 The classification of all the finite-type non-orientable surfaces is also simple. Let $S^{\rm no}_g$ be the connected sum
@@ -153,6 +156,7 @@ If $\chi(S^{\rm no}_{g,b,p})<0$ then $S^{\rm no}_{g,b,p}$ decomposes into pairs-
 
 As in the orientable case, compact surfaces with $\chi \geqslant 0$ can be geometrised: these are $\matRP^2$, the M\"obius strip, and the Klein bottle. The first has an elliptic structure while the other two have flat structures with geodesic boundary.
 
+
 \subsection{Orbifolds} \label{orbifold:surface:subsection}
 We can push the classification and geometrisation further to compact two-dimensional orbifolds. 
 
@@ -187,6 +191,7 @@ $$d = \sum_{a=1}^l \frac {p_i'}{p_{j_a}} \quad \Longrightarrow \quad
 d \cdot \frac 1 {p_i'} = \sum_{a=1}^l \frac 1{p_{j_a}}.$$
 This implies that $\chi(O) = d\cdot \chi(O')$.
 \end{proof}
+
 
 \subsection{Geometrisation of orbifolds}
 Recall that an orbifold is good if it is covered by a manifold.
@@ -273,6 +278,7 @@ Same proof as above, where we use triangular groups with possibly ideal vertices
 
 These punctured orbifolds are also very good for the same reason above. It is also possible to consider orbifolds based on surfaces $S_{g,b,p}$ with boundary: every boundary component can be considered in two natural but distinct ways, either as a mirror (hence the orbifold is locally non-orientable), or as a boundary component: to do this we need to define an appropriate notion of orbifold with boundary.
 
+
 \subsection{Gauss--Bonnet formula}
 How can we compute the area of a hyperbolic surface? We can easily answer this question in the closed case.\index{Gauss--Bonnet formula} 
 
@@ -304,6 +310,7 @@ In general there is a degree-$d$ covering $S\to O$ of an orientable geometric su
 $$\chi(S) = d \cdot \chi(O), \qquad \Area (S) = d \cdot \Area (O).$$
 The proof is complete.
 \end{proof}
+
 
 \subsection{Lie subgroups of $\SO(3)$}
 The following proposition is of general interest and is used in many different contexts.

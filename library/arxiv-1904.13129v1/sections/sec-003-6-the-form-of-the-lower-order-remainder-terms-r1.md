@@ -8,1045 +8,421 @@ pages: 14-23
 source_pdf: 1904.13129v1.pdf
 source_sha256: dfa7fd0ebf1ab8c4
 doc_brief: "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity — W e prove the analyticity of smooth critical points for O’Har a’s knot energies E α,p , with p = 1"
+text_source: latex
+latex_prose_ratio: 0.948
+latex_coverage_ratio: 0.961
 ---
-1 and Rα
-2
-We show that the orthogonal projection of the truncated rema inder terms of the
-decomposition of δE α found in Section 3 can be expressed as multiple integrals of
-analytic functions.
-Let 0 < ε≤ 1
-2 , x ∈ [0, 1] and γ ∈ C∞(R/Z, Rn) be a simple closed arc-length
-parametrized curve. We recall that the truncated remainder terms are given by
-(Rα,ε
-1 γ)(x) =
-∫
-|w|∈[ε, 1
-2 ]
-(γ(x +w) −γ(x) −w ˙γ(x))
-( 1
-|γ(x +w) −γ(x)|α+2 − 1
-|w|α+2
-)
-dw,
-(Rα,ε
-2 γ)(x) =
-∫
-|w|∈[ε, 1
-2 ]
-¨γ(x)
-( 1
-|γ(x +w) −γ(x)|α − 1
-|w|α
-)
-dw.
-We begin with transforming the more elementary part P ⊥
-˙γ Rα,ε
-2 γ.
-Theorem 6.1. The term P ⊥
-˙γ Rα,ε
-2 γ can be re-written as multiple integral of the
-form
-(P ⊥
-˙γ Rε
-2γ)(x) =
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-(s1 −s2)2Gα
-2 (γ)(x)dφ1dφ2ds1ds2
-dw
-|w|α−2,
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 15
-where
-Gα
-2 (γ)(x) = Gα
-2 (γ)(x;s1,s 2,φ 1,φ 2,w )
-=Gα
-2
-(∫ 1
-0
-˙γ(x +tw)dt, ˙γ(x), ¨γ(x +s2w + (s1 −s2)φ1w),
-¨γ(x +s2w + (s1 −s2)φ2w), ¨γ(x)
-)
-for some analytic function Gα
-2 : Rn \ {0, 1} × R4n → Rn.
-Proof. We begin by computing the ﬁrst term in the integrand of Rα,ε
-2 γ. To do so
-we use the fundamental theorem of calculus and the arc-lengt h parametrization of
-the curve γ (as in the proof of [ BR13, Prop. 3.2]) to get
-1
-|γ(x +w) −γ(x)|α − 1
-|w|α
-= |w|α
-|γ(x +w) −γ(x)|α
-1 − |γ(x+w)−γ(x)|α
-|w|α
-1 − |γ(x+w)−γ(x)|2
-w2
-1 − |γ(x+w)−γ(x)|2
-w2
-|w|α
-=gα
-2
-(∫ 1
-0
-˙γ(x +tw)dt
-) 2
-(
-1 − |γ(x+w)−γ(x)|2
-w2
-)
-|w|α
-=gα
-2
-(∫ 1
-0
-˙γ(x +tw)dt
-) ∫∫
-[0,1]2 | ˙γ(x +s1w) − ˙γ(x +s2w)|2ds1ds2
-|w|α , (6.1)
-where gα
-2 (x) = 1
-2|x|α
-1−|x|α
-1−|x|2 for all x ∈ Rn \ {0, 1} is analytic away from the origin.
-Since we have by the fundamental theorem of calculus
-| ˙γ(x +s1w) − ˙γ(x +s2w)|2
-w2 =
-∫ 1
-0
-∫ 1
-0
-(s1 −s2)2
-× ⟨¨γ(x +s2w + (s1 −s2)φ1w), ¨γ(x +s2w + (s1 −s2)φ2w)⟩Rn dφ1dφ2, (6.2)
-we can express Rα,ε
-2 γ as
-(Rα,ε
-2 γ)(x) =
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-(s1 −s2)2
-× ~Gα
-2
-(∫ 1
-0
-˙γ(x +tw)dt, ¨γ(x +s2w + (s1 −s2)φ1w),
-¨γ(x +s2w + (s1 −s2)φ2w), ¨γ(x)
-)
-dφ1dφ2ds1ds2
-dw
-|w|α−2,
-where ~Gα
-2 : Rn \ {0, 1} × R3n → Rn deﬁned by ~Gα
-2 (a,x,y,z ) := gα
-2 (a) ⟨x,y ⟩Rnz is
-an analytic function away from the origin in the ﬁrst variabl e as well. If we apply
-the orthogonal projection P ⊥
-˙γ onRα,ε
-2 γ, we ﬁnally get the following representation
-(P ⊥
-˙γ Rα,ε
-2 γ)(x) =
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-(s1 −s2)2Gα
-2 (γ)(x)dφ1dφ2ds1ds2
-dw
-|w|α−2,
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 16
-where
-Gα
-2 (γ)(x) = Gα
-2 (γ)(x;s1,s 2,φ 1,φ 2,w )
-=Gα
-2
-(∫ 1
-0
-˙γ(x +tw)dt, ˙γ(x), ¨γ(x +s2w + (s1 −s2)φ1w),
-¨γ(x +s2w + (s1 −s2)φ2w), ¨γ(x)
-)
-and Gα
-2 : Rn \ {0, 1} × R4n → Rn given by Gα
-2 (a,v,x,y,z ) := P ⊥
-v ~Gα
-2 (a,x,y,z ) is
-clearly analytic. □
-We use the previous computations to rewrite the orthogonal p rojection of the
-ﬁrst remaining part.
-Theorem 6.2. The term P ⊥
-˙γ Rα,ε
-1 γ can be re-written as multiple integral of the
-form
-(P ⊥
-˙γ Rε
-1γ)(x) =
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-(r1 −r2)2Gα
-1 (γ)(x)dψ1dψ2dr1dr2
-dw
-|w|α−2,
-where
-Gα
-1 (γ)(x) = Gα
-1 (γ)(x;r1,r 2,ψ 1,ψ 2,w )
-=Gα
-1
-(∫ 1
-0
-˙γ(x +sw)ds, ˙γ(x), ¨γ(x +r2w + (r1 −r2)ψ1w),
-¨γ(x +r2w + (r1 −r2)ψ2w),
-∫ 1
-0
-¨γ(x +tw)(1 −t)dt
-)
-for some analytic function Gα
-1 : Rn \ {0, 1} × R4n → Rn.
-Proof. By the integral form of the remainder of a ﬁrst order Taylor ap proximation,
-we compute the integrand of Rα,ε
-1 γ as
-(γ(x +w) −γ(x) −w ˙γ(x))
-( 1
-|γ(x +w) −γ(x)|α+2 − 1
-|w|α+2
-)
-=w2
-∫ 1
-0
-¨γ(x +tw)(1 −t)dt
-( 1
-|γ(x +w) −γ(x)|α+2 − 1
-|w|α+2
-)
-=
-∫ 1
-0
-¨γ(x +tw)(1 −t)dt
-( w2
-|γ(x +w) −γ(x)|α+2 − 1
-|w|α
-)
-. (6.3)
-Thus the last term in ( 6.3) can be expressed as
-w2
-|γ(x +w) −γ(x)|α+2 − 1
-|w|α
-= |w|α+2
-|γ(x +w) −γ(x)|α+2
-
- 1 − |γ(x+w)−γ(x)|α +2
-|w|α +2
-|w|α
-
-
-= |w|α+2
-|γ(x +w) −γ(x)|α+2
-1 − |γ(x+w)−γ(x)|α +2
-|w|α +2
-1 − |γ(x+w)−γ(x)|2
-|w|2
-
- 1 − |γ(x+w)−γ(x)|2
-|w|2
-|w|α
-
-
-=gα
-1
-(∫ 1
-0
-˙γ(x +sw)ds
-) 
- 1 − |γ(x+w)−γ(x)|2
-|w|2
-|w|α
-
-, (6.4)
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 17
-where gα
-1 (x) = 1
-2|x|α +2
-1−|x|α +2
-1−|x|2 for all x ∈ Rn \ {0, 1} is analytic away from the
-origin. By transfering the computations in ( 6.1) and ( 6.2) to the last term in ( 6.4)
-we ﬁnd that
-(Rα,ε
-1 γ)(x)
-=
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-(r1 −r2)2
-×~Gα
-1
-(∫ 1
-0
-˙γ(x +sw)ds, ¨γ(x +r2w + (r1 −r2)ψ1w),
-¨γ(x +r2w + (r1 −r2)ψ2w),
-∫ 1
-0
-¨γ(x +tw)(1 −t)dt
-)
-dψ1dψ2dr1dr2dw,
-where ~Gα
-1 : Rn \ {0, 1} × R3n → Rn deﬁned by ~Gα
-1 (a,x,y,z ) := gα
-1 (a) ⟨x,y ⟩Rnz is
-analytic away from 0 and 1 in the ﬁrst variable.
-Finally, by applying the orthogonal projection to Rα,ε
-1 γ, we obtain
-(P ⊥
-˙γ Rα,ε
-1 γ)(x) =
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-(r1 −r2)2Gα
-1 (γ)(x)dψ1dψ2dr1dr2dw,
-where
-Gα
-1 (γ)(x) = Gα
-1 (γ)(x;r1,r 2,ψ 1,ψ 2,w )
-=Gα
-1
-(∫ 1
-0
-˙γ(x +sw)ds, ˙γ(x), ¨γ(x +r2w + (r1 −r2)ψ1w),
-¨γ(x +r2w + (r1 −r2)ψ2w),
-∫ 1
-0
-¨γ(x +tw)(1 −t)dt
-)
-and Gα
-1 : Rn \ {0, 1} × R4n → Rn given by Gα
-1 (a,v,x,y,z ) := P ⊥
-v ~Gα
-2 (a,x,y,z ) is
-obviously analytic. □
-7. Proof of the main theorem by Cauchy’s method of majorants
-We now turn to the proof of Theorem 1.2. Our strategy is to ﬁrst establish a
-recursive estimate for ‖∂lγ‖Hα − 1 from which we can infer, by Cauchy’s method of
-majorants, the analyticity of the curve γ.
-Let m := 1 > 1
-2 and γ = (γ1,...,γ n) : R/Z → Rn be a simple closed arc-length
-parametrized curve that is in the class C∞(R/Z, Rn). If γ is a critical point of
-E α +λL, i.e. if we have
-δE α(γ;h) +λ
-∫
-R/Z
-⟨˙γ, ˙h⟩dx = 0
-for all h ∈H
-α +1
-2 ,2(R/Z, Rn), then Theorem 3.1 and integration by parts imply that
-the curve γ solves the Euler-Lagrange equation
-(H αγ +λ¨γ,h )L2([0,1],Rn) = 0
-for all h ∈ H
-α +1
-2 ,2(R/Z, Rn). Thus by the decompositions ( 3.1) and ( 3.2) of the
-gradient of O’Hara’s knot energies, we conclude that
-H αγ =αP ⊥
-˙γ Qαγ + 2αP ⊥
-˙γ Rα
-1γ − 2P ⊥
-˙γ Rα
-3γ +λ¨γ ≡ 0
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 18
-on R/Z. Moreover, by Corollary 4.2 with β := α − 2 ∈ (0, 1) and the triangle
-inequality, it follows for any integer l ≥ 0 that
-‖∂l+3γ‖H1+β ≤ ~C‖∂lQαγ‖H1
-= ~C
-‖‖∂l(
-αP T
-˙γ Qαγ − 2αP ⊥
-˙γ Rα
-1γ + 2P ⊥
-˙γ Rα
-2γ −λ¨γ
-) ‖‖
-H1
-≤ 6~C(‖∂lP T
-˙γ Qαγ‖H1 + ‖∂lP ⊥
-˙γ Rα
-1γ‖H1
-+ ‖∂lP ⊥
-˙γ Rα
-3γ‖H1 +λ‖∂l+2γ‖H1 ). (7.1)
-In order to get a recursive estimate on ‖∂lγ‖H1+β we aim to derive suitable estimates
-for the ﬁrst three terms on the right-hand side of ( 7.1). To do so for the tangential
-part of Qα, we use the fractional Leibniz rule from Section 5 in the following:
-Lemma 7.1. Let l ∈ N0, β :=α − 2 ∈ (0, 1) for some 2< α <3 and 0< ε≤ 1
-2 .
-Then there exists a positive constant CQα independent of ε, γ and l such that
-‖∂lP T
-˙γ Qα,εγ‖H1
-≤CQα
-l∑
-k1=0
-k1∑
-k2=0
-(l
-k1
-)( k1
-k2
-)
-‖∂l−k1+2γ‖H1+β ‖∂k1−k2+2γ‖H1+β ‖∂k2+1γ‖H1.
-Proof. Using formula ( 5.2) and the Leibniz rule twice yields
-∂l
-(
-P T
-˙γ Qα,εγ(x)
-)
-=∂l
-(
-2
-∫
-|w|∈[ε, 1
-2 ]
-∫∫
-[0,1]2
-(1 −t)(−t) ⟨¨γ(x +tw), ¨γ(x +stw)⟩Rn
-w|w|α−2 ˙γ(x)dsdtdw
-)
-= 2
-∫
-|w|∈[ε, 1
-2 ]
-∫∫
-[0,1]2
-(1 −t)(−t)∂l
-(⟨¨γ(x +tw), ¨γ(x +stw)⟩Rn
-w|w|β ˙γ(x)
-)
-dsdtdw
-= 2
-∫
-|w|∈[ε, 1
-2 ]
-∫∫
-[0,1]2
-(1 −t)(−t)
-×
-l∑
-k1=0
-k1∑
-k2=0
-(l
-k1
-)( k1
-k2
-) ⟨
-∂l−k1+2γ(x +tw),∂ k1−k2+2γ(x +stw)
-⟩
-Rn
-w|w|β ∂k2+1γ(x)dsdtdw
-= 2
-∫∫
-[0,1]2
-(1 −t)(−t)
-×
-l∑
-k1=0
-k1∑
-k2=0
-(l
-k1
-)( k1
-k2
-) n∑
-k=1
-H ε
-t,st,β(∂l−k1+2γk,∂ k1−k2+2γk)(x)∂k2+1γ(x)dsdt,
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 19
-where the smoothness of the integrand allows interchanging of integrals and deriv-
-ative. Then for all 1 ≤m ≤n we obtain the component-wise estimate
-‖∂l(P T
-˙γ Qα,εγ)m‖H1
-≤ 2
-∫∫
-[0,1]2
-|1 −t||t|
-×
-l∑
-k1=0
-k1∑
-k2=0
-(l
-k1
-)( k1
-k2
-) n∑
-k=1
-C1‖H ε
-t,st,β(∂l−k1+2γk,∂ k1−k2+2γk)‖H1 ‖∂k2+1γm‖H1 dsdt
-≤ 2C1
-∫∫
-[0,1]2
-|1 −t||t|
-×
-l∑
-k1=0
-k1∑
-k2=0
-(l
-k1
-)( k1
-k2
-) ( n∑
-k=1
-CH ‖∂l−k1+2γk‖H1+β ‖∂k1−k2+2γk‖H1+β
-)
-‖∂k2+1γm‖H1dsdt
-≤ 2C1CH
-l∑
-k1=0
-k1∑
-k2=0
-(l
-k1
-)( k1
-k2
-)
-‖∂l−k1+2γ‖H1+β ‖∂k1−k2+2γ‖H1+β ‖∂k2+1γm‖H1
-(7.2)
-via the Banach algebra property ( 2.1) of H 1 and the fractional Leibniz rule for each
-of the components (i.e. Theorem 5.3). The desired statement follows from ( 7.2) and
-the equivalence between the 1-norm and the 2-norm with a ﬁnite positive constant
-CQα := 2C1CH
-√n. □
-Next we estimate the orthogonal projection of the truncated remaining parts
-Rα,ε
-1 γ andRα,ε
-2 γ. The important ingredients for this are the forms of P ⊥
-˙γ Rα,ε
-1 γ and
-P ⊥
-˙γ Rα,ε
-2 γ derived in Chapter 6, Faà di Bruno’s formula and the Banach algebra
-property of H 1.
-Lemma 7.2. Letl ∈ N0, 2<α< 3, and consider the mapping f = (f1,...,f 5n) :
-R/Z → Rn \ {0, 1} × R4n given by
-f (x) := ( ˙γ(x), ˙γ(x), ¨γ(x), ¨γ(x), ¨γ(x)).
-Then there exist positive constants CRα
-1 andr independent ofε,γ andl such that the
-universal polynomials p(5n)
-l from the multivariate form of Faà di Bruno’s formula.
-(2.2) satisfy
-‖∂lP ⊥
-˙γ Rα,ε
-1 γ‖H1 ≤CRα
-1p(5n)
-l
-({(|η| + 1)!
-r|η|+1
-}
-|η|≤l
-,
-{
-C1‖f (j)
-i ‖H1
-}
-1≤i≤5n
-1≤j≤l
-)
-,
-whereC1 is the constant from the estimate (2.1) with m = 1.
-Proof. By Theorem 6.2 we can express P ⊥
-˙γ Rα,ε
-1 γ as
-(P ⊥
-˙γ Rα,ε
-1 γ)(x) =
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-(r1 −r2)2Gα
-1 (f1(x))dψ1dψ2dr1dr2
-dw
-|w|α−2
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 20
-where Gα
-1 : Rn \ {0, 1} × R4n → Rn is an analytic function and
-f1(x) :=
-
-
-∫ 1
-0 ˙γ(x +sw)ds
-˙γ(x)
-¨γ(x +r2w + (r1 −r2)ψ1w)
-¨γ(x +r2w + (r1 −r2)ψ2w))∫ 1
-0 ¨γ(x +tw)dt
-
-
+[]{#sec:remaining parts label="sec:remaining parts"}
+
+We show that the orthogonal projection of the truncated remainder terms of the decomposition of $\delta \mathcal{E}^\alpha$ found in Section [\[section:decomposition\]](#section:decomposition){reference-type="ref" reference="section:decomposition"} can be expressed as multiple integrals of analytic functions.
+
+Let $0 < \varepsilon \leq \frac{1}{2}$, $x\in [0,1]$ and $\gamma \in C^\infty(\mathbb{R}/ \mathbb{Z},\mathbb{R}^n)$ be a simple closed arc-length parametrized curve. We recall that the truncated remainder terms are given by $$\begin{aligned}
+(R_1^{\alpha,\varepsilon} \gamma)(x) &= \int_{|w| \in [\varepsilon, \frac{1}{2}]} (\gamma(x+w)-\gamma(x)-w\dot{\gamma}(x)) \left(\frac{1}{|\gamma(x+w)-\gamma(x)|^{\alpha +2}} - \frac{1}{ |w|^{\alpha +2}}\right)\mathrm{d} w, \\
+(R_2^{\alpha,\varepsilon} \gamma)(x) &= \int_{|w| \in [\varepsilon, \frac{1}{2}]} \ddot{\gamma}(x)\left(\frac{1}{|\gamma(x+w)-\gamma(x)|^{\alpha}} - \frac{1}{ |w|^{\alpha }}\right)\mathrm{d} w
 .
-Due to the smoothness of the integrand and the generalized Fa à di Bruno’s formula
-(2.2), we component-wise ﬁnd for all 1 ≤k ≤ 5n that
-∂l(P ⊥
-˙γ Rα,ε
-1 γ)k(x)
-=∂l
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-(r1 −r2)2Gα
-1,k(f1(x))dψ1dψ2dr1dr2
-dw
-|w|α−2
-=
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-(r1 −r2)2∂lGα
-1,k(f1(x))dψ1dψ2dr1dr2
-dw
-|w|α−2
-=
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-(r1 −r2)2
-×p(5n)
-l
-(
-{(∂ηGα
-1 )k(f1(x))}|η|≤l, {f (j)
-1,i (x)}1≤i≤5n
-1≤j≤l
-)
-dψ1dψ2dr1dr2
-dw
-|w|α−2.
-Moreover, by applying the H 1-norm on ∂l(P ⊥
-˙γ Rα,ε
-1 γ) component-wise for any 1 ≤
-k ≤ 5n, we ﬁnd via the Banach algebra property of H 1 that
-‖∂l(P ⊥
-˙γ Rα,ε
-1 γ)k‖H1
-≤
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-|r1 −r2|2
-×
-‖‖‖p(5n)
-l
-(
-{(∂ηGα
-1 )k(f1)}|η|≤l, {f (j)
-1,i }1≤i≤5n
-1≤j≤l
-) ‖‖‖
-H1
-dψ1dψ2dr1dr2
-dw
-|w|α−2
-≤
-∫
-|w|∈[ε, 1
-2 ]
-∫∫∫∫
-[0,1]4
-|r1 −r2|2
-×p(5n)
-l
-(
-{‖(∂ηGα
-1 )k(f1)‖H1 }|η|≤l, {C1‖f (j)
-1,i ‖H1 }1≤i≤5n
-1≤j≤l
-)
-dψ1dψ2dr1dr2
-dw
-|w|α−2,
-where the constant C1 appears only in front of ‖f (j)
-1,i ‖H1 because of the one-
-homogeneity of p(5n)
-l in its ﬁrst components.
-For any 1 ≤j ≤l we also observe that ‖f (j)
-1,k‖H1 ≤ ‖f (j)
-k ‖H1 whenever 1 ≤k ≤n,
-4n+1 ≤k ≤ 5n and that ‖f (j)
-1,k‖H1 = ‖f (j)
-k ‖H1 whenevern+1 ≤k ≤ 4n. Moreover,
-‖f (j)
-k ‖H1 does not depend on any of the parameters w,ψ i,r i,s,t for all 1 ≤k ≤ 5n
-and 1 ≤ j ≤ l. In addition, since Gα
-1 is an analytic function, we can deduce from
-the proof of [ BV19, Theor. 7.2] that
-‖(∂ηGα
-1 )(f1)‖H1 ≤ ~CRα
-1
-(|η| + 1)!
-r|η|+1
-for some positive constant ~CRα
-1 independent of ε,γ and l.
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 21
-Now using the elementary estimate
-∫
-|w|∈[ε, 1
-2 ]
-dw
-|w|α − 2 ≤ 2
-3−α < ∞ since 2<α< 3
-and the fact that p(5n)
-l is one-homogeneous in the ﬁrst components, we ﬁnally obtain
-‖∂l(P ⊥
-˙γ Rε
-1γ)‖H1 ≤CRα
-1 p(5n)
-l
-({(|η| + 1)!
-r|η|+1
-}
-|η|≤l
+\end{aligned}$$
+
+We begin with transforming the more elementary part $P^\perp_{\dot{\gamma}} R_2^{\alpha,\varepsilon} \gamma$.
+
+::: thm
+The term $P^\perp_{\dot{\gamma}} R_2^{\alpha,\varepsilon} \gamma$ can be re-written as multiple integral of the form $$\begin{aligned}
+    (P^\perp_{\dot{\gamma}} R_2^\varepsilon \gamma )(x) =  
+    \int_{|w|\in [\varepsilon, \frac{1}{2}]} 
+     \iiiint_{[0,1]^4} (s_1-s_2)^2 \mathsf{G}^{\alpha}_2(\gamma)(x)  \mathrm{d} \phi_1 \mathrm{d} \phi_2 \mathrm{d} s_1 \mathrm{d} s_2 \frac{\mathrm{d} w}{|w|^{\alpha-2}}  ,
+    
+\end{aligned}$$ where $$\begin{aligned}
+    \mathsf{G}^{\alpha}_2(\gamma)(x) 
+    &= \mathsf{G}^{\alpha}_2(\gamma)(x;{s_1,s_2,\phi_1,\phi_2,w}) \\    
+    &= 
+    G^{\alpha}_2\Big(  
+    \int_0^1 \dot{\gamma} (x+tw) \mathrm{d} t,
+    \dot{\gamma}(x),    \ddot{\gamma}(x+s_2w + (s_1-s_2)\phi_1 w), \\
+    &\hspace{3cm}
+    \ddot{\gamma}(x+s_2w + (s_1-s_2)\phi_2 w), 
+    \ddot{\gamma}(x)  \Big) 
+    
+\end{aligned}$$ for some analytic function $G_2^\alpha : \mathbb{R}^n \setminus \{0,1\} \times \mathbb{R}^{4n} \rightarrow \mathbb{R}^n$.
+:::
+
+::: proof
+*Proof.* We begin by computing the first term in the integrand of $R_2^{\alpha,\varepsilon} \gamma$. To do so we use the fundamental theorem of calculus and the arc-length parametrization of the curve $\gamma$ (as in the proof of [@BR13 Prop. 3.2]) to get $$\begin{aligned}
+\label{formula:R2gammaint1}
+&
+\frac{1}{|\gamma(x+w)-\gamma(x)|^\alpha} -  \frac{1}{|w|^\alpha}  \nonumber\\
+&\qquad= \frac{|w|^\alpha}{|\gamma(x+w)-\gamma(x)|^\alpha} \frac{1- \frac{|\gamma(x+w)-\gamma(x)|^\alpha}{|w|^\alpha}}{1- \frac{|\gamma(x+w)-\gamma(x)|^2}{w^2}}  \frac{1- \frac{|\gamma(x+w)-\gamma(x)|^2}{w^2}}{|w|^\alpha} \nonumber\\
+& \qquad= g_2^\alpha\left(\int_0^1 \dot{\gamma} (x+tw) \mathrm{d} t \right) \frac{2\left(1- \frac{|\gamma(x+w)-\gamma(x)|^2}{w^2}\right)}{|w|^\alpha} \nonumber\\
+&\qquad = g_2^\alpha\left(\int_0^1 \dot{\gamma} (x+tw) \mathrm{d} t \right) \frac{\iint_{[0,1]^2} |\dot{\gamma}(x+s_1w)-\dot{\gamma}(x+s_2w)|^2 \mathrm{d} s_1 \mathrm{d} s_2}{|w|^\alpha},
+\end{aligned}$$ where $g_2^\alpha(x) = \frac{1}{2|x|^\alpha}\frac{1-|x|^\alpha}{1-|x|^2}$ for all $x\in \mathbb{R}^n \setminus\{0,1\}$ is analytic away from the origin. Since we have by the fundamental theorem of calculus $$\begin{aligned}
+\label{formula:R2gammaint2}
+& \frac{|\dot{\gamma}(x+s_1w)-\dot{\gamma}(x+s_2w)|^2}{w^2}   
+=    \int_0^1 \int_0^1 (s_1 - s_2)^2 \nonumber \\
+& \qquad \times \left< \ddot{\gamma}(x+s_2w + (s_1-s_2)\phi_1 w), \ddot{\gamma}(x+s_2w + (s_1-s_2)\phi_2 w) \right>_{\mathbb{R}^n} \mathrm{d} \phi_1 \mathrm{d} \phi_2 ,
+\end{aligned}$$ we can express $R_2^{\alpha,\varepsilon} \gamma$ as $$\begin{aligned}
+ (R_2^{\alpha,\varepsilon}  \gamma) (x)  
+ &=  \int_{|w|\in [\varepsilon, \frac{1}{2}]} \iiiint_{[0,1]^4} (s_1-s_2)^2  \nonumber \\
+&\qquad \times  \widetilde{G_2^\alpha}\Big( 
+\int_0^1 \dot{\gamma} (x+tw) \mathrm{d} t, 
+\ddot{\gamma}(x+s_2w + (s_1-s_2)\phi_1 w), 
+\\
+&\hspace{3cm}
+\ddot{\gamma}(x+s_2w + (s_1-s_2)\phi_2 w), 
+\ddot{\gamma}(x)  \Big) 
+  \mathrm{d} \phi_1 \mathrm{d} \phi_2 \mathrm{d} s_1 \mathrm{d} s_2  \frac{\mathrm{d} w}{|w|^{\alpha-2}} 
 ,
-{
-‖C1f (j)
-i ‖H1
-}
-1≤i≤5n
-1≤j≤l
-)
+\end{aligned}$$ where $\widetilde{G_2^\alpha}: \mathbb{R}^n \setminus \{0,1\} \times \mathbb{R}^{3n}  \rightarrow \mathbb{R}^n$ defined by $\widetilde{G_2^\alpha}(a, x, y, z):= g_2^\alpha(a) \left<x,y \right>_{\mathbb{R}^n} z$ is an analytic function away from the origin in the first variable as well. If we apply the orthogonal projection $P^\perp_{\dot{\gamma}}$ on $R_2^{\alpha,\varepsilon} \gamma$, we finally get the following representation $$\begin{aligned}
+(P^\perp_{\dot{\gamma}} R_2^{\alpha,\varepsilon} \gamma )(x) =  \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \iiiint_{[0,1]^4} (s_1-s_2)^2 \mathsf{G}^{\alpha}_2(\gamma)(x) \mathrm{d} \phi_1 \mathrm{d} \phi_2 \mathrm{d} s_1 \mathrm{d} s_2 \frac{\mathrm{d} w}{|w|^{\alpha-2}}
 ,
-where CRα
-1 := ~CRα
-1
-2
-3−α is ﬁnite and the right-hand side is independent of ε. □
-The orthogonal projection of the second remainder term can b e estimated along
-the lines of the previous Lemma 7.2 to get the following:
-Lemma 7.3. Letl ∈ N0 and f = ( ˙γ, ˙γ, ¨γ, ¨γ, ¨γ) as in Lemma 7.2. Then there exist
-positive constants CRα
-2 and s that are independent of ε, γ and l such that
-‖∂lP ⊥
-˙γ Rα,ε
-2 γ‖H1 ≤CRα
-2 p(5n)
-l
-({(|η| + 1)!
-s|η|+1
-}
-|η|≤l
+\end{aligned}$$ where $$\begin{aligned}
+\mathsf{G}^{\alpha}_2(\gamma)(x) 
+&= \mathsf{G}^{\alpha}_2(\gamma)(x;{s_1,s_2,\phi_1,\phi_2,w}) \\    
+&= 
+G^{\alpha}_2\Big(  
+\int_0^1 \dot{\gamma} (x+tw) \mathrm{d} t,
+\dot{\gamma}(x),    \ddot{\gamma}(x+s_2w + (s_1-s_2)\phi_1 w), \\
+&\hspace{3cm}
+\ddot{\gamma}(x+s_2w + (s_1-s_2)\phi_2 w), 
+\ddot{\gamma}(x)  \Big) 
+\end{aligned}$$ and $G_2^\alpha : \mathbb{R}^n \setminus \{0,1\} \times \mathbb{R}^{4n} \rightarrow \mathbb{R}^n$ given by $G_2^\alpha (a,v,x,y,z) := P^\perp_{v} \widetilde{G_2^\alpha} (a,x,y,z)$ is clearly analytic. ◻
+:::
+
+We use the previous computations to rewrite the orthogonal projection of the first remaining part.
+
+::: thm
+[]{#thm:formR1 label="thm:formR1"} The term $P^\perp_{\dot{\gamma}} R_1^{\alpha,\varepsilon} \gamma$ can be re-written as multiple integral of the form $$\begin{aligned}
+    (P^\perp_{\dot{\gamma}} R_1^\varepsilon \gamma )(x) =  
+    \int_{|w|\in [\varepsilon, \frac{1}{2}]} 
+    \iiiint_{[0,1]^4} (r_1-r_2)^2 \mathsf{G}^{\alpha}_1(\gamma)(x)  \mathrm{d} \psi_1 \mathrm{d} \psi_2 \mathrm{d} r_1 \mathrm{d} r_2 \frac{\mathrm{d} w}{|w|^{\alpha-2}}  ,
+    
+\end{aligned}$$ where $$\begin{aligned}
+    \mathsf{G}^{\alpha}_1(\gamma)(x) 
+    &= \mathsf{G}^{\alpha}_1(\gamma)(x;{r_1,r_2,\psi_1,\psi_2,w}) \\    
+    &= 
+    G^{\alpha}_1\Big(\int_0^1 \dot{\gamma} (x+sw) \mathrm{d} s,
+    \dot{\gamma}(x), 
+    \ddot{\gamma}(x+r_2w + (r_1-r_2)\psi_1 w), \\
+    &\hspace{3cm}   
+    \ddot{\gamma}(x+r_2w + (r_1-r_2)\psi_2 w), 
+    \int_0^1 \ddot{\gamma}(x +tw)(1-t) \mathrm{d}t \Big) 
+    
+\end{aligned}$$ for some analytic function $G_1^\alpha : \mathbb{R}^n \setminus \{0,1\} \times \mathbb{R}^{4n} \rightarrow \mathbb{R}^n$.
+:::
+
+::: proof
+*Proof.* By the integral form of the remainder of a first order Taylor approximation, we compute the integrand of $R_1^{\alpha,\varepsilon} \gamma$ as $$\begin{aligned}
+\label{formula:R1integrand}
+& (\gamma(x+w)-\gamma(x)-w\dot{\gamma}(x)) \left(\frac{1}{|\gamma(x+w)-\gamma(x)|^{\alpha +2}} - \frac{1}{ |w|^{\alpha +2}}\right) \nonumber\\
+&\qquad =  w^2 \int_0^1 \ddot{\gamma}(x+tw)(1-t) \mathrm{d} t \ \left(\frac{1}{|\gamma(x+w)-\gamma(x)|^{\alpha +2}} - \frac{1}{ |w|^{\alpha +2}}\right) \nonumber\\
+&\qquad =  \int_0^1 \ddot{\gamma}(x+tw)(1-t) \mathrm{d} t \ \left(\frac{w^2}{|\gamma(x+w)-\gamma(x)|^{\alpha +2}} - \frac{1}{ |w|^{\alpha}}\right).
+\end{aligned}$$ Thus the last term in [\[formula:R1integrand\]](#formula:R1integrand){reference-type="eqref" reference="formula:R1integrand"} can be expressed as $$\begin{aligned}
+\label{formula:R1integrand2}
+& \frac{w^2}{|\gamma(x+w)-\gamma(x)|^{\alpha +2}} - \frac{1}{ |w|^{\alpha}} \nonumber\\
+& \qquad =  \frac{|w|^{\alpha +2}}{|\gamma(x+w)-\gamma(x)|^{\alpha +2}} \left(\frac{1-\frac{|\gamma(x+w)-\gamma(x)|^{\alpha +2}}{|w|^{\alpha +2}} }{|w|^\alpha}\right) \nonumber\\
+&\qquad  = \frac{|w|^{\alpha +2}}{|\gamma(x+w)-\gamma(x)|^{\alpha +2}} \frac{1-\frac{|\gamma(x+w)-\gamma(x)|^{\alpha +2}}{|w|^{\alpha +2}} }{1-\frac{|\gamma(x+w)-\gamma(x)|^{2}}{|w|^{2}}} \left(\frac{1-\frac{|\gamma(x+w)-\gamma(x)|^{2}}{|w|^{2}} }{|w|^\alpha}\right) \nonumber\\
+&\qquad  =g_1^\alpha\left(\int_0^1 \dot{\gamma} (x+sw) \mathrm{d} s \right) \left(\frac{1-\frac{|\gamma(x+w)-\gamma(x)|^{2}}{|w|^{2}} }{|w|^\alpha}\right)
 ,
-{
-C1‖f (j)
-i ‖H1
-}
-1≤i≤5n
-1≤j≤l
-)
+\end{aligned}$$ where $g_1^\alpha(x) = \frac{1}{2|x|^{\alpha+2}}\frac{1-|x|^{\alpha+2}}{1-|x|^2}$ for all $x\in \mathbb{R}^n\setminus \{0,1\}$ is analytic away from the origin. By transfering the computations in [\[formula:R2gammaint1\]](#formula:R2gammaint1){reference-type="eqref" reference="formula:R2gammaint1"} and [\[formula:R2gammaint2\]](#formula:R2gammaint2){reference-type="eqref" reference="formula:R2gammaint2"} to the last term in [\[formula:R1integrand2\]](#formula:R1integrand2){reference-type="eqref" reference="formula:R1integrand2"} we find that $$\begin{aligned}
+&(R_1^{\alpha,\varepsilon} \gamma) (x) \\
+&=  \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \iiiint_{[0,1]^4} (r_1-r_2)^2 \\
+&\quad\times
+ \widetilde{G_1^\alpha} \bigg( \int_0^1 \dot{\gamma}(x+sw)\mathrm{d}s, 
+  \ddot{\gamma}(x+r_2w + (r_1-r_2)\psi_1 w), 
+  \\
+ &\hspace{2cm}
+ \ddot{\gamma}(x+r_2w + (r_1-r_2)\psi_2 w), 
+ \int_0^1 \ddot{\gamma}(x+tw)(1-t) \mathrm{d} t \bigg) \mathrm{d} \psi_1 \mathrm{d} \psi_2 \mathrm{d} r_1 \mathrm{d} r_2 \mathrm{d} w
 ,
-wherep(5n)
-l is the same universal polynomial as in Lemma 7.2.
-As a direct consequence of the proof of [ BV19, Theor. 7.4] the estimates from
-Lemmas 7.1, 7.2 and 7.3 also hold for the limit case ε ↓ 0.
-Theorem 7.4. Let l ∈ N0 and f = ( ˙γ, ˙γ, ¨γ, ¨γ, ¨γ) as in Lemma 7.2. Then there
-exist positive constants r, s, CQα , CRα
-1 and CRα
-2 which are independent of γ and l
-such that
-‖∂lP T
-˙γ Qαγ‖H1 ≤CQα
-l∑
-k1=0
-k1∑
-k2=0
-(l
-k1
-)( k1
-k2
-)
-‖∂l−k1+2γ‖H1+β ‖∂k1−k2+2γ‖H1+β ‖∂k2+1γ‖H1
-‖∂lP ⊥
-˙γ Rα
-1γ‖H1 ≤CRα
-1 p(5n)
-l
-({(|η| + 1)!
-r|η|+1
-}
-|η|≤l
+\end{aligned}$$ where $\widetilde{G_1^\alpha} : \mathbb{R}^n\setminus \{0,1\} \times \mathbb{R}^{3n} \rightarrow \mathbb{R}^n$ defined by $\widetilde{G_1^\alpha} (a,x,y,z) := g_1^\alpha(a) \left<x,y \right>_{\mathbb{R}^n} z$ is analytic away from 0 and 1 in the first variable.
+
+Finally, by applying the orthogonal projection to $R_1^{\alpha,\varepsilon} \gamma$, we obtain $$\begin{aligned}
+(P^\perp_{\dot{\gamma}} R_1^{\alpha,\varepsilon} \gamma )(x) =  \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \iiiint_{[0,1]^4}  (r_1-r_2)^2   \mathsf{G}^{\alpha}_1(\gamma)(x) \mathrm{d} \psi_1 \mathrm{d} \psi_2 \mathrm{d} r_1 \mathrm{d} r_2 \mathrm{d} w
 ,
-{
-C1‖f (j)
-i ‖H1
-}
-1≤i≤5n
-1≤j≤l
-)
-‖∂lP ⊥
-˙γ Rα
-2γ‖H1 ≤CRα
-2 p(5n)
-l
-({(|η| + 1)!
-s|η|+1
-}
-|η|≤l
-,
-{
-C1‖f (j)
-i ‖H1
-}
-1≤i≤5n
-1≤j≤l
-)
-,
-where β := α − 2 for some 2 < α <3 and p(5n)
-l is the universal polynomial from
-Lemma 7.2.
+\end{aligned}$$ where $$\begin{aligned}
+\mathsf{G}^{\alpha}_1(\gamma)(x) 
+&= \mathsf{G}^{\alpha}_1(\gamma)(x;{r_1,r_2,\psi_1,\psi_2,w}) \\    
+&= 
+G^{\alpha}_1\Big(\int_0^1 \dot{\gamma} (x+sw) \mathrm{d} s,
+\dot{\gamma}(x), 
+\ddot{\gamma}(x+r_2w + (r_1-r_2)\psi_1 w), \\
+&\hspace{3cm}   
+\ddot{\gamma}(x+r_2w + (r_1-r_2)\psi_2 w), 
+\int_0^1 \ddot{\gamma}(x +tw)(1-t) \mathrm{d}t \Big) 
+\end{aligned}$$ and $G_1^\alpha : \mathbb{R}^n \setminus \{0,1\} \times \mathbb{R}^{4n} \rightarrow \mathbb{R}^n$ given by $G_1^\alpha (a,v,x,y,z) := P^\perp_{v} \widetilde{G_2^\alpha} (a,x,y,z)$ is obviously analytic. ◻
+:::
+
+Proof of the main theorem by Cauchy's method of majorants[]{#sec:mainpart label="sec:mainpart"}
+
+We now turn to the proof of Theorem [\[main\]](#main){reference-type="ref" reference="main"}. Our strategy is to first establish a recursive estimate for $\|\partial^l \gamma \|_{H^{\alpha -1} }$ from which we can infer, by Cauchy's method of majorants, the analyticity of the curve $\gamma$.
+
+Let $m := 1 > \frac{1}{2}$ and $\gamma = (\gamma_1,\ldots, \gamma_n) :\mathbb{R}/ \mathbb{Z}\rightarrow \mathbb{R}^n$ be a simple closed arc-length parametrized curve that is in the class $C^\infty (\mathbb{R}/ \mathbb{Z},\mathbb{R}^n)$. If $\gamma$ is a critical point of $\mathcal{E}^\alpha + \lambda \mathcal{L}$, i.e. if we have $$\begin{aligned}
+\delta \mathcal{E}^\alpha(\gamma;h) + \lambda \int_{\mathbb{R}/ \mathbb{Z}} \langle \dot{\gamma}, \dot{h} \rangle \mathrm{d}x = 0
+\end{aligned}$$ for all $h\in H^{\frac{\alpha +1}{2},2}(\mathbb{R}/ \mathbb{Z},\mathbb{R}^n)$, then Theorem [\[thm:1stvar\]](#thm:1stvar){reference-type="ref" reference="thm:1stvar"} and integration by parts imply that the curve $\gamma$ solves the Euler-Lagrange equation $$\begin{aligned}
+( H^\alpha\gamma + \lambda \ddot{\gamma},h)_{L^2([0,1], \mathbb{R}^n)} = 0
+\end{aligned}$$ for all $h \in  H^{\frac{\alpha +1}{2},2}(\mathbb{R}/ \mathbb{Z},\mathbb{R}^n)$. Thus by the decompositions [\[formula:H\]](#formula:H){reference-type="eqref" reference="formula:H"} and [\[formula:Htilde\]](#formula:Htilde){reference-type="eqref" reference="formula:Htilde"} of the gradient of O'Hara's knot energies, we conclude that $$H^\alpha\gamma = \alpha P^\perp_{\dot{\gamma}} Q^\alpha\gamma + 2 \alpha P^\perp_{\dot{\gamma}} R_1^\alpha\gamma  - 2  P^\perp_{\dot{\gamma}} R_3^\alpha
+\gamma  + \lambda \ddot{\gamma} \equiv 0$$ on $\mathbb{R}/ \mathbb{Z}$. Moreover, by Corollary [\[kor:Ql\]](#kor:Ql){reference-type="ref" reference="kor:Ql"} with $\beta:= \alpha -2 \in (0,1)$ and the triangle inequality, it follows for any integer $l\geq 0$ that $$\begin{aligned}
+\label{formula:partiallgamma}
+\|\partial^{l+3} \gamma \|_{H^{1+\beta} } & \leq \widetilde{C} \|\partial^l Q^\alpha\gamma\|_{H^1} \nonumber\\
+& = \widetilde{C} \left\| \partial^l \left( \alpha P^T_{\dot{\gamma}} Q^\alpha\gamma  - 2\alpha P^\perp_{\dot{\gamma}} R_1^\alpha\gamma  + 2 P^\perp_{\dot{\gamma}} R_2^\alpha \gamma - \lambda \ddot{\gamma} \right) \right\|_{H^1}   \nonumber\\
+& \leq 6\widetilde{C}    ( 
+\|\partial^l P^T_{\dot{\gamma}} Q^\alpha\gamma\|_{H^1} 
++ \|\partial^l P^\perp_{\dot{\gamma}} R_1^\alpha\gamma \|_{H^1}  
+\nonumber\\ &\hspace{2cm}
++ \|\partial^l P^\perp_{\dot{\gamma}} R_3^\alpha\gamma \|_{H^1} 
++ \lambda \|\partial^{l+2} \gamma \|_{H^1}  ).
+\end{aligned}$$ In order to get a recursive estimate on $\|\partial^l \gamma \|_{H^{1+\beta} }$ we aim to derive suitable estimates for the first three terms on the right-hand side of [\[formula:partiallgamma\]](#formula:partiallgamma){reference-type="eqref" reference="formula:partiallgamma"}. To do so for the tangential part of $Q^\alpha$, we use the fractional Leibniz rule from Section [\[sec:bilinearHilberttransform\]](#sec:bilinearHilberttransform){reference-type="ref" reference="sec:bilinearHilberttransform"} in the following:
+
+::: lem
+[]{#est:Q label="est:Q"} Let $l\in\mathbb{N}_0$, $\beta:= \alpha -2 \in (0,1)$ for some $2 < \alpha < 3$ and $0<\varepsilon\leq \frac 12$. Then there exists a positive constant $C_{Q^\alpha}$ independent of $\varepsilon$, $\gamma$ and $l$ such that $$\begin{aligned}
+    &\|\partial^l P^T_{\dot{\gamma}} Q^{\alpha,\varepsilon}\gamma\|_{H^1} \\
+    &\qquad \leq  C_{Q^\alpha} \sum_{k_1=0}^l \sum_{k_2=0}^{k_1} \binom{l}{k_1} \binom{k_1}{k_2}  \|\partial^{l-k_1+2} \gamma \|_{H^{1+\beta}} \|\partial^{k_1-k_2+2} \gamma \|_{H^{1+\beta}} \|\partial^{k_2 +1}\gamma \|_{H^1}. 
+    
+\end{aligned}$$
+:::
+
+::: proof
+*Proof.* Using formula [\[formula:compTQ\]](#formula:compTQ){reference-type="eqref" reference="formula:compTQ"} and the Leibniz rule twice yields $$\begin{aligned}
+    &\partial^l  \Big(P^T_{\dot{\gamma}} Q^{\alpha,\varepsilon}\gamma (x)\Big)\\
+    &=  \partial^l \Big(2  \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \iint_{[0,1]^2} (1-t) (-t) \frac{\left<\ddot{\gamma}(x+tw), \ddot{\gamma}(x+stw)\right>_{\mathbb{R}^n}}{w |w|^{\alpha-2}} \dot{\gamma}(x) \mathrm{d}s \mathrm{d}t \mathrm{d}w \Big) \\
+    &=   2  \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \iint_{[0,1]^2} (1-t) (-t) \partial^l \left(\frac{\left<\ddot{\gamma}(x+tw), \ddot{\gamma}(x+stw)\right>_{\mathbb{R}^n}}{w|w|^{\beta}} \dot{\gamma}(x)\right) \mathrm{d}s \mathrm{d}t \mathrm{d}w \\
+    &=  2  \int_{|w|\in [\varepsilon, \frac{1}{2}]} \iint_{[0,1]^2} (1-t) (-t) \\
+    & \quad \times \sum_{k_1=0}^l \sum_{k_2=0}^{k_1} \binom{l}{k_1} \binom{k_1}{k_2} \frac{\left<\partial^{l-k_1+2} \gamma(x+tw), \partial^{k_1-k_2+2} \gamma (x+stw)\right>_{\mathbb{R}^n}}{w|w|^{\beta}} \partial^{k_2 +1}\gamma(x) \mathrm{d}s \mathrm{d}t \mathrm{d}w \\ 
+    &=  2 \iint_{[0,1]^2} (1-t) (-t)  \\
+    & \quad \times \sum_{k_1=0}^l \sum_{k_2=0}^{k_1} \binom{l}{k_1} \binom{k_1}{k_2}  \sum_{k=1}^n H_{t,st, \beta}^\varepsilon(\partial^{l-k_1+2} \gamma_k, \partial^{k_1-k_2+2} \gamma_k )(x) \partial^{k_2 +1}\gamma(x) \mathrm{d}s \mathrm{d}t,
+    
+\end{aligned}$$ where the smoothness of the integrand allows interchanging of integrals and derivative. Then for all $1\leq m \leq n$ we obtain the component-wise estimate $$\begin{aligned}
+\label{formula:compQ}
+    & \|\partial^l (P^T_{\dot{\gamma}} Q^{\alpha,\varepsilon}\gamma)_m\|_{H^1} \nonumber\\
+    & \leq  2 \iint_{[0,1]^2} |1-t| |t|    \nonumber\\
+    & \quad   \times \sum_{k_1=0}^l \sum_{k_2=0}^{k_1} \binom{l}{k_1} \binom{k_1}{k_2}  \sum_{k=1}^n C_{1} \| H_{t,st,\beta}^\varepsilon(\partial^{l-k_1+2} \gamma_k, \partial^{k_1-k_2+2} \gamma_k )\|_{H^1} \|\partial^{k_2 +1}\gamma_m \|_{H^1} \mathrm{d}s \mathrm{d}t \nonumber\\
+    & \leq  2 C_{1} \iint_{[0,1]^2} |1-t| |t|   \nonumber\\
+    & \quad  \times \sum_{k_1=0}^l \sum_{k_2=0}^{k_1} \binom{l}{k_1} \binom{k_1}{k_2}  \left( \sum_{k=1}^n C_H\|\partial^{l-k_1+2} \gamma_k \|_{H^{1+\beta}} \|\partial^{k_1-k_2+2} \gamma_k \|_{H^{1+\beta}} \right) \|\partial^{k_2 +1}\gamma_m \|_{H^1}  \mathrm{d}s \mathrm{d}t  \nonumber\\
+    & \leq  2 C_{1} C_H \sum_{k_1=0}^l \sum_{k_2=0}^{k_1} \binom{l}{k_1} \binom{k_1}{k_2}  \|\partial^{l-k_1+2} \gamma \|_{H^{1+\beta}} \|\partial^{k_1-k_2+2} \gamma \|_{H^{1+\beta}} \|\partial^{k_2 +1}\gamma_m \|_{H^1}  
+    
+\end{aligned}$$ via the Banach algebra property [\[prop:Banachalgebra\]](#prop:Banachalgebra){reference-type="eqref" reference="prop:Banachalgebra"} of $H^1$ and the fractional Leibniz rule for each of the components (i.e. Theorem [\[thm:BilinearHT\]](#thm:BilinearHT){reference-type="ref" reference="thm:BilinearHT"}). The desired statement follows from [\[formula:compQ\]](#formula:compQ){reference-type="eqref" reference="formula:compQ"} and the equivalence between the $1$-norm and the $2$-norm with a finite positive constant $C_{Q^\alpha}:= 2 C_{1} C_H \sqrt{n}$. ◻
+:::
+
+Next we estimate the orthogonal projection of the truncated remaining parts $R_1^{\alpha,\varepsilon} \gamma$ and $R_2^{\alpha,\varepsilon} \gamma$. The important ingredients for this are the forms of $P^\perp_{\dot{\gamma}} R_1^{\alpha,\varepsilon} \gamma$ and $P^\perp_{\dot{\gamma}} R_2^{\alpha,\varepsilon} \gamma$ derived in Chapter [\[sec:remaining parts\]](#sec:remaining parts){reference-type="ref" reference="sec:remaining parts"}, Faà di Bruno's formula and the Banach algebra property of $H^1$.
+
+::: lem
+[]{#est:R1 label="est:R1"} Let $l\in\mathbb{N}_0$, $2 < \alpha < 3$, and consider the mapping $f = (f_{1},\ldots, f_{5n})  : \mathbb{R}/ \mathbb{Z}\rightarrow \mathbb{R}^n \setminus \{0,1\} \times \mathbb{R}^{4n}$ given by $$f(x) := (
+    \dot{\gamma} (x),
+    \dot{\gamma} (x),
+    \ddot{\gamma}(x),
+    \ddot{\gamma}(x),
+    \ddot{\gamma}(x))
+    .$$ Then there exist positive constants $C_{R_1^\alpha}$ and $r$ independent of $\varepsilon$, $\gamma$ and $l$ such that the universal polynomials $p_l^{(5n)}$ from the multivariate form of Faà di Bruno's formula. [\[eqn:FdB\]](#eqn:FdB){reference-type="eqref" reference="eqn:FdB"} satisfy $$\begin{aligned}
+    \|\partial^l P^\perp_{\dot{\gamma}} R_1^{\alpha,\varepsilon} \gamma \|_{H^1} 
+    &   \leq C_{R_1^\alpha} 
+    p_l^{(5n)}\Big(\Big\{\frac{(|\eta|+1)!}{r^{|\eta|+1}} \Big\}_{|\eta| \leq l},
+     \Big\{C_1\|f_{i}^{(j)}\|_{H^1} \Big\}_{
+    \substack{
+    1\leq i \leq 5n \\
+           1\leq j \leq l\ \, }      
+     }\Big)
+    ,
+\end{aligned}$$ where $C_1$ is the constant from the estimate [\[prop:Banachalgebra\]](#prop:Banachalgebra){reference-type="eqref" reference="prop:Banachalgebra"} with $m=1$.
+:::
+
+::: proof
+*Proof.* By Theorem [\[thm:formR1\]](#thm:formR1){reference-type="ref" reference="thm:formR1"} we can express $P^\perp_{\dot{\gamma}} R_1^{\alpha,\varepsilon} \gamma$ as $$\begin{aligned}
+    (P^\perp_{\dot{\gamma}} R_1^{\alpha,\varepsilon} \gamma )(x) = \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \iiiint_{[0,1]^4}  (r_1-r_2)^2  G_1^\alpha (f_1(x)) \mathrm{d} \psi_1 \mathrm{d} \psi_2 \mathrm{d} r_1 \mathrm{d} r_2 \frac{\mathrm{d} w}{|w|^{\alpha-2}}
+    
+\end{aligned}$$ where $G_1^\alpha : \mathbb{R}^n \setminus \{0,1\} \times \mathbb{R}^{4n} \rightarrow \mathbb{R}^n$ is an analytic function and $$\begin{aligned}
+    f_1(x) := \begin{pmatrix}
+    \int_0^1 \dot{\gamma} (x+sw) \mathrm{d}s \\
+    \dot{\gamma} (x) \\
+    \ddot{\gamma}(x+r_2w+(r_1-r_2)\psi_1 w) \\
+    \ddot{\gamma}(x+r_2w+(r_1-r_2)\psi_2 w))  \\
+    \int_0^1 \ddot{\gamma}(x+tw) \mathrm{d}t
+    \end{pmatrix}.
+    
+\end{aligned}$$ Due to the smoothness of the integrand and the generalized Faà di Bruno's formula [\[eqn:FdB\]](#eqn:FdB){reference-type="eqref" reference="eqn:FdB"}, we component-wise find for all $1 \leq k\leq 5n$ that $$\begin{aligned}
+    & \partial^l (P^\perp_{\dot{\gamma}} R_1^{\alpha,\varepsilon} \gamma )_k(x) \\
+    & = \partial^l \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \iiiint_{[0,1]^4}  (r_1-r_2)^2  G_{1,k}^\alpha (f_1(x)) \mathrm{d} \psi_1 \mathrm{d} \psi_2 \mathrm{d} r_1 \mathrm{d} r_2 \frac{\mathrm{d} w}{|w|^{\alpha-2}} \\
+    & = \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \iiiint_{[0,1]^4}  (r_1-r_2)^2  \partial^l G_{1,k}^\alpha (f_1(x)) \mathrm{d} \psi_1 \mathrm{d} \psi_2 \mathrm{d} r_1 \mathrm{d} r_2 \frac{\mathrm{d} w}{|w|^{\alpha-2}} \\
+    & = \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \iiiint_{[0,1]^4}  (r_1-r_2)^2   \\
+    & \hspace{3em} \times p_l^{(5n)}\Big(\{(\partial^\eta G_1^\alpha)_k(f_1(x)) \}_{|\eta| \leq l}, \{f_{1,i}^{(j)}(x) \}_{
+\substack{
+1\leq i \leq 5n \\
+           1\leq j \leq l\ \, }  
+    }\Big) \mathrm{d} \psi_1 \mathrm{d} \psi_2 \mathrm{d} r_1 \mathrm{d} r_2 \frac{\mathrm{d} w}{|w|^{\alpha-2}}.
+    
+\end{aligned}$$ Moreover, by applying the $H^1$-norm on $\partial^l (P^\perp_{\dot{\gamma}} R_1^{\alpha,\varepsilon} \gamma )$ component-wise for any $1 \leq k \leq 5n$, we find via the Banach algebra property of $H^1$ that $$\begin{aligned}
+    &\|\partial^l (P^\perp_{\dot{\gamma}} R_1^{\alpha,\varepsilon} \gamma )_k\|_{H^1}  \\
+    & \leq \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \iiiint_{[0,1]^4}  |r_1-r_2|^2  \\
+    & \hspace{2.5em}\times  
+    \Big\|p_l^{(5n)}\Big(
+    \{(\partial^\eta G_1^\alpha)_k(f_1) \}_{|\eta| \leq l}, \{f_{1,i}^{(j)} \}_{    
+\substack{
+1\leq i \leq 5n \\
+           1\leq j \leq l\ \, }             
+    }\Big) 
+    \Big\|_{H^1} \mathrm{d} \psi_1 \mathrm{d} \psi_2 \mathrm{d} r_1 \mathrm{d} r_2 \frac{\mathrm{d} w}{|w|^{\alpha-2}} \\
+    & \leq  \int_{|w|\in [\varepsilon, \frac{1}{2}]}  \iiiint_{[0,1]^4}  |r_1-r_2|^2   \\
+    & \hspace{2.5em}
+    \times  p_l^{(5n)}\Big(
+    \{ \left\|(\partial^\eta G_1^\alpha)_k(f_1)\right\|_{H^1} \}_{|\eta| \leq l}, \{C_1\|f_{1,i}^{(j)}\|_{H^1} \}_{
+\substack{
+1\leq i \leq 5n \\
+           1\leq j \leq l\ \, }         
+    }\Big) 
+    \mathrm{d} \psi_1 \mathrm{d} \psi_2 \mathrm{d} r_1 \mathrm{d} r_2 \frac{\mathrm{d} w}{|w|^{\alpha-2}} 
+    ,
+\end{aligned}$$ where the constant $C_1$ appears only in front of $\|f_{1,i}^{(j)}\|_{H^1}$ because of the one-homogeneity of $p_l^{(5n)}$ in its first components.
+
+For any $1\leq j \leq l$ we also observe that $\|f_{1,k}^{(j)}\|_{H^1}  \leq \|f_k^{(j)}\|_{H^1}$ whenever $1\leq k\leq n$, $4n+1\leq k \leq 5n$ and that $\|f_{1,k}^{(j)}\|_{H^1}  = \|f_k^{(j)}\|_{H^1}$ whenever $n+1\leq k\leq 4n$. Moreover, $\|f_k^{(j)}\|_{H^1}$ does not depend on any of the parameters $w,\psi_i, r_i, s, t$ for all $1\leq k\leq 5n$ and $1\leq j \leq l$. In addition, since $G_1^\alpha$ is an analytic function, we can deduce from the proof of [@BV19 Theor. 7.2] that $$\left\|(\partial^\eta G_1^\alpha)(f_1)\right\|_{H^1}  
+    \leq \widetilde{C}_{R_1^\alpha}  \frac{(|\eta|+1)!}{r^{|\eta|+1}}$$ for some positive constant $\widetilde{C}_{R_1^\alpha}$ independent of $\varepsilon$, $\gamma$ and $l$.
+
+Now using the elementary estimate $\int_{|w|\in [\varepsilon, \frac{1}{2}]} \frac{\mathrm{d} w}{|w|^{\alpha-2}} \leq \frac{2}{3-\alpha} < \infty$ since $2 < \alpha < 3$ and the fact that $p_l^{(5n)}$ is one-homogeneous in the first components, we finally obtain $$\|\partial^l (P^\perp_{\dot{\gamma}} R_1^\varepsilon \gamma )\|_{H^1} 
+     \leq C_{R^\alpha_1} \, p_l^{(5n)}
+     \Big(\Big\{  \frac{(|\eta|+1)!}{r^{|\eta|+1}}\Big\}_{|\eta| \leq l}, \Big\{\|C_1f_{i}^{(j)}\|_{H^1} \Big\}_{
+     \substack{
+1\leq i \leq 5n \\
+           1\leq j \leq l\ \, } 
+     }\Big) ,$$ where $C_{R^\alpha_1} := \widetilde{C}_{R_1^\alpha}  \frac{2}{3-\alpha}$ is finite and the right-hand side is independent of $\varepsilon$. ◻
+:::
+
+The orthogonal projection of the second remainder term can be estimated along the lines of the previous Lemma [\[est:R1\]](#est:R1){reference-type="ref" reference="est:R1"} to get the following:
+
+::: lem
+[]{#est:R2 label="est:R2"} Let $l\in\mathbb{N}_0$ and $f = (\dot{\gamma},\dot{\gamma},\ddot{\gamma}, \ddot{\gamma}, \ddot{\gamma})$ as in Lemma [\[est:R1\]](#est:R1){reference-type="ref" reference="est:R1"}. Then there exist positive constants $C_{R_2^\alpha}$ and $s$ that are independent of $\varepsilon$, $\gamma$ and $l$ such that $$\begin{aligned}
+    &\|\partial^l P^\perp_{\dot{\gamma}} R_2^{\alpha,\varepsilon} \gamma \|_{H^1} \leq  C_{R_2^\alpha} \, p_l^{(5n)}\Big(\Big\{  \frac{(|\eta|+1)!}{s^{|\eta|+1}} \Big\}_{|\eta| \leq l}, \Big\{C_1\|f_{i}^{(j)}\|_{H^1} \Big\}_{
+         \substack{
+1\leq i \leq 5n \\
+           1\leq j \leq l\ \, } 
+    }\Big) 
+    ,
+\end{aligned}$$ where $p_l^{(5n)}$ is the same universal polynomial as in Lemma [\[est:R1\]](#est:R1){reference-type="ref" reference="est:R1"}.
+:::
+
+As a direct consequence of the proof of [@BV19 Theor. 7.4] the estimates from Lemmas [\[est:Q\]](#est:Q){reference-type="ref" reference="est:Q"}, [\[est:R1\]](#est:R1){reference-type="ref" reference="est:R1"} and [\[est:R2\]](#est:R2){reference-type="ref" reference="est:R2"} also hold for the limit case $\varepsilon \downarrow 0$.
+
+::: thm
+[]{#thm:estimates label="thm:estimates"} Let $l\in\mathbb{N}_0$ and $f = (\dot{\gamma},\dot{\gamma}, \ddot{\gamma}, \ddot{\gamma}, \ddot{\gamma})$ as in Lemma [\[est:R1\]](#est:R1){reference-type="ref" reference="est:R1"}. Then there exist positive constants $r$, $s$, $C_{Q^\alpha}$, $C_{R_1^\alpha}$ and $C_{R_2^\alpha}$ which are independent of $\gamma$ and $l$ such that $$\begin{aligned}
+    \|\partial^l P^T_{\dot{\gamma}} Q^\alpha\gamma\|_{H^1}  & \leq  C_{Q^\alpha} \sum_{k_1=0}^l \sum_{k_2=0}^{k_1} \binom{l}{k_1} \binom{k_1}{k_2}  \|\partial^{l-k_1+2} \gamma \|_{H^{1+\beta}} \|\partial^{k_1-k_2+2} \gamma \|_{H^{1+\beta}} \|\partial^{k_2 +1}\gamma \|_{H^1} \\
+    \|\partial^l P^\perp_{\dot{\gamma}} R_1^\alpha \gamma \|_{H^1}  
+    & \leq C_{R_1^\alpha} \, 
+    p_l^{(5n)}\Big(\Big\{\frac{(|\eta|+1)!}{r^{|\eta|+1}} \Big\}_{|\eta| \leq l}, 
+    \Big\{C_1\|f_{i}^{(j)}\|_{H^1} \Big\}_{
+                 \substack{
+1\leq i \leq 5n \\
+           1\leq j \leq l\ \, } 
+           } \Big)\\
+\|\partial^l P^\perp_{\dot{\gamma}} R_2^\alpha \gamma \|_{H^1} 
+    &  \leq  C_{R_2^\alpha} \,
+    p_l^{(5n)}\Big(\Big\{  \frac{(|\eta|+1)!}{s^{|\eta|+1}} \Big\}_{|\eta| \leq l}, 
+    \Big\{C_1\|f_{i}^{(j)}\|_{H^1} \Big\}_{
+             \substack{
+1\leq i \leq 5n \\
+           1\leq j \leq l\ \, } 
+           }\Big)  
+,   
+\end{aligned}$$ where $\beta := \alpha -2$ for some $2 < \alpha < 3$ and $p_l^{(5n)}$ is the universal polynomial from Lemma [\[est:R1\]](#est:R1){reference-type="ref" reference="est:R1"}.
+:::
+
 We are now in a position to give the proof of the main theorem.
-Proof of Theorem 1.2. Letβ =α−2 for 2<α< 3. Now suppose γ = (γ1,...,γ n) :
-R/Z → Rn is a closed simple arc-length parametrized curve in the clas sC∞(R/Z, Rn)
-which is a stationary point of E α +λL. Using the smoothness of the curve γ, we
-introduce an auxiliary function f : R/Z → R5n given by
-f (x) := ( ˙γ(x), ˙γ(x), ¨γ(x), ¨γ(x), ¨γ(x))
-and deﬁne
-al :=C1‖∂lf ‖H1+β
-for all integers l ≥ 0. If we can establish the existence of ﬁnite positive constan tsδ
-and Cγ such that
-al ≤Cγ
-l!
-δl
-we immediately obtain the analyticity of the curve γ on R/Z by Corollary 2.3.
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 22
-In order to obtain the desired bounds on al we ﬁrst note that there exists a
-positive constant ˜C such that
-‖∂l+3γ‖H1+β ≤ ~C
-(
-‖∂lP T
-˙γ Qαγ‖H1 + ‖∂lP ⊥
-˙γ Rα
-1γ‖H1
-+ ‖∂lP ⊥
-˙γ Rα
-3γ‖H1 +λ‖∂l+2γ‖H1
-)
-by the criticality of the curve γ, the ﬁrst variation formula of E α of Theorem 3.1,
-our decomposition of the ﬁrst variation of E α +λL and Corollary 4.2. Next we
-deduce from Theorem 7.4 and the Sobolev embedding of H 1+β ⊆H 1 that
-al+1 =C1‖∂l+1f ‖H1+β
-≤C1(3‖∂l+3γ‖H1+β + 2‖∂l+2γ‖H1+β )
-≤ 3~CC1
-[
-‖∂lP T
-˙γ Qαγ‖H1 + ‖∂lP ⊥
-˙γ Rα
-1γ‖H1
-+ ‖∂lP ⊥
-˙γ Rα
-2γ‖H1 +λ‖∂l+2γ‖H1
-]
-+ 2C1al
-≤ 3~CC1
-[
-CQα
-l∑
-k1=0
-k1∑
-k2=0
-(l
-k1
-)( k1
-k2
-)
-‖∂l−k1+2γ‖H1+β ‖∂k1−k2+2γ‖H1+β ‖∂k2+1γ‖H1
-+CRα
-1p(5n)
-l
-({(|η| + 1)!
-r|η|+1
-}
-|η|≤l
-,
-{
-C1‖f (j)
-i ‖H1
-}
-1≤i≤5n
-1≤j≤l
-)
-+CRα
-2p(5n)
-l
-({(|η| + 1)!
-s|η|+1
-}
-|η|≤l
-,
-{
-C1‖f (j)
-i ‖H1
-}
-1≤i≤5n
-1≤j≤l
-)
-+λ‖∂l+2γ‖H1
-]
-+ 2C1al.
-Therefore, by the embedding of H 1+β ⊆ H 1 again, there exist positive constants
-C >1 and rγ independent of γ and l such that
-al+1 ≤C
-[ l∑
-k1=0
-k1∑
-k2=0
-(l
-k1
-)( k1
-k2
-)
-al−k1ak1−k2ak2
-+p(5n)
-l
-({(|η| + 1)!
-r|η|+1
-γ
-}
-|η|≤l
-,
-{
-aj
-}
-1≤j≤l
-)
-+al
-]
-. (7.3)
-To apply Cauchy’s method of majorants, we deﬁne a majorant F : R5n → R5n
-component-wise by setting
-Fi(y) := C
-(
-y3
-i + 1
-(1 + 5na0−(y1+···+y5n)
-rγ
-)2
-+yi
-)
-for any y = (y1,...,y 5n) ∈ R5n and all 1 ≤ i ≤ 5n. It is clearly analytic around
-a0(1,..., 1). Moreover, we consider the following initial value problem
-˙c(t) = F (c(t)),
-c(0) = a0(1,..., 1). (7.4)
-and note that the ODE has a unique smooth solution c : (−ε,ε ) → R5n that is also
-analytic around 0 for some ε> 0 by Theorem 2.4. Hence we can write c =c(t) as
-On the regularity of critical points for O’Hara’s knot energ ies: From smoothness to analyticity. 23
-a Taylor series in a neighbourhood of 0, i.e.
-c(t) :=
-∞∑
-k=0
-~ak(1,..., 1)
-k! tk
-where ~ak(1,..., 1) = c(k)(0). Then by Theorem 2.1 we can, for all t ∈ Brc(0),
-bound
-|c(l)(t)| ≤ M l!
-rlc
-(7.5)
-for some ﬁnite positive constants rc and M which are independent of any integer
-l ≥ 0. By applying the Leibniz rule and Faà di Bruno’s formula ( 2.2) we have that
-∂lFi(c(t))
-=C
-[ l∑
-k1=0
-k1∑
-k2=0
-(l
-k1
-)( k1
-k2
-)
-c(l−k1)
-i (t)c(k1−k2)
-i (t)c(k2)
-i (t)
-+p(5n)
-l
-({(|η| + 1)!
-r|η|+1
-γ
-1
-(
-1 +
-(
-5na0
-rγ
-− (c1(t)+···+c5n(t))
-rγ
-)) |η|+2
-}
-|η|≤l
-,
-{
-c(j)
-i (t)
-}
-1≤i≤5n
-1≤j≤l
-)
-+c(l)
-i (t)
-]
-for any 1 ≤i ≤ 5n and l ∈ N0. Then by considering the initial condition ( 7.4) we
-ﬁnd that
-˜al+1 =∂lFi(c(0))
-=C
-[ l∑
-k1=0
-k1∑
-k2=0
-(l
-k1
-)( k1
-k2
-)
-˜al−k1 ˜ak1−k2 ˜ak2
-+p(5n)
-l
-({(|η| + 1)!
-r|η|+1
-γ
-}
-|η|≤l
-,
-{
-˜aj
-}
-1≤j≤l
-)
-+ ˜al
-]
-. (7.6)
-Finally an induction argument obtained from comparing ( 7.3) and ( 7.6), together
-with the fact that Faà di Bruno’s polynomials pl (2.2) have non-negative coeﬃcients
-and the initial condition a0 =~a0, gives
-al ≤~al.
-Then by ( 7.5) we conclude that ‖∂l+1γ‖H1+β ≤al ≤M l!
-rl
-C
-for all l ∈ N0 which, by
-Corollary 2.3, implies the analyticity of the curve γ. □
+
+::: proof
+*Proof of Theorem [\[main\]](#main){reference-type="ref" reference="main"}.* Let $\beta = \alpha -2$ for $2 <\alpha < 3$. Now suppose $\gamma = (\gamma_1,\ldots, \gamma_n):\mathbb{R}/ \mathbb{Z}\rightarrow \mathbb{R}^n$ is a closed simple arc-length parametrized curve in the class $C^\infty (\mathbb{R}/ \mathbb{Z},\mathbb{R}^n)$ which is a stationary point of $\mathcal{E}^\alpha + \lambda \mathcal{L}$. Using the smoothness of the curve $\gamma$, we introduce an auxiliary function $f:\mathbb{R}/ \mathbb{Z}\rightarrow \mathbb{R}^{5n}$ given by $$f(x):= (
+    \dot{\gamma}(x) ,
+    \dot{\gamma}(x) ,
+    \ddot{\gamma}(x) ,
+    \ddot{\gamma}(x) , 
+    \ddot{\gamma}(x))$$ and define $$a_l :=C_1  \|\partial^l f\|_{H^{1+\beta}}$$ for all integers $l\geq 0$. If we can establish the existence of finite positive constants $\delta$ and $C_\gamma$ such that $$\begin{aligned}
+    a_l \leq C_\gamma \frac{l!}{\delta^l} 
+    
+\end{aligned}$$ we immediately obtain the analyticity of the curve $\gamma$ on $\mathbb{R}/ \mathbb{Z}$ by Corollary [\[cor:TayloranalyticSob\]](#cor:TayloranalyticSob){reference-type="ref" reference="cor:TayloranalyticSob"}.
+
+In order to obtain the desired bounds on $a_l$ we first note that there exists a positive constant $\tilde{C}$ such that $$\begin{aligned}
+    \|\partial^{l+3} \gamma \|_{H^{1+\beta} } 
+    &\leq \widetilde{C}   \Big( 
+    \|\partial^l P^T_{\dot{\gamma}} Q^\alpha\gamma\|_{H^1} 
+    + \|\partial^l P^\perp_{\dot{\gamma}} R_1^\alpha\gamma \|_{H^1} \nonumber \\ &\qquad \qquad\quad 
+    + \|\partial^l P^\perp_{\dot{\gamma}} R_3^\alpha\gamma \|_{H^1} 
+    + \lambda \|\partial^{l+2} \gamma \|_{H^1} \Big)
+    
+\end{aligned}$$ by the criticality of the curve $\gamma$, the first variation formula of $\mathcal{E}^\alpha$ of Theorem [\[thm:1stvar\]](#thm:1stvar){reference-type="ref" reference="thm:1stvar"}, our decomposition of the first variation of $\mathcal{E}^\alpha + \lambda \mathcal{L}$ and Corollary [\[kor:Ql\]](#kor:Ql){reference-type="ref" reference="kor:Ql"}. Next we deduce from Theorem [\[thm:estimates\]](#thm:estimates){reference-type="ref" reference="thm:estimates"} and the Sobolev embedding of $H^{1+\beta} \subseteq H^1$ that $$\begin{aligned}
+    a_{l+1} 
+    & =  C_1 \|\partial^{l+1} f\|_{H^{1+\beta}} \\
+    &  \leq C_1 (3 \|\partial^{l+3} \gamma \|_{H^{1+\beta}} + 2 \|\partial^{l+2} \gamma \|_{H^{1+\beta}}) \\
+    & \leq 3\widetilde{C} C_1 \Big[
+    \|\partial^l P^T_{\dot{\gamma}} Q^\alpha\gamma\|_{H^1} 
+    + \|\partial^l P^\perp_{\dot{\gamma}} R_1^\alpha\gamma \|_{H^1} \nonumber\\ &\hspace{2cm}
+    + \|\partial^l P^\perp_{\dot{\gamma}} R_2^\alpha\gamma \|_{H^1}  
+    + \lambda \|\partial^{l+2} \gamma \|_{H^1} \Big] + 2 C_1 a_l\\
+    & \leq    3\widetilde{C} C_1 \Big[
+    C_{Q^\alpha} \sum_{k_1=0}^l \sum_{k_2=0}^{k_1} \binom{l}{k_1} \binom{k_1}{k_2}  
+    \|\partial^{l-k_1+2} \gamma \|_{H^{1+\beta}} 
+    \|\partial^{k_1-k_2+2} \gamma \|_{H^{1+\beta}} \|\partial^{k_2 +1}\gamma \|_{H^1} \\
+    &\hspace{2cm} 
+    + C_{R_1^\alpha} p_l^{(5n)}
+    \Big(\Big\{ \frac{(|\eta|+1)!}{r^{|\eta|+1}} \Big\}_{|\eta| \leq l},
+     \Big\{C_1\|f_{i}^{(j)}\|_{H^1} \Big\}_{
+                 \substack{
+1\leq i \leq 5n \\
+           1\leq j \leq l\ \, } 
+           }\Big) \\
+    & \hspace{2cm}\qquad 
+    +  C_{R_2^\alpha} p_l^{(5n)}\Big(\Big\{\frac{(|\eta|+1)!}{s^{|\eta|+1}}  \Big\}_{|\eta| \leq l}, \Big\{C_1 \|f_{i}^{(j)}\|_{H^1} \Big\}_{
+                 \substack{
+1\leq i \leq 5n \\
+           1\leq j \leq l\ \, } 
+           }\Big) \\
+           &\hspace{2cm}\qquad\qquad  
+           + \lambda \|\partial^{l+2} \gamma \|_{H^1} \Big]
+            + 2 C_1 a_l.
+    
+\end{aligned}$$ Therefore, by the embedding of $H^{1+\beta} \subseteq H^1$ again, there exist positive constants $C > 1$ and $r_\gamma$ independent of $\gamma$ and $l$ such that $$\begin{aligned}
+\label{formula:al+1}
+    a_{l+1} 
+    & \leq   C \Big[
+    \sum_{k_1=0}^l \sum_{k_2=0}^{k_1} \binom{l}{k_1} \binom{k_1}{k_2}  
+    a_{l-k_1} a_{k_1-k_2} a_{k_2} \nonumber\\ &\hspace{3cm}
+     + p_l^{(5n)}\Big(\Big\{ \frac{(|\eta|+1)!}{r_\gamma^{|\eta|+1}}\Big\}_{|\eta| \leq l}, \Big\{ a_j \Big\}_{1\leq j \leq l}\Big)  
+     + a_l \Big] .
+    
+\end{aligned}$$ To apply Cauchy's method of majorants, we define a majorant $F: \mathbb{R}^{5n} \rightarrow \mathbb{R}^{5n}$ component-wise by setting $$\begin{aligned}
+    F_i(y) := C \Big( y_i^3 + \frac{1 }{(1 +\frac{ 5na_0 -  (y_1 + \cdots + y_{5n})}{r_\gamma})^2} + y_i\Big) 
+    
+\end{aligned}$$ for any $y = (y_1,\ldots,y_{5n})\in \mathbb{R}^{5n}$ and all $1\leq i \leq 5n$. It is clearly analytic around $a_0 (1,\ldots, 1)$. Moreover, we consider the following initial value problem $$\begin{aligned}
+\label{formula:ODE}
+    \begin{split}
+    \dot{c}(t) &= F( c(t)), \\
+    c(0) &= a_0 (1,\ldots, 1).
+    \end{split}
+    
+\end{aligned}$$ and note that the ODE has a unique smooth solution $c:     (-\varepsilon, \varepsilon) \to \mathbb{R}^{5n}$ that is also analytic around $0$ for some $\varepsilon >0$ by Theorem [\[CK\]](#CK){reference-type="ref" reference="CK"}. Hence we can write $c=c(t)$ as a Taylor series in a neighbourhood of $0$, i.e. $$\begin{aligned}
+    c (t):= \sum_{k=0}^{\infty} \frac{\widetilde{a}_{k} (1,\ldots, 1)}{k!}  t^k 
+    
+\end{aligned}$$ where $\widetilde{a}_{k} (1,\ldots, 1)= c^{(k)}(0)$. Then by Theorem [\[thm:Tayloranalytic\]](#thm:Tayloranalytic){reference-type="ref" reference="thm:Tayloranalytic"} we can, for all $t\in B_{r_c}(0)$, bound $$\begin{aligned}
+\label{formula:canalytic}
+    |c^{(l)}(t)| \leq M \frac{l!}{r_c^l}
+    
+\end{aligned}$$ for some finite positive constants $r_c$ and $M$ which are independent of any integer $l\geq 0$. By applying the Leibniz rule and Faà di Bruno's formula [\[eqn:FdB\]](#eqn:FdB){reference-type="eqref" reference="eqn:FdB"} we have that $$\begin{aligned}
+    &\partial^l F_i(c(t)) \\
+    &=  C \Big[
+    \sum_{k_1=0}^l \sum_{k_2=0}^{k_1} \binom{l}{k_1} \binom{k_1}{k_2}   c_i^{(l-k_1)}(t)  c_i^{(k_1-k_2)}(t) c_i^{(k_2)}(t) \\
+    &\quad
+ +p_l^{(5n)}\Big(
+ \Big\{ \frac{(|\eta|+1)!}{r_\gamma^{|\eta|+1}} 
+ \frac{1}{\left(1 + \left( \frac{5na_0}{r_\gamma} -\frac{\left(c_1(t) + \cdots + c_{5n}(t)\right)}{r_\gamma}\right)\right)^{|\eta|+2}} 
+ \Big\}_{|\eta| \leq l}, \Big\{ c_i^{(j)}(t) \Big\}_{
+                 \substack{
+1\leq i \leq 5n \\
+           1\leq j \leq l\ \, } 
+           }\Big)\\
+    &\quad\qquad + c_i^{(l)} (t) \Big]
+    
+\end{aligned}$$ for any $1\leq i\leq 5n$ and $l\in\mathbb{N}_0$. Then by considering the initial condition [\[formula:ODE\]](#formula:ODE){reference-type="eqref" reference="formula:ODE"} we find that $$\begin{aligned}
+\label{formula:tildeal+1}
+    \tilde a_{l+1} 
+& = \partial^l F_i (c(0)) \nonumber\\
+&=  C \Big[  
+\sum_{k_1=0}^l \sum_{k_2=0}^{k_1} \binom{l}{k_1} \binom{k_1}{k_2}   
+\tilde a_{l-k_1} \tilde a_{k_1-k_2} \tilde a_{k_2} \nonumber\\ &\hspace{2cm} 
+     + p_l^{(5n)}\Big(\Big\{ \frac{(|\eta|+1)!}{r_\gamma^{|\eta|+1}} \Big\}_{|\eta| \leq l}, \Big\{\tilde a_j \Big\}_{1\leq j \leq l}\Big) + \tilde a_l  \Big]
+    .
+\end{aligned}$$ Finally an induction argument obtained from comparing [\[formula:al+1\]](#formula:al+1){reference-type="eqref" reference="formula:al+1"} and [\[formula:tildeal+1\]](#formula:tildeal+1){reference-type="eqref" reference="formula:tildeal+1"}, together with the fact that Faà di Bruno's polynomials $p_l$ [\[eqn:FdB\]](#eqn:FdB){reference-type="eqref" reference="eqn:FdB"} have non-negative coefficients and the initial condition $a_0 = \widetilde{a}_0$, gives $$\begin{aligned}
+    a_l  \leq \widetilde{a}_{l}. 
+    
+\end{aligned}$$ Then by [\[formula:canalytic\]](#formula:canalytic){reference-type="eqref" reference="formula:canalytic"} we conclude that $\|\partial^{l+1} \gamma \|_{H^{1+\beta}} \leq a_l \leq M\frac {l!}{r_C^l}$ for all $l\in\mathbb{N}_0$ which, by Corollary [\[cor:TayloranalyticSob\]](#cor:TayloranalyticSob){reference-type="ref" reference="cor:TayloranalyticSob"}, implies the analyticity of the curve $\gamma$. ◻
+:::

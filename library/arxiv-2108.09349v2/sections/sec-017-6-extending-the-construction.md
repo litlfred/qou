@@ -7,10 +7,10 @@ section_number: 6
 pages: 23-23
 source_pdf: 2108.09349v2.pdf
 source_sha256: 4c732bfcbf3dfb16
-text_source: latex
-latex_prose_ratio: 0.941
-latex_coverage_ratio: 1.0
 doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM — We construct topological triangulations for complements of ( −2, 3,n )-pretzel knots and links with n≥ 7."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:extendingconstruction}
 

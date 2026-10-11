@@ -7,10 +7,10 @@ section_number: 4
 pages: 19-25
 source_pdf: 0801.0083v4.pdf
 source_sha256: 8e38b9e56d246709
+doc_brief: "CENTRAL EXTENSIONS OF GERBES AMNON YEKUTIELI — W e introduce the notion of central extension of gerbes on a to po- logical space X."
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.936
-doc_brief: "CENTRAL EXTENSIONS OF GERBES AMNON YEKUTIELI — W e introduce the notion of central extension of gerbes on a to po- logical space X."
+latex_coverage_ratio: 1.0
 ---
 We fix a topological space $X$. 
 Given a sheaf $\mcal{N}$ of abelian groups on $X$, and an open covering

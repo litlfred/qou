@@ -8,309 +8,251 @@ pages: 38-46
 source_pdf: 2605.20846v1.pdf
 source_sha256: db27cb6d01c4f2fb
 doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
+text_source: latex
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 0.814
 ---
-Proposition 3.2.2 gives the existence of commutative Frobenius relations among CF
-generators. We would like to know if they are sufficient– namely, are there other
-necessary relations if one wants to give a presentation of the category Cob(3) S2,CF ?
-This section introduces a tool which we calllocal models of failures, which the next
-section uses alongside theorem 3.3.6 to prove sufficiency.
-Definition 3.4.1.(Local Model) Letf:M→Rbe a Morse function. A local model
-of critical points and indices ((m j,ij))n
-j=1 is a connected submanifoldU⊂Malong
-with a Morse decomposition induced byf| U:
-U∼=U1∪X1U2∪X2∪···∪ Xn−1Un⊂M.
-such that eachU j is an elementary cobordism with critical pointm j∈U j of indexi j
-satisfying
-f(m 1)≤f(m 2)≤···≤f(m n).
-If it is clear from context which critical points (m j) and which submanifoldUare
-being considered, we say the local model is of (i j) onU. Note that a local model onU
-by definition is equipped with a inducing Morse function defined on at leastU.
-We say two local modelsU ∼=∪i∈IUi,V ∼=∪i∈IVi are diffeomorphic if there exists a
-diffeomorphismh:U→Vsuch thath(U j) =V j preserves each boundary components
-(as a set, not necessarily acting as the identity on each boundary component) andh
-sends critical points to corresponding critical points.
-Conventions 3.4.2.This is a subtle convention. Given two local modelsU i,U′
-i of the
-same critical points onM, we assume that they are two Morse decompositions of the
-same underlying connected submanifoldU⊂M. This is so that we can speak of a
-path of functions between two local models: it is a path of functions on a submanifold
-Ubetween the two Morse functions inducing the two local modelsU i andU ′
-i.
-38
-Definition 3.4.3.(Path of functions between two local models) Letf 0,f 1 :M→R
-be Morse functions inducing two different local models on a connected submanifold
-U⊂M. A path of functions between local models ofUis a pathf t :I×U→Rfrom
-f0|U tof 1|U. Note we do not require thatf t be defined on all of the ambient manifold
-M.
-Example 2.For the associativity relation ofS 2, figure 3.2-(a) gives two local models
-forU=Mand there exists an evident path of local models of (1,1). This path is
-described by smoothly moving the two index 2 critical points towards each other in
-height, and their critical values ultimately coincide and cross. In this case this path
-of local models is the same as a path of Morse functions on the wholeM, which
-exchanges the critical values of the two critical points. Note that the local models are
-notdiffeomorphic: it exchanges boundary components.
-Example 3.Consider the two torus Σ 1 =S 1×S 1 withUthe shaded region in figure
-3.8. Equip the torus on the left with the standard height function. In figure (a),U
-has no critical points, so it is itself a trivial local model. In figure (b),Uhas an index
-1 critical point and an index 2 critical point. In order to induce this on the same
-Σ1, the Morse function on Σ 1 is no longer the height function in figure b. However
-standard Cerf theory shows there is a pathf t between the height function and the
-Morse function inducing figure (b). When restricted toU, this path gives a pathf t|U
-of functions between the trivial local model ofUand the local model of indices (1,2)
-ofU.
-(a) (b)
-U U
-Figure 3.8: A local model of the birth of a pair of critical points.
-Notations 3.4.4.Letf 0,f 1 be two admissible excellent Morse functions onM, and
-γ: [0,1]→C ∞(M) a path fromf 0 tof 1. Letf t =γ(t). Then standard Cerf theory
-applies andft is admissible excellent Morse for all but finitely manyt, say at{t 1,...t n}.
-1. We sayf ti is of failure type (j,j+ 1) B or (j,j+ 1) D if two critical points of index
-j,j+ 1 were created or destroyed at timet i.
-2. We sayf ti is of failure type (k,l) X if two critical points of indexk,lhave the
-same critical value atf ti. The ordering is such thatf ti−ϵ(xk)<f ti−ϵ(xj) ifx k is
-the critical point of indexk.
-39
-3. We sayf ti is of local failure type (j,j+ 1) B,D if it is of failure type (j,j+ 1) B,D.
-4. We sayf ti is of local failure type (k,l) X,M,M′ if it is of failure type (k,l) X and
-M,M′ are local models of (k,l) before and after the exchange.
-5. We sayf ti is of trivial local failure type (k,l) X if it is of local failure type
-(k,l)X,M,M′ whereM,M ′ are diffeomorphic local models of (k,l).
-In this language, arelationbetween two (non-cylindrical) cobordism generators is
-either a local failure type (j,j+ 1) B,D or a non-trivial local failure type (k,l) X,M,M′,
-whereM,M ′ are not the same (i.e. diffeomorphic) local models. To classify relations
-between CF generators, we want the local models before and after a failure to have
-only spherical boundaries.
-Remark3.4.5.The need to distinguish failure and local failure is because even though
-birth/death is purely local, exchanges of critical values are not. However the purpose
-of introducing local models is so we can isolate a local region and treat the whole region
-as a whole. Although this is not usually a focal issue in standard Cerf theory or in
-Cob(3)S2,CF , presently it is necessary to distinguish (1,1) X exchanges in Cob(2) by
-their local models, as illustrated in the following example.
-Example 4.Consider the standard height function on the two-torusT= Σ 1∼=S1×S1,
-embedded inR 3 as in figure 3.9. Consider rotating the torus byθ(t) about thex-axis,
-whereθ(t) =πt. Then there is a path of maps parametrized byt
-ft :T= Σ 1∼=S1×S 1,→R 3 Rx(θ(t))
-−→R 3 projz
-−↠R.
-such that atθ(0) = 0 one recovers the standard height function. As one increasest, the
-critical values of the two index 1 critical points move towards each other, ultimately
-coinciding at someθ c(tc). For a timet=t c +ϵslightly aftert c, the critical values
-become distinct again.
-Note however thatf tc is of trivial local failure type (1,1) X– the local models of
-(1,1), before and after the exchange of critical values, are diffeomorphic– both are of
-the form
-pants∪S1⊔S1 copants.
-Therefore in this tilting torus example, the exchange of the critical values of the
-two index 1 critical points do not constitute a relation.
-Example 5.By remark 3.2.3, the birth of the pair of critical points of index (1,2) is
-not a relation between CF generators because the local model after the birth has torus
-boundaries.
-Example 6.If dim(M) = 2, the possible failure types are
-{(0,1)B,(0,1) D,(1,2) B,(1,2) D,(1,1) X}.
-The possible relations, aka non-trivial local failure types are
-{(0,1)B,(0,1) D,(1,2) B,(1,2) D,(1,1) X,assoc,(1,1) X,coassoc,(1,1) X,Frobenius}.
+\label{sec:localmodels}
+Proposition \ref{prop:CFcommFrob} gives the existence of commutative Frobenius relations among CF generators. We would like to know if they are sufficient-- namely, are there other necessary relations if one wants to give a presentation of the category $\operatorname{Cob}( 3)_{S^2,CF} $? This section introduces a tool which we call \textit{local models of failures}, which the next section uses alongside theorem \ref{thm:Cob2Cob3CFIso} to prove sufficiency.
+
+\begin{defn} \label{defn:Local Model}
+(Local Model) Let $f:M\to \mathbb{R}$ be a Morse function. A local model of critical points and indices $((m_j,i_j))_{j=1}^{n}$ is a connected submanifold $U\subset  M$ along with a Morse decomposition induced by $f|_U$: \[
+U \cong U_1 \cup_{X_1} U_2 \cup_{X_2 } \cup \dots \cup_{X_{n-1}} U_n \subset  M
+.\]
+such that each $U_j$ is an elementary cobordism with critical point $m_j \in U_j$ of index $i_j$ satisfying \[
+f(m_1)\leq f(m_2)\leq \dots \leq f(m_n)
+.\]
+
+If it is clear from context which critical points $(m_j)$ and which submanifold $U$ are being considered, we say the local model is of $(i_j)$ on $U$. Note that a local model on $U$ by definition is equipped with a inducing Morse function defined on at least $U$.
+
+We say two local models $U \cong \cup _{i\in I} U_i, V \cong \cup_{i \in I} V_i$ are diffeomorphic if there exists a diffeomorphism $h:U \to V$ such that $h(U_j) = V_j$ preserves each boundary components (as a set, not necessarily acting as the identity on each boundary component) and $h$ sends critical points to corresponding critical points. 
+\end{defn}
+
+\begin{conventions}
+This is a subtle convention. Given two local models $U_i, U_{i}'$ of the same critical points on $M$, we assume that they are two Morse decompositions of the same underlying connected submanifold $U\subset  M$. This is so that we can speak of a path of functions between two local models: it is a path of functions on a submanifold $U$ between the two Morse functions inducing the two local models $U_i$ and $U_i'$.
+\end{conventions}
+
+\begin{defn} \label{defn:Path of functions between two local models}
+(Path of functions between two local models) Let $f_0, f_1 : M \to \mathbb{R}$ be Morse functions inducing two different local models on a connected submanifold $U \subset  M$. A path of functions between local models of $U$ is a path $f_t : I \times U \to \mathbb{R}$ from $f_0|_U $ to $f_1|_U$. Note we do not require that $f_t$ be defined on all of the ambient manifold $M$.
+\end{defn}
+
+\begin{eg}
+For the associativity relation of $S^2$, figure \ref{fig:assocandcoassoc}-(a) gives two local models for $U=M$ and there exists an evident path of local models of $(1,1)$. This path is described by smoothly moving the two index $2$ critical points towards each other in height, and their critical values ultimately coincide and cross. In this case this path of local models is the same as a path of Morse functions on the whole $M$, which exchanges the critical values of the two critical points. Note that the local models are \textit{not} diffeomorphic: it exchanges boundary components.
+\end{eg}
+
+
+
+
+
+\begin{eg}
+Consider the two torus $\Sigma_1 = S^1 \times S^1$ with $U$ the shaded region in figure \ref{fig:localmodelbirth}. Equip the torus on the left with the standard height function. In figure (a), $U$ has no critical points, so it is itself a trivial local model. In figure (b), $U$ has an index 1 critical point and an index $2$ critical point. In order to induce this on the same $\Sigma_1$, the Morse function on $\Sigma_1$ is no longer the height function in figure b. However standard Cerf theory shows there is a path $f_t$ between the height function and the Morse function inducing figure (b). When restricted to $U$, this path gives a path $f_t|_U$ of functions between the trivial local model of $U$ and the local model of indices $(1,2)$ of $U$.
+\end{eg}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{localmodelbirth}
+    \caption[A local model of the birth of a pair of critical points]{A local model of the birth of a pair of critical points.}
+    \label{fig:localmodelbirth}
+\end{figure}
+
+
+
+
+
+
+
+\begin{notations}
+Let $f_0 ,f_1 $ be two admissible excellent Morse functions on $M$, and $\gamma :\left[ 0,1 \right] \to C^\infty(M)$ a path from $f_0 $ to $f_1 $. Let $f_t = \gamma (t)$. Then standard Cerf theory applies and $f_t$ is admissible excellent Morse for all but finitely many $t$, say at $\left\{ t_1 ,\dots t_n \right\} $. 
+\begin{enumerate}
+\item  We say $f_{t_i}$ is of failure type $(j,j+1)_{B}$ or $ (j,j+1)_D $ if two critical points of index $j, j+1$ were created or destroyed at time $t_i$. 
+\item We say $f_{t_i}$ is of failure type $(k,l)_X$ if two critical points of index $k,l$ have the same critical value at $f_{t_i}$. The ordering is such that $f_{t_i - \epsilon} (x_k) < f_{t_i - \epsilon}(x_j)$ if $x_k$ is the critical point of index $k$.
+\item We say $f_{t_i}$ is of local failure type $(j,j+1)_{B,D}$ if it is of failure type $(j,j+1)_{B,D}$.
+\item We say $f_{t_i}$ is of local failure type $(k,l)_{X, M,M'}$ if it is of failure type $(k,l)_X$ and $M,M'$ are local models of $(k,l)$ before and after the exchange.
+\item We say $f_{t_i}$ is of trivial local failure type $(k,l)_{X}$ if it is of local failure type $(k,l)_{X,M,M'}$ where $M,M'$ are diffeomorphic local models of $(k,l)$.
+\end{enumerate}
+
+In this language, a \textit{relation} between two (non-cylindrical) cobordism generators is either a local failure type $(j,j+1)_{B,D}$ or a non-trivial local failure type $(k,l)_{X,M,M'}$, where $M,M'$ are not the same (i.e. diffeomorphic) local models. To classify relations between CF generators, we want the local models before and after a failure to have only spherical boundaries.
+\end{notations}
+
+\begin{rmk}
+The need to distinguish failure and local failure is because even though birth/death is purely local, exchanges of critical values are not. However the purpose of introducing local models is so we can isolate a local region and treat the whole region as a whole. Although this is not usually a focal issue in standard Cerf theory or in $\operatorname{Cob}(3)_{S^2, CF}$, presently it is necessary to distinguish $(1,1)_{X}$ exchanges in $\operatorname{Cob}(2) $ by their local models, as illustrated in the following example.
+\end{rmk}
+
+\begin{eg}
+Consider the standard height function on the two-torus $T=\Sigma_1 \cong S^1 \times S^1$, embedded in  $\mathbb{R}^3$ as in figure \ref{fig:tiltingtorus}. Consider rotating the torus by $\theta(t)$ about the $x$-axis, where $\theta(t) = \pi t$. Then there is a path of maps parametrized by $t$ \[
+f_t: T=\Sigma_1 \cong S^1 \times S^1 \hookrightarrow \mathbb{R}^3 \overset{R_x(\theta(t))}{\longrightarrow } \mathbb{R}^3 \overset{proj_z}{\relbar\joinrel\twoheadrightarrow} \mathbb{R}
+.\]
+such that at $\theta(0)=0$ one recovers the standard height function. As one increases $t$, the critical values of the two index $1$ critical points move towards each other, ultimately coinciding at some $\theta_c(t_c)$. For a time $t=t_c + \epsilon$ slightly after $t_c$, the critical values become distinct again.
+
+\begin{figure}[ht]
+    \centering
+    \incfig{tiltingtorus}
+    \caption[The tilting torus]{The tilting torus. The figure on the left is the standard embedding of the 2-torus. As one rotates the torus, the critical values of the index 1 critical points move towards each other, ultimately coinciding as depicted in the right figure. The critical level set is depicted as the two dashed circles wedged together at two points. For a better visualization, we encourage the reader to cut a few donuts or bagles like so in real life. }
+    \label{fig:tiltingtorus}
+\end{figure}
+
+Note however that $f_{t_c}$ is of trivial local failure type $(1,1)_X$-- the local models of $(1,1)$, before and after the exchange of critical values, are diffeomorphic-- both are of the form \[
+\text{pants} \cup_{S^1 \sqcup S^1} \text{copants}
+.\]
+
+Therefore in this tilting torus example, the exchange of the critical values of the two index $1$ critical points do not constitute a relation. 
+\end{eg}
+
+\begin{eg}
+By remark \ref{rmk:12Bnotspherical}, the birth of the pair of critical points of index $(1,2)$ is not a relation between CF generators because the local model after the birth has torus boundaries.
+\end{eg}
+
+\begin{eg}
+If $\dim(M)=2$, the possible failure types are \[
+\left\{ (0,1)_B, (0,1)_D, (1,2)_B, (1,2)_D, (1,1)_X  \right\} 
+.\]
+The possible relations, aka non-trivial local failure types are \[
+\left\{ (0,1)_B, (0,1)_D, (1,2)_B, (1,2)_D, (1,1)_{X, \text{assoc}}, (1,1)_{X, \text{coassoc}}, (1,1)_{X, \text{Frobenius}} \right\} 
+.\]
 where the pairs of local models are the evident ones.
-40
-0
-1
-1
-2
-2
-0
-1,1
-Figure 3.9: The tilting torus. The figure on the left is the standard embedding of the 2-torus.
-As one rotates the torus, the critical values of the index 1 critical points move towards each
-other, ultimately coinciding as depicted in the right figure. The critical level set is depicted
-as the two dashed circles wedged together at two points. For a better visualization, we
-encourage the reader to cut a few donuts or bagles like so in real life.
-Example 7.If dim(M) = 3, the possible failure types are
-{(0,1)B,(0,1) D,(2,3) B,(2,3) D,(1,1) X,(2,2) X,(1,2) X}.
-The possible relations, aka non-trivial local failure types are
-{(0,1)B,(0,1) D,(2,3) B,(2,3) D,(1,1) X,assoc,(2,2) X,coassoc,(1,2) X,Frobenius}.
+\end{eg}
+
+\begin{eg}
+If $\dim(M)=3$, the possible failure types are \[
+\left\{ (0,1)_B, (0,1)_D, (2,3)_B, (2,3)_D, (1,1)_X, (2,2)_X, (1,2)_X  \right\} 
+.\]
+The possible relations, aka non-trivial local failure types are \[
+\left\{ (0,1)_B, (0,1)_D, (2,3)_B, (2,3)_D, (1,1)_{X, \text{assoc}}, (2,2)_{X, \text{coassoc}}, (1,2)_{X, \text{Frobenius}} \right\} 
+.\]
 where the pairs of local models are the evident ones.
-3.5 Sufficiency of Commutative Frobenius Re-
-lations Among CF Generators
-Recall that there is asilly functordefined in 3.3.5,
-S: Cob(2)→Cob(3) S2,CF
-sending disjoint unions ofn-copies ofS 1 to disjoint unions ofn-copies ofS 2, and the
-genusgbordism
-[Σg\int(⊔ninc+noutD2)] :⊔ nincS1→⊔ noutS1
-to the bordism
-[#g(S2×S 1)\int(⊔ ninc+noutD3)] :⊔ nincS2→⊔ noutS2.
-41
-Let’s examine what this functor does to local failure models. Unsurprisingly, it
-maps Cob(2) non-trivial local failure types, to Cob(3) S2,CF relations by
-(0,1)B,D7→(0,1) B,D
-(1,2)B,D7→(2,3) B,D
-(1,1)X,assoc7→(1,1) X,assoc
-(1,1)X,coassoc7→(2,2) X,coassoc
-(1,1)X,Frobenius7→(1,2) X,Frobenius
-It also behaves well with the associated Morse data: note thatS([M]◦[N]) =
-S([M])◦S([N]) andS([Σ g]) = [# gS2×S 1]. In particular, ifMis a representative
-of [M] with Morse functionfinducing decompositionM=M 1∪···∪M n, then
-there exists a manifoldNa representative ofS([M]) with Morse functionFinducing
-decompositionN=N 1∪···∪N n such that the Morse decompositions are mapped to
-each other:
-S([Mi]) = [Ni],∀i= 1,...,n.
-See figure 3.10 for a simple example. Note that there are infinitely many choices
-of suchFonN, and, by composing with suitable monotonically increasing functions,
-in fact infinitely manyFthat additionally has the same as critical values as those of
-f. Therefore WLOG we impose the condition thatFhas the same critical values as
-those off.
-Notations 3.5.1.For simplicity and abusing the notations, we refer to any repre-
-sentativeN∈S([M]) asS(M), and any Morse functionF:N→R, with the same
-critical values asfand inducingN=N 1∪...N n such thatS([M i]) = [Ni], asS(f).
-Naively, when one is given a morphism [M] in Cob(2) and two different compositions
-related by a single 2-dimensional commutative Frobenius relation, one may use the silly
-functorSon [M] and its two compositions to get a morphismS([M]) in Cob(3) S2,CF
-with two compositions related by a 3-dimensional commutative Frobenius relation.
-Because the silly functorS: Cob(2)→Cob(3) S2,CF is an isomorphism, this also
-works the other way around: given a morphism [N] in Cob(3) S2,CF and two distinct
-compositions related by a single commutative Frobenius relation, one can use the in-
-verse silly functor to getS −1([N]) in Cob(2) and two compositions related by a single
-commutative Frobenius relations.
-The next proposition 3.5.2 says that this process is repeatable, and in fact has a
-Cerf-theoretic lift: given two Morse functionsf 0,f 1 :M→Rand a pathf t between
-them, one can construct a pathF t betweenF 0,F 1 :S(M)→R, whereS(M) is a
-representative ofS([M]), andF 0,1 is induced byf 0,1. Along this path except with at
-finitely many isolated singularities, the function is not only admissible excellent Morse,
-but importantly also spherical. The isolated singularities also match those (non-trivial)
-singularities off t in the sense that they are theS-image of local failures.
-The strategy of the proof is simple: to constructF t :S(M)→R, followf t :M→
-Rand use it as a blueprint. More specifically, whenever one encounters a specific
-singularity alongf t, isolates a local regionUof the manifoldMwhere the topology
-change occurs, and consider its imageS(U) inS(M). All the commutative Frobenius
-relations in Cob(3)S2,CF can be described by some basic paths ˜Ft, so we declare that
-overS(U) the path of functions takes the form ˜Ft, and outsideUthe path of functions
-42
-1
-2
-1
-11
-0
-2
-3
-2
-11
-0
-M∈[M] S([M])∋S(M)
-f
- S(f)
-S
-M1
-M2
-M3
-M4
-N1
-N2
-N3
-N4
-Figure 3.10: The behavior of Morse data under the isomorphismS: Cob(2)→Cob(3) S2.
-S(f) :S(M)→Ris any Morse function such that it has the same critical values asf, and
-induces decompositionS(M) =N 1∪···∪N n such thatS([M i]) = [Ni].
-is constant. Then we can glue the two paths of functions together with a bump function
-over a collared neighbourhood of∂S(U).
-The reader is warned that the wording of the proposition and technical aspects of
-the proof may obscure the intuition and the proof strategy outlined above.
-Proposition 3.5.2.Let[M]be a morphism inCob(2)andf 0,f 1 :M→Rtwo admissi-
-ble excellent Morse functions. Letf t be a path fromf 0 tof 1 whereft fails to be excellent
-Morse at time{t 1<t 2<···<t n}of non-trivial local failure type{T 1,T 2,...,T n}, and
-possibly of trivial local failure type(1,1) X at other times
-bt1<···< btm
-	
-. Then there
-exists a pathF t connectingS(f 0),S(f 1) :S(M)→Rwhich fails to be admissible excel-
-lent spherical Morse only at time{t 1,...,t n}of local failure type{S(T 1),...,S(T n)}.
-Proof.WLOG we can choose the critical values ofF 0 andF 1 to be the same as those
-off 0,f 1. Indeed, for any{x 1<...x k}and{y 1<···<y k}, there exists a monotoni-
-cally increasing smooth function mappingx i toy i, and we can always take a smooth
-interpolation from the identity to this function.
-Take a strict total ordering of all the times thatf t fails to be excellent Morse:
-{τ1,τ 2,...,τ n+m}such that eachτ j is either in{t 1,...,t n}or
-bt1,..., btm
-	
-, corre-
-sponding to non-trivial local failures or trivial ones. Letϵ >0 be small enough such
-that∩ m+n
-j=1 (τj−ϵ,τ j +ϵ) =∅, or equivalently
-∩n
-i=1(ti−ϵ,t i +ϵ)∩ m
-j=1 (btj−ϵ,btj +ϵ) =∅.
-We shall construct the pathF t :I×M→RfromF 0 =S(f 0) toF 1 =S(f 1)
-satisfying the desired property. First we split the pathf t inton+m+ 1 segments:
-(0,τ 1−ϵ),(τ 1 +ϵ,τ 2−ϵ),...,(τ n+m +ϵ,1).
-43
-Over any such segment,f t is excellent good Morse and the Morse data are diffeo-
-morphic. For the “base case”, letF τ1−ϵ have the same critical values asf τ1−ϵ, and let
-Ft be the smooth interpolation fromF 0 toF τ1−ϵ.
-SupposeF t is defined up to and includingτ i−ϵ, we will constructF t up to and
-includingτ i+1−ϵ. Over the interval (τi−ϵ,τ i +ϵ),f t fails to be excellent Morse exactly
-once atτ i. There are three possible cases:
-1. the failure is of trivial local failure type (1,1) X.
-The Morse data before and after the failure are diffeomorphic, meaningf τi−ϵ and
-fτi+ϵ have diffeomorphic Morse decompositions. Therefore we letF t be a smooth
-interpolation fromF τi−ϵ toF τi+1−ϵ, whereF τi+1−ϵ =S(f τi+1−ϵ) has the same
-critical values asf τi+1−ϵ.
-2. the failure is of non-trivial local failure type (j,j+ 1) B or (j,j+ 1) D.
-We will constructF t over the time interval (τi−ϵ,τ i +ϵ) such thatF t is of local
-failure typeS((j,j+ 1) B,D) att=τ i.
-The birth or death of a pair of critical points of indices (S(j),S(j)+1) is described
-locally by a path ˜Ft provided by standard Cerf theory. LetU⊂S(M) be a
-neighbourhood over which ˜Ft is defined. Outside ofU⊂S(M), we can take
-˜Gt : (τi−ϵ,τ i +ϵ)×U c→Rto be the same asF τi−ϵ|Uc for allt∈(τ i−ϵ,τ i +ϵ).
-We then glue ˜Fand ˜Gtogether using a bump function, and set the result to be
-the desiredFt over the interval (τi−ϵ,τi+ϵ). We then take a smooth interpolation
-fromF τi+ϵ toF τi+1−ϵ =S(f τi+1−ϵ).
-3. the failure is of non-trivial local failure type (j,k) X,w,w′ wherew,w ′ are local
-models of (j,k) before and after the exchange.
-We will constructF t over the time interval (τi−ϵ,τ i +ϵ) such thatF t is of local
-failure typeS((j,k) X,w,w′) att=τ i. We use a similar approach to the birth-death
-type of failure, except instead of gluing a path defined on a neighbourhood, we
-glue a path defined on the relevant local model.
-First note that for any pairs of local models associated with theS-image of a
-non-trivial local failure type, our settings are simple enough that there exists an
-evident path of functions on the local model between the two inducing Morse
-functions. So letU⊂S(M) be a local model induced byF τi−ϵ of the pair
-of critical points of indexS(j),S(k) whose critical values are being exchanged,
-namelyUis the underlying submanifold of the local modelS(w). Choose any
-local model∪ lUl onUdiffeomorphic toS(w ′), then there exists a path of functions
-˜Ft : (τi−ϵ,τ i +ϵ)×U→RfromF τi−ϵ|U to the Morse function inducing∪ lUl,
-such that it is of the desired failure type att=τ i. OutsideU, we can take
-˜Gt : (τi−ϵ,τ i +ϵ)×U c→Rto be the same asF τi−ϵ|Uc. Glue ˜Fand ˜Gtogether
-to get the desiredF t : (τi−ϵ,τ i +ϵ) and take a smooth interpolation toS(f τi+1−ϵ)
-at timeτ i+1−ϵ.
-Since there are only finitely manytsuch thatf t fails to be excellent Morse, this
-process eventually must terminate and all the smooth interpolations are taken from the
-constructedF τi+ϵ toS(f 1). Also sinceF 0 is spherical, smooth interpolations preserves
-spherical-ness, and all local failures are spherical except at the singular point, we have
-that the constructed pathF t is admissible excellent spherical Morse at all but time
-{t1,...,t n}.
-44
-The power of proposition 3.5.2 is that it allows a Cerf-path in Cob(2) to lift to a
-spherical Cerf-path in Cob(3) S2,CF . Together with the silly functorS, we can show
-that there is always a spherical Cerf-path between any admissible excellent spherical
-Morse functions onN, a representative of a morphism [N] in Cob(3) S2,CF .
-Proposition 3.5.3.Let[N]be a morphism inCob(3) S2,CF andF 0,F 1 :N→Rtwo
-admissible excellent spherical Morse functions. Then there exists a pathF t inC ∞(N)
-fromF 0 toF 1 which is admissible excellent spherical Morse at all but finitely manyt.
-Moreover, the types of failure are of CF type.
-Proof.Considerf 0 =S −1(F0) andf 1 =S −1(F1), both of which are Morse functions
-onMa representative ofS −1([N]). Letf t be any path of functions fromf 0 tof 1 on
-M. Then by proposition 3.5.2, there exists a pathF t fromS(f 0) =S(S −1(F0)) =F 0
-toS(f 1) =S(S −1(F1)) =F 1 which fails to be admissible excellent spherical Morse at
-finitely many times, and the types of failure are of commutative Frobenius type.
-Corollary 3.5.4.CF bordism generators satisfy no more relations.
-Remark3.5.5.Proposition 3.5.3 and corollary 3.5.4 addresses the major subtlety of the
-isomorphism between Cob(2) and Cob(3) S2,CF : while two compositions of the same
-morphism [N] in Cob(3)S2,CF are always induced by two Morse functionsF 0,F 1 :N→
-R, a pathF !
-t fromF 0 toF 1 may fail to be spherical. An example is example 1, where
-F0 =F 1 :S 2×S 1→Rare both pants decompositions, but the pathF !
-t has a segment
-which is the Heegaard splitting, in particular not spherical.
-However by proposition 3.5.3 and corollary 3.5.4, we now know that there is always a
-pathFt fromF 0 toF 1 that is spherical all the way except at singularities of commutative
-Frobenius type. So any two compositions of the same morphisms [N] in Cob(3) S2,CF
-can always be turned into each other using only commutative Frobenius relations.
-45
-Chapter 4
+\end{eg}
+
+
+
+\section{Sufficiency of Commutative Frobenius Relations Among CF Generators} \label{sec:sufficient}
+Recall that there is a \textit{silly functor} defined in \ref{defn:Sillyfunctor}, \[
+S: \operatorname{Cob}( 2) \to \operatorname{Cob}( 3)_{S^2, CF}
+\]
+sending disjoint unions of $n$-copies of $S^1$ to disjoint unions of $n$-copies of $S^2$, and the genus $g$ bordism \[
+	[\Sigma_g \setminus int( \sqcup^{n_{inc}+n_{out}}D^2)]: \sqcup^{n_{inc}}S^1 \to \sqcup^{n_{out}}S^1
+\]
+to the bordism \[
+	[\#^g(S^2 \times S^1) \setminus int( \sqcup^{n_{inc}+n_{out}}D^3)]: \sqcup^{n_{inc}}S^2 \to \sqcup^{n_{out}}S^2.
+\]
+
+Let's examine what this functor does to local failure models. Unsurprisingly, it maps $\operatorname{Cob}(2) $ non-trivial local failure types, to $\operatorname{Cob}(3)_{S^2,CF}$ relations by 
+\begin{align*}
+(0,1)_{B,D} &\mapsto (0,1)_{B,D} \\
+(1,2)_{B,D} &\mapsto (2,3)_{B,D}\\
+(1,1)_{X,\text{assoc}} & \mapsto (1,1)_{X,\text{assoc}}\\
+(1,1)_{X,\text{coassoc}}&\mapsto (2,2)_{X,\text{coassoc}}\\
+(1,1)_{X,\text{Frobenius}}&\mapsto (1,2)_{X,\text{Frobenius}}
+\end{align*}
+
+It also behaves well with the associated Morse data: note that $S([M]\circ [N]) = S([M])\circ S([N])$ and $S([\Sigma_g]) = [\#^g S^2\times S^1]$. In particular, if $M$ is a representative of $[M]$ with Morse function $f$ inducing decomposition $M=M_1 \cup \dots  \cup M_n$, then there exists a manifold $N $ a representative of $S([M])$ with Morse function $F$ inducing decomposition $N=N_1 \cup \dots \cup N_n$ such that the Morse decompositions are mapped to each other:  \[
+S([M_i]) = [N_i],\quad  \forall i = 1, \dots , n
+.\]
+
+See figure \ref{fig:sillymap} for a simple example. Note that there are infinitely many choices of such $F$ on $N$, and, by composing with suitable monotonically increasing functions, in fact infinitely many $F$ that additionally has the same as critical values as those of $f$. Therefore WLOG we impose the condition that $F$ has the same critical values as those of $f$.
+
+\begin{notations}
+For simplicity and abusing the notations, we refer to any representative $N \in S([M])$ as $S(M)$, and any Morse function $F:N \to \mathbb{R}$, with the same critical values as $f$ and inducing $N= N_1 \cup \dots N_n$ such that $S([M_i])=[N_i]$, as $S(f)$.
+\end{notations}
+\begin{figure}[ht]
+    \centering
+    \incfig{sillymap}
+\caption[Morse data between $\operatorname{Cob}( 2) $ and $\operatorname{Cob}( 3)_{S^2} $ ]{The behavior of Morse data under the isomorphism $S: \operatorname{Cob}( 2) \to \operatorname{Cob}( 3)_{S^2}$. $S(f) : S(M) \to \mathbb{R}$ is any Morse function such that it has the same critical values as $f$, and induces decomposition $S(M) = N_1  \cup \dots \cup N_n$ such that $S([M_i])=[N_i]$.}
+    \label{fig:sillymap}
+\end{figure}
+
+
+
+
+Naively, when one is given a morphism $[M]$ in $\operatorname{Cob}( 2) $ and two different compositions related by a single 2-dimensional commutative Frobenius relation, one may use the silly functor $S$ on $[M]$ and its two compositions to get a morphism $S([M])$ in $\operatorname{Cob}( 3)_{S^2, CF} $ with two compositions related by a 3-dimensional commutative Frobenius relation. 
+
+Because the silly functor $S: \operatorname{Cob}( 2) \to \operatorname{Cob}( 3)_{S^2, CF}$ is an isomorphism, this also works the other way around: given a morphism $[N]$ in $\operatorname{Cob}( 3)_{S^2, CF}$ and two distinct compositions related by a single commutative Frobenius relation, one can use the inverse silly functor to get $S^{-1}([N])$ in $\operatorname{Cob}( 2)$ and two compositions related by a single commutative Frobenius relations.
+
+The next proposition \ref{prop:keyprop} says that this process is repeatable, and in fact has a Cerf-theoretic lift: given two Morse functions $f_0 ,f_1 :M \to \mathbb{R}$ and a path $f_t$ between them, one can construct a path $F_t $ between $F_0 , F_1 :S(M) \to \mathbb{R}$, where $S(M)$ is a representative of $S([M])$, and $F_{0,1}$ is induced by $f_{0,1} $. Along this path except with at finitely many isolated singularities, the function is not only admissible excellent Morse, but importantly also spherical. The isolated singularities also match those (non-trivial) singularities of $f_t$ in the sense that they are the $S$-image of local failures.
+
+The strategy of the proof is simple: to construct $F_t: S(M)\to \mathbb{R}$, follow $f_t:M\to \mathbb{R}$ and use it as a blueprint. More specifically, whenever one encounters a specific singularity along $f_t$, isolates a local region $U$ of the manifold $M$ where the topology change occurs, and consider its image $S(U)$ in $S(M)$. All the commutative Frobenius relations in $\operatorname{Cob}( 3)_{S^2,CF} $ can be described by some basic paths $\tilde{F}_t$, so we declare that over $S(U)$ the path of functions takes the form $\tilde{F}_t$, and outside $U$ the path of functions is constant. Then we can glue the two paths of functions together with a bump function over a collared neighbourhood of $\partial S(U)$.
+
+The reader is warned that the wording of the proposition and technical aspects of the proof may obscure the intuition and the proof strategy outlined above.
+
+\begin{prop} \label{prop:keyprop}
+Let $\left[ M \right] $ be a morphism in $\operatorname{Cob}(2) $ and $f_0 ,f_1 :M \to \mathbb{R}$ two admissible excellent Morse functions. Let $f_t$ be a path from $f_0 $ to $f_1 $ where $f_t $ fails to be excellent Morse at time $\left\{ t_1 <t_2 < \dots < t_n \right\} $ of non-trivial local failure type $\left\{ T_1, T_2, \dots , T_n \right\}  $, and possibly of trivial local failure type $(1,1)_X$ at other times $\left\{ \widehat{t}_1< \dots < \widehat{t}_m \right\} $. Then there exists a path $F_t$ connecting $S(f_0 ) ,S(f_1 ) : S(M) \to \mathbb{R} $ which fails to be admissible excellent spherical Morse only at time $\left\{ t_1, \dots , t_n \right\} $ of local failure type $\left\{ S(T_1), \dots , S(T_n) \right\} $.
+\end{prop}
+
+\begin{proof}
+WLOG we can choose the critical values of $F_0$ and $F_1$ to be the same as those of $f_0 , f_1$. Indeed, for any $\left\{ x_1 <\dots x_k \right\} $ and $\left\{ y_1 <\dots <y_k \right\} $, there exists a monotonically increasing smooth function mapping  $x_i$ to $y_i$, and we can always take a smooth interpolation from the identity to this function.
+
+Take a strict total ordering of all the times that $f_t$ fails to be excellent Morse: $\left\{ \tau_1 ,\tau_2, \dots , \tau _{n+m} \right\} $ such that each $\tau_j$ is either in $\left\{ t_1 , \dots , t_n \right\} $ or $\left\{ \widehat{t}_1, \dots , \widehat{t}_m \right\} $, corresponding to non-trivial local failures or trivial ones. Let $\epsilon>0$ be small enough such that $\cap_{j=1}^{m+n} (\tau_j -\epsilon, \tau_j + \epsilon) = \emptyset$, or equivalently \[
+\cap_{i=1}^n (t_i - \epsilon, t_i + \epsilon) \cap_{j=1}^m (\widehat{t}_j - \epsilon, \widehat{t}_j + \epsilon)= \emptyset
+.\]
+
+We shall construct the path $F_t: I \times M \to \mathbb{R}$ from $F_0 = S(f_0 ) $ to $F_1 = S(f_1 )$ satisfying the desired property. First we split the path $f_t$ into $n+m+1$ segments: \[
+(0, \tau _1 -\epsilon), (\tau _1 +\epsilon, \tau _2 -\epsilon), \dots , (\tau _{n+m} +\epsilon, 1) 
+.\]
+
+Over any such segment, $f_t$ is excellent good Morse and the Morse data are diffeomorphic. For the ``base case'', let $F_{\tau_1 -\epsilon}$ have the same critical values as $f_{\tau _1 -\epsilon}$, and let $F_t$ be the smooth interpolation from $F_0$ to $F_{\tau_1 -\epsilon}$.
+
+Suppose $F_t$ is defined up to and including $\tau_i-\epsilon$, we will construct $F_t$ up to and including $\tau_{i+1}-\epsilon$. Over the interval $(\tau_i -\epsilon, \tau_i +\epsilon)$, $f_t$ fails to be excellent Morse exactly once at $\tau_i$. There are three possible cases:
+\begin{enumerate}
+\item the failure is of trivial local failure type $(1,1)_X$.
+
+The Morse data before and after the failure are diffeomorphic, meaning $f_{\tau _i-\epsilon}$ and $f_{\tau _i+\epsilon}$ have diffeomorphic Morse decompositions. Therefore we let $F_t$ be a smooth interpolation from $F_{\tau _i -\epsilon}$ to $F_{\tau_{i+1} -\epsilon}$, where $F_{\tau_{i+1}-\epsilon} = S(f_{\tau _{i+1}-\epsilon})$ has the same critical values as $f_{\tau _{i+1}-\epsilon}$.
+
+\item the failure is of non-trivial local failure type $(j, j+1)_B$ or $(j,j+1)_D$.
+
+We will construct $F_t$ over the time interval $(\tau_i -\epsilon, \tau_i + \epsilon)$ such that $F_t$ is of local failure type $S((j,j+1)_{B,D})$ at $t=\tau_i $.
+
+The birth or death of a pair of critical points of indices $(S(j),S(j)+1)$ is described locally by a path $\tilde{F}_t$ provided by standard Cerf theory. Let $U\subset S(M) $ be a neighbourhood over which $\tilde{F}_t$ is defined. Outside of $U\subset  S(M)$, we can take  $\tilde{G}_t: (\tau _i -\epsilon, \tau _i + \epsilon) \times U^c \to \mathbb{R}$ to be the same as $F_{\tau_i -\epsilon }|_{U^c}$ for all $t \in (\tau _i -\epsilon, \tau _i + \epsilon)$. We then glue $\tilde{F}$ and $\tilde{G}$ together using a bump function, and set the result to be the desired $F_t$ over the interval $(\tau_i -\epsilon, \tau _i +\epsilon)$. We then take a smooth interpolation from $F_{\tau _i +\epsilon}$ to $F_{\tau _{i+1} -\epsilon}=S(f_{\tau _{i+1}-\epsilon})$.
+
+\item the failure is of non-trivial local failure type $(j,k)_{X,w,w'}$ where $w,w'$ are local models of $(j,k)$ before and after the exchange.
+
+We will construct $F_t$ over the time interval $(\tau _i - \epsilon, \tau _i + \epsilon)$ such that $F_t$ is of local failure type $S((j,k)_{X,w,w'})$ at $t=\tau _i$. We use a similar approach to the birth-death type of failure, except instead of gluing a path defined on a neighbourhood, we glue a path defined on the relevant local model. 
+
+First note that for any pairs of local models associated with the $S$-image of a non-trivial local failure type, our settings are simple enough that there exists an evident path of functions on the local model between the two inducing Morse functions. So let $U\subset S(M)$ be a local model induced by $F_{\tau_i -\epsilon}$ of the pair of critical points of index $S(j), S(k)$ whose critical values are being exchanged, namely $U$ is the underlying submanifold of the local model $S(w)$. Choose any local model $\cup_l U_l$ on $U$ diffeomorphic to $S(w')$, then there exists a path of functions $\tilde{F}_t: (\tau_i - \epsilon, \tau_i + \epsilon) \times U \to \mathbb{R}$ from $F_{\tau _i -\epsilon}|_U$ to the Morse function inducing $\cup_l U_l$, such that it is of the desired failure type at $t=\tau _i$. Outside $U$, we can take $\tilde{G}_t : (\tau_i - \epsilon, \tau _i + \epsilon)\times U^c \to \mathbb{R}$ to be the same as $F_{\tau _i - \epsilon}|_{U^c}$. Glue $ \tilde{F}$ and $\tilde{G}$ together to get the desired $F_t: (\tau _i -\epsilon, \tau _i + \epsilon)$ and take a smooth interpolation to $S(f_{\tau _{i+1}-\epsilon})$ at time $\tau _{i+1}-\epsilon$.
+\end{enumerate}
+
+Since there are only finitely many $t$ such that $f_t$ fails to be excellent Morse, this process eventually must terminate and all the smooth interpolations are taken from the constructed $F_{\tau_i + \epsilon}$ to $S(f_1)$. Also since $F_0$ is spherical, smooth interpolations preserves spherical-ness, and all local failures are spherical except at the singular point, we have that the constructed path $F_t$ is admissible excellent spherical Morse at all but time $\left\{ t_1 , \dots , t_n \right\} $.
+\end{proof}
+
+
+
+
+
+
+The power of proposition \ref{prop:keyprop} is that it allows a Cerf-path in $\operatorname{Cob}( 2)$ to lift to a spherical Cerf-path in $\operatorname{Cob}( 3)_{S^2,CF} $. Together with the silly functor $S$, we can show that there is always a spherical Cerf-path between any admissible excellent spherical Morse functions on $N$, a representative of a morphism $[N]$ in $\operatorname{Cob}( 3)_{S^2,CF} $.
+
+\begin{prop}\label{prop:keypropCF}
+Let $\left[ N \right] $ be a morphism in $\operatorname{Cob}(3)_{S^2, CF} $ and $F_0 ,F_1 :N \to \mathbb{R}$ two admissible excellent spherical Morse functions. Then there exists a path $F_t$ in $C^\infty(N)$ from $F_0 $ to $F_1 $ which is admissible excellent spherical Morse at all but finitely many $t$. Moreover, the types of failure are of CF type.
+\end{prop}
+
+\begin{proof}
+Consider $f_0 = S^{-1}(F_0)$ and $f_1 = S^{-1}(F_1)$, both of which are Morse functions on $M$ a representative of $S^{-1}(\left[ N \right] )$. Let $f_t$ be any path of functions from $f_0$ to $f_1$ on $M$. Then by proposition \ref{prop:keyprop}, there exists a path $F_t$ from $S(f_0 ) = S(S^{-1}(F_0)) = F_0$ to $S(f_1 )=S(S^{-1}(F_1))=F_1 $ which fails to be admissible excellent spherical Morse at finitely many times, and the types of failure are of commutative Frobenius type.
+\end{proof}
+
+\begin{cor} \label{cor:CFonlycommFrob}
+CF bordism generators satisfy no more relations.
+\end{cor}
+
+\begin{rmk}
+Proposition \ref{prop:keypropCF} and corollary \ref{cor:CFonlycommFrob} addresses the major subtlety of the isomorphism between $\operatorname{Cob}( 2) $ and $\operatorname{Cob}( 3)_{S^2,CF} $: while two compositions of the same morphism $[N]$ in $\operatorname{Cob}( 3)_{S^2,CF}$ are always induced by two Morse functions $F_0, F_1:N\to \mathbb{R}$, a path $F_t^! $ from $F_0 $ to $F_1 $ may fail to be spherical. An example is example \ref{eg:S2xS1pantstoHeegaardtopants}, where $F_0 =F_1: S^2 \times S^1 \to \mathbb{R}$ are both pants decompositions, but the path $F_t^!$ has a segment which is the Heegaard splitting, in particular not spherical.
+
+However by proposition \ref{prop:keypropCF} and corollary \ref{cor:CFonlycommFrob}, we now know that there is always a path $F_t$ from $F_0 $ to $F_1 $ that is spherical all the way except at singularities of commutative Frobenius type. So any two compositions of the same morphisms $[N]$ in $\operatorname{Cob}( 3)_{S^2, CF}$ can always be turned into each other using only commutative Frobenius relations.
+\end{rmk}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Prime Relations} \label{ch:prime relations}

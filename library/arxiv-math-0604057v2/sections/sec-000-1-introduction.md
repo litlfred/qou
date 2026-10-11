@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-2
 source_pdf: 0604057v2.pdf
 source_sha256: 649fad141dc34eb9
+doc_brief: "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is true"
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.95
-doc_brief: "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is true"
+latex_coverage_ratio: 1.0
 ---
 It is a very important question in the knot theory to find the geometric and topological interpretation of the Jones polynomial of a knot. Observed by Kashaev [@Kas], H. Murakami and J. Murakami [@MM], the asymptotic rate of (N-colored) Jones polynomial is related to the volume of the hyperbolic knot complement. It is known as the Volume conjecture. Following Witten's $SU(2)$ topological quantum field theory, Gukov [@Guk] proposed a complex version of Chern-Simons theory and generalized the volume conjecture to a $\mathbb{C}^{*}$- parametrized version with parameter lying on the zero locus of the $A$-polynomial of the knot in $S^3$.
 

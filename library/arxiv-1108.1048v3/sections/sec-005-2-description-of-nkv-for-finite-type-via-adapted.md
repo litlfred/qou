@@ -7,18 +7,16 @@ section_number: 2
 pages: 14-17
 source_pdf: 1108.1048v3.pdf
 source_sha256: 6f2b83450ba923d0
+doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules ove r Khovanov-Lauda- Rouquier algebras R and their"
 text_source: latex
 latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.889
-doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules ove r Khovanov-Lauda- Rouquier algebras R and their"
+latex_coverage_ratio: 0.977
 ---
 []{#Sec: Description Nk label="Sec: Description Nk"}
 
 In this section, we give an explicit description of the modules $\mathcal{N}_k(v)$ for finite type. To that end, we choose a particular reduced expression of the longest element $w_0$ of the Weyl group $W$. Using the notion of adapted strings for crystals given in [@Lit98] with respect to these specially chosen expressions, we describe $\mathcal{N}_k(v)$ explicitly in terms of Kashiwara operators $\tilde{f}_i$ (Proposition [\[Prop: description of Nk\]](#Prop: description of Nk){reference-type="ref" reference="Prop: description of Nk"}).
 
-Throughout the section, we assume that the Cartan datum $(\mathfrak{A},\mathsf{P}, \Pi,\mathsf{P}^{\vee},\Pi^{\vee})$ is of finite type. For a sequence $\mathbf{m} = (m_1, \ldots, m_k)$ of elements in $I$, we write $r_\mathbf{m} = r_{m_1} r_{m_2} \cdots r_{m_k}$ for the corresponding element in the Weyl group. Using this convention, we fix a particular reduced expression for the longest element $w_0$ of $W$ $$\begin{equation}
-\label{eq:reduced} w_0  = r_{\mathbf{s}_1}r_{\mathbf{s}_2} \cdots r_{\mathbf{s}_n} = r_{s_1} r_{s_2} \cdots r_{s_\ell}
-\end{equation}$$ where the sequences $\mathbf{s}_k$ are displayed in Table $\ref{Tb: w0}$ below. Let $l_k$ be the length of the sequence $\mathbf{s}_k$ in [\[eq:reduced\]](#eq:reduced){reference-type="eqref" reference="eq:reduced"} for $k=1,\ldots,n$. Then $r_{\mathbf{s}_1} = r_{s_1} \cdots r_{s_{l_1}}$, $r_{\mathbf{s}_2} = r_{s_{l_1+1}} \cdots r_{s_{l_1 + l_2}}$ and so forth. Note that $\ell$ is the length of the reduced expression.
+Throughout the section, we assume that the Cartan datum $(\mathfrak{A},\mathsf{P}, \Pi,\mathsf{P}^{\vee},\Pi^{\vee})$ is of finite type. For a sequence $\mathbf{m} = (m_1, \ldots, m_k)$ of elements in $I$, we write $r_\mathbf{m} = r_{m_1} r_{m_2} \cdots r_{m_k}$ for the corresponding element in the Weyl group. Using this convention, we fix a particular reduced expression for the longest element $w_0$ of $W$ $$\label{eq:reduced} w_0  = r_{\mathbf{s}_1}r_{\mathbf{s}_2} \cdots r_{\mathbf{s}_n} = r_{s_1} r_{s_2} \cdots r_{s_\ell}$$ where the sequences $\mathbf{s}_k$ are displayed in Table $\ref{Tb: w0}$ below. Let $l_k$ be the length of the sequence $\mathbf{s}_k$ in [\[eq:reduced\]](#eq:reduced){reference-type="eqref" reference="eq:reduced"} for $k=1,\ldots,n$. Then $r_{\mathbf{s}_1} = r_{s_1} \cdots r_{s_{l_1}}$, $r_{\mathbf{s}_2} = r_{s_{l_1+1}} \cdots r_{s_{l_1 + l_2}}$ and so forth. Note that $\ell$ is the length of the reduced expression.
 
 ::: definition
 Let $v \in B(\infty)$ (resp. $v \in B(\lambda)$). An $\ell$-tuple $\mathbf{a}(v)=(a_1, \ldots, a_\ell) \in (\mathbb{Z}_{\ge0})^\ell$ is called the *adapted string* of $v$ with respect to the expression $r_{s_1} \cdots r_{s_\ell}$ if $$a_1 =  \varepsilon_{s_1}(v),\ \   a_2 =  \varepsilon_{s_2}\left(  \tilde{e}_{s_1}^{a_1} v\right), \ \ \ldots\,,\ \ a_\ell =  \varepsilon_{s_\ell}\left(  \tilde{e}_{s_{\ell-1}}^{a_{\ell-1}} \cdots  \tilde{e}_{s_{1}}^{a_{1}} v\right) .$$ We denote by $\mathcal{S} = \{ \mathbf{a}(v) \mid v \in B(\infty) \}$ (resp. $\mathcal{S}^\lambda = \{ \mathbf{a}(v) \mid v \in B(\lambda) \}$) the set of all adapted strings of elements in $B(\infty)$ (resp. $B(\lambda)$).
@@ -54,24 +52,22 @@ Let $v \in B(\infty)$ (resp. $v \in B(\lambda)$). An $\ell$-tuple $\mathbf{a}(v
 
 []{#Tb: w0 label="Tb: w0"}
 
-Observe that if $\iota_{\lambda}(v) = v' \otimes t_\lambda \otimes c$ for some $v\in B(\lambda)$ and $v' \in B(\infty)$, then $\mathbf{a}(v) = \mathbf{a}(v')$. It follows from [@Kash93a; @Lit94] that $\mathcal{S}$ and $\mathcal{S}^\lambda$ are in one-to-one correspondence with the crystals $B(\infty)$ and $B(\lambda)$, respectively, by the maps $$\begin{equation}
- \label{Eq: one to one}
+Observe that if $\iota_{\lambda}(v) = v' \otimes t_\lambda \otimes c$ for some $v\in B(\lambda)$ and $v' \in B(\infty)$, then $\mathbf{a}(v) = \mathbf{a}(v')$. It follows from [@Kash93a; @Lit94] that $\mathcal{S}$ and $\mathcal{S}^\lambda$ are in one-to-one correspondence with the crystals $B(\infty)$ and $B(\lambda)$, respectively, by the maps $$\label{Eq: one to one}
  \begin{aligned}
 \mathcal{S} &\buildrel \text{1-1} \over\longrightarrow B(\infty) \ \ \text{ given by } \ \  \mathbf{a}=(a_1, \ldots, a_\ell) \mapsto  \tilde{f}^{a_1}_{s_1} \cdots  \tilde{f}^{a_\ell}_{s_\ell}  \mathsf{1}, \\
  \mathcal{S}^\lambda &\buildrel \text{1-1} \over\longrightarrow B(\lambda) \ \ \ \text{ given by } \ \   \mathbf{a}=(a_1, \ldots, a_\ell) \mapsto  \tilde{f}^{a_1}_{s_1} \cdots  \tilde{f}^{a_\ell}_{s_\ell} b_\lambda.
- \end{aligned}
-\end{equation}$$
+ \end{aligned}$$
 
-For $\mathbf{a} = (a_1, \ldots, a_\ell) \in (\mathbb{Z}_{\ge 0})^\ell$, set $$\begin{align}
+For $\mathbf{a} = (a_1, \ldots, a_\ell) \in (\mathbb{Z}_{\ge 0})^\ell$, set $$\begin{aligned}
  \label{Eq: subseq of a}
 \mathsf{a}_{k,j} = a_{l_1 + \cdots + l_{k-1}+j} \quad \hbox{\rm and} \quad
 \mathbf{a}_k = (\mathsf{a}_{k,1}, \mathsf{a}_{k,2}, \ldots,  \mathsf{a}_{k,l_k}  ),
-\end{align}$$ where $l_k$ is, as above, the length of $\mathbf{s}_k$. Then $\mathbf{a} = \mathbf{a_1} * \cdots * \mathbf{a_n}$.
+\end{aligned}$$ where $l_k$ is, as above, the length of $\mathbf{s}_k$. Then $\mathbf{a} = \mathbf{a_1} * \cdots * \mathbf{a_n}$.
 
 In particular, for $v \in B(\infty)$, we have $\mathbf{a}(v) = \mathbf{a}(v)_1 * \cdots * \mathbf{a}(v)_n$ and $$v =  \tilde{f}_{\mathbf{s}_1}^{\mathbf{a}(v)_1}  \tilde{f}_{\mathbf{s}_2}^{\mathbf{a}(v)_2} \cdots  \tilde{f}_{\mathbf{s}_n}^{\mathbf{a}(v)_n} \mathsf{1}.$$
 
 ::: proposition
-[]{#Prop: adapted strings label="Prop: adapted strings"} Let $(\mathfrak{A}, \mathsf{P}, \Pi, \mathsf{P}^{\vee}, \Pi^{\vee})$ be a Cartan datum of finite type. Then $\mathcal{S}$ has the following description: $$\begin{align*}
+[]{#Prop: adapted strings label="Prop: adapted strings"} Let $(\mathfrak{A}, \mathsf{P}, \Pi, \mathsf{P}^{\vee}, \Pi^{\vee})$ be a Cartan datum of finite type. Then $\mathcal{S}$ has the following description: $$\begin{aligned}
 (\mathsf{A}_n): \ \   \{ \mathbf{a} \in (\mathbb{Z}_{\ge0})^{\ell} \mid & \  \mathsf{a}_{i,1} \ge \mathsf{a}_{i,2} \ge \cdots \ge \mathsf{a}_{i,i}\  (1 \le i \le n) \}\\
 (\mathsf{B}_n): \ \  \{ \mathbf{a} \in (\mathbb{Z}_{\ge0})^{\ell} \mid & \  2\mathsf{a}_{i,1} \ge \cdots \ge 2\mathsf{a}_{i,i-1} \ge \mathsf{a}_{i,i} \ge 2\mathsf{a}_{i,i+1} \ge \cdots \ge 2\mathsf{a}_{i,2i-1}\ (1 \le i \le n) \}  \\
 (\mathsf{C}_n): \ \ \{ \mathbf{a} \in (\mathbb{Z}_{\ge0})^{\ell} \mid & \  \mathsf{a}_{i,1} \ge \cdots \ge \mathsf{a}_{i,i-1} \ge \mathsf{a}_{i,i} \ge \mathsf{a}_{i,i+1} \ge \cdots \ge \mathsf{a}_{i,2i-1}\  (1 \le i \le n) \}  \\
@@ -99,7 +95,7 @@ In particular, for $v \in B(\infty)$, we have $\mathbf{a}(v) = \mathbf{a}(v)_1 *
 &\  2\mathsf{a}_{4,6} \ge \mathsf{a}_{4,7} + \mathsf{a}_{4,9} \ge 2\mathsf{a}_{4,10}; \\
 &\ \text{$\mathsf{a}_{i,j}$'s satisfy the inequalities for $\mathsf{B}_3$ for $i=1, 2, 3$} \}   \\
 (\mathsf{G}_2): \ \  \{ \mathbf{a} \in (\mathbb{Z}_{\ge0})^{\ell} \mid &\ 6\mathsf{a}_{2,1} \ge 2\mathsf{a}_{2,2} \ge 3\mathsf{a}_{2,3} \ge 2\mathsf{a}_{2,4} \ge 6\mathsf{a}_{2,5} \}.
-\end{align*}$$
+\end{aligned}$$
 :::
 
 We now give a description of $\mathcal{N}_k(v)$ using Proposition [\[Prop: adapted strings\]](#Prop: adapted strings){reference-type="ref" reference="Prop: adapted strings"}.

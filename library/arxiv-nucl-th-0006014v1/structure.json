@@ -6,7 +6,8 @@
   "sha256": "208c7a6aaf628b3060d594ca7bbb5551bb90e867892358cac24c40bbce9298de",
   "bytes": 1110969,
   "pages": 69,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,7 +22,7 @@
   "title_lines": [
    "The high-precision, charge-dependent Bonn nucleon-nucle on",
    "potential (CD-Bonn)",
-   "R. Machleidt ∗"
+   "R. Machleidt \u2217"
   ],
   "abstract": null,
   "docinfo": {
@@ -30,7 +31,7 @@
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "Title": "arXiv:nucl-th/0006014v1  9 Jun 2000"
   },
-  "title_prev": "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗"
+  "title_prev": "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt \u2217"
  },
  "toc": [
   {
@@ -56,7 +57,7 @@
   },
   {
    "level": 1,
-   "title": "Eﬀective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
+   "title": "E\ufb00ective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
    "page": 1,
    "source": "inferred",
    "number": "4"
@@ -154,56 +155,56 @@
   },
   {
    "level": 1,
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + +⟩",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + +\u27e9",
    "page": 19,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| − −⟩",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| \u2212 \u2212\u27e9",
    "page": 19,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + −⟩",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + \u2212\u27e9",
    "page": 19,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| − +⟩ (A22)",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| \u2212 +\u27e9 (A22)",
    "page": 19,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + −⟩",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + \u2212\u27e9",
    "page": 19,
    "source": "inferred",
    "number": "5"
   },
   {
    "level": 1,
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + +⟩",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + +\u27e9",
    "page": 19,
    "source": "inferred",
    "number": "6"
   },
   {
    "level": 1,
-   "title": "(q′,q ) = RJ",
+   "title": "(q\u2032,q ) = RJ",
    "page": 19,
    "source": "inferred",
    "number": "5"
   },
   {
    "level": 1,
-   "title": "(q,q ′). (A23)",
+   "title": "(q,q \u2032). (A23)",
    "page": 19,
    "source": "inferred",
    "number": "6"
@@ -217,28 +218,28 @@
   },
   {
    "level": 1,
-   "title": "The asymptotic wave function associated with VS and δS",
+   "title": "The asymptotic wave function associated with VS and \u03b4S",
    "page": 23,
    "source": "inferred",
    "number": "L"
   },
   {
    "level": 1,
-   "title": "Eﬀective range expansion",
+   "title": "E\ufb00ective range expansion",
    "page": 24,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "(η′)q cot(δC",
+   "title": "(\u03b7\u2032)q cot(\u03b4C",
    "page": 24,
    "source": "inferred",
    "number": "0"
   },
   {
    "level": 1,
-   "title": "(η′) = 2πη ′",
+   "title": "(\u03b7\u2032) = 2\u03c0\u03b7 \u2032",
    "page": 24,
    "source": "inferred",
    "number": "0"
@@ -266,28 +267,28 @@
   },
   {
    "level": 1,
-   "title": "(ˆk) +ψ2(k)Y 1M",
+   "title": "(\u02c6k) +\u03c82(k)Y 1M",
    "page": 33,
    "source": "inferred",
    "number": "01"
   },
   {
    "level": 1,
-   "title": "(ˆk)",
+   "title": "(\u02c6k)",
    "page": 33,
    "source": "inferred",
    "number": "21"
   },
   {
    "level": 1,
-   "title": "(q) = (2/π)1/ 2",
+   "title": "(q) = (2/\u03c0)1/ 2",
    "page": 35,
    "source": "inferred",
    "number": "0"
   },
   {
    "level": 1,
-   "title": "(q) = (2/π)1/ 2",
+   "title": "(q) = (2/\u03c0)1/ 2",
    "page": 35,
    "source": "inferred",
    "number": "2"
@@ -333,9 +334,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-003-4-eﬀective-range-expansion-2-4",
+   "id": "sec-003-4-e\ufb00ective-range-expansion-2-4",
    "number": "4",
-   "title": "Eﬀective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
+   "title": "E\ufb00ective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
@@ -465,7 +466,7 @@
   {
    "id": "sec-016-1-qq-rjqq",
    "number": "1",
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + +⟩",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + +\u27e9",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
@@ -475,7 +476,7 @@
   {
    "id": "sec-017-2-qq-rjqq",
    "number": "2",
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| − −⟩",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| \u2212 \u2212\u27e9",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
@@ -485,7 +486,7 @@
   {
    "id": "sec-018-3-qq-rj-qq",
    "number": "3",
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + −⟩",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + \u2212\u27e9",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
@@ -495,7 +496,7 @@
   {
    "id": "sec-019-4-qq-rj-qq-a22",
    "number": "4",
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| − +⟩ (A22)",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| \u2212 +\u27e9 (A22)",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
@@ -505,7 +506,7 @@
   {
    "id": "sec-020-5-qq-rjqq",
    "number": "5",
-   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + −⟩",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + \u2212\u27e9",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
@@ -515,7 +516,7 @@
   {
    "id": "sec-021-6-qq-rj-qq",
    "number": "6",
-   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + +⟩",
+   "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + +\u27e9",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
@@ -525,7 +526,7 @@
   {
    "id": "sec-022-5-qq-rj",
    "number": "5",
-   "title": "(q′,q ) = RJ",
+   "title": "(q\u2032,q ) = RJ",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
@@ -535,7 +536,7 @@
   {
    "id": "sec-023-6-qq-a23",
    "number": "6",
-   "title": "(q,q ′). (A23)",
+   "title": "(q,q \u2032). (A23)",
    "level": 1,
    "page_start": 19,
    "page_end": 21,
@@ -555,7 +556,7 @@
   {
    "id": "sec-025-l-the-asymptotic-wave-function-associated-with-v",
    "number": "L",
-   "title": "The asymptotic wave function associated with VS and δS",
+   "title": "The asymptotic wave function associated with VS and \u03b4S",
    "level": 1,
    "page_start": 23,
    "page_end": 24,
@@ -563,9 +564,9 @@
    "n_words": 199
   },
   {
-   "id": "sec-026-4-eﬀective-range-expansion",
+   "id": "sec-026-4-e\ufb00ective-range-expansion",
    "number": "4",
-   "title": "Eﬀective range expansion",
+   "title": "E\ufb00ective range expansion",
    "level": 1,
    "page_start": 24,
    "page_end": 24,
@@ -573,9 +574,9 @@
    "n_words": 87
   },
   {
-   "id": "sec-027-0-ηq-cotδc",
+   "id": "sec-027-0-\u03b7q-cot\u03b4c",
    "number": "0",
-   "title": "(η′)q cot(δC",
+   "title": "(\u03b7\u2032)q cot(\u03b4C",
    "level": 1,
    "page_start": 24,
    "page_end": 24,
@@ -583,9 +584,9 @@
    "n_words": 42
   },
   {
-   "id": "sec-028-0-η-2πη",
+   "id": "sec-028-0-\u03b7-2\u03c0\u03b7",
    "number": "0",
-   "title": "(η′) = 2πη ′",
+   "title": "(\u03b7\u2032) = 2\u03c0\u03b7 \u2032",
    "level": 1,
    "page_start": 24,
    "page_end": 25,
@@ -623,9 +624,9 @@
    "n_words": 1901
   },
   {
-   "id": "sec-032-01-ˆk-ψ2ky-1m",
+   "id": "sec-032-01-\u02c6k-\u03c82ky-1m",
    "number": "01",
-   "title": "(ˆk) +ψ2(k)Y 1M",
+   "title": "(\u02c6k) +\u03c82(k)Y 1M",
    "level": 1,
    "page_start": 33,
    "page_end": 35,
@@ -633,9 +634,9 @@
    "n_words": 836
   },
   {
-   "id": "sec-033-0-q-2π1-2",
+   "id": "sec-033-0-q-2\u03c01-2",
    "number": "0",
-   "title": "(q) = (2/π)1/ 2",
+   "title": "(q) = (2/\u03c0)1/ 2",
    "level": 1,
    "page_start": 35,
    "page_end": 37,
@@ -658,6 +659,210 @@
   "likely_scanned": false,
   "toc_entries": 38,
   "sections": 35,
-  "chars_total": 118268
+  "chars_total": 118268,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "bonn.tex",
+   "tex_sections": 8,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-scattering-equation-15",
+     "title": "Scattering equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-2-r-matrix-and-partial-wave-decomposition-18",
+     "title": "R-matrix and partial wave decomposition . . . . . . . . . . . . . . . . . . 18",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-3-phase-shifts-21",
+     "title": "Phase shifts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-4-e\ufb00ective-range-expansion-2-4",
+     "title": "E\ufb00ective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-1-obe-amplitudes-25",
+     "title": "OBE amplitudes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-3-final-potential-expressions-28",
+     "title": "Final potential expressions . . . . . . . . . . . . . . . . . . . . . . . . . . 28",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-i-introduction",
+     "title": "INTRODUCTION",
+     "prose_ratio": 0.316,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-ii-the-model",
+     "title": "THE MODEL",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.694,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-iii-charge-dependence",
+     "title": "CHARGE DEPENDENCE",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-iv-nucleon-nucleon-sca-ttering",
+     "title": "NUCLEON-NUCLEON SCA TTERING",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-v-the-deuteron",
+     "title": "THE DEUTERON",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-vi-conclusions",
+     "title": "CONCLUSIONS",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-1-scattering-equation",
+     "title": "Scattering equation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-2-r-matrix-and-partial-wave-decomposition",
+     "title": "R-matrix and partial wave decomposition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-1-qq-rjqq",
+     "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + +\u27e9",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-2-qq-rjqq",
+     "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| \u2212 \u2212\u27e9",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-3-qq-rj-qq",
+     "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + \u2212\u27e9",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-4-qq-rj-qq-a22",
+     "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| \u2212 +\u27e9 (A22)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-5-qq-rjqq",
+     "title": "(q\u2032,q ) \u2261 \u27e8+ + |RJ(q\u2032,q )| + \u2212\u27e9",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-6-qq-rj-qq",
+     "title": "(q\u2032,q ) \u2261 \u27e8+ \u2212 |RJ (q\u2032,q )| + +\u27e9",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-5-qq-rj",
+     "title": "(q\u2032,q ) = RJ",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-6-qq-a23",
+     "title": "(q,q \u2032). (A23)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-3-phase-shifts",
+     "title": "Phase shifts",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-l-the-asymptotic-wave-function-associated-with-v",
+     "title": "The asymptotic wave function associated with VS and \u03b4S",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-4-e\ufb00ective-range-expansion",
+     "title": "E\ufb00ective range expansion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-0-\u03b7q-cot\u03b4c",
+     "title": "(\u03b7\u2032)q cot(\u03b4C",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-0-\u03b7-2\u03c0\u03b7",
+     "title": "(\u03b7\u2032) = 2\u03c0\u03b7 \u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-1-obe-amplitudes",
+     "title": "OBE amplitudes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-2-partial-wave-decomposition",
+     "title": "Partial wave decomposition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-3-final-potential-expressions",
+     "title": "Final potential expressions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-01-\u02c6k-\u03c82ky-1m",
+     "title": "(\u02c6k) +\u03c82(k)Y 1M",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-0-q-2\u03c01-2",
+     "title": "(q) = (2/\u03c0)1/ 2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

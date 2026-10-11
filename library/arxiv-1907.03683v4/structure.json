@@ -7,7 +7,7 @@
   "bytes": 344479,
   "pages": 31,
   "text_source": "embedded",
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -436,8 +436,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 4,
-   "overlaid": 0,
+   "tex_sections": 24,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -458,7 +458,8 @@
     {
      "id": "sec-002-12-determinantal-point-processes-and-christo\ufb00el",
      "title": "Determinantal point processes and Christo\ufb00el deformations. A speci\ufb01c and",
-     "result": "no matching \\section"
+     "prose_ratio": 0.159,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-13-background-and-motivations",
@@ -489,12 +490,18 @@
     {
      "id": "sec-008-22-christo\ufb00el-deformations-of-discrete-orthogona",
      "title": "Christo\ufb00el deformations of discrete orthogonal polynomials. Let \u03c9 be a discrete",
-     "result": "no matching \\section"
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-23-discrete-orthogonal-polynomial-ensembles-and",
      "title": "Discrete orthogonal polynomial ensembles and determinantal point pro-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.695,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-24-palm-measures-of-determinantal-point-processe",
@@ -515,7 +522,8 @@
     {
      "id": "sec-013-32-christo\ufb00el-deformations-of-the-charlier-ensem",
      "title": "Christo\ufb00el deformations of the Charlier ensemble and main result. We now",
-     "result": "no matching \\section"
+     "prose_ratio": 0.32,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-014-33-proof-of-theorem-31-we-will-use-the-following",

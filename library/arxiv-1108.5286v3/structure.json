@@ -279,8 +279,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 4,
-   "overlaid": 1,
+   "tex_sections": 15,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -290,47 +290,64 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 0.967,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-1-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.488,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-12-graded-hecke-algebras",
      "title": "Graded Hecke algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-13-parabolic-subalgebras",
      "title": "Parabolic subalgebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-15-schwartz-algebras",
      "title": "Schwartz algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-2-analytic-families-of-representations",
      "title": "Analytic families of representations",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-21-positive-parameters",
      "title": "Positive parameters",
-     "result": "no matching \\section"
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-22-complex-parameters",
      "title": "Complex parameters",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-3-hochschild-homology",
@@ -341,12 +358,15 @@
     {
      "id": "sec-009-31-graded-hecke-algebras",
      "title": "Graded Hecke algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.662,
+     "coverage_ratio": 0.132,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-010-33-schwartz-algebras",
      "title": "Schwartz algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.473,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-references",

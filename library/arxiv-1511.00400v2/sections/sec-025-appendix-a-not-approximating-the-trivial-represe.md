@@ -7,10 +7,10 @@ section_number: null
 pages: 44-45
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
-text_source: latex
-latex_prose_ratio: 0.96
-latex_coverage_ratio: 0.984
 doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.972
 ---
 []{#sec:notapprox label="sec:notapprox"}
 
@@ -27,20 +27,16 @@ If $b_1(M^3)=1$, then the trivial character does not belong to $X_0(M^3,\mathrm{
 :::
 
 ::: proof
-*Proof of Lemma [\[lem:singlecomponent\]](#lem:singlecomponent){reference-type="ref" reference="lem:singlecomponent"}.* The proof uses the projection $$\begin{equation}
-  \label{eqn:proj}
+*Proof of Lemma [\[lem:singlecomponent\]](#lem:singlecomponent){reference-type="ref" reference="lem:singlecomponent"}.* The proof uses the projection $$\label{eqn:proj}
     \begin{array}{rcl}
      \pi\colon \hom(\pi_1 M^3,\mathrm{PSL}_2(\mathbb{C})) & \to & X(M^3,\mathrm{PSL}_2(\mathbb{C})) \\
      \rho & \mapsto &\chi_\rho
-    \end{array}
-\end{equation}$$ and the dimension of its fibre. For the trivial character $\chi_0$, a representation $\rho\in \pi^{-1}(\chi_0)$ is conjugate to $$\begin{equation}
-  \label{eqn:rhoab}
+    \end{array}$$ and the dimension of its fibre. For the trivial character $\chi_0$, a representation $\rho\in \pi^{-1}(\chi_0)$ is conjugate to $$\label{eqn:rhoab}
   \rho(\gamma)= \pm \begin{pmatrix}
                  1 & h(\gamma) \\
                  0 & 1
                 \end{pmatrix},
-                \qquad \forall \gamma\in\pi_1M^3,
-\end{equation}$$ where $h\colon \pi_1M^3\to\mathbb{C}$ is a group homomorphism. (Not to be confused with the cusp shape of peripheral representations, as $h$ is defined in the whole group $\pi_1M^3$.) Conjugating the representation [\[eqn:rhoab\]](#eqn:rhoab){reference-type="eqref" reference="eqn:rhoab"} by a diagonal matrix means replacing the morphism $h$ by a multiple. Thus, as $b_1(M^3)=1$, there are only two orbits by conjugation in $\pi^{-1}(\chi_0)$: the trivial and the non-trivial morphism $h\colon \pi_1M^3\to\mathbb{C}$. By looking at the dimension of the stabilizers, these orbits have dimension either 0 (for $h$ trivial) or 2 (for $h$ non-trivial). Hence the dimension of $\pi^{-1}(\chi_0)$ is 2. On the other hand, on components $Y$ of $X(M^3,\mathrm{PSL}_2(\mathbb{C}))$ that contain irreducible representations, the generic dimension of $\pi^{-1}$ is 3, the dimension of $\mathrm{PSL}_2(\mathbb{C})$. Since this dimension is upper semi-continuous, the trivial character cannot belong to an irreducible component of $X(M^3,\mathrm{PSL}_2(\mathbb{C}))$ that contains irreducible characters. Hence it must belong to a component whose characters are all reducible. ◻
+                \qquad \forall \gamma\in\pi_1M^3,$$ where $h\colon \pi_1M^3\to\mathbb{C}$ is a group homomorphism. (Not to be confused with the cusp shape of peripheral representations, as $h$ is defined in the whole group $\pi_1M^3$.) Conjugating the representation [\[eqn:rhoab\]](#eqn:rhoab){reference-type="eqref" reference="eqn:rhoab"} by a diagonal matrix means replacing the morphism $h$ by a multiple. Thus, as $b_1(M^3)=1$, there are only two orbits by conjugation in $\pi^{-1}(\chi_0)$: the trivial and the non-trivial morphism $h\colon \pi_1M^3\to\mathbb{C}$. By looking at the dimension of the stabilizers, these orbits have dimension either 0 (for $h$ trivial) or 2 (for $h$ non-trivial). Hence the dimension of $\pi^{-1}(\chi_0)$ is 2. On the other hand, on components $Y$ of $X(M^3,\mathrm{PSL}_2(\mathbb{C}))$ that contain irreducible representations, the generic dimension of $\pi^{-1}$ is 3, the dimension of $\mathrm{PSL}_2(\mathbb{C})$. Since this dimension is upper semi-continuous, the trivial character cannot belong to an irreducible component of $X(M^3,\mathrm{PSL}_2(\mathbb{C}))$ that contains irreducible characters. Hence it must belong to a component whose characters are all reducible. ◻
 :::
 
 ::: lemma

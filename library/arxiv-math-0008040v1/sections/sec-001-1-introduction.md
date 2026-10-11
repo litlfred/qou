@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-3
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
-text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.987
 doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Let $U=U_q({\mathbf{g}})$ be the quantum group associated to a semisimple Lie algebra $\mathbf{g}$ of rank $n$. The negative part $U^-$ of $U$ has a canonical basis $\mathbf{B}$ with favourable properties (see Kashiwara [@kash2] and Lusztig [@lusztig6 §14.4.6]). For example, via action on highest weight vectors it gives rise to bases for all the finite-dimensional irreducible highest weight $U$-modules.
 

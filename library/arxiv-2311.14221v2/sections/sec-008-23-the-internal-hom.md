@@ -8,49 +8,83 @@ pages: 9-10
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
 doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
+text_source: latex
+latex_prose_ratio: 0.894
+latex_coverage_ratio: 0.852
 ---
-module category. For any pair of objects M,N ∈M , the internal Hom is
-an object Hom (M,N )∈C representing the left exact functor
-HomM(−⊲M,N ) :Cop→ vect k.
-10 LENTNER AND MOMBELLI
-This means that, there are natural isomorphisms
-HomC(X, HomM(M,N ))≃ HomM(X⊲M,N ).
-The internal Hom for right C-module categories is deﬁned similarly.
-The next technical result will be needed later. Recall natur al isomor-
-phisms φl deﬁned in ( 2.5).
-Lemma 2.2. LetM be a right C-module category with action given by
-⊳ :M×C →M . If (F,c ) : M→C is a module functor, then, for any
-B∈M , X∈C , the following diagrams commute.
-(2.20)
-(F (B)⊗X)⊗∗(F (B)⊗X)
-F (B⊳X )⊗∗F (B⊳X ) ( F (B)⊗X)⊗(∗X⊗∗F (B))
-1
-id⊗(φl
-F (B),X )−1cB,X ⊗∗c−1
-B,X
-evF (B⊳X ) evF (B)(id⊗evX ⊗id)
-(2.21)
-(∗X⊗∗F (B))⊗(F (B)⊗X)
-∗F (B⊳X )⊗F (B⊳X ) ∗(X⊗F (B))⊗(F (B)⊗X)
-1
-∗cB,X ⊗c−1
-B,X φl
-F (B),X ⊗id
-coevF (B⊳X ) (id⊗coevF (B)⊗id)coevX
-Proof. The proof follows, by simply checking that morphisms
-evF (B⊳X ) = ev F (B)
-(
-id⊗evX⊗id
-)(
-cB,X⊗(∗cB,Xφl
-F (B),X )−1)
-,
-coevF (B⊳X ) =
-( ∗cB,Xφl
-F (B),X⊗c−1
-B,X
-)(
-id⊗coevF (B)⊗id
-)
-coevX,
-satisfy rigidity axioms. □
+\label{subsection:internal-hom} Let $\ca$ be a  tensor category and $\Mo$ be  a left $\C$-module category. For any pair of objects $M, N\in\Mo$, the \emph{internal Hom} is an object $\uhom(M,N)\in \C$ representing the left exact functor $$\Hom_{\Mo}(-\triangleright M,N):\ca^{\op}\to \vect_\ku.$$ This means that, there are natural isomorphisms
+$$\Hom_{\ca}(X,\uhom_\Mo(M,N))\simeq \Hom_{\Mo}(X\triangleright M,N).$$
+The internal Hom for right $\ca$-module categories is defined similarly.
+
+\medbreak
+
+
+The next technical result will be needed later. Recall natural isomorphisms $\phi^l$ defined in \eqref{duals-product-l}. 
+
+ 
+
+\begin{lema} Let $\Mo$ be a  right $\ca$-module category with action given by $\triangleleft: \Mo\times \ca\to \Mo$. If $(F,c):\Mo\to \ca$ is a module functor, then, for any $B\in \Mo$, $X\in \ca$, the following diagrams commute. 
+\begin{equation}\label{evaluation-mod}
+\begin{tikzcd}[column sep=-1em]
+
+&
+(F(B)\ot X)\ot {^*}(F(B) \ot X) 
+\ar{dr}{\mathrm{id}\otimes (\phi^l_{F(B),X})^{-1}}
+&
+
+\\
+F(B\triangleleft X)\ot {^*}F(B \triangleleft X) 
+\ar{ru}{c_{B,X}\ot {^*}c_{B,X}^{-1}}
+\arrow[swap]{dr}{\mathrm{ev}_{F(B\triangleleft X )}}
+&
+
+&
+(F(B)\ot X)\ot ({^*}X\ot {^*}F(B)) 
+\ar{dl}{\mathrm{ev}_{F(B)}(\mathrm{id}\ot \mathrm{ev}_X\ot \mathrm{id})}
+&
+\\
+
+&
+\uno
+&
+
+\end{tikzcd}
+\end{equation}
+
+
+
+
+
+
+\begin{equation}\label{coevaluation-mod}
+\begin{tikzcd}[column sep=-1em]
+
+&
+({^*}X\ot {^*}F(B)) \ot (F(B)\ot X)
+\arrow[swap]{dl}{{^*}c_{B,X} \ot c^{-1}_{B,X}}
+&
+
+\\
+{^*}F(B \triangleleft X)\otimes F(B\triangleleft X) 
+&
+
+&
+{^*}(X\ot F(B)) \ot (F(B)\ot X)
+\arrow[swap]{ul}{\phi^l_{F(B),X}\otimes \mathrm{id}}
+&
+\\
+
+&
+\uno
+\arrow{ul}{\mathrm{coev}_{F(B\triangleleft X )}}
+\arrow[swap]{ur}{(\mathrm{id}\ot \mathrm{coev}_{F(B)}\ot\mathrm{id}) \mathrm{coev}_X }
+&
+
+\end{tikzcd}
+\end{equation}
+\end{lema} 
+\pf The proof follows, by simply checking that morphisms
+$$\ev_{F(B\triangleleft X )} = \ev_{F(B)}\big(\id\ot \ev_X\ot \id \big)\big(c_{B,X}\ot ( {}^*c_{B,X}\phi^l_{F(B),X})^{-1}\big), $$
+$$\coev_{F(B\triangleleft X )}= \big( {}^*c_{B,X}\phi^l_{F(B),X} \ot c^{-1}_{B,X}\big)\big(\id\ot \coev_{F(B)}\ot\id\big) \coev_X,$$
+satisfy rigidity axioms.
+\epf

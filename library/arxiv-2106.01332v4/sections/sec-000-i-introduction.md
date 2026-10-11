@@ -7,10 +7,10 @@ section_number: I
 pages: 1-3
 source_pdf: 2106.01332v4.pdf
 source_sha256: 44c19a99624997bf
-text_source: latex
-latex_prose_ratio: 0.997
-latex_coverage_ratio: 0.791
 doc_brief: "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS"
+text_source: latex
+latex_prose_ratio: 0.797
+latex_coverage_ratio: 1.0
 ---
 \label{Sec:Introduction}
 
@@ -45,3 +45,37 @@ Both the trivalent and tetravalent scheme have their advantages, whilst at the s
 In this paper, we consider the trivalent scheme and generate interactions that correspond topologically to braid compositions by complementing the Pachner moves by a new move corresponding to adding a 1-handle. This new move, and hence the particle interaction, is not a local one (like the dual Pachner moves) and so two particles, separated in the ribbon network are able to interact at the topological level. Attaching handles corresponds to having a $4$-dimensional cobordism from an initial state embedded into a $3$-dimensional manifold to a final state in a $3$-dimensional manifold. This cobordism is obtained from crossing the base space, which is $3$-dimensional, with a time coordinate. The construction is therefore inherently $4$-dimensional. Unlike the Pachner moves, which are graph changing but leave the underling manifold unchanged, attaching a 1-handle changes the underlying manifold. Our proposal restores one of the most attractive features of Bilson-Thompson's model, that of representing particle interactions topologically as braid composition, whilst at the same time allowing the model to be embedded into background independent theories of quantum gravity. The identifications of leptons and quarks correspond to those in \cite{BT}, and electroweak interactions are represented topologically via the braid product. This is the first main result of this paper. \\
 
 Finally we argue that, instead of using a link invariant to distinguish between different particles, as has been done previously \cite{BT2}, the algebraic invariant of isotopy classes of braided networks based on Kauffman-Lins recoupling theory \cite{KL} provides a more appropriate choice invariant, being able to distinguish between the different particles. This is the second main result of this paper. \\
+
+
+
+
+
+
+
+
+
+
+
+\section{A topological model of composite preons}
+\label{sec:Braidmodel}
+
+We begin by providing a brief overview of the Bilson-Thompson model \cite{BT}. The fundamental preonic object is a ribbon which may be twisted by $\pm 2\pi$. Ribbons are combined into triplets with non-trivial braiding, and connected together at the top and bottom to a parallel disk. Such a braid constitutes a two-dimensional surface. It is assumed that ribbons with twists in opposite directions are not permitted in the same triplet. The resulting topological objects, corresponding to framed braids in the circular Artin braid group $B_3^c$, are called 3-belts. With a simple (but arbitrary) choice for how the ribbons are braided, the braids in Figure \ref{helonmodel}, represent the first generation of SM leptons and quarks.
+\begin{figure}[h!]
+\centering
+ \includegraphics[scale=0.5]{braid_model_1.png}
+\caption{\footnotesize{In the braid model, leptons and quarks are represented as braids of three (possibly twisted) ribbons. Charged fermions come in two handedness states whereas the neutrino and antineutrino come in only one handedness state. Source \cite{BT}} \label{helonmodel}}
+\end{figure}
+In this representation, the \textit{twist structure} of the ribbons accounts for the electrocolor symmetries, with charges of $\pm e/3$ represented by $\pm 2\pi$ twists, and the permutations of twisted ribbons representing color. This braid model thus allows one to describe electric charge and colour charge in terms of the topological structure of braids. Without any underlying braiding of the three ribbons, a simple rotation of both end disks means the ribbons become indistinguishable from one another, and one loses the ability to represent the color symmetry. No explicit assumption is made about the permitted braiding of ribbons, and a well-motivated choice for the braid structure to assign to leptons and quarks is still lacking\footnote{Some recent works by one of the present authors demonstrates that the topological structures of the helon model can be generated from the minimal ideals of the two complex Clifford algebras $\mathbb{C}\ell(6)$ and $\mathbb{C}\ell(4)$, by establishing a map between the basis states of these ideals, and products of braid generators in the circular Artin braid group $B_3^c$ (for $\mathbb{C}\ell(6)$) and $B_3$ (for $\mathbb{C}\ell(4)$). In such a construction, the finite-dimensionality of the minimal ideals provides a natural limitation for the complexity of twisting of ribbons, as well as the braiding of ribbons \cite{NGG1,NGG2,NGG3}.}. The model in Figure \ref{helonmodel} chooses just one simple possibility. More complex braiding may be speculated to correspond to additional generations. However, without any restriction on the complexity of braiding, this leads to an unbounded number of generations.\\
+
+The model does not provide a dynamical framework. Weak interactions however may be represented topologically via braid composition, as shown in Figure \ref{composition}, where the electroweak bosons are assumed to correspond to unbraids (with possible twisting on its constituent ribbons). Forming the braid product requires that the bottom disk of the first composing braid, and the top disk of the second composing braid be removed. One limitation of the original model is that this issue is not addressed. In section \ref{Surgery} we show that attaching a 1-handle naturally resolves this issue.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{Braid_model_composition.png}
+\caption{\footnotesize{Weak interactions are represented topologically via braid composition. Source \cite{BT}}} \label{composition}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+ \includegraphics[scale=0.4]{Braid_model_2.png}
+\caption{\footnotesize{Electroweak bosons are assumed to correspond to triplets of ribbons that are not braided. Source \cite{BT}}} \label{bosons}
+\end{figure}

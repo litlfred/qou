@@ -7,13 +7,14 @@ section_number: 8
 pages: 32-34
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
-text_source: latex
-latex_prose_ratio: 0.942
-latex_coverage_ratio: 1.0
 doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:working with input and output}
 Throughout this section it is assumed that all files have UTF-8 encoding. This is the default encoding for most text editors.
+
 
 \subsection{Defining Automata in Text Files}\label{sec:define automata in text files}
 In this section we learn how to manually define all automata types in
@@ -103,6 +104,7 @@ This automaton is defined in the file PF.txt in directory ``/Walnut/Word Automat
 \end{figure}
 
 
+
 \subsection{Defining New Automatic Words}\label{sec:define new automatic words}
 The eval and def commands always produce automata accepting a predicate, therefore the result is never an automaton with output. So to define an automatic word $W$, we need to manually define its corresponding automaton with output in the directory ``/Walnut/Word Automata Library/''. For example, the Thue-Morse word is defined in the file ``/Walnut/Word Automata Library/T.txt'' as follows:
 \begin{figure}[H]
@@ -120,6 +122,7 @@ msd_2
 \captionof{lstlisting}{T.txt}
 \label{file:thue morse}
 \end{figure}
+
 
 \subsection{Defining New Number Systems}\label{sec:define new number systems}
 
@@ -156,6 +159,7 @@ creates automata for $\LSD[S]$ by reversing those of $\MSD[S]$ and vice
 versa. However the user should be cautious since there could very well
 be number systems for which the difference between $\MSD$ and $\LSD$ is
 more than the direction of the arrows in their corresponding automata.
+
 
 \subsection{Converting .gv files to .jpeg}
 The drawings of automata in Walnut are stored in .gv files. Not only can the software Graphviz open the files with this extension,

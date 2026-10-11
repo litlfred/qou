@@ -8,157 +8,41 @@ pages: 3-4
 source_pdf: 9912004v2.pdf
 source_sha256: 7033719ec7a8a0bc
 doc_brief: "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD F. Farchioni — 9 sections: Hip; B. Lang; INTRODUCTION"
+text_source: latex
+latex_prose_ratio: 0.944
+latex_coverage_ratio: 1.0
 ---
-ANALYSIS
-By courtesy of the MILC collaboration [5] there are
-sets of gauge conﬁgurations [6] available to the lattice
-community. These were generated with two species of dy-
-namical staggered fermions, at various lattice sizes, tem-
-peratures, values of the gauge coupling and small values
-of the bare fermion mass. In Table I the samples used in
-the present study are listed. For further details on the
-method of determination of the gauge conﬁgurations and
-the physical parameters we refer to [5].
-TABLE I.
-Summary of the MILC conﬁgurations used in
-our analysis (for FT01 we only considered a subset of the total
-of 149 conﬁgurations available). The suggestions in the right-
-most column are based on MILC’s results. The transition is
-near β=5.26 for nt = 4 and β=5.725 for nt = 12.
-MILC-set
-# conf’s
-nx
-nt
-βg
-m a(βg)
-phase
-124A
-61
-12
-4
-5.25
-0.0125
-< Tc
-124B
-91
-12
-4
-5.26
-0.0125
-< Tc
-124C
-126
-12
-4
-5.27
-0.0125
-near Tc
-124D
-57
-12
-4
-5.28
-0.0125
-> Tc
-1241
-42
-12
-4
-5.25
-0.008
-< Tc
-1242
-50
-12
-4
-5.255
-0.008
-< Tc
-1243
-45
-12
-4
-5.26
-0.008
-near Tc
-1244
-47
-12
-4
-5.265
-0.008
-near Tc
-1245
-42
-12
-4
-5.27
-0.008
-> Tc
-1246
-40
-12
-4
-5.28
-0.008
-> Tc
-FT01
-30
-24
-12
-5.65
-0.008
-< Tc
-FT03
-131
-24
-12
-5.725
-0.008
-near Tc
-FT04
-188
-24
-12
-5.8
-0.008
-> Tc
-FT05
-146
-24
-12
-5.85
-0.008
-> Tc
-3
-The
-massless
-staggered
-Dirac
-operator
-is
-anti-
-hermitian and therefore has purely imaginary eigenval-
-ues, lying symmetric to the origin. We determine the low-
-est lying eigenvalues with help of the implicitly restarted
-Arnoldi method [32], using Chebyshev polynomials to im-
-prove the convergence.
-The convergence speed depends on the separation bet-
-ween the eigenvalues. The conﬁgurations below Tc there-
-fore exhibit much slower convergence and for V = 243 ×
-12 the determination is then quite time-consuming. Con-
-ﬁgurations that are supposedly above Tc develop a gap
-for the smallest eigenvalue and the convergence of the
-diagonalization is faster. All eigenvalues have been ob-
-tained with a precision of at least 5 signiﬁcant digits.
-We have determined (on the positive imaginary axis)
-the lowest ten eigenvalues for the 123 × 4 ensembles and
-the lowest eight eigenvalues for the 243 × 12 ensembles.
-The chRMT-prediction for the smallest eigenvalue dis-
-tribution has been tested against quenched QCD [33,34]
-and dynamical SU(2) [28] lattice simulations at T = 0;
-there are also recent quenched QCD results for non-
-zero temperature [35]. RMT distributions for the bulk
-nearest-neighbor spacing in both, the conﬁnement and
-the deconﬁnement phase of full QCD have been observed
-in [23] on 63 × 4 lattices (Wigner surmise, see Eq. (2.6)).
+By courtesy of the MILC collaboration [@MILC96] there are sets of gauge configurations [@MILCNERSC] available to the lattice community. These were generated with two species of dynamical staggered fermions, at various lattice sizes, temperatures, values of the gauge coupling and small values of the bare fermion mass. In Table [1](#tabconf){reference-type="ref" reference="tabconf"} the samples used in the present study are listed. For further details on the method of determination of the gauge configurations and the physical parameters we refer to [@MILC96].
+
+::: {#tabconf}
+  ---------- ----------- ------- ------- ----------- ----------------- ------------
+  MILC-set     \# conf's $n_x$     $n_t$ $\beta_g$   $m\,a(\beta_g)$   phase
+  124A                61 12            4 5.25        0.0125            $<T_c$
+  124B                91 12            4 5.26        0.0125            $<T_c$
+  124C               126 12            4 5.27        0.0125            near $T_c$
+  124D                57 12            4 5.28        0.0125            $>T_c$
+  1241                42 12            4 5.25        0.008             $<T_c$
+  1242                50 12            4 5.255       0.008             $<T_c$
+  1243                45 12            4 5.26        0.008             near $T_c$
+  1244                47 12            4 5.265       0.008             near $T_c$
+  1245                42 12            4 5.27        0.008             $>T_c$
+  1246                40 12            4 5.28        0.008             $>T_c$
+  FT01                30 24           12 5.65        0.008             $<T_c$
+  FT03               131 24           12 5.725       0.008             near $T_c$
+  FT04               188 24           12 5.8         0.008             $> T_c$
+  FT05               146 24           12 5.85        0.008             $>T_c$
+  ---------- ----------- ------- ------- ----------- ----------------- ------------
+
+  :  Summary of the MILC configurations used in our analysis (for FT01 we only considered a subset of the total of 149 configurations available). The suggestions in the rightmost column are based on MILC's results. The transition is near $\beta$=5.26 for $n_t=4$ and $\beta$=5.725 for $n_t=12$.
+:::
+
+[]{#tabconf label="tabconf"}
+
+The massless staggered Dirac operator is anti-hermitian and therefore has purely imaginary eigenvalues, lying symmetric to the origin. We determine the lowest lying eigenvalues with help of the implicitly restarted Arnoldi method [@So92], using Chebyshev polynomials to improve the convergence.
+
+The convergence speed depends on the separation between the eigenvalues. The configurations below $T_c$ therefore exhibit much slower convergence and for $V
+= 24^3\times 12$ the determination is then quite time-consuming. Configurations that are supposedly above $T_c$ develop a gap for the smallest eigenvalue and the convergence of the diagonalization is faster. All eigenvalues have been obtained with a precision of at least 5 significant digits.
+
+We have determined (on the positive imaginary axis) the lowest ten eigenvalues for the $12^3\times 4$ ensembles and the lowest eight eigenvalues for the $24^3\times 12$ ensembles.
+
+The chRMT-prediction for the smallest eigenvalue distribution has been tested against quenched QCD [@DaHeKr99; @EdHeKi99] and dynamical SU(2) [@BeMeWe98] lattice simulations at $T=0$; there are also recent quenched QCD results for non-zero temperature [@EdHeKi99a]. RMT distributions for the bulk nearest-neighbor spacing in both, the confinement and the deconfinement phase of full QCD have been observed in [@PuRaWe98] on $6^3\times 4$ lattices (Wigner surmise, see Eq. ([\[WUE\]](#WUE){reference-type="ref" reference="WUE"})).

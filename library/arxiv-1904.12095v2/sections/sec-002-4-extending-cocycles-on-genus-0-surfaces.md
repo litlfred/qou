@@ -7,10 +7,10 @@ section_number: 4
 pages: 9-12
 source_pdf: 1904.12095v2.pdf
 source_sha256: 7006b250f0d3c991
-text_source: latex
-latex_prose_ratio: 0.921
-latex_coverage_ratio: 0.982
 doc_brief: "Verified computations for closed hyperbolic 3-manifolds Matthias Goerner — Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed"
+text_source: latex
+latex_prose_ratio: 0.965
+latex_coverage_ratio: 0.956
 ---
 []{#sec:vertexCocycles label="sec:vertexCocycles"}
 
@@ -37,39 +37,27 @@ Note that by parametrizing the oriented edges of $X$ and concatenating them in t
 ::: definition
 []{#def:gimbalLoop label="def:gimbalLoop"} Let $(L,L\setminus \bigcup P_l)$ be a punctured topological polyhedron. A gimbal loop $\Gamma$ is a word in the oriented edges of $L$ and the selected two cells $P_1, \dots, P_p$ such that
 
-- each $P_1, \dots, P_p$ is contained in $\Gamma$ exactly once,
+-   each $P_1, \dots, P_p$ is contained in $\Gamma$ exactly once,
 
-- each $P_l$ in $\Gamma$ is preceeded (when reading the word from right to left and cyclically) by an edge $e_j$ such that the endpoint of $e_j$ is a vertex of $\partial P_l$, and
+-   each $P_l$ in $\Gamma$ is preceeded (when reading the word from right to left and cyclically) by an edge $e_j$ such that the endpoint of $e_j$ is a vertex of $\partial P_l$, and
 
-- dropping all $P_1, \dots, P_p$ from $\Gamma$ results in an edge loop. This edge loop bounds a disk in $L\setminus\bigcup P_l$. The interior of the disk embeds into $L\setminus\bigcup P_l$ matching the orientation of $L$.
+-   dropping all $P_1, \dots, P_p$ from $\Gamma$ results in an edge loop. This edge loop bounds a disk in $L\setminus\bigcup P_l$. The interior of the disk embeds into $L\setminus\bigcup P_l$ matching the orientation of $L$.
 :::
 
 ::: example
 []{#example:GimbalLoop label="example:GimbalLoop"} Figure [\[fig:gimbalLoop\]](#fig:gimbalLoop){reference-type="ref" reference="fig:gimbalLoop"} shows an example of a gimbal loop $\Gamma$ for $p=3$. The corresponding word is $e_6 P_2 e_5 e_4 P_1 e_3 e_2 P_3 e_1.$
 :::
 
-<figure id="fig:splicedGimbalLoop" data-latex-placement="htb">
-<div class="minipage">
+<figure id="fig:splicedGimbalLoop">
 <div class="center">
-<div class="minipage">
 <div class="center">
 
 </div>
-</div>
-<div class="minipage">
 <div class="center">
 
-</div>
 </div>
 <p><br />
 </p>
-<div class="minipage">
-
-</div>
-<div class="minipage">
-
-</div>
-</div>
 </div>
 <figcaption>The edge loop obtained when replacing <span class="math inline"><em>P</em><sub><em>l</em></sub></span> by <span class="math inline">∂<em>P</em><sub><em>l</em></sub></span> in a gimbal loop <span class="math inline"><em>Γ</em></span>.</figcaption>
 </figure>
@@ -88,28 +76,16 @@ Using the same setup as in Definition [\[def:defGimbalFunction\]](#def:defGimba
 *Proof.* Assume each $d_l=2\pi$. Then each $R_{d_l}$ is the identity and thus can be dropped from the gimbal matrix $m_\Gamma(2\pi,\dots,2\pi)$. Thus the gimbal matrix is equal to the matrix the cocycle assigns to the edge loop obtained when dropping the $P_i$. This edge loop is contractible. Thus the gimbal matrix is the identity and $g_\Gamma(2\pi,\dots,2\pi)=(0,0,0)$.\
 The gimbal loop $\Gamma$ can also be turned into an edge loop by replacing each $P_l$ in $\Gamma$ by a word in the oriented edges in $\partial P_l$. Here we use the orientation of $\partial P_l$ induced from the $P_l\subset L$ and start traversing $\partial P_l$ at the endpoint of the preceding edge. Figure [1](#fig:splicedGimbalLoop){reference-type="ref" reference="fig:splicedGimbalLoop"} shows this edge loop for Example [\[example:GimbalLoop\]](#example:GimbalLoop){reference-type="ref" reference="example:GimbalLoop"}. The corresponding word is: $$e_6(e_6^{-1}e_{19}e_{18}e_{17}e_{16}e_{15})e_5e_4(e_4^{-1}e_{14}e_{13}e_{12}e_{11})e_3e_2(e_2^{-1}e_{10}e_9e_8e_7)e_1.$$ Note that by definition of $\delta_l$, the matrix assigned to this edge loop by the cocycle is equal to the gimbal matrix $m_\Gamma(\delta_1,\dots,\delta_p)$. This edge loop is again contractible and thus $g_\Gamma(\delta_1,\dots,\delta_p)=(0,0,0)$. To see that the edge loop is contractible, note that a genus 0 surface with $p$ boundary components can be obtained by attaching a 2-cell to a 1-complex consisting of $p$ loops and $p$ arcs connecting the loops to common base point. The edge looped can be homotoped into this form since it bounds a disk with interior embedding into $L\setminus \cup P_l$, see Figure [\[fig:gimbalLoopSkeleton\]](#fig:gimbalLoopSkeleton){reference-type="ref" reference="fig:gimbalLoopSkeleton"}.
 
-<figure id="fig:gimbal" data-latex-placement="h">
-<div class="minipage">
+<figure id="fig:gimbal">
 <div class="center">
-<div class="minipage">
 <div class="center">
 
 </div>
-</div>
-<div class="minipage">
 <div class="center">
 
-</div>
 </div>
 <p><br />
 </p>
-<div class="minipage">
-
-</div>
-<div class="minipage">
-
-</div>
-</div>
 </div>
 <figcaption>A gimbal.</figcaption>
 </figure>

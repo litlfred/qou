@@ -254,8 +254,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "concentration130701.tex",
-   "tex_sections": 7,
-   "overlaid": 3,
+   "tex_sections": 16,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -265,32 +265,40 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.21,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-11-classical-concentration-inequalities",
      "title": "Classical concentration inequalities",
-     "result": "no matching \\section"
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-12-generalizations",
      "title": "Generalizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.932,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-2-strong-rayleigh-property-stochastic-covering-p",
      "title": "Strong Rayleigh property, stochastic covering property, and other negative dependence conditions",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.972,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.939,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-3-results",
      "title": "Results",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -303,29 +311,40 @@
     {
      "id": "sec-006-41-the-classical-proofs",
      "title": "The classical proofs",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-5-applications",
      "title": "Applications",
-     "prose_ratio": 0.082,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.769,
+     "coverage_ratio": 0.808,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-51-matroids",
      "title": "Matroids",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-52-exclusion-measures",
      "title": "Exclusion measures",
-     "result": "no matching \\section"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-6-determinantal-point-processes",
      "title": "Determinantal point processes",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.665,
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     }

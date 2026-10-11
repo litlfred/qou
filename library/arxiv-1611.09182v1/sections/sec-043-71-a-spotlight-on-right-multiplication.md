@@ -7,10 +7,10 @@ section_number: 7.1
 pages: 63-64
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-text_source: latex
-latex_prose_ratio: 0.99
-latex_coverage_ratio: 0.98
 doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 In Section~\ref{da}, we found a four-complex-dimensional Dirac spinor, $\Psi_D\equiv\Psi_L+\Psi_R$, as an irreducible representation of  $\CLtwo \otimes_{\C} \CLtwo$.  Here, the second factor of $\CLtwo$ came from right-multiplying $\CH$ on itself, and it effected transitions between L and R states.
 

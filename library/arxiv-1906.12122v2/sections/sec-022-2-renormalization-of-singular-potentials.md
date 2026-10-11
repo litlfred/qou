@@ -8,163 +8,154 @@ pages: 48-49
 source_pdf: 1906.12122v2.pdf
 source_sha256: 955e3eda48672e28
 doc_brief: "Nuclear effective field theory: status and perspectives — 34 sections: Contents; Two-body scattering amplitude; Power counting"
+text_source: latex
+latex_prose_ratio: 0.981
+latex_coverage_ratio: 0.946
 ---
-The regulator dependence of Weinberg’s prescription
-has been understood for a long time. Historically the
-ﬁrst observation was that the potential (75) can be solved
-semi-analytically in the 1S0 channel: ifp (p′) denotes the
-relative incoming (outgoing) momentum in the center-of-
-mass frame andk2/mN the energy, the LO amplitude can
-be written (Kaplan et al., 1996; Gegelia, 1999b; Eiras and
-Soto, 2003; Long and Yang, 2012b)
-T (0)(p′,p;k) =TY(p′,p;k) + χ(p′;k)χ(p;k)
-C−1
-0s (Λ)−I(Λ;k), (78)
-where TY is the amplitude for a pure Yukawa potential
-and
-χ(p;k) = 1 +mN
-∫ d3l
-(2π)3
-TY(l,p;k)
-k2−l2 + iϵ, (79)
-I(Λ;k) =mN
-∫ d3l
-(2π)3
-χ2(l;k)
-k2−l2 + iϵ, (80)
-where we keep the regularization implicit. WhenTY = 0,
-I(Λ;k) reduces to the I0(Λ;k) of Eq. (22), and Eq. (78)
-to Eq. (13). While TY andχ have no non-negative-power
-dependence on Λ, I(Λ;k) has two types of inadmissible
-cutoﬀ dependence: ∝ Λ and ∝ (m2
-π/MNN) ln(Λ/MNN).
-The former is the same cutoﬀ dependence one sees in Pi-
-onless EFT (Sec. II), and can be absorbed in C0s. The
-latter cutoﬀ dependence, which appears despite the fact
-that the Yukawa interaction is regular by itself and is for-
-mally the same as the logarithmic divergence generated
-by the Coulomb interaction (see Sec. II.B.7), comes from
-the interference between contact interaction and OPE.
-It does not appear in other singlet channels (Eiras and
-Soto, 2003; Nogga et al., 2005), but it cannot be absorbed
-inC0s, which is the LEC of a chiral-invariant interaction
-and thus is not linear in m2
-π. Instead, one has to modify
-the LO potential (75) by (Kaplan et al., 1996)
-C0s→C0s +m2
-πD2s =O
-( 4π
-mNMNN
-)
-. (81)
-Even though NDA estimates D2s = O(C0s/M2
-QCD),
-renormalization requires D2s =O(C0s/M2
-lo). Because of
-the diﬀerent transformation properties under chiral sym-
-metry, the two operators with LECS C0s and D2s diﬀer
-in their pion interactions, see Eq. (70c). Of course, one
-cannot see this problem numerically in the 2 N system
-unless one varies mπ, which is not done in most nuclear
-work, and even then the divergence is only logarithmic.
-The additional pion interactions fromD2s should have ef-
-fects on other processes, such as pion-nucleus scattering,
-but only when there is a signiﬁcant contribution from the
-1S0 2N partial wave. Regardless of its phenomenologi-
-cal (ir)relevance, this is the simplest example where the
-renormalization of observables in Chiral EFT is not guar-
-anteed by NDA. This result has been conﬁrmed in many
-other studies (Beane et al., 2002; Pav´ on Valderrama and
-Ruiz Arriola, 2004, 2006a).
-A similar but more dramatic renormalization eﬀect
-concerns the momentum dependence of OPE. The ten-
-sor potential is singular, behaving at short distances as
-−α/rn with n = 3 and, in some channels, α >0. It is
-well known (Frank et al., 1971) that such potentials need
-to be treated carefully because both solutions of the ra-
-dial Schr¨ odinger equation are irregular at r = 0. For
-two particles of reduced mass µ, the zero-energy S-wave
-radial wavefunction behaves at short distances as 13
-ψ(r) =rn/4−1 cos
-(√2µαr 1−n/2
-n/2− 1 +φn
-)
-+··· , (82)
-where φn is a phase related to the scattering length
-and, more generally, the phase shifts. In EFT, the
-phase is determined by a contact interaction, the LEC
-of which displays an oscillatory dependence on the cut-
-oﬀ (Beane et al., 2001a; Bawin and Coon, 2003; Braaten
-and Phillips, 2004; Alberg et al. , 2005; Hammer and
-Swingle, 2006; Bouaziz and Bawin, 2014; Odell et al. ,
-2019), characteristic of a limit cycle or more complicated
-attractor. For RG analyses and reviews of limit cycles,
-see (Barford and Birse, 2003, 2005; Pav´ on Valderrama
-and Ruiz Arriola, 2008), and (Hammer and Platter, 2011;
-Bulycheva and Gorsky, 2014), respectively. Without the
-13 Particularly interesting is n = 2, which is equivalent (Eﬁmov,
-1971) to the three-boson system at unitarity (Sec. II). In this
-case√2µαr 1−n/2/(n/2− 1)→
-√
-2µα− 1/4 ln(r/r0), with r0
-an arbitrary dimensionful parameter, and φ2 = φ2(r0). This is
-an example of an anomaly (Camblong and Ord´ o˜ nez, 2003, 2005)
-where the scale invariance of the classical system is broken by
-renormalization to discrete scale invariance.
-49
-contact interaction, the increasing attraction of the sin-
-gular potential leads to the repeated appearance of low-
-energy bound states as the momentum cutoﬀ increases.
-With the contact interaction, not only the two-, but also
-the three-body system is renormalized properly (Odell
-et al., 2019), at least for n = 3.
+\label{subsubsection:singrenorm}
+
+The regulator dependence of Weinberg's prescription has been understood for a
+long time.  Historically the first observation was that the
+potential~\eqref{OPE} can be solved semi-analytically in the $^1S_0$ channel:
+if $\boldp$ ($\boldp'$) denotes the relative incoming (outgoing) momentum in
+the center-of-mass frame and $k^2/m_N$ the energy, the LO amplitude can be
+written~{\cite{Kaplan:1996xu,Gegelia:1999ja,Eiras:2001hu,Long:2012ve}}
+
+\begin{equation}
+ T^{(0)}(\boldp',\boldp;k)= T_{\mathrm{Y}}(\boldp',\boldp;k)
+ + \frac{\chi(\boldp';k)\chi(\boldp;k)}
+ {C_{0\mathrm{s}}^{-1}(\Lambda) - I(\Lambda;k)} \,,
+\label{T01S0}
+\end{equation}
+
+where $T_{\mathrm{Y}}$ is the amplitude for a pure Yukawa potential and
+
+\begin{align}
+ \chi(\boldp;k) &=
+ 1+m_N\int \frac{\dd^3l}{(2\pi)^3}
+ \frac{T_{\mathrm{Y}}(\boldl,\boldp;k)}{k^2-\boldl^2 + \ii\epsilon} \,,
+ \\
+ I(\Lambda;k) &= m_N\int \frac{\dd^3l}{(2\pi)^3}
+ \frac{\chi^{{2}}(\boldl;k)}{k^2-\boldl^2 + \ii\epsilon} {\,,}
+\end{align}
+
+{where we keep the regularization implicit.}
+When $T_{\mathrm{Y}}=0$, $I(\Lambda;k)$ reduces to the $I_0(\Lambda;k)$
+of Eq.~\eqref{eq:I0-cutoff}{,} and Eq.~\eqref{T01S0} to Eq.~\eqref{eq:T-C0}.
+While $T_{\mathrm{Y}}$ and $\chi$ have no
+{non-negative-power} dependence on
+$\Lambda$, $I(\Lambda;k)$ has two types of inadmissible cutoff dependence:
+$\propto \Lambda$ and $\propto (m_\pi^2/\MNN)\ln (\Lambda/\MNN)$.  The former is
+the same cutoff dependence one sees in Pionless EFT (Sec.~\ref{sec:pionless}),
+and can be absorbed in $C_{0\mathrm{s}}$.  The latter cutoff dependence, which
+appears despite the fact that the Yukawa interaction is regular by itself
+{and is formally the same as the logarithmic divergence generated by the
+Coulomb interaction (see Sec.~\ref{sec:pionlessCoulomb})}, comes
+from the interference between contact interaction and OPE.  It does not appear
+in other singlet channels~\cite{Eiras:2001hu,Nogga:2005hy}, but it cannot be
+absorbed in $C_{0\mathrm{s}}$, which is the LEC of a chiral-invariant
+interaction and thus is not linear in $m_\pi^2$.  Instead, one has to modify the
+LO potential \eqref{OPE} by~{\cite{Kaplan:1996xu}}
+
+\begin{equation}
+ C_{0\mathrm{s}} \to C_{0\mathrm{s}} + m_\pi^2 D_{2\mathrm{s}}
+ = \OO\left(\frac{4\pi}{m_N \MNN}\right) \,.
+\label{C0D0}
+\end{equation}
+
+Even though NDA estimates $D_{2\mathrm{s}} = \OO(C_{0\mathrm{s}}/\MQCD^2)$,
+renormalization requires $D_{2\mathrm{s}} = \OO(C_{0\mathrm{s}}/\Mlo^2)$.
+Because of the different transformation properties under chiral symmetry, the
+two operators with LECS $C_{0\mathrm{s}}$ and $D_{2\mathrm{s}}$ differ in their
+pion interactions, see Eq.~\eqref{chiLag2bar}.  Of course, one cannot see this
+problem numerically in the $2N$ system unless one varies $m_\pi$, which is not
+done in most nuclear work, and even then the divergence is only logarithmic.
+The additional pion interactions from $D_{2\mathrm{s}}$ should have effects on
+other processes, such as pion-nucleus scattering, but only when there is a
+significant contribution from the $^1S_0$ $2N$ partial wave.  Regardless of its
+phenomenological (ir)relevance, this is the simplest example where the
+renormalization of observables in Chiral EFT is not guaranteed by NDA.  This
+result has been confirmed in many other
+studies~\cite{Beane:2001bc,PavonValderrama:2003np,PavonValderrama:2005wv}.
+
+A similar but more dramatic renormalization effect concerns the momentum
+dependence of OPE.  The tensor potential is singular, behaving at short
+distances as $-\alpha/r^n$ with $n=3$ and, in some channels, $\alpha>0$.
+It is well known~\cite{Frank:1971xx} that such potentials need to be treated
+carefully because both solutions of the radial Schr\"odinger equation are
+irregular at $r=0$.  For two particles of reduced mass $\mu$, the zero-energy
+$S$-wave radial wavefunction behaves at short distances as\footnote{Particularly
+interesting is $n=2$, which is equivalent~\cite{Efimov:1971zz} to the
+three-boson system at unitarity (Sec.~\ref{sec:pionless}).  In this case
+$\sqrt{2\mu \alpha} \, r^{1-n/2}/(n/2-1)\to \sqrt{2\mu \alpha -1/4} \, \ln
+(r/r_0)$, with $r_0$ an arbitrary dimensionful parameter, and
+$\phi_2=\phi_2(r_0)$.  This is an example of an
+anomaly~\cite{Camblong:2003mz,Camblong:2003mb}
+where the scale invariance of the
+classical system is broken by renormalization to discrete scale invariance.}
+
+\begin{equation}
+ \psi(r)=r^{n/4-1} \cos\left(\frac{\sqrt{2\mu \alpha}\, r^{1-n/2}}{n/2-1}
+ + \phi_n\right) + {\cdots} \,,
+\end{equation}
+
+where $\phi_n$ is a phase related to the scattering length and, more generally,
+the phase shifts.  In EFT, the phase is determined by a contact interaction,
+the LEC of which displays {an} oscillatory dependence on the
+{cutoff~\cite{Beane:2000wh,Bawin:2003dm,Braaten:2004pg,PhysRevA.71.022108,
+Hammer:2005sa,Bouaziz:2014wxa,Odell:2019wjq}},
+characteristic of a limit cycle or more
+complicated attractor.  For RG analyses and reviews of limit cycles,
+see~\cite{Barford:2002je,Barford:2004fz,PavonValderrama:2007nu},
+and~\cite{Hammer:2011kg,Bulycheva:2014twa}, respectively.
+{Without the contact interaction, the increasing attraction of the
+singular potential leads to the repeated appearance of low-energy bound states
+as the momentum cutoff increases.
+With the contact interaction, not only the two-,
+but also the three-body system is renormalized properly~\cite{Odell:2019wjq},
+at least for $n=3$.}
+
 The argument can be generalized to the tensor force
-(Beane et al. , 2002; Birse, 2006), which is attractive in
-some uncoupled channels and has one attractive eigen-
-value in coupled channels. In 3S1-3D1, the C0t interac-
-tion in Eq. (75) is suﬃcient to absorb the cutoﬀ depen-
-dence and ﬁx the low-energy phase shifts (Fredericoet al.,
-1999; Beane et al., 2002; Pav´ on Valderrama and Ruiz Ar-
-riola, 2005, 2006a; Yang et al. , 2008), as suggested by
-NDA. However, in higher partial waves the eﬀects of C0t
-are cutoﬀ artifacts that disappear at large cutoﬀs. As
-the cutoﬀ increases, bound states accrue in the higher
-partial waves where the tensor OPE is attractive ( 3P0,
-3P2-3F2, 3D2, 3D3-3G3, etc.), leading to wild variation in
-the corresponding low-energy phase shifts (Nogga et al.,
-2005; Pav´ on Valderrama and Ruiz Arriola, 2006b). This
-problem can be cured (Nogga et al. , 2005) by a short-
-range interaction in each such wave, e.g., including a
-termC′
-2t(p′·p)Pt in Eq. (75). As primordial counterterm,
-C′
-2t =O(C0s/M2
-QCD) appears only atO(Q2/M2
-QCD), and
-similarly for the counterterms in other attractive, singu-
-lar waves. The absence in Weinberg’s prescription of the
-appropriate counterterms explains the need for a “phys-
-ical cutoﬀ” Λ phys <∼ 1 GeV, where 3P0 would develop a
-bound state (Nogga et al., 2005). In other waves, bound
-states cross threshold at higher cutoﬀs. In triplet waves
-where OPE is repulsive there is no need for such countert-
-erms at LO (Eiras and Soto, 2003; Nogga et al., 2005).
-Renormalization problems have been re-
-ported (Pav´ on Valderrama and Ruiz Arriola, 2006a,b;
-Entem et al. , 2008; Yang et al. , 2009a,b; Zeoli et al. ,
-2013) within Weinberg’s prescription also for higher-
-order potentials, which are increasingly singular and
-attractive in other waves as well. In contrast, a pertur-
-bative treatment of more-singular corrections to singular
-potentials can be properly renormalized (Long and
-van Kolck, 2008) with counterterms containing more
-derivatives, as expected from NDA. Renormalization of
-chiral potentials seems to demand that at least some
-parts of the potential be treated in perturbation theory,
-just like in Pionless EFT. 14
-14 The simple toy model of a regular long-range potential plus a
-short-range interaction that yields a natural two-body scattering
-length nicely illustrates how treating the subleading EFT contact
-interaction nonperturbatively, similar to the “peratization” of
-Fermi theory (Feinberg and Pais, 1963, 1964), prevents a large
-cutoﬀ (Epelbaum and Gegelia, 2009).
+{\cite{Beane:2001bc,Birse:2005um}}, which is attractive in some
+uncoupled channels and has one attractive eigenvalue in coupled channels.  In
+$^3S_1$-$^3D_1$, the $C_{0\mathrm{t}}$ interaction in Eq.~\eqref{OPE} is
+sufficient to absorb the cutoff dependence and fix the low-energy phase
+shifts~\cite{Frederico:1999ps,Beane:2001bc,PavonValderrama:2005gu,
+PavonValderrama:2005wv,Yang:2007hb}, as suggested by NDA.  However, in higher
+partial waves the effects of $C_{0\mathrm{t}}$ are cutoff artifacts that
+disappear at large cutoffs.  As the cutoff increases, bound states accrue in the
+higher partial waves where the tensor OPE is attractive ($^3P_0$,
+$^3P_2$-$^3F_2$, $^3D_2$, $^3D_3$-$^3G_3$, \etc), leading to wild variation in
+the corresponding low-energy phase
+shifts~\cite{Nogga:2005hy,PavonValderrama:2005uj}.  This
+problem can be cured~\cite{Nogga:2005hy} by a short-range interaction in each
+such wave, \eg, including a term {$C'_{2\mathrm{t}}(\vecp'\cdot\vecp)
+\pPt$} in Eq.~\eqref{OPE}.  As primordial counterterm,
+$C'_{2\mathrm{t}}=\OO(C_{0\mathrm{s}}/\MQCD^2)$ appears only
+at $\OO(Q^2/\MQCD^2)$, and similarly for the counterterms in other attractive,
+singular waves.  The absence in Weinberg's prescription of the appropriate
+counterterms explains the need for a ``physical cutoff''
+$\Lambda_{\text{phys}}\simle 1~\GeV$, where $^3P_0$ would develop a bound
+state~\cite{Nogga:2005hy}. {In other waves, bound states cross threshold
+at higher cutoffs.} In triplet waves where OPE is repulsive there is no
+need for such counterterms at LO~\cite{Eiras:2001hu,Nogga:2005hy}.
+
+Renormalization problems have been
+{reported~\cite{PavonValderrama:2005wv,PavonValderrama:2005uj,Entem:2007jg,
+Yang:2009kx,Yang:2009pn,Zeoli:2012bi}}
+within Weinberg's prescription also for higher-order potentials, which are
+increasingly singular and attractive in other waves as well.  In contrast,
+a perturbative treatment of more-singular
+corrections to singular potentials can be properly
+renormalized~\cite{Long:2007vp} with counterterms containing more derivatives,
+as expected from NDA.  Renormalization of chiral potentials seems to demand
+that at least some parts of the potential be treated in perturbation theory,
+just like in Pionless EFT.\footnote{
+{
+The simple toy model of a regular long-range potential
+plus a short-range interaction that yields a natural two-body
+scattering length nicely illustrates how treating the subleading
+EFT contact interaction nonperturbatively,
+similar to the ``peratization'' of Fermi
+theory~\cite{Feinberg:1963zz,Feinberg:1964zza},
+prevents a large cutoff~\cite{Epelbaum:2009sd}.}}

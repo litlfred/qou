@@ -171,8 +171,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 5,
-   "overlaid": 4,
+   "tex_sections": 8,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -182,42 +182,48 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction.",
-     "prose_ratio": 0.922,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-preliminaries-on-surreal-numbers",
      "title": "Preliminaries on surreal numbers.",
-     "prose_ratio": 0.818,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.87,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-22-sign-sequences",
      "title": "Sign sequences.",
-     "result": "no matching \\section"
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-23-generalized-epsilon-numbers",
      "title": "Generalized epsilon numbers",
-     "result": "no matching \\section"
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-3-the-kappa-map",
      "title": "The kappa map.",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.953,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-4-sign-sequences-formulae-for-the-kappa-map",
      "title": "Sign sequences formulae for the kappa map.",
-     "prose_ratio": 0.921,
-     "coverage_ratio": 0.952,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },

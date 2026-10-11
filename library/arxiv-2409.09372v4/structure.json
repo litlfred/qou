@@ -182,7 +182,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Markov-trace_revision_.tex",
-   "tex_sections": 6,
+   "tex_sections": 7,
    "overlaid": 6,
    "thresholds": {
     "title": 0.85,
@@ -193,53 +193,54 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.952,
-     "coverage_ratio": 0.791,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-inductive-basis",
      "title": "Inductive basis",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.703,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-normalized-markov-traces",
      "title": "Normalized Markov traces",
-     "prose_ratio": 0.961,
-     "coverage_ratio": 0.705,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-non-normalized-markov-traces",
      "title": "Non-normalized Markov traces",
-     "prose_ratio": 0.972,
-     "coverage_ratio": 0.72,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-5-specializations",
      "title": "Specializations",
-     "prose_ratio": 0.892,
-     "coverage_ratio": 0.757,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.896,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.588,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-declaration",
      "title": "Declaration",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.875,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },

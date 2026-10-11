@@ -7,20 +7,18 @@ section_number: 2
 pages: 2-7
 source_pdf: 1012.4941v2.pdf
 source_sha256: 1932a359f3bafb83
-text_source: latex
-latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.982
 doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linea r and integer programming problems."
+text_source: latex
+latex_prose_ratio: 0.998
+latex_coverage_ratio: 0.981
 ---
 []{#sec:LP label="sec:LP"} The purpose of this section is to introduce the notation and to collect basic facts for future reference. The results of this section up to and including Corollary [\[cor:opt_sol_in_fix\]](#cor:opt_sol_in_fix){reference-type="ref" reference="cor:opt_sol_in_fix"} can be found in the literature which is why we skip some of the proofs.
 
-We consider linear programs $\operatorname{LP}(A,b,c)$ of the form $$\begin{equation}
-\label{eq:LP}
+We consider linear programs $\operatorname{LP}(A,b,c)$ of the form $$\label{eq:LP}
   \begin{array}{ll}
     \max & c^tx\\
     \textrm{s.t.} & Ax \le b \, , \ x \in {\mathbb{R}}^n
-  \end{array}
-\end{equation}$$ where $A\in{\mathbb{R}}^{m\times n}$, $b\in{\mathbb{R}}^m$, and $c\in{\mathbb{R}}^n\setminus\{0\}$. Throughout we will assume that the set $P(A,b):=\{x\in{\mathbb{R}}^n\,|\,Ax\le b\}$ of *feasible points* is not empty, and hence it is a convex polyhedron, which may be bounded or unbounded. We will also assume that an optimal solution exists. This is to say, our linear program $\operatorname{LP}(A,b,c)$ is bounded even if the feasible region may be unbounded. In this case the set of optimal solutions forms a non-empty face of $P(A,b)$. Our final assumption $c\ne 0$ is not essential for the algorithms below, but it allows to simplify the exposition somewhat.
+  \end{array}$$ where $A\in{\mathbb{R}}^{m\times n}$, $b\in{\mathbb{R}}^m$, and $c\in{\mathbb{R}}^n\setminus\{0\}$. Throughout we will assume that the set $P(A,b):=\{x\in{\mathbb{R}}^n\,|\,Ax\le b\}$ of *feasible points* is not empty, and hence it is a convex polyhedron, which may be bounded or unbounded. We will also assume that an optimal solution exists. This is to say, our linear program $\operatorname{LP}(A,b,c)$ is bounded even if the feasible region may be unbounded. In this case the set of optimal solutions forms a non-empty face of $P(A,b)$. Our final assumption $c\ne 0$ is not essential for the algorithms below, but it allows to simplify the exposition somewhat.
 
 Each row of the matrix $A$ corresponds to one linear inequality. Suppose that one of these rows is the zero vector. Then the corresponding right hand side must be non-negative, since otherwise the linear program would be infeasible, and this was explicitly excluded above. But then this linear inequality is trivially satisfied. Therefore we will further assume that the matrix $A$ does not contain any zero rows. In this case each row defines an affine hyperplane. This way $\operatorname{LP}(A,b,c)$ gives rise to an arrangement ${\mathscr{H}}(A,b)$ of $m$ labeled affine hyperplanes in ${\mathbb{R}}^n$.
 
@@ -98,10 +96,8 @@ Let $S\subseteq {\mathbb{R}}^n$ be a finite set which is *spanning*, that is, we
 :::
 
 ::: proof
-*Proof.* Since $S=O_1\cup O_2\cup\dots\cup O_k$ is spanning and since the union of the orbits gives $S$ it follows that $$\begin{equation}
-\label{eq:orbit_decomp}
-    {\mathbb{R}}^n \ = \ \mathop{\mathrm{lin}}(O_1)+ \mathop{\mathrm{lin}}(O_2)+ \dots+ \mathop{\mathrm{lin}}(O_k) \, .
-\end{equation}$$ For $i\in\{1,2,\dots,k\}$ the linear subspace $\mathop{\mathrm{lin}}(O_i)$ is $\Gamma$-invariant. If we apply the surjective linear map $v\mapsto\beta(\Gamma v)$ from Lemma [\[lem:barycenter\]](#lem:barycenter){reference-type="ref" reference="lem:barycenter"} to the set $S$, we obtain a generating set for $\operatorname{Fix}_\Gamma({\mathbb{R}}^n)$. Applying the same map to a single orbit $O_i$ similarly yields a generating set for $\operatorname{Fix}_\Gamma(\mathop{\mathrm{lin}}(O_i))$. Now the claim follows from the equation $\Gamma O_i=O_i$. ◻
+*Proof.* Since $S=O_1\cup O_2\cup\dots\cup O_k$ is spanning and since the union of the orbits gives $S$ it follows that $$\label{eq:orbit_decomp}
+    {\mathbb{R}}^n \ = \ \mathop{\mathrm{lin}}(O_1)+ \mathop{\mathrm{lin}}(O_2)+ \dots+ \mathop{\mathrm{lin}}(O_k) \, .$$ For $i\in\{1,2,\dots,k\}$ the linear subspace $\mathop{\mathrm{lin}}(O_i)$ is $\Gamma$-invariant. If we apply the surjective linear map $v\mapsto\beta(\Gamma v)$ from Lemma [\[lem:barycenter\]](#lem:barycenter){reference-type="ref" reference="lem:barycenter"} to the set $S$, we obtain a generating set for $\operatorname{Fix}_\Gamma({\mathbb{R}}^n)$. Applying the same map to a single orbit $O_i$ similarly yields a generating set for $\operatorname{Fix}_\Gamma(\mathop{\mathrm{lin}}(O_i))$. Now the claim follows from the equation $\Gamma O_i=O_i$. ◻
 :::
 
 Notice that the sum decomposition [\[eq:orbit_decomp\]](#eq:orbit_decomp){reference-type="eqref" reference="eq:orbit_decomp"} is not necessarily direct. We now apply the results obtained so far to a finite group of automorphisms of a linear program.
@@ -128,14 +124,12 @@ Up to minor technical details Theorem 3.3 of [@GatermannParrilo04] generalizes
 Let $\operatorname{LP}(A,b,c)$ be a linear program with $P(A,b)$ bounded and full-dimensional, and let $\Gamma=\langle \gamma_1,\gamma_2,\dots,\gamma_t\rangle$ be a finite subgroup of $\operatorname{Aut}(\operatorname{LP}(A,b,c))$. Following Remark [\[rem:compute_fixed\]](#rem:compute_fixed){reference-type="ref" reference="rem:compute_fixed"} we can compute a matrix $E$ such that the kernel $\{x\,|\,Ex=0\}$ is the fixed space $\operatorname{Fix}_\Gamma({\mathbb{R}}^n)$: for each $\gamma_i$ we determine a dual basis for the eigenspace $\{x\,|\,(\gamma_i-\mathop{\mathrm{id}})x=0\}$ by solving a square system of linear equations. The total number of operations to do so is of order $O(tn^3)$. Throughout this paper we measure algorithmic complexity in the RAM model; that is, we ignore the encoding lengths of real numbers, and all arithmetic operations are assumed to take constant time. The group $\Gamma$ acts on the rows of the extended matrix $(A|b)$, and we define a new extended matrix $(A'|b')$ by summing the rows of the same $\Gamma$-orbit. We have the following general result.
 
 ::: theorem
-[]{#thm:barycenter_ineqs label="thm:barycenter_ineqs"} The polyhedron $$P' \ = \ \left\{x\in{\mathbb{R}}^n\vphantom{A'x\le b',\, Ex=0}\,\right.\left|\,\vphantom{x\in{\mathbb{R}}^n}A'x\le b',\, Ex=0\right\}$$ is the set $\operatorname{Fix}_\Gamma(P(A,b))$ of feasible points which is fixed under the action of $\Gamma$. In particular, $P'=\{\beta(\Gamma x)\,|\,x\in P(A,b)\}$. Each optimal solution of the linear program $$\begin{equation}
-\label{eq:reduced_LP}
+[]{#thm:barycenter_ineqs label="thm:barycenter_ineqs"} The polyhedron $$P' \ = \ \left\{x\in{\mathbb{R}}^n\vphantom{A'x\le b',\, Ex=0}\,\right.\left|\,\vphantom{x\in{\mathbb{R}}^n}A'x\le b',\, Ex=0\right\}$$ is the set $\operatorname{Fix}_\Gamma(P(A,b))$ of feasible points which is fixed under the action of $\Gamma$. In particular, $P'=\{\beta(\Gamma x)\,|\,x\in P(A,b)\}$. Each optimal solution of the linear program $$\label{eq:reduced_LP}
     \begin{array}{ll}
       \max & c^tx\\
       \textrm{s.t.} & \begin{pmatrix} A'\\ E\\ -E\end{pmatrix} x \le \begin{pmatrix}b'\\ 0\\
         0\end{pmatrix} \, , \ x \in {\mathbb{R}}^n
-    \end{array}
-\end{equation}$$ is an optimal solution of $\operatorname{LP}(A,b,c)$, and the objective values are the same.
+    \end{array}$$ is an optimal solution of $\operatorname{LP}(A,b,c)$, and the objective values are the same.
 :::
 
 ::: proof

@@ -7,10 +7,10 @@ section_number: 4.7
 pages: 34-36
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-text_source: latex
-latex_prose_ratio: 0.993
-latex_coverage_ratio: 1.0
 doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 It is not enough for us here to consider minimal left ideals for just $\Psi_{\textup{L}}$ or for just $\Psi_{\textup{R}}$, separately.  We would like also to combine these two objects together into a single four-complex-dimensional Dirac spinor, as shown in Section~\ref{WD}.
 

@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-4
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
-text_source: latex
-latex_prose_ratio: 0.872
-latex_coverage_ratio: 0.989
 doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.988
 ---
 In 1914, Pólya and Schur [@polya1914zwei] characterized the set of diagonal linear operators on polynomials which preserve real-rootedness. Since this seminal paper, much work has been done in extending this characterization to other classes of linear operators. This program in essence came to a close in 2009 with a paper of Borcea and Brändén [@bb1], which gave a complete characterization of linear operators on polynomials which preserve real-rootedness.
 
@@ -58,7 +58,7 @@ We summarize the specific improvements that this and our other related results g
 
 In the process of generalizing the Borcea-Brändén characterization we develop a general algebraic framework which also encompasses many of the classical polynomial tools. This framework aims to motivate classical results and provide intuition for the connection between a stability preserving operator and its symbol.
 
-### The Main Idea {#the-main-idea .unnumbered}
+### The Main Idea
 
 A major purpose of this paper is to explain a certain conceptual thread in the history of polynomial stability theory: that it is often possible to determine general stability information from restricted sets of polynomials. For example, the Pólya-Schur and Borcea-Brändén characterizations derive from a single polynomial (i.e., the symbol) stability properties of a whole collection of polynomials in the output of a given linear operator. Additionally, the Grace-Walsh-Szegő coincidence theorem says that stability information of any polynomial can be determined from its polarization, which is of degree at most one in each variable.
 
@@ -78,7 +78,7 @@ That is, the apolarity form not only provides the link between a linear operator
 
 In a similar fashion, other important maps also have $\mathop{\mathrm{SL}}_2(\mathbb{C})$-invariance properties (e.g., polarization and projection, as used in the Grace-Walsh-Szegő coincidence theorem, explicitly give the isomorphisms of a classical representation theoretic result; see Appendix [\[gws_app\]](#gws_app){reference-type="ref" reference="gws_app"}). A main feature of our conceptual thesis is that it allows for a unification of many seemingly related results in polynomial stability theory. A crucial point to make then is that Grace's theorem is at the heart of this unification. That said, a significant portion of this paper is devoted to discussing it.
 
-### A Generalized Grace's Theorem and Interval- and Ray-Rootedness {#a-generalized-graces-theorem-and-interval--and-ray-rootedness .unnumbered}
+### A Generalized Grace's Theorem and Interval- and Ray-Rootedness
 
 In [@bb2], Borcea and Brändén are able to prove a multivariate Grace's theorem using their operator characterization. In this paper we will prove the multivariate version from scratch, and then use it to derive a new characterization of stability-preserving linear operators. In addition, we generalize it to *projectively convex* regions, which consist of an open circular region with a portion of its boundary (see §[\[proj_conv_subsect\]](#proj_conv_subsect){reference-type="ref" reference="proj_conv_subsect"}). We state our new result as follows. Note that this result can be seen as an extension of the generalized Grace's theorem given in Corollary 4.4 of [@zaheer1976polar].
 
@@ -98,7 +98,7 @@ In §[\[Jops_subsect\]](#Jops_subsect){reference-type="ref" reference="Jops_subs
 
 As a final note, all of the results given here in the introduction are stated slightly differently in §[\[graces_sect\]](#graces_sect){reference-type="ref" reference="graces_sect"}, §[\[Cops_sect\]](#Cops_sect){reference-type="ref" reference="Cops_sect"}, §[\[Rops_sect\]](#Rops_sect){reference-type="ref" reference="Rops_sect"}. In particular, the notation $V(\lambda)$ is used in place of $\mathbb{C}^\lambda[x_1,\ldots,x_m]$, and reference is made to $\mathbb{CP}^1$ (i.e., the Riemann sphere). This notation has to do with consideration of "roots at infinity", which allows us to remove degree restrictions and avoid reference to convex circular regions. We discuss this rigorously in §[\[homog_subsect\]](#homog_subsect){reference-type="ref" reference="homog_subsect"}.
 
-### A Roadmap {#a-roadmap .unnumbered}
+### A Roadmap
 
 We now describe the content of the remainder of this paper. In §[\[prelim_sect\]](#prelim_sect){reference-type="ref" reference="prelim_sect"}, we discuss the use of homogeneous polynomials via the notation $V(n)$ and $V(\lambda)$, and we describe the relation of these spaces to the notion of roots at infinity.
 

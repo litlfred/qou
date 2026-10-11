@@ -7,10 +7,10 @@ section_number: 2
 pages: 5-6
 source_pdf: 0209324v1.pdf
 source_sha256: ae2ea5024a0a45e8
-text_source: latex
-latex_prose_ratio: 0.986
-latex_coverage_ratio: 1.0
 doc_brief: "Cyclotomic completions of polynomial rings — The main object of study in this paper is the completion Z[q]N = lim←− n Z[q]/ ((1− q)(1− q2)···(1− qn)) of the polynomial ring Z[q], which arises from"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:preliminaries}
 

@@ -8,122 +8,30 @@ pages: 5-6
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
 doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
+text_source: latex
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 1.0
 ---
-Now, one can easily obtain similar formulas for sums of the skew Schur functions SR/P . To this end, one needs
-a slight generalization of the Cauchy identity (4):
-X
-R
-SR/P{p}SR{¯p} = exp
- ∞X
-k=1
-pk ¯pk
-k
-!
-SP{¯p} (27)
-Taking the average of this identity over ¯pk with measure (13), one obtains
-X
-R
-SR/P{p}
-D
-SR{¯p}
-EA
-¯p
-=
-X
-R
-SR/P{p} =
-*
-exp
- ∞X
-k=1
-pk ¯pk
-k
-!
-SP{¯p}
-+A
-¯p
-(28)
-Let us prove that the r.h.s. of this formula is given by
-*
-exp
- ∞X
-k=1
-pk ¯pk
-k
-!
-SP{¯p}
-+A
-¯p
-= exp
-(∞X
-k=1
-p2
-k
-2k + p2k−1
-2k− 1
-)X
-Q
-SP/Q{p} (29)
-5
-with literally the same p-dependent factor as in (12). To this end, we convert this formula with the Schur
-functions SP{p′}. This gives
-*
-exp
- ∞X
-k=1
-(pk +p′
-k)¯pk
-k
-!+A
-¯p
-= exp
-(∞X
-k=1
-p2
-k
-2k + p2k−1
-2k− 1 + pkp′
-k
-k
-)X
-Q
-SQ{p′} (30)
-where we once again used the Cauchy identities (4) and (27) at the l.h.s. and at the r.h.s. Now it remains to
-calculate the Gaussian integral at the l.h.s. as it was done in (12), and also to use (12) to evaluate the sum at
-the r.h.s. Hence, formula (29) is correct, and we finally obtain from (28)
-X
-R
-SR/P{p} = exp
-(∞X
-k=1
-p2
-k
-2k + p2k−1
-2k− 1
-)X
-Q
-SP/Q{p} (31)
-We can now make one more check that (31) is correct. Convert this formula with SP{p′} and use the Cauchy
-identity (27) and the definition of the skew Schur polynomial
-SR{p +p′} =
-X
-P
-SR/P{p}SP{p′} (32)
-Then
-X
-R
-SR{p +p′} = exp
-(∞X
-k=1
-p2
-k
-2k + p2k−1
-2k− 1 + pkp′
-k
-k
-)X
-Q
-SQ{p} (33)
-Both sums can be calculated using (12) in order to validate this formula. We emphasize once again that,
-according to this argument, the p-dependent factor at the r.h.s. is literally the same as in (12), and the same
-will be true for the skew Schur counterparts of all other identities in this section.
+Now, one can easily obtain similar formulas for sums of the skew Schur functions $S_{R/P}$. To this end, one needs a slight generalization of the Cauchy identity ([\[Cauchy\]](#Cauchy){reference-type="ref" reference="Cauchy"}): $$\begin{aligned}
+\label{C2}
+\sum_R S_{R/P}\{p\}S_{R}\{\bar p\}=\exp\left(\sum_{k=1}^\infty{p_k\bar p_k\over k}\right)S_{P}\{\bar p\}
+\end{aligned}$$ Taking the average of this identity over $\bar p_k$ with measure ([\[Gm\]](#Gm){reference-type="ref" reference="Gm"}), one obtains $$\begin{aligned}
+\label{av}
+\sum_R S_{R/P}\{p\}\Big<S_{R}\{\bar p\}\Big>^{\bf\!A}_{\bar p}=\sum_R S_{R/P}\{p\}=
+\left<\exp\left(\sum_{k=1}^\infty{p_k\bar p_k\over k}\right)S_{P}\{\bar p\}\right>^{\bf\!A}_{\bar p}
+\end{aligned}$$ Let us prove that the r.h.s. of this formula is given by $$\begin{aligned}
+\label{pr}
+\left<\exp\left(\sum_{k=1}^\infty{p_k\bar p_k\over k}\right)S_{P}\{\bar p\}\right>^{\bf \!A}_{\!\!\bar p}=
+\exp\left\{\sum_{k=1}^\infty \left(\frac{p_k^2}{2k}+ \frac{p_{2k-1}}{2k-1}\right)\right\}\sum_QS_{P/Q}\{p\}
+\end{aligned}$$ with literally the same $p$-dependent factor as in ([\[idlinSchur\]](#idlinSchur){reference-type="ref" reference="idlinSchur"}). To this end, we convert this formula with the Schur functions $S_P\{p'\}$. This gives $$\begin{aligned}
+\left<\exp\left(\sum_{k=1}^\infty{(p_k+p'_k)\bar p_k\over k}\right)\right>^{\bf\!A}_{\!\!\bar p}=
+\exp\left\{\sum_{k=1}^\infty \left(\frac{p_k^2}{2k}+ \frac{p_{2k-1}}{2k-1}+{p_kp'_k\over k}\right)\right\}\sum_QS_Q\{p'\}
+\end{aligned}$$ where we once again used the Cauchy identities ([\[Cauchy\]](#Cauchy){reference-type="ref" reference="Cauchy"}) and ([\[C2\]](#C2){reference-type="ref" reference="C2"}) at the l.h.s. and at the r.h.s. Now it remains to calculate the Gaussian integral at the l.h.s. as it was done in ([\[idlinSchur\]](#idlinSchur){reference-type="ref" reference="idlinSchur"}), and also to use ([\[idlinSchur\]](#idlinSchur){reference-type="ref" reference="idlinSchur"}) to evaluate the sum at the r.h.s. Hence, formula ([\[pr\]](#pr){reference-type="ref" reference="pr"}) is correct, and we finally obtain from ([\[av\]](#av){reference-type="ref" reference="av"}) $$\begin{aligned}
+\label{sS}
+\sum_R S_{R/P}\{p\}=\exp\left\{\sum_{k=1}^\infty \left(\frac{p_k^2}{2k}+ \frac{p_{2k-1}}{2k-1}\right)\right\}\sum_QS_{P/Q}\{p\}
+\end{aligned}$$ We can now make one more check that ([\[sS\]](#sS){reference-type="ref" reference="sS"}) is correct. Convert this formula with $S_P\{p'\}$ and use the Cauchy identity ([\[C2\]](#C2){reference-type="ref" reference="C2"}) and the definition of the skew Schur polynomial $$\begin{aligned}
+S_R\{p+p'\}=\sum_PS_{R/P}\{p\}S_P\{p'\}
+\end{aligned}$$ Then $$\begin{aligned}
+\sum_RS_R\{p+p'\}=\exp\left\{\sum_{k=1}^\infty \left(\frac{p_k^2}{2k}+ \frac{p_{2k-1}}{2k-1}+{p_kp'_k\over k}\right)\right\}
+\sum_QS_Q\{p\}
+\end{aligned}$$ Both sums can be calculated using ([\[idlinSchur\]](#idlinSchur){reference-type="ref" reference="idlinSchur"}) in order to validate this formula. We emphasize once again that, according to this argument, the $p$-dependent factor at the r.h.s. is literally the same as in ([\[idlinSchur\]](#idlinSchur){reference-type="ref" reference="idlinSchur"}), and the same will be true for the skew Schur counterparts of all other identities in this section.

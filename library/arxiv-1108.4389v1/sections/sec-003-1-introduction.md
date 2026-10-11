@@ -7,10 +7,10 @@ section_number: 1
 pages: 2-8
 source_pdf: 1108.4389v1.pdf
 source_sha256: d3ac77510654d828
-text_source: latex
-latex_prose_ratio: 0.99
-latex_coverage_ratio: 0.958
 doc_brief: "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories."
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.981
 ---
 []{#sec:intro label="sec:intro"} One of the predictions of String Theory/M-Theory is the existence of a discrete family of maximally symmetric six-dimensional conformal field theories, labeled by a simply-laced Lie algebra $\mathfrak{g}$. These theories lack a Lagrangian definition, but some of their properties are known. The existence of such six-dimensional SCFT's has a simple, but perhaps surprising, consequence: it allows a geometric description of many lower-dimensional supersymmetric field theories. Indeed, one can define large families of $6-d$ dimensional theories $T[M_d,\mathfrak{g}]$ via compactification of the six-dimensional theory labeled by $\mathfrak{g}$ on a $d$-dimensional manifold $M_d$. If the compactification is accompanied by an appropriate twist, it will lead to theories with $6-d$ dimensional supersymmetry. In order to fully exploit this type of construction, one should ideally give an alternative explicit definition of these "effective" theories directly in $6-d$ dimensions. If that can be accomplished, the result is a large family of theories defined in $6-d$ dimensions, whose properties are controlled by the geometry of $d$-dimensional manifolds.
 
@@ -18,10 +18,7 @@ This program was pursued successfully for $d=2$ [@Gaiotto-dualities; @GMN; @AGT]
 
 It is natural to wonder if there is a similar $d=3$ dictionary. A twisted compactification of a 6d theory on a three-manifold $M_3$ will give an ${\cal N}=2$ field theory $T[M_3,\mathfrak{g}]$ in three dimensions. Some properties of these theories follow from the definition. For example, one of the basic properties of the 6d theories is that they reduce to 5d SYM upon compactification on a circle. If we consider a 6d SCFT on $S^1 \times M_3$, we find that the moduli space of vacua of $T[M_3,\mathfrak{g}]$ is the same as the space of flat complex $\mathfrak{g}$-connections on $M_3$ [@DGH].
 
-<figure id="fig:cobordism1" data-latex-placement="htb">
-<img src="cobordism1" style="width:4.8in" />
-<figcaption><span class="math inline">(<em>a</em>)</span> A cobordism <span class="math inline"><em>M</em></span> between <span class="math inline">𝒞</span> and <span class="math inline">𝒞<sup>′</sup></span> gives rise to a domain wall <span class="math inline">(<em>b</em>)</span> between 4d <span class="math inline">𝒩 = 2</span> theories <span class="math inline"><em>T</em>(𝒞)</span> and <span class="math inline"><em>T</em>(𝒞<sup>′</sup>)</span>.</figcaption>
-</figure>
+![$(a)$ A cobordism $M$ between $\mathcal{C}$ and $\mathcal{C}'$ gives rise to a domain wall $(b)$ between 4d $\mathcal{N}=2$ theories $T(\mathcal{C})$ and $T(\mathcal{C}')$.](cobordism1){#fig:cobordism1 width="4.8in"}
 
 One way to find other properties of this $d=3$ correspondence is to draw lessons from its $d=2$ version. Indeed, consider a three-dimensional cobordism, *i.e.* a 3-manifold $M_3$ which interpolates between two (or, more generally, several) Riemann surfaces, as in Figure [1](#fig:cobordism1){reference-type="ref" reference="fig:cobordism1"}. The compactification of the six-dimensional theory on the cobordism should give a domain wall between the 4d theories associated to the Riemann surfaces. Note, in particular, that a half-BPS domain wall (*cf.* Figure [1](#fig:cobordism1){reference-type="ref" reference="fig:cobordism1"}) or a boundary condition (*cf.* Figure [2](#fig:cobordism2){reference-type="ref" reference="fig:cobordism2"}) in a 4d ${\cal N}=2$ field theory preserve the same amount of supersymmetry as a three-dimensional ${\cal N}=2$ field theory.
 
@@ -31,68 +28,47 @@ This strategy is hampered by the rapid proliferation of possible "elementary" pl
 
 We will follow an alternative, simpler strategy. Namely, we will abandon the restriction to cut the manifold along tubes only, and instead propose a candidate ${\cal N}=2$ SCFT $T_{M}$ for the theory $T[M,\mathfrak{su}(2)]$ based on a decomposition (triangulation) of a 3-manifold $M$ into tetrahedra, glued together along the triangular faces. Note, here and in the rest of the paper we focus (mainly for simplicity) on $\mathfrak{g} = \mathfrak{su}(2)$. Moreover, since we are interested only in the case $d=3$, so here and in what follows we denote $M_3$ simply by $M$.
 
-<figure id="fig:cobordism2" data-latex-placement="htb">
-<img src="cobordism2" style="width:4.8in" />
-<figcaption><span class="math inline">(<em>a</em>)</span> A 3-manifold <span class="math inline"><em>M</em></span> stretched along a ‘neck’ <span class="math inline">ℝ × 𝒞</span> becomes a 4d <span class="math inline">𝒩 = 2</span> superconformal theory <span class="math inline">(<em>b</em>)</span> on <span class="math inline">ℝ<sup>3</sup> × <em>I</em></span> coupled to 3-dimensional theories <span class="math inline"><em>T</em>(<em>M</em><sup>+</sup>)</span> and <span class="math inline"><em>T</em>(<em>M</em><sup>−</sup>)</span> at the boundary. The 4d <span class="math inline">𝒩 = 2</span> gauge theory in the bulk is determines by the cross-section <span class="math inline">𝒞</span> of the 3-manifold <span class="math inline"><em>M</em></span>.</figcaption>
-</figure>
+![$(a)$ A 3-manifold $M$ stretched along a 'neck' ${\mathbb R}\times \mathcal{C}$ becomes a 4d $\mathcal{N}=2$ superconformal theory $(b)$ on ${\mathbb R}^3 \times I$ coupled to 3-dimensional theories $T(M^+)$ and $T(M^-)$ at the boundary. The 4d $\mathcal{N}=2$ gauge theory in the bulk is determines by the cross-section $\mathcal{C}$ of the 3-manifold $M$.](cobordism2){#fig:cobordism2 width="4.8in"}
 
 We do not derive our construction of the $\mathcal{N}=2$ theory $T_M$ directly from properties of the six-dimensional theory. Instead, we wish to associate a simple "building block" theory $T_{\Delta}$ to each tetrahedron $\Delta$, and to define the field theory analogue of the geometric gluing with a simple constraint in mind: different triangulations of the same manifold must give equivalent definitions of the corresponding theory, in the sense that they flow to the same SCFT in the IR. In $d=2$ different decompositions of the same Riemann surface were related by known S-dualities. In $d=3$ we aim to relate different triangulations of $M$ through known mirror symmetries, so that every 3-manifold $M$ is associated to a well-defined, triangulation-independent 3d ${\cal N}=2$ SCFT.
 
 We describe the theory $T_M$ as the IR fixed point of an abelian Chern-Simons-matter theory whose Lagrangian depends on the choice of triangulation of $M$ (plus some extra decoration $\Pi$ that one encounters in $SL(2)$ Chern-Simons theory on $M$). Intuitively, given a triangulation $M = \bigcup_{i=1}^N \Delta_i$, we construct a theory for each tetrahedron $\Delta_i$
 
-$$\begin{equation}
-\Delta_i \qquad \leadsto \qquad T_{\Delta_i} \,,
-\end{equation}$$
+$$\Delta_i \qquad \leadsto \qquad T_{\Delta_i} \,,$$
 
 and glue the tetrahedra together to build
 
-$$\begin{equation}
-M \qquad\leadsto \qquad T_M \sim \bigotimes_i T_{\Delta_i} \,. \label{MvsTM}
-\end{equation}$$
+$$M \qquad\leadsto \qquad T_M \sim \bigotimes_i T_{\Delta_i} \,. \label{MvsTM}$$
 
 The gluing of theories $T_{\Delta_i}$ involves a bit more than just taking a tensor product, and one of the main technical aims of this paper is to develop a proper understanding of the sign '$\sim$' in [\[MvsTM\]](#MvsTM){reference-type="eqref" reference="MvsTM"}. Loosely speaking, the gluing involves two steps, which require a careful explanation and depend on a choice of the extra data $\Pi$ (defined below): gauging some flavor symmetries, with carefully chosen Chern-Simons couplings, and adding a superpotential coupling for each internal edge of the triangulation. The choice of the operators which enter the superpotential couplings is the most subtle part of the construction. In general, they cannot be simultaneously realized as products of elementary fields, but are defined as 't Hooft monopole operators.
 
 Regardless of the compactification from six dimensions, the family of 3d ${\cal N}=2$ SCFTs $T_M$ associated to 3-manifolds $M$ is an interesting object, and we hope it will lead to interesting connections between three-dimensional SCFTs and three-dimensional geometry and topology. For example, quantities like the superconformal index of $T_M$ or the partition function on $S^3$ should map to interesting three-manifold invariants, as summarized in Table [1](#tab:dict){reference-type="ref" reference="tab:dict"}. In this paper we specialize to a very simple building block theory for the tetrahedron, which is essentially the theory of a single chiral multiplet. We believe our approach is much more general though, and with an appropriate choice of tetrahedron building block one can produce natural candidates for $T[M,\mathfrak{g}]$.
 
 ::: {#tab:dict}
-+--------------------------------------+--------------------------------------------------------------+
-| **3-manifold** $M$                   | **3d** $\mathcal{N}=2$ **theory** $T_M$                      |
-+:====================================:+:============================================================:+
-| ideal tetrahedron                    | theory $T_{\Delta}$                                          |
-+--------------------------------------+--------------------------------------------------------------+
-| change of triangulation              | mirror symmetry                                              |
-+--------------------------------------+--------------------------------------------------------------+
-| change of polarization $\Pi$         | $Sp(2N,{\mathbb Z})$ duality action                          |
-+--------------------------------------+--------------------------------------------------------------+
-| boundary flip                        | $F$ transformation                                           |
-+--------------------------------------+--------------------------------------------------------------+
-| gluing along                         | superpotential                                               |
-+--------------------------------------+--------------------------------------------------------------+
-| an internal edge                     | coupling                                                     |
-+--------------------------------------+--------------------------------------------------------------+
-| Wilson lines                         | line operators                                               |
-+--------------------------------------+--------------------------------------------------------------+
-| boundary $\mathcal{C}= \partial M$   | coupling to 4d $\mathcal{N}=2$ theory                        |
-+--------------------------------------+--------------------------------------------------------------+
-| flat $SL(2,{\mathbb C})$ connections | SUSY moduli on ${\mathbb R}^2 \times S^1$                    |
-+--------------------------------------+--------------------------------------------------------------+
-| ${\rm Vol} (M) + i {\rm CS} (M)$     | twisted superpotential $\widetilde{\mathcal{W}}_{{\rm eff}}$ |
-+--------------------------------------+--------------------------------------------------------------+
-| $SL(2)$ Chern-Simons                 | partition function on $S^3_b$                                |
-+--------------------------------------+                                                              |
-| partition function                   |                                                              |
-+--------------------------------------+--------------------------------------------------------------+
-| Seiberg-Witten invariants            | superconformal index                                         |
-+--------------------------------------+--------------------------------------------------------------+
+            **3-manifold** $M$                      **3d** $\mathcal{N}=2$ **theory** $T_M$
+  -------------------------------------- --------------------------------------------------------------
+            ideal tetrahedron                                 theory $T_{\Delta}$
+         change of triangulation                                mirror symmetry
+       change of polarization $\Pi$                   $Sp(2N,{\mathbb Z})$ duality action
+              boundary flip                                    $F$ transformation
+               gluing along                                      superpotential
+             an internal edge                                       coupling
+               Wilson lines                                      line operators
+    boundary $\mathcal{C}= \partial M$               coupling to 4d $\mathcal{N}=2$ theory
+   flat $SL(2,{\mathbb C})$ connections            SUSY moduli on ${\mathbb R}^2 \times S^1$
+     ${\rm Vol} (M) + i {\rm CS} (M)$     twisted superpotential $\widetilde{\mathcal{W}}_{{\rm eff}}$
+           $SL(2)$ Chern-Simons                          partition function on $S^3_b$
+            partition function           
+        Seiberg-Witten invariants                             superconformal index
 
-: The dictionary between geometry and physics.
+  : The dictionary between geometry and physics.
 :::
 
 We will be able to motivate our proposal for $T_M = T[M,\mathfrak{su}(2)]$ in a wide variety of ways, and to check that it has expected properties. In particular, we take inspiration from two related facts:
 
-- The moduli space of vacua of the 3d theory must coincide (with some caveats) with the space of flat $SL(2)$ connections on $M$.
+-   The moduli space of vacua of the 3d theory must coincide (with some caveats) with the space of flat $SL(2)$ connections on $M$.
 
-- The partition function of $T[M,\mathfrak{g}]$ on an ellipsoid $S^3_b$, as in [@HHL], should coincide with the (analytically continued) $\mathfrak{g}$ Chern-Simons partition function on $M$.
+-   The partition function of $T[M,\mathfrak{g}]$ on an ellipsoid $S^3_b$, as in [@HHL], should coincide with the (analytically continued) $\mathfrak{g}$ Chern-Simons partition function on $M$.
 
 We engineer $T_M = T[M,\mathfrak{su}(2)]$ in such a way that these two properties are automatically true.
 

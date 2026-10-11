@@ -7,12 +7,13 @@ section_number: 6
 pages: 26-30
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
-text_source: latex
-latex_prose_ratio: 0.894
-latex_coverage_ratio: 0.922
 doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:Infinite dimensional comparisons}
+
 
 
 \subsection{Relative volume comparisons}\label{sec:Relative volume comparisons}
@@ -113,6 +114,7 @@ Morgan \cite{Mo} has obtained a similar absolute volume comparison theorem of He
 \end{rem}
 
 
+
 \subsection{Distribution laws}\label{sec:Infinite dimensional model spaces and distribution laws}
 Before we show Theorem \ref{thm:infinite dimensional main theorem},
 we present distribution laws concerning our infinite dimensional model spaces.
@@ -204,6 +206,7 @@ and
 \end{equation*}
 This proves the assertion.
 \end{proof}
+
 
 
 \subsection{Proof of Theorem \ref{thm:infinite dimensional main theorem}}\label{sec:Observable inscribed radius comparisons}

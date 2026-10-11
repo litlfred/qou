@@ -7,10 +7,10 @@ section_number: 6
 pages: 16-17
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
-text_source: latex
-latex_prose_ratio: 0.965
-latex_coverage_ratio: 0.929
 doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 []{#tilting-quantum label="tilting-quantum"}
 
@@ -31,7 +31,7 @@ As in the modular case, the entire theory of tilting modules can be developed ov
 Since the $\lambda$-weight space is free of rank 1, the arguments of Jantzen [@Jantzen E.20] go through and we obtain
 
 ::: corollary
-Let $R$ be a complete discrete valuation ring with residue field $R/\mathfrak{m} = \mathbb{Q}(q)$ (or ${\mathbb C}$) of characteristic 0. Then $$\begin{align*}
+Let $R$ be a complete discrete valuation ring with residue field $R/\mathfrak{m} = \mathbb{Q}(q)$ (or ${\mathbb C}$) of characteristic 0. Then $$\begin{aligned}
  T_R(\lambda) \otimes R/\mathfrak{m}  & \cong T_{R/\mathfrak{m}} (\lambda) \\  End (T_R(\lambda)) \otimes_R R/\mathfrak{m}) & \cong End (T_R(\lambda)) \otimes_R R/\mathfrak{m}.
-\end{align*}$$
+\end{aligned}$$
 :::

@@ -7,10 +7,10 @@ section_number: 10
 pages: 8-8
 source_pdf: 0103325v4.pdf
 source_sha256: 38590174ab836fa1
+doc_brief: "Quantum algebras in phenomenological description of particle properties — 28 sections: Introduction; V ector mesons: q-deformation vs m; Octet baryon mass sum rules: best"
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
-doc_brief: "Quantum algebras in phenomenological description of particle properties — 28 sections: Introduction; V ector mesons: q-deformation vs m; Octet baryon mass sum rules: best"
 ---
 A question naturally arises: does there exist
 more intimate connection  between the two

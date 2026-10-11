@@ -7,10 +7,10 @@ section_number: null
 pages: 15-21
 source_pdf: 0305275v1.pdf
 source_sha256: 9b356a9d716a0d3e
-text_source: latex
-latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.946
 doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2 , C)."
+text_source: latex
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.978
 ---
 []{#s qua label="s qua"}
 
@@ -38,14 +38,14 @@ The proof has two main steps:
 
 From Step [\[stp3\]](#stp3){reference-type="ref" reference="stp3"} it follows that $$|{\rm vol}(\rho)|\leq\sum_i|\lambda_i|\cdot|v_i|\leq v_3\cdot||c||.$$ Theorem [\[t sv\]](#t sv){reference-type="ref" reference="t sv"} follows taking to the infimum over all $c$'s representing $[\overline M]$.
 
-. Since a pseudo-developing map has the cone property on the cusps, the $3$-form $D_\rho^*\omega$ defined on $M$ extends to a $3$-form on $\overline M$ that vanishes at the boundary. So we can consider the class $[D_\rho^*\omega]\in
+1ex. Since a pseudo-developing map has the cone property on the cusps, the $3$-form $D_\rho^*\omega$ defined on $M$ extends to a $3$-form on $\overline M$ that vanishes at the boundary. So we can consider the class $[D_\rho^*\omega]\in
 H^3(\overline M,\partial \overline M)$. Since $[c]=[\overline M]$, then $${\rm vol}(\rho)=\int_M D_\rho^*\omega=\langle [D_\rho^*\omega],
 [\ensuremath{\overline{M}}]\rangle=\langle 
 [D_\rho^*\omega],[c]\rangle=\sum_i\int_{\Delta^3}
 \lambda_i\sigma_i^*(D_\rho^*\omega)
 .$$
 
-. The idea is the following. Consider a lift $\ensuremath{\widetilde{c}}$ of $c$ to $\ensuremath{\widehat{\ensuremath{\widetilde{M}}}}$. Let $\ensuremath{\overline{c}}=(D_\rho)_*\ensuremath{\widetilde{c}}$ be the push-forward of $\ensuremath{\widetilde{c}}$ to $\ensuremath{\mathbb H}^3$ via $D_\rho$ and let ${\rm Str}(\ensuremath{\overline{c}})$ be a straightening of $\ensuremath{\overline{c}}$. Since the straightening is homotopic to the identity, then there exists a chain-homotopy of degree one *i.e.* a map $H$ from $k$-chains to $(k+1)$-chains such that ${\rm Str} - {\rm Id}=H\circ\partial - \partial\circ H$. Then we have $$\begin{array}{lcl}
+1ex. The idea is the following. Consider a lift $\ensuremath{\widetilde{c}}$ of $c$ to $\ensuremath{\widehat{\ensuremath{\widetilde{M}}}}$. Let $\ensuremath{\overline{c}}=(D_\rho)_*\ensuremath{\widetilde{c}}$ be the push-forward of $\ensuremath{\widetilde{c}}$ to $\ensuremath{\mathbb H}^3$ via $D_\rho$ and let ${\rm Str}(\ensuremath{\overline{c}})$ be a straightening of $\ensuremath{\overline{c}}$. Since the straightening is homotopic to the identity, then there exists a chain-homotopy of degree one *i.e.* a map $H$ from $k$-chains to $(k+1)$-chains such that ${\rm Str} - {\rm Id}=H\circ\partial - \partial\circ H$. Then we have $$\begin{array}{lcl}
 {\rm vol}(\rho)&=&\langle D_\rho^*\omega,\ensuremath{\widetilde{c}}\rangle=
 \langle\omega, (D_\rho)_*\ensuremath{\widetilde{c}}\rangle= 
 \langle\omega,\ensuremath{\overline{c}}\rangle\\&=&
@@ -92,15 +92,15 @@ There exists a chain-map ${\rm Str} :\oplus_k\ensuremath{\overline{C}}_k(\ensure
 
   Let $K$ be the set of pairs $\{(B,f)\}$ where $B$ is a sub-space of $\oplus_k\ensuremath{\overline{C}}_k(\ensuremath{\overline{\ensuremath{\mathbb H}}}^3)$ and $f:B\to\oplus_k\ensuremath{\overline{C}}_k(\ensuremath{\overline{\ensuremath{\mathbb H}}}^3)$ is a linear map, such that:
 
-- $\partial(B)\subset B$.
+-   $\partial(B)\subset B$.
 
-- $\forall\gamma\in{\rm Isom}(\ensuremath{\mathbb H}^3),\ \gamma_*(B)\subset B$.
+-   $\forall\gamma\in{\rm Isom}(\ensuremath{\mathbb H}^3),\ \gamma_*(B)\subset B$.
 
-- $\forall \sigma\in B$, $f(\sigma)$ is a straightening of $\sigma$.
+-   $\forall \sigma\in B$, $f(\sigma)$ is a straightening of $\sigma$.
 
-- $\forall \gamma\in$ Isom$(\ensuremath{\mathbb H}^3)$, $f\circ\gamma_*=\gamma_*\circ f$.
+-   $\forall \gamma\in$ Isom$(\ensuremath{\mathbb H}^3)$, $f\circ\gamma_*=\gamma_*\circ f$.
 
-- $f\circ\partial=\partial\circ f$.
+-   $f\circ\partial=\partial\circ f$.
 
 Note that $K$ is not empty because each $0$-simplex is admissible and it is itself its unique straightening, so that $(\ensuremath{\overline{C}}_0(\ensuremath{\overline{\ensuremath{\mathbb H}}}^3),Id)\in K$. We order $K$ by inclusion (*i.e.* $(B,f)\prec(C,g)$ iff $B\subset C$ and $g|_{B}=f$) and use Zorn's lemma. Let $\{(B_\xi,f_\xi)\}$ be an ordered sequence in $K$. Clearly $$(B_\infty=\cup_{\xi} B_\xi,f_\infty=
 \cup_{\xi} f_\xi)$$ is an upper bound for $\{(B_\xi,f_\xi)\}$. It follows that there exists a maximal element $(\ensuremath{\overline{B}},\ensuremath{\overline{f}})\in K$. We claim that $\ensuremath{\overline{B}}=\oplus_k\ensuremath{\overline{C}}_k(\ensuremath{\overline{\ensuremath{\mathbb H}}}^3)$. Suppose the contrary. Let $k=\min\{n\in\ensuremath{\mathbb N}: \ensuremath{\overline{C}}_n(\ensuremath{\overline{\ensuremath{\mathbb H}}}^3)\not\subset\ensuremath{\overline{B}}\}$ and let $\sigma$ be a simplex of $\ensuremath{\overline{C}}_k(\ensuremath{\overline{\ensuremath{\mathbb H}}}^3)\setminus \ensuremath{\overline{B}}$. If $k=0$, set $B_1$ the space spanned by $\ensuremath{\overline{B}}$ and $\displaystyle{\bigcup_{\gamma\in{\rm Isom}(\ensuremath{\mathbb H})^3}

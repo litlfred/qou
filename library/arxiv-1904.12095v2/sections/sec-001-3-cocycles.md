@@ -7,10 +7,10 @@ section_number: 3
 pages: 6-9
 source_pdf: 1904.12095v2.pdf
 source_sha256: 7006b250f0d3c991
-text_source: latex
-latex_prose_ratio: 0.92
-latex_coverage_ratio: 0.986
 doc_brief: "Verified computations for closed hyperbolic 3-manifolds Matthias Goerner — Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed"
+text_source: latex
+latex_prose_ratio: 0.965
+latex_coverage_ratio: 0.972
 ---
 []{#sec:cocycles label="sec:cocycles"}
 
@@ -36,13 +36,13 @@ We think of the upper half space model of hyperbolic 3-space as a subset $\mathb
 ::: definition
 []{#def:standardPosSimplex label="def:standardPosSimplex"} We say that a positively oriented, finite simplex $\Delta$ is in $\sigma$-standard position where $\sigma\in \mathbf{S}_4$ if vertex
 
-- $\sigma(0)$ is at $\jmath$,
+-   $\sigma(0)$ is at $\jmath$,
 
-- $\sigma(1)$ at $t\jmath$ with $t>1$,
+-   $\sigma(1)$ at $t\jmath$ with $t>1$,
 
-- $\sigma(2)$ at $a+t\jmath$ with $a>0$ and
+-   $\sigma(2)$ at $a+t\jmath$ with $a>0$ and
 
-- $\sigma(3)$ at $z+t\jmath$ with $\mathrm{Im}(z)>0$ if $\sigma$ is even and $\mathrm{Im}(z)<0$ otherwise.
+-   $\sigma(3)$ at $z+t\jmath$ with $\mathrm{Im}(z)>0$ if $\sigma$ is even and $\mathrm{Im}(z)<0$ otherwise.
 :::
 
 An example of this is shown in Figure [1](#fig:standardPos){reference-type="ref" reference="fig:standardPos"}. Geometrically, the motivation for this definition is that two faces of two (not necessarily distinct) simplices line up in $\mathbb H^3$ if the respective edge lengths match and the two simplices are in the respective standard positions. More precisely, let $f_1\in\{0,1,2,3\}$ be a face of the simplex $\Delta_1$ and $f_2\in\{0,1,2,3\}$ of $\Delta_2$. Let $\sigma\in \mathbf{S}_4\setminus \mathbf{A}_4$ with $\sigma(f_1)=f_2$ be a pairing of the two faces. If the edge lengths match under this pairing, then the faces match if each $\Delta_k$ is in $\sigma_k$-standard position where $\sigma_1$ is any permutation with $\sigma_1(3)=f_1$ and $\sigma_2=\sigma\circ \sigma_1$.

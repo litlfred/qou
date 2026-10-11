@@ -526,8 +526,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 8,
-   "overlaid": 3,
+   "tex_sections": 37,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -537,7 +537,7 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.877,
+     "prose_ratio": 1.0,
      "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "pandoc"
@@ -545,7 +545,8 @@
     {
      "id": "sec-001-21-octonions",
      "title": "Octonions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.364,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-2-spin7-and-octonions",
@@ -560,17 +561,24 @@
     {
      "id": "sec-004-24-complex-structure",
      "title": "Complex structure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-26-parametrisation",
      "title": "Parametrisation",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-27-the-group-of-automorphisms-of-the-octonions",
      "title": "The group of automorphisms of the octonions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.309,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-28-the-group-su3",
@@ -580,78 +588,106 @@
     {
      "id": "sec-008-31-split-octonions",
      "title": "Split octonions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-34-complex-structures",
      "title": "Complex structures",
-     "result": "no matching \\section"
+     "prose_ratio": 0.759,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-36-parametrisation",
      "title": "Parametrisation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.491,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-37-some-useful-formulas",
      "title": "Some useful formulas",
-     "result": "no matching \\section"
+     "prose_ratio": 0.418,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-012-42-lie-algebra",
      "title": "Lie algebra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.2,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-41-yet-another-magic-square",
      "title": "Yet another magic square",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-43-invariant-pairing",
      "title": "Invariant pairing",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-5-the-leftright-symmetric-models",
      "title": "The left/right symmetric models",
-     "prose_ratio": 0.536,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-53-two-higgs-in-the-adjoint",
      "title": "Two Higgs in the adjoint",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-6-dictionary",
      "title": "Dictionary",
-     "prose_ratio": 0.07,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.9,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-61-two-commuting-complex-structures-on-o",
      "title": "Two commuting complex structures on O",
-     "result": "no matching \\section"
+     "prose_ratio": 0.939,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-7-mass-terms",
      "title": "Mass terms",
-     "prose_ratio": 0.651,
-     "coverage_ratio": 0.946,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.646,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-020-73-evaluating-the-mass-terms",
      "title": "Evaluating the mass terms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-8-discussion",
      "title": "Discussion",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.799,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     }

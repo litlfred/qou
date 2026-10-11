@@ -7,10 +7,10 @@ section_number: null
 pages: 1-4
 source_pdf: 2602.15276v1.pdf
 source_sha256: 18d77d6aa140fc50
-text_source: latex
-latex_prose_ratio: 0.97
-latex_coverage_ratio: 0.951
 doc_brief: "Compact Q-balls and Q-shells within aCP N Skyrme-Faddeev type model — 11 sections: Introduction; The Lagrangian and Euler-Lagrange ; Radial reduction"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.998
 ---
 Scalar fields play a crucial role in theoretical physics. They are extensively employed for modeling physical matter across a diverse range of contexts, from fundamental fields such as the Higgs field [@PhysRevLett.13.508] to effective descriptions like the order parameter field in the Landau-Ginzburg model [@Ginzburg:1950sr]. Depending on the inherent complexity of the physical phenomenon under investigation, scalar fields can be represented by straightforward real-valued functions or by more intricate structures, such as multiple complex-valued fields defined on complex projective spaces ($CP^N$ models) [@zakrzewski1988low].
 
@@ -32,4 +32,6 @@ The signum-Gordon model [@Arodz:2005gz; @Arodz:2005bc] provides the simplest sup
 
 This paper examines compact non-topological solutions within the ESF model augmented with a potential term. Initial research into these solutions, detailed in [@Klimas:2017eft], established the existence of compact Q-balls and Q-shells in the $CP^N$ model (specifically for odd $N$) when a particular V-shaped potential is introduced. These solutions are characterized by a non-trivial radial function in spherical coordinates and exhibit time dependence via the factor $e^{i\omega t}$. Their angular component is described by spherical harmonics.
 
-The remainder of this paper is organized as follows. Section [\[sec2\]](#sec2){reference-type="ref" reference="sec2"} details the model and its parameterization. Section [\[sec3\]](#sec3){reference-type="ref" reference="sec3"} is dedicated to the discussion of Noether charges. Subsequently, in Section [\[sec4\]](#sec4){reference-type="ref" reference="sec4"}, we present and analyze the numerical compact solutions. The final section is reserved for summarizing the key findings and discussing the implications of the results.
+The remainder of this paper is organized as follows. Section [1](#sec2){reference-type="ref" reference="sec2"} details the model and its parameterization. Section [\[sec3\]](#sec3){reference-type="ref" reference="sec3"} is dedicated to the discussion of Noether charges. Subsequently, in Section [\[sec4\]](#sec4){reference-type="ref" reference="sec4"}, we present and analyze the numerical compact solutions. The final section is reserved for summarizing the key findings and discussing the implications of the results.
+
+# The extended Skyrme-Faddeev model with potential {#sec2}

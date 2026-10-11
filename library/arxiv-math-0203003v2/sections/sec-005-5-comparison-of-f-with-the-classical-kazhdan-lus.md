@@ -7,10 +7,10 @@ section_number: 5
 pages: 10-12
 source_pdf: 0203003v2.pdf
 source_sha256: 7579ae76959396b8
-text_source: latex
-latex_prose_ratio: 0.966
-latex_coverage_ratio: 0.627
 doc_brief: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in t"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.968
 ---
 The sense in which the functor $\text{$\mathcal{F}$}$ is a q-analog of the Kazhdan-Lusztig functor is not straightforward, and needs to be explained.
 

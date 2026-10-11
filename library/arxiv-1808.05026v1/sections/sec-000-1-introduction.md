@@ -7,11 +7,11 @@ section_number: 1
 pages: 1-2
 source_pdf: 1808.05026v1.pdf
 source_sha256: 2781e0b34e7889d6
-text_source: latex
-latex_prose_ratio: 0.938
-latex_coverage_ratio: 0.874
 doc_brief: "Gröbner-Shirshov bases for Temperley-Lieb algebras — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another"
 duplicate_of: "fd58d8e182edda805fed0946606c5ab82f81"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \bigskip
 

@@ -5,7 +5,8 @@
   "file": "0911.4494v2.pdf",
   "sha256": "1ba1c79686b12d984c69492e90a923ed7ca108d283c813d9b5d1a78791349226",
   "bytes": 186337,
-  "pages": 14
+  "pages": 14,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "The geometry of Markov traces",
   "authors_raw": "Department of Mathematics, Mathematical Institute",
-  "abstract": "We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on SLn. This construction makes sense for all simple algebraic groups, s o we obtain a gener- alization of the Jones-Ocneanu trace to Hecke algebras of ot her types. We give a geometric expansion of this trace in terms of the irreducib le characters of the Hecke algebra, and conclude that it agrees with a trace deﬁned independently by Gomi. Based on our proof, we also prove that certain simple pervers e sheaves on a reductive algebraic group G are equivariantly formal for the conjugation action of a Borel B, or equivalently , that the Hochschild homology of any Soerg el bimodule is free, as the authors had previously conjectured . This construction is closely tied to knot homology . This int erpretation of the Jones-Ocneanu trace is a more elementary manifestation of the geometric construction of HOMFLYPT homology given by the authors in [WW ].",
+  "abstract": "We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on SLn. This construction makes sense for all simple algebraic groups, s o we obtain a gener- alization of the Jones-Ocneanu trace to Hecke algebras of ot her types. We give a geometric expansion of this trace in terms of the irreducib le characters of the Hecke algebra, and conclude that it agrees with a trace de\ufb01ned independently by Gomi. Based on our proof, we also prove that certain simple pervers e sheaves on a reductive algebraic group G are equivariantly formal for the conjugation action of a Borel B, or equivalently , that the Hochschild homology of any Soerg el bimodule is free, as the authors had previously conjectured . This construction is closely tied to knot homology . This int erpretation of the Jones-Ocneanu trace is a more elementary manifestation of the geometric construction of HOMFLYPT homology given by the authors in [WW ].",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181104011748-05'00'",
@@ -167,6 +168,67 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 7,
-  "chars_total": 33753
+  "chars_total": 33753,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "markov.tex",
+   "tex_sections": 7,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.496,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-2-hecke-algebras",
+     "title": "Hecke algebras",
+     "prose_ratio": 0.314,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.868,
+     "coverage_ratio": 0.216,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-003-3-hecke-algebras-and-geometry",
+     "title": "Hecke algebras and geometry",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-character-sheaves-and-character-expansions",
+     "title": "Character sheaves and character expansions",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-6-character-sheaves-and-molien-series",
+     "title": "Character sheaves and Molien series",
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.92,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

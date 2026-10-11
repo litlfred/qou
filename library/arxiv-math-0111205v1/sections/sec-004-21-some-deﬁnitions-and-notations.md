@@ -8,27 +8,32 @@ pages: 5-6
 source_pdf: 0111205v1.pdf
 source_sha256: 66325a21651aff89
 doc_brief: "From Subfactors to Categories and Topology II — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.975
 ---
-We refer to [38, Section 2] for our general conventions and re call only a few less standard
-notations. A retract Y ≺ X is also called a subobject. A category has subobjects if all
-idempotents split, and every category A has a canonical completion A
-p
-for which this
-is the case. A F-linear category is semisimple if it has direct sums and subo bjects and
-every object is a ﬁnite direct sum of simple objects, X being simple iﬀ End( X) ∼= F.
-For monoidal categories we require in addition that 1 is simple. A subcategory of a
-semisimple category is called semisimple if it is closed w.r .t. direct sums and retractions,
-thus in particular replete (stable under isomorphisms).
-Since all categories in question are F-linear we understand the product K ⊗ F L of
-(tensor) categories in the sense of enriched category theor y. Thus
-Obj K ⊗F L = {K ⊠ L, K ∈ Obj K, L ∈ Obj L},
-5
-where X ⊠ Y stands for the pair ( X, Y ), and
-HomK⊗FL(K1 ⊠ L1, K2 ⊠ L2)) = Hom K(K1, K2) ⊗F HomL(L1, L2)
-with the obvious composition laws. We denote by K ⊠ L = K ⊗F L
-⊕
-the completion w.r.t.
-ﬁnite direct sums. If X , Y are monoidal categories the same holds for X ⊠ Y. In order to
-save brackets we declare ⊠ to bind stronger than ⊗ but weaker than juxtaposition XY
-of objects (which abbreviates X ⊗ Y ). Note that ⊗ and ⊠ commute:
-X1 ⊠ Y1 ⊗ X2 ⊠ Y2 = (X1 ⊗ X2) ⊠ (Y1 ⊗ Y2) = X1X2 ⊠ Y1Y2.
+We refer to \cite[Section 2]{mue09} for our general conventions and recall only a few less
+standard notations. A retract $Y\prec X$ is also called a subobject. A category has
+subobjects if all idempotents split, and every category $\2A$ has a canonical completion 
+$\ol{\2A}^p$ for which this is the case. A $\7F$-linear category is semisimple if it has
+direct sums and subobjects and every object is a finite direct sum of simple objects, $X$
+being simple iff $\End(X)\cong\7F$. For monoidal categories we require in addition that
+$\11$ is simple. A subcategory of a semisimple category is called semisimple if it is
+closed w.r.t.\ direct sums and retractions, thus in particular replete (stable under
+isomorphisms).
+
+Since all categories in question are $\7F$-linear we understand the product 
+$\2K\otimes_\7F\2L$ of (tensor) categories in the sense of enriched category theory. Thus 
+\[ \obj\,\2K\otimes_\7F\2L = \{ K\boxtimes L,\ K\in \obj\,\2K, L\in \obj\,\2L\}, \]
+where $X\boxtimes Y$ stands for the pair $(X,Y)$, and
+\[ \Hom_{\2K\otimes_\7F\2L}(K_1\boxtimes L_1, K_2\boxtimes L_2))= 
+   \Hom_\2K(K_1,K_2)\otimes_\7F\Hom_\2L(L_1,L_2) \]
+with the obvious composition laws. 
+We denote by $\2K\boxtimes\2L=\ol{\2K\otimes_\7F\2L}^\oplus$ the completion w.r.t.\
+finite direct sums. If $\2X, \2Y$ are monoidal categories the same holds for
+$\2X\boxtimes\2Y$. In order to save brackets we declare $\boxtimes$ to bind stronger than 
+$\otimes$ but weaker than juxtaposition $XY$ of objects (which abbreviates $X\otimes
+Y$). Note that $\otimes$ and $\boxtimes$ commute: 
+\[ X_1\boxtimes Y_1 \,\otimes\, X_2\boxtimes Y_2=
+  (X_1\otimes X_2) \,\boxtimes\, (Y_1\otimes Y_2)=
+   X_1X_2 \,\boxtimes\, Y_1 Y_2. \]

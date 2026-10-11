@@ -370,8 +370,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "text36.tex",
-   "tex_sections": 7,
-   "overlaid": 4,
+   "tex_sections": 18,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -381,64 +381,74 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.841,
-     "coverage_ratio": 0.937,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-21-the-faddeev-quantum-dilogarithm",
      "title": "The Faddeev quantum dilogarithm",
-     "result": "no matching \\section"
+     "prose_ratio": 0.319,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.181,
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-22-neumannzagier-data",
      "title": "Neumann\u2013Zagier data",
-     "result": "no matching \\section"
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-23-geometric-aspects",
      "title": "Geometric aspects",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-3-formal-gaussian-integration",
      "title": "Formal Gaussian integration",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-31-basics-on-formal-gaussian-integration",
      "title": "Basics on formal Gaussian integration",
-     "result": "no matching \\section"
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-4-elementary-invariance-properties",
      "title": "Elementary invariance properties",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.936,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-5-invariance-under-the-choice-of-quad",
      "title": "Invariance under the choice of quad",
-     "prose_ratio": 0.938,
-     "coverage_ratio": 0.918,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-009-6-invariance-under-pachner-moves",
      "title": "Invariance under Pachner moves",
-     "prose_ratio": 0.643,
-     "coverage_ratio": 0.892,
+     "prose_ratio": 0.763,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

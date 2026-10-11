@@ -7,10 +7,10 @@ section_number: 4
 pages: 9-15
 source_pdf: 2507.12454v1.pdf
 source_sha256: 156fd9080847b4e7
-text_source: latex
-latex_prose_ratio: 0.926
-latex_coverage_ratio: 0.965
 doc_brief: "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of"
+text_source: latex
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 0.976
 ---
 Having defined our basic object of study, we explain some important structural results.
 
@@ -25,57 +25,55 @@ Furthermore, these Higgs bundles are required to be endowed with *parabolic stru
 <figure id="fig:nonabelian hodge">
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Local systems</th>
 <th style="text-align: center;">Higgs bundles</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;"><span class="math inline"><em>π</em><sub>1</sub>(<em>C</em>) → GL<sub><em>n</em></sub>(ℂ)</span></td>
-<td style="text-align: center;"><span class="math inline">(ℰ, <em>θ</em>)</span>: <span class="math inline">ℰ</span> algebraic vector bundle on <span class="math inline"><em>C</em></span>,</td>
+<td style="text-align: center;"><span class="math inline">(ℰ,<em>θ</em>)</span>: <span class="math inline">ℰ</span> algebraic vector bundle on <span class="math inline"><em>C</em></span>,</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;"></td>
 <td style="text-align: center;"><span class="math inline"><em>θ</em> : ℰ → ℰ ⊗ <em>ω</em><sub><em>C</em></sub></span> Higgs field</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">punctures, <span class="math inline"><em>J</em><sub><em>i</em></sub></span></td>
 <td style="text-align: center;">parabolic structure, stability</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;"><span class="math inline"><em>X</em><sub><em>B</em></sub></span> “Betti” moduli space</td>
 <td style="text-align: center;"><span class="math inline"> ≅ <em>X</em><sub><em>D</em></sub></span> “Dolbeault” moduli space</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;"></td>
 <td style="text-align: center;"><img src="hitchin.png" style="width:4.5cm" alt="image" /></td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">affine algebraic variety</td>
 <td style="text-align: center;">Hitchin system <span class="math inline"><em>X</em><sub><em>D</em></sub> → ℂ<sup>dimension/2</sup></span></td>
 </tr>
-<tr>
-<td style="text-align: center;">Cohomology ring <span class="math inline"><em>H</em><sup>*</sup>(<em>X</em><sub><em>B</em></sub>, ℂ)</span></td>
+<tr class="odd">
+<td style="text-align: center;">Cohomology ring <span class="math inline"><em>H</em><sup>*</sup>(<em>X</em><sub><em>B</em></sub>,ℂ)</span></td>
 <td style="text-align: center;">the same ring</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Weight “W” filtration <span class="math inline"><em>W</em><sub>*</sub><em>H</em><sup>*</sup></span></td>
 <td style="text-align: center;">perverse “P” filtration</td>
 </tr>
 </tbody>
 </table>
-<figcaption><span id="fig:nonabelian hodge" data-label="fig:nonabelian hodge"></span>Non-abelian Hodge correspondence</figcaption>
+<figcaption><span id="fig:nonabelian hodge" label="fig:nonabelian hodge"></span>Non-abelian Hodge correspondence</figcaption>
 </figure>
 
 ## Generators of $H^*(X)$
 
 Generators of the cohomology ring are known. There is a general argument in [@markman2002generators] concerning moduli spaces of sheaves on surfaces. With a little modification it can be applied to the situation of parabolic Higgs bundles. Basically speaking, certain Chern class of the complex of vector bundles on $X_D\times X_D$ computing the derived $\mathop{\mathrm{Hom}}$ between Higgs bundles is a multiple of the diagonal class. Moreover, there exists a compactification $\overline{X_D}\supset X_D$ such that the complex extends to $X_D\times \overline{X_D}$ and the Chern class remains a multiple of the diagonal class. Thus the identity map $H^*(X_D)\to H^*(X_D)$ can be written in terms of the tautological classes.
 
-Consider the tautological bundle[^1] $\mathcal{E}\to X_D\times C$. For each $i\in\{0,1,2\}$, $\xi\in H^i(C)$ and $m\in\mathbb Z_{\geq 0}$ define $$\begin{equation}
-\label{eq:definition e}
-        e_m(\xi):=(\pi_X)_*( c_m(\mathcal{E}) \cup \xi)\in H^{2m+i-2}(X_D).
-\end{equation}$$ Here $c_m(\mathcal{E})\in H^{2m}(X_D\times C)$ is the Chern class and $\pi_{X}$ is the projection $X_D\times C\to X_D$. If we have a marked point $t_j$, then each point of $X_D$ gives a flag $0=F_{j0}\subset F_{j1} \subset\cdots\subset F_{j r_j} = \mathcal E(t_j)$. Each subquotient of the flag produces a vector bundle on $X_D$ and we take its Chern classes $c_{m,j,\ell} := c_m(F_{j \ell} / F_{j \ell-1})$.
+Consider the tautological bundle[^1] $\mathcal{E}\to X_D\times C$. For each $i\in\{0,1,2\}$, $\xi\in H^i(C)$ and $m\in\mathbb Z_{\geq 0}$ define $$\label{eq:definition e}
+        e_m(\xi):=(\pi_X)_*( c_m(\mathcal{E}) \cup \xi)\in H^{2m+i-2}(X_D).$$ Here $c_m(\mathcal{E})\in H^{2m}(X_D\times C)$ is the Chern class and $\pi_{X}$ is the projection $X_D\times C\to X_D$. If we have a marked point $t_j$, then each point of $X_D$ gives a flag $0=F_{j0}\subset F_{j1} \subset\cdots\subset F_{j r_j} = \mathcal E(t_j)$. Each subquotient of the flag produces a vector bundle on $X_D$ and we take its Chern classes $c_{m,j,\ell} := c_m(F_{j \ell} / F_{j \ell-1})$.
 
 ::: theorem
 The cohomology ring $H^*(X_D)$ is generated by the classes $e_m(\xi)$ and $c_{m,j,\ell}$.
@@ -124,24 +122,18 @@ Similar curious hard Lefschetz property holds for a certain version of the Khova
 ## Partition function
 
 Perhaps the biggest problem in the field that still remains open is the conjectural formula for the generating function of the mixed Hodge polynomials of all character varieties given in [@hausel2011arithmetic] in terms of a partition function. Here $k$ (the number of marked points) and $g$ are fixed. For each $i=1,\ldots,k$ let $\mathbf{x}_i:=(x_{i1},x_{i2},\ldots)$ be an infinite sequence of variables. Suppose we have a sequence $\boldsymbol\mu_i:=(\mu_{i1},\mu_{i2},\ldots)$ of non-negative integers with $\sum_{j}\mu_{ij}=n$. To this we associate a conjugacy class $J_{\mu_i}$ of the diagonal matrix with eigenvalues having multiplicities $\mu_{i1},\mu_{i2},\ldots$. For a tuple of such sequences $\boldsymbol{\mu}=(\mu_1,\ldots,\mu_k)$ we choose the eigenvalues arbitrarily so that the conjugacy classes satisfy the genericity condition (Definition [\[def:generic\]](#def:generic){reference-type="ref" reference="def:generic"}) and consider the corresponding character variety $X_{g;J_{\mu_1},\cdots,J_{\mu_{k}}}$. We take its mixed Hodge polynomial (Section [\[ssec:mixed hodge polynomial\]](#ssec:mixed hodge polynomial){reference-type="ref" reference="ssec:mixed hodge polynomial"}) with weight $$\mathbf{x}^{\boldsymbol\mu}:=\prod_{i=1}^k \prod_j x_{ij}^{\mu_{ij}}.$$ The result is a symmetric function in each sequence of variables $\mathbf{x}_i$ whose coefficients are polynomials in $q$ and $t$: $$\mathrm{MH}_{g,k}(\mathbf{x}_1,\ldots,\mathbf{x}_k; q,t) :=
-    \sum_{n=1}^\infty \sum_{ \mu_1, \dots, \mu_{k} \vdash n} \mathrm{MH}(X_{g;J_{\mu_1},\cdots,J_{\mu_{k}}};q,t) \; \mathbf{x}^{\boldsymbol\mu}.$$ On the other hand, we define the *partition function* $$\begin{equation}
-\label{eq:partition function}
+    \sum_{n=1}^\infty \sum_{ \mu_1, \dots, \mu_{k} \vdash n} \mathrm{MH}(X_{g;J_{\mu_1},\cdots,J_{\mu_{k}}};q,t) \; \mathbf{x}^{\boldsymbol\mu}.$$ On the other hand, we define the *partition function* $$\label{eq:partition function}
         \Omega_{g,k}(\mathbf{x}_1,\ldots,\mathbf{x}_{k}; q,t) 
         :=\sum_{n=0}^\infty \sum_{\lambda\vdash n} \tilde H_\lambda(\mathbf{x}_1;q,t) \cdots \tilde H_\lambda(\mathbf{x}_k;q,t)
-        \prod_{\square\in\lambda}\frac{\left(q^{a(\square)+1/2} - t^{\ell(\square)+1/2}\right)^{2g}}{(q^{a(\square)} - t^{\ell(\square)+1})(q^{a(\square)+1} - t^{\ell(\square)})},
-\end{equation}$$ where $\lambda$ goes over all partitions (Young diagrams), $\tilde H_\lambda(\mathbf{x}_k;q,t)$ denotes the *modified Macdonald polynomial*, the product goes over the cells of the Young diagram, and $a,\ell$ denote the usual arms and legs statistics (see [@garsia1996remarkable]).
+        \prod_{\square\in\lambda}\frac{\left(q^{a(\square)+1/2} - t^{\ell(\square)+1/2}\right)^{2g}}{(q^{a(\square)} - t^{\ell(\square)+1})(q^{a(\square)+1} - t^{\ell(\square)})},$$ where $\lambda$ goes over all partitions (Young diagrams), $\tilde H_\lambda(\mathbf{x}_k;q,t)$ denotes the *modified Macdonald polynomial*, the product goes over the cells of the Young diagram, and $a,\ell$ denote the usual arms and legs statistics (see [@garsia1996remarkable]).
 
 ::: conjecture
-[]{#conj:partition function conjecture label="conj:partition function conjecture"} $$\begin{equation}
-\label{eq:partition function conjecture}
-            \Omega_{g,k} = \mathop{\mathrm{Exp}}\;\left(-\frac{\mathrm{MH_{g,k}}}{(q-1)(t-1)}\right).
-\end{equation}$$
+[]{#conj:partition function conjecture label="conj:partition function conjecture"} $$\label{eq:partition function conjecture}
+            \Omega_{g,k} = \mathop{\mathrm{Exp}}\;\left(-\frac{\mathrm{MH_{g,k}}}{(q-1)(t-1)}\right).$$
 :::
 
-Here $\mathop{\mathrm{Exp}}$ denotes the *plethystic exponential*. It can be defined for any expression involving some variables $a,b,c,\ldots$ as follows: $$\mathop{\mathrm{Exp}}(f(a,b,c,\ldots)) := \exp\left(\sum_{n=1}^\infty \frac{f(a^n,b^n,c^n,\ldots)}{n}\right).$$ If $a,b,c,\ldots$ are monomials in some variables, then we have $$\mathop{\mathrm{Exp}}(a+b+c+\cdots) = \frac{1}{1-a} \; \frac{1}{1-b} \; \frac{1}{1-c} \; \cdots,$$ so plethystic exponential can be thought of as the conversion between infinite sums and infinite products. There is an inverse operation $\mathop{\mathrm{Log}}$ called the *plethystic logarithm*. So if we focus on computing the mixed Hodge polynomials from [\[eq:partition function conjecture\]](#eq:partition function conjecture){reference-type="eqref" reference="eq:partition function conjecture"}, we can write $$\begin{equation}
-\label{eq:partition function logarithm}
-        \mathrm{MH_{g,k}} = -(1-q)(1-t) \mathop{\mathrm{Log}}\Omega_{g,k}.
-\end{equation}$$
+Here $\mathop{\mathrm{Exp}}$ denotes the *plethystic exponential*. It can be defined for any expression involving some variables $a,b,c,\ldots$ as follows: $$\mathop{\mathrm{Exp}}(f(a,b,c,\ldots)) := \exp\left(\sum_{n=1}^\infty \frac{f(a^n,b^n,c^n,\ldots)}{n}\right).$$ If $a,b,c,\ldots$ are monomials in some variables, then we have $$\mathop{\mathrm{Exp}}(a+b+c+\cdots) = \frac{1}{1-a} \; \frac{1}{1-b} \; \frac{1}{1-c} \; \cdots,$$ so plethystic exponential can be thought of as the conversion between infinite sums and infinite products. There is an inverse operation $\mathop{\mathrm{Log}}$ called the *plethystic logarithm*. So if we focus on computing the mixed Hodge polynomials from [\[eq:partition function conjecture\]](#eq:partition function conjecture){reference-type="eqref" reference="eq:partition function conjecture"}, we can write $$\label{eq:partition function logarithm}
+        \mathrm{MH_{g,k}} = -(1-q)(1-t) \mathop{\mathrm{Log}}\Omega_{g,k}.$$
 
 ## What is known?
 

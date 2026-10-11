@@ -7,10 +7,10 @@ section_number: null
 pages: 1-6
 source_pdf: 1304.0323v3.pdf
 source_sha256: 92e2b9dc876e1a52
-text_source: latex
-latex_prose_ratio: 0.921
-latex_coverage_ratio: 0.897
 doc_brief: "SYMMETRIC QUIVER HECKE ALGEBRAS — Let J be a set of pairs consisting of good U ′ q(g)-modules and invertible elements in the base ﬁeld C(q)."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The {\em \KLRs}\ (sometimes called the {\em quiver Hecke algebras})  are
 a family of $\mathbb Z$-graded algebras which {\em categorifies}

@@ -818,8 +818,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "all.tex",
-   "tex_sections": 4,
-   "overlaid": 1,
+   "tex_sections": 16,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -829,21 +829,26 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.962,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-1-dehn-twists-and-all-that",
      "title": "Dehn twists, and all that",
-     "prose_ratio": 0.089,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-11-exact-symplectic-geometry-and-\ufb01brations",
      "title": "Exact symplectic geometry and \ufb01brations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.609,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-12-the-local-model",
@@ -868,7 +873,7 @@
     {
      "id": "sec-007-2-pseudo-holomorphic-sections",
      "title": "Pseudo-holomorphic sections",
-     "prose_ratio": 0.098,
+     "prose_ratio": 0.084,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {

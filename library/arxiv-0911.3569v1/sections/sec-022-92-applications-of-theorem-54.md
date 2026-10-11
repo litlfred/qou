@@ -8,71 +8,100 @@ pages: 27-29
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
 doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
+text_source: latex
+latex_prose_ratio: 0.979
+latex_coverage_ratio: 0.903
 ---
-anaogue of the multiplier sequences studied by P´ olya and Schur. Letλ : Nm→ R,
-and deﬁne a linear transformation Tλ : C[x]→ C[x] by Tλ(xα) = λ(α)xα for all
-α∈ Nm, and linear extension. For which λ does Tλ preserve real stability? The
-answer: just the ones you get from the P´ olya-Schur Theorem, and no more.
-Theorem 9.3 (Theorem 1.8 of [4].) . Let λ : Nm→ R. Then Tλ preserves real
-stability if and only if there are univariate multiplier sequences λi : N→ R for
-i∈ [m] and ϵ∈{− 1, +1} such that
-λ(α) =λ1(α(1))··· λm(α(m))
-for all α∈ Nm, and either ϵ|α|λ(α)≥ 0 for all α∈ Nm, or ϵ|α|λ(α)≤ 0 for all
-α∈ Nm.
-Theorem 5.4 (and similarly Propositions 9.1 and 9.2) can be used to derive a
-wide variety of results of the form: such-and-such an operation preserves stability
-(or Schur or Hurwitz stability). Here is a short account of Hinkkanen’s proof of the
-Lee-Yang Circle Theorem, taken from Section 8 of [6].
-28 DAVID G. WAGNER
-Forf,g ∈ C[x]MA, say f =∑
-S⊆[m]a(S)xS and g =∑
-S⊆[m]b(S)xS, let
-f•g =
-∑
-S⊆[m]
-a(S)b(S)xS
-be the Schur-Hadamard product of f and g.
-Theorem 9.4 (Hinkkanen, Theorem 8.5 of [6]) . If f,g ∈ C[x]MA are Schur stable
-then f•g is Schur stable.
-Proof. Let Tg : C[x]MA→ C[x]MA be deﬁned by f ↦→ f•g. By Proposition 9.1,
-to show that Tg preserves Schur stability it suﬃces to show that Tg((1 + xy)[m])
-is Schur stable. Clearly Tg((1 + xy)[m]) = g(x1y1,...,x mym) is Schur stable since
-g(x) is. Hence Tg preserves Schur stability, and so f•g is Schur stable. □
-Theorem 9.5 (Lee-Yang Circle Theorem, Theorem 8.4 of [6]) . LetA = (aij) be a
-Hermitian m-by-m matrix with|aij|≤ 1 for all i,j ∈ [m]. Then the polynomial
-f(x) =
-∑
-S⊆[m]
-xS∏
-i∈S
-∏
-j⁄∈S
-aij
-is Schur stable. The diagonalization g(x) = f(x,...,x ) is such that xmg(1/x) =
-g(x), and it follows that all roots of g(x) are on the unit circle.
-Proof. Fori<j in [m] let
-fij = (1 +aijxi +aijxj +xixj)
-∏
-h∈[m]r{i,j}
-(1 +xh).
-One can check that each fij is Schur stable. The polynomial f(x) is the Schur-
-Hadamard product of all the fij for{i,j}⊆ [m]. By Theorem 9.4, f(x) is Schur
-stable. □
-Section 8 of [6] contains many many more results of this nature.
-9.3. A converse to the Grace-Walsh-Szeg˝ o Theorem.The argument of Sec-
-tions 4.2 and 4.3 can be used to prove the following.
-Exercise 9.6. If f∈ S[x]MA is multiaﬃne and stable then
-TS(m)(f) = 1
-m!
-∑
-σ∈S(m)
-σ(f)
-is multiaﬃne and stable.
-This is in fact equivalent to the GWS Theorem, since for all f ∈ C[x]MA,
-TS(m)f(x) = Polmf(x,...,x ). For which transitive permutation groups G≤ S(m)
-does the linear transformation TG =|G|−1∑
-σ∈Gσ preserve stability? The answer:
-not many, and they give nothing new.
-Theorem 9.7 (Theorem 6 of [9].). LetG≤ S(m) be a transitive permutation group
-such that TG preserves stability. Then TG =TS(m).
-MULTIVARIATE STABLE POLYNOMIALS 29
+It is natural to consider a multivariate anaogue of the multiplier sequences
+studied by P\'olya and Schur.  Let $\lambda:\NN^m\goesto\RR$, and define
+a linear transformation $T_\lambda:\CC[\x]\goesto\CC[\x]$ by
+$T_\lambda(\x^\alpha)= \lambda(\alpha)\x^\alpha$ for all $\alpha\in\NN^m$,
+and linear extension.  For which $\lambda$ does $T_{\lambda}$
+preserve real stability?  The answer:\  just the ones you get from
+the P\'olya-Schur Theorem, and no more.
+
+\begin{theorem}[Theorem 1.8 of \cite{BB4}.]
+Let $\lambda:\NN^m\goesto\RR$.  Then $T_\lambda$ preserves real stability if
+and only if there are univariate multiplier sequences $\lambda_i:\NN\goesto\RR$
+for $i\in[m]$ and $\epsilon\in\{-1,+1\}$ such that
+$$
+\lambda(\alpha) = \lambda_1(\alpha(1))\cdots\lambda_m(\alpha(m))
+$$
+for all $\alpha\in\NN^m$, and either
+$\epsilon^{|\alpha|}\lambda(\alpha)\geq 0$ for all $\alpha\in\NN^m$, or
+$\epsilon^{|\alpha|}\lambda(\alpha)\leq 0$ for all $\alpha\in\NN^m$.
+\end{theorem}
+
+Theorem 5.4 (and similarly Propositions 9.1 and 9.2) can be used to derive
+a wide variety of results of the form:\ such-and-such an operation
+preserves stability (or Schur or Hurwitz stability).  Here is a short
+account of Hinkkanen's proof of the Lee-Yang Circle Theorem, taken
+from Section 8 of \cite{BB6}.
+
+For $f,g\in\CC[\x]^\ma$, say $f=\sum_{S\subseteq[m]} a(S)\x^S$ and
+$g=\sum_{S\subseteq[m]} b(S)\x^S$, let
+$$
+f\bullet g = \sum_{S\subseteq[m]} a(S)b(S) \x^S
+$$
+be the \emph{Schur-Hadamard product} of $f$ and $g$.
+
+\begin{theorem}[Hinkkanen, Theorem 8.5 of \cite{BB6}]
+If $f,g\in\CC[\x]^\ma$ are Schur stable then $f\bullet g$ is Schur
+stable.
+\end{theorem}
+\begin{proof}
+Let $T_g:\CC[\x]^\ma\goesto\CC[\x]^\ma$ be defined by $f\mapsto f\bullet g$.
+By Proposition 9.1, to show that
+$T_g$ preserves Schur stability it suffices to show that $T_g((\one+\x\y)^{[m]})$
+is Schur stable.  Clearly $T_g((\one+\x\y)^{[m]}) = g(x_1 y_1,...,x_m y_m)$
+is Schur stable since $g(\x)$ is.  Hence $T_g$ preserves Schur stability,
+and so $f\bullet g$ is Schur stable.
+\end{proof}
+
+\begin{theorem}[Lee-Yang Circle Theorem, Theorem 8.4 of \cite{BB6}]
+Let $A=(a_{ij})$ be a Hermitian $m$-by-$m$ matrix with $|a_{ij}|\leq 1$
+for all $i,j\in[m]$.  Then the polynomial
+$$
+f(\x) = \sum_{S\subseteq[m]}\x^S \prod_{i\in S}\prod_{j\not\in S} a_{ij}
+$$
+is Schur stable.  The diagonalization $g(x)=f(x,...,x)$ is such that
+$x^m g(1/x) = g(x)$, and it follows that all roots of
+$g(x)$ are on the unit circle.
+\end{theorem}
+\begin{proof}
+For $i<j$ in $[m]$ let
+$$
+f_{ij} = (1+a_{ij} x_i + \overline{a_{ij}} x_j + x_i x_j)
+\prod_{h\in[m]\drop\{i,j\}} (1+x_h).
+$$
+One can check that each $f_{ij}$ is Schur stable.  The polynomial $f(\x)$
+is the Schur-Hadamard product of all the
+$f_{ij}$ for $\{i,j\}\subseteq[m]$.  By Theorem 9.4, $f(\x)$ is Schur stable.
+\end{proof}
+
+Section 8 of \cite{BB6} contains many many more results of this nature.
+
+
+
+\subsection{A converse to the Grace-Walsh-Szeg\H{o} Theorem.}
+
+The argument of Sections 4.2 and 4.3 can be used to prove the following.
+
+\begin{exercise}
+If $f\in\Stab[\x]^\ma$ is multiaffine and stable then
+$$
+T_{\S(m)} (f) = \frac{1}{m!} \sum_{\sigma\in\S(m)} \sigma(f)
+$$
+is multiaffine and stable.
+\end{exercise}
+
+This is in fact equivalent to the GWS Theorem,
+since for all $f\in\CC[\x]^{\ma}$, $T_{\S(m)}f(\x) = \Pol_{m} f(x,\ldots,x)$.
+For which transitive permutation groups $G\leq\S(m)$ does
+the linear transformation $T_G = |G|^{-1}\sum_{\sigma\in G}\sigma$
+preserve stability?  The answer:\ not many, and they give nothing new.
+
+\begin{theorem}[Theorem 6 of \cite{BW}.]
+Let $G\leq\S(m)$ be a transitive permutation group such that
+$T_G$ preserves stability.  Then $T_G=T_{\S(m)}$.
+\end{theorem}

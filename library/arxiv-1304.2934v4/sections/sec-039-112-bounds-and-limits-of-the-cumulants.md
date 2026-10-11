@@ -8,287 +8,101 @@ pages: 93-96
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
 doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
+text_source: latex
+latex_prose_ratio: 0.92
+latex_coverage_ratio: 0.961
 ---
-11.2.1. The dependency graph for random character values. If k =|µ|, we are interested in
-the non-commutative random variables
-Σµ,n = ∑
-A∈A(n,k)
-ρµ(A)∈ CS(n).
-Again, to control the cumulants, we shall exhibit a dependency graph for the families
-of random variables{ρµ(A)}A∈A(n,k).
-Due to the multiplicative form of Equation (52), if I and J have disjoint subsets of
-[n], the subalgebras CS(I) and CS(J) are tensor independent (here, S(I) denotes the
-group of permutations ofI, canonically included inS(n)). Therefore, one can associate
-to{ρµ(A)}A∈A(n,k) the dependency graph B deﬁned by:
-• its vertex set is A(n, k);
-• there is an edge between A and A′ if|A∩ A′|≥ 1.
-The graph B is obviously regular with degree strictly smaller than k2 n↓k−1. On the
-other hand, all joint moments of the family (ρµ(A))A∈A(n,k) are normalized characters
-of single permutations and hence bounded by 1 in absolute value. So one can once
-again apply Theorem 9.7 and we get:
-Proposition 11.10. Fix a partition µ of size k. For any r≤ 1, one has
-⏐⏐κ(r)(Σµ)
-⏐⏐≤ 2r−1rr−2 n↓k (k2n↓k−1)r−1;
-⏐⏐κ(r)(X(n)
-ρµ )
-⏐⏐≤ rr−2
-(2k2
-n
-)r−1
-.
-Remark 11.11. Using Theorem 9.11, one can also obtain a bound for joint cumulants of
-the X(n)
-ρµ , namely,
-⏐⏐⏐κ
-(
-X(n)
-ρµ1, . . . ,X(n)
-ρµr
-)⏐⏐⏐≤ k1··· kr
-(
-r· max
-1≤i≤r
-ki
-)r−2
-( 2
-n
-)r−1
-for integer partitions µ1, . . . ,µr of sizes k1, . . . ,kr. In the following, we shall focus
-on the case of simple random variables X(n)
-ρµ , though most results also hold in the
-multi-dimensional setting. Actually, in order to compute the asymptotics of the ﬁrst
-cumulants of Xρµ, it will be a bit clearer to manipulate joint cumulants of variables
-Σµ1, . . . ,Σµr with arbitrary integer partitions.
-94 VALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI
-11.2.2. Limits of the second and third cumulants. Because of Lemma 11.9 and Proposition
-11.10, for any ﬁxed integer partitions,
-κ
-(
-X(n)
-ρµ1, . . . ,X(n)
-ρµr
-)
-n1−r≃ κ
-(
-Σµ1, . . . ,Σµr
-)
-nk1+···+kr−(r−1)
-converges to a constant. Let us compute this limit when r = 2 or 3; we use the same
-reasoning as in Section 10.3.2.
-As κ is invariant by simultaneous conjugacy of its arguments, the summand in
-Equation (53) depends only on the graph G = GA associated to the collection A =
-(A1, . . . ,Ar), and we shall denote it κ(G). We ﬁx partitions µ1, . . . ,µr of respective
-sizes k1, . . . ,kr, and write
-κ(Σµ1, . . . ,Σµr ) = ∑
-G
-κ(G) NG.
-Here, as in Section 10, NG denotes the number of list A of arrangements with associ-
-ated graph G.
-When r = 2, we have to look for graphs G on vertex set Vk = [ k1]⊔ [k2] with 1-
-contraction connected and at least k1 + k2− 1 connected components, because these
-are the ones that will give a contribution for the coefﬁcient of nk1+k2−1. For i∈ [𝓁(µ1)]
-and j∈ [𝓁(µ2)], denote
-(µ1⋊ ⋉µ2)(i, j) = ( µ1\ µ1
-i )⊔ (µ2\ µ2
-j )⊔{ µ1
-i + µ2
-j− 1}.
-This is the cycle type of a permutation ρµ1(A1) ρµ2(A2), where GA is the graph with
-one edge joining an element of A1 in the cycle of length µ1
-i with an element of A2 in the
-cycle of length µ2
-j . These graphs are the only ones involved in our computation, and
-they yield
-κ(G) = p(µ1⋊ ⋉µ2)(i,j)(ω)− pµ1⊔µ2(ω),
-where for a partition µ we denote pµ(ω) the product ∏
-𝓁(µ)
-i=1 pµi (ω). So,
-Proposition 11.12. For any partitions µ and ν, the limit of n κ(X(n)
-ρµ , X(n)
-ρν ) is
-𝓁(µ)
-∑
-i=1
-𝓁(ν)
-∑
-j=1
-µi νj
-(
-p(µ⋊ ⋉ν)(i,j)(ω)− pµ⊔ν(ω)
-)
-.
-In particular, for cycles µ = (k) and ν = (l),
-lim
-n→∞
-n κ
-(
-X(n)
-k , X(n)
-l
-)
-= kl
-(
-pk+l−1(ω)− pk,l(ω)
-)
-.
-On the other hand, if µ = ν, then the limit of n κ(2)(X(n)
-ρµ ) is
-(pµ(ω))2
-∑
-1≤i,j≤𝓁(µ)
-µi µj
-( p(µiµj−1)(ω)
-pµi (ω) pµj(ω)− 1
-)
-.
-When r = 3, we look for graphs G on vertex set Vk = [ k1]⊔ [k2]⊔ [k3] with 1-
-contraction connected and at least k1 + k2 + k3− 2 connected components. They are of
-three kinds:
-MOD-φ CONVERGENCE, I 95
-(1) One cycle in ρµ2(A2) is connected to two cycles in ρµ1(A1) and ρµ3(A3), but not
-by the same point in this cycle ofρµ2(A2). This gives for ρµ1(A1) ρµ2(A2) ρµ3(A3)
-a permutation of cycle type
-(µ1⋊ ⋉µ2⋊ ⋉µ3)(i, j, k) = ( µ1\ µ1
-i )⊔ (µ2\ µ2
-j )⊔ (µ3\ µ3
-k)⊔{ µ1
-i + µ2
-j + µ3
-k− 2};
+\label{subsec:boundcumulantchmu} 
+
+\subsubsection{The dependency graph for random character values} If $k=|\mu|$, we are interested in the non-commutative random variables
+$$\varSigma_{\mu,n}=\sum_{A \in \arr(n,k)} \rho_{\mu}(A) \in \C\sym(n).$$
+Again, to control the cumulants, we shall exhibit a dependency graph for the families of random variables $\{\rho_{\mu}(A)\}_{A \in \arr(n,k)}$.
+
+Due to the multiplicative form of Equation \eqref{eq:def_tau_omega}, if $I$ and $J$ have disjoint subsets of $[n]$, the subalgebras $\C\sym(I)$ and $\C\sym(J)$ are tensor independent (here, $\sym(I)$ denotes the group of permutations of $I$, canonically included in $\sym(n)$). Therefore, one can associate to $\{\rho_{\mu}(A)\}_{A \in \arr(n,k)}$
+the dependency graph $\B$ defined by: \vspace{2mm}
+\begin{itemize}
+    \item its vertex set is $\arr(n,k)$;\vspace{2mm}
+    \item there is an edge between $A$ and $A'$ if  $|A \cap A'| \ge 1$.\vspace{2mm}
+\end{itemize}
+The graph $\B$ is obviously regular with degree strictly smaller than $k^{2}\,n\fall{k-1}$. On the other hand, all joint moments of the family $(\rho_{\mu}(A))_{A \in \arr(n,k)}$ are normalized characters of single permutations and hence bounded by $1$ in absolute value. So one can once again apply Theorem \ref{thm:dependencygraphsrefined} and we get:
+
+\begin{proposition}\label{prop:boundcumulantcharacter} 
+Fix a partition $\mu$ of size $k$. For any $r\le 1$, one has
+\begin{align*} 
+\big| \kappa^{(r)}(\varSigma_\mu) \big| &\le 2^{r-1} r^{r-2}\,  n\fall k\, (k^{2} n\fall{k-1})^{r-1};\\
+\big| \kappa^{(r)}(\SubGraph_{\rho_\mu}) \big| &\le r^{r-2}\,  \left(\frac{2k^{2}}{n} \right)^{r-1}.
+\end{align*}
+\end{proposition}
+
+\begin{remark}
+Using Theorem~\ref{thm:boundjointcumulant}, one can also obtain a bound for joint cumulants of the $\SubGraph_{\rho_\mu}$, namely,
+$$\left| \kappa\!\left (\SubGraph_{\rho_{\mu^{1}}},\dots,\SubGraph_{\rho_{\mu^{r}}}\right) \right| \le k_1 \cdots k_r\, \big(r \cdot \max_{1 \le i \le r} k_i \big)^{r-2} \, \left(\frac{2}{n}\right)^{r-1}$$
+for integer partitions $\mu^1,\dots,\mu^r$ of sizes $k_1,\ldots,k_r$. In the following, we shall focus on the case of simple random variables $\SubGraph_{\rho_{\mu}}$, though most results also hold in the multi-dimensional setting. Actually, in order to compute the asymptotics of the first cumulants of $X_{\rho_{\mu}}$, it will be a bit clearer to manipulate joint cumulants of variables $\varSigma_{\mu^{1}},\ldots,\varSigma_{\mu^{r}}$ with arbitrary integer partitions.
+\end{remark}
+\bigskip
+
+
+
+\subsubsection{Limits of the second and third cumulants}\label{subsubsec:limitchar_K2K3}
+Because of Lemma \ref{lem:cumulantcharacterpoly} and Proposition \ref{prop:boundcumulantcharacter}, for any fixed integer partitions, $$\kappa\left(\SubGraph_{\rho_{\mu^{1}}},\dots,\SubGraph_{\rho_{\mu^{r}}}\right)\,n^{1-r}\simeq \kappa\left(\varSigma_{\mu^{1}},\ldots,\varSigma_{\mu^{r}}\right)\,n^{k_{1}+\cdots+k_{r}-(r-1)}$$ converges to a constant. Let us compute this limit when $r=2$ or $3$; we use the same reasoning as in Section \ref{subsec:sigma_L}.\bigskip
+
+As $\kappa$ is invariant by simultaneous conjugacy of its arguments, the summand in Equation \eqref{eq:listequality} depends only on the graph $G=G_{\AA}$ associated to the collection $\AA=(A^1,\dots,A^r)$, and we shall denote it $\kappa(G)$.  We fix partitions $\mu^{1},\ldots,\mu^{r}$ of respective sizes $k_{1},\ldots,k_{r}$, and write $$\kappa(\varSigma_{\mu^{1}},\ldots,\varSigma_{\mu^{r}})=\sum_{G}\, \kappa(G)\,N_{G}.$$ 
+Here, as in Section~\ref{sec:erdosrenyi}, $N_G$ denotes the number of list $\AA$ of arrangements with associated graph $G$.\medskip
+
+When $r=2$, we have to look for graphs $G$ on vertex set $V_{\Bbbk}=[k_{1}]\sqcup [k_{2}]$ with $1$-contraction connected and at least $k_{1}+k_{2}-1$ connected components, because these are the ones that will give a contribution for the coefficient of $n^{k_{1}+k_{2}-1}$. For $i \in [\ell(\mu^{1})]$ and $j \in [\ell(\mu^{2})]$, denote $$(\mu^{1} \Join \mu^{2} )(i,j)=(\mu^{1} \setminus \mu_{i}^{1})\sqcup(\mu^{2} \setminus \mu_{j}^{2}) \sqcup \{\mu_{i}^{1}+\mu_{j}^{2}-1\}.$$ This is the cycle type of a permutation $\rho_{\mu^{1}}(A^{1})\,\rho_{\mu^{2}}(A^{2})$, where $G_{\AA}$ is the graph with one edge joining an element of $A^{1}$ in the cycle of length $\mu^{1}_{i}$ with an element of $A^{2}$ in the cycle of length $\mu^{2}_{j}$. These graphs are the only ones involved in our computation, and they yield 
+$$\kappa(G)=p_{(\mu^{1} \Join \mu^{2} )(i,j)}(\omega)-p_{\mu^{1}\sqcup\mu^{2}}(\omega),$$
+where for a partition $\mu$ we denote $p_{\mu}(\omega)$ the product $\prod_{i=1}^{\ell(\mu)}p_{\mu_{i}}(\omega)$. So,
+
+\begin{proposition}
+For any partitions $\mu$ and $\nu$, the limit of $n\,\kappa(\SubGraph_{\rho_\mu},\SubGraph_{\rho_\nu})$ is 
+$$\sum_{i=1}^{\ell(\mu)}\sum_{j=1}^{\ell(\nu)} \,\mu_{i}\,\nu_{j}\,\big(p_{(\mu\Join \nu)(i,j)}(\omega)-p_{\mu\sqcup\nu}(\omega)\big).$$
+\end{proposition}
+
+\noindent In particular, for cycles $\mu=(k)$ and $\nu=(l)$,
+$$\lim_{n \to \infty} n\,\,\kappa\!\left(\SubGraph_{k},\SubGraph_{l}\right)=kl\,\big(p_{k+l-1}(\omega)-p_{k,l}(\omega)\big).$$
+On the other hand, if $\mu=\nu$, then the limit of $n\,\kappa^{(2)}(X^{(n)}_{\rho_{\mu}})$ is
+$$(p_{\mu}(\omega))^{2}\sum_{1 \leq i,j\leq \ell(\mu)} \mu_{i}\,\mu_{j}\,\left(\frac{p_{(\mu_{i} \mu_{j}-1)}(\omega)}{p_{\mu_{i}}(\omega)\,p_{\mu_{j}}(\omega)}-1\right).$$
+\bigskip
+
+When $r=3$, we look for graphs $G$ on vertex set $V_{\Bbbk}=[k_{1}]\sqcup [k_{2}]\sqcup [k_{3}]$ with $1$-contraction connected and at least $k_{1}+k_{2}+k_{3}-2$ connected components. They are of three kinds: \vspace{2mm}
+\begin{enumerate}
+\item One cycle in $\rho_{\mu^{2}}(A^{2})$ is connected to two cycles in $\rho_{\mu^{1}}(A^{1})$ and $\rho_{\mu^{3}}(A^{3})$, but not by the same point in this cycle of $\rho_{\mu^{2}}(A^{2})$. This gives for $\rho_{\mu^{1}}(A^{1})\,\rho_{\mu^{2}}(A^{2})\,\rho_{\mu^{3}}(A^{3})$ a permutation of cycle type
+$$( \mu^{1} \Join \mu^{2} \Join \mu^{3}) (i,j,k)=(\mu^{1}\setminus \mu^{1}_{i})\sqcup (\mu^{2}\setminus \mu^{2}_{j})\sqcup (\mu^{3}\setminus \mu^{3}_{k})\sqcup\{\mu^{1}_{i}+\mu^{2}_{j}+\mu^{3}_{k}-2\};$$
 and the corresponding cumulant is
-κ(G) = pµ1⊔µ2⊔µ3(ω) + p(µ1⋊ ⋉µ2⋊ ⋉µ3)(i,j,k)(ω)
-− p((µ1⋊ ⋉µ2)(i,j))⊔µ3(ω)− p((µ2⋊ ⋉µ3)(j,k))⊔µ1(ω).
-In this description, one can permute cyclically the indices 1, 2, 3, and this gives
-3 different graphs.
-(2) One cycle in ρµ2(A2) is connected to two cycles in ρµ1(A1) and ρµ3(A3), and
-by the same point in this cycle of ρµ2(A2). In other words, there is an identity
-a1
-s = a2
-t = a3
-u. This gives again for ρµ1(A1) ρµ2(A2) ρµ3(A3) a permutation of
-cycle type (µ1 ⋊ ⋉µ2 ⋊ ⋉µ3)(i, j, k), but the corresponding cumulant takes now
-the form
-κ(G) = 2 pµ1⊔µ2⊔µ3(ω) + p(µ1⋊ ⋉µ2⋊ ⋉µ3)(i,j,k)(ω)− p((µ1⋊ ⋉µ2)(i,j))⊔µ3(ω)
-− p((µ2⋊ ⋉µ3)(j,k))⊔µ1(ω)− p((µ1⋊ ⋉µ3)(i,k))⊔µ2(ω).
-Here, there is no need to permute cyclically the indices in the enumeration for
-NG.
-(3) Two distinct cycles in ρµ2(A2) are connected to a cycle of ρµ1(A1) and to a cycle
-of ρµ3(A3), which gives a permutation of cycle type
-(µ1⋊ ⋉µ2⋊ ⋉µ3)(i, j; k, l)
-= ( µ1\ µ1
-i )⊔ (µ2\{ µ2
-j , µ2
-k})⊔ (µ3\ µ3
-l )⊔{ µ1
-i + µ2
-j− 1, µ2
-k + µ3
-l− 1}.
-The cumulant corresponding to this last case is
-κ(G) = pµ1⊔µ2⊔µ3(ω) + p(µ1⋊ ⋉µ2⋊ ⋉µ3)(i,j;k,l)(ω)
-− p((µ1⋊ ⋉µ2)(i,j))⊔µ3(ω)− p((µ2⋊ ⋉µ3)(k,l))⊔µ1(ω),
-and again one can permute cyclically the indices 1, 2, 3 to get 3 different graphs.
+\begin{align*}\kappa(G)&=p_{\mu^{1}\sqcup \mu^{2}\sqcup \mu^{3}}(\omega)+p_{(\mu^{1}\Join \mu^{2}\Join \mu^{3})(i,j,k)}(\omega) \\
+&\,\,\,\,\,\,- p_{((\mu^{1}\Join \mu^{2})(i,j)) \sqcup \mu^{3}}(\omega)-p_{((\mu^{2}\Join \mu^{3})(j,k)) \sqcup \mu^{1}}(\omega).\end{align*}
+In this description, one can permute cyclically the indices $1,2,3$, and this gives $3$ different graphs.\vspace{2mm}
+\item One cycle in $\rho_{\mu^{2}}(A^{2})$ is connected to two cycles in $\rho_{\mu^{1}}(A^{1})$ and $\rho_{\mu^{3}}(A^{3})$, and by the same point in this cycle of $\rho_{\mu^{2}}(A^{2})$. In other words, there is an identity  $a^{1}_{s}=a^{2}_{t}=a^{3}_{u}$. This gives again for $\rho_{\mu^{1}}(A^{1})\,\rho_{\mu^{2}}(A^{2})\,\rho_{\mu^{3}}(A^{3})$ a permutation of cycle type $( \mu^{1} \Join \mu^{2} \Join \mu^{3}) (i,j,k)$, but the corresponding cumulant takes now the form
+\begin{align*}\kappa(G)&=2\,p_{\mu^{1}\sqcup \mu^{2}\sqcup \mu^{3}}(\omega)+p_{(\mu^{1}\Join \mu^{2}\Join \mu^{3})(i,j,k)}(\omega) - p_{((\mu^{1}\Join \mu^{2})(i,j)) \sqcup \mu^{3}}(\omega)\\
+&\,\,\,\,\,\,-p_{((\mu^{2}\Join \mu^{3})(j,k)) \sqcup \mu^{1}}(\omega)-p_{((\mu^{1}\Join \mu^{3})(i,k)) \sqcup \mu^{2}}(\omega).\end{align*}
+Here, there is no need to permute cyclically the indices in the enumeration for $N_{G}$.\vspace{2mm}
+\item Two distinct cycles in $\rho_{\mu^{2}}(A^{2})$ are connected to a cycle of $\rho_{\mu^{1}}(A^{1})$ and to a cycle of $\rho_{\mu^{3}}(A^{3})$, which gives a permutation of cycle type
+\begin{align*}
+&( \mu^{1} \Join \mu^{2} \Join \mu^{3}) (i,j;k,l)\\
+&=(\mu^{1}\setminus \mu^{1}_{i})\sqcup (\mu^{2}\setminus \{\mu^{2}_{j},\mu^{2}_{k}\})\sqcup (\mu^{3}\setminus \mu^{3}_{l})\sqcup\{\mu^{1}_{i}+\mu^{2}_{j}-1,\mu^{2}_{k}+\mu^{3}_{l}-1\}.
+\end{align*}
+The cumulant corresponding to this last  case is
+\begin{align*}\kappa(G)&=p_{\mu^{1}\sqcup \mu^{2}\sqcup \mu^{3}}(\omega)+p_{(\mu^{1}\Join \mu^{2}\Join \mu^{3})(i,j;k,l)}(\omega)\\
+&\,\,\,\,\,\,-p_{((\mu^{1}\Join \mu^{2})(i,j)) \sqcup \mu^{3}}(\omega)-p_{((\mu^{2}\Join \mu^{3})(k,l)) \sqcup \mu^{1}}(\omega),\end{align*}
+and again one can permute cyclically the indices $1,2,3$ to get $3$ different graphs.\vspace{2mm}
+\end{enumerate}
 Consequently:
-Proposition 11.13. For any partitions µ, ν and δ, the limit of n2 κ(X(n)
-ρµ , X(n)
-ρν , X(n)
-ρδ ) is
-∑
-Z/3Z
-(𝓁(µ)
-∑
-i=1
-𝓁(ν)
-∑
-j=1
-𝓁(δ)
-∑
-k=1
-µi νj (νj− 1) δk
-( pµ⊔ν⊔δ(ω)+p(µ⋊ ⋉ν⋊ ⋉δ)(i,j,k)(ω)
-−p((µ⋊ ⋉ν)(i,j))⊔δ(ω)−p((ν⋊ ⋉δ)(j,k))⊔µ(ω)
-)
-+
-𝓁(µ)
-∑
-i=1
-𝓁(ν)
-∑
-(j⁄=k)=1
-𝓁(δ)
-∑
-l=1
-µi νj νk δl
-( pµ⊔ν⊔δ(ω)+p(µ⋊ ⋉ν⋊ ⋉δ)(i,j;k,l)(ω)
-−p((µ⋊ ⋉ν)(i,j))⊔δ(ω)−p((ν⋊ ⋉δ)(k,l))⊔µ(ω)
-)
-
-
-+
-𝓁(µ)
-∑
-i=1
-𝓁(ν)
-∑
-j=1
-𝓁(δ)
-∑
-k=1
-µi νj δk
-(2 pµ⊔ν⊔δ(ω)+p(µ⋊ ⋉ν⋊ ⋉δ)(i,j,k)(ω)−p((µ⋊ ⋉ν)(i,j))⊔δ(ω)
-−p((ν⋊ ⋉δ)(j,k))⊔µ(ω)−p((µ⋊ ⋉δ)(i,k))⊔ν(ω)
-)
-,
-where ∑Z/3Z means that one permutes cyclically the partitions µ, ν, δ.
-96 VALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI
-In particular, for cycles µ = ( k), ν = ( l) and δ = ( m), limn→∞ n2 κ(X(n)
-k , X(n)
-l , X(n)
-m ) is
-equal to
-klm
-(
-(k + l + m− 1) pk,l,m(ω) + (k + l + m− 2) pk+l+m−2(ω)
-− (k + l− 1) pk+l−1,m(ω)− (l + m− 1) pl+m−1,k(ω)− (l + m− 1) pk+m−1,l(ω)
-)
-.
-One recovers for k = l = m the values of σ2 and L announced in Theorem 11.4. On the
-other hand, if µ = ν = δ, then the limit of
-n2 κ(3)(X(n)
-ρµ )
-(pµ(ω))3 is
-∑
-1≤i,j,k≤𝓁(µ)
-3 µi µ2
-j µk
-(
-1 +
-pµi+µj+µk−2(ω)
-pµi (ω) pµj(ω) pµk (ω)−
-pµi+µj−1(ω)
-pµi (ω) pµj(ω)−
-pµj+µk−1(ω)
-pµj(ω) pµk (ω)
-)
-+ ∑
-1≤i,j⁄=k,l≤𝓁(µ)
-3 µi µj µk µl
-(
-1−
-pµi+µj−1(ω)
-pµi (ω) pµj(ω)
-)(
-1− pµk+µl−1(ω)
-pµk (ω) pµl (ω)
-)
-+ ∑
-1≤i,j,k≤𝓁(µ)
-µi µj µk
-(
-3
-pµi+µj−1(ω)
-pµi (ω) pµj(ω)− 2
-pµi+µj+µk−2(ω)
-pµi (ω) pµj(ω) pµk (ω)− 1
-)
-.
+
+\begin{proposition}
+For any partitions $\mu$, $\nu$ and $\delta$, the limit of $n^{2}\,\kappa(\SubGraph_{\rho_\mu},\SubGraph_{\rho_\nu},\SubGraph_{\rho_\delta})$ is 
+\begin{align*}\sum_{\Z/3\Z}&\left(\sum_{i=1}^{\ell(\mu)}\sum_{j=1}^{\ell(\nu)}\sum_{k =1}^{\ell(\delta)} \mu_{i}\,\nu_{j}\,(\nu_{j}-1)\,\delta_{k}\left(\substack{p_{\mu\sqcup \nu\sqcup \delta}(\omega)+p_{(\mu\Join \nu\Join \delta)(i,j,k)}(\omega)\\-p_{((\mu\Join \nu)(i,j)) \sqcup \delta}(\omega)-p_{((\nu\Join \delta)(j,k)) \sqcup \mu}(\omega)}\right)\right.\\
+&\left.+\sum_{i=1}^{\ell(\mu)}\sum_{(j\neq k) =1}^{\ell(\nu)} \sum_{l=1}^{\ell(\delta)}\mu_{i}\,\nu_{j}\,\nu_{k}\,\delta_{l}\left(\substack{ p_{\mu\sqcup \nu\sqcup \delta}(\omega)+p_{(\mu\Join \nu\Join \delta)(i,j;k,l)}(\omega)\\-p_{((\mu\Join \nu)(i,j)) \sqcup \delta}(\omega)-p_{((\nu\Join \delta)(k,l)) \sqcup \mu}(\omega)}\right) \right)\\
+&\!\!\!\!\!\!\!\!\!\!\!\!+ \sum_{i=1}^{\ell(\mu)}\sum_{j=1}^{\ell(\nu)}\sum_{k =1}^{\ell(\delta)} \mu_{i}\,\nu_{j}\,\delta_{k}\left(\substack{2\,p_{\mu\sqcup \nu\sqcup \delta}(\omega)+p_{(\mu\Join \nu\Join \delta)(i,j,k)}(\omega)-p_{((\mu\Join \nu)(i,j)) \sqcup \delta}(\omega)\\
+-p_{((\nu\Join \delta)(j,k)) \sqcup \mu}(\omega)-p_{((\mu\Join \delta)(i,k))\sqcup \nu }(\omega)}\right),\end{align*}
+where $\sum_{\Z/3\Z}$ means that one permutes cyclically the partitions $\mu,\nu,\delta$.
+\end{proposition}
+\noindent In particular, for cycles $\mu=(k)$, $\nu=(l)$ and $\delta=(m)$, $\lim_{n \to \infty} n^{2}\,\kappa(\SubGraph_{k},\SubGraph_{l},\SubGraph_{m})$ is equal to
+\begin{align*}
+klm&\big((k+l+m-1)\,p_{k,l,m}(\omega)+(k+l+m-2)\,p_{k+l+m-2}(\omega)\\
+&-(k+l-1)\,p_{k+l-1,m}(\omega)-(l+m-1)\,p_{l+m-1,k}(\omega)-(l+m-1)\,p_{k+m-1,l}(\omega)\big).
+\end{align*}
+One recovers for $k=l=m$ the values of $\sigma^{2}$ and $L$ announced in Theorem \ref{thm:modgaussianrcv}. On the other hand, if $\mu=\nu=\delta$, then the limit of $\frac{n^{2}\,\kappa^{(3)}(X_{\rho_{\mu}}^{(n)})}{(p_{\mu}(\omega))^{3}}$ is 
+\begin{align*}&\sum_{1 \leq  i,j,k \leq \ell(\mu)} 3\,\mu_{i}\,\mu_{j}^{2}\,\mu_{k}\left(1+\frac{p_{\mu_{i}+\mu_{j}+\mu_{k}-2}(\omega)}{p_{\mu_{i}}(\omega)\,p_{\mu_{j}}(\omega)\,p_{\mu_{k}}(\omega)}-\frac{p_{\mu_{i}+\mu_{j}-1}(\omega)}{p_{\mu_{i}}(\omega)\,p_{\mu_{j}}(\omega)}-\frac{p_{\mu_{j}+\mu_{k}-1}(\omega)}{p_{\mu_{j}}(\omega)\,p_{\mu_{k}}(\omega)}\right)\\
+&\quad+\sum_{1\leq i,j\neq k,l \leq \ell(\mu)}3\,\mu_{i}\,\mu_{j}\,\mu_{k}\,\mu_{l}\left( 1- \frac{p_{\mu_{i}+\mu_{j}-1}(\omega)}{p_{\mu_{i}}(\omega)\,p_{\mu_{j}}(\omega)}\right)\left(1 - \frac{p_{\mu_{k}+\mu_{l}-1}(\omega)}{p_{\mu_{k}}(\omega)\,p_{\mu_{l}}(\omega)}\right) \\
+&\quad+\sum_{1 \leq  i,j,k \leq \ell(\mu)} \mu_{i}\,\mu_{j}\,\mu_{k}\left(3\,\frac{p_{\mu_{i}+\mu_{j}-1}(\omega)}{p_{\mu_{i}}(\omega)\,p_{\mu_{j}}(\omega)}-2\,\frac{p_{\mu_{i}+\mu_{j}+\mu_{k}-2}(\omega)}{p_{\mu_{i}}(\omega)\,p_{\mu_{j}}(\omega)\,p_{\mu_{k}}(\omega)}-1\right).\end{align*}
+\bigskip

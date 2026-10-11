@@ -7,14 +7,14 @@ section_number: null
 pages: 7-13
 source_pdf: 2404.19155v2.pdf
 source_sha256: 45b9ed90006536b3
-text_source: latex
-latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.751
 doc_brief: "Octahedral coordinates from the Wirtinger presentation Calvin McPhail-Snyder Duke University calvin@sl2.site — Letρ be a representation of a knot group (or more generally, the funda- mental group of"
+text_source: latex
+latex_prose_ratio: 0.913
+latex_coverage_ratio: 0.984
 ---
 []{#sec:holonomy label="sec:holonomy"}
 
-In this section we define the holonomy representation of an octahedral coloring and show that it is compatible with our method of assigning an octahedral coloring to a shadowed decorated $\slg$-coloring, thus justifying [\[def:associated-octahedral\]](#def:associated-octahedral){reference-type="ref+label" reference="def:associated-octahedral"}. To define the holonomy we must first introduce a groupoid presentation of $\pi(D)$.
+In this section we define the holonomy representation of an octahedral coloring and show that it is compatible with our method of assigning an octahedral coloring to a shadowed decorated $\slg$-coloring, thus justifying [\[def:associated-octahedral\]](#def:associated-octahedral){reference-type="ref" reference="def:associated-octahedral"}. To define the holonomy we must first introduce a groupoid presentation of $\pi(D)$.
 
 Recall the characterization of a group $G$ as a category with a single object $\bullet$ and an invertible morphism $g : \bullet \to \bullet$ for each $g \in G$. A is the natural generalization: there can be more than one object, but all morphisms are still invertible. For example, instead of the fundamental group of a topological space with a single basepoint, one can consider a fundamental groupoid with multiple basepoints whose morphisms $p \to q$ are homotopy classes of paths from $p$ to $q$. Two paths (morphisms) $f$ and $g$ are composable only when the endpoint (codomain) of $f$ is the startpoint (domain) of $g$. For a tangle complement it is natural to put one basepoint in each region.
 
@@ -24,42 +24,43 @@ Recall the characterization of a group $G$ as a category with a single object $\
 ::: definition
 []{#def:tangle-groupoid label="def:tangle-groupoid"} Let $D$ be a tangle diagram. The $\gpoid{D}$ of $D$ has
 
-- one object (i.e. basepoint) for each region of $D$,
+-   one object (i.e.basepoint) for each region of $D$,
 
-- two generators $x_i^{\pm}$ for each segment $i$, representing paths above and below the segment (see [\[fig:tangle-groupoid-generators\]](#fig:tangle-groupoid-generators){reference-type="ref+label" reference="fig:tangle-groupoid-generators"}), and
+-   two generators $x_i^{\pm}$ for each segment $i$, representing paths above and below the segment (see [\[fig:tangle-groupoid-generators\]](#fig:tangle-groupoid-generators){reference-type="ref" reference="fig:tangle-groupoid-generators"}), and
 
-- three relations for each crossing:
+-   three relations for each crossing:
 
-  ::: marginfigure
-  :::
+    ::: marginfigure
+    :::
 
-  $$\begin{gather}
-      \label{eq:groupoid-relation-above}
-      x_1^+ x_2^+ = x_{2'}^+ x_{1'}^+
-      \\
-      \label{eq:groupoid-relation-below}
-      x_1^- x_2^- = x_{2'}^- x_{1'}^-
-      \\
-      \label{eq:groupoid-relation-thru}
-      \begin{cases}
-        x_1^{-} x_{2}^{+}
-        =
-        x_{2'}^{+} x_{1'}^{-}
-        &
-        \text{ for a positive crossing, or}
+    $$\begin{gathered}
+        \label{eq:groupoid-relation-above}
+        x_1^+ x_2^+ = x_{2'}^+ x_{1'}^+
         \\
-        x_1^{+} x_{2}^{-}
-        =
-        x_{2'}^{-} x_{1'}^{+}
-        &
-        \text{ for a negative crossing.} 
-      \end{cases}
-  \end{gather}$$ where the indices $1,2, 1', 2'$ refer to the segments at the crossing as in [\[fig:crossing-types\]](#fig:crossing-types){reference-type="ref+label" reference="fig:crossing-types"}.
+        \label{eq:groupoid-relation-below}
+        x_1^- x_2^- = x_{2'}^- x_{1'}^-
+        \\
+        \label{eq:groupoid-relation-thru}
+        \begin{cases}
+          x_1^{-} x_{2}^{+}
+          =
+          x_{2'}^{+} x_{1'}^{-}
+          &
+          \text{ for a positive crossing, or}
+          \\
+          x_1^{+} x_{2}^{-}
+          =
+          x_{2'}^{-} x_{1'}^{+}
+          &
+          \text{ for a negative crossing.} 
+        \end{cases}
+      
+    \end{gathered}$$ where the indices $1,2, 1', 2'$ refer to the segments at the crossing as in [\[fig:crossing-types\]](#fig:crossing-types){reference-type="ref" reference="fig:crossing-types"}.
 :::
 
-One can derive relations ([\[eq:groupoid-relation-above\]](#eq:groupoid-relation-above){reference-type="ref" reference="eq:groupoid-relation-above"},[\[eq:groupoid-relation-below\]](#eq:groupoid-relation-below){reference-type="ref" reference="eq:groupoid-relation-below"},[\[eq:groupoid-relation-thru\]](#eq:groupoid-relation-thru){reference-type="ref" reference="eq:groupoid-relation-thru"}) by drawing diagrams like [\[fig:tangle-groupoid-relations\]](#fig:tangle-groupoid-relations){reference-type="ref+label" reference="fig:tangle-groupoid-relations"}. It is possible to prove that $\Pi(D)$ is equivalent to the fundamental group $\pi(T)$ and thus to $\pi(D)$ by using the groupoid version [@Brown2006 Chapter 9] of the van Kampen theorem. We do not need this result so we omit the details.
+One can derive relations ([\[eq:groupoid-relation-above\]](#eq:groupoid-relation-above){reference-type="ref" reference="eq:groupoid-relation-above"},[\[eq:groupoid-relation-below\]](#eq:groupoid-relation-below){reference-type="ref" reference="eq:groupoid-relation-below"},[\[eq:groupoid-relation-thru\]](#eq:groupoid-relation-thru){reference-type="ref" reference="eq:groupoid-relation-thru"}) by drawing diagrams like [\[fig:tangle-groupoid-relations\]](#fig:tangle-groupoid-relations){reference-type="ref" reference="fig:tangle-groupoid-relations"}. It is possible to prove that $\Pi(D)$ is equivalent to the fundamental group $\pi(T)$ and thus to $\pi(D)$ by using the groupoid version [@Brown2006 Chapter 9] of the van Kampen theorem. We do not need this result so we omit the details.
 
-For an octahedral color $\chi = (a, b, m)$ we write $$\begin{gather}
+For an octahedral color $\chi = (a, b, m)$ we write $$\begin{gathered}
   \label{eq:chi-up-hol}
   \upf{\chi} \mathrel{:=}
   \begin{bmatrix}
@@ -83,16 +84,14 @@ For an octahedral color $\chi = (a, b, m)$ we write $$\begin{gather}
     a & -(a-m) b \\
     (a-1/m)/b & m + m^{-1} -a
   \end{bmatrix}
-\end{gather}$$
+\end{gathered}$$
 
 ::: definition
-[]{#def:holonomy label="def:holonomy"} Let $D$ be a tangle diagram with an octahedral coloring $\chi$. The is the representation (i.e. functor) $$\Hol{\chi} : \gpoid{D} \to \glg$$ defined by $$\begin{equation}
-    \Hol{\chi}(x^{+}_{i}) =
+[]{#def:holonomy label="def:holonomy"} Let $D$ be a tangle diagram with an octahedral coloring $\chi$. The is the representation (i.e.functor) $$\Hol{\chi} : \gpoid{D} \to \glg$$ defined by $$\Hol{\chi}(x^{+}_{i}) =
     \upf{\chi_i}
     \text{ and }
     \Hol{\chi}(x^{-}_{i}) =
-    \dnf{\chi_i}
-\end{equation}$$ for each segment $i$ of $D$.
+    \dnf{\chi_i}$$ for each segment $i$ of $D$.
 :::
 
 ::: lemma
@@ -100,7 +99,7 @@ $\Hol{\chi}$ is well-defined.
 :::
 
 ::: proof
-*Proof.* It is elementary (but tedious) to check that whenever the octahedral colors at a crossing are related as in [\[def:octahedral-stuff\]](#def:octahedral-stuff){reference-type="ref+label" reference="def:octahedral-stuff"} the holonomy matrices satisfy the relations of [\[def:tangle-groupoid\]](#def:tangle-groupoid){reference-type="ref+label" reference="def:tangle-groupoid"}. ◻
+*Proof.* It is elementary (but tedious) to check that whenever the octahedral colors at a crossing are related as in [\[def:octahedral-stuff\]](#def:octahedral-stuff){reference-type="ref" reference="def:octahedral-stuff"} the holonomy matrices satisfy the relations of [\[def:tangle-groupoid\]](#def:tangle-groupoid){reference-type="ref" reference="def:tangle-groupoid"}. ◻
 :::
 
 The holonomy representation is related to the one generated by the face maps of the octahedral decomposition, as discussed in [@McPhailSnyder2022 Section 3]. To relate it to representations of $\pi(D)$ we define a functor $\pi(D) \to \Pi(D)$ constructed using a natural family of paths in $\Pi(D)$:
@@ -109,24 +108,22 @@ The holonomy representation is related to the one generated by the face maps of 
 []{#def:shadows label="def:shadows"} Let $D$ be a tangle diagram with topmost region $0$ and let $j$ be a region of $D$. An $s_j^+$ is a path $0 \to j$ that passes over each strand. It is clear it unique up to homotopy.
 :::
 
-To write these paths as products of generators, choose a path of adjacent regions from $0$ to $j$. If that path crosses segments $i_1, \dots, i_k$ in that order, then $$\begin{equation}
-  \label{eq:shadow-path-rule}
-  s_j^+ = \left(x_{i_1}^+\right)^{\epsilon_1} \cdots \left(x_{i_k}^+\right)^{\epsilon_k}
-\end{equation}$$ where $\epsilon_i = + 1$ if segment $i$ is oriented left-to-right as we cross it from the top and $-1$ otherwise, as in [\[fig:region-orientation-rule\]](#fig:region-orientation-rule){reference-type="ref+label" reference="fig:region-orientation-rule"}. Independence of [\[eq:shadow-path-rule\]](#eq:shadow-path-rule){reference-type="ref+label" reference="eq:shadow-path-rule"} from the choice of path follows from [\[eq:groupoid-relation-above,eq:groupoid-relation-below\]](#eq:groupoid-relation-above,eq:groupoid-relation-below){reference-type="ref+label" reference="eq:groupoid-relation-above,eq:groupoid-relation-below"}.
+To write these paths as products of generators, choose a path of adjacent regions from $0$ to $j$. If that path crosses segments $i_1, \dots, i_k$ in that order, then $$\label{eq:shadow-path-rule}
+  s_j^+ = \left(x_{i_1}^+\right)^{\epsilon_1} \cdots \left(x_{i_k}^+\right)^{\epsilon_k}$$ where $\epsilon_i = + 1$ if segment $i$ is oriented left-to-right as we cross it from the top and $-1$ otherwise, as in [\[fig:region-orientation-rule\]](#fig:region-orientation-rule){reference-type="ref" reference="fig:region-orientation-rule"}. Independence of [\[eq:shadow-path-rule\]](#eq:shadow-path-rule){reference-type="ref" reference="eq:shadow-path-rule"} from the choice of path follows from [\[eq:groupoid-relation-above,eq:groupoid-relation-below\]](#eq:groupoid-relation-above,eq:groupoid-relation-below){reference-type="ref" reference="eq:groupoid-relation-above,eq:groupoid-relation-below"}.
 
 ::: theorem
-[]{#thm:functor label="thm:functor"} Let $D$ be a tangle diagram. For each segment $i$ write $\upr{i}$ for the region above $i$ and set $$\mathcal{F}(w_i) \mathrel{:=}s^+_{\upr{i}} \left[x_i^{+} x_i^{-} \right] (s_{\upr{i}}^+)^{-1}$$ where $w_i$ is the Wirtinger generator associated to $i$. Then $\mathcal{F}$ is a well-defined homomorphism (i.e., functor) $\pi(D) \to \gpoid{D}$.
+[]{#thm:functor label="thm:functor"} Let $D$ be a tangle diagram. For each segment $i$ write $\upr{i}$ for the region above $i$ and set $$\mathcal{F}(w_i) \mathrel{:=}s^+_{\upr{i}} \left[x_i^{+} x_i^{-} \right] (s_{\upr{i}}^+)^{-1}$$ where $w_i$ is the Wirtinger generator associated to $i$. Then $\mathcal{F}$ is a well-defined homomorphism (i.e.,functor) $\pi(D) \to \gpoid{D}$.
 :::
 
-An example is given in in [1](#fig:path-factorization){reference-type="ref+label" reference="fig:path-factorization"}.
+An example is given in in [1](#fig:path-factorization){reference-type="ref" reference="fig:path-factorization"}.
 
 ::: proof
-*Proof.* We need to check that $\mathcal{F}$ respects the relations of $\pi(D)$ coming from each crossing. Consider a positive crossing whose topmost region has over path $s^+$ and whose segments are labeled as in [\[fig:crossing-types\]](#fig:crossing-types){reference-type="ref+label" reference="fig:crossing-types"}. We have $$\mathcal{F}(w_{2'})
+*Proof.* We need to check that $\mathcal{F}$ respects the relations of $\pi(D)$ coming from each crossing. Consider a positive crossing whose topmost region has over path $s^+$ and whose segments are labeled as in [\[fig:crossing-types\]](#fig:crossing-types){reference-type="ref" reference="fig:crossing-types"}. We have $$\mathcal{F}(w_{2'})
      =
      s^+
      x_{2'}^{+}
      \left(x_{2'}^{-}\right)^{-1}
-     \left(s^+\right)^{-1}$$ while $$\begin{align*}
+     \left(s^+\right)^{-1}$$ while $$\begin{aligned}
      &
      \mathcal{F}(w_{1}^{-1} w_{2} w_{1})
      \\
@@ -152,7 +149,8 @@ An example is given in in [1](#fig:path-factorization){reference-type="ref+label
      x_2^+ \left(x_2^-\right)^{-1}
      \left(x_1^-\right)^{-1}
      \left(s^+\right)^{-1}
-\end{align*}$$ and writing [\[eq:groupoid-relation-thru\]](#eq:groupoid-relation-thru){reference-type="eqref" reference="eq:groupoid-relation-thru"} and [\[eq:groupoid-relation-below\]](#eq:groupoid-relation-below){reference-type="eqref" reference="eq:groupoid-relation-below"} as $$x_{2'}^{+}
+   
+\end{aligned}$$ and writing [\[eq:groupoid-relation-thru\]](#eq:groupoid-relation-thru){reference-type="eqref" reference="eq:groupoid-relation-thru"} and [\[eq:groupoid-relation-below\]](#eq:groupoid-relation-below){reference-type="eqref" reference="eq:groupoid-relation-below"} as $$x_{2'}^{+}
      =
      x_1^{-} x_2^{+} \left( x_{1'}^{-}\right)^{-1}
      \text{ and }
@@ -168,7 +166,7 @@ An example is given in in [1](#fig:path-factorization){reference-type="ref+label
 <figcaption> This tangle has regions <span class="math inline">0, 1, 2, 3</span> and segments <span class="math inline">1, 2, 3</span>. The over path for region <span class="math inline">$2 = \upr{3}$</span> is <span class="math inline"><em>s</em><sup>+</sup> = <em>x</em><sub>1</sub><sup>+</sup><em>x</em><sub>2</sub><sup>+</sup></span>, so the Wirtinger generator <span class="math inline"><em>w</em><sub>3</sub> ∈ <em>π</em>(<em>D</em>)</span> of segment <span class="math inline">3</span> is mapped to <span class="math inline">$\mathcal{F}(w_3) = s^+ x_3^+ (x_3^-)^{-1} (s^+)^{-1} = x_1^+ x_2^+ x_3^+ \left(x_3^- \right)^{-1} \left(x_2^+\right)^{-1} \left(x_1^+\right)^{-1} \in  \gpoid{D}.$</span> </figcaption>
 </figure>
 
-According to the theorem, an octahedral coloring $i \mapsto \chi_i$ has the same holonomy as an $\slg$ representation $\rho$ if for each segment $i$ $$\rho(w_i) = \Hol{\chi}(s_{\upr{i}}^+) \aroundhol{\chi_i} \Hol{\chi}(s_{\upr{i}}^+)^{-1}.$$ Here $\rho(w_i) = g_i$ is the image of the corresponding Wirtinger generator, i.e. the color strand $i$ in the associated $\slg$-coloring. This gives an inductive method for finding $\chi$. For example, consider the tangle in [1](#fig:path-factorization){reference-type="ref+label" reference="fig:path-factorization"} with segments $1, 2, 3$ and regions $0, 1, 2, 3$. The octahedral color $\chi_1$ of strand $1$ is determined by $$g_1 = \Hol{\chi}(s_0^+) \aroundhol{\chi_1} \Hol{\chi}(s_0^+)^{-1}
+According to the theorem, an octahedral coloring $i \mapsto \chi_i$ has the same holonomy as an $\slg$ representation $\rho$ if for each segment $i$ $$\rho(w_i) = \Hol{\chi}(s_{\upr{i}}^+) \aroundhol{\chi_i} \Hol{\chi}(s_{\upr{i}}^+)^{-1}.$$ Here $\rho(w_i) = g_i$ is the image of the corresponding Wirtinger generator, i.e.the color strand $i$ in the associated $\slg$-coloring. This gives an inductive method for finding $\chi$. For example, consider the tangle in [1](#fig:path-factorization){reference-type="ref" reference="fig:path-factorization"} with segments $1, 2, 3$ and regions $0, 1, 2, 3$. The octahedral color $\chi_1$ of strand $1$ is determined by $$g_1 = \Hol{\chi}(s_0^+) \aroundhol{\chi_1} \Hol{\chi}(s_0^+)^{-1}
   = \aroundhol{\chi_1}$$ as the over path $s_0^+$ for the topmost region is trivial. We can find such a $\chi_1$ whenever $g_1$ lies in the subset $$Y
   =
   \left\{ \def\given{\ \middle| \ }   
@@ -199,14 +197,13 @@ In addition, this definition is asymmetric: the segments adjacent to the top reg
   \end{bmatrix}$$ and define $$\hol{\chi, u_0}(w_i) = \upf{u_0} \Hol{\chi}(\mathcal{F}(w_i)) \upf{u_0}^{-1}.$$ This makes sense as long as the first entry of $u_0$ is nonzero, which it is in any admissible shadow coloring. When $u_0 = \evec{1}$ we simply have $\hol{\chi, \evec{1}} = \Hol{\chi} \mathcal{F}$, while the other representations $\hol{\chi, u_0}$ are conjugate by the matrices $\upf{u_0}$. We now rephrase our problem as asking whether $\rho$ agrees with some $\hol{\chi, u_0}$. This does not fundamentally change the problem because we are mostly interested in whether $\rho$ is *conjugate* to the holonomy of an octahedral coloring.
 
 ::: bigtheorem
-[]{#thm:holonomies-match label="thm:holonomies-match"} Let $D$ be a tangle diagram and $i \mapsto g_i, j \mapsto u_j$ be a decorated shadow $\slg$-coloring of $D$ with $u_0$ the shadow of the topmost region. Let $\chi$ be the associated octahedral coloring of [\[def:associated-octahedral\]](#def:associated-octahedral){reference-type="ref+label" reference="def:associated-octahedral"}. Then its holonomy agrees with $\rho$ in the sense that $$\hol{\chi, u_0}(w_i) = \rho(w_i)$$ for each Wirtinger generator $w_i$.
+[]{#thm:holonomies-match label="thm:holonomies-match"} Let $D$ be a tangle diagram and $i \mapsto g_i, j \mapsto u_j$ be a decorated shadow $\slg$-coloring of $D$ with $u_0$ the shadow of the topmost region. Let $\chi$ be the associated octahedral coloring of [\[def:associated-octahedral\]](#def:associated-octahedral){reference-type="ref" reference="def:associated-octahedral"}. Then its holonomy agrees with $\rho$ in the sense that $$\hol{\chi, u_0}(w_i) = \rho(w_i)$$ for each Wirtinger generator $w_i$.
 :::
 
 We begin with some matrix computations that reduce the proof to showing that the shadow coloring keeps track of the over path holonomies.
 
 ::: lemma
-[]{#thm:shadow-lemma label="thm:shadow-lemma"} Suppose $$\upf{u} \aroundhol{\chi} \upf{u}^{-1} = g.$$ for an octahedral color $\chi$, a column vector $u \in \mathbb{C}^{2}$, and a matrix $g \in \slg$. Then $$\begin{equation*}
-    \chi =
+[]{#thm:shadow-lemma label="thm:shadow-lemma"} Suppose $$\upf{u} \aroundhol{\chi} \upf{u}^{-1} = g.$$ for an octahedral color $\chi$, a column vector $u \in \mathbb{C}^{2}$, and a matrix $g \in \slg$. Then $$\chi =
     \left(
       \frac{
         \det( g u , \evec{2} )
@@ -222,12 +219,11 @@ We begin with some matrix computations that reduce the proof to showing that the
       }
       ,
       m
-    \right)
-\end{equation*}$$ where $v$ is a nonzero *row* vector with $vg = m^{-1} v$.
+    \right)$$ where $v$ is a nonzero *row* vector with $vg = m^{-1} v$.
 :::
 
 ::: proof
-*Proof.* Write $\chi = (a,b, m)$. By [\[eq:chi-around-hol\]](#eq:chi-around-hol){reference-type="ref+label" reference="eq:chi-around-hol"} we have $$\begin{bmatrix}
+*Proof.* Write $\chi = (a,b, m)$. By [\[eq:chi-around-hol\]](#eq:chi-around-hol){reference-type="ref" reference="eq:chi-around-hol"} we have $$\begin{bmatrix}
       -1 & b
     \end{bmatrix}
     \aroundhol{\chi}
@@ -256,7 +252,7 @@ We begin with some matrix computations that reduce the proof to showing that the
       u^1 \\ u^2
     \end{bmatrix}.$$ As for any column vector $\det(u, \evec{2}) = u^1 = \evec{1}^{\mathrm{T}} u$. In addition, $\upf{u}^{-1} u =  \evec{1}$ because $\upf{u} = \begin{bmatrix}
       u & \evec{2}
-    \end{bmatrix}$ and $\dnf{\chi} \evec{1} = \evec{1}$ because $\dnf{\chi}$ is lower-triangular. We now compute $$\begin{align*}
+    \end{bmatrix}$ and $\dnf{\chi} \evec{1} = \evec{1}$ because $\dnf{\chi}$ is lower-triangular. We now compute $$\begin{aligned}
     \det(u, \evec{2}) 
     &=
     \evec{1}^{\mathrm{T}}
@@ -284,26 +280,25 @@ We begin with some matrix computations that reduce the proof to showing that the
     \end{bmatrix}
     \\
     &= u^1 a.
-\end{align*}$$ ◻
+  
+\end{aligned}$$ ◻
 :::
 
 ::: proof
-*Proof of [\[thm:holonomies-match\]](#thm:holonomies-match){reference-type="ref+label" reference="thm:holonomies-match"}.* Our goal is to show that for each segment $i$, $$\hol{\chi, u_0}(w_i)
+*Proof of [\[thm:holonomies-match\]](#thm:holonomies-match){reference-type="ref" reference="thm:holonomies-match"}.* Our goal is to show that for each segment $i$, $$\hol{\chi, u_0}(w_i)
     =
     \upf{u_0} \Hol{\chi}(s_{\upr{i}}^+)
     \aroundhol{\chi_i}
     \left( \upf{u_0} \Hol{\chi}(s_{\upr{i}}^+) \right)^{-1}
     =
-    g_i.$$ By [\[thm:shadow-lemma\]](#thm:shadow-lemma){reference-type="ref+label" reference="thm:shadow-lemma"} it is sufficient to check that $$\begin{equation}
-    \label{eq:shadows-match-over}
-    \upf{u_j} = \upf{u_0} \Hol{\chi}(s_j^+)
-\end{equation}$$ for each region $j$.
+    g_i.$$ By [\[thm:shadow-lemma\]](#thm:shadow-lemma){reference-type="ref" reference="thm:shadow-lemma"} it is sufficient to check that $$\label{eq:shadows-match-over}
+    \upf{u_j} = \upf{u_0} \Hol{\chi}(s_j^+)$$ for each region $j$.
 
-We prove this inductively. For the topmost region $0$, $s_0^+ = 1$ is trivial and [\[eq:shadows-match-over\]](#eq:shadows-match-over){reference-type="ref+label" reference="eq:shadows-match-over"} is tautological. Below we show that if [\[eq:shadows-match-over\]](#eq:shadows-match-over){reference-type="ref+label" reference="eq:shadows-match-over"} holds for one region then it holds for all adjacent regions, which establishes the theorem.
+We prove this inductively. For the topmost region $0$, $s_0^+ = 1$ is trivial and [\[eq:shadows-match-over\]](#eq:shadows-match-over){reference-type="ref" reference="eq:shadows-match-over"} is tautological. Below we show that if [\[eq:shadows-match-over\]](#eq:shadows-match-over){reference-type="ref" reference="eq:shadows-match-over"} holds for one region then it holds for all adjacent regions, which establishes the theorem.
 
-Suppose $$\upf{u_j} = \upf{u_0} \Hol{\chi}(s_j^+)$$ for a region $j$ and let $j'$ be adjacent across segment $i$. For notational simplicity we assume $j'$ is below $j$ (as in [\[fig:region-orientation-rule\]](#fig:region-orientation-rule){reference-type="ref+label" reference="fig:region-orientation-rule"}) but a similar argument works for the other orientation. By definition, $u_{j'} = g_i u_{j}$ so by the inductive hypothesis $$u_{j'}
+Suppose $$\upf{u_j} = \upf{u_0} \Hol{\chi}(s_j^+)$$ for a region $j$ and let $j'$ be adjacent across segment $i$. For notational simplicity we assume $j'$ is below $j$ (as in [\[fig:region-orientation-rule\]](#fig:region-orientation-rule){reference-type="ref" reference="fig:region-orientation-rule"}) but a similar argument works for the other orientation. By definition, $u_{j'} = g_i u_{j}$ so by the inductive hypothesis $$u_{j'}
     =
-    \upf{u_j} \aroundhol{\chi_i} \upf{u_j}^{-1} u_{j}.$$ Then as in the proof of [\[thm:shadow-lemma\]](#thm:shadow-lemma){reference-type="ref+label" reference="thm:shadow-lemma"} $$u_{j'}
+    \upf{u_j} \aroundhol{\chi_i} \upf{u_j}^{-1} u_{j}.$$ Then as in the proof of [\[thm:shadow-lemma\]](#thm:shadow-lemma){reference-type="ref" reference="thm:shadow-lemma"} $$u_{j'}
     =
     \upf{u_j} \aroundhol{\chi_i} \upf{u_j}^{-1} u_{j}
     =

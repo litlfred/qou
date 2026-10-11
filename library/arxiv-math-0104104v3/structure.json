@@ -317,7 +317,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 8,
-   "overlaid": 5,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -332,7 +332,7 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.792,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -345,8 +345,8 @@
     {
      "id": "sec-003-2-quaternionic-matrices-and-\ufb02ags",
      "title": "Quaternionic matrices and \ufb02ags",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.921,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -358,8 +358,8 @@
     {
      "id": "sec-005-3-quatrisson-and-tetraplectic-structures",
      "title": "Quatrisson and tetraplectic structures",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.939,
+     "prose_ratio": 0.664,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -393,17 +393,15 @@
      "id": "sec-011-6-quatrisson-action-and-intrinsic-derivative",
      "title": "Quatrisson action and intrinsic derivative",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-012-7-dressing-action",
      "title": "Dressing action",
-     "prose_ratio": 0.739,
-     "coverage_ratio": 0.895,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.367,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-1-k1",

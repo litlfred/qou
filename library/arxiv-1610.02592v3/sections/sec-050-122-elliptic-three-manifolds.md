@@ -7,10 +7,10 @@ section_number: 12.2
 pages: 378-388
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.826
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We start our journey by investigating elliptic 3-manifolds, that is manifolds modelled on $S^3$. We want to prove the following.
 
@@ -19,6 +19,7 @@ A closed 3-manifold $M$ admits an elliptic metric if and only if it is a Seifert
 \end{teo}
 
 An important ingredient of the proof is the complete classification of elliptic three-manifolds: to achieve this goal we need to study the isometries of $S^3$, and these are described elegantly via quaternions. 
+
 
 \subsection{Unit quaternions}
 We write as usual a \emph{quaternion} as\index{quaternion}
@@ -87,6 +88,7 @@ we get a Lie group isomorphism between $S^3$ and $\SU(2)$.
 Note that $\bar q = q^{-1}$ on unit quaternions.
 The inversion $q \mapsto q^{-1}$ is an orientation-reversing isometry of $S^3$. 
 
+
 \subsection{Finite groups of quaternions}
 We classify the finite subgroups of the Lie group $S^3$. Recall from Proposition \ref{subgroups:SO3:prop} that the finite subgroups of $\SO(3)$ up to conjugation are:
 $$C_n, \quad D_{2m}, \quad T_{12} \isom A_4, \quad O_{24} \isom S_4, \quad I_{60} \isom A_5$$
@@ -141,6 +143,7 @@ The binary dihedral group $D_{4m}^*$ contains the index-two cyclic group $C_{2m}
 Every group $\Gamma$ in Table \ref{binary:table} acts freely and isometrically on $S^3$ by right multiplication, hence $S^3/_\Gamma$ is an elliptic manifold with fundamental group $\Gamma$. The only perfect group in the list (\emph{i.e.}~with trivial abelianisation) is $I^*_{120}$ and we will soon see that $S^3/_{I^*_{120}}$ is the ubiquitous Poincar\'e homology sphere $\Sigma(2,3,5)$, defined in Section \ref{Seifert:homology:sphere:subsection}.
 \end{rem}
 
+
 \subsection{Regular polytopes} \label{regular:polytopes:subsection}
 There are six regular polytopes in dimension four, listed in Table \ref{polytopes:table}, and the finite groups of $S^3$ can be used to describe five of them. The convex hull of $Q_8$ in $\matR^4$ is the \emph{16-cell}, whose dual is the \emph{hypercube}. 
 The group $T_{24}^*$ consists of the vertices of the 16-cell and of the dual hypercube altogether.\index{regular polytope} 
@@ -172,6 +175,7 @@ The convex hull of $T_{24}^*$ is the \emph{24-cell}: this is the unique self-dua
 \label{24cell:fig}
 \end{center}
 \end{figure}
+
 
 
 \subsection{Classification of elliptic 3-manifolds}
@@ -327,6 +331,7 @@ To compute $|\Gamma|$, we use Remark \ref{image:product:rem} and note that $(-1,
 
 To compute $Z$ and $\Gamma/_Z$, we note that in all the non-cyclic cases $\Gamma$ is the image of a subgroup in some product $G^* \times C_{kn}$ which is ``diagonal'', in the sense that it maps surjectively to both factors $G^*$ and $C_{kn}$. The map onto $G^*$ pushes-forward to a surjection $\Gamma \to G$, whose kernel is easily detected as being the centre $Z$ and isomorphic to $C_{2n}$ in all cases.
 \end{proof}
+
 
 
 \subsection{Seifert fibrations of elliptic 3-manifolds}

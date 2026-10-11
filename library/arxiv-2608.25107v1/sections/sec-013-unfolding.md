@@ -7,10 +7,10 @@ section_number: null
 pages: 15-17
 source_pdf: 2608.25107v1.pdf
 source_sha256: 6dca8b99a1f32db4
-text_source: latex
-latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.944
 doc_brief: "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples César Jesús-Valls1,∗ 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland — 17 sections: ADoNIS: A Differe"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.974
 ---
 []{#sec:unfolding label="sec:unfolding"}
 
@@ -18,38 +18,25 @@ The previous section used the differentiable prediction directly in truth space 
 
 We demonstrate this by mirroring the T2K $\nu_\mu$ CC0$\pi$ double-differential measurement of Ref. [@T2K:2020sbd], in muon momentum and angle, $d^2\sigma/dp_\mu\,d\cos\theta_\mu$. We adopt the same signal definition: a $\nu_\mu$ charged-current interaction with exactly one $\mu^-$, no pions or other mesons after FSI, any number of nucleons, and no restriction on the muon kinematics. We also retain the same $58$ truth bins, while splitting each momentum interval in two at reconstruction level to obtain $116$ reconstructed bins. A simple stochastic detector model applies a $10\%$ momentum smearing and a $5^\circ$ angular smearing event by event. To introduce a background component, charged pions below $400$ MeV/$c$ are reconstructed with $50\%$ efficiency, implemented as an event-by-event random selection, so missed pions allow CC1$\pi$ events to enter the CC0$\pi$ selection, giving a signal purity of $0.915$. The prediction is normalised to an exposure corresponding to approximately $170\,000$ selected events, while the underlying event bank provides about $24$ times larger Monte Carlo statistics.
 
-<figure id="fig:unfold_result" data-latex-placement="t">
-<img src="unfolding_example" style="width:99.0%" />
-<figcaption>Unfolded T2K CC0<span class="math inline"><em>π</em></span> double-differential cross section in two of the nine <span class="math inline">cos <em>θ</em><sub><em>μ</em></sub></span> slices, for a closure test and for a dataset in which the true signal is increased by <span class="math inline">20%</span>.</figcaption>
-</figure>
+![Unfolded T2K CC0$\pi$ double-differential cross section in two of the nine $\cos\theta_\mu$ slices, for a closure test and for a dataset in which the true signal is increased by $20\%$.](unfolding_example){#fig:unfold_result width="0.99\\linewidth"}
 
-<figure id="fig:unfold_budget" data-latex-placement="htbp">
-<img src="unfolding_uncertainty_budget" style="width:80.0%" />
-<figcaption>Uncertainty on the <span class="math inline">58</span> unfolded templates as statistical and systematic contributions are successively included.</figcaption>
-</figure>
+![Uncertainty on the $58$ unfolded templates as statistical and systematic contributions are successively included.](unfolding_uncertainty_budget){#fig:unfold_budget width="0.8\\linewidth"}
 
-<figure id="fig:unfold_corr" data-latex-placement="t">
-<img src="unfolding_param_correlations" style="width:99.0%" />
-<figcaption>Post-fit correlation matrix of the <span class="math inline">196</span> fitted parameters: <span class="math inline">58</span> signal templates <span class="math inline"><strong>c</strong></span>, <span class="math inline">10</span> flux parameters <span class="math inline"><strong>f</strong></span>, <span class="math inline">12</span> cross-section parameters <span class="math inline"><strong>θ</strong></span> and <span class="math inline">116</span> detector parameters <span class="math inline"><strong>d</strong></span>. The scale is symmetric-logarithmic, becoming linear for correlations below <span class="math inline">0.01</span> in magnitude.</figcaption>
-</figure>
+![Post-fit correlation matrix of the $196$ fitted parameters: $58$ signal templates $\bm{c}$, $10$ flux parameters $\bm{f}$, $12$ cross-section parameters $\bm{\theta}$ and $116$ detector parameters $\bm{d}$. The scale is symmetric-logarithmic, becoming linear for correlations below $0.01$ in magnitude.](unfolding_param_correlations){#fig:unfold_corr width="0.99\\linewidth"}
 
-The prediction in reconstructed bin $i$ is $$\begin{equation}
-\label{eq:unfold_model}
+The prediction in reconstructed bin $i$ is $$\label{eq:unfold_model}
 \mu_i(\bm{c},\bm{f},\bm{\theta},\bm{d})
 =
 d_i\left[
 \sum_{j,b} A_{ijb}\,c_j f_b
 +
 \sum_b B_{ib}(\bm{\theta})\,f_b
-\right],
-\end{equation}$$ where $A_{ijb}$ is the nominal signal template contributing to reconstructed bin $i$ from truth bin $j$ and neutrino-energy bin $b$, while $B_{ib}(\bm{\theta})$ is the corresponding background prediction. The $58$ template parameters $\bm{c}$ independently scale the signal truth bins and are left unconstrained, so that the signal cross section is determined directly by the fit rather than by the interaction model. The unfolded cross section in each truth bin is therefore obtained by applying the fitted $c_j$ to the corresponding nominal cross section.
+\right],$$ where $A_{ijb}$ is the nominal signal template contributing to reconstructed bin $i$ from truth bin $j$ and neutrino-energy bin $b$, while $B_{ib}(\bm{\theta})$ is the corresponding background prediction. The $58$ template parameters $\bm{c}$ independently scale the signal truth bins and are left unconstrained, so that the signal cross section is determined directly by the fit rather than by the interaction model. The unfolded cross section in each truth bin is therefore obtained by applying the fitted $c_j$ to the corresponding nominal cross section.
 
-The flux is described by $10$ parameters $\bm{f}$, each scaling all signal and background events within an interval of true neutrino energy. The intervals are $0$--$600$ MeV, four $100$ MeV bins between $600$ and $1000$ MeV, two $200$ MeV bins between $1000$ and $1400$ MeV, two $300$ MeV bins between $1400$ and $2000$ MeV, and an open bin above $2000$ MeV. For illustration, they are assigned a correlated Gaussian prior with $10\%$ marginal uncertainties and covariance $$\begin{equation}
-\Sigma_{bb'}=\sigma_b\sigma_{b'}
+The flux is described by $10$ parameters $\bm{f}$, each scaling all signal and background events within an interval of true neutrino energy. The intervals are $0$--$600$ MeV, four $100$ MeV bins between $600$ and $1000$ MeV, two $200$ MeV bins between $1000$ and $1400$ MeV, two $300$ MeV bins between $1400$ and $2000$ MeV, and an open bin above $2000$ MeV. For illustration, they are assigned a correlated Gaussian prior with $10\%$ marginal uncertainties and covariance $$\Sigma_{bb'}=\sigma_b\sigma_{b'}
 \exp\!\left(
 -\frac{|\bar E_{\nu,b}-\bar E_{\nu,b'}|}{400~\mathrm{MeV}}
-\right),
-\end{equation}$$ where $\sigma_b=0.10$ and $\bar E_{\nu,b}$ is the centre of flux bin $b$. For the open final bin, we set $\bar E_{\nu,b}=2150$ MeV by extrapolating the width of the preceding finite bin, providing a finite representative energy for the correlation kernel.
+\right),$$ where $\sigma_b=0.10$ and $\bar E_{\nu,b}$ is the centre of flux bin $b$. For the open final bin, we set $\bar E_{\nu,b}=2150$ MeV by extrapolating the width of the preceding finite bin, providing a finite representative energy for the correlation kernel.
 
 Of the $28$ cross-section parameters introduced in Sec. [\[sec:adonis_reweighting\]](#sec:adonis_reweighting){reference-type="ref" reference="sec:adonis_reweighting"}, we retain the $12$ whose variation on the reference scales defined in Sec. [\[sec:jacobian\]](#sec:jacobian){reference-type="ref" reference="sec:jacobian"} produces a non-negligible change in the predicted background: $k_F$, $S_\Delta$, $C_5^A$, $N_{\rm SF}$, $N_{\rm RES}$, $M_A^{\rm RES}$, $f^{\rm cex}_{NN}$, $s^{\rm el}_{NN,pn}$, $\Delta E_b$, $s_{\rm abs}^{\pi}$, $N_{\rm SRC}$ and $s^{\rm el}_{\pi N}$. Concretely, we require $\|(\partial B/\partial\theta_k)\,\sigma_k^{\rm ref}/\sqrt{\mu}\|_2\ge 1$ over the reconstructed bins, where $\mu$ is the nominal signal-plus-background prediction and $\sigma_k^{\rm ref}$ the corresponding reference variation. These parameters are also left unconstrained.
 

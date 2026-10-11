@@ -979,8 +979,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "gaussian02.tex",
-   "tex_sections": 6,
-   "overlaid": 1,
+   "tex_sections": 39,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1006,7 +1006,8 @@
     {
      "id": "sec-003-12-genus-expansion-random-matrices-and-free-prob",
      "title": "Genus expansion, random matrices and free probability. Free",
-     "result": "no matching \\section"
+     "prose_ratio": 0.442,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-13-higher-order-free-probability-as-we-mentioned",
@@ -1067,12 +1068,16 @@
     {
      "id": "sec-015-24-elements-of-the-group-algebra-as-random-varia",
      "title": "Elements of the group algebra as random variables. Let us \ufb01x",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.855,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-25-canonical-probability-measure-on-young-diagra",
      "title": "Canonical probability measure on Young diagrams associated to a",
-     "result": "no matching \\section"
+     "prose_ratio": 0.197,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-017-26-generalized-young-diagrams-let-\u03bb-be-a-young-d",
@@ -1113,7 +1118,8 @@
     {
      "id": "sec-024-31-factorization-of-characters-and-gaussian-\ufb02uct",
      "title": "Factorization of characters and Gaussian \ufb02uctuations. The follow-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.387,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-025-12-piotr-sniady",
@@ -1254,7 +1260,10 @@
     {
      "id": "sec-052-57-explicit-form-of-the-partitionindexed-conjuga",
      "title": "Explicit form of the partition\u2013indexed conjugacy class ind ica-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-053-6-a-cknowledgments",

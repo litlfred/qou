@@ -7,12 +7,13 @@ section_number: 6
 pages: 14-16
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
-text_source: latex
-latex_prose_ratio: 0.945
-latex_coverage_ratio: 0.968
 doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
+text_source: latex
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 1.0
 ---
 \lbl{sec.boundsJones}
+
 
 \subsection{Bounds for the degree}
 \lbl{sub.bdegree}
@@ -54,6 +55,7 @@ their exact values here.
 Another proof of the quadratic bounds, though less as explicit,  for the
 degrees of the colored Jones polynomial using the theory of $q$-holomorphic
 functions is given in Section \ref{sub.qholo}.
+
 
 \subsection{Bounds for the coefficients}
 \lbl{sub.coeffbounds}
@@ -202,6 +204,7 @@ $$ ||J_{K,n}||_1 \le (A_6)^n.$$
 \end{theorem}
 
 
+
 \subsection{Proof of Theorem \ref{thm.up}}
 \lbl{sub.thmup}
 
@@ -231,3 +234,14 @@ The result follows from the observation that $|\w| \le c+2$, since
 $c+2$ is the total number of crossings.
 
 \qed
+
+
+
+
+
+
+\section{Proof of Theorem \ref{thm.boundC}}
+\lbl{sec.boundscyclotomic}
+
+
+The goal of this Section is to prove  Theorem \ref{thm.boundC}.

@@ -195,8 +195,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 3,
-   "overlaid": 1,
+   "tex_sections": 12,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -206,25 +206,34 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-rank-one",
      "title": "Rank one",
-     "result": "no matching \\section"
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.8,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-rank-two",
      "title": "Rank two",
-     "result": "no matching \\section"
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-rank-three",
      "title": "Rank three",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-physical-applications",

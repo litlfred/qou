@@ -8,9 +8,10 @@ pages: 40-40
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
 doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
+text_source: latex
+latex_prose_ratio: 0.949
+latex_coverage_ratio: 0.946
 ---
-In this section, we present examples of random variables that admit uniform bounds on cumulants,
-which do not come from dependency graphs. Their structure is nevertheless not so diﬀerent since the
-variables that we consider write as sums of random variables that areweakly dependent. The technique
-to prove uniform bounds on cumulants relies then on the notion ofuniform weighted dependency graph,
-which generalizes the notion of standard dependency graph (see Proposition 44).
+[]{#sec:markov label="sec:markov"}
+
+In this section, we present examples of random variables that admit uniform bounds on cumulants, which do not come from dependency graphs. Their structure is nevertheless not so different since the variables that we consider write as sums of random variables that are *weakly dependent*. The technique to prove uniform bounds on cumulants relies then on the notion of *uniform weighted dependency graph*, which generalizes the notion of standard dependency graph (see Proposition [\[Prop:BoundCumulantUWDG\]](#Prop:BoundCumulantUWDG){reference-type="ref" reference="Prop:BoundCumulantUWDG"}).

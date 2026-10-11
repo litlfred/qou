@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-8
 source_pdf: 1304.3481v1.pdf
 source_sha256: d0840f2775c0f761
-text_source: latex
-latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.94
 doc_brief: "Quadruply-graded colored homology of knots — W e conjecture the existence of four independent gradings in the colored HOMFLY homology."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The categorification of quantum knot invariants started with Khovanov's seminal paper \cite{Khfirst}, where he defined a doubly-graded homology theory, whose homotopy type is an invariant of a knot, and such that its graded Euler characteristic is equal to the Jones polynomial. This opened a fast-growing field in low-dimensional topology and started work on categorification of other quantum knot invariants. Unlike the quantum polynomial invariants of a knot $K$, denoted by $P^{g,\lambda}(K)(q)$, which are explicitly defined for any representation $\lambda$ of Lie algebra $g$, their categorifications are known only in very few cases. In particular, in the case of the Lie algebras $sl(N)$ --- which is the case on which we focus in this paper --- the explicit categorification is known in the case of the fundamental representations $\lambda=\tableau1$ \cite{KRa}, and in a very few other cases. In addition, apart from the case of the Jones polynomial (fundamental representation of $sl(2)$), the definition of the homology theory is very complicated, which makes the computation of such invariants extremely hard.
 
@@ -147,6 +147,7 @@ We give an algebraic model for the $S^r$ colored homology of torus knots and com
 
 
 
+
 \subsection{Structure of the paper}
 
 In Section \ref{sec:bosonic} we describe a model for the unreduced colored homology of the unknot.
@@ -186,6 +187,7 @@ and describe $\CH^{S^r}(T(m,n))$ as a Jacobi ring of a certain potential on a su
 Finally, section \ref{sec:bottom} is devoted to the ``bottom row'' of the HOMFLY homology, i.e. $a=0$ limit.
 We compare it to certain combinatorial models of Haglund et. al., generalizing the models for $q,t$-Catalan numbers
 which played important role in \cite{GORS}, and to the geometric models for coupled instanton-vortex systems proposed in \cite{DGH}.
+
 
 \subsection{Acknowledgements}
 

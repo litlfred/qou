@@ -7,10 +7,10 @@ section_number: 4
 pages: 42-42
 source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
-text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.987
 doc_brief: "Non-Abelian Stokes theorem in action — In this short review main issues related to the non-Abelian S tokes theorem have been addressed."
+text_source: latex
+latex_prose_ratio: 0.986
+latex_coverage_ratio: 1.0
 ---
 In this short review we have addressed main issues related to the non-Abelian Stokes theorem. The two principal approaches (operator and path-integral) to the non-Abelian Stokes theorem have been formulated in their simplest possible forms. A generalization for a knotted loop as well as a suggestion concerning higher-degree forms have been also presented. Only non-perturbative applications of the non-Abelian Stokes theorem (to low-dimensional gauge theories) have been described. The review is not comprehensive and is rather directed towards topological aspects reflecting author's interests.
 

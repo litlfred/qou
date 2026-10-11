@@ -7,16 +7,17 @@ section_number: 1
 pages: 6-14
 source_pdf: 1409.0848v3.pdf
 source_sha256: 5af73ef812ccee40
-text_source: latex
-latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.964
 doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homol ogy, or topological chiral homology, at the generality of stratiﬁed spaces with tangen tial"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{recollections}
 This entire work is founded on a predecessor, \cite{aft1}, which lays our foundation for structured stratified spaces and the $\infty$-categories organizing them.
 In this first subsection, we briefly recall some of the concepts introduced there, skipping many specifics. 
 The results mentioned in this section will be precise, but we refer any reader who wishes to truly understand the precise definitions to~\cite{aft1}. 
 In the second subsection we review some essentials of symmetric monoidal $\infty$-categories, after \S2 of~\cite{HA}.
+
 
 \subsection{Stratified spaces}\label{sec.stratified-spaces}
 
@@ -240,6 +241,7 @@ We conclude this subsection with a remark on our use of weakly constructible bun
 \begin{remark}
 Wherever we use weakly constructible bundles in this work, we will only work with a single map at a time. That is, we will not consider any sort of category or $\oo$-category of stratified spaces whose morphisms are weakly constructible bundles. This is due to a technical issue: it is unclear how to directly topologize the set of weakly constructible bundles (and then how to ensure a well-defined composition on these spaces of maps). This issue is dealt with in a successor work, \cite{striation}, by the construction of the $\oo$-category ${\sf c}\cB{\sf un}$. This is an $\oo$-category of compact stratified spaces whose morphisms are proper contructible bundles over the asymmetrically stratified interval $\{0\}\subset [0,1]$. A main result of that paper implies that such a proper constructible bundle $X\ra [0,1]$ is equivalent to a weakly constructible bundle map $X_1 \ra X_0$ from the generic fiber to the special fiber. Consequently, one could {\it define} the $\oo$-category of compact stratified spaces and weakly constructible bundles among them to be ${\sf c}\cB{\sf un}^{\op}$, but we have chosen not to incorporate this later work into the present paper.
 \end{remark}
+
 
 
 

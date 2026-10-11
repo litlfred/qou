@@ -8,8 +8,11 @@ pages: 6-6
 source_pdf: 0808.1923v3.pdf
 source_sha256: 3c53f7c0fd9acf89
 doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transp ort of connections on gerbes."
+text_source: latex
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 1.0
 ---
-The present paper is the last part of a project carried out in a sequ ence of papers [SW09, SW11, SW].
-In these papers, we have prepared the foundations for transpo rt 2-functors – our axiomatic formulation
-of connection on non-abelian gerbes. The purpose of this section is to make the present paper self-
-contained; we collect and review the most important deﬁnitions and r esults from the previous papers.
+\label{sec1}
+
+
+The present paper is the last part of a project carried out in a sequence of papers \cite{schreiber3,schreiber5,schreiber6}. In these papers, we have prepared the foundations for transport 2-functors -- our axiomatic formulation of connection on non-abelian gerbes. The purpose of this section is to make the present paper self-contained; we collect and review the most important definitions and results from the previous papers.

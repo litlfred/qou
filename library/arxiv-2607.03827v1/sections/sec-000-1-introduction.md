@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-5
 source_pdf: 2607.03827v1.pdf
 source_sha256: 965d69603381942a
-text_source: latex
-latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.942
 doc_brief: "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS — The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 The aim of this article is to clarify new and sometimes unexpected
 structures of affine cellular algebras and properties of embeddings into

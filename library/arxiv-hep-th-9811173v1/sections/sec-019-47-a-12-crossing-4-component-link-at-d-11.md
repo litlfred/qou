@@ -8,32 +8,11 @@ pages: 11-11
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
 doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are ratio nally related to"
+text_source: latex
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 1.0
 ---
-In [7] it was noted that neither the closed nor the cusped census en tails the ﬁeld Q(√−11).
-In [1] it was observed that the 12-crossing 4-component link of Fig. 7, with braid word
-(σ1σ − 2
-2 σ3σ − 2
-2 )2, entails this ﬁeld. Its Dedekind-zeta invariant is observed to be unit y,
-corresponding to the relation
-15Cl2(θ11) − 10Cl2(2θ11) + Cl2(5θ11) = Z11 = 11
-5∑
-k=1
-(
-k
-11
-)
-Cl2
-(
-2πk
-11
-)
-(28)
-where θ11 := 2 arctan
-√
-11 and
-(
-k
-11
-)
-is the Jacobi (or Legendre) symbol for the Dirichlet
-character. Again, we lack a proof.
+In [@CGHN] it was noted that neither the closed nor the cusped census entails the field ${\bf Q}(\sqrt{-11})$. In [@9806174] it was observed that the 12-crossing 4-component link of Fig. 7, with braid word $(\sigma_1^{}\sigma_2^{-2}\sigma_3^{}\sigma_2^{-2})^2$, entails this field. Its Dedekind-zeta invariant is observed to be unity, corresponding to the relation $$15{\rm Cl}_2(\theta_{11})-10{\rm Cl}_2(2\theta_{11})
++{\rm Cl}_2(5\theta_{11})=Z_{11}=11\sum_{k=1}^5\left(\frac{k}{11}\right)
+{\rm Cl}_2\left(\frac{2\pi k}{11}\right)
+\label{d11}$$ where $\theta_{11}:=2\arctan\sqrt{11}$ and $\left(\frac{k}{11}\right)$ is the Jacobi (or Legendre) symbol for the Dirichlet character. Again, we lack a proof.

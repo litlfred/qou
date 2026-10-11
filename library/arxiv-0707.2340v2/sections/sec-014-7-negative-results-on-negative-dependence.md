@@ -7,10 +7,10 @@ section_number: 7
 pages: 41-45
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
-text_source: latex
-latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.955
 doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{s-countex}
 

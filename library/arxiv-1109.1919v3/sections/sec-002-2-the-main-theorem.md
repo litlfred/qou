@@ -7,10 +7,10 @@ section_number: 2
 pages: 5-10
 source_pdf: 1109.1919v3.pdf
 source_sha256: 2b634edddf232047
+doc_brief: "COMBINATORIAL DESCENT DATA FOR GERBES AMNON YEKUTIELI — We consider descent data in cosimplicial crossed groupoids."
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.827
-doc_brief: "COMBINATORIAL DESCENT DATA FOR GERBES AMNON YEKUTIELI — We consider descent data in cosimplicial crossed groupoids."
+latex_coverage_ratio: 1.0
 ---
 \label{sec:equiv-cosim}
 

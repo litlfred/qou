@@ -157,7 +157,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
    "tex_sections": 9,
-   "overlaid": 1,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -167,24 +167,26 @@
     {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.575,
+     "prose_ratio": 0.694,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-the-reduced-deligne-groupoid",
      "title": "The Reduced Deligne Groupoid",
-     "prose_ratio": 0.819,
-     "coverage_ratio": 0.293,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-6-the-deligne-2-groupoid",
      "title": "The Deligne 2-Groupoid",
-     "prose_ratio": 0.709,
-     "coverage_ratio": 0.417,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.862,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-references",

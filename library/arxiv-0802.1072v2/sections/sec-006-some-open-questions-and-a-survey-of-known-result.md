@@ -7,10 +7,10 @@ section_number: null
 pages: 9-14
 source_pdf: 0802.1072v2 (1).pdf
 source_sha256: 6f4d93f0b7ba5cd7
+doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 text_source: latex
 latex_prose_ratio: 0.998
-latex_coverage_ratio: 0.805
-doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
+latex_coverage_ratio: 0.998
 ---
 []{#S:known and unknown label="S:known and unknown"} In this section we survey the literature and discuss some unknown properties of knots and links of braid index 3. Our choices are guided by what we know best, and by our wish to illustrate ways in which Theorems 1,2 and 3 have been and might be useful.
 
@@ -32,10 +32,8 @@ doc_brief: "A note on closed 3-braids ∗ — This is a review article about kno
 
     An example is enlightening, even though it does not have much to do with 3-braids. In the class of torus links, two integers $r,s$ are all that is needed to distinguish one torus link from another. On the other hand, if one wishes to distinguish the Jones polynomial of one torus link from that of another, the matter is considerably more complicated. One has the following very complicated formula [@Jones2]:
 
-    $$\begin{equation}
-     \label{E:JP of torus link}
-    V_{r,s}(t) = \frac{t^{\frac{1}{2}(r-1)(s-1)}}{1-t^2}\sum _{l=0}^{n}\left( n \over l \right)t^{\frac{r}{n}(n-l)(1+\frac{s}{n}l)}(t^{(n-l)\frac{s}{n}} - t^{1 + l\frac{s}{n}}), \ \  {\rm where} \ \   n = gcd(r,s).
-    \end{equation}$$ It isn't even obvious that it gives a polynomial (although of course it does). The reader will notice that, knowing the general form of ([\[E:JP of torus link\]](#E:JP of torus link){reference-type="ref" reference="E:JP of torus link"}), $V_{r,s}(t)$ is completely determined by the two integers $r$ and $s$.
+    $$\label{E:JP of torus link}
+    V_{r,s}(t) = \frac{t^{\frac{1}{2}(r-1)(s-1)}}{1-t^2}\sum _{l=0}^{n}\left( n \over l \right)t^{\frac{r}{n}(n-l)(1+\frac{s}{n}l)}(t^{(n-l)\frac{s}{n}} - t^{1 + l\frac{s}{n}}), \ \  {\rm where} \ \   n = gcd(r,s).$$ It isn't even obvious that it gives a polynomial (although of course it does). The reader will notice that, knowing the general form of ([\[E:JP of torus link\]](#E:JP of torus link){reference-type="ref" reference="E:JP of torus link"}), $V_{r,s}(t)$ is completely determined by the two integers $r$ and $s$.
 
 6.  Concluding this note, we point the reader, in no particular order, to some of the published work that has come to our attention about links of braid index 3:
 

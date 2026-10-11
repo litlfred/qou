@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-2
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
-text_source: latex
-latex_prose_ratio: 0.799
-latex_coverage_ratio: 0.996
 doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.804
 ---
 In this paper we study a class of Riemann-Hilbert problems  arising naturally in Donaldson-Thomas theory. They involve maps from the complex plane to an algebraic torus, with prescribed discontinuities along a  collection of rays, and are closely related to the Riemann-Hilbert problems considered by Gaiotto, Moore and Neitzke \cite{GMN1}; in physical terms we are considering the conformal limit of their story. The same problems have also been considered by Stoppa and his collaborators \cite{BSt,FGS}.
 One of our main results is  that in the `uncoupled' case the Riemann-Hilbert problem has a unique solution which can be written explicitly using products of  gamma functions (Theorem \ref{one}). The inspiration for this  comes from a calculation of Gaiotto \cite{G}.
@@ -29,17 +29,3 @@ These structures arise mathematically via the stability conditions studied by th
 The theory we attempt to develop here is  purely mathematical. One potential advantage of our approach is its generality: the only input for the theory is a triangulated category satisfying the three-dimensional Calabi-Yau condition. When everything works, the output is   a complex manifold - the space of stability conditions - equipped with an interesting piecewise holomorphic function: the $\tau$-function. Note that the theory is inherently global and non-perturbative: it does not use expansions about some chosen limit point in the space of stability conditions. 
 
 We should admit straight away  that at present there are many unanswered questions and unsolved technical problems with the theory. In  particular, for general BPS structures we have no  existence or uniqueness results for solutions to the Riemann-Hilbert problem. It is also not clear why the $\tau$-function as defined here should exist in the general uncoupled case. Nonetheless, the strong analogy with Stokes structures in the theory of differential equations, and the non-trivial answers obtained here  (see also \cite{tocome}) provide adequate mathematical motivation to study these problems further.
-
-
-
-
- 
-\subsection*{Plan of the paper}
-
-In Section 2 we introduce basic definitions concerning BPS structures. Section 3  contains a summary of the contents of the paper with  technical details deferred to later sections. 
- In Section 4 we discuss the Riemann-Hilbert problem associated to a BPS structure.  In Section 5 we solve this problem    in the uncoupled case using elementary properties of the gamma function. Sections 6 and 7 discuss 
- the connections with Gromov-Witten invariants and exact WKB analysis referred to above. In Appendix A  we give a rigorous definition of a variation of BPS structures following Kontsevich and Soibelman. Appendix B contains some simple analytic results involving partially-defined self-maps of algebraic tori.
- 
- 
- \subsection*{Acknowledgements}
- The author is very grateful to  Kohei Iwaki, Andy Neitzke, Ivan Smith and Bal{\'a}zs Szendr{\H o}i  for extremely helpful discussions during the long gestation period of this paper. This work was partially supported by an ERC Advanced grant. The calculations in Section \ref{gw} were carried out jointly with Kohei Iwaki during a visit to the (appropriately named)  Bernoulli Centre in  Lausanne. I would also like to thank Sven Meinhardt for a careful reading of the preprint version, and for several useful comments.

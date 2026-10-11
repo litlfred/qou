@@ -8,149 +8,144 @@ pages: 18-20
 source_pdf: 2101.05931v3.pdf
 source_sha256: 41eaa81b97ede8e9
 doc_brief: "CATEGORICAL BRAID GROUP ACTIONS — Let g be a semisimple simply-laced Lie algebra of ﬁnite type."
+text_source: latex
+latex_prose_ratio: 0.944
+latex_coverage_ratio: 0.949
 ---
-group actions arise from categorical representations, ana logous to the construction of the crystal
-on Irr(C) in Proposition 3.4.
-Let C be a categorical representation of Uq(g). For any weight µ ∈X, by Theorem 6.8 Θ w0
-/BD
-µ :
-Db(Cµ) → Db(Cw0(µ)) is a perverse equivalence, and hence it induces a bijection ϕI 1µ : Irr(Cµ) →
-Irr(Cw0(µ)). By varying µ we obtain a bijection ϕI : Irr(C) → Irr(C).
-Now let J ⊆I be a connected subdiagram, and let gJ ⊂ g be the corresponding subalgebra. By
-restriction, C is also a categorical representation of Uq(gJ ), and hence by the above discussion we
-also obtain a bijection ϕJ : Irr(C) → Irr(C).
-We will prove that this family of bijections deﬁnes an action of the cactus group Irr(C). First we
-need the following technical result. The important point he re is just that there exists an integer n
-such that t2
-w01µ = ±qn1µ.
-Lemma 7.4. Letλ ∈X+,µ ∈X, and let µ −w0(λ) = ∑ ℓ
-r=1αir , where ir ∈I. Set jr =τ (ir) and
-deﬁne n(λ,µ ) ∈ Z by
-n(λ,µ ) = 2
-¨
-˝
-ℓ∑
-r=1
-λjr + 1 −
-∑
-1≤r≤s≤ℓ
-ajrjs + (λ,ρ )
-˛
-‚
-CATEGORICAL BRAID GROUP ACTIONS AND CACTUS GROUPS 19
-Then on L(λ)µ we have
-t2
-w01µ = (−1)⟨2λ,ρ∨⟩qn(λ,µ)1µ. (7.5)
-Proof. We will prove the claim by induction on ht(µ −w0(λ)). For µ =w0(λ), we have that ℓ = 0
-so n(λ,µ ) = ( λ,ρ ). By [25, Equation (7)] tw0(vλ) = ( −1)⟨λ,ρ∨⟩q(λ,ρ)vlow
-λ , which, combined with
-Lemma 6.2, implies that t2
-w0(vlow
-λ ) = ( −1)⟨λ,ρ∨⟩q(λ,ρ)vlow
-λ . Since dim( L(λ)w0(λ)) = 1, this proves the
-base case.
-Now choose any µ and suppose (7.5) holds for any weight µ′ such that ht(µ′ −w0(λ))<ht (µ −
-w0(λ)). Consider v =Ej1 · · ·Ejℓvlow
-λ ∈L(λ)µ. First note that by [25, Lemma 5.4] we have that
-t2
-w0Ei =q2K −2
-i Eit2
-w0. (7.6)
-Setting v′ =Ej2 · · ·Ejℓvlow
-λ , by induction we have
-t2
-w0v =q2K −2
-j1 Ej1t2
-w0v′
-= (q2K −2
-j1 Ej1)(−1)⟨λ,ρ∨⟩qn(λ,µ−αj1 )v′
-= (−1)⟨λ,ρ∨⟩q2+n(λ,µ−αj1 )−2(µ,αj1 )v
-One checks easily that n(λ,µ ) = 2+ n(λ,µ −αj1 )−2(µ,α j1 ), proving that t2
-w0v = (−1)⟨λ,ρ∨⟩qn(λ,µ)v.
-Since this holds for any vector of the form Ej1 · · ·Ejℓvlow
-λ in L(λ)µ, this completes the inductive
-step. □
-Theorem 7.7. The assignment cJ ↦→ϕJ deﬁnes an action of C on Irr(C).
-Proof. We need to show that the bijections ϕJ satisfy the cactus group relations.
-Relation (i) : Without loss of generality we may assume J = I. Fix a weight µ. Our aim is to
-show that
-ϕIϕI 1µ = Id Irr(Cµ). (7.8)
-Since the ﬁltration of Cw0(µ) which we use in the perversity data of Θ w0
-/BD
-µ, agrees with the
-ﬁltration of Cw0(µ) which we use in the perversity data of Θ w0
-/BD
-w0(µ), by Lemma 4.5 the composition
-Θ w0Θ w0
-/BD
-µ is a perverse autoequivalence of Db(Cµ).
-The functor [ ⟨2λ,ρ ∨⟩]⟨n(λ,µ )⟩ is also a perverse autoequivalence of Db(Cµ). By Lemma 7.4 these
-two perverse equivalences induce the same map on Grothendie ck groups, and hence by Lemma 4.2
-they also induce the same bijection. Since the bijection ind uced by [⟨2λ,ρ ∨⟩]⟨n(λ,µ )⟩ is the identity,
-this proves relation (i).
-Relation (ii) : Let J,K ⊂ I be disjoint subdiagrams with no connecting edges. Our aim is to
-show that
-ϕJϕK 1µ =ϕKϕJ 1µ. (7.9)
-We prove a slightly more general statement, namely that for a ny categorical representation C of
-Uq(gJ × gK), relation (7.9) holds.
-Note that Θ J Θ K
-/BD
-µ ∼= Θ KΘ J
-/BD
-µ are isomorphic perverse equivalences, so they induce the sa me
-bijections. It remains to show that
-ϕΘ J Θ K
-/BD
-µ =ϕJ ◦ϕK 1µ. (7.10)
-Consider ﬁrst the case when C categoriﬁes an simple representation of Uq(gJ × gK ). A minimal
-categoriﬁcation of Uq(gJ × gK) is of the form L(λ) ⊗
-/CZ
-L(µ), where λ is a highest weight for gJ and
-µ is a highest weight for gK . Hence by Lemma 3.5, a simple categoriﬁcation of Uq(gJ × gK) is of
-the form L(λ) ⊗
-/CZ
-L(µ) ⊗
-/CZ
-A for some abelian category A.
-This implies that as a categorical representation of Uq(gJ ) (respectively Uq(gK)), C categoriﬁes
-an isotypic representation. By Corollary 6.7 Θ J
-/BD
-wK
-0 (µ) and Θ K
-/BD
-µ are t-exact up shift on isotypics
-categoriﬁcations. Hence Equation (7.10) follows by Lemma 4 .5.
-20 IV A HALACHEV A, ANTHONY LICATA, IV AN LOSEV, AND ODED YACOB I
-Now consider a Jordan-H¨ older ﬁltration (Theorem 3.6):
-0 = C0 ⊂ · · · ⊂ C n = C,
-where for every i, Ci is a subrepresentation of C, and Ci/Ci−1 is a simple categoriﬁcation of Uq(gJ ×
-gK). Equation (7.10) now follows by an easy induction on i. Indeed the base case when i = 1 holds
-by the paragraph above, and the inductive step by Lemma 4.6.
-Relation (iii) : We need to show that ϕJϕK1µ = ϕKϕτK (J)1µ, where J ⊂ K. Again, we may
-assume that K =I. Note that we have an isomorphism at the level of functors:
-Θ −1
-w0 Θ wJ
-0
-Θ w0
-/BD
-µ ∼= Θ w
-τK (J )
-0
-/BD
-µ,
-which lifts the corresponding relation in B. Since this is an isomorphism of perverse equivalences,
-they must induce the same bijections by Lemma 4.2.
-It remains to show that
-ϕΘ −1
-w0 Θ wJ
-0
-Θ w0
-/BD
-µ =ϕ−1
-I ◦ϕJ ◦ϕI. (7.11)
-When C is a simple categoriﬁcation, by Corollary 6.7 Θ w0
-/BD
-µ is t-exact (up to shift). Hence Equation
-(7.11) follows by Lemma 4.7. Now apply the same reasoning as i n the proof of Relation (ii) to deduce
-equation (7.11) in the general case.
-□
+We now explain how  cactus group actions arise from categorical representations, analogous to the construction of the crystal on $\Irr(\cC)$ in Proposition \ref{prop:cryst}.
+
+Let $\cC$ be a categorical representation of $U_q(\fg)$.  For any weight $\mu \in X$, by Theorem \ref{thm:perveq} $\Theta_{w_0}\bone_\mu:D^b(\cC_\mu) \to D^b(\cC_{w_0(\mu)})$ is a perverse equivalence, and hence it induces a bijection $\varphi_I1_\mu:\Irr(\cC_\mu) \to \Irr(\cC_{w_0(\mu)})$.  By varying $\mu$  we obtain a bijection 
+$
+\varphi_I:\Irr(\cC) \to \Irr(\cC).
+$  
+
+Now let $J\subseteq I$ be a connected subdiagram, and let $\fg_J \subset \fg$ be the corresponding subalgebra.  By restriction, $\cC$ is also a categorical representation of $U_q(\fg_J)$, and hence by the above discussion we also obtain a bijection $
+\varphi_J:\Irr(\cC) \to \Irr(\cC).
+$
+
+
+We will prove that this family of bijections defines an action of the cactus group $\Irr(\cC)$.  First we need the following technical result.  The important point here is just that there exists an integer $n$ such that 
+$\st^2_{w_0}\sone_\mu=\pm q^n\sone_\mu$.
+
+\begin{Lemma}\label{lem:fulltwist}
+Let $\lambda\in X_+, \mu \in X$, and let $\mu-w_0(\lambda)=\sum_{r=1}^\ell \alpha_{i_r}$, where $i_r\in I$.  Set $j_r=\tau(i_r)$ and 
+define $n(\la,\mu)\in\ZZ$ by 
+    $$
+    n(\la,\mu)=2\left(\sum_{r=1}^\ell \la_{j_r}+1-\sum_{1\leq r\leq s\leq \ell}a_{j_rj_s}+(\la,\rho)\right)
+    $$
+    Then on  $L(\lambda)_\mu$ we have \begin{align}\label{eq:fulltwist}\st^2_{w_0}\sone_\mu=(-1)^{\langle 2\lambda ,\rho^\vee \rangle}q^{n(\la,\mu)}\sone_\mu.\end{align}
+\end{Lemma}
+
+\begin{proof}
+We will prove the  claim by induction on $ht(\mu-w_0(\la))$.  For $\mu=w_0(\la)$, we have that $\ell=0$ so  $n(\la,\mu)=(\la,\rho)$.  By \cite[Equation (7)]{KT}  $\st_{w_0}(v_\la)=(-1)^{\langle \lambda ,\rho^\vee \rangle}q^{(\la,\rho)}v_\la^{low}$, which, combined with Lemma \ref{lemma:KT}, implies that $\st_{w_0}^2(v_\la^{low})=(-1)^{\langle \lambda ,\rho^\vee \rangle}q^{(\la,\rho)}v_\la^{low}$.  Since $\dim(L(\la)_{w_0(\la)})=1$, this proves the base case.  
+
+Now choose any $\mu$ and suppose (\ref{eq:fulltwist}) holds for any weight $\mu'$ such that $ht(\mu'-w_0(\la))<ht(\mu-w_0(\la))$.  Consider  $v=E_{j_1}\cdots  E_{j_\ell}v_\la^{low} \in L(\la)_\mu$.  First note that by \cite[Lemma 5.4]{KT} we have that
+\begin{align}\label{lem:ftcomm}
+\st_{w_0}^2E_i=q^2K_i^{-2}E_i\st_{w_0}^2.
+\end{align}
+Setting $v'=E_{j_2}\cdots  E_{j_\ell}v_\la^{low}$, by induction we have
+\begin{align*}
+\st_{w_0}^2v &= q^2K_{j_1}^{-2}E_{j_1}\st_{w_0}^2v' \\
+&= (q^2K_{j_1}^{-2}E_{j_1})(-1)^{\langle \lambda ,\rho^\vee \rangle}q^{n(\la,\mu-\alpha_{j_1})}v' \\
+&= (-1)^{\langle \lambda ,\rho^\vee \rangle}q^{2+n(\la,\mu-\alpha_{j_1})-2(\mu,\alpha_{j_1})}v
+\end{align*}
+One checks easily that $n(\la,\mu)=2+n(\la,\mu-\alpha_{j_1})-2(\mu,\alpha_{j_1})$, proving that $\st_{w_0}^2v=(-1)^{\langle \lambda ,\rho^\vee \rangle}q^{n(\la,\mu)}v$.  Since this holds for any vector of the form $E_{j_1}\cdots  E_{j_\ell}v_\la^{low}$ in $L(\la)_\mu$, this completes the inductive step.
+\end{proof}
+
+
+
+\begin{Theorem}\label{thm:cactus}
+The assignment $c_J \mapsto \varphi_J$ defines an action of $C$ on $\Irr(\cC)$.
+\end{Theorem}
+
+\begin{proof} We need to show that the bijections $\varphi_J$ satisfy the cactus group relations. 
+
+
+
+
+
+
+
+
+
+
+\textit{Relation (i)}: Without loss of generality we may assume $J=I$.   Fix a weight $\mu$.  Our aim is to show that 
+\begin{equation}
+\label{eq:rel1}
+\varphi_I \varphi_I1_\mu=\Id_{\Irr(\cC_\mu)}.
+\end{equation}
+
+
+
+Since the filtration of $\cC_{w_0(\mu)}$ which we use in the perversity data of $\Theta_{w_0}\bone_\mu$, agrees with the filtration of $\cC_{w_0(\mu)}$ which we use in the perversity data of $\Theta_{w_0}\bone_{w_0(\mu)}$, by Lemma \ref{lem:pervcomp} the composition $\Theta_{w_0} \Theta_{w_0}\bone_\mu$ is a perverse autoequivalence of $D^b(\cC_\mu)$. 
+
+The  functor $[\langle 2\lambda ,\rho^\vee \rangle]\langle n(\lambda,\mu)\rangle$ is also a perverse autoequivalence of $D^b(\cC_\mu)$.   By Lemma \ref{lem:fulltwist} these two perverse equivalences induce the same map on Grothendieck groups, and hence by Lemma \ref{lem:LosLem} they also induce the same bijection.  Since the bijection induced by $[\langle 2\lambda ,\rho^\vee \rangle]\langle n(\lambda,\mu)\rangle$ is the identity, this proves  relation (i).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textit{Relation (ii)}:  Let $J,K \subset I$ be disjoint subdiagrams with no connecting edges.  Our aim is to show that
+\begin{align}\label{eq:rel2}
+\varphi_J\varphi_K1_\mu = \varphi_K \varphi_J1_\mu.
+\end{align}
+We prove a slightly more general statement, namely that for any categorical representation $\cC$ of $U_q(\fg_J \times\fg_K)$, relation (\ref{eq:rel2}) holds.
+
+Note that $\Theta_J\Theta_K\bone_\mu\cong \Theta_K\Theta_J\bone_\mu$ are isomorphic perverse equivalences, so they induce the same bijections.  It remains to show that
+\begin{align}\label{eq:rel2again}
+\varphi_{\Theta_J\Theta_K\bone_\mu} =\varphi_J\circ\varphi_K 1_\mu.
+\end{align}
+
+Consider first the case when $\cC$ categorifies an simple representation of $U_q(\fg_J\times\fg_K)$.  A minimal categorification of $U_q(\fg_J\times\fg_K)$ is of the form $\cL(\lambda)\otimes_\kk\cL(\mu)$, where $\lambda$ is a highest weight for $\fg_J$ and $\mu$ is a highest weight for $\fg_K$.  Hence by Lemma \ref{lem:isocat}, a simple categorification of $U_q(\fg_J\times\fg_K)$ is of the form $\cL(\lambda)\otimes_\kk\cL(\mu)\otimes_\kk\cA$ for some abelian category $\cA$.  
+
+This implies that as a categorical representation of $U_q(\fg_J)$ (respectively $U_q(\fg_K)$), $\cC$  categorifies an isotypic representation.  
+By Corollary \ref{cor:mainthm} $\Theta_J\bone_{w_0^K(\mu)}$ and $\Theta_K\bone_\mu$ are t-exact up shift on isotypics categorifications.  Hence Equation (\ref{eq:rel2again}) follows by Lemma \ref{lem:pervcomp}.
+
+Now consider a Jordan-H\"older filtration (Theorem \ref{thm:JH}):
+\begin{align*}
+0=\cC_0\subset \cdots\subset \cC_n=\cC,
+\end{align*}
+where for every $i$, $\cC_i$ is a  subrepresentation of $\cC$, and $\cC_i/\cC_{i-1}$ is a simple categorification of $U_q(\fg_J\times\fg_K)$.  Equation (\ref{eq:rel2again}) now follows by an easy induction on $i$.
+Indeed the base case when $i=1$ holds by the paragraph above, and the inductive step by Lemma \ref{lem:quot}.
+
+
+
+
+
+
+
+
+
+
+
+
+\textit{Relation (iii)}: We need to show that $\varphi_J\varphi_K1_\mu=\varphi_K\varphi_{\tau_K(J)}1_\mu$, where $J\subset K$.  Again, we may assume that $K=I$.  Note that we have an isomorphism at the level of functors:
+\begin{align*}
+\Theta_{w_0}^{-1}\Theta_{w_0^J}\Theta_{w_0}\bone_\mu \cong \Theta_{w_0^{\tau_K(J)}}\bone_\mu,
+\end{align*}
+which lifts the corresponding relation in $B$.  Since this is an isomorphism of perverse equivalences, they must induce the same bijections by Lemma \ref{lem:LosLem}.  
+
+It remains to show that 
+\begin{align}\label{eq:compo}
+\varphi_{\Theta_{w_0}^{-1}\Theta_{w_0^J}\Theta_{w_0}\bone_\mu} =\varphi_I^{-1}\circ \varphi_J\circ \varphi_I.
+\end{align}
+When $\cC$ is a simple categorification, by Corollary \ref{cor:mainthm} $\Theta_{w_0}\bone_\mu$ is t-exact (up to shift).  Hence Equation (\ref{eq:compo}) follows by Lemma \ref{lem:texactperv}.  Now apply the same reasoning as in the proof of Relation (ii) to deduce equation (\ref{eq:compo}) in the general case.  
+
+
+  
+
+
+
+
+
+\end{proof}

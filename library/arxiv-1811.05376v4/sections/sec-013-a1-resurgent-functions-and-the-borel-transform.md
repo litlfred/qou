@@ -8,37 +8,19 @@ pages: 36-36
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
 doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
+text_source: latex
+latex_prose_ratio: 0.942
+latex_coverage_ratio: 0.96
 ---
-The theory of resurgence was originally developed by Écalle in [21] and [22]. See [43] for an
-introduction to the mathematical theory of resurgence and see [20] for an introduction to the
-general use of resurgence in quantum ﬁeld theory. Garoufalidis [26] and Witten [52] where the
-pioneers of the use of resurgence in quantum Chern-Simons theory.
-Deﬁnition 2.For a Riemann surfaceC with universal covering space
-π : ˜C→C
-the algebra of resurgent functions isR(C) =M( ˜C).
-One source of resurgent functions are the Borel transforms of Laplace integrals. We now
-introduce the Borel transform. Let Γ∈M (C) be the Gamma function, which forz∈ C with
-Re(z)> 0 is deﬁned by
-Γ(z) =
-∫ ∞
-0
-e−ttz−1 dt.
-Deﬁnition 3.Let{αj}∞
-j=0 be an increasing sequence of positive real numbers,{βj}∞
-j=0 a sequence
-of non-negative integers and{cj}∞
-j=0 a sequence of complex numbers. Consider the formal series
-˜ϕ(λ) =
-∞∑
-j=0
-cjλ−αj log(λ)βj.
-The Borel transform of˜ϕ(λ) is given by the formal series
-B( ˜ϕ)(ζ) =
-∞∑
-j=0
-cj(−1)βj ∂βj
-∂αjβj
-(ζαj−1
-Γ(αj)
-)
-.
+The theory of resurgence was originally developed by Écalle in [@Ecalle81a] and [@Ecalle81b]. See [@MitschiSauzin16] for an introduction to the mathematical theory of resurgence and see [@DunneUnsal15] for an introduction to the general use of resurgence in quantum field theory. Garoufalidis [@Garoufalidis08] and Witten [@Witten11] where the pioneers of the use of resurgence in quantum Chern-Simons theory.
+
+::: definition
+[]{#def:res label="def:res"} For a Riemann surface $C$ with universal covering space $$\pi: \tilde{C}\rightarrow C$$ the algebra of resurgent functions is $\mathcal{R}(C)=\mathcal{M}(\tilde{C}).$
+:::
+
+One source of resurgent functions are the Borel transforms of Laplace integrals. We now introduce the Borel transform. Let $\Gamma \in \mathcal{M}(\mathbb{C})$ be the Gamma function, which for $z \in \mathbb{C}$ with $\mathop{\mathrm{Re}}(z)>0$ is defined by $$\Gamma(z)= \int_0^{\infty} e^{-t} t^{z-1} \mathop{\mathrm{{d}\hskip-.6mm}}t.$$
+
+::: definition
+[]{#def:Bor label="def:Bor"} Let $\{\alpha_j \}_{j=0}^{\infty}$ be an increasing sequence of positive real numbers, $\{\beta_j \}_{j=0}^{\infty}$ a sequence of non-negative integers and $\{c_j\}_{j=0}^{\infty}$ a sequence of complex numbers. Consider the formal series $$\tilde{\varphi}(\lambda)=\sum_{j=0}^{\infty} c_j \lambda^{-\alpha_j} \log(\lambda)^{\beta_j}.$$ The Borel transform of $\tilde{\varphi}(\lambda)$ is given by the formal series $$\label{def:Borel}
+    \mathcal{B}(\tilde{\varphi})(\zeta) =\sum_{j=0}^{\infty} c_j (-1)^{\beta_j} \frac{\partial^{\beta_j}}{\partial {\alpha_j}^{\beta_j}} \left( \frac{\zeta^{\alpha_j-1}}{\Gamma(\alpha_j)}  \right).$$
+:::

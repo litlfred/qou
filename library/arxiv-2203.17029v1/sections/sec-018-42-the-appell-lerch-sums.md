@@ -9,297 +9,444 @@ source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
 doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 duplicate_of: "modularqholonomicmodules"
+text_source: latex
+latex_prose_ratio: 0.844
+latex_coverage_ratio: 0.954
 ---
-q-diﬀerence equation ( 22) has Newton polygon shown in Figure 3.
-f (0)
-f (−1)
-g(0)
-g(−1)
-Figure 3. The Newton polygon of Equation ( 22).
-MODULAR q-HOLONOMIC MODULES 33
-To begin with, the boundary of the lower Newton polygon consists of one edge of slope zero
-and one edge of slope 1. The edge of slope zero has a solution of the f orm
-f (0)(t, q) =
-∞∑
-k=0
-αk(q)tk θ(ρ−1t; q)
-θ(t; q) where αk(q)q2kρ2 + qkραk−1(q) − qkραk(q) − αk−1(q) = 0 .
-(162)
-Therefore, as αk(q) = 0 for k < 0, we get the indicial polynomial
-α0(q)(ρ2 − ρ) = 0 (163)
-and so ρ = 1. Then we have
-(q2k − qk)αk(q) − (1 − qk)αk−1(q) = 0 so − qkak = ak−1. (164)
-Therefore, normalising so that α0(q) = 1,
-ˆf (0)(t, q) =
-∞∑
-k=0
-(−1)kq−k(k+1)/2tk. (165)
-This is of course divergent for |q| < 1 so we must q-Borel resum. The aﬀect on the Newton
-polygon is as follows
-f (0)
-B1
-B1f (0)
+\label{sub.ex2}
+
+This section is devoted to the proof of Theorem~\ref{thm.ex2}.
+The $q$-difference equation~\eqref{ex2} has Newton polygon shown in
+Figure~\ref{f.ex2}.
+
+\begin{figure}[!htpb]
+\begin{center}
+\begin{tikzpicture}[scale=0.8,baseline=-3]
+\draw[<->,thick] (-1.5,0) -- (5.5,0);
+\draw[<->,thick] (0,-1.5) -- (0,3.5);
+\filldraw (2,0) circle (2pt);
+\filldraw (2,2) circle (2pt);
+\filldraw (0,2) circle (2pt);
+\filldraw (4,0) circle (2pt);
+\draw (0,2) -- (2,0) -- (4,0) -- (2,2) -- cycle;
+\fill[blue,opacity=0.2] (0,2) -- (2,0) -- (4,0) -- (2,2) -- cycle;
+\node at (3,-0.3) {$f^{(0)}$};
+\node at (0.7,0.6) {$f^{(-1)}$};
+\node at (1,2.3) {$g^{(0)}$};
+\node at (3.3,1.5) {$g^{(-1)}$};
+\end{tikzpicture}
+\caption{The Newton polygon of Equation~\eqref{ex2}.}
+\label{f.ex2}
+\end{center}
+\end{figure}
+
+\noindent
+To begin with, the boundary of the lower Newton polygon consists of one edge of
+slope zero and one edge of slope $1$. The edge of slope zero has a solution of
+the form
+\be
+f^{(0)}(t,q)=
+\sum_{k=0}^{\infty}\alpha_{k}(q)t^{k}\frac{\theta(\rind^{-1}t;q)}{\theta(t;q)}
+\;\text{where}\;
+\alpha_{k}(q)q^{2k}\rind^{2}+q^{k}
+\rind\alpha_{k-1}(q)-q^{k}\rind\alpha_{k}(q)-\alpha_{k-1}(q)
+=0.
+\ee
+Therefore, as $\alpha_{k}(q)=0$ for $k<0$, we get the indicial polynomial
+\be
+\alpha_{0}(q)(\rind^{2}-\rind) = 0
+\ee
+and so $\rind=1$. Then we have
+\be
+(q^{2k}-q^{k})\alpha_{k}(q)-(1-q^k)\alpha_{k-1}(q)=0
+\quad\text{so}\quad
+-q^{k}a_{k}=a_{k-1}.
+\ee
+Therefore, normalising so that $\alpha_{0}(q)=1$,
+\be
+\hat{f}^{(0)}(t,q)=\sum_{k=0}^{\infty}(-1)^{k}q^{-k(k+1)/2}t^{k}.
+\ee
+This is of course divergent for $|q|<1$ so we must $q$-Borel resum. The affect on
+the Newton polygon is as follows
+\begin{center}
+\begin{tikzpicture}
+\draw[<->,thick] (-1,0) -- (3,0);
+\draw[<->,thick] (0,-1) -- (0,2);
+\filldraw (1,0) circle (2pt);
+\filldraw (1,1) circle (2pt);
+\filldraw (0,1) circle (2pt);
+\filldraw (2,0) circle (2pt);
+\draw (0,1) -- (1,0) -- (2,0) -- (1,1) -- cycle;
+\fill[blue,opacity=0.2] (0,1) -- (1,0) -- (2,0) -- (1,1) -- cycle;
+\node at (1.5,-0.35) {\begin{tiny}$f^{(0)}$\end{tiny}};
+\node at (4,0.4) {$\Bor_{1}$};
+\draw[->,ultra thick] (3.5,0) -- (4.5,0);
+\draw[<->,thick] (-1+6,0) -- (3+6,0);
+\draw[<->,thick] (0+6,-1) -- (0+6,2);
+\draw (-0.1+6,1) -- (0.1+6,1);
+\filldraw (1+6,0) circle (2pt);
+\filldraw (1+6,1) circle (2pt);
+\filldraw (2+6,1) circle (2pt);
+\filldraw (2+6,0) circle (2pt);
+\draw (1+6,1) -- (1+6,0) -- (2+6,0) -- (2+6,1) -- cycle;
+\fill[blue,opacity=0.2] (1+6,1) -- (1+6,0) -- (2+6,0) -- (2+6,1) -- cycle;
+\node at (1.5+6,-0.35) {\begin{tiny}$\Bor_{1}f^{(0)}$\end{tiny}};
+\end{tikzpicture}
+\end{center}
 Now notice that
-B1 ˆf (0)(ξ, q) =
-∞∑
-k=0
-ξk = 1
-1 − ξ (166)
-and so we ﬁnd
-f (0)(t, λ, q) = L1B1( ˆf (0))(t, λ, q) = 1
-θ(λ; q)
-∑
-ℓ
-(−1)ℓ qℓ(ℓ+1)/2λℓ
-1 − λtqℓ . (167)
-This is the Appell-Lerch sum whose modular properties were studied in Zwegers thesis [ 67].
-Now the bottom edge of slope −1 must be divided by a θ-function to get a zero slope. The
-eﬀect on the Newton polygon is as follows.
-f (−1) θ(q−1t; q)−1
-ˆf (−1)
-34 STA VROS GAROUF ALIDIS AND CAMPBELL WHEELER
-Therefore, the bottom edge of slope minus one has a solution of the form
-f (−1)(t, q) = θ(q−1t; q)−1 ˆf (−1)(t, q) = θ(q−1t; q)−1
-∞∑
-k=0
-αk(q)tk θ(ρ−1t; q)
-θ(t; q) (168)
-where
-(1 − qkρ)αk(q) + qkρ(1 − qk−1ρ)αk−1(q) = 0 . (169)
-Therefore, the indicial polynomial is given by
-(1 − ρ)α0(q) = 0 (170)
-and so ρ = 1. Then we see that
-(1 − q)α1(q) = 0 (171)
-and so αk = 0 for k ⁄= 0. Therefore,
-f (−1)(t, q) = θ(q−1t; q)−1 . (172)
-Now following similar calculations we ﬁnd that
-B1ˆg(0)(ξ, q) = −
-−1∑
-k=−∞
-ξk = − ξ−1
-1 − ξ−1 = 1
-1 − ξ (173)
-and so
-g(0)(t, µ, q) = 1
-θ(µ; q)
-∑
-ℓ
-(−1)ℓ qℓ(ℓ+1)/2µℓ
-1 − µtqℓ . (174)
-Then ﬁnally, we have
-g(−1)(t, q) = θ(q−1t; q)−1 . (175)
-Consider the inhomogeneous gauge transformation (see Section 2.6)
-U(t, λ, q) =
-(
-0 1
-1 −t
-)( 1 0
-f (0)(t, λ, q) f (−1)(t, q)
-)
-(176)
-and the similar one for V . With the deﬁnition of the fundamental matrices given in Equa-
-tions (
-23) and associated monodromy, we then have that
-− →
-M(t, λ, q) =
-( 1 0
-g(0)(t, µ, q) g(−1)(t, q)
-) −1( 1 0
-f (0)(t, λ, q) f (−1)(t, q)
-)
-= θ(q−1t, q)
-( θ(q−1t, q)−1 0
-−g(0)(t, µ, q) 1
-)( 1 0
-f (0)(t, λ, q) θ(q−1t, q)−1
-)
+\be
+\Bor_{1}{\hat{f}^{(0)}}(\xi,q) = \sum_{k=0}^{\infty}\xi^{k}
+= \frac{1}{1-\xi}
+\ee
+and so we find
+\be
+\label{ex2.f0}
+f^{(0)}(t,\lambda ,q)
 =
-( 1 0
-− →
-M2,1(t, λ, µ, q) 1
-)
-(177)
+\mathcal{L}_{1}\mathcal{B}_{1}(\hat{f}^{(0)})(t,\lambda ,q)
+=
+\frac{1}{\theta(\lambda ;q)}\sum_{\ell}(-1)^{\ell}
+\frac{q^{\ell(\ell+1)/2}\lambda ^{\ell}}{1-\lambda tq^{\ell}}.
+\ee
+This is the Appell-Lerch sum whose modular properties were studied in Zwegers
+thesis~\cite{Zwegersthesis}. Now the bottom edge of slope $-1$ must be divided by
+a $\theta$-function to get a zero slope. The effect on the Newton polygon is as
+follows.
+\begin{center}
+\begin{tikzpicture}
+\draw[<->,thick] (-1,0) -- (3,0);
+\draw[<->,thick] (0,-1) -- (0,2);
+\filldraw (1,0) circle (2pt);
+\filldraw (1,1) circle (2pt);
+\filldraw (0,1) circle (2pt);
+\filldraw (2,0) circle (2pt);
+\draw (0,1) -- (1,0) -- (2,0) -- (1,1) -- cycle;
+\fill[blue,opacity=0.2] (0,1) -- (1,0) -- (2,0) -- (1,1) -- cycle;
+\node at (0.37,0.19) {\begin{tiny}$f^{(-1)}$\end{tiny}};
+\node at (4,0.4) {$\theta(q^{-1}t;q)^{-1}$};
+\draw[->,ultra thick] (3.5,0) -- (4.5,0);
+\draw[<->,thick] (-1+6,0) -- (3+6,0);
+\draw[<->,thick] (0+6,-1) -- (0+6,2);
+\draw (-0.1+6,1) -- (0.1+6,1);
+\draw (2+6,-0.1) -- (2+6,0.1);
+\filldraw (1+6,0) circle (2pt);
+\filldraw (1+6,1) circle (2pt);
+\filldraw (0+6,0) circle (2pt);
+\filldraw (2+6,1) circle (2pt);
+\draw (0+6,0) -- (1+6,0) -- (2+6,1) -- (1+6,1) -- cycle;
+\fill[blue,opacity=0.2] (0+6,0) -- (1+6,0) -- (2+6,1) -- (1+6,1) -- cycle;
+\node at (0.5+6,-0.25) {\begin{tiny}$\hat{f}^{(-1)}$\end{tiny}};
+\end{tikzpicture}
+\end{center}
+Therefore, the bottom edge of slope minus one has a solution of the form
+\be
+f^{(-1)}(t,q)
+=
+\theta(q^{-1}t;q)^{-1}\hat{f}^{(-1)}(t,q)
+=
+\theta(q^{-1}t;q)^{-1}\sum_{k=0}^{\infty}\alpha_{k}(q)t^{k}
+\frac{\theta(\rind^{-1}t;q)}{\theta(t;q)}
+\ee
 where
-− →
-M2,1(t, λ, µ, q) = θ(q−1t; q)f (0)(t, λ, q) − θ(q−1t; q)g(0)(t, µ, q)
-= θ(q−1t; q)
-θ(λ; q)
-∑
-ℓ
-(−1)ℓ qℓ(ℓ+1)/2λℓ
-1 − λtqℓ − θ(q−1t; q)
-θ(µ; q)
-∑
-ℓ
-(−1)ℓ qℓ(ℓ+1)/2µℓ
-1 − µtqℓ . (178)
-MODULAR q-HOLONOMIC MODULES 35
-Using Equation (7) of Proposition 1.4 of [ 67], we can deduce that
-− →
-M2,1(t, λ, µ, q) = −(q; q)3
-∞θ(q−1t; q)θ(λ−1µ; q)θ(λ−1µ−1t−1; q)
-θ(λ−1; q)θ(µ; q)θ(λ−1t−1; q)θ(µ−1t−1; q) . (179)
-We now give a second proof of the above equation using elliptic functio ns and residues, which
-is more general and applicable to our third example. Let m2,1 denote the function deﬁned
-by the right-hand side of ( 179). We need to prove that the function E1, deﬁned by
-E1(t, λ, µ, q) := f (0)(t, λ, q) − g(0)(t, µ, q) − m2,1(t, λ, µ, q)
-θ(q−1t; q) (180)
-is identically zero. This will follow from the facts, that E1 is holomorphic at /BV
-× (see
-Lemma 4.2 below), and a solution of a ﬁrst order equation ( 181) (see Lemma 4.1).
-Lemma 4.1. If h(t, q) is a solution to the equation
-h(qt, q) + th(t, q) = 0 (181)
-that is holomorphic for t ∈ /BV
-× then h(t, q) = 0.
-Proof. Every solution is of the form C(t, q)/θ(q−1t; q) for some elliptic function C(t, q).
-Therefore, C(t, q) = h(t, q)θ(q−1t; q) is a holomorphic elliptic function and therefore con-
-stant. However, this implies that h has simple poles unless C = 0. □
-Lemma 4.2. (a) The function f (0)(t, λ, q) has simple poles at t ∈ λ−1q
-/CI
-with residue
-Rest=q−mλ−1f (0)(t, λ, q) dt
-2πit = −1
-θ(qmλ; q)
-Rest=q−mµ−1g(0)(t, µ, q) dt
-2πit = −1
-θ(qmµ; q) .
-(182)
-(b) The function θ(q−1t; q)−1m2,1(t, λ, µ, q) has simple poles at t ∈ q
-/CI
-λ−1, q
-/CI
-µ−1 with residues
-Rest=q−mλ−1θ(q−1t; q)−1m2,1(t, λ, µ, q) dt
-2πit = −1
-θ(qmλ; q)
-Rest=q−mµ−1θ(q−1t; q)−1m2,1(t, λ, µ, q) dt
-2πit = 1
-θ(qmµ; q) .
-(183)
-Proof. Part (a) follows from a calculation of the residue of the only term in th e sum that
-contributes to the residue in Equations ( 167) ( 174) and Equation ( 48). Now for part (b) we
-note that
-Rest=1
-1
-θ(t; q)
-dt
-2πit = 1
-(q; q)3
-∞
-(184)
-36 STA VROS GAROUF ALIDIS AND CAMPBELL WHEELER
-which follows easily from the Jacobi triple product (
-46) for example. Therefore, we see
-Rest=q−mλ−1
-m2,1(t, λ, µ, q)
-θ(q−1t; q)
-dt
-2πit
-= (−1)mqm(m+1)/2Rest=1 − (q; q)3
-∞θ(λ−1µ; q)θ(µ−1t−1; q)
-θ(λ−1; q)θ(µ; q)θ(t−1; q)θ(λµ−1t−1; q)
-dt
-2πit
-= (−1)mqm(m+1)/2 θ(λ−1µ; q)θ(µ−1; q)
-θ(λ−1; q)θ(µ; q)θ(λµ−1; q)
-= −1
-θ(qmλ; q)
-(185)
-where we have repeatedly used Equations ( 47) and ( 48). A similar computation calculates
-the other residues or using Equation ( 47) we can show that
-m2,1(t, λ, µ, q) = −m2,1(t, µ, λ, q) . (186)
-□
-Noting that E1(t, λ, µ, q) satisﬁes Equation ( 181) these lemmata show that the potential
-simple poles of E1(t, λ, µ, q) cancel and therefore it is holomorphic on t ∈ /BV
-× and therefore
+\be
+(1-q^{k}\rind)\alpha_{k}(q)+q^{k}\rind(1-q^{k-1}\rind)\alpha_{k-1}(q)=0.
+\ee
+Therefore, the indicial polynomial is given by
+\be
+(1-\rind)\alpha_{0}(q)=0
+\ee
+and so $\rind=1$. Then we see that
+\be
+(1-q)\alpha_{1}(q)=0
+\ee
+and so $\alpha_{k}=0$ for $k\neq 0$. Therefore,
+\be
+\label{ex2.f-1}
+f^{(-1)}(t,q)=\theta(q^{-1}t;q)^{-1}\,.
+\ee
+Now following similar calculations we find that
+\be
+\Bor_{1}\hat{g}^{(0)}(\xi,q)
+=
+-\sum_{k=-\infty}^{-1}\xi^{k}
+=
+-\frac{\xi^{-1}}{1-\xi^{-1}}
+=
+\frac{1}{1-\xi}
+\ee
+and so
+\be
+\label{ex2.g0}
+g^{(0)}(t,\mu ,q)
+=
+\frac{1}{\theta(\mu ;q)}\sum_{\ell}(-1)^{\ell}
+\frac{q^{\ell(\ell+1)/2}\mu ^{\ell}}{1-\mu tq^{\ell}} \,.
+\ee
+Then finally, we have
+\be
+\label{ex2.g1}
+g^{(-1)}(t,q)=\theta(q^{-1}t;q)^{-1} \,.
+\ee
+Consider the inhomogeneous gauge transformation (see Section~\ref{sub.cat})
+\be
+U(t,\lambda,q)
+=
+\begin{pmatrix}
+  0 & 1\\
+  1 & -t
+\end{pmatrix}
+\begin{pmatrix}
+  1 & 0\\
+  f^{(0)}(t,\lambda,q) & f^{(-1)}(t,q)
+\end{pmatrix}
+\ee
+and the similar one for $V$. With the definition of the fundamental matrices
+given in Equations~\eqref{UVex2} and associated monodromy, we then have that
+
+\be
+\begin{aligned}
+\vM(t,\lambda,q)
+&=
+\begin{pmatrix}
+  1 & 0\\
+  g^{(0)}(t,\mu,q) & g^{(-1)}(t,q)
+\end{pmatrix}^{-1}
+\begin{pmatrix}
+  1 & 0\\
+  f^{(0)}(t,\lambda,q) & f^{(-1)}(t,q)
+\end{pmatrix}\\
+&=
+\theta(q^{-1}t,q)
+\begin{pmatrix}
+  \theta(q^{-1}t,q)^{-1} & 0\\
+  -g^{(0)}(t,\mu,q) & 1
+\end{pmatrix}
+\begin{pmatrix}
+  1 & 0\\
+  f^{(0)}(t,\lambda,q) & \theta(q^{-1}t,q)^{-1}
+\end{pmatrix}\\
+&=
+\begin{pmatrix}
+  1 & 0\\
+  \vM_{2,1}(t,\lambda ,\mu ,q) & 1
+\end{pmatrix}
+\end{aligned}
+\ee
+
+where
+
+\be
+\begin{aligned}
+\vM_{2,1}(t,\lambda ,\mu ,q)
+&=
+\theta(q^{-1}t;q)f^{(0)}(t,\lambda ,q)-\theta(q^{-1}t;q)g^{(0)}(t,\mu ,q)\\
+&=
+\frac{\theta(q^{-1}t;q)}{\theta(\lambda ;q)}\sum_{\ell}(-1)^{\ell}
+\frac{q^{\ell(\ell+1)/2}\lambda ^{\ell}}{1-\lambda tq^{\ell}}
+-\frac{\theta(q^{-1}t;q)}{\theta(\mu ;q)}\sum_{\ell}(-1)^{\ell}
+\frac{q^{\ell(\ell+1)/2}\mu ^{\ell}}{1-\mu tq^{\ell}} \,.
+\end{aligned}
+\ee
+Using Equation~(7) of Proposition~1.4 of \cite{Zwegersthesis}, we can deduce that
+\be
+\label{M21sander}
+\vM_{2,1}(t,\lambda ,\mu ,q)
+=
+-\frac{(q;q)_{\infty}^{3}\theta(q^{-1}t;q)\theta(\lambda ^{-1}\mu ;q)
+  \theta(\lambda ^{-1}\mu ^{-1}t^{-1};q)}{\theta(\lambda ^{-1};q)\theta(\mu ;q)
+  \theta(\lambda ^{-1}t^{-1};q)\theta(\mu ^{-1}t^{-1};q)}.
+\ee
+We now give a second proof of the above equation using elliptic functions and
+residues, which is more general and applicable to our third example. Let $m_{2,1}$
+denote the function defined by the right-hand side of~\eqref{M21sander}.
+We need to prove that the function $\calE_1$, defined by
+\be
+\calE_1(t,\lambda,\mu,q)
+:=
+f^{(0)}(t,\lambda,q)
+-g^{(0)}(t,\mu,q)
+-\frac{m_{2,1}(t,\lambda,\mu,q)}{\theta(q^{-1}t;q)}
+\ee
+is identically zero. This will follow from the facts, that
+$\calE_1$ is holomorphic at $\BC^\times$ (see Lemma~\ref{lem.resAL} below),
+and a solution of a first order equation~\eqref{AL.hom.equ}
+(see Lemma~\ref{lem.vanish}). 
+
+\begin{lemma}
+\label{lem.vanish}
+  If $h(t,q)$ is a solution to the equation
+\be
+\label{AL.hom.equ}
+h(qt,q)+th(t,q)=0
+\ee
+that is holomorphic for $t\in\BC^{\times}$ then $h(t,q)=0$.
+\end{lemma}
+
+\begin{proof}
+  Every solution is of the form $C(t,q)/\theta(q^{-1}t;q)$ for some elliptic
+  function $C(t,q)$. Therefore, $C(t,q)=h(t,q)\theta(q^{-1}t;q)$ is a
+  holomorphic elliptic function and therefore constant. However, this implies
+  that $h$ has simple poles unless $C=0$.
+\end{proof}
+
+\begin{lemma}
+  \label{lem.resAL}
+  \rm{(a)} The function $f^{(0)}(t,\lambda,q)$ has simple poles at
+$t\in \lambda^{-1}q^{\BZ}$ with residue
+\be
+\begin{aligned}
+\Res_{t=q^{-m}\lambda^{-1}}f^{(0)}(t,\lambda,q)\frac{dt}{2\pi it}
+&=
+\frac{-1}{\theta(q^{m}\lambda;q)}\\
+\Res_{t=q^{-m}\mu^{-1}}g^{(0)}(t,\mu,q)\frac{dt}{2\pi it}
+&=
+\frac{-1}{\theta(q^{m}\mu;q)} \,.
+\end{aligned}
+\ee
+  \rm{(b)}
+  The function $\theta(q^{-1}t;q)^{-1}m_{2,1}(t,\lambda,\mu,q)$ has simple
+  poles at $t\in q^{\BZ}\lambda^{-1},q^{\BZ}\mu^{-1}$ with residues
+  \be
+\begin{aligned}
+  \Res_{t=q^{-m}\lambda^{-1}}\theta(q^{-1}t;q)^{-1}
+  m_{2,1}(t,\lambda,\mu,q)\frac{dt}{2\pi it}
+&=
+\frac{-1}{\theta(q^{m}\lambda;q)}\\
+\Res_{t=q^{-m}\mu^{-1}}\theta(q^{-1}t;q)^{-1}
+m_{2,1}(t,\lambda,\mu,q)\frac{dt}{2\pi it}
+&=
+\frac{1}{\theta(q^{m}\mu;q)}\,.
+\end{aligned}
+\ee
+\end{lemma}
+\begin{proof}
+  Part (a) follows from a calculation of the residue of the only term in the
+  sum that contributes to the residue in Equations~\eqref{ex2.f0}~\eqref{ex2.g0}
+  and Equation~\eqref{theta.fun2}. Now for part (b) we note that
+\be
+\Res_{t=1}\frac{1}{\theta(t;q)}\frac{dt}{2\pi it}=\frac{1}{(q;q)_{\infty}^{3}}
+\ee
+which follows easily from the Jacobi triple product~\eqref{theta} for example.
+Therefore, we see
+\be
+\begin{aligned}
+  &\Res_{t=q^{-m}\lambda^{-1}}
+  \frac{m_{2,1}(t,\lambda,\mu,q)}{\theta(q^{-1}t;q)}\frac{dt}{2\pi it}\\
+&=
+(-1)^{m}q^{m(m+1)/2}\Res_{t=1}
+-\frac{(q;q)_{\infty}^{3}\theta(\lambda ^{-1}\mu ;q)
+\theta(\mu ^{-1}t^{-1};q)}{\theta(\lambda ^{-1};q)\theta(\mu ;q)
+\theta(t^{-1};q)\theta(\lambda\mu ^{-1}t^{-1};q)}\frac{dt}{2\pi it}\\
+&=
+(-1)^{m}q^{m(m+1)/2}
+\frac{\theta(\lambda ^{-1}\mu ;q)
+\theta(\mu ^{-1};q)}{\theta(\lambda ^{-1};q)\theta(\mu ;q)
+\theta(\lambda\mu ^{-1};q)}\\
+&=
+\frac{-1}{\theta(q^{m}\lambda;q)}
+\end{aligned}
+\ee
+where we have repeatedly used Equations~\eqref{theta.fun}
+and~\eqref{theta.fun2}. A similar computation calculates the other residues
+or using Equation~\eqref{theta.fun} we can show that
+\be
+m_{2,1}(t,\lambda,\mu,q)=-m_{2,1}(t,\mu,\lambda,q) \,.
+\ee
+\end{proof}
+
+Noting that $\calE_{1}(t,\lambda,\mu,q)$ satisfies Equation~\eqref{AL.hom.equ}
+these lemmata show that the potential simple poles of $\calE_{1}(t,\lambda,\mu,q)$
+cancel and therefore it is holomorphic on $t\in\BC^{\times}$ and therefore
 vanishes.
-For completeness, we give a third proof of ( 179) using Lemma 2.1.
-− →
-M2,1(t, λ, µ, q) = θ(q−1t; q)L1
-( 1
-1 − ξ
-)
-(t, λ; q) − θ(q−1t; q)L1
-( 1
-1 − ξ
-)
-(t, µ; q)
-= θ(q−1t; q)θ(λ−1µ; q)(q; q)3
-∞
-θ(λ−1; q)θ(µ; q) Resξ=1
-θ(λ−1µ−1t−1ξ; q)
-θ(ξλ−1t−1; q)θ(ξµ−1t−1; q)(1 − ξ)
-= −(q; q)3
-∞θ(q−1t; q)θ(λ−1µ; q)θ(λ−1µ−1t−1; q)
-θ(λ−1; q)θ(µ; q)θ(λ−1t−1; q)θ(µ−1t−1; q)
-(187)
-concluding the proof of Equation ( 24). From the explicit expression for
-− →
-M2,1 from Equa-
-tion (25) and the modularity of the Dedekind η-function and the Jacobi θ-function it follows
-that M satisﬁes Equation ( 6) with weight κ = (0 , 1). It follows that the two cocycles of
-Equation (23) agree. This implies that neither cocycle depends on λ or µ. This is equivalent
-to observations in [ 67] that the slash operator acting on the Appell-Lerch sums depends only
-on the diﬀerence of two Jacobi variables. Then using [ 67, Proposition 1.5] we can give an ex-
-plicit formula for the cocycle in terms of the Mordell integral ( 27) and elementary functions.
-In particular, we have
-f (0)(qt, λ, q) + tf (0)(t, λ, q) = 1
-f (−1)(qt, q) + tf (−1)(t, q) = 0
-~f (0)(t, λ, q) e
-( (z + 1/2 − τ /2)2
-2τ − 1
-8
-) √τ = τ f(0)(t, λ, q) − τ t− 1
-2 q
-1
-8 h(t, q)
-f (−1)(~t,~q) e
-( (z + 1/2 − τ /2)2
-2τ − 1
-8
-) √τ = f (−1)(t, q) .
-(188)
-MODULAR q-HOLONOMIC MODULES 37
+
+For completeness, we give a third proof of~\eqref{M21sander} using  
+Lemma~\ref{lem.fund}.
+\be
+\begin{aligned}
+\vM_{2,1}(t,\lambda ,\mu ,q)
+&=
+\theta(q^{-1}t;q)\Lap_{1}\left(\frac{1}{1-\xi}\right)(t,\lambda ;q)
+-\theta(q^{-1}t;q)\Lap_{1}\left(\frac{1}{1-\xi}\right)(t,\mu ;q)\\
+&=
+\frac{\theta(q^{-1}t;q)\theta(\lambda ^{-1}\mu ;q)(q;q)_{\infty}^{3}}{
+  \theta(\lambda ^{-1};q)\theta(\mu ;q)}\Res_{\xi=1}\frac{\theta(\lambda ^{-1}
+  \mu ^{-1}t^{-1}\xi;q)}{\theta(\xi\lambda ^{-1}t^{-1};q)
+  \theta(\xi\mu ^{-1}t^{-1};q)(1-\xi)}\\
+&=
+-\frac{(q;q)_{\infty}^{3}\theta(q^{-1}t;q)\theta(\lambda ^{-1}\mu ;q)
+  \theta(\lambda ^{-1}\mu ^{-1}t^{-1};q)}{\theta(\lambda ^{-1};q)\theta(\mu ;q)
+  \theta(\lambda ^{-1}t^{-1};q)\theta(\mu ^{-1}t^{-1};q)} 
+\end{aligned}
+\ee
+concluding the proof of Equation~\eqref{Mex2b}.
+From the explicit expression for $\vM_{2,1}$ from Equation~\eqref{M12ex2} and the
+modularity of the Dedekind $\eta$-function and the Jacobi $\theta$-function it
+follows that $M$ satisfies Equation~\eqref{Mmod} with weight $\kappa=(0,1)$. It
+follows that the two cocycles of Equation~\eqref{UVex2} agree.
+This implies that neither cocycle depends on $\lambda$ or $\mu$. This
+is equivalent to observations in \cite{Zwegersthesis} that the slash operator
+acting on the Appell-Lerch sums depends only on the difference of two Jacobi
+variables. Then using~\cite[Proposition~1.5]{Zwegersthesis} we can give an
+explicit formula for the cocycle in terms of the Mordell integral~\eqref{mordell}
+and elementary functions. In particular, we have
+\be
+\begin{aligned}
+f^{(0)}(qt,\lambda ,q)+tf^{(0)}(t,\lambda ,q)
+&=1\\
+f^{(-1)}(qt,q)+tf^{(-1)}(t,q)
+&=0\\
+\ti f^{(0)}(t,\lambda ,q)\;\e
+\left(\frac{(z+1/2-\tau/2)^{2}}{2\tau}-\frac{1}{8}\right)\sqrt{\tau}
+&=
+\tau f^{(0)}(t,\lambda ,q)-\tau t^{-\frac{1}{2}}q^{\frac{1}{8}}h(t,q)\\
+f^{(-1)}(\ti t,\ti q)\;\e\left(\frac{(z+1/2-\tau/2)^{2}}{2\tau}
+  -\frac{1}{8}\right)
+\sqrt{\tau}
+&=
+f^{(-1)}(t,q) \,.
+\end{aligned}
+\ee
 This means that
-det U(t, λ, q) = f (−1)(qt, q)f (0)(t, q) − f (−1)(t, q)f (0)(qt, q)
-= f (−1)(t, q)
-(
-−tf (0)(t, q) − f (0)(qt, q)
-)
-= −f (−1)(t, q).
-(189)
+\be
+\begin{aligned}
+\det U(t,\lambda ,q)
+&=
+f^{(-1)}(qt,q)f^{(0)}(t,q)-f^{(-1)}(t,q)f^{(0)}(qt,q)\\
+&=
+f^{(-1)}(t,q)\left(-tf^{(0)}(t,q)-f^{(0)}(qt,q)\right)\\
+&=
+-f^{(-1)}(t,q).
+\end{aligned}
+\ee
 Therefore, we see that
-Ω S(z, τ ) =
-( 0 1
-1 −˜t
-) ( τ −1 0
-e( 1
-8 )√τ
-˜t− 1
-2 ˜q
-1
-8 e
-(
-z2
-2τ
-)
-h(z, τ )
-e( 1
-8 )√τ e
-(
-− (z+1/2−τ /2)2
-2τ
-)
-) (
-0 1
-1 −t
-) −1
-.
-(190)
-We can vary the contour in Equation (
-27) to get the integral
-∫
-ζ /CA
-eπi(τ x2+2izx)
-2 cosh(πx) dx (191)
-for |ζ| = 1 and ζ ⁄= ±i. This is a convergent integral to a holomorphic function in ( z, τ )
+\be
+\Om_{S}(z,\tau)
+=
+\begin{pmatrix}
+0 & 1\\
+1 & -\tilde{t}
+\end{pmatrix}
+\begin{pmatrix}
+\tau^{-1} & 0\\
+\frac{\e\left(\frac{1}{8}\right)}{\sqrt{\tau}}\tilde{t}^{-\frac{1}{2}}
+\tq^{\frac{1}{8}}\e\left(\frac{z^2}{2\tau}\right)h(z,\tau) &
+\frac{\e\left(\frac{1}{8}\right)}{\sqrt{\tau}}\e
+\left(-\frac{(z+1/2-\tau/2)^{2}}{2\tau}\right)
+\end{pmatrix}
+\begin{pmatrix}
+0 & 1\\
+1 & -t
+\end{pmatrix}^{-1}.
+\ee
+We can vary the contour in Equation~\eqref{mordell} to get the integral
+\be
+\int_{\zeta\BR}\frac{e^{\pi i (\tau x^{2} + 2 i z x)}}{2\cosh(\pi x)}dx
+\ee
+for $|\zeta|=1$ and $\zeta\neq\pm i$. This is a convergent integral to a
+holomorphic function in $(z,\tau)$ when $\Im(\tau\zeta^2)>0$. Therefore, we
+see that from the uniqueness properties of the solutions to the functional
+equations of $h$ the Mordell integral~\cite[Proposition~1.2]{Zwegersthesis}
+these functions give an analytic extension of $h$ the Mordell integral to
+the cut plane $\BC'$. Therefore, the cocycle $\Om_{U,S}(t,q)$ extends to a
+holomorphic function for $z\in\BC$ and $\tau\in\BC'$. Since $\Om_{U,T}=I$,
+part (c) of Theorem~\ref{thm.ST} concludes that the cocycle $\Om_U$ is modular.

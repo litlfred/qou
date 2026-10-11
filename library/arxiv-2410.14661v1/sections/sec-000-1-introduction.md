@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-4
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
-text_source: latex
-latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.869
 doc_brief: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot — This is"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.991
 ---
 Volume Conjectures relate the exponential growth rate of various quantum invariants of hyperbolic 3- manifolds at certain root of unity to the hyperbolic volume of the manifolds. In a series started from [@CZ23-1; @CZ23-2], we plan to prove various volume conjectures related to the twist knots.
 
@@ -21,17 +21,16 @@ Furthermore, the volume conjecture [@CY18] relates the Reshetikhin-Turaev and th
 Let us state the main results of this paper precisely. First, we recall that the volume conjecture for Reshetikhin-Turaev invariant [@CY18]:
 
 ::: conjecture
-[]{#conjecture-CY label="conjecture-CY"} Let $M$ be an oriented closed hyperbolic 3-manifold, for an odd integer $r$, let $RT_r(M)$ be its $r$-th Reshetikhin-Turaev invariant, then at the root of unity $t=e^{\frac{4\pi\sqrt{-1}}{r}}$, $$\begin{align}
-\lim_{r\rightarrow \infty} \frac{4\pi}{r}RT_{r}(M)=Vol(M)+\sqrt{-1}CS(M) \mod \pi^2\mathbb{Z}.
-\end{align}$$
+[]{#conjecture-CY label="conjecture-CY"} Let $M$ be an oriented closed hyperbolic 3-manifold, for an odd integer $r$, let $RT_r(M)$ be its $r$-th Reshetikhin-Turaev invariant, then at the root of unity $t=e^{\frac{4\pi\sqrt{-1}}{r}}$, $$\begin{aligned}
+\lim_{r\rightarrow \infty} \frac{4\pi}{r}RT_{r}(M)=Vol(M)+\sqrt{-1}CS(M) \mod \pi^2\mathbb{Z}. 
+\end{aligned}$$
 :::
 
-We define the subset $S\subset\mathbb{Z}_+\times \mathbb{Z}_+$ as follows: $$\begin{align}
-S=\{(p,q)\in \mathbb{Z}_+\times \mathbb{Z}_+ |(p,q) \ \text{satisfies the condition} \ (\ref{formula-pqconditions})\}.
-\end{align}$$
+We define the subset $S\subset\mathbb{Z}_+\times \mathbb{Z}_+$ as follows: $$\begin{aligned}
+S=\{(p,q)\in \mathbb{Z}_+\times \mathbb{Z}_+ |(p,q) \ \text{satisfies the condition} \ (\ref{formula-pqconditions})\}.    
+\end{aligned}$$
 
-$$\begin{equation}
-  \label{formula-pqconditions}
+$$\label{formula-pqconditions}
 q\geq \left\{ \begin{aligned}
          & 27  &  \ ( \text{if} \ p=6) \\
          & 19 & \ ( \text{if} \ p=7)  \\ 
@@ -40,42 +39,43 @@ q\geq \left\{ \begin{aligned}
          & 14 & \ ( \text{if} \ p=11, 12, 13)  \\
          & 13 & \ ( \text{if} \ 14 \leq p\leq 32)  \\ 
          & 12 & \ ( \text{if} \ p\geq 33).  \\ 
-                          \end{aligned} \right.
-\end{equation}$$
+                          \end{aligned} \right.$$
 
-Let $\hat{V}(p,q,\theta_1,\theta_2,\theta_3)$ be the potential function of Reshetikhin-Turaev invariants of $M_{p,q}$ given by formula ([\[formula-PotentialV\]](#formula-PotentialV){reference-type="ref" reference="formula-PotentialV"}). By Proposition [\[prop-critical\]](#prop-critical){reference-type="ref" reference="prop-critical"}, there exists a unique critical point $(\theta_1^0,\theta_2^0,\theta_3^0)$ of $\hat{V}(p,q;\theta_1,\theta_2,\theta_3)$. Let $z_i^0=e^{2\pi\sqrt{-1}\theta_i^0}$ for $i=1,2,3$, we put $$\begin{align}
+Let $\hat{V}(p,q,\theta_1,\theta_2,\theta_3)$ be the potential function of Reshetikhin-Turaev invariants of $M_{p,q}$ given by formula ([\[formula-PotentialV\]](#formula-PotentialV){reference-type="ref" reference="formula-PotentialV"}). By Proposition [\[prop-critical\]](#prop-critical){reference-type="ref" reference="prop-critical"}, there exists a unique critical point $(\theta_1^0,\theta_2^0,\theta_3^0)$ of $\hat{V}(p,q;\theta_1,\theta_2,\theta_3)$. Let $z_i^0=e^{2\pi\sqrt{-1}\theta_i^0}$ for $i=1,2,3$, we put $$\begin{aligned}
   \zeta(p,q)&=
 \hat{V}(p,q;\theta_1^0,\theta_2^0,\theta_3^0)\\\nonumber
 &=\pi\sqrt{-1}\left(\frac{3q}{2}+(\frac{q}{2}-1)(\theta_1^0)^2-\theta_1^0+(2p+1)(\theta_3^0)^2-(2p+3)\theta_3^0-2\theta_2^0\right)\\\nonumber
 &+\frac{1}{2\pi\sqrt{-1}}\left(\frac{\pi^2}{6}+\text{Li}_2(z_2^0z_3^0)+\text{Li}_2\left(\frac{z_2^0}{z_3^0}\right)-\text{Li}_2(z_2^0z_1^0)-\text{Li}_2(z_2^0)-\text{Li}_2\left(\frac{z_2^0}{z_1^0}\right)\right).
-\end{align}$$ and $$\begin{align}
+\end{aligned}$$ and $$\begin{aligned}
  \label{formula-omegapq}
     \omega(p,q)=\frac{z_2^0(z_3^0-(z_3^0)^{-1})(\sqrt{z_1^0}-\frac{1}{\sqrt{z_1^0}})}{\sqrt{(1-z_2^0z_3^0)(1-z_2^0(z_{3}^0)^{-1})}\sqrt{H(p,q;z_1^0,z_2^0,z_3^0)}},
-\end{align}$$ where $$\begin{align}
+\end{aligned}$$ where $$\begin{aligned}
   &H(p,q;z_1^0,z_2^0,z_3^0)=4\frac{z_2^0}{z_1^0-z_2^0}\cdot \frac{z_1^0z_2^0}{1-z_1^0z_2^0}\left(\frac{z_2^0z_3^0}{1-z_2^0z_3^0}+\frac{z_2^0}{z_3^0-z_2^0}\right)\\\nonumber
   &-4\left(\frac{z_2^0}{z_1^0-z_2^0}+\frac{z_1^0z_2^0}{1-z_1^0z_2^0}\right)\frac{z_2^0z_3^0}{1-z_2^0z_3^0}\cdot\frac{z_2^0}{z_3^0-z_2^0}+\left(\frac{z_2^0}{z_1^0-z_2^0}+\frac{z_1^0z_2^0}{1-z_1^0z_2^0}\right)\frac{z_2^0}{1-z_2^0}\left(\frac{z_2^0z_3^0}{1-z_2^0z_3^0}+\frac{z_2^0}{z_3^0-z_2^0}\right)\\\nonumber
   &+(8p+4)\frac{z_2^0}{z_1^0-z_2^0}\cdot \frac{z_1^0z_2^0}{1-z_1^0z_2^0}+(2p+1)\left(\frac{z_2^0}{z_1^0-z_2^0}+\frac{z_1^0z_2^0}{1-z_1^0z_2^0}\right)\frac{z_2^0}{1-z_2^0}\\\nonumber
   &-(2p+\frac{q}{2})\left(\frac{z_2^0}{z_1^0-z_2^0}+\frac{z_1^0z_2^0}{1-z_1^0z_2^0}\right)\left(\frac{z_2^0z_3^0}{1-z_2^0z_3^0}+\frac{z_2^0}{z_3^0-z_2^0}\right)-(\frac{q}{2}-1)\frac{z_2^0}{1-z_2^0}\left(\frac{z_2^0z_3^0}{1-z_2^0z_3^0}+\frac{z_2^0}{z_3^0-z_2^0}\right)\\\nonumber
   &+4(\frac{q}{2}-1)\frac{z_2^0z_3^0}{1-z_2^0z_3^0}\cdot\frac{z_2^0}{z_3^0-z_2^0}-(2p+1)(\frac{q}{2}-1)\left(\frac{z_2^0}{z_1^0-z_2^0}+\frac{z_1^0z_2^0}{1-z_1^0z_2^0}+\frac{z_2^0}{1-z_{2}^0}-\frac{z_2^0z_3^0}{1-z_2^0z_3^0}-\frac{z_2^0}{z_3^0-z_2^0}\right).
-\end{align}$$
+\end{aligned}$$
 
 Then, we have
 
 ::: theorem
-[]{#theorem-main label="theorem-main"} For $(p,q)\in S$, the asymptotic expansion of Reshetikhin-Turaev $RT_{r}(M_{p,q})$ is given by the following form $$\begin{align}
+[]{#theorem-main label="theorem-main"} For $(p,q)\in S$, the asymptotic expansion of Reshetikhin-Turaev $RT_{r}(M_{p,q})$ is given by the following form $$\begin{aligned}
         RT_{r}(M_{p,q})&=(-1)^{p+1}\sqrt{-1}e^{\sigma((\mathcal{K}_{p})_q)\left(\frac{3}{r}+\frac{r+1}{4}\right)\pi\sqrt{-1}}\omega(p,q)e^{(N+\frac{1}{2})\zeta(p,q)}\\\nonumber
 &\cdot\left(1+\sum_{i=1}^d\kappa_i(p,q)\left(\frac{4\pi\sqrt{-1}}{r}\right)^i+O\left(\frac{1}{r^{d+1}}\right)\right),
-\end{align}$$ for $d\geq 1$, where $\omega(p,q)$ is given by formula ([\[formula-omegapq\]](#formula-omegapq){reference-type="ref" reference="formula-omegapq"}) and $\kappa_i(p,q)$ are constants determined by the 3-manifold $M_{p,q}$.
+    
+\end{aligned}$$ for $d\geq 1$, where $\omega(p,q)$ is given by formula ([\[formula-omegapq\]](#formula-omegapq){reference-type="ref" reference="formula-omegapq"}) and $\kappa_i(p,q)$ are constants determined by the 3-manifold $M_{p,q}$.
 :::
 
-By Theorem [\[theorem-critical=volume\]](#theorem-critical=volume){reference-type="ref" reference="theorem-critical=volume"}, we know that $$\begin{align}
+By Theorem [\[theorem-critical=volume\]](#theorem-critical=volume){reference-type="ref" reference="theorem-critical=volume"}, we know that $$\begin{aligned}
      2\pi \zeta(p,q)= Vol(M_{p,q})+\sqrt{-1}CS(M_{p,q}) \mod \pi^2\sqrt{-1}\mathbb{Z}.
-\end{align}$$ It implies that
+\end{aligned}$$ It implies that
 
 ::: corollary
-For $(p,q)\in S$, we have $$\begin{align}
+For $(p,q)\in S$, we have $$\begin{aligned}
         \lim_{r\rightarrow \infty}\frac{4\pi}{r}\log RT_r(M_{p,q};e^{\frac{4\pi \sqrt{-1}}{r}})=Vol(M_{p,q})+\sqrt{-1}CS(M_{p,q}) \mod \pi^2\sqrt{-1}\mathbb{Z}.
-\end{align}$$
+    
+\end{aligned}$$
 :::
 
 Hence we proved Conjecture [\[conjecture-CY\]](#conjecture-CY){reference-type="ref" reference="conjecture-CY"} for $M_{p,q}$.

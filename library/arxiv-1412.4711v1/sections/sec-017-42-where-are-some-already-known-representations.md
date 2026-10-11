@@ -8,116 +8,108 @@ pages: 20-22
 source_pdf: 1412.4711v1.pdf
 source_sha256: 4fb1d6ee062cca8c
 doc_brief: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
+text_source: latex
+latex_prose_ratio: 0.961
+latex_coverage_ratio: 0.976
 ---
-sentations are already known, more precisely the boundary-unipotent ones,
-i.e. those for which the images of l and m are unipotent. These represen-
-tations were found in [11]. Algebraically, we add the conditions L = L∗ =
-M =M∗ = 1. Once a point in Defor( M,T ) is known, it is an easy task to
-decide whether it belongs to D1,D2 orD3: just plug the coordinates in the
-polynomials deﬁning these three components and check which one vanishes.
-Here are the representations found in [11] and where they live:
-• The monodromy of the complete hyperbolic structure on the com-
-plement of the ﬁgure-eight knot and its complex conjugate represen-
-tation correspond to points of D1. Indeed, if ω± = 1±i
-√
-3
-2 is one root
-of f1, then
-u12 =u21 =u34 =u43 =v12 =v21 =v34 =v43 =ω±
-is a point of Defor( M,T ), corresponding to this monodromy or its
-complex conjugate. In other terms, D1 is the geometric component
-of Defor(M,T ).
-• Setting:
-u1,2 =u3,4 =v3,4 =v4,3 = ¯u2,1 = ¯u4,3 = ¯v1,2 = ¯v2,1 =ω±,
-21
-one gets two other points in Defor( M,T ). They correspond to a
-discrete representation of the fundamental group of the complement
-of knot in PU(2, 1) with faithful boundary holonomy. Moreover, its
-action on complex hyperbolic space has limit set the full boundary
-sphere [8]. Both these point also belong to the geometric component
-D1.
-• Let γ± =− 1
-2±i 1
-2
-√
-7. Deﬁne
-u2,1 =v2,1 = ¯u4,3 = ¯v1,2 = 5±i
-√
-7
-4 ,
-u1,2 =v2,1 = 3±i
-√
-7
-8 ,v 4,3 = ¯v3,4 =− 1±i
-√
-7
-2
-These two points belong to Defor( M,T ) and correspond to repre-
-sentation in PU(2, 1). It turns out that they belong to D3.
-• Consider now the inverse of γ±: 1/γ± =− 1
-4±i 1
-4
-√
-7,nd deﬁne:
-u1,2 = ¯u3,4 = 3±i
-√
-7
-2 ,v 4,3 = ¯v3,4 = 5±i
-√
-7
-8 ,
-u2,1 =v2,1 = ¯u4,3 = ¯v1,2 = −1±i
-√
-7
-4
-These two points belong to Defor( M,T ) and correspond to repre-
-sentation in PU(2, 1). It turns out that they belong to D2.
-All solutions were already obtained in [8]. Moreover the solutions that be-
-long to D2 or D3 correspond to spherical CR structures with unipotent
-boundary holonomy of rank one [7].
-Moreover, in [7], it was shown that there exists a non-inner automorphism
-τ of the group Γ 8 that sends a representation appearing in the third point
-above to a representation appearing in the fourth point. It is known that,
-on the hyperbolic structure, this automorphism correspond to a change of
-orientation, that is it acts as complex conjugation. It proves that the action
-of τ on the representation variety exchange the last two components and
-preserves the ﬁrst one. This fact is presented in a more concrete way in the
-following section 5.
-4.2.1. Hyperbolic solutions - A-polynomial. We may now look after the rep-
-resentations coming from PGL(2, C), which we call hyperbolic solutions. In-
-deed, the hyperbolic conditions : u12 =u21 =u34 =u43, v12 =v21 =v34 =
-v43 on the parameters is equivalent to the fact that the holonomy represen-
-tation associated to these parameters has its image lying in Ad(PGL(2, C)).
-These conditions simplify a lot the equations and give the 1-dimensional
-complex variety
-z = 1
-1−y, x 2y2 = (1−x)(1−y).
-22 E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF, F. ROUILLIER AND M. THISTLETHWAITE
+\label{section:example-unipotent}Some representations are already known, more
+precisely the boundary-unipotent ones, i.e. those for which the images of $l$
+and $m$ are unipotent. These representations were found in {\cite{FKR14}}.
+Algebraically, we add the conditions $L=L^{\ast} =M=M^{\ast} =1$. Once a point in $\mathrm{Defor}(M,\mathcal T)$ is known, it is an easy task to decide whether it belongs to $D_1$, $D_2$ or $D_3$: just plug the coordinates in the polynomials defining these three components and check which one vanishes.
+
+Here are the representations found in \cite{FKR14} and where they live:
+\begin{itemize}
+  \item The monodromy of the complete hyperbolic structure on the complement of the figure-eight knot and its complex conjugate representation correspond to points of $D_1$. Indeed, if
+  $\omega^{\pm} = \frac{1 \pm i \sqrt{3}}{2}$ is one root of $f_{1}$, then
+  \[ u_{12} =u_{21} =u_{34} =u_{43} =v_{12} =v_{21} =v_{34} =v_{43} =
+     \omega^{\pm} \]
+  is a point of $\mathrm{Defor}(M,\mathcal T)$, corresponding to this monodromy or its complex conjugate. In other terms, $D_1$ is the geometric component of $\mathrm{Defor}(M,\mathcal T)$.
+  
+  \item Setting:
+  \[ u_{1,2} =u_{3,4} =v_{3,4} =v_{4,3} = \bar{u}_{2,1} = \bar{u}_{4,3} =
+     \bar{v}_{1,2} = \bar{v}_{2,1} = \omega^{\pm} , \]
+     one gets two other points in $\mathrm{Defor}(M,\mathcal T)$.
+  They correspond to a discrete representation of the fundamental
+  group of the complement of knot in $\tmop{PU} (2,1)$ with faithful boundary
+  holonomy. Moreover, its action on complex hyperbolic space has limit set the
+  full boundary sphere {\cite{falbeleight}}. Both these point also belong to the geometric component $D_1$.
+  
+  
+  
+  \item Let $\gamma^{\pm} =-
+  \frac{1}{2} \pm i \frac{1}{2}  \sqrt{7}$. Define
+  \begin{center}
+    $\begin{array}{c}
+      u_{2,1} =v_{2,1} = \bar{u}_{4,3} = \bar{v}_{1,2} = \frac{5\pm i
+      \sqrt{7}}{4} ,\\
+      u_{1,2} =v_{2,1} = \frac{3\pm i \sqrt{7}}{8} ,v_{4,3} = \bar{v}_{3,4} =-
+      \frac{1\pm i \sqrt{7}}{2}
+    \end{array}$
+  \end{center}
+  These two points belong to $\mathrm{Defor}(M,\mathcal T)$ and correspond to representation in $\tmop{PU} (2,1)$. It turns out that they belong to $D_3$.
+  \item Consider now the inverse of $\gamma^{\pm}$: $1/ \gamma^{\pm} =-
+  \frac{1}{4} \pm i \frac{1}{4}  \sqrt{7}$,nd define:
+  \begin{center}
+    $\begin{array}{c}
+      u_{1,2} = \bar{u}_{3,4} = \frac{3\pm i \sqrt{7}}{2} ,v_{4,3} =
+      \bar{v}_{3,4} = \frac{5\pm i \sqrt{7}}{8} ,\\
+      u_{2,1} =v_{2,1} = \bar{u}_{4,3} = \bar{v}_{1,2} = \frac{-1\pm i
+      \sqrt{7}}{4}
+    \end{array}$
+  \end{center}  
+  These two points belong to $\mathrm{Defor}(M,\mathcal T)$ and correspond to representation in $\tmop{PU} (2,1)$. It turns out that they belong to $D_2$.
+  
+  
+\end{itemize}
+All solutions were already obtained in {\cite{falbeleight}}. Moreover the solutions that belong to $D_2$ or $D_3$ correspond to spherical CR structures with
+unipotent boundary holonomy of rank one {\cite{DF}}.
+
+Moreover, in {\cite{DF}}, it was shown that there exists a non-inner
+automorphism $\tau$ of the group $\Gamma_{8}$ that sends a representation
+appearing in the third point above to a representation appearing in the fourth point.
+It is known that, on the hyperbolic structure, this automorphism
+correspond to a change of orientation, that is it acts as complex conjugation. It proves that the action of $\tau$
+on the representation variety exchange the last two components and preserves
+the first one. This fact is presented in a more concrete way in the following section
+\ref{deformation}.
+
+
+\subsubsection{Hyperbolic solutions - $A$-polynomial}
+
+We may now look after the representations coming from $\mathrm{PGL}
+(2,\mathbb{C})$, which we call hyperbolic solutions. Indeed, the hyperbolic
+conditions : $u_{12} =u_{21} =u_{34} =u_{43}$, $v_{12} =v_{21} =v_{34}
+=v_{43}$ on the parameters is equivalent to the fact that the holonomy
+representation associated to these parameters has its image lying in
+$\mathrm{Ad} ( \mathrm{PGL} (2,\mathbb{C}))$. These conditions simplify a lot
+the equations and give the 1-dimensional complex variety
+\[ z= \frac{1}{1-y} , \hspace{1em} x^{2} y^{2} = (1-x)  (1-y) . \]
 We then obtain
-u12 =u34 =u21 =u43 =x,
-u23 =u41 =u14 =u32 = 1− 1
-x,
-u13 =u31 =u24 =u42 = 1
-1−x,
-v12 =v21 =v34 =v43 = 1
-1−y,
-v13 =v24 =v31 =v42 = 1− 1
-y
-v23 =v14 =v32 =v41 =y.
+\[ \begin{array}{l}
+     u_{12} =u_{34} =u_{21} =u_{43} =x,\\
+     u_{23} =u_{41} =u_{14} =u_{32} =1- \frac{1}{x} ,\\
+     u_{13} =u_{31} =u_{24} =u_{42} = \frac{1}{1-x} ,\\
+     v_{12} =v_{21} =v_{34} =v_{43} = \frac{1}{1-y} ,\\
+     v_{13} =v_{24} =v_{31} =v_{42} =1- \frac{1}{y}\\
+     v_{23} =v_{14} =v_{32} =v_{41} =y.
+   \end{array} \]
 Furthermore, we get
-L = 1
-L∗ = xy
-x− 1,M = 1
-M∗ = (1−y)2
-y4 .
-It appears that all hyperbolic solutions lie in the ﬁrst component.
-Eliminating x and y between L and M with the condition x2y2 = (1−
-x)(1−y) gives the condition (called A-polynomial):
-−L8M + 2L7M + 3L6M− 2L5M +L4M 2− 6L4M +L4− 2L3M + 3L2M +
-2LM−M = 0
-Note that thisA-polynomial is not the classical one for the group SL(2, C)
-but is the same as the one independently found by C. Zickert [23].
-Note that hyperbolic and CR-solutions in the ﬁrst component intersect
-in a 1-dimensional variety, namely the real part of the hyperbolic solu-
-tions. Those are, from a geometric point of view, degenerate as the group
-PGL(2, R) is not linked to a 3-dimensional geometry.
+\[ L= \frac{1}{L^{\ast}} = \frac{xy}{x-1} ,M= \frac{1}{M^{\ast}} =
+   \frac{(1-y)^{2}}{y^{4}} . \]
+It appears that all hyperbolic solutions lie in the first component.
+
+Eliminating $x$ and $y$ between $L$ and $M$ with the condition $x^{2} y^{2} =
+(1-x)  (1-y)$ gives the condition (called $A$-polynomial):
+
+{\small{$-L^{8} M+2 \hspace{0.17em} L^{7} M+3 \hspace{0.17em} L^{6} M-2
+\hspace{0.17em} L^{5} M+L^{4} M^{2} -6 \hspace{0.17em} L^{4} M+L^{4} -2
+\hspace{0.17em} L^{3} M+3 \hspace{0.17em} L^{2} M+2 \hspace{0.17em} LM-M=0$}}
+
+Note that this $A$-polynomial is not the classical one for the group
+$\tmop{SL} (2,\mathbb{C})$ but is the same as the one independently found by
+C. Zickert {\cite{Zickert-A-pol}}.
+
+Note that hyperbolic and CR-solutions in the first component intersect in a
+1-dimensional variety, namely the real part of the hyperbolic solutions. Those
+are, from a geometric point of view, degenerate as the group $\tmop{PGL}
+(2,\mathbb{R})$ is not linked to a 3-dimensional geometry.

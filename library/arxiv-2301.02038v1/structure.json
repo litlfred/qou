@@ -255,8 +255,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Vinogradov_SC_v2.tex",
-   "tex_sections": 4,
-   "overlaid": 1,
+   "tex_sections": 13,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -266,26 +266,32 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.817,
-     "coverage_ratio": 0.95,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-1-geometry-of-pdes",
      "title": "Geometry of PDEs",
-     "prose_ratio": 0.178,
+     "prose_ratio": 0.543,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-11-jet-spaces",
      "title": "jet spaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.814,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-12-the-cartan-distribution",
      "title": "the Cartan distribution",
-     "result": "no matching \\section"
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-2-cohomology-of-pdes",
@@ -296,28 +302,42 @@
     {
      "id": "sec-005-21-horizontal-cohomology",
      "title": "horizontal cohomology",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-22-interpreting-horizontal-cohomologies",
      "title": "interpreting horizontal cohomologies",
-     "result": "no matching \\section"
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-23-algebraic-structures-on-horizontal-cohomologi",
      "title": "algebraic structures on horizontal cohomologies",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-3-homotopy-of-pdes",
      "title": "Homotopy of PDEs",
-     "prose_ratio": 0.051,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-31-homotopy-algebras",
      "title": "homotopy algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-references",

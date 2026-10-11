@@ -8,433 +8,131 @@ pages: 15-21
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
 doc_brief: "Volume Conjecture: Refined and Categorified — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the"
+text_source: latex
+latex_prose_ratio: 0.891
+latex_coverage_ratio: 0.975
 ---
-A physical framework for knot homologies was ﬁrst proposed i n [28] and later studied from
-various viewpoints and in a number of closely related system s in [32, 33, 34, 26]. Regardless
-– 14 –
-of the details and duality frames used, the basic idea is that a graded vector space HR(K)
-associated to a knot K colored by a representation R is identiﬁed with the space of reﬁned
-BPS invariants that carry information not only about the cha rge of the BPS state but also
-about the spin content:
-HR(K) = Href
-BPS. (3.28)
-This interpretation can be used for performing concrete com putations [35, 26, 36] (see also
-[37, 38, 39] and [40, 41, 42]) as well as for studying the struc ture of Hg,R
-i,j (K) for various g
-and R [43, 44]. In this section, we will use both methods – based on c oncrete formulas for
-torus knots and on structural properties for arbitrary knot s – to compute colored HOMFLY
-homology and colored superpolynomials of (2, 2p + 1) torus knots. Furthermore, the physical
-interpretation of the homological knot invariants in terms of the reﬁned (a.k.a. motivic) BPS
-invariants is what will ultimately allow us to treat the latt er in more general systems on the
-same footing, cf. section 4.
-First, let us recall the ﬁve-brane conﬁguration relevant to the physical description of the
-sl(N) knot homologies [28, 32, 33]:
-space-time : R ×T ∗S3 ×M4
-N M5-branes : R × S3 × D (3.29)
-|R| M5-branes : R × LK × D
-whereLK is the total space of the conormal bundle to K ⊂ S3 in the Calabi-Yau spaceT ∗S3,
-and in most of applications one usually takes D ∼
-= R2 and M4 ∼
-= R4. See e.g. [44] for further
-details, references, and the outline of the relation betwee n diﬀerent ways of looking at this
-physical system.
-The precise form of the 4-manifold M4 and the surface D ⊂ M4 is not important, as
-long as they enjoy U(1)F ×U(1)P symmetry action, where the ﬁrst (resp. second) factor is
-a rotation symmetry of the normal (resp. tangent) bundle of D ⊂ M4. Following [33], let
-us denote the corresponding quantum numbers by F and P . These quantum numbers were
-denoted, respectively, by 2S1 and 2(S1 −S2) in [26] and by 2j3 and n in [44].
-Something special happens when K =T m,n is a torus knot. Then, as pointed out in [26],
-the ﬁve-brane theory in (3.29) has an extra R-symmetry U(1)R that acts on S3 leaving the
-knot K = T p,q and, hence, the Lagrangian LK ⊂T ∗S3 invariant. Following [26], we denote
-the quantum number corresponding to this symmetry bySR, and also introduce the partition
-function
-Z ref
-SU (N )(S3,T m,n
-R ;q,t ) := Tr Href
-BPS
-(−1)SRqPtF −SR (3.30)
-that “counts” reﬁned BPS states in the setup (3.29). A priori , this partition function is
-diﬀerent from the Poincar´ e polynomial of thesl(N) knot homology, which in these notations
-reads
-P sl(N ),R(K;q,t ) = Tr Href
-BPS
-qPtF. (3.31)
-– 15 –
-However, it was argued in [26] that for some torus knots all re ﬁned BPS states (3.28) have
-SR = 0 and the two expressions actually agree.
-Similarly, in a dual description after the geometric transi tion the setup (3.29) turns into
-a system
-space-time : R ×X ×M4 (3.32)
-M5-branes : R ×LK ×D
-where X is the total space of the O(−1) ⊕ O(−1) bundle over CP1, and BPS states carry a
-new quantum number which becomes the a-grading of Href
-BPS = HR
-i,j,k(K). One of the main
-results in [26] is that this space has four gradings: in addition to the a-,q- andt-grading that
-in the physics setup correspond to the “winding number” β ∈ H2(X,L K) ∼
-= Z, and to the
-quantum numbersP andF, the space HBP S = HR
-i,j,k(K) has the fourth grading, by SR ∈ Z.
-Therefore, one of the interesting features of the reﬁned Chern-Simons theory is that it pre-
-dicts a new grading on the homology of torus knots and links, thereby upgrading Hsl(N ),R
-i,j (K)
-to a triply-graded theory (labeled by g andR) and similarly upgrading HR
-i,j,k(K) to a homol-
-ogy theory with as much as four gradings! It would be very interesting to study these new
-extra gradings in other formulations of knot homologies. So me hints for the extra gradings
-of torus knot homologies seem to appear in [45].
-After the geometric transition, the partition function analogous to (3.30) “counts” reﬁned
-BPS states in the setup (3.32):
-Z ref(S3,T m,n
-R ;a,q,t ) = Tr Href
-BPS
-(−1)SRaβqPtF −SR. (3.33)
-When all reﬁned BPS states have SR = 0 – which, following [26], will be our working as-
-sumption here – this expression coincides with the colored s uperpolynomial (3.7), which in
-these notations reads P R(K;a,q,t ) = Tr Href
-BPS
-aβqPtF . This will be our strategy for obtain-
-ing the colored superpolynomials of (2 , 2p + 1) torus knots. In fact, via the relation with
-reﬁned BPS invariants, we will essentially do the computati on twice: ﬁrst, via direct calcu-
-lation of the reﬁned Chern-Simons partition function (3.30 ) and its large N version (3.33),
-and then, in section 3.1.3, by using the structural properties of (3.28) that follow from physics.
-Although reﬁned Chern-Simons theory is not a gauge theory,2 its partition function can
-be evaluated by mimicking the steps in the ordinary Chern-Si mons theory. In particular, one
-can deﬁne “reﬁned analogs” of the S and T modular matrices and the braid operator BR1R2
-used in (3.26). In addition to these ingredients, we will als o need a modiﬁcation of the reﬁned
-braid operator by the so-called gamma factor proposed in [46, 47, 48, 49, 50]). Modulo this
-modiﬁcation, the physical meaning of which is still unclear at present, we need the reﬁned
-variants of
-1. the partition function of the unknot Z CS
-SU (N )(S3,
-R;q) in order to determine the coef-
-ﬁcientµQ, and
-2At least, such formulation is not known at present.
-– 16 –
-2. the quadratic Casimir factor qCR in the monodromy by the action of the braid operator.
-The former, viz. the reﬁned partition function of the unknot, is given by the partition function
-of the reﬁned BPS invariants of the conifold with a D-brane in serted at the appropriate leg
-of the toric diagram [36]. The resulting partition function is the reﬁned analogue of (3.18)
-and is given simply by the Macdonald polynomial MR(x;q1,q 2):
-Z ref
-SU (N )(S3, R;q1,q 2)
-Z ref
-SU (N )(S3;q1,q 2) = MR(q̺
-2;q1,q 2), (3.34)
-see also appendix (A1). The combinatorial expression for th e Macdonald polynomial is
-MR(q̺
-2;q1,q 2) =
-∏
-(i,j)∈R
-q
-N−i+1
-2
-2 q
-j−1
-2
-1 −q
-− N−i+1
-2
-2 q
-− j−1
-2
-1
-q
-Rt
-j −i+1
-2
-2 q
-Ri−j
-2
-1 −q
-−
-Rt
-j −i+1
-2
-2 q
-− Ri−j
-2
-1
-, (3.35)
-where Rt denotes the transposition of the Young diagram R. Furthermore, the Macdonald
-polynomial satisﬁes the analogue of (3.20):
-MR1(x;q1,q 2)MR2(x;q1,q 2) =
-∑
-Q∈R1⊗R2
-N Q
-R1R2MQ(x;q1,q 2), (3.36)
-where N Q
-R1R2 is a certain rational function of q1 and q2, namely the Littlewood-Richardson
-coeﬃcient [51]. Therefore, as in (3.21), we can use these rel ations to determine the reﬁned
-analogue of the coeﬃcient µQ
-R1R2 that enters the expression (3.15) for the 3-ball partition
-function: (
-µQ
-R1R2
-) 2
-= N Q
-R1R2 ·MQ(q̺
-2;q1,q 2) ·Z ref
-SU (N )(S3;q1,q 2). (3.37)
-Here, following [26], we tacitly assumed that generating fu nctions of the reﬁned BPS invari-
-ants, such as (3.30) and (3.33), can be expressed in the form ( 3.12), as in a local quantum
-ﬁeld theory, with a Hilbert space whose states are labeled by conformal blocks. It would
-be interesting to understand better the physical basis for t his assumption and to study the
-unitary structure on the “Hilbert space” of the reﬁned Chern -Simons theory. In particular,
-in the case of Σ ≃ T2, one would hope to understand better the identiﬁcation of th e basis of
-orthonormal states with integrable representations.
-As for the second ingredient, the quadratic Casimir factorqC2(R) =e2πihR, it is related to
-the modular transformation T =
-(
-1 1
-0 1
-)
-which acts in the standard way on the homology cy-
-cles of Σ = T2 in the WZW model. The modular matrix for the action of theT -transformation
-on the characters of ˆsu(N)k is
-TRQ = T∅∅ ·qC2(R) ·δRQ. (3.38)
-– 17 –
-In [26] the T -matrix for the reﬁned Chern-Simons theory is proposed:
-T ref
-RQ = T∅∅ · q
-1
-2 ||R||2
-1
-q
-1
-2 ||Rt||2
-2
-q
-N
-2 |R|
-2
-q
-1
-2N |R|2
-1
-·δRQ, (3.39)
-where ||R||2 :=∑
-iR2
-i . Hence, we adopt a reﬁnement (3.27) and the eigenvalue λ(+)
-Q (R,R ) of
-the braid operator BRR for the reﬁned theory:
-λ(+)
-Q (R,R ) = ǫQ
-RR
-q||R||2
-1
-q||Rt||2
-2
-qN |R|
-2
-q
-1
-N |R|2
-1
-q
-− 1
-4 ||Q||2
-1
-q
-− 1
-4 ||Q2||2
-2
-q
-− N
-4 |Q|
-2
-q
-− 1
-4N |Q|2
-1
-. (3.40)
-Similar framing factors were considered in [46] and also ded uced from the physics of reﬁned
-BPS invariants in [36]. Here we use slightly modiﬁed express ions to match (3.25) in the
-unreﬁned limit q1 =q2.
-Using these ingredients, we ﬁnd the partition function Z ref
-SU (N )(S3,T 2,2p+1
-R ;q1,q 2) for the
-T 2,2p+1 torus knot:
-Z ref
-SU (N )(S3,T 2,2p+1
-R ;q1,q 2)
-= Z ref
-SU (N )(S3;q1,q 2)
-∑
-Q∈R⊗R
-γQ
-RR ·λ(+)
-Q (R,R )2p+1 ·N Q
-RR ·MQ(q̺
-2;q1,q 2), (3.41)
-where, following [46], we introduced a gamma factor γQ
-RR. This factor is needed to make the
-partition function for the torus knot invariant under the ob vious symmetry T n,m ↔T m,n:
-Z ref
-SU (N )(S3,T n,m
-R ;q1,q 2) = Z ref
-SU (N )(S3,T m,n
-R ;q1,q 2). (3.42)
-While the proper physical understanding of the gamma factor s is lacking, it does not prevent
-one from doing calculations. Indeed, the gamma factors can b e determined by recursively
-solving the consistency conditions (3.42) for m = 1, · · ·,n − 1 (m < n). In particular, for
-torus knots T 2,2p+1, the gamma factors can be found from a single consistency con dition for
-p = 0, i.e. for T 2,1 ≃
-:
-Z ref
-SU (N )(S3,T 2,1
-R ;q1,q 2)
-Z ref
-SU (N )(S3;q1,q 2) =
-Z ref
-SU (N )(S3, R;q1,q 2)
-Z ref
-SU (N )(S3;q1,q 2) (3.43)
-=
-∑
-Q∈R⊗R
-γQ
-RR ·λ(+)
-Q (R,R ) ·N Q
-RR ·MQ(q̺
-2;q1,q 2) =MR(q̺
-2;q1,q 2).
-The gamma factors for symmetric and anti-symmetric representations
-In order to determine the gamma factors from the consistency condition (3.43), one needs the
-explicit form of the Littlewood-Richardson coeﬃcients N Q
-RR. For the symmetric representa-
-tion R = Sr and the anti-symmetric representation R = Λ r, the explicit expression for the
-– 18 –
-Littlewood-Richardson coeﬃcients can be obtained from the Pieri formula:
-N Sr+ℓ,r−ℓ
-SrSr =
-r−ℓ∏
-j=1
-1 −qj−1
-1 q2
-1 −qj
-1
-·
-r+ℓ∏
-j=2ℓ+1
-1 −qj−1
-1 q2
-2
-1 −qj
-1q2
-·
-r∏
-j=ℓ+1
-(
-1 −qj
-1
-1 −qj−1
-1 q2
-) 2
-, (3.44)
-N Λ r+ℓ,r−ℓ
-Λ rΛ r =
-ℓ∏
-i=1
-1 −q1qi−1
-2
-1 −qi
-2
-·
-2ℓ∏
-i=ℓ+1
-1 −qi
-2
-1 −q1qi−1
-2
-. (3.45)
-⊗ =
-Sr Sr Sr+ℓ,r−ℓ
-⊗ =
-Λr Λr Λn+ℓ,r−ℓ
-r
-ℓ = 0
-⊕
-⊕
-r
-ℓ = 0
-r +ℓ
-r −ℓ
-r +ℓ
-r −ℓ
-r
-r
-Figure 6: Young diagrams for tensor products of symmetric and anti-symme tric representations.
-For the symmetric and anti-symmetric representations, the sign factorsǫQ
-RR inλ(+)
-Q (R,R )
-look like [30, 52]:
-ǫSr+ℓ,r−ℓ
-SrSr = (−1)r−ℓ, ǫ Λ r+ℓ,r−ℓ
-Λ rΛ r = (−1)ℓ. (3.46)
-With the explicit expression for the Macdonald polynomials MR(q̺
-2;q1,q 2) given in (3.35),
-we can solve the constraint (3.43) and ﬁnd the following gamm a factors (see Appendix B for
-details):
-γSr+ℓ,r−ℓ
-SrSr =
-r−ℓ∏
-i=1
-q
-r−i
-2
-1 q
-1
-2
-2 −q
-− r−i
-2
-1 q
-− 1
-2
-2
-q
-r−i+1
-2
-1 −q
-− r−i+1
-2
-1
-, (3.47)
-γΛ r+ℓ,r−ℓ
-Λ rΛ r =
-ℓ∏
-i=1
-q
-i
-2
-2 −q
-− i
-2
-2
-q
-i−1
-2
-2 q
-1
-2
-1 −q
-− i−1
-2
-2 q
-− 1
-2
-1
-. (3.48)
-It would be very interesting to understand the physical meaning / origin of the gamma factors.
-Collecting all the ingredients, (3.35), (3.40), and (3.44) –(3.48), we obtain a ﬁnal expres-
-– 19 –
-sion for the partition function (3.41) with R =Sr and R = Λr:
-R =Sr : Z ref
-SU (N )(S3,T 2,2p+1
-Sr ;q1,q 2)/Zref
-SU (N )(S3;q1,q 2)
-=
-r∑
-ℓ=0
-(q2;q1)ℓ(q1;q1)r(A;q1)r+ℓ(q−1
+[]{#sec:refinedbraid label="sec:refinedbraid"}
+
+A physical framework for knot homologies was first proposed in [@GSV] and later studied from various viewpoints and in a number of closely related systems in [@Gknothom; @Wknothom; @DGH; @AS]. Regardless of the details and duality frames used, the basic idea is that a graded vector space ${\cal H }^{R} (K)$ associated to a knot $K$ colored by a representation $R$ is identified with the space of refined BPS invariants that carry information not only about the charge of the BPS state but also about the spin content: $${\cal H }^R (K) \; = \; {\cal H }^{\text{ref}}_{\text{BPS}} \, .
+\label{HHBPS}$$ This interpretation can be used for performing concrete computations [@GIKV; @AS; @IK11] (see also [@Taki:2008hb; @Awata:2009yc; @Awata:2009sz] and [@Carqueville:2011sj; @ORSG; @Aganagic:2012au]) as well as for studying the structure of ${\cal H }^{\frak g, R}_{i,j} (K)$ for various $\frak g$ and $R$ [@GWalcher; @GS]. In this section, we will use both methods -- based on concrete formulas for torus knots and on structural properties for arbitrary knots -- to compute colored HOMFLY homology and colored superpolynomials of $(2,2p+1)$ torus knots. Furthermore, the physical interpretation of the homological knot invariants in terms of the refined (*a.k.a.* motivic) BPS invariants is what will ultimately allow us to treat the latter in more general systems on the same footing, *cf.* section [\[sec:Bmodel\]](#sec:Bmodel){reference-type="ref" reference="sec:Bmodel"}.
+
+First, let us recall the five-brane configuration relevant to the physical description of the $sl(N)$ knot homologies [@GSV; @Gknothom; @Wknothom]: $$\begin{aligned}
+\text{space-time} & : & \qquad {\mathbb R}\times T^* {\bf S}^3 \times M_4 \nonumber \\
+N~\text{M5-branes} & : & \qquad {\mathbb R}\; \times \; {\bf S}^3 \; \times \; D \label{theoryA} \\
+|R|~\text{M5-branes} & : &  \qquad {\mathbb R}\; \times \; L_K \; \times \; D \nonumber
+\end{aligned}$$ where $L_K$ is the total space of the conormal bundle to $K \subset {\bf S}^3$ in the Calabi-Yau space $T^* {\bf S}^3$, and in most of applications one usually takes $D \cong {\mathbb R}^2$ and $M_4 \cong {\mathbb R}^4$. See *e.g.* [@GS] for further details, references, and the outline of the relation between different ways of looking at this physical system.
+
+The precise form of the 4-manifold $M_4$ and the surface $D \subset M_4$ is not important, as long as they enjoy $U(1)_F \times U(1)_P$ symmetry action, where the first (resp. second) factor is a rotation symmetry of the normal (resp. tangent) bundle of $D \subset M_4$. Following [@Wknothom], let us denote the corresponding quantum numbers by $F$ and $P$. These quantum numbers were denoted, respectively, by $2 S_1$ and $2(S_1 - S_2)$ in [@AS] and by $2 j_3$ and $n$ in [@GS].
+
+Something special happens when $K = T^{m,n}$ is a torus knot. Then, as pointed out in [@AS], the five-brane theory in [\[theoryA\]](#theoryA){reference-type="eqref" reference="theoryA"} has an extra $R$-symmetry $U(1)_R$ that acts on ${\bf S}^3$ leaving the knot $K = T^{p,q}$ and, hence, the Lagrangian $L_K \subset T^* {\bf S}^3$ invariant. Following [@AS], we denote the quantum number corresponding to this symmetry by $S_R$, and also introduce the partition function $$Z^{\text{ref}}_{SU(N)}({\bf S}^3, T^{m,n}_R; q, t) \; := \; {\rm Tr \,}_{{\cal H }^{\text{ref}}_{\text{BPS}}} \; (-1)^{S_R} q^{P} t^{F - S_R}
+\label{Zrefdef}$$ that "counts" refined BPS states in the setup [\[theoryA\]](#theoryA){reference-type="eqref" reference="theoryA"}. A priori, this partition function is different from the Poincaré polynomial of the $sl(N)$ knot homology, which in these notations reads $${\cal P}^{sl(N), R} (K;q,t) \; = \; {\rm Tr \,}_{{\cal H }^{\text{ref}}_{\text{BPS}}} \; q^{P} t^{F} \,.
+\label{ZrefdefP}$$ However, it was argued in [@AS] that for some torus knots all refined BPS states [\[HHBPS\]](#HHBPS){reference-type="eqref" reference="HHBPS"} have $S_R=0$ and the two expressions actually agree.
+
+Similarly, in a dual description after the geometric transition the setup [\[theoryA\]](#theoryA){reference-type="eqref" reference="theoryA"} turns into a system $$\begin{aligned}
+\text{space-time} & : & \qquad {\mathbb R}\times X \times M_4 \label{theoryB} \\
+\text{M5-branes} & : &  \qquad {\mathbb R}\times L_K \times D \nonumber
+\end{aligned}$$ where $X$ is the total space of the ${\cal O }(-1) \oplus {\cal O }(-1)$ bundle over ${\mathbb{C}}{\mathbf{P}}^1$, and BPS states carry a new quantum number which becomes the $a$-grading of ${\cal H }^{\text{ref}}_{\text{BPS}} = {\cal H }^R_{i,j,k} (K)$. One of the main results in [@AS] is that this space has *four* gradings: in addition to the $a$-, $q$- and $t$-grading that in the physics setup correspond to the "winding number" $\beta \in H_2 (X,L_K) \cong {\mathbb Z}$, and to the quantum numbers $P$ and $F$, the space ${\cal H }_{BPS} = {\cal H }^R_{i,j,k} (K)$ has the fourth grading, by $S_R \in {\mathbb Z}$.
+
+Therefore, one of the interesting features of the refined Chern-Simons theory is that it predicts a new grading on the homology of torus knots and links, thereby upgrading ${\cal H }^{sl(N),R}_{i,j} (K)$ to a triply-graded theory (labeled by $\frak g$ and $R$) and similarly upgrading ${\cal H }^{R}_{i,j,k} (K)$ to a homology theory with as much as *four* gradings! It would be very interesting to study these new extra gradings in other formulations of knot homologies. Some hints for the extra gradings of torus knot homologies seem to appear in [@Cherednik].
+
+After the geometric transition, the partition function analogous to [\[Zrefdef\]](#Zrefdef){reference-type="eqref" reference="Zrefdef"} "counts" refined BPS states in the setup [\[theoryB\]](#theoryB){reference-type="eqref" reference="theoryB"}: $$Z^{\text{ref}} ({\bf S}^3, T^{m,n}_R; a, q, t) \; = \; {\rm Tr \,}_{{\cal H }^{\text{ref}}_{\text{BPS}}} \; (-1)^{S_R} a^{\beta} q^{P} t^{F - S_R} \,.
+\label{Zrefdefa}$$ When all refined BPS states have $S_R=0$ -- which, following [@AS], will be our working assumption here -- this expression coincides with the colored superpolynomial [\[superPdef\]](#superPdef){reference-type="eqref" reference="superPdef"}, which in these notations reads ${\cal P}^{R} (K;a,q,t) = {\rm Tr \,}_{{\cal H }^{\text{ref}}_{\text{BPS}}} \; a^{\beta} q^{P} t^{F}$. This will be our strategy for obtaining the colored superpolynomials of $(2,2p+1)$ torus knots. In fact, via the relation with refined BPS invariants, we will essentially do the computation twice: first, via direct calculation of the refined Chern-Simons partition function [\[Zrefdef\]](#Zrefdef){reference-type="eqref" reference="Zrefdef"} and its large $N$ version [\[Zrefdefa\]](#Zrefdefa){reference-type="eqref" reference="Zrefdefa"}, and then, in section [\[sec:homological\]](#sec:homological){reference-type="ref" reference="sec:homological"}, by using the structural properties of [\[HHBPS\]](#HHBPS){reference-type="eqref" reference="HHBPS"} that follow from physics.\
+Although refined Chern-Simons theory is *not* a gauge theory,[^1] its partition function can be evaluated by mimicking the steps in the ordinary Chern-Simons theory. In particular, one can define "refined analogs" of the $S$ and $T$ modular matrices and the braid operator ${\cal B}_{R_1 R_2}$ used in [\[ZT22p1braid\]](#ZT22p1braid){reference-type="eqref" reference="ZT22p1braid"}. In addition to these ingredients, we will also need a modification of the refined braid operator by the so-called *gamma factor* proposed in [@DMMSS; @Shakirov; @Mironov:2011ym; @MMSS; @Mironov:2012hz]). Modulo this modification, the physical meaning of which is still unclear at present, we need the refined variants of
+
+1.  the partition function of the unknot $Z_{SU(N)}^{\text{CS}}({\bf S}^3,{\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}_R;q)$ in order to determine the coefficient $\mu_Q$, and
+
+2.  the quadratic Casimir factor $q^{C_R}$ in the monodromy by the action of the braid operator.
+
+The former, *viz.* the refined partition function of the unknot, is given by the partition function of the refined BPS invariants of the conifold with a D-brane inserted at the appropriate leg of the toric diagram [@IK11]. The resulting partition function is the refined analogue of [\[unknotdimqR\]](#unknotdimqR){reference-type="eqref" reference="unknotdimqR"} and is given simply by the Macdonald polynomial $M_R(x;q_1,q_2)$: $$\frac{Z^{\text{ref}}_{SU(N)}({\bf S}^3,{\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}_R;q_1,q_2)}{Z^{\text{ref}}_{SU(N)}({\bf S}^3;q_1,q_2)}
+\; = \; M_R(q_2^{\varrho};q_1,q_2) \, ,
+\label{unknotMqtR}$$ see also appendix ([\[sec:macdonald\]](#sec:macdonald){reference-type="ref" reference="sec:macdonald"}). The combinatorial expression for the Macdonald polynomial is $$M_R(q_2^{\varrho};q_1,q_2) \; = \; \prod_{(i,j)\in R}
+\frac{q_2^{\frac{N-i+1}{2}}q_1^{\frac{j-1}{2}}-q_2^{-\frac{N-i+1}{2}}q_1^{-\frac{j-1}{2}}}{q_2^{\frac{R^{t}_j-i+1}{2}}q_1^{\frac{R_i-j}{2}}-q_2^{-\frac{R^{t}_j-i+1}{2}}q_1^{-\frac{R_i-j}{2}}} \,,
+\label{Mac_sp}$$ where $R^{t}$ denotes the transposition of the Young diagram $R$. Furthermore, the Macdonald polynomial satisfies the analogue of ([\[irr_decomp_schur\]](#irr_decomp_schur){reference-type="ref" reference="irr_decomp_schur"}): $$M_{R_1}(x;q_1,q_2) \, M_{R_2}(x;q_1,q_2) \; = \; \sum_{Q\in R_1\otimes R_2}N^Q_{R_1R_2} M_{Q}(x;q_1,q_2) \,,$$ where $N^{Q}_{R_1R_2}$ is a certain rational function of $q_1$ and $q_2$, namely the Littlewood-Richardson coefficient [@McD]. Therefore, as in [\[muCS\]](#muCS){reference-type="eqref" reference="muCS"}, we can use these relations to determine the refined analogue of the coefficient $\mu^Q_{R_1R_2}$ that enters the expression [\[three_ball\]](#three_ball){reference-type="eqref" reference="three_ball"} for the 3-ball partition function: $$\left( \mu^Q_{R_1R_2} \right)^2 \; = \; N^{Q}_{R_1R_2} \cdot M_Q(q_2^{\varrho};q_1,q_2)
+\cdot Z^{\text{ref}}_{SU(N)}({\bf S}^3;q_1,q_2) \,.
+\label{mu_refined}$$ Here, following [@AS], we tacitly assumed that generating functions of the refined BPS invariants, such as [\[Zrefdef\]](#Zrefdef){reference-type="eqref" reference="Zrefdef"} and [\[Zrefdefa\]](#Zrefdefa){reference-type="eqref" reference="Zrefdefa"}, can be expressed in the form [\[ZHilbert\]](#ZHilbert){reference-type="eqref" reference="ZHilbert"}, as in a local quantum field theory, with a Hilbert space whose states are labeled by conformal blocks. It would be interesting to understand better the physical basis for this assumption and to study the unitary structure on the "Hilbert space" of the refined Chern-Simons theory. In particular, in the case of $\Sigma\simeq \mathbf{T}^2$, one would hope to understand better the identification of the basis of orthonormal states with integrable representations.
+
+As for the second ingredient, the quadratic Casimir factor $q^{C_2(R)}=e^{2\pi ih_R}$, it is related to the modular transformation $T = \begin{pmatrix}
+1 & 1 \cr
+0 & 1
+\end{pmatrix}$ which acts in the standard way on the homology cycles of $\Sigma=\mathbf{T}^2$ in the WZW model. The modular matrix for the action of the $T$-transformation on the characters of $\widehat{su}(N)_k$ is $$T_{RQ} \; = \; T_{\emptyset\emptyset} \cdot q^{C_2(R)}\cdot \delta_{RQ} \,.$$ In [@AS] the $T$-matrix for the refined Chern-Simons theory is proposed: $$T^{\text{ref}}_{RQ} \; = \; T_{\emptyset\emptyset}\cdot
+\frac{q_1^{\frac{1}{2}||R||^2}}{q_2^{\frac{1}{2}||R^{t}||^2}} \frac{q_2^{\frac{N}{2}|R|}}{q_1^{\frac{1}{2N}|R|^2}}\cdot\delta_{RQ} \,,$$ where $||R||^2:=\sum_iR_i^2$. Hence, we adopt a refinement [\[Casimir_ref\]](#Casimir_ref){reference-type="eqref" reference="Casimir_ref"} and the eigenvalue $\lambda^{(+)}_Q(R,R)$ of the braid operator ${\cal B}_{RR}$ for the refined theory: $$\lambda^{(+)}_Q(R,R) \; = \; \epsilon_{RR}^{Q}
+\frac{q_1^{||R||^2}}{q_2^{||R^{t}||^2}}\frac{q_2^{N|R|}}{q_1^{\frac{1}{N}|R|^2}}
+\frac{q_1^{-\frac{1}{4}||Q||^2}}{q_2^{-\frac{1}{4}||Q^{2}||^2}}
+\frac{q_2^{-\frac{N}{4}|Q|}}{q_1^{-\frac{1}{4N}|Q|^2}} \,.
+\label{braid_ref}$$ Similar framing factors were considered in [@DMMSS] and also deduced from the physics of refined BPS invariants in [@IK11]. Here we use slightly modified expressions to match [\[unrefeigl\]](#unrefeigl){reference-type="eqref" reference="unrefeigl"} in the unrefined limit $q_1 = q_2$.
+
+Using these ingredients, we find the partition function $Z_{SU(N)}^{\text{ref}}({\bf S}^3,T^{2,2p+1}_R;q_1,q_2)$ for the $T^{2,2p+1}$ torus knot: $$\begin{aligned}
+&& Z_{SU(N)}^{\text{ref}} ({\bf S}^3,T^{2,2p+1}_R;q_1,q_2) \nonumber \\
+&& \quad = \; Z_{SU(N)}^{\text{ref}}({\bf S}^3;q_1,q_2) \sum_{Q\in R\otimes R}\gamma^Q_{RR}\cdot
+\lambda^{(+)}_Q(R,R)^{2p+1}\cdot N^{Q}_{RR}\cdot M_Q(q_2^{\varrho};q_1,q_2) \,, \label{ZrefTpqq}
+\end{aligned}$$ where, following [@DMMSS], we introduced a gamma factor $\gamma^Q_{RR}$. This factor is needed to make the partition function for the torus knot invariant under the obvious symmetry $T^{n,m}\leftrightarrow T^{m,n}$: $$Z_{SU(N)}^{\text{ref}}({\bf S}^3,T^{n,m}_R;q_1,q_2) \; = \; Z_{SU(N)}^{\text{ref}}({\bf S}^3,T^{m,n}_R;q_1,q_2) \,.
+\label{consistency_gen}$$ While the proper physical understanding of the gamma factors is lacking, it does not prevent one from doing calculations. Indeed, the gamma factors can be determined by recursively solving the consistency conditions [\[consistency_gen\]](#consistency_gen){reference-type="eqref" reference="consistency_gen"} for $m=1,\cdots ,n-1$ ($m<n$). In particular, for torus knots $T^{2,2p+1}$, the gamma factors can be found from a single consistency condition for $p=0$, *i.e.* for $T^{2,1} \simeq {\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}$: $$\begin{aligned}
+\frac{Z_{SU(N)}^{\text{ref}}({\bf S}^3,T^{2,1}_R;q_1,q_2)}{Z_{SU(N)}^{\text{ref}}({\bf S}^3;q_1,q_2)}
+&=& \frac{Z_{SU(N)}^{\text{ref}}({\bf S}^3,{\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}_R;q_1,q_2)}{Z_{SU(N)}^{\text{ref}}({\bf S}^3;q_1,q_2)} \label{consistency_gamma} \\
+&=&\sum_{Q \in R \otimes R} \gamma^Q_{RR}\cdot \lambda^{(+)}_Q(R,R) \cdot N^{Q}_{RR}
+\cdot M_Q(q_2^{\varrho};q_1,q_2) = M_R(q_2^{\varrho};q_1,q_2) \,.
+\nonumber
+\end{aligned}$$
+
+### The gamma factors for symmetric and anti-symmetric representations
+
+In order to determine the gamma factors from the consistency condition ([\[consistency_gamma\]](#consistency_gamma){reference-type="ref" reference="consistency_gamma"}), one needs the explicit form of the Littlewood-Richardson coefficients $N_{RR}^Q$. For the symmetric representation $R=S^r$ and the anti-symmetric representation $R=\Lambda^r$, the explicit expression for the Littlewood-Richardson coefficients can be obtained from the Pieri formula: $$\begin{aligned}
+N_{S^rS^r}^{S^{r+\ell,r-\ell}}
+& = & \prod_{j=1}^{r-\ell} { 1-q_1^{j-1} q_2 \over 1-q_1^j }
+\cdot \prod_{j=2\ell+1}^{r+\ell} { 1-q_1^{j-1} q_2^2 \over 1-q_1^j q_2 } \cdot \prod_{j=\ell+1}^{r}
+\left( { 1-q_1^{j}  \over 1-q_1^{j-1} q_2 } \right)^2 \,, \label{LRsymm}
+\\
+N_{\Lambda^r\Lambda^r}^{\Lambda^{r+\ell,r-\ell}}
+& = & \prod_{i=1}^{\ell} { 1-q_1 q_2^{i-1} \over 1-q_2^i } \cdot \prod_{i=\ell+1}^{2\ell} {1-q_2^{i} \over 1-q_1q_2^{i-1}} \,.
+\label{LRantisymm}
+\end{aligned}$$
+
+<figure>
+<div class="center">
+<embed src="young.eps" style="width:10cm" />
+</div>
+<figcaption>Young diagrams for tensor products of symmetric and anti-symmetric representations.</figcaption>
+</figure>
+
+For the symmetric and anti-symmetric representations, the sign factors $\epsilon^{Q}_{RR}$ in $\lambda^{(+)}_Q(R,R)$ look like [@RGK; @Ramadevi_Sarkar]: $$\epsilon_{S^rS^r}^{S^{r+\ell,r-\ell}} = (-1)^{r-\ell} \,, \qquad
+\epsilon_{\Lambda^r\Lambda^r}^{\Lambda^{r+\ell,r-\ell}} = (-1)^{\ell} \,.$$
+
+With the explicit expression for the Macdonald polynomials $M_{R} (q_2^{\varrho};q_1,q_2)$ given in ([\[Mac_sp\]](#Mac_sp){reference-type="ref" reference="Mac_sp"}), we can solve the constraint ([\[consistency_gamma\]](#consistency_gamma){reference-type="ref" reference="consistency_gamma"}) and find the following gamma factors (see Appendix [\[sec:gamma_proof\]](#sec:gamma_proof){reference-type="ref" reference="sec:gamma_proof"} for details): $$\begin{aligned}
+\gamma_{S^rS^r}^{S^{r+\ell,r-\ell}}
+& = & \prod_{i=1}^{r-\ell}\frac{q_1^{\frac{r-i}{2}}q_2^{\frac{1}{2}}-q_1^{-\frac{r-i}{2}}q_2^{-\frac{1}{2}}}{q_1^{\frac{r-i+1}{2}}-q_1^{-\frac{r-i+1}{2}}} \,,
+\label{gamma_sym}
+\\
+\gamma_{\Lambda^r\Lambda^r}^{\Lambda^{r+\ell,r-\ell}}
+& = & \prod_{i=1}^{\ell}\frac{q_2^{\frac{i}{2}}-q_2^{-\frac{i}{2}}}{q_2^{\frac{i-1}{2}}q_1^{\frac{1}{2}}-q_2^{-\frac{i-1}{2}}q_1^{-\frac{1}{2}}} \,.
+\label{gamma_anti-sym}
+\end{aligned}$$ It would be very interesting to understand the physical meaning / origin of the gamma factors.
+
+Collecting all the ingredients, [\[Mac_sp\]](#Mac_sp){reference-type="eqref" reference="Mac_sp"}, [\[braid_ref\]](#braid_ref){reference-type="eqref" reference="braid_ref"}, and [\[LRsymm\]](#LRsymm){reference-type="eqref" reference="LRsymm"}--[\[gamma_anti-sym\]](#gamma_anti-sym){reference-type="eqref" reference="gamma_anti-sym"}, we obtain a final expression for the partition function [\[ZrefTpqq\]](#ZrefTpqq){reference-type="eqref" reference="ZrefTpqq"} with $R=S^r$ and $R=\Lambda^r$: $$\begin{aligned}
+R = S^r ~:\quad &&Z_{SU(N)}^{\text{ref}}({\bf S}^3,T^{2,2p+1}_{S^r};q_1,q_2) / Z_{SU(N)}^{\text{ref}}({\bf S}^3;q_1,q_2)
+\nonumber \\
+&& \quad = \; \sum_{\ell=0}^r
+\frac{(q_2;q_1)_{\ell}(q_1;q_1)_r(A;q_1)_{r+\ell}(q_2^{-1}A;q_1)_{r-\ell}}
+{(q_1;q_1)_{\ell}(q_2;q_1)_r(q_2;q_1)_{r+\ell}(q_1;q_1)_{r-\ell}}\frac{(1-q_2q_1^{2\ell})}{(1-q_2)}
+\nonumber \\
+&&\quad \quad\quad\quad\times
+A^{-r}
+q_1^{\frac{r-\ell}{2}}
+q_2^{\frac{3r-\ell}{2}}
+\left[
+(-1)^{r-\ell}A^{\frac{r}{2}}q_1^{\frac{r^2-\ell^2}{2}}q_2^{-\frac{\ell}{2}}\right]^{2p+1} \,,
+\label{Braid_symmetric}
+\\
+R = \Lambda^r ~:\quad && Z_{SU(N)}^{\text{ref}}({\bf S}^3,T^{2,2p+1}_{\Lambda^r};q_1,q_2) / Z_{SU(N)}^{\text{ref}}({\bf S}^3;q_1,q_2)
+\nonumber \\
+&&\quad = \; \sum_{\ell=0}^r\frac{(q_1;q_2)_{\ell}(q_2;q_2)_{r+\ell}(A^{-1};q_2)_{r+\ell}(q_1^{-1}A^{-1};q_2)_{r-\ell}}
+{(q_2;q_2)_{\ell}(q_1q_2;q_2)_{r+\ell}(q_2;q_2)_{r+\ell}(q_2;q_2)_{r-\ell}}\frac{(1-q_1q_2^{2\ell})}{(1-q_2)}
+\nonumber \\
+&&\quad\quad\quad\quad \times
+A^{r}q_1^{r-\frac{\ell}{2}}q_2^{r-\frac{\ell}{2}}
+\left[(-1)^{\ell}A^{\frac{r}{2}}q_1^{\frac{\ell}{2}}q_2^{\frac{\ell^2-r^2}{2}}
+\right]^{2p+1},
+\label{Braid_anti-symmetric}
+\end{aligned}$$ where we used the standard notation for the $q$-Pochhammer symbol $$(x;q)_n \; = \; \prod_{k=0}^{n-1} (1 - x q^k) = (1-x) (1-xq) (1-xq^2) \ldots (1-x q^{n-1}) \,,$$ and where we introduced $$A \; := \; q_2^N \,.$$ Now we have all the relevant formulas at our fingertips that one needs to write down the superpolynomials of $(2,2p+1)$ torus knots colored by the symmetric and anti-symmetric representations, $R = S^r$ and $R = \Lambda^r$.
+
+[^1]: At least, such formulation is not known at present.

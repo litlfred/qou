@@ -7,10 +7,10 @@ section_number: 3.3
 pages: 90-97
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.825
-latex_coverage_ratio: 0.929
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 A tessellation is a nice paving of $\matH^n$ made of polyhedra. Not only tessellations are beautiful objects, but they are also tightly connected with discrete groups of $\Iso(\matH^n)$ and hence with hyperbolic manifolds.
 
@@ -31,6 +31,7 @@ A \emph{tessellation} of $\matH^n$ (or $\matR^n$, $S^n$) is a locally finite set
 \end{figure}
 
 Some examples in spherical and Euclidean space are shown in Figure \ref{tiling:fig}. We now construct some families explicitly.
+
 
 \subsection{Triangles} \label{triangular:subsection}
 We want to define some nice tessellations of $\matH^2, \matR^2$, and $S^2$ into triangles. The following exercise says that every triple of acute angles is realised by some triangle in the appropriate geometry.
@@ -94,6 +95,7 @@ The triple $(\infty, \infty, \infty)$ gives a nice tessellation into ideal trian
 \end{center}
 \end{figure}
 
+
 \subsection{Platonic solids}
 We now turn to tessellations of 3-dimensional spaces. Table \ref{platonic:table} displays a finite list of platonic solids $P$ with dihedral angles $\frac{2\pi}k$ contained in $\matH^3$, $\matR^3$, or $S^3$. For each solid in the list, by reflecting iteratively $P$ along its faces we get a tessellation of the space. 
 
@@ -122,6 +124,7 @@ The Figures \ref{honeycomb_dodecahedron_534:fig}, \ref{honeycomb_dodecahedron_53
 \label{honeycomb_dodecahedron_533:fig}
 \end{center}
 \end{figure}
+
 
 \subsection{Regular tessellations} \label{regular:subsection}
 Platonic solids are \emph{regular}, that is they have many symmetries. A notion of regularity may be defined in all dimensions for polyhedra and tessellations as follows.
@@ -165,6 +168,7 @@ Duals of ideal tessellations involve infinite polyhedra: for instance $\{6,3,3\}
 \end{figure}
 
 The story continues in four dimensions: we denote by $\{p,q,r,s\}$ a regular tessellation made of polytopes of type $\{p,q,r\}$ that meet in $s$ at every codimension-two face. With the same techniques of Section \ref{platonici:subsection} we can identify the regular polytopes in $\matH^4, \matR^4$ and $S^4$ with dihedral angles that divide $2\pi$, and the corresponding tessellations of the ambient space -- that we are unfortunately unable to see.
+
 
 \subsection{Voronoi tessellations} \label{Voronoi:subsection}
 In the previous section we have constructed some tessellations by exploiting the symmetries of regular polyhedra: we can probably extend these methods to less symmetric polyhedra, but how far can we go? How can we construct highly non-regular tessellations?

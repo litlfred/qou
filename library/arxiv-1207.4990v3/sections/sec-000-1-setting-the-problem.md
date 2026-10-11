@@ -7,30 +7,23 @@ section_number: 1
 pages: 2-9
 source_pdf: 1207.4990v3.pdf
 source_sha256: 02aa065f4f65b857
-text_source: latex
-latex_prose_ratio: 0.994
-latex_coverage_ratio: 0.978
 doc_brief: "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift — 10 sections: Setting the problem; Toeplitz meets Ising; Back to Isi"
+text_source: latex
+latex_prose_ratio: 0.999
+latex_coverage_ratio: 0.991
 ---
 An $n\times n$ *Toeplitz matrix* $T_n$ is a matrix with coefficients of the form $(T_n)_{jk} = c_{j-k},
 \;0\le j,\; k \le n-1$, for some given sequence $\{c_\ell\}_{\ell \in \mathbb{Z}}$. An $n\times n$ *Toeplitz determinant* $D_n(T)$ is the determinant of some given Toeplitz matrix $T=T_n$. If $\varphi = \varphi\!\left(e^{i\theta}\right)$ is an integrable function on the unit circle $S^1=\{z=e^{i\theta}\}$ (oriented in the positive direction) with Fourier coefficients $$\varphi_{\ell} = \int^{\pi}_{-\pi} e^{-i\ell \theta} \, \varphi \!\left(e^{i\theta}\right) \,\frac{d\theta}{2\pi},
-\qquad \ell \in \mathbb{Z}$$ the Toeplitz matrices $T_n(\varphi)$ and Toeplitz determinants $D_n(\varphi)$ associated with $\varphi$ are given by $$\begin{equation}
-T_n (\varphi) = \left\{ \varphi_{j-k} \right\}_{0 \le j,\; k \le n-1}
-\end{equation}$$ and $$\begin{equation}
-D_n (\varphi) = \det \, T_n (\varphi)
-\end{equation}$$ respectively. Note that if $c_{-\ell}= \overline{c}_{\ell}$, then $T_n$ is self-adjoint. This is true, in particular, if $\varphi$ is real valued, and it follows that for such functions $\varphi$, $D_n(\varphi)$ and the eigenvalues $\lambda^{(n)}_1, \dots \lambda^{(n)}_n$ of $T_n(\varphi)$ are real.
+\qquad \ell \in \mathbb{Z}$$ the Toeplitz matrices $T_n(\varphi)$ and Toeplitz determinants $D_n(\varphi)$ associated with $\varphi$ are given by $$T_n (\varphi) = \left\{ \varphi_{j-k} \right\}_{0 \le j,\; k \le n-1}$$ and $$D_n (\varphi) = \det \, T_n (\varphi)$$ respectively. Note that if $c_{-\ell}= \overline{c}_{\ell}$, then $T_n$ is self-adjoint. This is true, in particular, if $\varphi$ is real valued, and it follows that for such functions $\varphi$, $D_n(\varphi)$ and the eigenvalues $\lambda^{(n)}_1, \dots \lambda^{(n)}_n$ of $T_n(\varphi)$ are real.
 
 Toeplitz matrices and determinants are named for Otto Toeplitz, who, in his Habilitationsschrift in 1907 (see [@Toep1] [@Toep2]), initiated the study of quadratic forms $\Sigma\,\varphi_{jk}\, x_j y_k$ with coefficients of special type $\varphi_{jk}= \varphi_{j-k}$. At the time Toeplitz was a young researcher in Göttingen where Hilbert was developing his general and abstract theory of functional analysis. Toeplitz introduced the forms $\Sigma\, \varphi_{j-k}\, x_j y_k$, together with the associated matrices $T_n(\varphi)= \{ \varphi_{j-k}\}_{0\le j, \; k\le n-1}$ and determinants $D_n(\varphi)= \det
 (T_n (\varphi))$, in order to give concrete examples of Hilbert's general theory which could be analyzed in great detail. Toeplitz called the forms $\Sigma\, \varphi_{j-k}\, x_j\, y_k$ "$L$-forms" because of their connection, via Fourier theory, with Laurent series $\sum^\infty_{-\infty} \varphi_k \,z^k$.
 
-A striking example of the connection between Laurent series, and more broadly analytic function theory, on the one hand, and $L$-forms on the other, is given by the following problem studied by Carathéodory: For which sequences $c_0, c_1, \dots, c_n$ of complex numbers does the polynomial $$p(z) = c_0 + c_1 z+ \dots + c_n z^n$$ have an extension to an analytic function $\varphi(z)$ in the unit disk $\mathbb{D}=\{ |z| < 1\}$ $$\begin{equation}
-\begin{aligned}
+A striking example of the connection between Laurent series, and more broadly analytic function theory, on the one hand, and $L$-forms on the other, is given by the following problem studied by Carathéodory: For which sequences $c_0, c_1, \dots, c_n$ of complex numbers does the polynomial $$p(z) = c_0 + c_1 z+ \dots + c_n z^n$$ have an extension to an analytic function $\varphi(z)$ in the unit disk $\mathbb{D}=\{ |z| < 1\}$ $$\begin{aligned}
 \varphi(z) = &d_0 + d_1 z + \dots + d_n\, z^n + d_{n+1} \, z^{n+1} + \dots \quad , \\
 & \quad d_j = c_j, \qquad 0\le j \le n
-\end{aligned}
-\end{equation}$$ such that $\Re  \varphi(z) \ge 0$ in $\mathbb{D}$? In [@Car1] in 1907, Carathéodory characterized such sequences in terms of Minkowski's theory of convex bodies, but a few years later in 1911 Toeplitz [@Toep3] gave the following algebraic characterization (see also [@Car2], [@CarFej]): $p(z) =
-c_0 + c_1\, z + \dots + c_n \, z^n$ has an extension $\varphi(z)$ as above with $\Re  \varphi(z) \ge 0$ in $\mathbb{D}$ if and only if the Toeplitz matrix $$\begin{equation}
-\left(
+\end{aligned}$$ such that $\Re  \varphi(z) \ge 0$ in $\mathbb{D}$? In [@Car1] in 1907, Carathéodory characterized such sequences in terms of Minkowski's theory of convex bodies, but a few years later in 1911 Toeplitz [@Toep3] gave the following algebraic characterization (see also [@Car2], [@CarFej]): $p(z) =
+c_0 + c_1\, z + \dots + c_n \, z^n$ has an extension $\varphi(z)$ as above with $\Re  \varphi(z) \ge 0$ in $\mathbb{D}$ if and only if the Toeplitz matrix $$\left(
 \begin{array}{lllcccll}
 2c_0        &c_1     &c_2     &&\dots&     &c_{n-1}  &c_n \\
 c_{-1}      &2c_0    &c_1     &&\dots&     &&c_{n-1}  \\
@@ -39,17 +32,14 @@ c_{-2}      &c_{-1}  & 2c_0   &&&          &&\\
 c_{-n+1} &  \dots           &        &&&          & \\
 c_{-n}       &c_{-n+1}      &\dots &&&   & &2c_0
 \end{array}
-\right)
-\end{equation}$$ with $c_{-k} \equiv \overline{c}_k$, $0\le k\le n$, is non-negative definite. Over the years, up till the present, there have been many applications of this beautiful result, both theoretical and applied (see e.g. [@Weg]). Many of the results and applications in this paper, however, rely on the connection between Toeplitz matrices/determinants and another problem in analytic function theory, the Riemann-Hilbert Problem (RHP) --- see, in particular, [@CG] [@LS] and the references therein. We note that Wiener-Hopf factorization theory and the Wiener-Hopf method fall under the general rubric of RHP.
+\right)$$ with $c_{-k} \equiv \overline{c}_k$, $0\le k\le n$, is non-negative definite. Over the years, up till the present, there have been many applications of this beautiful result, both theoretical and applied (see e.g. [@Weg]). Many of the results and applications in this paper, however, rely on the connection between Toeplitz matrices/determinants and another problem in analytic function theory, the Riemann-Hilbert Problem (RHP) --- see, in particular, [@CG] [@LS] and the references therein. We note that Wiener-Hopf factorization theory and the Wiener-Hopf method fall under the general rubric of RHP.
 
 An extraordinary variety of problems in mathematics, physics and engineering, can be expressed in terms of Toeplitz matrices and determinants. This is a remarkable fact that could hardly have been anticipated in 1907, and there is a vast literature on the subject. A classical reference is the text by Grenander and Szegő[^1] [@GreSz] in which the authors describe applications of Toeplitz matrices to problems in analytic function theory, stationary stochastic processes and linear estimation theory in statistics. In addition to problems in probability theory and statistics, Fisher and Hartwig [@FisHart1] present a long and varied list of applications of Toeplitz determinants to problems in statistical mechanics, including the ground-breaking work of Kaufman and Onsager on the Ising model. Many results in the theory of Toeplitz determinants can be found, for example, in the seminal papers of Harold Widom (see [@Wid1] [@Wid2] [@Wid3] [@Wid4], amongst many others) and in the books of Böttcher, Silbermann, and Grudsky (see [@BottSilb1] [@BottSilb2] [@BottSilb3] [@BottGr], amongst others). For a review of some more recent developments in the theory of Toeplitz determinants, see [@Kr].
 
 Closely related to Toeplitz matrices are Toeplitz operators, defined as follows (see e.g. [@Doug], [@BottSilb3]). Let $S^1$ denote the unit circle as above with Lebesgue measure $\frac{d\theta}{2\pi}$, and let $L^2(S^1)$ denote the associated Hilbert space. The Hardy space $H^2$ is defined as the closed subspace $$\left\{ f\in L^2(S^1) : \frac{1}{2\pi} \int^{2\pi}_0 f\!\left(e^{i\theta}\right)  e^{in\theta} \, d\theta=0,
 \qquad n =1,2,\dots \right\}.$$ The orthogonal projection $P_+$ of $L^2(S^1)$ onto $H^2$ is given by $$L^2(S^1) \ni f = \sum^\infty_{-\infty} f_k \, e^{ik\theta} \longmapsto  P_+ f = \sum^\infty_0 f_k \,
-e^{ik\theta} \in H^2.$$ Now let $\varphi \in L^\infty(S^1)$. Then the *Toeplitz operator* $T(\varphi): H^2 \to H^2$ associated with $\varphi$ is given by $$\begin{equation}
-\label{eq1}
-T(\varphi) f = P_+ \, \varphi f, \qquad f \in H^2 .
-\end{equation}$$ The operator $T(\varphi)$ is bounded in $H^2$, and with respect to the standard basis $\left\{e^{ik\theta}:
+e^{ik\theta} \in H^2.$$ Now let $\varphi \in L^\infty(S^1)$. Then the *Toeplitz operator* $T(\varphi): H^2 \to H^2$ associated with $\varphi$ is given by $$\label{eq1}
+T(\varphi) f = P_+ \, \varphi f, \qquad f \in H^2 .$$ The operator $T(\varphi)$ is bounded in $H^2$, and with respect to the standard basis $\left\{e^{ik\theta}:
 k\ge 0\right\}$, $T(\varphi)$ is represented by the semi-infinite matrix $\left\{ \varphi_{j-k}\right\}_{j,\,k \ge 0}\:$ acting in $\ell^2_+ = \{u= (u_0, u_1, \dots ): \sum^\infty_0| u_j|^2 < \infty\}$. Thus the Toeplitz matrices $T_n(\varphi)$ are *finite sections* of the Toeplitz operator $T(\varphi)$. The function $\varphi$ is frequently referred to as the *symbol* of the operator $T(\varphi)$ and the sequences $\{T_n(\varphi)\}_{n\ge 1}$, $\{D_n(\varphi)\}_{n\ge 1}$.
 
 Matrices with coefficients of the form $\left\{c_{j+k} \right\}_{0\le j, \, k\le n-1}$ are called *Hankel matrices*. These matrices are in turn finite sections of the semi-infinite *Hankel operators* with matrix coefficients $\left\{c_{j+k}\right\}_{j,\, k\ge 0}$ acting in $\ell^2_+$. The theory of Hankel matrices and operators is parallel to, and closely related to the theory of Toeplitz matrices and operators (see e.g. [\[eq108\]](#eq108){reference-type="eqref" reference="eq108"} et seq. below). Operators acting in $L^2(0, \infty)$ with kernels of the form $K(x-y)$, or of the form $K(x+y),\, x, y \ge 0$, may be viewed as continuum limits of Toeplitz matrices, or Hankel matrices, and are called Wiener-Hopf and Hankel operators respectively (see e.g. [@BottSilb3] [@Pel]).
@@ -59,72 +49,49 @@ Our goal in this paper is not to review the above applications and developments 
 The story begins in 1915 when Szegő [@Sz1], at the very start of his career, proved the following result conjectured earlier by Polya.
 
 ::: theorem
-[]{#theorem1 label="theorem1"} Let $\varphi\!\left(e^{i\theta}\right)>0$ be a continuous, positive function on the unit circle $S^1$ and let $D_n(\varphi)$ be the associated Toeplitz determinant. Then $$\begin{equation}
-\label{eq2}
+[]{#theorem1 label="theorem1"} Let $\varphi\!\left(e^{i\theta}\right)>0$ be a continuous, positive function on the unit circle $S^1$ and let $D_n(\varphi)$ be the associated Toeplitz determinant. Then $$\label{eq2}
 \lim_{n\to \infty}\, \frac{1}{n} \,\log D_n(\varphi) = \frac{1}{2\pi} \int^\pi_{-\pi} \log \varphi
-\!\left(e^{i\theta}\right) d\theta.
-\end{equation}$$
+\!\left(e^{i\theta}\right) d\theta.$$
 :::
 
 Note that $D_n(\varphi)>0$. Indeed for $u= (u_0, u_1, \dots, u_{n-1})^T \in \mathbb{C}^{n}$, a simple calculation shows that $$\left(u, T_n(\varphi) \, u\right) = \int^\pi_{-\pi} \varphi\!\left(e^{i\theta}\right)
-\left| \sum^{n-1}_{k=0} u_k \: e^{ik\theta}\right|^2 \frac{d\theta}{2\pi}$$ and as $\varphi\!\left(e^{i\theta}\right)>0$, we conclude that $T_n(\varphi)$ is strictly positive definite, $T_n(\varphi) >0$. Thus $D_n(\varphi) = \det \, T_n (\varphi)>0$. In addition, the eigenvalues $\lambda^{(n)}_1, \dots, \lambda^{(n)}_n$ of $T_n(\varphi)$ are positive and so [\[eq2\]](#eq2){reference-type="eqref" reference="eq2"} can be rewritten in the form $$\begin{equation}
-\label{eq3}
+\left| \sum^{n-1}_{k=0} u_k \: e^{ik\theta}\right|^2 \frac{d\theta}{2\pi}$$ and as $\varphi\!\left(e^{i\theta}\right)>0$, we conclude that $T_n(\varphi)$ is strictly positive definite, $T_n(\varphi) >0$. Thus $D_n(\varphi) = \det \, T_n (\varphi)>0$. In addition, the eigenvalues $\lambda^{(n)}_1, \dots, \lambda^{(n)}_n$ of $T_n(\varphi)$ are positive and so [\[eq2\]](#eq2){reference-type="eqref" reference="eq2"} can be rewritten in the form $$\label{eq3}
 \lim_{n \to \infty} \, \frac{\log \lambda^{(n)}_1 + \dots + \log\lambda^{(n)}_n}{n} =
-\frac{1}{2\pi} \int^\pi_{-\pi} \log \varphi\!\left(e^{i\theta}\right)d\theta.
-\end{equation}$$ Szegő recognized that [\[eq3\]](#eq3){reference-type="eqref" reference="eq3"} is a special case of equidistribution for the $\lambda^{(n)}_j$ in the sense of Weyl, and in 1920 [@Sz2] Szegő proved the following result (see also [@GreSz]).
+\frac{1}{2\pi} \int^\pi_{-\pi} \log \varphi\!\left(e^{i\theta}\right)d\theta.$$ Szegő recognized that [\[eq3\]](#eq3){reference-type="eqref" reference="eq3"} is a special case of equidistribution for the $\lambda^{(n)}_j$ in the sense of Weyl, and in 1920 [@Sz2] Szegő proved the following result (see also [@GreSz]).
 
 ::: theorem
 []{#theorem2 label="theorem2"} Let $\varphi\!\left(e^{i\theta}\right)$ be a real-valued function in $L^\infty (S^1)$ with $m \le \varphi\!\left(e^{i\theta}\right)
-\le M$ a.e. If $F(\lambda)$ is any continuous function defined on the interval $m\le \lambda\le M$, we have $$\begin{equation}
-\label{eq4}
+\le M$ a.e. If $F(\lambda)$ is any continuous function defined on the interval $m\le \lambda\le M$, we have $$\label{eq4}
 \lim_{n \to \infty} \frac{F\left(\lambda^{(n)}_1\right) + \dots + F\left(\lambda^{(n)}_n \right)}{n} = \frac{1}{2\pi}
-\int^\pi_{-\pi} F\left( \varphi\!\left(e^{i\theta}\right)\right) d\theta.
-\end{equation}$$
+\int^\pi_{-\pi} F\left( \varphi\!\left(e^{i\theta}\right)\right) d\theta.$$
 :::
 
 Taking $F(\lambda) = \log \lambda$, we clearly recover [\[eq3\]](#eq3){reference-type="eqref" reference="eq3"}. We consider more detailed asymptotic properties of the eigenvalues below (see Section [\[sec9\]](#sec9){reference-type="ref" reference="sec9"}).
 
-Relation [\[eq2\]](#eq2){reference-type="eqref" reference="eq2"} may be rewritten in the form $$\begin{equation}
-\label{eq5}
-D_n (\varphi) = \exp\left[ n \int^\pi_{-\pi} \log\varphi\!\left(e^{i\theta}\right) \frac{d\theta}{2\pi} + o(n)\right]
-\end{equation}$$ as $n\to \infty$. The issue of determining the precise nature of the term $o(n)$ came to the fore in the following way.
+Relation [\[eq2\]](#eq2){reference-type="eqref" reference="eq2"} may be rewritten in the form $$\label{eq5}
+D_n (\varphi) = \exp\left[ n \int^\pi_{-\pi} \log\varphi\!\left(e^{i\theta}\right) \frac{d\theta}{2\pi} + o(n)\right]$$ as $n\to \infty$. The issue of determining the precise nature of the term $o(n)$ came to the fore in the following way.
 
-The two-dimensional Ising model, the central model in statistical mechanics (see [@McWu1] [@Pal] [@Lie] [@Dom1]), named for E. Ising (see [@Is]), concerns the interaction of random spins $\sigma_{i,j} = \pm 1$ at sites $(i,j)$ in $\mathbb{Z}^2$. Of great interest is the situation in which only nearest-neighbor spins interact and the interaction energy is given by $$-J_1\, \sigma_{i,j} \, \sigma_{i,j+1} - J_2 \, \sigma_{i,j} \, \sigma_{i+1, j}$$ where the vertical and horizontal interaction constants, $J_1$ and $J_2$ respectively, are translation invariant, and in addition, $J_1$ and $J_2$ are positive, so that the system is *ferromagnetic*, i.e. parallel spins have lower energy than anti-parallel spins. As is standard in statistical mechanics, one analyzes the infinite system on $\mathbb{Z}^2$ by first considering the spins in a finite rectangular box $\Lambda\subset \mathbb{Z}^2$ of size $M\times N$ (see below for a discussion of boundary conditions) and then letting $M, \, N \to \infty$. For such a box the total interaction energy of the spins $\sigma= (\sigma_{i, j})$ is given by $$\begin{equation}
-\label{eq6}
+The two-dimensional Ising model, the central model in statistical mechanics (see [@McWu1] [@Pal] [@Lie] [@Dom1]), named for E. Ising (see [@Is]), concerns the interaction of random spins $\sigma_{i,j} = \pm 1$ at sites $(i,j)$ in $\mathbb{Z}^2$. Of great interest is the situation in which only nearest-neighbor spins interact and the interaction energy is given by $$-J_1\, \sigma_{i,j} \, \sigma_{i,j+1} - J_2 \, \sigma_{i,j} \, \sigma_{i+1, j}$$ where the vertical and horizontal interaction constants, $J_1$ and $J_2$ respectively, are translation invariant, and in addition, $J_1$ and $J_2$ are positive, so that the system is *ferromagnetic*, i.e. parallel spins have lower energy than anti-parallel spins. As is standard in statistical mechanics, one analyzes the infinite system on $\mathbb{Z}^2$ by first considering the spins in a finite rectangular box $\Lambda\subset \mathbb{Z}^2$ of size $M\times N$ (see below for a discussion of boundary conditions) and then letting $M, \, N \to \infty$. For such a box the total interaction energy of the spins $\sigma= (\sigma_{i, j})$ is given by $$\label{eq6}
 E_\Lambda(\sigma) = -\sum _{\Lambda} 
-\left[ J_1\, \sigma_{i,j} \, \sigma_{i,j+1} + J_2 \, \sigma_{i,j} \, \sigma_{i+1, j} \right]
-\end{equation}$$ where $J_1\, \sigma_{i,j} \, \sigma_{i,j+1}$ is included in the sum if $(i,j)$ or $(i,j+1)\in \Lambda$ and $J_2 \, \sigma_{i,j} \, \sigma_{i+1, j}$ is included if $(i,j)$ or $(i+1,j)\in \Lambda$. The associated normalized *Gibbs measure* is then $$\begin{equation}
-\label{eq7}
-Pr_\Lambda(\sigma) = \frac{1}{Z_\Lambda} \, e^{-E_\Lambda(\sigma)/k_B \,T}
-\end{equation}$$ where $k_B$ is Boltzmann's constant and $T$ is the temperature. Here the *partition function* $Z_\Lambda$ is $$\begin{equation}
-\label{eq8}
-Z_\Lambda= \sum_\sigma e^{-E_\Lambda(\sigma)/k_B \,T}
-\end{equation}$$ where the sum is taken over all possible spin configurations $\sigma$ in $\Lambda$. For fixed finite sets $A\subset \Lambda$, one defines the *correlation functions* $$\begin{equation}
-\label{eq9}
+\left[ J_1\, \sigma_{i,j} \, \sigma_{i,j+1} + J_2 \, \sigma_{i,j} \, \sigma_{i+1, j} \right]$$ where $J_1\, \sigma_{i,j} \, \sigma_{i,j+1}$ is included in the sum if $(i,j)$ or $(i,j+1)\in \Lambda$ and $J_2 \, \sigma_{i,j} \, \sigma_{i+1, j}$ is included if $(i,j)$ or $(i+1,j)\in \Lambda$. The associated normalized *Gibbs measure* is then $$\label{eq7}
+Pr_\Lambda(\sigma) = \frac{1}{Z_\Lambda} \, e^{-E_\Lambda(\sigma)/k_B \,T}$$ where $k_B$ is Boltzmann's constant and $T$ is the temperature. Here the *partition function* $Z_\Lambda$ is $$\label{eq8}
+Z_\Lambda= \sum_\sigma e^{-E_\Lambda(\sigma)/k_B \,T}$$ where the sum is taken over all possible spin configurations $\sigma$ in $\Lambda$. For fixed finite sets $A\subset \Lambda$, one defines the *correlation functions* $$\label{eq9}
 \left\langle \prod_{(i,j) \in A} \,\sigma_{i,j} \right\rangle_\Lambda= \sum_\sigma\prod_{(i,j) \in A} \sigma_{i,j}
-\:Pr_\Lambda(\sigma).
-\end{equation}$$ The *thermodynamic limits* of these correlation functions as $\Lambda\uparrow \mathbb{Z}^2$, i.e. $M, N\to \infty$, $$\begin{equation}
-\label{eq10}
+\:Pr_\Lambda(\sigma).$$ The *thermodynamic limits* of these correlation functions as $\Lambda\uparrow \mathbb{Z}^2$, i.e. $M, N\to \infty$, $$\label{eq10}
 \left\langle \prod_{(i,j)\in A} \sigma_{i,j}\right\rangle \equiv \lim_{\Lambda\uparrow \mathbb{Z}^2}
-\left\langle \prod_{(i,j) \in A} \sigma_{i,j} \right\rangle_{\Lambda}
-\end{equation}$$ are the objects of principal physical interest. In particular such correlations $\left\langle \prod_{(i,j)\in A}
+\left\langle \prod_{(i,j) \in A} \sigma_{i,j} \right\rangle_{\Lambda}$$ are the objects of principal physical interest. In particular such correlations $\left\langle \prod_{(i,j)\in A}
 \sigma_{i,j} \right\rangle$ should model physical phenomena such as phase transitions. For example, a bar magnet has a critical temperature $T_c$ called the Curie point: for temperatures $T < T_c$, the magnet exhibits spontaneous magnetization, but for $T>T_c$ the magnetization is zero (in zero external field). This behavior cannot be described by a function such as $\left\langle\prod_{(i,j)\in A} \, \sigma_{i,j}\right\rangle_\Lambda$ in [\[eq9\]](#eq9){reference-type="eqref" reference="eq9"}, which is real analytic for $T>0$: in the thermodynamic limit, however, analyticity can be, and indeed is, destroyed.
 
 In the presence of an external magnetic field, one must add a term of the form $h \sum_{(i, j)\in \Lambda} \sigma_{i,j}$ to $E_\Lambda(\sigma)$, $h\in \mathbb{R}$, but the most complete results have been obtained only when the field is absent, and we will always assume $h=0$. It remains an outstanding problem in the theory of the Ising model to find the analogs of the explicit formulae below for the correlation functions in the case $h\neq 0$.
 
 We note the following: In order to compute $E_\Lambda(\sigma)$ in [\[eq6\]](#eq6){reference-type="eqref" reference="eq6"}, we need to know $\sigma_{i,j}$ not only at the points $(i,j)\in \Lambda$, but also at the points adjacent to $\Lambda$. In particular, if $M$ and $N$ are integers and $\Lambda=\left\{(i,j) \in \mathbb{Z}^2: 0 \le i \le M, \:
 0\le j \le N\right\}$, then we need to know $\sigma_{M+1,\,j}$, $\sigma_{-1,\, j}$, $0 \le j \le N$ and $\sigma_{i,\, N+1}$, $\sigma_{i,\,-1}$, $0\le i \le M$. In practice, this issue is addressed by imposing boundary conditions on $\Lambda$. One common choice is, for example, periodic boundary conditions, $\sigma_{i+M+1,\, j} = \sigma_{i,j}$, $\sigma_{i,\, j+N+1}= \sigma_{i,\,j}$. Another choice is the fully magnetized boundary conditions where $\sigma_{i,j}
-=+1$ (alternatively $\sigma_{i,j}=-1$) at all points $(i,j)$ adjacent to $\Lambda$. General boundary conditions are discussed, for example, in [@Gal], and also from a different point of view, in [@LebM-Lof]. For each choice of boundary conditions, provided the thermodynamic limits in [\[eq10\]](#eq10){reference-type="eqref" reference="eq10"} exist, we obtain a family of functions $$\begin{equation}
-\label{eq11}
+=+1$ (alternatively $\sigma_{i,j}=-1$) at all points $(i,j)$ adjacent to $\Lambda$. General boundary conditions are discussed, for example, in [@Gal], and also from a different point of view, in [@LebM-Lof]. For each choice of boundary conditions, provided the thermodynamic limits in [\[eq10\]](#eq10){reference-type="eqref" reference="eq10"} exist, we obtain a family of functions $$\label{eq11}
 \left\langle \sigma_{i,j}\right\rangle, \quad \left\langle \sigma_{i,j} \; \sigma_{i', j'} \right\rangle,\quad
-\dots
-\end{equation}$$ In the spirit of the classical moment problem, one says that the family in [\[eq11\]](#eq11){reference-type="eqref" reference="eq11"} determines a (Gibbs) equilibrium state (see e.g. [@Sim1] [@Ru]). A priori, different boundary conditions can give rise to different families [\[eq11\]](#eq11){reference-type="eqref" reference="eq11"}, and hence to different equilibrium states. For example (cf [@Pal]), for closed boundary conditions $\sigma_{ij} = +1$ adjacent to $\Lambda$, one finds $\langle \sigma_{0, 0} \rangle >0$, but for periodic boundary conditions, by symmetry, $\langle \sigma_{0, 0} \rangle =0$. Nevertheless, it suffices for our purposes to note that for the two-point correlation function that we discuss below, the thermodynamic limit is independent of the boundary conditions (cf [@BGJ-LS]). The same is true for the free energy $F$ per unit spin in [\[eq13\]](#eq13){reference-type="eqref" reference="eq13"} below.
+\dots$$ In the spirit of the classical moment problem, one says that the family in [\[eq11\]](#eq11){reference-type="eqref" reference="eq11"} determines a (Gibbs) equilibrium state (see e.g. [@Sim1] [@Ru]). A priori, different boundary conditions can give rise to different families [\[eq11\]](#eq11){reference-type="eqref" reference="eq11"}, and hence to different equilibrium states. For example (cf [@Pal]), for closed boundary conditions $\sigma_{ij} = +1$ adjacent to $\Lambda$, one finds $\langle \sigma_{0, 0} \rangle >0$, but for periodic boundary conditions, by symmetry, $\langle \sigma_{0, 0} \rangle =0$. Nevertheless, it suffices for our purposes to note that for the two-point correlation function that we discuss below, the thermodynamic limit is independent of the boundary conditions (cf [@BGJ-LS]). The same is true for the free energy $F$ per unit spin in [\[eq13\]](#eq13){reference-type="eqref" reference="eq13"} below.
 
-In 1 dimension, Ising [@Is] showed that the Ising model does not exhibit a phase transition for any temperature $T>0$. What about 2 or 3 dimensions? In a landmark paper in 1936, Peierls [@Pei] gave a simple argument asserting that in 2 or 3 dimensions, the Ising model does indeed exhibit spontaneous magnetization at some temperature $T_c>0$. It turns out that Peierls' argument involved an incorrect step[^2], which was corrected only many years later in 1964 by Griffiths [@Grif]. Griffiths confirmed Peierls' conclusion and "Peierls argument" remains a standard tool in many statistical situations. The first exact quantitative result for the 2-dimensional Ising model was obtained by Kramers and Wannier in 1941 [@KraWan] when they wrote down the following formula for $T_c$. In the case $J_1 =J_2 =J$, $$\begin{equation}
-\label{eq12}
-\sinh \left( \frac{2J}{k_B \, T_c} \right) =1.
-\end{equation}$$ In 1942, Wannier gave a talk on this work at a meeting of the New York Academy of Sciences. In an extraordinary denouement, at the end of the talk Onsager announced that he had obtained an exact solution for the two-dimensional Ising model (without magnetic field). Onsager[^3] published the proof of his result two years later in [@Ons1]. More precisely, Onsager had obtained a formula for the partition function $Z_\Lambda$, and, in particular, in the case of a square lattice $\Lambda_N$ of size $N\times N$, with $J_1=J_2=J$, he showed that in the thermodynamic limit the free energy per unit spin $F$ exists and is given by $$\begin{equation}
-\label{eq13}
+In 1 dimension, Ising [@Is] showed that the Ising model does not exhibit a phase transition for any temperature $T>0$. What about 2 or 3 dimensions? In a landmark paper in 1936, Peierls [@Pei] gave a simple argument asserting that in 2 or 3 dimensions, the Ising model does indeed exhibit spontaneous magnetization at some temperature $T_c>0$. It turns out that Peierls' argument involved an incorrect step[^2], which was corrected only many years later in 1964 by Griffiths [@Grif]. Griffiths confirmed Peierls' conclusion and "Peierls argument" remains a standard tool in many statistical situations. The first exact quantitative result for the 2-dimensional Ising model was obtained by Kramers and Wannier in 1941 [@KraWan] when they wrote down the following formula for $T_c$. In the case $J_1 =J_2 =J$, $$\label{eq12}
+\sinh \left( \frac{2J}{k_B \, T_c} \right) =1.$$ In 1942, Wannier gave a talk on this work at a meeting of the New York Academy of Sciences. In an extraordinary denouement, at the end of the talk Onsager announced that he had obtained an exact solution for the two-dimensional Ising model (without magnetic field). Onsager[^3] published the proof of his result two years later in [@Ons1]. More precisely, Onsager had obtained a formula for the partition function $Z_\Lambda$, and, in particular, in the case of a square lattice $\Lambda_N$ of size $N\times N$, with $J_1=J_2=J$, he showed that in the thermodynamic limit the free energy per unit spin $F$ exists and is given by $$\label{eq13}
 \begin{aligned}
 F&=-k_B \,T \lim_{N\to\infty} \frac{1}{N^2}\: \log Z_{\Lambda_N} \\
 &= -k_B \,T \left[\log \left(2 \cosh\frac{2J}{k_B T}\right) + \frac{1}{2\pi^2} \int^\pi_0 d\phi_1 \int^\pi_0 d\phi_2
@@ -133,11 +100,8 @@ F&=-k_B \,T \lim_{N\to\infty} \frac{1}{N^2}\: \log Z_{\Lambda_N} \\
 \log \frac{1}{2} \left( 1 + \sqrt{
 1-\kappa^2 \, \sin ^2 \phi}
 \right)d\phi\right]
-\end{aligned}
-\end{equation}$$ where $\kappa=2 \sinh \left(2J/k_B T\right)/\cosh^2 (2J/k_B T)$. It follows from this formula that the specific heat $C=-T \,\frac{\partial^2 F}{\partial T^2}$ diverges logarithmically as $T\to T_c\pm 0$, where $T_c$ is precisely the critical temperature obtained by Kramers and Wannier (note that for $T_c$ we have $\kappa=1$, and the argument of the logarithm in the double integral vanishes at the integration limit $\phi_1=\phi_2=0$). Onsager's analysis allows for different interaction constants $J_1 \neq J_2$, in which case equation [\[eq12\]](#eq12){reference-type="eqref" reference="eq12"} for $T_c$ must be replaced by $$\begin{equation}
-\label{eq14}
-\sinh \left( \frac{2J_1}{k_B\, T_c}\right) \sinh \left(\frac{2J_2}{k_B\, T_c}\right) =1.
-\end{equation}$$
+\end{aligned}$$ where $\kappa=2 \sinh \left(2J/k_B T\right)/\cosh^2 (2J/k_B T)$. It follows from this formula that the specific heat $C=-T \,\frac{\partial^2 F}{\partial T^2}$ diverges logarithmically as $T\to T_c\pm 0$, where $T_c$ is precisely the critical temperature obtained by Kramers and Wannier (note that for $T_c$ we have $\kappa=1$, and the argument of the logarithm in the double integral vanishes at the integration limit $\phi_1=\phi_2=0$). Onsager's analysis allows for different interaction constants $J_1 \neq J_2$, in which case equation [\[eq12\]](#eq12){reference-type="eqref" reference="eq12"} for $T_c$ must be replaced by $$\label{eq14}
+\sinh \left( \frac{2J_1}{k_B\, T_c}\right) \sinh \left(\frac{2J_2}{k_B\, T_c}\right) =1.$$
 
 For the description of the events that followed, we refer to the informative, and entertaining, recent papers by Baxter [@Bax] and McCoy [@McC1]. In the mid-1940's, Kaufman, a doctoral student at Columbia University, began working with Onsager, who was then at Yale, on the 2-D Ising model. Onsager's computation of the partition function had stunned the physics community by its ingenuity and complexity, and Kaufman was determined to find a simpler approach. As Onsager relates [@Ons2], Kaufman " ...decided to look for a possible connection with spinor theory. Why not? In fact, it seemed like very good sense, and so it was .... By the summer of 1946 she had a beautifully compact computation of the partition function, bypassing all tedious details."
 
@@ -145,16 +109,12 @@ The methods of Onsager and Kaufman for the partition function are based on the c
 
 We now return to 1946. Kaufman's method and results were eventually published three years later in [@Kau1]. Onsager continues in [@Ons2]: "By itself that was only a more elegant derivation of an old result; but the approach looked powerful enough to produce a few new ones. Very well, how about correlations?" As noted by Baxter, the history of the Ising model from that time forth has been the study of these correlations.
 
-In 1948, at a conference at Cornell, and again in 1949 at a conference in Florence, Onsager astounded the audience by announcing that he and Kaufman had recently obtained an exact formula for the spontaneous magnetization $M_0$ of the 2-D Ising model. He gave the result as $$\begin{equation}
-\label{eq15}
+In 1948, at a conference at Cornell, and again in 1949 at a conference in Florence, Onsager astounded the audience by announcing that he and Kaufman had recently obtained an exact formula for the spontaneous magnetization $M_0$ of the 2-D Ising model. He gave the result as $$\label{eq15}
 M_0 = \left(1-k^2_{\text{ons}}\right)^{1/8}, \qquad k_{\text{ons}} \equiv \left( \sinh \frac{2J_1}{k_B T}\;
-\sinh \frac{2J_2}{k_B T}\right)^{-1}
-\end{equation}$$ for $0 < k_{\text{ons}} <1$, corresponding to $T< T_c$. And for $k_{\text{ons}} >1$, corresponding to $T> T_c$, $M_0 =0$.
+\sinh \frac{2J_2}{k_B T}\right)^{-1}$$ for $0 < k_{\text{ons}} <1$, corresponding to $T< T_c$. And for $k_{\text{ons}} >1$, corresponding to $T> T_c$, $M_0 =0$.
 
-Onsager and Kaufman never published a proof of this result. The situation was as follows. In 1949 they published their famous paper [@KauOns], based on Kaufman's spinor (free-fermion) approach, in which they found, in particular, an explicit expression (see [\[eq17\]](#eq17){reference-type="eqref" reference="eq17"} below) for the two-point correlation function along a row in the thermodynamic limit, i.e. $\left\langle \sigma_{1,1} \sigma_{1,1+n}\right\rangle$. By physical arguments $$\begin{equation}
-\label{eq16}
-M_0 = \lim_{n\to \infty}  \left\langle \sigma_{1,1} \, \sigma_{1, 1+n}\right\rangle^{\frac{1}{2}}
-\end{equation}$$ so that in order to derive [\[eq15\]](#eq15){reference-type="eqref" reference="eq15"}, what they had to do was to control the limit in [\[eq16\]](#eq16){reference-type="eqref" reference="eq16"}. As Onsager describes the situation [@Ons3]: "And then, finally, it became apparent that we had a last problem, of the degree of the order, and that turned out to need more invention."
+Onsager and Kaufman never published a proof of this result. The situation was as follows. In 1949 they published their famous paper [@KauOns], based on Kaufman's spinor (free-fermion) approach, in which they found, in particular, an explicit expression (see [\[eq17\]](#eq17){reference-type="eqref" reference="eq17"} below) for the two-point correlation function along a row in the thermodynamic limit, i.e. $\left\langle \sigma_{1,1} \sigma_{1,1+n}\right\rangle$. By physical arguments $$\label{eq16}
+M_0 = \lim_{n\to \infty}  \left\langle \sigma_{1,1} \, \sigma_{1, 1+n}\right\rangle^{\frac{1}{2}}$$ so that in order to derive [\[eq15\]](#eq15){reference-type="eqref" reference="eq15"}, what they had to do was to control the limit in [\[eq16\]](#eq16){reference-type="eqref" reference="eq16"}. As Onsager describes the situation [@Ons3]: "And then, finally, it became apparent that we had a last problem, of the degree of the order, and that turned out to need more invention."
 
 [^1]: For many years "Szegő" was mis-spelled in the literature as "Szegö". Knuth first introduced the Hungarian umlaut into TeX specifically so that names like Szegő, Erdős and Kőnig would be spelled correctly. (Private communication to the authors from D. Knuth.)
 

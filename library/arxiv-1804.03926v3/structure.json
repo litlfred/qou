@@ -7,7 +7,7 @@
   "bytes": 405672,
   "pages": 34,
   "text_source": "embedded",
-  "math_source": "latex"
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -189,8 +189,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "SteinDimOne_rev1.tex",
-   "tex_sections": 6,
-   "overlaid": 1,
+   "tex_sections": 10,
+   "overlaid": 0,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -200,10 +200,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.994,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.437,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-2-on-covariance-identities-and-the-stein-kernel",

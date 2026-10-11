@@ -7,15 +7,14 @@ section_number: 2
 pages: 4-6
 source_pdf: 1102.3530v1.pdf
 source_sha256: ad3edab19f3dc404
-text_source: latex
-latex_prose_ratio: 0.819
-latex_coverage_ratio: 0.951
 doc_brief: "The colored Jones polynomial, the Chern-Simons invariant, and the Reidemeister torsion — W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight"
+text_source: latex
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.899
 ---
 []{#sec:integral label="sec:integral"} In this section we use the quantum dilogarithm function to express the colored Jones polynomial of the figure-eight knot as an integral. We mainly follow [@Andersen/Hansen:JKNOT2006].
 
-First of all we recall the following formula due to Habiro and Le (see for example [@Masbaum:ALGGT12003]). $$\begin{equation}
-\label{eq:Habiro_Le}
+First of all we recall the following formula due to Habiro and Le (see for example [@Masbaum:ALGGT12003]). $$\label{eq:Habiro_Le}
 \begin{split}
   J_N(E;q)
   &=
@@ -30,11 +29,9 @@ First of all we recall the following formula due to Habiro and Le (see for examp
   \prod_{l=1}^{k}
   \left(1-q^{N-l}\right)
   \left(1-q^{N+l}\right).
-\end{split}
-\end{equation}$$
+\end{split}$$
 
-For a complex number $\gamma$ with $\operatorname{Re}(\gamma)>0$, define the quantum dilogarithm $S_{\gamma}(z)$ as follows [@Faddeev:LETMP1995]: $$\begin{equation*}
-  S_{\gamma}(z)
+For a complex number $\gamma$ with $\operatorname{Re}(\gamma)>0$, define the quantum dilogarithm $S_{\gamma}(z)$ as follows [@Faddeev:LETMP1995]: $$S_{\gamma}(z)
   :=
   \exp
   \left(
@@ -42,8 +39,7 @@ For a complex number $\gamma$ with $\operatorname{Re}(\gamma)>0$, define the qua
     \int_{C_R}
     \frac{e^{zt}}{\sinh(\pi t)\sinh(\gamma t)}
     \frac{dt}{t}
-  \right),
-\end{equation*}$$ where $|\operatorname{Re}(z)|<\pi+\operatorname{Re}(\gamma)$ and $C_R$ is $(-\infty,-R]\cup\Omega_R\cup[R,\infty)$ with $\Omega_R:=\{R\exp(\sqrt{-1}(\pi-s))\mid0\le s\le\pi\}$ for $0<R<\min\{\pi/|\gamma|,1\}$. Note that the poles of the integrand are $0,\pm\sqrt{-1},\pm2\sqrt{-1},\dots$ and $\pm\pi\sqrt{-1}/\gamma,\pm2\pi\sqrt{-1}/\gamma,\dots$.
+  \right),$$ where $|\operatorname{Re}(z)|<\pi+\operatorname{Re}(\gamma)$ and $C_R$ is $(-\infty,-R]\cup\Omega_R\cup[R,\infty)$ with $\Omega_R:=\{R\exp(\sqrt{-1}(\pi-s))\mid0\le s\le\pi\}$ for $0<R<\min\{\pi/|\gamma|,1\}$. Note that the poles of the integrand are $0,\pm\sqrt{-1},\pm2\sqrt{-1},\dots$ and $\pm\pi\sqrt{-1}/\gamma,\pm2\pi\sqrt{-1}/\gamma,\dots$.
 
 ::: rem
 Note that in [@Andersen/Hansen:JKNOT2006] it is assumed that $\gamma$ is real and $0<\gamma<1$ but we can define $S_{\gamma}(z)$ when $\operatorname{Re}(\gamma)>0$. See [@Dimofte/Gukov/Lenells/Zagier:CNTP2010 (3.21)]. (Our quantum dilogarithm $S_{\gamma}(z)$ is equal to $\Phi(z/(2\pi);\gamma/\pi)$ in [@Dimofte/Gukov/Lenells/Zagier:CNTP2010].) We give a proof of the analyticity of $S_{\gamma}$ in Lemma [\[lem:analyticity\]](#lem:analyticity){reference-type="ref" reference="lem:analyticity"}.
@@ -52,21 +48,16 @@ Note that in [@Andersen/Hansen:JKNOT2006] it is assumed that $\gamma$ is real an
 The following formula is well known and its proof can be found in [@Andersen/Hansen:JKNOT2006 p. 530]. Note that they assume that $\gamma$ is real but their proof is also valid in our case.
 
 ::: lem
-If $|\operatorname{Re}(z)|<\pi$, then we have $$\begin{equation}
-\label{eq:S_gamma}
+If $|\operatorname{Re}(z)|<\pi$, then we have $$\label{eq:S_gamma}
   \left(1+e^{\sqrt{-1}z}\right)S_{\gamma}(z+\gamma)
   =
-  S_{\gamma}(z-\gamma).
-\end{equation}$$
+  S_{\gamma}(z-\gamma).$$
 :::
 
-Putting $\gamma:=(2\pi-\sqrt{-1}u)/(2N)$ and $z:=\pi-\sqrt{-1}u-2l\gamma$ ($l=1,2,\dots,N-1$) in [\[eq:S_gamma\]](#eq:S_gamma){reference-type="eqref" reference="eq:S_gamma"}, we have $$\begin{equation*}
-  \left(1+e^{\sqrt{-1}(\pi-\sqrt{-1}u-2l\gamma)}\right)
+Putting $\gamma:=(2\pi-\sqrt{-1}u)/(2N)$ and $z:=\pi-\sqrt{-1}u-2l\gamma$ ($l=1,2,\dots,N-1$) in [\[eq:S_gamma\]](#eq:S_gamma){reference-type="eqref" reference="eq:S_gamma"}, we have $$\left(1+e^{\sqrt{-1}(\pi-\sqrt{-1}u-2l\gamma)}\right)
   S_{\gamma}(\pi-\sqrt{-1}u-2l\gamma+\gamma)
   =
-  S_{\gamma}(\pi-\sqrt{-1}u-2l\gamma-\gamma).
-\end{equation*}$$ So for $k=1,2,\dots,N-1$ we have $$\begin{equation*}
-\begin{split}
+  S_{\gamma}(\pi-\sqrt{-1}u-2l\gamma-\gamma).$$ So for $k=1,2,\dots,N-1$ we have $$\begin{split}
   \prod_{l=1}^{k}\bigl(1-\exp((N-l)\xi/N)\bigr)
   &=
   \prod_{l=1}^{k}
@@ -80,13 +71,10 @@ Putting $\gamma:=(2\pi-\sqrt{-1}u)/(2N)$ and $z:=\pi-\sqrt{-1}u-2l\gamma$ ($l=1,
   &=
   \frac{S_{\gamma}(\pi-\sqrt{-1}u-(2k+1)\gamma)}
        {S_{\gamma}(\pi-\sqrt{-1}u-\gamma)}.
-\end{split}
-\end{equation*}$$ Similarly we have $$\begin{equation*}
-  \prod_{l=1}^{k}\bigl(1-\exp((N+l)\xi/N)\bigr)
+\end{split}$$ Similarly we have $$\prod_{l=1}^{k}\bigl(1-\exp((N+l)\xi/N)\bigr)
   =
   \frac{S_{\gamma}(-\pi-\sqrt{-1}u+\gamma)}
-       {S_{\gamma}(-\pi-\sqrt{-1}u+(2k+1)\gamma)}.
-\end{equation*}$$ Therefore we have $$\begin{multline*}
+       {S_{\gamma}(-\pi-\sqrt{-1}u+(2k+1)\gamma)}.$$ Therefore we have $$\begin{gathered}
   J_N\bigl(E;\exp(\xi/N)\bigr)
   \\
   =
@@ -95,25 +83,20 @@ Putting $\gamma:=(2\pi-\sqrt{-1}u)/(2N)$ and $z:=\pi-\sqrt{-1}u-2l\gamma$ ($l=1,
   \exp(-ku)
   \frac{S_{\gamma}(\pi-\sqrt{-1}u-(2k+1)\gamma)}
        {S_{\gamma}(-\pi-\sqrt{-1}u+(2k+1)\gamma)}.
-\end{multline*}$$
+\end{gathered}$$
 
-Using $S_{\gamma}$ we define $$\begin{equation}
-\label{eq:g_N_def}
+Using $S_{\gamma}$ we define $$\label{eq:g_N_def}
   g_N(w)
   :=
   \exp(-Nuw)
   \frac{S_{\gamma}(\pi-\sqrt{-1}u+\sqrt{-1}\xi w)}
-        {S_{\gamma}(-\pi-\sqrt{-1}u-\sqrt{-1}\xi w)}.
-\end{equation}$$ Since $S_{\gamma}(z)$ is defined for $|\operatorname{Re}(z)|<\pi+\operatorname{Re}(\gamma)$, the function $g_N(w)$ is defined for $w$ with $|\pi-\operatorname{Im}(\xi w)|<\pi+\operatorname{Re}(\gamma)=\pi+\pi/N$, that is, $w$ is in the strip $-(2\pi/u)\operatorname{Re}(w)-\pi/(Nu)<\operatorname{Im}(w)<-(2\pi/u)\operatorname{Re}(w)+2\pi/u+\pi/(Nu)$ (Figure [1](#fig:contour){reference-type="ref" reference="fig:contour"}).
+        {S_{\gamma}(-\pi-\sqrt{-1}u-\sqrt{-1}\xi w)}.$$ Since $S_{\gamma}(z)$ is defined for $|\operatorname{Re}(z)|<\pi+\operatorname{Re}(\gamma)$, the function $g_N(w)$ is defined for $w$ with $|\pi-\operatorname{Im}(\xi w)|<\pi+\operatorname{Re}(\gamma)=\pi+\pi/N$, that is, $w$ is in the strip $-(2\pi/u)\operatorname{Re}(w)-\pi/(Nu)<\operatorname{Im}(w)<-(2\pi/u)\operatorname{Re}(w)+2\pi/u+\pi/(Nu)$ (Figure [1](#fig:contour){reference-type="ref" reference="fig:contour"}).
 
-<figure id="fig:contour" data-latex-placement="h">
-<embed src="contour.eps" />
-<figcaption>The function <span class="math inline"><em>g</em><sub><em>N</em></sub></span> (<span class="math inline"><em>Φ</em></span>, respectively) is defined between the two dotted (thick, respectively) lines. The dashed parallelogram indicates the contour <span class="math inline"><em>C</em><sub>+</sub>(<em>ε</em>) ∪ <em>C</em><sub>−</sub>(<em>ε</em>)</span>.</figcaption>
-</figure>
+![The function $g_N$ ($\Phi$, respectively) is defined between the two dotted (thick, respectively) lines. The dashed parallelogram indicates the contour $C_{+}(\varepsilon)\cup C_{-}(\varepsilon)$.](contour.eps){#fig:contour}
 
 For $0<\varepsilon<1/(4N)$, let $C_{+}(\varepsilon)$ be the polygonal line that connects $1-\varepsilon$, $1-u/(2\pi)-\varepsilon+\sqrt{-1}$, $-u/(2\pi)+\varepsilon+\sqrt{-1}$, and $\varepsilon$, and $C_{-}(\varepsilon)$ be the polygonal line that connects $\varepsilon$, $u/(2\pi)-\sqrt{-1}$, $1+u/(2\pi)-\sqrt{-1}$, and $1-\varepsilon$. See Figure [1](#fig:contour){reference-type="ref" reference="fig:contour"}. Put $C(\varepsilon):=C_{-}(\varepsilon)\cup C_{+}(\varepsilon)$. Note that the domain of $g_N(w)$ contains $C(\varepsilon)$.
 
-By the residue theorem we have $$\begin{multline*}
+By the residue theorem we have $$\begin{gathered}
   J_N\bigl(E;\exp(\xi/N)\bigr)
   \\
   =
@@ -123,17 +106,13 @@ By the residue theorem we have $$\begin{multline*}
   \tan(N\pi w)
   g_N(w)
   dw
-\end{multline*}$$ since the set of the poles of $\tan(N\pi w)$ inside $C(\varepsilon)$ is $\{(2k+1)/(2N)\mid k=0,1,2,\dots,N-1\}$ and the residue of each pole is $-1/(N\pi)$.
+\end{gathered}$$ since the set of the poles of $\tan(N\pi w)$ inside $C(\varepsilon)$ is $\{(2k+1)/(2N)\mid k=0,1,2,\dots,N-1\}$ and the residue of each pole is $-1/(N\pi)$.
 
-Putting $$\begin{equation*}
-  G_{\pm}(N,\varepsilon)
+Putting $$G_{\pm}(N,\varepsilon)
   :=
-  \int_{C_{\pm}(\varepsilon)}\tan(N\pi w)g_N(w)\,dw,
-\end{equation*}$$ we have $$\begin{equation}
-\label{eq:G}
+  \int_{C_{\pm}(\varepsilon)}\tan(N\pi w)g_N(w)\,dw,$$ we have $$\label{eq:G}
   J_N\bigl(E;\exp(\xi/N)\bigr)
   =
   \frac{S_{\gamma}(-\pi-\sqrt{-1}u+\gamma)}{S_{\gamma}(\pi-\sqrt{-1}u-\gamma)}
   \frac{\sqrt{-1}\exp(u/2)N}{2}
-  \bigl(G_{+}(N,\varepsilon)+G_{-}(N,\varepsilon)\bigr).
-\end{equation}$$
+  \bigl(G_{+}(N,\varepsilon)+G_{-}(N,\varepsilon)\bigr).$$

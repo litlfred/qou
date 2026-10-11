@@ -7,10 +7,10 @@ section_number: null
 pages: 8-10
 source_pdf: 2605.22763v1.pdf
 source_sha256: 1fe6b92bb5eb0b45
-text_source: latex
-latex_prose_ratio: 0.983
-latex_coverage_ratio: 0.735
 doc_brief: "Advancing mathematics research with AI-driven formal proof search — 14 sections: Introduction; AlphaProof Nexus; Systematic Evaluation on Open Prob"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Exploration of a large space of open problems is expensive, and we chose the full-featured agent (agent (D)) for this based on its strong performance on competition benchmarks. To understand which architectural components are necessary for its successes, we compared its performance against agents (A), (B), and (C) on the {\erdos} problem set in Table~\ref{tab:major_results}. 
 

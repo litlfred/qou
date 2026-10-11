@@ -7,10 +7,10 @@ section_number: 1.2
 pages: 20-23
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
-text_source: latex
-latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.97
 doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES"
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 0.974
 ---
 All the current continuous space nuclear QMC calculations (such as GFMC and AFDMC) are performed within the framework of DMC. Due to the nature of DMC, when we perform ground state calculations, the operators will typically be sandwiched between the trial wave function $\Psi_T$ and the ground state wave function $\Phi_0$. Therefore, DMC based methods can accurately calculate the ground state expectation values of the operators which commute with the Hamiltonian, e.g., the ground state energy $E_0$ itself. However, if the operators do not commute with the Hamiltonian, the ground state expectation values cannot be obtained without tradeoff[^1]. In fact, there are a lot of operators which do not commute with the Hamiltonian, such as the root-mean-square (rms) radius, the particle number density, response functions, etc. Therefore, if we want to accurately calculate the ground state properties beyond the energy itself, we may want to use methods other than DMC.
 
@@ -18,7 +18,7 @@ Path integral Monte Carlo (PIMC) method ([@Ceperley95a]) can be a natural choice
 
 There were important applications of PIMC in calculating the properties of condensed Helium atoms ([@Ceperley95a]) before. There are also PIMC calculations of nuclei on the lattice ([@LEE2009117; @Lee2012PRL]). However, there are no PIMC with the realistic NN potentials such as Argonne potential or ChEFT potentials to calculate the properties of any nuclei in continuous space time before this work.
 
-<figure id="PIMCwalker" data-latex-placement="htbp!">
+<figure id="PIMCwalker">
 <embed src="Figures/PIMCwalker.eps" />
 <figcaption>Illustration of a GFMC walker and a PIMC walker.</figcaption>
 </figure>

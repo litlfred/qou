@@ -6,7 +6,7 @@
   "sha256": "ec5f6da1f813649eaa2d181004d06fefc47c4ae42db286849c3ce37313ab6439",
   "bytes": 1595881,
   "pages": 52,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -670,8 +670,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "arxivupdate.tex",
-   "tex_sections": 11,
-   "overlaid": 0,
+   "tex_sections": 53,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -681,47 +681,64 @@
     {
      "id": "sec-000-a-hamiltonian",
      "title": "A Hamiltonian",
-     "result": "no matching \\section"
+     "prose_ratio": 0.446,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-3-instantons",
      "title": "Instantons",
-     "result": "no matching \\section"
+     "prose_ratio": 0.02,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-1-dirac-monopoles",
      "title": "Dirac Monopoles",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.427,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-1-three-dimensions",
      "title": "Three Dimensions",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-2-two-dimensions",
      "title": "Two Dimensions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-1-fusion",
      "title": "Fusion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.08,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-2-antiparticles",
      "title": "Antiparticles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.608,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-1-particles",
      "title": "Particles",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.09,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-008-2-braiding-and-fusion",
      "title": "Braiding and Fusion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.261,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-009-2-s3",
@@ -736,12 +753,16 @@
     {
      "id": "sec-011-4-fusion-rules",
      "title": "Fusion Rules:",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-1-fusion-probabilities",
      "title": "Fusion Probabilities",
-     "result": "no matching \\section"
+     "prose_ratio": 0.241,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-1-a5",

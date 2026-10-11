@@ -7,10 +7,10 @@ section_number: 2
 pages: 2-4
 source_pdf: 0104104v3.pdf
 source_sha256: e2154399f783aa9b
-text_source: latex
-latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.921
 doc_brief: "Geometry of Four-vector Fields on Quaternionic Flag Manifolds — The purpose of this paper is to describe certain natural 4-ve ctor ﬁelds on quaternionic ﬂag manifolds, which geometrically determ ine"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We begin with some generalities on quaternionic matrices for which we
 define the following subgroups of $\GL{\H}$:

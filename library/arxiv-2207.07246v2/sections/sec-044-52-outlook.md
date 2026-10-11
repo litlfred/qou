@@ -7,10 +7,10 @@ section_number: 5.2
 pages: 119-121
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
-text_source: latex
-latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.995
 doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We hope our $^4$He calculation may be served as a benchmark test for future PIMC calculations of larger nuclei.
 The reason to do larger nuclei is because we can first test how good the nucleon-nucleon interaction is, then we can try to predict the properties of neutron rich nuclei which are most likely generated in supernovae,

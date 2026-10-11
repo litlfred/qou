@@ -163,8 +163,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "article.tex",
-   "tex_sections": 6,
-   "overlaid": 3,
+   "tex_sections": 8,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -174,10 +174,8 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 0.679,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.488,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-2-the-sequence",
@@ -192,15 +190,15 @@
     {
      "id": "sec-003-discussion",
      "title": "Discussion",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 0.915,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"

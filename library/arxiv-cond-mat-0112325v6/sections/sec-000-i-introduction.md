@@ -7,10 +7,10 @@ section_number: I
 pages: 1-1
 source_pdf: 0112325v6.pdf
 source_sha256: f09f5047bd12651c
-text_source: latex
-latex_prose_ratio: 0.968
-latex_coverage_ratio: 0.975
 doc_brief: "Knots in Condensed Matters Y. M. Cho ∗ — 22 sections: INTRODUCTION; KNOT IN SKYRME THEOR Y; (∂µω)2 + (1 − cos ω)(∂µ ˆn)2"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Topological objects (monopoles, vortices, skyrmions, etc.) 
 have played an increasingly important role

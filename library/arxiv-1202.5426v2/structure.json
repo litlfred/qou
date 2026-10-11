@@ -8,7 +8,7 @@
   "pages": 49,
   "text_source": "embedded",
   "extractor": "pypdf",
-  "math_source": "latex"
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -133,8 +133,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 5,
-   "overlaid": 1,
+   "tex_sections": 14,
+   "overlaid": 0,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -149,10 +149,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.933,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.452,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-2-euler-lagrange-equation-proof-of-theorem-i",

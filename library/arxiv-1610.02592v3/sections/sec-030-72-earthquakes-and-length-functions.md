@@ -7,12 +7,13 @@ section_number: 7.2
 pages: 202-210
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.945
-latex_coverage_ratio: 0.852
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Simple closed geodesics are a formidable tool to study $\Teich(S_g)$: we can use a simple closed geodesic to \emph{twist} a metric (the operation is called an \emph{earthquake}), and by simply looking at the lengths of the other closed geodesics we can measure how the metric varies along this transformation. We introduce these operations here; later on, we will use them to parametrize $\Teich(S_g)$.
+
 
 \subsection{Earthquakes} \label{earthquakes:subsection}
 The hyperbolic, flat, and spherical metrics on surfaces may be twisted along simple closed geodesics: this operation is called an \emph{earthquake}.\index{earthquake} 
@@ -54,6 +55,7 @@ In the new metric $m_\theta$ the curve $\gamma$ is still a simple closed geodesi
 
 Of course by deforming an elliptic metric in this way we get nothing new, because all the elliptic metrics on $S^2$ are isometric. Earthquakes are interesting only in the flat and hyperbolic geometries.
 
+
 \subsection{The earthquake map}
 We consider the surface $S_g$ with $g\geqslant 1$ and show that earthquakes define nice actions on the Teichm\"uller space $\Teich(S_g)$. 
 
@@ -86,6 +88,7 @@ It follows directly from the definitions.
 
 We now want to study the Teichm\"uller space and the action of $E_\gamma$ on it. In mathematics a space is often beautifully described by some natural functions defined on it: this role is played here by the length functions of closed curves.
 
+
 \subsection{Length functions}
 A homotopically nontrivial (possibly non simple) closed curve $\gamma$ in $S_g$ defines a \emph{length function}\index{length function}
 $$\ell^\gamma\colon \Teich(S_g) \to \matR_{>0}$$
@@ -95,6 +98,7 @@ When $g=1$ we must actually specify a couple of things in the definition: the cl
 on the other hand rescaling \emph{does} affect lengths, so to get a well-defined length function we always rescale the metric $m$ to have unit area. 
 
 We want to study these length functions, and as usual we start by analysing the simpler torus flat world, where everything can be described explicitly.
+
 
 \subsection{Length functions on the torus} \label{length:torus:subsection}
 We denote every (isotopy class of) non-trivial simple closed curve on $T$ with a coprime pair $(p,q)$ of integers and we identify the Teichm\"uller space $\Teich(T)$ with $H^2\subset\matC$, see Propositions \ref{mn:prop} and \ref{Teich:T:prop}. The length functions may be written explicitly.
@@ -156,6 +160,7 @@ Summing up, the torus picture is the following:
 \end{itemize}
 
 The main goal of Chapters \ref{Teichmuller:chapter} and \ref{automorfismi:chapter} is to draw a similar picture for surfaces $S_g$ of higher genus $g\geqslant 2$. Everything is more difficult in the hyperbolic world, because there are no nice explicit formulas describing the length functions, the action of the mapping class group, the simple closed curves, and the earthquakes. We now start by generalising the last point: the strict convexity of length functions.
+
 
 \subsection{Convexity of the length functions} \label{convexity:lengths:subsection}
 We consider $S_g$ with $g\geqslant 2$. Our aim now is to generalise Corollary \ref{convex:cor} to the hyperbolic setting and then later use this convexity property to parametrize $\Teich(S_g)$. We need a preliminary result.\index{convexity of the length functions}
@@ -233,6 +238,7 @@ By Exercise \ref{convessa:ex} the function $\theta \mapsto \ell^\eta(m_\theta^\g
 \end{proof}
 
 We now employ this convexity property to prove some facts on the earthquakes and the Teichm\"uller space.
+
 
 \subsection{Earthquakes on essential multicurves}
 We use the convexity of the length functions to prove the following. We suppose again that $g\geqslant 2$.

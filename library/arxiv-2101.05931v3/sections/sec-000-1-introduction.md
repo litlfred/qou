@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-3
 source_pdf: 2101.05931v3.pdf
 source_sha256: 41eaa81b97ede8e9
-text_source: latex
-latex_prose_ratio: 0.776
-latex_coverage_ratio: 0.983
 doc_brief: "CATEGORICAL BRAID GROUP ACTIONS — Let g be a semisimple simply-laced Lie algebra of ﬁnite type."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 In their seminal work, Chuang and Rouquier introduced $\fsl_2$ categorifications on abelian categories \cite{CR}.  Their definition mirrors the notion of an $\fsl_2$ representation on a vector space: weight spaces are replaced by weight categories, Chevalley generators acting on them are replaced by Chevalley functors, and Lie algebra relations are replaced by isomorphisms of functors.  But, crucially, these isomorphisms are part of the ``higher data'' of categorification.
 

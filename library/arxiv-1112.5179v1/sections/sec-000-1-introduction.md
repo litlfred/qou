@@ -7,10 +7,10 @@ section_number: 1
 pages: 2-7
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
-text_source: latex
-latex_prose_ratio: 0.954
-latex_coverage_ratio: 0.939
 doc_brief: "3-Manifolds and 3d Indices — We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.993
 ---
 []{#sec:intro label="sec:intro"}
 
@@ -24,10 +24,8 @@ Given the large set of dualities constructed this way, one may seek methods for 
 
 The moduli space $\mathcal{L}[T]$ is a useful notion if the 3d SCFT has "enough" flavor symmetries: to each flavor symmetry one can associate a real mass deformation of the SCFT, and a crucial assumption is that we have enough mass deformation parameters to make the SCFT develop a mass gap. Upon compactification on a circle, the real masses are complexified to ${\mathbb C}^*$ valued twisted masses $X_i$, and one can introduce the notion of an effective twisted superpotential $\mathcal{W}(X_i)$ [@Witten-phases]. Crucially, $\mathcal{W}(X_i)$ can be usually computed in the UV. The twisted superpotential is multivalued, both because the theory will have multiple massive vacua, and because $\mathcal{W}(X_i)$ is only defined up to shifts by integer multiples of the twisted masses. The SUSY-preserving "effective FI parameters"
 
-$$\begin{equation}
- \label{FIW}
-P_i = \frac{\partial \mathcal{W}}{\partial X_i}
-\end{equation}$$
+$$\label{FIW}
+P_i = \frac{\partial \mathcal{W}}{\partial X_i}$$
 
 (really a complexification of the vev of moment map operators) are also circle-valued. Then, upon exponentiating [\[FIW\]](#FIW){reference-type="eqref" reference="FIW"}, one is left with a well defined and UV-computable parameter space of supersymmetric vacua $\mathcal{L}[T]$ as a Lagrangian submanifold of $({\mathbb C}^*)^{2N}$. Here and in the rest of the paper, $N$ denotes the number of abelian flavor symmetry generators available in the UV.
 

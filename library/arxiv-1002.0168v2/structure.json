@@ -204,8 +204,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "article.tex",
-   "tex_sections": 6,
-   "overlaid": 2,
+   "tex_sections": 11,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -215,44 +215,56 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-background",
      "title": "Background",
-     "prose_ratio": 0.45,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-22-subfactors-and-category-theory",
      "title": "Subfactors and category theory",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-23-shaded-planar-algebras",
      "title": "Shaded planar algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-24-principal-graphs",
      "title": "Principal graphs",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-25-the-lopsided-normalization",
      "title": "The lopsided normalization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-4-rational-forms-and-twisted-moments",
      "title": "Rational forms and twisted moments",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.505,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.534,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-6-galois-conjugates",

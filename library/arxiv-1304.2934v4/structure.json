@@ -850,8 +850,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "deviant.tex",
-   "tex_sections": 12,
-   "overlaid": 1,
+   "tex_sections": 80,
+   "overlaid": 37,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -861,212 +861,323 @@
     {
      "id": "sec-000-12-theoretical-results",
      "title": "Theoretical results",
-     "result": "no matching \\section"
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-001-13-applications",
      "title": "Applications",
-     "result": "no matching \\section"
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-14-forthcoming-works",
      "title": "Forthcoming works",
-     "result": "no matching \\section"
+     "prose_ratio": 0.912,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-15-discussion-on-our-hypotheses",
      "title": "Discussion on our hypotheses",
-     "result": "no matching \\section"
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-21-basic-examples-of-mod-convergence",
      "title": "Basic examples of mod-convergence",
-     "result": "no matching \\section"
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-22-legendre-fenchel-transforms",
      "title": "Legendre-Fenchel transforms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-23-gaussian-integrals",
      "title": "Gaussian integrals",
-     "result": "no matching \\section"
+     "prose_ratio": 0.878,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-31-lattice-and-non-lattice-distributions",
      "title": "Lattice and non-lattice distributions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-32-deviations-at-the-scale-otn",
      "title": "Deviations at the scale O(tn)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-33-central-limit-theorem-at-the-scales-otn-and-o",
      "title": "Central limit theorem at the scales o(tn) and o(tn23)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-41-berry-esseen-estimates",
      "title": "Berry-Esseen estimates",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-42-deviations-at-scale-otn",
      "title": "Deviations at scale O(tn)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.225,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-43-central-limit-theorem-at-the-scales-otn-and-o",
      "title": "Central limit theorem at the scales o(tn) and o(tn23)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.628,
+     "coverage_ratio": 0.442,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-014-51-bounds-on-cumulants-and-mod-gaussian-converge",
      "title": "Bounds on cumulants and mod-Gaussian convergence",
-     "result": "no matching \\section"
+     "prose_ratio": 0.907,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-52-precise-deviations-for-random-variables-with",
      "title": "Precise deviations for random variables with control on cumulants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-53-link-with-the-cram\u00e9r-petrov-expansion",
      "title": "Link with the Cram\u00e9r-Petrov expansion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-61-technical-preliminaries",
      "title": "Technical preliminaries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-62-a-precise-upper-bound",
      "title": "A precise upper bound",
-     "result": "no matching \\section"
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-019-63-a-precise-lower-bound",
      "title": "A precise lower bound",
-     "result": "no matching \\section"
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-020-71-mod-convergence-from-an-explicit-formula-for",
      "title": "Mod-convergence from an explicit formula for the Laplace transform",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-021-72-additive-arithmetic-functions-of-random-integ",
      "title": "Additive arithmetic functions of random integers",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-73-number-of-cycles-in-weighted-probability-meas",
      "title": "Number of cycles in weighted probability measure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-74-rises-in-random-permutations",
      "title": "Rises in random permutations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-75-characteristic-polynomials-of-random-matrices",
      "title": "Characteristic polynomials of random matrices in a compact Lie group",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-81-background-central-limit-theorem-from-locatio",
      "title": "Background: central limit theorem from location of zeros",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-026-82-mod-gaussian-convergence-from-non-negative-fa",
      "title": "Mod-Gaussian convergence from non-negative factorizations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-027-83-two-examples-uniform-permutations-and-uniform",
      "title": "Two examples: uniform permutations and uniform set-partitions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-028-84-third-cumulant-of-the-number-of-blocks-in-uni",
      "title": "Third cumulant of the number of blocks in uniform set-partitions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.606,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-029-9-dependency-graphs-and-mod-gaussian-convergence",
      "title": "Dependency graphs and mod-Gaussian convergence",
-     "prose_ratio": 0.095,
+     "prose_ratio": 0.434,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-030-91-the-theory-of-dependency-graphs",
      "title": "The theory of dependency graphs",
-     "result": "no matching \\section"
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-031-92-joint-cumulants",
      "title": "Joint cumulants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-032-93-useful-combinatorial-lemmas",
      "title": "Useful combinatorial lemmas",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-033-94-proof-of-the-bound-on-cumulants",
      "title": "Proof of the bound on cumulants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-034-95-sums-of-random-variables-with-a-sparse-depend",
      "title": "Sums of random variables with a sparse dependency graph",
-     "result": "no matching \\section"
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-035-101-a-bound-on-cumulants",
      "title": "A bound on cumulants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-036-102-polynomiality-of-cumulants",
      "title": "Polynomiality of cumulants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-037-103-moderate-deviations-for-subgraph-count-stati",
      "title": "Moderate deviations for subgraph count statistics",
-     "result": "no matching \\section"
+     "prose_ratio": 0.784,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-038-111-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.257,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-039-112-bounds-and-limits-of-the-cumulants",
      "title": "Bounds and limits of the cumulants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-040-113-asymptotics-of-the-random-character-values-a",
      "title": "Asymptotics of the random character values and partitions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-041-references",

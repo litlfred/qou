@@ -198,7 +198,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
-   "tex_sections": 8,
+   "tex_sections": 26,
    "overlaid": 8,
    "thresholds": {
     "title": 0.85,
@@ -209,56 +209,56 @@
     {
      "id": "sec-000-1-classical-motivation",
      "title": "Classical motivation",
-     "prose_ratio": 0.917,
-     "coverage_ratio": 0.944,
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-fricke-klein-example",
      "title": "Fricke-Klein example",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.955,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-setup",
      "title": "Setup",
-     "prose_ratio": 0.954,
-     "coverage_ratio": 0.897,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-what-is-known",
      "title": "What is known?",
-     "prose_ratio": 0.926,
-     "coverage_ratio": 0.965,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-5-cohascoulomb-branches",
      "title": "COHAs/Coulomb branches",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.942,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-6-main-example",
      "title": "Main example",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.906,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-7-poisson-geometry-of-coulomb-branches",
      "title": "Poisson geometry of Coulomb branches",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.94,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },

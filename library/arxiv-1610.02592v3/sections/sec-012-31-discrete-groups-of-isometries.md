@@ -7,12 +7,13 @@ section_number: 3.1
 pages: 81-86
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.811
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We define hyperbolic manifolds and prove a crucial theorem, that says that every complete hyperbolic manifold is isometric to a quotient $\matH^n/_\Gamma$ for some discrete group $\Gamma <\Iso(\matH^n)$ acting freely on $\matH^n$.
+
 
 \subsection{Hyperbolic, flat, and elliptic manifolds}
 We introduce three important classes of Riemannian manifolds.
@@ -44,6 +45,7 @@ The resulting map $D\colon M \to \matH^n$ is a local isometry by construction. S
 
 The isometry $D\colon M \to \matH^n$ constructed in the proof is called a \emph{developing map}.
 The same proof shows that every complete simply connected flat (or elliptic) $n$-manifold is isometric to $\matR^n$ (or $S^n$). \index{developing map}
+
 
 \subsection{Complete hyperbolic manifolds}
 We have determined the unique complete simply connected hyperbolic $n$-manifold, and we now look at complete hyperbolic manifolds with arbitrary fundamental group. We first note that if $\Gamma < \Iso(\matH^n)$ is a group of isometries that acts freely and properly discontinuously on $\matH^n$, the quotient manifold $\matH^n/_\Gamma$ has a natural Riemannian structure that promotes the covering
@@ -78,6 +80,7 @@ $$\left\{\!
 \begin{proof}
 When passing from the complete hyperbolic manifold $M$ to the group $\Gamma$, the only choice we made is an isometry between the universal cover of $M$ and $\matH^n$. Different choices produce conjugate groups $\Gamma$.
 \end{proof}
+
 
 \subsection{Discrete groups}
 We investigate some basic properties of discrete groups $\Gamma$ of isometries of $\matH^n$.
@@ -125,6 +128,7 @@ $$\Gamma = \PSLZ < \PSLR = \Iso^+(H^2)$$
 consists of all matrices in $\PSLR$ having integer entries and is clearly a discrete subgroup. It does not act freely on $H^2$, however: the matrix $\matr 01{-1}0$ represents the elliptic transformation $z\mapsto -\frac 1z$ with fixed point $i$. \index{modular group}
 \end{example} 
 
+
 \subsection{Coverings}
 We now make a simple but crucial observation: if $\Gamma < \Iso(\matH^n)$ acts freely and properly discontinuously, then also every subgroup $\Gamma' < \Gamma$ does; we get a manifolds covering
 $$\matH^n/_{\Gamma'} \longrightarrow \matH^n/_\Gamma$$
@@ -134,6 +138,7 @@ where some of the terms in the formula may be infinite. Moreover, every covering
 $$\big\{{\rm coverings\ of\ }M \big\} \longleftrightarrow
 \big\{{\rm subgroups\ of\ }\Gamma \big\} .$$
 This holds of course also for flat and spherical manifolds.
+
 
 \subsection{Congruence subgroups}
 We can now exhibit a family of two-dimensional hyperbolic manifolds. 
@@ -152,6 +157,7 @@ An element $A\in\Gamma(m)$ is a matrix $\matr abcd$ congruent to $\matr 1001$ mo
 \end{proof}
 
 The quotient $\matH^2/_{\Gamma(m)}$ is a hyperbolic surface. We will construct many hyperbolic surfaces in Section \ref{surface:geometrisation:section} via some more geometric methods.
+
 
 \subsection{Selberg's lemma}
 The discrete group $\Gamma = \PSLZ$ does not act freely on $H^2$, but its finite-index normal subgroup $\Gamma(m)$ does as soon as $m\geqslant 4$. Is this the instance of a more general principle? Yes, it is. \index{Selberg lemma}

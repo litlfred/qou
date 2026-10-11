@@ -746,8 +746,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "text13.tex",
-   "tex_sections": 11,
-   "overlaid": 1,
+   "tex_sections": 41,
+   "overlaid": 20,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -757,34 +757,45 @@
     {
      "id": "sec-000-11-asymptotics-of-the-colored-jones-function-of",
      "title": "Asymptotics of the colored Jones function of a knot",
-     "result": "no matching \\section"
+     "prose_ratio": 0.221,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.437,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-12-the-generalized-volume-conjecture",
      "title": "The generalized volume conjecture",
-     "prose_ratio": 0.5,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-14-upper-bounds-for-the-generalized-volume-conje",
      "title": "Upper bounds for the generalized volume conjecture",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-16-the-main-ideas-and-organization-of-the-paper",
      "title": "The main ideas and organization of the paper",
-     "result": "no matching \\section"
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-17-acknowledgment",
      "title": "Acknowledgment",
-     "result": "no matching \\section"
+     "prose_ratio": 0.562,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-006-2-weak-versus-strong-convergence",
@@ -795,28 +806,40 @@
     {
      "id": "sec-007-21-a-lemma-from-complex-analysis",
      "title": "A lemma from complex analysis",
-     "result": "no matching \\section"
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-3-two-expansions-of-the-colored-jones-polynomial",
      "title": "Two expansions of the colored Jones polynomial",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-009-31-the-loop-expansion",
      "title": "The loop expansion",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-32-the-cyclotomic-expansion",
      "title": "The cyclotomic expansion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.87,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-33-comparing-the-cyclotomic-and-the-loop-expansi",
      "title": "Comparing the cyclotomic and the loop expansion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.85,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-4-a-reduction-of-theorem-22-to-estimates-of-the",
@@ -827,7 +850,10 @@
     {
      "id": "sec-013-41-uniform-bounds-of-the-colored-jones-function",
      "title": "Uniform bounds of the colored Jones function",
-     "result": "no matching \\section"
+     "prose_ratio": 0.792,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-42-theorem-42-implies-theorem-22",
@@ -843,13 +869,16 @@
     {
      "id": "sec-016-51-some-estimates",
      "title": "Some estimates",
-     "result": "no matching \\section"
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-6-bounds-for-the-degree-and-coefficients-of-the",
      "title": "Bounds for the degree and coefficients of the colored Jones function",
-     "prose_ratio": 0.945,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -861,38 +890,56 @@
     {
      "id": "sec-019-7-proof-of-theorem-42",
      "title": "Proof of Theorem 4.2",
-     "result": "no matching \\section"
+     "prose_ratio": 0.047,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-020-71-the-bound-for-degrees-of-hkn",
      "title": "The bound for degrees of HK,n",
-     "result": "no matching \\section"
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.853,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-021-72-the-bound-for-the-l1-norm-of-hkn",
      "title": "The bound for the l1-norm of HK,n",
-     "result": "no matching \\section"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-022-8-growth-rates-of-r-matrices-and-the-lobachevsky",
      "title": "Growth rates of R-matrices and the Lobachevsky function",
-     "prose_ratio": 0.451,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-023-82-asymptotics-of-the-r-matrix-using-ideal-octah",
      "title": "Asymptotics of the R-matrix using ideal octahedra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-024-83-the-maximum-of-the-growth-rate-of-the-r-matri",
      "title": "The maximum of the growth rate of the R-matrix",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-025-84-the-maximum-of-the-r-matrices-at-roots-of-uni",
      "title": "The maximum of the R-matrices at roots of unity",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-026-85-proof-of-theorem-113",
@@ -908,12 +955,18 @@
     {
      "id": "sec-028-101-bounds-on-l1-norm-of-q-holonomic-functions",
      "title": "Bounds on l1-norm of q-holonomic functions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-029-102-bounds-for-higher-rank-groups",
      "title": "Bounds for higher rank groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.931,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-030-11-some-physics",
@@ -924,12 +977,18 @@
     {
      "id": "sec-031-111-a-small-dose-of-physics",
      "title": "A small dose of physics",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-032-112-the-wkb-method",
      "title": "The WKB method",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-033-appendix-a-the-volume-conjecture-for-the-borrome",

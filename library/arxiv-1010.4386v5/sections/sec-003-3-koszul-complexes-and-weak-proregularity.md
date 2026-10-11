@@ -7,10 +7,10 @@ section_number: 3
 pages: 10-16
 source_pdf: 1010.4386v5.pdf
 source_sha256: 168226dbb5a479ed
-text_source: latex
-latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.947
 doc_brief: "ON THE HOMOLOGY OF COMPLETION AND TORSION — Let A be a commutative ring, and a a weakly proregular ideal in A."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:kosz}
 

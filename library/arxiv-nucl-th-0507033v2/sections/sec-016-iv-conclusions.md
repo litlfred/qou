@@ -7,10 +7,10 @@ section_number: IV
 pages: 13-14
 source_pdf: 0507033v2.pdf
 source_sha256: 57509b3ce5f9f8cc
-text_source: latex
-latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.985
 doc_brief: "Cluster Formation and The Virial Equation of State of Low-De nsity Nuclear Matter — 19 sections: Front matter; INTRODUCTION; FORMALISM"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 []{#conclusions label="conclusions"}
 

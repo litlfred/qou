@@ -6,7 +6,7 @@
   "sha256": "f0c4c36ab0acf537819987a2db5166320182388e6d87fff89bb9f2ab7ccd4d9a",
   "bytes": 420806,
   "pages": 58,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -182,8 +182,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "dilogPotSubmit.tex",
-   "tex_sections": 6,
-   "overlaid": 0,
+   "tex_sections": 12,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -193,15 +193,18 @@
     {
      "id": "sec-000-quantum-dilogarithm-function",
      "title": "Quantum Dilogarithm Function",
-     "prose_ratio": 0.88,
-     "coverage_ratio": 0.284,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-001-examples",
      "title": "Examples",
-     "prose_ratio": 0.457,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.672,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-52",
@@ -211,7 +214,10 @@
     {
      "id": "sec-003-once-punctured-torus-bundles-over-the-circle",
      "title": "Once-Punctured Torus Bundles over the Circle",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-complement-of-knots-up-to-7-crossings",

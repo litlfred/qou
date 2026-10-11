@@ -8,465 +8,383 @@ pages: 31-37
 source_pdf: 1908.07065v3.pdf
 source_sha256: c43e413aed71aef1
 doc_brief: "Non-perturbative approaches to the quantum Seiberg–Witten curve — We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills"
+text_source: latex
+latex_prose_ratio: 0.906
+latex_coverage_ratio: 0.994
 ---
-We will now test the expression (5.6) in several ways.
-A ﬁrst simple test is that the zeros of Ξ(E) give the correct spectrum of the modiﬁed Mathieu
-operator. This should be expected from the general results of [18], but it is instructive to check
-it explicitly. The zeros correspond to the vanishing of the cosh in (5.6), and by using (4.18) we
-ﬁnd,
-∂aFNS(a, ℏ) = ℏπ
-(
-n + 1
-2
-)
-, (5.16)
-which is the exact quantization condition obtained from the conjecture in [1], subsequently proved
-in [56].
-– 30 –
-Another check can be obtained by comparing our expression to the asymptotics of Fredholm
-determinants obtained in [20, 21, 66] by using the all-orders WKB method. This asymptotic
-expansion is valid when E <0, where the Fredholm determinant is not oscillatory. In order to
-write down the asymptotics, we need some ingredients. Let
-G(E) =
-∞∑
-n=0
-1
-E−En
-(5.17)
-be the trace of the resolvent, and
-T (E) = 1
-2
-∫
-R
-dx√
-2Λ2 cosh(x)−E
-(5.18)
-the transit time. We also need the formal power series in ℏ
-b(E) = exp
-
-
-i
-∑
-n≥1
-ℏ2n−1
-∫
-R
-p2n(x,E )dx
-
-
-, (5.19)
-where the functions p2n(x,E ) are the ones appearing in the solution to the all-orders WKB
-method in (2.4). Let us now deﬁne κ =−E, which will be taken to be positive. It is convenient
-to introduce the functions
-~G(κ) =G(−κ), ~Ξ(κ) = Ξ(−κ), ~b(κ) =b(−κ), ~T (κ) =T (−κ). (5.20)
-Then, one has the following small ℏ asymptotics,
-~Ξ(κ)∼~b(κ) exp
-{1
-ℏ
-∫ κ
-0
-~T (κ′)dκ′−
-∫ ∞
-0
-(
-~G(κ′) + 1
-ℏ
-~T (κ′)
-)
-dκ′
-}
-. (5.21)
-The second term in the exponent is independent of κ but depends on ℏ. We note that all the
-integrals involved in this expression are well deﬁned precisely because E is negative. The very
-ﬁrst terms in the asymptotics can be easily worked out, and one ﬁnds 8
-log Ξ(−κ)∼− i
-2ℏΠ(0)
-B (κ) + iℏ
-2 Π(1)
-B (κ) +··· , κ> 0, (5.22)
-up to κ-independent terms. Note that the sign in the subleading correction is the opposite one
-to what one ﬁnds in the WKB expansion of the quantum B period.
-Let us now compare this result to the exact expression for the spectral determinant (5.6),
-which can be written as
-Ξ(E) =A(ℏ)
-(
-sinh
-(πa
-ℏ
-))−1
-cos
-(1
-ℏ
-∂FNS
-∂a
-)
-. (5.23)
-From the explicit expression (4.28) it is easy to see that, whenE is negative,a is purely imaginary.
-More precisely, one has
-a(−κ, ℏ) = iα, α =a(κ, iℏ), (5.24)
-8This agrees with an unpublished calculation of Y. Hatsuda, who obtained the same result by considering the
-semiclassical expansion of the spectral traces.
-– 31 –
-and we take α> 0 for deﬁniteness. In addition,
-∂aF inst
-NS (a, ℏ) = i∂αF inst
-NS (α, iℏ). (5.25)
-By using the explicit expression (4.16) and standard identities for the Γ function, we ﬁnd
-Ξ(−κ)
-A(ℏ) = 1
-2π Γ
-(
-1 +α
-ℏ
-)
-Γ
-(α
-ℏ
-)
-exp
-[α
-ℏ log
-( ℏ2
-Λ2
-)
-+ 1
-ℏ∂αF inst
-NS (α, iℏ)
-]
-+ 1
-2π Γ
-(
-1− α
-ℏ
-)
-Γ
-(
-−α
-ℏ
-)
-exp
-[
-−α
-ℏ log
-( ℏ2
-Λ2
-)
-− 1
-ℏ∂αF inst
-NS (α, iℏ)
-]
-.
-(5.26)
-The term in the second line gives an exponentially small correction to the leading asymptotics.
-The small ℏ asymptotics of the quantity in the ﬁrst line is given by
-log
-[ 1
-2π Γ
-(
-1 +α
-ℏ
-)
-Γ
-(α
-ℏ
-)]
-+ α
-ℏ log
-( ℏ2
-Λ2
-)
-+ 1
-ℏ∂αF inst
-NS (α, iℏ)
-∼− i
-2ℏ
-∑
-n≥0
-(−1)nΠ(n)
-B (κ)ℏ2n.
-(5.27)
-We have used that, due to (5.24) and (5.25), the quantum period is evaluated at −E, where
-E = −κ < 0, and we have to change ℏ → iℏ. The result is in agreement with the WKB
-asymptotics obtained in (5.22).
-A more precise test of (5.6) can be made by comparing the analytical formulae for the
-spectral traces with numerical results. These are obtained by calculating the spectrum of H with
-standard techniques. An example of such a comparison is shown in Table 11.
-Nb Z2
-2 0.004794786 11468342466
-4 0.004794786073913 81196
-6 0.00479478607391375025
-Num 0.00479478607391375025
-Table 11: The second spectral trace Z2 as computed from (5.9) for ℏ = 3π and Λ = 1. The
-number Nb means that we truncate the series (4.13) at order Λ 4Nb. The last line gives the
-numerical result obtained from the spectrum of H.
-We ﬁnally note that Ξ(E) is an entire function ofE. In particular, the would-be singularities
-due to the denominator of (5.23) or to the Gamma functions in (4.16) must cancel in the end.
-This leads in turn to constraints on the form of the singularities of F inst
-NS , which might be testable
-against the results in [67] (see also [68]).
-5.3 Comparison to Zamolodchikov’s TBA equation
-An additional test of our formula (5.6) comes from a comparison with [19]. Inspired by the
-ODE/IM correspondence [69, 70], Zamolodchikov found in [19] a TBA equation which computes
-precisely the spectral determinant (5.6). Let us state the main result of [19], referring to Appendix
-B for more details. Let ϵ(θ,P ) be a solution of the TBA equation (3.69) but with the boundary
-condition at θ→−∞ given by
-ϵ(θ,P )∼ 8Pθ− 2C(P ), θ →−∞, P > 0, (5.28)
-– 32 –
-where C(P ) is written down in (B.15). Let us now introduce the function
-X(µ,P ) = exp [−ϵ(θ,P )/2], (5.29)
-where µ is related to θ by
-µ = e2θ
-(
-Γ
-( 1
-4
-)2
-16√π
-)2
-. (5.30)
-Then, according to [19], the spectral determinant of the modiﬁed Mathieu operator (2.14) is
-given by
-Ξ(E) = X(µ,P )
-X(µ, 0), (5.31)
-where the parameters Λ, E and ℏ of the operator are related to the parameters appearing in
-X(µ,P ) by
-µ = Λ2ℏ−2, P 2 =−Eℏ−2. (5.32)
-If we compare the result of [19] with ours we should have (by using the dictionary (5.32))
-X(µ,P )
-X(µ, 0) =A(ℏ)
-(
-sinh
-(Πex
-A (E, ℏ)
-2ℏ
-))−1
-cosh
-( 1
-2ℏΠex
-B (E, ℏ)
-)
-. (5.33)
-In order to ﬁnd the relation between the two normalization constants X(µ, 0) and A(ℏ), it is
-useful to ﬁrst derive the asymptotic behavior (5.28) from our expression (5.6). We need to
-expand around small Λ ℏ−1 and take u < 0, which means that a is imaginary, as discussed in
-(5.24). In this regime, and by using (4.18), we have
-(
-sinh
-(πa
-ℏ
-))−1
-cosh
-( i
-ℏ∂aFNS(a, ℏ)
-)
-≈ 2−1π−1
-((Λ
-ℏ
-)−2s
-Γ(1 +s)Γ(s) +
-(Λ
-ℏ
-)2s
-Γ(1−s)Γ(−s)
-)
-,
-(5.34)
-where
-s =−ia
-ℏ = α
-ℏ > 0. (5.35)
-By using (4.14) we have
-E≈a2/4 (5.36)
-and therefore
-P =s/2> 0. (5.37)
-Hence we can neglect the second term in the r.h.s. of (5.34). It follows from (5.32) that (5.34)
-agrees precisely with (5.28). In particular this means that the two normalization constants are
-identiﬁed and we have
-X(µ,P ) =
-(
-sinh
-(Πex
-A (E, ℏ)
-2ℏ
-))−1
-cosh
-( 1
-2ℏΠex
-B (E, ℏ)
-)
-. (5.38)
-We test this equality by solving numerically the TBA equation (3.69) with the boundary condition
-(5.28). Some results are given in Table 12. We ﬁnd perfect agreement.
-– 33 –
-Nb log
-((
-sinh
-(πa
-ℏ
-))−1 cosh
-( i
-ℏ∂aFNS(a, ℏ)
-))
-2 11.360025 317439438
-4 11.36002529911 2863
-6 11.360025299117259
-TBA 11.360025299117
-Table 12: The un-normalized spectral determinant as computed by using instanton counting
-and by solving numerically the TBA (3.69) with (5.28). We use P 2 =−E = 5, µ = Λ 2 =(
-Γ (1/4)2/(16√π)
-)2
-, and ℏ = 1. The number Nb means that we truncate the series (4.13) at
-order Λ4Nb.
-An important spinoﬀ of this comparison is that our result (5.6) provides an analytic, closed
-form solution to the TBA equation of [19]. This also has the following consequence. When
-we derived the Fredholm determinant from the topological string perspective, and due to our
-regularization procedure, we generated an integration constant A(ℏ) whose explicit expression
-is given in (5.7). Given the identity (5.38) between our Fredholm determinant and the solution
-to the Zamolodchikov’s TBA, we expect A(ℏ) to be computed by the integral equation (3.69) at
-P =u = 0. More precisely we expect
-2 logA(ℏ) =ϵ(θ,P = 0), (5.39)
-where we used the dictionary (5.32). For P = 0 the asymptotic condition (5.28) does not make
-sense, strictly speaking. Nevertheless, we can derive the appropriate asymptotic condition for
-the TBA at P = 0 by using our analytic expression (5.38). We ﬁnd that, as θ→−∞ ,
-ϵ(θ,P = 0)∼− 2 log
-(
-−2(θ +γEuler)− logπ + 4 log Γ(5/4)
-π
-)
-. (5.40)
-This is precisely the boundary condition used in section 3.3, equation (3.74). One can now check
-(5.39) numerically. For instance, by solving the TBA of section 3.3 we ﬁnd
-ϵ(θ,P = 0)
-⏐⏐⏐
-θ=−1
-= 0.51888··· (5.41)
-Likewise, by using instanton counting, and in particular (4.18) and (5.7), we have (Λ = 1)
-2 log
-(
-A
-(
-16e√π
-Γ
-( 1
-4
-)2
-))
-= 0.51887965286656··· (5.42)
+We will now test the expression (\ref{sd}) in several ways. 
+
+A first simple test is that the zeros of $\Xi(E)$ give the correct spectrum of the modified Mathieu operator. This should be expected 
+from the general results of \cite{gm3}, but it is instructive to check it explicitly. 
+The zeros correspond to the vanishing of the $\cosh$ in (\ref{sd}), and by using 
+(\ref{abpe}) we find,
+
+\be 
+\label{eqref} \partial_{a}F_{\rm NS}(a,\hbar)= \hbar  \pi  \left( n+{1\over 2} \right), 
+\ee
+
+which is the exact quantization condition obtained from the conjecture in \cite{ns}, subsequently proved in \cite{kt2}. 
+
+ 
+ Another check can be obtained by comparing our expression to the asymptotics of Fredholm determinants obtained in \cite{voros,voros-zq,voros-quartic} 
+ by using the all-orders WKB method. This asymptotic expansion is valid when $E<0$, where the Fredholm determinant is not oscillatory. In order to write down 
+ the asymptotics, we need some ingredients. Let 
+
+\be
+G(E) =\sum_{n =0}^\infty {1\over E-E_n}
+\ee
+
+be the trace of the resolvent, and 
+
+\be
+T(E)=  {1\over 2} \int_\IR {\rd x \over {\sqrt{2\Lambda^2 \cosh(x)-E}}} 
+\ee
+
+the transit time. We also need the formal power series in $\hbar$ 
+
+\be
+\label{aewkb}
+b(E) =  \exp \left\{  \ri \sum_{n\ge 1} \hbar^{2n-1} \int_\IR p_{2n} (x, E) \rd x \right\}, 
+\ee
+
+where the functions $p_{2n}(x,E)$ are the ones appearing in the solution to the all-orders WKB method in \eqref{ricwkb}. 
+Let us now define $\kappa=-E$, which will be taken to be positive. It is convenient to introduce the functions
+
+\be
+\widetilde G(\kappa)= G(-\kappa), \qquad \widetilde \Xi(\kappa)= \Xi(-\kappa), \qquad \widetilde b(\kappa) =b(-\kappa), \qquad \widetilde T(\kappa)= T(-\kappa).
+\ee
+
+Then, one has the following small $\hbar$ asymptotics,  
+ 
+ \be
+ \label{xi-as}
+\widetilde \Xi(\kappa)\sim  \widetilde b(\kappa) \exp\left\{ {1\over \hbar} \int_0^\kappa \widetilde T(\kappa') \rd \kappa' - \int_0^\infty  \left( \widetilde G(\kappa') +{1\over \hbar} \widetilde T(\kappa') \right) \rd \kappa' \right\}.   
+ \ee
+ 
+The second term in the exponent is independent of $\kappa$ but depends on $\hbar$. We note that all the integrals involved in this expression are well 
+defined precisely because 
+$E$ is negative. The very first terms in the asymptotics can be easily worked out, and one finds\footnote{This agrees with an unpublished calculation of 
+Y. Hatsuda, who obtained the same result by considering the semiclassical expansion of the spectral traces.} 
+
+\be
+\label{wkb-sd}
+\log\Xi(-\kappa) \sim - {\ri \over 2 \hbar} \Pi_B^{(0)}(\kappa)+{\ri \hbar \over 2}\Pi_B^{(1)}(\kappa)+ \cdots,  \qquad \kappa>0, 
+\ee
+
+up to $\kappa$-independent terms. Note that the sign in the subleading correction is the opposite one to what one finds in the WKB expansion of the quantum $B$ period. 
+
+ Let us now compare this result to the exact expression for the spectral determinant \eqref{sd}, which can be written as
+ 
+ \be
+ \label{alt-sd}
+ \Xi(E)=A (\hbar) \left( \sinh\left(\frac{\pi a}{\hbar }\right) \right)^{-1} \cos\left( {1\over \hbar} {\partial F_{\rm NS} \over \partial a} \right).\
+ \ee
+ 
+From the explicit expression (\ref{aseries}) it is easy to see that,
+when $E$ is negative, $a$ is purely imaginary. More precisely, one has
+
+
+\be
+\label{aminus}
+a(-\kappa, \hbar)= \ri \alpha, \qquad \alpha= a(\kappa, \ri\hbar),  
+\ee
+
+and we take $\alpha>0$ for definiteness. In addition,
+
+\be
+\label{fminus}
+\partial_a F^{\rm inst} _{\rm NS} (a, \hbar)= \ri \partial_\alpha F^{\rm inst}_{\rm NS} (\alpha, \ri\hbar).  
+\ee
+
+By using the explicit expression (\ref{gammadef}) and standard
+identities for the $\Gamma$ function, we find
+
+\be
+\ba
+{\Xi(-\kappa)\over A(\hbar)}&={1\over 2 \pi} \Gamma\left( 1+{\alpha \over \hbar} \right)  \Gamma\left( {\alpha \over \hbar} \right) \exp \left[ {\alpha \over \hbar} \log\left( {\hbar^2 \over \Lambda^2} \right) + {1\over \hbar} \partial_\alpha F^{\rm inst}_{\rm NS} (\alpha, \ri\hbar) \right]
+\\& +{1\over 2 \pi} \Gamma\left(1-{\alpha \over \hbar} \right)  \Gamma\left(-{\alpha \over \hbar} \right) \exp \left[ -{\alpha \over \hbar} \log\left( {\hbar^2 \over \Lambda^2} \right) - {1\over \hbar} \partial_\alpha F^{\rm inst}_{\rm NS} (\alpha, \ri\hbar) \right]. 
+\ea
+\ee
+
+The term in the second line gives an exponentially small correction to
+the leading asymptotics. The small $\hbar$ asymptotics of the quantity
+in the first line is given by 
+
+\be
+\ba
+&\log \left[ {1\over 2 \pi} \Gamma\left( 1+{\alpha \over \hbar} \right)  \Gamma\left( {\alpha \over \hbar} \right) \right]+ {\alpha \over \hbar} \log\left( {\hbar^2 \over \Lambda^2} \right) + {1\over \hbar} \partial_\alpha F^{\rm inst}_{\rm NS} (\alpha, \ri\hbar) 
+\\&\sim  -{\ri \over 2 \hbar} \sum_{n \ge 0} (-1)^n \Pi_B ^{(n)}(\kappa) \hbar^{2n}.  
+\ea
+\ee
+
+We have used that, due to (\ref{aminus}) and (\ref{fminus}), the
+quantum period is evaluated at $-E$, where $E=-\kappa<0$, and we have
+to change  $\hbar\rightarrow \ri\hbar$. The result is in agreement with
+the WKB asymptotics obtained in (\ref{wkb-sd}).
+
+
+A more precise test of (\ref{sd}) can be made by comparing the analytical formulae for the spectral traces with numerical results. These are obtained 
+by calculating the spectrum of $\mH$ with standard techniques. An example of such a comparison is shown in Table \ref{tbx1}. 
+\begin{table}[h!] 
+\centering
+   \begin{tabular}{l l l}
+  \\
+ $N_b$& $Z_2$  \\
+\hline
+
+2 &  \underline{0.004794786}11468342466\\
+
+ 4 & \underline{0.004794786073913}81196\\ 
+
+ 6 &                 0.00479478607391375025           \\  
+ \hline
+Num &  0.00479478607391375025    \\
+\end{tabular}    \\
+\caption{ The second spectral trace $Z_2$ as computed from  \eqref{tr2} for $\hbar=3\pi$ and $\Lambda=1$. The number $N_b$ means that we truncate the series \eqref{inst}  at order $\Lambda^{4 N_b}$. The last line gives the numerical result obtained from the spectrum of $\mH$. }
+   \label{tbx1}
+ 
+ 
+ \end{table}
+
+We finally note that $\Xi(E)$ is an entire function of $E$. In particular, the would-be singularities due to the denominator of (\ref{alt-sd}) or to 
+the Gamma functions in (\ref{gammadef}) must cancel in the end. This leads in turn to constraints on the form of the singularities of $F_{\rm NS}^{\rm inst}$, 
+which might be testable against the results in \cite{gorsky-bands} (see also \cite{beccaria}). 
+
+
+\subsection{Comparison to Zamolodchikov's TBA equation}
+
+\label{comp-zamo}
+An additional test of our formula (\ref{sd}) comes from a comparison
+with \cite{post-zamo}.  Inspired by the ODE/IM correspondence
+\cite{dt,ddt}, Zamolodchikov found in \cite{post-zamo} a TBA equation
+which computes precisely the spectral determinant \eqref{sd}. Let us
+state the main result of \cite{post-zamo}, referring to Appendix
+\ref{appendixzamo} for more details. Let $\epsilon(\theta, P)$ be a
+solution of the TBA equation \eqref{eq:cTBA-0} but with the boundary
+condition at $\theta \rightarrow -\infty$ given by
+
+\begin{equation}
+  \label{zamobc}\epsilon (\theta,P) \sim 8 P \theta-2C(P), \qquad \theta \to
+   -\infty, \quad P>0,
+ \end{equation}
+ 
+where $C(P)$ is written down in (\ref{CP}). 
+Let us now introduce the function 
+
+\be X(\mu, P)=\exp\left[-\epsilon(\theta, P)/2\right], 
+\ee
+
+where $\mu$ is related to $\theta$ by
+
+\be
+\label{mutheta}
+\mu=  \re^{2 \theta}\left(\frac{\Gamma \left(\frac{1}{4}\right)^2}{16 \sqrt{\pi }}\right)^2. 
+\ee
+
+Then, according to \cite{post-zamo}, the spectral determinant of the modified Mathieu operator (\ref{eq:schrodinger}) is given by 
+\be  
+\Xi (E)= {X(\mu, P) \over X(\mu, 0)},
+\ee
+
+where the parameters $\Lambda$, $E$ and $\hbar$ of the operator are related to the parameters appearing in $X(\mu, P)$ by
+
+\be \label{diczo} \mu=  \Lambda^2 \hbar^{-2}, \qquad P^2 =-E \hbar^{-2}.
+ \ee 
+
+   If we compare the result of \cite{post-zamo} with ours we should have (by using the dictionary \eqref{diczo}) 
+   
+ \be {X(\mu, P) \over X(\mu, 0)}=A (\hbar)\left( \sinh\left(\frac{ \Pi_A^{\rm ex}(E, \hbar)}{2 \hbar }\right) \right)^{-1} \cosh\left({1 \over 2\hbar} \Pi_B^{\rm ex}(E, \hbar)\right). 
+ \ee
+ 
+ In order to find the relation between the two normalization constants
+ $X(\mu, 0)$ and $A (\hbar)$, it is useful to first derive the
+ asymptotic behavior \eqref{zamobc} from our expression \eqref{sd}. We
+ need to expand around small $\Lambda \hbar^{-1}$ and take $u<0$,
+ which means that $a$ is imaginary, as discussed in (\ref{aminus}). In
+ this regime, and by using \eqref{abpe}, we have
+ 
+ \be 
+ \ba
+ &\label{asy} \left( \sinh\left(\frac{\pi a}{\hbar }\right) \right)^{-1} \cosh \left({\ri \over \hbar}\partial_{a}F_{\rm NS}(a, \hbar)\right)\\
+ & \approx  2^{-1}\pi^{-1}\left(\left({\Lambda\over\hbar}\right)^{-2s }\Gamma(1+s)\Gamma(s)+\left({\Lambda\over\hbar}\right)^{2s }\Gamma(1-s)\Gamma(-s)\right),
+ \ea
+ \ee
+ 
+ where 
+ 
+ \be s=-\ri {a \over \hbar} = \frac{\alpha}{\hbar} > 0.
+ \ee
+ 
+By using \eqref{mmap} we have 
+
+\be 
+E \approx a^2/4 
+\ee
+
+and therefore 
+
+ 
+ 
+ \be P =s/2 >0.
+ \ee
+Hence we can neglect the second term in the r.h.s. of \eqref{asy}. It follows from \eqref{diczo} that \eqref{asy} agrees precisely with \eqref{zamobc}. 
+In particular this means that the two normalization constants are identified and we have
+
+\be \label{IDtest} X(\mu, P)= \left( \sinh\left(\frac{ \Pi_A^{\rm ex}(E, \hbar)}{2 \hbar }\right) \right)^{-1} \cosh\left({1 \over 2\hbar} \Pi_B^{\rm ex}(E, \hbar)\right). 
+  \ee
+  
+We test this equality by solving numerically the TBA equation \eqref{eq:cTBA-0} with the boundary condition \eqref{zamobc}. 
+Some results  are given in Table \ref{TestTBA1}. We find perfect agreement. 
+
+
+ \begin{table}[h!] 
+\centering
+   \begin{tabular}{l l l}
+  \\
+ $N_b$& $\log\left(\left( \sinh\left(\frac{\pi a}{\hbar }\right) \right)^{-1} \cosh\left({\ri \over \hbar}\partial_{a}F_{\rm NS}(a, \hbar)\right)\right)$  \\
+\hline
+ 
+ 2 &\underline{11.360025}317439438\\
+ 
+ 4 &\underline{11.36002529911}2863\\ 
+
+  6&11.360025299117259\\  
+ \hline
+TBA &  11.360025299117    \\
+\end{tabular}    \\
+\caption{ The un-normalized spectral determinant as computed 
+by using instanton counting and 
+by solving numerically  the TBA \eqref{eq:cTBA-0} with \eqref{zamobc}.  We use $P^2=-E=5$, $\mu=\Lambda^2=\left(\Gamma \left(1/4\right)^2/(16 \sqrt{\pi })\right)^2$, and $\hbar=1$. The number $N_b$ means that we truncate the series \eqref{inst}  at order $\Lambda^{4 N_b}$. }
+ \label{TestTBA1}
+ 
+ 
+ \end{table}
+   
+
+ An important spinoff of this comparison is that our result (\ref{sd})
+ provides an analytic, closed form solution to the TBA equation of
+ \cite{post-zamo}. This also has the following consequence.  When we
+ derived the Fredholm determinant from the topological string
+ perspective, and due to our regularization procedure, we generated an
+ integration constant $A(\hbar)$ whose explicit expression is given in
+ \eqref{ainst}.  Given the identity \eqref{IDtest} between our
+ Fredholm determinant and the solution to the Zamolodchikov's TBA, we
+ expect $A(\hbar)$ to be computed by the integral equation \eqref{eq:cTBA-0} at
+ $P=u=0$.  More precisely we expect
+
+\be \label{ccc} 2 \log A(\hbar) = \epsilon(\theta, P=0),
+\ee
+
+where we used the dictionary \eqref{diczo}.  For $P=0$ the asymptotic
+condition \eqref{zamobc} does not make sense, strictly speaking.
+Nevertheless, we can derive the appropriate asymptotic condition for
+the TBA at $P=0$ by using our analytic expression \eqref{IDtest}.  We
+find that, as $\theta \rightarrow -\infty$,
+
+
+
+
+
+\begin{equation}\label{eps0}
+  \epsilon(\theta, P=0) 
+  \sim -2 \log \left(
+    -\frac{2 (\theta +\gamma_{\rm Euler} )-\log \pi+4 \log\Gamma(5/4)}{\pi}
+  \right).
+\end{equation}
+
+ This is precisely the boundary condition used in section~\ref{tbau0}, equation \eqref{eq:bdy-cor}. 
+ One can now check \eqref{ccc} numerically.
+  For instance, by solving the TBA of  section~\ref{tbau0} we find
+  
+ \be \epsilon(\theta,P=0)\Big|_{\theta=-1}=0.51888\cdots 
+ \ee
+ 
+ Likewise, by using instanton counting, and in particular \eqref{abpe} and \eqref{ainst}, we have ($\Lambda=1$)
+ 
+ \be 2 \log\left(A \left(\frac{16 \re \sqrt{\pi }}{\Gamma \left(\frac{1}{4}\right)^2}\right)\right)=0.51887965286656 \cdots
+ \ee
+ 
 We have 5 matching digits which is consistent with the precision achieved with the TBA equation.
-This discussion provides an additional result along the lines of what we obtained in section
-4.2. As we discussed in section 3.3, the functionϵ(θ) with the boundary condition (3.74) computes
-the dyonic period Π D(0, ℏ). As pointed out in Sec 4.2, such period is Borel summable, and we
-can indeed test that its Borel resummation agrees with (5.7), namely
-exp
-( 1
-2ℏs (ΠD) (0, ℏ)
-)
-= sinh
-(πa
-ℏ
-)
-cosh
-( i
-ℏ∂aFNS(a, ℏ)
-)
-⏐⏐⏐⏐
-a=a(0,ℏ)
-= sinh
-( 1
-2ℏΠex
-A (0, ℏ)
-)
-cosh
-( 1
-2ℏΠex
-B (0, ℏ)
-). (5.43)
-– 34 –
-We have veriﬁed this identity numerically. In addition we have tested that (5.43) also holds for
-other values of u in the strong coupling region, and we conjecture that, for u∈ [−1, 1], one has
-exp
-( 1
-2ℏs (ΠD) (u, ℏ)
-)
-= sinh
-( 1
-2ℏΠex
-A (u, ℏ)
-)
-cosh
-( 1
-2ℏΠex
-B (u, ℏ)
-). (5.44)
-6 On the modiﬁed Mathieu operator and Painlev´ e III3
-It was observed by many authors [63, 71, 72] that the movable poles of Painlev´ e III3 are somehow
-related to Mathieu functions. In particular in [73], based on [65], it was observed that the zeros
-of the Painlev´ e III3 τ function compute the spectrum of modiﬁed Mathieu (with a suitable dic-
-tionary). From the view point of the TS/ST correspondence [2] this connection comes naturally
-since both systems arise as limiting cases of this duality. In particular, the modiﬁed Mathieu
-operator arises in the standard geometric engineering limit [18, 55, 74], while Painlev´ e III3 arises
-in the dual geometric engineering limit considered in [65].
-In this section we prove the connection between the zeros of the Painlev´ e III3 τ function and
-the spectrum of the modiﬁed Mathieu operator by using [75]. From the CFT perspective this
-is a connection between Liouville conformal blocks at c = 1 and c =∞. We proceed as follows.
-First we write the Painlev´ e III3 τ function as [76–78]
-τ(Λ,a,η, ℏ) =
-∑
-n∈Z
-e4πinη exp
-(
-F SD(a + 2iℏn, ℏ, Λ)
-)
-(6.1)
+
+This discussion provides an additional result along the lines of what we obtained in section \ref{bo}. As we discussed in section 
+\ref{tbau0}, the function $\epsilon(\theta)$ with the boundary condition (\ref{eq:bdy-cor}) computes the dyonic  period $\Pi_D(0,\hbar)$. As pointed out in Sec \ref{bo}, 
+such period is Borel summable, and we can indeed test that its Borel resummation agrees with \eqref{ainst}, 
+namely
+
+\be  \label{bspd}\exp\left({1 \over 2 \hbar} s\left(\Pi_D\right)(0,\hbar)\right)={\sinh\left(\frac{\pi a}{\hbar }\right) \over \cosh\left({\ri \over \hbar}\partial_{a}F_{\rm NS}(a, \hbar)\right)}\bigg|_{a=a(0, \hbar)}=\frac{\sinh\left(\frac{1}{2 \hbar}  \Pi_A^{\rm ex}(0, \hbar)\right) }{ \cosh\left({1 \over 2\hbar} \Pi_B^{\rm ex}(0, \hbar)\right)}.
+\ee
+
+We have verified this identity numerically. In addition we have tested that \eqref{bspd} also holds for other values of $u$ in the strong coupling region, and we 
+conjecture that, for $u\in [-1, 1]$, one has 
+
+\be
+ \label{bspd2}\exp\left({1 \over 2 \hbar} s\left(\Pi_D\right)(u,\hbar)\right)=\frac{\sinh\left(\frac{1}{2 \hbar}  \Pi_A^{\rm ex}(u, \hbar)\right) }{ \cosh\left({1 \over 2\hbar} \Pi_B^{\rm ex}(u, \hbar)\right)}.
+\ee
+
+
+
+
+\section{On the modified Mathieu operator and Painlev\'e $\rm III_3$}
+\label{mathieu-painleve}
+
+It was observed by many authors \cite{Lukyanov:2011wd, PCL, nok} that
+the movable poles of Painlev\'e $\rm III_3$ are somehow related to
+Mathieu functions. In particular in \cite{ sciarappa2}, based on
+\cite{bgt}, it was observed that the zeros of the Painlev\'e
+$\rm III_3$ $\tau$ function compute the spectrum of modified Mathieu
+(with a suitable dictionary).  From the view point of the TS/ST
+correspondence \cite{ghm} this connection comes naturally since both
+systems arise as limiting cases of this duality.  In particular, the
+modified Mathieu operator arises in the standard geometric engineering
+limit \cite{hm,gm17,gm3}, while Painlev\'e $\rm III_3$ arises in the
+dual geometric engineering limit considered in \cite{bgt}.
+
+
+In this section we prove the connection between the zeros of the Painlev\'e $\rm III_3$ $\tau$ function and the spectrum of the modified Mathieu operator by using \cite{ggu}. 
+From the CFT perspective this is a connection between Liouville conformal blocks at $c=1$ and $c=\infty$. We proceed as follows. 
+First we  write the Painlev\'e $\rm III_3$ $\tau$ function as \cite{gil,ilt,Gavrylenko:2017lqz}
+
+\be
+ \label{GIL} \tau(\Lambda, a, \eta, \hbar)= \sum_{n \in \IZ}  \re^{4 \pi \ri n \eta} \exp\left(F^{\rm SD}(a+2\ri\hbar n, \hbar, \Lambda)\right)
+ \ee
+ 
 where
-exp
-(
-F SD(a, ℏ, Λ)
-)
-=
-(Λ
-ℏ
-)−a2
-ℏ2 1
-G(1− ia
-ℏ)G(1 + ia
-ℏ)
-×
-(
-1− 2Λ4
-a2ℏ2 + Λ8(
-2a2− ℏ2)
-a2ℏ2 (a2 + ℏ2)2 +O(Λ12)
-) (6.2)
-is the so-called four dimensional Nekrasov partition function in the selfdual Ω background [45]
-(namely, the equivariant parameters are ϵ1 =−ϵ2 = ℏ). The parameters ( a,η ) in (6.1) play the
-role of initial conditions while Λ is the time. We are interested in the case in which
-η = 0. (6.3)
-We now recall the result of [75], where it was demonstrated that, in the NS limit, the Nakajima–
-Yoshioka blowup equations for SU (2) pure SYM [79–81] can be written as 9
-∑
-n∈Z
-exp
-(
-inπ +F SD (a + 2iℏn + iℏ, ℏ, Λ)− 2inℏ−1 ∂
-∂aFNS (a, ℏ)
-)
-= 0. (6.4)
-Finally, we use the quantization condition for the modiﬁed Mathieu operator in the NS form
-(5.16). It then follows from (6.4) that, if a value of a satisﬁes this exact quantization condition,
-one ﬁnds a vanishing condition for the tau function of Painlev´ e III3, namely
-τ (Λ,a + iℏ, 0, ℏ) =
-∑
-n∈Z
-exp
-(
-F SD (a + 2iℏn + iℏ, ℏ, Λ)
-)
-= 0. (6.5)
-9Strictly speaking this is the four-dimensional limit of [75]. This type of expressions ﬁrst appeared in [82] as
-compatibility conditions between the exact quantization conditions of [2, 3] and those of [55, 83, 84]. A diﬀerent
-connection between blowup and Painlev´ e equations was used in [85–87] to prove the so-called Kiev formula [76, 88]
-or its q-deformed version [89, 90].
-– 35 –
-Notice that we think of (5.16) and (6.5) as quantization conditions for the variable a. In order
-to obtain the spectrum of modiﬁed Mathieu one has to use the quantum Matone relation (4.14).
+
+\be
+\ba  \exp\left(F^{\rm SD}(a, \hbar, \Lambda)\right)= &\left(\frac{\Lambda }{\hbar }\right)^{-\frac{  a^2}{\hbar ^2}} {1 \over  G(1-\ri \frac{a}{\hbar })G(1+\ri \frac{a}{\hbar })}\\
+&\times \left(1 -\frac{2\Lambda ^4}{ a^2 \hbar ^2}+\frac{\Lambda ^8 \left(2 a^2 -\hbar ^2\right)}{ a^2 \hbar ^2 \left( a^2+\hbar ^2\right)^2}+\mathcal{O}(\Lambda^{12})\right)\ea
+\ee
+
+is the so-called four dimensional Nekrasov partition function in the selfdual $\Omega$ background \cite{n} (namely, the equivariant parameters are $\epsilon_1=-\epsilon_2=\hbar$).
+
+The parameters $(a, \eta)$ in \eqref{GIL} play the role of initial conditions while $\Lambda$ is the time.
+We are interested in the case in which 
+
+\be \eta=0.
+\ee  
+
+We now recall the result of
+\cite{ggu}, where it was demonstrated that, in the NS limit, the
+Nakajima--Yoshioka blowup equations for $SU(2)$ pure SYM
+\cite{ny1,naga,nagalect} can be written as\footnote{Strictly speaking this
+  is the four-dimensional limit of \cite{ggu}. This type of
+  expressions first appeared in \cite{swh} as compatibility conditions
+  between the exact quantization conditions of \cite{ghm,cgm} and
+  those of \cite{wzh,fhm,hm}. A different connection between blowup and Painlev\'e equations was used in \cite{bes, Bershtein:2018zcz,ntalkbu} to prove the so-called Kiev formula \cite{gil,ilte} or its q-deformed version \cite{bsu, jns-qp}.
+  }
+
+\be\label{comp}
+		\sum_{n\in\mathbb{Z} }
+		\exp\left(\ri n  \pi+{F}^{\rm SD}\left(a+ 2\ri\hbar n+\ri\hbar, \hbar, \Lambda\right)
+		 -2 \ri n\hbar^{-1}\frac{\partial }{\partial a}{F}_{\text{NS}}\left(a,\hbar\right)\right)=0.
+\ee
+
+Finally, we use the quantization condition for the modified Mathieu operator in the NS form (\ref{eqref}). It then follows from \eqref{comp} that, if a value of 
+$a$ satisfies this exact quantization condition, one finds a vanishing condition for the tau function of
+Painlev\'e $\rm III_3$, namely
+
+\be\label{tau0}
+ \tau\left(\Lambda, a+{\ri \hbar}, 0, \hbar \right)=\sum_{n\in\mathbb{Z} }
+		\exp\left({F}^{\rm SD}\left(a+ 2\ri\hbar n+\ri\hbar, \hbar, \Lambda\right) \right)=0.\ee
+
+Notice that we think of \eqref{eqref} and \eqref{tau0} as quantization conditions for the variable $a$. In order to obtain the spectrum of modified Mathieu one has to use the quantum Matone relation \eqref{mmap}.

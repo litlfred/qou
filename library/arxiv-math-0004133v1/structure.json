@@ -6,7 +6,8 @@
   "sha256": "687de8249639c7f27fe1413b26034340e4b37b155afcce2af9256b56183ccc5d",
   "bytes": 239725,
   "pages": 30,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -209,6 +210,87 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 10,
-  "chars_total": 57284
+  "chars_total": 57284,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "2000.tex",
+   "tex_sections": 6,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-equality-and-isomorphism",
+     "title": "Equality and Isomorphism",
+     "prose_ratio": 0.813,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-x-note-that-\u03c0-1x-is-far-more-informative-than-\u03c0",
+     "title": "Note that \u03a0 1(X) is far more informative than \u03a0 0(X), because it records",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-3-natural-numbers-and-finite-sets",
+     "title": "Natural Numbers and Finite Sets",
+     "prose_ratio": 0.864,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-2-in-general",
+     "title": "In general,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-4-power-series-and-structure-types",
+     "title": "Power Series and Structure Types",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-5-feynman-diagrams-and-stu\ufb00-operators",
+     "title": "Feynman Diagrams and Stu\ufb00 Operators",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

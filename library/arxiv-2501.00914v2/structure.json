@@ -436,8 +436,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "0-traces-v4.tex",
-   "tex_sections": 6,
-   "overlaid": 2,
+   "tex_sections": 24,
+   "overlaid": 16,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -447,112 +447,156 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.639,
-     "coverage_ratio": 0.828,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.68,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-11-nonzero-traces",
      "title": "Nonzero traces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.87,
+     "coverage_ratio": 0.838,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-12-questions",
      "title": "Questions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-13-conventions",
      "title": "Conventions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.462,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-14-organization",
      "title": "Organization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.807,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-15-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.647,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-2-zero-surgeries-on-ffpf-knots",
      "title": "Zero-surgeries on ffpf knots",
-     "prose_ratio": 0.06,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.788,
+     "coverage_ratio": 0.893,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-21-surface-homeomorphisms-and-fibered-knots",
      "title": "Surface homeomorphisms and fibered knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.841,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-22-fixed-points-and-ffpf-knots",
      "title": "Fixed points and ffpf knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.407,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-009-23-zero-surgeries-on-ffpf-knots",
      "title": "Zero-surgeries on ffpf knots",
-     "prose_ratio": 0.544,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.727,
+     "coverage_ratio": 0.083,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-010-3-traces-and-large-surgeries",
      "title": "Traces and large surgeries",
-     "prose_ratio": 0.195,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.808,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-31-topological-preliminaries",
      "title": "Topological preliminaries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.755,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-33-the-mod-2-grading",
      "title": "The mod 2 grading",
-     "result": "no matching \\section"
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.77,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-34-zero-traces-of-l-space-knots",
      "title": "Zero-traces of L-space knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.812,
+     "coverage_ratio": 0.8,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-4-traces-and-rational-surgeries",
      "title": "Traces and rational surgeries",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.75,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-015-5-negative-traces-and-positive-torus-knots",
      "title": "Negative traces and positive torus knots",
-     "prose_ratio": 0.424,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.883,
+     "coverage_ratio": 0.751,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-52-satellite-knots",
      "title": "Satellite knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.719,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-53-hyperbolic-knots",
      "title": "Hyperbolic knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.761,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-61-alexander-polynomials-of-l-space-knots",
      "title": "Alexander polynomials of L-space knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.809,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-019-63-traces-that-detect-knot-floer-homology",
      "title": "Traces that detect knot Floer homology",
-     "result": "no matching \\section"
+     "prose_ratio": 0.899,
+     "coverage_ratio": 0.402,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-020-references",

@@ -8,167 +8,229 @@ pages: 21-24
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
 doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount"
+text_source: latex
+latex_prose_ratio: 0.951
+latex_coverage_ratio: 0.972
 ---
-The importance of strongly Rayleigh measures – that is, measures w ith stable
-generating polynomials (cf. Deﬁnition 2.10) – in negative dependence stems from
-the theorem below proved by one of the authors in [15] (cf. §3.1).
-Theorem 4.1. Let g ∈ R[z1, . . . , zn] be a multi-aﬃne polynomial. Then g is stable
-if and only if
-∂g
-∂zi
-(x) ∂g
-∂zj
-(x) ≥ ∂2g
-∂zi∂zj
-(x)g(x)
-for any x = (x1, . . . , xn) ∈ Rn and i, j ∈ [n].
-Hence, perhaps somewhat surprisingly, if the Rayleigh condition in De ﬁnition 2.5
-is enforced to hold for all real vectors then this stronger correla tion condition is
-equivalent to real stability. Clearly, a strongly Rayleigh measure is au tomatically
-Rayleigh (cf. Remark 2.5). As we will see in this section, the geometric properties
-encoded in the concept of real stability allow us to show that strong ly Rayleigh
-measures enjoy all virtues of negative dependence, including the s trongest form of
-negative association CNA+.
-4.1. Symmetric Homogenization via G ˚ arding Hyperbolic Polynom ials.
-The following theorem shows that the symmetric homogenization (cf . §2.3) of any
-strongly Rayleigh measure is again strongly Rayleigh, so that strong ly Rayleigh
-measures belong to the class PHR (Deﬁnition 2.6).
-Theorem 4.2. If µ ∈ Pn is strongly Rayleigh then so is its symmetric homoge-
-nization µsh ∈ P2n.
-The proof of Theorem 4.2 makes use of the theory of hyperbolic poly nomials
-that has its origins in partial diﬀerential equations and was develope d by Petrovsky,
-G ˚ arding, H¨ ormander, Atiyah and Bott [3, 37, 43]. Recently, hyperbolic polynomi-
-als have proved to be quite useful in other areas of mathematics su ch as convex
-optimization [4, 36], complex analysis [7], matrix theory and combinator ics [34, 35].
-Let e ∈ Rn. A homogeneous polynomial p ∈ R[z1, . . . , zn] is said to be (G ˚ arding)
-hyperbolic with respect to e if p(e) ⁄= 0 and for all x ∈ Rn the univariate polynomial
-t ↦→p(x + te) has only real zeros. Recall that the homogenization of a polynomial
-f (z1, . . . , zn) =∑
-α∈Nn a(α)zα ∈ C[z1, . . . , zn] of degree d is given by
-fH (z1, . . . , zn+1) = zd
-n+1f (z1/zn+1, . . . , zn/zn+1).
-22 J. BORCEA, P. BR ¨AND ´EN, AND T. M. LIGGETT
-Recall the characterization of real stable polynomials given in Propo sition 3.1
-(1). The relationship between real stable polynomials and hyperbolic polynomials
-is made explicit by the following result, see [9, Proposition 1].
-Proposition 4.3. Let f ∈ R[z1, . . . , zn]. Then f is real stable if and only if fH is
-hyperbolic with respect to all vectors e ∈ Rn+1 of the form e = (e1, . . . , en, 0), where
-ei > 0 for 1 ≤ i ≤ n.
-Let p be hyperbolic with respect to e ∈ Rn. The cone
-Ce(p) = {x ∈ Rn : p(x + te) ⁄= 0, t ≥ 0}
-is called the hyperbolicity cone of p. The following fundamental properties of the
-hyperbolicity cone are due to G ˚ arding [37], see also [3, 36, 43].
-Proposition 4.4. Let p ∈ R[z1, . . . , zn] be hyperbolic with respect to e ∈ Rn. Then
-(a) Ce(p) is convex;
-(b) Ce(p) is equal to the connected component of the set {x ∈ Rn : p(x) ⁄= 0 }
-that contains e;
-(c) ( s, t) ↦→p(x + su + te) is real stable for any x ∈ Rn and u ∈ Ce(p);
-(d) p is hyperbolic with respect to any u ∈ Ce(p) and Cu(p) = Ce(p).
-Below are examples of hyperbolic polynomials and their hyperbolicity co nes:
-(I) The polynomial p(z1, . . . , zn) = z1z2 · · ·zn is hyperbolic with respect to the
-direction e = (1 , . . . ,1) ∈ Rn and the hyperbolicity cone is the positive
-orthant Ce(p) = Rn
-+;
-(II) The (principal) symbol of the hyperbolic wave equation, i.e., the polynomial
-p(z1, . . . , zn) = z2
-1 −
-n∑
-j=2
-z2
-j
-is hyperbolic with respect to the direction e = (1 , 0, . . . ,0) ∈ Rn and the
-hyperbolicity cone is the Lorentz cone
-Ce(p) =
-{
-z ∈ Rn :
-√
-z2
-2 + · · · + z2n ≤ z1
-}
-;
-(III) Let zij, 1 ≤ i ≤ j ≤ n, be n(n + 1)/2 diﬀerent variables and let X =
-(xij )n
-i,j=1 be the matrix with entries
-xij =
-{
-zij if i ≤ j,
-zji if i > j.
-The polynomial (in n(n + 1)/2 variables) p(z11, . . . , znn) = det( X) is hy-
-perbolic with respect to the n × n identity matrix I and the hyperbolicity
-cone is the cone of positive deﬁnite n × n matrices;
-(IV) Let A1, . . . , Am be symmetric n × n matrices and let e = (e1, . . . , em) ∈ Rm
-be such that e1A1 + · · · + emAm is positive deﬁnite. Then the polynomial
-p(z1, . . . , zm) = det
-
-
-m∑
-j=1
-zjAj
-
-
-NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 23
-is hyperbolic with respect to e and the hyperbolicity cone is given by
-Ce(p) =
-
-
-x ∈ Rm :
-n∑
-j=1
-xj Aj is positive deﬁnite
-
-
- .
-Theorem 4.5. Suppose that all the coeﬃcients of f ∈ R[z1, . . . , zn] are non-
-negative. The following are equivalent:
-(1) fH is stable;
-(2) f is stable;
-(3) fH is hyperbolic with respect to some vector e with ei ≥ 0; 1 ≤ i ≤ n + 1;
-(4) fH is hyperbolic with respect to any vector e with ei > 0, 1 ≤ i ≤ n + 1.
-Proof. By the fact that the stability property is closed under setting varia bles equal
-to real numbers (Proposition 3.1) and Proposition 4.3 we have that ( 1) ⇒ (2) ⇒
-(3). Now if (3) holds then since f has all non-negative coeﬃcients it follows from
-Proposition 4.4 (b) that Ce(fH ) contains the cone Rn+1
-+ , which by Proposition 4.4
-(d) proves (4). Finally, (4) ⇒ (1) by Proposition 3.1. □
-Let f ∈ C[z1, . . . , zn] be a polynomial of degree di in zi, 1 ≤ i ≤ n. The
-polarization π(f ) of f is the unique polynomial in ∑ n
-i=1 di variables zij, 1 ≤ i ≤ n,
-1 ≤ j ≤ di, satisfying:
-(i) π(f ) is multi-aﬃne;
-(ii) π(f ) is symmetric in the variables zi1, . . . zidi for 1 ≤ i ≤ n;
-(iii) if we let zij = zi for all i, j in π(f ) we recover f .
-Recall that a circular region in C is either an open or closed aﬃne half-plane or
-the open or closed interior or exterior of a circle. The famous Grace -Walsh-Szeg¨ o
-coincidence theorem [32, 66, 74] is stated next. For a proof of the following version
-we refer to [19, Theorem 2.12].
-Theorem 4.6 (Grace-Walsh-Szeg¨ o). Let f ∈ C[z1, . . . , zn] be symmetric and multi-
-aﬃne and let C be a circular region containing the points ζ1, . . . , ζn. Suppose that
-either f has total degree n or C is convex (or both). Then there exists at least one
-point ζ ∈ C such that f (ζ1, . . . , ζn) = f (ζ, . . . , ζ).
-From the Grace-Walsh-Szeg¨ o coincidence theorem we deduce:
-Corollary 4.7. Let f ∈ C[z1, . . . , zn]. Then f is stable if and only if π(f ) is stable.
-Proof. If π(f ) is stable then so is f since the latter is recovered from π(f ) by
-setting variables equal as in (iii) above. Now suppose that π(f ) is not stable. Then
-there are numbers ζij ∈ { z ∈ C : Im(z) > 0}, 1 ≤ i ≤ n, 1 ≤ j ≤ di, such that
-π(f )(ζ) = 0, where ζ = ( ζ11, . . . , ζ1d1 , . . . , ζn1, . . . , ζndn ). By successively applying
-the Grace-Walsh-Szeg¨ o coincidence theorem we see that there is a vector ζ′ =
-(ζ′
-11, . . . , ζ′
-1d1 , . . . , ζ′
-n1, . . . , ζ′
-ndn ) with coordinates in {z ∈ C : Im(z) > 0} for which
-ζ′
-ij = ζ′
-kℓ whenever i = k and π(f )(ζ′) = π(f )(ζ) = 0. Hence f (ζ′
-11, ζ′
-21 . . . , ζ′
-n1) =
-π(f )(ζ′) = 0, so f is not stable either. □
-We now have all the tools to prove Theorem 4.2.
-Proof of Theorem 4.2. Let g be the generating polynomial of µ ∈ Pn and suppose
-that g is stable of degree d. Then so is the homogenization gH of g by Proposi-
-tion 4.3. Now straightforward computations show that the genera ting polynomial
-24 J. BORCEA, P. BR ¨AND ´EN, AND T. M. LIGGETT
-of the symmetric homogenization µsh ∈ P2n is given by π(zn−d
-n+1 gH), so the theorem
-follows from Corollary 4.7. □
+\label{s-stable}
+
+The importance of strongly Rayleigh measures -- that is, measures with stable 
+generating polynomials (cf.~Definition~\ref{def-rsm}) -- in negative 
+dependence stems from the theorem below proved by one of the authors  
+in \cite{PB} (cf.~\S \ref{ss-real-s}).  
+
+\begin{theorem}\label{stable-Rayleigh}
+Let $g \in \RR[z_1,\ldots, z_n]$ be a multi-affine polynomial. Then $g$ is 
+stable if and only if 
+$$
+\frac {\partial g} {\partial z_i}(x) \frac {\partial g} {\partial z_j}(x) 
+\geq \frac {\partial^2 g} {\partial z_i \partial z_j}(x) g(x)$$
+for any $x=(x_1,\ldots,x_n)\in \RR^n$ and $i,j\in [n]$.
+\end{theorem}
+
+Hence, perhaps somewhat surprisingly, if the Rayleigh condition 
+in Definition~\ref{d1} is enforced to hold for all real vectors then this 
+stronger correlation condition is equivalent to real stability. 
+Clearly, a strongly Rayleigh measure is automatically Rayleigh 
+(cf.~Remark~\ref{r-term}). As we will see in this section, the 
+geometric properties encoded in the concept of real stability allow us 
+to show that strongly Rayleigh measures 
+enjoy all virtues of negative dependence, including the strongest
+form of negative association $\CNA+$. 
+
+
+\subsection{Symmetric Homogenization via G\aa rding Hyperbolic 
+Polynomials}\label{s-gar}
+
+The following theorem shows that the symmetric 
+homogenization (cf.~\S \ref{s22}) of any strongly Rayleigh measure is again
+strongly Rayleigh, so that 
+strongly Rayleigh measures belong to the class PHR (Definition~\ref{phr}).
+ 
+\begin{theorem}\label{SH}
+If $\mu\in \fP_{n}$ is strongly Rayleigh then so is its symmetric 
+homogenization $\mu_{sh}\in\fP_{2n}$.
+\end{theorem}
+
+The proof of Theorem~\ref{SH} makes use of the theory of hyperbolic 
+polynomials that has its origins in partial differential equations 
+and was developed by 
+Petrovsky, G\aa rding, H\"ormander, Atiyah and Bott 
+\cite{ABG,garding,hormander}. Recently, hyperbolic polynomials have proved
+to be quite useful in other areas of mathematics such as convex optimization 
+\cite{BGLS,guler}, complex analysis \cite{BBS}, matrix theory and 
+combinatorics \cite{Gu1,Gu}. 
+
+Let $e\in \RR^n$. A homogeneous polynomial $p \in \RR[z_1,\ldots, z_n]$ is 
+said to be {\em (G\aa rding) hyperbolic with respect to} $e$ if $p(e)\neq 0$ 
+and for all $x \in \RR^n$ the univariate polynomial 
+$t \mapsto p(x+te)$ has only real zeros. Recall that the {\em homogenization} 
+of a polynomial $f(z_1,\ldots,z_n)=\sum_{\alpha \in \NN^n}a(\alpha)z^\alpha  
+\in \CC[z_1, \ldots, z_n]$ of degree $d$ is given by
+ $$f_H(z_1,\ldots,z_{n+1}) = z_{n+1}^df(z_1/z_{n+1}, \ldots, z_n/z_{n+1}).$$  
+
+Recall the characterization of real stable polynomials given in 
+Proposition~\ref{pro-rs} (1). The relationship between 
+real stable polynomials and hyperbolic polynomials is made explicit by the 
+following result, see \cite[Proposition 1]{BBS2}.
+
+\begin{proposition}\label{hyp-stab}
+Let $f \in \RR[z_1,\ldots, z_n]$. Then $f$ is real stable if and only if 
+$f_H$ is hyperbolic with respect to all vectors $e \in \RR^{n+1}$ of the form 
+$e=(e_1, \ldots, e_n, 0)$, where $e_i>0$ for $1 \leq i \leq n$. 
+\end{proposition} 
+
+Let $p$ be hyperbolic with respect to $e\in\RR^n$. The cone 
+$$
+C_e(p)=\{x \in \RR^n : p(x+te) \neq 0, t \geq 0\}
+$$
+is called the {\em hyperbolicity cone} of $p$. The following fundamental 
+properties of the hyperbolicity cone are due to G\aa rding \cite{garding}, 
+see also \cite{ABG,guler,hormander}. 
+
+\begin{proposition}\label{fund-hyp}
+Let $p \in \RR[z_1,\ldots,z_n]$ be hyperbolic with respect to $e\in\RR^n$. 
+Then 
+\begin{itemize}
+\item[(a)] $C_e(p)$ is convex; 
+\item[(b)] $C_e(p)$ is equal to the connected component of the set 
+$\{ x \in \RR^n : p(x) \neq 0\}$ that contains $e$;
+\item[(c)] $(s,t)\mapsto p(x+su+te)$ is real stable for any $x\in \RR^n$ 
+and $u\in C_e(p)$; 
+\item[(d)] $p$ is hyperbolic with respect to any $u\in C_e(p)$ and 
+$C_u(p)=C_e(p)$.
+\end{itemize}
+\end{proposition}
+
+Below are examples of hyperbolic polynomials and their hyperbolicity 
+cones: 
+
+\begin{itemize}
+\item[(I)] The polynomial $p(z_1,\ldots,z_n)= z_1z_2\cdots z_n$ is hyperbolic 
+with respect to the direction $e=(1,\ldots,1)\in\RR^n$ and the hyperbolicity 
+cone is the positive orthant $C_e(p)=\RR_+^n$; 
+\item[(II)] The (principal) symbol of the hyperbolic wave equation, i.e., 
+the polynomial 
+$$
+p(z_1,\ldots, z_n) = z_1^2-\sum_{j=2}^n z_j^2
+$$
+is hyperbolic with respect to the direction $e=(1,0,\ldots,0)\in\RR^n$ and 
+the hyperbolicity cone is the Lorentz cone 
+$$
+C_e(p)=\left\{z \in \RR^n : \sqrt{z_2^2+\cdots+z_n^2} \leq z_1\right\};
+$$
+\item[(III)] Let $z_{ij}$, $1\le i\le j\le n$, be $n(n+1)/2$ different 
+variables and let $X=(x_{ij})_{i,j=1}^n$  be the matrix with entries 
+$$
+x_{ij} = \begin{cases} 
+z_{ij} \mbox{ if } i \leq j, \\
+z_{ji} \mbox{ if } i > j.
+\end{cases} 
+$$
+The polynomial (in $n(n+1)/2$ variables) 
+$p(z_{11}, \ldots, z_{nn}) = \det(X)$ is  hyperbolic with respect to the
+$n\times n$ identity matrix $I$ and the hyperbolicity cone is the cone of 
+positive definite $n\times n$ matrices; 
+\item[(IV)] Let $A_1, \ldots, A_m$ be symmetric $n \times n$ matrices and let 
+$e=(e_1,\ldots,e_m) \in \RR^m$ be such that  $e_1A_1 + \cdots+e_mA_m$ is 
+positive definite. Then the polynomial 
+$$
+p(z_1,\ldots, z_m) = \det\left(\sum_{j=1}^m z_jA_j\right)
+$$
+is hyperbolic with respect to $e$ and the hyperbolicity cone is given by 
+$$
+C_e(p)= \left\{ x \in \RR^m : \sum_{j=1}^n x_jA_j \mbox{ is positive 
+definite}\right\}.
+$$   
+\end{itemize}
+
+\begin{theorem}\label{homhom}
+Suppose that all the coefficients of $f \in \RR[z_1,\ldots, z_n]$ are 
+non-negative. The following are equivalent:
+\begin{enumerate} 
+\item $f_H$ is stable; 
+\item $f$ is stable; 
+\item $f_H$ is hyperbolic with respect to some vector $e$ with $e_i\geq 0$; 
+$1 \leq i \leq n+1$;
+\item $f_H$ is hyperbolic with respect to any vector $e$ with $e_i>0$, 
+$1 \leq i \leq n+1$. 
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By the fact that the stability property is 
+closed under setting variables equal to real numbers 
+(Proposition~\ref{pro-rs}) and Proposition~\ref{hyp-stab} we have that 
+(1) $\Rightarrow$ (2) $\Rightarrow$ (3). 
+Now if (3) holds then since $f$ has all non-negative coefficients it follows
+from Proposition~\ref{fund-hyp} (b) that 
+$C_e(f_H)$ contains the cone $\RR_+^{n+1}$, which by 
+Proposition~\ref{fund-hyp} (d) proves (4). Finally, 
+(4) $\Rightarrow$ (1) by Proposition~\ref{pro-rs}.
+\end{proof}
+
+Let $f \in \CC[z_1,\ldots, z_n]$ be a polynomial of degree $d_i$ in $z_i$, 
+$1\le i\le n$. The 
+{\em polarization} $\pi(f)$ of $f$ is the unique polynomial in 
+$\sum_{i=1}^{n}d_i$ variables 
+$z_{ij}$, $1 \leq i \leq n$, $1 \leq j \leq d_i$, satisfying:
+\begin{enumerate}
+\item[(i)] $\pi(f)$ is multi-affine; 
+\item[(ii)] $\pi(f)$ is symmetric in the variables 
+$z_{i1}, \ldots z_{id_i}$ for 
+$1 \leq i \leq n$;
+\item[(iii)] if we let  $z_{ij}=z_i$ for all $i,j$ in $\pi(f)$ we recover $f$.
+\end{enumerate}
+
+Recall that a {\em circular region} in $\CC$ is either an open or closed 
+affine half-plane or the open or closed interior or exterior of a circle. 
+The famous Grace-Walsh-Szeg\"o coincidence theorem 
+\cite{grace,RS,walsh} is stated next. For a proof of the following version we 
+refer to \cite[Theorem 2.12]{COSW}. 
+
+\begin{theorem}[Grace-Walsh-Szeg\"o]\label{GWS}
+Let $f \in \CC[z_1,\ldots, z_n]$ be symmetric and multi-affine and let $C$ be 
+a circular region 
+containing the points $\zeta_1, \ldots, \zeta_n$. Suppose that either $f$
+has total degree $n$ or $C$ is convex (or both). Then there exists at least
+one point 
+$\zeta \in C$ such that 
+$f(\zeta_1, \ldots, \zeta_n)=f(\zeta, \ldots, \zeta)$.
+
+\end{theorem}
+From the Grace-Walsh-Szeg\"o coincidence theorem we deduce:
+
+\begin{corollary}\label{polarizeit}
+Let $f \in \CC[z_1,\ldots, z_n]$. Then 
+$f$ is stable if and only if $\pi(f)$ is stable. 
+\end{corollary}
+
+\begin{proof}
+If $\pi(f)$ is stable then so is $f$ since the latter is recovered from 
+$\pi(f)$ by setting variables equal as in (iii) above. Now suppose that 
+$\pi(f)$ is not stable. Then there are numbers 
+$\zeta_{ij} \in \{z \in \CC : \Im(z)>0\}$, $1 \leq i \leq n$, 
+$1 \leq j \leq d_i$, such 
+that $\pi(f)(\zeta)=0$, where
+$\zeta
+=(\zeta_{11},\ldots,\zeta_{1d_1},\ldots,\zeta_{n1},\ldots,\zeta_{nd_n})$.
+By successively applying the Grace-Walsh-Szeg\"o coincidence theorem we see 
+that there is a vector $\zeta' = 
+(\zeta_{11}',\ldots,\zeta_{1d_1}',\ldots,\zeta_{n1}',\ldots,\zeta_{nd_n}')$ 
+with coordinates in $\{z \in \CC : \Im(z)>0\}$ for which $\zeta_{ij}'
+= \zeta_{k\ell}'$ whenever $i=k$ and $\pi(f)(\zeta')=\pi(f)(\zeta)=0$. Hence 
+$f(\zeta_{11}', \zeta_{21}' \ldots, \zeta_{n1}')=\pi(f)(\zeta')=0$, so $f$ is 
+not stable either. 
+\end{proof}
+
+We now have all the tools to prove Theorem~\ref{SH}. 
+
+\begin{proof}[Proof of Theorem~\ref{SH}]
+Let $g$ be the generating polynomial of $\mu\in\fP_n$ and 
+suppose that $g$ is stable of degree $d$. 
+Then so is the homogenization $g_H$ of $g$ by Proposition~\ref{hyp-stab}. 
+Now straightforward computations show that the generating polynomial of 
+the symmetric homogenization $\mu_{sh}\in\fP_{2n}$ is given by
+ $\pi(z_{n+1}^{n-d}g_H)$, so the theorem follows from 
+Corollary~\ref{polarizeit}. 
+\end{proof}

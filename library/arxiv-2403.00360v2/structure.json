@@ -436,8 +436,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "octonions.tex",
-   "tex_sections": 5,
-   "overlaid": 1,
+   "tex_sections": 31,
+   "overlaid": 16,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -447,8 +447,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.93,
-     "coverage_ratio": 0.967,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -461,100 +461,147 @@
     {
      "id": "sec-002-21-motivation",
      "title": "Motivation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-22-historical-overview",
      "title": "Historical Overview",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-23-the-normed-division-algebras",
      "title": "The Normed Division Algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-24-the-associative-multiplication-algebras-of-o",
      "title": "The Associative Multiplication Algebras of O",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.784,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-25-connection-to-the-standard-model",
      "title": "Connection to the Standard Model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.31,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-3-causal-fermion-systems",
      "title": "Causal Fermion Systems",
-     "prose_ratio": 0.172,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.235,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-008-31-causal-fermion-systems-and-the-reduced-causal",
      "title": "Causal Fermion Systems and the Reduced Causal Action Principle",
-     "result": "no matching \\section"
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-32-spacetime-structures",
      "title": "Spacetime Structures",
-     "result": "no matching \\section"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-33-dynamical-equations-in-spacetime",
      "title": "Dynamical Equations in Spacetime",
-     "result": "no matching \\section"
+     "prose_ratio": 0.21,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-34-connection-to-the-standard-model",
      "title": "Connection to the Standard Model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.388,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-012-35-connection-to-quantum-field-theory",
      "title": "Connection to Quantum Field Theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-36-connection-to-quantum-geometry-and-quantum-gr",
      "title": "Connection to Quantum Geometry and Quantum Gravity",
-     "result": "no matching \\section"
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-4-comparison",
      "title": "Comparison",
-     "prose_ratio": 0.051,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-41-foundations-of-the-approaches",
      "title": "Foundations of the Approaches",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-42-connection-to-the-gauge-group-of-the-standard",
      "title": "Connection to the Gauge Group of the Standard Model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-43-describing-the-three-generations-in-the-stand",
      "title": "Describing the Three Generations in the Standard Model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-5-outlook-and-directions-of-future-research",
      "title": "Outlook and Directions of Future Research",
-     "prose_ratio": 0.013,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.889,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-51-connection-with-the-exceptional-lie-groups-an",
      "title": "Connection with the Exceptional Lie Groups and Jordan Algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-020-52-chiral-symmetry-breaking",
      "title": "Chiral Symmetry Breaking",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-appendix-a-description-of-majorana-spinors-in-ca",

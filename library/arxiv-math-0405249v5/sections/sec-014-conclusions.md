@@ -7,10 +7,10 @@ section_number: null
 pages: 27-27
 source_pdf: 0405249v5.pdf
 source_sha256: bc699482e5cd7679
-text_source: latex
-latex_prose_ratio: 0.96
-latex_coverage_ratio: 0.975
 doc_brief: "Twisted homology of quantum SL(2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra o f the quan- tum SL(2) group"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.951
 ---
 []{#conclusions label="conclusions"}
 

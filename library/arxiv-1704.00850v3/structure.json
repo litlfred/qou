@@ -239,8 +239,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "eigsums-r3.tex",
-   "tex_sections": 7,
-   "overlaid": 3,
+   "tex_sections": 10,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -263,47 +263,58 @@
     {
      "id": "sec-002-3-power-sums-of-eigenvalues",
      "title": "Power sums of eigenvalues",
-     "prose_ratio": 0.961,
-     "coverage_ratio": 0.915,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-data-augmentation-operators-and-an-integral-re",
      "title": "Data augmentation operators and an integral representation of sk",
-     "prose_ratio": 0.914,
-     "coverage_ratio": 0.927,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-5-classical-monte-carlo",
      "title": "Classical Monte Carlo",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.706,
+     "prose_ratio": 0.794,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
-     "converter": "latex"
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-7-examples",
      "title": "Examples",
-     "prose_ratio": 0.069,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.906,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-71-gaussian-chain",
      "title": "Gaussian chain",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-72-bayesian-probit-regression",
      "title": "Bayesian probit regression",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.886,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-73-bayesian-linear-regression-model-with-non-gau",
      "title": "Bayesian linear regression model with non-Gaussian errors",
-     "result": "no matching \\section"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.886,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-a-proof-of-theorem-2",

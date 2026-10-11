@@ -7,10 +7,10 @@ section_number: 6
 pages: 17-18
 source_pdf: 1508.01627v4.pdf
 source_sha256: 778e60219862e371
-text_source: latex
-latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.971
 doc_brief: "A Murnaghan-Nakayama rule for values of unipotent characters in classical groups — 7 sections: Introduction; Maximal tori in classical groups; A Murnaghan–Nakayama rule"
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.988
 ---
 []{#sec:rank3 label="sec:rank3"}
 

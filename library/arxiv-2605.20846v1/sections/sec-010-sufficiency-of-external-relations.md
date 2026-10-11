@@ -7,10 +7,10 @@ section_number: null
 pages: 54-60
 source_pdf: 2605.20846v1.pdf
 source_sha256: db27cb6d01c4f2fb
-text_source: latex
-latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.864
 doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:external sufficient}
 Equipped with prime commutativity, legs and waist relations, co-legs and co-waist relations, we are ready to state a sufficiency theorem among $G_2 $ generators.

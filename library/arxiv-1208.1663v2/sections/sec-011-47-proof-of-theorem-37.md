@@ -8,21 +8,19 @@ pages: 13-14
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
 doc_brief: "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
+text_source: latex
+latex_prose_ratio: 0.824
+latex_coverage_ratio: 0.903
 ---
-(a) I∆ ∈ V from Section 4.5. Lemma 3.6 and Equation (3.4) manifestly imply that
-δ(I∆(m,e ))≥ 0 for all integers m and e. Thus, I∆ ∈ V+. Moreover, I∆(0, 0) =
-1 +O(q).
-(b) I∆ satisﬁes the pentagon identity from Section A.
-14 STA VROS GAROUF ALIDIS
-It remains to show the uniqueness part in Theorem 3.7. Suppose f ∈ V+ satisﬁes the
-pentagon and f(0, 0)(0)⁄= 0. Corollary 4.1 implies that f(m,e )(q) = C(q)I∆(e,m )(q) for
-some C(q)∈ Q((q)). Consider the special pentagon for f and I∆:
-f(0, 0)2 =
-∑
-e∈Z
-f(0,e )3qe I∆(0, 0)2 =
-∑
-e∈Z
-I∆(0,e )3qe.
-It follows that C(q)2 = C(q)3 and since C(q)⁄= 0, we get C(q) = 1. This concludes the
-uniqueness part of Theorem 3.7. □
+[]{#sub.thm.2 label="sub.thm.2"}
+
+First we show that $I_{\Delta}$ satisfies the required equations:
+
+-   $I_{\Delta}\in V$ from Section [\[sub.isindex\]](#sub.isindex){reference-type="ref" reference="sub.isindex"}. Lemma [\[lem.degID\]](#lem.degID){reference-type="ref" reference="lem.degID"} and Equation [\[eq.degID\]](#eq.degID){reference-type="eqref" reference="eq.degID"} manifestly imply that $\delta(I_{\Delta}(m,e)) \geq 0$ for all integers $m$ and $e$. Thus, $I_{\Delta}\in V_+$. Moreover, $I_{\Delta}(0,0)=1+O(q)$.
+
+-   $I_{\Delta}$ satisfies the pentagon identity from Section [\[sub.pentagon\]](#sub.pentagon){reference-type="ref" reference="sub.pentagon"}.
+
+It remains to show the uniqueness part in Theorem [\[thm.2\]](#thm.2){reference-type="ref" reference="thm.2"}. Suppose $f \in V_+$ satisfies the pentagon and $f(0,0)(0) \neq 0$. Corollary [\[cor.V+\]](#cor.V+){reference-type="ref" reference="cor.V+"} implies that $f(m,e)(q)=C(q)I_{\Delta}(e,m)(q)$ for some $C(q)
+\in \mathbb Q((q))$. Consider the special pentagon for $f$ and $I_{\Delta}$: $$f(0,0)^2=\sum_{e \in \mathbb Z} f(0,e)^3 q^e 
+\qquad I_{\Delta}(0,0)^2=\sum_{e \in \mathbb Z} I_{\Delta}(0,e)^3 q^e
+\,.$$ It follows that $C(q)^2=C(q)^3$ and since $C(q) \neq 0$, we get $C(q)=1$. This concludes the uniqueness part of Theorem [\[thm.2\]](#thm.2){reference-type="ref" reference="thm.2"}. 0◻

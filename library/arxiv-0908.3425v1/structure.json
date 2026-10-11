@@ -882,8 +882,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "scherer_review_ppnp_final.tex",
-   "tex_sections": 6,
-   "overlaid": 1,
+   "tex_sections": 53,
+   "overlaid": 38,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -893,239 +893,356 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.602,
-     "coverage_ratio": 0.786,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-the-qcd-lagrangian",
      "title": "The QCD Lagrangian",
-     "result": "no matching \\section"
+     "prose_ratio": 0.242,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-chiral-symmetry-and-spontaneous-symmetry-breakin",
      "title": "Chiral symmetry and spontaneous symmetry breaking",
-     "prose_ratio": 0.031,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-quantum-chromodynamics-and-chiral-symmetry",
      "title": "Quantum chromodynamics and chiral symmetry",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.393,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-004-chiral-limit",
      "title": "Chiral limit",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-global-symmetry-currents-of-the-light-quark-sect",
      "title": "Global symmetry currents of the light quark sector",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-chiral-algebra",
      "title": "Chiral algebra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-quark-masses-and-chiral-symmetry-breaking",
      "title": "Quark masses and chiral symmetry breaking",
-     "result": "no matching \\section"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-green-functions-chiral-ward-identities-and-gener",
      "title": "Green functions, chiral Ward identities, and generating functional",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-pcac-in-the-presence-of-an-external-electromagne",
      "title": "PCAC in the presence of an external electromagnetic field",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-spontaneous-symmetry-breaking-and-goldstone-theo",
      "title": "Spontaneous symmetry breaking and Goldstone theorem",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-011-linear-sigma-model",
      "title": "Linear sigma model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-the-hadron-spectrum",
      "title": "The hadron spectrum",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.907,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-the-scalar-singlet-quark-condensate",
      "title": "The scalar singlet quark condensate",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-mesonic-chiral-perturbation-theory",
      "title": "Mesonic chiral perturbation theory",
-     "prose_ratio": 0.042,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.95,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-transformation-properties-of-the-goldstone-boson",
      "title": "Transformation properties of the Goldstone bosons",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-016-general-considerations",
      "title": "General considerations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-application-to-qcd",
      "title": "Application to QCD",
-     "result": "no matching \\section"
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-symmetry-breaking-through-the-quark-masses",
      "title": "Symmetry breaking through the quark masses",
-     "result": "no matching \\section"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-construction-of-invariants",
      "title": "Construction of invariants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-020-primer-to-dimensional-regularization",
      "title": "Primer to dimensional regularization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-power-counting-scheme",
      "title": "Power-counting scheme",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-next-to-leading-order",
      "title": "Next-to-leading order",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-023-the-oq4-lagrangian-of-gasser-and-leutwyler",
      "title": "The O(q4) Lagrangian of Gasser and Leutwyler",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-024-masses-of-the-goldstone-bosons",
      "title": "Masses of the Goldstone bosons",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-025-electromagnetic-polarizabilities-of-the-pion",
      "title": "Electromagnetic polarizabilities of the pion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.805,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-026-lagrangian",
      "title": "Lagrangian",
-     "result": "no matching \\section"
+     "prose_ratio": 0.121,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-027-baryonic-chiral-perturbation-theory",
      "title": "Baryonic chiral perturbation theory",
-     "prose_ratio": 0.406,
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-028-renormalization-and-power-counting",
      "title": "Renormalization and power counting",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-029-the-generation-of-counter-terms",
      "title": "The generation of counter terms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-030-power-counting-for-renormalized-diagrams",
      "title": "Power counting for renormalized diagrams",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-031-the-power-counting-problem",
      "title": "The power-counting problem",
-     "result": "no matching \\section"
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-032-solutions-to-the-power-counting-problem",
      "title": "Solutions to the power-counting problem",
-     "result": "no matching \\section"
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-033-heavy-baryon-approach",
      "title": "Heavy-baryon approach",
-     "result": "no matching \\section"
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-034-master-integral",
      "title": "Master integral",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-035-infrared-regularization",
      "title": "Infrared regularization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-036-extended-on-mass-shell-scheme",
      "title": "Extended on-mass-shell scheme",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-037-dimensional-counting-analysis",
      "title": "Dimensional counting analysis",
-     "result": "no matching \\section"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-038-applications",
      "title": "Applications",
-     "prose_ratio": 0.045,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.48,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-039-nucleon-mass-and-sigma-term-at-oq4",
      "title": "Nucleon mass and sigma term at O(q4)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.863,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-040-chiral-expansion-of-the-nucleon-mass-to-oq6",
      "title": "Chiral expansion of the nucleon mass to O(q6)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-041-form-factors-of-the-nucleon",
      "title": "Form factors of the nucleon",
-     "result": "no matching \\section"
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-042-scalar-form-factor",
      "title": "Scalar form factor",
-     "result": "no matching \\section"
+     "prose_ratio": 0.774,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-043-electromagnetic-form-factors",
      "title": "Electromagnetic form factors",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-044-axial-and-induced-pseudoscalar-form-factors",
      "title": "Axial and induced pseudoscalar form factors",
-     "result": "no matching \\section"
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-045-pion-nucleon-form-factor",
      "title": "Pion-nucleon form factor",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.568,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-046-conclusion",

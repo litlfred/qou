@@ -911,7 +911,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 4,
+   "tex_sections": 39,
    "overlaid": 0,
    "thresholds": {
     "title": 0.85,
@@ -1035,7 +1035,8 @@
     {
      "id": "sec-022-26-spherical-hopf-algebras-with-involutory-pivot",
      "title": "Spherical Hopf algebras with involutory pivot. There are many",
-     "result": "no matching \\section"
+     "prose_ratio": 0.026,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-023-262-let-h-be-a-\ufb01nite-dimensional-pointed-hopf-al",

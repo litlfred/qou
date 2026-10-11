@@ -7,10 +7,10 @@ section_number: 9
 pages: 34-41
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
-text_source: latex
-latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.947
 doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.991
 ---
 []{#sec:projective_total_volume label="sec:projective_total_volume"} We use the notation of subsection [\[sec:volume_funk\]](#sec:volume_funk){reference-type="ref" reference="sec:volume_funk"}. Recall that we use the standard Euclidean structure on $V=\mathbb{R}^{n+1}$, and identify the double cover of $\mathbb{P}$ and $\mathbb{P}^\vee$ with the unit sphere. Let $x_0\in x$ be a unit vector, well-defined up to sign. We write $\sigma_x, \sigma_\xi$ for the standard Euclidean measure on the corresponding copy of $S^2$.
 
@@ -52,35 +52,29 @@ Denote $D_+=\{(x,\xi); \langle x,\xi\rangle> 0\}\subset S^2\times S^2$. The grou
 
 Rather than verify the claimed equality, we will construct from scratch the form $\omega_z$ with the required derivative. We write $S^2_x$, $S^2_\xi$ for the corresponding copies of the sphere.
 
-Fix $\xi$ and use it as the North Pole with associated polar coordinates $\theta, \phi$ of $x\in S^2$, where $\cos\theta=\langle x,\xi\rangle$, and $\phi$ is the azimuth. We have $\sigma_x=\sin\theta d\theta d\phi$. It holds that $d\phi(u)=-\frac{1}{\sin\theta}d\theta(x\times u)$, and differentiating $\cos\theta=\langle x,\xi\rangle$ we find $$\begin{equation}
-\label{eq:dphi} -\sin \theta d\theta=\langle dx, \xi\rangle\Rightarrow d\phi=\frac{1}{\sin^2\theta}\langle x\times dx, \xi\rangle=\frac{\langle x\times dx, \xi\rangle}{1-\langle x,\xi\rangle^2}
-\end{equation}$$ The forms $d\theta$, $\langle x\times dx,\xi\rangle=\sin^2\theta d\phi$ are linearly independent in $S^2\setminus \{\pm \xi\}$, and vanish at $\pm\xi$. Assume a 1-form $\zeta_z$ on $S^2_x$ of the form $\zeta_z=b_z(\theta)d\phi$ is given, such that $d_\xi\omega_z= \zeta_z \sigma_\xi.$ Then $$d\zeta_z=b_z'(\theta) d\theta d\phi+ c_0 b_z(0)\delta_\xi,$$ where $c_0=2\pi$ and $\delta_\xi$ is the delta measure at $\xi$. Thus if $b_z(0)=0$, and $b_z'(\theta)=\sin\theta\cos^z\theta$, the desired equation would be satisfied. For this we take $$b_z(\theta)=\frac{1-\cos^{z+1}\theta}{z+1 }$$
+Fix $\xi$ and use it as the North Pole with associated polar coordinates $\theta, \phi$ of $x\in S^2$, where $\cos\theta=\langle x,\xi\rangle$, and $\phi$ is the azimuth. We have $\sigma_x=\sin\theta d\theta d\phi$. It holds that $d\phi(u)=-\frac{1}{\sin\theta}d\theta(x\times u)$, and differentiating $\cos\theta=\langle x,\xi\rangle$ we find $$\label{eq:dphi} -\sin \theta d\theta=\langle dx, \xi\rangle\Rightarrow d\phi=\frac{1}{\sin^2\theta}\langle x\times dx, \xi\rangle=\frac{\langle x\times dx, \xi\rangle}{1-\langle x,\xi\rangle^2}$$ The forms $d\theta$, $\langle x\times dx,\xi\rangle=\sin^2\theta d\phi$ are linearly independent in $S^2\setminus \{\pm \xi\}$, and vanish at $\pm\xi$. Assume a 1-form $\zeta_z$ on $S^2_x$ of the form $\zeta_z=b_z(\theta)d\phi$ is given, such that $d_\xi\omega_z= \zeta_z \sigma_\xi.$ Then $$d\zeta_z=b_z'(\theta) d\theta d\phi+ c_0 b_z(0)\delta_\xi,$$ where $c_0=2\pi$ and $\delta_\xi$ is the delta measure at $\xi$. Thus if $b_z(0)=0$, and $b_z'(\theta)=\sin\theta\cos^z\theta$, the desired equation would be satisfied. For this we take $$b_z(\theta)=\frac{1-\cos^{z+1}\theta}{z+1 }$$
 
-Now fix $x$. We should find an $\mathbb{R}^3$-valued $\mathop{\mathrm{Stab}}(x)=\mathop{\mathrm{SO}}(2)$-equivariant $1$-form $\eta_z$ on $S^2_\xi$ with $$\begin{equation}
-\label{eqn:eta_differential}d_\xi\eta_z=\frac{1-\langle x,\xi\rangle^{z+1}}{1-\langle x,\xi\rangle^2}  \sigma_\xi \xi,
-\end{equation}$$ whence we may take $\omega_z= \frac{1}{z+1}  \langle x\times dx, \eta_z\rangle$. It is easy to verify that $$\eta_z=a_z(\theta)d\phi \cdot x+c_z(\theta)d\theta \cdot x\times\xi,$$ where $c_z(\theta)=\frac{1-\cos^{z+1}\theta}{\sin\theta}$ and $a_z(\theta)=\int_0^\theta c_z(\tau)\cos\tau d\tau$ satisfies [\[eqn:eta_differential\]](#eqn:eta_differential){reference-type="eqref" reference="eqn:eta_differential"}. The verification boils down to the equality $$\frac{1-\cos^{z+1}\theta}{\sin\theta}\cos\theta d\theta d\phi\cdot x-\frac{1-\cos^{z+1}\theta}{\sin\theta}d\theta \cdot x\times d\xi=\frac{1-\cos^{z+1}\theta}{\sin\theta}d\theta d\phi\cdot \xi,$$ which in turn follows from [\[eq:dphi\]](#eq:dphi){reference-type="eqref" reference="eq:dphi"} applied to $S^2_\xi$, by taking scalar products with $x,\xi$ and $x\times\xi$.
+Now fix $x$. We should find an $\mathbb{R}^3$-valued $\mathop{\mathrm{Stab}}(x)=\mathop{\mathrm{SO}}(2)$-equivariant $1$-form $\eta_z$ on $S^2_\xi$ with $$\label{eqn:eta_differential}d_\xi\eta_z=\frac{1-\langle x,\xi\rangle^{z+1}}{1-\langle x,\xi\rangle^2}  \sigma_\xi \xi,$$ whence we may take $\omega_z= \frac{1}{z+1}  \langle x\times dx, \eta_z\rangle$. It is easy to verify that $$\eta_z=a_z(\theta)d\phi \cdot x+c_z(\theta)d\theta \cdot x\times\xi,$$ where $c_z(\theta)=\frac{1-\cos^{z+1}\theta}{\sin\theta}$ and $a_z(\theta)=\int_0^\theta c_z(\tau)\cos\tau d\tau$ satisfies [\[eqn:eta_differential\]](#eqn:eta_differential){reference-type="eqref" reference="eqn:eta_differential"}. The verification boils down to the equality $$\frac{1-\cos^{z+1}\theta}{\sin\theta}\cos\theta d\theta d\phi\cdot x-\frac{1-\cos^{z+1}\theta}{\sin\theta}d\theta \cdot x\times d\xi=\frac{1-\cos^{z+1}\theta}{\sin\theta}d\theta d\phi\cdot \xi,$$ which in turn follows from [\[eq:dphi\]](#eq:dphi){reference-type="eqref" reference="eq:dphi"} applied to $S^2_\xi$, by taking scalar products with $x,\xi$ and $x\times\xi$.
 
 We find that $$\omega_z=-\frac{1}{z+1}\langle x\times dx, \eta_z\rangle=\frac{1}{z+1}\frac{1-\langle x,\xi\rangle^{z+1}}{1-\langle x,\xi\rangle^2}\langle dx,\xi\rangle\wedge \langle x,  d\xi\rangle.$$
 
-It follows by the Stokes theorem and using continuity to pass to the boundary of $D_+$, that for $\mathrm {Re}z\geq 0$, $$\begin{equation}
-\label{eq:stokes_beta}B_K(z) = \int_{ K\times K^\vee} \langle x,\xi\rangle^z = \int_{\partial K\times \partial K^\vee} \omega_z.
-\end{equation}$$
+It follows by the Stokes theorem and using continuity to pass to the boundary of $D_+$, that for $\mathrm {Re}z\geq 0$, $$\label{eq:stokes_beta}B_K(z) = \int_{ K\times K^\vee} \langle x,\xi\rangle^z = \int_{\partial K\times \partial K^\vee} \omega_z.$$
 
 ::: exmp
-Let us compute $B_K(z)$ for the spherical disc $K=\{x_3\geq \frac{1}{\sqrt 2}\}$, satisfying $K=K^\vee$. Parametrize $\partial K$ by $x(\alpha)=\frac{1}{\sqrt 2}(\cos \alpha, \sin\alpha, 1)$, and $\partial K^o$ by $\xi(\beta)=\mathcal L(x(\beta))=\frac{1}{\sqrt 2}(-\cos \beta, -\sin\beta, 1)$, $0\leq \alpha,\beta\leq 2\pi$. Then: $$\langle x,\xi\rangle =\frac12(1-\cos(\alpha-\beta))=\sin^2\frac{\alpha-\beta}{2}$$ $$dx=\frac{1}{\sqrt 2}(-\sin\alpha,\cos\alpha,0)d\alpha,\quad  d\xi=\frac{1}{\sqrt 2}(\sin\beta,-\cos\beta,0)d\beta$$ $$\langle dx,\xi\rangle = \frac12\sin(\alpha-\beta)d\alpha,\quad \langle d\xi,x\rangle =\frac12\sin(\beta-\alpha)d\beta$$ Thus $$\begin{align*}
+Let us compute $B_K(z)$ for the spherical disc $K=\{x_3\geq \frac{1}{\sqrt 2}\}$, satisfying $K=K^\vee$. Parametrize $\partial K$ by $x(\alpha)=\frac{1}{\sqrt 2}(\cos \alpha, \sin\alpha, 1)$, and $\partial K^o$ by $\xi(\beta)=\mathcal L(x(\beta))=\frac{1}{\sqrt 2}(-\cos \beta, -\sin\beta, 1)$, $0\leq \alpha,\beta\leq 2\pi$. Then: $$\langle x,\xi\rangle =\frac12(1-\cos(\alpha-\beta))=\sin^2\frac{\alpha-\beta}{2}$$ $$dx=\frac{1}{\sqrt 2}(-\sin\alpha,\cos\alpha,0)d\alpha,\quad  d\xi=\frac{1}{\sqrt 2}(\sin\beta,-\cos\beta,0)d\beta$$ $$\langle dx,\xi\rangle = \frac12\sin(\alpha-\beta)d\alpha,\quad \langle d\xi,x\rangle =\frac12\sin(\beta-\alpha)d\beta$$ Thus $$\begin{aligned}
  B_K(z)&=-\frac{1}{4(z+1)} \int_0^{2\pi}\int_0^{2\pi}\frac{1-(\sin^2\frac{\alpha-\beta}{2})^{z+1}}{1-\sin^4\frac{\alpha-\beta}{2}}\sin^2(\alpha-\beta)d\alpha d\beta 
 \\& =-\frac{1}{2(z+1)}\int_{-\pi}^{\pi}(2\pi-2|\gamma|)\frac{1-(\sin^2\gamma)^{z+1}}{1-\sin^4\gamma}\sin^22\gamma d\gamma\\&=
 -\frac{8}{z+1}\int_0^{\pi}(\pi-\gamma)\frac{1-(\sin^2\gamma)^{z+1}}{1+\sin^2\gamma}\sin^2\gamma d\gamma\\&=
 -\frac{8}{z+1}\int_0^{\pi}\frac \pi 2\frac{1-(\sin^2\gamma)^{z+1}}{1+\sin^2\gamma}\sin^2\gamma d\gamma
 \\&=
--\frac{8\pi}{z+1}\int_0^{\frac\pi2}\frac{1-(\sin^2\gamma)^{z+1}}{1+\sin^2\gamma}\sin^2\gamma d\gamma,
-\end{align*}$$ where the penultimate equality is by symmetrizing the integrand around $\frac\pi 2$.
+-\frac{8\pi}{z+1}\int_0^{\frac\pi2}\frac{1-(\sin^2\gamma)^{z+1}}{1+\sin^2\gamma}\sin^2\gamma d\gamma, 
+\end{aligned}$$ where the penultimate equality is by symmetrizing the integrand around $\frac\pi 2$.
 
-Putting $t=\sin^2\gamma$ we get $$\begin{align*}
+Putting $t=\sin^2\gamma$ we get $$\begin{aligned}
  B_K(z)&=-\frac{4\pi}{z+1}\int_0^1\frac{1-t^{z+1}}{1+t}\frac{\sqrt t}{\sqrt{1-t}}dt=-\frac{4\pi}{z+1}(\pi(1-\frac{1}{\sqrt 2})-\int_0^1 \frac{t^{z+\frac 32}dt}{(1+t)\sqrt{1-t}} ) 
 \\&=-\frac{4\pi}{z+1}\left(\pi(1-\frac{1}{\sqrt 2})-\sqrt\pi \frac{\Gamma(z+\frac 52)}{\Gamma(z+3)}{}_2F_1(1,z+\frac52,z+3;-1)\right) 
 .
-\end{align*}$$ In particular, $B_K(-3)=2\pi^2$.
+\end{aligned}$$ In particular, $B_K(-3)=2\pi^2$.
 :::
 
 ::: Proposition
@@ -91,11 +85,11 @@ Let $\mathcal L:\partial K\to \partial K^\vee$ be the Legendre transform, define
 
 Recall eq. [\[eq:stokes_beta\]](#eq:stokes_beta){reference-type="eqref" reference="eq:stokes_beta"}: $$B_K(z) =-\frac{1}{z+1}\int_{\partial K\times \partial K^\vee} \frac{1-\langle x,\xi\rangle^{z+1}}{1-\langle x,\xi\rangle^2}\langle dx,\xi\rangle\wedge \langle d\xi,x\rangle .$$ Writing $\beta=\alpha+\phi$, it follows that up to an addition of an entire function of $z$ and the factor $\frac{1}{z+1}$, $B_K(z)$ equals
 
-$$\begin{align*}
+$$\begin{aligned}
 B^\epsilon_K(z)&:=\int_{-\epsilon}^\epsilon d\phi\int_{\alpha=0}^{2\pi}\frac{1-\langle x(\alpha),\xi(\alpha+\phi)\rangle^{z+1}}{1-\langle x(\alpha),\xi(\alpha+\phi)\rangle^{2}} \langle x'(\alpha), \xi(\alpha+\phi)\rangle
     \langle \xi'(\alpha+\phi), x(\alpha)\rangle  d\alpha 
     \\ &=h_\epsilon(K)-\int_{-\epsilon}^\epsilon|\phi|^{2z+4} d\phi\int_{\alpha=0}^{2\pi}  u(\alpha,\alpha+\phi)^{z+1}\tilde v(\alpha,\phi)d\alpha ,
-\end{align*}$$ where $h_\epsilon(K)$ is a constant depending only on $K$, and $\tilde v$ is a smooth non-zero function.
+\end{aligned}$$ where $h_\epsilon(K)$ is a constant depending only on $K$, and $\tilde v$ is a smooth non-zero function.
 
 The inner integral, denoted $f_z(\phi)$, is an analytic family of smooth functions as $z\in\mathbb C$. The function $\int_{-\epsilon}^\epsilon|\phi|^{2z+4} f_z(\phi)d\phi$ is then meromorphic in $\mathbb{C}$, with simple poles that are contained in a subset of $\{-\frac52,-\frac 72,\dots\}$, corresponding to the simple poles of the meromorphic family $\{|\phi|^{2z+4}\}$ of even homogeneous distributions on $\mathbb{R}$. Also by Lemma [\[lem:convergence_domain\]](#lem:convergence_domain){reference-type="ref" reference="lem:convergence_domain"}, $z=-1$ is an analytic point of $B_K(z)$. This completes the proof of the meromorphic extendibility of $B_K(z)$ with poles as stated.
 
@@ -103,28 +97,28 @@ The inner integral, denoted $f_z(\phi)$, is an analytic family of smooth functio
 The value $B_K(-3)$ is a projective invariant of $K\subset\mathbb{R}\mathbb{P}^2$.
 :::
 
-Recall the symbol $\chi_g(x,\xi)$ defined in Lemma [\[lem:lemma91\]](#lem:lemma91){reference-type="ref" reference="lem:lemma91"}. For any fixed $g\in \mathop{\mathrm{PGL}}(V)$, we have by Lemma [\[lem:measure_push\]](#lem:measure_push){reference-type="ref" reference="lem:measure_push"} the following equality for $\textrm{Re}z>-1$: $$\begin{align}
+Recall the symbol $\chi_g(x,\xi)$ defined in Lemma [\[lem:lemma91\]](#lem:lemma91){reference-type="ref" reference="lem:lemma91"}. For any fixed $g\in \mathop{\mathrm{PGL}}(V)$, we have by Lemma [\[lem:measure_push\]](#lem:measure_push){reference-type="ref" reference="lem:measure_push"} the following equality for $\textrm{Re}z>-1$: $$\begin{aligned}
 \label{eq:invariance}&\langle \mathbbm 1_{g^{-1}K\times (g^{-1}K)^\vee}, \mu_z\rangle=\langle g^*\mathbbm1_{K\times K^\vee},\mu_z\rangle=\langle \mathbbm1_{K\times K^\vee}, g_*\mu_z\rangle\\=&\langle \chi_{g^{-1}}^{-3-z}\mathbbm 1_{K\times K^\vee}, \mu_z\rangle.\nonumber
-\end{align}$$ We already established that one end (and hence both) of this equation admits a meromorphic extension in $z\in \mathbb C$, which is analytic at $z=-3$. Let us verify that the value of the right hand side at $z=-3$ equals $B_K(-3)$, implying projective invariance.
+\end{aligned}$$ We already established that one end (and hence both) of this equation admits a meromorphic extension in $z\in \mathbb C$, which is analytic at $z=-3$. Let us verify that the value of the right hand side at $z=-3$ equals $B_K(-3)$, implying projective invariance.
 
 Fix $g\in \mathop{\mathrm{PGL}}(3)$, and consider $h(z)=\langle \chi_{g^{-1}}^{-3-z} \mathbbm 1_{K\times K^\vee}, \mu_z\rangle=\int_{K\times K^\vee} \chi_{g^{-1}}^{-3-z} d\mu_z$. Write $\psi(x,\xi)=\chi_{g^{-1}}(x,\xi)$, and note $\psi$ is a smooth positive function. We now use Proposition [\[prop:primitive\]](#prop:primitive){reference-type="ref" reference="prop:primitive"} and the Stokes theorem to write
 
-$$\begin{align*}
+$$\begin{aligned}
 h(z)&= \int_{K\times K^\vee} \psi(x,\xi)^{-z-3}d_xd_\xi\omega_z\\&=\int\limits_{\partial K\times K^\vee}\psi^{-z-3}d_\xi\omega_z+(z+3)\int\limits_{K\times K^\vee}\psi^{-z-4} d_x \psi\wedge d_\xi \omega_z 
     \\ &=\int\limits_{\partial K\times \partial K^\vee}\psi^{-z-3}\omega_z- (z+3)\int\limits_{K\times K^\vee} d_\xi(\psi^{-z-4}d_x \psi)\wedge\omega_z \\ &+(z+3)\int\limits_{\partial K\times K^\vee}\psi^{-z-4}d_\xi \psi\wedge\omega_z +(z+3)\int\limits_{ K\times \partial K^\vee}\psi^{-z-4}  d_x \psi\wedge \omega_z
-\end{align*}$$
+\end{aligned}$$
 
 The first summand admits a meromorphic extension by the same proof as that for $B_K$, and its value at $z=-3$ is $\int_{\partial K\times \partial K^\vee}\omega_{-3}=B_K(-3)$. Consider next the second summand; by Lemma [\[lem:convergence_domain\]](#lem:convergence_domain){reference-type="ref" reference="lem:convergence_domain"}, the form $\omega_z$ is $L^1$ in $K\times K^\vee$ for $\mathrm {Re}z>-\frac72$, implying the second summand is analytic in this range, and vanishes at $z=-3$.
 
 The last two summands are treated similarly, so let us focus on the first one. Written explicitly, it is
 
-$$\frac{z+3}{z+1}\int_{\partial K\times K^\vee} \frac{1-\langle x,\xi\rangle^{z+1}}{1-\langle x,\xi\rangle^2}\langle dx,\xi\rangle\wedge\langle x,d\xi\rangle\wedge  \psi^{-z-4}d_\xi\psi.$$ It is easy to see that up to a summand that is analytic near, and vanishes at, $z=-3$, the integral equals $$I=\frac{z+3}{z+1}\int_{\partial K\times K^\vee} \langle x,\xi\rangle^{z+1}\langle x,d\xi\rangle \wedge\langle dx,\xi\rangle\wedge \psi^{-z-4}d_\xi\psi.$$ It holds that $$\frac{1}{z+2}d(\langle x,\xi\rangle^{z+2})\wedge\langle dx,\xi\rangle\wedge \psi^{-z-4}d_\xi\psi=\langle x,\xi\rangle^{z+1}\langle x, d\xi\rangle \wedge \langle dx, \xi\rangle\wedge \psi^{-z-4}d_\xi\psi.$$ Consequently we can integrate by parts to obtain $$\begin{align*}
-I=I_1+I_2&=\frac{z+3}{(z+1)(z+2)}\int\limits_{\partial K\times\partial K^\vee}\langle x,\xi\rangle ^{z+2} \langle dx,\xi\rangle\wedge\psi^{-z-4}d_\xi\psi\\&-\frac{z+3}{(z+1)(z+2)}\int_{\partial K\times K^\vee} \langle x,\xi\rangle ^{z+2}  d(\langle dx,\xi\rangle \wedge\psi^{-z-4}d_\xi\psi).
-\end{align*}$$
+$$\frac{z+3}{z+1}\int_{\partial K\times K^\vee} \frac{1-\langle x,\xi\rangle^{z+1}}{1-\langle x,\xi\rangle^2}\langle dx,\xi\rangle\wedge\langle x,d\xi\rangle\wedge  \psi^{-z-4}d_\xi\psi.$$ It is easy to see that up to a summand that is analytic near, and vanishes at, $z=-3$, the integral equals $$I=\frac{z+3}{z+1}\int_{\partial K\times K^\vee} \langle x,\xi\rangle^{z+1}\langle x,d\xi\rangle \wedge\langle dx,\xi\rangle\wedge \psi^{-z-4}d_\xi\psi.$$ It holds that $$\frac{1}{z+2}d(\langle x,\xi\rangle^{z+2})\wedge\langle dx,\xi\rangle\wedge \psi^{-z-4}d_\xi\psi=\langle x,\xi\rangle^{z+1}\langle x, d\xi\rangle \wedge \langle dx, \xi\rangle\wedge \psi^{-z-4}d_\xi\psi.$$ Consequently we can integrate by parts to obtain $$\begin{aligned}
+I=I_1+I_2&=\frac{z+3}{(z+1)(z+2)}\int\limits_{\partial K\times\partial K^\vee}\langle x,\xi\rangle ^{z+2} \langle dx,\xi\rangle\wedge\psi^{-z-4}d_\xi\psi\\&-\frac{z+3}{(z+1)(z+2)}\int_{\partial K\times K^\vee} \langle x,\xi\rangle ^{z+2}  d(\langle dx,\xi\rangle \wedge\psi^{-z-4}d_\xi\psi). 
+\end{aligned}$$
 
-Let us rewrite the first summand as $$\begin{align}
-\nonumber I_1&=\frac{1}{(z+1)(z+2)}\int\limits_{\partial K\times \partial K^\vee}d_x(\langle x,\xi\rangle^{z+3})\wedge \psi^{-z-4}d_\xi\psi\\&=- \frac{1}{(z+1)(z+2)}\int\limits_{\partial K\times\partial K^\vee} \langle x,\xi\rangle^{z+3}d_x(\psi^{-z-4}d_\xi\psi)\label{eq:I1_2}
-\end{align}$$
+Let us rewrite the first summand as $$\begin{aligned}
+\nonumber I_1&=\frac{1}{(z+1)(z+2)}\int\limits_{\partial K\times \partial K^\vee}d_x(\langle x,\xi\rangle^{z+3})\wedge \psi^{-z-4}d_\xi\psi\\&=- \frac{1}{(z+1)(z+2)}\int\limits_{\partial K\times\partial K^\vee} \langle x,\xi\rangle^{z+3}d_x(\psi^{-z-4}d_\xi\psi)\label{eq:I1_2}  
+\end{aligned}$$
 
 We use the arc-length parametrization $x(\alpha)$, $0\leq \alpha\leq L$ for $\partial K$, and $\xi (\beta)=\mathcal L(x(\beta))$, $0\leq \beta\leq L$ for $\partial K^\vee$. Recall that by strict convexity, $\langle x(\alpha), \xi(\beta)\rangle=|\beta-\alpha|^2u(\alpha, \beta)$ with $u>0$ smooth. We will use $C$ to denote a positive constant that only depends on $K$ and $g$, which may differ between occurrences.
 
@@ -132,23 +126,21 @@ Consider the integral in [\[eq:I1_2\]](#eq:I1_2){reference-type="eqref" referenc
 
 Next we consider $I_2$. Let $P: S^2\to \partial K^\vee$ be the nearest-point projection, well-defined in some open neighborhood $U$ of $\partial K^\vee$. Define $K^\vee_\epsilon=\{\xi\in U: \langle \xi, \mathcal L(P\xi)\rangle \leq \epsilon\}$, which is a one-sided tube around $\partial K^\vee$. We parametrize $\partial K\times K^\vee_\epsilon$ by $(x(\alpha), \xi(\beta, s))$, $0\leq \alpha,\beta\leq L$, $0\leq s\leq \epsilon$, where $\xi=\xi(\beta, s)$ is the point that has $P(\xi)=\xi(\beta)$, $\langle \xi, \mathcal L (P(\xi))\rangle=s$.
 
-Write $\eta=d(\langle dx,\xi\rangle \wedge\psi^{-z-4}d_\xi\psi)$. We claim that the integral $$\begin{equation}
-\label{eq:integral}\int_{\partial K\times K^\vee}\langle x,\xi\rangle^{z+2}\eta
-\end{equation}$$ converges for $\mathrm {Re}z>-\frac 72$.
+Write $\eta=d(\langle dx,\xi\rangle \wedge\psi^{-z-4}d_\xi\psi)$. We claim that the integral $$\label{eq:integral}\int_{\partial K\times K^\vee}\langle x,\xi\rangle^{z+2}\eta$$ converges for $\mathrm {Re}z>-\frac 72$.
 
 It is enough to consider the integral [\[eq:integral\]](#eq:integral){reference-type="eqref" reference="eq:integral"} in the smaller domain $\{|\alpha-\beta|\leq \epsilon, 0\leq s\leq \epsilon\}$. There $\langle x(\alpha), \xi(\beta, s)\rangle \geq C\max((\beta-\alpha)^2, s)\geq C((\beta-\alpha)^2+s)$. It remains to check that for $\mathrm {Re}z>-\frac72$, $$\int_0^\epsilon\int_0^\epsilon\frac{dsd\phi}{(s+\phi^2)^{-z-2}}<\infty,$$ which is clear. Consequently, $\lim_{z\to -3} I_2=0$ due to the $(z+3)$ factor. This concludes the proof of the statement.
 
 Let us derive some equivalent expressions for $B_K(-3)$, working towards an explicit geometric formula. One has
 
-$$\begin{align*}
+$$\begin{aligned}
 B_K(-3)&=-\frac12\left. \int_{\partial K\times\partial K^\vee}\frac{1-\langle x,\xi\rangle^{z+1}}{1-\langle x,\xi\rangle ^2}\langle dx,\xi\rangle\wedge\langle x,d\xi\rangle\right|_{z=-3} \\&=\frac12 \left.\int_{\partial K\times\partial K^\vee}\langle x,\xi\rangle^{z+1} \frac{1-\langle x,\xi\rangle^{-z-1}}{1-\langle x,\xi\rangle ^2}\langle dx,\xi\rangle\wedge\langle x,d\xi\rangle\right|_{z=-3}\\&=\frac12  \left.\int_{\partial K\times\partial K^\vee}\langle x,\xi\rangle^{z+1}\langle dx,\xi\rangle\wedge\langle x,d\xi\rangle\right|_{z=-3}
     \\&=\frac1{2(z+2)}\left.\int_{\partial K\times\partial K^\vee}\langle dx,\xi\rangle \wedge d(\langle x, \xi\rangle^{z+2})\right|_{z=-3}
     \\&=\frac1{2}\left.\int_{\partial K\times\partial K^\vee}\langle x,\xi\rangle^{z+2}\langle dx,d\xi\rangle\right|_{z=-3}.
-\end{align*}$$ $$\begin{align}
+\end{aligned}$$ $$\begin{aligned}
 B_K(-3)&=\frac1{2}\left.\int_{\partial K\times\partial K^\vee}\frac{\langle dx,d\xi\rangle}{\langle x,\xi\rangle^z}\right|_{z=1}
     \label{eq:mahler_volume} 
-    \\&=\frac12\left.\int_{\partial K\times\partial K^\vee} \frac{\langle dx,\xi\rangle\wedge \langle x,d\xi\rangle}{\langle x,\xi\rangle^z}\right|_{z=2}\label{eq:mahler_volume2}
-\end{align}$$
+    \\&=\frac12\left.\int_{\partial K\times\partial K^\vee} \frac{\langle dx,\xi\rangle\wedge \langle x,d\xi\rangle}{\langle x,\xi\rangle^z}\right|_{z=2}\label{eq:mahler_volume2} 
+\end{aligned}$$
 
 ::: Proposition
 Let $\partial K$ be parametrized by arc-length as $x(\alpha)$. The geodesic curvature of $\partial K$ is $\kappa(\alpha)=\det (x(\alpha), x'(\alpha), x''(\alpha))$. Then $$B_K(-3)= \frac12 \lim_{\epsilon\to 0}\int_{x\in\partial K, \xi\in \partial K^\vee, \langle x,\xi\rangle \geq\epsilon^2}\frac{\langle dx,\xi\rangle\wedge\langle x,d\xi\rangle}{\langle x,\xi\rangle^2}+\frac{2\sqrt 2}{\epsilon}\int_{\partial K}\sqrt {\kappa(\alpha )}d\alpha.$$
@@ -160,9 +152,10 @@ We will write $x(\alpha)>\xi(\beta)$ if $\beta<\alpha<\beta+\frac{L}{2}$. Define
 
 Let $S(x,\xi)=\sqrt{\langle x,\xi\rangle}$ be a signed square root defined on $\partial K\times \partial K^\vee$ , which is non-negative for $x\geq \mathcal L(\xi)$, and non-positive for $x\leq L(\xi)$. Put $t=S(x,\xi)$, so $t^2=f_0(x,\xi)=\langle x,\xi\rangle$ and $2tdt=\langle dx,\xi\rangle +\langle x,d\xi\rangle$, and $\langle dx,\xi\rangle \wedge\langle x,d\xi\rangle=-2tdt\langle dx,\xi\rangle$.
 
-It then holds that $$\begin{align*}
+It then holds that $$\begin{aligned}
 B_K(-3)&= \frac12 \int_{\langle x,\xi\rangle \geq\epsilon^2}\frac{\langle dx,\xi\rangle\wedge\langle x,d\xi\rangle}{\langle x,\xi\rangle^2} -  \int_0^{\epsilon}\frac{g_K(t)-g_K(-t)-2g_K'(0)t}{t^3}dt +\frac{2}{\epsilon}g_K'(0) ,
-\end{align*}$$ and the middle summand approaches $0$ as $\epsilon\to 0$.
+ 
+\end{aligned}$$ and the middle summand approaches $0$ as $\epsilon\to 0$.
 
 It remains to compute $g'_K(0)$. Note that $$g_K(-t)= \int_{S(x,\xi)=-t}\langle dx,\xi \rangle =- \int_{S(\xi,x)=t}\langle d\xi,x\rangle =-g_{K^\vee}(t).$$
 

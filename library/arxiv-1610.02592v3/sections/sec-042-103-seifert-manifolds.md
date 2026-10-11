@@ -7,12 +7,13 @@ section_number: 10.3
 pages: 320-339
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.75
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We now enlarge the class of circle bundles over surfaces by admitting some kind of singular fibres. We introduce the \emph{Seifert fibrations}, whose total spaces are called \emph{Seifert manifolds}. These manifolds were introduced by Herbert Seifert in 1933 and fit perfectly in the much more recent geometrisation perspective: in the next chapter we will introduce the eight three-dimensional geometries, and prove that six of them are realised precisely by the Seifert manifolds.
+
 
 \subsection{Definition}
 We define the Seifert manifolds as Dehn fillings of trivial bundles over surfaces with boundary. Here are the details.
@@ -61,6 +62,7 @@ In the following exercise, it should be clear that the resulting manifold is a l
 The Seifert manifold $\big(S^2, (p_1,q_1), (p_2, q_2)\big)$ is the lens space $L (p_1q_2 + q_1p_2, rq_2 + sp_2)$
 where $r,s$ are such that $p_1s-q_1r=\pm 1$. In particular, this Seifert manifold is $S^3$ when $p_1q_2+q_1p_2 = \pm 1$.
 \end{ex}
+
 
 \subsection{Seifert fibrations}
 As we anticipated, a Seifert manifold $N$ as in (\ref{Seifert:notation:eqn}) possesses some kind of singular fibration over the filled surface $\hat S$. We clarify this point here by defining the notion of \emph{Seifert fibration}. 
@@ -124,6 +126,7 @@ defines a Seifert fibration $N \to S$ and a Seifert manifold $N$.
 If the orbifold $S$ is a disc with at most one singular point then $N$ is a standard fibered solid torus. If $S$ is $S^2$ with at most $2$ singular points then $N$ is a lens space: see Exercises \ref{solid:ex} and \ref{two:lens:ex}.
 \end{example}
 
+
 \subsection{Classification of Seifert fibrations}
 We say that two Seifert fibrations $\pi_1\colon N_1\to S$, $\pi_2\colon N_2 \to S$ are \emph{isomorphic} if there is a diffeomorphism $\psi\colon N_1 \to N_2$ such that $\pi_1 = \pi_2\circ \psi$. Two different notations as in (\ref{notation:eqn}) may describe isomorphic fibrations, but this phenomenon is completely understood.
 
@@ -155,6 +158,7 @@ We now start a long journey in Seifert manifolds theory, whose ultimate goal is 
 The number of non-isomorphic Seifert fibrations over a fixed orbifold $S$ is finite $\Longleftrightarrow$ $\partial S \neq \emptyset$.
 \end{ex}
 
+
 \subsection{Euler number}
 We now extend the notion of Euler number from ordinary to Seifert fibrations.
 We define the \emph{Euler number} of the fibration (\ref{notation:eqn}) to be the rational number\index{Euler number}
@@ -173,6 +177,7 @@ The move
 $$\big(S,(p_1,q_1), \ldots, (p_h,q_h)\big) \longmapsto \big(S,(p_1,-q_1), \ldots, (p_h,-q_h)\big) $$
 corresponds to a change of orientation for the three-manifold and transforms $e$ into $-e$.
 \end{rem}
+
 
 
 \subsection{Homology} \label{Seifert:homology:sphere:subsection}
@@ -245,6 +250,7 @@ where we set $p_i' = p_1\cdots \widehat {p_i}\cdots p_h$. The integers $p_1,\ldo
 
 For instance, the homology spheres $\Sigma(p_1)$ and $\Sigma(p_1,p_2)$ are just $S^3$ by Example \ref{bad:example}. The simplest homology sphere with three singular fibres is $\Sigma(2,3,5)$. This manifold is called the \emph{Poincar\'e homology sphere} and we will soon see that its fundamental group has order 120.\index{Poincar\'e homology sphere} All the other Seifert homology spheres have infinite fundamental group: this is related to the fact that $\sum \frac 1{p_i}>1$ for all choices of $(p_1,\ldots, p_h)$ with $h\geqslant 3$ except $(2,3,5)$, as we will soon see. A Seifert homology sphere of type $\Sigma(p_1,p_2,p_3)$ is called a \emph{Brieskorn homology sphere}\index{Brieskorn homology sphere}.
 
+
 \subsection{Coverings} 
 We now start to investigate the coverings of Seifert fibered spaces. Our main goal will be to subdivide the Seifert manifolds into nine classes: this will be done in Section \ref{commensurability:Seifert:subsection}.
 
@@ -264,6 +270,7 @@ This holds on all coverings of a standard fibered solid torus and hence holds ev
 \end{proof}
 
 We now concentrate ourselves on the finite-degree case.
+
 
 \subsection{Finite-degree coverings}
 We define a \emph{finite-degree covering} of a Seifert fibration $M\to S$ to be a commutative diagram
@@ -323,6 +330,7 @@ Every finite-degree covering between Seifert fibrations is a composition of one 
 Let $p\colon \tilde M\to M$ be a covering of Seifert fibrations, with base spaces $\tilde S \to S$. If we pull-back $M$ to $\tilde S$ we get a horizontal covering $p_{\rm h}\colon M_{\rm h} \to M$. There is a natural vertical $p_{\rm v}\colon \tilde M \to M_{\rm h}$ such that $p = p_{\rm h} \circ p_{\rm v}$.
 \end{proof}
 
+
 \subsection{Circle bundle coverings}
 The Euler number of the fibration and the Euler characteristic of the base orbifold behave well with coverings.
 
@@ -348,6 +356,7 @@ This concludes the proof.
 \end{proof}
 
 An important consequence is that the signs of $\chi(S)$ and $e(M)$ are invariant under finite coverings. 
+
 
 \subsection{Commensurability classes} \label{commensurability:Seifert:subsection}
 We now would like to subdivide the Seifert manifolds into few classes, and to this purpose we introduce a general equivalence relation between manifolds.
@@ -467,6 +476,7 @@ We now characterise some commensurability classes by looking at the fundamental 
 \end{center}
 \end{table}
 
+
 \subsection{Virtually abelian fundamental groups} \label{virtually:abelian:subsection}
 A group $G$ is \emph{virtually abelian of rank $h$} if it contains $\matZ^h$ as a finite-index subgroup. 
 
@@ -480,6 +490,7 @@ These five classes contain $S^2\times S^1$, $S^1\times S^1\times S^1$, $S^3$, $D
 \end{proof}
 
 It could be reasonable to expect these five commensurability classes to contain manifolds of some simpler topological nature, which are easier to study and classify. We will see however in Section \ref{Seifert:finite:subsection} that the Seifert manifolds covered by $S^3$ are quite interesting and their topological classification is certainly not immediate: we already experienced that for lens spaces in Theorem \ref{Lpq:teo}, whose classification is quite involved. The other four classes are indeed of a simpler nature: we now prove that each contains finitely many manifolds, and we classify them completely.
+
 
 \subsection{Finite commensurability classes} \label{finite:classes:prop}
 We now completely identify the commensurability classes of Seifert manifolds that contain only finitely many manifolds.
@@ -595,6 +606,7 @@ The homology calculation is an easy exercise and luckily distinguishes all the m
 
 Summing up, there are four commensurability classes containing finitely many manifolds, and their number is shown in Table \ref{finite:table}.
 
+
 \subsection{Universal cover}
 We now determine the universal cover of all the closed Seifert manifolds. Nothing strange happens: we either get $S^3$, $S^2\times \matR$, or $\matR^3$.
 
@@ -628,6 +640,7 @@ If the universal cover is $S^3$ or $\matR^3$, it is irreducible and hence also $
 \end{proof}
 
 Therefore every Seifert manifold is prime except $\matRP^2 \timtil S^1 = \matRP^3 \# \matRP^3$.
+
 
 \subsection{Fibre-Parallel Dehn filling}
 We have investigated various topological properties of Seifert manifolds, and we are now curious: what happens if we perform a forbidden fibre-parallel Dehn filling? We start by looking at the basic block $P\times S^1$, where $P$ is a pair-of-pants.

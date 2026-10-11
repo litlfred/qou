@@ -404,8 +404,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "trbmw.tex",
-   "tex_sections": 7,
-   "overlaid": 3,
+   "tex_sections": 26,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -415,94 +415,126 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-001-11-context",
      "title": "Context",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.837,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-12-presentation",
      "title": "Presentation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-13-organisation-of-the-paper",
      "title": "Organisation of the paper",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-2-preliminaries-on-the-cubic-hecke-algebras-on-3",
      "title": "Preliminaries on the cubic Hecke algebras on 3 strands",
-     "prose_ratio": 0.954,
-     "coverage_ratio": 0.931,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-3-two-bmw-algebras-as-quotients-of-the-braid-gro",
      "title": "Two BMW algebras as quotients of the braid groups",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.921,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-4-a-universal-cover-for-the-two-bmw-algebras-and",
      "title": "A universal cover for the two BMW algebras, and a shorter defining relation",
-     "prose_ratio": 0.937,
-     "coverage_ratio": 0.868,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-51-general-inductive-properties",
      "title": "General inductive properties",
-     "result": "no matching \\section"
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.837,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-52-restrictions-to-3-strands-and-the-ocneanu-tra",
      "title": "Restrictions to 3 strands, and the Ocneanu trace",
-     "result": "no matching \\section"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-6-a-central-extension-of-bmw",
      "title": "A central extension of BMW",
-     "prose_ratio": 0.571,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.905,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-64-computations-inside-fn",
      "title": "Computations inside Fn",
-     "result": "no matching \\section"
+     "prose_ratio": 0.844,
+     "coverage_ratio": 0.574,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-65-a-central-extension-of-the-temperley-lieb-alg",
      "title": "A central extension of the Temperley-Lieb algebra",
-     "result": "no matching \\section"
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-66-splittings",
      "title": "Splittings",
-     "result": "no matching \\section"
+     "prose_ratio": 0.902,
+     "coverage_ratio": 0.824,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-7-knot-invariants",
      "title": "Knot invariants",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-014-71-number-of-connected-components-special-trace",
      "title": "Number of connected components, special trace and change of variables",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-74-tables",
      "title": "Tables",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.904,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-references",

@@ -7,25 +7,23 @@ section_number: 1
 pages: 2-4
 source_pdf: 0203003v2.pdf
 source_sha256: 7579ae76959396b8
-text_source: latex
-latex_prose_ratio: 0.957
-latex_coverage_ratio: 0.949
 doc_brief: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in t"
+text_source: latex
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.978
 ---
-Let $\mathfrak{a}$ be a finite dimensional abelian Lie algebra over , $V$ be a finite dimensional semisimple $\mathfrak{a}$-module, and $\gamma \in \text{$\mathbb{C}$}^*$. The quantum dynamical Yang-Baxter equation with spectral parameter and step $\gamma$ is $$\begin{align}
+Let $\mathfrak{a}$ be a finite dimensional abelian Lie algebra over , $V$ be a finite dimensional semisimple $\mathfrak{a}$-module, and $\gamma \in \text{$\mathbb{C}$}^*$. The quantum dynamical Yang-Baxter equation with spectral parameter and step $\gamma$ is $$\begin{aligned}
 \notag
 R^{12}(u_1-u_2,\lambda-\gamma h^{(3)}) R^{13}(u_1-u_3,\lambda) R^{23}(u_2-u_3,\lambda-\gamma h^{(1)})\\ \label{eq:qdybs}
 = R^{23}(u_2-u_3,\lambda) R^{13}(u_1-u_3,\lambda-\gamma h^{(2)}) R^{12}(u_1-u_2,\lambda)
-\end{align}$$ with respect to a meromorphic function $R:\text{$\mathbb{C}$}\times\mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes V)$. The notation $h^{(i)}$ means that, for example, $R^{12}(u_1-u_2,\lambda-\gamma h^{(3)})(v_1\otimes v_2\otimes v_3) = \big(R(u_1-u_2,\lambda-\gamma\mu)(v_1\otimes v_2)\big)\otimes v_3$ if $v_3$ has weight $\mu$. A function $R$ is called a quantum dynamical R-matrix if it is a generically invertible solution of [\[eq:qdybs\]](#eq:qdybs){reference-type="eqref" reference="eq:qdybs"}.
+\end{aligned}$$ with respect to a meromorphic function $R:\text{$\mathbb{C}$}\times\mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes V)$. The notation $h^{(i)}$ means that, for example, $R^{12}(u_1-u_2,\lambda-\gamma h^{(3)})(v_1\otimes v_2\otimes v_3) = \big(R(u_1-u_2,\lambda-\gamma\mu)(v_1\otimes v_2)\big)\otimes v_3$ if $v_3$ has weight $\mu$. A function $R$ is called a quantum dynamical R-matrix if it is a generically invertible solution of [\[eq:qdybs\]](#eq:qdybs){reference-type="eqref" reference="eq:qdybs"}.
 
-Given a quantum dynamical R-matrix $R:\text{$\mathbb{C}$}\times\mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes V)$, we denote by $\text{\bf Rep}_{\text{f}}(R)$ the category of meromorphic finite dimensional representations of $R$. This category was first defined in [@Fel94a; @Fel94b]. It consists of pairs $(W,L_{W})$ where $W$ is a semisimple finite dimensional $\mathfrak{a}$-module and $L_{W}$ is a meromorphic function $$L_{W} : \text{$\mathbb{C}$} \times \mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes W)$$ such that $L_{W}(u,\lambda)$ is (generically) invertible and satisfies $$\begin{align}
+Given a quantum dynamical R-matrix $R:\text{$\mathbb{C}$}\times\mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes V)$, we denote by $\text{\bf Rep}_{\text{f}}(R)$ the category of meromorphic finite dimensional representations of $R$. This category was first defined in [@Fel94a; @Fel94b]. It consists of pairs $(W,L_{W})$ where $W$ is a semisimple finite dimensional $\mathfrak{a}$-module and $L_{W}$ is a meromorphic function $$L_{W} : \text{$\mathbb{C}$} \times \mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes W)$$ such that $L_{W}(u,\lambda)$ is (generically) invertible and satisfies $$\begin{aligned}
 \notag
 R^{12}(u_1-u_2,\lambda-\gamma h^{(3)}) L_{W}^{13}(u_1-u_3,\lambda) L_{W}^{23}(u_2-u_3,\lambda-\gamma h^{(1)})\\ \label{eq:Ldef}
 = L_{W}^{23}(u_2-u_3,\lambda) L_{W}^{13}(u_1-u_3,\lambda-\gamma h^{(2)}) R^{12}(u_1-u_2,\lambda)
-\end{align}$$ in $\text{End}_{\mathfrak{a}}(V\otimes V\otimes W)$. If $(W,L_{W})$ and $(U,L_{U})$ are two representations, a morphism between them is a meromorphic function $f:\mathfrak{a}^* \to \text{Hom}_{\mathfrak{a}}(W,U)$ such that $$\begin{equation}
-\label{eq:morpdef}
-\big(1\otimes f(\lambda)\big)L_{W}(u,\lambda) = L_{U}(u,\lambda)\big(1\otimes f(\lambda - \gamma h^{(1)})\big)
-\end{equation}$$ Thus, the category $\text{\bf Rep}_{\text{f}}(R)$ is linear over the field $M_V$ of meromorphic functions on $\mathfrak{a}^*$ periodic under the lattice spanned by the weights of $V$.
+\end{aligned}$$ in $\text{End}_{\mathfrak{a}}(V\otimes V\otimes W)$. If $(W,L_{W})$ and $(U,L_{U})$ are two representations, a morphism between them is a meromorphic function $f:\mathfrak{a}^* \to \text{Hom}_{\mathfrak{a}}(W,U)$ such that $$\label{eq:morpdef}
+\big(1\otimes f(\lambda)\big)L_{W}(u,\lambda) = L_{U}(u,\lambda)\big(1\otimes f(\lambda - \gamma h^{(1)})\big)$$ Thus, the category $\text{\bf Rep}_{\text{f}}(R)$ is linear over the field $M_V$ of meromorphic functions on $\mathfrak{a}^*$ periodic under the lattice spanned by the weights of $V$.
 
 ::: ex
 []{#ex:bex label="ex:bex"} Let $R: \text{$\mathbb{C}$}\times \mathfrak{a}^* \to \text{End}_{\mathfrak{a}}(V\otimes V)$ be a quantum dynamical R-matrix.

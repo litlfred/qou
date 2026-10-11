@@ -8,40 +8,16 @@ pages: 15-16
 source_pdf: 0710.4310v2.pdf
 source_sha256: 9a7757f998b7f680
 doc_brief: "On Two-Dimensional Holonomy João Faria Martins Centro de Matemática da Universidade do Porto — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold ( M, ∗) as the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Since P2(M, ∗) is a categorical group, it deﬁnes a crossed module Π 2,1
-2 (M, ∗),
-which we call the thin fundamental crossed module of M . Let us explain how
-to construct Π 2,1
-2 (M, ∗) directly. Deﬁne a group π2,1
-2 (M, ∗) as being given by
-π2,1
-2 (M, ∗) = {[Γ] ∈ P2(M, ∗) :∂d([Γ]) = [ ∗]}
-with the product law being the horizontal composition. Note that th e map
-∂ .= ∂u : π2,1
-2 (M, ∗) → π1
-1(M, ∗) is therefore a group morphism. In addition
-π1
-1(M, ∗) acts on π2,1
-2 (M, ∗) on the left as follows:
-[γ]⊲ [Γ] = id [γ] ◦h [Γ] ◦h id[γ−1],
-where [Γ] ∈ π2,1
-2 (M, ∗) and [ γ] ∈ π1
-1(M, ∗). Here if [ γ] is a 1-track then id [γ]
-denotes the 2-track such that id [γ](s,t ) = γ(t), where s,t ∈ [0, 1].
-The following theorem follows from the well-known equivalence betwee n the
-category of categorical groups and the category of crossed mo dules which was
-15
-referred to in 1.2.1; see [BM, BL, BMo, P]. For a graphical proof see [B HS, 6.2].
-Theorem 21 The boundary map ∂ : π2,1
-2 (M, ∗) → π1
-1(M, ∗), together with the
-left action of π1
-1(M, ∗) onπ2,1
-2 (M, ∗), deﬁnes a crossed module, which we denote
-by Π 2,1
-2 (M, ∗).
-In 1.2.1 we showed how to construct a categorical group from any c rossed
-module. The way we deﬁned Π 2,1
-2 (M, ∗) from the categorical group P2(M, ∗)
-shows how to go in the reverse direction.
+[]{#fcm label="fcm"} Since $\Pc_2(M,*)$ is a categorical group, it defines a crossed module $\Pi_2^{2,1}(M,*)$, which we call the *thin fundamental crossed module of $M$.* Let us explain how to construct $\Pi_2^{2,1}(M,*)$ directly. Define a group $\pi_2^{2,1}(M,*)$ as being given by $$\pi_2^{2,1}(M,*)=\left \{[\G] \in \P_2(M,*) \colon \d_d({[\G]})=[*]\right \}$$ with the product law being the horizontal composition. Note that the map $\d \doteq \d_u \colon \pi_2^{2,1}(M,*)\to \pi_1^1(M,*)$ is therefore a group morphism. In addition $\pi_1^1(M,*)$ acts on $\pi_2^{2,1}(M,*)$ on the left as follows: $$[\g] \tr [\G]=\id_{[\g]} \circ_h [\G] \circ_h\id_{[\g^{-1}]},$$ where $[\G]\in {\pi_2^{2,1}(M,*)}$ and $[\g] \in \pi_1^1(M,*).$ Here if $[\g]$ is a 1-track then $\id_{[\g]}$ denotes the 2-track such that $\id_{[\g]}(s,t)=\g({t})$, where $s,t \in [0,1]$.
+
+The following theorem follows from the well-known equivalence between the category of categorical groups and the category of crossed modules which was referred to in [\[CCG\]](#CCG){reference-type="ref" reference="CCG"}; see [@BM; @BL; @BMo; @P]. For a graphical proof see [@BHS 6.2].
+
+::: Theorem
+The boundary map $\d \colon \pi_2^{2,1}(M,*)\to \pi_1^1(M,*)$, together with the left action of $\pi_1^1(M,*)$ on $\pi_2^{2,1}(M,*)$, defines a crossed module, which we denote by $\Pi_2^{2,1}(M,*)$.
+:::
+
+In [\[CCG\]](#CCG){reference-type="ref" reference="CCG"} we showed how to construct a categorical group from any crossed module. The way we defined $\Pi_2^{2,1}(M,*)$ from the categorical group $\Pc_2(M,*)$ shows how to go in the reverse direction.

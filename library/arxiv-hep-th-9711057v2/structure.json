@@ -7,7 +7,8 @@
   "bytes": 202929,
   "pages": 12,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -159,6 +160,67 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 7,
-  "chars_total": 35262
+  "chars_total": 35262,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "wgw.tex",
+   "tex_sections": 10,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-i-introduction",
+     "title": "INTRODUCTION",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-ii-random-matrix-theory-for-finite-quark-masses",
+     "title": "RANDOM-MATRIX THEORY FOR FINITE QUARK MASSES",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-iii-calculation-of-observables",
+     "title": "CALCULATION OF OBSERVABLES",
+     "prose_ratio": 0.327,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-1-inf-m1-mnf",
+     "title": "INf (\u2212m1) \u00b7 \u00b7 \u00b7 mNf",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-1-z",
+     "title": "(z)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-iv-discussion",
+     "title": "DISCUSSION",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

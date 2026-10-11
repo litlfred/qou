@@ -7,10 +7,10 @@ section_number: 4
 pages: 8-9
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
-text_source: latex
-latex_prose_ratio: 0.81
-latex_coverage_ratio: 0.964
 doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
+text_source: latex
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.991
 ---
 Recall that for $\mathbf{i},\mathbf{i'}\in \chi_n$, the map $T_{\bf i}^{\bf i'}$ is defined by $T_{\bf i}^{\bf i'}({\bf a})=\psi_{\bf i'}\psi_{\bf i}^{-1}({\bf a})$, for ${\bf a}\in Y_{\bf i}$. Define $T_2:\,\mathbb{Z}^2\rightarrow \mathbb{Z}^2$ by $T_2(a,b):=(b,a)$, and $T_3:\,\mathbb{Z}^3\rightarrow \mathbb{Z}^3$ by $T_3(a,b,c):=(\max(c,b-a),a+c,
 \min(a,b-c))$. The maps $T_{\bf i}^{\bf i'}$ satisfy the following:

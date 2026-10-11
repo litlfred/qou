@@ -7,10 +7,10 @@ section_number: V
 pages: 8-9
 source_pdf: 0112325v6.pdf
 source_sha256: f09f5047bd12651c
-text_source: latex
-latex_prose_ratio: 0.962
-latex_coverage_ratio: 0.765
 doc_brief: "Knots in Condensed Matters Y. M. Cho ∗ — 22 sections: INTRODUCTION; KNOT IN SKYRME THEOR Y; (∂µω)2 + (1 − cos ω)(∂µ ˆn)2"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \begin{figure}[t]
 \includegraphics[scale=0.7]{2schv.eps}

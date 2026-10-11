@@ -7,10 +7,10 @@ section_number: null
 pages: 1-3
 source_pdf: 2412.02281v1.pdf
 source_sha256: ac4127cf4994b2ba
-text_source: latex
-latex_prose_ratio: 0.608
-latex_coverage_ratio: 0.946
 doc_brief: "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1"
+text_source: latex
+latex_prose_ratio: 0.975
+latex_coverage_ratio: 1.0
 ---
 Set $q\in\mathbb{R}$ with $0<q<1$.    Take the Lie algebra ${\mathfrak {gl}_n}$ over the field of complex numbers with a positive integer $n$. Consider the confluent hypergeometric $q$-difference  system
 \begin{equation}\label{u+A/z}
@@ -148,6 +148,27 @@ on $q$-asymptotics (see \cite{ramis2013local})  and the application to global an
 The organization of the paper is as follows. Section \ref{sec:equation case} recalls the basic knowledge of basic hypergeometric series,  the theory of $q$-Borel resummation and  derive the connection formula of the equation  \eqref{intro:conflu hyper eq}.  Section \ref{main section}  computes explicitly the $q$-Stokes matrix of the system \eqref{qdes}. Section \ref{qlimit} studies   the behavior of   the connection formula  and the $q$-Stokes matrix   as $q\rightarrow 1$.
  
 
-\subsection*{Acknowledgments}
+
+\subsection{Acknowledgments}
 \noindent
 We would like to thank Qian Tang for the discussion and valuable feedback on the paper. The authors are supported by  the  National Key Research and Development Program of China (No. 2020YFE0204200),  by   the National Key Research and Development Program of China (No. 2021YFA1002000) and by the National Natural Science Foundation of China (No. 12171006).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Connection Formula of the Equation \eqref{intro:conflu hyper eq} }\label{sec:equation case}
+This section derives explicitly the connection formula  of the equation  \eqref{intro:conflu hyper eq}. In particular, Section \ref{notation} gives the basic notations of $q$-calculus. Section \ref{hyper series} 
+introduces the basic hypergeometric series. Section \ref{sec:q-borel sum} overviews the $q$-Borel resummation. Section \ref{seclab conne formu eq} then {gives} the explicit connection   formula  of the equation   \eqref{intro:conflu hyper eq} via the confluence method.

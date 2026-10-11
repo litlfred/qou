@@ -180,8 +180,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 3,
-   "overlaid": 1,
+   "tex_sections": 29,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -191,8 +191,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.944,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -205,23 +205,34 @@
     {
      "id": "sec-002-21-algebraic-geometry-over-algebraic-systems",
      "title": "Algebraic geometry over algebraic systems",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-23-on-the-independence-of-the-b-kk-isomorphism-o",
      "title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-3-algorithmic-aspects-of-algebraic-geometry",
      "title": "Algorithmic aspects of algebraic geometry",
-     "prose_ratio": 0.521,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.802,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-32-on-the-algorithmic-undecidability-of-the-embe",
      "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
-     "result": "no matching \\section"
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-references",

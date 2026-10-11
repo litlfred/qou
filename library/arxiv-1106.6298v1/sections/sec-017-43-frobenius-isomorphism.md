@@ -8,19 +8,44 @@ pages: 16-17
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
 doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
+text_source: latex
+latex_prose_ratio: 0.894
+latex_coverage_ratio: 0.913
 ---
-form belongs to Rb, i.e. that certain roots of q exist in Rb.
-In [2] we proved the following.
-Theorem 12. [Beliakova–B¨ uhler–Le]The Frobenius endomorphism Fb : Z[1/b][q]Nb →
-Z[1/b][q]Nb, sending q to qb, is an isomorphism.
-This implies the existence of the bth root of q in Sb, 0 deﬁned by
-q1/b := F−1
-b (q) ∈ S b, 0 .
-Let us mention that this result does not hold over Q, i.e. for y ∈ QNb with yb = 1 we
-have y = ±1.
-Further, we introduce another Frobenius homomorphism
-Gm : R[q]Nb → R[q]mNb by Gm(q) = qm.
-Since Φ mr(q) always divides Φ r(qm), Gm is well–deﬁned.
-This map allows us to transfer q1/b from Sp, 0 to Sp,i with i > 0, and hence to deﬁne a
-realization of qa2/b in Sp with the correct evaluation.
-UNIFIED 3–MANIFOLD INV ARIANTS 17
+It remains to
+show that the image of the
+Laplace transform
+belongs to $\R_b$, i.e. that
+certain roots of $q$ exist in $\R_b$.
+
+
+In \cite{BBL} we proved the following.
+
+
+\begin{Thm}\label{frob}{\rm [Beliakova--B\"uhler--Le]}
+The Frobenius endomorphism
+ $F_b: \Z[1/b][q]^{\N_b} \to \Z[1/b][q]^{\N_b}$, sending $q$ to $q^b$,
+ is an isomorphism.
+\end{Thm}
+
+
+This implies the
+existence of the $b$th root of $q$ in $\calS_{b,0}$
+defined by
+\[
+q^{1/b}:=F^{-1}_b (q)  \in \calS_{b,0}\,.
+\]
+
+
+
+Let us mention that this result does not hold over $\Q$, i.e.
+for  $y \in\Q^{\N_b}$ with $y^b=1$ we have $y=\pm 1$.
+
+Further, we introduce
+another Frobenius homomorphism
+$$G_m : R[q]^{\N_b} \to R[q]^{m\N_b} \quad \text{ by } \qquad G_m(q) = q^m.$$
+Since $\Phi_{mr}(q)$ always divides $\Phi_{r}(q^m)$,  $G_m$ is well--defined.
+
+This map allows us to transfer $q^{1/b}$ from $\calS_{p,0}$
+to $\calS_{p,i}$ with $i> 0$, and hence to define a
+realization of $q^{a^2/b}$ in $\calS_p$ with the correct evaluation.

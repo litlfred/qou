@@ -372,8 +372,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 9,
-   "overlaid": 6,
+   "tex_sections": 28,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -383,97 +383,127 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.922,
-     "coverage_ratio": 0.954,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.035,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.882,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-21-lie-groupoids-and-groupoid-actions-on-manifol",
      "title": "Lie Groupoids and Groupoid Actions on Manifolds",
-     "result": "no matching \\section"
+     "prose_ratio": 0.775,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-22-principal-groupoid-bundles",
      "title": "Principal Groupoid Bundles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.902,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-23-anafunctors",
      "title": "Anafunctors",
-     "result": "no matching \\section"
+     "prose_ratio": 0.704,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-24-lie-2-groups-and-crossed-modules",
      "title": "Lie 2-Groups and crossed Modules",
-     "result": "no matching \\section"
+     "prose_ratio": 0.791,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-3-version-i-groupoid-valued-cohomology",
      "title": "Version I: Groupoid-valued Cohomology",
-     "prose_ratio": 0.905,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-4-version-ii-classifying-maps",
      "title": "Version II: Classifying Maps",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-5-version-iii-groupoid-bundle-gerbes",
      "title": "Version III: Groupoid Bundle Gerbes",
-     "prose_ratio": 0.625,
-     "coverage_ratio": 0.972,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.684,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-009-52-properties-of-groupoid-bundle-gerbes",
      "title": "Properties of Groupoid Bundle Gerbes",
-     "result": "no matching \\section"
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-6-version-iv-principal-2-bundles",
      "title": "Version IV: Principal 2-Bundles",
-     "prose_ratio": 0.592,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.871,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-62-properties-of-principal-2-bundles",
      "title": "Properties of Principal 2-Bundles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-7-equivalence-between-bundle-gerbes-and-2-bundle",
      "title": "Equivalence between Bundle Gerbes and 2-Bundles",
-     "prose_ratio": 0.194,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.914,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-71-from-principal-2-bundles-to-bundle-gerbes",
      "title": "From Principal 2-Bundles to Bundle Gerbes",
-     "result": "no matching \\section"
+     "prose_ratio": 0.806,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-72-from-bundle-gerbes-to-principal-2-bundles",
      "title": "From Bundle Gerbes to Principal 2-Bundles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.878,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-a-equivariant-anafunctors-and-group-actions",
      "title": "A Equivariant Anafunctors and Group Actions",
-     "prose_ratio": 0.878,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -481,8 +511,8 @@
     {
      "id": "sec-016-b-constructing-equivalences-between-2-stacks",
      "title": "B Constructing Equivalences between 2-Stacks",
-     "prose_ratio": 0.647,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

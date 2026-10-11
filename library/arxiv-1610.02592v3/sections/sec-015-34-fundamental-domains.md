@@ -7,13 +7,14 @@ section_number: 3.4
 pages: 97-105
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.786
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.983
 ---
 We turn back to our discrete subgroups $\Gamma < \Iso(\matH^n)$. The geometry of a discrete $\Gamma$ is nicely controlled by some polyhedra, called \emph{fundamental domains}.
 We introduce these objects and make some important examples.
+
 
 \subsection{Fundamental and Dirichlet domains}
 Let $\Gamma$ be a discrete group of isometries of $\matH^n$. The group $\Gamma$ may or may not act freely on $\matH^n$.  \index{fundamental domain}
@@ -49,6 +50,7 @@ Prove that the shadowed triangle in Figure \ref{modular_group:fig} is a fundamen
 
 Everything we say also holds for $\matR^n$ and $S^n$.
 
+
 \subsection{Fundamental domain of manifolds}
 Let $\Gamma< \Iso(\matH^n)$ be a discrete subgroup that acts freely on $\matH^n$ and $D$ be a fundamental domain for $\Gamma$. We can get some information on the hyperbolic manifold $M=\matH^n/_\Gamma$ by looking at $D$. 
 
@@ -66,10 +68,12 @@ If $D$ is compact then $M$ clearly is. If $D = D(p)$ is a Dirichlet domain and $
 
 A fundamental domain $D$ alone however does not determine $M$: we will soon see in Section \ref{piatte:subsection} that a square in $\matR^2$ is the fundamental domain of two non homeomorphic compact flat surfaces.
 
+
 \subsection{Asteroids}
 The facets of a fundamental domain $D$ are naturally partitioned into isometric pairs, as follows. Ever facet $f$ of $D$ is incident to $D$ and to another fundamental domain $g(D)$ of the tessellation. The isometry $g^{-1}$ sends $g(D)$ to $D$ and hence sends $f$ to another facet $f'$ of $D$. One checks immediately that $(f')' = f$, so $f$ and $f'$ are paired isometrically. 
 
 One should think of $M$ as obtained from $D$ by identifying these facets in pairs: we can picture an observer -- say, a spaceship -- floating and traveling inside $M$ by visualising it in $D$, and jumping from $f$ to $f'$ every time it crosses the interior of a facet $f$, like in the 1979 video game \emph{Asteroids}.
+
 
 \subsection{Spine and cut locus}
 Another picture that may help to understand $M$ geometrically is the \emph{spine}\index{spine} $S \subset M$ defined as $S=\pi(\partial D)$. This is a $(n-1)$-dimensional object in $M$ whose complement is an open ball. When $D = D(p)$ is the Dirichlet domain of a point $p$, the spine $S$ is called the \emph{cut locus} of the point $q=\pi(p) \in M$. \index{cut locus}
@@ -79,6 +83,7 @@ The cut locus of $q \in M$ consists of all points $q'$ such that there are at le
 \end{ex}
 
 We now exhibit some important examples of discrete groups of isometries in the three geometries $\matH^n$, $\matR^n$, and $S^n$, and study their fundamental domains. 
+
 
 \subsection{Triangle groups} \label{triangle:groups:subsection}
 Let $a,b,c \geqslant 2$ be natural numbers and $\Delta$ be the triangle in $\matH^2, S^2$, or $\matR^2$ with inner angles $\frac \pi a$, $\frac \pi b$, $\frac \pi c$. By reflecting iteratively $\Delta$ along its sides we get a tessellation $T$, see Section \ref{triangular:subsection}. \index{group!triangle group}
@@ -107,6 +112,7 @@ The triangle group $\Gamma(2,2,c) \isom \matZ/_{2\matZ}\times D_{2c}$ has order 
 
 The triangle groups $\Gamma(2,3,6)$, $\Gamma(2,4,4)$, and $\Gamma(3,3,3)$ are discrete groups of isometries of $\matR^2$ with compact quotient $\matR^2/_\Gamma$. 
 If $\frac 1a + \frac 1b + \frac 1c <1$ the group $\Gamma(a,b,c)$ is a discrete subgroup of $\Iso(\matH^2)$. It contains infinitely many elliptic elements, such as reflections along lines and finite-order rotations around the vertices of the triangles. By Selberg's Lemma, there is a torsion-free subgroup $\Gamma' < \Gamma$ of some finite index $h$. The quotient $\matH^2/_{\Gamma'}$ is a closed hyperbolic surface and is tessellated into $h$ triangles isometric to $\Delta$.
+
 
 \subsection{Coxeter polyhedra}
 Triangle groups may be generalised to all dimensions as follows. A polyhedron $P$ in $\matH^n$ (or $\matR^n$, $S^n$) is a \emph{Coxeter polyhedron} if the dihedral angle of every codimension-two face divides $\pi$.\index{polyhedron!Coxeter polyhedron} For instance, the regular ideal tetrahedron and octahedron are Coxeter polyhedra.
@@ -143,6 +149,7 @@ Consider the mirror hyperplanes of all the reflections in $\Gamma$. Since $\Gamm
 
 Coxeter polyhedra are beautiful objects that can be used to construct hyperbolic manifolds: every finite Coxeter polyhedron $P$ generates a reflection group $\Gamma$ which contains, by Selberg's Lemma, a torsion-free subgroup $\Gamma'$ of some finite index $h$. The quotient $M=\matH^n/_{\Gamma'}$ is a hyperbolic manifold and is tessellated into $h$ copies of $P$, so that $\Vol(M) = h\Vol(P)$. By residual finiteness, there are plenty of such manifolds.
 
+
 \subsection{Coxeter graphs}
 If a Coxeter polyhedron $P$ has a reasonable number of facets (for instance, if $P$ is a simplex), then one can study many of its properties by looking at its \emph{Coxeter graph},\index{Coxeter graph} which is constructed as follows: draw one node for each facet of $P$, and for every pair of facets intersecting with dihedral angle $\frac \pi a$ connect the corresponding nodes with an edge labeled with $a$. One also uses thickened or dashed edges to denote non-incident faces that do or do not intersect at some ideal vertex, respectively (these cases cannot occur on simplexes). Given the abundance of right angles, one usually omit the edges with label 2. 
 
@@ -152,6 +159,7 @@ Let $P$ be a regular polytope or tessellation with Schl\"afli symbol $\{a,b, \ld
 \includegraphics[width = 3 cm]{Coxeter_line}
 \end{center}
 \end{ex}
+
 
 \subsection{Flat tori} \label{piatte:subsection}
 The isometry group $\Iso(\matR^n)$ of $\matR^n$ contains the translations subgroup that we identify with $\matR^n$. The integer translations $\Gamma = \matZ^n$ form a discrete subgroup that acts freely on $\matR^n$, therefore the quotient $\matR^n /_\Gamma$ is a flat manifold. It is naturally diffeomorphic to the $n$-dimensional torus: 
@@ -201,6 +209,7 @@ We have seen that the Klein bottle is covered by a torus. In fact, we will see i
 A square $Q\subset \matR^2$ is a Coxeter polygon and determines a reflection group $\Gamma$. What is the minimum index of a torsion-free subgroup $\Gamma' < \Gamma$? Which topological surfaces $\matR^2/_{\Gamma'}$ do we get?
 \end{ex}
 
+
 \subsection{Real projective spaces} 
 We now exhibit some elliptic manifolds. Every elliptic manifold is covered by $S^n$ and is hence compact and has finite fundamental group (because coverings between compact manifolds have finite degree). \index{$\matRP^n$}
 
@@ -216,12 +225,3 @@ In even dimension $n$ the only elliptic manifolds are $S^n$ and $\matRP^n$.
 \begin{proof}
 Let $M=S^n/_\Gamma$ be an elliptic manifold. Every matrix in $\SO(n+1)$ has an eigenvalue $+1$ because $n$ is even (exercise) and hence acts in $S^n$ with a fixed point. Therefore $\Gamma$ contains no non-trivial orientation-preserving isometries, and since these form a group of index at most two, either $\Gamma$ is trivial or is generated by an orientation-reversing fixed-point free involution in $O(n+1)$, and $-I$ is the only such element (exercise).
 \end{proof}
-
-\subsection{Lens spaces} \label{lens:subsection}
-In dimension two $\matRP^2$ and $S^2$ are the only elliptic manifolds, but in dimension three there are more. Let $p\geqslant 1$ and $q\geqslant 1$ be coprime integers and set $\omega = e^{\frac{2\pi i}p}$. We identify $\matR^4$ with $\matC^2$ and see $S^3$ as
-$$S^3 = \big\{(z,w)\in \matC^2\ \big|\ |z|^2+|w|^2 = 1 \big\}.$$
-The map
-$$f(z,w) = (\omega z, \omega^qw)$$
-is an isometry of $\matR^4$ because it consists of two simultaneous rotations on the coordinate planes $w=0$ and $z=0$. The map $f$ hence induces an isometry of $S^3$. It has order $p$ and none of its iterates $f, f^2, \ldots, f^{p-1}$ has a fixed point. Therefore the group $\Gamma = \langle f \rangle$ generated by $f$ acts freely on $S^3$, and is discrete because it is finite. \index{lens space} \index{$L(p,q)$}
-
-We have constructed an elliptic manifold $S^3/_\Gamma$, called a \emph{lens space} and indicated with the symbol $L(p,q)$. Its fundamental group is isomorphic to $\Gamma = \matZ/_{p\matZ}$. Note that the manifold depends on both $p$ and $q$.

@@ -7,10 +7,10 @@ section_number: 8
 pages: 20-21
 source_pdf: 1904.12095v2.pdf
 source_sha256: 7006b250f0d3c991
-text_source: latex
-latex_prose_ratio: 0.947
-latex_coverage_ratio: 0.989
 doc_brief: "Verified computations for closed hyperbolic 3-manifolds Matthias Goerner — Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed"
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.984
 ---
 []{#sec:results label="sec:results"}
 
@@ -22,12 +22,12 @@ We were able to verify a hyperbolic structure on a finite triangulation of each 
 
 To prove Theorem [\[thm:hyperbolicBranchedDoubleCovers\]](#thm:hyperbolicBranchedDoubleCovers){reference-type="ref" reference="thm:hyperbolicBranchedDoubleCovers"}, we went through all knots and links up to 15, respectively, 14 crossings tabulated by Hoste-Thistlethwaite[^1] and used SnapPy to produce the branched double cover. We either used the above method to prove that the resulting manifold is hyperbolic or used Regina [@Regina] to prove that it is not hyperbolic by
 
-- finding the triangulation in Regina's census or
+-   finding the triangulation in Regina's census or
 
-- recognizing that the triangulation has a structure fitting one of Regina's\
-  `StandardTriangulation`'s making it, e.g., a Seifert fiber space, or
+-   recognizing that the triangulation has a structure fitting one of Regina's\
+    `StandardTriangulation`'s making it, e.g., a Seifert fiber space, or
 
-- finding an essential torus using normal surface theory.
+-   finding an essential torus using normal surface theory.
 
 Note that the first two methods sometimes require some randomizations and simplifications of the triangulation in SnapPy to work and that the last method can be quite expensive.
 

@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-8
 source_pdf: 0511710v2.pdf
 source_sha256: f88f50d459080490
-text_source: latex
-latex_prose_ratio: 0.971
-latex_coverage_ratio: 0.994
 doc_brief: "Higher gauge theory — Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge theory describe s the parallel transport of 1-dimensional"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{section: Introduction}
 

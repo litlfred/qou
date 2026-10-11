@@ -8,112 +8,22 @@ pages: 32-34
 source_pdf: 1203.2182v1.pdf
 source_sha256: 2fe21af194f65227
 doc_brief: "Volume Conjecture: Refined and Categorified — The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the"
+text_source: latex
+latex_prose_ratio: 0.905
+latex_coverage_ratio: 0.72
 ---
-such reﬁned relations exist and can be explicitly written do wn is already nontrivial. Having
-found these examples, we have no doubt that their generalization to the entire family of torus
-knots, and even more general knots, exists. Moreover, an imp ortant hint about the general
-structure of reﬁned quantum curves for (2 , 2p + 1) torus knots is given in the next section,
-where the analysis of the asymptotics of their colored super polynomials reveals the form of
-the reﬁned classical curves Aref(x,y ;t) = 0. To ﬁnd the full quantum curves in this class of
-examples, one should “just” reintroduce the dependence on q.
-We will derive reﬁned quantum curves from the analysis of thehomological knot invariants
-found in section 3. It would also be interesting to ﬁnd genera l methods of deriving reﬁned
-recursion relations, similar to [7, 19] in the unreﬁned case , which a priori do not rely on the
-knowledge of homological invariants. We plan to address thi s problem in the follow-up work.
-3.2.1 Unknot
-As we already mentioned in (3.34) and (3.59), in every approa ch to knot homologies based
-on the reﬁned BPS invariants [35, 26] the colored superpolyn omial of the unknot is given
-essentially by the Macdonald polynomial [36]. In particula r, after the change of variables
-(3.58), the Sr-colored superpolynomial reads:
-P
-Sr
-( ;a,q,t ) = ( −1)
-r
-2a− r
-2q
-r
-2t− 3r
-2
-(−at3;q)r
-(q;q)r
-. (3.98)
-Note that when we talk about the unknot, only the unreduced su perpolynomial (resp. ho-
-mology) is non-trivial; the reduced one is trivial by deﬁnit ion (which involves normalizing by
-the unknot). Specializing further to a =q2 we ﬁnd
-Pn=r+1( ;q,t ) = ( −1)
-r
-2q− r
-2t− 3r
-2
-(−q2t3;q)r
-(q;q)r
-. (3.99)
-Note, at t = −1 this expression reduces to the n-colored Jones polynomial of the unknot
-Jn( ;q) = q
-n
-2 −q− n
-2
-q
-1
-2 −q− 1
-2
-(3.100)
-– 31 –
-which can be written as the partition function of the SU (2) Chern-Simons theory on a solid
-torus S1 × D2 ∼
-= S3 \ unknot,
-Z CS
-SU (2)(S1 × D2;q) =
-√
-−ℏ
-2πi
-(
-x −x−1)
-(3.101)
-normalized by the partition function of the Chern-Simons th eory on S3,
-Z CS
-SU (2)(S3;q) =
-√
-−ℏ
-2πi
-(
-eℏ −e−ℏ
-)
-(3.102)
-where we used x =eu and u =nℏ, cf. (3.18).
-As the homological knot invariant (3.99) has a product struc ture, we can immediately
-write down the recursion relation it satisﬁes
-Pn+1( ;q,t ) = 1 +t3qn+1
-1 −qn (−q−1t−3)1/2Pn( ;q,t ). (3.103)
-This means that Pn( ;q,t ) obeys the reﬁned version (2.1a) of the quantum volume conje c-
-ture with
-ˆAref (ˆx,ˆy;q,t ) = (1 + t3qˆx)(−q−1t−3)1/2 − (1 −ˆx)ˆy. (3.104)
-In the classical limit q → 1 this recursion relation reduces to the reﬁned classical cu rve
-Aref(x,y ;t) = 0 deﬁned by
-Aref (x,y ;q = 1,t ) = (1 + t3x)(−t−3)1/2 − (1 −x)y. (3.105)
-On the other hand, in the unreﬁned limit t = −1 the relation (3.104) takes the form
-ˆAref (ˆx,ˆy;q) = q−1/2(1 −qˆx) − (1 −ˆx)ˆy, (3.106)
-and specializing further to q = 1 we get the classical A-polynomial
-A (x,y ) = (1 −x)(1 −y). (3.107)
-It is also interesting to consider the second order equation satisﬁed by (3.99). Writing
-the three consecutive colored polynomials it is not hard to s ee that the following equation is
-satisﬁed
-Pn+1 − (−qt3)1/2 1 −qt3 + 2xt3 −x2t3 + 2qxt3 +qx2t6
-q(x − 1)t3(1 +xt3) Pn +Pn−1 = 0, (3.108)
-with x = qn. Interestingly, in the unreﬁned limit t = −1 the dependence on x cancels and
-Jn( ;q) satisﬁes the recursion relation
-Jn+1 − [2]qJn +Jn−1 = 0 (3.109)
-– 32 –
-with [2] q = q1/2 +q−1/2. This means that in the quantum volume conjecture (1.5) for t he
-unknot we have
-ˆA (ˆx,ˆy;q) = ˆy − (q1/2 +q−1/2) +ˆy−1. (3.110)
-In the classical limit q → 1 this becomes equivalent to
-A (x,y ) = ( y − 1)2. (3.111)
-On the other hand, we can also write the classical limit of (3. 108) in the polynomial form as
-Aref (x,y ;t) = (1 −x)(1 +t3x)y2 − (−t−3)1/2(
-1 +t6x2 −t3(1 − 4x +x2)
-)
-y + (1 −x)(1 +t3x).
-(3.112)
-Starting from this form the unreﬁned limit readsA (x,y ) = (x−1)2(y −1)2, which captures
-the cases (3.107) and (3.111) which we considered above.
+As we already mentioned in [\[unknotMqtR\]](#unknotMqtR){reference-type="eqref" reference="unknotMqtR"} and [\[unknotsuperSr\]](#unknotsuperSr){reference-type="eqref" reference="unknotsuperSr"}, in every approach to knot homologies based on the refined BPS invariants [@GIKV; @AS] the colored superpolynomial of the unknot is given essentially by the Macdonald polynomial [@IK11]. In particular, after the change of variables [\[GSvarchng\]](#GSvarchng){reference-type="eqref" reference="GSvarchng"}, the $S^r$-colored superpolynomial reads: $$\overline{{\cal P}}^{S^r} ({\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}; a,q,t) \; = \;
+(-1)^{\frac{r}{2}}a^{-\frac{r}{2}}q^{\frac{r}{2}}t^{-\frac{3r}{2}} \frac{(-at^3;q)_r}{(q;q)_r} \,.$$ Note that when we talk about the unknot, only the unreduced superpolynomial (resp. homology) is non-trivial; the reduced one is trivial by definition (which involves normalizing by the unknot). Specializing further to $a=q^2$ we find $$P_{n=r+1} ({\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}; q,t) \; = \;
+(-1)^{\frac{r}{2}} q^{-\frac{r}{2}} t^{-\frac{3r}{2}} \frac{(-q^2 t^3;q)_r}{(q;q)_r} \,.
+\label{Pnunkot}$$ Note, at $t=-1$ this expression reduces to the $n$-colored Jones polynomial of the unknot $$J_{n} ({\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}; q) \; = \;
+\frac{q^{\frac{n}{2}} - q^{-\frac{n}{2}}}{q^{\frac{1}{2}} - q^{-\frac{1}{2}}}$$ which can be written as the partition function of the $SU(2)$ Chern-Simons theory on a solid torus ${\bf S}^1 \times {\bf D}^2 \cong {\bf S}^3 \setminus \text{unknot}$, $$Z^{\text{CS}}_{SU(2)} ({\bf S}^1 \times {\bf D}^2; q) \;=\;
+\sqrt{\frac{- \hbar}{2 \pi i}} \, \big( x - x^{-1} \big)$$ normalized by the partition function of the Chern-Simons theory on ${\bf S}^3$, $$Z^{\text{CS}}_{SU(2)} ({\bf S}^3; q) \;=\;
+\sqrt{\frac{- \hbar}{2 \pi i}} \, \Big( e^{\hbar} - e^{- \hbar} \Big)$$ where we used $x=e^u$ and $u = n \hbar$, *cf.* [\[unknotdimqR\]](#unknotdimqR){reference-type="eqref" reference="unknotdimqR"}.
+
+As the homological knot invariant [\[Pnunkot\]](#Pnunkot){reference-type="eqref" reference="Pnunkot"} has a product structure, we can immediately write down the recursion relation it satisfies $$P_{n+1} ({\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}; q,t) \; = \; \frac{1 + t^3 q^{n+1}}{1 - q^{n}} (-q^{-1} t^{-3})^{1/2} \, P_n ({\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}; q,t).$$ This means that $P_{n} ({\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}; q,t)$ obeys the refined version ([\[VCquantref\]](#VCquantref){reference-type="ref" reference="VCquantref"}a) of the quantum volume conjecture with $$\widehat A^{\text{ref}}_{{\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}}(\widehat{x},\widehat{y};q,t) \; = \;
+(1 + t^3 q \widehat{x}) ( - q^{-1} t^{-3})^{1/2} - (1 - \widehat x) \widehat y \,.   \label{qAt-unknot}$$ In the classical limit $q \to 1$ this recursion relation reduces to the refined classical curve $A^{\text{ref}} (x,y;t) = 0$ defined by $$A^{\text{ref}}_{{\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}} (x,y;q=1,t) \; = \;
+(1 + t^3 x) ( - t^{-3})^{1/2} - (1 - x) y \,.   \label{At-unknot}$$ On the other hand, in the unrefined limit $t=-1$ the relation ([\[qAt-unknot\]](#qAt-unknot){reference-type="ref" reference="qAt-unknot"}) takes the form $$\widehat A^{\text{ref}}_{{\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}}(\widehat x, \widehat y ;q) \; = \;
+q^{-1/2}(1 - q \widehat x)  - (1 - \widehat x) \widehat y \,,$$ and specializing further to $q=1$ we get the classical $A$-polynomial $$A_{{\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}} (x,y) \; = \; (1-x)(1-y) \,.   \label{Aunknot1x1y}$$
+
+It is also interesting to consider the second order equation satisfied by ([\[Pnunkot\]](#Pnunkot){reference-type="ref" reference="Pnunkot"}). Writing the three consecutive colored polynomials it is not hard to see that the following equation is satisfied $$P_{n+1} - (-q t^3)^{1/2} \frac{1 - q t^3 + 2 x t^3 - x^2 t^3 + 2 q x t^3 + q x^2 t^6}{q (x - 1) t^3 (1 + x t^3)}  P_n + P_{n-1} =0 ,  \label{Punknot-recursion2}$$ with $x=q^n$. Interestingly, in the unrefined limit $t = -1$ the dependence on $x$ cancels and $J_n ({\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}; q)$ satisfies the recursion relation $$J_{n+1} - [2]_q J_n + J_{n-1} \; = \; 0$$ with $[2]_q = q^{1/2} + q^{-1/2}$. This means that in the quantum volume conjecture [\[VCquant\]](#VCquant){reference-type="eqref" reference="VCquant"} for the unknot we have $$\widehat{A}_{{\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}}(\widehat{x},\widehat{y};q) \; = \; \widehat y  - (q^{1/2} + q^{-1/2}) + \widehat y^{-1}.$$ In the classical limit $q \to 1$ this becomes equivalent to $$A_{{\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}} (x,y) \; = \; (y-1)^2 \,.   \label{Aunknotclassical}$$ On the other hand, we can also write the classical limit of ([\[Punknot-recursion2\]](#Punknot-recursion2){reference-type="ref" reference="Punknot-recursion2"}) in the polynomial form as $$A^{\textrm{ref}}_{{\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}}(x,y;t) = (1 - x) (1 + t^3 x) y^2 -
+ (-t^{-3})^{1/2} \big(1 + t^6 x^2 - t^3 (1 - 4 x + x^2)\big) y + (1- x) (1 + t^3 x).$$ Starting from this form the unrefined limit reads $A_{{\,\raisebox{-.08cm}{\includegraphics[width=.37cm]{unknot}}\,}}(x,y)=(x-1)^2 (y-1)^2$, which captures the cases ([\[Aunknot1x1y\]](#Aunknot1x1y){reference-type="ref" reference="Aunknot1x1y"}) and ([\[Aunknotclassical\]](#Aunknotclassical){reference-type="ref" reference="Aunknotclassical"}) which we considered above.

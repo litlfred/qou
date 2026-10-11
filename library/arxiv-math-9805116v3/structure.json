@@ -6,7 +6,8 @@
   "sha256": "65ce47d232d61de4f4f1f64b202d5b0299e66d7e2cc7aa0218b5c8e4f8ee169c",
   "bytes": 401111,
   "pages": 40,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -498,6 +499,190 @@
   "likely_scanned": false,
   "toc_entries": 27,
   "sections": 27,
-  "chars_total": 90719
+  "chars_total": 90719,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 14,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-i-integral-theory-and-c--structure",
+     "title": "Integral Theory and C \u2217-structure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.165,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-2-institut-f-ur-theoretische-physik-fuberlin-arn",
+     "title": "Institut f\u00a8 ur Theoretische Physik, FU\u2013Berlin Arnimallee 1 4, D-14195 Berlin, Germany",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-1-introduction-2",
+     "title": "Introduction 2",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-2-the-weak-hopf-calculus-4",
+     "title": "The Weak Hopf Calculus 4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-3-weak-hopf-modules-and-integral-theory-14",
+     "title": "Weak Hopf Modules and Integral Theory 14",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-4-c-weak-hopf-algebras-31",
+     "title": "C\u2217-Weak Hopf Algebras 31",
+     "prose_ratio": 0.371,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-ii-the-dual-problem-is-to-\ufb01nd-a-quantum-group-\u02c6g",
+     "title": "The dual problem is to \ufb01nd a \u201dquantum group\u201d \u02c6G acting on N such that M is isomorphic",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-21-the-axioms",
+     "title": "The axioms",
+     "prose_ratio": 0.242,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-2-the-weak-hopf-calculus",
+     "title": "The Weak Hopf Calculus",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-22-weak-bialgebras",
+     "title": "Weak bialgebras",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-23-weak-hopf-algebras",
+     "title": "Weak Hopf algebras",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-24-the-trivial-representation",
+     "title": "The \u201dtrivial\u201d representation",
+     "prose_ratio": 0.351,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-213-then",
+     "title": "Then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-3-weak-hopf-modules-and-integral-theory",
+     "title": "Weak Hopf Modules and Integral Theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-31-integrals-in-weak-hopf-algebras",
+     "title": "Integrals in weak Hopf algebras",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-32-weak-hopf-modules",
+     "title": "Weak Hopf modules",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-33-restrictions-on-the-algebraic-structure",
+     "title": "Restrictions on the algebraic structure",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-34-non-degenerate-integrals",
+     "title": "Non-degenerate integrals",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-36-haar-integrals",
+     "title": "Haar integrals",
+     "prose_ratio": 0.845,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-4-c--weak-hopf-algebras",
+     "title": "C \u2217-Weak Hopf Algebras",
+     "prose_ratio": 0.131,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-41-first-consequences-of-the-c--structure",
+     "title": "First consequences of the C \u2217-structure",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.925,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-42-the-haar-measure-and-selfduality",
+     "title": "The Haar measure and selfduality",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-43-the-canonical-grouplike-element",
+     "title": "The canonical grouplike element",
+     "prose_ratio": 0.682,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-l-now-use-the-fact-that",
+     "title": "Now use the fact that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

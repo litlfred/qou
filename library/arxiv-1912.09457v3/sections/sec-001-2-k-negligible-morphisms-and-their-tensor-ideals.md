@@ -7,10 +7,10 @@ section_number: 2
 pages: 5-10
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
-text_source: latex
-latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.945
 doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.966
 ---
 []{#sec:k-negl label="sec:k-negl"}
 
@@ -24,9 +24,9 @@ Recall that under these assumptions there exist, for each object $X$ in $\mathca
 
 Let $\mathcal{C}$ be a monoidal category. A *tensor ideal* $\mathcal I$ in $\mathcal{C}$ consists of an $R$-submodule $\mathcal I(X,Y) \subset Hom(X,Y)$ for all $X,Y \in \mathcal C$ such that
 
-- for all $X,Y,Z,W \in \mathcal C$ and $g \in Hom(X,Y)$ and $h \in Hom(Z,W)$ $$f \in \mathcal I(Y,Z) \text{ implies } f \circ g \in \mathcal I(X,Z) \text{ and } h \circ f \in \mathcal I(Y,W);$$
+-   for all $X,Y,Z,W \in \mathcal C$ and $g \in Hom(X,Y)$ and $h \in Hom(Z,W)$ $$f \in \mathcal I(Y,Z) \text{ implies } f \circ g \in \mathcal I(X,Z) \text{ and } h \circ f \in \mathcal I(Y,W);$$
 
-- $f \in \mathcal I(X,Y)$ implies $id_Z \otimes f \in \mathcal I(Z \otimes X,Z \otimes Y)$ and likewise from the right.
+-   $f \in \mathcal I(X,Y)$ implies $id_Z \otimes f \in \mathcal I(Z \otimes X,Z \otimes Y)$ and likewise from the right.
 
 A collection of objects $I$ in a monoidal category $\mathcal C$ is called a *thick ideal* of $\mathcal C$ if the following conditions are satisfied:
 
@@ -82,9 +82,9 @@ Of particular interest is the situation where $\Bbbk$ is a perfect field of prim
 
 ### Algebraic groups {#sec:alg}
 
-While we can define the mod $\mathfrak{m}$ evaluation for any monoidal category over the local ring $R$, it is often not the correct category one is interested in. Consider the case of an algebraic group $G$ over the local ring $R$. Then extension of scalars of $Rep(G,R)$ defines a monoidal functor $$\begin{align*}
+While we can define the mod $\mathfrak{m}$ evaluation for any monoidal category over the local ring $R$, it is often not the correct category one is interested in. Consider the case of an algebraic group $G$ over the local ring $R$. Then extension of scalars of $Rep(G,R)$ defines a monoidal functor $$\begin{aligned}
  Rep(G,R) & \to Rep(G \otimes R/\mathfrak{m}, R/\mathfrak{m}) \\ V & \mapsto V \otimes_R R/\mathfrak{m} \\ Hom_G(X,Y) & \mapsto Hom_G(X,Y) \otimes R/\mathfrak{m}.
-\end{align*}$$ The image of $Rep(G,R)$ under this functor is the mod $\mathfrak{m}$ evaluation, but it is not the category $Rep(G \otimes R/\mathfrak{m}, R/\mathfrak{m})$ (unless we are in the semisimple case). Indeed the canonical functor $$Hom_G (M,N) \otimes R/\mathfrak{m} \to Hom_{G_{R/\mathfrak{m}}}(M \otimes R/\mathfrak{m}, N \otimes R/\mathfrak{m}),$$ where $G_{R/\mathfrak{m}}$ is the algebraic group over $\Bbbk$ obtained by extension of scalars, is in general not bijective [@Jantzen 10.14].
+\end{aligned}$$ The image of $Rep(G,R)$ under this functor is the mod $\mathfrak{m}$ evaluation, but it is not the category $Rep(G \otimes R/\mathfrak{m}, R/\mathfrak{m})$ (unless we are in the semisimple case). Indeed the canonical functor $$Hom_G (M,N) \otimes R/\mathfrak{m} \to Hom_{G_{R/\mathfrak{m}}}(M \otimes R/\mathfrak{m}, N \otimes R/\mathfrak{m}),$$ where $G_{R/\mathfrak{m}}$ is the algebraic group over $\Bbbk$ obtained by extension of scalars, is in general not bijective [@Jantzen 10.14].
 
 ### Deligne categories
 

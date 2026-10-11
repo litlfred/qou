@@ -8,45 +8,44 @@ pages: 49-50
 source_pdf: 0111205v1.pdf
 source_sha256: 66325a21651aff89
 doc_brief: "From Subfactors to Categories and Topology II — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C."
+text_source: latex
+latex_prose_ratio: 0.986
+latex_coverage_ratio: 0.923
 ---
-In Section 4 we proved that the functor F : Z1(C) → B is fully faithful and essentially
-surjective. By [35, Theorem IV.4.1] this implies that F has a two-sided adjoint G : B →
-Z1(C). Together with Lemma 5.2 this implies
-HomC(X, Y ) ∼= HomB(F (X, eX ), J (Y ⊠ 1)J) ∼= HomZ1(C)((X, eX ), G(J (Y ⊠ 1)J)),
-where ( X, eX ) ∈ Z 1(C), Y ∈ C . With the forgetful functor H : Z1(C) → C , (X, eX ) ↦→X
-this becomes
-HomC(H(X, eX ), Y ) ∼= HomZ1(C)((X, eX ), G(J (Y ⊠ 1)J)). (8.1)
-We thus have
-49
-Proposition 8.1 The forgetful functor H : Z1(C) → C , (X, eX ) ↦→X has a two-sided
-adjoint K : C → Z 1(C), X ↦→G(J (X ⊠ 1)J). On the objects one has
-K(Y ) ∼=
-⨁
-(X,eX )
-dim HomC(X, Y ) (X, eX ), (8.2)
-where the summation is over the isomorphism classes of simpl e objects in Z1(C).
-Proof. Eq. (8.1) just says that K is a right adjoint of H. That K is also a left adjoint of H
-is proven in the same way. One must also show that the isomorph isms in (8.1) are natural
-w.r.t. ( X, eX ) and Y . We leave this to the reader. For Y = Xi and ( X, eX ) simple, (8.1)
-implies that K(Xi) contains ( X, eX ) with multiplicity dim Hom C(X, Xi). For general Y
-we have
-K(Y ) ∼=
-⨁
-i∈Γ
-dim Hom(Xi, Y )
-⨁
-(X,eX )
-dim HomC(X, Xi) (X, eX ),
-and (8.2) follows by semisimplicity of C. ■
-Remark 8.2 By the general theory [38] there is a dual Frobenius algebra ˆQ = ( ˆQ, . . .)
-in B, where ˆQ = J J. Under the equivalence Z1(C)
-⊗
-≃ B , ˆQ corresponds to
-G(J J) = K(1) ∼=
-⨁
-(X,eX )
-dim HomC(X, 1) (X, eX ). (8.3)
-Thus this object is part of the Frobenius algebra in Z1(C) which establishes the weak
-monoidal Morita equivalence Z1(C) ≈ C ⊠ Cop. K(1) clearly contains the unit ( 1, id) of
-Z1(C) with multiplicity one. The reader might ﬁnd it amusing to id entify explicitly the
-morphisms w, w′ in Z1(C) which come with the canonical Frobenius algebra. ✷
+\label{ss-adj}
+In Section \ref{sec-morita} we proved that the functor $F: \2Z_1(\2C)\rarr\2B$ is fully 
+faithful and essentially surjective. By \cite[Theorem IV.4.1]{cwm} this implies that $F$
+has a two-sided adjoint $G: \2B\rarr\2Z_1(\2C)$. Together with Lemma\ \ref{adj} this implies
+\[ \Hom_\2C(X,Y)\cong\Hom_\2B(F(X,e_X),\oj (Y\boxtimes\11)J)\cong
+   \Hom_{\2Z_1(\2C)}((X,e_X),G(\oj (Y\boxtimes\11)J)), \]
+where $(X,e_X)\in\2Z_1(\2C), Y\in\2C$. With the forgetful functor 
+$H: \2Z_1(\2C)\rarr\2C, (X,e_X)\mapsto X$ this becomes
+\begin{equation}\Hom_\2C(H(X,e_X),Y)\cong \Hom_{\2Z_1(\2C)}((X,e_X),G(\oj (Y\boxtimes\11)J)).
+\label{adjt}\end{equation}
+We thus have  
+\bprop The forgetful functor $H: \2Z_1(\2C)\rarr\2C, (X,e_X)\mapsto X$ has a two-sided
+adjoint $K: \2C\rarr\2Z_1(\2C),\ X\mapsto G(\oj (X\boxtimes\11)J)$. On the objects one has
+\begin{equation}K(Y)\cong \bigoplus_{(X,e_X)} \dim\Hom_\2C(X,Y) \, (X,e_X), 
+\label{kf}\end{equation}
+where the summation is over the isomorphism classes of simple objects in $\2Z_1(\2C)$. 
+\eprop
+\prf Eq.\ (\ref{adjt}) just says that $K$ is a right adjoint of $H$. That $K$ is also a
+left adjoint of $H$ is proven in the same way. One must also show that the isomorphisms in
+(\ref{adjt}) are natural w.r.t.\ $(X,e_X)$ and $Y$. We leave this to the reader. For
+$Y=X_i$ and $(X,e_X)$ simple, (\ref{adjt}) implies that $K(X_i)$ contains $(X,e_X)$ with 
+multiplicity $\dim\Hom_\2C(X,X_i)$. For general $Y$ we have
+\[ K(Y)\cong \bigoplus_{i\in \Gamma} \dim\Hom(X_i,Y) \bigoplus_{(X,e_X)} 
+   \dim\Hom_\2C(X,X_i) \, (X,e_X), \]
+and (\ref{kf}) follows by semisimplicity of $\2C$. \qed
+
+\brem By the general theory \cite{mue09} there is a dual Frobenius algebra 
+$\hat{\5Q}=(\hat{Q},\ldots)$ in $\2B$, where $\hat{Q}=\oj J$. Under the equivalence 
+$\2Z_1(\2C)\stackrel{\otimes}{\simeq}\2B$, $\hat{Q}$ corresponds to
+\begin{equation} G(\oj J)=K(\11)\cong \bigoplus_{(X,e_X)} \dim\Hom_\2C(X,\11) \, (X,e_X).
+\label{k_1}\end{equation}
+Thus this object is part of the Frobenius algebra in $\2Z_1(\2C)$ which establishes the weak
+monoidal Morita equivalence $\2Z_1(\2C)\approx\2C\boxtimes\2C^\op$. $K(\11)$ clearly
+contains the unit $(\11,\id)$ of $\2Z_1(\2C)$ with multiplicity one. The reader might
+find it amusing to identify explicitly the morphisms $w, w'$ in $\2Z_1(\2C)$ which come with
+the canonical Frobenius algebra.
+\erem

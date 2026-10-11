@@ -7,12 +7,13 @@ section_number: 2.1
 pages: 53-67
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.958
-latex_coverage_ratio: 0.748
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 In contrast with $S^n$ and $\matR^n$, the hyperbolic space $\matH^n$ may be described in various different ways, no-one of which is prevalent in the literature. Each description is a \emph{model} for $\matH^n$. We first introduce the hyperboloid model, which has a more algebraic flavour, and then we turn to the disc and half-space models that are somehow more geometric (and easier to visualise in dimensions $n=2$ and $3$).
+
 
 \subsection{Hyperboloid}
 The sphere $S^n$ is the set of all points with norm 1 in $\matR^{n+1}$, equipped with the Euclidean scalar product. Analogously, we may define $\matH^n$ as the set of all points of norm $-1$ in $\matR^{n+1}$, equipped with the usual \emph{Lorentzian} scalar product. This set forms a hyperboloid with two sheets, and we choose one. 
@@ -59,6 +60,7 @@ orthogonal to $x$ in the Lorentzian scalar product. Since $x$ is time-like, the 
 
 The hyperboloid $I^n$ is a model for hyperbolic space $\matH^n$. We will soon prove that it is simply connected, complete, and has constant curvature $-1$. 
 
+
 \subsection{Isometries of the hyperboloid}
 The isometries of $I^n$ are easily classified using linear algebra. 
 
@@ -97,6 +99,7 @@ We have also proved the following fact. A \emph{frame} at a point $p$ in a Riema
 Let $M= S^n$, $\matR^n$, or $\matH^n$. Given two points $p,q \in M$ and two frames at $p$ and $q$, there is a unique isometry that carries the first frame to the second.
 \end{cor}
 
+
 \subsection{Subspaces}
 We introduce the following natural objects. \index{hyperbolic space!subspace of hyperbolic space}
 
@@ -124,6 +127,7 @@ The non-empty intersection of two subspaces is always a subspace. An isometry of
 Let $S$ be a $k$-subspace in $\matR^n, S^n$, or $\matH^n$ and $p\in S$ a point. There is a unique $(n-k)$-subspace $S'$ intersecting $S$ orthogonally in $p$.
 \end{ex}
 
+
 \subsection{Reflections} \label{reflections:subsection}
 We now introduce a basic kind of isometry.
 The \emph{reflection} $r_S$ along a subspace $S$ in $I^n$ is an isometry of $I^n$ defined as follows. By definition $S=I^n \cap W$ with $\langle,\rangle|_W$ non-degenerate, hence $\matR^{n+1} = W \oplus W^\bot$ and we set $r_S|_W = \id$ and $r_S|_{W^\bot} = -\id$.
@@ -141,6 +145,7 @@ Reflections along hyperplanes generate the isometry groups of $S^n$, $\matR^n$, 
 It is a standard linear algebra fact that orthogonal reflections along vector hyperspaces
 generate $O(n)$. This proves the case $S^n$ and shows that reflections generate the stabiliser of any point in $\matR^n$ and $\matH^n$. To conclude it suffices to check that reflections act transitively on points: to send $x$ to $y$, reflect along the hyperplane orthogonal to the segment connecting $x$ to $y$ in its midpoint.
 \end{proof}
+
 
 \subsection{Lines}
 A $1$-subspace is a \emph{line}. We now show that lines and geodesics are the same thing. We recall the hyperbolic trigonometric functions: \index{line}
@@ -193,6 +198,7 @@ Let $p, q\in M$ be two points. We have
 \begin{proof}
 Let $\gamma$ be a geodesic that goes from $p$ to $q$ at unit speed. We have $\gamma(0)=p$ and $\gamma(t)=q$ with $t=d(p,q)$. Set $v=\gamma'(0)$ and use Proposition \ref{lines:prop} to conclude.
 \end{proof}
+
 
 \subsection{The Poincar\'e disc} \label{Poincare:subsection}
 We introduce two models of $\matH^n$, the \emph{disc} and the \emph{half-space}, that are easier to visualise especially in the dimensions $n=2,3$ we are interested in. The first model is the \emph{Poincar\'e disc}\index{$D^n$}
@@ -276,6 +282,7 @@ Three lines in $D^2$ delimiting a hyperbolic triangle are drawn in Figure \ref{T
 \begin{ex} For any triple of positive angles $\alpha,\beta,\gamma$ with $\alpha+\beta+\gamma < \pi$ there is a triangle with inner angles $\alpha,\beta,\gamma$. This triangle is unique up to isometry.
 \end{ex}
 
+
 \subsection{Inversions} \label{inversions:subsection}
 To construct our second conformal model we need to introduce a geometric transformation called inversion. \index{sphere inversion}
 
@@ -321,6 +328,7 @@ for all $i>1$ and $j\neq k$. This proves our assertion.
 
 The fact that an inversion preserves sphere and planes may be easily reduced to the two-dimensional case (with circles and lines), a classical fact of Euclidean geometry.
 \end{proof}
+
 
 \subsection{The half-space model}
 We introduce another conformal model. The \emph{half-space model} is the space
@@ -372,6 +380,7 @@ $$\left( \frac 2 {1-\|x\|^2}\right)^2 \cdot \left(\frac{\|x\|^2+2x_n+1}2\right)^
 The proof is complete.
 \end{proof}
 
+
 \subsection{Geodesics in the conformal models}
 The disc $D^n$ and the half-space $H^n$ are conformal models for $\matH^n$. In both models the hyperbolic metric differs from the Euclidean one only by a multiplication with some function.
 
@@ -402,6 +411,7 @@ $$\exp_0(x) = \frac{e^{\|x\|}-1}{e^{\|x\|}+1}\cdot \frac{x}{\|x\|} = \left(\tanh
 \end{cor}
 
 Since the isometries of $\matH^n$ act transitively on points, we deduce that the exponential map at any $p\in \matH^n$ is a diffeomorphism. As a consequence, the injectivity radius of $\matH^n$ is $\infty$, as in the Euclidean $\matR^n$.
+
 
 \subsection{Isometries of the conformal models}
 In the half-space model it is easy to identify some isometries:
@@ -450,6 +460,7 @@ We know from Proposition \ref{traslazioni:prop} that these maps are isometries o
 In $D^n$ the proof is the same, we leave as an exercise to prove that a sphere inversion preserves the metric tensor and is hence an isometry.
 \end{proof}
 
+
 \subsection{Balls in the conformal models}
 How does a metric ball $B(x_0,r)$ in the hyperbolic space look like? The answer in the conformal models is surprisingly  simple. 
 
@@ -461,6 +472,7 @@ In the disc model $B(0,r)$ is a ball centred at $0$ by symmetry. The ball $B(x_0
 \end{proof}
 
 The centre of the ball is not its Euclidean centre in general!
+
 
 \subsection{The Klein model} \label{Klein;subsection}
 There is a fourth model for the hyperbolic space that is some kind of intermediate version between the hyperboloid and the Poincar\'e disc model.\index{hyperbolic space!Klein model}\index{hyperbolic space!projective model}

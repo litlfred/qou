@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-3
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
-text_source: latex
-latex_prose_ratio: 0.915
-latex_coverage_ratio: 0.982
 doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.995
 ---
 In 1893, Hurwitz proved that a compact Riemann surface $X$ of genus $g \geq 2$ has at most $84(g - 1)$ conformal automorphisms [@hurwitz1893]. This upper bound is now known as the Hurwitz bound, and a Riemann surface attaining this bound is called a Hurwitz surface.
 
@@ -39,12 +39,8 @@ After establishing the multiplicity of an eigenvalue, the subsequent natural que
 To conduct a numerical calculation based on the finite element method, we determine a fundamental domain for the Fuchsian group that uniformizes the Fricke-Macbeath surface using Poincaré's polyhedron theorem [@maskit1971], along with its side-pairing transformations. It is a hyperbolic polygon with 42 sides, which is actually the Dirichlet domain centered at 0. We offer a visualization of this fundamental domain, updating the classic Fricke-Klein illustration [@MR0352287]; see Figures [\[fig:fricke_tess1\]](#fig:fricke_tess1){reference-type="ref" reference="fig:fricke_tess1"} and [1](#fig:fricke_tess2){reference-type="ref" reference="fig:fricke_tess2"} for a comparison. Unlike the case of the Klein quartic in Figure [\[fig:237_klein\]](#fig:237_klein){reference-type="ref" reference="fig:237_klein"}, we find that this polygon is not completely tessellated by the fundamental $(2,3,7)$-triangles. We note that the fundamental domain discussed in  [@MR1511059] differs from ours.
 
 <figure id="fig:fricke_tess2">
-<div class="minipage">
 <img src="fricke_tess1.jpg" />
-</div>
-<div class="minipage">
 <img src="fricke_tess2.png" />
-</div>
 <figcaption>Fundamental domain for the Fricke-Macbeath surface (boundary in thick lines)</figcaption>
 </figure>
 

@@ -163,8 +163,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "sigma11-115.tex",
-   "tex_sections": 3,
-   "overlaid": 2,
+   "tex_sections": 8,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -174,32 +174,36 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.759,
-     "coverage_ratio": 0.896,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.936,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-the-connection-formula",
      "title": "The connection formula",
-     "prose_ratio": 0.193,
+     "prose_ratio": 0.357,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-21-the-theta-function-of-jacobi",
      "title": "The theta function of Jacobi",
-     "result": "no matching \\section"
+     "prose_ratio": 0.218,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-23-the-p-borel-transformation-and-the-p-laplace",
      "title": "The p-Borel transformation and the p-Laplace transformation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.598,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-3-the-limit-of-the-connection-formula",
      "title": "The limit of the connection formula",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.928,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "pandoc"
     },

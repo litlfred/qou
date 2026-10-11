@@ -6,7 +6,8 @@
   "sha256": "6dddaf838a19f0f5c366a60f27b03a782dc04ea8ba2b8e968de0159f01a55b34",
   "bytes": 618020,
   "pages": 68,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -1261,6 +1262,443 @@
   "likely_scanned": false,
   "toc_entries": 76,
   "sections": 69,
-  "chars_total": 211278
+  "chars_total": 211278,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "mwf.tex",
+   "tex_sections": 41,
+   "overlaid": 14,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction-2",
+     "title": "Introduction 2",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-2-preliminaries-basic-de\ufb01nitions-and-conventions",
+     "title": "Preliminaries, basic de\ufb01nitions and conventions 5",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-3-xus-form-and-seifert-surfaces-11",
+     "title": "Xu\u2019s form and Seifert surfaces 11",
+     "prose_ratio": 0.077,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-4-polynomial-invariants-15",
+     "title": "Polynomial invariants 15",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-5-positivity-of-3-braid-links-26",
+     "title": "Positivity of 3-braid links 26",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-6-studying-alternating-links-by-braid-index-38",
+     "title": "Studying alternating links by braid index 38",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-7-applications-of-the-representation-theory-42",
+     "title": "Applications of the representation theory 42",
+     "prose_ratio": 0.722,
+     "coverage_ratio": 0.047,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-007-2-preliminaries-basic-de\ufb01nitions-and-conventions",
+     "title": "Preliminaries, basic de\ufb01nitions and conventions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-21-links-and-link-diagrams",
+     "title": "Links and link diagrams",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-22-polynomial-link-invariants",
+     "title": "Polynomial link invariants",
+     "prose_ratio": 0.465,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-23-semiadequacy-7",
+     "title": "Semiadequacy 7",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-24-braids-and-braid-words",
+     "title": "Braids and braid words",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-25-braid-representations-of-links-9",
+     "title": "Braid representations of links 9",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-26-gau\u00df-sum-invariants",
+     "title": "Gau\u00df sum invariants",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-3-xus-form-and-seifert-surfaces",
+     "title": "Xu\u2019s form and Seifert surfaces",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-31-strongly-quasi-positive-links-among-links-of",
+     "title": "Strongly quasi-positive links among links of braid ind ex 3",
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-32-uniqueness-of-minimal-genus-seifert-surfaces",
+     "title": "Uniqueness of minimal genus Seifert surfaces",
+     "prose_ratio": 0.537,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-1-\u03c31",
+     "title": "(\u03c3\u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-33-fiberedness-13",
+     "title": "Fiberedness 13",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-2-\u03c32\u03c31",
+     "title": "(\u03c32\u03c3\u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-3-if-q-1-resp-\u03c31\u03c32\u03c31",
+     "title": "(if q = 1) resp. \u03c31\u03c32\u03c3\u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-3-if-q-1-which-are-the-\ufb01bers-of",
+     "title": "(if q > 1), which are the \ufb01bers of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-2-if-p-1-or-\u03c31",
+     "title": "(if p = 1) or \u03c3\u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-2-if-p-1-which-are-the-annulus-for-the",
+     "title": "(if p > 1), which are the annulus for the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-41-alexander-polynomial",
+     "title": "Alexander polynomial",
+     "prose_ratio": 0.163,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-025-4-polynomial-invariants",
+     "title": "Polynomial invariants",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-026-42-jones-polynomial-17",
+     "title": "Jones polynomial 17",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-42-jones-polynomial-19",
+     "title": "Jones polynomial 19",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-43-q-polynomial",
+     "title": "Q polynomial",
+     "prose_ratio": 0.326,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-029-43-q-polynomial-21",
+     "title": "Q polynomial 21",
+     "prose_ratio": 0.549,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-030-43-q-polynomial-23",
+     "title": "Q polynomial 23",
+     "prose_ratio": 0.397,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-031-43-q-polynomial-25",
+     "title": "Q polynomial 25",
+     "prose_ratio": 0.318,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-032-5-positivity-of-3-braid-links",
+     "title": "Positivity of 3-braid links",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-033-51-positive-braid-links",
+     "title": "Positive braid links",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-034-511-the-morton-williams-franks-bound",
+     "title": "The Morton-Williams-Franks bound",
+     "prose_ratio": 0.885,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-51-positive-braid-links-27",
+     "title": "Positive braid links 27",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-036-512-maximal-subwords",
+     "title": "Maximal subwords",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-513-the-proof-of-theorem-51-initial-simpli\ufb01catio",
+     "title": "The proof of Theorem 5.1: Initial simpli\ufb01cations",
+     "prose_ratio": 0.533,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-038-51-positive-braid-links-29",
+     "title": "Positive braid links 29",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-039-514-two-mountains",
+     "title": "Two mountains",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-51-positive-braid-links-31",
+     "title": "Positive braid links 31",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-041-515-more-than-two-mountains",
+     "title": "More than two mountains",
+     "prose_ratio": 0.333,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-042-51-positive-braid-links-33",
+     "title": "Positive braid links 33",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-043-52-positive-links-35",
+     "title": "Positive links 35",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-52-positive-links-37",
+     "title": "Positive links 37",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-6-studying-alternating-links-by-braid-index",
+     "title": "Studying alternating links by braid index",
+     "prose_ratio": 0.551,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-046-1-mwf-l-4",
+     "title": "MWF (L) = 4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-7-applications-of-the-representation-theory",
+     "title": "Applications of the representation theory",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-048-71-the-jones-conjecture",
+     "title": "The Jones conjecture",
+     "prose_ratio": 0.296,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-049-71-the-jones-conjecture-43",
+     "title": "The Jones conjecture 43",
+     "prose_ratio": 0.486,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-050-71-the-jones-conjecture-45",
+     "title": "The Jones conjecture 45",
+     "prose_ratio": 0.274,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-051-6-this-was",
+     "title": "This was,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-71-the-jones-conjecture-47",
+     "title": "The Jones conjecture 47",
+     "prose_ratio": 0.352,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-053-72-unitarity-of-the-burau-representation",
+     "title": "Unitarity of the Burau representation",
+     "prose_ratio": 0.176,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-054-72-unitarity-of-the-burau-representation-49",
+     "title": "Unitarity of the Burau representation 49",
+     "prose_ratio": 0.419,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-055-73-norm-estimates",
+     "title": "Norm estimates",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-056-73-norm-estimates-51",
+     "title": "Norm estimates 51",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-057-74-skein-polynomial",
+     "title": "Skein polynomial",
+     "prose_ratio": 0.422,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-058-75-recovering-the-burau-trace-53",
+     "title": "Recovering the Burau trace 53",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-059-751-conditions-on-the-eigenvalues",
+     "title": "Conditions on the eigenvalues",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-060-75-recovering-the-burau-trace-55",
+     "title": "Recovering the Burau trace 55",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-061-27-a2b2-4b3-4a3c-18abc-27c2-62",
+     "title": "(\u2212a2b2 + 4b3 + 4a3c \u2212 18abc + 27c2) .(62)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-062-752-applications-and-examples",
+     "title": "Applications and examples",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-063-76-mahler-measures",
+     "title": "Mahler measures",
+     "prose_ratio": 0.574,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-064-76-mahler-measures-57",
+     "title": "Mahler measures 57",
+     "prose_ratio": 0.618,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-065-762-skein-polynomial-and-generalized-twisting",
+     "title": "Skein polynomial and generalized twisting",
+     "prose_ratio": 0.299,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-066-76-mahler-measures-59",
+     "title": "Mahler measures 59",
+     "prose_ratio": 0.299,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-067-77-knots-with-unsharp-mwf-inequality",
+     "title": "Knots with unsharp MWF inequality",
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-068-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

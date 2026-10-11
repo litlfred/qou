@@ -7,10 +7,10 @@ section_number: 2
 pages: 8-10
 source_pdf: math0505170.pdf
 source_sha256: 0846b74f9c7c55cb
-text_source: latex
-latex_prose_ratio: 0.95
-latex_coverage_ratio: 0.957
 doc_brief: "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS AMNON YEKUTIELI — W e present an averaging process for sections of a torsor unde r a unipotent group."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec2}
 

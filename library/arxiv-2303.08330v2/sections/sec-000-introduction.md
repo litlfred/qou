@@ -7,32 +7,86 @@ section_number: null
 pages: 1-3
 source_pdf: 2303.08330v2.pdf
 source_sha256: 94981fa0a792b3fa
-text_source: latex
-latex_prose_ratio: 0.99
-latex_coverage_ratio: 0.88
 doc_brief: "A Cable Knot and BPS-Series II John Chae — This is a companion paper to earlier work of the author, which genera lizes to an inﬁnite family of (2 , 2w + 1)-cabling of the ﬁgure eight knot ( |w| > 3)"
+text_source: latex
+latex_prose_ratio: 0.713
+latex_coverage_ratio: 1.0
 ---
-Categorification of link invariants has been a fruitful program that has deepened and broadened our understanding of link invariants. Beginning with the advent of the Khovanov homology that categorifies the (colored) Jones polynomials of links [@Kh]([@Kh2]), there has been a series of constructions of other link invariants such as categorification of $sl(N)$ polynomial by $sl(N)$ Khovanov-Rozannsky homology [@KR] and the HOMFLY homology [@KR2] that categorifies the HOMFLY polynomial. Some homological theories have more than one approaches for their computations. For example, in addition to the original matrix factorization formulation of [@KR2], there are braid varieties [@Trinh] and (local) Hilbert scheme of points [@ORS] formulations[^1]. Another notable example is alternative categorification of the colored Jones polynomials as shown in [@BW; @CK]. These examples illustrates multi-faceted character of the link homology theories tied to a variety of perspectives of links in 3-sphere. Inspired by these significant advancement for links, there has been an initiation of a categorification of a (numerical) invariant of closed oriented 3-manifolds called the Witten-Reshitikhin-Turaev (WRT) invariant [@W; @RT1] in [@Kh3; @Q]. Some years ago, a prediction for a categorification of the WRT invariant proposed from mathematical physics [@GPPV]. It predicts a power series invariant of a closed oriented 3-manifold $Y$ often denoted by $\hat{Z} (q)$, which is conjecturally a graded Euler characteristic of a certain triply graded homology group denoted by $\mathcal{H}^{i,j}_{BPS}(Y;b)$ as follows $$\hat{Z}_{b}[Y;q]= \sum_{i,j} (-1)^i\, q^j\, dim\, \mathcal{H}^{i,j}_{BPS}(Y;b)\quad \in\, \frac{1}{2^c}\, q^{\Delta (Y)}\, \mathbb{Z}[[q]],\qquad \Delta \in \mathbb{Q}\qquad c \in \mathbb{Z}_{\geq 0} \qquad |q| < 1.$$ This series invariant was extended to a complement $M^{3}_{K}$ of a knot $K \subset \mathbb{Z}HS^3$ [^2] in[@GM], $$F_{K}(x,q) : = \hat{Z} (M^{3}_{K}; x^{1/2},q)\qquad |q| < 1,$$ which is a two variable series in which $x$ is associated to the relative $Spin^c (M^{3}_{K},T^2)$-structures. This knot invariant $F_K$ takes the form [^3] $$\begin{gather}
+Categorification of link invariants has been a fruitful program that has deepened and broadened our understanding of link invariants. Beginning with the advent of the Khovanov homology that categorifies the (colored) Jones polynomials of links [@Kh]([@Kh2]), there has been a series of constructions of other link invariants such as categorification of $sl(N)$ polynomial by $sl(N)$ Khovanov-Rozannsky homology [@KR] and the HOMFLY homology [@KR2] that categorifies the HOMFLY polynomial. Some homological theories have more than one approaches for their computations. For example, in addition to the original matrix factorization formulation of [@KR2], there are braid varieties [@Trinh] and (local) Hilbert scheme of points [@ORS] formulations[^1]. Another notable example is alternative categorification of the colored Jones polynomials as shown in [@BW; @CK]. These examples illustrates multi-faceted character of the link homology theories tied to a variety of perspectives of links in 3-sphere. Inspired by these significant advancement for links, there has been an initiation of a categorification of a (numerical) invariant of closed oriented 3-manifolds called the Witten-Reshitikhin-Turaev (WRT) invariant [@W; @RT1] in [@Kh3; @Q]. Some years ago, a prediction for a categorification of the WRT invariant proposed from mathematical physics [@GPPV]. It predicts a power series invariant of a closed oriented 3-manifold $Y$ often denoted by $\hat{Z} (q)$, which is conjecturally a graded Euler characteristic of a certain triply graded homology group denoted by $\mathcal{H}^{i,j}_{BPS}(Y;b)$ as follows $$\hat{Z}_{b}[Y;q]= \sum_{i,j} (-1)^i\, q^j\, dim\, \mathcal{H}^{i,j}_{BPS}(Y;b)\quad \in\, \frac{1}{2^c}\, q^{\Delta (Y)}\, \mathbb{Z}[[q]],\qquad \Delta \in \mathbb{Q}\qquad c \in \mathbb{Z}_{\geq 0} \qquad |q| < 1.$$ This series invariant was extended to a complement $M^{3}_{K}$ of a knot $K \subset \mathbb{Z}HS^3$ [^2] in[@GM], $$F_{K}(x,q) : = \hat{Z} (M^{3}_{K}; x^{1/2},q)\qquad |q| < 1,$$ which is a two variable series in which $x$ is associated to the relative $Spin^c (M^{3}_{K},T^2)$-structures. This knot invariant $F_K$ takes the form [^3] $$\begin{gathered}
 F_K(x,q)= \frac{1}{2} \sum_{\substack{m \geq 1 \\ m \ \text{odd}}}^{\infty} f_{m}(q) \big(x^{m/2}-x^{-m/2}\big) \in \frac{1}{2^{c}} q^{\Delta} \mathbb{Z}\big[x^{\pm 1/2}\big]\big[\big[q^{\pm 1}\big]\big],
-\end{gather}$$ where $f_{m}(q)$ are Laurent series with integer coefficients[^4], $c \in \mathbb{Z}_{\geq 0}$ and $\Delta \in \mathbb{Q}$. A curious feature of $F_K$ invariant is that it seems to have similar properties as that of the colored Jones polynomial. For example, it is conjectured to satisfy the Melvin--Morton--Rozansky theorem [@MM; @R; @R2] (proven in [@BG]):
+\end{gathered}$$ where $f_{m}(q)$ are Laurent series with integer coefficients[^4], $c \in \mathbb{Z}_{\geq 0}$ and $\Delta \in \mathbb{Q}$. A curious feature of $F_K$ invariant is that it seems to have similar properties as that of the colored Jones polynomial. For example, it is conjectured to satisfy the Melvin--Morton--Rozansky theorem [@MM; @R; @R2] (proven in [@BG]):
 
 ::: conjecture
-[]{#conjecture3 label="conjecture3"} For a knot $K \subset$ $\mathbb{Z}HS^3$, the asymptotic expansion of the knot invariant $F_{K}\big(x,q={\rm e}^{\hbar}\big)$ about $\hbar =0$ coincides with the Melvin--Morton--Rozansky (MMR) expansion of the colored Jones polynomial in the large color limit: $$\begin{gather}
+[]{#conjecture3 label="conjecture3"} For a knot $K \subset$ $\mathbb{Z}HS^3$, the asymptotic expansion of the knot invariant $F_{K}\big(x,q={\rm e}^{\hbar}\big)$ about $\hbar =0$ coincides with the Melvin--Morton--Rozansky (MMR) expansion of the colored Jones polynomial in the large color limit: $$\begin{gathered}
 \frac{F_{K}\big(x,q={\rm e}^{\hbar}\big)}{x^{1/2}-x^{-1/2}} = \sum_{r=0}^{\infty} \frac{P_{r}(x)}{\Delta_K(x)^{2r+1}}\hbar^r,
-\end{gather}$$ where $x=e^{n\hbar}$ is fixed, n is the color of $K$, $P_{r}(x) \in \mathbb{Q} \big[x^{\pm 1}\big]$, $P_{0}(x)=1$ and $\Delta_K (x)$ is the (symmetrized) Alexander polynomial of $K$.
+\end{gathered}$$ where $x=e^{n\hbar}$ is fixed, n is the color of $K$, $P_{r}(x) \in \mathbb{Q} \big[x^{\pm 1}\big]$, $P_{0}(x)=1$ and $\Delta_K (x)$ is the (symmetrized) Alexander polynomial of $K$.
 :::
 
 This property was proven for a wide class link in [@P]. Additionally, it possesses the q-holonomic property similar to that of the color Jones polynomials [@GL]:
 
 ::: conjecture
-For any knot $K \subset$ $\mathbb{Z}HS^3$, the normalized series $f_{K}(x,q)$ satisfies a linear recursion relation generated by the quantum A-polynomial $\hat{A}_K(q,\hat{x},\hat{y})$ of $K$ : $$\begin{gather}
+For any knot $K \subset$ $\mathbb{Z}HS^3$, the normalized series $f_{K}(x,q)$ satisfies a linear recursion relation generated by the quantum A-polynomial $\hat{A}_K(q,\hat{x},\hat{y})$ of $K$ : $$\begin{gathered}
 \hat{A}_{K}(q, \hat{x},\hat{y}) f_{K}(x,q) = 0,
-\end{gather}$$ where $f_{K}:=F_{K}(x,q)/\big(x^{1/2}-x^{-1/2}\big)$.
+\end{gathered}$$ where $f_{K}:=F_{K}(x,q)/\big(x^{1/2}-x^{-1/2}\big)$.
 :::
 
-The actions of $\hat{x}$ and $\hat{y}$ are $$\hat{x} f_{K}(x,q)= x f_{K}(x,q) \qquad \hat{y}f_{K}(x,q)= f_{K}(xq,q).$$\
+The actions of $\hat{x}$ and $\hat{y}$ are $$\hat{x} f_{K}(x,q)= x f_{K}(x,q) \qquad \hat{y}f_{K}(x,q)= f_{K}(xq,q).$$
 
-In [@C], $F_K (x,q)$ was computed for a cable knot of the figure eight knot $K=C_{9,2}(4_1)$ in $\mathbb{Z}HS^3$. Most importantly, a relation between $F_K (x,q)$ and $F_{4_1} (x,q)$ was found. In this paper, we generalize the relation to $(2w+1, 2)$ for $w>3$ and $(3w+1, 3)$ for $w>3$. To the best of the author's knowledge, the recursion method is the only available method to date for a computation of $F_K (x,q)$ for the cablings of the figure eight knot. The R-matrix formulation of $F_K (x,q)$ in [@P2] applies to certain classes for braids and hence links. Although they are broad, the cables of the figure eight considered in this paper may or may not fall into those classes. In any case, we propose a general formula for $F_K (x,q)$ for the above mentioned cablings of the figure eight knot.\
+In [@C], $F_K (x,q)$ was computed for a cable knot of the figure eight knot $K=C_{9,2}(4_1)$ in $\mathbb{Z}HS^3$. Most importantly, a relation between $F_K (x,q)$ and $F_{4_1} (x,q)$ was found. In this paper, we generalize the relation to $(2w+1, 2)$ for $w>3$ and $(3w+1, 3)$ for $w>3$. To the best of the author's knowledge, the recursion method is the only available method to date for a computation of $F_K (x,q)$ for the cablings of the figure eight knot. The R-matrix formulation of $F_K (x,q)$ in [@P2] applies to certain classes for braids and hence links. Although they are broad, the cables of the figure eight considered in this paper may or may not fall into those classes. In any case, we propose a general formula for $F_K (x,q)$ for the above mentioned cablings of the figure eight knot.
+
+# $(2w+1,2)$-cables  $(w>3)$
+
+The quantum (or noncommutative) A-polynomial of a class of cable knot $K_r = C_{(r,2)}(\bm{4_1})$ in $S^3$ having minimal L-degree is given by [@Ru; @Tran] $$\hat{A}_{K} (t,M,L)=(L-1)B(t,M)^{-1}Q(t,M,L) \left(M^r L + t^{-2r}M^{-r} \right)\in \tilde{\mathcal{A}}_{K},\quad gcd(r,2)=1, \quad |r| > 8$$ The definitions of $Q(t,M,L)$ and $B(t,M)$ are written in Appendix A. Applying (4) to $f_K(x,q)$ together with $x=q^n$ yields $$\alpha (x,q)F_{K_r}(x,q) + \beta (x,q)F_{K_r}(xq,q)+ \gamma (x,q)F_{K_r}(xq^2,q) + \delta (x,q) F_{K_r}(xq^3,q) + F_{K_r}(xq^4,q)=0,$$ where $\alpha ,\beta ,\gamma , \delta$ are rational functions. We propose the following formula for initial conditions needed for (5) in terms of the coefficient functions $\left\{h_s (q) \right\}$ of $F_{\bm{4_1}}(x,q)$. They provide insights into the cabling operation for $F_K (x,q)$ and exhibit simple patterns, which enable us to obtain the complete set of the initial conditions $\left\{f_m (q) \right\}$ for any value of $r$. We verify the initial conditions through explicit examples (see Section 3) and find that the patterns persist to $f_s (q)$ that are beyond the initial conditions. This provides a strong evidence that we can obtain $F_{C_{(r,2)}(\bm{4_1})} (x,q)$ to any desired order in $x^{\pm 1/2}$ efficiently without resorting to the laborious recursion method.
+
+We state the nonzero initial conditions needed for (5) in the case of $r=2w+1,\, w>3$, which covers the most of the positive subspace of the cabling parameter space (see below for the negative case).
+
+::: conjecture
+For a $(2w+1,2)$-cabling of $\bm{4_1}\, (w > 3)$ in $\mathbb{Z}HS^3$, nonzero initial data $\left\{f_m (q) \in \mathbb{Z}[q^{\pm 1}] \right\}= \left\{f^{+}_i (q)  |\, \text{all coefficients are positive} \right\}\bigsqcup \left\{f^{-}_j (q) |\, \text{all coefficients are negative}  \right\}$ for (5) are determined by the coefficient functions $\left\{h_s (q) \right\}$ of $F_{\bm{4_1}}(x,q)$ as follows. $$\begin{aligned}
+f^{+}_{2w+3} (q) & = 2\,  h_1 (q)\, q^n \qquad ( h_1 (q)=1)\\
+f^{+}_{2w+7} (q) & = 2\, h_3 (q)\, q^{n+1}  \qquad ( h_3 (q)=2)\\
+f^{+}_{2w+11} (q) & = 2\, h_5 (q)\, q^{n+2}\\
+&\vdots\\
+f^{+}_{10w+7} (q) & = 2\, \left(h_{ 4w+3} (q)\, q^{n+2w+1 } + h_1 (q) \, q^{n +2w+1 +  \Delta}  \right)\\
+f^{+}_{10w+11} (q) & = 2\, \left(h_{ 4w+5 } (q)\, q^{n+ 2w+2 } + h_3 (q) \, q^{n + 2w+6  + \Delta }  \right)\\ 
+f^{+}_{10w+15} (q) & = 2\, \left(h_{ 4w+7 } (q)\, q^{n+  2w+3} + h_5 (q) \, q^{n + 2w+11  + \Delta }  \right)\\
+&\vdots\\
+f^{+}_{18w+11} (q) & = 2\, \left(h_{ 8w+5 } (q)\, q^{n+ 4w+2} + h_{4w+3 } (q) \, q^{n + 12w+6 +  \Delta }  + h_1 (q) \, q^{n + 12w+6 + 2\Delta }  \right)\\
+f^{+}_{18w+15} (q) & = 2\, \left(h_{8w+7} (q)\, q^{n+ 4w+3 } + h_{4w+5} (q) \, q^{n +12w+11 +  \Delta }  + h_3 (q)\, q^{n + 12w+15 + 2\Delta }  \right)\\
+&\vdots\\
+f^{-}_{6w+5} (q) & = -2\,  h_1 (q)\, q^{3n} \\
+f^{-}_{6w+9} (q) & = -2\, h_3 (q)\, q^{3n+3}  \\
+f^{-}_{6w+13} (q) & = -2\, h_5 (q)\, q^{3n+6}\\
+&\vdots\\
+f^{-}_{14w+9} (q) & = -2 \left(h_{4w+3}(q) \, q^{3n+ 6w+3} + h_1 (q) \, q^{3n+ 6w+3 + \Delta} \right)\\
+f^{-}_{14w+13} (q) & = -2 \left(h_{4w+5}(q) \, q^{3n+6w+6 } + h_3 (q) \, q^{3n+ 6w+10 + \Delta} \right)\\
+&\vdots\\
+\end{aligned}$$ where $n \in \mathbb{Z}$ and $\Delta =4w+4$.
+:::
+
+We state observations about the above formulas.\
+**Remark 1** Since the order of the $\left\{f_m (q) \right\}$ is finite, the above sequence terminates for a fixed $w$.\
+**Remark 2** $n$ can be found straightforwardly from the $\hbar$ series of $F_{C_{(r,2)}(\bm{4_1})}(x,q)$. We propose a formula for $n$ below.\
+**Remark 3** A power of each $q$-monomial increases by multiples for a positive integer from $f^{\pm}_{m}$ to $f^{\pm}_{m+4}$.\
+**Remark 4** Coefficient functions $\left\{f_d (q) \right\}$ that do not fit into the above pattern vanish.\
+**Remark 5** $h_1 (q) q^{s}$ is added when $h_{4w+3}$ appears in $f^{\pm }_{b}(q)$ for any $b$.\
+
+::: conjecture
+For the above family of knots, the power $n \in \mathbb{Z}$ in Conjecture 2.1 is given by $w+1$.
+:::
+
+Since the above $f_m(q)$ are polynomials rather than series, we have the following consequence for the mirror knot $m(K)$.
+
+::: cor
+For a $(2w+1,2)$-cabling of $\bm{4_1}$ where $w < -3$, its nonzero initial data $\left\{f_m (q) \right\}= \left\{f^{+}_i (q) \right\}\bigsqcup \left\{f^{-}_j (q) \right\}$ for a recursion relation are given by $q \longleftrightarrow q^{-1}$ in Conjecture 2.1.
+:::
+
+We state that the patterns in Conjecture 2.1 holds for all nonzero $f_m (q)$.
+
+::: conjecture
+For the family of the cable knots $K_w =C_{(2w+1,2)}(\bm{4_1})$ in $\mathbb{Z}HS^3$ for $w>3$, all of their coefficient functions $f^{\pm}_m (q) \in \mathbb{Z}[q^{\pm 1}]$ of $F_{K_w}(x,q)$ can be expressed as linear combinations of the coefficient functions $\left\{h_s (q) \right\}$ of $F_{\bm{4_1}}(x,q)$ following the pattern in Conjecture 2.1.
+:::
+
+We next verify Conjecture 2.1 and 2.4 for some examples.
 
 [^1]: These other approaches only apply to particular classes of links.
 

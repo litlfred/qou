@@ -8,109 +8,34 @@ pages: 3-4
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
 doc_brief: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant — Previous work of the author and N."
+text_source: latex
+latex_prose_ratio: 0.86
+latex_coverage_ratio: 0.558
 ---
-LetK be an oriented, framed knot inS3 andρ a decorated representation ofK, which is a
-representationρ: π1(S3\K)→ SL2(C) along with a choice of eigenspace for the image of
-theperipheralsubgroupunder ρ. Inparticularthischoicedistinguishesaneigenvalue mofthe
-meridians ofK. A log-meridian is a complex numberµ withe2πiµ = m. The main result of
-[McP25a]isthedeﬁnitionofasequenceofinvariants 2
-Zψ
-N(K,ρ,µ )∈ C
-forintegers N≥ 2. Wecanviewthemasaquantizationofthe SL2(C)Chern-Simonsinvariant,
-as a geometric twist of the Kashaev [Kas95] and ADO [ADO92] invariants, or as a candidate
-mathematicalrealizationof SL2(C)Chern-Simonstheory. Theconstructionmakessense(andour
-resultsdotoo)forlinksandtanglesaswellbutforsimplicitywerestricttothecaseofknots.
-LetD be an open knot diagram ofK (i.e a1-1 tangle diagram whose closure isK). LetE
-be the set of internal segments (edges) ofD. Using quantum dilogarithms we deﬁne anaction
-SN(D,µ ) : CE→ Csothat
-t7→eNSN(D,µ|t) : CE→ C
-is a meromorphic function. Given the choice of some additional gauge datau called ashadow
-coloringtheinvariantof[McP25a]isbydeﬁnitionastatesum
-Zψ
-N(K,ρ,µ ) = 1
-Ncr(D)
-X
-n∈[N]E
-eNSN(D,µ|(β+n)/N)
-where [N] ={0, 1,...,N − 1} and cr(D) is the crossing number ofD. The vectorβ∈ CE
-encodes (ρ,u ). Foravector k∈ ZE withintegerentries 3 astate integralis
-(1.2) JN(D,µ,β|k) :=
-Z
-[0,1]E
-exp[N(SN(D,µ|β/N +t)− 2πik·t)] dt
-InSection3weprove(Theorem1)that Zψ
-N isgivenbythesumoverallstateintegrals:
-(1.3) Zψ
-N(K,ρ,µ ) =N(|E|−1)/2 X
-k∈ZE
-JN(D,µ,β|k)
-1. Introduction 3
-[McP25b]C.McPhail-Snyder,“Octahedralco-
-ordinates from the Wirtinger presentation”.
-arXiv doi
-[Yok00]Y.Yokota, On the volume conjecture for
-hyperbolic knots. arXiv
-[BB04] S. Baseilhac and R. Benedetti, “Quan-
-tumhyperbolicinvariantsof3-manifoldswith
-PSL(2,C)-characters”. arXivdoi
-[BWY21] F. Bonahon, H. Wong, and T. Yang,
-Asymptotics of quantum invariants of surface dif-
-feomorphisms I: conjecture and algebraic compu-
-tations. arXiv
-[KR05]R.KashaevandN.Reshetikhin,“Invari-
-ants of tangles with ﬂat connections in their
-complements”. arXivdoi
-[AK14]J.E.AndersenandR.Kashaev,“ATQFT
-fromquantumTeichmüllertheory”. arXiv doi
-[AK13] J. E. Andersen and R. Kashaev,A new
-formulation of the Teichmüller TQFT.arXiv
-[Liu+25]T.Liu,S.Ming,X.Sun,B.Wu,andT.
-Yang,Turaev-Viro invariant from the modular
-double ofUqsl(2; R). arXiv
-[Kas99]R.M.Kashaev,“Liouvillecentralcharge
-inquantumTeichmüllertheory”. arXiv
-[FG09] V. V. Fock and A. B. Goncharov, “The
-quantum dilogarithm and representations of
-quantumclustervarieties”. arXiv doi
-[Ish26]T.Ishibashi, Cyclic quantum Teichmüller
-theory. arXiv
-[Oht17]T.Ohtsuki,“Ontheasymptoticexpan-
-sions of the Kashaev invariant of hyperbolic
-knotswithsevencrossings”. doi
-[OY18] T. Ohtsuki and Y. Yokota, “On the
-asymptoticexpansionsoftheKashaevinvariant
-oftheknotswith6crossings”. doi
-[CZ23]Q.ChenandS.Zhu, On the asymptotic
-expansions of various quantum invariants II: the
-colored Jones polynomial of twist knots at the root
-of unitye
-2π√−1
-N + 1
-M ande
-2π√−1
-N . arXiv
-[AGP23]F.B.Aribi,F.Guéritaud,andE.Piguet-
-Nakazawa,“Geometrictriangulationsandthe
-TeichmüllerTQFTvolumeconjecturefortwist
-knots”. arXivdoi
-[AW24] F. B. Aribi and K. H. Wong, The
-Andersen-KashaevvolumeconjectureforFAMED
-geometric triangulations. arXiv
-[AGW25] F. B. Aribi, A. Guilloux, and K. H.
-Wong, FAMED by computer: proving the
-Andersen-Kashaev volume conjecture for 42,000
-knots. arXiv
-[Won25]K.H.Wong, Asymptotics aspects of Te-
-ichmüller TQFT for generalized FAMED semi-
-geometric triangulations. arXiv
-Themaintechnicaldiﬃcultyisensuringthecontourofintegrationavoidsthepolesof eNSN(D,µ).
-WediscusstherequiredalgebraicconditioninSection2.2. Oncethisishandledusingthemethods
-of[McP25b]re-writingthesumintermsoftheintegralsisanelementaryapplicationofFourier
-series. Inparticulartheconvergenceoftheinﬁnitesumisautomatic.
-AsN→∞ thefunctionsSN(D,µ )toafunction S(D)thatweinterpretastheChern-Simons
-action. IntheliteratureS(D)isfrequentlycalledthe (Yokota)potentialfunction [Yok00]anddenoted
-V. The critical points ofSN(D) are boundary-parabolic representations ofK and the critical
-valuesaretheirChern-Simonsinvariants. AssuchTheorem1accomplishesStep1towardsproving
-avolumeconjecturefor Zψ
-N. Westatethisprecisely,explainhowthesumover ZE isnatural,and
-discussbarrierstoStep2inSection4.
+[]{#sec:Our results label="sec:Our results"}
+
+Let $K$ be an oriented, framed knot in $S^{3}$ and $\rho$ a decorated representation of $K$, which is a representation $\rho \colon
+\pi_{1}(\comp{K}) \to \slg$ along with a choice of eigenspace for the image of the peripheral subgroup under $\rho$. In particular this choice distinguishes an eigenvalue $m$ of the meridians of $K$. A is a complex number $\mu$ with $e^{\tu \mu} = m$. The main result of [@McPhailSnyderVolume] is the definition of a sequence of invariants $$\qinv{K, \rho, \mu} \in \mathbb{C}$$ for integers $N\ge 2$. We can view them as a quantization of the $\slg$ Chern-Simons invariant, as a geometric twist of the Kashaev [@Kashaev1995] and ADO [@Akutsu1992] invariants, or as a candidate mathematical realization of $\slg$ Chern-Simons theory. The construction makes sense (and our results do too) for links and tangles as well but for simplicity we restrict to the case of knots.
+
+Let $D$ be an open knot diagram of $K$ (i.ea $1$-$1$ tangle diagram whose closure is $K$). Let $E$ be the set of internal segments (edges) of $D$. Using quantum dilogarithms we define an $\actq{D,
+\mu}{} \colon \mathbb{C}^{E} \to \mathbb{C}$ so that $$t \mapsto e^{ N\actq{D, \mu}{t} } \colon  \mathbb{C}^{E} \to \mathbb{C}$$ is a meromorphic function. Given the choice of some additional gauge data $u$ called a the invariant of [@McPhailSnyderVolume] is by definition a state sum $$\qinv{K, \rho, \mu}
+  =
+  \frac{1}{N^{\operatorname{cr}(D)}}
+  \sum_{n \in \nset{N}^{E}}
+  e^{ N\actq{D, \mu}{(\beta + n)/N} }$$ where $\nset{N} = \left\{ \def\given{\ \middle| \ }  0, 1, \dots, N- 1 \right\}$ and $\operatorname{cr}(D)$ is the crossing number of $D$. The vector $\beta \in \mathbb{C}^{E}$ encodes $(\rho, u)$. For a vector $k \in \mathbb{Z}^{E}$ with integer entries a is $$\label{eq:state integral intro}
+  \stint{D, \mu, \beta}{k}
+  \mathrel{:=}
+  \int_{[0,1]^{E}}
+  \exp \mathopen{}\left[ N( \actq{D, \mu}{\beta/N+ t} - \tu k \cdot t )
+  \right]
+  \dif t$$ In [\[sec:State integrals big\]](#sec:State integrals big){reference-type="ref" reference="sec:State integrals big"} we prove ([\[main result\]](#main result){reference-type="ref" reference="main result"}) that $\qinv{}$ is given by the sum over all state integrals: $$\label{eq:state integral sum intro}
+  \qinv{K, \rho, \mu}
+  =
+  N^{(|E| - 1)/2}
+  \sum_{k \in \mathbb{Z}^{E}}
+  \stint{D, \mu, \beta}{k}$$ The main technical difficulty is ensuring the contour of integration avoids the poles of $e^{N\actq{D, \mu}{}}$. We discuss the required algebraic condition in [\[sec:Gauge
+transformations and admissibility\]](#sec:Gauge
+transformations and admissibility){reference-type="ref" reference="sec:Gauge
+transformations and admissibility"}. Once this is handled using the methods of [@McphailSnyder2024octahedralcoordinateswirtingerpresentation] re-writing the sum in terms of the integrals is an elementary application of Fourier series. In particular the convergence of the infinite sum is automatic.
+
+As $N\to \infty$ the functions $\actq{D , \mu}{}$ to a function $\act{D}{}$ that we interpret as the Chern-Simons action. In the literature $\act{D}{}$ is frequently called the [@arXiv:math/0009165] and denoted $V$. The critical points of $\actq{D}{}$ are boundary-parabolic representations of $K$ and the critical values are their Chern-Simons invariants. As such [\[main result\]](#main result){reference-type="ref" reference="main result"} accomplishes [\[step 1\]](#step 1){reference-type="ref" reference="step 1"} towards proving a volume conjecture for $\qinv{}$. We state this precisely, explain how the sum over $\mathbb{Z}^{E}$ is natural, and discuss barriers to [\[step 2\]](#step 2){reference-type="ref" reference="step 2"} in [\[sec:Formal asymptotics\]](#sec:Formal asymptotics){reference-type="ref" reference="sec:Formal asymptotics"}.

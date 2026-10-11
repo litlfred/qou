@@ -8,69 +8,83 @@ pages: 15-16
 source_pdf: 1202.4698.pdf
 source_sha256: 54171c652161ca5b
 doc_brief: "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as"
+text_source: latex
+latex_prose_ratio: 0.982
+latex_coverage_ratio: 0.942
 ---
-The transition between any pair of representationsπσ1 andπσ2 can be represented as an integral
-transformation of the form
-ψσ1(lσ1) =
-∫
-dlσ2 Aσ1σ2
-L (lσ1,l σ2)ψσ2(lσ2). (5.10)
-The relations (
-πs(kt)ψs
-)
-(ls) = 4 πb2
-∫
-dltAst
-L (ls,l t) 1
-i
-∂
-∂lt
-ψt(lt),
-4πb2 1
-i
-∂
-∂ls
-ψs(ls) =
-∫
-dltAst
-L (ls,l t)
-(
-πt(ks)ψt
-)
-(lt),
-(5.11)
-describing the quantum change of Darboux coordinates are direct consequences.
-It is important to note that the problem to ﬁnd the proper quan tum representation of the
-generatorsπσ(Lσ′) is essentially equivalent to the problem to ﬁnd the kernels Aσ1σ2
-L (lσ1,l σ2) in
-(5.10). Indeed, the requirement thatπσ(Lσ) ≡ 2 cosh(lσ)/2 implies difference equations for the
-kernelAσ1σ2
-L (lσ1,l σ2) such as
-πσ1(Lσ2) ·Aσ1σ2
-L (lσ1,l σ2) = 2 cosh( lσ2/2)Aσ1σ2
-L (lσ1,l σ2). (5.12)
-The difference operator on the left is of course understood to act on the variablelσ1 only. Under
-certain natural conditions one may show that the difference equations (5.12) determine the
-kernels Aσ1σ2
-L (lσ1,l σ2) uniquely. Conversely, knowing Aσ1σ2
-L (lσ1,l σ2), one may show [TeVa]
-that it satisﬁes relations of the form (5.12), and thereby deduce the explicit form ofπσ1(Lσ2).
-Considering the generalization to Riemann spheresC0,n with more than four holes it is natural
-to demand that the full theory can be built in a uniform mannerfrom the local pieces associated
-16
-to the four-holed spheres that appear in a pants decompositi on of C0,n. This leads to severe
-restrictions on the kernelsAst
-L (ls,l t) known as the pentagon- and hexagon equations [T05]. We
-claim that the resulting constraints determine Ast
-L (ls,l t) essentially uniquely up to changes of
-the normalization associated to pairs of pants.
-Solutions of these conditions are clearly given by the b- 6j-symbols. It is important to note,
-however, that a change of normalization of the form (2.18) will be equivalent to a gauge trans-
-formation (5.8). This means that different normalizations of the b-6j symbols are in one-to-one
-correspondence with choices of Darboux-coordinates (l′
-σ,k ′
-σ) obtained from (lσ,k σ) by canon-
-ical transformations of the forml′
-σ =lσ,k′
-σ =kσ +f (lσ). Only a very particular normalization
-for the b-6j symbols can correspond to the quantization of the Fenchel-Nielsen coordinates.
+The transition between any pair of representations 
+$\pi_{\si_1}$  and $\pi_{\si_2}$
+can be represented as
+an integral transformation of the form
+\begin{equation}\label{duality}
+\psi_{\si_1}(l_{\si_1})\,=\,\int dl_{\si_2}\;A^{\si_1\si_2}_L(l_{\si_1},
+l_{\si_2})
+\,\psi_{\si_2}(l_{\si_2})\,.
+\end{equation}
+The relations
+\begin{equation}\label{duality'}
+\begin{aligned}
+& \big(\pi_s(\sk_t)\psi_{s}\big)(l_{s})\,=\,4\pi b^2
+  \int dl_{t}\;A^{st}_L(l_{s},l_{t})
+\,\frac{1}{\textup{i}}\frac{\pa}{\pa l_t}\psi_{t}(l_{t})\,,\\
+& 4\pi b^2\frac{1}{\textup{i}}\frac{\pa}{\pa l_s}
+\psi_{s}(l_{s})\,=\,\int dl_{t}\;A^{st}_L(l_{s},
+l_{t})
+\,\big(\pi_t(\sk_s)\psi_{t}\big)(l_{t})\,,
+\end{aligned}
+\end{equation}
+describing
+the quantum change of Darboux coordinates
+are direct consequences. 
+
+
+
+It is important to note that the problem to  find the 
+proper quantum representation of the generators
+$\pi_\si(\CL_{\si'})$ is essentially equivalent to the problem
+to find the kernels $A^{\si_1\si_2}_L(l_{\si_1},
+l_{\si_2})$ in \rf{duality}.
+Indeed, the requirement that
+$\pi_\si(\CL_\si)\equiv 2\cosh(\sll_\si)/2$ implies
+difference equations for the kernel $A^{\si_1\si_2}_L(l_{\si_1},
+l_{\si_2})$ such as
+\begin{equation}\label{Loopduality}
+\pi_{\si_1}(\CL_{\si_2})\cdot A^{\si_1\si_2}_L(l_{\si_1},
+l_{\si_2})\,=\,2\cosh(l_{\si_2}/2)\,
+A^{\si_1\si_2}_L(l_{\si_1},l_{\si_2})\,.
+\end{equation}
+The difference operator on the left is of course understood
+to act on the variable $l_{\si_1}$ only. 
+Under certain natural conditions one may
+show that the difference equations \rf{Loopduality} 
+determine the
+kernels $A^{\si_1\si_2}_L(l_{\si_1},l_{\si_2})$
+uniquely. Conversely, knowing $A^{\si_1\si_2}_L(l_{\si_1},l_{\si_2})$,
+one may show \cite{TV} that it satisfies relations of the 
+form \rf{Loopduality}, and thereby deduce the explicit form of 
+$\pi_{\si_1}(\CL_{\si_2})$. 
+
+Considering the generalization to Riemann spheres $C_{0,n}$ 
+with more than 
+four holes it is natural to demand that the full theory can be 
+built in a uniform manner
+from the local pieces associated to the four-holed spheres 
+that appear in a pants decomposition of $C_{0,n}$. This leads to 
+severe restrictions on the kernels $A^{st}_L(l_{s},l_{t})$ 
+known as the pentagon- and hexagon equations \cite{T05}. We claim 
+that the resulting constraints determine $A^{st}_L(l_{s},l_{t})$ 
+essentially uniquely up to changes of the normalization associated to 
+pairs of pants.
+
+Solutions of these conditions are clearly given by 
+the b-$6j$-symbols. It is important to note, however, that a
+change of normalization of the form \rf{norm} will be equivalent to
+a gauge transformation \rf{gauge}. This means that 
+different normalizations of the b-$6j$ symbols are 
+in one-to-one correspondence with choices of Darboux-coordinates 
+$(l_\si',k_\si')$
+obtained from $(l_\si,k_\si)$ by  
+canonical transformations of the form $l_\si'=l_\si$, 
+$k_\si'=k_\si+f(l_\si)$. Only a very particular normalization
+for the b-$6j$ symbols can correspond to the quantization of 
+the Fenchel-Nielsen coordinates.

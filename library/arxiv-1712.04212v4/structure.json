@@ -183,7 +183,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "input.tex",
-   "tex_sections": 7,
+   "tex_sections": 31,
    "overlaid": 7,
    "thresholds": {
     "title": 0.85,
@@ -194,56 +194,56 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.917,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.918,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-invariants",
      "title": "Invariants",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.866,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-4-dirichlet-eigenvalues",
      "title": "Dirichlet eigenvalues",
-     "prose_ratio": 0.89,
-     "coverage_ratio": 0.917,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-5-finite-dimensional-comparisons",
      "title": "Finite dimensional comparisons",
-     "prose_ratio": 0.896,
-     "coverage_ratio": 0.867,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-6-infinite-dimensional-comparisons",
      "title": "Infinite dimensional comparisons",
-     "prose_ratio": 0.894,
-     "coverage_ratio": 0.922,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-7-boundary-concentration-phenomena",
      "title": "Boundary concentration phenomena",
-     "prose_ratio": 0.906,
-     "coverage_ratio": 0.884,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

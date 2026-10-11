@@ -7,10 +7,10 @@ section_number: 5
 pages: 46-50
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
-text_source: latex
-latex_prose_ratio: 0.61
-latex_coverage_ratio: 0.967
 doc_brief: "3-Manifolds and 3d Indices — We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories."
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.611
 ---
 []{#sec:3d4d label="sec:3d4d"}
 
@@ -44,142 +44,16 @@ After the state-operator map, we get a simple setup (see Figure [\[S3\]](#S3){re
 
 A closely related setup --- that one can consider in parallel --- comprises the four-dimensional theory on $S^1 \times S^3$, with a duality wall at the "equator" $S^1 \times S^2$, and with line operators supported on $S^1 \times p_*$, where $p_* \in \mathcal{G}$ is a point on the circle $\mathcal{G}\cong S^1$ that is fixed by $U(1)_E$. In Figure [\[S3\]](#S3){reference-type="ref" reference="S3"}, this corresponds to considering the full figure, not just the upper half of it.
 
-To make this a little bit more explicit, in either case, we can realize $S^3$ as a unit sphere in a 4-dimensional Euclidean space ${\mathbb R}^4$ parametrized by the coordinates $x_i$, $i=1, \ldots, 4$, $$\begin{equation}
-S^3 ~: \qquad x_1^2 + x_2^2 + x_3^2 + x_4^2 = 1 \,.
-\end{equation}$$ The rotation symmetry $SO(4) \cong SU(2)_1 \times SU(2)_2$ has various subgroups that leave invariant different submanifolds in $S^3$. For example, the diagonal subgroup $SU(2)_E \subset SU(1)_1 \times SU(2)_2$ acts as a rotation symmetry of the plane ${\mathbb R}^3 \subset {\mathbb R}^4$ parametrized by $(x_1,x_2,x_3)$ or, equivalently, as a rotation symmetry of the "equator\" $S^2 \subset S^3$. Therefore, this symmetry is relevant for describing the angular momentum in the 3d theory on $S^1 \times S^2$. Note that the only fixed points of the rotation symmetry $SU(2)_E$ are the North pole ($x_1 = x_2 = x_3 = 0$, $x_4 = 1$) and the South pole ($x_1 = x_2 = x_3 = 0$, $x_4 = -1$) of the $S^3$.
+To make this a little bit more explicit, in either case, we can realize $S^3$ as a unit sphere in a 4-dimensional Euclidean space ${\mathbb R}^4$ parametrized by the coordinates $x_i$, $i=1, \ldots, 4$, $$S^3 ~: \qquad x_1^2 + x_2^2 + x_3^2 + x_4^2 = 1 \,.$$ The rotation symmetry $SO(4) \cong SU(2)_1 \times SU(2)_2$ has various subgroups that leave invariant different submanifolds in $S^3$. For example, the diagonal subgroup $SU(2)_E \subset SU(1)_1 \times SU(2)_2$ acts as a rotation symmetry of the plane ${\mathbb R}^3 \subset {\mathbb R}^4$ parametrized by $(x_1,x_2,x_3)$ or, equivalently, as a rotation symmetry of the "equator\" $S^2 \subset S^3$. Therefore, this symmetry is relevant for describing the angular momentum in the 3d theory on $S^1 \times S^2$. Note that the only fixed points of the rotation symmetry $SU(2)_E$ are the North pole ($x_1 = x_2 = x_3 = 0$, $x_4 = 1$) and the South pole ($x_1 = x_2 = x_3 = 0$, $x_4 = -1$) of the $S^3$.
 
-Furthermore, the subgroup $U(1)_E \subset SU(2)_E$ corresponds to rotations of the $(x_1,x_2)$ plane ${\mathbb R}^2 \subset {\mathbb R}^3$ around the $x_3$-axis. The corresponding quantum number is what we call $j_3$ throughout this paper. The fixed points of this rotation symmetry have $x_1 = x_2 = 0$ and, therefore, form a semi-circle (resp. a circle) in half 3-sphere $B^3$ (resp. in $S^3$): $$\begin{equation}
-\mathcal{G}~: \qquad x_1 = x_2 = 0 \,, \qquad x_3^2 + x_4^2 = 1 \,.
-\end{equation}$$ Since the rotation symmetry $U(1)_E$ suffices for defining the index, in this setup we can consider line operators supported on $S^1 \times p_*$, for any $p_* \in \mathcal{G}$, without breaking this symmetry. Note that the curve $\mathcal{G}$ meets the equator $S^2 = \{ x_1^2 + x_2^2 + x_3^2 = 1 \}$ at two points, $$\begin{equation}
-\mathcal{G}\cap S^2 ~: \qquad x_1 = x_2 = x_4 = 0 \,, \qquad x_3 = \pm 1 \,.
-\end{equation}$$
+Furthermore, the subgroup $U(1)_E \subset SU(2)_E$ corresponds to rotations of the $(x_1,x_2)$ plane ${\mathbb R}^2 \subset {\mathbb R}^3$ around the $x_3$-axis. The corresponding quantum number is what we call $j_3$ throughout this paper. The fixed points of this rotation symmetry have $x_1 = x_2 = 0$ and, therefore, form a semi-circle (resp. a circle) in half 3-sphere $B^3$ (resp. in $S^3$): $$\mathcal{G}~: \qquad x_1 = x_2 = 0 \,, \qquad x_3^2 + x_4^2 = 1 \,.$$ Since the rotation symmetry $U(1)_E$ suffices for defining the index, in this setup we can consider line operators supported on $S^1 \times p_*$, for any $p_* \in \mathcal{G}$, without breaking this symmetry. Note that the curve $\mathcal{G}$ meets the equator $S^2 = \{ x_1^2 + x_2^2 + x_3^2 = 1 \}$ at two points, $$\mathcal{G}\cap S^2 ~: \qquad x_1 = x_2 = x_4 = 0 \,, \qquad x_3 = \pm 1 \,.$$
 
-To summarize, this setup preserves three isometries: scale invariance, rotations $U(1)_E$ around a chosen plane, and the $SO(2)_R$ symmetry with the generator $R$. The anticommutator $\{Q,S\}$ is a combination of the dilatation and two other charges, commuting with $Q$ and $S$. Then, a second combination, say $R/2 + j_3$, will commute with $Q$ and $S$, and can be used to grade the short representations. Thus we recover the index $$\begin{equation}
-{\rm Tr}_{\mathcal{H}_{3d/4d}} (-1)^F q^{\tfrac{R}{2} + j_3}\,.
-\label{3d4dindex}
-\end{equation}$$ From the point of view of the 4d theory, this is a specialization of the standard superconformal index [@KMMR-index], which is called the "Schur index" in [@GRRY]. The most general index for an $\mathcal{N}=2$ four-dimensional theory has three fugacities $(p,q,u)$ coupled to the corresponding combinations of R-symmetries and $SO(4) \cong SU(2)_1 \times SU(2)_2$ rotations: $$\begin{equation}
-\mathcal{I}_{4d} \; = \; {\rm Tr}_{\mathcal{H}_{4d}} (-1)^F \; p^{j_2 + j_1 + \tfrac{R - r}{2}} \; q^{j_2 - j_1 + \tfrac{R - r}{2}} \; u^{-(r+R)}\,.
-\label{4dindex}
-\end{equation}$$ This index has a curious property: upon specialization to $p=qu^2$ naively one would expect that the result should depend on two variables $q$ and $u$. However, after this specialization $u$ becomes a fugacity for the quantum number $j_1 + j_2 - r$ that commutes not only with $Q$ but also with another supercharge $Q'$. As a result, the $u$-dependence disappears and the index becomes a function of $q$ only.
+To summarize, this setup preserves three isometries: scale invariance, rotations $U(1)_E$ around a chosen plane, and the $SO(2)_R$ symmetry with the generator $R$. The anticommutator $\{Q,S\}$ is a combination of the dilatation and two other charges, commuting with $Q$ and $S$. Then, a second combination, say $R/2 + j_3$, will commute with $Q$ and $S$, and can be used to grade the short representations. Thus we recover the index $${\rm Tr}_{\mathcal{H}_{3d/4d}} (-1)^F q^{\tfrac{R}{2} + j_3}\,.
+\label{3d4dindex}$$ From the point of view of the 4d theory, this is a specialization of the standard superconformal index [@KMMR-index], which is called the "Schur index" in [@GRRY]. The most general index for an $\mathcal{N}=2$ four-dimensional theory has three fugacities $(p,q,u)$ coupled to the corresponding combinations of R-symmetries and $SO(4) \cong SU(2)_1 \times SU(2)_2$ rotations: $$\mathcal{I}_{4d} \; = \; {\rm Tr}_{\mathcal{H}_{4d}} (-1)^F \; p^{j_2 + j_1 + \tfrac{R - r}{2}} \; q^{j_2 - j_1 + \tfrac{R - r}{2}} \; u^{-(r+R)}\,.
+\label{4dindex}$$ This index has a curious property: upon specialization to $p=qu^2$ naively one would expect that the result should depend on two variables $q$ and $u$. However, after this specialization $u$ becomes a fugacity for the quantum number $j_1 + j_2 - r$ that commutes not only with $Q$ but also with another supercharge $Q'$. As a result, the $u$-dependence disappears and the index becomes a function of $q$ only.
 
 Moreover, after the specialization to $p=qu^2$ the variable $q$ in the 4d index [\[4dindex\]](#4dindex){reference-type="eqref" reference="4dindex"} becomes a fugacity for the combination of the $SU(2)_E$ angular momentum and the R-charge, precisely as in [\[3d4dindex\]](#3d4dindex){reference-type="eqref" reference="3d4dindex"}. Therefore, this specialization of the 4d index can be used for the combined 4d/3d system, where $j_3$ is the angular momentum for the $SU(2)_E$ rotation symmetry and $R$ is the R-charge for the unbroken $SO(2)_R$ symmetry in the presence of a boundary or a duality wall. When line operators are included at the generic points on $\mathcal{G}$ the $SU(2)_E$ rotation symmetry is broken further to $U(1)_E$ which, however, suffices for defining the index [\[3d4dindex\]](#3d4dindex){reference-type="eqref" reference="3d4dindex"}.
 
-We can readily compute the index for our setup in the $S^1\times B^3$ geometry, simply by making the gauge coupling very weak. For the moment, let us assume that the 4d theory is a pure $U(1)^N$ gauge theory --- *i.e.* with $N$ $U(1)$ vector multiplets but no hypermultiplets. The index does not depend on the continuous parameter that labels the position of the line operator along $\mathcal{G}$. For simplicity, we can place the line operator at the North pole. The 3d theory lives in the background of the line operator's 't Hooft charge $m$, under the $U(1)^N$ flavor symmetry. Moreover, the restriction to gauge-invariant states forces us to look at states of the 3d theory that have charge equal to the Wilson loop charge. The 4d gauge fields contribute in a simple way: the usual Schur index receives contributions only from modes of two gauginos with various angular momenta. The boundary condition at the equator sets half of the gauginos to zero. Hence, in the presence of a 't Hooft-Wilson loop of charge $(m,e)$, the index of the 3d/4d system becomes $$\begin{equation}
-\mathcal{I}_\mathcal{T}(m,e;q) \prod_{n>0} (1-q^n)^N
-\end{equation}$$ Of course, this answer is consistent with the interpretation of $Sp(2N,{\mathbb Z})$ as the electric-magnetic duality group of the bulk theory.
-
-## Line operator algebra
-
-One real payoff of the 3d/4d construction is an explanation of why the index of the 3d theory satisfies the difference equations built from the operators $(\hat{x}_{\pm}, \hat{p}_{\pm})$, which we are about to identify with line operators. First, we need a simple observation about the OPE of line operators. Consider a setup with two line operators, wrapping $S^1$ and lying at different points $p_1$ and $p_2$ in $\mathcal{G}$, as defined above. Although the positions $p_1$, $p_2$ locally do not matter, the relative order along $\mathcal{G}$ is a topological invariant, as we cannot bring one operator around the other without breaking the supersymmetry preserved by the index. On the other hand, we can consider the OPE of two line operators. It is known that the OPE of two supersymmetric line operators in an abelian $\mathcal{N}=2$ gauge theory is rather simple [@GMNIII]
-
-[^2]
-
-: $$\begin{equation}
-L_\gamma L_{\gamma'} \; = \; V_{\langle \gamma, \gamma' \rangle} \otimes L_{\gamma + \gamma'} \,.
-\end{equation}$$ Here $\gamma$, $\gamma'$ are the charges of the line operators and $\langle \gamma, \gamma' \rangle$ is the usual symplectic pairing. The "coefficient" $V_{\langle \gamma, \gamma' \rangle}$ of the OPE is a one-dimensional vector space, whose only role is to carry a charge $\langle \gamma, \gamma' \rangle/2$ under the action of $SO(2)$ rotations around the axis that goes through the pair of line operators (and the appropriate fermion number).
-
-In the present context, the curve $\mathcal{G}$ plays the role of such axis and the $SO(2)$ rotation is generated by $j_3$. Therefore, we find that the OPE of line operators inside the index becomes $$\begin{equation}
-L_\gamma L_{\gamma'} \; = \; (q^{1/2})^{\langle \gamma, \gamma' \rangle} L_{\gamma + \gamma'} \,.
-\label{qLLOPE}
-\end{equation}$$
-
-Now, consider the setup with a line operator $L_{\gamma}$ of charge $\gamma = (e,m)$ at the North pole and then introduce another Wilson loop of charge $1$ at some point on the curve $\mathcal{G}$ away from the North pole. We can compute the index by using the OPE of line operators, under which the electric charge $e$ of the original line operator is shifted by one unit and, according to [\[qLLOPE\]](#qLLOPE){reference-type="eqref" reference="qLLOPE"}, the result is multiplied by $(q^{1/2})^{\pm m}$, depending on which side of the North pole of $B^3$ (resp. $S^3$) the extra Wilson operator was added. Similarly, if we add a 't Hooft operator of charge $1$, we will shift $m$ by one unit, and multiply everything by $(q^{1/2})^{\mp e}$. This is exactly how our operators $(\hat{x}_{\pm}, \hat{p}_{\pm})$ act on the index!
-
-Therefore, we can identify Wilson and 't Hooft operators with the following operators acting on the 3d index (*cf.* an analogous identification [@DGG] with operators acting on the $S^3_b$ partition function): $$\begin{align}
-\text{Wilson}_{\pm} \quad \longleftrightarrow \quad & (\hat{x}_{\pm})^{\mp 1} = e^{\partial_e \mp \tfrac{\hbar}{2} m} \\
-\text{'t Hooft}_{\pm} \quad \longleftrightarrow \quad & (\hat{p}_{\pm})^{\pm 1} = e^{\partial_m \pm \tfrac{\hbar}{2} e}
-\end{align}$$
-
-Now we see why the index satisfies recursion relations modeled on $\mathcal{L}$: line operators $L_{\gamma_i}$ supported on $S^1 \times p_i$ can be brought all the way to the boundary, where they satisfy Ward identities dictated by the boundary condition, as in [@DGG].
-
-## Boundary conditions for hypermultiplets
-
-So far, we have considered $U(1)^N$ vector multiplets coupled to a boundary theory $T_M$. Generically, the 4d theories $T[\partial M]$ arising from a geodesic boundary $M$ will also involve hypermultiplet matter, which leads to further interesting observations in our 3d/4d setup.
-
-A theory of a single hypermultiplet has two natural classes of boundary conditions. In one class, one of the chiral fields $Y$ in the hypermultiplet has Dirichlet-type boundary conditions, $$\begin{equation}
-Y = \mathcal{O}
-\end{equation}$$ for some chiral operator $\mathcal{O}$ in the boundary theory, and the other chiral field $\tilde Y$ has Neumann-type boundary conditions. In the other class, the roles of $Y$ and $\tilde Y$ are exchanged. These boundary conditions were defined, *e.g.*, in Section 3 of [@DGG].
-
-It turns out that each boundary condition in one class is mirror to a boundary condition in the other class. The corresponding boundary theories are related by an "F" transformation, which maps the theory with chiral operator $\mathcal{O}$ to a new theory with a new 3d chiral field $\phi$ coupled by the superpotential $\phi \mathcal{O}$. In the new theory, $\phi$ plays the role of the special chiral operator $\tilde \mathcal{O}$.
-
-This mirror symmetry is manifest in the 3d/4d index calculations. The contribution of one hypermultiplet to the Schur index looks like $$\begin{equation}
-\mathcal{I}_{hyper}= \frac{1}{\prod_{n>0} ( 1 - \zeta q^{n+1/2})( 1 - \zeta^{-1} q^{n+1/2})}\,.
-\end{equation}$$ This simply counts angular momentum modes of the two chiral fields $Y$ and $\tilde Y$, of charge $\pm 1$ under the flavor symmetry with fugacity $\zeta$.
-
-If we impose Dirichlet boundary conditions on $\tilde Y$, we are left with the contribution from $Y$ only, $$\begin{equation}
-\mathcal{I}_Y \; = \; \frac{1}{\prod_{n>0} ( 1 - \zeta q^{n+1/2})} \,.
-\end{equation}$$ Similarly, in the case of Dirichlet boundary conditions for $Y$ we get $$\begin{equation}
-\mathcal{I}_{\tilde Y} \; = \; \frac{1}{\prod_{n>0} ( 1 - \zeta^{-1} q^{n+1/2})} \,.
-\end{equation}$$ And, of course, the product of $\mathcal{I}_{\tilde Y}$ with the 3d index of a free 3d chiral field of charge $1$, in the absence of magnetic flux, gives $\mathcal{I}_Y$, as expected from the discussion of the F move.
-
-[^3]
-
-Crucially, we expect the mirror relation to hold even in the presence of 't Hooft operators at the North pole. Thus we can predict, up to a prefactor, how the Schur index for a hypermultiplet should look in the presence of such a magnetic charge: $$\begin{equation}
-\mathcal{I}_{hyper}(m; q,\zeta) \;= \; \frac{1}{\prod_{n>0} ( 1 - \zeta q^{n+1/2+|m|/2})( 1 - \zeta^{-1} q^{n+1/2+|m|/2})} \,. \label{eq:maghyper}
-\end{equation}$$
-
-## Non-abelian line defects
-
-There are natural ways to use the three-dimensional theories $T_M$ to define domain walls in the UV for four-dimensional ${\cal N}=2$ $SU(2)$ gauge theories. A full account of that construction will be the subject of a future publication [@DGGV-hybrid]. For now, we will content ourselves with sketching some interesting directions of inquiry. For simplicity, we will focus on the example of $SU(2)$ ${\cal N}=2^*$ SYM.
-
-We would like to establish a very concrete parallel between the general structure of Pestun's $S^4$ partition function and the refined index. In the presence of line defects or domain walls at the equator, localization reduces Pestun's partition function to a matrix element of a self-adjoint operator [@DGOT; @AGGTV; @DGG-defects] $$\begin{equation}
-\langle Z_S| \hat O | Z_N \rangle \equiv \int d\nu(a') d\nu(a) \bar Z_{\mathrm{inst}}(a') O(a',a)  Z_{\mathrm{inst}}(a)
-\end{equation}$$ Here $Z_{\mathrm{inst}}(a)$ is the instanton partition function (together with the tree-level contribution) for the gauge theory, which is naturally thought of as a wavefunction, $| Z_N\rangle=Z_{\mathrm{inst}}(a)$, and $\langle Z_S |$ is the complex conjugate; $d\nu(a)$ is the one-loop integration measure, and $O(a',a)$ is an integration kernel that encodes the effect of the domain wall or line defect. For domain walls, $O(a',a)$ is basically the $S^3$ partition function of the domain wall 3d degrees of freedom. For 'tHooft-Wilson line defects $L$, $O(a,a')$ is a sum over delta functions, so that $\hat O$ takes the form of a sum over shift operators $$\begin{equation}
-\hat O_L = \sum_n R_n(a) e^{2 \pi n \partial_a}
-\end{equation}$$ The functions $R_n(a)$ can in principle be computed from the geometry of monopole moduli spaces, as they account for "bubbling monopole" configurations near the line defect [@GOP-tHooft] that interpolate between the "bare" 'tHooft monopole magnetic flux and an Abelian magnetic flux $n/2$.
-
-A simple way to understand the physical meaning of the matrix element is to realize the configuration starting from two hemispheres with Dirichlet boundary conditions for the gauge fields, and then glue together the hemispheres, along with any extra degrees of freedom at the equator, by gauging appropriate 3d flavor symmetries. In particular, it is natural to see the wavefunction $|Z_N\rangle$ as the partition function on a hemisphere with Dirichlet boundary conditions. Notice that the notion of Dirichlet boundary condition is not S-duality invariant, but depends on a choice of weakly coupled duality frame. Hence $| Z_N\rangle$ transforms in interesting ways under S-duality, while the $S^4$ partition function $\langle Z_S| Z_N \rangle$ is S-duality invariant. Incidentally, in the gluing procedure one also has to pick adequate boundary conditions for the hypers, as discussed before. Different choices split the one-loop measure in different way among North and South hemisphere, and change the normalization of the wavefunctions.
-
-In the context of AGT [@AGT], the wavefunctions are identified with BPZ conformal blocks, and the matrix elements with 2d CFT correlation functions. The operators $O_L$ coincide with the so-called Verlinde line operators, or with topological defects in the 2d CFT. Crucially, they can be computed explicitly through a laborious algorithm [@AGGTV; @DGOT], sidestepping the difficult localization calculations of gauge theory. The whole structure described above can be deformed to generic $b$, though the corresponding deformation $S^4_b$ of the $S^4$ geometry has not been described yet. We will need the generalized formulae in the following. The simplest 'tHooft-Wilson loop for ${\cal N}=2^*$ SYM is the operator of magnetic charge $1$ and electric charge $s$, $$\begin{equation}
-\hat O_{1,s} = \frac{\sin \pi b(2 a - Q -\mu)}{\sin \pi b(2a-Q)}e^{i \pi b (2a-Q) s - \frac{b}{2}\partial_a} + \frac{\sin \pi b(2 a - Q + \mu)}{\sin \pi b(2a-Q)}e^{-i \pi b (2a-Q) s + \frac{b}{2}\partial_a}\,.
-\end{equation}$$ It is self-adjoint against the standard Liouville measure $d\nu(a) = \sin \pi b (2 a-Q) \sin \pi/b (2a-Q) da$, as long as the mass parameter $\mu$ lies in the physical line $Q/2+ i {\mathbb R}$. Notice that the first factor in the measure cancels against the denominators in $\hat O_{1,s}$ and the second factor in the measure commutes with the shift operators. The opposite is true for a second family of operators, obtained from $\hat O_{1,s}$ by $b \to b^{-1}$. The operator is explicitly symmetric under $a \to Q-a$ but not under $\mu \to Q-\mu$, due to an asymmetric split of the one-loop factors between North and South hemispheres. The symmetry $\mu \to Q-\mu$ can be implemented by conjugation by an appropriate rescaling factor.
-
-In order to set up our analogy, we can break down the calculation of the index of a 4d theory, possibly in the presence of a domain wall on the equator of the $S^3$ or of line defects, by first defining a "half-index" $I\!I_m(q,\zeta,\Gamma)$ as the index of the 4d gauge theory on half of $S^3$ with Dirichlet boundary conditions. This will be a function of the fugacities and magnetic fluxes $\zeta,m$ associated to the 3d flavor symmetries and of the choice of S-duality frame $\Gamma$. The full index of the 4d theory can be recovered by combining the half-indices for the two hemispheres with the measure for a three-dimensional non-abelian gauge theory: $$\begin{equation}
-\left( I\!I_S | I\!I_N \right) \equiv \sum_m \oint \frac{d\zeta}{2\pi i\zeta} \Delta_m(\zeta) I\!I_m(q,\zeta,N) I\!I_m(q,\zeta,S)\,.
-\end{equation}$$ In the absence of 'tHooft operators in the bulk, we expect $I\!I_m(q,\zeta,\Gamma)$ to be non-zero only at $m=0$. The measure $\Delta_0(\zeta)$ is the usual Vandermonde measure. In the presence of 'tHooft loops, we will have contributions at non-zero (possibly half-integral) $m$ and we will find a natural generalization of the measure, $$\begin{equation}
-\Delta_m(\zeta)= \frac{1}{2} (q^{m/2} \zeta-q^{-m/2} \zeta^{-1})(q^{-m/2} \zeta-q^{m/2} \zeta^{-1})\,.
-\end{equation}$$
-
-How can we add 'tHooft operators to the half-index? The hard way would be to do a careful localization computation, taking into account bubbling monopole contributions that screen the magnetic charge at the pole, giving a variety of possible Abelian fluxes $m$ at the equator. But there is a shortcut. We can try to borrow the calculation of $R_n(a)$ from the Verlinde loop operators. Notice that if we assume the existence of a dictionary, these are very constrained. Namely, the OPE of line defects and the Ward identities satisfied when they are brought to collide with domain walls must take the same form for the $S^4_b$ partition function and for the index, upon the dictionary established in the rest of this paper between vector-multiplet vevs and fugacities, and $2 \pi i b^2 \to \hbar$. In particular, we will map $$\begin{equation}
- \label{opdict}
- e^{i \pi b (2a-Q)} \to \hat x_+ = q^{m/2} \zeta  \qquad  e^{b \partial_a} \to \hat p_+ = e^{\partial_m + \frac{\hbar}{2} \partial_{\log \zeta}} \qquad  e^{i \pi b (2m-Q)} \to \eta
-\end{equation}$$ We can replace $(\hat x_+,\hat p_+)$ with $(\hat x_-,\hat p_-)$ for operators acting from the opposite side of the equator.
-
-We are led to conjecture that the half-index in the presence of a 'tHooft-Wilson loop $L$ can be computed by acting on the half-index in the absence of the loop with the image of $\hat O_L$ under the above dictionary. Let's consider a concrete example. The 4d index of $SU(2)$ ${\cal N}=2^*$ is
-
-$$\begin{align}
-&I(\eta,q) = \oint \frac{d\zeta}{4\pi i\zeta} (1-\zeta^2)(1-\zeta^{-2}) \\\notag &\times \prod_{n=0}^{\infty} \frac{\left(1-q^{n+1}\right)^2 \left(1-\frac{q^{n+1}}{\zeta^2}\right)^2 \left(1-\zeta^2 q^{n+1}\right)^2}{\left(1-\eta^{-1}q^{n+\frac{1}{2}}\right) \left(1-\eta q^{n+\frac{1}{2}}\right)
-   \left(1-\frac{q^{n+\frac{1}{2}}}{\eta \zeta^2}\right) \left(1-\frac{\eta q^{n+\frac{1}{2}}}{\zeta^2}\right) \left(1-\frac{\zeta^2 q^{n+\frac{1}{2}}}{\eta}\right) \left(1-\eta \zeta^2 q^{n+\frac{1}{2}}\right)}\,,
-\end{align}$$
-
-and the half-index is $$\begin{align}
-&I\!I_m(\zeta,\eta,q) = \delta_{m,0} \prod_{n=0}^{\infty} \frac{\left(1-q^{n+1}\right)\left(1-\frac{q^{n+1}}{\zeta^2}\right) \left(1-\zeta^2 q^{n+1}\right)}{ \left(1-\eta^{-1} q^{n+\frac{1}{2}}\right)
-   \left(1-\frac{\eta^{-1} q^{n+\frac{1}{2}}}{\zeta^2}\right) \left(1-\eta^{-1} \zeta^2 q^{n+\frac{1}{2}}\right)}\,,
-\end{align}$$ so that $$\begin{equation}
-I(\eta,q) =  \sum_m \oint \frac{d\zeta}{2\pi i\zeta} \Delta_m(\zeta) I\!I_m(q,\zeta,\eta) I\!I_m(q,\zeta,\eta^{-1})\,.
-\end{equation}$$
-
-Now we can act with a Wilson loop operator, $2 \cos \pi b (2a-Q) \to q^{m/2} \zeta+q^{-m/2} \zeta^{-1}$, following [\[opdict\]](#opdict){reference-type="eqref" reference="opdict"}. We get that the half-index in the presence of a Wilson loop is simply multiplied by the appropriate character, thanks to the $\delta_{m,0}$ constraint: $$\begin{align}
-\hat O_{0,1} I\!I_m(\zeta,\eta,q) = \left(\zeta + \zeta^{-1} \right) I\!I_m(\zeta,\eta,q)\,.
-\end{align}$$
-
-On the other hand, if we act with the translated 'tHooft-Wilson operator $$\begin{align}
-\hat O_{1,s} &\,=\, \frac{q^{m/2-1/4} \zeta \eta^{-1/2} - q^{-m/2+1/4} \zeta^{-1} \eta^{1/2}}{q^{m/2} \zeta - q^{-m/2} \zeta^{-1}}q^{- s/4} q^{s m/2} \zeta^s p_+^{-1/2} \notag \\ &\qquad+\, \frac{q^{m/2+1/4} \zeta \eta^{1/2} - q^{-m/2-1/4} \zeta^{-1} \eta^{-1/2}}{q^{m/2} \zeta - q^{-m/2} \zeta^{-1}}q^{- s/4} q^{-s m/2} \zeta^{-s} p_+^{1/2}\,,
-\end{align}$$ we get $$\begin{align}
-& \hspace{-.4cm}\hat O_{1,s}  I\!I_m(\zeta,\eta,q) = q^{1/4} \eta^{1/2} \left( \zeta^s \delta_{m,1/2} + \zeta^{-s} \delta_{m,-1/2}  \right) \prod_{n=0}^{\infty} \frac{\left(1-q^{n+1}\right)\left(1-\frac{q^{n+3/2}}{\zeta^2}\right) \left(1-\zeta^2 q^{n+3/2}\right)}{ \left(1-\eta^{-1} q^{n+\frac{1}{2}}\right)
-   \left(1-\frac{\eta^{-1} q^{n+1}}{\zeta^2}\right) \left(1-\eta^{-1} \zeta^2 q^{n+1}\right)}\,.
-\end{align}$$ Several useful cancellations led to a simple result. We would have derived the same result if we had used $(\hat x_-,\hat p_-)$ in the dictionary, as it should be: the half-index for a bare hemisphere should intertwine the line defects acting on opposite sides of the equator. Notice that we chose a measure $\Delta_m(\zeta) = \frac{1}{2} (x_+ - x_+^{-1})(x_- - x_-^{-1})$, which mimics the properties of the Liouville measure.
-
-We can now compare the index in the presence of two basic Wilson loops, one for each hemisphere, $$\begin{align}
-&I_{el}(\eta,q) = \oint \frac{d\zeta}{4\pi i\zeta} (1-\zeta^2)(1-\zeta^{-2}) \\\notag &\times\prod_{n=0}^{\infty} \frac{(\zeta + \zeta^{-1})^2 \left(1-q^{n+1}\right)^2 \left(1-\frac{q^{n+1}}{\zeta^2}\right)^2 \left(1-\zeta^2 q^{n+1}\right)^2}{\left(1-\eta^{-1}q^{n+\frac{1}{2}}\right) \left(1-\eta q^{n+\frac{1}{2}}\right)
-   \left(1-\frac{q^{n+\frac{1}{2}}}{\eta \zeta^2}\right) \left(1-\frac{\eta q^{n+\frac{1}{2}}}{\zeta^2}\right) \left(1-\frac{\zeta^2 q^{n+\frac{1}{2}}}{\eta}\right) \left(1-\eta \zeta^2 q^{n+\frac{1}{2}}\right)}\,,
-\end{align}$$ with the index in the presence of two 'tHooft loops (of zero electric charge) , $$\begin{align}
-&I(\eta,q) =2 \oint \frac{d\zeta}{4\pi i\zeta} (1-q^{1/2} \zeta^2)(1-q^{1/2} \zeta^{-2}) \\\notag &\quad\times \prod_{n=0}^{\infty} \frac{\left(1-q^{n+1}\right)^2 \left(1-\frac{q^{n+3/2}}{\zeta^2}\right)^2 \left(1-\zeta^2 q^{n+3/2}\right)^2}{\left(1-\eta^{-1}q^{n+\frac{1}{2}}\right) \left(1-\eta q^{n+\frac{1}{2}}\right)
-   \left(1-\frac{q^{n+1}}{\eta \zeta^2}\right) \left(1-\frac{\eta q^{n+1}}{\zeta^2}\right) \left(1-\frac{\zeta^2 q^{n+1}}{\eta}\right) \left(1-\eta \zeta^2 q^{n+1}\right)}\,.
-\end{align}$$ The factor of $2$ arises from the sum of the abelian contributions of magnetic charge $\pm 1/2$. We absorbed the factors $q^{1/4} \eta^{1/2}q^{1/4} \eta^{-1/2}$ in the measure. Amazingly, the two results agree, computationally, to as high an order as we could check in the $q$ expansion. This is a striking verification that our prescription of the line defects is compatible with S-duality.
+We can readily compute the index for our setup in the $S^1\times B^3$ geometry, simply by making the gauge coupling very weak. For the moment, let us assume that the 4d theory is a pure $U(1)^N$ gauge theory --- *i.e.* with $N$ $U(1)$ vector multiplets but no hypermultiplets. The index does not depend on the continuous parameter that labels the position of the line operator along $\mathcal{G}$. For simplicity, we can place the line operator at the North pole. The 3d theory lives in the background of the line operator's 't Hooft charge $m$, under the $U(1)^N$ flavor symmetry. Moreover, the restriction to gauge-invariant states forces us to look at states of the 3d theory that have charge equal to the Wilson loop charge. The 4d gauge fields contribute in a simple way: the usual Schur index receives contributions only from modes of two gauginos with various angular momenta. The boundary condition at the equator sets half of the gauginos to zero. Hence, in the presence of a 't Hooft-Wilson loop of charge $(m,e)$, the index of the 3d/4d system becomes $$\mathcal{I}_\mathcal{T}(m,e;q) \prod_{n>0} (1-q^n)^N$$ Of course, this answer is consistent with the interpretation of $Sp(2N,{\mathbb Z})$ as the electric-magnetic duality group of the bulk theory.
 
 [^1]: In this section we assume that the boundary of $M$ is a triangulated, geodesic boundary, in the language of Section 2 of [@DGG]. Then the theory $T_M$ naturally couples to the IR degrees of freedom of a 4d $\mathcal{N}=2$ theory on its Coulomb branch, with abelian gauge group $U(1)^N$. Here $N = 3g-3+s$, where $g$ is the genus of $\partial M$ and $s$ is the number of punctures (codimension-two defects) on $\partial M$.
-
-[^2]: More generally, one can consider line operators localized on the 2-dimensional world-sheet $D \times p \times \{ 0 \}$ of a surface operator (= codimension-4 defect) in the six-dimensional $(2,0)$ theory on $D \times C \times R^2_{\hbar}$. It was argued in [@Ramified] that such line operators generate an affine Hecke algebra with parameter $q = e^{\hbar}$. Note that this affine Hecke algebra is "local on $C$." In other words, it does not depend on the details of the Riemann surface $C$ away from the point $p$. For application to the problem in hand, one needs to consider a trivial surface operator and take $D = S^1 \times \mathcal{G}$.
-
-[^3]: Furthermore, $\mathcal{I}_{hyper} = \mathcal{I}_Y \mathcal{I}_{\tilde Y}$, while obvious, can be given a neat interpretation: in order to describe a hypermultiplet on the whole space, one can start with Dirichlet boundary conditions on $\tilde Y$ for a half-space, and Dirichlet boundary conditions on $Y$ for the second half-space, and "glue" them together by a $Y_- \tilde Y_+$ 3d superpotential integrated over the equator. Here $Y_-$ and $\tilde Y_+$ denote the boundary values of $Y$ and $\tilde Y$ from the two sides. This "gluing" prescription is akin to the idea that a gauge theory on the full space can be reconstructed from the gauge theory on two half-spaces with Dirichler boundary conditions by gauging the diagonal flavor symmetry at the boundary

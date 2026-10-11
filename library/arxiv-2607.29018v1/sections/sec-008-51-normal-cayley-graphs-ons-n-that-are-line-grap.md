@@ -8,193 +8,144 @@ pages: 12-17
 source_pdf: 2607.29018v1.pdf
 source_sha256: 789faa122dd32290
 doc_brief: "The Aldous property for normal Cayley graphs on symmetric groups — Aldous’ spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same"
+text_source: latex
+latex_prose_ratio: 0.904
+latex_coverage_ratio: 0.854
 ---
-Theline graphof a graph Γ is the graph whose vertices correspond to the edges of Γ, where
-two vertices are adjacent if and only if the corresponding edges in Γ share exactly one end-
-vertex. A graph is called aline graphif it is isomorphic to the line graph of some graph. The
-following result gives a classification of normal Cayley graphs onS n that are line graphs.
-12
-Theorem 5.1.Letn≥2, and letSbe a nonempty normal set inS n. ThenCay(S n,S)is a
-line graph if and only if one of the following holds:
-(a)S=S n\{e}, and henceCay(S n,S) ∼=Kn!;
-(b)S=A n\{e}, and henceCay(S n,S) ∼= 2Kn!/2;
-(c)n= 4andS={(1 2)(3 4),(1 3)(2 4),(1 4)(2 3)}, and henceCay(S n,S) ∼= 6K4.
-Our proof of Theorem 5.1 is based on Beineke’s characterization of line graphs. In 1970,
-he proved [3] that a graph is a line graph if and only if it does not contain any one of the
-nine forbidden graphs as an induced subgraph. For our purposes, we only show two of these
-nine forbidden subgraphs, denoted byH 1 andH 2, in Figure 1.
-δ
-τ1
-τ2
-τ3
-ω
-H1
-δ
-τ1
-τ2
-τ3
-H2
-Figure 1: Two forbidden subgraphs for line graphs
-The following lemma deals with the case when the connection set contains all transposi-
-tions. In its proof we writex∼yto denote thatxandyare adjacent in the Cayley graph
-Cay(Sn,S) under consideration.
-Lemma 5.2.Letn≥2, and letSbe a nonempty normal set inS n which contains the
-conjugacy class of all transpositions. ThenCay(S n,S)is a line graph if and only ifS=
-Sn\{e}, or equivalently,Cay(S n,S) ∼=Kn!.
-Proof.The sufficiency is obvious. It remains to prove the necessity.
-Suppose that Cay(S n,S) is a line graph. Then by Beineke’s characterization it does
-not containH 1 orH 2 (see Figure 1) as an induced subgraph. We aim to prove that every
-permutationσ∈S n with|supp(σ)|≥2 belongs toS. We prove this statement by induction
-on|supp(σ)|. If|supp(σ)|= 2, then the statement follows from the assumption thatS
-contains all transpositions. If|supp(σ)|= 3, thenσ∈S, for otherwise an induced subgraph
-of Cay(Sn,S) isomorphic toH 2 can be easily found by takingδ=e,τ 1 = (1 2),τ 2 = (2 3),
-andτ 3 = (1 3) in Figure 1.
-Assume inductively that for somek≥4 every permutation inS n with support size at
-mostk−1 belongs toS. We now show that for an arbitrary permutationσ∈S n with
-|supp(σ)|=kwe must haveσ∈S. Suppose first that the cycle decomposition ofσcontains
-13
-a cycle of length at least 3. Then we may write without loss of generality thatσ= (1 2···t)σ ′
-for somet≥3 andσ ′∈S n. Set
-δ=e, τ 1 = (2 3···t)σ ′, τ 2 = (1 3···t)σ ′, τ 3 = (3···t)σ ′, ω=σ.
-By the induction hypothesis,e∼τ i for 1≤i≤3. Moreover, a direct computation shows
-thatτ −1
-i τj for 1≤i < j≤3 andτ −1
-i σfor 1≤i≤3 are 2-cycles or 3-cycles. Since by our
-induction hypothesis all 2-cycles and 3-cycles belong toS, we haveτ i∼σfor 1≤i≤3
-andτ i∼τ j for all 1≤i < j≤3. Since Cay(S n,S) does not contain an induced subgraph
-isomorphic toH 1, we must havee∼σand thereforeσ∈S.
-It remains to consider the case when the cycle decomposition ofσcontains only cycles
-of lengths 1 and 2. Since|supp(σ)|=k≥4, we may assume without loss of generality that
-σ= (1 2)(3 4)σ′ for someσ ′∈S n. Let
-δ=e, τ 1 = (1 2 3)σ′, τ 2 = (1 2 3 4)σ′, τ 3 = (1 2 4 3)σ′, ω=σ.
-By what we proved in the previous paragraph, we havee∼τ i for 1≤i≤3. Moreover, a
-direct computation shows thatτ −1
-i τj for 1≤i<j≤3 andτ −1
-i σfor 1≤i≤3 have supports
-of size at most 3. Since by our induction hypothesis all 2-cycles and 3-cycles belong toS,
-we haveτ i∼σfor 1≤i≤3 andτ i∼τ j for all 1≤i < j≤3. Since Cay(S n,S) does not
-contain an induced subgraph isomorphic toH 1, we must havee∼σand henceσ∈S.
-So, by mathematical induction, we have proved thatScontains every permutation inS n
-with support size at least 2. Therefore,S=S n\{e},or equivalently, Cay(S n,S) ∼=Kn!.
-The next lemma deals with the case when the connection set does not contain the conju-
-gacy class of transpositions but contains the conjugacy class of 3-cycles.
-Lemma 5.3.Letn≥3, and letSbe a nonempty normal set inS n which contains the
-conjugacy class of3-cycles but not the conjugacy class of transpositions. ThenCay(S n,S)is
-a line graph if and only ifS=A n\{e}, in which caseCay(S n,S) ∼= 2Kn!/2.
-Proof.The sufficiency is obvious. We prove the necessity.
-Suppose that Cay(Sn,S) is a line graph. Then by Beineke’s characterization it does not
-containH 1 orH 2 (see Figure 1) as an induced subgraph. We first show thatAn\{e}⊆S,that
-is, every permutationσ∈A n with|supp(σ)|≥3 belongs toS. We prove this statement by
-induction on|supp(σ)|. Clearly, if|supp(σ)|= 3, the statement follows from our assumption
-thatScontains all 3-cycles.
-Letσ∈A n be such that|supp(σ)|= 4. Sinceσis an even permutation, without loss
-of generality we may assume thatσ= (1 2)(3 4).Suppose, for a contradiction, thatσ /∈S.
-SinceSis a union of conjugacy classes, this assumption implies that no permutation with
-cycle type (2,2,1,...,1) belongs toS. Let
-δ=e, τ 1 = (1 2 3), τ 2 = (1 3 4), τ 3 = (2 4 3).
-14
-Then, by our assumption,e∼τ i for 1≤i≤3. A direct calculation leads to
-τ−1
-1 τ2 = (1 4)(2 3), τ −1
-1 τ3 = (1 2)(3 4), τ −1
-2 τ3 = (1 3)(2 4).
-Therefore,τ 1,τ 2, andτ 3 are mutually nonadjacent in Cay(S n,S). Consequently, the sub-
-graph induced by{e,τ 1,τ 2,τ 3}is isomorphic to the forbidden subgraphH 2 in Figure 1, a
-contradiction. Henceσ∈S.
-Assume inductively that for somek≥5 every even permutation with support size at most
-k−1 belongs toS. Letσ∈A n be such that|supp(σ)|=k. We aim to show thatσ∈S. If
-the cycle decomposition ofσcontains an odd cycle of length at least 5, then we may assume
-without loss of generality thatσ= (1 2 3···t)σ ′ for some oddt≥5 andσ ′∈A n. Note that
-t≤k. Let
-δ=e, τ 1 = (1 2 3)σ′, τ 2 = (2 3 4)σ′, τ 3 = (1 3 4)σ′, ω=σ.
-Then eachτ i is an even permutation with support size at mostk−2, and hencee∼τ i for
-1≤i≤3 by the induction hypothesis. Moreover, eachτ −1
-i ωis an even permutation with
-support size at mostt−1 (≤k−1), and soτ i∼σfor 1≤i≤3. Also, eachτ −1
-i τj is an
-even permutation with support size at most 4, and henceτ i∼τ j for 1≤i < j≤3 by the
-induction hypothesis. Since Cay(Sn,S) is a line graph, it does not containH 1 as an induced
-subgraph. Thus, we must havee∼σ, that is,σ∈S.
-If the cycle decomposition ofσcontains an even cycle of length at least 4, then we may
-assume without loss of generality thatσ= (1 2 3···t)σ ′ for some event≥4 andσ ′∈S n,
-and we set
-δ=e, τ 1 = (1 2)σ′, τ 2 = (2 3)σ′, τ 3 = (1 3)σ′, ω=σ.
-If the cycle decomposition ofσcontains both a 2-cycle and a 3-cycle, then we may assume
-without loss of generality thatσ= (1 2 3)(4 5)σ ′ for someσ ′∈S n, and we set
-δ=e, τ 1 = (1 2)σ′, τ 2 = (2 3)σ′, τ 3 = (1 3)σ′, ω=σ.
-If the cycle decomposition ofσcontains only 3-cycles, then since|supp(σ)|=k≥5 we may
-assume without loss of generality thatσ= (1 2 3)(4 5 6)σ ′ for someσ ′∈A n, and we set
-δ=e, τ 1 = (1 2)(4 5)σ′, τ 2 = (2 3)(4 5)σ′, τ 3 = (1 3)(4 5)σ′, ω=σ.
-Finally, if the cycle decomposition ofσcontains only 2-cycles, then since|supp(σ)|=k≥5
-we may assume without loss of generality thatσ= (1 2)(3 4)(5 6)σ ′ forσ ′∈S n, and we set
-δ=e, τ 1 = (1 2)σ′, τ 2 = (3 4)σ′, τ 3 = (5 6)σ′, ω=σ.
-In each case, arguing exactly as in the previous paragraph, we obtain thatσ∈S.
-So, by mathematical induction, we have proved thatAn\{e}⊆S.To proveS=A n\{e},
-it suffices to show that no odd permutationσ∈S n with|supp(σ)|≥4 belongs toS. Assume
-15
-for a contradiction thatσ∈Sis odd and|supp(σ)|≥4. Since|supp(σ)|≥4, we can find
-two distinct permutationsσ 1 andσ 2 in the conjugacy classC(S n,σ), both different fromσ.
-Sinceσ∈SandSis a normal set, we haveσ 1,σ 2∈S. Let
-δ=e, τ 1 =σ, τ 2 =σ 1, τ 3 =σ 2, ω= (1 2).
-Thenδ∼τ i for 1≤i≤3. Moreover, eachτ −1
-i ωis an even permutation, and henceτ i∼ω
-for 1≤i≤3. Also, eachτ −1
-i τj is an even permutation, and henceτ i∼τ j for 1≤i<j≤3.
-On the other hand, since by our assumption the transposition (1 2) does not belong toS,
-δandωare not adjacent in Cay(S n,S). Therefore, the subgraph of Cay(S n,S) induced by
-{δ,τ 1,τ 2,τ 3,ω}is isomorphic toH 1, a contradiction. Therefore,S=A n\{e}and consequently
-Cay(Sn,S) ∼= 2Kn!/2.
-We are now ready to prove Theorem 5.1.
-Proof of Theorem 5.1.The sufficiency is obvious, so it remains to prove the necessity.
-Suppose thatSis a nonempty normal set inS n such that Cay(Sn,S) is a line graph. IfS
-contains the conjugacy class of transpositions, then by Lemma 5.2,S=S n\{e}, and hence
-Cay(Sn,S) ∼=Kn!. IfSdoes not contain the conjugacy class of transpositions but contains the
-conjugacy class of 3-cycles, then by Lemma 5.3,S=A n\{e}, and hence Cay(Sn,S) ∼= 2Kn!/2.
-Therefore, we may assume in the sequel that|supp(σ)|≥4 for everyσ∈S.
-IfScontains an elementσwhose cycle decomposition contains a cycle of length at least
-4, then we may assume without loss of generality thatσ= (1 2 3 4···t)σ ′ for somet≥4
-andσ ′∈S n. Let
-δ=e, τ 1 = (1 2 3 4···t)σ ′, τ 2 = (1 3 4···t2)σ ′, τ 3 = (1 3 2 4···t)σ ′.
-Sinceτ 1,τ 2, andτ 3 all lie in the conjugacy class ofσ, we haveτ i∈Sfor 1≤i≤3, and
-henceδ∼τ i for 1≤i≤3. Moreover, eachτ −1
-i τj is a 3-cycle, and hence by our assumption
-τi andτ j are not adjacent in Cay(Sn,S) for 1≤i<j≤3. Therefore, the subgraph induced
-by{δ,τ 1,τ 2,τ 3}is isomorphic toH 2 in Figure 1, but this contradicts our assumption that
-Cay(Sn,S) is a line graph.
-IfScontains an elementσwhose cycle decomposition contains both a 2-cycle and a 3-
-cycle, then we may assume without loss of generality thatσ= (1 2)(3 4 5)σ′ for someσ′∈S n.
-Let
-δ=e, τ 1 = (1 2)(3 4 5)σ′, τ 2 = (1 2)(3 5 4)σ′, τ 3 = (3 5)(1 4 2)σ′.
-Arguing as above, we haveδ∼τ i for 1≤i≤3 andτ i andτ j are not adjacent in Cay(Sn,S) for
-1≤i<j≤3. Therefore, the subgraph of Cay(S n,S) induced by{δ,τ 1,τ 2,τ 3}is isomorphic
-toH 2 in Figure 1, contradicting the assumption that Cay(S n,S) is a line graph.
-IfScontains an elementσwhose cycle decomposition contains only 3-cycles, then, since
-|supp(σ)|≥4, we may assume without loss of generality thatσ= (1 2 3)(4 5 6)σ ′ for some
-σ′∈S n. Let
-δ=e, τ 1 = (1 2 3)(4 5 6)σ′, τ 2 = (1 6 2)(3 4 5)σ′, τ 3 = (1 4 2)(3 5 6)σ′.
-16
-Thenδ∼τ i for 1≤i≤3. Moreover, eachτ −1
-i τj is a 5-cycle. Since we have already
-shown that no 5-cycle lies inS, it follows thatτ i andτ j are not adjacent in Cay(S n,S) for
-1≤i<j≤3. Therefore, the subgraph of Cay(S n,S) induced by{δ,τ 1,τ 2,τ 3}is isomorphic
-toH 2 in Figure 1, a contradiction.
-Ifn≥5 andScontains an elementσwith at least one fixed point whose cycle decom-
-position contains only 2-cycles, then, since|supp(σ)|≥4, we may assume without loss of
-generality that 5/∈supp(σ) andσ= (1 2)(3 4)σ ′ for someσ ′∈S n. Let
-δ=e, τ 1 = (1 2)(3 4)σ′, τ 2 = (1 5)(3 4)σ′, τ 3 = (2 5)(3 4)σ′.
-Arguing as above, we haveδ∼τ i for 1≤i≤3 andτ i andτ j are not adjacent in Cay(Sn,S) for
-1≤i<j≤3. Therefore, the subgraph of Cay(S n,S) induced by{δ,τ 1,τ 2,τ 3}is isomorphic
-toH 2 in Figure 1, and hence Cay(S n,S) cannot be a line graph, a contradiction.
-Ifn≥5 andScontains an elementσwith no fixed point whose cycle decomposition
-consists only of 2-cycles, then, sincen≥5, we may assume without loss of generality that
-σ= (1 2)(3 4)(5 6)σ′ for someσ ′∈S n. Let
-δ=e, τ 1 = (1 2)(3 4)(5 6)σ′, τ 2 = (1 3)(2 5)(4 6)σ′, τ 3 = (1 4)(2 6)(3 5)σ′.
-Thenδ∼τ i for 1≤i≤3. Moreover, the cycle decomposition of eachτ −1
-i τj consists of two
-3-cycles for 1≤i < j≤3. Since we have already shown that no element ofScontains a
-3-cycle, it follows thatτ i andτ j are not adjacent in Cay(Sn,S) for 1≤i<j≤3. Therefore,
-the subgraph of Cay(S n,S) induced by{δ,τ 1,τ 2,τ 3}is isomorphic toH 2 in Figure 1, and
-hence Cay(Sn,S) cannot be a line graph, a contradiction.
-Summing up, the only remaining case is thatn= 4 andScontains an elementσwhose
-cycle decomposition contains only 2-cycles. In this case, we haveS={(1 2)(3 4),(1 3)(2 4),
-(1 4)(2 3)}, and hence Cay(Sn,S) ∼= 6K4. This completes the proof.
+The *line graph* of a graph $\Gamma$ is the graph whose vertices correspond to the edges of $\Gamma$, where two vertices are adjacent if and only if the corresponding edges in $\Gamma$ share exactly one end-vertex. A graph is called a *line graph* if it is isomorphic to the line graph of some graph. The following result gives a classification of normal Cayley graphs on $S_n$ that are line graphs.
+
+::: thm
+[]{#class-linegraph label="class-linegraph"} Let $n\ge 2$, and let $S$ be a nonempty normal set in $S_n$. Then $\mathrm{Cay}(S_n,S)$ is a line graph if and only if one of the following holds:
+
+1.  $S=S_n\setminus\{e\}$, and hence $\mathrm{Cay}(S_n,S)\cong K_{n!}$;
+
+2.  $S=A_n\setminus\{e\}$, and hence $\mathrm{Cay}(S_n,S)\cong 2K_{n!/2}$;
+
+3.  $n=4$ and $S=\{(1\,2)(3\,4), (1\,3)(2\,4), (1\,4)(2\,3)\}$, and hence $\mathrm{Cay}(S_n,S)\cong 6K_4$.
+:::
+
+Our proof of Theorem [\[class-linegraph\]](#class-linegraph){reference-type="ref" reference="class-linegraph"} is based on Beineke's characterization of line graphs. In 1970, he proved [@Beineke1970] that a graph is a line graph if and only if it does not contain any one of the nine forbidden graphs as an induced subgraph. For our purposes, we only show two of these nine forbidden subgraphs, denoted by $H_1$ and $H_2$, in Figure [3](#fig:H1H2){reference-type="ref" reference="fig:H1H2"}.
+
+<figure id="fig:H1H2">
+<figure id="fig:sub-a">
+
+<figcaption><span class="math inline"><em>H</em><sub>1</sub></span></figcaption>
+</figure>
+<figure id="fig:sub-b">
+
+<figcaption><span class="math inline"><em>H</em><sub>2</sub></span></figcaption>
+</figure>
+<figcaption>Two forbidden subgraphs for line graphs</figcaption>
+</figure>
+
+The following lemma deals with the case when the connection set contains all transpositions. In its proof we write $x\sim y$ to denote that $x$ and $y$ are adjacent in the Cayley graph $\mathrm{Cay}(S_n, S)$ under consideration.
+
+::: lem
+[]{#2-cycle-linegraph label="2-cycle-linegraph"} Let $n \ge 2$, and let $S$ be a nonempty normal set in $S_n$ which contains the conjugacy class of all transpositions. Then $\mathrm{Cay}(S_n, S)$ is a line graph if and only if $S = S_n \setminus \{e\}$, or equivalently, $\mathrm{Cay}(S_n, S) \cong K_{n!}$.
+:::
+
+::: proof
+*Proof.* The sufficiency is obvious. It remains to prove the necessity.
+
+Suppose that $\mathrm{Cay}(S_n, S)$ is a line graph. Then by Beineke's characterization it does not contain $H_1$ or $H_2$ (see Figure [3](#fig:H1H2){reference-type="ref" reference="fig:H1H2"}) as an induced subgraph. We aim to prove that every permutation $\sigma \in S_n$ with $|\mathrm{supp}(\sigma)| \ge 2$ belongs to $S$. We prove this statement by induction on $|\mathrm{supp}(\sigma)|$. If $|\mathrm{supp}(\sigma)|=2$, then the statement follows from the assumption that $S$ contains all transpositions. If $|\mathrm{supp}(\sigma)|=3$, then $\sigma \in S$, for otherwise an induced subgraph of $\mathrm{Cay}(S_n, S)$ isomorphic to $H_2$ can be easily found by taking $\delta=e$, $\tau_1=(1\,2)$, $\tau_2=(2\,3)$, and $\tau_3=(1\,3)$ in Figure [3](#fig:H1H2){reference-type="ref" reference="fig:H1H2"}.
+
+Assume inductively that for some $k \ge 4$ every permutation in $S_n$ with support size at most $k-1$ belongs to $S$. We now show that for an arbitrary permutation $\sigma \in S_n$ with $|\mathrm{supp}(\sigma)|=k$ we must have $\sigma \in S$. Suppose first that the cycle decomposition of $\sigma$ contains a cycle of length at least $3$. Then we may write without loss of generality that $\sigma=(1\,2\,\cdots\,t)\sigma'$ for some $t\ge 3$ and $\sigma' \in S_n$. Set $$\delta=e,\qquad
+\tau_1=(2\,3\,\cdots\,t)\sigma',\qquad
+\tau_2=(1\,3\,\cdots\,t)\sigma',\qquad
+\tau_3=(3\,\cdots\,t)\sigma',\qquad
+\omega=\sigma.$$ By the induction hypothesis, $e \sim \tau_i$ for $1\le i\le 3$. Moreover, a direct computation shows that $\tau_i^{-1}\tau_j$ for $1\le i<j\le 3$ and $\tau_i^{-1}\sigma$ for $1\le i\le 3$ are $2$-cycles or $3$-cycles. Since by our induction hypothesis all $2$-cycles and $3$-cycles belong to $S$, we have $\tau_i \sim \sigma$ for $1\le i\le 3$ and $\tau_i\sim\tau_j$ for all $1\le i<j\le 3$. Since $\mathrm{Cay}(S_n,S)$ does not contain an induced subgraph isomorphic to $H_1$, we must have $e\sim\sigma$ and therefore $\sigma\in S$.
+
+It remains to consider the case when the cycle decomposition of $\sigma$ contains only cycles of lengths $1$ and $2$. Since $|\mathrm{supp}(\sigma)| = k \ge 4$, we may assume without loss of generality that $\sigma=(1\,2)(3\,4)\sigma'$ for some $\sigma' \in S_n$. Let $$\delta=e,\qquad
+\tau_1=(1\,2\,3)\sigma',\qquad
+\tau_2=(1\,2\,3\,4)\sigma',\qquad
+\tau_3=(1\,2\,4\,3)\sigma',\qquad
+\omega=\sigma.$$ By what we proved in the previous paragraph, we have $e\sim\tau_i$ for $1\le i\le 3$. Moreover, a direct computation shows that $\tau_i^{-1}\tau_j$ for $1\le i<j\le 3$ and $\tau_i^{-1}\sigma$ for $1\le i\le 3$ have supports of size at most $3$. Since by our induction hypothesis all $2$-cycles and $3$-cycles belong to $S$, we have $\tau_i \sim \sigma$ for $1\le i\le 3$ and $\tau_i\sim\tau_j$ for all $1\le i<j\le 3$. Since $\mathrm{Cay}(S_n,S)$ does not contain an induced subgraph isomorphic to $H_1$, we must have $e\sim\sigma$ and hence $\sigma\in S$.
+
+So, by mathematical induction, we have proved that $S$ contains every permutation in $S_n$ with support size at least $2$. Therefore, $S=S_n\setminus\{e\},$ or equivalently, $\mathrm{Cay}(S_n,S) \cong K_{n!}.$ ◻
+:::
+
+The next lemma deals with the case when the connection set does not contain the conjugacy class of transpositions but contains the conjugacy class of $3$-cycles.
+
+::: lem
+[]{#3-cycle-linegraph label="3-cycle-linegraph"} Let $n\ge 3$, and let $S$ be a nonempty normal set in $S_n$ which contains the conjugacy class of $3$-cycles but not the conjugacy class of transpositions. Then $\mathrm{Cay}(S_n,S)$ is a line graph if and only if $S=A_n\setminus\{e\}$, in which case $\mathrm{Cay}(S_n,S) \cong 2 K_{n!/2}$.
+:::
+
+::: proof
+*Proof.* The sufficiency is obvious. We prove the necessity.
+
+Suppose that $\mathrm{Cay}(S_n, S)$ is a line graph. Then by Beineke's characterization it does not contain $H_1$ or $H_2$ (see Figure [3](#fig:H1H2){reference-type="ref" reference="fig:H1H2"}) as an induced subgraph. We first show that $A_n\setminus\{e\}\subseteq S,$ that is, every permutation $\sigma\in A_n$ with $|\mathrm{supp}(\sigma)|\ge 3$ belongs to $S$. We prove this statement by induction on $|\mathrm{supp}(\sigma)|$. Clearly, if $|\mathrm{supp}(\sigma)|=3$, the statement follows from our assumption that $S$ contains all 3-cycles.
+
+Let $\sigma \in A_n$ be such that $|\mathrm{supp}(\sigma)|=4$. Since $\sigma$ is an even permutation, without loss of generality we may assume that $\sigma=(1\,2)(3\,4).$ Suppose, for a contradiction, that $\sigma \notin S$. Since $S$ is a union of conjugacy classes, this assumption implies that no permutation with cycle type $(2,2, 1, \ldots, 1)$ belongs to $S$. Let $$\delta=e,\qquad
+\tau_1=(1\,2\,3),\qquad
+\tau_2=(1\,3\,4),\qquad
+\tau_3=(2\,4\,3).$$ Then, by our assumption, $e \sim \tau_i$ for $1\le i\le 3$. A direct calculation leads to $$\begin{aligned}
+\tau_1^{-1}\tau_2 =  (1\,4)(2\,3), \qquad
+\tau_1^{-1}\tau_3 =  (1\,2)(3\,4), \qquad
+\tau_2^{-1}\tau_3 =  (1\,3)(2\,4).
+\end{aligned}$$ Therefore, $\tau_1$, $\tau_2$, and $\tau_3$ are mutually nonadjacent in $\mathrm{Cay}(S_n,S)$. Consequently, the subgraph induced by $\{e, \tau_1, \tau_2, \tau_3\}$ is isomorphic to the forbidden subgraph $H_2$ in Figure [3](#fig:H1H2){reference-type="ref" reference="fig:H1H2"}, a contradiction. Hence $\sigma \in S$.
+
+Assume inductively that for some $k\ge 5$ every even permutation with support size at most $k-1$ belongs to $S$. Let $\sigma\in A_n$ be such that $|\mathrm{supp}(\sigma)|=k$. We aim to show that $\sigma\in S$. If the cycle decomposition of $\sigma$ contains an odd cycle of length at least $5$, then we may assume without loss of generality that $\sigma=(1\,2\,3\,\cdots\,t)\sigma'$ for some odd $t\ge 5$ and $\sigma' \in A_n$. Note that $t \le k$. Let $$\delta=e,\qquad
+\tau_1=(1\,2\,3)\sigma',\qquad
+\tau_2=(2\,3\,4)\sigma',\qquad
+\tau_3=(1\,3\,4)\sigma',\qquad
+\omega=\sigma.$$ Then each $\tau_i$ is an even permutation with support size at most $k-2$, and hence $e\sim\tau_i$ for $1\le i\le 3$ by the induction hypothesis. Moreover, each $\tau_i^{-1}\omega$ is an even permutation with support size at most $t-1$ ($\le k-1$), and so $\tau_i \sim \sigma$ for $1\le i\le 3$. Also, each $\tau_i^{-1}\tau_j$ is an even permutation with support size at most $4$, and hence $\tau_i\sim\tau_j$ for $1\le i<j\le 3$ by the induction hypothesis. Since $\mathrm{Cay}(S_n,S)$ is a line graph, it does not contain $H_1$ as an induced subgraph. Thus, we must have $e \sim \sigma$, that is, $\sigma\in S$.
+
+If the cycle decomposition of $\sigma$ contains an even cycle of length at least $4$, then we may assume without loss of generality that $\sigma=(1\,2\,3\,\cdots\,t)\sigma'$ for some even $t\ge 4$ and $\sigma' \in S_n$, and we set $$\delta=e,\qquad
+\tau_1=(1\,2)\sigma',\qquad
+\tau_2=(2\,3)\sigma',\qquad
+\tau_3=(1\,3)\sigma',\qquad
+\omega=\sigma.$$ If the cycle decomposition of $\sigma$ contains both a $2$-cycle and a $3$-cycle, then we may assume without loss of generality that $\sigma=(1\,2\,3)(4\,5)\sigma'$ for some $\sigma' \in S_n$, and we set $$\delta=e,\qquad
+\tau_1=(1\,2)\sigma',\qquad
+\tau_2=(2\,3)\sigma',\qquad
+\tau_3=(1\,3)\sigma',\qquad
+\omega=\sigma.$$ If the cycle decomposition of $\sigma$ contains only $3$-cycles, then since $|\mathrm{supp}(\sigma)|=k\ge 5$ we may assume without loss of generality that $\sigma=(1\,2\,3)(4\,5\,6)\sigma'$ for some $\sigma' \in A_n$, and we set $$\delta=e,\qquad
+\tau_1=(1\,2)(4\,5)\sigma',\qquad
+\tau_2=(2\,3)(4\,5)\sigma',\qquad
+\tau_3=(1\,3)(4\,5)\sigma',\qquad
+\omega=\sigma.$$ Finally, if the cycle decomposition of $\sigma$ contains only $2$-cycles, then since $|\mathrm{supp}(\sigma)|=k\ge 5$ we may assume without loss of generality that $\sigma=(1\,2)(3\,4)(5\,6)\sigma'$ for $\sigma' \in S_n$, and we set $$\delta=e,\qquad
+\tau_1=(1\,2)\sigma',\qquad
+\tau_2=(3\,4)\sigma',\qquad
+\tau_3=(5\,6)\sigma',\qquad
+\omega=\sigma.$$ In each case, arguing exactly as in the previous paragraph, we obtain that $\sigma\in S$.
+
+So, by mathematical induction, we have proved that $A_n\setminus\{e\}\subseteq S.$ To prove $S=A_n\setminus\{e\},$ it suffices to show that no odd permutation $\sigma\in S_n$ with $|\mathrm{supp}(\sigma)|\ge 4$ belongs to $S$. Assume for a contradiction that $\sigma\in S$ is odd and $|\mathrm{supp}(\sigma)|\ge 4$. Since $|\mathrm{supp}(\sigma)|\ge 4$, we can find two distinct permutations $\sigma_1$ and $\sigma_2$ in the conjugacy class $C(S_n,\sigma)$, both different from $\sigma$. Since $\sigma\in S$ and $S$ is a normal set, we have $\sigma_1, \sigma_2\in S$. Let $$\delta=e,\qquad
+\tau_1=\sigma,\qquad
+\tau_2=\sigma_1,\qquad
+\tau_3=\sigma_2,\qquad
+\omega=(1\,2).$$ Then $\delta\sim\tau_i$ for $1\le i\le 3$. Moreover, each $\tau_i^{-1}\omega$ is an even permutation, and hence $\tau_i\sim\omega$ for $1\le i\le 3$. Also, each $\tau_i^{-1}\tau_j$ is an even permutation, and hence $\tau_i\sim\tau_j$ for $1\le i<j\le 3$. On the other hand, since by our assumption the transposition $(1\,2)$ does not belong to $S$, $\delta$ and $\omega$ are not adjacent in $\mathrm{Cay}(S_n,S)$. Therefore, the subgraph of $\mathrm{Cay}(S_n,S)$ induced by $\{\delta,\tau_1,\tau_2,\tau_3,\omega\}$ is isomorphic to $H_1$, a contradiction. Therefore, $S=A_n\setminus\{e\}$ and consequently $\mathrm{Cay}(S_n,S) \cong 2 K_{n!/2}$. ◻
+:::
+
+We are now ready to prove Theorem [\[class-linegraph\]](#class-linegraph){reference-type="ref" reference="class-linegraph"}.
+
+::: proof
+*Proof of Theorem [\[class-linegraph\]](#class-linegraph){reference-type="ref" reference="class-linegraph"}.* The sufficiency is obvious, so it remains to prove the necessity.
+
+Suppose that $S$ is a nonempty normal set in $S_n$ such that $\mathrm{Cay}(S_n,S)$ is a line graph. If $S$ contains the conjugacy class of transpositions, then by Lemma [\[2-cycle-linegraph\]](#2-cycle-linegraph){reference-type="ref" reference="2-cycle-linegraph"}, $S=S_n\setminus\{e\}$, and hence $\mathrm{Cay}(S_n,S)\cong K_{n!}$. If $S$ does not contain the conjugacy class of transpositions but contains the conjugacy class of $3$-cycles, then by Lemma [\[3-cycle-linegraph\]](#3-cycle-linegraph){reference-type="ref" reference="3-cycle-linegraph"}, $S=A_n\setminus\{e\}$, and hence $\mathrm{Cay}(S_n,S)\cong 2K_{n!/2}$. Therefore, we may assume in the sequel that $|\mathrm{supp}(\sigma)|\ge 4$ for every $\sigma\in S$.
+
+If $S$ contains an element $\sigma$ whose cycle decomposition contains a cycle of length at least $4$, then we may assume without loss of generality that $\sigma=(1\,2\,3\,4\,\cdots\,t)\sigma'$ for some $t\ge 4$ and $\sigma' \in S_n$. Let $$\delta=e,\qquad
+\tau_1=(1\,2\,3\,4\,\cdots\,t)\sigma',\qquad
+\tau_2=(1\,3\,4\,\cdots\,t\,2)\sigma',\qquad
+\tau_3=(1\,3\,2\,4\,\cdots\,t)\sigma'.$$ Since $\tau_1$, $\tau_2$, and $\tau_3$ all lie in the conjugacy class of $\sigma$, we have $\tau_i\in S$ for $1\le i\le 3$, and hence $\delta\sim\tau_i$ for $1\le i\le 3$. Moreover, each $\tau_i^{-1}\tau_j$ is a $3$-cycle, and hence by our assumption $\tau_i$ and $\tau_j$ are not adjacent in $\mathrm{Cay}(S_n,S)$ for $1\le i<j\le 3$. Therefore, the subgraph induced by $\{\delta,\tau_1,\tau_2,\tau_3\}$ is isomorphic to $H_2$ in Figure [3](#fig:H1H2){reference-type="ref" reference="fig:H1H2"}, but this contradicts our assumption that $\mathrm{Cay}(S_n,S)$ is a line graph.
+
+If $S$ contains an element $\sigma$ whose cycle decomposition contains both a $2$-cycle and a $3$-cycle, then we may assume without loss of generality that $\sigma=(1\,2)(3\,4\,5)\sigma'$ for some $\sigma' \in S_n$. Let $$\delta=e,\qquad
+\tau_1=(1\,2)(3\,4\,5)\sigma',\qquad
+\tau_2=(1\,2)(3\,5\,4)\sigma',\qquad
+\tau_3=(3\,5)(1\,4\,2)\sigma'.$$ Arguing as above, we have $\delta\sim\tau_i$ for $1\le i\le 3$ and $\tau_i$ and $\tau_j$ are not adjacent in $\mathrm{Cay}(S_n,S)$ for $1\le i<j\le 3$. Therefore, the subgraph of $\mathrm{Cay}(S_n,S)$ induced by $\{\delta,\tau_1,\tau_2,\tau_3\}$ is isomorphic to $H_2$ in Figure [3](#fig:H1H2){reference-type="ref" reference="fig:H1H2"}, contradicting the assumption that $\mathrm{Cay}(S_n,S)$ is a line graph.
+
+If $S$ contains an element $\sigma$ whose cycle decomposition contains only $3$-cycles, then, since $|\mathrm{supp}(\sigma)|\ge 4$, we may assume without loss of generality that $\sigma=(1\,2\,3)(4\,5\,6)\sigma'$ for some $\sigma' \in S_n$. Let $$\delta=e,\qquad
+\tau_1=(1\,2\,3)(4\,5\,6)\sigma',\qquad
+\tau_2=(1\,6\,2)(3\,4\,5)\sigma',\qquad
+\tau_3=(1\,4\,2)(3\,5\,6)\sigma'.$$ Then $\delta\sim\tau_i$ for $1\le i\le 3$. Moreover, each $\tau_i^{-1}\tau_j$ is a $5$-cycle. Since we have already shown that no $5$-cycle lies in $S$, it follows that $\tau_i$ and $\tau_j$ are not adjacent in $\mathrm{Cay}(S_n,S)$ for $1\le i<j\le 3$. Therefore, the subgraph of $\mathrm{Cay}(S_n,S)$ induced by $\{\delta,\tau_1,\tau_2,\tau_3\}$ is isomorphic to $H_2$ in Figure [3](#fig:H1H2){reference-type="ref" reference="fig:H1H2"}, a contradiction.
+
+If $n\ge 5$ and $S$ contains an element $\sigma$ with at least one fixed point whose cycle decomposition contains only $2$-cycles, then, since $|\mathrm{supp}(\sigma)|\ge 4$, we may assume without loss of generality that $5 \notin \mathrm{supp}(\sigma)$ and $\sigma=(1\,2)(3\,4)\sigma'$ for some $\sigma' \in S_n$. Let $$\delta=e,\qquad
+\tau_1=(1\,2)(3\,4)\sigma',\qquad
+\tau_2=(1\,5)(3\,4)\sigma',\qquad
+\tau_3=(2\,5)(3\,4)\sigma'.$$ Arguing as above, we have $\delta\sim\tau_i$ for $1\le i\le 3$ and $\tau_i$ and $\tau_j$ are not adjacent in $\mathrm{Cay}(S_n,S)$ for $1\le i<j\le 3$. Therefore, the subgraph of $\mathrm{Cay}(S_n,S)$ induced by $\{\delta,\tau_1,\tau_2,\tau_3\}$ is isomorphic to $H_2$ in Figure [3](#fig:H1H2){reference-type="ref" reference="fig:H1H2"}, and hence $\mathrm{Cay}(S_n,S)$ cannot be a line graph, a contradiction.
+
+If $n\ge 5$ and $S$ contains an element $\sigma$ with no fixed point whose cycle decomposition consists only of $2$-cycles, then, since $n\ge 5$, we may assume without loss of generality that $\sigma=(1\,2)(3\,4)(5\,6)\sigma'$ for some $\sigma' \in S_n$. Let $$\delta=e,\qquad
+\tau_1=(1\,2)(3\,4)(5\,6)\sigma',\qquad
+\tau_2=(1\,3)(2\,5)(4\,6)\sigma',\qquad
+\tau_3=(1\,4)(2\,6)(3\,5)\sigma'.$$ Then $\delta\sim\tau_i$ for $1\le i\le 3$. Moreover, the cycle decomposition of each $\tau_i^{-1}\tau_j$ consists of two $3$-cycles for $1\le i<j\le 3$. Since we have already shown that no element of $S$ contains a $3$-cycle, it follows that $\tau_i$ and $\tau_j$ are not adjacent in $\mathrm{Cay}(S_n,S)$ for $1\le i<j\le 3$. Therefore, the subgraph of $\mathrm{Cay}(S_n,S)$ induced by $\{\delta,\tau_1,\tau_2,\tau_3\}$ is isomorphic to $H_2$ in Figure [3](#fig:H1H2){reference-type="ref" reference="fig:H1H2"}, and hence $\mathrm{Cay}(S_n,S)$ cannot be a line graph, a contradiction.
+
+Summing up, the only remaining case is that $n=4$ and $S$ contains an element $\sigma$ whose cycle decomposition contains only $2$-cycles. In this case, we have $S=\{(1\,2)(3\,4), \allowbreak (1\,3)(2\,4), \allowbreak (1\,4)(2\,3)\}$, and hence $\mathrm{Cay}(S_n,S)\cong 6K_4$. This completes the proof. ◻
+:::

@@ -302,8 +302,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "columbia.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 24,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -313,71 +313,95 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.858,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-link-invariant-from-a-yangbaxter-operator",
      "title": "Link invariant from a Yang\u2013Baxter operator",
-     "prose_ratio": 0.036,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-21-braid-presentation-of-a-link",
      "title": "Braid presentation of a link",
-     "result": "no matching \\section"
+     "prose_ratio": 0.912,
+     "coverage_ratio": 0.92,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-23-invariant",
      "title": "Invariant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.268,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-22-yangbaxter-operator",
      "title": "Yang\u2013Baxter operator",
-     "result": "no matching \\section"
+     "prose_ratio": 0.639,
+     "coverage_ratio": 0.344,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-005-25-example-of-calculation",
      "title": "Example of calculation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.858,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-3-volume-conjecture",
      "title": "Volume conjecture",
-     "prose_ratio": 0.923,
-     "coverage_ratio": 0.947,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-4-supporting-evidence-for-the-volume-conjecture",
      "title": "Supporting evidence for the Volume Conjecture",
-     "prose_ratio": 0.1,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.897,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-41-approximation-of-the-colored-jones-polynomial",
      "title": "Approximation of the colored Jones polynomial",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-42-geometric-interpretation-of-the-limit",
      "title": "Geometric interpretation of the limit",
-     "result": "no matching \\section"
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-5-generalizations-of-the-volume-conjecture",
      "title": "Generalizations of the Volume Conjecture",
-     "prose_ratio": 0.176,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.833,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-52-deformation-of-the-parameter",
      "title": "Deformation of the parameter",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-references",

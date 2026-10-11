@@ -7,10 +7,10 @@ section_number: 5
 pages: 34-38
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
-text_source: latex
-latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.793
 doc_brief: "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\41,S 3\52 with generic"
+text_source: latex
+latex_prose_ratio: 0.888
+latex_coverage_ratio: 1.0
 ---
 \label{sc:con}
 
@@ -112,3 +112,9 @@ resummed asymptotic series in complex Chern-Simons theory.  As
 showcased in \cite{Ito:2018eon}, such an equation could help answer
 the question of the evolution of the resurgent structure as we change
 the moduli of the system, which are the holonomy parameter $x$ here.
+
+
+\section{Acknowledgements}
+
+We thank Sunjin Choi, Dongmin Gang, Stavros Garoufalidis, Kimyeong Lee, Sungjay Lee, Marcos Mari\~no for stimulating
+discussions. Main results of this work have been presented by ZD in Incheon workshop "New Frontiers in Quantum Field Theory and String Theory" and string theory seminar at LPENS. ZD would like to thank the audience for suggestions and feedback. ZD is supported by KIAS Grant PG076902. JG is supported by the Startup Funding no.~3207022203A1 and no.~4060692201/011 of the Southeast University.

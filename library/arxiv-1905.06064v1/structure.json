@@ -135,8 +135,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "pknot23.tex",
-   "tex_sections": 6,
-   "overlaid": 1,
+   "tex_sections": 16,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -151,17 +151,18 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-a-new-energy-e",
      "title": "A new energy E",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.477,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-references",

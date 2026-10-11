@@ -7,10 +7,10 @@ section_number: 6
 pages: 42-57
 source_pdf: 1105.0091v1.pdf
 source_sha256: 7d6f72e016b25027
-text_source: latex
-latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.823
 doc_brief: "E-mail: meliot@phare.normalesup.org — In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible"
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.979
 ---
 []{#oconnell label="oconnell"} In the previous paragraphs, we have shown that the rows and columns of a partition $\lambda$ of law $\mathbb{P}_{n,\omega}$ have limit frequencies $\alpha_{i}$ and $\beta_{j}$, and gaussian fluctuations when gathered for equal coordinates of the point $\omega$ of the Thoma simplex. To treat the case of equal parameters, we shall use O'Connell's theory ([@OC03]) that relates the Robinson-Schensted algorithm to an operation on multidimensional paths, and therefore random tableaux coming from $\omega$-shuffles to random walks conditioned to stay in a Weyl chamber. These random walks are also related to the processes of eigenvalues of brownian traceless Hermitian matrices. Thus, the fluctuations of a block of $d$ rows or columns corresponding to equal coordinates of $\omega$ are the same as those of the eigenvalues of a gaussian matrix in $\mathfrak{su}(d,\mathbb{C})$, up to the additional gaussian term described by Theorem [\[almostgeom\]](#almostgeom){reference-type="ref" reference="almostgeom"}; see Theorem [\[maingeom\]](#maingeom){reference-type="ref" reference="maingeom"} for a precise statement. We shall prove this progressively, starting from the toy model of $2$-shuffles, then introducing **Pitman operators** in order to treat the case of $d$-shuffles, and finally studying the general case.
 
@@ -18,13 +18,13 @@ doc_brief: "E-mail: meliot@phare.normalesup.org — In this paper, we review the
 
 To begin with, let us treat minutely the case when $$\omega=\left(\left(\frac{1}{2},\frac{1}{2},0,0,\ldots\right),(0,0,\ldots)\right).$$ The corresponding $\omega$-shuffles (which we shall call **$\mathbf{2}$-shuffles**) are easy to describe. Indeed, for any $n$, a random permutation of law $\mathbb{Q}_{n,\omega}$ can be obtained by shuffling together two blocks of size $n_{1}$ and $n_{2}=n-n_{1}$ with $n_{1} \sim \mathcal{B}(n,\frac{1}{2})$, that is to say that $$\mathbb{P}[n_{1}=k]=\frac{1}{2^{n}}\,\binom{n}{k}.$$ We recall that all the $\binom{n}{k}$ shuffles of two blocks of sizes $k$ and $n-k$ are equiprobable. Thus, if $b_{1}, \ldots,b_{n}$ are independent identically distributed variables with $\mathbb{P}[b_{i}=1]=\mathbb{P}[b_{i}=2]=1/2$, then one can produce a permutation of law $\mathbb{Q}_{n,\omega}$ by:
 
-- setting $n_{1}=\mathrm{card}\,\{i \,\,|\,\, b_{i}=1\}$, $n_{2}=\mathrm{card}\,\{i \,\,|\,\, b_{i}=2\}$.
+-   setting $n_{1}=\mathrm{card}\,\{i \,\,|\,\, b_{i}=1\}$, $n_{2}=\mathrm{card}\,\{i \,\,|\,\, b_{i}=2\}$.
 
-- sending the integers of $\left[\!\left[1,n_{1}\right]\!\right]$ in this order to the positions $i$ such that $b_{i}=1$, and then sending the integers of $\left[\!\left[n_{1}+1,n_{1}+n_{2}\right]\!\right]$ in this order to the positions $i$ such that $b_{i}=2$.
+-   sending the integers of $\left[\!\left[1,n_{1}\right]\!\right]$ in this order to the positions $i$ such that $b_{i}=1$, and then sending the integers of $\left[\!\left[n_{1}+1,n_{1}+n_{2}\right]\!\right]$ in this order to the positions $i$ such that $b_{i}=2$.
 
 For instance, if the sequence of Bernoulli variables is $121121221$, then the corresponding permutation[^1] will be $162374895$. This explicit construction of $2$-shuffles will enable us to relate them to random walks --- here, the random walk that we shall consider is:
 
-<figure data-latex-placement="ht">
+<figure>
 <div class="center">
 <p><span><span> <embed src="graphic_randomwalk.pdf" /></span></span></p>
 </div>
@@ -60,11 +60,11 @@ With these classical results from probability, Lemma [\[2shuffle\]](#2shuffle){r
 ::: proposition
 []{#bessel3 label="bessel3"} Let $\sigma$ be a random permutation obtained by a $2$-shuffle. We denote $$L_{t \in [0,1[}^{(n)}=\frac{2}{\sqrt{n}}\left(\left[(\lfloor nt +1\rfloor-nt)\,\ell_{\lfloor nt \rfloor}(\sigma)+ (nt-\lfloor nt\rfloor)\,\ell_{\lfloor nt \rfloor +1}(\sigma)\right]-\frac{nt}{2}\right)$$ the random process obtained by renormalization and interpolation of the process $(\ell_{k}(\sigma) - \frac{k}{2})_{k \in \left[\!\left[0,n\right]\!\right]}$. As $n$ goes to infinity, $(L_{t}^{(n)})_{t \in [ 0,1]}$ converges in law[^2] in $\mathscr{C}([0,1])$ to a 3-dimensional Bessel process $(\mathrm{BES}^{3}_{t})_{t \in [0,1]}$ (see Figure [1](#figbessel){reference-type="ref" reference="figbessel"}).
 
-<figure id="figbessel" data-latex-placement="ht">
+<figure id="figbessel">
 <div class="center">
 <p><span><span> <embed src="graphic_bessel.pdf" /></span></span></p>
 </div>
-<figcaption>A trajectory of the <span class="math inline">3</span>-dimensional Bessel process.<span id="figbessel" data-label="figbessel"></span></figcaption>
+<figcaption>A trajectory of the <span class="math inline">3</span>-dimensional Bessel process.<span id="figbessel" label="figbessel"></span></figcaption>
 </figure>
 
 In particular, $$\ell(\sigma)=\lambda_{1}=\frac{n}{2}+\frac{\sqrt{n}}{2}\,Y+o\left(\sqrt{n}\right), \quad\text{with }Y\sim \mathrm{BES}^{3}_{1}\sim \mathbf{1}_{y \geq 0} \,\sqrt{\frac{2}{\pi}}\,y^{2}\,\mathrm{e}^{-\frac{y^{2}}{2}}\,dy.$$
@@ -76,18 +76,18 @@ Y_{t} - \mathrm{i}Z_{t}& -X_{t}\end{pmatrix}$$ is a brownian motion in $\mathfra
 
 ## The case of $d$-shuffles
 
-With a similar framework as before, we want to understand the asymptotics of **d-shuffles**, meaning that we consider the case when $$\omega=\left(\left(\frac{1}{d},\frac{1}{d},\ldots,\frac{1}{d},0,0,\ldots \right),(0)\right),$$ with $d$ coordinates equal to $\frac{1}{d}$ in $\alpha$. A generalization of the arguments of the previous paragraph to the case of $d$-shuffles has been proposed by N. O'Connell in [@OC03], in connection with previous results from [@OCY02]. Let us denote by $\Pi_{d}$ the set of paths $W : \mathbb{N}\to \mathbb{N}^{d}$, such that $W(0)=(0,0,\ldots,0)$ and $$W(k+1)-W(k) \in \{0,e_{1},e_{2},\ldots,e_{d}\}$$ for any $k$, where $e_{i}=(0_{1},0_{2},\ldots,1_{i},\ldots,0_{d})$. If $w$ is a word in $\{1,2,\ldots,d\}^{*}$ of length $n$, we associate to it a path $(W^{(k)})_{k \leq n}$ in $\Pi_{d}$, with $$W(k+1)-W(k)=e_{i}\quad\text{if }w_{k}=i.$$ Now, for any pair of sequences $(x(k))_{k\in \mathbb{N}}$ and $(y(k))_{k \in \mathbb{N}}$ in $\Pi_{1}$, we define two new sequences $$\begin{align*}
+With a similar framework as before, we want to understand the asymptotics of **d-shuffles**, meaning that we consider the case when $$\omega=\left(\left(\frac{1}{d},\frac{1}{d},\ldots,\frac{1}{d},0,0,\ldots \right),(0)\right),$$ with $d$ coordinates equal to $\frac{1}{d}$ in $\alpha$. A generalization of the arguments of the previous paragraph to the case of $d$-shuffles has been proposed by N. O'Connell in [@OC03], in connection with previous results from [@OCY02]. Let us denote by $\Pi_{d}$ the set of paths $W : \mathbb{N}\to \mathbb{N}^{d}$, such that $W(0)=(0,0,\ldots,0)$ and $$W(k+1)-W(k) \in \{0,e_{1},e_{2},\ldots,e_{d}\}$$ for any $k$, where $e_{i}=(0_{1},0_{2},\ldots,1_{i},\ldots,0_{d})$. If $w$ is a word in $\{1,2,\ldots,d\}^{*}$ of length $n$, we associate to it a path $(W^{(k)})_{k \leq n}$ in $\Pi_{d}$, with $$W(k+1)-W(k)=e_{i}\quad\text{if }w_{k}=i.$$ Now, for any pair of sequences $(x(k))_{k\in \mathbb{N}}$ and $(y(k))_{k \in \mathbb{N}}$ in $\Pi_{1}$, we define two new sequences $$\begin{aligned}
 (x \Yup y)(k) &= \min \{x(j)-y(j) +y(k) \}_{j \leq k};\\
 (x \Ydown y)(k) &= \max \{ x(j)-y(j)+y(k)\}_{j \leq k}.
-\end{align*}$$ Notice that the rules $\Yup$ and $\Ydown$ are not associative. In the following, we will use the following convention: $x \Yup y \Yup z = (x \Yup y) \Yup z$ and $x \Ydown y \Ydown z = (x \Ydown y) \Ydown z$. We then define operators $D_{d} : \Pi_{d} \to \Pi_{d}$ and $T_{d} :  \Pi_{d} \to \Pi_{d-1}$: $$\begin{align*}
+\end{aligned}$$ Notice that the rules $\Yup$ and $\Ydown$ are not associative. In the following, we will use the following convention: $x \Yup y \Yup z = (x \Yup y) \Yup z$ and $x \Ydown y \Ydown z = (x \Ydown y) \Ydown z$. We then define operators $D_{d} : \Pi_{d} \to \Pi_{d}$ and $T_{d} :  \Pi_{d} \to \Pi_{d-1}$: $$\begin{aligned}
 D_{d}(x_{1},\ldots,x_{d})&=(x_{1},x_{1}\Yup x_{2},x_{1}\Yup x_{2}\Yup x_{3},\ldots,x_{1}\Yup x_{2}\Yup \cdots \Yup x_{d});\\
 T_{d}(x_{1},\ldots,x_{d})&=(x_{2}\Ydown x_{1},x_{3}\Ydown (x_{1}\Yup x_{2}),\ldots,x_{d}\Ydown(x_{1}\Yup x_{2}\Yup \cdots \Yup x_{d-1})).
-\end{align*}$$ Finally, from a path $W$ in $\Pi_{d}$, we define new paths $D^{i}W \in \Pi_{d-i+1}$ and $T^{i}W \in \Pi_{d-i}$ by the recursive rule $$\begin{align*}
+\end{aligned}$$ Finally, from a path $W$ in $\Pi_{d}$, we define new paths $D^{i}W \in \Pi_{d-i+1}$ and $T^{i}W \in \Pi_{d-i}$ by the recursive rule $$\begin{aligned}
  D^{1}W=D_{d}(W_{1},W_{2},\ldots,W_{d})\qquad&;\qquad T^{1}W=T_{d}(W_{1},\ldots,W_{d})\\
 D^{i+1}W=D_{d-i}(T^{i}W)\qquad&;\qquad T^{i+1}W=T_{d-i}(T^{i}W).
-\end{align*}$$ For any path $W$, the family $(D^{1}W,D^{2}W,\ldots,D^{d}W)$ is a sequence of triangular arrays. The link between this construction and the RSK algorithm is given by the following result of O'Connell:
+\end{aligned}$$ For any path $W$, the family $(D^{1}W,D^{2}W,\ldots,D^{d}W)$ is a sequence of triangular arrays. The link between this construction and the RSK algorithm is given by the following result of O'Connell:
 
-:::: theorem
+::: theorem
 []{#bradpitt label="bradpitt"} For any word $w \in \{1,2,\ldots,d\}^{n}$, the semi-standard tableau of size $n$ obtained from $w$ by Schensted insertion is
 
 ::: center
@@ -95,34 +95,35 @@ D^{i+1}W=D_{d-i}(T^{i}W)\qquad&;\qquad T^{i+1}W=T_{d-i}(T^{i}W).
 :::
 
 where[^3] $m_{ij}=(D^{j-i+1}W)_{i}(n)-(D^{j-i}W)_{i}(n)$ for any $1 \leq i \leq j \leq d$, $W$ being the path associated to the word $w$. In particular, for any $k\leq n$, the shape $(\lambda_{1},\lambda_{2},\ldots,\lambda_{d})$ of $P_{k}(w)$ is $$\left((D^{d}W)_{1}(k),(D^{d-1}W)_{2}(k),\ldots,(D^{1}W)_{d}(k)\right).$$
-::::
+:::
 
-We refer to [@OC03 Theorem 3.1] for a proof of this important result. Now, we have to understand the transformation $$\begin{align*}
+We refer to [@OC03 Theorem 3.1] for a proof of this important result. Now, we have to understand the transformation $$\begin{aligned}
 G_{d} : \Pi_{d} &\to \Pi_{d}\\
 W &\mapsto \left((D^{d}W)_{1},(D^{d-1}W)_{2},\ldots,(D^{1}W)_{d}\right),
-\end{align*}$$ and what is the law of $G_{d}(W)$ when $W$ is a random path in $\mathbb{N}^{d}$ associated to a random word in $\{1,2,\ldots,d\}^{*}$. To begin with, we shall notice that the operators $\Yup$ and $\Ydown$ also make sense for any continuous or càdlàg functions $x(t)$ and $y(t)$. Thus, we can define operators $$\begin{align*}
+\end{aligned}$$ and what is the law of $G_{d}(W)$ when $W$ is a random path in $\mathbb{N}^{d}$ associated to a random word in $\{1,2,\ldots,d\}^{*}$. To begin with, we shall notice that the operators $\Yup$ and $\Ydown$ also make sense for any continuous or càdlàg functions $x(t)$ and $y(t)$. Thus, we can define operators $$\begin{aligned}
 D_{d} : \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d}) &\to \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d})\\
 T_{d} : \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d}) &\to \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d-1}) \\
  G_{d} : \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d}) &\to \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d})
-\end{align*}$$ where $\mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d})$ denotes the set of continuous functions $w(t)$ from $\mathbb{R}_{+}$ to $\mathbb{R}^{d}$, with $w(0)=(0,0,\ldots,0)$. Moreover, $G_{d}$ has the following property, see [@OC03 Lemma 2.2]: for any path $w \in \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d})$ and any time $t \in \mathbb{R}_{+}$, $$w_{1}(t)+w_{2}(t)+\cdots+w_{d}(t)=(G_{d}w)_{1}(t)+(G_{d}w)_{2}(t)+\cdots+(G_{d}w)_{d}(t).$$ In particular, $G_{d}$ stabilizes the subspace $\mathscr{C}_{0}(\mathbb{R}_{+},H)\subset \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d})$ of functions taking their values in the hyperplane $$H=\{(x_{1},x_{2},\ldots,x_{d})\,\,|\,\,x_{1}+x_{2}+\cdots+x_{d}=0\}.$$ On the other hand, for any $x,y,f$ functions in $\mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R})$, one has $$(x+f) \Yup (y+f)=(x\Yup y)+f\qquad;\qquad(x+f)\Ydown (y+f)=(x\Ydown y)+f.$$ This implies immediately that: $$G_{d}(x_{1}+f,x_{2}+f,\ldots,x_{d}+f)=G_{d}(x_{1},x_{2},\ldots,x_{d})+(f,f,\ldots,f).$$ In particular, set $f=\frac{x_{1}+x_{2}+\cdots+x_{d}}{d}$. Then, $$G_{d}(x_{1},x_{2},\ldots,x_{d})=(f,f,\ldots,f)+G_{d}(x_{1}-f,x_{2}-f,\ldots,x_{d}-f),$$ and the last term is a function in $\mathscr{C}_{0}(\mathbb{R}_{+},H)$; hence, it suffices to study the restriction of $G_{d}$ to the subspace $\mathscr{C}_{0}(\mathbb{R}_{+},H)$.
+ 
+\end{aligned}$$ where $\mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d})$ denotes the set of continuous functions $w(t)$ from $\mathbb{R}_{+}$ to $\mathbb{R}^{d}$, with $w(0)=(0,0,\ldots,0)$. Moreover, $G_{d}$ has the following property, see [@OC03 Lemma 2.2]: for any path $w \in \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d})$ and any time $t \in \mathbb{R}_{+}$, $$w_{1}(t)+w_{2}(t)+\cdots+w_{d}(t)=(G_{d}w)_{1}(t)+(G_{d}w)_{2}(t)+\cdots+(G_{d}w)_{d}(t).$$ In particular, $G_{d}$ stabilizes the subspace $\mathscr{C}_{0}(\mathbb{R}_{+},H)\subset \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d})$ of functions taking their values in the hyperplane $$H=\{(x_{1},x_{2},\ldots,x_{d})\,\,|\,\,x_{1}+x_{2}+\cdots+x_{d}=0\}.$$ On the other hand, for any $x,y,f$ functions in $\mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R})$, one has $$(x+f) \Yup (y+f)=(x\Yup y)+f\qquad;\qquad(x+f)\Ydown (y+f)=(x\Ydown y)+f.$$ This implies immediately that: $$G_{d}(x_{1}+f,x_{2}+f,\ldots,x_{d}+f)=G_{d}(x_{1},x_{2},\ldots,x_{d})+(f,f,\ldots,f).$$ In particular, set $f=\frac{x_{1}+x_{2}+\cdots+x_{d}}{d}$. Then, $$G_{d}(x_{1},x_{2},\ldots,x_{d})=(f,f,\ldots,f)+G_{d}(x_{1}-f,x_{2}-f,\ldots,x_{d}-f),$$ and the last term is a function in $\mathscr{C}_{0}(\mathbb{R}_{+},H)$; hence, it suffices to study the restriction of $G_{d}$ to the subspace $\mathscr{C}_{0}(\mathbb{R}_{+},H)$.
 
-The operators $G_{d}$ are better understood in terms of the **Pitman transforms** attached to a root system (*cf.* [@BBO05]). The hyperplane $H\subset \mathbb{R}^{d}$ contains a root system of type $A_{d-1}$, whose simple roots are $e_{1}-e_{2},e_{2}-e_{3},\ldots,e_{d-1}-e_{d}$. To each simple root $\delta_{i}=e_{i}-e_{i+1}$, we attach an operator $P_{i} : \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d}) \to \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d})$, defined by the following formula:[]{#pitmanoperator label="pitmanoperator"} $$(P_{i}w)(t)=w(t)-\left(\min\{ \left\langle \delta_{i}\vphantom{w(s)}\,\right |\left.w(s) \vphantom{\delta_{i}}\right\rangle\}_{s \leq t}\right)\,\delta_{i}.$$ Notice that each $P_{i}$ stabilizes the subspace $\mathscr{C}_{0}(\mathbb{R}_{+},H)$. In [@BBO05], it is shown that the operators $P_{i}$ satisfy the braid relations of the generators $s_{i}=(i,i-1)$ of the Coxeter group $\mathfrak{S}_{d}$: $$\begin{align*}
+The operators $G_{d}$ are better understood in terms of the **Pitman transforms** attached to a root system (*cf.* [@BBO05]). The hyperplane $H\subset \mathbb{R}^{d}$ contains a root system of type $A_{d-1}$, whose simple roots are $e_{1}-e_{2},e_{2}-e_{3},\ldots,e_{d-1}-e_{d}$. To each simple root $\delta_{i}=e_{i}-e_{i+1}$, we attach an operator $P_{i} : \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d}) \to \mathscr{C}_{0}(\mathbb{R}_{+},\mathbb{R}^{d})$, defined by the following formula:[]{#pitmanoperator label="pitmanoperator"} $$(P_{i}w)(t)=w(t)-\left(\min\{ \left\langle \delta_{i}\vphantom{w(s)}\,\right |\left.w(s) \vphantom{\delta_{i}}\right\rangle\}_{s \leq t}\right)\,\delta_{i}.$$ Notice that each $P_{i}$ stabilizes the subspace $\mathscr{C}_{0}(\mathbb{R}_{+},H)$. In [@BBO05], it is shown that the operators $P_{i}$ satisfy the braid relations of the generators $s_{i}=(i,i-1)$ of the Coxeter group $\mathfrak{S}_{d}$: $$\begin{aligned}
 &\forall i \leq d-2,\,\,\,P_{i}P_{i+1}P_{i}=P_{i+1}P_{i}P_{i+1};\\
 &\forall i,j \leq d-1,\,\,\,|i-j|\geq 2 \Rightarrow P_{i}P_{j}=P_{j}P_{i}.
-\end{align*}$$ It enables us to define $P_{\sigma}$ for any $\sigma \in \mathfrak{S}_{d}$, and it is not hard to see that $P_{\sigma}|_{\mathscr{C}_{0}(\mathbb{R}_{+},H)}$ takes its values in $$\mathscr{C}_{0}\left(\mathbb{R}_{+},\bigcap_{s_{i} \in L_{\sigma}} H_{i}^{+}\right),$$ where $L_{\sigma}= \{s_{i} \,\,|\,\, \ell(s_{i}\sigma)<\ell(\sigma)\}$, and $H_{i}^{+} =\{x \in H\,\,|\,\,\left\langle \delta_{i}\vphantom{x}\,\right |\left.x \vphantom{\delta_{i}}\right\rangle\geq 0\}$ --- *cf.* [@BBO05 Proposition 2.8]. In particular, if $\omega_{0}$ is the permutation of maximal length in $\mathfrak{S}_{d}$, that is to say $(d,d-1,\ldots,1)$, then $P_{\omega_{0}}|_{\mathscr{C}_{0}(\mathbb{R}_{+},H)}$ is an idempotent operator taking its values in $\mathscr{C}_{0}(\mathbb{R}_{+},C),$ where $C=\bigcap_{i=1}^{d-1} H_{i}^{+}$ is the closed Weyl chamber in $H$ corresponding to the simple roots. In terms of coordinates, notice that $x =(x_{1},\ldots,x_{d})$ is in $C$ if and only if $$x_{1}+\cdots+x_{d}=0 \quad\text{and}\quad x_{1}\geq x_{2}\geq \cdots \geq x_{d}.$$ Now, if $\phi_{k}^{d}$ is the projection $(x_{1},\ldots,x_{d}) \in \mathbb{R}^{d}\mapsto (x_{1},\ldots,x_{k}) \in \mathbb{R}^{k}$, then it is easily seen that $$\begin{align*}
+\end{aligned}$$ It enables us to define $P_{\sigma}$ for any $\sigma \in \mathfrak{S}_{d}$, and it is not hard to see that $P_{\sigma}|_{\mathscr{C}_{0}(\mathbb{R}_{+},H)}$ takes its values in $$\mathscr{C}_{0}\left(\mathbb{R}_{+},\bigcap_{s_{i} \in L_{\sigma}} H_{i}^{+}\right),$$ where $L_{\sigma}= \{s_{i} \,\,|\,\, \ell(s_{i}\sigma)<\ell(\sigma)\}$, and $H_{i}^{+} =\{x \in H\,\,|\,\,\left\langle \delta_{i}\vphantom{x}\,\right |\left.x \vphantom{\delta_{i}}\right\rangle\geq 0\}$ --- *cf.* [@BBO05 Proposition 2.8]. In particular, if $\omega_{0}$ is the permutation of maximal length in $\mathfrak{S}_{d}$, that is to say $(d,d-1,\ldots,1)$, then $P_{\omega_{0}}|_{\mathscr{C}_{0}(\mathbb{R}_{+},H)}$ is an idempotent operator taking its values in $\mathscr{C}_{0}(\mathbb{R}_{+},C),$ where $C=\bigcap_{i=1}^{d-1} H_{i}^{+}$ is the closed Weyl chamber in $H$ corresponding to the simple roots. In terms of coordinates, notice that $x =(x_{1},\ldots,x_{d})$ is in $C$ if and only if $$x_{1}+\cdots+x_{d}=0 \quad\text{and}\quad x_{1}\geq x_{2}\geq \cdots \geq x_{d}.$$ Now, if $\phi_{k}^{d}$ is the projection $(x_{1},\ldots,x_{d}) \in \mathbb{R}^{d}\mapsto (x_{1},\ldots,x_{k}) \in \mathbb{R}^{k}$, then it is easily seen that $$\begin{aligned}
 T_{d}(W)&=\phi_{d-1}^{d}\,P_{d-1}P_{d-2}\cdots P_{2}P_{1}(W);\\
 T^{i}W&=\phi_{d-i}^{d}\,(P_{d-i}\cdots P_{1})\,(P_{d-i+1}\cdots P_{1})\,\cdots\, (P_{d-1}\cdots P_{1})(W).
-\end{align*}$$ From this, one sees that $G_{d}=P_{1}(P_{2}P_{1})\cdots(P_{d-1}\cdots P_{1})= P_{\omega_{0}}$. In particular, $G_{d}|_{\mathscr{C}_{0}(\mathbb{R}_{+},H)}$ takes its values in $\mathscr{C}_{0}(\mathbb{R}_{+},C)$, which was not clear from the first definition.
+\end{aligned}$$ From this, one sees that $G_{d}=P_{1}(P_{2}P_{1})\cdots(P_{d-1}\cdots P_{1})= P_{\omega_{0}}$. In particular, $G_{d}|_{\mathscr{C}_{0}(\mathbb{R}_{+},H)}$ takes its values in $\mathscr{C}_{0}(\mathbb{R}_{+},C)$, which was not clear from the first definition.
 
 Then, let us consider the path $W$ associated to a random word $w \in \{1,2,\ldots,d\}^{*}$, where each letter of $w$ is independent of the other letters, and uniformly distributed on $\left[\!\left[1,d\right]\!\right]$. If $$\widetilde{W}(k)=W(k)-\left(\frac{k}{d},\frac{k}{d},\ldots,\frac{k}{d}\right),$$ then $\widetilde{W}$ lives in the hyperplane $H$, and by (multi-dimensional) Donsker's theorem (*cf.* [@Bil69 Chapter 2]), after time-space scaling, $\widetilde{W}$ converges to a brownian motion $(w_{t})_{t \in \mathbb{R}}$ in $H$, that is to say a continuous gaussian process in $H$ with covariances $$\mathbb{E}[\left\langle a\vphantom{w_{s}}\,\right |\left.w_{s} \vphantom{a}\right\rangle\,\left\langle b\vphantom{w_{t}}\,\right |\left.w_{t} \vphantom{b}\right\rangle]=\frac{1}{d}\,(s\wedge t)\,\left\langle a\vphantom{b}\,\right |\left.b \vphantom{a}\right\rangle.$$ Indeed, if $X$ is a random step $\widetilde{W}(n+1)-\widetilde{W}(n)$, then $\left\langle \delta_{i}\vphantom{X}\,\right |\left.X \vphantom{\delta_{i}}\right\rangle$ equals $1$ if $X=e_{i}$, $-1$ if $X=e_{i+1}$, and $0$ otherwise. From this, one sees that $\mathbb{E}[\left\langle \delta_{i}\vphantom{X}\,\right |\left.X \vphantom{\delta_{i}}\right\rangle\,\left\langle \delta_{j}\vphantom{X}\,\right |\left.X \vphantom{\delta_{j}}\right\rangle]$ equals $\frac{2}{d}$ if $i=j$, $-\frac{1}{d}$ if $i=j\pm 1$, and $0$ otherwise. But this is exactly $\frac{\left\langle \delta_{i}\vphantom{\delta_{j}}\,\right |\left.\delta_{j} \vphantom{\delta_{i}}\right\rangle}{d}$, whence the result after applying Donsker's theorem.
 
 Let us forget for the moment the factor $\frac{1}{d}$, and consider a standard brownian motion $w$ in $H$. Then, it can be shown that $P_{\omega_{0}}(w)$ is a brownian motion conditioned in Doob's sense to stay in the Weyl chamber $C$, *cf.* [@BBO05 Theorem 5.6] or [@Bia09]. We have drawn on Figure [2](#pitmanfig){reference-type="ref" reference="pitmanfig"} a random walk in $H \subset \mathbb{R}^{3}$ corresponding to a random word (in blue), and its image by Pitman's transform $P_{\omega_{0}}=P_{1}P_{2}P_{1}$ (in violet); it approximates a brownian motion conditioned to stay in a Weyl chamber[^4].
 
-<figure id="pitmanfig" data-latex-placement="ht">
+<figure id="pitmanfig">
 <div class="center">
 <p><span><span> <embed src="graphic_pitman.pdf" /></span></span></p>
 </div>
-<figcaption>Action of Pitman’s transform on a brownian motion when <span class="math inline"><em>d</em> = 3</span>.<span id="pitmanfig" data-label="pitmanfig"></span></figcaption>
+<figcaption>Action of Pitman’s transform on a brownian motion when <span class="math inline"><em>d</em> = 3</span>.<span id="pitmanfig" label="pitmanfig"></span></figcaption>
 </figure>
 
 This conditioned brownian motion is the Markov process on $C$ with transition probabilities $$q_{t}(x,y)=\frac{\Delta(y)}{\Delta(x)}\,\sum_{\sigma \in \mathfrak{S}_{d}} \varepsilon(\sigma)\,p_{t}(x,\sigma(y))$$ where $p_{t}(x,y)=(2\pi t)^{-\frac{d-1}{2}}\,\exp\left(-\frac{\|x-y\|^{2}}{2t}\right)$ is the transition kernel of the standard brownian motion in $H$, and $$\Delta(x)=\prod_{\alpha \text{ positive root}} \left\langle \alpha\vphantom{x}\,\right |\left.x \vphantom{\alpha}\right\rangle=\prod_{1\leq i<j\leq d}x_{i}-x_{j}$$ is (up to a multiplicative constant) the unique positive function on $C$ that is harmonic with respect to the symmetrized kernel and that vanishes at the boundary of $C$. The singularity of the transition kernel at $x=(0,0,\ldots,0)$ is solvable[^5], with $$q_{t}(0,y)=\frac{\Delta(y)^{2} }{1!\,2!\,\cdots\,d-1!\,t^{\frac{d(d-1)}{2}}}\,p_{t}(0,y).$$ This Markov process corresponds to the process of the eigenvalues $$(x_{t,1}\geq x_{t,2}\geq \cdots \geq x_{t,d})$$ of a brownian matrix in $\mathfrak{su}(d,\mathbb{C})$ with covariances $$\mathbb{E}[\mathrm{tr}((AM_{s})(BM_{t})^{*})]=\frac{d^{2}-1}{d}\,(s\wedge t)\,\mathrm{tr}(AB^{*}),$$ see [@Dys62; @Bia09], and [@AGZ09 Theorem 2.5.2] for checking that the multiplicative constant is indeed $\frac{d^{2}-1}{d}$. Taking account of the factor $\frac{1}{d}$ put aside before, we get:
@@ -142,10 +143,10 @@ As before, an $\omega$-shuffle of size $n$ corresponding to parameters $p_{1}^{d
 :::
 
 ::: example
-Before proving Lemma [\[technical\]](#technical){reference-type="ref" reference="technical"}, let us see study the simplest example where it applies, namely, when $\omega=((a,1-a),(0))$ with $a>1/2$. The random walk to consider is two dimensional and will be denoted $w_{n}=(x_{n},y_{n})_{n \in \mathbb{N}}$; moreover, $$(G_{2}w)_{n}= (x_{n}-\min\{x_{k}-y_{k}\}_{k \leq n},y_{n}+\min\{x_{k}-y_{k}\}_{k \leq n}).$$ However, $(z_{n}=x_{n}-y_{n})_{n \in \mathbb{N}}$ is a random walk on $\mathbb{Z}$ with $\mathbb{P}[z_{n+1}=z_{n}+1]=a$, $\mathbb{P}[z_{n+1}=z_{n}-1]=1-a$, and $z_{0}=0$ almost surely. It is well-known that such a random walk is transient, with $$\begin{align*}
+Before proving Lemma [\[technical\]](#technical){reference-type="ref" reference="technical"}, let us see study the simplest example where it applies, namely, when $\omega=((a,1-a),(0))$ with $a>1/2$. The random walk to consider is two dimensional and will be denoted $w_{n}=(x_{n},y_{n})_{n \in \mathbb{N}}$; moreover, $$(G_{2}w)_{n}= (x_{n}-\min\{x_{k}-y_{k}\}_{k \leq n},y_{n}+\min\{x_{k}-y_{k}\}_{k \leq n}).$$ However, $(z_{n}=x_{n}-y_{n})_{n \in \mathbb{N}}$ is a random walk on $\mathbb{Z}$ with $\mathbb{P}[z_{n+1}=z_{n}+1]=a$, $\mathbb{P}[z_{n+1}=z_{n}-1]=1-a$, and $z_{0}=0$ almost surely. It is well-known that such a random walk is transient, with $$\begin{aligned}
 \mathbb{P}\left[\inf_{n \in \mathbb{N}}z_{n}\leq -m\right]&=\left(\frac{1-a}{a}\right)^{m}\\
 \mathbb{P}\left[\min_{n \in \mathbb{N}}z_{n}=-m\right]&=\left(\frac{1-a}{a}\right)^{m}-\left(\frac{1-a}{a}\right)^{m+1}=\frac{2a-1}{a}\left(\frac{1-a}{a}\right)^{m}.
-\end{align*}$$ Thus, $(G_{2}(x,y))-(x,y)=(-z,z)$, with $|z|$ almost surely bounded by a (random) constant of expectation $\frac{1-a}{2a-1}$.
+\end{aligned}$$ Thus, $(G_{2}(x,y))-(x,y)=(-z,z)$, with $|z|$ almost surely bounded by a (random) constant of expectation $\frac{1-a}{2a-1}$.
 :::
 
 ::: proof
@@ -192,10 +193,10 @@ To conclude this section, let us look again at the partition-valued random proce
 :::
 
 ::: proof
-*Proof.* This is a generalization of [@OC03 Theorem 6.1], and the proof is exactly the same. The statement of Theorem [\[markovpartition\]](#markovpartition){reference-type="ref" reference="markovpartition"} amounts to ask that for any sequence of partitions $\lambda^{(1)}\nearrow \cdots \nearrow \lambda^{(k)}$, $$\mathbb{P}[\Lambda_{1}(\sigma)=\lambda^{(1)},\cdots,\Lambda_{k}(\sigma)=\lambda^{(k)}]=s_{\lambda^{(k)}}(\omega).$$ However, one can expand $s_{\lambda^{(k)}}(\omega)$ by using the structure of Hopf algebra of $\mathbf{Sym}$: $$\begin{align*}
+*Proof.* This is a generalization of [@OC03 Theorem 6.1], and the proof is exactly the same. The statement of Theorem [\[markovpartition\]](#markovpartition){reference-type="ref" reference="markovpartition"} amounts to ask that for any sequence of partitions $\lambda^{(1)}\nearrow \cdots \nearrow \lambda^{(k)}$, $$\mathbb{P}[\Lambda_{1}(\sigma)=\lambda^{(1)},\cdots,\Lambda_{k}(\sigma)=\lambda^{(k)}]=s_{\lambda^{(k)}}(\omega).$$ However, one can expand $s_{\lambda^{(k)}}(\omega)$ by using the structure of Hopf algebra of $\mathbf{Sym}$: $$\begin{aligned}
 s_{\lambda^{(k)}}(\omega)&=\left((1 \otimes \upsilon \otimes 1)\circ \Delta^{3}\right)s_{\lambda^{(k)}}(\alpha,\beta,\gamma E)\\
 &=\sum_{ \nu \subset \mu \subset \lambda^{(k)}} s_{\nu}(\alpha)\,s_{\mu'\setminus \nu'}(\beta)\,s_{\lambda^{(k)}\setminus \mu}(\gamma E).
-\end{align*}$$ Then, the arguments are exactly the same as in [@OC03]. ◻
+\end{aligned}$$ Then, the arguments are exactly the same as in [@OC03]. ◻
 :::
 
 [^1]: With the vocabulary of §[\[randompermutation\]](#randompermutation){reference-type="ref" reference="randompermutation"}, $\sigma$ is the standardization of the word whose letters are the Bernoulli variables.

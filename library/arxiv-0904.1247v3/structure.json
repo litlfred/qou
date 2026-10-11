@@ -506,8 +506,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 38,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -517,7 +517,7 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.351,
+     "prose_ratio": 0.416,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -528,43 +528,64 @@
     {
      "id": "sec-002-15-acknowledgements",
      "title": "Acknowledgements",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-21--category-basics",
      "title": "-category basics",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-23-centers-and-traces",
      "title": "Centers and traces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-3-rigidity-and-dualizability",
      "title": "Rigidity and dualizability",
-     "prose_ratio": 0.048,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.917,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-31-semi-rigid-categories",
      "title": "Semi-rigid categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.881,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-32-transposes",
      "title": "Transposes",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-33-bar-constructions",
      "title": "Bar constructions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-34-dualizability",
      "title": "Dualizability",
-     "result": "no matching \\section"
+     "prose_ratio": 0.513,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-010-4-preliminaries-on-d-modules",
@@ -579,21 +600,24 @@
     {
      "id": "sec-012-43-d-modules-on-stacks",
      "title": "D-modules on stacks",
-     "result": "no matching \\section"
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-5-integral-transforms-for-d-modules",
      "title": "Integral transforms for D-modules",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-014-6-hecke-categories-and-character-sheaves",
      "title": "Hecke categories and character sheaves",
-     "prose_ratio": 0.838,
-     "coverage_ratio": 0.964,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -605,7 +629,9 @@
     {
      "id": "sec-016-63-character-sheaves",
      "title": "Character sheaves",
-     "result": "no matching \\section"
+     "prose_ratio": 0.778,
+     "coverage_ratio": 0.466,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-017-7-monodromic-variant",
@@ -616,22 +642,34 @@
     {
      "id": "sec-018-71-monodromic-d-modules",
      "title": "Monodromic D-modules",
-     "result": "no matching \\section"
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.779,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-72-monodromic-hecke-categories",
      "title": "Monodromic Hecke categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-020-73-monodromic-hochschild-calculations",
      "title": "Monodromic Hochschild calculations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-021-74-character-sheaves-again",
      "title": "Character sheaves again",
-     "result": "no matching \\section"
+     "prose_ratio": 0.833,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-022-references",

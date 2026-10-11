@@ -586,8 +586,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
-   "tex_sections": 7,
-   "overlaid": 2,
+   "tex_sections": 22,
+   "overlaid": 19,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -597,106 +597,152 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.84,
-     "coverage_ratio": 0.956,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-the-statistical-bootstrap",
      "title": "The statistical bootstrap",
-     "prose_ratio": 0.27,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.57,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-kinematic-constraints",
      "title": "Kinematic constraints",
-     "result": "no matching \\section"
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.9,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-crossing-symmetry-and-modular-invariance",
      "title": "Crossing symmetry and modular invariance",
-     "result": "no matching \\section"
+     "prose_ratio": 0.888,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-typicality-and-index-contractions",
      "title": "Typicality and index contractions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.912,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-spectral-statistics",
      "title": "Spectral statistics",
-     "result": "no matching \\section"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-summing-over-handlebodies",
      "title": "Summing over handlebodies",
-     "prose_ratio": 0.046,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-the-mapping-class-group",
      "title": "The mapping class group",
-     "result": "no matching \\section"
+     "prose_ratio": 0.864,
+     "coverage_ratio": 0.902,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-handlebodies-as-conformal-blocks",
      "title": "Handlebodies as conformal blocks",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-the-handlebody-sum-is-crossing-symmetric",
      "title": "The handlebody sum is crossing symmetric",
-     "result": "no matching \\section"
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-minimal-completion-of-the-handlebody-sum",
      "title": "Minimal completion of the handlebody sum",
-     "prose_ratio": 0.074,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-handlebodies-are-not-sufficient",
      "title": "Handlebodies are not sufficient",
-     "result": "no matching \\section"
+     "prose_ratio": 0.903,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-the-gravitational-machine",
      "title": "The gravitational machine",
-     "prose_ratio": 0.482,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-the-gravitational-machine-is-hyperbolic",
      "title": "The gravitational machine is hyperbolic",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.864,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-014-what-3-manifolds-are-generated",
      "title": "What 3-manifolds are generated?",
-     "result": "no matching \\section"
+     "prose_ratio": 0.911,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-the-gravitational-machine-at-work",
      "title": "The gravitational machine at work",
-     "prose_ratio": 0.211,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-euclidean-wormholes",
      "title": "Euclidean wormholes",
-     "result": "no matching \\section"
+     "prose_ratio": 0.883,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-017-handlebody-knots",
      "title": "Handlebody-knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-discussion",
      "title": "Discussion",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.899,
+     "prose_ratio": 0.912,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

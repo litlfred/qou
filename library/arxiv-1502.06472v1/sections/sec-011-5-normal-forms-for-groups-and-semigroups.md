@@ -7,10 +7,10 @@ section_number: 5
 pages: 8-8
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
-text_source: latex
-latex_prose_ratio: 0.957
-latex_coverage_ratio: 1.0
 doc_brief: "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 --Braid groups
 

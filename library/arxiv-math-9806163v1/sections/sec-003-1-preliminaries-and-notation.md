@@ -8,25 +8,8 @@ pages: 2-3
 source_pdf: 9806163v1.pdf
 source_sha256: dba44975f29cb017
 doc_brief: "Weights of Markov traces on Hecke algebras — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.944
 ---
-Let F be a ﬁeld of characteristic 0. The algebra of n × n matrices over F is denoted by
-Mn(F ) = Mn. Let A ⊂ B be an inclusion of semisimple algebras. Then A = ⨁ m
-i=1 Ai and
-B = ⨁ l
-j=1 Bj, with Ai ∼= Mai, Bj ∼= Mbj and ai, b j ∈ N.
-Since a simple Bj module is also an A module, it can be decomposed into a direct sum of
-simple A modules. Let gij be the number of simple Ai modules in this decomposition. The
-matrix G = (gij) is called the inclusion matrix for A ⊂ B. This matrix can be conveniently
-described by an inclusion diagram. This is a graph with vertices arrang ed in 2 lines. In one
-line, the vertices are in 1 − 1 correspondence with the simple summands Ai of A, in the other
-one with summands Bj of B. Then a vertex corresponding to Ai is joined with a vertex
-corresponding to Bj by gij edges. This is known as the Bratteli diagram.
-Weights of Markov Traces on Hecke Algebras 3
-A trace is a linear funtional tr : B → F such that tr(ab) = tr(ba) for all a, b ∈ B.
-Recall that tr is nondegenerate if for any b ∈ B, b ⁄= 0, there is some b′ ∈ B such that
-tr(bb′) ⁄= 0. There is up to scalar multiples only one trace on Mn(F ). Any trace tr on
-B = ⨁ Bj is completely determined by a vector ⃗t = ( tj), where tj = tr(pj) and pj is a
-minimal idempotent of Bj. The vector ⃗t is called the weight vector of tr. In a similar
-manner we can characterize a trace on A by a weight vector ⃗ s= ( si). The weight vectors ⃗t
-and ⃗ sare related as follows:
-G⃗t = ⃗ s.
+Let $F$ be a field of characteristic $0$. The algebra of $n\times n$ matrices over $F$ is denoted by $M_n(F)=M_n$. Let $A\subset B$ be an inclusion of semisimple algebras. Then $A=\bigoplus_{i=1}^m A_i$ and $B=\bigoplus_{j=1}^lB_j$, with $A_i\cong M_{a_i}$, $B_j\cong M_{b_j}$ and $a_i,\ b_j\in \mathbb{N}$. Since a simple $B_j$ module is also an $A$ module, it can be decomposed into a direct sum of simple $A$ modules. Let $g_{ij}$ be the number of simple $A_i$ modules in this decomposition. The matrix $G=(g_{ij})$ is called the inclusion matrix for $A\subset B$. This matrix can be conveniently described by an inclusion diagram. This is a graph with vertices arranged in 2 lines. In one line, the vertices are in $1-1$ correspondence with the simple summands $A_i$ of $A$, in the other one with summands $B_j$ of $B$. Then a vertex corresponding to $A_i$ is joined with a vertex corresponding to $B_j$ by $g_{ij}$ edges. This is known as the Bratteli diagram. A trace is a linear funtional $tr:B\rightarrow F$ such that $tr(ab)=tr(ba)$ for all $a,b\in B$. Recall that $tr$ is nondegenerate if for any $b\in B$, $b\neq 0$, there is some $b'\in B$ such that $tr(bb')\neq 0$. There is up to scalar multiples only one trace on $M_n(F)$. Any trace $tr$ on $B=\bigoplus B_j$ is completely determined by a vector $\vec{t}=(t_j)$, where $t_j=tr(p_j)$ and $p_j$ is a minimal idempotent of $B_j$. The vector $\vec{t}$ is called the weight vector of $tr$. In a similar manner we can characterize a trace on $A$ by a weight vector $\vec{s}=(s_i)$. The weight vectors $\vec{t}$ and $\vec{s}$ are related as follows: $$G\vec{t}=\vec{s}.$$

@@ -7,24 +7,24 @@ section_number: 1
 pages: 1-3
 source_pdf: 1002.0168v2.pdf
 source_sha256: c95d5d193d57b097
-text_source: latex
-latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.975
 doc_brief: "Non-cyclotomic fusion categories Scott Morrison Noah Snyder — Etingof, Nikshych and Ostrik ask in [ 7,§2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld."
+text_source: latex
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.992
 ---
 In [@MR2183279 §2], Etingof, Nikshych and Ostrik ask if every fusion category over the complex numbers can be defined over a cyclotomic field. More precisely, does every fusion category over $\Complex$ have a complete rational form over a cyclotomic field? (See Section [\[sec:background\]](#sec:background){reference-type="ref" reference="sec:background"} for definitions and examples of the key notions "rational form\" and "complete rational form.\")
 
 Their question is motivated by the following results.
 
-- The representation category of any finite group has a complete rational form over a cyclotomic field. (This is a classical result of Brauer's, see [@MR0450380 §12.3].)
+-   The representation category of any finite group has a complete rational form over a cyclotomic field. (This is a classical result of Brauer's, see [@MR0450380 §12.3].)
 
-- The semisimplified representation category of any quantum group at a root of unity has a complete rational form over a cyclotomic field. (This follows from the usual construction of Weyl modules.)
+-   The semisimplified representation category of any quantum group at a root of unity has a complete rational form over a cyclotomic field. (This follows from the usual construction of Weyl modules.)
 
-- The Frobenius-Perron dimension of any object in a fusion category is a cyclotomic integer [@MR2183279].
+-   The Frobenius-Perron dimension of any object in a fusion category is a cyclotomic integer [@MR2183279].
 
-- The global dimension of a fusion category is a cyclotomic integer [@MR2183279].
+-   The global dimension of a fusion category is a cyclotomic integer [@MR2183279].
 
-- The entries of the $S$-matrix of a modular category lie in a cyclotomic field [@MR1266785; @MR1120140].
+-   The entries of the $S$-matrix of a modular category lie in a cyclotomic field [@MR1266785; @MR1120140].
 
 We answer this question in the negative.
 
@@ -34,23 +34,23 @@ We answer this question in the negative.
 
 We hope that this result will eventually allow a more robust technique for establishing the "exotic\" nature of these fusion categories. No construction that preserves cyclotomicity can produce these fusion categories starting from groups or quantum groups. Alternately this result might suggest new techniques for constructing these fusion categories.
 
-Let $\cH_0$ and $\cH_1$ be the Haagerup [@MR1686551; @0902.1294] and extended Haagerup [@0909.4099] subfactors which are the unique subfactors with the following principal graph pairs. $$\begin{align*}
+Let $\cH_0$ and $\cH_1$ be the Haagerup [@MR1686551; @0902.1294] and extended Haagerup [@0909.4099] subfactors which are the unique subfactors with the following principal graph pairs. $$\begin{aligned}
 \Gamma(\cH_0) & = \left \{ \mathfig{0.25}{haagerup}, \mathfig{0.25}{dual-haagerup} \right \} \\
 \Gamma(\cH_1) & = \left \{ \mathfig{0.4}{EH}, \mathfig{0.4}{dual-EH} \right \}
-\end{align*}$$
+\end{aligned}$$
 
 Given a subfactor $A \subset B$ there are two tensor categories $\cS^p$ and $\cS^d$ (consisting of certain $A$-$A$ bimodules and certain $B$-$B$ bimodules respectively) called the principal even part and dual even part. If the subfactor is finite depth then $\cS^p$ and $\cS^d$ are fusion categories over $\Complex$. We will be looking at the fusion categories $\cH_\ell^p$ and $\cH_\ell^d$ for $\ell \in \{0,1\}$.
 
-Denote by $D_0 = \frac{5+\sqrt{13}}{2} \simeq 4.30278$ and $D_1 = \frac{8}{3}+\frac{2}{3} \operatorname{Re} \sqrt[3]{\frac{13}{2} \left(-5-3 i \sqrt{3}\right)} \simeq 4.3772$ the Jones indices of $\cH_0$ and $\cH_1$. Fix $$\begin{align*}
+Denote by $D_0 = \frac{5+\sqrt{13}}{2} \simeq 4.30278$ and $D_1 = \frac{8}{3}+\frac{2}{3} \operatorname{Re} \sqrt[3]{\frac{13}{2} \left(-5-3 i \sqrt{3}\right)} \simeq 4.3772$ the Jones indices of $\cH_0$ and $\cH_1$. Fix $$\begin{aligned}
 \lambda_0 & = i \sqrt{\frac{-1+\sqrt{13}}{6}} \simeq 0.658983 i \\
 \intertext{and}
 \lambda_1& = \sqrt{-\frac{1}{5}+2 \operatorname{Re} \sqrt[3]{\frac{117-  65 i \sqrt{3}}{2250}}} \simeq 0.648585 i.
-\end{align*}$$
+\end{aligned}$$
 
-Let $\zeta_m$ denote the primitive $m$th root of unity $\exp(2\pi i/m)$. Note that $$\begin{align*}
+Let $\zeta_m$ denote the primitive $m$th root of unity $\exp(2\pi i/m)$. Note that $$\begin{aligned}
 D_0 & = 2 -\zeta_{13}^{2} -\zeta_{13}^5 -\zeta_{13}^6 -\zeta_{13}^7-\zeta_{13}^8-\zeta_{13}^{11}\\
 D_1 & = 3+ \zeta_{13}^2  + \zeta_{13}^3 + \zeta_{13}^{10} +  \zeta_{13}^{11}
-\end{align*}$$ so $D_\ell \in \Rational(\zeta_{13})$ while $\lambda_\ell$ is not cyclotomic. In fact, $\Rational(\lambda_\ell)$ is not Galois. The Galois group of the Galois closure of $\Rational(\lambda_0)$ is the dihedral group of order $8$, and the Galois group of the Galois closure of $\Rational(\lambda_1)$ is $\Integer/2\Integer \wr \Integer/3\Integer \cong \Integer/2\Integer \times A_4$.
+\end{aligned}$$ so $D_\ell \in \Rational(\zeta_{13})$ while $\lambda_\ell$ is not cyclotomic. In fact, $\Rational(\lambda_\ell)$ is not Galois. The Galois group of the Galois closure of $\Rational(\lambda_0)$ is the dihedral group of order $8$, and the Galois group of the Galois closure of $\Rational(\lambda_1)$ is $\Integer/2\Integer \wr \Integer/3\Integer \cong \Integer/2\Integer \times A_4$.
 
 ::: thm
 []{#thm:detailed label="thm:detailed"} The following statements hold for $\ell = 0,1$.

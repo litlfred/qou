@@ -7,10 +7,10 @@ section_number: 6
 pages: 14-15
 source_pdf: 1904.12095v2.pdf
 source_sha256: 7006b250f0d3c991
-text_source: latex
-latex_prose_ratio: 0.924
-latex_coverage_ratio: 0.981
 doc_brief: "Verified computations for closed hyperbolic 3-manifolds Matthias Goerner — Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed"
+text_source: latex
+latex_prose_ratio: 0.988
+latex_coverage_ratio: 0.983
 ---
 []{#section:examples label="section:examples"}
 
@@ -23,10 +23,8 @@ Geometrically, this yields a singular hyperbolic structure with cone singulariti
 :::
 
 ::: example
-[]{#ex:gimbalLockGeodesic label="ex:gimbalLockGeodesic"} Let us start with a (non-singular) hyperbolic structure on $\mathcal{T}$ such that the edges $e^\sim_1,\dots, e^\sim_l$ form a simple closed geodesic. Such a hyperbolic structure can often be deformed so that the geodesic becomes a cone singularity[^1], i.e., such that $\Theta_{e^\sim_1}=\cdots=\Theta_{e^\sim_l}$ are close but not equal to $2\pi$. Note that the spherical structure of the link of a vertex $v_i$ connected to $e^\sim_i$ and $e^\sim_{i+1}$ gets deformed to have two conical singularities at antipodal points with equal cone angle. In the language of cocycles, pick a gimbal loop $\Gamma_i$ for $v_i$ as in Definition [\[def:gimbalLoop\]](#def:gimbalLoop){reference-type="ref" reference="def:gimbalLoop"} such that the associated gimbal matrix is of the form $$\begin{equation}
- \label{eqn:gimbalMatrixAntipodal}
-m_{\Gamma_i}=R_{\Theta_{e^\sim_i}}\cdot \prod\nolimits_1 \cdot R_{\Theta_{e^\sim_{i+1}}}\cdot \prod\nolimits_1^{-1} = R_{\Theta_{e^\sim_i}} R_{-\Theta_{e^\sim_{i+1}}}
-\end{equation}$$ where $\prod_1\in\mathrm{SO}_{3}$ is a rotation by $\pi$ about an axis orthogonal to $z$. Then $m_{\Gamma_i}=\mathrm{Id}$ whenever $\Theta_{e^\sim_i}=\Theta_{e^\sim_{i+1}}$, so $Dg$ has a non-trivial kernel. If we add edges to $E^\sim$ such that $|E^\sim|=3o$, $Dg$ still has a non-trivial kernel, so we have gimbal lock and thus not a contradiction to Theorem [\[thm:mainThm\]](#thm:mainThm){reference-type="ref" reference="thm:mainThm"}.
+[]{#ex:gimbalLockGeodesic label="ex:gimbalLockGeodesic"} Let us start with a (non-singular) hyperbolic structure on $\mathcal{T}$ such that the edges $e^\sim_1,\dots, e^\sim_l$ form a simple closed geodesic. Such a hyperbolic structure can often be deformed so that the geodesic becomes a cone singularity[^1], i.e., such that $\Theta_{e^\sim_1}=\cdots=\Theta_{e^\sim_l}$ are close but not equal to $2\pi$. Note that the spherical structure of the link of a vertex $v_i$ connected to $e^\sim_i$ and $e^\sim_{i+1}$ gets deformed to have two conical singularities at antipodal points with equal cone angle. In the language of cocycles, pick a gimbal loop $\Gamma_i$ for $v_i$ as in Definition [\[def:gimbalLoop\]](#def:gimbalLoop){reference-type="ref" reference="def:gimbalLoop"} such that the associated gimbal matrix is of the form $$\label{eqn:gimbalMatrixAntipodal}
+m_{\Gamma_i}=R_{\Theta_{e^\sim_i}}\cdot \prod\nolimits_1 \cdot R_{\Theta_{e^\sim_{i+1}}}\cdot \prod\nolimits_1^{-1} = R_{\Theta_{e^\sim_i}} R_{-\Theta_{e^\sim_{i+1}}}$$ where $\prod_1\in\mathrm{SO}_{3}$ is a rotation by $\pi$ about an axis orthogonal to $z$. Then $m_{\Gamma_i}=\mathrm{Id}$ whenever $\Theta_{e^\sim_i}=\Theta_{e^\sim_{i+1}}$, so $Dg$ has a non-trivial kernel. If we add edges to $E^\sim$ such that $|E^\sim|=3o$, $Dg$ still has a non-trivial kernel, so we have gimbal lock and thus not a contradiction to Theorem [\[thm:mainThm\]](#thm:mainThm){reference-type="ref" reference="thm:mainThm"}.
 :::
 
 ::: example

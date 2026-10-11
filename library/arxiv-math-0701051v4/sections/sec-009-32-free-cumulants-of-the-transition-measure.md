@@ -8,42 +8,25 @@ pages: 10-11
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
 doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
+text_source: latex
+latex_prose_ratio: 0.96
+latex_coverage_ratio: 0.987
 ---
-diagram λ we denote by µλ its transition measure (which is a probability
-measure on the real line) [Ker93, Bia98] and by Rλ
-m := Rm(µλ) we denote
-the m-th free cumulant of µλ. The importance of free cumulants Rλ
-m in
-the study of the asymptotics of symmetric groups was pointedout by Biane
-[Bia98]. The following theorem gives a new formula for the free cumulants
-Rλ
-m. It has a big advantage that it does not involve the notion of t he transi-
-tion measure and it is related directly with the shape of a Young diagram.
-Theorem 9. For any Young diagramλ
-(15) Rλ
-l+1 =
-∑
-σ1,σ2∈Sl,
-σ1σ2=(1,2,...,l),
-|σ1|+|σ2|=|(1,2,...,l)|
-(−1)|σ1| N λ(σ1, σ2),
-where the sum runs over minimal factorizations of a cycle of length l.
-Proof. For a Young diagramλ and c > 0 we denote by cλ the (generalized)
-Young diagram obtained from λ by similarity with scale c. A function f
-on the set of (generalized) Young diagrams is said to be homog eneous of
-degree m if
-f (cλ) = cmf (λ)
-holds true for all choices ofλ and c. Each free cumulant Rm is homogenous
-of degree m.
-The value of the normalized character Σ λ(1, 2, . . . , l) on a cycle can be
-expressed as a polynomial (known as Kerov polynomial) in free cumulants
-ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS 11
-(Rλ
-m : m ∈ {2, 3, . . .}):
-Σ λ(1, 2, . . . , l) = Rλ
-l+1 + (terms of lower degree)
-therefore Rλ
-l+1 is the homogeneous part of Σ λ(1, 2, . . . , l) with degree l + 1.
-We apply (6) for π = (1 , 2, . . . , l); it is easy to see that each summand
-on the right-hand side is homogeneous of degree |C(σ1)| + |C(σ2)| which
-ﬁnishes the proof. □
+[]{#subsec:cumulants label="subsec:cumulants"}
+
+For a (continuous) Young diagram $\lambda$ we denote by $\mu^{\lambda}$ its transition measure (which is a probability measure on the real line) [@Kerov1993; @Biane1998] and by $R_{m}^{\lambda}:=R_m(\mu^{\lambda})$ we denote the $m$-th free cumulant of $\mu^{\lambda}$. The importance of free cumulants $R_m^{\lambda}$ in the study of the asymptotics of symmetric groups was pointed out by Biane [@Biane1998]. The following theorem gives a new formula for the free cumulants $R_m^{\lambda}$. It has a big advantage that it does not involve the notion of the transition measure and it is related directly with the shape of a Young diagram.
+
+::: theorem
+[]{#theo:cumulants label="theo:cumulants"} For any Young diagram $\lambda$ $$\label{eq:freecumulants-come}
+R_{l+1}^{\lambda}= \sum_{\substack{\sigma_1,\sigma_2\in S_l,\\
+\sigma_1 \sigma_2=(1,2,\dots,l), \\
+|\sigma_1|+|\sigma_2|=|(1,2,\dots,l)|}} (-1)^{|\sigma_1|}\
+N^{\lambda}(\sigma_1,\sigma_2),$$ where the sum runs over minimal factorizations of a cycle of length $l$.
+:::
+
+::: proof
+*Proof.* For a Young diagram $\lambda$ and $c>0$ we denote by $c\lambda$ the (generalized) Young diagram obtained from $\lambda$ by similarity with scale $c$. A function $f$ on the set of (generalized) Young diagrams is said to be homogeneous of degree $m$ if $$f(c \lambda)= c^m f(\lambda)$$ holds true for all choices of $\lambda$ and $c$. Each free cumulant $R_m$ is homogenous of degree $m$.
+
+The value of the normalized character $\Sigma^{\lambda}(1,2,\dots,l)$ on a cycle can be expressed as a polynomial (known as Kerov polynomial) in free cumulants $(R^{\lambda}_{m}: m\in\{2,3,\dots\} )$: $$\Sigma^{\lambda}(1,2,\dots,l)= R_{l+1}^{\lambda} + (\text{terms of lower
+degree})$$ therefore $R^\lambda_{l+1}$ is the homogeneous part of $\Sigma^{\lambda}(1,2,\dots,l)$ with degree $l+1$. We apply [\[eq:main-theorem\]](#eq:main-theorem){reference-type="eqref" reference="eq:main-theorem"} for $\pi=(1,2,\dots,l)$; it is easy to see that each summand on the right-hand side is homogeneous of degree $|C(\sigma_1)|+|C(\sigma_2)|$ which finishes the proof. ◻
+:::

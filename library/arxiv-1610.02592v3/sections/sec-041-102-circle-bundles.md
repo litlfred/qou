@@ -7,12 +7,13 @@ section_number: 10.2
 pages: 318-320
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-text_source: latex
-latex_prose_ratio: 0.611
-latex_coverage_ratio: 0.883
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 We now introduce another simple class of 3-manifolds, the orientable circle bundles over some compact surface $S$. We will discover that there is essentially only one circle bundle if $S$ has boundary, and infinitely many if $S$ is closed, distinguished by an integer called the \emph{Euler number}.
+
 
 \subsection{The trivial circle bundle}
 Let $S$ be a compact connected surface. As every connected manifold, the surface $S$ has a unique orientable line bundle
@@ -20,6 +21,7 @@ $$S\times I \quad {\rm or} \quad S\timtil I$$
 depending on whether $S$ is orientable or not. We denote by 
 $$M=S\times S^1 \quad {\rm or} \quad S\timtil S^1$$ 
 respectively the double of $S\times I$ and $S\timtil I$ along its boundary. If we do not know whether $S$ is orientable or not, we use the symbols $S\timforsetil I$ and $S\timforsetil S^1$ to denote these objects. The manifold $S\timforsetil S^1$ is an orientable circle bundle over $S$, called the \emph{trivial} one. 
+
 
 \subsection{Circle bundles with boundary}
 We start by exploring the case where the base surface $S$ has non-empty boundary: in this case every bundle $M$ over $S$ is a 3-manifold with boundary; the boundary consists of tori, one fibering above each circle in $\partial S$, because the torus is the unique orientable surface that fibres over $S^1$.
@@ -67,6 +69,7 @@ Distinct sections are connected by finitely many Dehn twists along annuli. One s
 
 \begin{ex} Prove this corollary using Proposition \ref{lagrangian:prop}.
 \end{ex}
+
 
 \subsection{Closed circle bundles} \label{closed:circle:subsection}
 We now turn to closed circle bundles. In this section we prove that 
@@ -128,6 +131,7 @@ The circle bundle $M$ over $S^2$ with Euler number $e$ is diffeomorphic to the l
 \end{proof}
 
 We end the discussion by defining explicitly a famous non-trivial circle bundle over $S^2$.
+
 
 \subsection{The Hopf fibration} \label{Hopf:lens:subsection}
 The quotient map 

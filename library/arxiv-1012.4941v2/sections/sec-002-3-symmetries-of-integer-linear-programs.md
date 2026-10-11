@@ -7,18 +7,16 @@ section_number: 3
 pages: 7-9
 source_pdf: 1012.4941v2.pdf
 source_sha256: 1932a359f3bafb83
-text_source: latex
-latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.977
 doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linea r and integer programming problems."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.974
 ---
-[]{#sec:ILP label="sec:ILP"} We now turn to our main focus. Associated with $\operatorname{LP}(A,b,c)$ is the integer linear program $$\begin{equation}
-\label{eq:ILP}
+[]{#sec:ILP label="sec:ILP"} We now turn to our main focus. Associated with $\operatorname{LP}(A,b,c)$ is the integer linear program $$\label{eq:ILP}
   \begin{array}{ll}
     \max & c^tx\\
     \textrm{s.t.} & Ax \le b \, , \ x \in {\mathbb{Z}}^n  \, ,
-  \end{array}
-\end{equation}$$ which we denote as $\operatorname{ILP}(A,b,c)$. Throughout we make the same assumptions as above: the linear program $\operatorname{LP}(A,b,c)$ is feasible, the matrix $A$ does not have any zero rows, and the inequalities bijectively correspond to the hyperplane arrangement ${\mathscr{H}}(A,b)$; see Remark [\[rem:scale\]](#rem:scale){reference-type="ref" reference="rem:scale"}.
+  \end{array}$$ which we denote as $\operatorname{ILP}(A,b,c)$. Throughout we make the same assumptions as above: the linear program $\operatorname{LP}(A,b,c)$ is feasible, the matrix $A$ does not have any zero rows, and the inequalities bijectively correspond to the hyperplane arrangement ${\mathscr{H}}(A,b)$; see Remark [\[rem:scale\]](#rem:scale){reference-type="ref" reference="rem:scale"}.
 
 ::: definition
 A *symmetry* of the integer linear program $\operatorname{ILP}(A,b,c)$ is an automorphism of $\operatorname{LP}(A,b,c)$ which acts on the signed standard basis $\{\pm e_1,\pm e_2,\dots,\pm e_n\}$ of ${\mathbb{R}}^n$ as a signed permutation.

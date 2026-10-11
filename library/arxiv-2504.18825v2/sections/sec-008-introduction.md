@@ -7,10 +7,10 @@ section_number: 1
 pages: 2-7
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
-text_source: latex
-latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.991
 doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \subsection{Background}\label{ss:Backgroud}
 The Murnaghan--Nakayama rule \cite{Mur,Nak1,Nak2} serves as a combinatorial algorithm for calculating the irreducible characters of symmetric groups $\mathfrak{S}_n$. The Iwahori--Hecke algebra $\mathscr{H}_{n}(q)$ in type $A$, which is the $q$-deformation of $\mathfrak{S}_n$, is a unital associative algebra over the field of rational functions $\mathbb{C}(q)$. Ram \cite{Ram} used the quantum Schur--Weyl duality \cite{Jim} to establish a Frobenius-type character formula for $\mathscr{H}_{n}(q)$, linking it to one-row Hall-Littlewood functions and Schur symmetric functions (see also \cite{KV, KW}). He also introduced the $q$-Murnaghan--Nakayama rule, an iterative combinatorial method for computing irreducible characters using smaller partitions. An alternative approach was explored in \cite{Pfe1}. Recent work \cite{JL1} employed the vertex operator realization of Schur functions to revisit the $q$-Murnaghan--Nakayama rule.
@@ -31,6 +31,7 @@ In \cite{LP}, L\"ubeck and Prasad established a character identity that connects
 The second orthogonality relation for the irreducible characters of a finite group plays a crucial role in computing these characters. The second orthogonality relation for the irreducible characters of a split semisimple algebra also makes sense. An explicit form of the second orthogonality relation for the irreducible characters of the Brauer algebra was given in \cite{Ram97}. The $q$-analogue of the second orthogonality relation for the Hecke algebra of type $A$ formulated in terms of the bitrace was determined in \cite{HLR, JL1}. 
 A spin analogue of the bitrace was recently developed for the Hecke--Clifford algebra in \cite{JL2}.
 
+
 \subsection{Aims}
 
 While the earlier Murnaghan--Nakayama-type formulas of Halverson--Ram are fundamental, they are not fully suited to our present purposes. In particular, Halverson and Ram computed characters only on certain ``standard elements'' and did not prove in that paper that these values determine the full character table (although they indicated a method for doing so later). Moreover, their approach relies on explicit seminormal/Hoefsmit-type representations together with double-centralizer (Clifford-theoretic) arguments and a bitrace reduction. This framework is structurally powerful, but less convenient for the Frobenius-formula-based combinatorial recursions and applications that we pursue here. Mak later resolved the determinacy issue from a structural viewpoint via a reducibility theorem for trace functions on Ariki--Koike algebras, but this is of a different nature and does not directly provide an explicit iterative combinatorial character formula. By contrast, Shoji's Frobenius-type formula and his choice of standard elements offer a natural starting point for such a development.
@@ -38,6 +39,7 @@ While the earlier Murnaghan--Nakayama-type formulas of Halverson--Ram are fundam
 This paper has two main goals. First, we formulate a Murnaghan--Nakayama rule for the cyclotomic Hecke algebra based on Shoji's Frobenius-type formula, together with an effective operational procedure for computing character values. Compared with earlier formulations, our rule has a more canonical form and specializes uniformly to several known formulas, including those for the complex reflection group of type $G(m,1,n)$ and the Iwahori--Hecke algebras of types $A$ and $B$. In addition, combined with Shoji's result \cite[Proposition 7.5]{Sho}, it provides a simpler route to the complete character table of $\mathscr{H}_{m,n}(q,\bm{u})$. Second, in a dual framework based on the vertex-operator realization of Schur functions, we derive an iterative formula on upper multipartitions, which may be viewed as a dual Murnaghan--Nakayama rule for the cyclotomic Hecke algebra.
 
 Our second aim is to demonstrate the scope of these rules through several applications. We obtain a Regev-type formula for the cyclotomic Hecke algebra, establish a L\"ubeck--Prasad--Adin--Roichman-type formula that computes character values via partitions rather than multipartitions, and introduce the notion of multiple bitrace together with a general combinatorial formula. These applications illustrate the practical strength of the new Murnaghan--Nakayama rule and do not seem to be readily accessible from the earlier formulas. They also extend the corresponding formulas discussed in Subsection \ref{ss:Backgroud}.
+
 
 \subsection{Main results} 
 We now summarize the main results of the paper. In the Hecke algebra of type $A$, the Murnaghan--Nakayama rule is naturally expressed in terms of generalized ribbons. In the cyclotomic setting, the corresponding combinatorial objects become {\em generalized multi-ribbons}, namely $m$-tuples of generalized ribbons. When $m=1$, the cyclotomic Hecke algebra reduces to the Hecke algebra of type $A$, and generalized multi-ribbons reduce exactly to generalized ribbons. In this sense, our construction is a genuine extension of the type $A$ picture.
@@ -131,6 +133,7 @@ By specialization, the left-hand side and right-hand side of \eqref{e:F} reduce 
     \end{cases}
 \end{align}
 where $z_{\lambda}:=\prod_{i\geq 1}i^{m_i(\lambda)}m_i(\lambda)!$ for a partition $\lambda$.
+
 
 
 

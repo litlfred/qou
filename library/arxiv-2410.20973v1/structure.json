@@ -351,8 +351,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "stat.phase.stat.int._20_.tex",
-   "tex_sections": 5,
-   "overlaid": 2,
+   "tex_sections": 38,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -368,57 +368,80 @@
     {
      "id": "sec-001-11-deforming-the-volume-of-a-three-manifold",
      "title": "Deforming the volume of a three-manifold",
-     "result": "no matching \\section"
+     "prose_ratio": 0.45,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-12-state-integrals",
      "title": "State integrals",
-     "result": "no matching \\section"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.589,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-13-proving-borellaplace-summability",
      "title": "Proving Borel\u2013Laplace summability",
-     "result": "no matching \\section"
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.893,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-2-from-thimbles-to-state-integrals",
      "title": "From thimbles to state integrals",
-     "prose_ratio": 0.143,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-21-existence-of-thimbles",
      "title": "Existence of thimbles",
-     "result": "no matching \\section"
+     "prose_ratio": 0.902,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-22-a-relative-homology-for-state-integrals-conto",
      "title": "A relative homology for state integrals contours",
-     "result": "no matching \\section"
+     "prose_ratio": 0.795,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-23-a-state-integral-basis",
      "title": "A state integral basis",
-     "result": "no matching \\section"
+     "prose_ratio": 0.813,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-3-asymptotics-of-state-integrals",
      "title": "Asymptotics of state integrals",
-     "prose_ratio": 0.219,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.646,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-31-a-steepest-descent-algorithm",
      "title": "A steepest descent algorithm",
-     "result": "no matching \\section"
+     "prose_ratio": 0.697,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-32-proof-of-theorem-14",
@@ -428,8 +451,8 @@
     {
      "id": "sec-012-4-examples",
      "title": "Examples",
-     "prose_ratio": 0.924,
-     "coverage_ratio": 0.96,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

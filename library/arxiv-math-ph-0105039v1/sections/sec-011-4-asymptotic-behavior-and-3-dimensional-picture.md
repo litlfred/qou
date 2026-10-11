@@ -7,10 +7,10 @@ section_number: 4
 pages: 11-14
 source_pdf: 0105039v1.pdf
 source_sha256: 850e6a00721e38d0
-text_source: latex
-latex_prose_ratio: 0.933
-latex_coverage_ratio: 0.993
 doc_brief: "Hyperbolic Structure Arising from a Knot Invariant — We study the knot invariant based on the quantum dilogarithm function."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:asymptotic}
 
@@ -346,3 +346,7 @@ This fact supports a validity
 that at the critical point the classical limit of the  $S$-operator
 represents the (oriented) ideal tetrahedron
 whose dihedral angles are fixed as in Fig.~\ref{fig:S_operator}.
+
+
+
+\section{3-Dimensional Picture of the  Invariant}

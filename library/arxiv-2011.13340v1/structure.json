@@ -128,7 +128,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "pc.tex",
-   "tex_sections": 5,
+   "tex_sections": 6,
    "overlaid": 3,
    "thresholds": {
     "title": 0.85,
@@ -139,23 +139,23 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.739,
+     "prose_ratio": 0.738,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-3-a-bernstein-inequality-from-matrix-valued-poin",
      "title": "A Bernstein Inequality from Matrix valued Poincare inequalities",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.72,
+     "prose_ratio": 0.737,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-5-conclusion-and-open-questions",
      "title": "Conclusion and Open Questions",
-     "prose_ratio": 0.981,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"

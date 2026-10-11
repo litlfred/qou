@@ -153,7 +153,7 @@
    "_schema": "latex-math-overlay/v1",
    "main": "0.tex",
    "tex_sections": 9,
-   "overlaid": 1,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -163,17 +163,18 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.625,
+     "prose_ratio": 0.652,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-4-explicit-formulas-for-the-characteristic-map",
      "title": "Explicit formulas for the characteristic map",
-     "prose_ratio": 0.953,
-     "coverage_ratio": 0.327,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.907,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-references",

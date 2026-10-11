@@ -6,7 +6,7 @@
   "sha256": "c1610b50f5a7e22c4d5bc359cd5b8f6a7e8c121b3eae079bd2a1e41a2956c8da",
   "bytes": 1189704,
   "pages": 81,
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -1546,8 +1546,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "3ManBPS-10.tex",
-   "tex_sections": 4,
-   "overlaid": 0,
+   "tex_sections": 41,
+   "overlaid": 22,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1577,58 +1577,90 @@
     {
      "id": "sec-004-2-fivebranes-on-3-manifolds-and-categori\ufb01cation",
      "title": "Fivebranes on 3-manifolds and categori\ufb01cation of WRT invariant",
-     "prose_ratio": 0.026,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.917,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-21-preliminaries",
      "title": "Preliminaries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.849,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-22-d2s1-partition-function-of-t-m3-and-wrt-invar",
      "title": "D2\u00d7S1 partition function of T [M3] and WRT invariant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-23-realization-in-terms-of-counting-solutions-of",
      "title": "Realization in terms of counting solutions of di\ufb00erential equations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-24-surgeries-triangulations-and-atiyah-floer",
      "title": "Surgeries, triangulations, and Atiyah-Floer",
-     "result": "no matching \\section"
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-25-superconformal-index-of-t-m3-and-its-factoriz",
      "title": "Superconformal index of T [M3] and its factorization",
-     "result": "no matching \\section"
+     "prose_ratio": 0.693,
+     "coverage_ratio": 0.796,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-26-further-re\ufb01nement",
      "title": "Further re\ufb01nement",
-     "result": "no matching \\section"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.555,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-27-topologically-twisted-index-of-t-m3",
      "title": "Topologically twisted index of T [M3]",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-28-generalization-to-un",
      "title": "Generalization to U(N)",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-29-relation-to-open-gw-invariants-on-tm3",
      "title": "Relation to open GW invariants on T\u2217M3",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-210-langlands-duality-and-\ufb02at-connections",
      "title": "Langlands duality and \ufb02at connections",
-     "result": "no matching \\section"
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-31-m3-s3",
@@ -1638,18 +1670,26 @@
     {
      "id": "sec-016-3-examples",
      "title": "Examples",
-     "prose_ratio": 0.178,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-017-311-categorifying-the-index",
      "title": "Categorifying the index",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.921,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-312-the-t-q\u03b2-reduction-from-bps-spectral-sequenc",
      "title": "The t =q\u03b2 reduction from BPS spectral sequence",
-     "result": "no matching \\section"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-32-m3-lp-1",
@@ -1659,12 +1699,14 @@
     {
      "id": "sec-020-321-re\ufb01ned-superconformal-index",
      "title": "Re\ufb01ned superconformal index",
-     "result": "no matching \\section"
+     "prose_ratio": 0.308,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-021-322-topologically-twisted-index-of-t-lp-1",
      "title": "Topologically twisted index of T [L(p, 1)]",
-     "result": "no matching \\section"
+     "prose_ratio": 0.451,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-022-0-q\u02c6z\u03b2",
@@ -1769,12 +1811,18 @@
     {
      "id": "sec-042-324-cyclotomic-expansion",
      "title": "Cyclotomic expansion",
-     "result": "no matching \\section"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-043-325-positivity-of-coe\ufb03cients",
      "title": "Positivity of coe\ufb03cients",
-     "result": "no matching \\section"
+     "prose_ratio": 0.77,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-044-1-positivity-of-homological-blocks-\u02c6za-besides-o",
@@ -1794,7 +1842,8 @@
     {
      "id": "sec-047-326-comparison-with-re\ufb01ned-cs",
      "title": "Comparison with re\ufb01ned CS",
-     "result": "no matching \\section"
+     "prose_ratio": 0.185,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-048-4-2k-4\u03b212",
@@ -1809,12 +1858,16 @@
     {
      "id": "sec-050-331-homological-blocks-and-wrt-invariant",
      "title": "Homological blocks and WRT invariant",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-051-332-factorization-of-the-superconformal-index",
      "title": "Factorization of the superconformal index",
-     "result": "no matching \\section"
+     "prose_ratio": 0.427,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-052-0-q-1",
@@ -1839,7 +1892,8 @@
     {
      "id": "sec-056-333-comparison-with-re\ufb01ned-cs",
      "title": "Comparison with re\ufb01ned CS",
-     "result": "no matching \\section"
+     "prose_ratio": 0.132,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-057-34-m3-plumbed",
@@ -1849,7 +1903,8 @@
     {
      "id": "sec-058-341-homological-blocks-\u02c6za",
      "title": "Homological blocks \u02c6Za",
-     "result": "no matching \\section"
+     "prose_ratio": 0.315,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-059-1-in-the-special-case-when-the-plumbing-graph-ha",
@@ -1884,23 +1939,34 @@
     {
      "id": "sec-065-342-problems-on-the-t-m3-side",
      "title": "Problems on the T [M3] side",
-     "result": "no matching \\section"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-066-4-adding-knots-and-links-into-m3",
      "title": "Adding knots and links into M3",
-     "prose_ratio": 0.26,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-067-41-links-in-m3-and-line-operators-in-t-m3",
      "title": "Links in M3 and line operators in T [M3]",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-068-42-links-in-s2s1-and-rozanskys-proposal",
      "title": "Links in S2\u00d7S1 and Rozansky\u2019s proposal",
-     "result": "no matching \\section"
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-069-43-links-in-lp-1",
@@ -1910,17 +1976,22 @@
     {
      "id": "sec-070-431-unre\ufb01ned-index-of-t-lp-1-with-wilson-loops",
      "title": "Unre\ufb01ned index of T [L(p, 1)] with Wilson loops",
-     "result": "no matching \\section"
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-071-432-re\ufb01nement-and-categori\ufb01cation",
      "title": "Re\ufb01nement and categori\ufb01cation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.288,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-072-44-comparison-with-re\ufb01ned-cs",
      "title": "Comparison with re\ufb01ned CS",
-     "result": "no matching \\section"
+     "prose_ratio": 0.143,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-073-0-qk\u03bb",

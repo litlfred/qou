@@ -7,10 +7,10 @@ section_number: 3
 pages: 5-8
 source_pdf: 1905.11619v2.pdf
 source_sha256: f634f9ec4357d5f3
-text_source: latex
-latex_prose_ratio: 0.689
-latex_coverage_ratio: 0.946
 doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an anal ysis of quantum Markov semi-groups."
+text_source: latex
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 0.736
 ---
 []{#Sect=GradientTensor label="Sect=GradientTensor"} The aim of this section is to construct $n$-cocycles in Hochschild cohomology using quantum Markov semi-groups.
 
@@ -27,31 +27,25 @@ We shall assume that there exists a $\sigma$-weakly dense $\ast$-subalgebra $\ma
 We introduce the following definition, which is in principle $\mathcal{A}$-dependent. For $p = 2$ it was introduced in [@CaspersGradient].
 
 ::: dfn
-[]{#Dfn=GradientSp label="Dfn=GradientSp"} Let $1 \leqslant p \leqslant \infty$. We say that a quantum Markov semi-group $(\Phi_t)_{t \geq 0}$ is **immediately gradient-$\mathcal{S}_p$** if for every $a,b \in \mathcal{A}$ and every $t > 0$ we have that $$\begin{equation}
-\label{Eqn=GradientMap}
-  \Psi^{a,b}_t: x  \mapsto -\frac{1}{2} \Phi_t \left(  \Delta(ax b) + a \Delta(x) b - \Delta(ax) b - a \Delta(xb)   \right),
-\end{equation}$$ extends to a bounded map $x \Omega_\tau \mapsto \Psi^{a,b}_t(x) \Omega_\tau$ on $L_2(M)$ that is moreover in $\mathcal{S}_p$. $(\Phi_t)_{t \geq 0}$ is **gradient-$\mathcal{S}_p$** if for every $a, b \in \mathcal{A}$ the map [\[Eqn=GradientMap\]](#Eqn=GradientMap){reference-type="eqref" reference="Eqn=GradientMap"} is in $\mathcal{S}_p$ for $t = 0$. We set $\Psi^{a,b} = \Psi^{a,b}_0$.
+[]{#Dfn=GradientSp label="Dfn=GradientSp"} Let $1 \leqslant p \leqslant \infty$. We say that a quantum Markov semi-group $(\Phi_t)_{t \geq 0}$ is **immediately gradient-$\mathcal{S}_p$** if for every $a,b \in \mathcal{A}$ and every $t > 0$ we have that $$\label{Eqn=GradientMap}
+  \Psi^{a,b}_t: x  \mapsto -\frac{1}{2} \Phi_t \left(  \Delta(ax b) + a \Delta(x) b - \Delta(ax) b - a \Delta(xb)   \right),$$ extends to a bounded map $x \Omega_\tau \mapsto \Psi^{a,b}_t(x) \Omega_\tau$ on $L_2(M)$ that is moreover in $\mathcal{S}_p$. $(\Phi_t)_{t \geq 0}$ is **gradient-$\mathcal{S}_p$** if for every $a, b \in \mathcal{A}$ the map [\[Eqn=GradientMap\]](#Eqn=GradientMap){reference-type="eqref" reference="Eqn=GradientMap"} is in $\mathcal{S}_p$ for $t = 0$. We set $\Psi^{a,b} = \Psi^{a,b}_0$.
 :::
 
 ::: example
 We illustrate Definition [\[Dfn=GradientSp\]](#Dfn=GradientSp){reference-type="ref" reference="Dfn=GradientSp"} by a simple (counter)example. Suppose that $\mathbb{T}$ is the torus seen as the unit circle in $\mathbb{C}$. Let $e_k(z) = z^k, z \in \mathbb{T}$. Let $\mathcal{A}$ be the span of $e_k, k \in \mathbb{Z}$, i.e. the $\ast$-algebra of trigonometric polynomials. Set $M= L_\infty(\mathbb{T})$.
 
-- Let $\Delta$ be the Laplacian given by $\Delta(e_k) = k^2 e_k$ which generates the **heat semi-group** $(e^{-t \Delta})_{t \geq 0}$. This semi-group is not gradient-$\mathcal{S}_p$ for any $1 \leq p \leq \infty$. Indeed, we find that $$\Psi^{e_l, e_m}(e_k) = -\frac{1}{2} ( (l+k+m)^2 + k^2 - (l+k)^2 - (k+m)^2 )   e_{l + k + m} = - lm \: e_{l + k + m},$$ and this map is not even compact on $L_2(\mathbb{T})$ unless $lm = 0$.
+-   Let $\Delta$ be the Laplacian given by $\Delta(e_k) = k^2 e_k$ which generates the **heat semi-group** $(e^{-t \Delta})_{t \geq 0}$. This semi-group is not gradient-$\mathcal{S}_p$ for any $1 \leq p \leq \infty$. Indeed, we find that $$\Psi^{e_l, e_m}(e_k) = -\frac{1}{2} ( (l+k+m)^2 + k^2 - (l+k)^2 - (k+m)^2 )   e_{l + k + m} = - lm \: e_{l + k + m},$$ and this map is not even compact on $L_2(\mathbb{T})$ unless $lm = 0$.
 
-- However, if we consider the **Poisson semi-group** $(e^{-t \Delta^{\frac{1}{2}}})_{t \geq 0}$ then we find, $$\Psi^{e_l, e_m}(e_k) = -\frac{1}{2} ( \vert l+k+m \vert + \vert k \vert - \vert l+k \vert - \vert k+m \vert )   e_{l + k + m},$$ which is 0 as soon as $\vert k\vert \geq \vert l \vert + \vert m \vert$. Therefore $\Psi^{e_l, e_m}$ is finite rank and therefore $(e^{-t \Delta^{\frac{1}{2}}})_{t \geq 0}$ is gradient-$\mathcal{S}_p$ for every $p \in [1, \infty]$.
+-   However, if we consider the **Poisson semi-group** $(e^{-t \Delta^{\frac{1}{2}}})_{t \geq 0}$ then we find, $$\Psi^{e_l, e_m}(e_k) = -\frac{1}{2} ( \vert l+k+m \vert + \vert k \vert - \vert l+k \vert - \vert k+m \vert )   e_{l + k + m},$$ which is 0 as soon as $\vert k\vert \geq \vert l \vert + \vert m \vert$. Therefore $\Psi^{e_l, e_m}$ is finite rank and therefore $(e^{-t \Delta^{\frac{1}{2}}})_{t \geq 0}$ is gradient-$\mathcal{S}_p$ for every $p \in [1, \infty]$.
 :::
 
 ::: rmk
 Morally, one can expect that a quantum Markov semi-group is gradient-$\mathcal{S}_p$ if the eigenvalues of the generator grow (almost) linearly (like for the Poisson semi-group) and if there is not too much interaction between the operators $a$ and $b$ in an expression $axb$ if $x$ has a very large 'length' (this obviously requires more structure to explain in more detail). The current paper gives quantitative examples of this, see Section [\[Sect=Orhnstein-Uhlenbeck\]](#Sect=Orhnstein-Uhlenbeck){reference-type="ref" reference="Sect=Orhnstein-Uhlenbeck"} and Theorem B of Section [\[Sect=Intro\]](#Sect=Intro){reference-type="ref" reference="Sect=Intro"}. More examples as well as stability properties for gradient-$\mathcal{S}_2$ for free products were given in [@CaspersGradient].
 :::
 
-In [@CiprianiSauvageot] the following bimodule is constructed. We set the **gradient form** (or **carré du champ**), $$\Gamma(x,y) = \frac{1}{2}( \Delta(y)^\ast x + y^\ast  \Delta(x) - \Delta(y^\ast x) ), \qquad x,y \in \mathcal{A},$$ which we view as an $\mathcal{A}$-valued inner product. Let $H$ be any $A$-$A$-bimodule. Equip the algebraic tensor product $\mathcal{A} \otimes_{{\rm alg}}H$ with the (degenerate) inner product $$\langle x \otimes \xi, y \otimes \eta \rangle =  \langle \Gamma(x,y) \xi, \eta  \rangle, \qquad x,y \in \mathcal{A}, \xi, \eta \in H.$$ The Hilbert space obtained by quotienting out the degenerate part and taking the completion will be called the **gradient tensor product** which we denote by $H_\nabla$. We will denote by $a \otimes_\nabla\xi, a \in \mathcal{A}, \xi \in H$ the class of $a \otimes \xi$ in $H_\nabla$. $H_\nabla$ has an $\mathcal{A}$-$\mathcal{A}$ bimodule structure given by the left action $$\begin{equation}
-\label{Eqn=LeftAction}
-  x \cdot (y \otimes_\nabla\xi) = xy \otimes_\nabla\xi - x \otimes_\nabla y \xi, \qquad x,y \in \mathcal{A}, \xi \in H,
-\end{equation}$$ and the right action $$\begin{equation}
-\label{Eqn=RightAction}
-  (y \otimes_\nabla\xi ) \cdot x = y \otimes_\nabla\xi x, \qquad x,y \in \mathcal{A}, \xi \in H.
-\end{equation}$$
+In [@CiprianiSauvageot] the following bimodule is constructed. We set the **gradient form** (or **carré du champ**), $$\Gamma(x,y) = \frac{1}{2}( \Delta(y)^\ast x + y^\ast  \Delta(x) - \Delta(y^\ast x) ), \qquad x,y \in \mathcal{A},$$ which we view as an $\mathcal{A}$-valued inner product. Let $H$ be any $A$-$A$-bimodule. Equip the algebraic tensor product $\mathcal{A} \otimes_{{\rm alg}}H$ with the (degenerate) inner product $$\langle x \otimes \xi, y \otimes \eta \rangle =  \langle \Gamma(x,y) \xi, \eta  \rangle, \qquad x,y \in \mathcal{A}, \xi, \eta \in H.$$ The Hilbert space obtained by quotienting out the degenerate part and taking the completion will be called the **gradient tensor product** which we denote by $H_\nabla$. We will denote by $a \otimes_\nabla\xi, a \in \mathcal{A}, \xi \in H$ the class of $a \otimes \xi$ in $H_\nabla$. $H_\nabla$ has an $\mathcal{A}$-$\mathcal{A}$ bimodule structure given by the left action $$\label{Eqn=LeftAction}
+  x \cdot (y \otimes_\nabla\xi) = xy \otimes_\nabla\xi - x \otimes_\nabla y \xi, \qquad x,y \in \mathcal{A}, \xi \in H,$$ and the right action $$\label{Eqn=RightAction}
+  (y \otimes_\nabla\xi ) \cdot x = y \otimes_\nabla\xi x, \qquad x,y \in \mathcal{A}, \xi \in H.$$
 
 ::: prop
 []{#Prop=Module label="Prop=Module"} The left and right actions defined in [\[Eqn=LeftAction\]](#Eqn=LeftAction){reference-type="eqref" reference="Eqn=LeftAction"} and [\[Eqn=RightAction\]](#Eqn=RightAction){reference-type="eqref" reference="Eqn=RightAction"} are well-defined contractive left and right actions of $\mathcal{A}$ that moreover commute. That is, $H_\nabla$ is an $A$-$A$-bimodule where $A$ is the C$^\ast$-closure of $\mathcal{A}$.
@@ -114,81 +108,13 @@ In particular, $L_2(M)_{\nabla^{(n)}}$ is contained in an infinite multiple of t
     \Psi^{b_{n-1}^\ast, a_{n-1}} \circ   \ldots \circ  \Psi^{b_1^\ast, a_1} \circ  \Psi^{b_0^\ast, a_0}(x)  a_n \Omega_\tau  ,  y^\ast \Omega_\tau \rangle,
     \end{split}$$ where the last equality uses the fact that $\Omega_{\tau} y^{\ast} = y^{\ast} \Omega_{\tau}$.
 
-Since each $\Psi^{b_j^\ast, a_j}$ is an element of $\mathcal{S}_p$ with $p = 2n$ we find that $$\Psi :=   \Psi^{b_{n-1}^\ast, a_{n-1}} \circ   \ldots \circ  \Psi^{b_1^\ast, a_1} \circ  \Psi^{b_0^\ast, a_0} \in \mathcal{S}_2.$$ Then also $x \Omega_\tau \mapsto  b_n^\ast \Psi(x) a_n\Omega_\tau$ is in $\mathcal{S}_2$. Therefore, there exists $\zeta_{\alpha, \beta}  \in  L_2(M) \otimes \overline{ L_2(M) }$ such that, $$\begin{equation}
-\label{Eqn=MinBd}
+Since each $\Psi^{b_j^\ast, a_j}$ is an element of $\mathcal{S}_p$ with $p = 2n$ we find that $$\Psi :=   \Psi^{b_{n-1}^\ast, a_{n-1}} \circ   \ldots \circ  \Psi^{b_1^\ast, a_1} \circ  \Psi^{b_0^\ast, a_0} \in \mathcal{S}_2.$$ Then also $x \Omega_\tau \mapsto  b_n^\ast \Psi(x) a_n\Omega_\tau$ is in $\mathcal{S}_2$. Therefore, there exists $\zeta_{\alpha, \beta}  \in  L_2(M) \otimes \overline{ L_2(M) }$ such that, $$\label{Eqn=MinBd}
             \langle x \cdot \alpha \cdot y, \beta \rangle =
-    \langle x \Omega_\tau \otimes  \overline{ y^{\ast}} \overline{\Omega_{\tau}},  \zeta_{\alpha, \beta}   \rangle
-\end{equation}$$ Since the map $M^{{\rm op}} \ni y^{{\rm op}} \mapsto \overline{y^{\ast}} \in \overline{M}$ is a $\ast$-isomorphism, we deduce that assigning [\[Eqn=MinBd\]](#Eqn=MinBd){reference-type="eqref" reference="Eqn=MinBd"} to $x \otimes y^{{\rm op}} \in M \otimes_{{\rm alg}} M^{{\rm op}}$ is $\otimes_{{\rm min}}$-bounded and moreover normal.
+    \langle x \Omega_\tau \otimes  \overline{ y^{\ast}} \overline{\Omega_{\tau}},  \zeta_{\alpha, \beta}   \rangle$$ Since the map $M^{{\rm op}} \ni y^{{\rm op}} \mapsto \overline{y^{\ast}} \in \overline{M}$ is a $\ast$-isomorphism, we deduce that assigning [\[Eqn=MinBd\]](#Eqn=MinBd){reference-type="eqref" reference="Eqn=MinBd"} to $x \otimes y^{{\rm op}} \in M \otimes_{{\rm alg}} M^{{\rm op}}$ is $\otimes_{{\rm min}}$-bounded and moreover normal.
 
 Now take any algebraic $\alpha \in L^2(M)_{\nabla^{(n)}}$. The previous paragraph shows that the map $\rho: M \otimes M^{{\rm op}}: x \otimes y^{{\rm op}} \rightarrow \langle x \cdot \alpha \cdot y, \alpha \rangle$ extens to $M \overline{\otimes}M^{{\rm op}}$. Moreover, $\rho$ is positive on $\mathcal{A}\otimes_{{\rm alg}} \mathcal{A}^{{\rm op}} \rightarrow \mathbb{C}$, see Remark [\[Rmk=Positive\]](#Rmk=Positive){reference-type="ref" reference="Rmk=Positive"}. We claim that $\rho$ is also a positive map $M \overline{\otimes}M^{{\rm op}} \rightarrow \mathbb{C}$. Indeed, take $z \in M \overline{\otimes}M^{{\rm op}}$ positive and write $z = d^\ast d, d \in M \overline{\otimes}M^{{\rm op}}$. By Kaplansky's density theorem, let $d_j \in \mathcal{A}\otimes \mathcal{A}^{{\rm op}}$ be a bounded net converging strongly to $d$. Then $d_j^\ast d_j \rightarrow d^\ast d = z$ weakly and hence $\sigma$-weakly since these topologies coincide on the unit ball. Since $\rho$ is normal (i.e. $\sigma$-weakly continuous), we get $0 \leq \rho(d_j^\ast d_j) \rightarrow \rho(z)$. Since $L_2(M) \otimes L_2(M)$ is the standard Hilbert space for $M \overline{\otimes}M^{{\rm op}}$ there exists $\zeta_{\alpha} \in L_2(M) \otimes L_2(M)$ such that $\langle x \cdot \alpha \cdot y, \alpha \rangle = \langle x \cdot \zeta_{\alpha} \cdot y, \zeta_\alpha \rangle$. As algebraic vectors in $L^2(M)_{\nabla^{(n)}}$ form a dense subspace, we conclude by Lemma [\[Lem=Containment\]](#Lem=Containment){reference-type="ref" reference="Lem=Containment"}. ◻
 :::
 
 ::: cor
 []{#Cor=GradientCoarseConsequence label="Cor=GradientCoarseConsequence"} Suppose that the quantum Markov semi-group $(\Phi_t)_{t \geq 0}$ is gradient-$\mathcal{S}_2$; then it is gradient coarse.
-:::
-
-## Construction of $n$-cocycles.
-
-The following proposition allows to construct cocycles at the expense of changing the bimodule. We will remedy this change by using Schatten-$\mathcal{S}_p$ properties below.
-
-::: thm
-[]{#Thm=Gdelta label="Thm=Gdelta"} Let $H$ be an $A$-$A$-bimodule and let $f\colon \mathcal{A}^{\otimes (n-1)} \rightarrow H$ be a linear map. Set $Gf\colon \mathcal{A}^{\otimes n} \rightarrow H_\nabla$ by, $$(G f)(a_1 \otimes \ldots \otimes a_{n}) := a_1 \otimes_\nabla f(a_2 \otimes \ldots \otimes a_{n}) \in H_\nabla.$$ Then $Gd + dG=0$, where $d$'s are the differentials of the appropriate cochain complexes. In particular, $G$ maps cocycles to cocycles and coboundaries to coboundaries, so it induces a map on the level of cohomology $G_{\ast}\colon H^{n}(\mathcal{A}, H) \to H^{n+1}(\mathcal{A}, H_{\nabla})$.
-:::
-
-::: proof
-*Proof.* Let us first compute $G(df)$. We have $$\begin{align*}
-df(a_1\otimes \dots\otimes a_n) &= a_1 f(a_2\otimes \dots\otimes a_n) + \sum_{k=1}^{n-1} (-1)^{k} f(a_1\otimes \dots \otimes a_k a_{k+1}\otimes \dots \otimes a_n)  \\
-&+ (-1)^n f(a_1\otimes\dots\otimes a_{n-1})a_n,
-\end{align*}$$ hence $$\begin{align*}
-G(df)(a_0\otimes\dots\otimes a_n) &= a_0\otimes_{\nabla} a_1 f(a_2\otimes \dots\otimes a_n) + \sum_{k=1}^{n-1} (-1)^k a_0\otimes_{\nabla} f(a_1\otimes\dots\otimes a_k a_{k+1}\otimes\dots\otimes a_n) \\
-&+(-1)^n a_0\otimes_{\nabla} f(a_1\otimes\dots\otimes a_{n-1})a_n.
-\end{align*}$$ On the other hand: $$\begin{align*}
--d(Gf)(a_0\otimes\dots\otimes a_n)&=-a_0(a_1\otimes_{\nabla} f(a_2\otimes\dots\otimes a_n))+a_0a_1\otimes_{\nabla} f(a_2\otimes\dots\otimes a_n) \\
-&+ \sum_{k=1}^{n-1} (-1)^{k} a_{0}\otimes_{\nabla} f(a_1\otimes\dots\otimes a_k a_{k+1}\otimes\dots\otimes a_n) \\
-&+ (-1)^n a_{0}\otimes_{\nabla} f(a_1\otimes\dots\otimes a_{n-1}) a_n.
-\end{align*}$$ Note that $$-a_0(a_1\otimes_{\nabla} f(a_2\otimes\dots\otimes a_n)) = -a_0 a_1 \otimes_{\nabla} f(a_2\otimes\dots\otimes a_n) + a_0\otimes_{\nabla} a_1 f(a_2\otimes \dots\otimes a_n).$$ It follows that $G(df) = -d(Gf)$, i.e. $dG+Gd=0$. ◻
-:::
-
-::: cor
-[]{#Cor=Derivation label="Cor=Derivation"} The map, $$\partial_n: \mathcal{A}^{\otimes n} \rightarrow L_2(M)_{\nabla^{(n)}}: a_1 \otimes \ldots \otimes a_n \mapsto a_1 \otimes_\nabla\ldots \otimes_\nabla a_n \otimes_\nabla\Omega_\tau.$$ defines an $n$-cocycle, i.e. an element in $C^n(\mathcal{A}, L_2(M)_{\nabla^{(n)}})$.
-:::
-
-::: proof
-*Proof.* For $n=1$ we get $\partial_1(ab) = ab \otimes_\nabla\Omega_\tau = a \cdot (b \otimes_\nabla\Omega_\tau) +
- (a \otimes_\nabla\Omega_\tau) \cdot b = a \partial_1(b) + \partial_1(a) b$ and so the corollary follows. For higher $n$ use Theorem [\[Thm=Gdelta\]](#Thm=Gdelta){reference-type="ref" reference="Thm=Gdelta"} inductively. ◻
-:::
-
-## The Haagerup averaging technique
-
-We will show that under algebraic conditions gradient-$\mathcal{S}_p$ properties behave well under Haagerup averaging techniques. We believe this result is of independent interest, though we will not use it in the subsequent sections.
-
-Let $\Lambda$ be a discrete group with group algebra $\mathbb{C}[\Lambda]$ and von Neumann algebra $(\mathcal{L}(\Lambda), \tau)$. We will identify $\Lambda$ with its image under the left regular representation. So for $\gamma \in \Lambda$ we will also write $\gamma$ for the associated unitary in $\mathcal{L}(\Lambda)$. Let $(\Phi_t)_{t \geq 0}$ be a quantum Markov semi-group on $\mathcal{L}(\Lambda)$. Consider the map, $$\begin{equation}
-\label{Eqn=Average}
-\Psi_t = \mathbb{E} \circ  (\Phi_t \otimes \textrm{id}) \circ \delta_\Lambda
-\end{equation}$$ where $\delta_\Lambda: \mathcal{L}(\Lambda) \rightarrow  \mathcal{L}(\Lambda) \overline{\otimes}\mathcal{L}(\Lambda)$ is the comultiplication $\delta_\Lambda: \gamma \mapsto \gamma \otimes \gamma$ and $\mathbb{E}$ is the conditional expectation of $\mathcal{L}(\Lambda) \overline{\otimes}\mathcal{L}(\Lambda)$ onto the image of $\delta_\Lambda$ (post-composed with the inverse of $\delta_{\Lambda}$ so that the range is contained in $\mathcal{L}(\Lambda)$). Then $\Psi_t$ is a completely positive Fourier multiplier with symbol $\varphi_t(\gamma) = \tau( \Phi_t(\gamma) \gamma^{-1}), \gamma \in \Gamma$.
-
-::: lem
-[]{#Lem=Average label="Lem=Average"} Let $\Psi_t: \mathcal{L}(\Lambda) \rightarrow \mathcal{L}(\Lambda), t \geq 0$ be unital completely positive Fourier multipliers (not necessarily a semi-group) and suppose that for every $\gamma \in \Lambda$ the limit $\Delta_0^\Psi(\gamma) :=  \lim_{t \searrow 0} \frac{1}{t} (\gamma -  \Psi_t(\gamma))$ exists. Then $\Delta_0^\Psi$ defines a preclosed (unbounded) operator on $\ell_2(\Gamma)$ with closure $\Delta^\Psi$. Moreover, $\exp(-t \Delta^\Psi)$ is a quantum Markov semi-group.
-:::
-
-::: proof
-*Proof.* Since $\Delta_0^\Psi$ acts diagonally on $\ell_2(\Lambda)$ with respect to the basis $\gamma \in \Lambda$ it is preclosed. The remaining statements follow by following the constructions in [@JolissaintMartin] and [@CaspersSkalskiCMP Proposition 5.5]. Alternatively, there is the following short proof. Let $\varphi_t$ be the symbol of the Fourier multiplier $\Psi_t$ which is positive definite and $\varphi_t(e) = 1$. Consider the state $\mu_t$ on $\mathbb{C}[\Lambda]$ that maps $\gamma \in \Lambda$ to $\varphi_t(\gamma)$. Then $\Delta_0(\gamma) := \lim_{t \searrow 0} \frac{1}{t} ( \mu_t - \varepsilon )$ defines a generating functional on $\mathbb{C}[\Lambda]$ where $\varepsilon(\gamma) = 1, \gamma \in \Lambda$ is the counit (see [@DFSW Section 6.2] for generating functionals). Therefore $\nu_t := \exp(-t \Delta_0)$ defines a convolution semi-group of states on $\mathbb{C}[\Lambda]$. Since the Fourier multiplier $\Psi_t =   (\textrm{id}\otimes \nu_t)\circ \delta_\Lambda$ is a trace preserving ucp map it extends from $\mathbb{C}[\Lambda]$ to a quantum Markov semi-group on $\mathcal{L}(\Lambda)$ with generator $\Delta^{\Psi}$. ◻
-:::
-
-::: lem
-Let $(\Phi_t)_{t \geq 0}$ be a quantum Markov semi-group on $\mathcal{L}(\Gamma)$ with generator $\Delta$ and assume $\mathbb{C}[\Gamma]$ is in the domain of $\Delta$. Consider $\Psi_t$ as in [\[Eqn=Average\]](#Eqn=Average){reference-type="eqref" reference="Eqn=Average"} and let $\Delta^\Psi$ be as in Lemma [\[Lem=Average\]](#Lem=Average){reference-type="ref" reference="Lem=Average"}. We have, $$\Delta^\Psi(\gamma)   =  \frac{d}{dt}\vert_{t = 0} \langle \Phi_t(\gamma) , \gamma \rangle  \gamma = \langle \Delta(\gamma), \gamma \rangle  \gamma, \qquad \gamma \in \Gamma \subseteq \mathbb{C}[\Gamma].$$
-:::
-
-::: proof
-*Proof.* This is clear from the definitions. ◻
-:::
-
-The following theorem shows that under a domain condition on $\Delta$ we may average a quantum Markov semi-group to a semi-group of Fourier multipliers while retaining the property of being gradient-$\mathcal{S}_p$.
-
-::: thm
-Let $(\Phi_t)_{t \geq 0}$ be a quantum Markov semi-group on $\mathcal{L}(\Gamma)$ with generator $\Delta$ and assume $\mathbb{C}[\Gamma]$ is in the domain of $\Delta$. If $(\Phi_t)_{t \geq 0}$ is gradient-$\mathcal{S}_p$ then so is $\exp(-t \Delta^\Psi)$.
-:::
-
-::: proof
-*Proof.* Take $\mu_1, \mu_2 \in \Gamma$ fixed. Since $(\Phi_t)_{t \geq 0}$ is gradient-$\mathcal{S}_p$ we have that the assignment $$\Psi^{\mu_1, \mu_2}: \gamma \mapsto \Delta(\mu_1 \gamma \mu_2) +  \mu_1 \Delta( \gamma ) \mu_2 - \mu_1 \Delta(\gamma \mu_2) -  \Delta(\mu_1 \gamma  ) \mu_2$$ is in $\mathcal{S}_p$ as an operator on $\ell_2(\Gamma)$. Therefore, also $$\mu_1^{-1} \Psi^{\mu_1, \mu_2}(\:\cdot \:) \mu_2^{-1}:  \gamma \mapsto \mu_1^{-1} \Delta(\mu_1 \gamma \mu_2) \mu_2^{-1} +   \Delta( \gamma )   -   \Delta(\gamma \mu_2) \mu_2^{-1} -  \mu_1^{-1} \Delta(\mu_1 \gamma  )$$ is in $\mathcal{S}_p$. Let $\mathbb{D}$ be the conditional expectation of $B(\ell_2(\Gamma))$ onto the diagonal operators in $B(\ell_2(\Gamma))$. Certainly $\mathbb{D}(\mu_1^{-1} \Psi^{\mu_1, \mu_2}(\: \cdot \:) \mu_2^{-1})$ is in $\mathcal{S}_p$ and, further, $$\mathbb{D}(\mu_1^{-1} \Psi^{\mu_1, \mu_2}(\:\cdot \:) \mu_2^{-1})(    \gamma) = \mu_1^{-1} \Delta^{\Psi}(\mu_1 \gamma \mu_2) \mu_2^{-1} +   \Delta^{\Psi}( \gamma )   -   \Delta^{\Psi}(\gamma \mu_2) \mu_2^{-1} -  \mu_1^{-1} \Delta^{\Psi}(\mu_1 \gamma  ).$$ Multiplying again with $\mu_1$ and $\mu_2$ shows that the assignment $$\gamma \mapsto \Delta^\Psi(\mu_1 \gamma \mu_2) +  \mu_1 \Delta^\Psi( \gamma ) \mu_2 - \mu_1 \Delta^\Psi(\gamma \mu_2) -  \Delta^\Psi(\mu_1 \gamma  ) \mu_2$$ is in $\mathcal{S}_p$. ◻
 :::

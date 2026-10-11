@@ -7,10 +7,10 @@ section_number: null
 pages: 12-15
 source_pdf: 2512.18642v1.pdf
 source_sha256: c4c7f8b0a719aa2d
-text_source: latex
-latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.902
 doc_brief: "A Hidden Quantum Markov model framework for — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 []{#Sect_HiddenEntang label="Sect_HiddenEntang"}
 
@@ -30,10 +30,10 @@ From this isometry, we naturally obtain two complementary quantum channels. The 
 ::: proof
 *Proof.* We proceed through a systematic construction and analysis of the Choi state. Since $\mathcal{E}_H^*$ takes a single qubit as input, we have $d_{\text{in}}=2$. We identify the reference system basis with the input basis: $|\uparrow\rangle_R$ corresponds to $|\uparrow\rangle_{\text{in}}$ and $|\downarrow\rangle_R$ to $|\downarrow\rangle_{\text{in}}$. The maximally entangled state between reference and input is therefore $$|\Omega\rangle = \frac{1}{\sqrt{2}}\bigl(|\uparrow\rangle_R|\uparrow\rangle_{\text{in}} + |\downarrow\rangle_R|\downarrow\rangle_{\text{in}}\bigr).$$ Applying the identity on the reference and the channel on the input gives: $$J(\mathcal{E}_H^*) = \frac{1}{2}\sum_{i,j \in \{\uparrow,\downarrow\}} |i\rangle\langle j|_R \otimes V|i\rangle\langle j|_{\text{in}} V^\dagger.$$ Using the defining action of $V$, namely $V|\uparrow\rangle = |\Psi^-\rangle$ and $V|\downarrow\rangle = |\Psi^+\rangle$, we obtain: $$J(\mathcal{E}_H^*) = \frac{1}{2}\Bigl( |\uparrow\rangle\langle\uparrow|_R \otimes |\Psi^-\rangle\langle\Psi^-|_B + |\uparrow\rangle\langle\downarrow|_R \otimes |\Psi^-\rangle\langle\Psi^+|_B + |\downarrow\rangle\langle\uparrow|_R \otimes |\Psi^+\rangle\langle\Psi^-|_B + |\downarrow\rangle\langle\downarrow|_R \otimes |\Psi^+\rangle\langle\Psi^+|_B \Bigr).$$ This operator is precisely the projector onto the pure state $|\Psi_{\mathrm{Choi}}\rangle$ as stated in the theorem.
 
-Since $|\Psi_{\mathrm{Choi}}\rangle$ is pure, we can compute the reduced states by partial tracing. For the reference system: $$\begin{align*}
+Since $|\Psi_{\mathrm{Choi}}\rangle$ is pure, we can compute the reduced states by partial tracing. For the reference system: $$\begin{aligned}
 \rho_R &= \operatorname{Tr}_B |\Psi_{\mathrm{Choi}}\rangle\langle\Psi_{\mathrm{Choi}}|\\
 &= \frac{1}{2}\bigl(\langle\Psi^-|\Psi^-\rangle |\uparrow\rangle\langle\uparrow| + \langle\Psi^-|\Psi^+\rangle|\uparrow\rangle\langle\downarrow| + \langle\Psi^+|\Psi^-\rangle|\downarrow\rangle\langle\uparrow| + \langle\Psi^+|\Psi^+\rangle|\downarrow\rangle\langle\downarrow| \bigr)
-\end{align*}$$
+\end{aligned}$$
 
 The Bell states are orthonormal: $\langle\Psi^\pm|\Psi^\pm\rangle=1$ and $\langle\Psi^-|\Psi^+\rangle=0$. Thus, $$\rho_R = \frac{1}{2}\bigl(|\uparrow\rangle\langle\uparrow| + |\downarrow\rangle\langle\downarrow|\bigr) = \frac{I_2}{2}.$$ The von Neumann entropy of this completely mixed qubit state is $S(\rho_R) = -\operatorname{Tr}(\rho_R \log_2 \rho_R) = 1$ ebit.
 

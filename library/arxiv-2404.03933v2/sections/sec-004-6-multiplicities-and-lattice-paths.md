@@ -7,10 +7,10 @@ section_number: 6
 pages: 14-18
 source_pdf: 2404.03933v2.pdf
 source_sha256: 48aff6e97e1f1267
-text_source: latex
-latex_prose_ratio: 0.958
-latex_coverage_ratio: 0.895
 doc_brief: "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of"
+text_source: latex
+latex_prose_ratio: 0.986
+latex_coverage_ratio: 0.921
 ---
 []{#rec-mult label="rec-mult"} Here we reformulate the problem of tensor power decomposition over $U_q(\mathfrak{sl}_2)$ and $u_q(\mathfrak{sl}_2)$ resolved in the previous section in terms of counting lattice paths on the set of dominant weights for the corresponding quantum groups and will give a combinatorial derivation of multiplicity formulae for $T(1)^{\otimes N}$ derived before.
 
@@ -32,19 +32,13 @@ Let us describe elementary steps of such a walk. We will refer to points of the 
 
 Denote the set of these elementary steps $S_U$. They can be described by a diagram on Figure [1](#elem-steps){reference-type="ref" reference="elem-steps"}.
 
-<figure id="elem-steps" data-latex-placement="h!">
-<embed src="A-steps.pdf" style="width:350pt" />
-<figcaption>The set of elementary steps <span class="math inline">𝕊<sub><em>U</em></sub></span>, where red arrows denote steps of multiplicity 2.</figcaption>
-</figure>
+![The set of elementary steps $\mathbb{S}_U$, where red arrows denote steps of multiplicity 2.](A-steps.pdf){#elem-steps width="350pt"}
 
 A graph of such lattice walk is a lattice path in $\mathcal{L}_U=\mathbb{Z}_{\geq 0}\times \mathbb{Z}_{\geq 0}$ with points $(x,y)$ where $x\in \mathbb{Z}_{\geq 0}$ is a dominant weight and $y$ is the degree $N$ is the tensor power $T(1)^{\otimes N}$. The set of elementary steps $\mathbb{S}_U$ for such lattice paths is $$\mathbb{S}_U=\{((x,y), (x',y+1))\,|\, (x,x')\in S_U\}$$ Note that multiplicities of elementary steps define weights on $\mathbb{S}_U$. For large $k=lk_1+k_0$ the graph of elementary steps is $2l$-periodic.
 
 Examples of such lattice paths are given on Figure [2](#two-paths){reference-type="ref" reference="two-paths"}.
 
-<figure id="two-paths" data-latex-placement="h!">
-<embed src="Untitled1.pdf" style="width:250pt" />
-<figcaption>Two paths with elementary steps from <span class="math inline">𝕊<sub><em>U</em></sub></span>. Red lines indicate elementary steps with multiplicity 2. A vertex with coordinate <span class="math inline">(<em>k</em>, <em>N</em>)</span> represents the highest weight <span class="math inline"><em>k</em></span> of the tilting module <span class="math inline"><em>T</em>(<em>k</em>) ⊂ <em>T</em>(1)<sup>⊗<em>N</em></sup></span>. The number of lattice paths from the origin to <span class="math inline">(<em>k</em>, <em>N</em>)</span> is the multiplicity <span class="math inline"><em>M</em><sub><em>k</em></sub><sup>(<em>l</em>)</sup>(<em>N</em>)</span>. Elementary steps <span class="math inline">𝕊<sub><em>U</em></sub></span> from a vertex on this lattice are represented by possible lines down the lattice. Similarly, the number of paths starting at <span class="math inline">(<em>n</em>, 0)</span> and descending to <span class="math inline">(<em>k</em>, <em>N</em>)</span> is the multiplicity of the tilting module <span class="math inline"><em>T</em>(<em>k</em>) ⊂ <em>T</em>(<em>n</em>) ⊗ <em>T</em>(1)<sup>⊗<em>N</em></sup></span>.</figcaption>
-</figure>
+![Two paths with elementary steps from $\mathbb{S}_U$. Red lines indicate elementary steps with multiplicity 2. A vertex with coordinate $(k,N)$ represents the highest weight $k$ of the tilting module $T(k)\subset T(1)^{\otimes N}$. The number of lattice paths from the origin to $(k,N)$ is the multiplicity $M_k^{(l)}(N)$. Elementary steps $\mathbb{S}_U$ from a vertex on this lattice are represented by possible lines down the lattice. Similarly, the number of paths starting at $(n,0)$ and descending to $(k,N)$ is the multiplicity of the tilting module $T(k)\subset T(n)\otimes T(1)^{\otimes N}$.](Untitled1.pdf){#two-paths width="250pt"}
 
 Using recursive formulae ([\[A\]](#A){reference-type="ref" reference="A"}) for the decomposition of tensor products and the corresponding lattice path model, these multiplicities can be described as follows:
 
@@ -74,27 +68,21 @@ In this case the lattice is $\mathcal{L}_u=\{0,1,\dots, 3l-2\}\times \mathbb{Z}_
 
 The set $S_u$ can be characterized by the diagram on Figure [3](#A-u-steps){reference-type="ref" reference="A-u-steps"}.
 
-<figure id="A-u-steps" data-latex-placement="h!">
-<embed src="A-u-steps.pdf" style="width:250pt" />
-<figcaption>The set of elementary steps <span class="math inline">𝕊<sub><em>u</em></sub></span>, where red arrows denote steps of multiplicity 2.</figcaption>
-</figure>
+![The set of elementary steps $\mathbb{S}_u$, where red arrows denote steps of multiplicity 2.](A-u-steps.pdf){#A-u-steps width="250pt"}
 
 A graph of such lattice walk is a lattice path in $\mathcal{L}_u$ with points $(x,y)$ where $x\in \mathbb{Z}_{\geq 0}$ is a dominant weight and $y$ is the degree $N$ is the tensor power $T(1)^{\otimes N}$. Nodes of this graph are identified with tilting modules as follows:
 
-- To each node $0\leq m \leq l-2$ we assign module $T(m)$, where $T(0)=\mathbb{C}$;
+-   To each node $0\leq m \leq l-2$ we assign module $T(m)$, where $T(0)=\mathbb{C}$;
 
-- To each node $l-1\leq m \leq 2l-2$ we assign module $T_+(m)$;
+-   To each node $l-1\leq m \leq 2l-2$ we assign module $T_+(m)$;
 
-- To each node $2l-1\leq m \leq 3l-2$ we assign module $T_-(m-l)$.
+-   To each node $2l-1\leq m \leq 3l-2$ we assign module $T_-(m-l)$.
 
 The set of elementary steps $\mathbb{S}_u$ is given by $$\mathbb{S}_u=\{((x,y), (x',y+1))\,|\, (x,x')\in S_u\}$$ Multiplicities of elementary step define weights on $\mathbb{S}_u$.
 
 Examples of such lattice paths are given on Figure [4](#two-paths-u){reference-type="ref" reference="two-paths-u"}.
 
-<figure id="two-paths-u" data-latex-placement="h!">
-<embed src="Untitled2.pdf" style="width:250pt" />
-<figcaption>Two paths with elementary steps from <span class="math inline">𝕊<sub><em>u</em></sub></span>. Red arrows indicate elementary steps with multiplicity 2. A vertex with coordinate <span class="math inline">(<em>k</em>, <em>N</em>)</span> represents the highest weight <span class="math inline"><em>k</em></span> of the tilting module <span class="math inline"><em>T</em>(<em>k</em>) ⊂ <em>T</em>(1)<sup>⊗<em>N</em></sup></span>. The number of lattice paths from the origin to <span class="math inline">(<em>k</em>, <em>N</em>)</span> is the multiplicity <span class="math inline"><em>m</em><sub><em>k</em></sub><sup>(<em>l</em>)</sup>(<em>N</em>)</span>. Elementary steps <span class="math inline">𝕊<sub><em>u</em></sub></span> from a vertex on this lattice are represented by possible lines down the lattice. Similarly, the number of paths starting at <span class="math inline">(<em>n</em>, 0)</span> and descending to <span class="math inline">(<em>k</em>, <em>N</em>)</span> is the multiplicity of the tilting module <span class="math inline"><em>T</em>(<em>k</em>) ⊂ <em>T</em>(<em>n</em>) ⊗ <em>T</em>(1)<sup>⊗<em>N</em></sup></span>.</figcaption>
-</figure>
+![Two paths with elementary steps from $\mathbb{S}_u$. Red arrows indicate elementary steps with multiplicity 2. A vertex with coordinate $(k,N)$ represents the highest weight $k$ of the tilting module $T(k)\subset T(1)^{\otimes N}$. The number of lattice paths from the origin to $(k,N)$ is the multiplicity $m_k^{(l)}(N)$. Elementary steps $\mathbb{S}_u$ from a vertex on this lattice are represented by possible lines down the lattice. Similarly, the number of paths starting at $(n,0)$ and descending to $(k,N)$ is the multiplicity of the tilting module $T(k)\subset T(n)\otimes T(1)^{\otimes N}$.](Untitled2.pdf){#two-paths-u width="250pt"}
 
 Using recursive formulae ([\[B\]](#B){reference-type="ref" reference="B"}) we arrive to the following theorem describing multiplicities in terms of lattice paths:
 
@@ -107,17 +95,9 @@ Now we can compute multiplicities using the lattice path model and compare the f
 ::: theorem
 []{#th_u label="th_u"}
 
-1.  The number of lattice paths is given by the following formulae. For $k_0\neq l-1$ we have $$\begin{equation}
-    \label{ind1}
-            m^{(l)}_{l+k_0,+}(N)=\sum_{k=1}^{\lfloor\frac{N}{2l}\rfloor}k^2F^{(N)}_{k_0-l-2kl}+\sum_{k=0}^{\lfloor\frac{N-l}{2l}\rfloor}(k+1)^2 F^{(N)}_{k_0+l+2kl}
-    \end{equation}$$ $$\begin{equation}
-    \label{ind3}
-            m^{(l)}_{l+k_0,-}(N)=\sum_{k=1}^{\lfloor\frac{N-l}{2l}\rfloor}(k^2+k)F^{(N)}_{k_0-2l-2kl}+\sum_{k=0}^{\lfloor\frac{N-2l}{2l}\rfloor}((k+1)^2+(k+1)) F^{(N)}_{k_0+2l+2kl}
-    \end{equation}$$ For $T_{+}(l-1)$, $T_{-}(l-1)$ the multiplicities are: $$\begin{equation*}
-            m^{(l)}_{l-1,+}(N)=\sum_{k=0}^{\lfloor\frac{N}{2l}+\frac{1}{2}\rfloor}(2k+1)F^{(N)}_{l-1+2kl},
-    \end{equation*}$$ $$\begin{equation*}
-            m^{(l)}_{l-1,-}(N)=\sum_{k=0}^{\lfloor\frac{N}{2l}+1\rfloor}(2k+2)F^{(N)}_{2l-1+2kl},
-    \end{equation*}$$ Note that in these formulae some $F^{(N)}_m$ can be negative.
+1.  The number of lattice paths is given by the following formulae. For $k_0\neq l-1$ we have $$\label{ind1}
+            m^{(l)}_{l+k_0,+}(N)=\sum_{k=1}^{\lfloor\frac{N}{2l}\rfloor}k^2F^{(N)}_{k_0-l-2kl}+\sum_{k=0}^{\lfloor\frac{N-l}{2l}\rfloor}(k+1)^2 F^{(N)}_{k_0+l+2kl}$$ $$\label{ind3}
+            m^{(l)}_{l+k_0,-}(N)=\sum_{k=1}^{\lfloor\frac{N-l}{2l}\rfloor}(k^2+k)F^{(N)}_{k_0-2l-2kl}+\sum_{k=0}^{\lfloor\frac{N-2l}{2l}\rfloor}((k+1)^2+(k+1)) F^{(N)}_{k_0+2l+2kl}$$ For $T_{+}(l-1)$, $T_{-}(l-1)$ the multiplicities are: $$m^{(l)}_{l-1,+}(N)=\sum_{k=0}^{\lfloor\frac{N}{2l}+\frac{1}{2}\rfloor}(2k+1)F^{(N)}_{l-1+2kl},$$ $$m^{(l)}_{l-1,-}(N)=\sum_{k=0}^{\lfloor\frac{N}{2l}+1\rfloor}(2k+2)F^{(N)}_{2l-1+2kl},$$ Note that in these formulae some $F^{(N)}_m$ can be negative.
 
 2.  These numbers are exactly the same as in Theorem [\[small_mult\]](#small_mult){reference-type="ref" reference="small_mult"}.
 :::

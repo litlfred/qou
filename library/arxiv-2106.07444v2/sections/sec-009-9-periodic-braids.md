@@ -7,20 +7,20 @@ section_number: 9
 pages: 61-64
 source_pdf: 2106.07444v2.pdf
 source_sha256: 5acca39c07bcdddd
-text_source: latex
-latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.953
 doc_brief: "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS — Let W be the W eyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G."
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.976
 ---
 []{#sec:periodic label="sec:periodic"}
 
 ## 
 
-In this section and the next, *we no longer assume that $W$ is crystallographic*. Let $w_0$ be the longest element of $W$ with respect to the chosen Coxeter presentation (see §[\[subsec:coxeter-group\]](#subsec:coxeter-group){reference-type="ref" reference="subsec:coxeter-group"}). The **full twist** of $\mathit{Br}_W$ is the positive braid $$\begin{align}
+In this section and the next, *we no longer assume that $W$ is crystallographic*. Let $w_0$ be the longest element of $W$ with respect to the chosen Coxeter presentation (see §[\[subsec:coxeter-group\]](#subsec:coxeter-group){reference-type="ref" reference="subsec:coxeter-group"}). The **full twist** of $\mathit{Br}_W$ is the positive braid $$\begin{aligned}
 \pi = \sigma_{w_0}^2 \in \mathit{Br}_W^+.
-\end{align}$$ It is central in $\mathit{Br}_W$ [@bm_1997 §2]. We say that a braid $\beta \in \mathit{Br}_W$ is **periodic** iff $$\begin{align}
+\end{aligned}$$ It is central in $\mathit{Br}_W$ [@bm_1997 §2]. We say that a braid $\beta \in \mathit{Br}_W$ is **periodic** iff $$\begin{aligned}
 \beta^n = \pi^m
-\end{align}$$ for some $\frac{m}{n} \in \bb{Q}$, in which case we say that $\frac{m}{n}$ is the **slope** of $\beta$.
+\end{aligned}$$ for some $\frac{m}{n} \in \bb{Q}$, in which case we say that $\frac{m}{n}$ is the **slope** of $\beta$.
 
 ::: thm
 []{#thm:ll label="thm:ll"} If $\beta \in \mathit{Br}_W$ is periodic of slope $\frac{m}{n}$, then $\beta = \gamma^m$ and $\pi = \gamma^n$ for some $\gamma \in \mathit{Br}_W$.
@@ -53,23 +53,23 @@ For all $\phi \in \hat{W}$, the full twist acts on the underlying $H_W$-module o
 The following corollary is a mild generalization of [@bm_1997 Prop. 9.2.8], but we give the proof anyway. The proof is based on [@jones Lem. 9.4], which Jones used to calculate the HOMFLY polynomials of torus knots.
 
 ::: cor
-[]{#cor:br-to-w label="cor:br-to-w"} If $\phi \in \hat{W}$ and $\beta \in \mathit{Br}_W$ is periodic of slope $\nu\in \bb{Q}$, then $$\begin{align}
+[]{#cor:br-to-w label="cor:br-to-w"} If $\phi \in \hat{W}$ and $\beta \in \mathit{Br}_W$ is periodic of slope $\nu\in \bb{Q}$, then $$\begin{aligned}
 \phi_{\bm{q}}(\beta) = \bm{q}^{\nu\bb{c}(\phi)} \phi(w),
-\end{align}$$ where $w \in W$ is the image of $\beta$ under the surjection $\mathit{Br}_W \surject W$.
+\end{aligned}$$ where $w \in W$ is the image of $\beta$ under the surjection $\mathit{Br}_W \surject W$.
 :::
 
 ::: proof
-*Proof.* It suffices to prove the result when $\bm{q}^{\frac{1}{2}}$ has been specialized to a generic complex number $q^{\frac{1}{2}}$. We set $$\begin{align}
+*Proof.* It suffices to prove the result when $\bm{q}^{\frac{1}{2}}$ has been specialized to a generic complex number $q^{\frac{1}{2}}$. We set $$\begin{aligned}
 H_W[q^{\frac{1}{2}}] = H_W \otimes_{\bb{Z}[\bm{q}^{\pm 1/2}]} \bb{C},
-\end{align}$$ where $\bb{Z}[\bm{q}^{\pm\frac{1}{2}}] \to \bb{C}$ sends $\bm{q}^{\frac{1}{2}} \mapsto q^{\frac{1}{2}}$, and $$\begin{align}
+\end{aligned}$$ where $\bb{Z}[\bm{q}^{\pm\frac{1}{2}}] \to \bb{C}$ sends $\bm{q}^{\frac{1}{2}} \mapsto q^{\frac{1}{2}}$, and $$\begin{aligned}
 \phi_q = \phi_{\bm{q}}|_{\bm{q}^{1/2} = q^{1/2}}.
-\end{align}$$ Write $\nu= \frac{m}{n}$ in lowest terms. By the theorem, $q^{-m\bb{c}(\phi)}\pi^m$ acts on the underlying $H_W[q^{\frac{1}{2}}]$-module of $\phi_q$ by the identity operator $I$. Since $\beta^n = \pi^m$, we deduce that $q^{-\nu\bb{c}(\phi)} \beta$ acts by an $n$th root of $I$.
+\end{aligned}$$ Write $\nu= \frac{m}{n}$ in lowest terms. By the theorem, $q^{-m\bb{c}(\phi)}\pi^m$ acts on the underlying $H_W[q^{\frac{1}{2}}]$-module of $\phi_q$ by the identity operator $I$. Since $\beta^n = \pi^m$, we deduce that $q^{-\nu\bb{c}(\phi)} \beta$ acts by an $n$th root of $I$.
 
 Recall that $H_W|_{q = 1} = \bb{Z}[W]$. Choose a generic path in the complex plane from $q$ to $1$. Since the (diagonalizable) roots of $I$ do not deform, the deformation of $q$ along this path shows that the following operators must have the same eigenvalue spectrum:
 
-- The action of $q^{-\nu\bb{c}(\phi)}\beta$ on the underlying $H[q^{\frac{1}{2}}]$-module of $\phi_q$.
+-   The action of $q^{-\nu\bb{c}(\phi)}\beta$ on the underlying $H[q^{\frac{1}{2}}]$-module of $\phi_q$.
 
-- The action of $w$ on the underlying $\bb{C}[W]$-module of $\phi$.
+-   The action of $w$ on the underlying $\bb{C}[W]$-module of $\phi$.
 
 The result follows. ◻
 :::
@@ -83,9 +83,9 @@ Let $\bb{V}$ be a realization of $W$ over $\bb{C}$ such that $\bb{V}^W = 0$. A v
 :::
 
 ::: thm
-[]{#thm:fake-deg label="thm:fake-deg"} If $w \in W$ is a $\zeta$-regular element, then $$\begin{align}
+[]{#thm:fake-deg label="thm:fake-deg"} If $w \in W$ is a $\zeta$-regular element, then $$\begin{aligned}
 \phi(w) = \mathrm{Feg}_\phi(\zeta^{-1}) = \mathrm{Feg}_\phi(\zeta)
-\end{align}$$ for all $\phi \in \hat{W}$, where $\mathrm{Feg}_\phi$ is the fake degree of $\phi$ (see §[\[subsec:degrees\]](#subsec:degrees){reference-type="ref" reference="subsec:degrees"}).
+\end{aligned}$$ for all $\phi \in \hat{W}$, where $\mathrm{Feg}_\phi$ is the fake degree of $\phi$ (see §[\[subsec:degrees\]](#subsec:degrees){reference-type="ref" reference="subsec:degrees"}).
 :::
 
 ::: rem
@@ -116,18 +116,18 @@ We emphasize that Theorem [\[thm:broue-michel\]](#thm:broue-michel){reference-ty
 
 ## 
 
-Theorem [\[thm:periodic\]](#thm:periodic){reference-type="ref" reference="thm:periodic"} states that if $\beta \in \mathit{Br}_W$ is periodic of slope $\nu\in \bb{Q}$, then its $R(W)$ trace is given by $$\begin{align}
+Theorem [\[thm:periodic\]](#thm:periodic){reference-type="ref" reference="thm:periodic"} states that if $\beta \in \mathit{Br}_W$ is periodic of slope $\nu\in \bb{Q}$, then its $R(W)$ trace is given by $$\begin{aligned}
 \langle{\beta}\rangle_{\bm{q}} 
 =
     \sum_{\psi \in \hat{W}} 
     {\bm{q}^{\nu\bb{c}(\psi)}}
     \mathrm{Deg}_\psi(\zeta) \psi,
-\end{align}$$ where $\zeta = e^{2\pi i\nu}$ and $\mathrm{Deg}_\phi$ is the unipotent degree of $\phi$ (see §[\[subsec:degrees\]](#subsec:degrees){reference-type="ref" reference="subsec:degrees"}).
+\end{aligned}$$ where $\zeta = e^{2\pi i\nu}$ and $\mathrm{Deg}_\phi$ is the unipotent degree of $\phi$ (see §[\[subsec:degrees\]](#subsec:degrees){reference-type="ref" reference="subsec:degrees"}).
 
 ::: proof
-*Proof of Theorem [\[thm:periodic\]](#thm:periodic){reference-type="ref" reference="thm:periodic"}.* By Corollary [\[cor:regular\]](#cor:regular){reference-type="ref" reference="cor:regular"}, the image of $\beta$ in $W$ is a $\zeta$-regular element. Therefore, by Corollary [\[cor:br-to-w\]](#cor:br-to-w){reference-type="ref" reference="cor:br-to-w"} and Theorem [\[thm:fake-deg\]](#thm:fake-deg){reference-type="ref" reference="thm:fake-deg"}, $$\begin{align}
+*Proof of Theorem [\[thm:periodic\]](#thm:periodic){reference-type="ref" reference="thm:periodic"}.* By Corollary [\[cor:regular\]](#cor:regular){reference-type="ref" reference="cor:regular"}, the image of $\beta$ in $W$ is a $\zeta$-regular element. Therefore, by Corollary [\[cor:br-to-w\]](#cor:br-to-w){reference-type="ref" reference="cor:br-to-w"} and Theorem [\[thm:fake-deg\]](#thm:fake-deg){reference-type="ref" reference="thm:fake-deg"}, $$\begin{aligned}
 \phi_{\bm{q}}(\beta) = \bm{q}^{\nu\bb{c}(\phi)} \mathrm{Feg}_\phi(\zeta).
-\end{align}$$ Therefore, by Lemma-Postulate [\[lempost:fourier\]](#lempost:fourier){reference-type="ref" reference="lempost:fourier"}(2) and Corollary [\[cor:content\]](#cor:content){reference-type="ref" reference="cor:content"}, $$\begin{align}
+\end{aligned}$$ Therefore, by Lemma-Postulate [\[lempost:fourier\]](#lempost:fourier){reference-type="ref" reference="lempost:fourier"}(2) and Corollary [\[cor:content\]](#cor:content){reference-type="ref" reference="cor:content"}, $$\begin{aligned}
 \begin{split}
 \sum_{\phi \in \hat{W}} 
 {\{\phi, \psi\}} \phi_{\bm{q}}(\beta) 
@@ -138,5 +138,5 @@ Theorem [\[thm:periodic\]](#thm:periodic){reference-type="ref" reference="thm:pe
 &=  \bm{q}^{\nu\bb{c}(\psi)}
     \mathrm{Deg}_\psi(\zeta),
 \end{split}
-\end{align}$$ as needed. ◻
+\end{aligned}$$ as needed. ◻
 :::

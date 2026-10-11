@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-4
 source_pdf: 2408.04921v2.pdf
 source_sha256: dcfe112640a8adda
-text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.979
 doc_brief: "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING — 5 sections: Introduction; Irreducible characters of Ck ≀ Sn; X ij"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.997
 ---
 The character theory of the symmetric group $S_n$ plays an important role in representation theory [@JK]. It is well known that the irreducible characters $\chi^\lambda$ of $S_n$ are indexed by partitions $\lambda$ of $n$, and explicit character values are given by the celebrated Frobenius formula, which expresses the character values as the transition coefficients between the Schur symmetric functions and the power-sum symmetric functions [@JK; @Mac]. The character formula can also be formulated using a vertex algebraic method [@J1], where the irreducible character values of $S_n$ are expressed by matrix coefficients of Bernstein vertex operators [@Zel] and products of Heisenberg operators.
 
@@ -31,18 +31,20 @@ In this paper, we study the Murnaghan-Nakayama rule for the generalized symmetri
 Our reformulation of the Murnaghan-Nakayama rule is the following result, which is obtained by splitting the operators corresponding to conjugacy classes. This version gives an iterative formula to compute the irreducible characters that may simplify computational complexity.
 
 ::: thm
-Given colored partitions $\boldsymbol{\lambda}=(\lambda^{(0)},\lambda^{(1)},\cdots,\lambda^{(k-1)})$ and $\boldsymbol{\rho}=(\rho^{(0)},\rho^{(1)},\cdots,\rho^{(k-1)})$ of $n$, where $\rho^{(s)}=(\rho^{(s)}_1,\cdots,\rho^{(s)}_m,\cdots,\rho^{(s)}_{l(s)})$. Then the value of the irreducible character $\chi^{\boldsymbol{\lambda}}$ of $C_k\wr S_n$ at the class $\boldsymbol{\rho}$ is given by $$\begin{align}
+Given colored partitions $\boldsymbol{\lambda}=(\lambda^{(0)},\lambda^{(1)},\cdots,\lambda^{(k-1)})$ and $\boldsymbol{\rho}=(\rho^{(0)},\rho^{(1)},\cdots,\rho^{(k-1)})$ of $n$, where $\rho^{(s)}=(\rho^{(s)}_1,\cdots,\rho^{(s)}_m,\cdots,\rho^{(s)}_{l(s)})$. Then the value of the irreducible character $\chi^{\boldsymbol{\lambda}}$ of $C_k\wr S_n$ at the class $\boldsymbol{\rho}$ is given by $$\begin{aligned}
         \chi^{\boldsymbol{\lambda}}_{\boldsymbol{\rho}}=\sum_{j=0}^{k-1}\sum_{\boldsymbol{\xi_j}}(-1)^{\mathrm{ht}(\boldsymbol{\lambda_j})}\omega^{-sj}\chi^{\boldsymbol{\lambda}\backslash\boldsymbol{\xi_j}}_{\boldsymbol{\rho}\setminus\rho^{(s)}_m},
-\end{align}$$ where ${\boldsymbol{\xi_j}}$ runs through all colored $\rho^{(s)}_m$-rim hooks contained in ${\boldsymbol{\lambda}}$ that are supported at the j-th constituent.
+    
+\end{aligned}$$ where ${\boldsymbol{\xi_j}}$ runs through all colored $\rho^{(s)}_m$-rim hooks contained in ${\boldsymbol{\lambda}}$ that are supported at the j-th constituent.
 :::
 
 Moreover, we can also break down the irreducible characters into lower rank ones using a dual procedure, which leads to a new iterative rule for the generalized symmetric group. Our rule at $k=1$ seems to be a new combinatorial formula for the irreducible character values of the symmetric group $S_n$ as well.
 
 ::: thm
 (New iterative rule) Given colored partitions $\boldsymbol{\lambda}=(\lambda^{(0)},\lambda^{(1)},\\
- \cdots,\lambda^{(k-1)})$ and $\boldsymbol{\rho}=(\rho^{(0)},\rho^{(1)},\cdots,\rho^{(k-1)})$ of $n$. For any fixed color $j$, the irreducible character value of $C_k\wr S_n$ is given by $$\begin{align}
+ \cdots,\lambda^{(k-1)})$ and $\boldsymbol{\rho}=(\rho^{(0)},\rho^{(1)},\cdots,\rho^{(k-1)})$ of $n$. For any fixed color $j$, the irreducible character value of $C_k\wr S_n$ is given by $$\begin{aligned}
         \chi^{\boldsymbol{\lambda}}_{\boldsymbol{\rho}}=\sum_{\substack{\boldsymbol{\mu}\vartriangleleft\boldsymbol{\rho},\|\boldsymbol{\mu}\|\geq\lambda^{(j)}_1\\\boldsymbol{\tau}\vdash \|\boldsymbol{\mu}\|-\lambda^{(j)}_1}}\omega^{(\eta(\boldsymbol{\tau})-\eta(\boldsymbol{\mu}))j}\frac{{(-1)}^{l(\boldsymbol{\tau})}}{k^{l(\boldsymbol{\tau})}z_{\tau}}\chi^{\boldsymbol{\lambda}\setminus \lambda^{(j)}_1}_{(\boldsymbol{\rho}\backslash\boldsymbol{\mu})\cup\boldsymbol{\tau}}
-\end{align}$$ summed over colored partitions $\boldsymbol{\mu}$ and $\boldsymbol{\tau}$ such that $\boldsymbol{\mu}\vartriangleleft\boldsymbol{\rho}$ with weight bigger than $\lambda^{(j)}_1$ and $\boldsymbol{\tau}$ of weight $\|\boldsymbol{\mu}\|-\lambda^{(j)}_1$. Here $z_{\tau}$ is defined below [\[e:innerprod\]](#e:innerprod){reference-type="eqref" reference="e:innerprod"}, $\tau$ is the rearrangement of $\boldsymbol{\tau}$, and $\eta(\boldsymbol{\tau})$, $\eta(\boldsymbol{\mu})$ are the weighted lengths $\sum_iil(\tau^{(i)})$, $\sum_i il(\mu^{(i)})$ respectively.
+    
+\end{aligned}$$ summed over colored partitions $\boldsymbol{\mu}$ and $\boldsymbol{\tau}$ such that $\boldsymbol{\mu}\vartriangleleft\boldsymbol{\rho}$ with weight bigger than $\lambda^{(j)}_1$ and $\boldsymbol{\tau}$ of weight $\|\boldsymbol{\mu}\|-\lambda^{(j)}_1$. Here $z_{\tau}$ is defined below [\[e:innerprod\]](#e:innerprod){reference-type="eqref" reference="e:innerprod"}, $\tau$ is the rearrangement of $\boldsymbol{\tau}$, and $\eta(\boldsymbol{\tau})$, $\eta(\boldsymbol{\mu})$ are the weighted lengths $\sum_iil(\tau^{(i)})$, $\sum_i il(\mu^{(i)})$ respectively.
 :::
 
 We point it out that the dual Murnaghan-Nakayama rule for the generalized symmetric group gives a different iteration procedure. The former one given by Ariki and Koike simplifies the indexing colored-partition by removing all rim-hooks in each constituent, while our new rule simply removes the largest part in a fixed constituent. This reveals a different relation between representations of the generalized symmetric groups.

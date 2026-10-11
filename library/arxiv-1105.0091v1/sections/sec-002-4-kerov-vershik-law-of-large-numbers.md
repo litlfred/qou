@@ -7,10 +7,10 @@ section_number: 4
 pages: 31-36
 source_pdf: 1105.0091v1.pdf
 source_sha256: 7d6f72e016b25027
-text_source: latex
-latex_prose_ratio: 0.962
-latex_coverage_ratio: 0.903
 doc_brief: "E-mail: meliot@phare.normalesup.org — In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible"
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.964
 ---
 []{#largenumbers label="largenumbers"} In this section, we recall the results of Kerov and Vershik; although nothing is new here, we shall introduce the important concept of a (random) probability measure associated to a (random) diagram, that will later prove useful for the analysis of the fluctuations of the rows and columns, see §[\[gaussrow\]](#gaussrow){reference-type="ref" reference="gaussrow"}.
 
@@ -23,10 +23,10 @@ Given an irreducible character $\chi^{\omega}$, we replace it on $\mathfrak{S}_{
 :::
 
 ::: proof
-*Proof.* For any partition $\mu$, $\mathbb{E}_{n,\omega}\!\left[\frac{\varSigma_{\mu}}{n^{|\mu|}}\right]\simeq p_{\mu}(A-B+\gamma E)$, and $$\begin{align*}
+*Proof.* For any partition $\mu$, $\mathbb{E}_{n,\omega}\!\left[\frac{\varSigma_{\mu}}{n^{|\mu|}}\right]\simeq p_{\mu}(A-B+\gamma E)$, and $$\begin{aligned}
 \mathbb{E}_{n,\omega}\!\left[\left(\frac{\varSigma_{\mu}}{n^{|\mu|}}\right)^{2}\right]&=\mathbb{E}_{n,\omega}\!\left[\frac{\varSigma_{\mu \sqcup \mu}}{n^{2|\mu|}}\right]+\frac{1}{n^{2|\mu|}}\,\mathbb{E}_{n,\omega}[\text{obs. of degree at most }2|\mu|-1]\\
 &= \left(p_{\mu}(A-B+\gamma E)\right)^{2}+O(n^{-1})\simeq \left(p_{\mu}(A-B+\gamma E)\right)^{2}.
-\end{align*}$$ Here, we have used the estimate $\mathbb{E}_{n,\omega}[X]=O(n^{\deg X})$ mentioned at the end of the previous paragraph, the factorization property of the symbols $\varSigma_{\mu}$ in higher degree, and the computation of the expectations $\mathbb{E}_{n,\omega}[\varSigma_{\mu}]$ performed at the end of §[\[polfunc\]](#polfunc){reference-type="ref" reference="polfunc"}. Because of Bienaymé-Chebyshev inequality, these two estimates ensure that $\frac{\varSigma_{\mu}}{n^{|\mu|}}\simeq \chi^{\lambda}(\mu \sqcup 1^{n-|\mu|})$ converges in probability towards $p_{\mu}(A-B+\gamma E)=\chi^{\omega}(\mu)$. ◻
+\end{aligned}$$ Here, we have used the estimate $\mathbb{E}_{n,\omega}[X]=O(n^{\deg X})$ mentioned at the end of the previous paragraph, the factorization property of the symbols $\varSigma_{\mu}$ in higher degree, and the computation of the expectations $\mathbb{E}_{n,\omega}[\varSigma_{\mu}]$ performed at the end of §[\[polfunc\]](#polfunc){reference-type="ref" reference="polfunc"}. Because of Bienaymé-Chebyshev inequality, these two estimates ensure that $\frac{\varSigma_{\mu}}{n^{|\mu|}}\simeq \chi^{\lambda}(\mu \sqcup 1^{n-|\mu|})$ converges in probability towards $p_{\mu}(A-B+\gamma E)=\chi^{\omega}(\mu)$. ◻
 :::
 
 Again, Theorem [\[llnalg\]](#llnalg){reference-type="ref" reference="llnalg"} can be given an uniform flavour: namely, for any $\sigma \in \mathfrak{S}_{\infty}$, and any $\varepsilon>0$, $$\sup_{\omega \in \Omega} \mathbb{P}_{n,\omega}[|\chi^{\lambda}(\sigma)-\chi^{\omega}(\sigma)|\geq \varepsilon] \to_{n \to \infty} 0.$$ On the other hand, we shall see in Section [\[clt\]](#clt){reference-type="ref" reference="clt"} that in fact, a much stronger result holds: for any permutation $\sigma$, the renormalized difference $\sqrt{n}\,(\chi^{\lambda}(\sigma)-\chi^{\omega}(\sigma))$ converges in law towards a centered gaussian variable. Now, let us remark that for any $k$, $$\mathbb{E}_{n,\omega}\!\left[\left(\frac{p_{k}-\varSigma_{k}}{n^{k}}\right)^{2}\right]=\frac{\mathbb{E}_{n,\omega}[\text{obs. of degree at most }2k-2]}{n^{2k}}=O(n^{-2}) \to 0.$$ So, Theorem [\[llnalg\]](#llnalg){reference-type="ref" reference="llnalg"} implies that for any $k\geq 1$, and any $\omega \in \Omega$, $$\frac{p_{k}(\lambda)}{n^{k}} \longrightarrow_{\mathbb{P}_{n,\omega}} p_{k}(A-B+\gamma E).$$ We are now going to interpret this result in geometric terms, thereby proving a law of large numbers for the first rows $\lambda_{1},\lambda_{2},\ldots$ and the first columns $\lambda_{1}',\lambda_{2}',\ldots$ of a random partition $\lambda$ chosen according to a law $\mathbb{P}_{n,\omega}$.
@@ -54,20 +54,20 @@ Finally, let us translate the Kerov-Vershik law of large numbers in terms of the
 
 1.  First, let us prove that $\frac{a_{1}}{n}$ is smaller than $\alpha_{1}+2\varepsilon$ with probability going to $1$ as $n$ goes to infinity (of course, we suppose $\alpha_{1}<1$, this case being obvious). We consider a test function $f_{\varepsilon}^{+}$ that takes its values in $[0,1]$, is continuous, and is equal to $1$ after $\alpha_{1}+2\varepsilon$ and to $0$ before $\alpha_{1}+\varepsilon$ (see Figure [1](#functionplus){reference-type="ref" reference="functionplus"}). On the one hand, $X_{\omega}(f_{\varepsilon}^{+})=0$, and on the other hand, $$X_{\lambda}(f_{\varepsilon}^{+})\geq (\alpha_{1}+2\varepsilon)\,\,\mathrm{card}\,\left\{i \,\,\big|\,\, \frac{a_{i}}{n} \geq \alpha_{1}+2\varepsilon\right\}.$$ Since $X_{\lambda}(f_{\varepsilon})$ converges in probability to $X_{\omega}(f_{\varepsilon}^{+})=0$, this implies that the cardinality is equal to $0$ for $n$ big enough and with big probability.
 
-    <figure id="functionplus" data-latex-placement="ht">
+    <figure id="functionplus">
     <div class="center">
     <p><span><span> <embed src="graphic_functionplus.pdf" /></span></span></p>
     </div>
-    <figcaption>Test function <span class="math inline"><em>f</em><sub><em>ε</em></sub><sup>+</sup></span>.<span id="functionplus" data-label="functionplus"></span></figcaption>
+    <figcaption>Test function <span class="math inline"><em>f</em><sub><em>ε</em></sub><sup>+</sup></span>.<span id="functionplus" label="functionplus"></span></figcaption>
     </figure>
 
 2.  Similarly, let us prove that $\frac{a_{m}}{n}$ is bigger than $\alpha_{1}-2\varepsilon$ with probability going to $1$ as $n$ goes to infinity (again, we suppose that $\alpha_{1}>0$, this case being obvious). We consider a test function $f_{\varepsilon}^{-}$ that takes its values in $[0,1]$, is continuous, and is equal to $1$ after $\alpha_{1}-\varepsilon$ and to $0$ before $\alpha_{1}-2\varepsilon$ (see Figure [2](#functionminus){reference-type="ref" reference="functionminus"}).
 
-    <figure id="functionminus" data-latex-placement="ht">
+    <figure id="functionminus">
     <div class="center">
     <p><span><span> <embed src="graphic_functionminus.pdf" /></span></span></p>
     </div>
-    <figcaption>Test function <span class="math inline"><em>f</em><sub><em>ε</em></sub><sup>−</sup></span>.<span id="functionminus" data-label="functionminus"></span></figcaption>
+    <figcaption>Test function <span class="math inline"><em>f</em><sub><em>ε</em></sub><sup>−</sup></span>.<span id="functionminus" label="functionminus"></span></figcaption>
     </figure>
 
     For $\varepsilon$ small enough, we may also suppose that $\alpha_{1}-2\varepsilon>\alpha_{m+1}$. Then, $X_{\omega}(f_{\varepsilon}^{-})=m\alpha_{1}$, whereas $$X_{\lambda}(f_{\varepsilon}^{-}) \leq (\alpha_{1}+2\varepsilon) \,\,\mathrm{card}\,\left\{i \,\,\big|\,\, \frac{a_{i}}{n} \geq \alpha_{1}-2\varepsilon\right\}$$ with big probability --- indeed, we already know that the $a_{i}$'s are smaller than $\alpha_{1}+2\varepsilon$ with probability almost $1$. For $\varepsilon$ small enough and as $n$ goes to infinity, this leads to the inequality $\mathrm{card}\,\{i \,\,|\,\, \frac{a_{i}}{n} \geq \alpha_{1}-2\varepsilon\} \geq m$, which is equivalent to ask that $\frac{a_{m}}{n} \geq \alpha_{1}-2\varepsilon$.
@@ -78,7 +78,7 @@ Thus, for any $\varepsilon>0$, the probability of the event $$\alpha_{1}+2\varep
 ::: example
 When $\omega=\mathbf{0}$, the law of large numbers ensures that all the rows of $\lambda$ are some $o(n)$, and similarly for its columns. Actually, it is a well-known fact that the rows and the columns have order of magnitude $\sqrt{n}$, and that there is a limit shape for the random partitions under Plancherel measures after scaling the Young diagrams in both directions by the factor $\sqrt{n}$ (*cf.* [@LS77; @KV77]):
 
-<figure data-latex-placement="ht">
+<figure>
 <div class="center">
 <p><span><span> <embed src="graphic_plancherel.pdf" /></span></span></p>
 </div>

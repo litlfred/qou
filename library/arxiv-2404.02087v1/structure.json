@@ -308,8 +308,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Extreme_plasmons.tex",
-   "tex_sections": 6,
-   "overlaid": 3,
+   "tex_sections": 13,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -324,46 +324,64 @@
     {
      "id": "sec-001-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.871,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-modified-independent-electron-approximation",
      "title": "Modified independent electron approximation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.129,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-quantum-framework",
      "title": "Quantum framework",
-     "prose_ratio": 0.12,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-quantum-system-degeneracy-and-correlation",
      "title": "Quantum system: Degeneracy and Correlation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-wigner-quantum-phase-space",
      "title": "Wigner quantum phase-space",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.848,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-small-amplitude-plasmons-quantum-model",
      "title": "Small-amplitude plasmons: Quantum model",
-     "result": "no matching \\section"
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-quantum-coherence-limit",
      "title": "Quantum coherence limit",
-     "result": "no matching \\section"
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-relativistic-quantum-dynamics",
      "title": "Relativistic quantum dynamics",
-     "result": "no matching \\section"
+     "prose_ratio": 0.976,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-controlled-excitation",
@@ -380,15 +398,15 @@
     {
      "id": "sec-011-fields-of-the-extreme-plasmon",
      "title": "Fields of the extreme plasmon",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.58,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-012-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 0.684,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"

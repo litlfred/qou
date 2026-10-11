@@ -1274,8 +1274,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 7,
-   "overlaid": 1,
+   "tex_sections": 16,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1316,13 +1316,16 @@
     {
      "id": "sec-006-2-de\ufb01nition-and-properties-of-various-continuati",
      "title": "De\ufb01nition and properties of various continuations of 6j",
-     "prose_ratio": 0.078,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-21-intertwiners-and-6j0-of-uqsu2",
      "title": "Intertwiners and 6j(0) of Uq(su(2))",
-     "result": "no matching \\section"
+     "prose_ratio": 0.529,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-2-z-m-1",
@@ -1337,7 +1340,10 @@
     {
      "id": "sec-010-22-de\ufb01nitions-and-properties-of-continuation-of",
      "title": "De\ufb01nitions and properties of continuation of quantum 6j symbols",
-     "result": "no matching \\section"
+     "prose_ratio": 0.661,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-2-z-and-for-a-su\ufb03ciently-large-half-integer-k-we",
@@ -1367,7 +1373,8 @@
     {
      "id": "sec-016-23-quantum-lorentz-group-principal-unitary-repre",
      "title": "Quantum Lorentz group, Principal Unitary Representati ons and",
-     "result": "no matching \\section"
+     "prose_ratio": 0.127,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-017-2-z-the-elements",
@@ -1517,20 +1524,23 @@
     {
      "id": "sec-046-52-r-matrix-in-the-tensor-product-of-in\ufb01nite-dim",
      "title": "R-matrix in the Tensor Product of In\ufb01nite dimensional Re presen-",
-     "result": "no matching \\section"
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-047-6-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-048-7-appendix",
      "title": "Appendix",
-     "prose_ratio": 0.154,
+     "prose_ratio": 0.443,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -1561,7 +1571,8 @@
     {
      "id": "sec-054-72-asymptotics-of-intertwiners",
      "title": "Asymptotics of Intertwiners",
-     "result": "no matching \\section"
+     "prose_ratio": 0.377,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-055-2-p-3x2x11p-x2x1\u03bd2p-1\u03bd1",
@@ -1581,7 +1592,10 @@
     {
      "id": "sec-058-73-formulae-on-coe\ufb03cients-\u03bb-bc",
      "title": "Formulae on coe\ufb03cients \u039b BC",
-     "result": "no matching \\section"
+     "prose_ratio": 0.613,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-059-2-z-r-1",

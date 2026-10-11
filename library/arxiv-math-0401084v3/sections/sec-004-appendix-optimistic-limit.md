@@ -7,25 +7,20 @@ section_number: null
 pages: 15-16
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-text_source: latex
-latex_prose_ratio: 0.88
-latex_coverage_ratio: 0.971
 doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.958
 ---
 In this appendix, we will consider integral surgeries along the figure-eight knot.
 
-Let $E_{p,1}$ be the $p$-surgery along the figure-eight knot with $p\in\mathbb{Z}$. Then our parameter $u$ and $v$ satisfies $pu+v=2\pi\sqrt{-1}$. From Corollary [\[cor:Vol_CS\]](#cor:Vol_CS){reference-type="ref" reference="cor:Vol_CS"} we have $$\begin{equation*}
-  \operatorname{Vol}(E_{p,1})+\sqrt{-1}\operatorname{CS}(E_{p,1})
+Let $E_{p,1}$ be the $p$-surgery along the figure-eight knot with $p\in\mathbb{Z}$. Then our parameter $u$ and $v$ satisfies $pu+v=2\pi\sqrt{-1}$. From Corollary [\[cor:Vol_CS\]](#cor:Vol_CS){reference-type="ref" reference="cor:Vol_CS"} we have $$\operatorname{Vol}(E_{p,1})+\sqrt{-1}\operatorname{CS}(E_{p,1})
   \equiv
   \frac{H(u)}{\sqrt{-1}}-\pi{u}-\frac{uv}{4\sqrt{-1}}
   -\frac{\pi}{2}\lambda(\gamma)
-  \mod{\pi^2\sqrt{-1}\mathbb{Z}}.
-\end{equation*}$$ By [@Meyerhoff/Neumann:COMMH92 (4.6)], we have $$\begin{equation*}
-  \lambda(\gamma)
+  \mod{\pi^2\sqrt{-1}\mathbb{Z}}.$$ By [@Meyerhoff/Neumann:COMMH92 (4.6)], we have $$\lambda(\gamma)
   =\frac{2\pi\sqrt{-1}}{p}-\frac{v}{p}
-  =u.
-\end{equation*}$$ (Note that we follow orientation conventions of [@Neumann/Zagier:TOPOL85; @Yoshida:INVEM85] and so the sign of $v$ is opposite to that in [@Meyerhoff/Neumann:COMMH92].) Therefore $$\begin{equation*}
-\begin{split}
+  =u.$$ (Note that we follow orientation conventions of [@Neumann/Zagier:TOPOL85; @Yoshida:INVEM85] and so the sign of $v$ is opposite to that in [@Meyerhoff/Neumann:COMMH92].) Therefore $$\begin{split}
   &\operatorname{Vol}(E_{p,1})+\sqrt{-1}\operatorname{CS}(E_{p,1})
   \\
   &\quad\equiv
@@ -46,8 +41,7 @@ Let $E_{p,1}$ be the $p$-surgery along the figure-eight knot with $p\in\mathbb{Z
   \right\}
   \\
   &\quad\quad\quad\mod{\pi^2\sqrt{-1}\mathbb{Z}}
-\end{split}
-\end{equation*}$$ and so $$\begin{multline*}
+\end{split}$$ and so $$\begin{gathered}
   -\operatorname{CS}(E_{p,1})+\sqrt{-1}\operatorname{Vol}(E_{p,1})
   \\
   \equiv
@@ -55,10 +49,9 @@ Let $E_{p,1}$ be the $p$-surgery along the figure-eight knot with $p\in\mathbb{Z
   -\operatorname{Li}_2\left(y\exp(-u)\right)
   +u\log(-y)-u\pi\sqrt{-1}+\frac{pu^2}{4}
   \mod{\pi^2\mathbb{Z}}.
-\end{multline*}$$
+\end{gathered}$$
 
-Now we define $$\begin{equation*}
-\begin{split}
+Now we define $$\begin{split}
   V_p(\xi,\eta)
   &:=
   \operatorname{Li}_2\left(\xi^{-1}\eta^{-1}\right)
@@ -67,9 +60,7 @@ Now we define $$\begin{equation*}
   \\
   &=
   H(\xi,\eta)+\frac{p}{4}(\log{\eta})^2-2\pi\sqrt{-1}\log\eta.
-\end{split}
-\end{equation*}$$ We will calculate $\partial\,V_p(\xi,\eta)/\partial{\xi}\bigr|_{\xi=y,\eta=m^2}$ and $\partial\,V_p(\xi,\eta)/\partial{\eta}\bigr|_{\xi=y,\eta=m^2}$. First we have from [\[eq:y\]](#eq:y){reference-type="eqref" reference="eq:y"} $$\begin{equation*}
-  \left.
+\end{split}$$ We will calculate $\partial\,V_p(\xi,\eta)/\partial{\xi}\bigr|_{\xi=y,\eta=m^2}$ and $\partial\,V_p(\xi,\eta)/\partial{\eta}\bigr|_{\xi=y,\eta=m^2}$. First we have from [\[eq:y\]](#eq:y){reference-type="eqref" reference="eq:y"} $$\left.
     \frac{\partial\,V_p(\xi,\eta)}{\partial{\xi}}
   \right|_{\xi=y,\eta=m^2}
   =
@@ -77,9 +68,7 @@ Now we define $$\begin{equation*}
     \frac{\partial\,H(\xi,\eta)}{\partial{\xi}}
   \right|_{\xi=y,\eta=m^2}
   =
-  0.
-\end{equation*}$$ Next we have $$\begin{equation*}
-  \left.
+  0.$$ Next we have $$\left.
     \frac{\partial\,V_p(\xi,\eta)}{\partial\eta}
   \right|_{\xi=y,\eta=m^2}
   =
@@ -88,9 +77,7 @@ Now we define $$\begin{equation*}
   \right|_{\xi=y,\eta=m^2}
   +
   \frac{p\log\left(m^2\right)}{2m^2}
-  -\frac{2\pi\sqrt{-1}}{m^2}.
-\end{equation*}$$ On the other hand $$\begin{equation*}
-\begin{split}
+  -\frac{2\pi\sqrt{-1}}{m^2}.$$ On the other hand $$\begin{split}
   \frac{v}{2}
   &=
   \frac{d\,H(u,m^2)}{du}
@@ -116,17 +103,14 @@ Now we define $$\begin{equation*}
   \right|_{\xi=y,\eta=m^2}
   -
   \pi\sqrt{-1}.
-\end{split}
-\end{equation*}$$ Therefore $$\begin{equation*}
-  \left.
+\end{split}$$ Therefore $$\left.
     \frac{\partial\,V_p(\xi,\eta)}{\partial\eta}
   \right|_{\xi=y,\eta=m^2}
   =
   \frac{v/2+\pi\sqrt{-1}}{\exp{u}}
   +\frac{pu}{2\exp{u}}
   -\frac{2\pi\sqrt{-1}}{\exp{u}}
-  =0.
-\end{equation*}$$
+  =0.$$
 
 In [@Murakami:SURIK00] the first author calculated a 'fake' limit of the Witten--Reshetikhin--Turaev invariants of the $(p,1)$-Dehn surgery of the figure-eight knot and obtained the following observation.
 

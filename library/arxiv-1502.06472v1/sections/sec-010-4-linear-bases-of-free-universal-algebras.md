@@ -7,10 +7,10 @@ section_number: 4
 pages: 7-8
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
-text_source: latex
-latex_prose_ratio: 0.902
-latex_coverage_ratio: 1.0
 doc_brief: "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and"
+text_source: latex
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 1.0
 ---
 --Bases of free Lie algebras
 

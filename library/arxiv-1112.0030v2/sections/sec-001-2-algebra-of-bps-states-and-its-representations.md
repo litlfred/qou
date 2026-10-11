@@ -7,10 +7,10 @@ section_number: 2
 pages: 7-10
 source_pdf: 1112.0030v2.pdf
 source_sha256: 745f143c2df4734b
-text_source: latex
-latex_prose_ratio: 0.933
-latex_coverage_ratio: 0.958
 doc_brief: "Homological algebra of knots and BPS states — It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:algebra}
 

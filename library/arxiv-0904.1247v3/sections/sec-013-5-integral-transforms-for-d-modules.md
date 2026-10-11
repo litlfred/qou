@@ -7,10 +7,10 @@ section_number: 5
 pages: 30-34
 source_pdf: 0904.1247v3.pdf
 source_sha256: 4a6f4dee6af66dac
-text_source: latex
-latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.982
 doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — W e apply the ideas of derived algebraic geometry and topolog ical ﬁeld theory to the representation theory of reductive groups."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.969
 ---
 []{#integral transforms label="integral transforms"}
 
@@ -101,12 +101,12 @@ X \times_Y X\times_Y X
 \\
 }$$
 
-Using standard identities for composition and base change, we calculate $$\begin{eqnarray*}
+Using standard identities for composition and base change, we calculate $$\begin{aligned}
 (\operatorname{id}\otimes c)\circ (u \otimes\operatorname{id}) & = & 
 \pi_{1*} ({\rm id}_1\times\Delta_{23})^!(\Delta_{12}\times{\rm id}_3)_*\pi^!_{2}\\
 & \simeq & \pi_{1*} \Delta_*\Delta^!\pi^!_{2}\\
 & \simeq & {\rm id}_{{\mathcal D}(X)}.
-\end{eqnarray*}$$ ◻
+\end{aligned}$$ ◻
 :::
 
 If $X_1\to Y$ is safe as in the previous theorem, and $X_2\to Y$ is arbitrary, then the integral transform construction gives linear functors $$\xymatrix{{\mathcal D}(X_1 \times_Y X_2)\ar[r] & \mathop{\mathrm{Fun}}^L_{{\mathcal D}(Y)}({\mathcal D}(X_1), D(X_2))
@@ -137,28 +137,26 @@ In this section, we present an equivariant generalization of Theorem [\[thm sel
 
 For any compact object $\mathfrak M\in {\mathcal D}(Y)$, we will show that the monoidal dual is the shifted Verdier dual $\mathbb D_Y(\mathfrak M)[2\dim Y] \in {\mathcal D}(Y)$.
 
-Following the discussion of Section [\[duals\]](#duals){reference-type="ref" reference="duals"}, it suffices to establish for any compact object $\mathfrak M\in {\mathcal D}(Y)$, and arbitrary objects $\mathfrak L, \mathfrak N\in {\mathcal D}(Y)$, that there is a functorial equivalence $$\begin{equation}
-\label{dual eq}
+Following the discussion of Section [\[duals\]](#duals){reference-type="ref" reference="duals"}, it suffices to establish for any compact object $\mathfrak M\in {\mathcal D}(Y)$, and arbitrary objects $\mathfrak L, \mathfrak N\in {\mathcal D}(Y)$, that there is a functorial equivalence $$\label{dual eq}
 \xymatrix{
 \mathop{\mathrm{Hom}}_{{\mathcal D}(Y)}(\mathfrak L\otimes \mathfrak M, \mathfrak N)
  \simeq \mathop{\mathrm{Hom}}_{{\mathcal D}(Y)}(\mathfrak L, \mathfrak N\otimes \mathbb D_Y(\mathfrak M)[2\dim Y] )
-}
-\end{equation}$$
+}$$
 
 Observe that it suffices to establish the equivalence for $\mathfrak L, \mathfrak N\in \mathcal H$ compact objects. For arbitrary objects $\mathfrak L, \mathfrak N\in \mathcal H$, it then follows by continuity by taking colimits first in $\mathfrak N$ then in $\mathfrak L$.
 
-Using that the diagonal $\Delta:Y\to Y\times Y$ is smooth of relative dimension $-\dim Y$, note the following functorial equivalence $$\begin{eqnarray*}
+Using that the diagonal $\Delta:Y\to Y\times Y$ is smooth of relative dimension $-\dim Y$, note the following functorial equivalence $$\begin{aligned}
 \mathbb D_Y(\mathfrak L\otimes \mathfrak M) & = & \mathbb D_Y\Delta^!(\mathfrak L\boxtimes \mathfrak M)\\
 &  \simeq & \Delta^*(\mathbb D_Y(\mathfrak L) \boxtimes \mathbb D_Y(\mathfrak M))\\
 & \simeq &  \Delta^!(\mathbb D_Y(\mathfrak L) \boxtimes \mathbb D_Y(\mathfrak M))[2\dim Y] \\
 & \simeq &  \mathbb D_Y(\mathfrak L) \otimes \mathbb D_Y(\mathfrak M)[2\dim Y]
-\end{eqnarray*}$$
+\end{aligned}$$
 
-Now returning to the sought after equivalence [\[dual eq\]](#dual eq){reference-type="eqref" reference="dual eq"}, we find functorial equivalences $$\begin{eqnarray*}
+Now returning to the sought after equivalence [\[dual eq\]](#dual eq){reference-type="eqref" reference="dual eq"}, we find functorial equivalences $$\begin{aligned}
 \mathop{\mathrm{Hom}}_{{\mathcal D}(Y)}(\mathfrak L\otimes \mathfrak M, \mathfrak N) &\simeq &\mathop{\mathrm{Hom}}_{{\mathcal D}(Y)}(\mathbb C_Y, \mathbb D_Y(\mathfrak L\otimes \mathfrak M) \otimes \mathfrak N) \\ 
 &\simeq&  \mathop{\mathrm{Hom}}_{{\mathcal D}(Y)}(\mathbb C_Y, (\mathbb D_Y(\mathfrak L) \otimes \mathbb D_Y(\mathfrak M) [2\dim Y]) \otimes \mathfrak N)\\ 
-&\simeq&\mathop{\mathrm{Hom}}_{{\mathcal D}(Y)}(\mathfrak L,  \mathbb D_Y(\mathfrak M)[2\dim Y]\otimes  \mathfrak N)
-\end{eqnarray*}$$ ◻
+&\simeq&\mathop{\mathrm{Hom}}_{{\mathcal D}(Y)}(\mathfrak L,  \mathbb D_Y(\mathfrak M)[2\dim Y]\otimes  \mathfrak N) 
+\end{aligned}$$ ◻
 :::
 
 ::: remark

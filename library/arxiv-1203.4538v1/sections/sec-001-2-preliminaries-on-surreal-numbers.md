@@ -7,10 +7,10 @@ section_number: 2
 pages: 2-6
 source_pdf: 1203.4538v1.pdf
 source_sha256: 5e44909e355c78d6
-text_source: latex
-latex_prose_ratio: 0.818
-latex_coverage_ratio: 0.981
 doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 7 sections: Introduction.; Preliminaries on surreal numbers.; Sign sequences."
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.87
 ---
 []{#sect:defi label="sect:defi"}
 
@@ -128,7 +128,7 @@ We deduce immediately that $\textbf{No}$ is a **Hahn field of series** [@hahn:ni
 The proper class $\omega^{\omega^{\textbf{No}}}$ is a complete set of representatives of the comparability classes of $\textbf{No}_{>0}^{\gg 1}$, each of its elements being the one of minimal length in its class.\
 Following the ideas of Conway, Gonshor described also a proper class of **generalized epsilon numbers** [@conway_numb-games p.35]:
 
-:::::: thm
+::: thm
 []{#theo:eps-nbres label="theo:eps-nbres"} The recursive formula:
 
 ::: center
@@ -149,11 +149,11 @@ with values in $\textbf{No}_{>0}^{\gg 1}$ bigger than $\Omega^n(1)$ for any $n$,
 ::: center
 $\forall a\in\textbf{No},\ \omega^{\epsilon_a}=\epsilon_a$.\
 :::
-::::::
+:::
 
 Gonshor defines inductively in [@gonshor_surreal] an **exponential map** $\exp:(\textbf{No},+)\rightarrow(\textbf{No}_{>0},.)$ which is surjective (and consequently its inverse, the **logarithmic map** $\log:(\textbf{No}_{>0},.)\rightarrow(\textbf{No},+)$) using the Taylor expansion of the real exponential map. Here we give only the results we will need in this article:
 
-:::: thm
+::: thm
 []{#theo:exp label="theo:exp"} The exponential map $\exp:\textbf{No}\rightarrow\textbf{No}_{>0}$ and its inverse $\log:\textbf{No}_{>0}\rightarrow\textbf{No}$, coincide on the real numbers with the usual real exponential and logarithmic maps, and are such that:
 
 ::: center
@@ -166,74 +166,6 @@ $\begin{array}{rlcl}
 :::
 
 We have $\exp=\log^{-1}$ and $h=g^{-1}$ on $\textbf{No}$.
-::::
+:::
 
 Note that $g$ is not defined at 0.
-
-## Sign sequences.
-
-Gonshor obtains in [@gonshor_surreal] detailed results on the sign sequences of the surreals under the various operations and maps. We will use repeatedly his results. Moreover, we introduce in this section some new operations on the sign sequences.
-
-::: defn
-- Given two surreal numbers $a,b\in\textbf{No}$, we define their **concatenation** $a\binampersand b$ as the juxtaposition of their sign sequences. We note that $l(a\binampersand b)=l(a)+l(b)$, the *ordinal sum* of $l(a)$ and $l(b)$.
-
-- As in [@gonshor_surreal Theorem 9.5], for any surreal number $a\in\textbf{No}$, we can write its sign sequence as the following transfinite concatenation:
-
-  ::: center
-  $a=\alpha_0\oplus\binampersand \beta_0\ominus\binampersand \alpha_1\oplus\binampersand \beta_1\ominus\binampersand\cdots$
-  :::
-
-  where for any $\mu\in\textbf{On}$ used in this writing of $a$, we have $\alpha_\mu,\ \beta_\mu\in\textbf{On}$ with in particular $\alpha_\mu$ possibly 0 for $\mu=0$ or for any *limit* ordinal $\mu$.
-
-- Given a surreal number $a\in\textbf{No}$, we denote by $a^+$ the total number of pluses in the sign sequence of $a$ ($a^+\in\textbf{No}$). Therefore is the ordinal sum of the packages of $\oplus$'s: $$a^+=\displaystyle\sum_{\mu}\alpha_\mu= \displaystyle\binampersand_{\mu}(\alpha_\mu \oplus).$$
-
-- Given a positive surreal number $a\in\textbf{No}_{>0}$, we derive from it the surreal number $\flat a$ obtained by suppressing the first $\oplus$ in the sign sequence of $a$.
-
-  Given a negative surreal number $a\in\textbf{No}_{<0}$, we derive from it the surreal number $\sharp a$ obtained by suppressing the first $\ominus$ in the sign sequence of $a$.
-
-- Given a surreal number in normal form $\displaystyle\sum_{i<\lambda}\omega^{a_i}.r_i$, we define its corresponding **reduced sequence** $(a_i^0)_{i<\lambda}$ as follows. For any $i<\lambda$, $a_i^0$ is derived from $a_i$ by suppressing in its sign sequence the following $\ominus$'s:
-
-  - given an ordinal number $\nu\in\textbf{On}$, if $a_i(\nu)=\ominus$ and if there exists $j<i$ such that $a_j(\xi)=a_i(\xi)$ for any $\xi\leq\nu$, then suppress the $\nu$th $\ominus$;
-
-  - if $i$ is a successor ordinal, $a_{i-1}\binampersand\ominus$ is a truncation of $a_i$ and if $r_{i-1}$ is not a dyadic rationnal number, then suppress the $\ominus$ coming after $a_{i-1}$ in the writing of $a_i$.
-:::
-
-Concerning the exponentiation with base $\omega$, we recall [@gonshor_surreal Theorem 5.12 and Corollary 5.1]:
-
-::: thm
-[]{#theo:signe-omega label="theo:signe-omega"}
-
-- Given a surreal number $a=\alpha_0\oplus\binampersand \beta_0\ominus\binampersand \alpha_1\oplus\binampersand \beta_1\ominus\binampersand\cdots$, for any ordinal $\mu\in\textbf{On}$ intervening in the writing of $a$, we set $\gamma_\mu:=\displaystyle\sum_{\lambda\leq\mu}\alpha_\lambda$ (ordinal sum). Then the sign sequence of $\omega^a$ is:
-
-  ::: center
-  $\omega^a=\omega^{\gamma_0}\oplus\binampersand \omega^{\gamma_0+1}\beta_0\ominus\binampersand \omega^{\gamma_1}\oplus\binampersand \omega^{\gamma_1+1}\beta_1\ominus\binampersand\cdots$
-  :::
-
-- Given a positive real number $r=\rho_0\oplus\binampersand\sigma_0\ominus\binampersand\cdots$, the sign sequence of $\omega^a.r$ is
-
-  ::: center
-  $\omega^a.r=\omega^a\binampersand \omega^{a^+}\flat\rho_0\oplus\binampersand\omega^{a^+}\sigma_0\ominus\binampersand \omega^{a^+}\rho_1\oplus\binampersand\omega^{a^+}\sigma_1\binampersand\cdots$
-  :::
-
-  (ordinal multiplication). If $r$ is negative, reverse all the signs in the preceding sequence.
-
-- Given a surreal number in normal form $\displaystyle\sum_{i<\lambda}\omega^{a_i}.r_i$, its sign sequence is:
-
-  ::: center
-  $\displaystyle\binampersand_{i<\lambda}\omega^{a_i^0}.r_i$
-  :::
-
-  where $(a_i^0)_{i<\lambda}$ is the corresponding reduced sequence.\
-:::
-
-## Generalized epsilon numbers
-
-We recall [@gonshor_surreal Theorems 9.5 and 9.6]:
-
-::: thm
-[]{#theo:sign-seq-epsilon label="theo:sign-seq-epsilon"}
-
-- A surreal number $a=\alpha_0\oplus\binampersand \beta_0\ominus\binampersand \alpha_1\oplus\binampersand \beta_1\ominus\binampersand\cdots$ is an epsilon number if and only if $\alpha_0\neq 0$, all $\alpha_\mu$ different from 0 are ordinary epsilon numbers satisfying $\alpha_\mu  > l.u.b.\{ \alpha_\lambda\ |\ \lambda<\mu\}$ and furthermore $\beta_\mu$ is a multiple of $\omega^{\alpha_\mu \omega}$ for $\alpha_\mu \neq 0$ and a multiple of $\omega^{\gamma_\mu \omega}$ where $\delta_\mu:=\displaystyle\sum_{\lambda<\mu}\alpha_\lambda$ (ordinal sum) for $\alpha_\mu  = 0$.
-
-- Let $\gamma_\mu:=\displaystyle\sum_{\lambda\leq\mu}\alpha_\lambda$ (ordinal sum). Then the $\mu$th block of pluses in $\epsilon_a$ consists of $\epsilon_{\gamma_\mu}$ pluses and the $\mu$th block of minuses of $(\epsilon_{\gamma_\mu})^\omega \beta_\mu$ minuses.
-:::

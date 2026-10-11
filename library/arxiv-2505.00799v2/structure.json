@@ -298,8 +298,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "EM_LR_QMFs-and-Resurgence_Updated.tex",
-   "tex_sections": 7,
-   "overlaid": 3,
+   "tex_sections": 14,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -309,18 +309,24 @@
     {
      "id": "sec-000-1-introduction-and-statement-of-results",
      "title": "Introduction and statement of results",
-     "prose_ratio": 0.47,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-11-statement-of-main-results",
      "title": "Statement of Main Results",
-     "result": "no matching \\section"
+     "prose_ratio": 0.766,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-21-resurgence",
      "title": "Resurgence",
-     "result": "no matching \\section"
+     "prose_ratio": 0.312,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-acknowledgements",
@@ -333,18 +339,24 @@
     {
      "id": "sec-004-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.6,
+     "prose_ratio": 0.0,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-005-22-eichler-integrals-of-cusp-forms-of-integer-an",
      "title": "Eichler Integrals of Cusp Forms of Integer and Half-Integer Weight",
-     "result": "no matching \\section"
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-23-maass-waveforms",
      "title": "Maass Waveforms",
-     "result": "no matching \\section"
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-3-intermediate-results",
@@ -355,17 +367,26 @@
     {
      "id": "sec-008-31-asymptotics",
      "title": "Asymptotics",
-     "result": "no matching \\section"
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-32-median-resummation",
      "title": "Median Resummation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-33-discontinuity-calculations",
      "title": "Discontinuity Calculations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.748,
+     "coverage_ratio": 0.902,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-4-proof-of-theorem-15",
@@ -375,16 +396,16 @@
     {
      "id": "sec-012-5-proofs-of-corollaries",
      "title": "Proofs of Corollaries",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.908,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-013-6-generalizations-and-open-questions",
      "title": "Generalizations and Open Questions",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },

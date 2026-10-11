@@ -5,7 +5,8 @@
   "file": "9511320v1.pdf",
   "sha256": "4336112cecabdfdf835e5e26f22ab66d867fe2620f16d1bcbd11a53b53848aaa",
   "bytes": 222468,
-  "pages": 26
+  "pages": 26,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -715,6 +716,241 @@
   "likely_scanned": false,
   "toc_entries": 40,
   "sections": 40,
-  "chars_total": 47546
+  "chars_total": 47546,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "9511320.tex",
+   "tex_sections": 11,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.598,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-3-we-are-not-considering-the-decuplet-states-as",
+     "title": "We are not considering the decuplet states as dynamical degr ees of freedom in",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-4-we-are-grateful-to-harry-lee-for-reminding-us",
+     "title": "We are grateful to Harry Lee for reminding us of this problem. Of course, it",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-e\ufb00ective-lagrangian-of-goldstones-baryons-and",
+     "title": "E\ufb00ective Lagrangian of Goldstones, Baryons and Spin\u20131 Fie lds",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-21-addition-of-spin1-fields-tensor-field-formula",
+     "title": "Addition of Spin\u20131 Fields: Tensor Field Formulation",
+     "prose_ratio": 0.295,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-4-m-2",
+     "title": "M 2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-4-tr",
+     "title": "Tr",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-22-addition-of-spin1-fields-vector-field-formula",
+     "title": "Addition of Spin\u20131 Fields: Vector Field Formulation",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-23-equivalence-for-spin1-pole-contributions",
+     "title": "Equivalence for Spin\u20131 Pole Contributions",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-3-electromagnetic-form-factors-for-the-baryon-oc",
+     "title": "Electromagnetic Form Factors for the Baryon Octet",
+     "prose_ratio": 0.871,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-31-basic-de\ufb01nitions",
+     "title": "Basic De\ufb01nitions",
+     "prose_ratio": 0.403,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-2-fv-f-\u00b5\u03bd",
+     "title": "FV f \u00b5\u03bd",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-2-fv-q-\u00b5-a\u03bd-\u03bd-a\u00b5-40",
+     "title": "FV Q (\u2202\u00b5 A\u03bd \u2212 \u2202\u03bd A\u00b5 ) , (40)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-1-t-i-\u03c3\u00b5\u03bd-k\u03bd",
+     "title": "(t) + i \u03c3\u00b5\u03bd k\u03bd",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-2-t\u03bba-up",
+     "title": "(t)]{\u03bba, u(p)}",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-2-t\u03bba-up",
+     "title": "(t)][\u03bba, u(p)]",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-2-t-f",
+     "title": "(t) = F \u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-2-t-13f",
+     "title": "(t) + (1/3)F +",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-32-vector-meson-contribution-to-the-electromagne",
+     "title": "Vector Meson Contribution to the Electromagnetic Form F actors",
+     "prose_ratio": 0.253,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-1-t-fv",
+     "title": "(t) = FV",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-2-fv-td",
+     "title": "FV TD",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-2-t-fv-4",
+     "title": "(t) = FV 4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-1-t-1-fv",
+     "title": "(t) = 1 + FV",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-2-fv-tf",
+     "title": "FV TF",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-1-0-0-and-f",
+     "title": "(0) = 0 and F \u00b1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-2-0-0-this-in-particular",
+     "title": "(0) \u2044= 0. This in particular",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-5-throughout-we-do-not-di\ufb00erentiate-between-the",
+     "title": "Throughout, we do not di\ufb00erentiate between the physical (ave rage) octet baryon",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-1-t",
+     "title": "(t) = \u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-2-t-4",
+     "title": "(t) = \u22124",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-1-t-1",
+     "title": "(t) = 1 \u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-2-0-0-this-would-imply-that-there-is-no-vector-m",
+     "title": "(0) = 0. This would imply that there is no vector meson induced con-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-4-vector-meson-contribution-to-pionnucleon-scatt",
+     "title": "Vector Meson Contribution to Pion\u2013Nucleon Scattering",
+     "prose_ratio": 0.322,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-033-2-q-q-sd-sf-t",
+     "title": "(q /+ q /\u2032) [SD + SF ] + t",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-8-q-q-td-tf",
+     "title": "(q /+ q /\u2032) [TD + TF ]",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-2-q-q-gd-gf-m",
+     "title": "(q /+ q /\u2032) [GD + GF ] + m",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-5-loops-with-massive-particles",
+     "title": "Loops with massive particles",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-037-6-short-summary",
+     "title": "Short Summary",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.46,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-038-7-the-sign-in-the-exponential-is-derived-from-zu",
+     "title": "The sign in the exponential is derived from Z[u\u00b5 , f +",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

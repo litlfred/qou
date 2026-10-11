@@ -200,8 +200,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
-   "tex_sections": 5,
-   "overlaid": 3,
+   "tex_sections": 8,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -216,47 +216,52 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.886,
-     "coverage_ratio": 0.944,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-11-crystals",
      "title": "Crystals",
-     "result": "no matching \\section"
+     "prose_ratio": 0.176,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-1-crystals-and-khovanov-lauda-rouquier-algebras",
      "title": "Crystals and Khovanov-Lauda-Rouquier Algebras",
-     "prose_ratio": 0.426,
+     "prose_ratio": 0.333,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-12-khovanov-lauda-rouquier-algebras",
      "title": "Khovanov-Lauda-Rouquier algebras",
-     "result": "no matching \\section"
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-13-construction-of-irreducible-r-modules",
      "title": "Construction of irreducible R-modules",
-     "result": "no matching \\section"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.866,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-2-description-of-nkv-for-finite-type-via-adapted",
      "title": "Description of Nk(v) for Finite Type Via Adapted Strings",
      "prose_ratio": 0.989,
-     "coverage_ratio": 0.889,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-3-explicit-construction-of-irreducible-modules-f",
      "title": "Explicit Construction of Irreducible Modules for Finite Classical Type",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.661,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.579,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-007-references",

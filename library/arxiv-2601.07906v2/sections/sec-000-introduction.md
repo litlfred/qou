@@ -7,10 +7,10 @@ section_number: null
 pages: 4-9
 source_pdf: 2601.07906v2.pdf
 source_sha256: e69b1bf37f2c75b0
-text_source: latex
-latex_prose_ratio: 0.84
-latex_coverage_ratio: 0.956
 doc_brief: "March 2026 A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:intro}
 

@@ -8,38 +8,23 @@ pages: 27-28
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
 doc_brief: "Local analytic classification of q-difference equations — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symmetric square of the q-Eule"
+text_source: latex
+latex_prose_ratio: 0.876
+latex_coverage_ratio: 0.802
 ---
-Second, recall from [ 53, p. II.2] that a morphism f :M→N is said to be
-strict with respect to the ﬁltrations (M≤µ), (N≤µ), if f(M≤µ) =N≤µ∩f(M)
-for all µ; equivalently: the two ﬁltrations on f(M) respectively induced by
-that of N (by restriction) and by that of M (through f) are identical. it is
-then a classical consequence (and a nice exercice in linear a lgebra) that the
-functor M ❀ grM is indeed exact.
-2.3. Application to the analytic isoformal classiﬁcation
-The formal classiﬁcation of analytic q-diﬀerence modules is equivalent to
-the classiﬁcation of pure modules: the formal class of M is equal to the formal
-class of grM, and the latter is essentially the same thing as the analyticclass of
-grM. The classiﬁcation of pure modules has been described in paragraph 2.2.2.
-Let us ﬁx a formal class, that is, a pure module:
-M0 :=P1⊕···⊕ Pk.
-Here, each Pi is pure isoclinic of slope µi ∈ Q and rank ri ∈ N∗ and we
-assume that µ1 <··· < µk. All modules M such that grM≃ M0 have the
-same Newton polygon N(M) = N(M0). They constitute a formal class and
-we want to classify them analytically. The following deﬁnit ion is inspired by
-[3].
-Deﬁnition 2.3.1 . — We write F(M0) orF(P1,...,P k) for the set of equiv-
-alence classes of pairs ( M,g ) of an analytic q-diﬀerence module M and an
-isomorphismg : gr(M)→M0, where (M,g ) is said to be equivalent to (M ′,g ′)
-if there exists a morphism f :M→M ′ such that g =g′◦ gr(f).
-Note that f is automatically an isomorphism. The goal of this paper is to
-describe preciselyF(P1,...,P k). This deﬁnition obviously admits a purely al-
-gebraic generalization, which is related to some interesting problems in homo-
-logical algebra. In the appendix, we shall describe in some detail the necessary
-formalism and results in that direction; this will give us an adequate frame
-to formulate and prove our ﬁrst structure theorems for the sp aceF(M0) of
-isoformal analytic classes (theorems 3.1.4 and 3.3.5).
-Remark 2.3.2 . — The group ∏
-1≤i≤k
-Aut(Pi) naturally operates onF(P1,...,P k)
-in the following way: if ( φi) is an element of the group, thus deﬁning
-φ∈ Aut(M0), then send the class of the isomorphism g : gr(M)→ M0 to
+[]{#section:analyticisoformalclassification label="section:analyticisoformalclassification"}
+
+The formal classification of analytic $q$-difference modules is equivalent to the classification of pure modules: the formal class of $M$ is equal to the formal class of ${\text{gr}}M$, and the latter is essentially the same thing as the analytic class of ${\text{gr}}M$. The classification of pure modules has been described in paragraph [\[subsection:puremodules\]](#subsection:puremodules){reference-type="ref" reference="subsection:puremodules"}.\
+Let us fix a formal class, that is, a pure module: $$M_{0} := P_{1} \oplus \cdots \oplus P_{k}.$$ Here, each $P_{i}$ is pure isoclinic of slope $\mu_{i} \in {\mathbf Q}$ and rank $r_{i} \in {\mathbf N}^{*}$ and we assume that $\mu_{1} < \cdots < \mu_{k}$. All modules $M$ such that ${\text{gr}}M \simeq M_{0}$ have the same Newton polygon $N(M) = N(M_{0})$. They constitute a formal class and we want to classify them analytically. The following definition is inspired by [@BV].
+
+[]{#not24 label="not24"}
+
+::: defi
+[]{#defi:analyticisoformalclass label="defi:analyticisoformalclass"} We write ${\mathcal{F}}(M_{0})$ or ${\mathcal{F}}(P_{1},\ldots,P_{k})$ for the set of equivalence classes of pairs $(M,g)$ of an analytic $q$-difference module $M$ and an isomorphism $g: {\text{gr}}(M) \rightarrow M_{0}$, where $(M,g)$ is said to be equivalent to $(M',g')$ if there exists a morphism $f: M \rightarrow M'$ such that $g = g' \circ {\text{gr}}(f)$.
+:::
+
+Note that $f$ is automatically an isomorphism. The goal of this paper is to describe precisely ${\mathcal{F}}(P_{1},\ldots,P_{k})$. This definition obviously admits a purely algebraic generalization, which is related to some interesting problems in homological algebra. In the appendix, we shall describe in some detail the necessary formalism and results in that direction; this will give us an adequate frame to formulate and prove our first structure theorems for the space ${\mathcal{F}}(M_{0})$ of isoformal analytic classes (theorems [\[theo:schemadesmodules\]](#theo:schemadesmodules){reference-type="ref" reference="theo:schemadesmodules"} and [\[theo:kintegralslopesspace\]](#theo:kintegralslopesspace){reference-type="ref" reference="theo:kintegralslopesspace"}).
+
+::: rema
+[]{#rema:badquotient1 label="rema:badquotient1"} The group $\prod\limits_{1 \leq i \leq k} \text{Aut}(P_{i})$ naturally operates on ${\mathcal{F}}(P_{1},\ldots,P_{k})$ in the following way: if $(\phi_{i})$ is an element of the group, thus defining $\phi \in \text{Aut}(M_{0})$, then send the class of the isomorphism $g: {\text{gr}}(M) \rightarrow M_{0}$ to the class of $\phi \circ g$. The quotient of ${\mathcal{F}}(P_{1},\ldots,P_{k})$ by this action is the set of analytic classes within the formal class of $M_{0}$, but it is not naturally made into a space of moduli. An example is given at the end of the next paragraph (remark [\[rema:badquotient2\]](#rema:badquotient2){reference-type="ref" reference="rema:badquotient2"}).
+:::

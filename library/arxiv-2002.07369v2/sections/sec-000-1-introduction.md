@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-2
 source_pdf: 2002.07369v2.pdf
 source_sha256: 6b8b1e509553b90c
-text_source: latex
-latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.769
 doc_brief: "Groebner-Shirshov bases for the Coxeter groups of the types G2, F4, E6, E7 and E8 — It is known that the finite Coxeter groups are classified in terms of Coxeter-Dynkin diagrams."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.992
 ---
 Let $M=(m_{ij})$ be a symmetric $n\times n$ matrix over natural numbers, with $\infty$ such that $m_{ii}=1,2\leq m_{ij}\leq \infty$ for $i\ne j$. The matrix $M$ determines a group with the following presentation $$W=\mbox{sgp}\langle s_1,..,s_n|(s_is_j)^{m_{ij}}=1, \mbox{ where } 1\leq i,j\leq n, m_{ij}\ne \infty\rangle,$$ which is called the Coxeter group $W=W(M)$.
 

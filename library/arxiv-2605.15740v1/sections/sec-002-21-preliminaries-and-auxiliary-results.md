@@ -8,175 +8,73 @@ pages: 6-8
 source_pdf: 2605.15740v1.pdf
 source_sha256: aa7f99d6633113c6
 doc_brief: "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
+text_source: latex
+latex_prose_ratio: 0.88
+latex_coverage_ratio: 0.788
 ---
-sequences (αn,βn)n≥0 satisfying
-βn =
-nX
-k=0
-αk
-(q)n−k(aq)n+k
-(2.1)
-= 1
-(q)n(aq)n
-nX
-k=0
-(q−n)k
-(aqn+1)k
-(−1)kqnk−(k
-2)αk.(2.2)
-The first equation is the original definition [4], while the second follows from an application of
-the identity [13, Appendix I, Eq. (I.10)]
-(x)n−k = (x)n
-(q1−n/x)k
-(−q/x)kq(k
-2)−nk.(2.3)
-We begin by reviewing two important facts about Bailey pairs. First, we require a special
-case of the Bailey lemma [4].
-Lemma 2.1.If(α n,βn)is a Bailey pair relative toa, then so is(α ′
-n,β′
-n), where
-α′
-n =a nqn2
-αn (2.4)
-and
-β′
-n =
-nX
-j=0
-ajqj2
-(q)n−j
-βj.(2.5)
-Second, we have a special case of the Bailey lattice [1].
-Lemma 2.2.If(α n,βn)is a Bailey pair relative toq 2, then(α ∗
-n,βn)is a Bailey pair relative to
-q, where
-α∗
-n = (1−q 2)
- αn
-1−q 2n+2− q2nαn−1
-1−q 2n
-
-.(2.6)
-By convention we takeα −1 = 0.
-Using Lemmas 2.1 and 2.2, we establish three auxiliary results which will allow us to relate
-theq-multisums in Theorem 1.2 to polynomial sums at roots of unity. The first result is for
-Bailey pairs relative toq.
-Proposition 2.3.If(α k,βk)is a Bailey pair relative toq, then for anyp≥1we have
-X
-n−1≥np≥···≥n1≥0
-q(n−np−1)(n−np)βn−np−1
-(q)np
-p−1Y
-i=1
-q(n−ni−1)(n−ni)
-
-ni+1
-ni
-
-= 1
-(q)n−1(q2)n−1
-n−1X
-k=0
-(q1−n)k
-(q1+n)k
-(−1)kqnk−(k+1
-2 )+p(k2+k)αk.
-(2.7)
-BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANTS 7
-Proof.Suppose that (α k,βk) is a Bailey pair relative toq. Iterating (2.4) and (2.5)ptimes we
-obtain another Bailey pair relative toq,
-α(p)
-k =q p(k2+k)αk (2.8)
-and
-β(p)
-k =
-X
-k≥np≥···≥n1≥0
-qnp(np+1)+···+n1(n1+1)
-(q)k−np···(q) n2−n1
-βn1.(2.9)
-Now inβ (p)
-k we replacekbyn−1 and then make the change of indicesn i→n−1−n p−i+1 for
-1≤i≤p. The result is
-β(p)
-n−1 =
-X
-n−1≥np≥···≥n1≥0
-q(n−n1−1)(n−n1)+···+(n−np−1)(n−np)
-(q)n1(q)n2−n1···(q) np−np−1
-βn−np−1.(2.10)
-Multiplying numerator and denominator by (q)np and then converting toq-binomial coefficients
-(1.8) gives the left-hand side of (2.7). The right-hand side follows from inserting (2.8) into (2.2).
-This completes the proof.□
-Our second auxiliary result is analogous to Proposition 2.3, but for Bailey pairs relative to
-q2. In what follows, we definea ∗
-n for any sequencea n by
-a∗
-n = (1−q 2)
- an
-1−q 2n+2− q2nan−1
-1−q 2n
-
-(2.11)
-in analogy with (2.6).
-Proposition 2.4.If(α k,βk)is a Bailey pair relative toq 2, then for anyp≥1we have
-X
-n−1≥np≥···≥n1≥0
-q(n−np−1)(n−np+1)βn−np−1
-(q)np
-p−1Y
-i=1
-q(n−ni−1)(n−ni+1)
-
-ni+1
-ni
-
-= 1
-(q)n−1(q2)n−1
-n−1X
-k=0
-(q1−n)k
-(q1+n)k
-(−1)kqnk−(k+1
-2 )(qp(k2+2k)αk)∗.
-(2.12)
-Proof.Suppose that (α k,βk) is a Bailey pair relative toq 2. We argue as in Proposition 2.3 with
-the same iterations of (2.4) and (2.5) (but witha=q 2) and the same changes of indices. The
-result is a Bailey pair relative toq 2,
-α(p)
-k =q p(k2+2k)αk (2.13)
-and
-β(p)
-n−1 =
-X
-n−1≥np≥···≥n1≥0
-q(n−n1−1)(n−n1+1)+···+(n−np−1)(n−np+1)
-(q)n1(q)n2−n1···(q) np−np−1
-βn−np+1.(2.14)
-Now we change this to a Bailey pair relative toqusing Lemma 2.2 and then insert it into (2.2)
-to complete the proof.□
-The third auxiliary result also applies to Bailey pairs relative toq 2, but in a different way.
-8 JEREMY LOVEJOY, ROBERT OSBURN, AND MATTHIAS STORZER
-Proposition 2.5.If(α k,βk)is a Bailey pair relative toq 2, then for anyp≥1we have
-X
-n−1≥np≥···≥n1≥0
-q(n−np−1)(n−np+1)βn−np−1
-(q)np
-p−1Y
-i=1
-q(n−ni−1)(n−ni+1)
-
-ni+1
-ni
-
-= (1−q 2)
-(q)n−1(q)n
-n−1X
-k=0
-(q1−n)k
-(q2+n)k
-(−1)kqnk−(k+1
-2 )+p(k2+2k)αk.
-(2.15)
-Proof.This follows from substituting (2.13) and (2.14) into the definition of a Bailey pair in
-(2.2) witha=q 2. □
+Recall that a Bailey pair relative to $a$ is a pair of sequences $(\alpha_n,\beta_n)_{n \geq 0}$ satisfying $$\begin{aligned}
+\beta_n &= \sum_{k=0}^n \frac{\alpha_k}{(q)_{n-k}(aq)_{n+k}} \label{pairdef} \\
+&= \frac{1}{(q)_n(aq)_n} \sum_{k=0}^n \frac{(q^{-n})_k}{(aq^{n+1})_k}(-1)^kq^{nk -\binom{k}{2}} \alpha_k. \label{pairdefbis}
+\end{aligned}$$ The first equation is the original definition [@An1], while the second follows from an application of the identity [@Ga-Ra Appendix I, Eq. (I.10)] $$\label{qPochn-k}
+(x)_{n-k} = \frac{(x)_n}{(q^{1-n}/x)_k}(-q/x)^kq^{\binom{k}{2} - nk}.$$
+
+We begin by reviewing two important facts about Bailey pairs. First, we require a special case of the Bailey lemma [@An1].
+
+::: lemma
+[]{#Baileylemma label="Baileylemma"} If $(\alpha_n,\beta_n)$ is a Bailey pair relative to $a$, then so is $(\alpha_n',\beta_n')$, where $$\label{alphaprime}
+\alpha_n' = a^nq^{n^2}\alpha_n$$ and $$\label{betaprime}
+\beta_n' = \sum_{j=0}^n \frac{a^jq^{j^2}}{(q)_{n-j}} \beta_j.$$
+:::
+
+Second, we have a special case of the Bailey lattice [@Ag-An-Br1].
+
+::: lemma
+[]{#Baileylattice label="Baileylattice"} If $(\alpha_n,\beta_n)$ is a Bailey pair relative to $q^2$, then $(\alpha_n^*,\beta_n)$ is a Bailey pair relative to $q$, where $$\label{alphastar}
+\alpha_n^* = (1-q^2)\left(\frac{\alpha_n}{1-q^{2n+2}} - \frac{q^{2n}\alpha_{n-1}}{1-q^{2n}} \right).$$ By convention we take $\alpha_{-1} = 0$.
+:::
+
+Using Lemmas [\[Baileylemma\]](#Baileylemma){reference-type="ref" reference="Baileylemma"} and [\[Baileylattice\]](#Baileylattice){reference-type="ref" reference="Baileylattice"}, we establish three auxiliary results which will allow us to relate the $q$-multisums in Theorem [\[main\]](#main){reference-type="ref" reference="main"} to polynomial sums at roots of unity. The first result is for Bailey pairs relative to $q$.
+
+::: proposition
+[]{#keychainlemma label="keychainlemma"} If $(\alpha_k,\beta_k)$ is a Bailey pair relative to $q$, then for any $p \geq 1$ we have $$\label{keychainlemmaeq}
+\begin{aligned}
+\sum_{n-1 \geq n_p \geq \cdots \geq n_1\geq 0}& \frac{q^{(n-n_p-1)(n-n_p)}\beta_{n-n_p-1}}{(q)_{n_p}} \prod_{i=1}^{p-1} q^{(n-n_i-1)(n-n_i)} \begin{bmatrix} n_{i+1} \\ n_i \end{bmatrix} \\
+&= \frac{1}{(q)_{n-1}(q^2)_{n-1}} \sum_{k=0}^{n-1} \frac{(q^{1-n})_k}{(q^{1+n})_k}(-1)^kq^{nk -\binom{k+1}{2} + p(k^2+k)}\alpha_k.
+\end{aligned}$$
+:::
+
+::: proof
+*Proof.* Suppose that $(\alpha_k,\beta_k)$ is a Bailey pair relative to $q$. Iterating [\[alphaprime\]](#alphaprime){reference-type="eqref" reference="alphaprime"} and [\[betaprime\]](#betaprime){reference-type="eqref" reference="betaprime"} $p$ times we obtain another Bailey pair relative to $q$, $$\label{alpha^p}
+        \alpha_k^{(p)} = q^{p(k^2+k)}\alpha_k$$ and $$\beta_k^{(p)} = \sum_{k \geq n_p \geq \cdots \geq n_1\geq 0} \frac{q^{n_p(n_p+1) + \cdots + n_1(n_1+1)}}{(q)_{k-n_p} \cdots (q)_{n_2-n_1}} \beta_{n_1}.$$ Now in $\beta_k^{(p)}$ we replace $k$ by $n-1$ and then make the change of indices $n_i \rightarrow n - 1 - n_{p-i+1}$ for $1 \leq i \leq p$. The result is $$\beta_{n-1}^{(p)} = \sum_{n-1 \geq n_p \geq \cdots \geq n_1\geq 0} \frac{q^{(n - n_1 - 1)(n- n_1) + \cdots + (n-n_p-1)(n-n_p)}}{(q)_{n_1} (q)_{n_2-n_1} \cdots (q)_{n_p-n_{p-1}}} \beta_{n -n_p -1}.$$ Multiplying numerator and denominator by $(q)_{n_p}$ and then converting to $q$-binomial coefficients ([\[qbc\]](#qbc){reference-type="ref" reference="qbc"}) gives the left-hand side of [\[keychainlemmaeq\]](#keychainlemmaeq){reference-type="eqref" reference="keychainlemmaeq"}. The right-hand side follows from inserting [\[alpha\^p\]](#alpha^p){reference-type="eqref" reference="alpha^p"} into [\[pairdefbis\]](#pairdefbis){reference-type="eqref" reference="pairdefbis"}. This completes the proof. ◻
+:::
+
+Our second auxiliary result is analogous to Proposition [\[keychainlemma\]](#keychainlemma){reference-type="ref" reference="keychainlemma"}, but for Bailey pairs relative to $q^2$. In what follows, we define $a_n^*$ for any sequence $a_n$ by $$\label{astar}
+    a_n^* = (1-q^2)\left(\frac{a_n}{1-q^{2n+2}} - \frac{q^{2n}a_{n-1}}{1-q^{2n}} \right)$$ in analogy with [\[alphastar\]](#alphastar){reference-type="eqref" reference="alphastar"}.
+
+::: proposition
+[]{#keychainlemmabis label="keychainlemmabis"} If $(\alpha_k,\beta_k)$ is a Bailey pair relative to $q^2$, then for any $p \geq 1$ we have $$\label{keychainlemmabiseq}
+\begin{aligned}
+\sum_{n-1 \geq n_p \geq \cdots \geq n_1\geq 0}& \frac{q^{(n-n_p-1)(n-n_p+1)}\beta_{n-n_p-1}}{(q)_{n_p}} \prod_{i=1}^{p-1} q^{(n-n_i-1)(n-n_i+1)} \begin{bmatrix} n_{i+1} \\ n_i \end{bmatrix} \\
+&= \frac{1}{(q)_{n-1}(q^2)_{n-1}} \sum_{k=0}^{n-1} \frac{(q^{1-n})_k}{(q^{1+n})_k}(-1)^kq^{nk -\binom{k+1}{2}} (q^{p(k^2+2k)} \alpha_k)^*.
+\end{aligned}$$
+:::
+
+::: proof
+*Proof.* Suppose that $(\alpha_k,\beta_k)$ is a Bailey pair relative to $q^2$. We argue as in Proposition [\[keychainlemma\]](#keychainlemma){reference-type="ref" reference="keychainlemma"} with the same iterations of [\[alphaprime\]](#alphaprime){reference-type="eqref" reference="alphaprime"} and [\[betaprime\]](#betaprime){reference-type="eqref" reference="betaprime"} (but with $a=q^2$) and the same changes of indices. The result is a Bailey pair relative to $q^2$, $$\label{iteratedalphaq^2}
+        \alpha_k^{(p)} = q^{p(k^2+2k)}\alpha_k$$ and $$\label{iteratedbetaq^2}
+        \beta_{n-1}^{(p)} = \sum_{n-1 \geq n_p \geq \cdots \geq n_1\geq 0} \frac{q^{(n - n_1 - 1)(n- n_1 +1) + \cdots + (n-n_p-1)(n-n_p+1)}}{(q)_{n_1} (q)_{n_2-n_1} \cdots (q)_{n_p-n_{p-1}}} \beta_{n -n_p +1}.$$ Now we change this to a Bailey pair relative to $q$ using Lemma [\[Baileylattice\]](#Baileylattice){reference-type="ref" reference="Baileylattice"} and then insert it into [\[pairdefbis\]](#pairdefbis){reference-type="eqref" reference="pairdefbis"} to complete the proof. ◻
+:::
+
+The third auxiliary result also applies to Bailey pairs relative to $q^2$, but in a different way.
+
+::: proposition
+[]{#keychainlemmater label="keychainlemmater"} If $(\alpha_k,\beta_k)$ is a Bailey pair relative to $q^2$, then for any $p \geq 1$ we have $$\label{keychainlemmatereq}
+        \begin{aligned}
+            \sum_{n-1 \geq n_p \geq \cdots \geq n_1\geq 0}& \frac{q^{(n-n_p-1)(n-n_p+1)}\beta_{n-n_p-1}}{(q)_{n_p}} \prod_{i=1}^{p-1} q^{(n-n_i-1)(n-n_i+1)} \begin{bmatrix} n_{i+1} \\ n_i \end{bmatrix} \\
+            &= \frac{(1-q^2)}{(q)_{n-1}(q)_{n}} \sum_{k=0}^{n-1} \frac{(q^{1-n})_k}{(q^{2+n})_k}(-1)^k q^{nk -\binom{k+1}{2} + p(k^2+2k)} \alpha_k.
+        \end{aligned}$$
+:::
+
+::: proof
+*Proof.* This follows from substituting [\[iteratedalphaq\^2\]](#iteratedalphaq^2){reference-type="eqref" reference="iteratedalphaq^2"} and [\[iteratedbetaq\^2\]](#iteratedbetaq^2){reference-type="eqref" reference="iteratedbetaq^2"} into the definition of a Bailey pair in [\[pairdefbis\]](#pairdefbis){reference-type="eqref" reference="pairdefbis"} with $a=q^2$. ◻
+:::

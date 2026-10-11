@@ -7,10 +7,10 @@ section_number: 3
 pages: 7-10
 source_pdf: 0902.0350v1.pdf
 source_sha256: 4591687132c93973
-text_source: latex
-latex_prose_ratio: 0.971
-latex_coverage_ratio: 0.95
 doc_brief: "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec:ordinary}
 
@@ -28,6 +28,7 @@ mainstream mathematics quite well~\cite{wiedijk-17}. It is safe to predict that
 this formalization can be done, and we can even hope for a reasonably accurate
 estimate of the effort involved. Nevertheless, the formalization is certainly
 non-trivial and will require considerable work.
+
 
 \subsection{Formalizing Euclidean space}
 
@@ -94,6 +95,7 @@ Fr\'echet derivatives.
 
 \end{itemize}
 
+
 \subsection{Formalizing measure theory}
 
 Although the basic Euclidean theory is an important foundation, and many of the
@@ -145,6 +147,7 @@ measures of specific sets, as needed for Flyspeck. We can evaluate most basic
 but we need to enhance the theory of integration with stronger Fubini-type
 results so that we can evaluate multiple integrals by iterated one-dimensional
 integrals. This work is in progress at the time of writing.
+
 
 \subsection{Enhanced automation}
 

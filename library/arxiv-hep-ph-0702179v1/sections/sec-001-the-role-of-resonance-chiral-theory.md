@@ -7,10 +7,10 @@ section_number: null
 pages: 2-4
 source_pdf: 0702179v1.pdf
 source_sha256: 4d78ee89f0e67fbb
-text_source: latex
-latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.974
 doc_brief: "Instituto de F ´ ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia — 4 sections: Introduction; The role of Resonance Chiral Theor; Resonance contributions to the O(p"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 As illustrated in the ${\cal O}(p^4)$ case \cite{Ecker:1988te,Ecker:1989yg} a procedure to systematically determine
 the resonance contributions to the LECs in $\chi PT$ is available. Essentially the idea is to construct a Lagrangian

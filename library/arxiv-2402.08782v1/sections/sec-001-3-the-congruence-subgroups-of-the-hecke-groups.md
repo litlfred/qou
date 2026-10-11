@@ -7,10 +7,10 @@ section_number: 3
 pages: 3-4
 source_pdf: 2402.08782v1.pdf
 source_sha256: 30311f0bd815f93f
-text_source: latex
-latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.795
 doc_brief: "Hecke–Farey coordinates for Bring’s surface — The modular groupΓ (which is the Hecke groupH3) can be used to study triangular maps, Here we use the Hecke groupH4 to study the reg- ular map that"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Let $I$ be an ideal of  $\mathbb Z[\lambda_{q}]$.\\We define
  \begin{equation*}

@@ -196,8 +196,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "gebugm.tex",
-   "tex_sections": 6,
-   "overlaid": 3,
+   "tex_sections": 11,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -207,50 +207,62 @@
     {
      "id": "sec-000-1-the-early-days-at-stony-brook",
      "title": "The early days at Stony Brook",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 0.678,
+     "prose_ratio": 0.657,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
-     "converter": "pandoc"
+     "converter": "latex"
     },
     {
      "id": "sec-001-3-flashback-the-texas-revolution",
      "title": "Flashback: The Texas revolution",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-4-the-chiral-theory-of-nuclear-forces-as-a-preci",
      "title": "The chiral theory of nuclear forces as a precision tool",
-     "prose_ratio": 0.0,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-003-41-the-nucleon-nucleon-interaction",
      "title": "The nucleon-nucleon interaction",
-     "result": "no matching \\section"
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-42-three-nucleon-interactions",
      "title": "Three-nucleon interactions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.929,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-43-the-nuclear-matter-problem",
      "title": "The nuclear matter problem",
-     "result": "no matching \\section"
+     "prose_ratio": 0.963,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-44-back-to-square-one---meson-exchange-currents",
      "title": "Back to square one - meson-exchange currents",
-     "result": "no matching \\section"
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.844,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-5-flash-forward-combining-nuclear-eft-with-latti",
      "title": "Flash forward: Combining nuclear EFT with lattice simulations",
-     "prose_ratio": 0.944,
-     "coverage_ratio": 0.641,
+     "prose_ratio": 0.78,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     }

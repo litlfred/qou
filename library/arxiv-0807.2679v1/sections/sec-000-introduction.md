@@ -7,10 +7,10 @@ section_number: null
 pages: 1-4
 source_pdf: 0807.2679v1.pdf
 source_sha256: 69ef10f8e70fc6f6
-text_source: latex
-latex_prose_ratio: 0.95
-latex_coverage_ratio: 1.0
 doc_brief: "A cabling formula for the colored Jones polynomial Roland van der Veen — We prove an explicit cabling formula for the colored Jones po lynomial."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.973
 ---
 In this note we study how the unnormalized colored Jones polynomial or quantum $sl_2$ invariant of a link changes under the operation of cabling. We work with a banded link or ribbon link $L$ so that every component is an embedded annulus. Given a diagram $D$ of a banded link inside an annulus we can construct a satellite of $L$ by embedding $D$ into a component $L_i$ of $L$. The $(r,s)$-cabling operation is the special case where we take $D$ to be the closure of the $(r,s)$-torus braid $B_s^r = (\sigma_1\cdots \sigma_{s-1})^r$, where $r\in \mathbb{Z},s\in\mathbb{N}$. To turn $B^r_s$ into a banded tangle we use the blackboard framing and add a positive curl to every overpassing arc, see figure 1 below. The banded link obtained by $(r,s)$-cabling the component $L_i$ of a banded link $L$ will be denoted by $L_{i;s}^r$, we will also call it the $(i;r,s)$-cabling of $L$.
 
@@ -22,11 +22,11 @@ Let $g = \mathrm{gcd}(r,s)$, $p = s/g$ and $\mathbf{N} = (N_0,\cdots,N_{g-1})$. 
 
 In the statement of the theorem we have used the notation $|\mathbf{N}| = N_0+\hdots+N_{g-1}$ and the convention that $J_{M_1,\hdots,M_{i-1},-j,\hdots,M_{c}}(L)(q) = -J_{M_1,\hdots,M_{i-1},j,\hdots,M_{c}}(L)(q)$.
 
-<figure data-latex-placement="here">
+<figure>
 <div class="center">
 <embed src="Kabeling3.eps" />
 </div>
-<figcaption>We have drawn the link <span class="math inline"><em>L</em><sub>1; 3</sub><sup>4</sup></span>, the <span class="math inline">(1; 3, 4)</span>-cabling of <span class="math inline"><em>L</em> = (<em>L</em><sub>1</sub>, <em>L</em><sub>2</sub>)</span>, where <span class="math inline"><em>L</em><sub>1</sub></span> is the figure eight knot and <span class="math inline"><em>L</em><sub>2</sub></span> is an unknot. We have indicated the torus braid <span class="math inline"><em>B</em><sub>3</sub><sup>4</sup></span> and the opened tangle <span class="math inline"><em>T</em><sub>1; 3</sub></span> mentioned in section 2.</figcaption>
+<figcaption>We have drawn the link <span class="math inline"><em>L</em><sub>1; 3</sub><sup>4</sup></span>, the <span class="math inline">(1;3,4)</span>-cabling of <span class="math inline"><em>L</em> = (<em>L</em><sub>1</sub>,<em>L</em><sub>2</sub>)</span>, where <span class="math inline"><em>L</em><sub>1</sub></span> is the figure eight knot and <span class="math inline"><em>L</em><sub>2</sub></span> is an unknot. We have indicated the torus braid <span class="math inline"><em>B</em><sub>3</sub><sup>4</sup></span> and the opened tangle <span class="math inline"><em>T</em><sub>1; 3</sub></span> mentioned in section 2.</figcaption>
 </figure>
 
 In the case where $g =1$ and $L$ is the unknot the above cabling formula agrees with Morton's formula for the $(r,s)$-torus knot [@Morton], where his variables are related to ours as $s^2 = q, m = r, p = s$. The case of a $(r,2)$-cabling is also known [@ZhengHao]. In all other cases our formula seems to be new.
@@ -63,8 +63,8 @@ In the case of torus knots and and some special torus links K. Hikami has shown 
 What is the behavior of the non-commutative A-polynomial of a knot under cabling?
 :::
 
-It is known [@GaLe] that the colored Jones polynomial satisfies a linear recursion relation. This relation can be encoded in a two variable polynomial with q-coefficients called the non-commutative A-polynomial and it is conjectured [@GAJ] to be related to the character variety of the knot group. The knot group behaves well under cabling and according to our cabling formula so does the colored Jones polynomial. It would be interesting to see how these two relate. As before the zero volume knots provide many cases where explicit computations can be made. So far these have only been done for torus knots [@Hikami1].\
+It is known [@GaLe] that the colored Jones polynomial satisfies a linear recursion relation. This relation can be encoded in a two variable polynomial with q-coefficients called the non-commutative A-polynomial and it is conjectured [@GAJ] to be related to the character variety of the knot group. The knot group behaves well under cabling and according to our cabling formula so does the colored Jones polynomial. It would be interesting to see how these two relate. As before the zero volume knots provide many cases where explicit computations can be made. So far these have only been done for torus knots [@Hikami1].
 
-An investigation of these questions will be postponed to a subsequent publication.\
+An investigation of these questions will be postponed to a subsequent publication.
 
 **Acknowledgment** I would like to thank the organizers of the International Conference on Quantum topology 2007 in Hanoi for providing the atmosphere that got this paper started and Stavros Garoufalidis and Hitoshi Murakami for stimulating conversations.

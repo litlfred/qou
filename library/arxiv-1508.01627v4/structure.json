@@ -102,7 +102,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "MurNak.tex",
-   "tex_sections": 7,
+   "tex_sections": 18,
    "overlaid": 6,
    "thresholds": {
     "title": 0.85,
@@ -113,48 +113,48 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.864,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-maximal-tori-in-classical-groups",
      "title": "Maximal tori in classical groups",
-     "prose_ratio": 0.963,
-     "coverage_ratio": 0.966,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-a-murnaghan-nakayama-rule",
      "title": "A Murnaghan\u2013Nakayama rule",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-vanishing-of-characters",
      "title": "Vanishing of characters",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-simple-endotrivial-modules",
      "title": "Simple endotrivial modules",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-zeroes-of-characters-of-quasi-simple-groups",
      "title": "Zeroes of characters of quasi-simple groups",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.971,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },

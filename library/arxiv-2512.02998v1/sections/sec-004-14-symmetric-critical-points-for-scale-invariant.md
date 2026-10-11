@@ -8,75 +8,126 @@ pages: 4-5
 source_pdf: 2512.02998v1.pdf
 source_sha256: 146ff93cd70baad4
 doc_brief: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY — We present sufficient criteria for the equivalence of tame knots at low regularity."
+text_source: latex
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 0.883
 ---
-spaceW
-3
-2,2(R/Z,R 3) is the natural energy space for theM¨ obius energy
-(1.5)E M¨ ob(γ) :=
-ˆ
-R/Z
-ˆ
-R/Z
- 1
-|γ(s)−γ(t)| 2− 1
-dγ(γ(s),γ(t)) 2
-
-|γ′(s)||γ′(t)|dsdt.
-Indeed, an arclength parametrized curveγ:R/Z→R 3 has finite M¨ obius energy if and only
-ifγis embedded and of classW
-3
-2,2(R/Z,R 3) as shown in [2] (see [23, Theorem 3.2 (i)] for an
-explicit a priori bound on the fractional seminorm in terms of the energy). Freedman et al.
-managed to use the M¨ obius invariance ofE M¨ obto find minimizing knots in any given prime
-knot class [21, Theorem 4.3]. Critical points of the M¨ obius energy were shown to be smooth and
-even real-analytic [5, 8] without using the invariance ofE M¨ obunder M¨ obius transformations.
-But how can we find critical knots possibly different from the absolute minimizers? One option
-is to use symmetry as carried out in [23] for O’Hara’s energies above scale-invariance whose
-energy spacesdoembed intoC 1.
-As in that paper we consider here for the M¨ obius energy a discrete rotational symmetry. To
-be more precise, forp∈N,p≥2, we call a curveγ∈C 0(R/Z,R 3)(p-rotationally) symmetric
-if and only if
-(1.6) Rot 2π
-p
-◦γ(s− 1
-p) =γ(s) for alls∈R/Z,
-where Rotβ∈SO(3) denotes the rotation about a fixed axis, say, thee 3-coordinate axis, with
-rotation angleβ. Define for a given knot equivalence classKthe(p-rotationally) symmetric
-subset
-(1.7) Σ p(K) :={η∈C 0,1(R/Z,R 3) :|η′|>0 a.e.,[η] =K, ηsatisfies (1.6)}.
-STABILITY OF KNOT EQUIV ALENCE AND SYMMETRIC CRITICAL KNOTS 5
-Theorem 1.6(Symmetric critical prime knots).If the symmetric subsetΣ p(K)of a prime knot
-equivalence classKcontains a knot with finite M¨ obius energy or, equivalently, aW 3/2,2-knot,
-then there exists an arclength parametrized knotγ∈C ω(R/Z,R 3)∩Σ p(K)such that
-(1.8)E M¨ ob(γ) = inf
-Σp(K)
-EM¨ ob(·),
-andγis a critical knot, i.e.,dE M¨ ob(γ)[h] = 0for allh∈W
-3
-2,2(R/Z,R 3). Moreover, all torus
-knot classesT(a,b)for co-primea,b∈Z\{0,±1}contain at least two different critical knots
-for the M¨ obius energy.
-One may prove a similar result for other scale-invariant knot energies with energy spaces
-W 1+1/p,p such as those from O’Hara’s family; cf. [6,33].
-It might be easier to check the symmetries for polygonal curves, so instead of a knot with finite
-M¨ obius energy we might require in Theorem 1.6 that Σp(K) contains a polygonal knot. Indeed,
-smoothing the corners such that the symmetry is preserved yields an immersed embedded
-smooth curve in Σ p(K) which has finite M¨ obius energy due to [2] and the energy’s invariance
-under reparametrization. We do not know, on the other hand, if it suffices to assume in Theorem
-1.6 only thatKis tame and that Σ p(K) is nonempty.
-We mentioned before that two equivalent arclength parametrized tame knotsγ 1,γ 2 :R/Z→
-R3 are either already ambiently isotopic, orγ 1 is ambiently isotopic to the mirror imageγ ∗
-2 of
-γ2. TheO(3)-invariance of the M¨ obius energy therefore allows us to strengthen Theorem 1.6
-to ambient isotopy classes.
-Corollary 1.7(Symmetric critical prime knots in ambient isotopy classes).LetKbe an ambient
-isotopy class of prime knots andΣ p(K)be the class ofp-rotationally symmetric regular Lipschitz
-curves whose ambient isotopy class equalsK. IfΣ p(K)contains a knot of finite M¨ obius energy,
-then there is an arclength parametrized minimizing real analytic knot inΣ p(K)such that(1.8)
-holds, and this knot isE M¨ ob-critical. If, more specifically,Kequals the ambient isotopy class of
-torus knots,T(a,b)for co-primea,b∈Z\{0,±1}, then there are at least two suchE M¨ ob-critical
-knots.
-Kim and Kusner use in [27] symmetric criticality to constructE M¨ ob-critical torus knots (even
-with explicit formulas for their energy values). Their numerical experiments suggest, that for
-(co-prime) parametersa,bwith|a|,|b|>2 these critical points seize to be stable. Analytically,
-this remains an open question.
+The fractional Sobolev space $W^{\frac32, 2}(\R/\Z,\R^3)$ is the natural
+energy space for  the 
+\emph{M\"obius energy}
+\begin{equation}\label{eq:emob}
+E_\textnormal{M\"ob}(\g):=\int_{\R/\Z}\int_{\R/\Z}\left(
+\frac1{|\g(s)-\g(t)|^2}-
+\frac{1}{d_\g(\g(s),\g(t))^2}\right)|\g'(s)||\g'(t)|\,dsdt.
+\end{equation}
+Indeed, an arclength parametrized
+curve $\g:\R/\Z\to\R^3$ has finite M\"obius energy  
+
+if and only if 
+$\g$ is embedded and of
+class $W^{\frac32,2}(\R/\Z,\R^3)$ as shown in \cite{blatt_2012a} 
+(see 
+\cite[Theorem~3.2 (i)]{gilsbach-vdm_2018} for an explicit a priori bound
+on the fractional seminorm in terms of  the energy). 
+Freedman et al.\@ managed to
+use the M\"obius invariance of $\emob$ to find minimizing knots in any given prime
+knot class \cite[Theorem~4.3]{freedman-etal_1994}.
+Critical points of the M\"obius energy were
+shown to be smooth and even real-analytic 
+\cite{blatt-etal_2016,blatt-vorderobermeier_2019} 
+without using the invariance of $\emob$ under 
+M\"obius transformations. 
+But how can we find critical knots  possibly different from the absolute minimizers? 
+One option is to use symmetry as carried out in \cite{gilsbach-vdm_2018} for 
+O'Hara's
+energies above scale-invariance whose energy spaces \emph{do} 
+embed into $C^1$.
+
+As in that 
+paper we consider here for the M\"obius energy a discrete rotational symmetry. To be
+more precise, for $p\in\N$, $p\ge 2$, we call a 
+curve $\g\in C^0(\R/\Z,\R^3)$
+\emph{($p$-rotationally) symmetric} if and only if
+\begin{equation}
+\label{eq:rot-symm}
+\textstyle
+\Rot_{\frac{2\pi}p}\circ\g(s -\frac1{p})=\g(s)\quad\Foa s\in\R/\Z, 
+\end{equation}
+where $\Rot_{\beta}\in SO(3)$ denotes the rotation about a fixed axis, say,
+the $e_3$-coordinate axis, with rotation angle $\beta$.
+Define for a given knot equivalence class $\mathcal{K}$ the 
+\emph{($p$-rotationally) symmetric
+subset}
+\begin{equation}\label{eq:symmetric-subset}
+\Sigma_p(\mathcal{K}):=\{\eta\in C^{0,1}(\R/\Z,\R^3):|\eta'|>0
+\,\,\textnormal{a.e.},\, [\eta]=\mathcal{K},\,
+\eta\,\,\textnormal{satisfies}\,\eqref{eq:rot-symm}\}.
+\end{equation}
+\begin{theorem}[Symmetric critical prime knots]
+\label{thm:symm-crit-prime}
+If the symmetric subset $\Sigma_p(\mathcal{K})$
+of a prime knot equivalence class $\mathcal{K}$ contains a knot with
+finite M\"obius energy or, equivalently, a 
+$W^{3/2,2}$-knot,
+then
+there exists an arclength parametrized knot $\g\in C^\omega(\R/\Z,\R^3)
+\cap\Sigma_p(\mathcal{K})$
+such that
+\begin{equation}\label{eq:minimizing}
+\emob(\g)=\inf_{\Sigma_p(\mathcal{K})}\emob(\cdot),
+\end{equation}
+and  $\g$ is a critical knot, i.e., $d\emob (\g)[h]=0$ for all
+$h\in W^{\frac32,2}(\R/\Z,\R^3)$. Moreover,
+all torus knot classes $\mathcal{T}(a,b)$ for co-prime $a,b\in\Z\setminus\{0,\pm 1\}$
+contain at least two different critical knots for the M\"obius energy.
+\end{theorem}
+
+One may prove a similar result for other scale-invariant knot energies
+with energy spaces $W^{1+1/p,p}$
+such as those from O'Hara's family; cf.\@ \cite{ohara_1992a,
+blatt-etal_2022b}.
+
+It might be easier to check the symmetries for polygonal
+curves, so instead of a knot with finite M\"obius energy
+we might require in Theorem \ref{thm:symm-crit-prime} that
+$\Sigma_p(\mathcal{K})$ contains a polygonal knot.
+Indeed, 
+smoothing the corners such that the symmetry is preserved 
+yields an immersed embedded smooth
+curve in $\Sigma_p(\mathcal{K})$
+which has finite Möbius energy due 
+to~\cite{blatt_2012a} and the energy's invariance under reparametrization. We do not know, on the other hand, if it suffices
+to assume in Theorem \ref{thm:symm-crit-prime} only
+that $\mathcal{K}$ is tame and that
+$\Sigma_p(\mathcal{K})$ is nonempty.
+
+
+
+We mentioned before that two equivalent arclength parametrized tame
+knots $\g_1,\g_2:\R/\Z\to\R^3$ are either already ambiently isotopic, or
+$\g_1$ is ambiently isotopic to the mirror image $\g_2^*$ of $\g_2$.
+The $O(3)$-invariance of the M\"obius energy therefore
+allows us to 
+strengthen Theorem~\ref{thm:symm-crit-prime} to ambient isotopy
+classes.
+\begin{corollary}[Symmetric critical prime knots in ambient isotopy
+classes] \label{cor:symm-crit-prime}
+Let $\mathcal{K}$ be an ambient isotopy class of prime knots and $\Sigma_p(\mathcal{K})$ be the class of $p$-rotationally symmetric regular Lipschitz
+curves whose ambient isotopy class equals $\mathcal{K}$. If
+$\Sigma_p(\mathcal{K})$ contains a knot of
+finite M\"obius energy, then there is an arclength parametrized
+minimizing real analytic knot in $\Sigma_p(\mathcal{K})$ such that
+\eqref{eq:minimizing} holds, and this knot is $\emob$-critical. If,
+more specifically,
+$\mathcal{K}$ equals the ambient isotopy class of torus knots,
+$\mathcal{T}(a,b)$ for co-prime $a,b\in\Z\setminus\{0,\pm 1\}$, then there
+are at least two such $\emob$-critical knots.
+\end{corollary}
+Kim and Kusner use in \cite{kim-kusner_1993}
+symmetric criticality to construct $\emob$-critical torus 
+knots (even with explicit formulas for their energy values). 
+Their numerical experiments suggest, that
+for (co-prime) parameters $a,b$ with $|a|,|b|>2$ 
+these critical
+points seize to be stable. Analytically, this remains an
+open question.

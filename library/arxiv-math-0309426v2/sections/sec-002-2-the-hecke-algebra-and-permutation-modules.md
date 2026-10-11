@@ -7,10 +7,10 @@ section_number: 2
 pages: 1-3
 source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
-text_source: latex
-latex_prose_ratio: 0.703
-latex_coverage_ratio: 0.792
 doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 46 sections: MATTHIAS K ¨UNZER AND ANDREW MATHA; Introduction and statement of main; The Hecke algebra and permutation"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 Fix a positive integer $n$ and let $\Sym_n$ be the symmetric group of
 degree $n$. 

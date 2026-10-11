@@ -1372,7 +1372,7 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "K8V1.tex",
-   "tex_sections": 5,
+   "tex_sections": 34,
    "overlaid": 0,
    "thresholds": {
     "title": 0.85,
@@ -1611,7 +1611,7 @@
     {
      "id": "sec-045-4-asymptotics-of-classical-integrals-on-a-vertic",
      "title": "Asymptotics of classical integrals on a vertical contour",
-     "prose_ratio": 0.03,
+     "prose_ratio": 0.057,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
@@ -1652,7 +1652,8 @@
     {
      "id": "sec-053-43-asymptotics-of-integrals",
      "title": "Asymptotics of integrals",
-     "result": "no matching \\section"
+     "prose_ratio": 0.02,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-054-431-along-\u03c0-2\u03c0-2k\u03c0-k-z-recall-that-clausens-func",

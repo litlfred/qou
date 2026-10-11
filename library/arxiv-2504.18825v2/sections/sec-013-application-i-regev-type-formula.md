@@ -7,10 +7,10 @@ section_number: 6
 pages: 25-34
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
-text_source: latex
-latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.978
 doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{s:Regev}
 In this section, as the first application of our Murnaghan--Nakayama rule, we are devoted to giving the Regev formula for the cyclotomic Hecke algebra $\mathscr{H}_{m,n}(q,\bm{u})$. Once the Murnaghan--Nakayama rule is set up right,

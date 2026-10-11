@@ -8,44 +8,12 @@ pages: 19-20
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
 doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
+text_source: latex
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.555
 ---
-As we discussed above, for Seifert 3-manifolds the theory T [M3] has an extra U(1)β ﬂavor
-symmetry. In particular, this is the case for M3 =L(p, 1), which will serve as an important
-example to us later. This ﬂavor symmetry in T [M3] results in the presence of an extra Z-
-grading in homological invariants HD2 andHS2 considered in the previous sections and a
-possibility to consider the corresponding reﬁned indices (equivariant Euler characteristics):
-ˆZa(q;t) =
-∑
-i∈Z+∆a,
-j,𝓁∈Z
-qit𝓁(−1)j dimHi,j;𝓁
-a , (2.35)
-and
-I(q;t) =
-∑
-i,j,𝓁∈Z
-qit𝓁(−1)j dimHi,j;𝓁
-S2 . (2.36)
-19For reasons similar to the ones described at the end of the previous section, in general a negative power
-of 2 can appear as an overall factor. We omit it in some generic formulas to avoid clutter and instead focus
-attention on the conceptual structure. As mentioned earlier and as we shall see in examples, the eﬀect of such
-fractions on categoriﬁcation can typically be traced to the existence of bosonic modes with zero q-grading.
-20For a generic 3-manifold M3, the analytic continuation of the series ˆZa(q)∈ Z[[q]] convergent in|q| < 1
-may not exist outside|q| = 1, at least in the standard way. However, one possible way to deﬁne it for general
-M3 is
-ˆZa(q−1) ≡ ˆZa(q)
-⏐⏐⏐
-M3→M 3
-, (2.34)
-where M3 denotes M3 with the reversed orientation. Note that therefore I(q), unlike ˆZa(q), is insensetive to
-the orientation.
-– 18 –
-where, from the physics point of view, 𝓁 is the U(1)β charge. The reﬁned indices obviously
-provide more information about the underlying vector spaces and, as we will see in examples,
-can be used sometimes to compute (conjecturally) the full homological invariants via the
-“homological-ﬂavor locking” phenomenon that we will explain later.
-The reﬁned version of the factorization formula ( 2.33) reads
-I(q;t) =
-∑
-a∈ TorH1(M3,Z)/Z2
-|Wa|ˆZa(q;t)ˆZa(q−1;t−1). (2.37)
+As we discussed above, for Seifert 3-manifolds the theory $T[M_3]$ has an extra $U(1)_{\beta}$ flavor symmetry. In particular, this is the case for $M_3=L(p,1)$, which will serve as an important example to us later. This flavor symmetry in $T[M_3]$ results in the presence of an extra ${\mathbb Z}$-grading in homological invariants ${\mathcal H}_{D^2}$ and ${\mathcal H}_{S^2}$ considered in the previous sections and a possibility to consider the corresponding refined indices (equivariant Euler characteristics): $$\widehat{Z}_a(q;t)=\sum_{i\in {\mathbb Z}+\Delta_a,\atop j,\ell \in{\mathbb Z}}q^{i}t^{\ell}(-1)^j\dim{\mathcal H}^{i,j;\,\ell}_a,
+    \label{BlockEuler}$$ and $${\mathcal I}(q;t)=\sum_{i,j,\ell\in{\mathbb Z}}q^{i}t^{\ell}(-1)^j\dim{\mathcal H}_{S^2}^{i,j;\,\ell}.$$ where, from the physics point of view, $\ell$ is the $U(1)_{\beta}$ charge. The refined indices obviously provide more information about the underlying vector spaces and, as we will see in examples, can be used sometimes to compute (conjecturally) the full homological invariants via the "homological-flavor locking" phenomenon that we will explain later.
+
+The refined version of the factorization formula [\[IndexFactorization\]](#IndexFactorization){reference-type="eqref" reference="IndexFactorization"} reads $${\mathcal I}(q;t)=\sum_{a\,\in\, {\mathrm{Tor}\,}H_1(M_3,{\mathbb Z})/{\mathbb Z}_2}\, |{\mathcal W}_a|\widehat{Z}_a(q;t)\widehat{Z}_a(q^{-1};t^{-1}).
+        \label{IndexRefDecomp}$$

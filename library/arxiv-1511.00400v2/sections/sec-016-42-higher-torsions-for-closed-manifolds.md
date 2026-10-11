@@ -8,87 +8,62 @@ pages: 27-29
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
 doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
+text_source: latex
+latex_prose_ratio: 0.896
+latex_coverage_ratio: 0.982
 ---
-From Theorem 4.2, we can deﬁne torsions.
-Deﬁnition 4.3. Let M 3 be a closed oriented hyperbolic three-manifold, with
-spin structure σ, and let ̺k1,k2
-σ = Symk1,k2 ○̺σ be as in (25).
-For k1 ≠k2, deﬁne
-τ k1,k2 (M 3, σ) ∶= tor(M 3, ̺k1,k2
-σ ) ∈C∗/slash.l⟩ft±1 , (26)
-and for k ≥1
-τ k(M 3, σ) ∶= τ k,0(M 3, σ) = tor(M 3, ̺k
-σ). (27)
-When k = 1 one obtains the torsion of Deﬁnition 3.4:
-τ 1(M 3, σ) = τ 1,0(M 3, σ) = τ (M 3, σ).
-Remark 4.4. 1. For k1 or k2 odd, there is no sign indeterminacy as it is a
-representation in C(k1+1)(k2+1), which is even dimensional (Remark 2.7).
-2. For k1 + k2 even, Sym k1 ⊗
-Symk2 factors through PSL 2(C), hence it does
-not depend on the spin structure. In addition, the sign indetermina cy
-can be avoided by using Turaev’s reﬁned torsion and an orientation in
-homology, provided by Poincar´ e duality [96, 97].
-3. By construction, τ k1,k2 (M 3, σ) =
-τ k2,k1(M 3, σ).
-4. When k1 = k2, ̺k,k may be not acyclic (for instance when it contains a
-totally geodesic surface [64]), but sometimes it can be acyclic (e.g. a lmost
-all Dehn ﬁllings on two bridge knots for k = 1 by [45, 88, 28] or on the
-ﬁgure eight knot for k = 2 by [42]). When ̺k,k is acyclic, then τ k,k(M 3, σ)
-is also well deﬁned.
-27
-5. Changing the orientation. Let M 3 and M
-3
-denote the same manifold
-with opposite orientations and let σ and σ denote the corresponding spin
-structures as in Proposition 3.1. Then
-τ k1,k2(M
-3
-, σ) = (−1)b1(M 3)(k1+k2) τ k1,k2 (M 3, σ).
-where b1(M 3) denotes the ﬁrst Betti number. Hence if M 3 is amphicher-
-ical, then τ k1,k2(M 3, σ) is real for b1(M 3)(k1 + k2) even and purely imag-
-inary for b1(M 3)(k1 + k2) odd.
-In [72] W. M¨ uller found a beautiful theorem about the asymptotic b ehavior
-when k → ∞:
-Theorem 4.5 ([72]). Let M be a compact, oriented, hyperbolic 3 manifold with
-a spin structure σ. Then
-lim
-k→∞
-log /divid⟩s.alt0τ k(M 3, σ)/divid⟩s.alt0
-k2 = 1
-4π vol(M 3) . (28)
-In particular, the volume can be computed from the sequence o f torsions.
-Again, with our convention our torsion is the inverse of the usual an alytic
-torsion, so Equation (28) has opposite sign to [72].
-As noticed in [72], this theorem implies that there are ﬁnitely many manif olds
-with the same sequence of torsions.
-Question 4.6. Is there a ﬁnite collection of integers 0 < k1 < ⋯ < kn such that
-there are ﬁnitely many manifolds with the same k1, . . . , kn-torsions?
-The answer is yes under the extra hypothesis that the volume is bou nded
-above. More precisely, an inﬁnite sequence of manifolds with bounde d volume
-accumulates (for the geometric topology) to a ﬁnite set of cusped manifolds with
-ﬁnite volume, this is Jørgensen-Thurston properness of the volum e function [92,
-93]. For such a sequence of manifolds M 3
-n, τ 2(M 3
-n, σ) → ∞, by Corollary 4.25,
-see also [82, Corollaire 4.18].
-A priory, for some N ∈N there could exists an inﬁnite sequence of hyperbolic
-manifolds whose volume goes to inﬁnity and with the same k-torsions for k ≤N .
-By Theorem 3.7 the injectivity radius of this sequence would not conv erge to
-inﬁnity.
-M¨ uller proves Theorem 4.5 using analytic torsion and Ruelle zeta func tions.
-There is ﬁrst a theorem of Wotzke [104] that generalizes Fried’s the orem (Theo-
-rem 2.28) and from this he obtains a functional equation that relate s the volume,
-the Ruelle zeta functions and the torsions. Theorem 4.5 has been ge neralized
-by M¨ uller and Pfaﬀ [74] by working directly on the trace of the heat k ernel in
-(12).
-Theorem 4.7 ([74]). Let M 3 be a compact, oriented, hyperbolic 3-manifold
-with a spin structure σ. Then
-lim
-k1→∞
-log /divid⟩s.alt0τ k1,k2(M 3, σ)/divid⟩s.alt0
-k2
-1
-= 1
-4π (k2 + 1) vol(M 3) . (29)
-Again, the sign convention here diﬀers from [74].
-28
+[]{#sect:higher label="sect:higher"}
+
+From Theorem [\[thm:rig\]](#thm:rig){reference-type="ref" reference="thm:rig"}, we can define torsions.
+
+::: definition
+Let $M^3$ be a closed oriented hyperbolic three-manifold, with spin structure $\sigma$, and let $\varrho_\sigma^{k_1,k_2}=    \operatorname{Sym}^{k_1,k_2}\circ        \varrho_\sigma$ be as in [\[eqn:varrho\]](#eqn:varrho){reference-type="eqref" reference="eqn:varrho"}.
+
+For $k_1\neq k_2$, define $$\label{eqn:taukk}
+  \tau^{k_1,k_2}(M^3,\sigma):=\operatorname{tor}(M^3,  \varrho_\sigma^{k_1,k_2} )  \in 
+\mathbb{C}^*/{\pm 1}\, ,$$ and for $k\geq 1$ $$\label{eqn:tauk}
+   \tau^{k}(M^3,\sigma):= \tau^{k,0}(M^3,\sigma)= \operatorname{tor}(M^3,  \varrho_\sigma^{k})   .$$
+:::
+
+When $k=1$ one obtains the torsion of Definition [\[defn:tor2closed\]](#defn:tor2closed){reference-type="ref" reference="defn:tor2closed"}: $$\tau^1(M^3,\sigma)=\tau^{1,0}(M^3,\sigma)=\tau(M^3,\sigma).$$
+
+::: remark
+1.  For $k_1$ or $k_2$ odd, there is no sign indeterminacy as it is a representation in $\mathbb{C}^{(k_1+1)(k_2+1)}$, which is even dimensional (Remark [\[rem:sign\]](#rem:sign){reference-type="ref" reference="rem:sign"}).
+
+2.  For $k_1+k_2$ even, $\operatorname{Sym}^{k_1}\otimes \overline{\operatorname{Sym}^{k_2}}$ factors through $\operatorname{PSL}_2(\mathbb{C})$, hence it does not depend on the spin structure. In addition, the sign indeterminacy can be avoided by using Turaev's refined torsion and an orientation in homology, provided by Poincar� duality [@Turaev01; @Turaev02].
+
+3.  By construction, $\tau^{k_1,k_2}(M^3,\sigma)=\overline{\tau^{k_2,k_1}(M^3,\sigma)}$.
+
+4.  When $k_1=k_2$, $\varrho^{k,k}$ may be not acyclic (for instance when it contains a totally geodesic surface [@Millson85]), but sometimes it can be acyclic (e.g. almost all Dehn fillings on two bridge knots for $k=1$ by [@Kapovich94; @Scannell02; @StefanoP08] or on the figure eight knot for $k=2$ by [@Heusener-Porti2011]). When $\varrho^{k,k}$ is acyclic, then $\tau^{k,k}(M^3,\sigma)$ is also well defined.
+
+5.  Changing the orientation. Let $M^3$ and $\overline M^3$ denote the same manifold with opposite orientations and let $\sigma$ and $\overline\sigma$ denote the corresponding spin structures as in Proposition [\[prop:spin\]](#prop:spin){reference-type="ref" reference="prop:spin"}. Then $$\tau^{k_1,k_2}(\overline M^3, \overline \sigma)= (-1)^{b_1(M^3) (k_1+k_2)}\, \overline{ \tau^{k_1,k_2}(M^3,\sigma)}.$$ where $b_1(M^3)$ denotes the first Betti number. Hence if $M^3$ is amphicherical, then $\tau^{k_1,k_2}(M^3,\sigma)$ is real for $b_1(M^3) (k_1+k_2)$ even and purely imaginary for $b_1(M^3) (k_1+k_2)$ odd.
+:::
+
+In [@Muller12] W. Müller found a beautiful theorem about the asymptotic behavior when $k\to\infty$:
+
+::: thm
+[]{#thm:Muller label="thm:Muller"} Let $M$ be a compact, oriented, hyperbolic 3 manifold with a spin structure $\sigma$. Then $$\label{eqn:muller}
+ \lim_{k\to\infty} \frac{ \log\vert  \tau^{k}(M^3,\sigma)\vert}{k^2} = \frac 
+1{4\pi}\operatorname{vol} (M^3)\, .$$ In particular, the volume can be computed from the sequence of torsions.
+:::
+
+Again, with our convention our torsion is the inverse of the usual analytic torsion, so Equation [\[eqn:muller\]](#eqn:muller){reference-type="eqref" reference="eqn:muller"} has opposite sign to [@Muller12].
+
+As noticed in [@Muller12], this theorem implies that there are finitely many manifolds with the same sequence of torsions.
+
+::: question
+Is there a finite collection of integers $0<k_1<\cdots<k_n$ such that there are finitely many manifolds with the same $k_1,\ldots, k_n$-torsions?
+:::
+
+The answer is yes under the extra hypothesis that the volume is bounded above. More precisely, an infinite sequence of manifolds with bounded volume accumulates (for the geometric topology) to a finite set of cusped manifolds with finite volume, this is Jørgensen-Thurston properness of the volume function [@ThurstonBullAMS; @ThurstonBook]. For such a sequence of manifolds $M_n^3$, $\tau^2(M_n^3,\sigma)\to \infty$, by Corollary [\[cor:denseh\]](#cor:denseh){reference-type="ref" reference="cor:denseh"}, see also [@Memoirs Corollaire 4.18].
+
+A priory, for some $N\in \mathbb{N}$ there could exists an infinite sequence of hyperbolic manifolds whose volume goes to infinity and with the same $k$-torsions for $k\leq N$. By Theorem [\[thm:BV\]](#thm:BV){reference-type="ref" reference="thm:BV"} the injectivity radius of this sequence would not converge to infinity.
+
+Müller proves Theorem [\[thm:Muller\]](#thm:Muller){reference-type="ref" reference="thm:Muller"} using analytic torsion and Ruelle zeta functions. There is first a theorem of Wotzke [@Wot08] that generalizes Fried's theorem (Theorem [\[thm:Fried\]](#thm:Fried){reference-type="ref" reference="thm:Fried"}) and from this he obtains a functional equation that relates the volume, the Ruelle zeta functions and the torsions. Theorem [\[thm:Muller\]](#thm:Muller){reference-type="ref" reference="thm:Muller"} has been generalized by Müller and Pfaff [@MullerPfaff14] by working directly on the trace of the heat kernel in [\[eqn:traceheatkernel\]](#eqn:traceheatkernel){reference-type="eqref" reference="eqn:traceheatkernel"}.
+
+::: thm
+Let $M^3$ be a compact, oriented, hyperbolic 3-manifold with a spin structure $\sigma$. Then $$\lim_{k_1\to\infty} \frac{ \log\vert \tau^{k_1,k_2}(M^3,\sigma)\vert}{k_1^2} = 
+\frac 1{4\pi}(k_2+1)\operatorname{vol} (M^3)\, .$$
+:::
+
+Again, the sign convention here differs from [@MullerPfaff14].

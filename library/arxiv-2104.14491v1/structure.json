@@ -7,7 +7,7 @@
   "bytes": 584429,
   "pages": 20,
   "text_source": "embedded",
-  "math_source": "text-layer"
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -534,8 +534,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "KhCab_Text.tex",
-   "tex_sections": 7,
-   "overlaid": 0,
+   "tex_sections": 24,
+   "overlaid": 13,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -550,13 +550,18 @@
     {
      "id": "sec-001-2-the-knots-we-study-and-the-questions-we-ask",
      "title": "The knots we study and the questions we ask",
-     "prose_ratio": 0.395,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-21-coloured-decompositions-for-the-simplest-sate",
      "title": "Coloured decompositions for the simplest satellites",
-     "result": "no matching \\section"
+     "prose_ratio": 0.632,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-22-the-pattern-decomposition",
@@ -566,7 +571,10 @@
     {
      "id": "sec-004-23-how-to-get-the-satellite-class-from-a-knot-di",
      "title": "How to get the satellite class from a knot diagram",
-     "result": "no matching \\section"
+     "prose_ratio": 0.718,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-24-summary-of-jones-formulae",
@@ -576,29 +584,42 @@
     {
      "id": "sec-006-3-khovanov-evolution-formulae-for-satellite-fami",
      "title": "Khovanov-evolution formulae for satellite families",
-     "prose_ratio": 0.078,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-007-31-preliminaries",
      "title": "Preliminaries",
-     "result": "no matching \\section"
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-32-positive-pattern-companion-decompositions",
      "title": "Positive pattern-companion decompositions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.883,
+     "coverage_ratio": 0.828,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-009-33-false-adjoint-khovanov-polynomials",
      "title": "False adjoint Khovanov polynomials",
-     "result": "no matching \\section"
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-4-explicit-form-of-the-pattern-and-companion-inv",
      "title": "Explicit form of the pattern and companion invariants",
-     "prose_ratio": 0.42,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.788,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-011-42-aak-for-the-simplest-prime-knots",
@@ -608,22 +629,32 @@
     {
      "id": "sec-012-43-aak-for-the-two-strand-torus-knots",
      "title": "AAK for the two-strand torus knots",
-     "result": "no matching \\section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-013-431-general-formulae",
      "title": "General formulae",
-     "result": "no matching \\section"
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.696,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-014-432-reduced-vs-unreduced-polynomials",
      "title": "Reduced vs unreduced polynomials",
-     "result": "no matching \\section"
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-015-433-mirror-symmetry",
      "title": "Mirror symmetry",
-     "result": "no matching \\section"
+     "prose_ratio": 0.373,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-016-44-aak-for-the-twist-knots",
@@ -633,18 +664,24 @@
     {
      "id": "sec-017-442-why-there-is-no-mirror-symmetry",
      "title": "Why there is no mirror symmetry?",
-     "result": "no matching \\section"
+     "prose_ratio": 0.812,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-018-45-double-evolution-phase-diagrams",
      "title": "Double-evolution phase diagrams",
-     "result": "no matching \\section"
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-019-6-possible-applications-and-further-development",
      "title": "Possible applications and further development",
-     "prose_ratio": 0.86,
-     "coverage_ratio": 0.319,
+     "prose_ratio": 0.865,
+     "coverage_ratio": 0.349,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {

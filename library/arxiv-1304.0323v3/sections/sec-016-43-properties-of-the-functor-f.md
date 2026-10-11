@@ -8,108 +8,180 @@ pages: 43-46
 source_pdf: 1304.0323v3.pdf
 source_sha256: 92e2b9dc876e1a52
 doc_brief: "SYMMETRIC QUIVER HECKE ALGEBRAS — Let J be a set of pairs consisting of good U ′ q(g)-modules and invertible elements in the base ﬁeld C(q)."
+text_source: latex
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.905
 ---
-U′
-q(ˆslN )-module on which ei, fi act by 0. It is a unit object of the tensor category
-U′
-q(ˆslN )-mod. For k > Nor k <0, V (̟k) is understood to be zero, and the modules
-V (̟0) and V (̟N ) are understood to be the trivial representation.
-Proposition 4.3.1. Let (a,b ) be a segment with length ℓ :=b−a + 1. Then we have
-F (L(a,b ))≃V (̟ℓ)(−q)a+b≃
-{
-0 if ℓ>N ,
-V (̟ℓ)(−q)a+b if 0≤ℓ≤N.
-Proof. We will show our assertion by induction on ℓ. In the course of the proof, we
-omit the grading. We write
-r(a,b),(a′,b′) : L(a,b )◦L(a′,b′)−−→L(a′,b′)◦L(a,b )
-for rL(a,b),L(a′,b′).
-When ℓ = 1, we have F (L(a))≃V(−q)2a by Proposition 3.2.2 (i).
-Assume that ℓ≥ 2. Consider the following exact sequence in R(ℓ)-mod
-0→L(a,b )→L(b)◦L(a,b− 1)
-r(b),(a,b−1)
-−−−−−−−→L(a,b− 1)◦L(b)→L(a,b )→ 0
-44 S.-J. KANG, M. KASHIW ARA, M. KIM
-given in Proposition 4.2.3 (vi). Applying the exact functor F and using the induction
-hypothesis, we obtain an exact sequence
-0→F (L(a,b ))→V(−q)2b⊗V (̟ℓ−1)(−q)a+b−1
-F (r(b),(a,b−1))
-−−−−−−−−−→V (̟ℓ−1)(−q)a+b−1⊗V(−q)2b→F (L(a,b ))→ 0.
-(4.3.1)
-Now assume that ℓ≤N. It is known that there exists an exact sequence ([ 1, Lemma
-B.1])
-0→V (̟ℓ)(−q)a+b→V(−q)2b⊗V (̟ℓ−1)(−q)a+b−1
-h
-− − →V (̟ℓ−1)(−q)a+b−1⊗V(−q)2b→V (̟ℓ)(−q)a+b→ 0
-(4.3.2)
-such that h is non-zero. If F (r(b),(a,b−1)) vanishes, then V(−q)2b⊗V (̟ℓ−1)(−q)a+b−1 and
-V (̟ℓ−1)(−q)a+b−1⊗V(−q)2b are isomorphic, which is a contradiction. Hence F (r(b),(a,b−1))
-does not vanish.
+The {\em trivial representation} is the 1-dimensional $\UA$-module
+on which $e_i$, $f_i$ act by $0$.
+It is a unit object of the tensor category
+$\UA\smod$.
+For $k > N$ or $k < 0$, $V(\varpi_{k})$ is understood to be zero, and the modules
+$V(\varpi_{0})$ and $V(\varpi_{N})$ are understood to be the trivial representation.
+
+\begin{prop} \label{prop:image of fund. repns.}
+Let $(a,b)$ be a segment with length $\ell\seteq b-a+1$.
+ Then we have
+\begin{align*}
+\F(L(a,b)) \simeq V(\varpi_\ell)_{(-q)^{a+b}}\simeq\begin{cases}
+0 & \text{if \/ $\ell >N$,} \\
+V(\varpi_\ell)_{(-q)^{a+b}} & \text{if \/ $ 0\le \ell \le N $.}
+\end{cases}
+\end{align*}
+\end{prop}
+\begin{proof}
+We will show our assertion by induction on $\ell$. In the course of
+the proof, we omit the grading. We write
+\eqn &&
+\rmat{(a,b),(a',b')}\col L(a,b)\circ L(a',b')\To L(a',b')\circ
+L(a,b) \eneqn for $\rmat{L(a,b),L(a',b')}$.
+
+When $\ell =1$, we have $\F(L(a)) \simeq V_{(-q)^{2a}}$
+by Proposition \ref{prop:image of tau} (i).
+
+\noindent Assume that $\ell \ge 2$.
+Consider the following exact sequence in $R(\ell) \smod$
+\begin{align*}
+  0 \rightarrow L(a,b) \rightarrow L(b) \circ L(a,b-1)
+  \To[{\rmat{(b),(a,b-1)}}] L(a,b-1) \circ L(b)
+ \rightarrow L(a,b) \rightarrow 0
+\end{align*}
+given in Proposition \ref{prop:exact sequences} (vi). Applying the
+exact functor $\F$ and using the induction hypothesis, we obtain an
+exact sequence \eq &&\ba{l}
+0\to \F(L(a,b))\to V_{(-q)^{2b}}\tens V(\varpi_{\ell-1})_{(-q)^{a+b-1}}\\[2ex]
+\hs{10ex}\To[{\;\F(\rmat{(b),(a,b-1)})\;}]
+V(\varpi_{\ell-1})_{(-q)^{a+b-1}}\tens V_{(-q)^{2b}
+}\to\F(L(a,b))\to0.\ea
+\eneq
+
+Now assume that $\ell\le N$.
+It is known that there exists an exact sequence (\cite[Lemma B.1]{AK})
+\eq
+&&\ba{l}
+0\to V(\varpi_\ell)_{(-q)^{a+b}}
+\to V_{{(-q)}^{2b}}\tens V(\varpi_{\ell-1})_{(-q)^{a+b-1}}\\[2ex]
+\hs{10ex}\To[\;h\;]V(\varpi_{\ell-1})_{(-q)^{a+b-1}}\tens V_{(-q)^{2b}
+}\to  V(\varpi_\ell)_{(-q)^{a+b}}\to0\ea
+\eneq
+such that $h$ is non-zero.
+If $\F(\rmat{(b),(a,b-1)})$ vanishes, then
+$V_{(-q)^{2b}}\tens V(\varpi_{\ell-1})_{(-q)^{a+b-1}}$ and
+$V(\varpi_{\ell-1})_{(-q)^{a+b-1}}\tens V_{(-q)^{2b}}$ are isomorphic,
+which is a contradiction.
+Hence $\F(\rmat{(b),(a,b-1)})$ does not vanish.
+
+\smallskip\noi
 We know
-HomU ′q(ˆslN )(V(−q)2b⊗V (̟ℓ−1)(−q)a+b−1,V (̟ℓ−1)(−q)a+b−1⊗V(−q)2b)≃ k.
-SinceF (r(b),(a,b−1)) does not vanish, it is equal to h up to a constant multiple and hence
-F (L(a,b )) is isomorphic to V (̟ℓ)(−q)a+b. Thus we have proved the proposition when
-ℓ≤N.
-Now assume that ℓ =N + 1. Then F (L(a,b− 1))≃F (L(a− 1,b ))≃ k. Applying
-F to the epimorphism L(a,b− 1)◦L(b) ։L(a,b ),F (L(a,b )) is a quotient of V(−q)2b.
-Similarly, applying F to the epimorphism L(a)◦L(a + 1,b ) ։ L(a,b ),F (L(a,b )) is
-a quotient of V(−q)2a. Since V(−q)2b and V(−q)2a are simple modules and they are not
-isomorphic to each other, we conclude that F (L(a,b )) vanishes.
-Forℓ>N + 1,F (L(a,b )) vanishes since it is a quotient of
-F (L(a,a +N))⊗F (L(a +N + 1,b ))≃ 0.
-□
-Lemma 4.3.2. Assume that two segments (a,b ) and (a′,b′) satisfy (a,b )≥ (a′,b′). Set
-ℓ = b−a + 1, ℓ′ = b′−a′ + 1, c = (−q)a+b and c′ = (−q)a′+b′
-. Then the following
-statements hold.
-(i) c′/c is not a zero of the denominator dV (̟ℓ),V (̟ℓ′ )(z′/z) of Rnorm
-V (̟ℓ),V (̟ℓ′ )(z,z′),
-(ii) the homomorphism
-F (rL(a,b),L(a′,b′)) :V (̟ℓ)c⊗V (̟ℓ′)c′→V (̟ℓ′)c′⊗V (̟ℓ)c
-is a non-zero constant multiple of the normalized R-matrix Rnorm
-V (̟ℓ),V (̟ℓ′ )(c,c′).
-SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 45
-Proof. (i) follows from ( 2.2.8) because (b′−a′ + 1)− (b−a + 1)≥ (a′ +b′)− (a +b).
-By (i) and Theorem 2.2.1, the module V (̟ℓ)c⊗V (̟ℓ′)c′ is generated by the dominant
-extremal vector vℓ⊗vℓ′. Since
-dim
-(
-V (̟ℓ′)c′⊗V (̟ℓ)c
-)
-cl(̟ℓ+̟ℓ′ )
-= 1,
-any non-zero homomorphism from V (̟ℓ)c⊗V (̟ℓ′)c′ to V (̟ℓ′)c′⊗V (̟ℓ)c is unique
-up to a constant multiple. Hence it is enough to show that F (rL(a,b),L(a′,b′)) does not
-vanish.
-We may therefore assume that r :=rL(a,b),L(a′,b′) is not an isomorphism. Then we
-havea′ < a≤ b′ < bor a = b′ + 1. Applying F to the exact sequences (v) or (vi) in
-Proposition 4.2.3, we obtain an exact sequence:
-0→V (̟ℓ1)(−q)a′+b⊗V (̟ℓ2)(−q)a+b′→V (̟ℓ)c⊗V (̟ℓ′)c′
-F (r)
-−−−→V (̟ℓ′)c′⊗V (̟ℓ)c→V (̟ℓ1)(−q)a′+b⊗V (̟ℓ2)(−q)a+b′→ 0,
-where ℓ1 =b−a′ + 1 and ℓ2 =b′−a + 1.
+$$\Hom_{\UA} ( V_{(-q)^{2b}}\tens V(\varpi_{\ell-1})_{(-q)^{a+b-1}},
+V(\varpi_{\ell-1})_{(-q)^{a+b-1}}\tens V_{(-q)^{2b}})\simeq\cor.$$
+Since $\F(\rmat{(b),(a,b-1)})$ does not vanish, it is equal to $h$
+up to a constant multiple and hence $\F(L(a,b))$ is isomorphic to $
+V(\varpi_\ell)_{(-q)^{a+b}}$. Thus we have proved the proposition
+when $\ell\le N$.
+
+Now assume that $\ell=N+1$. Then $\F(L(a,b-1))\simeq\F(L(a-1,b))\simeq \cor$.
+Applying $\F$ to  the  epimorphism
+$L(a,b-1)\circ L(b)\epito L(a,b)$,
+$\F(L(a,b))$ is a quotient of
+$V_{(-q)^{2b}}$. Similarly, applying
+$\F$ to   the   epimorphism
+$L(a)\circ L(a+1,b)\epito L(a,b)$,
+$\F(L(a,b))$ is a quotient of
+$V_{(-q)^{2a}}$. Since $V_{(-q)^{2b}}$ and $V_{(-q)^{2a}}$ are
+simple modules and they are not isomorphic to each other, we conclude that
+$\F(L(a,b))$ vanishes.
+
+For $\ell>N+1$,
+$\F(L(a,b))$ vanishes since
+it is a quotient of
+$$\F(L(a,a+N))\tens\F(L(a+N+1,b))\simeq0.$$
+\QED
+
+\Lemma\label{lem:intertwiners} Assume that two segments $(a,b)$ and
+$(a',b')$ satisfy $(a,b)\ge (a',b')$. Set $\ell=b-a+1$,
+$\ell'=b'-a'+1$, $c=(-q)^{a+b}$ and $c'=(-q)^{a'+b'}$. Then the
+following statements hold.
+\bnum
+\item
+$c'/{c}$ is not a zero of the denominator
+$d_{V(\varpi_\ell),V(\varpi_{\ell'})}(z'/z)$ of
+$\Rnorm_{V(\varpi_\ell),V(\varpi_{\ell'})}(z,z')$,
+\item
+the homomorphism
+  $$\F(\rmat{L(a,b),L(a',b')}) \col
+  V(\varpi_{\ell})_{c} \otimes V(\varpi_{\ell'})_{c'} \rightarrow
+V(\varpi_{\ell'})_{c'} \otimes V(\varpi_{\ell})_{c} $$
+   is a non-zero constant multiple of the normalized R-matrix
+  $\Rnorm_{V(\varpi_{\ell}), V(\varpi_{\ell'})} (c,c')$.
+\ee
+\enlemma
+\begin{proof}
+(i) follows from \eqref{eq:zerR}
+because $(b'-a'+1)-(b-a+1)\ge (a'+b')-(a+b)$.
+
+\smallskip
+\noi
+By (i) and  Theorem \ref{th:zero},
+the module
+$V(\varpi_{\ell})_{c} \otimes V(\varpi_{\ell'})_{c'}$
+is generated by the dominant extremal vector
+$v_\ell\tens v_{\ell'}$.
 Since
-(
-V (̟ℓ1)(−q)a′+b⊗V (̟ℓ2)(−q)a+b′
-)
-cl(̟ℓ+̟ℓ′ )
-= 0, we deduce that F (r) is a non-
-zero homomorphism and hence it is a non-zero constant multiple of th e normalized
-R-matrix. □
+$$\dim \Big( V(\varpi_{\ell'})_{c'}
+\otimes V(\varpi_{\ell})_c \Big)_{\cl (\varpi_{\ell} + \varpi_{\ell'})}=1,$$
+any non-zero homomorphism from
+ $ V(\varpi_{\ell})_c \otimes V(\varpi_{\ell'})_{c'}$ to
+  $V(\varpi_{\ell'})_{c'} \otimes V(\varpi_{\ell})_c$
+is unique up to a constant multiple. Hence it is enough to show that
+$\F(\rmat{L(a,b),L(a',b')})$ does not vanish.
+
+We may therefore assume that $r\seteq\rmat{L(a,b),L(a',b')}$
+is not an isomorphism.
+Then we have $a'<a\le b'<b$   or $a=b'+1$.
+Applying
+$\F$ to the exact sequences (v) or (vi)
+in Proposition~\ref{prop:exact sequences},
+we obtain an exact sequence:
+\eqn
+&&\hs{-3ex}  0 \rightarrow V(\varpi_{\ell_1})_{(-q)^{a'+b}} \otimes V(\varpi_{\ell_2})_{(-q)^{a+b'}}
+  \rightarrow V(\varpi_{\ell})_{c}
+\otimes V(\varpi_{\ell'})_{c'} \\
+&&\hs{3ex} \To[{\;\F(r)\;}]
+  V(\varpi_{\ell'})_{c'} \otimes V(\varpi_{\ell})_{c} \rightarrow
+  V(\varpi_{\ell_1})_{(-q)^{a'+b}} \otimes V(\varpi_{\ell_2})_{(-q)^{a+b'}} \rightarrow 0,
+\eneqn
+where  $\ell_1 = b-a' +1$ and $\ell_2 = b'-a +1$.
+
+Since $\Big( V(\varpi_{\ell_1})_{(-q)^{a'+b}} \otimes
+V(\varpi_{\ell_2})_{(-q)^{a+b'}} \Big)_{\cl (\varpi_{\ell} + \varpi_{\ell'})} = 0$,
+we deduce that $\F(r)$ is a non-zero homomorphism
+and hence it is a non-zero constant multiple of the normalized R-matrix.
+\end{proof}
+
 The following theorem will play a crucial role in the rest of this section.
-Theorem 4.3.3. LetM be a ﬁnite-dimensional irreducible graded R(ℓ)-module and
-(
-(a1,b 1),..., (at,bt)
-)
-be the multisegment associated with M. Set ℓk =bk−ak + 1.
-(i) If ℓk >N for some 1≤k≤t, then F (M)≃ 0.
-(ii) If ℓk≤N for all 1≤k≤t, then F (M) is irreducible.
-Proof. If ℓk > N for some k, the assertion follows from Proposition 4.3.1. Assume
-that ℓk ≤ N for all 1 ≤ k ≤ t. We know that M is isomorphic to the image of
-r :=rL(a1,b1),...,L(at,bt). Set Vk =V (̟k) and ck = (−q)ak+bk. Then F (L(ak,bk))≃ (Vk)ck
-and ck′/ck is not a zero of the denominator dVk,Vk′ (z′/z) of Rnorm
-Vk,Vk′ (z,z′) for k < k′ by
-Lemma 4.3.2. Hence Theorem 2.2.1 says that the image of the R-matrix
-R : (V1)c1⊗···⊗ (Vt)ct→ (Vt)ct⊗···⊗ (V1)c1
-is irreducible. On the other hand, F (r) is equal to R up to a constant multiple by
-Lemma 4.3.2. Hence F (M) is irreducible. □
-46 S.-J. KANG, M. KASHIW ARA, M. KIM
+\begin{theorem} \label{thm:irreducible to irreducible}
+Let $M$ be a finite-dimensional irreducible  graded  $R(\ell)$-module and
+$$\big ((a_1,b_1), \ldots , (a_t,b_t) \big)$$
+be the multisegment associated with $M$. Set $\ell_k=b_k-a_k+1$.
+\bnum
+\item If $\ell_k > N$ for some $1 \leq k \leq t$, then $\F(M) \simeq 0$.
+\item If $\ell_k \leq N$ for all $1 \leq k \leq t$, then $\F(M)$ is irreducible.
+\ee
+\end{theorem}
+\begin{proof}
+If $\ell_k > N$ for some $k$, the assertion follows from Proposition
+\ref{prop:image of fund. repns.}. Assume that $\ell_k \leq N$ for
+all $1 \leq k \leq t$. We know that $M$ is isomorphic to the image
+of $r\seteq\rmat{L(a_1,b_1),\ldots, L(a_t,b_t)}$. Set
+$V_k=V(\varpi_k)$ and $c_k=(-q)^{a_k+b_k}$. Then
+$\F(L(a_k,b_k))\simeq (V_k)_{c_k}$ and $c_{k'}/{c_k}$ is not a zero
+of the denominator $d_{V_k,V_{k'}}(z'/z)$ of
+$\Rnorm_{V_k,V_{k'}}(z,z')$ for $k<k'$ by
+Lemma~\ref{lem:intertwiners}. Hence Theorem~\ref{th:zero} says that
+the image of the R-matrix
+$$R\col (V_1)_{c_1}\tens\cdots \tens (V_t)_{c_t}\to
+(V_t)_{c_t}\tens\cdots \tens (V_1)_{c_1}$$ is  irreducible. On the
+other hand, $\F(r)$ is equal to $R$ up to a constant multiple by
+Lemma~\ref{lem:intertwiners}. Hence $\F(M)$ is irreducible.
+\end{proof}

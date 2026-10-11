@@ -449,8 +449,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "HLLY-June-2023.tex",
-   "tex_sections": 9,
-   "overlaid": 4,
+   "tex_sections": 28,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -465,15 +465,16 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.776,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-21-the-quantum-group",
      "title": "The quantum group",
-     "result": "no matching \\section"
+     "prose_ratio": 0.277,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-acknowledgement",
@@ -486,86 +487,117 @@
     {
      "id": "sec-003-2-background-on-quantum-groups",
      "title": "Background on quantum groups",
-     "prose_ratio": 0.534,
+     "prose_ratio": null,
      "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-004-22-braid-group-actions-on-integrable-representat",
      "title": "Braid group actions on integrable representations of U_q(g).",
-     "result": "no matching \\section"
+     "prose_ratio": 0.747,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-31-notation",
      "title": "Notation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-33-crystals",
      "title": "Crystals",
-     "result": "no matching \\section"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-35-the-categorical-braid-group-action",
      "title": "The categorical braid group action",
-     "result": "no matching \\section"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-4-perverse-equivalences",
      "title": "Perverse equivalences",
-     "prose_ratio": 0.741,
-     "coverage_ratio": 0.927,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.82,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-009-42-derived-categories-of-graded-abelian-categori",
      "title": "Derived categories of graded abelian categories",
-     "result": "no matching \\section"
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.911,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-5-some-commutation-relations",
      "title": "Some commutation relations",
-     "prose_ratio": 0.56,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.905,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-52-marked-words",
      "title": "Marked words",
-     "result": "no matching \\section"
+     "prose_ratio": 0.87,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-012-71-cactus-groups",
      "title": "Cactus groups",
-     "result": "no matching \\section"
+     "prose_ratio": 0.102,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-013-7-crystalising-the-braid-group-action",
      "title": "Crystalising the braid group action",
-     "prose_ratio": 0.536,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.285,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-014-72-the-cactus-group-action-arising-from-rickard",
      "title": "The cactus group action arising from Rickard complexes",
-     "result": "no matching \\section"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-015-73-reconciling-the-two-cactus-group-actions",
      "title": "Reconciling the two cactus group actions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-016-8-examples-and-applications",
      "title": "Examples and Applications",
-     "prose_ratio": 0.653,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.692,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-017-82-type-a-combinatorics",
      "title": "Type A combinatorics",
-     "result": "no matching \\section"
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-018-references",

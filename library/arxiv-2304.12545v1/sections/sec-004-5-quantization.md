@@ -7,10 +7,10 @@ section_number: 5
 pages: 9-12
 source_pdf: 2304.12545v1.pdf
 source_sha256: bfc3c2be395b1b2d
-text_source: latex
-latex_prose_ratio: 0.987
-latex_coverage_ratio: 0.798
 doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
 \label{sec.6}
 

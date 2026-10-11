@@ -319,8 +319,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Source.tex",
-   "tex_sections": 4,
-   "overlaid": 1,
+   "tex_sections": 16,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -336,56 +336,82 @@
     {
      "id": "sec-001-motivations",
      "title": "Motivations",
-     "result": "no matching \\section"
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-what-is-done-in-the-present-work",
      "title": "What is done in the present work",
-     "result": "no matching \\section"
+     "prose_ratio": 0.845,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-symplectic-symmetric-spaces",
      "title": "Symplectic symmetric spaces",
-     "prose_ratio": 0.628,
-     "coverage_ratio": 0.928,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.606,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-group-type-symplectic-symmetric-surfaces-curvatu",
      "title": "Group type symplectic symmetric surfaces, curvature contractions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-admissible-functions-on-symplectic-symmetric-sur",
      "title": "Admissible functions on symplectic symmetric surfaces",
-     "result": "no matching \\section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-deformation-quantization",
      "title": "Deformation Quantization",
-     "prose_ratio": 0.344,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-sl2r--triplets-of-derivations-and-an-unexpected",
      "title": "sl2(R)- triplets of derivations and an unexpected Lorentzian structure",
-     "result": "no matching \\section"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-008-the-de-contraction-procedure-evolution-of-the-da",
      "title": "The de-contraction procedure: evolution of the Dalembert operator",
-     "result": "no matching \\section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-009-finding-solutions-of-the-dalembertian-evolution",
      "title": "Finding solutions of the Dalembertian evolution by variable separation",
-     "result": "no matching \\section"
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.911,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-010-normalizations-and-asymptotic-expansions",
      "title": "Normalizations and asymptotic expansions",
-     "result": "no matching \\section"
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-complements",

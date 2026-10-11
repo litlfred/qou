@@ -8,56 +8,32 @@ pages: 32-33
 source_pdf: 1202.6268v2.pdf
 source_sha256: 209af6ae25439050
 doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
+text_source: latex
+latex_prose_ratio: 0.873
+latex_coverage_ratio: 0.791
 ---
-the integrand, we obtain the following formula for the complex volume of a representation:
-(5.9) ST , 0 =−π2
-2 f· B−1ν−iπZ· B−1ν + 1
-2Z· B−1AZ +
-∑
-i
-~Li2(e−Zi)
-(
-mod π2
-6
-)
-.
-Some manipulation involving the ﬂattening can be used to recast this a s
-(5.10) ST , 0 =−1
-2 (Z−iπf )· (Z ′′ +iπf ′′) +
-∑
-i
-~Li2(e−Zi)
-(
-mod π2
-6
-)
-,
-where Z ′′
-i :=−~Li1(e−Zi). It is straightforward to verify that this formula is independent o f
-the choice of quad type, choice of edge of T , choice of meridian loop, choice of ﬂattening,
-and 2–3 moves deﬁnes a topological invariant, which agrees with the complex Chern-Simons
-invariant of M. Since the complex volume in this form has already been studied at leng th
-in the literature, we suppress the details here.
-At the discrete faithful representation, we can remove the “tilde s” from the logarithm and
-dilogarithm. If we consider the discrete faithful solution to zA(1−z−1)B = (−1)n, and take
-standard logarithms Zi = logzi, Z ′′
-i = log(1−z−1
-i ) (with 0 ≤ ImZ, ImZ ′′≤π), we ﬁnd
-ST , 0 = i(Vol(M)−i CS(M))
-=−1
-2 (Z−iπf )· (Z ′′ +iπf ′′) +
-∑
-i
-Li2(e−Zi)
-(
-mod π2
-6
-)
-.(5.11)
-This is a version of the simple formula for the complex volume given in [
-Neu92]. It is known
-that the ambiguity in the volume can be lifted from π2/6 to 2π2 using more reﬁned methods
-[Neu04, DZ06, GZ07, Zic09].
-7We treat all sub-leading terms as perturbations. The exact locatio n of the critical point will acquire
-perturbative corrections, described in Section 5.4.
-THE QUANTUM CONTENT OF THE GLUING EQUATIONS 33
+[]{#sec.vol label="sec.vol"}
+
+By substituting a solution to [\[crit\]](#crit){reference-type="eqref" reference="crit"} back into the $\hbar^{-1}$ (leading order) part of the integrand, we obtain the following formula for the complex volume of a representation:
+
+$$S_{\mathcal{T},0} = -\frac{\pi^2}{2}f\cdot \mathbf B^{-1}\nu
+-i\pi Z\cdot\mathbf B^{-1}\nu+\frac1{2}Z\cdot\mathbf{B}^{-1}\mathbf A Z 
++\sum_i\widetilde{{\rm Li}}_2(e^{-Z_i}) \qquad \Big({\rm mod} \;\;\frac{\pi^2}{6}\Big)\,.$$
+
+Some manipulation involving the flattening can be used to recast this as
+
+$$\label{vol}
+\boxed{ S_{\mathcal{T},0} = -\frac12 (Z-i\pi f)\cdot (Z''+i\pi f'')
++\sum_i\widetilde{\rm Li}_2(e^{-Z_i})} \qquad \Big({\rm mod} \;\;\frac{\pi^2}{6}\Big)\,,$$
+
+where $Z_i'' := -\widetilde{\rm Li}_1(e^{-Z_i})$. It is straightforward to verify that this formula is independent of the choice of quad type, choice of edge of $\mathcal{T}$, choice of meridian loop, choice of flattening, and 2--3 moves defines a topological invariant, which agrees with the complex Chern-Simons invariant of $M$. Since the complex volume in this form has already been studied at length in the literature, we suppress the details here.
+
+At the discrete faithful representation, we can remove the "tildes" from the logarithm and dilogarithm. If we consider the discrete faithful solution to $z^{\mathbf A}(1-z^{-1})^{\mathbf B}=(-1)^n$, and take standard logarithms $Z_i=\log z_i$, $Z_i''=\log(1-z_i^{-1})$ (with $0\leq {\rm Im}\,Z,\,{\rm Im}\,Z''\leq \pi$), we find
+
+$$\begin{aligned}
+S_{\mathcal{T},0} &= \,i({\rm Vol}(M)-i\,{\rm CS}(M)) \notag \\ &= 
+-\frac12 (Z-i\pi f)\cdot (Z''+i\pi f'')+\sum_i{\rm Li}_2(e^{-Z_i}) 
+\qquad \Big({\rm mod} \;\;\frac{\pi^2}{6}\Big)\,.
+\end{aligned}$$
+
+This is a version of the simple formula for the complex volume given in [@Neumann-combi]. It is known that the ambiguity in the volume can be lifted from $\pi^2/6$ to $2\pi^2$ using more refined methods [@N; @DuZi; @GoZi; @Zickert-rep].

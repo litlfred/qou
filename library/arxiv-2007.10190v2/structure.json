@@ -328,8 +328,8 @@
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "GGM_knots_20v2.tex",
-   "tex_sections": 7,
-   "overlaid": 2,
+   "tex_sections": 15,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -345,28 +345,40 @@
     {
      "id": "sec-001-11-asymptotic-expansions-in-perturbative-quantum",
      "title": "Asymptotic expansions in perturbative quantum field theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-002-12-resurgence-in-complex-chern-simons-theory",
      "title": "Resurgence in complex Chern-Simons theory",
-     "result": "no matching \\section"
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.797,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-4-descendants",
      "title": "Descendants",
-     "prose_ratio": 0.127,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-41-the-kashaev-invariant-and-its-descendants",
      "title": "The Kashaev invariant and its descendants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-005-43-the-state-integral-and-its-descendants",
      "title": "The state integral and its descendants",
-     "result": "no matching \\section"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-006-5-computations",
@@ -377,7 +389,8 @@
     {
      "id": "sec-007-51-resurgent-analysis",
      "title": "Resurgent analysis",
-     "result": "no matching \\section"
+     "prose_ratio": 0.581,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
      "id": "sec-008-52-the-41-knot",
@@ -392,8 +405,8 @@
     {
      "id": "sec-010-6-open-questions",
      "title": "Open questions",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -401,7 +414,7 @@
      "id": "sec-011-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.9,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },

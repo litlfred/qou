@@ -7,10 +7,10 @@ section_number: 4
 pages: 9-14
 source_pdf: 1508.01627v4.pdf
 source_sha256: 778e60219862e371
-text_source: latex
-latex_prose_ratio: 0.97
-latex_coverage_ratio: 0.986
 doc_brief: "A Murnaghan-Nakayama rule for values of unipotent characters in classical groups — 7 sections: Introduction; Maximal tori in classical groups; A Murnaghan–Nakayama rule"
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.968
 ---
 []{#sec:vanish label="sec:vanish"} In this section we prove Theorem [\[thmA:zeroes\]](#thmA:zeroes){reference-type="ref" reference="thmA:zeroes"} for quasi-simple groups of classical type. So let ${\mathbf{G}}$ be a simply-connected simple algebraic group of type $B_n$ with $n \geq 3$, $C_n$ with $n \geq 2$ or $D_n$ with $n \geq 4$, and let $F$ be a Steinberg morphism of ${\mathbf{G}}$ (we exclude the ${}^3\!D_4$ case) with $G ={\mathbf{G}}(q) := {\mathbf{G}}^F$. We consider the corresponding finite groups $G={\operatorname{Spin}}_{2n+1}(q)$ only for odd $q$, and ${\operatorname{Sp}}_{2n}(q)$ and ${\operatorname{Spin}}^\pm_{2n}(q)$ for any $q$, respectively.
 
@@ -30,7 +30,7 @@ The group ${\operatorname{Sp}}_4(2)\cong{\mathfrak{S}}_6$ contains no $3$-singul
 The group ${\operatorname{Sp}}_8(2)$ has only one $5$-singular regular semisimple class and there are $15$ irreducible characters which do not vanish on this class. There is only one non-trivial character which does not vanish on any $5$-singular class, the unipotent character $\sys{0 1}{4}$.
 :::
 
-:::: proof
+::: proof
 *Proof.* We use the following facts from Deligne--Lusztig theory. The irreducible characters of $G$ are partitioned into Lusztig series which are parameterised by semisimple conjugacy classes of the dual group $G^*$. If $s \in G^*$ is semisimple then the values of characters in the Lusztig series of $s$ on semisimple elements $t \in G$ are linear combinations of values of Deligne--Lusztig characters on $t$ which belong to types of tori which occur in the connected centraliser of $s$ in ${\mathbf{G}}^*$. In particular Deligne--Lusztig characters corresponding to a maximal torus $T$ of $G$ vanish on regular semisimple classes which do not intersect $T$, see e.g. [@LMS13 Prop. 6.4].
 
 Since ${\mathbf{G}}$ is simply-connected the dual group ${\mathbf{G}}^*$ has trivial center so that non-unipotent characters are in Lusztig series of non-central elements.
@@ -84,7 +84,7 @@ $C_4(q)$ with $q=3$ and $e=2$: In this case the torus of type $((2),(2))$ in $C_
 For $C_4(2)$ and $e=2$ (and so $\ell = 5$) only tori of type $((4),-)$ contain $\ell$-singular regular elements. This leads to the second exception mentioned in the statement.
 
 ${}^2\!D_4(2)$ with $e=1$: Here, the maximal tori containing $\ell$-elements all have conjugates inside a subgroup of type $D_1+D_3$. We can apply the argument from above: the tori of types $((1),(3))$ and $((3),(1))$ cannot both occur in the same rational form of such a subgroup. ◻
-::::
+:::
 
 ## Unipotent characters {#ssec:unipotent}
 

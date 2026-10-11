@@ -7,24 +7,20 @@ section_number: 3
 pages: 2-6
 source_pdf: 0410111v2.pdf
 source_sha256: 0ccaeeabd8de6b5f
-text_source: latex
-latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.967
 doc_brief: "Integer Polynomial Optimization in Fixed Dimension Jesús A. De Loera University of California, Dept. of Mathematics, Davis CA 95 616, USA email: deloera@math.ucdavis.edu http://www.math.ucdavis.edu/~d"
+text_source: latex
+latex_prose_ratio: 0.805
+latex_coverage_ratio: 0.995
 ---
 []{#algo label="algo"}
 
 Consider now a polynomial function $f \in
 \mathbb Z[x_1,x_2, \dots ,x_d]$ of maximum total degree $D$ and a convex polytope $P=\{x | Ax \leq b\}$ where $A$ is an $m \times
-d$ integral matrix and $b$ is an integral $m$-vector. The purpose of this section is to present an algorithm to generate lower and upper bounds $L_k,U_k$ to the integer global optimum value of $$\begin{equation}
-\hbox{maximize} \ f(x_1,\dots,x_d) \  \hbox
-{subject to} \  (x_1,\dots,x_d) \in P \cap \mathbb Z^d.
-\end{equation}$$ We should also remark that in our algorithm the polynomial objective function $f$ can be arbitrary (e.g. non-convex). As we have seen, the optimization problem is NP-hard already for two integer variables and polynomials of degree four. Nevertheless we will see that, in fixed dimension and when $f(x) \geq 0$ for all $x \in P$, the algorithm gives a fully polynomial time approximation scheme or FPTAS. This means that, in polynomial time on the input and $(1/\epsilon)$, one can compute a $(1-\epsilon)$-approximation to the maximum. The algorithm we present is based on A. Barvinok's theory for encoding all the lattice points of a polyhedron in terms of short rational functions. See [@bar; @BarviPom] for all details. Lattice points are thought of as exponent vectors of monomials. For example, $z_1^2z_2^{-11}$ encodes the lattice point $(2,-11)$. The set of lattice points is represented by a Laurent polynomial: $g_P(z)=\sum_{\alpha \in P\cap\mathbb Z^d}
-z^\alpha.$ From Barvinok's theory this exponentially-large sum of monomials $g_P(z)$ can instead be written as a polynomial-size sum of rational functions (assuming the dimension $d$ is fixed) of the form: $$\begin{equation}
- \label{eq:aa}
+d$ integral matrix and $b$ is an integral $m$-vector. The purpose of this section is to present an algorithm to generate lower and upper bounds $L_k,U_k$ to the integer global optimum value of $$\hbox{maximize} \ f(x_1,\dots,x_d) \  \hbox
+{subject to} \  (x_1,\dots,x_d) \in P \cap \mathbb Z^d.$$ We should also remark that in our algorithm the polynomial objective function $f$ can be arbitrary (e.g. non-convex). As we have seen, the optimization problem is NP-hard already for two integer variables and polynomials of degree four. Nevertheless we will see that, in fixed dimension and when $f(x) \geq 0$ for all $x \in P$, the algorithm gives a fully polynomial time approximation scheme or FPTAS. This means that, in polynomial time on the input and $(1/\epsilon)$, one can compute a $(1-\epsilon)$-approximation to the maximum. The algorithm we present is based on A. Barvinok's theory for encoding all the lattice points of a polyhedron in terms of short rational functions. See [@bar; @BarviPom] for all details. Lattice points are thought of as exponent vectors of monomials. For example, $z_1^2z_2^{-11}$ encodes the lattice point $(2,-11)$. The set of lattice points is represented by a Laurent polynomial: $g_P(z)=\sum_{\alpha \in P\cap\mathbb Z^d}
+z^\alpha.$ From Barvinok's theory this exponentially-large sum of monomials $g_P(z)$ can instead be written as a polynomial-size sum of rational functions (assuming the dimension $d$ is fixed) of the form: $$\label{eq:aa}
 g_P(z) = \sum_{i\in I} {E_i \frac{z^{u_i}} {\prod\limits_{j=1}^d
-(1-z^{v_{ij}})}},
-\end{equation}$$ where $I$ is a polynomial-size indexing set, and where $E_i\in\{1,-1\}$ and $u_i, v_{ij} \in\mathbb Z^d$ for all $i$ and $j$. For details see [@BarviPom; @latte1; @latte2].
+(1-z^{v_{ij}})}},$$ where $I$ is a polynomial-size indexing set, and where $E_i\in\{1,-1\}$ and $u_i, v_{ij} \in\mathbb Z^d$ for all $i$ and $j$. For details see [@BarviPom; @latte1; @latte2].
 
 We need a way to encode via rational functions the values of the polynomial $f$ over all the lattice points in a polytope. The key idea, first introduced in Lemma 9 of [@latte2] and generalized in [@hugginsthesis], is that differential operators associated to $f$ can be used to compute a rational function representation of $\sum_{a\in P \cap \mathbb Z^d} f(a) z^a.$ The following Lemma recently appeared in [@newbar]:
 
@@ -109,15 +105,15 @@ Theorem [\[main\]](#main){reference-type="ref" reference="main"} will follow fro
 *Proof.* Part (i). From Lemma [\[operators\]](#operators){reference-type="ref" reference="operators"} on fixed dimension $d$, we can compute $g_{P,f}=\sum_{\alpha\in P \cap \mathbb Z^d} f(\alpha) z^\alpha$ as a rational function in time polynomial in $D$, the total degree of $f$, and the input size of $P$. Thus, because $f^k$ has total degree of $Dk$ and the encoding length for the coefficients of $f^k$ is bounded by $k \log (kC)$ (with $C$ the largest coefficient in $f$), we can also compute $g_{P,f^k} = \sum_{\alpha\in P \cap \mathbb Z^d}
 f^k(\alpha) z^\alpha$ in time polynomial in $k$, the total degree $D$, and the input size of $P$. Note that using residue techniques [@newbar], we can evaluate $g_{P,f^k}(1)$ in polynomial time. Finally observe
 
-$$\begin{align*}
+$$\begin{aligned}
 U_k-L_k&= \sqrt[k]{\sum_{\alpha \in P \cap \mathbb Z^d}
   f^k(\alpha)}-\sqrt[k]{\frac{\sum_{\alpha \in P \cap \mathbb Z^d}
   f^k(\alpha)}{|P \cap \mathbb Z^d|}} = \sqrt[k]{\frac{\sum_{\alpha \in P
   \cap \mathbb Z^d} f^k(\alpha)}{|P \cap \mathbb Z^d|}} \left( \sqrt[k]{|P \cap
   \mathbb Z^d|}-1 \right) \\
 & =L_k \left( \sqrt[k]{|P \cap \mathbb Z^d|}-1 \right) \leq f^*
-  \left(\sqrt[k]{|P \cap \mathbb Z^d|}-1 \right).
-\end{align*}$$
+  \left(\sqrt[k]{|P \cap \mathbb Z^d|}-1 \right). 
+\end{aligned}$$
 
 Part (ii). Note that if $\left(\sqrt[k]{|P \cap \mathbb Z^d|}-1 \right) \leq
 \epsilon$ then $L_k$ is indeed a $(1-\epsilon)$-approximation because $$f^* \leq U_k =L_k+(U_k-L_k) \leq L_k + f^*\left(\sqrt[k]{|P \cap
@@ -146,16 +142,14 @@ The problem we consider is that of maximizing the value of the monomial $x^3y$ o
 
 #### Example 2, nvs04 from MINLPLIB:
 
-A somewhat more complicated example, from a well-known library of test examples (see <http://www.gamsworld.org/minlp/>), is the problem given by $$\begin{equation}
-  \begin{aligned}
+A somewhat more complicated example, from a well-known library of test examples (see <http://www.gamsworld.org/minlp/>), is the problem given by $$\begin{aligned}
     \min\quad & 100 \left(\frac12 + i_2 - \left(\frac35 + i_1\right)^2 \right)^2 + \left(\frac25 -
     i_1\right)^2\\
     \text{s.\,t.}\quad & i_1, i_2 \in [0,200] \cap \mathbb Z.
-  \end{aligned}
-\end{equation}$$ Its optimal solution as given in MINLPLIB is $i_1=1$, $i_2=2$ with an objective value of $0.72$. Clearly, to apply our algorithm from page literally, the objective function needs to be multiplied by a factor of $100$ to obtain an integer valued polynomial.
+  \end{aligned}$$ Its optimal solution as given in MINLPLIB is $i_1=1$, $i_2=2$ with an objective value of $0.72$. Clearly, to apply our algorithm from page literally, the objective function needs to be multiplied by a factor of $100$ to obtain an integer valued polynomial.
 
 Using the bounds on $i_1$ and $i_2$ we obtain an upper bound of $165
-\cdot 10^9$ for the objective function, which allows us to convert the problem into an equivalent maximization problem, where all feasible points have a non-negative objective value. The new optimal objective value is $164999999999.28.$ Expanding the new objective function and translating it into a differential operator yields $$\begin{align*}
+\cdot 10^9$ for the objective function, which allows us to convert the problem into an equivalent maximization problem, where all feasible points have a non-negative objective value. The new optimal objective value is $164999999999.28.$ Expanding the new objective function and translating it into a differential operator yields $$\begin{aligned}
     &\frac{4124999999947}{25} \mathrm{Id} - 28 z_2 \frac{\partial}{\partial
       z_2}+\frac{172}{5} z_1\frac{\partial}{\partial z_1}-117 \left(z_1
       \frac{\partial}{\partial z_1} \right) ^{(2)} - 100
@@ -169,7 +163,24 @@ Using the bounds on $i_1$ and $i_2$ we obtain an upper bound of $165
         z_1}\right)^{(3)}  
     - 100 \left(z_1 \frac{\partial}{\partial
         z_1}\right)^{(4)}.
-\end{align*}$$ The short generating function can be written as $g(z_1,z_2) = \left( \frac1{1-z_1} - \frac{z_1^{201}}{1-z_1} \right)
+  
+\end{aligned}$$ The short generating function can be written as $g(z_1,z_2) = \left( \frac1{1-z_1} - \frac{z_1^{201}}{1-z_1} \right)
   \left( \frac1{1-z_2} - \frac{z_2^{201}}{1-z_2} \right).$
 
 In this example, the number of lattice points is $|P\cap \mathbb Z^2|=40401.$ The first bounds are $L_1=139463892042.292155534$, $U_1=28032242300500.723262442$. After 30 iterations the bounds become $L_{30}=164999998845.993553019$ and $U_{30}=165000000475.892451381.$
+
+# An extension to the mixed integer case
+
+Now, we wish to discuss extensions of Theorem [\[main\]](#main){reference-type="ref" reference="main"} to the mixed integer scenario. If some of the variables are allowed to be continuous then we can describe the task as $$\hbox{maximize} \ f(x,y) \ \hbox{subject to} \ \{ (x,y) | Ax+By \leq
+b, \ \hbox{with} \ x_i \in \mathbb Z\ \hbox{and} \ y_i \in \mathbb R\}.$$ Consider the sequence of integer polynomial optimization problems $\hbox{optimize} \ f(x,\frac{y}{n}) \ \hbox{subject to}\ (x,y) \in
+\Gamma_n=\{ (x,y) | Ax+B(\frac{y}{n}) \leq b, \ \hbox{with} \ x_i \in
+\mathbb Z\ \hbox{and} \ y_i \in \mathbb Z\},$ where each of the subproblems is equivalent to optimizing a polynomial over a "semi-dilated" polytope (in some coordinate directions but not others). As $n$ goes to infinity, the sequence of optimal solution values can have several limit points. Nevertheless, it is still possible to construct a subsequence of problems whose optimal values approximate the mixed integer optimum to arbitrary precision:
+
+::: corollary
+[]{#mip label="mip"} With the hypotheses of Theorem [\[main\]](#main){reference-type="ref" reference="main"}, we can construct a sequence of integer polynomial programming problems, over finer and finer grids, whose optimal values converge to the optimal value of the mixed integer program $$f^*=\hbox{maximize} \  f(x_1,x_2,\dots,x_d) \ \hbox{subject to} \ x \in P, \ \hbox{and} \ x_i \in \mathbb Z\
+    \hbox{for} \ i \in I \subseteq  \{1,2,\dots,d\}.$$ By applying the algorithm of Theorem [\[main\]](#main){reference-type="ref" reference="main"} to the subproblems, we can approximate the optimum to arbitrary precision.
+:::
+
+When all variables are continuous, the original polytope $P$ is actually dilated uniformly in all directions by a parameter $n$, or equivalently, the integer grid is refined. Define $$r(q,n)=\sum_{\alpha \in (nP) \cap \mathbb Z^d} f^q(\alpha) z^\alpha,$$ for each power $q$ and dilation factor $n$. Note that for fixed $q$, then we can easily see that the sum $\sum_{\alpha \in (nP) \cap
+  \mathbb Z^d} \frac{1}{n^d} f^q(\alpha) z^\alpha$ is essentially an approximation to the Riemann integral of $f^q$; thus $$\lim_{n \rightarrow \infty} r(q,n)/n^d = \int_P f^q(\bar{x})
+d\bar{x}.$$ As $n,q$ grow, the values $\sqrt[q]{r(q,n)}$ approximate the sequence $\sqrt[q]{\int_P f^q(\bar{x}) d\bar{x}}$ which converges to $(\hbox{max}_{x \in P} f(x))\cdot \hbox{volume} (P)$. This is related to recent work (see [@deklerketal; @lasserre; @parrilosturmfels] and references therein) where the global optimum of a polynomial over a compact domain is investigated as the result of a grid refinement and properties of sums of squares.

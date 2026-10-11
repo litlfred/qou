@@ -7,7 +7,8 @@
   "bytes": 693535,
   "pages": 26,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -182,6 +183,83 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 8,
-  "chars_total": 62300
+  "chars_total": 62300,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "bulk.tex",
+   "tex_sections": 15,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-i-introduction",
+     "title": "INTRODUCTION",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-ii-complete-dirac-spectra-in-su2-gauge-theory",
+     "title": "COMPLETE DIRAC SPECTRA IN SU(2) GAUGE THEORY",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-iii-data-analysis",
+     "title": "DATA ANALYSIS",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-1-ensemble-unfolding",
+     "title": "Ensemble unfolding",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-3-windowing",
+     "title": "Windowing",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-c-twopoint-spectral-correlations",
+     "title": "Two\u2013Point Spectral Correlations",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-iv-summary-and-discussion",
+     "title": "SUMMARY AND DISCUSSION",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }
