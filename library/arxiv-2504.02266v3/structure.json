@@ -1,0 +1,370 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2504.02266v3",
+ "source": {
+  "file": "2504.02266v3.pdf",
+  "sha256": "a12193f740b6ee53c86a78f822de5393a8bb5a29f5bb7de0c71a38c44e082b3b",
+  "bytes": 625622,
+  "pages": 20,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-11T06:00:38Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2504.02266",
+   "version": "3",
+   "primary_class": "math.RT",
+   "stamp_date": "30 Jun 2026"
+  },
+  "doi": null,
+  "title": "Knizhnik-Zamolodchikov equations in Deligne categories",
+  "authors_raw": "P. Etingof \u22c6, I. Motorin*, A. Varchenko\u2662, and I. Zhu\u2020",
+  "title_lines": [
+   "KNIZHNIK-ZAMOLODCHIKOV EQUATIONS IN DELIGNE",
+   "CATEGORIES"
+  ],
+  "abstract": "We consider the Knizhnik-Zamolodchikov equations in Deligne Categories in the context of (gl\ud835\udc5a, gl\ud835\udc5b) and (so\ud835\udc5a, so2\ud835\udc5b) dualities. We derive integral formulas for the solutions in the first case and compute monodromy in both cases.",
+  "docinfo": {
+   "Title": "Knizhnik-Zamolodchikov equations in Deligne categories",
+   "Author": "Pavel Etingof; Ivan Motorin; Alexander Varchenko; Isaac Zhu",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "KNIZHNIK-ZAMOLODCHIKOV EQUATIONS IN DELIGNE CATEGORIES",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Knizhnik-Zamolodchikov equations in Deligne categories",
+   "heading": "KNIZHNIK-ZAMOLODCHIKOV EQUATIONS IN DELIGNE CATEGORIES Contents Introduction Acknowledgements. Preliminaries Kac-Moody Lie algebras. General linear groups and algebras. The Deligne category. Skein categories. KZ equations and dynamical differential equations Knizhnik-Zamolodchikov equations. ( gl \ud835\udc61",
+   "text": "KNIZHNIK-ZAMOLODCHIKOV EQUATIONS IN DELIGNE CATEGORIES",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements. Pavel Etingof\u2019s work was partially supported by the NSF",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Kac-Moody Lie algebras. Suppose we are given an integer square matrix \ud835\udc34of",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "General linear groups and algebras. The general linear group \ud835\udc3a\ud835\udc3f\ud835\udc5b(C) is the",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The Deligne category. The Deligne category Rep(\ud835\udc3a\ud835\udc3f, \ud835\udc47) for a variable \ud835\udc47and the",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Skein categories. Similarly to the classical case, we have means to interpolate the",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "KZ equations and dynamical differential equations",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Knizhnik-Zamolodchikov equations. Consider the category Rep(\ud835\udc3a\ud835\udc3f\ud835\udc61) for a com-",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "(gl\ud835\udc61, gl\ud835\udc5b+\ud835\udc5a) duality. Let \ud835\udc61be a positive integer and gl\ud835\udc61the corresponding general",
+   "page": 6,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Solutions to dynamical differential equations",
+   "page": 10,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Integral formulas. In this section we make the same assumptions for \ud835\udc61as in the",
+   "page": 10,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Bethe ansatz. The Bethe ansatz is a method to find joint eigenvectors of the Gaudin",
+   "page": 13,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "The orthogonal case",
+   "page": 13,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "(so\ud835\udc61, so2\ud835\udc5b) duality. Consider the space \u039b\u2219(\ud835\udc49\u2297\ud835\udc4a), dim(\ud835\udc49) = \ud835\udc61, dim(\ud835\udc4a) = \ud835\udc5b. We",
+   "page": 14,
+   "source": "inferred",
+   "number": "5.1"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 358,
+   "n_words": 53
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 29,
+   "n_words": 5
+  },
+  {
+   "id": "sec-001-preliminaries",
+   "number": null,
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 525,
+   "n_words": 84
+  },
+  {
+   "id": "sec-002-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3643,
+   "n_words": 587
+  },
+  {
+   "id": "sec-003-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 515,
+   "n_words": 79
+  },
+  {
+   "id": "sec-004-11-acknowledgements-pavel-etingofs-work-was-part",
+   "number": "1.1",
+   "title": "Acknowledgements. Pavel Etingof\u2019s work was partially supported by the NSF",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 209,
+   "n_words": 28
+  },
+  {
+   "id": "sec-005-21-kac-moody-lie-algebras-suppose-we-are-given-a",
+   "number": "2.1",
+   "title": "Kac-Moody Lie algebras. Suppose we are given an integer square matrix \ud835\udc34of",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 814,
+   "n_words": 164
+  },
+  {
+   "id": "sec-006-22-general-linear-groups-and-algebras-the-genera",
+   "number": "2.2",
+   "title": "General linear groups and algebras. The general linear group \ud835\udc3a\ud835\udc3f\ud835\udc5b(C) is the",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1230,
+   "n_words": 196
+  },
+  {
+   "id": "sec-007-23-the-deligne-category-the-deligne-category-rep",
+   "number": "2.3",
+   "title": "The Deligne category. The Deligne category Rep(\ud835\udc3a\ud835\udc3f, \ud835\udc47) for a variable \ud835\udc47and the",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2307,
+   "n_words": 374
+  },
+  {
+   "id": "sec-008-24-skein-categories-similarly-to-the-classical-c",
+   "number": "2.4",
+   "title": "Skein categories. Similarly to the classical case, we have means to interpolate the",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1226,
+   "n_words": 206
+  },
+  {
+   "id": "sec-009-3-kz-equations-and-dynamical-differential-equati",
+   "number": "3",
+   "title": "KZ equations and dynamical differential equations",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-31-knizhnik-zamolodchikov-equations-consider-the",
+   "number": "3.1",
+   "title": "Knizhnik-Zamolodchikov equations. Consider the category Rep(\ud835\udc3a\ud835\udc3f\ud835\udc61) for a com-",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1721,
+   "n_words": 308
+  },
+  {
+   "id": "sec-011-32-gl\ud835\udc61-gl\ud835\udc5b\ud835\udc5a-duality-let-\ud835\udc61be-a-positive-integer-a",
+   "number": "3.2",
+   "title": "(gl\ud835\udc61, gl\ud835\udc5b+\ud835\udc5a) duality. Let \ud835\udc61be a positive integer and gl\ud835\udc61the corresponding general",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 9461,
+   "n_words": 1668
+  },
+  {
+   "id": "sec-012-4-solutions-to-dynamical-differential-equations",
+   "number": "4",
+   "title": "Solutions to dynamical differential equations",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-41-integral-formulas-in-this-section-we-make-the",
+   "number": "4.1",
+   "title": "Integral formulas. In this section we make the same assumptions for \ud835\udc61as in the",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 6879,
+   "n_words": 1281
+  },
+  {
+   "id": "sec-014-42-bethe-ansatz-the-bethe-ansatz-is-a-method-to",
+   "number": "4.2",
+   "title": "Bethe ansatz. The Bethe ansatz is a method to find joint eigenvectors of the Gaudin",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1804,
+   "n_words": 292
+  },
+  {
+   "id": "sec-015-5-the-orthogonal-case",
+   "number": "5",
+   "title": "The orthogonal case",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 885,
+   "n_words": 154
+  },
+  {
+   "id": "sec-016-51-so\ud835\udc61-so2\ud835\udc5b-duality-consider-the-space-\u03bb\ud835\udc49\ud835\udc4a-dim\ud835\udc49",
+   "number": "5.1",
+   "title": "(so\ud835\udc61, so2\ud835\udc5b) duality. Consider the space \u039b\u2219(\ud835\udc49\u2297\ud835\udc4a), dim(\ud835\udc49) = \ud835\udc61, dim(\ud835\udc4a) = \ud835\udc5b. We",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 20,
+   "n_chars": 16733,
+   "n_words": 2777
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "toc_inferred_entries": 18,
+  "sections": 18,
+  "chars_total": 48339
+ }
+}
