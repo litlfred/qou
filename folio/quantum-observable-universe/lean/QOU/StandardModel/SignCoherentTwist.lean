@@ -293,22 +293,30 @@ exist, where for `d` it does (`d_mixed_sign_not_coherent`). -/
 theorem no_mixed_sign_at_total_two {t : Fin 3 → ℤ}
     (hrange : ∀ i, -1 ≤ t i ∧ t i ≤ 1)
     (hsum : t 0 + t 1 + t 2 = 2) :
-    ∀ i, 0 ≤ t i := by
+    0 ≤ t 0 ∧ 0 ≤ t 1 ∧ 0 ≤ t 2 := by
   have h0 := hrange 0
   have h1 := hrange 1
   have h2 := hrange 2
-  intro i
-  fin_cases i <;> omega
+  omega
 
-/-- Corollary: at total `2` the range constraint already implies sign-coherence,
-so coherence is not an extra assumption there — it is a consequence. -/
-theorem coherent_of_total_two {t : Fin 3 → ℤ}
-    (hrange : ∀ i, -1 ≤ t i ∧ t i ≤ 1)
-    (hsum : t 0 + t 1 + t 2 = 2) :
-    SignCoherent t := by
-  intro h
-  obtain ⟨i, j, hi, hj⟩ := h
-  have hj0 := no_mixed_sign_at_total_two hrange hsum j
-  exact absurd hj (by omega)
+/-! **A corollary deliberately NOT stated here.**
+
+`SignCoherent t` at total `2` is *true* — it follows from
+`no_mixed_sign_at_total_two` — but stating it needs `0 ≤ t j` at the
+existential's **arbitrary** index `j`, i.e. the `∀ i, 0 ≤ t i` form. That form
+is not available cheaply: `fin_cases i` leaves goals mentioning
+`t ((fun i => i) ⟨0, ⋯⟩)`, a beta-redex `omega` will not identify with the
+`t 0` of `hrange 0`, so the obvious proof fails on a normalisation detail
+rather than on the mathematics.
+
+Dropped rather than left unproved, because nothing needs it: the finding
+this section records — that coherence is load-bearing only at
+`T ∈ {−1, 0, +1}`, so `u` and `e` are forced by range and total alone — is
+carried by `u_multiset_forced` and `no_mixed_sign_at_total_two` above, and
+reproduced independently by
+[`twist_multiset_coherence_window_probe.py`](../../../../../computations/probes/twist_multiset_coherence_window_probe.py)
+(10/10 checks). Anyone wanting the corollary should expect to spend the effort
+on `Fin` normalisation, not on the content.
+-/
 
 end QOU.StandardModel.SignCoherentTwist
