@@ -7,10 +7,10 @@ section_number: null
 pages: 1-3
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
-doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.954
-latex_coverage_ratio: 0.984
+latex_coverage_ratio: 0.992
 ---
 The idea of the \emph{formal deformation quantization} program \cite{BFFLS}, initiated by Bayen, Flato, Fronsdal, Lichnerowicz and Sternheimer, is to generalize the Weyl product to an arbitrary symplectic (or Poisson) manifold. In this context, the framework of quantum mechanics is the same as classical mechanics, observables are the same, and quantization arises as a \emph{deformation} of the algebra of functions on the manifold, from a commutative to a non-commutative one.
 

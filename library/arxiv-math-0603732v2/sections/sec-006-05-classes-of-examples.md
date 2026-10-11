@@ -7,10 +7,10 @@ section_number: 0.5
 pages: 3-3
 source_pdf: 0603732v2.pdf
 source_sha256: 3464a2ddc2e54f3a
-doc_brief: "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS — W e show that many noetherian Hopf algebras A have a rigid du- alising complex R with R ∼= ν A1[d]."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
-latex_coverage_ratio: 0.675
+latex_coverage_ratio: 0.672
 ---
 []{#xxsec0.5 label="xxsec0.5"} Our results apply to all currently known classes of noetherian Hopf algebras (with bijective antipode $S$). In $\S$<!-- -->6 we examine the details of the application, and in particular the nature of the Nakayama automorphism, for
 

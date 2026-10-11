@@ -6,6 +6,11 @@
   "sha256": "0c45b250fc4a2a49a5eeb67715789dd99b191e1c6df32e428af5fbf43fc87791",
   "bytes": 220232,
   "pages": 20,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:19Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -16,21 +21,28 @@
    "stamp_date": "8 Jan 2011"
   },
   "doi": null,
-  "title": "Gr\u00f6bner-Shirshov bases for categories",
-  "authors_raw": "School of Mathematical Sciences, South China Normal Univer sity",
-  "abstract": "In this paper we establish Composition-Diamond lemma for small categ ories. We give Gr\u00a8 obner-Shirshov bases for simplicial category and cyclic c ategory.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220429045604-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "Gr\u00f6bner-Shirshov bases for categories\u2217 L. A. Bokut \u2020",
+  "title": "Gr\u00f6bner-Shirshov bases for categories\u2217 L. A. Bokut\u2020",
+  "authors_raw": "School of Mathematical Sciences, South China Normal University",
   "title_lines": [
    "Gr\u00f6bner-Shirshov bases for categories\u2217",
-   "L. A. Bokut \u2020"
-  ]
+   "L. A. Bokut\u2020"
+  ],
+  "abstract": "In this paper we establish Composition-Diamond lemma for small categories. We give Gr\u00a8obner-Shirshov bases for simplicial category and cyclic category.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20220429045604-04'00'"
+  },
+  "title_raw": "Gr\u00f6bner-Shirshov bases for categories\u2217 L. A. Bokut\u2020",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Gr\u00a8obner-Shirshov bases for categories \u2217",
+   "outline": "1 Introduction",
+   "text": "Gr\u00f6bner-Shirshov bases for categories\u2217 L. A. Bokut\u2020",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -38,81 +50,329 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "A short survey on Gr\u00f6bner-Shirshov bases",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Free categories and free category partial algebras",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Composition-Diamond lemma for categories",
    "page": 8,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
    "page": 11,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 760,
+   "n_words": 97,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 7,
-   "n_chars": 19965,
-   "n_words": 3624
+   "page_end": 2,
+   "n_chars": 2187,
+   "n_words": 348,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-001-3-free-categories-and-free-category-partial-alge",
+   "id": "sec-001-2-a-short-survey-on-gr\u00f6bner-shirshov-bases",
+   "number": "2",
+   "title": "A short survey on Gr\u00f6bner-Shirshov bases",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 17443,
+   "n_words": 2977,
+   "label_start": "2",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-002-3-free-categories-and-free-category-partial-alge",
    "number": "3",
    "title": "Free categories and free category partial algebras",
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1681,
-   "n_words": 392
+   "n_chars": 1645,
+   "n_words": 355,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-002-4-composition-diamond-lemma-for-categories",
+   "id": "sec-003-4-composition-diamond-lemma-for-categories",
    "number": "4",
    "title": "Composition-Diamond lemma for categories",
    "level": 1,
    "page_start": 8,
+   "page_end": 11,
+   "n_chars": 6138,
+   "n_words": 1330,
+   "label_start": "8",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate",
+   "number": "5",
+   "title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
+   "level": 1,
+   "page_start": 11,
    "page_end": 20,
-   "n_chars": 25391,
-   "n_words": 5641
+   "n_chars": 18338,
+   "n_words": 3443,
+   "label_start": "11",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
-  "sections": 3,
-  "chars_total": 47037,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 46511,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 5,
-   "overlaid": 2,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -120,15 +380,28 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.905,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-3-free-categories-and-free-category-partial-alge",
+     "id": "sec-001-2-a-short-survey-on-gr\u00f6bner-shirshov-bases",
+     "title": "A short survey on Gr\u00f6bner-Shirshov bases",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-free-categories-and-free-category-partial-alge",
      "title": "Free categories and free category partial algebras",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -136,10 +409,18 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-4-composition-diamond-lemma-for-categories",
+     "id": "sec-003-4-composition-diamond-lemma-for-categories",
      "title": "Composition-Diamond lemma for categories",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.419,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-5-gr\u00f6bner-shirshov-bases-for-the-simplicial-cate",
+     "title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.297,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     }
    ]

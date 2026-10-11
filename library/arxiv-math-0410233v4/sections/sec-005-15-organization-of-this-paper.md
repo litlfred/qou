@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0410233v4
-doc_title: "Cusp shapes under cone deformation"
+doc_title: "CUSP SHAPES UNDER CONE DEFORMATION"
 section_id: sec-005-15-organization-of-this-paper
 section_title: "Organization of this paper"
 section_number: 1.5
 pages: 7-7
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
-doc_brief: "Cusp shapes under cone deformation — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.762
 latex_coverage_ratio: 1.0

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0411505v2
-doc_title: "A NON-COMMUT A TIVE FORMULA FOR THE COLORED JONES FUNCTION"
+doc_title: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION"
 section_id: sec-005-3-the-arc-graph-of-a-knot-projection
 section_title: "The arc-graph of a knot projection"
 section_number: 3
 pages: 5-7
 source_pdf: 0411505v2.pdf
 source_sha256: a38cec365e0a227e
-doc_brief: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.99
 ---
 \lbl{sec.arcgraph}
 

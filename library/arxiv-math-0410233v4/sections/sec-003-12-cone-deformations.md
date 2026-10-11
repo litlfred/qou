@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0410233v4
-doc_title: "Cusp shapes under cone deformation"
+doc_title: "CUSP SHAPES UNDER CONE DEFORMATION"
 section_id: sec-003-12-cone-deformations
 section_title: "Cone deformations"
 section_number: 1.2
 pages: 2-5
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
-doc_brief: "Cusp shapes under cone deformation — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
-latex_coverage_ratio: 0.616
+latex_coverage_ratio: 0.598
 ---
 Our primary technique is cone deformation, which we will now describe. Using properties of cone deformations, we obtain geometric information on the topological process of Dehn filling.
 
