@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/s40879-023-00706-0/sections/sec-017",
   "@type": [
     "doco:Section"
@@ -11,9 +16,9 @@
     "library/s40879-023-00706-0/blocks/prose-sec-017",
     "library/s40879-023-00706-0/blocks/prop-sec-017-01",
     "library/s40879-023-00706-0/blocks/cor-sec-017-02",
-    "library/s40879-023-00706-0/blocks/rem-sec-017-03"
+    "library/s40879-023-00706-0/blocks/remark-sec-017-03"
   ],
-  "derivedFrom": "library/s40879-023-00706-0/manifest",
-  "sourceDocument": "library/s40879-023-00706-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40879-023-00706-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40879-023-00706-0/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-sec-047",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-sec-047",
   "kind": "prose",
   "title": "(α,β ) which induces in turn an orientation on the manifold M 4",
   "pageStart": 24,
   "pageEnd": 24,
   "text": "../sections/sec-047-2-αβ-which-induces-in-turn-an-orientation-on-the.md",
-  "derivedFrom": "library/gambaudo-ghys-braids-signatures-2005/manifest",
-  "sourceDocument": "library/gambaudo-ghys-braids-signatures-2005/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -9,7 +9,7 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0707.2003v2",
+  "title": "A geometric model for Hochschild homology of Soergel bimodules Introduction",
   "contains": [
     "library/arxiv-0707.2003v2/sections/sec-front-matter",
     "library/arxiv-0707.2003v2/sections/sec-000",
@@ -21,6 +21,7 @@
     "library/arxiv-0707.2003v2/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -35,9 +36,21 @@
   },
   "meta": {
     "doc_id": "arxiv-0707.2003v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0707.2003v2.pdf",
     "source_sha256": "0b8fe37aabeee412467f3f45b6af8a534c98a0da25ea47c6d914dd2c4b1b0203",
-    "granularity": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "pages": 20,
+    "arxiv": {
+      "id": "0707.2003",
+      "version": "2",
+      "primary_class": "math.AG",
+      "stamp_date": "7 Aug 2007"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/phys-rep09/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "The Magnus expansion and some of its applications",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "phys-rep09",
   "contains": [
     "library/phys-rep09/sections/sec-000",
     "library/phys-rep09/sections/sec-001",
@@ -16,8 +21,10 @@
     "library/phys-rep09/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "phys-rep09",
+    "title_source": "slug",
     "source_file": "phys-rep09.pdf",
     "source_sha256": "cd345d3df9358efc2e69758c1b5fcb5045ff1486472d3843a0b681996cbf18e7",
     "pages": 88,

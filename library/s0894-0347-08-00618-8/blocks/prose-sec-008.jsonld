@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-08-00618-8/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s0894-0347-08-00618-8/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Hadamard-Fischer inequalities and GKK-matrices",
   "pageStart": 15,
   "pageEnd": 17,
   "text": "../sections/sec-008-32-hadamard-fischer-inequalities-and-gkk-matrice.md",
-  "derivedFrom": "library/s0894-0347-08-00618-8/manifest",
-  "sourceDocument": "library/s0894-0347-08-00618-8/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-08-00618-8/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-08-00618-8/manifest.jsonld",
   "provenance": "ingested"
 }

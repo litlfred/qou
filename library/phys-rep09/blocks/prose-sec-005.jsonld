@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/phys-rep09/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/phys-rep09/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Conclusions",
   "pageStart": 84,
   "pageEnd": 84,
   "text": "../sections/sec-005-conclusions.md",
-  "derivedFrom": "library/phys-rep09/manifest",
-  "sourceDocument": "library/phys-rep09/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
   "provenance": "ingested"
 }

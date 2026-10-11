@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kmj-48-2-255/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "References",
+  "pageStart": 26,
+  "pageEnd": 26,
+  "contains": [
+    "library/kmj-48-2-255/blocks/prose-sec-003"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kmj-48-2-255/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kmj-48-2-255/manifest.jsonld",
+  "provenance": "ingested"
+}

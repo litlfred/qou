@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0504116v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On deformations of hyperbolic 3-manifolds with geodesic boundary",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0504116v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "0504116v2",
   "contains": [
     "library/0504116v2/sections/sec-000",
     "library/0504116v2/sections/sec-001",
@@ -24,8 +29,10 @@
     "library/0504116v2/sections/sec-015"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "0504116v2",
+    "title_source": "slug",
     "source_file": "0504116v2.pdf",
     "source_sha256": "24a8c998e40aed5da14e751f564ab590a3b178075b00896f42def6e23ec0927f",
     "pages": 24,

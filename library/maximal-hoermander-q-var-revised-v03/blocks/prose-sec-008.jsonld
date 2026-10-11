@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Examples and concluding remarks",
   "pageStart": 35,
   "pageEnd": 36,
   "text": "../sections/sec-008-examples-and-concluding-remarks.md",
-  "derivedFrom": "library/maximal-hoermander-q-var-revised-v03/manifest",
-  "sourceDocument": "library/maximal-hoermander-q-var-revised-v03/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
   "provenance": "ingested"
 }

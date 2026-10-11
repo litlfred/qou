@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s00526-018-1443-6/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Preliminaries",
+  "pageStart": 3,
+  "pageEnd": 5,
+  "contains": [
+    "library/s00526-018-1443-6/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00526-018-1443-6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00526-018-1443-6/manifest.jsonld",
+  "provenance": "ingested"
+}

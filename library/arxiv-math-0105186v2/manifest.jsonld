@@ -28,6 +28,7 @@
     "library/arxiv-math-0105186v2/sections/sec-013"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -37,9 +38,19 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0105186v2",
+    "title_source": "slug",
     "source_file": "0105186v2.pdf",
     "source_sha256": "e1552ceb6c82c27c0b733b7cdffaacfd383464c5b432dc12609073141f5b878a",
-    "granularity": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "pages": 71,
+    "arxiv": {
+      "id": "math/0105186",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "20 Jul 2002"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

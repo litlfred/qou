@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-020",
   "kind": "prose",
   "title": "E gl',m'(t- 1)m'-t'--i-l+l;t- 1)",
   "pageStart": 18,
   "pageEnd": 19,
   "text": "../sections/sec-020-9-e-glmt--1m-t--i-llt--1.md",
-  "derivedFrom": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest",
-  "sourceDocument": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
   "provenance": "ingested"
 }

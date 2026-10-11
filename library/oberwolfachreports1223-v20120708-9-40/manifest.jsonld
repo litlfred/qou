@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "oberwolfachreports1223-v20120708-9-40",
+  "contains": [
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-front-matter",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-000",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-001",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-002",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-003",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-004",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-005",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-006",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-007",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-008",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "oberwolfachreports1223-v20120708-9-40",
+    "title_source": "slug",
+    "source_file": "OberwolfachReports1223_v20120708_9_40.pdf",
+    "source_sha256": "94f82cfc185955bab2b3bcba5a9d73e3db549ed14f8a9c075b77557ca80f0b82",
+    "pages": 67,
+    "arxiv": null,
+    "doi": "10.4171/OWR/2012/28",
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

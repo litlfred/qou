@@ -7,7 +7,7 @@
   ],
   "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ram1991-frobenius-formula/manifest.jsonld",
   "@type": [
-    "folio-assistant-core:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "ram1991-frobenius-formula",
   "contains": [
@@ -24,6 +24,7 @@
     "library/ram1991-frobenius-formula/sections/sec-009"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ram1991-frobenius-formula",
     "title_source": "slug",

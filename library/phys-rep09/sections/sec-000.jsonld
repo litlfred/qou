@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/phys-rep09/sections/sec-000",
   "@type": [
     "doco:Section"
@@ -19,13 +24,13 @@
     "library/phys-rep09/blocks/lem-sec-000-08",
     "library/phys-rep09/blocks/thm-sec-000-09",
     "library/phys-rep09/blocks/thm-sec-000-10",
-    "library/phys-rep09/blocks/ex-sec-000-11",
-    "library/phys-rep09/blocks/ex-sec-000-12",
+    "library/phys-rep09/blocks/example-sec-000-11",
+    "library/phys-rep09/blocks/example-sec-000-12",
     "library/phys-rep09/blocks/thm-sec-000-13",
-    "library/phys-rep09/blocks/ex-sec-000-14",
+    "library/phys-rep09/blocks/example-sec-000-14",
     "library/phys-rep09/blocks/thm-sec-000-15"
   ],
-  "derivedFrom": "library/phys-rep09/manifest",
-  "sourceDocument": "library/phys-rep09/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
   "provenance": "ingested"
 }

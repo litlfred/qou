@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/04010141/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/04010141/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Commutative diagrams and lifting representations",
   "pageStart": 19,
   "pageEnd": 20,
   "text": "../sections/sec-004-51-commutative-diagrams-and-lifting-representati.md",
-  "derivedFrom": "library/04010141/manifest",
-  "sourceDocument": "library/04010141/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/04010141/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/04010141/manifest.jsonld",
   "provenance": "ingested"
 }

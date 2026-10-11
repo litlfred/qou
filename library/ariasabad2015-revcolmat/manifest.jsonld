@@ -7,7 +7,7 @@
   ],
   "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ariasabad2015-revcolmat/manifest.jsonld",
   "@type": [
-    "folio-assistant-core:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "ariasabad2015-revcolmat",
   "contains": [
@@ -29,9 +29,12 @@
     "library/ariasabad2015-revcolmat/sections/sec-014",
     "library/ariasabad2015-revcolmat/sections/sec-015",
     "library/ariasabad2015-revcolmat/sections/sec-016",
-    "library/ariasabad2015-revcolmat/sections/sec-017"
+    "library/ariasabad2015-revcolmat/sections/sec-017",
+    "library/ariasabad2015-revcolmat/sections/sec-018",
+    "library/ariasabad2015-revcolmat/sections/sec-019"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "ariasabad2015-revcolmat",
     "title_source": "slug",

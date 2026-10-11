@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/amc-2730/blocks/prose-sec-004",
+  "kind": "prose",
+  "title": "Semi-simple walks and cyclic permutation",
+  "pageStart": 14,
+  "pageEnd": 21,
+  "text": "../sections/sec-004-semi-simple-walks-and-cyclic-permutation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/amc-2730/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/amc-2730/manifest.jsonld",
+  "provenance": "ingested"
+}

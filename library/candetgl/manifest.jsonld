@@ -9,7 +9,7 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "candetgl",
+  "title": "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics",
   "contains": [
     "library/candetgl/sections/sec-front-matter",
     "library/candetgl/sections/sec-000",
@@ -40,11 +40,19 @@
     "library/candetgl/sections/sec-025"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "candetgl",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "candetgl.pdf",
     "source_sha256": "d788af715428b8b2cafabe8caf6e8c0df32f5c04a12006778221c189a7701efc",
-    "granularity": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "pages": 31,
+    "arxiv": null,
+    "doi": "10.1063/1.1329659",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

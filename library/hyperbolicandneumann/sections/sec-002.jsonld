@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/hyperbolicandneumann/sections/sec-002",
   "@type": [
     "doco:Section"
@@ -10,7 +15,7 @@
   "contains": [
     "library/hyperbolicandneumann/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/hyperbolicandneumann/manifest",
-  "sourceDocument": "library/hyperbolicandneumann/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hyperbolicandneumann/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hyperbolicandneumann/manifest.jsonld",
   "provenance": "ingested"
 }

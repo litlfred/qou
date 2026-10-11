@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/reshetikhin-turaev/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Ribbon graphs and their invariants derived from quantum groups",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Ribbon graphs and their invaraints derived from quantum groups",
   "contains": [
     "library/reshetikhin-turaev/sections/sec-000",
     "library/reshetikhin-turaev/sections/sec-001",
@@ -56,8 +61,11 @@
     "library/reshetikhin-turaev/sections/sec-047"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "reshetikhin-turaev",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "Reshetikhin_Turaev.pdf",
     "source_sha256": "7ead97555a25d357e952ba0ede5147f9e1a252e5fbcaa2e4de31d2b91edc0171",
     "pages": 26,

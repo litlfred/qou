@@ -1,8 +1,14 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+    }
+  ],
   "@id": "library/ihpmay2025/blocks/lem-sec-008-01",
   "@type": [
-    "folio:Lemma",
+    "folio-assistant-sci:Lemma",
     "doco:Section"
   ],
   "kind": "lemma",
@@ -10,6 +16,6 @@
   "pageEnd": 16,
   "text": "lem-sec-008-01.md",
   "derivedFrom": "library/ihpmay2025/sections/sec-008",
-  "sourceDocument": "library/ihpmay2025/manifest",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
   "provenance": "ingested"
 }

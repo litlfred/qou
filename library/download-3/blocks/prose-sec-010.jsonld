@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/download-3/blocks/prose-sec-010",
+  "kind": "prose",
+  "title": "Proof of the Main Theorem. First of all note the following fact which follows",
+  "pageStart": 20,
+  "pageEnd": 23,
+  "text": "../sections/sec-010-42-proof-of-the-main-theorem-first-of-all-note-t.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "provenance": "ingested"
+}

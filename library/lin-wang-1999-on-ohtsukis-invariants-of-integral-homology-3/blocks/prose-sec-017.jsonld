@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-017",
   "kind": "prose",
   "title": "So the only non-trivial contribution",
   "pageStart": 15,
   "pageEnd": 16,
   "text": "../sections/sec-017-9-so-the-only-non-trivial-contribution.md",
-  "derivedFrom": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest",
-  "sourceDocument": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
   "provenance": "ingested"
 }

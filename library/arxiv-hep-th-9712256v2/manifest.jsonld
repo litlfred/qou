@@ -7,7 +7,7 @@
   ],
   "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9712256v2/manifest.jsonld",
   "@type": [
-    "folio-assistant-core:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "On structure constants and fusion rules in the SL(2,C)/SU(2) WZNW model",
   "contains": [
@@ -22,6 +22,7 @@
     "library/arxiv-hep-th-9712256v2/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "arxiv-hep-th-9712256v2",
     "title_source": "corroborated",

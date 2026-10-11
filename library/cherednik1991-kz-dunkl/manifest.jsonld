@@ -7,7 +7,7 @@
   ],
   "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cherednik1991-kz-dunkl/manifest.jsonld",
   "@type": [
-    "folio-assistant-core:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "cherednik1991-kz-dunkl",
   "contains": [
@@ -19,6 +19,7 @@
     "library/cherednik1991-kz-dunkl/sections/sec-004"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "cherednik1991-kz-dunkl",
     "title_source": "slug",

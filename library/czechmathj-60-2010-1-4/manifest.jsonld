@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/czechmathj-60-2010-1-4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "czechmathj-60-2010-1-4",
+  "contains": [
+    "library/czechmathj-60-2010-1-4/sections/sec-front-matter",
+    "library/czechmathj-60-2010-1-4/sections/sec-000",
+    "library/czechmathj-60-2010-1-4/sections/sec-001",
+    "library/czechmathj-60-2010-1-4/sections/sec-002",
+    "library/czechmathj-60-2010-1-4/sections/sec-003",
+    "library/czechmathj-60-2010-1-4/sections/sec-004",
+    "library/czechmathj-60-2010-1-4/sections/sec-005",
+    "library/czechmathj-60-2010-1-4/sections/sec-006",
+    "library/czechmathj-60-2010-1-4/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "czechmathj-60-2010-1-4",
+    "title_source": "slug",
+    "source_file": "CzechMathJ_60-2010-1_4.pdf",
+    "source_sha256": "7595f81d1398d0bfdb2bc0fd44c5a0653dbcdeecec6804bdec90e7e3bfee5092",
+    "pages": 19,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/noniterativeroth2/sections/sec-004",
   "@type": [
     "doco:Section"
@@ -11,7 +16,7 @@
     "library/noniterativeroth2/blocks/prose-sec-004",
     "library/noniterativeroth2/blocks/lem-sec-004-01"
   ],
-  "derivedFrom": "library/noniterativeroth2/manifest",
-  "sourceDocument": "library/noniterativeroth2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/noniterativeroth2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/noniterativeroth2/manifest.jsonld",
   "provenance": "ingested"
 }

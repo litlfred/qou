@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/fd58d8e182edda805fed0946606c5ab82f81/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Gröbner-Shirshov bases for Temperley-Lieb algebras",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fd58d8e182edda805fed0946606c5ab82f81/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "fd58d8e182edda805fed0946606c5ab82f81",
   "contains": [
     "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-000",
     "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-001",
@@ -24,8 +29,10 @@
     "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-015"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "fd58d8e182edda805fed0946606c5ab82f81",
+    "title_source": "slug",
     "source_file": "fd58d8e182edda805fed0946606c5ab82f81.pdf",
     "source_sha256": "292cb048e70979359ab588ed7644044860fbfdf46d2047624b0ba44559a03881",
     "pages": 7,
