@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-11T06:18:36Z
+updated_at: 2026-10-11T07:42:51Z
 parent: qou-d8c7
 ---
 
@@ -71,6 +71,17 @@ STILL OPEN (general r): the general-r model. That means the TL standard modules 
 **Verified (lean-direct, -DautoImplicit=false -s 65536, shadow over the restored cache):** JonesNormalForm, Hecke/MarkovTrace, Shared/MarkovTraceClaim, Hecke/MarkovTraceOnH4A, Hecke/MarkovTraceClassNotUnique (built with -o); direct importers hecke_mass_trace, tmli_constituent_composite_agreement, Hecke.lean, MarkovTraceH2, MarkovTraceOnH3A, Hecke/Wedderburn, MarkovBondFactor, ClosedFormInterfaceFactors, plus comment-edited rj_canonical_inner_product, BorromeanCanonicalTraceDerivation, JonesNormalFormQuot: all exit 0.
 
 **Still open.** No instance in the tree is yet proved to satisfy IsMarkov (markovTraceH2 / H3A / H4A would be the first); until one is, markov_trace_unique has no proved application. Dated audit docs citing the axiom were left as historical records.
+
+
+
+## 2026-10-11 — the concrete Markov traces satisfy (M3); markov_trace_unique now has applications (branch claude/markov-crosslevel-instances-2026-10-11, head 4add0ad405)
+
+New QOU/Hecke/MarkovTraceIsMarkov.lean, sorry-free, lean-direct -DautoImplicit=false -s 65536 exit 0 against a private shadow with the whole 43-module import cone rebuilt (cached oleans dated 2026-08-24 predate the sources). #print axioms on all 7 results: propext, Classical.choice, Quot.sound.
+- isMarkov_H2 / isMarkov_H3A / isMarkov_H4A: (markovTraceH2 R q z).IsMarkov, (markovTraceH3A K q z).IsMarkov, (markovTraceH4A K q z).IsMarkov, for EVERY z (Ocneanu's trace exists for every z; convention D is one specialisation). No instance failed (M3).
+- Method: closure lemma mem_of_mem_adjoin_of_mul_mem (a submodule containing 1 and closed under right multiplication by S contains adjoin S). Level 0: K·1. H3 level 1: coords 2..5 vanish, peel = H3.trM_markov_σ₁. H4 level 2: image of iota34, peel = trM4_markov_σ₂ + trM4_iota34_stabilizes. H4 level 1: iota34 of the H3 level-1 subspace, iota34_mulσ₁ + H3.trM_markov_σ₁. No word enumeration needed.
+- Payoff: markovTraceH2_unique / markovTraceH3A_unique / markovTraceH4A_unique — every MarkovTrace on the tree's H_n (n = 2,3,4) satisfying IsMarkov equals the concrete trace at its own z_param (first applications of markov_trace_unique). mixMarkov_not_isMarkov: the class-satisfying counterexample t_Z of MarkovTraceClassNotUnique is NOT (M3) (over fields with 6 != 0) — IsMarkov is exactly the missing condition.
+- Docstrings updated: Hecke/MarkovTrace.lean, IwahoriHecke/JonesNormalForm.lean, Archimedean/rj_canonical_inner_product.lean (comment-only). Recompiled importers: MarkovTransfer, MarkovBondFactor, hecke_mass_trace, tmli_constituent_composite_agreement, RossoJonesH4 (exit 0). NOT rebuilt (comment-only upstream change): JonesNormalFormQuot, Hecke/Wedderburn, ClosedFormInterfaceFactors, QOU/Hecke.lean.
+STILL OPEN: general-r Rosso–Jones; Ocneanu existence on H_n for n >= 5 (no MarkovTrace constructed there); linear independence of Jones words.
 
 
 ## 2026-10-11 — general-r infrastructure (branch claude/tl-standard-modules-2026-10-11, head 2842f35b43)
