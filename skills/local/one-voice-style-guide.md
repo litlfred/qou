@@ -192,6 +192,32 @@ trusted to follow a citation.
 | **Math voice** | Active ("we construct $X$") for new definitions; passive ("$X$ is called") for established terms | Mixing active/passive for the same concept |
 | **Reader address** | Never address the reader directly | "you can verify", "the reader will note" |
 
+### No audit or agent commentary in paper prose (STRICT, owner 2026-10-11)
+
+The paper presents mathematics, and physics at the comparison points. It
+does not narrate its own production. Specifically, prose never carries:
+
+- the corpus's history — "earlier drafts asserted", "an earlier version of
+  this definition opened", "this was corrected", "retracted";
+- formalisation grading — "sorry-free", "axiom-free", "not formalised", "the
+  Lean backing does not carry it", "absent from Mathlib";
+- repository furniture — bean IDs, PR numbers, `computations/` or
+  `docs/audits/` paths, backticked `.lean` paths;
+- provenance stories — "measured on …", "re-measured", precision gates, stale
+  witnesses;
+- agent speech — "an agent found", "this session", "we tried X";
+- defensive hedges about the text itself — "in the loosest terms that are
+  still honest", "stating them as one conjunction is deliberate".
+
+Name the formal statement if useful ("The formal statement is
+`QOU.X.thm`."); do not grade it. Such material goes to the block's
+`authorNotes` (AGENTS.md §4d) or to a `docs/audits/` document.
+
+**Exception.** An open conjecture may carry one brief remark — a few
+sentences in scholarly voice — on its current status and possible routes.
+
+Check: `bun run folio/pipeline/paper-commentary-audit.ts <chapter-dir>`.
+
 ## Title Conventions (chapter / section / subsection)
 
 Titles are the table-of-contents face of the paper's story. Three
@@ -524,7 +550,11 @@ Before committing any .md content, verify:
 9. [ ] **Cross-chapter**: Terms introduced in earlier chapters are
        referenced, not re-defined
 10. [ ] **Chapter voice**: Content matches the chapter context snippet
-11. [ ] **Render-QA (math-bearing `.md`)**: Ran `local/markdown-render-check`
+11. [ ] **No audit / agent commentary**: no corpus history, formalisation
+        grading, bean/PR/path references, provenance stories or agent speech
+        in prose (open conjectures: one brief status remark allowed).
+        `paper-commentary-audit.ts` exits 0 on the chapter.
+12. [ ] **Render-QA (math-bearing `.md`)**: Ran `local/markdown-render-check`
         — delimiter balance, no `\operatorname`, no `+`/`-`/`*` line-starts in
         `$$`, align-family fenced as ` ```tex `, **and** the expository pass
         (every symbol glossed before use; no notation collisions). MANDATORY
