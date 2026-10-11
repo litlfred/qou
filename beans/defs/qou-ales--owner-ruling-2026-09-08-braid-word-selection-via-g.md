@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-10-11T08:00:00Z
+updated_at: 2026-10-11T12:58:59Z
 parent: qou-v2om
 ---
 
@@ -203,6 +203,12 @@ which **is** the disjoint-block form of the connected-sum multiplicativity step 
 **Third point, independent agreement:** #7418's C9 (*"the corpus's bond-product grounding cites a theorem whose hypothesis the production word fails"*) is §6b's finding from the other side — `ProductionChainBondProduct`'s strand-window hypotheses are sufficient-not-necessary. Two arcs, two methods, same conclusion about the same citation.
 
 Recorded as §7b of the step-11 audit; §7 reason 3 re-scoped from "not formalised" to "conditionally formalised on an open PR". Coordination comment posted on #7418.
+
+**2026-10-11 — strand-count tower of γγ production** (issue #7727, branch `claude/gg-production-ntower-2026-10-11`, `computations/probes/gg_ntower/`). Pre-registered (4544d19380) before computing. Collisions V_i = σ_iσ_{i+1}⁻¹ (and the bare U_i = σ_iσ_{i+1}, separate column) placed with a rigid shift s ∈ {0, ±1, ±2, +3}, up to 9 strands; strands closed from the top by the convention-D Markov conditional expectation; reading 3 tested at every level. Exact over ℚ(q); 5/5 checks.
+- s = +1 telescopes in any group: V_0⋯V_{k−1} = σ_0σ_k⁻¹ (Lean `QOU/QBeta/GammaGammaStaircaseTelescopes.lean`, sorry-free). Degenerate.
+- s = −1, ±2, +3: no k admissible, for either vertex. After three collisions closed down to three strands, χ_(2,1) is already negative at q = 1 (−1/4 or −1/16) and stays negative for every q > 1.
+- Only s = 0 (all collisions on the same three strands, k = 3, 6) confines. Its χ_(2,1) leaves the q = 1 value at h⁴; the climbing placements leave at h¹ or h².
+- Scope (a): rigid shifts with top closing only. Jones pair creation, bottom closing, quarks, gluons and two nucleons were not tested. Selection stays open.
 
 ## 2026-10-11 — quark template tracked order by order in q (reading 3)
 

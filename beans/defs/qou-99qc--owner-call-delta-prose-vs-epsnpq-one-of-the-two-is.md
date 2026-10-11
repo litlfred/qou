@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-10-11T07:50:29Z
+updated_at: 2026-10-11T12:58:59Z
 parent: qou-10v9
 ---
 
@@ -3366,6 +3366,12 @@ Route 2 and options 1 through 1d (and route 1, ohara_link_energy) took the seen 
 ## 2026-10-11 (PR #7695)
 
 Neutron expansion in `signed_candidates_probe.py` was wrong (uu→dd instead of ud·ud·dd); fixed and now checked against `build_nucleon_nf_mp`. Core (σ₀σ₁⁻¹)³ and 00001100011 are the same Bring loop though not conjugate. B3: under Hecke H₃(q₀) the 2×2 quantity reduces to Wedderburn characters, x = |χ_(2,1)|/√|χ_(3)χ_(1³)|, det = −([2]_q/2)⁴ for both nucleons; under Burau t = −q₀, det = χ_(3). The normalisations disagree in type on every row; neither adopted; B4 (no energy for sums) stays default. Selection still OPEN.
+
+**2026-10-11 — strand-count tower of γγ production** (issue #7727, branch `claude/gg-production-ntower-2026-10-11`, `computations/probes/gg_ntower/`). Pre-registered (4544d19380) before computing. Collisions V_i = σ_iσ_{i+1}⁻¹ (and the bare U_i = σ_iσ_{i+1}, separate column) placed with a rigid shift s ∈ {0, ±1, ±2, +3}, up to 9 strands; strands closed from the top by the convention-D Markov conditional expectation; reading 3 tested at every level. Exact over ℚ(q); 5/5 checks.
+- s = +1 telescopes in any group: V_0⋯V_{k−1} = σ_0σ_k⁻¹ (Lean `QOU/QBeta/GammaGammaStaircaseTelescopes.lean`, sorry-free). Degenerate.
+- s = −1, ±2, +3: no k admissible, for either vertex. After three collisions closed down to three strands, χ_(2,1) is already negative at q = 1 (−1/4 or −1/16) and stays negative for every q > 1.
+- Only s = 0 (all collisions on the same three strands, k = 3, 6) confines. Its χ_(2,1) leaves the q = 1 value at h⁴; the climbing placements leave at h¹ or h².
+- Scope (a): rigid shifts with top closing only. Jones pair creation, bottom closing, quarks, gluons and two nucleons were not tested. Selection stays open.
 
 ## 2026-10-11 — quark template tracked order by order in q (reading 3)
 
