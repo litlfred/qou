@@ -8,6 +8,7 @@ pages: 5-6
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
 toc_source: outline
+doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on truncated"
 ---
 In this section we discuss some background on partitions and set the notation
 used frequently in the article.

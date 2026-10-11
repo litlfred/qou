@@ -8,6 +8,7 @@ pages: 49-51
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
 toc_source: outline
+doc_brief: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s"
 ---
 In this appendix, we present an alternative proof of Corollary 6.3 based on the Regev
 formula for the Hecke algebra of type A. To proceed with this, we elaborate on the associ-

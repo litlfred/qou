@@ -8,6 +8,7 @@ pages: 13-13
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
 toc_source: outline
+doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on truncated"
 ---
 the left hand side of inequality (11) is given by
 H(q) = (−1)k−1(q6; q6)∞+ (−1)k (q6; q6)∞

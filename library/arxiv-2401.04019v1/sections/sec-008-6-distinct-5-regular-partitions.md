@@ -8,6 +8,7 @@ pages: 16-18
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
 toc_source: outline
+doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on truncated"
 ---
 Proving identities (6.8), (6.9), (6.11), and (6.14) in [14] combinatorially is still
 an open problem. The diﬃculty consists in ﬁnding a combinatorial proof of the

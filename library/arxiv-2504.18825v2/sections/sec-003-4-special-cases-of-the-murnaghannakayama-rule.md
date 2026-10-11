@@ -8,6 +8,7 @@ pages: 18-20
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
 toc_source: outline
+doc_brief: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s"
 ---
 In this section, we will explain how our Murnaghan–Nakayama rule recovers the existing
 formulae as special cases. Three special cases of Corollary 3.4 will be considered case by

@@ -8,6 +8,7 @@ pages: 55-56
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
 toc_source: outline
+doc_brief: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s"
 ---
 [AR22]
 R. Adin, Y. Roichman, On characters of wreath products, Comb. Theory 2 (2022), no. 2, Paper

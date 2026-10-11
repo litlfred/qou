@@ -8,6 +8,7 @@ pages: 25-43
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
 toc_source: outline
+doc_brief: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s"
 ---
 In this section, as the first application of our Murnaghan–Nakayama rule, we are de-
 voted to giving the Regev formula for the cyclotomic Hecke algebra Hm,n(q, u). Once the
