@@ -30,6 +30,8 @@ where $\delta_n$ is the jet correction at level $n$. The classes $\kappa_0$ and 
 
 This establishes the **perpetual obstruction** phenomenon. A non-torsion Euler class $\kappa_0$ produces a non-vanishing obstruction at every level of the brane tower. Jet refinement cannot remove it.
 
+*Scope.* For the bands used in this corpus the complementary-subgroup step is not established on a closed surface such as Bring's. There $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish. For the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. For $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope note in the [proof of QU-to-QOU](#prf:qu-to-qou). On a smooth projective curve over an algebraically closed field, $H^2(\mathcal{S}, \mathbb{G}_m) = 0$ as well, so the divisibility statement above is properly a statement about the $\mu_n$-valued class, the degree modulo $n$.
+
 **Summary.** For any quantum universe with non-zero Euler characteristic $\chi(A) \neq 0$:
 1. The obstruction $\kappa_0$ is non-trivial.
 2. The Kummer tower filters the obstruction space by divisibility.

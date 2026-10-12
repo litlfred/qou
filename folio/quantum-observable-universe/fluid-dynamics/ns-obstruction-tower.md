@@ -46,6 +46,8 @@ $$
 
 where $\delta_n$ applies the explicit jet correction at level $n$. Due to the perpetual obstruction ([QU-to-QOU](#thm:qu-to-qou) item 3, rigidly strengthened by the [motivic perpetual obstruction theorem](#thm:motivic-perpetual-obstruction) evaluating the substrate's motivic Galois character place-by-place), $\kappa_0$ and $\delta_n$ strictly occupy complementary subgroups whenever $\kappa_0$ avoids torsion. Consequently, $\kappa_n \neq 0$ unconditionally for all $n$.
 
+*Scope.* This step inherits item 3 of [QU-to-QOU](#thm:qu-to-qou), which is conditional. For the bands used in this corpus the complementary-subgroup step is not established on a closed surface such as Bring's. There $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish. For the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. For $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope note in the [proof of QU-to-QOU](#prf:qu-to-qou).
+
 **(b) Restriction to the collision locus.**
 
 The collision locus $\Sigma$ forms a strict 1-dimensional submanifold (a line segment). $H^2(\Sigma, \mathcal{B}|_\Sigma)$ derives from the long exact sequence applied to the pair $(\mathcal{S}, \mathcal{S} \setminus \Sigma)$:

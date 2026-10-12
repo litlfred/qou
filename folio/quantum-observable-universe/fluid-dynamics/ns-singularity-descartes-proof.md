@@ -20,6 +20,8 @@ The total obstruction $\kappa_n|_\Sigma = \kappa_0|_\Sigma +
 $\kappa_0|_\Sigma \neq 0$ cannot be cancelled by the analytic
 term $\delta_n|_\Sigma$.
 
+*Scope of Step 2.* It inherits item 3 of [QU-to-QOU](#thm:qu-to-qou), which is conditional. For the bands used in this corpus the complementary-subgroup step is not established on a closed surface such as Bring's. There $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish. For the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. For $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope note in the [proof of QU-to-QOU](#prf:qu-to-qou).
+
 **Step 3** (geometry).
 $\mathrm{NS}(A) \neq 0$ implies, via the
 [core-Levi equivalence](#prop:core-levi-form), that the
