@@ -66,6 +66,16 @@ _site/
 
 # Lean build artifacts (all paper packages + root workspace)
 .lake/
+# `.lake/` has a trailing slash, so it matches a DIRECTORY only -- a SYMLINK
+# named `.lake` slips straight past it. That is not hypothetical: on
+# 2026-10-12 a `.lake -> /home/user/qou/.lake` symlink was committed to main
+# by a `git add -A`, an absolute path into one container's filesystem, which
+# is a self-referential loop there and dangling everywhere else. It broke the
+# AGENTS.md olean-cache restore outright (every `.lake/...` tar member failed
+# with "Invalid cross-device link"; mathlib oleans = 0). The slash-free form
+# below matches both spellings. Same convention already used at the
+# `folio/*/lean/.lake` line further down.
+/.lake
 .lake-build.lock
 lake-packages/
 folio/*/lean/.lake/
