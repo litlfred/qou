@@ -187,6 +187,85 @@ theorem sq_succ_right {q : R} (hq : q ≠ 0) (o z : ℕ) :
       field_simp
       ring
 
+
+/-! ### Signed quantum integers on `ℤ` -/
+
+/-- The signed quantum integer `[N]`, `N ∈ ℤ`: `[−k] = −[k]`. -/
+noncomputable def qZ (q : R) : ℤ → R
+  | Int.ofNat k => qn q k
+  | Int.negSucc k => -qn q (k + 1)
+
+theorem qZ_nat (q : R) (k : ℕ) : qZ q (k : ℤ) = qn q k := rfl
+
+theorem qZ_neg_nat (q : R) (k : ℕ) : qZ q (-(k : ℤ)) = -qn q k := by
+  rcases k with _ | k
+  · show qZ q (-((0 : ℕ) : ℤ)) = -qn q 0
+    simp only [Nat.cast_zero, neg_zero, qn_zero]; rfl
+  · rfl
+
+theorem qZ_succ {q : R} (hq : q ≠ 0) (N : ℤ) : qZ q (N + 1) = q * qZ q N + q ^ (-N) := by
+  obtain ⟨k, rfl | rfl⟩ := Int.eq_nat_or_neg N
+  · rw [show (k : ℤ) + 1 = ((k + 1 : ℕ) : ℤ) by push_cast; ring, qZ_nat, qZ_nat, qn_succ' hq,
+      zpow_neg, zpow_natCast, inv_pow]
+  · rcases k with _ | j
+    · simp only [Nat.cast_zero, neg_zero, zero_add, zpow_zero]
+      change qn q 1 = q * qn q 0 + 1
+      rw [qn_one, qn_zero]; ring
+    · rw [show -((j + 1 : ℕ) : ℤ) + 1 = -(j : ℤ) by push_cast; ring, qZ_neg_nat, qZ_neg_nat,
+        neg_neg, zpow_natCast, qn_succ]
+      field_simp
+      ring
+
+theorem sq_eq_qZ (q : R) (o z : ℕ) : sq q o z = qZ q ((o : ℤ) - z) := by
+  unfold sq
+  split_ifs with h
+  · rw [show (o : ℤ) - z = ((o - z : ℕ) : ℤ) by omega, qZ_nat]
+  · rw [show (o : ℤ) - z = -((z - o : ℕ) : ℤ) by omega, qZ_neg_nat]
+
+/-- `[k+1][b+1] = [k][b] + [b+k+1]` for every `b ∈ ℤ`. -/
+theorem qZ_mul {q : R} (hq : q ≠ 0) (k : ℕ) (b : ℤ) :
+    qn q (k + 1) * qZ q (b + 1) = qn q k * qZ q b + qZ q (b + k + 1) := by
+  set G : ℤ → R := fun b => qn q (k + 1) * qZ q (b + 1) - (qn q k * qZ q b + qZ q (b + k + 1))
+    with hG
+  have hstep : ∀ b, G (b + 1) = q * G b := by
+    intro b
+    simp only [hG]
+    rw [qZ_succ hq (b + 1), qZ_succ hq b, show b + 1 + k + 1 = (b + k + 1) + 1 by ring,
+      qZ_succ hq (b + k + 1)]
+    have e1 : q ^ (-b) = q ^ (-(b + 1)) * q := by
+      rw [← zpow_add_one₀ hq]; ring_nf
+    have e2 : q ^ (-(b + k + 1)) = q ^ (-(b + 1)) * (q ^ k)⁻¹ := by
+      rw [← zpow_natCast, ← zpow_neg, ← zpow_add₀ hq]; ring_nf
+    rw [e1, e2, qn_succ' hq k, inv_pow]
+    ring
+  have h0 : G 0 = 0 := by
+    have e1 : qZ q ((0 : ℤ) + 1) = 1 := by change qn q 1 = 1; exact qn_one q
+    have e0 : qZ q 0 = 0 := rfl
+    have ek : qZ q ((0 : ℤ) + k + 1) = qn q (k + 1) := by
+      rw [show (0 : ℤ) + k + 1 = ((k + 1 : ℕ) : ℤ) by push_cast; ring]; rfl
+    simp only [hG]; rw [e1, e0, ek]; ring
+  have hall : G b = 0 := by
+    induction b using Int.induction_on with
+    | zero => exact h0
+    | succ i ih => rw [hstep, ih, mul_zero]
+    | pred i ih =>
+      have := hstep (-(i : ℤ) - 1)
+      rw [show -(i : ℤ) - 1 + 1 = -(i : ℤ) by ring, ih] at this
+      exact (mul_eq_zero.mp this.symm).resolve_left hq
+  simp only [hG, sub_eq_zero] at hall
+  exact hall
+
+/-- `Σ_{i<k} [a + 2i] = [k][a + k − 1]` for `a ∈ ℤ`. -/
+theorem sum_qZ {q : R} (hq : q ≠ 0) (a : ℤ) :
+    ∀ k : ℕ, ∑ i ∈ Finset.range k, qZ q (a + 2 * i) = qn q k * qZ q (a + k - 1)
+  | 0 => by simp
+  | k + 1 => by
+    rw [Finset.sum_range_succ, sum_qZ hq a k]
+    have := qZ_mul hq k (a + k - 1)
+    rw [show a + k - 1 + 1 = a + ((k + 1 : ℕ) : ℤ) - 1 by push_cast; ring,
+      show a + k - 1 + k + 1 = a + 2 * (k : ℤ) by ring] at this
+    rw [this]
+
 /-! ## 3. The lowering operator `F` and the commutator `[E, F]` -/
 
 variable {q : R}
@@ -807,7 +886,264 @@ theorem trace_step (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1))
   exact trace_eq_trace_ker_add (Xl X m) (Xl X (m + 1)) (El q n m) (El_surj hq hqn m hm)
     (El_comp_Xl q hX hc m) (ker_El_inv q hX hc m)
 
+/-! ## 8. The trace split -/
+
+theorem trace_blk_empty {n : ℕ} (X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R)
+    (m : ℕ) (hm : n + 1 < m) : (blk X m m).trace = 0 :=
+  Finset.sum_eq_zero fun i _ => absurd i.2 (by have := ones_le' i.1; omega)
+
+/-- **The split on the upper half.** For `s ≤ r` with `r ≤ 2(r − s) + 1`,
+`T_{r−s}(X) = Σ_{j ≤ s} tr(X | ker E at weight r − j)`. -/
+theorem trace_upper (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1))
+    {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R} (hX : WP X)
+    (hc : X * Em q n = Em q n * X) :
+    ∀ s, s ≤ n + 1 → n + 1 ≤ 2 * (n + 1 - s) + 1 →
+      (blk X (n + 1 - s) (n + 1 - s)).trace
+        = ∑ j ∈ Finset.range (s + 1), trK q X hX hc (n + 1 - j) := by
+  intro s
+  induction s with
+  | zero =>
+    intro _ _
+    rw [Nat.sub_zero, trace_step hq hqn hX hc (n + 1) (by omega),
+      trace_blk_empty X (n + 1 + 1) (by omega)]
+    simp
+  | succ s ih =>
+    intro hs hm
+    rw [trace_step hq hqn hX hc (n + 1 - (s + 1)) hm,
+      show n + 1 - (s + 1) + 1 = n + 1 - s by omega, ih (by omega) (by omega),
+      Finset.sum_range_succ _ (s + 1)]
+    ring
+
+/-- `E` is injective from weight `m` when `2m < r`. -/
+theorem El_inj (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (m : ℕ) (hm : 2 * m < n + 1) :
+    Function.Injective (El q n m) := by
+  classical
+  rw [← LinearMap.ker_eq_bot, eq_bot_iff]
+  intro u hu
+  rw [LinearMap.mem_ker] at hu
+  rw [Submodule.mem_bot]
+  set v : (Fin (n + 1) → Fin 2) → R := fun c => if h : ones c = m then u ⟨c, h⟩ else 0 with hv
+  have hsv : Supp m v := fun c hc => by simp only [hv]; rw [dif_neg hc]
+  have hEv : Em q n *ᵥ v = 0 := by
+    funext a
+    by_cases ha : ones a = m + 1
+    · have h0 := congrFun hu ⟨a, ha⟩
+      simp only [El, Matrix.mulVecLin_apply, Matrix.mulVec, dotProduct, blk, Matrix.of_apply,
+        Pi.zero_apply] at h0 ⊢
+      rw [← h0, sum_over_weight _ m (fun c hc => by simp [hv, hc])]
+      refine Finset.sum_congr rfl fun c _ => ?_
+      simp only [hv]; rw [dif_pos c.2]
+    · exact supp_Em q hsv a ha
+  have hv0 := Em_inj hq hqn hm hsv hEv
+  funext y
+  have := congrFun hv0 y.1
+  simp only [hv, y.2, dif_pos, Pi.zero_apply] at this
+  exact this
+
+/-- `E^k` from weight `m` to weight `m + k`. -/
+noncomputable def Ec (q : R) (n m : ℕ) : (k : ℕ) → ((St n m → R) →ₗ[R] (St n (m + k) → R))
+  | 0 => LinearMap.id
+  | k + 1 => El q n (m + k) ∘ₗ Ec q n m k
+
+theorem Ec_comp_Xl {n : ℕ} (q : R) {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R}
+    (hX : WP X) (hc : X * Em q n = Em q n * X) (m : ℕ) :
+    ∀ k, Ec q n m k ∘ₗ Xl X m = Xl X (m + k) ∘ₗ Ec q n m k
+  | 0 => by simp [Ec]
+  | k + 1 => by
+    rw [Ec, LinearMap.comp_assoc, Ec_comp_Xl q hX hc m k, ← LinearMap.comp_assoc,
+      El_comp_Xl q hX hc, LinearMap.comp_assoc]
+    rfl
+
+/-- `E^k` on vectors. -/
+noncomputable def Epow (q : R) (n k : ℕ) (v : (Fin (n + 1) → Fin 2) → R) :
+    (Fin (n + 1) → Fin 2) → R :=
+  (fun u => Em q n *ᵥ u)^[k] v
+
+theorem Epow_succ (q : R) (n k : ℕ) (v : (Fin (n + 1) → Fin 2) → R) :
+    Epow q n (k + 1) v = Em q n *ᵥ Epow q n k v := Function.iterate_succ_apply' _ _ _
+
+theorem supp_Epow (q : R) {n m : ℕ} {v : (Fin (n + 1) → Fin 2) → R} (hv : Supp m v) :
+    ∀ k, Supp (m + k) (Epow q n k v)
+  | 0 => hv
+  | k + 1 => by rw [Epow_succ]; exact supp_Em q (supp_Epow q hv k)
+
+theorem Dg_mulVec' (hq : q ≠ 0) {n m : ℕ} {v : (Fin (n + 1) → Fin 2) → R} (hv : Supp m v) :
+    Matrix.diagonal (Dg q) *ᵥ v = qZ q (2 * (m : ℤ) - ((n : ℤ) + 1)) • v := by
+  by_cases hm : m ≤ n + 1
+  · rw [Dg_mulVec hq hv, sq_eq_qZ]
+    congr 2
+    push_cast [Nat.cast_sub hm]; ring
+  · have : v = 0 := funext fun b => hv b (by have := ones_le' b; omega)
+    subst this; simp
+
+/-- `E^{j+1} F v = F E^{j+1} v + (Σ_{i ≤ j} [2(m+i) − r]) E^j v` for `v` of weight `m`. -/
+theorem Epow_Fm (hq : q ≠ 0) {n m : ℕ} {v : (Fin (n + 1) → Fin 2) → R} (hv : Supp m v) :
+    ∀ j, Epow q n (j + 1) (Fm q n *ᵥ v)
+      = Fm q n *ᵥ Epow q n (j + 1) v
+        + (∑ i ∈ Finset.range (j + 1), qZ q (2 * (m : ℤ) - ((n : ℤ) + 1) + 2 * i)) • Epow q n j v
+  | 0 => by
+    rw [Epow_succ, show Epow q n 0 (Fm q n *ᵥ v) = Fm q n *ᵥ v from rfl, Em_Fm_mulVec hq,
+      Dg_mulVec' hq hv, Epow_succ, show Epow q n 0 v = v from rfl]
+    simp
+  | j + 1 => by
+    rw [Epow_succ, Epow_Fm hq hv j, Matrix.mulVec_add, Em_Fm_mulVec hq, Matrix.mulVec_smul,
+      Dg_mulVec' hq (supp_Epow q hv (j + 1)), ← Epow_succ, ← Epow_succ, add_assoc, ← add_smul,
+      Finset.sum_range_succ _ (j + 1), add_comm (qZ q _)]
+    congr 3
+    push_cast; ring
+
+/-- **`E^k` is injective on `V_m` when `2m + k ≤ r`.** -/
+theorem Epow_inj (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) :
+    ∀ m k, 2 * m + k ≤ n + 1 → ∀ v : (Fin (n + 1) → Fin 2) → R, Supp m v →
+      Epow q n k v = 0 → v = 0 := by
+  intro m
+  induction m with
+  | zero =>
+    intro k
+    induction k with
+    | zero => intro _ v _ h; exact h
+    | succ k ihk =>
+      intro hk v hv h
+      have hF : Fm q n *ᵥ v = 0 := Fm_supp_zero q hv
+      have := Epow_Fm hq hv k
+      rw [hF, h, Matrix.mulVec_zero, zero_add, sum_qZ hq] at this
+      have hE : Epow q n (k + 1) (0 : (Fin (n + 1) → Fin 2) → R) = 0 := by
+        clear this; generalize k + 1 = t; induction t with
+        | zero => rfl
+        | succ t iht => rw [Epow_succ, iht, Matrix.mulVec_zero]
+      rw [hE] at this
+      have hc : qn q (k + 1) * qZ q (2 * ((0 : ℕ) : ℤ) - ((n : ℤ) + 1) + ((k + 1 : ℕ) : ℤ) - 1) ≠ 0 := by
+        rw [show 2 * ((0 : ℕ) : ℤ) - ((n : ℤ) + 1) + ((k + 1 : ℕ) : ℤ) - 1
+          = -((n + 1 - k : ℕ) : ℤ) by push_cast [Nat.cast_sub (show k ≤ n + 1 by omega)]; ring,
+          qZ_neg_nat]
+        exact mul_ne_zero (hqn _ (by omega) (by omega)) (neg_ne_zero.mpr (hqn _ (by omega) (by omega)))
+      exact ihk (by omega) v hv ((smul_eq_zero.mp this.symm).resolve_left hc)
+  | succ m ihm =>
+    intro k
+    induction k with
+    | zero => intro _ v _ h; exact h
+    | succ k ihk =>
+      intro hk v hv h
+      have hFs : Supp m (Fm q n *ᵥ v) := supp_Fm q hv
+      have hF : Fm q n *ᵥ v = 0 := by
+        refine ihm (k + 2) (by omega) _ hFs ?_
+        rw [Epow_Fm hq hv (k + 1), Epow_succ q n (k + 1), h, Matrix.mulVec_zero,
+          Matrix.mulVec_zero, smul_zero, add_zero]
+      have := Epow_Fm hq hv k
+      have hE : Epow q n (k + 1) (0 : (Fin (n + 1) → Fin 2) → R) = 0 := by
+        clear this; generalize k + 1 = t; induction t with
+        | zero => rfl
+        | succ t iht => rw [Epow_succ, iht, Matrix.mulVec_zero]
+      rw [hF, h, Matrix.mulVec_zero, zero_add, sum_qZ hq, hE] at this
+      have hc : qn q (k + 1) * qZ q (2 * ((m + 1 : ℕ) : ℤ) - ((n : ℤ) + 1) + ((k + 1 : ℕ) : ℤ) - 1)
+          ≠ 0 := by
+        rw [show 2 * ((m + 1 : ℕ) : ℤ) - ((n : ℤ) + 1) + ((k + 1 : ℕ) : ℤ) - 1
+          = -((n + 1 - 2 * (m + 1) - k : ℕ) : ℤ) by
+            push_cast [Nat.cast_sub (show k ≤ n + 1 - 2 * (m + 1) by omega),
+              Nat.cast_sub (show 2 * (m + 1) ≤ n + 1 by omega)]; ring,
+          qZ_neg_nat]
+        exact mul_ne_zero (hqn _ (by omega) (by omega)) (neg_ne_zero.mpr (hqn _ (by omega) (by omega)))
+      exact ihk (by omega) v hv ((smul_eq_zero.mp this.symm).resolve_left hc)
+
+/-- Extension by zero of a weight-`m` vector. -/
+noncomputable def ext0 {n : ℕ} (m : ℕ) (u : St n m → R) : (Fin (n + 1) → Fin 2) → R :=
+  fun c => if h : ones c = m then u ⟨c, h⟩ else 0
+
+theorem supp_ext0 {n m : ℕ} (u : St n m → R) : Supp m (ext0 m u) := fun c hc => by
+  simp only [ext0]; rw [dif_neg hc]
+
+theorem ext0_eq_zero {n m : ℕ} {u : St n m → R} (h : ext0 m u = 0) : u = 0 := by
+  funext y
+  have := congrFun h y.1
+  simp only [ext0, y.2, dif_pos, Pi.zero_apply] at this
+  exact this
+
+theorem ext0_El (q : R) {n m : ℕ} (u : St n m → R) :
+    ext0 (m + 1) (El q n m u) = Em q n *ᵥ ext0 m u := by
+  classical
+  funext a
+  by_cases ha : ones a = m + 1
+  · simp only [ext0, ha, dif_pos, El, Matrix.mulVecLin_apply, Matrix.mulVec, dotProduct, blk,
+      Matrix.of_apply]
+    rw [sum_over_weight (fun c => Em q n a c * (if h : ones c = m then u ⟨c, h⟩ else 0)) m
+      (fun c hc => by simp [hc])]
+    refine Finset.sum_congr rfl fun c _ => ?_
+    rw [dif_pos c.2]
+  · rw [supp_Em q (supp_ext0 u) a ha]
+    simp only [ext0]; rw [dif_neg ha]
+
+theorem ext0_Ec (q : R) {n m : ℕ} (u : St n m → R) :
+    ∀ k, ext0 (m + k) (Ec q n m k u) = Epow q n k (ext0 m u)
+  | 0 => rfl
+  | k + 1 => by
+    rw [Ec, LinearMap.comp_apply]
+    show ext0 (m + k + 1) (El q n (m + k) (Ec q n m k u)) = _
+    rw [ext0_El, ext0_Ec q u k, ← Epow_succ]
+
+theorem Ec_inj (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (m k : ℕ)
+    (h : 2 * m + k ≤ n + 1) : Function.Injective (Ec q n m k) := by
+  rw [← LinearMap.ker_eq_bot, eq_bot_iff]
+  intro u hu
+  rw [LinearMap.mem_ker] at hu
+  rw [Submodule.mem_bot]
+  apply ext0_eq_zero
+  refine Epow_inj hq hqn m k h _ (supp_ext0 u) ?_
+  rw [← ext0_Ec, hu]
+  funext c; simp [ext0]
+
+theorem card_St (n m : ℕ) : Fintype.card (St n m) = (n + 1).choose m := by
+  classical
+  rw [Fintype.card_subtype, card_ones_eq]
+
+/-- **The lower half is isomorphic to the upper half**: `T_m(X) = T_{r−m}(X)` for `2m < r`. -/
+theorem trace_lower (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1))
+    {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R} (hX : WP X)
+    (hc : X * Em q n = Em q n * X) (m : ℕ) (hm : 2 * m < n + 1) :
+    (blk X m m).trace = (blk X (n + 1 - m) (n + 1 - m)).trace := by
+  set k := n + 1 - 2 * m with hk
+  have hinj := Ec_inj hq hqn m k (by omega)
+  have hdim : Module.finrank R (St n m → R) = Module.finrank R (St n (m + k) → R) := by
+    rw [Module.finrank_fintype_fun_eq_card, Module.finrank_fintype_fun_eq_card, card_St, card_St,
+      show m + k = n + 1 - m by omega, Nat.choose_symm (by omega)]
+  have hbij : Function.Bijective (Ec q n m k) :=
+    ⟨hinj, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank hdim).mp hinj⟩
+  set e := LinearEquiv.ofBijective (Ec q n m k) hbij
+  have hconj : e.conj (Xl X m) = Xl X (m + k) := by
+    apply LinearMap.ext; intro y
+    obtain ⟨x, rfl⟩ := e.surjective y
+    rw [LinearEquiv.conj_apply]
+    simp only [LinearMap.comp_apply, LinearEquiv.coe_coe, LinearEquiv.symm_apply_apply]
+    show Ec q n m k (Xl X m x) = Xl X (m + k) (Ec q n m k x)
+    rw [← LinearMap.comp_apply, Ec_comp_Xl q hX hc m k, LinearMap.comp_apply]
+  have h := LinearMap.trace_conj' (Xl X m) e
+  rw [hconj, Xl, Xl, ← Matrix.toLin'_apply', ← Matrix.toLin'_apply', Matrix.trace_toLin'_eq,
+    Matrix.trace_toLin'_eq] at h
+  rw [← h, show m + k = n + 1 - m by omega]
+
+/-- **The Schur–Weyl trace split** (`r = n + 1`, `[k]_q ≠ 0` for `1 ≤ k ≤ r`). For every
+weight-preserving `X` commuting with `E`,
+`tr(X | V_m) = Σ_{j ≤ min(m, r − m)} tr(X | W_{r,j})`, `W_{r,j} = ker E ∩ V_{r−j}`. -/
+theorem trace_split (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1))
+    {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R} (hX : WP X)
+    (hc : X * Em q n = Em q n * X) (m : ℕ) (hm : m ≤ n + 1) :
+    (blk X m m).trace = ∑ j ∈ Finset.range (min m (n + 1 - m) + 1), trK q X hX hc (n + 1 - j) := by
+  rcases Nat.lt_or_ge (2 * m) (n + 1) with h | h
+  · rw [trace_lower hq hqn hX hc m h, min_eq_left (by omega)]
+    have := trace_upper hq hqn hX hc m (by omega) (by omega)
+    exact this
+  · rw [min_eq_right (by omega)]
+    have := trace_upper hq hqn hX hc (n + 1 - m) (by omega) (by omega)
+    rwa [show n + 1 - (n + 1 - m) = m by omega] at this
+
+/-- The weight-space trace of `RossoJonesGeneral` is the trace of the block. -/
+theorem T_eq_trace_blk {n : ℕ} (X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R)
+    (m : ℕ) : T X m = (blk X m m).trace := by
+  classical
+  rw [T, Matrix.trace]
+  exact Finset.sum_subtype _ (by simp) (fun u => X u u)
+
 end QOU.Archimedean.SchurWeylTrace
+
 
 
 
