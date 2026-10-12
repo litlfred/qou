@@ -363,4 +363,95 @@ theorem kzForm_genPath_zero :
 
 end Path
 
+
+/-! ## The local solution `H(u) u^{M₀}` and the monodromy relation -/
+
+section Analytic
+
+variable [CompleteSpace A]
+
+omit [CompleteSpace A] in
+open QOU.KZ.FuchsianConvergence in
+lemma boundedOn_Hc (hNR : NonResonant (Mc ρ κ c 0)) : BoundedOn (Hc ρ κ c hNR) 2 := by
+  intro s hs0 hs
+  exact bounded_weighted (Mc ρ κ c) _ (formalSol_zero _ hNR) (formalSol_isFormalGauge _ hNR)
+    (Cb ρ κ c) (1 / 3) s (Cb_nonneg ρ κ c) (by norm_num) hs0 (by linarith) (norm_Mc_le ρ κ c)
+
+lemma cseries_Hc_neg (hNR : NonResonant (Mc ρ κ c 0)) (u : ℂ) (hu : ‖u‖ < 2) :
+    cseries (Hc ρ κ c hNR) (-u) = Pm ρ * cseries (Hc ρ κ c hNR) u * Pm ρ := by
+  have hs := (summable_norm_cseries (boundedOn_Hc ρ κ c hNR) hu).of_norm
+  unfold cseries
+  rw [← hs.tsum_mul_left, ← (hs.mul_left _).tsum_mul_right]
+  refine tsum_congr fun k => ?_
+  conv_lhs => rw [← Hc_sym ρ κ c hNR k]
+  have e : (-u) ^ k * (-1) ^ k = u ^ k := by
+    rw [neg_pow, mul_comm ((-1 : ℂ) ^ k), mul_assoc, neg_one_pow_mul_self, mul_one]
+  rw [smul_smul, e, mul_smul_comm, smul_mul_assoc]
+
+/-- `θ = 2πiκ`. -/
+noncomputable abbrev θk : ℂ := 2 * κ * (Real.pi * I)
+
+/-- The candidate transport `F(t) = H(e^{iπt}) · e^{iπ t M₀}` along `γ₀`. -/
+noncomputable def Fsol (hNR : NonResonant (Mc ρ κ c 0)) (t : ℝ) : A :=
+  cseries (Hc ρ κ c hNR) (eArc t) * Usol (Pm ρ) (θk κ) c t
+
+omit [CompleteSpace A] in
+lemma resid01_eq : resid ρ c 0 1 = Pm ρ - algebraMap ℂ A c := rfl
+
+lemma hasDerivWithinAt_Fsol (hNR : NonResonant (Mc ρ κ c 0)) (t : ℝ) (ht : t ∈ Icc (0 : ℝ) 1) :
+    HasDerivWithinAt (Fsol ρ κ c hNR)
+      (kzForm ρ κ c (genPath (0 : Fin (m + 1)) t) (genPath' (0 : Fin (m + 1)) t) *
+        Fsol ρ κ c hNR t) (Icc 0 1) t := by
+  have hbH := boundedOn_Hc ρ κ c hNR
+  have hbM := boundedOn_Mc ρ κ c 2 (by norm_num)
+  have he2 : ‖eArc t‖ < 2 := by rw [norm_eArc]; norm_num
+  have he3 : ‖eArc t‖ < 3 := by rw [norm_eArc]; norm_num
+  have hH := (hasDerivAt_cseries hbH he2).scomp t (hasDerivAt_eArc t)
+  have hU := (usol_isFundSol (θk κ) c (Pm_sq ρ)).2 t ht
+  have hprod := hH.hasDerivWithinAt.mul hU
+  unfold Fsol
+  convert hprod using 1
+  have hg := gauge_cseries hbM hbH (formalSol_isFormalGauge (Mc ρ κ c) hNR) he2
+  rw [← smul_deriv_cseries] at hg
+  have hD : eArc' t • ∑' n : ℕ, ((n : ℂ) * eArc t ^ (n - 1)) • Hc ρ κ c hNR n =
+      ((Real.pi : ℂ) * I) • (cseries (Mc ρ κ c) (eArc t) * cseries (Hc ρ κ c hNR) (eArc t) -
+        cseries (Hc ρ κ c hNR) (eArc t) * Mc ρ κ c 0) := by
+    rw [eArc'_eq, mul_smul, eq_sub_of_add_eq hg]
+  have hR : θk κ • (Pm ρ - algebraMap ℂ A c) = ((Real.pi : ℂ) * I) • Mc ρ κ c 0 := by
+    simp only [θk, Mc, ← resid01_eq, smul_smul]; congr 1; ring
+  rw [kzForm_genPath_zero, ← cseries_Mc ρ κ c _ he3, Function.comp_apply, hD, hR]
+  simp only [sub_mul, smul_mul_assoc, mul_smul_comm, mul_assoc]
+  module
+
+lemma genFund_mul_eq (hNR : NonResonant (Mc ρ κ c 0)) :
+    EqOn (fun t => genFund ρ κ c (0 : Fin (m + 1)) t * cseries (Hc ρ κ c hNR) 1)
+      (Fsol ρ κ c hNR) (Icc 0 1) := by
+  have hspec := genFund_spec ρ κ c (0 : Fin (m + 1))
+  refine linear_eqOn_of_hasDerivWithinAt (continuousOn_genCoeff ρ κ c 0)
+    (fun t ht => ?_) (hasDerivWithinAt_Fsol ρ κ c hNR) ?_
+  · simpa only [mul_assoc] using (hspec.2 t ht).mul_const (cseries (Hc ρ κ c hNR) 1)
+  · simp only [Fsol, hspec.1, one_mul, eArc_zero, (usol_isFundSol (θk κ) c (Pm_sq ρ)).1,
+      mul_one]
+
+lemma kz_sigma_zero_eq :
+    ((kzBraidRep ρ κ c (σ (0 : Fin (m + 1))) : Aˣ) : A) =
+      Pm ρ * genFund ρ κ c (0 : Fin (m + 1)) 1 := by
+  rw [kzBraidRep_σ]; rfl
+
+/-- **The monodromy relation** `θ(σ₀) H(1) = H(1) · P e^{iπ M₀}`. -/
+theorem monodromy_relation (hNR : NonResonant (Mc ρ κ c 0)) :
+    ((kzBraidRep ρ κ c (σ (0 : Fin (m + 1))) : Aˣ) : A) * cseries (Hc ρ κ c hNR) 1 =
+      cseries (Hc ρ κ c hNR) 1 * (Pm ρ * Usol (Pm ρ) (θk κ) c 1) := by
+  have h1 := genFund_mul_eq ρ κ c hNR ⟨zero_le_one, le_rfl⟩
+  simp only at h1
+  rw [kz_sigma_zero_eq, mul_assoc, h1, Fsol, eArc_one,
+    cseries_Hc_neg ρ κ c hNR 1 (by norm_num)]
+  have hP := Pm_sq ρ
+  calc Pm ρ * (Pm ρ * cseries (Hc ρ κ c hNR) 1 * Pm ρ * Usol (Pm ρ) (θk κ) c 1)
+      = (Pm ρ * Pm ρ) * cseries (Hc ρ κ c hNR) 1 * (Pm ρ * Usol (Pm ρ) (θk κ) c 1) := by
+        simp only [mul_assoc]
+    _ = _ := by rw [hP, one_mul]
+
+end Analytic
+
 end QOU.Mass.KZHolonomy.LocalMonodromy
