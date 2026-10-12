@@ -7,6 +7,41 @@ import Mathlib.Analysis.Normed.Ring.Units
 
 /-!
 # Local monodromy: the `n`-strand KZ holonomy satisfies the Hecke quadratic
+
+Let `A` be a complete normed `ℂ`-algebra, `ρ : S_{m+2} →* A` any representation, `κ, c ∈ ℂ`,
+and `θ = kzBraidRep ρ κ c : B_{m+2} →* Aˣ` the KZ holonomy representation
+(`QOU.Mass.KZHolonomy.BraidRep`). With `ϑ = 2πiκ`, `q = e^{ϑ}`, `s = e^{ϑc}`, this file proves
+that `β_j = s • θ(σ_j)` satisfies `β_j² = (q − q⁻¹)β_j + 1` for **every** strand count `≥ 2`,
+every coupling `κ` and every generator (`kzBraidRep_sigma_isHeckeQuad`), so `θ` factors through
+the Iwahori–Hecke algebra `H_{m+2}(q)` (`heckeOfKZ`, `heckeOfKZ_σ`).
+
+## Proof (local monodromy at the collision divisor `z₀ = z₁`)
+
+1. **The chart.** Along the half-turn `γ₀` the configuration is
+   `z(u) = (½ − u/2, ½ + u/2, 2, 3, …)` at `u = e^{iπt}`, and the KZ coefficient is
+   `ω(γ₀)(γ₀') = iπ · M(u)` with
+   `M(u) = 2κ r₀₁ + 2κ Σ_k (u/(u + a_k) r₀ₖ + u/(u − a_k) r₁ₖ)`, `a_k = 2k + 3 ≥ 3`,
+   `r_ab = ρ(s_ab) − c` (`kzForm_genPath_zero`). `M` is a power series `Σ Mₙ uⁿ` on `|u| < 3`
+   (`hasSum_Mc`) with `‖Mₙ‖ ≤ C 3⁻ⁿ` (`norm_Mc_le`) and `M₀ = 2κ(P − c)`, `P = ρ(s₀₁)`.
+2. **Fuchsian solution.** If `M₀` is non-resonant (`κ ∉ ±ℕ/4`, `nonResonant_Mc0`), the normalised
+   formal solution `H` of `u H' + H M₀ = M H` (`QOU.KZ.FuchsianFormal`) converges on `|u| < 3`
+   (`QOU.KZ.FuchsianConvergence`), and `F(t) = H(e^{iπt}) e^{iπ t M₀}` solves the transport
+   equation along `γ₀` (`hasDerivWithinAt_Fsol`); so `T₀(1) H(1) = H(−1) e^{iπ M₀}`.
+3. **Exchange symmetry.** `Mₙ = (−1)ⁿ P Mₙ P` (`Mc_sym`), hence by uniqueness of the formal
+   solution `Hₖ = (−1)ᵏ P Hₖ P` (`Hc_sym`) and `H(−u) = P H(u) P` (`cseries_Hc_neg`). This gives
+   the **monodromy relation** `θ(σ₀) H(1) = H(1) · P e^{iπ M₀}` (`monodromy_relation`).
+4. **`H(1)` is a unit** (`isUnit_Hc_one`): `H(ε)` is a unit for small `ε`, and `H(u) u^{M₀}`
+   solves a linear ODE along `[ε, 1]`, whose fundamental solution is a unit.
+5. So `θ(σ₀)` is conjugate to `P e^{iπ M₀} = e^{ϑ(1−c)} e₊ − e^{−ϑ(1+c)} e₋`
+   (`e± = (1 ± P)/2`), which satisfies the Hecke quadratic (`isHeckeQuad_P_usol`, as in `QOU.Mass.KZTwoStrandHecke`).
+6. **All couplings.** The Hecke defect is continuous in `κ` (`continuous_kzBraidRep_σ`) and
+   vanishes off the countable resonant set, whose complement is dense; so it vanishes everywhere
+   (`kzBraidRep_sigma_zero_isHeckeQuad`). All generators are conjugate
+   (`QOU.Mass.BraidHeckeFactor.isHeckeQuad_all_of_zero`).
+
+No numerical input; sorry-free; axioms `propext`, `Classical.choice`, `Quot.sound`.
+
+-- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §5.1 gap 1
 -/
 
 namespace QOU.Mass.KZHolonomy.LocalMonodromy
@@ -555,5 +590,86 @@ theorem kzBraidRep_sigma_zero_isHeckeQuad_of_nonResonant (hNR : NonResonant (Mc 
   exact isHeckeQuad_conj u (isHeckeQuad_P_usol c (Pm_sq ρ) (θk κ))
 
 end Analytic
+
+
+/-! ## All couplings, all generators -/
+
+section Main
+
+variable [CompleteSpace A]
+
+/-- The resonant couplings `κ ∈ ±ℕ/4`. -/
+def resonantSet : Set ℂ := {κ | ∃ k : ℕ, 0 < k ∧ (k : ℂ) ^ 2 = 4 * (2 * κ) ^ 2}
+
+lemma countable_resonantSet : resonantSet.Countable := by
+  refine (Set.countable_range (fun p : ℕ × Bool =>
+    if p.2 then (p.1 : ℂ) / 4 else -((p.1 : ℂ) / 4))).mono ?_
+  rintro κ ⟨k, -, hk⟩
+  have : ((k : ℂ) - 4 * κ) * ((k : ℂ) + 4 * κ) = 0 := by linear_combination hk
+  rcases mul_eq_zero.1 this with h | h
+  · exact ⟨(k, true), by simp only [if_true]; linear_combination h / 4⟩
+  · exact ⟨(k, false), by simp only [Bool.false_eq_true, if_false]; linear_combination -h / 4⟩
+
+/-- The Hecke defect `β² − (q − q⁻¹)β − q q⁻¹` of `β = s • θ(σ₀)`, as a function of `κ`. -/
+noncomputable def heckeDefect (κ : ℂ) : A :=
+  (Complex.exp (θk κ * c) • ((kzBraidRep ρ κ c (σ (0 : Fin (m + 1))) : Aˣ) : A)) *
+      (Complex.exp (θk κ * c) • ((kzBraidRep ρ κ c (σ (0 : Fin (m + 1))) : Aˣ) : A)) -
+    ((Complex.exp (θk κ) - (Complex.exp (θk κ))⁻¹) •
+        (Complex.exp (θk κ * c) • ((kzBraidRep ρ κ c (σ (0 : Fin (m + 1))) : Aˣ) : A)) +
+      (Complex.exp (θk κ) * (Complex.exp (θk κ))⁻¹) • (1 : A))
+
+lemma continuous_heckeDefect : Continuous (heckeDefect ρ c) := by
+  have hg := continuous_kzBraidRep_σ ρ c (0 : Fin (m + 1))
+  have hs : Continuous fun κ : ℂ => Complex.exp (θk κ * c) := by unfold θk; fun_prop
+  have hq : Continuous fun κ : ℂ => Complex.exp (θk κ) := by unfold θk; fun_prop
+  have hqi : Continuous fun κ : ℂ => (Complex.exp (θk κ))⁻¹ :=
+    hq.inv₀ fun _ => Complex.exp_ne_zero _
+  have hb := hs.smul hg
+  unfold heckeDefect
+  exact (hb.mul hb).sub (((hq.sub hqi).smul hb).add ((hq.mul hqi).smul continuous_const))
+
+/-- **The Hecke quadratic for the first generator, `n ≥ 2` strands, every coupling.** -/
+theorem kzBraidRep_sigma_zero_isHeckeQuad :
+    IsHeckeQuad (Complex.exp (θk κ * c)) (Complex.exp (θk κ)) (Complex.exp (θk κ))⁻¹
+      ((kzBraidRep ρ κ c (σ (0 : Fin (m + 1))) : Aˣ) : A) := by
+  have hzero : ∀ κ' ∈ resonantSetᶜ, heckeDefect ρ c κ' = 0 := by
+    intro κ' hκ'
+    have hNR : NonResonant (Mc ρ κ' c 0) :=
+      nonResonant_Mc0 ρ κ' c fun k hk h => hκ' ⟨k, hk, h⟩
+    have := kzBraidRep_sigma_zero_isHeckeQuad_of_nonResonant ρ κ' c hNR
+    unfold IsHeckeQuad at this
+    unfold heckeDefect
+    rw [this, sub_self]
+  have hclosed : IsClosed {κ' : ℂ | heckeDefect ρ c κ' = 0} :=
+    isClosed_eq (continuous_heckeDefect ρ c) continuous_const
+  have hdense : Dense resonantSetᶜ := countable_resonantSet.dense_compl ℂ
+  have hall : heckeDefect ρ c κ = 0 := by
+    have hsub : closure resonantSetᶜ ⊆ {κ' : ℂ | heckeDefect ρ c κ' = 0} :=
+      closure_minimal (fun κ' h => hzero κ' h) hclosed
+    exact hsub (hdense.closure_eq ▸ Set.mem_univ κ)
+  unfold heckeDefect at hall
+  unfold IsHeckeQuad
+  exact sub_eq_zero.1 hall
+
+/-- **Every generator** satisfies the Hecke quadratic (the generators are conjugate). -/
+theorem kzBraidRep_sigma_isHeckeQuad (j : Fin (m + 1)) :
+    IsHeckeQuad (Complex.exp (θk κ * c)) (Complex.exp (θk κ)) (Complex.exp (θk κ))⁻¹
+      ((kzBraidRep ρ κ c (σ j) : Aˣ) : A) :=
+  isHeckeQuad_all_of_zero (kzBraidRep ρ κ c)
+    (fun _ => kzBraidRep_sigma_zero_isHeckeQuad ρ κ c) j
+
+/-- **The KZ holonomy representation factors through `H_{m+2}(q)`**, `q = e^{2πiκ}`:
+`σ_j ↦ e^{2πiκc} • θ(σ_j)`. -/
+noncomputable def heckeOfKZ :
+    QOU.SchurWeyl.Hecke ℂ (Complex.exp (θk κ)) (Complex.exp (θk κ))⁻¹ (m + 1) →ₐ[ℂ] A :=
+  heckeOfBraidRepOfZero (s := Complex.exp (θk κ * c)) (kzBraidRep ρ κ c)
+    (fun _ => kzBraidRep_sigma_zero_isHeckeQuad ρ κ c)
+
+theorem heckeOfKZ_σ (j : Fin (m + 1)) :
+    heckeOfKZ ρ κ c (QOU.SchurWeyl.Hecke.σ ℂ _ _ (m + 1) j) =
+      Complex.exp (θk κ * c) • ((kzBraidRep ρ κ c (σ j) : Aˣ) : A) :=
+  heckeOfBraidRep_σ _ (isHeckeQuad_all_of_zero _ fun _ => kzBraidRep_sigma_zero_isHeckeQuad ρ κ c) j
+
+end Main
 
 end QOU.Mass.KZHolonomy.LocalMonodromy
