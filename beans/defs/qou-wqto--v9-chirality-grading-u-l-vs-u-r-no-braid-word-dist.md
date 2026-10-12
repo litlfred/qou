@@ -370,3 +370,32 @@ that transports one to the other"* — a smaller and better-posed question, with
 the first concrete object to aim at. The whole V10/V11 tower stays conditional
 on step 2. Nothing is wired, no observable is predicted, and
 `conj:sm-hypercharge-invariant` stays open; per rule 13a this bean stays `todo`.
+
+---
+
+## 2026-10-12 — negation is trivial on states; the Reeb operator itself has V10's shape (owner request "1 2")
+
+**Correction of the previous append.** `reebM_x² = −id` cannot be V10's `ι` on **states**. A state is a ray, and `−p = (−1)•p` (`neg_eq_unit_smul`), so negation fixes every state. `neg_free_of_ne_zero` is about vectors.
+
+**What does work, on the quaternionic model** (Lean in `QOU/BringCone.lean`, generic `[CommRing R]`):
+- `Γ p := i·p·i` combines left multiplication by `i` with `M_i`.
+- `Γ² = id` (`chiralGamma_sq`), and `Γ = −1` on span(1, i), `+1` on span(j, k) (`chiralGamma_apply`).
+- `M_i` commutes with `Γ`, and **`M_j` anticommutes** (`chiralGamma_anticomm_reebM_j`), so it swaps the eigenspaces (`reebM_j_flips_eigen`).
+- `M_j` has no eigen-ray unless `c² + 1 = 0` (`reebM_j_ray_free`).
+
+So on rays, `M_j` is a fixed-point-free involution that flips `chir := Γ`, which is V10's shape on states, with `ι` the Reeb operator itself, not its square.
+
+Verification: lean-direct (`-DautoImplicit=false -s 65536`) exit 0 on BringCone and on its dependent BringConeSplit, the latter compiled against the new BringCone olean. `#print axioms` on all 7 new declarations gives `[propext, Quot.sound]`.
+
+**Krasnov (`library/arxiv-2104.01786v1`), read for the octonion question.** One generation is `S₊ = 𝕆 ⊗ 𝕆̃`, with two commuting complex structures:
+- Lorentz handedness = `±i` split of `J̃` on the split octonions (§3.4).
+- **Weak L vs R** (`SU(2)_L` vs `SU(2)_R` doublets, which is what `u_L` vs `u_R` means here) = `±i` split of `J = E⁴` on the **ordinary** octonions `𝕆` (§6.1: (1,0) = L ⊕ Q is (2,1), (0,1) = L̄ ⊕ Q̄ is (1,2)), and the map between them is conjugation relative to `J`.
+- So in that model `u_L`/`u_R` lives on the octonions that also carry colour (`OctonionComplexStructure.lean`, `Le_sq_eq_neg_id`).
+- V10's eight labels {u,d}×{L,R}×{particle,anti} are **not** the octonion's 8 (= 1 lepton + 3 colours, complex).
+
+**Still open (rule 13a, stays `todo`):**
+1. Nothing attaches `L_i` to the Reeb field.
+2. `BringCone` is the Hopf model, not Bring's cone (`qou-rydq`).
+3. There is no map from the `Gen1Quark` labels into these rays.
+
+Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB

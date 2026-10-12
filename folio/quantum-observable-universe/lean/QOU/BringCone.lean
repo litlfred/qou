@@ -138,4 +138,111 @@ theorem neg_free_of_ne_zero {p : BringCone R}
     (h2 : ∀ x : BringCone R, x + x = 0 → x = 0) (hp : p ≠ 0) : -p ≠ p :=
   fun h => hp (h2 p ((neg_fixed_iff_add_self_eq_zero p).mp h))
 
+/-! ## Negation cannot be `ι` on states; a Reeb operator can — via a chirality grading
+
+Bean `qou-wqto`, owner request 2026-10-12 on PR #7712 ("1 2").
+
+**Why the section above does not finish the job.** V10 needs `ι` to be fixed-point
+free on **states**. A state is a ray: `p` and `c • p` for a unit `c` are the same
+state. Negation is `(-1) • p` (`neg_eq_unit_smul`), so on rays it is the
+identity, and it fixes **every** state. `neg_free_of_ne_zero` is a statement about
+vectors and does not survive the passage to states.
+
+**What does.** Combine the right Reeb operator `M_i` with the commuting **left**
+multiplication by `i`. Then `Γ p := i · p · i` is a **grading**:
+- `Γ² = id` (`chiralGamma_sq`);
+- `Γ` acts as `−1` on `span(1, i)` and `+1` on `span(j, k)` (`chiralGamma_apply`);
+- `M_i` commutes with `Γ` (`chiralGamma_comm_reebM_i`);
+- **`M_j` anticommutes with `Γ`** (`chiralGamma_anticomm_reebM_j`), so it carries
+  each `Γ`-eigenspace onto the other.
+
+On rays `M_j` is an involution, because `M_j² = −id = (−1) •` is trivial
+projectively. It is also fixed-point free on rays whenever `−1` is not a square in
+`R` and `R`-scalars cancel on the cone (`reebM_j_ray_free`). That is V10's shape,
+`ι` free and `chir` odd, on states, with `chir` = the eigenvalue of `Γ` and
+`ι` = the Reeb operator `M_j` itself, not its square.
+
+🛑 **Still a candidate, and the gaps are named.**
+1. `L_i`, left multiplication, is introduced here as the second complex structure.
+   Nothing in the corpus attaches it to the Reeb field.
+2. `BringCone` is the quaternionic (Hopf) model, not Bring's own cone (bean
+   `qou-rydq`, `QOU/Brings/BringConeLinkEulerNumber.lean`).
+3. No map from V10's eight `Gen1Quark` labels into these rays exists.
+
+For comparison, the literature: Krasnov's one generation `S₊ = 𝕆 ⊗ 𝕆̃`
+(`library/arxiv-2104.01786v1`) carries two commuting complex structures, and they
+carry two **different** chiralities:
+- **Lorentz handedness** is the `±i` split of `J̃` on the split octonions `𝕆̃`
+  (§3.4: `y⁺`, `y⁻` are spinors of opposite chirality, `y⁻ = (y⁺)*`).
+- **The weak `L`/`R` split**, `SU(2)_L` vs `SU(2)_R` doublets, which is what
+  `u_L` vs `u_R` means for `qou-wqto`, is the `±i` split of `J = E⁴` on the
+  ordinary octonions `𝕆` (§6.1: the `(1,0)` part `L ⊕ Q` is `(2,1)` and the
+  `(0,1)` part `L̄ ⊕ Q̄` is `(1,2)`). The map between them is complex conjugation
+  relative to `J`, which is antilinear.
+So in that model `u_L` vs `u_R` lives on `𝕆`, the same octonions that carry colour
+(`QOU/MathlibExt/OctonionComplexStructure.lean`, `Le_sq_eq_neg_id`), and it is
+cut out by a complex structure plus conjugation, not by a real grading. The `ℍ`
+construction here is the quaternionic analogue of that shape, not that theorem.
+Nothing is wired.
+-/
+
+/-- Left multiplication by `i` — the second complex structure, commuting with every
+right multiplication (associativity). -/
+def leftI (p : BringCone R) : BringCone R := ⟨0, 1, 0, 0⟩ * p
+
+/-- The chirality grading `Γ = L_i ∘ M_i`, i.e. `p ↦ i · p · i`. -/
+def chiralGamma (p : BringCone R) : BringCone R := leftI (reebM_i p)
+
+/-- **`Γ` explicitly:** `−1` on the `1, i` components, `+1` on the `j, k` components. -/
+theorem chiralGamma_apply (a b c d : R) :
+    chiralGamma (⟨a, b, c, d⟩ : BringCone R) = ⟨-a, -b, c, d⟩ := by
+  dsimp [chiralGamma, leftI, reebM_i]
+  ext <;> simp
+
+/-- **`Γ² = id`** — a grading, not a complex structure. -/
+theorem chiralGamma_sq (p : BringCone R) : chiralGamma (chiralGamma p) = p := by
+  dsimp [chiralGamma, leftI, reebM_i]
+  ext <;> simp
+
+/-- `M_i` commutes with the grading. -/
+theorem chiralGamma_comm_reebM_i (p : BringCone R) :
+    chiralGamma (reebM_i p) = reebM_i (chiralGamma p) := by
+  dsimp [chiralGamma, leftI, reebM_i]
+  ext <;> simp
+
+/-- **`M_j` anticommutes with the grading**: it exchanges the two chiralities. -/
+theorem chiralGamma_anticomm_reebM_j (p : BringCone R) :
+    chiralGamma (reebM_j p) = -reebM_j (chiralGamma p) := by
+  dsimp [chiralGamma, leftI, reebM_i, reebM_j]
+  ext <;> simp
+
+/-- `M_j` sends a `Γ = −1` vector to a `Γ = +1` vector. -/
+theorem reebM_j_flips_eigen {p : BringCone R} (hp : chiralGamma p = -p) :
+    chiralGamma (reebM_j p) = reebM_j p := by
+  rw [chiralGamma_anticomm_reebM_j, hp]
+  dsimp [reebM_j]
+  ext <;> simp
+
+/-- **Negation is a scalar**, `−p = (−1) • p`, so on rays (states) it is trivial
+and fixes every state. This retires `reebM_x² = −id` as the candidate `ι` on
+states. -/
+theorem neg_eq_unit_smul (p : BringCone R) : -p = (-1 : R) • p := by
+  ext <;> simp
+
+/-- **`M_j` has no eigen-ray**: if `p * j = c • p` with `p ≠ 0`, then `c² + 1 = 0`.
+So whenever `−1` is not a square in `R` and scalars cancel on the cone, `M_j`
+fixes no state, and it is a fixed-point-free involution on rays (its square is
+the scalar `−1`). -/
+theorem reebM_j_ray_free {p : BringCone R} {c : R}
+    (hcancel : ∀ (a : R) (x : BringCone R), a • x = 0 → x ≠ 0 → a = 0)
+    (hp : p ≠ 0) (h : reebM_j p = c • p) : c * c + 1 = 0 := by
+  have h2 : reebM_j (reebM_j p) = (c * c) • p := by
+    rw [h]
+    have : reebM_j (c • p) = c • reebM_j p := by
+      dsimp [reebM_j]; ext <;> simp
+    rw [this, h, smul_smul]
+  rw [reebM_j_sq] at h2
+  apply hcancel _ p _ hp
+  rw [add_smul, one_smul, ← h2, neg_add_cancel]
+
 end QOU.Tetraplectic
