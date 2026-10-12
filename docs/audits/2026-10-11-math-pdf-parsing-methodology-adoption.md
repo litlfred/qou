@@ -8,8 +8,7 @@ The note says which methods are already in the code and proposes the rest.
 Owner selected options A and B on 2026-10-11: write this note, and open
 platform issues.
 
-Bean `qou-0nko` (epic `qou-uwxm`). All three papers are ingested into
-`library/` on PR #7608.
+Bean `qou-0nko` (epic `qou-uwxm`). The three papers themselves are NOT filed in qou: they are platform methodology sources, and their destination (folio-assistant-core recommended) is the owner's call. They were briefly ingested here on PR #7608 and removed in `8c9b69b676`.
 
 ## The three papers
 
