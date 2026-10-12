@@ -7,10 +7,10 @@ section_number: 5.1
 pages: 15-16
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
-doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.957
+latex_coverage_ratio: 1.0
 ---
 We now generalize the above theorem to other regions via $\mathop{\mathrm{SL}}_2(\mathbb{C})$ action and topological considerations. Theorem [\[grace_pairs_thm\]](#grace_pairs_thm){reference-type="ref" reference="grace_pairs_thm"} can then be considered our most general form of Grace's theorem. First though, we define two new notions in order to simplify the rest of this section.
 

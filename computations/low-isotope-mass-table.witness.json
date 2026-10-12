@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T08:12:49.011509+00:00",
-  "commitSha": "b76483207fd3553690ad5f2f1deb60cda9d93625",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-11T08:27:37.358284+00:00",
+  "commitSha": "5aeb3816af283d59d6bd662fc02a61adef833447",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "low-isotope-mass-table",
   "scriptFile": "low_isotope_mass_table.py",
-  "scriptHash": "0bb62b58bf87",
-  "scriptCommitSha": "d4c196c03070bc9db2ff7adaf3e40564e58469dc",
+  "scriptHash": "79870f5e514c",
+  "scriptCommitSha": "615b5553363a7e159ec40fa99bb156e48be9b1c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -102,7 +102,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -200,7 +200,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -346,7 +346,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -373,7 +373,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -567,7 +567,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -594,7 +594,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -621,7 +621,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -815,7 +815,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -842,7 +842,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -869,7 +869,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -910,19 +910,19 @@
     "n_atoms": 5,
     "derived_from": {
       "witness": "canonical-mass-table-extended.witness.json",
-      "scriptHash": "f923eab01fca",
-      "scriptCommitSha": "465a555201c31a610fd4a554a9da7117a54b5309",
-      "computedAt": "2026-09-07T06:43:25.567149+00:00",
-      "commitSha": "e8f196a688d9c442a6888073a6b006eacd3adeea"
+      "scriptHash": "c72328789986",
+      "scriptCommitSha": "615b5553363a7e159ec40fa99bb156e48be9b1c6",
+      "computedAt": "2026-10-11T08:27:36.968043+00:00",
+      "commitSha": "5aeb3816af283d59d6bd662fc02a61adef833447"
     },
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "bf10997ca20d2ed66e917b7f63960b0460ae1e48c442be381fe3de414a24430c",
-        "size_bytes": 73169,
-        "commitSha": "e8f196a688d9c442a6888073a6b006eacd3adeea",
-        "scriptCommitSha": "465a555201c31a610fd4a554a9da7117a54b5309",
-        "computedAt": "2026-09-07T06:43:25.567149+00:00"
+        "sha256": "da4ef93717b9405188e84cc2af8071ab56165df3fcc71fa084b501848c1e2ea1",
+        "size_bytes": 76545,
+        "commitSha": "5aeb3816af283d59d6bd662fc02a61adef833447",
+        "scriptCommitSha": "615b5553363a7e159ec40fa99bb156e48be9b1c6",
+        "computedAt": "2026-10-11T08:27:36.968043+00:00"
       }
     ]
   },

@@ -1155,6 +1155,41 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "010cbb95c76c",
+          "ts": "adab2d30c5a3",
+          "lean": "33a3f8144f25",
+          "lean_statement": "9c7534ff827e"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 13,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 2,
+            "H3": 2,
+            "H4": 1,
+            "H5": 2,
+            "H6": 2,
+            "H7": 1,
+            "H8": 2
+          }
+        },
+        "evidence": "H1/H7: item (v) (L11) is a single 230-word paragraph covering the flip, the $R$-matrix, the Hecke relation, the Haar state and the left-covariant calculus. H4: L9 '$\\partial_i f$' is never defined.",
+        "notes": "Milnor H1-H8 = [1, 2, 2, 1, 2, 2, 1, 2] (T=13/16, warn); weakest: H1, H4, H7. Suggested rewrite (not applied; owner rule 'ask before changing'): Split (v): first two sentences state that the flip is symmetric so axiom 1 fails at $q=1$; a separate paragraph introduces $\\mathrm{Rep}(\\mathrm{SU}_q(2))$ and $\\check R(q)$. L9: '$\\partial_i$ the left-invariant vector fields dual to $\\omega_i$'. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -1785,6 +1820,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-15T23:46:12.311Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
