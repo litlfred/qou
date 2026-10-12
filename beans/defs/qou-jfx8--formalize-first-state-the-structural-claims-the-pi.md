@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T20:56:04Z
+updated_at: 2026-10-12T23:42:31Z
 parent: qou-v2om
 ---
 
@@ -109,3 +109,9 @@ BringResidueEnergy.lean (exit 0) + bring_residue_energy_probe.py (8/8). Step (st
 
 ## 2026-10-12 — relative minimum (owner's principle) gives a preferred twist and a turning angle
 BringResidueEnergy (exit 0): μ'(0) = ln q·(w_S − w_A) (hasDerivAt_mu_zero); under convention D w_S − w_A = (q⁴+1)/(q²+1)² > 0, so for q > 1 the relative minimum of E sits at t* > 0 — a preferred twist direction (σ side, canonical orientation), absent at q = 1. Probe (12/12): t* = 0.0217944 (μ'' = −2.408), collision twist s* = t* − 2ℓ = 0.355128, turning angle π s* = 63.923°. The angle reading uses ConvolutionFlowFibre's identification (flow time s turns the relative direction by πs) and the stated modelling step (ℓ enters as flow time 2ℓ). Nothing fitted.
+
+
+## 2026-10-12 — owner checks 1 and 2 on the residue energy (fractional_twist_consistency_probe.py, 7/7)
+(0) Owner question 'what collision? doesn't it depend on the knots?': at TRACE level t* = 0.021794 is identical for pp, pn, nn — Part A universality; the 63.92° is knot-blind. Block level it depends on the knots and even flips sign: t*_(5,1) = −0.0058 (pp), −0.0102 (pn), −0.0123 (nn); t*_(3,3) = 0.0076, 0.0160, 0.0271; (4,2) 0.0024, 0.0139, 0.0034.
+(1) Non-abelian step: group law, (σ^{2ℓ})⁶ = σ^{−2}, far commutativity and the trace-level fractional Markov property hold on all H₃/H₆ blocks; the BRAID RELATION FAILS for fractional t on the (2,1) block (defect 0.5688 at t = ±1/3, 0 at t = 1). σ^{2ℓ} is consistent only as a single-bridge object, not a braid action. Trace value of σ₂^{−1/3} on the deuteron: 0.854998 − 0.221746i (real part = μ).
+(2) Cross-check: 63.92° = 60° (residue: 180°·|2ℓ|) + 3.92° (t*). Corpus Reeb angles A 0°, T₁ 57.36°, H 90°, T₂ 101.89°, G 104.48°; C₅ rotations 72°, 144°. Nearest T₁ (Δ 6.56°); no match within 1°. Recorded, not fitted.

@@ -15,7 +15,12 @@ ambient linking `ℓ`, so in the local braid model the ambient linking enters as
 `σ^{2ℓ}`, i.e. the convolution flow at time `t = 2ℓ`. For the abelian (linking/writhe) part this is
 exact: linking is additive and a local twist and an ambient linking contribute the same way. Using
 the Hecke flow `σ^t` for the full non-abelian part is the identification made here; it is a
-modelling step, not a theorem. Consistency (`six_pairs_full_twist`): `e·ℓ = 6·(−1/6) = −1`, so the
+modelling step, not a theorem. **Tested (owner request 2026-10-12, `fractional_twist_consistency_probe.py`,
+7/7):** on every H₃/H₆ block the fractional twist obeys the group law, `(σ^{2ℓ})⁶ = σ^{−2}`, far
+commutativity, and the trace-level Markov property (`σ^t ∈ span{1, σ}`); but the BRAID RELATION FAILS for
+fractional `t` on the 2-dim block `(2,1)` (defect 0.569 at `t = ±1/3`, exactly 0 at `t = 1`). So `σ^{2ℓ}` is
+consistent as a single-bridge object and is NOT a braid-group action: fractional twists on two adjacent
+pairs at once are not defined by this step. Consistency (`six_pairs_full_twist`): `e·ℓ = 6·(−1/6) = −1`, so the
 six fibre pairs in the torsion class make one full negative twist, `σ^{−2}`.
 
 ## The energy (derived, given that step)
