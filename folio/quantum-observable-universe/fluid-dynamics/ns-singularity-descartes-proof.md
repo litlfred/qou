@@ -7,9 +7,9 @@ $\mathrm{tr}(\kappa_0) = \chi(A) = -6$.
 For $\kappa \geq 4$, $2\kappa \geq 8 > 6 = |\chi(A)|$, so
 $2\kappa \nmid -6$.  By the
 [Kummer specialisation](#prop:ns-kummer-specialisation),
-$\kappa_0 \bmod 2\kappa \neq 0$ for all $\kappa \geq 4$.  The
-obstruction survives through infinitely many levels of the
-Kummer tower.
+$\kappa_0 \bmod 2\kappa \neq 0$ in $H^2(\mathcal{S}, \mu_{2\kappa}) \cong \mathbb{Z}/2\kappa$ for all $\kappa \geq 4$.  The
+obstruction to a $2\kappa$-th root of the Reeb bundle survives through infinitely many levels of the
+Kummer tower. This is a statement about the global class on $\mathcal{S}$; its restriction to the one-dimensional $\Sigma$ lies in $H^2(\Sigma, \mu_{2\kappa}) = 0$.
 
 **Step 2** (algebra).
 The [perpetual obstruction](#thm:qu-to-qou) (item 3) says
@@ -20,7 +20,7 @@ The total obstruction $\kappa_n|_\Sigma = \kappa_0|_\Sigma +
 $\kappa_0|_\Sigma \neq 0$ cannot be cancelled by the analytic
 term $\delta_n|_\Sigma$.
 
-*Scope of Step 2.* It inherits item 3 of [QU-to-QOU](#thm:qu-to-qou) in its earlier, jet-tower form, which is retracted. Item 3 now states persistence in the Kummer tower (the obstruction $\chi(\mathcal{S}) \bmod n$ to an $n$-th root of the Reeb bundle), not at every level of the jet tower. For the bands used in this corpus the complementary-subgroup step is not established on a closed surface such as Bring's. There $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish. For the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. For $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope note in the [proof of QU-to-QOU](#prf:qu-to-qou).
+*Scope of Step 2.* It inherits item 3 of [QU-to-QOU](#thm:qu-to-qou) in its earlier, jet-tower form, which is retracted. Item 3 now states persistence in the Kummer tower (the obstruction $\chi(\mathcal{S}) \bmod n$ to an $n$-th root of the Reeb bundle), not at every level of the jet tower. For the bands used in this corpus the complementary-subgroup step is not established on a closed surface such as Bring's. There $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish. For the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. For $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope note in the [proof of QU-to-QOU](#prf:qu-to-qou). Moreover $\kappa_0|_\Sigma = 0$ because $\Sigma$ is one-dimensional, so there is no non-zero term for the step to protect.
 
 **Step 3** (geometry).
 $\mathrm{NS}(A) \neq 0$ implies, via the
@@ -34,3 +34,5 @@ which gives the [vorticity lower
 bound](#prop:vorticity-lower-bound)
 $\|\omega\|_\infty \geq c/(T^*-t)$, which gives
 [BKM divergence](#thm:q-bkm) $\int \|\omega\|_\infty \, dt = \infty$.
+
+*Scope of Steps 3 and 4.* Both consume the premise $\mathrm{NS}(A) \neq 0$, which Steps 1 and 2 do not establish. They remain conditional implications.
