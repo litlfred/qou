@@ -9,7 +9,7 @@ import QOU.KZ.KZHexagonCentral
 Stage S2 of bean `qou-zoyv`. For pairwise disjoint sets of tensor legs `X, Y ⊆ {0, …, N−1}`
 the block Casimir is `t_{X,Y} = ∑_{i ∈ X, j ∈ Y} P_{ij}` (`tB`). This is the split `𝔤𝔩_n`
 Casimir between the sub-tensor products `V^{⊗X}` and `V^{⊗Y}`
-(`GLnResidues.casimirLeg_eq_flipP`). It is the residue of the associator `α_{X,Y,Z}` of the
+(`GLnResidues.casimirLeg_eq_flipL`). It is the residue of the associator `α_{X,Y,Z}` of the
 Drinfeld category.
 
 * `commute_flip_tB`: `P_{ab}` commutes with `t_{X,Y}` when the transposition `(ab)` preserves
@@ -34,48 +34,60 @@ open QOU.KZ.FuchsianFormal QOU.KZ.GLnResidues QOU.KZ.KZ4
 
 section Algebra
 
-variable (K : Type*) [Field K] (n : ℕ) {N : ℕ}
+variable (K : Type*) [Field K] (n : ℕ) {L : Type*} [Fintype L] [DecidableEq L]
+
+/-- The action of a permutation of the legs `L` on `V^{⊗L}`. -/
+def permL (σ : Equiv.Perm L) : Matrix (L → Fin n) (L → Fin n) K :=
+  permMat K (fun x : L → Fin n => x ∘ σ)
+
+theorem permL_mul (σ τ : Equiv.Perm L) : permL K n σ * permL K n τ = permL K n (τ * σ) :=
+  permMat_mul K _ _
+
+/-- The flip `P_{ij}` of two legs. -/
+abbrev flipL (i j : L) : Matrix (L → Fin n) (L → Fin n) K := permL K n (Equiv.swap i j)
 
 /-- The block Casimir `t_{X,Y} = ∑_{i ∈ X, j ∈ Y} P_{ij}`. -/
-def tB (X Y : Finset (Fin N)) : Matrix (Fin N → Fin n) (Fin N → Fin n) K :=
-  ∑ i ∈ X, ∑ j ∈ Y, flipP K n i j
+def tB (X Y : Finset L) : Matrix (L → Fin n) (L → Fin n) K :=
+  ∑ i ∈ X, ∑ j ∈ Y, flipL K n i j
 
 variable {K n}
 
 /-- Conjugation of a flip by a flip. -/
-theorem flip_mul_flip (a b i j : Fin N) :
-    flipP K n a b * flipP K n i j =
-      flipP K n (Equiv.swap a b i) (Equiv.swap a b j) * flipP K n a b := by
-  simp only [flipP, permP_mul]
+theorem flip_mul_flip (a b i j : L) :
+    flipL K n a b * flipL K n i j =
+      flipL K n (Equiv.swap a b i) (Equiv.swap a b j) * flipL K n a b := by
+  simp only [flipL, permL_mul]
   congr 1
   rw [Equiv.swap_apply_apply, Equiv.swap_inv]
   simp only [← mul_assoc, Equiv.swap_mul_self, one_mul]
 
+omit [Fintype L] in
 /-- Reindexing a sum over a set preserved by a transposition. -/
-theorem sum_swap_eq {M : Type*} [AddCommMonoid M] (a b : Fin N) (X : Finset (Fin N))
-    (hX : ∀ x, Equiv.swap a b x ∈ X ↔ x ∈ X) (g : Fin N → M) :
+theorem sum_swap_eq {M : Type*} [AddCommMonoid M] (a b : L) (X : Finset L)
+    (hX : ∀ x, Equiv.swap a b x ∈ X ↔ x ∈ X) (g : L → M) :
     ∑ i ∈ X, g (Equiv.swap a b i) = ∑ i ∈ X, g i :=
   Finset.sum_bij' (fun i _ => Equiv.swap a b i) (fun i _ => Equiv.swap a b i)
     (fun i hi => (hX i).2 hi) (fun i hi => (hX i).2 hi) (fun i _ => by simp)
     (fun i _ => by simp) (fun i _ => rfl)
 
 /-- `P_{ab}` commutes with `t_{X,Y}` when `(ab)` preserves both blocks. -/
-theorem commute_flip_tB (a b : Fin N) (X Y : Finset (Fin N))
+theorem commute_flip_tB (a b : L) (X Y : Finset L)
     (hX : ∀ x, Equiv.swap a b x ∈ X ↔ x ∈ X) (hY : ∀ x, Equiv.swap a b x ∈ Y ↔ x ∈ Y) :
-    Commute (flipP K n a b) (tB K n X Y) := by
-  show flipP K n a b * tB K n X Y = tB K n X Y * flipP K n a b
+    Commute (flipL K n a b) (tB K n X Y) := by
+  show flipL K n a b * tB K n X Y = tB K n X Y * flipL K n a b
   simp only [tB, Finset.mul_sum, Finset.sum_mul]
-  calc ∑ i ∈ X, ∑ j ∈ Y, flipP K n a b * flipP K n i j
-      = ∑ i ∈ X, ∑ j ∈ Y, flipP K n (Equiv.swap a b i) (Equiv.swap a b j) * flipP K n a b :=
+  calc ∑ i ∈ X, ∑ j ∈ Y, flipL K n a b * flipL K n i j
+      = ∑ i ∈ X, ∑ j ∈ Y, flipL K n (Equiv.swap a b i) (Equiv.swap a b j) * flipL K n a b :=
         Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ => flip_mul_flip a b i j
-    _ = ∑ i ∈ X, ∑ j ∈ Y, flipP K n i (Equiv.swap a b j) * flipP K n a b :=
+    _ = ∑ i ∈ X, ∑ j ∈ Y, flipL K n i (Equiv.swap a b j) * flipL K n a b :=
         sum_swap_eq a b X hX (fun i => ∑ j ∈ Y,
-          flipP K n i (Equiv.swap a b j) * flipP K n a b)
+          flipL K n i (Equiv.swap a b j) * flipL K n a b)
     _ = _ := Finset.sum_congr rfl fun i _ =>
-        sum_swap_eq a b Y hY (fun j => flipP K n i j * flipP K n a b)
+        sum_swap_eq a b Y hY (fun j => flipL K n i j * flipL K n a b)
 
+omit [Fintype L] in
 /-- A transposition of two points both inside or both outside `X` preserves `X`. -/
-theorem swap_mem_iff {a b : Fin N} {X : Finset (Fin N)} (h : a ∈ X ↔ b ∈ X) (x : Fin N) :
+theorem swap_mem_iff {a b : L} {X : Finset L} (h : a ∈ X ↔ b ∈ X) (x : L) :
     Equiv.swap a b x ∈ X ↔ x ∈ X := by
   by_cases hxa : x = a
   · subst hxa; simp [h]
@@ -83,21 +95,21 @@ theorem swap_mem_iff {a b : Fin N} {X : Finset (Fin N)} (h : a ∈ X ↔ b ∈ X
     · subst hxb; simp [h]
     · rw [Equiv.swap_apply_of_ne_of_ne hxa hxb]
 
-theorem tB_union_left {X X' Y : Finset (Fin N)} (h : Disjoint X X') :
+theorem tB_union_left {X X' Y : Finset L} (h : Disjoint X X') :
     tB K n (X ∪ X') Y = tB K n X Y + tB K n X' Y := by
   simp only [tB, Finset.sum_union h]
 
-theorem tB_union_right {X Y Y' : Finset (Fin N)} (h : Disjoint Y Y') :
+theorem tB_union_right {X Y Y' : Finset L} (h : Disjoint Y Y') :
     tB K n X (Y ∪ Y') = tB K n X Y + tB K n X Y' := by
   simp only [tB, Finset.sum_union h, Finset.sum_add_distrib]
 
-theorem tB_comm (X Y : Finset (Fin N)) : tB K n X Y = tB K n Y X := by
+theorem tB_comm (X Y : Finset L) : tB K n X Y = tB K n Y X := by
   rw [tB, tB, Finset.sum_comm]
-  simp only [flipP, Equiv.swap_comm]
+  simp only [flipL, Equiv.swap_comm]
 
 /-- A flip `P_{ab}` with `a ∈ X₁`, `b ∈ X₂` commutes with `t_{U,W}` if each of `U`, `W` contains
 both or neither of `a, b`. -/
-theorem commute_tB_tB {X₁ X₂ U W : Finset (Fin N)}
+theorem commute_tB_tB {X₁ X₂ U W : Finset L}
     (hU : ∀ a ∈ X₁, ∀ b ∈ X₂, (a ∈ U ↔ b ∈ U)) (hW : ∀ a ∈ X₁, ∀ b ∈ X₂, (a ∈ W ↔ b ∈ W)) :
     Commute (tB K n X₁ X₂) (tB K n U W) :=
   Commute.sum_left _ _ _ fun a ha => Commute.sum_left _ _ _ fun b hb =>
@@ -109,14 +121,14 @@ end Algebra
 
 section Blocks
 
-variable (n : ℕ) {N : ℕ}
+variable (n : ℕ) {L : Type*} [Fintype L] [DecidableEq L]
 
 /-- Four pairwise disjoint blocks of tensor legs. -/
-structure Blocks (N : ℕ) where
-  X1 : Finset (Fin N)
-  X2 : Finset (Fin N)
-  X3 : Finset (Fin N)
-  X4 : Finset (Fin N)
+structure Blocks (L : Type*) where
+  X1 : Finset L
+  X2 : Finset L
+  X3 : Finset L
+  X4 : Finset L
   d12 : Disjoint X1 X2
   d13 : Disjoint X1 X3
   d14 : Disjoint X1 X4
@@ -127,20 +139,21 @@ structure Blocks (N : ℕ) where
 attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
 
 /-- The KZ residues `ℏ t_{X_a, X_b}` of a four-block partition. -/
-noncomputable def blockRes (c : ℂ) (B : Blocks N) : Res (Matrix (Fin N → Fin n) (Fin N → Fin n) ℂ) where
+noncomputable def blockRes (c : ℂ) (B : Blocks L) : Res (Matrix (L → Fin n) (L → Fin n) ℂ) where
   t12 := c • tB ℂ n B.X1 B.X2
   t13 := c • tB ℂ n B.X1 B.X3
   t23 := c • tB ℂ n B.X2 B.X3
   t24 := c • tB ℂ n B.X2 B.X4
   t34 := c • tB ℂ n B.X3 B.X4
 
-theorem not_mem_of_disjoint {X Y : Finset (Fin N)} (h : Disjoint X Y) {a : Fin N} (ha : a ∈ X) :
+omit [Fintype L] [DecidableEq L] in
+theorem not_mem_of_disjoint {X Y : Finset L} (h : Disjoint X Y) {a : L} (ha : a ∈ X) :
     a ∉ Y := Finset.disjoint_left.1 h ha
 
 /-- **The infinitesimal pure-braid relations for block residues.** -/
-theorem blockRes_rel (c : ℂ) (B : Blocks N) : (blockRes n c B).Rel := by
-  have nm := @not_mem_of_disjoint N
-  have smc : ∀ {x y : Matrix (Fin N → Fin n) (Fin N → Fin n) ℂ}, Commute x y →
+theorem blockRes_rel (c : ℂ) (B : Blocks L) : (blockRes n c B).Rel := by
+  have nm := @not_mem_of_disjoint L
+  have smc : ∀ {x y : Matrix (L → Fin n) (L → Fin n) ℂ}, Commute x y →
       Commute (c • x) (c • y) := fun h => (h.smul_left c).smul_right c
   refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩
   · -- [t12, t34]
@@ -175,32 +188,32 @@ theorem blockRes_rel (c : ℂ) (B : Blocks N) : (blockRes n c B).Rel := by
 /-! ### Integrality and non-resonance -/
 
 /-- The integer permutation matrix of `σ` on `V^{⊗N}`. -/
-def permZ (σ : Equiv.Perm (Fin N)) : Matrix (Fin N → Fin n) (Fin N → Fin n) ℤ :=
+def permZ (σ : Equiv.Perm L) : Matrix (L → Fin n) (L → Fin n) ℤ :=
   Matrix.of fun x y => if y ∘ σ = x then 1 else 0
 
 /-- The integer block Casimir. -/
-def tBZ (X Y : Finset (Fin N)) : Matrix (Fin N → Fin n) (Fin N → Fin n) ℤ :=
+def tBZ (X Y : Finset L) : Matrix (L → Fin n) (L → Fin n) ℤ :=
   ∑ i ∈ X, ∑ j ∈ Y, permZ n (Equiv.swap i j)
 
-theorem permP_intCast (σ : Equiv.Perm (Fin N)) :
-    permP ℂ n σ = (Int.castRingHom ℂ).mapMatrix (permZ n σ) := by
+theorem permL_intCast (σ : Equiv.Perm L) :
+    permL ℂ n σ = (Int.castRingHom ℂ).mapMatrix (permZ n σ) := by
   ext x y
-  simp only [permP, permMat, permZ, RingHom.mapMatrix_apply, Matrix.map_apply, Matrix.of_apply,
+  simp only [permL, permMat, permZ, RingHom.mapMatrix_apply, Matrix.map_apply, Matrix.of_apply,
     Function.comp_def]
   split_ifs <;> simp
 
-theorem tB_intCast (X Y : Finset (Fin N)) :
+theorem tB_intCast (X Y : Finset L) :
     tB ℂ n X Y = (Int.castRingHom ℂ).mapMatrix (tBZ n X Y) := by
-  simp only [tB, tBZ, map_sum, flipP, permP_intCast]
+  simp only [tB, tBZ, map_sum, flipL, permL_intCast]
 
 variable {n}
 
 /-- `ℏ M` is non-resonant for an integer matrix `M` and transcendental `ℏ`. -/
-theorem nonResonant_cast {c : ℂ} (hc : Transcendental ℚ c) (M : Matrix (Fin N → Fin n)
-    (Fin N → Fin n) ℤ) : NonResonant (c • (Int.castRingHom ℂ).mapMatrix M) :=
+theorem nonResonant_cast {c : ℂ} (hc : Transcendental ℚ c) (M : Matrix (L → Fin n)
+    (L → Fin n) ℤ) : NonResonant (c • (Int.castRingHom ℂ).mapMatrix M) :=
   NonResonantInt.nonResonant_smul_intMatrix M c hc
 
-variable {c : ℂ} (hc : Transcendental ℚ c) (B : Blocks N)
+variable {c : ℂ} (hc : Transcendental ℚ c) (B : Blocks L)
 include hc
 
 theorem nr12 : NonResonant (blockRes n c B).t12 := by
@@ -243,12 +256,12 @@ section Hexagon
 
 attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
 
-variable {n N : ℕ} {c : ℂ}
+variable {n : ℕ} {L : Type*} [Fintype L] [DecidableEq L] {c : ℂ}
 
 /-- **The central hexagon for three disjoint blocks**, `ℏ` transcendental. With
 `t_{ab} = t_{X_a, X_b}` and `T = t₁₂ + t₂₃ + t₁₃`:
 `e^{−iπℏt₁₂} Φ(ℏt₁₃, ℏt₁₂) e^{−iπℏt₁₃} Φ(ℏt₂₃, ℏt₁₃) e^{−iπℏt₂₃} Φ(ℏt₁₂, ℏt₂₃) = e^{−iπℏT}`. -/
-theorem hexagon_blocks (hc : Transcendental ℚ c) {X1 X2 X3 : Finset (Fin N)}
+theorem hexagon_blocks (hc : Transcendental ℚ c) {X1 X2 X3 : Finset L}
     (d12 : Disjoint X1 X2) (d13 : Disjoint X1 X3) (d23 : Disjoint X2 X3) :
     KZHexagon.eπ (c • tB ℂ n X1 X2) *
       KZPentagon.Φ (c • tB ℂ n X1 X3) (c • tB ℂ n X1 X2)
@@ -263,8 +276,8 @@ theorem hexagon_blocks (hc : Transcendental ℚ c) {X1 X2 X3 : Finset (Fin N)}
         (by rw [tB_intCast]; exact nonResonant_cast hc _)
         (by rw [tB_intCast]; exact nonResonant_cast hc _) =
     KZHexagon.eπ (c • tB ℂ n X1 X2 + c • tB ℂ n X2 X3 + c • tB ℂ n X1 X3) := by
-  have nm := @not_mem_of_disjoint N
-  have smc : ∀ {x y : Matrix (Fin N → Fin n) (Fin N → Fin n) ℂ}, Commute x y →
+  have nm := @not_mem_of_disjoint L
+  have smc : ∀ {x y : Matrix (L → Fin n) (L → Fin n) ℂ}, Commute x y →
       Commute (c • x) (c • y) := fun h => (h.smul_left c).smul_right c
   -- `A = ℏt₁₂` commutes with `ℏ(t₁₃ + t₂₃) = ℏ t_{X₁ ∪ X₂, X₃}`
   have cA : Commute (c • tB ℂ n X1 X2) (c • tB ℂ n X2 X3 + c • tB ℂ n X1 X3) := by

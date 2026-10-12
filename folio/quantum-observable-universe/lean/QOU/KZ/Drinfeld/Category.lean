@@ -38,19 +38,22 @@ def Leaves : Obj → Type
   | tensor X Y => Leaves X ⊕ Leaves Y
 
 /-- `Fintype` structure on the legs. -/
-def leavesFintype : (X : Obj) → Fintype (Leaves X)
+@[reducible] def leavesFintype : (X : Obj) → Fintype (Leaves X)
   | unit => inferInstanceAs (Fintype Empty)
   | V => inferInstanceAs (Fintype Unit)
   | tensor X Y => @instFintypeSum _ _ (leavesFintype X) (leavesFintype Y)
 
 /-- Decidable equality on the legs. -/
-def leavesDecEq : (X : Obj) → DecidableEq (Leaves X)
+@[reducible] def leavesDecEq : (X : Obj) → DecidableEq (Leaves X)
   | unit => inferInstanceAs (DecidableEq Empty)
   | V => inferInstanceAs (DecidableEq Unit)
   | tensor X Y => @instDecidableEqSum _ _ (leavesDecEq X) (leavesDecEq Y)
 
 instance (X : Obj) : Fintype (Leaves X) := leavesFintype X
 instance (X : Obj) : DecidableEq (Leaves X) := leavesDecEq X
+
+instance : IsEmpty (Leaves unit) := inferInstanceAs (IsEmpty Empty)
+instance : Unique (Leaves V) := inferInstanceAs (Unique Unit)
 
 /-- Basis indices of `V^{⊗X}`. -/
 abbrev Idx (X : Obj) := Leaves X → Fin 2
