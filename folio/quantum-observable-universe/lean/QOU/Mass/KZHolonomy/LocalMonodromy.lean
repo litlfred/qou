@@ -452,6 +452,108 @@ theorem monodromy_relation (hNR : NonResonant (Mc ρ κ c 0)) :
         simp only [mul_assoc]
     _ = _ := by rw [hP, one_mul]
 
+
+/-! ### `H(1)` is invertible -/
+
+lemma exists_isUnit_near_zero (hNR : NonResonant (Mc ρ κ c 0)) :
+    ∃ ε : ℝ, 0 < ε ∧ ε < 1 ∧ IsUnit (cseries (Hc ρ κ c hNR) (ε : ℂ)) := by
+  have hc := (hasDerivAt_cseries (boundedOn_Hc ρ κ c hNR) (z := 0) (by simp)).continuousAt
+  obtain ⟨δ, hδ, h⟩ := Metric.continuousAt_iff.1 hc 1 one_pos
+  refine ⟨min (δ / 2) (1 / 2), by positivity, by
+    have := min_le_right (δ / 2) (1 / 2); linarith, ?_⟩
+  have hx := h (x := ((min (δ / 2) (1 / 2) : ℝ) : ℂ)) (by
+    rw [dist_zero_right, Complex.norm_real, Real.norm_of_nonneg (by positivity)]
+    have := min_le_left (δ / 2) (1 / 2); linarith)
+  rw [QOU.KZ.KZHalfMonodromy.cseries_zero, Hc, formalSol_zero, dist_eq_norm, ← norm_neg,
+    neg_sub] at hx
+  set x := cseries (Hc ρ κ c hNR) ((min (δ / 2) (1 / 2) : ℝ) : ℂ)
+  have := (Units.oneSub (1 - x) hx).isUnit
+  rwa [Units.val_oneSub, sub_sub_cancel] at this
+
+lemma isUnit_Hc_one (hNR : NonResonant (Mc ρ κ c 0)) : IsUnit (cseries (Hc ρ κ c hNR) 1) := by
+  obtain ⟨ε, hε0, hε1, hεu⟩ := exists_isUnit_near_zero ρ κ c hNR
+  have hbH := boundedOn_Hc ρ κ c hNR
+  have hbM := boundedOn_Mc ρ κ c 2 (by norm_num)
+  set Y : ℂ → A := fun z => cseries (Hc ρ κ c hNR) z * cpowA (Mc ρ κ c 0) z
+  set s : ℝ → ℝ := fun τ => ε + τ * (1 - ε)
+  have hs_pos : ∀ τ ∈ Icc (0 : ℝ) 1, 0 < s τ := fun τ hτ => by
+    have : 0 ≤ τ * (1 - ε) := mul_nonneg hτ.1 (by linarith)
+    simp only [s]; linarith
+  have hs_le : ∀ τ ∈ Icc (0 : ℝ) 1, s τ ≤ 1 := fun τ hτ => by
+    have : τ * (1 - ε) ≤ 1 * (1 - ε) := mul_le_mul_of_nonneg_right hτ.2 (by linarith)
+    simp only [s]; linarith
+  have hnorm : ∀ τ ∈ Icc (0 : ℝ) 1, ‖((s τ : ℝ) : ℂ)‖ < 2 := fun τ hτ => by
+    rw [Complex.norm_real, Real.norm_of_nonneg (hs_pos τ hτ).le]; linarith [hs_le τ hτ]
+  set X : ℝ → A := fun τ =>
+    ((((1 - ε : ℝ) : ℂ)) * ((s τ : ℝ) : ℂ)⁻¹) • cseries (Mc ρ κ c) ((s τ : ℝ) : ℂ)
+  have hsd : ∀ τ : ℝ, HasDerivAt (fun τ => ((s τ : ℝ) : ℂ)) (((1 - ε : ℝ) : ℂ)) τ := by
+    intro τ
+    have := (((hasDerivAt_id τ).mul_const (1 - ε)).const_add ε).ofReal_comp
+    simpa [s] using this
+  have hW : ∀ τ ∈ Icc (0 : ℝ) 1,
+      HasDerivWithinAt (fun τ => Y ((s τ : ℝ) : ℂ)) (X τ * Y ((s τ : ℝ) : ℂ)) (Icc 0 1) τ := by
+    intro τ hτ
+    have hY := hasDerivAt_csolution hbM hbH (formalSol_isFormalGauge (Mc ρ κ c) hNR)
+      (Complex.ofReal_mem_slitPlane.2 (hs_pos τ hτ)) (hnorm τ hτ)
+    have := (hY.scomp τ (hsd τ)).hasDerivWithinAt (s := Icc 0 1)
+    convert this using 1
+    simp only [X, smul_mul_assoc, smul_smul, Y]
+  have hX : ContinuousOn X (Icc 0 1) := by
+    intro τ hτ
+    have h1 : ContinuousAt (fun τ => ((s τ : ℝ) : ℂ)) τ := (hsd τ).continuousAt
+    have h2 : ContinuousAt (fun τ => cseries (Mc ρ κ c) ((s τ : ℝ) : ℂ)) τ :=
+      ContinuousAt.comp (g := cseries (Mc ρ κ c))
+        (hasDerivAt_cseries hbM (hnorm τ hτ)).continuousAt h1
+    have h3 : ContinuousAt (fun τ => ((s τ : ℝ) : ℂ)⁻¹) τ :=
+      h1.inv₀ (by exact_mod_cast (hs_pos τ hτ).ne')
+    exact ((continuousAt_const.mul h3).smul h2).continuousWithinAt
+  obtain ⟨Φ, hΦ⟩ := exists_isFundSol hX
+  have heq := linear_eqOn_of_hasDerivWithinAt hX hW
+    (W' := fun τ => Φ τ * Y ((s 0 : ℝ) : ℂ))
+    (fun τ hτ => by simpa only [mul_assoc] using (hΦ.2 τ hτ).mul_const _)
+    (by simp only [hΦ.1, one_mul]) ⟨zero_le_one, le_rfl⟩
+  simp only at heq
+  have hs0 : s 0 = ε := by simp [s]
+  have hs1 : s 1 = 1 := by simp [s]
+  rw [hs1, hs0] at heq
+  have hcp : cpowA (Mc ρ κ c 0) 1 = 1 := by
+    simp [cpowA]
+  have hY1 : Y (((1 : ℝ) : ℂ)) = cseries (Hc ρ κ c hNR) 1 := by
+    simp only [Y, Complex.ofReal_one]; rw [hcp, mul_one]
+  rw [hY1] at heq
+  rw [heq]
+  exact (hΦ.isUnit hX 1 ⟨zero_le_one, le_rfl⟩).mul (hεu.mul (isUnit_cpowA _ _))
+
+/-! ### The Hecke quadratic -/
+
+omit [CompleteSpace A] in
+/-- `P e^{θ(P − c)}` satisfies the Hecke quadratic for any involution `P`. -/
+theorem isHeckeQuad_P_usol {P : A} (hP : P * P = 1) (θ : ℂ) :
+    IsHeckeQuad (Complex.exp (θ * c)) (Complex.exp θ) (Complex.exp θ)⁻¹ (P * Usol P θ c 1) := by
+  have hβ : Complex.exp (θ * c) • (P * Usol P θ c 1) =
+      Complex.exp θ • eP P - (Complex.exp θ)⁻¹ • eM P := by
+    rw [Usol, mul_add, mul_smul_comm, mul_smul_comm, P_mul_eP hP, P_mul_eM hP, smul_neg,
+      ← sub_eq_add_neg, smul_sub, smul_smul, smul_smul, ← Complex.exp_add, ← Complex.exp_add,
+      ← Complex.exp_neg]
+    simp only [Complex.ofReal_one, one_mul]
+    congr 3 <;> ring
+  unfold IsHeckeQuad
+  rw [hβ]
+  exact split_hecke hP (Complex.exp_ne_zero θ)
+
+/-- **The Hecke quadratic for the first generator, `n` strands** (non-resonant coupling). -/
+theorem kzBraidRep_sigma_zero_isHeckeQuad_of_nonResonant (hNR : NonResonant (Mc ρ κ c 0)) :
+    IsHeckeQuad (Complex.exp (θk κ * c)) (Complex.exp (θk κ)) (Complex.exp (θk κ))⁻¹
+      ((kzBraidRep ρ κ c (σ (0 : Fin (m + 1))) : Aˣ) : A) := by
+  obtain ⟨u, hu⟩ := isUnit_Hc_one ρ κ c hNR
+  have hrel := monodromy_relation ρ κ c hNR
+  rw [← hu] at hrel
+  have hg : ((kzBraidRep ρ κ c (σ (0 : Fin (m + 1))) : Aˣ) : A) =
+      (u : A) * (Pm ρ * Usol (Pm ρ) (θk κ) c 1) * ((u⁻¹ : Aˣ) : A) := by
+    rw [← hrel, mul_assoc, Units.mul_inv, mul_one]
+  rw [hg]
+  exact isHeckeQuad_conj u (isHeckeQuad_P_usol c (Pm_sq ρ) (θk κ))
+
 end Analytic
 
 end QOU.Mass.KZHolonomy.LocalMonodromy
