@@ -184,7 +184,7 @@ theorem legendrian_duality (y θ : ℝ) (hy : y ≠ 0) :
   field_simp
   ring
 
-/-! ## 6. 🟧 Owner ruling 2026-10-12: particle strands follow the FIBRE Reeb flow
+/-! ## 6. Owner ruling 2026-10-12 (SUPERSEDED in its orientation by §9): particle strands follow the FIBRE Reeb flow
 
 Verbatim: *"2 fibre"* (choice between the geodesic flow, Reeb of `α`, and the fibre rotation,
 Reeb of `η`; bean `qou-jfx8`). Consequences, all stated for the fibre reading:
@@ -298,5 +298,23 @@ theorem unit_speed_alpha (y θ κ : ℝ) (hy : y ≠ 0) :
   have h := sin_sq_add_cos_sq θ
   field_simp
   linear_combination h
+
+/-! ## 9. 🟧 Owner ruling 2026-10-12 (final): the GEODESIC orientation is canonical, `ℓ = −1/6`
+
+Owner pick, after §8: "Geodesic α, ℓ = −1/6". Free strands follow geodesics; the
+knot-convolution operator adds fibre turning (`κ = η(velocity)`); crossings are oriented by
+`α ∧ dα`, the orientation in which every strand is positively transverse. The canonical fibre
+linking residue is therefore `−1/6 ∈ ℚ/ℤ` (`canonicalResidue`). It is chiral
+(`canonicalResidue_chiral`, i.e. `geodesic_residue_chiral`). §6's `+1/6` is its mirror, kept as the
+record of the superseded orientation. -/
+
+/-- The canonical fibre linking residue under the 2026-10-12 geodesic ruling: `−1/6`. -/
+def canonicalResidue : ℚ := fibreLinkingResidue 6
+
+theorem canonicalResidue_eq : canonicalResidue = -1 / 6 := by
+  unfold canonicalResidue fibreLinkingResidue; norm_num
+
+theorem canonicalResidue_chiral :
+    ¬ ∃ n : ℤ, canonicalResidue - (-canonicalResidue) = n := geodesic_residue_chiral
 
 end QOU.Brings.UTContactChirality

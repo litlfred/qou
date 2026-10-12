@@ -325,8 +325,10 @@ end PartD
 /-! ## Part G — chirality wired in (owner ruling 2026-10-12: strands follow the fibre Reeb flow)
 
 Part D derived `θ* = π/2` from an ACHIRAL Bring term. Under the fibre ruling
-(`BringUTContactChirality` §6) the ambient `UT(Σ₄)` carries a chiral invariant, the fibre linking
-residue `ℓ = 1/6 ∈ ℚ/ℤ`. Its orientation-reverse is `−ℓ ≡ 5/6`, and `ℓ ≢ −ℓ`.
+(`BringUTContactChirality` §6, orientation superseded by §9: the canonical orientation is the
+geodesic one) the ambient `UT(Σ₄)` carries a chiral invariant, the fibre linking residue, canonically
+`ℓ = −1/6 ∈ ℚ/ℤ` (`canonicalResidue`; `+1/6` in the superseded fibre orientation). Its
+orientation-reverse is `−ℓ`, and `ℓ ≢ −ℓ` in either orientation.
 
 A local Bring energy on the oriented manifold is a function `E θ ℓ` of the crossing angle and the
 residue. The mirror configuration (crossing sign flipped) lives in the orientation-reversed
@@ -368,6 +370,12 @@ theorem bring_residue_not_self_mirror :
     ∀ n : ℤ, -fibreLinkingResidue (-6) ≠ fibreLinkingResidue (-6) + n := by
   intro n h
   exact fibre_linking_residue_chiral ⟨-n, by push_cast; linarith⟩
+
+/-- **The canonical residue is not its own mirror either** (geodesic ruling, `ℓ = −1/6`). -/
+theorem canonical_residue_not_self_mirror :
+    ∀ n : ℤ, -canonicalResidue ≠ canonicalResidue + n := by
+  intro n h
+  exact canonicalResidue_chiral ⟨-n, by push_cast; linarith⟩
 
 end PartG
 

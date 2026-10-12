@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T20:35:02Z
+updated_at: 2026-10-12T20:37:20Z
 parent: qou-v2om
 ---
 
@@ -96,3 +96,8 @@ Modelling reading (stated): two nearby fibre strands over p and p+r; the relativ
 Formalized (BringUTContactChirality §8, exit 0): during a convolution the velocity is X + κV; η(X + κV) = κ is the geodesic curvature (free strands: κ = 0, η-horizontal); α(X + κV) = 1 for all κ, so strands are always positively transverse to ker α, while η changes sign with the turn. FLAG: this makes the α (geodesic) orientation the one fixed by transversality, residue −1/6 — the mirror of the +1/6 recorded under the earlier 'fibre' ruling. The fibre flow enters as the convolution's turning (π per half twist, ConvolutionFlowFibre), not as strand direction. Owner to confirm which orientation is canonical.
 ## 2026-10-12 — MY ERROR in the molecular junction question
 I told the owner the corpus bond is 'σ² (Hopf link) per shared pair' and electrons add Z strands; owner picked σ² and 3A+Z on that basis. The corpus actually says (covalent-bond-shared-trefoil.md): L_b = ∏_e σ⁻¹_{g_e(p_j)}·σ⁻¹_{g_e(p_i)} — each shared electron crosses a proton of EACH atom with σ⁻¹ (writhe −2 per electron; a NEGATIVE Hopf link), and each electron is a trefoil σ₀σ₁σ₀ in its own local H₃ (3 strands, so 3A + 3Z), while molecular-braid.md says n_i = A + Z. molecular-crossing-table.md DOES exist (inter-atomic pp σ, pn/nn identity, p e σ⁻¹). Nothing built; owner re-asked.
+
+
+## 2026-10-12 — 🟧 OWNER RULINGS (final for this session)
+1. Orientation: 'Geodesic α, ℓ = −1/6'. Free strands follow geodesics; the knot-convolution operator # adds fibre turning κ = η(velocity); crossings are oriented by α∧dα. Canonical residue −1/6 (BringUTContactChirality §9, canonicalResidue; §6's +1/6 kept as the superseded record). Part G updated (canonical_residue_not_self_mirror). Lean exit 0.
+2. Molecular bond operator: corpus L_b (σ⁻¹ to a proton of each atom per shared electron, plus crossing table). 3. Electron strands: 3A + 3Z (electron = trefoil in local H₃). Build dispatched to a background agent (branch claude/molecular-word-corpus-lb-2026-10-12, stacked on #7769); unfixed layout choices are to be listed, not chosen.
