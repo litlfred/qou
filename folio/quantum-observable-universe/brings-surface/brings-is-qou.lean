@@ -42,8 +42,10 @@ structure BringsIsQOU where
   observability : adjReprDim ≠ 1
   /-- Number of patches in a good cover of Σ₄. -/
   numPatches : ℕ
-  /-- (3) Yekutieli lifting: obstruction in H²(Σ₄, Z(SU_q(2))) = H²(Σ₄, ℤ/2) = 0
-      vanishes; encoded as existence of a good cover (numPatches > 0). -/
+  /-- (3) Yekutieli lifting: the obstruction lies in H²(Σ₄, Z(SU_q(2))) =
+      H²(Σ₄, ℤ/2) ≅ ℤ/2 (NOT 0 — closed orientable surface), so it is not
+      forced to vanish. This field only encodes numPatches > 0 and does NOT
+      encode the vanishing; an earlier comment claiming H² = 0 was false. -/
   yekutieli_lifting : numPatches > 0
   /-- (4) Euler characteristic = −6. -/
   euler_char : ℤ
@@ -91,7 +93,8 @@ def standardBringsIsQOU : BringsIsQOU where
   observability := by omega
   numPatches := 9
   -- Ref: [yekutieli2015] Ch. 5, §brings-is-qou, condition (3)
-  -- Obstruction H²(Σ₄, ℤ/2) = 0 vanishes; good cover with 9 patches exists
+  -- Only numPatches > 0 is encoded. H²(Σ₄, ℤ/2) ≅ ℤ/2 ≠ 0, so obstruction
+  -- vanishing is NOT established here (earlier "= 0" comment was false)
   yekutieli_lifting := by omega
   euler_char := -6
   euler_char_eq := by decide
