@@ -1140,18 +1140,23 @@ theorem card_St (n m : ℕ) : Fintype.card (St n m) = (n + 1).choose m := by
   classical
   rw [Fintype.card_subtype, card_ones_eq]
 
+/-- `E^{r−2m} : V_m → V_{r−m}` is bijective for `2m ≤ r`. -/
+theorem Ec_bij (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (m : ℕ) (hm : 2 * m ≤ n + 1) :
+    Function.Bijective (Ec q n m (n + 1 - 2 * m)) := by
+  have hinj := Ec_inj hq hqn m (n + 1 - 2 * m) (by omega)
+  have hdim : Module.finrank R (St n m → R)
+      = Module.finrank R (St n (m + (n + 1 - 2 * m)) → R) := by
+    rw [Module.finrank_fintype_fun_eq_card, Module.finrank_fintype_fun_eq_card, card_St, card_St,
+      show m + (n + 1 - 2 * m) = n + 1 - m by omega, Nat.choose_symm (by omega)]
+  exact ⟨hinj, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank hdim).mp hinj⟩
+
 /-- **The lower half is isomorphic to the upper half**: `T_m(X) = T_{r−m}(X)` for `2m < r`. -/
 theorem trace_lower (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1))
     {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R} (hX : WP X)
     (hc : X * Em q n = Em q n * X) (m : ℕ) (hm : 2 * m < n + 1) :
     (blk X m m).trace = (blk X (n + 1 - m) (n + 1 - m)).trace := by
   set k := n + 1 - 2 * m with hk
-  have hinj := Ec_inj hq hqn m k (by omega)
-  have hdim : Module.finrank R (St n m → R) = Module.finrank R (St n (m + k) → R) := by
-    rw [Module.finrank_fintype_fun_eq_card, Module.finrank_fintype_fun_eq_card, card_St, card_St,
-      show m + k = n + 1 - m by omega, Nat.choose_symm (by omega)]
-  have hbij : Function.Bijective (Ec q n m k) :=
-    ⟨hinj, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank hdim).mp hinj⟩
+  have hbij : Function.Bijective (Ec q n m k) := Ec_bij hq hqn m (by omega)
   set e := LinearEquiv.ofBijective (Ec q n m k) hbij
   have hconj : e.conj (Xl X m) = Xl X (m + k) := by
     apply LinearMap.ext; intro y
@@ -1276,6 +1281,172 @@ theorem trace_W_gam_pow_split (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n +
   refine Finset.sum_comm' fun m j => ?_
   simp only [Finset.mem_range, Finset.mem_Icc, Nat.lt_succ_iff, le_min_iff]
   omega
+
+/-! ## 10. The full twist `γ^r` is a scalar on each `W_{r,j}` -/
+
+/-- The scalar of the full twist on `W_{r,j}`: `q^{(r−1−j)(r−j)} (q^{j−1} q^{−2})^j`,
+i.e. `q^{r(r−1) − 2j(r−j+1)}`. -/
+noncomputable def twistScalar (q : R) (n j : ℕ) : R :=
+  (q ^ (n - j)) ^ (n + 1 - j) * (q ^ (j - 1) * q⁻¹ ^ 2) ^ j
+
+theorem rot_iterate_self {n : ℕ} (b : Fin (n + 1) → Fin 2) : rot^[n + 1] b = b := by
+  rw [rot_iterate]; funext i; rw [nsmul_one_self, sub_zero]
+
+/-- **`ρ^r` is the scalar `twistScalar` on `V_j`.** -/
+theorem rho_pow_mulVec (q : R) {n j : ℕ} {v : (Fin (n + 1) → Fin 2) → R} (hv : Supp j v) :
+    rho q n ^ (n + 1) *ᵥ v = twistScalar q n j • v := by
+  classical
+  funext a
+  rw [rho_eq_wRot, Pi.smul_apply, smul_eq_mul]
+  simp only [Matrix.mulVec, dotProduct, wRot, rotMat_pow_apply, rot_iterate_self, ite_mul,
+    zero_mul]
+  rw [Finset.sum_ite_eq Finset.univ a, if_pos (Finset.mem_univ _)]
+  by_cases ha : ones a = j
+  · have hP := prod_wRot_weights (fun j => q ^ (n - j)) (fun j => q ^ (j - 1) * q⁻¹ ^ 2) (n + 1) a
+    simp only at hP
+    rw [hP]
+    have hS : lastOnes (n + 1) a = ones a := by
+      have := lastOnes_mul a (rot_iterate_self a)
+      exact Nat.eq_of_mul_eq_mul_left (Nat.succ_pos n) this
+    rw [hS, ha, twistScalar]
+  · rw [hv a ha, mul_zero, mul_zero]
+
+/-- Projection onto weight `m`. -/
+def prj {n : ℕ} (m : ℕ) (x : (Fin (n + 1) → Fin 2) → R) : (Fin (n + 1) → Fin 2) → R :=
+  fun b => if ones b = m then x b else 0
+
+theorem prj_of_supp {n m : ℕ} {x : (Fin (n + 1) → Fin 2) → R} (hx : Supp m x) : prj m x = x := by
+  funext b; unfold prj; split_ifs with h
+  · rfl
+  · rw [hx b h]
+
+theorem supp_prj {n : ℕ} (m : ℕ) (x : (Fin (n + 1) → Fin 2) → R) : Supp m (prj m x) := by
+  intro b hb; unfold prj; rw [if_neg hb]
+
+theorem prj_Em (q : R) {n : ℕ} (m : ℕ) (y : (Fin (n + 1) → Fin 2) → R) :
+    prj (m + 1) (Em q n *ᵥ y) = Em q n *ᵥ prj m y := by
+  funext a
+  unfold prj
+  split_ifs with ha
+  · simp only [Matrix.mulVec, dotProduct]
+    refine Finset.sum_congr rfl fun b _ => ?_
+    by_cases hE : Em q n a b = 0
+    · simp [hE]
+    · have := Em_weight q a b hE
+      rw [if_pos (by omega)]
+  · exact (supp_Em q (supp_prj m y) a ha).symm
+
+theorem prj_zero_Em (q : R) {n : ℕ} (y : (Fin (n + 1) → Fin 2) → R) :
+    prj 0 (Em q n *ᵥ y) = 0 := by
+  funext a
+  unfold prj
+  split_ifs with ha
+  · simp only [Matrix.mulVec, dotProduct, Pi.zero_apply]
+    refine Finset.sum_eq_zero fun b _ => ?_
+    by_cases hE : Em q n a b = 0
+    · rw [hE, zero_mul]
+    · have := Em_weight q a b hE; omega
+  · rfl
+
+theorem supp_WP {n m : ℕ} {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R}
+    (hX : WP X) {v : (Fin (n + 1) → Fin 2) → R} (hv : Supp m v) : Supp m (X *ᵥ v) := by
+  intro a ha
+  simp only [Matrix.mulVec, dotProduct]
+  refine Finset.sum_eq_zero fun b _ => ?_
+  by_cases hX0 : X a b = 0
+  · rw [hX0, zero_mul]
+  · rw [hv b (by rw [← hX a b hX0]; exact ha), mul_zero]
+
+theorem Epow_add (q : R) {n : ℕ} (k : ℕ) (x y : (Fin (n + 1) → Fin 2) → R) :
+    Epow q n k (x + y) = Epow q n k x + Epow q n k y := by
+  induction k with
+  | zero => rfl
+  | succ k ih => rw [Epow_succ, Epow_succ, Epow_succ, ih, Matrix.mulVec_add]
+
+theorem Epow_smul (q : R) {n : ℕ} (k : ℕ) (c : R) (x : (Fin (n + 1) → Fin 2) → R) :
+    Epow q n k (c • x) = c • Epow q n k x := by
+  induction k with
+  | zero => rfl
+  | succ k ih => rw [Epow_succ, Epow_succ, ih, Matrix.mulVec_smul]
+
+theorem Epow_zero_vec (q : R) {n : ℕ} (k : ℕ) :
+    Epow q n k (0 : (Fin (n + 1) → Fin 2) → R) = 0 := by
+  induction k with
+  | zero => rfl
+  | succ k ih => rw [Epow_succ, ih, Matrix.mulVec_zero]
+
+theorem prj_add {n : ℕ} (m : ℕ) (x y : (Fin (n + 1) → Fin 2) → R) :
+    prj m (x + y) = prj m x + prj m y := by
+  funext b; simp only [prj, Pi.add_apply]; split_ifs <;> simp
+
+theorem prj_smul {n : ℕ} (m : ℕ) (c : R) (x : (Fin (n + 1) → Fin 2) → R) :
+    prj m (c • x) = c • prj m x := by
+  funext b; simp only [prj, Pi.smul_apply, smul_eq_mul]; split_ifs <;> simp
+
+theorem Epow_Em (q : R) {n : ℕ} (k : ℕ) (x : (Fin (n + 1) → Fin 2) → R) :
+    Epow q n k (Em q n *ᵥ x) = Epow q n (k + 1) x := by
+  unfold Epow; rw [Function.iterate_succ_apply]
+
+theorem Epow_comm {n : ℕ} (q : R) {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R}
+    (hc : X * Em q n = Em q n * X) (k : ℕ) (x : (Fin (n + 1) → Fin 2) → R) :
+    Epow q n k (X *ᵥ x) = X *ᵥ Epow q n k x := by
+  induction k with
+  | zero => rfl
+  | succ k ih => rw [Epow_succ, Epow_succ, ih, Matrix.mulVec_mulVec, Matrix.mulVec_mulVec, hc]
+
+/-- **The full twist on highest-weight vectors.** If `w` has weight `r − j` (`2j ≤ r`) and
+`E w = 0`, then `γ^r w = twistScalar · w`. -/
+theorem fullTwist_mulVec (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (j : ℕ)
+    (hj : 2 * j ≤ n + 1) {w : (Fin (n + 1) → Fin 2) → R} (hw : Supp (n + 1 - j) w)
+    (hE : Em q n *ᵥ w = 0) : gam q n ^ (n + 1) *ᵥ w = twistScalar q n j • w := by
+  classical
+  set k := n + 1 - 2 * j with hk
+  -- write `w = E^k v` with `v` of weight `j`
+  have hwk : Supp (j + k) w := by rwa [show j + k = n + 1 - j by omega]
+  obtain ⟨u, hu⟩ := (Ec_bij hq hqn j hj).2 (fun y : St n (j + k) => w y.1)
+  set v := ext0 j u with hvdef
+  have hsv : Supp j v := supp_ext0 u
+  have hvw : Epow q n k v = w := by
+    rw [hvdef, ← ext0_Ec, hu]
+    funext c
+    simp only [ext0]
+    split_ifs with h
+    · rfl
+    · exact (hwk c h).symm
+  -- `γ^r v = s v + E y`, `y` of weight `j − 1`
+  obtain ⟨kp, hA, -⟩ := pow_decomp (gam q n) (rho q n) (rho' q n) (Em q n) (Km q n)
+    (gam_eq_rho_add hq n) (rho_mul_Em hq n) (Km_mul_Em hq n) (n + 1)
+  have hGv : gam q n ^ (n + 1) *ᵥ v = twistScalar q n j • v + Em q n *ᵥ (kp *ᵥ v) := by
+    rw [hA, Matrix.add_mulVec, rho_pow_mulVec q hsv, ← Matrix.mulVec_mulVec]
+  have hGsupp : Supp j (gam q n ^ (n + 1) *ᵥ v) := supp_WP (WP_pow (WP_gam q n) (n + 1)) hsv
+  have key : ∃ y : (Fin (n + 1) → Fin 2) → R, (j = 0 → y = 0) ∧
+      (∀ i, j = i + 1 → Supp i y) ∧ gam q n ^ (n + 1) *ᵥ v = twistScalar q n j • v + Em q n *ᵥ y := by
+    have hp := congrArg (prj j) hGv
+    rw [prj_of_supp hGsupp, prj_add, prj_smul, prj_of_supp hsv] at hp
+    rcases Nat.eq_zero_or_pos j with h0 | hpos
+    · refine ⟨0, fun _ => rfl, fun i hi => by omega, ?_⟩
+      rw [hp, h0, prj_zero_Em, Matrix.mulVec_zero]
+    · obtain ⟨i, hi⟩ : ∃ i, j = i + 1 := ⟨j - 1, by omega⟩
+      refine ⟨prj i (kp *ᵥ v), fun h => by omega, fun i' hi' => ?_, ?_⟩
+      · rw [show i' = i by omega]; exact supp_prj i _
+      · rw [hp, hi, prj_Em]
+  obtain ⟨y, hy0, hyS, hGvy⟩ := key
+  have h1 : gam q n ^ (n + 1) *ᵥ w = twistScalar q n j • w + Epow q n (k + 1) y := by
+    rw [← hvw, ← Epow_comm q (gam_pow_comm_Em hq n (n + 1)) k v, hGvy, Epow_add,
+      Epow_smul, Epow_Em]
+  have h2 : Epow q n (k + 2) y = 0 := by
+    have h3 := congrArg (fun x => Em q n *ᵥ x) h1
+    simp only at h3
+    rw [Matrix.mulVec_add, ← Epow_succ, Matrix.mulVec_smul, hE, smul_zero, zero_add,
+      Matrix.mulVec_mulVec, ← gam_pow_comm_Em hq n (n + 1), ← Matrix.mulVec_mulVec, hE,
+      Matrix.mulVec_zero] at h3
+    exact h3.symm
+  have hy : y = 0 := by
+    rcases Nat.eq_zero_or_pos j with h0 | hpos
+    · exact hy0 h0
+    · obtain ⟨i, hi⟩ : ∃ i, j = i + 1 := ⟨j - 1, by omega⟩
+      exact Epow_inj hq hqn i (k + 2) (by omega) y (hyS i hi) h2
+  rw [h1, hy, Epow_zero_vec, add_zero]
 
 end QOU.Archimedean.SchurWeylTrace
 
