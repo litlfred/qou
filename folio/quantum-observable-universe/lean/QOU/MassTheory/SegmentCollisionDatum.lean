@@ -201,6 +201,97 @@ theorem chain3_trace (hD : DisjointBlockMultiplicative T) (n m : ℕ) (hnm : n +
   rw [h2, h1]
   ring
 
+/-! ### Part G — a molecular junction: a window that does not contain the junction letter is local
+
+Owner, 2026-10-12 (bean `qou-a1hh`): "measure window depth at a molecular junction (C+O → CO
+scale)". A diatomic word is `a * J * b`: the lower atom `a ∈ H n`, a junction `J` supported on
+the single generator `n` (`bondLetter`, ANY coefficients — every element of the subalgebra one
+generator spans, e.g. any power `σⁿᵏ`, has this form by the Hecke relation), and the upper atom
+`b ∈ shifted (n + 1)`. A window that stays on one side of the junction generator sees the
+molecule only through the atom on that side: neither the other atom nor the junction's
+coefficients enter. So two molecules whose atoms agree on the junction-side region are
+separated by no such window, whatever their junction letters are. Combined with Part E and its
+mirror below, how deep a junction window must reach is decided by how far the two atoms' WORDS
+agree outward from the junction — a statement about words, checkable letter by letter.
+
+The corpus has no junction-letter rule for the production nucleon chain
+(`molecular-braid` leaves its "molecular crossing table" unspecified); these lemmas are stated
+for every junction letter precisely so that none has to be chosen. Conditional on
+`DisjointBlockMultiplicative`, like everything above. -/
+
+/-- **Above the junction.** A window `x` above the junction generator sees the molecule
+`a J b` exactly as it sees the upper atom `b` alone. -/
+theorem junction_window_above (hD : DisjointBlockMultiplicative T) (n : ℕ)
+    (a : A) (ha : a ∈ T.H n) (b : A) (hb : b ∈ shifted T (n + 1))
+    (x : A) (hx : x ∈ shifted T (n + 1)) (α β γ : R) :
+    T.tr (a * bondLetter T n α β γ * b * x) * T.tr b
+      = T.tr (b * x) * T.tr (a * bondLetter T n α β γ * b) := by
+  have hbx : b * x ∈ shifted T (n + 1) := (shifted T (n + 1)).mul_mem hb hx
+  have h1 := bridge_local_state T hD n a ha (b * x) hbx α β γ
+  have h2 := bridge_local_state T hD n a ha b hb α β γ
+  unfold bondLetter
+  rw [mul_assoc (a * _) b x, h1, h2]
+  ring
+
+/-- **Below the junction.** A window `x` below the junction generator sees the molecule
+`a J b` exactly as it sees the lower atom `a` alone. -/
+theorem junction_window_below (hD : DisjointBlockMultiplicative T) (n : ℕ)
+    (a : A) (ha : a ∈ T.H n) (b : A) (hb : b ∈ shifted T (n + 1))
+    (x : A) (hx : x ∈ T.H n) (α β γ : R) :
+    T.tr (a * bondLetter T n α β γ * b * x) * T.tr a
+      = T.tr (a * x) * T.tr (a * bondLetter T n α β γ * b) := by
+  have hxa : x * a ∈ T.H n := (T.H n).mul_mem hx ha
+  have h1 := bridge_local_state T hD n (x * a) hxa b hb α β γ
+  have h2 := bridge_local_state T hD n a ha b hb α β γ
+  have e : T.tr (a * bondLetter T n α β γ * b * x)
+      = T.tr (x * a * bondLetter T n α β γ * b) := by
+    rw [T.tr_mul_comm (a * bondLetter T n α β γ * b) x]
+    simp only [mul_assoc]
+  have e2 : T.tr (x * a) = T.tr (a * x) := T.tr_mul_comm x a
+  rw [e]
+  unfold bondLetter at *
+  rw [h1, h2, e2]
+  ring
+
+/-- **Different junctions, same upper atom ⇒ same window state above.** Two molecules
+`a J b` and `a' J' b` — any lower atoms, any junction coefficients — are not separated by any
+window above the junction generator. Division-free. -/
+theorem junction_cannot_separate_above (hD : DisjointBlockMultiplicative T) (n : ℕ)
+    (a a' : A) (ha : a ∈ T.H n) (ha' : a' ∈ T.H n) (b : A) (hb : b ∈ shifted T (n + 1))
+    (x : A) (hx : x ∈ shifted T (n + 1)) (α β γ α' β' γ' : R) :
+    T.tr (a * bondLetter T n α β γ * b * x) * T.tr (a' * bondLetter T n α' β' γ' * b)
+      = T.tr (a' * bondLetter T n α' β' γ' * b * x) * T.tr (a * bondLetter T n α β γ * b) := by
+  have hbx : b * x ∈ shifted T (n + 1) := (shifted T (n + 1)).mul_mem hb hx
+  have h1 := bridge_local_state T hD n a ha (b * x) hbx α β γ
+  have h2 := bridge_local_state T hD n a' ha' (b * x) hbx α' β' γ'
+  have h3 := bridge_local_state T hD n a ha b hb α β γ
+  have h4 := bridge_local_state T hD n a' ha' b hb α' β' γ'
+  unfold bondLetter
+  rw [mul_assoc (a * _) b x, mul_assoc (a' * _) b x, h1, h2, h3, h4]
+  ring
+
+/-- **Mirror of `window_factor`: a window at the BOTTOM of a word.** For `B = N * R` with the
+bottom block `N ∈ H m` and the rest `R ∈ shifted m`, a window `x ∈ H m` sees `B` only through
+`N` and `tr R`. Uses the trace property (T1) to move the window to the front. -/
+theorem window_factor_below (hD : DisjointBlockMultiplicative T) (m : ℕ)
+    (N : A) (hN : N ∈ T.H m) (Rr : A) (hR : Rr ∈ shifted T m) (x : A) (hx : x ∈ T.H m) :
+    T.tr (N * Rr * x) = T.tr (N * x) * T.tr Rr := by
+  rw [T.tr_mul_comm (N * Rr) x, ← mul_assoc, hD m (x * N) ((T.H m).mul_mem hx hN) Rr hR,
+    T.tr_mul_comm x N]
+
+/-- **Same bottom block ⇒ same bottom-window state**, whatever lies above it. -/
+theorem window_cannot_separate_below (hD : DisjointBlockMultiplicative T) (m : ℕ)
+    (N : A) (hN : N ∈ T.H m) (Rr Rr' : A) (hR : Rr ∈ shifted T m) (hR' : Rr' ∈ shifted T m)
+    (x : A) (hx : x ∈ T.H m) :
+    T.tr (N * Rr * x) * T.tr (N * Rr') = T.tr (N * Rr' * x) * T.tr (N * Rr) := by
+  have h1 := window_factor_below T hD m N hN Rr hR x hx
+  have h2 := window_factor_below T hD m N hN Rr' hR' x hx
+  have h3 := window_factor_below T hD m N hN Rr hR 1 (T.H m).one_mem
+  have h4 := window_factor_below T hD m N hN Rr' hR' 1 (T.H m).one_mem
+  simp only [mul_one] at h3 h4
+  rw [h1, h2, h3, h4]
+  ring
+
 end PartA
 
 /-! ## Part B — the two fundamental channels -/
