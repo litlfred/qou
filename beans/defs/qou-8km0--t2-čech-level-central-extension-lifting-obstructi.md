@@ -1,11 +1,11 @@
 ---
 # qou-8km0
 title: 'T2: Čech-level central-extension lifting obstruction (torsor over a cover)'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-10-12T19:23:37Z
-updated_at: 2026-10-12T19:36:52Z
+updated_at: 2026-10-12T19:48:14Z
 parent: qou-533l
 ---
 
@@ -26,3 +26,14 @@ Tier T2 of qou-533l.
 **Scope.** Constant coefficients: one group element per double overlap, i.e. a constant sheaf with connected overlaps. This is the torsor-gerbe case (Yekutieli exa:27).
 
 **T2b, next.** Make the coefficients a presheaf of groups on the cover (sections over U_ij, with restriction maps), so x, g and c are sections rather than elements. Mathlib's `Sites.NonabelianCohomology.H1` has the 1-cochain machinery to build on.
+
+## 2026-10-12: T2b done (presheaf coefficients); T2 core complete
+`QOU/MathlibExt/PresheafCentralExtensionObstruction.lean` builds on Mathlib's `Sites.NonabelianCohomology.H1` cochain style. It is sorry-free with no warnings; lean-direct exits 0; axioms are only [propext, Classical.choice, Quot.sound].
+- New: `TwoCochain`, and `PresheafCentralExtension` (ι injective, range ι = ker π, central, 𝒜 commutative, on every section group; π NOT assumed surjective).
+- Hypothesis: γ lifts on overlaps to a 1-cochain ξ. This is the analogue of Yekutieli's "class is defined", which the corpus omits.
+- `obstruction` (natural in T), `obstruction_cocycle`, and `exists_lift_iff`: γ lifts to an 𝓔-cocycle iff the obstruction = α_ij α_jk α_ik⁻¹ for a 1-cochain α of 𝒜.
+
+**Residuals, carried to T3:**
+- (a) Presheaf-level independence of the choice of ξ. T2a has it for constant coefficients; it is a straightforward port.
+- (b) Passage to a Grothendieck topology (colimit over covers, refinement).
+- (c) Gerbes proper.
