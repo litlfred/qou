@@ -28,6 +28,13 @@ image of $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) \to H^2(\mathcal{S}, \math
 (analytic/algebraic).  When $\kappa_0$ is non-torsion, these images are
 complementary, so corrections cannot cancel $\kappa_0$.
 
+*Scope of items (2) and (3).* Both depend on the band $\mathcal{B}$, which this proof does not fix.
+
+- **Item (2).** The identification requires an obstruction group in which the Euler class can be non-zero. The Euler class of the Reeb $\mathrm{U}(1)$-bundle is its first Chern class. That is the image under $c_1$ of a class in $H^1(\mathcal{S}, \mathcal{O}^{\times})$, landing in $H^2(\mathcal{S}, \mathbb{Z})$. For the archimedean band $\mathcal{B} = \mathcal{O}^{\times}$ on a closed surface, $H^2(\mathcal{S}, \mathcal{O}^{\times}) \cong H^3(\mathcal{S}, \mathbb{Z}) = 0$. There $\kappa_0 = 0$, while $e = \chi = -6$ on Bring's surface, so item (2) does not hold for that band.
+- **Item (3).** It is conditional on $\kappa_0$ being non-torsion. For $\mathcal{B} = \mathcal{O}^{\times}$ on a surface the hypothesis is never met, and item (3) is vacuous there. The complementary-subgroup step above is stated, not derived.
+
+Both items are coherent only for a band whose $H^2$ contains the integral Euler class, such as $\mathbb{Z}$. Constructing the central extension that the jet tower actually lifts through, and deriving $\kappa_0$ from it, is open.
+
 *Item (4): Riemann--Hurwitz.*
 The branched covering $\pi \colon S \to \mathbb{P}(V)$ of degree $d$ has
 total ramification $R_{\mathrm{tot}} = 2d + \lvert\chi(A)\rvert$ by
