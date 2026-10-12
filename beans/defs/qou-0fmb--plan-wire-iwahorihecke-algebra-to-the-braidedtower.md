@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T11:54:27Z
-updated_at: 2026-10-04T15:22:05Z
+updated_at: 2026-10-12T20:18:18Z
 parent: qou-59vq
 ---
 
@@ -382,3 +382,24 @@ subtraction), and anything about the `Set.univ`-indexed `Defn.IwahoriHecke`.
 `paper-assistant` MCP server failed to connect (`ENOENT … start-folio-assistant.sh`).
 Paths 1–6 are greps and share the blind spot path 0 covers, so "nothing connected
 them" rests on lexical search plus reading both files.
+
+
+--------
+
+**2026-10-12 — the `IwahoriHecke/` TRACE is now wired to `BraidedTower`, over ANY field. The Coxeter-side ALGEBRA tower is still not.** Branch `claude/braided-tower-hecke-wiring-2026-10-12`, commit `1b6dbbe2fb`, new file `QOU/IwahoriHecke/HeckeColimitTensorTrace.lean`.
+
+Survey first, so nothing is duplicated: S1-S4 on the SchurWeyl side were already done (#7274, `heckeColimitMarkovTrace`, `braidedTower_heckeColimit`, `disjointBlock_heckeColimit`) — but only over `ℝ`, and only for `q` not a root of unity, because its trace `wtrace` is a seminormal-character sum needing semisimplicity. This file builds a SECOND trace on the SAME carrier `HeckeLim K q q⁻¹` from `IwahoriHecke.TensorMarkovModel` (the normalised quantum trace on `End(V^{⊗(n+1)})^W`), so the hypotheses drop to `[Field K]`, `q ≠ 0`, `q²+1 ≠ 0` (§7c generic ring; no ordering, no genericity).
+
+| decl | content |
+|---|---|
+| `toModel hq n` | `Hecke K q q⁻¹ n →ₐ TensorMarkovModel.A q n`, `σᵢ ↦ sᵢ` (Hecke.lift + `sA_heckeFamily`) |
+| `levelTrace`, `_one`, `_cyc`, `_markov` | Markov at EVERY level `k < n`, `z = zD q = q³/(q²+1)` |
+| `levelTrace_incl` | tower compatibility, by UNIQUENESS (`JonesNormalForm.markov_unique_of_adjoin_eq_top`), not by matrix computation |
+| `trT`, `trT_one/_cyclic/_markov/_markov_inv` | colimit trace; `zinv = zD q − (q − q⁻¹)` derived |
+| `tensorColimitMarkovTrace` | `OcneanuTrace.MarkovTrace K (HeckeLim K q q⁻¹)` |
+| `braidedTower_tensorColimit` | instance, `h = q − q⁻¹` (`quad_scalar_ne_zero`: `≠ 0` iff `q² ≠ 1`) |
+| `towerSpan_tensorColimit`, `disjointBlock_tensorColimit` | #7153 fired |
+
+Verification: lean-direct `-DautoImplicit=false -s 65536` exit 0, 0 warnings, against a shadow in which all 24 QOU modules of the import cone were rebuilt from this branch's source (the restored cache lacked 8 of them). `#print axioms` on all 19 decls: `[propext, Classical.choice, Quot.sound]`. 0 sorry.
+
+**Still open, assumed nowhere:** (1) the Coxeter-side tower — there is still no inclusion `HeckeAlgebra K Q (Aₙ n) → HeckeAlgebra K Q (Aₙ (n+1))` commuting with `skeinBalancedEquiv`, so the instance is not transported onto `Defn.IwahoriHecke`/`BalancedHecke`; (2) faithfulness — the tensor model is the two-row (TL) quotient, so this trace kills the radical; (3) the identification `trT = trLim` over `ℝ` at generic `q` (should follow from uniqueness, but `wtrace`'s Markov property at levels `k < n` in `HeckeFamily` form is not available; not stated). Bean stays `todo` (§13a: the titled Coxeter-side wiring is not complete).
