@@ -292,6 +292,165 @@ theorem window_cannot_separate_below (hD : DisjointBlockMultiplicative T) (m : �
   rw [h1, h2, h3, h4]
   ring
 
+/-! ### Part H — the corpus covalent operator `L_b`: when it factors, and when it does not
+
+Owner rulings 2026-10-12 (bean `qou-a1hh`): the bond operator is the corpus `L_b`
+(`molecular-construction/covalent-bond-shared-trefoil`),
+`L_b = ∏_{e=1}^{k_b} σ⁻¹_{g_e(p_j)} · σ⁻¹_{g_e(p_i)}`, and each electron is a trefoil in its own
+local `H₃` (`3A + 3Z` strands per atom). The corpus writes every crossing as ONE generator.
+
+**Two readings, two different answers.**
+
+* **Distinct cuts.** If every letter of the molecule word sits on its own cut between disjoint
+  blocks, the trace is the product of the blocks' traces and one Markov value per letter —
+  `chain_trace` below, for any number of blocks. For one shared electron block `e` between
+  the atoms, the two `σ⁻¹` are on two cuts and the junction contributes `zinv ^ 2`
+  (`sharedElectron_trace`).
+* **Same cut.** If the two `σ⁻¹` of a shared electron cross the SAME pair of strands (the
+  literal Hopf link `σ⁻²`), the letter is one single-generator element of Hecke degree two,
+  and its Markov value is `1 + h² − h z = 1 − h · zinv`, not `zinv ^ 2`
+  (`hopfLetter_trace`, `hopf_value_eq`). The two differ by exactly `z · zinv − 1`
+  (`twoCut_sub_hopf`), which is not zero at convention D.
+
+So "one `z_D`-type factor per crossing" holds for the distinct-cut reading and FAILS for the
+Hopf reading. The corpus calls the bond a "Hopf linking" and writes two generators
+`g_e(p_i)`, `g_e(p_j)` without fixing whether they coincide: that is an owner choice, not
+settled here. Conditional on `DisjointBlockMultiplicative`, like everything above; the Hopf
+lemmas also take the Hecke relation `ginv = g − h` as an explicit hypothesis, because
+`MarkovTrace` does not carry it. -/
+
+/-- One step of a chain: a single-generator letter at `n` followed by a block. -/
+structure ChainStep (R A : Type*) where
+  /-- The cut generator. -/
+  n : ℕ
+  /-- Unit coefficient of the letter. -/
+  α : R
+  /-- Positive-crossing coefficient. -/
+  β : R
+  /-- Negative-crossing coefficient. -/
+  γ : R
+  /-- The block above the cut. -/
+  b : A
+
+/-- The word `a₀ · L₁ · b₁ · L₂ · b₂ ⋯`. -/
+def chainWord (a₀ : A) : List (ChainStep R A) → A
+  | [] => a₀
+  | s :: rest => chainWord (a₀ * bondLetter T s.n s.α s.β s.γ * s.b) rest
+
+/-- Every letter sits on a cut between disjoint blocks: what is below the letter lies in
+`H n`, the next block lies above it. -/
+def ChainOK : A → List (ChainStep R A) → Prop
+  | _, [] => True
+  | w, s :: rest => w ∈ T.H s.n ∧ s.b ∈ shifted T (s.n + 1) ∧
+      ChainOK (w * bondLetter T s.n s.α s.β s.γ * s.b) rest
+
+/-- **The composition law for a chain of solved blocks.** The trace of the composite is the
+product of one Markov value per letter, the traces of the added blocks, and the base trace. -/
+theorem chain_trace (hD : DisjointBlockMultiplicative T) :
+    ∀ (l : List (ChainStep R A)) (a₀ : A), ChainOK T a₀ l →
+      T.tr (chainWord T a₀ l)
+        = (l.map fun s => s.α + s.β * T.z + s.γ * T.zinv).prod
+            * (l.map fun s => T.tr s.b).prod * T.tr a₀
+  | [], a₀, _ => by simp [chainWord]
+  | s :: rest, a₀, ⟨ha, hb, hrest⟩ => by
+    have ih := chain_trace hD rest _ hrest
+    have h1 := bridge_local_state T hD s.n a₀ ha s.b hb s.α s.β s.γ
+    simp only [chainWord, List.map_cons, List.prod_cons]
+    rw [ih]
+    unfold bondLetter
+    rw [h1]
+    ring
+
+/-- **One shared electron, distinct cuts.** Lower atom `a`, electron block `e`, upper atom
+`b`, with the corpus `σ⁻¹` on each side of `e`: the junction contributes `zinv ^ 2`. -/
+theorem sharedElectron_trace (hD : DisjointBlockMultiplicative T) (n m : ℕ) (hnm : n + 1 ≤ m)
+    (a : A) (ha : a ∈ T.H n) (e : A) (he : e ∈ shifted T (n + 1)) (hem : e ∈ T.H m)
+    (b : A) (hb : b ∈ shifted T (m + 1)) :
+    T.tr (a * T.ginv n * e * T.ginv m * b) = T.zinv ^ 2 * (T.tr a * T.tr e * T.tr b) := by
+  have h := chain3_trace T hD n m hnm a ha e he hem b hb 0 0 1 0 0 1
+  simp only [bondLetter, map_zero, zero_smul, one_smul, zero_add, zero_mul] at h
+  rw [h]
+  ring
+
+/-- Under the Hecke relation `ginv = g − h`, the negative Markov parameter is `z − h`. -/
+theorem zinv_eq_of_hecke (h : R) (hH : T.ginv 0 = T.g 0 - algebraMap R A h) :
+    T.zinv = T.z - h := by
+  have h1 := T.markov_inv 0 1 (T.H 0).one_mem
+  have h2 := T.markov 0 1 (T.H 0).one_mem
+  rw [one_mul, T.tr_one, mul_one] at h1 h2
+  rw [← h1, hH, map_sub, h2, Algebra.algebraMap_eq_smul_one, map_smul, T.tr_one,
+    smul_eq_mul, mul_one]
+
+/-- `σ⁻² = (1 + h²) − h σ` under the Hecke relation. -/
+theorem ginv_sq_of_hecke (n : ℕ) (h : R) (hH : T.ginv n = T.g n - algebraMap R A h) :
+    T.ginv n * T.ginv n = algebraMap R A (1 + h ^ 2) + (-h) • T.g n + (0 : R) • T.ginv n := by
+  have e1 : T.ginv n * T.ginv n = 1 - h • T.ginv n := by
+    conv_lhs => rw [show T.ginv n * T.ginv n = T.ginv n * (T.g n - algebraMap R A h) by
+      rw [← hH]]
+    rw [mul_sub, T.ginv_mul, Algebra.algebraMap_eq_smul_one, mul_smul_comm, mul_one]
+  rw [e1, hH, zero_smul, add_zero, map_add, map_one, map_pow, smul_sub,
+    Algebra.smul_def h (algebraMap R A h), ← pow_two, neg_smul]
+  abel
+
+/-- **The Hopf reading.** Both crossings of a shared electron on the same generator: the
+letter is `σ⁻²` and its Markov value is `1 + h² − h z`. -/
+theorem hopfLetter_trace (hD : DisjointBlockMultiplicative T) (n : ℕ) (h : R)
+    (hH : T.ginv n = T.g n - algebraMap R A h)
+    (a : A) (ha : a ∈ T.H n) (b : A) (hb : b ∈ shifted T (n + 1)) :
+    T.tr (a * (T.ginv n * T.ginv n) * b) = (1 + h ^ 2 - h * T.z) * (T.tr a * T.tr b) := by
+  rw [ginv_sq_of_hecke T n h hH, bridge_local_state T hD n a ha b hb]
+  ring
+
+/-- The Hopf value in terms of `zinv`: `1 + h² − h z = 1 − h · zinv`. -/
+theorem hopf_value_eq (h : R) (hH : T.ginv 0 = T.g 0 - algebraMap R A h) :
+    1 + h ^ 2 - h * T.z = 1 - h * T.zinv := by
+  rw [zinv_eq_of_hecke T h hH]
+  ring
+
+/-- **Distinct cuts versus the Hopf letter differ by `z · zinv − 1`.** -/
+theorem twoCut_sub_hopf (h : R) (hH : T.ginv 0 = T.g 0 - algebraMap R A h) :
+    T.zinv ^ 2 - (1 - h * T.zinv) = T.z * T.zinv - 1 := by
+  have hz := zinv_eq_of_hecke T h hH
+  have : h = T.z - T.zinv := by rw [hz]; ring
+  rw [this]
+  ring
+
+/-- **A window that contains the junction.** Write the molecule as `L * Mid * U`, where `L`
+lies below the window's generators (`H m`), `U` above them (`shifted (M+1)`), and `Mid` —
+which may carry the junction letters and electron blocks — inside the window range. Then a
+window `x` on that range sees the molecule only through `Mid`. -/
+theorem window_two_sided (hD : DisjointBlockMultiplicative T) (m M : ℕ)
+    (L : A) (hL : L ∈ T.H m) (Mid : A) (hMs : Mid ∈ shifted T m) (hMH : Mid ∈ T.H (M + 1))
+    (U : A) (hU : U ∈ shifted T (M + 1)) (hUs : U ∈ shifted T m)
+    (x : A) (hxs : x ∈ shifted T m) (hxH : x ∈ T.H (M + 1)) :
+    T.tr (L * Mid * U * x) = T.tr L * T.tr U * T.tr (Mid * x) := by
+  have hrest : Mid * U * x ∈ shifted T m :=
+    (shifted T m).mul_mem ((shifted T m).mul_mem hMs hUs) hxs
+  rw [show L * Mid * U * x = L * (Mid * U * x) by simp only [mul_assoc],
+    hD m L hL _ hrest, T.tr_mul_comm (Mid * U) x, ← mul_assoc,
+    hD (M + 1) (x * Mid) ((T.H (M + 1)).mul_mem hxH hMH) U hU, T.tr_mul_comm x Mid]
+  ring
+
+/-- **Same inside, same two-sided window state**, whatever lies outside the window — in
+particular whatever the atoms are beyond it. Division-free. -/
+theorem window_two_sided_cannot_separate (hD : DisjointBlockMultiplicative T) (m M : ℕ)
+    (L L' : A) (hL : L ∈ T.H m) (hL' : L' ∈ T.H m)
+    (Mid : A) (hMs : Mid ∈ shifted T m) (hMH : Mid ∈ T.H (M + 1))
+    (U U' : A) (hU : U ∈ shifted T (M + 1)) (hUs : U ∈ shifted T m)
+    (hU' : U' ∈ shifted T (M + 1)) (hUs' : U' ∈ shifted T m)
+    (x : A) (hxs : x ∈ shifted T m) (hxH : x ∈ T.H (M + 1)) :
+    T.tr (L * Mid * U * x) * T.tr (L' * Mid * U')
+      = T.tr (L' * Mid * U' * x) * T.tr (L * Mid * U) := by
+  have h1 := window_two_sided T hD m M L hL Mid hMs hMH U hU hUs x hxs hxH
+  have h2 := window_two_sided T hD m M L' hL' Mid hMs hMH U' hU' hUs' x hxs hxH
+  have h3 := window_two_sided T hD m M L hL Mid hMs hMH U hU hUs 1
+    (shifted T m).one_mem (T.H (M + 1)).one_mem
+  have h4 := window_two_sided T hD m M L' hL' Mid hMs hMH U' hU' hUs' 1
+    (shifted T m).one_mem (T.H (M + 1)).one_mem
+  simp only [mul_one] at h3 h4
+  rw [h1, h2, h3, h4]
+  ring
+
 end PartA
 
 /-! ## Part B — the two fundamental channels -/
