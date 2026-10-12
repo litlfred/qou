@@ -23,3 +23,8 @@ Tier T3 of qou-533l.
 `PresheafCentralExtension.obstruction_lift_change`: two local lifts ξ, ξ' give obstructions differing by the coboundary of a 1-cochain of 𝒜, so the class is independent of ξ. Sorry-free; lean-direct exit 0, no warnings; axioms [propext, Classical.choice, Quot.sound].
 
 **Next:** residual (b), refinement of covers and the colimit over covers, then gerbes. Gerbes need a design decision, since Mathlib has no stacks. That decision goes to the owner before any large build; per this bean, scope it first.
+
+## 2026-10-12: residual (b), part 1, done: refinement
+`pullOneCochain`, `pullOneCocycle`, `pullTwoCochain`, and `obstruction_pull`: pulling γ and ξ back along a refinement f : V j ⟶ U (r j) pulls the obstruction back. Lean-direct exits 0 with no warnings; axioms are standard.
+
+**Remaining for (b):** the colimit over covering families of a Grothendieck topology, i.e. a well-defined class independent of the cover. Then gerbes.
