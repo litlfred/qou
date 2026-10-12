@@ -1753,6 +1753,24 @@ corpus — run the **corpus-grep checklist**:
    corpus_search  query: "<topic>", direction: "in"   # what depends on it
    ```
 
+   **When the MCP tool is not available, use the CLI — same handler, same
+   roots, same JSON** (bean `qou-q261`). At platform pin `c56b73b` the
+   `paper-assistant` server does not list `corpus_search` among its tools at
+   all, so this is the normal path, not an emergency one:
+
+   ```
+   bun run scripts/corpus-search.ts "<topic>"                     # 1 hop, both directions
+   bun run scripts/corpus-search.ts "<topic>" --direction in      # what depends on it
+   bun run scripts/corpus-search.ts "<topic>" --search-text       # also seed on companion prose
+   ```
+
+   It needs `folio-assistant/` (`bash scripts/setup-folio-assistant.sh`) and
+   says so if it is missing. **Query with a short phrase.** Seeding is
+   lexical: `"Bring"` and `"Temperley-Lieb"` seed 20 nodes each, while
+   `"Bring surface binding energy closure"` seeds **0** because no node
+   carries that string. A `noSeeds: true` answer is a statement about the
+   query, not about the corpus — shorten it before reading the absence.
+
    Read three things in its answer. **`why`** says whether a hit MATCHED
    or was REACHED, and by which edge — a `~` prefix means the edge ran
    backwards, so that node depends on the seed rather than the reverse.
