@@ -66,6 +66,8 @@ $$
 
 The obstruction transfers nontrivially to $\Sigma$ if and only if $\kappa_n$ strictly evades the image of the restriction map descending from $\mathcal{S} \setminus \Sigma$. Equivalently, the connecting homomorphism $\partial$ isolates it: $\kappa_n|_\Sigma \neq 0$ if and only if $\kappa_n$ maintains nontrivial **local cohomology** support anchored precisely at $\Sigma$.
 
+*Scope of (b) and (e).* The collision locus $\Sigma$ is one-dimensional, so $H^2(\Sigma, \mathcal{F}) = 0$ for every sheaf $\mathcal{F}$. Hence $\mathrm{res}_\Sigma(\kappa_n) = 0$ for every $n$ and every band. Read literally, the criterion in the statement returns NS-regular for every QOU and does not discriminate. The displayed sequence restricts to $\mathcal{S} \setminus \Sigma$, not to $\Sigma$, so the equivalence with local-cohomology support identifies two different maps. The formula in (e) lies in $H^2(\Sigma, \cdot) = 0$ on both sides. A replacement criterion localising $\kappa_n$ at points of $\Sigma$ is not established; on a closed surface $H^2_{\{p\}}(\mathcal{S}, \mathbb{Z}) \to H^2(\mathcal{S}, \mathbb{Z})$ is an isomorphism for every $p$, so such a localisation is not determined by $\kappa_n$ alone.
+
 **(c) Local cohomology computation.**
 
 Evaluating the [local cohomology](#def:local-cohomology-group) at any collision point $p \in \Sigma$ gives
