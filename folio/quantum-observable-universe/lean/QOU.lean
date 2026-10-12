@@ -232,6 +232,7 @@ import QOU.KZ.Drinfeld.Braided
 import QOU.KZ.Drinfeld.Hexagon
 import QOU.KZ.Drinfeld.Category
 import QOU.KZ.Drinfeld.Duals
+import QOU.KZ.Drinfeld.Admissible
 import QOU.KZ.Drinfeld.Kron
 import QOU.KZ.Drinfeld.Legs
 import QOU.KZ.Drinfeld.Monoidal
