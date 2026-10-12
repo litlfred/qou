@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2504.18825v2
-doc_title: "MURNAGHAN\u2013NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU"
-section_id: sec-012-a-dual-murnaghan-nakayama-rule-via-vertex-operat
-section_title: "A dual Murnaghan\u2013Nakayama rule via vertex operators"
+doc_title: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications"
+section_id: sec-004-5-a-dual-murnaghannakayama-rule-via-vertex-opera
+section_title: "A dual Murnaghan–Nakayama rule via vertex operators"
 section_number: 5
 pages: 20-25
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
-doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.966
+latex_coverage_ratio: 0.944
+doc_brief: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s"
 ---
 \label{s:OV}
 In the previous section, we establish a Murnaghan--Nakayama rule, which can be regarded as an iterative formula on the lower multipartitions of the irreducible characters. In this section, as duality, an iteration of the characters on the upper multipartitions will be derived with the help of the vertex operator realization of Schur functions.

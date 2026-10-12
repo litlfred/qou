@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2504.18825v2
-doc_title: "MURNAGHAN\u2013NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU"
-section_id: sec-014-application-ii-lu-beck-prasad-adin-roichman-type
-section_title: "Application II: Lu\u0308beck\u2013Prasad\u2013Adin\u2013Roichman-type formula"
+doc_title: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications"
+section_id: sec-006-7-application-ii-lübeckprasadadinroichman-type-f
+section_title: "Application II: Lübeck–Prasad–Adin–Roichman-type formula"
 section_number: 7
 pages: 34-43
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
-doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.919
+latex_coverage_ratio: 0.988
+doc_brief: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s"
 ---
 \label{s:LPAR}
 In this section, as the second application of our Murnaghan--Nakayama rule, we will establish a  L\"ubeck--Prasad--Adin--Roichman formula for the cyclotomic Hecke algebra $\mathscr{H}_{m,n}(q,\bm{u})$. To proceed with this, We will present an algorithm for $\chi^{(\la^{(1)},\la^{(2)},\cdots,\la^{(m)})}_{\bmu}$ using the corresponding single partition $\la$ with empty $m$-core and $(\la^{(1)},\la^{(2)},\cdots,\la^{(m)})$ as its $m$-quotient. Finally, we will explain how our formula recovers the Adin-Roichman formula for the complex reflection group $\mathscr{W}_{m,n}$ \cite{AR}, and particularly the L\"ubeck-Prasad formula for the hyperoctahedral group \cite{LP}.

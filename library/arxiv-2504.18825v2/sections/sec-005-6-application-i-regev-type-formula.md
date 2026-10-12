@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2504.18825v2
-doc_title: "MURNAGHAN\u2013NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU"
-section_id: sec-013-application-i-regev-type-formula
+doc_title: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications"
+section_id: sec-005-6-application-i-regev-type-formula
 section_title: "Application I: Regev-type formula"
 section_number: 6
 pages: 25-34
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
-doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.981
+doc_brief: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s"
 ---
 \label{s:Regev}
 In this section, as the first application of our Murnaghan--Nakayama rule, we are devoted to giving the Regev formula for the cyclotomic Hecke algebra $\mathscr{H}_{m,n}(q,\bm{u})$. Once the Murnaghan--Nakayama rule is set up right,
