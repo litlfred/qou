@@ -466,6 +466,8 @@ import QOU.OrientedSkein.OS.Unique
 import QOU.OrientedSkein.Model.GLnRMatrix
 import QOU.OrientedSkein.Model.GLnTrace
 import QOU.OrientedSkein.Model.GLnCrossCheck
+import QOU.OrientedSkein.Model.GLnDatum
+import QOU.OrientedSkein.Model.GLnLift
 import QOU.SchurWeyl.HeckeCoset
 import QOU.SchurWeyl.HeckeDim3
 import QOU.SchurWeyl.HeckeDim3Dim
