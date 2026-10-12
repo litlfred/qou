@@ -566,7 +566,250 @@ theorem Em_inj (hq : q ≠ 0) {n m : ℕ} (hqn : QIntNonzero q (n + 1)) (hm : 2 
   have := hdown (m + 1) le_rfl
   rwa [Nat.sub_self] at this
 
+/-! ## 6. The complement symmetry: `Eᵀ` is `E` at `q⁻¹`, conjugated by `0 ↔ 1` -/
+
+/-- Exchange the two letters. -/
+def fl (x : Fin 2) : Fin 2 := if x = 0 then 1 else 0
+
+theorem fl_fl (x : Fin 2) : fl (fl x) = x := by
+  rcases Fin.exists_fin_two.mp ⟨x, rfl⟩ with h | h <;> subst h <;> decide
+
+theorem fl_eq_zero (x : Fin 2) : fl x = 0 ↔ x = 1 := by
+  rcases Fin.exists_fin_two.mp ⟨x, rfl⟩ with h | h <;> subst h <;> decide
+
+theorem fl_eq_one (x : Fin 2) : fl x = 1 ↔ x = 0 := by
+  rcases Fin.exists_fin_two.mp ⟨x, rfl⟩ with h | h <;> subst h <;> decide
+
+/-- The complement of a state. -/
+def cmp {N : ℕ} (b : Fin N → Fin 2) : Fin N → Fin 2 := fun i => fl (b i)
+
+theorem cmp_cmp {N : ℕ} (b : Fin N → Fin 2) : cmp (cmp b) = b := by
+  funext i; exact fl_fl (b i)
+
+theorem cmp_update {N : ℕ} (b : Fin N → Fin 2) (k : Fin N) (y : Fin 2) :
+    cmp (Function.update b k y) = Function.update (cmp b) k (fl y) := by
+  funext i; by_cases h : i = k
+  · subst h; simp [cmp]
+  · simp [cmp, Function.update_of_ne h]
+
+theorem ones_cmp {N : ℕ} (b : Fin N → Fin 2) : ones (cmp b) + ones b = N := by
+  have h := ones_add_zeros b
+  have : ones (cmp b) = (Finset.univ.filter (fun i => ¬ b i = 1)).card := by
+    unfold ones; congr 1; ext i; simp only [Finset.mem_filter, cmp, fl_eq_one]
+    rcases Fin.exists_fin_two.mp ⟨b i, rfl⟩ with h | h <;> simp [h]
+  omega
+
+theorem ki_inv_fl {q : R} (hq : q ≠ 0) (x : Fin 2) : ki q⁻¹ (fl x) = ki q x := by
+  rcases Fin.exists_fin_two.mp ⟨x, rfl⟩ with h | h <;> subst h <;> simp [ki, fl, inv_inv]
+
+theorem phiN_inv_cmp (hq : q ≠ 0) {N : ℕ} (k : Fin N) (b : Fin N → Fin 2) :
+    phiN q⁻¹ k (cmp b) = phiN q k b := by
+  unfold phiN cmp
+  refine Finset.prod_congr rfl fun l _ => ?_
+  split_ifs <;> simp [ki_inv_fl hq]
+
+/-- **`Eᵀ` at `q` is `E` at `q⁻¹` on complemented states.** -/
+theorem Em_transpose (hq : q ≠ 0) {n : ℕ} (a b : Fin (n + 1) → Fin 2) :
+    Em q n b a = Em q⁻¹ n (cmp a) (cmp b) := by
+  classical
+  rw [Em_apply', Em_apply']
+  refine Finset.sum_congr rfl fun k _ => ?_
+  -- `a k = 0 ∧ b = a[k ↦ 1]`  iff  `b k = 1 ∧ a = b[k ↦ 0]`
+  by_cases hak : a k = 0
+  · rw [if_pos hak]
+    by_cases hb : b = Function.update a k 1
+    · subst hb
+      have h1 : cmp (Function.update a k 1) k = 0 := by simp [cmp, fl]
+      have h2 : cmp a = Function.update (cmp (Function.update a k 1)) k 1 := by
+        rw [cmp_update, Function.update_idem]
+        funext i; by_cases h : i = k
+        · subst h; simp [cmp, fl, hak]
+        · simp [Function.update_of_ne h]
+      rw [if_pos rfl, if_pos h1, if_pos h2, ← phiN_inv_cmp hq]
+      unfold phiN
+      refine Finset.prod_congr rfl fun l _ => ?_
+      split_ifs with hl
+      · rw [cmp_update]
+        have : l ≠ k := ne_of_gt hl
+        simp [Function.update_of_ne this]
+      · rfl
+    · rw [if_neg hb]
+      split_ifs with h1 h2
+      · exfalso; apply hb
+        have := congrArg cmp h2
+        rw [cmp_cmp, cmp_update, cmp_cmp] at this
+        rw [this, Function.update_idem]
+        have hbk : b k = 1 := by
+          have := h1; simp only [cmp, fl_eq_zero] at this; exact this
+        rw [← hbk, Function.update_eq_self]
+      · rfl
+      · rfl
+  · rw [if_neg hak]
+    split_ifs with h1 h2
+    · exfalso; apply hak
+      have := congrFun h2 k
+      simp [cmp] at this
+      rw [fl_eq_one] at this; exact this
+    · rfl
+    · rfl
+
+/-! ## 7. Weight-space blocks; `E` is surjective on the upper half -/
+
+/-- The weight-`m` states of `V^{⊗(n+1)}`. -/
+abbrev St (n m : ℕ) := {b : Fin (n + 1) → Fin 2 // ones b = m}
+
+/-- The block of `M` from weight `m` to weight `m'`. -/
+def blk {n : ℕ} (M : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R) (m m' : ℕ) :
+    Matrix (St n m') (St n m) R := Matrix.of fun a b => M a.1 b.1
+
+/-- `M` preserves the weight (the number of ones). -/
+def WP {n : ℕ} (M : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R) : Prop :=
+  ∀ a b, M a b ≠ 0 → ones a = ones b
+
+theorem sum_over_weight {n : ℕ} (f : (Fin (n + 1) → Fin 2) → R) (m : ℕ)
+    (hf : ∀ v, ones v ≠ m → f v = 0) : ∑ v, f v = ∑ v : St n m, f v.1 := by
+  classical
+  rw [← Finset.sum_subset (Finset.subset_univ (Finset.univ.filter fun v => ones v = m))
+    (fun v _ hv => hf v (by simpa using hv))]
+  exact Finset.sum_subtype _ (by simp) f
+
+theorem blk_Em_mul {n : ℕ} (q : R) {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R}
+    (hX : WP X) (m : ℕ) : blk (Em q n * X) m (m + 1) = blk (Em q n) m (m + 1) * blk X m m := by
+  ext a b
+  simp only [blk, Matrix.of_apply, Matrix.mul_apply]
+  refine sum_over_weight (fun v => Em q n a.1 v * X v b.1) m fun v hv => ?_
+  dsimp only
+  by_cases h : X v b.1 = 0
+  · rw [h, mul_zero]
+  · exact absurd (by rw [hX v b.1 h, b.2]) hv
+
+theorem blk_mul_Em {n : ℕ} (q : R) (X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R)
+    (m : ℕ) : blk (X * Em q n) m (m + 1) = blk X (m + 1) (m + 1) * blk (Em q n) m (m + 1) := by
+  ext a b
+  simp only [blk, Matrix.of_apply, Matrix.mul_apply]
+  refine sum_over_weight (fun v => X a.1 v * Em q n v b.1) (m + 1) fun v hv => ?_
+  dsimp only
+  by_cases h : Em q n v b.1 = 0
+  · rw [h, mul_zero]
+  · exact absurd (by rw [Em_weight q v b.1 h, b.2]) hv
+
+theorem blk_mul {n : ℕ} {X Y : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R}
+    (hY : WP Y) (m : ℕ) : blk (X * Y) m m = blk X m m * blk Y m m := by
+  ext a b
+  simp only [blk, Matrix.of_apply, Matrix.mul_apply]
+  refine sum_over_weight (fun v => X a.1 v * Y v b.1) m fun v hv => ?_
+  dsimp only
+  by_cases h : Y v b.1 = 0
+  · rw [h, mul_zero]
+  · exact absurd (by rw [hY v b.1 h, b.2]) hv
+
+/-- The weight-`m` block of `X`, as a linear map. -/
+noncomputable def Xl {n : ℕ} (X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R) (m : ℕ) :
+    (St n m → R) →ₗ[R] (St n m → R) := (blk X m m).mulVecLin
+
+/-- `E` from weight `m` to weight `m + 1`, as a linear map. -/
+noncomputable def El (q : R) (n m : ℕ) : (St n m → R) →ₗ[R] (St n (m + 1) → R) :=
+  (blk (Em q n) m (m + 1)).mulVecLin
+
+theorem El_comp_Xl {n : ℕ} (q : R) {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R}
+    (hX : WP X) (hc : X * Em q n = Em q n * X) (m : ℕ) :
+    El q n m ∘ₗ Xl X m = Xl X (m + 1) ∘ₗ El q n m := by
+  rw [El, Xl, Xl, ← Matrix.mulVecLin_mul, ← Matrix.mulVecLin_mul, ← blk_Em_mul q hX,
+    ← blk_mul_Em, hc]
+
+theorem ker_El_inv {n : ℕ} (q : R) {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R}
+    (hX : WP X) (hc : X * Em q n = Em q n * X) (m : ℕ) :
+    ∀ v ∈ LinearMap.ker (El q n m), Xl X m v ∈ LinearMap.ker (El q n m) := by
+  intro v hv
+  rw [LinearMap.mem_ker] at hv ⊢
+  rw [← LinearMap.comp_apply, El_comp_Xl q hX hc, LinearMap.comp_apply, hv, map_zero]
+
+/-- **The standard module** `W_{r,j}`, `r = n + 1`: the vectors of weight `r − j` killed by
+`E` (the highest-weight vectors of the summand `L_{r−2j}` of `V^{⊗r}`). -/
+noncomputable def Wmod (q : R) (n j : ℕ) : Submodule R (St n (n + 1 - j) → R) :=
+  LinearMap.ker (El q n (n + 1 - j))
+
+/-- The trace of `X` on the kernel of `E` at weight `m`. -/
+noncomputable def trK (q : R) {n : ℕ} (X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R)
+    (hX : WP X) (hc : X * Em q n = Em q n * X) (m : ℕ) : R :=
+  LinearMap.trace R (LinearMap.ker (El q n m)) ((Xl X m).restrict (ker_El_inv q hX hc m))
+
+theorem ones_le' {n : ℕ} (b : Fin (n + 1) → Fin 2) : ones b ≤ n + 1 := ones_le b
+
+/-- **`E` is surjective on the upper half**: from weight `m` onto weight `m + 1` when
+`r ≤ 2m + 1`. -/
+theorem El_surj (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (m : ℕ)
+    (hm : n + 1 ≤ 2 * m + 1) : Function.Surjective (El q n m) := by
+  classical
+  by_cases hmn : n + 1 < m + 1
+  · intro y
+    refine ⟨0, funext fun x => ?_⟩
+    exact absurd x.2 (by have := ones_le' x.1; omega)
+  set A := blk (Em q n) m (m + 1) with hA
+  -- `Aᵀ` is injective
+  have hinj : Function.Injective A.transpose.mulVecLin := by
+    rw [← LinearMap.ker_eq_bot, eq_bot_iff]
+    intro u hu
+    rw [LinearMap.mem_ker, Matrix.mulVecLin_apply] at hu
+    rw [Submodule.mem_bot]
+    set v : (Fin (n + 1) → Fin 2) → R :=
+      fun c => if h : ones (cmp c) = m + 1 then u ⟨cmp c, h⟩ else 0 with hv
+    have hsv : Supp (n - m) v := by
+      intro c hc
+      have := ones_cmp c
+      simp only [hv]
+      rw [dif_neg (by omega)]
+    have hEv : Em q⁻¹ n *ᵥ v = 0 := by
+      funext a
+      by_cases ha : ones a = n - m + 1
+      · have hx : ones (cmp a) = m := by have := ones_cmp a; omega
+        have h0 := congrFun hu ⟨cmp a, hx⟩
+        simp only [Matrix.mulVec, dotProduct, Matrix.transpose_apply, hA, blk,
+          Matrix.of_apply, Pi.zero_apply] at h0 ⊢
+        rw [← h0, ← cmp_cmp a]
+        rw [cmp_cmp]
+        have e : ∀ c, Em q⁻¹ n a c * v c
+            = (fun y => Em q n y (cmp a) * (if h : ones y = m + 1 then u ⟨y, h⟩ else 0)) (cmp c) := by
+          intro c
+          simp only [hv, Em_transpose hq (cmp a) (cmp c), cmp_cmp]
+        rw [Finset.sum_congr rfl fun c _ => e c,
+          Fintype.sum_equiv (Function.Involutive.toPerm cmp cmp_cmp)
+            (fun c => (fun y => Em q n y (cmp a) *
+              (if h : ones y = m + 1 then u ⟨y, h⟩ else 0)) (cmp c))
+            (fun y => Em q n y (cmp a) * (if h : ones y = m + 1 then u ⟨y, h⟩ else 0))
+            (fun c => rfl)]
+        rw [sum_over_weight _ (m + 1) (fun y hy => by simp [hy])]
+        refine Finset.sum_congr rfl fun y _ => ?_
+        rw [dif_pos y.2]
+      · exact supp_Em q⁻¹ hsv a ha
+    have hqn' : QIntNonzero q⁻¹ (n + 1) := fun k h1 h2 => by rw [qn_inv hq]; exact hqn k h1 h2
+    have hv0 := Em_inj (inv_ne_zero hq) hqn' (by omega) hsv hEv
+    funext y
+    have := congrFun hv0 (cmp y.1)
+    simp only [hv, cmp_cmp, y.2, dif_pos, Pi.zero_apply] at this
+    exact this
+  have hrank : Module.finrank R (LinearMap.range (El q n m)) = Module.finrank R (St n (m + 1) → R) := by
+    have h1 := Matrix.rank_transpose A
+    unfold Matrix.rank at h1
+    rw [LinearMap.finrank_range_of_inj hinj] at h1
+    rw [El, ← hA, ← h1]
+  rw [← LinearMap.range_eq_top]
+  exact Submodule.eq_top_of_finrank_eq hrank
+
+/-- **One step of the split**: on the upper half, the weight-`m` trace is the trace on the
+kernel of `E` plus the weight-`(m+1)` trace. -/
+theorem trace_step (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1))
+    {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R} (hX : WP X)
+    (hc : X * Em q n = Em q n * X) (m : ℕ) (hm : n + 1 ≤ 2 * m + 1) :
+    (blk X m m).trace = trK q X hX hc m + (blk X (m + 1) (m + 1)).trace := by
+  rw [← Matrix.trace_toLin'_eq, ← Matrix.trace_toLin'_eq, Matrix.toLin'_apply',
+    Matrix.toLin'_apply']
+  exact trace_eq_trace_ker_add (Xl X m) (Xl X (m + 1)) (El q n m) (El_surj hq hqn m hm)
+    (El_comp_Xl q hX hc m) (ker_El_inv q hX hc m)
+
 end QOU.Archimedean.SchurWeylTrace
+
+
 
 
 
