@@ -56,6 +56,12 @@ weaker than the usual condition. It holds at `q = 1` in characteristic 0, where 
   * `trace_W_fullTwist`:
     `tr(W γ^{rt}) = Σ_{2j ≤ r} (Σ_{m=j}^{r−j} q^{2m}) s_j^t dim W_{r,j}`.
   * `markov_fullTwist`: the same for every Markov trace with `z = z_D`.
+* **Every power, every module** (`trace_gamW`, `2j ≤ r`, any `p`):
+  * `tr(γ^p | W_{r,0}) = q^{np}`;
+  * `tr(γ^p | W_{r,j}) = T_j(ρ^p) − T_{j−1}(ρ'^p)` for `j ≥ 1`, written with the
+    periodic-state closed forms `rhoTr` / `rho'Tr`.
+  * The resulting per-module Rosso–Jones formula for every torus link `T(r, p)` is
+    `trace_W_gam_pow_explicit`; `markov_gam_pow_explicit` is its Markov form.
 
 -- Ref: [jimbo1986] Jimbo, *Lett. Math. Phys.* 11 (1986); [kassel1995] Kassel, *Quantum
 -- Groups*, GTM 155, Ch. VI–VII
@@ -1589,6 +1595,60 @@ theorem markov_fullTwist (hq : q ≠ 0) (hq1 : q ^ 2 + 1 ≠ 0) {n : ℕ}
             (twistScalar q n j ^ t * (Module.finrank R (Wmod q n j) : R)) := by
   rw [markov_cox_eq_quantumTrace' hq hq1 hs tr ht1 hcyc hmark hn, ← gam,
     ← trace_W_fullTwist hq hqn t]
+  have h1 : (q ^ 2 + 1) ^ (n + 1) ≠ 0 := pow_ne_zero _ hq1
+  field_simp
+
+/-! ## 12. The trace of `γ^p` on each standard module, for every `p` -/
+
+/-- **`tr(γ^p | W_{r,j})` for every `p`** (`2j ≤ r`): `q^{np}` on `W_{r,0}`, and
+`T_j(ρ^p) − T_{j−1}(ρ'^p)` on `W_{r,j}`, `j ≥ 1`, with the periodic-state closed forms `rhoTr`,
+`rho'Tr` of `RossoJonesTorusLink`. No coprimality. -/
+theorem trace_gamW (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (p j : ℕ)
+    (hj : 2 * j ≤ n + 1) :
+    LinearMap.trace R (Wmod q n j) (gamW hq n p j)
+      = if j = 0 then q ^ (n * p) else rhoTr q n p j - rho'Tr q n p (j - 1) := by
+  rcases Nat.eq_zero_or_pos j with h0 | hpos
+  · subst h0
+    have h := T_gam_pow_split hq hqn p 0 (by omega)
+    rw [Nat.zero_min, zero_add, Finset.sum_range_one, T_zero] at h
+    rw [if_pos rfl, h]
+  · obtain ⟨i, rfl⟩ : ∃ i, j = i + 1 := ⟨j - 1, by omega⟩
+    have h1 := T_gam_pow_split hq hqn p (i + 1) (by omega)
+    have h2 := T_gam_pow_split hq hqn p i (by omega)
+    rw [min_eq_left (by omega), Finset.sum_range_succ] at h1
+    rw [min_eq_left (by omega)] at h2
+    rw [if_neg (by omega), Nat.add_sub_cancel, ← T_rho_pow, ← T_rho'_pow]
+    have h3 := T_gam_succ hq n p i
+    rw [← h2] at h1
+    linear_combination h1.symm + h3
+
+/-- **Rosso–Jones per standard module, for every torus link `T(r, p)`**:
+`tr(W γ^p) = Σ_{2j ≤ r} (Σ_{m=j}^{r−j} q^{2m}) · tr(γ^p | W_{r,j})`, with `tr(γ^p | W_{r,j})`
+given by `trace_gamW`. -/
+theorem trace_W_gam_pow_explicit (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (p : ℕ) :
+    Matrix.trace (W q (n + 1) * gam q n ^ p)
+      = ∑ j ∈ Finset.range ((n + 1) / 2 + 1),
+          (∑ m ∈ Finset.Icc j (n + 1 - j), (q ^ 2) ^ m) *
+            (if j = 0 then q ^ (n * p) else rhoTr q n p j - rho'Tr q n p (j - 1)) := by
+  rw [trace_W_gam_pow_split hq hqn]
+  refine Finset.sum_congr rfl fun j hj => ?_
+  have hj' : 2 * j ≤ n + 1 := by have := Finset.mem_range.mp hj; omega
+  rw [trace_gamW hq hqn p j hj']
+
+/-- The same for every Markov trace with `z_D`, on any Hecke family. -/
+theorem markov_gam_pow_explicit (hq : q ≠ 0) (hq1 : q ^ 2 + 1 ≠ 0) {n : ℕ}
+    (hqn : QIntNonzero q (n + 1))
+    {B : Type*} [Ring B] [Algebra R B] {N : ℕ} {s : ℕ → B}
+    (hs : QOU.IwahoriHecke.JonesNormalForm.HeckeFamily N (q - q⁻¹) 1 s) (tr : B →ₗ[R] R)
+    (ht1 : tr 1 = 1) (hcyc : ∀ x y : B, tr (x * y) = tr (y * x))
+    (hmark : ∀ k, k < N → ∀ x ∈ Algebra.adjoin R (s '' Set.Iio k), tr (x * s k) = zD q * tr x)
+    (hn : n ≤ N) (p : ℕ) :
+    (q ^ 2 + 1) ^ (n + 1) * tr (QOU.IwahoriHecke.JonesNormalForm.cox s n ^ p)
+      = ∑ j ∈ Finset.range ((n + 1) / 2 + 1),
+          (∑ m ∈ Finset.Icc j (n + 1 - j), (q ^ 2) ^ m) *
+            (if j = 0 then q ^ (n * p) else rhoTr q n p j - rho'Tr q n p (j - 1)) := by
+  rw [markov_cox_eq_quantumTrace' hq hq1 hs tr ht1 hcyc hmark hn, ← gam,
+    ← trace_W_gam_pow_explicit hq hqn p]
   have h1 : (q ^ 2 + 1) ^ (n + 1) ≠ 0 := pow_ne_zero _ hq1
   field_simp
 

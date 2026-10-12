@@ -15,10 +15,12 @@ Checked for 1 <= r <= 6 at q in {2, 3/2, -5/7, 1}:
   (e) records the scalar by which gamma^r (the full twist) acts on W_{r,j}, if it is one.
       It is the scalar q^{r(r-1) - 2j(r-j+1)} (checked against the Lean `twistScalar`
       at every sample q), and dim W_{r,j} = C(r,j) - C(r,j-1) (Lean `finrank_Wmod`).
-Exit status 0 iff (a)-(e) pass.
+  (f) tr(gamma^p | W_{r,j}) equals the Lean closed form `trace_gamW`: q^{np} for j = 0, and
+      rhoTr(j) - rho'Tr(j-1) for j >= 1 (all 1 <= p <= r + 1).
+Exit status 0 iff (a)-(f) pass.
 """
 from fractions import Fraction as Fr
-from math import comb
+from math import comb, gcd
 from itertools import product
 import sys
 
@@ -148,6 +150,18 @@ def trace_on(X, B):
     scalar = C[0][0] if all(C[i][j] == (C[0][0] if i == j else 0) for i in range(k) for j in range(k)) else None
     return tr, scalar
 
+def lean_rhoTr(q, n, p, j, prime):
+    """Lean `rhoTr` / `rho'Tr` (RossoJonesTorusLink), truncated Nat arithmetic, at sample q."""
+    sub = lambda a, b: max(a - b, 0)
+    d = gcd(n + 1, p); e = (n + 1) // d
+    cnt = comb(d, j // e) if j % e == 0 else 0
+    S = p * j // (n + 1)
+    if not prime:
+        val = (q ** sub(n, j)) ** sub(p, S) * (q ** sub(j, 1) / q ** 2) ** S
+    else:
+        val = (q ** sub(n, j) / q ** 2) ** sub(p, S) * (q ** sub(j, 1)) ** S
+    return cnt * val
+
 def main():
     fails = checks = 0
     for q in (Fr(2), Fr(3, 2), Fr(-5, 7), Fr(1)):
@@ -187,6 +201,13 @@ def main():
             for p in range(1, r + 2):
                 Gp = matmul(G, Gp)
                 trW = {j: trace_on(Gp, W[j]) for j in W}
+                for j in W:  # (f) Lean `trace_gamW`
+                    n = r - 1
+                    want = q ** (n * p) if j == 0 else (lean_rhoTr(q, n, p, j, False)
+                                                        - lean_rhoTr(q, n, p, j - 1, True))
+                    checks += 1
+                    if trW[j][0] != want:
+                        fails += 1; print("trace_gamW FAIL", q, r, p, j, trW[j][0], want)
                 for m in range(r + 1):
                     Tm = sum(Gp[i][i] for i in Vm[m])
                     split = sum(trW[j][0] for j in W if j <= min(m, r - m))
