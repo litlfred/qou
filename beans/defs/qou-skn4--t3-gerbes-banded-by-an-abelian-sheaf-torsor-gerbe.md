@@ -18,3 +18,8 @@ Tier T3 of qou-533l.
 **Main.** Gerbes banded by an abelian sheaf A: groupoid-valued stacks, locally nonempty and locally connected, with automorphism sheaves identified with A. Then a central extension of gerbes in the sense of Yekutieli Def 3.21 (`library/arxiv-0801.0083v4`, sec-002 :671).
 
 **First milestone.** The torsor gerbe Tors(G) (exa:27), recovering T2b. Mathlib has no stacks. Scope the minimal 2-categorical structure first, and ask the owner before committing to a large design.
+
+## 2026-10-12: residual (a) done
+`PresheafCentralExtension.obstruction_lift_change`: two local lifts ξ, ξ' give obstructions differing by the coboundary of a 1-cochain of 𝒜, so the class is independent of ξ. Sorry-free; lean-direct exit 0, no warnings; axioms [propext, Classical.choice, Quot.sound].
+
+**Next:** residual (b), refinement of covers and the colimit over covers, then gerbes. Gerbes need a design decision, since Mathlib has no stacks. That decision goes to the owner before any large build; per this bean, scope it first.

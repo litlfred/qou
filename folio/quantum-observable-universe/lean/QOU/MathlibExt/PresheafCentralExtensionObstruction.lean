@@ -33,6 +33,8 @@ counterpart of "the obstruction class is defined" in Yekutieli 2010, Thm 4.17
 * `obstruction` is a `TwoCochain 𝒜 U`: the defect `ξ_ij ξ_jk ξ_ik⁻¹`, taken in
   `𝒜`, and natural in `T`.
 * `obstruction_cocycle`: it satisfies the Čech 2-cocycle identity.
+* `obstruction_lift_change`: a different local lift `ξ'` changes it by a
+  coboundary, so its class does not depend on `ξ`.
 * `exists_lift_iff`: `γ` lifts to a 1-**cocycle** of `𝓔` iff the obstruction is
   the coboundary `α_ij α_jk α_ik⁻¹` of some 1-cochain `α` of `𝒜`.
 
@@ -90,6 +92,18 @@ theorem core_lift_back (hcomm : ∀ x y : A, x * y = y * x) (xij xjk xik : E) (a
         rw [mul_assoc, ← mul_assoc xij, ← hcen ajk⁻¹ xij]; group
     _ = ι (aij⁻¹ * ajk⁻¹ * c) * xik := by rw [hs, map_mul, map_mul]; group
     _ = ι aik⁻¹ * xik := by rw [hA]
+
+omit hinj in
+theorem core_lift_change'
+    (xij xjk xik : E) (tij tjk tik c c' : A)
+    (hs : xij * xjk = ι c * xik)
+    (hs' : (ι tij * xij) * (ι tjk * xjk) = ι c' * (ι tik * xik)) :
+    ι (c' * tik) * xik = ι (tij * tjk * c) * xik := by
+  calc ι (c' * tik) * xik = ι c' * (ι tik * xik) := by rw [map_mul, mul_assoc]
+    _ = (ι tij * xij) * (ι tjk * xjk) := hs'.symm
+    _ = ι tij * ι tjk * (xij * xjk) := by
+        rw [mul_assoc (ι tij), ← mul_assoc xij, ← hcen tjk xij]; group
+    _ = ι (tij * tjk * c) * xik := by rw [hs, map_mul, map_mul]; group
 
 end Core
 
@@ -159,6 +173,43 @@ theorem obstruction_cocycle (i j k l : I) ⦃T : C⦄ (a : T ⟶ U i) (b : T ⟶
   exact core_cocycle (X.ι.app (op T)).hom (X.injective _) (X.central _) _ _ _ _ _ _ _ _ _ _
     (X.obstruction_spec γ ξ hξ i j k a b c) (X.obstruction_spec γ ξ hξ i k l a c d)
     (X.obstruction_spec γ ξ hξ j k l b c d) (X.obstruction_spec γ ξ hξ i j l a b d)
+
+/-- **Independence of the local lift.** Two local lifts `ξ`, `ξ'` of `γ` give
+obstructions that differ by the coboundary of a 1-cochain of `𝒜`, so the class
+of the obstruction does not depend on the choice. -/
+theorem obstruction_lift_change (ξ' : PresheafOfGroups.OneCochain 𝓔 U)
+    (hξ' : ∀ (i j : I) ⦃T : C⦄ (a : T ⟶ U i) (b : T ⟶ U j),
+      X.π.app (op T) (ξ'.ev i j a b) = γ.ev i j a b) :
+    ∃ t : PresheafOfGroups.OneCochain 𝒜 U, ∀ (i j k : I) ⦃T : C⦄ (a : T ⟶ U i)
+      (b : T ⟶ U j) (c : T ⟶ U k),
+      (X.obstruction γ ξ' hξ').ev i j k a b c =
+        (X.obstruction γ ξ hξ).ev i j k a b c *
+          (t.ev i j a b * t.ev j k b c * (t.ev i k a c)⁻¹) := by
+  have hmem : ∀ (i j : I) ⦃T : C⦄ (a : T ⟶ U i) (b : T ⟶ U j),
+      ∃ x, X.ι.app (op T) x = ξ'.ev i j a b * (ξ.ev i j a b)⁻¹ := by
+    intro i j T a b
+    apply (X.exact (op T) _).1; simp only [map_mul, map_inv, hξ, hξ', mul_inv_cancel]
+  let t : PresheafOfGroups.OneCochain 𝒜 U :=
+    { ev := fun i j _ a b => (hmem i j a b).choose
+      ev_precomp := by
+        intro i j T T' φ a b
+        apply X.injective
+        rw [NatTrans.naturality_apply, (hmem i j a b).choose_spec,
+          (hmem i j (φ ≫ a) (φ ≫ b)).choose_spec]
+        simp only [map_mul, map_inv, PresheafOfGroups.OneCochain.ev_precomp] }
+  have ht : ∀ (i j : I) ⦃T : C⦄ (a : T ⟶ U i) (b : T ⟶ U j),
+      ξ'.ev i j a b = X.ι.app (op T) (t.ev i j a b) * ξ.ev i j a b := by
+    intro i j T a b
+    change _ = X.ι.app (op T) (hmem i j a b).choose * _
+    rw [(hmem i j a b).choose_spec]; group
+  refine ⟨t, fun i j k T a b c => ?_⟩
+  have hs' := X.obstruction_spec γ ξ' hξ' i j k a b c
+  rw [ht i j a b, ht j k b c, ht i k a c] at hs'
+  have key := core_lift_change' (X.ι.app (op T)).hom (X.central _) _ _ _ _ _ _ _ _
+    (X.obstruction_spec γ ξ hξ i j k a b c) hs'
+  have e := X.injective _ (mul_right_cancel key)
+  rw [eq_mul_inv_of_mul_eq e, X.comm _ (t.ev i j a b * t.ev j k b c)]
+  group
 
 /-- **Lifting criterion.** The `𝒢`-cocycle `γ` lifts to an `𝓔`-cocycle iff its
 obstruction (relative to the local lift `ξ`) is a coboundary. -/
