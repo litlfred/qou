@@ -49,3 +49,23 @@ These are corpus-content corrections and wait on the owner (AGENTS.md §ASK THE 
 **Theorem hypothesis dropped.** Yekutieli Thm 4.17 assumes the obstruction class "is defined". The corpus drops that everywhere.
 
 **Status:** the coefficient question is answered *negatively*. The corpus has no consistent band, and the 𝒪^× reading makes the obstruction identically zero on Bring. The live Bring-specific question is therefore "which band", not "does it vanish". That is an owner decision about the framework's definition of 𝓑. Bean stays open.
+
+## 2026-10-12: band-construction audit (option 1, owner)
+`docs/audits/2026-10-12-jet-tower-band-construction.md`.
+
+**The definitions do not fix B.** The gerbes G_n, the downward functor F and the site are never constructed. If F is descent, the globally built J^1(A_n) is itself a lift, so kappa_n = 0 in every band (Yekutieli "Obstruction to lifting objects").
+
+**Per band on Sigma_4.**
+- O^x, G_m, jet kernels: kappa identically 0 (scope b).
+- mu_n and Z/2: kappa_0 = -6 mod n, so 0 for n dividing 6, which includes w_2. Item 3 is vacuous.
+- Z: kappa_0 = c_1 = -6 holds via Z -> R -> U(1). That is a real Yekutieli instance, but not a jet step. Item 3 is ill-posed.
+
+**Item 3's complementary-subgroups step fails on Sigma_4**, independently of R:
+- H^2(Sigma, O) = 0, so the corrections vanish;
+- H^2(Sigma, Z) = Z has no nontrivial complement;
+- once kappa_0 != 0, kappa_1 has no object to be defined on.
+A fourth reason, Hom(divisible, Z) = 0, holds only for divisible R. I scoped it in the doc.
+
+**Open and promising:** the Atiyah class a(T Sigma_4) in H^1(Sigma, K) = C, proportional to the degree. -6 genuinely enters the jet tower there, but in degree 1 and holomorphically only.
+
+**The same claim recurs** in kummer-tower.md:25-29, ns-obstruction-tower.md:40-47, ns-singularity-descartes-proof.md:16 and vertex-algebra-relations.md:475.
