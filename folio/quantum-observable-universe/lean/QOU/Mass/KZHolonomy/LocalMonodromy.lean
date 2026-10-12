@@ -144,4 +144,117 @@ lemma cseries_Mc [CompleteSpace A] (u : ℂ) (hu : ‖u‖ < 3) :
     cseries (Mc ρ κ c) u = Xf ρ κ c u :=
   (hasSum_Mc ρ κ c u hu).tsum_eq
 
+
+/-! ## The exchange symmetry `u ↦ −u` -/
+
+/-- `P = ρ(s₀₁)`. -/
+noncomputable abbrev Pm : A := ρ (Equiv.swap 0 1)
+
+omit [NormedAlgebra ℂ A] in
+lemma Pm_sq : Pm ρ * Pm ρ = 1 := by
+  rw [Pm, ← map_mul, Equiv.swap_mul_self, map_one]
+
+lemma spec_ne_zero (k : Fin m) : spec k ≠ 0 := Fin.succ_ne_zero _
+
+lemma spec_ne_one (k : Fin m) : spec k ≠ 1 := by
+  intro h
+  have : (k.succ.succ : Fin (m + 2)) = (0 : Fin (m + 1)).succ := by
+    rw [Fin.succ_zero_eq_one]; exact h
+  exact Fin.succ_ne_zero k (Fin.succ_injective _ this)
+
+omit [NormedAlgebra ℂ A] in
+lemma conj_swap (a b : Fin (m + 2)) :
+    Pm ρ * ρ (Equiv.swap a b) * Pm ρ =
+      ρ (Equiv.swap (Equiv.swap 0 1 a) (Equiv.swap 0 1 b)) := by
+  rw [Equiv.swap_apply_apply, Pm, ← map_mul, ← map_mul, Equiv.swap_inv]
+
+lemma conj_resid (a b : Fin (m + 2)) :
+    Pm ρ * resid ρ c a b * Pm ρ = resid ρ c (Equiv.swap 0 1 a) (Equiv.swap 0 1 b) := by
+  unfold resid
+  rw [mul_sub, sub_mul, conj_swap, ← Algebra.commutes, mul_assoc, Pm_sq, mul_one]
+
+lemma conj_resid01 : Pm ρ * resid ρ c 0 1 * Pm ρ = resid ρ c 0 1 := by
+  rw [conj_resid, Equiv.swap_apply_left, Equiv.swap_apply_right]
+  unfold resid; rw [Equiv.swap_comm]
+
+lemma conj_resid0 (k : Fin m) :
+    Pm ρ * resid ρ c 0 (spec k) * Pm ρ = resid ρ c 1 (spec k) := by
+  rw [conj_resid, Equiv.swap_apply_left,
+    Equiv.swap_apply_of_ne_of_ne (spec_ne_zero k) (spec_ne_one k)]
+
+lemma conj_resid1 (k : Fin m) :
+    Pm ρ * resid ρ c 1 (spec k) * Pm ρ = resid ρ c 0 (spec k) := by
+  rw [conj_resid, Equiv.swap_apply_right,
+    Equiv.swap_apply_of_ne_of_ne (spec_ne_zero k) (spec_ne_one k)]
+
+lemma neg_one_pow_mul_self (n : ℕ) : ((-1 : ℂ) ^ n) * (-1) ^ n = 1 := by
+  rw [← mul_pow]; norm_num
+
+/-- **Exchange symmetry of the coefficients**: `Mₙ = (−1)ⁿ P Mₙ P`. -/
+lemma Mc_sym (n : ℕ) : ((-1 : ℂ) ^ n) • (Pm ρ * Mc ρ κ c n * Pm ρ) = Mc ρ κ c n := by
+  rcases n with _ | n
+  · simp only [Mc, pow_zero, one_smul, mul_smul_comm, smul_mul_assoc, conj_resid01]
+  · simp only [Mc, Finset.mul_sum, Finset.sum_mul, Finset.smul_sum, mul_smul_comm,
+      smul_mul_assoc, mul_sub, sub_mul, conj_resid0, conj_resid1]
+    refine Finset.sum_congr rfl fun k _ => ?_
+    have h := neg_one_pow_mul_self n
+    rw [pow_succ]
+    generalize (-1 : ℂ) ^ n = σ at h ⊢
+    simp only [smul_sub, smul_smul]
+    match_scalars <;> first
+      | ring1
+      | linear_combination (-(2 * κ * (aSp k)⁻¹ ^ (n + 1))) * h
+
+
+omit [NormedAlgebra ℂ A] in
+lemma conj_mul (x y : A) : Pm ρ * (x * y) * Pm ρ = (Pm ρ * x * Pm ρ) * (Pm ρ * y * Pm ρ) := by
+  have h := Pm_sq ρ
+  calc Pm ρ * (x * y) * Pm ρ = Pm ρ * x * (Pm ρ * Pm ρ) * y * Pm ρ := by
+        rw [h, mul_one]; noncomm_ring
+    _ = _ := by noncomm_ring
+
+/-- Non-resonance of the residue `2κ(P − c)`. -/
+lemma nonResonant_Mc0 (hκ : ∀ k : ℕ, 0 < k → (k : ℂ) ^ 2 ≠ 4 * (2 * κ) ^ 2) :
+    NonResonant (Mc ρ κ c 0) := by
+  have e : ∀ k : ℕ, indicial (Mc ρ κ c 0) k = indicial ((2 * κ) • Pm ρ) k := by
+    intro k; funext X
+    simp only [indicial, ad, Mc, resid, Pm, smul_sub, sub_mul, mul_sub,
+      Algebra.algebraMap_eq_smul_one, smul_mul_assoc, mul_smul_comm, one_mul, mul_one]
+    abel
+  intro k hk
+  rw [e]
+  exact nonResonant_smul_involution (Pm ρ) (Pm_sq ρ) (2 * κ) hκ k hk
+
+/-- The normalised formal solution `H(u) = Σ Hₖ uᵏ`, `H₀ = 1`, of `u H' + H M₀ = M H`. -/
+noncomputable def Hc (hNR : NonResonant (Mc ρ κ c 0)) : ℕ → A := formalSol (Mc ρ κ c) hNR
+
+/-- **Exchange symmetry of the formal solution**: `Hₖ = (−1)ᵏ P Hₖ P`. -/
+lemma Hc_sym (hNR : NonResonant (Mc ρ κ c 0)) (k : ℕ) :
+    ((-1 : ℂ) ^ k) • (Pm ρ * Hc ρ κ c hNR k * Pm ρ) = Hc ρ κ c hNR k := by
+  set H := Hc ρ κ c hNR
+  set M := Mc ρ κ c
+  have hH : IsFormalGauge M H := formalSol_isFormalGauge M hNR
+  have hP := Pm_sq ρ
+  set H' : ℕ → A := fun k => ((-1 : ℂ) ^ k) • (Pm ρ * H k * Pm ρ)
+  have h0' : H' 0 = 1 := by
+    simp only [H', pow_zero, one_smul, H, Hc, formalSol_zero, mul_one, hP]
+  have hM0 : Pm ρ * M 0 * Pm ρ = M 0 := by simpa using Mc_sym ρ κ c 0
+  have hcast : ∀ (k : ℕ) (x : A), Pm ρ * ((k : A) * x) * Pm ρ = (k : A) * (Pm ρ * x * Pm ρ) := by
+    intro k x; rw [← mul_assoc, ← (Nat.cast_commute k (Pm ρ)).eq]; simp only [mul_assoc]
+  have hG : IsFormalGauge M H' := by
+    intro k
+    have e := congrArg (fun x => ((-1 : ℂ) ^ k) • (Pm ρ * x * Pm ρ)) (hH k)
+    simp only at e
+    rw [mul_add, add_mul, hcast, conj_mul, hM0, Finset.mul_sum, Finset.sum_mul,
+      Finset.smul_sum] at e
+    simp only [H']
+    rw [mul_smul_comm, smul_mul_assoc, ← smul_add, e]
+    refine Finset.sum_congr rfl fun j hj => ?_
+    have hjk : j ≤ k := Nat.lt_succ_iff.1 (Finset.mem_range.1 hj)
+    rw [conj_mul, mul_smul_comm]
+    conv_rhs => rw [show M (k - j) = _ from (Mc_sym ρ κ c (k - j)).symm]
+    rw [smul_mul_assoc, smul_smul, ← pow_add, Nat.add_sub_cancel' hjk]
+  have := formalGauge_unique M H' H (fun k hk => (hNR k hk).1) h0' (formalSol_zero M hNR) hG hH
+  exact congrFun this k
+
 end QOU.Mass.KZHolonomy.LocalMonodromy
