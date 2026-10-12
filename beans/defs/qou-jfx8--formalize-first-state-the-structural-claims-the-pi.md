@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T20:02:06Z
+updated_at: 2026-10-12T20:07:19Z
 parent: qou-v2om
 ---
 
@@ -74,3 +74,7 @@ Verdict: on UT(Σ₄) the σ/σ⁻¹ preference is fixed by (canonical contact o
 
 ## 2026-10-12 — the last bit removed (for Reeb strands)
 The Hecke↔skein identification is the corpus's own dictionary (AGENTS.md §7a: σ = L₊, Hecke relation ↔ L₊ − L₋ = (q − q⁻¹)L₀), so 'is the Hecke q the skein parameter' is settled by convention; the open question was only what orients crossings in UT(Σ₄). Proved (BringUTContactChirality §4, exit 0; probe 9/9): the geodesic spray R = (y cos θ, y sin θ, −cos θ) is the Reeb field of α (α(R) = 1, ι_R dα = 0), so Reeb strands are positively transverse to ker α. α then fixes both strand direction and ambient orientation, hence every crossing sign (Bennequin, cited). With §7a and q₀ > 1, the σ/σ⁻¹ preference at a collision of Reeb strands is DERIVED, no convention left. Input stated, not proved: the owner's picture that strands follow the Reeb flow. Deliberately not done: an instance of ChiralityMatching (wrong shape on UT).
+
+
+## 2026-10-12 — CORRECTION: two Reeb flows, opposite chirality (owner question: why was strands-follow-Reeb not clear?)
+My previous entry said the σ/σ⁻¹ preference is 'derived, no convention left'. That holds only for strands following the GEODESIC flow. UT(Σ₄) has two canonical contact forms: Liouville α (Reeb = geodesic spray) and the connection form η = dθ + dx/y (Reeb = fibre rotation ∂_θ, the Seifert circle action = Sasakian Reeb of the cone link). Proved (BringUTContactChirality §5, exit 0; probe 13/13): α∧dα = −1/y², η∧dη = +1/y² — OPPOSITE orientations; each flow is Legendrian for the other (η(R) = 0, α(∂θ) = 0). The corpus never states that strands follow the Reeb flow; fermion-boson-knot-link-proof has strands WIND AROUND 'the Reeb direction' (vertical = fibre), with signed winding ±1 — the fibre reading. Owner (2026-10-12): strands follow 'Reeb flow/geodesic' — these are different flows, so this is a modelling decision, not a Lean proof. Not affected: everything else (window, towers, descending step). Contaminated: my issue #7740 comment of 670ff8c658 ('no convention left'), corrected there.

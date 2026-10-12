@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-10-12T20:01:42.426443+00:00",
-  "commitSha": "e1d51cccd4ed4c892ac5596a6e4dca594410b479",
+  "computedAt": "2026-10-12T20:07:02.598300+00:00",
+  "commitSha": "670ff8c6586b485c3724cc385325c9ae91339c25",
   "assertions": [
     {
       "name": "contact_volume_eq_minus_one_over_y_squared",
@@ -66,14 +66,42 @@
       "expected": "1",
       "passed": true,
       "source": "x = const is a geodesic of the upper half-plane"
+    },
+    {
+      "name": "fibre_contact_volume_eq_plus_one_over_y_squared",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean fibre_contact_volume_coeff"
+    },
+    {
+      "name": "two_contact_orientations_opposite",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean contact_orientations_opposite"
+    },
+    {
+      "name": "fibre_is_reeb_of_eta",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "η(∂θ) = 1, ι_∂θ dη = 0"
+    },
+    {
+      "name": "legendrian_duality",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean legendrian_duality"
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 15,
   "computation": "ut-contact-orientation",
   "scriptFile": "ut_contact_orientation_probe.py",
-  "scriptHash": "5b8e593887e7",
-  "scriptCommitSha": "e1d51cccd4ed4c892ac5596a6e4dca594410b479",
+  "scriptHash": "f0158c7169d0",
+  "scriptCommitSha": "670ff8c6586b485c3724cc385325c9ae91339c25",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

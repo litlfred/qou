@@ -84,6 +84,20 @@ def main() -> int:
     check("spray_at_theta_pi_over_2_is_vertical_geodesic", [sp.simplify(r.subs(t, sp.pi / 2)) for r in R] == [0, y, 0],
           "x = const is a geodesic of the upper half-plane")
 
+    # the second canonical contact form: Levi-Civita connection form η = dθ + dx/y, Reeb field ∂_θ
+    ETA = [1 / y, sp.Integer(0), sp.Integer(1)]
+    F = [sp.Integer(0), sp.Integer(0), sp.Integer(1)]
+    veta = vol(ETA)
+    de = lambda i, j: sp.diff(ETA[j], V[i]) - sp.diff(ETA[i], V[j])  # noqa: E731
+    print("eta ^ d eta =", veta, " eta(R) =", sp.simplify(sum(a * r for a, r in zip(ETA, R))),
+          " alpha(F) =", sum(a * f for a, f in zip(ALPHA, F)))
+    check("fibre_contact_volume_eq_plus_one_over_y_squared", sp.simplify(veta - 1 / y ** 2) == 0, "Lean fibre_contact_volume_coeff")
+    check("two_contact_orientations_opposite", sp.simplify(veta + v) == 0, "Lean contact_orientations_opposite")
+    check("fibre_is_reeb_of_eta", sp.simplify(sum(e * f for e, f in zip(ETA, F)) - 1) == 0
+          and all(sp.simplify(sum(F[i] * de(i, j) for i in range(3))) == 0 for j in range(3)), "η(∂θ) = 1, ι_∂θ dη = 0")
+    check("legendrian_duality", sp.simplify(sum(e * r for e, r in zip(ETA, R))) == 0
+          and sp.simplify(sum(a * f for a, f in zip(ALPHA, F))) == 0, "Lean legendrian_duality")
+
     ok_all = all(ok for _, ok, _ in checks)
     w = WitnessBuilder("ut-contact-orientation", engine="sympy")
     for name, ok, src in checks:

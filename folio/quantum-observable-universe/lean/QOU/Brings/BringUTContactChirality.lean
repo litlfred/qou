@@ -119,7 +119,9 @@ direction of every strand and the orientation `α ∧ dα` of the ambient manifo
 the sign of every crossing between two such strands (Bennequin: closed braids transverse to a
 contact structure have crossing signs measured in the contact orientation). Together with the
 corpus's Hecke ↔ skein dictionary (`σ = L₊`, AGENTS.md §7a) and `q₀ > 1`, the preference between
-`σ` and `σ⁻¹` at a collision of Reeb strands is **derived**: no convention is left to choose.
+`σ` and `σ⁻¹` at a collision of Reeb strands is **derived**: no convention is left to choose —
+**for strands following the GEODESIC Reeb flow.** §5 shows the fibre rotation is a second Reeb
+flow with the opposite orientation, so which flow the strands follow is itself the decision.
 
 What this rests on, stated rather than hidden: the owner's picture that particle strands follow
 the Reeb (geodesic) flow of `UT(Σ₄)`. That is the framework's modelling input, not a theorem here.
@@ -145,5 +147,41 @@ theorem reeb_contraction_zero (y θ : ℝ) (hy : y ≠ 0) :
 theorem reeb_positively_transverse (y θ : ℝ) (hy : y ≠ 0) :
     0 < (cos θ / y) * (y * cos θ) + (sin θ / y) * (y * sin θ) + 0 * (-cos θ) := by
   rw [reeb_alpha_eq_one y θ hy]; norm_num
+
+/-! ## 5. The OTHER Reeb flow: the fibre rotation orients UT(Σ₄) the opposite way
+
+`UT(Σ)` carries a second canonical contact form, the Levi-Civita connection form
+`η = dθ + dx/y` (the geodesic spray is `η`-horizontal). Its Reeb field is the fibre rotation
+`∂_θ`, the Seifert circle action and the Sasakian Reeb field of the cone's link: the "vertical"
+direction the corpus's `fermion-boson-knot-link-proof` has strands wind around. Then:
+
+* `η ∧ dη = +(1/y²) dx ∧ dy ∧ dθ` (`fibre_contact_volume_coeff`), the **opposite** sign to
+  `α ∧ dα = −(1/y²) dx ∧ dy ∧ dθ` (`contact_orientations_opposite`);
+* `η(R) = 0` and `α(∂_θ) = 0` (`legendrian_duality`): each flow is Legendrian for the
+  other's contact structure.
+
+**So "strands follow the Reeb flow" names two different flows with OPPOSITE chirality.** Which
+one the particle strands follow is a modelling decision; §4's derivation holds for geodesic
+strands, and the same argument with `η` gives the mirror answer for fibre strands. -/
+
+/-- **`η ∧ dη = +1/y²`.** With `η = (1/y, 0, 1)`, `dη_{xy} = ∂ₓη_y − ∂_yη_x = 1/y²` and
+`dη_{xθ} = dη_{yθ} = 0`, the coefficient `η_x dη_{yθ} − η_y dη_{xθ} + η_θ dη_{xy}` is `1/y²`. -/
+theorem fibre_contact_volume_coeff (y : ℝ) :
+    (1 / y) * 0 - 0 * 0 + 1 * (0 - (-(1 / y ^ 2))) = 1 / y ^ 2 := by
+  ring
+
+/-- **The two canonical contact forms orient `UT(Σ)` oppositely.** -/
+theorem contact_orientations_opposite (y θ : ℝ) (hy : y ≠ 0) :
+    (cos θ / y) * (0 - cos θ / y) - (sin θ / y) * (0 - -(sin θ / y))
+      = -((1 / y) * 0 - 0 * 0 + 1 * (0 - (-(1 / y ^ 2)))) := by
+  rw [contact_volume_coeff y θ hy, fibre_contact_volume_coeff y]; ring
+
+/-- **Legendrian duality**: the geodesic spray is `η`-horizontal and the fibre is `α`-horizontal. -/
+theorem legendrian_duality (y θ : ℝ) (hy : y ≠ 0) :
+    (1 / y) * (y * cos θ) + 0 * (y * sin θ) + 1 * (-cos θ) = 0 ∧
+    (cos θ / y) * 0 + (sin θ / y) * 0 + 0 * 1 = 0 := by
+  refine ⟨?_, by ring⟩
+  field_simp
+  ring
 
 end QOU.Brings.UTContactChirality
