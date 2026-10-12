@@ -236,11 +236,13 @@ import QOU.KZ.KZ4
 import QOU.KZ.KZComplex
 import QOU.KZ.KZCorner
 import QOU.KZ.KZEdge
+import QOU.KZ.KZFunctorial
 import QOU.KZ.KZHalfMonodromy
 import QOU.KZ.KZHexagon
 import QOU.KZ.KZPentagon
 import QOU.KZ.KZShift
 import QOU.KZ.KZShiftPhi
+import QOU.KZ.NonResonantInt
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding
 import QOU.Knot.RademacherReversible
