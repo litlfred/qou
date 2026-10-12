@@ -235,3 +235,12 @@ Asked in the six-part frame on PR #7718 (comment 6130340849). The four options w
 **2026-10-11 — 🟧 OWNER RULING (thread chat, ofri, verbatim): "3... but let's go through γγ production step by step to get to one and two nucleons. each collision/interaction shifts things up the tower".** Option 3 of the #7702 decision: **reading 3 applies at EVERY level of the tower** (nucleon in H_3, A nucleons in H_{3A}, all checked). On the #7702 family this coincides with the H_3 verdicts; the live element stays excluded. Next: walk γγ production step by step, tracking the tower level of each collision (h-order and n). Walk-through: /mnt/project-files/qbeta-ohara/gg-production-walkthrough.md. Bean stays open (rule 13a).
 
 **2026-10-12 — #7702 x #7733 fold-in.** #7702 results.md now records (a) that the owner's every-level ruling (option 3) coincides with H_3 on its families, so nothing is re-scored, and (b) #7733's complementary negative: climbing by single collisions never confines, while composing confined triples always does (in these families). Confinement is per-triple, same-strand; the multi-nucleon levels add no selection beyond H_3. Scope (a). Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+**2026-10-12 — #7733 closure comparison (pre-registered 152a15575e, 4/4 checks; `gg_ntower/closures_results.md`).** Top, bottom, and the Jones-projection pair closure (cap–cup, from the top and from the bottom) were computed exactly in ℚ(q).
+- No closure confines any climbing placement (s = −1, ±2, +3), for either vertex, up to n = 9.
+- Verdicts differ only on the degenerate s = +1 staircase σ₀σ_k⁻¹.
+- Top vs bottom differ only where the q = 1 residue is a transposition: the surviving oriented crossing decides at t¹, since V flips to V⁻¹.
+- The pair closure evaluates the annihilated singlet pair at −q⁻¹, which flips the trivial block negative for s = ±2, +3.
+- K4 confirms the Jones absorption law on characters under convention D; the Lean class stays open.
+
+Scope (a); bean stays open. Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
