@@ -2,7 +2,7 @@
   "mcpServers": {
     "paper-assistant": {
       "command": "bun",
-      "args": ["run", "folio-assistant/cat-harness/src/index.ts", "--stdio", "--repo", "."]
+      "args": ["run", "folio-assistant/cat-harness-tools/src/index.ts", "--stdio", "--repo", "."]
     },
     "paper-search-mcp": {
       "command": "uvx",
