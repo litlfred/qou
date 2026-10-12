@@ -57,3 +57,20 @@ built on the SchurWeyl tower. Convention D corollary `tr_bond_letter_conventionD
   `a•1 + b•g_{off+i}` has trace independent of `off`.
 - `tr_blockProd_pn`: proton/neutron blocks ⇒ `P_p^Z · P_n^N`.
 Inverse generators are affine letters (`ginv_letter`, from the quadratic relation).
+
+## 2026-10-12: step 4 DONE — the factorisation is a theorem (for the production LAYOUT)
+
+`QOU/Mass/AtomTraceFactorisation.lean`, sorry-free. `atomWord S isP wp wn d n` (A = n+2
+nucleons; block k = proton/neutron word on strands 3k..3k+2; bond letters g_{3k+2} + d_k):
+
+    tr_atomWord : tr(W_atom) = ∏_{k≤n} (z + d_k) · P_p^Z · P_n^N
+
+on every braided-tower Markov trace; `tr_atomWord_colimit` on the Hecke colimit for any family;
+`tr_atomWord_of_z_eq_zero` gives ∏ d_k (the τ form). Proof = `tr_productionChain_braided`
+(main) + `freeWord_chainFrom` + `tr_blockProd_pn`. Axioms clean.
+
+**Still NOT derived (stays open, so this bean stays in-progress per §13a until reviewed):**
+- bond coefficient on g is 1; the d_k and the nucleon words are inputs (qou-qqm4);
+- no Lean model checks that `atom_braid_word_3A` emits exactly these letters;
+- existence of a Markov trace at arbitrary z on the Hecke tower is open (only D and Wenzl r);
+- no binding energy / c_k.
