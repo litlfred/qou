@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T20:31:47Z
+updated_at: 2026-10-12T20:35:02Z
 parent: qou-v2om
 ---
 
@@ -90,3 +90,9 @@ The convolution letter σ generates the flow σ^t = q^t P_S + q^{−t} e^{±iπt
 
 ## 2026-10-12 — the convolution flow's half-turn IS the fibre rotation of the relative direction (ConvolutionFlowFibre.lean, exit 0)
 Modelling reading (stated): two nearby fibre strands over p and p+r; the relative direction r/|r| is a point of the fibre UT_pΣ₄ (owner's 'relative vector in computation velocity space'). Proved: exchange fixes the centre and sends r ↦ −r (sign rep = q→1 limit of the Alt channel); the half twist r·e^{iπt} is a flow, one half twist = exchange, two = full turn; on a unit r = e^{iθ} it is the fibre Reeb flow θ ↦ θ + πt; the Alt eigenvalue −q⁻¹ has phase π and modulus q⁻¹, and the flow q^{−t}e^{iπt} = q^{−t}·halfTwist t 1. Verdict: the Alt-channel phase of σ^t is the fibre rotation of the relative direction; the q-deformation is pure modulus. Branch fixed by the right-hand rule with strands along +∂θ in the ruled orientation: σ ↔ e^{+iπ}. Not established: a geometric meaning for the modulus q^{−t}; strands not nearby.
+
+
+## 2026-10-12 — owner refinement: 'geodesic is for a single braid; the knot-convolution operator # changes this'
+Formalized (BringUTContactChirality §8, exit 0): during a convolution the velocity is X + κV; η(X + κV) = κ is the geodesic curvature (free strands: κ = 0, η-horizontal); α(X + κV) = 1 for all κ, so strands are always positively transverse to ker α, while η changes sign with the turn. FLAG: this makes the α (geodesic) orientation the one fixed by transversality, residue −1/6 — the mirror of the +1/6 recorded under the earlier 'fibre' ruling. The fibre flow enters as the convolution's turning (π per half twist, ConvolutionFlowFibre), not as strand direction. Owner to confirm which orientation is canonical.
+## 2026-10-12 — MY ERROR in the molecular junction question
+I told the owner the corpus bond is 'σ² (Hopf link) per shared pair' and electrons add Z strands; owner picked σ² and 3A+Z on that basis. The corpus actually says (covalent-bond-shared-trefoil.md): L_b = ∏_e σ⁻¹_{g_e(p_j)}·σ⁻¹_{g_e(p_i)} — each shared electron crosses a proton of EACH atom with σ⁻¹ (writhe −2 per electron; a NEGATIVE Hopf link), and each electron is a trefoil σ₀σ₁σ₀ in its own local H₃ (3 strands, so 3A + 3Z), while molecular-braid.md says n_i = A + Z. molecular-crossing-table.md DOES exist (inter-atomic pp σ, pn/nn identity, p e σ⁻¹). Nothing built; owner re-asked.

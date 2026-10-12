@@ -267,4 +267,36 @@ theorem geodesic_residue_chiral :
   have : (3 : ℤ) * n = -1 := by exact_mod_cast h3
   omega
 
+/-! ## 8. Owner refinement 2026-10-12: free strands follow geodesics; the convolution adds fibre rotation
+
+Verbatim: *"geodesic is for a single braid. two braids coming in want to adhere to their geodesic,
+however the knot-convolution operator #, changes this."* So a free strand moves along the geodesic
+spray `X`, and during a convolution its velocity is `X + κ V` with `V = ∂_θ` the fibre rotation.
+
+* `geodesic_curvature_eq_eta`: `η(X + κV) = κ`, i.e. the connection form measures the departure
+  from the geodesic, which is the geodesic curvature of the projected curve. Free strands
+  (`κ = 0`) are `η`-horizontal.
+* `unit_speed_alpha`: `α(X + κV) = 1` for every `κ`. Free or interacting, every strand stays
+  POSITIVELY transverse to `ker α`. By contrast `η(X + κV) = κ` changes sign with the turning
+  direction, so `η` cannot orient crossings consistently.
+
+**Consequence, flagged for the owner.** Under this refinement the ambient orientation fixed by the
+strands' transversality is `α ∧ dα` (§1, the geodesic one). Its fibre linking residue is `−1/6`
+(§7), the mirror of the `+1/6` recorded under the 2026-10-12 "fibre" ruling (§6). The fibre flow
+enters as the convolution's TURNING (`κ`; one half twist turns the relative direction by `π`,
+`ConvolutionFlowFibre.lean`), not as the strands' own direction. Which orientation is canonical is
+the owner's call; this file records both. -/
+
+/-- **The connection form is the geodesic curvature**: `η(X + κV) = κ`. -/
+theorem geodesic_curvature_eq_eta (y θ κ : ℝ) (hy : y ≠ 0) :
+    (1 / y) * (y * cos θ) + 0 * (y * sin θ) + 1 * (-cos θ + κ) = κ := by
+  field_simp; ring
+
+/-- **Unit speed is preserved**: `α(X + κV) = 1`, so every strand stays positively transverse. -/
+theorem unit_speed_alpha (y θ κ : ℝ) (hy : y ≠ 0) :
+    (cos θ / y) * (y * cos θ) + (sin θ / y) * (y * sin θ) + 0 * (-cos θ + κ) = 1 := by
+  have h := sin_sq_add_cos_sq θ
+  field_simp
+  linear_combination h
+
 end QOU.Brings.UTContactChirality
