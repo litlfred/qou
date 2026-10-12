@@ -23,13 +23,13 @@ For each element, report:
 1. every coefficient c_w(h) ∈ ℤ[h], exactly;
 2. the **first order** n ≥ 1 at which a single-letter coefficient c_{s₀} or c_{s₁} is nonzero, and both values at that order;
 3. **flip symmetry**: whether c_{s₀}(h) = c_{s₁}(h) as polynomials;
-4. the characters χ_(3), χ_(2,1) of the element as exact rational functions of q, and their values at q = 1. Reading 3 on H₃ (level 3, the only level) is reported, and must agree with #7733's s = 0 row (check K3).
+4. the characters χ_(3), χ_(2,1) of the element as exact rational functions of q, and their values at q = 1. Reading 3 on H₃ (level 3, the only level) is reported.
 
 ## 2. Checks (pass/fail fixed in advance)
 
 - **K1.** The multiplication table satisfies σ_i² = hσ_i + 1 and the braid relation σ₀σ₁σ₀ = σ₁σ₀σ₁, exactly.
 - **K2.** At h = 0 each element's coefficients are those of the permutation it maps to (a single T_w with coefficient 1).
-- **K3.** χ_(2,1)(V^k) agrees exactly with `computations/probes/gg_ntower/gg-ntower.witness.json`, row "V s=+0 k=k", for k = 1..6.
+- **K3.** χ_(2,1)(V³) − 2 = −h⁴(3 + h²) exactly. This is the same-strand identity of the h-tower table, also #7733's check C4.
 - **K4.** φ acts as an automorphism on the computed elements: φ(V^k) computed by swapping generators equals V^{−k} computed directly.
 
 ## 3. Outcomes (stated before computing)
@@ -41,3 +41,7 @@ For each element, report:
 ## 4. Not done
 
 No strand count above 3, no quark letters inserted, no gluons. Exact integer polynomial arithmetic; no floats.
+
+## Amendment (before any number was computed)
+
+K3 originally compared against #7733's witness. That PR is not on `main`, so the first run stopped at an import, before computing anything. K3 now checks the identity that #7733's own C4 checks. The characters come from a self-contained exact 2×2 seminormal representation, whose braid and Hecke relations are checked as part of K1.
