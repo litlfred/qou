@@ -6,10 +6,12 @@
   "sha256": "778e60219862e371fbb004d915345bdfff963fd1f8a0746784e1493af4efd48d",
   "bytes": 385486,
   "pages": 23,
-  "math_source": "latex",
+  "text_source": "embedded",
+  "extractor": "pymupdf",
   "mtime": null,
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,94 +21,674 @@
    "stamp_date": "25 Oct 2016"
   },
   "doi": null,
-  "title": "A Murnaghan-Nakayama rule for values of unipotent characters in classical groups",
-  "authors_raw": "Frank Lubeck and Gunter Malle"
+  "title": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN\u2013NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
+  "authors_raw": null,
+  "title_lines": [
+   "REPRESENTATION THEORY",
+   "An Electronic Journal of the American Mathematical Society",
+   "(Xxxx XX, XXXX)",
+   "S 1088-4165(XX)0000-0",
+   "A MURNAGHAN\u2013NAKAYAMA RULE FOR VALUES",
+   "OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
+  ],
+  "abstract": "We derive a Murnaghan\u2013Nakayama type formula for the values of unipotent characters of \ufb01nite classical groups on regular semisimple elements. This relies on Asai\u2019s explicit decomposition of Lusztig restriction. We use our formula to show that most complex irreducible characters vanish on some \u2113-singular element for certain primes \u2113. As an application we classify the simple endotrivial modules of the \ufb01nite quasi-simple classical groups. As a further application we show that for \ufb01nite simple classical groups and primes \u2113\u22653 the \ufb01rst Cartan invariant in the principal \u2113-block is larger than 2 unless Sylow \u2113-subgroups are cyclic.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180919181236-04'00'"
+  },
+  "title_raw": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN\u2013NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "A MURNAGHAN\u2013NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS 1. Introduction The classical Murnaghan\u2013Nakayama rule provides an e\ufb03cient recursive method to compute the values of irreducible characters of symmetric groups. This method can be adapted to the \ufb01nite general linear and",
+   "outline": "1. Introduction",
+   "text": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN\u2013NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
- "toc": [],
- "toc_source": "headings",
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Maximal tori in classical groups",
+   "page": 2,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Weyl groups and maximal tori in symplectic and orthogonal groups",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Regular semisimple elements",
+   "page": 3,
+   "source": "outline",
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Maximal connected reductive subgroups",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "A Murnaghan\u2013Nakayama rule",
+   "page": 5,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Lusztig restriction",
+   "page": 6,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Symbols",
+   "page": 6,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Unipotent characters of symplectic and orthogonal groups",
+   "page": 7,
+   "source": "outline",
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Values of unipotent characters at regular semisimple elements",
+   "page": 7,
+   "source": "outline",
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Vanishing of characters",
+   "page": 9,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Non-unipotent characters",
+   "page": 9,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Unipotent characters",
+   "page": 10,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Simple endotrivial modules",
+   "page": 14,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "On certain unipotent characters",
+   "page": 14,
+   "source": "outline",
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Simple endotrivial modules in classical type groups",
+   "page": 16,
+   "source": "outline",
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Zeroes of characters of quasi-simple groups",
+   "page": 17,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "An application to small 1-PIMs",
+   "page": 18,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 22,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 22,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Tori needed in the proof of Theorem 4.1 type",
+   "page": 10,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 939,
+   "n_words": 137,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "id": "sec-000-introduction",
-   "n_chars": 4670,
-   "n_words": 786
+   "n_chars": 2391,
+   "n_words": 387,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-001-22-regular-semisimple-elements",
+   "number": "2.2",
+   "title": "Regular semisimple elements",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2130,
+   "n_words": 357,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-2-maximal-tori-in-classical-groups",
    "number": "2",
    "title": "Maximal tori in classical groups",
    "level": 1,
    "page_start": 2,
-   "page_end": 5,
-   "id": "sec-001-maximal-tori-in-classical-groups",
-   "n_chars": 12870,
-   "n_words": 2994
+   "page_end": 2,
+   "n_chars": 359,
+   "n_words": 59,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-003-21-weyl-groups-and-maximal-tori-in-symplectic-an",
+   "number": "2.1",
+   "title": "Weyl groups and maximal tori in symplectic and orthogonal groups",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 9521,
+   "n_words": 2140,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-23-maximal-connected-reductive-subgroups",
+   "number": "2.3",
+   "title": "Maximal connected reductive subgroups",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2506,
+   "n_words": 508,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-3-a-murnaghannakayama-rule",
    "number": "3",
    "title": "A Murnaghan\u2013Nakayama rule",
    "level": 1,
    "page_start": 5,
-   "page_end": 9,
-   "id": "sec-002-a-murnaghan-nakayama-rule",
-   "n_chars": 10431,
-   "n_words": 2247
+   "page_end": 5,
+   "n_chars": 199,
+   "n_words": 34,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-006-31-lusztig-restriction",
+   "number": "3.1",
+   "title": "Lusztig restriction",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1458,
+   "n_words": 272,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-32-symbols",
+   "number": "3.2",
+   "title": "Symbols",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2143,
+   "n_words": 541,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-33-unipotent-characters-of-symplectic-and-orthog",
+   "number": "3.3",
+   "title": "Unipotent characters of symplectic and orthogonal groups",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1191,
+   "n_words": 219,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-34-values-of-unipotent-characters-at-regular-sem",
+   "number": "3.4",
+   "title": "Values of unipotent characters at regular semisimple elements",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4842,
+   "n_words": 962,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-42-unipotent-characters",
+   "number": "4.2",
+   "title": "Unipotent characters",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-4-vanishing-of-characters",
    "number": "4",
    "title": "Vanishing of characters",
    "level": 1,
    "page_start": 9,
-   "page_end": 14,
-   "id": "sec-003-vanishing-of-characters",
-   "n_chars": 17565,
-   "n_words": 4117
+   "page_end": 9,
+   "n_chars": 1052,
+   "n_words": 219,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-012-41-non-unipotent-characters",
+   "number": "4.1",
+   "title": "Non-unipotent characters",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 16167,
+   "n_words": 3654,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-5-simple-endotrivial-modules",
    "number": "5",
    "title": "Simple endotrivial modules",
    "level": 1,
    "page_start": 14,
-   "page_end": 17,
-   "id": "sec-004-simple-endotrivial-modules",
-   "n_chars": 13523,
-   "n_words": 2928
+   "page_end": 14,
+   "n_chars": 285,
+   "n_words": 49,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-014-51-on-certain-unipotent-characters",
+   "number": "5.1",
+   "title": "On certain unipotent characters",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 6236,
+   "n_words": 1303,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-52-simple-endotrivial-modules-in-classical-type",
+   "number": "5.2",
+   "title": "Simple endotrivial modules in classical type groups",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 6466,
+   "n_words": 1234,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-6-zeroes-of-characters-of-quasi-simple-groups",
    "number": "6",
    "title": "Zeroes of characters of quasi-simple groups",
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "id": "sec-005-zeroes-of-characters-of-quasi-simple-groups",
-   "n_chars": 4441,
-   "n_words": 873
+   "n_chars": 4378,
+   "n_words": 816,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-017-7-an-application-to-small-1-pims",
    "number": "7",
    "title": "An application to small 1-PIMs",
    "level": 1,
    "page_start": 18,
+   "page_end": 22,
+   "n_chars": 10537,
+   "n_words": 1881,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-018-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 22,
    "page_end": 23,
-   "id": "sec-006-an-application-to-small-1-pims",
-   "n_chars": 11857,
-   "n_words": 2130
+   "n_chars": 1177,
+   "n_words": 167,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 0,
-  "sections": 7,
-  "chars_total": 76511,
+  "toc_entries": 20,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 20,
+  "chars_total": 73977,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "MurNak.tex",
    "tex_sections": 18,
-   "overlaid": 6,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -114,59 +696,151 @@
    },
    "sections": [
     {
-     "id": "sec-000-introduction",
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.99,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.559,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-001-maximal-tori-in-classical-groups",
+     "id": "sec-001-22-regular-semisimple-elements",
+     "title": "Regular semisimple elements",
+     "prose_ratio": 0.256,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-2-maximal-tori-in-classical-groups",
      "title": "Maximal tori in classical groups",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.912,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-a-murnaghan-nakayama-rule",
+     "id": "sec-003-21-weyl-groups-and-maximal-tori-in-symplectic-an",
+     "title": "Weyl groups and maximal tori in symplectic and orthogonal groups",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.502,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-maximal-connected-reductive-subgroups",
+     "title": "Maximal connected reductive subgroups",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-3-a-murnaghannakayama-rule",
      "title": "A Murnaghan\u2013Nakayama rule",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.818,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-vanishing-of-characters",
+     "id": "sec-006-31-lusztig-restriction",
+     "title": "Lusztig restriction",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-32-symbols",
+     "title": "Symbols",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-33-unipotent-characters-of-symplectic-and-orthog",
+     "title": "Unipotent characters of symplectic and orthogonal groups",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-34-values-of-unipotent-characters-at-regular-sem",
+     "title": "Values of unipotent characters at regular semisimple elements",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-42-unipotent-characters",
+     "title": "Unipotent characters",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-4-vanishing-of-characters",
      "title": "Vanishing of characters",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-simple-endotrivial-modules",
+     "id": "sec-012-41-non-unipotent-characters",
+     "title": "Non-unipotent characters",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.615,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-5-simple-endotrivial-modules",
      "title": "Simple endotrivial modules",
-     "prose_ratio": 0.993,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-51-on-certain-unipotent-characters",
+     "title": "On certain unipotent characters",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-52-simple-endotrivial-modules-in-classical-type",
+     "title": "Simple endotrivial modules in classical type groups",
+     "prose_ratio": 0.957,
      "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-zeroes-of-characters-of-quasi-simple-groups",
+     "id": "sec-016-6-zeroes-of-characters-of-quasi-simple-groups",
      "title": "Zeroes of characters of quasi-simple groups",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-an-application-to-small-1-pims",
+     "id": "sec-017-7-an-application-to-small-1-pims",
      "title": "An application to small 1-PIMs",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.411,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.426,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-018-references",
+     "title": "References",
+     "result": "no matching \\section"
     }
    ]
   }
