@@ -155,7 +155,7 @@ Kohno's own proof is a rigidity argument, and in Lean it needs strictly less tha
    (Mathlib `PicardLindelof`, `Gronwall`), homotopy invariance of transport for a flat connection
    (flatness is `kz_isFlat`), and the braid relations from loops in `Conf_n/S_n`. This is the large
    item (bean `qou-9634`).
-2. **It factors through `H_n(q)`**, `q = e^{iπλ}`: each `θ_λ(σ_i)` is conjugate to the two-point
+2. **It factors through `H_n(q)`**, `q = e^{iπλ}` (in the Lean normalisation `q = e^{2πiκ}`, so `λ = 2κ`; see §5.2): each `θ_λ(σ_i)` is conjugate to the two-point
    exchange, so the Hecke quadratic follows from `KohnoTwoPoint.kzExchange_quad`.
 3. **Rigidity.** For `q` off the roots of unity `H_n(q)` is semisimple (`heckeWedderburn`), so a
    module is determined by its character. Along a continuous family the character is continuous
@@ -179,5 +179,27 @@ These are proved without sorry; their only axioms are `propext`, `Classical.choi
 
 Two gaps stand between these and the full theorem (gap 1 below is closed by `LocalMonodromy`).
 1. ~~The Hecke quadratic for the KZ generator when `n ≥ 3`.~~ Closed 2026-10-12, see `LocalMonodromy` above. Normalisation: `q = e^{2πiκ}` for the KZ form `κ Σ_{a≠b} d log(z_a − z_b)(ρ(s_ab) − c)` summed over ordered pairs (residue `2κ(P − c)`).
-2. Continuity in `q` of the Wedderburn isomorphism. `heckeWedderburn` is currently built one `q` at a time.
-3. A base point. At coupling 0 we have `q = 1`, which the generic Wedderburn excludes. So either the decomposition of `ℂ[S_n]` must glue continuously onto the generic one, or the base point must be chosen elsewhere.
+2. ~~Continuity in `q` of the Wedderburn isomorphism.~~ Closed 2026-10-12 (PR #7738): `JMProjector.heckeWedderburn_symm_single` writes `W⁻¹(E^λ_TT)` as a Jucys–Murphy Lagrange polynomial in the `σ_i` whose denominators are nonzero at every positive real `q`, including `q = 1`; `JMProjectorContinuity.continuousOn_projFamily`.
+3. ~~A base point.~~ Closed 2026-10-12 (PR #7738): idempotence at `q = 1` follows by density (`isIdempotentElem_projFamily`), so no separate Wedderburn decomposition of `ℂ[S_n]` is needed.
+
+### 5.2 The comparison theorem (2026-10-12, PR #7744)
+
+`QOU/Mass/KohnoAssembly.lean`, sorry-free, axioms `propext`, `Classical.choice`, `Quot.sound` only; compiled with `lean -DautoImplicit=false -s 65536` after rebuilding its whole 134-module import cone from source.
+
+**Convention.** The Lean KZ form is `κ Σ_{a≠b} d log(z_a − z_b)(ρ(s_ab) − c)` over ordered pairs, and its Hecke parameter is `q = e^{2πiκ}`. Relative to the `q = e^{iπλ}` of §5 this is `λ = 2κ`. The coupling of a real pin `q₀ > 0` is therefore `κ₀ = ln q₀ / (2πi) = −i ln q₀ / (2π)`, purely imaginary.
+
+**Normalisation of the two sides.** Both are algebra maps out of the same `H_{m+1}(q) = Hecke ℂ q q⁻¹ m`, with relation `β² = (q − q⁻¹)β + 1`:
+- KZ: `σ_j ↦ e^{2πiκc} θ_κ(σ_j)` (`kzHeckeRep`), with `ρ = permRep` the permutation action of `S_{m+1}` on `V^{⊗(m+1)}`, `V = ℂ²`. The scalar `e^{2πiκc}` per crossing is the only normalisation difference; it absorbs any Casimir shift `c`, including the `𝔤𝔩₂`/`𝔰𝔩₂` shift.
+- Jimbo: `σ_j ↦ Ř_{j,j+1}(q)` (`jimboRep`), eigenvalues `q` (symmetric) and `−q⁻¹` (antisymmetric). Its entries are Laurent polynomials in `q` (`strandBraid_eq_eval`).
+- Base point: at `κ = 0`, `q = 1`, both send `σ_j` to the permutation matrix of `(j, j+1)` exactly (`permRep_adjSwap`, `kzBraidRep_zero_σ`), with no scalar.
+
+**Proved.**
+- `kz_conj_jimbo_real`: for every number of strands `m + 1`, every `c ∈ ℂ` and every real `t`, at the coupling `κ = t/(2πi)` (so `q = e^t`) there is an invertible matrix `U` with `U · kzHeckeRep(h) = jimboRep(h) · U` for every `h ∈ H_{m+1}(q)`.
+- `kz_conj_jimbo_pos`: equivalently, for every real `q₀ > 0`, one invertible `U` conjugates every rescaled KZ generator `e^{2πiκ₀c} θ_{κ₀}(σ_j)` to Jimbo's `Ř_{j,j+1}(q₀)`.
+- The route is §5 steps 1–3: continuity of both families in `t`, the base point at `t = 0`, and rigidity (`conj_of_isPreconnected_hecke`) on `[0, t]` or `[t, 0]`, where every `q ≠ 1` is generic.
+
+**Not proved.**
+- Complex `q` off the positive real axis (couplings `κ` that are not purely imaginary). The rigidity argument needs a connected path to `κ = 0` avoiding roots of unity except `q = 1`, and the separation hypothesis on the `q²`-integers; neither is established off the real ray.
+- An explicit intertwiner. `U` is produced by comparing ranks of block idempotents; nothing identifies it (e.g. with the weight-preserving intertwiner of #7632).
+- `V ≠ ℂ²`, i.e. other representations of `𝔤𝔩_N`/`𝔰𝔩_N`, and the Drinfeld–Kohno theorem in its general form (associator, quasi-Hopf twist).
+- `jimboRep` versus `JimboActionKernel.jimbo`: they agree on generators by construction, hence are equal by `Hecke.hom_ext`, but this equation is not stated in Lean, because `JimboActionKernel` does not compile against the olean cache used here (its cached dependency `SeminormalRep` predates that module's change to a general field).
