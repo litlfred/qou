@@ -471,6 +471,7 @@ import QOU.OrientedSkein.Model.GLnLift
 import QOU.OrientedSkein.Model.GLnClosure
 import QOU.OrientedSkein.Model.GLnClosureLift
 import QOU.OrientedSkein.Model.GLnFaithful
+import QOU.OrientedSkein.Model.GLnOSFaithful
 import QOU.SchurWeyl.HeckeCoset
 import QOU.SchurWeyl.HeckeDim3
 import QOU.SchurWeyl.HeckeDim3Dim
