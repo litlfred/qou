@@ -4,7 +4,52 @@ import Mathlib.LinearAlgebra.Trace
 import Mathlib.LinearAlgebra.Projection
 
 /-!
-# Schur–Weyl trace split on `V^{⊗r}` (WIP)
+# The Schur–Weyl trace split on `V^{⊗r}`, and the standard modules `W_{r,j}`
+
+Everything here is over a generic field `R`. Throughout, `r = n + 1`, `V = R²`, and `V_m` is the
+span of the basis states with `m` ones. `E = Em` is the `U_q(sl₂)` raising operator of
+`QOU.Archimedean.RossoJonesMiddle`.
+
+The hypothesis replacing "`q` is not a root of unity" is `QIntNonzero q r`, which says
+`[k]_q ≠ 0` for `1 ≤ k ≤ r`, where `[k] = q^{k−1} + q^{k−3} + ⋯ + q^{1−k}` (`qn`). It is
+weaker than the usual condition. It holds at `q = 1` in characteristic 0, where `[k] = k`.
+
+## What is proved (sorry-free)
+
+* `Fm` is the lowering operator `F = Σ_k K⁻¹ ⊗ ⋯ ⊗ K⁻¹ ⊗ f_k`. `Em_Fm_comm` shows that
+  `[E, F]` is diagonal. Its entries are computed by `Dg_eq` (by induction on the number of
+  sites): on a state with `o` ones and `z` zeros the entry is the signed quantum integer
+  `[o − z]`. Signed quantum integers are `qZ`, with `qZ_mul` and
+  `sum_qZ : Σ_{i<k} [a + 2i] = [k][a + k − 1]`.
+* `Epow_inj`: `E^k` is injective on `V_m` whenever `2m + k ≤ r`. The proof is a double
+  induction using `E^{j+1} F = F E^{j+1} + c E^j` (`Epow_Fm`). In particular `Em_inj` (`k = 1`)
+  and the isomorphism `E^{r−2m} : V_m ≅ V_{r−m}`.
+* `Em_transpose`: the transpose of `E` at `q` is `E` at `q⁻¹`, conjugated by the complement
+  `0 ↔ 1`. Together with a rank argument this gives `El_surj`: `E : V_m → V_{m+1}` is
+  surjective when `r ≤ 2m + 1`.
+* `trace_eq_trace_ker_add`: for an intertwining surjection `φ`,
+  `tr X = tr(X | ker φ) + tr X'`. This is proved here from `trace_comp_comm'` and a
+  complement of `ker φ`.
+* **`trace_split`.** For every weight-preserving `X` with `X E = E X`:
+  `tr(X | V_m) = Σ_{j ≤ min(m, r − m)} tr(X | W_{r,j})`,
+  where **`W_{r,j} := ker E ∩ V_{r−j}`** (`Wmod`). This is the "highest-weight" form of quantum
+  Schur–Weyl duality.
+* **The standard modules with the torus braid.**
+  * `WP_gam` and `gam_comm_Em`: `γ` preserves weight and commutes with `E`.
+  * `gamW`: the action of `γ^p` on `W_{r,j}`.
+  * `T_gam_pow_split`: `T_m(γ^p) = Σ_{j ≤ min(m, r−m)} tr(γ^p | W_{r,j})`.
+  * `trace_W_gam_pow_split`:
+    `tr(W γ^p) = Σ_{2j ≤ r} (Σ_{m=j}^{r−j} q^{2m}) tr(γ^p | W_{r,j})`.
+
+## Not proved here
+
+The full twist `γ^r` acts on `W_{r,j}` by a scalar. The probe
+`computations/probes/rj_schur_weyl_trace_split_probe.py` finds `q^{r(r−1) − 2j(r−j+1)}`
+(`r ≤ 6`). That scalar is not proved here. Proving it needs either the ribbon element or the
+irreducibility of `W_{r,j}` under the braid group, and neither is formalised.
+
+-- Ref: [jimbo1986] Jimbo, *Lett. Math. Phys.* 11 (1986); [kassel1995] Kassel, *Quantum
+-- Groups*, GTM 155, Ch. VI–VII
 -/
 
 namespace QOU.Archimedean.SchurWeylTrace
@@ -458,7 +503,7 @@ theorem Em_Fm_comm (hq : q ≠ 0) (n : ℕ) :
 theorem psi_castSucc (q : R) {N : ℕ} (k : Fin N) (c : Fin N → Fin 2) (x : Fin 2) :
     psi q k.castSucc (Fin.snoc c x : Fin (N + 1) → Fin 2) = psi q k c := by
   rw [psi, Fin.prod_univ_castSucc]
-  simp [Fin.snoc_castSucc, Fin.snoc_last, psi, not_lt.mpr (Fin.castSucc_lt_last k).le]
+  simp [Fin.snoc_castSucc, psi, not_lt.mpr (Fin.castSucc_lt_last k).le]
 
 theorem psi_last (q : R) {N : ℕ} (c : Fin N → Fin 2) (x : Fin 2) :
     psi q (Fin.last N) (Fin.snoc c x : Fin (N + 1) → Fin 2) = ∏ l, kin q (c l) := by
@@ -678,17 +723,17 @@ theorem ones_cmp {N : ℕ} (b : Fin N → Fin 2) : ones (cmp b) + ones b = N := 
     rcases Fin.exists_fin_two.mp ⟨b i, rfl⟩ with h | h <;> simp [h]
   omega
 
-theorem ki_inv_fl {q : R} (hq : q ≠ 0) (x : Fin 2) : ki q⁻¹ (fl x) = ki q x := by
+theorem ki_inv_fl (q : R) (x : Fin 2) : ki q⁻¹ (fl x) = ki q x := by
   rcases Fin.exists_fin_two.mp ⟨x, rfl⟩ with h | h <;> subst h <;> simp [ki, fl, inv_inv]
 
-theorem phiN_inv_cmp (hq : q ≠ 0) {N : ℕ} (k : Fin N) (b : Fin N → Fin 2) :
+theorem phiN_inv_cmp (q : R) {N : ℕ} (k : Fin N) (b : Fin N → Fin 2) :
     phiN q⁻¹ k (cmp b) = phiN q k b := by
   unfold phiN cmp
   refine Finset.prod_congr rfl fun l _ => ?_
-  split_ifs <;> simp [ki_inv_fl hq]
+  split_ifs <;> simp [ki_inv_fl]
 
 /-- **`Eᵀ` at `q` is `E` at `q⁻¹` on complemented states.** -/
-theorem Em_transpose (hq : q ≠ 0) {n : ℕ} (a b : Fin (n + 1) → Fin 2) :
+theorem Em_transpose (q : R) {n : ℕ} (a b : Fin (n + 1) → Fin 2) :
     Em q n b a = Em q⁻¹ n (cmp a) (cmp b) := by
   classical
   rw [Em_apply', Em_apply']
@@ -704,7 +749,7 @@ theorem Em_transpose (hq : q ≠ 0) {n : ℕ} (a b : Fin (n + 1) → Fin 2) :
         funext i; by_cases h : i = k
         · subst h; simp [cmp, fl, hak]
         · simp [Function.update_of_ne h]
-      rw [if_pos rfl, if_pos h1, if_pos h2, ← phiN_inv_cmp hq]
+      rw [if_pos rfl, if_pos h1, if_pos h2, ← phiN_inv_cmp q]
       unfold phiN
       refine Finset.prod_congr rfl fun l _ => ?_
       split_ifs with hl
@@ -850,7 +895,7 @@ theorem El_surj (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (m : ℕ)
         have e : ∀ c, Em q⁻¹ n a c * v c
             = (fun y => Em q n y (cmp a) * (if h : ones y = m + 1 then u ⟨y, h⟩ else 0)) (cmp c) := by
           intro c
-          simp only [hv, Em_transpose hq (cmp a) (cmp c), cmp_cmp]
+          simp only [hv, Em_transpose q (cmp a) (cmp c), cmp_cmp]
         rw [Finset.sum_congr rfl fun c _ => e c,
           Fintype.sum_equiv (Function.Involutive.toPerm cmp cmp_cmp)
             (fun c => (fun y => Em q n y (cmp a) *
@@ -990,7 +1035,7 @@ theorem Epow_Fm (hq : q ≠ 0) {n m : ℕ} {v : (Fin (n + 1) → Fin 2) → R} (
       Dg_mulVec' hq (supp_Epow q hv (j + 1)), ← Epow_succ, ← Epow_succ, add_assoc, ← add_smul,
       Finset.sum_range_succ _ (j + 1), add_comm (qZ q _)]
     congr 3
-    push_cast; ring
+    push_cast; ring_nf
 
 /-- **`E^k` is injective on `V_m` when `2m + k ≤ r`.** -/
 theorem Epow_inj (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) :
@@ -1141,6 +1186,96 @@ theorem T_eq_trace_blk {n : ℕ} (X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1
   classical
   rw [T, Matrix.trace]
   exact Finset.sum_subtype _ (by simp) (fun u => X u u)
+
+/-! ## 9. The torus braid `γ` on the standard modules `W_{r,j}` -/
+
+theorem ones_cons' {N : ℕ} (c : Fin N → Fin 2) (x : Fin 2) :
+    ones (Fin.cons x c : Fin (N + 1) → Fin 2) = ones c + if x = 1 then 1 else 0 := by
+  rw [ones_eq_sum, ones_eq_sum, Fin.sum_univ_succ]
+  simp only [Fin.cons_zero, Fin.cons_succ]
+  ring
+
+theorem WP_mul {n : ℕ} {X Y : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R}
+    (hX : WP X) (hY : WP Y) : WP (X * Y) := by
+  intro a b h
+  rw [Matrix.mul_apply] at h
+  obtain ⟨v, -, hv⟩ := Finset.exists_ne_zero_of_sum_ne_zero h
+  rw [hX a v (left_ne_zero_of_mul hv), hY v b (right_ne_zero_of_mul hv)]
+
+theorem WP_one {n : ℕ} : WP (1 : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R) := by
+  intro a b h
+  rw [Matrix.one_apply] at h
+  split_ifs at h with hab
+  · rw [hab]
+  · exact absurd rfl h
+
+theorem WP_pow {n : ℕ} {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R} (hX : WP X) :
+    ∀ p, WP (X ^ p)
+  | 0 => by rw [pow_zero]; exact WP_one
+  | p + 1 => by rw [pow_succ]; exact WP_mul (WP_pow hX p) hX
+
+/-- **`γ` preserves the weight.** -/
+theorem WP_gam (q : R) (n : ℕ) : WP (gam q n) := by
+  intro a b h
+  rw [gam_eq_G] at h
+  have hb := ones_eq_init b
+  simp only [G, Matrix.of_apply] at h
+  have h1' : b (Fin.last n) ≠ 0 → b (Fin.last n) = 1 := fun h0 => by
+    rcases Fin.exists_fin_two.mp ⟨b (Fin.last n), rfl⟩ with h' | h'
+    · exact absurd h' h0
+    · exact h'
+  split_ifs at h with h0 h1 h2
+  · rw [h1, ones_cons', hb, h0]
+  · exact absurd rfl h
+  · rw [h2, ones_cons', hb, h1' h0]
+  · rw [zero_add] at h
+    obtain ⟨j, -, hj⟩ := Finset.exists_ne_zero_of_sum_ne_zero h
+    split_ifs at hj with hj0 hja
+    · rw [hja, ones_cons', ones_update _ j hj0, hb, h1' h0]; simp
+    · exact absurd rfl hj
+    · exact absurd rfl hj
+
+/-- **`γ` commutes with `E`.** -/
+theorem gam_comm_Em (hq : q ≠ 0) (n : ℕ) : gam q n * Em q n = Em q n * gam q n := by
+  calc gam q n * Em q n = rho q n * Em q n + Em q n * (Km q n * Em q n) := by
+        rw [gam_eq_rho_add hq n, add_mul, mul_assoc]
+    _ = Em q n * rho' q n + Em q n * (gam q n - rho' q n) := by
+        rw [rho_mul_Em hq n, Km_mul_Em hq n]
+    _ = Em q n * gam q n := by noncomm_ring
+
+theorem gam_pow_comm_Em (hq : q ≠ 0) (n p : ℕ) :
+    gam q n ^ p * Em q n = Em q n * gam q n ^ p :=
+  ((Commute.pow_left (gam_comm_Em hq n) p)).eq
+
+/-- **`γ^p` on the standard module `W_{r,j}`** (`r = n + 1`): the restriction of the weight-
+`(r − j)` block of `γ^p` to `ker E`. -/
+noncomputable def gamW (hq : q ≠ 0) (n p j : ℕ) : Module.End R (Wmod q n j) :=
+  (Xl (gam q n ^ p) (n + 1 - j)).restrict
+    (ker_El_inv q (WP_pow (WP_gam q n) p) (gam_pow_comm_Em hq n p) (n + 1 - j))
+
+/-- **Schur–Weyl for the torus braid.** Each weight-space trace of `γ^p` is the sum of the
+traces of `γ^p` on the standard modules `W_{r,j}` with `j ≤ min(m, r − m)`. -/
+theorem T_gam_pow_split (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (p m : ℕ)
+    (hm : m ≤ n + 1) :
+    T (gam q n ^ p) m = ∑ j ∈ Finset.range (min m (n + 1 - m) + 1),
+      LinearMap.trace R (Wmod q n j) (gamW hq n p j) := by
+  rw [T_eq_trace_blk, trace_split hq hqn (WP_pow (WP_gam q n) p) (gam_pow_comm_Em hq n p) m hm]
+  rfl
+
+/-- **The quantum trace of `γ^p` over the standard modules**:
+`tr(W γ^p) = Σ_{2j ≤ r} (Σ_{m=j}^{r−j} q^{2m}) · tr(γ^p | W_{r,j})`. -/
+theorem trace_W_gam_pow_split (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (p : ℕ) :
+    Matrix.trace (W q (n + 1) * gam q n ^ p)
+      = ∑ j ∈ Finset.range ((n + 1) / 2 + 1),
+          (∑ m ∈ Finset.Icc j (n + 1 - j), (q ^ 2) ^ m) *
+            LinearMap.trace R (Wmod q n j) (gamW hq n p j) := by
+  rw [trace_W_eq_sum_T]
+  rw [Finset.sum_congr rfl fun m hm => by
+    rw [T_gam_pow_split hq hqn p m (by simpa [Nat.lt_succ_iff] using hm), Finset.mul_sum]]
+  simp only [Finset.sum_mul]
+  refine Finset.sum_comm' fun m j => ?_
+  simp only [Finset.mem_range, Finset.mem_Icc, Nat.lt_succ_iff, le_min_iff]
+  omega
 
 end QOU.Archimedean.SchurWeylTrace
 
