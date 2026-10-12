@@ -257,4 +257,110 @@ lemma Hc_sym (hNR : NonResonant (Mc ρ κ c 0)) (k : ℕ) :
   have := formalGauge_unique M H' H (fun k hk => (hNR k hk).1) h0' (formalSol_zero M hNR) hG hH
   exact congrFun this k
 
+
+/-! ## The KZ coefficient along the half-turn `γ₀` -/
+
+section Path
+
+variable (t : ℝ)
+
+lemma norm_eArc : ‖eArc t‖ = 1 := by
+  rw [Complex.norm_def, Complex.normSq_apply, ← sq, ← sq, eArc_re, eArc_im,
+    Real.cos_sq_add_sin_sq, Real.sqrt_one]
+
+lemma eArc_add_aSp_ne (k : Fin m) : eArc t + aSp k ≠ 0 := by
+  intro h
+  have h1 : ‖aSp k‖ = ‖eArc t‖ := by rw [eq_neg_of_add_eq_zero_right h, norm_neg]
+  have := three_le_norm_aSp k; rw [h1, norm_eArc] at this; norm_num at this
+
+lemma eArc_sub_aSp_ne (k : Fin m) : eArc t - aSp k ≠ 0 := by
+  intro h
+  have h1 : ‖aSp k‖ = ‖eArc t‖ := by rw [sub_eq_zero.1 h]
+  have := three_le_norm_aSp k; rw [h1, norm_eArc] at this; norm_num at this
+
+lemma one_ne_zero' : (1 : Fin (m + 2)) ≠ 0 := by simp
+
+lemma gp_zero : genPath (0 : Fin (m + 1)) t 0 = 1 / 2 - eArc t / 2 := by
+  simp [genPath]
+
+lemma gp_one : genPath (0 : Fin (m + 1)) t 1 = 1 / 2 + eArc t / 2 := by
+  simp [genPath]
+
+lemma gp_spec (k : Fin m) : genPath (0 : Fin (m + 1)) t (spec k) = (k : ℕ) + 2 := by
+  have h0 := spec_ne_zero k
+  have h1 := spec_ne_one k
+  simp only [genPath, Fin.castSucc_zero, Fin.succ_zero_eq_one, h0, h1, if_false]
+  simp [spec]; ring
+
+lemma gp'_zero : genPath' (0 : Fin (m + 1)) t 0 = -(eArc' t / 2) := by
+  simp [genPath']
+
+lemma gp'_one : genPath' (0 : Fin (m + 1)) t 1 = eArc' t / 2 := by
+  simp [genPath']
+
+lemma gp'_spec (k : Fin m) : genPath' (0 : Fin (m + 1)) t (spec k) = 0 := by
+  have h0 := spec_ne_zero k
+  have h1 := spec_ne_one k
+  simp only [genPath', Fin.castSucc_zero, Fin.succ_zero_eq_one, h0, h1, if_false]
+
+local notation "Z" => genPath (0 : Fin (m + 1)) t
+local notation "Z'" => genPath' (0 : Fin (m + 1)) t
+
+lemma d01 : dlogPair Z Z' 0 1 = Real.pi * I := by
+  rw [dlogPair, gp_zero, gp_one, gp'_zero, gp'_one, eArc'_eq]
+  have he := eArc_ne_zero t
+  rw [div_eq_iff (by intro h; apply he; linear_combination -h)]
+  ring
+
+lemma d0k (k : Fin m) :
+    dlogPair Z Z' 0 (spec k) = Real.pi * I * (eArc t / (eArc t + aSp k)) := by
+  rw [dlogPair, gp_zero, gp_spec, gp'_zero, gp'_spec, eArc'_eq]
+  have he := eArc_add_aSp_ne t k
+  rw [div_eq_iff (by intro h; apply he; unfold aSp; linear_combination -2 * h),
+    mul_div_assoc', div_mul_eq_mul_div, eq_div_iff he]
+  unfold aSp; ring
+
+lemma d1k (k : Fin m) :
+    dlogPair Z Z' 1 (spec k) = Real.pi * I * (eArc t / (eArc t - aSp k)) := by
+  rw [dlogPair, gp_one, gp_spec, gp'_one, gp'_spec, eArc'_eq]
+  have he := eArc_sub_aSp_ne t k
+  rw [div_eq_iff (by intro h; apply he; unfold aSp; linear_combination 2 * h),
+    mul_div_assoc', div_mul_eq_mul_div, eq_div_iff he]
+  unfold aSp; ring
+
+lemma dkl (k l : Fin m) : dlogPair Z Z' (spec k) (spec l) = 0 := by
+  rw [dlogPair, gp'_spec, gp'_spec, sub_self, zero_div]
+
+lemma resid_comm (a b : Fin (m + 2)) : resid ρ c a b = resid ρ c b a := by
+  unfold resid; rw [Equiv.swap_comm]
+
+/-- **The KZ coefficient along `γ₀`**: `ω(γ₀(t))(γ₀'(t)) = iπ · M(e^{iπt})`. -/
+theorem kzForm_genPath_zero :
+    kzForm ρ κ c (genPath (0 : Fin (m + 1)) t) (genPath' (0 : Fin (m + 1)) t) =
+      ((Real.pi : ℂ) * I) • Xf ρ κ c (eArc t) := by
+  rw [kzForm_apply]
+  have hop : kzOp ρ c Z Z' = ∑ a, ∑ b, dlogPair Z Z' a b • resid ρ c a b := rfl
+  rw [hop]
+  simp only [Fin.sum_univ_succ, Fin.succ_zero_eq_one, dlogPair_self, zero_smul, zero_add]
+  have hs : ∀ k : Fin m, (k.succ.succ : Fin (m + 2)) = spec k := fun _ => rfl
+  simp only [hs, dkl, zero_smul, Finset.sum_const_zero, add_zero]
+  rw [dlogPair_comm Z Z' 1 0, resid_comm ρ c 1 0, d01]
+  simp only [fun k => dlogPair_comm Z Z' (spec k) 0, fun k => dlogPair_comm Z Z' (spec k) 1,
+    fun k => resid_comm ρ c (spec k) 0, fun k => resid_comm ρ c (spec k) 1, d0k, d1k,
+    Finset.sum_add_distrib]
+  set U0 := ∑ k : Fin m, (eArc t / (eArc t + aSp k)) • resid ρ c 0 (spec k)
+  set U1 := ∑ k : Fin m, (eArc t / (eArc t - aSp k)) • resid ρ c 1 (spec k)
+  have e0 : ∑ k : Fin m, (Real.pi * I * (eArc t / (eArc t + aSp k))) • resid ρ c 0 (spec k) =
+      ((Real.pi : ℂ) * I) • U0 := by
+    simp only [U0, Finset.smul_sum, smul_smul]
+  have e1 : ∑ k : Fin m, (Real.pi * I * (eArc t / (eArc t - aSp k))) • resid ρ c 1 (spec k) =
+      ((Real.pi : ℂ) * I) • U1 := by
+    simp only [U1, Finset.smul_sum, smul_smul]
+  have eX : Xf ρ κ c (eArc t) = (2 * κ) • resid ρ c 0 1 + (2 * κ) • U0 + (2 * κ) • U1 := by
+    simp only [Xf, U0, U1, smul_add, Finset.smul_sum, Finset.sum_add_distrib, add_assoc]
+  rw [e0, e1, eX]
+  module
+
+end Path
+
 end QOU.Mass.KZHolonomy.LocalMonodromy
