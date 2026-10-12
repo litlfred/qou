@@ -28,7 +28,13 @@ with α = m_e × 8G (Catalan binding scale) and:
 
 Zero fitted parameters. All quantities from q₀ alone.
 
-Content block: rem:q-integer-mass-table
+Content block: `q-integer-mass-table` -- RETIRED, deleted in d47319404b;
+record in docs/audits/2026-10-11-retired-label-records.md §B.
+
+⚠ The witness field still carries the retired label verbatim
+(`w.set_content_block(...)` below, with the `rem:`-prefixed label verbatim). NOT changed here:
+that writes a committed witness, so correcting it is a witness regeneration,
+not a docstring edit. Flagged rather than done.
 Witness: channel-product-mass.witness.json
 
 Usage:

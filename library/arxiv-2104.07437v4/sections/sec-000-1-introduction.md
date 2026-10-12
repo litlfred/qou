@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
 latex_coverage_ratio: 0.977
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 One of the most fruitful applications of supersymmetry to geometry is the possibility to define and compute enumerative invariants 
 based on the counting of BPS states. This idea goes back to Witten's index \cite{witten-index} and has led to many important developments, 

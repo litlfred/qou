@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-10-04T15:10:49Z
+updated_at: 2026-10-12T19:49:27Z
 parent: qou-v2om
 ---
 
@@ -984,3 +984,50 @@ bean stays OPEN.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## What actually grows with A - measured, and it is NOT the partition set
+
+Measured on `claude/sv7h-binding-scaling-endtoend-2026-09-12` at `b969fbb11fd`,
+while checking a sibling's convention claim (PR #7229 comments). This bears
+directly on this bean's TITLE, so recording it here rather than only in the
+reply.
+
+**`_PARTITION_TABLE` is A-INDEPENDENT.** It is built at
+`hecke_core_legacy.py:529` as `for _k in range(2, K_GAUSSIAN_MAX + 1): for
+_lam in partitions_of(_k)` - partitions of the CROSSING LEVEL k, k = 2..15.
+**682 entries; 193 carry YSN matrices** (k <= K_PARTITION_MAX = 11). The
+identical table serves A = 2, 3 and 4.
+
+So the naive scaling story - "A = 4 means partitions of n = 12, so 77 blocks" -
+is not what this code does. The atom enters ONLY through the length-`A` braid
+word `ordering` built inside `_contrib_single_partition_exact`, i.e. through
+the number of accumulator STEPS, not through the number of partitions.
+
+**Consequence for the bean's question.** The cost model is
+
+    total  =  sum over active partitions of  (dim(lam) work) x (steps ~ A)
+
+with the active set fixed by `k_exact`, not by A. That is why the A = 2 row came
+in at 816.811 s over 8 active partitions dominated by the single dim-2310 block
+(35.6 s kernel / 1106 s Python, recorded above) - and why an A = 3 row is
+expected to be a roughly LINEAR step-count increase on the SAME partition set,
+not a combinatorial explosion. **That expectation is still UNMEASURED** - the
+A = 3 arm was killed by the 17:55 container reboot, and a timeout is not a
+bound. Do not quote it as one.
+
+**Also disposes of a hypothesis I would otherwise have chased.** A sibling
+suggested convention D might collapse most blocks to zero and cheapen the sum
+(`y_lam = 0` for `ell(lam) >= 3`). It does not apply: the weight this path uses
+is `lp_shadow_price = w_lam/d_lam - 1/[k]_q!` with `w_lam = d_q^2/[k]_q!` -
+**no `z` in it at all**, so neither convention C nor D - and it zeroes 14 of
+193, all of them 1-row `(k)` / 1-column `(1^k)` blocks. **147 of 193 have
+`ell(lam) >= 3` and nonzero weight.** There is no free 90 % to reclaim.
+
+Open tension recorded for whoever owns `qou-46ys`: `qou-w06d` proves "a block
+that prices anything must have at most two rows" over the D-truncated Markov
+weight, while the production accumulator prices 147 blocks with `ell >= 3` over
+the un-truncated q-Wedderburn weight. Two different `w`; only one is canonical.
+Scope (a) - measured on this cone at this commit; which side should move is NOT
+established here.
+
+Float64 residue found in `lp_shadow_price` on the way: bean `qou-f2pf`.

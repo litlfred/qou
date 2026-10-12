@@ -23,9 +23,14 @@ checking if c(q) is approximately 1 across the window.
     4. tr_M_constit(³He) = Σ_{λ⊢9} y_λ(q) · χ_λ(𝓑_constit_3He, q)
     5. ρ(q) = tr_M_constit(³He) / tr_M_constit(D)
 
-  Ref: conj:constit-factor-2q-minus-1.md (PR #831)
+  Ref: `constit-factor-2q-minus-1` (PR #831)
   Ref: PR #831 Phase 5k.1 (constit_factor_residual_phase5k.py)
   Ref: PR #819 Phase 5c.1 (delta_lambda_fr_identity_phase5c.py)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

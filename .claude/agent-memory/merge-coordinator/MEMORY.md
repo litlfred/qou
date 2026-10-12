@@ -190,3 +190,6 @@ Lean resolves a module by the FIRST `LEAN_PATH` root whose `QOU/` directory exis
 ## TRAP — `qa-staleness.ts` says `fresh: 0` of 3557 blocks; that is not evidence about a PR
 
 Its `want_criteria` list carries watcher criteria the reactive sweep never populates, so every block is "stale_or_partial" corpus-wide. Measure a PR's sidecars directly: `source_hashes.md/ts` vs sha256 of the files, then the LAST verdict per criterion, then the same criterion on `origin/main`'s copy (`git show`) — a `fail` that is also `fail` on main is inherited, not a regression (6 of 7 on #7426). And a dependency-cycle `fail` can be FRESH on its own md/ts hashes and stale on `field_hash.graph`: fixing the cycle in the OTHER blocks leaves this block's verdict saying `fail`; re-run that one criterion (`qa-sweep <stem> --only detangler-no-dependency-cycle` → pass, 0 findings).
+
+## TRAP — pushing a clean merge-from-main makes GitHub refuse "rebase" (405)
+Verify a clean PR against main LOCALLY and do not push the merge commit: once a merge commit is on the head, GitHub answers `405 This branch can't be rebased` (or `rebaseable: false`) and only the merge-commit method remains. Push the merge only when there is a real conflict, and say in the PR comment why it went in as a merge commit. Measured on #7583 / #7734, 2026-10-12.

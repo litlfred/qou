@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T08:46:20Z
-updated_at: 2026-10-04T15:14:08Z
+updated_at: 2026-10-12T19:36:53Z
 parent: qou-v2om
 ---
 
@@ -499,3 +499,36 @@ Write-up: `docs/audits/2026-09-14-pair-locality-is-not-a-generic-q-fact-the-bric
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-10-12 — the cyclotomic route is answered, in the NEGATIVE, and this bean stays open
+
+The ring-hom question this bean raised as item 4 is settled, sorry-free, in
+`QOU/Habiro/CyclotomicEvaluationRingHom.lean` (salvaged from the unlanded PR
+#7225 and repathed onto `main`; see `docs/audits/2026-09-12-cyclotomic-evaluation-is-a-ring-hom.md`).
+
+**A dichotomy, and it shuts the door on both sides.** At a root of unity `ev_ζ`
+*is* a ring homomorphism — `cyclotomicQuotientEval` is the induced `→+*` out of
+`R[q]/((q;q)_N)`, the object the Habiro ring is the inverse limit of — so
+#7216's `bondSum_map` transports verbatim and class D's exclusion extends
+through the cyclotomic rendering. Off the roots of unity there is no rendering
+at all: over a domain `(ζ;ζ)_N = 0` forces `ζ^k = 1`, so at a non-root-of-unity
+point the truncations never stabilise and there is nothing to render.
+
+**ROAST item 4 is therefore answered in the negative**: root-of-unity data does
+not reach `q₀ ≈ 1.11` *by evaluating*. The "archimedean instance at the
+substrate pin" the draft's own docstring promised cannot exist — a file of that
+name would contradict §4 of the file promising it.
+
+**This bean stays `todo` (§13a).** Its subject is the binding's missing
+super-pairwise extensive object, which is open; what closed is one proposed
+route to it, and closing a route is not closing the question. The 2026-09-14
+entry above ("pair-locality is not a generic-q fact") is a *different* strand
+and is untouched here — the sharpened brick it names (does `tr_M` acquire
+anything to see where `H_n(q)` is not semisimple?) is still the live one.
+
+**Caveat on the framing, not on the result.** #7216 is **not merged** —
+`bondSum_map` does not exist on `main`, and the only occurrences of that name in
+the tree are inside the new file's own prose. The new file is written so as not
+to depend on it (`map_bondCount` / `quotientEval_bondCount` state the transport
+directly), so the mathematics stands alone; but "the hinge under #7216 class D"
+describes a hinge under something still on a branch.

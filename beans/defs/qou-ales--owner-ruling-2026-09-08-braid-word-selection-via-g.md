@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-10-04T15:11:03Z
+updated_at: 2026-10-11T12:58:59Z
 parent: qou-v2om
 ---
 
@@ -203,3 +203,51 @@ which **is** the disjoint-block form of the connected-sum multiplicativity step 
 **Third point, independent agreement:** #7418's C9 (*"the corpus's bond-product grounding cites a theorem whose hypothesis the production word fails"*) is §6b's finding from the other side — `ProductionChainBondProduct`'s strand-window hypotheses are sufficient-not-necessary. Two arcs, two methods, same conclusion about the same citation.
 
 Recorded as §7b of the step-11 audit; §7 reason 3 re-scoped from "not formalised" to "conditionally formalised on an open PR". Coordination comment posted on #7418.
+
+**2026-10-11 — strand-count tower of γγ production** (issue #7727, branch `claude/gg-production-ntower-2026-10-11`, `computations/probes/gg_ntower/`). Pre-registered (4544d19380) before computing. Collisions V_i = σ_iσ_{i+1}⁻¹ (and the bare U_i = σ_iσ_{i+1}, separate column) placed with a rigid shift s ∈ {0, ±1, ±2, +3}, up to 9 strands; strands closed from the top by the convention-D Markov conditional expectation; reading 3 tested at every level. Exact over ℚ(q); 5/5 checks.
+- s = +1 telescopes in any group: V_0⋯V_{k−1} = σ_0σ_k⁻¹ (Lean `QOU/QBeta/GammaGammaStaircaseTelescopes.lean`, sorry-free). Degenerate.
+- s = −1, ±2, +3: no k admissible, for either vertex. After three collisions closed down to three strands, χ_(2,1) is already negative at q = 1 (−1/4 or −1/16) and stays negative for every q > 1.
+- Only s = 0 (all collisions on the same three strands, k = 3, 6) confines. Its χ_(2,1) leaves the q = 1 value at h⁴; the climbing placements leave at h¹ or h².
+- Scope (a): rigid shifts with top closing only. Jones pair creation, bottom closing, quarks, gluons and two nucleons were not tested. Selection stays open.
+
+**2026-10-12 — 🟧 OWNER RULING (chat): "every level" means EVERY STRAND COUNT, not only H_{3k}.** Asked in session https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB with two options (1 every strand count m = 3..n; 2 only the nucleus levels H_3, H_6, H_9, …). Owner chose 1. Measured consequence on the #7733 witness: five rows pass at level 3 and fail only at an in-between level (V s=+1 k=2 at 4; V s=+1 k=3 at 5; V s=−1 k=2 at 4; U s=+1 k=2 at 4; U s=−1 k=2 at 4). Under reading 2 they would be admissible; under the ruled reading 1 they are excluded, which is what #7733 reported. None is a genuine cascade (s=+1 telescopes to σ₀σ_k⁻¹; s=−1 k=2 is two collisions sharing two strands). Bean stays open (rule 13a).
+
+## 2026-10-11 — quark template tracked order by order in q (reading 3)
+
+Probe `computations/probes/quark_template/` (pre-registered at 6b9dd5d172; exact over Q(q); 4/4 checks).
+
+- **Flavour is invisible at order t⁰** (t = q − 1): since σ⁻¹ = σ − h, every quark letter equals σ at q = 1, all 8 template variants give the same element, and χ_(2,1) = 0 there. So reading 3 holds with equality at order zero for every template. The verdict is decided at order t¹ (where the sign bits enter), or at t³ when t¹ cancels. No verdict flips between truncation orders t¹…t⁶ or across the sub-interval of (1, ∞) containing q₀.
+- **k = 0, builder placement:** the corpus template (u = σ, d = σ⁻¹, ud = average) FAILS reading 3 for both nucleons (χ_(2,1) = −0.09198 p, −0.18200 n). Its sign changes exactly at q*² + q*⁻² = 1 + 2cos(2π/7), q* = 1.27890, above q₀. Every bar-swapped template (u = σ⁻¹, d = σ) passes for both nucleons, under every pair rule. The two flavour-blind templates also pass.
+- **With the gluon pair σ₀σ₀:** no template passes for both nucleons.
+- **Placement varied too:** the corpus template has 4/8 admissible placements per nucleon; the builder's is not one of them. So reading 3 constrains sign map and placement jointly, not the template alone.
+- **Tension, unresolved:** this bean's 2026-09-05 "swap refuted" rests on a comparison with measured binding data, which cannot select under the no-fitting rule. Reading 3, the ruled derived test, points to the swap at k = 0 and the builder placement. This is an owner decision. The bean stays open.
+
+## 🟧 OWNER RULING 2026-10-12 — quark sign map: option 4, derive it, do not pick it
+
+Asked in the six-part frame on PR #7718 (comment 6130340849). The four options were: 1 keep S+ (status quo); 2 adopt the swap S− (u = σ⁻¹, d = σ), which passes reading 3 at the builder placement; 3 keep S+ and move the letters to placement 011 or 100; 4 pick nothing by hand. **The owner chose 4.** The quark sign map and the letter placement must be outputs of the γγ construction plus reading 3 at every tower level (`qou-ales`), not a template choice. The template stays open and nothing is re-scored. The dashboard knowingly keeps scoring an element that reading 3 rejects until a derivation lands. The 2026-09-05 data-based "swap refuted" in `qou-y2np` is a comparison with data, so it counts as a selection neither way. This bean stays open (rule 13a). Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+**2026-10-11 — H_9: reading 3 tracked up the tower (issue #7701, PR #7702).** Pre-registered (`computations/probes/ales_h9/preregistration.md`, committed before any H_9 number), then computed at 60 dps, proton pin, convention D; H_6 diproton ratio reproduced to 4.7e-60 before H_9 was trusted. Blocks at H_9: (9),(8,1),(7,2),(6,3),(5,4), dims 1/8/27/48/42; `y_λ = 0` exactly on every ≥3-row shape at n = 3, 6, 9.
+
+**Finding (scope (a), this candidate set only):** the tower REJECTS nothing and ADMITS everything H_3 rejected. All 19 homogeneous words (core, 16 k = 0 words, both live elements) are reading-3-feasible at H_6 and H_9 with no bond and with `G³` on every interface; the 10 H_3-rejected ones (incl. LIVE_p, LIVE_n) are admitted. Compositions: pp/pn/nn 16 YY + 65 admitted of 81; ³He (p|p|n) and ³H (p|n|n) 64 YY + 665 admitted of 729; 0 rejected anywhere. Mechanism (hypothesis H1′, SU(2) Clebsch–Gordan branching of the two-row blocks, (3) = spin 3/2, (2,1) = spin ½; verified on 8433 free characters to 5e-25, NOT Lean-proved): homogeneous feasibility is `x = χ_(2,1)/χ_(3) ≥ 0 / −1/2 / −0.389489` at H_3 / H_6 / H_9 (binding blocks (2,1) / (5,1) / (5,4)); candidates span x ∈ [−0.3315, 1.994]. Thresholds are NOT monotone in A (m = 1…8: 0, −0.5, −0.389, −0.634, −0.552, −0.707, −0.643, −0.754; odd A tighter), so the tower is not a one-way filter in general.
+
+**Owner decision raised, not taken:** which algebra "reading 3 on the whole element" (2026-09-13) means — nucleon in H_3 (status quo; live element stays excluded), nucleus in H_{3A} (admits everything here; live element re-admitted), or every level (coincides with H_3 on this family). Default: H_3, nothing changes. Framed in `computations/probes/ales_h9/results.md`. Status stays in-progress (rule 13a).
+
+**2026-10-11 — 🟧 OWNER RULING (thread chat, ofri, verbatim): "3... but let's go through γγ production step by step to get to one and two nucleons. each collision/interaction shifts things up the tower".** Option 3 of the #7702 decision: **reading 3 applies at EVERY level of the tower** (nucleon in H_3, A nucleons in H_{3A}, all checked). On the #7702 family this coincides with the H_3 verdicts; the live element stays excluded. Next: walk γγ production step by step, tracking the tower level of each collision (h-order and n). Walk-through: /mnt/project-files/qbeta-ohara/gg-production-walkthrough.md. Bean stays open (rule 13a).
+
+**2026-10-12 — #7702 x #7733 fold-in.** #7702 results.md now records (a) that the owner's every-level ruling (option 3) coincides with H_3 on its families, so nothing is re-scored, and (b) #7733's complementary negative: climbing by single collisions never confines, while composing confined triples always does (in these families). Confinement is per-triple, same-strand; the multi-nucleon levels add no selection beyond H_3. Scope (a). Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+**2026-10-12 — #7733 closure comparison (pre-registered 152a15575e, 4/4 checks; `gg_ntower/closures_results.md`).** Top, bottom, and the Jones-projection pair closure (cap–cup, from the top and from the bottom) were computed exactly in ℚ(q).
+- No closure confines any climbing placement (s = −1, ±2, +3), for either vertex, up to n = 9.
+- Verdicts differ only on the degenerate s = +1 staircase σ₀σ_k⁻¹.
+- Top vs bottom differ only where the q = 1 residue is a transposition: the surviving oriented crossing decides at t¹, since V flips to V⁻¹.
+- The pair closure evaluates the annihilated singlet pair at −q⁻¹, which flips the trivial block negative for s = ±2, +3.
+- K4 confirms the Jones absorption law on characters under convention D; the Lean class stays open.
+
+Scope (a); bean stays open. Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+**2026-10-12 — option 4, step 1 (issue #7754, `computations/probes/gg_quark_letters/`).** Pre-registered at bca743c8b98, 4/4 checks, exact over ℤ[h]. The confined core V³ = (σ₀σ₁⁻¹)³ = 1 + h²(T_{s₀s₁} − T_{s₁s₀}) + h³(σ₁ − σ₀) + O(h⁴).
+- It has **no h¹ term**, so it supplies no first-order (flavour) content.
+- Every deviation up to h³ is **odd under σ₀↔σ₁**, because φ(V) = V⁻¹: it measures the vertex orientation.
+- Its first single letters are the antisymmetric pair +σ₁ − σ₀ at h³.
+
+The bare U = σ₀σ₁ is φ-symmetric at every power and cannot separate the generators. No flavour dictionary is derived: generator signs are not flavour signs without a placement rule. Nothing is adopted; the bean stays open. Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB

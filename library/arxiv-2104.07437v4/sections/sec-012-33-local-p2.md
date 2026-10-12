@@ -8,6 +8,7 @@ pages: 27-28
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
 toc_source: outline
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 satisﬁes the following q-diﬀerence equation9
 z(c −abqz)D2

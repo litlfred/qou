@@ -44,6 +44,7 @@ import QOU.BraidKnot.HookSumCompletedSquare
 -- `Sum_c g(h(c)) = Sum_{s<k} (s+1) g(2(k-s)-1)`, which at `g = eps` IS the staircase's
 -- beta-side by `betaSide_eq_hookSum`. PR #7294 had this fact only ENUMERATED (k = 1..40).
 import QOU.BraidKnot.StaircaseHookMultiset
+import QOU.BraidKnot.StaircaseRowDeletedHook
 -- The hook sum is a separable QUADRATIC form in the beta-coordinates (bean qou-hok7):
 -- composing `two_mul_sum_hookZ_betaForm` with `sum_pair_betaR_sub` leaves no pair term at all,
 -- so comparing two shapes of one size gives `2(H(nu) - H(delta_k)) = Sum 2(i-k) u_i + Sum u_i^2`

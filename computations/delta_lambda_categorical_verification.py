@@ -3,7 +3,7 @@ delta_lambda_categorical_verification.py — Phase 1b of the
 closed-forms-first-principles workplan.
 
 Tests the per-partition Δ_λ categorical closure form
-(conj:delta-lambda-categorical-closure) on the deuteron:
+(`delta-lambda-categorical-closure`) on the deuteron:
 
     Δ_λ(K) := τ_q( Σ_{p ∈ O_prin^(λ)} Res^alg_p (λ^(k(λ))_{SW,λ}) )
 
@@ -35,8 +35,13 @@ Outcomes interpretation:
     empirical — R1 (per-λ discriminant doesn't factor) or R2 (the
     formula needs another categorical ingredient) fires.
 
-Ref: [manuscript] conj:delta-lambda-categorical-closure
+Ref: [manuscript] `delta-lambda-categorical-closure`
 Ref: [manuscript] docs/audits/2026-05-19-closed-forms-first-principles-workplan.md
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 
 from __future__ import annotations

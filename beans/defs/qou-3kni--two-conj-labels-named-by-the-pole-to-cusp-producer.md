@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T19:57:29Z
-updated_at: 2026-10-10T07:58:22Z
+updated_at: 2026-10-11T07:39:45Z
 parent: b9cj
 ---
 
@@ -297,3 +297,247 @@ files, `denominator-zeros-as-sw-critical-points` **0**,
 `jet-gb-pl-correspondence` **0**, against
 `shared-denominator-cusp-holonomy` **6** and
 `algebraic-geometric-dilog-equivalence` **5**.
+
+## 2026-10-10 — item 3 MEASURED: 25 dead labels, not three, and the worst is cited nine times
+
+Item 3 above reads *"Three dead labels in two files is a small sample; the
+population is unmeasured."* It is now measured, and the sample understated it
+**by 8×**.
+
+[`computations/audits/docstring_label_carrier_audit.py`](../../computations/audits/docstring_label_carrier_audit.py),
+run on `main` `2ab87236c9`:
+
+| quantity | measured |
+|---|---|
+| distinct corpus labels cited in `computations/` docstrings | **487** |
+| files doing the citing | **860** |
+| labels resolving to **no** block in `folio/` or `content/` | **25** |
+| citations pointing at nothing | **57** |
+
+Worst by citing-file count:
+
+```
+ 9  prop:li2q-phiq-bar-symmetrization
+ 8  prop:constit-factor-tau-M-proton-identity
+ 6  conj:delta-lambda-categorical-closure
+ 6  prop:mass-formula-iterative-lp-dual
+```
+
+`prop:li2q-phiq-bar-symmetrization` is cited by nine files including
+`computations/_li_2_q_util.py`, which the mass-formula banner in AGENTS.md
+names as load-bearing (`vol_density_*`). So this is not confined to the two
+pole-to-cusp producers this bean was opened about.
+
+**The regex's character class IS the blind spot, and that is what the
+self-test asserts.** A `[a-z0-9-]` tail truncates
+`prop:constit-factor-tau-M-proton-identity` at the uppercase `M` and reports
+the **fragment** as dead — a false positive that reads exactly like a real
+finding. The selftest asserts the full label is captured **and** that the
+fragment is not, plus two known-dead and two known-live classifications, and
+is mutation-tested four ways. The first mutation attempt patched the memo
+cache rather than the return value, so it blinded nothing and "passed" —
+recorded rather than asserted, per taxonomy row 45: an audit that
+self-certifies its calibration cannot discover its own blind spot.
+
+The audit **skips its own file**: its calibration note quotes the truncated
+fragment as documentation, and once the file sat under `computations/` the
+selftest failed on a clean tree.
+
+**Wired ADVISORY** into `scripts/precision-gates.sh`, with the flip-to-blocking
+condition stated inline: it flips when the dead count reaches 0. It is not
+blocking now because most of the 25 name blocks in the removed
+`descartes-universe/` chapter, and whether each becomes a restored carrier, a
+retired citation, or a scoped citation is **a content decision per label, not
+a sweep** — under AGENTS.md's ASK-THE-OWNER rule that is the owner's call, not
+an agent's.
+
+**Item 3 is therefore done as far as an agent may take it**: the checker it
+calls "worth considering, not proposed" exists, is calibrated, and is wired.
+**The bean stays `todo`** — items 1 and 2 are untouched, and item 2 turns on
+the `A_ω → S` identification, which is an open conjecture.
+
+### The decision this leaves with the owner
+
+Nothing changes if you say nothing: the gate is advisory, prints the 25, and
+blocks no commit. The 57 dead citations stay as they are.
+
+- **Restore the carriers** (write the missing blocks back). Costs a content
+  block per label, 25 of them, several naming removed-chapter material whose
+  statements would have to be reconstructed; risks re-publishing a claim the
+  chapter was removed *for*. Commits the corpus to supporting each label.
+- **Retire the citations** (edit the 57 docstring sites to drop or rephrase).
+  Costs 57 small edits over ~40 files; risks deleting the only pointer to what
+  a producer was *for*, which is the blocker recorded in this bean's own
+  §"Why the producer docstrings were NOT edited". Commits to nothing.
+- **Scope them** (keep the label, mark it `[no carrier]` inline, as
+  `snappy_cusp_seeding.py` already does for its two). Costs 57 edits of one
+  clause; no risk to the record; commits to nothing, and makes the gate
+  flippable to blocking.
+
+**My recommendation, as judgement rather than finding:** scope them, in one
+pass, the way `snappy_cusp_seeding.py` already reads. It is the only option
+that preserves the provenance a reader needs while making the surface
+drainable — and it is reversible, where restoring a carrier is not.
+
+---
+
+## 2026-10-10 — the gate is BLOCKING, as a draining ratchet at 26 (owner ruling "c1")
+
+Owner, relayed: the label gate *"blocks only when the count INCREASES, not at
+0. Also pin its cwd to the repo root: run from `computations/` it reports 399
+instead of 25."* Both halves landed — `d16a0362f1` (cwd) and `66fab2f5de`
+(ratchet + flip), PR #7586.
+
+### Zero is unreachable, and a FIX is what proved it
+
+This bean's own §"The decision this leaves with the owner" says the scope-them
+option *"makes the gate flippable to blocking"*, with 0 as the implied trigger.
+**That trigger cannot be met.** The audit cannot distinguish CITING a dead
+label from DOCUMENTING that one is dead, so a producer that explains a retired
+label in prose RAISES the count. Measured: redirecting
+`prop:per-partition-k-lambda-rule`'s two citations to the audit doc holding its
+record moved the count **25 -> 26** and the citations **57 -> 58**, because the
+explanatory note has to name both the `prop:` and the `rem:` spelling in order
+to say they are gone. The corpus surface did not grow; the documentation did.
+
+No syntactic discriminator is proposed — "mentioned in a sentence saying it is
+dead" is not a property of the AST — so a zero-threshold gate would punish
+exactly the fix it is meant to reward. Recorded as a known false-positive class
+in the audit's own header, with the instance worked through.
+
+`--max N` inverts it: the bound may only fall. Verified, all five branches —
+`--max 26` rc=0 at the bound; `--max 30` rc=0 "DRAINED by 4, lower the bound";
+`--max 25` rc=1 RATCHET FAILED; `--max` bare and `--max abc` rc=2; `--selftest`
+unaffected. Replayed through the harness loop verbatim with the args field.
+
+### The cwd swing was 15x, and both halves of the audit hid it
+
+Same tree, same commit, varying nothing but the cwd: **26 dead / 58 citations**
+from the root, **400 dead / 1052 citations** from `computations/`. (The relayed
+figure was 399; re-measured here at 400 after the k_lambda redirect, which is
+the same +1 the ratchet note above explains.) The scan itself is
+cwd-independent — both runs report the same **488 labels over 862 files**,
+because `ROOT` comes from `__file__` — so the two halves disagreed *silently*:
+`git ls-files` listed only `computations/`, and `git grep -- folio/ content/`
+matched nothing because neither path exists relative to `computations/`. Every
+git call is now pinned to `git rev-parse --show-toplevel`, and `--selftest`
+asserts `folio/` is in the tracked set with >= 1000 entries, so the pin cannot
+be lost quietly.
+
+### Four citations redirected (A1), count unchanged at 26
+
+`conj:pl-jsj-mass-integration-equivalence` in `q_pochhammer_seed.py` and
+`snappy_cusp_seeding.py` -> the `f86ea9d7ac` removal record;
+`probes/lr_hecke_character_probe.py` -> the parent
+`prop:hecke-branching-trace-decomposition`, verified live (which is why
+distinct labels go 488 -> 489 while dead stays 26). The fourth,
+`b_over_a_evaluator.py`, was not merely a dead *label* but a **markdown link to
+a `.md` file deleted in `c703e576b5`** — a reader following it got a 404.
+Replaced with that commit's own finding, quoted: the formula *"is NOT the
+canonical formula. v3 was attacking the wrong target."*
+
+### 🛑 Correction to my own plan: the import gate reads 3 here, not 0
+
+I reported that the companion import gate was ready to flip "now that it reads
+0". **That 0 is a property of a branch.** Same hour, same audit, varying only
+the checkout: `claude/qou2cz1-unresolved-imports-2026-10-10` reads **0**, this
+branch reads **3**, `origin/main` reads **3**, and `ac520bba3b` is **not** an
+ancestor of main (`git merge-base --is-ancestor`, not inferred). Flipping would
+have shipped a gate red on arrival — the failure `precision-gates.sh`'s own
+header says gets a gate muted rather than fixed. It stays advisory, with all
+three counts and the flip condition recorded in place. Same class as the
+`qou-wu38` cost-figure error: a figure measured in one place, quoted about
+another.
+
+**The bean stays `todo`.** Items 1 and 2 are untouched, item 2 still turns on
+the open `A_ω → S` identification, and the per-label disposition of the 26 is
+still the owner's call — the ratchet makes the surface *drainable*, it does not
+decide how.
+
+---
+
+## 2026-10-11 — THE SURFACE IS DRAINED: 26 → 0, and the threshold was never the thing to change
+
+All three groups retired. `26 → 0` dead labels, `58 → 0` citations; the gate
+runs at `--max 0` and now blocks any NEW dead citation from zero.
+
+### 🛑 This corrects my own reasoning from yesterday
+
+I argued — in the audit's header, the gate entry, this bean and two PR comments
+— that **0 is unreachable** "while any producer explains a retired label in
+prose", and built a draining ratchet around that premise. **The premise held
+only because the explanations were written in LABEL SYNTAX.**
+
+Drop the `prop:`/`conj:` prefix — write *"the retired
+`constit-factor-tau-M-proton-identity` proposition"* and point at the record
+doc — and the prose keeps every pointer a reader needs while the detector stops
+counting it. The audit scans `computations/**/*.py` docstrings only, so a record
+doc in `docs/` is outside its scan by construction.
+
+So **the ratchet was the right mechanism for a surface that could not drain; it
+turned out this one could.** The ratchet stays (it is what blocks a regression),
+but at 0 rather than 26.
+
+### What a reader gains, not loses
+
+| before | after |
+|---|---|
+| a bare `prop:X` in a docstring, resolving to nothing | the stem (still greppable through history) + [`docs/audits/2026-10-11-retired-label-records.md`](../../docs/audits/2026-10-11-retired-label-records.md), carrying per label what it **stated**, the commit that **retired** it, and the exact command to **recover** the content |
+
+Group A's paths are **commit-pinned** at `0763606e4f^`, since `_deprecated/`
+left `main` on 2026-10-10.
+
+### The three groups, drained per label and not per group
+
+| group | labels | citations | remedy |
+|---|---:|---:|---|
+| C — never existed | 7 | 8 occ / 6 files | named in words, no prefix; nothing to point at |
+| B — deleted outright | 9 | 17 occ / 11 files | de-prefixed + the deleting commit |
+| A — demoted to `_deprecated/` | 10 | 45 occ / 39 files | de-prefixed + record doc §A |
+
+**Read per label, not per group.** `prop:per-partition-k-lambda-rule` is in C
+("never existed") but its **content** existed under the `rem:` spelling in B,
+so its citation is **redirected** to `2026-06-17-refuted-ansatz-lemmas.md`, not
+removed — a blanket "C → delete" would have thrown away a live pointer.
+
+### Two things deliberately NOT done
+
+- **`channel_product_mass.py`'s witness field** still carries a retired label
+  verbatim (`w.set_content_block(…)` with the `rem:`-prefixed string). That
+  writes a **committed witness**, so correcting it is a witness regeneration,
+  not a docstring edit. Flagged in the docstring and left.
+- **No content block restored.** The owner's ruling was record-in-an-audit-doc,
+  explicitly *not* restore.
+
+### Verification, and one check that was load-bearing
+
+**No code changed in any of the 39 group-A files** — verified by comparing each
+file's AST **with docstrings stripped**: 39/39 identical. That check is not
+ceremonial: **two of the original 58 sites were CODE, not docstrings**, and one
+of them writes a witness. A grep-driven sweep would have hit both.
+
+**The selftest was asserting the defect.** Draining the surface broke it three
+ways at once — *"not captured"*, *"not even cited"* ×2 — on a tree where the
+detector worked perfectly, because two assertions required the corpus to **still
+cite** a retired label. A calibration keyed on corpus state goes stale exactly
+when the corpus is fixed. Both are now **synthetic**: assertion 1 runs `LABEL`
+over a fixture string, assertion 2 tests carrier lookup, which is independent of
+citation state.
+
+**Mutation-tested 4/4 CAUGHT**: buggy regex tail (reports the truncated fragment
+verbatim — the original defect), `has_carrier` always `True`, always `False`,
+cwd-scoped git layer. A fifth attempt **did not apply at all** and printed
+`SELFTEST PASS` — that was the *unmutated* file passing, not a mutant escaping.
+Recorded because reading it as a result is taxonomy row 45 exactly: **a mutation
+that misses is evidence about the mutation, not the detector.**
+
+One self-inflicted finding: my own group-B fix for `channel_product_mass.py`
+quoted the retired label **verbatim** inside the warning note it added, so the
+fix re-created the very false positive it was fixing, one level down.
+
+### Status
+
+Item 3 of this bean is **done**: the population was unmeasured, is now measured
+(489 labels / 862 files, 26 dead / 58 citations), disposed of, and gated at
+zero. **The bean stays `todo`** — items 1 and 2 are untouched, and item 2 turns
+on the `A_ω → S` identification, which is an open conjecture.

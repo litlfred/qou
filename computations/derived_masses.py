@@ -3,7 +3,7 @@
 # upstream beta-decay-energy-scale witness, exposes predicted MeV
 # observables.
 """
-**CONTEXT (per prop:li2q-phiq-bar-symmetrization).** This module
+**CONTEXT (per `li2q-phiq-bar-symmetrization`).** This module
 predicts both **MASS** observables (m_p, m_n, m_e via β-decay scale)
 and **BINDING-derived** quantities (Q_β, isotope binding via mass
 differences). Φ_q usage in this script is in the MASS leg (anchor
@@ -129,6 +129,11 @@ For now, consumers should:
   * NOT consume CODATA `M_P_MEV_VALIDATION` / `M_N_MEV_VALIDATION`
     as inputs to mass-prediction scripts (discipline violation,
     Workplan 0b)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

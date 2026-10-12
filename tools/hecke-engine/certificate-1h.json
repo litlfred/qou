@@ -1,16 +1,29 @@
 {
-  "elapsed_seconds": 1.5263e-05,
+  "elapsed_seconds": 0.000015633,
   "engine": {
     "name": "hecke-crt",
     "version": "0.10.1"
   },
   "f_pauli_f64": 1.0,
+  "generation": {
+    "argv": [
+      "hecke-crt",
+      "1",
+      "0"
+    ],
+    "binary": "hecke-crt",
+    "commit": "33d54fd71b",
+    "engine_version": "0.8.0",
+    "q0": 1.1099785827513808,
+    "q0_pin": "proton",
+    "reproduce": "cargo run --release --bin hecke-crt -- 1 0"
+  },
   "isotope": {
     "a": 1,
     "n": 0,
+    "name": "1H",
     "symbol": "h",
-    "z": 1,
-    "name": "1H"
+    "z": 1
   },
   "net_f64": 1.0,
   "tr_alt_f64": 1.0

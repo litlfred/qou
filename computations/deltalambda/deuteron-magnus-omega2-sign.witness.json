@@ -1,4 +1,5 @@
 {
+ "diagnostic_frame": "TWO-ROW (Temperley-Lieb) DIAGNOSTIC. Owner ruling 2026-10-12 (qou-uir6, options ii+iii): the convention-D values in this witness (P_total_wenzl, z = q^3/(q^2+1)) are evaluated OUTSIDE the faithful window 0 <= z <= h, where every three-row weight vanishes, so they see only the two-row quotient. They are kept unchanged as a two-row diagnostic. THE result is the faithful-window scan, computations/deltalambda/magnus-omega2-markov-window-scan.witness.json. Annotation added by hand, label only, no number changed; the producer does not emit this key yet.",
  "computation": "deuteron-magnus-omega2-sign",
  "scriptFile": "deuteron_magnus_omega2_sign_probe.py",
  "computedAt": "2026-09-13T08:27:18.810525+00:00",

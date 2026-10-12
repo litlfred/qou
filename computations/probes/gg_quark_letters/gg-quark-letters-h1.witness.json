@@ -1,0 +1,309 @@
+{
+ "recipe": "computations/probes/gg_quark_letters/preregistration.md (bca743c8b98)",
+ "issue": 7754,
+ "checks": {
+  "K1_hecke_braid_relations": true,
+  "K2_h0_is_permutation": true,
+  "K3_V3_identity": true,
+  "K4_flip_V_is_Vinv": true
+ },
+ "rows": {
+  "V^1": {
+   "coefficients": {
+    "s0": "-h",
+    "s01": "1"
+   },
+   "h0_permutation": "s01",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "-1",
+   "c_s1_at_that_order": "0",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "-(q**4 - q**2 + 1)/q**2",
+   "chi_21_at_q1": "-1"
+  },
+  "V^2": {
+   "coefficients": {
+    "e": "h**2",
+    "s0": "h**3",
+    "s01": "-h**2",
+    "s1": "-h",
+    "s10": "1"
+   },
+   "h0_permutation": "s10",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "0",
+   "c_s1_at_that_order": "-1",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "(q**8 - 2*q**6 + q**4 - 2*q**2 + 1)/q**4",
+   "chi_21_at_q1": "-1"
+  },
+  "V^3": {
+   "coefficients": {
+    "e": "-(h - 1)*(h + 1)*(h**2 + 1)",
+    "s0": "-h**3*(h**2 + 1)",
+    "s01": "h**2*(h**2 + 1)",
+    "s1": "h**3",
+    "s10": "-h**2"
+   },
+   "h0_permutation": "e",
+   "first_single_letter_order": 3,
+   "c_s0_at_that_order": "-1",
+   "c_s1_at_that_order": "1",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "-(q**4 - q**2 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**6",
+   "chi_21_at_q1": "2"
+  },
+  "V^4": {
+   "coefficients": {
+    "e": "h**2*(h**4 + h**2 - 1)",
+    "s0": "h*(h**2 + 1)*(h**4 + h**2 - 1)",
+    "s01": "-(h**2 + 1)*(h**4 + h**2 - 1)",
+    "s1": "-h**3*(h**2 + 1)",
+    "s10": "h**2*(h**2 + 1)"
+   },
+   "h0_permutation": "s01",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "-1",
+   "c_s1_at_that_order": "0",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "(q**16 - 4*q**14 + 6*q**12 - 8*q**10 + 9*q**8 - 8*q**6 + 6*q**4 - 4*q**2 + 1)/q**8",
+   "chi_21_at_q1": "-1"
+  },
+  "V^5": {
+   "coefficients": {
+    "e": "-h**2*(h - 1)*(h + 1)*(h**2 + 1)*(h**2 + 2)",
+    "s0": "-h**3*(h**2 + 2)*(h**4 + h**2 - 1)",
+    "s01": "h**2*(h**2 + 2)*(h**4 + h**2 - 1)",
+    "s1": "h*(h**2 + 1)*(h**4 + h**2 - 1)",
+    "s10": "-(h**2 + 1)*(h**4 + h**2 - 1)"
+   },
+   "h0_permutation": "s10",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "0",
+   "c_s1_at_that_order": "-1",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "-(q**4 - q**2 + 1)*(q**16 - 4*q**14 + 5*q**12 - 6*q**10 + 9*q**8 - 6*q**6 + 5*q**4 - 4*q**2 + 1)/q**10",
+   "chi_21_at_q1": "-1"
+  },
+  "V^6": {
+   "coefficients": {
+    "e": "(h**4 + h**2 - 1)*(h**6 + 2*h**4 - h**2 - 1)",
+    "s0": "h**3*(h**2 + 2)*(h**6 + 2*h**4 - h**2 - 1)",
+    "s01": "-h**2*(h**2 + 2)*(h**6 + 2*h**4 - h**2 - 1)",
+    "s1": "-h**3*(h**2 + 2)*(h**4 + h**2 - 1)",
+    "s10": "h**2*(h**2 + 2)*(h**4 + h**2 - 1)"
+   },
+   "h0_permutation": "e",
+   "first_single_letter_order": 3,
+   "c_s0_at_that_order": "-2",
+   "c_s1_at_that_order": "2",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "(q**8 - 2*q**6 + q**4 - 2*q**2 + 1)*(q**16 - 4*q**14 + 6*q**12 - 8*q**10 + 8*q**8 - 8*q**6 + 6*q**4 - 4*q**2 + 1)/q**12",
+   "chi_21_at_q1": "2"
+  },
+  "U^1": {
+   "coefficients": {
+    "s01": "1"
+   },
+   "h0_permutation": "s01",
+   "first_single_letter_order": null,
+   "c_s0_at_that_order": "None",
+   "c_s1_at_that_order": "None",
+   "flip_symmetric_single_letters": true,
+   "chi_3": "q**2",
+   "chi_21": "-1",
+   "chi_21_at_q1": "-1"
+  },
+  "U^2": {
+   "coefficients": {
+    "s010": "h",
+    "s10": "1"
+   },
+   "h0_permutation": "s10",
+   "first_single_letter_order": null,
+   "c_s0_at_that_order": "None",
+   "c_s1_at_that_order": "None",
+   "flip_symmetric_single_letters": true,
+   "chi_3": "q**4",
+   "chi_21": "-1",
+   "chi_21_at_q1": "-1"
+  },
+  "U^3": {
+   "coefficients": {
+    "e": "1",
+    "s0": "h",
+    "s01": "h**2",
+    "s010": "h*(h**2 + 1)",
+    "s1": "h",
+    "s10": "h**2"
+   },
+   "h0_permutation": "e",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "1",
+   "c_s1_at_that_order": "1",
+   "flip_symmetric_single_letters": true,
+   "chi_3": "q**6",
+   "chi_21": "2",
+   "chi_21_at_q1": "2"
+  },
+  "U^4": {
+   "coefficients": {
+    "e": "h**2",
+    "s0": "h*(h**2 + 1)",
+    "s01": "(h**2 + 1)**2",
+    "s010": "h*(h**4 + 3*h**2 + 1)",
+    "s1": "h*(h**2 + 1)",
+    "s10": "h**2*(h**2 + 2)"
+   },
+   "h0_permutation": "s01",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "1",
+   "c_s1_at_that_order": "1",
+   "flip_symmetric_single_letters": true,
+   "chi_3": "q**8",
+   "chi_21": "-1",
+   "chi_21_at_q1": "-1"
+  },
+  "U^5": {
+   "coefficients": {
+    "e": "h**2*(h**2 + 2)",
+    "s0": "h*(h**4 + 3*h**2 + 1)",
+    "s01": "h**2*(h**2 + 1)*(h**2 + 3)",
+    "s010": "h*(h**2 + 1)*(h**4 + 4*h**2 + 2)",
+    "s1": "h*(h**4 + 3*h**2 + 1)",
+    "s10": "h**6 + 4*h**4 + 3*h**2 + 1"
+   },
+   "h0_permutation": "s10",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "1",
+   "c_s1_at_that_order": "1",
+   "flip_symmetric_single_letters": true,
+   "chi_3": "q**10",
+   "chi_21": "-1",
+   "chi_21_at_q1": "-1"
+  },
+  "U^6": {
+   "coefficients": {
+    "e": "h**6 + 4*h**4 + 3*h**2 + 1",
+    "s0": "h*(h**2 + 1)*(h**4 + 4*h**2 + 2)",
+    "s01": "h**2*(h**2 + 1)*(h**4 + 5*h**2 + 5)",
+    "s010": "h*(h**2 + 1)*(h**2 + 2)*(h**4 + 4*h**2 + 1)",
+    "s1": "h*(h**2 + 1)*(h**4 + 4*h**2 + 2)",
+    "s10": "h**2*(h**2 + 1)*(h**4 + 5*h**2 + 5)"
+   },
+   "h0_permutation": "e",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "2",
+   "c_s1_at_that_order": "2",
+   "flip_symmetric_single_letters": true,
+   "chi_3": "q**12",
+   "chi_21": "2",
+   "chi_21_at_q1": "2"
+  },
+  "Vinv^1": {
+   "coefficients": {
+    "s1": "-h",
+    "s10": "1"
+   },
+   "h0_permutation": "s10",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "0",
+   "c_s1_at_that_order": "-1",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "-(q**4 - q**2 + 1)/q**2",
+   "chi_21_at_q1": "-1"
+  },
+  "Vinv^2": {
+   "coefficients": {
+    "e": "h**2",
+    "s0": "-h",
+    "s01": "1",
+    "s1": "h**3",
+    "s10": "-h**2"
+   },
+   "h0_permutation": "s01",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "-1",
+   "c_s1_at_that_order": "0",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "(q**8 - 2*q**6 + q**4 - 2*q**2 + 1)/q**4",
+   "chi_21_at_q1": "-1"
+  },
+  "Vinv^3": {
+   "coefficients": {
+    "e": "-(h - 1)*(h + 1)*(h**2 + 1)",
+    "s0": "h**3",
+    "s01": "-h**2",
+    "s1": "-h**3*(h**2 + 1)",
+    "s10": "h**2*(h**2 + 1)"
+   },
+   "h0_permutation": "e",
+   "first_single_letter_order": 3,
+   "c_s0_at_that_order": "1",
+   "c_s1_at_that_order": "-1",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "-(q**4 - q**2 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**6",
+   "chi_21_at_q1": "2"
+  },
+  "Vinv^4": {
+   "coefficients": {
+    "e": "h**2*(h**4 + h**2 - 1)",
+    "s0": "-h**3*(h**2 + 1)",
+    "s01": "h**2*(h**2 + 1)",
+    "s1": "h*(h**2 + 1)*(h**4 + h**2 - 1)",
+    "s10": "-(h**2 + 1)*(h**4 + h**2 - 1)"
+   },
+   "h0_permutation": "s10",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "0",
+   "c_s1_at_that_order": "-1",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "(q**16 - 4*q**14 + 6*q**12 - 8*q**10 + 9*q**8 - 8*q**6 + 6*q**4 - 4*q**2 + 1)/q**8",
+   "chi_21_at_q1": "-1"
+  },
+  "Vinv^5": {
+   "coefficients": {
+    "e": "-h**2*(h - 1)*(h + 1)*(h**2 + 1)*(h**2 + 2)",
+    "s0": "h*(h**2 + 1)*(h**4 + h**2 - 1)",
+    "s01": "-(h**2 + 1)*(h**4 + h**2 - 1)",
+    "s1": "-h**3*(h**2 + 2)*(h**4 + h**2 - 1)",
+    "s10": "h**2*(h**2 + 2)*(h**4 + h**2 - 1)"
+   },
+   "h0_permutation": "s01",
+   "first_single_letter_order": 1,
+   "c_s0_at_that_order": "-1",
+   "c_s1_at_that_order": "0",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "-(q**4 - q**2 + 1)*(q**16 - 4*q**14 + 5*q**12 - 6*q**10 + 9*q**8 - 6*q**6 + 5*q**4 - 4*q**2 + 1)/q**10",
+   "chi_21_at_q1": "-1"
+  },
+  "Vinv^6": {
+   "coefficients": {
+    "e": "(h**4 + h**2 - 1)*(h**6 + 2*h**4 - h**2 - 1)",
+    "s0": "-h**3*(h**2 + 2)*(h**4 + h**2 - 1)",
+    "s01": "h**2*(h**2 + 2)*(h**4 + h**2 - 1)",
+    "s1": "h**3*(h**2 + 2)*(h**6 + 2*h**4 - h**2 - 1)",
+    "s10": "-h**2*(h**2 + 2)*(h**6 + 2*h**4 - h**2 - 1)"
+   },
+   "h0_permutation": "e",
+   "first_single_letter_order": 3,
+   "c_s0_at_that_order": "2",
+   "c_s1_at_that_order": "-2",
+   "flip_symmetric_single_letters": false,
+   "chi_3": "1",
+   "chi_21": "(q**8 - 2*q**6 + q**4 - 2*q**2 + 1)*(q**16 - 4*q**14 + 6*q**12 - 8*q**10 + 8*q**8 - 8*q**6 + 6*q**4 - 4*q**2 + 1)/q**12",
+   "chi_21_at_q1": "2"
+  }
+ }
+}
