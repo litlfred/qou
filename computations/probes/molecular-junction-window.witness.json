@@ -1,0 +1,1692 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-10-12T20:20:03.794723+00:00",
+  "commitSha": "e660bb301d152cf4b5ce1d32110d0927786f3609",
+  "assertions": [
+    {
+      "name": "convention_D_support_n6_is_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "y-lambda-at-q0"
+    },
+    {
+      "name": "convention_D_support_n9_is_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "y-lambda-at-q0"
+    },
+    {
+      "name": "convention_D_support_n12_is_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "y-lambda-at-q0"
+    },
+    {
+      "name": "sparse_chi_matches_cf_chi_on_the_deuteron_word",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "composition_feasibility_a2_probe.chi"
+    },
+    {
+      "name": "d_word_reproduces_committed_atom_characters_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-d"
+    },
+    {
+      "name": "t_word_reproduces_committed_atom_characters_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-t"
+    },
+    {
+      "name": "3he_word_reproduces_committed_atom_characters_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-3he"
+    },
+    {
+      "name": "4he_word_reproduces_committed_atom_characters_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-4he"
+    },
+    {
+      "name": "4He_carries_two_distinct_blocks_and_three_distinct_bonds",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "builder"
+    },
+    {
+      "name": "12C_every_letter_equals_a_validated_4He_letter",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-4he via letter identity"
+    },
+    {
+      "name": "14N_every_letter_equals_a_validated_4He_letter",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-4he via letter identity"
+    },
+    {
+      "name": "16O_every_letter_equals_a_validated_4He_letter",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-4he via letter identity"
+    },
+    {
+      "name": "13C_every_letter_equals_a_validated_4He_letter",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-4he via letter identity"
+    },
+    {
+      "name": "13N_every_letter_equals_a_validated_4He_letter",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-4he via letter identity"
+    },
+    {
+      "name": "CO_vs_N2 (C below junction, O above)|lower: window short of the first differing bond does not separate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_cannot_separate(_below) + junction lemmas"
+    },
+    {
+      "name": "CO_vs_N2 (C below junction, O above)|lower: window reaching the first differing bond separates (k* = 19)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "measured on the 6-strand local chain"
+    },
+    {
+      "name": "CO_vs_N2 (C below junction, O above)|lower: 6-strand cut agrees with 9-strand chains (window_factor)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_factor / window_factor_below"
+    },
+    {
+      "name": "CO_vs_N2 (C below junction, O above)|upper: window short of the first differing bond does not separate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_cannot_separate(_below) + junction lemmas"
+    },
+    {
+      "name": "CO_vs_N2 (C below junction, O above)|upper: window reaching the first differing bond separates (k* = 22)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "measured on the 6-strand local chain"
+    },
+    {
+      "name": "CO_vs_N2 (C below junction, O above)|upper: 6-strand cut agrees with 9-strand chains (window_factor)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_factor / window_factor_below"
+    },
+    {
+      "name": "OC_vs_N2 (O below junction, C above)|lower: window short of the first differing bond does not separate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_cannot_separate(_below) + junction lemmas"
+    },
+    {
+      "name": "OC_vs_N2 (O below junction, C above)|lower: window reaching the first differing bond separates (k* = 22)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "measured on the 6-strand local chain"
+    },
+    {
+      "name": "OC_vs_N2 (O below junction, C above)|lower: 6-strand cut agrees with 9-strand chains (window_factor)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_factor / window_factor_below"
+    },
+    {
+      "name": "OC_vs_N2 (O below junction, C above)|upper: window short of the first differing bond does not separate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_cannot_separate(_below) + junction lemmas"
+    },
+    {
+      "name": "OC_vs_N2 (O below junction, C above)|upper: window reaching the first differing bond separates (k* = 19)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "measured on the 6-strand local chain"
+    },
+    {
+      "name": "OC_vs_N2 (O below junction, C above)|upper: 6-strand cut agrees with 9-strand chains (window_factor)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_factor / window_factor_below"
+    },
+    {
+      "name": "13C2_vs_13N2 (mirror nuclei, 26 nucleons each)|lower: window short of the first differing bond does not separate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_cannot_separate(_below) + junction lemmas"
+    },
+    {
+      "name": "13C2_vs_13N2 (mirror nuclei, 26 nucleons each)|lower: window reaching the first differing bond separates (k* = 19)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "measured on the 6-strand local chain"
+    },
+    {
+      "name": "13C2_vs_13N2 (mirror nuclei, 26 nucleons each)|lower: 6-strand cut agrees with 9-strand chains (window_factor)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_factor / window_factor_below"
+    },
+    {
+      "name": "13C2_vs_13N2 (mirror nuclei, 26 nucleons each)|upper: window short of the first differing bond does not separate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_cannot_separate(_below) + junction lemmas"
+    },
+    {
+      "name": "13C2_vs_13N2 (mirror nuclei, 26 nucleons each)|upper: window reaching the first differing bond separates (k* = 19)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "measured on the 6-strand local chain"
+    },
+    {
+      "name": "13C2_vs_13N2 (mirror nuclei, 26 nucleons each)|upper: 6-strand cut agrees with 9-strand chains (window_factor)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_factor / window_factor_below"
+    },
+    {
+      "name": "CO_vs_N2_minimal_off_junction_window_is_19_strands_on_the_carbon_side",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "S + L above"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "molecular-junction-window",
+  "scriptFile": "molecular_junction_window_probe.py",
+  "scriptHash": "82c60176da04",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "cd378682bfd642d0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/molecular_junction_window_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/molecular_junction_window_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "q0 enters only through the committed y-lambda-at-q0 witness and the production atom words (proton pin); atom words validated against committed atom-chi-rust characters",
+  "description": "PROBE (bean qou-a1hh): window depth at a molecular junction on the production nucleon chain. Windows off the junction generator see one atom only (Lean Part G), so CO vs N2 is decided by how far the atoms' words agree outward from the junction. The corpus has no junction-letter rule; windows containing the junction generator are not measured. Nothing fitted, selected or wired.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "builder": "mass_at_3A_proper.atom_braid_word_3A(Z, N, include_inter=True), default sorted ordering",
+  "missing_in_corpus": "junction-letter rule ('molecular crossing table') for the production nucleon chain; electron strands in atom_braid_word_3A",
+  "validation_worst_dev": {
+    "d": "1.3567e-49",
+    "t": "1.4716e-49",
+    "3he": "1.9423e-49",
+    "4he": "2.7322e-49"
+  },
+  "pairs": {
+    "CO_vs_N2 (C below junction, O above)": {
+      "lower": {
+        "atoms": [
+          "12C",
+          "14N"
+        ],
+        "first_difference_token": "bond",
+        "nucleons_identical_from_junction": 6,
+        "k_star_strands": 19,
+        "m1_bond_kind": "pn",
+        "m2_bond_kind": "nn",
+        "short_window_worst_sep": "1.84890343994e-50",
+        "reach_window_worst_sep": "0.92123284920792386458",
+        "reach_window_rows": [
+          {
+            "x": [],
+            "phi_m1": "1.0",
+            "phi_m2": "1.0"
+          },
+          {
+            "x": [
+              4
+            ],
+            "phi_m1": "2.400198730274060486778726",
+            "phi_m2": "2.400198730274060486778726"
+          },
+          {
+            "x": [
+              3
+            ],
+            "phi_m1": "0.8114758867476934843485149",
+            "phi_m2": "0.8114758867476934843485149"
+          },
+          {
+            "x": [
+              3,
+              4
+            ],
+            "phi_m1": "1.820016499063799925918414",
+            "phi_m2": "1.820016499063799925918414"
+          },
+          {
+            "x": [
+              4,
+              3
+            ],
+            "phi_m1": "1.440666917516924947754705",
+            "phi_m2": "1.440666917516924947754705"
+          },
+          {
+            "x": [
+              3,
+              4,
+              3
+            ],
+            "phi_m1": "1.029889000601834774024176",
+            "phi_m2": "1.029889000601834774024176"
+          },
+          {
+            "x": [
+              2
+            ],
+            "phi_m1": "2.093715180744308887567501",
+            "phi_m2": "2.477530419702765995558393"
+          },
+          {
+            "x": [
+              4,
+              2
+            ],
+            "phi_m1": "5.025332518378015248278023",
+            "phi_m2": "5.946565367585939112859282"
+          },
+          {
+            "x": [
+              2,
+              3
+            ],
+            "phi_m1": "1.30786164607178177184274",
+            "phi_m2": "1.51795324981834593754711"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4
+            ],
+            "phi_m1": "3.12302638192309102990574",
+            "phi_m2": "3.643389462829377656553798"
+          },
+          {
+            "x": [
+              2,
+              4,
+              3
+            ],
+            "phi_m1": "3.075189915354130192669817",
+            "phi_m2": "3.643389462829377656553798"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4,
+              3
+            ],
+            "phi_m1": "1.940323969693161982335682",
+            "phi_m2": "2.279641339546339451634313"
+          },
+          {
+            "x": [
+              3,
+              2
+            ],
+            "phi_m1": "1.698999382891595392720605",
+            "phi_m2": "2.010456194272687244983419"
+          },
+          {
+            "x": [
+              3,
+              4,
+              2
+            ],
+            "phi_m1": "3.810596173294988149150934",
+            "phi_m2": "4.50914624079149504509009"
+          },
+          {
+            "x": [
+              2,
+              3,
+              2
+            ],
+            "phi_m1": "1.125755395883630940080512",
+            "phi_m2": "1.231782459437885363160373"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4,
+              2
+            ],
+            "phi_m1": "2.544739663241410364391555",
+            "phi_m2": "2.76269995947690366411139"
+          },
+          {
+            "x": [
+              3,
+              2,
+              4,
+              3
+            ],
+            "phi_m1": "2.323961179335184280911979",
+            "phi_m2": "2.76269995947690366411139"
+          },
+          {
+            "x": [
+              2,
+              3,
+              2,
+              4,
+              3
+            ],
+            "phi_m1": "1.645779322699819430307182",
+            "phi_m2": "1.809353338448827471795822"
+          },
+          {
+            "x": [
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "3.016346195601294860767057",
+            "phi_m2": "3.569296112807597225959092"
+          },
+          {
+            "x": [
+              3,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "2.156294235041646138582245",
+            "phi_m2": "2.551581327908325928679475"
+          },
+          {
+            "x": [
+              2,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "2.077420328216562170349676",
+            "phi_m2": "2.186865029350595156241904"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "1.45809358495489371152795",
+            "phi_m2": "1.563323355415723530358144"
+          },
+          {
+            "x": [
+              3,
+              2,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "1.498222823933307420893233",
+            "phi_m2": "1.563323355415723530358144"
+          },
+          {
+            "x": [
+              2,
+              3,
+              2,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "2.190299260474405436290857",
+            "phi_m2": "2.513693877148007755684209"
+          }
+        ],
+        "cut_checks": {
+          "down": "1.368e-49",
+          "up": "9.0365e-50"
+        }
+      },
+      "upper": {
+        "atoms": [
+          "16O",
+          "14N"
+        ],
+        "first_difference_token": "bond",
+        "nucleons_identical_from_junction": 7,
+        "k_star_strands": 22,
+        "m1_bond_kind": "pp",
+        "m2_bond_kind": "pn",
+        "short_window_worst_sep": "1.1744476229e-50",
+        "reach_window_worst_sep": "0.51272876669735294186",
+        "reach_window_rows": [
+          {
+            "x": [],
+            "phi_m1": "1.0",
+            "phi_m2": "1.0"
+          },
+          {
+            "x": [
+              2
+            ],
+            "phi_m1": "1.841212290300814481633022",
+            "phi_m2": "2.093715180744308887567501"
+          },
+          {
+            "x": [
+              1
+            ],
+            "phi_m1": "2.030585732293200797892397",
+            "phi_m2": "2.030585732293200797892397"
+          },
+          {
+            "x": [
+              1,
+              2
+            ],
+            "phi_m1": "1.424514859923378624146628",
+            "phi_m2": "1.46159295409781295056548"
+          },
+          {
+            "x": [
+              2,
+              1
+            ],
+            "phi_m1": "3.738739406807720786988476",
+            "phi_m2": "4.251468173505073728849015"
+          },
+          {
+            "x": [
+              1,
+              2,
+              1
+            ],
+            "phi_m1": "2.328395234547610618193825",
+            "phi_m2": "2.627572268909953851351327"
+          },
+          {
+            "x": [
+              0
+            ],
+            "phi_m1": "0.854799329384397747259465",
+            "phi_m2": "0.854799329384397747259465"
+          },
+          {
+            "x": [
+              2,
+              0
+            ],
+            "phi_m1": "1.573867031003447283671463",
+            "phi_m2": "1.789706332422168356542492"
+          },
+          {
+            "x": [
+              0,
+              1
+            ],
+            "phi_m1": "1.545942804816893188366151",
+            "phi_m2": "1.545942804816893188366151"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2
+            ],
+            "phi_m1": "1.177994594080386147573218",
+            "phi_m2": "1.225434589422546503098865"
+          },
+          {
+            "x": [
+              0,
+              2,
+              1
+            ],
+            "phi_m1": "2.846408892330976921502335",
+            "phi_m2": "3.236763919007565358217054"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2,
+              1
+            ],
+            "phi_m1": "1.792214706634986564748236",
+            "phi_m2": "2.01223246369239171397809"
+          },
+          {
+            "x": [
+              1,
+              0
+            ],
+            "phi_m1": "1.392877606011013552572854",
+            "phi_m2": "1.392877606011013552572854"
+          },
+          {
+            "x": [
+              1,
+              2,
+              0
+            ],
+            "phi_m1": "1.145994737882815016767943",
+            "phi_m2": "1.20613287242659922300601"
+          },
+          {
+            "x": [
+              0,
+              1,
+              0
+            ],
+            "phi_m1": "1.07463380506697101146349",
+            "phi_m2": "1.07463380506697101146349"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2,
+              0
+            ],
+            "phi_m1": "1.40336786759461007747099",
+            "phi_m2": "1.55648058145997653048506"
+          },
+          {
+            "x": [
+              1,
+              0,
+              2,
+              1
+            ],
+            "phi_m1": "1.7706060692000889629824",
+            "phi_m2": "1.999198536231552581111609"
+          },
+          {
+            "x": [
+              0,
+              1,
+              0,
+              2,
+              1
+            ],
+            "phi_m1": "2.691944574667961088424547",
+            "phi_m2": "3.041535814135003592693501"
+          },
+          {
+            "x": [
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "2.564583367072253783384147",
+            "phi_m2": "2.916288988624049503655254"
+          },
+          {
+            "x": [
+              1,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "1.63245960833102521779367",
+            "phi_m2": "1.823672016018427185345292"
+          },
+          {
+            "x": [
+              0,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "1.978628969462036710396852",
+            "phi_m2": "2.249977111409737615312892"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "1.368022310786499386924001",
+            "phi_m2": "1.472473532849541675748833"
+          },
+          {
+            "x": [
+              1,
+              0,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "1.444797238943314032487162",
+            "phi_m2": "1.51878273894464592920236"
+          },
+          {
+            "x": [
+              0,
+              1,
+              0,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "2.18031960751559346195414",
+            "phi_m2": "2.289457355824040772415008"
+          }
+        ],
+        "cut_checks": {
+          "down": "7.1954e-50",
+          "up": "7.2952e-50"
+        }
+      },
+      "minimal_separating_k_off_junction": 19
+    },
+    "OC_vs_N2 (O below junction, C above)": {
+      "lower": {
+        "atoms": [
+          "16O",
+          "14N"
+        ],
+        "first_difference_token": "bond",
+        "nucleons_identical_from_junction": 7,
+        "k_star_strands": 22,
+        "m1_bond_kind": "nn",
+        "m2_bond_kind": "pn",
+        "short_window_worst_sep": "1.84890343994e-50",
+        "reach_window_worst_sep": "0.92123284920792386458",
+        "reach_window_rows": [
+          {
+            "x": [],
+            "phi_m1": "1.0",
+            "phi_m2": "1.0"
+          },
+          {
+            "x": [
+              4
+            ],
+            "phi_m1": "2.400198730274060486778726",
+            "phi_m2": "2.400198730274060486778726"
+          },
+          {
+            "x": [
+              3
+            ],
+            "phi_m1": "0.8114758867476934843485149",
+            "phi_m2": "0.8114758867476934843485149"
+          },
+          {
+            "x": [
+              3,
+              4
+            ],
+            "phi_m1": "1.820016499063799925918414",
+            "phi_m2": "1.820016499063799925918414"
+          },
+          {
+            "x": [
+              4,
+              3
+            ],
+            "phi_m1": "1.440666917516924947754705",
+            "phi_m2": "1.440666917516924947754705"
+          },
+          {
+            "x": [
+              3,
+              4,
+              3
+            ],
+            "phi_m1": "1.029889000601834774024176",
+            "phi_m2": "1.029889000601834774024176"
+          },
+          {
+            "x": [
+              2
+            ],
+            "phi_m1": "2.477530419702765995558393",
+            "phi_m2": "2.093715180744308887567501"
+          },
+          {
+            "x": [
+              4,
+              2
+            ],
+            "phi_m1": "5.946565367585939112859282",
+            "phi_m2": "5.025332518378015248278023"
+          },
+          {
+            "x": [
+              2,
+              3
+            ],
+            "phi_m1": "1.51795324981834593754711",
+            "phi_m2": "1.30786164607178177184274"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4
+            ],
+            "phi_m1": "3.643389462829377656553798",
+            "phi_m2": "3.12302638192309102990574"
+          },
+          {
+            "x": [
+              2,
+              4,
+              3
+            ],
+            "phi_m1": "3.643389462829377656553798",
+            "phi_m2": "3.075189915354130192669817"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4,
+              3
+            ],
+            "phi_m1": "2.279641339546339451634313",
+            "phi_m2": "1.940323969693161982335682"
+          },
+          {
+            "x": [
+              3,
+              2
+            ],
+            "phi_m1": "2.010456194272687244983419",
+            "phi_m2": "1.698999382891595392720605"
+          },
+          {
+            "x": [
+              3,
+              4,
+              2
+            ],
+            "phi_m1": "4.50914624079149504509009",
+            "phi_m2": "3.810596173294988149150934"
+          },
+          {
+            "x": [
+              2,
+              3,
+              2
+            ],
+            "phi_m1": "1.231782459437885363160373",
+            "phi_m2": "1.125755395883630940080512"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4,
+              2
+            ],
+            "phi_m1": "2.76269995947690366411139",
+            "phi_m2": "2.544739663241410364391555"
+          },
+          {
+            "x": [
+              3,
+              2,
+              4,
+              3
+            ],
+            "phi_m1": "2.76269995947690366411139",
+            "phi_m2": "2.323961179335184280911979"
+          },
+          {
+            "x": [
+              2,
+              3,
+              2,
+              4,
+              3
+            ],
+            "phi_m1": "1.809353338448827471795822",
+            "phi_m2": "1.645779322699819430307182"
+          },
+          {
+            "x": [
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "3.569296112807597225959092",
+            "phi_m2": "3.016346195601294860767057"
+          },
+          {
+            "x": [
+              3,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "2.551581327908325928679475",
+            "phi_m2": "2.156294235041646138582245"
+          },
+          {
+            "x": [
+              2,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "2.186865029350595156241904",
+            "phi_m2": "2.077420328216562170349676"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "1.563323355415723530358144",
+            "phi_m2": "1.45809358495489371152795"
+          },
+          {
+            "x": [
+              3,
+              2,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "1.563323355415723530358144",
+            "phi_m2": "1.498222823933307420893233"
+          },
+          {
+            "x": [
+              2,
+              3,
+              2,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "2.513693877148007755684209",
+            "phi_m2": "2.190299260474405436290857"
+          }
+        ],
+        "cut_checks": {
+          "down": "2.1121e-49",
+          "up": "1.3583e-49"
+        }
+      },
+      "upper": {
+        "atoms": [
+          "12C",
+          "14N"
+        ],
+        "first_difference_token": "bond",
+        "nucleons_identical_from_junction": 6,
+        "k_star_strands": 19,
+        "m1_bond_kind": "pn",
+        "m2_bond_kind": "pp",
+        "short_window_worst_sep": "1.1744476229e-50",
+        "reach_window_worst_sep": "0.51272876669735294186",
+        "reach_window_rows": [
+          {
+            "x": [],
+            "phi_m1": "1.0",
+            "phi_m2": "1.0"
+          },
+          {
+            "x": [
+              2
+            ],
+            "phi_m1": "2.093715180744308887567501",
+            "phi_m2": "1.841212290300814481633022"
+          },
+          {
+            "x": [
+              1
+            ],
+            "phi_m1": "2.030585732293200797892397",
+            "phi_m2": "2.030585732293200797892397"
+          },
+          {
+            "x": [
+              1,
+              2
+            ],
+            "phi_m1": "1.46159295409781295056548",
+            "phi_m2": "1.424514859923378624146628"
+          },
+          {
+            "x": [
+              2,
+              1
+            ],
+            "phi_m1": "4.251468173505073728849015",
+            "phi_m2": "3.738739406807720786988476"
+          },
+          {
+            "x": [
+              1,
+              2,
+              1
+            ],
+            "phi_m1": "2.627572268909953851351327",
+            "phi_m2": "2.328395234547610618193825"
+          },
+          {
+            "x": [
+              0
+            ],
+            "phi_m1": "0.854799329384397747259465",
+            "phi_m2": "0.854799329384397747259465"
+          },
+          {
+            "x": [
+              2,
+              0
+            ],
+            "phi_m1": "1.789706332422168356542492",
+            "phi_m2": "1.573867031003447283671463"
+          },
+          {
+            "x": [
+              0,
+              1
+            ],
+            "phi_m1": "1.545942804816893188366151",
+            "phi_m2": "1.545942804816893188366151"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2
+            ],
+            "phi_m1": "1.225434589422546503098865",
+            "phi_m2": "1.177994594080386147573218"
+          },
+          {
+            "x": [
+              0,
+              2,
+              1
+            ],
+            "phi_m1": "3.236763919007565358217054",
+            "phi_m2": "2.846408892330976921502335"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2,
+              1
+            ],
+            "phi_m1": "2.01223246369239171397809",
+            "phi_m2": "1.792214706634986564748236"
+          },
+          {
+            "x": [
+              1,
+              0
+            ],
+            "phi_m1": "1.392877606011013552572854",
+            "phi_m2": "1.392877606011013552572854"
+          },
+          {
+            "x": [
+              1,
+              2,
+              0
+            ],
+            "phi_m1": "1.20613287242659922300601",
+            "phi_m2": "1.145994737882815016767943"
+          },
+          {
+            "x": [
+              0,
+              1,
+              0
+            ],
+            "phi_m1": "1.07463380506697101146349",
+            "phi_m2": "1.07463380506697101146349"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2,
+              0
+            ],
+            "phi_m1": "1.55648058145997653048506",
+            "phi_m2": "1.40336786759461007747099"
+          },
+          {
+            "x": [
+              1,
+              0,
+              2,
+              1
+            ],
+            "phi_m1": "1.999198536231552581111609",
+            "phi_m2": "1.7706060692000889629824"
+          },
+          {
+            "x": [
+              0,
+              1,
+              0,
+              2,
+              1
+            ],
+            "phi_m1": "3.041535814135003592693501",
+            "phi_m2": "2.691944574667961088424547"
+          },
+          {
+            "x": [
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "2.916288988624049503655254",
+            "phi_m2": "2.564583367072253783384147"
+          },
+          {
+            "x": [
+              1,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "1.823672016018427185345292",
+            "phi_m2": "1.63245960833102521779367"
+          },
+          {
+            "x": [
+              0,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "2.249977111409737615312892",
+            "phi_m2": "1.978628969462036710396852"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "1.472473532849541675748833",
+            "phi_m2": "1.368022310786499386924001"
+          },
+          {
+            "x": [
+              1,
+              0,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "1.51878273894464592920236",
+            "phi_m2": "1.444797238943314032487162"
+          },
+          {
+            "x": [
+              0,
+              1,
+              0,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "2.289457355824040772415008",
+            "phi_m2": "2.18031960751559346195414"
+          }
+        ],
+        "cut_checks": {
+          "down": "1.0884e-49",
+          "up": "9.6107e-50"
+        }
+      },
+      "minimal_separating_k_off_junction": 19
+    },
+    "13C2_vs_13N2 (mirror nuclei, 26 nucleons each)": {
+      "lower": {
+        "atoms": [
+          "13C",
+          "13N"
+        ],
+        "first_difference_token": "bond",
+        "nucleons_identical_from_junction": 6,
+        "k_star_strands": 19,
+        "m1_bond_kind": "nn",
+        "m2_bond_kind": "pn",
+        "short_window_worst_sep": "1.84890343994e-50",
+        "reach_window_worst_sep": "0.92123284920792386458",
+        "reach_window_rows": [
+          {
+            "x": [],
+            "phi_m1": "1.0",
+            "phi_m2": "1.0"
+          },
+          {
+            "x": [
+              4
+            ],
+            "phi_m1": "2.400198730274060486778726",
+            "phi_m2": "2.400198730274060486778726"
+          },
+          {
+            "x": [
+              3
+            ],
+            "phi_m1": "0.8114758867476934843485149",
+            "phi_m2": "0.8114758867476934843485149"
+          },
+          {
+            "x": [
+              3,
+              4
+            ],
+            "phi_m1": "1.820016499063799925918414",
+            "phi_m2": "1.820016499063799925918414"
+          },
+          {
+            "x": [
+              4,
+              3
+            ],
+            "phi_m1": "1.440666917516924947754705",
+            "phi_m2": "1.440666917516924947754705"
+          },
+          {
+            "x": [
+              3,
+              4,
+              3
+            ],
+            "phi_m1": "1.029889000601834774024176",
+            "phi_m2": "1.029889000601834774024176"
+          },
+          {
+            "x": [
+              2
+            ],
+            "phi_m1": "2.477530419702765995558393",
+            "phi_m2": "2.093715180744308887567501"
+          },
+          {
+            "x": [
+              4,
+              2
+            ],
+            "phi_m1": "5.946565367585939112859282",
+            "phi_m2": "5.025332518378015248278023"
+          },
+          {
+            "x": [
+              2,
+              3
+            ],
+            "phi_m1": "1.51795324981834593754711",
+            "phi_m2": "1.30786164607178177184274"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4
+            ],
+            "phi_m1": "3.643389462829377656553798",
+            "phi_m2": "3.12302638192309102990574"
+          },
+          {
+            "x": [
+              2,
+              4,
+              3
+            ],
+            "phi_m1": "3.643389462829377656553798",
+            "phi_m2": "3.075189915354130192669817"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4,
+              3
+            ],
+            "phi_m1": "2.279641339546339451634313",
+            "phi_m2": "1.940323969693161982335682"
+          },
+          {
+            "x": [
+              3,
+              2
+            ],
+            "phi_m1": "2.010456194272687244983419",
+            "phi_m2": "1.698999382891595392720605"
+          },
+          {
+            "x": [
+              3,
+              4,
+              2
+            ],
+            "phi_m1": "4.50914624079149504509009",
+            "phi_m2": "3.810596173294988149150934"
+          },
+          {
+            "x": [
+              2,
+              3,
+              2
+            ],
+            "phi_m1": "1.231782459437885363160373",
+            "phi_m2": "1.125755395883630940080512"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4,
+              2
+            ],
+            "phi_m1": "2.76269995947690366411139",
+            "phi_m2": "2.544739663241410364391555"
+          },
+          {
+            "x": [
+              3,
+              2,
+              4,
+              3
+            ],
+            "phi_m1": "2.76269995947690366411139",
+            "phi_m2": "2.323961179335184280911979"
+          },
+          {
+            "x": [
+              2,
+              3,
+              2,
+              4,
+              3
+            ],
+            "phi_m1": "1.809353338448827471795822",
+            "phi_m2": "1.645779322699819430307182"
+          },
+          {
+            "x": [
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "3.569296112807597225959092",
+            "phi_m2": "3.016346195601294860767057"
+          },
+          {
+            "x": [
+              3,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "2.551581327908325928679475",
+            "phi_m2": "2.156294235041646138582245"
+          },
+          {
+            "x": [
+              2,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "2.186865029350595156241904",
+            "phi_m2": "2.077420328216562170349676"
+          },
+          {
+            "x": [
+              2,
+              3,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "1.563323355415723530358144",
+            "phi_m2": "1.45809358495489371152795"
+          },
+          {
+            "x": [
+              3,
+              2,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "1.563323355415723530358144",
+            "phi_m2": "1.498222823933307420893233"
+          },
+          {
+            "x": [
+              2,
+              3,
+              2,
+              4,
+              3,
+              2
+            ],
+            "phi_m1": "2.513693877148007755684209",
+            "phi_m2": "2.190299260474405436290857"
+          }
+        ],
+        "cut_checks": {
+          "down": "2.1121e-49",
+          "up": "1.3583e-49"
+        }
+      },
+      "upper": {
+        "atoms": [
+          "13C",
+          "13N"
+        ],
+        "first_difference_token": "bond",
+        "nucleons_identical_from_junction": 6,
+        "k_star_strands": 19,
+        "m1_bond_kind": "pn",
+        "m2_bond_kind": "pp",
+        "short_window_worst_sep": "1.1744476229e-50",
+        "reach_window_worst_sep": "0.51272876669735294186",
+        "reach_window_rows": [
+          {
+            "x": [],
+            "phi_m1": "1.0",
+            "phi_m2": "1.0"
+          },
+          {
+            "x": [
+              2
+            ],
+            "phi_m1": "2.093715180744308887567501",
+            "phi_m2": "1.841212290300814481633022"
+          },
+          {
+            "x": [
+              1
+            ],
+            "phi_m1": "2.030585732293200797892397",
+            "phi_m2": "2.030585732293200797892397"
+          },
+          {
+            "x": [
+              1,
+              2
+            ],
+            "phi_m1": "1.46159295409781295056548",
+            "phi_m2": "1.424514859923378624146628"
+          },
+          {
+            "x": [
+              2,
+              1
+            ],
+            "phi_m1": "4.251468173505073728849015",
+            "phi_m2": "3.738739406807720786988476"
+          },
+          {
+            "x": [
+              1,
+              2,
+              1
+            ],
+            "phi_m1": "2.627572268909953851351327",
+            "phi_m2": "2.328395234547610618193825"
+          },
+          {
+            "x": [
+              0
+            ],
+            "phi_m1": "0.854799329384397747259465",
+            "phi_m2": "0.854799329384397747259465"
+          },
+          {
+            "x": [
+              2,
+              0
+            ],
+            "phi_m1": "1.789706332422168356542492",
+            "phi_m2": "1.573867031003447283671463"
+          },
+          {
+            "x": [
+              0,
+              1
+            ],
+            "phi_m1": "1.545942804816893188366151",
+            "phi_m2": "1.545942804816893188366151"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2
+            ],
+            "phi_m1": "1.225434589422546503098865",
+            "phi_m2": "1.177994594080386147573218"
+          },
+          {
+            "x": [
+              0,
+              2,
+              1
+            ],
+            "phi_m1": "3.236763919007565358217054",
+            "phi_m2": "2.846408892330976921502335"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2,
+              1
+            ],
+            "phi_m1": "2.01223246369239171397809",
+            "phi_m2": "1.792214706634986564748236"
+          },
+          {
+            "x": [
+              1,
+              0
+            ],
+            "phi_m1": "1.392877606011013552572854",
+            "phi_m2": "1.392877606011013552572854"
+          },
+          {
+            "x": [
+              1,
+              2,
+              0
+            ],
+            "phi_m1": "1.20613287242659922300601",
+            "phi_m2": "1.145994737882815016767943"
+          },
+          {
+            "x": [
+              0,
+              1,
+              0
+            ],
+            "phi_m1": "1.07463380506697101146349",
+            "phi_m2": "1.07463380506697101146349"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2,
+              0
+            ],
+            "phi_m1": "1.55648058145997653048506",
+            "phi_m2": "1.40336786759461007747099"
+          },
+          {
+            "x": [
+              1,
+              0,
+              2,
+              1
+            ],
+            "phi_m1": "1.999198536231552581111609",
+            "phi_m2": "1.7706060692000889629824"
+          },
+          {
+            "x": [
+              0,
+              1,
+              0,
+              2,
+              1
+            ],
+            "phi_m1": "3.041535814135003592693501",
+            "phi_m2": "2.691944574667961088424547"
+          },
+          {
+            "x": [
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "2.916288988624049503655254",
+            "phi_m2": "2.564583367072253783384147"
+          },
+          {
+            "x": [
+              1,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "1.823672016018427185345292",
+            "phi_m2": "1.63245960833102521779367"
+          },
+          {
+            "x": [
+              0,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "2.249977111409737615312892",
+            "phi_m2": "1.978628969462036710396852"
+          },
+          {
+            "x": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "1.472473532849541675748833",
+            "phi_m2": "1.368022310786499386924001"
+          },
+          {
+            "x": [
+              1,
+              0,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "1.51878273894464592920236",
+            "phi_m2": "1.444797238943314032487162"
+          },
+          {
+            "x": [
+              0,
+              1,
+              0,
+              2,
+              1,
+              0
+            ],
+            "phi_m1": "2.289457355824040772415008",
+            "phi_m2": "2.18031960751559346195414"
+          }
+        ],
+        "cut_checks": {
+          "down": "1.0884e-49",
+          "up": "9.6107e-50"
+        }
+      },
+      "minimal_separating_k_off_junction": 19
+    }
+  }
+}
