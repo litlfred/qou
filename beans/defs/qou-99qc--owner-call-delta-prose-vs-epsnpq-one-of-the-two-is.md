@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-10-10T12:30:00Z
+updated_at: 2026-10-11T07:50:29Z
 parent: qou-10v9
 ---
 
@@ -3382,3 +3382,7 @@ Probe `computations/probes/quark_template/` (pre-registered at 6b9dd5d172; exact
 Asked in the six-part frame on PR #7718 (comment 6130340849). The four options were: 1 keep S+ (status quo); 2 adopt the swap S− (u = σ⁻¹, d = σ), which passes reading 3 at the builder placement; 3 keep S+ and move the letters to placement 011 or 100; 4 pick nothing by hand. **The owner chose 4.** The quark sign map and the letter placement must be outputs of the γγ construction plus reading 3 at every tower level (`qou-ales`), not a template choice. The template stays open and nothing is re-scored. The dashboard knowingly keeps scoring an element that reading 3 rejects until a derivation lands. The 2026-09-05 data-based "swap refuted" in `qou-y2np` is a comparison with data, so it counts as a selection neither way. This bean stays open (rule 13a). Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
 
 **2026-10-11 — 🟧 OWNER RULING (thread chat, ofri, verbatim): "3... but let's go through γγ production step by step to get to one and two nucleons. each collision/interaction shifts things up the tower".** Option 3 of the #7702 decision: **reading 3 applies at EVERY level of the tower** (nucleon in H_3, A nucleons in H_{3A}, all checked). On the #7702 family this coincides with the H_3 verdicts; the live element stays excluded. Next: walk γγ production step by step, tracking the tower level of each collision (h-order and n). Walk-through: /mnt/project-files/qbeta-ohara/gg-production-walkthrough.md. Bean stays open (rule 13a).
+
+### Cross-link (2026-10-11)
+
+the p-n interface convention R3 made canonical is the one the corpus's uniqueness theorem does NOT cover (it fails `BarInvariant`), so "canonical" there is not proved canonicity. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).

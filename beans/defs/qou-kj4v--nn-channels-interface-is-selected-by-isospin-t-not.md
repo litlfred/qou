@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T02:34:49Z
-updated_at: 2026-10-04T15:21:41Z
+updated_at: 2026-10-11T07:50:29Z
 parent: qou-v2om
 ---
 
@@ -166,3 +166,7 @@ re-finds it.
   * The A-scaling refutations in that bean (per-bond deficit changes sign,
     spread 7.105 MeV/bond) were also computed under C and should be re-run
     before being cited.
+
+### Cross-link (2026-10-11)
+
+the colour-weighted p-n factor `z − h(1/2 − δ/4)` is **bar-mixed** (`δ̄ = −q²δ`, defect `(q−1)⁵(q+1)³(q²+1)/(12q⁵)` ≈ 1.67e-5 at the anchor), so bar-invariance does not select it. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).

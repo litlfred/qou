@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-10-04T15:13:24Z
+updated_at: 2026-10-11T07:50:29Z
 parent: qou-v2om
 ---
 
@@ -3387,3 +3387,7 @@ Section 1 of the probe also re-derives the corpus identity exactly over ℚ:
 `Δ³W = +φᵀ₃`, collapsing on a chain to `g₀₁·g₁₂`, matching `b3corpus_chain`.
 
 PR #7375. `mpmath` dps 60 + `Fraction`; no float anywhere.
+
+### Cross-link (2026-10-11)
+
+the p-n interface factor's canonicity is conditional — `pn_averaging_unique` is sorry-free but carries `BarInvariant` as an instance hypothesis, which the canonical convention fails. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).

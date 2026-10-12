@@ -27,7 +27,7 @@ This decomposition is **already** in difference form per term:
 each term is `something[atom] − something[free]`, so the framework's
 "only differences are observables" claim is automatically satisfied.
 
-Per term7-alpha5's `prop:mass-formula-iterative-lp-dual`, this
+Per term7-alpha5's `mass-formula-iterative-lp-dual`, this
 decomposition unifies as
 
   B(Z, N) = Σ_l (u^{(l)*}[atom] − u^{(l)*}[free])
@@ -53,6 +53,11 @@ but reports it with proper attribution to the difference principle and
 a clearer cross-link to term7-alpha5's iterative LP-dual.
 
 Output: compound-binding-via-differences.witness.json
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

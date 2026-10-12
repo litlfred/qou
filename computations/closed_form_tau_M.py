@@ -24,7 +24,7 @@ this docstring rather than off `markov_z` below is a **23% error**
 forcing argument and the registry pointers — it is authoritative; this
 header is a summary of it.
 
-Combined with Phase 5l (`prop:constit-factor-tau-M-proton-identity`)
+Combined with Phase 5l (`constit-factor-tau-M-proton-identity`)
   tr_M(𝓑_K^vac) = tr_M^3(𝓑_p)^Z · tr_M^3(𝓑_n)^N
 
 gives the full closed form
@@ -97,7 +97,7 @@ docstring is now obsolete (the convention is implemented and IS
 the canonical/derived choice).
 
 Ref: prop:interface-knot-markov-z.md (Phase 5c.1 interface identity)
-Ref: prop:constit-factor-tau-M-proton-identity.md (Phase 5l constit identity)
+Ref: `constit-factor-tau-M-proton-identity` (Phase 5l constit identity)
 Ref: prop:averaging-resonance-rule.md (categorical σ_avg = σ - h/2 definition)
 Ref: probe_pn_flavor_asymmetry.py (Bring-surface flavor-weighted averaging)
 Ref: probe_per_sheet_flavor_nonin.py (per-sheet Picard-Lefschetz integration)
@@ -120,6 +120,11 @@ z-h/2 by
 Ref: QOU.BraidKnot.interface_knot_markov_z_bar_symmetric (Lean: averaged pn factor derived)
 Ref: prop:interface-knot-markov-z §"Averaged (bar-invariant) interface"
 Ref: computations/probes/interface_factor_categorical_derivation_probe.py
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
