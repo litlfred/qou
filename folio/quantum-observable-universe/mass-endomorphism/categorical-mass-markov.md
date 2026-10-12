@@ -10,7 +10,7 @@ $$
   \;=\; \Bigl|\!\int_A\! \rho(\beta_\mathcal{K})\Bigr|,
 $$
 
-*where $\int_A : A \to R$ is the Jones–Markov trace, functioning as the Frobenius integral on $A$.*
+*where $\int_A : A \to R$ is the Jones–Markov trace, functioning as the Frobenius integral on $A$. The framing-corrected value $(1 + q^2)^{n} \, q^{-n - 2 w(\beta_\mathcal{K})} \int_A \rho(\beta_\mathcal{K})$, with $w$ the writhe, depends only on the class of $\beta_\mathcal{K}$ modulo conjugation and positive or negative stabilisation, so the single-level mass is a function on braid classes.*
 
 ## Modulus isolates the bar-even shadow
 
