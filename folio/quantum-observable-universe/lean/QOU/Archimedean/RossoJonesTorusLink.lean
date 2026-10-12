@@ -1,9 +1,46 @@
 import QOU.Archimedean.RossoJonesMiddle
 
 /-!
-# Rosso–Jones for torus links: all `(r, s)`, including `gcd(r, s) > 1`
+# Rosso–Jones for torus links: every `(r, s)`, including `gcd(r, s) > 1`
 
-WIP.
+`QOU.Archimedean.RossoJonesMiddle` proves the Rosso–Jones formula for the torus *knots*
+`T(r, s)`, `gcd(r, s) = 1`, by a telescoping identity:
+`T_{m+1}(γ^p) = T_{m+1}(ρ^p) + T_m(γ^p) − T_m(ρ'^p)`. Here `γ` is the torus generator on
+`V^{⊗r}` (`r = n + 1`, `s = p`), `T_m` is the plain trace on the weight space of states with
+`m` ones, and `ρ, ρ'` are weighted cyclic rotations. That identity (`T_gam_succ`) does not use
+coprimality. Coprimality enters only in showing that the middle traces of `ρ^p, ρ'^p` vanish,
+because `rot^p` then fixes only the two constant states.
+
+This file removes the coprimality assumption by computing those traces exactly.
+
+* `T_gam_eq_sum`: summing the telescoping gives
+  `T_m(γ^p) = Σ_{j ≤ m} T_j(ρ^p) − Σ_{j < m} T_j(ρ'^p)`, for every `p`.
+* `rho_eq_wRot`, `rho'_eq_wRot`: the weight of `ρ` (resp. `ρ'`) at a state `b` depends only
+  on `ones b` and on the last letter of `b`. It is `q^{n−j}` on a final `0` and `q^{j−1}q^{−2}`
+  on a final `1` (resp. `q^{n−j}q^{−2}` and `q^{j−1}`), where `j = ones b`.
+* `lastOnes_mul`: for `rot^p b = b`, a double count over `p(n+1)` consecutive positions shows
+  that the number `S` of ones among the `p` last letters met along the orbit satisfies
+  `(n + 1) S = p · ones b`. So every fixed state of weight `j` has the same diagonal entry,
+  `α_j^{p−S} β_j^S` with `S = pj/(n+1)` (`T_wRot_pow`).
+* `card_fixSet`: the weight-`j` states fixed by `rot^p` are the `d`-periodic words,
+  `d = gcd(n + 1, p)`. These correspond bijectively to words of length `d` (`perExt`/`restr`,
+  using Bézout through `Nat.exists_mul_emod_eq_gcd`), and their number is
+  `C(d, j/e)` if `e = (n+1)/d` divides `j`, and `0` otherwise (`fixCount`).
+* `T_gam_pow`, `rossoJones_torusLink`, `markov_rossoJones_torusLink`: every weight-space
+  trace of `γ^p`, the weighted trace `tr(W γ^p)`, and the value of every normalised cyclic
+  Markov trace with `z = z_D` on `(s₀ ⋯ s_{n−1})^p`, as explicit finite sums. There is no
+  hypothesis on `gcd(n + 1, p)`.
+
+In the probe's notation (`d = gcd(r,p)`, `e = r/d`, `a = p/d`, `j = ke`):
+`T_j(ρ^p) = C(d,k) q^{a[(r−j−1)(d−k)+(j−3)k]}` and `T_j(ρ'^p) = C(d,k) q^{a[(r−j−3)(d−k)+(j−1)k]}`.
+Both are checked exactly, together with the Lean forms `rhoTr`/`rho'Tr` (truncated `ℕ`
+arithmetic), in `computations/probes/rj_torus_link_periodic_probe.py`. That probe covers
+`2 ≤ r ≤ 6` and `1 ≤ p ≤ 2r + 2` and makes 1350 exact checks, all passing.
+
+Everything here is sorry-free, over a generic field `R`, assuming only `q ≠ 0` (and also
+`q² + 1 ≠ 0` for the Markov form).
+
+-- Ref: [rosso-jones1993] Rosso–Jones, *J. Knot Theory Ramifications* 2 (1993)
 -/
 
 namespace QOU.Archimedean.RossoJonesGeneral
@@ -337,5 +374,107 @@ theorem card_ones_eq (d k : ℕ) :
     rcases Fin.exists_fin_two.mp ⟨c i, rfl⟩ with h | h <;> simp [h]
   · intro s _
     ext i; by_cases h : i ∈ s <;> simp [h]
+
+/-- The number of weight-`j` states fixed by `rot^p` on `n + 1` sites: with
+`d = gcd(n + 1, p)` and `e = (n + 1)/d`, it is `C(d, j/e)` when `e ∣ j` and `0` otherwise. -/
+def fixCount (n p j : ℕ) : ℕ :=
+  if (n + 1) / Nat.gcd (n + 1) p ∣ j then
+    (Nat.gcd (n + 1) p).choose (j / ((n + 1) / Nat.gcd (n + 1) p)) else 0
+
+/-- **The periodic states, counted.** -/
+theorem card_fixSet (n p j : ℕ) : (fixSet n p j).card = fixCount n p j := by
+  classical
+  unfold fixCount
+  set d := Nat.gcd (n + 1) p with hdd
+  set e := (n + 1) / d with hee
+  have hd : 0 < d := Nat.gcd_pos_of_pos_left _ (Nat.succ_pos n)
+  have hdvd : d ∣ n + 1 := Nat.gcd_dvd_left _ _
+  have hdn : d ≤ n + 1 := Nat.le_of_dvd (Nat.succ_pos n) hdvd
+  have he : n + 1 = d * e := (Nat.mul_div_cancel' hdvd).symm
+  have he0 : 0 < e := by
+    rcases Nat.eq_zero_or_pos e with h | h
+    · rw [h, mul_zero] at he; omega
+    · exact h
+  have hcard : (fixSet n p j).card
+      = (Finset.univ.filter fun c : Fin d → Fin 2 => e * ones c = j).card := by
+    refine Finset.card_nbij' (restr hdn) (perExt (n := n) hd) ?_ ?_ ?_ ?_
+    · intro b hb
+      rw [Finset.mem_coe, fixSet, Finset.mem_filter] at hb
+      obtain ⟨-, hj, hfix⟩ := hb
+      have hper := (rot_fixed_iff_gcd b).mp hfix
+      rw [Finset.mem_coe, Finset.mem_filter]
+      refine ⟨Finset.mem_univ _, ?_⟩
+      rw [← ones_perExt hd he, eq_perExt_restr hd hdn b hper, hj]
+    · intro c hc
+      rw [Finset.mem_coe, Finset.mem_filter] at hc
+      rw [Finset.mem_coe, fixSet, Finset.mem_filter]
+      refine ⟨Finset.mem_univ _, by rw [ones_perExt hd he, hc.2], ?_⟩
+      exact (rot_fixed_iff_gcd _).mpr (perExt_periodic hd hdvd c)
+    · intro b hb
+      rw [Finset.mem_coe, fixSet, Finset.mem_filter] at hb
+      exact eq_perExt_restr hd hdn b ((rot_fixed_iff_gcd b).mp hb.2.2)
+    · intro c _
+      exact restr_perExt hd hdn c
+  rw [hcard]
+  split_ifs with h
+  · obtain ⟨k, rfl⟩ := h
+    rw [Nat.mul_div_cancel_left _ he0, ← card_ones_eq]
+    congr 1
+    ext c
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+    exact ⟨fun hc => Nat.eq_of_mul_eq_mul_left he0 hc, fun hc => by rw [hc]⟩
+  · rw [Finset.card_eq_zero, Finset.filter_eq_empty_iff]
+    intro c _ hc
+    exact h ⟨ones c, hc.symm⟩
+
+/-! ## Step 7. The weight-space traces of `ρ^p, ρ'^p` and `γ^p`, for all `(n + 1, p)` -/
+
+/-- `T_j(ρ^p)`, closed form. -/
+noncomputable def rhoTr (q : R) (n p j : ℕ) : R :=
+  (fixCount n p j : R) *
+    ((q ^ (n - j)) ^ (p - p * j / (n + 1)) * (q ^ (j - 1) * q⁻¹ ^ 2) ^ (p * j / (n + 1)))
+
+/-- `T_j(ρ'^p)`, closed form. -/
+noncomputable def rho'Tr (q : R) (n p j : ℕ) : R :=
+  (fixCount n p j : R) *
+    ((q ^ (n - j) * q⁻¹ ^ 2) ^ (p - p * j / (n + 1)) * (q ^ (j - 1)) ^ (p * j / (n + 1)))
+
+theorem T_rho_pow (q : R) (n p j : ℕ) : T (rho q n ^ p) j = rhoTr q n p j := by
+  rw [rho_eq_wRot, T_wRot_pow, card_fixSet, rhoTr]
+
+theorem T_rho'_pow (q : R) (n p j : ℕ) : T (rho' q n ^ p) j = rho'Tr q n p j := by
+  rw [rho'_eq_wRot, T_wRot_pow, card_fixSet, rho'Tr]
+
+/-- **Every weight-space trace of `γ^p`, for every `(n + 1, p)`.** -/
+theorem T_gam_pow (hq : q ≠ 0) (n p m : ℕ) :
+    T (gam q n ^ p) m = ∑ j ∈ Finset.range (m + 1), rhoTr q n p j
+      - ∑ j ∈ Finset.range m, rho'Tr q n p j := by
+  rw [T_gam_eq_sum hq]
+  simp only [T_rho_pow, T_rho'_pow]
+
+/-- **Rosso–Jones on `V^{⊗(n+1)}` for the torus link `T(n + 1, p)`, every `p`** (no coprimality):
+the weighted trace of `γ^p` as an explicit finite sum. -/
+theorem rossoJones_torusLink (hq : q ≠ 0) (n p : ℕ) :
+    Matrix.trace (W q (n + 1) * gam q n ^ p)
+      = ∑ m ∈ Finset.range (n + 2), (q ^ 2) ^ m *
+          (∑ j ∈ Finset.range (m + 1), rhoTr q n p j - ∑ j ∈ Finset.range m, rho'Tr q n p j) := by
+  rw [trace_W_eq_sum_T]
+  exact Finset.sum_congr rfl fun m _ => by rw [T_gam_pow hq]
+
+/-- **Rosso–Jones for every Markov trace with `z_D` and every torus link `T(r, s)`**
+(`r = n + 1`, `s = p`; `gcd(r, s)` arbitrary). -/
+theorem markov_rossoJones_torusLink (hq : q ≠ 0) (hq1 : q ^ 2 + 1 ≠ 0)
+    {B : Type*} [Ring B] [Algebra R B] {N : ℕ} {s : ℕ → B}
+    (hs : HeckeFamily N (q - q⁻¹) 1 s) (t : B →ₗ[R] R) (ht1 : t 1 = 1)
+    (hcyc : ∀ x y : B, t (x * y) = t (y * x))
+    (hmark : ∀ k, k < N → ∀ x ∈ Algebra.adjoin R (s '' Set.Iio k), t (x * s k) = zD q * t x)
+    {n : ℕ} (hn : n ≤ N) (p : ℕ) :
+    (q ^ 2 + 1) ^ (n + 1) * t (cox s n ^ p)
+      = ∑ m ∈ Finset.range (n + 2), (q ^ 2) ^ m *
+          (∑ j ∈ Finset.range (m + 1), rhoTr q n p j - ∑ j ∈ Finset.range m, rho'Tr q n p j) := by
+  rw [markov_cox_eq_quantumTrace' hq hq1 hs t ht1 hcyc hmark hn p, ← gam,
+    ← rossoJones_torusLink hq n p]
+  have h1 : (q ^ 2 + 1) ^ (n + 1) ≠ 0 := pow_ne_zero _ hq1
+  field_simp
 
 end QOU.Archimedean.RossoJonesGeneral
