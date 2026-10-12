@@ -1,0 +1,402 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-10-12T20:50:24.438355+00:00",
+  "commitSha": "d8e1686d45564af33e67b18b739c786cb559199d",
+  "assertions": [
+    {
+      "name": "tr_of_unit_is_1_n3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Markov normalisation T2"
+    },
+    {
+      "name": "tr_of_unit_is_1_n6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Markov normalisation T2"
+    },
+    {
+      "name": "tr_of_unit_is_1_n9",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Markov normalisation T2"
+    },
+    {
+      "name": "tr_of_unit_is_1_n12",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Markov normalisation T2"
+    },
+    {
+      "name": "d_word_reproduces_committed_atom_characters_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-d"
+    },
+    {
+      "name": "t_word_reproduces_committed_atom_characters_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-t"
+    },
+    {
+      "name": "3he_word_reproduces_committed_atom_characters_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-3he"
+    },
+    {
+      "name": "4he_word_reproduces_committed_atom_characters_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-4he"
+    },
+    {
+      "name": "electron_trefoil_trace_equals_z(hz+1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Markov + Hecke closed form"
+    },
+    {
+      "name": "hopf_letter_trace_equals_1_minus_h_zinv",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean hopf_value_eq"
+    },
+    {
+      "name": "zinv_equals_trace_of_sigma_inverse",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean zinv_eq_of_hecke"
+    },
+    {
+      "name": "twoCut_minus_hopf_equals_z_zinv_minus_1_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean twoCut_sub_hopf"
+    },
+    {
+      "name": "kb_1_realizable",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "exhaustive layout enumeration"
+    },
+    {
+      "name": "kb_ge_2_not_realizable",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "exhaustive layout enumeration (k_b=6 follows from k_b=2: a sub-layout of an admissible one is admissible)"
+    },
+    {
+      "name": "H2_junction_ratio_equals_zinv_squared",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean sharedElectron_trace"
+    },
+    {
+      "name": "convention_D_support_n9_all_two_row_positive",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "y-lambda-at-q0"
+    },
+    {
+      "name": "electron_trefoil_chi_21_is_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "sigma0 sigma1 sigma0 on the 2-dim block"
+    },
+    {
+      "name": "12_strand_chain_ratio_equals_zinv_squared",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean chain_trace"
+    },
+    {
+      "name": "facing_sorted|lower: junction-facing nucleon is a proton for both atoms",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "corpus L_b: sigma^-1 to a PROTON"
+    },
+    {
+      "name": "facing_sorted|lower: sub-range window at the first differing bond separates",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "6-strand local chain; transfers by window_two_sided"
+    },
+    {
+      "name": "facing_sorted|upper: junction-facing nucleon is a proton for both atoms",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "corpus L_b: sigma^-1 to a PROTON"
+    },
+    {
+      "name": "facing_sorted|upper: sub-range window at the first differing bond separates",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "6-strand local chain; transfers by window_two_sided"
+    },
+    {
+      "name": "one_proton_moved|lower: junction-facing nucleon is a proton for both atoms",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "corpus L_b: sigma^-1 to a PROTON"
+    },
+    {
+      "name": "one_proton_moved|lower: sub-range window at the first differing bond separates",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "6-strand local chain; transfers by window_two_sided"
+    },
+    {
+      "name": "one_proton_moved|upper: junction-facing nucleon is a proton for both atoms",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "corpus L_b: sigma^-1 to a PROTON"
+    },
+    {
+      "name": "one_proton_moved|upper: sub-range window at the first differing bond separates",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "6-strand local chain; transfers by window_two_sided"
+    },
+    {
+      "name": "junction_region_identical_for_CO_and_N2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "both facing nucleons are proton blocks (checked above); junction letters and trefoil are fixed words"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "molecular-word-corpus-lb",
+  "scriptFile": "molecular_word_corpus_lb_probe.py",
+  "scriptHash": "ff88164b0095",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "cd378682bfd642d0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/molecular_word_corpus_lb_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/molecular_word_corpus_lb_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "q0 enters only through the committed y-lambda-at-q0 witness (proton pin) and the production atom words; words validated against committed atom-chi-rust characters",
+  "description": "PROBE (bean qou-a1hh): the molecular junction on the corpus L_b with 3A + 3Z strands (owner rulings 2026-10-12). One shared trefoil between two nuclei contributes zinv^2 (Lean sharedElectron_trace); L_b with k_b >= 2 is not realizable on single generators with contiguous blocks; the junction-containing window depth depends on the unfixed nucleon ordering. Nothing fitted, selected or wired.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "constants": {
+    "q0": "1.109978582751380807591669095610768879874",
+    "h": "0.2090602987956393154308462131296749438598",
+    "z_D": "0.6126880371464652515958298639458992480263",
+    "zinv": "0.4036277383508259361649836508162243041666",
+    "zinv_sq": "0.1629153511662028022150883290579061226546",
+    "hopf_value_1_minus_h_zinv": "0.9156174644181682038088676806781422604847",
+    "z_zinv_minus_1": "-0.7527021132519654015937793516202361378302",
+    "tr_electron_trefoil": "0.6911664783584445261477195309790462066142",
+    "tr_proton_block": "0.6293284022029219181653457467784859276002"
+  },
+  "validation_worst_dev": {
+    "d": "1.3567e-49",
+    "t": "1.4716e-49",
+    "3he": "1.9423e-49",
+    "4he": "2.7322e-49"
+  },
+  "kb_realizability": {
+    "1": {
+      "admissible_layouts": 2,
+      "layouts_enumerated": 6
+    },
+    "2": {
+      "admissible_layouts": 0,
+      "layouts_enumerated": 24
+    },
+    "3": {
+      "admissible_layouts": 0,
+      "layouts_enumerated": 120
+    },
+    "6": {
+      "admissible_layouts": 0,
+      "layouts_enumerated": null
+    }
+  },
+  "H2": {
+    "tr_composite": "0.04459635256311889517991589840378911214994",
+    "ratio_to_parts": "0.1629153511662028022150883290579061226546",
+    "reading3_feasible": false,
+    "chi_by_block": {
+      "(9,)": {
+        "y": "0.0221222760302743",
+        "chi": "2.121492010262128717340854",
+        "nonneg": true
+      },
+      "(8, 1)": {
+        "y": "0.0166381738807263",
+        "chi": "0.9496357247689872676784716",
+        "nonneg": true
+      },
+      "(7, 2)": {
+        "y": "0.0118812632284097",
+        "chi": "-0.5477308049733336031111772",
+        "nonneg": false
+      },
+      "(6, 3)": {
+        "y": "0.00764363754438381",
+        "chi": "-0.7251880349279010314346876",
+        "nonneg": false
+      },
+      "(5, 4)": {
+        "y": "0.00374008627681975",
+        "chi": "-1.627041405697718313773783",
+        "nonneg": false
+      }
+    },
+    "reading3_parts": {
+      "proton_block": false,
+      "electron_trefoil": true
+    },
+    "chi_proton_block": {
+      "(3,)": "1.382494463392592875901007",
+      "(2, 1)": "-0.2805933509034720547257909"
+    },
+    "chi_electron_trefoil": {
+      "(3,)": "1.367551836951385187966724",
+      "(2, 1)": "-7.77876909732642713393008e-62"
+    },
+    "reading3_bare_junction": false,
+    "chi_bare_junction": {
+      "(9,)": "1.109978582751380807591669",
+      "(8, 1)": "3.924767822605514469616567",
+      "(7, 2)": "3.967197983512978377556729",
+      "(6, 3)": "-1.179314636975615034105368",
+      "(5, 4)": "-4.111044847825011360373002"
+    }
+  },
+  "chain12_ratio": "0.1629153511662028022150883290579061226546",
+  "window_depth": {
+    "facing_sorted": {
+      "lower": {
+        "atoms": [
+          "12C",
+          "14N"
+        ],
+        "orderings": {
+          "12C": "nnnnnnpppppp",
+          "14N": "nnnnnnnppppppp"
+        },
+        "junction_facing": {
+          "12C": "p",
+          "14N": "p"
+        },
+        "first_difference_token": "bond",
+        "k_star_strands_atom_side": 19,
+        "junction_window_strands": 20,
+        "sub_range_separation": "0.512728766697353"
+      },
+      "upper": {
+        "atoms": [
+          "16O",
+          "14N"
+        ],
+        "orderings": {
+          "16O": "ppppppppnnnnnnnn",
+          "14N": "pppppppnnnnnnn"
+        },
+        "junction_facing": {
+          "16O": "p",
+          "14N": "p"
+        },
+        "first_difference_token": "bond",
+        "k_star_strands_atom_side": 22,
+        "junction_window_strands": 23,
+        "sub_range_separation": "0.512728766697353"
+      },
+      "minimal_junction_window_strands": 20
+    },
+    "one_proton_moved": {
+      "lower": {
+        "atoms": [
+          "12C",
+          "14N"
+        ],
+        "orderings": {
+          "12C": "pppppnnnnnnp",
+          "14N": "ppppppnnnnnnnp"
+        },
+        "junction_facing": {
+          "12C": "p",
+          "14N": "p"
+        },
+        "first_difference_token": "bond",
+        "k_star_strands_atom_side": 22,
+        "junction_window_strands": 23,
+        "sub_range_separation": "0.921232849207924"
+      },
+      "upper": {
+        "atoms": [
+          "16O",
+          "14N"
+        ],
+        "orderings": {
+          "16O": "ppppppppnnnnnnnn",
+          "14N": "pppppppnnnnnnn"
+        },
+        "junction_facing": {
+          "16O": "p",
+          "14N": "p"
+        },
+        "first_difference_token": "bond",
+        "k_star_strands_atom_side": 22,
+        "junction_window_strands": 23,
+        "sub_range_separation": "0.512728766697353"
+      },
+      "minimal_junction_window_strands": 23
+    }
+  },
+  "window_depth_ordering_dependent": true,
+  "unfixed_choices": [
+    "U_order: nucleon ordering of each atom (facing_sorted, one_proton_moved run)",
+    "U_kb: CO shared trefoils k_b = 3 vs 6 (both unrealizable on single generators)",
+    "U_donor: which atom donates the shared trefoils",
+    "U_rest: attachment of non-shared trefoils (cancels in the ratio by chain_trace)"
+  ]
+}
