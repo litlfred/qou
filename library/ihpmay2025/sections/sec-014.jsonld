@@ -1,18 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ihpmay2025/sections/sec-014",
   "@type": [
     "doco:Section"
   ],
-  "title": "Quasifconformal conjugacy",
-  "pageStart": 22,
-  "pageEnd": 23,
+  "title": "Quasiconformal maps and Beltrami differentials",
+  "pageStart": 21,
+  "pageEnd": 22,
   "contains": [
-    "library/ihpmay2025/blocks/prose-sec-014",
-    "library/ihpmay2025/blocks/thm-sec-014-01",
-    "library/ihpmay2025/blocks/cor-sec-014-02"
+    "library/ihpmay2025/blocks/prose-sec-014"
   ],
-  "derivedFrom": "library/ihpmay2025/manifest",
-  "sourceDocument": "library/ihpmay2025/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
   "provenance": "ingested"
 }

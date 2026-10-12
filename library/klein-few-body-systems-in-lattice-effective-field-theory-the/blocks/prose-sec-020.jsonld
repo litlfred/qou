@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-020",
   "kind": "prose",
-  "title": "The sign problem",
-  "pageStart": 42,
-  "pageEnd": 45,
-  "text": "../sections/sec-020-the-sign-problem.md",
-  "derivedFrom": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
-  "sourceDocument": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
+  "title": "Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field Theory",
+  "pageStart": 39,
+  "pageEnd": 42,
+  "text": "../sections/sec-020-hybrid-monte-carlo-algorithm-for-nuclear-lattice.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
   "provenance": "ingested"
 }

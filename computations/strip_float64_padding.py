@@ -100,7 +100,7 @@ def main() -> int:
     ap.add_argument("--apply", action="store_true", help="write changes (default: dry run)")
     ap.add_argument("--check", action="store_true", help="exit 1 if anything would change")
     ap.add_argument("--include-deprecated", action="store_true",
-                    help="also rewrite computations/_deprecated/ (default: skip — those "
+                    help="also rewrite fsh-guts/deprecated/computations/ (default: skip — those "
                          "are historical records with no consumer, so rewriting them is "
                          "churn; the padding ratchet's baseline already absorbs them)")
     args = ap.parse_args()
@@ -111,7 +111,7 @@ def main() -> int:
     for p in sorted(HERE.rglob("*.witness.json")):
         if p.name in SELF_OUTPUTS:
             continue
-        if not args.include_deprecated and "_deprecated" in p.parts:
+        if not args.include_deprecated and ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         try:
             raw = p.read_text(encoding="utf-8")

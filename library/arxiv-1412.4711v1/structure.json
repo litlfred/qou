@@ -6,7 +6,11 @@
   "sha256": "4fb1d6ee062cca8ca97ebab1608c56fd4f1fa21980d6cedd0178b98fb73fb719",
   "bytes": 605425,
   "pages": 29,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -416,6 +420,169 @@
   "likely_scanned": false,
   "toc_entries": 25,
   "sections": 20,
-  "chars_total": 65982
+  "chars_total": 65982,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "character-final.tex",
+   "tex_sections": 35,
+   "overlaid": 15,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-representation-spaces",
+     "title": "Representation spaces",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-11-representation-variety-and-character-variety",
+     "title": "Representation variety and character variety",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-12-decorated-versions",
+     "title": "Decorated versions",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-13-peripheral-representations-choosing-a-meridia",
+     "title": "Peripheral representations: choosing a meridian and a longitude",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-14-deformation-variety",
+     "title": "Deformation variety",
+     "prose_ratio": 0.754,
+     "coverage_ratio": 0.897,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-21-triangulation",
+     "title": "Triangulation",
+     "prose_ratio": 0.222,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-15-a-diagram",
+     "title": "A diagram",
+     "prose_ratio": 0.738,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-16-the-a-variety",
+     "title": "The A-variety",
+     "prose_ratio": 0.06,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-22-presentations",
+     "title": "Presentations",
+     "prose_ratio": 0.125,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-2-the-figure-eight-knot-complement",
+     "title": "The figure eight knot complement",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.286,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-011-3-the-deformation-variety-for-the-figure-eight-k",
+     "title": "The deformation variety for the figure eight knot complement",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-31-computational-tools",
+     "title": "Computational tools",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-33-overview-of-the-computations",
+     "title": "Overview of the computations.",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-34-explicit-computations-for-the-figure-eight-kn",
+     "title": "Explicit computations for the Figure Eight Knot complement.",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-4-eigenvalues-of-peripheral-representations",
+     "title": "Eigenvalues of peripheral representations",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.828,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-41-a-variety",
+     "title": "A-variety",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-42-where-are-some-already-known-representations",
+     "title": "Where are some already known representations ?",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-5-deforming-representations-another-way-to-param",
+     "title": "Deforming representations: another way to parametrize the components",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

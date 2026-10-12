@@ -6,7 +6,11 @@
   "sha256": "fba6853d6e544e19d5dc4cade32ee0be0dc5ac6b7b70f23e937909b85e96159c",
   "bytes": 345537,
   "pages": 8,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:22Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -16,97 +20,203 @@
    "stamp_date": "26 Mar 2026"
   },
   "doi": null,
-  "title": "A Concentration of Measure Phenomenon in",
+  "title": "A Concentration of Measure Phenomenon in Lattice Yang-Mills",
   "authors_raw": "Lattice Yang-Mills",
   "title_lines": [
    "A Concentration of Measure Phenomenon in"
   ],
-  "abstract": "We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian. It is also sketched how using this fact, one can recover the strong-coupling expan- sion. The aim of this note is to explore the concentration of measure phenomenon [1] in the context of lattice Yang-Mills theory. We shall see below that while this phenomenon does indeed manifest in this setting, it does not allow us to go beyond what is already known by using other methods. This is due to the fact that, in a certain sense which will become clear below, measure concentration and action minimization work against each other. Nevertheless, the theorem demonstrated below, even though it does not lead to new results in the current setting, is sufficiently interesting and instructive to be presented as the same methods can be (and in fact are) more successful in other situations. Let us begin by describing our setup. We shall deal with the Euclidean, lattice Yang-Mills theory inDdimensions with periodic boundary conditions. For concreteness, we work with theU(N) group, but essentially everything below can be trivially adapted to the other groups of physical interest. The lattice sites are labelled byx. The positive edge directions are labelled by greek letters. The notationx+\u00b5stands for the lattice site which is displaced fromxone step in the direction defined by\u00b5. The number of lattice sites is denoted byK. We attach to every edge at each site an elementU x,\u00b5\u2208U(N), and are interested in performing the following integral Z= \u02c6 dUe\u2212\u03b2S(U) = \u02c6 Y x,\u00b5 dUx,\u00b5 exp \" 2N 2 \u03bb X {\u00b5,\u03bd} 1 N\u211c \u0010 Tr \u0000 U\u2020 x,\u03bdU\u2020 x+\u03bd,\u00b5Ux+\u00b5,\u03bdUx,\u00b5 \u0001\u0011# , where the sum goes over all (unordered) pairs of\u00b5and\u03bdsuch that\u00b5\u0338=\u03bd, or equivalently, over all plaquettes of the lattice. ThedU\u2019s stand for the Haar measures and\u03bbis the \u2019t Hooft coupling. We want to find the asymptotic of the expression above in the limitN\u2192\u221e while holding\u03bbfixed. We shall do so by pushing forward the product of Haar meas",
+  "abstract": "We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian. It is also sketched how using this fact, one can recover the strong-coupling expan- sion. The aim of this note is to explore the concentration of measure phenomenon [1] in the context of lattice Yang-Mills theory. We shall see below that while this phenomenon does indeed manifest in this setting, it does not allow us to go beyond what is already known by using other methods. This is due to the fact that, in a certain sense which will become clear below, measure concentration and action minimization work against each other. Nevertheless, the theorem demonstrated below, even though it does not lead to new results in the current setting, is sufficiently interesting and instructive to be presented as the same methods can be (and in fact are) more successful in other situations. Let us begin by describing our setup. We shall deal with the Euclidean, lattice Yang-Mills theory in D dimensions with periodic boundary conditions. For concreteness, we work with the U(N) group, but essentially everything below can be trivially adapted to the other groups of physical interest. The lattice sites are labelled by x. The positive edge directions are labelled by greek letters. The notation x+ \u00b5 stands for the lattice site which is displaced from x one step in the direction defined by \u00b5. The number of lattice sites is denoted by K. We attach to every edge at each site an element Ux,\u00b5 \u2208U(N), and are interested in performing the following integral Z = \u02c6 dUe\u2212\u03b2S(U) = \u02c6 Y x,\u00b5 dUx,\u00b5 exp \" 2N 2 \u03bb X {\u00b5,\u03bd} 1 N \u211c \u0010 Tr \u0000U \u2020 x,\u03bdU \u2020 x+\u03bd,\u00b5Ux+\u00b5,\u03bdUx,\u00b5 \u0001\u0011# , where the sum goes over all (unordered) pairs of \u00b5 and \u03bd such that \u00b5\u0338 = \u03bd, or equivalently, over all plaquettes of the lattice. The dU\u2019s stand for the Haar measures and \u03bb is the \u2019t Hooft coupling. We want to find the asymptotic of the expression above in the limit N \u2192\u221e while holding \u03bb fixed. We shall do so by pushing for",
   "docinfo": {
+   "Title": "A Concentration of Measure Phenomenon in Lattice Yang-Mills",
    "Author": "Tamer Tlas",
-   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "A Concentration of Measure Phenomenon in Lattice Yang-Mills"
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "A Concentration of Measure Phenomenon in",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "A Concentration of Measure Phenomenon in Lattice Yang-Mills",
+   "heading": "A Concentration of Measure Phenomenon in Lattice Yang-Mills",
+   "text": "A Concentration of Measure Phenomenon in",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "To see this, suppose the half-edges are coupled to produce case (a) for e.g.,",
-   "page": 5,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(coming from the real part), we get that for evenl, (4) is equal to",
-   "page": 5,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
    "title": "References",
    "page": 8,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Summary of a graphical notation used below. Note the order of the product in the sum in the rightmost expression. It is the one consistent with",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A pictorial representation of (3) in the cases n = 2 and n = 4. Graphically, integration over a bundle of edges amounts to cutting them into half-edges, and then linking or coupling the half edges in pairs on one side of the cut with each other, with matching coupling of the half-edges on the other",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "A pictorial representation of the argument given in the main text. We perform the integral over the group elements living on the edges. Only one of these integrals is explicitly written out with the rest being represented by the . . . under the integral sign. As represented in Figure 2, after perfor",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "This is a graphical representation of the only way two plaquettes can be coupled together in order to solely produce instances of case (a) from Figure 3. To see this, suppose the half-edges are coupled to produce case (a) for e.g., the bottom left corner. It follows that the other two half-edges com",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 5,
-   "n_chars": 9572,
-   "n_words": 1712
-  },
-  {
-   "id": "sec-001-3-to-see-this-suppose-the-half-edges-are-coupled",
-   "number": "3",
-   "title": "To see this, suppose the half-edges are coupled to produce case (a) for e.g.,",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 1494,
-   "n_words": 273
-  },
-  {
-   "id": "sec-002-2-coming-from-the-real-part-we-get-that-for-even",
-   "number": "2",
-   "title": "(coming from the real part), we get that for evenl, (4) is equal to",
-   "level": 1,
-   "page_start": 5,
    "page_end": 8,
-   "n_chars": 6751,
-   "n_words": 1197
+   "n_chars": 18252,
+   "n_words": 3428,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-000-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 815,
-   "n_words": 116
+   "n_chars": 817,
+   "n_words": 118,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 4,
-  "sections": 4,
-  "chars_total": 18632
+  "toc_entries": 1,
+  "toc_inferred_entries": 1,
+  "toc_inferred_mean_confidence": 0.7,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 2,
+  "chars_total": 19069
  }
 }

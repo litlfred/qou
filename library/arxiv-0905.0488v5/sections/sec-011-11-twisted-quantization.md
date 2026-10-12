@@ -8,217 +8,349 @@ pages: 45-48
 source_pdf: 0905.0488v5.pdf
 source_sha256: fcf8dee7cd3849b9
 doc_brief: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI — Let X be a smooth algebraic variety over a ﬁeldK containing the real numbers."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-LetX be a smooth algebraic variety overK, andR a parameter algebra. We have
-the stacks of crossed groupoidsPoisDef(R,OX) and AssDef(R,OX) onX. Recall
-that a twisted object ofPoisDef(R,OX) is a twisted PoissonR-deformation ofOX,
-and a twisted object ofAssDef(R,OX) is a twisted associativeR-deformation of
-OX. We denote byTwOb(−)the sets of twisted gauge equivalence classes of twisted
-objects. First order brackets were deﬁned in Deﬁnition 4.15.
-Here is the main result of our paper (the expanded form of Theorem 0.10.1).
-Theorem 11.1.Let K be a ﬁeld containing the real numbers, letR be a parameter
-K-algebra, and letX be a smooth algebraic variety overK. Then there is a bijection
-of sets
-tw.quant : TwOb
-(
-PoisDef(R,OX)
-{ ≃
-− →TwOb
-(
-AssDef(R,OX)
-{
-called twisted quantization, having these properties:
-(i) If g : X′→X is an étale morphism of varieties, and ifσ: R→R′is a
-homomorphism of parameter algebras, then the diagram
-TwOb
-(
-PoisDef(R,OX)
-{ tw.quant //
-indσ,g
-
-TwOb
-(
-AssDef(R,OX)
-{
-indσ,g
-
-TwOb
-(
-PoisDef(R′,OX′)
-{ tw.quant // TwOb
-(
-AssDef(R′,OX′)
-{
-(cf. Theorem9.9) is commutative.
-(ii) The bijection tw.quant preserves ﬁrst order brackets. Namely ifA is a
-twisted PoissonR-deformation ofOX, and B := tw.quant(A), then
-{−,−}A ={−,−}B.
-Proof. We shall use the diagram in Figure 1 (that appears in Subsection 0.10 of the
-Introduction). Let (U,s) be a ﬁnite aﬃne open covering with étale coordinates of
-X. By Theorem 6.22 and Corollary 7.4 we get the bijectionsdec in the diagram.
-46 AMNON YEKUTIELI
-From Theorem 9.5 we get the bijectionsgeo in that diagram. By applying Theorem
-8.8 to the diagram in Theorem 10.6 we obtain the bijections
-mix := Desc(Del)(C(U, mix), 1R)
-and
-Ψ s := Desc(Del)(C(U, Ψ s), 1R)
-in the diagram in Figure 1. We deﬁnetw.quant to be the unique bijection making
-this diagram commutative.
-The whole diagram in Figure 1 is functorial w.r.t.R and (U,s); this is a conse-
-quence of Theorems 9.9 and 10.6.
-Consider another ﬁnite aﬃne open covering with étale coordinates(V,t) of X,
-and a morphism of coverings with coordinates(V,t)→(U,s). The functoriality
-of the diagram in Figure 1 implies that the bijectiontw.quant is the same when
-deﬁned with respect(V,t).
-Now suppose (V,t) is any ﬁnite aﬃne open covering with étale coordinates of
-X. As in the proof of Theorem 9.9, we get a third covering with étale coordinates
-(W,r), whereW := U∐V and r := s∐t. There are morphisms of coverings
-(U,s)→(W,r) and (V,t)→(W,r). By the previous paragraph, the bijection
-tw.quantis the same when deﬁned with respect to any of these three coverings with
-étale coordinates. We conclude thattw.quant is independent of the choices made.
-Let g : X′→X be an étale morphism of varieties, and letσ: R→R′be
-a homomorphism of parameter algebras. Choose any morphism of coverings with
-coordinate ρ: (U′,s′)→(U,s) extending g. The functoriality of the diagram in
-Figure 1 implies that there is a commutative diagram as stated in property (i).
-It remains to prove that property (ii) holds. Let A and B be such twisted
-R-deformations. Consider the corresponding Lie descent data
-(ω,g,a)∈Desc
-(
-Del(C(U,Tpoly,X),R )
-{
-and
-(χ,h,b)∈Desc
-(
-Del(C(U,Dnor
-poly,X),R )
-{
-.
+\label{sec:TDQ}
+
+Let $X$ be a smooth algebraic variety over $\K$, and $R$ a parameter algebra.
+We have the stacks of crossed groupoids 
+$\twocat{PoisDef}(R, \mcal{O}_X)$ and 
+$\twocat{AssDef}(R, \mcal{O}_X)$ on $X$.
+Recall that a twisted object of $\twocat{PoisDef}(R, \mcal{O}_X)$
+is a twisted Poisson $R$-deformation of $\OX$, and 
+a twisted object of $\twocat{AssDef}(R, \mcal{O}_X)$
+is a twisted associative $R$-deformation of $\OX$.
+We denote by $\ol{\opn{TwOb}}(-)$ the sets of twisted gauge equivalence classes
+of twisted objects. First order brackets were defined in Definition
+\ref{dfn:22}.
+
+Here is the main result of our paper (the expanded form of Theorem
+\ref{thm:14}).
+
+\begin{thm} \label{thm:8}
+Let $\K$ be a field containing the real numbers, let $R$ be a 
+parameter $\K$-algebra, and let $X$ be a smooth algebraic variety over
+$\K$. Then there is a bijection of sets
+\[ \opn{tw{.}quant} : \
+\ol{\opn{TwOb}} \bigl( \twocat{PoisDef}(R, \mcal{O}_X) \bigr) 
+\ \iso \
+\ol{\opn{TwOb}} \bigl( \twocat{AssDef}(R, \mcal{O}_X) \bigr) \] 
+called  {\em twisted quantization}, having these
+properties\tup{:}
+\begin{enumerate}
+\rmitem{i} If $g : X' \to X$ is an \'etale morphism of varieties, and
+if $\sigma : R \to R'$ is a homomorphism of parameter algebras, then
+the diagram
+\[ \UseTips \xymatrix @C=9ex @R=5ex {
+\ol{\opn{TwOb}} \bigl( \twocat{PoisDef}(R, \mcal{O}_X) \bigr)
+\ar[r]^{\opn{tw{.}quant}}
+\ar[d]_{\opn{ind}_{\sigma, g}}
+& 
+\ol{\opn{TwOb}} \bigl( \twocat{AssDef}(R, \mcal{O}_X) \bigr)
+\ar[d]_{\opn{ind}_{\sigma, g}} 
+\\
+\ol{\opn{TwOb}} \bigl( \twocat{PoisDef}(R', \mcal{O}_{X'}) \bigr)
+\ar[r]^{\opn{tw{.}quant}}
+& 
+\ol{\opn{TwOb}} \bigl( \twocat{AssDef}(R', \mcal{O}_{X'}) \bigr)
+} \]
+\tup{(}cf.\ Theorem \tup{\ref{thm:7})} is commutative.
+
+\rmitem{ii} The bijection $\opn{tw{.}quant}$ preserves first order brackets.
+Namely if 
+$\gerbe{A}$ is a twisted Poisson $R$-deformation of
+$\mcal{O}_X$, and $\gerbe{B} := \opn{tw{.}quant}(\gerbe{A})$, 
+then 
+\[ \{ -,- \}_{\gerbe{A}} = \{ -,- \}_{\gerbe{B}} . \]
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+We shall use the diagram in Figure \ref{fig:diagram}
+(that appears in Subsection \ref{subsec:TDQ} of the Introduction).  
+Let $(\bsym{U}, \bsym{s})$ be a finite affine open covering with \'etale
+coordinates of $X$.
+By Theorem \ref{thm:glu.1} and Corollary \ref{cor:4} we get the bijections
+$\ol{\opn{dec}}$ in the diagram.
+{}From Theorem \ref{thm:11} we get the bijections $\ol{\opn{geo}}$ in that
+diagram. By applying Theorem \ref{thm:Lie-desc.101} to the diagram in Theorem 
+\ref{thm:221} we obtain the bijections 
+\[ \ol{\opn{mix}} := 
+\ol{\opn{Desc}} (\opn{Del}) ( \mrm{C}(\bsym{U}, \opn{mix}), \bsym{1}_R) \]
+and 
+\[ \ol{\Psi}_{\bsym{s}} := 
+\ol{\opn{Desc}} (\opn{Del}) (\mrm{C}(\bsym{U}, \Psi_{\bsym{s}}), \bsym{1}_R)
+\]
+in the diagram in Figure \ref{fig:diagram}.
+We define $\opn{tw{.}quant}$ to be the unique bijection making this diagram
+commutative. 
+
+The whole diagram in Figure \ref{fig:diagram} is
+functorial w.r.t.\ $R$ and $(\bsym{U}, \bsym{s})$; this is a consequence of
+Theorems \ref{thm:7} and \ref{thm:221}.
+
+Consider another finite affine open covering with \'etale coordinates
+$(\bsym{V}, \bsym{t})$ of $X$, and a morphism of coverings with coordinates
+$(\bsym{V}, \bsym{t}) \to (\bsym{U}, \bsym{s})$. 
+The functoriality of the diagram in Figure \ref{fig:diagram} implies that 
+the bijection $\opn{tw{.}quant}$ is the same when defined with respect 
+$(\bsym{V}, \bsym{t})$.
+
+Now suppose $(\bsym{V}, \bsym{t})$ is any finite affine open covering with
+\'etale coordinates of $X$. As in the proof of Theorem \ref{thm:7}, 
+we get a third covering with \'etale coordinates
+$(\bsym{W}, \bsym{r})$, where 
+$\bsym{W} := \bsym{U} \coprod \bsym{V}$ and  
+$\bsym{r} := \bsym{s} \coprod \bsym{t}$. There are morphisms of coverings 
+$(\bsym{U}, \bsym{s}) \to (\bsym{W}, \bsym{r})$
+and $(\bsym{V}, \bsym{t}) \to (\bsym{W}, \bsym{r})$.
+By the previous paragraph, the bijection $\opn{tw{.}quant}$ is the same when
+defined with respect to any of these three coverings with \'etale coordinates.
+We conclude that $\opn{tw{.}quant}$ is independent of the choices made. 
+
+Let  $g : X' \to X$ be an \'etale morphism of varieties, and let
+$\sigma : R \to R'$ be a homomorphism of parameter algebras. Choose any
+morphism of coverings with coordinate 
+$\rho : (\bsym{U}', \bsym{s}') \to (\bsym{U}, \bsym{s})$
+extending $g$. The functoriality of the diagram in Figure \ref{fig:diagram}
+implies that there is a commutative diagram as stated in property (i). 
+
+It remains to prove that property (ii) holds. Let $\gerbe{A}$ and 
+$\gerbe{B}$ be such twisted $R$-deformations. 
+Consider the corresponding Lie descent data 
+\[ (\om, g, a) \in 
+\opn{Desc} \bigl( \opn{Del} (\mrm{C}(\bsym{U}, \mcal{T}_{\mrm{poly},X}), R)
+\bigr) \]
+and 
+\[ (\chi, h, b) \in 
+\opn{Desc} \bigl(  \opn{Del} (\mrm{C}(\bsym{U}, 
+\mcal{D}^{\mrm{nor}}_{\mrm{poly},X}) , R) \bigr) . \]
 They are related by the equation
-(χ,h,b) = Desc(Del)(C(U, Ψ s), 1R)((ω,g,a))
-∈Desc
-(
-Del(C(U, MixU(Dpoly,X)),R )
-{
-,
-where (χ,h,b) and (ω,g,a) are the equivalence classes. We have to show that the
-ﬁrst order brackets{−,−}A and{−,−}B onOX are equal.
-The ﬁrst order brackets{−,−}A and{−,−}B depend only onωandχ. Indeed,
-by Deﬁnitions 4.15 and 2.20 we have{c1,c 2}A ={c1,c 2}ωand{c1,c 2}B ={c1,c 2}χ
-forlocalsections c1,c 2∈OX, where{c1,c 2}ω:=ψ+(Υ 1(ω)(c1,c 2))and{c1,c 2}χ:=
-ψ+(χ(c1,c 2)). Here ψ+ is the homomorphism from equation (2.18), andΥ 1 is the
-antisymmetrization. Property (iii) of Theorem 8.8 says thatχ= MC(1R⊗Ψ s)(ω)
-in
-MC
-(
-mˆ⊗C0(U, MixU(Dpoly,X))
-{
-.
-The ﬁrst order brackets are functorial inR, and hence we can assume that
-m2 = 0, so m/m2 = m. Now the contribution of the higher order terms Ψ s;i,
-i≥2, to MC(1R⊗Ψ s) is zero, because m2 = 0. Therefore the elements χand
-χ′:= ( 1R⊗Ψ s;1)(ω) of m⊗C0(U, MixU(Dpoly,X)) are gauge equivalent. We
-conclude that{−,−}χ={−,−}χ′.
-A little calculation shows that the ﬁrst order bracket{−,−}χ′depends only
-on the cohomology class [χ′] of χ′in m⊗C0(
-U, H1(MixU(Dpoly,X))
-{
-; this is a
-manifestation of the gauge invariance of ﬁrst order brackets. But according to
-Theorem 10.3(2) we have[χ′] = [Υ 1(ω)]. We see that{−,−}χ′={−,−}ω. □
-TWISTED DEFORMATION QUANTIZATION 47
-Corollary 11.2. In the situation of Theorem11.1, assume the cohomology groups
-H1(X,OX) and H2(X,OX) vanish. Then there is a bijection
-quant :{PoissonR-deformations ofOX}
-gauge equivalence
-≃
-− →{associative R-deformations ofOX}
-gauge equivalence .
-It preserves ﬁrst order brackets, and commutes with homomorphismsR→R′and
-étale morphismsX′→X (such thatX′also has these cohomology vanishing prop-
-erties).
-Proof. Combine Theorem 11.1 and Corollary 7.5. □
-A formal Poisson bracketon the augmented commutativeR-algebra Rˆ⊗OX is
-anR-bilinear Poisson bracket{−,−}that vanishes modulom; so it makesRˆ⊗OX
-into a PoissonR-deformation ofOX. A star producton the augmentedR-module
-Rˆ⊗OX is an associative unital R-bilinear multiplication, with unit 1⊗1, that
-reduces modulo m to the commutative multiplication ofOX; so it makesRˆ⊗OX
-into an associativeR-deformation ofOX.
-By deﬁnitionT 0
-poly,X =TX, the sheaf of derivations, andD0
-poly,X =DX, the
-sheaf of diﬀerential operators.
-Corollary 11.3. In the situation of Theorem11.1, assume the cohomology groups
-H1(X,OX), H2(X,OX), H1(X,TX) and H1(X,DX) all vanish. Then there is a
-canonical bijection
-quant :{formal Poisson brackets onRˆ⊗OX}
-gauge equivalence
-≃
-− →{star products onRˆ⊗OX}
-gauge equivalence .
-It preserves ﬁrst order brackets, and commutes with homomorphismsR→R′and
-étale morphismsX′→X (such thatX′also has these cohomology vanishing prop-
-erties).
-Proof. Theorem 3.6 implies the following: if H1(X,Dnor,0
-poly,X) = 0 , then every as-
-sociative R-deformationA ofOX is sheaf theoretically trivial, namely there is an
-isomorphismA∼=Rˆ⊗OX of sheaves ofR-modules, that commutes with the aug-
-mentations toOX and preserves the units. The proof is the same as that of [Ye1,
-Theorem 1.13], using Remark 3.7. Since there is an isomorphism of sheaves of
-K-modulesDX∼=OX⊕Dnor,0
-poly,X, our assumptions imply thatH1(X,Dnor,0
-poly,X) = 0.
-Hence associative deformations are the same, up to gauge equivalence, as star prod-
-ucts.
-Similarly, the vanishing of H1(X,TX) implies, via Theorem 3.6, that Poisson
-deformations are the same as formal Poisson brackets.
-The quantization statement is now the same as in Corollary 11.2. □
-Example 11.4.The conditions of Corollary 11.3 hold forX := Pn
-K,n≥1. Indeed,
-since X is aD-aﬃne variety, we know thatHi(X,DX) = 0 for all i > 0. The
-vanishing ofHi(X,OX) and Hi(X,TX) for i> 0 follows from [Ha, Theorem III.5.1
-and Example II.8.20.1]. We thank Van den Bergh for mentioning this to us.
-Remark 11.5. When X is an aﬃne variety, the quantization map of Corollary
-11.3 coincides with that of [Ye1, Theorem 0.1]. This can be seen by looking at the
-construction of these quantization maps. (For [Ye1, Theorem 0.1] please consult
-the corrected proof in the Erratum.)
-48 AMNON YEKUTIELI
-Remark 11.6. The reason we require thatK contains R is because we rely on the
-original universal L∞formality quasi-isomorphism
-(11.7) Υ = {Υi}i≥1 :Tpoly(R[t])→Dpoly(R[t])
-of Kontsevich for the polynomial ringR[t] = R[t1,...,tn]; see [Ko1]. However Υ
-can be replaced with any other L∞quasi-isomorphism Υ′in the proof of [Ye1,
-Theorem 0.2], as long asΥ′has properties (P)-(P5) of [Ko1].
-Now D.E. Tamarkin found a construction of such anL∞quasi-isomorphism Υ′
-over Q(see [Ta], and [CV, Appendix] for a complete proof.) Therefore the condition
-R⊂K can in fact be removed.
-We end the paper with a few questions. A twistedK[[ℏ]]-deformation A ofOX is
-called symplectic if the ﬁrst order bracket{−,−}A is a symplectic Poisson bracket
-onOX (cf. Proposition 2.21(3)). This is the most noncommutative deformation
-possible: the center of a local objectA of A is the subsheafK[[ℏ]]⊂A.
-Question 11.8. It is easy to construct an example of acommutative twisted as-
-sociative K[[ℏ]]-deformation ofOX that is really twisted – see Deﬁnition 4.16 and
-Example 7.7. But does there exist a varietyX, with asymplectictwisted associative
-K[[ℏ]]-deformation A ofOX which is really twisted? Perhaps the results of [BK]
-can be useful here.
+\[ \begin{aligned}
+& \ol{(\chi, h, b)} = \ol{\opn{Desc}} (\opn{Del})
+(\mrm{C}(\bsym{U}, \Psi_{\bsym{s}}), \bsym{1}_R) ( \ol{(\om, g, a)} ) 
+\\
+& \qquad \qquad \qquad \in 
+\ol{\opn{Desc}} \bigl(  \opn{Del}(\mrm{C} (\bsym{U}, 
+\opn{Mix}_{\bsym{U}} (\mcal{D}_{\mrm{poly},X})), R) \bigr) ,
+\end{aligned} \]
+where $\ol{(\chi, h, b)}$ and $\ol{(\om, g, a)}$ are the equivalence classes.
+We have to show that the first order brackets
+$\{ -,- \}_{\gerbe{A}}$ and $\{ -,- \}_{\gerbe{B}}$ on 
+$\mcal{O}_X$ are equal.
+
+The first order brackets 
+$\{ -,- \}_{\gerbe{A}}$ and $\{ -,- \}_{\gerbe{B}}$
+depend only on $\om$ and $\chi$. Indeed, by Definitions \ref{dfn:22} and
+\ref{dfn:20} we have
+$\{ c_1, c_2 \}_{\gerbe{A}} = \{ c_1, c_2 \}_{\om}$
+and 
+$\{ c_1, c_2 \}_{\gerbe{B}} = \{ c_1, c_2 \}_{\chi}$
+for local sections $c_1, c_2 \in \OO_X$,
+where 
+$\{ c_1, c_2 \}_{\om} := \psi^+(\Upsilon_1(\om)(c_1, c_2))$
+and 
+$\{ c_1, c_2 \}_{\chi} := \psi^+(\chi(c_1, c_2))$. 
+Here $\psi^+$ is the homomorphism from equation (\ref{eqn:400}), and 
+$\Upsilon_1$ is the antisymmetrization.
+Property (iii) of Theorem \ref{thm:Lie-desc.101} says that
+$\ol{\chi} = \ol{\opn{MC}}(\bsym{1}_R \ot \Psi_{\bsym{s}})( \ol{\om} )$
+in 
+\[ \ol{\opn{MC}} \bigl(\m \hot 
+\mrm{C}^0(\bsym{U}, \opn{Mix}_{\bsym{U}} (\mcal{D}_{\mrm{poly},X}))  \bigr) . \]
+
+
+
+
+
+
+The first order brackets are functorial in $R$, and hence
+we can assume that $\m^2 = 0$, so $\m / \m^2 = \m$. 
+Now the contribution of the higher order terms $\Psi_{\bsym{s}; i}$, $i \geq 2$,
+to $\opn{MC}(\bsym{1}_R \ot \Psi_{\bsym{s}})$ is zero, because 
+$\m^2 = 0$. Therefore the elements
+$\chi$ and 
+$\chi' := (\bsym{1}_R \ot \Psi_{\bsym{s}; 1})(\om)$
+of 
+$\m \ot \mrm{C}^0(\bsym{U}, \opn{Mix}_{\bsym{U}} (\mcal{D}_{\mrm{poly},X}))$
+are gauge equivalent.
+We conclude that $\{ -,- \}_{\chi} = \{ -,- \}_{\chi'}$.
+
+A little calculation shows that the first order bracket $\{ -,- \}_{\chi'}$
+depends only on the cohomology class $[\chi']$ of $\chi'$ in
+$\m \ot \mrm{C}^0 \bigl( \bsym{U}, 
+\mrm{H}^1 ( \opn{Mix}_{\bsym{U}} (\mcal{D}_{\mrm{poly},X})) \bigr)$;
+this is a manifestation of the gauge invariance of first order brackets.
+But according to Theorem \ref{thm:13}(2) we have 
+$[\chi'] = [\Upsilon_1(\om)]$.
+We see that $\{ -,- \}_{\chi'} = \{ -,- \}_{\om}$.
+\end{proof}
+
+\begin{cor} \label{cor:TDQ.105}
+In the situation of Theorem \tup{\ref{thm:8}}, 
+assume the cohomology groups 
+$\mrm{H}^1(X, \mcal{O}_X)$ and $\mrm{H}^2(X, \mcal{O}_X)$ vanish. 
+Then there is a bijection
+\[ \begin{aligned}
+& \opn{quant} : 
+\frac{ \{ \tup{Poisson $R$-deformations of $\mcal{O}_X$} \} }
+{\tup{ gauge equivalence}} \\
+& \hspace{9ex} \iso \
+\frac{ \{ \tup{associative $R$-deformations of $\mcal{O}_X$} \} }
+{\tup{ gauge equivalence}} . 
+\end{aligned} \] 
+It preserves first order brackets, and commutes with
+homomorphisms $R \to R'$ and  \'etale morphisms $X' \to X$
+\tup{(}such that $X'$ also has these cohomology vanishing properties\tup{)}.
+\end{cor}
+
+\begin{proof}
+Combine Theorem \ref{thm:8} and Corollary \ref{cor:7}.
+\end{proof}
+
+A {\em formal Poisson bracket} on the augmented commutative $R$-algebra 
+$R \hot \OX$ is an $R$-bilinear Poisson bracket $\{ -,- \}$ that vanishes modulo
+$\m$; so it makes $R \hot \OX$ into a Poisson $R$-deformation of $\OX$. 
+A {\em star product} on the augmented $R$-module $R \hot \OX$ is an 
+associative unital $R$-bilinear multiplication, with unit 
+$1 \ot 1$, that reduces modulo $\m$ to the commutative multiplication of $\OX$;
+so it makes $R \hot \OX$ into an associative $R$-deformation of $\OX$. 
+
+By definition 
+$\mcal{T}^0_{\mrm{poly},X} = \mcal{T}_X$, the sheaf of derivations, and 
+$\mcal{D}^{0}_{\mrm{poly},X} = \mcal{D}_X$, the sheaf of differential operators.
+
+\begin{cor} \label{cor:TDQ.102}
+In the situation of Theorem \tup{\ref{thm:8}}, 
+assume the cohomology groups 
+$\mrm{H}^1(X, \mcal{O}_X)$, $\mrm{H}^2(X, \mcal{O}_X)$, 
+$\mrm{H}^1(X, \mcal{T}_X)$ and $\mrm{H}^1(X, \mcal{D}_X)$
+all vanish. Then there is a canonical bijection
+\[ \begin{aligned}
+& \opn{quant} : 
+\frac{ \{ \tup{formal Poisson brackets on $R \hot \mcal{O}_X$} \} }
+{\tup{ gauge equivalence}} \\
+& \hspace{9ex} \iso \
+\frac{ \{ \tup{star products on $R \hot \mcal{O}_X$} \} }
+{\tup{ gauge equivalence}} . 
+\end{aligned} \] 
+It preserves first order brackets, and commutes with
+homomorphisms $R \to R'$ and  \'etale morphisms $X' \to X$ 
+\tup{(}such that $X'$ also has these cohomology vanishing properties\tup{)}.
+\end{cor}
+
+\begin{proof}
+Theorem \ref{thm:205} implies the following: if 
+$\mrm{H}^1(X, \mcal{D}_{\mrm{poly}, X}^{\mrm{nor}, 0}) = 0$, then every
+associative $R$-deformation $\mcal{A}$ of $\mcal{O}_X$ is sheaf theoretically
+trivial, namely there is an isomorphism $\mcal{A} \cong R \hot \mcal{O}_X$ of
+sheaves of $R$-modules, that commutes with the augmentations to $\mcal{O}_X$
+and preserves the units. 
+The proof is the same as that of \cite[Theorem 1.13]{Ye1}, using Remark
+\ref{rem:defs-sh.110}. Since there is an isomorphism of sheaves of $\K$-modules 
+$\mcal{D}_X \cong \mcal{O}_X \oplus \mcal{D}_{\mrm{poly}, X}^{\mrm{nor}, 0}$,
+our assumptions imply that 
+$\mrm{H}^1(X, \mcal{D}_{\mrm{poly}, X}^{\mrm{nor}, 0}) = 0$.
+Hence associative deformations are the same, up to gauge equivalence, as
+star products. 
+
+Similarly, the vanishing of $\mrm{H}^1(X, \mcal{T}_X)$ implies, via 
+Theorem \ref{thm:205}, that Poisson deformations are the same as formal
+Poisson brackets. 
+
+The quantization statement is now the same as in Corollary \ref{cor:TDQ.105}.
+\end{proof}
+
+\begin{exa}
+The conditions of Corollary \ref{cor:TDQ.102} hold for 
+$X := \mbf{P}^n_{\K}$, $n \geq 1$. Indeed, since $X$ is a $\mcal{D}$-affine
+variety, we know that $\mrm{H}^i(X, \mcal{D}_X) = 0$ for all $i > 0$. 
+The vanishing of $\mrm{H}^i(X, \mcal{O}_X)$ and 
+$\mrm{H}^i(X, \mcal{T}_X)$ for $i > 0$ follows from 
+\cite[Theorem III.5.1 and Example II.8.20.1]{Ha}. 
+We thank Van den Bergh for mentioning this to us.
+\end{exa}
+
+\begin{rem}
+When $X$ is an affine variety, the quantization map of Corollary
+\ref{cor:TDQ.102} coincides with that of \cite[Theorem 0.1]{Ye1}. This can be
+seen by looking at the construction of these quantization maps. (For 
+\cite[Theorem 0.1]{Ye1} please consult the corrected proof in the Erratum.)
+\end{rem}
+
+\begin{rem} \label{rem:TDQ.101}
+The reason we require that $\K$ contains $\R$ is because we rely on the
+original universal $\mrm{L}_{\infty}$ formality quasi-isomorphism 
+\begin{equation} \label{eqn:extras.12}
+\Upsilon = \{ \Upsilon_i \}_{i \geq 1} : 
+\mcal{T}_{\mrm{poly}}(\R[\bsym{t}]) \to 
+\mcal{D}_{\mrm{poly}}(\R[\bsym{t}])
+\end{equation}
+of Kontsevich for the polynomial ring $\R[\bsym{t}] = \R[t_1, \ldots, t_n]$; see
+\cite{Ko1}. However $\Upsilon$ can be replaced with any other $\mrm{L}_{\infty}$
+quasi-isomorphism
+$\Upsilon'$ in the proof of \cite[Theorem 0.2]{Ye1}, as long as $\Upsilon'$ has
+properties (P)-(P5) of \cite{Ko1}. 
+
+Now D.E. Tamarkin found a construction of such an $\mrm{L}_{\infty}$
+quasi-isomorphism $\Upsilon'$ over $\mbb{Q}$ (see \cite{Ta}, and
+\cite[Appendix]{CV} for a complete proof.)
+Therefore the condition $\R \subset \K$ can in fact be removed.
+\end{rem}
+
+We end the paper with a few questions. 
+A twisted $\K[[\hbar]]$-deformation $\gerbe{A}$ of $\mcal{O}_X$
+is called {\em symplectic} if the first order bracket
+$\{ -,- \}_{\gerbe{A}}$ is a symplectic Poisson bracket on
+$\mcal{O}_X$ (cf.\ Proposition \ref{prop:20}(3)). 
+This is the most noncommutative deformation possible: the center of a local
+object $\mcal{A}$ of $\gerbe{A}$ is the subsheaf 
+$\K[[\hbar]] \subset \mcal{A}$. 
+
+\begin{que}
+It is easy to construct an example of a {\em commutative} twisted
+associative $\K[[\hbar]]$-deformation of $\mcal{O}_X$ that is
+really twisted -- see Definition \ref{dfn:25} and Example \ref{exa:18}. But
+does there exist a variety $X$, with  a  {\em symplectic} twisted associative
+$\K[[\hbar]]$-deformation $\gerbe{A}$ of $\mcal{O}_X$ which is {\em really
+twisted}? Perhaps the results of \cite{BK} can be useful here.
+\end{que}
+
 A more concrete (but perhaps much more challenging) question is:
-Question 11.9.LetX be a Calabi-Yau surface overK (e.g. an abelian surface or a
-K3 surface), and letαbe a symplectic Poisson bracket onOX (namely any nonzero
-section of Γ(X,⋀2
-OX
-TX)). Consider the Poisson K[[ℏ]]-deformationA :=OX[[ℏ]],
-withformalPoissonbracket ℏα, andlet Abethecorrespondingtwisteddeformation
-(see Example 6.23). LetB := tw.quant(A). Is B really twisted? If so, what is the
-signiﬁcance of this phenomenon? Note that the obstruction classes forB can be
-calculated explicitly; but these calculations look quite complicated. Kontsevich
-[private communication] appears to think that the twisted deformationB is really
-twisted, and he has an indirect argument for that.
-Question 11.10. The construction of theL∞quasi-isomorphism Ψ s in Theorem
-10.3 relied on the explicit universal formality quasi-isomorphismΥ of Kontsevich;
-see (11.7) above. But suppose another universal formality quasi-isomorphismΥ′
-is used. Then the twisted quantization map tw.quant may change. Indeed, it
-is claimed by Kontsevich [Ko3] that the Grothendieck-Teichmüller group acts on
-the quantizations by changing the formality quasi-isomorphism (or in other words,
-the Drinfeld associator), and sometimes this action is nontrivial. The question is:
-does this action change the geometric nature of the resulting twisted associative
-deformation – namely can it change from being really twisted to being not really
-twisted?
+
+\begin{que} \label{que:1}
+Let $X$ be a Calabi-Yau surface over $\K$ (e.g.\ an abelian surface or
+a K3 surface), and let
+$\alpha$ be a symplectic Poisson bracket on $\mcal{O}_X$ (namely any
+nonzero section of $\Gamma(X, \bwedge^{2}_{\mcal{O}_X} \mcal{T}_X)$).
+Consider the Poisson $\K[[\hbar]]$-deformation 
+$\mcal{A} := \mcal{O}_X[[\hbar]]$, with formal Poisson bracket
+$\hbar \alpha$, and let $\gerbe{A}$ be the corresponding twisted
+deformation (see Example \ref{exa:19}). 
+Let $\gerbe{B} := \opn{tw{.}quant}(\gerbe{A})$. Is $\gerbe{B}$ really
+twisted? 
+If so, what is the significance of this phenomenon?
+Note that the obstruction classes for $\gerbe{B}$
+can be calculated explicitly; but these calculations look quite
+complicated. 
+Kontsevich [private communication] appears to think that the twisted
+deformation $\gerbe{B}$ is really twisted, and he has an indirect
+argument for that.
+\end{que}
+
+\begin{que}
+The construction of the $\mrm{L}_{\infty}$ quasi-isomorphism 
+$\Psi_{\bsym{s}}$ in Theorem \ref{thm:13} relied on the explicit universal
+formality quasi-isomorphism $\Upsilon$ of Kontsevich; see (\ref{eqn:extras.12})
+above. But suppose another universal formality quasi-isomorphism $\Upsilon'$
+is used. Then the twisted quantization map 
+$\opn{tw{.}quant}$ may change. Indeed, it is claimed by Kontsevich
+\cite{Ko3} that the Grothendieck-Teichm\"uller group acts on the
+quantizations by changing the formality quasi-iso\-morphism (or in
+other words, the Drinfeld associator), and sometimes this action is
+nontrivial. The question is: does this action change the geometric
+nature of the resulting twisted associative deformation -- namely can
+it change from being really twisted to being not really twisted?
+\end{que}

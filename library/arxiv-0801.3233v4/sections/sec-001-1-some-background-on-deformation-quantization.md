@@ -8,64 +8,90 @@ pages: 2-3
 source_pdf: 0801.3233v4.pdf
 source_sha256: d98f9d4a9ecb4c5e
 doc_brief: "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) Amnon Yekutieli — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Throughout K is a ﬁeld of characteristic0.
-Let C be a commutative K-algebra. Recall that a Poisson bracketon C is a
-K-bilinear function
-{−,−}:C×C→C
-which makesC into a Lie algebra, and is a biderivation (i.e. a derivation in each
-argument). The pair
-(
-C,{−,−}
-{
-is called a Poisson algebra.
-Poisson algebras arise in several ways, e.g. classical Hamiltonian mechanics, or
-Lie theory.
-Let K[[ℏ]] be the ring of formal power series in the variableℏ. And letC[[ℏ]]
-be the set of formal power series with coeﬃcients inC, which we view only as a
-K[[ℏ]]-module. A star producton C[[ℏ]] is a K[[ℏ]]-bilinear function
-⋆:C[[ℏ]]×C[[ℏ]]→C[[ℏ]]
-which makesC[[ℏ]] into an associative K[[ℏ]]-algebra, with unit 1∈C, and such
-that
-f ⋆g≡fg mod ℏ
-for anyg,f ∈C.
-Note that the star product⋆can be expanded into a power series as follows:
-there is a sequence{ωj}j≥1 of K-bilinear functionsωj :C×C→C, such that
-(1.1) f ⋆g:=fg +
-∞∑
-j=1
-ωj(f,g )ℏj
-forf,g ∈C. The conditions that⋆is associative and unital place certain constraints
-on the sequence{ωj}j≥1.
-TWISTED DEFORMATION QUANTIZATION 3
-Example 1.2. Suppose ⋆is a star product onC[[ℏ]]. Given f,g ∈C, we know
-that
-f ⋆g−g⋆f≡0 mod ℏ.
-Hence there is a unique element{f,g}⋆∈C such that
-1
-2ℏ
-(
-f ⋆g−g⋆f
-{
-≡{f,g}⋆mod ℏ.
-It is quite easy to show that{−,−}⋆is a Poisson bracket onC. We call it theﬁrst
-order bracketof ⋆.
-Deformation quantization seeks to reverse Example 1.2.
-Deﬁnition 1.3.Given a Poisson bracket{−,−}on the algebraC, adeformation
-quantization of{−,−}is a star product⋆on C[[ℏ]] whose ﬁrst order bracket is
-{−,−}.
-In physicsℏ is thePlanck constant. For a quantum phenomenon depending on
-ℏ, the limit asℏ→0 is thought of the as the classical limit of this phenomenon.
-The original idea by the physicists Flato et. al. ([BFFLS], 1978) was that de-
-formation quantization should model the transition from classical Hamiltonian me-
-chanics to quantum mechanics. Special cases (like the Moyal product) were known.
-The problem arose:does any Poisson bracket admit a deformation quantization?
-For a symplectic manifoldX and C = C∞(X) the problem was solved by De
-Wilde and Lecomte ([DL], 1983). A more geometric solution was discovered by
-Fedosov ([Fe], 1994). The general case, i.e.C = C∞(X) for a Poisson manifoldX,
-was solved by Kontsevich ([Ko1], 1997). See surveys in the book [CKTB].
-Remark 1.4. The deformations considered in this paper are parameterized by
-the algebra K[[ℏ]]. It is possible to replaceK[[ℏ]] with any other noetherian com-
-plete local commutativeK-algebra R, with maximal idealm, such thatR/m = K.
-Instead of C[[ℏ]] we take the complete tensor productRˆ⊗KC, with its obvious
-augmentation toC. All results will remain valid.
+Throughout $\K$ is a field of characteristic $0$.
+
+Let $C$ be a commutative $\K$-algebra. 
+Recall that a {\em Poisson bracket} on $C$ is a 
+$\K$-bilinear function
+\[ \{-,-\} : C \times C \to C \]
+which makes $C$ into a Lie algebra, and is a biderivation (i.e.\ 
+a derivation in each argument). 
+The pair $\bigl( C, \{-,-\} \bigr)$ is called a Poisson algebra. 
+
+Poisson algebras arise in several ways, e.g.\ classical Hamiltonian
+mechanics, or Lie theory.
+
+Let $\K[[\hbar]]$ be the ring of formal power series in the
+variable $\hbar$. And let $C[[\hbar]]$ be the set of formal power series with
+coefficients in $C$, which we view only as a 
+$\K[[\hbar]]$-module. 
+A {\em star product} on $C[[\hbar]]$ is a $\K[[\hbar]]$-bilinear function
+\[ \star : C[[\hbar]] \times C[[\hbar]] \to C[[\hbar]]  \]
+which makes $C[[\hbar]]$ into an associative 
+$\K[[\hbar]]$-algebra, with unit $1 \in C$, and  such that 
+\[ f \star g \equiv f g \ \opn{mod}\ \hbar \]
+for any $g, f \in C$.
+
+Note that the star product $\star$ can be expanded into a power series as
+follows: there is a sequence $\{ \omega_j \}_{j \geq 1}$ of $\K$-bilinear
+functions $\omega_j : C \times C \to C$, such that 
+\begin{equation} \label{eqn:omega2}
+f \star g := f g + 
+\sum_{j = 1}^{\infty} \omega_j(f, g) \hbar^j
+\end{equation}
+for $f, g \in C$. The conditions that $\star$ is associative and unital place
+certain constraints on the sequence $\{ \omega_j \}_{j \geq 1}$.
+
+\begin{exa} \label{exa3}
+Suppose $\star$ is a star product on  $C[[\hbar]]$. Given $f, g \in C$, we know
+that 
+\[ f \star g - g \star f \equiv 0 \ \opn{mod}\ \hbar . \]
+Hence there is a unique element 
+$\{ f, g \}_{\star} \in C$
+such that 
+\[ \smfrac{1}{2 \hbar} \bigl( f \star g - g \star f \bigr)
+\equiv \{ f, g \}_{\star}  \ \opn{mod}\ \hbar . \]
+It is quite easy to show that $\{ -,- \}_{\star}$ is a Poisson
+bracket on $C$. We call it the {\em first order bracket}
+of $\star$. 
+\end{exa}
+
+Deformation quantization seeks to reverse Example \ref{exa3}.
+
+\begin{dfn}
+Given a Poisson bracket $\{ -,- \}$ on the algebra $C$, a 
+{\em deformation quantization} of $\{ -,- \}$ is a star product $\star$ on
+$C[[\hbar]]$ whose first order bracket is $\{ -,- \}$.
+\end{dfn}
+
+In physics $\hbar$ is the {\em Planck constant}. For a
+quantum
+phenomenon depending on $\hbar$, the limit as $\hbar \to 0$ is thought
+of the as the classical limit of this phenomenon.
+
+The original idea by the physicists Flato et.\ al.\ (\cite{BFFLS},
+1978) was that deformation quantization should model the transition
+from classical Hamiltonian mechanics to quantum mechanics.
+Special cases (like the Moyal product) were known. The problem 
+arose: {\em does any Poisson bracket admit a 
+deformation quantization}?
+
+For a symplectic manifold $X$ and $C = \mrm{C}^{\infty}(X)$ 
+the problem was solved by De Wilde and Lecomte  (\cite{DL}, 1983). 
+A more geometric solution was discovered by Fedosov (\cite{Fe},
+1994). The general case, i.e.\ $C = \mrm{C}^{\infty}(X)$ for a 
+Poisson manifold $X$, was solved by Kontsevich  (\cite{Ko1}, 1997).
+See surveys in the book \cite{CKTB}.
+
+\begin{rem} \label{rem:parameter}
+The deformations considered in this paper are parameterized by the algebra 
+$\K[[\hbar]]$. It is possible to replace $\K[[\hbar]]$ with any other noetherian
+complete local commutative $\K$-algebra $R$, with maximal ideal $\m$, such that
+$R / \m = \K$. Instead of $C[[\hbar]]$ we take the complete tensor product 
+$R \hatotimes{\K} C$, with its obvious augmentation to $C$.
+All results will remain valid. 
+\end{rem}

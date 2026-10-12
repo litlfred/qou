@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/104171-rmi-1408/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "From octonions to composition superalgebras via tensor categories",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-rmi-1408/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "104171-rmi-1408",
   "contains": [
     "library/104171-rmi-1408/sections/sec-000",
     "library/104171-rmi-1408/sections/sec-001",
@@ -14,8 +19,10 @@
     "library/104171-rmi-1408/sections/sec-005"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "104171-rmi-1408",
+    "title_source": "slug",
     "source_file": "10.4171-rmi-1408.pdf",
     "source_sha256": "eda199771108dff8901f7b28fb8fe2d02e21bc67ff7fb0c278254035438ae7af",
     "pages": 24,

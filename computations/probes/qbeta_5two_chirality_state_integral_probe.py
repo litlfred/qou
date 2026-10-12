@@ -75,6 +75,9 @@ Q0 = {"muon": q_muon_at(50),
       "proton": mp.mpf(Q_50_DIGIT_STR)}
 
 
+QUAD_DPS = 30  # see z_state_integral
+
+
 def z_state_integral(b, B_pow, A_coef, T=mp.mpf(8)):
     """∫ Φ_b(v)^B e^{−A·πi·v²} dv on the bent contour
     [−T·e^{−iθ}, 0, T·e^{iθ}] (decay at both ends for B > A > 0).
@@ -96,7 +99,15 @@ def z_state_integral(b, B_pow, A_coef, T=mp.mpf(8)):
         return mp.e ** (B_pow * log_phi_b(v, b) - A_coef * mp.pi * 1j * v * v)
     p1 = -T * mp.e ** (-1j * theta)
     p3 = T * mp.e ** (1j * theta)
-    return mp.quad(f, [p1, mp.mpf(0), p3])
+    # QUADRATURE PRECISION IS PINNED, not inherited (bean qou-0xe1). The inner
+    # `log_phi_b` sizes its truncation from mp.dps, and mpmath's quad targets
+    # 10^-dps, so at the canonical COMPUTE_DPS = 70 the nested tanh-sinh goes
+    # on to degree 8 (~2400 inner evaluations per point vs ~1000, hours). The
+    # gates need 1e-8 / 1e-6, and the result is floored near 1e-19 by the
+    # T = 8 contour cut anyway. 30 is the precision of the validated run
+    # (witness 2026-07-18, qou-he82: G1 rel err 1.097e-19).
+    with mp.workdps(QUAD_DPS):
+        return +mp.quad(f, [p1, mp.mpf(0), p3])
 
 
 def main() -> int:

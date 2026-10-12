@@ -156,7 +156,7 @@ purpose, and reconstructing it would mean resurrecting the 24-54%-error table
 the owner ordered removed. Do NOT do that.
 
 For mass predictions use the canonical witness. Disposition of this file
-(deprecate to computations/_deprecated/, or delete) is an owner decision;
+(deprecate to fsh-guts/deprecated/computations/, or delete) is an owner decision;
 tracked as bean `qou-s1yn`.""")
     s3 = record_upstream(s3_path, _UPSTREAM_RECORDS)
     rows = {r["atom"]: r for r in s3["data"]["rows"]}

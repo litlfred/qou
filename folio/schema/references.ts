@@ -962,6 +962,21 @@ export const references: Reference[] = [
     URL: "https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326",
   }),
 
+  // ── Murota 2003 ───────────────────────────────────────────────
+  ref({
+    id: "murota2003",
+    type: "book",
+    title: "Discrete Convex Analysis",
+    author: [
+      { family: "Murota", given: "Kazuo" },
+    ],
+    publisher: "Society for Industrial and Applied Mathematics",
+    "publisher-place": "Philadelphia",
+    issued: { "date-parts": [[2003]] },
+    "collection-title": "SIAM Monographs on Discrete Mathematics and Applications",
+    DOI: "10.1137/1.9780898718508",
+  }),
+
   // ── Macdonald 1995 ────────────────────────────────────────────
   ref({
     id: "macdonald1995",
@@ -1231,6 +1246,14 @@ export const references: Reference[] = [
   // ── Witten 2011 ───────────────────────────────────────────────
   ref({
     id: "witten2011",
+    library: {
+      docId: "arxiv-1001.2933v4",
+      dir: "library/arxiv-1001.2933v4",
+      stage: "candidates",
+      pages: 126,
+      sections: 26,
+      arxiv: "1001.2933v4",
+    },
     type: "chapter",
     title: "Analytic Continuation Of Chern-Simons Theory",
     author: [
@@ -1243,7 +1266,7 @@ export const references: Reference[] = [
     volume: "50",
     page: "347-446",
     DOI: "10.1090/conm/560",
-    note: "arXiv:1001.2933",
+    note: "arXiv:1001.2933. Text extract of v4 (28 Aug 2010, 126 pp) held at library/arxiv-1001.2933v4/ — NO PDF; sections/ built from the plain-text extraction.",
     URL: "https://arxiv.org/abs/1001.2933",
   }),
 
@@ -6171,6 +6194,14 @@ export const references: Reference[] = [
   // ── Kohno 1987 (KZ connection / quantum braid monodromy) ──────
   ref({
     id: "kohno1987",
+    library: {
+      docId: "kohno1987-aif",
+      dir: "library/kohno1987-aif",
+      pdf: "library/kohno1987-aif/kohno1987-aif.pdf",
+      stage: "candidates",
+      pages: 23,
+      sections: 8,
+    },
     type: "article-journal",
     title:
       "Monodromy representations of braid groups and Yang-Baxter equations",
@@ -6187,7 +6218,8 @@ export const references: Reference[] = [
       "the quantum-group R-matrix representation of $U_q(g)$.  " +
       "Flatness of the KZ connection at generic q is the " +
       "mathematical content behind the lifted-crossing locality " +
-      "hypothesis in the mass-volume expansion.",
+      "hypothesis in the mass-volume expansion.  " +
+      "PDF library/kohno1987-aif/ — Numdam copy.",
   }),
 
   // Note: a duplicate entry id "murakami2001" was removed here.
@@ -7279,6 +7311,14 @@ export const references: Reference[] = [
   // ── Ram 1991 ──────────────────────────────────────────────────
   ref({
     id: "ram1991",
+    library: {
+      docId: "ram1991-frobenius-formula",
+      dir: "library/ram1991-frobenius-formula",
+      pdf: "library/ram1991-frobenius-formula/ram1991-frobenius-formula.pdf",
+      stage: "candidates",
+      pages: 28,
+      sections: 11,
+    },
     type: "article-journal",
     title:
       "A Frobenius formula for the characters of the Hecke algebras",
@@ -7292,6 +7332,7 @@ export const references: Reference[] = [
     page: "461-488",
     DOI: "10.1007/BF01243922",
     URL: "https://doi.org/10.1007/BF01243922",
+    note: "PDF library/ram1991-frobenius-formula/ — cut from the GDZ Göttingen scan of Invent. Math. vol. 106 (PDF pp. 468-495); OCR text only. GDZ terms: reproductions may not be donated to other repositories.",
   }),
 
   // ── Klein 1888 (icosahedron / Bring's curve) ──────────────────
@@ -8722,6 +8763,245 @@ export const references: Reference[] = [
     page: "254-258",
     issued: { "date-parts": [[1985]] },
     note: "PLACEHOLDER: Drinfeld's 1985 Doklady paper introducing the quantum Yang–Baxter / Hopf-algebra framework. Cited in R-matrix work; verify whether the QOU Lean Ref intends the 1985 Doklady note or the 1986 ICM (Berkeley) address 'Quantum Groups'.",
+  }),
+
+  ref({
+    id: "drinfeld1990",
+    type: "article-journal",
+    title: "Quasi-Hopf algebras",
+    author: [{ family: "Drinfeld", given: "V. G." }],
+    "container-title": "Leningrad Mathematical Journal",
+    volume: "1",
+    issue: "6",
+    page: "1419-1457",
+    issued: { "date-parts": [[1990]] },
+    note: "Drinfeld side of the Drinfeld–Kohno theorem: KZ monodromy is described by the quasi-Hopf algebra U(g)[[h]] with the KZ associator, equivalent to U_h(g). Russian original Algebra i Analiz 1 (1989). Added 2026-10-10 to replace drinfeld1985 at the Drinfeld–Kohno cite (the 1985 Doklady note does not contain the theorem). Not yet held in library/.",
+  }),
+
+  // ── Drinfeld 1991 — KZ associator / Grothendieck–Teichmüller ──
+  ref({
+    id: "drinfeld1991",
+    library: {
+      docId: "drinfeld1991-quasitriangular",
+      dir: "library/drinfeld1991-quasitriangular",
+      pdf: "library/drinfeld1991-quasitriangular/drinfeld1991-quasitriangular.pdf",
+      stage: "candidates",
+      pages: 17,
+      sections: 9,
+    },
+    type: "article-journal",
+    title:
+      "On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q̄/Q)",
+    author: [{ family: "Drinfeld", given: "V. G." }],
+    "container-title": "Leningrad Mathematical Journal",
+    volume: "2",
+    issue: "4",
+    page: "829-860",
+    issued: { "date-parts": [[1991]] },
+    note: "English translation of Algebra i Analiz 2 (1990), no. 4. Introduces the KZ associator Φ_KZ and the (pro-unipotent) Grothendieck–Teichmüller group GT. The Drinfeld–Kohno theorem itself (KZ monodromy ≅ quantum-group R-matrix representation) is proved in Drinfeld, 'Quasi-Hopf algebras', Leningrad Math. J. 1 (1990) — reference [1] of this paper, NOT held in library/. PDF library/drinfeld1991-quasitriangular/ — a scan (no text layer; OCR text in ocr/ and sections/); its first spread's left page is the tail of a different paper (D. I. Gurevich, bibliography, p. 828).",
+  }),
+
+  // ── Arias Abad 2015 — lecture notes: braid-group reps, KZ, Drinfeld–Kohno ──
+  ref({
+    id: "ariasabad2015",
+    library: {
+      docId: "ariasabad2015-revcolmat",
+      dir: "library/ariasabad2015-revcolmat",
+      pdf: "library/ariasabad2015-revcolmat/ariasabad2015-revcolmat.pdf",
+      stage: "candidates",
+      pages: 38,
+      sections: 19,
+      alternates: ["arxiv-1404.0724v1"],
+    },
+    type: "article-journal",
+    title: "Introduction to representations of braid groups",
+    author: [{ family: "Arias Abad", given: "Camilo" }],
+    "container-title": "Revista Colombiana de Matemáticas",
+    volume: "49",
+    issue: "1",
+    page: "1-38",
+    issued: { "date-parts": [[2015]] },
+    URL: "https://arxiv.org/abs/1404.0724",
+    note: "Expository lecture notes (CIMPA school): Burau and Lawrence–Krammer–Bigelow representations, the KZ connection and its monodromy, quasi-triangular bialgebras and a statement + sketch of the Drinfeld–Kohno theorem (§5). arXiv:1404.0724. PDF library/ariasabad2015-revcolmat/ — published version; the arXiv v1 preprint is also held as library/arxiv-1404.0724v1/ (duplicate_of the published copy).",
+  }),
+
+  // ── Chryssomalakos 1997 — explicit Drinfeld twist for U_q(su(2)), adjoint rep ──
+  ref({
+    id: "chryssomalakos1997",
+    library: {
+      docId: "arxiv-q-alg-9707006v1",
+      dir: "library/arxiv-q-alg-9707006v1",
+      pdf: "library/arxiv-q-alg-9707006v1/9707006v1.pdf",
+      stage: "candidates",
+      pages: 11,
+      sections: 7,
+      arxiv: "q-alg/9707006v1",
+    },
+    type: "article",
+    title: "Drinfeld twist for quantum su(2) in the adjoint representation",
+    author: [{ family: "Chryssomalakos", given: "Chryssomalis" }],
+    issued: { "date-parts": [[1997]] },
+    URL: "https://arxiv.org/abs/q-alg/9707006",
+    note: "arXiv:q-alg/9707006 (preprint, 11 pp). Computes the Drinfeld twist F (Δ = F Δ_c F⁻¹) for U_q(su(2)) in the adjoint (spin-1) representation and its tensor square, with q real throughout (h = ln q), so F is orthogonal; F commutes with the undeformed Δ(H) and is block-diagonal by H-weight (§4). PDF library/arxiv-q-alg-9707006v1/.",
+  }),
+
+  // ── Ciamprone–Giannone–Pinzari — unitary coboundary weak quasi-Hopf algebras, KLF theorem ──
+  ref({
+    id: "ciamprone2021",
+    library: {
+      docId: "arxiv-2101.10016v16",
+      dir: "library/arxiv-2101.10016v16",
+      stage: "candidates",
+      pages: 261,
+      sections: 41,
+      arxiv: "2101.10016v16",
+    },
+    type: "article",
+    title: "Unitary coboundary weak quasi-Hopf algebras in the Kazhdan–Lusztig–Finkelberg theorem",
+    author: [
+      { family: "Ciamprone", given: "Sergio" },
+      { family: "Giannone", given: "Marco Valerio" },
+      { family: "Pinzari", given: "Claudia" },
+    ],
+    issued: { "date-parts": [[2021]] },
+    URL: "https://arxiv.org/abs/2101.10016",
+    note: "arXiv:2101.10016 (first posted 2021; held version v16, 4 Oct 2026, 261 pp, math.QA). Wenzl twist, unitary coboundary weak (quasi-)Hopf algebras, abstract Drinfeld–Kohno (§30). Text extract held at library/arxiv-2101.10016v16/ — NO PDF; sections/ built from the plain-text extraction.",
+  }),
+
+  // ── Pinzari 2025 — fusion-category equivalences via quantum gauge groups ──
+  ref({
+    id: "pinzari2025",
+    library: {
+      docId: "arxiv-2502.06229v5",
+      dir: "library/arxiv-2502.06229v5",
+      pdf: "library/arxiv-2502.06229v5/2502.06229v5.pdf",
+      stage: "candidates",
+      pages: 35,
+      sections: 21,
+      arxiv: "2502.06229v5",
+    },
+    type: "article",
+    title: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups",
+    author: [{ family: "Pinzari", given: "Claudia" }],
+    issued: { "date-parts": [[2025]] },
+    URL: "https://arxiv.org/abs/2502.06229",
+    note: "arXiv:2502.06229 (first posted 2025; held version v5, 14 Apr 2026, 35 pp, math.OA). Survey/outline of the ciamprone2021 programme; §9 compares it with the original Drinfeld–Kohno theorem. PDF library/arxiv-2502.06229v5/.",
+  }),
+
+  // ── Teschner 1997 — SL(2,C)/SU(2) WZNW structure constants and fusion rules ──
+  ref({
+    id: "teschner1997",
+    library: {
+      docId: "arxiv-hep-th-9712256v2",
+      dir: "library/arxiv-hep-th-9712256v2",
+      pdf: "library/arxiv-hep-th-9712256v2/9712256v2.pdf",
+      stage: "candidates",
+      pages: 25,
+      sections: 9,
+      arxiv: "hep-th/9712256v2",
+    },
+    type: "article",
+    title: "On structure constants and fusion rules in the SL(2,C)/SU(2) WZNW model",
+    author: [{ family: "Teschner", given: "Jörg" }],
+    issued: { "date-parts": [[1997]] },
+    URL: "https://arxiv.org/abs/hep-th/9712256",
+    note: "arXiv:hep-th/9712256 (held version v2, 27 Jun 1998, 25 pp). Closed formula for the H3+ (SL(2,C)/SU(2)) WZNW structure constants by the Liouville-theory method; fusion rules from canonical quantization. Journal publication (Nucl. Phys. B) not checked against the publisher record here. PDF library/arxiv-hep-th-9712256v2/.",
+  }),
+
+  // ── Bonini–Tricarico 2000 — fine-tuning and the Wilson RG ──
+  ref({
+    id: "bonini2000",
+    library: {
+      docId: "arxiv-hep-th-0006183v1",
+      dir: "library/arxiv-hep-th-0006183v1",
+      pdf: "library/arxiv-hep-th-0006183v1/0006183v1.pdf",
+      stage: "candidates",
+      pages: 22,
+      sections: 8,
+      arxiv: "hep-th/0006183v1",
+    },
+    type: "article",
+    title: "Fine-tuning and the Wilson renormalization group",
+    author: [{ family: "Bonini", given: "M." }, { family: "Tricarico", given: "E." }],
+    issued: { "date-parts": [[2000]] },
+    URL: "https://arxiv.org/abs/hep-th/0006183",
+    note: "arXiv:hep-th/0006183v1 (23 Jun 2000, 22 pp; preprint UPRF-00-04, Parma). Wilson RG solution of the fine-tuning of non-invariant couplings in SU(2) Yang-Mills at one loop. Metadata read from page 1, not verified against a publisher record. PDF library/arxiv-hep-th-0006183v1/.",
+  }),
+
+  // ── Lecture notes, 'Mathematical ideas and notions of QFT' (lect.ps, 2002) ──
+  ref({
+    id: "qftnotions2002",
+    library: {
+      docId: "lect-mathematical-ideas-notions-qft-2002",
+      dir: "library/lect-mathematical-ideas-notions-qft-2002",
+      pdf: "library/lect-mathematical-ideas-notions-qft-2002/lect-mathematical-ideas-notions-qft-2002.pdf",
+      stage: "candidates",
+      pages: 78,
+      sections: 12,
+    },
+    type: "manuscript",
+    title: "Mathematical ideas and notions of quantum field theory",
+    issued: { "date-parts": [[2002]] },
+    note: "Lecture notes (78 pp), uploaded as a dvips PostScript 'lect.ps' (TeX output 2002-12-09). NO AUTHOR is printed in the file; the title matches P. Etingof's MIT lecture notes, an attribution by the ingesting agent that is not stated in the source and is unverified, so no author is recorded here. Steepest descent, Feynman calculus, matrix integrals, Euler characteristic of M_g, path integrals in QM, fermions. PDF library/lect-mathematical-ideas-notions-qft-2002/ (ps2pdf conversion; original lect.ps beside it).",
+  }),
+
+  // ── Inventiones Math. 106 (1991): four articles cut from the Göttingen GDZ scan ──
+  ref({
+    id: "traczyk1991",
+    library: {
+      docId: "traczyk1991-periodic-knots",
+      dir: "library/traczyk1991-periodic-knots",
+      pdf: "library/traczyk1991-periodic-knots/traczyk1991-periodic-knots.pdf",
+      stage: "candidates",
+      pages: 12,
+      sections: 6,
+    },
+    type: "article-journal",
+    title: "Periodic knots and the skein polynomial",
+    author: [{ family: "Traczyk", given: "Paweł" }],
+    "container-title": "Inventiones Mathematicae",
+    volume: "106",
+    page: "73-84",
+    issued: { "date-parts": [[1991]] },
+    note: "Cut from the GDZ Göttingen scan of Invent. Math. vol. 106 (PPN356556735_0106, PDF pp. 80-91); OCR text only. GDZ terms: reproductions may not be donated to other repositories. DOI not recorded (not verified here). PDF library/traczyk1991-periodic-knots/.",
+  }),
+  ref({
+    id: "schechtman-varchenko1991",
+    library: {
+      docId: "schechtman-varchenko1991-arrangements",
+      dir: "library/schechtman-varchenko1991-arrangements",
+      pdf: "library/schechtman-varchenko1991-arrangements/schechtman-varchenko1991-arrangements.pdf",
+      stage: "candidates",
+      pages: 56,
+      sections: 10,
+    },
+    type: "article-journal",
+    title: "Arrangements of hyperplanes and Lie algebra homology",
+    author: [{ family: "Schechtman", given: "Vadim V." }, { family: "Varchenko", given: "Alexander N." }],
+    "container-title": "Inventiones Mathematicae",
+    volume: "106",
+    page: "139-194",
+    issued: { "date-parts": [[1991]] },
+    note: "Hypergeometric (integral) solutions of the KZ equations via hyperplane arrangements; the contravariant/Shapovalov form as a limit of the arrangement's bilinear form. Cut from the GDZ Göttingen scan of Invent. Math. vol. 106 (PDF pp. 146-201); OCR text only. GDZ terms: reproductions may not be donated to other repositories. DOI not recorded (not verified here). PDF library/schechtman-varchenko1991-arrangements/.",
+  }),
+  ref({
+    id: "cherednik1991",
+    library: {
+      docId: "cherednik1991-kz-dunkl",
+      dir: "library/cherednik1991-kz-dunkl",
+      pdf: "library/cherednik1991-kz-dunkl/cherednik1991-kz-dunkl.pdf",
+      stage: "candidates",
+      pages: 21,
+      sections: 6,
+    },
+    type: "article-journal",
+    title: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras",
+    author: [{ family: "Cherednik", given: "Ivan" }],
+    "container-title": "Inventiones Mathematicae",
+    volume: "106",
+    page: "411-431",
+    issued: { "date-parts": [[1991]] },
+    note: "Cut from the GDZ Göttingen scan of Invent. Math. vol. 106 (PDF pp. 418-438; PDF p. 439, journal p. 432, is blank and omitted); OCR text only. GDZ terms: reproductions may not be donated to other repositories. DOI not recorded (not verified here). PDF library/cherednik1991-kz-dunkl/.",
   }),
 
   // ── Faddeev 1995 — quantum dilogarithm functional equation ────
@@ -17346,6 +17626,91 @@ export const references: Reference[] = [
     issued: { "date-parts": [[1991]] },
     DOI: "10.1112/blms/23.4.383",
     note: "The DOI is the one the citing Lean files give (Archimedean/VolumeTranscendental.lean, HyperbolicVolumeTranscendence.lean). The TITLE is a placeholder: doi.org and Crossref were unreachable from the session that added this entry, and the title was not guessed. Resolve the DOI and replace the title before validating. Added 2026-10-05 so a Lean `-- Ref:` key resolves (C9, issue #7528; owner ruling). Metadata written by an agent from standard bibliographic knowledge and NOT checked against the source in this session; review status stays unreviewed until a human validates it.",
+  }),
+  ref({
+    id: "massuyeau2004",
+    library: {
+      docId: "arxiv-math-0404010v1",
+      dir: "library/arxiv-math-0404010v1",
+      pdf: "library/arxiv-math-0404010v1/0404010v1.pdf",
+      stage: "candidates",
+      pages: 9,
+      sections: 7,
+      arxiv: "math/0404010v1",
+    },
+    type: "article",
+    title: "Yang–Baxter operators arising from algebra structures and the Alexander polynomial of knots",
+    author: [{ family: "Massuyeau", given: "Gwénaël" }, { family: "Nichita", given: "Florin F." }],
+    URL: "https://arxiv.org/abs/math/0404010",
+    note: "arXiv:math/0404010v1. PDF library/arxiv-math-0404010v1/ — registered from library intake; metadata read from page 1 of the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "lechner2017",
+    library: {
+      docId: "arxiv-1707.00196v3",
+      dir: "library/arxiv-1707.00196v3",
+      pdf: "library/arxiv-1707.00196v3/1707.00196v3.pdf",
+      stage: "candidates",
+      pages: 36,
+      sections: 15,
+      arxiv: "1707.00196v3",
+    },
+    type: "article",
+    title: "Yang-Baxter representations of the infinite symmetric group",
+    author: [{ family: "Lechner", given: "Gandalf" }, { family: "Pennig", given: "Ulrich" }, { family: "Wood", given: "Simon" }],
+    URL: "https://arxiv.org/abs/1707.00196",
+    note: "arXiv:1707.00196v3. PDF library/arxiv-1707.00196v3/ — registered from library intake; metadata read from page 1 of the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "fukuda2012",
+    library: {
+      docId: "arxiv-1211.1525v2",
+      dir: "library/arxiv-1211.1525v2",
+      pdf: "library/arxiv-1211.1525v2/1211.1525v2.pdf",
+      stage: "candidates",
+      pages: 31,
+      sections: 19,
+      arxiv: "1211.1525v2",
+    },
+    type: "article",
+    title: "Partial transpose of random quantum states: exact formulas and meanders",
+    author: [{ family: "Fukuda", given: "Motohisa" }, { family: "Śniady", given: "Piotr" }],
+    URL: "https://arxiv.org/abs/1211.1525",
+    note: "arXiv:1211.1525v2. PDF library/arxiv-1211.1525v2/ — registered from library intake; metadata read from page 1 of the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "melnikov2025",
+    library: {
+      docId: "arxiv-2503.08846v1",
+      dir: "library/arxiv-2503.08846v1",
+      pdf: "library/arxiv-2503.08846v1/A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf",
+      stage: "candidates",
+      pages: 51,
+      sections: 23,
+      arxiv: "2503.08846v1",
+    },
+    type: "article",
+    title: "A Tutorial on Knots and Quantum Mechanics",
+    author: [{ family: "Melnikov", given: "Dmitry" }],
+    URL: "https://arxiv.org/abs/2503.08846",
+    note: "arXiv:2503.08846v1. PDF library/arxiv-2503.08846v1/ — registered from library intake; metadata read from page 1 of the PDF, not verified against the publisher record.",
+  }),
+  ref({
+    id: "tarabunga2025",
+    library: {
+      docId: "arxiv-2507.13840v2",
+      dir: "library/arxiv-2507.13840v2",
+      pdf: "library/arxiv-2507.13840v2/q-2026-08-19-2194.pdf",
+      stage: "candidates",
+      pages: 43,
+      sections: 15,
+      arxiv: "2507.13840v2",
+    },
+    type: "article",
+    title: "Quantifying mixed-state entanglement via partial transpose and realignment moments",
+    author: [{ family: "Tarabunga", given: "Poetri Sonya" }, { family: "Haug", given: "Tobias" }],
+    URL: "https://arxiv.org/abs/2507.13840",
+    note: "arXiv:2507.13840v2; the PDF is the Quantum journal version (file q-2026-08-19-2194, footer 'Accepted in Quantum 2026-08-11'). No DOI recorded: none was read from the PDF and none is guessed. PDF library/arxiv-2507.13840v2/ — registered from library intake; metadata read from page 1 of the PDF, not verified against the publisher record.",
   }),
 ];
 

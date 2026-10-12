@@ -1,0 +1,445 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2503.08846v1",
+ "source": {
+  "file": "A_Tutorial_on_Knots_and_Quantum_Mechanics.pdf",
+  "sha256": "18321b615ffc968b5b2260a988bedcd6d8835083334a9ace62ead899f0e87fe9",
+  "bytes": 2833705,
+  "pages": 51,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T16:28:27Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2503.08846",
+   "version": "1",
+   "primary_class": "quant-ph",
+   "stamp_date": "11 Mar 2025"
+  },
+  "doi": null,
+  "title": "A Tutorial on Knots and Quantum Mechanics",
+  "authors_raw": "Dmitry Melnikov",
+  "title_lines": [
+   "A Tutorial on Knots and Quantum Mechanics"
+  ],
+  "abstract": "These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path integral formalism. In this description quantum states and operators are encoded by the topology of spaces that are used as modules to build the quantum mechanical model, while expectation values and probabilities are given by topological in- variants of spaces, knots and links. The notes focus on the specific way the topology encodes quantum mechanical features, or, equivalently, on how these features can be controlled through the topology. A topological classification of entanglement is discussed, as well as properties of entanglement entropy and basic quantum protocols. The primary aim is to build a less conventional diagrammatic intuition about quantum mechanics, expanding the paradigm of \u201cQuantum Picturalism\u201d.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.25",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20250313000905Z"
+  },
+  "title_raw": "A Tutorial on Knots and Quantum Mechanics",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "A Tutorial on Knots and Quantum Mechanics",
+   "outline": "Introduction",
+   "text": "A Tutorial on Knots and Quantum Mechanics",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Basics of knot theory",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Topological invariants from matrix traces",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Skein relation",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Bracket and Jones polynomials",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Matrix representation",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Topological bits",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Topological Quantum Field Theory",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Topological Quantum Mechanics",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Chern-Simons theory",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "TQFT in the Semiclassical Limit",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Quantum Entanglement",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Topological Tangling and Quantum Entanglement",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "SLOCC Classification",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Entropy of Entanglement",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Inequalities for the Entanglement entropy",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Quantum Algorithms",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Quantum Teleportation",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Dense Coding",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Outlook",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Multipartite Entanglement",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Quantum Gravity",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1099,
+   "n_words": 162
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 11572,
+   "n_words": 2152
+  },
+  {
+   "id": "sec-001-basics-of-knot-theory",
+   "number": null,
+   "title": "Basics of knot theory",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5031,
+   "n_words": 874
+  },
+  {
+   "id": "sec-002-topological-invariants-from-matrix-traces",
+   "number": null,
+   "title": "Topological invariants from matrix traces",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2886,
+   "n_words": 544
+  },
+  {
+   "id": "sec-003-skein-relation",
+   "number": null,
+   "title": "Skein relation",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3055,
+   "n_words": 586
+  },
+  {
+   "id": "sec-004-bracket-and-jones-polynomials",
+   "number": null,
+   "title": "Bracket and Jones polynomials",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 5120,
+   "n_words": 895
+  },
+  {
+   "id": "sec-005-matrix-representation",
+   "number": null,
+   "title": "Matrix representation",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 4736,
+   "n_words": 951
+  },
+  {
+   "id": "sec-006-topological-bits",
+   "number": null,
+   "title": "Topological bits",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 771,
+   "n_words": 129
+  },
+  {
+   "id": "sec-007-topological-quantum-field-theory",
+   "number": null,
+   "title": "Topological Quantum Field Theory",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 7807,
+   "n_words": 1376
+  },
+  {
+   "id": "sec-008-topological-quantum-mechanics",
+   "number": null,
+   "title": "Topological Quantum Mechanics",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 6149,
+   "n_words": 1032
+  },
+  {
+   "id": "sec-009-chern-simons-theory",
+   "number": null,
+   "title": "Chern-Simons theory",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 13639,
+   "n_words": 2330
+  },
+  {
+   "id": "sec-010-tqft-in-the-semiclassical-limit",
+   "number": null,
+   "title": "TQFT in the Semiclassical Limit",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2403,
+   "n_words": 410
+  },
+  {
+   "id": "sec-011-quantum-entanglement",
+   "number": null,
+   "title": "Quantum Entanglement",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1300,
+   "n_words": 201
+  },
+  {
+   "id": "sec-012-topological-tangling-and-quantum-entanglement",
+   "number": null,
+   "title": "Topological Tangling and Quantum Entanglement",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 4367,
+   "n_words": 747
+  },
+  {
+   "id": "sec-013-slocc-classification",
+   "number": null,
+   "title": "SLOCC Classification",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 33,
+   "n_chars": 19148,
+   "n_words": 3272
+  },
+  {
+   "id": "sec-014-entropy-of-entanglement",
+   "number": null,
+   "title": "Entropy of Entanglement",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 9857,
+   "n_words": 1784
+  },
+  {
+   "id": "sec-015-inequalities-for-the-entanglement-entropy",
+   "number": null,
+   "title": "Inequalities for the Entanglement entropy",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 3301,
+   "n_words": 607
+  },
+  {
+   "id": "sec-016-quantum-teleportation",
+   "number": null,
+   "title": "Quantum Teleportation",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 795,
+   "n_words": 142
+  },
+  {
+   "id": "sec-017-quantum-algorithms",
+   "number": null,
+   "title": "Quantum Algorithms",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 40,
+   "n_chars": 5811,
+   "n_words": 991
+  },
+  {
+   "id": "sec-018-dense-coding",
+   "number": null,
+   "title": "Dense Coding",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 5949,
+   "n_words": 1048
+  },
+  {
+   "id": "sec-019-outlook",
+   "number": null,
+   "title": "Outlook",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 2530,
+   "n_words": 391
+  },
+  {
+   "id": "sec-020-multipartite-entanglement",
+   "number": null,
+   "title": "Multipartite Entanglement",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 2909,
+   "n_words": 481
+  },
+  {
+   "id": "sec-021-quantum-gravity",
+   "number": null,
+   "title": "Quantum Gravity",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 51,
+   "n_chars": 21563,
+   "n_words": 3326
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "toc_inferred_entries": 0,
+  "sections": 23,
+  "chars_total": 141798
+ }
+}

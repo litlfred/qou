@@ -8,36 +8,16 @@ pages: 7-8
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.995
 ---
-state and prove some key properties of the matrix factorizations . In section 3 we state and prove the results
-about matrix factorizations that are needed for the main body of t he paper. In section 4 we introduce our
-main tool: the convolution algebra on the space of matrix factorizat ions with the potential. In this section
-we show that the convolution is associative and discuss generalizatio ns of the construction. The section 5
-is devoted to the study of Knorrer functor which intertwines the c onvolution algebras on the smaller space
-X 2(Gn) with the convolution algebra on the bigger space X2(Gn).
-The sections 6 and 7 contain the technical results about the convo lution algebra that are used in the
-rest of the paper, to be more precise we discuss various induction f unctors between the categories of matrix
-factorizations associated to the braid groups of diﬀerent rank an d their relation with the convolution product.
-At the end of section 6 we introduce the matrix factorizations that generate the braid group. In section 8
-we prove several auxiliary results that we use later, in particular we show how the convolution with the
-matrix factorization for the elementary braid could be computed wit h the use of rank 1 Chevalley-Eilenberg
-complex.
-Our proof of the braid relations for the matrix factorizations intro duced in the section 6 is spread between
-sections 9,10 and 11. In the section 12 we construct the sheaf S[β] and show that it only depends on the
-conjugacy class of β. Finally, in the section 13 we prove our main theorem about the link inva riant. Finally
-in the very last section we prove the theorem 1.2 and deﬁne the diﬀer ential dm|n that allows us to state a
-conjecture relating our cohomology to the gl(m|n) type quantum invariants.
-Finally, at the very end of the paper we compose the list of notations used in the paper. We tabulate the
-ﬁrst appearance of a symbol and the place of more in depth discuss ion of the corresponding object.
-Acknowledgments: Authors would like to thank Dima Arinkin, Roman Bezrukavnikov, Tudo r Dimofte,
-Ben Elias, Tina Kanstrup, Davesh Maulik, Peter Samuleson, Jenia Tev elev for useful discussions. L.R. is
-especially thankful to Dima Arinkin for illuminating explanations and to E ugene Gorsky for stimulating
-discussions and sharing the results of his ongoing research. A.O. is e specially thankful to Eugene Gorsky,
-Matt Hogancamp, Andrei Negut ¸ and Jake Rasmussen for extens ive discussions about the subject and for
-sharing their insight and intuition. Authors are very thankful to an anonymous referee for his/her Herculean
-eﬀort to improve the paper. A.O. would like to thank Simons Center fo r Geometry and Physics for support
-during month-long stay in May 2015, the large portion of this work wa s written during this stay and the
-conference at the end of the program presented us with opportu nity to report on this work. Work of A.O.
-7
-was partially supported by Sloan Foundation and NSF CAREER grant D MS-1352398. The work of L.R. is
-supported by the NSF grant DMS-1108727.
+In the section [\[sec:notations\]](#sec:notations){reference-type="ref" reference="sec:notations"} we collect most of notations used in the paper, we also state and prove some key properties of the matrix factorizations. In section [\[sec: eq push\]](#sec: eq push){reference-type="ref" reference="sec: eq push"} we state and prove the results about matrix factorizations that are needed for the main body of the paper. In section [\[sec:convolution\]](#sec:convolution){reference-type="ref" reference="sec:convolution"} we introduce our main tool: the convolution algebra on the space of matrix factorizations with the potential. In this section we show that the convolution is associative and discuss generalizations of the construction. The section [\[sec: Knor\]](#sec: Knor){reference-type="ref" reference="sec: Knor"} is devoted to the study of Knorrer functor which intertwines the convolution algebras on the smaller space $\calXr_2(G_n)$ with the convolution algebra on the bigger space $\calX_2(G_n)$.
+
+The sections [\[sec: inc\]](#sec: inc){reference-type="ref" reference="sec: inc"} and [\[sec: inc fun gens\]](#sec: inc fun gens){reference-type="ref" reference="sec: inc fun gens"} contain the technical results about the convolution algebra that are used in the rest of the paper, to be more precise we discuss various induction functors between the categories of matrix factorizations associated to the braid groups of different rank and their relation with the convolution product. At the end of section [\[sec: inc\]](#sec: inc){reference-type="ref" reference="sec: inc"} we introduce the matrix factorizations that generate the braid group. In section [\[sec: aux sec\]](#sec: aux sec){reference-type="ref" reference="sec: aux sec"} we prove several auxiliary results that we use later, in particular we show how the convolution with the matrix factorization for the elementary braid could be computed with the use of rank $1$ Chevalley-Eilenberg complex.
+
+Our proof of the braid relations for the matrix factorizations introduced in the section [\[sec: inc\]](#sec: inc){reference-type="ref" reference="sec: inc"} is spread between sections [\[sec: two str\]](#sec: two str){reference-type="ref" reference="sec: two str"},[\[sec: three str 2\]](#sec: three str 2){reference-type="ref" reference="sec: three str 2"} and [\[sec: three str 3\]](#sec: three str 3){reference-type="ref" reference="sec: three str 3"}. In the section [\[sec: link inv\]](#sec: link inv){reference-type="ref" reference="sec: link inv"} we construct the sheaf $\calS_{[\beta]}$ and show that it only depends on the conjugacy class of $\beta$. Finally, in the section [\[sec: link inv 2\]](#sec: link inv 2){reference-type="ref" reference="sec: link inv 2"} we prove our main theorem about the link invariant. Finally in the very last section we prove the theorem [\[thm:HOMFLY\]](#thm:HOMFLY){reference-type="ref" reference="thm:HOMFLY"} and define the differential $d_{m|n}$ that allows us to state a conjecture relating our cohomology to the $gl(m|n)$ type quantum invariants.
+
+Finally, at the very end of the paper we compose the list of notations used in the paper. We tabulate the first appearance of a symbol and the place of more in depth discussion of the corresponding object.
+
+**Acknowledgments:** Authors would like to thank Dima Arinkin, Roman Bezrukavnikov, Tudor Dimofte, Ben Elias, Tina Kanstrup, Davesh Maulik, Peter Samuleson, Jenia Tevelev for useful discussions. L.R. is especially thankful to Dima Arinkin for illuminating explanations and to Eugene Gorsky for stimulating discussions and sharing the results of his ongoing research. A.O. is especially thankful to Eugene Gorsky, Matt Hogancamp, Andrei Neguţ and Jake Rasmussen for extensive discussions about the subject and for sharing their insight and intuition. Authors are very thankful to an anonymous referee for his/her Herculean effort to improve the paper. A.O. would like to thank Simons Center for Geometry and Physics for support during month-long stay in May 2015, the large portion of this work was written during this stay and the conference at the end of the program presented us with opportunity to report on this work. Work of A.O. was partially supported by Sloan Foundation and NSF CAREER grant DMS-1352398. The work of L.R. is supported by the NSF grant DMS-1108727.

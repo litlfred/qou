@@ -8,87 +8,35 @@ pages: 1-3
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
 doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
+text_source: latex
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 0.683
 ---
-Given any finite setAin some ring we define the sum set and product set ofAas
-A+A={a+b:a,b∈A}andAA={ab:a,b∈A}.
-The sum-product conjecture in a given ring is that at least one of these must grow
-near-maximally; more precisely
-(1.1) max(|A+A|,|AA|)≥|A| 2−o(1)
-(where theo(1) term tends 0 as|A|→∞). This is often attributed to Erd˝ os and
-Szemer´ edi, who proved the first results in this direction [13], but it first appeared
-in the literature in a paper of Erd˝ os in 1976 [10] (in which he says he first made the
-conjecture 18 months earlier). This question makes sense over any ring (although
-there are obvious complications in finite rings or rings with zero divisors). Erd˝ os
-[10] asked this specifically forZ,R, andC, although his main interest was for
-A⊂Z.
-Most proofs in the sum-product literature are geometric and combinatorial, using
-no number theory, and thus apply to any finiteA⊂R; the best result achieved in
-this direction so far is
-max(|A+A|,|AA|)≥|A|
-4
-3 +c−o(1) forA⊂R
-for some small constantc >0. This was proved withc= 0 by Solymosi [38] and
-for somec>0 by Konyagin and Shkredov [25]. The value ofchas been improved
-a number of times since, with the current record ofc= 10
-4407 due to Cushman [8].
-In this paper we prove that the sum-product conjecture (1.1) is false over the
-reals, by constructing arbitrarily large counterexamples in totally real algebraic
-1
-arXiv:2605.28781v1  [math.NT]  27 May 2026
-2 THOMAS F. BLOOM, WILL SA WIN, CARL SCHILDKRAUT, AND DMITRII ZHELEZOV
-number fields of large degree. The degree of these fields tends to infinity as the sets
-grow (like≍lognfor a counterexample of sizen), and so (1.1) may still be true in
-number fields of bounded degree (and, in particular, the original setting ofZ).
-Theorem 1.1.There exists an absolute constantc >0such that there are arbi-
-trarily large finiteA⊂Rwith
-max(|A+A|,|AA|)≤|A| 2−c.
-Our arguments deliver an explicit value ofc, but this is a tedious calculation,
-and the value obtained is very small. Since the main interest of this result is the
-existence of an absolute constantc >0, we have chosen to present a non-explicit
-version of the proof, to better demonstrate the main ideas. In Section 5 we sketch
-how a version of the proof with explicit constants can deliverc≥0.00000087
-(although this should not be taken too seriously, and can certainly be improved
-with a little more effort).
-Theorem 1.1 is easily deduced from the following more general result.
-Theorem 1.2.There exists an absolute constantC >0such that the following
-holds. There are infinitely manyd, with accompanying totally real number fieldsK
-of degreedoverQ, such that, for anyX≥1, there existsA⊂O K with
-Xd≤|A|≤(CX) d,
-|A+A|≤C d|A|, and|AA|≤2 −d|A|2.
-By choosing an arbitrary embedding ofKintoR, andX=C 1/ϵ, we deduce
-the following, which provides examples in which the sum set is very small, and yet
-there is still a power saving on the size of the product set.
-Corollary 1.3.There exists an absolute constantc >0such that the following
-holds. For anyϵ∈(0,1)there are arbitrarily largeA⊂Rwith
-|A+A|≤|A| 1+ϵ and|AA|≤|A| 2−cϵ.
-Theorem 1.1 is an immediate consequence. This result should also be compared
-to the lower bound of Solymosi [38], who proved that for anyA⊂R
-(1.2)|A+A| 2|AA|≥|A| 4−o(1).
-Using similar ideas we also obtain new lower bounds in a number of other related
-problems of a sum-product flavour, which we summarise below.
-1.1.Many sums and products.Erd˝ os [11] also made the stronger conjecture
-that, for anyk≥2 andϵ>0,
-max(|kA|,|A (k)|)≫ k,ϵ|A|k−ϵ,
-wherekAandA (k) denote thek-fold sum set andk-fold product set, respectively.
-(Once again this was forA⊂Zoriginally, but Erd˝ os and Szemer´ edi [13] asked it
-also forA⊂R). Our methods provide a strong counterexample to this conjecture
-for largek.
-Theorem 1.4.There exists an absolute constantC >0such that for any fixed
-k≥3there exist arbitrarily largeA⊂Rwith
-max(|kA|,|A (k)|)≤|A| C logk
-log logk .
-THE SUM-PRODUCT CONJECTURE IS F ALSE FOR REAL NUMBERS 3
-Furthermore, for any fixedϵ∈(0,1), there exist arbitrarily largeA⊂Rsuch that
-max(|kA|,|A (k)|)≤|A| C1/ϵ+ϵlogk for allk≥3.
-This is likely the best possible dependence onkin the exponent (at least fork
-fixed and|A|→∞). It follows from work of Mudgal [31] and the recent resolution
-of the weak polynomial Freiman–Ruzsa conjecture by Gowers, Green, Manners, and
-Tao [18] that, for anyA⊂R, for allk≥3,
-max(|kA|,|A (k)|)≥|A| (logk)c
-for some absolute constantc>0. With sufficiently improved bounds on the number
-of solutions to linear equations in multiplicative groups (as discussed in Section 6)
-this exponent can likely be improved to logk
-log logk . This exact quantitative dependence
-was achieved forA⊂Zby P´ alv¨ olgyi and Zhelezov [44]. In a similar vein, Konyagin
-[26] proved that ifA⊂Cis a finite set such that|AA|≤|A| 1+O(1/k) then|kA|≥
-|A|clogk for some constantc>0.
+Given any finite set $A$ in some ring we define the sum set and product set of $A$ as $$A+A=\{a+b: a,b\in A\}\quad\textrm{and}\quad AA=\{ ab : a,b\in A\}.$$ The sum-product conjecture in a given ring is that at least one of these must grow near-maximally; more precisely $$\label{eq-sp}\max(\mathopen{}\left| A+A\mathclose{}\right|,\mathopen{}\left| AA\mathclose{}\right|)\geq \mathopen{}\left| A\mathclose{}\right|^{2-o(1)}$$ (where the $o(1)$ term tends $0$ as $\mathopen{}\left| A\mathclose{}\right|\to \infty$). This is often attributed to Erdős and Szemerédi, who proved the first results in this direction [@ErSz83], but it first appeared in the literature in a paper of Erdős in 1976 [@Er76] (in which he says he first made the conjecture 18 months earlier). This question makes sense over any ring (although there are obvious complications in finite rings or rings with zero divisors). Erdős [@Er76] asked this specifically for $\mathbb{Z}$, $\mathbb{R}$, and $\mathbb{C}$, although his main interest was for $A\subset \mathbb{Z}$.
+
+Most proofs in the sum-product literature are geometric and combinatorial, using no number theory, and thus apply to any finite $A\subset \mathbb{R}$; the best result achieved in this direction so far is $$\max(\mathopen{}\left| A+A\mathclose{}\right|,\mathopen{}\left| AA\mathclose{}\right|)\geq \mathopen{}\left| A\mathclose{}\right|^{\frac{4}{3}+c-o(1)}\quad\textrm{for}\quad A\subset \mathbb{R}$$ for some small constant $c>0$. This was proved with $c=0$ by Solymosi [@So09] and for some $c>0$ by Konyagin and Shkredov [@KoSh16]. The value of $c$ has been improved a number of times since, with the current record of $c=\frac{10}{4407}$ due to Cushman [@Cu25].
+
+In this paper we prove that the sum-product conjecture [\[eq-sp\]](#eq-sp){reference-type="eqref" reference="eq-sp"} is false over the reals, by constructing arbitrarily large counterexamples in totally real algebraic number fields of large degree. The degree of these fields tends to infinity as the sets grow (like $\asymp \log n$ for a counterexample of size $n$), and so [\[eq-sp\]](#eq-sp){reference-type="eqref" reference="eq-sp"} may still be true in number fields of bounded degree (and, in particular, the original setting of $\mathbb{Z}$).
+
+::: theorem
+[]{#th-headline label="th-headline"} There exists an absolute constant $c>0$ such that there are arbitrarily large finite $A\subset\mathbb{R}$ with $$\max(\mathopen{}\left| A+A\mathclose{}\right|,\mathopen{}\left| AA\mathclose{}\right|)\leq \mathopen{}\left| A\mathclose{}\right|^{2-c}.$$
+:::
+
+Our arguments deliver an explicit value of $c$, but this is a tedious calculation, and the value obtained is very small. Since the main interest of this result is the existence of an absolute constant $c>0$, we have chosen to present a non-explicit version of the proof, to better demonstrate the main ideas. In Section [\[sec-numerical\]](#sec-numerical){reference-type="ref" reference="sec-numerical"} we sketch how a version of the proof with explicit constants can deliver $c\geq 0.00000087$ (although this should not be taken too seriously, and can certainly be improved with a little more effort).
+
+Theorem [\[th-headline\]](#th-headline){reference-type="ref" reference="th-headline"} is easily deduced from the following more general result.
+
+::: theorem
+[]{#th-main label="th-main"} There exists an absolute constant $C>0$ such that the following holds. There are infinitely many $d$, with accompanying totally real number fields $K$ of degree $d$ over $\mathbb{Q}$, such that, for any $X\geq 1$, there exists $A\subset \mathcal{O}_K$ with $$X^{d} \leq \mathopen{}\left| A\mathclose{}\right|\leq (CX)^{d},$$ $$\mathopen{}\left| A+A\mathclose{}\right|\leq C^{d}\mathopen{}\left| A\mathclose{}\right|\textrm{, and}\quad\mathopen{}\left| AA\mathclose{}\right|\leq 2^{-d}\mathopen{}\left| A\mathclose{}\right|^2.$$
+:::
+
+By choosing an arbitrary embedding of $K$ into $\mathbb{R}$, and $X=C^{1/\epsilon}$, we deduce the following, which provides examples in which the sum set is very small, and yet there is still a power saving on the size of the product set.
+
+::: corollary
+[]{#cor-main label="cor-main"} There exists an absolute constant $c>0$ such that the following holds. For any $\epsilon\in (0,1)$ there are arbitrarily large $A\subset \mathbb{R}$ with $$\mathopen{}\left| A+A\mathclose{}\right|\leq \mathopen{}\left| A\mathclose{}\right|^{1+\epsilon}\textrm{ and }\mathopen{}\left| AA\mathclose{}\right|\leq \mathopen{}\left| A\mathclose{}\right|^{2-c\epsilon}.$$
+:::
+
+Theorem [\[th-headline\]](#th-headline){reference-type="ref" reference="th-headline"} is an immediate consequence. This result should also be compared to the lower bound of Solymosi [@So09], who proved that for any $A\subset \mathbb{R}$ $$\label{eq-sol}
+\mathopen{}\left| A+A\mathclose{}\right|^2\mathopen{}\left| AA\mathclose{}\right|\geq \mathopen{}\left| A\mathclose{}\right|^{4-o(1)}.$$
+
+Using similar ideas we also obtain new lower bounds in a number of other related problems of a sum-product flavour, which we summarise below.

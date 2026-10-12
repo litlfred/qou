@@ -1,0 +1,376 @@
+\section{Stability of knot equivalence}\label{sec:stability}
+The equivalence of two tame knots $\g_1,\g_2\in C^0(\R/\Z,\R^3)$
+with local distortion below $g_3$ (or even below
+$\frac{\pi}{\sqrt{8}}$) at some positive scales, such that the knots 
+are sufficiently close in 
+terms of these scales, was stated in Corollary \ref{cor:equiv-knots}. This was a direct
+consequence of Theorem~\ref{thm:isomorphic} applied to the knots' images $M_i:=
+\g_i(\R/\Z)$, $i=1,2,$ in combination with Theorem~\ref{thm:gordon-luecke}. 
+We are going to apply Corollary \ref{cor:equiv-knots} now
+to a knot and a small Lipschitz perturbation of that knot to
+prove the Lipschitz stability of knot equivalence, i.e., 
+Corollary \ref{cor:lipschitz-stability}. For that we specify the local distortion
+at some scale $r>0$ as
+defined in \eqref{eq:local-distortion} in Definition \ref{def:local-distortion}
+to the image $M:=\eta(\R/\Z)$ of a knot $\eta\in C^0(\R/\Z,\R^n)$ by writing
+\begin{equation}\label{eq:local-distortion-knots}
+\delta(\eta,r)\equiv\delta(\eta(\R/\Z),r) 
+=\sup_{u,v\in\R/\Z, u\not= v\atop 0<|\eta(u)-\eta(v)|\le 2r}
+\frac{d_\eta\big(\eta(u),\eta(v)\big)}{|\eta(u)-\eta(v)|},
+\end{equation}
+where the intrinsic distance $d_\eta(\eta(u),\eta(v))$ reduces to the periodic 
+parameter distance $|u-v|_{\R/\Z}$ in case of arclength parametrized curves $\eta$.
+
+\begin{proof}[Proof of Corollary {\ref{cor:lipschitz-stability}}]
+By assumption there is a scale $r_\g\in(0,\tfrac12)$ such that $\delta(\g,r_\g)< g_3$ 
+(or even
+less than $\frac{\pi}{\sqrt{ 8 }}$.) Our aim is to show that for a given
+function $h\in C^{0,1}(\R/\Z,\R^3)$ the perturbed
+curve $\g_\epsilon=\g+\epsilon h$ has also local distortion
+$\delta(\g_\epsilon,\hat{r}_{\g})<g_3 $ at
+a (possibly smaller) scale $\hat{r}_\g>0$ independent of $0<|\epsilon|\ll 1$. Keeping
+that scale fixed we can then take $|\epsilon| $ so small 
+(depending on~$h$) that the $L^\infty$-distance
+is controlled in terms of the two scales $r_\g$ and $\hat{r}_\g$.
+
+To that extent consider $x,y\in [0,1]$ with $x<y$ 
+to estimate
+\begin{equation}\label{eq:euclid-eps}
+|\g_\epsilon(x)-\g_\epsilon(y)|=
+|\g(x)-\g(y)+\epsilon(h(x)-h(y))|\ge |\g(x)-\g(y)|-|\epsilon|\|h'\|_{L^\infty}(y-x).
+\end{equation}
+The intrinsic distance $d_{\g_\epsilon}(\g_\epsilon(x),\g_\epsilon(y))\equiv
+d_{\g_\epsilon}(x,y)$ on $\g_\epsilon$ may be compared
+to $d_\g(\g(x),\g(y))\equiv d_\g(x,y)$ on $\g$ by means of
+\begin{align}\label{eq:intrinsic-eps-prep}
+\textstyle
+\big|\int_x^y |\g_\epsilon'(u)|du & -
+\textstyle
+\int_x^y |\g'(u)|du\big|=
+\big|\int_x^y \big(|\g_\epsilon'(u)|-|\g'(u)|\big)du\big|\le\int_x^y
+\big| |\g_\epsilon'(u)|-|\g'(u)|\big|du\notag\\
+&\textstyle
+\le\int_x^y |\g_\epsilon'(u)-\g'(u)|du=
+\int_x^y|\epsilon h'(u)|du\le |\epsilon|\|h'\|_{L^\infty}(y-x),
+\end{align}
+% so that in case $0<y-x\le\frac13$ and with $\epsilon_1:=(2\|h'\|_{L^\infty}+1)^{-1}$
+% $$
+% \textstyle
+% \frac13\ge y-x=\int_x^y |\g'(u)|du\overset{\eqref{eq:intrinsic-eps-prep}}{\ge}
+% \int_x^y |\g_\epsilon'(u)|du -\frac{|\epsilon|}3 \|h'\|_{L^\infty}
+% >\int_x^y |\g_\epsilon'(u)|du-\frac16\Foa \epsilon\in [-\epsilon_1,\epsilon_1];
+% $$
+whence
+\begin{equation}\label{eq:intrinsic-eps}
+\textstyle
+d_{\g_\epsilon}(x,y)\le\int_x^y|\g_\epsilon'(u)|du
+\overset{\eqref{eq:intrinsic-eps-prep}}{\le}
+\int_x^y|\g'(u)|du+|\epsilon|\|h'\|_{L^\infty}(y-x)
+\le(y-x)(1+|\epsilon|\|h'\|_{L^\infty}).
+\end{equation}
+Without loss of generality we may assume that 
+$0< y-x\le\tfrac12$, so
+$d_\g(x,y) = y-x$.
+Combining \eqref{eq:euclid-eps} with \eqref{eq:intrinsic-eps} we deduce supposing
+ $|\g(x)-\g(y)|<2r_\g$
+\begin{align}
+\begin{split}\label{eq:distortion-eps}
+\textstyle\frac{d_{\g_\epsilon}(x,y)}{|\g_\epsilon(x)-\g_\epsilon(y)|}
+&  \overset{\eqref{eq:intrinsic-eps},\eqref{eq:euclid-eps}}{\le}
+\textstyle
+\frac{d_{\g}(x,y)(1+|\epsilon|\|h'\|_{L^\infty})}{|\g(x)-\g(y)|-
+|\epsilon|\|h'\|_{L^\infty}(y-x)}=
+ \frac{d_{\g}(x,y)(1+|\epsilon|\|h'\|_{L^\infty})}{|\g(x)-\g(y)|
+ \big(1-|\epsilon|\|h'\|_{L^\infty}\frac{d_\g(x,y)}{|\g(x)-\g(y)|}\big)} \\
+ & \le \textstyle
+ \delta(\g,r_\g)\cdot\frac{1+|\epsilon|\|h'\|_{L^\infty}}{
+ 1-|\epsilon|\|h'\|_{L^\infty}\delta(\g,r_\g)}<g_3,
+\end{split}
+\end{align}
+if
+\begin{equation}\label{eq:eps2}
+\textstyle
+|\epsilon|\le\epsilon_0:=\min\big\{\frac{g_3-\delta(\g,r_\g)}{\delta(\g,r_\g)(1+g_3)\|h'\|_{L^\infty}+1},\frac{r_\g}{\|h'\|_{L^\infty}+1}\big\}>0.
+% \min\big\{
+% \frac{g_3-\delta(\g,r_\g)}{g_3\|h'\|_{L^\infty}(1+g_3)+1},\frac1{g_3\|h'\|_{L^\infty}+1},
+% \epsilon_1\big\}.
+\end{equation}
+% For the second inequality in \eqref{eq:distortion-eps} we have also used the fact
+% that the
+% function $s\mapsto s(1+c)/(1-cs)$ is non-decreasing on $[0,\frac1{c})$ for any
+% constant $c\in (0,1)$.
+Consequently, if $|\g_\epsilon(x)-\g_\epsilon(y)|\le2\hat r_\g$ where $\hat r_\g=\tfrac12 r_\g$
+we infer
+$|\g(y)-\g(x)|\le 2r_\g$, so $\delta(\g_\epsilon,\hat{r}_\g)<g_3$
+for all $|\epsilon|\le\epsilon_0$
+due to \eqref{eq:distortion-eps} and
+\eqref{eq:eps2}.
+% For $y-x\in [\Delta_0,\frac12]$ we use that
+% $\sigma_\g:=\min\big\{|\g(y)-\g(x)|:\Delta_0\le d_\g(x,y)\big\}\in (0,\frac13]$,
+% since $\g$ is embedded. For $|\epsilon|\le\epsilon_3:=\frac{\sigma_\g}{\|h'\|_{L^\infty}+1}$ we obtain from \eqref{eq:euclid-eps}
+% \begin{equation}\label{eq:euclid-eps-global}
+% \textstyle
+% |\g_\epsilon(x)-\g_\epsilon(y)|\overset{\eqref{eq:euclid-eps}}{\ge}
+% \sigma_\g-|\epsilon|\|h'\|_{L^\infty}\frac12 >
+% \frac{\sigma_\g}2\Fo y-x\in [\Delta_0,\frac12].
+% \end{equation}
+% Combining all requirements on $|\epsilon|$ so far we set $\epsilon_4:=\min\{
+% \epsilon_2,\epsilon_3\}$ and $\hat{r}_\g:=\frac{\sigma_\g}4$, to obtain
+% $\delta(\g_\epsilon,\hat{r}_\g)<g_3$  
+% for all $|\epsilon|\le\epsilon_4$ due to \eqref{eq:distortion-eps} and
+% \eqref{eq:euclid-eps-global}.
+It is important to notice that the scale
+$\hat{r}_\g$ does \emph{not} depend on $\epsilon\in [-\epsilon_0,\epsilon_0]$.
+With $\|\g-\g_\epsilon\|_{L^\infty}=|\epsilon|\|h\|_{L^\infty}$ this allows
+us to choose
+\begin{equation}\label{eq:final-epsilon-choice}
+\textstyle
+\epsilon_{\g,h}:=\min\Big\{\epsilon_0,\frac{\hat{r}_\g}{8\|h \|_{
+L^\infty}+1}\Big\}
+<\frac14 \min\{r_\g,\hat{r}_\g\}
+\end{equation}
+to also satisfy the hypothesis on the $L^\infty$-distance in Corollary 
+\ref{cor:equiv-knots} to conclude that $\g\sim\g_\epsilon$ for all
+$|\epsilon|\le\epsilon_{\g,h}.$ In addition, $\essinf_{\R/\Z}|\g_\epsilon'|
+\ge\essinf_{\R/\Z}|\g'|-|\epsilon|\|h'\|_{L^\infty} > \frac12$
+for all $|\epsilon|\le\epsilon_{\g,h}$, since $\epsilon_{\g,h}\le\epsilon_0\le
+\tfrac12(\|h'\|_{L^\infty}+1)^{-1}$.
+\end{proof}
+
+% \noindent
+% {\it Proof of Corollary \ref{cor:lipschitz-stability}.}\,
+% By assumption there is a scale $r_\g>0$ such that $\delta(\g,r_\g)< g_3$ 
+% (or even
+% less than $\frac{\pi}{\sqrt{ 8 }}$.) Our aim is to show that for a given
+% function $h\in C^{0,1}(\R/\Z,\R^3)$ the perturbed
+% curve $\g_\epsilon=\g+\epsilon h$ has also local distortion
+% $\delta(\g_\epsilon,\hat{r}_{\g})<g_3 $ at
+% a (possibly smaller) scale $\hat{r}_\g>0$ independent of $0<|\epsilon|\ll 1$. Keeping
+% that scale fixed we can then take $|\epsilon| $ so small \philipp{(depending on~$h$)} that the $L^\infty$-distance
+% is controlled in terms of the two scales $r_\g$ and $\hat{r}_\g$.
+
+% To that extent consider $x,y\in [0,1]$ with $0<y-x\le 1$ to estimate
+% \begin{equation}\label{eq:euclid-eps}
+% |\g_\epsilon(x)-\g_\epsilon(y)|=
+% |\g(x)-\g(y)+\epsilon(h(x)-h(y))|\ge |\g(x)-\g(y)|-|\epsilon|\|h'\|_{L^\infty}(y-x).
+% \end{equation}
+% The intrinsic distance $d_{\g_\epsilon}(\g_\epsilon(x),\g_\epsilon(y))\equiv
+% d_{\g_\epsilon}(x,y)$ on $\g_\epsilon$ may be compared
+% to $d_\g(\g(x),\g(y))\equiv d_\g(x,y)$ on $\g$ by means of
+% \begin{align}\label{eq:intrinsic-eps-prep}
+% \textstyle
+% \big|\int_x^y |\g_\epsilon'(u)|du & -
+% \textstyle
+% \int_x^y |\g'(u)|du\big|=
+% \big|\int_x^y \big(|\g_\epsilon'(u)|-|\g'(u)|\big)du\big|\le\int_x^y
+% \big| |\g_\epsilon'(u)|-|\g'(u)|\big|du\notag\\
+% &\textstyle
+% \le\int_x^y |\g_\epsilon'(u)-\g'(u)|du=
+% \int_x^y|\epsilon h'(u)|du\le |\epsilon|\|h'\|_{L^\infty}(y-x),
+% \end{align}
+% so that in case $0<y-x\le\frac13$ and with $\epsilon_1:=(2\|h'\|_{L^\infty}+1)^{-1}$
+% $$
+% \textstyle
+% \frac13\ge y-x=\int_x^y |\g'(u)|du\overset{\eqref{eq:intrinsic-eps-prep}}{\ge}
+% \int_x^y |\g_\epsilon'(u)|du -\frac{|\epsilon|}3 \|h'\|_{L^\infty}
+% >\int_x^y |\g_\epsilon'(u)|du-\frac16\Foa \epsilon\in [-\epsilon_1,\epsilon_1];
+% $$
+% whence\phtodo{den ganzen Beweis nochmal checken}
+% \begin{equation}\label{eq:intrinsic-eps}
+% \textstyle
+% d_{\g_\epsilon}(x,y)\le\int_x^y|\g_\epsilon'(u)|du
+% \overset{\eqref{eq:intrinsic-eps-prep}}{\le}
+% \int_x^y|\g'(u)|du+|\epsilon|\|h'\|_{L^\infty}(y-x)
+% =d_\g(x,y)+|\epsilon|\|h'\|_{L^\infty}(y-x).
+% \end{equation}
+% Combining \eqref{eq:euclid-eps} with \eqref{eq:intrinsic-eps} we deduce
+% for $0<y-x<\Delta_0:=\min\{2r_\g,\frac13\}$ (so that $|\g(x)-\g(y)|<2r_\g$)
+% \begin{eqnarray}\label{eq:distortion-eps}
+% \textstyle\frac{d_{\g_\epsilon}(x,y)}{|\g_\epsilon(x)-\g_\epsilon(y)|}
+% &  \overset{\eqref{eq:intrinsic-eps},\eqref{eq:euclid-eps}}{\le}  & 
+% \textstyle
+% \frac{d_{\g}(x,y)+|\epsilon|\|h'\|_{L^\infty}(y-x)}{|\g(x)-\g(y)|-
+% |\epsilon|\|h'\|_{L^\infty}(y-x)}=
+%  \frac{d_{\g}(x,y)\big(1+|\epsilon|\|h'\|_{L^\infty}\big)}{|\g(x)-\g(y)|
+%  \big(1-|\epsilon|\|h'\|_{L^\infty}\frac{d_\g(x,y)}{|\g(x)-\g(y)|}\big)}\notag\\
+%  & \le & \textstyle
+%  \delta(\g,r_\g)\cdot\frac{1+|\epsilon|\|h'\|_{L^\infty}}{
+%  1-|\epsilon|\|h'\|_{L^\infty}\delta(\g,r_\g)}<g_3,
+% \end{eqnarray}
+% if
+% \begin{equation}\label{eq:eps2}
+% \textstyle
+% |\epsilon|\le\epsilon_2:=\min\big\{
+% \frac{g_3-\delta(\g,r_\g)}{g_3\|h'\|_{L^\infty}(1+g_3)+1},\frac1{g_3\|h'\|_{L^\infty}+1},
+% \epsilon_1\big\}.
+% \end{equation}
+% For the second inequality in \eqref{eq:distortion-eps} we have also used the fact
+% that the
+% function $s\mapsto s(1+c)/(1-cs)$ is non-decreasing on $[0,\frac1{c})$ for any
+% constant $c\in (0,1)$.
+
+% For $y-x\in [\Delta_0,\frac12]$ we use that
+% $\sigma_\g:=\min\big\{|\g(y)-\g(x)|:\Delta_0\le d_\g(x,y)\big\}\in (0,\frac13]$,
+% since $\g$ is embedded. For $|\epsilon|\le\epsilon_3:=\frac{\sigma_\g}{\|h'\|_{L^\infty}+1}$ we obtain from \eqref{eq:euclid-eps}
+% \begin{equation}\label{eq:euclid-eps-global}
+% \textstyle
+% |\g_\epsilon(x)-\g_\epsilon(y)|\overset{\eqref{eq:euclid-eps}}{\ge}
+% \sigma_\g-|\epsilon|\|h'\|_{L^\infty}\frac12 >
+% \frac{\sigma_\g}2\Fo y-x\in [\Delta_0,\frac12].
+% \end{equation}
+% Combining all requirements on $|\epsilon|$ so far we set $\epsilon_4:=\min\{
+% \epsilon_2,\epsilon_3\}$ and $\hat{r}_\g:=\frac{\sigma_\g}4$, to obtain
+% $\delta(\g_\epsilon,\hat{r}_\g)<g_3$  
+% for all $|\epsilon|\le\epsilon_4$ due to \eqref{eq:distortion-eps} and
+% \eqref{eq:euclid-eps-global}. It is important to notice that the scale
+% $\hat{r}_\g$ does \emph{not} depend on $\epsilon\in [-\epsilon_4,\epsilon_4]$.
+% With $\|\g-\g_\epsilon\|_{L^\infty}=|\epsilon|\|h\|_{L^\infty}$ this allows
+% us to choose
+% \begin{equation}\label{eq:final-epsilon-choice}
+% \textstyle
+% \epsilon_{\g,h}:=\min\Big\{\epsilon_4,\frac14 \min\{r_\g,\hat{r}_\g\}\cdot\frac1{\|h \|_{
+% L^\infty}+1}\Big\}
+% \end{equation}
+% to also satisfy the hypothesis on the $L^\infty$-distance in Corollary 
+% \ref{cor:equiv-knots} to conclude that $\g\sim\g_\epsilon$ for all
+% $|\epsilon|\le\epsilon_{\g,h}.$ In addition, $\essinf_{\R/\Z}|\g_\epsilon'|
+% \ge\essinf_{\R/\Z}|\g'|-|\epsilon|\|h'\|_{L^\infty} > \frac12$
+% for all $|\epsilon|\le\epsilon_{\g,h}$, since $\epsilon_{\g,h}\le\epsilon_1=
+% (2\|h'\|_{L^\infty}+1)^{-1}.$ \hfill $\Box$
+
+Before treating the stability of knot equivalence in the setting of
+fractional Sobolev regularity let us point out that bounding  the
+bilipschitz constant\footnote{\label{foot:bilip}In \cite{freedman-etal_1994} a bilipschitz constant
+is defined as any number $L>0$ such that $L^{-1}d_\gamma(u,v)|\le|\gamma(u)-\gamma(v)|\le Ld_\gamma(u,v)$
+holds for all $u,v\in\R/\Z$.
+If $\gamma$ is parametrized by arclength then the infimum of those $L$
+is $\bilip_I(\g)^{-1}$.}
+\begin{equation}\label{eq:def-bilip}
+\bilip_I(\g):=\inf_{\substack{u,v\in I\\u\ne v}}\frac{|\g(u)-\g(v)|}{|u-v|_{\R/\Z}}
+\end{equation}
+on an interval $I\subset\R$ from below, is closely related to
+controlling the local distortion $\delta(\g,\cdot)$ at some
+scale related to $I$, if the absolutely continuous parametrization $\g$
+has positive
+speed $v_\g=\essinf_{\R/\Z}|\g'|$, i.e., if $\g$ is an immersed curve.
+
+The seminorm $\lfloor \g'\rfloor $ defining fractional Sobolev spaces allows us to bound
+$\bilip(\g)$ as  in the following lemma, which is essentially contained
+in \cite[Lemma 2.1]{blatt_2012a}; see also \cite[Lemma 2.1]{blatt-etal_2024}.
+
+
+\begin{lemma}\label{lem:seminorm-bilip}
+Let $I\subset\R$ be an interval and $\g:I\to\R^n$ an absolutely continuous
+immersed curve with positive speed $v_\g=\essinf_{I}|\g'|$. 
+Then one has for all $s,t\in I$ with $s<t$
+\begin{equation}\label{eq:seminorm-bilip}
+|\g(t)-\g(s)|^2\ge\Big\{v_\g^2-\frac12\int_s^t\int_s^t\frac{|\g'(u)-\g'(v)|^2}{|u-v|^2}dudv\Big\}|t-s|^2.
+\end{equation}
+\end{lemma}
+As an immediate consequence one deduces
+\begin{corollary}[Fractional seminorm controls bilipschitz constant]
+\label{cor:seminorm-bilip}
+If $\g\in W^{\frac32, 2}(I,\R^n)$ is arclength parametrized, then
+\begin{equation}\label{eq:seminorm-bilip2}
+|\g(t)-\g(s)|^2\ge\big(1-\frac12 \lfloor\g'\rfloor^2_{\frac12,2,I}\big)|t-s|^2\quad\Foa
+s,t\in I.
+\end{equation}
+\end{corollary}
+%\noindent
+\begin{proof}[Proof of Lemma {\ref{lem:seminorm-bilip}}]
+%{\it Proof of Lemma \ref{lem:seminorm-bilip}.}\,
+For parameters $s,t\in I$ with $s<t$ estimate
+\begin{gather*}
+|\g(s) -\g(t)|^2  
+\textstyle
+= \int_s^t\int_s^t\langle\g'(\sigma),\g'(\tau)\rangle_{\R^n}d\sigma 
+d\tau
+ \textstyle
+= \frac12  \int_s^t\int_s^t \big(
+|\g'(\tau)|^2+
+|\g'(\sigma)|^2-|\g'(\tau)-\g'(\sigma)|^2\big)d\sigma d\tau\\
+\textstyle
+\ge v_\g^2|t-s|^2-\frac12\int_s^t\int_s^t|\g'(\tau)-\g'(\sigma)|^2d\sigma d\tau
+\ge\textstyle
+|t-s|^2\big\{v_\g^2-\frac12\int_s^t\int_s^t
+\frac{|\g'(\tau)-\g'(\sigma)|^2}{|\tau-\sigma|^2}d\sigma d\tau\big\}.\qedhere
+\end{gather*}
+%\hfill $\Box$
+\end{proof}
+
+We observe in \eqref{eq:seminorm-bilip2} that a small fractional seminorm
+yields a bilipschitz  estimate, which is the key ingredient for the proof 
+of the fractional stability of knot equivalence.
+
+\noindent
+{\it Proof of Corollary \ref{cor:fractional-stability}.}\,
+%For the dimension-dependent constant $g_n$ from  \eqref{eq:dekster-jung}, 
+%in 
+%particular for $g_3=\frac{\sqrt{32}}{\sqrt{27}}\frac{\pi}{\sqrt{8}}\in 
+%(\frac2{\sqrt{3}},\frac{\pi}2)$ in 
+%Remark \ref{rem:dimension-constant}, set
+%$$
+%c_3:=\sqrt{2-\frac2{g_3^2}}=\sqrt{2-\frac{27}{2\pi^2}}\in \Big(\sqrt{\frac12},1\Big).
+%$$
+Due to the absolute continuity of the double integral defining the
+fractional seminorm there is a radius $\rho=\rho(\g)\in (0,\frac14]$  such
+that $\sup_{x\in\R/\Z}\lfloor \g'\rfloor_{\frac12,2,B_\rho(x)} <\frac1{2\sqrt{2}}.$
+Therefore,
+\begin{equation}\label{eq:eta-seminorm}
+\textstyle
+\sup_{x\in\R/\Z}\lfloor \eta' \rfloor_{\frac12,2,B_\rho(x)}
+\le
+\sup_{x\in\R/\Z}\lfloor \g' \rfloor_{\frac12,2,B_\rho(x)}+\lfloor
+\eta'-\g' \rfloor_{\frac12,2} < \frac1{\sqrt{2}}
+\end{equation}
+for all $\eta \in B_{\frac1{2\sqrt{2}}}(\g)\subset W^{\frac32,2}(\R/\Z,\R^3)$. By
+means of Corollary \ref{cor:seminorm-bilip} we infer
+\begin{equation}\label{eq:bilip-gamma-eta}
+\textstyle
+\min\big\{|\g(t)-\g(s)|,|\eta(t)-\eta(s)|\big\}>\frac{\sqrt{3}}2 
+|t-s|\ge\frac{\sqrt{3}}2 d_\g(t,s)
+=\frac{\sqrt{3}}2 d_\eta(t,s)
+\end{equation}
+for all arclength parametrized curves $\eta\in B_{\frac1{2\sqrt{2}}}(\g)\subset
+W^{\frac32,2}(\R/\Z,\R^3)$ and all parameters $s,t\in\R/\Z$ with
+intrinsic distance $d_\g(t,s)\equiv d_\g(\g(s),\g(t))=|t-s|_{\R/\Z}=
+d_\eta(\eta(s),\eta(t))\equiv d_\eta(t,s)<2\rho.$
+
+On the other hand,
+$$
+\textstyle
+\sigma_\g:=
+\inf\{|\g(t)-\g(s)|:d_\g(s,t)=|t-s|_{\R/\Z}\ge 2\rho\}\in (0,\frac12].
+$$
+By Sobolev embedding there is a constant $C_E$ such that $\|\zeta\|_{L^\infty}
+\le C_E\|\zeta\|_{W^{\frac32,2}}$ for all $\zeta\in W^{\frac32,2}(\R/\Z,\R^3)$,
+so that
+\begin{equation}\label{eq:infty-distance-eta-gamma}
+\textstyle
+\|\eta-\gamma\|_{L^\infty}< \frac{\sigma_\g}{16}\quad\Foa\eta\in B_{\epsilon_\g}(\g)
+\subset W^{\frac32,2}(\R/\Z,\R^3),
+\end{equation}
+where we have set $\epsilon_\g:=\min\{\frac1{2\sqrt{2}},\frac{\sigma_\g}{16C_E}\}$.
+Therefore, for all $s,t\in\R/\Z$ with $d_\g(s,t)=d_\eta(s,t)
+\ge 2\rho$ one has
+\begin{equation}\label{eq:euclid-eta-gamma-global}
+\textstyle
+\min\big\{|\g(t)-\g(s)|,|\eta(t)-\eta(s)|\big\}>\frac{7}{8}\sigma_\g
+>\frac{1}{2}\sigma_\g.
+\end{equation}
+Defining the common scale $r_{\g}:=\frac{\sigma_\g}4$ we find in view of 
+\eqref{eq:bilip-gamma-eta} and \eqref{eq:euclid-eta-gamma-global}
+\begin{equation}\label{eq:max-eta-gamma-distortion}
+\textstyle
+\max\big\{\delta(\g,r_\g),\delta(\eta,r_\g)\big\}\le\frac{2}{\sqrt{3}}<g_3
+\end{equation}
+for all arclength parametrized curves $\eta\in B_{\epsilon_\g}(\g)\subset
+W^{\frac32,2}(\R/\Z,\R^3)$, since 
+$g_3=\frac{\sqrt{32}}{\sqrt{27}}\frac{\pi}{\sqrt{8}}\in 
+(\frac2{\sqrt{3}},\frac{\pi}2)$.
+Inequality \eqref{eq:infty-distance-eta-gamma} allows us to apply
+Corollary \ref{cor:equiv-knots} to conclude. Notice that we also used
+the fact that arclength parametrized $W^{\frac32,2}$-knots have finite
+M\"obius energy according to \cite[Theorem~1.1]{blatt_2012a}, and
+are therefore tame \cite[Theorem~4.1]{freedman-etal_1994}, which is needed
+in Corollary \ref{cor:equiv-knots}.\hfill $\Box$

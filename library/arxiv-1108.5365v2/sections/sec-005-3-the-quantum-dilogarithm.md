@@ -8,160 +8,94 @@ pages: 16-19
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+text_source: latex
+latex_prose_ratio: 0.94
+latex_coverage_ratio: 0.952
 ---
-We recall the deﬁnition of the quantum dilogarithm given in [14] (see als o [2]), an
-important special function that will be used throughout the paper .
-3.1 Deﬁnition and properties
-Throughout this section, we let q =eπib2
-whereb2∈ R\ Q and 0 <b 2< 1, so that
-|q| = 1. We also denote Q =b +b−1.
-Let ω := (w1,w 2)∈ C2.
-Deﬁnition 3.1. The Double Zeta function is deﬁned as
-ζ2(s,z|ω) :=
-∑
-m1,m2∈Z≥0
-(z +m1w1 +m2w2)−s. (3.1)
-16
-The Double Gamma function is deﬁned as
-Γ 2(z|ω) := exp
-( ∂
-∂sζ2(s,z|ω)|s=0
-)
-. (3.2)
+\label{sec:QDilog}
+We recall the definition of the quantum dilogarithm given in \cite{Ip} (see also \cite{BT}), an important special function that will be used throughout the paper.
+
+
+\subsection{Definition and properties}\label{sec:QDilog:Def}
+Throughout this section, we let $q=e^{\pi i b^2}$ where $b^2\in \R\setminus\Q$ and $0<b^2<1$, so that $|q|=1$. We also denote $Q=b+b\inv$.
+
+Let $\w:=(w_1,w_2)\in\C^2$.
+
+\begin{Def}The Double Zeta function is defined as
+\Eq{\ze_2(s,z|\w):=\sum_{m_1,m_2\in\Z_{\geq0}}(z+m_1w_1+m_2w_2)^{-s}.}
+
+The Double Gamma function is defined as
+\Eq{\G_2(z|\w):=\exp\left(\frac{\partial}{\partial
+s}\ze_2(s,z|\w)|_{s=0}\right).}
+
 Let
-Γ b(x) := Γ 2(x|b,b −1). (3.3)
-The Quantum Dilogarithm is deﬁned as the function:
-Sb(x) := Γ b(x)
-Γ b(Q−x). (3.4)
-The following form is often useful, and will be used througho ut this paper:
-Gb(x) := e
-πi
-2 x(x−Q)Sb(x). (3.5)
-Let us also relate Gb to another well-known expression by Ruijsenaars [36]
-Lemma 3.2.
-Gb(z) = G(b,b −1;iz− iQ
-2 )e
-πi
-2 z(z−Q), (3.6)
+\Eq{\G_b(x):=\G_2(x|b,b\inv).}
+
+The Quantum Dilogarithm is defined as the function:
+\Eq{S_b(x):=\frac{\G_b(x)}{\G_b(Q-x)}.}
+
+The following form is often useful, and will be used throughout
+this paper: \Eq{G_b(x):=e^{\frac{\pi i}{2}x(x-Q)}S_b(x).}
+\end{Def}
+
+Let us also relate $G_b$ to another well-known expression by Ruijsenaars \cite{Ru}
+\begin{Lem}\label{GbG}
+\Eq{G_b(z)=G(b,b\inv;iz-\frac{iQ}{2})e^{\frac{\pi i}{2}z(z-Q)},}
 where
-G(a+,a −;z) := exp
-(
-i
-∫ ∞
-0
-dy
-y
-( sin 2yz
-2 sinh(a+y) sinh(a−y)− z
-a+a−y
-))
-(3.7)
-with|Im(z)| < (a+ +a−)/2 and extends meromorphically to the whole complex
-plane.
-The quantum dilogarithm satisﬁes the following properties:
-Proposition 3.3. Self-Duality:
-Sb(x) = Sb−1(x), G b(x) = Gb−1 (x); (3.8)
-Functional equations:
-Sb(x +b±1) = 2 sin(πb±1x)Sb(x), G b(x +b±1) = (1−e2πib±1x)Gb(x); (3.9)
-Reﬂection property:
-Sb(x)Sb(Q−x) = 1, G b(x)Gb(Q−x) = eπix(x−Q); (3.10)
-Complex Conjugation:
-Sb(x) = 1
-Sb(Q−x), Gb(x) = 1
-Gb(Q− ¯x), (3.11)
-17
-in particular
-⏐
-⏐
-⏐
-⏐Sb(Q
-2 +ix)
-⏐
-⏐
-⏐
-⏐ =
-⏐
-⏐
-⏐
-⏐Gb(Q
-2 +ix)
-⏐
-⏐
-⏐
-⏐ = 1 for x∈ R; (3.12)
+\Eq{G(a_+,a_-;z):=\exp\left(i\int_0^\oo \frac{dy}{y}\left(\frac{\sin 2yz}{2\sinh(a_+y)\sinh(a_-y)}-\frac{z}{a_+a_-y}\right)\right)}
+with $|Im(z)|<(a_++a_-)/2$ and extends meromorphically to the whole complex plane.
+\end{Lem}
+
+The quantum dilogarithm satisfies the following properties:
+\begin{Prop} Self-Duality:
+\Eq{S_b(x)=S_{b\inv}(x),\tab G_b(x)=G_{b\inv}(x);}
+
+Functional equations: \Eq{\label{funceq}S_b(x+b^{\pm1})=2\sin(\pi
+b^{\pm1}x)S_b(x),\tab G_b(x+b^{\pm 1})=(1-e^{2\pi ib^{\pm 1}x})G_b(x);}
+
+Reflection property:
+\Eq{\label{reflection}S_b(x)S_b(Q-x)=1,\tab G_b(x)G_b(Q-x)=e^{\pi ix(x-Q)};}
+
+Complex Conjugation: \Eq{\overline{S_b(x)}=\frac{1}{S_b(Q-\over[x])},\tab \overline{G_b(x)}=\frac{1}{G_b(Q-\bar{x})},}
+in particular \Eq{\label{gb1}\left|S_b(\frac{Q}{2}+ix)\right|=\left|G_b(\frac{Q}{2}+ix)\right|=1 \mbox{ for $x\in\R$};}
+
 Analyticity:
-Sb(x) and Gb(x) are meromorphic functions with poles at x =−nb−mb−1 and
-zeros at x =Q +nb +mb−1, for n,m∈ Z≥0;
-Asymptotic Properties:
-Gb(x)∼
-{ ¯ζb Im(x)−→ +∞
-ζbeπix(x−Q) Im(x)−→−∞ , (3.13)
+
+$S_b(x)$ and $G_b(x)$ are meromorphic functions with poles at
+$x=-nb-mb\inv$ and zeros at $x=Q+nb+mb\inv$, for $n,m\in\Z_{\geq0}$;
+
+\label{asymp} Asymptotic Properties:
+\Eq{G_b(x)\sim\left\{\begin{array}{cc}\bar{\ze_b}&Im(x)\to+\oo\\\ze_b
+e^{\pi ix(x-Q)}&Im(x)\to-\oo\end{array},\right.}
 where
-ζb =e
-πi
-4 + πi
-12 (b2+b−2); (3.14)
-Residues:
-lim
-x− →0
-xGb(x) = 1
-2π, (3.15)
-or more generally,
-Res 1
-Gb(Q +z) =− 1
-2π
-n∏
-k=1
-(1−q2k)−1
-m∏
-l=1
-(1−~q2l)−1 (3.16)
-at z =nb +mb−1,n,m ∈ Z≥0 and ~q =eπib−2
-.
-From the asymptotic properties, we have the following useful coro llary that is
-needed when we deal with interchanging of order of integrations:
-Corollary 3.4. For s,t ∈ C,x ∈ R, the asymptotic behavior of the ratio is given
-by
-⏐
-⏐
-⏐
-⏐
-Gb(s +ix)
-Gb(t +ix)
-⏐
-⏐
-⏐
-⏐∼
-{ 1 x−→ +∞
-e2πxRe(t−s) x−→−∞ . (3.17)
-By analytic continuation in b, there exists a classical limit for Gb(x) given in
-[14]:
-Theorem 3.5. Forq =eπib2
-, by letting b2−→i0+ we have
-lim
-b− →0
-Gb(bx)
-√−i|b|(1−q2)x−1 = Γ(x), (3.18)
-where√−i =e− πi
-4 and− π
-2 < arg(1−q2)< π
-2 . The limit converges uniformly for
-any compact set in C.
-18
-We will also need another important variant of the quantum dilogarith m func-
-tion:
-gb(x) :=
-¯ζb
-Gb( Q
-2 + 1
-2πib logx)
-, (3.19)
-where|gb(x)| = 1 when x∈ R>0 due to (3.12).
-Lemma 3.6. Letu,v be self-adjoint operators with uv =q2vu, q =eπib2
-. Then
-gb(u)gb(v) = gb(u +v), (3.20)
-gb(v)gb(u) = gb(u)gb(q−1uv)gb(v). (3.21)
-(3.20) and (3.21) are often referred to as the quantum exponent ial and the
-quantum pentagon relations, which follows from the other propert ies:
-gb(u)∗vgb(u) = q−1uv +v, (3.22)
-gb(v)ugb(v)∗ =u +q−1uv. (3.23)
+\Eq{\ze_b=e^{\frac{\pi i}{4}+\frac{\pi i}{12}(b^2+b^{-2})};}
+
+\label{residue} Residues:
+\Eq{\lim_{x\to 0} xG_b(x)=\frac{1}{2\pi},} or more generally,
+\Eq{Res\frac{1}{G_b(Q+z)}=-\frac{1}{2\pi}\prod_{k=1}^n(1-q^{2k})\inv\prod_{l=1}^m(1-\widetilde{q}^{2l})\inv}
+at $z=nb+mb\inv, n,m\in\Z_{\geq0}$ and $\widetilde{q}=e^{\pi i
+b^{-2}}$.
+\end{Prop}
+
+From the asymptotic properties, we have the following useful corollary that is needed when we deal with interchanging of order of integrations:
+\begin{Cor} \label{asymp} For $s,t\in\C, x\in\R$, the asymptotic behavior of the ratio is given by
+\Eq{\left|\frac{G_b(s+ix)}{G_b(t+ix)}\right|\sim\left\{\begin{array}{cc}1&x\to+\oo\\e^{2\pi x Re(t-s)}&x\to-\oo\end{array}.\right.}
+\end{Cor}
+
+By analytic continuation in $b$, there exists a classical limit for $G_b(x)$ given in \cite{Ip}:
+\begin{Thm}\label{classicallimit} For $q=e^{\pi ib^2}$, by letting $b^2\to i0^+$ we have
+\Eq{\lim_{b\to 0} \frac{G_b(bx)}{\sqrt{-i}|b|(1-q^2)^{x-1}}=\G(x),}
+where $\sqrt{-i}=e^{-\frac{\pi i}{4}}$ and $-\frac{\pi}{2}<\arg(1-q^2)<\frac{\pi}{2}$. The limit converges uniformly for any compact set in $\C$.
+\end{Thm}
+
+We will also need another important variant of the quantum dilogarithm function:
+\Eq{g_b(x):=\frac{\bar{\ze_b}}{G_b(\frac{Q}{2}+\frac{1}{2\pi i b}\log x)},}
+where $|g_b(x)|=1$ when $x\in\R_{>0}$ due to \eqref{gb1}.
+\begin{Lem} Let $u, v$ be self-adjoint operators with $uv=q^2vu$, $q=e^{\pi i b^2}$. Then
+\Eq{\label{qexp}g_b(u)g_b(v)=g_b(u+v),}
+\Eq{\label{qpenta}g_b(v)g_b(u)=g_b(u)g_b(q\inv uv)g_b(v).}
+\end{Lem}
+
+\eqref{qexp} and \eqref{qpenta} are often referred to as the quantum exponential and the quantum pentagon relations, which follows from the other properties:
+\Eq{\label{qsum1}g_b(u)^*vg_b(u) = q\inv uv+v,}
+\Eq{\label{qsum2}g_b(v)ug_b(v)^*=u+q\inv uv.}

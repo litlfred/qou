@@ -39,7 +39,7 @@ without failing.
 
 WHAT THIS FOUND ON ITS FIRST RUN — the value of grouping by directory
 --------------------------------------------------------------------
-Run 36267907685 reported every miss under one directory: `docs/audits/_deprecated/`,
+Run 36267907685 reported every miss under one directory: `fsh-guts/deprecated/docs/audits/`,
 which holds **exactly the 65** files the page count was short. Jekyll skips any
 underscore-prefixed directory at ANY depth, and `docs/_config.yml` listed only
 `_archive` under `include:`. A page count could never have said that; a per-source

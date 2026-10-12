@@ -8,121 +8,60 @@ pages: 85-87
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+text_source: latex
+latex_prose_ratio: 0.946
+latex_coverage_ratio: 1.0
 ---
+\label{sec:regular:right}
 Similarly by applying the pairing to the right regular corepresentation we obtain
-Theorem 8.14. The right regular corepresentation is equivalent to
-L2(R,ds 1)⊗
-∫
-R
-∫ ⊕
-R+
-Pλ,−s2/2|Sb(Q + 2iλ)|2dλds2.
-Proof. We apply the pairing to (7.73) and get
-K0 = e−πb s2
-2 ,
-K = eπbt2,
-E = (−iq1/2)(−q2)e−πiQb
-1−q2 e
-πb
-2 s2e−πbt2
-(
-eπb(2t1+2t2)e2πb(−pt1 +pt2 )+
-Gb( Q
-2−it1−it2)Gb( Q
-2 +it1−it2)
-Gb( Q
-2−it1−it2−b)Gb( Q
-2 +it1−it2−b)
-e2πbpt2
-)
-= i
-q−q−1e
-πb
-2 s2e−πbt2
-(
-eπb(−2pt1 +2t1+2pt2 +t2)+
-q1/2(1 +q−1e2πb(t1+t2))(1 +q−1e2πb(−t1+t2))e2πbpt2
-)
-85
-= i
-q−q−1e
-πb
-2 s2
-(
-eπb(2pt2 −t2) +eπb(2pt2 +3t2) + (e2πbt1 +e−2πbt1 +eπb(−2pt1 +2t1))eπb(2pt2 +t2)
-)
-,
-F = iq−1/2eπiQb
-1−q2 e
-πb
-2 s2+πbt2e−2πbt2−πbs2e−2πbpt2
-= i
-q−q−1e− πb
-2 s2e−πb(t2+2pt2 ).
-Again by shifting pt1↦→pt1 +t1 as in the left representation, the action of E
-becomes
-E = i
-q−q−1e
-πb
-2 s2
-(
-eπb(2pt2 −t2) +eπb(2pt2 +3t2) + Ceπb(2pt2 −t2)
-)
-.
-Hence under the unitary transformation Φ, E becomes
-E = i
-q−q−1e
-πb
-2 s2
-(
-eπb(2pt2 −t2) +eπb(2pt2 +3t2) + (e2πbλ +e−2πbλ)eπb(2pt2 −t2)
-)
-.
-Finally, the remaining transformation used in the left regular repres entation
-doesn’t change these actions. In exactly the same way if we apply:
-multiplication by G b(Q
-2 +iλ−it2)−1,
-◦t2↦→−t2 : t2↦→−t2,p t2↦→−pt2,
-◦e−πit2λ : pλ↦→pλ− t2
-2,p t2↦→pt2− λ
-2,
-◦e− πi
-2 s2t2 : ps2↦→ps2 + t2
-4,p t2↦→pt2 + s2
-4 ,
+\begin{Thm}\label{ThmRight} The right regular corepresentation is equivalent to $$ L^2(\R, ds_1)\ox\int_\R\int_{\R^+}^\o+ \cP_{\l,-s_2/2}|S_b(Q+2i\l)|^2d\l ds_2.$$
+\end{Thm}
+\begin{proof} We apply the pairing to \eqref{rightcorep} and get
+{
+\allowdisplaybreaks
+\begin{eqnarray*}
+K_0&=& e^{-\pi b\frac{s_2}{2}},\\
+K&=&e^{\pi bt_2},\\
+E&=&\frac{(-iq^{1/2})(-q^2)e^{-\pi iQb}}{1-q^2} e^{\frac{\pi b}{2}s_2}e^{-\pi bt_2}\left( e^{\pi b(2t_1+2t_2)}e^{2\pi b(-p_{t_1}+p_{t_2})}+\right.\\
+&&\left. \frac{G_b(\frac{Q}{2}-it_1-it_2)G_b(\frac{Q}{2}+it_1-it_2)}{G_b(\frac{Q}{2}-it_1-it_2-b)G_b(\frac{Q}{2}+it_1-it_2-b)}e^{2\pi bp_{t_2}}\right)\\
+&=&\frac{i}{q-q\inv}e^{\frac{\pi b}{2}s_2}e^{-\pi bt_2}\left(e^{\pi b(-2p_{t_1}+2t_1+2p_{t_2}+t_2)}+\right.\\
+&&\left.q^{1/2}(1+q\inv e^{2\pi b(t_1+t_2)})(1+q\inv e^{2\pi b(-t_1+t_2)})e^{2\pi b p_{t_2}}\right)\\
+&=&\frac{i}{q-q\inv}e^{\frac{\pi b}{2}s_2}\left(e^{\pi b(2p_{t_2}-t_2)}+e^{\pi b(2p_{t_2}+3t_2)}+(e^{2\pi b t_1}+e^{-2\pi bt_1}+e^{\pi b(-2p_{t_1}+2t_1)})e^{\pi b(2p_{t_2}+t_2)}\right),\\\\
+F&=&\frac{iq^{-1/2}e^{\pi iQb}}{1-q^2}e^{\frac{\pi b}{2}s_2+\pi bt_2}e^{-2\pi bt_2-\pi bs_2}e^{-2\pi bp_{t_2}}\\
+&=&\frac{i}{q-q\inv}e^{-\frac{\pi b}{2}s_2}e^{-\pi b(t_2+2p_{t_2})}.\\
+\end{eqnarray*}
+}
+
+Again by shifting $p_{t_1}\mapsto p_{t_1}+t_1$ as in the left representation, the action of $E$ becomes
+$$E=\frac{i}{q-q\inv}e^{\frac{\pi b}{2}s_2}\left(e^{\pi b(2p_{t_2}-t_2)}+e^{\pi b(2p_{t_2}+3t_2)}+\bC e^{\pi b(2p_{t_2}-t_2)}\right).$$
+
+Hence under the unitary transformation $\Phi$, $E$ becomes
+$$E=\frac{i}{q-q\inv}e^{\frac{\pi b}{2}s_2}\left(e^{\pi b(2p_{t_2}-t_2)}+e^{\pi b(2p_{t_2}+3t_2)}+(e^{2\pi b\l}+e^{-2\pi b\l}) e^{\pi b(2p_{t_2}-t_2)}\right).$$
+
+Finally, the remaining transformation used in the left regular representation doesn't change these actions.
+In exactly the same way if we apply:
+\begin{eqnarray*}
+multiplication&by& G_b(\frac{Q}{2}+i\l-it_2)\inv,\\
+\circ t_2\mapsto -t_2&:& t_2\mapsto -t_2, p_{t_2}\mapsto -p_{t_2},\\
+\circ e^{-\pi it_2 \l}&:& p_{\l}\mapsto p_{\l}-\frac{t_2}{2},p_{t_2}\mapsto p_{t_2}-\frac{\l}{2},\\
+\circ e^{-\frac{\pi i}{2} s_2t_2}&:&p_{s_2}\mapsto p_{s_2}+\frac{t_2}{4},p_{t_2}\mapsto p_{t_2}+\frac{s_2}{4},\\
+\end{eqnarray*}
 that does not change the left representation either, it becomes:
-K0 = e−πb s2
-2
-K = e−πbt2
-E = i
-q−q−1 (q
-1
-2eπb(t2−λ) +q− 1
-2e−πb(t2−λ))e−2πbpt2
-= [ Q
-2b− i
-b (t2−λ)]qe−2πbpt2
-F = i
-q−q−1 (q− 1
-2eπb(t2+λ) +q
-1
-2e−πb(t2+λ))e2πbpt2
-= [ Q
-2b + i
-b (t2 +λ)]qe2πbpt2
-which is precisely the representation denoted by Pλ,−s2/2.
-86
-Combining Theorem 8.11 and 8.14, and note that all the transformat ions used
-are unitary, we conclude the main theorem:
-Theorem 8.15. As a representation of Uq(gl(2, R))L⊗Uq(gl(2, R))R,
-L2(GL+
-q (2, R))≃
-∫ ⊕
-R
-∫ ⊕
-R+
-Pλ,s⊗P λ,−s|Sb(Q + 2iλ)|2dλds (8.21)
+\begin{eqnarray*}
+K_0&=& e^{-\pi b\frac{s_2}{2}}\\
+K&=&e^{-\pi bt_2}\\
+E&=&\frac{i}{q-q\inv}(q^{\frac{1}{2}}e^{\pi b(t_2-\l)}+q^{-\frac{1}{2}}e^{-\pi b(t_2-\l)})e^{-2\pi bp_{t_2}}\\
+&=&[\frac{Q}{2b}-\frac{i}{b}(t_2-\l)]_q e^{-2\pi bp_{t_2}}\\
+F&=&\frac{i}{q-q\inv}(q^{-\frac{1}{2}}e^{\pi b(t_2+\l)}+q^{\frac{1}{2}}e^{-\pi b(t_2+\l)})e^{2\pi bp_{t_2}}\\
+&=&[\frac{Q}{2b}+\frac{i}{b}(t_2+\l)]_q e^{2\pi bp_{t_2}}\\
+\end{eqnarray*}
+which is precisely the representation denoted by $\cP_{\l, -s_2/2}$.
+\end{proof}
+
+
+Combining Theorem \ref{ThmLeft} and \ref{ThmRight}, and note that all the transformations used are unitary, we conclude the main theorem:
+\begin{Thm} \label{main} As a representation of $U_q(\gl(2,\R))_L \ox U_q(\gl(2,\R))_R$, 
+\Eq{L^2(GL_q^+(2,\R))\simeq \int_\R^\o+\int_{\R^+}^\o+ \cP_{\l,s}\ox \cP_{\l,-s} |S_b(Q+2i\l)|^2 d\l ds}
 and the equivalence is unitary.
-In particular, we proved Ponsot-Teschner’s claim in [31] for Uq(sl(2, R)) by set-
-ting s2 = 0 which corresponds to the determinant element N =A ˆA, as well as the
-action of the central element K0.
+\end{Thm}
+In particular, we proved Ponsot-Teschner's claim in \cite{PT1} for $U_q(\sl(2,\R))$ by setting $s_2=0$ which corresponds to the determinant element $N=A\hat{A}$, as well as the action of the central element $K_0$.

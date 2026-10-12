@@ -1,0 +1,27 @@
+{
+ "url": "https://arxiv.org/e-print/physics/0203048v1",
+ "content_type": "application/gzip",
+ "sha256": "9462a9112ca59e80e347f71a186d4c77600fc3d7be53a8791f6fd6473a028859",
+ "bytes": 243815,
+ "fetched": "2026-10-10T15:32:12+00:00",
+ "files": [
+  {
+   "path": "files/iopams.sty",
+   "role": "sty",
+   "sha256": "37f26a4791895ea856533d51123967a5b328ae0773996af0cc172b3e264d2777",
+   "bytes": 3139
+  },
+  {
+   "path": "files/iopart.cls",
+   "role": "cls",
+   "sha256": "3f05d7a7dcba7040fdebaea7416c731e8ea028e4f271eb80c53fa625ba854edb",
+   "bytes": 36611
+  },
+  {
+   "path": "files/third-order-invariant.tex",
+   "role": "tex",
+   "sha256": "64a221156d3a3a80091c06345f2a151a733330aa553839b8cd2c91e48da7e3ee",
+   "bytes": 53588
+  }
+ ]
+}

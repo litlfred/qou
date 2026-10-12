@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s00453-026-01372-w/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Algorithmica (2026) 88:21 Concentration of Submodular Functions and Read-k Families Under Negative Dependence Sharmila Duppala 1 · George Z. Li 2 · Juan Luque 1 · Aravind Srinivasan 1 ·",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00453-026-01372-w/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
   "contains": [
     "library/s00453-026-01372-w/sections/sec-000",
     "library/s00453-026-01372-w/sections/sec-001",
@@ -19,8 +24,11 @@
     "library/s00453-026-01372-w/sections/sec-010"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "s00453-026-01372-w",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "s00453-026-01372-w.pdf",
     "source_sha256": "98b569eff84fb4893f38795b1c75a726a05d418f31ee2115852f3314572e0680",
     "pages": 19,

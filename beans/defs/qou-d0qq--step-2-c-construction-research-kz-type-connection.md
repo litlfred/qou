@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T08:13:53Z
-updated_at: 2026-10-04T15:13:59Z
+updated_at: 2026-10-11T06:39:37Z
 parent: qou-wp3h
 ---
 
@@ -64,3 +64,11 @@ conj:hecke-monodromy-step-two §'What remains conjectural' now carries the secon
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-10-10 — now also gates the continuous mass identity (qou-ywyq)
+The discrete mass identity tr_M(β) = (1+q²)^{-n}·Tr(K^{⊗n}·Hol(β)) is proved (QOU.Torsion.MassTraceMarkov, PR #7632). Promoting Hol to a continuous KZ holonomy at the real pin q₀ needs the imaginary level this bean studies; the real-level route is pruned (qou-74ip). Cross-link only; no new work done here.
+
+## 2026-10-11 — Drinfeld–Kohno holds at the real pin; what remains is the framework connection
+Kohno 1987 Remark 1.3.14 (library/kohno1987-aif, p.150): Theorem 1.2.8 holds at any complex coupling λ for which the R-side images φ(γ_k), γ_k=(σ1…σ_{k−1})^k, are diagonalizable, which holds when φ is completely reducible. At real q0>1 (not a root of unity) the U_q(sl2) tensor powers are semisimple and γ_k acts by ribbon scalars, so the theorem holds at the imaginary coupling λ0 = ln q0/(iπ) ≈ −0.0332i. The weight-preserving intertwiner argument (PR #7632) needs only q not a root of unity, so the weighted trace Tr(K^{⊗n}·) transports there too. Numerical check computations/kz_real_q0_pure_braid_monodromy_probe.py (mpmath 40 dps, n=3, pure braids incl. products): per-weight-sector traces agree to 1e-15, residual ∝ h^4, wrong orientation q→1/q fails by 0.70. Branch claude/kz-real-q0-2026-10-11. Cited, not proved in Lean. STILL OPEN (do not close): whether the framework's substrate connection IS this KZ connection (KZPullbackGenerators), and n>3 / full braid group only by citation.
+
+2026-10-11: (a) Framework-connection check: as the corpus stands its connection is not the KZ connection. QFlatConnection is := trivial in its content sibling, and the library structure's flatness is an optional Prop-valued field (not an obligation) beside a tautological total_curvature equation. The Hecke 'curvature' F(σ)=σ²−(q−q⁻¹)σ−1 is a hypothesis class (QOU.Mass.HeckeMonodromy), stipulated, not computed from a connection form. A⁰ = X dz is rank 1, has zero residues and trivial holonomy. (b) Added def:kz-connection-sl2 (mass-endomorphism/kz-connection-sl2.lean), whose flatness is the infinitesimal pure braid relations, proved sorry-free, with a non-flat example. (c) The EMVZ route to sl2 at any ℏ∉ℚ is in docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md (our adaptation, unrefereed; 3 checks owed). The open question here is unchanged: whether the substrate connection IS this one.

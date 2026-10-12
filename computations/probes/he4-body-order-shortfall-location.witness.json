@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "70dps",
-  "computedAt": "2026-09-05T18:03:17.558110+00:00",
+  "computedAt": "2026-10-10T12:39:26.034306+00:00",
   "computation": "he4-body-order-shortfall-location",
   "scriptFile": "he4_body_order_shortfall_location_probe.py",
   "description": "Locates the 4He super-pairwise magnitude shortfall between (1) the body-order weights a_D^{(n)} of the binding closure and (2) the per-bond Mayer factors / Markov convention. Measures PROBE 2's lumped enhancement and the body-order-resolved Ursell cumulants over the same zero-fit ingredients, under canonical convention D and excised convention C, for two f_pn typings. Audit-only, no fit, no free parameter.",
@@ -195,15 +195,15 @@
     "related": [
       "probes/su4-connected-1111-magnitude.witness.json",
       "probes/b4-framework-connected-cumulant-deficit.witness.json",
-      "content/quantum-observable-universe/mass-theory/binding-closure-conditional.md",
-      "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.md"
+      "folio/quantum-observable-universe/mass-theory/binding-closure-conditional.md",
+      "folio/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.md"
     ],
     "owner_ruling": "R1 2026-08-15 \u2014 convention D canonical, C excised"
   },
   "allPassed": true,
-  "scriptHash": "b8c2b0be34d6",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "scriptHash": "f8d67fccd6c9",
+  "scriptCommitSha": "6ff3254a0f7d56d7961ba93607680644b8d7b07b",
+  "commitSha": "8fadf3a6d6442a71268db52ccf0ca1b25e3dace0",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

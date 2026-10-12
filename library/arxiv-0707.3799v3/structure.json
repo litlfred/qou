@@ -6,7 +6,12 @@
   "sha256": "0b29cbced7939f7265a53bdefb095c3f72162f1f526e4460631d4a3602b6ed3a",
   "bytes": 543442,
   "pages": 32,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,302 +21,1112 @@
    "stamp_date": "25 Feb 2026"
   },
   "doi": null,
-  "title": "EQUIVARIANT SATAKE CATEGORY AND KOSTANT-WHITTAKER REDUCTION",
-  "authors_raw": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+  "title": "Equivariant Satake category and Kostant-Whittaker reduction",
+  "authors_raw": "KOSTANT-WHITTAKER REDUCTION",
   "title_lines": [
-   "EQUIVARIANT SATAKE CATEGORY AND",
-   "KOSTANT-WHITTAKER REDUCTION"
+   "EQUIVARIANT SATAKE CATEGORY AND"
   ],
   "abstract": null,
   "docinfo": {
+   "Title": "Equivariant Satake category and Kostant-Whittaker reduction",
    "Author": "Roman Bezrukavnikov; Michael Finkelberg",
-   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "Equivariant Satake category and Kostant-Whittaker reduction"
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)"
+  },
+  "title_raw": "EQUIVARIANT SATAKE CATEGORY AND",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Equivariant Satake category and Kostant-Whittaker reduction",
+   "heading": "EQUIVARIANT SATAKE CATEGORY AND KOSTANT-WHITTAKER REDUCTION Contents Introduction Notation and statements of the results Notation Asymptotic \u02c7 g -modules Kostant functor \u03ba \u210f Equivariant cohomology of Gr G Equivariant homology and quantum Toda lattice Quasiclassical limit Equivalences Topology Proof",
+   "text": "EQUIVARIANT SATAKE CATEGORY AND",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "Notation and statements of the results",
+   "page": 3,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Notation",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.1",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotic \u02c7g-modules",
    "page": 4,
    "source": "inferred",
-   "number": "4"
+   "number": "2.2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "4"
   },
   {
-   "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 2,
+   "title": "Kostant functor \u03ba\u210f",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Equivariant cohomology of GrG",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.4",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "Equivariant homology and quantum Toda lattice",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.5",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "Quasiclassical limit",
    "page": 6,
    "source": "inferred",
-   "number": "6"
+   "number": "2.6",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "Equivalences",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.7",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "title": "Topology",
    "page": 8,
    "source": "inferred",
-   "number": "8"
+   "number": "3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "8"
   },
   {
-   "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 2,
+   "title": "Canonical filtration on H\u2022 T\u00d7Gm(GrG, F)",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.2",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Levi-equivariant cohomology",
    "page": 10,
    "source": "inferred",
-   "number": "10"
+   "number": "3.3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "10"
   },
   {
-   "level": 1,
-   "title": "We denote by\u03c0 L the projection fromt/W L tot/W. We denote byX +",
-   "page": 10,
+   "level": 2,
+   "title": "Transitivity for a pair of Levi subgroups",
+   "page": 11,
    "source": "inferred",
-   "number": "L"
+   "number": "3.4",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "11"
   },
   {
-   "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "page": 12,
+   "level": 2,
+   "title": "Tensor structure on equivariant cohomology",
+   "page": 11,
    "source": "inferred",
-   "number": "12"
+   "number": "3.5",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "11"
   },
   {
    "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "title": "Algebra",
    "page": 14,
    "source": "inferred",
-   "number": "14"
+   "number": "4",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "14"
   },
   {
-   "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 2,
+   "title": "Some properties of the Kostant functor \u03ba\u210f",
+   "page": 14,
+   "source": "inferred",
+   "number": "4.1",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "14"
+  },
+  {
+   "level": 2,
+   "title": "De-symmetrized Kostant functor \u03ba\u210f",
+   "page": 15,
+   "source": "inferred",
+   "number": "4.2",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "15"
+  },
+  {
+   "level": 2,
+   "title": "Canonical filtration on \u03c6(V )",
    "page": 16,
    "source": "inferred",
-   "number": "16"
+   "number": "4.3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "16"
   },
   {
-   "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "page": 18,
+   "level": 2,
+   "title": "Whittaker modules for Levi subalgebras",
+   "page": 16,
    "source": "inferred",
-   "number": "18"
+   "number": "4.4",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "16"
   },
   {
-   "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 2,
+   "title": "Transitivity for a pair of Levi subgroups",
+   "page": 17,
+   "source": "inferred",
+   "number": "4.5",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "17"
+  },
+  {
+   "level": 2,
+   "title": "Tensor structure on Kostant functor",
+   "page": 17,
+   "source": "inferred",
+   "number": "4.6",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "17"
+  },
+  {
+   "level": 2,
+   "title": "Quasiclassical limit of \u03d5(V )",
+   "page": 19,
+   "source": "inferred",
+   "number": "4.7",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "19"
+  },
+  {
+   "level": 2,
+   "title": "Equivariant cohomology for G = PGL(2)",
+   "page": 19,
+   "source": "inferred",
+   "number": "5.1",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "19"
+  },
+  {
+   "level": 2,
+   "title": "Generic splitting of the canonical filtration on equivariant cohomology for G = PGL(2)",
    "page": 20,
    "source": "inferred",
-   "number": "20"
+   "number": "5.2",
+   "confidence": 0.55,
+   "evidence": [
+    "contents",
+    "number"
+   ],
+   "page_label": "20"
   },
   {
-   "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "page": 22,
+   "level": 2,
+   "title": "Kostant functor for \u02c7G = SL(2)",
+   "page": 20,
    "source": "inferred",
-   "number": "22"
+   "number": "5.3",
+   "confidence": 0.8,
+   "evidence": [
+    "contents",
+    "body",
+    "number"
+   ],
+   "page_label": "20"
   },
   {
-   "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "page": 24,
+   "level": 2,
+   "title": "Generic splitting of the canonical filtration on Kostant functor for \u02c7G = SL(2)",
+   "page": 21,
    "source": "inferred",
-   "number": "24"
-  },
-  {
-   "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "page": 26,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "page": 28,
-   "source": "inferred",
-   "number": "28"
-  },
-  {
-   "level": 1,
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "page": 30,
-   "source": "inferred",
-   "number": "30"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 31,
-   "source": "inferred",
-   "number": null
+   "number": "5.4",
+   "confidence": 0.95,
+   "evidence": [
+    "contents",
+    "body",
+    "style",
+    "number"
+   ],
+   "page_label": "21"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-4-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "4",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 149,
+   "n_words": 19,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6525,
+   "n_words": 1019,
+   "label_start": null,
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-2-notation-and-statements-of-the-results",
+   "number": "2",
+   "title": "Notation and statements of the results",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1493,
+   "n_words": 263,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-22-asymptotic-\u02c7g-modules",
+   "number": "2.2",
+   "title": "Asymptotic \u02c7g-modules",
+   "level": 2,
    "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1260,
+   "n_words": 215,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-23-kostant-functor-\u03ba\u210f",
+   "number": "2.3",
+   "title": "Kostant functor \u03ba\u210f",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3598,
+   "n_words": 642,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-004-25-equivariant-homology-and-quantum-toda-lattice",
+   "number": "2.5",
+   "title": "Equivariant homology and quantum Toda lattice",
+   "level": 2,
+   "page_start": 5,
    "page_end": 6,
-   "n_chars": 5670,
-   "n_words": 907
+   "n_chars": 1567,
+   "n_words": 268,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-001-6-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "6",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "level": 1,
+   "id": "sec-005-26-quasiclassical-limit",
+   "number": "2.6",
+   "title": "Quasiclassical limit",
+   "level": 2,
    "page_start": 6,
-   "page_end": 8,
-   "n_chars": 5858,
-   "n_words": 919
+   "page_end": 7,
+   "n_chars": 2559,
+   "n_words": 447,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-002-8-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "8",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "id": "sec-006-27-equivalences",
+   "number": "2.7",
+   "title": "Equivalences",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2434,
+   "n_words": 370,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-007-3-topology",
+   "number": "3",
+   "title": "Topology",
    "level": 1,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 6018,
-   "n_words": 993
+   "n_chars": 7249,
+   "n_words": 1388,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
-   "id": "sec-003-10-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "10",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "level": 1,
+   "id": "sec-008-33-levi-equivariant-cohomology",
+   "number": "3.3",
+   "title": "Levi-equivariant cohomology",
+   "level": 2,
    "page_start": 10,
-   "page_end": 10,
-   "n_chars": 1627,
-   "n_words": 250
+   "page_end": 11,
+   "n_chars": 1717,
+   "n_words": 310,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-004-l-we-denote-by\u03c0-l-the-projection-fromtw-l-totw-w",
-   "number": "L",
-   "title": "We denote by\u03c0 L the projection fromt/W L tot/W. We denote byX +",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 12,
-   "n_chars": 3428,
-   "n_words": 537
+   "id": "sec-009-34-transitivity-for-a-pair-of-levi-subgroups",
+   "number": "3.4",
+   "title": "Transitivity for a pair of Levi subgroups",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1302,
+   "n_words": 244,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-005-12-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "12",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "level": 1,
-   "page_start": 12,
+   "id": "sec-010-35-tensor-structure-on-equivariant-cohomology",
+   "number": "3.5",
+   "title": "Tensor structure on equivariant cohomology",
+   "level": 2,
+   "page_start": 11,
    "page_end": 14,
-   "n_chars": 4829,
-   "n_words": 833
+   "n_chars": 5825,
+   "n_words": 1098,
+   "label_start": "11",
+   "label_end": "14"
   },
   {
-   "id": "sec-006-14-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "14",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "id": "sec-011-4-algebra",
+   "number": "4",
+   "title": "Algebra",
    "level": 1,
    "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-012-41-some-properties-of-the-kostant-functor-\u03ba\u210f",
+   "number": "4.1",
+   "title": "Some properties of the Kostant functor \u03ba\u210f",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2839,
+   "n_words": 490,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-013-42-de-symmetrized-kostant-functor-\u03ba\u210f",
+   "number": "4.2",
+   "title": "De-symmetrized Kostant functor \u03ba\u210f",
+   "level": 2,
+   "page_start": 15,
    "page_end": 16,
-   "n_chars": 5465,
-   "n_words": 860
+   "n_chars": 2602,
+   "n_words": 461,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-007-16-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "16",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "level": 1,
+   "id": "sec-014-43-canonical-filtration-on-\u03c6v",
+   "number": "4.3",
+   "title": "Canonical filtration on \u03c6(V )",
+   "level": 2,
    "page_start": 16,
-   "page_end": 18,
-   "n_chars": 5283,
-   "n_words": 840
+   "page_end": 16,
+   "n_chars": 1105,
+   "n_words": 202,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-008-18-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "18",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "level": 1,
-   "page_start": 18,
+   "id": "sec-015-44-whittaker-modules-for-levi-subalgebras",
+   "number": "4.4",
+   "title": "Whittaker modules for Levi subalgebras",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2358,
+   "n_words": 432,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-016-45-transitivity-for-a-pair-of-levi-subgroups",
+   "number": "4.5",
+   "title": "Transitivity for a pair of Levi subgroups",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 4205,
+   "n_words": 759,
+   "label_start": "17",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-017-47-quasiclassical-limit-of-\u03d5v",
+   "number": "4.7",
+   "title": "Quasiclassical limit of \u03d5(V )",
+   "level": 2,
+   "page_start": 19,
    "page_end": 20,
-   "n_chars": 5235,
-   "n_words": 844
+   "n_chars": 5131,
+   "n_words": 1033,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-009-20-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "20",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "level": 1,
+   "id": "sec-018-53-kostant-functor-for-\u02c7g-sl2",
+   "number": "5.3",
+   "title": "Kostant functor for \u02c7G = SL(2)",
+   "level": 2,
    "page_start": 20,
-   "page_end": 22,
-   "n_chars": 5151,
-   "n_words": 891
+   "page_end": 21,
+   "n_chars": 1002,
+   "n_words": 176,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-010-22-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "22",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 24,
-   "n_chars": 5023,
-   "n_words": 770
-  },
-  {
-   "id": "sec-011-24-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "24",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 26,
-   "n_chars": 5824,
-   "n_words": 908
-  },
-  {
-   "id": "sec-012-26-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "26",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 28,
-   "n_chars": 6107,
-   "n_words": 945
-  },
-  {
-   "id": "sec-013-28-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "28",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "level": 1,
-   "page_start": 28,
-   "page_end": 30,
-   "n_chars": 6246,
-   "n_words": 988
-  },
-  {
-   "id": "sec-014-30-roman-bezrukavnikov-and-michael-finkelberg",
-   "number": "30",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 31,
-   "n_chars": 4346,
-   "n_words": 733
-  },
-  {
-   "id": "sec-015-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 31,
+   "id": "sec-019-52-generic-splitting-of-the-canonical-filtration",
+   "number": "5.2",
+   "title": "Generic splitting of the canonical filtration on equivariant cohomology for G = PGL(2)",
+   "level": 2,
+   "page_start": 21,
    "page_end": 32,
-   "n_chars": 3297,
-   "n_words": 408
+   "n_chars": 33593,
+   "n_words": 5863,
+   "label_start": "21",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 16,
-  "sections": 16,
-  "chars_total": 79407
+  "toc_entries": 26,
+  "toc_inferred_entries": 26,
+  "toc_inferred_mean_confidence": 0.748,
+  "toc_inferred_empty_share": 0.05,
+  "toc_inferred_method": "contents",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 6,
+    "items": [
+     "Notation",
+     "Equivariant cohomology of GrG",
+     "Canonical filtration on H\u2022 T\u00d7Gm(GrG, F)",
+     "Tensor structure on Kostant functor",
+     "Equivariant cohomology for G = PGL(2)",
+     "Generic splitting of the canonical filtration on equivariant cohomology for G = PGL(2)"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 21,
+  "chars_total": 88513,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "qsatake_final_corrected.tex",
+   "tex_sections": 35,
+   "overlaid": 15,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.833,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-notation-and-statements-of-the-results",
+     "title": "Notation and statements of the results",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-22-asymptotic-\u02c7g-modules",
+     "title": "Asymptotic \u02c7g-modules",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-23-kostant-functor-\u03ba\u210f",
+     "title": "Kostant functor \u03ba\u210f",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.92,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-25-equivariant-homology-and-quantum-toda-lattice",
+     "title": "Equivariant homology and quantum Toda lattice",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-26-quasiclassical-limit",
+     "title": "Quasiclassical limit",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-27-equivalences",
+     "title": "Equivalences",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-3-topology",
+     "title": "Topology",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.691,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-33-levi-equivariant-cohomology",
+     "title": "Levi-equivariant cohomology",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-34-transitivity-for-a-pair-of-levi-subgroups",
+     "title": "Transitivity for a pair of Levi subgroups",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-35-tensor-structure-on-equivariant-cohomology",
+     "title": "Tensor structure on equivariant cohomology",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-4-algebra",
+     "title": "Algebra",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-41-some-properties-of-the-kostant-functor-\u03ba\u210f",
+     "title": "Some properties of the Kostant functor \u03ba\u210f",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-42-de-symmetrized-kostant-functor-\u03ba\u210f",
+     "title": "De-symmetrized Kostant functor \u03ba\u210f",
+     "prose_ratio": 0.823,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-43-canonical-filtration-on-\u03c6v",
+     "title": "Canonical filtration on \u03c6(V )",
+     "prose_ratio": 0.277,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-44-whittaker-modules-for-levi-subalgebras",
+     "title": "Whittaker modules for Levi subalgebras",
+     "prose_ratio": 0.534,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-45-transitivity-for-a-pair-of-levi-subgroups",
+     "title": "Transitivity for a pair of Levi subgroups",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.303,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-017-47-quasiclassical-limit-of-\u03d5v",
+     "title": "Quasiclassical limit of \u03d5(V )",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.706,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-53-kostant-functor-for-\u02c7g-sl2",
+     "title": "Kostant functor for \u02c7G = SL(2)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-52-generic-splitting-of-the-canonical-filtration",
+     "title": "Generic splitting of the canonical filtration on equivariant cohomology for G = PGL(2)",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.835,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

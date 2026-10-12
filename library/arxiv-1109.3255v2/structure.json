@@ -6,7 +6,11 @@
   "sha256": "dd4579be8e9b7e25fe307fdb275431bdd517fb52c104263daef8f91450b8fb35",
   "bytes": 1719884,
   "pages": 72,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -497,6 +501,204 @@
   "likely_scanned": false,
   "toc_entries": 31,
   "sections": 24,
-  "chars_total": 200046
+  "chars_total": 200046,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "cp2-conic-line.tex",
+   "tex_sections": 47,
+   "overlaid": 21,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-summary-of-results",
+     "title": "Summary of results",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.823,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-context-and-related-work",
+     "title": "Context and related work",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-2-the-fiber-of-w-and-its-tropicalization",
+     "title": "The fiber of W and its tropicalization",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.694,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-22-the-topology-of-the-map-w",
+     "title": "The topology of the map W",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-3-symplectic-constructions",
+     "title": "Symplectic constructions",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-31-symplectic-monodromy-associated-to-a-hessian",
+     "title": "Symplectic monodromy associated to a Hessian metric",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-32-focus-focus-singularities-and-lefschetz-singu",
+     "title": "Focus-focus singularities and Lefschetz singularities",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-4-a-degeneration-of-holomorphic-triangles",
+     "title": "A degeneration of holomorphic triangles",
+     "prose_ratio": 0.442,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-41-triangles-as-sections",
+     "title": "Triangles as sections",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-44-horizontal-sections-over-a-disk-with-one-crit",
+     "title": "Horizontal sections over a disk with one critical value",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-46-signs",
+     "title": "Signs",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-5-a-tropical-count-of-triangles",
+     "title": "A tropical count of triangles",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-51-tropical-polygons",
+     "title": "Tropical polygons",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-6-parallel-monodromyinvariant-directions",
+     "title": "Parallel monodromy\u2013invariant directions",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-61-symplectic-forms",
+     "title": "Symplectic forms",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-62-lagrangian-submanifolds",
+     "title": "Lagrangian submanifolds",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-63-holomorphic-and-tropical-triangles",
+     "title": "Holomorphic and tropical triangles",
+     "prose_ratio": 0.826,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-7-mirrors-to-divisor-complements",
+     "title": "Mirrors to divisor complements",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.82,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-71-algebraic-motivation",
+     "title": "Algebraic motivation",
+     "prose_ratio": 0.883,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-72-wrapping",
+     "title": "Wrapping",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-73-continuation-maps-and-products",
+     "title": "Continuation maps and products",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

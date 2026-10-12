@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2505.02719v2/blocks/prose-sec-015",
+  "kind": "prose",
+  "title": "Bending energy",
+  "pageStart": 38,
+  "pageEnd": 39,
+  "text": "../sections/sec-015-bending-energy.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2505.02719v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2505.02719v2/manifest.jsonld",
+  "provenance": "ingested"
+}

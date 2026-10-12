@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-013",
   "kind": "prose",
-  "title": "Lemma. The inclusion Bν →B induces a W-map H∗(Bν) → H∗(B). This map factors",
-  "pageStart": 4,
-  "pageEnd": 6,
-  "text": "../sections/sec-013-31-lemma-the-inclusion-bν-b-induces-a-w-map-hbν.md",
-  "derivedFrom": "library/invariant-eigendistributions-2/manifest",
-  "sourceDocument": "library/invariant-eigendistributions-2/manifest",
+  "title": "Nilpotent orbital integrals",
+  "pageStart": 24,
+  "pageEnd": 26,
+  "text": "../sections/sec-013-10-nilpotent-orbital-integrals.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/invariant-eigendistributions-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/invariant-eigendistributions-2/manifest.jsonld",
   "provenance": "ingested"
 }

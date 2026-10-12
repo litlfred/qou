@@ -8,64 +8,68 @@ pages: 24-25
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
 doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+text_source: latex
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.984
 ---
-νK ) → SL(2, C) is called parabolic if the image of any meridian is a matrix with trace
-2. Note that Thurston [Th87] showed that given a hyperbolic k not K the discrete faithful
-representationπ1(S3\νK ) → PSL(2, C) lifts to a parabolic representation γ :π1(S3\νK ) →
-SL(2, C). The twisted Reidemeister torsion corresponding to this c anonical representation
-has been surprisingly little studied (cf. though [Sug07] an d [Mo08, Corollary 4.2]).
-Throughout the remainder of this section let K be a 2–bridge knot. Then the group
-π1(S3 \νK ) has a presentation of the form ⟨x,y |Wx = yW ⟩ where x,y are meridians of
-K and W is a word in x±1,y ±1. Parabolic representations of 2–bridge knots have been
-extensively studied by Riley [Ri72, Section 3]. To a 2–bridg e knot K Riley associates a
-monic polynomial Φ K(t) ∈ Z[t±1] such that any zero ζ of Φ K(t) gives rise to a representation
-γζ :π1(S3 \νK ) → SL(2, C) of the form
-γζ(x) =
-(
-1 1
-0 1
-)
-and γζ(y) =
-(
-1 0
-ζ 1
-)
-.
-Furthermore Riley shows that any parabolic representation of a 2–bridge knot is conjugate
-to such a representation (cf. also [SW09c, Section 5] for det ails).
-Given an irreducible factor φ(t) of Φ K(t) of degree d one can consider the representation
-⊕γζ ′ where ζ ′ runs over the set of all zeroes of φ(t). Silver and Williams show that this
-representation is conjugate to an integral representation γφ(t) : π1(S3 \νK ) → GL(2d, Z)
-which is called the total representation corresponding to φ(t).
-Twisted Alexander polynomials of 2–bridge knots correspon ding to such parabolic and
-total representations have been studied extensively by Sil ver and Williams [SW09c] and
-Hirasawa and Murasugi (cf. [Mu06] and [HM08]). In particula r the following theorem is
-shown. It should be compared to the classical result that giv en a knotK we have ∆ K(1) = 1.
-Theorem 7.1. LetK be a two–bridge knot and φ(t) an irreducible factor of ΦK(t) of degree
-d. Then ⏐
-⏐
-⏐∆
-γφ(t)
-K (1)
-⏐
-⏐
-⏐ = 2d.
-A special case of the theorem is shown in [HM08, Theorem A], th e general case is proved
-in [SW09c, Theorem 6.1]. Silver and Williams also conjectur ed that under the assumptions
-of the theorem we have ⏐
-⏐
-⏐∆
-γφ(t)
-K (−1)
-⏐
-⏐
-⏐ = 2dm2
-for some odd number m.
-We refer to [SW09c] and [HM08] for more on twisted Alexander p olynomials of 2–bridge
-knots. All three papers contain a wealth of interesting exam ples and results which we ﬁnd
-impossible to summarize in this short survey.
-A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS 25
-Silver and Williams also considered twisted Alexander poly nomials of torus knots. They
-showed [SW09c, Section 7] that for any parabolic representa tion γ of a torus knot K, the
-twisted Alexander polynomial ∆ γ
-K is a product of cyclotomic polynomials.
+\label{section:specialknots}
+
+
+Let $K\subset S^3$ be a knot. A representation
+$\gamma:\pi_1(S^3\setminus \nu K)\to \mbox{SL}(2,\mathbb{C})$ is called \emph{parabolic}
+if the
+image of any meridian is a matrix with trace 2. Note that Thurston \cite{Th87} showed that
+given a hyperbolic knot $K$   the discrete faithful representation
+$\pi_1(S^3\setminus \nu K) \to \mbox{PSL}(2,\mathbb{C})$ lifts to a
+parabolic representation $\gamma : \pi_1(S^3\setminus \nu K) \to \mbox{SL}(2,\mathbb{C})$.
+The twisted Reidemeister torsion corresponding to this canonical representation has been surprisingly little studied
+(cf. though \cite{Sug07} and \cite[Corollary~4.2]{Mo08}).
+
+Throughout the remainder of this section let $K$ be a 2--bridge knot. Then the group $\pi_1(S^3\setminus \nu K)$ has a presentation of the form
+$\langle x,y | Wx=yW \rangle$ where $x,y$ are meridians of $K$ and $W$ is a word in $x^{\pm 1}, y^{\pm 1}$.
+Parabolic representations of 2--bridge knots have been extensively studied by Riley \cite[Section~3]{Ri72}.
+To a 2--bridge knot $K$ Riley associates a monic polynomial $\Phi_K(t)\in \mathbb{Z}[t^{\pm 1}]$
+such that  any zero $\zeta$ of $\Phi_K(t)$ gives rise to a representation
+$\gamma_\zeta:\pi_1(S^3\setminus \nu K)\to \mbox{SL}(2,\mathbb{C})$ of the form
+\[ \gamma_\zeta(x)= \begin{pmatrix} 1&1\\ 0&1 \end{pmatrix} \mbox{ and }\gamma_\zeta(y)= \begin{pmatrix} 1&0\\ \zeta &1 \end{pmatrix}. \]
+Furthermore Riley shows that any parabolic representation of a 2--bridge knot is conjugate to such a representation
+(cf. also \cite[Section~5]{SW09c} for details).
+
+Given an irreducible factor $\phi(t)$ of $\Phi_K(t)$ of degree $d$ one can consider the representation $\oplus \gamma_{\zeta'}$ where $\zeta'$ runs over the set of all zeroes of $\phi(t)$.
+Silver and Williams show that this representation is conjugate to an integral representation $\gamma_{\phi(t)}:\pi_1(S^3\setminus \nu K)\to \mbox{GL}(2d,\mathbb{Z})$
+which is called the \emph{total representation corresponding to $\phi(t)$}.
+
+Twisted Alexander polynomials of 2--bridge knots corresponding to such parabolic and total representations have been studied
+extensively by Silver and Williams \cite{SW09c} and Hirasawa and Murasugi (cf. \cite{Mu06} and \cite{HM08}).
+In particular the following theorem is shown. It should be compared  to the classical result that given a knot
+$K$ we have $\Delta_K(1)=1$.
+
+
+\begin{theorem}
+Let $K$ be a two--bridge knot and $\phi(t)$ an irreducible factor of $\Phi_K(t)$ of degree $d$.
+Then
+\[ \left|\Delta_K^{\gamma_{\phi(t)}}(1)\right| =2^d.\]
+
+
+
+\end{theorem}
+
+A special case of the
+theorem
+
+is shown in \cite[Theorem~A]{HM08},
+the general case is proved in \cite[Theorem~6.1]{SW09c}.
+Silver and Williams also conjectured that under the assumptions of the theorem we have
+\[ \left|\Delta_K^{\gamma_{\phi(t)}}(-1)\right| =2^d m^2\]
+for some odd number $m$.
+
+
+
+
+
+We refer to \cite{SW09c} and \cite{HM08} for more on twisted Alexander polynomials of 2--bridge knots.
+All three  papers contain a wealth of interesting examples and results which we find impossible to summarize in this short survey.
+
+Silver and Williams also considered twisted Alexander polynomials of torus knots.
+They showed \cite[Section~7]{SW09c} that for any parabolic representation $\gamma$ of a torus knot $K$, the
+twisted Alexander polynomial $\Delta^\gamma_K$ is a product of cyclotomic polynomials.

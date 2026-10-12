@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-029",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-029",
   "kind": "prose",
   "title": "New Particles",
   "pageStart": 56,
-  "pageEnd": 56,
+  "pageEnd": 57,
   "text": "../sections/sec-029-113-new-particles.md",
-  "derivedFrom": "library/symmetry-04-00039-v3/manifest",
-  "sourceDocument": "library/symmetry-04-00039-v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-04-00039-v3/manifest.jsonld",
   "provenance": "ingested"
 }

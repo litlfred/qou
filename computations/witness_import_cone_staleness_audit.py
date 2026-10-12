@@ -293,7 +293,7 @@ def main() -> int:
     recovered_via_producer = 0   # scriptFile absent, producer used
 
     for wp in witnesses:
-        if "_deprecated" in wp.parts:
+        if ("_deprecated" in wp.parts or "fsh-guts" in wp.parts):
             continue
         try:
             w = json.loads(wp.read_text())

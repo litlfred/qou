@@ -8,18 +8,25 @@ pages: 22-22
 source_pdf: 0203060v11.pdf
 source_sha256: fa7e21ceab3e9933
 doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in pa rtic- ular, the theory of weak Hopf algebras), we prove a number of g eneral results about fusion categories in"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.98
 ---
-Deﬁnition 5.9. A G-grading on a tensor category C is a decomposition C =
-⊕g∈GCg, such that ⊗ : Cg × Ch → C gh, 1 ∈ C e, and ∗ : Cg → C g−1 . We will
-say that the grading is faithful if Cg ⁄= 0 for any g ∈G.
-It is clear that if C is a G-graded category, then Ce is a tensor category, and Cg
-are left and right module categories over Ce.
-Let C be a fusion category, G a ﬁnite abelian group.
-Proposition 5.10. Suppose that Z(C) contains, as a full tensor subcategory, the
-category of modules ˜G over O(G), and that all simple objects of this subcategory
-map to the neutral object of C under the functor Z(C) → C . Then C admits a
-faithful G∨-grading (where G∨ is the dual group to G).
-Proof. Letg ∈ ˜G be a simple object. Since g is trivial as an object of C, it deﬁnes a
-tensor automorphism of the identity functor of C. Thus we have a homomorphism
-G → Aut⊗(Id), and hence any simple object of C deﬁnes an element of the dual
-group G∨. This is obviously a faithful grading. □
+Let $G$ be a finite group.
+
+::: definition
+A $G$-grading on a tensor category ${\mathcal C}$ is a decomposition ${\mathcal C}=\oplus_{g\in G}{\mathcal C}_g$, such that $\otimes: {\mathcal C}_g\times {\mathcal C}_h\to {\mathcal C}_{gh}$, $\mathbf 1\in {\mathcal C}_e$, and $*:{\mathcal C}_g\to
+{\mathcal C}_{g^{-1}}$. We will say that the grading is faithful if ${\mathcal C}_g\ne 0$ for any $g\in G$.
+:::
+
+It is clear that if ${\mathcal C}$ is a $G$-graded category, then ${\mathcal C}_e$ is a tensor category, and ${\mathcal C}_g$ are left and right module categories over ${\mathcal C}_e$.
+
+Let ${\mathcal C}$ be a fusion category, $G$ a finite abelian group.
+
+::: proposition
+[]{#gradi label="gradi"} Suppose that $Z({\mathcal C})$ contains, as a full tensor subcategory, the category of modules $\tilde G$ over $\mathcal O(G)$, and that all simple objects of this subcategory map to the neutral object of ${\mathcal C}$ under the functor $Z({\mathcal C})\to {\mathcal C}$. Then ${\mathcal C}$ admits a faithful $G^\vee$-grading (where $G^\vee$ is the dual group to $G$).
+:::
+
+::: proof
+*Proof.* Let $g\in \tilde G$ be a simple object. Since $g$ is trivial as an object of ${\mathcal C}$, it defines a tensor automorphism of the identity functor of ${\mathcal C}$. Thus we have a homomorphism $G\to {\rm Aut}_{\otimes}(Id)$, and hence any simple object of ${\mathcal C}$ defines an element of the dual group $G^\vee$. This is obviously a faithful grading. ◻
+:::

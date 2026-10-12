@@ -7,9 +7,10 @@ priority: normal
 tags:
     - sm-26
     - reorg-2026-10-04
+    - 8f-ew
 created_at: 2026-07-31T20:15:08Z
-updated_at: 2026-10-04T15:20:18Z
-parent: qou-8lxd
+updated_at: 2026-10-10T18:10:00Z
+parent: qou-20sx
 blocked_by:
     - qou-y7vg
     - qou-x4qm
@@ -24,3 +25,7 @@ blocked_by:
 (iv) Next: not near-term; the only tractable upstream step is the carrier repair (chiral carrier, or L on framed knots = `def:strand-twist-datum`).
 (v) Forecast: the last sector to move; nothing before m_ν has a mechanism.
 Tower status [reading: qou-ggdk]: no attack at any order; a full-tower formulation would need the neutrino to be a non-trivial object of the tower at all — on the unknot every order vanishes. None exists.
+
+## 2026-10-10 — reparented under qou-20sx
+
+Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.

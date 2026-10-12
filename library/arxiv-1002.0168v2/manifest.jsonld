@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1002.0168v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Non-cyclotomic fusion categories Scott Morrison Noah Snyder",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1002.0168v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1002.0168v2",
   "contains": [
     "library/arxiv-1002.0168v2/sections/sec-000",
     "library/arxiv-1002.0168v2/sections/sec-001",
@@ -16,8 +21,17 @@
     "library/arxiv-1002.0168v2/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1002.0168&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1002.0168v2",
+    "title_source": "slug",
     "source_file": "1002.0168v2.pdf",
     "source_sha256": "c95d5d193d57b0976305756d8463f66c33bb7ccb277b957acf9c56d91ccb2a95",
     "pages": 22,

@@ -242,7 +242,7 @@ def find_early_constants(source: str, filename: str = "<src>") -> list[dict]:
 def scan(root: Path) -> list[dict]:
     out: list[dict] = []
     for p in sorted((root / "computations").rglob("*.py")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         rel = p.relative_to(root).as_posix()
         try:

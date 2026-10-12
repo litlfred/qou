@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1304.2934v4/sections/sec-019",
   "@type": [
     "doco:Section"
   ],
-  "title": "A precise lower bound",
-  "pageStart": 47,
-  "pageEnd": 48,
+  "title": "An extended deviation result from bounds on cumulants",
+  "pageStart": 38,
+  "pageEnd": 38,
   "contains": [
     "library/arxiv-1304.2934v4/blocks/prose-sec-019"
   ],
-  "derivedFrom": "library/arxiv-1304.2934v4/manifest",
-  "sourceDocument": "library/arxiv-1304.2934v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.2934v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.2934v4/manifest.jsonld",
   "provenance": "ingested"
 }

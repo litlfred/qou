@@ -1,387 +1,236 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-023-52-extensions-of-homotopies
 section_title: "Extensions of homotopies"
 section_number: 5.2
-pages: 151-163
+pages: 151-161
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.921
+latex_coverage_ratio: 0.954
 ---
-Figure 5.4. Diﬀerent choices of truncated cusps may lead to distinct
-decompositions into ideal polyhedra.
-A way to get a truly canonical decomposition ofM, which depends on no
-choice, consists of takingV1 = ... = Vc > 0. Note that when c = 1 any
-choice leads to the same canonical decomposition.
-5.2. Extensions of homotopies
-This section is entirely devoted to the proof of the following theorem.
-Recall that every mapf : M → N between connected manifolds lifts to a
-(non-unique) map ˜f : ˜M→ ˜N between their universal covers.
-Theorem 5.2.1. Let f : M→ N be a smooth homotopy equivalence be-
-tween closed hyperbolicn-manifolds. Every lift ˜f : Hn → Hn extends to a
-continuous map ˜f : Hn→ Hn whose restriction ˜f|∂Hn :∂Hn→∂Hn is a home-
-omorphism.
-Every smooth homotopy equivalence extends to a homeomorphism of the
-boundaries of the universal coverings. This theorem will have important con-
-sequences in the Chapters 8 and 13. To prove it, we need to deﬁne a weaker
-notion of isometry.
-5.2.1. Quasi-isometries. We introduce the following.
-Deﬁnition 5.2.2. A mapF : X → Y between metric spaces is aquasi-
-isometry if there are two constantsC1> 0,C2> 0 such that
-1
-C1
-d(x1,x 2)−C2⩽d(F (x1),F (x2))⩽C1d(x1,x 2) +C2
-for allx1,x 2∈X andd(F (X),y )⩽C2 for ally∈Y.
-A quasi-isometry is an isometry up to some error: note thatF might
-neither be continuous nor injective. Two metric spaces arequasi-isometric if
-there is a quasi-isometryF :X→Y (which implies the existence of a quasi-
-isometry G : Y → X, exercise) and quasi-isometry is an equivalence relation
-between metric spaces. Intuitively, looking at a space up to quasi-isometries
-144 5. THE SPHERE AT INFINITY
-is like watching it from some distance. Compact metric spaces are obviously
-quasi-isometric to a point.
-This notion is an important ingredient ingeometric group theory: one may
-for instance give every ﬁnitely-presented groupG a canonical metric (through
-its Cayley graph), uniquely determined up to quasi-isometries.
-5.2.2. Pseudo-isometries. Let f : M→ N be a homotopic equivalence
-between closed hyperbolicn-manifolds. Every continuous function is homo-
-topic to a smooth one, hence we suppose thatf is smooth. The map lifts to
-a map ˜f : Hn→ Hn. We will prove that˜f is a quasi-isometry. Actually, the
-map ˜f is also continuous and (as we soon see) Lipschitz: it will be useful for
-us to retain this information on˜f to simplify some arguments, so we introduce
-a diﬀerent (more restrictive but less natural) version of a quasi-isometry.
-Deﬁnition 5.2.3. A mapF : X→ Y between metric spaces is apseudo-
-isometry if there are two positive constantsC1,C 2> 0 such that
-1
-C1
-d(x1,x 2)−C2⩽d(F (x1),F (x2))⩽C1d(x1,x 2)
-for allx1,x 2∈X.
-In particular a pseudo-isometry isC1-Lipschitz and hence continuous. Let
-f :M→N be a smooth map between Riemanniann-manifolds; themaximum
-dilatation off at a pointx∈M is the maximum ratio‖dfx (v)‖
-‖v‖ wherev varies
-among all the unitary vectors inTx. The maximum dilatation of f is the
-supremum of all maximum dilatations asx∈M varies.
-Exercise 5.2.4. If f : M → N has maximum dilatationC the map f is
-C-Lipschitz.
-Proposition 5.2.5. Let f :M→N be a smooth homotopy equivalence of
-closed hyperbolicn-manifolds. The lift ˜f : Hn→ Hn is a pseudo-isometry.
-Proof. SinceM iscompact, themap f hassomeﬁnitemaximumdilatation
-C. Since ˜f is locally likef, it also has maximum dilatationC and is henceC-
-Lipschitz. The same holds for the homotopic inverseg :N→M. Therefore
-there is aC1> 0 such that
-d
-( ˜f (x1), ˜f (x2)
-)
-⩽C1·d(x1,x 2) ∀x1,x 2∈ Hn,
-d
-(
-˜g(y1), ˜g(y2)
-)
-⩽C1·d(y1,y 2) ∀y1,y 2∈ Hn.
-We haveM = Hn/Γ. Being a composition of lifts, the map˜g◦ ˜f commutes
-with Γ and has maximum displacement bounded by someK >0 equal to the
-maximum displacement of the points in a (compact) Dirichlet domain. Hence
-d(x1,x 2)− 2K⩽d
-(
-˜g( ˜f (x1)), ˜g( ˜f (x2))
-)
-⩽C1·d
-( ˜f (x1), ˜f (x2)
-)
-for allx1,x 2∈ Hn. Therefore ˜f is a pseudo-isometry withC2 = 2K/C1. □
-5.2. EXTENSIONS OF HOMOTOPIES 145
-Figure 5.5. We use the half-space model. The hyperbolic cosine of the
-distance betweenx and π(x) is the inverse of the cosine ofθ (left). To
-determine the maximum dilatation we decompose the tangent spaceTx
-orthogonally asU⊕V (right).
-5.2.3. Boundary extension of a pseudo-isometry.We now prove that
-not only pseudo-isometries Hn→ Hn extend at inﬁnity, but their extensions
-at∂Hn eliminate the “errors” and behave nicely.
-Theorem 5.2.6.Every pseudo-isometryF : Hn→ Hn extends to a contin-
-uous mapF : Hn→ Hn that injects∂Hn into itself.
+This section is entirely devoted to the proof of the following theorem. Recall that every map $f\colon M\to N$ between connected manifolds lifts to a (non-unique) map $\tilde f\colon \tilde M \to \tilde N$ between their universal covers.
+\begin{teo} \label{estensione:teo}
+Let $f\colon M \to N$ be a smooth homotopy equivalence between closed hyperbolic $n$-manifolds. Every lift $\tilde f\colon \matH^n \to \matH^n$ extends to a continuous map $\tilde f\colon \overline{\matH^n} \to \overline{\matH^n}$ whose restriction $\tilde f|_{\partial \matH^n}\colon \partial \matH^n \to \partial \matH^n$ is a homeomorphism.
+\end{teo}
+
+Every smooth homotopy equivalence extends to a homeomorphism of the boundaries of the universal coverings. This theorem will have important consequences in the Chapters \ref{automorphisms:chapter} and \ref{Mostow:chapter}.
+To prove it, we need to define a weaker notion of isometry.
+
+
+\subsection{Quasi-isometries}
+
+We introduce the following.\index{quasi-isometry}
+
+\begin{defn} A map $F\colon X \to Y$ between metric spaces is a \emph{quasi-isometry} if there are two constants $C_1>0$, $C_2\geqslant 0$ such that
+$$\frac 1 {C_1} d(x_1,x_2) - C_2 \leqslant d(F(x_1), F(x_2)) \leqslant C_1d(x_1,x_2) + C_2$$
+for all $x_1,x_2 \in X$ and $d(F(X),y)\leqslant C_2$ for all $y\in Y$.
+\end{defn}
+A quasi-isometry is an isometry up to some error: note that $F$ might neither be continuous nor injective. Two metric spaces are \emph{quasi-isometric} if there is a quasi-isometry $F\colon X \to Y$ (which implies the existence of a quasi-isometry $G\colon Y\to X$, exercise) and quasi-isometry is an equivalence relation between metric spaces. Intuitively, looking at a space up to quasi-isometries is like watching it from some distance. Compact metric spaces are obviously quasi-isometric to a point. 
+
+This notion is an important ingredient in \emph{geometric group theory}: one may for instance give every finitely-presented group $G$ a canonical metric (through its \emph{Cayley graph}), uniquely determined up to quasi-isometries.\index{geometric group theory}\index{Cayley graph} 
+
+
+\subsection{Pseudo-isometries}
+Let $f\colon M \to N$ be a homotopic equivalence between closed hyperbolic $n$-manifolds. Every continuous function is homotopic to a smooth one, hence we suppose that $f$ is smooth. The map lifts to a map $\tilde f\colon \matH^n \to \matH^n$. We will prove that $\tilde f$ is a quasi-isometry. Actually, the map $\tilde f$ is also continuous and (as we soon see) Lipschitz: it will be useful for us to retain this information on $\tilde f$ to simplify some arguments, so we introduce a different (more restrictive but less natural) version of a quasi-isometry.\index{pseudo-isometry}
+
+\begin{defn} A map $F\colon X \to Y$ between metric spaces is a \emph{pseudo-isometry} if there are two positive constants $C_1, C_2>0$ such that
+$$\frac 1 {C_1} d(x_1,x_2) - C_2 \leqslant d(F(x_1), F(x_2)) \leqslant C_1d(x_1,x_2)$$
+for all $x_1,x_2 \in X$.
+\end{defn}
+In particular a pseudo-isometry is $C_1$-Lipschitz and hence continuous. Let $f\colon M \to N$ be a smooth map between Riemannian $n$-manifolds; the \emph{maximum dilatation} of $f$ at a point $x\in M$ is the maximum ratio $\frac{\|df_x(v)\|}{\|v\|}$ where $v$ varies among all the unitary vectors in $T_x$. The maximum dilatation of $f$ is the supremum of all maximum dilatations as $x \in M$ varies.\index{maximum dilatation} 
+
+\begin{ex}
+If $f\colon M\to N$ has maximum dilatation $C$ the map $f$ is $C$-Lipschitz.
+\end{ex}
+
+\begin{prop} \label{pseudo-isometria:prop}
+Let $f\colon M\to N$ be a smooth homotopy equivalence of closed hyperbolic $n$-manifolds. The lift $\tilde f\colon \matH^n \to \matH^n$ is a pseudo-isometry.
+\end{prop}
+\begin{proof}
+Since $M$ is compact, the map $f$ has some finite maximum dilatation $C$. Since $\tilde f$ is locally like $f$, it also has maximum dilatation $C$ and is hence $C$-Lipschitz. The same holds for the homotopic inverse $g\colon N\to M$. Therefore there is a $C_1>0$ such that
+\begin{align*}
+d\big(\tilde f(x_1), \tilde f(x_2)\big) & \leqslant C_1 \cdot d(x_1,x_2) \quad \forall x_1,x_2 \in \matH^n, \\
+d\big(\tilde g(y_1), \tilde g(y_2)\big) & \leqslant C_1 \cdot d(y_1,y_2) \quad \forall y_1,y_2 \in \matH^n.
+\end{align*}
+We have $M = \matH^n/_\Gamma$.
+Being a composition of lifts, the map $\tilde g \circ \tilde f$ commutes with $\Gamma$ and has maximum displacement bounded by some $K>0$ equal to the maximum displacement of the points in a (compact) Dirichlet domain. Hence
+$$d(x_1,x_2) - 2K \leqslant d\big( \tilde g (\tilde f(x_1)), \tilde g (\tilde f(x_2)) \big) \leqslant C_1 \cdot d\big(\tilde f(x_1), \tilde f(x_2)\big) $$
+for all $x_1,x_2 \in \matH^n$. Therefore $\tilde f$ is a pseudo-isometry with $C_2 = 2K/C_1$.
+\end{proof}
+
+
+\subsection{Boundary extension of a pseudo-isometry}
+We now prove that not only pseudo-isometries $\matH^n \to \matH^n$ extend at infinity, but their extensions at $\partial \matH^n$ eliminate the ``errors'' and behave nicely.
+\begin{teo} Every pseudo-isometry $F\colon \matH^n \to \matH^n$ extends to a continuous map $F\colon \overline{\matH^n} \to \overline{\matH^n}$ that injects $\partial\matH^n$ into itself.
+\end{teo}
 We separate the proof in some lemmas.
-Lemma 5.2.7. Consider the picture in Figure 5.5. We have
-coshd(x,π (x)) = 1
-cosθ.
-Proof. We can work with the half-plane modelH2⊂ C and up to trans-
-lations and dilations suppose thatπ(x) = i. The geodesicr is parametrized
-asiet. The Möbius transformationz↦→ z+1
-−z+1 sendsr toγ and ﬁxesi, hence
-γ(t) = iet +1
-−iet +1. Sets =d(x,π (x)). We getx = ies +1
-−ies +1 and
-cosθ =ℑx =ℑ(ies + 1)2
-e2s + 1 = 2es
-e2s + 1 = 2
-es +e−s = 1
-coshs.
-The proof is complete. □
-Lemma 5.2.8. Let r ⊂ Hn be a line andπ : Hn→ r be the orthogonal
-projection tor. The maximum dilatation ofπ atx∈ Hn is
-d = 1
-coshs
-wheres =d(x,r ).
-Proof. We use the half-space model withr and x as in Figure 5.5-(left):
-we know thatcoshs = 1
-cosθ. We haveTx = U⊕V as in Figure 5.5-(right)
-withV = kerdπx. A generatoru ofU is just rotated bydπx with respect to
-the Euclidean metric; with respect to the hyperbolic metric we have
-‖dπx (u)‖
-‖u‖ = xn
-π(x)n
-= cosθ = 1
-coshs.
-146 5. THE SPHERE AT INFINITY
-Figure 5.6. We use the red paths to estimate the distance between
-F (r ) and F (s). On the left: sinceF is C1-Lipschitz, the blue path has
-length at most C1d(r,s ). Its projection onto l has dilatation at most
-1/coshR by Lemma 5.2.8, hence the red path inl has length at most
-C1d(r,s )/ coshR. Therefore d(F (r ),F (s)) ⩽ C1
-d(r,s )
-coshR + 2R. On the
-right we getd(F (r ),F (s))⩽ 2R.
-The proof is complete. □
-We writepq for the segment with endpointsp and q and we denote by
-Nr (A) ther-neighbourhood ofA.
-Lemma 5.2.9. Let F : Hn→ Hn be a pseudo-isometry. There is aR> 0
-such that
-F (pq)⊂NR
-(
-F (p)F (q)
-)
-for all distinct pointsp,q ∈ Hn.
-Proof. LetC1,C 2 bethepseudo-isometryconstantsof F. Fixasuﬃciently
-bigR so that coshR> 2C2
-1. Letl be the line containingF (p) andF (q). We
-show thatF (pq) can exit fromNR(l) only for a limited amount of time. Let
-rs ⊂ pq be a maximal segment whereF (rs ) is disjoint from the interior of
-NR(l), as the blue arc in Figure 5.6-(left). We have
-1
-C1
-d(r,s )−C2⩽d(F (r ),F (s))⩽C1d(r,s ).
-We can improve the right inequality as shown in Figure 5.6-(left) and write
-1
-C1
-d(r,s )−C2⩽d(F (r ),F (s))⩽C1
-d(r,s )
-coshR + 2R.
-Therefore ( 1
-C1
-− C1
-coshR
-)
-d(r,s )⩽ 2R +C2.
-Since coshR >2C2
-1 we deduce thatd(r,s ) < Mfor some constantM that
-depends only onC1 andC2.
-5.2. EXTENSIONS OF HOMOTOPIES 147
-F(p)
-F(l(u))
-F(l(t))atu <R
-Figure 5.7. For every 0<u <t , the pointF (l(u)) is contained in the
-(yellow)R-neighbourhood ofF (p)F (l(t)). If u is big, the blue segment
-F (p)F (l(u)) is long, while the red one is bounded byR: hence the angle
-αtu betweenvt andvu is small. Thereforevt is a Cauchy sequence.
-We have proved thatF (pq) may exit fromNR(l) only on subsegments of
-pq with length< M. Since F is C1-Lipchitz the curveF (pq) lies entirely in
-NR+C1M(l), and we replaceR withR +C1M.
-It remains to prove thatF (pq) lies entirely (up to taking a biggerR) in the
-bounded setNR(F (p)F (q)): the proof is analogous and easier, since Figure
-5.6-(right) shows thatd(F (r ),F (s))⩽ 2R. □
-In the previous and following lemmas, the constantR depends only on the
-pseudo-isometry constantsC1 andC2.
-Lemma 5.2.10.LetF : Hn→ Hn be a pseudo-isometry. There is aR> 0
-such that for allp∈ Hn and every half-linel starting fromp there is a unique
-half-linel′ starting fromF (p) such that
-F (l)⊂NR(l′).
-Proof. We parametrizel as a geodesicl : [0, +∞)→ Hn with unit speed.
-We havel(0) =p. SinceF is a pseudo-isometry we get
-lim
-t→∞
-d
-(
-F (p),F (l(t))
-)
-=∞.
-Letvt∈TF (p) be the unitary tangent vector pointing towardsF (l(t)): Figure
-5.7 shows that{vt}t∈N is a Cauchy sequence, hence it converges to a unitary
-vectorv∈TF (p). Let l′ be the half-line starting fromF (p) with directionv.
-It is easy to check thatF (l)⊂NR(l′) andl′ is the unique half-line fromp with
-this property. □
-The previous lemma gives a recipe to transform every half-linel into a
-half-line l′ that approximatesF (l). Since ∂Hn is an equivalence relation of
-half-lines, we deﬁne the extensionF :∂Hn→∂Hn by sendingl tol′.
-Lemma 5.2.11. The boundary extensionF : ∂Hn→ ∂Hn is well-deﬁned
-and injective.
-Proof. Letl1,l 2 be two half-lines at bounded distanced(l1(t),l 2(t))<M
-for all t. If d(l′
-1(t),l′
-2(t)) → ∞we get d
-(
-F (l1(t)),F (l2(t))
-)
-→ +∞, a
-148 5. THE SPHERE AT INFINITY
-Figure 5.8. Let l and H be a line and an orthogonal hyperplane. The
-orthogonal projection ofH onto l is obviously a pointl∩H; the pseudo-
-isometry F mildly distorts this picture: the image F (H) projects to a
-bounded segment inl′.
-contradiction since F is Lipschitz. Therefore l′
-1,l′
-2 are at bounded distance
-andF is well-deﬁned.
-Injectivity is proved analogously: ifl1 and l2 are divergent thenl′
-1 and l′
-2
-also are becauseF is a pseudo-isometry. □
-It remains to prove that the extensionF : Hn→ Hn is continuous. We
-start by extending Lemma 5.2.10 from half-lines to lines.
-Lemma 5.2.12.LetF : Hn→ Hn be a pseudo-isometry. There is aR> 0
-such that for every linel there is a unique linel′ withF (l)⊂NR(l′).
-Proof. Parametrizel asl : (−∞, +∞)→ Hn with unit speed. By cutting
-l into two half-lines we know thatF (l(t)) is a curve that tends to two distinct
-points x±∈∂Hn as t→±∞ . Let l′ be the line with endpointsx±. For any
-t >0 we have
-F
-(
-l([−t,t ])
-)
-⊂NR
-(
-F (l(−t))F (l(t))
-)
-and by sendingt→ +∞ we deduce thatF (l)⊂NR(l′). □
-The next lemma says that a pseudo-isometry does not distort much lines
-and orthogonal hyperplanes. We will need it to prove continuity.
-Lemma 5.2.13.LetF : Hn→ Hn be a pseudo-isometry. There is aR> 0
-such that for any linel and hyperplaneH orthogonal tol, the imageF (H)
-projects orthogonally tol′ onto a bounded segment length smaller thanR.
-Proof. See Figure 5.8. Consider a generic lines ⊂ H passing through
-p = l∩H. By the previous lemmas F (s)⊂ NR(s′) with s′⁄= l′, and the
-orthogonal projection onl′ sends any other lines′ onto a segment, bounded
-by the images of the endpoints ofs′.
-5.2. EXTENSIONS OF HOMOTOPIES 149
-l
-H
-l'
-s
-dd
-s1
-s2
-s'1
-s'2
-p
-∞s
-∞F(s )
-F(p)
-f
-F
-q
-Figure 5.9. The liness1 ands2 have a distanced fromp which depends
-on nothing (in fact,coshd =
-√
-2). The linesl′, s′
-1, ands′
-2 approximate
-up to an errorR the images ofl,s1, ands2 alongF. The projectionq of
-F (p) on l′ is henceR-close toF (p), which is in turn(C1d)-close to the
-lines s′
-i. Therefore q is (C1d + 2R)-close to boths′
-1 and s′
-2. This easily
-implies thatf is (C1d + 2R)-close toq.
-Consider as in Figure 5.9 the lines, with one endpoints∞ and the cor-
-responding endpointF (s∞) of s′. The ﬁgure shows that the projectionf of
-F (s∞) tol′ is at bounded distance from a pointq which does not depend on
-s. □
-Finally, we prove that the extendedF is continuous.
-Lemma 5.2.14. The extensionF : Hn→ Hn is continuous.
-Proof. Consider x ∈ ∂Hn and its imageF (x)∈ ∂Hn. Let l be a half-
-line pointing tox: hencel′ points toF (x). The half-spaces orthogonal tol′
-determine a neighbourhood system forF (x): consider one such half-spaceS.
-Let R >0 be as in the previous lemmas. The imageF (l) is R-close to
-l′, hence for suﬃciently bigt the pointF (l(t)) and its projection intol′ lie in
-S at distance> Rfrom ∂S. By the previous lemma the imageF (H(t)) of
-the hyperplaneH(t) orthogonal tol inl(t) is also contained inS. Hence the
-entire half-space bounded by one suchH(t) goes insideS through F. This
-shows thatF is continuous at every pointx∈∂Hn. □
-With some eﬀort, we have proved that every pseudo-isometry ofHn ex-
-tends continuously to the boundary. Theorem 5.2.1 now follows easily.
-Proof of Theorem 5.2.1. We know that˜f is a pseudo-isometry and hence
-extends to a map˜f : Hn→ Hn that sends injectively∂Hn to itself. It remains
-to prove that˜f|∂Hn is a homeomorphism.
-Pick a smooth homotopic inverseg forf. The homotopyidM∼g◦f lifts
-to a homotopyidHn∼ ˜g◦ ˜f for some lift˜g. Since M is compact, the latter
-homotopy moves every point at uniformly bounded distance and hence˜g◦ ˜f
-150 5. THE SPHERE AT INFINITY
-extends continuously to the identity on∂Hn, and the same holds for˜f◦ ˜g.
-Therefore ˜g|∂Hn istheinverseof ˜f|∂Hn andtheyarebothhomeomorphisms. □
-5.2.4. References. Asinthepreviouschapters, wehavemostlyconsulted
-Benedetti – Petronio [4], Ratcliﬀe [49], and Thurston’s notes [56]. The Ep-
-stein – Penner decomposition is taken from their 1988 paper [17].
-Part 2
-Surfaces
-CHAPTER 6
-Surfaces
-A surface is a diﬀerentiable manifold of dimensionn = 2, possibly with
-boundary. The closed orientable surfaces are classiﬁed topologically by their
-Euler characteristic, a complete invariant that also determines their possible
-geometries: a closed surface has a hyperbolic, ﬂat, or spherical structure if
-and only if its Euler characteristic is negative, null, or positive.
-We devote some time here to expose the topological classiﬁcation and the
-geometrisation of closed surfaces. Then we describe some of the beautiful
-features of geometrisation: the geometry of a surface (typically, hyperbolic
-geometry)canbeusedtoproveinanelegantwayvariousnon-trivialtopological
-facts.
-We end this chapter by deﬁning and studying themapping class group, a
-group that encodes the topological symmetries of a surface.
-6.1. Topological classiﬁcation
-A surface can be topologically quite complicated: think for instance ofR2
-with a Cantor set removed. We decide to restrict our investigation to the sur-
-faces of ﬁnite type, i.e. obtained from a closed one by removing points and/or
-open discs: these include all the compact surfaces with or without boundary.
-We introduce here these surfaces and classify them up to diﬀeomorphism.
-We manipulate surfaces using various cut-and-paste tools: boundary glu-
-ings, removal of discs or points, handle decompositions, connected sums. See
-Section 1.1 to refresh these notions.
-6.1.1. Gluing surfaces. A simple way to construct a surface is by gluing
-simpler surfaces along their boundaries. We show here that the glued surface
-depends only on the orientation classes of the gluing maps.
-Two self-diﬀeomorphisms ofS1 are co-oriented if they both preserve or
-both invert the orientation ofS1.
-Lemma 6.1.1. Two co-oriented self-diﬀeomorphisms ofS1 are isotopic.
-Proof. Letf0,f 1 :S1→S1 be two co-oriented self-diﬀeomorphisms. Their
-lifts ˜f0, ˜f1 : R→ R are periodic and monotone, hence˜ft = (1−t) ˜f0 +t ˜f1 also
-is and descends to an isotopyft connectingf0 andf1. □
-153
-154 6. SURFACES
-Figure 6.1. A surface of genus3 may be represented in various ways.
-Corollary 6.1.2.If we glue two oriented surfaces along their boundaries via
-orientation-reversing diﬀeomorphisms, the resulting oriented surface does not
-depend on the diﬀeomorphisms chosen.
-Proof. All the orientation-reversing gluing maps are isotopic by Lemma
-6.1.1, and isotopic gluing maps produce diﬀeomorphic manifolds, as stated in
-Proposition 1.1.15. □
-In a non-oriented context, we have two possible maps for every glued
-boundary component.
-Corollary 6.1.3.If we glue two discs we get a sphere.
-Proof. The two discs are copies ofD2⊂ C and are glued along a diﬀeo-
-morphism ϕ:S1→ S1. Up to mirroring one disc we may suppose thatϕ is
-orientation-reversing, and by Corollary 6.1.2 we may suppose thatϕ(z) = ¯z.
-The resulting surface is diﬀeomorphic to a sphere (exercise). □
-Warning 6.1.4. In dimensionn> 7, by gluing two discs we may get a
-manifold homeomorphic butnot diﬀeomorphic to a sphere! See Section 6.4.2.
-6.1.2. Classiﬁcation of surfaces.In Section 1.1.13 we introduced the
-connected sum, a two-steps operation which consists of ﬁrst removing balls
-and then gluing the new sphere boundaries. LetSg be the connected sum
-Sg =T #... #T| {z }
-g
-of g toriT =S1×S1. By conventionS0 =S2 is the sphere andS1 =T is
-the torus. The numberg is thegenus of the closed surfaceSg. The surface
-Sg may be represented inR3 in various ways, see Figure 6.1.
-Proposition 6.1.5. We haveχ(Sg) = 2− 2g.
-Proof. LetS,S′ be surfaces andD⊂ int(S),D′⊂ int(S′) be discs. Then
-χ(S#S′) =χ(S\D) +χ(S′\D′)−χ(S1) =χ(S) +χ(S′)− 2.
-Thereforeχ(Sg) = 2− 2g by induction ong. □
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{cosh-BW}{cosh}} 
+\nota{We use the half-space model. The hyperbolic cosine of the distance between $x$ and $\pi(x)$ is the inverse of the cosine of $\theta$ (left). To determine the maximum dilatation we decompose the tangent space $T_x$ orthogonally as $U\oplus V$ (right).}
+\label{cosh:fig}
+\end{center}
+\end{figure}
+
+\begin{lemma} \label{cosh:cos:lemma}
+Consider the picture in Figure \ref{cosh:fig}. We have
+$$\cosh d(x,\pi(x)) = \frac 1{\cos \theta}.$$
+\end{lemma}
+\begin{proof} We can work with the half-plane model $H^2\subset \matC$ and up to translations and dilations suppose that $\pi(x)=i$. The geodesic $r$ is parametrized as $ie^t$. The M\"obius transformation $z \mapsto \frac{z+1}{-z+1}$ sends $r$ to $\gamma$ and fixes $i$, hence $\gamma(t) = \frac{ie^{t}+1}{-ie^{t}+1}.$
+Set $s=d(x, \pi(x))$. We get $ x = \frac{ie^{s}+1}{-ie^{s}+1}$ and
+$$\cos\theta = \Im x = \Im \frac{(ie^s+1)^2}{e^{2s}+1} = \frac{2e^s}{e^{2s}+1} = \frac 2{e^s+e^{-s}} = \frac 1 {\cosh s}.$$
+The proof is complete.
+\end{proof}
+
+\begin{lemma} \label{dilatation:lemma}
+Let $r\subset \matH^n$ be a line and $\pi\colon \matH^n \to r$ be the orthogonal projection to $r$. The maximum dilatation of $\pi$ at $x\in\matH^n$ is
+$$d =\frac 1 {\cosh s}$$
+where $s=d(x,r)$.
+\end{lemma}
+\begin{proof}
+We use the half-space model with $r$ and $x$ as in Figure \ref{cosh:fig}-(left): we know that $\cosh s = \frac 1 {\cos \theta}$. We have $T_x=U\oplus V$ as in Figure \ref{cosh:fig}-(right) with $V= \ker d\pi_x$. A generator $u$ of $U$ is just rotated by $d\pi_x$ with respect to the Euclidean metric; with respect to the hyperbolic metric  we have
+$$\frac{\|d\pi_x(u)\|}{\|u\|} = \frac {x_n}{\pi(x)_n} = \cos\theta = \frac 1{\cosh s}.$$
+The proof is complete.
+\end{proof}
+
+We write $\overline{pq}$ for the segment with endpoints $p$ and $q$ and we denote by $N_r(A)$ the $r$-neighbourhood of $A$. 
+
+\begin{lemma}
+Let $F\colon\matH^n\to\matH^n$ be a pseudo-isometry. There is a $R>0$ such that
+$$F(\overline{pq}) \subset N_R\big(\overline{F(p)F(q)}\big)$$ 
+for all distinct points $p,q\in\matH^n$. 
+\end{lemma}
+\begin{proof}
+Let $C_1, C_2$ be the pseudo-isometry constants of $F$. Fix a sufficiently big $R$ so that $\cosh R > 2C_1^2$. Let $l$ be the line containing $F(p)$ and $F(q)$.  We show that $F(\overline{pq})$ can exit from $N_R(l)$ only for a limited amount of time. Let $\overline {rs} \subset \overline {pq}$ be a maximal segment where $F(\overline{rs})$ is disjoint from the interior of $N_R(l)$, as the \iftoggle{BW}{dark grey}{blue} arc in Figure \ref{Mostow:fig}-(left). We have
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{Mostow0-BW}{Mostow0}} 
+\nota{We use the \iftoggle{BW}{grey}{red} paths to estimate the distance between $F(r)$ and $F(s)$. On the left: since $F$ is $C_1$-Lipschitz, the \iftoggle{BW}{dark grey}{blue} path has length at most $C_1 d(r,s)$. Its projection onto $l$ has dilatation at most $1/{\cosh R}$ by Lemma \ref{dilatation:lemma}, hence the \iftoggle{BW}{grey}{red} path in $l$ has length at most $C_1d(r,s)/\cosh R$. Therefore $d(F(r), F(s)) \leqslant C_1 \frac {d(r,s)}{\cosh R} + 2R$. On the right we get $d(F(r), F(s)) \leqslant 2R$.}
+\label{Mostow:fig}
+\end{center}
+\end{figure}
+
+\begin{equation*}
+\frac 1{C_1} d(r,s) - C_2 \leqslant d(F(r), F(s)) \leqslant C_1d(r,s). 
+\end{equation*}
+We can improve the right inequality as shown in Figure \ref{Mostow:fig}-(left) and write
+$$\frac{1}{C_1}d(r,s) - C_2 \leqslant d(F(r), F(s)) \leqslant C_1\frac{d(r,s)}{\cosh R} + 2R.$$
+Therefore
+$$\left( \frac 1{C_1} - \frac{C_1}{\cosh R}\right)d(r,s) \leqslant 2R + C_2.$$
+Since $\cosh R > 2C_1^2$ we deduce that $d(r,s) < M$ for some constant $M$ that depends only on $C_1$ and $C_2$. 
+
+We have proved that $F(\overline {pq})$ may exit from $N_R(l)$ only on subsegments of $\overline{pq}$ with length $<M$. Since $F$ is $C_1$-Lipchitz the curve $F(\overline{pq})$ lies entirely in $N_{R+C_1M}(l)$, and we replace $R$ with $R+C_1M$.
+
+It remains to prove that $F(\overline{pq})$ lies entirely (up to taking a bigger $R$) in the bounded set $N_R(\overline{F(p)F(q)})$: the proof is analogous and easier, since Figure \ref{Mostow:fig}-(right) shows that $d(F(r), F(s))\leqslant 2R$. 
+\end{proof}
+
+In the previous and following lemmas, the constant $R$ depends only on the pseudo-isometry constants $C_1$ and $C_2$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {\iftoggle{BW}{Mostow2-BW}{Mostow2}} 
+\nota{For every $0<u<t$, the point $F(l(u))$ is contained in the (\iftoggle{BW}{light grey}{yellow}) $R$-neighbourhood of $\overline{F(p) F(l(t))}$. If $u$ is big, the \iftoggle{BW}{}{blue }segment $\overline{F(p)F(l(u))}$ is long, while the \iftoggle{BW}{grey}{red} one is bounded by $R$: hence the angle $\alpha_{tu}$ between $v_t$ and $v_u$ is small. Therefore $v_t$ is a Cauchy sequence.}
+\label{Mostow2:fig}
+\end{center}
+\end{figure}
+
+\begin{lemma} \label{half:lemma}
+Let $F\colon \matH^n \to \matH^n$ be a pseudo-isometry. There is a $R>0$ such that for all $p\in\matH^n$ and every half-line $l$ starting from $p$ there is a unique half-line $l'$ starting from $F(p)$ such that
+$$F(l) \subset N_R(l').$$
+\end{lemma}
+\begin{proof}
+We parametrize $l$ as a geodesic $l\colon [0,+\infty) \to \matH^n$ with unit speed. We have $l(0)=p$. Since $F$ is a pseudo-isometry we get 
+$$\lim_{t\to\infty} d\big(F(p), F(l(t))\big) = \infty.$$
+Let $v_t\in T_{F(p)}$ be the unitary tangent vector pointing towards $F(l(t))$:
+Figure \ref{Mostow2:fig} shows that $\{v_t\}_{t\in\matN}$ is a Cauchy sequence, hence it converges to a unitary vector $v\in T_{F(p)}$. Let $l'$ be the half-line starting from $F(p)$ with direction $v$. It is easy to check that $F(l)\subset N_R(l')$ and $l'$ is the unique half-line from $p$ with this property. 
+\end{proof}
+The previous lemma gives a recipe to transform every half-line $l$ into a half-line $l'$ that approximates $F(l)$. Since $\partial \matH^n$ is an equivalence relation of half-lines, we define the extension $F\colon\partial\matH^n \to \partial \matH^n$ by sending $l$ to $l'$.
+
+\begin{lemma}
+The boundary extension $F\colon \partial \matH^n \to \partial\matH^n$ is well-defined and injective.
+\end{lemma}
+\begin{proof}
+Let $l_1, l_2$ be two half-lines at bounded distance $d(l_1(t), l_2(t))<M$ for all $t$. If $d(l_1'(t), l_2'(t)) \to \infty$ we get $d\big(F(l_1(t)), F(l_2(t))\big) \to +\infty$, a contradiction since $F$ is Lipschitz. Therefore $l_1',l_2'$ are at bounded distance and $F$ is well-defined.
+
+Injectivity is proved analogously: if $l_1$ and $l_2$ are divergent then $l_1'$ and $l_2'$ also are because $F$ is a pseudo-isometry.
+\end{proof}
+
+It remains to prove that the extension $F\colon \overline{\matH^n} \to \overline{\matH^n}$ is continuous. We start by extending Lemma \ref{half:lemma} from half-lines to lines.
+
+\begin{lemma}
+Let $F\colon \matH^n \to \matH^n$ be a pseudo-isometry. There is a $R>0$ such that for every line $l$ there is a unique line $l'$ with $F(l) \subset N_R(l')$.
+\end{lemma}
+\begin{proof}
+Parametrize $l$ as $l\colon (-\infty,+\infty) \to \matH^n$ with unit speed. By cutting $l$ into two half-lines we know that $F(l(t))$ is a curve that tends to two distinct points $x_\pm\in\partial\matH^n$ as $t\to\pm\infty$. Let $l'$ be the line with endpoints $x_\pm$. For any $t>0$ we have
+$$F\big(l([-t,t])\big) \subset N_R\left(\overline{F(l(-t))F(l(t))}\right)$$
+and by sending $t\to +\infty$ we deduce that $F(l)\subset N_R(l')$.
+\end{proof}
+
+The next lemma says that a pseudo-isometry does not distort much lines and orthogonal hyperplanes. We will need it to prove continuity.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{Mostow3-BW}{Mostow3}} 
+\nota{Let $l$ and $H$ be a line and an orthogonal hyperplane. The orthogonal projection of $H$ onto $l$ is obviously a point $l\cap H$; the pseudo-isometry $F$ mildly distorts this picture: the image $F(H)$ projects to a bounded segment in $l'$.}
+\label{Mostow3:fig}
+\end{center}
+\end{figure}
+
+\begin{lemma}
+Let $F\colon\matH^n \to \matH^n$ be a pseudo-isometry. There is a $R>0$ such that for any line $l$ and hyperplane $H$ orthogonal to $l$, the image $F(H)$ projects orthogonally to $l'$ onto a bounded segment length smaller than $R$.
+\end{lemma}
+\begin{proof}
+See Figure \ref{Mostow3:fig}. Consider a generic line $s\subset H$ passing through $p=l\cap H$. By the previous lemmas $F(s)\subset N_R(s')$ with $s'\neq l'$, and the orthogonal projection on $l'$ sends any other line $s'$ onto a segment, bounded by the images of the endpoints of $s'$. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{Mostow4-BW}{Mostow4}} 
+\nota{The lines $s_1$ and $s_2$ have a distance $d$ from $p$ which depends on nothing (in fact, $\cosh d = \sqrt 2$). The lines $l'$, $s_1'$, and $s_2'$ approximate up to an error $R$ the images of $l$, $s_1$, and $s_2$ along $F$. The projection $q$ of $F(p)$ on $l'$ is hence $R$-close to $F(p)$, which is in turn $(C_1d)$-close to the lines $s_i'$. Therefore $q$ is $(C_1d+2R)$-close to both $s_1'$ and $s_2'$. This easily implies that $f$ is $(C_1d+2R)$-close to $q$.
+}
+\label{Mostow4:fig}
+\end{center}
+\end{figure}
+
+Consider as in Figure \ref{Mostow4:fig} the line $s$, with one endpoint $s^\infty$ and the corresponding endpoint $F(s^\infty)$ of $s'$. The figure shows that the projection $f$ of $F(s^\infty)$ to $l'$ is at bounded distance from a point $q$ which does not depend on $s$.
+\end{proof}
+
+Finally, we prove that the extended $F$ is continuous.
+
+\begin{lemma}
+The extension $F\colon \overline{\matH^n} \to \overline{\matH^n}$ is continuous.
+\end{lemma}
+\begin{proof}
+Consider $x\in \partial \matH^n$ and its image $F(x) \in \partial \matH^n$. Let $l$ be a half-line pointing to $x$: hence $l'$ points to $F(x)$. The half-spaces orthogonal to $l'$ determine a neighbourhood system for $F(x)$: consider one such half-space $S$.
+
+Let $R>0$ be as in the previous lemmas. The image $F(l)$ is $R$-close to $l'$, hence for sufficiently big $t$ the point $F(l(t))$ and its projection into $l'$ lie in $S$ at distance $>R$ from $\partial S$. By the previous lemma the image $F(H(t))$ of the  hyperplane $H(t)$ orthogonal to $l$ in $l(t)$ is also contained in $S$. Hence the entire half-space bounded by one such $H(t)$ goes inside $S$ through $F$.
+This shows that $F$ is continuous at every point $x\in\partial \matH^n$.
+\end{proof}
+
+With some effort, we have proved that every pseudo-isometry of $\matH^n$ extends continuously to the boundary. Theorem \ref{estensione:teo} now follows easily.
+
+\begin{proof}[Proof of Theorem \ref{estensione:teo}]
+We know that $\tilde f$ is a pseudo-isometry and hence extends to a map $\tilde f \colon \overline {\matH^n} \to \overline{\matH^n}$ that sends injectively $\partial \matH^n$ to itself. It remains to prove that $\tilde f|_{\partial \matH^n}$ is a homeomorphism.
+
+Pick a smooth homotopic inverse $g$ for $f$. The homotopy $\id_M \sim g \circ f$ lifts to a homotopy $\id_{\matH^n}\sim\tilde g\circ \tilde f$ for some lift $\tilde g$. Since $M$ is compact, the latter homotopy moves every point at uniformly bounded distance and hence $\tilde g\circ \tilde f$ extends continuously to the identity on $\partial \matH^n$, and the same holds for $\tilde f\circ \tilde g$. Therefore $\tilde g|_{\partial \matH^n}$ is the inverse of $\tilde f|_{\partial \matH^n}$ and they are both homeomorphisms.
+\end{proof}
+
+
+\subsection{References}
+As in the previous chapters, we have mostly consulted Benedetti -- Petronio \cite{BP}, Ratcliffe \cite{R}, and Thurston's notes \cite{Th}. The Epstein -- Penner decomposition is taken from their 1988 paper \cite{EP}. 
+
+
+
+\part{Surfaces}
+\chapter{Surfaces} \label{superfici:chapter} \label{surfaces:chapter}
+
+A surface is a differentiable manifold of dimension $n=2$, possibly with boundary. The closed orientable surfaces are classified topologically by their Euler characteristic, a complete invariant that also determines their possible geometries: a closed surface has a hyperbolic, flat, or spherical structure if and only if its Euler characteristic is negative, null, or positive.
+
+We devote some time here to expose the topological classification and the geometrisation of closed surfaces. Then we describe some of the beautiful features of geometrisation: the geometry of a surface (typically, hyperbolic geometry) can be used to prove in an elegant way various non-trivial topological facts. 
+
+We end this chapter by defining and studying the \emph{mapping class group}, a group that encodes the topological symmetries of a surface.

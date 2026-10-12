@@ -1,24 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/2018sorus020/sections/sec-046",
   "@type": [
     "doco:Section"
   ],
-  "title": "Proof of Main Theorem 1",
-  "pageStart": 55,
-  "pageEnd": 58,
+  "title": "The torsion at ideal points",
+  "pageStart": 91,
+  "pageEnd": 91,
   "contains": [
-    "library/2018sorus020/blocks/prose-sec-046",
-    "library/2018sorus020/blocks/thm-sec-046-01",
-    "library/2018sorus020/blocks/lem-sec-046-02",
-    "library/2018sorus020/blocks/prop-sec-046-03",
-    "library/2018sorus020/blocks/lem-sec-046-04",
-    "library/2018sorus020/blocks/lem-sec-046-05",
-    "library/2018sorus020/blocks/lem-sec-046-06",
-    "library/2018sorus020/blocks/lem-sec-046-07",
-    "library/2018sorus020/blocks/lem-sec-046-08"
+    "library/2018sorus020/blocks/prose-sec-046"
   ],
-  "derivedFrom": "library/2018sorus020/manifest",
-  "sourceDocument": "library/2018sorus020/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

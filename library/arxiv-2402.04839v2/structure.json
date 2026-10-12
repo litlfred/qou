@@ -5,7 +5,11 @@
   "file": "2402.04839v2.pdf",
   "sha256": "daf09811c350a2ad4453a89faaca2af5f0e84788e822fb79c4d3be3e3d9e9fba",
   "bytes": 882689,
-  "pages": 28
+  "pages": 28,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -15,7 +19,7 @@
    "stamp_date": "8 Jun 2026"
   },
   "doi": null,
-  "title": "On a volume invariant of 3–manifolds",
+  "title": "On a volume invariant of 3\u2013manifolds",
   "authors_raw": "Marc Kegel, Arunima Ray, Jonathan Spreer, Em Thompson and Stephan Tillmann",
   "abstract": null,
   "docinfo": {
@@ -25,7 +29,7 @@
    "Title": "On a volume invariant of 3-manifolds"
   },
   "title_lines": [
-   "On a volume invariant of 3–manifolds"
+   "On a volume invariant of 3\u2013manifolds"
   ]
  },
  "toc": [
@@ -412,6 +416,185 @@
   "likely_scanned": false,
   "toc_entries": 22,
   "sections": 22,
-  "chars_total": 75422
+  "chars_total": 75422,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "volt.tex",
+   "tex_sections": 19,
+   "overlaid": 18,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-properties-examples-and-questions",
+     "title": "Properties, examples and questions",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-definition-of-topological-volume-and-its-spectru",
+     "title": "Definition of topological volume and its spectrum",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.857,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-refinements-of-topological-volume",
+     "title": "Refinements of topological volume",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.831,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-a-finiteness-result",
+     "title": "A finiteness result",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.851,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-covers-and-branched-covers",
+     "title": "Covers and branched covers",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.819,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-constructions-of-unbounded-topological-volume",
+     "title": "Constructions of unbounded topological volume",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-bounds-on-topological-volume",
+     "title": "Bounds on topological volume",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-upper-bounds-from-surgery-descriptions-or-triang",
+     "title": "Upper bounds from surgery descriptions or triangulations",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.806,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-lower-bounds",
+     "title": "Lower bounds",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.795,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-the-minimal-topological-volume-manifolds",
+     "title": "The minimal topological volume manifolds",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-a-census",
+     "title": "A census",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-parenthood",
+     "title": "Parenthood",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.88,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-homology-classes-of-minimisers",
+     "title": "Homology classes of minimisers",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.871,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-connected-sums",
+     "title": "Connected sums",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.719,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-examples-obtained-from-the-whitehead-link-and-it",
+     "title": "Examples obtained from the Whitehead link and its sister",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.868,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-volume-functions-on-dehn-surgery-space",
+     "title": "Volume functions on Dehn surgery space",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.882,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-the-topological-volume-of-all-but-finitely-many",
+     "title": "The topological volume of all but finitely many lens spaces",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.865,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-determining-the-minimiser",
+     "title": "Determining the minimiser",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.402,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-019-using-tetrahedron-shapes-to-prove-equivalence-of",
+     "title": "Using tetrahedron shapes to prove equivalence of volumes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-equivalence-of-volumes-m006-and-m007",
+     "title": "Equivalence of volumes: m006 and m007",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-equivalence-of-volumes-m015-m016-and-m017",
+     "title": "Equivalence of volumes: m015, m016 and m017",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

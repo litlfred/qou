@@ -8,18 +8,10 @@ pages: 5-5
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
 doc_brief: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant — Previous work of the author and N."
+text_source: latex
+latex_prose_ratio: 0.812
+latex_coverage_ratio: 0.514
 ---
-[McP22]C.McPhail-Snyder, Hyperbolic struc-
-tures on link complements, octahedral decomposi-
-tions, and quantumsl2. arXiv
-4 Ourinvariantisdeﬁnedintermsoftheocta-
-hedraldecompositionassociatedto D. Thisis
-asemi-idealtriangulationwithtwonon-ideal
-vertices. Theextradegreesoffreedomarere-
-latedtothechoiceoflocationofthesevertices.
-Acknowledgements
-IwouldliketothankFrancisBonahon,EﬃeKalfagianni,LillianPierce,andKaHoWongforhelpful
-conversations.
-2. Preliminaries
-Here we give some preliminary facts aboutSL2(C) representations of link complements and
-octahedraldecompositions. Fordetailssee[McP22]and[McP25b].
+[]{#sec:Preliminaries label="sec:Preliminaries"}
+
+Here we give some preliminary facts about $\slg$ representations of link complements and octahedral decompositions. For details see [@McphailSnyder2022hyperbolicstructureslinkcomplements] and [@McphailSnyder2024octahedralcoordinateswirtingerpresentation].

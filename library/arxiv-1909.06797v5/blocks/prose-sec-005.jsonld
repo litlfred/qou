@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1909.06797v5/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1909.06797v5/blocks/prose-sec-005",
   "kind": "prose",
   "title": "A connection between Young lattice and Gross-Witten-Wadia model",
   "pageStart": 13,
   "pageEnd": 15,
   "text": "../sections/sec-005-41-a-connection-between-young-lattice-and-gross.md",
-  "derivedFrom": "library/arxiv-1909.06797v5/manifest",
-  "sourceDocument": "library/arxiv-1909.06797v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06797v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06797v5/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,84 +8,59 @@ pages: 1-3
 source_pdf: 2007.13108v1.pdf
 source_sha256: b298478f5f5b948d
 doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
+text_source: latex
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.936
 ---
-In the Euclidean space Rn, log-concave measures, namely measures whose density is of the
-form e−U with U being a convex potential are known to satisfy several concen tration inequali-
-ties. For instance, if γ is the standard Gaussian measure on Rn and the probability measure
-ν is absolutely continuous with respect to γ with density dν = eV dγ where the potential
-V : Rn → R satisﬁes the condition
-∇2V ≼ (1 − δ)In, (1)
-then for every 1-Lipschitz test function ϕ , we will have Varν[ϕ ] ≤ 1
-δ , see e.g., [14]. In fact,
-much stronger concentration, for instance in the form of a lo garithmic Sobolev inequality, is
-known to hold in this case.
-The objective of this work is to try to generalize the notion o f log-concavity to the Boolean
-hypercube in a way that analogous concentration inequalities are attained. Deﬁne Cn := {−1, 1}n.
-We say that a function ϕ : Cn → R is 1-(Hamming)-Lipschitz if
-|ϕ (x) − ϕ (y)| ≤ ‖ x − y‖1, ∀x, y ∈ C n.
-Let µ be the uniform measure on Cn. Suppose that dν = eV dµ. Given a 1-Lipschitz function
-ϕ , it is a trivial fact that Varν[ϕ ] ≤ n2, and this bound is sharp in general (e.g., take ϕ (x) =
-∗ Weizmann Institute of Science. Supported by a European Rese arch Council Starting Grant (ERC StG) and by
-an Israel Science Foundation grant no. 715/16.
-†Weizmann Institute of Science. Supported by the European Re search Council.
-1
-∑
-i xi and ν which assigns mass 1/ 2 to (−1, · · · , −1) and (1, . . . , 1)). We are interested in
-the question of ﬁnding sufﬁcient conditions on the potentia l V , analogous to (1), under which
-a nontrivial bound for Varν[ϕ ] is implied. Let us mention that in the case of the continuous
-hypercube, concentration results of this nature we obtaine d by Klartag ([10]).
-It is clear that any potential V : Cn → R is the restriction of some convex function on Rn
-to Cn, meaning that the notion of convexity has to either consider the discrete derivatives of V
-or to consider the continuous Hessian applied to a suitably c hosen interpolation. Our suggested
-notion of convexity is roughly based on the multi-linear int erpolation, but the formal deﬁnition
-will ﬁrst be given in terms of the logarithmic Laplace transf orm. Deﬁne,
-L[ν](x) = log
-∫
-Cn
-e⟨x,y⟩dν(y), ∀x ∈ Rn.
-The function L[ν] is known as the log-Laplace transform of the measure ν. We are now ready
-to deﬁne our main notion of semi-log-concavity.
-Deﬁnition 1. (Semi log-concave measures). Given a measure ν on Cn, We say that ν is β -semi-
-log-concave if
-∇2L[ν](x) ≼ β In, ∀x ∈ Rn, (2)
-where the inequality is in the positive-deﬁnite sense.
-Our main theorem gives a nontrivial concentration bound for Lipschitz functions with re-
-spect to such measures.
-Theorem 2. Let β ≥ 1. If ν is a β -semi-log-concave probability measure on Cn and ϕ is
-1-Lipschitz, then
-Varν[ϕ ] ≤ Cβn 2−c/β
-where C, c > 0 are universal constants.
-The theorem shows in particular that for any β ∈ R there exists n large enough such that
-β -semi-log-concave measures on Cn admit nontrivial concentration.
-Before we proceed, let us give an alternative and slightly st ronger notion of semi-log-
-concavity which could hopefully shed some light and give bet ter intuition regarding the relation
-to the usual notion of log concavity in Rn. We ﬁrst need to recall the multi-linear extension of
-the measure into the continuous hypercube, [−1, 1]n. Given a function f : Cn → R, it is known
-that there is a unique function ˆf : 2 [n] → R such that
-f (x) =
-∑
-A⊂[n]
-ˆf (A)
-∏
-i∈A
-xi. (3)
-The function ˆf is known as the Walsh-Fourier transform of f . Observing that the above form
-makes sense as a function from [−1, 1]n to R, we refer to this as the multi-linear (or harmonic)
-extension of f . Since the two coincide on Cn, below we allow ourselves to use the same notation
-for both the function and its multi-linear extension. The fo llowing fact is attained via a simple
-calculation, see Section 4 below.
-Fact 3. Suppose that
-∇2 log dν
-dµ (x) ≼ β In, ∀x ∈ [−1, 1]n. (4)
-Then ν is (β + 3)-semi-log-concave.
-2
-Thus, a corollary to Theorem 2 is that the condition (4) impli es that every 1-Lipschitz func-
-tion ϕ satisﬁes Varν[ϕ ] ≤ C(β + 3)n2−c/(β+3).
-Remark 4. Let f be the multi-linear extension of dν
-dµ. Since f is harmonic and since ∇ log f =
-∇2f
-f − ∇f ⊗ 2
-f 2 , we see that in order for f to be log-concave, the Hessian of f can have at most
-one positive eigenvalue, due to which the family of log-conc ave functions, or in other words
-functions satisfying condition (4) with β = 0 , is rather restricted. Semi-log-concave measures
-are a much richer family, as demonstrated below.
+In the Euclidean space $\RR^n$, \emph{log-concave} measures, namely measures whose density is of the form $e^{-U}$ with $U$ being a convex potential are known to satisfy several concentration inequalities. For instance, if $\gamma$ is the standard Gaussian measure on $\RR^n$ and the probability measure $\nu$ is absolutely continuous with respect to $\gamma$ with density $d \nu = e^{V} d \gamma$ where the potential $V:\RR^n \to \RR$ satisfies the condition
+\begin{equation}\label{eq:Rnsemilogconcave}
+\nabla^2 V \preceq (1-\delta) \Id,
+\end{equation}
+then for every $1$-Lipschitz test function $\varphi$, we will have $\Var_\nu[\varphi] \leq \frac{1}{\delta}$, see e.g., \cite{Saumard14}. In fact, much stronger concentration, for instance in the form of a logarithmic Sobolev inequality, is known to hold in this case.
+
+The objective of this work is to try to generalize the notion of log-concavity to the Boolean hypercube in a way that analogous concentration inequalities are attained. Define $\DC := \{-1,1\}^n$. We say that a function $\varphi:\DC \to \RR$ is $1$-(Hamming)-Lipschitz if
+$$
+|\varphi(x) - \varphi(y)| \leq \|x-y\|_1, ~~ \forall x,y \in \DC.
+$$
+Let $\mu$ be the uniform measure on $\DC$. Suppose that $d \nu = e^V d \mu$. Given a $1$-Lipschitz function $\varphi$, it is a trivial fact that $\Var_\nu[\varphi] \leq n^2$, and this bound is sharp in general (e.g., take $\varphi(x) = \sum_i x_i$ and $\nu$ which assigns mass $1/2$ to $(-1,\cdots,-1)$ and $(1,\dots,1)$). We are interested in the question of finding sufficient conditions on the potential $V$, analogous to \eqref{eq:Rnsemilogconcave}, under which a nontrivial bound for $\Var_\nu[\varphi]$ is implied. Let us mention that in the case of the \emph{continuous} hypercube, concentration results of this nature we obtained by Klartag (\cite{Klartag-cube}).
+
+It is clear that any potential $V: \DC \to \RR$ is the restriction of some convex function on $\RR^n$ to $\DC$, meaning that the notion of convexity has to either consider the discrete derivatives of $V$ or to consider the continuous Hessian applied to a suitably chosen interpolation. Our suggested notion of convexity is roughly based on the multi-linear interpolation, but the formal definition will first be given in terms of the logarithmic Laplace transform. Define,
+$$
+\mathcal{L}[\nu](x) = \log \int_{\DC} e^{\langle x, y \rangle} d \nu(y), ~~ \forall x \in \RR^n.
+$$
+The function $\mathcal{L}[\nu]$ is known as the log-Laplace transform of the measure $\nu$. We are now ready to define our main notion of \emph{semi-log-concavity}.
+\begin{definition} (Semi log-concave measures).
+Given a measure $\nu$ on $\DC$, We say that $\nu$ is $\beta$-semi-log-concave if
+\begin{equation}\label{eq:semilc}
+\nabla^2 \mathcal{L}[\nu](x) \preceq \beta \Id, ~~ \forall x \in \RR^n,
+\end{equation}
+where the inequality is in the positive-definite sense.
+\end{definition}
+
+Our main theorem gives a nontrivial concentration bound for Lipschitz functions with respect to such measures.
+\begin{theorem} \label{thm:main}
+	Let $\beta \geq 1$. If $\nu$ is a $\beta$-semi-log-concave probability measure on $\DC$ and $\varphi$ is $1$-Lipschitz, then
+	$$
+	\Var_\nu[\varphi] \leq C \beta n^{2 - c/\beta} 
+	$$
+	where $C,c>0$ are universal constants.
+\end{theorem}
+The theorem shows in particular that for any $\beta \in \RR$ there exists $n$ large enough such that $\beta$-semi-log-concave measures on $\DC$ admit nontrivial concentration. \\
+
+Before we proceed, let us give an alternative and slightly stronger notion of semi-log-concavity which could hopefully shed some light and give better intuition regarding the relation to the usual notion of log concavity in $\RR^n$. We first need to recall the \emph{multi-linear} extension of the measure into the continuous hypercube, $[-1,1]^n$. Given a function $f:\DC \to \RR$, it is known that there is a unique function $\hat f:2^{[n]} \to \RR$ such that
+\begin{equation}\label{eq:Fourier}
+f(x) = \sum_{A \subset [n]} \hat f(A) \prod_{i \in A} x_i.
+\end{equation}
+The function $\hat f$ is known as the Walsh-Fourier transform of $f$. Observing that the above form makes sense as a function from $[-1,1]^n$ to $\RR$, we refer to this as the multi-linear (or harmonic) extension of $f$. Since the two coincide on $\DC$, below we allow ourselves to use the same notation for both the function and its multi-linear extension. The following fact is attained via a simple calculation, see Section \ref{sec:harmonic} below.
+\begin{fact} \label{fact:harmonic}
+Suppose that 
+\begin{equation}\label{eq:lc2}
+\nabla^2 \log \frac{d \nu}{d \mu}(x) \preceq \beta \Id, ~~ \forall x \in [-1,1]^n.
+\end{equation}
+Then $\nu$ is $(\beta+3)$-semi-log-concave.
+\end{fact}
+Thus, a corollary to Theorem \ref{thm:main} is that the condition \eqref{eq:lc2} implies that every $1$-Lipschitz function $\varphi$ satisfies $\Var_\nu[\varphi] \leq C(\beta+3)n^{2 - c/(\beta+3)}$.
+\medskip
+\begin{remark}
+Let $f$ be the multi-linear extension of $\frac{d \nu}{d \mu}$. Since $f$ is harmonic and since $\nabla \log f = \frac{\nabla^2 f}{f} - \frac{\nabla f^{\otimes 2}}{f^2}$, we see that in order for $f$ to be log-concave, the Hessian of $f$ can have at most one positive eigenvalue, due to which the family of log-concave functions, or in other words functions satisfying condition \eqref{eq:lc2} with $\beta = 0$, is rather restricted. Semi-log-concave measures are a much richer family, as demonstrated below. 
+\end{remark}

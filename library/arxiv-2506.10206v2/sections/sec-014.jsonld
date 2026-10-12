@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2506.10206v2/sections/sec-014",
   "@type": [
     "doco:Section"
   ],
-  "title": "On an identity attributed to Lima",
-  "pageStart": 9,
-  "pageEnd": 9,
+  "title": "8th-degree single-term identity",
+  "pageStart": 33,
+  "pageEnd": 33,
   "contains": [
     "library/arxiv-2506.10206v2/blocks/prose-sec-014"
   ],
-  "derivedFrom": "library/arxiv-2506.10206v2/manifest",
-  "sourceDocument": "library/arxiv-2506.10206v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
   "provenance": "ingested"
 }

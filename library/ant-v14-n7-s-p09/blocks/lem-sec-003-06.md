@@ -1,1 +1,0 @@
-] there is some χ∈ Irrp′(G)σ1 appearing with p′-multiplicity in9. The statement now

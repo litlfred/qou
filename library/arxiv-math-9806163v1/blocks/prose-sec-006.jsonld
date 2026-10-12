@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9806163v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9806163v1/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Schur Functions",
-  "pageStart": 4,
-  "pageEnd": 6,
-  "text": "../sections/sec-006-12-schur-functions.md",
-  "derivedFrom": "library/arxiv-math-9806163v1/manifest",
-  "sourceDocument": "library/arxiv-math-9806163v1/manifest",
+  "title": "Markov Trace for the Hecke algebra of type D",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "text": "../sections/sec-006-6-markov-trace-for-the-hecke-algebra-of-type-d.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9806163v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9806163v1/manifest.jsonld",
   "provenance": "ingested"
 }

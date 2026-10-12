@@ -8,145 +8,153 @@ pages: 32-34
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
 doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+text_source: latex
+latex_prose_ratio: 0.975
+latex_coverage_ratio: 0.975
 ---
-are arguably the most interesting examples of φ–compatible homomorphisms from π1(N ) to
-a non–commutative Laurent polynomial ring. The ideas of thi s section are due to Cochran
-and Harvey.
-Theorem 10.2. Let γ be a torsion–free solvable group and let F be a commutative ﬁeld.
-Then the following hold.
-(1) F[Γ] is an Ore domain, in particular it embeds in its classical rig ht ring of quotients
-K(Γ) .
-(2) K(Γ) is ﬂat over F[Γ] .
-Indeed, it follows from [KLM88] that F[Γ] has no zero divisors. The ﬁrst part now
-follows from [DLMSY03, Corollary 6.3]. The second part is a w ell–known property of Ore
-localizations. We call K(Γ) the Ore localization of F[Γ]. In [COT03] the notion of a poly–
-torsion–free–abelian (PTF A) group is introduced, it is wel l–known that these groups are
-torsion–free and solvable.
-Remark. (1) It follows from Higman’s theorem [Hi40] that the above th eorem also holds
-for groups which are locally indicable and amenable. We will not make use of this,
-but note that throughout this section ‘torsion–free solvab le’ could be replaced by
-‘locally indicable and amenable’.
-(2) Note that the poly–torsion–free–abelian (PTF A) groups introduced in [COT03] are
-solvable and torsion–free.
-We need the following deﬁnition.
-Deﬁnition. Letπ be a group, φ :π → Z an epimorphism and ϕ :π →γ an epimorphism to
-a torsion–free solvable group γ such that there exists a map φΓ : Γ → Z (which is necessarily
-unique) such that
-π
-φ /d31/d31/d63/d63/d63/d63/d63/d63/d63/d63
-ϕ /d47/d47
-Γ
-φΓ
-/d15/d15
-Z
-commutes. Following [Ha06, Deﬁnition 1.4] we call ( ϕ,φ ) an admissible pair.
-Now let (ϕ :π1(N ) → Γ,φ ) be an admissible pair for π1(N ). In the following we denote
-Ker{φ : Γ → Z} by Γ ′(φ). When the homomorphism φ is understood we will write Γ ′
-for Γ ′(φ). Clearly Γ ′ is still solvable and torsion–free. Let F be any commutative ﬁeld
-A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS 33
-and K(Γ ′) the Ore localization of F[Γ ′]. Pick an element µ ∈ γ such that φ(µ ) = 1. Let
-γ : K(Γ ′) → K(Γ ′) be the homomorphism given by γ(a) = µaµ −1. Then we get a ring
-homomorphism
-Z[Γ] → K(Γ ′)γ[t±1]
-g ↦→ (gµ −φ(g)tφ(g)), for g ∈γ.
-We denote this ring homomorphism again by ϕ. It is clear that ϕ isφ–compatible. Note that
-the ring K(Γ ′)[t±1] and hence the above representation depends on the choice of µ . We will
-nonetheless suppress µ in the notation since diﬀerent choices of splittings give iso morphic
-rings. We will refer to a non–commutative Alexander polynom ial corresponding to such a
-group homomorphism as a higher order Alexander polynomial .
-An important example of admissible pairs is provided by Harv ey’s rational derived series
-of a group γ (cf. [Ha05, Section 3]). Let γ(0)
-r =γ and deﬁne inductively
-γ(n)
-r =
-{
-g ∈γ(n−1)
-r |gk ∈
-[
-γ(n−1)
-r ,γ (n−1)
-r
-]
-for some k ∈ Z \ {0}
-}
-.
-Note that γ(n−1)
-r /γ(n)
-r ∼
-=
-(
-γ(n−1)
-r /
-[
-γ(n−1)
-r ,γ (n−1)
-r
-])
-/Z–torsion. By [Ha05, Corollary 3.6] the
-quotients Γ /γ(n)
-r are solvable and torsion–free for any γ and any n. If φ : Γ → Z is an
-epimorphism, then (Γ → Γ/γ(n)
-r ,φ ) is an admissible pair for (Γ ,φ ) for any n> 0.
-For example if K is a knot, γ =π1(S3 \νK ), then it follows from [St74] that Γ (n)
-r = Γ (n),
-i.e. the rational derived series equals the ordinary derive d series (cf. also [Co04] and [Ha05]).
-Remark. The Achilles heel of the higher order Alexander polynomials is that they are
-unfortunately diﬃcult to compute in practice. We refer to [S a07] for some ideas on how to
-compute higher order Alexander polynomials in some cases.
-10.3. Comparing diﬀerent φ–compatible maps. We now recall a deﬁnition from [Ha06].
-Deﬁnition. LetN be a 3–manifold with empty or toroidal boundary. We write π =π1(N ).
-Let φ : π → Z an epimorphism. Furthermore let ϕ1 : π → γ1 and ϕ2 : π → γ2 be
-epimorphisms to torsion–free solvable groups γ1 and γ2. We call ( ϕ1,ϕ 2,φ ) an admissible
-triple forπ if there exist epimorphisms ϕ1
-2 :γ1 →γ2 andφ2 :γ2 → Z such that ϕ2 =ϕ1
-2 ◦ϕ1,
-and φ =φ2 ◦ϕ2.
-The situation can be summarized in the following diagram
-γ1
-ϕ1
-2
-/d15/d15
-π
-φ /d32/d32/d64/d64/d64/d64/d64/d64/d64/d64
-ϕ1
-/d62/d62/d126/d126/d126/d126/d126/d126/d126/d126ϕ2 /d47/d47γ2
-φ2
-/d15/d15
-Z.
-Note that in particular ( ϕi,φ ),i = 1, 2 are admissible pairs for π. The following theorem
-is perhaps the most striking feature of higher order Alexand er polynomials. In light of
-Theorem 10.1 the statement can be summarized as saying that h igher order Alexander
-polynomials corresponding to larger groups give better bou nds on the Thurston norm.
-34 STEF AN FRIEDL AND STEF ANO VIDUSSI
-Theorem 10.3. Let N be a 3–manifold whose boundary is a (possibly empty) collect ion
-of tori. Let (ϕ1,ϕ 2,φ ) be an admissible triple for π1(N ). Suppose that ∆ ϕ2
-N,φ ⁄= 0 , then it
-follows that ∆ ϕ1
-N,φ ⁄= 0. We write
-di := deg(∆ ϕi
-N,φ) − deg(∆ ϕi
-N,φ,0) − deg(∆ ϕi
-N,φ,2),i = 1, 2
+We now recall the construction of what are arguably the most interesting examples of $\phi$--compatible homomorphisms from $\pi_1(N)$ to a non--commutative Laurent polynomial ring.
+The ideas of this section are due to Cochran and Harvey.
+
+\begin{theorem}\label{thm:tfa}
+Let $\gamma$ be a torsion--free solvable group and let $\mathbb{F}$ be a commutative field. Then the
+following hold.
+\begin{enumerate}
+\item  $\mathbb{F}[\Gamma]$  is an Ore domain, in particular it embeds in its classical right ring of
+quotients $\mathbb{K}(\Gamma)$.
+\item $\mathbb{K}(\Gamma)$ is flat over $\mathbb{F}[\Gamma]$.
+\end{enumerate}
+\end{theorem}
+
+Indeed, it follows from \cite{KLM88}  that $\mathbb{F}[\Gamma]$ has no zero divisors. The first part now follows from
+\cite[Corollary~6.3]{DLMSY03}. The second part is a well--known property of Ore
+localizations. We call $ \mathbb{K}(\Gamma)$ the \emph{Ore localization} of
+$\mathbb{F}[\Gamma]$. In \cite{COT03} the notion of a poly--torsion--free--abelian (PTFA) group is introduced,
+it is well--known that these groups are torsion--free and solvable.
+
+\begin{remark}
+\begin{enumerate}
+\item
+It follows from Higman's theorem \cite{Hi40} that the above theorem also holds for groups which are locally indicable and amenable.
+We will not make use of this, but note that throughout this section `torsion--free solvable' could be replaced by `locally indicable and amenable'.
+\item  Note that the poly--torsion--free--abelian (PTFA) groups introduced in \cite{COT03} are solvable and torsion--free.
+\end{enumerate}
+\end{remark}
+
+We need the following definition.
+
+\begin{definition} Let $\pi$ be a group, $\phi:\pi \to \mathbb{Z}$ an epimorphism and
+$\varphi:\pi\to \gamma$ an epimorphism to a torsion--free solvable group $\gamma$ such that there
+exists a map $\phi_\Gamma:\Gamma\to \mathbb{Z}$ (which is necessarily unique) such that
+ \[   \xymatrix {
+ \pi \ar[dr]_{\phi} \ar[r]^{\varphi} &\Gamma \ar[d]^{\phi_\Gamma}\\& \mathbb{Z} }
+     \]
+ commutes. Following \cite[Definition~1.4]{Ha06} we call $(\varphi,\phi)$
+an {\em admissible pair}.
+\end{definition}
+
+Now let $(\varphi:\pi_1(N)\to \Gamma,\phi)$ be an admissible pair for $\pi_1(N)$. In the following we
+denote $\ker\{\phi:\Gamma\to \mathbb{Z}\}$ by $\Gamma'(\phi)$. When the homomorphism $\phi$ is understood we will
+write $\Gamma'$ for $\Gamma'(\phi)$. Clearly $\Gamma'$ is still solvable and torsion--free. Let
+$\mathbb{F}$ be any commutative field and $\mathbb{K}(\Gamma')$ the Ore localization of $\mathbb{F}[\Gamma']$. Pick an element $\mu
+\in \gamma$ such that $\phi(\mu)=1$. Let $\gamma:\mathbb{K}(\Gamma')\to \mathbb{K}(\Gamma')$ be the homomorphism given by
+$\gamma(a)=\mu a\mu^{-1}$. Then we get a ring homomorphism
+\[ \begin{array}{rcl} \mathbb{Z}[\Gamma]&\to& \mathbb{K}(\Gamma')_\gamma[t^{\pm 1}]\\[1mm]
+    g &\mapsto& (g\mu^{-\phi(g)}t^{\phi(g)}), \mbox{ for $g\in \gamma$.}\end{array} \]
+    We denote this ring homomorphism again by $\varphi$.
+    It is clear that $\varphi$ is $\phi$--compatible. Note that the ring $\mathbb{K}(\Gamma')[t^{\pm 1}]$ and hence the
+above representation depends on the choice of $\mu$. We will nonetheless suppress $\mu$ in the
+notation since different choices of splittings give isomorphic rings.
+We will refer to a non--commutative Alexander polynomial corresponding to such a group homomorphism
+as a \emph{higher order Alexander polynomial}.
+
+An important example of admissible pairs is provided by Harvey's rational derived series of a group
+$\gamma$ (cf. \cite[Section~3]{Ha05}). Let $\gamma_r^{(0)}=\gamma$ and define inductively
+\[ \gamma_r^{(n)}=\big\{ g\in \gamma_r^{(n-1)} | \, g^k \in \big[\gamma_r^{(n-1)},\gamma_r^{(n-1)}\big] \mbox{ for some }k\in \mathbb{Z} \setminus \{0\} \big\}.\]
+Note that $\gamma_r^{(n-1)}/\gamma_r^{(n)}\cong
+\big(\gamma_r^{(n-1)}/\big[\gamma_r^{(n-1)},\gamma_r^{(n-1)}\big]\big)/\mbox{$\mathbb{Z}$--torsion}$.
+ By \cite[Corollary~3.6]{Ha05} the quotients $\Gamma/\gamma_r^{(n)}$ are solvable and torsion--free
+for any $\gamma$ and any $n$. If $\phi:\Gamma\to \mathbb{Z}$ is an epimorphism, then  $(\Gamma\to \Gamma/\gamma_r^{(n)},\phi)$ is
+an admissible pair for $(\Gamma,\phi)$ for any $n>0$.
+
+For example if $K$ is a knot, $\gamma=\pi_1(S^3\setminus \nu K)$, then it follows from \cite{St74} that
+$\Gamma^{(n)}_r=\Gamma^{(n)}$, i.e. the rational derived series equals the ordinary derived series (cf. also
+\cite{Co04} and \cite{Ha05}).
+
+\begin{remark}
+The Achilles heel of the higher order Alexander polynomials is that they are unfortunately difficult to compute
+in practice. We refer to \cite{Sa07} for some ideas on how to compute higher order Alexander polynomials in some cases.
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Comparing different $\phi$--compatible maps}\label{section:comparison}
+
+
+\noindent We now recall a definition from \cite{Ha06}.
+
+\begin{definition}
+Let $N$ be a 3--manifold with empty or toroidal boundary.
+We write $\pi=\pi_1(N)$. Let $\phi:\pi\to \mathbb{Z}$ an epimorphism. Furthermore let $\varphi_1:\pi \to
+\gamma_1$ and $\varphi_2:\pi \to \gamma_2$ be epimorphisms to torsion--free solvable groups $\gamma_1$
+and $\gamma_2$. We call $(\varphi_1,\varphi_2,\phi)$ an {\em admissible triple} for $\pi$ if there
+exist epimorphisms $\varphi_{2}^1:\gamma_1\to \gamma_2$  and $\phi_2:\gamma_2\to
+\mathbb{Z}$ such that $\varphi_2=\varphi_{2}^1\circ \varphi_1$, and $\phi=\phi_2\circ \varphi_2$.
+\end{definition}
+
+
+
+\noindent The situation can be summarized in the following diagram
+ \[   \xymatrix { &\gamma_1\ar[d]^{\varphi_2^1}\\ \pi \ar[dr]_{\phi} \ar[ur]^{\varphi_1} \ar[r]^{\varphi_2}
+&\gamma_2 \ar[d]^{\phi_2}\\& \mathbb{Z}. }
+     \]
+Note that in particular $(\varphi_i,\phi), i=1,2$ are admissible pairs for $\pi$.
+
+
+
+
+
+
+
+
+The following theorem is perhaps the most striking feature of higher order Alexander polynomials.
+In light of Theorem \ref{thm:lowerboundho} the statement can be summarized as saying that higher order Alexander polynomials corresponding to larger groups
+give better bounds on the Thurston norm.
+
+ \begin{theorem}
+Let $N$ be a 3--manifold whose boundary is a (possibly empty) collection of tori. Let
+$(\varphi_1,\varphi_2,\phi)$ be an admissible triple for $\pi_1(N)$.
+Suppose that $\Delta_{N,\phi}^{\varphi_2}\ne 0$, then it follows that $\Delta_{N,\phi}^{\varphi_1}\ne 0$.
+We write
+\[ d_i\mathrel{\mathop:}=\deg(\Delta_{N,\phi}^{\varphi_i})- \deg(\Delta_{N,\phi,0}^{\varphi_i})-\deg(\Delta_{N,\phi,2}^{\varphi_i}), i=1,2 \]
 Then the following holds:
-d1 ≥d2.
-Furthermore, if the ordinary Alexander polynomial ∆ φ
-N ∈ Z[t±1] is non–trivial, then d1 −d2
-is an even integer.
-Proof. The fact that ∆ ϕ2
-N,φ ⁄= 0 implies that ∆ ϕ1
-N,φ ⁄= 0 and the inequality d2 ≥d1 were ﬁrst
-proved for knots by Cochran [Co04]. Cochran’s result were th en extended to the case of
-3–manifolds by Harvey [Ha06] (cf. also [Fr07]). Finally the fact that d2 −d1 is an even
-integer when ∆ φ
-N ⁄= 0 is proved in [FK08a]. □
-The strong relationship between the Thurston norm and highe r order Alexander polyno-
-mials is also conﬁrmed by the following result (cf. [FH07]).
-Theorem 10.4. LetN be a 3–manifold with empty or toroidal boundary, let ϕ :π1(N ) →γ
-be an epimorphism to a torsion–free solvable group such that the abelianization π1(N ) →
-F :=H1(N ; Z)/torsion factors through ϕ. Then the map
-H 1(N ; Z) = Hom(F, Z) → Z≥0
-φ ↦→ max{0, deg(∆ ϕ
-N,φ) − deg(∆ ϕ
-N,φ,0) − deg(∆ ϕ
-N,φ,2)}
-deﬁnes a seminorm on H 1(N ; Z) which gives a lower bound on the Thurston norm.
+\[ d_1 \geq d_2.\]
+Furthermore, if the ordinary Alexander polynomial $\Delta_N^\phi\in \mathbb{Z}[t^{\pm 1}]$ is non--trivial, then
+ $d_1-d_2$ is an even integer.
+\end{theorem}
+
+\begin{proof}
+The fact that $\Delta_{N,\phi}^{\varphi_2}\ne 0$ implies that $\Delta_{N,\phi}^{\varphi_1}\ne 0$
+and the  inequality $d_2\geq d_1$  were first proved for knots by Cochran \cite{Co04}.
+ Cochran's result were  then extended to the case of 3--manifolds by Harvey \cite{Ha06} (cf. also \cite{Fr07}).
+Finally the fact that $d_2-d_1$ is an even integer when $\Delta_N^\phi\ne 0$ is proved in \cite{FK08a}.
+\end{proof}
+
+The strong relationship between the Thurston norm and higher order Alexander polynomials
+is also confirmed by the following result (cf. \cite{FH07}).
+
+\begin{theorem}
+Let $N$ be a 3--manifold with empty or toroidal boundary, let $\varphi:\pi_1(N) \to \gamma$ be an epimorphism to a torsion--free solvable group such that the abelianization $\pi_1(N)\to F\mathrel{\mathop:}=H_1(N;\mathbb{Z})/\mbox{torsion}$ factors through $\varphi$.
+Then  the map
+\[ \begin{array}{rcl} H^1(N;\mathbb{Z})=\mbox{Hom}(F,\mathbb{Z})&\to & \mathbb{Z}_{\geq 0} \\
+\phi &\mapsto &\max\{0,\deg(\Delta_{N,\phi}^{\varphi})- \deg(\Delta_{N,\phi,0}^{\varphi})-\deg(\Delta_{N,\phi,2}^{\varphi})\}\end{array} \]
+defines a seminorm on $H^1(N;\mathbb{Z})$ which gives a lower bound on the Thurston norm.
+\end{theorem}

@@ -6,9 +6,14 @@ type: task
 priority: high
 tags:
     - reorg-2026-10-04
+    - 8f-tseries
+    - 8f-open
 created_at: 2026-08-04T10:16:22Z
-updated_at: 2026-10-04T15:11:09Z
+updated_at: 2026-10-10T14:47:45Z
 parent: qou-8lxd
+blocked_by:
+    - qou-qvpl
+    - htw2
 ---
 
 BATTERY RESULT (strand-twist-y-battery.witness.json):
@@ -107,3 +112,71 @@ framed braid words (bean htw2). Until those exist the table cannot be evaluated
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Triage 2026-10-10 — open, and guard against a wrong closure from T2's body
+
+Tagged `8f-open`; `blocked-by qou-qvpl` (T2) per this bean's own "DEPENDS ON"
+line, and `blocked-by htw2` per the blocking input the body already records.
+
+**The wrong closure to guard against.** `qou-qvpl` (T2) lists this bean's
+battery under a heading reading "BATTERY PASSED (T2b, witness)" with items 6–9
+— 10,000 candidates, only 4 survivors, `u = {0,1,1}` and `e = {−1,−1,−1}`
+uniquely determined. A reader taking that at face value would close T2b. **It
+does not close:** this bean's own body states the gap in as many words — *"the
+battery proves CONSISTENCY (the twist assignments are compatible with known
+physics) but does NOT DERIVE them from QOU axioms."* A 10,000-candidate search
+reporting which assignments survive is enumeration against known physics, which
+under §NO FITTING is selection against the target, not a derivation. Recorded on
+`qou-qvpl` too, from the other side.
+
+**What the 2026-08-16 append already settled, so nobody re-derives it.** The
+four-step route in the original body is **not** the route: step 1 ("θ_V = q^{c_V}
+acts on each strand by the Casimir") cannot deliver step 3, because θ acts by a
+**scalar** on a simple object while the battery's answers are **non-constant
+multisets** (`u = {0,1,1}`, `d = {−1,−1,1}`), and no scalar produces a
+non-constant multiset over identical strands. That is scope-(b) on that one
+step — a proved invariant, the scalar/multiset mismatch — and it is why the
+corpus's own `ribbon_twist_charge_quantum_probe.py` test of `Q = c(λ)/3`
+FAILED structurally rather than numerically. θ is the weight *per unit framing*
+(`q^{c_V t_i}`), not the framing `t_i`.
+
+**What replaced it is derived and is this bean's real asset.** The mechanism is
+the **closure permutation**, not the twist: in a framed link the framing is one
+integer per *component*, so closing β joins strand `i` to `π(β)(i)` and a cycle
+of π becomes one component carrying one framing value —
+`IsComponentFraming π t := ∀ i, t (π i) = t i`, with
+`constant_of_transitive` and `eq_one_of_injective` as falsifiable consequences,
+two of them Lean-instantiated at `Fin 3`. Those are the first constraints in
+this arc that are **derived rather than enumerated**: they say which multisets
+are *possible given a braid*, before any search.
+
+**The blocker is unchanged and is upstream.** The corpus carries **no
+per-chiral-fermion framed braid words** (bean `htw2`), so the derived table
+cannot be evaluated. That is why the constraints are worth having now: they are
+the test those words will face.
+
+
+---
+
+## Carrier files re-verified on `main` `3c0351a40da` (2026-10-10)
+
+This bean already cites `ComponentFraming` / `SignCoherentTwist` nine times. The
+checkable part, measured today rather than carried:
+
+    ComponentFraming.lean    304 lines  rc=0  0 diagnostics  0 sorry/axiom/native_decide
+    SignCoherentTwist.lean   226 lines  rc=0  0 diagnostics  0 sorry/axiom/native_decide
+
+`lean -DautoImplicit=false -s 65536`, exit status captured directly (not through
+a pipe — a `| head` makes `$?` report *head's* status, which is how a first pass
+of this check produced four meaningless `exit=0`s). All seven declarations the
+predecessor bean names resolve: `lepton_framing_determined`,
+`nu_framing_is_zero`, `nu_distinct_multiset_excluded`, `e_framing_is_neg_one`,
+`d_multiset_forced`, `coherent_iff_all_same_sign`, `cancel_preserves_total`.
+
+**Note on the predecessor.** `htw2` is `scrapped` as this bean's duplicate, and
+its 294-line body is where the lepton closure and the `θ_V = q^{1/2}·id_V`
+ribbon-normal-form upgrade are actually written up. It is not superseded content
+— only a closed work item. The full open/closed split is appended to
+`qou-h0zz`; the correction to a stale "root blocker" recommendation of mine is
+on `qou-8lxd`.

@@ -8,26 +8,37 @@ pages: 8-9
 source_pdf: 0702263v1.pdf
 source_sha256: 8ae381b4eba60286
 doc_brief: "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna — The progress in determining the coupling constants of meson ic chi- ral Lagrangians is reviewed, with emphasis on the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Radiative corrections at low energies involve the eﬀective Lagrangia ns in
-Table 1 with superscripts em, emweak or leptons (semileptonic decays).
+Radiative corrections at low energies involve the effective Lagrangians
+in Table \ref{tab:Leff} with superscripts {\it em}, {\it emweak} or
+{\it leptons} (semileptonic decays).
+
 In the presence of photons as dynamical degrees of freedom the chiral
-counting is diﬀerent from the purely strong or nonleptonic weak cas es. The
-lowest-order Lagrangian for electromagnetic corrections to str ong processes
-is of O(e2p0) with a single LEC [10] that can be determined from the π + − π 0
-mass diﬀerence. The next-to-leading-order Lagrangian of O(e2p2) with 13
-LECs Ki was constructed by Urech [33]. By convoluting pure QCD n-point
-functions (n ≤ 4) with the photon propagator, sum rule representations were
-derived for all the Ki [34]. Numerical estimates for the Ki are obtained by
-saturating the sum rules with resonance exchange. Since the LECs Ki are
-diﬃcult to determine phenomenologically, the systematic work of Ref . [34] is
-especially important for controlling radiative corrections to strong processes
-at low energies.
-The situation is much less favourable for electromagnetic correctio ns to
-nonleptonic weak processes. The single LEC of lowest order, O(G8e2p0),
-7
-related to the electromagnetic penguin contribution [35], is reasona bly well
-known. However, the 14 additional LECs of O(G8e2p2) [36] are only known to
-leading order in 1 /N c (factorization). In this way, the LECs can be expressed
-in terms of Wilson coeﬃcients, the strong LECs L5, L 8 and the electromag-
-netic LECs Ki [28, 31].
+counting is different from the purely strong or nonleptonic weak
+cases. The lowest-order Lagrangian for electromagnetic corrections
+to strong processes is of $O(e^2 p^0)$ with a single LEC
+\cite{Ecker:1988te}  that can be determined from the $\pi^+ - \pi^0$
+mass difference. The next-to-leading-order Lagrangian of $O(e^2 p^2)$ 
+with 13 LECs $K_i$ was constructed by Urech \cite{Urech:1994hd}. By
+convoluting pure QCD $n$-point functions ($n \le 4$) with the photon
+propagator, sum rule representations were derived for all the $K_i$ 
+\cite{Ananthanarayan:2004qk}. Numerical estimates for the $K_i$ are 
+obtained by saturating the sum rules with resonance exchange. Since
+the LECs $K_i$ are difficult to determine phenomenologically, the
+systematic work of Ref.~\cite{Ananthanarayan:2004qk} is especially
+important for controlling radiative corrections to strong processes at
+low energies.
+
+The situation is much less favourable for electromagnetic corrections
+to nonleptonic weak processes. The single LEC of lowest
+order, $O(G_8 e^2 p^0)$, related to the electromagnetic penguin
+contribution \cite{Bijnens:1983ye}, is reasonably well known. However,
+the 14
+additional LECs of $O(G_8 e^2 p^2)$ \cite{Ecker:2000zr} are only known
+to leading order in $1/N_c$ (factorization). In this way, the LECs can
+be expressed in terms of Wilson coefficients, the strong LECs $L_5,L_8$
+and the electromagnetic LECs $K_i$
+\cite{Pallante:2001he,Cirigliano:2003gt}.

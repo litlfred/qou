@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1306.3655v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Murnaghan-Nakayama rule and some virtual S n characters (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1306.3655v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1306.3655&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1306.3655v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1306.3655v1",
+    "content_type": "application/gzip",
+    "sha256": "bd47ab8d190d8fd6eca8b76125ac147e8abd7fab9799a9da476c9ca1c43c1a4b",
+    "bytes": 12798,
+    "fetched": "2026-10-10T15:08:29+00:00",
+    "files": [
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "674ee33b6f5a2ff6c42a50c5e1c047548495b128791efcdaf4505a1ff49e6430",
+        "bytes": 48268
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

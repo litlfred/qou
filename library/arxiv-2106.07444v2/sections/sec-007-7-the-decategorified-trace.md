@@ -8,487 +8,392 @@ pages: 45-52
 source_pdf: 2106.07444v2.pdf
 source_sha256: 5acca39c07bcdddd
 doc_brief: "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS — Let W be the W eyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G."
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.99
 ---
-7.1. To state the main deﬁnition of this section, let W denote an arbitrary ﬁnite
-Coxeter group.
-As before, HW is the Iwahori–Hecke algebra of W . Moreover, we will draw freely
-upon the notation introduced in Appendix A:
-• R(W ) is the representation ring of W .
-• QW ⊆ ¯Q is the splitting ﬁeld of W .
-• (−, −)W :R(W ) ×R(W ) → Z be the multiplicity pairing.
-• We write
-[Sym(V)]q =
-∑
-i
-qi Symi(V).
-• If φ :W → QW is an irreducible character, then φq :HW (q
-1
-2 ) → QW (q
-1
-2 )
-is the corresponding Z[q± 1
-2 ]-linear trace.
-• {−, −} : ˆW × ˆW → QW is the symmetric pairing (derived from) Lusztig’s
-exotic Fourier transform.
-Deﬁnition 7.1.1. For any ﬁnite Coxeter groupW , theR(W ) trace on its Iwahori–
-Hecke algebra is the Z[q± 1
-2 ]-linear trace
-⟨−⟩ q :HW →R(W ) ⊗ QW (q
-1
-2 )
-deﬁned by
-⟨β⟩ q =
-∑
-φ,ψ∈ ˆW
-{φ,ψ }φq(β)ψ
-for all β ∈HW .
-In the next two subsections, we assume that W is still a Weyl group and prove
-Theorem 5, which relates the R(W ) trace to the decategoriﬁcation of the AW trace.
-In the remainder of the section, we allow W to be an arbitrary ﬁnite Coxeter group
-and relate the R(W ) trace to the Markov trace studied by Ocneanu and Gomi.
-We conclude by proving Propositions 7.5.1 and 7.5.5, which roughly generalize
-rationality and symmetry properties of the Markov trace.
-7.2. Recall that an object of Modb
-2( ¯Qℓ[W ]) is a ¯Qℓ[W ]-module equipped with a
-W -invariant bigrading where the ﬁrst grading is bounded belo w and the second is
-bounded. We have an additive map
-AH :HW
-∼
-− →[HW ]△ → [Modb
-2( ¯Qℓ[W ])]⊕
-induced by the composition
-Hop
-W
-AH
-− − →Modb
-2(AW ) → Modb
-2( ¯Qℓ[W ]),
-where the second arrow is the forgetful functor. Note that Modb
-2( ¯Qℓ[W ]) is semisim-
-ple, since ¯Qℓ[W ] is.
-For any ring R, such as R =R(W ), we write R( (q
-1
-2 ) ) =R[ [q
-1
-2 ] ][1
-q ]. Let
-[−]q : [Mod1,1( ¯Qℓ[W ])]⊕ →R(W )( (q
-1
-2 ) )
-46 MINH-TÂM QUANG TRINH
-be the additive map deﬁned by
-[M ]q =
-∑
-i,j
-(−1)i−jq
-j
-2Mi,j.
-We say that [M ]q is the q-graded character of M . For all i,j , let
-(AH∨)i,j(−) = Hom ¯Qℓ (AHi,j(−), ¯Qℓ).
-Then the composition
-[AH∨]q := [−]q ◦ AH∨ :HW →R(W )( (q
-1
-2 ) )
-is Z[q± 1
-2 ]-linear.
-7.3. Recall from Section 2 that {γw}w denotes the Kazhdan–Lusztig basis of the
-Iwahori–Hecke algebra. Then Theorem 5 reduces to the claim that:
-[AH∨(ICw)]q = ⟨γw⟩ q · [Sym(V)]q
-for all w ∈ W . To prove it, we use a multiplicity formula for unipotent cha racter
-sheaves, derived from [ L85-III, Cor. 14.11] and [ L85-V, Thm. 23.1].
-As in § 2.5, let [ C(G0)]⊕ be endowed with the action of Z[q
-1
-2 ] in which q
-1
-2 acts
-by ⟨− 1⟩ . The following version of the formula is the one quoted in [ WW08, 413],
-ﬁxed to incorporate semisimpliﬁcation.
-Theorem 7.3.1 (Lusztig). For all w ∈W , we have
-[CH(ICw)ss] =
-∑
-φ,ψ∈ ˆW
-{φ,ψ }φq(γw)[Gψ] + cuspidal terms
-in [C(G0)]⊕, where “cuspidal terms” refers to the contribution of simpl e objects
-not of the form Gψ for some ψ ∈ ˆW , and “ ss” refers to the semisimpliﬁcation of
-(shifted) perverse summands.
-Proof of Theorem 5. By an argument similar to the proof of the second equivalence
-in Lemma 6.3.1, Theorem 3.3.1 implies that for all i,j ∈ Z, we have
-grw
-j Homi(Sψ, S) ≃
-{
-Vψ ⊗ Sym
-i
-2 (V) i =j
-0 i ⁄=j
-as representations of W . So Theorem 7.3.1 yields
-[AH∨(ICw)]q =
-∑
-i,j
-(−1)i−jq
-j
-2 grw
-j Homi(i∗CH(ICw)⟨−r⟩, S)∨
-=
-∑
-i,j
-(−1)i−jq
-j
-2
-∑
-φ,ψ∈ ˆW
-{φ,ψ }φq(γw) grw
-j Homi(Sψ, S)∨
-=
-∑
-φ,ψ∈ ˆW
-{φ,ψ }φq(γw)
-∑
-i
-q
-i
-2 (ψ ⊗ Sym
-i
-2 (V))∨.
-Every representation of W is self-dual because QW = Q ⊆ R, so the inner sum in
-the last expression simpliﬁes to ψ · [Sym(V)]q. □
-FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS 47
-7.4. We now relate ⟨−⟩ q to Markov traces.
-The HOMFL Y series of a link λ ⊆ R3 is one of the predecessors of the isotopy
-invariant mentioned in Remark 6.1.1. We will denote it by
-[λ]a,q ∈ Z[(q
-1
-2 − q− 1
-2 )±1,a ±1].
-We have [λ]a,q = P(λ)|t=−1, where P is the invariant in the remark. With this
-normalization, the HOMFLY series of the unknot equals 1.
-There are many diﬀerent constructions of the HOMFLY invaria nt [ HOMFLY].
-Ocneanu’s approach relies on Alexander’s theorem, stating that every link in R3 is
-the closure of a braid. Namely, one constructs for each n ≥ 1 a certain function on
-the Iwahori–Hecke algebra of Sn, now known as a Markov trace [ J]. If Brn denotes
-the braid group of Sn, i.e., the group of topological braids on n strands, and λ is
-the closure of β ∈ Brn, then the HOMFLY series of λ is the Markov trace of β,
-multiplied by a factor depending only on |β| and n.
-Y. Gomi generalized Ocneanu’s Markov traces in a uniform way beyond type
-A, extending work of Geck–Lambropoulou in type BC [G]. We follow Gomi’s
-conventions here.
-Let (W,S ) be any ﬁnite Coxeter system. Recall from § A.4 that if S′ ⊆ S and
-W ′ ⊆W is theS-parabolic subgroup generated byS′, thenHW ′ ⊆HW . A Markov
-trace on HW is a Z[q± 1
-2 ]-linear function
-tr :HW → Z[q± 1
-2 ](a)
-such that:
-(1) tr(1) = 1.
-(2) For all β,γ ∈HW , we have tr(βγ ) = tr(γβ ).
-(3) For all s ∈ S and γ ∈ HW ′ , where W ′ is the S-parabolic subgroup of W
-generated by S \s, we have
-tr(σ±1
-s γ) = −a∓1
-(
-q
-1
-2 − q− 1
-2
-a −a−1
-)
-tr(γ).
-Axioms (2) and (3) are respectively known as the ﬁrst and seco nd Markov moves.
-Theorem 7.4.1 (Ocneanu). The axioms above uniquely deﬁne a Markov trace on
-the Iwahori–Hecke algebra of Sn for all n ≥ 1. For all β ∈ Brn, we have
-[ ˆβ]a,q = (−a)|β|
-( a −a−1
-q
-1
-2 − q− 1
-2
-)n−1
-tr(β),
-where ˆβ is the link closure of β.
-Suppose that a Markov trace on HW exists. After base change from Z[q± 1
-2 ] to
-QW (q
-1
-2 ), we can view it as a trace on HW (q
-1
-2 ) (see § A.7). Then
-tr =
-∑
-φ∈ ˆW
-trφφq
-for some weights trφ ∈ QW (q
-1
-2,a ).
-48 MINH-TÂM QUANG TRINH
-Axioms (1)-(3) show that tr|a−2=0 is the symmetrizing trace τq : HW (q
-1
-2 ) →
-Z[q± 1
-2 ]. Proposition A.9.3 then suggests that the weights trφ should involve bivari-
-ate Molien series. These observations motivate the form of G omi’s Markov weights.
-Below, let V be a realization of W such that VW = 0, and for all ψ ∈ ˆW , let
-mψ(q,x ) =
-∑
-i,j
-(−x)iqj (ψ, Λi(V) ⊗ Symj(V))W.
-By construction, mψ(q, 0) = mψ(q), the usual Molien series of ψ.
-Theorem 7.4.2 (Gomi). The weights
-trφ =
-( 1 − q
-1 −a−2
-)r ∑
-ψ∈ ˆW
-{φ,ψ }mψ(q,a −2)
-deﬁne a Markov trace on HW for any ﬁnite Coxeter group W of rank r.
-This is a bivariate reﬁnement of Proposition A.9.3.
-Henceforth, tr denotes Gomi’s Markov trace. To relate it to the R(W ) trace, we
-introduce the normalization
-⟨β⟩ 0
-q = (−q
-1
-2 )|β|⟨β⟩ q ·ε[Sym(V)]q,
-where ε denotes the sign character of W (see § A.5). We emphasize that whenever
-we use ⟨−⟩ 0
-q, we always assume that VW = 0. For Weyl groups, the result below
-follows from Theorems 6.2.1 and 5.
-Proposition 7.4.3. Under the hypotheses of Theorem 7.4.2, we have
-tr(β) = ( −q− 1
-2 )|β|
-( 1 − q
-1 −a2
-)r∑
-i
-(−a2)i(Λi(V), ⟨β⟩ 0
-q)W
-for all β ∈ BrW .
-Lemma 7.4.4. We have
-1
-(1 −x−1)r
-∑
-i
-(−x−1)i Λi(V) = ε
-(1 −x)r
-∑
-i
-(−x)i Λi(V)
-in R(W )(x).
-Proof. Use the identity Λ r−i(V) = ε Λi(V). □
-Proof of Proposition 7.4.3. By Lemma 7.4.4 and the self-duality of Sym( V),
-trφ =
-( 1 − q
-1 −a2
-)r ∑
-ψ∈ ˆW
-{φ,ψ }
-∑
-i,j
-(−a2)iqj(Λi(V),εψ · Symj(V))W.
-Comparing with the terms that make up ⟨−⟩ 0
-q, we get the result. □
-Corollary 7.4.5. Under the hypotheses of Theorem 7.4.2, we have
-τq = (−q− 1
-2 )|β|(1 − q)r(ε, ⟨β⟩ 0
-q)W
-as Z[q± 1
-2 ]-linear traces on HW .
-FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS 49
-Corollary 7.4.6. Under the hypotheses of Theorem 7.4.1, we have
-[ ˆβ]a,q = (aq− 1
-2 )|β|−n+1 ∑
-0≤i≤n−1
-(−a2)i(Λi(V), ⟨β⟩ 0
-q)W
-for all β ∈ Brn.
-7.5. To conclude this section, we prove:
-(1) Proposition 7.5.1, a rationality result that will simplify the proof of Theo-
-rem 9 in Section 8.
-(2) Proposition 7.5.5, a symmetry result. Together with (1) and Theorem 9, it
-implies Theorem 6, as we will also explain.
-These results about the R(W ) trace respectively generalize, and are inspired by,
-the following facts about the HOMFLY series:
-(1′) HOMFLY has integer coeﬃcients. Moreover, it is a q
-1
-2 -monomial shift of
-an element of Z[ [q] ][a±1], not just of Z[ [q
-1
-2 ] ][a±1].
-(2′) HOMFLY is invariant under q
-1
-2 ↦→ −q− 1
-2 .
-Note that the second claim of (1 ′) can be proved via the Markov trace, while (2 ′) is
-a consequence of the HOMFLY skein relation (see [ DGR, §2.4], noting that their q
-is our q
-1
-2 ). By contrast, the proofs below are representation-theore tic. Throughout,
-we assume that the realization V satisﬁes VW = 0.
-7.5.1. Let d1,...,d r be the invariant degrees of the W -action on V. Let:
-q0 =
-{
-q
-1
-2 W has a factor of type E7 or E8
-q else
-(20)
-The reason we make an exception for E7 andE8 is the existence of so-called excep-
-tional characters in these types. See [ GP, §9.5] and the references therein.
-Proposition 7.5.1. For all β ∈ BrW , we have
-⟨β⟩ q ∈ (q− 1
-2 )|β|R(W )[q0],
-⟨β⟩ 0
-q ∈ 1
-(1 − qd1) · · · (1 − qdr )R(W )[q0],
-(1, ⟨β⟩ 0
-q)W ∈ 1
-(1 − qd1) · · · (1 − qdr ) (1 + q0Z[q0]).
-Proof. Let ˜β = q
-|β|
-2 β. To prove the ﬁrst statement, we must show that
-(ψ, ⟨ ˜β⟩ q)W =
-∑
-φ∈ ˆW
-{φ,ψ }φq( ˜β) ∈ QW (q
-1
-2 )
-actually belongs to Z[q0] for all ψ ∈ ˆW . We make a series of reductions:
-By Lemma-Postulate A.9.1(1), we can assume that W is irreducible.
-We can expand ˜β as a Z[q]-linear combination of the elements ˜σw = q
-|σw |
-2 σw for
-w ∈W . So we can assume that ˜β = ˜σw for some w.
-We can now check the non-crystallographic types case by case , using [ GP, §8.3]
-and [ L94] for the dihedral types, [ GP, Table 9.1] and [ BM93, §7] for type H3 (but
-see Remark 7.5.4, below), and [ AL, M] for type H4. So we can assume that W is
-crystallographic.
-50 MINH-TÂM QUANG TRINH
-Theorem 5 implies that ( ψ, ⟨ ˜β⟩ q)W ∈ Z[q± 1
-2 ]. So it remains to show that
-(ψ, ⟨ ˜β⟩ q)W ∈ Q[q0]. Since {−, −} takes values in QW = Q, it is enough to get
-φq(˜σw) ∈ Q[q0] for all φ. For crystallographic irreducible W , this is a theorem of
-Benson–Curtis [ BC] (joint with Springer in the case of E7 and E8).
-The remaining two statements follow from the ﬁrst statement , once we establish
-the following two lemmas. □
-Lemma 7.5.2. We have
-[Sym(V)]q ∈ 1
-(1 − qd1 ) · · ·(1 − qdr )R(W )[q].
-Proof. In the notation of § A.6 and § A.8, we have
-[Sym(V)]q = m1(q)
-∑
-φ∈ ˆW
-Fegφ(q)φ,
-where m1(q) =∏
-i (1 − qdi )−1 and Fegφ(q) ∈ Z[q] for each φ. □
-Lemma 7.5.3. For all β ∈ BrW , we have (ε, ⟨β⟩ q)W =εq(β) = ( −q− 1
-2 )|β|.
-Proof. By [ GP, 252], we have εq(σs) = −q− 1
-2 for all s ∈S. (Note that Ts = q
-1
-2σs
-in the notation of ibid..) But εq is the character of a 1-dimensional QW (q
-1
-2 )-vector
-space, so it is multiplicative on BrW . We deduce that εq(β) = ( −q− 1
-2 )|β| for all
-β ∈ BrW .
-As for the other equality: By [ L84-1, Ch. 4], we have {φ,ε } = 0 for all φ ⁄= ε.
-This implies (ε, ⟨β⟩ q)W =εq(β). □
-Remark 7.5.4. The proof of Proposition 7.5.1 uses the explicit description of the
-exotic Fourier transform in type H3. For this group, there are three nontrivial
-families (see § A.10), one of which is exceptional. The 4 × 4 matrix in [ BM93, §7]
-represents the block of the Fourier matrix for the non-excep tional families. I learned
-from George Lusztig that by contrast, the data for the except ional family matches
-that of the exceptional family in type E7. The assertion in [ GM, 189] that all three
-families have the same Fourier data is incorrect.
-7.5.2. Turning to the symmetry result:
-Proposition 7.5.5. For all β ∈ BrW , we have
-⟨β⟩ q ∈R(W )[q
-1
-2 −εq− 1
-2 ],
-⟨β⟩ 0
-q ∈ (q
-1
-2 )|β|−rR(W )[(q
-1
-2 − q− 1
-2 )±1].
-By Proposition 7.5.1, ⟨−⟩ q takes values in R(W )[q± 1
-2 ], so the proof amounts to
-the following lemmas:
-Lemma 7.5.6. For all β ∈ BrW , we have ⟨β⟩ q ↦→ε⟨β⟩ q under q
-1
-2 ↦→ −q− 1
-2 .
-FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS 51
-Proof. Recall that for all β ∈ HW , we have ( ψ, ⟨β⟩ q)W = ∑
-φ∈ ˆW {φ,ψ }φq(β).
-Using Lemma-Postulate A.9.1(3), we compute
-(ψ,ε ⟨β⟩ q)W = (εψ, ⟨β⟩ q)W
-=
-∑
-φ
-{φ,εψ }φq(β)
-=
-∑
-φ
-{εφ,εψ }(εφ)q(β)
-=
-∑
-φ
-{φ,ψ }(εφ)q(β).
-It remains to show that if β is in the image of BrW , then
-φq(β) ↦→(εφ)q(β) under q
-1
-2 ↦→ −q− 1
-2.
-This follows implicitly from the proof of [ GP, Prop. 9.4.1(a)]. □
-Lemma 7.5.7. We have q
-r
-2 [Sym(V)]q ↦→εq
-r
-2 [Sym(V)]q under q
-1
-2 ↦→ −q− 1
-2 .
-Proof. Observe that∑
-i (−q)i Λi(V) is the multiplicative inverse of [Sym( V)]q. So
-the claim follows from Lemma 7.4.4 with x = q. □
-7.5.3. We show that Proposition 7.5.1, Proposition 7.5.5, and Theorem 9 together
-imply Theorem 6.
-Proof of Theorem 6. Proposition 7.5.1 shows that if W has no factors of type E7
-or E8, then ⟨β⟩ 0
-q and (1, ⟨β⟩ 0
-q)W are indeed rational functions in q, not just power
-series in q
-1
-2 . Theorem 9 extends this result to all W . These results, combined with
-Proposition 7.5.5, establish
-⟨β⟩ q ∈ q− |β|
-2 R(W )[q] ∩R(W )[q
-1
-2 −εq− 1
-2 ],
-⟨β⟩ 0
-q ∈R(W )[ [q] ]∩R(W )(q) ∩ (q
-1
-2 )|β|−rR(W )[(q
-1
-2 − q− 1
-2 )±1].
-In particular, the q-degrees of ⟨β⟩ 0
-q and (1, ⟨β⟩ 0
-q)W are well-deﬁned. The following
-observations show that their degrees must be |β| −r:
-• Proposition 7.5.1 shows that ⟨β⟩ 0
-q, and hence (1 , ⟨β⟩ 0
-q)W , belong to Z[ [q] ],
-i.e., their lowest-order term in q is the constant term.
-• By Proposition 7.5.5, we have
-⟨β⟩ 0
-q ↦→(−q)r−|β|⟨β⟩ 0
-q under q0 ↦→q−1
-0 .
-• Proposition 7.5.1 also shows that (1, ⟨β⟩ 0
-q)W , and hence ⟨β⟩ 0
-q, have nonzero
-constant term. □
-52 MINH-TÂM QUANG TRINH
+[]{#sec:decat label="sec:decat"}
+
+## 
+
+To state the main definition of this section, let $W$ denote an *arbitrary* finite Coxeter group.
+
+As before, $H_W$ is the Iwahori--Hecke algebra of $W$. Moreover, we will draw freely upon the notation introduced in Appendix [\[sec:coxeter\]](#sec:coxeter){reference-type="ref" reference="sec:coxeter"}:
+
+-   $R(W)$ is the representation ring of $W$.
+
+-   $\bb{Q}_W \subseteq \bar{\bb{Q}}$ is the splitting field of $W$.
+
+-   $(-, -)_W : R(W) \times R(W) \to \bb{Z}$ be the multiplicity pairing.
+
+-   We write $$\begin{aligned}
+    {[\Sym(\bb{V})]_{\bm{q}}} = \sum_i {\bm{q}^i} \Sym^i(\bb{V}).
+    \end{aligned}$$
+
+-   If $\phi : W \to \bb{Q}_W$ is an irreducible character, then $\phi_{\bm{q}} : H_W(\bm{q}^{\frac{1}{2}}) \to \bb{Q}_W(\bm{q}^{\frac{1}{2}})$ is the corresponding $\bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$-linear trace.
+
+-   $\{-, -\} : \hat{W} \times \hat{W} \to \bb{Q}_W$ is the symmetric pairing (derived from) Lusztig's exotic Fourier transform.
+
+::: df
+For any finite Coxeter group $W$, the **$R(W)$ trace** on its Iwahori--Hecke algebra is the $\bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$-linear trace $$\begin{aligned}
+\langle{-}\rangle_{\bm{q}} : H_W \to R(W) \otimes \bb{Q}_W(\bm{q}^{\frac{1}{2}})
+\end{aligned}$$ defined by $$\begin{aligned}
+\langle{\beta}\rangle_{\bm{q}} = \sum_{\phi, \psi \in \hat{W}} {\{\phi, \psi\}} 
+\phi_{\bm{q}}(\beta)\psi
+\end{aligned}$$ for all $\beta \in H_W$.
+:::
+
+In the next two subsections, we assume that $W$ is still a Weyl group and prove Theorem [\[thm:decat\]](#thm:decat){reference-type="ref" reference="thm:decat"}, which relates the $R(W)$ trace to the decategorification of the $\bb{A}_W$ trace. In the remainder of the section, we allow $W$ to be an arbitrary finite Coxeter group and relate the $R(W)$ trace to the Markov trace studied by Ocneanu and Gomi. We conclude by proving Propositions [\[prop:rationality\]](#prop:rationality){reference-type="ref" reference="prop:rationality"} and [\[prop:symmetry\]](#prop:symmetry){reference-type="ref" reference="prop:symmetry"}, which roughly generalize rationality and symmetry properties of the Markov trace.
+
+## 
+
+Recall that an object of $\mathsf{Mod}_2^b(\bar{\mathbf{Q}}_\ell[W])$ is a $\bar{\mathbf{Q}}_\ell[W]$-module equipped with a $W$-invariant bigrading where the first grading is bounded below and the second is bounded. We have an additive map $$\begin{aligned}
+\sf{AH} : H_W \xrightarrow{\sim} [\sf{H}_W]_\triangle \to [\mathsf{Mod}_2^b(\bar{\mathbf{Q}}_\ell[W])]_\oplus
+\end{aligned}$$ induced by the composition $$\begin{aligned}
+\sf{H}_W^\op \xrightarrow{\sf{AH}} \mathsf{Mod}_2^b(\bb{A}_W) \to \mathsf{Mod}_2^b(\bar{\mathbf{Q}}_\ell[W]),
+\end{aligned}$$ where the second arrow is the forgetful functor. Note that $\mathsf{Mod}_2^b(\bar{\mathbf{Q}}_\ell[W])$ is semisimple, since $\bar{\mathbf{Q}}_\ell[W]$ is.
+
+For any ring $R$, such as $R = R(W)$, we write $R(\!(\bm{q}^{\frac{1}{2}})\!) = R[\![\bm{q}^{\frac{1}{2}}]\!][\frac{1}{\bm{q}}]$. Let $$\begin{aligned}
+_{\bm{q}} : [\sf{Mod}_{1, 1}(\bar{\mathbf{Q}}_\ell[W])]_\oplus \to R(W)(\!(\bm{q}^{\frac{1}{2}})\!)
+\end{aligned}$$ be the additive map defined by $$\begin{aligned}
+_{\bm{q}} = \sum_{i, j}
+{(-1)^{i - j}} \bm{q}^{\frac{j}{2}} M^{i, j}.
+\end{aligned}$$ We say that $[M]_{\bm{q}}$ is the **$\bm{q}$-graded character** of $M$. For all $i, j$, let $$\begin{aligned}
+(\sf{AH}^\vee)^{i, j}(-) = \Hom_{\bar{\mathbf{Q}}_\ell}(\sf{AH}^{i, j}(-), \bar{\mathbf{Q}}_\ell).
+\end{aligned}$$ Then the composition $$\begin{aligned}
+_{\bm{q}} \vcentcolon= [-]_{\bm{q}} \circ \sf{AH}^\vee
+    : H_W \to R(W)(\!(\bm{q}^{\frac{1}{2}})\!)
+\end{aligned}$$ is $\bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$-linear.
+
+## 
+
+Recall from Section [\[sec:hecke\]](#sec:hecke){reference-type="ref" reference="sec:hecke"} that $\{\gamma_w\}_w$ denotes the Kazhdan--Lusztig basis of the Iwahori--Hecke algebra. Then Theorem [\[thm:decat\]](#thm:decat){reference-type="ref" reference="thm:decat"} reduces to the claim that: $$\begin{aligned}
+_{\bm{q}} = \langle{\gamma_w}\rangle_{\bm{q}} \cdot [\Sym(\bb{V})]_{\bm{q}}
+\end{aligned}$$ for all $w \in W$. To prove it, we use a multiplicity formula for unipotent character sheaves, derived from [@lusztig_1985_3 Cor. 14.11] and [@lusztig_1986 Thm. 23.1].
+
+As in §[\[subsec:decat\]](#subsec:decat){reference-type="ref" reference="subsec:decat"}, let $[\sf{C}(G_0)]_\oplus$ be endowed with the action of $\bb{Z}[\bm{q}^{\frac{1}{2}}]$ in which $\bm{q}^{\frac{1}{2}}$ acts by $\langle -1\rangle$. The following version of the formula is the one quoted in [@ww_2008 413], fixed to incorporate semisimplification.
+
+::: thm
+[]{#thm:lusztig-character label="thm:lusztig-character"} For all $w \in W$, we have $$\begin{aligned}
+{[\sf{CH}(\mathit{IC}_w)^{ss}]} = \sum_{\phi, \psi \in \hat{W}}
+{\{\phi, \psi\}} \phi_{\bm{q}}(\gamma_w) [\cal{G}_\psi] + \text{cuspidal terms}
+\end{aligned}$$ in $[\sf{C}(G_0)]_\oplus$, where "cuspidal terms" refers to the contribution of simple objects not of the form $\cal{G}_\psi$ for some $\psi \in \hat{W}$, and "$ss$" refers to the semisimplification of (shifted) perverse summands.
+:::
+
+::: proof
+*Proof of Theorem [\[thm:decat\]](#thm:decat){reference-type="ref" reference="thm:decat"}.* By an argument similar to the proof of the second equivalence in Lemma [\[lem:sheaves-to-reps\]](#lem:sheaves-to-reps){reference-type="ref" reference="lem:sheaves-to-reps"}, Theorem [\[thm:lusztig-algebra\]](#thm:lusztig-algebra){reference-type="ref" reference="thm:lusztig-algebra"} implies that for all $i, j \in \bb{Z}$, we have $$\begin{aligned}
+\gr_j^{\bm{w}} \SHom^i(\cal{S}_\psi, \cal{S}) \simeq 
+\left\{\begin{array}{ll}
+V_\psi \otimes \Sym^{\frac{i}{2}}(\bb{V})
+    &i = j\\
+0
+    &i \neq j
+\end{array}\right.
+\end{aligned}$$ as representations of $W$. So Theorem [\[thm:lusztig-character\]](#thm:lusztig-character){reference-type="ref" reference="thm:lusztig-character"} yields $$\begin{aligned}
+\begin{split}
+[\sf{AH}^\vee(\mathit{IC}_w)]_{\bm{q}}
+&=  \sum_{i, j} {(-1)^{i - j}} 
+    \bm{q}^{\frac{j}{2}}
+    \gr_j^{\bm{w}} 
+    \SHom^i(i^\ast \sf{CH}(\mathit{IC}_w) \langle -r\rangle, \cal{S})^\vee\\
+&=  \sum_{i, j}
+    {(-1)^{i - j}}
+    \bm{q}^{\frac{j}{2}}
+    \sum_{\phi, \psi \in \hat{W}} 
+    {\{\phi, \psi\}}
+    \phi_{\bm{q}}(\gamma_w)
+    \gr_j^{\bm{w}} \SHom^i(\cal{S}_\psi, \cal{S})^\vee\\
+&=  \sum_{\phi, \psi \in \hat{W}} 
+    {\{\phi, \psi\}}
+    \phi_{\bm{q}}(\gamma_w)
+    \sum_i
+    {\bm{q}^{\frac{i}{2}}}\,
+    (\psi \otimes \Sym^{\frac{i}{2}}(\bb{V}))^\vee.
+\end{split}
+\end{aligned}$$ Every representation of $W$ is self-dual because $\bb{Q}_W = \bb{Q} \subseteq \bb{R}$, so the inner sum in the last expression simplifies to $\psi \cdot [\Sym(\bb{V})]_{\bm{q}}$. ◻
+:::
+
+##  {#subsec:markov}
+
+We now relate $\langle{-}\rangle_{\bm{q}}$ to Markov traces.
+
+The **HOMFLY series** of a link $\lambda \subseteq \bb{R}^3$ is one of the predecessors of the isotopy invariant mentioned in Remark [\[rem:dgr\]](#rem:dgr){reference-type="ref" reference="rem:dgr"}. We will denote it by $$\begin{aligned}
+_{a, \bm{q}} \in \bb{Z}[(\bm{q}^{\frac{1}{2}} - \bm{q}^{-\frac{1}{2}})^{\pm 1}, a^{\pm 1}].
+\end{aligned}$$ We have $[\lambda]_{a, \bm{q}} = \bb{P}(\lambda)|_{t = -1}$, where $\bb{P}$ is the invariant in the remark. With this normalization, the HOMFLY series of the unknot equals $1$.
+
+There are many different constructions of the HOMFLY invariant [@homfly]. Ocneanu's approach relies on Alexander's theorem, stating that every link in $\bb{R}^3$ is the closure of a braid. Namely, one constructs for each $n \geq 1$ a certain function on the Iwahori--Hecke algebra of $S_n$, now known as a Markov trace [@jones]. If $\mathit{Br}_n$ denotes the braid group of $S_n$, *i.e.*, the group of topological braids on $n$ strands, and $\lambda$ is the closure of $\beta \in \mathit{Br}_n$, then the HOMFLY series of $\lambda$ is the Markov trace of $\beta$, multiplied by a factor depending only on $|\beta|$ and $n$.
+
+Y. Gomi generalized Ocneanu's Markov traces in a uniform way beyond type $A$, extending work of Geck--Lambropoulou in type $BC$ [@gomi]. We follow Gomi's conventions here.
+
+Let $(W, S)$ be any finite Coxeter system. Recall from §[\[subsec:parabolic\]](#subsec:parabolic){reference-type="ref" reference="subsec:parabolic"} that if $S' \subseteq S$ and $W' \subseteq W$ is the $S$-parabolic subgroup generated by $S'$, then $H_{W'} \subseteq H_W$. A **Markov trace** on $H_W$ is a $\bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$-linear function $$\begin{aligned}
+\mathsf{tr} : H_W \to \bb{Z}[\bm{q}^{\pm\frac{1}{2}}](a)
+\end{aligned}$$ such that:
+
+1.  $\mathsf{tr}(1) = 1$.
+
+2.  For all $\beta, \gamma \in H_W$, we have $\mathsf{tr}(\beta\gamma) = \mathsf{tr}(\gamma\beta)$.
+
+3.  For all $s \in S$ and $\gamma \in H_{W'}$, where $W'$ is the $S$-parabolic subgroup of $W$ generated by $S \setminus s$, we have $$\begin{aligned}
+            \mathsf{tr}(\sigma_s^{\pm 1}\gamma) 
+            = -a^{\mp 1}
+                \pa{\frac{\bm{q}^{\frac{1}{2}} - \bm{q}^{-\frac{1}{2}}}{a - a^{-1}}} 
+                \mathsf{tr}(\gamma).
+            
+    \end{aligned}$$
+
+Axioms (2) and (3) are respectively known as the first and second Markov moves.
+
+::: thm
+[]{#thm:ocneanu label="thm:ocneanu"} The axioms above uniquely define a Markov trace on the Iwahori--Hecke algebra of $S_n$ for all $n \geq 1$. For all $\beta \in \mathit{Br}_n$, we have $$\begin{aligned}
+_{a, \bm{q}}
+=   (-a)^{|\beta|}
+    \pa{\frac{a - a^{-1}}{\bm{q}^{\frac{1}{2}} - \bm{q}^{-\frac{1}{2}}}}^{n - 1} 
+    \mathsf{tr}(\beta),
+\end{aligned}$$ where $\hat{\beta}$ is the link closure of $\beta$.
+:::
+
+Suppose that a Markov trace on $H_W$ exists. After base change from $\bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$ to $\bb{Q}_W(\bm{q}^{\frac{1}{2}})$, we can view it as a trace on $H_W(\bm{q}^{\frac{1}{2}})$ (see §[\[subsec:hecke-generic\]](#subsec:hecke-generic){reference-type="ref" reference="subsec:hecke-generic"}). Then $$\begin{aligned}
+\mathsf{tr} = \sum_{\phi \in \hat{W}} 
+\mathsf{tr}_\phi {\phi_{\bm{q}}}
+\end{aligned}$$ for some weights $\mathsf{tr}_\phi \in \bb{Q}_W(\bm{q}^{\frac{1}{2}}, a)$.
+
+Axioms (1)-(3) show that $\mathsf{tr}|_{a^{-2} = 0}$ is the symmetrizing trace $\tau_{\bm{q}} : H_W(\bm{q}^{\frac{1}{2}}) \to \bb{Z}[\bm{q}^{\pm\frac{1}{2}}]$. Proposition [\[prop:molien\]](#prop:molien){reference-type="ref" reference="prop:molien"} then suggests that the weights $\mathsf{tr}_\phi$ should involve bivariate Molien series. These observations motivate the form of Gomi's Markov weights. Below, let $\bb{V}$ be a realization of $W$ such that $\bb{V}^W = 0$, and for all $\psi \in \hat{W}$, let $$\begin{aligned}
+\begin{split}
+\bm{m}_\psi(\bm{q}, x)
+&=  \sum_{i, j}
+    {(-x)^i} \bm{q}^j
+    (\psi, \mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V}) \otimes \Sym^j(\bb{V}))_W.
+\end{split}
+\end{aligned}$$ By construction, $\bm{m}_\psi(\bm{q}, 0) = \bm{m}_\psi(\bm{q})$, the usual Molien series of $\psi$.
+
+::: thm
+[]{#thm:gomi label="thm:gomi"} The weights $$\begin{aligned}
+\begin{split}
+\mathsf{tr}_\phi
+&=  \pa{\frac{1 - \bm{q}}{1 - a^{-2}}}^{r}
+    \sum_{\psi \in \hat{W}}
+    {\{\phi, \psi\}}
+    \bm{m}_\psi(\bm{q}, a^{-2})
+\end{split}
+\end{aligned}$$ define a Markov trace on $H_W$ for any finite Coxeter group $W$ of rank $r$.
+:::
+
+This is a bivariate refinement of Proposition [\[prop:molien\]](#prop:molien){reference-type="ref" reference="prop:molien"}.
+
+Henceforth, $\mathsf{tr}$ denotes Gomi's Markov trace. To relate it to the $R(W)$ trace, we introduce the normalization $$\begin{aligned}
+\langle{\beta}\rangle_{\bm{q}}^0 = {(-\bm{q}^{\frac{1}{2}})^{|\beta|}} \langle{\beta}\rangle_{\bm{q}} \cdot \varepsilon [\Sym(\bb{V})]_{\bm{q}},
+\end{aligned}$$ where $\varepsilon$ denotes the sign character of $W$ (see §[\[subsec:representation\]](#subsec:representation){reference-type="ref" reference="subsec:representation"}). We emphasize that whenever we use $\langle{-}\rangle_{\bm{q}}^0$, *we always assume that $\bb{V}^W = 0$*. For Weyl groups, the result below follows from Theorems [\[thm:ww\]](#thm:ww){reference-type="ref" reference="thm:ww"} and [\[thm:decat\]](#thm:decat){reference-type="ref" reference="thm:decat"}.
+
+::: prop
+[]{#prop:markov label="prop:markov"} Under the hypotheses of Theorem [\[thm:gomi\]](#thm:gomi){reference-type="ref" reference="thm:gomi"}, we have $$\begin{aligned}
+\mathsf{tr}(\beta)
+=   (-\bm{q}^{-\frac{1}{2}})^{|\beta|}
+    \pa{\frac{1 - \bm{q}}{1 - a^2}}^r
+    \sum_i
+    {(-a^2)^i}
+    (\mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V}), \langle{\beta}\rangle_{\bm{q}}^0)_W
+\end{aligned}$$ for all $\beta \in \mathit{Br}_W$.
+:::
+
+::: lem
+[]{#lem:self-dual label="lem:self-dual"} We have $$\begin{aligned}
+\frac{1}{(1 - x^{-1})^r}
+\sum_i {(-x^{-1})^i} \mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V})
+=   
+\frac{\varepsilon}{(1 - x)^r}
+\sum_i {(-x)^i} \mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V})
+\end{aligned}$$ in $R(W)(x)$.
+:::
+
+::: proof
+*Proof.* Use the identity $\mathop{\mathrm{\text{$\Lambda$}}}^{r - i}(\bb{V}) = \varepsilon \mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V})$. ◻
+:::
+
+::: proof
+*Proof of Proposition [\[prop:markov\]](#prop:markov){reference-type="ref" reference="prop:markov"}.* By Lemma [\[lem:self-dual\]](#lem:self-dual){reference-type="ref" reference="lem:self-dual"} and the self-duality of $\Sym(\bb{V})$, $$\begin{aligned}
+\mathsf{tr}_\phi
+=   \pa{\frac{1 - \bm{q}}{1 - a^2}}^r 
+\sum_{\psi \in \hat{W}}
+{\{\phi, \psi\}}
+\sum_{i, j} {(-a^2)^i} \bm{q}^j
+(\mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V}), \varepsilon \psi \cdot \Sym^j(\bb{V}))_W.
+\end{aligned}$$ Comparing with the terms that make up $\langle{-}\rangle_{\bm{q}}^0$, we get the result. ◻
+:::
+
+::: cor
+Under the hypotheses of Theorem [\[thm:gomi\]](#thm:gomi){reference-type="ref" reference="thm:gomi"}, we have $$\begin{aligned}
+\tau_{\bm{q}} = (-\bm{q}^{-\frac{1}{2}})^{|\beta|} (1 - \bm{q})^r (\varepsilon, \langle{\beta}\rangle_{\bm{q}}^0)_W
+\end{aligned}$$ as $\bb{Z}[\bm{q}^{\pm \frac{1}{2}}]$-linear traces on $H_W$.
+:::
+
+::: cor
+[]{#cor:homfly label="cor:homfly"} Under the hypotheses of Theorem [\[thm:ocneanu\]](#thm:ocneanu){reference-type="ref" reference="thm:ocneanu"}, we have $$\begin{aligned}
+{[\hat{\beta}]_{a, \bm{q}}}
+=   (a\bm{q}^{-\frac{1}{2}})^{|\beta| - n + 1}
+    \sum_{0 \leq i \leq n - 1}
+    {(-a^2)^i}
+    (\mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V}), \langle{\beta}\rangle_{\bm{q}}^0)_W
+\end{aligned}$$ for all $\beta \in \mathit{Br}_n$.
+:::
+
+##  {#section-3}
+
+To conclude this section, we prove:
+
+1.  Proposition [\[prop:rationality\]](#prop:rationality){reference-type="ref" reference="prop:rationality"}, a rationality result that will simplify the proof of Theorem [\[thm:pole\]](#thm:pole){reference-type="ref" reference="thm:pole"} in Section [\[sec:dl\]](#sec:dl){reference-type="ref" reference="sec:dl"}.
+
+2.  Proposition [\[prop:symmetry\]](#prop:symmetry){reference-type="ref" reference="prop:symmetry"}, a symmetry result. Together with (1) and Theorem [\[thm:pole\]](#thm:pole){reference-type="ref" reference="thm:pole"}, it implies Theorem [\[thm:symmetry\]](#thm:symmetry){reference-type="ref" reference="thm:symmetry"}, as we will also explain.
+
+These results about the $R(W)$ trace respectively generalize, and are inspired by, the following facts about the HOMFLY series:
+
+1.  HOMFLY has integer coefficients. Moreover, it is a $\bm{q}^{\frac{1}{2}}$-monomial shift of an element of $\bb{Z}[\![\bm{q}]\!][a^{\pm 1}]$, not just of $\bb{Z}[\![\bm{q}^{\frac{1}{2}}]\!][a^{\pm 1}]$.
+
+2.  HOMFLY is invariant under $\bm{q}^{\frac{1}{2}} \mapsto -\bm{q}^{-\frac{1}{2}}$.
+
+Note that the second claim of (1$'$) can be proved via the Markov trace, while (2$'$) is a consequence of the HOMFLY skein relation (see [@dgr §2.4], noting that their $q$ is our $\bm{q}^{\frac{1}{2}}$). By contrast, the proofs below are representation-theoretic. Throughout, we assume that the realization $\bb{V}$ satisfies $\bb{V}^W = 0$.
+
+###  {#section-4}
+
+Let $d_1, \ldots, d_r$ be the invariant degrees of the $W$-action on $\bb{V}$. Let: $$\begin{aligned}
+\label{eq:exception}
+\bm{q}_0 = 
+\left\{\begin{array}{ll}
+\bm{q}^{\frac{1}{2}}
+    &\text{$W$ has a factor of type $E_7$ or $E_8$}\\
+\bm{q}
+    &\text{else}
+    \end{array}\right.
+\end{aligned}$$ The reason we make an exception for $E_7$ and $E_8$ is the existence of so-called exceptional characters in these types. See [@gp §9.5] and the references therein.
+
+::: prop
+[]{#prop:rationality label="prop:rationality"} For all $\beta \in \mathit{Br}_W$, we have $$\begin{aligned}
+\langle{\beta}\rangle_{\bm{q}} &\in (\bm{q}^{-\frac{1}{2}})^{|\beta|} R(W)[\bm{q}_0],\\
+\langle{\beta}\rangle_{\bm{q}}^0 &\in \frac{1}{(1 - \bm{q}^{d_1}) \cdots (1 - \bm{q}^{d_r})}\, R(W)[\bm{q}_0],\\
+(1, \langle{\beta}\rangle_{\bm{q}}^0)_W &\in \frac{1}{(1 - \bm{q}^{d_1}) \cdots (1 - \bm{q}^{d_r})}\, (1 + \bm{q}_0\bb{Z}[\bm{q}_0]).
+\end{aligned}$$
+:::
+
+::: proof
+*Proof.* Let $\tilde{\beta} = \bm{q}^{\frac{|\beta|}{2}} \beta$. To prove the first statement, we must show that $$\begin{aligned}
+(\psi, \langle{\tilde{\beta}}\rangle_{\bm{q}})_W
+=   \sum_{\phi \in \hat{W}}
+    {\{\phi, \psi\}}
+    \phi_{\bm{q}}(\tilde{\beta}) \in \bb{Q}_W(\bm{q}^{\frac{1}{2}})
+\end{aligned}$$ actually belongs to $\bb{Z}[\bm{q}_0]$ for all $\psi \in \hat{W}$. We make a series of reductions:
+
+By Lemma-Postulate [\[lempost:fourier\]](#lempost:fourier){reference-type="ref" reference="lempost:fourier"}(1), we can assume that $W$ is irreducible.
+
+We can expand $\tilde{\beta}$ as a $\bb{Z}[\bm{q}]$-linear combination of the elements $\tilde{\sigma}_w = \bm{q}^{\frac{|\sigma_w|}{2}} \sigma_w$ for $w \in W$. So we can assume that $\tilde{\beta} = \tilde{\sigma}_w$ for some $w$.
+
+We can now check the non-crystallographic types case by case, using [@gp §8.3] and [@lusztig_1994] for the dihedral types, [@gp Table 9.1] and [@bm_1993 §7] for type $H_3$ (but see Remark [\[rem:h3\]](#rem:h3){reference-type="ref" reference="rem:h3"}, below), and [@al; @malle] for type $H_4$. So we can assume that $W$ is crystallographic.
+
+Theorem [\[thm:decat\]](#thm:decat){reference-type="ref" reference="thm:decat"} implies that $(\psi, \langle{\tilde{\beta}}\rangle_{\bm{q}})_W \in \bb{Z}[\bm{q}^{\pm \frac{1}{2}}]$. So it remains to show that $(\psi, \langle{\tilde{\beta}}\rangle_{\bm{q}})_W \in \bb{Q}[\bm{q}_0]$. Since $\{-, -\}$ takes values in $\bb{Q}_W = \bb{Q}$, it is enough to get $\phi_{\bm{q}}(\tilde{\sigma}_w) \in \bb{Q}[\bm{q}_0]$ for all $\phi$. For crystallographic irreducible $W$, this is a theorem of Benson--Curtis [@bc] (joint with Springer in the case of $E_7$ and $E_8$).
+
+The remaining two statements follow from the first statement, once we establish the following two lemmas. ◻
+:::
+
+::: lem
+We have $$\begin{aligned}
+{[\Sym(\bb{V})]_{\bm{q}}} \in \frac{1}{(1 - \bm{q}^{d_1}) \cdots (1 - \bm{q}^{d_r})}\, R(W)[\bm{q}].
+\end{aligned}$$
+:::
+
+::: proof
+*Proof.* In the notation of §[\[subsec:realization\]](#subsec:realization){reference-type="ref" reference="subsec:realization"} and §[\[subsec:degrees\]](#subsec:degrees){reference-type="ref" reference="subsec:degrees"}, we have $$\begin{aligned}
+{[\Sym(\bb{V})]_{\bm{q}}} 
+= \bm{m}_1(\bm{q})\sum_{\phi \in \hat{W}} {\mathrm{Feg}_\phi(\bm{q})\phi},
+\end{aligned}$$ where $\bm{m}_1(\bm{q}) = \prod_i {(1 - \bm{q}^{d_i})^{-1}}$ and $\mathrm{Feg}_\phi(\bm{q}) \in \bb{Z}[\bm{q}]$ for each $\phi$. ◻
+:::
+
+::: lem
+For all $\beta \in \mathit{Br}_W$, we have $(\varepsilon, \langle{\beta}\rangle_{\bm{q}})_W = \varepsilon_{\bm{q}}(\beta) = (-\bm{q}^{-\frac{1}{2}})^{|\beta|}$.
+:::
+
+::: proof
+*Proof.* By [@gp 252], we have $\varepsilon_{\bm{q}}(\sigma_s) = -\bm{q}^{-\frac{1}{2}}$ for all $s \in S$. (Note that $T_s = \bm{q}^{\frac{1}{2}}\sigma_s$ in the notation of *ibid.*.) But $\varepsilon_{\bm{q}}$ is the character of a $1$-dimensional $\bb{Q}_W(\bm{q}^{\frac{1}{2}})$-vector space, so it is multiplicative on $\mathit{Br}_W$. We deduce that $\varepsilon_{\bm{q}}(\beta) = (-\bm{q}^{-\frac{1}{2}})^{|\beta|}$ for all $\beta \in \mathit{Br}_W$.
+
+As for the other equality: By [@lusztig_1984 Ch. 4], we have $\{\phi, \varepsilon\} = 0$ for all $\phi \neq \varepsilon$. This implies $(\varepsilon, \langle{\beta}\rangle_{\bm{q}})_W = \varepsilon_{\bm{q}}(\beta)$. ◻
+:::
+
+::: rem
+[]{#rem:h3 label="rem:h3"} The proof of Proposition [\[prop:rationality\]](#prop:rationality){reference-type="ref" reference="prop:rationality"} uses the explicit description of the exotic Fourier transform in type $H_3$. For this group, there are three nontrivial families (see §[\[subsec:families\]](#subsec:families){reference-type="ref" reference="subsec:families"}), one of which is exceptional. The $4 \times 4$ matrix in [@bm_1993 §7] represents the block of the Fourier matrix for the non-exceptional families. I learned from George Lusztig that by contrast, the data for the exceptional family matches that of the exceptional family in type $E_7$. The assertion in [@gm 189] that all three families have the same Fourier data is incorrect.
+:::
+
+###  {#section-5}
+
+Turning to the symmetry result:
+
+::: prop
+[]{#prop:symmetry label="prop:symmetry"} For all $\beta \in \mathit{Br}_W$, we have $$\begin{aligned}
+\langle{\beta}\rangle_{\bm{q}} 
+&\in R(W)[\bm{q}^{\frac{1}{2}} - \varepsilon \bm{q}^{-\frac{1}{2}}],\\
+\langle{\beta}\rangle_{\bm{q}}^0
+&\in 
+    (\bm{q}^{\frac{1}{2}})^{|\beta| - r}
+    R(W)[(\bm{q}^{\frac{1}{2}} - \bm{q}^{-\frac{1}{2}})^{\pm 1}].
+\end{aligned}$$
+:::
+
+By Proposition [\[prop:rationality\]](#prop:rationality){reference-type="ref" reference="prop:rationality"}, $\langle{-}\rangle_{\bm{q}}$ takes values in $R(W)[\bm{q}^{\pm\frac{1}{2}}]$, so the proof amounts to the following lemmas:
+
+::: lem
+[]{#lem:symmetry label="lem:symmetry"} For all $\beta \in \mathit{Br}_W$, we have $\langle{\beta}\rangle_{\bm{q}} \mapsto \varepsilon \langle{\beta}\rangle_{\bm{q}}$ under $\bm{q}^{\frac{1}{2}} \mapsto -\bm{q}^{-\frac{1}{2}}$.
+:::
+
+::: proof
+*Proof.* Recall that for all $\beta \in H_W$, we have $(\psi, \langle{\beta}\rangle_{\bm{q}})_W = \sum_{\phi \in \hat{W}} {\{\phi, \psi\}} \phi_{\bm{q}}(\beta)$. Using Lemma-Postulate [\[lempost:fourier\]](#lempost:fourier){reference-type="ref" reference="lempost:fourier"}(3), we compute $$\begin{aligned}
+\begin{split}
+(\psi, \varepsilon \langle{\beta}\rangle_{\bm{q}})_W 
+&= (\varepsilon\psi, \langle{\beta}\rangle_{\bm{q}})_W \\
+&= \sum_\phi
+    {\{\phi, \varepsilon \psi\}}
+    \phi_{\bm{q}}(\beta)\\
+&=  \sum_\phi
+    {\{\varepsilon \phi, \varepsilon \psi\}}
+    (\varepsilon \phi)_{\bm{q}}(\beta)\\
+&=  \sum_\phi
+    {\{\phi, \psi\}}
+    (\varepsilon \phi)_{\bm{q}}(\beta).
+\end{split}
+\end{aligned}$$ It remains to show that if $\beta$ is in the image of $\mathit{Br}_W$, then $$\begin{aligned}
+\phi_{\bm{q}}(\beta) \mapsto (\varepsilon \phi)_{\bm{q}}(\beta)
+\quad\text{under}\quad
+\bm{q}^{\frac{1}{2}} \mapsto -\bm{q}^{-\frac{1}{2}}.
+\end{aligned}$$ This follows implicitly from the proof of [@gp Prop. 9.4.1(a)]. ◻
+:::
+
+::: lem
+We have $\bm{q}^{\frac{r}{2}} [\Sym(\bb{V})]_{\bm{q}} \mapsto \varepsilon \bm{q}^{\frac{r}{2}} [\Sym(\bb{V})]_{\bm{q}}$ under $\bm{q}^{\frac{1}{2}} \mapsto -\bm{q}^{-\frac{1}{2}}$.
+:::
+
+::: proof
+*Proof.* Observe that $\sum_i {(-\bm{q})^i} \mathop{\mathrm{\text{$\Lambda$}}}^i(\bb{V})$ is the multiplicative inverse of $[\Sym(\bb{V})]_{\bm{q}}$. So the claim follows from Lemma [\[lem:self-dual\]](#lem:self-dual){reference-type="ref" reference="lem:self-dual"} with $x = \bm{q}$. ◻
+:::
+
+###  {#section-6}
+
+We show that Proposition [\[prop:rationality\]](#prop:rationality){reference-type="ref" reference="prop:rationality"}, Proposition [\[prop:symmetry\]](#prop:symmetry){reference-type="ref" reference="prop:symmetry"}, and Theorem [\[thm:pole\]](#thm:pole){reference-type="ref" reference="thm:pole"} together imply Theorem [\[thm:symmetry\]](#thm:symmetry){reference-type="ref" reference="thm:symmetry"}.
+
+::: proof
+*Proof of Theorem [\[thm:symmetry\]](#thm:symmetry){reference-type="ref" reference="thm:symmetry"}.* Proposition [\[prop:rationality\]](#prop:rationality){reference-type="ref" reference="prop:rationality"} shows that if $W$ has no factors of type $E_7$ or $E_8$, then $\langle{\beta}\rangle_{\bm{q}}^0$ and $(1, \langle{\beta}\rangle_{\bm{q}}^0)_W$ are indeed rational functions in $\bm{q}$, not just power series in $\bm{q}^{\frac{1}{2}}$. Theorem [\[thm:pole\]](#thm:pole){reference-type="ref" reference="thm:pole"} extends this result to all $W$. These results, combined with Proposition [\[prop:symmetry\]](#prop:symmetry){reference-type="ref" reference="prop:symmetry"}, establish $$\begin{aligned}
+\langle{\beta}\rangle_{\bm{q}} 
+&\in \bm{q}^{-\frac{|\beta|}{2}}R(W)[\bm{q}] \cap R(W)[\bm{q}^{\frac{1}{2}} - \varepsilon \bm{q}^{-\frac{1}{2}}],\\
+\langle{\beta}\rangle_{\bm{q}}^0
+&\in 
+    R(W)[\![\bm{q}]\!] \cap R(W)(\bm{q}) \cap
+    (\bm{q}^{\frac{1}{2}})^{|\beta| - r}
+    R(W)[(\bm{q}^{\frac{1}{2}} - \bm{q}^{-\frac{1}{2}})^{\pm 1}].
+\end{aligned}$$ In particular, the $\bm{q}$-degrees of $\langle{\beta}\rangle_{\bm{q}}^0$ and $(1, \langle{\beta}\rangle_{\bm{q}}^0)_W$ are well-defined. The following observations show that their degrees must be $|\beta| - r$:
+
+-   Proposition [\[prop:rationality\]](#prop:rationality){reference-type="ref" reference="prop:rationality"} shows that $\langle{\beta}\rangle_{\bm{q}}^0$, and hence $(1, \langle{\beta}\rangle_{\bm{q}}^0)_W$, belong to $\bb{Z}[\![\bm{q}]\!]$, *i.e.*, their lowest-order term in $\bm{q}$ is the constant term.
+
+-   By Proposition [\[prop:symmetry\]](#prop:symmetry){reference-type="ref" reference="prop:symmetry"}, we have $$\begin{aligned}
+    \langle{\beta}\rangle_{\bm{q}}^0 \mapsto (-\bm{q})^{r - |\beta|}\langle{\beta}\rangle_{\bm{q}}^0
+    \quad\text{under}\quad
+    \bm{q}_0 \mapsto \bm{q}_0^{-1}.
+    \end{aligned}$$
+
+-   Proposition [\[prop:rationality\]](#prop:rationality){reference-type="ref" reference="prop:rationality"} also shows that $(1, \langle{\beta}\rangle_{\bm{q}}^0)_W$, and hence $\langle{\beta}\rangle_{\bm{q}}^0$, have nonzero constant term.
+
+ ◻
+:::

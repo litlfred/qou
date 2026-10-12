@@ -1,0 +1,699 @@
+In this section, we finish the proofs of Theorems \ref{thm:main-cusp}
+and \ref{thm:main-norm-length} by
+%% Aug 6, 2007.  Put in parameterization
+finding a parameterization of the cone deformation for which we may
+bound the sum $\sum b_j$.
+
+In order to bound $\sum b_j$, we need more explicit formulas for the
+$b_j$.  Recall that $b_j$ was defined in Definition \ref{def:bj} as:
+$$b_j = b_{V_j}(\eta_0, \eta_0).$$
+Here $\eta_0$ is the real part of the 1--form $\omega_0$ in the $j$-th
+component $V_j$ of a tubular neighborhood of the singular locus.  Thus
+we begin by revisiting our decomposition of $\omega_0$ in $V_j$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+\subsection{Convex combinations of deformations}
+	\label{subsec:convex}
+
+Recall that corresponding to an infinitesimal deformation is the
+1--form $\omega_0$.  We want $\omega_0$ to have certain desired
+properties.
+
+By equation (\ref{eqn:omega_0-decomp}), we can decompose $\omega_0 =
+(\omega_0)_j$ in $V_j$ as
+$$(\omega_0)_j =u_j\, \omega_m + (x_j+iy_j)\,\omega_\ell,$$
+with $u_j$, $x_j$, and $y_j$ in $\RR$, and where $\omega_m$ and
+$\omega_\ell$ were computed in \cite{hk:cone-rigid}.
+
+In \cite{hk:univ}, it was shown that if the singular locus has just
+one component, then the entire cone deformation can be parameterized
+by the square of the cone angle $t=\alpha^2$.  In this case, $u=u_1$
+was determined explicitly in \cite{hk:univ}: $u = -1/(4\alpha^2),$
+where $\alpha$ is the cone angle at the core of the singular solid
+torus $V=V_1$.
+
+When we have multiple components of the singular locus, we may not
+necessarily be able to parameterize the cone deformation in this
+manner.  However, we do have the following information.
+
+First, for each $j$ in $\{1, \dots, n\}$, locally we have a
+deformation given by changing the $j$-th cone angle only and leaving
+the others fixed.  This is a deformation with only one component of
+the singular locus, so the methods of \cite{hk:univ} apply, and this
+deformation can be parameterized by $t=\alpha_j^2$.  Then
+\begin{equation*}
+(\omega_0)_j = -\frac{1}{4\alpha_j^2}\, \omega_m +
+(x_{jj}+iy_{jj})\omega_\ell.
+%\label{eqn:omegaj-1}
+\end{equation*}
+
+Changing the angle in the $j$-th tube $V_j$ and leaving the others
+fixed also affects the $k$-th tube $V_k$.  Since there is no change of
+cone angle in this tube, $(\omega_0)_k$ can be expressed as
+\begin{equation*}
+  (\omega_0)_k = (x_{jk}+iy_{jk})\omega_\ell.
+\end{equation*}
+
+Any of these $j$ deformations may be scaled by a factor $s_j\geq 0$,
+and we may take non-negative linear combinations.  These correspond to
+new local deformations, in which the rates of change of cone angles
+vary according to the choice of the $s_j$.  In a neighborhood of the
+$j$-th component, write:
+\begin{equation}
+(\omega_0)_j = -\frac{s_j}{4\alpha_j^2}\,\omega_m + \sum_{k=1}^n (s_k
+x_{kj} + i\,s_k y_{kj})\,\omega_\ell.
+\label{eqn:omega_0-S}
+\end{equation}
+
+Given a point $\bar{s} = (s_1, s_2, \dots, s_n)$, we may use these
+equations for $\omega_0$ to compute the forms $\eta_0$ explicitly, and
+thus compute the boundary terms $b_j = b_j(\bar{s})$ explicitly.
+Hodgson and Kerckhoff did the calculations without the extra $\bar{s}$
+(page 382 of \cite{hk:univ}).  When the $\bar{s}$ is put in, we
+obtain:
+\begin{equation}
+\frac{b_j(\bar{s})}{\mbox{Area}(\partial V_j)}= s_j^2\,c +
+\left( (\sum_k s_k x_{kj})^2 + 
+   (\sum_k s_k y_{kj})^2 \right)\,a +
+  s_j(\sum_k s_k x_{kj}) \,b.
+\label{eqn:b_j}
+\end{equation}
+Here the terms $a$, $b$, and $c$ are constants in terms of $R$ which
+agree with those on page 383 of \cite{hk:univ}.  However, we are not
+immediately concerned with their values.  More important, $a$ is
+always negative, $b$ and $c$ always positive.
+
+From the formula (\ref{eqn:b_j}) we obtain the following information.
+\begin{enumerate}
+  \item $b_j(\bar{s})$ is quadratic in $\bar{s}$.
+  \item If any $s_j=0$ for some $\bar{s}$, then $b_j(\bar{s})\leq 0$.
+\end{enumerate}
+
+We also know that the sum of all the $b_j$'s is strictly positive,
+provided $\bar{s} \neq (0, 0, \dots, 0)$, by equation
+(\ref{eqn:b_j>0}), as well as the remark right after that equation.
+We will use this information in \S\ref{subsec:Vnonempty}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Selecting local deformations}
+  \label{subsec:Vnonempty}
+
+Each choice of $\bar{s} = (s_1, \dots, s_n)$ corresponds to a local
+deformation with 1--form $(\omega_0)_j$ expressed in $V_j$ as in
+equation (\ref{eqn:omega_0-S}).
+In terms of the deformation, varying $\bar{s}$ varies the rates at
+which the cone angles are changing (instantaneously).  When
+$\bar{s}=(1, \dots, 1)$, all cone angles are changing at the same
+rate.  It might be convenient to let $\bar{s}=(1, \dots, 1)$, to
+simplify calculations.  However, such a choice may not give us the
+bounds on $\sum b_j$ that we need.
+
+In particular, we would like to select $\bar{s}$ such that we may use
+certain inequalities from \cite{hk:univ}.  (These inequalities appear
+in the proof of Lemma \ref{lemma:b_j-bound} in this paper.)  In order
+to use these inequalities, we will need to find $\bar{s}$ such that
+each $b_j(\bar{s}) \geq 0$.
+
+The existence of such an $\bar{s}$ has been discovered by
+Hodgson and Kerckhoff, but their result is unpublished, so we include
+it as Lemma \ref{lemma:Vnonempty} here.
+
+\begin{lemma}[Hodgson--Kerckhoff]  There is an $\bar{s}\neq 0$ for which
+$b_j(\bar{s})\geq 0$ for all $j=1, 2, \dots, n.$
+\label{lemma:Vnonempty}
+\end{lemma}
+
+\begin{proof}
+It suffices, by rescaling, to restrict $\bar{s}$ to the simplex
+$$T=\{\bar{s}=(s_1, \dots,s_n) | \sum_j s_j = n, s_j \geq 0\}.$$
+
+We first set up some notation.
+
+Let the $j$-th vertex of $T$ be denoted $t_j$.  So $t_j = (0, \dots,
+0, n, 0, \dots, 0)$ where the single non-zero value is in the $j$-th
+location.  Notice that at $t_j$, $b_i(t_j)\leq 0$ for all $i\neq j$.
+Because the sum of the $b_i$ is always strictly positive, we must have
+$b_j(t_j)>0$.
+
+Let the face of $T$ opposite $t_j$ be denoted $f_j$.  That is, on
+$f_j$ the $j$-th coordinate is always $0$.  Notice that on $f_j$, $b_j
+\leq 0$.  We will assume that $b_j < 0$ on $f_j$.  If not, consider
+instead level sets of $b_j$ for values $\epsilon > 0$ arbitrarily
+close to $0$.  Below, we will be finding points where all the $b_j$
+are positive.  Taking a limit will at least give points where the
+$b_j$ are nonnegative.
+
+We will also assume level sets $b_j=0$ intersect transversely.  If
+not, take an arbitrarily small perturbation of the quadratic functions
+(keeping them quadratic).
+
+First we note that the set where $b_j>0$ is an open neighborhood of
+$t_j$ in $T$.  This is because on any line from $t_j$ to $f_j$, $b_j$
+goes from positive to negative.  Because $b_j(s)$ is quadratic in $s$,
+$b_j=0$ on this line in exactly one value.  Thus the level set $b_j=0$
+separates $t_j$ from $f_j$.  It has a well--defined positive and
+negative side.
+
+Now, we prove the following sublemma by induction.
+
+\begin{lemma}
+  Consider the $k-1$ simplex $S_k$ of $T$ where $s_i=0$ for all $i>k$.
+  There exists a nonempty open set $B_k \subseteq S_k$ where $b_j>0$
+  for all $j\leq k$.  Furthermore, the set $E_k\subseteq S_k$ where
+  $b_j=0$ for all $j<k$ is an odd number of points, each on the
+  boundary of $B_k$.  
+\label{lemma:sub-vnonempty}
+\end{lemma}
+
+Notice that in the above statement, when $k=n$, the simplex $S_n$ is
+all of $T$.  Then if the statement is true, $B_n$ is an open set on
+which all the $b_j$ are positive, so this will prove Lemma
+\ref{lemma:Vnonempty}. 
+
+An additional fact we will pick up from the proof is that the set
+$E_n$ where $b_j=0$ for $j=1, 2, \dots, n-1$ is an odd number of
+points.  (We will use this additional fact in the proof of Lemma
+\ref{lemma:choose-S} below.)
+
+\begin{proof}
+We first prove Lemma \ref{lemma:sub-vnonempty} when $k=2$.  In this
+case, $S_2$ is the 1--simplex from $t_1$ to $t_2$.  At $t_1$, $b_1>0$.
+At $t_2$, $b_1 <0$.  Since $b_1$ is quadratic, somewhere on $S_2$ is a
+single point $e_2$ where $b_1=0$.  Notice that $b_2(e_2)$ must be
+positive.  This is because each $b_j(e_2)\leq 0$ for $j>2$ (since the
+corresponding coordinates $s_j$ are all zero).  Since $b_1(e_2)$ is
+zero, and the sum $\sum b_i >0$, this forces $b_2>0$.  Then in this
+case, $E_2$ contains the single point $e_2$.  $B_2$ is nonempty, with
+$e_2$ on its boundary.
+
+\begin{figure}
+  \input{figures/findv.pstex_t}
+  \caption{Proof of Lemma \ref{lemma:Vnonempty} when $k=3$.}
+  \label{fig:findv}
+\end{figure}
+
+We will now prove the lemma by induction for $k+1$.  For reference, an
+example of the case when $k+1=3$ is illustrated in Figure
+\ref{fig:findv}.
+
+$S_{k+1}$ is the $k$ subsimplex of $T$ with vertices $t_1, t_2, \dots,
+t_{k+1}$, on which $s_{k+2}= \dots = s_n=0$.  It has as one boundary
+face the $k-1$ simplex $S_k$, on which $s_{k+1}= s_{k+2}= \dots
+=s_n=0$.  On any other face of $S_{k+1}$, $s_{k+2}=\dots=s_n=0$, and
+also $s_j=0$ for some $j<k+1$.
+
+By induction, we are assuming that on the face $S_k$ the set $B_k$,
+where $b_j>0$ for all $j\leq k$ is a nonempty open set.  By
+continuity, the set $\hat{B}_k$ in $S_{k+1}$ where the same $b_j>0$
+must also be nonempty.  %% In its boundary is the 1--manifold $\hat{E_k}$
+%% where $b_j=0$ for $j<k$.
+The set $\hat{E}_k \subset S_{k+1}$ where $b_j=0$ for $j<k$ is a
+$1$--manifold with boundary.  A neighborhood of $E_k$ in $\hat{E}_k$
+lies in the boundary of $\hat{B}_k$.
+
+Consider $\hat{E}_k$.  As a 1--manifold, it consists of closed
+components and arcs.  The part of its boundary contained in $S_k$ is
+the set $E_k$, so consists of an odd number of points.  Hence there
+must be an odd number of arc components of $\hat{E}_k$ with exactly
+one endpoint in $S_k$.
+
+Consider the other boundary components of $\hat{E_k}$.  They must lie
+on faces of $S_{k+1}$.  Recall the set $\{b_j=0\}$ does not intersect
+any face $f_j$ where $s_j=0$.  Thus the only possible additional face
+of intersection of $\hat{E_k}$ and $S_{k+1}$ is the face on which
+$s_k=s_{k+2}=\dots=s_n=0$, spanned by vertices $t_1, \dots, t_{k-1}$
+and $t_{k+1}$ (note this face is in $f_k$).  By induction (using the
+induction hypothesis with vertices renumbered), there are an odd
+number of intersection points of $\hat{E_k}$ on this face of
+$S_{k+1}$.
+
+Thus there must be an odd number of arcs of $\hat{E_k}$ running from
+$S_k$ to the face $f_k$.  Along any of these arcs, $b_k$ goes from
+positive (at a point of $E_k$ on $S_k$) to negative (since $b_k<0$ on
+$f_k$).  Thus it must be zero at an odd number of interior points.
+Each of these points is in $E_{k+1}$.  We may also have points of
+$E_{k+1}$ coming from the intersection of $\{b_k=0\}$ with closed
+components of $\hat{E}_k$, or with arc components of $\hat{E}_k$ with
+both endpoints of the arc on the same face (either $S_k$ or $f_k$).
+In the former case, $\{b_k=0\}$ must intersect any closed component an
+even number of times, and in the latter case $b_k$ has the same sign
+on both endpoints, so again $\{b_k=0\}$ intersects the arc an even
+number of times.  Thus the total number of points in $E_{k+1}$ is odd.
+
+At each point in $E_{k+1}$, we have $b_1=b_2=\dots=b_k=0$, and we have
+$b_{k+2}$ through $b_n$ all less than or equal to zero.  Since the sum
+of all the $b_j$ is positive, $b_{k+1}$ must be positive.  This
+implies $B_{k+1}$ is a nonempty open set, and the points of $E_{k+1}$
+are on its boundary.
+\end{proof}
+
+This completes the proof of Lemma \ref{lemma:Vnonempty}.
+\end{proof}
+
+Now, as mentioned above, the choice of $\bar{s}$ is tied to the rates
+at which the cone angles are varying.  Lemma \ref{lemma:Vnonempty}
+implies that a desired $\bar{s}$ exists, but gives us no further
+information about $\bar{s}$.  In particular, some cone angle may reach
+$2\pi$ before the others.  When this happens, the hyperbolic structure
+in the corresponding tube about the singular locus is nonsingular.  We
+may thus view the deformation from this point on as a deformation on a
+cone manifold with one fewer component of the singular locus.  We do
+this, obtaining deformations with fewer and fewer singular components,
+until each cone angle has reached $2\pi$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Boundary bound}
+\label{subsec:bd}
+
+In this subsection, we will show that
+%% Aug 6, 2007.  Parameterization
+there exists a parameterization of the cone deformation such that the
+sum of the terms $b_j$ is of order $n$.  We first need two lemmas.
+Lemma \ref{lemma:b_j-bound} gives us an initial bound on each $b_j$.
+Lemma \ref{lemma:choose-S} will allow us to improve this bound.  It is
+in the proof of Lemma \ref{lemma:b_j-bound}, giving the initial bounds
+on the $b_j$, that we use the positivity result of Lemma
+\ref{lemma:Vnonempty}.
+
+Finally, in Theorem \ref{thm:bound-bdry-time} at the end of this
+subsection, we put these lemmas together to record the main result of
+the section: the bound on the sum $\sum b_j$.
+
+\begin{lemma}
+  Suppose we have a cone deformation given as a linear combination of
+  deformations, as above, where cone angles go from $0$ to $2\pi$
+  along the singular locus.  Suppose also that $S=(s_1, \dots, s_n)$
+  is chosen such that for each time $t$, $b_j(S)\geq 0$ for all $j$.
+  Suppose the tube radius $R$ is bounded below by $R_1 \geq 0.56$ for
+  each $t$.  Then
+  $$b_j(S) \leq s_j^2 \,C(R_1),$$
+  where $C(R_1)$ is a function of $R_1$
+  alone which approaches $0$ as $R_1$ approaches infinity.
+\label{lemma:b_j-bound}
+\end{lemma}
+
+\begin{proof}
+  First, since we're considering a fixed $V_j$, we will drop the
+  subscript $j$ in our notation throughout the proof (i.e. $V_j=V,$
+  $(\eta_0)_j = \eta_0,$ $s_j=s,$ etc).
+  
+  Modify a calculation (p. 382 and 383 of \cite{hk:univ}) to include
+  $s$, and equation (17) of that paper can be written:
+$$\frac{b_j(S)}{\mbox{Area}(\partial V)}\; \leq \;\frac{s^2}{8m^4},$$
+where
+$m = \alpha\sinh^2 R$ is the length of a meridian on $\partial U$.
+
+We will bound the term $\mbox{Area}(\partial V)\, s^2/(8m^4)$.
+
+Let $A=\mbox{Area}(\partial V)$.  Let $h$ denote the height of
+$\partial V$, i.e. the length of an arc perpendicular to the
+meridian.  So $h=\ell\cosh R$, where $\ell$ is the length of the
+singular locus of the solid torus $V$, and $A=mh$.
+
+Consider
+$$\Phi = \frac{8m^4}{A} = \frac{8m^3}{h} =
+\frac{8\alpha^3\sinh^3R}{\ell\cosh R}.$$
+We will bound $\Phi$ below, therefore bounding its reciprocal above.
+
+Let
+$$\Upsilon(R) = \frac{3.3957 \tanh R }{2\cosh 2R}.$$
+It was shown in
+\cite{hk:univ} (see Theorem 4.4, Corollary 5.1, and the comments on
+the multicusp case on p. 411), that $\alpha\ell \geq \Upsilon(R)$.
+
+Then
+$$\Phi = \frac{8\alpha^3\sinh^3R}{\ell\cosh R} =
+\frac{4\alpha^3}{\ell}\,\frac{1}{\Upsilon(R)}\,g(R)$$
+where
+$$g(R) = \frac{2\Upsilon(R)\sinh^3R}{\cosh R} = 2\Upsilon(R)\tanh R\sinh^2
+R = \frac{3.3957 \tanh^4 R}{1+\tanh^2 R}.$$
+
+So $$\Phi \geq \frac{4\alpha^3}{\ell}\,\frac{1}{\alpha\ell}\,g(R) =
+4\left(\frac{\alpha}{\ell}\right)^2g(R).$$
+
+Note that $g(R)$ is increasing with $R$.  Hence since $R\geq R_1$,
+$g(R)$ is bounded below by $g(R_1)$.  Thus we focus on the term
+$\alpha/\ell$ in $\Phi$.
+
+Define $u=\alpha/\ell$.  In our hyperbolic cone deformation, the
+initial cone angle $\alpha$ is zero.  As $\alpha$ approaches $0$, $u$
+approaches $L_0^2$, where $L_0$ is the normalized length of the
+curve which becomes the meridian (i.e. bounds a singular solid disc)
+under the cone deformation (see equation (37) of \cite{hk:univ}).  We
+will estimate $u=(u_0 + \Delta u) = (L_0^2+\Delta u)$.
+
+Reworking the calculations of \cite{hk:univ} to include the speed $s$,
+and taking derivatives with respect to cone angle $\alpha$ rather than
+time, we may rewrite Proposition 5.6 of that paper as:
+$$\frac{1}{\alpha}\,\frac{du}{d\alpha} \geq -\frac{2(1+\tanh^2 R)}
+{3.3957\tanh^3R} = -\frac{2\tanh R}{g(R)},$$
+provided that $R\geq
+R_1\geq 0.531$.
+
+It is at this step, to use Proposition 5.6 of \cite{hk:univ}, that we
+have required $S$ to be chosen so that $b_j(S) > 0$.
+
+Thus
+$$\Delta u \geq \int_{\alpha=0}^{\alpha=2\pi} -2\alpha\frac{\tanh
+  R}{g(R)} d\alpha \geq
+-\frac{\tanh R_1}{g(R_1)}\int_{0}^{2\pi} 2\alpha d\alpha =
+-(2\pi)^2\frac{\tanh R_1}{g(R_1)}.$$
+
+So
+$$u^2 \geq (L_0^2 - (2\pi)^2\tanh(R_1)/g(R_1))^2,$$
+provided the term
+$L_0^2 - (2\pi)^2\tanh(R_1)/g(R_1)$ is non--negative.  We can ensure
+this quantity is non--negative by ensuring $L_0^2$ is large.  This can
+be done following \cite{hk:univ}.  The following result is essentially
+equation (47) of that paper.
+
+\begin{equation}
+L_0^2 \geq \frac{2(2\pi)^2}{3.3957(1-\tanh R)}
+  \exp\left( \int_1^{\tanh R} F(w) dw\right) = I(R),
+  \label{eq:Lhat_int}
+\end{equation}
+provided the tube radius is at least $R$ throughout the deformation.
+Here $F(w) = -(1+4w+6w^2+w^4)/((w+1)(1+w^2)^2)$ is an integrable
+function.
+
+The right hand side $I(R)$ of (\ref{eq:Lhat_int}) is increasing with
+$R$, so it can be bounded below by a constant in terms of $R_1$.
+$$L_0^2 \geq I(R_1)$$
+
+Now if $R_1\geq 0.56$, then 
+$I(R_1) - 2(2\pi)^2\tanh(R_1)/g(R_1) \geq 0$.
+
+Putting this together,
+$$\Phi \geq 4\left(I(R_1)-(2\pi)^2\frac{\tanh R_1}{g(R_1)}\right)^2
+g(R_1).$$
+The right hand side of the above equation is a constant,
+$\tild{C}_0(R_1)$.
+
+Thus we have
+$$b_j(S) \leq \frac{A}{8m^4}\,s^2 =
+  \frac{1}{\Phi}\,s^2 \leq \frac{s^2}{\tild{C}_0(R_1)} = s^2\,C(R_1).$$
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% INSERT CHOICE OF POINT S HERE
+
+The result of Lemma \ref{lemma:b_j-bound} gives us a bound on the sum
+of the $b_j$ in terms of $\bar{s}$.  If we could choose $\bar{s} = (1,
+\dots, 1)$ (all cone angles increasing at the same rate), then Lemma
+\ref{lemma:b_j-bound} would give a bound on $\sum b_j$ of order $n$.
+However, our choice of $\bar{s}$ comes from Lemma
+\ref{lemma:Vnonempty}.  By the proof of that lemma, we may assume only
+that $\bar{s}$ is in the simplex $T=\{\bar{s}\, |\, \sum s_j=n,
+s_j\geq 0\}$.  A priori, $\bar{s}$ could be close to a vertex of $T$,
+say $(n, 0, \dots, 0)$, in which case Lemma \ref{lemma:b_j-bound}
+gives only a bound of order $n^2$ on $\sum b_j$.
+
+For our applications, we need the bound of order $n$.  We will obtain
+this better estimate by again revisiting the choice of the point
+$\bar{s}=(s_1, s_2, \dots, s_n)$.  This is done in Lemma
+\ref{lemma:choose-S}.  
+
+
+\begin{lemma}
+  There exists a point $S=(s_1, \dots, s_n)$ in $T$ such that each
+  $b_j(S)\geq 0$, $j=1, \dots, n$, and for any index $j$ with $s_j
+  \neq \min\{s_1, \dots, s_n\}$, we have $b_j(S)=0$.
+\label{lemma:choose-S}
+\end{lemma}
+
+\begin{proof}
+
+First we set up some notation.
+
+\begin{notation}
+  Let $B = \{\bar{s}\, |\, b_j(\bar{s}) \geq 0, j=1, \dots, n\}$ (so
+  the interior of $B$ is the set $B_n$ of Lemma
+  \ref{lemma:sub-vnonempty}).  Again we may normalize such that the
+  points $\bar{s}$ lie in the simplex $T= \{(s_1,\dots,s_n)| \sum s_i
+  = n, s_i\geq 0\}$.
+  
+  We define some sets in $B$.  For each $j=1, 2, \dots, n$, let $e_j$
+  be the set of all points in $B$ such that $b_j>0$ and for $i\neq j$,
+  $b_i=0$.  Note for $j=n$, $e_n$ corresponds to the set $E_n$ in
+  Lemma \ref{lemma:sub-vnonempty}.  (So in particular, $e_n$ consists
+  of an odd number of points.)
+  
+  Let $b_{\{i,j\}}$ be the set $b_{\{i,j\}} = B\cap (\cap_{k\neq i,j}
+  \{b_k=0\})$.  Note $b_{\{i,j\}}$ has dimension $1$, with components with
+  boundary in $e_i$ and $e_j$.
+  
+  In general, let $I$ be a $k$-element subset $I= \{i_1, i_2, \dots,
+  i_k\} \subseteq \{1, \dots, n\}$.  Let $b_I = B\cap(\cap_{j\notin I}
+  \{b_j=0\})$.  Notice $b_I$ is bounded by components $b_{I_j}$ where
+  $j\in I$, and $I_j$ is the $(k-1)$-element set obtained by removing
+  $j$ from $I$.
+  
+  Now we define some sets in the simplex $T = \{\bar{s}| \sum
+  s_i=n\}$.  Let $T_i$ be the region in which $s_i\leq s_j$ for all
+  indices $j$.  $T_i$ has dimension $n-1$.  Let $T_{\{i,j\}} = T_i
+  \cap T_j$.  Thus each $T_i$ is bounded by faces $T_{\{i,j\}}$ where
+  $j$ ranges over all elements of $\{1, \dots, n\}-\{i\}$, as well as
+  faces on $\partial T$.  Generally,
+  let $I$ be a $k$-element subset of $\{1, \dots, n\}$.  Let $T_I =
+  \cap_{j\in I} T_j$.  Note the boundary faces of $T_I$ are the faces
+  given by $T_{I\cup\{k\}}$, where $k$ ranges over all elements of
+  $\{1, \dots, n\} - I$, as well as faces in $\partial T$.  See Figure
+  \ref{fig:lemma-fix} for an illustration when $n=3$.
+\end{notation}
+
+\begin{figure}
+	\input{figures/fix-lemma.pstex_t}
+	\caption{Faces $T_I$ illustrated when $n=3$.}
+	\label{fig:lemma-fix}
+\end{figure}
+
+We will make transversality assumptions that allow us to ignore the
+boundary faces of $T_I$ on $\partial T$.  In particular, assume that
+$B$ lies in the interior of $T$, so the sets $b_I$ do not meet
+$\partial T$.  If this is not the case, we may apply the argument
+below to level sets $b_I = \epsilon$, then take the limit as $\epsilon
+\to 0$.  Since $B$ is closed, we will obtain the desired result.
+Similarly, we will assume that the $b_I$'s and the $T_I$'s all
+intersect transversely.
+
+We will use the transversality assumption that $B$ does not meet
+$\partial T$ in the arguments below.  In particular, we will be
+considering the intersection of subsets of $B$ with boundary faces of
+$T_I$.  Since $B$ does not meet $\partial T$, this allows us to ignore
+the faces of $T_I$ which lie on $\partial T$ in our argument.
+
+%% If not, we may apply the argument to level
+%% sets $b_I=\epsilon$ inside $B$, and take the limit as $\epsilon\to 0$.
+%% Since $B$ is closed, we obtain the desired result.
+
+Now, note the lemma will be immediately true if we can find some index
+$j$ such that $e_j$ is in the region $T_j$: for on $e_j$, $b_i=0$ for
+all $i\neq j$, and in $T_j$, $s_j$ is minimum.  So assume this never
+happens.
+
+Generally, if for some $k$-element set $I \subseteq \{1, \dots, n\}$,
+$b_I \cap T_I$ is nonempty, we obtain a point which satisfies the
+lemma.  So we will assume this also never happens.  We will show that
+in this case, the point $(1, 1, \dots, 1)$ is in $B$, thus concluding
+the proof.  To prove this, we need another sublemma.
+
+\begin{lemma}
+Let $\#(\cdot)$ denote the number of elements of a finite set.
+Assuming that %% for 
+each %% $k$--element set $I \subseteq \{1, \dots, n\}$,
+$b_I \cap T_I$ is empty, 
+$$\sum_I \#(b_{I\cup\{n\}} \cap \partial T_I) \equiv \sum_{J}
+\#(b_{J\cup\{n\}} \cap \partial T_J) \equiv 1 \mod 2,$$
+where the first
+sum is over all $(k+1)$-element subsets $I$ of $\{1, \dots, n-1\}$,
+and the second sum is over all $k$-element subsets $J$ of $\{1, \dots,
+n-1\}$.
+\label{lemma:inductive-S}
+\end{lemma}
+
+Check that the statement of the lemma makes sense:  Note if $J$ is a
+$k$-element set, then $b_{J\cup\{n\}}$ is $k$-dimensional.  $T_J$ is
+$(n-k)$ dimensional, so its boundary faces are $(n-k-1)$-dimensional.
+Thus the intersections in the statement of the lemma are
+$0$-dimensional manifolds, consisting of a finite number of
+points.
+
+Also notice that when $k=(n-2)$ in the above lemma, there exists only
+one $(k+1)$-element subset $I$, namely $I=\{1, \dots, n-1\}$.  So
+$b_{I\cup\{n\}}$ is the whole set $B$.  On the other hand, the
+boundary $\partial T_I$ in this case must be the point in the
+intersection of all the $T_i$, or the point $(1, \dots, 1)$.  Thus the
+first sum counts the number of times the point $(1, \dots, 1)$ appears
+in $B$.  Hence showing this number is odd will finish the
+proof of Lemma \ref{lemma:choose-S}.
+
+
+\begin{proof}
+We prove Lemma \ref{lemma:inductive-S} by induction on $k$.
+
+We start by showing what essentially is the case $k=0$.  That is, we
+show
+$$\sum_{i=1}^{n-1} \#(b_{\{i,n\}} \cap \partial T_i) \equiv
+\sum_{i=1}^{n-1} \#(e_n \cap T_i) \mod 2.$$
+
+Since we are assuming $e_n \cap T_n = \emptyset$, the second sum in
+the above equation is just the number of points of $e_n$ (since $e_n$
+is disjoint from each $T_i \cap T_j$ by transversality).  That number
+of points is odd by Lemma \ref{lemma:sub-vnonempty}, so this will give
+us the basis step of our induction.
+
+Consider $b_{\{i, n\}} \cap T_i$.  This is a 1--manifold, consisting
+of closed curves and arcs.  Each arc has two endpoints.  So
+$$\sum_{i=1}^{n-1} \#\partial(b_{\{i,n\}} \cap T_i) \equiv 0 \mod 2$$
+
+On the other hand,
+$$\sum_{i=1}^{n-1} \#\partial(b_{\{i,n\}} \cap T_i) =
+\sum_{i=1}^{n-1} \#(\partial b_{\{i,n\}} \cap T_i) +
+\sum_{i=1}^{n-1} \#(b_{\{i,n\}} \cap \partial T_i).$$
+So $\sum_{i\neq n} \#(b_{\{i,n\}} \cap \partial T_i)$ has the same
+parity as $\sum_{i\neq n} \#(\partial b_{\{i,n\}} \cap T_i)$.
+
+Consider $\partial b_{\{i,n\}} \cap T_i$.  Note $\partial b_{\{i,n\}}$
+consists of points in $e_i$ and $e_n$.  By assumption, $e_i$ is never
+in $T_i$.  Thus
+$$\sum_{i=1}^{n-1} \#(\partial b_{\{i,n\}} \cap T_i)
+= \sum_{i=1}^{n-1} \#(e_n \cap T_i) = \#(e_n).$$
+So $\sum_{i\neq n} \#(b_{\{i,n\}} \cap \partial T_i)$ is odd.
+
+Our proof for general $k$ follows essentially the same lines as the
+proof above.
+
+Suppose $1\leq k \leq n-2$.  We need to show
+$$\sum_I \#(b_{I\cup\{n\}} \cap \partial T_I) \equiv \sum_{J}
+\#(b_{J\cup\{n\}} \cap \partial T_J) \mod 2,$$
+where the first sum is over $(k+1)$-element subsets of $\{1, \dots,
+n-1\}$ and the second is over $k$-element subsets.
+
+Fix some $(k+1)$-element subset $I$, and again consider
+$b_{I\cup\{n\}} \cap T_I$.  This is a 1--manifold.  Its components are
+closed curves and arcs.  Again the number of endpoints of
+these arcs is even.  So when we sum over all such $I$, 
+$$\sum_I \#\partial(b_{I\cup\{n\}} \cap T_I) \equiv 0 \mod 2.$$
+
+On the other hand, 
+$$\sum_I \#\partial(b_{I\cup\{n\}} \cap T_I) =
+\sum_I \#(\partial b_{I\cup\{n\}} \cap T_I) +
+\sum_I \#(b_{I\cup\{n\}} \cap \partial T_I).$$
+
+Thus we consider $\sum_I \#(\partial b_{I\cup\{n\}} \cap T_I).$ We
+want it to have the same parity as $\sum_J \#(b_{J\cup\{n\}} \cap
+\partial T_J)$, where $J$ ranges over all $k$-element subsets of $\{1,
+\dots, n-1\}$.  We show now that the two sums are actually equal,
+which concludes the proof.
+
+Consider $\partial b_{I\cup \{n\}}$.  This consists of $b_I$, as well
+as things of the form $b_{{I_j}\cup\{n\}}$ where $I_j$ is the
+$k$-element set obtained from $I$ by removing the element $j\in I$.
+Since by assumption, $b_I \cap T_I$ is empty, $\partial b_{I\cup\{n\}}
+\cap T_I$ is the union of sets $b_{{I_j}\cup\{n\}} \cap T_I$, where
+$j$ ranges over all elements of $I$.
+
+Then
+\begin{equation}
+\sum_I \#(\partial b_{I\cup\{n\}} \cap T_I) = \sum_I \sum_{j\in I}
+\#(b_{{I_j}\cup\{n\}} \cap T_I).
+\label{eqn:count1}
+\end{equation}
+
+We will change our method of counting in (\ref{eqn:count1}) above.
+Replace the terms $I_j$ with $k$-element subsets $J$ of $\{1, \dots,
+n-1\}$.  We will run through all such $J$.  Then $I$ will run through
+the $(k+1)$-element subsets given by $J\cup\{i\}$, where $i$ is some
+element of $\{1, \dots, n-1\} - J$.  So the right hand side of
+equation (\ref{eqn:count1}) is equal to
+$$\sum_J \sum_{i\in\{1,\dots,n-1\}-J} \#(b_{J\cup\{n\}} \cap
+T_{J\cup\{i\}}).$$
+
+On the other hand, we know the boundary $\partial T_J$ is equal to the
+union of all faces $T_{J\cup\{j\}}$, where $j$ ranges over all
+elements of $\{1, \dots, n\}-J$.  The only such face we are missing in
+our sum above is $T_{J\cup\{n\}}$.  But by assumption, the
+intersection of $b_{J\cup\{n\}}$ with $T_{J\cup\{n\}}$ is trivial.
+Thus
+$$\sum_J \sum_{i\in\{1,\dots,n-1\}-J} \#(b_{J\cup\{n\}} \cap
+T_{J\cup\{i\}}) = \sum_J \#(b_{J\cup\{n\}} \cap \partial T_J).$$
+\end{proof}
+
+This concludes the proof of Lemma \ref{lemma:choose-S}.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Lemmas \ref{lemma:b_j-bound} and \ref{lemma:choose-S} together give
+the desired bound on $\sum b_j$:
+
+\begin{theorem}
+  Let $X$ be a hyperbolic manifold with $n+k$ cusps connected to a
+  manifold $M$ with $k$ cusps by a cone deformation.  (So in
+  particular, there are $n$ components of the singular locus, and cone
+  angles at each component go from $0$ to $2\pi$.)  Suppose during the
+  deformation, the tube radius about the singular locus remains larger
+  than $R_1 \geq 0.56$.
+%% 	Then the sum of the boundary terms is
+%%   bounded:
+	Then the deformation can be parameterized so that at each time: $\min
+	s_j =1$ and the sum of the boundary terms satisfies
+  $$\sum_{j=1}^n b_j \leq n\,C(R_1).$$
+  Moreover, we can assume the
+  deformation has reached the hyperbolic structure on $M$ by time
+  $t=(2\pi)^2$.
+  \label{thm:bound-bdry-time}
+\end{theorem}
+
+\begin{proof}
+  
+  By Lemma \ref{lemma:choose-S}, we may find a value $S$ in $T$ such
+  that each $b_j(S) \geq 0$ and such that if for any index $j$, $s_j
+  \neq \min\{s_1, \dots, s_n\}$, then $b_j(S)=0$.  Denote the minimum
+  value of the $s_j$ by $s$: $s=\min\{s_1,\dots, s_n\}$.  Then Lemma
+  \ref{lemma:b_j-bound} implies that
+\begin{equation}
+  \sum_{j=1}^n b_j = \sum_{\{j|b_j\neq 0\}} b_j \leq \sum_{\{j|b_j\neq
+  0\}} s^2\,C(R_1) \leq n s^2\,C(R_1).
+\label{eqn:sum-b_j}
+\end{equation}
+
+First, we need to check that $s$ is not equal to zero.  Suppose not.
+That is, suppose $s=0$.  Then by (\ref{eqn:sum-b_j}), $\sum_{j=0}^n
+b_j = 0$.  Recall that by equation (\ref{eqn:b_j>0}) and the remark
+right after it, the sum of all $b_j$'s equal zero only if the entire
+deformation is trivial.  But this is possible only if each $s_j=0$.
+Since the point $(0, 0, \dots, 0)$ is not in the simplex $T$, this is
+impossible.
+
+Now, recall the terms $s_j$ affect the rate of change of the
+deformation.  Thus we may rescale them without changing the tube
+radius.  For the point $S$ in $T$, divide each $s_j$ by $s$.
+Replace $S$ by this rescaled point, and denote the rescaled
+point by the same notation: $S=(s_1, \dots, s_n)$.  So each $s_j\geq
+1$.  Also, $s=\min\{s_j\}=1$.
+
+Thus equation (\ref{eqn:sum-b_j}) gives:
+$$\sum_{j=1}^n b_j \leq n\,C(R_1).$$
+  
+Finally, to notice that the deformation is complete by time
+$t=(2\pi)^2$ as claimed, recall that if $s_j=1$ throughout the
+deformation, then the cone angle is changing at a rate at which
+$\alpha_j$ will reach $2\pi$ at time $t=(2\pi)^2$.  (See the
+discussion at the beginning of \S\ref{subsec:convex}.)  Since $s_j\geq
+1$ always, the rate of change may only be faster.  Thus each cone
+angle reaches $2\pi$ by the time $t=(2\pi)^2$.
+\end{proof}
+
+When we combine Theorem \ref{thm:bound-bdry-time} with the results of
+Theorem \ref{thm:cusp-1} and Theorem \ref{thm:norm-length-1}, we have
+completed the proofs of Theorems \ref{thm:main-cusp} and
+\ref{thm:main-norm-length}.
+
+

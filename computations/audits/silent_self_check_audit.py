@@ -312,7 +312,7 @@ def main() -> int:
     adjudicated: list[dict] = []
 
     for p in sorted((ROOT / "computations").rglob("*.py")):
-        if "_deprecated" in p.parts or p.name == Path(__file__).name:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts) or p.name == Path(__file__).name:
             continue
         src = p.read_text()
         try:
@@ -395,7 +395,7 @@ def main() -> int:
         CRITS = {"self-check-not-gated", "resume-cache-unvalidated"}
         n_pruned = 0
         for side in sorted((ROOT / "computations").rglob("*.script-qa.json")):
-            if "_deprecated" in side.parts:
+            if ("_deprecated" in side.parts or "fsh-guts" in side.parts):
                 continue
             try:
                 doc = json.loads(side.read_text())

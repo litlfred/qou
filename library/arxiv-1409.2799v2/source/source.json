@@ -1,0 +1,51 @@
+{
+ "url": "https://arxiv.org/e-print/1409.2799v2",
+ "content_type": "application/gzip",
+ "sha256": "fdb581c57e59efec005cdc4935564ce2a02d87e4b8dbb0e2cf6f7279ef7adc2e",
+ "bytes": 229230,
+ "fetched": "2026-10-10T15:09:34+00:00",
+ "files": [
+  {
+   "path": "files/defs.tex",
+   "role": "tex",
+   "sha256": "6d7540fdaf16a69be9a4642408dc92967b5c3ba7c79ca0b7acac999d7fb84e2d",
+   "bytes": 8011
+  },
+  {
+   "path": "files/dia-tiltings.bbl",
+   "role": "bbl",
+   "sha256": "5c6e2c4600606c40a4752993172dae33cbec8979c9f0da39b89b313658270f85",
+   "bytes": 16893
+  },
+  {
+   "path": "files/dia-tiltings.tex",
+   "role": "tex",
+   "sha256": "88b90bf4d17350511a8eed327f1e8efdcfa27a7f781cf1b7cbccafd6fb4bd62a",
+   "bytes": 13633
+  },
+  {
+   "path": "files/res/diaalg.tex",
+   "role": "tex",
+   "sha256": "72ca2527754ec201e57d5174ba34a93d16bb18d7439ce3af72f6b44d278577c3",
+   "bytes": 63044
+  },
+  {
+   "path": "files/res/intro.tex",
+   "role": "tex",
+   "sha256": "cad4d64a98408f01606afc881083075d1f4ae47bb088cc1568ca6b5c53cf201e",
+   "bytes": 16680
+  },
+  {
+   "path": "files/res/quiver.tex",
+   "role": "tex",
+   "sha256": "8b8a35ad4f28621e4697745772baf738ea236b530e49968533b3eb00ff064136",
+   "bytes": 64633
+  },
+  {
+   "path": "files/res/tilcats.tex",
+   "role": "tex",
+   "sha256": "c4c64579f0f194f14e72940ca9afbbbe835f26d40bba3ba5debbe58d6f9033b7",
+   "bytes": 47741
+  }
+ ]
+}

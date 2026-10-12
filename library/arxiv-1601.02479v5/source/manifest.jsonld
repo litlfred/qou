@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1601.02479v5/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1601.02479v5 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1601.02479v5/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1601.02479&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1601.02479v5",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1601.02479v5",
+    "content_type": "application/gzip",
+    "sha256": "b223fe9733eee632b48d9e2c390af425044f0ca68eb57b175b9599c5ce7ab5c7",
+    "bytes": 77288,
+    "fetched": "2026-10-10T15:10:47+00:00",
+    "files": [
+      {
+        "path": "source/files/CoHAv3-04032020.bbl",
+        "role": "bbl",
+        "sha256": "31de243265748752af42a87b6053e8583dbd8b7523544816397dc284e387590c",
+        "bytes": 8663
+      },
+      {
+        "path": "source/files/CoHAv3-04032020.tex",
+        "role": "tex",
+        "sha256": "fec0c31ac74e1985a0073caa202f81e95b1ba583773fb7c6759d12a4bb72509d",
+        "bytes": 317027
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

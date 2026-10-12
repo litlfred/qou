@@ -7,196 +7,207 @@ section_number: 1
 pages: 2-7
 source_pdf: 1911.04486v4.pdf
 source_sha256: 53a34938c0e63bad
-doc_brief: "Knots and the Maxwell Equations — In this chapter, we review the Ra˜ nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld"
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.946
+latex_coverage_ratio: 0.95
 ---
-The discovery of the knot solutions of Maxwell’s equations in the vacuum
-represents one of the most exciting results obtained recently in the modern
-classical electrodynamics. Since their ﬁrst appearance in the seminal papers
-[1, 2, 3, 4], many interesting properties, applications, and generalizations of
-the knot electromagnetic ﬁelds have been discovered.
-The knot solutions of Maxwell’s equations can be described in terms of
-electric and magnetic ﬁeld lines, and their topology can be given in terms of
-a pair of complex scalar ﬁelds that are interpreted as Hopf maps S3→ S2
-on the compactiﬁed space-like directions of the Minkowski space-time [4]-[6].
-Among the properties studied up to now, one can cite: the relationship be-
-tween the linked and the knotted electromagnetic ﬁelds discussed in [7, 8],
-the dynamics of the electric charges in topologically non-trivial electromag-
-netic backgrounds investigated in [10]-[13], and the topological quantization
-presented in [14]-[17]. In the last decade, the Ra˜ nada solutions were gen-
-eralized in two ways. The ﬁrst generalization is from knot ﬁelds to torus
-ﬁelds and was given in the works of Arrayas and Hoyos [18]-[20]. The second
-generalization is from the electromagnetic ﬁelds in vacuum to electromag-
-netic ﬁelds in matter. Several authors have showed that topological ﬁelds
-can be found in various areas of physics such as: ﬂuid physics [22, 23], atmo-
-spheric physics [24], liquid crystals [25], plasma physics [26], optics [27, 28],
-and superconductivity [29]. (For a recent review of the knot solutions and
-their applications see [30] and the references therein). More recently, new
-and important generalizations of the topological electromagnetic ﬁelds have
-been made to the non-linear electrodynamics, the ﬂuid physics [21]-[23] as
-well as to the gravitational physics [31] - [34]. A new method to obtain the
-electromagnetic knot solutions in Minkowski space, by completely solving
-the Maxwell equations ﬁrst in de Sitter space and then conformally mapping
-to Minkowski space was presented in [35, 36].
-Due to their wide range of applications in both physics and mathematics,
-the topological electromagnetic ﬁelds represent an important ﬁeld of science
-and an active line of research.
-In the present chapter, we are going to revisit the construction of the
-knot solutions of Maxwell’s equations in Ran˜ ada’s approach. Also, we are
-going to brieﬂy survey the diﬀerent mathematical formulations of Maxwell’s
-equations and to present the construction of the Hopf maps in electrody-
-namics. Of utmost importance for the understanding of the knot solutions is
-the factorization method of the 2-forms introduced by Bateman. We will re-
-view the application of Bateman’s method to the topological electromagnetic
-ﬁelds. Finally, we are going to present the argument from [22, 23] where it was
-1
-showed that knot solutions can also be found in the non-linear Born-Infeld
-electrodynamics and other non-linear generalizations of Maxwell’s electrody-
-namics. We will focus our presentation on the electromagnetic ﬁelds in ﬂat
-space-time. The generalization of the ﬁeld line solutions to the gravitating
-electromagnetic ﬁelds is discussed in a diﬀerent chapter of this volume [37].
-The results reviewed here can be found in the original papers cited in the
-text. Other reviews are available too, most notably [30] to which we refer
-for an updated list of references. In the Appendix, we collect some basic
-mathematical properties of the Hopf mapping. We adopt throughout this
-chapter the natural units in which c = 1.
-2 Maxwell’s equations
-In this section, we will brieﬂy review the formulation of Maxwell’s electrody-
-namics in terms of diﬀerential forms in the three-dimensions Euclidian space
-and in the four-dimensional space-time (the covariant formulation). This is
-a well-known material which can be found in standard textbooks on classical
-electrodynamics such as [38, 39].
-2.1 Maxwell’s equations in the three-dimensional for-
-mulation
-The two formulations of Maxwell’s equations that are our concern in this
-paper are: the formulation in terms of diﬀerential forms and the covari-
-ant formulation. Both formulations are equivalent to the one in terms of
-three-dimensional vectors that is known from the undergraduate textbooks
-on electrodynamics, see e. g. [38].
-Consider the following standard form of Maxwell’s equations in the
-Heaviside units
-∇· D =ρ, (1)
-∇· B = 0, (2)
-∇× E =−∂B
-∂t , (3)
-∇× H = J + ∂D
-∂t . (4)
-Here, E and H are the electric and magnetic intensities and D and B are the
-electric and magnetic ﬂux densities, respectively. The sources of the electric
-and magnetic ﬁelds are the density of charge ρ and the density of vector
-2
-current J. All vectors are three-dimensional and they are deﬁned on the
-entire R3 at each instant of time if no other conditions are imposed on the
-system.
-The set of equations (1) - (4) can be written in terms of diﬀerential
-forms from either Ω k(R3) or Ωk(R1,3) which denote the diﬀerential forms of
-rank k deﬁned on the corresponding spaces. This abstract mathematical
-formulation is advantageous for at least two reasons - ﬁrst, it provides a
-more economical formulation of the basic relations of the electromagnetism.
-Second, it provides the mathematical framework that is necessary for the
-generalization of the classical electromagnetism to curved space-times (see
-e. g. [39]). The diﬀerential forms associated with the three-dimensional
-electromagnetic ﬁeld are given in the Table 1.
-Table 1: Field content of Maxwell’s equations
-Vector Form Form Field
-notation notation rank
-E E 1 - form electric intensity
-H H 1 - form magnetic intensity
-D D 2 - form electric ﬂux density
-B B 2 - form magnetic ﬂux density
-ρ Q 3 - form charge density
-J J 2 - form current density
-It is easy to show that the diﬀerential forms from the Table 1 can be
-projected onto the orthonormal Cartesian basis of R3. The corresponding
-components are given by the following relations
-E =Exdx +Eydy +Ezdz,
-H =Hxdx +Hydy +Hzdz,
-D =Dxdy∧dz +Dydz∧dx +Dzdx∧dy,
-B =Bxdy∧dz +Bydz∧dx +Bzdx∧dy,
-Q =ρdx∧dy∧dz,
-J =Jxdy∧dz +Jydz∧dx +Jzdx∧dy. (5)
-The basis (dx,dy,dz ) from the space Ω 1(R3) of 1-forms is associated by the
-canonical procedure to the basis (x,y,z ) from R3. The second canonical basis
-(dx∧dy,dy∧dz,dz∧dx) in the space Ω 2(R3) of 2-forms is constructed from
-the 1-forms (dx,dy,dz ) by taking their wedge product which is deﬁned as
-3
-follows
-∧ : Ωk× Ωs→ Ωk+s, (ω,σ )→ω∧σ. (6)
-In the equation above, we have not speciﬁed which is the base space because
-the wedge product is deﬁned in the same way on either R3 or R1,3.
-In order to write Maxwell’s equations in terms of diﬀerential forms, one
-has to recall that the exterior derivative d is deﬁned as being the R-linear
-map from Ωk→ Ωk+1 with the following properties
-df =∂ifdx i, (7)
-d2ω = 0, (8)
-d (ω∧σ) =d (ω)∧σ + (−)kω∧d (σ) . (9)
-Here,f is an arbitrary smooth function andω andσ are arbitrary diﬀerential
-forms. Note that the exterior derivative is nilpotent, i. e. d2 = 0.
-The Hodge dual operation ⋆ is deﬁned as the map from Ω n−k→ Ωk,
-where n is the dimension of the base manifold, that satisﬁes the following
-relation
-ω∧ (⋆σ) =⟨ω,σ⟩n. (10)
-Here, n is an unitary vector and⟨·,·⟩ is the scalar product. In particular, the
-action of the Hodge star operator on the components of an arbitrary k-form
-is given by the following equations [39]
-ω = 1
-k!ωi1,...,ikdxi1∧···∧ dxik =
-∑
-i1<···<ik
-ωi1,...,ikdxi1∧···∧ dxik, (11)
-(⋆ω ) = 1
-(n−k)!(⋆ω )ik+1,...,indxik+1∧···∧ dxin. (12)
-The above equations can be easily particularized to the three-dimensional
-case. For example, the Hodge duals to the elements of the canonical basis in
-the space of 1-forms are given by the following relations
-⋆dx =dydz, ⋆dy =dzdx, ⋆dz =dxdy. (13)
-Similarly, the Hodge duals of the elements of the canonical basis in the space
-of 1-forms are obtained from the equation (12) and they are given by the
-following relations
-⋆ dydz =dx, ⋆dzdx =dy, ⋆dxdy =dz. (14)
-The equations (13) and (14) illustrate the more general property of invo-
-lution ⋆ (⋆ω ) = ω in the three-dimensional Euclidean space. By using the
-4
-equations (12), (13) and (14), one can show that the exterior derivative d
-can be decomposed in the canonical basis as follows
-d = (∂xdx +∂ydy +∂zdz)∧ . (15)
-By using the exterior derivative from the equation (15), one can write the
-Maxwell equations in terms of the three-dimensional diﬀerential forms. The
-result is given by the following set of equations
-dD =Q, (16)
-dB = 0, (17)
-dE =−∂tB, (18)
-dH =J +∂tD. (19)
-It is easy to recognize in the equations (16) - (19) the familiar laws of the
-electromagnetism. They allow one to write the electromagnetic ﬁeld in terms
-of potentials Φ andA. That is made possible by the Poincar’s theorem, that
-states that on a contractible manifold all closed forms ( dω = 0) are exact,
-i. e. for any exact form ω there exists a form σ such that ω = dσ [39].
-By applying this mathematical result, one can show that the electric and
-magnetic 1-forms can be written as follows
-E =−dΦ−∂tA, (20)
-B =dA. (21)
-It is an simple exercise to show that the equations (16) - (19) are invariant
-under the following gauge transformations
-Φ→ Φ′ = Φ−∂tΛ, (22)
-A→A ′ =A +dΛ, (23)
-where Λ is an arbitrary smooth function that plays the role of the gauge
-parameter.
-The equations (16) - (19) describe the dynamics of the electromagnetic
-ﬁeld alone. Their solutions are given in terms of charge and current densities,
-respectively, which are non-dynamical objects. As usual, the change of the
-source state is given by Newton’s second law written for the Lorentz force,
-which has the following form
-FL =ρE− ι(⋆J )B. (24)
-The interior product ι is deﬁned as the contraction between a diﬀerential
-form from the space Ωk and a vector ﬁeldX. The interior product lowers the
-5
-form degree by one, and its image belongs to the space Ωk−1. For example, if
-ω∈ Ω2 is a 2-form, its interior product with the vector ﬁeld X is the 1-form
-ιXω for which the following equality holds
-ιXω(Y ) =ω(X,Y ), (25)
-where Y is an arbitrary smooth vector ﬁeld. The equation (25) is the last
-equation needed to represent the dynamics of the electromagnetic ﬁeld and
-its sources in terms of diﬀerential forms. Since in the rest of this chapter we
-will investigate the topological solutions of the electromagnetic ﬁeld in the
-vacuum, that is away from its sources, we will ignore the Lorentz force as
-well as the charge and current densities.
+The discovery of the knot solutions of Maxwell's equations in the vacuum represents one of the most exciting results obtained recently in the modern classical electrodynamics. Since their first appearance in the seminal papers \cite{Trautman:1977im,Ranada:1989wc,Ranada:1990,Ranada:1992hw}, many interesting properties, applications, and generalizations of the knot electromagnetic fields have been discovered. 
+
+The knot solutions of Maxwell's equations can be described in terms of electric and magnetic field lines, and their topology can be given in terms of a pair of complex scalar fields that are interpreted as Hopf maps $S^3 \to S^2$ on the compactified space-like directions of the Minkowski space-time \cite{Ranada:1992hw}-\cite{Ranada:1997}. Among the properties studied up to now, one can cite: the relationship between the linked and the knotted electromagnetic fields discussed in \cite{Irvine:2008,Irvine:2010}, the dynamics of the electric charges in topologically non-trivial electromagnetic backgrounds investigated in \cite{Kleckner:2013}-\cite{Ranada:2017ore}, and the topological quantization presented in \cite{Ranada:1998vp}-\cite{Arrayas:2012eja}. In the last decade, the Ra\~{n}ada solutions were generalized in two ways. The first generalization is from knot fields to torus fields and was given in the works of Arrayas and Hoyos \cite{Arrayas:2011ia}-\cite{Hoyos:2015bxa}. The second generalization is from the electromagnetic fields in vacuum to electromagnetic fields in matter. Several authors have showed that topological fields can be found in various areas of physics such as: fluid physics \cite{Alves:2017ggb,Alves:2017zjt}, atmospheric physics \cite{Ranada:1996}, liquid crystals \cite{Irvine:2014}, plasma physics \cite{Smiet:2015}, optics \cite{Ren:2008zzf,deKlerk:2017qvq}, and superconductivity \cite{Trueba:2008sc}. (For a recent review of the knot solutions and their applications see \cite{Arrayas:2017sfq} and the references therein). More recently, new and important generalizations of the topological electromagnetic fields have been made to the non-linear electrodynamics, the fluid physics \cite{Goulart:2016orx}-\cite{Alves:2017zjt} as well as to the gravitational physics \cite{Kopinski:2017nvp} - \cite{Alves:2018wku}. A new method to obtain the electromagnetic knot solutions in Minkowski space, by completely solving the Maxwell equations first in de Sitter space and then conformally mapping to Minkowski space was presented in \cite{Lechtenfeld:2017tif,Kumar:2020xjr}. 
+
+Due to their wide range of applications in both physics and mathematics, the topological electromagnetic fields represent an important field of science and an active line of research. 
+
+In the present chapter, we are going to revisit the construction of the knot solutions of Maxwell's equations in Ran\~{a}da's approach. Also, we are going to briefly survey the different mathematical formulations of Maxwell's equations and to present the construction of the Hopf maps in electrodynamics. Of utmost importance for the understanding of the knot solutions is the factorization method of the 2-forms introduced by Bateman. We will review the application of Bateman's method to the topological electromagnetic fields. Finally, we are going to present the argument from \cite{Alves:2017ggb,Alves:2017zjt} where it was showed that knot solutions can also be found in the non-linear Born-Infeld electrodynamics and other non-linear generalizations of Maxwell's electrodynamics. We will focus our presentation on the electromagnetic fields in flat space-time. The generalization of the field line solutions to the gravitating electromagnetic fields is discussed in a different chapter of this volume \cite{Vancea:2019yjt}. The results reviewed here can be found in the original papers cited in the text. Other reviews are available too, most notably \cite{Arrayas:2017sfq} to which we refer for an updated list of references. In the Appendix, we collect some basic mathematical properties of the Hopf mapping. We adopt throughout this chapter the natural units in which $c = 1$.
+
+
+
+\section{Maxwell's equations}  
+
+In this section, we will briefly review the formulation of Maxwell's electrodynamics in terms of differential forms in the three-dimensions Euclidian space and in the four-dimensional space-time (the covariant formulation). This is a well-known material which can be found in standard textbooks on classical electrodynamics such as \cite{Jackson:1998nia,Frankel:1997ec}. 
+
+
+
+\subsection{Maxwell's equations in the three-dimensional formulation}
+
+The two formulations of Maxwell's equations that are our concern in this paper are: the formulation in terms of differential forms and the covariant formulation. Both formulations are  equivalent to the one in terms of three-dimensional vectors that is known from the undergraduate textbooks on electrodynamics, see e. g. \cite{Jackson:1998nia}.
+
+Consider the following standard form of Maxwell's equations in the Heaviside units
+\begin{align}
+\nabla \cdot \mathbf{D} & = \rho \, ,
+\label{Maxwell-Gauss-El-1}
+\\
+\nabla \cdot \mathbf{B} & = 0 \, ,
+\label{Maxwell-Gauss-Mag-2}
+\\
+\nabla \times \mathbf{E} & = 
+- \frac{\partial \mathbf{B}}{\partial t}
+ \, ,
+\label{Maxwell-Faraday-3}
+\\
+\nabla \times \mathbf{H} & = 
+\mathbf{J} + \frac{\partial \mathbf{D}}{\partial t}
+\, .
+\label{Maxwell-Ampere}
+\end{align}
+Here, $\mathbf{E}$ and $\mathbf{H}$ are the electric and magnetic intensities and 
+$\mathbf{D}$ and $\mathbf{B}$ are the electric and magnetic flux densities, respectively. The sources of the electric and magnetic fields are the density of charge $\rho$ and the density of vector current $\mathbf{J}$. All vectors are three-dimensional and they are defined on the entire $\mathbb{R}^3$ at each instant of time if no other conditions are imposed on the system.
+
+The set of equations (\refeq{Maxwell-Gauss-El-1}) - (\refeq{Maxwell-Ampere}) can be written in terms of differential forms from either $\Omega^{k}(\mathbb{R}^3 )$ or $\Omega^{k}(\mathbb{R}^{1,3} )$ which denote the differential forms of rank $k$ defined on the corresponding spaces. This abstract mathematical formulation is advantageous for at least two reasons - first, it provides a more economical formulation of the basic relations of the electromagnetism. Second, it provides the mathematical framework that is necessary for the generalization of the classical electromagnetism to curved space-times (see e. g. \cite{Frankel:1997ec}). The differential forms associated with the three-dimensional electromagnetic field are given in the Table
+\refeq{tbl:fields}. 
+
+\begin{table}[htbp]
+  \begin{center}
+   \label{table1}
+   \caption{Field content of Maxwell's equations}
+   \vspace{0.2cm}    
+    \begin{tabular}{l|c|c|r}
+      \textbf{Vector } & \textbf{Form} & \textbf{Form} & \textbf{Field}\\ 
+      \textbf{notation} & \textbf{notation} & \textbf{rank} & \textbf{}\\ 
+      
+      \hline
+      $\mathbf{E}$ & $\mathcal{E}$ & 1 - form & electric intensity\\ 
+      $\mathbf{H}$ & $\mathcal{H}$ & 1 - form & magnetic intensity\\ 
+      $\mathbf{D}$ & $\mathcal{D}$ & 2 - form & electric flux density\\ 
+      $\mathbf{B}$ & $\mathcal{B}$ & 2 - form & magnetic flux density\\ 
+      $\rho      $ & $\mathcal{Q}$ & 3 - form & charge density \\ 
+      $\mathbf{J}$ & $\mathcal{J}$ & 2 - form & current density \\ 
+    \end{tabular}
+    \label{tbl:fields}  
+  \end{center}
+\end{table}
+
+It is easy to show that the differential forms from the Table \refeq{tbl:fields} can be projected onto the orthonormal Cartesian basis of $\mathbb{R}^3$. The corresponding components are given by the following relations
+\begin{align}
+\mathcal{E} & = E_x dx + E_y dy + E_z dz \, ,
+\nonumber
+\\ 
+\mathcal{H} & = H_x dx + H_y dy + H_z dz \, ,
+\nonumber
+\\
+\mathcal{D} & = D_x dy \wedge dz + D_y dz \wedge dx + D_z dx \wedge dy \, ,
+\nonumber
+\\
+\mathcal{B} & = B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy \, ,
+\nonumber
+\\
+\mathcal{Q} & = \rho \, dx \wedge dy \wedge dz \, ,
+\nonumber
+\\
+\mathcal{J} & = J_x dy \wedge dz + J_y dz \wedge dx + J_z dx \wedge dy \, .
+\label{fields-components}
+\end{align}
+The basis $(dx, dy, dz)$ from the space $\Omega^1 (\mathbb{R}^3)$ of 1-forms is associated by the canonical procedure to the basis  $(x, y, z)$ from $\mathbb{R}^3$.  The second canonical basis  $(dx \wedge dy, dy \wedge dz, dz \wedge dx)$ in the space $\Omega^2 (\mathbb{R}^3)$ of 2-forms is constructed from the 1-forms $(dx, dy, dz)$ by taking their wedge product which is defined as follows
+\begin{equation}
+\wedge : \Omega^{k} \times \Omega^{s} \to \Omega^{k + s} \, ,
+\qquad
+(\omega , \sigma ) \to \omega \wedge \sigma \, .
+\label{wedge-product}
+\end{equation}
+In the equation above, we have not specified which is the base space because the wedge product is defined in the same way on either $\mathbb{R}^3$ or $\mathbb{R}^{1,3}$. 
+
+In order to write Maxwell's equations in terms of differential forms, one has to recall that the exterior derivative $d$ is defined as being the $\mathbb{R}$-linear map from $\Omega^k \to \Omega^{k+1}$ with the following properties
+\begin{align}
+d f & = \partial_{i} f \, d x^i \, ,
+\label{exterior-derivative-1}
+\\
+d^2 \omega & = 0 \, , 
+\label{exterior-derivative-2}
+\\
+d \left( \omega \wedge \sigma \right) & =
+d \left( \omega  \right) \wedge \sigma
++ (-)^k \omega \wedge d \left( \sigma \right) \, .
+\end{align}
+Here, $f$ is an arbitrary smooth function and $\omega$ and $\sigma$ are arbitrary differential forms. Note that the exterior derivative is nilpotent, i. e. $d^2 = 0$.
+
+The Hodge dual operation $\star$ is defined as the map from $\Omega^{n-k} \to \Omega^k $, where $n$ is the dimension of the base manifold, that satisfies the following relation 
+\begin{equation}
+\omega \wedge \left( \star \sigma \right) = \langle \omega , \sigma \rangle \mathrm{n} 
+\, .
+\label{Hodge-star}
+\end{equation}
+Here, $\mathrm{n}$ is an unitary vector and $\langle \cdot , \cdot \rangle$ is the scalar product. In particular, the action of the Hodge star operator on the components of an arbitrary $k$-form is given by the following equations \cite{Frankel:1997ec}
+\begin{align}
+\omega & = \frac {1}{k!} \omega_{i_{1},\dots ,i_{k}} 
+d x^{i_{1}} \wedge \dots \wedge dx^{i_{k}}
+= \sum _{i_{1}<\dots <i_{k}}
+\omega_{i_{1},\dots ,i_{k}} 
+dx^{i_{1}}\wedge \dots \wedge dx^{i_{k}} \, ,
+\label{k-form}
+\\
+(\star \, \omega ) & = \frac {1}{(n-k)!} 
+(\star \, \omega)_{i_{k+1},\dots , i_{n}} 
+dx^{i_{k+1}} \wedge \dots \wedge dx^{i_{n}} \, .
+\label{Hodge-k-form}
+\end{align}
+The above equations can be easily particularized to the three-dimensional case. For example, the Hodge duals to the elements of the canonical basis in the space of 1-forms are given by the following relations
+\begin{equation}
+\star d x  = d y \, d z \, ,
+\qquad
+\star d y  = d z \, d x \, ,
+\qquad
+\star d z  = d x \, d y \, .
+\label{Hodge-3d-1-forms}
+\end{equation}
+Similarly, the Hodge duals of the elements of the  canonical basis in the space of 1-forms are obtained from the equation (\refeq{Hodge-k-form}) and they are given by the following relations
+\begin{equation}
+\star \, d y \, d z = d x  \, ,
+\qquad
+\star \, d z \, d x  = d y  \, ,
+\qquad
+\star \, d x \, d y = d z   \, .
+\label{Hodge-3d-2-forms}
+\end{equation}
+The equations (\refeq{Hodge-3d-1-forms}) and (\refeq{Hodge-3d-2-forms})
+illustrate the more general property of involution $\star \, (\star \, \omega ) = \omega$ in the three-dimensional Euclidean space. By using the equations (\refeq{Hodge-k-form}), (\refeq{Hodge-3d-1-forms}) and (\refeq{Hodge-3d-2-forms}), one can show that the exterior derivative $d$ can be decomposed in the canonical basis as follows
+\begin{equation}
+d = \left( \partial_x d x +  
+\partial_y d y +
+\partial_z d z
+\right)
+\wedge \, .
+\label{exterior-derivative-3d}
+\end{equation}
+By using the exterior derivative from the equation (\refeq{exterior-derivative-3d}), one can write the Maxwell equations in terms of the three-dimensional differential forms. The result is given by the following set of equations 
+\begin{align}
+d \mathcal{D} & = \mathcal{Q} \, ,
+\label{Maxwell-Gauss-el-3d}
+\\
+d \mathcal{B} & = 0 \, ,
+\label{Maxwell-Gauss-mag-3d}
+\\
+d \mathcal{E} & = - \partial_t \mathcal{B} \, ,
+\label{Maxwell-Faraday-3d}
+\\
+d \mathcal{H} & = \mathcal{J} + \partial_t \mathcal{D} \, .
+\label{Maxwell-Ampere-3d}
+\end{align}
+It is easy to recognize in the equations (\refeq{Maxwell-Gauss-el-3d}) - (\refeq{Maxwell-Ampere-3d}) the familiar laws of the electromagnetism. They allow one to write the electromagnetic field in terms of potentials $\Phi$ and $\mathcal{A}$. That is made possible by the \emph{Poincaré's theorem}, that states that on a contractible manifold all closed forms ($d \omega = 0 $) are exact, i. e. for any exact form $\omega$ there exists a form $\sigma$ such that $\omega = d \sigma$ \cite{Frankel:1997ec}. By applying this mathematical result, one can show that the electric and magnetic 1-forms can be written as follows
+\begin{align}
+\mathcal{E} & = - d \Phi - \partial_t \mathcal{A} \, ,
+\label{potentials-1}
+\\
+\mathcal{B} & = d \mathcal{A} \, .
+\label{potentials-2}
+\end{align}
+It is an simple exercise to show that the equations (\refeq{Maxwell-Gauss-el-3d}) - (\refeq{Maxwell-Ampere-3d}) are invariant under the following gauge transformations
+\begin{align}
+\Phi & \rightarrow \Phi' = \Phi - \partial_t \Lambda \, ,
+\label{gauge-1}
+\\
+\mathcal{A} & \rightarrow \mathcal{A}' = \mathcal{A} + d \Lambda \, ,
+\label{gauge-2}
+\end{align}
+where $\Lambda$ is an arbitrary smooth function that plays the role of the gauge parameter.
+
+The equations (\refeq{Maxwell-Gauss-el-3d}) - (\refeq{Maxwell-Ampere-3d}) describe the dynamics of the electromagnetic field alone. Their solutions are given in terms of charge and current densities, respectively, which are non-dynamical objects. As usual, the change of the source state is given by Newton's second law written for the Lorentz force, which has the following form
+\begin{equation}
+\mathcal{F}_{L} = \rho \mathcal{E} - \iota_{(\star \mathcal{J})} \mathcal{B} \, .
+\label{Lorentz-force-3d}
+\end{equation}
+The interior product $\iota$ is defined as the contraction between a differential form from the space $\Omega^k$ and a vector field $X$. The interior product lowers the form degree by one, and its image belongs to the space $\Omega^{k-1}$. For example, if $\omega \in \Omega^2$ is a 2-form, its interior product with the vector field $X$ is the 1-form $\iota_{X} \omega$ for which the following equality holds 
+\begin{equation}
+\iota_{X} \omega (Y) = \omega (X, Y) \, ,  
+\label{interior-product}
+\end{equation}
+where $Y$ is an arbitrary smooth vector field. The equation (\refeq{interior-product}) is the last equation needed to represent the dynamics of the electromagnetic field and its sources in terms of differential forms. Since in the rest of this chapter we will investigate the topological solutions of the electromagnetic field in the vacuum, that is away from its sources, we will ignore the Lorentz force as well as the charge and current densities.

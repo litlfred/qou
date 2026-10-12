@@ -12,7 +12,8 @@ $E_i \cong \mathbb{P}^1(\mathbb{C})$ (item (2)).
 On the surface $\Sigma$, the transient integrand is therefore supported
 on the discs $D_i$ centred at the blow-up points.  Since the $D_i$ are
 disjoint (each blow-up introduces a new connected component of
-$\partial \mathcal{S}_n$), the multiplicative integral splits as a product:
+$\partial \mathcal{S}_n$), the multiplicative integral splits as an
+ordered product:
 
 $$
   \mathrm{MI}\!\!\int_\Sigma
@@ -23,11 +24,12 @@ $$
   \bigl(\nabla_A q, L \wedge F^+\bigr).
 $$
 
-Since the $D_i$ are geometrically disjoint and the group elements commute
-up to the central band $\mathcal{O}_M^{\times}$ of the gerbe
-(the transient modes are localised at distinct points, and the central
-extension ensures that the group-valued integrals commute modulo the
-band), the norm of the product equals the sum of the norms:
+Since the integrand is supported on the exceptional fibre
+$E_i \subset D_i$, each disc integral equals the corresponding
+exceptional-divisor integral.  The norm on the structure group is a group
+seminorm, so it satisfies the triangle inequality
+$\lVert gh \rVert \le \lVert g \rVert + \lVert h \rVert$, and induction
+on $N$ gives
 
 $$
   \bigl\lVert
@@ -35,13 +37,22 @@ $$
   \mathrm{MI}\!\!\int_{D_i}
   \bigl(\nabla_A q, L \wedge F^+\bigr)
   \bigr\rVert
-  = 
+  \le
   \sum_{i=1}^{N}
   \bigl\lVert
   \mathrm{MI}\!\!\int_{E_i}
   \bigl(\nabla_A q, L \wedge F^+\bigr)
-  \bigr\rVert,
+  \bigr\rVert.
 $$
 
-where we replace $D_i$ by $E_i$ since the integrand is supported on the
-exceptional fibre $E_i \subset D_i$.  $\square$
+$\square$
+
+The splitting and support hypotheses do not yield equality.  Commutation
+of the disc integrals modulo the central band $\mathcal{O}_M^{\times}$ of
+the gerbe does not make the norm additive: the group
+$\mathrm{Multiplicative}\,\mathbb{R}$ is commutative, and its elements
+$\mathrm{ofAdd}(1)$ and $\mathrm{ofAdd}(-1)$ have norms summing to $2$
+while their product $\mathrm{ofAdd}(0)$ has norm $0$.  Equality would
+require a further structural input, for instance that the disc integrals
+lie on a common ray on which the norm is additive.  No such input is
+established, and the equality remains open.

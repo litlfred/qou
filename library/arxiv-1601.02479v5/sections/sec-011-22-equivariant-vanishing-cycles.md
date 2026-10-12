@@ -8,545 +8,82 @@ pages: 20-25
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
 doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
+text_source: latex
+latex_prose_ratio: 0.951
+latex_coverage_ratio: 0.959
 ---
-full six functor and vanishing cycles functor formalism for equivaria nt monodromic
-mixed Hodge modules via a theory of monodromic mixed Hodge modules o n stacks.
-Instead we mimic the constructions of [4] and Totaro’s approximat ion [49] of the
-Chow ring of classifying spaces by ﬁnite-dimensional algebraic appro ximations to
-produce only the deﬁnitions and constructions we will need for the r est of this
-paper.
-We will want to be able to work with equivariant monodromic mixed Hodge
-modules, in the following generality. We assume that we have a G-action on a
-smooth algebraic variety X, for G an aﬃne algebraic group, and a regular function
-f on the stack X/G, i.e. a G-invariant regular function on X. Furthermore we
-assume that we are given a map of stacks p : X/G → Y , where Y is a locally ﬁnite
-type scheme. We will also assume that G is special, i.e. all ´ etale locally trivial
-principal G-bundles are Zariski locally trivial — see [23, Def.2.1] for a concise
-discussion of this condition in this context, or [8] for the original ref erences. As
-noted in [23], all such G are connected.
-The element H
-(
-p∗φ mon
-f IC X (Q)
-)
-will be an element of D≥(MMHM(Y )), the
-derived category of bounded below complexes of monodromic mixed H odge modules
-on Y .
-We deﬁne H
-(
-p∗φ mon
-f IC X (Q)
-)
-as follows. Let V1 ⊂ V2 ⊂ . . . be a chain of in-
-clusions of G-representations, and let U1 ⊂ U2 ⊂ . . . be an ascending chain of sub-
-varieties of the underlying vector spaces of V1, V2, . . ., considered as G-equivariant
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 21
-algebraic varieties. We suppose that G acts scheme-theoretically freely on each Ui,
-that each principal bundle quotient Ui → Ui/G exists in the category of schemes,
-and that codim Vi (Vi \ Ui) → ∞ as i → ∞. The map X × Ui → X ×G Ui exists as
-a principal bundle quotient in the category of schemes by [15, Prop.2 3]. We deﬁne
-fi : X ×G Ui → C to be the induced map, and ιi : X ×G Ui → X ×G Ui+1 to be the
-inclusion.
-To ﬁx notation, we ﬁx an embedding G ⊂ GLt(C) for some t. We set
-Vi := Hom(Ci, Ct),
-and deﬁne Ui ⊂ Vi to be the subscheme of surjective maps; if i ≥ t then Ui does
-indeed carry a free G-action via the GL t(C)-action on Ct. For each i, we deﬁne
-Xi := X ×G Ui. We obtain an explicit sequence of maps
-pi+1,∗φ mon
-fi+1 QXi+1 → pi+1,∗ιi,∗φ mon
-fi QXi = pi,∗φ mon
-fi QXi
-and so a sequence of mixed Hodge modules
-Fi := pi,∗φ mon
-fi QXi
-and morphisms Fi′ → F i for i′ > i.
-Proposition 2.16. Fix n ∈ N. Then for i ≫ 0 the map
-(31) Λ : Hn(Y, Fi+1) → H n(Y, Fi)
-in MMHM(Y ) is an isomorphism.
-Proof. Since the functor forg mon
-Y : MMHM( Y ) → Perv(Y ) of equation (28) is faith-
-ful, it suﬃces to show that (31) induces an isomorphism at the level o f perverse
-sheaves. So let Fi denote the complex of perverse sheaves pi,∗φ fi QXi. Say we can
-prove the same proposition, but with the map Λ replaced by the map
-Λ con : Hn
-con(Y, Fi+1) → H n
-con(Y, Fi)
-of constructible sheaves on Y (here and below we use Hcon to denote constructible
-cohomology sheaves). Then for suﬃciently large i,
-cone(Fi+1 → F i) ∈ D ≥n+1
-con (Y ) ⊂ pD≥n+1(Y )
-and the original proposition follows.
-Consider the space Ui,i+1 ⊂ Hom(Ci+1, Ct) of linear maps which are surjective
-after precomposing with the map
-π i,i+1 : Ci+1 → Ci+1
-given by ( z1, . . . , zi+1) ↦→(z1, . . . , zi, 0). This subspace is open and dense for i ≥ t.
-We denote by ji the inclusion
-ji : Ui,i+1֒→Ui+1.
-Note that G acts freely on Ui,i+1, and there is a G-equivariant aﬃne ﬁbration
-τi,i+1 : Ui,i+1 → Ui
-(τi,i+1g)(z) := g(z, 0).
-Deﬁne Xi,i+1 := X ×G Ui,i+1, denote by fi,i+1 : Xi,i+1 → C the function induced
-by f , and denote by
-(32) ιi,i+1 : Xi,i+1 → Xi+1
-the open embedding induced by ji. The projection τi,i+1 induces an aﬃne ﬁbration
-ti,i+1 : Xi,i+1 → Xi
-and we deﬁne the induced morphism
-(33) pi,i+1 : Xi,i+1
-ti,i +1
-− − − →Xi
-pi
-− →Y.
-22 BEN DA VISON AND SVEN MEINHARDT
-We factorise Λ con as the composition
-Hn
-con(pi+1,∗φ fi+1 QXi+1)
-a
-− → Hn
-con(pi+1,∗ιi,i+1,∗φ fi,i +1 QXi,i +1) → H n
-con(pi,∗φ fi QXi)
-where the second map is an isomorphism by homotopy invariance. So it is enough
-to show that the map a is an isomorphism for suﬃciently large i.
-Consider the function
-f i+1 : X ×Ui+1 → C given by the composition X ×Ui+1
-π
-− →
-X
-f
-− →C, and deﬁne f i,i+1 : X × Ui,i+1 → C similarly. Let ιi,i+1 : X × Ui,i+1 →
-X × Ui+1 be the inclusion. Then
-φ f i+1
-QX×Ui+1
-∼
-=φ f QX ⊠ QUi+1
-and
-(
-φ
-f i+1
-QX×Ui+1 → ιi,i+1,∗φ f i,i +1
-QX×Ui,i +1
-)
-= idφ f QX ⊠(QUi+1 → ji,∗QUi,i +1).
-For ﬁxed m, Hm
-con(QUi+1 ) → H m
-con(QUi,i +1) is an isomorphism for suﬃciently large
-i, since the codimension of Ui+1 \ Ui,i+1 inside Ui+1 goes to inﬁnity as i goes to
-inﬁnity. Since the external tensor product is exact, we deduce th at for ﬁxed m and
-suﬃciently large i,
-Hm
-con(φ
-f i+1
-QX×Ui+1 → ιi,i+1,∗φ f i,i +1
-QX×Ui,i +1)
-is an isomorphism. On the other hand, taking a Zariski open subspac e C ⊂ Xi+1
-such that the principal bundle C = C ×Xi+1 (X × Ui+1) → C is trivial, we have
-that
-Hcon(φ f i+1
-QX×Ui+1 → ιi,i+1,∗φ f i,i +1
-QX×Ui,i +1)|C
-∼
-=
-Hcon(φ fi+1 QXi+1 → ιi,i+1,∗φ fi,i +1 QX×GUi,i +1 )) ⊠ idQG ,
-and so using exactness of external tensor product again, we ded uce that for ﬁxed
-n and suﬃciently large i, the map
-Hn
-con(φ fi+1 QXi+1 → ιi,i+1,∗φ fi,i +1 QXi,i +1 ))
-is an isomorphism. The pushforward pi+1,∗ maps D≥n+1
-con (Xi+1) → D ≥n+1
-con (Y ), and
-so
-cone
-(
-pi+1,∗φ fi+1 QXi+1 → pi+1,∗ιi,i+1,∗φ fi,i +1 QXi,i +1
-)
-∈ D ≥n+1
-con (X)
-and the map a is an isomorphism for suﬃciently large i, as required. □
-Proposition 2.17. The complex
-(34) . . .
-0
-− →lim
-i↦→∞
-Hn−1(pi,∗φ mon
-fi QXi )
-0
-− →lim
-i↦→∞
-Hn(pi,∗φ mon
-fi QXi )
-0
-− →. . . .
-is well deﬁned up to canonical isomorphism in D(MMHM(Y )).
-Proof. The proposition says that if, for l = 1, 2 we have two choices V (l)
-i , and U (l)
-i
-for the spaces Vi and Ui in the deﬁnition of Hn(pi,∗φ mon
-fi QXi ), and we deﬁne X (l)
-i ,
-p(l)
-i etc. with reference to them, then there is a canonical isomorphism , for each n,
-and for suﬃciently large i:
-Hn(p(1)
-i,∗φ mon
-f (1)
-i
-QX (1
-i
-) → H n(p(2)
-i,∗φ mon
-f (2)
-i
-QX (2)
-i
-).
-By another application of [15, Prop.23], Xi × (U (1)
-i × U (2)
-i ) is a principal G-bundle
-over X (12)
-i := Xi ×Gi (U (1)
-i × U (2)
-i ). We denote by p(12)
-i : X (12)
-i → Y the projec-
-tion; note that it factors through both p(1)
-i and p(2)
-i . Via the same argument as
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 23
-Proposition 2.16, each of the morphisms
-τ : Hn(p(1)
-i,∗φ mon
-f (1)
-i
-QX (1)
-i
-) → Hn(p(12)
-i,∗ φ mon
-f (12)
-i
-QX (12)
-i
-)
-κ : Hn(p(2)
-i,∗φ mon
-f (2)
-i
-QX (2
-i
-) → Hn(p(12)
-i,∗ φ mon
-f (12)
-i
-QX (12)
-i
-)
-is an isomorphism, and σ (12) = κ−1τ is the desired isomorphism. From the obvious
-commutative diagrams of projections between diﬀerent principal G-bundles, there
-are equalities σ (23)σ (12) =σ (13) andσ (11) = id. □
-We denote by H
-(
-p∗φ mon
-f QX
-)
-the element deﬁned in Proposition 2.17.
-If M =∐
-s∈S Ms, with Ms ∼
-= Xs/Gs and each Xs a smooth algebraic variety,
-and each Gs a special aﬃne algebraic group, and p : M → Y =∐
-s∈S Ys is a map
-to a locally ﬁnite type scheme respecting the decompositions of the s ource and the
-target, for c ∈ Z we deﬁne
-H
-(
-p∗φ mon
-f
-⨁
-s∈S
-QMs
-)
-:=
-⨁
-s∈S
-H
-(
-p∗φ mon
-f |Xs /G s
-QXs/Gs
-)
-H
-(
-p∗φ mon
-f
-⨁
-s∈S
-Lc/2
-Ms
-)
-:=
-⨁
-s∈S
-H
-(
-p∗φ mon
-f |Xs /G s
-Lc/2
-Xs/Gs
-)
-and
-H
-(
-p∗φ mon
-f
-⨁
-s∈S
-IC Ms (Q)
-)
-:=
-⨁
-s∈S
-H
-(
-p∗φ mon
-f |Xs /G s
-L(dim(Gs)−dim(Xs))/2
-Xs/Gs
-)
-.
-We deﬁne H
-(
-p!φ mon
-f
-⨁
-s∈S QMs
-)
-∈ D (MMHM(Y )) in similar fashion. We give
-the deﬁnition in the case that M = X/G, for X a smooth irreducible variety and G
-a special aﬃne algebraic group, and extend to the case of a disjoint union of such
-stacks as above.
-Consider the isomorphism
-H(ιi,i+1,!φ mon
-fi,i +1 QXi,i +1 ) ∼
-= H(φ mon
-fi QXi) ⊗ Ldim(Xi+1)−dim(Xi)
-where ιi,i+1 is as deﬁned in (32). Arguing as in Proposition 2.16, for ﬁxed n the
-natural map
-H2 dim(Ui+1)+n
-con ((Xi,i+1 → Xi+1)!φ mon
-fi,i +1 QXi,i +1 ) → H 2 dim(Ui+1)+n
-con (φ mon
-fi+1 QXi+1)
-is an isomorphism for suﬃciently large i, and we can deﬁne Hn
-(
-p!φ mon
-f QX/G
-)
-to
-be the limit of Hn
-(
-pi,!φ mon
-fi L− dim(Ui)
-Xi
-)
-as i tends to inﬁnity, and we set
-Hn
-(
-p!φ mon
-f Lc
-X/G
-)
-:=Lc ⊗ Hn(
-p!φ mon
-f QX/G
-)
-H
-(
-p!φ mon
-f IC X/G(Q)
-) := H
-(
-p!φ mon
-f L(dim(G)−dim(X))/2
-X/G
-)
-.
-Remark 2.18. Note that we do not oﬀer here a deﬁnition of p∗φ mon,f QX/G, or
-p!φ mon,f QX/G as objects of the derived category, but instead limit oursel ves to deﬁn-
-ing the total cohomology of these direct images with respect to the natural t-structure
-on D(MMHM(Y )). Of course in case X/G is an actual scheme, p∗φ mon
-f QX/G and
-p!φ mon
-f QX/G are well deﬁned monodromic mixed Hodge modules before passi ng to
-cohomology, and our deﬁnitions of H
-(
-p∗φ mon
-f QX/G
-)
-and H
-(
-p!φ mon
-f QX/G
-)
-re-
-cover their respective total perverse cohomology.
-24 BEN DA VISON AND SVEN MEINHARDT
-Remark 2.19. As a special case of the above construction, if τ : → NQ0 is a stack
-over a monoid of dimension vectors, with each Md ∼
-= Xd/Gd, we deﬁne
-H
-
-M,
-⨁
-d∈NQ0
-φ mon
-f QMd
-
- :=
-⨁
-d∈NQ0
-H
-(
-τ∗φ mon
-f QXd/Gd
-)
-and H(M,⨁
-dφ mon
-f IC Md(Q)), Hc(M,⨁
-dφ mon
-f IC Md (Q)) etc. similarly. This is
-the deﬁnition used in [30, Sec.7] in the deﬁnition of the underlying NQ0 -graded
-monodromic mixed Hodge structure of the critical cohomolog ical Hall algebra.
-Deﬁnition 2.20. Let X/G → NQ0 be as in Proposition 2.17, and let υ : X S/G →
-X/G be an inclusion of stacks. We denote by
-υi : X S ×G Ui → X ×G Ui
-the induced map, and by pS
-i the restriction of pi to X S ×G Ui. We deﬁne the
-restricted absolute critical cohomology as the complex of l imits with zero diﬀerential
-(35) H
-(
-X S/G,φ mon
-f QX/G
-) :=
-⨁
-n∈Z
-lim
-i↦→∞
-Hn(
-(Y → pt)∗pS
-i,∗υ∗
-iφ mon
-fi QXi
-)
-[−n]
-and likewise we deﬁne
-Hc
-(
-X S/G,φ mon
-f QX/G
-) :=
-⨁
-n∈Z
-lim
-i↦→∞
-Hn
-(
-(Y → pt)!pS
-i,!υ∗
-iφ mon
-fi L− dim(Ui)
-Xi
-)
-[−n].
-Let h : X ′ → X be a morphism of G-equivariant varieties over the G-invariant
-locally ﬁnite type scheme Y . Then for each i we obtain maps hi : X ′
-i → Xi. There
-are natural maps
-δ1 : pi,∗φ mon
-fi hi,∗QX ′
-i → pi,∗hi,∗φ mon
-fi◦hiQX ′
-i
-which are isomorphisms if h is proper or an aﬃne ﬁbration (see Proposition 2.13).
-We precompose with the natural map
-δ2 : pi,∗φ mon
-fi QXi → pi,∗φ mon
-fi hi,∗QX ′
-i
-and let i ↦→ ∞, deﬁning maps
-H
-(
-p∗φ mon
-f QX/G
-)
-→ H
-(
-(ph)∗φ mon
-f ◦h QX ′/G
-)
-.
-Now assume that X ′ and X are smooth, or that h is. Taking H(DY (δ1 ◦δ2)) and
-letting i ↦→ ∞, we deﬁne the map
-H
-(
-(ph)!φ mon
-f ◦h QX ′/G
-)
-→ Ldim(X ′)−dim(X) ⊗ H
-(
-p!φ mon
-f QX/G
-)
-.
-Finally, let υ : H → G be an inclusion of groups — the only examples we will
-consider are when υ is the inclusion of a parabolic subgroup inside GL n(C), or the
-inclusion L ⊂ P of the Levi subgroup of a parabolic subgroup of GL n(C). Let G act
-on X as above, with f a G-invariant regular function on X. Let h : X/H → X/G
-be the associated morphism of stacks. Then we obtain maps
-X ×H Ui
-hi
-− →X ×G Ui
-(x, z) ↦→(x, z)
-which we use in the same way as above to obtain the map
-H
-(
-p∗φ mon
-f QX/G
-)
-→ H
-(
-(ph)∗φ mon
-f QX/H
-)
-and the map
-H
-(
-(ph)!φ mon
-f QX/H
-)
-→ H
-(
-p!φ mon
-f Ldim(G)−dim(H)
-X/G
-)
-.
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 25
-Remark 2.21. If֒→G is the inclusion of a parabolic subgroup, then the induced
-maps hi are proper. As such, there is a natural isomorphism φ mon
-fi hi,∗QX×H Ui
-∼
-=
-hi,∗φ mon
-fi QX×H Ui. From the maps hi,∗DX×H Ui QX×H Ui → DX×GUi QX×GUi given
-by the natural isomorphism hi,∗ ∼
-= hi,! and Verdier duality, we obtain, in the limit,
-the map
-H
-(
-(ph)∗φ mon
-f QX/H
-)
-→ H
-(
-p∗φ mon
-f Ldim(G)−dim(H)
-X/G
-)
-.
+[]{#TotCon label="TotCon"} We do not propose here to write down a full six functor and vanishing cycles functor formalism for equivariant monodromic mixed Hodge modules via a theory of monodromic mixed Hodge modules on stacks. Instead we mimic the constructions of [@BL94] and Totaro's approximation [@To99] of the Chow ring of classifying spaces by finite-dimensional algebraic approximations to produce only the definitions and constructions we will need for the rest of this paper. We will want to be able to work with equivariant monodromic mixed Hodge modules, in the following generality. We assume that we have a $G$-action on a smooth algebraic variety $X$, for $G$ an affine algebraic group, and a regular function $f$ on the stack $X/G$, i.e. a $G$-invariant regular function on $X$. Furthermore we assume that we are given a map of stacks $p\colon X/G\rightarrow Y$, where $Y$ is a locally finite type scheme. We will also assume that $G$ is special, i.e. all étale locally trivial principal $G$-bundles are Zariski locally trivial --- see [@JoyceMF Def.2.1] for a concise discussion of this condition in this context, or [@Chev58] for the original references. As noted in [@JoyceMF], all such $G$ are connected. The element $\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f}\mathcal{IC}_X(\mathbb{Q})\right)$ will be an element of $\mathcal{D}^{\geq}(\mathop{\mathrm{MMHM}}(Y))$, the derived category of bounded below complexes of monodromic mixed Hodge modules on $Y$. We define $\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f}\mathcal{IC}_X(\mathbb{Q})\right)$ as follows. Let $V_1\subset V_2\subset\ldots$ be a chain of inclusions of $G$-representations, and let $U_1\subset U_2\subset\ldots$ be an ascending chain of subvarieties of the underlying vector spaces of $V_1,V_2,\ldots$, considered as $G$-equivariant algebraic varieties. We suppose that $G$ acts scheme-theoretically freely on each $U_i$, that each principal bundle quotient $U_i\rightarrow U_i/G$ exists in the category of schemes, and that $\mathop{\mathrm{codim}}_{V_i}(V_i\setminus U_i)\rightarrow \infty$ as $i\rightarrow\infty$. The map $X\times U_i\rightarrow X\times_G U_i$ exists as a principal bundle quotient in the category of schemes by [@EdGr98 Prop.23]. We define $f_i\colon X\times_G U_i\rightarrow \mathbb{C}$ to be the induced map, and $\iota_i\colon X\times_G U_i\rightarrow X\times_G U_{i+1}$ to be the inclusion.
+
+To fix notation, we fix an embedding $G\subset \mathop{\mathrm{GL}}_t(\mathbb{C})$ for some $t$. We set $$V_i\colonequals \mathop{\mathrm{Hom}}(\mathbb{C}^i,\mathbb{C}^t),$$ and define $U_i\subset V_i$ to be the subscheme of surjective maps; if $i\geq t$ then $U_i$ does indeed carry a free $G$-action via the $\mathop{\mathrm{GL}}_t(\mathbb{C})$-action on $\mathbb{C}^t$. For each $i$, we define $X_i\colonequals X\times_G U_i$. We obtain an explicit sequence of maps $$p_{i+1,*}\upphi^{\mathop{\mathrm{mon}}}_{f_{i+1}}\mathbb{Q}_{X_{i+1}}\rightarrow p_{i+1,*}\iota_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f_i}\mathbb{Q}_{X_i}= p_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f_i}\mathbb{Q}_{X_i}$$ and so a sequence of mixed Hodge modules $$\mathcal{F}_i\colonequals p_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f_i}\mathbb{Q}_{X_i}$$ and morphisms $\mathcal{F}_{i'}\rightarrow \mathcal{F}_{i}$ for $i'>i$.
+
+::: proposition
+[]{#stabProp label="stabProp"} Fix $n\in\mathbb{N}$. Then for $i\gg 0$ the map $$\label{evIs}
+\Uplambda\colon \mathcal{H}^{n}(Y,\mathcal{F}_{i+1})\rightarrow \mathcal{H}^n(Y,\mathcal{F}_i)$$ in $\mathop{\mathrm{MMHM}}(Y)$ is an isomorphism.
+:::
+
+::: proof
+*Proof.* Since the functor $\mathop{\mathrm{forg}}^{\mathop{\mathrm{mon}}}_{Y}\colon \mathop{\mathrm{MMHM}}(Y)\rightarrow\mathop{\mathrm{Perv}}(Y)$ of equation ([\[formDef\]](#formDef){reference-type="ref" reference="formDef"}) is faithful, it suffices to show that ([\[evIs\]](#evIs){reference-type="ref" reference="evIs"}) induces an isomorphism at the level of perverse sheaves. So let $\mathcal{F}_i$ denote the complex of perverse sheaves $p_{i,*}\upphi_{f_i}\mathbb{Q}_{X_i}$. Say we can prove the same proposition, but with the map $\Uplambda$ replaced by the map $$\Uplambda_{\mathop{\mathrm{con}}}\colon \mathcal{H}_{\mathop{\mathrm{con}}}^{n}(Y,\mathcal{F}_{i+1})\rightarrow \mathcal{H}_{\mathop{\mathrm{con}}}^n(Y,\mathcal{F}_i)$$ of constructible sheaves on $Y$ (here and below we use $\mathop{\mathrm{\mathcal{H}}}_{\mathop{\mathrm{con}}}$ to denote constructible cohomology sheaves). Then for sufficiently large $i$, $$\mathop{\mathrm{cone}}(\mathcal{F}_{i+1}\rightarrow\mathcal{F}_i)\in \mathcal{D}_{\mathop{\mathrm{con}}}^{\geq n+1}(Y)\subset {}^{\mathfrak{p}}\mathcal{D}^{\geq n+1}(Y)$$ and the original proposition follows.
+
+Consider the space $U_{i,i+1}\subset \mathop{\mathrm{Hom}}(\mathbb{C}^{i+1},\mathbb{C}^t)$ of linear maps which are surjective after precomposing with the map $$\uppi\hspace{0.05em}_{i,i+1}\colon \mathbb{C}^{i+1}\rightarrow \mathbb{C}^{i+1}$$ given by $(z_1,\ldots,z_{i+1})\mapsto (z_1,\ldots,z_i,0)$. This subspace is open and dense for $i\geq t$. We denote by $j_i$ the inclusion $$j_i\colon U_{i,i+1}\hookrightarrow U_{i+1}.$$ Note that $G$ acts freely on $U_{i,i+1}$, and there is a $G$-equivariant affine fibration $$\begin{aligned}
+\uptau_{i,i+1}\colon &U_{i,i+1}\rightarrow U_i\\
+&(\uptau_{i,i+1}g)(z)\colonequals  g(z,0).
+\end{aligned}$$
+
+Define $X_{i,i+1}\colonequals X\times_G U_{i,i+1}$, denote by $f_{i,i+1}\colon  X_{i,i+1}\rightarrow \mathbb{C}$ the function induced by $f$, and denote by $$\label{taffDef}
+\iota_{i,i+1}\colon X_{i,i+1}\rightarrow X_{i+1}$$ the open embedding induced by $j_{i}$. The projection $\uptau_{i,i+1}$ induces an affine fibration $$t_{i,i+1}\colon X_{i,i+1}\rightarrow X_{i}$$
+
+and we define the induced morphism $$p_{i,i+1}\colon X_{i,i+1}\xrightarrow{t_{i,i+1}}X_i\xrightarrow{p_i} Y.$$ We factorise $\Uplambda_{\mathop{\mathrm{con}}}$ as the composition $$\mathop{\mathrm{\mathcal{H}}}^n_{\mathop{\mathrm{con}}}(p_{i+1,*}\upphi_{f_{i+1}}\mathbb{Q}_{X_{i+1}})\xrightarrow{a} \mathop{\mathrm{\mathcal{H}}}^n_{\mathop{\mathrm{con}}}(p_{i+1,*}\iota_{i,i+1,*}\upphi_{f_{i,i+1}}\mathbb{Q}_{X_{i,i+1}})\rightarrow \mathop{\mathrm{\mathcal{H}}}^n_{\mathop{\mathrm{con}}}(p_{i,*}\upphi_{f_i}\mathbb{Q}_{X_i})$$ where the second map is an isomorphism by homotopy invariance. So it is enough to show that the map $a$ is an isomorphism for sufficiently large $i$.
+
+Consider the function $\overline{f}_{i+1}\colon X\times U_{i+1}\rightarrow \mathbb{C}$ given by the composition $X\times U_{i+1}\xrightarrow{\uppi\hspace{0.05em}} X\xrightarrow{f}\mathbb{C}$, and define $\overline{f}_{i,i+1}\colon X\times U_{i,i+1}\rightarrow \mathbb{C}$ similarly. Let $\overline{\iota}_{i,i+1}\colon  X\times U_{i,i+1}\rightarrow X\times U_{i+1}$ be the inclusion. Then $$\upphi_{\overline{f}_{i+1}}\mathbb{Q}_{X\times U_{i+1}}\cong\upphi_{f}\mathbb{Q}_{X}\boxtimes \mathbb{Q}_{U_{i+1}}$$ and $$\left(\upphi_{\overline{f}_{i+1}}\mathbb{Q}_{X\times U_{i+1}}\rightarrow\overline{\iota}_{i,i+1,*}\upphi_{\overline{f}_{i,i+1}}\mathbb{Q}_{X\times U_{i,i+1}}\right)=\mathop{\mathrm{id}}_{\upphi_{f}\mathbb{Q}_{X}}\boxtimes (\mathbb{Q}_{U_{i+1}}\rightarrow j_{i,*}\mathbb{Q}_{U_{i,i+1}}).$$ For fixed $m$, $\mathop{\mathrm{\mathcal{H}}}_{\mathop{\mathrm{con}}}^m(\mathbb{Q}_{U_{i+1}})\rightarrow \mathop{\mathrm{\mathcal{H}}}_{\mathop{\mathrm{con}}}^m(\mathbb{Q}_{U_{i,i+1}})$ is an isomorphism for sufficiently large $i$, since the codimension of $U_{i+1}\setminus U_{i,i+1}$ inside $U_{i+1}$ goes to infinity as $i$ goes to infinity. Since the external tensor product is exact, we deduce that for fixed $m$ and sufficiently large $i$, $$\mathop{\mathrm{\mathcal{H}}}^m_{\mathop{\mathrm{con}}}(\upphi_{\overline{f}_{i+1}}\mathbb{Q}_{X\times U_{i+1}}\rightarrow\overline{\iota}_{i,i+1,*}\upphi_{\overline{f}_{i,i+1}}\mathbb{Q}_{X\times U_{i,i+1}})$$ is an isomorphism. On the other hand, taking a Zariski open subspace $C\subset X_{i+1}$ such that the principal bundle $\overline{C}=C\times_{X_{i+1}}(X\times U_{i+1})\rightarrow C$ is trivial, we have that $$\begin{aligned}
+&\mathop{\mathrm{\mathcal{H}}}_{\mathop{\mathrm{con}}}(\upphi_{\overline{f}_{i+1}}\mathbb{Q}_{X\times U_{i+1}}\rightarrow\overline{\iota}_{i,i+1,*}\upphi_{\overline{f}_{i,i+1}}\mathbb{Q}_{X\times U_{i,i+1}})|_{\overline{C}}\cong\\& \mathop{\mathrm{\mathcal{H}}}_{\mathop{\mathrm{con}}}(\upphi_{f_{i+1}}\mathbb{Q}_{X_{i+1}}\rightarrow\iota_{i,i+1,*}\upphi_{f_{i,i+1}}\mathbb{Q}_{X\times_{G} U_{i,i+1}}))\boxtimes\mathop{\mathrm{id}}_{\mathbb{Q}_{G}},
+\end{aligned}$$ and so using exactness of external tensor product again, we deduce that for fixed $n$ and sufficiently large $i$, the map $$\mathop{\mathrm{\mathcal{H}}}^n_{\mathop{\mathrm{con}}}(\upphi_{f_{i+1}}\mathbb{Q}_{X_{i+1}}\rightarrow\iota_{i,i+1,*}\upphi_{f_{i,i+1}}\mathbb{Q}_{X_{i,i+1}}))$$ is an isomorphism. The pushforward $p_{i+1,*}$ maps $\mathcal{D}_{\mathop{\mathrm{con}}}^{\geq n+1}(X_{i+1})\rightarrow \mathcal{D}_{\mathop{\mathrm{con}}}^{\geq n+1}(Y)$, and so $$\mathop{\mathrm{cone}}\left(p_{i+1,*}\upphi_{f_{i+1}}\mathbb{Q}_{X_{i+1}}\rightarrow p_{i+1,*}\iota_{i,i+1,*}\upphi_{f_{i,i+1}}\mathbb{Q}_{X_{i,i+1}}\right)\in\mathcal{D}_{\mathop{\mathrm{con}}}^{\geq n+1}(X)$$ and the map $a$ is an isomorphism for sufficiently large $i$, as required. ◻
+:::
+
+::: proposition
+[]{#Hpprop label="Hpprop"} The complex $$\label{Hpdef}
+\ldots\xrightarrow{0}\lim_{i\mapsto\infty}\mathop{\mathrm{\mathcal{H}}}^{n-1}(p_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f_i}\mathbb{Q}_{X_i})\xrightarrow{0}\lim_{i\mapsto\infty}\mathop{\mathrm{\mathcal{H}}}^{n}(p_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f_i}\mathbb{Q}_{X_i})\xrightarrow{0}\ldots.$$ is well defined up to canonical isomorphism in $\mathcal{D}(\mathop{\mathrm{MMHM}}(Y))$.
+:::
+
+::: proof
+*Proof.* The proposition says that if, for $l=1,2$ we have two choices $V^{(l)}_i$, and $U^{(l)}_i$ for the spaces $V_i$ and $U_i$ in the definition of $\mathop{\mathrm{\mathcal{H}}}^n(p_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f_i}\mathbb{Q}_{X_i})$, and we define $X^{(l)}_i$, $p^{(l)}_i$ etc. with reference to them, then there is a canonical isomorphism, for each $n$, and for sufficiently large $i$: $$\mathop{\mathrm{\mathcal{H}}}^n(p^{(1)}_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f^{(1)}_i}\mathbb{Q}_{X^{(1}_i})\rightarrow\mathop{\mathrm{\mathcal{H}}}^n(p^{(2)}_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f^{(2)}_i}\mathbb{Q}_{X^{(2)}_i}).$$ By another application of [@EdGr98 Prop.23], $X_i\times (U^{(1)}_i\times U^{(2)}_i)$ is a principal $G$-bundle over $X_i^{(12)}\colonequals X_i\times_{G_i}(U^{(1)}_i\times U^{(2)}_i)$. We denote by $p^{(12)}_i\colon X_i^{(12)}\rightarrow Y$ the projection; note that it factors through both $p^{(1)}_i$ and $p^{(2)}_i$. Via the same argument as Proposition [\[stabProp\]](#stabProp){reference-type="ref" reference="stabProp"}, each of the morphisms $$\begin{aligned}
+\uptau\colon\mathop{\mathrm{\mathcal{H}}}^n(p^{(1)}_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f^{(1)}_i}\mathbb{Q}_{X^{(1)}_i})\rightarrow &\mathop{\mathrm{\mathcal{H}}}^n(p^{(12)}_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f^{(12)}_i}\mathbb{Q}_{X^{(12)}_i})\\
+\kappa\colon\mathop{\mathrm{\mathcal{H}}}^n(p^{(2)}_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f^{(2)}_i}\mathbb{Q}_{X^{(2}_i})\rightarrow &\mathop{\mathrm{\mathcal{H}}}^n(p^{(12)}_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f^{(12)}_i}\mathbb{Q}_{X^{(12)}_i})
+\end{aligned}$$ is an isomorphism, and $\upsigma^{(12)}=\kappa^{-1}\uptau$ is the desired isomorphism. From the obvious commutative diagrams of projections between different principal $G$-bundles, there are equalities $\upsigma^{(23)}\upsigma^{(12)}=\upsigma^{(13)}$ and $\upsigma^{(11)}=\mathop{\mathrm{id}}$. ◻
+:::
+
+We denote by $\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_X\right)$ the element defined in Proposition [\[Hpprop\]](#Hpprop){reference-type="ref" reference="Hpprop"}. If $\mathfrak{M}=\coprod_{s\in S} \mathfrak{M}_s$, with $\mathfrak{M}_s\cong X_s/G_s$ and each $X_s$ a smooth algebraic variety, and each $G_s$ a special affine algebraic group, and $p\colon \mathfrak{M}\rightarrow Y=\coprod_{s\in S} Y_s$ is a map to a locally finite type scheme respecting the decompositions of the source and the target, for $c\in\mathbb{Z}$ we define $$\begin{aligned}
+\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f}\bigoplus_{s\in S}\mathbb{Q}_{\mathfrak{M}_s}\right)\colonequals &\bigoplus_{s\in S} \mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f|_{X_s/G_s}}\mathbb{Q}_{X_s/G_s}\right)\\
+\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f}\bigoplus_{s\in S}\mathbb{L}^{c/2}_{\mathfrak{M}_s}\right)\colonequals &\bigoplus_{s\in S} \mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f|_{X_s/G_s}}\mathbb{L}^{c/2}_{X_s/G_s}\right)
+\end{aligned}$$ and $$\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f}\bigoplus_{s\in S}\mathcal{IC}_{\mathfrak{M}_s}(\mathbb{Q})\right)\colonequals \bigoplus_{s\in S}\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f|_{X_s/G_s}}\mathbb{L}^{(\dim(G_s)-\dim(X_s))/2}_{X_s/G_s}\right).$$
+
+We define $\mathop{\mathrm{\mathcal{H}}}\left(p_!\upphi^{\mathop{\mathrm{mon}}}_{f}\bigoplus_{s\in S}\mathbb{Q}_{\mathfrak{M}_s}\right)\in \mathcal{D}(\mathop{\mathrm{MMHM}}(Y))$ in similar fashion. We give the definition in the case that $\mathfrak{M}=X/G$, for $X$ a smooth irreducible variety and $G$ a special affine algebraic group, and extend to the case of a disjoint union of such stacks as above. Consider the isomorphism $$\mathop{\mathrm{\mathcal{H}}}(\iota_{i,i+1,!}\upphi^{\mathop{\mathrm{mon}}}_{f_{i,i+1}}\mathbb{Q}_{X_{i,i+1}})\cong \mathop{\mathrm{\mathcal{H}}}(\upphi^{\mathop{\mathrm{mon}}}_{f_{i}}\mathbb{Q}_{X_{i}})\otimes\mathbb{L}^{\dim(X_{i+1})-\dim(X_i)}$$ where $\iota_{i,i+1}$ is as defined in ([\[taffDef\]](#taffDef){reference-type="ref" reference="taffDef"}). Arguing as in Proposition [\[stabProp\]](#stabProp){reference-type="ref" reference="stabProp"}, for fixed $n$ the natural map $$\mathop{\mathrm{\mathcal{H}}}_{\mathop{\mathrm{con}}}^{2\dim(U_{i+1})+n}((X_{i,i+1}\rightarrow X_{i+1})_!\upphi^{\mathop{\mathrm{mon}}}_{f_{i,i+1}}\mathbb{Q}_{X_{i,i+1}})\rightarrow \mathop{\mathrm{\mathcal{H}}}_{\mathop{\mathrm{con}}}^{2\dim(U_{i+1})+n}(\upphi^{\mathop{\mathrm{mon}}}_{f_{i+1}}\mathbb{Q}_{X_{i+1}})$$ is an isomorphism for sufficiently large $i$, and we can define $\mathop{\mathrm{\mathcal{H}}}^n\left(p_!\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/G}\right)$ to be the limit of $\mathop{\mathrm{\mathcal{H}}}^n\left(p_{i,!}\upphi^{\mathop{\mathrm{mon}}}_{f_i}\mathbb{L}_{X_i}^{-\dim(U_i)}\right)$ as $i$ tends to infinity, and we set $$\begin{aligned}
+\mathop{\mathrm{\mathcal{H}}}^n\left(p_!\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{L}^c_{X/G}\right)\colonequals &\mathbb{L}^c\otimes\mathop{\mathrm{\mathcal{H}}}^n\left(p_!\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/G}\right)\\
+\mathop{\mathrm{\mathcal{H}}}\left(p_!\upphi^{\mathop{\mathrm{mon}}}_{f}\mathcal{IC}_{X/G}(\mathbb{Q})\right)\colonequals &\mathop{\mathrm{\mathcal{H}}}\left(p_!\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{L}^{(\dim(G)-\dim(X))/2}_{X/G}\right).
+\end{aligned}$$
+
+::: remark
+Note that we do not offer here a definition of $p_*\upphi_{\mathop{\mathrm{mon}},f}\mathbb{Q}_{X/G}$, or $p_!\upphi_{\mathop{\mathrm{mon}},f}\mathbb{Q}_{X/G}$ as objects of the derived category, but instead limit ourselves to defining the total cohomology of these direct images with respect to the natural t-structure on $\mathcal{D}(\mathop{\mathrm{MMHM}}(Y))$. Of course in case $X/G$ is an actual scheme, $p_*\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/G}$ and $p_!\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/G}$ are well defined monodromic mixed Hodge modules before passing to cohomology, and our definitions of $\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/G}\right)$ and $\mathop{\mathrm{\mathcal{H}}}\left(p_!\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/G}\right)$ recover their respective total perverse cohomology.
+:::
+
+::: remark
+[]{#remAbs label="remAbs"} As a special case of the above construction, if $\uptau\colon \rightarrow \mathbb{N}^{Q_0}$ is a stack over a monoid of dimension vectors, with each $\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}\cong X_{\mathop{\mathrm{\mathbf{d}}}}/G_{\mathop{\mathrm{\mathbf{d}}}}$, we define $$\begin{aligned}
+\mathop{\mathrm{H}}\left(\mathfrak{M},\bigoplus_{\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}}\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}}\right)\colonequals \bigoplus_{\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}}\mathop{\mathrm{\mathcal{H}}}\left(\uptau_*\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X_{\mathop{\mathrm{\mathbf{d}}}}/G_{\mathop{\mathrm{\mathbf{d}}}}}\right)
+\end{aligned}$$ and $\mathop{\mathrm{H}}(\mathfrak{M},\bigoplus_{\mathop{\mathrm{\mathbf{d}}}}\upphi^{\mathop{\mathrm{mon}}}_{f}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}}(\mathbb{Q}))$, $\mathop{\mathrm{H}}_c(\mathfrak{M},\bigoplus_{\mathop{\mathrm{\mathbf{d}}}}\upphi^{\mathop{\mathrm{mon}}}_{f}\mathcal{IC}_{\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}}(\mathbb{Q}))$ etc. similarly. This is the definition used in [@KS2 Sec.7] in the definition of the underlying $\mathbb{N}^{Q_0}$-graded monodromic mixed Hodge structure of the critical cohomological Hall algebra.
+:::
+
+::: definition
+Let $X/G\rightarrow\mathbb{N}^{Q_0}$ be as in Proposition [\[Hpprop\]](#Hpprop){reference-type="ref" reference="Hpprop"}, and let $\upsilon\colon X^{\mathcal{S}}/G\rightarrow X/G$ be an inclusion of stacks. We denote by $$\upsilon_i\colon X^{\mathcal{S}}\times_G U_i\rightarrow X\times_G U_i$$ the induced map, and by $p^{\mathcal{S}}_i$ the restriction of $p_i$ to $X^{\mathcal{S}}\times_G U_i$. We define the restricted absolute critical cohomology as the complex of limits with zero differential $$\mathop{\mathrm{H}}\left(X^{\mathcal{S}}/G,\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/G}\right)\colonequals \bigoplus_{n\in\mathbb{Z}}\lim_{i\mapsto\infty}\mathop{\mathrm{\mathcal{H}}}^{n}\left((Y\rightarrow \mathop{\mathrm{pt}})_*p^{\mathcal{S}}_{i,*}\upsilon_i^*\upphi^{\mathop{\mathrm{mon}}}_{f_i}\mathbb{Q}_{X_i}\right)[-n]$$ and likewise we define $$\begin{aligned}
+\mathop{\mathrm{H}}_c\left(X^{\mathcal{S}}/G,\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/G}\right)\colonequals \bigoplus_{n\in\mathbb{Z}}\lim_{i\mapsto\infty}\mathop{\mathrm{\mathcal{H}}}^{n}\left((Y\rightarrow \mathop{\mathrm{pt}})_!p^{\mathcal{S}}_{i,!}\upsilon_i^*\upphi^{\mathop{\mathrm{mon}}}_{f_i}\mathbb{L}^{-\dim(U_i)}_{X_i}\right)[-n].
+\end{aligned}$$
+:::
+
+Let $h\colon X'\rightarrow X$ be a morphism of $G$-equivariant varieties over the $G$-invariant locally finite type scheme $Y$. Then for each $i$ we obtain maps $h_i\colon X'_i\rightarrow X_i$. There are natural maps $$\updelta_1\colon p_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f_i}h_{i,*}\mathbb{Q}_{X'_i}\rightarrow p_{i,*}h_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f_i\circ h_i}\mathbb{Q}_{X'_i}$$ which are isomorphisms if $h$ is proper or an affine fibration (see Proposition [\[basicfacts\]](#basicfacts){reference-type="ref" reference="basicfacts"}). We precompose with the natural map $$\updelta_2\colon p_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f_i}\mathbb{Q}_{X_i}\rightarrow p_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f_i}h_{i,*}\mathbb{Q}_{X'_i}$$ and let $i\mapsto \infty$, defining maps $$\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/G}\right)\rightarrow \mathop{\mathrm{\mathcal{H}}}\left((p h)_*\upphi^{\mathop{\mathrm{mon}}}_{f\circ h}\mathbb{Q}_{X'/G}\right).$$ Now assume that $X'$ and $X$ are smooth, or that $h$ is. Taking $\mathop{\mathrm{\mathcal{H}}}(\mathbb{D}_Y(\updelta_1\circ \updelta_2))$ and letting $i\mapsto\infty$, we define the map $$\mathop{\mathrm{\mathcal{H}}}\left((p h)_!\upphi^{\mathop{\mathrm{mon}}}_{f\circ h}\mathbb{Q}_{X'/G}\right)\rightarrow\mathbb{L}^{\dim(X')-\dim(X)}\otimes \mathop{\mathrm{\mathcal{H}}}\left(p_!\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/G}\right).$$
+
+Finally, let $\upsilon\colon H\rightarrow G$ be an inclusion of groups --- the only examples we will consider are when $\upsilon$ is the inclusion of a parabolic subgroup inside $\mathop{\mathrm{GL}}_n(\mathbb{C})$, or the inclusion $L\subset P$ of the Levi subgroup of a parabolic subgroup of $\mathop{\mathrm{GL}}_n(\mathbb{C})$. Let $G$ act on $X$ as above, with $f$ a $G$-invariant regular function on $X$. Let $h\colon X/H\rightarrow X/G$ be the associated morphism of stacks. Then we obtain maps $$\begin{aligned}
+X\times_H U_i\xrightarrow{h_i} &X\times_G U_i\\
+(x,z)\mapsto&(x,z)
+\end{aligned}$$ which we use in the same way as above to obtain the map $$\mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/G}\right)\rightarrow\mathop{\mathrm{\mathcal{H}}}\left((p h)_*\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/H}\right)$$ and the map $$\mathop{\mathrm{\mathcal{H}}}\left((p h)_!\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/H}\right)\rightarrow \mathop{\mathrm{\mathcal{H}}}\left(p_!\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{L}^{\dim(G)-\dim(H)}_{X/G}\right).$$
+
+::: remark
+[]{#limKer label="limKer"} If $H\hookrightarrow G$ is the inclusion of a parabolic subgroup, then the induced maps $h_i$ are proper. As such, there is a natural isomorphism $\upphi^{\mathop{\mathrm{mon}}}_{f_i}h_{i,*}\mathbb{Q}_{X\times_H U_i}\cong h_{i,*}\upphi^{\mathop{\mathrm{mon}}}_{f_i}\mathbb{Q}_{X\times_H U_i}$. From the maps $h_{i,*}\mathbb{D}_{X\times_H U_i}\mathbb{Q}_{X\times_H U_i}\rightarrow \mathbb{D}_{X\times_G U_{i}}\mathbb{Q}_{X\times_G U_{i}}$ given by the natural isomorphism $h_{i,*}\cong h_{i,!}$ and Verdier duality, we obtain, in the limit, the map $$\mathop{\mathrm{\mathcal{H}}}\left((ph)_*\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{Q}_{X/H}\right)\rightarrow \mathop{\mathrm{\mathcal{H}}}\left(p_*\upphi^{\mathop{\mathrm{mon}}}_{f}\mathbb{L}^{\dim(G)-\dim(H)}_{X/G}\right).$$
+:::

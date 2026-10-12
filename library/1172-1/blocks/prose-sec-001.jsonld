@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1172-1/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/1172-1/blocks/prose-sec-001",
   "kind": "prose",
   "title": "Whitehead Mm$_L\\$Ncolored Jones B?9`<0$H$H(\\beta)$$N5U9TNs",
   "pageStart": 3,
   "pageEnd": 7,
   "text": "../sections/sec-001-2-whitehead-mm-lncolored-jones-b90hhbetan5u9tns.md",
-  "derivedFrom": "library/1172-1/manifest",
-  "sourceDocument": "library/1172-1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1172-1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1172-1/manifest.jsonld",
   "provenance": "ingested"
 }

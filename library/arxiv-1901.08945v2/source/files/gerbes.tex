@@ -1,0 +1,278 @@
+% !TeX root = main.tex
+\section{Gerbes}
+\label{sec:gerbes-and-twisted}
+In this section, we collect some results from the theory on gerbes,
+bandings by abelian groups and the relation to cohomology.
+Throughout the section, $S$ will be an arbitrary algebraic stack.
+By a \emph{stack} we mean a, not necessarily algebraic, stack in groupoids over the
+big \emph{fppf} site of schemes over $S$. 
+The symbol $\Delta$ will always denote an abelian group
+in~$S_\fppf$. 
+Later on, we will specialize to the situation when $\Delta$ is a diagonalizable group.
+Accordingly, we will use multiplicative notation for
+$\Delta$ and its cohomology groups $\HH^i(S_\fppf, \Delta)$.
+
+\begin{definition}[{\cite[Definition~3.15]{lmb2000}, \cite[\sptag{06NZ}]{stacks-project}}]
+A \emph{gerbe} over $S$ is a stack (in groupoids) $\alpha\colon X \to S$ satisfying the following
+conditions.
+\begin{enumerate}
+\item
+The diagonal $X \to X\times_S X$ is an epimorphism (see \cite[Definition~3.6]{lmb2000}).
+\item
+\label{def-gerbe-structure}
+The structure morphism $\alpha\colon X \to S$ is an epimorphism.
+\end{enumerate}
+A gerbe is called \emph{trivial} if the structure morphism in \ref{def-gerbe-structure} splits.
+\end{definition}
+
+The prototypical example of a gerbe is the \emph{classifying stack} $\BB G$
+for a group $G$ in $S_\fppf$.
+In fact, any gerbe can be viewed as an \emph{fppf}-form of a classifying stack.
+
+For any stack $\alpha\colon X \to S$,
+we may consider its \emph{inertia stack} $I_{X/S} \to X$ (\cite[\sptag{034I}]{stacks-project}),
+which is a group object in $X_\fppf$.
+Its points over a morphism $x \colon U \to X$ are simply the 2-automorphisms $\gamma$ of $x$
+mapping to the identity under the composition $\alpha \circ x$.
+Any object $\mathcal{F}$ in $X_\fppf$ is endowed with a canonical right action by the inertia $I_{X/S}$,
+called the \emph{inertial action}.
+Explicitly, it is given on sections over $x$ by
+\begin{equation}
+\label{eq-inertial-action}
+\mathcal{F}(x)\times I_{X/S}(x) \to \mathcal{F}(x),\qquad
+(s, \gamma) \mapsto \mathcal{F}(\gamma)(s).
+\end{equation}
+We recall the following fundamental fact about the inertial action.
+\begin{proposition}
+\label{p-gerbe-pb-ff}
+Let $\alpha\colon X \to S$ be a gerbe.
+Then the functor $\alpha^{*}\colon S_\fppf \to X_\fppf$ is fully faithful with essential
+image consisting of sheaves on which the inertia $I_{X/S}$ acts trivially.
+\end{proposition}
+\begin{proof}
+See for instance \cite[Lemma~2.1.1.17]{lieblich2004}.
+\end{proof}
+
+\begin{definition}
+A gerbe $\alpha\colon X \to S$ is called \emph{abelian} if the inertia group $I_{X/S} \to X$
+is abelian.
+We denote the full subcategory of stacks over $S$ which are abelian gerbes by
+$\AbGerbe(S)$.
+\end{definition}
+
+The inertia acts on itself by conjugation.
+In particular, Proposition~\ref{p-gerbe-pb-ff} shows that the inertia group of an abelian gerbe $\alpha\colon X \to S$
+descends to an abelian
+group object in $S_\fppf$, namely $\alpha_* I_{X/S}$.
+Furthermore, given any 1-morphism $\rho\colon X \to Y$ of stacks over $S$,
+we get an induced group homomorphism $I_{X/S} \to \rho^*I_{Y/S}$ in $X_\fppf$,
+and if $X$ and $Y$ are abelian gerbes, this descends to a group homomorphism in $S_\fppf$.
+This association gives a functor
+\begin{equation}
+\label{eq-band-functor}
+\Band\colon \AbGerbe(S) \to \AbGroup(S)
+\end{equation}
+to the category of abelian group objects in $S_\fppf$.
+
+\begin{definition}
+\label{def-banding}
+Let $\Delta$ be an abelian group object in $S_\fppf$.
+The essential fiber of the functor \eqref{eq-band-functor} over $\Delta$ is called
+the \emph{category of gerbes banded by $\Delta$} or \emph{of $\Delta$-gerbes}. 
+Explicitly, a $\Delta$-gerbe is given by a pair $(\alpha, \iota)$ where $\alpha\colon X \to S$ is an abelian
+gerbe and $\iota\colon \Delta \xrightarrow{\sim} \alpha_*I_{X/S}$ is a group isomorphism
+called a \emph{banding} of $\alpha$ by $\Delta$.
+The group $\Delta$ is called the band of $(\alpha,\iota)$.
+A morphism of $\Delta$-gerbes is simply a morphism of stacks such that corresponding morphism on inertia
+induces the identity on $\Delta$ via the bandings.
+By abuse of notation, we usually denote a $\Delta$-gerbe $(\alpha, \iota)$ by $\alpha$ or even $X$.
+\end{definition}
+
+\begin{remark}
+Giraud introduces a more general notion of banding applying to non-abelian gerbes
+\cite[Chapter~IV]{giraud1971}.
+We will not need this, more complicated, theory here.
+\end{remark}
+
+Note that a 1-morphism of gerbes over $S$ is always an epimorphism (\cite[Lemma~3.17]{lmb2000}),
+and that it is an isomorphism if and only if it induces an isomorphism on inertia.
+In particular, the category of $\Delta$-gerbes is a 2-groupoid.
+
+\begin{example}
+\label{ex:simple-gerbes}
+Let $S$ be an algebraic stack,
+and let $\Delta$ and $\Delta'$ be abelian groups in $S_\fppf$.
+\begin{enumerate}
+\item
+The classifying stack $\BB \Delta$ is endowed with a canonical structure of $\Delta$-gerbe.
+\item
+Given a pair of abelian gerbes $X$ and $X'$ over $S$,
+banded by $\Delta$ and $\Delta'$, respectively,
+the product $X\times_S X'$ has a naturally defined banding by $\Delta\times \Delta'$.
+\end{enumerate}
+\end{example}
+
+The following example illustrates that it is very natural to consider gerbes over
+genuine algebraic stacks.
+\begin{example}
+\label{ex-gerbes}
+Let $S$ be an algebraic stack. Assume that we have a central extension
+$1 \to \Delta \to G \to H \to 1$ of groups in $S_\fppf$.
+Then the induced morphism of classifying stacks $\BB G \to \BB H$
+has a canonical structure of a $\Delta$-gerbe.
+The following examples are two important special cases with $S = \Spec \mathbb{Z}$.
+\begin{enumerate}
+\item
+\label{it-universal-projective}
+The morphism $G \to H$ is the quotient map $\GL_n \to \PGL_n$.
+In this case we obtain a $\GGm$-gerbe $\BB\GL_n \to
+\BB\PGL_n$.
+\item
+\label{it-universal-root}
+The morphism $G \to H$ is the morphism $\GGm \to \GGm$ given by
+$x \mapsto x^n$. 
+In this case the corresponding $\mu_n$-gerbe $\BB \GGm \to \BB \GGm$ can be thought
+of as the $n$-th root stack of the universal line bundle $[\bA_1/\GGm]$ on $\BB
+\GGm$ (cf.~\cite[Definition~2.2.6]{cadman2007}).
+\end{enumerate}
+\end{example}
+
+Next we discuss functoriality of banded gerbes with respect to change of group.
+
+\begin{construction}
+\label{cons-gerbe-pf}
+Let $\varphi\colon \Delta \to \Delta'$ be a homomorphism of abelian group objects in $S$,
+and let $\alpha\colon X \to S$ be a gerbe banded by $\Delta$.
+We construct a gerbe $\varphi_*\alpha\colon \varphi_*  X \to S$
+banded by $\Delta'$ together with a morphism
+\begin{equation}
+\label{eq-gerbe-pf}
+\rho \colon X \to \varphi_*X
+\end{equation}
+of gerbes over $S$ inducing the homomorphism $\varphi$ on the bands as follows.
+ 
+Consider $X \times \BB \Delta'$ with its natural banding by $\Delta \times \Delta'$.
+We define $\varphi_*X$ as the \emph{rigidification} (see \cite[Appendix~A]{aov2008})
+of $X \times \BB \Delta'$ in the kernel of the epimorphism
+$\Delta \times \Delta' \to \Delta'$ given by $(a, b) \mapsto \varphi(a) b$.
+The morphism $\rho$ is the composition of the obvious map $X \to X\times \BB \Delta'$ followed by the
+rigidification map.
+\end{construction}
+
+The construction above shows that given a gerbe banded by $\Delta$,
+any morphism $\varphi\colon \Delta \to \Delta'$ lifts to a morphism of banded gerbes.
+The following proposition,
+which we surprisingly could not find in the literature,
+shows that this lift is essentially unique.
+In particular, Construction~\ref{cons-gerbe-pf} is functorial in a weak sense.
+
+\begin{proposition}
+\label{gerbe-functorial-group}
+Let $\Delta$ be an abelian group in $S_\fppf$,
+and let $\alpha\colon X \to S$ be a gerbe banded by $\Delta$.
+Then the obvious functor
+\begin{equation}
+\Band_{X/} \colon \AbGerbe(S)_{X/} \to \AbGroup(S)_{\Delta/}
+\end{equation}
+from the category of abelian gerbes over $S$ under $X$ to the category of abelian groups in $S_\fppf$
+under $\Delta$ is an equivalence of categories.
+\end{proposition}
+\begin{proof}
+Construction~\ref{cons-gerbe-pf} shows that the functor
+$\Band_{X/}$ is essentially surjective on objects.
+Let $\rho\colon X \ra Y$ and  $\rho'\colon X \ra Y'$ be objects of $\AbGerbe(S)_{X/}$,
+and denote their images in $\AbGroup(S)_{\Delta/}$ by
+$\varphi\colon \Delta \to \Gamma$ and~$\varphi'\colon \Delta \to \Gamma'$, respectively.
+We need to show that
+\begin{equation}
+\label{eq-band-equivalence}
+\Hom_{X/}(\rho, \rho') \to \Hom_{\Delta/}(\varphi, \varphi')
+\end{equation}
+is and equivalence of categories.
+To do so, we first note that \eqref{eq-band-equivalence} is functorial in~$S$,
+and that we in fact have a morphism of stacks
+\begin{equation}
+\label{eq-band-stacky-equivalence}
+\Phi\colon \sheafHom_{X/}(\rho, \rho') \to \sheafHom_{\Delta/}(\varphi, \varphi')
+\end{equation}
+over~$S$.
+Explicitly, this morphism is constructed as the canonical map in the diagram
+\begin{equation}
+\label{eq-big-and-scary}
+\xymatrix{
+\sheafHom_{\Delta/}(\varphi, \varphi')\ar[ddd]\ar[rrr] & & & S \ar[ddd]^{\varphi'}\\
+& \sheafHom_{X/}(\rho, \rho')\ar[d]\ar[r]\ar[ul]_\Phi & S\ar[ur]^\id \ar[d]^{\rho'} & \\
+& \sheafHom(Y, Y') \ar[r]^{-\circ\rho}\ar[dl] & \sheafHom(X, Y')\ar[dr] & \\
+\sheafHom(\Gamma, \Gamma') \ar[rrr]^{-\circ\varphi} & & & \sheafHom(\Delta, \Gamma'), \\
+}
+\end{equation}
+where the inner and the outer squares are cartesian.
+
+To verify that $\Phi$ is an isomorphism, we may work locally on~$S$.
+In particular, we may assume that the stacks $X, Y$ and~$Y'$ are the classifying
+stacks
+$\BB \Delta$, $\BB \Gamma$ and~$\BB \Gamma'$, respectively.
+Furthermore, we may assume that the morphisms $\rho$ and $\rho'$ are given by extension of torsors along
+$\varphi$ and $\varphi'$, respectively.
+In this situation, we have $\sheafHom(X, Y') \cong [\sheafHom(\Delta, \Gamma')/\Gamma']$,
+where $\Gamma'$ acts trivially,
+and the map to $\sheafHom(\Delta, \Gamma')$ is induced by forgetting the group action
+(see e.g. Abramovich~\emph{et~al.}~\cite[Lemma~3.9(1)]{aov2008} and its proof).
+Plugging this into \eqref{eq-big-and-scary},
+together with the similar description for $\sheafHom(Y, Y')$ and the obvious descriptions for $\rho'$
+and $-\circ\rho$,
+it becomes clear that $\Phi$ is an isomorphism.
+\end{proof}
+
+\begin{construction}
+\label{cons-gerbe-operations}
+Let $\Delta$ be an abelian group in $S_\fppf$,
+and let $\alpha, \beta\colon X \to S$ be $\Delta$-gerbes.
+Denote the multiplication map on $\Delta$ by $m\colon \Delta \times \Delta \to \Delta$,
+and the $n$-th power map, for $n\in \mathbb{Z}$, by~$p_n\colon \Delta \to \Delta$.
+Using Construction~\ref{cons-gerbe-pf}, we define
+\begin{equation}
+\label{eq-gerbe-mult-inverse}
+\alpha\beta := m_*(\alpha \times \beta), \qquad
+\alpha^n := (p_n)_*\alpha.
+\end{equation}
+\end{construction}
+Morally, Construction~\ref{cons-gerbe-operations} gives the 2-groupoid of $\Delta$-gerbes
+the structure of an abelian group,
+a statement which presumably could be made precise by use of Proposition~\ref{gerbe-functorial-group}.
+At least, it is clear that the set of isomorphism classes of $\Delta$-gerbes forms an abelian group.
+
+It is easy to see that we also have functoriality with respect to change of stacks.
+That is, let $f\colon T \to S$ be a morphism of algebraic stacks
+and let $\alpha\colon X \to S$ be a $\Delta$-gerbe.
+Then the pull-back $f^*\alpha$ has a natural structure of $f^*\Delta$-gerbe.
+
+\begin{theorem}[Giraud]
+\label{t:gerbes-H2}
+Let $S$ be an algebraic stack and let $\Delta$ be an abelian group in~$S_\fppf$.
+Then the group $\HH^2(S_\fppf, \Delta)$ is canonically isomorphic to the set of isomorphism
+classes of $\Delta$-gerbes over $S_\fppf$,
+with its group structure induced by the operations in Construction~\ref{cons-gerbe-operations}.
+Given a $\Delta$-gerbe $\alpha$ over $S_\fppf$,
+we denote its class in $\HH^2(S_\fppf, \Delta)$ by~$[\alpha]$.
+We have the following functorial properties:
+\begin{enumerate}
+\item
+Given a morphism $f\colon T \to S$ of algebraic stacks,
+we have $[f^*\alpha] = f^*[\alpha]$ in $H^2(T_\fppf, f^*\Delta)$.
+\item
+Given a homomorphism of abelian groups $\varphi\colon \Delta \to \Delta'$,
+we have $[\varphi_\ast \alpha] = \varphi_*[\alpha]$ in $H^2(S_\fppf, \Delta')$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+This is worked out in various places in \cite{giraud1971}.
+Functoriality with respect to change of groups is described in Section~IV.3.1.
+Comparison with usual cohomology is in Section~IV.3.4,
+and functoriality with respect to change of topos in Section~V.1.
+\end{proof}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s-p03/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "Calcul du complexe des périodes abstraites AK et applications 1775",
-  "pageStart": 1,
-  "pageEnd": 1,
+  "title": "Calcul du complexe des périodes abstraites AK et applications",
+  "pageStart": 29,
+  "pageEnd": 38,
   "contains": [
     "library/ant-v14-n7-s-p03/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/ant-v14-n7-s-p03/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p03/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p03/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p03/manifest.jsonld",
   "provenance": "ingested"
 }

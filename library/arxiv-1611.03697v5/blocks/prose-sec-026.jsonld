@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1611.03697v5/blocks/prose-sec-026",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1611.03697v5/blocks/prose-sec-026",
   "kind": "prose",
   "title": "Null vectors and uniqueness",
   "pageStart": 20,
   "pageEnd": 22,
   "text": "../sections/sec-026-45-null-vectors-and-uniqueness.md",
-  "derivedFrom": "library/arxiv-1611.03697v5/manifest",
-  "sourceDocument": "library/arxiv-1611.03697v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1611.03697v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1611.03697v5/manifest.jsonld",
   "provenance": "ingested"
 }

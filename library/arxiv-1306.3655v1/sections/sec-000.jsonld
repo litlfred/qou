@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1306.3655v1/sections/sec-000",
   "@type": [
     "doco:Section"
   ],
-  "title": "Define the virtual Sn character ψν,n as follows:",
-  "pageStart": 3,
-  "pageEnd": 11,
+  "title": "Introduction",
+  "pageStart": 1,
+  "pageEnd": 2,
   "contains": [
     "library/arxiv-1306.3655v1/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/arxiv-1306.3655v1/manifest",
-  "sourceDocument": "library/arxiv-1306.3655v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1306.3655v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1306.3655v1/manifest.jsonld",
   "provenance": "ingested"
 }

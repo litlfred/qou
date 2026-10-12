@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-041",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-041",
   "kind": "prose",
   "title": "Expending Uncomplexity and Negentropy",
   "pageStart": 75,
   "pageEnd": 76,
   "text": "../sections/sec-041-222-expending-uncomplexity-and-negentropy.md",
-  "derivedFrom": "library/arxiv-1810.11563v1/manifest",
-  "sourceDocument": "library/arxiv-1810.11563v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
   "provenance": "ingested"
 }

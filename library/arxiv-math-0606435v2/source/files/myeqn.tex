@@ -1,0 +1,23 @@
+% typing `equation' breaks my fingers!
+\newenvironment{eqn}{\begin{equation}}{\end{equation}\@ignoretrue}
+
+% eqlabel=(#1)
+\newenvironment{myeqn*}[1]{\begingroup\def\@eqnnum{\reset@font\rm#1}%
+\xdef\@tempk{\arabic{equation}}\begin{equation}\edef\@currentlabel{#1}}
+{\end{equation}\endgroup\setcounter{equation}{\@tempk}\ignorespaces}
+
+% eqlabel=#1
+\newenvironment{myeqn}[1]{\begingroup\let\eq@num\@eqnnum
+\def\@eqnnum{\bgroup\let\r@fn\normalcolor % an extremely UGLY hack !!!
+\def\normalcolor####1(####2){\r@fn####1#1}%
+%\show\reset@font
+\eq@num\egroup}%
+\xdef\@tempk{\arabic{equation}}\begin{equation}\edef\@currentlabel{#1}}
+{\end{equation}\endgroup\setcounter{equation}{\@tempk}\ignorespaces}
+
+% eqlabel=(eqnnr) \qed
+\newenvironment{myeqn**}{\begin{myeqn}{(%\arabic{equation}
+%\show\theequation
+\theequation)\es\es\mbox{\qed}}\edef\@currentlabel{\theequation}}
+{\end{myeqn}\stepcounter{equation}}
+

@@ -1,18 +1,35 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1172-2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "L^2-torsion of 3-manifolds",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1172-2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "1172-2",
   "contains": [
+    "library/1172-2/sections/sec-front-matter",
     "library/1172-2/sections/sec-000",
     "library/1172-2/sections/sec-001",
-    "library/1172-2/sections/sec-002"
+    "library/1172-2/sections/sec-002",
+    "library/1172-2/sections/sec-003",
+    "library/1172-2/sections/sec-004",
+    "library/1172-2/sections/sec-005",
+    "library/1172-2/sections/sec-006",
+    "library/1172-2/sections/sec-007",
+    "library/1172-2/sections/sec-008",
+    "library/1172-2/sections/sec-009",
+    "library/1172-2/sections/sec-010",
+    "library/1172-2/sections/sec-011"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1172-2",
+    "title_source": "slug",
     "source_file": "1172-2.pdf",
     "source_sha256": "390665341d5b7522bb384d3a99acf76e40126b477362a34f93a5a342c6190737",
     "pages": 26,

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/poincare-proof-outline/blocks/prose-sec-030",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/poincare-proof-outline/blocks/prose-sec-030",
   "kind": "prose",
-  "title": "H-betwenness is preserved by h-isometries",
+  "title": "H-betweenness in the Poincaré model",
   "pageStart": 77,
-  "pageEnd": 78,
-  "text": "../sections/sec-030-h-betwenness-is-preserved-by-h-isometries.md",
-  "derivedFrom": "library/poincare-proof-outline/manifest",
-  "sourceDocument": "library/poincare-proof-outline/manifest",
+  "pageEnd": 77,
+  "text": "../sections/sec-030-h-betweenness-in-the-poincaré-model.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
   "provenance": "ingested"
 }

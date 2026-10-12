@@ -1,0 +1,49 @@
+\begin{picture}(0,0)%
+\epsfig{file=ps/pic15.ps}%
+\end{picture}%
+\setlength{\unitlength}{0.00041700in}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined
+% extract first six characters in \fmtname
+\def\x#1#2#3#4#5#6#7\relax{\def\x{#1#2#3#4#5#6}}%
+\expandafter\x\fmtname xxxxxx\relax \def\y{splain}%
+\ifx\x\y   % LaTeX or SliTeX?
+\gdef\SetFigFont#1#2#3{%
+  \ifnum #1<17\tiny\else \ifnum #1<20\small\else
+  \ifnum #1<24\normalsize\else \ifnum #1<29\large\else
+  \ifnum #1<34\Large\else \ifnum #1<41\LARGE\else
+     \huge\fi\fi\fi\fi\fi\fi
+  \csname #3\endcsname}%
+\else
+\gdef\SetFigFont#1#2#3{\begingroup
+  \count@#1\relax \ifnum 25<\count@\count@25\fi
+  \def\x{\endgroup\@setsize\SetFigFont{#2pt}}%
+  \expandafter\x
+    \csname \romannumeral\the\count@ pt\expandafter\endcsname
+    \csname @\romannumeral\the\count@ pt\endcsname
+  \csname #3\endcsname}%
+\fi
+\fi\endgroup
+\begin{picture}(13019,1604)(1426,-3882)
+\put(5786,-2956){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$a, b\in A$}}}
+\put(3953,-3284){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$-$}}}
+\put(4505,-3237){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$\lambda a+b$}}}
+\put(5801,-3580){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$\lambda\in K$}}}
+\put(2657,-3190){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$a$}}}
+\put(3067,-3253){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$+$}}}
+\put(3546,-3237){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$b$}}}
+\put(2288,-3237){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$\lambda$}}}
+\put(7638,-2894){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$b$}}}
+\put(7613,-3549){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$a$}}}
+\put(7985,-3253){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$-$}}}
+\put(8436,-3222){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$ba$}}}
+\put(1426,-3232){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}${\cal R}=$}}}
+\put(7060,-3175){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$\cup$}}}
+\put(9113,-3191){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$a, b\in A$}}}
+\put(12640,-3191){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$a$}}}
+\put(11576,-3176){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$1$}}}
+\put(11224,-3191){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$-$}}}
+\put(10387,-3191){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$\cup$}}}
+\put(12110,-3176){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$\cup$}}}
+\put(13257,-3191){\makebox(0,0)[lb]{\smash{\SetFigFont{10}{12.0}{rm}$-tr(a)$}}}
+\end{picture}

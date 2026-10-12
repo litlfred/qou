@@ -1,0 +1,263 @@
+In this section, we will recall definitions associated with cone
+deformations and review relevant results from work of Hodgson and
+Kerckhoff (\cite{hk:cone-rigid}, \cite{hk:univ}).
+
+\begin{define}
+Let $M$ be a 3--manifold containing a closed 1--manifold $\Sigma$.  A
+\emph{hyperbolic cone structure} on $M$ is an incomplete hyperbolic
+structure on $X=M-\Sigma$, whose completion is singular along
+$\Sigma$.  A cross section of a component of $\Sigma$ is a hyperbolic
+cone with angle $\alpha$, where $\alpha$ is constant along that
+component.  (For a more complete description of the metric on $M$, see
+\cite{hk:cone-rigid}.)  The set $\Sigma$ is called the \emph{singular
+locus} of $M$.  $M$ with this structure is called a \emph{hyperbolic
+cone manifold}.  A \emph{hyperbolic cone deformation} on $M$ is a
+smooth one--parameter family of hyperbolic cone structures $X_t$.
+\label{def:cone-deform}
+\end{define}
+
+\subsection{Infinitesimal deformations}
+Now, we may study deformations by considering possible ``derivatives
+at time $t$'' of $X_t$, or infinitesimal deformations of hyperbolic
+structure,
+%% Aug 6, 2007.  Emphasize time dependency.
+for any time $t$.
+%%
+Each of these infinitesimal deformations corresponds to an element in
+a certain cohomology group $H^1(X; E)$, where recall $X=M-\Sigma$.  We
+will be manipulating elements of $H^1(X;E)$, so we recall some
+information on their structure.
+
+
+%% April 7.  This subsection of cone deformations section gives
+%% description of $\omega$ and $\eta$ and their decompositions in
+%% tubular and horoball neighborhoods.
+
+
+\subsubsection{Cohomology}
+
+Given $\omega$ in $H^1(X;E)$, $\omega$ is a one--form on $X$ with
+values in the vector bundle $E$ of infinitesimal isometries of $X$.
+The bundle $E$ has fiber $sl(2,\CC)$, which is the {L}ie algebra of
+infinitesimal isometries of $\HH^3$.  Recall that this {L}ie algebra
+has a complex structure.  Geometrically, if $s$ represents an
+infinitesimal translation in the direction of $s$, then $i s$
+represents an infinitesimal rotation with axis in the direction of
+$s$.  Thus on $X$ we can identify $E$ with the complexified tangent
+bundle $TX \otimes \CC$, and write any $\omega \in H^1(X;E)$ in
+complex form: $\omega = v + iw$.
+
+By the {H}odge theorem proved in \cite{hk:cone-rigid}, in each
+cohomology class of $H^1(X;E)$ there is a \emph{harmonic}
+representative of the form
+$$\omega = \eta + i*D\eta,$$
+where $\eta$ is a unique $TX$-valued
+1--form on $X = M-\Sigma$ that satisfies:
+$$D^*\eta=0,$$
+\begin{equation}
+D^*D\eta + \eta =0.
+\label{eqn:d*deta}
+\end{equation}
+Here $D$ is the exterior covariant derivative on such forms and $D^*$
+is its adjoint.
+
+%% Aug 6, 2007.  Emphasize time dependency.
+Thus we may assume that our cone deformation is chosen such that at
+each time $t$, the infinitesimal deformation of hyperbolic structure
+of $X_t$ corresponds to a \emph{harmonic} element $\omega$ in
+$H^1(X;E)$.
+%%
+
+\subsubsection{Tubular and Horoball neighborhoods}
+
+For purposes of this paper, we are particularly interested in the
+effect of the deformation in a neighborhood of the singular locus or
+in a horoball neighborhood of a cusp.  So in this subsection, we will
+review a decomposition of $\omega$ (and $\eta$) into a nice form in
+these types of neighborhoods.
+
+Select a component of the singular locus $\Sigma$ of $M$.  Let $V$ be
+a tubular neighborhood of that component, with tube radius $R$.  $V$
+is a solid torus with a singular core curve.  During the cone
+deformation, the geometric structure on $V$ is changing in meridional,
+longitudinal, and radial directions.  We can write $\omega$ in $V$ to
+reflect this:
+\begin{equation}
+\omega = \omega_0 + \omega_c.
+\label{eqn:omega-decomp}
+\end{equation}
+Here only $\omega_0 = \eta_0 + i*D\eta_0$
+changes the holonomy of the meridian and longitude on the torus
+$\partial V$, and $\omega_c$ is a correction term.
+
+We can further decompose $\omega_0$ as follows:
+\begin{equation}
+\omega_0 = u\, \omega_m + (x+iy)\,\omega_\ell.
+\label{eqn:omega_0-decomp}
+\end{equation}
+Here, $u$, $x$, and $y$ are real numbers.  The 1--forms $\omega_m$ and
+$\omega_\ell$ are standard forms, calculated in \cite{hk:cone-rigid},
+which depend only on the tube radius $R$ of $V$.  The form $\omega_m =
+\eta_m + i*D\eta_m$ gives the change in the meridional direction.  In
+particular, it represents the infinitesimal deformation which
+decreases the cone angle but doesn't change the real part of the
+complex length of the meridian.  The form $\omega_\ell = \eta_\ell
++i*D\eta_\ell$ stretches the singular locus, but leaves the holonomy
+of the meridian unchanged.
+
+Since we will use the explicit formula for the standard form
+$\omega_\ell$ in a calculation in a later section, we will restate
+that form here.  Let $e_1$, $e_2$, and $e_3$ be an orthonormal frame
+for $V$ in cylindrical coordinates, with $e_1$ pointing in the radial
+direction and $e_2$ tangent to the meridian.  Let $R$ be the radius of
+the tube $V$.  Recall $\omega_\ell$ is a ($TX\otimes\CC$)--valued
+1--form, which can be viewed as an element of $Hom(TX, TX\otimes\CC)$.
+Thus it can be described as a matrix in the cylindrical coordinates
+$e_1$, $e_2$, $e_3$.
+\begin{equation}
+  \omega_\ell(R) = \left[
+    \begin{array}{ccccc}
+      (\cosh R)^{-2} & \hspace{.1in} & 0 &\hspace{.1in}& 0 \\
+      0 && -1 && -i\tanh R \\
+      0 && -i\tanh R && 1+ (\cosh R)^{-2}
+    \end{array}
+    \right]
+  \label{eqn:omega_l}
+\end{equation}
+
+
+Now, so far, our decomposition of $\omega$ has been in a tubular
+neighborhood $V$ of a component of the singular locus.  We can do a
+similar decomposition of $\omega$ in a horoball neighborhood $U$ of a
+cusp.  In fact, we may consider $U$ as a tubular neighborhood of a
+1--dimensional submanifold of $M$ on which the cone angle remains $0$
+throughout the deformation, and the tube radius is infinite.  Again we
+may decompose $\omega$ as $\omega_0 + \omega_c$, where only $\omega_c$
+affects the holonomy of the torus $\partial U$.  But now, since the
+cone angle at the core of $U$ is not changing, the meridional part of
+$\omega_0$ is identically $0$.  Thus in this case,
+$$\omega_0 = (x + iy)\, \omega_\ell,$$
+where again $x$ and $y$ are real numbers, and $\omega_\ell$ is a
+standard form.  Since the tube radius of $U$ is infinite, to write
+down the formula for $\omega_\ell$ explicitly we let $R$ go to
+infinity in equation (\ref{eqn:omega_l}).
+\begin{equation}
+  \omega_\ell(\infty) = \left[
+    \begin{array}{ccc}
+      0 & 0 & 0\\
+      0 & -1 & -i\\
+      0 & -i & 1
+    \end{array}\right]
+  \label{eqn:omega_l-cusp}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Boundary terms}
+\label{subsec:boundary-terms}
+
+Our proof of Theorem \ref{thm:main-cusp} will involve certain boundary
+terms.  In this section, we define these terms.  We explain how they
+arise and recall certain properties.  They will be used in the
+proof of Theorem \ref{thm:main-cusp}.
+
+
+%% April 7:  In this subsection, we define boundary terms and present
+%% inequalities relating them.
+
+Using results of the last section, we may always assume that we have a
+harmonic representative $\omega = \eta + i*D\eta$.  Thus $\eta$
+satisfies equation (\ref{eqn:d*deta}).
+
+Let $N$ be any submanifold of $X = M-\Sigma$ with boundary $\partial
+N$ oriented by the outward normal.  When we take the $L^2$ inner
+product of equation (\ref{eqn:d*deta}) with $\eta$ and integrate by
+parts over $N$, we obtain the boundary formula (\cite[Lemma
+2.3]{hk:univ}):
+\begin{equation}
+  B(N)= \int_{\partial N} \eta \wedge *D\eta = \| \eta \|^2_N + \|
+  *D\eta \|^2_N 
+  \label{eqn:BN}
+\end{equation}
+Here $\| \cdot \|$ denotes the $L^2$--norm on $N$.  We will apply
+equation (\ref{eqn:BN}) to submanifolds of $X=M-\Sigma$ involving
+tubular or horoball neighborhoods.
+
+First, we will introduce some notation.  Let $V_j$ be a tubular
+neighborhood of a component (the $j$-th component) of the singular
+locus, or a horoball neighborhood of a cusp.  Using similar notation
+to that of \cite{hk:univ}, define
+$$b_{V_j}(\zeta,\xi)=\int_{\partial V_j}*D\zeta\wedge \xi,$$
+where
+$\partial V_j$ is oriented such that the tangent vector orthogonal to
+$\partial V_j$ is an outward normal when viewed from $V_j$.  We will
+be considering $b_{V_j}(\eta, \eta)$ in this paper, and we review
+results concerning this term.
+
+The decomposition (\ref{eqn:omega-decomp}) of $\omega$ in $V_j$ into
+$\omega_0 + \omega_c$, and $\eta$ into $\eta_0 + \eta_c$ decomposes
+the term $b_{V_j}(\eta, \eta)$:
+\begin{equation}
+b_{V_j}(\eta, \eta) = b_{V_j}(\eta_0, \eta_0) +
+b_{V_j}(\eta_c, \eta_c).
+\label{eqn:bV-decomp}
+\end{equation}
+That is, cross terms vanish (\cite[Lemma 2.5]{hk:univ}).
+Additionally, the term $b_{V_j}(\eta_c, \eta_c)$ is actually
+non-positive (\cite[Lemma 2.6]{hk:univ}), so we find
+\begin{equation}
+  b_{V_j}(\eta, \eta) \leq b_{V_j}(\eta_0, \eta_0)
+\label{eqn:eta<eta_0}
+\end{equation}
+
+
+Now, let $V$ be a tubular neighborhood of the entire singular locus
+$\Sigma$, as well as horoball neighborhoods of cusps.  Thus $V$ is a
+union of tubular neighborhoods $V_j$ of components $\Sigma_j$ of the
+singular locus and horoball neighborhoods $U_j$.  Then letting $N=X-V$
+in equation (\ref{eqn:BN}),
+\begin{eqnarray}
+B(X-V)  & = &\| \eta \|^2_{X-V} + \|*D\eta\|^2_{X-V} =
+ \int_{\partial V} *D\eta \wedge \eta \\
+ & = &
+ \sum_j b_{V_j} (\eta, \eta) + \sum_k b_{U_j}(\eta,\eta).
+\label{eqn:sumbj=eta}
+\end{eqnarray}
+The first sum is over all components of the singular locus, the second
+over all horoball neighborhoods of cusps.  This equation, along with
+equation (\ref{eqn:eta<eta_0}), implies
+\begin{equation}
+  0 \leq  \sum_j b_{V_j} (\eta, \eta)+ \sum_k
+  b_{U_k}(\eta,\eta)  \leq \sum_j b_{V_j} (\eta_0,
+  \eta_0) + \sum_k b_{U_k} (\eta_0, \eta_0).
+\label{eqn:sum>0}
+\end{equation}
+
+Notice $\eta_0 = (\eta_0)_j$ depends on the neighborhood $V_j$ or
+$U_j$.  However, using the notation $b_{V_j}(\eta_0, \eta_0)$, it
+should be clear that we are referring to the decomposition of $\eta$
+particular to $V_j$ in this context, and similarly for $U_j$.  We will
+further simplify notation, using the following definition.
+
+\begin{define}
+  Let $\Sigma_j$ be a component of the singular locus $\Sigma$.  Let
+  $V_j$ be a tubular neighborhood of $\Sigma_j$ of radius $R$.  We let
+  $b_j$ be the boundary term:
+  $$b_j = b_{V_j}(\eta_0, \eta_0).$$
+  \label{def:bj}
+\end{define}
+
+\begin{remark}
+Note that for our applications of the results of this section, the
+one--form $\omega$ corresponds to an infinitesimal deformation of
+hyperbolic structure at time $t$.  Thus $\omega$, $\eta$, $\eta_0$,
+$b_j$, etc. will all depend on time $t$ in our applications in future
+sections.
+
+To avoid a notational nightmare, in the sequel we will assume the time
+$t$ has been fixed, and continue writing these terms without reference
+to $t$, except occasionally where we feel recalling the dependency on
+$t$ will help avoid confusion.
+\end{remark}
+

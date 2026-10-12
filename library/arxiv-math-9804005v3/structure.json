@@ -6,7 +6,11 @@
   "sha256": "62d069533bb97a00e815927a1daeb035145b2fe3698a9b797467bbdf4d4f9581",
   "bytes": 447082,
   "pages": 39,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -1144,6 +1148,354 @@
   "likely_scanned": false,
   "toc_entries": 65,
   "sections": 65,
-  "chars_total": 97149
+  "chars_total": 97149,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 7,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-215-it-follows-that-if-the-algebra-a-has-an-ausl",
+     "title": "It follows that if the algebra A has an Auslander dualizing complex then the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-dualizing-complexes",
+     "title": "Dualizing complexes",
+     "prose_ratio": 0.253,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-4-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-31-we-now-give-a-complete-proof-of-sz-lemma-61ii",
+     "title": "We now give a complete proof of [SZ] Lemma 6.1(ii) using Auslander d ualizing",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-3-the-existence-of-an-auslander-rigid-dualizing",
+     "title": "The existence of an Auslander rigid dualizing complex is transferre d to related",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-6-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-2-the-functors-d-and-d-determine-a-duality-ie-an",
+     "title": "The functors D and D\u25e6 determine a duality, i.e., an anti-equivalence, of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-2-immediate-from-part-1-together-with-the-fact-t",
+     "title": "Immediate from part 1, together with the fact that M \u2208 Db(ModA) implies",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-1-for-every-nonzero-a-module-m-there-is-a-nonzer",
+     "title": "For every nonzero A-module M there is a nonzero submodule N \u2282M which",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-1-there-is-a-function-d-speca-z-such-that",
+     "title": "There is a function d : SpecA \u2192 Z such that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-8-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-1-there-are-functions-dr-speca-z-with-r-1-and-co",
+     "title": "There are functions d,r : SpecA \u2192 Z, with r \u2265 1 and constant on connected",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-3-a-is-catenary-and-if-a-0-its-krull-dimension-i",
+     "title": "A is catenary, and (if A \u2044= 0) its Krull dimension is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-2-auslander-dualizing-complexes",
+     "title": "Auslander Dualizing Complexes",
+     "prose_ratio": 0.081,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-2-choose-a-q-p-so-in-the-exact-sequence",
+     "title": "Choose a \u2208 q \u2212 p, so in the exact sequence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-4-pick-a-prime-ideal-p-a-since-rp-is-a-dualizing",
+     "title": "Pick a prime ideal p \u2282A. Since Rp is a dualizing complex in D(Mod(Ap \u2297B\u25e6",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-10-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-2-a-module-m-is-called-dim--essentially-pure-if",
+     "title": "A module M is called dim -essentially pure if M contains an essential sub-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-3-a-module-m-is-called-dim--critical-if-m-0-and",
+     "title": "A module M is called dim -critical if M \u2044= 0, and dim M/M \u2032 < dimM for",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-2-given-a-module-m-let-\u03b3-mqdimm-m-be-the-largest",
+     "title": "Given a module M let \u0393 Mq(dim)M \u2282 M be the largest submodule M \u2032 \u2282 M",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-12-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-2-cf-bj-theorem-13-and-lev-the",
+     "title": "(cf. [Bj] Theorem 1.3 and [Lev] The-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-1-ext-n",
+     "title": "Ext \u2212n",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-2-for-each-p-extp",
+     "title": "For each p, Ext\u2212p",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-3-for-each-p-there-is-an-exact-sequence",
+     "title": "For each p there is an exact sequence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-2-take-n-ext-p",
+     "title": "Take N := Ext \u2212p",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-14-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-1-letm-be-a-\ufb01nitely-generated-dim-purea-module-a",
+     "title": "LetM be a \ufb01nitely generated dim-pureA-module, and let I := AnnA(M ). If",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-2-leti-be-an-ideal-of-a-such-that-ai-is-dim-pure",
+     "title": "LetI be an ideal of A such that A/I is dim-pure and let q be a prime ideal of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-16-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-3-rigid-dualizing-complexes",
+     "title": "Rigid Dualizing Complexes",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-032-18-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-1-letc-be-any-k-algebra-then-for-m-dmodb-c-there",
+     "title": "LetC be any k-algebra. Then for M \u2208 D(Mod(B \u2297C\u25e6)) there is a functorial",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-20-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-4-dualizing-complexes-over-graded-algebras",
+     "title": "Dualizing Complexes over Graded Algebras",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-036-22-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-1-there-is-a-functorial-isomorphism",
+     "title": "There is a functorial isomorphism",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-2-there-is-a-morphism-trba-rb-ra-in-dgrmodae-whi",
+     "title": "There is a morphism TrB/A : RB \u2192 RA in D(GrModAe), which satis\ufb01es",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-24-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-5-supposea-b-is-surjective-if-a-is-graded-auslan",
+     "title": "SupposeA \u2192B is surjective. If A is graded Auslander Kdim-Macaulay, then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-1-let-a-b-be-graded-ideals-if-the-quotient-algeb",
+     "title": "Let a, b be graded ideals. If the quotient algebras A/a and A/b are graded",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-2-let-a-be-a-nilpotent-graded-ideal-of-a-if-aa-i",
+     "title": "Let a be a nilpotent graded ideal of A. If A/a is graded Auslander (resp. and",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-3-if-for-every-minimal-graded-prime-ideal-p-the",
+     "title": "If for every minimal graded prime ideal p the quotient algebra A/p is graded",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-3-let-p1-pm-be-the-minimal-prime-ideals-of-a-the",
+     "title": "Let p1,... , pm be the minimal prime ideals of A. Then ( \u220f",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-5-graded-algebras-with-some-commutativity-hypoth",
+     "title": "Graded Algebras with Some Commutativity Hypothesis",
+     "prose_ratio": 0.305,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-046-26-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-28-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-048-3-assume-b-is-graded-gkdim-macaulay-since-atn-is",
+     "title": "Assume B is graded GKdim-Macaulay. Since A/(tn) is graded GKdim-Macaulay",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-1-we-say-two-graded-a-modulesm-andn-are-similar",
+     "title": "We say two graded A-modulesM andN are similar if there are isomorphisms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-050-2-the-algebra-a-satis\ufb01es-the-similar-submodule-c",
+     "title": "The algebra A satis\ufb01es the similar submodule condition if every nonzero, m-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-051-2-a-is-graded-kdim--and-gkdim-macaulay-more-prec",
+     "title": "A is graded Kdim- and GKdim-Macaulay. More precisely",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-30-amnon-yekutieli-and-james-j-zhang",
+     "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-053-6-noetherian-connected-filtrations",
+     "title": "Noetherian Connected Filtrations",
+     "prose_ratio": 0.19,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-054-1-if-a-has-a-balanced-dualizing-complex-r-then",
+     "title": "If \u02dcA has a balanced dualizing complex \u02dcR then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-055-3-suppose-r-is-graded-auslander-if-r-is-graded-g",
+     "title": "Suppose \u02dcR is graded Auslander. If \u02dcR is graded GKdim-Macaulay then R is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-056-3-there-is-a-functorial-isomorphism",
+     "title": "There is a functorial isomorphism",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-057-2-there-is-a-functorial-morphism-\u03c8-\u03c0r-homgr",
+     "title": "There is a functorial morphism \u03c8 : \u03c0R Homgr",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-058-2-let-m-be-a-t-torsion-free-\ufb01nitely-generated-gr",
+     "title": "Let \u02dcM be a t-torsion-free \ufb01nitely generated graded \u02dcA-module. We claim that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-059-3-by-the-proof-of-part-2-given-a-\ufb01nitely-generat",
+     "title": "By the proof of part 2, given a \ufb01nitely generated A-moduleM one has CdimR;AM",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-060-1-if-a-has-a-balanced-dualizing-complex-r-then-a",
+     "title": "If \u00afA has a balanced dualizing complex \u00afR, then A has a rigid dualizing complex",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-061-2-the-rigid-dualizing-complex-of-a-is-r-a\u03c3n-wher",
+     "title": "The rigid dualizing complex of A is R =A\u03c3[n] wheren is an integer and \u03c3 is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-062-3-if-grfa-is-graded-auslander-resp-and-graded-gk",
+     "title": "If grFA is graded Auslander (resp. and graded GKdim-Macaulay), then A is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-063-4-it-follows-from-theorem-617-and-proposition-39",
+     "title": "It follows from Theorem 6.17 and Proposition 3.9(1) that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-064-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-th-0306165v1/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "Quantum Geometry of Hyperbolic Three-Manifolds",
-  "pageStart": 8,
-  "pageEnd": 8,
+  "title": "The Moduli Space of Classical Solutions",
+  "pageStart": 11,
+  "pageEnd": 13,
   "contains": [
     "library/arxiv-hep-th-0306165v1/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/arxiv-hep-th-0306165v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0306165v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0306165v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0306165v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,1026 +8,171 @@ pages: 8-15
 source_pdf: 2410.14661v1.pdf
 source_sha256: 3362fcd5e28eb1f0
 doc_brief: "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot — This is"
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 0.909
 ---
-LetMp,q be the 3-manifold obtained by the doingq-surgery along the twist knotKp, (see
-Figure 3) where the index p represents 2p crossings (half-twists). For example,K−1 = 41,
-K1 = 31,K2 = 52.
-ON THE ASYMPTOTIC EXPANSION OF V ARIOUS QUANTUM INV ARIANTS III 9
-.
-Figure 3.1. Twist knotKp
-Denoted by (Kp)q the twist knotKp with framingq, andD(Kp)q be its link diagram. By
-formula (2.7), the r-th Reshetikhin-Turaev invariant ofMp,q is given by
-RTr(M) =µr⟨Ωr⟩D(Kp)q⟨Ωr⟩−σ((Kp)q)
-U+ .(3.1)
-A direct computation shows that ⟨Ωr⟩U+ =e(− 3
-r−r+1
-4 )π√−1. Let σp,q =σ((Kp)q) and
-κr =µ2
-r⟨Ωr⟩−σp,q
-U+ =
-sin 2π
-r√r
-2
-eσp,q( 3
-r +r+1
-4 )π√−1.(3.2)
-Then we have
-RTr(Mp,q) =κr⟨ωr⟩D(Kp)q =κr
-r−2X
-m=0
-[m + 1](−1)qm+1tqm(m+2)
-4 ⟨em⟩D(Kp)0
-.(3.3)
-Recall the definition of colored Jones polynomial [4], for a knot K with zero-framing,
-we have
-[m + 1]Jm+1(K;t) =⟨(−1)mem⟩DK,(3.4)
-then we get
-RTr(M) =κr
-r−2X
-m=0
-[m + 1]2(−1)qmtqm(m+2)
-4 Jm+1(Kp;t) (3.5)
-= κr
-sin2
-
-π
-N + 1
-2
-
-2N−1X
-m=0
-(−1)qm sin2
-(m + 1)π
-N + 1
-2
-
-e
-qm(m+2)π√−1
-2(N + 1
-2 ) Jm+1(Kp;t)
-And at the root of unity t =e
-2π√−1
-N + 1
-2 , we have
-Jm(Kp;t) =
-m−1X
-k=0
-kX
-l=0
-(−1)k+l sin π(2l+1)
-N + 1
-2
-sin mπ
-N + 1
-2
-t(p+ 1
-2 )l(l+1)−m(k+ 1
-2 )+ 1
-2k2+ 3
-2k+ 1
-2(3.6)
-· (t)k(t)m+k
-(t)k+l+1(t)k−l(t)m−k−1
-.
-10 QINGTAO CHEN AND SHENGMAO ZHU
-Therefore, let a =N− 1−m, we obtain
-RTr(Mp,q) =κ′
-r
-N−1X
-a=−N
-N−a−1X
-k=0
-kX
-l=0
-(−1)q(N−1−a)+k+l sin
-(a + 1
-2)π
-N + 1
-2
-
-sin
-2π(l + 1
-2)
-N + 1
-2
-
-(3.7)
-·tq (N−1−a)(N +1−a)
-4 +(p+ 1
-2 )l(l+1)−(N−a)(k+ 1
-2 )+ 1
-2k2+ 3
-2k+ 1
-2
-(t)k(t)N−a+k
-(t)k+l+1(t)k−l(t)N−a−k−1
-,
-where
-κ′
-r = κr
-sin2
-
-π
-N + 1
-2
-.(3.8)
-Let
-θ1 = a + 1
-2
-N + 1
-2
-, θ2 = k + 1
-2
-N + 1
-2
-, θ3 = l + 1
-2
-N + 1
-2
-.(3.9)
-Then we have
-tq (N−1−a)(N +1−a)
-4 +(p+ 1
-2 )l(l+1)−(N−a)(k+ 1
-2 )+ 1
-2k2+ 3
-2k+ 1
-2(3.10)
-=e
-(N + 1
-2 )2π√−1
-
-q
-4 (1+θ2
-1−2θ1− 1
-(N + 1
-2 )2 )+(p+ 1
-2 )(θ2
-3− 1
-4(N + 1
-2 )2 )−θ2+θ2θ1+ 1
-2θ2
-2+ θ2
-(N + 1
-2 )− 1
-8(N + 1
-2 )2
-
-.
-Moreover, by using Lemma 2.5, we have
-(t)k(t)N−a+k
-(t)k+l+1(t)k−l(t)N−a−k−1
-(3.11)
-= exp
-
-φN
-(k +l + 1) + 1
-2
-N + 1
-2
-
-+φN
-(k−l) + 1
-2
-N + 1
-2
-
-−φN
- 1
-2
-N + 1
-2
-
-−φN
-k + 1
-2
-N + 1
-2
-
-−φN
-(N−a +k) + 1
-2
-N + 1
-2
-
-+φN
-(N−a−k− 1) + 1
-2
-N + 1
-2
-
-=e
-φN (θ2+θ3+
-1
-2
-N + 1
-2
-)+φN (θ2−θ3+
-1
-2
-N + 1
-2
-)+φN (−θ1−θ2+1)−φN (θ2)−φN (1+θ2−θ1)
-·e
-(N + 1
-2 )(π√−1
-12 − π√−1
-4(N + 1
-2 ) + π√−1
-12(N + 1
-2 )2 )
-(N + 1
-2)− 1
-2
-for 0 <k +l + 1≤N and 0 <N −a +k <N,
-ON THE ASYMPTOTIC EXPANSION OF V ARIOUS QUANTUM INV ARIANTS III 11
-(t)k(t)N−a+k
-(t)k+l+1(t)k−l(t)N−a−k−1
-(3.12)
-= exp
-
-φN
-(k +l + 1) + 1
-2
-N + 1
-2
-
-+φN
-(k−l) + 1
-2
-N + 1
-2
-
-+φN
-(N−a−k− 1) + 1
-2
-N + 1
-2
-
-−φN
-k + 1
-2
-N + 1
-2
-
-−φN
-(N−a +k) + 1
-2
-N + 1
-2
-− 1
-
-−φN
- 1
-2
-N + 1
-2
-
-+ log 2
-
-= 2e
-φN (θ2+θ3+
-1
-2
-N + 1
-2
-)+φN (θ2−θ3+
-1
-2
-N + 1
-2
-)+φN (−θ1−θ2+1)−φN (θ2)−φN (θ2−θ1)
-·e
-(N + 1
-2 )(π√−1
-12 − π√−1
-4(N + 1
-2 ) + π√−1
-12(N + 1
-2 )2 )
-(N + 1
-2)− 1
-2
-for 0 <k +l + 1≤N and N <N−a +k <2N,
-(t)k(t)N−a+k
-(t)k+l+1(t)k−l(t)N−a−k−1
-(3.13)
-= exp
-
-φN
-(k +l + 1) + 1
-2
-N + 1
-2
-− 1
-
-+φN
-(k−l) + 1
-2
-N + 1
-2
-
-+φN
-(N−a−k− 1) + 1
-2
-N + 1
-2
-
-−φN
-k + 1
-2
-N + 1
-2
-
-−φN
-(N−a +k) + 1
-2
-N + 1
-2
-
-−φN
- 1
-2
-N + 1
-2
-
-− log 2
-
-= 1
-2e
-φN (θ2+θ3+
-1
-2
-N + 1
-2
-−1)+φN (θ2−θ3+
-1
-2
-N + 1
-2
-)+φN (−θ1−θ2+1)−φN (θ2)−φN (1+θ2−θ1)
-·e
-(N + 1
-2 )(π√−1
-12 − π√−1
-4(N + 1
-2 ) + π√−1
-12(N + 1
-2 )2 )
-(N + 1
-2)− 1
-2
-for N <k +l + 1≤ 2N and 0 <N −a +k <N,
-(t)k(t)N−a+k
-(t)k+l+1(t)k−l(t)N−a−k−1
-(3.14)
-= exp
-
-φN
-(k +l + 1) + 1
-2
-N + 1
-2
-− 1
-
-+φN
-(k−l) + 1
-2
-N + 1
-2
-
-+φN
-(N−a−k− 1) + 1
-2
-N + 1
-2
-
-−φN
-k + 1
-2
-N + 1
-2
-
-−φN
-(N−a +k) + 1
-2
-N + 1
-2
-− 1
-
-−φN
- 1
-2
-N + 1
-2
-
-=e
-φN (θ2+θ3+
-1
-2
-N + 1
-2
-−1)+φN (θ2−θ3+
-1
-2
-N + 1
-2
-)+φN (−θ1−θ2+1)−φN (θ2)−φN (θ2−θ1)
-·e
-(N + 1
-2 )(π√−1
-12 − π√−1
-4(N + 1
-2 ) + π√−1
-12(N + 1
-2 )2 )
-(N + 1
-2)− 1
-2
-for N <k +l + 1≤ 2N and N <N−a +k <2N.
-12 QINGTAO CHEN AND SHENGMAO ZHU
-Since
-e
-(N + 1
-2 )2π√−1
-
-q
-2 (1−θ1− 1
-N + 1
-2
-)+θ2+θ3
-2 − 1
-2(N + 1
-2 )
-(3.15)
-·e
-(N + 1
-2 )2π√−1
-
-q
-4 (1+θ2
-1−2θ1− 1
-(N + 1
-2 )2 )+(p+ 1
-2 )(θ2
-3− 1
-4(N + 1
-2 )2 )+θ2−θ2θ1+ 1
-2θ2
-2+ θ2
-(N + 1
-2 )− 1
-8(N + 1
-2 )2
-
-·e
-φN (θ2+θ3+
-1
-2
-N + 1
-2
-−1)+φN (θ2−θ3+
-1
-2
-N + 1
-2
-)+φN (−θ1−θ2+1)−φN (θ2)−φN (θ2−θ1)
-·e
-(N + 1
-2 )(π√−1
-12 − π√−1
-4(N + 1
-2 ) + π√−1
-12(N + 1
-2 )2 )
-(N + 1
-2)− 1
-2
-= (N + 1
-2)− 1
-2e
-(N + 1
-2 )π√−1
-
-q( 3
-2−2θ1+
-θ2
-1
-2− 1
-N + 1
-2
-− 1
-2(N + 1
-2 )2 )+(2p+1)(θ2
-3− 1
-4(N + 1
-2 )2 )−θ1+2θ2θ1+θ2
-2+θ3+ 2θ2
-(N + 1
-2 )
-
-·e
-(N + 1
-2 )π√−1(− 5
-4(N + 1
-2 )− 1
-6(N + 1
-2 )2 + 1
-12 )
-,
-finally, combining above formulas together, we obtain
-RTr(Mp,q)
-(3.16)
-=κ′
-r(N + 1
-2)− 1
-2
-N−1X
-a=−N
-N−a−1X
-k=0
-kX
-l=0
-(−1)q(N−1−a)+k+l sin
-(a + 1
-2)π
-N + 1
-2
-
-sin
-2π(l + 1
-2)
-N + 1
-2
-
-·tq (N−1−a)(N +1−a)
-4 +(p+ 1
-2 )l(l+1)−(N−a)(k+ 1
-2 )+ 1
-2k2+ 3
-2k+ 1
-2
-(t)k(t)N−a+k
-(t)k+l+1(t)k−l(t)N−a−k−1
-=κ′
-r(N + 1
-2)− 1
-2
-N−1X
-a=−N
-N−a−1X
-k=0
-kX
-l=0
-sin
-(a + 1
-2)π
-N + 1
-2
-
-sin
-2π(l + 1
-2)
-N + 1
-2
-
-e
-(N + 1
-2 ) ˜VN (
-a+ 1
-2
-N + 1
-2
-,
-k+ 1
-2
-N + 1
-2
-,
-l+ 1
-2
-N + 1
-2
-)
-,
-where ˜VN(θ1,θ 2,θ 3) is given by
-•
-π
-√
-−1
-
-q
-3
-2− 2θ1 + θ2
-1
-2 − 1
-N + 1
-2
-− 1
-2(N + 1
-2)2
-
-+ (2p + 1)
-
-θ2
-3− 1
-4(N + 1
-2)2
-
-−θ2 + 2θ2θ1 +θ2
-2 +θ3 + 2θ2
-N + 1
-2
-− 5
-4(N + 1
-2)− 1
-6(N + 1
-2)2 + 1
-12
-
-+ 1
-N + 1
-2
-
-φN(θ2 +θ3 +
-1
-2
-N + 1
-2
-) +φN(θ2−θ3 +
-1
-2
-N + 1
-2
-) +φN(−θ1−θ2 + 1)
-−φN(θ2)−φN(1 +θ2−θ1)),
-when 0 <θ 2 +θ3 < 1 and 0 < 1−θ1 +θ2 < 1;
-ON THE ASYMPTOTIC EXPANSION OF V ARIOUS QUANTUM INV ARIANTS III 13
-•
-π
-√
-−1
-
-q
-3
-2− 2θ1 + θ2
-1
-2 − 1
-N + 1
-2
-− 1
-2(N + 1
-2)2
-
-+ (2p + 1)
-
-θ2
-3− 1
-4(N + 1
-2)2
-
-−θ2 + 2θ2θ1 +θ2
-2 +θ3 + 2θ2
-N + 1
-2
-− 5
-4(N + 1
-2)− 1
-6(N + 1
-2)2 + 1
-12
-
-+ 1
-N + 1
-2
-
-φN(θ2 +θ3 +
-1
-2
-N + 1
-2
-) +φN(θ2−θ3 +
-1
-2
-N + 1
-2
-) +φN(−θ1−θ2 + 1)−φN(θ2)
-−φN(θ2−θ1)),
-when 0 <θ 2 +θ3 < 1 and 1 < 1−θ1 +θ2 < 2;
-•
-π
-√
-−1
-
-q
-3
-2− 2θ1 + θ2
-1
-2 − 1
-N + 1
-2
-− 1
-2(N + 1
-2)2
-
-+ (2p + 1)
-
-θ2
-3− 1
-4(N + 1
-2)2
-
-−θ2 + 2θ2θ1 +θ2
-2 +θ3 + 2θ2
-N + 1
-2
-− 5
-4(N + 1
-2)− 1
-6(N + 1
-2)2 + 1
-12
-
-+ 1
-N + 1
-2
-
-φN(θ2 +θ3 +
-1
-2
-N + 1
-2
-− 1) +φN(θ2−θ3 +
-1
-2
-N + 1
-2
-) +φN(−θ1−θ2 + 1)
-−φN(θ2)−φN(1 +θ2−θ1)),
-when 1 <θ 2 +θ3 < 2 and 0 < 1−θ1 +θ2 < 1;
-•
-π
-√
-−1
-
-q
-3
-2− 2θ1 + θ2
-1
-2 − 1
-N + 1
-2
-− 1
-2(N + 1
-2)2
-
-+ (2p + 1)
-
-θ2
-3− 1
-4(N + 1
-2)2
-
-−θ2 + 2θ2θ1 +θ2
-2 +θ3 + 2θ2
-N + 1
-2
-− 5
-4(N + 1
-2)− 1
-6(N + 1
-2)2 + 1
-12
-
-+ 1
-N + 1
-2
-
-φN(t +u +
-1
-2
-N + 1
-2
-− 1) +φN(θ2−θ3 +
-1
-2
-N + 1
-2
-)
-+φN(−θ1−θ2 + 1)−φN(θ2)−φN(θ2−θ1)),
-when 1 <θ 2 +θ3 < 2 and 1 < 1−θ1 +θ2 < 2.
-By Lemma 2.6, we have
-φN(1−θ1−θ2) =−φ(θ1 +θ2) (3.17)
-+ 2π
-√
-−1
-
-−2N + 1
-4
-
-(θ1 +θ2)2− (θ2 +θ1) + 1
-6
-
-+ 1
-12(2N + 1)
-
-since θ1 +θ2 < 1.
-14 QINGTAO CHEN AND SHENGMAO ZHU
-Hence
-˜VN(θ1,θ 2,θ 3)
-(3.18)
-=π
-√
-−1
-
-q
-3
-2− 2θ1 + θ2
-1
-2 − 1
-N + 1
-2
-− 1
-2(N + 1
-2)2
-
-+ (2p + 1)
-
-θ2
-3− 1
-4(N + 1
-2)2
-
-−θ2
-1 +θ1 +θ3 + 2θ2
-N + 1
-2
-− 5
-4(N + 1
-2)− 1
-12(N + 1
-2)2− 1
-12
-
-+ 1
-N + 1
-2
-
-φN(θ2 +θ3 +
-1
-2
-N + 1
-2
-− 1) +φN(θ2−θ3 +
-1
-2
-N + 1
-2
-)
-−φN(θ2 +θ1)−φN(θ2)−φN(θ2−θ1)),
-for 1 < θ2 +θ3 < 2 and 1 < 1−θ1 +θ2 < 2, and we can write the expression for ˜VN for
-other cases similarly.
-Then we introduce the functions
-ˆVN(θ1,θ 2,θ 3) (3.19)
-= ˜VN(θ1,θ 2,θ 3) + 2(q− 1)π
-√
-−1
-
-θ1−
-1
-2
-N + 1
-2
-
-− 2π
-√
-−1
-
-θ2−
-1
-2
-N + 1
-2
-
-− 2(p + 2)π
-√
-−1
-
-θ3−
-1
-2
-N + 1
-2
-
-=π
-√
-−1
-q
-2− 1
-
-θ2
-1−θ1 + (2p + 1)θ2
-3− (2p + 3)θ3− 2θ2 + 3
-2q− 1
-12
-+ 2θ2
-N + 1
-2
-+ p− 2q + 9
-4
-N + 1
-2
-− 3(p +q) + 2
-6(N + 1
-2)2
-
-+ 1
-N + 1
-2
-
-φN(θ2 +θ3 +
-1
-2
-N + 1
-2
-− 1) +φN(θ2−θ3 +
-1
-2
-N + 1
-2
-)
-−φN(θ2 +θ1)−φN(θ2)−φN(θ2−θ1))
-and
-ˆV (θ1,θ 2,θ 3) (3.20)
-= lim
-N→∞
-VN(θ1,θ 2,θ 3)
-=π
-√
-−1
-q
-2− 1
-
-θ2
-1−θ1 + (2p + 1)θ2
-3− (2p + 3)θ3− 2θ2 + 3
-2q− 1
-12
-
-+ 1
-2π√−1
-
-Li2(e2π√−1(θ2+θ3)) + Li2(e2π√−1(θ2−θ3))− Li2(e2π√−1(θ2+θ1))
-−Li2(e2π√−1θ2)− Li2(e2π√−1(θ2−θ1))
-
-for 1 <θ 2 +θ3 < 2 and 1 < 1−θ1 +θ2 < 2, and one can write the expression for VN and
-V for other cases similarly.
-ON THE ASYMPTOTIC EXPANSION OF V ARIOUS QUANTUM INV ARIANTS III 15
-Proposition 3.1. Letr = 2N + 1 with N≥ 1, the r-th Reshetikhin-Turaev invariant of
-Mp,q can be written as
-RTr(Mp,q) =κ′
-r(N + 1
-2)− 1
-2
-N−1X
-a=0
-N−a−1X
-k=0
-kX
-l=0
-gN(a,k,l ) (3.21)
-with
-gN(a,k,l ) = sin
-(a + 1
-2)π
-N + 1
-2
-
-sin
-2π(l + 1
-2)
-N + 1
-2
-
-e
-(N + 1
-2 ) ˆVN
-
-a+ 1
-2
-N + 1
-2
-,
-k+ 1
-2
-N + 1
-2
-,
-l+ 1
-2
-N + 1
-2
-
-,(3.22)
-where the function ˆVN(θ1,θ 2,θ 3) is given by formula (3.19), and κ′
-r is given by (3.8).
+[]{#Section-Potentialfunction label="Section-Potentialfunction"}
+
+Let $M_{p,q}$ be the 3-manifold obtained by the doing $q$-surgery along the twist knot $\mathcal{K}_p$, (see Figure [1](#figure-twistknot){reference-type="ref" reference="figure-twistknot"}) where the index $p$ represents $2p$ crossings (half-twists). For example, $\mathcal{K}_{-1}=4_1$, $\mathcal{K}_1=3_1$, $\mathcal{K}_2=5_2$.
+
+<figure id="figure-twistknot">
+<p>.</p>
+<figcaption>Twist knot <span class="math inline">𝒦<sub><em>p</em></sub></span></figcaption>
+</figure>
+
+Denoted by $(\mathcal{K}_p)_q$ the twist knot $\mathcal{K}_p$ with framing $q$, and $D_{(\mathcal{K}_p)_q}$ be its link diagram. By formula ([\[formula-RT\]](#formula-RT){reference-type="ref" reference="formula-RT"}), the $r$-th Reshetikhin-Turaev invariant of $M_{p,q}$ is given by $$\begin{aligned}
+RT_r(M)=\mu_r\langle\Omega_r\rangle_{D_{(\mathcal{K}_p)_q}}\langle\Omega_r\rangle_{U_+}^{-\sigma((\mathcal{K}_p)_q)}.    
+\end{aligned}$$ A direct computation shows that $\langle\Omega_r\rangle_{U_+}=e^{\left(-\frac{3}{r}-\frac{r+1}{4}\right)\pi \sqrt{-1}}$. Let $\sigma_{p,q}=\sigma((\mathcal{K}_p)_q)$ and $$\begin{aligned}
+    \kappa_r=\mu_r^2\langle\Omega_r\rangle_{U_+}^{-\sigma_{p,q}}=\left(\frac{\sin\frac{2\pi}{r}}{\sqrt{r}}\right)^2e^{\sigma_{p,q}\left(\frac{3}{r}+\frac{r+1}{4}\right)\pi\sqrt{-1}}.
+\end{aligned}$$
+
+Then we have $$\begin{aligned}
+    RT_r(M_{p,q})&=\kappa_r\langle \omega_r\rangle_{D_{(\mathcal{K}_p)_q}}=\kappa_r\sum_{m=0}^{r-2}[m+1](-1)^{qm+1}t^{q\frac{m(m+2)}{4}}\langle e_{m}\rangle_{D_{(\mathcal{K}_p)_0}}.
+\end{aligned}$$
+
+Recall the definition of colored Jones polynomial [@CZ23-1], for a knot $\mathcal{K}$ with zero-framing, we have $$\begin{aligned}
+J_{m+1}(\mathcal{K};t)=\langle (-1)^me_m\rangle_{D_{\mathcal{K}}}, 
+\end{aligned}$$ then we get $$\begin{aligned}
+   RT_r(M)&=\kappa_r \sum_{m=0}^{r-2}[m+1]^2(-1)^{qm}t^{q\frac{m(m+2)}{4}}J_{m+1}(\mathcal{K}_p;t)\\\nonumber
+   &=\frac{\kappa_r}{\sin^2 \left(\frac{\pi}{N+\frac{1}{2}}\right)}\sum_{m=0}^{2N-1}(-1)^{qm}\sin^2\left(\frac{(m+1)\pi}{N+\frac{1}{2}}\right)e^{\frac{qm(m+2)\pi\sqrt{-1}}{2(N+\frac{1}{2})}}J_{m+1}(\mathcal{K}_p;t)
+\end{aligned}$$
+
+And at the root of unity $t=e^{\frac{2\pi\sqrt{-1}}{N+\frac{1}{2}}}$, we have $$\begin{aligned}
+  \label{formula-sumkl}
+ J_{m}(\mathcal{K}_p;t)&=\sum_{k=0}^{m-1}\sum_{l=0}^k\frac{(-1)^{k+l}\sin \frac{\pi(2l+1)}{N+\frac{1}{2}}}{\sin \frac{m\pi }{N+\frac{1}{2}}}t^{(p+\frac{1}{2})l(l+1)-m(k+\frac{1}{2})+\frac{1}{2}k^2+\frac{3}{2}k+\frac{1}{2}}\\\nonumber
+ &\cdot\frac{(t)_k(t)_{m+k}}{(t)_{k+l+1}(t)_{k-l}(t)_{m-k-1}}. 
+\end{aligned}$$
+
+Therefore, let $a=N-1-m$, we obtain $$\begin{aligned}
+RT_{r}(M_{p,q})&=\kappa_r'\sum_{a=-N}^{N-1}\sum_{k=0}^{N-a-1}\sum_{l=0}^k  (-1)^{q(N-1-a)+k+l}\sin\left(\frac{(a+\frac{1}{2})\pi}{N+\frac{1}{2}}\right)\sin\left(\frac{2\pi(l+\frac{1}{2})}{N+\frac{1}{2}}\right)\\\nonumber
+&\cdot t^{q\frac{(N-1-a)(N+1-a)}{4}+(p+\frac{1}{2})l(l+1)-(N-a)(k+\frac{1}{2})+\frac{1}{2}k^2+\frac{3}{2}k+\frac{1}{2}}  \frac{(t)_k(t)_{N-a+k}}{(t)_{k+l+1}(t)_{k-l}(t)_{N-a-k-1}},
+\end{aligned}$$ where $$\begin{aligned}
+ \label{formula-kappa'r}
+\kappa'_r=\frac{\kappa_r}{\sin^2 \left(\frac{\pi}{N+\frac{1}{2}}\right)}.    
+\end{aligned}$$
+
+Let $$\begin{aligned}
+\theta_1=\frac{a+\frac{1}{2}}{N+\frac{1}{2}}, \ 
+\theta_2=\frac{k+\frac{1}{2}}{N+\frac{1}{2}},  \ \theta_3=\frac{l+\frac{1}{2}}{N+\frac{1}{2}}.       
+\end{aligned}$$ Then we have $$\begin{aligned}
+    &t^{q\frac{(N-1-a)(N+1-a)}{4}+(p+\frac{1}{2})l(l+1)-(N-a)(k+\frac{1}{2})+\frac{1}{2}k^2+\frac{3}{2}k+\frac{1}{2}}\\\nonumber
+    &=e^{(N+\frac{1}{2})2\pi\sqrt{-1}\left(\frac{q}{4}(1+\theta_1^2-2\theta_1-\frac{1}{(N+\frac{1}{2})^2})+(p+\frac{1}{2})(\theta_3^2-\frac{1}{4(N+\frac{1}{2})^2})-\theta_2+\theta_2\theta_1+\frac{1}{2}\theta_2^2+\frac{\theta_2}{(N+\frac{1}{2})}-\frac{1}{8(N+\frac{1}{2})^2}\right)}.
+\end{aligned}$$ Moreover, by using Lemma [\[lemma-varphixi\]](#lemma-varphixi){reference-type="ref" reference="lemma-varphixi"}, we have $$\begin{aligned}
+    &\frac{(t)_k(t)_{N-a+k}}{(t)_{k+l+1}(t)_{k-l}(t)_{N-a-k-1}}\\\nonumber
+    &=\exp\left(\varphi_N\left(\frac{(k+l+1)+\frac{1}{2}}{N+\frac{1}{2}}\right)+\varphi_N\left(\frac{(k-l)+\frac{1}{2}}{N+\frac{1}{2}}\right)-\varphi_N\left(\frac{\frac{1}{2}}{N+\frac{1}{2}}\right)\right.\\\nonumber
+    &\left.-\varphi_N\left(\frac{k+\frac{1}{2}}{N+\frac{1}{2}}\right)-\varphi_N\left(\frac{(N-a+k)+\frac{1}{2}}{N+\frac{1}{2}}\right)+\varphi_N\left(\frac{(N-a-k-1)+\frac{1}{2}}{N+\frac{1}{2}}\right)\right)\\\nonumber
+    &=e^{\varphi_N(\theta_2+\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_{N}(\theta_2-\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_N(-\theta_1-\theta_2+1)-\varphi_N(\theta_2)-\varphi_N(1+\theta_2-\theta_1)}\\\nonumber
+    &\cdot e^{(N+\frac{1}{2})(\frac{\pi\sqrt{-1}}{12}-\frac{\pi\sqrt{-1}}{4(N+\frac{1}{2})}+\frac{\pi\sqrt{-1}}{12(N+\frac{1}{2})^2})}(N+\frac{1}{2})^{-\frac{1}{2}}
+\end{aligned}$$ for $0<k+l+1\leq N$ and $0<N-a+k<N$,
+
+$$\begin{aligned}
+    &\frac{(t)_k(t)_{N-a+k}}{(t)_{k+l+1}(t)_{k-l}(t)_{N-a-k-1}}\\\nonumber
+    &=\exp\left(\varphi_N\left(\frac{(k+l+1)+\frac{1}{2}}{N+\frac{1}{2}}\right)+\varphi_N\left(\frac{(k-l)+\frac{1}{2}}{N+\frac{1}{2}}\right)+\varphi_N\left(\frac{(N-a-k-1)+\frac{1}{2}}{N+\frac{1}{2}}\right)\right.\\\nonumber
+    &\left.-\varphi_N\left(\frac{k+\frac{1}{2}}{N+\frac{1}{2}}\right)-\varphi_N\left(\frac{(N-a+k)+\frac{1}{2}}{N+\frac{1}{2}}-1\right)-\varphi_N\left(\frac{\frac{1}{2}}{N+\frac{1}{2}}\right)+\log 2\right)\\\nonumber
+    &=2e^{\varphi_N(\theta_2+\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_{N}(\theta_2-\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_N(-\theta_1-\theta_2+1)-\varphi_N(\theta_2)-\varphi_N(\theta_2-\theta_1)}\\\nonumber
+    &\cdot e^{(N+\frac{1}{2})(\frac{\pi\sqrt{-1}}{12}-\frac{\pi\sqrt{-1}}{4(N+\frac{1}{2})}+\frac{\pi\sqrt{-1}}{12(N+\frac{1}{2})^2})}(N+\frac{1}{2})^{-\frac{1}{2}}
+\end{aligned}$$ for $0<k+l+1\leq N$ and $N<N-a+k<2N$,
+
+$$\begin{aligned}
+    &\frac{(t)_k(t)_{N-a+k}}{(t)_{k+l+1}(t)_{k-l}(t)_{N-a-k-1}}\\\nonumber
+    &=\exp\left(\varphi_N\left(\frac{(k+l+1)+\frac{1}{2}}{N+\frac{1}{2}}-1\right)+\varphi_N\left(\frac{(k-l)+\frac{1}{2}}{N+\frac{1}{2}}\right)+\varphi_N\left(\frac{(N-a-k-1)+\frac{1}{2}}{N+\frac{1}{2}}\right)\right.\\\nonumber
+    &\left.-\varphi_N\left(\frac{k+\frac{1}{2}}{N+\frac{1}{2}}\right)-\varphi_N\left(\frac{(N-a+k)+\frac{1}{2}}{N+\frac{1}{2}}\right)-\varphi_N\left(\frac{\frac{1}{2}}{N+\frac{1}{2}}\right)-\log 2\right)\\\nonumber
+    &=\frac{1}{2}e^{\varphi_N(\theta_2+\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}}-1)+\varphi_{N}(\theta_2-\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_N(-\theta_1-\theta_2+1)-\varphi_N(\theta_2)-\varphi_N(1+\theta_2-\theta_1)}\\\nonumber
+    &\cdot e^{(N+\frac{1}{2})(\frac{\pi\sqrt{-1}}{12}-\frac{\pi\sqrt{-1}}{4(N+\frac{1}{2})}+\frac{\pi\sqrt{-1}}{12(N+\frac{1}{2})^2})}(N+\frac{1}{2})^{-\frac{1}{2}}
+\end{aligned}$$ for $N<k+l+1\leq 2N$ and $0<N-a+k<N$,
+
+$$\begin{aligned}
+    &\frac{(t)_k(t)_{N-a+k}}{(t)_{k+l+1}(t)_{k-l}(t)_{N-a-k-1}}\\\nonumber
+    &=\exp\left(\varphi_N\left(\frac{(k+l+1)+\frac{1}{2}}{N+\frac{1}{2}}-1\right)+\varphi_N\left(\frac{(k-l)+\frac{1}{2}}{N+\frac{1}{2}}\right)+\varphi_N\left(\frac{(N-a-k-1)+\frac{1}{2}}{N+\frac{1}{2}}\right)\right.\\\nonumber
+    &\left.-\varphi_N\left(\frac{k+\frac{1}{2}}{N+\frac{1}{2}}\right)-\varphi_N\left(\frac{(N-a+k)+\frac{1}{2}}{N+\frac{1}{2}}-1\right)-\varphi_N\left(\frac{\frac{1}{2}}{N+\frac{1}{2}}\right)\right)\\\nonumber
+    &=e^{\varphi_N(\theta_2+\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}}-1)+\varphi_{N}(\theta_2-\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_N(-\theta_1-\theta_2+1)-\varphi_N(\theta_2)-\varphi_N(\theta_2-\theta_1)}\\\nonumber
+    &\cdot e^{(N+\frac{1}{2})(\frac{\pi\sqrt{-1}}{12}-\frac{\pi\sqrt{-1}}{4(N+\frac{1}{2})}+\frac{\pi\sqrt{-1}}{12(N+\frac{1}{2})^2})}(N+\frac{1}{2})^{-\frac{1}{2}}
+\end{aligned}$$ for $N<k+l+1\leq 2N$ and $N<N-a+k<2N$.
+
+Since $$\begin{aligned}
+     &e^{(N+\frac{1}{2})2\pi\sqrt{-1}\left(\frac{q}{2}(1-\theta_1-\frac{1}{N+\frac{1}{2}})+\frac{\theta_2+\theta_3}{2}-\frac{1}{2(N+\frac{1}{2})}\right)}\\\nonumber
+     &
+     \cdot e^{(N+\frac{1}{2})2\pi\sqrt{-1}\left(\frac{q}{4}(1+\theta_1^2-2\theta_1-\frac{1}{(N+\frac{1}{2})^2})+(p+\frac{1}{2})(\theta_3^2-\frac{1}{4(N+\frac{1}{2})^2})+\theta_2-\theta_2\theta_1+\frac{1}{2}\theta_2^2+\frac{\theta_2}{(N+\frac{1}{2})}-\frac{1}{8(N+\frac{1}{2})^2}\right)}
+     \\\nonumber
+     &\cdot e^{\varphi_N(\theta_2+\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}}-1)+\varphi_{N}(\theta_2-\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_N(-\theta_1-\theta_2+1)-\varphi_N(\theta_2)-\varphi_N(\theta_2-\theta_1)}\\\nonumber
+    &\cdot e^{(N+\frac{1}{2})(\frac{\pi\sqrt{-1}}{12}-\frac{\pi\sqrt{-1}}{4(N+\frac{1}{2})}+\frac{\pi\sqrt{-1}}{12(N+\frac{1}{2})^2})}(N+\frac{1}{2})^{-\frac{1}{2}}\\\nonumber
+    &=(N+\frac{1}{2})^{-\frac{1}{2}}e^{(N+\frac{1}{2})\pi\sqrt{-1}\left(q(\frac{3}{2}-2\theta_1+\frac{\theta_1^2}{2}-\frac{1}{N+\frac{1}{2}}-\frac{1}{2(N+\frac{1}{2})^2})+(2p+1)(\theta_3^2-\frac{1}{4(N+\frac{1}{2})^2})-\theta_1+2\theta_2\theta_1+\theta_2^2+\theta_3+\frac{2\theta_2}{(N+\frac{1}{2})}\right)}\\\nonumber
+    &\cdot e^{(N+\frac{1}{2})\pi\sqrt{-1}(-\frac{5}{4(N+\frac{1}{2})}-\frac{1}{6(N+\frac{1}{2})^2}+\frac{1}{12})},
+\end{aligned}$$ finally, combining above formulas together, we obtain $$\begin{aligned}
+&RT_{r}(M_{p,q})\\\nonumber
+&=\kappa_r'(N+\frac{1}{2})^{-\frac{1}{2}}\sum_{a=-N}^{N-1}\sum_{k=0}^{N-a-1}\sum_{l=0}^k  (-1)^{q(N-1-a)+k+l}\sin\left(\frac{(a+\frac{1}{2})\pi}{N+\frac{1}{2}}\right)\sin\left(\frac{2\pi(l+\frac{1}{2})}{N+\frac{1}{2}}\right)\\\nonumber
+&\cdot t^{q\frac{(N-1-a)(N+1-a)}{4}+(p+\frac{1}{2})l(l+1)-(N-a)(k+\frac{1}{2})+\frac{1}{2}k^2+\frac{3}{2}k+\frac{1}{2}}  \frac{(t)_k(t)_{N-a+k}}{(t)_{k+l+1}(t)_{k-l}(t)_{N-a-k-1}}\\\nonumber
+&=\kappa_r'(N+\frac{1}{2})^{-\frac{1}{2}}\sum_{a=-N}^{N-1}\sum_{k=0}^{N-a-1}\sum_{l=0}^k  \sin\left(\frac{(a+\frac{1}{2})\pi}{N+\frac{1}{2}}\right)\sin\left(\frac{2\pi(l+\frac{1}{2})}{N+\frac{1}{2}}\right)e^{(N+\frac{1}{2})\tilde{V}_N(\frac{a+\frac{1}{2}}{N+\frac{1}{2}},\frac{k+\frac{1}{2}}{N+\frac{1}{2}},\frac{l+\frac{1}{2}}{N+\frac{1}{2}})},
+\end{aligned}$$ where $\tilde{V}_{N}(\theta_1,\theta_2,\theta_3)$ is given by
+
+-   $$\begin{aligned}
+            &\pi\sqrt{-1}\left(q\left(\frac{3}{2}-2\theta_1+\frac{\theta_1^2}{2}-\frac{1}{N+\frac{1}{2}}-\frac{1}{2(N+\frac{1}{2})^2}\right)+(2p+1)\left(\theta_3^2-\frac{1}{4(N+\frac{1}{2})^2}\right)\right.\\\
+        &\left.-\theta_2+2\theta_2\theta_1+\theta_2^2+\theta_3+\frac{2\theta_2}{N+\frac{1}{2}}-\frac{5}{4(N+\frac{1}{2})}-\frac{1}{6(N+\frac{1}{2})^2}+\frac{1}{12}\right)\\\nonumber
+        &+\frac{1}{N+\frac{1}{2}}\left(\varphi_N(\theta_2+\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_{N}(\theta_2-\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_N(-\theta_1-\theta_2+1)\right. \\\nonumber
+        &\left.-\varphi_N(\theta_2)-\varphi_N(1+\theta_2-\theta_1)\right),
+        
+    \end{aligned}$$ when $0<\theta_2+\theta_3<1$ and $0<1-\theta_1+\theta_2<1$;
+
+-   $$\begin{aligned}
+           &\pi\sqrt{-1}\left(q\left(\frac{3}{2}-2\theta_1+\frac{\theta_1^2}{2}-\frac{1}{N+\frac{1}{2}}-\frac{1}{2(N+\frac{1}{2})^2}\right)+(2p+1)\left(\theta_3^2-\frac{1}{4(N+\frac{1}{2})^2}\right)\right.\\\
+        &\left.-\theta_2+2\theta_2\theta_1+\theta_2^2+\theta_3+\frac{2\theta_2}{N+\frac{1}{2}}-\frac{5}{4(N+\frac{1}{2})}-\frac{1}{6(N+\frac{1}{2})^2}+\frac{1}{12}\right)\\\nonumber
+        &+\frac{1}{N+\frac{1}{2}}\left(\varphi_N(\theta_2+\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_{N}(\theta_2-\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_N(-\theta_1-\theta_2+1)-\varphi_N(\theta_2)\right.\\\nonumber
+        &\left.-\varphi_N(\theta_2-\theta_1)\right),
+        
+    \end{aligned}$$ when $0<\theta_2+\theta_3<1$ and $1<1-\theta_1+\theta_2<2$;
+
+-   $$\begin{aligned}
+           &\pi\sqrt{-1}\left(q\left(\frac{3}{2}-2\theta_1+\frac{\theta_1^2}{2}-\frac{1}{N+\frac{1}{2}}-\frac{1}{2(N+\frac{1}{2})^2}\right)+(2p+1)\left(\theta_3^2-\frac{1}{4(N+\frac{1}{2})^2}\right)\right.\\\
+        &\left.-\theta_2+2\theta_2\theta_1+\theta_2^2+\theta_3+\frac{2\theta_2}{N+\frac{1}{2}}-\frac{5}{4(N+\frac{1}{2})}-\frac{1}{6(N+\frac{1}{2})^2}+\frac{1}{12}\right)\\\nonumber
+        &+\frac{1}{N+\frac{1}{2}}\left(\varphi_N(\theta_2+\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}}-1)+\varphi_{N}(\theta_2-\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})+\varphi_N(-\theta_1-\theta_2+1)\right.\\\nonumber
+        &\left.-\varphi_N(\theta_2)-\varphi_N(1+\theta_2-\theta_1)\right),
+        
+    \end{aligned}$$ when $1<\theta_2+\theta_3<2$ and $0<1-\theta_1+\theta_2<1$;
+
+-   $$\begin{aligned}
+           &\pi\sqrt{-1}\left(q\left(\frac{3}{2}-2\theta_1+\frac{\theta_1^2}{2}-\frac{1}{N+\frac{1}{2}}-\frac{1}{2(N+\frac{1}{2})^2}\right)+(2p+1)\left(\theta_3^2-\frac{1}{4(N+\frac{1}{2})^2}\right)\right.\\\
+        &\left.-\theta_2+2\theta_2\theta_1+\theta_2^2+\theta_3+\frac{2\theta_2}{N+\frac{1}{2}}-\frac{5}{4(N+\frac{1}{2})}-\frac{1}{6(N+\frac{1}{2})^2}+\frac{1}{12}\right)\\\nonumber
+        &+\frac{1}{N+\frac{1}{2}}\left(\varphi_N(t+u+\frac{\frac{1}{2}}{N+\frac{1}{2}}-1)+\varphi_{N}(\theta_2-\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})\right.\\\nonumber
+        &\left.+\varphi_N(-\theta_1-\theta_2+1)-\varphi_N(\theta_2)-\varphi_N(\theta_2-\theta_1)\right),
+        
+    \end{aligned}$$ when $1<\theta_2+\theta_3<2$ and $1<1-\theta_1+\theta_2<2$.
+
+By Lemma [\[lemma-varphixi2\]](#lemma-varphixi2){reference-type="ref" reference="lemma-varphixi2"}, we have $$\begin{aligned}
+    &\varphi_N(1-\theta_1-\theta_2)=-\varphi(\theta_1+\theta_2)\\\nonumber
+    &+2\pi \sqrt{-1}\left(-\frac{2N+1}{4}\left((\theta_1+\theta_2)^2-(\theta_2+\theta_1)+\frac{1}{6}\right)+\frac{1}{12(2N+1)}\right)
+\end{aligned}$$ since $\theta_1+\theta_2<1$.
+
+Hence $$\begin{aligned}
+&\tilde{V}_{N}(\theta_1,\theta_2,\theta_3)\\\nonumber
+&=\pi\sqrt{-1}\left(q\left(\frac{3}{2}-2\theta_1+\frac{\theta_1^2}{2}-\frac{1}{N+\frac{1}{2}}-\frac{1}{2(N+\frac{1}{2})^2}\right)+(2p+1)\left(\theta_3^2-\frac{1}{4(N+\frac{1}{2})^2}\right)\right.\\\nonumber
+    &\left.-\theta_1^2+\theta_1+\theta_3+\frac{2\theta_2}{N+\frac{1}{2}}-\frac{5}{4(N+\frac{1}{2})}-\frac{1}{12(N+\frac{1}{2})^2}-\frac{1}{12}\right)\\\nonumber
+    &+\frac{1}{N+\frac{1}{2}}\left(\varphi_N(\theta_2+\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}}-1)+\varphi_{N}(\theta_2-\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})\right.\\\nonumber
+    &\left.-\varphi_N(\theta_2+\theta_1)-\varphi_N(\theta_2)-\varphi_N(\theta_2-\theta_1)\right),    
+\end{aligned}$$ for $1<\theta_2+\theta_3<2$ and $1<1-\theta_1+\theta_2<2$, and we can write the expression for $\tilde{V}_N$ for other cases similarly.
+
+Then we introduce the functions $$\begin{aligned}
+ \label{formula-VN}
+   &\hat{V}_N(\theta_1,\theta_2,\theta_3)\\\nonumber
+   &=\tilde{V}_N(\theta_1,\theta_2,\theta_3)+2(q-1)\pi\sqrt{-1}\left(\theta_1-\frac{\frac{1}{2}}{N+\frac{1}{2}}\right)-2\pi\sqrt{-1}\left(\theta_2-\frac{\frac{1}{2}}{N+\frac{1}{2}}\right)\\\nonumber
+   &-2(p+2)\pi\sqrt{-1}\left(\theta_3-\frac{\frac{1}{2}}{N+\frac{1}{2}}\right) \\\nonumber
+   &=\pi\sqrt{-1}\left(\left(\frac{q}{2}-1\right)\theta_1^2-\theta_1+(2p+1)\theta_3^2-(2p+3)\theta_3-2\theta_2+\frac{3}{2}q-\frac{1}{12}\right.\\\nonumber
+   &\left.+\frac{2\theta_2}{N+\frac{1}{2}}+\frac{p-2q+\frac{9}{4}}{N+\frac{1}{2}}-\frac{3(p+q)+2}{6(N+\frac{1}{2})^2}\right)\\\nonumber
+    &+\frac{1}{N+\frac{1}{2}}\left(\varphi_N(\theta_2+\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}}-1)+\varphi_{N}(\theta_2-\theta_3+\frac{\frac{1}{2}}{N+\frac{1}{2}})\right.\\\nonumber
+    &\left.-\varphi_N(\theta_2+\theta_1)-\varphi_N(\theta_2)-\varphi_N(\theta_2-\theta_1)\right) 
+\end{aligned}$$ and $$\begin{aligned}
+&\hat{V}(\theta_1,\theta_2,\theta_3)\\\nonumber
+&=\lim_{N\rightarrow \infty}V_{N}(\theta_1,\theta_2,\theta_3)\\\nonumber
+&=\pi\sqrt{-1}\left(\left(\frac{q}{2}-1\right)\theta_1^2-\theta_1+(2p+1)\theta_3^2-(2p+3)\theta_3-2\theta_2+\frac{3}{2}q-\frac{1}{12}\right)\\\nonumber
+   &+\frac{1}{2\pi\sqrt{-1}}\left(\text{Li}_2(e^{2\pi\sqrt{-1}(\theta_2+\theta_3)})+\text{Li}_2(e^{2\pi\sqrt{-1}(\theta_2-\theta_3)})-\text{Li}_2(e^{2\pi\sqrt{-1}(\theta_2+\theta_1)})\right.\\\nonumber
+&\left.-\text{Li}_2(e^{2\pi\sqrt{-1}\theta_2})-\text{Li}_2(e^{2\pi\sqrt{-1}(\theta_2-\theta_1)})\right)  
+\end{aligned}$$ for $1<\theta_2+\theta_3<2$ and $1<1-\theta_1+\theta_2<2$, and one can write the expression for $V_N$ and $V$ for other cases similarly.
+
+::: proposition
+[]{#Prop-RTN label="Prop-RTN"} Let $r=2N+1$ with $N\geq 1$, the $r$-th Reshetikhin-Turaev invariant of $M_{p,q}$ can be written as $$\begin{aligned}
+   RT_{r}(M_{p,q})=\kappa_r'(N+\frac{1}{2})^{-\frac{1}{2}}\sum_{a=0}^{N-1}\sum_{k=0}^{N-a-1}\sum_{l=0}^kg_{N}(a,k,l)   
+  
+\end{aligned}$$ with $$\begin{aligned}
+ g_{N}(a,k,l)= \sin\left(\frac{(a+\frac{1}{2})\pi}{N+\frac{1}{2}}\right)\sin\left(\frac{2\pi(l+\frac{1}{2})}{N+\frac{1}{2}}\right)e^{(N+\frac{1}{2})\hat{V}_N\left(\frac{a+\frac{1}{2}}{N+\frac{1}{2}},\frac{k+\frac{1}{2}}{N+\frac{1}{2}},\frac{l+\frac{1}{2}}{N+\frac{1}{2}}\right)}, 
+\end{aligned}$$ where the function $\hat{V}_N(\theta_1,\theta_2,\theta_3)$ is given by formula ([\[formula-VN\]](#formula-VN){reference-type="ref" reference="formula-VN"}), and $\kappa'_r$ is given by ([\[formula-kappa\'r\]](#formula-kappa'r){reference-type="ref" reference="formula-kappa'r"}).
+:::

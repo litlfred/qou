@@ -1,0 +1,539 @@
+\section{Constructing Moduli Space of Broken Maps } \label{sec:modcons}
+
+In this section, we describe the construction of moduli space of broken strips and broken discs as zero sets of a Fredholm map between Banach manifolds. From this section on wards, we will focus on the broken manifold obtained from performing a neck-stretching along the boundary of a mutation neighborhood of a manifold $M$.
+
+We recall the notation from  Subsection \ref{subsec:sftsetup} and the spaces which show up in the broken manifold after stretching along the boundary of a mutation neighborhood. The contact hypersurface $Z$ is $S^{2n-1}$ and the Legendrian $\Lambda$ is diffeomorphic to a disjoint union of two $n-1$ dimensional tori.  The broken manifold (as defined in Subsection \ref{subsub:brokenstuff}) produced by neck-stretching across the contact sphere $S^{2n-1}$ is the collection,
+$$\widehat M_{in}=\C^n,\;  \R \times S^{2n-1}  , \dots , \widehat M_{out} $$
+The broken mutable Lagrangian is the collection,
+$$\widehat L_{in}=T_\gamma,\; \R \times (T_+^{n-1} \sqcup T_-^{n-1})  , \dots , \widehat L_{out} $$
+where the curve $\gamma$ is a cylindrical extension of the curve determining $L$ in the mutation neighborhood. The analysis for setting up moduli spaces of broken discs with boundary on Lagrangian that do not meet the neck has already been developed in the literature, see e.g. \cite{floerflip}. In the situation where the Lagrangian does not meet the neck, the puncture nodes in the broken maps occur only in the interior. In this subsection,  we will deal with the case of broken discs and strips where the puncture nodes occur only on the boundary and refer the reader to \cite{floerflip} for the case of the interior puncture nodes.
+
+
+\subsection{Constructing Map spaces}
+
+We describe a Banach manifold structure on a subspace of continuous maps from punctured discs to $\C^n$ or $\C^n\setminus \{0\}$ with boundary lying on the torus-segment Lagrangian. We aim to construct a Banach manifold such that any punctured holomorphic disc with boundary on the relevant torus segments. We construct the space of maps by starting with continuous maps that are trivial strips over Reeb chords near the punctures. Then we use geodesic flow exponentiation to define open sets around the maps with trivial strips.
+\subsubsection{Continuous maps with strip-like ends}
+We begin by describing the cylindrical structure on the domain near punctures.  Let $P$ be a finite set of points on the boundary of the unit disc, let $\Sigma_P$ denote the punctured disc with punctures at $P$ i.e. $\Sigma_P = \mathbb{D}\setminus P$. From now on, we assume that the set of punctures $P$ has $l$ elements and is equal to $\{p_i\}_{i=0}^l$. We label each puncture with either $+$ or $-$. We  fix holomorphic charts $\phi^\pm_p$ on $U_p$, a neighborhood of the puncture $p$, the sign $\pm$ is determined by  the label of the puncture $p$, such that for a large $M_p >0$ we have the following biholomorphisms $$\phi_{p,+}:U_p\setminus\{p\}\to [M_p,\infty) \times [0,1]$$
+$$\phi_{p,-}:U_p\setminus\{p\}\to (-\infty, -M_p] \times [0,1],$$
+and  $\phi_{p,\pm}$ maps the boundary of $\Sigma$ to $\R \times \{0,1\}$.We can compose this chart map with the biholomorphic map $z \mapsto e^{\mp 2\pi z}$ from the strip $\R \times \interval$ to the punctured upper half-space $\mathbb{H}\setminus\{0\}$ to get new charts $e^{\mp2\pi\phi^\pm_p}$, assume that these charts extend to charts from $U_p$ where $p \mapsto 0$. The neighborhoods $U_p$ under the coordinates $\phi^\pm_p$ are hereafter  called strip-like ends of $\Sigma$ .  We fix a volume form $d\Sigma$ on $\Sigma$ that is equal to the translation invariant volume form  $dsdt$ on the strip-like ends. 
+
+We define a space of continuous maps that are equal to trivial strips near boundary punctures.  The set of continuous maps from $\Sigma$ to $\C^n \setminus \{0\} \iso \R \times S^{2n-1}$ that satisfies the Lagrangian boundary condition on $T_{\gamma}$ where $\gamma$ is cylindrical path and restrict to trivial Reeb-strips, $$u_c \left( s,t \right) =\left(k\frac{\pi}{n}s,c_{R}(kt) \right),$$
+ on the  strip-like ends for non-zero integer $k$ and Reeb chord $c_{R}$ on $S^{2n-1}$ with boundary on the Legendrian tori is denoted as $\Maps^0(\Sigma_P, \C^n , T_\gamma)$ i.e. 
+ 
+ \begin{align*}
+     \Maps^0 (\Sigma_P, \C^n , T_\gamma) := \bigg\{ u \in C^0(\Sigma, \C^n, T_\gamma )\bigg| &\exists  K,m,R_u > 0 , c_R  \text{ a Reeb chord}, \\&\text{ such that } \\& u\of \phi_{p,\pm}\inv(s,t)=Ke^{\pm ms}c_{R}(\pm mt) \\&\text{ for  } |s|>R_u  \bigg\}.
+ \end{align*}
+
+
+We now define the weighted Sobolev space that we will use to define charts for our space of maps. Let $\beta \in C^\infty(\R)$ be a non-decreasing bump function that is  equal to $1$ on $[1,\infty)$ and equal to $0$ on $(-\infty,0]$. First we describe a function $\kappa^\delta_\Sigma$ that we use to define weighted Sobolev norm. 
+
+\begin{align*}
+    &\kappa^\delta_\Sigma : \Sigma \to \R \\
+    &\kappa^\delta_\Sigma (z) = 0 \text{ for  } z \in \Sigma \setminus \cup_i U_{p_i} \\
+    &\kappa^\delta_\Sigma (\phi_p \inv (s,t)) = \delta \beta( | s |- M_p) \text{ for } p  \in  P
+\end{align*}
+
+
+\noindent Let $g_{cyl}$ be the cylindrical metric  on $\C^n$ obtained from renormalizing  the standard Riemannian metric $g_0$ i.e. $g_{cyl} = g_0/r^2$. Let $u \in \Maps^0_{strip}(\Sigma_P, \C^n , T_\gamma)$, we define the $\delta$ weighted  Sobolev space of sections of $T\C^n$ over $u$  with boundary on $TT_\gamma$  and $k,p$ regularity with $kp>2$ using the cylindrical metric $g_{cyl}$ as follows,
+
+\begin{align*}
+    W^{k,p,\delta} (u^*T\C^n,\del  u^* TT_\gamma) = \bigg \{ \eta \in W_{loc}^{k,p} (u^*T\C^n)   \bigg |  \int (&|\eta|^p + |\nabla \eta |^p  + \\&\dots |\nabla^k \eta|^p)e^{p\kappa^\delta_\Sigma}  ) d\Sigma<\infty,\quad\\ & \eta(z) \in TT_\gamma \text{ for } z\in \del \Sigma  \bigg\}.
+\end{align*}
+where   $W^{k,p}_{loc}$ denotes the set of sections of  the bundle $u^*T\C^n$ that under any trivialization of the bundle $u^*T\C^n$ is in the Sobolev space $W^{k,p}_{loc}$ and  $\nabla$ refers to the weak derivative taken with respect to the standard connection on $T\C^n$. We define the $(k,p,\delta)$ norm on sections as follows $$\| \eta \|_{k,p,\delta}^p = \int (|\eta|^p + |\nabla \eta |^p  + \dots |\nabla^k \eta|^p)e^{p\kappa^\delta_\Sigma}  ) d\Sigma.$$
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Choosing domain dependent metric}
+We will use geodesic exponentiation to obtain a sub-basis for the topology on the subspace of maps. We now choose a metric to exponentiate along to construct the sub-basis. See section 5.3 \cite{Mauthesis} for an expansive treatment of domain-dependent metric in the context of quilts. Let $RM(\C^n)$ be the space of metrics on $\C^n$. For a map $u \in \Maps^0_{strip}(\Sigma_P, \C^n , T_\gamma)$  choose $R>0$ such that $u(s,t)$ is cylindrical on all the strip-like ends and the image of $[R,\infty) \times \interval$ lies the cylindrical end $T_\gamma \setminus B_R(0)$ of the Lagrangian $T_\gamma$. Choose a metric $g_u$ on $\C^n$ that makes the Lagrangian $T_\gamma \cap B_{R+1}(0)$ totally geodesic. We can choose such a metric from corollary $3.2$ in \cite{abouzaidExotic} or by using Frauenfelder's metric, see Lemma 4.3.4 \cite{jholobook}. Let $g^u_\Sigma$ be a domain dependent choice of metrics that interpolates between the metric $g_u$   and standard cylindrical metric $g_{cyl} = g_0/r^2$ where $r$ is the radial coordinate as follows 
+
+\begin{align*}
+    &g^u_\Sigma : \Sigma \to RM(\C^n) \\
+    &g^u_\Sigma(z) = g_u \text{ for  } z \in \Sigma \setminus \cup_i U_{p_i} \\
+    &g^u_\Sigma(\phi_p \inv (s,t)) = (1-\beta(|s| -M_p))g_u +  \beta(|s| -M_p)g_{cyl} \text{ for  } p \in P
+\end{align*}
+
+
+\noindent For $\eta \in W^{k,p,\delta} (u^*T\C^n,\del  u^* TT_\gamma)$  we can define the map   $\exp _u (\eta)$ where we do point-wise geodesic exponentiation with respect to the domain dependent metric $g^u_\Sigma$  $$\exp _u (\eta) (z) = \exp_{u(z),g(z)}(\eta (z))$$
+\noindent Notice that our choice of domain-dependent metric ensures that $\exp_u \eta $ is a map that preserves the Lagrangian boundary condition $ \exp_u \eta (\del \Sigma) \in T_\gamma$. This follows from the fact that on the cylindrical end of $T_\gamma$, the Legendrian tori $T_+,T_-$ are totally geodesic with the round metric on the sphere.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Constructing the set of $W^{k,p,\delta}$ maps }
+We now describe the set of maps on which we will give a Banach manifold structure. We define the map space $\Maps^{k,p}_\delta(\Sigma_P, \C^n , T_\gamma)$ from which we cut out the moduli space of parameterized holomorphic maps as follows
+
+\begin{align*}
+    \Maps^{k,p}_\delta (\Sigma_P, \C^n, T_\gamma) := 
+\bigg\{ \exp_{u_0} (X) \bigg|\,u_0 \in &\Maps^0_{strip}(\Sigma_P, \C^n , T_\gamma),\,\,\\& X\in  W^{k,p,\delta}({u_0}^* T\C^n,\partial {u_0}^* TT_\gamma) \bigg\}.
+\end{align*} 
+
+
+We show that any finite Hofer energy punctured holomorphic disc with correct boundary conditions lie in the space of maps we defined above. Let $u$ be a holomorphic map  on the domain $\Sigma$ to $\C^n$ with boundary lying on the torus segment $T_\gamma$ which has finite Hofer energy $E_H(u) < \infty$. We have exponential convergence (of decay rate at least $e^{-\pi s/n}$) to trivial Reeb strips on its strip-like ends from Theorem \ref{thm:exponential conv}. Thus, for some $u_0 \in \Maps^0_{strip}(\Sigma_P, \C^n , T_\gamma)$, we have $u=\exp_{u_0}(\eta)$ for some $\eta \in W^{k,p,\delta} (u^*T\C^n,\del  u^* TT_\gamma)$ where the geodesic exponentiation is done based on the domain dependent metric $g^{u_0}_\Sigma$  and $ \delta  < \frac{\pi}{n} $. This proves that any finite Hofer energy punctured disc $u$ can be written as a geodesic exponentiation of a $W^{k,p,\delta}$ vector field on a map $u^0 \in \Maps^0_{strip}(\Sigma_P, \C^n , T_\gamma) $.
+
+\subsubsection{ Banach structure on $\Maps^{k,p}_\delta(\Sigma_P, \C^n , T_\gamma)$}
+
+
+Now we will describe a Banach manifold structure on the space of maps by prescribing a generating set for an atlas. Let $V$ be the space generated by the  $n-1$ independent vector fields $X_i$ on $\C^n$  where  
+$$X_k(z_1,\dots,z_n) = (0,\dots,0, iz_k,0,\dots,-i z_n).$$
+Let $H$ be the one dimensional space generated by the radial vector field $X_{rad}$ on $\C^n$ where $\beta$ is the bump function we chose before and $R>0$ such that $T_\gamma \setminus B_R(0)$ is cylindrical.
+$$X_{rad}(z)= \beta(|z|/R)z $$
+\noindent We can check that all the sections of  $V \oplus H$ restrict to vector fields on $T_\gamma$ under the restriction of the sections to $T_\gamma$. Given a puncture $p$ and a map $u\in \Maps^{k,p}_\delta(\Sigma_P, \C^n , T_\gamma)$, for any $v\in V $, $h\in H$ we can define $v_{u,p},h_{u,p}$ to be sections on $u^*T\C^n$ which are equal to $v,h$ in the strip-like end at $p$ and extended to $\Sigma$  by a bump function so that $v_{u,p},h_{u,p} = 0$ on $\Sigma \setminus U_p$
+
+
+We describe charts on the space of maps now. The Banach charts on $\Maps^{k,p}_\delta(\Sigma_P, \C^n , T_\gamma)$ at $u_0 \in \Maps^0_{strip}(\Sigma_P, \C^n , T_\gamma)$  are given by geodesic exponentiation 
+
+\begin{equation}\label{eq:chartbanach}
+    \exp_{u_0} :  W^{k,p,\delta}({u_0}^* T\C^n,\partial {u_0}^* TT_\gamma) \oplus V^{|P|} \oplus H^{|P|}  \to \Maps^{k,p}_\delta(\Sigma_P, \C^n , T_\gamma)
+\end{equation}
+
+\begin{equation*}
+    \exp_{u_0} (w,v_1,\dots,v_l,h_1,\dots,h_l) =  \exp_{u_0}(w + \sum_{i=1}^l(v_{i,u_0,p_i} + h_{i,u_0,p_i}))
+\end{equation*}
+
+
+\noindent Since the choice of domain dependent metric differ only on compact sets, the transition functions
+$\exp_{u_0} \of \exp_{u_1} \inv$ are maps between the corresponding Banach tangent spaces at $u_0,u_1 \in \Maps^0_{strip}(\Sigma_P, \C^n , T_\gamma)$. Following the traditional notation in treatments of $J-$holomorphic maps, we denote $\Maps^{k,p}_\delta(\Sigma_P, \C^n , T_\gamma)$ as $\mathcal{B}$ when we want to view it as a Banach manifold.
+
+We describe a Banach bundle over the space of maps, and show that the space of holomorphic maps can be viewed as the zero locus of a certain section of the bundle. Define a Banach vector bundle  $\mathcal{E} $ over $\mathcal{B}$ as follows $$\mathcal{E} = \bigcup _{u\in \mathcal{B}} \,\; W^{k-1,p,\delta}(\overline{\operatorname{Hom}}(T\Sigma,u^*T\C^n))    $$
+where $W^{k-1,p,\delta}(\overline{\operatorname{Hom}}(T\Sigma,u^*T\C^n))$ is the space of $(0,1)$ forms on $\Sigma$ with finite weighted  norm as before, 
+$$\| \eta \|_{k-1,p,\delta}^p = \int (|\eta|^p + |\nabla \eta |^p  + \dots |\nabla^{k-1} \eta|^p)e^{p\kappa^\delta_\Sigma}  ) d\Sigma.$$
+
+\noindent The almost complex structure $J$ is chosen such that in the cylindrical ends (ie. away from a compact domain) $J = J_0$ where $J_0$ is the standard complex structure on $\C^n$. The moduli space of $J$-holomorphic punctured discs is then given by the zero set of the Cauchy-Riemann $\mathcal{F}$ section. $$\mathcal{F}: \mathcal{B} \to \mathcal{E},\; \,\; u\mapsto \delbar_J(u)$$ 
+
+\noindent The moduli space of parameterized punctured discs  $\widetilde{\mathcal{M}}_\Sigma$ can be described as $\mathcal{F}\inv (0)$ and the unparameterized moduli space $\mathcal{M}_\Sigma$ is the quotient $\widetilde{\mathcal{M}}_\Sigma/\text{Aut}(\Sigma)$. Note that the automorphism group of $\Sigma$ can be atmost 2 dimensional and the infinitesimal action of it on $\widetilde{\mathcal{M}_\Sigma}$ lies in the Banach tangent space.
+
+\subsubsection{Space of Reeb chords and evaluation at puncture}
+
+From Section \ref{sec:SFT} we know the asymptotic behavior near a puncture of a holomorphic map with finite Hofer energy is modelled on a Reeb chords or orbit. Thus, one can define an evaluation map at the punctures, taking values in the space of Reeb chords or orbits. We denote the space of Reeb chords in $Z$ with boundary on $\Lambda$ by $\mathcal{RC }(Z,\Lambda)$. In our situation where the Reeb field is generated by a free $S^1$ action on $Z$, the space $\mathcal{RC}$ can be easily described in terms of the length of the Reeb chord and starting point of the Reeb chord. Note that the length of the Reeb chord has to be an integer multiple of $\pi/n$ and the starting point has to lie on either of the two $T^{n-1}$ in $\Lambda$, thus $$\mathcal{RC}=\Bigg \{ \bigg(\frac{l\pi}{n},w \bigg) \bigg|\quad l\in \mathbb{N}, w\in \Lambda \Bigg \}.$$
+
+\noindent We can define evaluation at puncture $p \in P$ from the moduli space of parameterized holomorphic discs to $S^{2n-1}$ that maps the holomorphic map $u$ which is asymptotic to the Reeb chord $\zeta$ at the puncture to the starting point $\zeta(0)$ of the Reeb chord.
+
+\begin{equation*}
+    ev_p : \widetilde{\mathcal{M}}_\Sigma \to \mathcal{RC},\qquad ev_p(u) = (k\pi/n,\zeta_p(0))
+\end{equation*}
+Here $\zeta_p$ is the Reeb chord of length $k\pi/n$ such that $u$ is asymptotic to the trivial strip over $\zeta_p$ at the strip-like end at $p$. We can also define an evaluation map on the charts of the Banach space of maps $\mathcal{B}$ as given in (\ref{eq:chartbanach}) as follows
+
+\begin{align*}
+    &EV_p : W^{k,p,\delta}({u_0}^* T\C^n,\partial {u_0}^* TT_\gamma) \oplus V^{|P|} \oplus H^{|P|} \to V\\
+    &EV_p(w,v_1,\dots,v_p,\dots,v_l,h_1,\dots,h_p,\dots,h_l)=(v_p).
+    \end{align*}
+
+\begin{remark}
+We can similarly define a space $\Maps^{k,p}_{\delta}(\Sigma_P, \R \times Z , \R \times \Lambda) $ for cylindrical manifolds and $\Maps^{k,p}_{\delta}(\Sigma_P, \widehat W , \widehat L)$ for manifolds with cylindrical ends over contact hypersurface. 
+\end{remark}
+
+
+\subsection{Linearization of Cauchy-Riemann map and Fredholmness}
+
+In this subsection we show that the Cauchy-Riemann section  is a Fredholm map near zeroes of the section . More precise, we show that the vertical derivative at the points where the section $\mathcal{F}$ vanishes is a Fredholm map of Banach spaces. One can linearize $\mathcal{F}$ at a holomorphic map $u$ as usual in the classical case by choosing a connection on $\mathcal{E}$ induced from a connection  ( cylindrical in our case ) on $\C^n$. We assume that the punctures are non-removable ie. the punctures go to Reeb chords. Since we have already established exponential convergence to Reeb-strips, we first obtain an expression for linearization for trivial Reeb strip, $u_\gamma$ where $\gamma$ is a Reeb chord in $S^{2n-1}$. This will be an analog of  Proposition 6.24 in \cite{wendlSFT}.
+
+Before we begin stating the result, we will define some terms so that it is consistent with Wendl's proposition. Wendl deals with a  cylindrical manifold $\R \times Z$ with framed Hamiltonian structure $(\omega,\lambda)$. In our case, the cylindrical manifold is obtained by setting $M=S^{2n-1}$ and the Hamiltonian structure is given the standard contact form $\lambda = \lambda_0$ on the sphere, where $\xi$ is the contact structure. The Reeb field on $M$ is denoted by $R$. $T(\R \times Z) $ is split into direct sum of two bundles, $\epsilon \oplus \xi$  where $\epsilon$ is generated by $R$ and $T\R$. $\Lambda$ denotes the two disjoint Legendrian tori, which gives the boundary condition. One can define an asymptotic operator associated to Reeb chords with boundary on $\Lambda$  similar to asymptotics associated to Reeb orbits. For Reeb orbits of period $T$, the asymptotic operator $A_\gamma$ was given by the hessian of the action functional $A_\omega$ on the space of loops in  $M$, see section 6.1.1 page 149 in \cite{wendlSFT} . In the case of Reeb chords, $T$ denotes the `length' of the Reeb chords, i.e. $\int \gamma^* \lambda$ . The connection $\nabla$ is chosen to be the Levi-Civita connection induced from the round metric on the sphere. We define  $A_\gamma  : \Gamma (\gamma^* \xi, T_{\gamma(0)}\Lambda, T_{\gamma(1)}\Lambda) \to \Gamma (\gamma^* \xi)  $  as follows $$A_\gamma(\eta)=-J(\nabla_t \eta - T\nabla_\eta R).$$ 
+We can ignore the projection $\pi_\xi$ as we are working with a contact hypersurface instead of stable Hamiltonian structure.
+
+
+\begin{lemma}[Analog of Wendl's 6.24 \cite{wendlSFT}] \label{analog}
+The $J$-holomorphic trivial strip $u_\gamma : \R\times \interval \to \R \times Z$ for a Reeb chord $\gamma$ of length $T$ with boundary on $\R \times \Lambda$ has linearized Cauchy-Riemann operator $D_{u_\gamma}:\Gamma(u_\gamma^* \epsilon \oplus u_\gamma^* \xi  , \del u_\gamma^* T\R \oplus \del u_\gamma^* T \Lambda ) \to \Omega^{0,1}(\R \times \interval,u_\gamma^* \epsilon \oplus u_\gamma^* \xi )$ given by   $$(D_{u_\gamma} \eta) \del _s =\del_s \eta + 
+\begin{bmatrix} i\del_t  & 0\\0&-A_\gamma \end{bmatrix} \eta.$$
+
+\end{lemma}
+
+\begin{proof}
+Wendl's proof by splitting $D_{u_\gamma}$ into blocks given by the splitting $\epsilon \oplus \xi$ works the same  almost verbatim. The main difference is the boundary condition. Define the contact action functional for chords with boundary on  Legendrian $\Lambda$ by $\mathcal{A}_\lambda (\gamma) = \int \gamma^* \lambda $. We can check that the Hessian of this action functional, computed at a Reeb chord $\gamma$ with respect to $\nabla $, is  $-J(\nabla_t \eta - T\nabla_\eta R)$ where $T$ is the length of $\gamma$. The only change from Wendl's proof is that we are dealing with chords instead of orbits, so anytime an integration by parts is used one might encounter boundary terms $\lambda(\eta(1)) - \lambda(\eta(0))$ but they vanish since $\eta(0),\eta(1)$ lie on $ T\Lambda \hookrightarrow \ker \lambda $.
+\end{proof}
+
+\noindent Consider the Banach space isomorphisms $E: W^{k,p,\delta} \to W^{k,p}$ given by $f \mapsto e^{\delta s} f$. We have a slight abuse of notation here since $E$ is a map from  $W^{1,p,\delta}(u_\gamma^* T(\R \times Z),\del u_\gamma^* T(\R \times \Lambda))$ and of $\Omega^{0,1}_\delta (u_\gamma ^* T(\R \times Z))$. With this notation, we have 
+$$ED_{u_\gamma}E\inv  = \del_s + \begin{bmatrix} i\del_t + \delta  & 0\\0&-A_\gamma + \delta \end{bmatrix}. $$
+
+\begin{lemma} \label{lemma:goodeigen}
+For any $   \delta < \frac{\pi}{n}$, we have that $ED_{u_\gamma}E\inv$ is an operator of form $\del_s + A$ on the space of Sobolev sections $W^{1,p}$ where $A$ is a  non-degenerate operator.
+\end{lemma}
+
+
+
+
+\begin{proof}
+
+Note that the eigenvalues of $\begin{bmatrix} i\del_t & 0\\0&-A_\gamma \end{bmatrix} $ are given by eigenvalue of $i\del_t$ and $A_\gamma$. The eigenvalue of $A_\gamma$ can be explicitly computed to be $\pi \Z$, notice since we are dealing with  a Morse-Bott situation, 0 is actually an eigenvalue. Note that $A_\gamma = -J \hat {\nabla}_t$ where $\hat{\nabla}$ is the unique symplectic connection for which parallel transport is the linearized Reeb flow , (see \cite{wendlSFT} ), we have that eigenfunction for eigenvalue $\lambda_e$ is given by $ \eta(t) = (\phi_t)_*(e^{i\lambda_e t} \eta(0 ))$ where $\phi$ is the Reeb flow. Thus, to satisfy the boundary conditions we need $\lambda_e \in \pi \Z$. The eigenvalues for $i\del_t$ are a subset of $\frac{\pi}{n}\Z$ since the smallest $\theta$ such that $e^{i\theta} \Lambda \hookrightarrow \Lambda$ is $\frac{\pi}{n}$. Thus, if we choose $\delta$ in the given range, we'd have $ED_{u_\gamma}E\inv = \del_s + A$ where $A$ is non-degenerate.
+\end{proof}
+
+
+
+\subsubsection{Trivialization }
+
+We explain the choice of trivialization of bundles we make to simplify the linearization. We need a suitable trivialization under which $D_u$ is equal to  $\del_s + J_0 \del_t + A$. We state a version of Lemma 2.13 in \cite{schm} to create a family of trivialization, we leave the proof to the reader since it follows the idea in \cite{schm} very closely.
+
+\begin{lemma} \label{lemma:trvlz}
+For any $p\in L_Y$ and $R>0$, there is an open set $V$ in $Y$ such that the tangent bundle of $U = \pi_Y \inv (V)$ has the following trivialization 
+$$\Phi : [R,\infty) \times \interval \times U \times \R^{2n} \to T(\R \times Z)|_{U},\qquad (s,t,q,v) \mapsto \Phi_{s,t}(q)v\in T_q(\R \times Z)$$ that satisfies the following
+\begin{itemize}
+    \item $J_{s,t}(q)\Phi_{s,t}(q) = \Phi_{s,t}J_0$,
+    \item $g_{cyl} (\Phi_{s,t}(q)\xi ,\Phi_{s,t}(q)\xi' ) = g_0(\xi,\xi')$,
+    \item $T_q (\R \times \Lambda) = \phi_{s,k} (\R ^n \oplus \{0 \})  $ for all $q\in \R \times \Lambda \cap U$ and $k=0,1$,
+\end{itemize}
+
+where $J_0,g_0$ are the standard complex structure and metric on $\R^{2n}$.
+\end{lemma}
+
+
+\noindent  Recall when $B$ is a subbundle of $A$ and $D$ is a subbundle of $C$, then by an isomorphism $F$ of the pair of bundles $F: (A,B) \to (C,D)$ refers to an isomorphism $F:A\to C$ such that its restriction to $B$ is an isomorphism to $D$.  Let's assume that $\pi_Y \of u$ converges to the point $p \in L_Y \sub Y$ as $s\to \infty$ and choose a trivialization $\Phi$ as in Lemma \ref{lemma:trvlz}. Using this trivialization, we get the following trivialization of the pair of bundles over the half-strip $[R,\infty)\times \interval$.
+\begin{align} \label{eq:pullbacktriv}
+    \wt \Phi : (u^*T(\R \times Z), \del u^* T(\R \times \Lambda)|_{[R,\infty)\times \interval}) \to ([R,\infty)\times \interval \times \R^{2n} ,\\ [R,\infty)\times \{0,1\} \times (\R^n \oplus \{0\}) ) \nonumber
+\end{align}
+
+
+
+
+
+
+\subsubsection{Semi-Fredholmness by local estimates on cylindrical ends}\label{subsec:semifred}
+
+We call a linear map \textit{semi-fredholm} if it has closed image and finite dimensional cokernel. In this subsection, we will show that the linearization of the Cauchy-Riemann section is semi-fredholm by combining local estimates.
+
+We will use the following classic lemma to prove that $D_u$ is Fredholm. This has been proved in numerous textbooks and classical references, e.g., see Lemma A.1.1 in \cite{jholobook}. 
+\begin{lemma}\label{semilemma}
+If $K$ is a compact operator, $T$ is a bounded operator, and $c>0$ such that $$|x| \leq c(|Tx| + |Kx|)$$ then $T$ is semi-fredholm.
+\end{lemma}
+
+
+\noindent If  the domain surface $\Sigma$  were compact, by standard methods in \cite{jholobook} one has  $$|x|_{W^{1,p}(\Sigma)}\leq c(|D_ux|_{L^p(\Sigma)} + |x|_{L^p(\Sigma)}),$$ and by the Rellich-Kondrachov compact embedding, we have that the inclusion of $W^{1,p} (\Sigma) \hookrightarrow L^p (\Sigma)$ is compact for a compact surface $\Sigma$ with smooth boundary. The argument goes as follows, from Proposition B.4.9 in \cite{jholobook} we have a local estimate, which is then patched together for a finite covering of the compact space. This argument is outlined in Proposition C.2.1 in the book.
+
+ The above approach will not directly work when the domain is non-compact. We will show a stronger inequality in the cylindrical setting to avoid the use of Rellich-Kondrachov theorem. We will use the approach in \cite{wendlSFT} to show a similar inequality for a compact subdomain away from the strips and on the strips we will show there is an inequality  (see  Lemma 4.18 in \cite{wendlSFT})  
+            \begin{equation} 
+            ||x||_{W^{1,p}(\R \times [0,1])}\leq c||D_ux||_{L^p(\R \times [0,1])}. \tag{$*$}\label{eq:star}
+            \end{equation}
+
+We will use the above estimate while patching local estimates on the whole domain. From exponential convergence we have that $u$ converges to $u_\gamma$ on a strip-like end of $\Sigma$ for some Reeb chord $\gamma$, thus it is enough to prove \eqref{eq:star} for $u_\gamma$. To verify this, notice trivialization of $u_{\gamma} ^* T(\R \times Z)$ and $u ^* T(\R \times Z)$ as given in equation (\ref{eq:pullbacktriv}) is exponentially close to each other that contributes to an exponentially decaying $0^{th}$ order term. Now we use the fact that for $\delta >0$, the inclusion $W^{k,p,\delta} \to  W^{k-1,p}$ is a compact operator and thus the difference is a compact operator.
+
+
+\begin{lemma}\label{operatoriso}
+Let $D=\del_s+  A(t)$ be an operator of functions over the strip such that $A$ is an unbounded self-adjoint and non-degenerate operator on $W^{1,p} ([0,1],\C^n,\R^{n-1}\times\lambda_e \R_+, \R^{n-1}\times \R_+)$, the Sobolev space of functions from $\interval$ to $\C^n$ with given boundary conditions.Then $$D:W^{1,p} (\R \times \interval,\C^n ,\R^{n-1}\times \lambda_e \R_+ ,\R^{n-1}\times \R_+  ) \to L^{p} (\R \times \interval,\C^n)$$ is an isomorphism. Here $\lambda_e = e^{k\pi/n}$ for some k. 
+\end{lemma}
+
+\begin{proof}
+This lemma is a version of Proposition 8.7.3 in \cite{AudDam}, Lemma 2.4 in \cite{salamonNotes}. The proof runs the same, except the fact in the special case of $p=2$  we'd need to use density of $W^{1,p} (\C^n ,\R^{n-1}\times \lambda \R_+ ,\R^{n-1}\times \R_+  ) $ inside $ L^{2} (\C^n)$. To verify the density, one can check that $C^3$ maps from $\interval$ to $\C^n$ with the boundary conditions on the given subspaces is dense in $C^3(\interval,\C^n)$ with $L^2$ metric. Clearly we have that $C^3(\interval,\C^n)$ is a subspace of $W^{1,p}$, thus density of smooth functions in $L^2$ gives us that $W^{1,p} (\C^n ,\R^{n-1}\times \lambda \R_+ ,\R^{n-1}\times \R_+  ) $ is dense inside $ L^{2} (\C^n)$. The other steps in the proof of the lemma run exactly the same as that given in the references.
+\end{proof}
+
+
+\begin{cor}
+\label{corr:localcylestimate}
+If $u$ is a holomorphic strip $\R \times \interval \to \R \times Z$ that exponentially converges to a trivial Reeb strip $u_\gamma$  (i.e., satisfies equation (\ref{expConv})), we have that for all $ \delta< \frac{\pi}{n}$ there exists a $c>0$ such that $$||x||_{W^{1,p,\delta}(\R \times [0,1])}\leq c||D_ux||_{L^{p,\delta}(\R \times [0,1])}.$$
+\end{cor}
+
+\begin{proof}
+Note that since we have exponential convergence, it is enough to check for $D_{u_\gamma}$. We know $u_\gamma(s,t) = e^{\frac{k\pi}{n}(s+it)}(x_1,\dots,x_n)$ for some $x_i \in \C$ such that $x_1.x_2.\dots x_n \in \R_{\neq 0}$. Thus, we see that we can choose a trivialization of $u_\gamma ^* T\C^n$ such that we get the boundary conditions as in Lemma \ref{operatoriso}. Now letting $D'=ED_{u_\gamma}E\inv$, from Lemma \ref{lemma:goodeigen} we have that $D'$ fits the hypothesis in Lemma \ref{operatoriso}. The fact that $D'$ is an isomorphism gives us the inequality 
+$$||\eta ||_{W^{1,p}} \leq c || D' \eta ||_{L^p}. $$
+Since $E$ is a Banach isomorphism from the weighted to unweighted Sobolev spaces, we have 
+$$ ||\eta ||_{W^{1,p,\delta}} \leq c || D_{u_\gamma} \eta ||_{L^{p,\delta}}, $$ for a possibly different c.
+\end{proof}
+
+
+\begin{Theorem}
+$D_{u}: T_u\mathcal{B} \to \mathcal{E}_u $ is semi-fredholm when $ \delta < \frac{\pi}{n}$.
+\end{Theorem}
+
+\begin{proof}
+Define $E$ similar to as \ref{lemma:goodeigen}, but now on the whole $\Sigma$ by choosing a function $f:\Sigma \to \R$ that is equal to $\delta s$ on the strip-like ends and zero away from them. This defines  Banach isomorphism
+
+\begin{equation}
+\label{eqn:soboleviso}
+E : W^{k,p,\delta}(u^* T\C^n) \rightarrow W^{k,p}(u^* T\C^n)\quad \eta \mapsto e^f\eta.
+\end{equation}
+
+\noindent As $E$ is a Banach isomorphism, it is enough to show $D' := ED_uE\inv$ is semi-fredholm. 
+
+
+\noindent We will use Lemma \ref{semilemma} to claim semi-fredholmness. We can cover $\Sigma$ by finitely many charts away from the punctures, call the union of the charts $\Sigma_o$ and use Proposition B.4.9 (ii) in \cite{jholobook} to get an estimate 
+$$ ||\eta|| \leq c(||\eta||_{W^{0,p}(\Sigma_o)}|| +  ||D_u (\eta) ||_{W^{0,p}(\Sigma_o)}) \qquad  \forall \eta \in W^{1,p}_0((\Sigma_o)). $$
+This gives us an estimate for $D'$ as on $\Sigma_o$ for a possibly different $c$, $E$ is just multiplying by a bounded function.\begin{equation}
+    ||\eta|| \leq c(||\eta||_{W^{0,p}(\Sigma_o)}|| +  ||D' (\eta) ||_{W^{0,p}(\Sigma_o)}) \qquad  \forall \eta \in W^{1,p}_0((\Sigma_o)) \tag{*}. \label{1}
+\end{equation} 
+
+We can assume that the strip-like ends in $\Sigma \setminus \Sigma_o$ under the fixed chart is biholomorphic to $[R+1,\infty) \times \interval$  for some fixed $R>0$. For each puncture $q$, let $Z^q_R$ be the strip neighborhood $[R,\infty) \times \interval$ under the fixed charts. 
+From  Corollary \ref{corr:localcylestimate} and Lemma \ref{lemma:goodeigen} we see that 
+\begin{equation}
+    ||\eta||_{W^{1,p}(\R \times [0,1])}\leq c_q'||D' \eta||_{L^p(\R \times [0,1])} \qquad \forall \eta \in W^{1,p}_0(Z^q_R). \tag{**} \label{2}
+\end{equation}
+
+
+Here we extend $\eta $ by 0 over the whole strip before using Corollary \ref{corr:localcylestimate}. 
+Now a standard argument of using bump function $\beta$ that is supported on  $\Sigma_o$, for any $\eta \in W^{1,p}(u^* T(\R \times Z))$, we can use $\beta\eta$ and $(1-\beta)\eta$  in inequalities (\ref{1}) and (\ref{2}) to get 
+
+\begin{equation*}
+    || \eta||_ {W^{1,p}(\Sigma)} \leq C (||D'(\eta)||_{W^{0,p}(\Sigma)} + ||\eta ||_{W^{1,p}(\Sigma_o)}).
+\end{equation*}
+Since  closure of $\Sigma_o$ in $\Sigma$ is compact with smooth boundary, we have that $W^{1,p} (\Sigma_o) \hookrightarrow W^{0,p} (\Sigma_o)$ is a compact inclusion, thus the restriction on $\eta \mapsto \eta|_{\Sigma_o}$ is a compact operator. Thus, from \ref{semilemma} we have that $D'$ is semi-fredholm, thus $D_u$ is semi-fredholm for the given choice of $\delta$
+
+
+
+\end{proof}
+
+\subsubsection{Fredholmness}
+In this subsection, we will use a similar argument as in subsection \ref{subsec:semifred} to the adjoint of the linearization and show that the linearization is a Fredholm operator. To show that $D_u$ is Fredholm, it is enough to show $D'= ED_uE\inv$ is Fredholm where $E$ is from equation (\ref{eqn:soboleviso}). We use a Hermitian structure $h_{cyl}= g_{cyl}(\_ ,\_) -ig_{cyl}(\_\,,J\_)$ on $T\C^n$ induced from the cylindrical metric $g_{cyl}$ to define a formal adjoint $D'^*$ and show that $D'^*$ is semi-Fredholm. This idea has been widely used in literature to prove Fredholmness of Cauchy-Riemann operators coming out of linearizations, see \cite{wendlSFT}, \cite{jholobook} . We define $C _{0,T_\gamma}( \ol{\operatorname{Hom}}( T\Sigma,u^*T\C^n))$ as follows
+
+\begin{align*}
+    C _{0,T_\gamma}( \ol{\operatorname{Hom}}(T\Sigma,u^*T\C^n)) = \bigg\{\alpha \in  \Gamma (\ol{\operatorname{Hom}}(T\Sigma,u^*T\C^n)) \bigg|  \quad \alpha( T \del \Sigma ) \sub \del u ^* T T_\gamma , \\ \alpha \text { has compact support}\bigg\}.
+\end{align*}
+
+
+
+We use a Hermitian metric to define an adjoint of the linearization. The Hermitian structure $h_{cyl}$ induces an $L^2$ pairing on the space of sections $\Gamma(u^*T\C^n,\del u^*T\C^n)$ and $\Gamma (\ol{\operatorname{Hom}}(T\Sigma,u^*T\C^n))$ given by the  following integral,
+
+\begin{align*}
+    \langle \eta,\xi \rangle := \text{Re} \int_\Sigma \langle \eta, \xi \rangle d\Sigma.
+\end{align*}
+
+\noindent The formal adjoint $D'^*$ is defined as the unique operator on the Sobolev completion $W^{k,p}_{T_\gamma} ( u^*\ol {\operatorname{Hom}}(T\Sigma,u^*T\C^n))$  that satisfies 
+
+\begin{align*}
+    \langle D' \alpha , \beta   \rangle = \langle \alpha , D'^* \beta \rangle \text {   for all  } &\alpha \in \Gamma_0(u^*T\C^n,\del u^*T\C^n), \\ 
+    &\beta \in C _{0,T_\gamma}(\ol {\operatorname{Hom}}(T\Sigma,u^*T\C^n)).
+\end{align*}
+
+\begin{remark}
+ Another approach of defining the formal adjoint $D_u^* $ is to define it on the space $W^{k,p,-\delta}_{T_\gamma} ( \ol{\operatorname{Hom}}(T\Sigma,u^*T\C^n)),$  where we use a negative Sobolev weight. We can define isomorphism $E'$ similar to $E,$ but with negative weight such that $E'D_u^* E'^{-1} = D'^*$.
+\end{remark}
+
+\noindent We can follow the same proof as in Proposition 4.32 in \cite{wendlSFT} to get the following lemma about $D_u^*$ which finishes the proof of Fredholmness.
+
+\begin{lemma}
+$D'^*$ is semi-Fredholm and we have the following isomorphisms $\coker D' = \ker D'^*$, $\coker D'^* = \ker D' $.
+\end{lemma}
+
+\noindent As a corollary of the previous lemma, we have the following theorem
+
+\begin{Theorem} \label{thm:fred}
+The linearization $D_u$ of $\delbar$ at any holomorphic map $u$ is a Fredholm operator.
+\end{Theorem}
+
+
+\subsection{Domain dependent almost complex structure on the outside}\label{subsec:domdepacs}
+
+In practice, attaining regularity is not possible without allowing some perturbation of the almost complex structure. We see in Section \ref{sec:reg} that one can achieve regularity for the inside and neck pieces for the standard almost complex structure $J_0$ in $\C^n$, but we need to allow perturbations of the outside piece to achieve regularity of the broken discs and strips. We use the perturbation scheme of domain dependent almost complex structures as initially done in \cite{CMtrans} for the closed case and later generalized to the open case with boundary on Lagrangian in \cite{charwoodstabil},\cite{floerflip}.
+
+\noindent Notice that we can identify $ \widehat M_{out}$ with $M\setminus \{ p \}$ where $p$ is the center of the Darboux ball whose boundary we do the neck-stretching along. In this identification, $\widehat L_{out}$ corresponds to the Lagrangian $T_\gamma$ obtained by the path $\gamma(t) = t$ for $t\in (-\e,\e) \setminus \{ 0 \}$ in the Darboux chart. The closure of $\widehat L_{out}$ is denoted by $L_{sing}$, it is locally a conical manifold, a double cone over the torus $T^{n-1}$ given by $T_{(-\e,\e)}$. We need to stabilize the components in the outside domain that have boundary lying on $L_{out}$ so that we can use domain dependent perturbation on these components. We follow the scheme of obtaining marking by intersection with a divisor similar to \cite{CMtrans}  ,\cite{charwoodstabil},\cite{floerflip}. The treatment of domain dependent perturbations presented here assumes some familiarity with the idea of coherent choice of perturbation datum for Lagrangian intersection Floer theory as done in \cite{charwoodstabil}.
+
+\begin{defn}[Nice divisor adapted to $J$] \label{def:nicediv}
+Given a pair of transversely intersecting Lagrangians $L,K$ of $M$ such that $L$ is locally mutable, a submanifold $D$ of codimension two that doesn't intersect $L \cup K \cup L_{sing}$ is called a `` nice divisor" if $M\setminus D$ is exact symplectic manifold and $L_{sing}$ is exact Lagrangian in $M\setminus D$. A nice divisor is called ``adapted" to a complex structure $J$ if the tangent bundle $TD$ is preserved by $J$.
+\end{defn}
+
+\begin{remark}
+In $\P^n$, if we take $L$ to be the Clifford torus, then there is a nice divisor $D$ adapted to the standard $J_0$. We can take two fibers of the map $\pi_m$ in some standard affine chart of $\P^n$ and perturb them to obtain a smooth divisor in $\P^n$ that makes $L$ exact in the complement.         
+\end{remark}
+
+From now on, we assume the existence of a nice divisor. If $u$ is a non-constant holomorphic map in the outside piece with boundary on $L_{out}$, then it must intersect $D$ as otherwise exactness of $L_{sing}$ would imply symplectic area of $u$ is 0. 
+
+\begin{defn}[Stabilizing combinatorial type of broken strip]\label{defn:stabilz}
+Given combinatorial type $\Gamma$ of a broken strip where each outside piece stable, we define the stabilized type $\Gamma^{st}$ by forgetting all the inner and neck pieces that are not stable along with the puncture nodes that connected the unstable piece to a stable piece. If removing such a puncture node renders an otherwise stable piece into an unstable piece, we forget that as well in $\Gamma^{st}$. 
+\end{defn}
+
+
+We will now define the notion of domain dependent perturbation of almost complex structure. Let $k\geq 1$ be natural number, we define $\M_k$ to be the moduli space of nodal strips with $k$ interior markings  and $\mathcal{U}_k \xrightarrow{\wt\pi_{k}} \M_{k}$ is the universal moduli space whose fiber over $S\in \M_{k}$ is the set by pairs $(S,z)$ where $z$ is a point on $S$.  Fix an almost complex structure $ J_{fix}$ on $\widehat M_{out}$ that is equal to the cylindrical almost complex structure $J_0$ on the cylindrical end.  We denote $\mathcal{J}_{cyl}(\widehat M_{out},\omega,D)$ to be the set of almost complex structures satisfying the following,
+\begin{enumerate}
+    \item compatible with the symplectic form $\omega$ on $\widehat M_{out}$,
+    \item equal to $J_0$ in the cylindrical end of $\widehat M_{out}$,
+    \item $D$ is adapted to it.
+\end{enumerate} 
+
+\begin{defn}[Domain dependent almost complex structure for broken strips ]\label{def:domdepstruc}
+A domain dependent almost complex structure of a strip with $k$ interior markings is a smooth map $\mathcal{J}_k: \mathcal{U}_k \to \mathcal{J}_{cyl}(\widehat M_{out},\omega,D)$ such that near the puncture nodes, the almost complex structure is equal to $J_{fix}$, i.e., there is an open neighborhood $U$ in $\mathcal{U}_k$ near the locus of puncture nodes such that  $\mathcal{J}_k (w) = J_{fix}$ for $w\in U$ . 
+\end{defn}
+
+Now we describe glued domain dependent almost complex structures. Given a domain dependent almost complex structure on a stabilized combinatorial type of broken strip $\Gamma^{st}$ such that near the puncture nodes $J_k$ is equal to $J_{fix}$, we can get a domain dependent almost complex structure on the unbroken  $T$-stretched manifold $M^T$ by gluing $\Gamma^{st}$ at the puncture nodes. A $T - $ gluing across a puncture node, where $T>0$ is a parameter measuring the ``length of the neck", is obtained by identifying truncated neighborhoods (deleting $(T,\infty)$ from positive end and $(-\infty,-T)$ from negative end) of the strip/cylinder coordinate near both sides of the puncture node.
+
+We explain the gluing construction more precisely in the case where there is only one puncture node, the general construction is done similarly. Fix a parameter $T>0$. For now, assume $\Gamma^{st}$ has only one puncture node. Let $\Gamma^{st}_{gl}$ be the combinatorial type obtained from gluing $\Gamma^{st}$ across a puncture node. Thus, the moduli space of strips $\M_{\Gamma^{st}}$ of type $\Gamma^{st}$ is a lower dimensional stratum in the compactified moduli space $\ol \M_{\Gamma^{st}_{gl}}$. We can choose a chart of $\M_{\Gamma^{st}_{gl}}$ near the strata $\M_{\Gamma^{st}}$ by first choosing strip-like parameterization of the surfaces near the puncture node and then gluing the strips.  Let $[\mathfrak{s}]\in \M_{\Gamma^{st}}$, and $C_{[\mathfrak{s}]}$ be the surface corresponding to $[\mathfrak{s}]$, let $p$ be the puncture node lying between the components $C_-,C_+$ of $C_{[\mathfrak{s}]}$. Let $U_\pm$ be  neighborhoods of $p$ in $C_\pm$ such that we can choose charts  $\phi_\pm$ on them as follows,
+\begin{align*}
+    \phi_-:U_- \to (-\infty ,0] \times \interval \\
+    \phi_+:U_+ \to [0,\infty) \times \interval.
+\end{align*}
+\noindent We obtain the $T$-glued domain $C^T_{[\mathfrak{s}]}$ by removing $\phi_-((-\infty,-T)\times \interval)$  and $\phi_+((T,\infty)\times \interval) $ from the components $C_\pm$ of $C_{[\mathfrak{s}]}$ and gluing the remnant surfaces by the relation $(s,t) \sim (s+T,t)$.
+
+We now explain how to glue domain dependent almost complex structure. Since $\J_k$ is equal to $J_{fix}$ near the locus of the puncture node, we can choose a strip-like neighborhood $U_\pm$ as above, so that $\J_k$ restricted to $U_\pm$ is equal $J_{fix}$. Recall that we do not perturb the almost complex structure on the inside piece. We define a $T$-glued domain dependent almost complex structure $J^T_k$ on the $T$-glued domain $C^T_{[\mathfrak{s}]}$,by defining $J^T_k(z)$ to be equal to the $T$-stretched almost complex structure in the $J^T$ neck region for all $z$ and for $z\in$ the neck region of the domain, define $J_k(z)$ to be equal to $J_{fix}$ on the outside piece of $M^T$.
+
+\begin{align*}
+    J^T_k(z) (m) =
+    \begin{cases}
+     J_{in}  & \text{ if }  m \in M_{in} \\
+     J_0        & \text{ if } m \in [-T\times T] \times Z\\
+     J_k(z)(m)    & \text { if } m\in M_{out}
+     \end{cases}
+\end{align*}
+
+
+
+
+\begin{defn}[Coherent families of perturbation data for broken strips]
+We call the set $\mathcal{P} = \{ \mathcal{J}_k \}_{k=0}^{\infty}$ where in the $k=0$ case we choose a $t-$dependent complex structure, and for $k\geq 1$,  $\mathcal{J}_k$ is a domain dependent almost complex structure for broken strips, a coherent family of perturbation data if the $T-$glued domain dependent almost complex structure forms a coherent family of perturbation for $M^T$ as in Definition 3.14 in \cite{charwoodstabil} for any $T>0$.
+
+\end{defn}
+
+
+
+We explain the notion of being holomorphic with respect to a domain dependent choice of almost complex structure.  A map $u:S_{\textbf{z}} \to \widehat M_{out}$  from a $k$ marked strip $S_{\textbf{z}} = \wt \pi_k \inv ([\textbf{z}]) $ where $[\textbf{z}] \in \M_k$ is called  holomorphic with respect to the domain dependent almost complex structure $\mathcal{J}$ if it satisfies the domain-dependent version of the Cauchy Riemann equation 
+\begin{equation*}
+   du(z) + J_k(z,(u(z)))\of du \of j_S = 0 .
+\end{equation*}
+
+
+We show that the expected dimension of moduli space of holomorphic maps with respect to domain-dependent choice almost complex structure is equal to domain independent almost complex structure if we add divisor constraints on the marked point.   Recall, for a fixed complex structure, the expected dimension of the moduli space of discs or strips at a point $u$ depended solely on the topological data of $u$. We show that the same formula can be applied to the moduli space of holomorphic broken strips with respect to a domain-dependent perturbation, with the constraint of interior markings mapping to a nice divisor $D$. Denote the expected dimension of the moduli space at a point $u$ that is of homology class $A$ by $\vir(A)$.  Given a (relative) homology class $A$, the expected dimension of $\M^{dd}_{k}(\widehat M_{out})$ at any element $u$ that is of the homology class $A$ is $\vir([A])+\dim(\M_k)$. If we require the interior markings to map to $D$ to create a constrained moduli space $\M_{k}(M_{out},D)$, the expected dimension of $\M_{k}(M_{out},D)$ at $u$ of homology class $A$ is $\vir(A)+\dim(\M_k) - 2k = \vir(A)$. 
+
+
+
+
+
+We introduce some notations regarding domain-dependent almost complex structures. We denote the space of coherent perturbation datum $\mathcal{P}(\widehat M_{out},D)$.  We denote the moduli space of $J_k$ holomorphic maps by $\M^{dd}_k(\widehat M_{out})$ and the moduli space of broken strips or broken disc with point constraint with respect to a coherent perturbation data $\mathcal{P}$ with the constraint of interior markings going to a nice divisor $D$ as $\M_{Br,\mathcal{P}}(\mathbb{M}[l],\mathbb{L}[l],K,D)$ and $\M_{Br,\mathcal{P}}(\mathbb{M}[l],\mathbb{L}[l],p,D)$. In Subsection \ref{subsec:outtran} we prove that there is a choice of a coherent perturbation datum that makes every rigid broken strip and rigid broken strip with point constraint regular.
+
+
+
+
+\subsection{Moduli space of broken strips and discs}
+Now that we have dealt with the analysis of the space of maps and Fredholmness of the Cauchy-Riemann section, we will now describe the moduli space of broken discs and strips.  In this subsection, we will explain how the moduli space of broken strips and discs can be cut out as a zero set of a section similar to moduli space of holomorphic discs. Let $\mathfrak{D}=(\mathbb{D}_{in},\mathbb{D}_1,\dots , \mathbb{D}_{out})$ denote a nodal disk or strip with $l$ levels as in Definition \ref{def:brokdisc}. We denote the set of nodes between two components of different label as $P$ and for all $p\in P $, we use $p^\pm$ to view $p$ as an element in the two different components. The moduli space of broken strips with domain $\mathfrak{D}$ to the broken manifold $\mathbb{M}[l]$ with boundary on the broken Lagrangian $\mathbb{L}[l]$ and some boundary components of $\mathbb{D}_{out}$ mapping to the compact Lagrangian $K$ in $\mathbb{M}_{out}$ is denoted by $\mathcal{M}_{Br}(\mathfrak{D},\mathbb{M}[l],\mathbb{L}[l],K)$ and the moduli space of broken discs is denoted by $\mathcal{M}_{Br}(\mathfrak{D},\mathbb{M}[l],\mathbb{L}[l])$.
+
+Assume $\Gamma^{st}$ is the stabilized combinatorial type of the domain, see Definition \ref{defn:stabilz}. Let $C$ denote the nodal surface $\mathfrak{D}$ regarded as a smooth surface with nodes. Let $C_i$ denote the surface in $i\th$ piece of the domain, $\mathbb D_i$, regarded as a smooth manifold with nodes and let 
+\begin{equation}\label{domtriv}
+    \mathcal{U}_{\Gamma^{st}_i,l} \to \mathcal{M}_{\Gamma^{st}_i,l} \times C_i
+\end{equation}
+be a collection of trivializations, indexed by $l$, of the universal moduli space of Riemann surfaces of type $\Gamma$. These trivializations induce a family of complex structures on the fibers of the universal space \begin{equation}\label{domchoice}
+    \M_{\Gamma^{st}_i,l} \to \mathcal{J}(C_i), \quad m\to j(m).
+\end{equation}
+\noindent Let $\mathcal{E}_i$ denote the bundle of $(0,1)$ forms over the space $\Maps^{k,p}_{\delta}(\Sigma_i,M_i ,\R \times \Lambda)$, i.e. the fiber $\mathcal{E}_i$ over a map $u_i$ is 
+\begin{equation*}
+    \mathcal{E}_{i,u}:= W^{k,p}_\delta ( \overline{\operatorname{Hom}}( T\Sigma_i,u_i^*TM_i)).
+\end{equation*}
+In the equation below, the notation $\M_\Gamma$ stands for a choice of a complex structure on the domain $C$ induced from the choice of trivializations we made in equations (\ref{domtriv}) and (\ref{domchoice}).  We can define the following map by setting it to $\delbar_{j(m),J_i}$ on each component 
+
+\begin{align*}
+    \delbar^{strip}_{Br} :\mathcal{M}_{\Gamma^{st}}\times \Maps^{k,p}_{\delta}(\Sigma_{in},\C^n,T_\gamma) \times \Maps^{k,p}_{\delta}(\Sigma_1,\R \times S^{2n-1},\R \times \Lambda)\\ \times \dots \Maps^{k,p}_{\delta}(\Sigma_{out},\widehat M_{out},L_{out},K)\to &\mathcal{E}_{in}\times \dots \mathcal{E}_{out}.
+\end{align*}
+
+
+
+\noindent Note that the linearization of $\delbar_{Br}$ is a Fredholm operator because we know that linearization of $\delbar$ is Fredholm from Theorem \ref{thm:fred} and $\mathcal{M}_\Gamma$ is finite dimensional. The set $\delbar_{Br} \inv (0)$ consists of holomorphic maps from a broken domain $\mathfrak{D}$  of combinatorial type $\Gamma$ with the correct Lagrangian boundary condition but at the nodes between two levels, the maps might not match up correctly ie. they might be asymptotic to different Reeb chords. Recall that we have an evaluation map at each puncture to the space of Reeb chords $\mathcal{RC}$, we collect such evaluation maps to create a ``big evaluation map"
+
+\begin{equation*}
+    ev_{big}: {\delbar^{strip}_{Br}}\inv (0) \to ( \mathcal{RC}_- \times \mathcal{RC}_+ )^{|P|}.
+\end{equation*}
+
+\noindent The space $ev_{big}\inv (\Delta^{|P|})$ where $\Delta$ is the diagonal manifold in $\mathcal{RC}_- \times \mathcal{RC}_+$ is precisely the moduli space $\mathcal{M}_{Br}(\Gamma,\mathbb{M}[l],\mathbb{L}[l],K)$. The linearization of $ev_{big}$ is obtained by collecting $EV_{-} \times EV_{+}$ for each node between two levels. 
+
+Similar to broken strips, we can obtain the moduli space of broken discs as a fiber product obtained from a zero section. The only modification we need to do is define the following $\delbar$ section :
+
+\begin{align*}
+    \delbar^{disc}_{Br} :\mathcal{M}_{\Gamma}\times \Maps^{k,p}_{\delta}(\Sigma_{in},\C^n,T_\gamma) \times \Maps^{k,p}_{\delta}(\Sigma_1,\R \times S^{2n-1},\R \times \Lambda)\\ \times \dots \Maps^{k,p}_{\delta}(\Sigma_{out},\widehat M_{out},L_{out})  \to &\mathcal{E}_{in}\times \dots \mathcal{E}_{out}
+\end{align*}
+where $\mathcal{E}_{out}$ is the obvious bundle of $(0,1)$-forms over the space $\Maps^{k,p}_{\delta}(\Sigma_{out},\widehat M_{out},L_{out})$.
+
+We collect some definitions below. In all the following definitions, we work with a fixed combinatorial type $\Gamma$ and the domains are allowed to vary only in the strata of the associahedra of the moduli of domains determined by the type $\Gamma$.
+
+\begin{defn}[Regular broken strip] \label{defn:brokendiscreg}
+We call a broken strip $\mathfrak{u} \in \mathcal{M}_{Br}(\Gamma,\mathbb{M}[l],\mathbb{L}[l],K) $ regular if the linearizations of $\delbar_{Br}$ is surjective at $\mathfrak{u}$  and the evaluation map, $ev_{big}$,  is transverse to the diagonal $\Delta^{|P|}$.
+
+\end{defn}
+
+
+\noindent Assuming transversality of everything, the expected dimension of the moduli spaces $\mathcal{M}_{Br}(\Gamma,\mathbb{M}[l],\mathbb{L}[l],K)$ and $\mathcal{M}_{Br}(\Gamma,\mathbb{M}[l],\mathbb{L}[l])$ at a point $\mathfrak{u}$ is $\Ind(\wt D_\mathfrak{u}) - |P|(n-1)$ where $\wt D_u$ is 
+the linearization of $\delbar^{strip}_{Br}$ or $\delbar^{disc}_{Br}$ at $\mathfrak{(D,u)}$. 
+
+\begin{defn}[Virtual dimension]
+For a broken strip or a disc $(\mathfrak{u,D})$, the virtual dimension is given by the formula $$\vir (\mathfrak{u}) = \Ind(\wt D_\mathfrak{u}) - |P|(n-1) - \dim \aut(\mathfrak{D}).$$
+\end{defn}
+
+
+\begin{defn}[Rigid broken strip]
+We call a broken strip $\mathfrak{u}$ rigid if $\vir(\mathfrak{u}) = 0$. The moduli space of rigid strips is denoted as $\mathcal{M}_{Br}(\Gamma,\mathbb{M}[l],\mathbb{L}[l],K)_0$.
+
+\end{defn}
+
+
+\begin{defn}[High-index broken strip]
+We call a broken strip $\mathfrak{u}$ high-index if $\vir(\mathfrak{u}) > 0$.
+
+\end{defn}
+
+
+In the unbroken compact case, the moduli space Maslov 2 discs with a boundary constraint of passing through a fixed point is of expected dimension $0$ and contributes to the disc potential. We define a notion of point constrained broken disc so that we can later compare counts of Maslov two discs passing through a point of the unbroken Lagrangian $L$ with the broken Lagrangian $\mathbb{L}$. Given a point $p\in L_{in}$ that is not in the cylindrical part of the Lagrangian $L_{in}$, we define the notion of broken disc with point constraint, the choice of $p$ is not relevant since $L$ is assumed to be connected.
+
+\begin{defn}[Broken disc with point constraint]
+Let $q$ be a boundary marking on one of the interior pieces of  $\mathfrak{D}$ which gives us an evaluation map $ev_q$ with values in $L_{in}$. The moduli space of broken discs with point constraint, $\M_{Br}(\mathbb M [l],\mathbb L [l],p)$ is defined as the space $ev_{q}\inv (p)$.
+
+\end{defn}
+
+
+\noindent The expected dimension of the point constrained moduli space at a broken disc $(\mathfrak{u,D})$ is $\vir(\mathfrak{u}) - n$.
+
+ \begin{defn}
+  
+ We say a broken disc with point constraint is \textit{rigid} if $\vir(\mathfrak{u}) = n$.
+
+ \end{defn}
+
+
+\begin{defn}[Compactified energy]
+For a $two$-level broken strip $(\mathfrak{u,D})= ((u_{in},u_{out}), \mathfrak D)$. The compactified energy $E_c(\mathfrak{u})$ is defined as 
+$$E_c(\mathfrak u) = E(\bar u_{in}) + E(\bar u_{out})$$
+where $\bar{u} _{in} , \bar u_{out}$ are compactifications obtained by extending the maps to the compactified targets $\bar M_{in}, \bar M _{out}$ obtained by symplectic cutting.
+\end{defn}
+
+
+
+
+
+\subsection{Gluing broken things }
+
+In this section, we will discuss how to obtain unbroken maps from broken discs and strip. Given a broken strip or disc $(\mathfrak{u,D})$ in a broken manifold $\mathbb{M}$ with boundary on broken (or unbroken) Lagrangians $\mathbb L$ or $K$, we want to investigate if this broken map can be viewed as a limit of a neck-stretching process. More precisely, by ``gluing" a broken disc $\mathfrak{u}$,  we mean obtaining a family of holomorphic discs $u_\tau$ in a $\tau-$stretched manifold $M^\tau$ such that $u_\tau \to \mathfrak{u}$ as $\tau \to \infty$.  We state some gluing results from \cite{palmerwoodwardsurg} without proof, since there is no change in the proof for the case of broken strips. We refer the reader to the op. cit. article for the case of broken discs. The gluing method in \cite{palmerwoodwardsurg} is similar to gluing discs with Lagrangian boundary conditions, as done in \cite{abouzaidExotic}.
+
+We recall the notation relevant to gluing from \cite{palmerwoodwardsurg}.  Given a nodal domain $\mathfrak{S}$ with $k$ puncture nodes, and gluing parameters $\delta_1,\dots \delta_k > 0$, we define the glued domain $S^{\delta_1,\dots,\delta_k}$ by gluing strip-like $(-L,L) \times \R \times \interval$ or cylindrical necks $(-L,L) \times S^1$ of length $2L =|\ln (\delta_i)|$ at the i$^{th}$ puncture node. Given a $l-$broken manifold $\mathbb M$, we can similarly define $M_{\delta_1,\dots,\delta_l}$ by gluing necks of appropriate length. Note that the notational convention we choose is to use subscript to denote parameters of a glued broken manifold while superscript is used to denote a stretched manifold.
+
+\begin{Theorem}[Theorem 6.8 in \cite{palmerwoodwardsurg}]\label{thm:glu} 
+Let $(\mathfrak{u,S})$ be a regular broken strip with boundary on broken Lagrangian $L$ and unbroken Lagrangian $K$ with limiting eigenvalues $\lambda_1,\dots\lambda_k$ of Reeb chords or orbits. Then, there exists  $\delta_0$ such that for each $\delta \in (0,\delta_0)$ there exists an unbroken strip $u_\delta: S^{\delta/\lambda_1,\dots,\delta/\lambda_k} \to M_\delta$ such that $u_\delta \to \mathfrak{u}$ as $\delta \to 0$.
+\end{Theorem}
+
+
+
+The theorem above shows that for any regular broken strip, we can view it as an SFT-limit of unbroken strips. InSection \ref{sec:reg} we show that we can choose a perturbation scheme on the outer pieces of broken strips so that any broken strip is regular. From now on, until the end of this subsection, we assume that all broken strips are either high index or regular.  The next theorem we state from \cite{palmerwoodwardsurg} shows that once we arrange regularity for all the broken strips, the gluing construction in Theorem \ref{thm:glu} would provide bijection of set of rigid broken disc with rigid unbroken disc in a neck-stretched manifold. 
+ 
+In Section \ref{sec:classif}, from the proof of Lemma \ref{lemm:2level} we see that any regular rigid broken strip has at most two levels. Hence, in the following theorem we consider only two level rigid strips. We use $\mathcal{M}^{<E}_{Br}(\Gamma,\mathbb{M}[l],\mathbb{L}[l],K)_0$ to denote the moduli space of rigid broken strips with compactified energy at most $E$ and constraint of interior markings going to the nice divisor $D$  and $\mathcal M ^{E_{Hor}< E}(M_{\delta},L,K,D)_0$ to denote rigid holomorphic strips with respect to the glued coherent perturbation data with boundary on $L,K$ with  at most $E$ horizontal energy and constraint of interior markings going to $D$. 
+
+\begin{Theorem}[Theorem 6.10 in \cite{palmerwoodwardsurg}] \label{thm:bij}
+Let $\mathbb M$ be a broken symplectic manifold with 2 levels and $\mathbb L$  be a broken Lagrangian with 2 levels .  Assume perturbations have been chosen so that every strip in $\mathcal{M}^{<E}_{Br,\mathcal{P}}(\mathbb{M}[l],\mathbb{L}[l],K,D)_0$ is regular. There exists $\delta_0$ such that for $ \delta <\delta_0$ the correspondence $\mathfrak{u} \mapsto u_\delta$ from Theorem \ref{thm:glu} defines a bijection between the moduli spaces $\M^{<E}_{Br,\mathcal{P}}(\mathbb{M}[l],\mathbb{L}[l],K,D)_0$ and $\mathcal M ^{E_{Hor}< E}(M_{\delta},L,K,D)_0$.
+
+
+
+$$\M^{<E}_{Br,\mathcal{P}}(\mathbb{M}[l],\mathbb{L}[l],K,D)_0 \leftrightarrow \mathcal M ^{E_{Hor}< E}(M_{\delta},L,K,D)_0$$
+\end{Theorem}
+
+\begin{remark}
+    The proof of \ref{thm:bij} involves an application of the SFT compactness theorem. Note that we apply SFT Compactness to a sequence of maps with bounded horizontal energy due to Lemma $9.2$ in \cite{bhewz}.
+\end{remark}
+
+
+\noindent If $(L,K)$ is a monotone pair, then from the action-index relation we get that there is an energy bound $E_0$ such that any index-$1$ strip has energy less than $E_0$. Thus, as a corollary of  Theorem \ref{thm:bij} we have the following result.
+
+\begin{cor}\label{corr:rigidregularbijection}
+If $(L,K)$ is a monotone pair and a perturbation scheme is chosen that makes every broken strip either high-index or regular and all the elements in $\mathcal{M}^{<E}_{Br,\mathcal{P}}(\mathbb{M}[l],\mathbb{L}[l],K,D)_0$ is regular, then there is a $\delta_0$ such that for $0<\delta<\delta_0$, there is a bijection between the rigid broken holomorphic strips and the unbroken holomorphic strips in $M_\delta$ and all the rigid unbroken strips in $M_\delta$ are regular.
+
+$$\mathcal {M} _{Br}(\mathbb{M}[l],\mathbb{L}[l],K)_0 \leftrightarrow \mathcal {M} (M_{\delta},L,K,D)_0$$
+
+\end{cor}
+
+\begin{proof}
+By using $E=E_0$ in Theorem \ref{thm:bij} and the fact that any index $1$ strip has energy less than $E_0$ we directly get the bijection. The fact that the unbroken strips are regular follows from the Floer's Picard Lemma used in the gluing construction of Theorem \ref{thm:glu}, see \cite{palmerwoodwardsurg} for details. 
+\end{proof}

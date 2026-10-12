@@ -1,0 +1,33 @@
+{
+ "url": "https://arxiv.org/e-print/2406.05311v1",
+ "content_type": "application/gzip",
+ "sha256": "c8ffee5359c8417f765abd5c51bcdae97a3b3b61d92cd1a3a4e1bd6061cfeb92",
+ "bytes": 56728,
+ "fetched": "2026-10-10T15:20:15+00:00",
+ "files": [
+  {
+   "path": "files/quantum-mn-rule.bbl",
+   "role": "bbl",
+   "sha256": "44334b1966f87f19aaae95fa5e918b2d69f1c36c1e751a3b6258c6fb10858c1a",
+   "bytes": 7413
+  },
+  {
+   "path": "files/quantum-mn-rule.tex",
+   "role": "tex",
+   "sha256": "1e221269ae1a5847df5d0cf68ac1da7e5f6caf8bfc1c6e9db06295099142b831",
+   "bytes": 180030
+  },
+  {
+   "path": "files/references.bib",
+   "role": "bib",
+   "sha256": "514e2f96617b2e4b0f7f9994bc51838e591f7ef583e86a5acad5d78a3ee9bcc6",
+   "bytes": 14167
+  },
+  {
+   "path": "files/valuediagrams.sty",
+   "role": "sty",
+   "sha256": "6cf92150289a65422ec0c7b47522a2c53df36a4a3a068f8da2d4cfdd14917fe6",
+   "bytes": 8745
+  }
+ ]
+}

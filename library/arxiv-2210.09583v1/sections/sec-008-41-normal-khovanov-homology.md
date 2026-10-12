@@ -8,28 +8,23 @@ pages: 13-13
 source_pdf: 2210.09583v1.pdf
 source_sha256: 38fc6fa465a06a7b
 doc_brief: "A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant J n K and the so(2n + 1) knot invariant soJ n K studied by"
+text_source: latex
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 1.0
 ---
-ogy of an oriented link L with is deﬁned. We use notation similar to [ 3, 28] to deﬁne the Khovanov
-complexes so that we can easily reference it again when we look at a sim ilar e-graded version of covering
-Khovanov homology. Let X be a crossing in L, and L0, L1 denote the diagram obtained by replacing
-X with its 0 and 1-resolution respectively. Replace each crossing X with a two term chain complex
-DX : L0 → L1{1}, where L0 lives in cohomological degree 0 is X is a positive crossing and lives in
-cohomological degree −1 otherwise. DX is a saddle cobordism, so the degree of DX is 1 − 1 = 0 (see
-[3, Section 6]).
-Doing this for all the crossings gives the cube of resolutions with a sa ddle cobordism associated
-to each edge. Then for any sign assignment ε for the edges of the cube of resolutions so that faces
-anti-commute (e.g [ 2, Section 3.2]), one obtains a chain complex of cobordisms [ L]′ deﬁned by
-[L]′
-r−n− =
-⨁
-∑ zi=r
-L′
-z{r}
-d|L′z =
-∑
-α:z→w
-ε(α)Dα
-where α sums over edges out of z. Let j be the entry where z and w diﬀer and Xj denote the j-th
-crossing; then Dα = DXj . Then Kh(L)i = [L]′
-i{n+ − 2n−} is the Khovanov complex. One then applies
-the usual TQFT to get a complex of /CI -modules whose homology is Khovanov homology.
+We briefly recall how the complex $Kh(L)$ for Khovanov homology of an oriented link $L$ with is defined.
+We use notation similar to \cite{BN2, P} to define the Khovanov complexes so that we can easily reference it again when we look at a similar e-graded version of covering Khovanov homology.
+Let $X$ be a crossing in $L$, and $L_0, L_1$ denote the diagram obtained by replacing $X$ with its $0$ and $1$-resolution respectively.
+Replace each crossing $X$ with a two term chain complex $D_X: L_0 \to L_1\{1\}$, where $L_0$ lives in cohomological degree $0$ is $X$ is a positive crossing and lives in cohomological degree $-1$ otherwise.
+$D_X$ is a saddle cobordism, so the degree of $D_X$ is $1-1=0$ (see \cite[Section 6]{BN2}).
+
+Doing this for all the crossings gives the cube of resolutions with a saddle cobordism associated to each edge.
+Then for any sign assignment $\epsilon$ for the edges of the cube of resolutions so that faces anti-commute (e.g \cite[Section 3.2]{BN1}), one obtains a chain complex of cobordisms $[L]'$ defined by
+\begin{align*}
+  [L]_{r-n_-}'&= \bigoplus_{\sum z_i =r} L_z'\{r\} \\
+  d|_{L_z'}&=\sum\limits_{\alpha: z\to w}\epsilon(\alpha)D_{\alpha}
+\end{align*}
+where $\alpha$ sums over edges out of $z$.
+Let $j$ be the entry where $z$ and $w$ differ and $X_j$ denote the $j$-th crossing; then $D_\alpha= D_{X_j}$.
+Then $Kh(L)^i=[L]_{i}'\{n_+-2n_-\}$ is the Khovanov complex.
+One then applies the usual TQFT to get a complex of $\Z$-modules whose homology is Khovanov homology.

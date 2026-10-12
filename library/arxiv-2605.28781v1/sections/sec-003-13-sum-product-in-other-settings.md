@@ -8,38 +8,26 @@ pages: 3-4
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
 doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
+text_source: latex
+latex_prose_ratio: 0.917
+latex_coverage_ratio: 0.833
 ---
-of our construction. We first obtain, via only a slight modification of the argument,
-analogues of all of the above results forA⊂Q p for any primep.
-The second variant, obtained by taking the construction inQ p ‘modulop’ in a
-suitable sense, provides an upper bound for the sum-product problem in the finite
-fieldF p, another natural setting. We state a slightly simplified version here (see
-Theorem 7.2 for the full version).
-4 THOMAS F. BLOOM, WILL SA WIN, CARL SCHILDKRAUT, AND DMITRII ZHELEZOV
-Theorem 1.7.There exists a constantc >0such that, for all sufficiently large
-primesp, there existsA⊂F p withp c <|A|< p 1/2 andmax(|A+A|,|AA|)≤
-|A|2−c.
-We note that such a result for|A|very small in terms ofpis a consequence of
-Theorem 1.1 combined with the transference method of Vu, Wood, and Wood [43],
-but here we are able to find sum-product counterexamples which are reasonably
-‘large’ (in that|A|≥p c for some constantc>0).
-The first sum-product results for subsets ofF p of sizep δ for someδ >0 were
-obtained by Bourgain, Katz, and Tao [6]. The best result thus far obtained in this
-direction is due to Mohammadi and Stevens [30], who proved that if|A|< p 1/2
-then
-max(|A+A|,|AA|)≥|A|
-5
-4−o(1).
-The third variant, which is more involved, constructs sum-product counterex-
-amples in infinite fields of fixed positive characteristic.
-Theorem 1.8.There exists an absolute constantc >0such that, for any prime
-p, ifqis an power ofpthen there exist arbitrarily largeA⊂F q((t))such that
-max(|A+A|,|AA|)≤|A| 2− c
-logp .
-In small characteristics the exponent saving is reasonably good – for example
-whenq= 1024 we obtain
-max(|A+A|,|AA|)≤|A| 1.906.
-The best known lower bound for the sum-product problem in function fields, due
-to Bloom and Jones [5], is that for anyqandA⊂F q((t)),
-max(|A+A|,|AA|)≥q −1/5|A|6/5−o(1)
-(where theo(1) exponent tends to zero as|A|→∞).
+Finally, in Section [\[sec-variants\]](#sec-variants){reference-type="ref" reference="sec-variants"} we discuss variants of our construction. We first obtain, via only a slight modification of the argument, analogues of all of the above results for $A\subset \mathbb{Q}_p$ for any prime $p$.
+
+The second variant, obtained by taking the construction in $\mathbb{Q}_p$ 'modulo $p$' in a suitable sense, provides an upper bound for the sum-product problem in the finite field $\mathbb{F}_p$, another natural setting. We state a slightly simplified version here (see Theorem [\[finite-field-main\]](#finite-field-main){reference-type="ref" reference="finite-field-main"} for the full version).
+
+::: theorem
+There exists a constant $c>0$ such that, for all sufficiently large primes $p$, there exists $A \subset \mathbb F_p$ with $p^{c}< \mathopen{}\left| A\mathclose{}\right| < p^{1/2}$ and $\max(\mathopen{}\left| A+A\mathclose{}\right|,\mathopen{}\left| AA\mathclose{}\right|)\leq \mathopen{}\left| A\mathclose{}\right|^{2-c}$.
+:::
+
+We note that such a result for $\mathopen{}\left| A\mathclose{}\right|$ very small in terms of $p$ is a consequence of Theorem [\[th-headline\]](#th-headline){reference-type="ref" reference="th-headline"} combined with the transference method of Vu, Wood, and Wood [@VWW11], but here we are able to find sum-product counterexamples which are reasonably 'large' (in that $\mathopen{}\left| A\mathclose{}\right|\geq p^c$ for some constant $c>0$).
+
+The first sum-product results for subsets of $\mathbb{F}_p$ of size $p^\delta$ for some $\delta>0$ were obtained by Bourgain, Katz, and Tao [@BKT04]. The best result thus far obtained in this direction is due to Mohammadi and Stevens [@MoSt23], who proved that if $\mathopen{}\left| A\mathclose{}\right|< p^{1/2}$ then $$\max(\mathopen{}\left| A+A\mathclose{}\right|,\mathopen{}\left| AA\mathclose{}\right|)\geq \mathopen{}\left| A\mathclose{}\right|^{\frac{5}{4}-o(1)}.$$
+
+The third variant, which is more involved, constructs sum-product counterexamples in infinite fields of fixed positive characteristic.
+
+::: theorem
+[]{#th-ffmain label="th-ffmain"} There exists an absolute constant $c>0$ such that, for any prime $p$, if $q$ is an power of $p$ then there exist arbitrarily large $A\subset \mathbb{F}_{q}((t))$ such that $$\max(\mathopen{}\left| A+A\mathclose{}\right|,\mathopen{}\left| AA\mathclose{}\right|)\leq \mathopen{}\left| A\mathclose{}\right|^{2-\frac{c}{\log p}}.$$
+:::
+
+In small characteristics the exponent saving is reasonably good -- for example when $q=1024$ we obtain $$\max(\mathopen{}\left| A+A\mathclose{}\right|,\mathopen{}\left| AA\mathclose{}\right|)\leq \mathopen{}\left| A\mathclose{}\right|^{1.906}.$$ The best known lower bound for the sum-product problem in function fields, due to Bloom and Jones [@BlJo14], is that for any $q$ and $A\subset \mathbb{F}_q((t))$, $$\max(\mathopen{}\left| A+A\mathclose{}\right|, \mathopen{}\left| AA\mathclose{}\right|)\geq  q^{-1/5}\mathopen{}\left| A\mathclose{}\right|^{6/5-o(1)}$$ (where the $o(1)$ exponent tends to zero as $\mathopen{}\left| A\mathclose{}\right|\to \infty$).

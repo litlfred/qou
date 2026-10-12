@@ -46,8 +46,7 @@ $$
   \;=\;
   (q - q^{-1}) z + 1 - z^2,
 $$
-which is positive in the Wenzl regime
-$q^{1/2}+q^{-1/2} > 2$
+which is positive for every real $q > 0$ under convention D
 ([centred Hecke variance positivity](#prop:centered-hecke-variance-positive)).
 
 The general matching is therefore

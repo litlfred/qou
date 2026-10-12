@@ -6,8 +6,10 @@ type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - 8f-gen
+    - 8f-open
 created_at: 2026-08-10T18:57:48Z
-updated_at: 2026-10-04T15:14:19Z
+updated_at: 2026-10-11T08:34:21Z
 parent: qou-8lxd
 ---
 
@@ -184,3 +186,216 @@ derives it). Nothing here is wired to compute and no observable is predicted.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+---
+
+## 🛑 THIS BEAN'S TITLE IS STALE AGAINST ITS OWN BODY — and I repeated it four times before reading it (2026-10-11)
+
+The title says *"no braid word distinguishes them"*. That is **V9's framing from
+2026-08-10**. The body already records V10 (2026-08-16) **constructing** the
+grading and V11 **excluding** Type-B folding from that role. I propagated the
+title into four artifacts without opening the body:
+
+- the `qou-h0zz` append of 2026-10-10 ("chirality is untouched");
+- issue **#7711**, §"What stays open";
+- PR **#7712** body, §"What this does NOT change";
+- three chat reports naming `wqto` as the next item in those terms.
+
+**This is the second instance in two days of one pattern**, and that makes it a
+pattern rather than a slip. The first was `htw2`, whose correction is appended
+to `qou-h0zz` and whose lesson I wrote into the epic `qou-8lxd` — *"read the
+beans a bean cites AND the beans that cite it"* — and then did not apply here.
+
+**The sharper diagnosis, which the `htw2` note did not reach.** Both failures
+came from reading a bean's **title out of a listing**, where the body is not
+visible. `beans list` and the session-start sweep print title + status and
+nothing else, so a front's "open items" read as their titles by default. The
+`htw2` note blamed its `scrapped` status; that was only half of it — `wqto` is
+`todo` and failed identically. **The common cause is the listing, not the
+status.** Treat any claim about a bean sourced from a listing as unverified
+until its body is read.
+
+### Verification of what the body claims (measured, not carried)
+
+All three carriers, `lean -DautoImplicit=false -s 65536`, exit status captured
+directly:
+
+    ChiralityIndependentOfCrossing.lean    rc=0  0 diagnostics  228 lines  11 decls
+    ChiralityGradingConstruction.lean      rc=0  0 diagnostics  295 lines  16 decls
+    TypeBFoldingChiralityObstruction.lean  rc=0  0 diagnostics  135 lines   5 decls
+
+0 `axiom`, 0 `native_decide` in all three. Six key declarations resolve by
+name: `chirOf`, `free_of_reeb_odd_grading`,
+`gen1_chirality_is_the_constructed_grading`,
+`reeb_odd_grading_unique_up_to_flip`,
+`stable_matter_and_global_chirality_incompatible`,
+`folding_inducing_gen1_chirality_is_free`.
+
+**One apparent discrepancy, resolved.** `grep -c '\bsorry\b'` on
+`ChiralityIndependentOfCrossing.lean` returns **1**, against this bean's claim
+that it is sorry-free. The match is the module docstring heading
+`## What is proved (all sorry-free)` — the word inside prose asserting the
+opposite. The bean is right and the grep is not.
+
+That is the **third** instance of this false positive in one session and the
+**second in a corpus file** (the other being a docstring I had just written
+myself). So: **`grep -c '\bsorry\b'` is not a usable gate in this tree.** The
+honest signals are `rc=0` with no `declaration uses 'sorry'` warning — Lean
+emits one for every real `sorry` — or a grep that excludes comment and
+docstring regions.
+
+### The open item, scoped correctly
+
+Not the title's question. What remains is **the geometric identification of the
+Reeb involution on the physical state space** — CR geometry. Its only corpus
+statement is
+[`brings-surface/archimedean-chirality.md`](../folio/quantum-observable-universe/brings-surface/archimedean-chirality.md),
+which is a **single paragraph, one line of file**: the Reeb field `ξ` carries a
+natural orientation, `Θ(ξ) = 1` picks a direction, and *"chirality is encoded in
+the ±-eigenspaces of the Reeb involution `ξ ↦ −ξ`"*. It **asserts** the
+involution; nothing derives it, and the whole V10/V11 tower is conditional on
+`ι` being whatever that involution induces.
+
+V11's constraint narrows the search and should be carried by anyone resuming:
+`ι` must be **fixed-point free on the physical states**, so it is **not** the
+Type-B folding's matter/antimatter involution (which fixes stable matter by
+construction). Look for a free involution on the folded object, or an
+orbit-level map.
+
+### A point I checked and am NOT claiming as new
+
+The obvious next thought is that the grading's domain must **exclude bosons** —
+`archimedean-chirality` says bosons are purely horizontal hence chirality-blind,
+i.e. Reeb-fixed, and V10 needs `ι` free, so the domain on which `ι` must be free
+is the fermionic sector. **The corpus already has this.**
+`ChiralityIndependentOfCrossing.no_chirality_on_reeb_fixed_state:209` states
+exactly it — an odd chirality admits no fixed state — and its own docstring
+names the boson clause as the physical reading. V10's
+`free_of_reeb_odd_grading` is the global form. Recorded as checked-and-not-new
+rather than offered as a finding.
+
+### Nothing closed, nothing wired
+
+No conjecture closes, no observable is predicted, no witness or dashboard row
+moves. The SM labels still enter as the target to be reproduced. Per rule 13a
+this bean stays `todo`.
+
+
+---
+
+## Measured: the involution is PARAMETERISED, never instantiated — and the corpus already holds a candidate (2026-10-11)
+
+The scoping question from the previous append was whether the open item is
+*instantiate an existing object* or *build one from CR geometry*. Measured: it is
+**instantiate**, and the candidate was already on disk, unremarked.
+
+### The gap is an instantiation gap
+
+V10's `ChiralityGradingConstruction.lean` quantifies over `reeb : State → State`
+and `free_of_reeb_odd_grading` is a statement *about* such a map. **Nothing in
+the corpus instantiates it.** Searched every `def`/`abbrev` whose name contains
+`reeb` (case-insensitive) across `folio/**/*.lean` excluding `.lake`: twelve
+hits, none of them an involution on a state space. They are a period
+(`reebPeriod`), vector fields (`qReebVectorField` ×2), a flow sector, a spectrum
+example, a bundle-complement predicate, a horizontality predicate
+(`ReebDecomposition.isPurelyHorizontal`), a divisor predicate, a weight-
+decomposition constructor — and the three **Reeb operators** on the Bring cone.
+
+### The candidate: the SQUARE of a Reeb operator IS negation
+
+`QOU/BringCone.lean` defines `BringCone R := Quaternion R` and
+`reebM_i p := p * ⟨0,1,0,0⟩`, right-multiplication by a quaternionic unit. Those
+operators have **order four**, and their square is negation:
+
+    reebM_i (reebM_i p) = p · i · i = p · (−1) = −p
+
+which is *literally* the `ξ ↦ −ξ` that
+[`brings-surface/archimedean-chirality.md`](../folio/quantum-observable-universe/brings-surface/archimedean-chirality.md)
+names — and that block is one paragraph, one line of file, asserting it.
+
+Hand-verified independently in exact rationals before writing any Lean, on
+`p = (2,3,5,7)`: all three squares return `(−2,−3,−5,−7) = −p`, and
+`reebM_i⁴ p = p`. So `reebM_i` itself is **not** the involution; its square is.
+
+**And negation satisfies V10's criterion where it matters.** `−p = p` iff
+`p + p = 0`, so on a cone where `2` is cancellable the only fixed point is the
+origin — negation is **fixed-point free on the punctured cone**, which is
+exactly the hypothesis `free_of_reeb_odd_grading` needs. V11's constraint (the
+involution must be free, so it is *not* the Type-B folding's matter-fixing one)
+is met by construction rather than by assumption.
+
+### Lean added to `QOU/BringCone.lean` (additive)
+
+| decl | statement |
+|---|---|
+| `reebM_i_sq` / `reebM_j_sq` / `reebM_k_sq` | `reebM_x (reebM_x p) = -p` |
+| `reebM_i_quartic` | `reebM_i⁴ = id` — order four, so `M_i` is not itself the involution |
+| `neg_involutive_cone` | `-(-p) = p` |
+| `neg_fixed_iff_add_self_eq_zero` | `-p = p ↔ p + p = 0` |
+| `neg_free_of_ne_zero` | `2` cancellable on the cone + `p ≠ 0` ⟹ `-p ≠ p` |
+
+Over generic `{R : Type*} [CommRing R]` per §7c — pure ring identities, no
+ordering, no `Real`, no new import. The cancellation hypothesis is explicit
+rather than a typeclass for the same reason; it holds in any `R` of
+characteristic `≠ 2` without zero divisors, so in `ℝ` for the archimedean
+specialisation.
+
+### Corpus-grep before writing
+
+`reebM_i (reebM_i`, `reebM_i ∘ reebM_i`, `reeb_square`, `reebM_sq`: **0 hits**.
+Negation-as-an-involution on the cone: **0 hits** — the `bar-involution.lean`
+and `spin-involution.lean` matches are a different statement (`bar(−x) =
+−bar(x)`, that an involution *commutes* with negation, not that negation *is*
+one). `BringCone.lean` held exactly four declarations before this: the abbrev,
+the three operators, and the three twist identities.
+
+### 🛑 THIS IS A CANDIDATE, NOT A DERIVATION — the gap, named
+
+Proved: the **algebra**. That each Reeb operator squares to negation, that
+negation is involutive, and exactly when it is free.
+
+**Not** proved, and not proved anywhere in the corpus:
+
+1. that the **Bring cone is the physical state space** — the cone is a
+   quaternionic model of the contact link, and V10's `State` is the eight-element
+   gen-1 label set in its instantiation; no map between them exists;
+2. that the involution the **Reeb field induces on physical states** is this
+   negation. `archimedean-chirality` asserts the eigenspace reading in one
+   paragraph; nothing derives it.
+
+So this narrows the open item from *"identify an involution"* to *"show the
+asserted Reeb involution on states is the cone's negation, or exhibit the map
+that transports one to the other"* — a smaller and better-posed question, with
+the first concrete object to aim at. The whole V10/V11 tower stays conditional
+on step 2. Nothing is wired, no observable is predicted, and
+`conj:sm-hypercharge-invariant` stays open; per rule 13a this bean stays `todo`.
+
+---
+
+## 2026-10-12 — negation is trivial on states; the Reeb operator itself has V10's shape (owner request "1 2")
+
+**Correction of the previous append.** `reebM_x² = −id` cannot be V10's `ι` on **states**. A state is a ray, and `−p = (−1)•p` (`neg_eq_unit_smul`), so negation fixes every state. `neg_free_of_ne_zero` is about vectors.
+
+**What does work, on the quaternionic model** (Lean in `QOU/BringCone.lean`, generic `[CommRing R]`):
+- `Γ p := i·p·i` combines left multiplication by `i` with `M_i`.
+- `Γ² = id` (`chiralGamma_sq`), and `Γ = −1` on span(1, i), `+1` on span(j, k) (`chiralGamma_apply`).
+- `M_i` commutes with `Γ`, and **`M_j` anticommutes** (`chiralGamma_anticomm_reebM_j`), so it swaps the eigenspaces (`reebM_j_flips_eigen`).
+- `M_j` has no eigen-ray unless `c² + 1 = 0` (`reebM_j_ray_free`).
+
+So on rays, `M_j` is a fixed-point-free involution that flips `chir := Γ`, which is V10's shape on states, with `ι` the Reeb operator itself, not its square.
+
+Verification: lean-direct (`-DautoImplicit=false -s 65536`) exit 0 on BringCone and on its dependent BringConeSplit, the latter compiled against the new BringCone olean. `#print axioms` on all 7 new declarations gives `[propext, Quot.sound]`.
+
+**Krasnov (`library/arxiv-2104.01786v1`), read for the octonion question.** One generation is `S₊ = 𝕆 ⊗ 𝕆̃`, with two commuting complex structures:
+- Lorentz handedness = `±i` split of `J̃` on the split octonions (§3.4).
+- **Weak L vs R** (`SU(2)_L` vs `SU(2)_R` doublets, which is what `u_L` vs `u_R` means here) = `±i` split of `J = E⁴` on the **ordinary** octonions `𝕆` (§6.1: (1,0) = L ⊕ Q is (2,1), (0,1) = L̄ ⊕ Q̄ is (1,2)), and the map between them is conjugation relative to `J`.
+- So in that model `u_L`/`u_R` lives on the octonions that also carry colour (`OctonionComplexStructure.lean`, `Le_sq_eq_neg_id`).
+- V10's eight labels {u,d}×{L,R}×{particle,anti} are **not** the octonion's 8 (= 1 lepton + 3 colours, complex).
+
+**Still open (rule 13a, stays `todo`):**
+1. Nothing attaches `L_i` to the Reeb field.
+2. `BringCone` is the Hopf model, not Bring's cone (`qou-rydq`).
+3. There is no map from the `Gen1Quark` labels into these rays.
+
+Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB

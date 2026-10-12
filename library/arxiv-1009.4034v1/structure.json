@@ -6,7 +6,11 @@
   "sha256": "8f8d6d786b60c279c9e3998bcee79b896ac69c4f9b3e4656e97ebb87d0818cda",
   "bytes": 1798241,
   "pages": 23,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -131,6 +135,46 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 4,
-  "chars_total": 43762
+  "chars_total": 43762,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "kerovschurweyl.tex",
+   "tex_sections": 6,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-observables-of-diagrams",
+     "title": "Observables of diagrams",
+     "prose_ratio": 0.558,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-4-gaussian-concentration-of-measures-on-partitio",
+     "title": "Gaussian concentration of measures on partitions",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-5-moments-of-the-deviations-and-chebyshev-polyno",
+     "title": "Moments of the deviations and Chebyshev polynomials of the second kind",
+     "prose_ratio": 0.872,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

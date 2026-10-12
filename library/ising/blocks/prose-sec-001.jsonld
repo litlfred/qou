@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ising/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ising/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Introduction and statement of results",
-  "pageStart": 1,
-  "pageEnd": 3,
-  "text": "../sections/sec-001-1-introduction-and-statement-of-results.md",
-  "derivedFrom": "library/ising/manifest",
-  "sourceDocument": "library/ising/manifest",
+  "title": "At very low temperature, without magnetic ﬁeld.",
+  "pageStart": 12,
+  "pageEnd": 16,
+  "text": "../sections/sec-001-32-at-very-low-temperature-without-magnetic-ﬁeld.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ising/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ising/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,191 +8,55 @@ pages: 8-10
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
 doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
+text_source: latex
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 0.823
 ---
 Throughout this work, we consider the following linear program in standard form.
-minc ⊺xs.t.Ax=b, ℓ≤x≤u(F(A,b,ℓ,u,c))
-withA∈R V×W ,b∈R V,ℓ w∈R∪{−∞}andu∈R∪{∞}such thatℓ w≤u w
-for allw∈W. We useF(A,b,ℓ,u,c)to denote the linear program, and we define
-its feasible region asP(A,b,ℓ,u) :={x∈R W |Ax=b,ℓ≤x≤u}. For the linear
-programF(A,b,ℓ,u,c)and a partitionPofVand a partitionQofW,(P,Q)is an
-equitable partition ofF(A,b,ℓ,u,c)if(P,Q)is an equitable partition ofA,Pis an
-equitable partition ofb, andQis an equitable partition ofℓ,u, andc. The key result
-necessary for DRCR is given in [11, Lemma 7.1] and shows that a linear program
-that has an equitable partition(P,Q)can be reduced to a linear program with a
-constraint matrix with dimension|P|×|Q|. We show a variation of this result which
-has essentially the same proof, but which produces a slightly different but equivalent
-linear program whose variables and constraints are scaled differently. The motivation
-for deviating from [11] in Proposition 3 will become clear in Section 4, where we
-consider mixed-integer linear programs.
-Proposition 3(Grohe, Kersting, Mladenov and Selman [11] )For givenA∈R V×W ,b∈
-RV,c∈R W and vectorsℓ,uwithℓ w∈R∪{−∞}andu w∈R∪{∞}such thatℓ w≤uw holds
-for allw∈W, consider the linear programF(A,b,ℓ,u,c). Let(P,Q)be an equitable partition
-ofF(A,b,ℓ,u,c). DefineA ′ := Π⊺
-PAgΠQ,b′ := Π⊺
-Pb,ℓ′ := Π⊺
-Qℓ,u′ := Π⊺
-Quandc ′ :=gΠQ
-⊺
-c,
-and consider the reduced linear programF(A′,b′,ℓ′,u′,c′). Then, the following hold:
-(i) Ifx∈R W is feasible forP(A,b,ℓ,u), theny := Π⊺
-Qxis feasible forP(A ′,b′,ℓ′,u′)and
-c′⊺y=c ⊺xholds.
-(ii) Ify∈R Q is feasible forP(A′,b′,ℓ′,u′), thenx :=gΠQyis feasible forP(A,b,ℓ,u)and
-c⊺x=c ′⊺yholds
-ProofLet us prove the first point. Letx∈P(A,b,ℓ,u)be given and considery := Π ⊺
-Qx.
-First of all, we show that for eachQ∈Q,ℓ′
-Q≤y Q≤u′
-Q holds. Note thatℓ′
-Q = (Π⊺
-Pℓ)Q =P
-w∈Qℓw andu′
-Q = (Π⊺
-Pu)Q =P
-w∈Quw andy Q =P
-w∈Qxw hold. Then,ℓ′
-Q≤y Q≤u′
-Q
-is equivalent toP
-w∈Qℓw≤P
-w∈Qxw≤P
-w∈Quw, which is clearly valid by summing the
-inequalitiesℓ w≤x w≤u w for allw∈Q. Then, we show thatyis feasible by showing that
-the equationA′y=b ′ holds. The following equations hold.
-A′y= Π ⊺
-PAgΠQΠ⊺
-Qx
-(a)
-= Π ⊺
-PgΠPΠ⊺
-PAx
-(b)
-= Π ⊺
-PAx= Π ⊺
-Pb=b ′
-The equality in (a) follows from the fact that(P,Q)is an equitable partition ofA, which
-implies that(gΠPΠ⊺
-P,gΠQΠ⊺
-Q)is a fractional automorphism ofAusing Proposition 2. The
-equality in (b) follows from Proposition 1(i). Thus,y∈P(A′,b′,ℓ′,u′)holds, andyis indeed
-feasible. Finally, sinceQis an equitable partition ofcit follows thatc′⊺y=c ⊺gΠQΠ⊺
-Qx=c ⊺x,
-where we use Proposition 1(iii) in the final step.
-8
-Next, we proceed with the proof of second point. Lety∈P(A′,b′,ℓ′,u′)be a given feasible
-point, and considerx :=gΠQy. First, note that sinceQis an equitable partition ofℓandu,
-that for anyQ∈Qwe haveℓ ′
-Q =|Q|ℓw for allw∈Qandu ′
-Q =|Q|uw, since thelw andu w
-entries must be identical for allw∈Qand are summed by definition ofΠ ⊺
-Q. Additionally,
-note that for eachw∈W, there exists exactly oneQ∈Qsuch thatx w = 1
-|Q|yQ. Then, we
-have for everyw∈WandQ∈Qwithw∈Qthatℓ ′
-Q≤y Q≤u′
-Q holds, which implies
-that 1
-|Q|ℓ′
-Q≤ 1
-|Q|yQ≤ 1
-|Q|u′
-Q holds. By substituting usingℓ′
-Q =|Q|ℓ w,u′
-Q =|Q|u w and
-xw = 1
-|Q|yQ, we see thatℓw≤xw≤uw holds for allw∈W.
-Then, similar to the proof of the first point, we considerAxand show that it equalsb.
-Ax=A gΠQy
-(c)
-=A gΠQΠ⊺
-QgΠQy
-(d)
-= gΠPΠ⊺
-PAgΠQy= gΠPA′y= gΠPb′ =gΠPΠ⊺
-Pb
-(e)
-=b
-Here, (c) holds by Proposition 1(i) and (d)holds since(P,Q)is an equitable partition of
-A, which implies a fractional automorphism using Proposition 2. Additionally, (e) follows
-by Proposition 1(iii) and the factPis an equitable partition ofb. Thus,xis feasible for
-P(A,b,ℓ,u). Finally, note thatc ⊺x=c ⊺gΠQΠ⊺
-Qx=c ′⊺yholds, where the first equality follows
-from Proposition 1(iii) and the fact thatQis an equitable partition ofc.□
-Occasionally, we will use the notationR P,Q(F(A,b,ℓ,u,c)) :=
-F(Π ⊺
-PAgΠQ,Π ⊺
-Pb,Π ⊺
-Qℓ,Π ⊺
-Qu,gΠQ
-⊺
-c)to denote the reduced linear program in
-Proposition 3.
-The key difference in the proof of Proposition 3 compared to the proof in [11,
-Lemma 7.1] is that we use the fractional automorphism(fΠPΠ⊺
-P,gΠQΠ⊺
-Q), instead of
-(ΠPfΠP
-⊺
-,ΠQgΠQ
-⊺
-), which leads to different variable and constraint scaling in the
-reduced linear programs and in the mappings from and to the original linear program.
-Although we present our results in standard form, equitable partitions can also be
-applied to linear programs in inequality form by first introducing slack variables and
-turning them into equality form. In Proposition 4 we show that this procedure does
-not affect equitability of the constraint matrix.
-Proposition 4Let(P,Q)be an equitable partition ofA∈R V×W . Then(P,Q∪P)is an
-equitable partition of
-
-A I
-
-.
-ProofConsider any block(P,Q)∈P×(Q∪P). IfQ∈Q, then
-
-A I
-
-PQ =APQ holds, and
-APQ satisfies the equitability conditions (1) and (2) since(P,Q)is an equitable partition
-ofA. Otherwise, forQ∈P, we have that
-
-A I
-
-PQ =I P,P′ for someP ′∈P. IfP=P ′,
-thenI P,P is aP×Pidentity matrix, which satisfies (1) and (2). Otherwise, ifP̸=P ′, then
-IP,P′ is an all-zero matrix, which also satisfies (1) and (2). Thus,P×(Q∪P)is an equitable
-partition of
-
-A I
-
-.□
-Note that the introduced slack variables will all have identical bounds and do not
-participate in the objective, so the equitability conditions for the variable bounds and
-objective are also satisfied under the addition of slack variables. However, the stan-
-dard form may have additional reductions compared to inequality form if the slack
-variables can be aggregated with non-slack variables. In [37] the authors observe that
-additional reductions on the slack variables in equality form lead to large running
-time improvements for algorithms that enumerate all non-symmetric solutions of
-9
-certain MILP. Intuitively, this can be explained by the fact that certain relationships
-between the slack of the constraints and the variables become more explicit upon
-adding the slack variables. Thus, we consider the more general standard form in the
-remainder of this work.
-The authors of [11] show that DRCR is advantageous primarily because it is fast
-to compute and because it generalizes permutation symmetries. We have not yet
-discussed one of its more relevant downsides, which is that a basic optimal solution to
-the reduced LP is not necessarily mapped to a basic solution of the original LP. This is
-particularly relevant for branch-and-bound approaches that utilize an LP relaxation,
-as for these the reduction for the LP may not be valid for the MILP, and thus we need
-to obtain a solution to the original LP. For MILP, basic linear programming solutions
-are necessary in an efficient branch-and-cut implementation, which relies heavily on
-the dual simplex algorithm to branch quickly and to efficiently find cutting planes
-such as those formulated by Gomory [38] from the simplex tableau. For DRCR, the
-original solution obtained from the the reduced solution may lie in the interior of
-the optimal face of the original LP. Then, to obtain a basic solution, one has to run
-a crossover procedure for the original problem to obtain a feasible vertex from the
-interior point [39]. In some cases, the crossover procedure has a runtime that may be
-orders of magnitude larger than solving the reduced linear program. For example, for
-problems with a transitive symmetry group, the linear program computed by DRCR
-consists of a single variable and is easily solved, but the crossover procedure may be
-as expensive as solving the original linear program.
+
+$$\label{lp_orig_signed}
+    \min \,\transpose{c} x \text{  s.t. } A x = b,~\ell \leq x \leq u  \tag{$F(A,b,\ell,u,c)$}$$ with $A\in \R^{V\times W}$, $b\in \R^V$, $\ell_w \in \R \cup \{-\infty\}$ and $u\in \R\cup \{\infty\}$ such that $\ell_w \leq u_w$ for all $w\in W$. We use $F(A,b,\ell,u,c)$ to denote the linear program, and we define its feasible region as $P(A,b,\ell, u) \coloneqq \{ x\in \R^W \mid A x = b, \ell \leq x \leq u\}$. For the linear program $F(A,b,\ell, u, c)$ and a partition $\MP$ of $V$ and a partition $\MQ$ of $W$, $(\MP,\MQ)$ is an *equitable partition of $F(A,b,\ell,u,c)$* if $(\MP,\MQ)$ is an equitable partition of $A$, $\MP$ is an equitable partition of $b$, and $\MQ$ is an equitable partition of $\ell$, $u$, and $c$. The key result necessary for DRCR is given in [@Grohe2014 Lemma 7.1] and shows that a linear program that has an equitable partition $(\MP,\MQ)$ can be reduced to a linear program with a constraint matrix with dimension $|\MP|\times |\MQ|$. We show a variation of this result which has essentially the same proof, but which produces a slightly different but equivalent linear program whose variables and constraints are scaled differently. The motivation for deviating from [@Grohe2014] in [\[thm_lp_folding\]](#thm_lp_folding){reference-type="ref" reference="thm_lp_folding"} will become clear in [\[sec_dimred_milp\]](#sec_dimred_milp){reference-type="ref" reference="sec_dimred_milp"}, where we consider mixed-integer linear programs.
+
+::: proposition
+[]{#thm_lp_folding label="thm_lp_folding"} For given $A\in \R^{V\times W}$, $b\in \R^{V}$, $c\in \R^{W}$ and vectors $\ell, u$ with $\ell_w \in \R \cup \{-\infty\}$ and $u_w\in \R \cup \{\infty\}$ such that $\ell_w \leq u_w$ holds for all $w\in W$, consider the linear program $F(A,b,\ell, u, c)$. Let $(\MP,\MQ)$ be an equitable partition of $F(A,b,\ell,u,c)$. Define $A' \coloneqq \transpose{\Pi_{\MP}} A \widetilde{\Pi_{\MQ}}$, $b'\coloneqq \transpose{\Pi_{\MP}} b$, $\ell' \coloneqq \transpose{\Pi_{\MQ}} \ell$, $u' \coloneqq \transpose{\Pi_\MQ} u$ and $c' \coloneqq  \transpose{\widetilde{\Pi_\MQ}} c$, and consider the reduced linear program $F(A',b',\ell',u',c')$. Then, the following hold:
+
+1.  []{#thm_lp_folding_to_red label="thm_lp_folding_to_red"} If $x\in \R^W$ is feasible for $P(A,b,\ell, u)$, then $y \coloneqq \transpose{\Pi_{\MQ}} x$ is feasible for $P(A',b',\ell', u')$ and $\transpose{c'}y = \transpose{c} x$ holds.
+
+2.  []{#thm_lp_folding_from_red label="thm_lp_folding_from_red"} If $y\in \R^\MQ$ is feasible for $P(A',b',\ell', u')$, then $x \coloneqq \widetilde{\Pi_{\MQ}} y$ is feasible for $P(A,b,\ell,u)$ and $\transpose{c} x = \transpose{c'} y$ holds
+:::
+
+::: proof
+*Proof.* Let us prove the first point. Let $x\in P(A,b,\ell,u)$ be given and consider $y\coloneqq \transpose{\Pi_{\MQ}} x$. First of all, we show that for each $Q\in \MQ$, $\ell'_Q \leq y_Q \leq u'_Q$ holds. Note that $\ell'_Q = (\transpose{\Pi_\MP} \ell)_Q = \sum_{w\in Q} \ell_w$ and $u'_Q = (\transpose{\Pi_\MP} u)_Q = \sum_{w\in Q} u_w$ and $y_Q  = \sum_{w\in Q} x_w$ hold. Then, $\ell'_Q \leq y_Q \leq u'_Q$ is equivalent to $\sum_{w\in Q}\ell_w \leq \sum_{w\in Q} x_w \leq  \sum_{w\in Q} u_w$, which is clearly valid by summing the inequalities $\ell_w \leq x_w \leq u_w$ for all $w\in Q$. Then, we show that $y$ is feasible by showing that the equation $A' y = b'$ holds. The following equations hold. $$A' y = \transpose{\Pi_{\MP}} A \widetilde{\Pi_{\MQ}} \transpose{\Pi_{\MQ}} x \stackrel{\textup{(a)}}{=} \transpose{\Pi_{\MP}} \widetilde{\Pi_{\MP}} \transpose{\Pi_{\MP}}  A x \stackrel{\textup{(b)}}{=} \transpose{\Pi_{\MP}}  A x = \transpose{\Pi_{\MP}}  b = b'$$
+
+The equality in [(a)]{.upright} follows from the fact that $(\MP,\MQ)$ is an equitable partition of $A$, which implies that $(\widetilde{\Pi_{\MP}} \transpose{\Pi_{\MP}}, \widetilde{\Pi_{\MQ}} \transpose{\Pi_{\MQ}})$ is a fractional automorphism of $A$ using [\[thm_frac_aut_equitable_partition\]](#thm_frac_aut_equitable_partition){reference-type="ref" reference="thm_frac_aut_equitable_partition"}. The equality in [(b)]{.upright} follows from [\[thm_part_id\]](#thm_part_id){reference-type="ref" reference="thm_part_id"}[\[thm_part_id_id\]](#thm_part_id_id){reference-type="ref" reference="thm_part_id_id"}. Thus, $y\in P(A',b',\ell',u')$ holds, and $y$ is indeed feasible. Finally, since $\MQ$ is an equitable partition of $c$ it follows that $\transpose{c'} y = \transpose{c} \widetilde{\Pi_\MQ} \transpose{\Pi_\MQ} x = \transpose{c} x$, where we use [\[thm_part_id\]](#thm_part_id){reference-type="ref" reference="thm_part_id"}[\[thm_part_id_equitable\]](#thm_part_id_equitable){reference-type="ref" reference="thm_part_id_equitable"} in the final step.
+
+Next, we proceed with the proof of second point. Let $y\in P(A',b',\ell',u')$ be a given feasible point, and consider $x\coloneqq \widetilde{\Pi_\MQ} y$. First, note that since $\MQ$ is an equitable partition of $\ell$ and $u$, that for any $Q\in \MQ$ we have $\ell'_Q = |Q| \ell_w$ for all $w\in Q$ and $u'_Q = |Q| u_w$, since the $l_w$ and $u_w$ entries must be identical for all $w\in Q$ and are summed by definition of $\transpose{\Pi_\MQ}$. Additionally, note that for each $w\in W$, there exists exactly one $Q\in \MQ$ such that $x_w = \frac{1}{|Q|} y_Q$. Then, we have for every $w\in W$ and $Q\in \MQ$ with $w\in Q$ that $\ell'_Q \leq y_Q \leq u'_Q$ holds, which implies that $\frac{1}{|Q|} \ell'_Q \leq \frac{1}{|Q|} y_Q \leq \frac{1}{|Q|} u'_Q$ holds. By substituting using $\ell'_Q = |Q| \ell_w$, $u'_Q = |Q| u_w$ and $x_w = \frac{1}{|Q|} y_Q$, we see that $\ell_w \leq x_w \leq u_w$ holds for all $w\in W$.
+
+Then, similar to the proof of the first point, we consider $Ax$ and show that it equals $b$. $$A x = A \widetilde{\Pi_\MQ} y \stackrel{\textup{(c)}}{=} A \widetilde{\Pi_\MQ} \transpose{\Pi_\MQ} \widetilde{\Pi_\MQ} y \stackrel{\textup{(d)}}{=} \widetilde{\Pi_\MP} \transpose{\Pi_\MP} A  \widetilde{\Pi_\MQ} y = \widetilde{\Pi_\MP} A' y = \widetilde{\Pi_\MP} b' = \widetilde{\Pi_\MP} \transpose{\Pi_\MP} b \stackrel{\textup{(e)}}{=} b$$ Here, [(c)]{.upright} holds by [\[thm_part_id\]](#thm_part_id){reference-type="ref" reference="thm_part_id"}[\[thm_part_id_id\]](#thm_part_id_id){reference-type="ref" reference="thm_part_id_id"} and [(d)]{.upright}holds since $(\MP,\MQ)$ is an equitable partition of $A$, which implies a fractional automorphism using [\[thm_frac_aut_equitable_partition\]](#thm_frac_aut_equitable_partition){reference-type="ref" reference="thm_frac_aut_equitable_partition"}. Additionally, [(e)]{.upright} follows by [\[thm_part_id\]](#thm_part_id){reference-type="ref" reference="thm_part_id"}[\[thm_part_id_equitable\]](#thm_part_id_equitable){reference-type="ref" reference="thm_part_id_equitable"} and the fact $\MP$ is an equitable partition of $b$. Thus, $x$ is feasible for $P(A,b,\ell,u)$. Finally, note that $\transpose{c} x = \transpose{c} \widetilde{\Pi_\MQ} \transpose{\Pi_\MQ} x = \transpose{c'} y$ holds, where the first equality follows from [\[thm_part_id\]](#thm_part_id){reference-type="ref" reference="thm_part_id"}[\[thm_part_id_equitable\]](#thm_part_id_equitable){reference-type="ref" reference="thm_part_id_equitable"} and the fact that $\MQ$ is an equitable partition of $c$. ◻
+:::
+
+Occasionally, we will use the notation $R^{\MP,\MQ}(F(A,b,\ell,u,c)) \coloneqq F(\transpose{\Pi_{\MP}} A \widetilde{\Pi_\MQ}, \transpose{\Pi_{\MP}} b, \transpose{\Pi_{\MQ}} \ell, \transpose{\Pi_{\MQ}} u, 
+\transpose{\widetilde{\Pi_{\MQ}}} c)$ to denote the reduced linear program in [\[thm_lp_folding\]](#thm_lp_folding){reference-type="ref" reference="thm_lp_folding"}.
+
+The key difference in the proof of [\[thm_lp_folding\]](#thm_lp_folding){reference-type="ref" reference="thm_lp_folding"} compared to the proof in [@Grohe2014 Lemma 7.1] is that we use the fractional automorphism $(\widetilde{\Pi_{\MP}} \transpose{\Pi_{\MP}}, \widetilde{\Pi_{\MQ}} \transpose{\Pi_{\MQ}})$, instead of $({\Pi_{\MP}} \transpose{\widetilde{\Pi_{\MP}}}, {\Pi_{\MQ}} \transpose{\widetilde{\Pi_{\MQ}}})$, which leads to different variable and constraint scaling in the reduced linear programs and in the mappings from and to the original linear program.
+
+Although we present our results in standard form, equitable partitions can also be applied to linear programs in inequality form by first introducing slack variables and turning them into equality form. In [\[thm_ineq_equivalent\]](#thm_ineq_equivalent){reference-type="ref" reference="thm_ineq_equivalent"} we show that this procedure does not affect equitability of the constraint matrix.
+
+::: proposition
+[]{#thm_ineq_equivalent label="thm_ineq_equivalent"} Let $(\MP,\MQ)$ be an equitable partition of $A\in \R^{V\times W}$. Then $(\MP, \MQ \cup \MP)$ is an equitable partition of $\begin{bmatrix}
+        A & I
+    \end{bmatrix}$.
+:::
+
+::: proof
+*Proof.* Consider any block $(P,Q) \in \MP\times (\MQ \cup \MP)$. If $Q \in \MQ$, then $\begin{bmatrix}
+    A & I 
+\end{bmatrix}_{PQ} = A_{PQ}$ holds, and $A_{PQ}$ satisfies the equitability conditions [\[eq_folding_row_sums\]](#eq_folding_row_sums){reference-type="eqref" reference="eq_folding_row_sums"} and [\[eq_folding_col_sums\]](#eq_folding_col_sums){reference-type="eqref" reference="eq_folding_col_sums"} since $(\MP,\MQ)$ is an equitable partition of $A$. Otherwise, for $Q\in \MP$, we have that $\begin{bmatrix}
+    A & I 
+\end{bmatrix}_{PQ} = I_{P,P'}$ for some $P'\in \MP$. If $P= P'$, then $I_{P,P}$ is a $P\times P$ identity matrix, which satisfies [\[eq_folding_row_sums\]](#eq_folding_row_sums){reference-type="eqref" reference="eq_folding_row_sums"} and [\[eq_folding_col_sums\]](#eq_folding_col_sums){reference-type="eqref" reference="eq_folding_col_sums"}. Otherwise, if $P\neq P'$, then $I_{P,P'}$ is an all-zero matrix, which also satisfies [\[eq_folding_row_sums\]](#eq_folding_row_sums){reference-type="eqref" reference="eq_folding_row_sums"} and [\[eq_folding_col_sums\]](#eq_folding_col_sums){reference-type="eqref" reference="eq_folding_col_sums"}. Thus, $\MP\times (\MQ \cup \MP)$ is an equitable partition of $\begin{bmatrix}
+    A & I
+\end{bmatrix}$. ◻
+:::
+
+Note that the introduced slack variables will all have identical bounds and do not participate in the objective, so the equitability conditions for the variable bounds and objective are also satisfied under the addition of slack variables. However, the standard form may have additional reductions compared to inequality form if the slack variables can be aggregated with non-slack variables. In [@Geyer2019] the authors observe that additional reductions on the slack variables in equality form lead to large running time improvements for algorithms that enumerate all non-symmetric solutions of certain MILP. Intuitively, this can be explained by the fact that certain relationships between the slack of the constraints and the variables become more explicit upon adding the slack variables. Thus, we consider the more general standard form in the remainder of this work.\
+The authors of [@Grohe2014] show that DRCR is advantageous primarily because it is fast to compute and because it generalizes permutation symmetries. We have not yet discussed one of its more relevant downsides, which is that a basic optimal solution to the reduced LP is not necessarily mapped to a basic solution of the original LP. This is particularly relevant for branch-and-bound approaches that utilize an LP relaxation, as for these the reduction for the LP may not be valid for the MILP, and thus we need to obtain a solution to the original LP. For MILP, basic linear programming solutions are necessary in an efficient branch-and-cut implementation, which relies heavily on the dual simplex algorithm to branch quickly and to efficiently find cutting planes such as those formulated by Gomory [@Gomory60] from the simplex tableau. For DRCR, the original solution obtained from the the reduced solution may lie in the interior of the optimal face of the original LP. Then, to obtain a basic solution, one has to run a crossover procedure for the original problem to obtain a feasible vertex from the interior point [@Megiddo1991]. In some cases, the crossover procedure has a runtime that may be orders of magnitude larger than solving the reduced linear program. For example, for problems with a transitive symmetry group, the linear program computed by DRCR consists of a single variable and is easily solved, but the crossover procedure may be as expensive as solving the original linear program.

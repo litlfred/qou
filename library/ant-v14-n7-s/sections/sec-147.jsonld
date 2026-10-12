@@ -1,16 +1,23 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-147",
   "@type": [
     "doco:Section"
   ],
-  "title": "A.3. Fourier methods for incomplete sums that are not short",
-  "pageStart": 282,
-  "pageEnd": 283,
+  "title": "4D. Proof of Theorem 4.1",
+  "pageStart": 263,
+  "pageEnd": 265,
   "contains": [
-    "library/ant-v14-n7-s/blocks/prose-sec-147"
+    "library/ant-v14-n7-s/blocks/prose-sec-147",
+    "library/ant-v14-n7-s/blocks/prop-sec-147-01",
+    "library/ant-v14-n7-s/blocks/lem-sec-147-02"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"
 }

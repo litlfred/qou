@@ -1,0 +1,635 @@
+ \section{Complex Chern-Simons theory on $X$}  \label{SeifertSection}
+
+Let $X$ be the oriented Seifert fibered homology $3$-sphere from the introduction. Choose $q_1,...,q_n \in \Z$ such that $(p_j,q_j)=1$ and
+\begin{equation}
+\sum_{j=1}^n \frac{q_j}{p_j}= \frac{1}{P}.
+\end{equation}
+Then $X$ has a surgery diagram as depicted in Figure \ref{fig:surgerylink} below.
+\begin{figure}[htp]
+	\centering
+	\includegraphics{w3.pdf}
+	\caption{Surgery link for $X.$}
+	\label{fig:surgerylink}
+\end{figure} Without loss of generality we can assume that $p_2,...,p_n$ are odd. 
+ The homeomorphism type of $X$ is unaltered under a transformation $q_j \mapsto q_j+y_j$ for any choice of integers $y_1,...,y_n$ such that $(p_j,q_j+y_j)=1$ and \begin{equation} \label{somomsum}\sum_{j=1}^n \frac{q_j}{p_j}=\sum_{j=1} \frac{q_j+y_j}{p_j}. \end{equation}
+If $q_j$ is odd for $j>1$, we perform the transformation $q_j\mapsto q_j+p_j $ and $q_1 \mapsto q_1-(n-1)p_1$ which does not change the sum \eqref{somomsum}. Hence we can assume without loss of generality that $q_2,...,q_n$ are all even. 
+ Recall that under our assumptions $1=P\sum_{j=1}\frac{q_j}{pj}.$ Note that this implies that $q_1$ is odd.  
+
+
+We recall the computation of $\tau_k(X)$ from \cite{LawrenceRozansky}. Let $S(\emptyarg,\emptyarg)$ be the Dedekind sum. Introduce the constants \begin{align} \label{eq:constants} & \varsigma  =-\frac{\sqrt{P}}{4} \exp\left(-\frac{\pi i3 }{4}\right), & \phi =3-\frac{1}{P}+12\sum_{j=1}^n S\left(\frac{P}{p_j},p_j\right). \end{align} The quantity $\phi$ is related to the Casson-Walker invariant $\lambda(X)$ \cite{Walker92} (in Casson's normalization) as follows
+$$-24 \lambda(X)=\phi+P\left( n-2-\sum_{j=1}^n p_j^{-2}\right).
+$$ Define the meromorphic function $F\in \mathcal{M}(\C)$ and $g \in \C[y]$  explicitly as  follows
+\begin{align}  \label{def:F} \begin{split} F(y&)=\frac{1}{4}\left(\sinh\left(\frac{y}{2}\right)\right)^{2-n} \prod_{j=1}^n \sinh\left(\frac{y}{2p_j}\right), 
+\\  g(y)&=\frac{iy^2}{8\pi P}. \end{split}
+\end{align}  
+     Lawrence and Rozansky shows in \cite{LawrenceRozansky} the following results. There exists a finite subset $R^*(X) \subset \Q^* / \Z$ and non-vanishing polynomials $\z_{\theta}(z) \in \C[z]$, $\theta \in R^*(X)$ of degree at most $n-3$ such that
+\begin{equation} \label{Polypoly}
+\sum_{\theta \in R^*(X)} e^{2 \pi i k \theta}\z_{\theta}(k) = - \sum_{m=1}^{2 P-1} \text{Res} \left( \frac{F(y)e^{kg(y)}}{1-e^{-ky}}, y=2\pi i m \right)
+\end{equation}
+for all non-negative integers $k$. Let $\gamma$ to be the contour from $(-1-i)\infty$  to $(1+i)\infty$.
+Observe that $\gamma(H)$ is a steepest descent path for $g.$
+Introduce the following notation
+\begin{align} \label{eq:integralresiduedecomp} \begin{split}
+\z^R(k) &= \sum_{\theta \in R^*(X)} e^{2 \pi i k \theta}\z_{\theta}(k)
+\\ \z^{\I}(k) &= \frac{1}{2\pi i} \int_{\gamma} F(y)e^{kg(y)} \ \dv y. \end{split}
+\end{align}
+Recalling the definition of the normalized quantum invariant $\widetilde{\z}_k$ given in \eqref{def:normquant}, Lawrence and Rozansky proved that it can be decomposed into a sum of an integral part $\z^{\I}$ and a residue part $\z^R$
+\begin{equation}
+\label{phasedecomp}
+\widetilde{\z} _k(X)= \z^{\I}(k)+\z^R(k).
+\end{equation}
+This is Equation $4.8$ on in Section $4.5$ in \cite{LawrenceRozansky}. We have used the same notation for $F,g$ and $\phi$ whereas the constant $B$ in their notation is equal to $\varsigma^{-1}$. 
+Thus, if we define \begin{equation}
+\z_{0}(x)= \frac{1}{2 \pi i} \sqrt{ P\pi i 8} \sum_{n=0}^{\infty} \frac{F^{(2n)}(0)\left(i8P\pi \right)^{n}}{(2n)!}  \frac{\Gamma\left(n+\frac{1}{2} \right)}{x^{n+\frac{1}{2}}} \in \ x^{-1/2}\C[[x^{-1}]]
+\end{equation} 
+and set $R(X)=R^*(X) \sqcup \{0\}$ then we have an asymptotic expansion
+\begin{equation} \label{expansionX}
+\widetilde \z_k(X) \sim_{k \rightarrow \infty} \sum_{\theta\in R(X)} e^{2\pi i k \theta}  \z_{\theta}(k).
+\end{equation}
+  In the work \cite{LawrenceRozansky} it was observed that $\z_{0}$ is in fact a normalization of the Ohtsuki-series \cite{Ohtsuki95,Ohtsuki96a,Ohtsuki96b}. Let $\z_{\infty}$ denote the Ohtsuki series (with the normalization used in \cite{LawrenceRozansky}). Introduce the variable $h=q_k-1$, where as above $q_k=\exp(2\pi i/k)$. In section $4.6$ of \cite{LawrenceZagier}  they show the following identity
+  \begin{equation} \label{eq:Ohtsuki}
+\z_0(k) = \z_{\infty}(h).
+  \end{equation}
+  
+\subsection{The moduli space and complex Chern-Simons values}
+
+
+We now begin our investigation of $\mathcal{M}(X,\SL(2,\C)),$ which closely follows \cite{FintushelStern90}. We have the following presentation of the fundamental group of $X$
+\begin{equation} \label{presentation}
+\pi_1(X) \simeq \left\langle h,  x_1,...,x_n \mid  x_1x_2\cdots x_n, x_j^{p_j}h^{-q_j}, [x_j,h], j=1,...,n  \right\rangle.
+\end{equation}
+
+Let us first recall a few of Fintushel and Stern's results concerning the moduli space $\mathcal{M}(X,\SU(2))$  establish in \cite{FintushelStern90}. As $X$ is an integral homology sphere, the only reducible representation into $SU(2)$ is the trivial one. For an irreducible representation $\rho:\pi_1(X) \rightarrow \SU(2)$ at most $n-3$ of the $\rho(x_j)$ are $\pm I,$ and if exactly $n-m$ of the $\rho(x_j)$ are equal to $\pm I,$ then the component of $\rho$ in $\mathcal{M}(X,\SU(2))$ is of dimension $2(n-m)-6.$
+
+ Let $L(p_1,...,p_n) \subset \mathbb{N}^{n}$ be the the set of $n$-tuples $l=(l_1,...,l_n)$ which satisfies the following condition. We have $0\leq l_1 \leq p_1$ and $0\leq l_j \leq \frac{p_j-1}{2},$ for $j=2,...,n$ and there exists at least three distinct ${j_1}<{j_2}<{j_3}$ with $l_{j_t}\not=0$ for $t=1,2,3.$
+The following proposition is an adaptation and generalization of Lemma $2$ in \cite{BodenCurtis06} and Lemma $2.1$ and Lemma  $2.2$ in \cite{FintushelStern90}. 
+
+ \begin{proposition} \label{rho_l}
+ Let $l=(l_1,l_2,...,l_n) \in L(p_1,...,p_n).$ Then there exists matrices $Q_j \in \SL(2,\mathbb{C})$ and a representation 
+$ \rho_l: \pi_1(X) \rightarrow \SL(2,\mathbb{C})$  with
+\begin{equation} \label{X_1}
+\rho_l(x_1)= Q_1\begin{pmatrix} e^{\frac{\pi i l_1}{p_1}} & 0
+\\ 0 &  e^{-\frac{\pi i l_1}{p_1}} \end{pmatrix}Q_1^{-1}, \ \ \   \rho_l(x_j)= Q_j\begin{pmatrix} e^{\frac{2\pi i l_j}{p_j}} & 0
+\\ 0 &  e^{-\frac{2\pi i l_j}{p_j}} \end{pmatrix}Q_j^{-1}
+\end{equation}
+for $j=2,\ldots n$. In fact we can choose $Q_j=I$ for $j\not=j_2,j_3.$ 
+
+Furthermore we can choose the $Q_j$'s such that 
+$$ \rho_l : \pi_1(X) \rightarrow \SL(2,\mathbb{R})$$ 
+or
+$$ \rho_l: \pi_1(X) \rightarrow \SU(2)$$ 
+depending on properties of $l$.
+For any non-trivial representation $\rho: \pi_1(X) \rightarrow \SL(2,\mathbb{C})$ there exists $l' \in \mathbb{N}^n$ such that $p_j$ divides $ l'_j$ for at most $n-3$ of the indices $j=1,2,3,...,n$ and such that $\rho$ is of the form 
+\begin{equation} \label{randomrep}
+\rho(x_1)= S_1\begin{pmatrix} e^{\frac{\pi i l'_1}{p_1}} & 0
+\\ 0 &  e^{-\frac{\pi il'_1 }{p_1}} \end{pmatrix}S_1^{-1}, \ \ \   \rho(x_j)= S_j\begin{pmatrix} e^{\frac{2\pi i l'_j}{p_j}} & 0
+\\ 0 &  e^{-\frac{2\pi i l'_j}{p_j}} \end{pmatrix}S_j^{-1}
+\end{equation}
+for some $S_1,...,S_n \in \SL(2,\mathbb{C}).$
+
+Finally we have that the map which associates $l\in L(p_1,...,p_n)$ to a non-trivial representation $\rho : \pi_1(X) \rightarrow \SL(2,\C)$ via \eqref{randomrep} induces an isomorphism
+$$\pi_0(\mathcal{M}^*(X,\SL(2,\C))) \cong L(p_1,...,p_n)$$
+\end{proposition}
+
+The family of Brieskorn integral homology spheres ($n=3$) is very special due to the fact that the moduli space $\mathcal{M}(\Sigma(p_1,p_2,p_3), \SL(2,\mathbb{C}))$ is finite with cardinality given by the $\SL(2,\mathbb{C})$ Casson invariant introduced by Curtis \cite{Curtis01,Curtis03} $$\lambda_{\SL(2,\mathbb{C})}(\Sigma(p_1,p_2,p_3))=(p_1-1)(p_2-1)(p_3-1)/4.$$ This is shown by Boden and Curtis \cite{BodenCurtis06}. Prior to this and in relation to Floer homology, Fintuschel and Stern \cite{FintushelStern90} analyzed the $\SU(2)$ moduli space $\mathcal{M}(X,\SU(2))$ of the Seifert fibered three manifold $X$ considered in this paper and their work shows that the components are even dimensional manifolds with top dimension $2n-6.$ This is in stark contrast to the finiteness of the moduli space $\mathcal{M}(\Sigma(p_1,p_2,p_3), \SL(2,\mathbb{C}))$.  In the three fibered case Kitano and Yamaguchi \cite{KitanoYamaguchi16} has gives a decomposition
+\begin{equation}
+\mathcal{M}(\Sigma,\SL(2,\mathbb{C}))=\mathcal{M}(\Sigma,\SL(2,\mathbb{R})) \bigcup_{\mathcal{M}(\Sigma,\text{U}(1))} \mathcal{M}(\Sigma,\SU(2)).
+\end{equation}
+Where $\Sigma=\Sigma(p_1,p_2,p_3).$ Here we can observe the following generalization of this work as an imidiate corollary of Proposition \ref{rho_l}.
+
+\begin{theorem} \label{thm:decompSL2C}
+The natural inclusion
+$$ \mathcal{M}(X,\SL(2,\R))\sqcup_{\mathcal{M}(X,\text{U}(1))} \mathcal{M}(X,\SU(2)) \rightarrow  \mathcal{M}(X,\SL(2,\C))$$
+induces an isomorphism on the level of $\pi_0$
+$$ \pi_0(\mathcal{M}(X,\SL(2,\R))\sqcup_{\mathcal{M}(X,\text{U}(1))} \mathcal{M}(X,\SU(2))) \cong \pi_0(\mathcal{M}(X,\SL(2,\C))).$$
+\end{theorem}
+By this corollary we can in particular conclude that all Chern-Simons values are real and they only depend on $l\in  L(p_1,...,p_n)$. In Proposition \ref{CSvalues} below we actually provide an explicit formula.
+
+Before commencing the proof let us introduce the following notation
+\begin{equation} \exp(x)=\begin{pmatrix} e^{x} & 0
+\\ 0 &  e^{-x} \end{pmatrix}, \end{equation}
+which should not cause any ambiguities as long as the context shows that we are dealing with a matrix.
+
+
+\begin{proof} We start with the construction of $\rho_l.$ Introduce the matrices $$X_1=\exp(\pi i l_1/p_1), \ \ \ X_j=\exp(2\pi il_j/p_j)$$
+for $j\in \{2,....,n\}\setminus \{j_2,j_3\}.$ 
+Rewrite the relation $\prod_{j=1}^n x_j=1$ as the equivalent relation $$x_{{j_3}+1}\cdots x_n x_1\cdots x_{j_1} \cdots x_{j_2}\cdots x_{j_{3}-1}=x_{j_3}^{-1}.$$ 
+ Assume we can chosen $Q_{j_2},Q_{j_3} \in \SL(2,\mathbb{C})$ such that
+\begin{equation} \label{veryfinnny}
+X_{{j_3}+1}\cdots X_n X_1\cdots X_{j_1} \cdots Q_{j_2}X_{j_2}Q_{j_2}^{-1}\cdots X_{j_{3}-1}=Q_{j_3}^{-1}X_{j_3}^{-1}Q_{j_3}.
+\end{equation}
+Taking $Q_j=I$ for $j\notin \{j_2,j_3\},$ we can define $\rho:\pi_1(X)\rightarrow \SL(2,\mathbb{C})$ by the assigment
+\begin{equation}
+\rho(x_j)=Q_jX_jQ_j^{-1}, \ \rho(h)=X_1^{p_1}.
+\end{equation}
+To see this, observe that $B:=X_1^{p_1}=(-I)^{l_1}$ is central and  as $q_1$ is odd whereas $q_j$ is even for $j\geq 2,$ we also have  $X_j^{p_j}=B^{q_j}, \forall j.$ The last relation in $\pi_1(X)$ is ensured by  \eqref{veryfinnny}. Observe that it will suffice to choose $Q_{j_2} \in \SL(2,\mathbb{C})$ such that
+\begin{equation} \label{radadadadadadada}
+ \tr \left( X_{{j_3}+1}\cdots X_n X_1\cdots X_{j_1} \cdots Q_{j_2}X_{j_2}Q_{j_2}^{-1}\cdots X_{j_{3}-1} \right) =2  \cos\left( \frac{2\pi l_{j_3}}{p_{j_3}}\right) 
+\end{equation}
+because this will ensure that there exists some $Q_{j_3} \in \SL(2,\mathbb{C})$ with the property that
+$$Q_{j_3} X_{{j_3}+1}\cdots X_n X_1\cdots X_{j_1} \cdots Q_{j_2}X_{j_2}Q_{j_2}^{-1}\cdots X_{j_{3}-1} Q_{j_3}^{-1}=X_{j_3},$$ 
+since non-diagonalizable elements of $ \SL(2,\mathbb{C})$ have trace $\pm2$, given that the unit determinant condition implies that the unique eigenvalue with multiplicity two for such elements must be either $1$ or $-1$ and we have that
+$$2  \left|\cos\left( \frac{2\pi l_{j_3}}{p_{j_3}}\right) \right|<2.$$
+For \eqref{radadadadadadada} we used our assumption on $j_3.$ Write
+\begin{align}
+&X_{{j_3}+1}\cdots X_n X_1\cdots X_{j_1} \cdots X_{j_2-1}=\exp(ia),
+\\ &X_{j_2}=\exp(ib),
+ \\ &X_{j_2+1} \cdots X_{j_{3}-1}=\exp(ic),
+ \\ &X_{j_3} =\exp(id).
+\end{align}
+We observe that by the conditions on $(l_{j_2},p_{j_2})$ and $(l_{j_3},p_{j_3})$ we have that 
+$$b,d \notin \pi \Z.$$
+Let $Q_{j_2}=\tilde Q$ where
+$$ \tilde Q =  \tilde Q(u,v,w,z) =\begin{pmatrix} u & v
+\\ w & z
+\end{pmatrix}$$ for $u,v,w,z$ to be chosen below. Assume $uz-vw=1$ so that $\tilde Q\in \SL(2,\mathbb{C}).$ We compute
+\begin{multline}
+X_{{j_3}+1}\cdots X_n X_1\cdots X_{j_1} \cdots X_{j_2-1} \tilde QX_{j_2} \tilde Q^{-1} X_{j_2+1}\cdots X_{j_{3}-1} 
+\\ = \begin{pmatrix} zue^{i(a+b+c)}-wve^{i(a-b+c)} & -uve^{i(a+b-c)}+uve^{i(a-b-c)}
+\\ zve^{i(b+c-a)}-zwe^{i(c-a-b)} & -vwe^{-i(a+b+c)}+zue^{i(b-a-c)} \end{pmatrix}.
+\end{multline}
+Thus we have that
+\begin{multline} \text{tr}\begin{pmatrix} zue^{i(a+b+c)}-wve^{i(a-b+c)} & -uve^{i(a+b-c)}+uve^{i(a-b-c)}
+\\ zwe^{i(b+c-a)}-zwe^{i(c-a-b)} & -vwe^{-i(a+b+c)}+zue^{i(b-a-c)} \end{pmatrix}\\ =2zu\cos(a+b+c)-2wv\cos(a+c-b).
+\end{multline}
+It follows that we must solve
+\begin{equation} \label{system}
+\begin{pmatrix} \cos(a+b+c) & \cos(a+c-b)
+\\ 1 & 1
+\end{pmatrix} \begin{pmatrix} zu \\ -wv \end{pmatrix}=\begin{pmatrix} 2\cos(d) \\ 1 \end{pmatrix}.
+\end{equation}
+ Using the trigonometric identity $\cos(x+y) - \cos(x-y)=-2\sin(x)\sin(y)$ we get
+ \begin{align}
+ \det \begin{pmatrix} \cos(a+b+c) & \cos(a+c-b)
+\\ 1 & 1
+\end{pmatrix}&= \cos((a+c)+b)-\cos((a+c)-b)
+\\ &=-2\sin(a+c)\sin(b).
+ \end{align}
+ Thus it remains to argue $a+c \notin \pi \mathbb{Z}$ and $ b \notin \pi\mathbb{Z}.$ Assume towards a contradiction that $a+c =\pi m$ for some $m \in \mathbb{Z}.$ Hence we would have $P(a+c)=Pm\pi$ for some integer $m$, which would imply 
+ \begin{equation}
+ l_{j_1} 2^{\epsilon} \prod_{t\not=j_1} p_t = 0 \ \modu \ p_{j_1}
+ \end{equation}
+ for $\epsilon \in \{0,1\},$ with $\epsilon =0$ for $j_1=1$ and $\epsilon=0$ otherwise. This is a contradiction, as $2^{\epsilon} \prod_{t\not=j_1} p_t$ is invertible in $\mathbb{Z}/p_{j_1} \mathbb{Z}$ and $1\leq l_{j_1} \leq (p_{j_1}-1)/2^{\epsilon}.$ We see that $b\notin \pi \mathbb{Z}$ directly from the conditions on $l_{j_2}$. Thus we can solve \eqref{system}, and hence find the needed $u,v,w,z$, which concludes the proof of the first part of the proposition.
+ 
+Let us now prove that we can actually choose the $Q_j$'s such that we obtain an $\SL(2,\R)$-representation. We will denote this new choice of the $Q_j$ by $ Q_j^\R$. We set $Q^\R_j = Q$ for $j\in \{1, \ldots j_2-1 ,j_3+1, \ldots, n\}$, where 
+$$Q=\frac{\sqrt{2}}{2}\begin{pmatrix} 1& -i
+\\ -i & 1
+\end{pmatrix}.$$ 
+which has the following property
+$$ Q \exp(a) Q^{-1} = \begin{pmatrix} \cos(a) & -\sin(a)
+\\ \sin(a) & \cos(a)
+\end{pmatrix}.$$
+Introduce the notation $\tilde X_j = Q X_j Q^{-1}$ and observe by the above computations that
+\begin{multline}
+\tr(\tilde X_{{j_3}+1}\cdots \tilde X_n \tilde X_1\cdots \tilde X_{j_1} \cdots \tilde X_{j_2-1}Q \tilde QX_{j_2}(Q\tilde Q)^{-1}) =
+\\ \tr(X_{{j_3}+1}\cdots X_n X_1\cdots X_{j_1} \cdots X_{j_2-1} \tilde QX_{j_2}\tilde Q^{-1}) =
+\\ =2zu\cos(a+b)-2wv\cos(a-b).
+\end{multline}
+To understand which values, say $t$, this trace can take, we consider in analogy with \eqref{system} the equation
+\begin{equation} \label{system2}
+\begin{pmatrix} \cos(a+b) & \cos(a-b)
+\\ 1 & 1
+\end{pmatrix} \begin{pmatrix} zu \\ -wv \end{pmatrix}=\begin{pmatrix} t \\ 1 \end{pmatrix}.
+\end{equation}
+The determinant is $D = -2\sin(a)\sin(b)$, which is non-vanishing since $a,b\notin \pi \Z$. Then we have that
+\begin{equation} \label{system3}
+\begin{pmatrix} zu \\ -wv \end{pmatrix} = \frac1D \begin{pmatrix} t - \cos(a-b) \\ -t+\cos(a+b) \end{pmatrix}.
+\end{equation}
+For $t\in \R$ we observe that $zu\in \R$ and $wv\in \R$. Now we compute
+\begin{multline}
+Q\tilde Q X_{j_2}(Q\tilde Q)^{-1}=
+\\ \begin{pmatrix} (uz-wv)\cos(b) + (uv+wz) \sin(b) & 
+(-(uz+wv) - i(uv-wz))\sin(b)
+\\ ((uz+wv) - i(uv-wz))\sin(b) &
+(uz-wv)\cos(b) - (uv+wz) \sin(b) \end{pmatrix}.
+\end{multline}
+From which we see that 
+$$Q\tilde QX_{j_2}(Q\tilde Q)^{-1}\in SL(2,\R)$$ 
+if and only if
+$$ \text{Im}(uv+wz) = 0, \ \ \ \text{Re}(uv-wz) =0$$
+or equivalently
+$$ uv = \overline{wz}$$
+whenever $t\in \R$. But then this implies that
+$$ |u|^2 |v|^2 = \frac{(t-\cos(a+b))(t-\cos(a-b))}{D^2}.$$
+Which we can solve when $t> \cos(a\pm b)$ by letting
+$$ u= \frac{\sqrt{t-\cos(a+b)}}{D}, \ \ \ v= \frac{\sqrt{t-\cos(a-b)}}{D}$$
+and then
+$$ z = \sqrt{t-\cos(a+b)}, \ \ \ w= \sqrt{t-\cos(a-b)}$$
+and when $t< \cos(a\pm b)$ then we can take
+$$ u= \frac{\sqrt{\cos(a+b) - t }}{D}, \ \ \ v= \frac{\sqrt{\cos(a-b)-t}}{D}$$
+and then
+$$ z = \sqrt{\cos(a+b)-t}, \ \ \ w= \sqrt{\cos(a-b)-t}.$$
+This allows us to complete the construction as follows. First we assume that  $a, c\notin \pi \Z$. For 
+$$ \tilde Q_i = \tilde Q(u_i,v_i,w_i,z_i)$$
+for $i=1,2$ we consider the equation
+$$
+\left[\tilde X_{{j_3}+1}\cdots \tilde X_n  \tilde X_1\cdots \tilde X_{j_1} \cdots Q \tilde Q_1X_{j_2}(Q \tilde Q_1)^{-1}\right]  =
+\left[\left(\tilde X_{j_2+1} \ldots \tilde X_{j_3-1} Q \tilde Q_2 X_{j_3}(Q \tilde Q_2)^{-1}\right)^{-1}\right]
+$$
+which is equivalent to 
+$$\tr\left(\tilde X_{{j_3}+1}\cdots \tilde X_n  \tilde X_1\cdots \tilde X_{j_1} \cdots Q \tilde Q_1X_{j_2}(Q \tilde Q_1)^{-1}\right) =
+\tr\left(\tilde X_{j_2+1} \ldots \tilde X_{j_3-1} Q \tilde Q_2 X_{j_3}(Q \tilde Q_2)^{-1}\right)$$
+since these are certainly all $\SL(2,\C)$ matrices.
+But now, using that we also have that $c,d \notin \pi\Z$, we can chose $t$ bigger than $\cos(a \pm b)$ and $\cos(c\pm d)$ and fix $\tilde Q_i$ as above such that
+\begin{equation}\label{tra1}
+ \tr\left(\tilde X_{{j_3}+1}\cdots \tilde X_n  \tilde X_1\cdots \tilde X_{j_1} \cdots Q \tilde Q_1X_{j_2}(Q \tilde Q_1)^{-1}\right)  = t
+ \end{equation}
+and 
+\begin{equation}\label{tra2}
+ \tr\left(\tilde X_{j_2+1} \ldots \tilde X_{j_3-1} Q \tilde Q_2 X_{j_3}(Q \tilde Q_2)^{-1}\right) = t
+ \end{equation}
+Thus we can now conclude that there exist $Q^{\R} \in \SL(2,\R)$ such that
+\begin{multline}\tilde X_{{j_3}+1}\cdots \tilde X_n  \tilde X_1\cdots \tilde X_{j_1} \cdots Q \tilde Q_1X_{j_2}(Q \tilde Q_1)^{-1} = \\Q^\R \left(\tilde X_{j_2+1} \ldots \tilde X_{j_3-1} Q \tilde Q_2 X_{j_3}(Q \tilde Q_2)^{-1}\right)^{-1} (Q^\R)^{-1} =
+\\  Q^\R Q \tilde Q_2 X_{j_3}^{-1}  (Q^\R Q \tilde Q_2)^{-1} Q^\R  \tilde X_{j_3-1}^{-1} (Q^\R)^{-1} \ldots Q^\R  \tilde X_{j_2+1}^{-1} (Q^\R)^{-1}  .
+\end{multline}
+Thus if we further set 
+$$ Q^\R_{j_2} = Q \tilde Q_1, Q^\R_{j_3} = Q^\R Q \tilde Q_2$$
+and
+$$ Q^\R_j = Q^\R Q$$
+for $j\in \{j_2+1,\ldots,j_3-1\}$, then
+we have found the needed conjugation to obtain an $\SL(2,\R)$-representation. Let us now consider the remanning cases.
+Suppose that $a\in \pi Z$ but $c\notin \pi \Z$. Then the common trace $t$ is by \eqref{tra1} forced to be $e^{ia} \cos b$, so we can solve \eqref{tra2} if and only if $e^{ia} \cos b$ is not contained in the interval spanned by the two values $\cos(c\pm d)$. If this is the case we proceed with the argument as above. If on the other hand $e^{ia} \cos b$ is contained in the interval spanned by $\cos(c\pm d)$, then it is well known that we can choose $Q_j \in \SU(2)$ so as to obtain an $\SU(2)$-representation. A similar argument of course works in the case where $c\in \pi Z$ but $a\notin \pi \Z$. If we have $a,c \in \pi\Z$, then $a+c \in \pi\Z$, but this we have already argued is impossible.
+
+
+
+ Now let $\rho: \pi_1(X) \rightarrow \SL(2,\mathbb{C})$ be an arbitrary non-trivial representation. As remarked before any non-trivial representation is irreducible since $X$ is an integral homology three sphere. Since $\rho(h)$ commutes with the image of $\rho$, we see that $\rho(h) = \pm I$. Hence the relation $x_j^{p_j}=h^{q_j}$ implies that $\rho(x_j)^{p_j}=\pm I,$ and for $j=2,...,n$ we must have $\rho(x_j)^{p_j}=I,$ since $q_j$ is even. Hence $\rho$ must be of the form \eqref{randomrep} for some $l'\in \mathbb{N}^n.$ It only remains to argue that at most $n-3$ of the $\rho(x_j)$ are $\pm I.$ If not, the relation $x_1x_2 \cdots x_n=1$ implies that there is $j_1<j_2$ with 
+ $\rho(x_{j_1})\rho(x_{j_2})=\pm I.$ As $p_{j_1}$ and $p_{j_2}$ are relatively coprime, this is only possible if $\rho(x_{j_1})=\pm I$ and $\rho(x_{j_2})=\pm I.$ This would imply that $\rho(\pi_1(X))\subset \{\pm 1\}=Z(\SU(2))$ which contradicts the fact that $\rho$ is irreducible since it was assumed non-trivial. 
+ 
+ 
+ We describe the connected components of $\mathcal{M}^*(X,\SL(2,\C))$. First we assume that $l_1 \in \{1, \ldots p_1-1\}$ and $l_2 >0$ for an $l\in L(p_1,...,p_n) $. We will now prove that the subset $\mathcal{M}_l^*(X,\SL(2,\C))$ of $\mathcal{M}^*(X,\SL(2,\C))$ consisting of conjugacy classes of representations $\rho$ for which 
+ $$ \tr(\rho(x_1)) = 2\cos(\pi l_1/p_1), \ \ \ \tr(\rho(x_j)) = 2\cos(2\pi l_j/p_j), \ \ j = 2, \ldots n$$
+ is connected.
+ Let 
+ \begin{equation}
+T  =    \bigtimes_{j=3}^{n} \left[\exp\left(\frac{2\pi il_j}{p_j}\right)\right].
+\end{equation}
+ It is obvious that $T$ is connected.  Let now $m : T \rightarrow \SL(2,\mathbb{C})$ be the algebraic product map. Let $P\subset \SL(2,\mathbb{C})$ be the set of non-diagonalizable elements in $\SL(2,\mathbb{C})$ and observe that $P$ has complex co-dimension one, thus so does $m^{-1}(P) \subset T$, but then it follows that $T' = T- m^{-1}(P)$ is also connected. For any
+ $$(M_3, \ldots, M_n) \in T',$$
+ we observe that the set of $(Q_1,Q)\in \SL(2,\C)$ which solves
+ \begin{equation}\label{eqa1}
+ \exp(\pi l_1/p_1) Q_1 \exp(2 \pi  l_2/p_2) Q_1^{-1} = Q M_n^{-1} \ldots M_3^{-1} Q^{-1}
+ \end{equation}
+ is non empty and connected since it is acted transitively on by $(\C^*)^2 \times \C^*$, where the first factor comes from the ambiguity from solving \eqref{system2} and the second comes from the stabiliser of $M_n^{-1} \ldots M_3^{-1}$ under conjugation. But then we see that an open dense subset of $\mathcal{M}_l^*(X,\SL(2,\C))$ is connected, thus $\mathcal{M}_l^*(X,\SL(2,\C))$ it self must be connected.
+If $l_1\in \{0,p_1\}$ or $l_2 =0$, we proceed as follows. Choose $j_1, j_2 \in \{1,\ldots, n-2\}$ such that
+$$ a = \pi \frac{l_1}{p_1} + 2\pi \sum_{j=2}^{j_1} \frac{l_j}{p_j}, \ \ \ b = 2\pi \sum_{j=j_1+1}^{j_2} \frac{l_j}{p_j},$$
+has the property that $a,b\notin \pi \Z$. Now consider the equation
+\begin{equation}\label{eqa2}
+\exp(a) Q_1 \exp(b) Q_1^{-1} = Q M_n^{-1} \ldots M_{j_2+1}^{-1} Q^{-1}.
+\end{equation}
+The connectedness is now argued in exactly the same way, with \eqref{eqa2} in place of \eqref{eqa1}.
+ \end{proof}
+
+For an $\SL(2,\C)$-connection $a$ in the trivial $\SL(2,\C)$-bundle on $X$ we recall the Chern-Simons action is given by 
+\begin{equation} \label{eq:CSaction} \s(a)=\frac{1}{8\pi^2 }\int_X \tr\left(a\dv a +\frac{2}{3}a^3\right) \mod \Z.
+\end{equation} 
+
+We now compute the Chern-Simons values of the representations constructed above. 
+\begin{proposition} \label{CSvalues}  For any representation $\rho : \pi_1(X) \rightarrow SL(2,\C)$, define $l=(l_1,...,l_n) \in L(p_1,...,p_n),$ so that
+$$ \tr(\rho(x_1)) = 2\cos(\pi l_1/p_1), \ \ \ \tr(\rho(x_j)) = 2\cos(2\pi l_j/p_j), \ \ j = 2, \ldots n.$$
+Then we have that
+\begin{equation} \label{CS}
+\s\left( \rho \right) = -\frac{P}{4}\left(\frac{l_1}{p_1}+\sum_{j=2}^{n} \frac{2l_j}{p_j}\right)^2 \  \modu \ \mathbb{Z}.
+\end{equation}
+\end{proposition}
+Formula \eqref{CS} was proven for $\SU(2)$ connections by Kirk and Klassen and it is stated in Theorem $5.2$ in \cite{KirkKlassen90}. It is proven using the following general result.
+Let $M$ be a closed oriented three manifold containing a knot $K.$ Let $Y$ be the complement of a tubular neighborhood of $K$ in $M.$ With respect to an identification $M\setminus Y \simeq D^2 \times S^1,$ choose simple closed curves $\mu, \lambda$ on $\partial Y$ intersecting in a single point such that $\mu$ bounds a disc of the form $D^2 \times \{1\}.$ Let $\rho_t:\pi_1(Y) \rightarrow \text{SU}(2)$ be a path of representations such that $\rho_0(\mu)=\rho_1(\mu)=1,$ and for which there exists continuous piecewise differentiable functions 
+$$\alpha,\beta:I \rightarrow \R$$ 
+with 
+\begin{align}
+\begin{split}
+\rho_t(\mu)= \begin{pmatrix} e^{2\pi i \alpha(t)} & 0
+\\ 0 &  e^{-2\pi i \alpha(t)} \end{pmatrix}, \  \rho_t(\lambda)=\begin{pmatrix} e^{2\pi i \beta(t)} & 0
+\\ 0 &  e^{-2\pi i \beta(t)} \end{pmatrix}.
+\end{split}
+\end{align}
+Thinking of $\rho_1,\rho_0$ as flat connections on $M$ we have
+\begin{equation} \label{KK}
+\s(\rho_0)-\s(\rho_1)=-2 \int_0^1 \beta(t) \alpha'(t) \ \dv t \ \text{mod} \ \mathbb{Z}. 
+\end{equation}
+Notice that formula \eqref{KK} differs from the corresponding formula in \cite{KirkKlassen90} by a sign. This discrepancy was already discussed by Freed and Gompf in \cite{FreedGompf91} and is due to a sign convention. See the footnote on page $98$ in \cite{FreedGompf91}. The formula \eqref{KK} was also used in the work \cite{AndersenHansen} by the first author and Hansen. 
+
+ 
+\begin{proof}[Proof of Proposition \ref{CSvalues}]
+Let $K\subset X$ be the $n$'th exceptional fiber. Let $Y$ be the complement of a tubular neighborhood of $K$ in $X.$ Removing $K$ has the effect on $\pi_1$ of removing the relation $x_n^{p_n}=h^{-q_n}$, i.e. we have a presentation
+\begin{equation} \label{presentation2}
+\pi_1(Y) \simeq \left\langle h,  x_1,...,x_n \mid  x_1x_2\cdots x_n, x_1^{p_1}h^{-q_1},...,x_{n-1}^{p_{n-1}}h^{-q_{n-1}} , \forall j [x_j,h]   \right\rangle.
+\end{equation}
+As the meridian and longitude of $\partial Y$ we can take $\mu=x_n^{p_n}h^{q_n}$ and $\lambda=x_n^{-p_1\cdots p_{n-1}}h^c$ respectively, where $c=\sum_{j=1}^{n-1} \frac{p_1\cdots p_{n-1}q_j}{p_j}.$ These choices of meridian and longitude coincide with the choices made in \cite{FintushelStern90}.
+
+Let $\rho:\pi_1(X)\rightarrow \SL(2,\mathbb{C})$ be any irreducible representation with its corresponding $l=(l_1,...,l_n) \in L(p_1,...,p_n)$. Now $\rho(h)=\exp(\pi i v)$ for some integer $v\in \Z$.
+ Introduce the two quantities 
+ $$\xi= P\left(\frac{l_1}{p_1}+\sum_{j=2}^{n} \frac{2l_j}{p_j}\right)$$ and $$\eta=\frac{\xi}{P}.$$
+
+
+The proof of \eqref{CS} presented here consists analogously with the proof of Theorem $5.2$ in \cite{KirkKlassen90} of two parts. In the first part, we find a path of $\SL(2,\mathbb{C})$ connections on $X$ connecting $\rho$ to an abelian representation $\rho_0$. In fact $\rho_0$ will be an $\SU(2)$ connection on $X.$  In the second part, we then find a path from $\rho_0$ to the trivial representation $\rho^{\text{triv}}$ and we then apply Kirk and Klassens formula \eqref{KK}. The only difference from the proof in \cite{KirkKlassen90} is that we need to explicitly ensure that our paths stay away from parabolic representations. The relevant paths are chosen such that $\lambda,\mu$ are mapped to the maximal $\mathbb{C}^*$ torus of diagonal matrices. 
+
+
+After conjugating by $S_n^{-1}$ we have $\rho(x_n)=\exp\left(\frac{2\pi i l_n}{p_n}\right).$ Consider the subset $$S\subset \text{Hom}\left(\pi_1(Y),\SL(2,\mathbb{C})\right) $$ of representations $\tilde{\rho}$ satisfying
+\begin{equation}
+\tilde{\rho}(h)=\rho(h), \ [\tilde{\rho}(x_1)]=\left[\exp\left(\frac{\pi il_1}{p_1}\right)\right]\, $$
+and
+$$\ [\tilde{\rho}(x_j)]=\left[\exp\left(\frac{2\pi il_j}{p_j}\right)\right], \ \text{for }2\leq j\leq n-1.
+\end{equation}
+where $[Q]$ denotes the $\SL(2,\mathbb{C})$ conjugacy class of $Q \in \SL(2,\mathbb{C}).$ By considering the presentation \eqref{presentation2}, we see that $S$ is naturally homeomorphic to the product of the $n-1$ conjugacy classes
+\begin{equation}
+S\simeq \left[\exp\left(\frac{\pi il_1}{p_1}\right)\right]\times  \bigtimes_{j=2}^{n-1} \left[\exp\left(\frac{2\pi il_j}{p_j}\right)\right].
+\end{equation}
+ Therefore the connectedness of $\SL(2,\mathbb{C})$ implies that $S$ is connected. Following a similar argument use in the proof of the previous proposition, we let 
+ $$m : S \rightarrow \SL(2,\mathbb{C})$$
+  be the algebraic product map. Let $P\subset \SL(2,\mathbb{C})$ be the set of non-diagonalizable elements in $\SL(2,\mathbb{C})$ and observe that $P$ has complex co-dimension one, thus so does $m^{-1}(P) \subset S$, but then it follows that $S' = S- m^{-1}(P)$ is also connected.
+ 
+ Write $\rho=\rho_1$ and observe that $\rho_1 \in S'$. Choose a smooth path $\rho_t$ in $S'$ connecting $\rho_1$ to $\rho_0 \in S'$ given by
+\begin{equation}
+\rho_0(x_1)=\exp\left(-\frac{\pi i l_1}{p_1}\right), \ \rho_0(x_j)=\exp\left(-\frac{2\pi i l_j}{p_j}\right), \ j=2,...,n-1
+\end{equation} and $\rho_0(x_n)=\exp\left(\frac{\pi i l_1}{p_1}+\sum_{j=2}^{n-1}\frac{2\pi i l_j}{p_j}\right).$ By an over all conjugation we can choose the arc $\rho_t$ such that $\rho_t(x_n)=\exp(2\pi if(t))$ for a smooth function $f(t).$  We have $f(0)=\frac{l_1}{2p_1}+\sum_{j=2}^{n-1} \frac{l_j}{p_j}$ and $ f(1)=\frac{l_n}{p_n}.$ Notice that
+$f(0)=\frac{\eta}{2}-f(1).$ As $q_n$ is even we have the following two equalities
+\begin{align}
+\rho_t(\mu)=\rho_t(x_n)^{p_n}\rho_t(h)^{q_n}=&\exp(2\pi i p_nf(t)),
+\\ \rho_t(\lambda)=\rho_t(x_n)^{-p_1\cdots p_{n-1}}\rho_t(h)^c &= \exp\left(-2\pi i p_1\cdots p_{n-1}f(t)+vc\pi i\right).
+\end{align}
+Write $y=vc\in \Z.$ Define $\alpha_1(t)=p_nf(t)$ and $ \beta_1(t)=-\frac{P}{p_n}f(t)+\frac{y}{2}. $ We have that
+\begin{align} \label{firstintegral}\begin{split}
+-2 \int_0^1 \alpha'_1(t)\beta_1(t) \ \dv t&=-2 \int_0^1 p_nf'(t)\left(-\frac{P}{p_n}f(t)+\frac{y}{2}\right) \ \dv t
+\\ &=-2 \int_{f(0}^{f(1)} \left(-Pu+\frac{p_n y}{2}\right) \ \dv u
+\\ &= -2\left[-\frac{Pu^2}{2}+\frac{p_ny u}{2}\right]_{u=f(0)}^{u=f(1)}
+\\ &=Pf(1)^2-yp_nf(1)-Pf(0)^2+yp_nf(0)
+\\ &= Pf(1)^2-Pf(0)^2+yp_nf(0) \text{ mod } \mathbb{Z}.
+\end{split}
+\end{align}
+For the last identity we used that $yp_nf(1)=yl_n \in \Z.$
+
+
+For the second part we use the fact that $H_1(Y) \simeq \mathbb{Z}$ with generator $\mu$ to conclude that the abelian $\SU(2)$ connection $\rho_0$ can be connected to the trivial representation $\rho^{\text{triv}}$ by a path of $\SU(2)$ representations $\sigma_t$ with $ \sigma_t(\mu)=\exp(2\pi it \alpha_1(0))$ and $ \sigma_t(\lambda)=\exp(2\pi i \beta_1(0)).$ Let $\alpha_0(t)=t\alpha_1(0)$ and $\beta_0(t)=\beta_1(0).$ As $\s(\rho^{\text{triv}})=0,$ we can apply Kirk and Klassen's formula  \eqref{KK} to obtain
+\begin{equation}
+-\s(\rho) = \s(\rho^{\text{triv}})-\s(\rho)= -2 \int_0^1 \alpha'_0(t)\beta_0(t) \ \dv t-2\int_0^1 \alpha'_1(t)\beta_1(t) \ \dv t.
+\end{equation}
+We have
+\begin{align}
+-2\int_0^1 \alpha'_0(t)\beta_0(t) \ \dv t&=-2f(0)(-Pf(0)+\frac{yp_n}{2})=2Pf(0)^2-yp_nf(0).
+\end{align}
+Comparing this with \eqref{firstintegral} we get that
+\begin{align}
+-\s(\rho) & = P(f(1)^2+f(0)^2) \ \modu \ \mathbb{Z}
+\\ &=P((f(1)+f(0))^2-2f(0)f(1)) \ \modu \ \mathbb{Z}
+\\ &= \frac{\xi^2}{4P} \ \modu \ \mathbb{Z}.
+\end{align}
+For the last equality we used that $2Pf(0)f(1)\in \Z$ and that $$f(0)+f(1)=\frac{\eta}{2}=\frac{\xi}{2P}.$$
+This is what we wanted.  \end{proof}
+
+For $x \in \Q$ let $[x]=x \mod  \Z.$ Introduce the set \begin{multline} \mathcal{W}(p_1,...,p_n)= \left\{ \left[ \frac{-m^2}{4P}\right]  : \text{  $m \in \Z$ is divisible by at most $n-3$ of the $p_j$'s}\right\}.
+\end{multline}
+Recall that the classical complex Chern-Simons values $\CS^*_{\C}(X)$ is the range of the restriction of $\s$ to $\mathcal{M}^*(X,\SL(2,\C))$. Thus we can compute $\CS_{\C}^*(X)$ as a corollary of Proposition \ref{CSvalues}.
+
+\begin{corollary} \label{cor:HUHU} We have that
+\begin{equation}
+\CS^*_{\C}(X)= \mathcal{W}(p_1,...,p_n).
+\end{equation}
+\end{corollary}
+
+\begin{proof} It is clear that $\CS_{\C}^*(X) \subset \mathcal{W}(p_1,...,p_n).$ We must show that for any $y \in \mathbb{Z}$ which is not divisible by more than  three of the $p_j$ we can find $l=(l_1,...,l_n) \in L(p_1,...,p_n)$  which solves the congruence equation
+\begin{equation} \label{congruence}
+y^2 = \left(P\left( \frac{l_1}{p_1}+\sum_{j=2}^{n} \frac{2 l_j}{p_j}\right) \right)^2 \  \modu \ 4P\mathbb{Z}
+\end{equation} 
+For $x \in \mathbb{Z}$ and $d \in \mathbb{N}$ let $[x]_d$ denote the congruence class of $x$ in the quotient ring $\mathbb{Z} / d\mathbb{Z}.$ Since $p_j$ is odd for $j\geq 2,$ it follows that $4p_1,p_2,...,p_n$ are also pairwise co-prime. Hence the Chinese remainder theorem applies and the natural ring homomorphism $q:\mathbb{Z} \rightarrow \mathbb{Z}/4p_1\mathbb{Z} \oplus_{j=2}^n \mathbb{Z}/p_j\mathbb{Z},$ given by $x \mapsto ([x]_{4p_1},...,[x]_{p_n}),$ descends to an isomorphism of rings 
+$$\overline{q}: \mathbb{Z}/4P\mathbb{Z} \overset{\sim}{\rightarrow} \mathbb{Z}/4p_1\mathbb{Z} \ \oplus \ \bigoplus_{j=2}^n \mathbb{Z}/p_j\mathbb{Z} .$$
+ It follows that \eqref{congruence} is in fact equivalent to the following $n$ congruence equations
+\begin{align}\label{congruence2}
+[{y]^2}_{4p_1}&=\left[l_1\prod_{j=2}^n p_j+2\left(\sum_{j=2}^{n} l_j \prod_{t\not=j} p_t\right)\right]^2_{4p_1}, 
+\\ [y]^2_{p_j}&=\left[2l_j \prod_{t\not=j}p_t \right]^2_{p_j}, \ \forall j\geq 2.
+\end{align} The coprimality conditions ensures that $2\prod_{t\not=j} p_t$ is an invertible element in $\mathbb{Z}/p_j\mathbb{Z}$ and therefore solving the last $n-1$ of the equations in \eqref{congruence2} can indeed be done with $0 \leq l_j\leq (p_j-1)/2.$ 
+It remains only to consider the first of the equations in \eqref{congruence2}. To this end we first observe that
+$$ \left( l_1 \prod_{j=2}^n p_j + 2 \sum_{j=2}^n l_j  \prod_{t\neq j} p_j\right)^2 = \left( l_1 \prod_{j=2}^n p_j \right)^2 \text{ mod } 4 p_1$$
+But then we can solve
+$$ y^2 = l_1^2 \prod_{j=2}^n p^2_j \text{ mod } 4 p_1$$
+for $0 \leq l_1 \leq 2p_1$. But we also have that
+$$ y^2 = (-l_1 \pm 2 p_1)^2 \prod_{j=2}^n p_j^2\text{ mod } 4 p_1.$$
+Thus it follows that we can in fact solve  \eqref{congruence2} with $l_1\in \{0,...,p_1\}.$ 
+ Thus we have shown that $\CS_{\C}^*(X) = \mathcal{W}(p_1,...,p_n).$  \end{proof}
+
+%
+% We note that
+%\begin{equation}
+%(cp_1+j)^2-(dp_1-j)^2=(2(c+d)+(c^2-d^2)p_1)p_1
+%\end{equation}
+%and if $c$ and $d$ have the same parity this is divisible by $4p_1.$ Here we use that $[2(c+d)]_4=[c^2-d^2]_4=0,$ if $c$ and $d$ have the same parity. It follows that the squares $[x]_{4p_1}^2$ occur in a repeating pattern which is symmetric around multiples of $p_1$
+%$$
+%\begin{matrix}
+%x: & p_1-j & ... & p_1-1 & p_1 & p_1+1 & ... & p_1+j
+%\\  [x]_{4p_1}^2: & [p_1-j]^2_{4p_1} & ... & [p_1-1]^2_{4p_1} & [p_1]^2_{4p_1} & [p_1-1]^2_{4p_1} & ... & [p_1-j]^2_{4p_1}
+% \end{matrix}$$
+% In particular $[y]_{4p_1}^2 \in \{[0]_{4p_1}, [1]^2_{4p_1},[2]^2_{4p_1},...,[p_1-2]^2_{4p_1}[p_1-1]^2_{4p_1}\},$ and equation \eqref{congruence2} is reduced to 
+% $$[y]^2_{4p_1}=\left[l_1 \prod_{t=2}^n p_t\right]^2_{4p_1},$$ which is independent of $l_2,...,l_n.$ As $\prod_{t=2}^n p_t$ is invertible modulo $4p_1,$ we can for every $m =1,..,p_1-1$ find a unique $x_m \in \{1,...,p-1\}$  and $d_m \in \mathbb{N}$ with $x_m\prod_{t=2}^n p_t=m+d_mp_1.$ As multiplication is linear, we must have $x_{p_1-m}=p_1-x_m$ hence $ (p_1-x_m)\prod_{t=2}^n p_t=p_1-m+d_{p-m}p_1.$ Thus \begin{align} p_1(d_m+d_{m-p}+1) &= \left(x_m\prod_{t=2}^n p_t-m\right)+\left((p_1-x_m)\prod_{t=2}^n p_t-(p_1-m)\right)+p_1
+% \\ &= p_1 \prod_{t\geq 2}^n p_t=P.
+% \end{align} As $p_2,...,p_n$ are all odd, this implies that $d_m$ and $d_{p-m}$ have the same parity which imply $$\left\{\left[x_m\prod_{t=2}^n p_t\right]_{4p_1}^2,\left[x_{p-m}\prod_{t=2}^n p_t\right]_{4p_1}^2\right\}=\{[m]_{4p_1}^2,[p_1-m]_{4p_1}^2\}.$$
+% 
+ 
+
+
+
+
+Our analysis of the components of the $\SL(2,\C)$ moduli space and the Chern-Simons values now allow us to prove the following.
+
+\begin{theorem} \label{ThmBrieskornSphere} The Chern-Simons action 
+$$\s: \pi_0(\mathcal{M}(X,\SL(2,\mathbb{C}))) \rightarrow \mathbb{R}/\mathbb{Z}$$ 
+is injective and induces an isomorphism
+$$ \pi_0(\mathcal{M}(X,\SL(2,\mathbb{C}))) \cong \mathcal{W}(p_1,\ldots, p_n) \sqcup \{0\}.$$
+\end{theorem} 
+\begin{proof}
+We use the inverse of the isomorphism
+$$\overline{q}: \mathbb{Z}/4P\mathbb{Z} \overset{\sim}{\rightarrow} \mathbb{Z}/4p_1\mathbb{Z} \bigoplus_{j=2}^n \mathbb{Z}/p_j\mathbb{Z}$$
+to conclude that for each Chern-Simons value in $\mathcal{W}(p_1,\ldots, p_n)$, there is a unique $l\in L(p_1,\ldots, p_n)$ with the given Chern-Simons value, concluding the proof by the last statement of Proposition \ref{rho_l}.
+
+\end{proof}
+
+Thereom \ref{thm:cs}  is a summary of the main results obtained in this section.
+
+\begin{proof}[Proof of Theorem \ref{thm:cs}]
+This follows from Theorem 	\ref{thm:decompSL2C}, Corollary \ref{cor:HUHU} and Theorem  \ref{ThmBrieskornSphere}.
+\end{proof}
+
+\section{The Borel transform and Complex Cherns-Simons} \label{sec:BOREL}
+
+We now provide the proof of Theorem \ref{2.1}. The reader not familiar with the Borel transform $\mathcal{B}$ and its relation to the Laplace transform is encouraged to read Section \ref{sec:Borel}, before reading the proof of Theorem \ref{2.1}. For a measurable function $g:\R_+ \rightarrow \C$  of sufficient decay, we use the notation $\mathcal{L}_{\R_+}(g)$ for the Laplace transform -- see  Equation  \eqref{eq:Laplacetransform}.
+
+\begin{proof}[Proof of Theorem \ref{2.1}]
+We start by giving a characterization of which of the phases in \eqref{phasedecomp} give a non-zero contribution. Introduce for $\mu \in \mathbb{Q}/ \Z$ the set 
+\begin{align}\label{R}
+\mathcal{T}(\mu) = & \{m=1,...,2P -1 :-m^2/4P=\mu \ \modu \ \mathbb{Z} \}
+\\ =& \{m=1,...,2P -1 :g(2\pi i m)=2\pi i \mu \ \modu \ 2\pi i\mathbb{Z} \}
+\end{align}
+
+The set of phases $ 2\pi i R^*(X)$ in \eqref{expansionX} consists of the values $g(2\pi i m)=  \frac{-m^2 2\pi i}{4P}$ for which 
+\begin{equation} \label{sumresiduesnotzero}
+\sum_{x \in \mathcal{T}(-m^2/4P)} \text{Res} \left( \frac{F(y)e^{kg(y)}}{1-e^{-ky}}, y=2\pi i x \right) \not=0,
+\end{equation}
+for $m=1,...,2P-1$.
+Thus, by Corollary \ref{cor:HUHU}, we must prove that if \eqref{sumresiduesnotzero} holds, then there exists $\tilde m \in \mathcal{T}(-m^2/4P)$ such that at most $n-3$ of the $p_j$'s which divide $\tilde m$. 
+
+
+
+We start by noting that the set of poles of $F$ is given by
+\begin{equation} \label{PolesofF}
+\mathcal{P}_F=\{ 2\pi im \mid m \in \mathbb{Z} \ \text{and $m$ is divisible by at most $n-3$ of the $p_j$'s} \}.
+\end{equation} 
+It follows that if $\tilde m$ is divisible by at least $n-2$ of the $p_j,$ then $F(y)$ does not have a pole at $y=2\pi i \tilde m$ and we get for integral $k$
+\begin{align}
+\text{Res} \left( \frac{F(y)e^{kg(y)}}{1-e^{-ky}}, y=2\pi i \tilde m \right)&=F(2 \pi i \tilde m) e^{kg(2\pi i\tilde m)} \text{Res} \left(\frac{1}{1-e^{-ky}}, y=2\pi i \tilde m \right)
+\\ &=F(2 \pi i \tilde m) e^{kg(2\pi i\tilde m)}\frac{1}{k}. \end{align}
+As we already noted above, Lawrence and Rozansky checked that all the $k^{-1}$ terms cancels, so it follows that 
+\begin{equation}
+\sum_{\substack{\tilde m \in \mathcal{T}(-m^2/4P), \\ \text{ and $\tilde{m}$ is divisible by at least $n-2$ of the $p_j$}}}  \text{Res} \left( \frac{F(y)e^{kg(y)}}{1-e^{-ky}}, y=2\pi i \tilde m \right)=0.
+\end{equation}
+Therefore we see that if \eqref{sumresiduesnotzero} holds, then there is some $\tilde{m} \in \mathcal{T}(-m^2/4P)$ which is divisible by at most $n-3$ of the $p_j.$ 
+This establishes  $R^*(X) \subset \CS_{\C}^*$ and we get \eqref{EXPANSIOON}. Observe that as a corollary we obatin for each $\theta \in \CS_{\C}^*$ the formula
+\begin{equation} \label{eq:formulaforpolynomial}
+e^{2\pi ik \theta} \z_{\theta}(k)=- \sum_{\tilde m \in \mathcal{T}(\theta)}  \text{Res} \left( \frac{F(y)e^{kg(y)}}{1-e^{-ky}}, y=2\pi i \tilde m \right).
+\end{equation}
+
+
+We now turn to $\mathcal{B}(\z_{0}).$ The formal series $\z_{0}$ is the   the asymptotic expansion of the Laplace integral $$\z^{\I}(k)=\frac{1}{2\pi i} \int_{\gamma} F(y) e^{kg(y)} \ \dv y.$$ Let $G$ be the rational function introduced in \eqref{eq:G} and introduce the multivalued function $\mathcal{B}_0(\zeta)$ given by 
+\begin{equation}
+\mathcal{B}_0(\zeta)= \frac{\kappa}{\pi i \sqrt{\zeta}} G\left( \exp\left(\frac{\kappa\sqrt{\zeta}}{P} \right)\right)= \frac{\kappa i}{4\pi } \frac{\prod_{j=1}^n \sinh\left(\frac{\kappa\sqrt{\zeta}}{p_j}\right)}{ \sqrt{\zeta} \left(\sinh\left(\kappa\sqrt{\zeta}\right)\right)^{n-2}}.
+\end{equation} With this notation, the equation for the Borel transform  \eqref{ComputingBorel} which we want to prove, reads as follows
+\begin{equation} \label{eq:reduction}
+\mathcal{B}(\z_0)= \mathcal{B}_0. 
+\end{equation} The function $\mathcal{B}_0$ is related to $F$ as follows
+\begin{equation} \label{eq:BORELLO}
+\mathcal{B}_0(\zeta)=\frac{\sqrt{ 2 P }}{ \sqrt{\pi i\zeta}} F\left(\sqrt{8\pi i P \zeta}\right).
+\end{equation} 
+ Now as, $F(-y)=F(y)$ we have a convergent power series expansion valid for $y$ close to $0$
+$$F(y)=\sum_{m=1}^{\infty} \frac{F^{(2m)}(0)}{(2m)!} y^{2m}.$$
+Therefore Equation \eqref{eq:BORELLO} implies that if we set $$B_m=  \frac{1}{2 \pi i} \sqrt{8\pi i P} \frac{F^{(2m)}(0)}{(2m)!}  \left(8\pi i P \right)^{m}$$ then we have a convergent expansion valid for $\zeta$ close to $0$ of the form
+\begin{equation} \label{eq:zetanearzero}
+\mathcal{B}_0(\zeta) = \sum_{m=1}^{\infty}  B_m \zeta^{m-1/2}.
+\end{equation}
+  Introduce the variable $t$ defined by 
+  $$-t=g(y)= \frac{ i y^2}{8 \pi P}.$$ 
+  Thus 
+  $$ \dv y= \frac12 \sqrt{\frac{8 \pi i P }{  t}} \dv t.$$ 
+  We now rewrite $\z^{\I}(k)$ as the Laplace transform of $\mathcal{B}_0$ 
+\begin{align} \label{ComputeBorel} \begin{split}
+\z^{\I}(k)&= \frac{1}{2 \pi i} \int_\gamma F(y) e^{kg(y)} \ \dv y =  \frac{1}{2 \pi i} \int_0^{\infty} e^{-kt} \int_{g=t} \frac{F}{\dv g} \ \dv t
+\\ &= \frac{1}{2 \pi i} \int_0^{\infty} e^{-kt} \sqrt{\frac{8 \pi i P}{ t}} F\left(\sqrt{8\pi i Pt}\right) \ \dv t
+\\ &= \int_0^{\infty} e^{-kt} \mathcal{B}_0(t) \ \dv t = \mathcal{L}_{\R_+} (\mathcal{B}_0)(k).
+ \end{split}
+\end{align}
+  The existence of the asymptotic expansion \eqref{expansionX}
+  
+  $$\z^{\I}(k)= \mathcal{L}_{\R_+} (\mathcal{B}_0)(k) \sim_{k \rightarrow \infty}  \z_0(k) $$ can now be obtained by appealing to the first part of Lemma \ref{lem:masterlemma} where we set $B=\mathcal{B}_0$. Here we use the existence of the expansion \eqref{eq:zetanearzero}. Therefore the desired identity  \eqref{ComputingBorel}  $\mathcal{B}(\z_0)=\mathcal{B}_0$ follows from the second part of Lemma \ref{lem:masterlemma} and the convergence of the expansion \eqref{eq:zetanearzero}. 
+
+  As $F(-y)=F(y)$ we note that the factor
+  
+   $$\zeta \mapsto F\left(\sqrt{8\pi iP\zeta}\right)$$
+    gives a well-defined meromorphic function. Thus $\mathcal{B}(\z_{0})(\zeta)$ is a multivalued meromorphic function with a square root singularity at $0$ and with  singularities for $\sqrt{8\pi iP\zeta} \in  \mathcal{P}_F$ where $\mathcal{P}_F$ is the set of poles of $F(y).$ This set was computed above (see equation \eqref{PolesofF}) and we conclude that the poles of  $\mathcal{B}(\z_{0})(\zeta)$ occur at
+    
+$$\zeta_m=\frac{ -\pi  m^2}{2iP}=\frac{- m^2}{4P} \frac{2\pi }{i}$$ with $m\in \mathbb{Z}$ being divisible by less than or equal to $n-3$ of the $p_j$'s.  This concludes the proof of \eqref{Inclu}.
+ \end{proof}
+ 
+  It is of course expected that only a Chern-Simons invariant $\theta$ of a flat $\SU(2)$ connection have a non-vanishing polynomial $\z_{\theta} \not=0,$ i.e. $$R^*(X)=\s(\mathcal{M}^*\left(X,\SU(2)\right) ).$$ 
+
+
+
+
+
+\subsection{Resummation of the WRT invariant}
+We now turn to the resummation of the normalized WRT invariant $\tilde{\z}_k(X)$. Recall that for $\mu \in \mathbb{Q}/ \Z$ we introduced the set
+\begin{align}\label{R}
+\mathcal{T}(\mu) = & \{m=1,...,2P -1 :-m^2/4P=\mu \ \modu \ \mathbb{Z} \}.
+\end{align}
+We also introdude the residue operator $\mathcal{I}_\mu$ which for a meromorphic function $\hat{\varphi}$ is given by
+\begin{align}  \label{Lmu}  \mathcal{I}_{\mu}(\hat{\varphi})(\xi) = -& \sum_{x \in \mathcal{T}(\mu)} \Res \left (\frac{\exp\left(\xi \frac{iy^2}{8\pi P}\right)}{(1-e^{-\xi y})} \frac{y}{ 4P}\hat{\varphi}\left(\frac{y^2}{i8\pi P }\right) , y=2\pi i x\right)\end{align}
+Observe that by definition $\mathcal{T}(\mu)$ is empty for all but finitely many $\mu \in \mathbb{Q} / \mathbb{Z}$ and therefore $\mathcal{I}_{\mu}$ is $0$ for all but these finitely many $\mu.$
+
+
+\begin{corollary}  \label{2.2}
+	The polynomials $\z_{\theta}$ and the quantum invariant $\widetilde{\z}_k(X)$  are determined by $\mathcal{B}(\z_{0})$  as follows
+	\begin{align} \label{Poooly}  \z_{\theta} (k) & = e^{-2\pi i k \theta} \mathcal{I}_{\theta}\left(\mathcal{B}(\z_{0})\right)(k).
+	\\   \widetilde{\z}_k(X) &= \mathcal{L}_{\R_+}( \mathcal{B}(\z_{0}))(k)+\sum_{\theta \in \frac{i}{2\pi} \Omega \ \modu \ \Z} \mathcal{I}_{\theta}\left(\mathcal{B}(\z_{0})\right)(k) \label{Resuuumation} .
+	\end{align}
+\end{corollary} 
+The identity \eqref{Resuuumation} of Corollary \ref{2.2} is reminiscent of the typical resummation process from resurgence \cite{Schiappa18,Dorigoni14}. The Ohtsuki-series is known to determine $\tau_k(X).$ The new insight provided by resurgence is that it does so via resummation as stated in Corollary \ref{2.2}.
+
+We now prove Corollary \ref{2.2}. 
+\begin{proof}
+	It easily follows from \eqref{ComputingBorel} that
+	\begin{equation} \label{TYTY}
+	F(\zeta)= \mathcal{B}(\z_{0})\left(\frac{\zeta^2}{i8P\pi}\right) \frac{\zeta }{4P}.
+	\end{equation} Recall from  \eqref{eq:formulaforpolynomial} that \begin{equation} 
+	e^{2\pi ik \theta} \z_{\theta}(k)=- \sum_{\tilde m \in \mathcal{T}(\theta)}  \text{Res} \left( \frac{F(y)e^{kg(y)}}{1-e^{-ky}}, y=2\pi i \tilde m \right).
+	\end{equation}
+From this and Equation \eqref{TYTY} one easily obtains \eqref{Poooly}. 
+
+In the proof of Theorem \ref{2.1} we obtained the following exact formula
+\begin{equation} \label{eq:DecompWRT}
+\tilde{\z}_k(X) = \mathcal{L}_{\R_+}(\mathcal{B})(k)+ \sum_{\theta \in \CS_{\C}^*(X)} e^{2\pi i k \theta} \z_\theta(k).
+\end{equation}
+Thus we see that \eqref{Resuuumation} follows from this formula and \eqref{Poooly}. 
+\end{proof}
+
+\subsection{Resurgence of the generating function} \label{sec:GeneratingFunction}
+
+Let $G$ be a simple, simply connected compact Lie group, and let $\tau_{G,k}$ be the level $k$ Reshetikhin-Turaev TQFT constructed from the quantum group $U_q(\mathfrak{g})$, where $\mathfrak{g}$ is the complexification of the Lie algebra $\mathfrak{h}$ of $G$. Let $\check{h}$ be the dual Coxeter number of $\mathfrak{h}$, and set $\check{k}=k+h$. For a closed oriented three manifold $M$ (possibly containing a colored framed link) we consider the normalized invariant \begin{equation}
+\z_{G,k}(M)= \frac{\tau_{G,\check{k}}(M)}{\tau_{G,\check{k} }(\Sph^2 \times \Sph^1)}.
+\end{equation}
+Let $z$ be a formal variable and consider the generating function $$\z_{G}(M;z) \in \C[[z]]$$
+given by
+\begin{equation} \label{eq:GeneratingFunction}
+\z_G(M;z) = \sum_{k=0}^{\infty} \z_{G,k}(M) z^k.
+\end{equation}
+By work of Garoufalidis  $\z_{G}(M;z) $ is known to be convergent on the unit disc. Motivated by the paradigm of analytic continuation and resurgence, Garoufalidis posed the following conjecture
+
+\begin{conjecture}[\cite{Garoufalidis08}] \label{conj:GeneratingFunction}
+	The generating function $\z_{G}(M;z)$ has an analytic continuation to $\C\setminus e \Lambda$ where $e \Lambda$ is a finite set containing zero and the exponentials of the negatives of the complex classical Chern-Simons values.
+\end{conjecture}
+
+In other words, the conjecture is that the generating function $\z_{G}(M;z)$ determines the germ at zero of a resurgent function. This conjecture is formally motivated from resurgence of Laplace integrals and the (non-rigorous) path integral formula for the WRT invariant, as explained in \cite{Garoufalidis08}.
+
+We now specialize to the case of the Seifert fibered homology sphere $X$ and $G=\SU(2)$. Set $K=k+2$ and consider the generating function for the normalized quantum invariant $\tilde{\z}_k(X)$ given by
+\begin{equation} \label{eq:NGeneratingFunction}
+\tilde{\z}(X;z) =\sum_{k=0}^{\infty} \tilde{\z}_K(X) z^k  \in \C[[z]].
+\end{equation}
+
+For $s \in \C$ consider the polylogarithm
+\begin{equation} \label{eq:polylogarithm}
+\Li_{s}(z) = \sum_{n=1}^{\infty} \frac{z^n}{n^s}.
+\end{equation}
+For $s=-m, m \in \N$ the polylogarithm is exact and in fact a rational function 
+\begin{equation}
+\Li_{-m} (z)= \left( z\frac{\partial }{\partial z} \right)^m \left( \frac{z}{1-z}\right).
+\end{equation}
+We introduce the following notation for the exponentials of the negatives of the classical complex Chern-Simons values
+\begin{equation}
+e \Lambda = \exp\left(- 2\pi i \CS^*_{\C}(X) \right).
+\end{equation}
+We prove the following proposition.
+
+\begin{proposition} \label{thm:ExactGeneratingFunction} The generating function $\tilde{\z}(X;z)$ is the germ at zero of a holomorphic function
+	$\tilde{\z} \in \mathcal{O}(\C \setminus e\Lambda )$ given by the following formula
+	
+	\begin{align} \begin{split} \label{eq:exact}
+	\tilde{\z}(X;z)&= \int_0^{\infty} \frac{e^{-2y} \mathcal{B}(\z_0)(y) }{1-ze^{-y}} \dv y
+	\\&+\sum_{\theta \in \CS_{\C}^*(X)}  e^{4\pi i \theta} \sum_{j=0}^{n-3} \frac{\z_{\theta}^{(j)}(0)}{j!} \left(2^j +\sum_{l=0}^j 2^{j-l} \binom{j}{l} \Li_{-l} \left(ze^{2\pi i \theta}\right)\right). 
+	\end{split} 
+	\end{align}
+\end{proposition}
+
+\begin{proof}
+	From Equation \eqref{eq:DecompWRT} it follows that \begin{align}  \label{eq:kl} \begin{split} 
+	\tilde{\z}(X;z)=& \sum_{k=0}^{\infty} z^k \int_0^{\infty} e^{-y(k+2)} \mathcal{B}(\z_0)(y) \dv y 
+	\\ & + \sum_{ \theta \in \CS_{\C}(X)}  \sum_{k=0}^{\infty}  z^k \z_{\theta}(k+2) e^{2\pi i (k+2) \theta} . \end{split}
+	\end{align}
+	The first term can be simplified by interchanging summation and integration and then using the geometric series expansion
+	
+	\begin{align} \label{eq:jiji}  \begin{split} 
+	\sum_{k=0}^{\infty} z^k \int_0^{\infty} e^{-y(k+2)} \mathcal{B}(\z_0)(y) \dv y &= \int_0^{\infty} \sum_{k=0}^{\infty}  (ze^{-y})^k \mathcal{B}(\z_0)(y) e^{-2y} \ \dv y
+	\\ &= \int_0^{\infty} \frac{e^{-2y}\mathcal{B}(\z_0)(y) }{1-ze^{-y}} \ \dv y.   \end{split} 
+	\end{align}
+	This can be justified by standard complex analysis arguments. To complete the proof, we can consider seperately each term in \eqref{eq:kl} corresponding to a complex Chern-Simons value $\theta \in \CS_{\C}(X)$. We get that
+	\begin{align} \label{eq:uiui} \begin{split} 
+	&	\sum_{k=0}^{\infty} z^k \z_{\theta}(k+2) e^{2\pi i (k+2)\theta}
+	\\ &=e^{4\pi i \theta} \sum_{j=0}^{n-3} \frac{\z_{\theta}^{(j)}(0)}{j!}\sum_{k=0}^{\infty} (k+2)^j (e^{2\pi i \theta }z)^k 
+	\\ &= e^{4\pi i \theta} \sum_{j=0}^{n-3} \frac{\z_{\theta}^{(j)}(0)}{j!}\left(2^j +\sum_{l=0}^{j} 2^{j-l}\binom{j}{l} \sum_{k=1}^{\infty} k^l (e^{2\pi i\theta } z)^k \right)
+	\\ &=e^{4\pi i \theta} \sum_{j=0}^{n-3} \frac{\z_{\theta}^{(j)}(0)}{j!} \left(2^j +\sum_{l=0}^{j} 2^{j-l}\binom{j}{l} \Li_{-l}(e^{2\pi i\theta}z) \right). \end{split}
+	\end{align}
+	In the last equality, we used the series expansion \eqref{eq:polylogarithm} of the polylogarithm. By substituting the identities \eqref{eq:jiji} and \eqref{eq:uiui} into \eqref{eq:kl} we obtain the desired identity \eqref{eq:exact}.
+\end{proof}

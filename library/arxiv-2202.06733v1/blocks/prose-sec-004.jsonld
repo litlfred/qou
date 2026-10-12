@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2202.06733v1/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2202.06733v1/blocks/prose-sec-004",
   "kind": "prose",
   "title": "The characteristic polynomial and Cayley-Hamilton theorem for SU(3)",
   "pageStart": 5,
   "pageEnd": 6,
   "text": "../sections/sec-004-24-the-characteristic-polynomial-and-cayley-hami.md",
-  "derivedFrom": "library/arxiv-2202.06733v1/manifest",
-  "sourceDocument": "library/arxiv-2202.06733v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2202.06733v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2202.06733v1/manifest.jsonld",
   "provenance": "ingested"
 }

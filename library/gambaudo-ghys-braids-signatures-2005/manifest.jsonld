@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/gambaudo-ghys-braids-signatures-2005/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Braids and signatures",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "smf_bull_133_19.dvi",
   "contains": [
     "library/gambaudo-ghys-braids-signatures-2005/sections/sec-000",
     "library/gambaudo-ghys-braids-signatures-2005/sections/sec-001",
@@ -70,8 +75,11 @@
     "library/gambaudo-ghys-braids-signatures-2005/sections/sec-061"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "gambaudo-ghys-braids-signatures-2005",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "gambaudo-ghys-braids-signatures-2005.pdf",
     "source_sha256": "647f4c28cab7428df2cf6f0a1f8275c0b55fdec2dcbe3b349c92e93331e0109b",
     "pages": 40,

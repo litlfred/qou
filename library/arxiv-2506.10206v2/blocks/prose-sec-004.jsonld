@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2506.10206v2/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2506.10206v2/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "Li(x) + 2 Li(−x) = Li(x2), (5)",
-  "pageStart": 3,
-  "pageEnd": 3,
-  "text": "../sections/sec-004-2-lix-2-lix-lix2-5.md",
-  "derivedFrom": "library/arxiv-2506.10206v2/manifest",
-  "sourceDocument": "library/arxiv-2506.10206v2/manifest",
+  "title": "A full solution to a problem due to Sun",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "text": "../sections/sec-004-31-a-full-solution-to-a-problem-due-to-sun.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
   "provenance": "ingested"
 }

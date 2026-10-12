@@ -6,7 +6,11 @@
   "sha256": "f634f9ec4357d5f34d5a161a0fea1e598715b059592cfd5813b0a85d3764cd83",
   "bytes": 342525,
   "pages": 24,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -300,6 +304,122 @@
   "likely_scanned": false,
   "toc_entries": 17,
   "sections": 14,
-  "chars_total": 66999
+  "chars_total": 66999,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 17,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-general-conventions-and-notation",
+     "title": "General conventions and notation",
+     "prose_ratio": 0.824,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-containment-of-bimodules",
+     "title": "Containment of bimodules",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-hochschild-cohomology",
+     "title": "Hochschild cohomology",
+     "prose_ratio": 0.375,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-3-gradient-tensoring-n-cocycles-and-gradient-sp",
+     "title": "Gradient tensoring, n-cocycles and gradient-Sp",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.736,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-32-construction-of-n-cocycles",
+     "title": "Construction of n-cocycles.",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-41-q-gaussian-algebras",
+     "title": "q-Gaussian algebras",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-33-the-haagerup-averaging-technique",
+     "title": "The Haagerup averaging technique",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.574,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-42-gradient-sp-estimates",
+     "title": "Gradient-Sp estimates",
+     "prose_ratio": 0.781,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-43-consequences-for-cartan-rigidity",
+     "title": "Consequences for Cartan rigidity",
+     "prose_ratio": 0.746,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-5-derivations-and-the-akemann-ostrand-property",
+     "title": "Derivations and the Akemann-Ostrand property",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-51-group-algebras",
+     "title": "Group algebras",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

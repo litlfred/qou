@@ -8,39 +8,25 @@ pages: 12-13
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
 doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+text_source: latex
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.962
 ---
-manifold M. We call such a variation framed if the local system (Γ p)p∈M is trivial, so that we can
-identify all the lattices Γ p with a ﬁxed lattice Γ. We can always reduce to this case by passing to
-a cover of M, or by restricting to a neighbourhood of a given point p∈ M.
-Associated to a framed variation (Γ , Zp, Ω p) there is a holomorphic map
-π : M→ HomZ(Γ , C)∼= Cn, p ↦→Zp
-which we call the period map. We say that the variation is miniversal if t he period map is a local
-isomorphism. In that case, if we choose a basis ( γ1,··· , γn)⊂ Γ, the functions zi = Z(γi) form a
-system of local co-ordinates in a neighbourhood of any given point o f M.
-Consider a framed, miniversal variation (Γ p, Zp, Ω p) over a manifold M, and choose a basis
-(γ1,··· , γn)⊂ Γ as above. For each point p∈ M we can consider the Riemann-Hilbert problem
-associated to the BPS structure (Γ , Zp, Ω p). The wall-crossing formula, Deﬁnition 3.3 (d), makes
-RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY 13
-it reasonable to ask for a family of solutions to these problems which is a piecewise holomorphic
-function of p∈ M. Such a family of solutions is given by a piecewise holomorphic map
-Y : M× C∗→ T+,
-which we view as a function of the co-ordinates ( z1,··· , zn)∈ Cn and the parameter t∈ C∗. We
-deﬁne a τ -function for the given family of solutions to be a piecewise holomorph ic function
-τ : M× C∗→ C∗,
-which is invariant under simultaneous rescaling of all co-ordinates zi and the parameter t, and
-which satisﬁes the equations
-1
-2πi· ∂ log Yγj
-∂t =
-∑
-i
-ǫij
-∂ log τ
-∂zi
-, (16)
-where ǫij =⟨γi, γj⟩. When the form ⟨−,−⟩ is non-degenerate these conditions uniquely determine
-τ up to multiplication by a constant scalar factor.
-It is not clear at present why a τ -function should exist in general, and the above deﬁnition should
-be thought of as being somewhat experimental. Nonetheless, in the uncoupled case we will see
-that τ -functions do exist, and are closely related to various partition fun ctions arising in quantum
-ﬁeld theory. We hope to return to the general case in future public ations.
+Let us consider a variation of BPS structures $(\Gamma_p,Z_p,\Omega_p)$ over a complex manifold $M$. We call such a variation framed if the local system  $(\Gamma_p)_{p\in M}$ is trivial, so that we can  identify all  the lattices $\Gamma_p$  with a fixed lattice $\Gamma$. We can always reduce to this case by passing to a cover of $M$, or by restricting to a neighbourhood of a given point $p\in M$.
+
+Associated to a framed variation $(\Gamma,Z_p,\Omega_p)$ there is a holomorphic map
+\[\pi\colon M\to \Hom_\bZ(\Gamma,\bC)\isom \bC^n, \quad p\mapsto Z_p\]
+which we call the period map.
+We say that the variation is miniversal if the period map is  a local isomorphism. In that case, if we choose a basis $(\gamma_1,\cdots, \gamma_n)\subset \Gamma$, the functions $z_i=Z(\gamma_i)$ form a system of local co-ordinates in a neighbourhood of any given point of $M$.
+
+Consider a framed, miniversal variation $(\Gamma_p,Z_p,\Omega_p)$ over a manifold $M$, and choose a basis $(\gamma_1,\cdots, \gamma_n)\subset \Gamma$ as above. For  each point $p\in M$ we can consider the Riemann-Hilbert problem associated to the BPS structure $(\Gamma,Z_p,\Omega_p)$. The wall-crossing formula,  Definition \ref{co} (d), makes it reasonable to ask for a family of solutions to these problems which is a piecewise holomorphic function of $p\in M$.
+Such a family of solutions is given by a piecewise holomorphic map
+\[\Psi\colon M\times \bC^*\to \bT_+,\]
+ which we view as a  function of the co-ordinates  $(z_1,\cdots, z_n)\in \bC^n$ and the parameter $t\in \bC^*$.  We define a  $\tau$-function for the given family of solutions to be a piecewise holomorphic function \[\tau\colon M\times \bC^* \to \bC^*,\]
+ which is invariant under simultaneous  rescaling of all co-ordinates $z_i$ and the parameter $t$, and which satisfies  the equations
+ \begin{equation}
+\label{hungry}\frac{1}{2\pi i}\cdot \frac{\partial \log \Psi_{\gamma_j}}{\partial t}=\sum_i \epsilon_{ij}  \frac{\partial \log \tau}{\partial z_i}, \end{equation}
+where $\epsilon_{ij}=\<\gamma_i,\gamma_j\> $.
+When the form $\<-,-\>$ is non-degenerate these conditions uniquely determine $\tau$ up to multiplication by a constant scalar factor.
+
+It is not clear at present why a $\tau$-function should exist in general, and the above definition should be thought of as being somewhat experimental. Nonetheless, in the uncoupled case we will see that $\tau$-functions do exist, and are closely related to various partition functions arising in quantum field theory. We hope to return to the general case in future publications.

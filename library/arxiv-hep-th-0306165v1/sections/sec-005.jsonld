@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-th-0306165v1/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "Chern-Simons theory with SL(2,C) gauge group and real values of the parameter s is also",
-  "pageStart": 5,
-  "pageEnd": 6,
+  "title": "Quantum Geometry of Hyperbolic Three-Manifolds",
+  "pageStart": 8,
+  "pageEnd": 11,
   "contains": [
     "library/arxiv-hep-th-0306165v1/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/arxiv-hep-th-0306165v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0306165v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0306165v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0306165v1/manifest.jsonld",
   "provenance": "ingested"
 }

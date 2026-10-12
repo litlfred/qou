@@ -8,95 +8,58 @@ pages: 9-10
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
 doc_brief: "The Strong AJ Conjecture for the Figure 8 Knot — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ"
+text_source: latex
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.906
 ---
-we deﬁne ⟨Q⟩ : Z → R = C[t±1] by
-⟨Q⟩(n) := [ n]
-n−1∑
-k=0
-P (t, t2n, t4k)
-k∏
-l=1
-(t4n + t−4n − t4l − t−4l)
-for n ≥ 1, and ⟨Q⟩(−n) = − ⟨Q⟩(n) for n ≤ 0. It is known that the colored Jones
-polynomial of the ﬁgure eight knot is JE = ⟨1⟩.
-For Q, R ∈ C[t, M, x], we write Q ≡ R if Q − R ∈ C[t, M]. Then we have the following.
-10 HOANG-AN NGUYEN AND ANH T. TRAN
-Lemma 2.2.
-L ⟨1⟩ ≡
-(
-t−2M −4 − t−2M −2 − t2)
-⟨1⟩ +
-(
-t6M 2 − t2M −2)
-⟨x⟩,
-L2 ⟨1⟩ ≡
-{
-t−12M −8 −
-(
-t−12 + t−8)
-M −6 − t12M 4 − (t−4 + 1)M −4
-+
-(
-t−4 + 1
-)
-M −2 + t8 + t4 + 1
-}
-⟨1⟩
-+
-{
-t16M 6 − t−8M −6 − t12M 4 + t−4M −4 −
-(
-t12 + t8 + t4)
-M 2
-+
-(
-t4 + t−4 + 1
-)
-M −2}
-⟨x⟩,
-L−1 ⟨1⟩ ≡
-(
-t−2M 4 − t−2M 2 − t2)
-⟨1⟩ +
-(
-t6M −2 − t2M 2)
-⟨x⟩,
-L−2 ⟨1⟩ ≡
-{
-t−12M 8 −
-(
-t−12 + t−8)
-M 6 − t12M −4 −
-(
-t−4 + 1
-)
-M 4
-+ (t−4 + 1)M 2 + t8 + t4 + 1
-}
-⟨1⟩
-+
-{
-t16M −6 − t−8M 6 − t12M −4 + t−4M 4 −
-(
-t12 + t8 + t4)
-M −2
-+
-(
-t4 + t−4 + 1
-)
-M 2}
-⟨x⟩.
-Proof. From [CM, Proposition 4.5] we have
-L ⟨1⟩ ≡
-(
-t−2M −4 − t−2M −2 − t2)
-⟨1⟩ +
-(
-t6M 2 − t2M −2)
-⟨x⟩,
-L⟨x⟩ ≡ (t−2M −2 − t2M 2)⟨1⟩ + (t6M 4 − t2M 2 − t2)⟨x⟩.
-By a direct calculation, using the fact that L2⟨1⟩ = L(L⟨1⟩) and the above formulas, we
-obtain the formula for L2⟨1⟩. The proofs for L−1 ⟨1⟩ and L−2 ⟨1⟩ are similar. □
-Using Lemma 2.2 and a direct calculation we see that
-(L2 + L−2 + p1(t, M)L + p−1(t, M)L−1 + p0(t, M))⟨1⟩ ≡ 0.
-This means that P JE ∈ R[M ±1].
+Following \cite{CM}, for $Q\in \BC[t,M,x]$ we define $\left\langle  Q\right\rangle: \BZ \rightarrow \mathcal{R}=\BC[t^{\pm 1}]$ by
+$$\left\langle Q \right\rangle(n):= [n]\sum^{n-1}_{k=0}P(t,t^{2n},t^{4k})\prod^{k}_{l=1}(t^{4n}+t^{-4n}-t^{4l}-t^{-4l})$$
+for $n\geq 1$, and $\left\langle Q \right\rangle(-n)=-\left\langle Q \right\rangle(n)$ for $n\leq 0$.
+It is known that the colored Jones polynomial of the figure eight knot is $J_E = \la 1 \ra$. 
+
+For $Q, R\in \BC[t,M,x]$, we write $Q\equiv R$ if $Q-R\in \BC[t,M]$. Then we have the following.
+\begin{lemma}\label{ALemma}
+\begin{eqnarray*}
+L\left\langle 1\right\rangle &\equiv& \left( t^{-2}M^{-4}-t^{-2}M^{-2}-t^2 \right)\left\langle 1\right\rangle 
++ \left( t^6M^2-t^2M^{-2} \right)\left\langle x\right\rangle,\\
+L^2\left\langle 1\right\rangle &\equiv&
+\big\{ 
+t^{-12}M^{-8} 
+- \left(t^{-12} + t^{-8}\right)M^{-6} 
+- t^{12}M^4 - (t^{-4}+1)M^{-4}\\
+&&  \qquad \qquad \,\,\, + \, \left(t^{-4} + 1\right)M^{-2} +t^8 + t^4 +1
+\big\} \left\langle 1\right\rangle \\
+&&  + \, \big \{
+t^{16}M^6 - t^{-8}M^{-6} - t^{12}M^{4} + t^{-4}M^{-4} 
+- \left(t^{12}+t^8+t^4 \right)M^2 \\
+&&  \qquad \qquad \,\, + \,\left(t^4 + t^{-4} + 1\right)M^{-2}
+\big \}\left\langle x\right\rangle, \\
+L^{-1}\left\langle 1\right\rangle &\equiv&
+\left( t^{-2}M^4 - t^{-2}M^2 -t^{2}\right)\left\langle 1\right\rangle
++\left(t^6M^{-2} - t^2 M^2 \right)\left\langle x\right\rangle, \\
+L^{-2}\left\langle 1\right\rangle &\equiv&
+\big\{
+t^{-12}M^8 - \left(t^{-12} + t^{-8} \right)M^6 - t^{12}M^{-4} - \left(t^{-4} + 1\right)M^4\\
+&& \qquad \qquad  + \,(t^{-4}+1)M^2 + t^{8} + t^4 +1
+\big\}\left\langle 1\right\rangle\\
+&& + \,  \big\{
+t^{16}M^{-6} - t^{-8}M^6 - t^{12}M^{-4} + t^{-4}M^{4} - \left(t^{12}+t^8+t^4\right)M^{-2}\\
+&& \qquad \qquad \,\,\,\,\, + \,\left(t^4+t^{-4}+1\right)M^{2}
+\big\}\left\langle x\right\rangle.
+\end{eqnarray*}
+\end{lemma}
+\begin{proof}
+From \cite[Proposition 4.5]{CM} we have 
+\begin{eqnarray*}
+L\left\langle 1\right\rangle &\equiv& \left( t^{-2}M^{-4}-t^{-2}M^{-2}-t^2 \right)\left\langle 1\right\rangle 
++ \left( t^6M^2-t^2M^{-2} \right)\left\langle x\right\rangle, \\
+L\la x \ra &\equiv& (t^{-2}M^{-2}-t^2M^2)\la 1 \ra +(t^6M^4-t^2M^2-t^2)\la x \ra.
+\end{eqnarray*}
+By a direct calculation, using the fact that $L^2\la 1 \ra=L(L\la 1 \ra)$ and the above formulas, we obtain the formula for $L^2\la 1 \ra$. The proofs for $L^{-1}\left\langle 1\right\rangle$ and $L^{-2}\left\langle 1\right\rangle$ are similar. 
+\end{proof}
+
+Using Lemma \ref{ALemma} and a direct calculation we see that
+$$
+(L^2 + L^{-2} + p_1(t,M)L + p_{-1}(t,M)L^{-1} +p_0(t,M)) \la 1 \ra \equiv 0.
+$$
+This means that $PJ_E\in \mathcal{R}[M^{\pm 1}]$.

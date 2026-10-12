@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2504.18825v2/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2504.18825v2/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Application II: Lübeck–Prasad–Adin–Roichman-type formula",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-006-application-ii-lu-beck-prasad-adin-roichman-type.md",
-  "derivedFrom": "library/arxiv-2504.18825v2/manifest",
-  "sourceDocument": "library/arxiv-2504.18825v2/manifest",
+  "title": "Application II: Lübeck–Prasad–Adin–Roichman-type formula",
+  "pageStart": 34,
+  "pageEnd": 43,
+  "text": "../sections/sec-006-7-application-ii-lübeckprasadadinroichman-type-f.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.18825v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2504.18825v2/manifest.jsonld",
   "provenance": "ingested"
 }

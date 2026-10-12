@@ -7,7 +7,11 @@
   "bytes": 189709,
   "pages": 7,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,84 +21,297 @@
    "stamp_date": "31 May 2005"
   },
   "doi": null,
-  "title": "Integer Polynomial Optimization in Fixed Dimension Jes\u00fas A. De Loera University of California, Dept. of Mathematics, Davis CA 95 616, USA email: deloera@math.ucdavis.edu http://www.math.ucdavis.edu/~deloera",
-  "authors_raw": null,
+  "title": "Integer Polynomial Optimization in Fixed Dimension",
+  "authors_raw": "Raymond Hemmecke",
   "title_lines": [
    "Integer Polynomial Optimization in Fixed Dimension",
    "Jes\u00fas A. De Loera",
-   "University of California, Dept. of Mathematics, Davis CA 95 616, USA",
-   "email: deloera@math.ucdavis.edu http://www.math.ucdavis.edu/~deloera"
+   "University of California, Dept. of Mathematics, Davis CA 95616, USA",
+   "email: deloera@math.ucdavis.edu"
   ],
   "abstract": null,
   "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181023182836-04'00'",
-   "Creator": "NM",
    "Title": "createdbydvipdf",
-   "Author": "Megiddo"
+   "Author": "Megiddo",
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "NM",
+   "CreationDate": "D:20181023182836-04'00'"
+  },
+  "title_raw": "Integer Polynomial Optimization in Fixed Dimension Jes\u00fas A. De Loera University of California, Dept. of Mathematics, Davis CA 95616, USA email: deloera@math.ucdavis.edu",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "createdbydvipdf",
+   "heading": "Integer Polynomial Optimization in Fixed Dimension",
+   "text": "Integer Polynomial Optimization in Fixed Dimension Jes\u00fas A. De Loera University of California, Dept. of Mathematics, Davis CA 95616, USA email: deloera@math.ucdavis.edu",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "FPT AS for Optimizing Non-Negative Polynomials over Inte ger Points of Polytopes",
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "Computational Complexity Bounds",
    "page": 2,
    "source": "inferred",
-   "number": "3"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
-   "title": "Id \u2212 28z2",
+   "title": "FPTAS for Optimizing Non-Negative Polynomials over Integer Points of Polytopes",
+   "page": 2,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "An extension to the mixed integer case",
    "page": 6,
    "source": "inferred",
-   "number": "25"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 7,
-   "source": "inferred",
-   "number": null
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Computational complexity of problem (1) in \ufb01xed dimension",
+   "page": 1,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "1"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-3-fpt-as-for-optimizing-non-negative-polynomials",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1764,
+   "n_words": 186,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3217,
+   "n_words": 524,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-2-computational-complexity-bounds",
+   "number": "2",
+   "title": "Computational Complexity Bounds",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2534,
+   "n_words": 454,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-3-fptas-for-optimizing-non-negative-polynomials",
    "number": "3",
-   "title": "FPT AS for Optimizing Non-Negative Polynomials over Inte ger Points of Polytopes",
+   "title": "FPTAS for Optimizing Non-Negative Polynomials over Integer Points of Polytopes",
    "level": 1,
    "page_start": 2,
    "page_end": 6,
-   "n_chars": 13263,
-   "n_words": 2756
+   "n_chars": 13533,
+   "n_words": 2637,
+   "label_start": "2",
+   "label_end": "6"
   },
   {
-   "id": "sec-001-25-id-28z2",
-   "number": "25",
-   "title": "Id \u2212 28z2",
+   "id": "sec-003-4-an-extension-to-the-mixed-integer-case",
+   "number": "4",
+   "title": "An extension to the mixed integer case",
    "level": 1,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2566,
-   "n_words": 520
-  },
-  {
-   "id": "sec-002-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 7,
-   "n_chars": 3328,
-   "n_words": 495
+   "n_chars": 5362,
+   "n_words": 840,
+   "label_start": "6",
+   "label_end": "7"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 3,
-  "sections": 3,
-  "chars_total": 19157
+  "toc_entries": 4,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 26410,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "may10.tex",
+   "tex_sections": 4,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-computational-complexity-bounds",
+     "title": "Computational Complexity Bounds",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-fptas-for-optimizing-non-negative-polynomials",
+     "title": "FPTAS for Optimizing Non-Negative Polynomials over Integer Points of Polytopes",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-an-extension-to-the-mixed-integer-case",
+     "title": "An extension to the mixed integer case",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.596,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

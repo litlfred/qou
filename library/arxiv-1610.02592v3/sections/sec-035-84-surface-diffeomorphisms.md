@@ -1,354 +1,223 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-035-84-surface-diffeomorphisms
 section_title: "Surface diffeomorphisms"
 section_number: 8.4
 pages: 266-277
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.96
+latex_coverage_ratio: 0.957
 ---
-The mapφ is injective: given two metricsm,m′, if the ﬁrst components
-ofφ(m),φ (m′) are equal thenq(m) =λq(m′), and if the second components
-are equal we getλ = 1.
-By similar methods one proves that the image ofφ is open and the inverse
-there is continuous. The set W× [0, 1] embeds in H since W embeds in
-R6g−7. □
-Corollary8.3.29. Thespace Teich(Sg)isatopologicalmanifoldwithbound-
-ary∂Teich(Sg).
-8.3.18. Conclusion. We have discovered that Teich(Sg) is a compact
-topological manifold with boundary, and we now invoke Theorem 1.7.18 to
-deduce that it is a disc. We have ﬁnally completed the proof of the following
-theorem, which is the main achievement of the whole chapter.
-Theorem 8.3.30. The closure Teich(Sg) of Teich(Sg) in PC is homeo-
-morphic to the closed discD6g−6. Its interior isTeich(Sg) and its boundary
-contains S as a dense subset.
-Thurston’s original compactiﬁcation theorem embeds everything inRS
-instead of C. We can easily deduce it from Theorem 8.3.30.
-Proof of Theorem 8.1.5. The natural mapC → RS induced by the in-
-tersection formi is continuous sincei is, and it induces a continuous map
-ϕ: PC→ P(RS ) on their projective spaces.
-The Teichmüller space is embedded in both projective spaces andϕ re-
-stricts to a homeomorphism between the two embeddings, and to a continuous
-surjective map from their compactiﬁcations. The map on compactiﬁcations
-is actually injective sinceϕ|PML is (intersections with simple closed curves
-distinguish laminations) and is hence a homeomorphism. □
-8.4. Surface diﬀeomorphisms
-WehavediscoveredthatThurston’scompactiﬁcation Teich(Sg)oftheTe-
-ichmüller space is homeomorphic to a closed disc. The mapping class group
-MCG(Sg) acts on it naturally. We can now apply Brouwer’s ﬁxed point the-
-orem to every elementϕ∈ MCG(Sg), and characteriseϕ according to the
-position of its ﬁxed points, much similarly as we did for the isometries ofHn.
-8.4.1. The torus case. As usual, the ﬂat torus case is very instructive
-because everything can be written explicitly.
-We know from Proposition 7.1.5 thatMCG(T ) acts on Teich(T ) like the
-Möbius transformations PSL2(Z) do on the hyperbolic half-planeH2. The
-action of course extends to the compactiﬁcationH2 = H2∪ R∪{∞} and
-every non-trivial isometry A ∈ PSL2(Z) is elliptic, parabolic, or hyperbolic
-according to the position of its ﬁxed points.
-8.4. SURFACE DIFFEOMORPHISMS 259
-As an integral matrix, the isometryA has also more properties that are
-easy to check: if it is elliptic, it has ﬁnite order becausePSL2(Z) is discrete;
-if it is parabolic, it is conjugate inPSL2(Z) to a matrix
-(1n
-0 1
-)
-for somen⁄= 0
-and is thus then-th power of a Dehn twist; if it is hyperbolic, it is conjugate
-in PSL2(R) to a diagonal matrix
-(λ 0
-0 λ−1
-)
-for someλ >1, with some basis of
-eigenvectors v,w . The two foliations ofR2 into lines parallel tov or w are
-both preserved byA and descend to foliations inT = R2/Z2 that are preserved
-byA. The two foliations are both irrational (becauseλ is), that is every leaf
-is dense inT, andA stretches one foliation byλ and contracts the other by
-1/λ. One such diﬀeomorphism ofT is calledAnosov.
-Summing up, the non-trivial elements inMCG(T ) either have ﬁnite order,
-or preserve a simple closed curve, or are Anosov. We now deﬁne an analogous
-trichotomy for the elements inMCG(Sg) when g> 2, where the foliations
-are replaced by measured geodesic laminations, and the measure is there to
-encode stretchings and contractions.
-8.4.2. The trichotomy. Let Sg have genusg> 2. The mapping class
-group MCG(Sg) acts naturally on the whole spaceC of currents and in par-
-ticular on the compactiﬁcationTeich(Sg)∼=D6g−6 of the Teichmüller space.
-Let ϕ∈ MCG(Sg) be a non-trivial element. By Brouwer’s ﬁxed point
-theorem,ϕ ﬁxes at least one point inTeich(Sg). We say thatϕ is:
-(1) ﬁnite orderif it ﬁxes a hyperbolic metricm∈ Teich(Sg);
-(2) reducible if it ﬁxes a multicurveµ∈ M;
-(3) pseudo-Anosov in all the other cases.
-We now analyse the three cases individually.
-8.4.3. Finite order elements.We must ﬁrst explain the terminology.
-Proposition 8.4.1. A non-trivial elementϕ∈ MCG(Sg) is ﬁnite order if
-and only if it has indeed ﬁnite order inMCG(Sg).
-Proof. Suppose thatϕ preserves the isotopy class[m]∈ Teich(Sg) of a
-hyperbolic metricm in Sg. We can choose a representative forϕ that ﬁxes
-m. This representative is an isometry form. Since the isometry group of a
-closed hyperbolic manifold is ﬁnite (see Corollary 4.3.8) we haveϕn = id for
-somen> 1 andϕ has indeed ﬁnite order inMCG(Sg).
-Conversely, letϕ be an element having ﬁnite order inMCG(Sg). The
-subgroup⟨ϕ⟩ generated byϕ cannot act freely onTeich(Sg)∼= R6g−6, other-
-wise it would quotientR6g−6 to an aspherical manifold with ﬁnite fundamental
-group, contradicting Theorem 1.7.10. Therefore some non-trivial power ofϕ
-has a ﬁxed point inTeich(Sg).
-If ϕ has prime order we easily conclude that alsoϕ has a ﬁxed point and
-we are done. However, ifϕ has orderp1··· ps for some primespi, we need to
-do more work. By induction,ϕ′ =ϕp1···ps−1 has a ﬁxed point[m]∈ Teich(Sg)
-260 8. SURFACE DIFFEOMORPHISMS
-and is hence represented by an isometry forSg with metricm. The isometry
-ϕ′ quotientsSg to a hyperbolic orbifold, and the ﬁxed pointsFix(ϕ′) ofϕ′ in
-Teich(Sg) can be identiﬁed naturally with the (suitably deﬁned) Teichmüller
-space of this orbifold, which is homeomorphic toRN for someN >0 like in
-the surface case (exercise).
-Sinceϕ andϕ′ commute, the ﬁrst act as a mapping class onFix(ϕ′) with
-order p1··· ps−1: we conclude by induction ons that ϕ has a ﬁxed point in
-Teich(Sg). □
-We get in particular the following corollary, which is far from obvious be-
-cause MCG(Sg) does not act itself onSg, and algebraic relations inMCG(Sg)
-do not translate into algebraic relations between representatives, except in
-some very lucky cases.
-Corollary 8.4.2.Ifϕ∈ MCG(Sg) has orderk, it may be represented by a
-diﬀeomorphismϕ:Sg→Sg such thatϕk = id.
-Proof. The classϕ has a representativeϕ:Sg→Sg that is an isometry
-for some hyperbolic metric; the isometryϕk is isotopic to the identity and is
-hence the identity by Corollary 4.3.7. □
-8.4.4. Reducible elements. We must explain the terminology also in this
-case. If ϕ ﬁxes a multicurveµ, one can cutSg along µ and look at the re-
-striction ofϕ to the resulting pieces: after extending all the theory to surfaces
-with boundary (that we have not done here for simplicity), we can hence study
-inductively each piece, and this explains the wordreducible.
-The cases (1) and (2) are not exclusive: there are isometries of hyperbolic
-surfaces that preserve some multicurve. On the other hand, there are ﬁnite
-order elements that are not reducible (exercise) and reducible mapping classes
-that are not of ﬁnite order: for instance, Dehn twists.
-8.4.5. The action on ML. The mapping class groupMCG(Sg) of Sg
-acts on the currents spaceC and hence on the “light cone” subspaceML of
-allmeasuredgeodesiclaminations, whichcontainsthespace M ofmulticurves.
-The action of MCG(Sg) on ML can be seen concretely insideSg. It
-suﬃces to considerML as the space of all measuredtopological laminations
-(deﬁned in Section 8.3.11) considered up to isotopy and collapsing of parallel
-closedleaves. Nowϕ∈ MCG(Sg)actson MLsimplybysendingthemeasured
-topological laminationµ toϕ(µ).
-We now prove that ifϕ ﬁxes a non-trivial point inML we fall back into
-one of the two cases already considered.
-Proposition 8.4.3. If ϕ(µ) = µ for some non-trivialµ∈ ML, thenϕ is
-either ﬁnite order or reducible.
-8.4. SURFACE DIFFEOMORPHISMS 261
-Proof. We ﬁx a hyperbolic metric onSg and representµ as a measured
-geodesic lamination there.
-By Proposition 8.3.5 there are ﬁnitely many complementary regions inSg\
-µ. Ifµ is not full, some region is not an ideal polygon and hence deformation-
-retracts onto a subsurfaceS′ ⊂ Sg, whose boundary components∂S′ are
-non-trivial simple closed curves inSg. The union of all such curves∂S′ asS′
-varies produces a multicurve preserved byϕ, which is hence reducible.
-If µ is full, all the complementary regions are ideal polygons, and after
-substituting ϕ with a ﬁnite power we can suppose that each region is ﬁxed
-(not pointwise) byϕ, together with each of its boundary components. We
-consider the preimage˜µ⊂ H2 and note that its complementary regions inH2
-are still ideal ﬁnite polygons, the lifts of the ones inSg.
-The diﬀeomorphismϕ lifts to a homeomorphism˜ϕ: H2→ H2 that ﬁxes
-˜µ, and we may suppose that it ﬁxes (not pointwise) a complementary polygon
-and each of its boundary lines. In particularϕ ﬁxes orientation-preservingly a
-linel⊂ ˜µ.
-Remember that G is the set of all lines inH2. We now prove that, if˜ϕ
-ﬁxes (orientation-preservingly) a linel⊂ ˜µ⊂ G, then it ﬁxes (still orientation-
-preservingly) all the lines in˜µ contained in some neighbourhood ofl∈ G. This
-is done as follows: since the boxes form a neighbourhood system forG, and
-˜ϕ acts via homeomorphisms onG, there are two boxesB⊂B′ containing l
-such that ˜ϕ(B)⊂ B′. Now B∩ ˜µ⊂ B′∩ ˜µ consists of some parallel lines,
-which look likeJ× R⊂J′× R for some measured ordered setJ′ and some
-subsegmentJ⊂J′: the mapϕ sendsJ toJ′ preserving both the ordering and
-the measure, and ﬁxing the point corresponding tol: hence it is the identity.
-On the other hand, every complementary region of˜µ is a ﬁnite ideal poly-
-gon: hence if˜ϕ ﬁxes (orientation-preservingly) one side of the polygon, it ﬁxes
-all the others.
-Thetwopropertiesjustlistedtogethereasilyimplythat, since l isﬁxed, the
-whole of ˜µ is. Since the lines are ﬁxed orientation-preservingly, their endpoints
-are ﬁxed: the map˜ϕ ﬁxes all the endpoints of all lines in˜µ, and since these
-endpoints form a dense subset of∂H2 the map ˜ϕ ﬁxes∂H2 pointwise and
-henceϕ is trivial inMCG(Sg) by Proposition 6.5.12. □
-The previous proposition shows in particular that pseudo-Anosov elements
-act freely on ML\{ 0}. We now investigate more closely these mysterious
-mapping classes.
-8.4.6. Pseudo-Anosov elements. A pseudo-Anosov elementϕ is by def-
-inition neither ﬁnite order nor reducible. We have just seen thatϕ acts freely
-on ML\{ 0}, but this does not prevent it from having some ﬁxed points in
-262 8. SURFACE DIFFEOMORPHISMS
-Figure 8.16. The appropriate lift ˜ϕ acts on∂H2 with 2k ﬁxed points
-that are alternatively attractive and repelling. By joining the repelling
-points we ﬁnd another laminationµu ﬁxed byϕ. Herek = 5.
-PML; indeed we now show that there are two ﬁxed points there, one at-
-tracting and the other repelling, so thatϕ looks very much like a hyperbolic
-isometry on the hyperbolic space.
-Theorem 8.4.4. Let ϕ∈ MCG(Sg) be a pseudo-Anosov element. There
-are two measured geodesic laminationsµs,µu∈ ML and a real numberλ> 1
-such that
-ϕ(µs) =λµs, ϕ (µu) = 1
-λµu.
-The laminationsµs andµu are full, and they altogether ﬁllSg.
-Proof. By Brouwer’s ﬁxed point theorem, a pseudo-Anosov elementϕ has
-a ﬁxed point inTeich(Sg)∼= D6g−6 which is (by deﬁnition) neither a metric
-nor a multicurve. Thereforeϕﬁxes a projective measured lamination[µ]which
-is full (otherwiseϕ would be reducible: see the proof of Proposition 8.4.3).
-Since [µ] is a projective class, we haveϕ(µ) = λµ for some real number
-λ >0. Up to replacingϕ with its inverseϕ−1 we may suppose thatλ> 1,
-and Proposition 8.4.3 shows thatλ> 1. We denote thisµ byµs.
-We now constructµu. As in the proof of Proposition 8.4.3, we consider
-the preimage ˜µs⊂ H2 ofµs, and after replacingϕ with a ﬁnite power we may
-choose a lift˜ϕ ofϕ that ﬁxes a complementary polygonal regionR of ˜µs and
-its sides, hence in particular the vertices ofR, see Figure 8.16.
-Thek vertices ofR divide∂H2 into ˜ϕ-invariant arcsI1,...,I k, correspond-
-ing to the sidess1,...,s k ofR, see Figure 8.16. Sinceµs is full, eachsi is the
-limit of a sequence of leaves in˜µs with both endpoints inIi converging to the
-endpoints ofsi but distinct from them by Proposition 8.3.10. Sinceλ >1,
-the map ˜ϕ pushes these leaves towardssi, so in particular the vertices ofR
-are local attractors for the action of˜ϕ on∂H2, see Figure 8.16.
-8.4. SURFACE DIFFEOMORPHISMS 263
-Since the endpointsp andq ofli are attractors, the map˜ϕ ﬁxes at least
-one point in the interior ofIi, and we show that it cannot ﬁx two: if˜ϕ ﬁxesr
-ands in the interior ofIi, then it ﬁxes the box[p,r ]× [s,q ] that has non-zero
-measure, a contradiction sinceλ> 1. There is a single ﬁxed point inli, and
-it must be repulsive.
-The dynamics of ˜ϕ on ∂H2 is described in Figure 8.16. The closure of
-the projection of thek green lines is another invariant geodesic laminationµu,
-which must be full becauseϕ is pseudo-Anosov.
-We now prove thatµu admits some (non unique) transverse measure and
-can hence be considered as an element ofML. The dynamics shows that for
-some curveγ∈ S the supports ofϕ−k(γ) tend to that ofµu. The sequence
-ϕ−k([γ])∈ PML hence converges on a subsequence to a projective measured
-geodesic lamination with supportµu.
-In principle, the measure supported byµu needs not to be unique, not
-even up to rescaling: hence the element[µu] may not be uniquely determined
-and we cannot conclude that it is ﬁxed byϕ, unfortunately. However, distinct
-measures on the same support form obviously a convex cone in the current
-space C and hence a closed disc inPC, the classϕ acts on this disc and
-therefore has a ﬁxed point there by Brouwer’s ﬁxed point theorem again.
-We haveϕ(µu) = λ′µu for someλ′. It is clear thatµu and µs ﬁllSg
-altogether, and in particulari(µu,µs)> 0. Therefore
-0<i (µu,µs) =i(ϕ(µu),ϕ (µs)) =λλ′i(µu,µs)
-givesλ′ = 1
-λ. The proof is complete. □
-The laminations µs and µu are the stable and the unstable measured
-geodesic laminations ﬁxed byϕ, andλ is thedilatation ofϕ. We now prove a
-converse to Theorem 8.4.4.
-Proposition 8.4.5. Ifϕ∈ MCG(Sg) is such thatϕ(µ) = λµ for some full
-µ∈ ML andλ> 1, thenϕ is pseudo-Anosov.
-Proof. We need to prove thatϕ is neither ﬁnite order nor reducible, that
-is thatϕ ﬁxes no non-trivial currentα∈ Teich(Sg)∪ M. We have
-i
-(
-ϕk(α),µ
-)
-=i
-(
-α,ϕ−k(µ)
-)
-=λ−ki
-(
-α,µ )→ 0
-ask→ +∞. Thereforeϕ(α)⁄=α unlessi(α,µ ) = 0, which is excluded since
-µ is full. □
-8.4.7. Examples. We now construct plenty of pseudo-Anosov diﬀeomor-
-phisms. We need a bit of simple linear algebra.
-We say that a matrix or vector ispositive if all its entries are. A square ma-
-trixM with non-negative integral entries isPerron-Frobenius ifMk is positive
-for somek >0.
-264 8. SURFACE DIFFEOMORPHISMS
-a
-b
-a
-b
-a
-b b'
-a'
-Figure 8.17. We smoothenα∪β to a bigon track that contains both
-α andβ (left). The bigon track may have some bigons as complementary
-regions (right).
-Proposition 8.4.6.Every Perron-Frobenius integral matrixM has apositive
-eigenvectorv with some eigenvalueλ> 1.
-Proof. The matrixM has non-negative entries and hence preserves the
-standard simplex∆ ={xi> 0,∑xi = 1}, so by Brouwer’s ﬁxed point theorem
-it has a ﬁxed pointv∈ ∆ there. Since Mk > 0 and v is an eigenvector for
-Mk, we getv >0. SinceMk is integral we getλk > 1 and henceλ> 1. □
-The following examples were constructed by Penner in 1988. Recall that
-a multicurveα in Sg is essential if it contains no parallel components: this
-holds for instance ifα is a simple closed curve or a pants decomposition.
-Theorem 8.4.7.Letα andβ be two essential multicurves that altogether
-ﬁllSg. Let ϕ∈ MCG(Sg) be any composition of Dehn twistsT +1
-a and T−1
-b
-wherea andb vary among the curves inα andβ. If every componenta,b of
-α,β occurs at least once, thenϕ is pseudo-Anosov.
-The Dehn twists may occur in any order, for instanceϕ =T 2
-aT−3
-b T−1
-b′ Ta′.
-Proof. We putα andβ in minimal position and smoothen the transverse
-intersections as in Figure 8.17-(left) to get abigon trackτ. A bigon track is
-like a train track, except that it may contain some complementary bigon as in
-Figure 8.17-(right). The straightening procedure described in Section 8.3.12
-works also in this case (exercise), so every weight system onτ determines a
-measured geodesic lamination inSg. (Diﬀerent weight systems may determine
-the same geodesic laminations because of the bigons.)
-We haveα =a1⊔... ⊔am andβ =b1⊔... ⊔bn. Eachai andbj may be
-represented by assigning weights 1 or 0 to the edges ofτ, and these weights
-formm+n independent (exercise) vectorsv1,...,v m+n in the weights space of
-τ. LetV be the(m +n)-dimensional sub-cone of the weights space generated
-byv1,...,v m+n via combinations with non-negative coeﬃcients. Every vector
-inV models a measured geodesic lamination inSg.
-8.4. SURFACE DIFFEOMORPHISMS 265
-Let Ω be them +n square matrix Ωij = i(vi,vj ). We have Ω =
-( 0 H
-K 0
-)
-.
-The crucial point here is that bothTaj andT−1
-bk
-act onV like the matrix
-Qi =I +Di Ω
-where I is the identity andDi has 1 on thei-th entry of the diagonal and 0
-everywhere else. The mapϕ therefore acts onV as a productM =Qi1··· Qih
-of non-negative matrices. Since eachi = 1,...,m +n occurs at least once as
-an index, we may deduce (exercise) thatM is Perron-Frobenius. ThereforeM
-has a positive eigenvectorv with eigenvalueλ> 1.
-The positive eigenvectorv determines an elementµ∈ ML such that
-ϕ(µ) = λµ. We leave to the reader the proof thatµ is full, and we conclude
-using Proposition 8.4.5. □
-8.4.8. References. The material contained in this chapter is well known
-to experts, but it is hard to ﬁnd a source in the literature that contains ev-
-erything in a fully self-contained way. The whole theory was presented by
-Thurston in a very nice and readable paper [55] that however contained no
-proof. The most complete book on the subject is then Fathi – Laudenbach –
-Poénaru [19], and this is also the main source that we have used for writing
-this chapter. Another important source is Casson – Bleiler [12].
-We have chosen to describe the whole theory using Bonahon’s geodesic
-currents, that originated in the papers [6, 7]. To this purpose we have also
-consultedMcMullen[ 39], Aramayona–Leininger[3], andCalegari[9]. Wealso
-borrowed some arguments on train tracks and measured geodesic laminations
-from a nice and self-contained paper of Hatcher [27]. The proof of Proposition
-8.4.1 was taken from [18, Theorem 6.1]. Theorem 8.4.7 was proved by Penner
-in [44].
-Part 3
-Three-manifolds
-CHAPTER 9
-Topology of three-manifolds
-The three-manifolds world is topologically much richer than the surfaces
-realm, while yet not so crazy as the four-manifolds universe. In dimension two
-a simple homological invariant (the Euler characteristic) suﬃces to classify
-topologically all the closed orientable manifolds: at the complete opposite,
-the closed four-manifolds cannot be classiﬁed in any reasonable sense. The
-three-manifolds lie in the middle: we do not have yet a complete satisfactory
-picture, but we understand them a good deal.
-The rest of this book is devoted to three-manifolds, more speciﬁcally to
-compact orientable three-manifolds, possibly with boundary (the orientability
-assumption is not essential, but it helps to simplify many arguments). We
-split their study into some parts. First, we state some universal topological
-facts, mostly concerning the way surfaces can be contained in three-manifolds.
-Then we construct some classes of three-manifolds, focusing mostly on Seifert
-manifolds. After classifying the Seifert manifolds topologically, we assign a
-geometry to each: there are eight interesting geometries in dimension three,
-and we introduce them with some care. Finally, we concentrate on the most
-interesting and beautiful of the eight: hyperbolic geometry.
-Inthischapterwestarttostudythetopologyofthree-manifolds. Webegin
+\label{surface:diffeomorphisms:section}
+We have discovered that Thurston's compactification $\overline{\Teich(S_g)}$ of the Teichm\"uller space is homeomorphic to a closed disc. The mapping class group $\MCG(S_g)$ acts on it naturally. We can now apply Brouwer's fixed point theorem to every element $\varphi \in \MCG(S_g)$, and characterise $\varphi$ according to the position of its fixed points, much similarly as we did for the isometries of $\matH^n$.
+
+
+\subsection{The torus case}
+As usual, the flat torus case is very instructive because everything can be written explicitly. 
+
+We know from Proposition \ref{toro:azione:prop} that $\MCG(T)$ acts on $\Teich(T)$ like the M\"obius transformations $\PSLZ$ do on the hyperbolic half-plane $H^2$. The action of course extends to the compactification $\overline{H^2} = H^2\cup \matR\cup\{\infty\}$ and every non-trivial isometry $A \in\PSLZ$ is elliptic, parabolic, or hyperbolic according to the position of its fixed points.
+
+As an integral matrix, the isometry $A$ has also more properties that are easy to check: if it is elliptic, it has finite order because $\PSLZ$ is discrete; if it is parabolic, it is conjugate in $\PSLZ$ to a matrix $\matr 1 n 0 1$ for some $n\neq 0$ and is thus the $n$-th power of a Dehn twist; if it is hyperbolic, it is conjugate in $\PSLR$ to a diagonal matrix $\matr \lambda 0 0 {\lambda^{-1}}$ for some $\lambda >1$, with some basis of eigenvectors $v,w$. The two foliations of $\matR^2$ into lines parallel to $v$ or $w$ are both preserved by $A$ and descend to foliations in $T = \matR^2/_{\matZ^2}$ that are preserved by $A$. The two foliations are both irrational (because $\lambda$ is), that is every leaf is dense in $T$, and $A$ stretches one foliation by $\lambda$ and contracts the other by $1/\lambda$. One such diffeomorphism of $T$ is called \emph{Anosov}.\index{Anosov diffeomorphism}
+
+Summing up, the non-trivial elements in $\MCG(T)$ either have finite order, or preserve a simple closed curve, or are Anosov. We now define an analogous trichotomy for the elements in $\MCG(S_g)$ when $g\geqslant 2$, where the foliations are replaced by measured geodesic laminations, and the measure is there to encode stretchings and contractions.
+
+
+\subsection{The trichotomy}
+Let $S_g$ have genus $g\geqslant 2$. The mapping class group $\MCG(S_g)$ acts naturally on the whole space $\calC$ of currents and in particular on the compactification $\overline{\Teich(S_g)} \cong D^{6g-6}$ of the Teichm\"uller space.
+
+Let $\varphi \in \MCG(S_g)$ be a non-trivial element. By Brouwer's fixed point theorem, $\varphi$ fixes at least one point in $\overline{\Teich(S_g)}$. We say that $\varphi$ is:
+\begin{enumerate}
+\item \emph{finite order} if it fixes a hyperbolic metric $m \in \Teich(S_g)$;
+\item \emph{reducible} if it fixes a multicurve $\mu \in \calM$;
+\item \emph{pseudo-Anosov} in all the other cases.
+\end{enumerate}
+
+We now analyse the three cases individually.\index{finite-order mapping class}\index{reducible mapping class}\index{pseudo-Anosov mapping class}
+
+
+\subsection{Finite order elements}
+We must first explain the terminology.
+
+\begin{prop} \label{finite:finite:prop}
+A non-trivial element $\varphi\in\MCG(S_g)$ is finite order if and only if it has indeed finite order in $\MCG(S_g)$.
+\end{prop}
+\begin{proof}
+Suppose that $\varphi$ preserves the isotopy class $[m]\in\Teich(S_g)$ of a hyperbolic metric $m$ in $S_g$. We can choose a representative for $\varphi$ that fixes $m$. This representative is an isometry for $m$.
+Since the isometry group of a closed hyperbolic manifold is finite (see Corollary \ref{finite:isometry:group:cor}) we have $\varphi^n=\id$ for some $n>1$ and $\varphi$ has indeed finite order in $\MCG(S_g)$. 
+
+Conversely, let $\varphi$ be an element having finite order in $\MCG(S_g)$. The subgroup $\langle \varphi \rangle$ generated by $\varphi$ cannot act freely on $\Teich(S_g) \isom  \matR^{6g-6}$, otherwise it would quotient $\matR^{6g-6}$ to an aspherical manifold with finite fundamental group, contradicting Theorem \ref{no:torsion:aspherical:teo}. Therefore some non-trivial power of $\varphi$ has a fixed point in $\Teich(S_g)$.
+
+If $\varphi$ has prime order we easily conclude that also $\varphi$ has a fixed point and we are done. However, if $\varphi$ has order $p_1\cdots p_s$ for some primes $p_i$, we need to do more work. By induction, $\varphi' = \varphi^{p_1\cdots p_{s-1}}$ has a fixed point $[m]\in\Teich(S_g)$ and is hence represented by an isometry for $S_g$ with metric $m$. The isometry $\varphi'$ quotients $S_g$ to a hyperbolic orbifold, and the fixed points $\Fix(\varphi')$ of $\varphi'$ in $\Teich(S_g)$ can be identified naturally with the (suitably defined) Teichm\"uller space of this orbifold, which is homeomorphic to $\matR^N$ for some $N>0$ like in the surface case (exercise).
+
+Since $\varphi$ and $\varphi'$ commute, the first act as a mapping class on $\Fix(\varphi')$ with order $p_1\cdots p_{s-1}$: we conclude by induction on $s$ that $\varphi$ has a fixed point in $\Teich(S_g)$.
+\end{proof}
+
+We get in particular the following corollary, which is far from obvious because $\MCG(S_g)$ does \emph{not} act itself on $S_g$, and algebraic relations in $\MCG(S_g)$ do not translate into algebraic relations between representatives, except in some very lucky cases.
+
+\begin{cor}
+If $\varphi\in\MCG(S_g)$ has order $k$, it may be represented by a diffeomorphism $\varphi\colon S_g\to S_g$ such that $\varphi^k = \id$.
+\end{cor}
+\begin{proof}
+The class $\varphi$ has a representative $\varphi\colon S_g \to S_g$ that is an isometry for some hyperbolic metric; the isometry $\varphi^k$ is isotopic to the identity and is hence the identity by Corollary \ref{isometries:not:homotopic:cor}.
+\end{proof}
+
+
+\subsection{Reducible elements}
+We must explain the terminology also in this case.
+If $\varphi$ fixes a multicurve $\mu$, one can cut $S_g$ along $\mu$ and look at the restriction of $\varphi$ to the resulting pieces: after extending all the theory to surfaces with boundary (that we have not done here for simplicity), we can hence study inductively each piece, and this explains the word \emph{reducible}.
+
+The cases (1) and (2) are not exclusive: there are isometries of hyperbolic surfaces that preserve some multicurve. On the other hand, there are finite order elements that are not reducible (exercise) and reducible mapping classes that are not of finite order: for instance, Dehn twists. 
+
+
+\subsection{The action on $\calML$}
+The mapping class group $\MCG(S_g)$ of $S_g$ acts on the currents space $\calC$ and hence on the ``light cone'' subspace $\calML$ of all measured geodesic laminations, which contains the space $\calM$ of multicurves. 
+
+The action of $\MCG(S_g)$ on $\calML$ can be seen concretely inside $S_g$. It suffices to consider $\calML$ as the space of all measured \emph{topological} laminations (defined in Section \ref{topological:laminations:subsection}) considered up to isotopy and collapsing of parallel closed leaves. 
+Now $\varphi\in\MCG(S_g)$ acts on $\calML$ simply by sending the measured topological lamination $\mu$ to $\varphi(\mu)$. 
+
+We now prove that if $\varphi$ fixes a non-trivial point in $\calML$ we fall back into one of the two cases already considered.
+
+\begin{prop} \label{varphi:fixes:mu:prop}
+If $\varphi(\mu) = \mu$ for some non-trivial $\mu\in\ML$, then $\varphi$ is either finite order or reducible.
+\end{prop}
+\begin{proof}
+We fix a hyperbolic metric on $S_g$ and represent $\mu$ as a measured geodesic lamination there. 
+
+By Proposition \ref{finite:regions:prop} there are finitely many complementary regions in $S_g\setminus \mu$. If $\mu$ is not full, some region is not an ideal polygon and hence deformation-retracts onto a subsurface $S'\subset S_g$, whose boundary components $\partial S'$ are non-trivial simple closed curves in $S_g$. The union of all such curves $\partial S'$ as $S'$ varies produces a multicurve preserved by $\varphi$, which is hence reducible.
+
+If $\mu$ is full, all the complementary regions are ideal polygons, and after substituting $\varphi$ with a finite power we can suppose that each region is fixed (not pointwise) by $\varphi$, together with each of its boundary components. We consider the preimage $\tilde \mu \subset \matH^2$ and note that its complementary regions in $\matH^2$ are still ideal finite polygons, the lifts of the ones in $S_g$. 
+
+The diffeomorphism $\varphi$ lifts to a homeomorphism $\tilde\varphi \colon \overline{\matH^2} \to \overline{\matH^2}$ that fixes $\tilde \mu$, and we may suppose that it fixes (not pointwise) a complementary polygon and each of its boundary lines. In particular $\varphi$ fixes orientation-preservingly a line $l\subset \tilde \mu$. 
+
+Remember that $\calG$ is the set of all lines in $\matH^2$.
+We now prove that, if $\tilde\varphi$ fixes (orientation-preservingly) a 
+line $l\subset \tilde \mu \subset \calG$, then it fixes (still orientation-preservingly) all the lines in $\tilde \mu$ contained in some neighbourhood of $l\in \calG$. This is done as follows: since the boxes form a neighbourhood system for $\calG$, and $\tilde\varphi$ acts via homeomorphisms on $\calG$, there are two boxes $B\subset B'$ containing $l$ such that $\tilde\varphi(B) \subset B'$. Now $B\cap \tilde \mu \subset B'\cap \tilde \mu$ consists of some parallel lines, which look like $J\times \matR \subset J' \times \matR$ for some measured ordered set $J'$ and some subsegment $J\subset J'$: the map $\varphi$ sends  $J$ to $J'$ preserving both the ordering and the measure, and fixing the point corresponding to $l$: hence it is the identity.
+
+On the other hand, every complementary region of $\tilde\mu$ is a finite ideal polygon: hence if $\tilde\varphi$ fixes (orientation-preservingly) one side of the polygon, it fixes all the others. 
+
+The two properties just listed together easily imply that, since $l$ is fixed, the whole of $\tilde\mu$ is. Since the lines are fixed orientation-preservingly, their endpoints are fixed: the map $\tilde\varphi$ fixes all the endpoints of all lines in $\tilde\mu$, and since these endpoints form a dense subset of $\partial \matH^2$ the map $\tilde\varphi$ fixes $\partial \matH^2$ pointwise and hence $\varphi$ is trivial in $\MCG(S_g)$ by Proposition \ref{action:curves:prop}.
+\end{proof}
+
+The previous proposition shows in particular that pseudo-Anosov elements act freely on $\calML\setminus \{0\}$. We now investigate more closely these mysterious mapping classes.
+
+
+\subsection{Pseudo-Anosov elements}
+A pseudo-Anosov element $\varphi$ is by definition neither finite order nor reducible. We have just seen that $\varphi$ acts freely on $\calML\setminus \{0\}$, but this does not prevent it from having some fixed points in $\PML$; indeed we now show that there are two fixed points there, one attracting and the other repelling, so that $\varphi$ looks very much like a hyperbolic isometry on the hyperbolic space.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{pAdynamics-BW}{pAdynamics}}
+\nota{The appropriate lift $\tilde \varphi$ acts on $\partial \matH^2$ with $2k$ fixed points that are alternatively attractive and repelling. By joining the repelling points we find another lamination $\mu_u$ fixed by $\varphi$. Here $k=5$.}
+\label{pAdynamics:fig}
+\end{center}
+\end{figure}
+
+\begin{teo} \label{su:teo}
+Let $\varphi \in \MCG(S_g)$ be a pseudo-Anosov element. There are two measured geodesic laminations $\mu_s, \mu_u \in \ML$ and a real number $\lambda >1$ such that 
+$$\varphi(\mu_s) = \lambda \mu_s, \qquad \varphi(\mu_u) = \frac 1\lambda \mu_u.$$
+The laminations $\mu_s$ and $\mu_u$ are full, and they altogether fill $S_g$. 
+\end{teo}
+\begin{proof}
+By Brouwer's fixed point theorem, a pseudo-Anosov element $\varphi$ has a fixed point in $\overline{\Teich(S_g)}\isom D^{6g-6}$ which is (by definition) neither a metric nor a multicurve. Therefore $\varphi$ fixes a projective measured lamination $[\mu]$ which is full (otherwise $\varphi$ would be reducible: see the proof of Proposition \ref{varphi:fixes:mu:prop}).
+
+Since $[\mu]$ is a projective class, we have $\varphi(\mu) = \lambda\mu$ for some real number $\lambda >0$. Up to replacing $\varphi$ with its inverse $\varphi^{-1}$ we may suppose that $\lambda \geqslant 1$, and Proposition \ref{varphi:fixes:mu:prop} shows that $\lambda>1$. We denote this $\mu$ by $\mu_s$.
+
+We now construct $\mu_u$. As in the proof of Proposition \ref{varphi:fixes:mu:prop}, we consider the preimage $\tilde\mu_s\subset \matH^2$ of $\mu_s$, and after replacing $\varphi$ with a finite power we may choose a lift $\tilde \varphi$ of $\varphi$ that fixes a complementary polygonal region $R$ of $\tilde\mu_s$ and its sides, hence in particular the vertices of $R$, see Figure \ref{pAdynamics:fig}.
+
+The $k$ vertices of $R$ divide $\partial \matH^2$ into $\tilde\varphi$-invariant arcs $I_1,\ldots, I_k$, corresponding to the sides $s_1,\ldots, s_k$ of $R$, see Figure \ref{pAdynamics:fig}. Since $\mu_s$ is full, each $s_i$ is the limit of a sequence of leaves in $\tilde\mu_s$ with both endpoints in $I_i$ converging to the endpoints of $s_i$ but distinct from them by Proposition \ref{at:most:two:prop}. Since $\lambda > 1$, the map $\tilde\varphi$ pushes these leaves towards $s_i$, so in particular the vertices of $R$ are local attractors for the action of $\tilde\varphi$ on $\partial \matH^2$, see Figure \ref{pAdynamics:fig}.
+
+Since the endpoints $p$ and $q$ of $l_i$ are attractors, the map $\tilde\varphi$ fixes at least one point in the interior of $I_i$, and we show that it cannot fix two: if $\tilde \varphi$ fixes $r$ and $s$ in the interior of $I_i$, then it fixes the box $[p,r] \times [s,q]$ that has non-zero measure, a contradiction since $\lambda > 1$. There is a single fixed point in $l_i$, and it must be repulsive.
+
+The dynamics of $\tilde \varphi$ on $\partial \matH^2$ is described in Figure \ref{pAdynamics:fig}. 
+The closure of the projection of the $k$ \iftoggle{BW}{light grey}{green} lines is another invariant geodesic lamination $\mu_u$, which must be full 
+because $\varphi$ is pseudo-Anosov.
+
+We now prove that $\mu_u$ admits some (non unique) transverse measure and can hence be considered as an element of $\ML$. The dynamics shows that for some curve $\gamma\in\calS$ the supports of $\varphi^{-k}(\gamma)$ tend to that of $\mu_u$. The sequence $\varphi^{-k}([\gamma])\in \PML$ hence converges on a subsequence to a projective measured geodesic lamination with support $\mu_u$.
+
+In principle, the measure supported by $\mu_u$ needs not to be unique, not even up to rescaling: hence the element $[\mu_u]$ may not be uniquely determined and we cannot conclude that it is fixed by $\varphi$, unfortunately. However, distinct measures on the same support form obviously a convex cone in the current space $\calC$ and hence a closed disc in $\matP\calC$, the class $\varphi$ acts on this disc and therefore has a fixed point there by Brouwer's fixed point theorem again. 
+
+We have $\varphi(\mu_u) = \lambda' \mu_u$ for some $\lambda'$. 
+It is clear that $\mu_u$ and $\mu_s$ fill $S_g$ altogether, and in particular $i(\mu_u, \mu_s) > 0$. Therefore
+$$0 < i(\mu_u, \mu_s) = i(\varphi(\mu_u), \varphi(\mu_s)) = \lambda \lambda' i(\mu_u, \mu_s)$$
+gives $\lambda' = \frac 1 \lambda$. The proof is complete.
+\end{proof}
+
+The laminations $\mu_s$ and $\mu_u$ are the \emph{stable} and the \emph{unstable} measured geodesic laminations fixed by $\varphi$, and $\lambda$ is the \emph{dilatation} of $\varphi$. We now prove a converse to Theorem \ref{su:teo}.\index{geodesic lamination!stable and unstable measured geodesic lamination}
+
+\begin{prop} \label{pA:converse:prop}
+If $\varphi \in \MCG(S_g)$ is such that $\varphi(\mu) = \lambda \mu$ for some full 
+$\mu \in \calML$ and $\lambda > 1$, then $\varphi$ is pseudo-Anosov.
+\end{prop}
+\begin{proof}
+We need to prove that $\varphi$ is neither finite order nor reducible, that is that $\varphi$ fixes no non-trivial current $\alpha \in \Teich(S_g) \cup \calM$. We have 
+$$i\big(\varphi^k(\alpha), \mu\big) = i\big(\alpha, \varphi^{-k}(\mu)\big) =
+\lambda^{-k}i\big(\alpha, \mu) \to 0$$
+as $k\to +\infty$. Therefore $\varphi(\alpha) \neq \alpha$ unless $i(\alpha, \mu)=0$, which is excluded since $\mu$ is full.
+\end{proof}
+
+
+\subsection{Examples}
+We now construct plenty of pseudo-Anosov diffeomorphisms. We need a bit of simple linear algebra.
+
+We say that a matrix or vector is \emph{positive} if all its entries are.
+A square matrix $M$ with non-negative integral entries is \emph{Perron-Frobenius} if $M^k$ is positive for some $k>0$.\index{Perron-Frobenius matrix} 
+
+\begin{prop} \label{PF:prop}
+Every Perron-Frobenius integral matrix $M$ has a positive eigenvector $v$ with some eigenvalue $\lambda>1$.
+\end{prop}
+\begin{proof}
+The matrix $M$ has non-negative entries and hence preserves the standard simplex $\Delta = \{x_i\geqslant 0, \sum x_i = 1\}$, so by Brouwer's fixed point theorem it has a fixed point $v\in \Delta$ there. Since $M^k > 0$ and $v$ is an eigenvector for $M^k$, we get $v>0$. Since $M^k$ is integral we get $\lambda^k > 1$ and hence $\lambda >1$.
+\end{proof}
+
+The following examples were constructed by Penner in 1988. Recall that a multicurve $\alpha$ in $S_g$ is \emph{essential} if it contains no parallel components: this holds for instance if $\alpha$ is a simple closed curve or a pants decomposition.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{Penner-BW}{Penner}}
+\nota{We smoothen $\alpha \cup \beta$ to a bigon track that contains both $\alpha$ and $\beta$ (left). The bigon track may have some bigons as complementary regions (right).}
+\label{Penner:fig}
+\end{center}
+\end{figure}
+
+\begin{teo} \label{Penner:teo}
+Let $\alpha$ and $\beta$ be two essential multicurves that altogether fill $S_g$. Let $\varphi\in\MCG(S_g)$ be any composition of Dehn twists $T_a^{+1}$ and $T_b^{-1}$ where $a$ and $b$ vary among the curves in $\alpha$ and $\beta$. If every component $a$, $b$ of $\alpha$, $\beta$ occurs at least once, then $\varphi$ is pseudo-Anosov.
+\end{teo}
+The Dehn twists may occur in any order, for instance $\varphi = T_{a}^2T_b^{-3}T_{b'}^{-1}T_{a'}$.
+\begin{proof}
+We put $\alpha$ and $\beta$ in minimal position and smoothen the transverse intersections as in Figure \ref{Penner:fig}-(left) to get a \emph{bigon track} $\tau$. A bigon track is like a train track, except that it may contain some complementary bigon as in Figure \ref{Penner:fig}-(right). The straightening procedure described in Section \ref{parametrizzazione:subsection} works also in this case (exercise), so every weight system on $\tau$ determines a measured geodesic lamination in $S_g$.\index{train track!bigon track} (Different weight systems may determine the same geodesic laminations because of the bigons.)
+
+We have $\alpha = a_1 \sqcup \ldots \sqcup a_m$ and $\beta = b_1 \sqcup \ldots \sqcup b_n$. Each $a_i$ and $b_j$ may be represented by assigning weights 1 or 0 to the edges of $\tau$, and these weights form $m+n$ independent (exercise) vectors $v_1,\ldots, v_{m+n}$
+in the weights space of $\tau$. Let $V$ be the $(m+n)$-dimensional sub-cone of the weights space generated by $v_1,\ldots, v_{m+n}$ via combinations with non-negative coefficients. 
+Every vector in $V$ models a measured geodesic lamination in $S_g$.
+
+Let $\Omega$ be the $m+n$ square matrix $\Omega_{ij} = i(v_i, v_j)$. We have $\Omega = \matr 0HK0$. The crucial point here is that both $T_{a_j}$ and $T_{b_k}^{-1}$ act on $V$ like the matrix 
+$$Q_i = I + D_i\Omega$$
+where $I$ is the identity and $D_i$ has 1 on the $i$-th entry of the diagonal and 0 everywhere else. The map $\varphi$ therefore acts on $V$ as a product $M = Q_{i_1} \cdots Q_{i_h}$ of non-negative matrices. Since each $i=1,\ldots,m+n$ occurs at least once as an index, we may deduce (exercise) that $M$ is Perron-Frobenius. Therefore $M$ has a positive eigenvector $v$ with eigenvalue $\lambda > 1$.
+
+The positive eigenvector $v$ determines an element $\mu \in \ML$ such that $\varphi(\mu) = \lambda \mu$. We leave to the reader the proof that $\mu$ is full, 
+and we conclude using Proposition \ref{pA:converse:prop}.
+\end{proof}
+
+
+\subsection{References}
+The material contained in this chapter is well known to experts, but it is hard to find a source in the literature that contains everything in a fully self-contained way. The whole theory was presented by Thurston in a very nice and readable paper \cite{Th_diff} that however contained no proof. The most complete book on the subject is then Fathi -- Laudenbach -- Po\'enaru \cite{FLP}, and this is also the main source that we have used for writing this chapter. 
+Another important source is Casson -- Bleiler \cite{CB}.
+
+We have chosen to describe the whole theory using Bonahon's geodesic currents, that originated in the papers \cite{B1, B2}. To this purpose we have also consulted McMullen \cite{McM}, Aramayona -- Leininger \cite{AL}, and Calegari \cite{Ca}. We also borrowed some arguments on train tracks and measured geodesic laminations from a nice and self-contained paper of Hatcher \cite{H2}. The proof of Proposition \ref{finite:finite:prop} was taken from \cite[Theorem 6.1]{FM}. Theorem \ref{Penner:teo} was proved by Penner in \cite{Pe}.
+
+
+
+
+
+\part{Three-manifolds}
+\chapter{Topology of three-manifolds} \label{Three:topology:chapter}
+
+The three-manifolds world is topologically much richer than the surfaces realm, while yet not so crazy as the four-manifolds universe. In dimension two a simple homological invariant (the Euler characteristic) suffices to classify topologically all the closed orientable manifolds: at the complete opposite, the closed four-manifolds cannot be classified in any reasonable sense. The three-manifolds lie in the middle: we do not have yet a complete satisfactory picture, but we understand them a good deal.
+
+The rest of this book is devoted to three-manifolds, more specifically to compact orientable three-manifolds, possibly with boundary (the orientability assumption is not essential, but it helps to simplify many arguments). We split their study into some parts. First, we state some universal topological facts, mostly concerning the way surfaces can be contained in three-manifolds. Then we construct some classes of three-manifolds, focusing mostly on Seifert manifolds. After classifying the Seifert manifolds topologically, we assign a geometry to each: there are eight interesting geometries in dimension three, and we introduce them with some care. Finally, we concentrate on the most interesting and beautiful of the eight: hyperbolic geometry.
+
+In this chapter we start to study the topology of three-manifolds. We begin with some algebraic topology, then we show that the connected sum behaves like products of numbers: every closed three-manifold splits in a unique way in a unique list of prime factors. Finally we introduce the important notion of incompressible surface.\index{three-manifold}

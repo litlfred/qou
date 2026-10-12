@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2407.04744v2/blocks/prose-sec-018",
+  "kind": "prose",
+  "title": "Note on the magnetic form factors data",
+  "pageStart": 25,
+  "pageEnd": 25,
+  "text": "../sections/sec-018-note-on-the-magnetic-form-factors-data.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2407.04744v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2407.04744v2/manifest.jsonld",
+  "provenance": "ingested"
+}

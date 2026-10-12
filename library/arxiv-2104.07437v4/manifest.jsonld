@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.07437v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Peacock patterns and new integer invariants in topological string theory",
+  "contains": [
+    "library/arxiv-2104.07437v4/sections/sec-front-matter",
+    "library/arxiv-2104.07437v4/sections/sec-000",
+    "library/arxiv-2104.07437v4/sections/sec-001",
+    "library/arxiv-2104.07437v4/sections/sec-002",
+    "library/arxiv-2104.07437v4/sections/sec-003",
+    "library/arxiv-2104.07437v4/sections/sec-004",
+    "library/arxiv-2104.07437v4/sections/sec-005",
+    "library/arxiv-2104.07437v4/sections/sec-006",
+    "library/arxiv-2104.07437v4/sections/sec-007",
+    "library/arxiv-2104.07437v4/sections/sec-008",
+    "library/arxiv-2104.07437v4/sections/sec-009",
+    "library/arxiv-2104.07437v4/sections/sec-010",
+    "library/arxiv-2104.07437v4/sections/sec-011",
+    "library/arxiv-2104.07437v4/sections/sec-012",
+    "library/arxiv-2104.07437v4/sections/sec-013",
+    "library/arxiv-2104.07437v4/sections/sec-014",
+    "library/arxiv-2104.07437v4/sections/sec-015",
+    "library/arxiv-2104.07437v4/sections/sec-016",
+    "library/arxiv-2104.07437v4/sections/sec-017",
+    "library/arxiv-2104.07437v4/sections/sec-018",
+    "library/arxiv-2104.07437v4/sections/sec-019",
+    "library/arxiv-2104.07437v4/sections/sec-020",
+    "library/arxiv-2104.07437v4/sections/sec-021",
+    "library/arxiv-2104.07437v4/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2104.07437&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2104.07437v4",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2104.07437v4.pdf",
+    "source_sha256": "a0f28a6b6161846756f03965b7cd15d17dbd3c3951fa6804139a3e198797fcd7",
+    "pages": 52,
+    "arxiv": {
+      "id": "2104.07437",
+      "version": "4",
+      "primary_class": "hep-th",
+      "stamp_date": "29 Jan 2022"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

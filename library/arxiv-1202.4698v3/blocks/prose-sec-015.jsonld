@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1202.4698v3/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1202.4698v3/blocks/prose-sec-015",
   "kind": "prose",
-  "title": "Classical limit",
-  "pageStart": 17,
-  "pageEnd": 18,
-  "text": "../sections/sec-015-55-classical-limit.md",
-  "derivedFrom": "library/arxiv-1202.4698v3/manifest",
-  "sourceDocument": "library/arxiv-1202.4698v3/manifest",
+  "title": "The quantization problem",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "text": "../sections/sec-015-52-the-quantization-problem.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.4698v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.4698v3/manifest.jsonld",
   "provenance": "ingested"
 }

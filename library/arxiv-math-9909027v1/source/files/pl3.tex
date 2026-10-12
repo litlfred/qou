@@ -1,0 +1,478 @@
+If $\a: L^1_k\to P^2_k$, as in 1.14, is such that \
+ker $\Theta_\a\supseteq {\op{ker}} \ \Phi_1$, then the resulting
+homomorphism of filtered algebras $\Gamma_\a: P^1\to P^2$ is called
+a {\it planar algebra homomorphism.} A {\it planar subalgebra}
+of a general planar algebra is the image of a planar algebra
+homomorphism. A planar algebra homomorphism that is bijective is
+called a {\it planar algebra isomorphism.} Two presentations
+$\Phi_1$ and $\Phi_2$ of a planar algebra will be considered to
+define the same planar algebra structure if the identity map is a
+planar algebra homomorphism.
+
+\bs{\bf Remarks.} (i) It is obvious that
+planar algebra homomorphisms intertwine the ${\cal A}(\emptyset)$ actions.
+
+(ii) By 1.14, any presentation of a general planar algebra $P$ can
+be altered to one whose labelling set is the whole algebra itself,
+defining the same planar algebra structure and such that
+$\Phi(\tangle{R})=R$ for all $R\in P$.  Thus
+there is a canonical, if somewhat unexciting, labelling set.
+We will abuse notation by using the same letter $\Phi$ for the
+extension of a labelling set to all of $P$. Two presentations
+defining the same planar algebra structure will define the same
+extensions to all of $P$ as labelling set.
+
+\bigskip
+\ni{\bf Proposition 1.18} Let $P$ be a  general planar algebra,
+and let $C_n\subseteq P_n$ be unital subalgebras invariant under
+${\cal A}(\emptyset)$ (i.e., $\pi_A(C_j)\subseteq C_k$ for $A\in{\cal
+A}_{j,k}(\emptyset)$). Then $C=\cup C_n$ is a planar subalgebra of $P$.
+
+\bigskip
+{\sc Proof.} As a labelling set for $C$ we choose $C$ itself.
+We have to show that $\Theta_C(\cal P(C))\subseteq C$. But this follows
+immediately from the argument for the uniqueness of $\Theta_S$ in
+1.14. (Note that $C_n\subseteq C_{n+1}$ as subalgebras of
+$P_{n+1}$ is automatic from invariance under ${\cal A}(\emptyset)$.) \qed
+
+The definition of isomorphism
+was asymmetric. The next result shows that the notion {\bf is}
+symmetric.
+
+\bs
+\ni{\bf Proposition 1.19} If $\Gamma_{\a}:P^1\to P^2$ is an
+isomorphism of planar algebras, so is $(\Gamma_{\a})^{-1}$.
+
+\bs
+{\sc Proof.} Define \ $\a^{-1}:L^2_k\to P^1_k$ \ by \
+$\a^{-1}(R)=(\Gamma_{\a})^{-1}(\Phi_2(\tangle{R})$.
+Then $\G_\a\circ\Theta_{\a^{-1}}$ is a filtered algebra
+homomorphism intertwining the ${\cal A}(\emptyset)$ actions so it equals
+$\Phi_1$ by 1.14. Thus ker $\Phi_2\subseteq {\op{ker}} \
+\Theta_{\a^{-1}}$ \ and \ $\G_{\a^{-1}}=(\G_\a)^{-1}$. \qed
+
+\bs The definitions of planar algebra homomorphisms, etc., as above
+are a little clumsy.
+The meaning of the following result is that this operadic
+definition of the introduction would give the same notion as the one we have defined.
+
+
+\bigskip
+\ni{\bf Proposition 1.20} If $P_i,\Phi_i,L_i$ for $i=1,2$ are as
+in Definition {\rm{1.17}}, then linear maps $\G: P^1_k\to P^2_k$
+define a planar algebra homomorphism iff
+$$
+\pi_T(\G(x_1),\G(x_2),\dots ,\G(x_n)) =\G(\pi_T(x_1,x_2,\dots ,x_n))
+$$
+for every unlabelled tangle $T$ as in {\rm{1.13}}.
+
+\bigskip
+{\sc Proof.} Given  $\G$, define $\a: L_1\to P^2$ by
+$\a(R)=\G(\Phi_1(\tangle{R} ))$.
+Then $\Theta_\a=\G\circ\Phi_1$ by the uniqueness criterion of 1.14
+(by choosing $T$ appropriately it is clear that $\G$ is a
+homomorphism of filtered algebras intertwining $\cal
+A(\emptyset)$-actions). On the other hand, a planar algebra isomorphism
+provides linear maps $\G$ which satisfy the intertwining condition
+with $\pi_T$. \qed
+
+
+\bs{\bf Definition 1.21.} For each $j,k=0,1,2,\dots$ with $j\leq
+k$, $\P_{j,k}(L)$ will be the subalgebra of $\P_k(L)$ spanned by
+tangles for which all marked points are connected by vertical
+straight lines  except those having $x$ coordinates $j+1$ through
+$k$. (Thus $\P_{0,k}=\P_k$.) If $B$ is a general planar algebra, put
+$P_{j,k}=\Phi(\P_{j,k})$ for some, hence any, presenting map $\Phi$.
+
+\bs{\bf Definition 1.22.} A {\it planar algebra} will be a
+general planar algebra $P$ with
+ \ dim $P_0=1={\op{dim}} \ P_{1,1}$ and
+$\Phi(\caright\ ),\Phi(\caleft\ )$ both nonzero.
+
+\bs A  planar algebra $P$, with presenting map
+$\Phi: \P(L)\to P$, defines a planar isotopy invariant of
+labelled planar networks, ${\cal N}\mapsto Z_{\Phi}(\cal N)$ by
+$Z_{\Phi}(\cal N){\op{id}}=\Phi (\blankbox{\cal N})\in P_0$ if
+the unbounded region of ${\cal N}$ is positively oriented 
+(and ${\cal N}$ is moved inside $\b_0$ by an isotopy), and 
+$Z_{\Phi}({\cal N}){\op{id}}=\Phi(\tanglearrow{\cal N}\  )\in P_{1,1}$
+in the other case ($\cal N$ has been isotoped into the right
+half of $\b_1$). The invariant $Z$ is called the {\it partition
+function.} It is multiplicative in the following sense.
+
+\bs\ni{\bf Proposition 1.23} Let $P$  be a planar algebra with
+partition function $Z$. If $T$ is a labelled tangle containing
+a planar network $\cal N$ as a connected component, then
+$$
+\Phi(T)=Z({\cal N})\Phi(T')
+$$
+where $T'$ is the tangle $T$ from which $\cal N$ has been
+removed.
+
+\bs
+{\sc Proof.} If we surround $\cal N$ by a 0-box (after isotopy
+if necessary) we see that $T$ is just $\blankbox{\cal N}$ to which
+a $0-k$ annular tangle has been applied. But
+$\Phi( \blankbox{\cal N})=Z({\cal N})\Phi(\blankbox\ )$,
+so by annular invariance, $\Phi(T)=Z({\cal N})T$ \qed
+
+\bs
+A planar algebra has two scalar parameters,
+$\d_1=Z(\caleft\ )$ and $\d_2=Z(\caright\ )$
+which we have supposed to be non-zero.
+
+
+
+\bs We present two useful procedures to construct  planar algebras.
+The first is from an invariant and is analogous to the GNS method
+in operator algebras.
+
+Let $Z'$ be a planar isotopy invariant of labelled planar networks
+for some labelling set $L$. Extend $Z'$ to $\P_0(L)$ by linearity.
+Assume $Z'$ is multiplicative on connected components and that
+$Z'(\caright\ )\neq 0$, $Z'(\caleft\ )\neq 0$.
+For each $k$ let ${\cal J}_k=\{x\in \P_k(L)\mid Z'(A(T))\!=\!0
+\ \forall A\in{\cal A}_{k,0}\}$. Note that $Z'$ (empty network) =1.
+
+\bs
+\ni{\bf Proposition 1.24} {\rm{(i)}} ${\cal J}_k$ is a 2-sided
+ideal of $\P_k(L)$ and ${\cal J}_{k+1}\cap  \P_k(L)={\cal J}_k$.
+
+{\rm{(ii)}} Let $P_k=\P_k(L)/ {\cal J}_k$ and let $\Phi$ be the
+quotient map. Then $P=\cup P_k$ becomes a planar algebra presented
+by $\Phi$ with partition function $Z_{\Phi}=Z'$.
+
+{\rm{(iii)}} If $x\in P_k$ then $x=0$ iff $Z_{\Phi}(A(x))\!=\!0
+\quad\forall \ A\in{\cal A}_{k,0}$.
+
+\bs
+{\sc Proof}. (i) If $T_1$ and $T_2$ are tangles in $\P_k(L)$, the
+map $x\mapsto T_1x T_2$ is given by an element $T$ of
+${\cal A}_{k,k}(L)$, and if $A\in{\cal A}_{k,0}$ then
+$Z'(A(Tx))=Z'(AT)(x))=0$ if $x\in{\cal J}_k$. Hence ${\cal J}_k$ is an
+ideal.
+
+It is obvious that ${\cal J}_k\subset{\cal J}_{k+1}\cap{\P}_k(L)$.
+So suppose  $x\in{\cal J}_{k+1}\cap \P_k$. Then for some $y\in \P_k$,
+$x=\tangleudarrow{y}$, the orientation of the
+last straight line depending on the parity of $k$. We want to show
+that
+$y\in{\cal J}_k$. Take an $A\in{\cal A}_{k,0}$ and form the element
+$\tilde A$ in ${\cal A}_{k+1,0}$ which joins the rightmost two
+points, inside the annulus, close to the inner boundary.
+Then $\tilde A(x)$ will be $A(y)$ with a circle inserted close to
+the right extremity of  $\tangle{y}$. So by multiplicativity,
+$Z'(\tilde A(x))=Z'(\caleft\ )Z'(A(y))$.
+Since $Z'(\caleft\ )\neq 0$, $Z'(A(y))=0$ and
+$y\in{\cal J}_k$.
+
+(ii) By (i) we have a natural inclusion of $P_k$ in $P_{k+1}$.
+Invariance of the ${\cal J}_k$'s under ${\cal A}$ is immediate.
+To show that \ dim $P_0=1={\op{dim}} \ P_{1,1}$, define maps 
+$U:\P_0\to K$ ($K=$ the field) and $V:\P_{1,1}\to K$ by linear extensions of
+$U(\blankbox{\cal N})=Z'(\cal N)$ and 
+$V(\boxarrow{{\cal N}\ \ {\cal M}}\ )= 
+Z'({\cal N})Z'({\cal M})$. Observe that $U({\cal J}_0)=0$ and if
+${\cal N}_i,{\cal M}_i,\lambda_i (\in K)$ satisfy
+$Z'(\sum_i\lambda_i A( \boxarrow{{\cal N}_i\ \ {\cal M}_i}\ )=0$ for
+all
+$A\in{\cal A}_{1,0}$, then by multiplicativity,
+$Z'(\caright\ )(\sum\lambda_i Z({\cal N}_i)Z({\cal M}_i))=0$,
+so that $U$ and $V$ define maps from $P_0$ and $P_{1,1}$ to $K$,
+respectively. In particular both $U$ and $V$ are surjective since
+$U(\blankbox{})=1$, $V(\blankbox{\uparrow})=1$. We need only show
+injectivity. So take a linear combination  $\sum\lambda_i\blankbox{{\cal N}_i}$ 
+with $\sum\lambda_i Z'({\cal N}_i)=0$. Then if
+$A\in{\cal A}_{0,0}$, $Z'(\sum\lambda_i\dt A (\blankbox{{\cal N}_i})
+ )\!=\!0$ by multiplicativity so $\sum\lambda_i\dt \blankbox{{\cal N}_i}
+\in\cal J_0$. Similarly for 
+$\sum_i\lambda_i A(\boxarrow{{\cal N}_i\ \ {\cal M}_i}\ ) \in P_{1,1}$.
+
+Thus \ dim $P_0=1={\op{dim}} \ P_{1,1}$ and by construction, $Z=Z'$.
+
+(iii) This is the definition of ${\cal J}_k$ (and $Z_{\Phi}=Z'$). \qed
+
+\bs{\bf Remark.} If one tried to make the construction of 1.24 for
+an invariant that was not multiplicative, one
+would rapidly conclude that the resulting algebras all have
+dimension zero.
+
+\bs{\bf Definition 1.25.} A planar algebra satisfying condition
+(iii) of 1.24 will be called non-degenerate.
+
+\bs The second construction procedure is by generators and
+relations. Given a label set $L$ and a subset $R\subseteq \P(L)$,
+let
+$\J_j(R)$ be the linear span of
+$\dsize{\bigcup_{T\in R \atop T\in \P_k(L)}}{\cal A}_{k,j}(L)(T)$. 
+It is immediate that
+$\J_{j+1}(R)\cap \P_j(L)=\J_j(R)$ (just apply an element of
+${\cal A}(\emptyset)$ to kill off the last string), and $\J_j(R)$ is
+invariant under ${\cal A}(L)$ by construction.
+
+\bs{\bf Definition 1.26.} With notation as above, set
+$P_n(L,R)=\dsize{\frac{\P_n(L)}{\J_n(R)}}$. Then
+$P(L,R)=\cup_n P_n(L,R)$ will be called the planar algebra with
+generators $L$ and relations $R$.
+
+This method of constructing planar algebras suffers the same
+drawbacks as constructing groups by generators and relations.
+It is not clear how big $\J_n(R)$ is inside $\P_n(L)$. It is a very
+interesting problem to find relation sets $R$ for which
+$0 < {\op{dim}} \ P_n(L,R) < \infty$ for each $n$. Knot theory
+provides some examples as we shall see.
+
+\bs{\bf Definition 1.27.} A  planar algebra is called {\it spherical} 
+if its partition function $Z$ is an invariant of
+networks on the two-sphere $S^2$ (obtained from $\mathbb R^2$ by
+adding a point at infinity).
+
+\bs The definition of non-degeneracy of a planar algebra involves
+all ways of closing a tangle. For a spherical algebra these
+closures can be arranged in a more familiar way as follows.
+
+\bs{\bf Definition 1.28.} Let $P$ be a  planar algebra
+with partition function $Z$.\linebreak Define two traces tr${}_L$
+and tr${}_R$ on $P_k$ by
+\[
+ {\op{tr}}_L(\tangle{R})=Z(\boxlloop{R})\hskip 15pt  {\rm and}\hskip15pt 
+{\op{tr}}_R(\tangle{ R})=Z(\boxrloop{R}).
+\]
+
+
+\bs{\bf Note.} For a spherical planar algebra $P$, $\d_1\!=\!\d_2$
+and we shall use $\d$ for this quantity. Similarly
+Tr${}_L={\op{Tr}}_R$ and we shall use Tr. If we define
+tr$(x)=\frac{1}{\d^n} {\op{Tr}}(x)$ for $x\in P_n$ then tr is
+compatible with the inclusions $P_n\subseteq P_{n+1}$
+(and tr$(1)\!=\!1$), so defines a trace on $P$ itself.
+
+\bs\ni
+{\bf Proposition 1.29} A spherical planar algebra is
+nondegenerate iff ${\op{Tr}}$ defines a nondegenerate bilinear form
+on $P_k$ for each $k$.
+
+\bs
+{\sc Proof.} $(\Leftarrow)$ The picture defining Tr is the
+application of a particular element $A$ of ${\cal A}_{k,0}$ to
+$x\in P_k$.
+
+%%%%%%%%%%%%%%%%%%% The following is the original part %%%%%%%%%%%%%%
+%$(\Rightarrow)$ It suffices to show that, for any $A\in{\cal A}_{k,0}(L)$ 
+%there is a $y\in P_k$ such that Tr$(xy)=Z(A(x))$. But
+%by spherical invariance $Z(A(x))\!=\!
+%Z( \boxrloop{R})$ which is Tr$(xy)$ after isotopy.
+%(Here we choose $R\in{\cal P}_k(L)$ with $\Phi(R)=x$ and are not very
+%careful about working in ${\cal P}$ or $P$.) \qed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$(\Rightarrow)$ It suffices to show that, for any $A\in{\cal A}_{k,0}(L)$
+there is a $y\in P_k$ such that Tr$(xy)=Z(A(x))$.
+By  spherical invariance one may arrange $A(x)$ so that the box containing
+$x$ has no strings to its left. The part of $A(x)$ outside
+that box can then be isotoped into a $k$-box which contains the element $y$.
+\qed
+
+\bs{\bf Remark 1.30.} One of the significant consequences of
+1.29 is that, for nondegenerate $P$, if one can find a finite
+set of tangles which linearly span $P_k$, the calculation of
+dim $P_k$ is reduced to the {\it finite} problem of calculating
+the rank of the bilinear form defined on $P_k$ by Tr. Of course
+this may not be easy!
+
+\bs
+\ni{\bf Corollary 1.31} A
+nondegenerate planar algebra is semisimple.
+
+
+\bs\ni{\bf Positivity}
+
+ For the rest of this section suppose the field is $\Bbb R$ or
+$\Bbb C$.
+
+Suppose we are given an involution $R\to R^*$ on the set of labels
+$L$. Then $\P(L)$ becomes a $*$-algebra as follows. If $T$ is a
+tangle in $T_k(L)$ we reflect the underlying unlabelled tangle in
+the line $y=\frac 12$ and reverse all the orientations of the
+strings. The first boundary point for a box in the reflected 
+unlabelled tangle is the one that was the last boundary point for that box
+in the original unlabelled tangle.The new tangle $T^*$ is then obtained  by assigning the
+label $R^*$ to a box that was labelled $R$. This operation is
+extended sesquilinearly to all of $\P_k(L)$. If $\Phi$ presents a
+general planar algebra, $*$ preserves ker $\Phi$ and defines a
+$*$-algebra structure on $\Phi(\P_k(L))$. The operation $*$ on
+$T_0(L)$ also gives a well-defined map on isotopy classes of planar
+networks and we say an invariant $Z$ is sesquilinear if
+$Z(\cal N^*)=\overline{Z(\cal N)}$.
+
+\bs{\bf Definition 1.32.} A $*$-algebra $P$ is called a (general)
+planar $*$-algebra if it is presented by a $\Phi$ on  $\P(L)$, $L$
+with involution $*$, such that $\Phi$ is a $*$-homomorphism.
+
+Note that if $P$ is planar, $Z$ is sesquilinear. Moreover if $Z$
+is a sesquilinear multiplicative invariant, the construction of
+1.24 yields a planar $*$-algebra.
+The partition function on a planar algebra will be called {\it
+positive} if tr${}_L(x^*x) \geq 0$ for $x\in P_k$, $k$ arbitrary.
+
+\bs
+\ni{\bf Proposition 1.33} Let $P$ be a  planar
+$*$-algebra with positive partition function $Z$. The following
+are equivalent:
+\begin{itemize}
+\item[(i)] $P$ is non-degenerate {\rm{(Def.~1.24).}}
+
+\item[(ii)] ${\op{tr}}_R(x^*x) > 0$ \ for \ $x\neq 0$.
+
+\item[(iii)] ${\op{tr}}_L(x^*x) > 0$ \ for \ $x\neq 0$.
+\end{itemize}
+
+{\sc Proof}. For (ii)$\Leftrightarrow$(iii), argue first that
+$\d_1={\op{tr}}_R(  \blankbox{\uparrow}) > 0$ and
+$\d_2=Z(\caleft\ )=\frac{1}{\d_1}
+{\op{tr}}_R( \blankbox{\ \uparrow\downarrow} \ ) > 0$
+and then define antiautomorphisms $j$ of $P_{2n}$ by
+$j(\boxas{R})=\boxasR$, so that
+$j(x^*)=j(x)^*$ and ${\op{tr}}_L(j(x))={\op{tr}}_R(x)$.
+
+
+(ii)$\Rightarrow$(i) is immediate since
+${\op{tr}}_R(x^*x)=\sum\lambda_i A_i(x^*)$ where
+$A_i\in{\cal A}_{k,0}$ is the annular tangle of figure $1.34$,
+\[
+        \input{xfig/pic13}
+\]
+\begin{center}
+        Figure 1.34
+\end{center}
+\ni writing $x=\Phi(\,\sum_i\lambda_i\tangle{ R_i})\in B_k$.
+
+(i)$\Rightarrow$(ii) Suppose $x\in P_k$ satisfies
+${\op{tr}}_R(x^*x)=0$. Then if $A\in{\cal A}_{k,0}$, we may isotope
+$A(x)$ so it looks like Figure 1.35
+\[
+        \input{xfig/pic14}
+\]
+\begin{center}
+        Figure1.35
+\end{center}
+\bs\ni where $y\in P_n$, $n\geq k$. Thus
+$Z(A(x))={\op{tr}}_R(\tilde x y)$ where $\tilde x$ denotes $x$ with
+$n-k$ vertical straight lines to the right and left of it.
+By the Cauchy-Schwartz inequality,
+$|{\op{tr}}_R(\tilde x y)|\leq \sqrt{{\op{tr}}_R(\tilde x^*\tilde
+x)} \sqrt{{\op{tr}}_R(y^*y)}$, so if tr${}_R(x^*x)=0$, \
+$Z(A(x))=0$. \qed
+
+\bs We will call a general planar algebra $P$ {\it
+finite-dimensional} if dim $P_k < \infty$ for all $k$.
+
+\bs
+\ni{\bf Corollary 1.36} If $P$ is a non-degenerate
+finite-dimensional  planar $*$-algebra with positive partition
+function then $P_k$ is semisimple for all $k$, so there is a unique
+norm $\| \ \|$ on $P_k$ making it into a $C^*$-algebra.
+
+{\sc Proof}. Each $P_k$ is semisimple since tr$(x^*x) > 0$
+means there are no nilpotent ideals. The rest is standard. 
+\qed
+
+\bs{\bf Definition 1.37.} We call a planar algebra (over $\Bbb R$
+or $\Bbb C$) a {\it $C^*$-planar algebra}
+if it satisfies the conditions of corollary 1.34.
+
+
+\bs\bs
+\ni{\large\bf{2. Examples}}
+
+{\bf Example 2.1: Temperley-Lieb algebra.}
+If $\d_1$ and $\d_2$ are two non-zero scalars, one defines
+$TL(n,\d_1,\d_2)$ as being the subspace of ${\cal P}_n(\emptyset)$
+spanned by the tangles with no closed loops. Defining
+multiplication on $TL(n,\d_1,\d_2)$ by multiplication as in
+${\cal P}_n(\emptyset)$ except that one multiplies by a factor
+$\d_1$ for each loop $\caright$ and $\d_2$
+for each loop $\caleft$, then discarding the loop.
+Clearly the map from ${\cal P}_n(\emptyset)$
+to $TL(n,\d_1,\d_2)$ given by multiplying by $\d_1$'s or $\d_2$'s
+then discarding loops, gives a $\Phi$ exhibiting
+ $TL(n,\d_1,\d_2)$ as a planar algebra. For general values of
+$\d_1$ and $\d_2$, $TL(n)$ is not non-degenerate. An extreme case is
+$\d_1=\d_2=1$ where $Z(c(T_1-T_2))=0$ for all relevant tangles
+$c,T_1,T_2$. In fact the structure of the algebras
+$TL(n,\d_1,\d_2)$ (forgetting $\Phi$), depends only on $\d_1\d_2$.
+To see this, show as in [GHJ] that $TL(n,\d_1,\d_2)$ is presented as
+an algebra by $E_i$, $i\leq 1,\dots ,n-1$ with
+$E^2_i=\d_1E_i$ for $i$ odd, $E^2_i=\d_2E_i$ for $i$ even, and
+$E_iE_{i\pm 1}E_i=E_i$ and
+$E_iE_j=E_jE_i$ for $|i-j|\geq 2$. Then setting
+$e_i=\frac{1}{\d_1}E_i$ ($i$ odd), $e_i=\frac{1}{\d_2}E_i$ ($i$
+even), the relations become $e^2_i=e_i$, \
+$e_ie_{i\pm 1}e_i=\frac{1}{\d_1\d_2} e_i$, \
+$e_ie_j=e_je_i$ for $|i-j|\geq 2$. If $\d_1=\d_2=\d$, we write
+$TL(\d_1,\d_2)=TL(\d)$.
+
+One may also obtain $TL$ via invariants, as a planar algebra on
+one box, in several ways.
+
+\medskip
+$\underline{\mbox{(i) The chromatic polynomial.}}$ A planar network
+$\cal N$ on
+$L=L_2$ with \#$(L_2)\!=\!1$ determines a planar graph $G(\cal N)$
+by choosing as vertices the positively oriented regions of $\Bbb
+R^2\backslash\cal N$ and replacing the 2-boxes by edges joining the
+corresponding vertices (thus \ $\fedgs \rightsquigarrow
+\bullet$---$\bullet$). Fix $Q\in\Bbb C-\{0\}$ and let $Z(\cal N)=$
+(chromatic polynomial of $G({\cal N})$ as evaluated at $Q)\times f$,
+where $f\!=\!1$ if the outside region is negatively oriented and
+$f=Q^{-1}$ if the outside region is positively oriented. To see that
+${P}_Z$ is Temperley-Lieb, define the map $\alpha:{\cal P}(L)\to
+TL(1,Q)$ by
+$\alpha( \fedgs )=\smthvor  - \smtho $ (extended by multilinearity to
+${\cal P}(L))$. It is easy to check that $\alpha$ makes $TL(1,Q)$ a
+planar algebra on $L$ and the corresponding partition function is
+$Z$ as above. Thus ${P}_Z$ is the non-degenerate quotient of
+$TL(1,Q)$.
+
+\medskip
+$\underline{\mbox{(ii) The knot polynomial of [J2].}}$
+Given a planar network $\cal N$ on one 2-box, replace the 2-box
+$\fedgs$ by $\crss$ to get an unoriented link diagram.
+Define $Z(\cal N)$ to be the Kauffman bracket ([Ka1]) of this
+diagram. Sending $\crss$ to $A\  \smthv +A^{-1}\  \smth$
+we see that this defines a map
+from ${\cal P}(L)$ to $TL(-A^2-A^2)$ with the Temperley-Lieb
+partition function.
+
+\medskip
+Both (i) and (ii) are generalized by the dichromatic polynomial
+(see [Tut]).
+
+\bigskip
+{\bf Example 2.2: Planar algebras on 1-boxes.}
+If $A$ is an associative algebra with identity and a trace
+functional tr: $A\to K$, tr$(ab)={\op{tr}}(ba)$, tr$(1)=\d$, we may
+form a kind of ``wreath product" of $A$ with $TL(n,\d)$.
+In terms of generators and relations, we put
+$L=L_1=A$ and
+\[
+        \input{xfig/pic15}
+\]
+One may give a direct construction of this planar algebra using a
+basis as follows. Choose a basis $\{a_i\mid i\in I\}$ of $A$ with
+$a_ia_j=\sum c^k_{ij}a_k$ for scalars $c^k_{ij}$.  (Assume
+$1\in\{a_i\}$ for convenience.) Let $P^A_n$ be the vector space
+whose basis is the set of all Temperley-Lieb basis $n$-tangles together
+with  a function from the strings of the tangle to $\{a_i\}$.
+Multiply these basis elements as for Temperley-Lieb except that,
+when a string labelled $a_i$ is joined with one labelled $a_j$, the
+result gives a sum over $j$ of $c^k_{ij}$ times the same underlying
+Temperley-Lieb tangle with the joined string labelled $a_k$. In the
+resulting sum of at most \#$(I)^n$ terms, if a closed loop is
+labelled $a_k$, remove it and multiply by a factor of tr$(a_k)$.
+This gives an associative algebra structure on each $P^A_n$. It
+becomes a planar algebra on $A$ in the obvious way with $\Phi$
+mapping $\boxa{a}$ to a linear combination of strings labelled
+$a_j$, the coefficients being those of $a$ in the basis $\{a_i\}$.
+
+
+

@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2409.09372v4/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Markov traces on degenerate cyclotomic Hecke algebras (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2409.09372v4/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2409.09372&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2409.09372v4",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2409.09372v4",
+    "content_type": "application/gzip",
+    "sha256": "bd9188286ebcfa193e29a94235aaffea8b5baa9268f564b67d54a9ba5fd6a60f",
+    "bytes": 18698,
+    "fetched": "2026-10-10T15:20:36+00:00",
+    "files": [
+      {
+        "path": "source/files/Markov-trace_revision_.tex",
+        "role": "tex",
+        "sha256": "f68bb6fd32d92d4ed039c27a23e001e463cbdbe296abb16ea956288dc8e9bfdc",
+        "bytes": 72936
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

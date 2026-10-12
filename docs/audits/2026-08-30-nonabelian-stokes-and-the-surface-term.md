@@ -121,7 +121,7 @@ Stokes does not by itself break it.
 
 ## 4. The standing constraint on this route — read before pursuing it
 
-`computations/_deprecated/yekutieli-purged/README.md`: the Yekutieli per-cell
+`fsh-guts/deprecated/computations/yekutieli-purged/README.md`: the Yekutieli per-cell
 curvature extension `λ_Y = λ_A − G·h²` was **PURGED from production**
 (2026-05-24, `71d674da1`), because the S₄↓S₃ half-symmetric projection bijection
 gave **κ = +0.5** rather than the expected `−G`, falsifying the claim that the

@@ -76,7 +76,7 @@ D_BOUND = re.compile(
 def _witnesses_by_producer(comp: Path) -> dict:
     out: dict[str, list] = {}
     for w in comp.rglob("*.witness.json"):
-        if "_deprecated" in str(w):
+        if ("_deprecated" in str(w) or "fsh-guts" in str(w)):
             continue
         try:
             d = json.loads(w.read_text())
@@ -94,7 +94,7 @@ def scan(comp: Path) -> list[dict]:
     by_prod = _witnesses_by_producer(comp)
     rows = []
     for py in comp.rglob("*.py"):
-        if "_deprecated" in str(py):
+        if ("_deprecated" in str(py) or "fsh-guts" in str(py)):
             continue
         try:
             text = py.read_text()

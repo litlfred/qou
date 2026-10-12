@@ -8,245 +8,781 @@ pages: 24-28
 source_pdf: 9911033v1.pdf
 source_sha256: 196c05d2e3419565
 doc_brief: "On the lower bound estimates of sections of the canonical bundles over a Riemann surface — 18 sections: Introductions 1; A lower bound estimate 4; A counterexample 11"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Let M be a Riemann surface of genus g ≥ 2. It is well known that the
-coordinate ring ⊕∞
-m=0H 0(M,K m
-M ) is ﬁnitely generated. That is, there is an
-m0> 0 such that for any m> 0 and S ∈H 0(M,K m
-M ),S can be represented
-by
-S =
-d∑
-i=1
-UiTi,(5.1)
-where Ui ∈ H 0(M,K m0
-M ) and Ti ∈ H 0(M,K m−m0
-M ) for i = 1 , · · ·,d =
-dimH 0(M,K m0
-M ). Finding a suitable set of {Ti}i=1, ··· ,d is called the corona
-problem(cf. [4]).
-We need to consider the case where M approaches to the boundary of
-the moduli space in the Teichm¨ uller theory. So in addition t o the existence
-24
-of Ui and Ti, we need some uniform estimates. In this section, we give the
-uniform estimate for the corona problem on Riemann surfaces .
-Theorem 5.1. LetM be a Riemann surface of genus g and constant cur-
-vature (−1). Then there is an m0 > 0 such that for any m > m0 and
-S ∈H 0(M,K m
-M ), there is a decomposition
-S =
-d∑
-i=1
-Si
-of Si ∈H 0(M,K m
-M )(i = 1, · · ·,d ) such that
-||Si||L2 ≤C(m,m 0,g )||S||L2
-||Si||L∞ ≤C(m,m 0,g )||S||L∞
-(5.2)
-for i = 1, · · ·d, and
-Si =TiUi
-for a basis U1, · · ·,U d of H 0(M,K m0
-M ) and T1, · · ·,T d ∈H 0(M,K m−m0
-M ).
-Remark 5.1. An estimate on Ti(i = 1, · · ·,d ) alone is not expected because
-of the counterexample in §3, where ∑ ||Ui||2 can be arbitrarily small.
-Throughout this section, we will use the notation D1,D 2, · · · to denote
-the constants depending only on m0 and the genus g. We also use A ≤∼B
-to mean that there is a positive constant C =C(m0,g ), depending only on
-m0 and g such that A ≤CB . Likewise, we use A ≥∼B to denote the fact
-A ≥CB for some constant C =C(m0,g ).
-The idea of the proof is that, if the injective radius of M is greater than an
-absolute constant, then ∑ ||Ui||2 has a lower bound by an absolute positive
-constant. In this case, we can solve the corona problem exact ly using the
-method in [4]. So we just need to prove the theorem in the case w hereinj(M )
-is arbitrarily small. By the collar theorem, we know that in t his case, there
-are ﬁnite many collars Cδ1, · · ·,C δs (with maxδi small) embedded in M and
-they do not intersect each other. By Proposition 4.1, outsid e the collars, the
-injective radius has an absolute lower bound. Special care m ust be taken
-for the sections over these collars. In order to take care of t he collars to get
-the estimates, we ﬁrst ﬁx a collar Cδ embedded in M with the parameter δ
-small. We will use all the notations about collars in § 3. For any ˜R> 0, let
-Cδ( ˜R) = {x||ρ| ≤ ˜R}.
-In particular, Cδ =Cδ(R) with δ sinhR =ε1.
-We choose and ﬁx a number m0 > 0 such that K m0
-M is very ample. Let ˜η
-be the cut-oﬀ function of M deﬁned as
-˜η =
-
-
-
-η(ρ − (R − 1)) ρ ≥ 0 and x ∈Cδ,
-η(−ρ − (R − 1)) ρ< 0 and x ∈Cδ,
-0 otherwise,
-(5.3)
-25
-where the function η is deﬁned in (2.10). Let
-u1 = 1√
-δ
-˜η(dz)m0(5.4)
-be a section of K m0
-M overM using this cut-oﬀ function, where dz is deﬁned
-in (3.3). We can check that
-{
-||
-∂u 1||2 ≤ 4
-δ(cosh ρ)2m0 R − 1 ≤ |ρ| ≤ R,
-∂u 1 = 0 otherwise.
-Thus∫
-M
-||∂u 1||2 ≤ 2
-∫ R
-R−1
-4
-δ(coshρ)2m0
-coshρδdρ ≤ 8
-(cosh(R − 1))2m0−1.
-By Proposition 2.1, there is a section u of K m0
-M such that
-∂u =∂u 1
-with ∫
-M
-||u||2 ≤ 1
-m0 − 1
-∫
-M
-||∂u 1||2 ≤ 8
-(m0 − 1)(cosh(R − 1))2m0−1.
-By using (4.1), we see that ∫
-M
-||u||2 ≤∼δ2m0−1.(5.5)
+Let $M$ be a Riemann surface of genus $g\geq 2$. It is well known 
+that the coordinate ring $\oplus_{m=0}^\infty H^0(M,K_M^m)$
+is finitely generated. That is, there is an $m_0>0$ such that for any
+$m>0$ and $S\in H^0(M,K_M^m)$, $S$ can be represented by
+\begin{equation}\label{corona}
+S=\sum_{i=1}^{d} U_iT_i,
+\end{equation}
+where $U_i\in H^0(M,K_M^{m_0})$ and $T_i\in H^0(M,K_M^{m-m_0})$
+for $i=1,\cdots, d=\dim H^0(M,K_M^{m_0})$.
+Finding a suitable set of $\{T_i\}_{i=1,\cdots,d}$ is called the 
+corona problem(cf. ~\cite{JBG}).
+
+
+
+We need to consider the case where
+$M$ approaches to the boundary of the moduli space
+in the Teichm\"uller theory. So
+in addition to the existence of $U_i$ and $T_i$, we need some uniform 
+estimates. 
+In this section, we give the uniform estimate for the corona problem on
+Riemann surfaces.
+
+
+\begin{theorem}\label{5main}
+Let $M$ be a Riemann surface 
+of genus $g$ and constant curvature $(-1)$.
+Then there is an $m_0>0$ such that for any $m>m_0$ and $S\in
+H^0(M,K_M^m)$,
+there is a decomposition
+\[
+S=\sum_{i=1}^d S_i
+\]
+of $S_i\in H^0(M,K_M^m) (i=1,\cdots, d)$
+such that
+\begin{align}\label{result}
+\begin{split}
+&||S_i||_{L^2}\leq C(m,m_0,g)||S||_{L^2}\\
+&||S_i||_{L^\infty}\leq C(m,m_0,g)||S||_{L^\infty}
+\end{split}
+\end{align}
+for $i=1,\cdots d$,
+and 
+\[
+S_i=T_iU_i
+\]
+for a basis $U_1,\cdots,U_d$ of $H^0(M,K_M^{m_0})$
+and $T_1,\cdots,T_d\in H^0(M,K_M^{m-m_0})$.
+\end{theorem}
+
+\begin{rem}
+An estimate on $T_i (i=1,\cdots, d)$ alone is not expected because of the
+counterexample in \S 3, where $\sum||U_i||^2$ can be arbitrarily small. 
+\end{rem}
+
+
+Throughout this section, we will use the notation $D_1, D_2,\cdots$ to
+denote the
+constants depending only on $m_0$ and the genus $g$.
+We also use $A\leq\sim B$ to mean that there is a
+positive constant $C=C(m_0,
+g)$,
+depending only on $m_0$ and $g$ such that $A\leq CB$. Likewise, we use
+$A\geq\sim B$ to denote the fact $A\geq CB$
+for some constant $C=C(m_0, g)$.
+
+
+The idea of the proof is that, if the injective radius of $M$ is greater
+than
+an absolute  constant, then $\sum||U_i||^2$ has a lower bound by an
+absolute
+ positive constant. In this case, we can solve the corona problem
+exactly using the method in~\cite{JBG}. So  we just need to prove the
+theorem in the case where $inj(M)$ is arbitrarily small. By the collar
+theorem, we know that in this case, there are finite many collars
+$C_{\delta_1},\cdots, C_{\delta_s}$ 
+(with $\max\delta_i$ small)
+embedded in $M$ and they do not
+intersect each other. By Proposition~\ref{prop31}, outside the collars,
+the injective radius has an absolute lower bound. Special
+care must be taken for the sections over these collars.
+In order to take care of the collars to get the estimates, 
+we first fix a
+collar $C_\delta$ embedded in $M$ with the parameter $\delta$
+small. We will use all the notations about collars in \S~\ref{sec3}.
+For any $\tilde R>0$, 
+let
+\[
+C_\delta(\tilde R)=\{x||\rho|\leq\tilde R\}.
+\]
+In particular, $C_\delta=C_\delta(R)$ with
+$\delta\sinh R=\eps_1$.
+
+We choose and fix a number $m_0>0$ such that $K_M^{m_0}$ is very ample. 
+Let $\tilde\eta$ be the cut-off function of $M$ defined as
+\begin{equation}\label{etai}
+\tilde\eta=
+\left\{
+\begin{array}{ll}
+\eta(\rho-(R-1)) &\rho\geq 0\quad and\quad x\in C_\delta,\\
+\eta(-\rho-(R-1)) & \rho<0\quad and\quad x\in C_\delta,\\
+0 & otherwise,
+\end{array}
+\right.
+\end{equation}
+where the function $\eta$ is defined in ~\eqref{eta}.
 Let
-U ′ =u1 −u.(5.6)
-Then
-∂U ′ = 0.
-Lemma 5.1. LetU ′′ be a holomorphic section of K m0
-M on Cδ(R) such that
-(U ′′,u 1)Cδ (R−2) = 0. That is,
-∫
-Cδ (R−2)
-<U ′′,u 1 >= 0,(5.7)
-whereu1 is the section deﬁned in (5.4). Then there is an absolute constant
-ε6 > 0 such that
-||U ′′|| ≤∼ e−ε6eR−| ρ |+m0(R−|ρ|)||U ′′||L2(Cδ ),(5.8)
+\begin{equation}\label{5-u1}
+u_1=\frac{1}{\sqrt\delta}\tilde \eta(dz)^{m_0}
+\end{equation}
+be a section of $K_M^{m_0}$ over $M$ using this cut-off function,
+where $dz$ is defined
+in~\eqref{dz}.
+We can check that
+\[
+\left\{
+\begin{array}{ll}
+||\bar\pa u_1||^2\leq\frac{4}{\delta(\cosh\rho)^{2m_0}} &
+R-1\leq|\rho|\leq
+R,\\
+\bar\pa u_1=0 & otherwise.
+\end{array}
+\right.
+\]
+ Thus
+\[
+\int_M||\bar\pa u_1||^2\leq 2\int_{R-1}^R
+\frac{4}{\delta(\cosh\rho)^{2m_0}}\cosh\rho\delta d\rho
+\leq \frac{8}{(\cosh (R-1))^{2{m_0}-1}}.
+\]
+By Proposition~\ref{del}, there is a section $u$ of $K_M^{m_0}$ such that
+\[
+\bar\pa u=\bar\pa u_1
+\]
+with 
+\[
+\int_M||u||^2\leq\frac{1}{m_0-1}\int_M||\bar\pa u_1||^2
+\leq\frac{8}{(m_0-1)(\cosh (R-1))^{2m_0-1}}.
+\]
+By using ~\eqref{eps2}, we see that
+\begin{equation}\label{5-u3}
+\int_M ||u||^2\leq\sim\delta^{2m_0-1}.
+\end{equation}
+Let 
+\begin{equation}\label{5-defu}
+U'=u_1-u.
+\end{equation}
+Then $\bar\pa U'=0$. 
+
+
+\begin{lemma}\label{claim}
+Let $U''$ be a holomorphic section of $K_M^{m_0}$ 
+on $C_\delta(R)$
+such that
+$(U'',u_1)_{C_\delta(R-2)}=0$. That is,
+\begin{equation}\label{prep}
+\int_{C_\delta(R-2)} <U'',u_1>=0,
+\end{equation}
+where $u_1$ is the section defined in~\eqref{5-u1}. Then there
+is an absolute constant $\eps_6>0$ such that
+\begin{equation}\label{5-n1}
+||U''||\leq\sim e^{-\eps_6e^{R-|\rho|}+m_0(R-|\rho|)}||U''||_{L^2
+(C_\delta)},
+\end{equation}
 and
-||∇U ′′|| ≤∼ e−ε6eR−| ρ |+(m0+1)(R−|ρ|)||U ′′||L2(Cδ ).(5.9)
-We use the notation in § 3. Let
-w1 =e
-2π √
-− 1
-δ θ− 4π
-δ (arctan eρ −arctan e− (R− 2)),
-w2 =e− 2π √ − 1
-δ θ+ 4π
-δ (arctan eρ −arctan eR− 2).
-Let
-U ′′ = (g1(w1) +a +g3(w2))(dz)m0
-26
-be the decomposition similar to that in (3.4) where g1(w1) and g2(w2) are
-holomorphic functions of w1 and w2 respectively,g1(0) = g2(0) = 0, a is a
-constant, and dz is deﬁned in (3.3).
-Using (5.7), we see that a = 0. By the Schwartz Lemma, we have
-|g1(w1)| ≤ |w1| max
-|w1|=1
-|g1(w1)|.(5.10)
-At each point of {|w1| = 1 } or {ρ = R − 2}, by the collar theorem, there
-is an absolute lower bound for the injective radius. Thus by t he Cauchy
-integral formula, we have
-max
-|w1|=1
-||g1(dz)m0 || ≤∼ ||g1(dz)m0 ||L2(Cδ ).(5.11)
-Using (5.10) and (5.11), we have
-||g1(dz)m0 || ≤ e− 4π
-δ (arctan eρ −arctan e− (R− 2)) (coshR)m0
-(coshρ)m0
-||g1(dz)m0 ||L2(Cδ ).
-(5.12)
-It is elementary to check that there is an absolute constant ε6 > 0 such that
-e− 4π
-δ (arctan eρ −arctan e− (R− 2)) ≤e−ε6eR−| ρ |
-.(5.13)
-Combining (5.12) and (5.13),
-||g1(dz)m0 || ≤∼ e−ε6eR−| ρ |+m0(R−|ρ|)||g1(dz)m0 ||L2(Cδ ).(5.14)
+\begin{equation}\label{5-n2}
+||\nabla U''||\leq
+\sim e^{-\eps_6e^{R-|\rho|}+(m_0+1)(R-|\rho|)}||U''||_{L^2
+(C_\delta)}.
+\end{equation}
+\end{lemma}
+
+We use the notation in \S ~\ref{sec3}. Let
+\begin{align*}
+& w_{1}=e^{\frac{2\pi\sqrt{-1}}{\delta}\theta
+-\frac{4\pi}{\delta}
+(\arctan e^{\rho}-\arctan e^{-(R-2)})},\\
+& w_{2}=e^{-\frac{2\pi\sqrt{-1}}{\delta}\theta
++\frac{4\pi}{\delta}
+(\arctan e^{\rho}-\arctan e^{R-2})}.
+\end{align*}
+Let   
+\[
+U''=(g_1(w_1)+a+g_3(w_2))(dz)^{m_0}
+\]
+be the decomposition similar to that in~\eqref{g} where
+$g_1(w_1)$ and $g_2(w_2)$ are holomorphic functions of $w_1$ and
+$w_2$ respectively, $g_1(0)=g_2(0)=0$, $a$ is a constant,
+and $dz$ is defined in~\eqref{dz}.
+
+Using~\eqref{prep}, we see that $a=0$. By the Schwartz Lemma, we have
+\begin{equation}\label{sch}
+|g_1(w_1)|\leq |w_1| \max_{|w_1|=1}|g_1(w_1)|.
+\end{equation}
+At each point of $\{|w_1|=1\}$ or $\{\rho=R-2\}$, by the collar theorem,
+there is an
+absolute lower bound for the injective radius. Thus by the 
+Cauchy integral formula,
+we have
+\begin{equation}\label{5-8}
+\max_{|w_1|=1}||g_1(dz)^{m_0}||\leq
+\sim||g_1(dz)^{m_0}||_{L^2(C_\delta)}.
+\end{equation}
+
+Using ~\eqref{sch} and~\eqref{5-8}, we have
+\begin{equation}\label{5-8-1}
+||g_1 (dz)^{m_0}||\leq e^{-\frac{4\pi}{\delta}(\arctan e^\rho-\arctan
+e^{-(R-2)})}
+\frac{(\cosh R)^{m_0}}{(\cosh\rho)^{m_0}}
+||g_1(dz)^{m_0}||_{L^2(C_\delta)}.
+\end{equation}
+It is elementary to check that there is an absolute constant
+$\eps_6>0$ such that
+\begin{equation}\label{5-8-1-1}
+e^{-\frac{4\pi}{\delta}(\arctan e^\rho-\arctan e^{-(R-2)})}
+\leq e^{-\eps_6e^{R-|\rho|}}.
+\end{equation}
+Combining~\eqref{5-8-1} and~\eqref{5-8-1-1}, 
+\begin{equation}\label{5-13a}
+||g_1(dz)^{m_0}||\leq
+\sim e^{-\eps_6e^{R-|\rho|}+m_0(R-|\rho|)}
+||g_1(dz)^{m_0}||_{L^2(C_\delta)}.
+\end{equation}
 Similarly, we have
-||g2(dz)m0 || ≤∼ e−ε6eR−| ρ |+m0(R−|ρ|)||g2(dz)m0 ||L2(Cδ ).(5.15)
-(5.14) and (5.15) give the inequality (5.8).
-On the other hand, a straightforward computations gives
-∇U ′′ = ( 2π √
-−1
-δ (w1g′
-1 +w2g′
-2)
-− 1
-2m0
-√
-−1 sinhρ(g1 +g2))(dz)m0 ⊗dz.
-(5.16)
-Using the same argument as above, we get (5.9).
-Lemma 5.2. With the notations as above, there is a constant r > 2, de-
-pending only on m0 and the genus g, such that U ′ ⁄= 0 on Cδ(R −r), where
-U ′ is deﬁned in (5.6).
-Proof. By (5.6), we know that u is holomorphic on Cδ(R − 2). Let
-u =u′ +αu 1(5.17)
-be the decomposition of u such that (u′,u 1)Cδ (R−2) = 0 and α is a constant.
-Then ∫
-M
-||u||2 ≥
-∫
-Cδ (R−2)
-||u′||2 +
-∫
-Cδ (R−2)
-|α |2||u1||2.(5.18)
-27
+\begin{equation}\label{5-14a}
+||g_2(dz)^{m_0}||\leq
+\sim e^{-\eps_6e^{R-|\rho|}+m_0(R-|\rho|)}
+||g_2(dz)^{m_0}||_{L^2(C_\delta)}.
+\end{equation}
+~\eqref{5-13a} and
+~\eqref{5-14a} give the inequality~\eqref{5-n1}.
+
+On the other hand, a straightforward
+computations gives
+\begin{align}
+\begin{split}
+&\nabla U''=(\frac{2\pi\sqrt{-1}}{\delta}(w_1 g_1'+w_2
+g_2')\\
+&\qquad -\frac 12 m_0\sqrt{-1}\sinh\rho (g_1+ g_2))
+(dz)^{m_0}\otimes dz.
+\end{split}
+\end{align}
+Using the same argument as above, we get~\eqref{5-n2}.
+
+\qed
+
+
+
+\begin{lemma}\label{lem51}
+With the notations as above, 
+there is a  constant $r>2$, depending only on $m_0$ and the genus
+$g$, such
+that
+ $U'\neq 0$ on $C_\delta(R-r)$, where $U'$ is defined in~\eqref{5-defu}.
+\end{lemma}
+
+
+{\bf Proof.}
+By~\eqref{5-defu}, we know that $u$ is holomorphic on $C_\delta(R-2)$. Let
+\begin{equation}\label{alpha1}
+u=u'+\alpha u_1
+\end{equation}
+be the decomposition of $u$ such that $(u',u_1)
+_{C_\delta(R-2)}=0$ and $\alpha$ is
+a constant.
+Then
+\begin{equation}\label{5-5}
+\int_M||u||^2\geq\int_{C_{\delta}(R-2)}
+||u'||^2
++\int_{C_{\delta}(R-2)}
+|\alpha|^2||u_1||^2.
+\end{equation}
 In particular
-∫
-Cδ (R−2)
-||u||2 ≥ |α |2
-∫ R−2
-−(R−2)
-1
-(coshρ)2m0−1dρ.(5.19)
-By (5.5) and (5.19), we have
-|α | ≤∼ δm0− 1
-2.(5.20)
-On the other hand, by Lemma 5.1,
-||u′|| ≤∼ e−ε6eR−| ρ |+m0(R−|ρ|)δm0− 1
-2.(5.21)
-Thus by (5.4), (5.20) and (5.21), there are constants D1 and D2 such that
-||U ′(x)|| ≥ 1
-√
-δ(coshρ)m0
-(1 −D1δm0− 1
-2 )
-−D2e−ε6eR−| ρ |+m0(R−|ρ|)δm0− 1
-2
-(5.22)
-for |ρ| < R− 3. If r is large enough, then ||U ′(x)|| > 0 for |ρ| < R−r. In
-particular U ′ ⁄= 0 on Cδ(R −r). This completes the proof of the lemma.
-Now we assume the general case. Let Cδ1, · · ·,C δs be the collars of param-
-eters δ1, · · ·,δ s respectively embedded into M . We assume that Cδi, (i =
-1, · · ·,s ) do not intersect each other. By Lemma 5.2, there are Ri, (i =
-1, · · ·,s ) such that we can ﬁnd U ′
-i ∈ H 0(M,K m0
-m ), (i = 1 , · · ·,s ) with
-U ′
-i|Cδi (Ri) ⁄= 0. Let ρi,dz i, (i = 1, · · ·,s ) be deﬁned in § 3 coresponding
-to Cδi(i = 1, · · ·,s ), respectively. Let
-ηi =
-
-
-
-η(ρi − (Ri − 1)) ρi ≥ 0 and x ∈Cδi
-η(−ρi − (Ri − 1)) ρi ≤ 0 and x ∈Cδi
-0 otherwise
-be the cut-oﬀ functions for i = 1, · · ·,s . Assume that max δi is small enough.
-Then by Lemma 5.2, U ′
-1, · · ·,U ′
-s ∈H 0(M,K m0
-M ) have the following proper-
-ties
-1. ||U ′
-i || ≥∼ 1
-√δi
-e−m0|ρi| on Cδi(Ri) for i = 1, · · ·,s (by (5.22));
+\begin{equation}\label{5-6}
+ \int_{C_{\delta}(R-2)}
+||u||^2
+\geq |\alpha|^2\int^{R-2}_{-(R-2)}\frac{1}{(\cosh\rho)^{2m_0-1}}
+d\rho.
+\end{equation}
+By~\eqref{5-u3} and ~\eqref{5-6}, we have
+\begin{equation}\label{5-7}
+|\alpha|
+\leq\sim \delta^{m_0-\frac 12}.
+\end{equation}
+On the other hand, by Lemma~\ref{claim},
+\begin{equation}\label{5-7-3}
+||u'||\leq\sim
+e^{-\eps_6e^{R-|\rho|}+m_0(R-|\rho|)}\delta^{m_0-\frac 12}.
+\end{equation}
+Thus by~\eqref{5-u1}, ~\eqref{5-7} and~\eqref{5-7-3}, there are constants
+$D_1$ and $D_2$ such that
+\begin{align}\label{5-7-4}
+\begin{split}
+&||U'(x)||\geq\frac{1}{\sqrt\delta(\cosh\rho)^{m_0}}
+(1-D_1\delta^{m_0-\frac 12})\\
+&-D_2
+e^{-\eps_6e^{R-|\rho|}+m_0(R-|\rho|)}\delta^{m_0-\frac 12}
+\end{split}
+\end{align}
+for $|\rho|<R-3$.
+If $r$ is large enough, then $||U'(x)||>0$ for $|\rho|<R-r$.
+In particular $U'\neq 0$ on $C_\delta(R-r)$. This completes the proof of
+the lemma.
+
+\qed
+
+
+Now we assume the general case. Let $C_{\delta_1},\cdots, C_{\delta_s}$ be
+the collars of parameters $\delta_1,\cdots, \delta_s$ respectively
+embedded
+into $M$. We assume that $C_{\delta_i}, (i=1,\cdots, s)$ do not intersect
+each other.
+By Lemma~\ref{lem51}, there are $R_i, (i=1,\cdots, s)$ such that we can
+find
+$U_i'\in H^0(M,K_m^{m_0}), (i=1,\cdots, s)$ with
+$U_i'|_{C_{\delta_i}(R_i)}\neq 0$. Let $\rho_i, dz_i, (i=1,\cdots, s)$ be
+defined in \S~\ref{sec3}
+coresponding to $C_{\delta_i} (i=1,\cdots, s)$, respectively. Let
+\[
+\eta_i=
+\left\{
+\begin{array}{ll}
+\eta(\rho_i-(R_i-1)) &\rho_i\geq 0\quad and\quad x\in C_{\delta_i}\\
+\eta(-\rho_i-(R_i-1)) &\rho_i\leq 0\quad and\quad x\in C_{\delta_i}\\
+0 & otherwise
+\end{array}
+\right.
+\]
+be the cut-off functions for $i=1,\cdots, s$. Assume that $\max \delta_i$
+is small enough.
+Then
+by Lemma~\ref{lem51}, $U_1',\cdots, U_s'\in H^0(M,K_M^{m_0})$
+have  the following properties 
+\begin{enumerate}
+\item $||U_i'||\geq\sim\frac{1}{\sqrt{\delta_i}}e^{-m_0|\rho_i|}$ on
+$C_{\delta_i}(R_i)$ for $i=1,\cdots, s$ 
+(by ~\eqref{5-7-4});
+\item
+There are decompositions 
+ $U_i'|_{C_{\delta_i}(R_i)}=\alpha_iv_{1i}+v_{2i}$ with
+\begin{equation}\label{vj}
+v_{1i}=\frac{1}{\sqrt{\delta_i}}\eta_i(dz_i)^{m_0},\qquad
+1\leq i\leq s
+\end{equation}
+and
+\[
+(v_{1i},v_{2i})_{C_{\delta_i}(R_i)}=0, \qquad 1\leq i\leq s,
+\]
+where $\alpha_i (i=1,\cdots,s)$ are a constant such that for
+$1\leq i\leq s$,
+\begin{equation}\label{vj1}
+1\leq\sim\alpha_i\leq\sim 1;
+\end{equation}
+\item By~\eqref{5-u1} and~\eqref{5-u3},
+\begin{equation}\label{5-7-5}
+\int_{M\backslash C_{\delta_i(R_i)}}||U_i'||^2\leq\sim \delta_i^{2m_0-1}
+\end{equation}
+for $i=1,\cdots, s$.
+\end{enumerate}
+
+We have the following lemma:
+
+\begin{lemma}\label{lem531}
+With the notations as above,
+there are holomorphic sections $U_1,\cdots, U_s\in 
+H^0(M,K_M^{m_0})$ such that
+\begin{enumerate}
+\item $||U_i||\geq\sim \frac{1}{\sqrt\delta_i}e^{-m_0|\rho_i|}$ on 
+$C_{\delta_i}(R_i)$;
+\item $(U_i|_{C_{\delta_j}(R_j)},v_{1j})_{C_{\delta_j}(R_j)}=0$ for $i\neq
+j, 1\leq i,j\leq
+s$;
+\item $\int_{M\backslash
+C_{\delta_i}(R_i)}||U_i||^2\leq\sim
+\delta_i^{2m_0-1}$.
+\end{enumerate}
+\end{lemma}
+
+{\bf Proof.} Let
+\[
+\beta_{ij}=(U_i',v_{1j})_{C_{\delta_j}(R_j)}, \qquad 1\leq i,j\leq s.
+\]
+Then if $i\neq j$ we have
+\begin{equation}\label{b-1}
+|\beta_{ij}|\leq\sim\delta_i^{m_0-\frac 12}
+\end{equation}
+by~\eqref{5-7-5} and the definition of $v_{1j},
+(j=1,\cdots, s)$ in~\eqref{vj}. We also have
+\begin{equation}\label{b-2}
+1\geq\sim 
+\beta_{ii}\geq\sim 1
+\end{equation}
+by~\eqref{vj1}. 
+
+Let $B=(\beta_{ij})_{s\times s}$ be the matrix of $(\beta_{ij})$ for
+$1\leq i,j\leq s$. Then   by~\eqref{b-1}, ~\eqref{b-2}, $B$  is an
+invertible matrix,
+when $\max\delta_i$ is small enough.
+Let $A=B^{-1}$ be the
+inverse matrix and let $A=(\alpha_{ij})_{s\times s}$. Define
+\[
+U_i=\sum_{j=1}^s\alpha_{ij}U_j', \quad 1\leq i\leq s.
+\]
+Then $U_i (i=1,\cdots, s)$ satisfies all the requirements in the lemma
+by the fact that
+\[
+\begin{array}{ll}
+|\alpha_{ij}|\leq\sim \delta_i^{m_0-\frac 12} & i\neq j,\\
+1\geq\sim \alpha_{ij}\geq\sim 1 & i=j.
+\end{array}
+\]
+
+
+\qed
+
+Let $U_{s+1}',\cdots, U_d'$ be an orthonormal basis of the space 
+$span\{ U_1,\cdots. U_s\}^\perp$. Assume that
+\[
+(U_i', U_j)=0
+\]
+for $s<i\leq d, 1\leq j\leq s$.
+Let
+\begin{equation}\label{kk}
+U_i=U_i'-\sum_{j=1}^s\gamma_{ij}U_j,\quad s<i\leq d,
+\end{equation}
+where
+\begin{equation}\label{b-3}
+\gamma_{ik}=\frac{1}{(U_k, v_{1k})_{C_{\delta_k}(R_k)}}
+(U_i', v_{1k})_{C_{\delta_k}(R_k)},
+\quad 1\leq k\leq s, s<i\leq d.
+\end{equation}
+Then we have
+\[
+(U_i|_{C_{\delta_j}(R_j)}, v_{1j})_{C_{\delta_j}(R_j)}=0
+\]
+for $s<i\leq d$ and $1\leq j\leq s$.
+
+
+We have the following lemma:
+
+
+
+
+
+
+
+
+
+\begin{lemma}\label{lem53}
+If $x\notin \cup_{j=1}^sC_{\delta_j}(R_j-2)$, then 
+\[
+\sum_{i=1}^d||U_i||^2\geq\sim 1.
+\]
+\end{lemma}
+
+
+{\bf Proof.} Let
+\[
+l_{ij}=(U_i, U_j)
+\]
+for $1\leq i,j\leq d$. If $1\leq i,j\leq s$, we have
+\begin{equation}\label{k1}
+\begin{array}{ll}
+(U_i, U_j)\leq\sim \max \delta_i & i\neq j,\\
+1\geq\sim (U_i, U_j)\geq\sim  1 & i=j
+\end{array}
+\end{equation}
+by~\eqref{b-1}, ~\eqref{b-2} and lemma~\ref{lem531}. 
+
+If $1\leq i\leq s, s<j\leq d$, we have
+\[
+(U_i, U_j)=-\sum_{k=1}^s\gamma_{jk} (U_i, U_k)
+\]
+using ~\eqref{kk}.
+By the definition of $\gamma_{jk}$ in~\eqref{b-3}, we have
+\begin{equation}\label{g1}
+|\gamma_{jk}|\leq\sim\max\delta_j.
+\end{equation}
+Thus
+\begin{equation}\label{k2}
+|(U_i, U_j)|\leq\sim\max\delta_j
+\end{equation}
+for $1\leq i\leq s$ and $s<j\leq d$.
+Finally, if $s<i,j\leq d$, then 
+\begin{equation}\label{k3}
+\begin{array}{ll}
+|(U_i, U_j)|\leq\sim \max\delta_i & i\neq j,\\
+1\geq\sim (U_i, U_j)\geq\sim 1 & i=j
+\end{array}
+\end{equation}
+by~\eqref{kk} and~\eqref{g1}.
+Using~\eqref{k1}, ~\eqref{k2} and~\eqref{k3}, we have
+\[
+\begin{array}{ll}
+|l_{ij}|\leq\sim \max \delta_i & i\neq j,\\
+1\geq\sim |l_{ij}|\geq\sim 1 & i=j.
+\end{array}
+\]
+
+Let $(m_{ij})_{d\times d}$ be the matrix such that
+\[
+\sum_{i=1}^d\sum_{t=1}^d m_{ji}\bar{m_{tk}}l_{it}=\delta_{jk}
+\]
+for $1\leq j,k\leq d$. We can choose $m_{ij}$ such that
+\begin{equation}\label{m-1}
+\begin{array}{ll}
+|m_{ij}|\leq\sim \max
+\delta_i & i\neq j,\\
+1\geq\sim m_{ij}\geq\sim 1 & i=j.
+\end{array}
+\end{equation}
+
+It is easy to check that
+$\sum_{j=1}^d m_{ij} U_j$ for $1\leq i\leq d$ forms an orthonormal basis
+of $H^0(M, K_M^{m_0})$.
+Thus we have
+\[
+\sum_{i=1}^d||\sum_{j=1}^dm_{ij}U_j||^2\geq\sim 1
+\]
+by Theorem~\ref{third}.
+The lemma thus follows from~\eqref{m-1} and the fact that $\max \delta_i$
+is
+small.
+
+\qed
+
+
+
+We summarize the results up to now in the following
+\begin{prop}\label{prop51}
+Let $U_1,\cdots, U_d$ be sections of $H^0(M,K_M^{m_0})$
+as above. Then
+\begin{align}
+&||U_i||+||\nabla U_i||\leq\sim 1 &x\notin
+\cup_{j=1}^sC_{\delta_j}(R_j-2),
+\label{5-88a}\\
+&||U_i||+||\nabla U_i||\leq\sim
+e^{-(m_0+1)(R_j-|\rho_j|)}
+&x\in C_{\delta_j}(R_j-2), 1\leq j\leq s, \label{5-88b}
+\end{align}
+for $i>s$ and
+\begin{align}
+&||U_i||+||\nabla U_i||\leq\sim
+{\delta_i}^{m_0-\frac 12}
+&x\notin\cup_{j=1}^s C_{\delta_j}(R_j-2),\label{5-88c}\\
+&||U_i||+||\nabla U_i||\leq\sim
+\frac{1}{\sqrt\delta_i e^{m_0|\rho_i|}}
+&x\in C_{\delta_i}(R_i-2),\label{5-88d}\\
+&||U_i||+||\nabla U_i||\leq\sim\delta_i^{m_0-\frac 12}
+e^{-(m_0+1)(R_j-|\rho_j|)} &
+x\in C_{\delta_j}(R_j-2), j\neq i.\label{5-88e}
+\end{align}
+for $1\leq i\leq s$.
+Furthermore, 
+\begin{equation}\label{new}
+\sum_{k=1}^d||U_i||^2\geq\sim 1
+\end{equation}
+for $x\notin \cup_{i=1}^s C_{\delta_i}(R_i-2)$.
+\end{prop}
+
+{\bf Proof.}  If $x\notin \cup_{j=1}^sC_{\delta_j}(R_j)$, then $\delta_x$
+has a uniform lower bound.
+~\eqref{5-88a} follows from the Cauchy integral formula. ~\eqref{5-88b}
+is a corollary of Lemma~\ref{claim}. ~\eqref{5-88c} follows from
+~\eqref{5-u3} and the Cauchy integral formula. ~\eqref{5-88d} follows
+from
+a straightforward computation.~\eqref{5-88e} follows from
+Lemma~\ref{claim} and~\eqref{5-7-5}. Finally, ~\eqref{new} is just a
+restatement of the conclusion of Lemma~\ref{lem53}.
+
+\qed
+
+
+
+Define an inner product $<\,,\,>$ in the coordinate ring $\oplus_{m=0}^
+\infty H^0(M,K_M^m)$. Let $S_1\in H^0(M,K_M^m)$ and $S_2\in
+H^0(M,K_M^{m_1})$. Suppose that $m\ge m_1$. We define a section of
+$K_M^{m-m_1}$ as follows: Let $x\in M$ and $U_x$ is a local trivialization
+of 
+$K_M$. let $S_1|_{U_x}=S'\cdot S''$ for 
+$S'\in \Gamma(U_x, K_M^{m-m_1})$ and $S''\in
+\Gamma(U_x, K_M^{m_1})$. Then
+\[
+S_3|_{U_x}=S'<S'', S_2>_{H^{m_1}},
+\]
+where $<,\,,\,>_{H^{m_1}}$ is the pointwise inner product.
+
+
+{\bf Proof of Theorem~\ref{5main}.} 
+We modify the method of Wolff's~\cite{WT} of solving the corona problem
+on the unit disk.
+ First we construct a $C^\infty$ solution. Let $S\in
+H^0(M,K_M^m)$ for a fixed $m>m_0$.
+Let
+\begin{equation}\label{5-b1}
+\left\{
+\begin{array}{ll}
+ b_k=\eta_k\frac{S}{U_k}+(1-\sum_{j=1}^s\eta_j)
+\frac{<S, U_k>}{\sum_{j=1}^d||U_j||^2}& 1\leq k\leq s,\\
+ b_k=(1-\sum_{j=1}^s\eta_j)\frac{<S, U_k>}{\sum_{j=1}^d||U_j||^2}
+& k>s.
+\end{array}
+\right.
+\end{equation}
+Here $b_k (1\leq k\leq s)$ is well defined
+because of Lemma~\ref{lem51}. We can check that
+\[
+S=\sum_{k=1}^d U_k b_k.
+\]
+
+
+
+If $x\notin \cup_{j=1}^sC_{\delta_j}(R_j-2)$, then by Lemma~\ref{lem53},
+\begin{equation}\label{5-b2}
+\left\{
+\begin{array}{ll}
+||b_k||\leq\sim
+(\sqrt\delta_k (\cosh\rho_k)^{m_0}+1)||S||& 1\leq k\leq s,\\
+ ||b_k||\leq\sim ||S||
+&  k>s.
+\end{array}
+\right.
+\end{equation}
+By~\eqref{5-b1}, we have
+\begin{align}\label{5-b3}
+\begin{split}
+&\bar\pa b_k=\bar\pa\eta_k\frac{S}{U_k}
+-\bar\pa\sum_{j=1}^s\eta_j
+\frac{<S,U_k>}{\sum_{j=1}^d||U_j||^2}
++(1-\sum_{j=1}^s\eta_j)\frac{<S,\nabla U_k>}
+{\sum_{j=1}^d||U_j||^2}\\\quad-
+&(1-\sum_{j=1}^s\eta_j)\frac{<S,U_k>\sum_{j=1}^d<U_j,\nabla U_j>}
+{(\sum_{j=1}^d||U_j||^2)^2}\qquad 1\leq k\leq s,\\
+&\bar\pa b_k=
+-\bar\pa\sum_{j=1}^s\eta_j
+\frac{<S,U_k>}{\sum_{j=1}^d||U_j||^2}
++(1-\sum_{j=1}^s\eta_j)\frac{<S,\nabla U_k>}
+{\sum_{j=1}^d||U_j||^2}\\
+&\quad-
+(1-\sum_{j=1}^s\eta_j)\frac{<S,U_k>\sum_{j=1}^d<U_j,\nabla U_j>}
+{(\sum_{j=1}^d||U_j||^2)^2}\quad  k>s.
+\end{split}
+\end{align}
+Thus
+\begin{equation}\label{5-b4}
+\left\{
+\begin{array}{ll}
+||\bar\pa b_k||\leq \sim
+\frac{1}{\delta_k^{m_0-\frac 12}}
+||S||& 1\leq k\leq s,\\
+||\bar\pa b_k||\leq\sim||S|| &  k>s.
+\end{array}
+\right.
+\end{equation}
+Let
+\begin{equation}
+c_{ik}=\frac{<\bar\pa b_k, U_i>}{\sum_{j=1}^d||U_j||^2}.
+\end{equation}
+for $i\neq k$ and
+$1\leq i,k\leq d$. Then 
+by~\eqref{5-b2} and~\eqref{5-b4}, we have
+\begin{equation}\label{5-c1}
+\left\{
+\begin{array}{ll}
+ ||c_{ik}||\leq\sim \frac{1}{\delta_k^{m_0-\frac 12}}
+||S|| & 1\leq k\leq s,\\
+ ||c_{ik}||\leq \sim 
+||S|| &  k>s.
+\end{array}
+\right.
+\end{equation}
+
+Let's consider the equations
+\[
+\bar\pa b_{ik}=c_{ik}
+\]
+for $i\neq k$ and $1\leq i,k\leq d$. By Proposition~\ref{del}, the
+solutions exist and we may assume that
+\[
+||b_{ik}||_{L^2}\leq ||c_{ik}||_{L^2}
+\]
+for $i\neq k, 1\leq i,k\leq d$. Thus
+by~\eqref{5-c1}, we have
+\begin{equation}\label{5-b5}
+\left\{
+\begin{array}{ll}
+||b_{ik}||_{L^2}\leq\sim \frac{1}{\delta_k^{m_0-\frac 12}}
+||S||_{L^2} & 1\leq k\leq s,\\
+||b_{ik}||_{L^2}\leq \sim ||S||_{L^2}& 
+ s<k\leq d.
+\end{array}
+\right.
+\end{equation}
+
+Let
+\[
+T_i=b_i+\sum_{k=1}^d(b_{ik}-b_{ki}) U_k.
+\]
+One can check that $\bar\pa T_i=0$ and
+\[
+S=\sum_{i=1}^dT_iU_i.
+\]
+
+In order to prove the theorem, we need to estimate $||T_iU_i||$
+for $1\leq i\leq d$. By~\eqref{5-b5} and Proposition~\ref{prop51}, we have
+\begin{equation}\label{5-e-1}
+||T_iU_i||_{L^2(M\backslash \cup_{j=1}^sC_\delta(R_j))}
+\leq\sim ||S||_{L^2}.
+\end{equation}
+ By the Cauchy integral formula and Proposition~\ref{prop31}
+\begin{equation}\label{5-e-2}
+||T_iU_i||(x)\leq\sim ||S||_{L^2}
+\end{equation}
+for $1\leq i\leq d$ and $x\notin \cup_{j=1}^sC_{\delta_j}(R_j)$.
+
+Let
+\[
+E_i(\rho)=\{x\in C_{\delta_i}(R_i)||\rho_i(x)|\geq\rho\}, \quad
+1\leq i\leq s
+\]
+for positive number $\rho>0$.
+By~\eqref{5-b5} and Proposition~\ref{prop51} again, we have
+\begin{equation}\label{5-b6}
+\left\{
+\begin{array}{ll}
+ ||T_iU_i-\eta_iS||_{L^2(E_j(\rho)-E_j(\rho+2))}\leq
+\sim e^{-(R_i-\rho)}||S||_{L^2}& 1\leq i\leq s,\\
+ ||T_iU_i||_{L^2(E_j(\rho)-E_j(\rho+2))}\leq\sim e^{-(R_i-\rho)}
+||S||_{L^2} &i>s.
+\end{array}
+\right.
+\end{equation}
+ By the Cauchy formula,
+\begin{equation}\label{5-b7}
+\left\{
+\begin{array}{l}
+||T_iU_i-\eta_iS||(x)\leq\sim \frac{1}{\delta_x}e^{-(R_i-\rho)}
+||S||_{L^2}\quad 1\leq i\leq s,\\
+||T_iU_i||(x)\leq\sim \frac{1}{\delta_x}e^{-(R_i-\rho)}
+||S||_{L^2}\quad i>s.
+\end{array}
+\right.
+\end{equation}
+for any $x\in E_j(\rho+\frac 12)-E_j(\rho+1)$.
+Since
+\[
+\delta_x\geq\eps_5\delta_j(\cosh\rho_j)
+\]
+by~\eqref{ddelta}, we have
+\begin{equation}\label{5-b8}
+\left\{
+\begin{array}{ll}
+||T_iU_i-\eta_iS||(x)\leq\sim ||S||_{L^2} & 1\leq i\leq s,\\
+||T_iU_i||(x)\leq\sim ||S||_{L^2} & i>s
+\end{array}
+\right.
+\end{equation}
+for any $x\in E_j(\rho+\frac 12)-E_j(\rho+1)$ and any $|\rho_j|<R_j-3$,
+$j=1,\cdots s$. Thus
+if $||S||_{L^2}=1$, then by~\eqref{5-e-2} and~\eqref{5-b8}
+\[
+||T_iU_i||_{L^2}\leq\sim 1
+\]
+for $1\leq i\leq d$. If $||S||_{L^\infty}=1$, then
+\[
+||T_iU_i||_{L^\infty}\leq\sim 1
+\]
+for $1\leq i\leq d$.
+These results give the inequality  ~\eqref{result}.
+
+\qed
+
+
+
+\bibliographystyle{abbrv}

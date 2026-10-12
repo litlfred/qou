@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-051",
   "@type": [
     "doco:Section"
   ],
-  "title": "Pauli matrices and spin algebra",
-  "pageStart": 90,
-  "pageEnd": 91,
+  "title": "Partial wave decomposition",
+  "pageStart": 89,
+  "pageEnd": 90,
   "contains": [
     "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-051"
   ],
-  "derivedFrom": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
-  "sourceDocument": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
   "provenance": "ingested"
 }

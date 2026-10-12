@@ -8,457 +8,242 @@ pages: 24-30
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
 doc_brief: "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\41,S 3\52 with generic"
+text_source: latex
+latex_prose_ratio: 0.762
+latex_coverage_ratio: 0.801
 ---
-The state integral of knot 52 at level k is given as a one-dimensional integral in [13]
-χ(k)
-52 (µ,n ; b) =(ηk)3
-k
-∑
-m∈Zk
-∫
-R+i Im(cb)−i0
-dσZ(k)
-b [∆](σ,m )Z(k)
-b [∆](σ +µ,m +n)Z(k)
-b [∆](σ−µ,m−n)
-× (−1)ne
-πi
-k (−(σ+µ−cb)2−(σ−µ−cb)2−µ2+(m+n)2+(m−n)2+n2). (4.1)
-– 23 –
-|sI(Φ)(x;τ)
-FI(x;τ) − 1| |sI(Φ)(x;τ)
-s′
-I(Φ)(x;τ)− 1| | ˜q(τ)| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 8.2× 10−22 8.6× 10−22
-9.6× 10−9 0.16σ2 3.9× 10−36 5.1× 10−36
-(a) Region I: τ = 1
-10e
-πi
-5
-|sII (Φ)(x;τ)
-FII (x;τ) − 1| |sII (Φ)(x;τ)
-s′
-II (Φ)(x;τ)− 1| | ˜q(τ)| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 3.9× 10−36 5.1× 10−36
-9.6× 10−9 0.16σ2 8.2× 10−22 8.6× 10−22
-(b) Region II : τ = 1
-10e
-4πi
-5
-|sIII (Φ)(x;τ)
-FIII (x;τ) − 1| |sIII (Φ)(x;τ)
-s′
-III (Φ)(x;τ)− 1| | ˜q(τ)−1| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 3.9× 10−36 5.1× 10−36
-9.6× 10−9 0.16σ2 8.2× 10−22 8.6× 10−22
-(c) Region III : τ = 1
-10e− 4πi
-5
-|sIV (Φ)(x;τ)
-FIV (x;τ) − 1| |sIV (Φ)(x;τ)
-s′
-IV (Φ)(x;τ)− 1| | ˜q(τ)−1| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 8.2× 10−22 8.6× 10−22
-9.6× 10−9 0.16σ2 3.9× 10−36 5.1× 10−36
-(d) Region IV : τ = 1
-10e− πi
-5
-Table 2 : We perform numerical Borel resummation for Φ (k=2)
-41 (x;τ) at x = −5/4
-(u = 2 log 5/4,n = 1) with 200 terms, after choosing suitable τ in four diﬀerent regions.
-We compare them with equations (3.36a),(3.36b),(3.36c),(3.36d) whose right hand side is
-denoted as FR(x;τ). Meanwhile, we estimate the contribution of higher order terms by
-resumming Φ(k=2)
-41 (x;τ) with 195 terms. The values of |˜q(˜q−1)| and|˜x±1| are also provided
-for comparison.
-This can also be derived from the generic formula (2.8). We choose the Neumann-Zagier
-data
-AAA =
-
-
-0 1 0
-−1 0−1
-0 2 0
-
-, BBB =
-
-
-−1 0 0
-0 1 0
-−1 0−1
-
-, ν =
-
-
-0
-0
-0
-
-, (4.2)
-with which (2.8) yields
-Z(k)
-γ (µ,n ; b)
-= 1
-k3
-∑
-m∈(Zk)3
-∫
-d3σ e
-2πi
-k (σ1(σ2+µ1)−m1(m2+n1))Z(k)
-b [∆](σ1,m 1)
-e
-2πi
-k (σ3(σ2−µ1)−m3(m2−n1))Z(k)
-b [∆](σ3,m 3)
-– 24 –
-|sI(Φ)(x;τ)
-FI(x;τ) − 1| |sI(Φ)(x;τ)
-s′
-I(Φ)(x;τ)− 1| | ˜q(τ)| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 3.1× 10−15 1.6× 10−15
-1.5× 10−5 0.27σ2 4.6× 10−27 5.2× 10−26
-(a) Region I: τ = 1
-9e
-πi
-5
-|sII (Φ)(x;τ)
-FII (x;τ) − 1| |sII (Φ)(x;τ)
-s′
-II (Φ)(x;τ)− 1| | ˜q(τ)| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 5.8× 10−27 1.7× 10−27
-1.5× 10−5 0.27σ2 1.1× 10−15 8.3× 10−16
-(b) Region II : τ = 1
-9e
-4πi
-5
-|sIII (Φ)(x;τ)
-FIII (x;τ) − 1| |sIII (Φ)(x;τ)
-s′
-III (Φ)(x;τ)− 1| | ˜q(τ)−1| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 5.8× 10−27 1.7× 10−27
-1.5× 10−5 0.27σ2 1.1× 10−15 8.3× 10−16
-(c) Region III : τ = 1
-9e− 4πi
-5
-|sIV (Φ)(x;τ)
-FIV (x;τ) − 1| |sIV (Φ)(x;τ)
-s′
-IV (Φ)(x;τ)− 1| | ˜q(τ)−1| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 3.1× 10−15 1.6× 10−15
-1.5× 10−5 0.27σ2 4.6× 10−27 5.2× 10−26
-(d) Region IV : τ = 1
-9e− πi
-5
-Table 3: We perform numerical Borel resummation for Φ (k=3)
-41 (x,τ ) at x = 6/5 with 220
-terms, after choosing suitable τ in four diﬀerent regions. We compare them with equations
-(3.36a),(3.36b),(3.36c),(3.36d) whose right hand side is denoted as FR(x,τ ). Meanwhile,
-we estimate the contribution of higher order terms by resumming Φ (k=3)
-41 (x,τ ) with 215
-terms. The values of |˜q(˜q−1)| and|˜x±1| are also provided for comparison.
-Z(k)
-b [∆](σ2,m 2)
-=e
-πi
-6 (k+
-8c2
-b
-k )
-k
-∑
-m∈Zk
-∫
-dσZ(k)
-b [∆](σ,m )Z(k)
-b [∆](σ +µ,m +n)Z(k)
-b [∆](σ−µ,m−n)
-e− 2πi
-k ((σ−cb)2+µ2−m2−n2). (4.3)
-where we have used again the formula of Fourier transformation of the tetrahedron partition
-function (A.13). This is the same as (4.1) up to an overall factor
-χ(k)
-52 (µ,n ; b) = e
-πi
-3 (k−
-c2
-b
-k )(−1)ne
-πi
-k (−µ2+n2)Z(k)
-γ (µ,n ; b). (4.4)
-We now also perform the saddle point expansion of the one-dimensional integral (4.1).
-We introduce the alternative representation of the tetrahedron partition function (3.5), in
-– 25 –
-|sI(Φ)(x;τ)
-FI(x;τ) − 1| |sI(Φ)(x;τ)
-s′
-I(Φ)(x;τ)− 1| | ˜q(τ)| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 4.5× 10−16 4.9× 10−16
-1.5× 10−5 0.27σ2 6.5× 10−27 3.8× 10−27
-(a) Region I: τ = 1
-9e
-πi
-5
-|sII (Φ)(x;τ)
-FII (x;τ) − 1| |sII (Φ)(x;τ)
-s′
-II (Φ)(x;τ)− 1| | ˜q(τ)| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 3.7× 10−26 1.1× 10−25
-5.3× 10−5 0.31σ2 6.1× 10−15 5.7× 10−15
-(b) Region II : τ = 1
-8e
-4πi
-5
-|sIII (Φ)(x;τ)
-FIII (x;τ) − 1| |sIII (Φ)(x;τ)
-s′
-III (Φ)(x;τ)− 1| | ˜q(τ)−1| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 3.2× 10−26 1.3× 10−25
-5.3× 10−5 0.31σ2 3.0× 10−15 9.8× 10−15
-(c) Region III : τ = 1
-8e− 4πi
-5
-|sIV (Φ)(x;τ)
-FIV (x;τ) − 1| |sIV (Φ)(x;τ)
-s′
-IV (Φ)(x;τ)− 1| | ˜q(τ)−1| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 4.5× 10−16 4.9× 10−16
-1.5× 10−5 0.27σ2 6.5× 10−27 3.8× 10−27
-(d) Region IV : τ = 1
-9e− πi
-5
-Table 4: We perform numerical Borel resummation for Φ(k=3)
-41 (x,τ ) atx = 6
-5e4πi/3 with 220
-terms, after choosing suitable τ in four diﬀerent regions. We compare them with equations
-(3.36a),(3.36b),(3.36c),(3.36d) whose right hand side is denoted as FR(x,τ ). Meanwhile,
-we estimate the contribution of higher order terms by resumming Φ (k=3)
-41 (x,τ ) with 215
-terms. The values of |˜q(˜q−1)| and|˜x±1| are also provided for comparison.
-terms of which, the state integral (4.1) reads
-χ(k)
-52 (µ,n ; b) =(ηk)3
-k (−1)ne
-3πi
-k (n2−µ2) ∑
-m∈Zk
-e
-2πim2
-k
-×
-∫
-R+i0
-dσ D(k)
-b ( 1√
-k
-σ,m ) D(k)
-b ( 1√
-k
-(σ−µ),m +n) D(k)
-b ( 1√
-k
-(σ +µ),m−n)e− 2πiσ2
-k .
-(4.5)
+\label{sc:41.asymp}
+
+The state integral of figure eight knot at level $k$ is already given
+as a one-dimensional integral in \cite{Andersen:2016ugz}
+\begin{align}
+  \chi^{(k)}_{\knot{4}_1}(\mu,n;\tau) =
+  &\frac{\eta_k}{k}\sum_{m\in \IZ_k}\int_{\IR+\ri\imag(c_\bb)-\ri|\mu|-\ri 0}\rd \sigma
+    \mc{Z}^{(k)}_\bb[\Delta](\sigma-\mu,m-n)
+    \mc{Z}^{(k)}_\bb[\Delta](\sigma,m)\nn
+  &\phantom{==}\times(-1)^m
+    \re^{\frac{\pi\ri}{k}((\sigma-c_\bb)^2-2(\mu-\sigma+c_\bb)^2-m^2+2(n-m)^2)},
+      \label{eq:chi-41}
+\end{align}
+where $\eta_k = \exp \frac{\pi\ri}{6}(k+2 c_\bb^2/k)$.
+This can be derived from the generic formula \eqref{eq:ZNgmMu0}.
+We can choose the Neumann-Zagier data
+\begin{equation}
+  \pmb{A} =
+  \begin{pmatrix}
+    1&0\\1&1
+  \end{pmatrix},\quad
+  \pmb{B} =
+  \begin{pmatrix}
+    0&-1\\-1&-1
+  \end{pmatrix},\quad
+  \bs\nu =
+  \begin{pmatrix}
+    0\\0
+  \end{pmatrix},
+\end{equation}
+with which \eqref{eq:ZNgmMu0} yields
+\begin{align}
+  &\mc{Z}_\gamma^{(k)}(\mu,n;\bb)\nn =
+  &\frac{1}{\ri k^2}\sum_{m\in (\IZ_k)^2}\int \rd^2\sigma
+    \re^{\frac{2\pi\ri}{k}(-\sigma_1\mu_1+\sigma_2\mu_1+m_1n_1-m_2n_1)}
+    \re^{\frac{\pi\ri}{k}(2\sigma_1\sigma_2-2m_1m_2)}
+    \mc{Z}_\bb^{(k)}[\Delta](\sigma_1,m_1)
+    \mc{Z}_\bb^{(k)}[\Delta](\sigma_2,m_2) \nn=
+  &\frac{\re^{\frac{\pi\ri}{12}(k+\frac{8c_\bb^2}{k})}}{\ri k}
+    \sum_{m\in\IZ_k}
+    \int\rd \sigma
+    \mc{Z}_\bb^{(k)}[\Delta](\sigma,m)
+    \mc{Z}_\bb^{(k)}[\Delta](\sigma+\mu,m+n)\nn
+  &\phantom{=========}
+    (-1)^{m+n}
+    \exp\frac{\pi\ri}{k}\left(
+    -(\sigma-c_\bb)^2-4\mu\sigma-\mu^2+2c_\bb\mu+m^2+4mn+n^2
+    
+    \right).
+\end{align}
+In the last step, we have integrated over $\sigma_2$ and summed
+over $m_2$ using the Fourier transformation \eqref{eq:FourierFQD}.
+We then relabeled $(\sigma_1,m_1)$ to $(\sigma,m)$ as well as
+$(\mu_1,n_1)$ to $(\mu,n)$.  After changing the signs of $\mu,n$ we
+find the same expression as \eqref{eq:chi-41} up to an overall
+irrelevant factor
+\begin{equation}
+  \chi^{(k)}_{\knot{4}_1}(\mu,n;\tau) = \ri
+  \re^{\frac{\pi\ri}{12}(k-\frac{4c_{\bb}^2}{k})}(-1)^n
+  \re^{\frac{\pi\ri}{k}(-\mu^2-2c_\bb\mu+n^2)}
+  \mc{Z}_{\gamma}^{(k)}(-\mu,-n;\hbar).
+\end{equation}
+
+As a one-dimensional integral, it is much easier to perform saddle
+point analysis on \eqref{eq:chi-41}.  We first introduce an
+alternative representation of the tetrahedron partition
+function\footnote{This version of tetrahedron partition function was
+  introduced in \cite{Andersen:2016ugz}.}
+\begin{equation}
+  \DD_\bb^{(k)}(u,m) = \mc{Z}_\bb^{(k)}[\Delta](c_\bb-\sqrt{k}u,m),
+  \label{eq:Dk}
+\end{equation}
+in terms of which, the state integral \eqref{eq:chi-41} reads
+\begin{align}
+  \chi^{(k)}_{\knot{4}_1}(\mu,n;\tau) =
+  &\frac{\eta_k}{k}\sum_{m\in \IZ_k}
+    (-1)^m \re^{\frac{\pi\ri}{k}(2n^2-4nm+m^2)}
+    \nn
+  &\phantom{=}\times
+    \int_{\IR+\ri 0}\rd \sigma
+    \DD^{(k)}_\bb(\frac{1}{\sqrt{k}}(\sigma+\mu),m-n)
+    \DD^{(k)}_\bb(\frac{1}{\sqrt{k}}\sigma,m)
+    \re^{\frac{\pi\ri}{k}(-2\mu^2-4\mu\sigma-\sigma^2)}.
+\end{align}
+
 We scale the variables
-Z = 2πbσ, u = 2πbµ (4.6)
-and then perform asymptotic expansion of the tetrahedron partition functions in the small
-– 26 –
-|sI(Φ)(x;τ)
-FI(x;τ) − 1| |sI(Φ)(x;τ)
-s′
-I(Φ)(x;τ)− 1| | ˜q(τ)| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 2.4× 10−16 7.5× 10−16
-1.5× 10−5 0.27σ2 4.4× 10−27 7.9× 10−27
-(a) Region I: τ = 1
-9e
-πi
-5
-|sII (Φ)(x;τ)
-FII (x;τ) − 1| |sII (Φ)(x;τ)
-s′
-II (Φ)(x;τ)− 1| | ˜q(τ)| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 3.2× 10−26 1.3× 10−25
-5.3× 10−5 0.31σ2 3.0× 10−15 9.8× 10−15
-(b) Region II : τ = 1
-8e
-4πi
-5
-|sIII (Φ)(x;τ)
-FIII (x;τ) − 1| |sIII (Φ)(x;τ)
-s′
-III (Φ)(x;τ)− 1| | ˜q(τ)−1| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 3.7× 10−26 1.1× 10−25
-5.3× 10−5 0.31σ2 6.1× 10−15 5.7× 10−15
-(c) Region III : τ = 1
-8e− 4πi
-5
-|sIV (Φ)(x;τ)
-FIV (x;τ) − 1| |sIV (Φ)(x;τ)
-s′
-IV (Φ)(x;τ)− 1| | ˜q(τ)−1| Min(|˜x(x,τ )|,|˜x(x,τ )−1|)
-σ1 4.5× 10−16 7.5× 10−16
-1.5× 10−5 0.27σ2 4.4× 10−27 7.9× 10−27
-(d) Region IV : τ = 1
-9e− πi
-5
-Table 5: We perform numerical Borel resummation for Φ(k=3)
-41 (x,τ ) atx = 6
-5e2πi/3 with 220
-terms, after choosing suitable τ in four diﬀerent regions. We compare them with equations
-(3.36a),(3.36b),(3.36c),(3.36d) whose right hand side is denoted as FR(x,τ ). Meanwhile,
-we estimate the contribution of higher order terms by resumming Φ (k=3)
-41 (x,τ ) with 215
-terms. The values of |˜q(˜q−1)| and|˜x±1| are also provided for comparison.
-b limit using (A.15).
-χ(k)
-52 (µ,n ; b)∼ (ηk)3
-2πbk (−1)ne
-3πi
-k (n2−µ2) ∑
-m∈Zk
-e
-2πi
-k m2
-∫
-dZ exp
-∑
-𝓁≥0
-(2πib2)𝓁−1U𝓁(u,Z ) (4.7)
+\begin{equation}
+  Z = 2\pi\bb \sigma,\quad u =2\pi\bb \mu
+\end{equation}
+and then perform asymptotic expansion of the tetrahedron partition
+functions in the small $\bb$ limit using \eqref{eq:ZDasymp},
+\begin{equation}
+  \chi_{\knot{4}_1}^{(k)}(\mu,n;\bb) \sim
+  \frac{\eta_k}{2\pi\bb k}\sum_{m\in\IZ_k}
+  (-1)^m \re^{\frac{\pi\ri}{k}(2n^2-4nm+m^2)}
+  \int \rd Z \exp\sum_{\ell\geq 0}(2\pi\ri\bb^2)^{\ell-1} U_\ell(u,Z)
+\end{equation}
 where the potential functions are
-U0(u,Z ) =1
-k
-(
-Z2 + Li2(−eZ) + Li2(−eZ−u) + Li2(−eZ+u)
-)
-, (4.8a)
-U𝓁≥1(u,Z ) = 1
-𝓁!
-∑
-j∈Zk
-B𝓁(1− 1/(2k)−j/k)
-(
-Li2−𝓁(ζm−j−1/2e
-Z
-k )
-+ Li2−𝓁(ζm+n−j−1/2e
-Z−u
-k ) + Li2−𝓁(ζm−n−j−1/2e
-Z+u
-k )
-)
-. (4.8b)
-– 27 –
+\begin{subequations}
+  \begin{align}
+    U_0(u,Z) =
+    &\frac{1}{k}\left(
+    u^2+2uZ +\frac{Z^2}{2} + 
+    \Li_2(-\re^{Z}) + \Li_2(-\re^{u+Z})\right),\\
+    U_{\ell\geq 1}(u,Z) =
+    &\frac{1}{\ell!}\sum_{j\in\IZ_k}
+      B_\ell(1-1/(2k)-j/k)
+      \left(
+      \Li_{2-\ell}(\zeta^{m-j-1/2} \re^{Z/k})
+      +\Li_{2-\ell}(\zeta^{m-j-1/2}\re^{Z/k}x)
+      \right).
+  \end{align}
+\end{subequations}
 The critical equation of the leading order potential function reads
-0 = ∂
-∂ZU0(u,Z ) = 1
-k
-(
-2Z− log(1 + eZ)− log(1 + e−u+Z)− log(1 + eu+Z)
-)
-, (4.9)
-which can be simpliﬁed to the algebraic equation
-Y 2 = (1−Y )(1−XY )(1−X−1Y ), (4.10)
+\begin{equation}
+  0 = \frac{\pd}{\pd Z}U_0(u,Z) = \frac{1}{k}\left(2u+Z -\log(1+\re^{Z})
+    -\log(1+\re^{u+Z})\right),
+\end{equation}
+which can be simplified to the algebraic equation
+\begin{equation}
+  -X^2 Y = (1-XY)(1-Y),
+  \label{eq:alcr.41}
+\end{equation}
 with
-X = eu =xk, Y =−eZ. (4.11)
-We also introduce the variable θ such that
-Y =−θk. (4.12)
-The critical point equation (4.10) has three solutions in terms of Y , corresponding to
-the geometric, conjugate, and the real ﬂat connections σ1,σ 2,σ 3 on the knot complement
-S3\52. Numerically they are the ones which in the limit X→ 1 reduce respectively to the
-solutions 0.78492 + 1.30714... i, 0.78492− 1.30714... i and 0.43016... to (4.10). Near each
-critical point σj, the integrand is approximated by the exponential
-exp
-(
-V (k)(σj)
-2πiτ
-)
-, (4.13)
+\begin{equation}
+  X = \re^u = x^k,\quad Y = -\re^{Z}.
+\end{equation}
+We also introduce the variable $\theta$ such that
+\begin{equation}
+  Y = -\theta^k.
+\end{equation}
+
+The critical point equation \eqref{eq:alcr.41} has two solutions in
+terms of $Y$, corresponding to the geometric and conjugate flat
+connections $\s_1, \s_2$ on the knot complement.
+
+Numerically, they are the ones that in the limit $X\rightarrow 1$
+reduce respectively to the solutions $\re^{\pi\ri/3}$ and
+$\re^{-\pi\ri/3}$ of \eqref{eq:alcr.41}.
+
+Near each critical point $\s_j$, the integrand is approximated by the
+exponential
+\begin{equation}
+  \exp\left(\frac{V^{(k)}(\s_j)}{2\pi\ri\tau}\right),
+  \label{eq:exp}
+\end{equation}
 where
-V (k)(σj) =U0(log(X),− log(Yj)) + 3u2
-2k + π2
-2k. (4.14)
-The last two terms come from the prefactors outside the summation over m∈ Zk. We
-again notice the curious fact that V (k)(σj) =V (1)(σj)/k.
-By expanding near the critical point and performing the Gaussian integration order
-by order, for each critical point σj we can ﬁnd an asymptotic power series ϕ(k,σj)(x;τ),
-which, together with the exponential factor (4.13), forms the trans-series
-Φ(k,σj)
-52 (x;τ) = eV (k)(σj)/(2πiτ)ϕ(k,σj)
-52 (x;τ), j = 1, 2, 3. (4.15)
-The one-loop contribution ϕ(k,σj)
-52 (x; 0) =ω(k,σj)
-52 (x) has a universal expression
-ω(k,σj)
-52 (x) = (−1)n−1e
-πi
-4 +πik
-2 +πi
-2k (6n2−1)
-√
-−k(3 + 2s(xk)θk + (s(xk)− 1)θ2k)
-θD∗
-k(ζ−1/2θ)1/kD∗
-k(ζ−1/2θx)1/kD∗
-k(ζ−1/2θ/x)1/k
-×
-∑
-m∈Zk
-ζm2
-θ2m(ζ1/2θ;ζ)−1
-m (ζ1/2θx;ζ)−1
-m (ζ1/2θ/x;ζ)−1
-m , (4.16)
-where
-s(x) = 1 +x + 1/x. (4.17)
-The power series ϕ(k,σj)
-52 (x;τ)/ω(k,σj)
-52 (x) on the other hand depends in a complicated way
-on the level k.
-– 28 –
-The case of k = 1 is particularly simple. The dependence on n∈ Z1 drops out, and
-the state integral reduces to [31]
-χ52(µ;τ) =χ(1)
-52 (µ, 1;τ) = Φb(0)−6
-∫
-R+i0
-dvΦb(v)Φb(v +µ)Φb(v−µ)e−πi(2v2+3µ2) (4.18)
-where we have used η1 = Φb(0)−2. The power series ϕ(σi)
-1 (x;τ) are given by [31]
-(ω(σj)
-52 )−1ϕ(σ1)
-52 (x; τ
-2πi)
-=1 +
-Y 4
-j
-12γ3
-j
-(
-− 12 + 18s− 4s2− 5s3 +s4 + (27− 16s−s2 + 6s3−s4)Yj +s(−19 + 2s)Y 2
-j
-)
-τ
-+
-Y 10
-j
-288γ6
-j
-(
-24201− 34032s + 7438s2 + 8872s3− 7337s4 + 5128s5− 3479s6 + 1135s7− 93s8
-− 13s9 +s10 + (4680 + 2562s− 1132s2− 8688s3 + 6400s4− 4338s5 + 3353s6− 1145s7
-+ 94s8 + 13s9−s10)Yj + (−5832 + 6972s + 4921s2− 6026s3 + 3034s4− 2454s5 + 1030s6
-− 105s7− 12s8 +s9)Y 2
-j
-)
-τ 2 +O(τ 3), (4.19)
-where
-s =s(x) = 1 +x +x−1, (4.20)
-and
-γj(x) = 3− 2s(x)Yj(x) + (s(x)− 1)Yj(x)2 (4.21)
-At levelk = 2, the ﬁrst few terms of the power series are given in Appendix B.2. It is clear
-that the coeﬃcients of the power series depend only on the solution Yj to the NZ equation,
-but not on a k-th root of Yj. Furthermore, they depend on the deformation parameters
-u,n only through the holonomy parameter x. Finally, the power series are increasingly
-more complicated at higher levels k.
+\begin{align}
+  V^{(k)}(\s_j) = U_0(\log(X),\log(-Y_j))+\frac{\pi^2}{6k}.
+\end{align}
+The extra factor $\pi^2/(6k)$ comes from the factor $\eta_k$.
+Note the interesting relation $V^{(k)}(X,Y) = V^{(1)}(X,Y)/k$.
+
+In addition, by expanding near the critical point and performing the
+Gaussian integration order by order, for each critical point $\s_j$ we
+can find an asymptotic power series $\varphi^{(k,\s_j)}(x;\tau)$,
+which, together with the exponential factor \eqref{eq:exp}, forms the
+trans-series
+\begin{equation}
+  \Phi_{\knot{4}_1}^{(k,\sigma_j)}(x;\tau) =
+  \re^{V^{(k)}(\s_j)/(2\pi\ri\tau)}
+  \varphi_{\knot{4}_1}^{(k,\s_j)}(x;\tau),\quad
+  j=1,2.
+\end{equation}
+The one-loop contribution
+$\varphi_{\knot{4}_1}^{(k,\s_j)}(x;0) =
+\omega^{(k,\s_j)}_{\knot{4}_1}(x)$ has a universal
+expression
+\begin{align}
+  \omega^{(k,\s_j)}_{\knot{4}_1}(x)=
+  &\frac{\re^{\frac{\pi\ri}{4}+\frac{\pi\ri  k}{6}+\frac{2\pi\ri}{k}(n^2-1/12)}}
+    {\sqrt{k(x^k\theta^{2k}-1)}}\theta^{1/2}x
+    D_k^{*}(\zeta^{-1/2}\theta)^{1/k}
+    D_k^{*}(\zeta^{-1/2}\theta x)^{1/k}\nn
+  &\times\sum_{m\in\IZ_k}
+    (-1)^m\zeta^{m^2/2}\theta^m x^{2m}
+    (\zeta^{1/2}\theta;\zeta)_m^{-1}(\zeta^{1/2}\theta x;\zeta)_m^{-1}.
+\end{align}
+The power series
+$\varphi_{\knot{4}_1}^{(k,\s_j)}(x;\tau)/\omega^{(k,\s_j)}_{\knot{4}_1}(x)$
+on the other hand, depends in a very complicated way on the level $k$.
+
+
+The case of $k=1$ is particularly simple. The dependence on
+$n\in\IZ_1$ is trivial, and the state integral reduces to
+\cite{Garoufalidis:2020xec}
+
+\begin{align}
+  \chi_{\knot{4}_1}(\mu;\tau) =
+  \chi_{\knot{4}_1}^{(1)}(\mu;\tau) =
+  \Phi_\bb(0)^{-2}\int_{\IR+\ri 0} \rd v \Phi_\bb(\mu+v)\Phi_\bb(v)
+  \re^{\pi\ri(v^2-2(\mu+v)^2)}.
+\end{align}
+where we have used $\eta_1 = \Phi_\bb(0)^{-2}$.  The power series
+$\varphi_{\knot{4}_1}^{(\s_i)}(x;\tau) =
+\varphi_{\knot{4}_1}^{(k=1,\s_i)}(x;\tau)$ are given by
+\cite{Garoufalidis:2020xec}
+\begin{align}
+  (\omega_{\knot{4}_1}^{(\s_1)})^{-1}
+  \varphi_{\knot{4}_1}^{(\s_1)}(x;\frac{\tau}{2\pi\ri}) =
+  &1-
+    \frac{1}{24\gamma(x)^3}\left(
+    x^{-3}-x^{-2}-2x^{-1}+15-2x-x^2+x^3\right)\tau\nn  +
+  &\frac{1}{1152\gamma^6(x)}\left(
+    x^{-6}-2x^{-5}-3x^{-4}+610x^{-3}-606x^{-2}-1210x^{-1}\right.\nn+
+  &\left.3117 -1210x-606x^2+610x^3-3x^4-2x^5+x^6
+    \right)\tau^2+\cO(\tau^3).
+    \label{eq:vphi1.k1}
+\end{align}
+with
+\begin{equation}
+  \gamma(x) = \sqrt{x^{-2}-2x^{-1}-1-2x+x^2}.
+\end{equation}
+while $\varphi_2^{(\s_2)}(x;\tau) = \ri \varphi_1^{(\s_2)}(x;-\tau)$.
+At level $k=2$, the power series are
+\begin{align}
+  &(\omega_{\knot{4}_1}^{(k=2,\s_j)})^{-1}\varphi_{\knot{4}_1}^{(k=2,\s_j)}(x;\tau)\nn
+    =
+  &1 -((1 + 6 x + 5 x^2 - 30 x^3 + 10 x^4 + 30 x^5 - 3 x^6 + 30 x^7 + 
+    10 x^8 - 30 x^9 + 5 x^{10} + 6 x^{11} + x^{12}) \nn
+  &(-1 - x^2 + x^4 + 2 x^2 Y_j))/(48 (-1 - x + x^2)^2 (1 - x + x^2)^2 (-1 + x + 
+    x^2)^2 (1 + x + x^2)^2)\tau + \cO(\tau^2).
+    \label{eq:phi41k2}
+\end{align}
+
+
+Additional terms as well as first few terms of the power series at
+level $k=3$ can be found in Appendix~\ref{sc:phi.41}.
+
+Several conclusions can be drawn from these data.  It is clear that
+the coefficients of the power series depend only on the solution $Y_j$
+to the NZ equation, but not on a $k$-th root of $Y_j$.  Furthermore,
+they depend on the deformation parameters $u,n$ only through the
+holonomy parameter $x$.  Finally, it is evident that the power series
+become increasingly more complicated at higher levels $k$.

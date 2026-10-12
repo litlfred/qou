@@ -5,11 +5,12 @@ status: todo
 type: task
 priority: normal
 tags:
+    - 8f-ew
     - sm-26
     - reorg-2026-10-04
 created_at: 2026-09-03T08:31:35Z
-updated_at: 2026-10-04T15:20:23Z
-parent: qou-8lxd
+updated_at: 2026-10-10T18:10:00Z
+parent: qou-20sx
 blocked_by:
     - qou-q377
     - qou-y7vg
@@ -26,3 +27,7 @@ Per-term bean for the weak mixing angle (session qou-ggdk, bean qou-bsu0). Tier:
 (iv) Next: not near-term. The honest lead is `su5-hypercharge-n3-gate.md` — under a 2⊕3 block structure the determinant forces U(1)_Y, so Y and N = 3 may be one gap.
 (v) Forecast: conjectural until 4-A moves.
 Tower status [reading: qou-ggdk]: ORDER-ZERO-ONLY — both numbers read one Hecke block's eigenvalue ratio at q₀, not the full Frobenius pairing; μ̄₁₂₃ is a degree-2 Vassiliev invariant of one link. No full-tower formulation.
+
+## 2026-10-10 — reparented under qou-20sx
+
+Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.

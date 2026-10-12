@@ -1,0 +1,1523 @@
+ 
+% new file names from date 20171119: 
+% block0_171119.tex 
+\renewcommand{\thisfile}{block0\_190328}
+ 
+\cleardoublepage
+%\bigskip
+% \setcounter{chapter}{-1}
+\setcounter{section}{-1}
+\mysection{Introduction}
+\AYcopyright
+
+
+\mysubsection{On the Subject} \label{subsec:on-the-sub}
+{\em Derived categories} were introduced by A. Grothendieck and J.-L.Verdier 
+around 1960, and were first published in the book \cite{RD} by R. 
+Hartshorne. The basic idea was as follows. They had realized that the derived 
+functors of classical homological algebra, namely the functors 
+$\mrm{R}^q F, \, \mrm{L}_q F : \cat{M} \to \cat{N}$ 
+derived from an additive functor 
+$F : \cat{M} \to \cat{N}$
+between abelian categories, are too limited to allow several rather natural 
+manipulations. Perhaps the most important operation that was lacking was the 
+composition of derived functors; the best approximation of it was a spectral 
+sequence. 
+
+The solution to the problem was to invent a new category, starting from a given 
+abelian category $\cat{M}$. The objects of this new category are the complexes 
+of objects of $\cat{M}$. These are the same complexes that play an auxiliary 
+role in classical homological algebra, as resolutions of objects of $\cat{M}$. 
+The complexes form a category $\dcat{C}(\cat{M})$, but this category is not 
+sufficiently intricate to carry in it the information of derived 
+functors. So it must be modified. 
+
+A morphism $\phi : M \to N$ in $\dcat{C}(\cat{M})$
+is called a {\em quasi-isomorphism}
+if in each degree $q$ the cohomology morphism 
+$\opn{H}^q(\phi) : \opn{H}^q(M) \to \opn{H}^q(N)$
+in $\cat{M}$ is an isomorphism. The modification that is needed is to make the 
+quasi-isomorphisms invertible. This is done by a formal 
+localization procedure, and the resulting category (with the same objects as 
+$\dcat{C}(\cat{M})$) is the derived category $\dcat{D}(\cat{M})$.
+There is a functor 
+$\opn{Q} : \dcat{C}(\cat{M}) \to \dcat{D}(\cat{M})$,
+which is the identity on objects, and it has a universal property (it is 
+initial among the functors that send the quasi-isomorphisms to isomorphisms).  
+A theorem (analogous to Ore localization in noncommutative ring theory) says 
+that every morphism $\th$ in $\dcat{D}(\cat{M})$ can be written as a simple 
+left 
+or right fraction:
+\begin{equation} \label{eqn:4994}
+\th = \opn{Q}(\psi_0)^{-1} \circ \opn{Q}(\phi_0) = 
+\opn{Q}(\phi_1) \circ \opn{Q}(\psi_1)^{-1} ,
+\end{equation}
+where $\phi_i$ and $\psi_i$ are morphisms in $\dcat{C}(\cat{M})$, and 
+$\psi_i$ are quasi-isomorphisms. 
+
+The cohomology functors 
+$\opn{H}^q : \dcat{D}(\cat{M}) \to \cat{M}$,
+for all $q \in \Z$, are still defined. 
+It turns out that the functor $\cat{M} \to \dcat{D}(\cat{M})$,
+that sends an object $M$ to the complex $M$ concentrated in degree $0$, is 
+fully faithful. 
+
+The next step is to say what is a left or a right derived functor of an 
+additive functor $F : \cat{M} \to \cat{N}$. The functor $F$ can be extended 
+in an obvious manner to a functor on complexes
+$F : \dcat{C}(\cat{M}) \to \dcat{C}(\cat{N})$.
+A {\em right derived functor} of $F$ is a functor 
+\begin{equation} \label{eqn:4990}
+\mrm{R} F : \dcat{D}(\cat{M}) \to \dcat{D}(\cat{N}) ,
+\end{equation}
+together with a morphism of functors 
+$\eta^{\mrm{R}} : \opn{Q}_{\cat{N}} \circ \, F \to \mrm{R} F \circ 
+\opn{Q}_{\cat{M}}$.
+The pair $(\mrm{R} F, \eta^{\mrm{R}})$ has to be {\em initial among all such 
+pairs}. The uniqueness of such a functor $\mrm{R} F$, up to a unique 
+isomorphism, is relatively easy to prove (using the language of 
+$2$-categories). As for existence of $\mrm{R} F$, it relies on the 
+existence of suitable resolutions (like the injective resolutions in the 
+classical situation). If these resolutions exist, 
+and if the original functor $F$ is left exact,
+then there is a canonical isomorphism of functors 
+\begin{equation} \label{eqn:4991}
+\mrm{R}^q F \cong \opn{H}^q \circ \, \mrm{R} F : \cat{M} \to \cat{N} 
+\end{equation}
+for every $q \geq 0$. 
+
+The left derived functor 
+\begin{equation} \label{eqn:4992}
+\mrm{L} F : \dcat{D}(\cat{M}) \to \dcat{D}(\cat{N}) 
+\end{equation}
+is defined similarly. When suitable resolutions exist, and when 
+$F$ is right exact, there is a canonical isomorphism of functors
+\begin{equation} \label{eqn:4993}
+\mrm{L}_q F \cong \opn{H}^{-q} \circ \, \mrm{L} F : \cat{M} \to \cat{N} 
+\end{equation}
+for every $q \geq 0$. 
+
+There are several variations: $F$ could be a contravariant additive 
+functor; or it could be an additive bifunctor, contravariant in one or two of 
+its arguments. In all these situations the derived (bi)functors 
+$\mrm{R} F$ and $\mrm{L} F$ can be defined. 
+
+The derived category $\dcat{D}(\cat{M})$ is additive, but it is not abelian. 
+The notion of short exact sequence (in $\cat{M}$ and in $\dcat{C}(\cat{M})$) is 
+replaced by that of {\em distinguished 
+triangle}, and thus $\dcat{D}(\cat{M})$ is a {\em triangulated category}. 
+The derived functors $\mrm{R} F$ and $\mrm{L} F$ are {\em triangulated 
+functors}, which means that they send distinguished triangles in 
+$\dcat{D}(\cat{M})$ to distinguished triangles in $\dcat{D}(\cat{N})$. 
+
+Already in classical homological algebra we are interested in the {\em 
+bifunctors} $\opn{Hom}(-, -)$ and $(- \ot -)$. These bifunctors can also be 
+derived. To simplify matters, let's assume that $A$ is a commutative ring, and 
+$\cat{M} = \cat{N} = \cat{Mod} A$, the category of $A$-modules. 
+We then have bifunctors 
+\[ \opn{Hom}_A(-, -) \, : \, (\cat{Mod} A)^{\mrm{op}} \, \times \, \cat{Mod} A
+\, \to \, \cat{Mod} A \]
+and 
+\[ (- \ot_A -) \, : \, \cat{Mod} A \, \times \, \cat{Mod} A \, \to \, 
+\cat{Mod} A \, , \]
+where the superscript ``op'' denotes the opposite category, that encodes the
+contravariance in the first argument of Hom. 
+In this situation all resolutions exist, and we have the right derived 
+bifunctor 
+\begin{equation} \label{eqn:4995}
+\opn{RHom}_A(-, -) \, : \, \dcat{D}(\cat{Mod} A)^{\mrm{op}} \, \times \, 
+\dcat{D}(\cat{Mod} A) \, \to \, \dcat{D}(\cat{Mod} A) 
+\end{equation}
+and the left derived bifunctor 
+\begin{equation} \label{eqn:4996}
+(- \ot^{\mrm{L}}_{A} -) \, : \, \dcat{D}(\cat{Mod} A) \, \times \, 
+\dcat{D}(\cat{Mod} A) \, \to \, \dcat{D}(\cat{Mod} A) \, .
+\end{equation}
+The compatibility with the classical derived bifunctors is this: there are 
+canonical isomorphisms 
+\begin{equation} \label{eqn:4997}
+\opn{Ext}^q_A(M, N) \, \cong \,
+\opn{H}^q \bigl( \opn{RHom}_A(M, N) \bigr) 
+\end{equation}
+and
+\begin{equation} \label{eqn:4998}
+\opn{Tor}_q^A(M, N) \, \cong  \, \opn{H}^{-q} (M \ot^{\mrm{L}}_{A} N) 
+\end{equation}
+for all $M, N \in \cat{Mod} A$ and $q \geq 0$.  
+
+This is what derived categories and derived functors are. As to what can be 
+done with them, here are some of the things we will explore in our book:
+\begin{itemize}
+\item {\em Dualizing complexes} and {\em residue complexes} over noetherian 
+commutative rings. Besides the original treatment from \cite{RD}, that we 
+present in detail here, we also include {\em Van den Bergh rigidity} in the 
+commutative setting, that gives rise to {\em rigid residue complexes}. 
+
+\item {\em Perfect DG modules} and {\em tilting DG bimodules}  over 
+noncommutative DG rings, and a few variants of {\em derived 
+Morita Theory}, including the {\em Rickard-Keller Theorem}. 
+
+\item {\em Derived torsion} and {\em balanced dualizing complexes}
+over connected graded NC rings, and {\em rigid 
+dualizing complexes} over NC rings, including a full proof of the {\em Van den 
+Bergh Existence Theorem} for NC rigid dualizing complexes. 
+\end{itemize}
+
+A topic that is beyond the scope of this book, but of which we 
+provide an outline here, is:
+\begin{itemize}
+\item The {\em rigid approach to Grothendieck Duality} on 
+noetherian schemes and Deligne-Mumford stacks. 
+\end{itemize}
+
+Derived categories have important roles in several areas of mathematics; below 
+is a partial list. We will not be able to talk about any of these 
+topics in our book, so instead we give some references alongside each 
+topic. 
+\begin{itemize}
+\item[$\triangleright$] $\mcal{D}$-modules, perverse sheaves, and 
+representations of algebraic groups and Lie algebras.  
+See \cite{BBD} and \cite{Bor}. 
+More recently the focus in this area is on the {\em Geometric Langlands 
+Correspondence}, that can only be stated in terms of derived categories (see 
+the survey \cite{Gai}).
+
+\item[$\triangleright$] 
+Algebraic analysis, including differential, 
+microdifferential and DQ modules (see \cite{Ka}, \cite{SKK}, \cite{KaSc3}) 
+and microlocal sheaf theory (see \cite{KaSc1}), with its application to 
+symplectic topology (see \cite{Ta}, \cite{NaZa}). 
+
+\item[$\triangleright$] Representations of finite groups and quivers, 
+including {\em cluster algebras} and the {\em Brou\'e Conjecture}. 
+See \cite{Hap}, \cite{Kel2}, \cite{CrRo}. 
+
+\item[$\triangleright$] Birational algebraic geometry. This includes {\em 
+Fourier-Mukai transforms} and {\em semi-orthogonal decompositions}. 
+See the surveys \cite{HiVdB} and \cite{MacSt}, and the book \cite{Huy}. 
+
+\item[$\triangleright$] Homological mirror symmetry. It relates the derived 
+category of coherent sheaves on a complex algebraic variety $X$ to the 
+{\em derived Fukaya category} of the mirror partner $Y$, which is a symplectic 
+manifold. See Remark \ref{rem:4960} and the online reference \cite{HMS}.  
+
+\item[$\triangleright$] Derived algebraic geometry. Here not only the category 
+of sheaves is derived, but also the underlying geometric objects (schemes or 
+stacks). See Example \ref{exa:4205}, Remark \ref{rem:4970}, and the references 
+\cite{Lur} and \cite{To2}.  
+\end{itemize}
+
+
+\mysubsection{A Motivating Discussion: Duality} \label{subsec:2160}
+Let us now approach derived categories from another perspective,
+very different from the one taken in the previous subsection, by 
+considering the idea of {\em duality in algebra}. 
+
+We begin with something elementary: linear algebra. 
+Take a field $\K$. Given a $\K$-module $M$ (i.e.\  a vector space), let
+$D(M) := \opn{Hom}_{\K}(M, \K)$,
+the dual module. There is a canonical homomorphism 
+\begin{equation} \label{eqn:3250}
+\opn{ev}_M : M \to D(D(M)) ,
+\end{equation}
+called {\em Hom-evaluation}, whose formula is 
+$\opn{ev}_M(m)(\phi) := \phi(m)$ for 
+$m \in M$ and $\phi \in D(M)$. 
+If $M$ is finitely generated then $\opn{ev}_M$ is an isomorphism (actually this 
+is ``if and only if''). 
+
+To formalize this situation, let $\cat{Mod} \K$ denote the category of
+$\K$-modules. Then 
+$D : \cat{Mod} \K \to \cat{Mod} \K$
+is a contravariant functor, and 
+$\opn{ev} : \opn{Id} \to D \circ D$
+is a morphism of functors (i.e.\ a natural transformation). Here $\opn{Id}$ is 
+the identity functor of $\cat{Mod} \K$. 
+
+Now let us replace $\K$ by some nonzero commutative ring $A$. Again we can
+define a contravariant functor 
+\begin{equation} \label{eqn:3241}
+D : \cat{Mod} A \to \cat{Mod} A , \quad
+D(M) := \opn{Hom}_A(M, A) ,
+\end{equation}
+and a morphism of functors $\opn{ev} : \opn{Id} \to D \circ D$.
+It is easy to see that $\opn{ev}_M : M \to D(D(M))$ is an isomorphism if $M$
+is a finitely generated free $A$-module. 
+Of course we can't expect reflexivity (i.e.\ $\opn{ev}_M$ being an isomorphism) 
+if $M$ is not finitely generated; but what about a finitely generated module 
+that is not free?
+
+In order to understand this better, let us concentrate on the ring $A = \Z$.
+Since $\Z$-modules are just abelian groups, the category $\cat{Mod} \Z$ is 
+often denoted by $\cat{Ab}$. 
+Let $\cat{Ab}_{\mrm{f}}$ be the full subcategory of finitely generated abelian 
+groups. Every finitely generated abelian group is of the form 
+$M \cong T \oplus F$, with $T$ finite and $F$ free. (The letters  ``T'' and 
+``F''  stand for ``torsion'' and ``free'' respectively.) It is important to 
+note 
+that this is {\em not a canonical 
+isomorphism}. There is a canonical short exact sequence
+\begin{equation} \label{eqn:1000}
+0 \to T \xar{\phi} M \xar{\psi} F \to 0 
+\end{equation}
+in $\cat{Ab}_{\mrm{f}}$, but the decomposition $M \cong T \oplus F$ comes from 
+{\em choosing a splitting} $\sigma : F \to M$ of this sequence. 
+
+\begin{exer}
+Prove that the exact sequence (\ref{eqn:1000}) is functorial; 
+namely there are functors 
+$T, F : \cat{Ab}_{\mrm{f}} \to \cat{Ab}_{\mrm{f}}$,
+and natural transformations
+$\phi : T \to \opn{Id}$ and  
+$\psi :  \opn{Id} \to F$, such that for each $M \in \cat{Ab}_{\mrm{f}}$ 
+the group $T(M)$ is finite, the group $F(M)$ is free, and 
+the sequence of homomorphisms
+\begin{equation} \label{eqn:1002}
+0 \to T(M) \xar{\phi_M} M  \xar{\psi_M} F(M) \to  0
+\end{equation}
+is exact. 
+
+Next, prove that there does not exist a {\em functorial decomposition} of a
+finitely generated abelian group into a free part and a finite part. 
+Namely, there is no natural transformation
+$\sigma : F \to \opn{Id}$, such that for every $M$ the homomorphism 
+$\sigma_M : F(M) \to M$ 
+splits the sequence (\ref{eqn:1002}). (Hint: find a counterexample.)
+\end{exer}
+
+We know that for a free finitely generated abelian group $F$ there is 
+reflexivity, i.e.\ $\opn{ev}_F : F \to D(D(F))$ is an isomorphism. But for a
+finite abelian group $T$ we have
+$D(T) = \opn{Hom}_{\Z}(T, \Z) = 0$.
+Thus, for a group $M \in \cat{Ab}_{\mrm{f}}$  with a nonzero torsion subgroup
+$T$, reflexivity fails: $\opn{ev}_M : M \to D(D(M))$ is not an isomorphism.
+
+On the other hand, for an abelian group $M$ we can define another sort of dual:
+$D'(M) := \opn{Hom}_{\Z}(M, \mbb{Q} / \Z)$.
+There is a morphism of functors 
+$\opn{ev}' : \opn{Id} \to D' \circ D'$. 
+For a finite abelian group $T$ the homomorphism 
+$\opn{ev}'_T : T \to D'(D'(T))$ is an isomorphism; this can be seen by 
+decomposing $T$ into cyclic groups, and for a finite cyclic group it is clear. 
+So $D'$ is a duality for finite abelian groups.
+(We may view the abelian group $\mbb{Q} / \Z$ as the group of roots of $1$ in
+$\mbb{C}$, via the exponential function; and then $D'$ becomes {\em 
+Pontryagin Duality}.)
+
+But for a finitely generated free abelian group $F$ we get
+$D'(D'(F)) = \what{F}$, the profinite completion of $F$. So once more this is
+not a good duality for all finitely generated abelian groups.
+
+This is where the {\em derived category} enters. 
+For every commutative ring $A$ there is the derived category
+$\dcat{D}(\cat{Mod} A)$. Here is a very quick explanation of it,
+in concrete terms -- as opposed to the abstract point of view taken in the 
+previous subsection. 
+
+Recall that a {\em complex} of $A$-modules is a diagram
+\begin{equation} \label{eqn:1010}
+M = \bigl(  \cdots \to M^{-1} \xar{\d_M^{-1}} M^{0} 
+\xar{\d_M^0} M^{1} \to \cdots \bigr) 
+\end{equation}
+in the category $\cat{Mod} A$.
+Namely the $M^i$ are $A$-modules, and the $\d_M^{i}$ are homomorphisms.
+The condition is that $\d_M^{i + 1} \circ \d_M^{i} = 0$.
+We sometimes write 
+$M = \{ M^i \}_{i \in \Z}$. 
+The collection $\d_M = \{ \d_M^{i} \}_{i \in \Z}$ is called the 
+{\em differential} of $M$.
+
+Given a second complex 
+\[ N = \bigl(  \cdots \to N^{-1} \xar{\d_N^{-1}} N^{0} 
+\xar{\d_N^0} N^{1} \to \cdots \bigr) , \]
+a {\em homomorphism of complexes} 
+$\phi^{} : M^{} \to N^{}$
+is a collection 
+$\phi = \{ \phi^{i} \}_{i \in \Z}$ 
+of homomorphisms 
+$\phi^i : M^i \to N^i$ 
+in $\cat{Mod} A$ satisfying 
+$\phi^{i + 1} \circ \d_M^{i} =  \d_N^{i} \circ \phi^i$.
+The resulting category is denoted by $\dcat{C}(\cat{Mod} A)$. 
+
+The $i$-th {\em cohomology} of the complex $M$ is 
+\begin{equation} \label{eqn:5000}
+\opn{H}^i(M^{}) := 
+\opn{Ker}(\d_M^{i}) \, / \, \opn{Im}(\d_M^{i - 1}) \in \cat{Mod} A . 
+\end{equation}
+A homomorphism  $\phi^{} : M^{} \to N^{}$
+in $\dcat{C}(\cat{Mod} A)$ induces homomorphisms 
+$\opn{H}^i(\phi^{}) : \opn{H}^i(M^{}) \to \opn{H}^i(N^{})$ 
+in $\cat{Mod} A$. We call $\phi^{}$ a {\em quasi-isomorphism} if all the 
+homomorphisms $\opn{H}^i(\phi^{})$ are isomorphisms. 
+
+The derived category $\dcat{D}(\cat{Mod} A)$ is the localization of 
+$\dcat{C}(\cat{Mod} A)$ with respect to the quasi-isomorphisms. 
+This means that $\dcat{D}(\cat{Mod} A)$ has the same objects as 
+$\dcat{C}(\cat{Mod} A)$. There is a functor 
+\begin{equation} \label{eqn:5001}
+\opn{Q} : \dcat{C}(\cat{Mod} A) \to \dcat{D}(\cat{Mod} A)
+\end{equation}
+which is the identity on objects, it sends quasi-isomorphisms to 
+isomorphisms, and it is universal for this property. 
+
+A single $A$-module $M^0$ can be viewed as a complex $M$ concentrated in degree 
+$0$:
+\[ M^{} = \bigl(  \cdots \to 0 \xar{0} M^0 \xar{0} 0 \to \cdots \bigr) . \]
+This turns out to be a fully faithful embedding 
+\begin{equation} \label{eqn:1004}
+\cat{Mod} A \to \dcat{D}(\cat{Mod} A) .
+\end{equation}
+The essential image of this embedding is the full subcategory 
+of $\dcat{D}(\cat{Mod} A)$ on the complexes $M^{}$ whose cohomology is 
+concentrated in degree $0$. In this way we have {\em enlarged} the category of 
+$A$-modules. All this is explained in Sections 
+\ref{sec:loc-cats}-\ref{sec:der-cat} of the book. 
+
+Here is a very important kind of quasi-isomorphism. Suppose $M$ is an 
+$A$-module and 
+\begin{equation} \label{eqn:1020}
+\cdots \to P^{-2} \xar{\d_P^{-2}}  P^{-1} \xar{\d_P^{-1}}  P^{0} 
+\xar{\rho} M \to 0 
+\end{equation}
+is a projective resolution of it.
+We can view $M$ as a complex concentrated in degree $0$, by the embedding 
+(\ref{eqn:1004}). Define the complex 
+\begin{equation} \label{eqn:3246}
+P := \bigl(  \cdots \to P^{-2} \xar{\d_P^{-2}} 
+P^{-1} \xar{\d_P^{-1}} P^0 \to 0  \to \cdots \bigr) ,
+\end{equation}
+concentrated in nonpositive degrees. 
+Then $\rho$ becomes a morphism of complexes 
+$\rho : P \to  M$.
+The exactness of the sequence (\ref{eqn:1020}) says that $\rho$ is actually a 
+quasi-iso\-morphism. 
+Thus $\opn{Q}(\rho) : P^{} \to M$
+is an isomorphism in $\dcat{D}(\cat{Mod} A)$.
+
+Let us fix a complex $R \in \dcat{C}(\cat{Mod} A)$.
+For every complex $M \in \dcat{C}(\cat{Mod} A)$ we can form the complex
+\[ D(M) := \opn{Hom}_{A}(M, R) \in \dcat{C}(\cat{Mod} A) . \]
+This is the usual Hom complex (we recall it in 
+Subsection \ref{subsec:complexes}). 
+As $M$ changes we get a contravariant functor 
+\[ D : \dcat{C}(\cat{Mod} A) \to \dcat{C}(\cat{Mod} A) . \]
+The functor $D$ has a {\em contravariant right derived functor} 
+\begin{equation} \label{eqn:5002}
+\mrm{R} D : \dcat{D}(\cat{Mod} A) \to \dcat{D}(\cat{Mod} A) .
+\end{equation}
+If $P$ is a bounded above complex of projective modules (like in formula 
+(\ref{eqn:3246})), or more generally a {\em K-projective complex}
+(see Subsection \ref{subsec:K-proj}), then there is a canonical isomorphism
+\begin{equation} \label{eqn:3242}
+\mrm{R} D(P) \cong D(P) = \opn{Hom}_A(P, R) . 
+\end{equation}
+Every complex $M$ admits a K-projective resolution
+$\rho : P \to M$, and this allows us to calculate $\mrm{R} D(M)$.
+Indeed, because the morphism 
+$\opn{Q}(\rho) : P \to M$ 
+is an isomorphism in 
+$\dcat{D}(\cat{Mod} A)$, it follows that 
+$\mrm{R} D(\opn{Q}(\rho)) : \mrm{R} D(M) \to \mrm{R} D(P)$
+is an isomorphism in $\dcat{D}(\cat{Mod} A)$. 
+And the complex $\mrm{R} D(P)$ is known by the canonical isomorphism 
+(\ref{eqn:3242}). All this is explained in Sections \ref{sec:der-funcs}, 
+\ref{sec:resol} and \ref{sec:exist-resol} of the book. 
+
+It turns out that there is a canonical morphism 
+\begin{equation} \label{eqn:3247}
+\opn{ev}^{\mrm{R}} : \opn{Id} \to \mrm{R} D \circ \mrm{R} D
+\end{equation}
+of functors from $\dcat{D}(\cat{Mod} A)$ to itself, called {\em derived 
+Hom-evaluation}. See Subsection 
+\ref{subsec:du-cplxs}. 
+
+Let us now return to the ring $A = \Z$ and the complex $R = \Z$. 
+So the functor $D$ is the same one we had in (\ref{eqn:3241}).
+Given a finitely generated abelian group $M$, we want to calculate the 
+complexes $\mrm{R} D(M)$ and $\mrm{R} D(\mrm{R} D(M))$, and the morphism 
+\begin{equation} \label{eqn:3248}
+\opn{ev}^{\mrm{R}}_M : M \to \mrm{R} D(\mrm{R} D(M)) 
+\end{equation}
+in $\dcat{D}(\cat{Mod} A)$. As explained above, for this we choose a 
+projective resolution $\rho : P \to M$,
+and then we calculate  the complexes $\mrm{R} D(P)$ and 
+$\mrm{R} D(\mrm{R} D(P))$, and the morphism $\opn{ev}^{\mrm{R}}_P$. 
+For convenience we choose a projective resolution $P$ of this shape:
+\[ \begin{aligned}
+& P^{} = 
+\bigl(  \cdots \to 0 \to P^{-1} \xar{\d_P^{-1}} P^0 \to 0 \to \cdots \bigr)
+\\ & \quad \ 
+= \bigl( \cdots \to 0 \xar{}  \Z^{r_1} \xar{\bsym{a} \cd (-)} \Z^{r_0} \xar{} 0 
+\cdots 
+\bigr) \, , 
+\end{aligned} \]
+where $r_0, r_1 \in \N$ and $\bsym{a}$ is a matrix of integers. 
+The complex $\mrm{R} D(P)$ is this: 
+\[ \mrm{R} D(P) \cong D(P) = \opn{Hom}_{\Z}(P^{}, \Z) =
+\bigl( \cdots \to 0 \xar{}  \Z^{r_0} \xar{\bsym{a}^{\mrm{t}} \cd (-)}  
+\Z^{r_1} \xar{} 0 \cdots \bigr) , \]
+a complex of free modules concentrated in degrees $0$ and $1$, with the 
+transpose matrix $\bsym{a}^{\mrm{t}}$ as its differential. 
+
+Because $\mrm{R} D(P^{}) \cong D(P^{})$ is itself a bounded complex of 
+free modules, its derived dual is 
+\begin{equation} \label{eqn:5003}
+\mrm{R} D(\mrm{R} D(P^{})) \cong D(D(P^{})) = 
+\opn{Hom}_{\Z} \bigl( \opn{Hom}_{\Z}(P^{}, \Z), \Z \bigr) .
+\end{equation}
+Under the isomorphism (\ref{eqn:5003}), the derived Hom-evaluation morphism 
+$\opn{ev}^{\mrm{R}}_P$ in this case is 
+just the naive Hom-evaluation homomorphism 
+$\opn{ev}_P : P^{} \to D(D(P^{}))$ 
+in $\dcat{C}(\cat{Mod} \Z)$ from (\ref{eqn:3250}); see Exercise 
+\ref{exer:3245}. Because $P^0$ and $P^{-1}$ are finite rank free modules, it 
+follows that $\opn{ev}_P$ is an isomorphism in $\dcat{C}(\cat{Mod} \Z)$. 
+Therefore the morphism $\opn{ev}^{\mrm{R}}_M$ in $\dcat{D}(\cat{Mod} \Z)$
+is an isomorphism. We see that  {\em $\mrm{R} D$ is a duality that holds for 
+all finitely generated $\Z$-modules} $M$~!
+
+Actually, much more is true. Let us denote by 
+$\dcat{D}_{\mrm{f}}(\cat{Mod} \Z)$
+the full subcategory of $\dcat{D}(\cat{Mod} \Z)$ on the complexes $M$
+such that $\opn{H}^i(M)$ is finitely generated for all $i$. Then, according to 
+Theorem \ref{thm:2155}, $\opn{ev}^{\mrm{R}}_M$ is an isomorphism for every 
+$M \in \dcat{D}_{\mrm{f}}(\cat{Mod} \Z)$. 
+It follows that 
+\begin{equation} \label{eqn:5004}
+\mrm{R} D : \dcat{D}_{\mrm{f}}(\cat{Mod} \Z) \to 
+\dcat{D}_{\mrm{f}}(\cat{Mod} \Z)
+\end{equation}
+is a duality (a contravariant equivalence). This is the celebrated {\em 
+Grothendieck Duality}. 
+
+Here is the connection between the derived duality $\mrm{R} D$ and the 
+classical dualities $D$ and $D'$. Take a finitely generated abelian group 
+$M$, with short exact sequence (\ref{eqn:1000}). There are
+canonical isomorphisms
+\[ \mrm{H}^0 (\mrm{R} D(M)) \cong \opn{Ext}^0_{\Z}(M, \Z) \cong 
+\opn{Hom}_{\Z}(M, \Z) \cong \opn{Hom}_{\Z}(F, \Z) = D(F)  \]
+and 
+\[ \mrm{H}^1 (\mrm{R} D(M)) \cong \opn{Ext}^1_{\Z}(M, \Z) 
+\cong \opn{Ext}^1_{\Z}(T, \Z) \cong D'(T)  .  \]
+The cohomologies $\mrm{H}^i (\mrm{R} D(M))$ vanish for $i \neq 0, 1$. 
+We see that if $M$ is neither free nor finite, then  
+$\mrm{H}^0 (\mrm{R} D(M))$ and $\mrm{H}^1 (\mrm{R} D(M))$ are both nonzero; 
+so that the complex $\mrm{R} D(M)$ is not isomorphic
+in $\dcat{D}(\cat{Mod} \Z)$ to an object of 
+$\cat{Mod} \Z$, under the embedding (\ref{eqn:1004}). 
+
+Grothendieck Duality holds for many noetherian commutative rings $A$. 
+A sufficient condition is that $A$ is a finitely generated ring over a 
+regular noetherian ring $\K$ (e.g.\ $\K = \Z$ or a field). 
+A complex $R \in \dcat{D}(\cat{Mod} A)$ for which the contravariant functor 
+\begin{equation} \label{eqn:5010}
+\mrm{R} D = \opn{RHom}_{A}(-, R) : \dcat{D}_{\mrm{f}}(\cat{Mod} A) \to 
+\dcat{D}_{\mrm{f}}(\cat{Mod} A)
+\end{equation}
+is an equivalence is called a  {\em dualizing complex}. 
+(This is not quite accurate -- see Definition \ref{dfn:2155} for the precise 
+technical conditions on $R$.) 
+A dualizing complex $R$ over $A$ is unique (up to a degree translation and 
+tensoring with an invertible module). 
+See Theorems \ref{thm:2155}, \ref{thm:2170} and  \ref{thm:2175}. 
+
+Interestingly, the structure of the dualizing complex $R$ depends on the
+geometry of the ring $A$ (i.e.\ of the affine scheme $\opn{Spec}(A)$). 
+If $A$ is a regular ring (like $\Z$) then $R = A$ is dualizing. 
+If $A$ is a Cohen-Macaulay ring (and $\opn{Spec}(A)$ is connected) then $R$ is 
+a single $A$-module (up to a shift in degrees). But if $A$ is a more 
+singular ring, then $R$ must live in several degrees, as the next example 
+shows. 
+
+\begin{exa} \label{exa:2252}
+Consider the affine algebraic variety 
+$X \subseteq \mbf{A}^3_{\mbb{R}}$
+which is the union of a plane and a line that meet at a point, with 
+coordinate ring
+\[ A = \mbb{R}[t_1, t_2, t_3] / (t_3 \cd t_1, \, t_3 \cd t_2) . \]
+See figure \ref{fig:1}. 
+A dualizing complex $R$ over $A$ must live in two adjacent degrees;
+namely there is some $i$ such that both 
+$\mrm{H}^i(R)$ and $\mrm{H}^{i+1}(R)$ are nonzero. 
+This calculation is worked out in full in Example \ref{exa:2245}.
+\end{exa}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.46]{fig1.jpg}
+\caption{An algebraic variety $X$ that is connected but not equidimensional, 
+and hence not Cohen-Macaulay.} 
+\label{fig:1}
+\end{figure}
+
+One can also talk about dualizing complexes over {\em noncommutative rings}. 
+We will do this in Sections \ref{sec:BDC} and \ref{sec:rigid-DC-NC}.
+
+
+
+
+
+\mysubsection{On the Book}
+
+This book develops the theory of derived categories, starting from the 
+foundations, and going all the way to applications in commutative and 
+noncommutative algebra. 
+The emphasis is on explicit constructions (with examples), as opposed to 
+axiomatics. The most abstract concept we use is probably that of an abelian 
+category (which seems indispensable). 
+
+A special feature of this book is that most of the theory deals with 
+the category $\dcat{C}(A, \cat{M})$ of {\em DG $A$-modules in $\cat{M}$}, 
+where $A$ is a DG  ring and $\cat{M}$ is an 
+abelian category. Here ``DG'' is short for ``differential graded'', and our 
+DG rings are more commonly known as unital associative DG algebras.
+See Subsections \ref{subsec:DG-rng-mod} and 
+\ref{subsec:DGModinM} for the definitions. 
+The notion $\dcat{C}(A, \cat{M})$ covers most important examples that 
+arise in algebra and geometry: 
+\begin{itemize}
+\item The category $\dcat{C}(A)$ of DG $A$-modules, for any DG ring 
+$A$. This includes unbounded complexes of modules over an ordinary ring $A$. 
+
+\item The category $\dcat{C}(\cat{M})$ of unbounded complexes in any 
+abelian category $\cat{M}$. This includes 
+$\cat{M} = \cat{Mod} \AA$, the category of sheaves of $\AA$-modules on a ringed 
+space $(X, \AA)$. 
+\end{itemize}
+
+The category $\dcat{C}(A, \cat{M})$ is a {\em DG category}, and 
+its DG structure determines the {\em homotopy category} 
+$\dcat{K}(A, \cat{M})$ with its {\em triangulated structure}. 
+We prove that every {\em DG functor} 
+$F : \dcat{C}(A, \cat{M}) \to \dcat{C}(B, \cat{N})$
+induces a {\em triangulated functor} 
+\begin{equation} \label{eqn:3205}
+F : \dcat{K}(A, \cat{M}) \to \dcat{K}(B, \cat{N})
+\end{equation}
+between the homotopy categories. 
+
+We can now reveal that in the previous subsections we were a bit imprecise (for 
+the sake of simplifying the exposition): what we referred to there as  
+$\dcat{C}(\cat{M})$ was actually the {\em strict subcategory}
+$\dcat{C}_{\mrm{str}}(\cat{M})$, whose morphisms are the degree $0$ cocycles in 
+the DG category $\dcat{C}(\cat{M})$. For the same reason the homotopy 
+category $\dcat{K}(\cat{M})$ was suppressed there. 
+
+The {\em derived category} $\dcat{D}(A, \cat{M})$ is obtained 
+from $\dcat{K}(A, \cat{M})$ by inverting the quasi-isomorphisms.
+If suitable resolutions exist, the triangulated functor (\ref{eqn:3205}) 
+can be derived, on the left or on the right, to yield triangulated functors
+\begin{equation} \label{eqn:5011}
+\mrm{L} F, \, \mrm{R} F : 
+\dcat{D}(A, \cat{M}) \to \dcat{D}(B, \cat{N}) .
+\end{equation}
+We prove existence of {\em K-injective}, {\em K-projective} and {\em K-flat} 
+resolutions in $\dcat{K}(A, \cat{M})$ in several important contexts,
+and explain their roles in deriving functors and in presenting morphisms
+in $\dcat{D}(A, \cat{M})$.
+
+In the last six sections of the book we discuss a few key applications of 
+derived categories to commutative and noncommutative algebra. 
+
+There is a section-by-section synopsis of the book in subsection 
+\ref{subsec:synopsis} of the Introduction. 
+
+The book is based on notes for advanced courses given at Ben Gurion 
+University, in the academic years 2011-12, 2015-16 and 2016-17. 
+The main sources for Sections 1-12 of the book are \cite{RD} and \cite{KaSc1}; 
+but the DG theory component is absent from those earlier texts, and is pretty 
+much our own interpretation of folklore results. The material covered in 
+Sections 13-18 is adapted from research papers. 
+
+
+\mysubsection{Synopsis of the Book} \label{subsec:synopsis}
+Here is a section-by-section description of the material in the book. 
+
+\medskip \noindent 
+{\bf Sections \ref{sec:basic}-\ref{sec:abelian}.} These sections are pretty 
+much a review of the standard material on categories and functors, especially 
+abelian categories and additive functors, that is needed for the book. 
+
+There is one new topic here -- it is our {\em sheaf tricks}, in Subsection 
+\ref{subsec:sheaf-tricks}, that are a ``cheap substitute'' for the 
+Freyd-Mitchell Theorem, in the sense that they facilitate proofs of various 
+results in abstract abelian categories, yet they are themselves easy to prove 
+(and we provide these proofs). 
+
+A reader who is familiar with this material can skip these sections; yet we 
+do recommend looking at our notational conventions, that are spelled out in 
+Conventions \ref{conv:2490} and \ref{conv:3170}. 
+
+\medskip \noindent 
+{\bf Section \ref{sec:DG-algebra}.} A good understanding of {\em DG algebra} 
+(``DG'' is short for ``differential graded'') is essential in our approach to 
+derived categories. By DG algebra we mean DG rings, DG modules, DG categories 
+and DG functors. There do not exist (to our knowledge) detailed textbook 
+references for DG algebra. Therefore we have included a lot of basic material 
+in this section.
+
+We work over a fixed nonzero commutative base ring $\K$ (e.g.\ a field or the 
+ring of integers $\Z$). All linear operations (rings, categories, functors, 
+etc.) are assumed to be $\K$-linear. A {\em DG module} 
+is a module $M$ with a direct sum decomposition 
+$M = \boplus_{i \in \Z} M^i$ into submodules, with a differential $\d_M$ of 
+degree $1$ satisfying $\d_M \circ \d_M = 0$. The grading on $M$ is called  
+{\em cohomological grading}. 
+Tensor products of DG modules have {\em signed braiding isomorphisms}: for 
+DG modules $M$ and $N$, and for homogeneous elements 
+$m \in M^i$ and $n \in N^j$, we define 
+\[ \opn{br}_{M, N}(m \ot n) := (-1)^{i \cd j} \cd n \ot m \in N \ot_{\K} M . \]
+This braiding is usually referred to as the {\em Koszul sign rule}. 
+
+A {\em DG category} is a $\K$-linear
+category $\cat{C}$ in which the morphism sets 
+$\opn{Hom}_{\cat{C}}(M, N)$ are endowed with DG module structures, 
+and the composition functions are DG bilinear.  
+There are two important sources of DG categories: the category 
+$\dcat{C}(\cat{M})$ of complexes in a $\K$-linear abelian category $\cat{M}$,
+and the category of DG modules over a central DG $\K$-ring $A$
+(traditionally called a unital associative DG $\K$-algebra).
+Since we want to consider both setups, but we wish to avoid repetition, we 
+have devised a new concept that combines both: the DG category 
+$\dcat{C}(A, \cat{M})$ of {\em DG $A$-modules in $\cat{M}$}. 
+By definition, a DG $A$-module in $\cat{M}$ is a pair $(M, f)$, consisting of a 
+complex $M \in \dcat{C}(\cat{M})$, together with a DG $\K$-ring homomorphism 
+$f : A \to \opn{End}_{\cat{M}}(M)$.
+The morphisms in $\dcat{C}(A, \cat{M})$ are the morphism in 
+$\dcat{C}(\cat{M})$ that respect the action of $A$. 
+When $A = \K$ we are in the case 
+$\dcat{C}(A, \cat{M}) = \dcat{C}(\cat{M})$, and when 
+$\cat{M} = \cat{Mod} \K$ we are in the case 
+$\dcat{C}(A, \cat{M}) = \dcat{C}(A)$. 
+
+A morphism $\phi : M \to N$ in $\dcat{C}(A, \cat{M})$
+is called a {\em strict morphism} if it is a degree $0$ cocycle. 
+The {\em strict subcategory} $\dcat{C}_{\mrm{str}}(A, \cat{M})$
+is the subcategory of $\dcat{C}(A, \cat{M})$ on all the objects, 
+and its morphisms are the strict morphisms. The strict category is abelian. 
+
+It is important to mention that $\dcat{C}(A, \cat{M})$ has 
+more structure than just a DG category. Here the objects have DG structures 
+too, and there is the cohomology functor 
+$\opn{H} : \dcat{C}_{\mrm{str}}(A, \cat{M}) \to 
+\dcat{G}_{\mrm{str}}(\cat{M})$,
+where the latter is the category of graded objects in $\cat{M}$. 
+The cohomology functor determines the {\em quasi-isomorphisms}: these are the 
+morphisms $\psi$ in $\dcat{C}_{\mrm{str}}(A, \cat{M})$ s.t.\ 
+$\opn{H}(\psi)$ is an isomorphism. 
+The set of quasi-isomorphisms is denoted by 
+$\dcat{S}(A, \cat{M})$.  
+
+\medskip \noindent 
+{\bf Section \ref{sec:stand-tri}.} 
+We talk about the {\em translation functor} and {\em standard triangles}
+in $\dcat{C}(A, \cat{M})$.
+This section consists mostly of new material, some of it implicit in the paper 
+\cite{BoKa} on {\em pretriangulated DG categories}. 
+
+The translation $\opn{T}(M)$ of a DG module $M$ is the usual one (a shift by 
+$1$ in degree, and differential $-\d_M$). A calculation shows that 
+$\opn{T} : \dcat{C}(A, \cat{M}) \to \dcat{C}(A, \cat{M})$
+is a DG functor. We introduce the ``little t operator'', which is an invertible 
+degree $-1$ morphism 
+$\opn{t} : \opn{Id} \to \opn{T}$
+of DG functors from $\dcat{C}(A, \cat{M})$ to itself.
+The operator $\opn{t}$ facilitates many calculations.  
+
+A morphism $\phi : M \to N$ in $\dcat{C}_{\mrm{str}}(A, \cat{M})$
+gives rise to the standard triangle
+\[ M \xar{\phi} N \xar{ e_{\phi}} \opn{Cone}(\phi) \xar{p_{\phi}} \opn{T}(M) \]
+in $\dcat{C}_{\mrm{str}}(A, \cat{M})$.
+As a graded module the standard cone is 
+\[ \opn{Cone}(\phi) := N \oplus \opn{T}(M) =
+\bmat{N \\ \opn{T}(M)}  , \]
+written as a column module. The differential of $\opn{Cone}(\phi)$ is left 
+multiplication by the matrix of degree $1$ operators 
+\[ \d_{\mrm{Cone}} :=
+\bmat{\d_N & \phi \circ \opn{t}_M^{-1} \\[0.1em] 0 & \d_{\opn{T}(M)}} \]
+
+Consider a DG functor
+\begin{equation} \label{eqn:1310}
+F : \dcat{C}(A, \cat{M}) \to \dcat{C}(B, \cat{N}) , 
+\end{equation}
+where $B$ is another DG ring and  $\cat{N}$ is another abelian 
+category. In Theorem \ref{thm:1150} we show that there is a canonical 
+isomorphism
+\begin{equation} \label{eqn:1720}
+\tau_F : F \circ \opn{T} \iso \opn{T} \circ \, F
+\end{equation}
+of functors 
+$\dcat{C}_{\mrm{str}}(A, \cat{M}) \to \dcat{C}_{\mrm{str}}(B, \cat{N})$,
+called the {\em translation isomorphism}. The pair 
+$(F, \tau_F)$ is called a {\em T-additive functor}. 
+Then, in Theorem \ref{thm:1185}, 
+we prove that $F$ sends standard triangles in  
+$\dcat{C}_{\mrm{str}}(A, \cat{M})$
+to standard triangles in $\dcat{C}_{\mrm{str}}(B, \cat{N})$. 
+
+We end this section with several examples of DG functors.
+These examples are prototypes -- they can be easily extended to other setups. 
+ 
+
+ \medskip \noindent 
+{\bf Section \ref{sec:triangulated}.}
+We start with the theory of {\em triangulated categories} and 
+{\em triangulated functors}, mainly following \cite{RD}. Because the  
+octahedral axiom plays no role in our book, we give it minimal attention. 
+
+The {\em homotopy category} $\dcat{K}(A, \cat{M})$ has the same objects as 
+$\dcat{C}(A, \cat{M})$, and its morphisms are 
+\[ \opn{Hom}_{\dcat{K}(A, \cat{M})} (M, N) := 
+\opn{H}^0 \bigl( \opn{Hom}_{\dcat{C}(A, \cat{M})} (M, N) \bigr) . \]
+There is a functor 
+$\opn{P} : \dcat{C}_{\mrm{str}}(A, \cat{M}) \to \dcat{K}(A, \cat{M})$, 
+which is the identity on objects and surjective on morphisms. 
+
+In Subsection \ref{subsec:K-is-triang} we prove that the homotopy 
+category $\dcat{K}(A, \cat{M})$ is triangulated. Its {\em distinguished 
+triangles} are the triangles that are isomorphic to the images under the 
+functor $\opn{P}$ of the standard triangles in 
+$\dcat{C}_{\mrm{str}}(A, \cat{M})$. 
+
+Theorem \ref{thm:1265} says that given a DG 
+functor $F$ as in (\ref{eqn:1310}), with translation isomorphism $\tau_F$
+from (\ref{eqn:1720}), the T-additive functor 
+\begin{equation} \label{eqn:5012}
+(F, \tau_F) : \dcat{K}(A, \cat{M}) \to \dcat{K}(B, \cat{N})
+\end{equation}
+is triangulated. This seems to be a new result, unifying well-known yet 
+disparate examples. 
+
+In Subsection \ref{subsec:opp-hom-triang} we put a triangulated structure on 
+the opposite homotopy category 
+$\dcat{K}(A, \cat{M})^{\mrm{op}}$.
+We prove that a contravariant DG functor $F$, like (\ref{eqn:1310}) but
+with source $\dcat{C}(A, \cat{M})^{\mrm{op}}$, induces a 
+contravariant triangulated functor $(F, \tau_F)$, like (\ref{eqn:5012}) but
+with source $\dcat{K}(A, \cat{M})^{\mrm{op}}$.
+
+
+
+\medskip \noindent 
+{\bf Section \ref{sec:loc-cats}.}
+In this section we take a close look at {\em localization of categories}. 
+We give a detailed proof of the theorem on {\em Ore localization} (also known 
+as noncommutative localization). We then prove that the localization 
+$\cat{K}_{\cat{S}}$ of a linear category $\cat{K}$ at a denominator set 
+$\cat{S}$ is a linear category too, and the localization functor 
+$\opn{Q} : \cat{K} \to \cat{K}_{\cat{S}}$ is linear. 
+
+
+\medskip \noindent 
+{\bf Section \ref{sec:der-cat}.}
+We begin by proving that if $\cat{K}$ is a triangulated category and 
+$\cat{S} \sub \cat{K}$ is a {\em denominator set of cohomological origin}, then 
+the localized category $\cat{K}_{\cat{S}}$ is triangulated, 
+and the localization functor 
+$\opn{Q} : \cat{K} \to \cat{K}_{\cat{S}}$ is triangulated.
+
+In the case of the triangulated category $\dcat{K}(A, \cat{M})$, and the 
+quasi-iso\-morph\-isms $\dcat{S}(A, \cat{M})$ in it, we get the {\em derived 
+category}
+\begin{equation} \label{eqn:5013}
+\dcat{D}(A, \cat{M}) := \dcat{K}(A, \cat{M})_{\dcat{S}(A, \cat{M})} ,
+\end{equation}
+and the triangulated localization functor 
+\begin{equation} \label{eqn:5014}
+\opn{Q} : \dcat{K}(A, \cat{M}) \to \dcat{D}(A, \cat{M}) . 
+\end{equation}
+
+We look at the full subcategory $\dcat{K}^{\star}(A, \cat{M})$
+of $\dcat{K}(A, \cat{M})$ corresponding to a boundedness condition 
+$\star \in \{ +, -, \mrm{b} \}$. 
+We prove that when the DG ring $A$ is nonpositive, the localization
+$\dcat{D}^{\star}(A, \cat{M})$ of $\dcat{K}^{\star}(A, \cat{M})$
+with respect to the quasi-iso\-morphisms in it embeds
+fully faithfully in $\dcat{D}(A, \cat{M})$. 
+We also prove that the obvious functor 
+$\cat{M} \to \dcat{D}(\cat{M})$ is fully faithful.
+
+The section ends with a study of the triangulated structure of the opposite 
+derived category $\dcat{D}(A, \cat{M})^{\mrm{op}}$.
+
+\medskip \noindent 
+{\bf Section \ref{sec:der-funcs}.}
+In this section we talk about {\em derived functors}. To make the definitions 
+of derived functors precise, we introduce some {\em $2$-categorical 
+notation} here (in Subsections \ref{subsec:2-cat-not}-\ref{subsec:fun-cats}).
+
+In Subsection \ref{subsec:abstr-der-funs} we look at {\em abstract derived 
+functors}. Namely, $\cat{K}$ and $\cat{E}$ are categories (without any extra 
+structure), $F : \cat{K} \to \cat{E}$ is a functor, and 
+$\cat{S} \sub \cat{K}$ is a multiplicatively closed set of morphisms. 
+The localization of $\cat{K}$ w.r.t.\ $\cat{S}$ is 
+$\opn{Q} : \cat{K} \to \cat{K}_{\cat{S}}$. 
+A {\em right derived functor of $F$ w.r.t.\ $\cat{S}$} is a pair 
+$(\mrm{R} F ,\eta^{\mrm{R}})$, where 
+$\mrm{R} F : \cat{K}_{\cat{S}} \to \cat{E}$
+is a functor, and 
+$\eta^{\mrm{R}} : F \to \mrm{R} F \circ \opn{Q}$
+is a morphism of triangulated functors. The pair $(\mrm{R} F ,\eta^{\mrm{R}})$ 
+has a universal property (it is initial among all such pairs), making it unique 
+up to a unique isomorphism. The  {\em left derived functor}
+$(\mrm{L} F ,\eta^{\mrm{L}})$ is defined similarly.
+
+We provide a general existence theorem for derived functors. For the right 
+derived functor $\mrm{R} F$, existence is proved when $\cat{S}$ is a left 
+denominator set, and there exists a full 
+subcategory $\cat{J} \sub \cat{K}$ which is $F$-acyclic and 
+right-resolves all objects of $\cat{K}$.  Likewise, for the left derived functor
+$\mrm{L} F$ we prove existence when $\cat{S}$ is a right denominator set, and 
+there exists a full subcategory $\cat{P} \sub \cat{K}$ which is $F$-acyclic and 
+left-resolves all objects of $\cat{K}$. 
+
+In Subsection \ref{subsec:tri-der-funs} we specialize to {\em triangulated 
+derived functors}. Here $\cat{K}$ and $\cat{E}$ are triangulated categories, 
+$F : \cat{K} \to \cat{E}$ is a triangulated functor, and 
+$\cat{S} \sub \cat{K}$ is a multiplicatively closed set of cohomological 
+origin (i.e.\ $\cat{S}$ consists of the quasi-isomorphisms w.r.t.\ 
+some cohomological functor $H : \cat{K} \to \cat{M}$). The right and left 
+derived functors 
+$\mrm{R} F, \mrm{L} F : \cat{K}_{\cat{S}} \to \cat{E}$
+are defined like in the abstract setting, and their uniqueness 
+is also proved the same way. Existence requires resolving subcategories 
+$\cat{J}, \cat{P} \sub \cat{K}$ as above, that are also full triangulated 
+subcategories. 
+
+The section is concluded with a discussion of {\em contravariant triangulated 
+derived functors}. 
+
+\medskip \noindent 
+{\bf Section \ref{sec:DG-tri-bifun}.}
+This section is devoted to  {\em DG and triangulated bifunctors}. 
+We prove that a DG bifunctor 
+\[ F : \dcat{C}(A_1, \cat{M}_1) \times \dcat{C}(A_2, \cat{M}_2)
+\to \dcat{C}(B, \cat{N}) \]
+induces a triangulated bifunctor 
+\[ (F, \tau_1, \tau_2) :  \dcat{K}(A_1, \cat{M}_1) \times 
+\dcat{K}(A_2, \cat{M}_2) \to \dcat{K}(B, \cat{N}) . \]
+
+Then we define left and right derived bifunctors, and prove their uniqueness 
+and existence, under suitable conditions. Bifunctors that are contravariant in 
+one or two of the arguments are also studied. 
+
+
+\medskip \noindent 
+{\bf Section \ref{sec:resol}.}
+Here we define {\em K-injective} and {\em K-projective} objects in 
+$\dcat{K}(A, \cat{M})$, and also  {\em K-flat} objects in 
+$\dcat{K}(A)$. These constitute full triangulated subcategories of
+$\dcat{K}(A, \cat{M})$, and we refer to them as {\em resolving subcategories}.
+The category $\dcat{K}^{\star}(A, \cat{M})_{\mrm{inj}}$ of K-injectives in 
+$\dcat{K}^{\star}(A, \cat{M})$, for a boundedness condition $\star$, 
+plays the role of the category $\cat{J}$ in Section \ref{sec:der-funcs} 
+above, and the category of K-projectives 
+$\dcat{K}^{\star}(A, \cat{M})_{\mrm{prj}}$ 
+plays the role of the category $\cat{P}$ there.
+The K-flat DG modules are acyclic for the tensor functor. 
+
+Furthermore, we prove that the functors 
+$\opn{Q} : \dcat{K}^{\star}(A, \cat{M})_{\mrm{inj}} \to 
+\dcat{D}^{\star}(A, \cat{M})$
+and 
+$\opn{Q} : \dcat{K}^{\star}(A, \cat{M})_{\mrm{prj}} \to 
+\dcat{D}^{\star}(A, \cat{M})$,
+see equation (\ref{eqn:5014}), are fully faithful. 
+
+
+\medskip \noindent 
+{\bf Section \ref{sec:exist-resol}.}
+In this section we prove {\em existence} of K-injective, K-projective and 
+K-flat resolutions in several important cases of 
+$\dcat{C}^{\star}(A, \cat{M})$~:
+\begin{itemize}
+\item K-projective resolutions in $\dcat{C}^{-}(\cat{M})$, where $\cat{M}$ is 
+an abelian category with enough projectives. This is classical (i.e.\ it is 
+already in \cite{RD}).  
+
+\item K-projective resolutions in $\dcat{C}^{}(A)$, where $A$ is any DG ring. 
+This includes the category of unbounded complexes of modules over a ring $A$. 
+
+\item K-injective resolutions in $\dcat{C}^{+}(\cat{M})$, where $\cat{M}$ is 
+an abelian category with enough injectives. This is classical too. 
+
+\item K-injective resolutions in $\dcat{C}^{}(A)$, where $A$ is any DG ring. 
+\end{itemize}
+Our proofs are explicit, and we use limits of complexes cautiously (since 
+this is known to be a pitfall). We follow several sources: \cite{RD}, 
+\cite{Spa}, \cite{Kel1}, \cite{KaSc1} and private notes provided by B. Keller.
+
+
+\medskip \noindent 
+{\bf Section \ref{sec:adj-equ-cohdim}.}
+This section is quite varied. 
+In Subsections \ref{subsec:RHom}-\ref{subsec:LTors} there is
+a detailed look at the derived bifunctors 
+$\opn{RHom}(-,-)$ and $(- \ot^{\mrm{L}} -)$. 
+
+Next, in Subsection \ref{subsec:way-out}, we study {\em cohomological 
+dimensions of functors}. This is a refinement of the notion of {\em way-out 
+functor} from \cite{RD}. It is used in Subsection \ref{subsec:thm-funcs-fin} to 
+prove a few theorems about triangulated functors, such as a sufficient condition 
+for a morphism $\ze : F \to G$ of triangulated functors to be an isomorphism. 
+
+In Subsections \ref{subsec:adjs-NC}-\ref{subsec:DGR-quisoms} we study 
+several adjunction formulas that involve 
+the bifunctors $\opn{RHom}(-,-)$ and $(- \ot^{\mrm{L}} -)$.
+We define {\em derived forward adjunction} and  
+{\em derived backward adjunction}. These adjunction formulas hold for 
+arbitrary DG rings (without any commutativity or boundedness conditions). 
+We prove that if $A \to B$ is a {\em quasi-isomorphism of DG rings}, then 
+the restriction functor 
+$\opn{Rest}_{B / A} : \dcat{D}(B) \to \dcat{D}(A)$
+is an equivalence, and it respects the derived bifunctors 
+$\opn{RHom}(-,-)$ and $(- \ot^{\mrm{L}} -)$.
+
+Resolutions of DG rings are important in several contexts. In Subsection 
+\ref{subsec:DG-ring-res} we provide a full proof that given a 
+DG $\K$-ring $A$, there exists a {\em noncommutative semi-free DG ring 
+resolution} $\til{A} \to A$ over $\K$.
+
+In Subsection \ref{subsec:der-tens-eval} there is a very general 
+theorem providing sufficient conditions for the {\em derived tensor-evaluation 
+morphism}
+\begin{equation} \label{eqn:4610}
+\opn{ev}^{\mrm{R, L}}_{L, M, N} :
+\opn{RHom}_{A}(L, M) \ot^{\mrm{L}}_{B} N \to 
+\opn{RHom}_{A}(L, M \ot^{\mrm{L}}_{B} N)
+\end{equation}
+in $\dcat{D}(\K)$ to be an isomorphism. Here $A$ and $B$ are DG $\K$-rings, 
+$L \in \dcat{D}(A)$, $M \in \dcat{D}(A \ot_{\K} B^{\mrm{op}})$ and 
+$N \in \dcat{D}(B)$.
+
+Lastly, in Subsection \ref{subsec:adjs-comm} we present some 
+adjunction formulas that pertain only to weakly commutative DG rings. 
+
+
+
+
+\medskip \noindent 
+{\bf Section \ref{sec:dual-cplx-comm-rng}.}
+This section starts (in the first three subsections) by retelling the material 
+in \cite{RD} on {\em dualizing complexes} and {\em residue complexes} over 
+noetherian commutative rings.
+
+A complex $R \in \dcat{D}(A)$ is called {\em dualizing} if it has finitely 
+generated cohomology modules, finite injective dimension, and the {\em derived 
+Morita property}, which says that the {\em derived homothety morphism}
+\begin{equation} \label{eqn:4670}
+\opn{hm}^{\mrm{R}}_{R} : A \to \opn{RHom}_{A}(R, R)
+\end{equation}
+in $\dcat{D}(A)$ is an isomorphism. 
+(This is a variant of the derived Hom-evaluation morphism 
+$\opn{ev}^{\mrm{R}}_M$ from equation (\ref{eqn:3248}), with 
+$M = A$.)
+
+To a dualizing complex $R$ we associate the {\em duality functor}
+\[ D := \opn{RHom}_{A}(-, R) : \dcat{D}(A)^{\mrm{op}}
+\to \dcat{D}(A) . \]
+The duality functor induces an equivalence of triangulated categories
+$D : \dcat{D}_{\mrm{f}}(A)^{\mrm{op}} \lb \to \dcat{D}_{\mrm{f}}(A)$.
+Here $\dcat{D}_{\mrm{f}}(A)$ is the full subcategory of $\dcat{D}(A)$
+on the complexes with finitely generated cohomology modules. 
+
+A residue complex is a dualizing complex 
+$\KK$ that consists of injective modules of the correct multiplicity in each 
+degree. If $R = \KK$ is a residue complex, then the associated duality functor 
+is $D = \opn{Hom}_{A}(-, \KK)$.
+
+We prove uniqueness of dualizing complexes over a noetherian commutative ring 
+$A$ (up to the obvious twists), and existence when $A$ is {\em essentially 
+finite type over a regular noetherian ring} $\K$. In this book the adjective 
+``regular noetherian'' includes the condition that $\K$ has finite Krull 
+dimension. 
+
+There is a stronger uniqueness property for residue complexes. 
+Residue complexes exist whenever dualizing complexes exist: given a dualizing 
+complex $R$, its minimal injective resolution $\KK$ is a residue complex. 
+To understand residue complexes we review the {\em Matlis classification of 
+injective $A$-modules}.  
+
+In remarks we provide sketches of Matlis Duality, Local Duality and the 
+interpretation of Cohen-Macaulay complexes as perverse modules.  
+
+In the last two subsections we talk about {\em Van den Bergh rigidity}.
+Let $\K$ be a regular noetherian ring, and let $A$ be a flat essentially finite 
+type (FEFT) $\K$-ring. (The flatness condition is just to simplify matters; see 
+Remark  \ref{rem:2285}.)  Given a complex $M \in \dcat{D}(A)$, its {\em square 
+relative to $\K$} is the complex
+\[ \opn{Sq}_{A / \K}(M) := 
+\opn{RHom}_{A \ot_{\K} A}(A, M \ot^{\mrm{L}}_{\K} M) \in \dcat{D}(A) . \]
+We prove that $\opn{Sq}_{A / \K}$ is a {\em quadratic functor}. 
+A {\em rigid complex over $A$ relative to $\K$} is a pair 
+$(M, \rho)$, where $M \in \dcat{D}(A)$ and 
+$\rho : M \iso \opn{Sq}_{A / \K}(M)$
+is an isomorphism in $\dcat{D}(A)$, called a {\em rigidifying isomorphism}.
+Given another rigid complex $(N, \si)$, a {\em rigid morphism} between 
+them is a morphism $\phi : M \to N$ in $\dcat{D}(A)$ such that 
+the diagram 
+\begin{equation} \label{eqn:5015}
+\UseTips \xymatrix @C=8ex @R=6ex {
+M
+\ar[d]_{\phi}
+\ar[r]^(0.4){\rho}
+&
+\opn{Sq}_{A / \K}(M)
+\ar[d]^{\opn{Sq}_{A / \K}(\phi)}
+\\
+N
+\ar[r]^(0.4){\si}
+&
+\opn{Sq}_{A / \K}(N)
+}
+\end{equation}
+in $\dcat{D}(A)$ is commutative. 
+We prove that if $(M, \rho)$ is a rigid complex such that $M$ has the derived 
+Morita property, then the only rigid automorphism of $(M, \rho)$ is the 
+identity. 
+
+A {\em rigid dualizing complex over $A$ relative to $\K$} is a rigid complex 
+$(R, \rho)$ such that $R$ is a dualizing complex. We prove that if $A$ has a 
+rigid dualizing complex, then it is unique up to a unique rigid isomorphism.
+Existence of a rigid dualizing complex is harder to prove, and we just give a 
+reference to it. 
+
+A {\em rigid residue complex over $A$ relative to $\K$} is a rigid complex 
+$(\KK, \rho)$ such that $\KK$ is a residue complex. These always exist, 
+and they are unique in the following very strong sense: if $(\KK', \rho')$ 
+is another rigid residue complex, then there is a 
+unique isomorphism $\phi : \KK \iso \KK'$ in $\dcat{C}_{\mrm{str}}(A)$, such 
+that $\opn{Q}(\phi)$ is a rigid isomorphism in $\dcat{D}(A)$.
+
+We end this section 
+with two remarks (Remark \ref{rem:4192} and \ref{rem:4193}) 
+that explain how rigid residue complexes allow a new approach to {\em residues 
+and duality on schemes and Deligne-Mumford stacks}, with references. 
+
+
+\medskip \noindent 
+{\bf Section \ref{sec:perf-tilt-NC}.}
+We begin (in Subsection \ref{subsec:perf-dgmods}) with a systematic 
+study of {\em algebraically perfect DG modules} over a NC DG ring $A$. 
+The abbreviation ``NC'' stands for ``noncommutative''. By 
+definition, a DG module $L \in \dcat{D}(A)$ is called algebraically perfect if 
+it belongs to the saturated full triangulated subcategory of $\dcat{D}(A)$ 
+generated by the DG module $A$. We give several characterizations of 
+algebraically perfect DG modules; one of them is that $L$ is a {\em compact 
+object} of $\dcat{D}(A)$. When $A$ is a ring, we prove that $L$ is  
+algebraically perfect if and only if it is isomorphic, in $\dcat{D}(A)$, to a 
+bounded complex of finitely generated projective $A$-modules. 
+
+In Subsection \ref{subsec:der-morita} we prove the following {\em 
+Derived Morita Theorem}, Theorem \ref{thm:3430}:
+Let $\cat{E} \sub \dcat{D}(A)$ be a full triangulated subcategory which is 
+closed under infinite direct sums, let $P$ be a compact generator of 
+$\cat{E}$ which is either K-projective or K-injective, and let
+$B := \opn{End}_{A}(P)^{\mrm{op}}$. Then the functor 
+$\opn{RHom}_{A}(P, -) : \cat{E} \to \dcat{D}(B)$
+is an equivalence of triangulated categories, with quasi-inverse 
+$P \ot^{\mrm{L}}_{B} (-)$. 
+
+From Subsection \ref{subsec:flat-dg-rng} to the end of this section 
+we assume that the DG rings in question are K-flat over the base ring $\K$. 
+Note that every DG $\K$-ring $A$ admits a NC semi-free DG ring resolution 
+$\til{A} \to A$. The DG ring $\til{A}$ is K-flat over $\K$, and the 
+restriction functor $\dcat{D}(A) \to \dcat{D}(\til{A})$ is an equivalence of 
+triangulated categories; so the flatness restriction can be  
+circumvented. Subsection \ref{subsec:flat-dg-rng} contains some basic 
+constructions of derived functors between categories of DG bimodules (that 
+require the flatness over the base ring). 
+
+Next, in Subsection \ref{subsec:tilting}, we define {\em tilting DG 
+bimodules}. A DG bimodule $T \in \dcat{D}(B \ot_{\K} A^{\mrm{op}})$ is called
+a tilting DG $B$-$A$-bimodule if there exists some 
+$S \in \lb \dcat{D}(A \ot_{\K} B^{\mrm{op}})$ 
+with isomorphisms $S \ot^{\mrm{L}}_{B} T \cong A$ in 
+$\dcat{D}(A^{\mrm{en}})$ and $T \ot^{\mrm{L}}_{A} S \cong B$ in 
+$\dcat{D}(B^{\mrm{en}})$. Here 
+$A^{\mrm{en}} := A \ot_{\K} A^{\mrm{op}}$ is the {\em enveloping DG ring of 
+$A$}, and likewise $B^{\mrm{en}}$. Among other results, we prove that 
+$T \in \dcat{D}(B \ot_{\K} A^{\mrm{op}})$
+is tilting if and only if $T$ is a compact generator on the $B$ side
+(i.e.\ it is a compact generator of $ \dcat{D}(B)$), and it 
+has the {\em NC derived Morita property} on the $B$ side, namely the canonical
+morphism $A \to \opn{RHom}_{B}(T, T)$
+in $\dcat{D}(A^{\mrm{en}})$ is an isomorphism.
+We also prove the {\em Rickard-Keller Theorem}, asserting that if $A$ and $B$ 
+are rings, and there exists a $\K$-linear equivalence of 
+triangulated categories
+$\dcat{D}(A) \to \dcat{D}(B)$, then there exists a tilting DG $B$-$A$-bimodule. 
+
+Lastly, in Subsection \ref{subsec:tilting-rings}, we introduce the {\em NC
+derived Picard group} $\opn{DPic}_{\K}(A)$ of a flat $\K$-ring $A$. The 
+structure of this group is calculated when $A$ is either local or commutative.  
+
+
+\medskip \noindent 
+{\bf Section \ref{sec:alg-gra-rings}.}
+This section, as well as Sections \ref{sec:der-tors-conn} and \ref{sec:BDC}, 
+are on {\em algebraically graded rings}, which is our name for 
+$\Z$-graded rings that have lower indices and do not involve the Koszul sign 
+rule.  (This is in contrast with the cohomologically graded rings mentioned 
+above, that underly DG rings). Simply put, these are the usual graded rings 
+that one encounters in textbooks on commutative and noncommutative algebra. 
+With few exceptions, the base ring $\K$ in the four final sections of the book 
+is a field. 
+
+Let $A = \boplus_{i \in \Z} A_i$ be an algebraically graded central $\K$-ring. 
+In Section \ref{sec:alg-gra-rings} we define the category 
+of algebraically graded $A$-modules $\dcat{M}(A, \mrm{gr})$. 
+Its objects are the algebraically graded (left) $A$-modules
+$M = \boplus_{i \in \Z} M_i$, and the homomorphisms are the degree $0$
+$A$-linear homomorphisms. It is a $\K$-linear abelian category. 
+We talk about finiteness in the algebraically graded context, and about 
+various kinds of homological properties, such as {\em 
+graded-injectivity}. 
+
+The category of complexes with entries in $\dcat{M}(A, \mrm{gr})$ is the DG 
+category \lb 
+$\dcat{C}_{}(A, \mrm{gr}) := 
+\dcat{C}_{} \bigl( \dcat{M}(A, \mrm{gr}) \bigr)$.
+Its objects are bigraded: a complex 
+$M \in \dcat{C}_{}(A, \mrm{gr})$ has a direct sum decomposition 
+$M = \boplus_{i, j} M^i_j$ into $\K$-modules. Here $i$ is the cohomological 
+degree and $j$ is the algebraic degree. The differential goes like this:
+$\d_M : M^i_j \to M^{i + 1}_j$. 
+
+Just like for any other abelian category, we have the derived category 
+$\dcat{D}_{}(A, \mrm{gr}) := 
+\dcat{D}_{} \bigl( \dcat{M}(A, \mrm{gr}) \bigr)$.
+This is a triangulated category. We present (quickly) the algebraically graded 
+variants of K-projective resolutions etc., and the relevant derived functors.
+
+Special emphasis is given to {\em connected graded rings}. An algebraically 
+graded ring $A$ is called connected if $A = \boplus_{i \in \N} A_i$, 
+$A_0 = \K$, and each $A_i$ is a finite $\K$-module.
+In a connected graded ring $A$ there is the {\em augmentation ideal} 
+$\m := \boplus_{i > 0} A_i$. We view $A / \m \cong \K$ as a graded 
+$A$-bimodule. 
+
+Among the connected graded rings we single out the {\em Artin-Schelter regular 
+graded rings}. A noetherian connected graded ring $A$ is called AS regular if 
+it has finite graded global dimension, and if there are isomorphisms
+\begin{equation} \label{eqn:4621}
+\opn{RHom}_{A}(\K, A) \cong \opn{RHom}_{A^{\mrm{op}}}(\K, A) \cong
+\K(l)[-n]
+\end{equation}
+in $\dcat{D}(\K)$ for some integers $l$ and $n$. One of the results is that if 
+$A$ is a noetherian connected graded ring, $a \in A$ is a regular central 
+homogeneous element of positive degree, and the ring $B := A / (a)$ is AS 
+regular, then $A$ is also AS regular. 
+
+
+\medskip \noindent 
+{\bf Section \ref{sec:der-tors-conn}.}
+Let $A$ be a connected graded ring over the base field $\K$, with augmentation 
+ideal $\m$. In this section we study {\em derived 
+$\m$-torsion}, both for complexes of graded $A$-modules and for complexes of 
+graded bimodules. By this we mean that, taking a second graded ring $B$, we 
+look at the triangulated functor 
+\[ \mrm{R} \Ga_{\m} : \dcat{D}(A \ot_{\K} B^{\mrm{op}}, \mrm{gr}) \to
+\dcat{D}(A \ot_{\K} B^{\mrm{op}}, \mrm{gr}) .  \]
+
+One of the main results (Theorem \ref{thm:3750}) says that if $A$ is 
+a left noetherian connected graded ring, and if the functor 
+$\mrm{R} \Ga_{\m}$ has finite cohomological dimension, then there is a 
+functorial isomorphism 
+\begin{equation} \label{eqn:5016}
+\opn{ev}^{\mrm{R, L}}_{\m, M} : 
+P \ot^{\mrm{L}}_{A} M \iso \mrm{R} \Ga_{\m}(M)  
+\end{equation}
+for $M \in \dcat{D}(A \ot_{\K} B^{\mrm{op}}, \mrm{gr})$,
+where
+\begin{equation} \label{eqn:4620}
+P := \mrm{R} \Ga_{\m}(A) \in \dcat{D}(A^{\mrm{en}}, \mrm{gr}) . 
+\end{equation}
+We also prove the {\em NC MGM Equivalence} in the connected graded context (see 
+Theorem \ref{thm:3792}).
+
+The {\em $\chi$ condition} of M. Artin and J.J. Zhang is introduced in 
+Subsection \ref{subsec:sym-der-tor}. We study how this condition 
+interacts with derived torsion.
+To a complex of graded $A$-bimodules, namely an object of 
+$\dcat{D}(A^{\mrm{en}}, \mrm{gr})$, we can also apply derived $\m$-torsion from 
+the right side, thus obtaining a complex 
+$\mrm{R} \Ga_{\m^{\mrm{op}}}(M) \in \dcat{D}(A^{\mrm{en}}, \mrm{gr})$. 
+Theorem \ref{thm:4051} says that if $A$ is a 
+noetherian connected graded ring of finite local cohomological dimension (i.e.\ 
+both functors $\mrm{R} \Ga_{\m}$ and $\mrm{R} \Ga_{\m^{\mrm{op}}}$ have finite 
+cohomological dimension), that satisfies the $\chi$ condition, then there is a 
+functorial isomorphism 
+\begin{equation} \label{eqn:5017}
+\ep_M : \mrm{R} \Ga_{\m}(M) \iso \mrm{R} \Ga_{\m^{\mrm{op}}}(M) 
+\end{equation}
+in $\dcat{D}(A^{\mrm{en}}, \mrm{gr})$ for all complexes 
+$M \in \dcat{D}(A^{\mrm{en}}, \mrm{gr})$ whose cohomologies 
+are finite $A$-modules on both sides. We call this phenomenon {\em symmetric 
+derived $\m$-torsion}. 
+
+
+\medskip \noindent 
+{\bf Section \ref{sec:BDC}.}
+The focus of this section is on {\em balanced NC dualizing complexes}, 
+following \cite{Ye1}.
+Let $A$ be a noetherian connected graded ring over the base field $\K$. A 
+complex $R \in \dcat{D}^{\mrm{b}}(A^{\mrm{en}}, \mrm{gr})$
+is called a {\em graded NC dualizing complex} if it satisfies these three 
+conditions:
+\begin{enumerate}
+\rmitem{i} The bimodules $\opn{H}^q(R)$ are finitely generated 
+$A$-modules on both sides.
+
+\rmitem{ii} The complex $R$ has finite graded injective 
+dimension on both sides.
+
+\rmitem{iii} The complex $R$ has the NC derived Morita property on both 
+sides; namely the canonical morphisms 
+$A \to \opn{RHom}_{A}(R, R)$ and 
+$A \to \opn{RHom}_{A^{\mrm{op}}}(R, R)$ 
+in $\dcat{D}(A^{\mrm{en}}, \mrm{gr})$ are isomorphisms. 
+\end{enumerate}
+
+A balanced NC dualizing complex over $A$ is a pair $(R, \be)$,
+where $R$ is a graded NC dualizing complex over $A$ with symmetric derived 
+$\m$-torsion, and 
+$\be : \mrm{R} \Ga_{\m}(R) \iso A^*$
+is an isomorphism in $\dcat{D}(A^{\mrm{en}}, \mrm{gr})$, called a {\em 
+balancing isomorphism}. Here and later we write 
+$M^* := \opn{Hom}_{\K}(M, \K)$, the graded $\K$-linear dual of a graded module 
+$M$. The graded bimodule $A^*$ is a graded-injective $A$-module on both sides. 
+
+To a balanced dualizing complex $R$ we associate the duality functors 
+\[ D_A := \opn{RHom}_{A}(-, R) : \dcat{D}(A, \mrm{gr})^{\mrm{op}}
+\to \dcat{D}(A^{\mrm{op}}, \mrm{gr}) \]
+and 
+\[ D_{A^{\mrm{op}}} := \opn{RHom}_{A^{\mrm{op}}}(-, R) : 
+\dcat{D}(A^{\mrm{op}}, \mrm{gr})^{\mrm{op}}
+\to \dcat{D}(A, \mrm{gr}) . \]
+When restricted to the subcategories of complexes with finitely generated 
+cohomology modules, this gives an equivalence 
+\begin{equation} \label{eqn:5018}
+D_A :  \dcat{D}_{\mrm{f}}(A, \mrm{gr})^{\mrm{op}}
+\to \dcat{D}_{\mrm{f}}(A^{\mrm{op}}, \mrm{gr})
+\end{equation}
+with quasi-inverse $D_{A^{\mrm{op}}}$. 
+
+A balanced dualizing complex $(R, \be)$ is unique up to a unique isomorphism 
+(Theorem \ref{thm:3710}), and it satisfies the NC Local Duality Theorem 
+\ref{thm:4616}.  Results of Yekutieli, Zhang and M. Van den Bergh say that 
+a noetherian connected graded ring $A$ has a balanced dualizing complex if and 
+only if $A$ satisfies the $\chi$ condition and has finite local cohomological 
+dimension. The formula for the balanced dualizing complex is 
+$R := P^*$, where $P$ is the complex from (\ref{eqn:4620}). 
+See Corollary \ref{cor:4585}.
+
+If $A$ is an AS regular (or more generally AS Gorenstein) graded ring, then it 
+has a balanced dualizing complex $R = A(\phi, -l)[n]$. Here $l$ and $n$ are the 
+integers from formula (\ref{eqn:4621}), and $\phi$ is a graded ring 
+automorphism 
+of $A$. See Corollary \ref{cor:3780}. 
+
+
+
+\medskip \noindent 
+{\bf Section \ref{sec:rigid-DC-NC}.}
+The final section of the book deals with {\em NC rigid dualizing complexes}. 
+Let $A$ be a NC central $\K$-ring (where $\K$ is the base field). A {\em NC 
+dualizing complex} over $A$ is a complex 
+$R \in \dcat{D}^{\mrm{b}}(A^{\mrm{en}})$
+whose cohomology bimodules are finitely generated on both sides; it has finite 
+injective dimension on both sides; and it has the NC derived Morita property on 
+both sides. This is a modification of the graded definition given above.
+
+Let $M \in \dcat{D}(A^{\mrm{en}})$. The {\em NC square} of $M$
+is the complex 
+\begin{equation} \label{eqn:4660}
+\opn{Sq}_{A / \K}(M) := \opn{RHom}_{A^{\mrm{en}}}(A, R \ot_{\K} R) \in 
+\dcat{D}(A^{\mrm{en}}) .
+\end{equation}
+This formula is ambiguous, because  
+the complex of $\K$-modules $R \ot_{\K} R$ has on it four distinct 
+commuting actions by the ring $A$; but formula (\ref{eqn:4660}) is made precise 
+at the beginning of Subsection \ref{subsec:RNCDC-uniq}. 
+A {\em rigidifying isomorphism} for $M$ is an isomorphism 
+$\rho : M \iso  \opn{Sq}_{A / \K}(M)$
+in $\dcat{D}(A^{\mrm{en}})$, and the pair $(M, \rho)$ is a {\em NC rigid 
+complex}. A NC rigid dualizing complex is a NC rigid complex $(R, \rho)$ 
+such that $R$ is a NC dualizing complex. 
+
+The definition of NC rigid dualizing complex was introduced by Van den Bergh in 
+his paper \cite{VdB}. He also proved that a rigid NC dualizing complex is 
+unique up to isomorphism. Later, in \cite{Ye4}, it was proved that this 
+isomorphism is itself unique. We reproduce these results in Subsection 
+\ref{subsec:RNCDC-uniq}.  
+
+We also give Van den Bergh's theorem on the existence of 
+NC rigid dualizing complexes from \cite{VdB}, with a full proof. 
+This is Theorem \ref{thm:4396}. Here is what it says: 
+Suppose the ring $A$ admits a filtration 
+$F = \{ F_j(A) \}_{j \geq -1}$
+such that the associated graded ring $\opn{Gr}^F(A)$ 
+is noetherian connected and has a balanced dualizing complex. Then $A$ has a 
+rigid dualizing complex. 
+
+An important special case of the Van den Bergh Existence Theorem is  
+Theorem \ref{thm:4490}. It says that if the graded ring  $\opn{Gr}^F(A)$ from 
+the previous paragraph is AS regular, then the rigid NC dualizing complex of 
+$A$ is $R = A(\mu)[n]$,
+where $\mu$ is a $\K$-ring automorphism of $A$ that respects the filtration 
+$F$, and $n$ is an integer. The automorphism $\nu := \mu^{-1}$ is called the 
+{\em Nakayama automorphism} of $A$. In modern terminology the ring $A$ is 
+called an {\em $n$-dimensional twisted Calabi-Yau ring}. 
+
+Finally we state and prove the {\em Van den Bergh Duality Theorem} for 
+Hoch\-schild (co)homology, and give an example of a {\em Calabi-Yau category} 
+of fractional dimension. 
+
+
+
+\mysubsection{What Is Not in the Book}
+A very important aspect of the theory of derived categories is {\em geometric}. 
+Unfortunately our book does not discuss this aspect (except in passing).
+We had hoped to include the geometric aspect, but as the 
+book grew longer this became impractical. 
+
+Geometric derived categories come in two kinds. The first kind is the derived 
+category $\dcat{D}(X) = \dcat{D}(\cat{Mod} \OO_X)$, 
+where $(X, \OO_X)$ is a scheme, and $\cat{Mod} \OO_X$ is the abelian category 
+of sheaves of $\OO_X$-modules. This kind of derived category is the subject of 
+the original book \cite{RD}. For recent treatments see \cite{Huy}, 
+\cite{SP} or \cite{Ols}. The last two references also treat derived 
+category $\dcat{D}(\mfrak{X})$ of sheaves of modules on an algebraic stack 
+$\mfrak{X}$. We address this aspect of derived categories in Remarks 
+\ref{rem:4675}, \ref{rem:4676}, \ref{rem:4192} and \ref{rem:4193}. 
+
+The second kind of geometric derived category is 
+$\dcat{D}(\K_X) = \dcat{D}(\cat{Mod} \K_X)$, where $X$ is a topological space
+(or a site, such as the \'etale site of a scheme), $\K_X$ is the constant 
+sheaf of rings $\K$ on $X$, and 
+$\cat{Mod} \K_X$ is the abelian category of sheaves of $\K_X$-modules on $X$.
+For this kind of derived categories we recommend the book \cite{KaSc1}. 
+
+One should also mention, in this context, the new and important theories of 
+{\em derived algebraic geometry} (DAG), in which schemes are replaced by
+{\em derived stacks}. These new geometric objects carry derived categories of 
+modules. See the references \cite{Lur}, \cite{To2} and \cite{nLab}, 
+Remark \ref{rem:4960} and Example \ref{exa:4205}.
+The {\em commutative DG rings} that we discuss briefly in Subsection 
+\ref{subsec:DG-rng-mod} are {\em affine derived schemes} from the point of view 
+of DAG. 
+ 
+
+\mysubsection{Prerequisites and Recommended Bibliography}
+
+In preparing the book, the assumptions were that the reader is already familiar 
+with these topics:
+\begin{itemize}
+\item Categories and functors, and classical homological 
+algebra, namely the derived functors $\mrm{R}^q F$ and $\mrm{L}_q F$
+of an additive functor $F : \cat{M} \to \cat{N}$ between abelian  
+categories. For these topics we recommend the books 
+\cite{Mac1}, \cite{HiSt} and \cite{Rot}. 
+
+\item Commutative and noncommutative ring theory, e.g.\ from the books
+\cite{Eis}, \cite{Mats}, \cite{AlKl}, \cite{Row} and \cite{Rot}.  
+\end{itemize}
+
+For the topics above we merely review the material, and point to references 
+when necessary.
+
+There are a few earlier books that deal with derived categories, in varying 
+degrees of detail and depth. Some of them -- \cite{RD} (the original 
+reference), \cite{KaSc1} and \cite{KaSc2} -- served as sources for us when 
+writing the present book. Other books, such as \cite{GeMa},  
+\cite{We} and \cite{Huy}, are somewhat sketchy in their treatment of derived 
+categories, but they might be useful for a reader who wants another perspective 
+on the subject. 
+
+Finally we want to mention the evolving online reference \cite{SP}, that 
+contains a huge amount of information on all the topics listed above. 
+
+\mysubsection{Credo,  Writing Style and Goals}
+Since its inception around 1960, there has been very little literature on the 
+theory of derived categories. In some respect, the only detailed account for 
+many years was the original book \cite{RD}, written by R. Hartshorne, following 
+notes by J.-L. Verdier (for Chapter I) and by A. Grothendieck (for Chapters 
+II-VII). Several accounts appeared later as parts of the books 
+\cite{We}, \cite{GeMa}, \cite{KaSc1}, \cite{KaSc2}, \cite{Huy}, and maybe a few 
+others -- but none of these accounts provided enough detailed content to make 
+it possible for a mathematician to learn  how to work with derived categories, 
+beyond a rather superficial level. {\em The theory thus remained mysterious}. 
+
+A personal belief of mine is that {\em mathematics should not be mysterious}. 
+Some mathematics is very easy to explain. However, a few branches of 
+mathematics are truly hard; among them are algebraic geometry and derived 
+categories. My moral goal in this book is to demonstrate 
+that {\em the theory of derived categories is difficult, but not mysterious}. 
+
+The  series of books \cite{EGA} by Grothendieck and J. Dieudonn\'e, and then 
+the book \cite{Har} by Hartshorne, have shown us that {\em algebraic geometry 
+is difficult but not mysterious}. The definitions and the statements are 
+precise, and the proofs are available (to be read or to be taken on trust, as 
+the reader prefers). I hope that the present book will do the same for derived 
+categories. (Although I doubt I can match the excellent writing talent of the 
+aforementioned authors!).
+
+In more practical terms, the goal of this book is to develop the theory of 
+derived categories in a systematic fashion, with full details, and with several 
+important applications. The expectation is that our book will open the doors 
+for researchers in algebra and geometry (and related disciplines such as 
+mathematical physics) to productive work using derived categories. Doors 
+that have been to a large extent locked until now (or at least hidden by the 
+shrouds of mystery, to use the prior metaphor). 
+
+This book is by far too lengthy for a one-semester graduate course.
+(In my rather sluggish lecturing style, Sections 1-13 of the book took about 
+four semesters.) The book is intended to be used as a reference, or for 
+personal learning. Perhaps a lecturer who has the ability to concentrate the 
+material sufficiently, or to choose only certain key aspects, might extract a 
+one-semester course from this book; if so, please let me know!
+
+
+
+\mysubsection{Acknowledgments}
+
+As already mentioned, the book originated in a course on derived categories, 
+that was held at Ben Gurion University in Spring 2012. I want to thank the 
+participants of this course for correcting many of my mistakes
+(both in real time during the lectures, and afterwards when writing the notes 
+\cite{Ye6}).  Thanks also to Joseph Lipman, Pierre Schapira, Amnon Neeman 
+and Charles Weibel for helpful discussions during the preparation of that 
+course. Vincent Beck, Yang Han and Lucas Simon sent me corrections and useful 
+comments on the material in \cite{Ye6}.  
+
+I started writing the book itself while teaching a four
+semester course on the subject at Ben Gurion University, spanning the 
+academic years 2015-16 and 2016-17. I wish to thank the participants of this 
+course, and especially Rishi Vyas, Stephan Snigerov, Asaf Yekutieli, S.D. 
+Banerjee, Alberto Boix and William Woods, who contributed material and 
+corrected numerous  mistakes. 
+
+Ben Gurion University was generous enough to permit this long project. The 
+project was supported by the Israel Science Foundation grant no.\ 253/13. 
+
+Stephan Snigerov, William Woods and Rishi Vyas helped me prepare the manuscript 
+for publication, and I wish to thank them for that. Bernhard Keller kindly sent 
+me private notes containing clean proofs of several theorems on the 
+existence of resolutions of DG modules, and he also helped me with numerous 
+suggestions. 
+
+In the process of writing the book I have also benefited from the advice of 
+Pierre Schapira, Robin Hartshorne, Rodney Sharp, 
+Manuel Saorin, Suresh Nayak, Liran Shaul, Johan de Jong, Steven Kleiman, 
+Louis Rowen, Amnon Neeman, Amiram Braun, Jesse Wolfson, 
+Bjarn de Jong, James Zhang, Jun-Ichi Miyachi, Vladimir Hinich, 
+Brooke Shipley, Jeremy Rickard, Peter J{\o}rgensen, 
+Michael Sharpe (on LaTeX), Roland Berger, Mattia Ornaghi, Georges Maltsiniotis, 
+Harry Gindi, Goncalo Tabuada, Sefi Ladkani, Saurabh Singh,
+and the anonymous referees for Cambridge University Press. 
+
+Special thanks to Thomas Harris, my editor at Cambridge University Press,  
+whose initiative made the publication of this book possible; and to 
+Clare Dennison and Libby Haynes at CUP, for their assistance.

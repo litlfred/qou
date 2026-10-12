@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1103.1035v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1103.1035v4",
+  "contains": [
+    "library/arxiv-1103.1035v4/sections/sec-000",
+    "library/arxiv-1103.1035v4/sections/sec-001",
+    "library/arxiv-1103.1035v4/sections/sec-002",
+    "library/arxiv-1103.1035v4/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1103.1035&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1103.1035v4",
+    "title_source": "slug",
+    "source_file": "1103.1035v4.pdf",
+    "source_sha256": "dd5c4660e1d08ea1abdcd646c885842b0d5c4c68567b44133dc7b5a6c52bed2a",
+    "pages": 31,
+    "arxiv": {
+      "id": "1103.1035",
+      "version": "4",
+      "primary_class": "math.QA",
+      "stamp_date": "10 Feb 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

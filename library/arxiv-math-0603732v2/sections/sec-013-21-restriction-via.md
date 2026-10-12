@@ -7,41 +7,43 @@ section_number: 2.1
 pages: 5-6
 source_pdf: 0603732v2.pdf
 source_sha256: 3464a2ddc2e54f3a
-doc_brief: "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS — W e show that many noetherian Hopf algebras A have a rigid du- alising complex R with R ∼= ν A1[d]."
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.935
 ---
-coproduct. Then we may view A as a subalgebra of the algebra A⊗A via ∆. Deﬁne
-a functor
-ResA : ( A ⊗ A) − Mod → A − Mod
-by restriction of the scalars via ∆, so that Res A is equivalent to the functor
-HomA⊗A(A⊗A(A ⊗ A)A, −).
-Lemma. Let A be a Hopf algebra and B be any algebra.
-(a) ResA is an exact functor.
-(b) Let N be an A ⊗ Bop-module. Then ResA(A ⊗ N ) with restriction of Bop-
-module from N is isomorphic to AA ⊗ kNB as A ⊗ Bop-modules where the
-left A-module on kNB is trivial. The isomorphism from ResA(A ⊗ N ) to
-AA ⊗ kNB is given by
-a ⊗ n ↦→
-∑
-a1 ⊗ S(a2)n,
-where ∆( a) = ∑ a1 ⊗ a2, with inverse a′ ⊗ n′ ↦→∑ a′
-1 ⊗ a′
-2n′.
-(c) ResA preserves freeness. Similarly, A ⊗ A is a free right A-module via the
-coproduct ∆ .
-(d) ResA preserves projectivity.
-(e) ResA preserves injectivity.
-6 K.A. BROWN AND J.J. ZHANG
-Proof. (a) This is clear.
-(b) By the left-module version of the fundamental theorem of Hop f modules [Mo,
-Theorem 1.9.4] A ⊗ N is free over A with basis given by a k-basis of N , because N
-is the space of coinvariants of the left A-comodule A ⊗ N . It’s easy to verify that
-the isomorphism given in the proof of [Mo, Theorem 1.9.4] has the desir ed form,
-and that it preserves the Bop-module action.
-(c) This follows from (b) and its right-hand analogue, with N = A.
-(d) This is true because Res A(A ⊗ A) is free by (c).
-(e) Let M be an injective A ⊗ A-module. Then
-HomA(−, ResA(M )) ∼= HomA(−, HomA⊗A(A⊗A(A ⊗ A)A, M)) =: ( ∗)
-By the Hom −⊗ adjunction
-(∗) ∼= HomA⊗A(A⊗A(A ⊗ A)A ⊗A −, M) =: ( ∗∗).
-By (c) ( A ⊗ A)A is free, hence ﬂat. Since M is A ⊗ A-injective, the functor ( ∗∗) is
-exact. Hence Res A(M ) is A-injective. □
+[]{#xxsec2.1 label="xxsec2.1"}
+
+Let $A$ be a Hopf algebra. Let $\Delta: A\to A\otimes A$ be the coproduct. Then we may view $A$ as a subalgebra of the algebra $A\otimes A$ via $\Delta$. Define a functor $$\mathrm{Res}_A\; : \; (A\otimes A)-\mathop{\mathrm{{\sf Mod}}}\; \to\;  A-\mathop{\mathrm{{\sf Mod}}}$$ by restriction of the scalars via $\Delta$, so that $\mathrm{Res}_A$ is equivalent to the functor $\mathop{\mathrm{Hom}}_{A\otimes
+A}({_{A\otimes A}(A\otimes A)}_A,-)$.
+
+::: lemma
+Let $A$ be a Hopf algebra and $B$ be any algebra.
+
+1.  $\mathrm{Res}_A$ is an exact functor.
+
+2.  Let $N$ be an $A\otimes B^{\sf op}$-module. Then $\mathrm{Res}_A(A\otimes N)$ with restriction of $B^{\sf op}$-module from $N$ is isomorphic to ${_AA}\otimes {_k N_B}$ as $A\otimes B^{\sf op}$-modules where the left $A$-module on ${_kN_B}$ is trivial. The isomorphism from $\mathrm{Res}_A(A\otimes N)$ to ${_AA}\otimes {_k N_B}$ is given by $$a\otimes n\mapsto \sum a_1\otimes S(a_2) n,$$ where $\Delta(a)=\sum a_1\otimes a_2$, with inverse $a'\otimes
+    n'\mapsto \sum a'_1\otimes a'_2n'$.
+
+3.  $\mathrm{Res}_A$
+
+    preserves freeness. Similarly, $A\otimes A$ is a free right $A$-module via the coproduct $\Delta$.
+
+4.  $\mathrm{Res}_A$ preserves projectivity.
+
+5.  $\mathrm{Res}_A$ preserves injectivity.
+:::
+
+::: proof
+*Proof.* (a) This is clear.
+
+\(b\) By the left-module version of the fundamental theorem of Hopf modules [@Mo Theorem 1.9.4] $A\otimes N$ is free over $A$ with basis given by a $k$-basis of $N$, because $N$ is the space of coinvariants of the left $A$-comodule $A \otimes N$. It's easy to verify that the isomorphism given in the proof of [@Mo Theorem 1.9.4] has the desired form, and that it preserves the $B^{\sf op}$-module action.
+
+\(c\) This follows from (b) and its right-hand analogue, with $N = A$.
+
+\(d\) This is true because $\mathrm{Res}_A(A\otimes A)$ is free by (c).
+
+\(e\) Let $M$ be an injective $A\otimes A$-module. Then $$\mathop{\mathrm{Hom}}_A(-,\mathrm{Res}_A(M))\; \cong \; \mathop{\mathrm{Hom}}_A(-,\mathop{\mathrm{Hom}}_{A\otimes A}
+({_{A\otimes A}(A\otimes A)_A},M))\; =: \;  (*)$$ By the $\mathop{\mathrm{Hom}}-\otimes$ adjunction $$(*) \; \cong \; \mathop{\mathrm{Hom}}_{A\otimes A}({_{A\otimes A}(A\otimes A)_A}
+\otimes_A -,M)\;  =: \; (**).$$ By (c) $(A\otimes A)_A$ is free, hence flat. Since $M$ is $A\otimes A$-injective, the functor $(**)$ is exact. Hence $\mathrm{Res}_A(M)$ is $A$-injective. ◻
+:::

@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/maximal-hoermander-q-var-revised-v03/sections/sec-004",
   "@type": [
     "doco:Section"
@@ -10,10 +15,10 @@
   "contains": [
     "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-004",
     "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-004-01",
-    "library/maximal-hoermander-q-var-revised-v03/blocks/rem-sec-004-02",
+    "library/maximal-hoermander-q-var-revised-v03/blocks/remark-sec-004-02",
     "library/maximal-hoermander-q-var-revised-v03/blocks/cor-sec-004-03"
   ],
-  "derivedFrom": "library/maximal-hoermander-q-var-revised-v03/manifest",
-  "sourceDocument": "library/maximal-hoermander-q-var-revised-v03/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
   "provenance": "ingested"
 }

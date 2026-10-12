@@ -8,113 +8,43 @@ pages: 13-15
 source_pdf: 1608.02961v3.pdf
 source_sha256: ef3805c23133b8f2
 doc_brief: "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Tudor Dimofte — We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C)."
+text_source: latex
+latex_prose_ratio: 0.898
+latex_coverage_ratio: 0.933
 ---
-The most fundamental relation between complex Chern-Simons theory and hyperbolic ge-
-ometry has been understood for a long time, and concerns the semi-classical asymptotic
-expansion of partition functions [3] (see also [25, 67]). It is easiest to formulate it ﬁrst in
-7This very same symmetry played a central role in deﬁning reﬁned (compact) Chern-Simons theory on
-Seifert-ﬁbered manifolds [66].
-13
-terms of the “holomorphic blocks”Bα, ~Bα appearing in (3.1), labelled by ﬂat connections α :
-as k +is→∞ or q
-1
-2 =e
-2πi
-k+is→ 1, Bα(q
-1
-2 )∼
-√
-4π3
-τ(α)e
-i(k+is)
-8π SCS (α) ;
-as k−is→∞ or ˜q
-1
-2 =e
-2πi
-k−is→ 1, ~Bα(˜q
-1
-2 )∼
-√
-4π3
-τ(α)∗e
-i(k−is)
-8π SCS (α)∗
-;
-(4.1)
-whereSCS(α) is the classical Chern-Simons action evaluated on a particular ﬂat connection
-andτ(α) is the analytic Ray-Singer torsion twisted by the ﬂat connection α [68]. This is the
-standard result expected from Chern-Simons perturbation theory [69]. In the presence of
-a boundary, the classical action and torsion on the RHS depend on the choice of boundary
-conditions (boundary holonomies) for α. From (3.1), it then follows that if both k +is→∞
-and k−is→∞
-Z[M]k,s∼
-∑
-ﬂat α
-1
-|Stab(α)|
-4π3
-|τ(α)|e
-ik
-4π ReSCS (α)−is
-4π ImSCS (α). (4.2)
-The formula is particularly meaningful if s is analytically continued to (say) positive imag-
-inary values. Then each term in (4.2) shows exponential growth or decay at large |s|,
-controlled by ImSCS(α).
-Now suppose that M is hyperbolic, meaning that it admits a hyperbolic metric. The
-hyperbolic metric is unique (given suitable boundary conditions) and is a topological in-
-variant of M [58, 59]. Moreover, the vielbein and spin connection of the hyperbolic met-
-ric can be rewritten as a ﬂat SL(2, C) connection αhyp = w +ie, with the property that
-ImSCS(αhyp) = Vol(M) is the hyperbolic volume ofM. The real part ReSCS(αhyp) is known
-as the Chern-Simons invariant of the hyperbolic structure, and provides a natural complex-
-iﬁcation of the hyperbolic volume [70, 71]. It is also useful to note that the connection αhyp
-necessarily has a trivial stabilizer – the connection is fundamentally non-abelian.
-Therefore, if the gauge group is SL(2, C) and M is hyperbolic, the sum (4.2) contains
-a term that is controlled by the hyperbolic volume of M. Typically, Im SCS(αhyp) is larger
-than the “volume” of any other ﬂat connection, and the entire sum (4.2) is dominated by
-the hyperbolic volume. (It is expected that Im SCS(αhyp) always dominates, but no general
-result of this type has been proven.)
-It is often useful to strip oﬀ the holomorphic part of the asymptotic expansion. This can
-be done by taking a singular limit: we ﬁx k = 1, analytically continues to imaginary values,
-and send s→−ik =−i. This has the eﬀect of sending q→ 1 but ˜q→ 0, which trivializes
-the anti-holomorphic blocks, ~Bα(˜q
-1
-2 )→ 1. In this singular limit, we expect
-Z[M]1,s∼
-∑
-ﬂat α
-1
-|Stab(α)|
-√
-4π3
-τ(α)e− 1
-ℏSCS (α) as ℏ = 2πi 1−is
-1 +is→ 0. (4.3)
-This sort of limit played a major role in early analyses of partition functions for complex
-Chern-Simons theory [72, 49], though it was not realized at the time that the partition
-functions (derived from quantum Teichm¨ uller theory) being analyzed had ﬁxed levelk = 1.
-14
-The fact that the perturbative expansion of complex Chern-Simons theory (or individual
-holomorphic blocks, as in (4.1)) contains geometric invariants of M played a major role
-in providing a physical justiﬁcation for the Volume Conjecture, and generalizing it. The
-original Volume Conjecture [26, 27] claims that a particular double-scaling limit of colored
-Jones polynomials of a knotK⊂S3 leads to exponential growth, controlled by the hyperbolic
-volume of the knot complement Vol(S3\K). This was justiﬁed in [25] by embedding SU (2)
-Chern-Simons theory (which computes colored Jones polynomials) into a holomorphic sector
-of SL(2, C) Chern-Simons theory, and arguing that the asymptotic expansions of SU (2)
-and (holomorphic) SL(2, C) theories should coincide. The argument immediately led to
-generalizations, involving higher-order terms in the asymptotic expansion and a dependence
-on boundary conditions, which have been carefully checked in many computations, cf. [67,
-49, 73].
-It is also interesting to consider “large- N” limits in complex Chern-Simons theory, tak-
-ing the gauge group to be SL(N, C) and sending N → ∞. Physically, such limits are
-most conveniently studied by realizing Chern-Simons theory on a stack of N M5 branes
-(Section 3.1), and using AdS/CFT or large- N duality. A study of the ﬁve-brane system
-[74, 75, 76] predicts that the leading asymptotic growth of the partition function Z[M]k,s as
-in (4.2) is scales as N 3Vol(M) at large N [38]. This is not surprising: the hyperbolic ﬂat
-SL(2, C) connection can be embedded intoSL(N, C) by using theN-dimensional representa-
-tionρN :SL(2, C)→SL(N, C), and the Chern-Simons functional evaluates to∼N 3Vol(M)
-on ρN(αhyp), cf. [77]. As long as (4.2) is dominated by the ﬂat connection ρN(αhyp) for any
-N, one quickly recovers the scaling prediction. Much more non-trivially, the M-theory anal-
-ysis predicts that the logarithm of the torsion τ(ρN(αhyp)) will grow as N 3Vol(M) [78, 79]
-at large N as well. This latter result was recently proved by Porti and Menal-Ferrer [80].
+\label{DI.sec:vol}
+
+The most fundamental relation between complex Chern-Simons theory and hyperbolic geometry has been understood for a long time, and concerns the semi-classical asymptotic expansion of partition functions \cite{DIWitten-gravCS} (see also \cite{DIgukov-2003, DIGukovMurakami}). It is easiest to formulate it first in terms of the ``holomorphic blocks'' $\CalB_\alpha,\,\widetilde\CalB_\alpha$ appearing in \eqref{DI.fact}, labelled by flat connections $\alpha$\,:
+
+\DIbe \label{DI.B-asymp}
+\begin{array}{ll} \text{as $k+is\to\infty$ or $q^{\frac12} = e^{\frac{2\pi i}{k+is}}\to 1$}\,,\qquad & \ds \CalB_\alpha(q^{\frac12}) \sim \sqrt{\frac{4\pi^3}{\tau(\alpha)}}e^{\frac{i(k+is)}{8\pi}S_{CS}(\alpha)}\,; \\[.2cm]
+\text{as $k-is\to\infty$ or $\tilde q^{\frac12} = e^{\frac{2\pi i}{k-is}}\to 1$}\,,\qquad & \ds \widetilde \CalB_\alpha(\tilde q^{\frac12}) \sim \sqrt{\frac{4\pi^3}{\tau(\alpha)^*}}e^{\frac{i(k-is)}{8\pi}S_{CS}(\alpha)^*}\,;
+\end{array}
+\DIee
+
+where $S_{CS}(\alpha)$ is the classical Chern-Simons action evaluated on a particular flat connection and $\tau(\alpha)$ is the analytic Ray-Singer torsion twisted by the flat connection $\alpha$ \cite{DIRaySinger}. This is the standard result expected from Chern-Simons perturbation theory \cite{DIBW-cx}. In the presence of a boundary, the classical action and torsion on the RHS depend on the choice of boundary conditions (boundary holonomies) for $\alpha$. From \eqref{DI.fact}, it then follows that if both $k+is\to\infty$ and $k-is\to \infty$
+
+\DIbe \CalZ[M]_{k,s} \sim \sum_{\text{flat $\alpha$}} \frac{1}{|\text{Stab}(\alpha)|} \frac{4\pi^3}{|\tau(\alpha)|} e^{\frac{ik}{4\pi}\text{Re}\,S_{CS}(\alpha)-\frac{is}{4\pi}\text{Im}\,S_{CS}(\alpha)}\,. \label{DI.sum-asymp} \DIee
+
+The formula is particularly meaningful if $s$ is analytically continued to (say) positive imaginary values. Then each term in \eqref{DI.sum-asymp} shows exponential growth or decay at large $|s|$, controlled by $\text{Im}\,S_{CS}(\alpha)$. 
+
+
+Now suppose that $M$ is hyperbolic, meaning that it admits a hyperbolic metric. The hyperbolic metric is unique (given suitable boundary conditions) and is a topological invariant of $M$ \cite{DImostow-1973, DIthurston-1980}. Moreover, the vielbein and spin connection of the hyperbolic metric can be rewritten as a flat $SL(2,\BC)$ connection $\alpha_{\rm hyp} = w+ie$, with the property that $\text{Im}\,S_{CS}(\alpha_{\rm hyp}) = \text{Vol}(M)$ is the hyperbolic volume of $M$. The real part $\text{Re}\,S_{CS}(\alpha_{\rm hyp})$ is known as the Chern-Simons invariant of the hyperbolic structure, and provides a natural complexification of the hyperbolic volume \cite{DICheegerSimons, DIChernSimons}. It is also useful to note that the connection $\alpha_{\rm hyp}$ necessarily has a trivial stabilizer -- the connection is fundamentally non-abelian.
+
+Therefore, if the gauge group is $SL(2,\BC)$ and $M$ is hyperbolic, the sum \eqref{DI.sum-asymp} contains a term that is controlled by the hyperbolic volume of $M$. Typically, $\text{Im}\,S_{CS}(\alpha_{\rm hyp})$ is larger than the ``volume'' of any other flat connection, and the entire sum \eqref{DI.sum-asymp} is dominated by the hyperbolic volume. (It is expected that $\text{Im}\,S_{CS}(\alpha_{\rm hyp})$ always dominates, but no general result of this type has been proven.)
+
+
+It is often useful to strip off the holomorphic part of the asymptotic expansion. This can be done by taking a \emph{singular} limit: we fix $k=1$, analytically continue $s$ to imaginary values, and send $s\to - ik=-i$. This has the effect of sending $q\to 1$ but $\tilde q\to 0$, which trivializes the anti-holomorphic blocks, $\widetilde \CalB_\alpha(\tilde q^{\frac12})\to 1$. In this singular limit, we expect
+
+\DIbe \CalZ[M]_{1,s} \sim \sum_{\text{flat $\alpha$}} \frac{1}{|\text{Stab}(\alpha)|} \sqrt{\frac{4\pi^3}{\tau(\alpha)}} e^{-\frac{1}{\hbar}S_{CS}(\alpha)}\qquad\text{as}\quad \hbar=2\pi i\frac{1-is}{1+is}\to 0\,. \label{DI.sing1} \DIee
+
+This sort of limit played a major role in early analyses of partition functions for complex Chern-Simons theory \cite{DIhikami-2006, DIDGLZ}, though it was not realized at the time that the partition functions (derived from quantum Teichm\"uller theory) being analyzed had fixed level $k=1$.
+
+The fact that the perturbative expansion of complex Chern-Simons theory (or individual holomorphic blocks, as in \eqref{DI.B-asymp}) contains geometric invariants of $M$ played a major role in providing a physical justification for the Volume Conjecture, and generalizing it. The original Volume Conjecture \cite{DIkashaev-1997, DIMur-Mur} claims that a particular double-scaling limit of colored Jones polynomials of a knot $K\subset S^3$ leads to exponential growth, controlled by the hyperbolic volume of the knot complement $\text{Vol}(S^3\bs K)$. This was justified in \cite{DIgukov-2003} by embedding $SU(2)$ Chern-Simons theory (which computes colored Jones polynomials) into a holomorphic sector of $SL(2,\BC)$ Chern-Simons theory, and arguing that the asymptotic expansions of $SU(2)$ and (holomorphic) $SL(2,\BC)$ theories should coincide. The argument immediately led to generalizations, involving higher-order terms in the asymptotic expansion and a dependence on boundary conditions, which have been carefully checked in many computations, \DIcf\ \cite{DIGukovMurakami, DIDGLZ, DIDG-quantumNZ}.
+
+
+
+
+
+It is also interesting to consider ``large-$N$'' limits in complex Chern-Simons theory, taking the gauge group to be $SL(N,\BC)$ and sending $N\to\infty$. Physically, such limits are most conveniently studied by realizing Chern-Simons theory on a stack of $N$ M5 branes (Section \ref{DI.sec:sym}), and using AdS/CFT or large-$N$ duality. A study of the five-brane system \cite{DIHenningsonSkenderis, DIHMM-anomalies, DIGKW-5branes} predicts that the leading asymptotic growth of the partition function $\CalZ[M]_{k,s}$ as in \eqref{DI.sum-asymp} is scales as $N^3\text{Vol}(M)$ at large $N$ \cite{DIDGG-Kdec}. This is not surprising: the hyperbolic flat $SL(2,\BC)$ connection can be embedded into $SL(N,\BC)$ by using the $N$-dimensional representation $\rho_N:SL(2,\BC)\to SL(N,\BC)$, and the Chern-Simons functional evaluates to $\sim N^3\text{Vol}(M)$ on $\rho_N(\alpha_{\rm hyp})$, \DIcf\ \cite{DIGTZ-slN}. As long as \eqref{DI.sum-asymp} is dominated by the flat connection $\rho_N(\alpha_{\rm hyp})$ for any $N$, one quickly recovers the scaling prediction.
+ Much more non-trivially, the M-theory analysis predicts that the logarithm of the \emph{torsion} $\tau(\rho_N(\alpha_{\rm hyp}))$ will grow as $N^3\text{Vol}(M)$ \cite{DIMPS-S3b, DIGKL-largeN} at large $N$ as well. This latter result was recently proved by Porti and Menal-Ferrer \cite{DIPorti-largeN}.

@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s-p02/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "Iteration of the Frobenius on P1\\⋃",
-  "pageStart": 1,
-  "pageEnd": 5,
+  "title": "Iteration of the Frobenius on P1 \\ S",
+  "pageStart": 31,
+  "pageEnd": 34,
   "contains": [
-    "library/ant-v14-n7-s-p02/blocks/prose-sec-005",
-    "library/ant-v14-n7-s-p02/blocks/thm-sec-005-01"
+    "library/ant-v14-n7-s-p02/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/ant-v14-n7-s-p02/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p02/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p02/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p02/manifest.jsonld",
   "provenance": "ingested"
 }

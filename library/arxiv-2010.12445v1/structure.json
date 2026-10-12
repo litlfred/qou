@@ -6,7 +6,11 @@
   "sha256": "16e9ca22ecc1f2967162d35c294851e0918e7b5dcdbd5f573b4ff97ae39e11ce",
   "bytes": 422935,
   "pages": 28,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -249,6 +253,89 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 11,
-  "chars_total": 79465
+  "chars_total": 79465,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Tannaka5.tex",
+   "tex_sections": 13,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-notation",
+     "title": "Notation",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.105,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-1-preliminaries",
+     "title": "Preliminaries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-12-generalized-frame-bundles",
+     "title": "Generalized frame bundles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-2-pseudo-affine-stacks",
+     "title": "Pseudo-affine stacks",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-3-tannaka-reconstruction",
+     "title": "Tannaka Reconstruction",
+     "prose_ratio": 0.732,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-5-the-stack-of-fiber-functors",
+     "title": "The stack of fiber functors",
+     "prose_ratio": 0.456,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-51-proof-of-theorem-51",
+     "title": "Proof of Theorem 5.1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-52-comparing-vector-bundles",
+     "title": "Comparing vector bundles",
+     "prose_ratio": 0.575,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

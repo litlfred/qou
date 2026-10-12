@@ -1,0 +1,45 @@
+\begin{picture}(0,0)%
+\epsfig{file=ps/pic201.ps}%
+\end{picture}%
+\setlength{\unitlength}{0.00041700in}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined
+% extract first six characters in \fmtname
+\def\x#1#2#3#4#5#6#7\relax{\def\x{#1#2#3#4#5#6}}%
+\expandafter\x\fmtname xxxxxx\relax \def\y{splain}%
+\ifx\x\y   % LaTeX or SliTeX?
+\gdef\SetFigFont#1#2#3{%
+  \ifnum #1<17\tiny\else \ifnum #1<20\small\else
+  \ifnum #1<24\normalsize\else \ifnum #1<29\large\else
+  \ifnum #1<34\Large\else \ifnum #1<41\LARGE\else
+     \huge\fi\fi\fi\fi\fi\fi
+  \csname #3\endcsname}%
+\else
+\gdef\SetFigFont#1#2#3{\begingroup
+  \count@#1\relax \ifnum 25<\count@\count@25\fi
+  \def\x{\endgroup\@setsize\SetFigFont{#2pt}}%
+  \expandafter\x
+    \csname \romannumeral\the\count@ pt\expandafter\endcsname
+    \csname @\romannumeral\the\count@ pt\endcsname
+  \csname #3\endcsname}%
+\fi
+\fi\endgroup
+\begin{picture}(9113,2326)(2296,-1867)
+\put(4097,-765){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$=$}}}
+\put(6497,-768){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$=$}}}
+\put(2296,-766){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$(i)$}}}
+\put(5326,-841){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm},}}}
+\put(7711,-811){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm},}}}
+\put(9040,-810){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$=$}}}
+\put(10270,-795){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$=$}}}
+\put(5057,-435){\makebox(0,0)[lb]{\smash{\special{ps:gsave currentpoint currentpoint translate
+-180.0 rotate neg exch neg exch translate}\SetFigFont{12}{14.4}{rm}$R$\special{ps:currentpoint grestore moveto}}}}
+\put(3467,-675){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$R$}}}
+\put(5866,-661){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$Q$}}}
+\put(7471,-406){\makebox(0,0)[lb]{\smash{\special{ps:gsave currentpoint currentpoint translate
+-180.0 rotate neg exch neg exch translate}\SetFigFont{12}{14.4}{rm}$Q$\special{ps:currentpoint grestore moveto}}}}
+\put(8432,-180){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$R$}}}
+\put(8446,-1231){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$Q$}}}
+\put(10996,-211){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$Q$}}}
+\put(10982,-1290){\makebox(0,0)[lb]{\smash{\SetFigFont{12}{14.4}{rm}$R$}}}
+\end{picture}

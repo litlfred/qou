@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1712.04887v3/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1712.04887v3/blocks/prose-sec-011",
   "kind": "prose",
-  "title": "Reduction to finite fields",
-  "pageStart": 21,
-  "pageEnd": 21,
-  "text": "../sections/sec-011-4-reduction-to-finite-fields.md",
-  "derivedFrom": "library/arxiv-1712.04887v3/manifest",
-  "sourceDocument": "library/arxiv-1712.04887v3/manifest",
+  "title": "Upgrading from S-units to units",
+  "pageStart": 20,
+  "pageEnd": 20,
+  "text": "../sections/sec-011-34-upgrading-from-s-units-to-units.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.04887v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.04887v3/manifest.jsonld",
   "provenance": "ingested"
 }

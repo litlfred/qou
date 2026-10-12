@@ -35,7 +35,7 @@ formalises. The convention is confirmed against a known value BEFORE anything is
 built on it, which is the step whose omission produced the retraction.
 
 The readout I used in the retracted test, `z*M[0,0] + M[1,0]`, is the one in
-`computations/_deprecated/transfer_matrix_symbolic.py` — deprecated, and it does
+`fsh-guts/deprecated/computations/transfer_matrix_symbolic.py` — deprecated, and it does
 not reproduce `z + d`.
 
 THE ANSWER: THE QUESTION IS EMPTY

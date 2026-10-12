@@ -7,9 +7,10 @@ priority: normal
 tags:
     - sm-26
     - reorg-2026-10-04
+    - 8f-ew
 created_at: 2026-07-31T20:15:07Z
-updated_at: 2026-10-04T15:19:50Z
-parent: qou-8lxd
+updated_at: 2026-10-10T18:10:00Z
+parent: qou-20sx
 blocked_by:
     - qou-y7vg
     - qou-x4qm
@@ -23,3 +24,7 @@ blocked_by:
 (iv) Next: not near-term; blocked on 4-A (`qou-y7vg`, stalled at "name the base") and generations.
 (v) Forecast: nothing before an N = 3 construction; a refutation of 4-A would honestly move CKM to "imported".
 Tower status [reading: qou-ggdk]: no attack at any order; under the ruling a mixing matrix is an operator on the flavour Wedderburn blocks of the full tower, not a number at q₀ — no formulation exists.
+
+## 2026-10-10 — reparented under qou-20sx
+
+Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.

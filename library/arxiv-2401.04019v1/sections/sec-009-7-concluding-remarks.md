@@ -8,150 +8,59 @@ pages: 18-20
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
 doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru ncated"
+text_source: latex
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.984
 ---
-In this article we considered several conjectures and identities th at ﬁrst appeared
-in [14]. Identities (6.7), (6.10), (6.12) and (6.13) from [14] are prove d using the
-Jacobi Triple Product identity in [13]. We generalized these identities a nd gave both
-analytic and combinatorial proofs. Considerations of similar identitie s from [14],
-and their proofs in [13] led us to discover an interesting result about the number
-of distinct 5-regular partitions of n. Theorem 1.1 proves the cases k = 1 , 2, 3
-of Conjecture 4.3 in [14] which concerns the non-negativity of the c oeﬃcients of
-a certain truncated theta function. The theorem gives inequalities involving the
-number of partitions of n with parts congruent to ±S mod R and it also leads to
-results involving the generalizations of the minimal excludant statist ic for partitions.
-At the end of [14], Merca made another conjecture about the non- negativity of
-the coeﬃcients of a truncated series. Suppose R ≥ 2 and 1 ≤S <R and deﬁne
-T±(q,k,S,R ) := 1
-(qS,q R−S;qR)∞
-∞∑
-n=k
-qn(3n∓1)R/2±3nS(1 −qS±nR).
-Conjecture 6.15 on [14] states that, for all k ≥ 1, each ofT+(q,k,S,R ), −T−(q,k,S,R ),
-and T−(q,k,S,R ) +T+(q,k,S,R ) has non-negative coeﬃcients. We establish the
-ﬁrst two parts of the conjecture.
-Theorem 7.1. For 1 ≤S <R and k ≥ 1,
-(i) T+(q,k,S,R ) has non-negative coeﬃcients;
-(ii) T−(q,k,S,R ) has non-positive coeﬃcients.
-Proof. Let 1 ≤S <R and k ≥ 1.
-To show that for the q-series T+(q,k,S,R ) has non-negative coeﬃcients, we
-rewrite it as
-T+(q,k,S,R )
-= 1
-(qS,q R−S;qR)∞
-∞∑
-n=k
-qn(3n−1)R/2+3nS(1 −qn(R−S) +qn(R−S) −qS+nR)
-= 1
-(qS,q 2R−S;qR)∞
-∞∑
-n=k
-qn(3n−1)R/2+3nS 1 −qn(R−S)
-1 −qR−S
-+ 1
-(qS+R,q R−S;qR)∞
-∞∑
-n=k
-qn(3n−1)R/2+3nS+nR−nS 1 −q(n+1)S
-1 −qS
-= 1
-(qS,q 2R−S;qR)∞
-∞∑
-n=k
-qn(3n−1)R/2+3nS(1 +qR−S +q2(R−S) + · · · +q(n−1)(R−S))
-+ 1
-(qS+R,q R−S;qR)∞
-∞∑
-n=k
-qn(3n+1)R/2+2nS(1 +qS +q2S + · · · +qnS).
-Clearly, this q-series has non-negative coeﬃcients.
-If k ≥ 2, we rewrite
-−T−(q,k,S,R )
-= − 1
-(qS,q R−S;qR)∞
-∞∑
-n=k
-qn(3n+1)R/2−3nS(1 −qS−nR)
-TRUNCATED THETA SERIES RELATED TO THE JTP IDENTITY 19
-= 1
-(qS,q R−S;qR)∞
-∞∑
-n=k
-qn(3n+1)R/2−3nS+S−nR(1 −qn(R−S) +qn(R−S) −qnR−S)
-= 1
-(qS,q 2R−S;qR)∞
-∞∑
-n=k
-qn(3n+1)R/2−3nS+S−nR 1 −qn(R−S)
-1 −qR−S
-+ 1
-(qS+R,q R−S;qR)∞
-∞∑
-n=k
-qn(3n+1)R/2−3nS+S−nR+nR−nS 1 −q(n−1)S
-1 −qS
-= 1
-(qS,q 2R−S;qR)∞
-∞∑
-n=k
-qn(3n−1)R/2−3nS+S(1 +qR−S +q2(R−S) + · · · +q(n−1)(R−S))
-+ 1
-(qS+R,q R−S;qR)∞
-∞∑
-n=k
-qn(3n+1)R/2−4nS+S(1 +qS +q2S + · · · +q(n−2)S).
-If k = 1, we have
-−T−(q, 1,S,R ) = qR−2S
-(qS,q 2R−S;qR)∞
-−T−(q, 2,S,R ).
-Clearly, in each case −T−(q, 1,S,R ) has non-negative coeﬃcients. □
-Finally, we note that results of a similar ﬂavor appear in [15]. Let g(n) =
-|P±1,5(n)| (respectively h(n) = |P±2,5(n)|) be the number of partitions of n into
-parts congruent to ±1 mod 5 (respectively ±2 mod 5). If ξ(n) is either of g(n) or
-h(n), Merca [15, Corollary 3.3] proves the following families of linear homog eneous
-inequalities. For k ≥ 1, S ∈ {1, 2}, and n ≥ 0
-(26)
-u±
-ξ,S (n) := ±
-∞∑
-j=k
-(ξ (n − 5j(3j ± 1)/2 ± 3jS ) −ξ (n − 5j(3j ± 1)/2 ∓ (3j ± 1)S)) ≥ 0
-and asks for combinatorial interpretations of these sums. The re quested interpre-
-tations can be read oﬀ the generating functions obtained in the pro ofs in [15].
-In the proof of [15, Theorem 2.1] (with R = 5,S = 1) it is shown that
-∞∑
-n=0
-u+
-g,1(n)qn = 1
-(q6,q 4;q5)∞
-∞∑
-j=k
-q5j(3j+1)/2−3j (
-1 +q +q2 + · · · +q6j)
+[]{#concluding label="concluding"}
+
+In this article we considered several conjectures and identities that first appeared in [@M1]. Identities (6.7), (6.10), (6.12) and (6.13) from [@M1] are proved using the Jacobi Triple Product identity in [@KMR]. We generalized these identities and gave both analytic and combinatorial proofs. Considerations of similar identities from [@M1], and their proofs in [@KMR] led us to discover an interesting result about the number of distinct $5$-regular partitions of $n$. Theorem [\[main\]](#main){reference-type="ref" reference="main"} proves the cases $k=1,2,3$ of Conjecture 4.3 in [@M1] which concerns the non-negativity of the coefficients of a certain truncated theta function. The theorem gives inequalities involving the number of partitions of $n$ with parts congruent to $\pm S \mod R$ and it also leads to results involving the generalizations of the minimal excludant statistic for partitions.
+
+At the end of [@M1], Merca made another conjecture about the non-negativity of the coefficients of a truncated series. Suppose $R\geq 2$ and $1\leq S<R$ and define $$T_{\pm}(q,k,S,R):=\frac{1}{(q^S, q^{R-S};q^R)_\infty }\sum_{n=k}^\infty q^{n(3n\mp 1)R/2\pm 3nS}(1-q^{S\pm nR}).$$ Conjecture 6.15 on [@M1] states that, for all $k\geq 1$, each of $T_{+}(q,k,S,R)$, $-T_{-}(q,k,S,R)$, and $T_{-}(q,k,S,R)+T_{+}(q,k,S,R)$ has non-negative coefficients. We establish the first two parts of the conjecture.
+
+::: theorem
+For $1\leq S<R$ and $k\geq 1$,
+
+-   $T_{+}(q,k,S,R)$ has non-negative coefficients;
+
+-   $T_{-}(q,k,S,R)$ has non-positive coefficients.
+:::
+
+::: proof
+*Proof.* Let $1\leq S <R$ and $k\geq 1$.
+
+To show that for the $q$-series $T_+(q,k,S,R)$ has non-negative coefficients, we rewrite it as $$\begin{aligned}
+&T_+(q,k,S,R)
+\\& =\frac{1}{(q^S, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n-1)R/2+3nS}(1-q^{n(R-S)}+q^{n(R-S)}-q^{S+nR})\\ & = \frac{1}{(q^S, q^{2R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n-1)R/2+3nS}\, \frac{1-q^{n(R-S)}}{1-q^{R-S}}\\ & \ \ \ + \frac{1}{(q^{S+R}, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n-1)R/2+3nS+nR-nS}\, \frac{1-q^{(n+1)S}}{1-q^S}\\ & = \frac{1}{(q^S, q^{2R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n-1)R/2+3nS} (1+q^{R-S}+q^{2(R-S)}+\cdots +q^{(n-1)(R-S)})\\ & \ \ \ + \frac{1}{(q^{S+R}, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+1)R/2+2nS}(1+q^{S}+q^{2S}+\cdots+ q^{nS})
 .
-Now, 1
-(q6,q 4;q5)∞
-is the generating function for the number of partitions λ ∈
-P±1,5(n) of n with no part equal to 1. We can interpret q5j(3j+1)/2−3j as generating
-a single partition (5 j + 1)j ∪δ1,5,j.
-Then
-u+
-g,1(n) = |{(λ, (5j + 1)j ∪δ1,5,j) ⊢n |λ ∈ P ±1,5,m λ(1) ≤ 6j,j ≥k}|.
-In a similar way we can show that
-u+
-h,2(n) = |{(λ, (5(j − 1) + 2)j ∪δ2,5,j) ⊢n |λ ∈ P ±2,5,m λ(2) ≤ 6j,j ≥k}|
-u−
-g,1(n) = |{(λ, (5j + 1)j−1 ∪δ1,5,j ∪ (4)) ⊢n |λ ∈ P ±1,5,m λ(1) ≤ 6j − 2,j ≥k}|
-u−
-h,2(n) = |{(λ, (5(j − 1) + 2)j−1 ∪δ2,5,j ∪ (3)) ⊢n |λ ∈ P ±2,5,m λ(2) ≤ 6j − 2,j ≥k}|.
-20 CRISTINA BALLANTINE AND BROOKE FEIGON
-Using the generating functions in [15, Corollary 3.2], we have
-u+
-g,2(n) = |{(λ, (δ4,5,2j−1 \δ4,5,j−1)) ⊢n |λ ∈ P ±1,5,m λ(1) ≤ 12j + 1,j ≥k}|
-u−
-g,2(n) = |{(λ, (δ4,5,2j−2 \δ4,5,j−1) ∪ (5(j − 1) + 1)) ⊢n |λ ∈ P ±1,5,m λ(1) ≤ 12j − 3,j ≥k}|
-u+
-h,1(n) = |{(λ, (δ2,5,2j \δ2,5,j)) ⊢n |λ ∈ P ±2,5,m λ(2) ≤ 3j − 2,j ≥k}|
-+ |{(λ, (δ3,5,2j+1 \δ3,5,j+2) ∪ (5j + 3)) ⊢n |λ ∈ P ±2,5,m λ(3) = 1,j ≥k}|
-u−
-h,1(n) = |{(λ, (δ2,5,2j−1 \δ2,5,j) ∪ (5(j − 1) + 3)) ⊢n |λ ∈ P ±2,5,m λ(2) ≤ 3j − 3,j ≥k}|
-+ |{(λ, (δ3,5,2j \δ3,5,j+1) ∪ (5(j − 1) + 2)) ⊢n |λ ∈ P ±2,5,m λ(3) = 1,j ≥k}|.
+\end{aligned}$$ Clearly, this $q$-series has non-negative coefficients.
+
+If $k\geq 2$, we rewrite $$\begin{aligned}
+&-T_-(q,k,S,R)\\ & = - \frac{1}{(q^S, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+ 1)R/2- 3nS}(1-q^{S- nR})\\& =\frac{1}{(q^S, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+1)R/2-3nS+S-nR}(1-q^{n(R-S)}+q^{n(R-S)}-q^{nR-S})\\ & = \frac{1}{(q^S, q^{2R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+1)R/2-3nS+S-nR}\, \frac{1-q^{n(R-S)}}{1-q^{R-S}}\\ & \ \ \ + \frac{1}{(q^{S+R}, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+1)R/2-3nS+S-nR+nR-nS}\, \frac{1-q^{(n-1)S}}{1-q^S}\\ & = \frac{1}{(q^S, q^{2R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n-1)R/2-3nS+S} (1+q^{R-S}+q^{2(R-S)}+\cdots +q^{(n-1)(R-S)})\\ & \ \ \ + \frac{1}{(q^{S+R}, q^{R-S};q^R)_\infty} \sum_{n=k}^\infty q^{n(3n+1)R/2-4nS+S}(1+q^{S}+q^{2S}+\cdots+ q^{(n-2)S})
+.
+\end{aligned}$$ If $k=1$, we have $$\begin{aligned}
+&-T_-(q,1,S,R) =\frac{q^{R-2S}}{(q^S, q^{2R-S};q^R)_\infty}  - T_-(q,2,S,R). 
+\end{aligned}$$ Clearly, in each case $-T_-(q,1,S,R)$ has non-negative coefficients. ◻
+:::
+
+Finally, we note that results of a similar flavor appear in [@M2]. Let $g(n)=|\mathcal P_{\pm 1,5}(n)|$ (respectively $h(n)=|\mathcal P_{\pm 2,5}(n)|$) be the number of partitions of $n$ into parts congruent to $\pm 1 \mod 5$ (respectively $\pm 2\mod 5$). If $\xi(n)$ is either of $g(n)$ or $h(n)$, Merca [@M2 Corollary 3.3] proves the following families of linear homogeneous inequalities. For $k\geq 1$, $S\in\{1,2\}$, and $n\geq 0$ $$\label{eq:M2}
+        u_{\xi,S}^{\pm}(n):= \pm \sum_{j=k}^\infty\left(\xi\left(n-5j(3j\pm 1)/2\pm 3jS\right)-\xi\left(n-5j(3j\pm 1)/2\mp (3j\pm 1)S\right) \right)\geq 0$$ and asks for combinatorial interpretations of these sums. The requested interpretations can be read off the generating functions obtained in the proofs in [@M2].
+
+In the proof of [@M2 Theorem 2.1] (with $R=5, S=1$) it is shown that $$\sum_{n=0}^\infty u_{g,1}^{+}(n)q^n=\frac{1}{(q^{6},q^{4};q^5)_\infty}\sum_{j=k}^\infty q^{5j(3j+1)/2-3j}\big(1+q+q^{2}+\cdots +q^{6j}\big).$$
+
+Now, $\displaystyle \frac{1}{(q^{6},q^{4};q^5)_\infty}$ is the generating function for the number of partitions $\lambda\in \mathcal P_{\pm 1,5}(n)$ of $n$ with no part equal to $1$. We can interpret $\displaystyle q^{5j(3j+1)/2-3j}$ as generating a single partition $(5j+1)^j\cup \delta_{1,5,j}$.
+
+Then $$u_{g,1}^+(n)=|\{(\lambda,(5j+1)^j\cup \delta_{1,5,j})\vdash n  \mid   \lambda\in \mathcal P_{\pm 1, 5}, m_\lambda(1)\leq 6j, j\geq k\}|.$$
+
+In a similar way we can show that $$\begin{aligned}
+u_{h,2}^+(n)&=|\{ (\lambda, (5(j-1)+2)^j\cup \delta_{2,5,j})\vdash n \mid \lambda \in \mathcal P_{\pm2,5}, m_{\lambda}(2)\leq 6j, j\geq k \}|\\
+u_{g,1}^-(n)&=|\{ (\lambda, (5j+1)^{j-1}\cup\delta_{1,5,j}\cup (4)) \vdash n \mid \lambda \in \mathcal P_{\pm1,5}, m_{\lambda}(1)\leq 6j-2, j\geq k\}|\\ 
+u_{h,2}^-(n)&=|\{(\lambda, (5(j-1)+2)^{j-1}\cup \delta_{2,5,j}\cup (3)) \vdash n\mid \lambda \in \mathcal P_{\pm 2, 5}, m_\lambda(2)\leq 6j-2, j\geq k \}|. 
+\end{aligned}$$
+
+Using the generating functions in [@M2 Corollary 3.2], we have $$\begin{aligned}
+u_{g,2}^+(n)&=|\{ (\lambda, (\delta_{4,5,2j-1}\setminus \delta_{4,5,j-1}))\vdash n \mid \lambda \in \mathcal P_{\pm1,5}, m_{\lambda}(1)\leq 12j+1, j\geq k \}|\\ u_{g,2}^-(n)&=|\{ (\lambda, (\delta_{4,5,2j-2}\setminus \delta_{4,5,j-1})\cup(5(j-1)+1))\vdash n \mid \lambda \in \mathcal P_{\pm1,5}, m_{\lambda}(1)\leq 12j-3, j\geq k \}|\\
+u_{h,1}^+(n)&=|\{ (\lambda, (\delta_{2,5,2j}\setminus \delta_{2,5,j}))\vdash n \mid \lambda \in \mathcal P_{\pm2,5}, m_{\lambda}(2)\leq 3j-2, j\geq k \}|\\ & \ \ \ +|\{ (\lambda, (\delta_{3,5,2j+1}\setminus \delta_{3,5,j+2})\cup(5j+3))\vdash n \mid \lambda \in \mathcal P_{\pm2,5}, m_{\lambda}(3)= 1, j\geq k \}|
+\\ u_{h,1}^-(n)&=|\{ (\lambda, (\delta_{2,5,2j-1}\setminus \delta_{2,5,j}) \cup(5(j-1)+3))\vdash n \mid \lambda \in \mathcal P_{\pm2,5}, m_{\lambda}(2)\leq 3j-3, j\geq k \}|\\ & \ \ \ 
++|\{ (\lambda, (\delta_{3,5,2j}\setminus \delta_{3,5,j+1})\cup(5(j-1)+2))\vdash n \mid \lambda \in \mathcal P_{\pm2,5}, m_{\lambda}(3)= 1, j\geq k \}|.
+\end{aligned}$$

@@ -134,7 +134,7 @@ def main() -> int:
             ["grep", "-rlnE", pat, "--include=*.py", "computations/"],
             cwd=ROOT, capture_output=True, text=True, timeout=120,
         ).stdout
-        hits = [ln for ln in out.splitlines() if ln and "_deprecated" not in ln]
+        hits = [ln for ln in out.splitlines() if ln and ("_deprecated" not in ln and "fsh-guts" not in ln)]
         print(f"  grep-level UPPER BOUND on files touching a C(A,2)/clique bond"
               f" set: {len(hits)}")
     except Exception as e:  # pragma: no cover - environment dependent

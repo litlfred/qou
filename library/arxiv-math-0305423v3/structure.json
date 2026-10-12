@@ -5,7 +5,11 @@
   "file": "0305423v3.pdf",
   "sha256": "e4554f9084ba49358ac816861a8c2409ea3715666a5fbcccfe659ab8c0009ada",
   "bytes": 231113,
-  "pages": 19
+  "pages": 19,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +19,9 @@
    "stamp_date": "11 Nov 2003"
   },
   "doi": null,
-  "title": "Stein’s Method and Plancherel Measure of the Symmetric Group",
-  "authors_raw": "Running head: Stein’s Method and Plancherel Measure",
-  "abstract": "We initiate a Stein’s method approach to the study of the Plancherel measure of the symmetric group. A new proof of Ker ov’s central limit theorem for character ratios of random representatio ns of the symmet- ric group on transpositions is obtained; the proof gives an e rror term. The construction of an exchangeable pair needed for applying St ein’s method arises from the theory of harmonic functions on Bratelli dia grams. We also ﬁnd the spectrum of the Markov chain on partitions underlyin g the construc- tion of the exchangeable pair. This yields an intriguing met hod for studying the asymptotic decomposition of tensor powers of some repre sentations of the symmetric group. To appear in Trans. AMS. Submitted 5/28/03, Minor Revisions : 7/7/03, 11/8/03",
+  "title": "Stein\u2019s Method and Plancherel Measure of the Symmetric Group",
+  "authors_raw": "Running head: Stein\u2019s Method and Plancherel Measure",
+  "abstract": "We initiate a Stein\u2019s method approach to the study of the Plancherel measure of the symmetric group. A new proof of Ker ov\u2019s central limit theorem for character ratios of random representatio ns of the symmet- ric group on transpositions is obtained; the proof gives an e rror term. The construction of an exchangeable pair needed for applying St ein\u2019s method arises from the theory of harmonic functions on Bratelli dia grams. We also \ufb01nd the spectrum of the Markov chain on partitions underlyin g the construc- tion of the exchangeable pair. This yields an intriguing met hod for studying the asymptotic decomposition of tensor powers of some repre sentations of the symmetric group. To appear in Trans. AMS. Submitted 5/28/03, Minor Revisions : 7/7/03, 11/8/03",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220303102546-05'00'",
@@ -26,7 +30,7 @@
    "Author": ""
   },
   "title_lines": [
-   "Stein’s Method and Plancherel Measure of the Symmetric Group"
+   "Stein\u2019s Method and Plancherel Measure of the Symmetric Group"
   ]
  },
  "toc": [
@@ -148,6 +152,64 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 6,
-  "chars_total": 39814
+  "chars_total": 39814,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 6,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-harmonic-functions-and-exchangeable-pairs",
+     "title": "Harmonic functions and exchangeable pairs",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-irreducible-characters-of-the-symmetric-group",
+     "title": "Irreducible characters of the symmetric group",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-5-asymptotic-multiplicities-in-tensor-products-o",
+     "title": "Asymptotic multiplicities in tensor products of representations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-6-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

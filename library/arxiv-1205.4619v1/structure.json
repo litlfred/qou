@@ -6,7 +6,11 @@
   "sha256": "8c76e30a52dca57172c7e85a53f7bf3a80d81a537d4ff204b11c852a2a374709",
   "bytes": 239244,
   "pages": 17,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -171,6 +175,66 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 6,
-  "chars_total": 34502
+  "chars_total": 34502,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 10,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-quaternion-gauge-theory-and-isospin",
+     "title": "Quaternion Gauge Theory and Isospin",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-quaternions-and-dirac-spinors",
+     "title": "Quaternions and Dirac spinors",
+     "prose_ratio": 0.607,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-5-generators-and-casimir-invariants",
+     "title": "Generators and Casimir Invariants",
+     "prose_ratio": 0.704,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-7-split-octonions",
+     "title": "Split Octonions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-10-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.453,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

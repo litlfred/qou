@@ -66,7 +66,7 @@ STAMP_KEYS = ("q0Anchor", "q0Value")
 INLINE_Q0 = re.compile(r"1\s*\)?\s*/\s*\(\s*(mp\.)?mpf?\(?1\)?\s*-\s*", re.I)
 MUON_LITERAL = re.compile(r"1\.10997859555")
 WRITES_WITNESS = ("write_text", "WitnessBuilder", "json.dump")
-SKIP = (".git", ".claude", "_deprecated", "node_modules", "__pycache__")
+SKIP = (".git", ".claude", "_deprecated", "fsh-guts", "node_modules", "__pycache__")
 
 
 def _flat(o, prefix="", out=None):

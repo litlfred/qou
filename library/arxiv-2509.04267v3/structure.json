@@ -6,7 +6,12 @@
   "sha256": "9843b9dd71d1ec7453c4c83a98a954871870e6ba7425e9cc155b09298751596e",
   "bytes": 670406,
   "pages": 33,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:22Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,7 +21,7 @@
    "stamp_date": "14 Nov 2025"
   },
   "doi": null,
-  "title": "QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER COHOMOLOGY",
+  "title": "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology",
   "authors_raw": "MASAHICO SAITO AND EMANUELE ZAPPALA",
   "title_lines": [
    "QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER",
@@ -24,311 +29,874 @@
   ],
   "abstract": "Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants. More recently, cohomology theories for YBOs have been independently developed, drawing inspiration from analogous theories for quandles and other discrete algebraic structures. Quandle cohomology, in particular, gives rise to cocycle invariants for knots via 2-cocycles, which are closely related to quandle extensions, and knotted surfaces via 3-cocycles. These quandle cocycle knot invariants have also been shown to admit interpretations as quantum invariants. Similarly, 2-cocycles in Yang-Baxter cohomology can be interpreted in terms of deformations of YBOs. Building on these parallels, we introduce quantum cocycle invariants of knots using 2- cocycles of Yang\u2013Baxter cohomology, from the perspective of deformation theory. In particular, we demonstrate that the quandle cocycle invariant can be interpreted in this framework, while the quantum version yields stronger invariants in certain examples. We develop our theory along two primary approaches to quantum invariants: via trace con- structions and through (co)pairings. Explicit examples are provided, including those based on the Kauffman bracket. Furthermore, we show that both the Jones and Alexander polynomials can be derived within this framework as invariants arising from higher-order formal Laurent polynomial deformations via Yang-Baxter cohomology.",
   "docinfo": {
+   "Title": "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology",
    "Author": "Masahico Saito; Emanuele Zappala",
-   "Creator": "arXiv GenPDF (tex2pdf:4177c2c)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology"
+   "Creator": "arXiv GenPDF (tex2pdf:4177c2c)"
+  },
+  "title_raw": "QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER COHOMOLOGY",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology",
+   "heading": "QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER COHOMOLOGY Contents Introduction Preliminaries Yang-Baxter cohomology Quantum cocycle invariants via traces Examples via traces Quantum cocycle invariants via maxima/minima Examples via maxima/minima Higher order invariants The Jones and Alexander",
+   "text": "QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER COHOMOLOGY",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "page": 2,
+   "title": "Introduction",
+   "page": 3,
    "source": "inferred",
-   "number": "2"
+   "number": "1",
+   "confidence": 0.5,
+   "evidence": [
+    "latex"
+   ],
+   "page_label": "3"
   },
   {
    "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "title": "Preliminaries",
+   "page": 3,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Knot invariants from closed braids and traces",
    "page": 4,
    "source": "inferred",
-   "number": "4"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Knot invariants using maxima/minima",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "title": "Yang-Baxter cohomology",
+   "page": 5,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "YB cohomology in low dimensions",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "YB cohomology in higher dimensions",
    "page": 6,
    "source": "inferred",
-   "number": "6"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
   },
   {
    "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "title": "Quantum cocycle invariants via traces",
    "page": 8,
    "source": "inferred",
-   "number": "8"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "8"
   },
   {
    "level": 1,
-   "title": "Then there exists an",
-   "page": 8,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "page": 10,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "title": "Examples via traces",
    "page": 12,
    "source": "inferred",
-   "number": "12"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
-   "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "page": 14,
+   "level": 2,
+   "title": "Invariants from deformations of the transposition",
+   "page": 12,
    "source": "inferred",
-   "number": "14"
+   "number": "5.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
-   "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "page": 16,
+   "level": 2,
+   "title": "Invariants from the tensor version of quandle 2-cocycle invariants",
+   "page": 15,
    "source": "inferred",
-   "number": "16"
+   "number": "5.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "15"
   },
   {
    "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "page": 18,
+   "title": "Quantum cocycle invariants via maxima/minima",
+   "page": 19,
    "source": "inferred",
-   "number": "18"
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "19"
   },
   {
    "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "page": 20,
+   "title": "Examples via maxima/minima",
+   "page": 21,
    "source": "inferred",
-   "number": "20"
+   "number": "7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "21"
   },
   {
    "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "page": 22,
-   "source": "inferred",
-   "number": "22"
-  },
-  {
-   "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "page": 24,
-   "source": "inferred",
-   "number": "24"
-  },
-  {
-   "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "title": "Higher order invariants",
    "page": 26,
    "source": "inferred",
-   "number": "26"
+   "number": "8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "26"
   },
   {
    "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "page": 28,
+   "title": "The Jones and Alexander polynomials as higher order invariants",
+   "page": 29,
    "source": "inferred",
-   "number": "28"
-  },
-  {
-   "level": 1,
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "page": 30,
-   "source": "inferred",
-   "number": "30"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 33,
-   "source": "inferred",
-   "number": null
+   "number": "9",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "29"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-masahico-saito-and-emanuele-zappala",
-   "number": "2",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8394,
+   "n_words": 1260,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-000-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 3,
    "page_end": 4,
-   "n_chars": 9721,
-   "n_words": 1458
+   "n_chars": 1503,
+   "n_words": 271,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-001-4-masahico-saito-and-emanuele-zappala",
-   "number": "4",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "level": 1,
+   "id": "sec-001-21-knot-invariants-from-closed-braids-and-traces",
+   "number": "2.1",
+   "title": "Knot invariants from closed braids and traces",
+   "level": 2,
    "page_start": 4,
-   "page_end": 6,
-   "n_chars": 4883,
-   "n_words": 747
+   "page_end": 4,
+   "n_chars": 2083,
+   "n_words": 353,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-002-6-masahico-saito-and-emanuele-zappala",
-   "number": "6",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "id": "sec-002-22-knot-invariants-using-maximaminima",
+   "number": "2.2",
+   "title": "Knot invariants using maxima/minima",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 535,
+   "n_words": 103,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-003-3-yang-baxter-cohomology",
+   "number": "3",
+   "title": "Yang-Baxter cohomology",
    "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1379,
+   "n_words": 237,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-004-31-yb-cohomology-in-low-dimensions",
+   "number": "3.1",
+   "title": "YB cohomology in low dimensions",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1649,
+   "n_words": 331,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-005-32-yb-cohomology-in-higher-dimensions",
+   "number": "3.2",
+   "title": "YB cohomology in higher dimensions",
+   "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 3561,
-   "n_words": 591
+   "n_chars": 3458,
+   "n_words": 682,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
-   "id": "sec-003-8-masahico-saito-and-emanuele-zappala",
-   "number": "8",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "id": "sec-006-4-quantum-cocycle-invariants-via-traces",
+   "number": "4",
+   "title": "Quantum cocycle invariants via traces",
    "level": 1,
    "page_start": 8,
-   "page_end": 8,
-   "n_chars": 2427,
-   "n_words": 427
-  },
-  {
-   "id": "sec-004-1-then-there-exists-an",
-   "number": "1",
-   "title": "Then there exists an",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 10,
-   "n_chars": 2481,
-   "n_words": 402
-  },
-  {
-   "id": "sec-005-10-masahico-saito-and-emanuele-zappala",
-   "number": "10",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "level": 1,
-   "page_start": 10,
    "page_end": 12,
-   "n_chars": 5012,
-   "n_words": 850
+   "n_chars": 10709,
+   "n_words": 2142,
+   "label_start": "8",
+   "label_end": "12"
   },
   {
-   "id": "sec-006-12-masahico-saito-and-emanuele-zappala",
-   "number": "12",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "id": "sec-007-5-examples-via-traces",
+   "number": "5",
+   "title": "Examples via traces",
    "level": 1,
    "page_start": 12,
-   "page_end": 14,
-   "n_chars": 4884,
-   "n_words": 877
+   "page_end": 12,
+   "n_chars": 142,
+   "n_words": 22,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-007-14-masahico-saito-and-emanuele-zappala",
-   "number": "14",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 16,
-   "n_chars": 4161,
-   "n_words": 701
+   "id": "sec-008-51-invariants-from-deformations-of-the-transposi",
+   "number": "5.1",
+   "title": "Invariants from deformations of the transposition",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 5486,
+   "n_words": 1231,
+   "label_start": "12",
+   "label_end": "15"
   },
   {
-   "id": "sec-008-16-masahico-saito-and-emanuele-zappala",
-   "number": "16",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "level": 1,
-   "page_start": 16,
-   "page_end": 18,
-   "n_chars": 3996,
-   "n_words": 682
+   "id": "sec-009-52-invariants-from-the-tensor-version-of-quandle",
+   "number": "5.2",
+   "title": "Invariants from the tensor version of quandle 2-cocycle invariants",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 11548,
+   "n_words": 2344,
+   "label_start": "15",
+   "label_end": "19"
   },
   {
-   "id": "sec-009-18-masahico-saito-and-emanuele-zappala",
-   "number": "18",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "id": "sec-010-6-quantum-cocycle-invariants-via-maximaminima",
+   "number": "6",
+   "title": "Quantum cocycle invariants via maxima/minima",
    "level": 1,
-   "page_start": 18,
-   "page_end": 20,
-   "n_chars": 5261,
-   "n_words": 869
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 4659,
+   "n_words": 861,
+   "label_start": "19",
+   "label_end": "21"
   },
   {
-   "id": "sec-010-20-masahico-saito-and-emanuele-zappala",
-   "number": "20",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "id": "sec-011-7-examples-via-maximaminima",
+   "number": "7",
+   "title": "Examples via maxima/minima",
    "level": 1,
-   "page_start": 20,
-   "page_end": 22,
-   "n_chars": 4421,
-   "n_words": 749
-  },
-  {
-   "id": "sec-011-22-masahico-saito-and-emanuele-zappala",
-   "number": "22",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 24,
-   "n_chars": 2834,
-   "n_words": 515
-  },
-  {
-   "id": "sec-012-24-masahico-saito-and-emanuele-zappala",
-   "number": "24",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "level": 1,
-   "page_start": 24,
+   "page_start": 21,
    "page_end": 26,
-   "n_chars": 4036,
-   "n_words": 693
+   "n_chars": 9370,
+   "n_words": 1874,
+   "label_start": "21",
+   "label_end": "26"
   },
   {
-   "id": "sec-013-26-masahico-saito-and-emanuele-zappala",
-   "number": "26",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "id": "sec-012-8-higher-order-invariants",
+   "number": "8",
+   "title": "Higher order invariants",
    "level": 1,
    "page_start": 26,
-   "page_end": 28,
-   "n_chars": 4481,
-   "n_words": 791
+   "page_end": 29,
+   "n_chars": 7566,
+   "n_words": 1522,
+   "label_start": "26",
+   "label_end": "29"
   },
   {
-   "id": "sec-014-28-masahico-saito-and-emanuele-zappala",
-   "number": "28",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "id": "sec-013-9-the-jones-and-alexander-polynomials-as-higher",
+   "number": "9",
+   "title": "The Jones and Alexander polynomials as higher order invariants",
    "level": 1,
-   "page_start": 28,
-   "page_end": 30,
-   "n_chars": 5543,
-   "n_words": 983
-  },
-  {
-   "id": "sec-015-30-masahico-saito-and-emanuele-zappala",
-   "number": "30",
-   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
-   "level": 1,
-   "page_start": 30,
+   "page_start": 29,
    "page_end": 33,
-   "n_chars": 6547,
-   "n_words": 1259
-  },
-  {
-   "id": "sec-016-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 33,
-   "page_end": 33,
-   "n_chars": 3539,
-   "n_words": 453
+   "n_chars": 11482,
+   "n_words": 2138,
+   "label_start": "29",
+   "label_end": "33"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 17,
-  "sections": 17,
-  "chars_total": 77788
+  "toc_entries": 15,
+  "toc_inferred_entries": 15,
+  "toc_inferred_mean_confidence": 0.967,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 1,
+    "items": [
+     "1 Then there exists an"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 15,
+  "chars_total": 79963,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "quantumcocy_arXiv_v3.tex",
+   "tex_sections": 15,
+   "overlaid": 12,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-21-knot-invariants-from-closed-braids-and-traces",
+     "title": "Knot invariants from closed braids and traces",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-22-knot-invariants-using-maximaminima",
+     "title": "Knot invariants using maxima/minima",
+     "prose_ratio": 0.429,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-3-yang-baxter-cohomology",
+     "title": "Yang-Baxter cohomology",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.314,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-004-31-yb-cohomology-in-low-dimensions",
+     "title": "YB cohomology in low dimensions",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-32-yb-cohomology-in-higher-dimensions",
+     "title": "YB cohomology in higher dimensions",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-4-quantum-cocycle-invariants-via-traces",
+     "title": "Quantum cocycle invariants via traces",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-5-examples-via-traces",
+     "title": "Examples via traces",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-51-invariants-from-deformations-of-the-transposi",
+     "title": "Invariants from deformations of the transposition",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.92,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-52-invariants-from-the-tensor-version-of-quandle",
+     "title": "Invariants from the tensor version of quandle 2-cocycle invariants",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-6-quantum-cocycle-invariants-via-maximaminima",
+     "title": "Quantum cocycle invariants via maxima/minima",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-7-examples-via-maximaminima",
+     "title": "Examples via maxima/minima",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-8-higher-order-invariants",
+     "title": "Higher order invariants",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-9-the-jones-and-alexander-polynomials-as-higher",
+     "title": "The Jones and Alexander polynomials as higher order invariants",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.631,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

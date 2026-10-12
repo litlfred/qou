@@ -1,42 +1,359 @@
 {
-  "_schema": "pdf-structure/v1",
-  "doc_id": "arxiv-1306.3655v1",
-  "source": {
-    "file": "1306.3655v1.pdf",
-    "sha256": "45dd8bd55687ecce543089bb5f7c438a83971069dbb221f8438ab993387c2a5e",
-    "bytes": 122090,
-    "pages": 11
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1306.3655v1",
+ "source": {
+  "file": "1306.3655v1.pdf",
+  "sha256": "45dd8bd55687ecce543089bb5f7c438a83971069dbb221f8438ab993387c2a5e",
+  "bytes": 122090,
+  "pages": 11,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1306.3655",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "16 Jun 2013"
   },
-  "metadata": {
-    "arxiv": {
-      "id": "1306.3655",
-      "version": "1",
-      "primary_class": "math.RT",
-      "stamp_date": "16 Jun 2013"
-    },
-    "doi": null,
-    "title": "The Murnaghan-Nakayama rule and some virtual Sn characters",
-    "authors_raw": "Amitai Regev"
-  },
-  "toc": [],
-  "toc_source": "headings",
-  "sections": [
-    {
-      "number": "4",
-      "title": "Define the virtual Sn character \u03c8\u03bd,n as follows:",
-      "level": 1,
-      "page_start": 3,
-      "page_end": 11,
-      "id": "sec-000-define-the-virtual-sn-character-n-as-follows",
-      "n_chars": 12991,
-      "n_words": 3175
-    }
+  "doi": null,
+  "title": "The Murnaghan-Nakayama rule and some virtual S n characters",
+  "authors_raw": "Amitai Regev",
+  "title_lines": [
+   "The Murnaghan-Nakayama rule and some virtual Sn",
+   "characters"
   ],
-  "diagnostics": {
-    "pages_without_text": 0,
-    "likely_scanned": false,
-    "toc_entries": 0,
-    "sections": 1,
-    "chars_total": 16940
+  "abstract": "We construct certain virtual characters for the symmetric groups, then compute a formula which calculates the values of these virtual characters.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20220530182440-04'00'"
+  },
+  "title_raw": "The Murnaghan-Nakayama rule and some virtual Sn characters",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "The Murnaghan-Nakayama rule and some virtual S n characters",
+   "outline": "1 Introduction",
+   "text": "The Murnaghan-Nakayama rule and some virtual Sn characters",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The virtual Sn-characters ,n",
+   "page": 1,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The general construction",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "A formula for ,n()",
+   "page": 5,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The proof of Theorem 3.1",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Applications",
+   "page": 8,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Final remarks",
+   "page": 9,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The polynomials p,n(t)",
+   "page": 10,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 352,
+   "n_words": 48,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2714,
+   "n_words": 530,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-21-the-general-construction",
+   "number": "2.1",
+   "title": "The general construction",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 7012,
+   "n_words": 1570,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-31-the-proof-of-theorem-31",
+   "number": "3.1",
+   "title": "The proof of Theorem 3.1",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1455,
+   "n_words": 341,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-32-applications",
+   "number": "3.2",
+   "title": "Applications",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1326,
+   "n_words": 269,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-4-final-remarks",
+   "number": "4",
+   "title": "Final remarks",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3251,
+   "n_words": 701,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 16110,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 8,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-21-the-general-construction",
+     "title": "The general construction",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-31-the-proof-of-theorem-31",
+     "title": "The proof of Theorem 3.1",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-32-applications",
+     "title": "Applications",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-4-final-remarks",
+     "title": "Final remarks",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.73,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
+ }
 }

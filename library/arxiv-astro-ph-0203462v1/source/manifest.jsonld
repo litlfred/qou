@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-astro-ph-0203462v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-astro-ph-0203462v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:astro-ph/0203462&metadataPrefix=arXiv), submitted 2002-03-26, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-astro-ph-0203462v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/astro-ph/0203462v1",
+    "content_type": "application/gzip",
+    "sha256": "0c40e990d6a9c55e6516034eaf958c6b59b20b3cc193b7b47d1d1834d1dda438",
+    "bytes": 151464,
+    "fetched": "2026-10-10T15:23:33+00:00",
+    "files": [
+      {
+        "path": "source/files/M2317.tex",
+        "role": "tex",
+        "sha256": "a4319ae278cc838b96cb6e0cbea3156fc6624029d7fb3f95a1148ef790f40814",
+        "bytes": 99389
+      },
+      {
+        "path": "source/files/aa.cls",
+        "role": "cls",
+        "sha256": "4432aff8ea91d7fe5f123ed90948c34498e79ebaa1bf4204fbdb219d2ff2361f",
+        "bytes": 47801
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

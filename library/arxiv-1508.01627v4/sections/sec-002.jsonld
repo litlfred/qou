@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1508.01627v4/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "A Murnaghan–Nakayama rule",
-  "pageStart": 5,
-  "pageEnd": 9,
+  "title": "Maximal tori in classical groups",
+  "pageStart": 2,
+  "pageEnd": 2,
   "contains": [
     "library/arxiv-1508.01627v4/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/arxiv-1508.01627v4/manifest",
-  "sourceDocument": "library/arxiv-1508.01627v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.01627v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.01627v4/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,144 +8,49 @@ pages: 20-21
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
 doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
+text_source: latex
+latex_prose_ratio: 0.93
+latex_coverage_ratio: 0.974
 ---
-ical Uq-representationsV q
-λ (λ ∈ Λ n) have the following explicit closed expressions.
-Proposition 5.3. Forλ ∈ Λ n we have
-Dimq
-(
-V q
-λ
-)
-=q2(2n−d−1)|λ|−4(ρ,λ)
-n∏
-i=1
-(
-q2(1+λi+ρi);q2) 2
-d−2n
-(
-q2(1+ρi);q2) 2
-d−2n
-(1 −q2(d−2n+1+2(λi+ρi)))
-(1 −q2(d−2n+1+2ρi))
-×
-∏
-1≤j<k≤n
-(1 −q2(d−2n+1+λj +λk+ρj+ρk))2(1 −q2(λj−λk+ρj−ρk))2
-(1 −q2(d−2n+1+ρj +ρk))2(1 −q2(ρj−ρk))2 .
-(5.5)
-In Section 8 we derive Proposition 5.3 from a generalization of the qua ntum dimension
-formula (5.4) to the setup of the one-parameter family of quantum complex Grassmanni-
-ans from [20] and [5]. By a suitable degeneration procedure we subse quently deduce the
-quantum dimension formulas
-(5.6) Dim q
-(
-V q
-λ
-)
-=Dq2
-(
-λ;q2(d−2n+1),q 2;q2), λ ∈ Λ n
-in terms of evaluations and quadratic norms of multivariable little q-Jacobi polynomials.
-More directly, (5.6) is a direct consequence of the quantum dimensio n formula (5.4) if
-one uses the fact that the quantum zonal spherical functions ϕq
-λ (λ ∈ Λ n) identify with
-multivariable little q-Jacobi polynomials (see [5] and Remark 8.5).
-Remark 5.4. Taking the limit q → 1 in (5.5), we obtain the explicit dimension formulas for
-the irreducible M-spherical K-representationsV C
-λ (λ ∈ Λ n) as stated in Proposition 4.2.
-QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIO NS 21
-We end this subsection by discussing the representation theoretic viewpoint on the quan-
-tum dimension formula (5.5) for λ =ωr, in which case it yields the explicit expression
-(5.7) Dim q
-(
-V q
-ωr
-)
-=q2r(d−r)
-(d
-r
-) 2
-q−2
-−q2(r−1)(d−r+1)
-( d
-r − 1
-) 2
-q−2
-for r = 1,...,n by a straightforward computation. The following representation t heoretic
-derivation of (5.7) bears strong resemblance to the representat ion theoretic derivation of
-the dimension formula (4.16) in the classical non-Archimedean setup .
-Let {ǫj}d
-j=1 be the standard orthonormal basis of Rd. Let V =Lq
-ǫ1 be the d-dimensional
-vector-representation of Uq. Its weight spaces are one-dimensional, with weights ǫj (j =
-1,...,d ). The irreducible representation Lq
-ǫ1+···+ǫr (1 ≤ r ≤ n) can be realized as the rth
-graded part Λ r
-q(V ) of the q-exterior algebra Λ q(V ) of V (see [21]). The weight spaces of
-Λ r
-q(V ) are again one-dimensional, with weights given by ∑
-j∈Jǫj for subsets J ⊆ {1,...,d }
-of cardinality r. Hence
-Dimq
-(
-Λ r
-q(V )
-)
-= TrΛ r
-q(V )(K 2δ·) =
-∑
-J ⊆{1,...,d}
-#J=r
-∏
-j∈J
-q2(d−j) =q(r−1)r
-(
-q2(d−r+1);q2)
-r
-(
-q2;q2)
-r
-,
-where the third equality follows by an easy induction argument. The d ual of Λ r
-q(V ) is
-irreducible of highest weight −ǫd−r+1 · · · −ǫd. In fact, by [21] we have
-Λ r
-q(V )∗ ≃ Cdet−1
-q ⊗ Λ d−r
-q (V ),
-with Cdet−1
-q ≃Lq
-−ǫ1···−ǫd the one-dimensional representation realized by the inverse of the
-quantum determinant det q ∈ Cq(K), hence
-Dimq
-(
-Λ r
-q(V )∗)
-=q(1+r−2d)r
-(
-q2(r+1);q2)
-d−r
-(
-q2;q2)
-d−r
-.
-We conclude that
-Dimq
-(
-Ur
-)
-=q2r(d−r)
-(d
-r
-) 2
-q−2
-,
-where Ur is the Uq-module
-Ur = Λ r
-q(V ) ⊗ Λ r
-q(V )∗.
-By [5, (6.14)] we have
-Ur ≃Ur−1 ⊕V q
-ωr, r = 1,...,n
-as Uq-modules (with U0 the trivial representation), which now immediately implies (5.7).
+[]{#QDF label="QDF"}
+
+The quantum dimensions of the irreducible spherical $\mathcal{U}_q$-representations $V_\lambda^q$ ($\lambda\in\Lambda_n$) have the following explicit closed expressions.
+
+::: prop
+[]{#quantumcomplexformula label="quantumcomplexformula"} For $\lambda\in\Lambda_n$ we have $$\label{qcf}
+\begin{split}
+\hbox{Dim}_{q}\bigl(V_{\lambda}^{q}\bigr)&=q^{2(2n-d-1)|\lambda|-4(\rho,\lambda)}
+\prod_{i=1}^n\frac{\bigl(q^{2(1+\lambda_i+\rho_i)};q^2\bigr)_{d-2n}^2}
+{\bigl(q^{2(1+\rho_i)};q^2\bigr)_{d-2n}^2}
+\frac{(1-q^{2(d-2n+1+2(\lambda_i+\rho_i))})}
+{(1-q^{2(d-2n+1+2\rho_i)})}\\
+&\qquad\times\prod_{1\leq j<k\leq n}
+\frac{(1-q^{2(d-2n+1+\lambda_j+\lambda_k+\rho_j+\rho_k)})^2
+(1-q^{2(\lambda_j-\lambda_k+\rho_j-\rho_k)})^2}
+{(1-q^{2(d-2n+1+\rho_j+\rho_k)})^2(1-q^{2(\rho_j-\rho_k)})^2}.
+\end{split}$$
+:::
+
+In Section [\[quantum\]](#quantum){reference-type="ref" reference="quantum"} we derive Proposition [\[quantumcomplexformula\]](#quantumcomplexformula){reference-type="ref" reference="quantumcomplexformula"} from a generalization of the quantum dimension formula [\[dimforquantum\]](#dimforquantum){reference-type="eqref" reference="dimforquantum"} to the setup of the one-parameter family of quantum complex Grassmannians from [@NDS] and [@DS]. By a suitable degeneration procedure we subsequently deduce the quantum dimension formulas $$\label{qcfcons}
+\hbox{Dim}_q\bigl(V_\lambda^q\bigr)=
+D_{q^2}\bigl(\lambda;q^{2(d-2n+1)},q^2;q^2),\qquad
+\lambda\in\Lambda_n$$ in terms of evaluations and quadratic norms of multivariable little $q$-Jacobi polynomials. More directly, [\[qcfcons\]](#qcfcons){reference-type="eqref" reference="qcfcons"} is a direct consequence of the quantum dimension formula [\[dimforquantum\]](#dimforquantum){reference-type="eqref" reference="dimforquantum"} if one uses the fact that the quantum zonal spherical functions $\varphi_\lambda^q$ ($\lambda\in\Lambda_n$) identify with multivariable little $q$-Jacobi polynomials (see [@DS] and Remark [\[standardrema\]](#standardrema){reference-type="ref" reference="standardrema"}).
+
+::: rema
+[]{#classicalrema label="classicalrema"} Taking the limit $q\rightarrow 1$ in [\[qcf\]](#qcf){reference-type="eqref" reference="qcf"}, we obtain the explicit dimension formulas for the irreducible $\mathcal{M}$-spherical $\mathcal{K}$-representations $V_\lambda^{\mathbb{C}}$ ($\lambda\in\Lambda_n$) as stated in Proposition [\[classicalcomplexformula\]](#classicalcomplexformula){reference-type="ref" reference="classicalcomplexformula"}.
+:::
+
+We end this subsection by discussing the representation theoretic viewpoint on the quantum dimension formula [\[qcf\]](#qcf){reference-type="eqref" reference="qcf"} for $\lambda=\omega_r$, in which case it yields the explicit expression $$\label{dimformulanewrepr}
+\hbox{Dim}_q\bigl(V_{\omega_r}^q\bigr)= q^{2r(d-r)}\left({d\atop
+r}\right)_{q^{-2}}^2- q^{2(r-1)(d-r+1)}\left({d\atop
+r-1}\right)_{q^{-2}}^2$$ for $r=1,\ldots,n$ by a straightforward computation. The following representation theoretic derivation of [\[dimformulanewrepr\]](#dimformulanewrepr){reference-type="eqref" reference="dimformulanewrepr"} bears strong resemblance to the representation theoretic derivation of the dimension formula [\[padicfundamental\]](#padicfundamental){reference-type="eqref" reference="padicfundamental"} in the classical non-Archimedean setup.
+
+Let $\{\epsilon_j\}_{j=1}^d$ be the standard orthonormal basis of $\mathbb{R}^d$. Let $V=L_{\epsilon_1}^q$ be the $d$-dimensional vector-representation of $\mathcal{U}_q$. Its weight spaces are one-dimensional, with weights $\epsilon_j$ ($j=1,\ldots,d$). The irreducible representation $L_{\epsilon_1+\cdots +\epsilon_r}^q$ ($1\leq r\leq n$) can be realized as the $r$th graded part $\Lambda_q^r(V)$ of the $q$-exterior algebra $\Lambda_q(V)$ of $V$ (see [@NYM]). The weight spaces of $\Lambda_q^r(V)$ are again one-dimensional, with weights given by $\sum_{j\in J}\epsilon_j$ for subsets $J\subseteq \{1,\ldots,d\}$ of cardinality $r$. Hence $$\hbox{Dim}_q\bigl(\Lambda_q^r(V)\bigr)=
+\hbox{Tr}_{\Lambda_q^r(V)}(K^{2\delta}\cdot)=
+\sum_{\stackrel{J\subseteq\{1,\ldots,d\}}{\#J=r}}\prod_{j\in
+J}q^{2(d-j)}=
+q^{(r-1)r}\frac{\bigl(q^{2(d-r+1)};q^2\bigr)_r}{\bigl(q^2;q^2\bigr)_r},$$ where the third equality follows by an easy induction argument. The dual of $\Lambda_q^r(V)$ is irreducible of highest weight $-\epsilon_{d-r+1}\cdots -\epsilon_d$. In fact, by [@NYM] we have $$\Lambda_q^r(V)^*\simeq \mathbb{C}\hbox{det}_q^{-1}\otimes
+\Lambda_{q}^{d-r}(V),$$ with $\mathbb{C}\hbox{det}_q^{-1}\simeq L_{-\epsilon_1\cdots
+-\epsilon_d}^q$ the one-dimensional representation realized by the inverse of the quantum determinant $\det_q\in \mathbb{C}_q(\mathcal{K})$, hence $$\hbox{Dim}_q\bigl(\Lambda_q^r(V)^*\bigr)=
+q^{(1+r-2d)r}\frac{\bigl(q^{2(r+1)};q^2\bigr)_{d-r}}{\bigl(q^2;q^2\bigr)_{d-r}}.$$ We conclude that $$\hbox{Dim}_q\bigl(U_r\bigr)=
+q^{2r(d-r)}\left({d\atop r}\right)_{q^{-2}}^2,$$ where $U_r$ is the $\mathcal{U}_q$-module $$U_r=\Lambda_q^r(V)\otimes \Lambda_q^r(V)^*.$$ By [@DS (6.14)] we have $$U_r\simeq U_{r-1}\oplus V_{\omega_r}^q, \qquad r=1,\ldots,n$$ as $\mathcal{U}_q$-modules (with $U_0$ the trivial representation), which now immediately implies [\[dimformulanewrepr\]](#dimformulanewrepr){reference-type="eqref" reference="dimformulanewrepr"}.

@@ -1,0 +1,568 @@
+%#! latex main.tex
+%\appendix
+\chapter{$p$-adic symmetric domains and Totaro's theorem}
+\renewcommand{\thechapter}{\Alph{chapter}}
+\addtocontents{toc}{\protect\par\vskip2mm\hskip80mm by N. Tsuzuki\par\vskip5mm}
+
+\vspace{1ex}
+\begin{center}
+By {\sc TSUZUKI Nobuo}
+\end{center}
+\vspace{10mm}
+
+This appendix is a short exposition of 
+M. Rapoport and T. Zink's construction of $p$-adic symmetric 
+domains \cite{psfpg} and of B. Totaro's theorem \cite{tpipht}. 
+Let $G$ be a connected reductive algebraic group over $\Q_p$. 
+The set ${\mathcal F}$ of filtrations on an $F$-isocrystal with $G$-structure 
+has a structure of a homogeneous space. 
+Rapoport and Zink introduced a $p$-adic rigid analytic structure on 
+the set ${\mathcal F}^{wa}$ of weakly admissible points in ${\mathcal F}$. 
+They conjectured that the point in ${\mathcal F}^{wa}$ 
+is characterized by the semistability 
+in the sense of the geometric invariant theory \cite{git} 
+and Totaro proved this conjecture. 
+
+\section{Weakly admissible filtered isocrystals.}
+
+We recall J.-M. Fontaine's definition of weakly admissible 
+filtered $F$-isocrystals \cite{mgmfeadb}. 
+
+\begin{apppara}
+ Let $p$ be a prime number, $k$ a perfect field of 
+ characteristic $p$, 
+ $K_0$ an absolutely unramified discrete valuation field 
+ of mixed characteristics $(0, p)$ with residue field $k$, 
+ $\overline{K}_0$ an algebraic closure of $K_0$, 
+ and $\sigma$ the Frobenius automorphism on $K_0$. 
+\end{apppara}
+
+\begin{appdfn}
+ (1) An $F$-isocrystal over $k$, 
+ (we simply say ``isocrystal''), is 
+ a finite dimensional $K_0$-vector space $V$ 
+ with a bijective $\sigma$-linear endomorphism $\Phi : V \rightarrow V$. 
+ We denote the category of isocrystals over $k$ by $\mathrm{Isoc}(K_0)$. 
+
+ (2) For a totally ramified finite extension $K$ of $K_0$ in $\overline{K}_0$, 
+ a filtered isocrystal $(V, \Phi, F^{\bp})$ over $K$ 
+ is an isocrystal $(V, \Phi)$ with a decreasing filtration $F^{\bp}$ 
+ on the $K$-vector space $V \otimes_{K_0} K$ 
+ such that $F^r = V \otimes_{K_0} K$ 
+ for $r \ll 0$ and $F^s = 0$ for $s \gg 0$. 
+ We denote the category of filtered isocrystals over $K$ by $MF(K)$. 
+\end{appdfn}
+
+Fontaine also introduced a filtered isocrystal with nilpotent operator $N$ \cite{fontaine94:_repres}. 
+In this appendix we restrict our attension to filtered isocrystals with $N = 0$. 
+
+The category $MF(K)$ is a $\Q_p$-linear 
+additive category with $\otimes$ and internal $Hom${}'s, but not abelian. 
+A subobject $(V', \Phi', {F'}^{\bp})$ of a filtered isocrystal 
+$(V, \Phi, F^{\bp})$ is a $\Phi$-stable $K_0$-subspace $V'$ 
+such that $\Phi' = \Phi|_{V'}$ and ${F'}^i = (V' \otimes_{K_0} K) \cap F^i$ 
+for all $i$. 
+
+\begin{appdfn}
+ \label{weakad}
+ Let $K$ be a totally ramified finite extension of $K_0$ 
+ in $\overline{K}_0$. 
+ A filtered isocrystal $(V, \Phi, F^{\bp})$ over $K$ 
+ is weakly admissible if, for any subobject 
+ $(V', \Phi', {F'}^{\bp}) \ne 0$, we have 
+ $$
+      \displaystyle{\mathop{\sum}_i}\ i \dim_{F'} \mathrm{gr}^i_{F'}(V'
+ \otimes_{K_0} K) 
+                            \leq \mathrm{ord}_p(\det(\Phi'))
+ $$
+ and the equality holds for $(V', \Phi', {F'}^{\bp}) = (V, \Phi, F^{\bp})$. 
+ Here $\mathrm{ord}_p$ is an additive valuation of $K\sb 0$ normalized by 
+ $\mathrm{ord}_p(p) = 1$. 
+\end{appdfn}
+
+The category of weakly admissible filtered isocrystals 
+is an abelian category 
+which is closed under duals in the category of filtered 
+isocrystals. 
+Fontaine proved that an admissible filtered isocrystal over $K$, that means 
+a filtered isocrystal arising from a crystalline representation 
+of the absolute Galois group of $K$ via Fontaine's functor, is weakly admissible 
+and conjectured that a weakly admissible filtered isocrystal is admissible 
+in \cite{mgmfeadb}. 
+The category of admissible filtered isocrystals is 
+a $\Q_p$-linear abelian category with $\otimes$ and duals. 
+Hence, he also conjectured that the category of weakly admissible filtered 
+isocrystals is closed under $\otimes$, 
+and this was proved by G. Faltings in \cite{midag}. (See also \cite{tpipht}.)
+
+In \cite{colmez00:_const} P. Colmez and Fontaine proved a weakly admissible filtered 
+isocrystal is admissible. 
+
+
+\section{Filtered isocrystals with $G$-structure.}
+
+\begin{apppara}
+ Let $G$ be a linear algebraic group over $\Q_p$ and
+ denote by
+ $\mathrm{Rep}_{\Q_p}(G)$ the category of
+ finite dimensional $\Q_p$-rational representations of $G$.
+ An exact faithful $\otimes$-functor
+ $\mathrm{Rep}_{\Q_p}(G) \rightarrow \mathrm{Isoc}(K_0)$
+ is called an isocrystal with $G$-structure over $K_0$.
+
+ Let $b \in G(K_0)$. Then, the functor
+ $$
+   \mathrm{Rep}_{\Q_p}(G)
+                                        \rightarrow \mathrm{Isoc}(K_0)
+ $$
+ associated to $b$,
+ defined by $V \mapsto (V \otimes K_0, b(\mathrm{id} \otimes \sigma))$,
+ is an isocrystal with $G$-structure over $K_0$. \cite{iwas}
+ Two elements $b$ and $b'$ in $G(K_0)$ are conjugate
+ if and only if there is an element $g \in G(K_0)$ such that
+ $gb\sigma(g)^{-1} = b'$.
+ In this case, $g$ defines an isomorphism between the isocrystals with
+ $G$-structure associated to $b$ and $b'$.
+
+ If $G$ is connected and $k$ is algebraically closed,
+ then any  isocrystal with $G$-structure over $K_0$ is associated to
+ an element $b \in G(K_0)$ as above. \cite{otcasofwas}
+\end{apppara}
+
+\begin{apppara}
+ \label{sfil}
+ Let $\mathbb{D} = \displaystyle{\mathop{\lim}_\leftarrow}\ \G_m$
+ be the pro-algebraic group over $\Q$
+ whose character group is $\Q_p$. For an element $b \in G(K_0)$,
+ R.E. Kottwitz defined a morphism
+ $$
+      \nu : \mathbb{D} \rightarrow G_{K_0}
+ $$
+ of algebraic groups over $K_0$ which is characterized by the property
+ that, for any object $V$ in $\mathrm{Rep}_{\Q_p}(G)$,
+ the $\Q$-grading of $V \otimes K_0$ associated to $- \nu$ is the
+ slope grading of the isocrystal
+ $(V \otimes K_0, b(\mathrm{id} \otimes \sigma))$.
+ (The sign of our $\nu$ is different from the one in \cite{iwas}.)
+ For a suitable positive integer $s$, $s\nu$ is regarded
+ as a one-parameter subgroup of $G$ over $K_0$.
+\end{apppara}
+
+\begin{appdfn}
+ \label{decent} A $\sigma$-conjugacy class $\bar{b}$
+ of $G(K_0)$ is decent if there is an element $b \in \bar{b}$ such that
+ $$
+          (b\sigma)^s = s\nu(p)\sigma^s
+ $$
+ for some positive integer $s$.
+\end{appdfn}
+
+One knows that, for a decent $\sigma$-conjugacy class $\bar{b}$, $b$ and $\nu$
+as above are defined over $\Q_{p^s}$.
+If $G$ is connected and $k$ is algebraically closed, then any
+$\sigma$-conjugacy
+class is decent. \cite{iwas}
+
+\begin{apppara}
+ Let $K$ be a totally ramified finite extension
+ of $K_0$ in $\overline{K}_0$.
+ For a one-parameter subgroup $\lambda : \G_m \rightarrow G$
+ over $K$ and an element $b \in G(K_0)$,
+ we have an exact $\otimes$-functor
+ $$
+    {\mathcal I} : \mathrm{Rep}_{\Q_p}(G)
+               \rightarrow MF(K)
+ $$
+ which is defined by $V \mapsto
+ (V \otimes K_0, b(\mathrm{id} \otimes \sigma), F^{\bp}_\lambda)$.
+ Here $V_{K, \lambda, j}$ is the subspace of $V \otimes K$
+ of weight $j$ with respect to $\lambda$ and
+ $$
+    F^i_\lambda = \displaystyle{\mathop{\oplus}_{j \geq i}}\ V_{K, \lambda, j}
+ $$
+ is the weight filtration associated to $\lambda$.
+\end{apppara}
+
+\begin{appdfn}
+ A pair $(\lambda, b)$ as above is weakly admissible
+ if and only if
+ the filtered isocrystal ${\mathcal I}(V)$ over $K$ is so for any
+ object $V$ in $\mathrm{Rep}_{\Q_p}(G)$.
+\end{appdfn}
+To see the weak admissibility for $(\lambda, b)$, it is enough to check
+the weak admissibility of ${\mathcal I}(V)$ for a faithful
+representation $V$ of $G$.  Indeed, any representation of $G$ appears as
+a direct summand of $V^{\otimes m} \otimes (V^\vee)^{\otimes n}$ and
+${\mathcal I}(V)^{\otimes m} \otimes ({\mathcal I}(V)^\vee)^{\otimes n}$
+is weakly admissible by Faltings (see \ref{weakad}).  Here $V^\vee$
+(resp. ${\mathcal I}(V)^\vee$) is the dual of $V$ (resp.  ${\mathcal
+I}(V)$).
+
+\section{Totaro's theorem.}
+
+In this section we assume that $k$ is algebraically closed.
+
+\begin{apppara}
+ Let $G$ be a reductive algebraic group over $\Q_p$.
+ We fix a conjugacy class of a one-parameter subgroup
+ $\lambda : \G_m \rightarrow G$ over $\overline{K}_0$.
+ Here two one-parameter subgroups $\lambda, \lambda'$ are conjugate
+ if and only if $g \lambda g^{-1} = \lambda'$ for some element $g \in
+ G(\overline{K}_0)$.
+ Then, there is a finite extension $E$ of $\Q_p$ in $\overline{K}_0$
+ such that the conjugacy class of $\lambda$ is defined over $E$.
+ Let us suppose that $\lambda$ is defined over $E$ and denote by
+ $\breve{E}$ the composite field $EK_0$ in $\overline{K}_0$
+\end{apppara}
+
+\begin{apppara}
+ Two one-parameter subgroups of $G$
+ over $\overline{K}_0$ are equivalent
+ if and only if they define the same weight filtration for any object
+ in $\mathrm{Rep}_{\Q_p}(G)$.
+ Note that, if two one-parameter subgroups are equivalent,
+ then they belong to the same conjugacy class.
+
+ Consider the functor
+ $$
+     R \mapsto
+ \{\text{the equivalence classes in the conjugacy class of $\lambda$
+ defined over $R$} \}
+ $$
+ on the category of $E$-algebras. If one defines an algebraic
+ subgroup of $G$ over $E$ by
+ $$
+      P(\lambda)(\overline{K}_0) = \{ g \in G(\overline{K}_0) ~|~
+             g \lambda g^{-1}~ \text{is equivalent to}~ \lambda \},
+ $$
+ then $P(\lambda)$ is parabolic and the functor above is represented by
+ the projective variety $G_E/P(\lambda)$.
+ We denote this homogeneous space over $E$ by ${\mathcal F}_\lambda$.
+ If $V$ is a faithful representation
+ in $\mathrm{Rep}_{\Q_p}(G)$
+ and if we denote by $\mathrm{Flag}_\lambda(V)$ the flag variety over
+ $\Q_p$
+ which represents the functor
+ $$
+     R \mapsto \left\{
+            \begin{array}{l}
+             \text{the filtrations $F^{\bp}$ of $V \otimes R$
+             as $R$-modules such that} \\
+             \text{$F^i$ is a direct summand and
+             $\mathrm{rank}_R F^i
+                = \dim_{\overline{K}_0} F_\lambda^i(V \otimes \overline{K}_0)$}
+            \end{array}
+         \right\}
+ $$
+ on the category of $\Q_p$-algebras, then there is
+ a natural $E$-closed immersion
+ $$
+      {\mathcal F}_\lambda
+          \rightarrow \mathrm{Flag}_\lambda(V)
+ \otimes_{\Q_p} E.
+ $$
+\end{apppara}
+
+\begin{apppara}
+ Let $b \in G(K_0)$.
+ For a finite extension $K$ of $\breve{E}$, a point $\xi$
+ in ${\mathcal F}_\lambda(K)$ is called weakly admissible if and only if
+ the pair $(\xi, b)$ is weakly admissible. This condition is independent
+ of the choice of the representative in the equivalence class $\xi$.
+ We denote by ${\mathcal F}^{wa}_{\lambda, b}(K)$ the subset of weakly
+ admissible points.
+ Totaro gave a characterization of ${\mathcal F}^{wa}_{\lambda, b}$
+ in the sense of geometric invariant theory. \cite{tpipht}
+ We explain his theory in the rest of this section.
+\end{apppara}
+
+\begin{apppara}
+ For a maximal torus $T$ in $G_{\overline{K}_0}$,
+ let $X^*(T)$ be the free abelian group of characters,
+ $X_*(T)$ the free abelian group of one-parameter subgroups,
+ and $<\ , \ > : X^*(T) \times X_*(T) \rightarrow \Z$
+ the perfect pairing with $\chi(\xi(t)) = t^{<\chi, \xi>}$.
+ If $N(T)$ is the normalizer of $T$ in $G$, the Weyl group $W(T) = N(T)/T$
+ acts $X_*(T)$ via inner automorphisms.
+
+ Now we fix an invariant norm $||\ ||$ on $G$, a non-negative
+ real valued function on the set of one-parameter subgroups
+ of $G_{\overline{K}_0}$, such that
+
+ a) $||g \xi g^{-1}|| = ||\xi||$ for any $g \in G(\overline{K}_0)$,
+
+ b) for any maximal torus $T$, there is a positive definite rational valued
+ bilinear form $(\ , \ )$ on $X_*(T) \otimes \Q$
+ with $(\xi, \xi) = ||\xi||^2$,
+
+ c) $||\gamma(\xi)|| = ||\xi||$
+ for $\gamma \in \mathrm{Gal}(\overline{K}_0/K_0)$,
+ where $\gamma(\xi)(t) = \gamma(\xi(t))$.
+
+ \noindent
+ The bilinear form on $X_*(T) \otimes \Q$
+ as above is invariant under the action of
+ the Weyl group by (a). For any maximal torus $T$,
+ invariant norms are in one-to-one correspondence
+ with $(\mathrm{Gal}(\overline{K}_0/K_0), W(T))$-invariant positive definite
+ rational valued bilinear forms on $X_*(T) \otimes \Q$ since
+ all maximal tori are conjugate and, if $g \xi g^{-1} \in X_*(T)$ for
+ $\xi \in X_*(T)$ and $g \in G(\overline{K}_0)$, then there is $h \in W(T)$
+ with $g \xi g^{-1} = h \xi h^{-1}$ by \cite{git}.
+ (See also \cite{iiit} and \cite{tpipht}.) Hence, such an invariant norm exists.
+\end{apppara}
+
+\begin{apppara}
+ Now we assume that $G$ is connected. Let $U(\lambda)$ be the unipotent
+ radical of $P(\lambda)$, whose elements act on the graded space
+ $\mathrm{gr}\ F_{\lambda}^{\bp}$ trivially. Then there is a bijection between
+ the set of maximal tori of $G$ in $P(\lambda)$
+ and the set of maximal tori
+ of $P(\lambda)/U(\lambda)$ by the natural projection $T \mapsto \overline{T}$.
+ Hence, the invariant norm on $G$ induces the one on $P(\lambda)/U(\lambda)$.
+ Fix a maximal torus $T$ of $G$.
+ Since the image of $\lambda$ is contained in the center of
+ $P(\lambda)/U(\lambda)$,
+ the perfect pairing associated to the invariant norm determines
+ the dual of $\lambda$ in $X^*(\overline{T})$.
+ This dual can extend to a character $\otimes \Q$ of
+ $P(\lambda)/U(\lambda)$.
+ Now we define a $G$-line bundle $\otimes \Q$, $L_\lambda$,
+ on ${\mathcal F}_\lambda$
+ by the associated one to the negative of the dual character $\otimes
+ \Q$
+ of $\lambda$. By construction, the line bundle ${\otimes \Q}$,
+ $L_\lambda$, depends only on the conjugacy class of $\lambda$
+ and is ample.
+
+ Let $J$ be a smooth affine group scheme over $\Q_p$ such that
+ $$
+       J(\Q_p) = \{ g \in G(K_0) ~|~ g (b \sigma) = (b \sigma) g \}
+ $$
+ (which is introduced in \cite{psfpg}). 
+ Since $J_{K_0} \subset G_{K_0}$, the pull back $L_{\lambda \breve{E}}$ 
+ of $L_\lambda$ on ${\mathcal F}_{\lambda \breve{E}}$ 
+ is an ample $J_{\breve{E}}$-line bundle. 
+
+ By the same construction as above, $\nu$ in \ref{sfil} gives 
+ a character $\otimes \Q$ of $P(\nu)$. 
+ The opposite of this character $\otimes \Q$ 
+ determines a $J_{\breve{E}}$-action $\otimes \Q$ 
+ on the trivial line bundle on ${\mathcal F}_{\lambda \breve{E}}$ 
+ since $J_{K_0} \subset P(\nu)$. We denote it by $L_\nu^0$. 
+
+ We put a $J_{\breve{E}}$-line bundle ${\otimes \Q}$,
+ $L = L_{\lambda \breve{E}} \otimes L_\nu^0$, 
+on ${\mathcal F}_{\lambda \breve{E}}$. 
+ Then it is ample and depends only on 
+ $b$ and the conjugacy class of $\lambda$. 
+ We denote by ${\mathcal F}_\lambda^{ss}(L)$ the set of semistable points 
+ in ${\mathcal F}_\lambda$ 
+ with respect to $L$ in the sense of D. Mumford \cite{git}. 
+\end{apppara}
+
+\begin{appthm}
+ \cite{tpipht}
+ {\it Suppose that $G$ is connected and reductive. 
+ For any finite extension $K$ of $\breve{E}$, we have 
+ $$
+      {\mathcal F}_{\lambda, b}^{wa}(K) = {\mathcal F}_{\lambda 
+ \breve{E}}^{ss}(L)(K). 
+ $$
+ }
+\end{appthm}
+
+We shall sketch Totaro's proof. 
+First, let $G = GL(n)$ and let us consider the invariant norm 
+induced by the pairing 
+$$
+    (\alpha, \beta) = \displaystyle{\mathop{\sum}_{i, j}}\ 
+ ij \dim_{\overline{K}_0} 
+\mathrm{gr}_{F_\alpha^{\bp}}^i\mathrm{gr}_{F_\beta^{\bp}}^j 
+             (K^n) 
+$$
+for one-parameter subgroups $\otimes \Q$, $\alpha, \beta$ of 
+$GL(n)$ over $K$. 
+If one puts $\mu_\alpha(V) 
+= (\displaystyle{\mathop{\sum}_i}\ i\dim_K 
+\mathrm{gr}_{F_\alpha^{\bp}}^i(V \otimes K)) /\dim\ V$, 
+then one has 
+$$
+     (\alpha, \beta) 
+              = \int\ (\mu_\alpha(F_\beta^j) - \mu_\alpha(V))\dim_K 
+F_\beta^j dj 
+                      + \mu_\alpha(V)\mu_\beta(V)\dim\ V.
+$$
+So, $(\xi, b)$ is weakly admissible 
+if and only if $(\xi, \alpha) + (\nu, \alpha) \leq 0$ 
+for any one-parameter subgroup $\alpha$ of $GL(n)$ over $K_0$ 
+with the filtration $F_\alpha^{\bp}$ as subisocrystals. 
+In other words, $(\xi, b)$ is weakly admissible 
+if and only if $(\xi, \alpha) + (\nu, \alpha) \leq 0$ 
+for any one-parameter subgroup $\alpha$ of $J$ over $\Q_p$. 
+Hence, the assertion follows from the calculation of Mumford's numerical 
+invariant below. 
+
+\begin{applem}
+ {\it If $\mu(\xi, \alpha, L)$ is Mumford's numerical 
+ invariant of $\xi \in {\mathcal F}_\lambda$ 
+ for a one-parameter subgroup $\alpha$ of $J$ over $\Q_p$, then 
+ $$
+    \mu(\xi, \alpha, L) = - (\xi, \alpha) - (\nu, \alpha).
+ $$
+ }
+\end{applem}
+
+Next, let $G$ be arbitrary, $V$ a faithfully representation of $G$, and 
+consider the invariant norm on $G$ induced from the above norm 
+by the natural immersion $G \rightarrow GL(V)$. 
+The Mumford's numerical invariant of weakly admissible points 
+is non-negative for any one-parameter subgroup of $J(GL(V))$. 
+Hence it is so for any one-parameter subgroup of $J$, 
+and the weak admissibility implies the semistability. 
+To see the converse, one needs to show that, if $\xi \in {\mathcal 
+F}_\lambda^{ss}(L)(K)$, 
+$(\xi, \alpha) + (\nu, \alpha) \leq 0$ 
+for any one-parameter subgroup $\alpha$ of $J(GL(V))$ over $\Q_p$. 
+If $\alpha$ is semistable for the $G_K$-line bundle $L_\alpha$ 
+on ${\mathcal F}_\alpha$, the assertion follows from the first part. 
+In the case where $\alpha$ is not semistable, one can use 
+Kempf's filtration \cite{iiit} and Ramanan and Ramanathan's work 
+\cite{srotif}, and obtains the required inequality. 
+
+Finally one needs to prove the independence of the choice of the norm.
+Suppose that the identity is valid for the particular norm.
+Since $G$ is a quotient of a product of a torus and some simple algebraic
+groups
+by a finite central subgroup \cite{gr},
+one can reduce the assertion in the case of tori and simple groups.
+In the case of tori it was proved in \cite{psfpg},
+and in the case of simple groups it is true
+since the norm of the simple group
+comes from the Killing form up to a positive rational multiple.
+\hspace{\fill} $\square$
+
+\section{$p$-adic symmetric domains.}
+
+Let $k$ be the algebraic closure of the prime field $\F_p$,
+$\C_p$ the $p$-adic completion of a fixed algebraic closure
+$\overline\Q_p$ of $\Q_p$, and
+$K_0 = \widehat\Q_p^{ur}$ the $p$-adic completion
+of the unramified extension in $\C_p$.
+
+\begin{apppara}
+ Let $G$ be a reductive group over $\Q_p$, $b \in
+ G(K_0)$,
+ and fix a conjugacy class $\{ \lambda \}$ of a one-parameter subgroup $\lambda$
+ of $G$ over $\overline\Q_p$.
+
+ Rapoport and Zink gave a rigid analytic structure
+ on ${\mathcal F}_{\lambda, b}^{wa}$ as an admissible open subset
+ in ${\mathcal F}_{\lambda \breve{E}}$ and call it the $p$-adic
+ symmetric domain 
+ associated to the triple $(G, \{ \lambda \}, b)$ in \cite{psfpg}.
+ This notion of $p$-adic
+ symmetric domains is different from that of M. van der Put
+ and H. Voskuil in \cite{ssatsagoalf}. Indeed, for any discrete co-compact subgroup
+ $\Gamma$ of $G(\breve{E})$,
+ the quotient ${\mathcal F}_{\lambda, b}^{wa}/\Gamma$
+ is not always a proper analytic space over $\breve{E}$.
+\end{apppara}
+
+\begin{appthm}
+ \cite{psfpg} {\it The set ${\mathcal F}_{\lambda,
+ b}^{wa}$
+ of weakly admissible points with respect to $b$ in ${\mathcal
+ F}_\lambda(\C_p)$
+ is an admissible open subset of ${\mathcal F}_{\lambda \breve{E}}$ as a
+ rigid analytic
+ space.}
+\end{appthm}
+
+Now we sketch the proof of the theorem in \cite{psfpg}.
+By \cite{iwas} one may assume that the $\sigma$-conjugacy class of $b$
+is decent with the decent equation $(b\sigma)^s = s\nu(p)\sigma^s$ as in
+\ref{decent}.
+Let $V$ be a faithful representation in
+$\mathrm{Rep}_{\Q_p}(G)$, 
+$V_s = V \otimes \Q_{p^s}$, and $\Phi_s = b(\mathrm{id} \otimes
+\sigma)$.
+Then $(V \otimes K_0, b(\mathrm{id} \otimes \sigma))
+= (V_s, \Phi_s) \otimes_{\Q_{p^s}} K_0$.
+Put $V_s = \displaystyle{\mathop{\oplus}_\lambda}\ V_{s, j}$
+to be the isotypical decomposition for $\Phi_s$. The functor
+$$
+    R \mapsto \{ V' \subset V_s \otimes_{\Q_{p^s}}
+R ~|~
+                 V'~ \text{is a direct summand with}~
+                 V' = \displaystyle{\mathop{\oplus}_j}\
+                       V' \cap (V_{s, j}
+                       \otimes_{\Q_{p^s}} R) \}
+$$
+on the category of $\Q_{p^s}$-algebras is represented
+by a disjoint sum $T'$ of closed
+subschemes of Grassmannians of $V_s$. $T'$ descends to a
+$\Q_p$-variety
+$T$ and one has
+$$
+     T(\Q_p) = \{ \Phi_s\text{-stable subspaces of}~ V_s \}.
+$$
+Indeed, $\Phi_s$ gives a descent datum $\alpha : T' \rightarrow {T'}^\sigma$,
+where ${T'}^\sigma(R)$ is a set of direct summands of
+$V_{s, \lambda} \otimes_{\Q_{p^s}, \sigma} R$ with
+the isotypical decomposition,
+and $\alpha^{s-1} \circ \cdots \circ \alpha : T' \rightarrow T'$
+is the identity by the decent equation.
+
+Consider the closed subscheme over $\Q_{p^s}$
+$$
+     {\mathcal H} \subset
+           (\mathrm{Flag}_\lambda(V) \times T)
+                    \otimes_{\Q_p} \Q_{p^s}
+$$
+which consists of pairs $(F^{\bp}, V')$ such that
+$$
+     \displaystyle{\mathop{\sum}_i}\ i\,\mathrm{rank}\
+               \mathrm{gr}_{F^{\bp} \cap V'}^i\ (V')
+                > \mathrm{ord}_p(\det(\Phi_s|_{V'_j})).
+$$
+Then, by the definition of weak admissibility, one has
+$$
+    \mathcal{F}_{\lambda, b}^{wa}(\C_p)
+       = \mathcal{F}_\lambda(\C_p) \cap
+\biggl(\mathrm{Flag}_\lambda(V)(\C_p)
+        - \bigcup_{t\in T(\Q_p)}{\mathcal H}_t\biggr),
+$$
+where ${\mathcal F}_\lambda(\C_p)$ is identified with the image of
+the immersion
+${\mathcal F}_\lambda(\C_p) \subset \mathrm{Flag}_{\lambda}(\C_p)$.
+
+Fix embeddings of $\mathrm{Flag}_\lambda(V)$ and $T$
+in projective spaces over $\Q_p$
+and a finite set $\{ f_j \}$ of bi-homogeneous polynomials
+of definition of $\mathrm{Flag}_\lambda(V) \times T$
+with integral coefficients.
+For $\epsilon > 0$, consider a tubular neighbourhood
+$$
+    {\mathcal H}_t(\epsilon)
+        = \{ x \in \mathrm{Flag}_\lambda(V)(\C_p)
+                      ~|~ |f_j(x, t)| < \epsilon~ \text{for all}~ j \}
+$$
+of ${\mathcal H}_t$.
+Here we choose unimodular representatives for $x$ and $t${}'s
+and $|\ |$ is an absolute value on $\C_p$.
+Then there is a finite set $S \subset T(\Q_p)$ such that
+$ \bigcup_{t \in T(\Q_p)}{\mathcal H}_t(\epsilon)
+= \bigcup_{t \in S}{\mathcal H}_t(\epsilon)$
+for the local compactness.
+${\mathcal F}_\epsilon = {\mathcal F}_\lambda(\C_p)
+\cap (\mathrm{Flag}_\lambda(V)(\C_p) -
+\bigcup_{t \in T(\Q_p)}\mathcal{H}_t(\epsilon))$
+is an admissible open subset of ${\mathcal F}_{\lambda, b \breve{E}}^{wa}$,
+hence
+$$
+    {\mathcal F}_1 \subset {\mathcal F}_{\frac{1}{2}}
+          \subset {\mathcal F}_{\frac{1}{3}} \subset \cdots
+$$
+is an admissible covering of ${\mathcal F}_{\lambda, b \breve{E}}^{wa}$.
+\hspace{\fill} $\square$

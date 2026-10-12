@@ -9,7 +9,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-10-10T07:01:23Z
+updated_at: 2026-10-10T15:04:08Z
 parent: qou-d8c7
 ---
 
@@ -78,3 +78,30 @@ Absorbs `qou-m5fy` (scrapped today with a pointer here), and links `qou-0w3s`, `
 
 - `instance trivialVortex` at `topological-mass-conjecture.lean:180` is a live global instance, so any `[...]`-conditional statement over that class is discharged trivially wherever it is in scope.
 - `tm_transient_localisation.lean` carries its inputs as class fields that a zero instance satisfies, so the localisation statement says nothing as written.
+
+## 2026-10-10 — fixed on branch claude/tm-vacuity-fix-2026-10-10 (018e5d30b, 76d129b37)
+
+Note: on main the 0/1/identity definitions this bean names had already been replaced by `opaque` constants (bean qou-t4cv); the remaining defects were a Prop-class field projected back (cat-transient), a data class the all-zero instance satisfies (transient-localisation, the residue above), and disc triviality assumed as a field (holonomy). All three modules are now fully parametric, no opaque constants:
+
+- **cat_transient_localises_blowup** — generic `CommRing R`, arbitrary R-module. Hypothesis: transient ∈ ⨆_{i<N} ker 𝔡ᵢ (the .md's support clause, NOT derived). Derived: split into local pieces, trace distributes (map_sum), and pieces are unique under `iSupIndep` (`localPiece_unique`), so tr_trans(ϱ,pᵢ) is well defined.
+- **tm_descended_is_holonomy** — MI valued in an arbitrary Monoid (ordered List.prod). Hypotheses: multiplicativity, naturality under blow-down, discs collapse to a point, MI over a point = 1, non-abelian Stokes. Derived: disc triviality, then the identity.
+- **tm_transient_localisation** — only the inequality ‖MI∫_Σ‖ ≤ Σ‖MI∫_{Eᵢ}‖ is derivable (triangle inequality of a group seminorm). `norm_additivity_not_forced` exhibits data in Multiplicative ℝ meeting both hypotheses with 0 ≠ 2, scope (a). The block's equality is now the conjecture class `TransientLocalisationNormEquality` with no instance; .ts carries a caveat.
+
+Verification: lean-direct (-DautoImplicit=false -s 65536) exit 0 on all three, no sorry; #print axioms ⊆ {propext, Classical.choice, Quot.sound}. No Lean consumers of the old declarations exist. validate: 9 issues (baseline).
+
+Open: the transient-localisation block's equality (proof step 'norm of product = sum of norms' is false for a general group norm). Owner call: restate the lemma as an inequality, or demote it to a conjecture. Not closeable while that stands; the vacuity itself is fixed. Residue trivialVortex (topological-mass-conjecture.lean:180) not touched — out of this bean's three modules.
+
+## 2026-10-10 — owner pick applied: lemma restated as the inequality (branch claude/tmvac-fd2u-owner-picks-2026-10-10, fd5d46102 / 90b08145b)
+
+lem:topological-mass-transient-localisation (label kept) now states ||MI int_Sigma (alpha - tau_n alpha)|| <= sum_i ||MI int_{E_i}||, matching tm_transient_localisation.lean. Title -> 'Transient terms are bounded by exceptional-divisor contributions'; .ts caveat replaced by a refined-framing note; proof block rewritten to the triangle-inequality argument plus the Multiplicative R counterexample to additivity. Consumer prf:topological-mass (archimedean proof of thm:topological-mass) relied on the equality: it now derives only m <= ||Hol|| + sum Phi_q(z_i) and says equality on that route is conditional on the open transient equality. definition-index title row updated. Lean docstring updated (comment only); lean-direct exit 0.
+
+Still open, so NOT closeable: (1) the equality itself, conjecture class TransientLocalisationNormEquality (no instance) — this bean's own residue, and AGENTS.md 13a; (2) thm:topological-mass's archimedean route now proves only an upper bound (its categorical proof prf:topological-mass-categorical is untouched and not re-audited here); (3) residue trivialVortex (topological-mass-conjecture.lean:180), untouched.
+
+
+## 2026-10-10 — residue trivialVortex fixed (branch claude/qvalue-obs-trivialvortex-2026-10-10, 1e18f2aa9c)
+
+Verdict: vacuous. `instance trivialVortex (vortex : Type*) : TopologicalDecompositionMass ℝ vortex` had all-zero data and was a global instance over an arbitrary vortex type, so instance search discharged every `[TopologicalDecompositionMass ℝ vortex]` binder with mass = 0. Its docstring admitted it 'encodes none of the conjectural content'. This is the qou-hjf4 shape (triv_hecke / TowerSummandRealization). The fix demotes it to `def flatVortex`, kept as an explicit satisfiability witness. Consumers: none anywhere (grep over .lean/.ts/.md/.py/.json: the name occurs only in beans). lean-direct -DautoImplicit=false -s 65536 exit 0. #print axioms on flatVortex, mass_nonneg and mass_mono_of_extra_dilog gives [propext, Classical.choice, Quot.sound]. inferInstance for the class now fails to synthesize.
+
+Further finding, not fixed: `mass` is itself a field of TopologicalDecompositionMass, and `vortex` is a phantom parameter, so `decomp : mass = holonomy + Σ dilog` relates one instance's own fields. Any data with mass := holonomy + Σ dilog satisfies it. The carrier does not tie mass to an independently defined mass endomorphism, which is an under-specified-carrier issue (AGENTS.md §3b-tax). The docstring now says so. Fixing it needs the mass to be supplied from outside the class (e.g. a parameter `m : vortex → R`), and that is a statement-design call for the owner. The block's linear form is also contradicted by lem:topological-mass-cat-eigenspace (quadrature), per its qa.json. Also qou-hjf4 lists this file among its 11 candidates; that item is now resolved.
+
+Still open, NOT closeable: the transient norm-equality conjecture TransientLocalisationNormEquality (no instance) remains this bean's subject.

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Six published figures in FOUR blocks are computed from a `q0` that now exists
-ONLY in `computations/_deprecated/` (`qou-i229`).
+ONLY in `fsh-guts/deprecated/computations/` (`qou-i229`).
 
 AND IT CORRECTS MY OWN SWEEP
 ----------------------------
 `scripts/unsourced-published-figures.py` asked "does any published figure have
 deprecated-only provenance?" and answered **no**: 653 decimals live only under
-`computations/_deprecated/` and none of them appears in `content/`. That answer
+`fsh-guts/deprecated/computations/` and none of them appears in `content/`. That answer
 is true as stated and **misleading as read**. It tests for the literal decimal
 STRING. A published figure that is a *function* of a retired constant inherits
 its provenance without ever carrying its digits — which is exactly what happened
@@ -236,7 +236,7 @@ def main() -> int:
     print("§S  WHAT THIS SETTLES, AND WHAT IT LEAVES OPEN")
     print("=" * 78)
     print("  Six published figures across four blocks carry a q0 that survives only in")
-    print("  computations/_deprecated/. They are NOT recomputed here: which")
+    print("  fsh-guts/deprecated/computations/. They are NOT recomputed here: which")
     print("  anchor these blocks should use is owner-gated (q_parameter.py: the")
     print("  corpus is 'genuinely MIXED', 'a blanket flip is WRONG'). Both live")
     print("  values are reported per figure and the blocks now say so.")
@@ -255,7 +255,7 @@ def main() -> int:
             "Four published figures in hecke-log-decomposition-table-data and "
             "em-coupling-bring-zero-mode are computed from q0 = "
             "1.1099785955541805752815940796095093779932822799587, which appears in eight "
-            "computations/_deprecated/ witnesses and one deprecated script and nowhere "
+            "fsh-guts/deprecated/computations/ witnesses and one deprecated script and nowhere "
             "live. It is neither live anchor (proton 1.10997858275..., muon "
             "1.10997859564...) and lies between them. The sharpest discriminator is "
             "q [9]_q [10]_q, published 136.823219654: the retired q0 gives "

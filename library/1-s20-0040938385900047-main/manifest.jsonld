@@ -1,17 +1,30 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1-s20-0040938385900047-main/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Volumes of hyperbolic three-manifolds",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-0040938385900047-main/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "PII: 0040-9383(85)90004-7",
   "contains": [
     "library/1-s20-0040938385900047-main/sections/sec-000",
-    "library/1-s20-0040938385900047-main/sections/sec-001"
+    "library/1-s20-0040938385900047-main/sections/sec-001",
+    "library/1-s20-0040938385900047-main/sections/sec-002",
+    "library/1-s20-0040938385900047-main/sections/sec-003",
+    "library/1-s20-0040938385900047-main/sections/sec-004",
+    "library/1-s20-0040938385900047-main/sections/sec-005",
+    "library/1-s20-0040938385900047-main/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1-s20-0040938385900047-main",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "1-s2.0-0040938385900047-main.pdf",
     "source_sha256": "f0db9d97f2ae83c62b2d3cee1f88cee48d1d86c2a3f5e307e4496521edb1665d",
     "pages": 26,

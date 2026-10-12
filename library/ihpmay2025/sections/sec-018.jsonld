@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ihpmay2025/sections/sec-018",
   "@type": [
     "doco:Section"
   ],
-  "title": "The first explicit examples",
+  "title": "Geometrically tame hyperbolic 3-manifolds",
   "pageStart": 26,
-  "pageEnd": 27,
+  "pageEnd": 26,
   "contains": [
     "library/ihpmay2025/blocks/prose-sec-018"
   ],
-  "derivedFrom": "library/ihpmay2025/manifest",
-  "sourceDocument": "library/ihpmay2025/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
   "provenance": "ingested"
 }

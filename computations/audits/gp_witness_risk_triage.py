@@ -99,7 +99,7 @@ CATALOGUE_AT = 20
 
 rows = []
 for w in (ROOT / "computations").glob("**/*.witness.json"):
-    if "_deprecated" in str(w):
+    if ("_deprecated" in str(w) or "fsh-guts" in str(w)):
         continue
     try:
         d = json.loads(w.read_text())

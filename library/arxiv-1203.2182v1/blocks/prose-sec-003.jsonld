@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Institute for Theoretical Physics, University of Amsterda m,",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-003-4-institute-for-theoretical-physics-university-o.md",
-  "derivedFrom": "library/arxiv-1203.2182v1/manifest",
-  "sourceDocument": "library/arxiv-1203.2182v1/manifest",
+  "title": "Quantization and deformation of algebraic curves",
+  "pageStart": 4,
+  "pageEnd": 8,
+  "text": "../sections/sec-003-13-quantization-and-deformation-of-algebraic-cur.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.2182v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.2182v1/manifest.jsonld",
   "provenance": "ingested"
 }

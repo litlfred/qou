@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1303.5278v1/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1303.5278v1/blocks/prose-sec-011",
   "kind": "prose",
   "title": "The index of an ideal triangulation",
   "pageStart": 19,
   "pageEnd": 20,
   "text": "../sections/sec-011-45-the-index-of-an-ideal-triangulation.md",
-  "derivedFrom": "library/arxiv-1303.5278v1/manifest",
-  "sourceDocument": "library/arxiv-1303.5278v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.5278v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.5278v1/manifest.jsonld",
   "provenance": "ingested"
 }

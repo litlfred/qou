@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "KAZUO HABIRO",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-005-4-kazuo-habiro.md",
-  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
-  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "title": "Bottom tangles",
+  "pageStart": 14,
+  "pageEnd": 18,
+  "text": "../sections/sec-005-41-bottom-tangles.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0605314v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0605314v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,659 @@
+%%%%% defs.tex %%%%%%
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{rem}{Remark}[section]
+\newtheorem{note}{Note}[section]
+\newtheorem{exm}{Examples}
+\newcommand{\dsize}{\displaystyle}
+
+%\newcommand{\4}{${\bf R}^{4}$}
+%\newcommand{\3}{${\bf R}^{3}$}
+%\newcommand{\1}{${\bf R}^{1}$}
+%\newcommand{\2}{${\bf R}^{2}$}
+%\newsymbol\circlearrowleft 1309
+%\newsymbol\circlearrowright 1308
+
+
+%%%%%%%%% definitions of notations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\mapleftright#1{\smash{\mathop{\longleftrightarrow}\limits^{#1}}}
+
+
+
+\def\beye{\mathop{\setlength{\unitlength}{1pt}
+\begin{picture}(12,15)(0,0)
+\put(-4,-3.5){
+\epsfig{file=ps/ebl.ps}}
+\end{picture}}}
+
+\def\weye{\mathop{\setlength{\unitlength}{1pt}
+\begin{picture}(12,15)(0,0)
+\put(-4,-3.5){
+\epsfig{file=ps/ebl2.ps}}
+\end{picture}}}
+
+\def\deye{\mathop{\setlength{\unitlength}{1pt}
+\begin{picture}(12,15)(0,0)
+\put(-4,-3.5){
+\epsfig{file=ps/ebl3.ps}}
+\end{picture}}}
+
+\def\deyea{\mathop{\setlength{\unitlength}{1pt}
+\begin{picture}(12,15)(0,0)
+\put(-4,-3.5){
+\epsfig{file=ps/ebl3a.ps}}
+\end{picture}}}
+
+\def\deyer{\mathop{\setlength{\unitlength}{1pt}
+\begin{picture}(12,15)(0,0)
+\put(-4,-3.5){
+\epsfig{file=ps/ebl4.ps}}
+\end{picture}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\bnd{\mathop{\setlength{\unitlength}{1pt}  
+\begin{picture}(24,18)(0,0)
+\put(-4,-3.5){
+\epsfig{file=ps/ebl5.ps}}
+\end{picture}}}
+
+\def\caleft{\mathop{\setlength{\unitlength}{1pt}
+\begin{picture}(12,14)(0,0)
+\put(-4,-3.5){
+\epsfig{file=ps/carwl.ps}}
+\end{picture}}}
+
+\def\caright{\mathop{\setlength{\unitlength}{1pt}
+\begin{picture}(12,14)(0,0)
+\put(-4,-3.5){
+\epsfig{file=ps/carwr.ps}}
+\end{picture}}}
+
+%%%%  tangle %%%%
+\def\tangle#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,14)(0,0)
+        \put(-4,-8.0){
+                        \epsfig{file=ps/tng.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-5,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}               
+                 }
+        \end{picture}
+             }
+%%%%%%%%%%%%% tangler %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tangler#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,14)(0,0)
+        \put(-4,-8.0){
+                        \epsfig{file=ps/tng2.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-5,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%%%%%%%%%%% tanglel %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tanglel#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,14)(0,0)
+        \put(-4,-8.0){
+                        \epsfig{file=ps/tng3.ps}
+                     }
+        \end{picture} 
+        \begin{picture}(10,14)(0,0)
+        \put(-2,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+
+%%%% tanglearrow %%
+\def\tanglearrow#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,14)(0,0)
+        \put(-4,-7.5){
+                        \epsfig{file=ps/boxN.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(0,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%%%%%%%%% tangleudarrow %%%%%%%%%
+\def\tangleudarrow#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(24,24)(0,0)
+        \put(-4,-8.0){
+                        \epsfig{file=ps/tngd.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-14, 1.5){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+
+%%%%%%%%%%% boxarrow %%%%%%%%%
+\def\boxarrow#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(30,24)(0,0)
+        \put(-4,-8.0){
+                        \epsfig{file=ps/dbox.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-14, 1.5){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%%%%%%%%% dtangle %%%%%%%%% 
+\def\dtangle#1{ 
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(30,26)(0,0)
+        \put(-4,-11.0){
+                        \epsfig{file=ps/dbox2.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-7, 1.5){ 
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+
+
+%%%%%%%%% the definition of a blank box %%%
+\def\blankbox#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,14)(0,0)
+        \put(-4,-6.0){
+                        \epsfig{file=ps/wbox.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-5,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture} 
+             }
+%%%%%%%%%%% boxlloop %%%%%%%%%%%%
+\def\boxlloop#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(16,28)(0,0)
+        \put(-4,-10.5){
+                        \epsfig{file=ps/blp.ps}
+                     }
+        \end{picture}
+        \begin{picture}(16,16)(0,0)
+        \put(0, 1.5){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%%%%%%% boxrloop %%%%%%%%%%%%%%%%%
+\def\boxrloop#1{    
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(16,28)(0,0)
+        \put(-4,-10.5){
+                        \epsfig{file=ps/blp2.ps}
+                     }
+        \end{picture}
+        \begin{picture}(16,16)(0,0)
+        \put(-10, 1.5){ 
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%%%%%%% blright  %%%%%%%%%%%%%%%%%
+\def\blright#1{ 
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(16,28)(0,0)
+        \put(-4,-10.5){
+                        \epsfig{file=ps/plpk.ps} 
+                     }  
+        \end{picture}   
+        \begin{picture}(16,16)(0,0)
+        \put(-10, 1.5){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%%%%%%% blrighto  %%%%%%%%%%%%%%%%%
+\def\blrighto#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(16,18)(0,0)
+        \put(-4,-10.5){
+                        \epsfig{file=ps/plpko.ps}
+                     }
+        \end{picture}
+        \begin{picture}(16,16)(0,0)
+        \put(-10, 1.5){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%%%%%%%%% bllefto  %%%%%%%%%%%% 
+\def\bllefto#1{  
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(16,18)(0,0)
+        \put(-4,-10.5){
+                        \epsfig{file=ps/plpkor.ps}
+                     }  
+        \end{picture}   
+        \begin{picture}(16,16)(0,0)
+        \put(0, 1.5){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+
+%%%% boxas  %%%%%%%%%%%
+\def\boxas#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,24)(0,0)
+        \put(-4,-8.0){
+                        \epsfig{file=ps/bar.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-5,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%% boxasR  %%%%%%%%%%%
+\def\boxasR{  
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,24)(0,0)
+        \put(-4,-8.0){
+                        \epsfig{file=ps/bar.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-5,10){ 
+                        \makebox(0,-2){\smash{$\textstyle\rotatebox{180}{R}$}}
+                 }
+        \end{picture}
+             }
+
+%%%%%%%%%%% boxa  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\boxa#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,15)(0,0)  
+        \put(-4,-9.0){
+                        \epsfig{file=ps/barw.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-5,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%%%%%%%%%% boxb %%%%%%%%%%%%%%%%%%
+\def\boxb#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,15)(0,0)
+        \put(-4,-9.0){
+                        \epsfig{file=ps/barw2.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-5,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+
+%%%%%%%%%%%%% boxe %%%%%%%%%%%%%%%%%%
+\def\boxe#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,15)(0,0)
+        \put(-4,-9.0){
+                        \epsfig{file=ps/barw3.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-5,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%%%%%%%%%%% boxf %%%%%%%%%%%%%%%%%%
+\def\boxf#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,15)(0,0)
+        \put(-4,-9.0){
+                        \epsfig{file=ps/bbx.ps}  
+                     }
+        \end{picture} 
+        \begin{picture}(10,14)(0,0)
+        \put(-5,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%%%%%%%%%%% boxg %%%%%%%%%%%%%%%%%%
+\def\boxg#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,24)(0,0)
+        \put(-4,-9.0){
+                        \epsfig{file=ps/bbxs.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-5,0.8){   
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}
+             }
+%%%%%%%%%%%%% boxh %%%%%%%%%%%%%%%%%%%
+\def\boxh#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,24)(0,0)
+        \put(-4,-11.0){
+                        \epsfig{file=ps/bbz.ps} 
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(7,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}\hskip15pt
+             }
+%%%%%%%%%%%%%%% boxi %%%%%%%%%%%%%%
+\def\boxi#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,24)(0,0)
+        \put(-4,-11.0){
+                        \epsfig{file=ps/bby.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(7,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}\hskip16pt
+             }
+
+%%%%%%%%%%%%% boxj %%%%%%%%%%%%%%%%%%%
+\def\boxj{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,18)(0,0)
+        \put(-4,-5){   
+                        \epsfig{file=ps/bbzk.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,18)(0,0)
+        \put(12,-8){ 
+                        \makebox(0,-4){\smash{$\scriptstyle{i\ \ \  i+1}$}}
+                 }
+        \end{picture}
+             \ \hskip33pt  }
+%%%%%%%%%%%%% boxk %%%%%%%%%%%%%%%%%%%
+\def\boxk#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,24)(0,0)
+        \put(-4,-11){
+                        \epsfig{file=ps/bbzkk.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(5,0.8){ 
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}\hskip6pt
+             }
+%%%%%%%%%% boxl %%%%%%%%%%%%%%
+\def\boxl#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,24)(0,0)
+        \put(-4,-11){
+                        \epsfig{file=ps/bbzkkr.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(-5,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}\hskip3pt
+             }
+%%%%%%%%%% boxlr %%%%%%%%%%%%%%
+\def\boxlr#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(10,24)(0,0)
+        \put(-4,-11){
+                        \epsfig{file=ps/bbzkkrr.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,14)(0,0)
+        \put(3,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}\hskip3pt
+             }
+%%%%%%%%%%% bigtan %%%%%%%%%%%%%
+\def\bigtan#1{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(20,24)(0,0)
+        \put(-8,-10){
+                        \epsfig{file=ps/bigtan.ps}
+                     }
+        \end{picture}
+        \begin{picture}(14,14)(0,0)
+        \put(-5,0.8){
+                        \makebox(0,-2){\smash{$\textstyle#1$}}
+                 }
+        \end{picture}\hskip3pt
+             }
+%%%%%%%%%%% bigtank %%%%%%%%%%%%%
+\def\bigtank{\hskip6pt
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(20,24)(0,0)
+        \put(-8,-5){   
+                        \epsfig{file=ps/bigtank.ps}
+                     }
+        \end{picture}\hskip20pt 
+             }
+
+
+
+%%%%%%%%% buta %%%%%%%%%%%%
+\def\butau{\hskip6pt
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(24,24)(0,0)
+        \put(-8,-10.0){
+                        \epsfig{file=ps/buta.ps}
+                     }
+        \end{picture}\hskip45pt
+             }
+%%%%%%%%% buta2 %%%%%%%%%%%%
+\def\butad{\hskip6pt
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(24,24)(0,0)
+        \put(-8,-10.0){
+                        \epsfig{file=ps/buta2.ps}
+                     }
+        \end{picture}\hskip45pt
+             }
+
+
+%%%%%%%%% vln %%%%%%%%%%%%%%%%%%
+\def\vln{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(7,16)(0,0)
+        \put(0,-8.0){
+                        \epsfig{file=ps/vln.ps}
+                     }
+        \end{picture}
+        }
+
+
+%%%%%%%%%%% fedgs  %%%%%%%%%%%%%%%%
+\def\fedgs{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,24)(0,0)
+        \put(-8,-6.0){
+                        \epsfig{file=ps/b4a.ps}
+                     }
+        \end{picture}
+             }
+%%%%%%%%%%% crss %%%%%%%%%%%%%%%
+\def\crss{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,18)(0,0)
+        \put(-8,-6.0){
+                        \epsfig{file=ps/cross.ps}
+                     }
+        \end{picture}
+             }
+%%%%%%%%%% smth %%%%%%%%%%%%%%
+\def\smth{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,18)(0,0)
+        \put(-8,-6.0){
+                        \epsfig{file=ps/smth.ps}
+                     }
+        \end{picture}
+             }
+%%%%%%%%%% smtho %%%%%%%%%%%%%%%
+\def\smtho{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,18)(0,0)
+        \put(-8,-6.0){  
+                        \epsfig{file=ps/smtho.ps}
+                     }  
+        \end{picture}
+             }
+
+%%%%%%%%% smthv %%%%%%%%%%%%%%%%%     
+\def\smthv{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,18)(0,0)
+        \put(-8,-6.0){
+                        \epsfig{file=ps/smthv.ps}
+                     }
+        \end{picture}
+             }
+%%%%%%%%% crsso %%%%%%%%%%%%%%%% 
+\def\crsso{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,18)(0,0)
+        \put(-8,-6.0){
+                        \epsfig{file=ps/crosso.ps}
+                     }
+        \end{picture}
+             }
+%%%%%%%%% crssor %%%%%%%%%%%%%
+\def\crssor{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,18)(0,0)
+        \put(-8,-6.0){
+                        \epsfig{file=ps/crosso.ps}
+                     }
+        \end{picture}
+             }
+%%%%%%%%% crssr %%%%%%%%%%%%% 
+\def\crssr{ 
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,18)(0,0)
+        \put(-8,-6.0){
+                        \epsfig{file=ps/crossr.ps} 
+                     }  
+        \end{picture}   
+             }       
+
+%%%%%%%%% crsst %%%%%%%%%%%%%
+\def\crsst{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,24)(0,0)
+        \put(-8,-6.0){
+                        \epsfig{file=ps/crosst.ps}
+                     }
+        \end{picture}
+             }
+
+%%%%%%%%% smthvo %%%%%%%%%%%%%%%%%
+\def\smthvo{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,18)(0,0)
+        \put(-8,-6.0){
+                        \epsfig{file=ps/smthvo.ps}
+                     }
+        \end{picture}
+             }
+%%%%%%%%% smthvor %%%%%%%%%%%%%%%%%
+\def\smthvor{
+        \setlength{\unitlength}{1pt} 
+        \begin{picture}(14,18)(0,0)
+        \put(-8,-6.0){
+                        \epsfig{file=ps/smthvor.ps}
+                     }  
+        \end{picture}   
+             }       
+
+%%%%%%%%% paro %%%%%%%%%%%%%%%%%%%%%%
+\def\paro{  
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(14,24)(0,0)
+        \put(-8,-6.0){ 
+                        \epsfig{file=ps/paro.ps} 
+                     }
+        \end{picture}
+             }
+
+%%%%%%%%%%%%%% blong %%%%%%%%%%%%%%%%
+\def\blong{\
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(16,40)(0,0)
+        \put(0,-12){
+                        \epsfig{file=ps/balong.ps}
+                     }
+        \end{picture}
+        \begin{picture}(10,40)(0,0)
+        \put(-4,14){
+                        \makebox(0,-12){\smash
+                {$
+                \textstyle{
+                        \begin{array}{c}
+                        \gamma\vspace{6pt}\\
+                                \gamma
+                        \end{array}
+                          }
+                 $}
+                                        }
+                     }
+        \end{picture}
+             }
+%%%%%%%%%%% bsp %%%%%%%%%%%%%%%%%%%%%%
+\def\bsp{
+        \setlength{\unitlength}{1pt}
+        \begin{picture}(40,20)(0,0)
+        \put(0,-5){
+                        \epsfig{file=ps/bsp.ps}
+                     }
+        \end{picture}
+        \begin{picture}(40,20)(0,0)
+        \put(-6,10){
+                        \makebox(0,-10){\smash
+                {$
+                \textstyle{
+                        \gamma\ \ \ \ \ \delta  
+                          }
+                 $}
+                                        }
+                     }
+        \end{picture}
+             }
+
+

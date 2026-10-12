@@ -137,6 +137,7 @@ exists, `voice-scholarly-default` covers both files; for
 | `voice-scholarly-default` | major | Block prose / Lean docstring not in scholarly third-person voice without author opt-out marker |
 | `fit-section-chapter` | major | Block kind or topic does not fit its declared sub-section / section / chapter |
 | `framework-canonical` | major | Deprecated notation: 5-tuple, `$\omega$` fibre functor, `$\mathcal{C}$` category, bare `$H_q$`, etc. |
+| `commentary-*` | major | Audit or agent-discussion commentary in prose: formalisation grading ("sorry-free", "not formalised"), corpus history ("earlier drafts asserted"), bean/PR/repo-path refs, provenance stories, agent speech. Open conjectures may keep one brief status remark. Detector: `folio/pipeline/paper-commentary-audit.ts` (qou-side; not yet a `qa-sweep` criterion). Fix per `one-voice-audit` Category L. |
 | `voice-editorializing` | minor | Forbidden phrases (`surprisingly`, `remarkably`, `it is worth noting that`, `a beautiful result`) |
 
 ## Slot E — §4d discharge bands
@@ -292,4 +293,7 @@ bun run pipeline/qa-sweep.ts \
 - [ ] Every `voice-ai-slop` or `voice-scholarly-default` finding
       was either auto-mechanically reduced OR escalated via
       §4e author-ask (never silently passed)
+- [ ] `paper-commentary-audit.ts` exits 0 on every changed chapter
+      (advisory `commentary-open-status` / `commentary-witness-ref` hits
+      adjudicated, not ignored)
 - [ ] Slot I invariants check pass before any own-branch commit

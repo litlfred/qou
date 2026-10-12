@@ -5,7 +5,11 @@
   "file": "1811.05376v4.pdf",
   "sha256": "a486709d0a78d19cd46ec104c801b2f58f346fcab6265408a65684440770f30c",
   "bytes": 992689,
-  "pages": 40
+  "pages": 40,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -16,8 +20,8 @@
   },
   "doi": null,
   "title": "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres",
-  "authors_raw": "Jørgen Ellegaard Andersen and William Elbæk Mistegård",
-  "abstract": "For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa, is a resummation of the Ohtsuki seriesZ0(X). We show that for every evenk ∈ N there exists a full asymptotic expansion of ˆZ0(X;q) for q tending to e2πi/k, and in particular that the limit ˆZ0(X;e2πi/k) exists and is equal to the WRT quantum invariantτk(X). We show that the poles of the Borel transform ofZ0(X) coincide with the classical complex Chern-Simons values, which we further show classiﬁes the corresponding components of the moduli space of ﬂatSL(2, C)-connections.",
+  "authors_raw": "J\u00f8rgen Ellegaard Andersen and William Elb\u00e6k Misteg\u00e5rd",
+  "abstract": "For a Seifert \ufb01bered homology sphereX we show that the q-series invariant \u02c6Z0(X;q) introduced by Gukov-Pei-Putrov-Vafa, is a resummation of the Ohtsuki seriesZ0(X). We show that for every evenk \u2208 N there exists a full asymptotic expansion of \u02c6Z0(X;q) for q tending to e2\u03c0i/k, and in particular that the limit \u02c6Z0(X;e2\u03c0i/k) exists and is equal to the WRT quantum invariant\u03c4k(X). We show that the poles of the Borel transform ofZ0(X) coincide with the classical complex Chern-Simons values, which we further show classi\ufb01es the corresponding components of the moduli space of \ufb02atSL(2, C)-connections.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20201026005539Z",
@@ -295,6 +299,117 @@
   "likely_scanned": false,
   "toc_entries": 15,
   "sections": 15,
-  "chars_total": 73624
+  "chars_total": 73624,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "RQI20.tex",
+   "tex_sections": 23,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-complex-chern-simons-theory-on-x",
+     "title": "Complex Chern-Simons theory on X",
+     "prose_ratio": 0.33,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-the-moduli-space-and-complex-chern-simons-val",
+     "title": "The moduli space and complex Chern-Simons values",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.818,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-the-borel-transform-and-complex-cherns-simons",
+     "title": "The Borel transform and Complex Cherns-Simons",
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.845,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-21-resummation-of-the-wrt-invariant",
+     "title": "Resummation of the WRT invariant",
+     "prose_ratio": 0.883,
+     "coverage_ratio": 0.895,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-22-resurgence-of-the-generating-function",
+     "title": "Resurgence of the generating function",
+     "prose_ratio": 0.251,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-3-a-resurgence-formula-for-the-gppv-invariant",
+     "title": "A resurgence formula for the GPPV invariant",
+     "prose_ratio": 0.3,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-31-proof-of-theorem-3",
+     "title": "Proof of Theorem 3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-4-the-asymptotic-expansion-of-the-gppv-invariant",
+     "title": "The asymptotic expansion of the GPPV invariant",
+     "prose_ratio": 0.154,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-41-proof-of-theorem-4",
+     "title": "Proof of Theorem 4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-411-the-decomposition-of-the-gppv-invariant",
+     "title": "The decomposition of the GPPV invariant",
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.809,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-412-asymptotic-expansions-of-q-series-with-perio",
+     "title": "Asymptotic expansions of q-series with periodic coefficients",
+     "prose_ratio": 0.464,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-413-the-asymptotic-expansion-of-the-gppv-invaria",
+     "title": "The asymptotic expansion of the GPPV invariant",
+     "prose_ratio": 0.273,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-appendix-a-resurgence-and-resummation",
+     "title": "Appendix A Resurgence and resummation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-a1-resurgent-functions-and-the-borel-transform",
+     "title": "A.1 Resurgent functions and the Borel transform",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-a2-borel-laplace-resummation",
+     "title": "A.2 Borel-Laplace resummation",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.282,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

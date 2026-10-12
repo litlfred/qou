@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Deprecated convention-C producers whose numbers still reach the content.
 
-`scripts/convention-c-producer-audit.py` skips `computations/_deprecated/`
+`scripts/convention-c-producer-audit.py` skips `fsh-guts/deprecated/computations/`
 entirely, and for its purpose that is right: nobody runs deprecated code, so a
 convention-C binding there is not a defect to fix.
 
 It is not right for the *corpus*. Deprecating a producer removes it from the
 audit's view without removing its influence on the content, because the numbers
-it computed are already written into blocks. `computations/_deprecated/
+it computed are already written into blocks. `fsh-guts/deprecated/computations/
 integer-lp-gluon.py` is the case that prompted this: it computes the Markov
 trace on convention C (`z = 1/(sqrt q + 1/sqrt q)`) with the `tr_M(e-) = z^3`
 weight retired on 2026-05-19, and every nucleon LP number the corpus published
@@ -48,7 +48,7 @@ import re
 import sys
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
-DEPRECATED = REPO / "computations" / "_deprecated"
+DEPRECATED = REPO / "fsh-guts" / "deprecated" / "computations"
 CONTENT = REPO / "folio"
 
 # The convention-C signature: a square root of the substrate parameter. Kept

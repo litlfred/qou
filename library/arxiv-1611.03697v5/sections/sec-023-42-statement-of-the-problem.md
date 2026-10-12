@@ -8,55 +8,72 @@ pages: 17-18
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
 doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+text_source: latex
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.993
 ---
-the associated twisted torus. Given a ray r⊂ C∗ we consider the corresponding half-plane
-Hr ={t∈ C∗ : t = z· v with z∈ r and Re( v) > 0}⊂ C∗
-centered on it. We shall be dealing with functions of the form
-Xr : Hr→ T.
-Composing with the twisted characters of T we can equivalently consider functions
-Xr,γ : Hr→ C∗, X r,γ(t) = xγ(Xr(t)).
-The Riemann-Hilbert problem associated to the BPS structure (Γ , Z, Ω) depends on a choice of
-element ξ∈ T which we call the constant term. It reads as follows:
-Problem 4.3. Fix an element ξ∈ T. For each non-active ray r⊂ C∗, we seek a holomorphic
-function Xr : Hr→ T such that the following three conditions are satisﬁed:
-(RH1) Jumping. Suppose that two non-active rays r−, r+⊂ C∗ form the boundary rays of a convex
-sector ∆ ⊂ C∗, taken in clockwise order. Then
-Xr+(t) = S(∆)( Xr−(t)),
-for all t∈ Hr−∩ Hr+ with 0 <|t|≪ 1.
-(RH2) Finite limit at 0. For each non-active ray r⊂ C∗, and each class γ∈ Γ , we have
-exp(Z(γ)/t)· Xr,γ(t)→ ξ(γ)
-as t→ 0 in the half-plane Hr.
-(RH3) Polynomial growth at ∞. For any class γ∈ Γ , and any non-active ray r⊂ C∗, there exists
-k > 0 such that
-|t|−k <|Xr,γ(t)| <|t|k,
-for t∈ Hr with|t|≫ 0.
-To make sense of the condition (RH1) note that by Proposition 4.2 we can ﬁnd R > 0 such that
-the partially-deﬁned automorphism S(∆) is well-deﬁned on the open subset U∆ (R)⊂ T. Observe
-that if an active class γ∈ Γ satisﬁes Z(γ)∈ ∆, and we take t∈ Hr1∩Hr2, then the quantity Z(γ)/t
-has strictly positive real part. Using the support property it follow s (see the proof of Lemma B.2)
-that for 0 <|t|≪ 1
-exp(−Z/t)· ξ∈ U∆ (R).
-18 TOM BRIDGELAND
-Condition (RH2) then implies that Xri(t)∈ U∆ (R) whenever t∈ Hr1∩ Hr2 with 0 <|t|≪ 1, so
-that the relation (RH1) is indeed well-deﬁned.
-Remark 4.4. When the BPS structure (Γ , Z, Ω) is ﬁnite, integral and generic, we can rewrite
-the condition (RH1) using Proposition
-4.2. Given an active ray ℓ, consider a small anticlockwise
-perturbation r−, and a small clockwise perturbation r+, both rays being non-active. Then (RH1)
-is the condition that
-Xr+,β(t) = Xr−,β(t)·
-∏
-Z(γ)∈ℓ
-(1− Xr±,γ (t))Ω( γ)⟨γ,β ⟩. (21)
-Note that the generic assumption ensures there is no need to distin guish the functions Xr±(t) inside
-the product, since for classes γ∈ Γ satisfying Z(γ)∈ ℓ they are equal.
-It will be useful to consider the maps Yr : Hr→ T+ deﬁned by
-exp(Z/t)· Xr(t) = Yr(t)· ξ.
-Composing with the characters of T+ we can also encode the solution in the system of maps
-Yr,γ(t) = yγ(Yr(t)) = exp( Z(γ)/t)· Xr,γ(t)· ξ(γ)−1.
-Of course the maps Xr and Yr are equivalent data: we use whichever is most convenient.
-Remark 4.5. It follows from the condition (RH1) that if two non-active rays r1, r2 bound a convex
-sector containing no active rays, then the two functions Xri : Hri → T required in Problem 4.3
-glue together to give a holomorphic function on Hr1∪ Hr2. It follows that if a non-active ray
-r⊂ C∗ is not a limit of active rays, then the corresponding function Xr extends analytically to a
-neighbourhood of the closure of Hr⊂ C∗.
+\label{real}
+ 
+
+
+
+Let $(\Gamma, Z, \Omega)$ be a convergent BPS structure, and denote by $\bT$ the associated twisted torus. Given a ray $\rr\subset \bC^*$ we consider the corresponding half-plane
+\[\bH_\rr=\{t\in \bC^*:t=z\cdot v \text{ with } z\in \rr\text{ and }\Re(v)>0\}\subset \bC^*\]
+centered on it.
+We shall be dealing with functions of the form \[\Phi_\rr\colon \bH_\rr\to  \bT.\] Composing with the twisted characters of $\bT$ we can equivalently consider functions
+\[\Phi_{\rr,\gamma}\colon \bH_\rr\to \bC^*,\qquad \Phi_{\rr,\gamma}(t)=x_\gamma(\Phi_\rr(t)).\]
+
+The Riemann-Hilbert problem associated to the BPS structure $(\Gamma, Z, \Omega)$ depends on a choice of element $\xi\in \bT$ which we call the constant term. It reads as follows:
+
+
+
+\begin{problem}
+\label{dtsect}
+Fix an element $\xi\in \bT$. For each non-active ray $\rr\subset \bC^*$, we  seek a holomorphic function
+$\Phi_\rr\colon \bH_\rr\to \bT$
+such that the following three conditions are satisfied:
+\begin{itemize}
+
+\item[(RH1)] {\it Jumping.} Suppose that two  non-active rays $\rr_-,\rr_+\subset \bC^*$ form the  boundary rays of a convex sector $\Delta\subset \bC^*$, taken in clockwise order. Then
+\[\Phi_{\rr_+}(t)= \bS(\Delta)( \Phi_{\rr_-}(t)), \]
+for all $t\in \bH_{\rr_-}\cap \bH_{\rr_+}$ with  $ 0<|t|\ll 1$.
+\smallskip
+
+\item[(RH2)] {\it Finite limit at $0$}.
+For each non-active ray $\rr\subset \bC^*$, and each class $\gamma\in \Gamma$, we have
+\[\exp(Z(\gamma)/t)\cdot \Phi_{\rr,\gamma}(t) \to \xi(\gamma)\]
+as $t\to 0$ in the half-plane $\bH_\rr$.\smallskip
+
+\item[(RH3)] {\it Polynomial growth at $\infty$}. For any class $\gamma\in \Gamma$, and any non-active ray $\rr\subset \bC^*$, there exists $k>0$ such that
+\[|t|^{-k} < |\Phi_{\rr,\gamma}
+(t)|<|t|^k,\]
+for  $t\in \bH_\rr$ with  $|t|\gg 0$.
+\end{itemize}
+\end{problem}
+
+ 
+To make sense of the condition (RH1) note that by Proposition \ref{barneyy} we can find  $R>0$ such that the partially-defined automorphism $\bS(\Delta)$ is well-defined on the open subset $U_{\Delta}(R)\subset \bT$. Observe that if an active class $\gamma\in \Gamma$ satisfies $Z(\gamma)\in \Delta$, and we take $t\in \bH_{\rr_1}\cap \bH_{\rr_2}$, then the quantity $Z(\gamma)/t$ has strictly positive real part.  Using the support property it follows (see the proof of Lemma \ref{dyl}) that for  $ 0<|t|\ll 1$
+\[\exp(-Z/t)\cdot \xi\in U_\Delta(R).\]
+Condition (RH2) then implies that  $\Phi_{\rr_i}(t)\in U_\Delta(R)$ whenever  $t\in \bH_{\rr_1}\cap \bH_{\rr_2}$ with  $ 0<|t|\ll 1$, so that 
+ the  relation (RH1) is indeed well-defined.
+
+\begin{remark}
+\label{wet}
+When the BPS structure $(\Gamma,Z,\Omega)$ is finite, integral and generic, we can rewrite the condition (RH1) using Proposition \ref{barneyy}. Given an active ray $\ell$, consider a small anticlockwise perturbation $\rr_-$, and  a small clockwise perturbation $\rr_+$, both rays being  non-active.  Then  (RH1) is the condition that
+\begin{equation}
+\label{garage}\Phi_{\rr_+,\beta}(t)=\Phi_{\rr_-,\beta}(t)\cdot \prod_{Z(\gamma)\in \ell}   (1-\Phi_{\rr_{\pm,\gamma}}(t))^{\Omega(\gamma)\<\gamma,\beta\>}.\end{equation}
+Note that the generic assumption ensures there is no need to distinguish the functions $\Phi_{\rr_\pm}(t)$ inside the product, since for classes $\gamma\in \Gamma$ satisfying $Z(\gamma)\in \ell$ they are equal.
+\end{remark}
+
+
+It will be useful to consider the maps $\Psi_\rr\colon \bH_\rr\to \bT_+$ defined by
+\[\exp(Z/t)\cdot \Phi_\rr(t)=\Psi_\rr(t)\cdot \xi.\]
+ Composing with the characters of $\bT_+$ we can also encode the solution in the system of maps
+\[\Psi_{\rr,\gamma}(t)=y_\gamma(\Psi_\rr(t))=\exp(Z(\gamma)/t)\cdot \Phi_{\rr,\gamma}(t) \cdot \xi(\gamma)^{-1}.\]
+Of course the maps $\Phi_\rr$ and $\Psi_\rr$ are equivalent data: we use whichever is most convenient.
+
+
+\begin{remark}
+\label{whoopsy}
+It follows from the condition (RH1) that if two non-active rays $\rr_1,\rr_2$ bound a convex sector containing no active rays, then the two functions $\Phi_{\rr_i}\colon \bH_{\rr_i}\to \bT$ required in Problem \ref{dtsect} glue together to give a holomorphic  function on $\bH_{\rr_1}\cup\bH_{\rr_2}$. It follows that if a non-active ray $\rr\subset \bC^*$ is  not a limit of active rays, then  the corresponding function  $\Phi_\rr$  extends analytically to a neighbourhood of the closure of  $\bH_\rr\subset \bC^*$.
+\end{remark}

@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-alg-geom-9705010v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-alg-geom-9705010v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9705010v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:alg-geom/9705010&metadataPrefix=arXiv), submitted 1997-05-07, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-alg-geom-9705010v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/alg-geom/9705010v1",
+    "content_type": "application/gzip",
+    "sha256": "37f6af1d58fd0b5de47af50c0fae5e07f31166e7f4b3a251edba462f22580e88",
+    "bytes": 72075,
+    "fetched": "2026-10-10T15:23:29+00:00",
+    "files": [
+      {
+        "path": "source/files/ams-p.sty",
+        "role": "sty",
+        "sha256": "2b6f5a9db9e9b1a6b3bffd276b0efbf83b65f3780cb8816b4422324b402226f6",
+        "bytes": 8386
+      },
+      {
+        "path": "source/files/ams-spec.sty",
+        "role": "sty",
+        "sha256": "274c57f572ca541558fbc22058970051940301e4abc2cb43c732bf746fb06dfd",
+        "bytes": 17564
+      },
+      {
+        "path": "source/files/amsppt.sty",
+        "role": "sty",
+        "sha256": "581ebbdd78de352362781248e11dc22f125e377010a5340b8bc559954bbf6fa1",
+        "bytes": 46747
+      },
+      {
+        "path": "source/files/pspum.sty",
+        "role": "sty",
+        "sha256": "e7615574609dc4ebbb40d0a72c44c04b1a3e45759e9759ffef7ce4c33758c454",
+        "bytes": 1453
+      },
+      {
+        "path": "source/files/text.tex",
+        "role": "tex",
+        "sha256": "980da7fd06e87ab30fb688885be20cddf5a69b83887ee892e2fb55ad4b5ce3b0",
+        "bytes": 138820
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

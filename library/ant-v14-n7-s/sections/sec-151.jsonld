@@ -1,26 +1,22 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-151",
   "@type": [
     "doco:Section"
   ],
-  "title": "Blocks with normal defect group",
-  "pageStart": 289,
-  "pageEnd": 294,
+  "title": "6B. A Menshov–Rademacher argument with permutations",
+  "pageStart": 269,
+  "pageEnd": 270,
   "contains": [
     "library/ant-v14-n7-s/blocks/prose-sec-151",
-    "library/ant-v14-n7-s/blocks/thm-sec-151-01",
-    "library/ant-v14-n7-s/blocks/conj-sec-151-02",
-    "library/ant-v14-n7-s/blocks/lem-sec-151-03",
-    "library/ant-v14-n7-s/blocks/lem-sec-151-04",
-    "library/ant-v14-n7-s/blocks/thm-sec-151-05",
-    "library/ant-v14-n7-s/blocks/lem-sec-151-06",
-    "library/ant-v14-n7-s/blocks/thm-sec-151-07",
-    "library/ant-v14-n7-s/blocks/lem-sec-151-08",
-    "library/ant-v14-n7-s/blocks/thm-sec-151-09",
-    "library/ant-v14-n7-s/blocks/lem-sec-151-10"
+    "library/ant-v14-n7-s/blocks/prop-sec-151-01"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"
 }

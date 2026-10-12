@@ -1,0 +1,39 @@
+{
+ "url": "https://arxiv.org/e-print/math-ph/0405028v2",
+ "content_type": "application/gzip",
+ "sha256": "44a4a5333133468b830a1bdad97a420e9e27602e6085b125b473bb2813ffa782",
+ "bytes": 60897,
+ "fetched": "2026-10-10T15:31:35+00:00",
+ "files": [
+  {
+   "path": "files/brieskorn.bbl",
+   "role": "bbl",
+   "sha256": "218cf325b4e68ce151c785fc02d6d3e725fcc1dd420a72fc5d57698508f7d4e1",
+   "bytes": 7926
+  },
+  {
+   "path": "files/brieskorn.tex",
+   "role": "tex",
+   "sha256": "9c8c0fb6b311d2b891cebe68308933fe234b768934a2677d9cf12f849f40d4ab",
+   "bytes": 86220
+  },
+  {
+   "path": "files/pst-3dplot.sty",
+   "role": "sty",
+   "sha256": "128719c6856bc6f28590d48a3b39aa0396516e2379f4f33cc12d51b6a08df246",
+   "bytes": 132
+  },
+  {
+   "path": "files/pst-3dplot.tex",
+   "role": "tex",
+   "sha256": "ed1d1304784b9579147c535665b1b0242e106cbb4720307a24ee6a9ca9749f9e",
+   "bytes": 38341
+  },
+  {
+   "path": "files/pst-vue3d.tex",
+   "role": "tex",
+   "sha256": "d1b72e6b27551e20403799afa7960c5db38bb0c30c8f81a231b2fad8e2fbe905",
+   "bytes": 41765
+  }
+ ]
+}

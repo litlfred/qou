@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2510.21576v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
+  "contains": [
+    "library/arxiv-2510.21576v1/sections/sec-000",
+    "library/arxiv-2510.21576v1/sections/sec-001",
+    "library/arxiv-2510.21576v1/sections/sec-002",
+    "library/arxiv-2510.21576v1/sections/sec-003",
+    "library/arxiv-2510.21576v1/sections/sec-004",
+    "library/arxiv-2510.21576v1/sections/sec-005",
+    "library/arxiv-2510.21576v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2510.21576&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2510.21576v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2510.21576v1.pdf",
+    "source_sha256": "17a79b59d590c8da2157c822a8d005af33250a6c641717a52b443a014eb3793a",
+    "pages": 17,
+    "arxiv": {
+      "id": "2510.21576",
+      "version": "1",
+      "primary_class": "nucl-th",
+      "stamp_date": "24 Oct 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

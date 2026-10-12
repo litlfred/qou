@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203194v1/sections/sec-059",
   "@type": [
     "doco:Section"
   ],
-  "title": "Let us assume for technical simplicity that p⁄= 2. Let M be a free",
-  "pageStart": 29,
-  "pageEnd": 29,
+  "title": "Examples.",
+  "pageStart": 231,
+  "pageEnd": 256,
   "contains": [
     "library/arxiv-math-0203194v1/blocks/prose-sec-059"
   ],
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"
 }

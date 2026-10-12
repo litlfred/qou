@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/cspaper/sections/sec-000",
   "@type": [
     "doco:Section"
   ],
   "title": "Introduction",
   "pageStart": 1,
-  "pageEnd": 2,
+  "pageEnd": 4,
   "contains": [
     "library/cspaper/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/cspaper/manifest",
-  "sourceDocument": "library/cspaper/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cspaper/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cspaper/manifest.jsonld",
   "provenance": "ingested"
 }

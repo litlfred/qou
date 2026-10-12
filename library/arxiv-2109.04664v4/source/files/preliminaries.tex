@@ -1,0 +1,227 @@
+\section{Preliminaries}
+In this section, we first introduce the colored Jones polynomial, and then we define a quantum dilogarithm, and variants of the logarithm and the dilogarithm.
+We also describe some of their properties.
+\par
+For a knot $K$ in the three-sphere $S^3$, we denote by $J_N(K;q)$ the colored Jones polynomial of $K$ associated with the $N$-dimensional irreducible representation of the Lie algebra $\frak{sl}(2;\C)$ \cite{Kirby/Melvin:INVEM1991,Reshetikhin/Turaev:INVEM1991}.
+We normalize it so that $J_N(U;q)=1$ for the unknot $U\subset S^3$.
+Note that $J_2(K;q)$ is the original Jones polynomial \cite{Jones:BULAM31985}.
+\par
+Let $E$ be the figure-eight knot.
+We use the following formula obtained by K.~Habiro \cite[P.~36 (1)]{Habiro:SURIK2000} and T.T.Q.~Le \cite[P.~129]{Le:TOPOA2003}.
+See also \cite{Masbaum:ALGGT12003}.
+\begin{equation}\label{eq:J_N_fig8}
+\begin{split}
+  J_N(E;q)
+  &=
+  \sum_{k=0}^{N-1}
+  \prod_{l=1}^{k}\left(q^{(N-l)/2}-q^{-(N-l)/2}\right)\left(q^{(N+l)/2}-q^{(N+l)/2}\right)
+  \\
+  &=
+  \sum_{k=0}^{N-1}
+  q^{-kN}
+  \prod_{l=1}^{k}\left(1-q^{N-l}\right)\left(1-q^{N+l}\right).
+\end{split}
+\end{equation}
+\par
+Next, we define functions $T_N(z)$, $\L_{0}(z)$, $\L_{1}(z)$, and $\L_{2}(z)$, which are related as
+\begin{align*}
+  T_{N}(z)
+  &=
+  \frac{N}{\xi}\L_{2}(z)+O(1/N)\quad(N\to\infty),
+  \\
+  \frac{d\,\L_{2}}{d\,z}(z)
+  &=
+  -2\pi\i\L_{1}(z),
+  \\
+  \frac{d\,\L_{1}}{d\,z}(z)
+  &=
+  -\L_{0}(z).
+\end{align*}
+\par
+Let $\xi$ be a positive real number.
+We define $C_{0}:=(-\infty,-1]\cup\{e^{\tau\i}\mid0\le\tau\le\pi\}\cup[1,\infty)$ and $C_{\theta}:=e^{\i\theta}C_{0}$, where $\theta$ is a positive real number with $\tan\theta<\frac{\pi}{\xi}$ and we orient $C_{0}$ from left to right.
+\par
+Consider the following integrals:
+\begin{equation*}
+  \int_{C_{\theta}}\frac{e^{(2z-1)x}}{x\sinh(x)\sinh(\gamma x)}\,dx,
+  \quad
+  \int_{C_{\theta}}\frac{e^{(2z-1)x}}{x^{m}\sinh(x)}\,dx,
+\end{equation*}
+where $m=0,1,2$, $\gamma:=\frac{\xi}{2N\pi\i}$ for an integer $N\ge2$, and $z$ is a complex number with $0<\Re(ze^{\i\theta})<\cos\theta$.
+Here we follow \cite{Faddeev:LETMP1995} to introduce $T_N(z)$, which plays an important role in the paper.
+Note that the set of the poles of the integrands are
+\begin{equation*}
+  \{k\pi\i\mid k\in\Z\}\cup\{2lN\pi^2/\xi\mid l\in\Z\}
+  \quad\text{and}\quad
+  \{k\pi\i\mid k\in\Z\},
+\end{equation*}
+respectively.
+Therefore, if $N$ is large enough, then the only pole inside the unit circle centered at the origin is $0\in\C$ and so the path of integral $C_{\theta}$ avoids the poles.
+Proofs of their convergences (Lemmas~\ref{lem:converge_T} and \ref{lem:integrals} below) are given in Section~\ref{sec:proofs_lemmas}.
+\begin{lem}\label{lem:converge_T}
+The integral $\int_{C_{\theta}}\frac{e^{(2z-1)x}}{x\sinh(x)\sinh(\gamma x)}\,dx$ converges if $z\in\C$ satisfies $-\frac{\xi\sin\theta}{4N\pi}<\Re(ze^{\theta\i})<\cos\theta+\frac{\xi\sin\theta}{4N\pi}$.
+\end{lem}
+\begin{lem}\label{lem:integrals}
+If $z\in\C$ satisfies $0<\Re(ze^{\theta\i})<\cos\theta$, then the integral $\int_{C_{\theta}}\frac{e^{(2z-1)x}}{x^{m}\sinh(x)}\,dx$ converges for $m=0,1,2$.
+\end{lem}
+\par
+Now define functions $T_N(z)$ and $\L_{m}(z)$ ($m=0,1,2$) by using the integrals above.
+\begin{defn}
+Fix an integer $N\ge2$ and put $\gamma:=\frac{\xi}{2N\pi\i}$.
+We define
+\begin{equation*}
+  T_N(z)
+  :=
+  \frac{1}{4}
+  \int_{C_{\theta}}
+  \frac{e^{(2z-1)x}}{x\sinh(x)\sinh(\gamma x)}\,dx,
+\end{equation*}
+for a complex number $z$ with $-\frac{\xi\sin\theta}{4N\pi}<\Re(ze^{\theta\i})<\cos\theta+\frac{\xi\sin\theta}{4N\pi}$.
+\end{defn}
+\par
+\begin{defn}
+For a complex number $z$ with $0<\Re(ze^{\i\theta})<\cos\theta$, we define
+\begin{align*}
+  \mathcal{L}_0(z)
+  &:=
+  \int_{C_{\theta}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx,
+  \\
+  \L_1(z)
+  &:=
+  -\frac{1}{2}
+  \int_{C_{\theta}}\frac{e^{(2z-1)x}}{x\sinh(x)}\,dx,
+  \\[5mm]
+  \L_2(z)
+  &:=
+  \frac{\pi\i}{2}
+  \int_{C_{\theta}}\frac{e^{(2z-1)x}}{x^2\sinh(x)}\,dx.
+\end{align*}
+\end{defn}
+\begin{lem}\label{lem:L0_1_2}
+For $m=0,1,2$, we calculate $\L_{m}(z)$ as follows.
+\begin{align}
+  \L_0(z)
+  &=
+  \frac{-2\pi\i}{1-e^{-2\pi\i z}},
+  \label{eq:L0}
+  \\
+  \L_1(z)
+  &=
+  \begin{cases}
+    \log\left(1-e^{2\pi\i z}\right)&\text{if $\Im{z}\ge0$,}
+    \\[3mm]
+    \pi\i(2z-1)+\log\left(1-e^{-2\pi\i z}\right)&\text{if $\Im{z}<0$,}
+  \end{cases}
+  \label{eq:L1}
+  \\[5mm]
+  \L_2(z)
+  &=
+  \begin{cases}
+    \Li_2\left(e^{2\pi\i z}\right)&\text{if $\Im{z}\ge0$,}
+    \\[3mm]
+    \pi^2\left(2z^2-2z+\frac{1}{3}\right)-\Li_2\left(e^{-2\pi\i z}\right)
+    &\text{if $\Im{z}<0$}.
+  \end{cases}
+  \label{eq:L2}
+\end{align}
+\end{lem}
+Proofs are also given in Section~\ref{sec:proofs_lemmas}.
+\begin{rem}
+In \eqref{eq:L1} and \eqref{eq:L2}, we use $\log(1-x)$ and $\Li_2(x)$ only for $|x|\le1$ ($x\ne1$).
+\end{rem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Since
+\begin{equation*}
+\begin{split}
+  T_{N}(z-\gamma/2)-T_{N}(z+\gamma/2)
+  &=
+  \int_{C_{\theta}}
+  \frac{e^{(2z-\gamma-1)x}-e^{(2z+\gamma-1)x}}{4x\sinh(x)\sinh(\gamma x)}\,dx
+  \\
+  &=
+  -
+  \int_{C_{\theta}}
+  \frac{e^{(2z-1)x}}{2x\sinh(x)}\,dx
+  \\
+  &=
+  \L_1(z),
+\end{split}
+\end{equation*}
+we have the following corollary.
+\begin{cor}
+If $0<\Re(ze^{\theta\i})<\cos\theta$, then we have
+\begin{equation}\label{eq:lem}
+  \frac{\exp\left(T_{N}(z-\gamma/2)\right)}{\exp\left(T_{N}(z+\gamma/2)\right)}
+  =
+  1-e^{2\pi\i z}.
+\end{equation}
+\end{cor}
+\par
+We will show relations among the functions $T_{N}(z)$ and $\L_{m}(z)$ ($m=0,1,2$).
+\par
+We can prove that $\frac{1}{N}T_{N}(z)$ uniformly converges to $\frac{1}{\xi}\L_{2}(z)$.
+More precisely, we have the following proposition.
+See \cite[Proposition~A.1]{Ohtsuki:QT2016}.
+\begin{prop}\label{prop:T_N_L_2}
+For any positive real number $M$ and a sufficiently small positive real number $\nu$, we have
+\begin{equation*}
+  T_N(z)
+  =
+  \frac{N}{\xi}\L_2(z)
+  +
+  O(1/N)
+  \quad(N\to\infty)
+\end{equation*}
+in the region
+\begin{equation*}
+  \{z\in\C\mid\nu\le\Re(ze^{\theta\i})\le\cos\theta-\nu,|\Im{z}|\le M\}.
+\end{equation*}
+In particular, the function $\frac{1}{N}T_N(z)$ uniformly converges to $\frac{1}{\xi}\L_2(z)$ in the region above.
+\end{prop}
+A proof is given in Section~\ref{sec:proofs_lemmas}.
+Since we may regard $\L_2(z)$ as a variant of the dilogarithm from Lemma~\ref{lem:L0_1_2}, the function $T_{N}(z)$ is another quantum dilogarithm.
+\par
+The functions $\L_{0}(z)$, $\L_{1}(z)$, and $\L_{2}(z)$ are related as follows.
+\begin{lem}\label{lem:der_L}
+The derivatives of $\L_1(z)$ and $\L_2(z)$ are given as follows:
+\begin{align*}
+  \frac{d\,\L_2}{d\,z}(z)
+  &=
+  -2\pi\i\L_1(z),
+  \\
+  \dfrac{d\,\L_1}{d\,z}(z)
+  &=
+  -\L_0(z).
+\end{align*}
+\end{lem}
+\begin{proof}
+We have
+\begin{equation*}
+\begin{split}
+  \frac{d\,\L_2}{d\,z}(z)
+  &=
+  \frac{\pi\i}{2}\int_{C_{\theta}}\left(\frac{d}{d\,z}\frac{e^{(2z-1)x}}{x^2\sinh(x)}\right)\,dx
+  \\
+  &=
+  \pi\i\int_{C_{\theta}}\frac{e^{(2z-1)x}}{x\sinh(x)}\,dx
+  \\
+  &=
+  -2\pi\i\L_1(z),
+\end{split}
+\end{equation*}
+and
+\begin{equation*}
+\begin{split}
+  \frac{d\,\L_1}{d\,z}(z)
+  &=
+  -\frac{1}{2}\int_{C_{\theta}}\left(\frac{d}{d\,z}\frac{e^{(2z-1)x}}{x\sinh(x)}\right)\,dx
+  \\
+  &=
+  -\int_{C_{\theta}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  \\
+  &=
+  -\L_0(z),
+\end{split}
+\end{equation*}
+completing the proof.
+\end{proof}

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-043",
   "@type": [
     "doco:Section"
   ],
-  "title": "Introduction",
+  "title": "Lattice Improvement in Lattice Effective Field Theory",
   "pageStart": 75,
-  "pageEnd": 76,
+  "pageEnd": 75,
   "contains": [
     "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-043"
   ],
-  "derivedFrom": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
-  "sourceDocument": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
   "provenance": "ingested"
 }

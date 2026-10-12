@@ -7,7 +7,11 @@
   "bytes": 748126,
   "pages": 52,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -401,6 +405,161 @@
   "likely_scanned": false,
   "toc_entries": 23,
   "sections": 20,
-  "chars_total": 123062
+  "chars_total": 123062,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Main.tex",
+   "tex_sections": 20,
+   "overlaid": 12,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-the-palaissmale-condition",
+     "title": "The Palais\u2013Smale condition",
+     "prose_ratio": 0.286,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-three-families-of-knot-energies-on-curves",
+     "title": "Three families of knot energies on curves",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.902,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-main-results",
+     "title": "Main results",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.881,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-outline-of-the-paper",
+     "title": "Outline of the paper",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-the-palaissmale-condition-in-an-abstract-setting",
+     "title": "The Palais\u2013Smale condition in an abstract setting",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-energies-on-submanifolds-of-hilbert-spaces",
+     "title": "Energies on submanifolds of Hilbert spaces",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.79,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-gradient-flows-on-riemannian-manifolds",
+     "title": "Gradient flows on Riemannian manifolds",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.81,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-the-submanifolds-of-arclength-parametrized-curve",
+     "title": "The submanifolds of arclength parametrized curves and knots",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.823,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-the-topology-of-arclength-manifolds",
+     "title": "The topology of arclength manifolds",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.822,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-critical-knots-in-arclength-submanifolds",
+     "title": "Critical knots in arclength submanifolds",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.863,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-the-palaissmale-condition-for-bending-energy-and",
+     "title": "The Palais\u2013Smale condition for bending energy and knot energies",
+     "prose_ratio": 0.667,
+     "coverage_ratio": 0.01,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-012-bending-energy-with-self-avoidance-term",
+     "title": "Bending energy with self-avoidance term",
+     "prose_ratio": 0.868,
+     "coverage_ratio": 0.88,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-tangent-point-energy",
+     "title": "Tangent-point energy",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.895,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-regularity-of-critical-points",
+     "title": "Regularity of critical points",
+     "prose_ratio": 0.659,
+     "coverage_ratio": 0.886,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-bending-energy",
+     "title": "Bending energy",
+     "prose_ratio": 0.218,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-bending-energy-with-tangent-point-energy",
+     "title": "Bending energy with tangent-point energy",
+     "prose_ratio": 0.883,
+     "coverage_ratio": 0.838,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-reparametrization-to-arclength",
+     "title": "Reparametrization to arclength",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-product-rules",
+     "title": "Product rules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

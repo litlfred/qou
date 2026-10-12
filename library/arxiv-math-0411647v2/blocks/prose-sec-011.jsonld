@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0411647v2/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0411647v2/blocks/prose-sec-011",
   "kind": "prose",
   "title": "Higher order expansion for free cumulants",
   "pageStart": 33,
   "pageEnd": 42,
   "text": "../sections/sec-011-44-higher-order-expansion-for-free-cumulants.md",
-  "derivedFrom": "library/arxiv-math-0411647v2/manifest",
-  "sourceDocument": "library/arxiv-math-0411647v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0411647v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0411647v2/manifest.jsonld",
   "provenance": "ingested"
 }

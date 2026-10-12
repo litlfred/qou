@@ -1,0 +1,32 @@
+%!TEX root = ../../article.tex
+\begin{tikzpicture}[traces]
+\begin{scope}[yshift=-3cm]
+
+\begin{pgfonlayer}{background} 
+	\fill[black!20] (-3,-10) rectangle (7,16);
+\end{pgfonlayer} 
+
+\clip (-3,-10) rectangle (7,16);
+
+\begin{scope}
+	\filldraw[unshaded] (0,3) .. controls ++(-157:3cm) and ++(157:3cm) .. (0,-3) .. controls ++(112:2cm) and ++(-112:2cm) .. (0,3);
+	\filldraw[unshaded] (0,3) .. controls ++(-22:3cm) and ++(22:3cm) .. (0,-3) .. controls ++(67:2cm) and ++(-67:2cm) .. (0,3);
+
+\begin{scope}[yshift=6cm]
+	\filldraw[unshaded] (0,3) .. controls ++(-157:3cm) and ++(157:3cm) .. (0,-3) .. controls ++(112:2cm) and ++(-112:2cm) .. (0,3);
+	\filldraw[unshaded] (0,3) .. controls ++(-22:3cm) and ++(22:3cm) .. (0,-3) .. controls ++(67:2cm) and ++(-67:2cm) .. (0,3);
+\end{scope}
+	
+	\filldraw[unshaded] (0,9) .. controls ++(22:3cm) and ++(90:4cm) .. (3,3) .. controls ++(-90:4cm) and ++(-22:3cm) .. (0,-3) .. controls ++(-67:6cm) and ++(-90:5cm) .. (4,3) .. controls ++(90:5cm) and ++(67:6cm) .. (0,9);
+	\filldraw[unshaded] (0,9) .. controls ++(112:4cm) and ++(90:15cm) .. (5,3) .. controls ++(-90:15cm) and ++(-112:4cm) .. (0,-3) .. controls ++(-157:7cm) and ++(-90:20cm) .. (6,3) .. controls ++(90:20cm) and ++(157:7cm) .. (0,9);
+	
+	\node at (0,3) [Tbox] (T1) {$S$};
+	\node at (0,9) [Tbox] (T3) {$S$};
+	\node at (0,-3) [Tbox] (T2) {$S$};
+	\node at (T1.100) [above left] {$\star$};
+	\node at (T2.100) [above left] {$\star$};
+	\node at (T3.90) [above left] {$\star$};
+
+\end{scope}
+\end{scope}
+\end{tikzpicture}

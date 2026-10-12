@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0005038v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0005038v1/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "STEPHEN J. BIGELOW",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-005-4-stephen-j-bigelow.md",
-  "derivedFrom": "library/arxiv-math-0005038v1/manifest",
-  "sourceDocument": "library/arxiv-math-0005038v1/manifest",
+  "title": "The representation is faithful",
+  "pageStart": 6,
+  "pageEnd": 6,
+  "text": "../sections/sec-005-3-the-representation-is-faithful.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0005038v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0005038v1/manifest.jsonld",
   "provenance": "ingested"
 }

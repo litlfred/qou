@@ -8,65 +8,75 @@ pages: 3-7
 source_pdf: 1702.00039v1.pdf
 source_sha256: b47ca7d1cf7b44be
 doc_brief: "Gentle introduction to Soergel bimodules I: The basics NICOLAS LIBEDINSKY — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
+text_source: latex
+latex_prose_ratio: 0.966
+latex_coverage_ratio: 0.948
 ---
-We start with two baby examples of Coxeter systems. In these two cases (as
-well as in examples (C) and (D)) we will calculate explicitly the two key ob-
-jects in the theory, namely the Kazhdan-Lusztig basis and the indecomposable
-Soergel bimodules.
-3
-(A) The group Symm(∆) of symmetries of an equilateral triangle is isomor-
-phic to the group with 6 elements
-⟨s,r|s2 =r2 =e, srs=rsr⟩.
-One possible isomorphism is given by the map
-(B) The group Symm(□) of symmetries of a square is isomorphic to the group
-with 8 elements
-⟨s,r|s2 =r2 =e, srsr=rsrs⟩.
-One isomorphism between these groups is given by
-2.3 Generalizing the baby examples: (inﬁnite) regular polygons
-One natural way to generalize the baby examples is to consider the symmetries
-of a regularn-sided polygon. This is also a ﬁnite Coxeter group denotedI2(n)
-(the subindex 2 in this notation denotes the rank of the Coxeter system, as
-deﬁned in Section 2.1). A presentation of this group is given by
-(C) I2(n) =⟨s,r|s2 =r2 =e, (sr)n =e⟩,
-4
-so Symm(∆)∼=I2(3) and Symm(□)∼=I2(4). Again, one isomorphism here is
-given by sending s to some reﬂection and r to any of the “closest reﬂections
-to it”
-Figure 1: Example with n = 8
-What is the Inﬁnite regular polygon , the “limit” in n of the groups I2(n)? A
-reasonable way to search for a geometric limit of the sequence of n−sided
-regular polygons, is to picture this sequence having “the same size” as in the
-ﬁgure
-Figure 2: The incorrect mental image
-If we do so, the (pointwise) limit is a circle. On the other hand, the limit when
-n goes to inﬁnity of I2(n) is algebraically clear if we consider the presentation
-given in Example (C). It is the inﬁnite group
-U2 =⟨s,r|s2 =r2 =e⟩.
-But the geometric and algebraic descriptions given here do not coincide! The
-group Symm(©) of symmetries of the circle (usually called the orthogonal
-group O(2)) is not even ﬁnitely generated. We have passed to a continuous
-group! The best we can do is to seeU2 as a dense subgroup of Symm(©) (just
-considers andr to be two ”random” reﬂections of the circle).
-5
-There is a beautiful way to solve this problem: there is a discrete geometric
-limit of the sequence of n−sided regular polygons. Let us picture this se-
-quence with one ﬁxed side (in the ﬁgure, the darker one). Let us suppose that
-the ﬁxed side has vertices in the points (0, 0) and (0, 1) of the plane.
-Figure 3: A new sequence
-Then, if we make a “close up” around the darker side, and we put all the
-polygons together, we see
-Figure 4: The ﬁgure opens like ﬂower
-The (pointwise) limit isR with the vertices converging to the setZ. The sym-
-metries of this geometric object (that we call (R,Z)) is isomorphic to U2! One
-isomorphism is given by sendings to the reﬂection through 0 andr to the re-
-ﬂection through 1/2 (again “the closest reﬂection”). Now our geometric limit
-and the algebraic limit coincide and we can regain our lost calm.
-For our fourth example, we just just raise the rank ofU2.
-(D) The Universal Coxeter system of rankn is the group
-Un =⟨s1,s 2,...,s n|s2
-1 =s2
-2 =··· =s2
-n =e⟩
-This is the most complicated family of groups in which one can still compute
-all of the Kazhdan-Lusztig theory explicitly.
-6
+We start with two baby examples of Coxeter systems. In these two cases (as well as in examples (C) and (D)) we will calculate explicitly the two key objects in the theory, namely the Kazhdan-Lusztig basis and the indecomposable Soergel bimodules.
+
+\(A\)
+
+:   The group $\mathrm{Symm}(\Delta)$ of symmetries of an equilateral triangle is isomorphic to the group with $6$ elements $$\langle s, r\ \vert \ s^2=r^2=e, \ srs=rsr\rangle.$$ One possible isomorphism is given by the map
+
+    <figure>
+    <div class="center">
+    <img src="triangle.png" />
+    </div>
+    </figure>
+
+\(B\)
+
+:   The group $\mathrm{Symm}(\square)$ of symmetries of a square is isomorphic to the group with $8$ elements $$\langle s, r\ \vert \ s^2=r^2=e, \ srsr=rsrs\rangle.$$ One isomorphism between these groups is given by
+
+    <figure>
+    <div class="center">
+    <img src="square.png" />
+    </div>
+    </figure>
+
+## Generalizing the baby examples: (infinite) regular polygons
+
+One natural way to generalize the baby examples is to consider the symmetries of a regular $n$-sided polygon. This is also a finite Coxeter group denoted $I_2(n)$ (the subindex $2$ in this notation denotes the rank of the Coxeter system, as defined in Section [\[Some definitions\]](#Some definitions){reference-type="ref" reference="Some definitions"}). A presentation of this group is given by
+
+\(C\)
+
+:   $I_2(n)= \langle s, r\ \vert \ s^2=r^2=e, \ (sr)^{n}=e\rangle,$
+
+so $\mathrm{Symm}(\Delta)\cong I_2(3)$ and $\mathrm{Symm}(\square)\cong I_2(4).$ Again, one isomorphism here is given by sending $s$ to some reflection and $r$ to any of the "closest reflections to it"
+
+<figure>
+<div class="center">
+<img src="polygon.png" />
+</div>
+<figcaption>Example with <span class="math inline"><em>n</em> = 8</span></figcaption>
+</figure>
+
+What is the *Infinite regular polygon*, the "limit\" in $n$ of the groups $I_2(n)$? A reasonable way to search for a geometric limit of the sequence of $n-$sided regular polygons, is to picture this sequence having "the same size" as in the figure
+
+![The incorrect mental image](circle.png){width="\\linewidth"}
+
+If we do so, the (pointwise) limit is a circle. On the other hand, the limit when $n$ goes to infinity of $I_2(n)$ is algebraically clear if we consider the presentation given in Example (C). It is the infinite group
+
+::: description
+$U_2=\langle s, r\ \vert \ s^2=r^2=e\rangle.$
+:::
+
+But the geometric and algebraic descriptions given here do not coincide! The group $\mathrm{Symm}(\bigcirc)$ of symmetries of the circle (usually called the orthogonal group $\mathrm{O}(2)$) is not even finitely generated. We have passed to a continuous group! The best we can do is to see $U_2$ as a dense subgroup of $\mathrm{Symm}(\bigcirc)$ (just consider $s$ and $r$ to be two \"random\" reflections of the circle).
+
+There is a beautiful way to solve this problem: there is a discrete geometric limit of the sequence of $n-$sided regular polygons. Let us picture this sequence with one fixed side (in the figure, the darker one). Let us suppose that the fixed side has vertices in the points $(0,0)$ and $(0,1)$ of the plane.
+
+![A new sequence](trueflower.png){width="\\linewidth"}
+
+Then, if we make a "close up" around the darker side, and we put all the polygons together, we see
+
+![The figure opens like flower](flower.png){width="\\linewidth"}
+
+The (pointwise) limit is $\mathbb{R}$ with the vertices converging to the set $\mathbb{Z}$. The symmetries of this geometric object (that we call $(\mathbb{R}, \mathbb{Z})$) is isomorphic to $U_2$! One isomorphism is given by sending $s$ to the reflection through $0$ and $r$ to the reflection through $1/2$ (again "the closest reflection"). Now our geometric limit and the algebraic limit coincide and we can regain our lost calm.
+
+For our fourth example, we just just raise the rank of $U_2$.
+
+\(D\)
+
+:   The *Universal Coxeter system of rank $n$* is the group $${U}_n=\langle s_1, s_2, \ldots, s_n\ \vert \ s_1^2=s_2^2=\cdots=s_n^2=e\rangle$$
+
+This is the most complicated family of groups in which one can still compute all of the Kazhdan-Lusztig theory explicitly.

@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Injective Objects",
+  "pageStart": 47,
+  "pageEnd": 51,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-023",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-023-01",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-023-02",
+    "library/arxiv-1610.09640v4/blocks/example-sec-023-03",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-023-04",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-023-05",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-023-06",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-023-07",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-023-08",
+    "library/arxiv-1610.09640v4/blocks/example-sec-023-09",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-023-10",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-023-11",
+    "library/arxiv-1610.09640v4/blocks/remark-sec-023-12",
+    "library/arxiv-1610.09640v4/blocks/example-sec-023-13"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

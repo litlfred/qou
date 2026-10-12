@@ -8,365 +8,594 @@ pages: 28-33
 source_pdf: 0905.0488v5.pdf
 source_sha256: fcf8dee7cd3849b9
 doc_brief: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI — Let X be a smooth algebraic variety over a ﬁeldK containing the real numbers."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-In this section we study the decomposition of twisted objects on open coverings.
-Given a setK and p∈N, we let
-(6.1) ∆ p(K) :={(k0,...,kp)|ki∈K}.
-The collection{∆ p(K)}p∈N is a simplicial set. Recall that for an open covering
-U ={Uk}k∈K of a topological spaceX, and fork = (k0,...,kp)∈∆ p(K), we
-write Uk =Uk0∩···∩Ukp.
-Let{Gj}j∈J be a collection of crossed groupoids indexed by some setJ. Their
-product is the crossed groupoid ∏
-j∈JGj, with set of objects Ob(∏
-j∈JGj) :=∏
-j∈J Ob(Gj) etc.
+\label{sec:mdd}
+
+In this section we study the decomposition of twisted objects on open
+coverings.
+
+Given a set $K$ and $p \in \N$, we let 
+\begin{equation} \label{eqn:mdd.111}
+\bsym{\Delta}_p(K) := \{ (k_0, \ldots, k_p) \mid k_i \in K \} .
+\end{equation}
+The collection $\{ \bsym{\Delta}_p(K) \}_{p \in \N}$ is a simplicial set. 
+Recall that for an open covering $\bsym{U} = \{ U_k \}_{k \in K}$ of a
+topological space $X$, and for 
+$\bsym{k} = (k_0, \ldots, k_p) \in \bsym{\Delta}_p(K)$, 
+we write 
+$U_{\bsym{k}} = U_{k_0} \cap \cdots \cap U_{k_p}$.
+
+Let $\{ G^j \}_{j \in J}$ be a collection of crossed groupoids
+indexed by some set $J$.
+Their product is the crossed groupoid  
+$\prod_{j \in J} G^j$, with set of objects 
+$\opn{Ob}(\prod_{j \in J} G^j) := 
+\prod_{j \in J} \opn{Ob}(G^j)$
+etc.
+
 The notion of stack of crossed groupoids
-P = (P1, P2, AdP1↷P2, D)
-on a topological spaceX was introduced in Deﬁnition 1.11. We will make frequent
-use of the functor of stacksIG : P1→Grp(X), and the natural transformation
-ig : IG⇒AdP1, from Proposition 1.13.
-Deﬁnition 6.2.Let P be a stack of crossed groupoids on a topological spaceX,
-and letU ={Uk}k∈K be an open covering ofX. For anyp∈N deﬁne the crossed
-groupoid
-Cp(U, P) :=
-∏
-k∈∆ p(K)
-P(Uk).
-The restriction morphisms restV/U induce a morphism of crossed groupoids
-Cp(U, P)→Cq(U, P) for anyα: p→q in ∆ . In this way we obtain a cosim-
-plicial crossed groupoidC(U, P) ={Cp(U, P)}p∈N, which we refer to as theČech
-cosimplicial crossed groupoidassociated to P andU.
-The set of combinatorial descent dataDesc(G) in a cosimplicial crossed groupoid
-G was deﬁned in Deﬁnition 5.2.
-Deﬁnition 6.3.Let P be a stack of crossed groupoids on a topological spaceX,
-and letU ={Uk}k∈K be an open covering ofX. A geometric descent datumfor
-(U, P) is an element of the setDesc(C(U, P)).
-Given d,d′∈Desc(C(U, P)), a gauge transformationf : d→d′is a gauge
-transformation of combinatorial descent data, in the sense of Deﬁnition 5.3. Passing
-to gauge equivalence classes we get the setDesc(C(U, P)).
-Here is an explicit interpretation of geometric descent data, gotten by unraveling
-the deﬁnitions. A descent datumd∈Desc(C(U, P)) is actually a collection
-(6.4) d =
-(
-{Ak0}k0∈K,{gk0,k1}k0,k1∈K,{ak0,k1,k2}k0,k1,k2∈K
-{
-,
-whereAk0 ∈Ob(P(Uk0)), gk0,k1 :Ak0|Uk0,k1 →Ak1|Uk0,k1 is an isomorphism in
-P1(Uk0,k1), andak0,k1,k2∈Γ
-(
-Uk0,k1,k2, IG(Ak0)
-{
-. Conditions (i-ii) of Deﬁnition 5.2
-say that
-(6.5) g−1
-k0,k2
-◦gk1,k2◦gk0,k1 = ig(ak0,k1,k2)
-TWISTED DEFORMATION QUANTIZATION 29
-Figure 4. Geometric descent datum on an open covering
-{Uk}k∈K of a topological space.
-as automorphisms ofAk0|Uk0,k1,k2 in P1(Uk0,k1,k2), and
-(6.6) a−1
-k0,k1,k3
-·ak0,k2,k3·ak0,k1,k2 = IG(g−1
-k0,k1
-)(ak1,k2,k3)
-in the groupΓ
-(
-Uk0,...,k3, IG(Ak0)
-{
-. See Figure 4 for an illustration.
-Given another descent datumd′=
-(
-{A′
-k0},{g′
-k0,k1},{a′
-k0,k1,k2}
-{
-, a gauge trans-
-formationf :d→d′is actually a collection
-(6.7) f =
-(
-{fk0},{bk0,k1}
-{
-,
-where fk0 : Ak0 → A′
-k0 is an isomorphism in P1(Uk0), and bk0,k1 ∈
-Γ(Uk0,k1, IG(Ak0)). Conditions (i-ii) of Deﬁnition 5.3 say that
-(6.8) g′
-k0,k1 =fk1◦gk0,k1◦ig(bk0,k1)◦f−1
-k0
-as isomorphismsA′
-k0|Uk0,k1→A′
-k1|Uk0,k1, and
-(6.9) a′
-k0,k1,k2 = IG(fk0)
-(
-b−1
-k0,k2
-·ak0,k1,k2·IG(g−1
-k0,k1
-)(bk1,k2)·bk0,k1
-{
-in the groupIG(A′
-k0|Uk0,k1,k2 ).
-Remark 6.10. The similarity between our notion of geometric descent data and
-the usual notion of descent data for gerbes (cf. [Gi, Section IV.3.5] or [Br, Section
-5]) is no coincidence. Indeed, as shown in Example 4.7, gerbes are an instance of
-twisted objects. Likewise for gauge transformations between descent data.
-In [Ko2], geometric descent data, forP = Assoc(R,X ), is called acombinatorial
-description of algebroids. Note that in the paper [BGNT1] the authors refer to a
-geometric descent datum as a “stack”.
-Deﬁnition6.11.Let G beagerbeon X, andletU ={Uk}k∈K beanopencovering
-of X. A trivialization datumof G onU is a collections =
-(
-{ik0},{sk0,k1}
-{
-, where
-ik0∈Ob(G(Uk0)) and sk0,k1∈G(Uk0,k1)(ik0,ik1).
-Consider a twisted object(G, A, cp) of the stack of crossed groupoidsP, and a
-trivialization datums =
-(
-{ik0},{sk0,k1}
-{
-of the gauge gerbeG on the open covering
-30 AMNON YEKUTIELI
-U. Deﬁne
-(6.12)
-Ak0 := A(ik0)∈Ob(P(Uk0)),
-gk0,k1 := A(sk0,k1)∈P1(Uk0,k1)(ik0,ik1),
-ak0,k1,k2 := cp(s−1
-k0,k2
-◦sk1,k2◦sk0,k1)∈Γ(Uk0,k1,k2, IG(Ak0)).
-The resulting collection of elements, arranged as in (6.4), is denoted bydec(A,s).
-Lemma 6.13. Let (G, A, cp) be a twisted object ofP, and lets be a trivialization
-datum for G onU.
-(1) The collection dec(A,s) is a geometric descent datum for(U, P).
-(2) Let (G′, A′, cp′) be another another twisted object ofP, which is twisted
-gauge equivalent to (G, A, cp), and lets′be a trivialization datum forG′
-onU. Assume that the groupoidsG(Uk) are connected for allk∈K. Then
-the descent datadec(A,s) and dec(A′,s′) are gauge equivalent.
-Proof. (1) This is a simple calculation.
-(2) First assume that (G′, A′, cp′) = ( G, A, cp), but s′=
-(
-{i′
-k0},{s′
-k0,k1}
-{
-is a
-diﬀerent descent datum. Since the groupoidsG(Uk) are connected, we can ﬁnd
-elementstk∈G(Uk)(ik,i′
-k). Deﬁnefk := A(tk), which is an isomorphismAk→A′
-k
-in P1, and
-bk0,k1 := cp(s−1
-k0,k1
-◦t−1
-k1
-◦s′
-k0,k1◦tk0)∈Γ(Uk0,k1, IG(Ak0)).
-A calculation shows that the collectionf, with notation as in (6.7), is a gauge
-transformation dec(A,s)→dec(A′,s′).
-Now consider a twisted gauge transformation (Φ gau, Φ rep) : ( G, A, cp) →
-(G′, A′, cp′). Since Φ gau : G →G′is an equivalence of gerbes, it follows that
-the groupoids G′(Uk) are all connected. So, by the previous paragraph, we don’t
-care which trivialization datum we use forG′. Let us deﬁnes′to bei′
-k := Φ gau(ik)
-and s′
-k0,k1 := Φ gau(sk0,k1). Take fk := Φ rep :Ak →A′
-k and bk0,k1 := 1. The
-resulting collectionf is a gauge transformationdec(A,s)→dec(A′,s′). □
-Deﬁnition 6.14.Let G be a gerbe on a topological spaceX, and letU ={Uk}k∈K
-be an open covering ofX. We say thatU totally trivializes G if for everyp∈{0, 1}
-andk∈∆ p(K) the groupoid G(Uk) is nonempty and connected.
-Deﬁnition 6.15.Let P be a stack of crossed groupoids on a topological spaceX,
-and letU be an open covering ofX.
-(1) Let (G, A, cp) be a twisted object ofP. We say thatU totally trivializes
-(G, A, cp) if it totally trivializes the gauge gerbeG.
-(2) We say thatU totally trivializesP if it totally trivializes all twisted objects
-of P.
-Remark 6.16. In general there is no reason to expect that totally trivializing
-open coverings should exist. If we were to work with hypercoverings, then such a
-diﬃculty would not arise; but then the combinatorics would be more complicated.
-Cf. [Br, Section 5].
-We shall see in Corollary 7.4 that for the stacks with inner gauge groups
-AssDef(R,OX) and PoisDef(R,OX) there do exist totally trivializing open cover-
-ings.
-Proposition 6.17.LetU be an open covering ofX that totally trivializes the stack
-of crossed groupoidsP. Then there is a function
-dec : TwOb(P)→Desc(C(U, P))
-called decomposition, which is represented bydec(A,s) for any representativeA∈
-TwOb(P) and any trivialization datums for A onU.
-TWISTED DEFORMATION QUANTIZATION 31
-Proof. Take any twisted object (G, A, cp). Since the groupoids G(Uk0) are
-nonempty, and the groupoidsG(Uk0,k1) are connected, we can ﬁnd a trivialization
-datum s. By Lemma 6.13(1) we get a geometric descent datumdec(A,s). Since
-the groupoids G(Uk0) are connected, by Lemma 6.13(2) this gives a well-deﬁned
-function on equivalence classes. □
-Recall that a reﬁnement ofU is an open coveringU′={U′
-k}k∈K′ofX, together
-with a functionρ:K′→K, such thatU′
-k⊂Uρ(k) for everyk∈K′. Sometimes we
-say thatρ:U′→U is a reﬁnement. Given such a reﬁnement, there is a function
-(6.18) ρ∗: Desc(C(U, P))→Desc(C(U′, P)).
-The formula is obvious: sayd =
-(
-{Ak}k∈K,...
-{
-; then ρ∗(d) =
-(
-{A′
-k}k∈K′,...
-{
-,
-whereA′
-k :=Aρ(k)|U′
-k
-, etc. It is easy to see that this function preserves the equiv-
-alence relation. Thus Desc(C(U, P)) is contravariant with respect to reﬁnements
-U′→U.
-Proposition 6.19. Let U and U′be open coverings ofX that totally trivialize
-the stack of crossed groupoidsP, and letρ: U→U′be a reﬁnement. Then the
-diagram
-TwOb(P) dec //
-dec ))
-Desc(C(U, P))
-ρ∗
-
-Desc(C(U′, P))
+\[ \twocat{P} = ( \twocat{P}_1, \twocat{P}_2, 
+\opn{Ad}_{\twocat{P}_1 \crvar \twocat{P}_{2}}, \opn{D} ) \]
+on a topological space $X$ was introduced in Definition \ref{dfn:200}.
+We will make frequent use of the functor of stacks 
+$\opn{IG} : \twocat{P}_1 \to \twocat{Grp}(X)$,
+and the natural transformation
+$\opn{ig} : \opn{IG} \twoto \opn{Ad}_{\twocat{P}_1}$,
+from Proposition \ref{prop:201}.
+
+\begin{dfn} \label{dfn:mdd.101}
+Let $\twocat{P}$ be a stack of crossed groupoids on a
+topological space $X$, and let $\bsym{U} = \{ U_k \}_{k \in K}$ be an
+open covering of $X$. For any $p \in \N$ define the crossed groupoid 
+\[ \opn{C}^p(\bsym{U}, \twocat{P}) := 
+\prod_{\bsym{k} \in \bsym{\Delta}_p(K)} \twocat{P}(U_{\bsym{k}}) . \]
+
+The restriction morphisms 
+$\mrm{rest}^{}_{V / U}$ induce a morphism of crossed groupoids 
+$\opn{C}^p(\bsym{U}, \twocat{P}) \to \opn{C}^q(\bsym{U}, \twocat{P})$
+for any $\al : p \to q$ in $\bsym{\Delta}$. 
+In this way we obtain a cosimplicial crossed groupoid 
+$\opn{C}(\bsym{U}, \twocat{P}) = 
+\{ \opn{C}^p(\bsym{U}, \twocat{P}) \}_{p \in \N}$,
+which we refer to as the {\em \v{C}ech cosimplicial crossed groupoid}
+associated to $\twocat{P}$ and $\bsym{U}$. 
+\end{dfn}
+
+The set of combinatorial descent data 
+$\opn{Desc}(G)$ in a cosimplicial crossed groupoid $G$ 
+was defined in Definition \ref{dfn:101}.
+
+\begin{dfn} \label{dfn:21}
+Let $\twocat{P}$ be a stack of crossed groupoids on a
+topological space $X$, and let $\bsym{U} = \{ U_k \}_{k \in K}$ be an
+open covering of $X$. A {\em geometric descent datum} for 
+$(\bsym{U}, \twocat{P})$ is an element of the set 
+$\opn{Desc}(\opn{C}(\bsym{U}, \twocat{P}))$.
+
+Given $\bsym{d}, \bsym{d}' \in \opn{Desc}(\opn{C}(\bsym{U}, \twocat{P}))$,
+a {\em gauge transformation} 
+$\bsym{f} : \bsym{d} \to \bsym{d}'$ is a gauge transformation
+of combinatorial descent data, in the sense of Definition \ref{dfn:100}.
+Passing to gauge equivalence classes we get the set
+$\ol{\opn{Desc}}(\opn{C}(\bsym{U}, \twocat{P}))$.
+\end{dfn}
+
+Here is an explicit interpretation of geometric descent data,
+gotten by unraveling the definitions. A descent datum 
+$\bsym{d} \in \opn{Desc}(\opn{C}(\bsym{U}, \twocat{P}))$ 
+is actually a collection 
+\begin{equation} \label{eqn:mdd.120}
+\bsym{d} = \bigl( \{ \mcal{A}_{k_0} \}_{k_0 \in K}, \,
+\{ g_{k_0, k_1} \}_{k_0, k_1 \in K}, \,
+\{ a_{k_0, k_1, k_2} \}_{k_0, k_1, k_2 \in K} \bigr) ,
+\end{equation}
+where
+$ \mcal{A}_{k_0} \in \opn{Ob} (\twocat{P}(U_{k_0}))$,
+$g_{k_0, k_1}: \mcal{A}_{k_0}|_{U_{k_0, k_1}} \to 
+\mcal{A}_{k_1}|_{U_{k_0, k_1}}$
+is an isomorphism in $\twocat{P}_1(U_{k_0, k_1})$, and
+$a_{k_0, k_1, k_2} \in 
+\Gamma \bigl( U_{k_0, k_1, k_2}, \opn{IG}(\mcal{A}_{k_0}) \bigr)$.
+Conditions (i-ii) of Definition \ref{dfn:101} say that
+\begin{equation} \label{eqn:bitorsors.11}
+ g_{k_0, k_2}^{-1} \circ g_{k_1, k_2} \circ g_{k_0, k_1} =
+\opn{ig}(a_{k_0, k_1, k_2})
+\end{equation}
+as automorphisms of
+$\mcal{A}_{k_0}|_{U_{k_0, k_1, k_2}}$
+in $\twocat{P}_1(U_{k_0, k_1, k_2})$, and 
+\begin{equation} \label{eqn:bitorsors.12}
+a_{k_0, k_1, k_3}^{-1} \cdot a_{k_0, k_2, k_3} \cdot 
+a_{k_0, k_1, k_2} = \opn{IG}(g_{k_0, k_1}^{-1})
+(a_{k_1, k_2, k_3})
+\end{equation}
+in the group
+$\Gamma \bigl( U_{k_0, \ldots, k_3}, \opn{IG}(\mcal{A}_{k_0})
+\bigr)$.
+See Figure \ref{fig:5} for an illustration. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.35]{fig-4.pdf}
+
+\caption{Geometric descent datum on an open covering
+$\{ U_k \}_{k \in K}$ of a topological space.}
+\label{fig:5}
+\end{center}
+\end{figure}
+
+Given another descent datum 
+$\bsym{d}' = \bigl( \{ \mcal{A}'_{k_0} \}, \{ g'_{k_0, k_1} \},
+\{ a'_{k_0, k_1, k_2} \} \bigr)$,
+a gauge transformation 
+$\bsym{f} : \bsym{d} \to \bsym{d}'$ 
+is actually a collection 
+\begin{equation} \label{eqn:bitorsors.14}
+\bsym{f} = \bigl( \{ f_{k_0} \}, \{ b_{k_0, k_1} \} \bigr) ,
+\end{equation}
+where
+$f_{k_0} : \mcal{A}_{k_0} \to \mcal{A}'_{k_0}$
+is an isomorphism in $\twocat{P}_1(U_{k_0})$, and
+$b_{k_0, k_1} \in \lb \Gamma(U_{k_0, k_1}, \opn{IG}(\mcal{A}_{k_0}))$.
+Conditions (i-ii) of Definition \ref{dfn:100} say that  
+\begin{equation} \label{eqn:bitorsors.6}
+g'_{k_0, k_1} =  f_{k_1} \circ g_{k_0, k_1} \circ \opn{ig}(b_{k_0, k_1})
+\circ f_{k_0}^{-1}
+\end{equation}
+as isomorphisms 
+$\mcal{A}'_{k_0}|_{U_{k_0, k_1}} \to \mcal{A}'_{k_1}|_{U_{k_0, k_1}}$,
+and 
+\begin{equation} \label{eqn:bitorsors.7}
+a'_{k_0, k_1, k_2} = \opn{IG}(f_{k_0}) \bigl(  
+b_{k_0, k_2}^{-1} \cdot a_{k_0, k_1, k_2} \cdot 
+\opn{IG}(g_{k_0, k_1}^{-1})(b_{k_1, k_2}) \cdot b_{k_0, k_1} \bigr)
+\end{equation}
+in the group $\opn{IG}(\mcal{A}'_{k_0}|_{U_{k_0, k_1, k_2}})$.
+
+\begin{rem}
+The similarity between our notion of geometric descent data and
+the usual notion of descent data for gerbes (cf.\ \cite[Section IV.3.5]{Gi} or
+\cite[Section 5]{Br}) is no coincidence. Indeed, as shown in Example
+\ref{exa:21}, gerbes are an instance of twisted objects. Likewise for gauge
+transformations between descent data.
+
+In \cite{Ko2}, geometric descent data, for 
+$\twocat{P} = \twocat{Assoc}(R, X)$, is called a {\em combinatorial
+description of algebroids}.
+Note that in the paper \cite{BGNT1} the authors refer to a
+geometric descent datum as a ``stack''.
+\end{rem}
+
+\begin{dfn} \label{dfn:bitorsors.3}
+Let $\gerbe{G}$ be a gerbe on $X$, and let 
+$\bsym{U} = \{ U_k \}_{k \in K}$ be an open covering of $X$.  
+A {\em trivialization datum} of $\gerbe{G}$ on $\bsym{U}$ is a collection 
+$\bsym{s} = \bigl( \{ i_{k_0} \} , \{ s_{k_0, k_1} \} \bigr)$,
+where $i_{k_0} \in \opn{Ob}(\gerbe{G}(U_{k_0}))$ and 
+$s_{k_0, k_1} \in \gerbe{G}(U_{k_0, k_1})(i_{k_0}, i_{k_1})$.
+\end{dfn}
+
+Consider a twisted object
+$(\gerbe{G}, \gerbe{A}, \opn{cp})$
+of the stack of crossed groupoids $\twocat{P}$, 
+and a trivialization datum 
+$\bsym{s} = \bigl( \{ i_{k_0} \} , \{ s_{k_0, k_1} \} \bigr)$ 
+of the gauge gerbe $\gerbe{G}$ on the open covering $\bsym{U}$. Define 
+\begin{equation}
+\begin{aligned}
+\mcal{A}_{k_0} & := \gerbe{A}(i_{k_0}) \in \opn{Ob}(\twocat{P}(U_{k_0})) , 
+\\
+g_{k_0, k_1} & := \gerbe{A}(s_{k_0, k_1}) \in 
+\twocat{P}_1(U_{k_0, k_1})(i_{k_0}, i_{k_1}) , 
+\\
+a_{k_0, k_1, k_2} & := \opn{cp} ( s_{k_0, k_2}^{-1} \circ s_{k_1, k_2} \circ
+s_{k_0, k_1} ) \in \Gamma(U_{k_0, k_1, k_2}, \opn{IG}(\mcal{A}_{k_0})) . 
+\end{aligned}
+\end{equation}
+The resulting collection of elements, arranged as in (\ref{eqn:mdd.120}),
+is denoted by $\opn{dec}(\gerbe{A}, \bsym{s})$.
+
+\begin{lem}   \label{lem:bitorsors.2}
+Let $(\gerbe{G}, \gerbe{A}, \opn{cp})$ be a twisted object of $\twocat{P}$,
+and let $\bsym{s}$ be a trivialization datum for $\gerbe{G}$ on $\bsym{U}$.
+\begin{enumerate}
+\item The collection $\opn{dec}(\gerbe{A}, \bsym{s})$ is a geometric descent
+datum for $(\bsym{U}, \twocat{P})$. 
+
+\item Let $(\gerbe{G}', \gerbe{A}', \opn{cp}')$ be another another twisted
+object of $\twocat{P}$, which is twisted gauge equivalent to 
+$(\gerbe{G}, \gerbe{A}, \opn{cp})$, 
+and let $\bsym{s}'$ be a trivialization datum for $\gerbe{G}'$ on $\bsym{U}$.
+Assume that the groupoids 
+$\gerbe{G}(U_k)$ are connected for all $k \in K$. Then 
+the descent data $\opn{dec}(\gerbe{A}, \bsym{s})$ and 
+$\opn{dec}(\gerbe{A}', \bsym{s}')$ are gauge equivalent.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+(1) This is a simple calculation.
+
+\medskip \noindent
+(2) First assume that 
+$(\gerbe{G}', \gerbe{A}', \opn{cp}') = 
+(\gerbe{G}, \gerbe{A}, \opn{cp})$, 
+but 
+$\bsym{s}' = \bigl( \{ i'_{k_0} \} , \{ s'_{k_0, k_1} \} \bigr)$ 
+is a different descent datum. Since the groupoids 
+$\gerbe{G}(U_k)$ are connected, we can find elements 
+$t_k \in \gerbe{G}(U_k)(i_k, i'_k)$. 
+Define $f_k := \gerbe{A}(t_k)$, which is an isomorphism 
+$\mcal{A}_k \to \mcal{A}'_k$ in $\twocat{P}_1$, 
+and
+\[ b_{k_0, k_1} := \opn{cp}( s_{k_0, k_1}^{-1}  \circ 
+t_{k_1}^{-1}  \circ s'_{k_0, k_1}  \circ t_{k_0} ) \in 
+\Gamma(U_{k_0, k_1}, \opn{IG}(\mcal{A}_{k_0})) . \]
+A calculation shows that the collection $\bsym{f}$, with notation as in 
+(\ref{eqn:bitorsors.14}), is a gauge transformation 
+$\opn{dec}(\gerbe{A}, \bsym{s}) \to \opn{dec}(\gerbe{A}', \bsym{s}')$.
+
+Now consider a twisted gauge transformation 
+$(\Phi_{\mrm{gau}}, \Phi_{\mrm{rep}}) : 
+(\gerbe{G}, \gerbe{A}, \opn{cp}) \to \lb (\gerbe{G}', \gerbe{A}', \opn{cp}')$.
+Since $\Phi_{\mrm{gau}} : \gerbe{G} \to \gerbe{G}'$
+is an equivalence of gerbes, it follows that the groupoids 
+$\gerbe{G}'(U_k)$ are all connected. So, by the previous paragraph, we don't
+care which trivialization datum we use for $\gerbe{G}'$.
+Let us define $\bsym{s}'$ to be 
+$i'_k := \Phi_{\mrm{gau}}(i_k)$ and 
+$s'_{k_0, k_1} :=  \Phi_{\mrm{gau}}(s_{k_0, k_1})$. 
+Take 
+$f_k := \Phi_{\mrm{rep}} : \mcal{A}_{k} \to \mcal{A}'_{k}$
+and $b_{k_0, k_1} := 1$. 
+The resulting collection $\bsym{f}$ is a gauge transformation 
+$\opn{dec}(\gerbe{A}, \bsym{s}) \to \opn{dec}(\gerbe{A}', \bsym{s}')$.
+\end{proof}
+
+\begin{dfn} \label{dfn:18}
+Let $\gerbe{G}$ be a gerbe on a topological space $X$, and let 
+$\bsym{U} = \{ U_k \}_{k \in K}$ be an open covering of $X$. We say
+that $\bsym{U}$ {\em totally trivializes} $\gerbe{G}$ if 
+for every $p \in \{ 0, 1 \}$ and $\bsym{k} \in \bsym{\Delta}_p(K)$ the 
+groupoid $\gerbe{G}(U_{\bsym{k}})$ is nonempty and connected.
+\end{dfn}
+
+\begin{dfn} \label{dfn:bitorsors.10}
+Let $\twocat{P}$ be a stack of crossed groupoids on a topological space $X$,
+and let $\bsym{U}$ be an open covering of $X$. 
+\begin{enumerate}
+\item Let $(\gerbe{G}, \gerbe{A}, \opn{cp})$ be a twisted
+object of $\twocat{P}$. We say that $\bsym{U}$ totally trivializes
+$(\gerbe{G}, \gerbe{A}, \opn{cp})$ if it totally trivializes the gauge gerbe
+$\gerbe{G}$.
+
+\item We say that $\bsym{U}$ totally trivializes 
+$\twocat{P}$ if it totally trivializes all twisted objects of $\twocat{P}$.
+\end{enumerate}
+\end{dfn}
+
+\begin{rem}
+In general there is no reason to expect that totally trivializing open
+coverings should exist. If we were to work with hypercoverings,
+then such a difficulty would not arise; but then the combinatorics would be
+more complicated. Cf.\ \cite[Section 5]{Br}.
+
+We shall see in Corollary \ref{cor:4}  that for
+the stacks with inner gauge groups \lb
+$\twocat{AssDef}(R,\mcal{O}_X)$ and $\twocat{PoisDef}(R, \mcal{O}_X)$
+there do exist totally trivializing open coverings.
+\end{rem}
+
+\begin{prop} \label{prop:bitorsors.5}
+Let $\bsym{U}$ be an open covering of $X$ that totally trivializes 
+the stack of crossed groupoids $\twocat{P}$. Then  there is a function 
+\[ \ol{\opn{dec}} :  \ol{\opn{TwOb}}(\twocat{P}) \to 
+\ol{\opn{Desc}}(\opn{C}(\bsym{U}, \twocat{P})) \]
+called {\em decomposition}, 
+which is represented by $\opn{dec}(\gerbe{A}, \bsym{s})$
+for any representative $\gerbe{A} \in \opn{TwOb}(\twocat{P})$ 
+and any trivialization datum $\bsym{s}$ for $\gerbe{A}$ on $\bsym{U}$.
+\end{prop}
+
+\begin{proof}
+Take any twisted object $(\gerbe{G}, \gerbe{A}, \opn{cp})$. 
+Since the groupoids $\gerbe{G}(U_{k_0})$ are \lb nonempty, and
+the groupoids $\gerbe{G}(U_{k_0, k_1})$ are connected, we can find 
+a trivialization datum $\bsym{s}$. By Lemma \ref{lem:bitorsors.2}(1) we get 
+a geometric descent datum $\opn{dec}(\gerbe{A}, \bsym{s})$.
+Since the groupoids $\gerbe{G}(U_{k_0})$ are connected, 
+by Lemma \ref{lem:bitorsors.2}(2) this gives a well-defined function on
+equivalence classes.
+\end{proof}
+
+Recall that a refinement of  $\bsym{U}$ is an open covering 
+$\bsym{U}' = \{ U'_k \}_{k \in K'}$ of $X$, together with a function
+$\rho : K' \to K$, such that 
+$U'_k \subset U_{\rho(k)}$ for every $k \in K'$.
+Sometimes we say that $\rho : \bsym{U}' \to \bsym{U}$ is a
+refinement. Given such a refinement, there is a function
+\begin{equation} \label{eqn:23}
+\rho^* : \opn{Desc}(\opn{C}(\bsym{U}, \twocat{P}))
+\to \opn{Desc}(\opn{C}(\bsym{U}', \twocat{P})) . 
+\end{equation}
+The formula is obvious: say 
+$\bsym{d} = \bigl( \{ \mcal{A}_k \}_{k \in K}, \ldots \bigr)$;
+then 
+$\rho^*(\bsym{d}) = \bigl( \{ \mcal{A}'_k \}_{k \in K'}, \ldots
+\bigr)$, 
+where $\mcal{A}'_{k} := \mcal{A}_{\rho(k)}|_{U'_k}$, etc. 
+It is easy to see that this function preserves the equivalence
+relation.
+Thus $\ol{\opn{Desc}}(\opn{C}(\bsym{U}, \twocat{P}))$ is
+contravariant with respect
+to refinements $\bsym{U}' \to \bsym{U}$.
+
+\begin{prop} \label{prop:bitorsors.6}
+Let $\bsym{U}$ and $\bsym{U}'$ be open coverings of $X$ that totally
+trivialize the stack of crossed groupoids $\twocat{P}$, and let 
+$\rho : \bsym{U} \to \bsym{U}'$ be a refinement. 
+Then the diagram 
+\[ \UseTips \xymatrix @C=9ex @R=5ex {
+\ol{\opn{TwOb}}(\twocat{P})
+\ar[r]^(0.4){\ol{\opn{dec}}}
+\ar[dr]_{\ol{\opn{dec}}}
+&
+\ol{\opn{Desc}}(\opn{C}(\bsym{U}, \twocat{P}))
+\ar[d]^{\rho^*} 
+\\
+&
+\ol{\opn{Desc}}(\opn{C}(\bsym{U}', \twocat{P})) 
+} \]
 is commutative.
-Proof. This is immediate from the construction; cf. proof of Lemma 6.13(2).□
-In the rest of this section we will show how to glue twisted objects from descent
-data. This construction will be inverse to the decomposition operation. But before
-attempting to glue twisted objects, we have to understand how to pass from descent
-data to connected groupoids.
-Let K be some nonempty set. By groupoid descent datumindexed by K we
-mean a collectiond =
-(
-{Gk0},{φk0,k1},{ak0,k1,k2}
-{
-, wherek0,k 1,k 2∈K, Gk0 is
-a group,φk0,k1 : Gk0→Gk1 is a group isomorphism, andak0,k1,k2∈Gk0. These
-satisfy conditions (6.5) and (6.6), with the obvious modiﬁcations in notation (e.g.
-φk0,k1 instead ofgk0,k1).
-Suppose d and d′are groupoid descent data indexed byK. A gauge transfor-
-mation f : d→d′is a collectionf =
-(
-{ψk0},{bk0,k1}
-{
-of group isomorphisms
-ψk0 :Gk0→G′
-k1, and of elementsbk0,k1∈Gk0. The conditions are the translations
-of formulas (6.8) and (6.9) to the present context.
-A trivialization datum for a connected groupoidG is a collections ={sk0,k1}
-of elements sk0,k1 ∈G(k0,k 1), indexed by the set K := Ob(G). We call the
-pair (G,s) a trivialized groupoid. By isomorphism of trivialized groupoids F :
-(G,s)→(G′,s′) we mean an isomorphism of groupoidsF : G→G′such that
-F (sk0,k1) = s′
-F(k0),F(k1). Just like in Lemma 6.13(1), to any trivialized groupoid
-(G,s) there is a corresponding groupoid descent datumdec(G,s).
-Lemma 6.20. Letd be a groupoid descent datum indexed by a nonempty setK.
-(1) There is a connected groupoidG, with trivialization datum s, such that
-dec(G,s) = d. The trivialized groupoid (G,s) is unique up to a unique
-isomorphism. We writeglu(d) :=G.
-(2) Letd′be another groupoid descent datum indexed byK, and letf :d→
-d′be a gauge transformation. We describef as in (6.7). Then there is
-32 AMNON YEKUTIELI
-a unique isomorphism of groupoids glu(f) : glu( d)→glu(d′) such that
-glu(f)(sk0,k1·bk0,k1) =s′
-k0,k1.
-Proof. (1) This seems to be known (cf. [Ko2, Appendix A1]), but here is a sketch
-anyhow. Write d as in (6.4). For any k0,k 1 ∈K we take G(k0,k 1) to be the
-Gk1-Gk0-bitorsor with basissk0,k1, such thatsk0,k1·a = φk0,k1(a)·sk0,k1 for any
-a∈Gk0. The composition◦in G is speciﬁed by its value on the basis elements:
-sk1,k2◦sk0,k1 :=sk0,k2·ak0,k2,k2.
-(2) A direct calculation. □
-Lemma 6.21. There is a function
-glu : Desc(C(U, P))→TwOb(P)
-having these properties:
-(i) Ifd,d′∈Desc(C(U, P)) are gauge equivalent, thenglu(d) and glu(d′) are
-twisted gauge equivalent.
-(ii) For anyd∈Desc(C(U, P)) the twisted object (G, A, cp) := glu(d) has a
-trivialization datums such that dec(A,s) =d.
-(iii) Let (G, A, cp) be a twisted object ofP, with trivialization datums, and let
-d := dec(A,s). Then glu(d) is twisted gauge equivalent to(G, A, cp).
-Proof. Take anyd∈Desc(C(U, P)), which we describe as in (6.4). For a nonempty
-open setV ⊂X let K(V ) :={k∈K|V ⊂Uk}. Consider the collection
-IG(d,V ) :=
-(
-{Γ(V, IG(Ak0))},{IG(gk0,k1)},{ak0,k1,k2}
-{
-in which k0,k 1,k 2 ∈K(V ). So IG(d,V ) is a groupoid descent datum indexed
-by the set K(V ). If K(V ) ⁄= ∅, then by Lemma 6.20(1) there is a nonempty
-connected groupoid G(V ) := glu(IG(d,V )). If If K(V ) = ∅we let G(V ) be the
-empty groupoid. ForV = Uk there is a distinguished objectk∈Ob(G(Uk)), and
-forV =Uk0,k1 there is a distinguished isomorphismsk0,k1 :k0→k1 in the groupoid
-G(Uk0,k1). Also there is a tautological group isomorphism cp : G(V )(k0,k 0)→
-Γ(V, IG(Ak0)) for k0∈K(V ).
-If V′⊂V then K(V ) ⊂K(V′). By construction of the groupoids glu(−)
-there is an induced morphism of groupoidsG(V )→G(V′), which on the automor-
-phism groups ofk0∈K(V ) it is the restriction homomorphismΓ(V, IG(Ak0))→
-Γ(V′, IG(Ak0)). In this way we obtain a presheaf of groupoidsG on X, which is
-a separated prestack (the isomorphism presheaves are sheaves). The group iso-
-morphisms cp above induce an isomorphism of sheaves of groupscp : G(k0,k 0)→
-IG(Ak0) on Uk0.
-Let ˜G be the stackiﬁcation ofG; so ˜G is a gerbe onX, and there is a weak
-equivalence of prestacksF : G→˜G. Note that ˜G is equipped with a trivialization
-datums =
-(
-{ik0},{sk0,k1}
-{
-onU, whereik0 :=F (k0)∈Ob(˜G(Uk0)).
-For anyV ⊂X open there is a morphism of groupoidsA(V ) : G(V )→P1(V ),
-namely A(V )(k0) := Ak0 for k0∈K(V ) = Ob( G(V )), and A(V )(sk0,k1·a) :=
-gk0,k1◦ig(a) for a∈G(V )(k0,k 0) = Γ(V, IG(Ak0)). Note thatig(a) is an automor-
-phism ofAk0|V, andgk0,k1 :Ak0|V →Ak1|V is an isomorphism, all in the stack of
-groupoids P1. It is a direct calculation to check thatA(V ) respects compositions,
-so it is indeed a morphism of groupoids. AsV varies we get a morphism of prestacks
-A : G→P1. This induces a morphism of stacks˜A : ˜G→P1.
-Take a local objecti of ˜G which is not a local object ofG. This new local object
-i is created by gluing a collection of local objects ofG using local isomorphisms in
-G. The same gluing operation also determines an isomorphism of sheaves of groups
-˜ cp :˜G(i,i )→IG( ˜A (i)). We thus get a twisted objectglu(d) = ( ˜G, ˜A, ˜ cp). By
-TWISTED DEFORMATION QUANTIZATION 33
-construction we see that the descent datumdec(glu(d),s) equalsd, so property (ii)
+\end{prop}
+
+\begin{proof}
+This is immediate from the construction; cf.\ proof of Lemma
+\ref{lem:bitorsors.2}(2).
+\end{proof}
+
+In the rest of this section we will show how to glue twisted objects from
+descent data. This construction will be inverse to the decomposition operation.
+But before attempting to glue twisted objects, we have to
+understand how to pass from descent data to connected groupoids. 
+
+Let $K$ be some nonempty set. By {\em groupoid descent datum} indexed by $K$
+we mean a collection 
+$\bsym{d} = \bigl( \{ G_{k_0} \}, \{ \phi_{k_0, k_1} \},
+\{ a_{k_0, k_1, k_2} \} \bigr)$, 
+where $k_0, k_1, k_2 \in K$, $G_{k_0}$ is a group,
+$\phi_{k_0, k_1} : G_{k_0} \to G_{k_1}$ is a group isomorphism, and
+$a_{k_0, k_1, k_2} \in G_{k_0}$.
+These satisfy conditions  (\ref{eqn:bitorsors.11})
+and (\ref{eqn:bitorsors.12}), with the obvious modifications in notation (e.g.\
+$\phi_{k_0, k_1}$ instead of $g_{k_0, k_1}$). 
+
+Suppose $\bsym{d}$ and $\bsym{d}'$ are groupoid descent data indexed by $K$. 
+A gauge transformation $\bsym{f} : \bsym{d} \to \bsym{d}'$ is a 
+collection 
+$\bsym{f} = \bigl( \{ \psi_{k_0} \}, \{ b_{k_0, k_1} \} \bigr)$
+of group isomorphisms $\psi_{k_0} : G_{k_0} \to G'_{k_1}$, and of
+elements $b_{k_0, k_1} \in G_{k_0}$. The conditions are the translations of
+formulas (\ref{eqn:bitorsors.6}) and (\ref{eqn:bitorsors.7}) to the present
+context.
+
+A trivialization datum for a connected groupoid $G$ is a collection 
+$\bsym{s} = \{  s_{k_0, k_1} \}$ of elements 
+$s_{k_0, k_1} \in G(k_0, k_1)$,
+indexed by the set $K := \opn{Ob}(G)$.
+We call the pair $(G, \bsym{s})$ a trivialized groupoid. 
+By isomorphism of trivialized groupoids 
+$F : (G, \bsym{s}) \to (G', \bsym{s}')$
+we mean an isomorphism of groupoids $F :G \to G'$
+such that $F(s_{k_0, k_1}) = s'_{F(k_0), F(k_1)}$.
+Just like in Lemma \ref{lem:bitorsors.2}(1), to any trivialized groupoid 
+$(G, \bsym{s})$ there is a corresponding groupoid descent datum 
+$\opn{dec}(G, \bsym{s})$.
+
+\begin{lem} \label{lem:bitorsors.3}
+Let $\bsym{d}$ be a groupoid descent datum indexed by a nonempty set $K$. 
+\begin{enumerate}
+\item There is a connected groupoid $G$, with 
+trivialization datum $\bsym{s}$, such that 
+$\opn{dec}(G, \bsym{s}) = \bsym{d}$.
+The trivialized groupoid $(G, \bsym{s})$ is unique up to a unique
+isomorphism. We write $\opn{glu}(\bsym{d}) := G$.
+
+\item Let $\bsym{d}'$ be another groupoid descent datum indexed by
+$K$, and let $\bsym{f} : \bsym{d} \to \bsym{d}'$ be a gauge
+transformation. We describe $\bsym{f}$ as in \tup{(\ref{eqn:bitorsors.14})}.
+Then there is a unique isomorphism of groupoids 
+$\opn{glu}(\bsym{f}) : \opn{glu}(\bsym{d}) \to \opn{glu}(\bsym{d}')$ 
+such that 
+$\opn{glu}(\bsym{f})(s_{k_0, k_1} \cdot b_{k_0, k_1}) = s'_{k_0, k_1}$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+(1) This seems to be known (cf.\ \cite[Appendix A1]{Ko2}), but here is a sketch
+anyhow. Write $\bsym{d}$ as in (\ref{eqn:mdd.120}).
+For any $k_0, k_1 \in K$ we take $G(k_0, k_1)$ to be the 
+$G_{k_1}$-$G_{k_0}$-bitorsor with basis 
+$s_{k_0, k_1}$, such that 
+$s_{k_0, k_1} \cdot a = \phi_{k_0, k_1}(a) \cdot s_{k_0, k_1}$
+for any $a \in G_{k_0}$.
+The composition $\circ$ in $G$ is specified by its value on the basis
+elements:
+\[ s_{k_1, k_2} \circ s_{k_0, k_1} := s_{k_0, k_2} \cdot a_{k_0, k_2, k_2} . \]
+
+\medskip \noindent
+(2) A direct calculation.
+\end{proof}
+
+\begin{lem}  \label{lem:bitorsors.9}
+There is a function 
+\[ \opn{glu} : \opn{Desc}(\opn{C}(\bsym{U}, \twocat{P})) \to 
+\opn{TwOb}(\twocat{P}) \]
+having these properties\tup{:}
+\begin{enumerate}
+\rmitem{i} If 
+$\bsym{d}, \bsym{d}' \in \opn{Desc}(\opn{C}(\bsym{U}, \twocat{P}))$
+are gauge equivalent, then $\opn{glu}(\bsym{d})$ and 
+$\opn{glu}(\bsym{d}')$ are twisted gauge equivalent.
+
+\rmitem{ii} For any $\bsym{d} \in \opn{Desc}(\opn{C}(\bsym{U}, \twocat{P}))$
+the twisted object 
+$(\gerbe{G}, \gerbe{A}, \opn{cp}) := \opn{glu}(\bsym{d})$ has a 
+trivialization datum $\bsym{s}$ such that 
+$\opn{dec}(\gerbe{A}, \bsym{s})= \bsym{d}$.
+
+\rmitem{iii} Let $(\gerbe{G}, \gerbe{A}, \opn{cp})$
+be a twisted object of $\twocat{P}$, with trivialization datum
+$\bsym{s}$, and let $\bsym{d} := \opn{dec}(\gerbe{A}, \bsym{s})$.
+Then $\opn{glu}(\bsym{d})$ is twisted gauge equivalent to 
+$(\gerbe{G}, \gerbe{A}, \opn{cp})$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Take any $\bsym{d} \in \opn{Desc}(\opn{C}(\bsym{U}, \twocat{P}))$, which we
+describe as in (\ref{eqn:mdd.120}).
+For a nonempty open set $V \subset X$ let 
+$K(V) := \{ k \in K \mid V \subset U_k \}$. 
+Consider the collection 
+\[ \opn{IG}(\bsym{d}, V) := 
+\bigl( \{ \Gamma(V, \opn{IG}(\mcal{A}_{k_0})) \}, 
+\{ \opn{IG}(g_{k_0, k_1}) \}, \{ a_{k_0, k_1, k_2} \} \bigr) \]
+in which $k_0, k_1, k_2 \in K(V)$. So $\opn{IG}(\bsym{d}, V)$ is a 
+groupoid descent datum indexed by the set $K(V)$. 
+If $K(V) \neq \emptyset$, then by Lemma \ref{lem:bitorsors.3}(1) there is a
+nonempty connected groupoid 
+$\gerbe{G}(V) := \opn{glu}(\opn{IG}(\bsym{d}, V))$.
+If If $K(V) = \emptyset$ we let $\gerbe{G}(V)$ be the empty groupoid.
+For $V = U_k$ there is a distinguished object $k \in \opn{Ob}(\gerbe{G}(U_k))$, 
+and for $V = U_{k_0, k_1}$ there is a distinguished isomorphism 
+$s_{k_0, k_1} : k_0 \to k_1$ in the groupoid $\gerbe{G}(U_{k_0, k_1})$.
+Also there is a tautological group isomorphism 
+$\opn{cp} : \gerbe{G}(V)(k_0, k_0) \to 
+\Gamma(V, \opn{IG}(\mcal{A}_{k_0}))$
+for  $k_0 \in K(V)$.
+
+If $V' \subset V$ then $K(V) \subset K(V')$. 
+By construction of the groupoids $\opn{glu}(-)$ there is an induced morphism
+of groupoids $\gerbe{G}(V) \to \gerbe{G}(V')$, 
+which on the automorphism groups of $k_0 \in K(V)$ it is the restriction
+homomorphism
+$\Gamma(V, \opn{IG}(\mcal{A}_{k_0})) \to \Gamma(V', \opn{IG}(\mcal{A}_{k_0}))$.
+In this way we obtain a presheaf of groupoids $\gerbe{G}$ on $X$, which is a
+separated prestack (the isomorphism presheaves are sheaves).
+The group isomorphisms $\opn{cp}$ above induce an isomorphism of sheaves of
+groups 
+$\opn{cp} : \gerbe{G}(k_0, k_0) \to 
+\opn{IG}(\mcal{A}_{k_0})$ on $U_{k_0}$.
+
+Let $\til{\gerbe{G}}$ be the stackification of $\gerbe{G}$; so
+$\til{\gerbe{G}}$ is a gerbe on $X$, and there is a weak equivalence of
+prestacks $F : \gerbe{G} \to \til{\gerbe{G}}$. Note that $\til{\gerbe{G}}$
+is equipped with a trivialization datum
+$\bsym{s} = \bigl( \{ i_{k_0} \} , \{ s_{k_0, k_1} \} \bigr)$
+on $\bsym{U}$,
+where $i_{k_0} := F(k_0) \in \opn{Ob}(\til{\gerbe{G}}(U_{k_0}))$.
+
+For any $V \subset X$ open there is a morphism of groupoids 
+$\gerbe{A}(V) : \gerbe{G}(V) \to \twocat{P}_1(V)$,
+namely $\gerbe{A}(V)(k_0) := \mcal{A}_{k_0}$ for 
+$k_0 \in K(V) = \opn{Ob}(\gerbe{G}(V))$,
+and
+$\gerbe{A}(V)(s_{k_0, k_1} \cdot a) := 
+g_{k_0, k_1} \circ \opn{ig}(a)$
+for $a \in \gerbe{G}(V)(k_0, k_0) = \Gamma(V, \opn{IG}(\mcal{A}_{k_0}))$.
+Note that $\opn{ig}(a)$ is an automorphism of $\mcal{A}_{k_0}|_V$,
+and $g_{k_0, k_1} : \mcal{A}_{k_0}|_V \to \mcal{A}_{k_1}|_V$
+is an isomorphism, all in the stack of groupoids $\twocat{P}_1$.
+It is a direct calculation to check that $\gerbe{A}(V)$ respects compositions,
+so it is indeed a morphism of groupoids. 
+As $V$ varies we get a morphism of prestacks 
+$\gerbe{A} : \gerbe{G} \to \twocat{P}_1$. 
+This induces a morphism of stacks 
+$\til{\gerbe{A}\, \, } \! \! : \til{\gerbe{G}} \to \twocat{P}_1$.
+
+Take a local object $i$ of $\til{\gerbe{G}}$ which is not a local object of 
+$\gerbe{G}$. This new local object $i$ is created by gluing a collection of
+local objects of $\gerbe{G}$ using local isomorphisms in $\gerbe{G}$. 
+The same gluing operation also 
+determines an isomorphism of sheaves of groups 
+$\til{\opn{cp}} : \til{\gerbe{G}}(i, i) \to 
+\opn{IG}( \til{\gerbe{A}\, \, } \!  (i))$. 
+We thus get a twisted object
+$\opn{glu}(\bsym{d}) = 
+(\til{\gerbe{G}}, \til{\gerbe{A}\, \, } \! ,  \til{\opn{cp}})$.
+By construction we see that the descent datum
+$\opn{dec}(\opn{glu}(\bsym{d}), \bsym{s})$ equals $\bsym{d}$, so property (ii)
 holds.
-Suppose d′is another normalized descent datum, andf : d→d′is a gauge
-transformation, described like in (6.7). Let’s writeglu(d′) = (˜G
-′
-, ˜A
-′
-, ˜ cp′). Lemma
-6.20(2) implies that for every open setV there’s an induced isomorphism of group-
-oids G(V )→G′(V ). Hence we get an equivalence of prestacks of groupoidsΦ gau :
-G→G′. Next there is an isomorphismΦ rep : A→A′◦Φ gau of functors of prestacks
-G→G′, which for an indexk0∈K is Φ rep :=fk0 :Ak0→A′
-k0. The stackiﬁcation
-extends these to an equivalence of gerbesΦ gau : ˜G→˜G
-′
-and an isomorphism of
-functors of stacks Φ rep : ˜A→˜A
-′
-◦Φ gau. We obtain a twisted gauge equivalence
-(Φ gau, Φ rep) : glu(d)→glu(d′) between these twisted objects; so property (i) holds.
-Finally take any twisted object (G, A, cp) of P and a trivialization datums.
-The step-by-step construction ofglu(d) = (˜G, ˜A, ˜ cp)shows that it is twisted gauge
-equivalent to(G, A, cp). We see that property (iii) holds. □
-Theorem 6.22(Decomposition). LetX be a topological space,U an open covering
-of X, and P a stack of crossed groupoids onX. Assume thatU totally trivializes
-P. Then the function
-dec : TwOb(P)→Desc(C(U, P))
-from Proposition6.17 is bijective.
-Proof. By property (i) Lemma 6.21 there is a well-deﬁned function
-glu : Desc(C(U, P))→TwOb(P).
-Properties (ii-iii) of the lemma say thatglu is the inverse ofdec. □
+
+Suppose $\bsym{d}'$ is another normalized descent datum, and 
+$\bsym{f} : \bsym{d} \to \bsym{d}'$ is a gauge transformation, described like
+in (\ref{eqn:bitorsors.14}). Let's write 
+$\opn{glu}(\bsym{d}') = (\til{\gerbe{G}}', {\til{\gerbe{A}\, \, } \! }', 
+\til{\opn{cp}}')$.
+Lemma \ref{lem:bitorsors.3}(2) implies that for every open set $V$ there's an
+induced isomorphism of group\-oids 
+$\gerbe{G}(V) \to \gerbe{G}'(V)$. Hence we get an equivalence of prestacks of
+groupoids 
+$\Phi_{\mrm{gau}} : \gerbe{G} \to \gerbe{G}'$.
+Next there is an isomorphism 
+$\Phi_{\mrm{rep}} : \gerbe{A} \to \gerbe{A}' \circ \Phi_{\mrm{gau}}$
+of functors of prestacks $\gerbe{G} \to \gerbe{G}'$, which for an index
+$k_0 \in K$ is
+$\Phi_{\mrm{rep}} := f_{k_0} : \mcal{A}_{k_0} \to \mcal{A}'_{k_0}$. 
+The stackification extends these to an equivalence of gerbes  
+$\Phi_{\mrm{gau}} : \til{\gerbe{G}} \to \til{\gerbe{G}}'$
+and an isomorphism of functors of stacks
+$\Phi_{\mrm{rep}} : \til{\gerbe{A}\, \, } \! \! \to 
+{\til{\gerbe{A}\, \, } \! \! }' \circ \Phi_{\mrm{gau}}$.
+We obtain a twisted gauge equivalence 
+$(\Phi_{\mrm{gau}}, \Phi_{\mrm{rep}}) : \opn{glu}(\bsym{d}) \to
+\opn{glu}(\bsym{d}')$
+between these twisted objects; so property (i) holds.
+ 
+Finally take any twisted object $(\gerbe{G}, \gerbe{A}, \opn{cp})$ of 
+$\twocat{P}$ and a trivialization datum $\bsym{s}$.
+The step-by-step construction of 
+$\opn{glu}(\bsym{d}) = 
+(\til{\gerbe{G}}, \til{\gerbe{A}\, \, } \! , \til{\opn{cp}})$
+shows that it is twisted gauge equivalent to  
+$(\gerbe{G}, \gerbe{A}, \opn{cp})$. We see that property (iii) holds.
+\end{proof}
+
+\begin{thm}[Decomposition] \label{thm:glu.1}
+Let $X$ be a topological space, $\bsym{U}$ an open covering of $X$,
+and $\twocat{P}$ a stack of crossed groupoids on $X$. 
+Assume that $\bsym{U}$ totally trivializes $\twocat{P}$. Then the
+function 
+\[ \ol{\opn{dec}} :  \ol{\opn{TwOb}}(\twocat{P}) \to 
+\ol{\opn{Desc}}(\opn{C}(\bsym{U}, \twocat{P}))  \]
+from Proposition \tup{\ref{prop:bitorsors.5}} is bijective.
+\end{thm}
+
+\begin{proof}
+By property (i) Lemma \ref{lem:bitorsors.9} there is a
+well-defined function 
+\[ \ol{\opn{glu}} :  \ol{\opn{Desc}}(\opn{C}(\bsym{U}, \twocat{P})) \to 
+\ol{\opn{TwOb}}(\twocat{P}) . \]
+Properties (ii-iii) of the lemma say that $\ol{\opn{glu}}$ is the 
+inverse of $\ol{\opn{dec}}$.
+\end{proof}
+
 We end this section with a simple example.
-Example 6.23. LetA0 ∈Ob(P(X)). Consider the open covering U ={U0},
-with U0 := X. Take g0,0 := 1 and a0,0,0 := 1. Then
-(
-{A0},{g0,0},{a0,0,0}
-{
-is
-a geometric descent datum. From Theorem 6.22 we get a twisted objectA, and
-A0 is a global object ofA. We refer toA as the twisted object generated byA0.
-Conversely, any twisted objectA which is not really twisted arises in this way (up
-to twisted gauge equivalence).
+
+\begin{exa} \label{exa:19}
+Let $\mcal{A}_0 \in \opn{Ob}(\twocat{P}(X))$. Consider the open covering
+$\bsym{U} = \{ U_0 \}$, with $U_0 := X$. 
+Take $g_{0,0} := \bsym{1}$ and $a_{0,0,0} := 1$.
+Then 
+$\bigl( \{ \mcal{A}_0 \}, \{ g_{0,0} \}, \{ a_{0,0,0} \} \bigr)$
+is a geometric descent datum. {}From Theorem \ref{thm:glu.1} we get a twisted
+object $\gerbe{A}$,
+and  $\mcal{A}_0$ is a global object of $\gerbe{A}$. We refer to $\gerbe{A}$
+as the twisted object generated by $\mcal{A}_0$.
+Conversely, any twisted object $\gerbe{A}$ which is not really twisted
+arises in this way (up to twisted gauge equivalence). 
+\end{exa}

@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2012.00062v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2012.00062v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2012.00062v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2012.00062&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2012.00062v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2012.00062v3",
+    "content_type": "application/gzip",
+    "sha256": "445f68e0736d298714354b80f6d68a0aeed1aa91eddf13876df6354f17b72df9",
+    "bytes": 928576,
+    "fetched": "2026-10-10T15:15:49+00:00",
+    "files": [
+      {
+        "path": "source/files/GGM_peacock_20v4.bbl",
+        "role": "bbl",
+        "sha256": "ffe55a559aef06923da93fd4a828dac6cf5da9f5a75608aa9d3b94d83eb1ad17",
+        "bytes": 14380
+      },
+      {
+        "path": "source/files/GGM_peacock_20v4.tex",
+        "role": "tex",
+        "sha256": "18c03589d1a9c1198829d0e46479fa257dc8b7c1a3045c654395d5daf576155b",
+        "bytes": 212112
+      },
+      {
+        "path": "source/files/biblio2.bib",
+        "role": "bib",
+        "sha256": "5bf2c78e128def9f73a0ec157c3cc1173105bf5521de2246cf8e03e49a081cc1",
+        "bytes": 55343
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

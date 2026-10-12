@@ -1,0 +1,279 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               										             %%
+%%                   "Pontryagin invariants and integral formulas                    %%
+%%                              for  Milnor's triple linking number"                            %%                                   
+%%                                                                                                                      %%
+%%           Dennis DeTurck, Herman Gluck, Rafal Komendarczyk,         %%        
+%%      Paul Melvin, Clayton Shonkwiler and David Shea Vela-Vick     %%
+%%            										              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{amsart}
+\usepackage{graphicx, epstopdf, verbatim, fancyhdr, indent, wrapfig} 
+\usepackage[nohug]{diagrams}\diagramstyle[labelstyle=\scriptstyle]
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[colorlinks=true, urlcolor=MidnightBlue, linkcolor=MidnightBlue, citecolor=MidnightBlue, pdftitle={Pontryagin invariants and integral formulas for Milnor's triple linking number}, pdfauthor={Dennis DeTurck, Herman Gluck, Rafal Komendarczyk, Paul Melvin, Clayton Shonkwiler and David Shea Vela-Vick}, 
+pdfsubject={Geometric Topology, Knot Theory}, pdfkeywords={mu invariant, Hopf invariant, link-homotopy, string links, helicity}]{hyperref}
+
+\usepackage[left=1.3in,top=1.3in,right=1.3in,bottom=1.2in,head=.1in]{geometry}
+
+
+\bfseries
+\def\part#1{\bigbreak\noindent{\textbf{\boldmath #1}}\smallbreak} %\textsc
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[CO]{\small\textsc{Pontryagin invariants and Integral formulas for Milnor's triple linking number}}
+\fancyhead[CE]{\small\textsc{DeTurck, Gluck, Komendarczyk, Melvin, Shonkwiler and Vela-Vick}}
+\cfoot{\ \vskip.01in $_{\thepage}$}
+
+\newtheorem{theorem}{Theorem}
+\renewcommand{\thetheorem}{\Alph{theorem}}
+\newtheorem*{theorem*}{Bicycle Theorem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{corollary}[proposition]{Corollary}
+\newtheorem{basecase}[proposition]{}
+\newtheorem{inductivestep}[proposition]{}
+\theoremstyle{definition}
+\newtheorem{example}[proposition]{Example}
+\newtheorem{remark}[proposition]{Remark}
+%\newtheorem*{remark}{Remark}
+%\newtheorem*{example*}{Example}
+%\newtheorem{definition}{Definition}[section]
+\newtheorem*{definition}{Definition}
+
+\newcommand{\thmref}[1]{Theorem~\ref{thm:#1}}
+\newcommand{\propref}[1]{Proposition~\ref{prop:#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{lem:#1}}
+\newcommand{\corref}[1]{Corollary~\ref{cor:#1}}
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
+\newcommand{\remref}[1]{Remark~\ref{rem:#1}}
+\newcommand{\exref}[1]{Example~\ref{ex:#1}}
+\newcommand{\eqnref}[1]{(\ref{eqn:#1})}
+
+\def\blue#1{\textcolor{blue}{#1}}
+
+\newcommand*{\longhookrightarrow}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
+
+
+\newcommand{\foot}{\setcounter{footnote}{1}\footnote}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\def\ub#1{\underline{#1}}
+
+\def\|{|}
+
+\def\ci{I}
+\def\cj{C}
+
+\newcommand{\littleskip}{\vskip0in\indent}
+
+\newcommand{\itb}{\bfseries\itshape\boldmath}
+
+\def\bn{\mathbb N}
+\def\bz{\mathbb Z}
+\def\bq{\mathbb Q}
+\def\br{\mathbb R}
+\def\bc{\mathbb C}
+\def\bh{\mathbb H}
+\def\bd{\mathbb D}
+\def\bdl{\mathbb D_L}
+\def\ba{\mathbb A}
+\def\be{\mathbb E}
+%\def\bF{\mathbb F}
+\def\bF{\mathcal F}
+\def\E{\mathbb E}
+\def\V{\mathbb V}
+\def\I{\mathbb I}
+\def\H{\mathbb H}
+\def\bbs{\mathbb S}
+\def\bj{\mathbb J}
+\def\bjbar{\overline\bj}
+\def\bk{\mathbb K}
+\def\bkbar{\overline\bk}
+%\def\bl{\mathbb L}
+\def\bl{\mathcal L}
+\def\blbar{\overline\bl}
+\def\bt{\mathbb T}
+\def\btbar{\overline\bt}
+\def\cdotsclose{\cdot\!\cdot\!\cdot}
+
+\def\xm{x_{\!\dt}}
+\def\ym{y_\text{-}}
+\def\Xm{X_\text{-}}
+\def\Ym{Y_\text{-}}
+
+\newcommand{\vect}[1]{\overset\longrightarrow{#1}}
+
+%% Dennis' definitions 
+\def\x{\textup{\bf x}}
+\def\y{\textup{\bf y}}
+\def\z{\textup{\bf z}}
+\def\t{\textup{\bf t}}
+\def\u{\textup{\bf u}}
+\def\vv{\textup{\bf v}}
+\newcommand{\vc}[1]{\overset{\scriptstyle{}_\rightharpoonup}{#1}}
+\def\vec{\vc{\textup{\bf v}}}
+\def\vecn{\vc{\textup{\bf n}}}
+\def\vecz{\vc{\textup{\bf z}}}
+\def\w{\textup{\bf w}}
+\def\a{\textup{\bf a}}
+\def\veca{\vc{\textup{\bf a}}}
+\def\b{\textup{\bf b}}
+\def\c{\textup{\bf c}}
+\def\m{\textup{\bf m}}
+\def\n{\textup{\bf n}}
+\def\p{\textup{\bf p}}
+\def\bah#1{\overline#1}
+\newcommand{\ph}{\varphi}
+\newcommand{\reals}{\br}
+\newcommand{\ints}{\bz}
+\newcommand{\zero}{{\bf0}}
+\newcommand{\one}{{\bf1}}
+\def\Vert{|}
+\newcommand{\dast}{*} %{{\displaystyle{\ast}}}
+\newcommand{\Hopf}{\mathop{\rm Hopf}\nolimits}
+\newcommand{\vol}{\mathop{\rm vol}\nolimits}
+\newcommand{\Har}{\mathop{\rm Har}\nolimits}
+\newcommand{\Gr}{\mathop{\rm Gr}\nolimits}
+\newcommand{\BS}{\mathop{\rm BS}\nolimits}
+
+
+
+\def\cald{\mathcal D}
+\def\calg{\mathcal G}
+\def\calh{\mathcal H}
+\def\calb{\mathcal B}
+\def\calc{\mathcal C}
+\def\call{\mathcal L}
+\def\cali{\mathcal I}
+\def\calm{\mathcal M}
+\def\caln{\mathcal N}
+\def\calk{\kappa}
+\def\calp{\mathcal P}
+\def\calx{\mathcal X}
+\def\caly{\mathcal Y}
+\def\calz{\mathcal Z}
+
+\def\st{\ | \ }
+
+\def\sgn{\textup{sign}}
+\def\deg{\textup{deg}}
+
+\def\dt{\,\raisebox{-.6ex}{\huge$\hskip-.02in\cdot$\hskip.005in}}
+\def\dte{\,\raisebox{-.3ex}{\Large$\hskip-.02in\cdot$\hskip.005in}}
+\def\dth{\raisebox{-.3ex}{\huge$\cdot$}}
+\def\dtw{\,\dt\,}
+\def\dtew{\,\dte\,}
+\def\h#1{\hskip#1pt}
+\def\what#1{\widehat{#1}}
+
+\def\tor{T^3}
+\def\torh{T^2}
+\def\man{M}
+
+\def\norm#1{\lceil\!\!\!\hskip.01in \lfloor #1 \rceil\!\!\!\hskip.01in\rfloor}
+
+
+\def\M{\text{Maps}(S^1\times S^1,S^2)}
+\def\Mp{\text{Maps}_p(S^1\times S^1,S^2)}
+
+\def\so{\mathrm{SO}}
+\def\con#1#2{\mathrm{Conf}_{#1}#2}
+\def\conf{\con{3}{S^3}}
+\def\confn{\con{n}{\man}}
+\def\conftr{\con{2}{\br^3}}
+\def\confts{\con{2}{S^3}}
+\def\conftrn{\con{2}{\br^n}}
+\def\conftsn{\con{2}{S^n}}
+\def\conftsk{\con{2}{S^{n-1}}}
+\def\conftsc{\con{2}{(S^3-\{1\})}}
+\def\gras{\mathrm{G}_2\br^4}
+\def\stiefel{\mathrm{V}_2\br^4}
+\def\wed{\raisebox{.3ex}{\text{\footnotesize$\bigwedge$}}^2\br^4}
+\def\rot{\mathrm{rot}}
+\def\col{\colon}
+\def\M{\mathrm{Maps}(T^2,S^2)}
+\def\Mp{\mathrm{Maps}_p(T^2,S^2)}
+\def\aut{\mathrm{Aut}}
+
+\def\bx{\bar x} % {x^{-1}}
+\def\zbar{\bar z} 
+\def\bs{\bar s} 
+\def\bu{\bar u} 
+\def\bv{\bar v} 
+\def\pr{\mathrm{pr}} 
+\def\prhat{\what\pr}
+\def\g{\widetilde g}
+\def\re{\mathrm{Re\,}}
+\def\Im{\mathrm{Im\,}} % Imaginary part
+\def\rec{\mathrm{Re}}
+\def\imc{\mathrm{Im}}
+\def\lk{\mathrm{Lk}}
+\def\pt{\mathrm{*}}
+
+\def\im{\mathrm{im\,}} % image
+
+
+\def\lon{\ell} %{\textup{long}}
+\def\mer{\textup{m}} %{\textup{merid}}
+\def\lcm{\textup{lcm}}
+\def\wr{\textup{wr}}
+\def\fr{\textup{fr}}
+
+\def\pb#1#2{\langle#1,#2\rangle} % pointy bracket
+
+%%% OLD MACROS %%%
+\begin{comment}
+\def\blue#1{\textcolor{blue}{#1}}
+\def\red#1{\textcolor{red}{#1}}
+\def\green#1{\textcolor{green}{#1}}
+\def\unclasp{$\put(5,-3){\includegraphics[height=10pt]{FigUnClasp.pdf}}$\hskip30pt}
+\def\claspr{$\put(5,-3){\includegraphics[height=10pt]{FigClaspR2.eps}}$\hskip30pt}
+\def\claspl{$\put(5,-3){\includegraphics[height=10pt]{FigClaspL2.eps}}$\hskip30pt}
+\def\claspll{$\put(0,-3){\includegraphics[height=12pt]{FigClasp0.pdf}}$\hskip20pt}
+\def\clasplll{$\put(0,-3){\includegraphics[height=12pt]{FigClasp1.pdf}}$\hskip20pt}
+\def\claspllll{$\put(0,-3){\includegraphics[height=12pt]{FigClasp2.pdf}}$\hskip20pt}
+\def\smoothcrossing{$\put(0,-3){\includegraphics[height=12pt]{FigSmoothCrossing.eps}}$\hskip20pt}
+\end{comment}
+
+%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%
+%% TITLE and ABSTRACT %%
+%%%%%%%%%%%%%%%%
+
+%\vskip-.2in 
+%\vskip-.2in
+
+\title{Pontryagin invariants and integral formulas \\ for Milnor's triple linking number}
+
+\author{Dennis DeTurck \and Herman Gluck \and Rafal Komendarczyk \and \\ Paul Melvin \and Clayton Shonkwiler \and David Shea Vela-Vick}
+
+\begin{abstract}
+
+To each three-component link in the $3$-sphere, we associate a geometrically natural characteristic map from the $3$-torus to the $2$-sphere, and show that the pairwise linking numbers and Milnor triple linking number that classify the link up to link homotopy correspond to the Pontryagin invariants that classify its characteristic map up to homotopy.   This can be viewed as a natural extension of the familiar fact that the linking number of a two-component link in $3$-space is the degree of its associated Gauss map from the $2$-torus to the $2$-sphere.  
+
+When the pairwise linking numbers are all zero, we give an integral formula for the triple linking number analogous to the Gauss integral for the pairwise linking numbers.  The integrand in this formula is geometrically natural in the sense that it is invariant under orientation-preserving rigid motions of the $3$-sphere, while the integral itself can be viewed as the helicity of a related vector field on the $3$-torus.
+
+\end{abstract}
+
+\maketitle
+
+\parskip 4pt
+\addtolength{\baselineskip}{.2pt}
+
+
+\input{1introduction}
+\input{2milnor}
+\input{3pontryagin}
+\input{4characteristic}
+\input{5Aprep}
+\input{6A}
+\input{7A}
+\input{8B}
+\input{9bibliography}
+\end{document}            

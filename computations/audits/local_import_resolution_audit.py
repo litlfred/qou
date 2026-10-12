@@ -61,7 +61,7 @@ def discover(root: pathlib.Path) -> tuple[dict[str, pathlib.Path], set[str]]:
     """Map bare module name -> path, plus the set of ambiguous bare names."""
     seen: dict[str, list[pathlib.Path]] = {}
     for p in sorted(root.rglob("*.py")):
-        if "_deprecated" in p.parts or "__pycache__" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts) or "__pycache__" in p.parts:
             continue
         seen.setdefault(p.stem, []).append(p)
     ambiguous = {k for k, v in seen.items() if len(v) > 1}

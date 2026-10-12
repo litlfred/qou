@@ -8,45 +8,25 @@ pages: 26-27
 source_pdf: 1702.00039v1.pdf
 source_sha256: b47ca7d1cf7b44be
 doc_brief: "Gentle introduction to Soergel bimodules I: The basics NICOLAS LIBEDINSKY — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
+text_source: latex
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.949
 ---
 Let us introduce the
-Notation 4.4 If p =∑
-iaivi∈N[v,v−1] and M is a graded bimodule, we will
-denote byp·M the graded bimodule
-⨁
-i∈Z
-M(i)⊕ai
-26
-One can see that Soergel bimodules encode all the information of the Hecke
-algebra. Let us try to make this idea more precise. Consider the following
-“algebra”NB(S3) overN[v,v−1] (this is not a ring because it lacks of additive
-inverse, soNB(S3) is strictly speaking not an algebra, but apart from this “de-
-tail” it satisﬁes all the other deﬁning properties of an algebra): the elements
-of NB(S3) are Soergel bimodules modulo isomorphism. We denote by ⟨M⟩
-the isomorphism class of M . In this algebra, the sum is deﬁned to be direct
-sum⟨M⟩ +⟨N⟩ := ⟨M⊕ N⟩, the product is deﬁned to be tensor product
-⟨M⟩·⟨ N⟩ :=⟨MN⟩ and multiplication byv is shifting your graded bimodule
-by 1, i.e. v·⟨M⟩ :=⟨M(1)⟩.
-Proposition 4.5 There is an isomorphism of “algebras”
-NB(S3)∼=
-⨁
-w∈S3
-N[v,v−1]bw⊂H =
-⨁
-w∈S3
-Z[v,v−1]bw
-⟨Bw⟩↦→ bw.
-Proof The equations (19), (20), (21), (22) and Proposition 4.3 tell us that the
-multiplication rules in both algebras are equal. The only problem that might
-appear is that NB(S3) might not be free as a N[v,v−1]- module over the set
-⟨Bw⟩w∈S3 , i.e. one might have that
-∑
-w∈S3
-pw⟨Bw⟩∼=
-∑
-w∈S3
-qw⟨Bw⟩
-with pw,q w ∈ N[v,v−1]. But this is not possible because we have that the
-category of Z-graded ﬁnitely generated R-bimodules (or, what is the same,
-R⊗RR-modules) admits the Krull-Schmidt Theorem. For a proof see [Pi, Sec-
-tion 5.4].
+
+::: nota
+[]{#poly label="poly"} If $p=\sum_i a_i v^i \in \mathbb N[v,v^{-1}]$ and $M$ is a graded bimodule, we will denote by $p\cdot M$ the graded bimodule $$\bigoplus_{i\in \mathbb Z}M(i)^{\oplus a_i}$$
+:::
+
+One can see that Soergel bimodules encode all the information of the Hecke algebra. Let us try to make this idea more precise. Consider the following "algebra" $\mathbb N\mathcal B(S_3)$ over $\mathbb N[v,v^{-1}]$ (this is not a ring because it lacks of additive inverse, so $\mathbb N\mathcal B(S_3)$ is strictly speaking not an algebra, but apart from this "detail" it satisfies all the other defining properties of an algebra): the elements of $\mathbb N\mathcal B(S_3)$ are Soergel bimodules modulo isomorphism. We denote by $\langle M\rangle$ the isomorphism class of $M$. In this algebra, the sum is defined to be direct sum $\langle M\rangle+\langle N\rangle:=\langle M\oplus N\rangle$, the product is defined to be tensor product $\langle M\rangle \cdot \langle N\rangle:=\langle M N\rangle$ and multiplication by $v$ is shifting your graded bimodule by $1$, i.e. $v\cdot \langle M\rangle:= \langle M(1)\rangle$.
+
+::: prop
+[]{#iso label="iso"} There is an isomorphism of "algebras" $$\begin{aligned}
+\mathbb N\mathcal B(S_3)&\cong \bigoplus_{w\in S_3}\mathbb N[v,v^{-1}]b_w\subset \mathcal H=\bigoplus_{w\in S_3}\mathbb Z[v,v^{-1}]b_w\\ 
+\langle B_w\rangle &\mapsto b_w.
+\end{aligned}$$
+:::
+
+::: proof
+*Proof.* The equations ([\[BsBs\]](#BsBs){reference-type="ref" reference="BsBs"}), ([\[BsBsrs\]](#BsBsrs){reference-type="ref" reference="BsBsrs"}), ([\[sr\]](#sr){reference-type="ref" reference="sr"}), ([\[w0\]](#w0){reference-type="ref" reference="w0"}) and Proposition [\[dec\]](#dec){reference-type="ref" reference="dec"} tell us that the multiplication rules in both algebras are equal. The only problem that might appear is that $\mathbb N\mathcal B(S_3)$ might not be free as a $\mathbb N[v,v^{-1}]$- module over the set $\langle B_w\rangle_{w\in S_3}$, i.e. one might have that $$\sum_{w\in S_3}p_w \langle B_w\rangle\cong \sum_{w\in S_3}q_w \langle B_w\rangle$$ with $p_w, q_w\in \mathbb N[v,v^{-1}]$. But this is not possible because we have that the category of $\mathbb Z$-graded finitely generated $R$-bimodules (or, what is the same, $R\otimes_{\mathbb R}R$-modules) admits the Krull-Schmidt Theorem. For a proof see [@Pi Section 5.4]. ◻
+:::

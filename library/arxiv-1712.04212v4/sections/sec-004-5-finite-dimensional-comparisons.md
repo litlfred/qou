@@ -8,204 +8,260 @@ pages: 22-26
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
 doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-5.1. Estimates. To prove Theorem 1.3, we begin with the following:
-Lemma 5.1. Let ∂M be compact. For N ∈ [n,∞), let us assume
-RicN
-f,∂M⊥≥ (N−1)κ andHf,∂M≥ (N−1)λ. Suppose additionally that
-InRadM≤ D for some D >0. For η∈ (0, 1), let Ω⊂ M be a Borel
-subset with mM,f (Ω)≥η and dM(Ω,∂M )> 0. Then we have
-sN,κ,λ(dM(Ω,∂M ))≤sN,κ,λ(D)(1−η),
-wheresN,κ,λ is the function deﬁned as (2.18).
-Proof. We putr :=dM(Ω,∂M ). Since the open r-neighborhood of ∂M
-and Ω are mutually disjoint, we see
-η≤mM,f (Ω)≤ 1−mM,f (Br(∂M )).
-From InRadM≤ D we derive M = BD(∂M ); in particular, we have
-mM,f (BD(∂M )) = 1. Therefore, Theorem 2.7 leads to
-η≤ 1− mM,f (Br(∂M ))
-mM,f (BD(∂M ))≤ 1− sN,κ,λ(r)
-sN,κ,λ(D).
-This yields the lemma. 2
-One can also show the following lemma by using Theorem 2.8 instead
-of Theorem 2.7 in the proof of Lemma 5.1. We omit the proof.
-Lemma 5.2. Let ∂M be compact. Assume Ric1
-f,∂M⊥≥ (n− 1)κe
-−4f
-n−1
-and Hf,∂M ≥ (n− 1)λe
-−2f
-n−1 . Suppose additionally that InRadM≤ D
-and f≤ (n− 1)δ for some D >0 and δ∈ R. We further assume that
+\label{sec:Comparisons}
+
+
+
+\subsection{Estimates}
+To prove Theorem \ref{thm:main theorem},
+we begin with the following:
+\begin{lem}\label{lem:key lemma}
+Let $\bm$ be compact.
+For $N\in [n,\infty)$,
+let us assume $\ric^{N}_{f,\bm^{\perp}}\geq (N-1)\kappa$ and $H_{f,\bm} \geq (N-1)\lambda$.
+Suppose additionally that
+$\IR M\leq D$ for some $D>0$.
+For $\eta \in (0,1)$,
+let $\Omega \subset M$ be a Borel subset with $m_{M,f}(\Omega)\geq \eta$ and $d_{M}(\Omega,\bm)>0$.
+Then we have
+\begin{equation*}
+s_{N,\kappa,\lambda}(d_{M}(\Omega,\bm)) \leq s_{N,\kappa,\lambda}(D)(1-\eta),
+\end{equation*} 
+where $s_{N,\kappa,\lambda}$ is the function defined as $(\ref{eq:one dimensional volume growth})$.
+\end{lem}
+\begin{proof}
+We put $r:=d_{M}(\Omega,\bm)$.
+Since the open $r$-neighborhood of $\bm$ and $\Omega$ are mutually disjoint,
+we see
+\begin{equation*}
+\eta \leq m_{M,f}(\Omega)\leq 1-m_{M,f}(B_{r}(\bm)).
+\end{equation*}
+From $\IR M\leq D$
+we derive $M=B_{D}(\bm)$;
+in particular,
+we have $m_{M,f}(B_{D}(\bm))=1$.
+Therefore,
+Theorem \ref{thm:volume comparison} leads to
+\begin{equation*}
+\eta \leq 1-\frac{m_{M,f}(B_{r}(\bm))}{m_{M,f}(B_{D}(\bm))}\leq 1-\frac{s_{N,\kappa,\lambda}(r)}{s_{N,\kappa,\lambda}(D)}.
+\end{equation*}
+This yields the lemma.
+\end{proof}
+
+One can also show the following lemma by using Theorem \ref{thm:twisted volume comparison} instead of Theorem \ref{thm:volume comparison} in the proof of Lemma \ref{lem:key lemma}.
+We omit the proof.
+\begin{lem}\label{lem:twisted key lemma}
+Let $\bm$ be compact.
+Assume $\ric^{1}_{f,\bm^{\perp}}\geq (n-1) \,\kappa \,e^{\frac{-4f}{n-1}}$ and $H_{f,\bm}\geq (n-1)\,\lambda\,e^{\frac{-2f}{n-1}}$.
+Suppose additionally that
+$\IR M\leq D$ and $f\leq (n-1) \delta$ for some $D>0$ and $\delta \in \mathbb{R}$.
+We further assume that
 one of the following holds:
-1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY 23
-(1) κ and λ satisfy the convex-ball-condition;
-(2) κ≤ 0 and λ =
-√
-|κ|.
-For η∈ (0, 1), let Ω⊂ M be a Borel subset with mM,f (Ω)≥ η and
-dM(Ω,∂M )> 0. Then we have
-sn,κe−4δ,λe−2δ(dM(Ω,∂M ))≤sn,κe−4δ,λe−2δ(D)(1−η).
-Recall that sκ,λ(t) is the solution of the equation ψ′′(t) +κψ (t) = 0
-with ψ(0) = 1, ψ′(0) =−λ. For N∈ (1,∞), and κ and λ satisfying
-the ball-condition, we deﬁne a function vN,κ,λ : [0,Cκ,λ]→ [0, 1] by
-(5.1) vN,κ,λ(r) :=
-∫Cκ,λ
-r sN−1
-κ,λ (t)dt
-∫Cκ,λ
-0 sN−1
-κ,λ (t)dt
-.
-Under the curvature condition (2.1), we produce the following:
-Theorem 5.3. Let ∂M be compact. For N ∈ [n,∞), let us assume
-RicN
-f,∂M⊥≥ (N− 1)κ and Hf,∂M≥ (N− 1)λ. Then for every η∈ (0, 1]
+\begin{enumerate}
+\item $\kappa$ and $\lambda$ satisfy the convex-ball-condition;
+\item $\kappa \leq 0$ and $\lambda=\sqrt{\vert \kappa \vert}$.
+\end{enumerate}
+For $\eta \in (0,1)$,
+let $\Omega \subset M$ be a Borel subset with $m_{M,f}(\Omega)\geq \eta$ and $d_{M}(\Omega,\bm)>0$.
+Then we have
+\begin{equation*}
+s_{n,\kappa\,e^{-4\delta},\lambda\,e^{-2\delta}}(d_{M}(\Omega,\bm)) \leq s_{n,\kappa\,e^{-4\delta},\lambda\,e^{-2\delta}}(D)(1-\eta).
+\end{equation*} 
+\end{lem}
+
+Recall that
+$s_{\kappa,\lambda}(t)$ is the solution of the equation $\psi''(t)+\kappa\, \psi(t)=0$ with $\psi(0)=1,\,\psi'(0)=-\lambda$.
+For $N \in (1,\infty)$,
+and $\kappa$ and $\lambda$ satisfying the ball-condition,
+we define a function $v_{N,\kappa,\lambda}:[0,\const]\to [0,1]$ by
+\begin{equation}\label{eq:ball function}
+v_{N,\kappa,\lambda}(r):=\frac{\int^{\const}_{r}\,s^{N-1}_{\kappa,\lambda}(t)\,dt}{\int^{\const}_{0}\,s^{N-1}_{\kappa,\lambda}(t)\,dt}.
+\end{equation}
+
+Under the curvature condition (\ref{eq:finite dimensional curvature bound}),
+we produce the following:
+\begin{thm}\label{thm:weighted main theorem}
+Let $\bm$ be compact.
+For $N\in [n,\infty)$,
+let us assume $\ric^{N}_{f,\bm^{\perp}}\geq(N-1)\kappa$ and $H_{f,\bm}\geq (N-1)\lambda$.
+Then for every $\eta \in (0,1]$
 the following hold:
-(1) if κ and λ satisfy the ball-condition, then
-ObsInRad((M,f );−η)≤v−1
-N,κ,λ(η);
-(2) if κ< 0 and λ =
-√
-|κ|, then
-ObsInRad((M,f );−η)≤ 1
-(N− 1)λ log 1
-η.
-Proof. We may assume that η <1. By Lemma 3.4, it suﬃces to prove
-that BSep((M,f );η) is at most the right hand side of the desired in-
-equality in each case. We may assume that BSep((M,f );η) is positive.
-We ﬁx a Borel subset Ω⊂M with mM,f (Ω)≥η and dM(Ω,∂M )> 0.
-Let us consider the case where κ andλ satisfy the ball-condition. In
-this case, Theorem 2.5 implies InRad M≤Cκ,λ. By using Lemma 5.1,
-η≤ 1− sN,κ,λ(dM(Ω,∂M ))
-sN,κ,λ(Cκ,λ) =vN,κ,λ(dM(Ω,∂M )).
-Hence,dM(Ω,∂M )≤v−1
-N,κ,λ(η). This proves BSep((M,f );η)≤v−1
-N,κ,λ(η).
+\begin{enumerate}
+\item if $\kappa$ and $\lambda$ satisfy the ball-condition,
+         then
+         \begin{equation*}
+         \OI((M,f);-\eta) \leq v^{-1}_{N,\kappa,\lambda}(\eta);
+         \end{equation*}
+\item if $\kappa<0$ and $\lambda=\sqrt{\vert \kappa \vert}$,
+         then
+         \begin{equation*}
+         \OI((M,f);-\eta) \leq \frac{1}{(N-1)\lambda}\,\log \frac{1}{\eta}.
+         \end{equation*}
+\end{enumerate}
+\end{thm}
+\begin{proof}
+We may assume that $\eta<1$.
+By Lemma \ref{lem:observable inscribed radius is smaller than Dirichlet separation distance},
+it suffices to prove that
+$\DS((M,f);\eta)$ is at most the right hand side of the desired inequality in each case.
+We may assume that
+$\DS((M,f);\eta)$ is positive.
+We fix a Borel subset $\Omega \subset M$ with $m_{M,f}(\Omega)\geq \eta$ and $d_{M}(\Omega,\bm)>0$.
+
+Let us consider the case where
+$\kappa$ and $\lambda$ satisfy the ball-condition.
+In this case,
+Theorem \ref{thm:inscribed radius comparison} implies $\IR M\leq \const$.
+By using Lemma \ref{lem:key lemma},
+\begin{equation*}
+\eta \leq 1-\frac{s_{N,\kappa,\lambda}(d_{M}(\Omega,\bm))}{s_{N,\kappa,\lambda}(\const)}=v_{N,\kappa,\lambda}(d_{M}(\Omega,\bm)).
+\end{equation*}
+Hence,
+$d_{M}(\Omega,\bm) \leq v^{-1}_{N,\kappa,\lambda}(\eta)$.
+This proves $\DS((M,f);\eta)\leq v^{-1}_{N,\kappa,\lambda}(\eta)$.
 We arrive at the desired inequality.
-We next consider the case where κ <0 and λ =
-√
-|κ|. Notice that
-sκ,λ(t) =e−λt. In view of Lemma 5.1, we see
-η≤ 1− sN,κ,λ(r)
-sN,κ,λ(InRadM)≤ 1− sN,κ,λ(r)∫∞
-0 sN−1
-κ,λ (t)dt =e−(N−1)λr,
-24 YOHEI SAKURAI
-where we put r := dM(Ω,∂M ). In particular, dM(Ω,∂M ) is smaller
-than or equal to the right hand side of the desired one. We obtain
-BSep((M,f );η)≤ 1
-(N− 1)λ log 1
-η.
-Thus, we complete the proof. 2
-We also have the following estimate under the condition (2.3):
-Theorem 5.4. Let∂M be compact. Assume Ric1
-f,∂M⊥≥ (n−1)κe
-−4f
-n−1
-andHf,∂M≥ (n− 1)λe
-−2f
-n−1 . Suppose additionally that f≤ (n− 1)δ for
-some δ∈ R. Then for every η∈ (0, 1] the following hold:
-(1) if κ and λ satisfy the convex-ball-condition, then
-ObsInRad((M,f );−η)≤v−1
-n,κe−4δ,λe−2δ(η);
-(2) if κ< 0 and λ =
-√
-|κ|, then
-ObsInRad((M,f );−η)≤ 1
-(n− 1)λe−2δ log 1
-η.
-Proof. The proof is similar to that of Theorem 5.3. For a ﬁxed Ω ⊂M
-with mM,f (Ω)≥η, dM(Ω,∂M )> 0, it suﬃces to estimate dM(Ω,∂M )
-from above by the right hand side of the desired inequality in each case.
-In the case where κ and λ satisfy the convex-ball-condition, from
-Theorem 2.6 and Lemma 5.2 we derive
-η≤ 1− sn,κe−4δ,λe−2δ(dM(Ω,∂M ))
-sn,κe−4δ,λe−2δ(Cκe−4δ,λe−2δ) =vn,κe−4δ,λe−2δ(dM(Ω,∂M )).
-In particular, dM(Ω,∂M )≤v−1
-n,κe−4δ,λe−2δ(η). This is the desired one.
-If κ< 0 and λ =
-√
-|κ|, then in view of Lemma 5.2 we see
-η≤ 1− sn,κe−4δ,λe−2δ(r)∫∞
-0 sn−1
-κe−4δ,λe−2δ(t)dt =e−(n−1)λe−2δr,
-where r :=dM(Ω,∂M ). From the above inequality, we deduce
-dM(Ω,∂M )≤ 1
-(n− 1)λe−2δ log 1
-η.
-This completes the proof of Theorem 5.4. 2
-1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY 25
-5.2. Proof of Theorem 1.3. In order to conclude Theorem 1.3, we
-calculate the invariants of the ﬁnite dimensional model spaces.
-Lemma 5.5. For every η∈ (0, 1] the following hold:
-(1) for the ball-model-space Bn
-κ,λ deﬁned as (1.9),
-ObsInRad(Bn
-κ,λ;−η) = BSep(Bn
-κ,λ;η) =v−1
-n,κ,λ(η);
-(2) for the warped-product-model-spaceMn
-κ,λ deﬁned as (1.10),
-ObsInRad(Mn
-κ,λ;−η) = BSep(Mn
-κ,λ;η) = 1
-(n− 1)λ log 1
-η.
-Proof. Let us present the equality for Bn
-κ,λ. We show
-(5.2) BSep( Bn
-κ,λ;η) =v−1
-n,κ,λ(η).
-LetBη⊂Bn
-κ,λ denote the closed geodesic ball with same center as Bn
-κ,λ
-and mBn
-κ,λ(Bη) =η. For the radius rη of Bη, we see
-BSep
-(
-Bn
-κ,λ;η
-)
-=dBn
-κ,λ
-(
-Bη,∂B n
-κ,λ
-)
-=Cκ,λ−rη.
+
+We next consider the case where
+$\kappa<0$ and $\lambda=\sqrt{\vert \kappa \vert}$.
+Notice that $s_{\kappa,\lambda}(t)=e^{-\lambda t}$.
+In view of Lemma \ref{lem:key lemma},
+we see
+\begin{equation*}
+\eta \leq 1-\frac{s_{N,\kappa,\lambda}(r)}{s_{N,\kappa,\lambda}(\IR M)} \leq 1-\frac{s_{N,\kappa,\lambda}(r)}{\int^{\infty}_{0}\, s^{N-1}_{\kappa,\lambda}(t)\,dt}=e^{-(N-1)\lambda \,r},
+\end{equation*}
+where we put $r:=d_{M}(\Omega,\bm)$.
+In particular,
+$d_{M}(\Omega,\bm)$ is smaller than or equal to the right hand side of the desired one.
+We obtain
+\begin{equation*}
+\DS((M,f);\eta)\leq \frac{1}{(N-1)\lambda}\,\log \frac{1}{\eta}.
+\end{equation*}
+Thus,
+we complete the proof.
+\end{proof}
+
+We also have the following estimate under the condition (\ref{eq:one dimensional curvature bound}):
+\begin{thm}\label{thm:twisted weighted main theorem}
+Let $\bm$ be compact.
+Assume
+$\ric^{1}_{f,\bm^{\perp}}\geq (n-1) \,\kappa \,e^{\frac{-4f}{n-1}}$ and $H_{f,\bm}\geq (n-1)\,\lambda\,e^{\frac{-2f}{n-1}}$.
+Suppose additionally that
+$f\leq (n-1) \delta$ for some $\delta \in \mathbb{R}$.
+Then for every $\eta \in (0,1]$
+the following hold:
+\begin{enumerate}
+\item if $\kappa$ and $\lambda$ satisfy the convex-ball-condition,
+         then
+         \begin{equation*}
+         \OI((M,f);-\eta) \leq v^{-1}_{n,\kappa\,e^{-4\delta},\lambda\,e^{-2\delta}}(\eta);
+         \end{equation*}
+\item if $\kappa<0$ and $\lambda=\sqrt{\vert \kappa \vert}$,
+         then
+         \begin{equation*}
+         \OI((M,f);-\eta) \leq \frac{1}{(n-1)\lambda\,e^{-2\delta}}\,\log \frac{1}{\eta}.
+         \end{equation*}
+\end{enumerate}
+\end{thm}
+\begin{proof}
+The proof is similar to that of Theorem \ref{thm:weighted main theorem}.
+For a fixed $\Omega \subset M$ with $m_{M,f}(\Omega)\geq \eta,\,d_{M}(\Omega,\bm)>0$,
+it suffices to estimate $d_{M}(\Omega,\bm)$ from above by the right hand side of the desired inequality in each case.
+
+In the case where
+$\kappa$ and $\lambda$ satisfy the convex-ball-condition,
+from Theorem \ref{thm:twisted inscribed radius comparison} and Lemma \ref{lem:twisted key lemma}
+we derive
+\begin{equation*}
+\eta \leq 1-\frac{s_{n,\kappa\,e^{-4\delta},\lambda\,e^{-2\delta}}(d_{M}(\Omega,\bm))}{s_{n,\kappa\,e^{-4\delta},\lambda\,e^{-2\delta}}(C_{\kappa\,e^{-4\delta},\lambda\,e^{-2\delta}})}=v_{n,\kappa\,e^{-4\delta},\lambda\,e^{-2\delta}}(d_{M}(\Omega,\bm)).
+\end{equation*}
+In particular,
+$d_{M}(\Omega,\bm) \leq v^{-1}_{n,\kappa\,e^{-4\delta},\lambda\,e^{-2\delta}}(\eta)$.
+This is the desired one.
+
+If $\kappa<0$ and $\lambda=\sqrt{\vert \kappa \vert}$,
+then in view of Lemma \ref{lem:twisted key lemma} we see
+\begin{equation*}
+\eta \leq 1-\frac{s_{n,\kappa \,e^{-4\delta},\lambda \,e^{-2\delta}}(r)}{\int^{\infty}_{0}\, s^{n-1}_{\kappa\,e^{-4\delta},\lambda\,e^{-2\delta}}(t)\,dt}=e^{-(n-1)\lambda \,e^{-2\delta} \,r},
+\end{equation*}
+where $r:=d_{M}(\Omega,\bm)$.
+From the above inequality,
+we deduce
+\begin{equation*}
+d_{M}(\Omega,\bm) \leq \frac{1}{(n-1)\lambda e^{-2\,\delta}}\,\log \frac{1}{\eta}.
+\end{equation*}
+This completes the proof of Theorem \ref{thm:twisted weighted main theorem}.
+\end{proof}
+
+
+
+\subsection{Proof of Theorem \ref{thm:main theorem}}
+
+In order to conclude Theorem \ref{thm:main theorem},
+we calculate the invariants of the finite dimensional model spaces.
+\begin{lem}\label{lem:observable and separation on model}
+For every $\eta \in (0,1]$
+the following hold:
+\begin{enumerate}
+\item for the ball-model-space $\ball$ defined as $(\ref{eq:ball model})$,
+         \begin{equation*}
+         \OI(\ball;-\eta)=\DS(\ball;\eta)=v^{-1}_{n,\kappa,\lambda}(\eta);
+         \end{equation*}
+\item for the warped-product-model-space $M^{n}_{\kappa,\lambda}$ defined as $(\ref{eq:warped product model})$,
+         \begin{equation*}
+         \OI(M^{n}_{\kappa,\lambda};-\eta)=\DS(M^{n}_{\kappa,\lambda};\eta)=\frac{1}{(n-1)\lambda}\,\log \frac{1}{\eta}.
+         \end{equation*}
+\end{enumerate}
+\end{lem}
+\begin{proof}
+Let us present the equality for $\ball$.
+We show
+\begin{equation}\label{eq:separation equal ball model}
+\DS(\ball;\eta)=v^{-1}_{n,\kappa,\lambda}(\eta).
+\end{equation}
+Let $B_{\eta} \subset \ball$ denote the closed geodesic ball with same center as $\ball$ and $m_{\ball}(B_{\eta})=\eta$.
+For the radius $r_{\eta}$ of $B_{\eta}$,
+we see
+\begin{equation*}
+\DS \left(\ball;\eta \right)=d_{\ball}\left(B_{\eta},\partial \ball \right)=\const-r_{\eta}.
+\end{equation*}
 It holds that
-η =mBn
-κ,λ(Bη) =
-∫Cκ,λ
-Cκ,λ−rη
-sn−1
-κ,λ (t)dt
-∫Cκ,λ
-0 sn−1
-κ,λ (t)dt
-=vn,κ,λ (Cκ,λ−rη) ;
-in particular, Cκ,λ−rη =v−1
-n,κ,λ(η). This yields (5.2). Since supp mBn
-κ,λ
-coincides with Bn
-κ,λ, Proposition 3.7 and (5.2) imply the desired one.
-For the warped-product-model-space Mn
-κ,λ, the same argument as in
-the proof of Bn
-κ,λ leads to the desired equality. 2
-We are now in a position to prove Theorem 1.3.
-Proof of Theorem 1.3. Let ∂M be compact. Assume Ric ∂M⊥≥ (n−
-1)κ and H∂M ≥ (n− 1)λ. Letting f = log volM(M) and N = n in
-Theorem 5.3, for η∈ (0, 1] we have the following (cf. Remark 1.2):
-(1) if κ and λ satisfy the ball-condition, then
-ObsInRad(M;−η)≤v−1
-n,κ,λ(η);
-(2) if κ< 0 and λ =
-√
-|κ|, then
-ObsInRad(M;−η)≤ 1
-(n− 1)λ log 1
-η.
-By Lemma 5.5, we complete the proof of Theorem 1.3. 2
-26 YOHEI SAKURAI
+\begin{equation*}
+\eta=m_{\ball}(B_{\eta})=\frac{\int^{\const}_{\const-r_{\eta}}\,s^{n-1}_{\kappa,\lambda}(t)\,dt}{\int^{\const}_{0}\,s^{n-1}_{\kappa,\lambda}(t)\,dt}=v_{n,\kappa,\lambda}\left(\const-r_{\eta}\right);
+\end{equation*}
+in particular,
+$\const-r_{\eta}=v^{-1}_{n,\kappa,\lambda}(\eta)$.
+This yields (\ref{eq:separation equal ball model}).
+Since $\supp m_{\ball}$ coincides with $\ball$,
+Proposition \ref{prop:Kazukawa} and (\ref{eq:separation equal ball model}) imply the desired one.
+
+For the warped-product-model-space $M^{n}_{\kappa,\lambda}$,
+the same argument as in the proof of $\ball$ leads to the desired equality.
+\end{proof}
+
+We are now in a position to prove Theorem \ref{thm:main theorem}.
+
+\begin{proof}[Proof of Theorem \ref{thm:main theorem}]
+Let $\bm$ be compact.
+Assume $\ric_{\bm^{\perp}}\geq (n-1)\kappa$ and $H_{\bm}\geq (n-1)\lambda$.
+Letting $f=\log \vol_{M}(M)$ and $N=n$ in Theorem \ref{thm:weighted main theorem},
+for $\eta \in (0,1]$
+we have the following (cf. Remark \ref{rem:finite volume}):
+\begin{enumerate}
+\item if $\kappa$ and $\lambda$ satisfy the ball-condition,
+         then
+         \begin{equation*}
+         \OI(M;-\eta) \leq v^{-1}_{n,\kappa,\lambda}(\eta);
+         \end{equation*}
+\item if $\kappa<0$ and $\lambda=\sqrt{\vert \kappa \vert}$,
+         then
+         \begin{equation*}
+         \OI(M;-\eta) \leq \frac{1}{(n-1)\lambda}\,\log \frac{1}{\eta}.
+         \end{equation*}
+\end{enumerate}
+By Lemma \ref{lem:observable and separation on model},
+we complete the proof of Theorem \ref{thm:main theorem}.
+\end{proof}

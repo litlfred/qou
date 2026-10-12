@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1010.5321v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1010.5321v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1010.5321v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1010.5321&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1010.5321v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1010.5321v3",
+    "content_type": "application/gzip",
+    "sha256": "282bfdad8926b5fd1cfc39785f5e66f57e24bc436fafa22c030b53f3e60a1783",
+    "bytes": 109796,
+    "fetched": "2026-10-10T15:03:39+00:00",
+    "files": [
+      {
+        "path": "source/files/hyperbolicvolume.tex",
+        "role": "tex",
+        "sha256": "f9bf4d3617a18140a9dc9160b285a7eb78edf4908180a7b03109da6ab26609a6",
+        "bytes": 37898
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

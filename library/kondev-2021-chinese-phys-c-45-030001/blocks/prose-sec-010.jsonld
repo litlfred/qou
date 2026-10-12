@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Isobaric analog states",
-  "pageStart": 6,
-  "pageEnd": 8,
-  "text": "../sections/sec-010-221-isobaric-analog-states.md",
-  "derivedFrom": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
-  "sourceDocument": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
+  "title": "Averaging procedure and uncertainties",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "text": "../sections/sec-010-32-averaging-procedure-and-uncertainties.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
   "provenance": "ingested"
 }

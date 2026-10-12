@@ -8,862 +8,649 @@ pages: 74-90
 source_pdf: 2605.20846v1.pdf
 source_sha256: db27cb6d01c4f2fb
 doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
+text_source: latex
+latex_prose_ratio: 0.964
+latex_coverage_ratio: 0.75
 ---
-Definition 5.2.1.(Trace of Surgery) LetMbe an orientedn-manifold and 0≤k≤n.
-Letϕ:S k−1×Dn−k ,→Mbe an embedding along which ak-handle is attached. The
-resulting manifold is
-M′ =M∪ ϕ (Dk×Dn−k).
-Thetraceof this handle attachment is the (n+ 1)-dimensional cobordismWfromM
-toM ′ obtained by attaching ak-handle toM×[0,1] alongM×{1}:
-W= (M×[0,1])∪ ϕ (Dk×Dn−k+1).
-Its incoming boundary isM×{0}and the outgoing boundary is the manifoldM ′.
-Recall [Juh18]’s assignment of aJ-algebra associated to a 3-dimensional oriented
-TFTZ: Cob(3)→Vect k 2 is denotedJ(Z) which consists of the following data
-1.A g =Z(Σ g) is the vector space associated to the genusgsurface Σ g underZ, for
-allg≥0
-2. linear mapsα g :A g→A g−1, which we call “genus reduction maps.”
-This is theZ-image of trace of the attachment of a 2-handle around a hole, which
-eliminates it.
-3. linear mapsδ j,g−j :A g→A j⊗Ag−j, which we call “splitting maps.”
-This is theZ-image of the trace of the splitting of Σ g into Σj⨿Σg−j.
-4. linear mapsµ i,j :A i⊗Aj→A i+j, which we call “merging maps.”
-This is theZ-image of the trace of the merging of Σ i⨿Σj into Σi+j.
-2Note Juhasz’s original paper the unusual convention is to denote by Cob(n) the category ofn-manifolds
-and bordisms. We will not adopt this convention.
-74
-5. linear mapsω g :A g→A g+1, which we call “genus creation maps.”
-This is theZ-image of the trace of the attachment of a 1-handle.
-6. The linear maptr:A 0→k, which we call the “trace map.”
-This isZ(D 3), whereD 3 :S 2→∅.
-7. The linear map 1 :k→A 0, which we call the “unit map.”
-This isZ(D 3), whereD 3 :∅→S 2
-8. involutions∗ g :A g→A g
-9. representationsρ g :MCG(Σ g)→Aut(A g).
-8 and 9 come from the following construction: First note thatMCG(Σ g) here
-means Diff +(Σg)/Diff +
-0 (Σg), namely isotopy classes of orientation preserving diffeo-
-morphisms. The representations send a particular orientation-preserving diffeomor-
-phismd∈Diff +(Σg) toZ(Cyl(d)) whereCyl(d) is the mapping cylinder. In particu-
-lar, there is a specific order 2 diffeomorphism giving rise to the involutions∗ g– this is
-defined to be the diffeomorphism which sends the Σ g in its standard embedding inR 3
-to itself after performing aπ-rotation about thez-axis.
-The genus creation/reduction maps, and the splitting/merging maps are the images
-of the trace of elementary surgeries on surfaces.
-These data, along with appropriate compatibility conditions, fit into an algebraic
-structure named “J-Algebras.” A theorem by [Juh18] is that these data completely
-determine the 3-dimensional TFTZ. In fact, the statement is stronger:
-Theorem 5.2.2.[Juhasz] The assignmentZ7→J(Z)is an equivalence between the
-symmetric monoidal category of 3-dimensional TFTs andJ-Alg.
-Here the categoryJ-Algis the category whose objects areJ-algebras and whose
-morphisms areJ-algebra homomorphisms. We refer the reader to the original article
-for the precise definition of such morphisms.
-Our goal for this section is to briefly analyse wherePandLalgebras fit inside a
-J-algebra.
-The following data of theJ-algebra associated with a TFTZthat directly involves
-the genus 0 piece:
-1.A 0 =Z(S 2) is the vector space associated to the two-sphere.
-2. linear mapsα 1 :A 1→A 0,
-3. linear mapsδ 0,g :A g→A 0⊗Ag,
-4. linear mapsµ g,0 :A g⊗A 0→A g,
-5. linear mapsω 0 :A 0→A 1,
-6. The linear maptr:A 0→k,
-7. The linear map 1 :k→A 0,
-8. involutions∗ 0 :A 0→A 0
-9. representationsρ 0 :MCG(S 2)→Aut(A 0).
-Note that 8 and 9 are actually both trivial for the following reason:MCGhere
-means isotopy classes of orientation preserving diffeomorphisms, soMCG(S2) ={[id S2]}
-75
-is the group of one element. Thereforeρ 0 maps [idS2] trivially to the identity ofA 0.
-The diffeomorphism ofS 2 defined by rotation about thez-axis byπis therefore also
-isotopic to the identity, hence passing throughZgives the identity onA 0. By definition
-this is the involution∗ g. Therefore we see that 8 and 9 contains no information.
-Furthermore, we see that 6 and 7 agree with the unit and trace maps ofA 0 as a
-commutative Frobenius algebra. In the caseg= 0,δ 0,g =m∨ andµ g,0 =mrecovers
-the co/multiplication maps.
-Therefore, the non-trivial information associated to the commutative Frobenius
-algebraA 0 is the following:
-2. the genus reduction mapα 1 :A 1→A 0
-3. the splitting mapsδ 0,g :A g→A 0⊗Ag,g >0
-4. the merging mapsµ g,0 :A g⊗A 0→A g,g >0
-5. the genus creation mapω 0 :A 0→A 1.
-Even though the four classes of maps above are the only maps in the data ofJ-
-algebras that directly involvesA 0, they do not generate all relevant maps. For example,
-they do not generate prime endomorphismse p :A 0→A 0 wherepis irreducible.
-Theorem 5.2.3.The degree0part of everyJ-algebra is aP/L-algebra. Namely, every
-J-algebra induces aP/L-algebra.
-Proof.By theorem 5.2.2, for anyJ-algebraJthere exists a 3-dimensional oriented
-TFTZ: Cob(3)→Vect k such thatJ(Z) =J, whereJ(Z) consists of the data 1-9
-along with compatibility conditions. By theorem 5.1.10, every 3-dimensional TFTZ
-determines aP/LalgebraZ(S 2).
-This is an extremely unsatisfying proof. We will present a more geometric construc-
-tion that illustrates preciselyhowthe data of aJ-algebra determines, for example, the
-prime units. For this, we will need Heegaard Splitting.
-Theorem 5.2.4.[Heegaard] LetMbe a connected closed oriented3-manifold. Then
-there exists two handle bodiesM 1,M 2 of genusgand an orientation-reversing diffeo-
-morphismf:∂M 1→∂M 2 such that
-M∼=M1∪f M2.
-Remark5.2.5.The Heegaard genusg(M) is defined as the minimal genus of all possible
-Heegaard splitting ofM. In fact [Mar16], onlyS 3 (and thoseMdiffeomorphic to it)
-hasg= 0, and only lens spaces (other thanS 3) orS 2×S 1 hasg= 1. All other
-3-manifolds haveg≥2.
-SinceM 1 is evidently diffeomorphic toM 1∪∂M1∂M1×[0,1], we may write
-M∼=M1∪∂M1∂M1×[0,1]∪ f M2.
-and after factoring through diffeomorphismsϕ 1,2 : Σg→∂M 1,2,
-M∼=M1∪ϕ−1
-1
-Cyl(h)∪ ϕ2M2.
-whereh=ϕ −1
-2 ◦f◦ϕ 1 : Σg→Σ g is orientation preserving.
+\label{sec:Jalg}
+
+\begin{defn} \label{defn:Trace of Surgery}
+(Trace of Surgery) Let $M$ be an oriented $n$-manifold and $0\leq k\leq n$. Let $\phi : S^{k-1} \times D^{n-k} \hookrightarrow M$ be an embedding along which a $k$-handle is attached. The resulting manifold is \[
+M' = M \cup_{\phi } (D^k \times D^{n-k})
+.\]
+The \textit{trace} of this handle attachment is the $(n+1)$-dimensional cobordism $W$ from $M$ to $M'$ obtained by attaching a $k$-handle to $M \times [0,1]$ along $M\times \left\{ 1 \right\} $: \[
+W = (M \times [0,1]) \cup_{\phi } (D^k \times D^{n-k+1})
+.\]
+Its incoming boundary is $M \times \left\{ 0 \right\} $ and the outgoing boundary is the manifold $M'$.
+\end{defn}
+
+Recall \cite{juhasz2018defining}'s assignment of a $J$-algebra associated to a 3-dimensional oriented TFT $Z: \operatorname{Cob}(3) \to \text{Vect}_k$ \footnote{Note Juhasz's original paper the unusual convention is to denote by $\operatorname{Cob}(n)$ the category of $n$-manifolds and bordisms. We will not adopt this convention.} is denoted $J(Z)$ which consists of the following data 
+
+\begin{enumerate}
+\item $A_g = Z(\Sigma_g)$ is the vector space associated to the genus $g$ surface $\Sigma_g$ under $Z$, for all $g\geq 0$
+\item linear maps $\alpha_g: A_g \to A_{g-1} $, which we call ``genus reduction maps.'' \\
+This is the $Z$-image of trace of the attachment of a 2-handle around a hole, which eliminates it.
+\item linear maps $\delta _{j, g-j}: A_g \to A_j \otimes A_{g-j}$, which we call ``splitting maps.'' \\
+This is the $Z$-image of the trace of the splitting of $\Sigma_g $ into $\Sigma_j \amalg \Sigma_{g-j}$.
+\item linear maps  $\mu _{i,j} : A_i \otimes A_j \to A_{i+j}$, which we call ``merging maps.''\\
+This is the $Z$-image of the trace of the merging of $\Sigma_i \amalg \Sigma_j $ into $\Sigma_{i+j}$.
+\item linear maps $\omega_g : A_g \to A_{g+1}$, which we call ``genus creation maps.'' \\
+This is the $Z$-image of the trace of the attachment of a $1$-handle.
+\item The linear map $tr: A_0 \to k$, which we call the ``trace map.'' \\
+This is $Z(D^3)$, where $D^3 : S^2 \to \emptyset$.
+\item The linear map $1: k \to A_0$, which we call the ``unit map.''\\
+This is $Z(D^3)$, where $D^3 : \emptyset \to S^2 $
+\item involutions $*_g: A_g \to A_g$
+\item representations $\rho _g : MCG(\Sigma_g) \to \operatorname{Aut}(A_g) $.
+\end{enumerate}
+
+8 and 9 come from the following construction: First note that $MCG(\Sigma_g)$ here means $\operatorname{Diff}^+(\Sigma_g ) / \operatorname{Diff}^+_0(\Sigma_g )  $, namely isotopy classes of orientation preserving diffeomorphisms. The representations send a particular orientation-preserving diffeomorphism $d\in \operatorname{Diff}^+(\Sigma_g ) $ to $Z(Cyl(d))$ where $Cyl(d)$ is the mapping cylinder. In particular, there is a specific order $2$ diffeomorphism giving rise to the involutions $*_g$-- this is defined to be the diffeomorphism which sends the $\Sigma_g$ in its standard embedding in $\mathbb{R}^3$ to itself after performing a $\pi $-rotation about the $z$-axis.
+
+The genus creation/reduction maps, and the splitting/merging maps are the images of the trace of elementary surgeries on surfaces. 
+
+These data, along with appropriate compatibility conditions, fit into an algebraic structure named ``J-Algebras.'' A theorem by \cite{juhasz2018defining} is that these data completely determine the 3-dimensional TFT $Z$. In fact, the statement is stronger:
+
+\begin{thm} \label{thm:Jalg=3dTFT}
+[Juhasz] The assignment $Z \mapsto J(Z)$ is an equivalence between the symmetric monoidal category of 3-dimensional TFTs and $\textbf{J-Alg}$.
+\end{thm}
+
+Here the category $\textbf{J-Alg}$ is the category whose objects are $J$-algebras and whose morphisms are \textit{J-algebra homomorphisms}. We refer the reader to the original article for the precise definition of such morphisms.
+
+Our goal for this section is to briefly analyse where $P$ and $L$ algebras fit inside a $J$-algebra.
+
+The following data of the $J$-algebra associated with a TFT $Z$ that directly involves the genus $0$ piece:
+
+\begin{enumerate}
+\item $A_0 = Z(S^2)$ is the vector space associated to the two-sphere.
+\item linear maps $\alpha_1: A_1 \to A_{0} $,
+
+\item linear maps $\delta _{0, g}: A_g \to A_0 \otimes A_{g}$,
+
+\item linear maps  $\mu _{g,0} : A_g \otimes A_0 \to A_{g}$, 
+
+\item linear maps $\omega_0 : A_0 \to A_{1}$, 
+
+\item The linear map $tr: A_0 \to k$, 
+
+\item The linear map $1: k \to A_0$, 
+
+\item involutions $*_0: A_0 \to A_0$
+\item representations $\rho _0 : MCG(S^2) \to \operatorname{Aut}(A_0) $.
+\end{enumerate}
+
+Note that 8 and 9 are actually both trivial for the following reason: $MCG$ here means isotopy classes of orientation preserving diffeomorphisms, so $MCG(S^2)= \left\{ [id_{S^2}] \right\} $ is the group of one element. Therefore $\rho_0$ maps $[id_{S^2}]$ trivially to the identity of $A_0$. The diffeomorphism of $S^2$ defined by rotation about the $z$-axis by $\pi $ is therefore also isotopic to the identity, hence passing through $Z$ gives the identity on $A_0$. By definition this is the involution $*_g$. Therefore we see that 8 and 9 contains no information.
+
+Furthermore, we see that 6 and 7 agree with the unit and trace maps of $A_0$ as a commutative Frobenius algebra. In the case $g=0$, $\delta_{0,g} = m^\vee $ and $\mu_{g,0} = m$ recovers the co/multiplication maps.
+
+Therefore, the non-trivial information associated to the commutative Frobenius algebra $A_0$ is the following:
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item the genus reduction map $\alpha_1: A_1 \to A_0 $ 
+\item the splitting maps $\delta_{0,g}: A_g \to A_0 \otimes A_g$, $g>0$
+\item the merging maps $\mu_{g,0}: A_g \otimes A_0 \to A_g$, $g>0$
+\item the genus creation map $\omega_0 : A_0 \to A_1$.
+\end{enumerate}
+
+
+
+Even though the four classes of maps above are the only maps in the data of $J$-algebras that directly involves $A_0 $, they do not generate all relevant maps. For example, they do not generate prime endomorphisms $e_p : A_0 \to A_0$ where $p$ is irreducible.
+
+\begin{thm} \label{thm:JgivesPL}
+The degree $0$ part of every $J$-algebra is a $P / L$-algebra. Namely, every $J$-algebra induces a $P/L$-algebra. 
+\end{thm}
+
+\begin{proof}
+By theorem \ref{thm:Jalg=3dTFT}, for any $J$-algebra $J$ there exists a 3-dimensional oriented TFT $Z: \operatorname{Cob}(3)\to \operatorname{Vect}_k$ such that $J(Z) = J$, where $J(Z)$ consists of the data 1-9 along with compatibility conditions. By theorem \ref{thm:3dTFTgivesPLmonoid}, every 3-dimensional TFT $Z$ determines a $P /L$ algebra $Z(S^2)$.
+\end{proof}
+
+This is an extremely unsatisfying proof. We will present a more geometric construction that illustrates precisely \textit{how} the data of a $J$-algebra determines, for example, the prime units. For this, we will need Heegaard Splitting.
+
+\begin{thm} \label{thm:HeegaardSplitting}
+[Heegaard] Let $M$ be a connected closed oriented $3 $-manifold. Then there exists two handle bodies $M_1 , M_2 $ of genus $g$ and an orientation-reversing diffeomorphism $f: \partial M_1 \to \partial M_2 $ such that \[
+M \cong M_1 \cup_f M_2 
+.\]
+\end{thm}
+
+\begin{rmk}
+The Heegaard genus $g(M)$ is defined as the minimal genus of all possible Heegaard splitting of $M$. In fact \cite{martelli2016introduction}, only $S^3$ (and those $M$ diffeomorphic to it) has $g=0$, and only lens spaces (other than $S^3$) or $S^2 \times S^1$ has $g=1$. All other 3-manifolds have $g\geq 2$.
+\end{rmk}
+
+Since $M_1 $ is evidently diffeomorphic to $M_1 \cup_{\partial M_1 } \partial M_1 \times [0,1]$, we may write \[
+M \cong M_1 \cup_{\partial M_1 } \partial M_1 \times [0,1] \cup_f M_2 
+.\]
+and after factoring through diffeomorphisms $\phi_{1,2}: \Sigma_g \to \partial M_{1,2} $, \[
+M \cong M_1 \cup_{\phi_1 ^{-1}} Cyl(h) \cup_{\phi_2 } M_2 
+.\]
+where $h =\phi_2 ^{-1} \circ f\circ \phi_1 : \Sigma_g \to \Sigma_g $ is orientation preserving.
+
 Therefore we have the following variant of the Heegaard splitting:
-76
-Theorem 5.2.6.LetMbe a connected closed oriented3-manifold. Then there exists
-two handle bodiesM 1,M 2 of genusgandh∈Diff +(Σg)such that
-M∼=M1∪ϕ−1
-1
-Cyl(h)∪ ϕ2M2.
-whereCyl(h) = (Σ g×[0,1]⨿Σ g)/(x,1)∼h(x)is the mapping cylinder ofh,ϕ 1 :
-Σg →∂M 1 is an orientation-preserving diffeomorphism, andϕ 2 : Σg →∂M 2 is an
-orientation-reversing diffeomorphism.
+
+\begin{thm}
+Let $M$ be a connected closed oriented $3 $-manifold. Then there exists two handle bodies $M_1 , M_2 $ of genus $g$ and $h \in \operatorname{Diff}^+(\Sigma_g ) $ such that \[
+M \cong M_1 \cup_{\phi_1 ^{-1}} Cyl(h) \cup_{\phi_2 } M_2 
+.\]
+where $Cyl(h) = (\Sigma_g \times [0,1] \amalg \Sigma_g) / (x,1) \sim h(x)$ is the mapping cylinder of $h$, $\phi_{1}: \Sigma_g \to \partial M_{1}$ is an orientation-preserving diffeomorphism, and $\phi_{2}: \Sigma_g \to \partial M_{2}$ is an orientation-reversing diffeomorphism.
+\end{thm}
+
 and the boundary variant:
-Theorem 5.2.7.LetMbe a connected closed oriented3-manifold with boundary
-∂M ∼=⨿a+bS2. Then there exists two connected oriented 3-manifoldsM 1,M 2 with
-boundaries∂M 1 =⨿ aS2⨿Σ 1 and∂M 2 =⨿ bS2⨿Σ 2, whereΣ 1,2 are of of genusg,
-andh∈Diff +(Σg)such that
-M∼=M1∪ϕ−1
-1
-Cyl(h)∪ ϕ2M2.
-whereCyl(h) = (Σ g×[0,1]⨿Σ g)/(x,1)∼h(x)is the mapping cylinder ofh,ϕ 1 : Σg→
-Σ1 is an orientation-preserving diffeomorphism, andϕ 2 : Σg→Σ 2 is an orientation-
-reversing diffeomorphism.
-Proposition 5.2.8.Given anyA=⊕ i≥0Ai anJ-algebra overk, and any irreducible
-oriented3-manifoldP, let1 P :k→A 0 ande P :A 0→A 0 be a prime unit and a prime
-endomorphism of theL-algebraA 0. Then there existsh∈MCG(Σ g)for somegsuch
-that
-1P =α 1◦α 2···◦α g◦ρg(h)◦ω g−1◦ωg−2◦···◦ω 0◦1.
-and that
-eP =α 1◦α 2···◦α g◦ρg(h)◦ω g−1◦ωg−2◦···◦ω 0.
-Namely,1 P :k→A 0 is the composition
-k 1→A 0
-ω0
-→A 1
-ω1
-→...
-ωg−1
-→A g
-ρg(h)
-→A g
-αg
-→A g−1
-αg−1
-→... α2
-→A 1
-α1
-→A 0.
-ande P :A 0→A 0 is the composition
-A0
-ω0
-→A 1
-ω1
-→...
-ωg−1
-→A g
-ρg(h)
-→A g
-αg
-→A g−1
-αg−1
-→... α2
-→A 1
-α1
-→A 0.
-Proof.Applying theorem 5.2.7 toP\D 3 in the case (a,b) = (0,1), there exists a genusg
-handle bodyM 1 and a connected closed oriented 3-manifoldM 2 with boundaryS 2⨿Σg
-andh∈Diff +(Σg) such that
-P\D 3∼=M1∪Cyl(h)∪M 2.
-Recall that any handle body of genusgcan be obtained, by definition, by attaching
-g-many 1-handles to a 0-handle. Hence in the case (a,b) = (0,1), we learn thatPis
-built by first attachingg-many 1-handles to a 0-handle, which results inM 1. Then
-we glue on a mapping cylinderCyl(h). Then we attachg-many 2-handles, which form
-M2. We stop short of attaching the final 3-handle, which would had result in a closed
-manifold.
-Passing through the TFTZcorresponding to theJ-algebraA, and noting thatω i
-is the image of the trace of 1-handle attachments whileα i is the image of the trace of
-2-handle attachments, we obtain the desired composition for 1 P .
-Doing the same toP\(D 3⊔D 3) in the case (a,b) = (1,1), we obtain the desired
-composition fore P .
-77
-5.3 The∞-operadL ⊗
-We now shift gears to the (∞,1)-categorical setting. In this exploratory section, we
-aim to define an∞-operadL ⊗ and conjecture it as equivalent to the connected part
-of the∞-endomorphism operad End ⊗
-Ω2Bordfr
-3
-(S2). There is also an oriented version of
-the proposal.
-We will do this in steps: first we will briefly review the constructions of the∞-
-littlen-cube operadE ⊗
-n , then we will define the∞-operadL ⊗ and End⊗
-Ω2Bord3
-(S2),
-and lastly we will give two precise conjectures which state that there exists a map of
-∞-operads which is an equivalence.
-Comment5.3.1.When we sayCis an∞-category we mean eitherCis a complete Segal
-space or a quasi-category. Although it is usually clear from context which model we
-are referring, we will default to using quasi-categories unless specified otherwise.
-Many influential work on the bordism categories were done in the model of (n-fold)
-complete Segal spaces such as[Lur08; CS19; Sch14], while∞-operads were explored by
-[Lur17a] in the model of quasi-categories.
-Both complete Segal spaces and quasi categories are valid models of (∞,1)-categories,
-due to the fact that the homotopy theory of complete Segal spaces is the same as the
-homotopy theory of Quasi-categories, hence one loses nothing by choosing a model. In
-fact, one may move from one model to the other via [JT07] style constructions, such
-as theorem A.2.3 in the appendix.
+
+\begin{thm} \label{thm:Heegaardvarpar}
+Let $M$ be a connected closed oriented $3 $-manifold with boundary $\partial M \cong \amalg^{a+b} S^2$. Then there exists two connected oriented 3-manifolds $M_1 , M_2 $ with boundaries $\partial M_1 = \amalg^a S^2 \amalg \Sigma^1$ and $\partial M_2 = \amalg^b S^2 \amalg \Sigma^2$, where $\Sigma^{1,2}$ are of of genus $g$, and $h \in \operatorname{Diff}^+(\Sigma_g ) $ such that \[
+M \cong M_1 \cup_{\phi_1 ^{-1}} Cyl(h) \cup_{\phi_2 } M_2 
+.\]
+where $Cyl(h) = (\Sigma_g \times [0,1] \amalg \Sigma_g) / (x,1) \sim h(x)$ is the mapping cylinder of $h$, $\phi_{1}: \Sigma_g \to \Sigma^1$ is an orientation-preserving diffeomorphism, and $\phi_{2}: \Sigma_g \to \Sigma^2$ is an orientation-reversing diffeomorphism.
+\end{thm}
+
+\begin{prop} \label{prop:JtoLmaps}
+Given any $A= \oplus_{i\geq 0 } A_i$ an $J$-algebra over $k$, and any irreducible oriented $3$-manifold $P$, let $1_P: k \to A_0$ and $e_P : A_0  \to A_0$ be a prime unit and a prime endomorphism of the $L$-algebra $A_0 $. Then there exists $h \in MCG(\Sigma_g)$ for some $g$ such that \[
+1_P = \alpha_1 \circ \alpha_2 \dots \circ \alpha _g \circ \rho_g(h) \circ \omega_{g-1} \circ \omega _{g-2} \circ \dots \circ \omega_0 \circ 1
+.\]
+and that \[
+e_P = \alpha_1 \circ \alpha_2 \dots \circ \alpha _g \circ \rho_g(h) \circ \omega_{g-1} \circ \omega _{g-2} \circ \dots \circ \omega_0
+.\]
+Namely, $1_P: k \to A_0$ is the composition \[
+k \overset{1}{\to } A_0 \overset{\omega _0}{\to } A_1 \overset{\omega _1}{\to } \dots \overset{\omega _{g-1}}{\to }A_g \overset{\rho _g(h)}{\to } A_g \overset{\alpha _g}{\to } A_{g-1} \overset{\alpha_{g-1}}{\to } \dots \overset{\alpha _2}{\to } A_1 \overset{\alpha_1 }{\to }A_0 
+.\]
+and $e_P: A_0 \to A_0 $ is the composition \[
+A_0 \overset{\omega _0}{\to } A_1 \overset{\omega _1}{\to } \dots \overset{\omega _{g-1}}{\to }A_g \overset{\rho _g(h)}{\to } A_g \overset{\alpha _g}{\to } A_{g-1} \overset{\alpha_{g-1}}{\to } \dots \overset{\alpha _2}{\to } A_1 \overset{\alpha_1 }{\to }A_0 
+.\]
+\end{prop}
+
+\begin{proof}
+Applying theorem \ref{thm:Heegaardvarpar} to $P\setminus D^3$ in the case $(a,b)=(0,1)$, there exists a genus $g$ handle body $M_1 $ and a connected closed oriented $3$-manifold $M_2 $ with boundary $S^2 \amalg \Sigma_g$ and  $h\in \operatorname{Diff}^+(\Sigma_g ) $ such that \[
+P\setminus D^3 \cong M_1 \cup Cyl(h) \cup M_2 
+.\]
+Recall that any handle body of genus $g$ can be obtained, by definition, by attaching $g$-many 1-handles to a $0$-handle. Hence in the case $(a,b)=(0,1)$, we learn that $P$ is built by first attaching $g$-many 1-handles to a $0$-handle, which results in $M_1 $.  Then we glue on a mapping cylinder $Cyl(h)$. Then we attach $g$-many $2$-handles, which form $M_2 $. We stop short of attaching the final $3$-handle, which would had result in a closed manifold.
+
+Passing through the TFT $Z$ corresponding to the $J$-algebra $A$, and noting that $\omega _i$ is the image of the trace of $1$-handle attachments while $\alpha_i$ is the image of the trace of $2$-handle attachments, we obtain the desired composition for $1_P$.
+
+Doing the same to $P\setminus (D^3 \sqcup D^3)$ in the case $(a,b)=(1,1)$, we obtain the desired composition for $e_P$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{The $\infty$-operad $\mathbb{L}^\otimes $} \label{sec:infoperad}
+We now shift gears to the $(\infty,1)$-categorical setting. In this exploratory section, we aim to define an $\infty$-operad $\mathbb{L}^\otimes $ and conjecture it as equivalent to the connected part of the $\infty$-endomorphism operad $\operatorname{End}_{\Omega^2 \text{Bord}_3^{fr}}^\otimes (S^2) $. There is also an oriented version of the proposal. 
+
+We will do this in steps: first we will briefly review the constructions of the $\infty$-little $n$-cube operad $\mathbb{E}_n^\otimes $, then we will define the $\infty$-operad $\mathbb{L}^\otimes $ and $\operatorname{End}_{\Omega^2 \text{Bord}_3}^\otimes (S^2) $, and lastly we will give two precise conjectures which state that there exists a map of $\infty$-operads which is an equivalence.
+
+\begin{mycom}
+When we say $\mathcal{C}$ is an $\infty$-category we mean either $\mathcal{C}$ is a complete Segal space or a quasi-category. Although it is usually clear from context which model we are referring, we will default to using quasi-categories unless specified otherwise.
+
+Many influential work on the bordism categories were done in the model of ($n$-fold) complete Segal spaces such as\cite{lurie_classification_2008, Calaque_2019, scheimbauer2014factorization}, while $\infty$-operads were explored by \cite{LurieHigherAlgebra} in the model of quasi-categories. 
+
+Both complete Segal spaces and quasi categories are valid models of $(\infty,1)$-categories, due to the fact that the homotopy theory of complete Segal spaces is the same as the homotopy theory of Quasi-categories, hence one loses nothing by choosing a model. In fact, one may move from one model to the other via \cite{joyal2007quasi} style constructions, such as theorem \ref{thm:JoyalTierney} in the appendix.
+\end{mycom}
+
 The following category will show up repeatedly in the section
-Definition 5.3.2.(Fin ∗) Let⟨n⟩={∗,1,...,n}. The Segal category of finite pointed
-setFin ∗ is defined to have
-1. objects are⟨n⟩for eachn≥1.
-2. a morphismα:⟨m⟩→⟨n⟩is a map such thatα(∗) =∗.
-A morphismα:⟨m⟩→⟨n⟩isinertif for eachi∈1,...,n, the inverseα −1(i) has
-only one element; it isactiveifα −1(∗) ={∗}.
-Recall that an∞-operad as defined in [Lur17b] is a morphism of∞-categories
-p:O ⊗→N(Fin ∗).
-such that every inert morphism hasp-coCartesian lifts, the inert morphismsρ i⟨n⟩→
-⟨1⟩sendingito 1 and everything else to∗induce “projection maps,” and there is
-equivalence of∞-categoriesO ⊗
-⟨n⟩→O n whereO ⊗
-⟨n⟩≡p−1(⟨n⟩),O≡O ⊗
-⟨1⟩. A precise
-definition is recorded in A.2.13.
-First let’s recall the standard construction of the∞-little k-cube operadE ⊗
-k .
-Let□ k = (−1,1)k be thek-dimensional open cube. We say an embeddingf:□ k→
-□k is rectilinear if it is given by
-f(x 1,...,x k) = (a1x1 +b 1,...,a kxk +bk).
-for some constantsa i >0 andb i. For any finite setS, we say an open embedding
-□k×S→□ k is rectilinear if it is rectilinear on each connected component. Denote
-all such rectilinear embeddings as Rect(□ k×S,□ k) and equip it with the subspace
-topology ofR 2k|S|. Note that the images of the|S|-many□ k are disjoint by definition.
-78
-Definition 5.3.3.Let tE⊗
-k be the topological category defined as follows
-1. The objects are⟨n⟩, the same as those ofFin ∗
-2. An arrowf:⟨m⟩→⟨n⟩consists of the following data:
-(a) a morphismα:⟨m⟩→⟨n⟩inFin ∗.
-(b) for each 1≤j≤n, a rectilinear embedding in
-Rect(□k×α−1(j),□k).
-3. The topology on the mapping spaces Map tE⊗
-3
-(⟨m⟩,⟨n⟩) is induced by the presen-
-tation
-MaptE⊗
-3
-(⟨m⟩,⟨n⟩) =
-a
-α:⟨m⟩→⟨n⟩
-Y
-1≤j≤n
-Rect(□k×α−1(j),□k).
-4. The composition
-MaptE⊗
-3
-(⟨n⟩,⟨n′⟩)×Map tE⊗
-3
-(⟨n′⟩,⟨n′′⟩)→Map tE⊗
-3
-(⟨n⟩,⟨n′′⟩).
-sendsα:⟨n⟩,⟨n ′⟩,β:⟨n ′⟩→⟨n ′′⟩toβ◦α:⟨n⟩→⟨n ′′⟩, and the rectilinear
-embeddings
-fj :□ k×α−1(j)→□ k, f ′
-j′ :□ k×β−1(j′)→□ k.
-are sent to
-f′
-j′◦(
-a
-j∈α−1(β−1(j′))
-fj) :□ k×(β◦α) −1(j′)→□ k.
-We call tE⊗
-k the topological littlek-cube operad.
-Define the∞-categoryE ⊗
-k as the topological nerve of tE⊗
-k .
-Proposition 5.3.4.E ⊗
-k is an∞-operad.
-Definition 5.3.5.We callE ⊗
-k the∞-littlek-cube operad.
-Remark5.3.6.There are many variations to definition 5.3.3 by replacing the spaces
-Rect(□k×α−1(j),□k) by some other ones. There are two important variants:
-1. One may replace□ k withD k, and define a rectilinear embeddingD k→D k as
-one which extends toR k→R k asv7→λv+v 0 for someλ>0 andv 0∈R k. That
-is, a uniform radial scaling and a translation. The resulting topological category
-is referred to as the “littlek-disk operad” and its topological nerve is once again
-an∞-operad, rightfully called the “∞-littlek-disk operad.”
-By [May97] and [LV14], for any finite setSthere is a canonical homotopy equiva-
-lence between Rect(□k×S,□ k), Rect(Dk×S,D k) and Conf|S|(Rk) the configura-
-tion space of|S|-many distinct points inR k. Hence the topological littlek-cube
-operad is homotopy equivalent to the topological littlek-disk operad. Passing
-through the homotopy coherent nerve gives an equivalence between the∞-little
-k-cube operad and the∞-littlek-disk operad.
-79
-2. One may replace□ k withD k, and define a “projective isometry”f:D k→D k
-as one which extends toR k→R k asv7→λRv+v 0 for someR∈SO(k),λ >0
-andv 0 ∈R k. That is, a rotation followed by a uniform radial scaling, then
-a translation. The resulting topological category tE⊗
-SO(k) is referred to as the
-“framed littlek-disk operad” and its topological nerveE ⊗
-SO(k) is once again an
-∞-operad, rightfully called the “∞-framed littlek-disk operad.”
-This operad (both the topological and the∞-version) is not equivalent to the
-ordinary littlek-disk/cube operad fork≥2. Heuristically speaking, theSO(k)
-rotational information assigned to the embedded disks is the classifying space
-BSO(k). Whenk≥2 this space is no longer contractible, hence the homotopy
-theory of projective isometries is different from the homotopy theory of rectilinear
-embeddings.
-3. Similar to variation 2, one may further allowR∈O(k) to include orientation
-reversal. The resulting topological category is denoted tE⊗
-O(k) and the topological
-nerveE⊗
-O(k) is an∞-operad.
-Example 11.It is widely understood thatS k−1 is anE ⊗
-k -algebra object in Bord fr
-k .
-Precisely, this means that there is a map of∞-operads
-E⊗
-k →Ω k−1 Bordfr,⊗
-k .
-sending⟨1⟩to the objectS 2.
-Additionally,Sk−1 is understood to be anE⊗
-SO(k)-algebra object in Ωk−1 BordSO(k),⊗
-k ,
-and anE⊗
-O(k)-algebra object in Ωk−1 BordO(k),⊗
-k . 3 Though, at the time of this writing,
-we are not aware of a thorough treatment in existing literature.
-Recall [Hat08]’s construction of the space of connect sum configurations:
-Notations 5.3.7.LetGbe a graph andvbe a vertex. LetHE(v) =DE(v)∪E(v)
-be the set of half edges ofv, written as a union of unpaired half edgesDE(v) and the
-paired half edgesE(v). We sayvhas valency|E(v)|and deficiency|DE(v)|.
-Definition 5.3.8.(C(M)) LetM=P 1#...#P m#(S2×S 1)g be a closed oriented
-3-manifold, whereP i are oriented irreducible 3-manifolds. LetGbe a finite connected
-graph withmof its vertices labelled 1,...,mand such that all unlabelled vertices have
-valence≥3 and the fundamental group is free of rankg. Let
-CG(M) =
-
-(re,le,D 3
-e ,→Pi,D 3
-e ,→S 3
-v)
-	
-over all edgeseand all unlabelled verticesvofG, wherer e>0,l e>0 and embeddings
-D3
-e ,→Pi andD 3
-e ,→S 3
-v, the latter being an isometry on its boundary. Let CG(M)
-be the same asC G(M) except now allowl e to go to 0. LetG/edenote the graph by
-contracting the edgee. Then define
-C(M) =
-a
-G
-CG(M)/∼.
-where a configuration withl e = 0 is identified with the same one after contracting the
-edgee.
-3Note the infamous trap in naming conventions: associated to theframedlittlek-disk operad isS k−1 as
-anorientedmanifold.
-80
-The spaceC(M) is best thought of as all the possible ways to “build ”MfromP i
-factors. To incorporate spherical boundaries, we need to introduce unpaired half edges
-corresponding toS 2 boundaries, one of which is distinguished and corresponds to the
-outgoing boundary.
-Definition 5.3.9.(C ∂,n
-SO (M)) LetM=P 1#...#P m#(S2×S 1)g be a closed oriented
-3-manifold, whereP i are oriented irreducible 3-manifolds. LetGbe a finite connected
-graph withmof its vertices labelled 1,...,mand such that all unlabelled vertices
-have valence≥3 and the fundamental group is free of rankg, and such that it has
-n+ 1-many unpaired half edges, one of which is distinguished. Let
-C∂,n
-SO,G(M) =
-
-(re,le,D 3
-e ,→Pi,D 3,→S 3
-v,D 3
-ϵ ,→Pi,D 3
-ϵ ,→S 3
-v)
-	
-over all edgeseand all unpaired half edgesϵand all unlabelled verticesvofG, where
-re>0,l e>0 and embeddingsD 3
-e ,→Pi andD 3
-e ,→S 3
-v, the latter being an isometry on
-its boundary. The half-edge embeddingsD 3
-ϵ ,→Pi,D 3
-ϵ ,→S 3
-v are orientation-preserving
-and have disjoint images. Let C∂,n
-SO,G(M) be the same asC ∂,n
-SO,G(M) except now allow
-le to go to 0. LetG/edenote the graph by contracting the edgee. Then define
-C∂,n
-SO (M) =
-a
-G
-C∂,n
-SO (M)/∼.
-The spaceC ∂,n
-SO (M) isC(M) but now one remembers incoming and outgoing spheri-
-cal boundary data. This is the oriented version– all the irreducible factors are oriented,
-and all edge embeddingsD 3
-e ,→S 3
-v,D 3
-e ,→Pi oriented, and the boundary embeddings
-D3
-ϵ ,→S 3
-v,D 3
-ϵ ,→Pi (those corresponding to half edges) are also oriented.
-VariationThere exists an obvious variation, one where we upgrade the orientation
-to the more restrictive framed setting. Call the spaceC ∂,n
-fr (M), whereMis now a
-framed closed 3-manifold, and theP i factors are also framed. All embeddings are
-framing-preserving embeddings. 4
-Remark5.3.10.The definition for the configuration space of the un-oriented case is less
-straightforward, so we won’t attempt to present it here. However, we can make some
-suggestions. Call this configuration spaceC ∂,n
-O (M), whereM=P 1#...#P m#(S2×
-S1)g#(S2∼
-×S 1)g′
-. In the unoriented case there exists a reducible primeS 2e×S1 which
-is aS 2 bundle overS 1, defined as
-S2e×S1 =S 2×[0,1]/(x,0)∼(r(x),1).
-wherer:S 2→S 2 is the antipodal map, in particular orientation reversing. 5 Hence
-we need the underlying graphs to have fundamental groups free of rankg+g ′.
-We would need the attaching tubesD 3
-e×I e as well as the orientation-reversing
-version of these tubes, defined as
- 
-D3
-e×Ie
-a
-D3/(x,1)∼r(x).
-wherer:D 3×D 3 is again the antipodal map.
-4We will be intentionally vague about this, since this is only a sketch definition.
-5UnlikeS 2×S 1 where the identification can be made as (x,0)∼(x,1).
-81
-Setting aside the issue of the unoriented configuration space, we define an operad
-which captures the information in the oriented configuration space:
-Definition 5.3.11.( tL⊗) is a topological category defined as follows
-1. The objects are⟨n⟩, the same asFin ∗.
-2. A morphism from⟨m⟩to⟨n⟩consists of the following data:
-(a) a morphismα:⟨m⟩→⟨n⟩inFin ∗
-(b) for everyj= 1,...,n, a non-negative integerg j≥0 and an elementh j∈
-BDiff(‘
-i∈IjPi), whereP i are framed irreducible 3-manifolds.
-(c) for everyj= 1,...,n, a framed connect sum configurationf j∈C ∂,|α−1(j)|
-fr (M)
-whereM=
- 
-#i∈IjPi
-
-#(S2×S 1)gj.
-3. Composition is given by
-(a) sendα:⟨m⟩→⟨n⟩andβ:⟨n⟩→⟨n ′⟩to the compositionβ◦α:⟨m⟩→⟨n ′⟩.
-(b) Ifg j≥0,h j∈BDiff(‘
-i∈IjPi) forj= 1,...,n ′ andgk≥0,h k∈BDiff(‘
-i∈IkPi)
-fork= 1,...,n ′′ are the data to be composed, their composition is given by
-gk =g k +P
-j∈α−1(k)gj and hk is the image of (h j,hk)j∈α−1(k) under the
-natural map
-
- Y
-j∈α−1(k)
-BDiff
-
-a
-i∈Ij
-Pi
-
-
-
-×BDiff
-
-a
-i∈Ik
-Pi
-
-→BDiff(
-a
-i∈∪j∈α−1(k)Ij∪Ik
-Pi).
-(c) Iff j forj= 1,...,n ′ andf k fork= 1,...,n ′′ are the framed connect sum
-configurations over the graphsG j andG k respectively, their composition
-fk is a configuration over the graph Gk obtained by connecting the incom-
-ing half-edges ofG k with the outgoing half-edges of
-
-Gj,j∈α −1(k)
-	
-. The
-configurationfk itself is the union of the configurations{f j}j∈α−1(k) andf k.
-Remark5.3.12.The natural map in item 3.b requires some explaining. There is a
-natural map
-BDiff(X)×BDiff(Y)→BDiff(X
-a
-Y).
-which is induced by the natural map Diff(X)×Diff(Y)→Diff(X ‘Y). IfXis not
-diffeomorphic toY, the target is just Diff(X)×Diff(Y) and this map is the identity.
-IfXis diffeomorphic toY, however, the target now must include the diffeomorphism
-swapping the two, which is a separate path component from the identity component.
-In our model of BDiff(X) = Emb(X,R ∞)/Diff(X), we can give a geometric con-
-struction. Fix two embeddings
-i0,i 1 :R∞→R∞.
-with disjoint images. Then send [e X]∈BDiff(X) = Emb(X,R ∞)/Diff(X) and [e Y ]∈
-BDiff(Y) = Emb(Y,R ∞)/Diff(Y) to the class of embeddingX ‘Y→R ∞ given by
-x7→i 0(eX(x)), y7→i 1(eY (y)).
-This is well defined because precomposinge X ande Y by diffeomorphisms corresponds
-to precomposing the union embedding by an element of Diff(X ‘Y).
-82
-VariationDefine tL⊗
-SO similarly, except now 2.b theP i are oriented irreducible
-3-manifolds, and 2.c the configurationf j∈C ∂,|α−1(j)|
-SO (M) is an oriented connect sum
-configuration.
-Definition 5.3.13.Denote byL ⊗ the topological nerve of tL⊗, and byL⊗
-SO the topo-
-logical nerve of tL⊗
-SO.
-Proposition 5.3.14.The∞-categoriesL ⊗ andL⊗
-SO are∞-operads.
-Proof.We show that Sing(tL⊗) is canonically isomorphic to the simplicial categoryO⊗,
-constructed via [Lur17b, Notation 2.1.1.22], of a fibrant simplicial coloured operadO.
-ThereforeL⊗ =N(Sing( tL⊗)) =N(O ⊗) =N ⊗(O) is the operadic nerve ofO, which
-by [Lur17b, Proposition 2.1.1.27] is an∞-operad.
-LetObe the simplicial coloured operad with a single objectD 3, with
-MulO(
-
-D3	
-i∈I,D 3) = Sing(MaptL⊗(⟨n⟩,⟨1⟩)a)
-wherea:⟨n⟩→⟨1⟩is the unique active map, sending∗to∗and everything else to 1,
-and MaptL⊗(⟨n⟩,⟨1⟩)a is the subspace of morphisms with dataaas the map inFin ∗.
-The singular complex of any topological space is Kan. SoOis a fibrant simplicial one-
-coloured operad. By construction, there is a canonical isomorphism between Sing(tL⊗)
-andO⊗. HenceL ⊗ is an∞-operad.
+
+\begin{defn} \label{defn:Fin*}
+($\mathcal{F}in_*$) Let $\langle n \rangle = \left\{ *, 1, \dots ,n \right\} $. The Segal category of finite pointed set $\mathcal{F}in_*$ is defined to have 
+\begin{enumerate}
+\item objects are $\langle n \rangle $ for each $n\geq 1$.
+\item a morphism $\alpha : \langle m \rangle \to \langle n \rangle  $ is a map such that  $\alpha (*)=*$.
+\end{enumerate}
+
+A morphism $\alpha : \langle m \rangle \to \langle n \rangle $ is \textit{inert} if for each $i \in 1, \dots ,n$, the inverse $\alpha ^{-1}(i)$ has only one element; it is \textit{active} if $\alpha ^{-1}(*) = \left\{ * \right\} $.
+\end{defn} 
+
+Recall that an $\infty$-operad as defined in \cite{lurie2017higheralgebra} is a morphism of $\infty$-categories \[
+p: \mathcal{O}^\otimes \to N(\mathcal{F}in_*)
+.\]
+such that every inert morphism has $p$-coCartesian lifts, the inert morphisms $\rho ^i \langle n \rangle \to \langle 1 \rangle $ sending $i$ to $1$ and everything else to $*$ induce ``projection maps,'' and there is equivalence of $\infty$-categories $\mathcal{O}^\otimes _{\langle n \rangle } \to \mathcal{O}^n$ where $\mathcal{O}^\otimes _{\langle n \rangle } \equiv p ^{-1}(\langle n \rangle )$, $\mathcal{O} \equiv \mathcal{O}^{\otimes }_{\langle 1 \rangle }$. A precise definition is recorded in \ref{defn:infoperad}.
+
+
+
+
+
+First let's recall the standard construction of the $\infty$-little k-cube operad $\mathbb{E}_k^ \otimes $. 
+
+Let $\Box^k = (-1,1)^k $ be the $k$-dimensional open cube. We say an embedding $f: \Box^k \to \Box^k$ is rectilinear if it is given by \[
+f(x_1 , \dots ,x_k) = (a_1 x_1 +b_1 , \dots , a_k x_k+b_k)
+.\]
+for some constants $a_i>0$ and $b_i$. For any finite set $S$, we say an open embedding $\Box^k \times S \to \Box^k$ is rectilinear if it is rectilinear on each connected component. Denote all such rectilinear embeddings as $\operatorname{Rect}(\Box^k \times S, \Box^k)$ and equip it with the subspace topology of $\mathbb{R}^{2k \mid S \mid }$. Note that the images of the $|S|$-many $\Box^k$ are disjoint by definition.
+
+\begin{defn} \label{defn:Ek}
+Let $^t \mathbb{E}_k^{\otimes }$ be the topological category defined as follows 
+\begin{enumerate}
+\item The objects are $\langle n \rangle $, the same as those of $\mathcal{F}in_*$ 
+\item An arrow $f:\langle m \rangle \to \langle n \rangle $ consists of the following data:
+\begin{enumerate}
+\item a morphism $\alpha : \langle m \rangle \to \langle n \rangle $ in $\mathcal{F}in_*$.
+\item for each $1\leq j\leq n$, a rectilinear embedding in \[
+\operatorname{Rect}(\Box^k \times \alpha ^{-1}(j), \Box^k)
+.\]
+\end{enumerate}
+\item The topology on the mapping spaces $\operatorname{Map}_{^t \mathbb{E}_3^\otimes }(\langle m \rangle , \langle n \rangle )$ is induced by the presentation \[
+\operatorname{Map}_{^t \mathbb{E}_3^\otimes }(\langle m \rangle , \langle n \rangle ) = \coprod_{\alpha : \langle m \rangle \to \langle n \rangle } \prod_{1\leq j\leq n} \operatorname{Rect}(\Box^k \times \alpha ^{-1}(j), \Box^k)
+.\]
+\item The composition \[
+\operatorname{Map}_{^t \mathbb{E}_3^\otimes }(\langle n \rangle , \langle n' \rangle ) \times \operatorname{Map}_{^t \mathbb{E}_3^\otimes }(\langle n' \rangle , \langle n'' \rangle ) \to \operatorname{Map}_{^t \mathbb{E}_3^\otimes }(\langle n \rangle , \langle n'' \rangle )
+.\]
+sends $\alpha : \langle n \rangle , \langle n' \rangle , \beta : \langle n' \rangle \to \langle n'' \rangle $ to $\beta \circ \alpha : \langle n \rangle \to \langle n'' \rangle $, and the rectilinear embeddings \[
+f_j : \Box^k \times \alpha ^{-1}(j) \to \Box^k ,\quad f'_{j'}: \Box^k \times \beta ^{-1}(j') \to \Box^k
+.\]
+are sent to \[
+f'_{j'} \circ (\coprod_{j \in \alpha ^{-1}(\beta ^{-1}(j'))} f_j) : \Box^k \times (\beta \circ \alpha ) ^{-1} (j') \to \Box^k
+.\]
+\end{enumerate}
+
+We call $^t \mathbb{E}_k^{\otimes }$ the topological little $k$-cube operad.
+
+Define the $\infty$-category $\mathbb{E}_k^\otimes $ as the topological nerve of $^t \mathbb{E}_k^\otimes $.
+\end{defn}
+
+\begin{prop}
+$\mathbb{E}_k^\otimes $ is an $\infty$-operad.
+\end{prop}
+
+
+
+
+
+
+
+
+
+
+\begin{defn}
+We call $\mathbb{E}_k^\otimes $ the $\infty$-little $k$-cube operad. 
+\end{defn}
+
+\begin{rmk}
+There are many variations to definition \ref{defn:Ek} by replacing the spaces $\operatorname{Rect}(\Box^k \times \alpha ^{-1}(j), \Box^k)$ by some other ones. There are two important variants:
+\begin{enumerate}
+\item One may replace $\Box^k$ with $D^k$, and define a rectilinear embedding  $D^k \to D^k$ as one which extends to $\mathbb{R}^k \to \mathbb{R}^k$ as $v \mapsto \lambda v + v_0 $ for some $\lambda > 0$ and $v_0 \in \mathbb{R}^k$. That is, a uniform radial scaling and a translation. The resulting topological category is referred to as the ``little $k$-disk operad'' and its topological nerve is once again an $\infty$-operad, rightfully called the ``$\infty$-little $k$-disk operad.'' 
+
+By \cite{may1997operads} and \cite{Lambrechts_Volić_2014}, for any finite set $S$ there is a canonical homotopy equivalence between $\operatorname{Rect}(\Box^k \times S, \Box^k)$, $\operatorname{Rect}(D^k \times S, D^k)$ and $\operatorname{Conf}_{|S|}(\mathbb{R}^k)$ the configuration space of $|S|$-many distinct points in $\mathbb{R}^k$. Hence the topological little $k$-cube operad is homotopy equivalent to the topological little $k$-disk operad. Passing through the homotopy coherent nerve gives an equivalence between the $\infty$-little $k$-cube operad and the $\infty$-little $k$-disk operad. 
+
+\item One may replace $\Box^k$ with $D^k$, and define a ``projective isometry'' $f: D^k \to D^k$ as one which extends to $\mathbb{R}^k \to \mathbb{R}^k$ as $v \mapsto \lambda Rv + v_0 $ for some $R\in SO(k)$, $\lambda > 0$ and $v_0 \in \mathbb{R}^k$. That is, a rotation followed by a uniform radial scaling, then a translation. The resulting topological category $^t \mathbb{E}_{SO(k)}^\otimes $ is referred to as the ``framed little $k$-disk operad'' and its topological nerve $\mathbb{E}_{SO(k)}^\otimes $ is once again an $\infty$-operad, rightfully called the ``$\infty$-framed little $k$-disk operad.''
+
+This operad (both the topological and the $\infty$-version) is not equivalent to the ordinary little $k$-disk/cube operad for $k\geq 2$. Heuristically speaking, the $SO(k)$ rotational information assigned to the embedded disks is the classifying space $BSO(k)$. When $k\geq 2$ this space is no longer contractible, hence the homotopy theory of projective isometries is different from the homotopy theory of rectilinear embeddings.
+
+\item Similar to variation 2, one may further allow $R \in O(k)$ to include orientation reversal. The resulting topological category is denoted $^t \mathbb{E}_{O(k)}^{\otimes }$ and the topological nerve $\mathbb{E}^\otimes _{O(k)}$ is an $\infty$-operad.
+\end{enumerate}
+\end{rmk}
+
+\begin{eg}
+It is widely understood that $S^{k-1}$ is an $\mathbb{E}_k^\otimes $-algebra object in $\operatorname{Bord}_k^{fr}$. Precisely, this means that there is a map of $\infty$-operads \[
+\mathbb{E}_k^{\otimes } \to \Omega^{k-1} \operatorname{Bord}_k^{fr, \otimes }
+.\]
+sending $\langle 1 \rangle $ to the object $S^2$. 
+
+Additionally, $S^{k-1}$ is understood to be an $\mathbb{E}_{SO(k)}^\otimes $-algebra object in $\Omega^{k-1}\operatorname{Bord}_k^{SO(k), \otimes }$, and an $\mathbb{E}_{O(k)}^{\otimes}$-algebra object in $\Omega^{k-1}\operatorname{Bord}_k^{O(k), \otimes }$. \footnote{Note the infamous trap in naming conventions: associated to the \textit{framed} little $k$-disk operad is $S^{k-1}$ as an \textit{oriented} manifold.} Though, at the time of this writing, we are not aware of a thorough treatment in existing literature.
+\end{eg}
+
+
+Recall \cite{hatcher2008diffeomorphism}'s construction of the space of connect sum configurations:
+\begin{notations}
+Let $G$ be a graph and $v$ be a vertex. Let $HE(v) = DE(v) \cup E(v)$ be the set of half edges of $v$, written as a union of unpaired half edges $DE(v)$ and the paired half edges $E(v)$. We say $v$ has valency $|E(v)|$ and deficiency $|DE(v)|$.
+\end{notations}
+
+\begin{defn} \label{defn:C(M)}
+($C(M)$) Let $M= P_1 \# \dots \#P_m \#(S^2\times S^1)^g$ be a closed oriented 3-manifold, where $P_i$ are oriented irreducible 3-manifolds. Let $G$ be a finite connected graph with $m$ of its vertices labelled $1, \dots , m$ and such that all unlabelled vertices have valence $\geq 3$ and the fundamental group is free of rank $g$. Let
+\[
+C_G(M) = \left\{ (r_e, l_e, D^3_e \hookrightarrow P_i, D_e^3 \hookrightarrow S^3_v ) \right\}
+\]
+over all edges $e$ and all unlabelled vertices $v$ of $G$, where $r_e>0, l_e>0 $ and embeddings $D^3_e \hookrightarrow P_i$ and $D^3_e \hookrightarrow S^3_v$, the latter being an isometry on its boundary. Let $\overline{C_G}(M)$ be the same as $C_G(M)$ except now allow $l_e$ to go to $0$. Let $G/e$ denote the graph by contracting the edge $e$. Then define \[
+C(M) = \coprod_{G} \overline{C_G}(M) / \sim
+.\]
+where a configuration with $l_e=0$ is identified with the same one after contracting the edge $e$.
+\end{defn}
+
+The space $C(M)$ is best thought of as all the possible ways to ``build '' $M$ from $P_i$ factors. To incorporate spherical boundaries, we need to introduce unpaired half edges corresponding to $S^2$ boundaries, one of which is distinguished and corresponds to the outgoing boundary.
+
+\begin{defn} \label{defn:C(M)par}
+($C^{\partial, n}_{SO}(M)$) Let $M= P_1 \# \dots \#P_m \#(S^2\times S^1)^g$ be a closed oriented 3-manifold, where $P_i$ are oriented irreducible 3-manifolds. Let $G$ be a finite connected graph with $m$ of its vertices labelled $1, \dots , m$ and such that all unlabelled vertices have valence $\geq 3$ and the fundamental group is free of rank $g$, and such that it has $n+1$-many unpaired half edges, one of which is distinguished. Let
+\[
+C_{SO,G}^{\partial ,n}(M) = \left\{ (r_e, l_e, D^3_e \hookrightarrow P_i, D^3 \hookrightarrow S^3_v, D^3_\epsilon \hookrightarrow P_i, D^3_\epsilon \hookrightarrow S^3_v ) \right\}
+\]
+over all edges $e$ and all unpaired half edges $\epsilon$ and all unlabelled vertices $v$ of $G$, where $r_e>0, l_e>0 $ and embeddings $D^3_e \hookrightarrow P_i$ and $D^3_e \hookrightarrow S^3_v$, the latter being an isometry on its boundary. The half-edge embeddings $D^3_\epsilon \hookrightarrow P_i, D^3_\epsilon \hookrightarrow S^3_v $ are orientation-preserving and have disjoint images. Let $\overline{C_{SO,G}^{\partial ,n}}(M)$ be the same as $C_{SO,G}^{\partial ,n}(M)$ except now allow $l_e$ to go to $0$. Let $G/e$ denote the graph by contracting the edge $e$. Then define \[
+C_{SO}^{\partial ,n}(M) = \coprod_{G} \overline{C_{SO}^{\partial ,n}}(M) / \sim
+.\]
+\end{defn}
+
+The space $C^{\partial ,n}_{SO} (M)$ is $C(M)$ but now one remembers incoming and outgoing spherical boundary data. This is the oriented version-- all the irreducible factors are oriented, and all edge embeddings $D^3_e \hookrightarrow S^3_v, D^3_e \hookrightarrow P_i$ oriented, and the boundary embeddings $D^3_\epsilon \hookrightarrow S^3_v, D^3_\epsilon \hookrightarrow P_i$ (those corresponding to half edges) are also oriented. 
+
+\noindent \textbf{Variation}
+There exists an obvious variation, one where we upgrade the orientation to the more restrictive framed setting. Call the space $C^{\partial ,n}_{fr}(M)$, where $M$ is now a framed closed $3$-manifold, and the $P_i$ factors are also framed. All embeddings are framing-preserving embeddings. \footnote{We will be intentionally vague about this, since this is only a sketch definition.} 
+
+\begin{rmk}
+The definition for the configuration space of the un-oriented case is less straightforward, so we won't attempt to present it here. However, we can make some suggestions. Call this configuration space $C^{\partial ,n}_{O}(M)$, where $M= P_1 \# \dots \# P_m \#(S^2\times S^1)^g \# (S^2 \overset{\sim}{\times}S^1)^{g'}$. In the unoriented case there exists a reducible prime $S^2 \widetilde{\times} S^1$ which is a $S^2$ bundle over $S^1$, defined as \[
+S^2 \widetilde{\times} S^1 = S^2 \times [0,1] / (x,0) \sim (r(x),1)
+.\]
+where $r:S^2 \to S^2$ is the antipodal map, in particular orientation reversing.\footnote{Unlike $S^2\times S^1$ where the identification can be made as $(x,0)\sim (x,1)$.} Hence we need the underlying graphs to have fundamental groups free of rank $g+g'$.
+
+We would need the attaching tubes $D^3_e \times I_{e}$ as well as the orientation-reversing version of these tubes, defined as \[
+\left( D^3_e \times I_e  \right) \coprod D^3 / (x,1) \sim r(x)
+.\]
+where $r:D^3 \times D^3$ is again the antipodal map.
+\end{rmk}
+
+Setting aside the issue of the unoriented configuration space, we define an operad which captures the information in the oriented configuration space:
+
+\begin{defn} \label{defn:tL}
+($^t \mathbb{L}^\otimes $) is a topological category defined as follows
+\begin{enumerate}
+\item The objects are $\langle n \rangle $, the same as $\mathcal{F}in_*$.
+\item A morphism from $\langle m \rangle $ to $\langle n \rangle $ consists of the following data:
+\begin{enumerate}
+\item a morphism $\alpha : \langle m \rangle \to \langle n \rangle $ in $\mathcal{F}in_*$
+\item for every $j = 1, \dots , n$, a non-negative integer $g_j \geq 0$ and an element $h_j \in \operatorname{BDiff}(\coprod_{i \in I_j} P_i)$, where $P_i$ are framed irreducible 3-manifolds.
+\item for every $j=1, \dots ,n$, a framed connect sum configuration $f_j \in C^{\partial , \mid \alpha ^{-1}(j) \mid } _{fr}(M)$ where $M=\left( \#_{i\in I_j} P_i \right) \# (S^2\times S^1)^{g_j}$.
+\end{enumerate}
+\item Composition is given by
+\begin{enumerate}
+\item send $\alpha : \langle m \rangle \to \langle n \rangle $ and $\beta : \langle n \rangle \to \langle n' \rangle $ to the composition $\beta \circ \alpha : \langle m \rangle \to \langle n' \rangle $.
+\item If $g_j\geq 0$, $h_j \in \operatorname{BDiff}(\coprod_{i \in I_j}P_i)$ for $j = 1, \dots , n'$ and $g_k\geq 0$, $h_k \in \operatorname{BDiff}(\coprod_{i \in I_k}P_{i})$ for $k = 1, \dots , n''$ are the data to be composed, their composition is given by $\overline{g}_k = g_k + \sum_{j \in \alpha ^{-1}(k)}^{ } g_j $ and $\overline{h}_k  $ is the image of $(h_j, h_k)_{j\in \alpha ^{-1}(k)}$ under the natural map \[
+\left( \prod_{j \in \alpha ^{-1}(k)} \operatorname{BDiff}\left(\coprod_{i \in I_j} P_i \right) \right)  \times \operatorname{BDiff}\left(\coprod_{i \in I_k} P_i \right) \to \operatorname{BDiff}(\coprod_{i \in \cup_{j \in \alpha ^{-1}(k)} I_j \cup I_k}P_i ) 
+.\]
+\item If $f_j $ for $j = 1, \dots , n'$ and $f_k$ for $k=1, \dots , n''$ are the framed connect sum configurations over the graphs $G_j$ and $G_k$ respectively, their composition $\overline{f}_k$ is a configuration over the graph $\overline{G}_k$ obtained by connecting the incoming half-edges of $G_k$ with the outgoing half-edges of $\left\{ G_j, j\in \alpha ^{-1}(k) \right\}$. The configuration $\overline{f}_k$ itself is the union of the configurations $\left\{ f_j \right\}_{j\in \alpha ^{-1}(k)}$ and $f_k$.
+\end{enumerate}
+\end{enumerate}
+\end{defn}
+
+\begin{rmk}
+The natural map in item 3.b requires some explaining. There is a natural map \[
+\operatorname{BDiff}(X ) \times \operatorname{BDiff}(Y ) \to \operatorname{BDiff}(X \coprod Y ) 
+.\]
+which is induced by the natural map $\operatorname{Diff}(X ) \times \operatorname{Diff}(Y ) \to \operatorname{Diff}(X\coprod Y ) $. If $X$ is not diffeomorphic to $Y$, the target is just $\operatorname{Diff}(X ) \times \operatorname{Diff}(Y ) $ and this map is the identity. If $X$ is diffeomorphic to $Y$, however, the target now must include the diffeomorphism swapping the two, which is a separate path component from the identity component.
+
+In our model of $\operatorname{BDiff}(X) = \operatorname{Emb}(X, \mathbb{R}^\infty) / \operatorname{Diff}(X ) $, we can give a geometric construction. Fix two embeddings \[
+i_0, i_1 : \mathbb{R}^\infty \to \mathbb{R}^\infty
+.\]
+with disjoint images. Then send $[e_X] \in \operatorname{BDiff}(X ) = \operatorname{Emb}(X, \mathbb{R}^\infty) / \operatorname{Diff}(X ) $ and $[e_Y] \in \operatorname{BDiff}(Y )= \operatorname{Emb}(Y, \mathbb{R}^\infty) / \operatorname{Diff}(Y )  $ to the class of embedding $X \coprod Y \to \mathbb{R}^\infty$ given by \[
+x \mapsto i_0 (e_X(x)) ,\quad y \mapsto i_1 (e_Y(y))
+.\]
+This is well defined because precomposing $e_X$ and $e_Y$ by diffeomorphisms corresponds to precomposing the union embedding by an element of $\operatorname{Diff}(X\coprod Y) $.
+\end{rmk}
+
+\textbf{Variation} Define $^t \mathbb{L}^\otimes _{SO}$ similarly, except now 2.b the $P_i$ are oriented irreducible 3-manifolds, and 2.c the configuration $f_j \in C^{\partial , \mid \alpha ^{-1}(j) \mid } _{SO}(M)$ is an oriented connect sum configuration.
+
+\begin{defn} \label{defn:L}
+Denote by $\mathbb{L}^\otimes $ the topological nerve of $^t \mathbb{L}^\otimes $, and by $\mathbb{L}^\otimes _{SO}$ the topological nerve of $^t \mathbb{L}^\otimes _{SO}$.
+\end{defn}
+
+\begin{prop}
+The $\infty$-categories $\mathbb{L}^\otimes $ and $\mathbb{L}^\otimes _{SO}$ are $\infty$-operads.
+\end{prop}
+
+\begin{proof}
+We show that $\operatorname{Sing}(^t \mathbb{L}^\otimes )$ is canonically isomorphic to the simplicial category $\mathcal{O}^\otimes $, constructed via \cite[Notation 2.1.1.22]{lurie2017higheralgebra}, of a fibrant simplicial coloured operad $\mathcal{O}$. Therefore $\mathbb{L}^\otimes = N(\operatorname{Sing}(^t \mathbb{L}^\otimes )) = N(\mathcal{O}^\otimes ) = N^\otimes (\mathcal{O})$ is the operadic nerve of $\mathcal{O}$, which by \cite[Proposition 2.1.1.27]{lurie2017higheralgebra} is an $\infty$-operad.
+
+Let $\mathcal{O}$ be the simplicial coloured operad with a single object $D^3$, with  \[
+\operatorname{Mul}_{\mathcal{O}}(\left\{ D^3 \right\} _{i\in I}, D^3) = \operatorname{Sing}(\operatorname{Map}_{^t \mathbb{L}^\otimes } (\langle n \rangle , \langle 1 \rangle )^a)
+\]
+where $a: \langle n \rangle \to \langle 1 \rangle $ is the unique active map, sending $*$ to $*$ and everything else to $1$, and $\text{Map}_{^t \mathbb{L}^\otimes }(\langle n \rangle , \langle 1 \rangle )^a$ is the subspace of morphisms with data $a$ as the map in $\mathcal{F}in_*$.
+
+
+
+The singular complex of any topological space is Kan. So $\mathcal{O}$ is a fibrant simplicial one-coloured operad. By construction, there is a canonical isomorphism between $\operatorname{Sing}(^t \mathbb{L}^\otimes )$ and $\mathcal{O}^\otimes $. Hence $\mathbb{L}^\otimes $ is an $\infty$-operad.
+
 The proof for the oriented version is analogous.
-The∞-operadL ⊗ has a few notable sub-operads, induced by sub-categories of tL⊗.
-Same goes for the oriented versionL⊗
-SO. We shall introduce them below and show that
-one of them is equivalent toE ⊗
-3 .
-Definition 5.3.15.( tL∗,⊗) Consider the subcategory tL∗,⊗ of the topological category
-tL⊗ defined by
-1. The objects are⟨n⟩, the same as before and as those ofFin ∗.
-2. A morphism from⟨m⟩to⟨n⟩consists of the following data:
-(a) a morphismα:⟨m⟩→⟨n⟩inFin ∗.
-(b) for everyj= 1,...,n, a framed connect sum configurationf j∈C ∂
-fr,G(S3)⊂
-C∂
-fr (S3), whereGis the graph with a single vertexvandd≥1 unpaired
-half-edges.
-3. The composition is the same as those of tL⊗.
-Remark5.3.16.This is a subcategory of tL⊗ because we have chosen allg j to be 0,
-and allh j∈BDiff(∅) to be the unique point. 6 ThenM,which is supposed to appear
-in the configurationC ∂
-fr (M), is now the unit under connect sum, which isS 3.
-Definition 5.3.17.LetL ∗,⊗ be the topological nerve of tL∗,⊗. It is an∞-operad.
-Moreover, it is an∞-sub-operad ofL ⊗.
-6There is a unique functionf:∅→∅which is vacuously smooth and vacuously its own inverse. Hence
-Diff(∅) ={f}. Recall that our model for the classifying spaces is BDiff(M) ∼= Emb(M,R∞)/Diff(M). There
-is only one map from the empty set to any (possibly empty) set:e:∅→S, which is vacuously a smooth
-embedding whenS=R ∞. Hence BDiff((∅)) ∼=∗the one-point space in our model.
-83
-Proposition 5.3.18.There is a canonical isomorphism between tL∗,⊗ and tE⊗
-3 .
-Proof.The two topological categories have the same objects. So we only need to show
-that they agree on morphisms. Fix aj= 1,...,n. A framed connect sum configuration
-fj∈C ∂
-fr,G(S3) whereGis the single vertexvgraph withd≥1 unpaired half edges is
-a tuple
-fj = (D3
-ϵ ,→S 3)ϵ∈DE(v).
-where the embeddings are rectilinear and whose images are disjoint. HereDE(v) is
-the set of half-edges at the only vertexv. We may delete the interior of the image of
-the rectilinear embeddingD 3
-ϵ! ,→S 3 corresponding to the one distinguished half-edge
-ϵ!∈DE(v). After which we are left with a collection of rectilinear disjoint embeddings
-D3
-ϵ ,→(S 3\int(im(D 3
-ϵ!)))∼=D3, ϵ∈DE(v)−ϵ !.
-We may identify this with the morphisms of tE⊗
-3
-Rect(D3×α−1(j),D 3).
-whered=|α −1(j)|+ 1.
-Corollary 5.3.19.There is a canonical isomorphism of∞-operads betweenL ∗,⊗ and
-E⊗
-3 . Moreover,E ⊗
-3 is an∞-sub-operad ofL ⊗.
-Another sub-operad of interest is the “spike ball” operad, defined below.
-Definition 5.3.20.(Spike Ball Operad) The “spike ball” operad tL⋆,⊗ is the subcat-
-egory of the topological category tL⊗ defined by
-1. The objects are⟨n⟩, the same as before and as those ofFin ∗.
-2. A morphism from⟨m⟩to⟨n⟩consists of the following data:
-(a) a morphismα:⟨m⟩→⟨n⟩inFin ∗.
-(b) for everyj= 1,...,n, an elementh j∈BDiff(‘
-i∈IjPi), whereP i are framed
-irreducible 3-manifolds.
-(c) for everyj= 1,...,n, a framed connect sum configurationf j∈C ∂,|α−1(j)|
-fr,G (M)⊂
-C∂,|α−1(j)|
-fr (M), whereM= # i∈IjPi, andGis a graph with an unlabelled
-vertexvand|α −1(j)|unpaired half edges atv, and connected tovare
-Ij-labelled vertices. SoGis the star graph with one central vertexvand
-|Ij|-many leaves, wherevalso has|α −1(j)|unpaired half-edges.
-3. The composition is the same as those of tL⊗.
-An example of the type of star graphGcan be found in figure 5.1-(a). LetL ⋆,⊗ be
-the topological nerve of tL⋆,⊗. It is an∞-category and moreover an∞-operad. Call
-it the “∞-spike-ball operad.”
-Remark5.3.21.This is a subcategory of tL⊗ because we have chosen allg j to be 0.
-Also note that tL∗,⊗ is a subcategory of tL⋆,⊗, where for anyj= 1,...,n,I j =∅so
-there are no irreducible factors in BDiff( ‘
-i∈IjPi).
-Corollary 5.3.22.E ⊗
-3 is an∞-sub-operad ofL ⋆,⊗.
-84
-1 2
-P1 P2
-(a) (b)
-Figure 5.1: (a) An example of the star graphGin the spike ball operad. In this particular
-case,Ghas|α −1(j)|+1 = 3 half edges, andI j ={1,2}labelled vertices. (b) illustrate the
-particular bordism [M]∈BDiff(M)represented byGand the connect sum configurationf.
-The two dashed spheres are considered incoming, and the distinguished half edge is the big
-sphere, considered outgoing.
-Lastly, we need to define the∞-endomorphism operad ofS 2. This is most easily
-done using complete Segal spaces as there is previous work by Calaque and Scheim-
-bauer.
-Definition 5.3.23.LetVbe a finite dimensional real vector space. Define
- 
-PΩn−1BordV
-n
-
-k
-to be the set of tuples
-(M,t 0,...,t k).
+\end{proof}
+
+The $\infty$-operad $\mathbb{L}^\otimes $ has a few notable sub-operads, induced by sub-categories of $^t \mathbb{L}^\otimes $. Same goes for the oriented version $\mathbb{L}_{SO}^\otimes $. We shall introduce them below and show that one of them is equivalent to $\mathbb{E}_3^{\otimes }$.
+
+\begin{defn}
+($^t \mathbb{L}^{*, \otimes }$) Consider the subcategory $^t \mathbb{L}^{*, \otimes }$ of the topological category $^t \mathbb{L}^{\otimes }$ defined by 
+\begin{enumerate}
+\item The objects are $\langle n \rangle $, the same as before and as those of $\mathcal{F}in_*$.
+\item A morphism from $\langle m \rangle $ to $\langle n \rangle $ consists of the following data:
+\begin{enumerate}
+\item a morphism $\alpha : \langle m \rangle \to \langle n \rangle  $ in $\mathcal{F}in_*$.
+\item for every $j=1, \dots ,n$, a framed connect sum configuration $f_j \in C^\partial _{fr, G}(S^3) \subset C^\partial _{fr}(S^3)$, where $G$ is the graph with a single vertex $v$ and $d\geq 1$ unpaired half-edges.
+\end{enumerate}
+\item The composition is the same as those of $^t \mathbb{L}^\otimes $.
+\end{enumerate}
+\end{defn}
+
+\begin{rmk}
+This is a subcategory of $^t \mathbb{L}^\otimes $ because we have chosen all $g_j$ to be $0$, and all $h_j \in \operatorname{BDiff}(\emptyset ) $ to be the unique point.\footnotemark{} Then $M$ ,which is supposed to appear in the configuration $C^\partial _{fr}(M)$, is now the unit under connect sum, which is $S^3$. 
+
+\footnotetext{There is a unique function  $f: \emptyset \to \emptyset$ which is vacuously smooth and vacuously its own inverse. Hence $\operatorname{Diff}(\emptyset  ) = \left\{ f \right\}  $. Recall that our model for the classifying spaces is $\operatorname{BDiff}(M) \cong \operatorname{Emb}(M, \mathbb{R}^\infty) / \operatorname{Diff}(M ) $. There is only one map from the empty set to any (possibly empty) set: $e: \emptyset \to S$, which is vacuously a smooth embedding when $S = \mathbb{R}^\infty$. Hence $\operatorname{BDiff}((\emptyset) ) \cong * $ the one-point space in our model. } 
+\end{rmk}
+
+\begin{defn}
+Let $\mathbb{L}^{*, \otimes }$ be the topological nerve of $^t \mathbb{L}^{*, \otimes }$. It is an $\infty$-operad. Moreover, it is an $\infty$-sub-operad of $\mathbb{L}^\otimes $.
+\end{defn}
+
+\begin{prop}
+There is a canonical isomorphism between $^t \mathbb{L}^{*, \otimes }$ and $^t \mathbb{E}_3^\otimes $. 
+\end{prop}
+
+\begin{proof}
+The two topological categories have the same objects. So we only need to show that they agree on morphisms. Fix a $j = 1, \dots , n$. A framed connect sum configuration $f_j \in C^{\partial }_{fr, G}(S^3)$ where $G$ is the single vertex $v$ graph with $d\geq 1$ unpaired half edges is a tuple \[
+f_j = (D^3_\epsilon \hookrightarrow S^3)_{\epsilon \in DE(v)}
+.\]
+where the embeddings are rectilinear and whose images are disjoint. Here $ DE(v)$ is the set of half-edges at the only vertex $v$. We may delete the interior of the image of the rectilinear embedding $D^3_{\epsilon^!} \hookrightarrow S^ 3$ corresponding to the one distinguished half-edge $\epsilon^! \in DE(v)$. After which we are left with a collection of rectilinear disjoint embeddings \[
+D^3_\epsilon \hookrightarrow (S^3 \setminus \operatorname{int}(im(D^3_{\epsilon^!})) )\cong D^3 ,\quad  \epsilon \in DE(v) - \epsilon^!
+.\]
+We may identify this with the morphisms of $^t\mathbb{E}_3^\otimes $\[
+\operatorname{Rect}(D^3 \times \alpha ^{-1}(j), D^3)
+.\]
+where $d = |\alpha ^{-1}(j)| +1$.
+\end{proof}
+
+
+\begin{cor}
+There is a canonical isomorphism of $\infty$-operads between $\mathbb{L}^{*, \otimes }$ and $\mathbb{E}_3^\otimes $. Moreover, $\mathbb{E}_3^\otimes $ is an $\infty$-sub-operad of $\mathbb{L}^\otimes $.
+\end{cor}
+
+Another sub-operad of interest is the ``spike ball'' operad, defined below.
+
+\begin{defn}
+(Spike Ball Operad) The ``spike ball'' operad $^t \mathbb{L}^{\bigstar, \otimes }$ is the subcategory of the topological category $^t \mathbb{L}^\otimes $ defined by 
+\begin{enumerate}
+\item The objects are $\langle n \rangle $, the same as before and as those of $\mathcal{F}in_*$.
+\item A morphism from $\langle m \rangle $ to $\langle n \rangle $ consists of the following data:	
+\begin{enumerate}
+\item a morphism $\alpha : \langle m \rangle \to \langle n \rangle $ in $\mathcal{F}in_*$.
+\item for every $j = 1, \dots , n$, an element $h_j \in \operatorname{BDiff}(\coprod_{i \in I_j} P_i ) $, where $P_i$ are framed irreducible $3$-manifolds.
+\item for every $j=1, \dots , n$, a framed connect sum configuration $f_j \in C^{\partial , \mid \alpha ^{-1}(j) \mid }_{fr, G}(M) \subset C^{\partial, \mid \alpha ^{-1}(j) \mid } _{fr}(M)$, where $M = \#_{i \in I_j} P_i $, and $G$ is a graph with an unlabelled vertex $v$ and $\mid \alpha ^{-1}(j) \mid $ unpaired half edges at $v$, and connected to $v$ are $I_j$-labelled vertices. So $G$ is the star graph with one central vertex $v$ and $|I_j|$-many leaves, where $v$ also has $\mid \alpha ^{-1}(j) \mid $ unpaired half-edges.
+\end{enumerate}
+\item The composition is the same as those of  $^t \mathbb{L}^\otimes $.
+\end{enumerate}
+
+An example of the type of star graph $G$ can be found in figure \ref{fig:spikeball}-(a). 
+Let $\mathbb{L}^{\bigstar, \otimes }$ be the topological nerve of $^t \mathbb{L}^{\bigstar, \otimes }$. It is an $\infty$-category and moreover an $\infty$-operad. Call it the ``$\infty$-spike-ball operad.''
+\end{defn}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{spikeball}
+    \caption[Spike ball operad example]{(a) An example of the star graph $G$ in the spike ball operad. In this particular case, $G$ has $\mid \alpha ^{-1}(j) \mid + 1 =3$ half edges, and $I_j=\left\{ 1,2 \right\} $ labelled vertices. (b) illustrate the particular bordism $[M] \in \operatorname{BDiff}( M) $represented by $G$ and the connect sum configuration $f$. The two dashed spheres are considered incoming, and the distinguished half edge is the big sphere, considered outgoing.}
+    \label{fig:spikeball}
+\end{figure}
+
+\begin{rmk}
+This is a subcategory of $^t \mathbb{L}^\otimes $ because we have chosen all $g_j$ to be $0$. Also note that $^t \mathbb{L}^{*, \otimes }$ is a subcategory of $^t \mathbb{L}^{\bigstar, \otimes }$, where for any $j = 1, \dots , n$, $I_j = \emptyset$ so there are no irreducible factors in $\operatorname{BDiff}(\coprod_{i \in I_j}P_i) $.
+\end{rmk}
+
+\begin{cor}
+$\mathbb{E}_3^\otimes $ is an $\infty$-sub-operad of $\mathbb{L}^{\bigstar, \otimes }$.
+\end{cor}
+
+
+Lastly, we need to define the $\infty$-endomorphism operad of $S^2$. This is most easily done using complete Segal spaces as there is previous work by Calaque and Scheimbauer. 
+
+\begin{defn} 
+Let $V$ be a finite dimensional real vector space. Define $\left( P\Omega^{n-1}Bord_n^V \right)_k$ to be the set of tuples \[
+(M, t_0, \dots , t_k)
+.\]
 such that
-1.t 0≤t 1≤···≤t k an ordered tuple ofk+ 1 real numbers.
-2.Mis a closedn-dimensional submanifold ofV×Rand the compositionπ:M ,→
-V×R↠Ris proper.
-3. For each 0≤i≤k, and eachx∈π −1(ti), the mapπis submersive atx.
-Viewing
- 
-PΩn−1BordV
-n
-
-k as a subspace of
-Sub(V×R)×R k+1,Sub(V×R) =
-a
-[M]
-Emb(M,V×R)/Diff(M).
+\begin{enumerate}
+\item $t_0 \leq t_1 \leq \dots \leq t_k$ an ordered tuple of $k+1$ real numbers.
+\item $M$ is a closed $n$-dimensional submanifold of $V \times \mathbb{R}$ and the composition $\pi :M \hookrightarrow V\times \mathbb{R} \twoheadrightarrow \mathbb{R}$ is proper.
+\item For each $0\leq i\leq k$, and each $x\in \pi ^{-1}(t_i)$, the map $\pi $ is submersive at $x$.
+\end{enumerate}
+Viewing $\left( P\Omega ^{n-1}Bord_n^V \right)_k$ as a subspace of \[
+\operatorname{Sub}(V\times \mathbb{R})\times \mathbb{R}^{k+1} ,\quad \operatorname{Sub}(V\times \mathbb{R}) = \coprod_{[M]} \operatorname{Emb}(M, V\times \mathbb{R}) / \operatorname{Diff}(M)
+.\]
 we equip it with the subspace topology.
-Note that
- 
-PΩn−1BordV
-n
-
-• is a simplicial space. The simplicial face maps are given
-by forgetting at, and the simplicial degeneracy maps are given by duplicating at.
-LetPΩ n−1Bordn = lim−→V⊆R∞PΩn−1BordV
-n . At thek-th level, we may think of it
-to consist of tuples
-(M,t 0,...,t k).
-whereMis now a closedn-dimensional submanifold ofR ∞ (technicallyR∞×R).
-Claim 5.3.24.PΩ n−1Bordn is a Segal space.
-85
-Definition 5.3.25.We define the (∞,1) category ofn−1 manifolds and bordisms
-as the completion of the Segal spacePΩ n−1Bordn. Loosely speaking this category
-consists of the following data:
-•The objects are closedn−1 manifolds, corresponding to then−1 dimensional
-preimageπ−1(t0)⊂MwhereMis ann-manifold.
-•The 1-morphisms are compact bordisms, corresponding to then-dimensional
-preimageπ−1([t0,t 1])⊂M.
-•The 2-morphisms are diffeomorphisms between bordisms.
-•The 3-morphisms are isotopes of diffeomorphisms
-•...
-VariationsBy demanding the manifolds ofPΩ n−1 Bordn be framed or oriented, we
-obtain the standard framed or oriented variations of Ωn−1 Bordn, denoted as Ωn−1 Bordfr
-n
-or Ωn−1 BordSO
-n .
-Comment5.3.26.There are a few versions ofPBord V floating in the literature. They
-differ mostly on condition 3. The original sketch was proposed by [Lur08], which was
-later corrected by [CS19] . Our definition most closely resembles that of [Jor16], which
-was adapted from [CS19].
-Remark5.3.27.IfCis a symmetric monoidal (∞,n)-category with unit1, then ΩC=
-EndC(1) = HomC(1,1) is a symmetric monoidal (∞,n−1)-category. As the notation
-suggests, Ωk−1Bordk has an alternative construction as thek−1 looping of the (∞,k)-
-categoryBord k. In fact, this construction is more precise than the one we presented
-above– see [CS19] if our presentation is insufficient.
-Remark5.3.28.The (∞,1)-category Ω n−1Bordn inherits a symmetric monoidal struc-
-ture fromBord n. We shall be intentionally vague about what we mean by “symmetric
-monoidal structure.” Beyond the heuristics of disjoint union, a precise definition can
-be found in [Scheimbauer]. The symmetric monoidal category Ω n−1Bordn determines
-7 an∞-operadp: Ω n−1Bord⊗
-n →N(Fin ∗). Roughly speaking, the fibre ofpover
-⟨m⟩consists ofm-tuples ofn−1 dimensional closed manifolds, and a morphism over
-α:⟨m⟩→⟨m ′⟩is a bordism.
-Definition 5.3.29.(Endomorphism operad) Givenp:C ⊗ →N(Fin ∗) be an∞-
-operad, and letX∈ Cbe an object. By definition there is an equivalenceC ⊗
-⟨n⟩
-∼=
-Cn induced by the inert mapsρ i :⟨n⟩ → ⟨1⟩. LetX n denote the object ofC ⊗
-⟨n⟩
-corresponding to then-tuple (X,...,X)∈C n. The∞-endomorphism operad ofXis
-defined as the full∞-suboperad
-End⊗
-C (X)⊆C ⊗.
-spanned by the objectsX n in each fiberC ⊗
-⟨n⟩.
-Notations 5.3.30.Let Mul C({X}1≤i≤n,Y) denote the union of the components of
-MapC⊗(Xn,X) over the unique (active) map⟨n⟩→⟨1⟩sending∗to∗and everything
-else to 1.
-7More precisely, one extracts a quasi-category via [Joyal Tierney]. This quasi-category is the∞-category
-which is symmetric monoidal in the sense of Lurie HA, and it is the underlying∞-category of the∞-operad
-Ωn−1Bord⊗
-n .
-86
-Heuristically, the∞-endomorphism operad ofXis the one-coloured∞-operad
-whose multimorphisms are given by those ofC:
-MapEnd⊗
-C (X)(Xn,X) = MulC({X,...,X},X).
-Definition 5.3.31.Let Ω n−1Bordn be the symmetric monoidal∞-category ofn-
-dimensional bordisms. The∞-endomorphism operad ofS n−1 is End⊗
-Ωn−1Bordn
-(Sn−1).
-The connected∞-endomorphism operad ofS n−1 is the sub-operad
-End⊗,conn
-Ωn−1Bordn
-(Sn−1),→End ⊗
-Ωn−1Bordn
-(Sn−1)
+
+Note that $\left( P\Omega^{n-1}Bord_n^V \right)_\bullet$ is a simplicial space. The simplicial face maps are given by forgetting a $t$, and the simplicial degeneracy maps are given by duplicating a $t$.
+\end{defn}
+
+Let $P\Omega^{n-1}Bord_n = \varinjlim_{V \subseteq \mathbb{R}^\infty} P\Omega^{n-1}Bord_n^V$. At the $k$-th level, we may think of it to consist of tuples \[
+(M, t_0, \dots ,t_k)
+.\]
+where $M$ is now a closed $n$-dimensional submanifold of $\mathbb{R}^\infty$ (technically $\mathbb{R}^\infty \times \mathbb{R}$).
+
+\begin{claim}
+$P\Omega^{n-1}Bord_n$ is a Segal space.
+\end{claim}
+
+\begin{defn} 
+We define the $(\infty,1)$ category of $n-1$ manifolds and bordisms as the completion of the Segal space $P\Omega^{n-1}Bord_n$. Loosely speaking this category consists of the following data:
+\begin{itemize}
+\item The objects are closed $n-1$ manifolds, corresponding to the $n-1$ dimensional preimage $\pi ^{-1}(t_0)\subset M$ where $M$ is an $n$-manifold.
+\item The 1-morphisms are compact bordisms, corresponding to the $n$-dimensional preimage $\pi ^{-1}([t_0 ,t_1 ])\subset  M$.
+\item The 2-morphisms are diffeomorphisms between bordisms.
+\item The 3-morphisms are isotopes of diffeomorphisms
+\item  $\dots $
+\end{itemize}
+\end{defn}
+
+\textbf{Variations} By demanding the manifolds of $P\Omega^{n-1}\operatorname{Bord}_n$ be framed or oriented, we obtain the standard framed or oriented variations of $\Omega^{n-1}\operatorname{Bord}_n$, denoted as $\Omega^{n-1}\operatorname{Bord}_n^{fr}$  or $\Omega^{n-1}\operatorname{Bord}_n^{SO}$.
+
+\begin{mycom}
+There are a few versions of $PBord^V$ floating in the literature. They differ mostly on condition 3. The original sketch was proposed by \cite{lurie_classification_2008}, which was later corrected by \cite{Calaque_2019} . Our definition most closely resembles that of \cite{jordan2016topological}, which was adapted from \cite{Calaque_2019}.
+\end{mycom}
+
+\begin{rmk}
+If $\mathcal{C}$ is a symmetric monoidal $(\infty,n)$-category with unit $\mathbf{1}$, then $\Omega \mathcal{C} = \operatorname{End}_{\mathcal{C}}(\mathbf{1})= \operatorname{Hom}_{\mathcal{C}}(\mathbf{1}, \mathbf{1}) $ is a symmetric monoidal $(\infty,n-1)$-category. As the notation suggests, $\Omega^{k-1} Bord_k$ has an alternative construction as the $k-1$ looping of the $(\infty,k)$-category $Bord_k$. In fact, this construction is more precise than the one we presented above-- see \cite{Calaque_2019} if our presentation is insufficient.
+\end{rmk}
+
+\begin{rmk}
+The $(\infty,1)$-category $\Omega^{n-1}Bord_n$ inherits a symmetric monoidal structure from $Bord_n$. We shall be intentionally vague about what we mean by ``symmetric monoidal structure.'' Beyond the heuristics of disjoint union, a precise definition can be found in [Scheimbauer]. The symmetric monoidal category $\Omega^{n-1}Bord_n$ determines 
+\footnote{More precisely, one extracts a quasi-category via [Joyal Tierney]. This quasi-category is the $\infty$-category which is symmetric monoidal in the sense of Lurie HA, and it is the underlying $\infty$-category of the $\infty$-operad $\Omega^{n-1}Bord_n^\otimes$.} 
+an $\infty$-operad $p: \Omega^{n-1}Bord_n^\otimes \to N(\mathcal{F}in_*)$. Roughly speaking, the fibre of $p$ over $\langle m \rangle $ consists of $m$-tuples of $n-1$ dimensional closed manifolds, and a morphism over $\alpha : \langle m \rangle \to \langle m' \rangle $ is a bordism. 
+\end{rmk}
+
+\begin{defn} \label{defn:Endomorphism operad}
+(Endomorphism operad) Given $p: \mathcal{C}^\otimes \to N(\mathcal{F}in_*)$ be an $\infty$-operad, and let $X \in \mathcal{C}$ be an object. By definition there is an equivalence $\mathcal{C}^\otimes _{\langle n \rangle } \cong \mathcal{C}^n$ induced by the inert maps $\rho^i : \langle n \rangle \to \langle 1 \rangle $. Let $X^n$ denote the object of $\mathcal{C}^\otimes_{\langle n \rangle }$ corresponding to the $n$-tuple $(X, \dots , X) \in \mathcal{C}^n$. The $\infty$-endomorphism operad of $X$ is defined as the full $\infty$-suboperad \[
+\operatorname{End}_{\mathcal{C}}^\otimes (X) \subseteq \mathcal{C}^\otimes 
+.\]
+spanned by the objects $X^n$ in each fiber $\mathcal{C}^\otimes_{\langle n \rangle }$.
+\end{defn}
+
+\begin{notations}
+Let $\operatorname{Mul}_{\mathcal{C}}(\left\{ X \right\}_{1\leq i\leq n},Y)$ denote the union of the components of $\operatorname{Map}_{\mathcal{C}^\otimes }(X^n,X)$ over the unique (active) map $\langle n \rangle \to \langle 1 \rangle $ sending $*$ to $*$ and everything else to $1$.
+\end{notations}
+
+Heuristically, the $\infty$-endomorphism operad of $X$ is the one-coloured $\infty$-operad whose multimorphisms are given by those of $\mathcal{C}$: \[
+\operatorname{Map}_{\operatorname{End}_{\mathcal{C}}^\otimes (X) }(X^n, X) = \operatorname{Mul}_{\mathcal{C}}(\{X, \dots , X\}, X)
+.\]
+
+\begin{defn} 
+Let $\Omega^{n-1}Bord_n$ be the symmetric monoidal $\infty$-category of $n$-dimensional bordisms. The $\infty$-endomorphism operad of $S^{n-1}$ is $\operatorname{End}_{\Omega^{n-1}Bord_n}^{\otimes }(S^{n-1}) $. The connected $\infty$-endomorphism operad of $S^{n-1}$ is the sub-operad
+\[
+\operatorname{End}_{\Omega^{n-1}Bord_n}^{\otimes , conn}(S^{n-1}) \hookrightarrow  \operatorname{End}_{\Omega^{n-1}Bord_n}^{\otimes }(S^{n-1})
+\]
 consisting of connected bordisms.
-Similarly, we define the framed∞-endomorphism operad End ⊗
-Ωn−1Bordfr
-n
-(Sn−1), its
-connected sub-operad End⊗,conn
-Ωn−1Bordfr
-n
-(Sn−1) and the oriented∞-endomorphism operad
-End⊗
-Ωn−1BordSOn
-(Sn−1), along with its connected sub-operad End⊗,conn
-Ωn−1BordSOn
-(Sn−1).
-Conjecture 5.3.32.There is a map of∞-operadsf:L ⊗→End⊗
-Ω2 Bordfr
-3
-(S2), whose
-image is End ⊗,conn
-Ω2 Bordfr
-3
-(S2). Furthermore,fis an equivalence of∞-operadsL ⊗ ∼→
-End⊗,conn
-Ω2 Bordfr
-3
-(S2).
-Conjecture 5.3.33.There is a map of∞-operadsf SO :L ⊗
-SO →End ⊗
-Ω2 BordSO
-3
-(S2),
-whose image is End ⊗,conn
-Ω2 BordSO
-3
-(S2). Furthermore,f SO is an equivalence of∞-operads
-L⊗
-SO
-∼→End⊗,conn
-Ω2 BordSO
-3
-(S2).
-Remark5.3.34.The reason behind the proposal is this: by Hatcher’s unfinished draft
-[Hat08], which was proven by [BBS26], for every oriented 3 manifoldMwhose irre-
-ducible factors areP 1,...,P m, with possibly finitely many irreducible prime factors
-S2×S 1, then there exists a homotopy fibre sequence
-C(M)→BDiff(M)→BDiff(
-a
-1≤i≤m
-Pi).
-whereC(M) is the space of connect sum configurations, and the second map is roughly
-the splitting ofM ,→R∞ along splitting spheres, resulting in a collection of irreducible
-factors withD 3 removed and embedded inR ∞. We then cap the missing balls, which
-give the boundary-less irreducible factors ‘
-iPi,→R∞.
-A multimorphism in any of the above∞-endomorphism operads is a bordism from
-copies ofS 2 to a single outgoingS 2. Such a bordism is an element (M,t 0,t 1) of
-BDiff(M)×R 2∼= Emb(M,R∞)/Diff(M)×R 2.
-Hence in order to model the multimorphisms by an operad, we need the operad to
-essentially have BDiff(M) built in, as well as ways to specify its boundaries. The space
-of connect sum configurationsC(M) in the homotopy fibration, over a base point, is our
-intended carrier of this information. To specify the boundaries, we modified he space of
-connect sum configurations to include embeddingsB 3,→S 3,Pi corresponding to newly
-introduced half edges. Hence the operadL ⊗ and the oriented cousinL ⊗
-SO has exactly
-87
-enough information to start from a collection of irreducible 3-manifolds ‘
-iPi ,→R∞
-and form a connect sum through a connect sum configurationf∈C ∂
-fr (M) orC ∂
-SO(M).
-The configurationfalso specifies where along the bounding 3-balls are, so one could
-remove their interior.
-Example 12.Recall thatL ⊗ has an∞-suboperadL ⋆,⊗, the “spike-ball”∞-operad.
-Consider a subset of morphism of⟨1⟩→⟨1⟩given by the following data
-1. the morphismα:⟨1⟩→⟨1⟩is the identity inFin ∗.
-2. an elementh∈BDiff(P) wherePis any fixed framed irreducible 3-manifold.
-3. A configurationf∈C ∂,1
-fr,G(P), whereGis the graph with a single unlabelled
-vertexvconnected via the edgeeto a single labelled vertexp, where there are
-two additional unpaired half edges{ϵ 1,ϵ 2}at the unlabelled vertexv: figure 5.2
-1
-P1
-(a)
-(b)
-Figure 5.2: A simple spike ball example. (a) gives the graphG. (b) provides a visualization
-for the bordism represented byGand a connect sum configurationf.
-The configurationfis equal to the following data
-(re,le,D 3
-e ,→S 3
-v,D 3
-e ,→P,D 3
-ϵ1 ,→S 3
-v,D 3
-ϵ2 ,→S 3
-v).
-where all the embeddings inS 3
-v are rectilinear and have disjoint images. We may delete
-the interior of the image of one of the half-edges, sayD 3
-ϵ2, so what remains ofS 3
-v is
-diffeomorphic to a ballD 3. Then the configurationfcontains the following data
-(re,le,D 3
-e ,→D 3,D 3
-e ,→P,D 3
-ϵ1 ,→D 3).
-Note that there exists a map
-Conf2(D3)×BDiff(P)→L ⋆,⊗.
-Sending a configuration of 2 points inD3 to the centre of the embeddingsD3
-e,D 3
-ϵ1 ,→D 3
-and an elementh∈BDiff(P) to the chosen element as part of the data of⟨1⟩→⟨1⟩.
-Taking the inclusion into the operadL ⊗, passing through the endomorphism operad,
-and finally through a TFTZ, we get a map
-Conf2(D3)×BDiff(P)→L ⋆,⊗,→L⊗→End⊗
-Ω Bordfr
-3
-(S2)→End ⊗
-C (Z(S 2)).
-88
-whose image is over the 1-ary operations. Therefore there is a map
-Conf2(D3)×BDiff(P)→Map C(Z(S 2),Z(S 2)).
-for any TFTZ: Ω 2 Bordfr
-3 →Cand for any framed irreducible 3-manifoldP.
-89
-Appendix A
-Appendix: Definitions and
-Common Results
+
+Similarly, we define the framed $\infty$-endomorphism operad $\operatorname{End}_{\Omega^{n-1}Bord_n^{fr}}^{\otimes }(S^{n-1}) $, its connected sub-operad $\operatorname{End}_{\Omega^{n-1}Bord_n^{fr}}^{\otimes, conn }(S^{n-1}) $ and the oriented $\infty$-endomorphism operad $\operatorname{End}_{\Omega^{n-1}Bord_n^{SO}}^{\otimes }(S^{n-1}) $, along with its connected sub-operad $\operatorname{End}_{\Omega^{n-1}Bord_n^{SO}}^{\otimes, conn }(S^{n-1}) $.
+\end{defn}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{conj} \label{conj:LisEndfr}
+There is a map of $\infty$-operads $f: \mathbb{L}^\otimes \to \operatorname{End}_{\Omega^2 \operatorname{Bord}_3^{fr}}^\otimes (S^2) $, whose image is $\operatorname{End}_{\Omega^2 \operatorname{Bord}_3^{fr}}^{\otimes , conn}(S^2)$. Furthermore, $f$ is an equivalence of $\infty$-operads $\mathbb{L}^\otimes \overset{\sim}{\to} \operatorname{End}_{\Omega^2 \operatorname{Bord}_3^{fr}}^{\otimes , conn}(S^2)$.
+\end{conj}
+
+\begin{conj} \label{conj:LisEndSO}
+There is a map of $\infty$-operads $f_{SO}: \mathbb{L}_{SO}^\otimes \to \operatorname{End}_{\Omega^2 \operatorname{Bord}_3^{SO}}^\otimes (S^2) $, whose image is $\operatorname{End}_{\Omega^2 \operatorname{Bord}_3^{SO}}^{\otimes , conn}(S^2)$. Furthermore, $f_{SO}$ is an equivalence of $\infty$-operads $\mathbb{L}_{SO}^\otimes \overset{\sim}{\to} \operatorname{End}_{\Omega^2 \operatorname{Bord}_3^{SO}}^{\otimes , conn}(S^2)$.
+\end{conj}
+
+\begin{rmk}
+The reason behind the proposal is this: by Hatcher's unfinished draft \cite{hatcher2008diffeomorphism}, which was proven by \cite{boyd2026primedecompositionfibresequence}, for every oriented 3 manifold $M$ whose irreducible factors are $P_1 , \dots , P_m$, with possibly finitely many irreducible prime factors $S^2 \times S^1$, then there exists a homotopy fibre sequence \[
+C(M) \to \operatorname{BDiff}(M ) \to \operatorname{BDiff}(\coprod_{1\leq i\leq m}P_i ) 
+.\]
+where $C(M)$ is the space of connect sum configurations, and the second map is roughly the splitting of $M \hookrightarrow \mathbb{R}^\infty$ along splitting spheres, resulting in a collection of irreducible factors with $D^3$ removed and embedded in $\mathbb{R}^\infty$. We then cap the missing balls, which give the boundary-less irreducible factors $\coprod_{i} P_i \hookrightarrow \mathbb{R}^\infty$.
+
+A multimorphism in any of the above $\infty$-endomorphism operads is a bordism from copies of  $S^2$ to a single outgoing $S^2$. Such a bordism is an element $(M, t_0 ,t_1 )$ of \[
+\operatorname{BDiff}(M ) \times \mathbb{R}^2 \cong \operatorname{Emb}(M, \mathbb{R}^\infty) / \operatorname{Diff}(M ) \times \mathbb{R}^2
+.\]
+
+Hence in order to model the multimorphisms by an operad, we need the operad to essentially have $\operatorname{BDiff}(M ) $ built in, as well as ways to specify its boundaries. The space of connect sum configurations $C(M)$ in the homotopy fibration, over a base point, is our intended carrier of this information. To specify the boundaries, we modified he space of connect sum configurations to include embeddings $B^3 \hookrightarrow S^3, P_i$ corresponding to newly introduced half edges. Hence the operad $\mathbb{L}^\otimes $ and the oriented cousin $\mathbb{L}_{SO}^\otimes $ has exactly enough information to start from a collection of irreducible 3-manifolds $\coprod_i P_i \hookrightarrow \mathbb{R}^\infty$ and form a connect sum through a connect sum configuration $f \in C_{fr}^\partial (M)$ or $C_{SO}^\partial (M)$. The configuration $f$ also specifies where along the bounding 3-balls are, so one could remove their interior.
+\end{rmk}
+
+
+
+
+
+\begin{eg}
+Recall that $\mathbb{L}^\otimes $ has an $\infty$-suboperad $\mathbb{L}^{\bigstar, \otimes }$, the ``spike-ball'' $\infty$-operad. Consider a subset of morphism of $\langle 1 \rangle \to \langle 1 \rangle $ given by the following data
+\begin{enumerate}
+\item the morphism $\alpha : \langle 1 \rangle \to \langle 1 \rangle $ is the identity in $\mathcal{F}in_*$.
+\item an element $h \in \operatorname{BDiff}(P )  $ where $P$ is any fixed framed irreducible 3-manifold.
+\item A configuration $f \in C^{\partial, 1}_{fr, G}(P)$, where $G$ is the graph with a single unlabelled vertex $v$ connected via the edge $e$ to a single labelled vertex $p$, where there are two additional unpaired half edges $\left\{ \epsilon_1 , \epsilon_2  \right\} $ at the unlabelled vertex $v$: figure \ref{fig:simplespikeball}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{simplespikeball}
+    \caption[A simple spike ball example]{A simple spike ball example. (a) gives the graph $G$. (b) provides a visualization for the bordism represented by $G$ and a connect sum configuration $f$.}
+    \label{fig:simplespikeball}
+\end{figure}
+\end{enumerate}
+
+The configuration $f$ is equal to the following data \[
+(r_e, l_e, D^3_e \hookrightarrow S^3_v, D^3_e \hookrightarrow P, D^3_{\epsilon_1 }\hookrightarrow S^3_v, D^3_{\epsilon_2 } \hookrightarrow S^3_v)
+.\]
+where all the embeddings in $S^3_v$ are rectilinear and have disjoint images. We may delete the interior of the image of one of the half-edges, say $D^3_{\epsilon_2 }$, so what remains of $S^3_v$ is diffeomorphic to a ball $D^3$. Then the configuration $f$ contains the following data \[
+(r_e, l_e, D^3_e \hookrightarrow D^3, D^3_e \hookrightarrow P, D^3_{\epsilon_1 }\hookrightarrow D^3 )
+.\]
+
+Note that there exists a map \[
+\operatorname{Conf}_2(D^3) \times \operatorname{BDiff}(P) \to \mathbb{L}^{\bigstar, \otimes }
+.\]
+Sending a configuration of $2$ points in $D^3$ to the centre of the embeddings $D^3_e, D^3_{\epsilon_1 } \hookrightarrow D^3$ and an element $h \in \operatorname{BDiff}(P ) $ to the chosen element as part of the data of $\langle 1 \rangle \to \langle 1 \rangle $. Taking the inclusion into the operad $\mathbb{L}^{\otimes }$, passing through the endomorphism operad, and finally through a TFT $Z$, we get a map \[
+\operatorname{Conf}_2(D^3) \times \operatorname{BDiff}(P) \to \mathbb{L}^{\bigstar, \otimes } \hookrightarrow \mathbb{L}^\otimes \to \operatorname{End}_{\Omega \operatorname{Bord}_3^{fr}}^\otimes (S^2) \to \operatorname{End}_{\mathcal{C}}^\otimes (Z(S^2))
+.\]
+whose image is over the $1$-ary operations. Therefore there is a map \[
+\operatorname{Conf}_2(D^3) \times \operatorname{BDiff}(P) \to \operatorname{Map}_{\mathcal{C}}(Z(S^2), Z(S^2))
+.\]
+for any TFT $Z: \Omega^2\operatorname{Bord}_3^{fr} \to \mathcal{C}$ and for any framed irreducible 3-manifold $P$.
+\end{eg}

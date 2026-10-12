@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/thurston/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "The Geometry and Topology of Three-Manifolds",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/thurston/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "[W._Thurston]_The_Geometry_and_Topology_of_Three-M(BookZZ.org)",
   "contains": [
     "library/thurston/sections/sec-000",
     "library/thurston/sections/sec-001",
@@ -30,8 +35,11 @@
     "library/thurston/sections/sec-021"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "thurston",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "Thurston.pdf",
     "source_sha256": "6010919ed83edd813af6b0c7cae19072e144a6bd94538c4b29dc60b099227c9e",
     "pages": 33,

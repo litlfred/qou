@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2106.01332v4/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2106.01332v4/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "INTRODUCTION",
-  "pageStart": 1,
-  "pageEnd": 3,
-  "text": "../sections/sec-000-i-introduction.md",
-  "derivedFrom": "library/arxiv-2106.01332v4/manifest",
-  "sourceDocument": "library/arxiv-2106.01332v4/manifest",
+  "title": "Acknowledgement",
+  "pageStart": 15,
+  "pageEnd": 15,
+  "text": "../sections/sec-000-acknowledgement.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2106.01332v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2106.01332v4/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -55,7 +55,12 @@ set_compute_dps()  # mp.mp.dps = COMPUTE_DPS (70)
 
 ME = mp.mpf(str(C.M_E_MEV))
 QCOD = mp.mpf(str(C.Q_BETA_MEV))
-SWING_O2 = mp.mpf("0.0491423421")   # O2 probe value (±7.6e-7 band)
+# O2 probe value (±7.6e-7 band). It was 0.0491423421 at the CODATA-2018 muon
+# pin; the CODATA-2022 pin (fca08de7d2) moves S(muon), and so the swing, by
+# 3.399e-4, which is what turned swing_matches_o2 red (2026-10-10 follow-up,
+# bean qou-cds1). Live value, as also recorded in
+# qbeta-c3-crossanchor-swing-provenance.witness.json.
+SWING_O2 = mp.mpf("0.0494822652")
 KAPPA = mp.sqrt(3) / 4
 
 

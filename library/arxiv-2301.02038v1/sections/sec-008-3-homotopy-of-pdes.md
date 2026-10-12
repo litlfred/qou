@@ -8,7 +8,10 @@ pages: 18-18
 source_pdf: 2301.02038v1.pdf
 source_sha256: 27b303939826ab39
 doc_brief: "Vinogradov's Cohomological Geometry of Partial Differential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-li"
+text_source: latex
+latex_prose_ratio: 0.941
+latex_coverage_ratio: 1.0
 ---
-In this section we quickly illustrate the latest developmen ts on Vinogradov’s
-ideas about Secondary Calculus. They are not due to Vinograd ov himself but they
-are deﬁnitely inspired by his work.
+\label{Sec:Homot}
+
+In this section we quickly illustrate the latest developments on Vinogradov's ideas about Secondary Calculus. They are not due to Vinogradov himself but they are definitely inspired by his work.

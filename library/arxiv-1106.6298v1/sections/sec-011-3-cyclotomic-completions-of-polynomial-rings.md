@@ -8,7 +8,13 @@ pages: 12-12
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
 doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Since uniﬁed invariants belong to cyclotomic completions of polynomial rings, we outline
-their construction and the main properties. For simplicity, only the c ase b is a power of
-a prime is considered, the general case is treated in [2].
+\label{cyc}
+Since unified invariants belong to
+ cyclotomic completions of polynomial rings, we outline
+their construction and the main properties. For simplicity, only the case
+$b$ is a power of a prime is considered, the general case is treated in
+\cite{BBL}.

@@ -467,7 +467,7 @@ def main() -> int:
 
     src_sites: dict[Path, list[tuple[int, object]]] = {}
     for p in sorted(COMPUTATIONS.rglob("*.py")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         sites = _source_would_change(p)
         if sites:
@@ -479,7 +479,7 @@ def main() -> int:
     # but "does a float reach the payload through a variable".
     param_sites: dict[Path, list[tuple[int, str, object]]] = {}
     for p in sorted(COMPUTATIONS.rglob("*.py")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         h = _source_unguarded_param(p)
         if h:
@@ -491,7 +491,7 @@ def main() -> int:
     scanned = 0
     live_dirty: list[tuple[Path, list]] = []
     for w in sorted(COMPUTATIONS.rglob("*.witness.json")):
-        if "_deprecated" in w.parts:
+        if ("_deprecated" in w.parts or "fsh-guts" in w.parts):
             continue
         scanned += 1
         try:

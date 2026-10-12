@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2205.07095v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2205.07095v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2205.07095v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2205.07095&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2205.07095v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2205.07095v1",
+    "content_type": "application/gzip",
+    "sha256": "94ee235b1a026550f7445ddd20233dc77045149a87fe138d963934892e5e53d9",
+    "bytes": 12477,
+    "fetched": "2026-10-10T15:17:38+00:00",
+    "files": [
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "5e8413f6a11f847253c2ecadbb7e8df2fa1fd60deb72eb016b389fcdd7308839",
+        "bytes": 38995
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

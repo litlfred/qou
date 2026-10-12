@@ -9,154 +9,184 @@ source_pdf: 2203.17029v1.pdf
 source_sha256: 5557f7f272cb8a43
 doc_brief: "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised"
 duplicate_of: "modularqholonomicmodules"
+text_source: latex
+latex_prose_ratio: 0.894
+latex_coverage_ratio: 0.824
 ---
-× ∪{∞}. In this subsection we compute
-the residues of the meromorphic functions f (−1) = g(0,1) and f (1).
-Lemma 5.2. The functions f (−1)(t, q) = g(0,1)(t, q) have simple poles at t = q
-/CI
-with residues
-Rest=qnf (−1)(t, q) dt
-2πit = Res t=qng(0,1)(t, q) dt
-2πit = g(0,0)(qn, q) . (219)
-Proof. We have
-Rest=qk
-θ′(t−1; q)
-θ(t−1; q)
-dt
-2πit = −1 . (220)
-To ﬁnish we note that the proof of the equality f (−1) = g(0,1) is independent of this Lemma
-and follows from Equation ( 207). □
-MODULAR q-HOLONOMIC MODULES 43
-Lemma 5.3. (a) The function B1/2 ˆf (1)(ξ, q) has simple poles at ξ = ±q−1/4− /CI /2 with residue
-Resξ=±q−1/ 4−n/ 2B1/2 ˆf (1)(ξ, q) dξ
-2πiξ = −θ(±q−1/4; q1/2)
-2(q; q)2
-∞
-k∑
-ℓ=0
-(±1)k q
-k(k+2)
-4
-(q; q)ℓ(q; q)k−ℓ
-. (221)
-(b) The function f (1)(t, λ, q) has simple poles at t = ±q−1/4+/CI
-λ−1 with residue
-Rest=±q−1/ 4−nλ−1f (1)(t, λ, q) dt
-2πit
-= θ(±q3/4λ−1; q)θ(±q−1/4; q)θ(±q−3/4; q)θ(±q−3/4λ; q)
-2(q; q)6
-∞θ(q−1λ; q)θ(q−3/2λ; q) f (−1)(±q−1/4−nλ−1, q) .
-(222)
-Proof. For part (a), consider the following auxiliary function,
-Hr(ξ, q) =
-∑
-k
-ξ2k
-(q; q)k(q; q)k+r
-, (223)
-which we analytically continue to ξ /∈ ±q
-1
-2
-/CI
-≤0. From the power series at ξ = 0, we see that
-B1/2 ˆf (1)(q−1/4ξ, q) =
-∑
-r∈/CI
-(−1)rqr2/4ξrHr(ξ, q). (224)
+Note that $g^{(0,0)}$ is holomorphic on $\BC^{\times}\cup\{\infty\}$. In this
+subsection we compute the residues of the meromorphic functions $f^{(-1)}=g^{(0,1)}$
+and $f^{(1)}$.
+
+\begin{lemma}
+  \label{lem.resg01}
+  The functions $f^{(-1)}(t,q)=g^{(0,1)}(t,q)$ have simple poles at $t = q^\BZ$ with
+  residues
+\be
+\Res_{t=q^{n}}f^{(-1)}(t,q)\frac{dt}{2\pi i t}
+=
+\Res_{t=q^{n}}g^{(0,1)}(t,q)\frac{dt}{2\pi i t}
+=
+g^{(0,0)}(q^{n},q)\,.
+\ee
+\end{lemma}
+
+\begin{proof}
+We have
+\be
+\Res_{t=q^{k}}\frac{\theta'(t^{-1};q)}{\theta(t^{-1};q)}\frac{dt}{2\pi it}
+=
+-1 \,.
+\ee
+To finish we note that the proof of the equality $f^{(-1)}=g^{(0,1)}$ is
+independent of this Lemma and follows from Equation~\eqref{f1=g01}.
+\end{proof}
+
+\begin{lemma}
+  \label{lem.resf1}
+  \rm{(a)} The function $\Bor_{1/2}\hat{f}^{(1)}(\xi,q)$ has simple poles at
+$\xi=\pm q^{-1/4-\BZ/2}$ with residue
+\be
+\begin{aligned}
+\Res_{\xi=\pm q^{-1/4-n/2}}\Bor_{1/2}\hat{f}^{(1)}(\xi,q)\frac{d\xi}{2\pi i\xi}
+&=
+\frac{-\theta(\pm q^{-1/4};q^{1/2})}{2(q;q)_{\infty}^{2}}
+\sum_{\ell=0}^{k}(\pm1)^{k}\frac{q^{\frac{k(k+2)}{4}}}{(q;q)_{\ell}(q;q)_{k-\ell}}.
+\end{aligned}
+\ee
+  \rm{(b)}
+  The function $f^{(1)}(t,\lambda,q)$ has simple poles at
+  $t=\pm q^{-1/4+\BZ}\lambda^{-1}$ with residue
+  \be
+\begin{aligned}
+&\Res_{t=\pm q^{-1/4-n}\lambda^{-1}}f^{(1)}(t,\lambda,q)\frac{dt}{2\pi it}\\
+&=
+\frac{\theta(\pm q^{3/4}\lambda^{-1};q)\theta(\pm q^{-1/4};q)
+  \theta(\pm q^{-3/4};q) \theta(\pm q^{-3/4}\lambda;q)}{2(q;q)_{\infty}^{6}
+  \theta(q^{-1}\lambda;q)\theta(q^{-3/2}\lambda;q)}
+f^{(-1)}(\pm q^{-1/4-n} \lambda^{-1},q) \,.
+\end{aligned}
+\ee
+\end{lemma}
+
+\begin{proof}
+For part (a), consider the following auxiliary function,
+\be
+\label{aux.fun.H}
+H_{r}(\xi,q)=\sum_{k}\frac{\xi^{2k}}{(q;q)_{k}(q;q)_{k+r}},
+\ee
+which we analytically continue to $\xi\notin\pm q^{\frac{1}{2}\BZ_{\leq0}}$.
+From the power series at $\xi=0$, we see that
+\be
+\Bor_{1/2}\hat{f}^{(1)}(q^{-1/4}\xi,q)
+=
+\sum_{r\in\BZ}(-1)^{r}q^{r^{2}/4}\xi^{r}H_{r}(\xi,q).
+\ee
 We have the relation
-Hr−1(ξ, q) − ξHr(ξ, q) = −q1−r (Hr−2(ξ, q) − Hr−1(ξ, q)) (225)
+\be
+H_{r-1}(\xi,q)-\xi H_{r}(\xi,q)
+=
+-q^{1-r}\left(H_{r-2}(\xi,q)-H_{r-1}(\xi,q)\right)
+\ee
 and from this we can see that
-Resξ=1 (Hr−1(ξ, q) − Hr(ξ, q)) dξ
-2πiξ = (−1)rq−r(r−1)/2Resξ=1 (H−1(ξ, q) − H0(ξ, q)) dξ
-2πiξ .
-(226)
+\be
+\Res_{\xi=1}\left(H_{r-1}(\xi,q)-H_{r}(\xi,q)\right)\frac{d\xi}{2\pi i\xi}
+=
+(-1)^{r}q^{-r(r-1)/2}\Res_{\xi=1}\left(H_{-1}(\xi,q)-H_{0}(\xi,q)\right)
+\frac{d\xi}{2\pi i\xi}.
+\ee
 Since
-lim
-r→∞
-Hr(ξ, q) = 1
-(q; q)∞(ξ2; q)∞
-, (227)
-it follows that
-Resξ=1Hr(ξ, q) dξ
-2πiξ = Res ξ=1H0(ξ, q) dξ
-2πiξ = Res ξ=1H∞(ξ, q) dξ
-2πiξ = −1
-2(q; q)2
-∞
-. (228)
+\be
+\lim_{r\rightarrow\infty}H_{r}(\xi,q)
+=
+\frac{1}{(q;q)_{\infty}(\xi^{2};q)_{\infty}},
+\ee
+it follows that 
+\be
+\label{res.aux.fun.H}
+\Res_{\xi=1}H_{r}(\xi,q)\frac{d\xi}{2\pi i\xi}
+=
+\Res_{\xi=1}H_{0}(\xi,q)\frac{d\xi}{2\pi i\xi}
+=
+\Res_{\xi=1}H_{\infty}(\xi,q)\frac{d\xi}{2\pi i\xi}
+=
+\frac{-1}{2(q;q)_{\infty}^{2}}.
+\ee
 Let
-R±(n, q) = Res ξ=±q−1/ 4−n/ 2B1/2 ˆf (1)(ξ, q) dξ
-2πiξ . (229)
+\be
+R_{\pm}(n,q)=\Res_{\xi=\pm q^{-1/4-n/2}}
+\Bor_{1/2}\hat{f}^{(1)}(\xi,q)\frac{d\xi}{2\pi i\xi} \,.
+\ee
 Then,
-R(0, q) = Res ξ=±1
-∑
-r∈/CI
-(−1)rqr2/4ξrHr(ξ, q) dξ
-2πiξ = −θ(±q−1/4; q1/2)
-2(q; q)2
-∞
-. (230)
-Now from the functional equation of B1/2 ˆf (1)(ξ, q), we deduce that
-0 = Res ξ=±q−1/ 4−n/ 2(1 − q1/2ξ2)B1/2 ˆf (1)(ξ, q) + 2ξB1/2 ˆf (1)(q1/2ξ, q) − B1/2 ˆf (1)(qξ, q ) dξ
-2πiξ
-= (1 − q−n)R±(n, q) ± 2q−1/4−(n−1)/2R±(n − 1, q) − R±(n − 2, q).
-(231)
-44 STA VROS GAROUF ALIDIS AND CAMPBELL WHEELER
-Note that R±(n, q) = 0 for n < 0 and that when R±(−1, q) is zero we have a unique solution
-determined by R±(0, q). One can then check that
-R±(n, q) = −θ(±q−1/4; q1/2)
-2(q; q)2
-∞
-n∑
-ℓ=0
-(±1)n q
-n(n+2)
-4
-(q; q)ℓ(q; q)n−ℓ
-. (232)
-For part (b), we compute
-Rest=±q−1/ 4−nλ−1f (1)(t, λ, q ) dt
-2πit
-= Res t=±q−1/ 4−nλ−1
-θ(t; q)
-(q; q)2
-∞
-L1/2B1/2 ˆf (1)(t, q ) dt
-2πit
-= θ(±q−1/4−nλ −1; q)
-(q; q)2
-∞θ(λ; q1/2)
-∑
-k∈
-/CI
-(−1)kq(k−2n)(k−2n−1)/4λ −k+2nR±(k, q )
-= θ(±q−1/4−nλ −1; q)
-(q; q)2
-∞θ(λ; q1/2)
-−θ(±q−1/4; q1/2)
-2(q; q)2
-∞
-qn(2n+1)/2λ 2n
-∞∑
-k=0
-k∑
-ℓ=0
-(−1)k q
-k(k+1)
-2
-(q; q)ℓ(q; q)k−ℓ
-(±q−1/4−nλ −1)k
-= − θ(±q−1/4−nλ −1; q)θ(±q−1/4; q1/2)
-2(q; q)4
-∞θ(λ; q1/2) qn(2n+1)/2λ 2n ˆf (−1)(±q−1/4−n/2λ −1, q )
-= − θ(±q−1/4−nλ −1; q)θ(±q−1/4; q)θ(±q−3/4; q)θ(±q−5/4−nλ −1; q)
-2(q; q)6
-∞θ(λ; q)θ(q−1/2λ; q)q−n(2n+1)/2λ −2n f (−1)(±q−1/4−nλ −1, q )
-= − θ(±q−1/4λ −1; q)θ(±q−1/4; q)θ(±q−3/4; q)θ(±q−5/4λ −1; q)
-2(q; q)6
-∞θ(λ; q)θ(q−1/2λ; q) f (−1)(±q−1/4−nλ −1, q )
-= θ(±q3/4λ −1; q)θ(±q−1/4; q)θ(±q−3/4; q)θ(±q−3/4λ; q)
-2(q; q)6
-∞θ(q−1λ; q)θ(q−3/2λ; q) f (−1)(±q−1/4−nλ −1, q ) .
-(233)
-□
+\be
+\begin{aligned}
+R(0,q)
+&=
+\Res_{\xi=\pm 1}\sum_{r\in\BZ}(-1)^{r}q^{r^{2}/4}\xi^{r}H_{r}(\xi,q)
+\frac{d\xi}{2\pi i\xi}
+&=
+\frac{-\theta(\pm q^{-1/4};q^{1/2})}{2(q;q)_{\infty}^{2}} \,.
+\end{aligned}
+\ee
+Now from the functional equation of $\Bor_{1/2}\hat{f}^{(1)}(\xi,q)$,
+we deduce that
+\be
+\begin{aligned}
+0
+&=
+\Res_{\xi=\pm q^{-1/4-n/2}}(1-q^{1/2}\xi^2)\Bor_{1/2}\hat{f}^{(1)}(\xi,q)+
+2\xi\Bor_{1/2}\hat{f}^{(1)}(q^{1/2}\xi,q)-\Bor_{1/2}\hat{f}^{(1)}(q\xi,q)
+\frac{d\xi}{2\pi i\xi}\\
+&=
+(1-q^{-n})R_{\pm}(n,q)\pm2q^{-1/4-(n-1)/2}R_{\pm}(n-1,q)-R_{\pm}(n-2,q).
+\end{aligned}
+\ee
+Note that $R_{\pm}(n,q)=0$ for $n<0$ and that when $R_{\pm}(-1,q)$ is zero we have
+a unique solution determined by $R_{\pm}(0,q)$. One can then check that
+\be\label{Rpm}
+R_{\pm}(n,q)
+=
+\frac{-\theta(\pm q^{-1/4};q^{1/2})}{2(q;q)_{\infty}^{2}}
+\sum_{\ell=0}^{n}(\pm1)^{n}\frac{q^{\frac{n(n+2)}{4}}}{(q;q)_{\ell}(q;q)_{n-\ell}} \,.
+\ee
+For part (b), we compute  
+\be
+\begin{small}
+\begin{aligned}
+&\Res_{t=\pm q^{-1/4-n}\lambda^{-1}}f^{(1)}(t,\lambda,q)\frac{dt}{2\pi it}\\
+&=
+\Res_{t=\pm q^{-1/4-n}\lambda^{-1}}\frac{\theta(t;q)}{(q;q)_{\infty}^{2}}
+\Lap_{1/2}\Bor_{1/2}\hat{f}^{(1)}(t,q)\frac{dt}{2\pi it}\\
+&=
+\frac{\theta(\pm q^{-1/4-n}\lambda^{-1};q)}{(q;q)_{\infty}^{2}
+  \theta(\lambda;q^{1/2})}
+\sum_{k\in\BZ}(-1)^{k}q^{(k-2n)(k-2n-1)/4}\lambda^{-k+2n}R_{\pm}(k,q)\\
+&=
+\frac{\theta(\pm q^{-1/4-n}\lambda^{-1};q)}{(q;q)_{\infty}^{2}
+  \theta(\lambda;q^{1/2})}\frac{-\theta(\pm q^{-1/4};q^{1/2})}{2(q;q)_{\infty}^{2}}
+q^{n(2n+1)/2}\lambda^{2n}
+\sum_{k=0}^{\infty}\sum_{\ell=0}^{k}(-1)^{k}\frac{
+  q^{\frac{k(k+1)}{2}}}{(q;q)_{\ell}(q;q)_{k-\ell}}(\pm q^{-1/4-n}
+\lambda^{-1})^{k}\\
+&=
+-\frac{\theta(\pm q^{-1/4-n}\lambda^{-1};q)\theta(\pm q^{-1/4};q^{1/2})}{
+  2(q;q)_{\infty}^{4}\theta(\lambda;q^{1/2})}q^{n(2n+1)/2}\lambda^{2n}
+\hat{f}^{(-1)}(\pm q^{-1/4-n/2}\lambda^{-1},q)\\
+&=
+-\frac{\theta(\pm q^{-1/4-n}\lambda^{-1};q)\theta(\pm q^{-1/4};q)
+  \theta(\pm q^{-3/4};q)\theta(\pm q^{-5/4-n}\lambda^{-1};q)}{2(q;q)_{\infty}^{6}
+  \theta(\lambda;q)\theta(q^{-1/2}\lambda;q)q^{-n(2n+1)/2}\lambda^{-2n}}
+f^{(-1)}(\pm q^{-1/4-n}\lambda^{-1},q)\\
+&=
+-\frac{\theta(\pm q^{-1/4}\lambda^{-1};q)\theta(\pm q^{-1/4};q)
+  \theta(\pm q^{-3/4};q)\theta(\pm q^{-5/4}\lambda^{-1};q)}{2(q;q)_{\infty}^{6}
+  \theta(\lambda;q)\theta(q^{-1/2}\lambda;q)}
+f^{(-1)}(\pm q^{-1/4-n}\lambda^{-1},q)\\
+&=
+\frac{\theta(\pm q^{3/4}\lambda^{-1};q)\theta(\pm q^{-1/4};q)\theta(\pm q^{-3/4};q)
+  \theta(\pm q^{-3/4}\lambda;q)}{2(q;q)_{\infty}^{6}
+  \theta(q^{-1}\lambda;q)\theta(q^{-3/2}\lambda;q)}
+f^{(-1)}(\pm q^{-1/4-n} \lambda^{-1},q) \,.
+\end{aligned}
+\end{small}
+\ee
+\end{proof}

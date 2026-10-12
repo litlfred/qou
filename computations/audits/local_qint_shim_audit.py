@@ -39,7 +39,7 @@ import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 REPO = HERE.parent.parent
-SKIP = (".git", "_deprecated", "node_modules", "__pycache__", ".claude", "qou-mass")
+SKIP = (".git", "_deprecated", "fsh-guts", "node_modules", "__pycache__", ".claude", "qou-mass")
 QNAMES = ("qint", "q_int", "qfac", "qfact", "dim_q")
 
 # The shim is the thing that gets rebound. `qou_substrate.constants` is NOT.

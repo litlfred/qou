@@ -3,7 +3,7 @@ import { simulator } from "../../schema/builders";
 export default simulator({
   label: "sim:knot-periodic-table",
   title: "Knot-Centric Periodic Table with Beta Decay",
-  html: "fsh-guts/deprecated/simulators/knot_periodic_table.html",
+  html: "simulators/knot_periodic_table.html",
   uses: [
     "prop:shell-structure-eigenvalues",
     "prop:knot-particle-correspondence",

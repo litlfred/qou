@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1304.2934v4/sections/sec-017",
   "@type": [
     "doco:Section"
   ],
-  "title": "Technical preliminaries",
-  "pageStart": 45,
-  "pageEnd": 46,
+  "title": "Central limit theorem at the scales o(tn) and o(tn23)",
+  "pageStart": 30,
+  "pageEnd": 36,
   "contains": [
     "library/arxiv-1304.2934v4/blocks/prose-sec-017"
   ],
-  "derivedFrom": "library/arxiv-1304.2934v4/manifest",
-  "sourceDocument": "library/arxiv-1304.2934v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.2934v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.2934v4/manifest.jsonld",
   "provenance": "ingested"
 }

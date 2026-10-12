@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2502.06229v5/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Main tools to prove (d): cohomological reduction of a braided tensor structure of a category with a generating object V to braid group duality of V",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "contains": [
+    "library/arxiv-2502.06229v5/blocks/prose-sec-014",
+    "library/arxiv-2502.06229v5/blocks/thm-sec-014-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2502.06229v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2502.06229v5/manifest.jsonld",
+  "provenance": "ingested"
+}

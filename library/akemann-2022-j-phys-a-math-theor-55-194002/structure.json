@@ -6,12 +6,16 @@
   "sha256": "3753499c4b23f18946ced7e3f79366f0e62f9d9d106abea5eb58386cbaa368fc",
   "bytes": 1953824,
   "pages": 35,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1088/1751-8121/ac5f16",
-  "title": "Mathematical and Theoretical PAPER \u2022 OPEN ACCESS Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk To cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002",
+  "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
   "authors_raw": null,
   "title_lines": [
    "Mathematical and",
@@ -24,397 +28,879 @@
   ],
   "abstract": null,
   "docinfo": {
-   "Title": "",
-   "Author": "",
    "Producer": "Acrobat Distiller 10.0.0 (Windows); modified using iText\u00ae 5.5.13.5 \u00a92000-2026 iText Group NV (IOP Publishing Ltd; licensed version)",
    "Creator": "LaTeX with hyperref package + hypdvips",
    "CreationDate": "D:20220409194511+05'30'"
+  },
+  "title_raw": "Mathematical and Theoretical PAPER \u2022 OPEN ACCESS Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk To cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+   "outline": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+   "text": "Mathematical and Theoretical PAPER \u2022 OPEN ACCESS Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk To cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002",
+   "corroborated_by": [
+    "outline"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Faculty of Physics, Bielefeld University, Postfach 100131, D-33501 Bielefeld,",
+   "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
    "page": 2,
-   "source": "inferred",
-   "number": "1"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
-   "level": 1,
-   "title": "School of Mathematics and Statistics, University of Melbourne, 813 Swanston",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Abstract",
-   "page": 2,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
+   "level": 2,
    "title": "Introduction",
    "page": 3,
-   "source": "inferred",
-   "number": "1"
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "Transition from Bessel- and Airy- to the sine-kernel",
-   "page": 5,
-   "source": "inferred",
-   "number": "2"
+   "page": 4,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
-   "level": 1,
-   "title": "(2\u03bd + 1)",
-   "page": 6,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b6\u03b7)\u22121",
-   "page": 9,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b6 \u2212\u03b7)",
-   "page": 9,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
+   "level": 2,
    "title": "Gap probabilities and level spacing distributions",
    "page": 11,
-   "source": "inferred",
-   "number": "3"
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "Analysis at finite matrix dimension",
    "page": 14,
-   "source": "inferred",
-   "number": "4"
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
-   "level": 2,
+   "level": 3,
    "title": "Orthogonal polynomials and partition function",
    "page": 14,
-   "source": "inferred",
-   "number": "4.1"
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
-   "level": 2,
+   "level": 3,
    "title": "Partition function of shifted masses",
    "page": 16,
-   "source": "inferred",
-   "number": "4.2"
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 3,
+   "title": "Hard edge kth spacing distribution at finite-",
+   "page": 20,
+   "source": "outline",
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
-   "title": "Hard edge kth spacing distribution at finite-n",
-   "page": 20,
-   "source": "inferred",
-   "number": "4.3"
-  },
-  {
-   "level": 1,
    "title": "Asymptotic analysis at the hard edge",
    "page": 21,
-   "source": "inferred",
-   "number": "5"
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
-   "level": 2,
-   "title": "The large-n limit at fixed k, Nf and \u03bd",
+   "level": 3,
+   "title": "The large- limit at fixed and",
    "page": 21,
-   "source": "inferred",
-   "number": "5.1"
+   "source": "outline",
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
-   "level": 2,
+   "level": 3,
    "title": "Comparison to the bulk spacing distribution",
    "page": 24,
-   "source": "inferred",
-   "number": "5.2"
+   "source": "outline",
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
-   "level": 1,
-   "title": "Left: comparison between hard edge level spacings for increasing",
+   "level": 3,
+   "title": "Asymptotics to the Airy statistics",
    "page": 27,
-   "source": "inferred",
-   "number": "4"
+   "source": "outline",
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
-   "title": "Asymptotics to the Airy statistics (\u03bd \u226b1)",
-   "page": 27,
-   "source": "inferred",
-   "number": "5.3"
-  },
-  {
-   "level": 1,
    "title": "Comparison to data from lattice QCD",
-   "page": 30,
-   "source": "inferred",
-   "number": "6"
+   "page": 29,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "Conclusion",
    "page": 32,
-   "source": "inferred",
-   "number": "7"
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "Acknowledgments",
    "page": 33,
-   "source": "inferred",
-   "number": null
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
-   "level": 1,
+   "level": 2,
+   "title": "Data availability statement",
+   "page": 33,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
+  },
+  {
+   "level": 2,
+   "title": "Appendix A. The spacing distribution in the bulk",
+   "page": 33,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
+  },
+  {
+   "level": 2,
+   "title": "ORCID iDs",
+   "page": 34,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
+  },
+  {
+   "level": 2,
    "title": "References",
    "page": 34,
-   "source": "inferred",
-   "number": null
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   }
  ],
- "toc_source": "inferred",
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The properly unfolded microscopic level densities of the Bessel-kernel result (32) for \u03bd = 0 (blue solid curve), \u03bd = 1 (red finely dashed curve), \u03bd = 20 (green coarsely dashed curve), and \u03bd = \u221e(black solid curve). The latter agrees with the unfolded Airy-kernel result (25) reflected at the origin. A",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Top left: the spacing distribution \u00afp(0,0)",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Left: comparison between the bulk spacing distributions pbulk(s) (see (A.1))",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The level spacing distribution (left) and the cumulative density function (right), respectively, of the largest two eigenvalues of large random matrices generated",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Top: level spacing distribution (86) (left plot) and its difference to the bulk spacing distribution (A.1) (right plot) for Nf = 0, k = 1 and \u03bd = 0 (green solid curves),",
+   "page": 29,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The level spacing distributions (left column) and cumulative densities (right column) of the smallest two eigenvalues (k = 1) generated via Monte Carlo simulations for N = 200, \u03bd = 4 (top), N = 600, \u03bd = 12 (middle) and N = 1000, \u03bd = 20 (bottom)",
+   "page": 30,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "The \u03c72-test for the level spacing of the smallest two eigenvalues for a few decreasing values of q = n/(n + \u03bd) and increasing matrix dimension. The number of",
+   "page": 31,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Left: the level spacing distribution of the smallest two eigenvalues of the overlap Dirac operator k = 1 (blue histogram) with Nf = 2 and \u03bd = 0 averaged over",
+   "page": 32,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "32"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-faculty-of-physics-bielefeld-university-postfa",
-   "number": "1",
-   "title": "Faculty of Physics, Bielefeld University, Postfach 100131, D-33501 Bielefeld,",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 7,
-   "n_words": 1
-  },
-  {
-   "id": "sec-001-2-school-of-mathematics-and-statistics-universit",
-   "number": "2",
-   "title": "School of Mathematics and Statistics, University of Melbourne, 813 Swanston",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 200,
-   "n_words": 26
-  },
-  {
-   "id": "sec-002-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 1915,
-   "n_words": 311
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 76,
+   "n_words": 11,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-003-1-introduction",
+   "id": "sec-000-consecutive-level-spacings-in-the-chiral-gaussia",
+   "number": null,
+   "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3224,
+   "n_words": 508,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-1-introduction",
    "number": "1",
    "title": "Introduction",
-   "level": 1,
+   "level": 2,
    "page_start": 3,
    "page_end": 5,
    "n_chars": 8214,
-   "n_words": 1341
+   "n_words": 1341,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
-   "id": "sec-004-2-transition-from-bessel--and-airy--to-the-sine",
+   "id": "sec-002-2-transition-from-bessel--and-airy--to-the-sine",
    "number": "2",
    "title": "Transition from Bessel- and Airy- to the sine-kernel",
-   "level": 1,
+   "level": 2,
    "page_start": 5,
-   "page_end": 6,
-   "n_chars": 5175,
-   "n_words": 882
-  },
-  {
-   "id": "sec-005-4-2\u03bd-1",
-   "number": "4",
-   "title": "(2\u03bd + 1)",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 8,
-   "n_chars": 4836,
-   "n_words": 940
-  },
-  {
-   "id": "sec-006-3-\u03b6-\u03b7",
-   "number": "3",
-   "title": "(\u03b6 \u2212\u03b7)",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 9,
-   "n_chars": 248,
-   "n_words": 61
-  },
-  {
-   "id": "sec-007-3-\u03b6\u03b71",
-   "number": "3",
-   "title": "(\u03b6\u03b7)\u22121",
-   "level": 1,
-   "page_start": 9,
    "page_end": 11,
-   "n_chars": 5553,
-   "n_words": 1086
+   "n_chars": 15845,
+   "n_words": 2977,
+   "label_start": "5",
+   "label_end": "11"
   },
   {
-   "id": "sec-008-3-gap-probabilities-and-level-spacing-distributi",
+   "id": "sec-003-3-gap-probabilities-and-level-spacing-distributi",
    "number": "3",
    "title": "Gap probabilities and level spacing distributions",
-   "level": 1,
+   "level": 2,
    "page_start": 11,
    "page_end": 14,
    "n_chars": 8469,
-   "n_words": 1678
+   "n_words": 1678,
+   "label_start": "11",
+   "label_end": "14"
   },
   {
-   "id": "sec-009-4-analysis-at-finite-matrix-dimension",
+   "id": "sec-004-4-analysis-at-finite-matrix-dimension",
    "number": "4",
    "title": "Analysis at finite matrix dimension",
-   "level": 1,
+   "level": 2,
    "page_start": 14,
    "page_end": 14,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-010-41-orthogonal-polynomials-and-partition-function",
+   "id": "sec-005-41-orthogonal-polynomials-and-partition-function",
    "number": "4.1",
    "title": "Orthogonal polynomials and partition function",
-   "level": 2,
+   "level": 3,
    "page_start": 14,
    "page_end": 16,
    "n_chars": 4354,
-   "n_words": 834
+   "n_words": 834,
+   "label_start": "14",
+   "label_end": "16"
   },
   {
-   "id": "sec-011-42-partition-function-of-shifted-masses",
+   "id": "sec-006-42-partition-function-of-shifted-masses",
    "number": "4.2",
    "title": "Partition function of shifted masses",
-   "level": 2,
+   "level": 3,
    "page_start": 16,
    "page_end": 20,
    "n_chars": 6317,
-   "n_words": 1206
+   "n_words": 1206,
+   "label_start": "16",
+   "label_end": "20"
   },
   {
-   "id": "sec-012-43-hard-edge-kth-spacing-distribution-at-finite",
+   "id": "sec-007-43-hard-edge-kth-spacing-distribution-at-finite",
    "number": "4.3",
-   "title": "Hard edge kth spacing distribution at finite-n",
-   "level": 2,
+   "title": "Hard edge kth spacing distribution at finite-",
+   "level": 3,
    "page_start": 20,
    "page_end": 21,
    "n_chars": 3607,
-   "n_words": 697
+   "n_words": 697,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-013-5-asymptotic-analysis-at-the-hard-edge",
+   "id": "sec-008-5-asymptotic-analysis-at-the-hard-edge",
    "number": "5",
    "title": "Asymptotic analysis at the hard edge",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-014-51-the-large-n-limit-at-fixed-k-nf-and-\u03bd",
-   "number": "5.1",
-   "title": "The large-n limit at fixed k, Nf and \u03bd",
    "level": 2,
    "page_start": 21,
    "page_end": 24,
-   "n_chars": 5362,
-   "n_words": 1108
+   "n_chars": 5406,
+   "n_words": 1118,
+   "label_start": "21",
+   "label_end": "24"
   },
   {
-   "id": "sec-015-52-comparison-to-the-bulk-spacing-distribution",
+   "id": "sec-009-52-comparison-to-the-bulk-spacing-distribution",
    "number": "5.2",
    "title": "Comparison to the bulk spacing distribution",
-   "level": 2,
+   "level": 3,
    "page_start": 24,
    "page_end": 27,
-   "n_chars": 5204,
-   "n_words": 925
+   "n_chars": 6160,
+   "n_words": 1109,
+   "label_start": "24",
+   "label_end": "27"
   },
   {
-   "id": "sec-016-4-left-comparison-between-hard-edge-level-spacin",
-   "number": "4",
-   "title": "Left: comparison between hard edge level spacings for increasing",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 887,
-   "n_words": 174
-  },
-  {
-   "id": "sec-017-53-asymptotics-to-the-airy-statistics-\u03bd-1",
+   "id": "sec-010-53-asymptotics-to-the-airy-statistics",
    "number": "5.3",
-   "title": "Asymptotics to the Airy statistics (\u03bd \u226b1)",
-   "level": 2,
+   "title": "Asymptotics to the Airy statistics",
+   "level": 3,
    "page_start": 27,
    "page_end": 30,
    "n_chars": 7474,
-   "n_words": 1336
+   "n_words": 1336,
+   "label_start": "27",
+   "label_end": "30"
   },
   {
-   "id": "sec-018-6-comparison-to-data-from-lattice-qcd",
+   "id": "sec-011-6-comparison-to-data-from-lattice-qcd",
    "number": "6",
    "title": "Comparison to data from lattice QCD",
-   "level": 1,
+   "level": 2,
    "page_start": 30,
    "page_end": 32,
    "n_chars": 4684,
-   "n_words": 811
+   "n_words": 811,
+   "label_start": "30",
+   "label_end": "32"
   },
   {
-   "id": "sec-019-7-conclusion",
+   "id": "sec-012-7-conclusion",
    "number": "7",
    "title": "Conclusion",
-   "level": 1,
+   "level": 2,
    "page_start": 32,
    "page_end": 33,
    "n_chars": 2274,
-   "n_words": 370
+   "n_words": 370,
+   "label_start": "32",
+   "label_end": "33"
   },
   {
-   "id": "sec-020-acknowledgments",
+   "id": "sec-013-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
-   "level": 1,
+   "level": 2,
    "page_start": 33,
-   "page_end": 34,
-   "n_chars": 3121,
-   "n_words": 568
+   "page_end": 33,
+   "n_chars": 447,
+   "n_words": 64,
+   "label_start": "33",
+   "label_end": "33"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-014-data-availability-statement",
+   "number": null,
+   "title": "Data availability statement",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 183,
+   "n_words": 26,
+   "label_start": "33",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-015-appendix-a-the-spacing-distribution-in-the-bulk",
+   "number": null,
+   "title": "Appendix A. The spacing distribution in the bulk",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 2306,
+   "n_words": 459,
+   "label_start": "33",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-016-orcid-ids",
+   "number": null,
+   "title": "ORCID iDs",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 95,
+   "n_words": 6,
+   "label_start": "34",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-017-references",
    "number": null,
    "title": "References",
-   "level": 1,
+   "level": 2,
    "page_start": 34,
    "page_end": 35,
    "n_chars": 3798,
-   "n_words": 758
+   "n_words": 758,
+   "label_start": "34",
+   "label_end": "35"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 22,
-  "sections": 22,
-  "chars_total": 81699
+  "toc_entries": 19,
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [
+   "figure 4",
+   "table 1"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 19,
+  "chars_total": 82933
  }
 }

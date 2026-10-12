@@ -8,93 +8,134 @@ pages: 7-10
 source_pdf: 0405258v2.pdf
 source_sha256: dbd6bf5a94deebaf
 doc_brief: "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES — We extend the relation between random matrices and free probability theory from the level of expectations to"
+text_source: latex
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 0.956
 ---
-of second order freeness which is intended to capture the struct ure
-of the ﬂuctuation functionals for random matrices arising in the limit
-N → ∞, in the same way as the usual freeness captures the structure
-of the expectation of the trace in the limit. We recall the relevant
-notations and deﬁnitions.
-8 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-Deﬁnition 2.3. A second order non-commutative probability space (A,
-ϕ1, ϕ2) consists of a unital algebra A, a tracial linear functional
-ϕ1 : A → C with ϕ(1) = 1
-and a bilinear functional
-ϕ2 : A × A → C,
-which is tracial in both arguments and which satisﬁes
-ϕ2(a, 1) = 0 = ϕ2(1, b) for all a, b ∈ A.
-Notation 2.4. Let unital subalgebras A1, . . . ,Ar ⊂ A be given.
-1) We say that a tuple ( a1, . . . , an) ( n ≥ 1) of elements from A is
-cyclically alternating if, for each k, we have an i(k) ∈ { 1, . . . , r} such
-that ak ∈ A i(k) and, if n ≥ 2, we have i(k) ⁄= i(k+1) for all k = 1, . . . , n.
-We count indices in a cyclic way modulo n, i.e., for k = n the above
-means i(n) ⁄= i(1). Note that for n = 1, we do not impose any condition
-on neighbours.
-2) We say that a tuple ( a1, . . . , an) of elements from A is centered if we
+In \cite{MSp1}, we introduced the concept of second order freeness
+which is intended to capture the structure of the fluctuation
+functionals for random matrices arising in the limit $N\to\infty$,
+in the same way as the usual freeness captures the structure of the
+expectation of the trace in the limit. We recall the relevant
+notations and definitions.
+
+\begin{definition}
+A \emph{second order non-commutative probability space}
+$(\cA,\ab \ff_1,\ff_2)$ consists of a unital algebra $\cA$, a
+tracial linear functional
+$$\ff_1:\cA\to\CC \qquad\text{with}\qquad
+\ff(1)=1$$ and a bilinear functional
+$$\ff_2:\cA\times\cA\to\CC,$$
+which is tracial in both arguments and which satisfies
+$$\ff_2(a,1)=0=\ff_2(1,b)\qquad\text{for all $a,b\in\cA$.}$$
+\end{definition}
+
+\begin{notation}
+Let unital subalgebras $\cA_1,\dots,\cA_r\subset\cA$ be given.
+\\
+1) We say that a tuple $(a_1,\dots,a_n)$ ($n\geq 1$) of elements
+from $\cA$ is \emph{cyclically alternating} if, for each $k$, we
+have an $i(k)\in\{1,\dots,r\}$ such that $a_k\in \cA_{i(k)}$ and, if
+$n\geq 2$, we have $i(k)\not= i(k+1)$ for all $k=1,\dots,n$. We
+count indices in a cyclic way modulo $n$, i.e., for $k=n$ the above
+means $i(n)\not=i(1)$. Note that for $n=1$, we do not impose any
+condition on neighbours.
+\\
+2) We say that a tuple $(a_1,\dots,a_n)$ of elements from $\cA$ is
+\emph{centered} if we have
+$$\ff_1(a_k)=0\qquad\text{for all $k=1,\dots,n$.}$$
+\end{notation}
+
+
+\begin{definition}\label{free}
+Let $(\cA,\ff_1,\ff_2)$ be a second order non-commutative
+probability space. We say that unital subalgebras
+$\cA_1,\dots,\cA_r\subset \cA$ are \emph{free with respect to
+$(\ff_1,\ff_2)$} or \emph{free of second order}, if they are free
+(in the usual sense \cite{VDN}) with respect to $\ff_1$ and if the
+following condition for $\ff_2$ is satisfied. Whenever we have, for
+$n,m\geq 1$, tuples $(a_1,\dots,a_n)$ and $(b_m,\dots, b_1)$ from
+$\cA$ such that both are centered and cyclically alternating then we
 have
-ϕ1(ak) = 0 for all k = 1, . . . , n.
-Deﬁnition 2.5. Let ( A, ϕ1, ϕ2) be a second order non-commutative
-probability space. We say that unital subalgebras A1, . . . ,Ar ⊂ A are
-free with respect to (ϕ1, ϕ2) or free of second order , if they are free (in
-the usual sense [VDN]) with respect to ϕ1 and if the following condition
-for ϕ2 is satisﬁed. Whenever we have, for n, m ≥ 1, tuples ( a1, . . . , an)
-and ( bm, . . . , b1) from A such that both are centered and cyclically
-alternating then we have
-(1) If n ⁄= m, then
-ϕ2(a1 · · · an, bm · · ·b1) = 0 .
-(2) If n = m = 1 and a ∈ A i, b ∈ A j, with i ⁄= j, then
-ϕ2(a, b) = 0 .
-(3) If n = m ≥ 2, then
-ϕ2(a1 · · ·an, bn · · · b1) =
-n−1∑
-k=0
-ϕ1(a1b1+k) · ϕ1(a2b2+k) · · · ϕ1(anbn+k).
-For a visualization of this formula, one should think of two concentric
-circles with the a’s on one of them and the b’s on the other. However,
-whereas on one circle we have a clockwise orientation of the points, o n
-the other circle the orientation is counter-clockwise. Thus, in orde r to
-FLUCTUATIONS OF UNITARY RANDOM MATRICES 9
-match up these points modulo a rotation of the circles, we have to pa ir
-the indices as in the sum above.
-Recall that in the combinatorial description of freeness [NSp], the
-extension of ϕ1 to a multiplicative function on non-crossing partitions
-plays a fundamental role. In the same way, second order freenes s will
-rely on a suitable extension of ϕ2.
-Notation 2.6. Let ( A, ϕ1, ϕ2) be a second order non-commutative
-probability space. Then we extend the deﬁnition of ϕ1 and ϕ2 as fol-
-lows:
-ϕ1 :
-∞⋃
-n=1
-(
-Sn × An) → C
-(π, a1, . . . , an) ↦→ϕ1(π)[a1, . . . , an]
-is, for a cycle π = (i1, i2, . . . , ir), given by
-ϕ1(π)[a1, . . . , an] := ϕ1(ai1ai2ai3 · · · air )
-and extended to general π ∈ Sn by multiplicativity
-ϕ1(π1 × π2)[a1, . . . , an] = ϕ1(π1)[a1, . . . , an] · ϕ1(π2)[a1, . . . , an].
-In a similar way,
-ϕ2 :
-∞⋃
-m,n=1
-(
-Sm × Sn × Am × An) → C
-(π1, π2, a1, . . . , am, b1, . . . , bm) ↦→ϕ2(π1, π2)[a1, . . . , am; b1, . . . , bn]
-is deﬁned, for two cycles π1 = ( i1, i2, . . . , ip) and π2 = ( j1, j2, . . . , jr),
-by
-ϕ2(π1, π2)[a1, . . . , am; b1, . . . , bn] := ϕ2(ai1ai2 · · · aip, bj1bj2 · · · bjr )
-and extended to the general situation by the derivation property
-(4) ϕ2(π1 × π2, π3)[a1, . . . , am; b1, . . . , bn]
-= ϕ2(π1, π3)[a1, . . . , am; b1, . . . , bn] · ϕ1(π2)[a1, . . . , am, b1, . . . , bn]
-+ ϕ2(π2, π3)[a1, . . . , am; b1, . . . , bn] · ϕ1(π1)[a1, . . . , am, b1, . . . , bn].
+\begin{enumerate}
+\item If $n\not=m$, then
+$$\ff_2(a_1\cdots a_n, b_m\cdots b_1)=0.$$
+\item If $n=m=1$ and $a\in\cA_i$, $b\in\cA_j$, with $i\not= j$,
+then
+$$\ff_2(a,b)=0.$$
+\item If $n=m\geq2$, then
+$$\ff_2(a_1\cdots a_n, b_n\cdots b_1)=
+\sum_{k=0}^{n-1} \ff_1(a_1b_{1+k})\cdot\ff_1(a_2b_{2+k})\cdots
+\ff_1(a_nb_{n+k}).$$
+\end{enumerate}
+For a visualization of this formula, one should think of two
+concentric circles with the $a$'s on one of them and the $b$'s on
+the other. However, whereas on one circle we have a clockwise
+orientation of the points, on the other circle the orientation is
+counter-clockwise. Thus, in order to match up these points modulo a
+rotation of the circles, we have to pair the indices as in the sum
+above.
+
+\end{definition}
+
+Recall that in the combinatorial description of freeness \cite{NSp},
+the extension of $\ff_1$ to a multiplicative function on
+non-crossing partitions plays a fundamental role. In the same way,
+second order freeness will rely on a suitable extension of $\ff_2$.
+
+\begin{notation}\label{extension}
+Let $(\cA,\ff_1,\ff_2)$ be a second order non-commutative
+probability space. Then we extend the definition of $\ff_1$ and
+$\ff_2$ as follows:
+\begin{align*}
+\ff_1:\bigcup_{n=1}^\infty\bigl(S_n\times \cA^n)&\to\CC\\
+(\pi,a_1,\dots,a_n)&\mapsto \ff_1(\pi)[a_1,\dots,a_n]
+\end{align*}
+is, for a cycle $\pi=(i_1, i_2,\dots, i_r)$, given by
+$$\ff_1(\pi)[a_1,\dots,a_n]:=\ff_1(a_{i_1}a_{i_2}a_{i_3}\cdots
+a_{i_r})$$ and extended to general $\pi\in S_n$ by multiplicativity
+$$\ff_1(\pi_1\times\pi_2)[a_1,\dots,a_n]=
+\ff_1(\pi_1)[a_1,\dots,a_n]\cdot \ff_1(\pi_2)[a_1,\dots,a_n].$$ In a
+similar way,
+\begin{align*}
+\ff_2:\bigcup_{m,n=1}^\infty\bigl(S_m\times S_n\times
+\cA^m\times \cA^n)&\to\CC\\
+(\pi_1,\pi_2,a_1,\dots,a_m,b_1,\dots,b_m) &\mapsto
+\ff_2(\pi_1,\pi_2)[a_1,\dots,a_m;b_1,\dots,b_n]
+\end{align*}
+is defined, for two cycles $\pi_1=(i_1, i_2, \dots, i_p)$ and
+$\pi_2=(j_1, j_2, \dots,\ab j_r)$, by
+$$\ff_2(\pi_1,\pi_2)[a_1,\dots,a_m;b_1,\dots,b_n]:=
+\ff_2(a_{i_1}a_{i_2}\cdots a_{i_p},b_{j_1}b_{j_2}\cdots b_{j_r})$$
+and extended to the general situation by the derivation
+property
+\begin{multline}\label{leftderivation}
+\ff_2(\pi_1\times\pi_2,\pi_3)[a_1,\dots,a_m;b_1,\dots,b_n]
+\\=\ff_2(\pi_1,\pi_3)[a_1,\dots,a_m;b_1,\dots,b_n]\cdot
+\ff_1(\pi_2)[a_1,\dots,a_m,b_1,\dots,b_n]
+\\+
+\ff_2(\pi_2,\pi_3)[a_1,\dots,a_m;b_1,\dots,b_n]\cdot
+\ff_1(\pi_1)[a_1,\dots,a_m,b_1,\dots,b_n].
+\end{multline}
 and
-(5) ϕ2(π1, π2 × π3)[a1, . . . , am; b1, . . . , bn]
-= ϕ2(π1, π2)[a1, . . . , am; b1, . . . , bn] · ϕ1(π3)[a1, . . . , am, b1, . . . , bn]
-+ ϕ2(π1, π3)[a1, . . . , am; b1, . . . , bn] · ϕ1(π2)[a1, . . . , am, b1, . . . , bn].
-10 J. A. MINGO, P. ´SNIADY, AND R. SPEICHER
-Remark 2.7. Let ( Ai)i∈I be a family of unital subalgebras of the sec-
-ond order probability space ( A, ϕ1, ϕ2) which are free of second order.
-Suppose that for each i we have ( Bi,j)j∈Ki a family of unital subal-
-gebras of Ai which are free of second order. By [VDN, Prop. 2.5.5
-(iii)] ( Bi,j)j∈∪iKi are free of ﬁrst order. We leave as an exercise for the
-reader to show that the proof of [VDN] can be adapted to show tha t
-(Bi,j)j∈∪iKi are free of second order.
+\begin{multline}\label{rightderivation}
+\ff_2(\pi_1,\pi_2\times\pi_3)[a_1,\dots,a_m;b_1,\dots,b_n]
+\\=\ff_2(\pi_1,\pi_2)[a_1,\dots,a_m;b_1,\dots,b_n]\cdot
+\ff_1(\pi_3)[a_1,\dots,a_m,b_1,\dots,b_n]
+\\+
+\ff_2(\pi_1,\pi_3)[a_1,\dots,a_m;b_1,\dots,b_n]\cdot
+\ff_1(\pi_2)[a_1,\dots,a_m,b_1,\dots,b_n].
+\end{multline}
+\end{notation}
+
+
+\begin{remark}\label{associativity}
+Let $(A_i)_{i \in I}$ be a family of unital subalgebras of
+the second order probability space $(A, \ff_1, \ff_2)$ which are
+free of second order. Suppose that for each $i$ we have
+$(B_{i,j})_{j\in K_i}$ a family of unital subalgebras of $A_i$
+which are free of second order. By \cite[Prop. 2.5.5 (iii)]{VDN}
+$(B_{i,j})_{j \in \cup_i K_i}$ are free of first order. We leave
+as an exercise for the reader to show that the proof of
+\cite{VDN} can be adapted to show that  $(B_{i,j})_{j \in \cup_i
+K_i}$ are free of second order. \end{remark}

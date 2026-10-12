@@ -8,30 +8,21 @@ pages: 19-20
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
 doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+text_source: latex
+latex_prose_ratio: 0.932
+latex_coverage_ratio: 0.986
 ---
-Hilbert problem which deserve further comment. For the ﬁrst, not e that the twisted torus T has a
-canonical involution σ : T→ T which acts on twisted characters by σ∗(xγ) = x−γ. The ﬁxed point
-set is the ﬁnite subset
-Tσ ={g : Γ →{± 1} : g(γ1 + γ2) = (−1)⟨γ1,γ2⟩g(γ1)· g(γ2)}⊂ T, (22)
-20 TOM BRIDGELAND
-whose elements are quadratic reﬁnements of the form ⟨−,−⟩.
-The symmetry property Ω( −γ) = Ω( γ) of the BPS invariants implies that
-S(−ℓ)◦ σ = σ◦ S(ℓ).
-It follows that given a collection of functions X ξ
-r (t) solving the Riemann-Hilbert problem for the
-constant term ξ, we can generate another solution, this time for the constant ter m σ(ξ), by deﬁning
-X σ(ξ)
-r (t) = σ◦ X ξ
-−r(−t).
-In particular, if we had uniqueness of solutions, we could conclude th at whenever ξ ∈ Tσ is a
-quadratic reﬁnement of the form ⟨−,−⟩, any solution to the Riemann-Hilbert problem satisﬁes
-X ξ
-r,γ(t) = X ξ
-−r,−γ(−t).
-For the second symmetry of the Riemann-Hilbert problem, note tha t given a BPS structure
-(Γ , Z, Ω), we can obtain a new BPS structure (Γ , λZ, Ω) by simply multiplying the central charges
-Z(γ)∈ C by a ﬁxed scalar λ∈ C∗. It is then clear that if Xr(t) is a system of solutions to the
-Riemann-Hilbert problem for the BPS structure (Γ , Z, Ω), then the functions Xλr(λt) will be a
-system of solutions to the problem for (Γ , λZ, Ω) with the same constant term. Again, if we had
-uniqueness of solutions, we could conclude that all solutions to Prob lem 4.3 are invariant under
-simultaneous rescaling of Z and t.
+\label{sym}
+There are a couple of obvious symmetries of the Riemann-Hilbert problem which deserve further comment.
+For the first, note that the twisted torus $\bT$ has a canonical involution $\sigma\colon \bT\to \bT$  which acts on twisted characters by $\sigma^*(x_\gamma)=x_{-\gamma}$.  The fixed point set  is the finite subset
+\begin{equation}\label{quadref}\bT^\sigma=\{g\colon \Gamma \to \{\pm 1\}: g(\gamma_1+\gamma_2)=(-1)^{\<\gamma_1,\gamma_2\>} g(\gamma_1)\cdot g(\gamma_2)\}\subset \bT,\end{equation}
+whose elements are 
+quadratic refinements of the form $\<-,-\>$. 
+
+The symmetry property $\Omega(-\gamma)=\Omega(\gamma)$ of the BPS invariants implies that 
+\[\bS(-\ell)\circ \sigma =\sigma\circ \bS(\ell).\]
+ It follows that  given a collection of functions  $\Phi^{\xi}_\rr(t)$ solving the Riemann-Hilbert problem for the constant term $\xi$, we can generate another solution, this time for the constant term $\sigma(\xi)$, by defining \[{\Phi}^{\sigma(\xi)}_{\rr}(t)=\sigma\circ \Phi^\xi_{-\rr}(-t).\]
+ In particular,  if we had uniqueness of solutions, we could  conclude that  whenever $\xi\in \bT^\sigma$ is a quadratic refinement of the form $\<-,-\>$, any solution to the  Riemann-Hilbert problem satisfies
+ \[\Phi^\xi_{\rr,\gamma}(t)= \Phi^\xi_{-\rr,-\gamma}(-t).\]
+ 
+ For the second symmetry of the Riemann-Hilbert problem, note that given a BPS structure $(\Gamma,Z,\Omega)$, we can obtain a new BPS structure $(\Gamma,\lambda Z,\Omega)$ by simply multiplying the central charges $Z(\gamma)\in \bC$ by a fixed scalar $\lambda\in \bC^*$. It is then clear that if $\Phi_\rr(t)$ is a system of solutions to the Riemann-Hilbert problem  for the BPS structure $(\Gamma,Z,\Omega)$, then the functions $\Phi_{\lambda\rr}(\lambda t)$ will be a system of solutions to the problem for $(\Gamma,\lambda Z,\Omega)$ with the same constant term. Again, if we had uniqueness of solutions, we could conclude that all solutions to Problem \ref{dtsect} are invariant under simultaneous rescaling of $Z$ and $t$.

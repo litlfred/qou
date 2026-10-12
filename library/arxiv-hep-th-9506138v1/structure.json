@@ -5,7 +5,12 @@
   "file": "9506138v1.pdf",
   "sha256": "bb85afba0530402c2759a2bcfbc86fae96a3976253ca8df58fc199040f76c32f",
   "bytes": 254036,
-  "pages": 28
+  "pages": 28,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -15,18 +20,31 @@
    "stamp_date": "21 Jun 1995"
   },
   "doi": null,
-  "title": "Black Hole Complementarity vs. Locality",
-  "authors_raw": "David A. Lowe, a Joseph Polchinski, b Leonard Susskind, c",
+  "title": "arXiv:hep-th/9506138v1 21 Jun 1995",
+  "authors_raw": "L\u00e1rus Thorlacius,b and John Uglumc",
+  "title_lines": [
+   "Black Hole Complementarity vs. Locality",
+   "David A. Lowe,a Joseph Polchinski,b Leonard Susskind,c"
+  ],
   "abstract": null,
   "docinfo": {
+   "Title": "arXiv:hep-th/9506138v1  21 Jun 1995",
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126154954-05'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:hep-th/9506138v1  21 Jun 1995"
+   "CreationDate": "D:20241126154954-05'00'"
   },
-  "title_lines": [
-   "Black Hole Complementarity vs. Locality"
-  ]
+  "title_raw": "Black Hole Complementarity vs. Locality David A. Lowe,a Joseph Polchinski,b Leonard Susskind,c",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9506138v1 21 Jun 1995",
+   "heading": "Black Hole Complementarity vs. Locality",
+   "text": "Black Hole Complementarity vs. Locality David A. Lowe,a Joseph Polchinski,b Leonard Susskind,c",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -34,81 +52,546 @@
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "The Nice-Slice Argument",
    "page": 5,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "The Nice Slice and String Field Theory",
    "page": 8,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Discussion and Conclusions",
    "page": 13,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Comparing Commutators",
    "page": 13,
    "source": "inferred",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "The Structure of the Nice Slice Theory",
    "page": 15,
    "source": "inferred",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "14"
   },
   {
    "level": 1,
-   "title": "(x+",
-   "page": 27,
+   "title": "The Commutator of Open Bosonic String Fields",
+   "page": 16,
    "source": "inferred",
-   "number": "1"
+   "number": "A",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "15"
+  },
+  {
+   "level": 2,
+   "title": "Calculation of the Commutator",
+   "page": 16,
+   "source": "inferred",
+   "number": "A.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "15"
+  },
+  {
+   "level": 2,
+   "title": "Correspondence with Low Energy Minkowski Field Theory",
+   "page": 19,
+   "source": "inferred",
+   "number": "A.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "18"
+  },
+  {
+   "level": 2,
+   "title": "The Tachyon Commutator on a Nice Slice",
+   "page": 22,
+   "source": "inferred",
+   "number": "A.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "21"
   },
   {
    "level": 1,
-   "title": "(x+",
-   "page": 27,
+   "title": "The Magnitude of the Commutator",
+   "page": 22,
    "source": "inferred",
-   "number": "2"
+   "number": "B",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "21"
   },
   {
-   "level": 1,
-   "title": "(x+",
-   "page": 27,
+   "level": 2,
+   "title": "A Four Point Amplitude Involving Commutators",
+   "page": 22,
    "source": "inferred",
-   "number": "3"
+   "number": "B.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "21"
   },
   {
-   "level": 1,
-   "title": "(x+",
+   "level": 2,
+   "title": "The Behavior of the Commutator of Nice Slice Fields",
+   "page": 25,
+   "source": "inferred",
+   "number": "B.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 2,
+   "title": "Extension to Closed Bosonic Strings and Superstrings",
+   "page": 26,
+   "source": "inferred",
+   "number": "B.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "25"
+  },
+  {
+   "level": 2,
+   "title": "A Limiting Case",
    "page": 27,
    "source": "inferred",
-   "number": "4"
+   "number": "B.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "References",
    "page": 28,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "27"
+  },
+  {
+   "level": 2,
+   "title": "A. Lowe, The Planckian Conspiracy: String Theory and the Black Hole Information",
+   "page": 28,
+   "source": "inferred",
+   "number": "D",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "27"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Kruskal diagram of static black hole solution",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A family of nice slices",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "String diagram for four-point amplitude",
+   "page": 23,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1520,
+   "n_words": 217,
+   "label_start": null,
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -116,8 +599,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 7151,
-   "n_words": 1182
+   "n_chars": 7087,
+   "n_words": 1118,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-the-nice-slice-argument",
@@ -126,8 +611,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 8,
-   "n_chars": 8870,
-   "n_words": 1583
+   "n_chars": 8802,
+   "n_words": 1515,
+   "label_start": "3",
+   "label_end": "7"
   },
   {
    "id": "sec-002-3-the-nice-slice-and-string-field-theory",
@@ -136,8 +623,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 13,
-   "n_chars": 9560,
-   "n_words": 1679
+   "n_chars": 9491,
+   "n_words": 1610,
+   "label_start": "7",
+   "label_end": "12"
   },
   {
    "id": "sec-003-4-discussion-and-conclusions",
@@ -146,8 +635,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 709,
-   "n_words": 115
+   "n_chars": 703,
+   "n_words": 109,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
    "id": "sec-004-41-comparing-commutators",
@@ -156,8 +647,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 4672,
-   "n_words": 774
+   "n_chars": 4638,
+   "n_words": 740,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
    "id": "sec-005-42-the-structure-of-the-nice-slice-theory",
@@ -165,36 +658,160 @@
    "title": "The Structure of the Nice Slice Theory",
    "level": 2,
    "page_start": 15,
-   "page_end": 26,
-   "n_chars": 22600,
-   "n_words": 4182
+   "page_end": 16,
+   "n_chars": 3888,
+   "n_words": 637,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-006-1-x",
-   "number": "1",
-   "title": "(x+",
+   "id": "sec-006-a-the-commutator-of-open-bosonic-string-fields",
+   "number": "A",
+   "title": "The Commutator of Open Bosonic String Fields",
    "level": 1,
-   "page_start": 26,
-   "page_end": 28,
-   "n_chars": 3575,
-   "n_words": 704
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-007-a1-calculation-of-the-commutator",
+   "number": "A.1",
+   "title": "Calculation of the Commutator",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 6020,
+   "n_words": 1095,
+   "label_start": "15",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-008-a2-correspondence-with-low-energy-minkowski-fiel",
+   "number": "A.2",
+   "title": "Correspondence with Low Energy Minkowski Field Theory",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 4934,
+   "n_words": 887,
+   "label_start": "18",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-009-a3-the-tachyon-commutator-on-a-nice-slice",
+   "number": "A.3",
+   "title": "The Tachyon Commutator on a Nice Slice",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1290,
+   "n_words": 223,
+   "label_start": "21",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-010-b-the-magnitude-of-the-commutator",
+   "number": "B",
+   "title": "The Magnitude of the Commutator",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "21",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-011-b1-a-four-point-amplitude-involving-commutators",
+   "number": "B.1",
+   "title": "A Four Point Amplitude Involving Commutators",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 5059,
+   "n_words": 964,
+   "label_start": "21",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-012-b2-the-behavior-of-the-commutator-of-nice-slice",
+   "number": "B.2",
+   "title": "The Behavior of the Commutator of Nice Slice Fields",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2091,
+   "n_words": 375,
+   "label_start": "24",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-013-b3-extension-to-closed-bosonic-strings-and-super",
+   "number": "B.3",
+   "title": "Extension to Closed Bosonic Strings and Superstrings",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 897,
+   "n_words": 150,
+   "label_start": "25",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-014-b4-a-limiting-case",
+   "number": "B.4",
+   "title": "A Limiting Case",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1373,
+   "n_words": 292,
+   "label_start": "26",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-015-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 28,
    "page_end": 28,
-   "n_chars": 2252,
-   "n_words": 384
+   "n_chars": 1224,
+   "n_words": 206,
+   "label_start": "27",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-016-d-a-lowe-the-planckian-conspiracy-string-theory",
+   "number": "D",
+   "title": "A. Lowe, The Planckian Conspiracy: String Theory and the Black Hole Information",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 938,
+   "n_words": 159,
+   "label_start": "27",
+   "label_end": "27"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 11,
-  "sections": 8,
-  "chars_total": 59389
+  "toc_entries": 17,
+  "toc_inferred_entries": 17,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.118,
+  "toc_inferred_method": "font",
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 18,
+  "chars_total": 59955
  }
 }

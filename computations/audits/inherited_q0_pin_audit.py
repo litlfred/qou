@@ -80,7 +80,7 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent
 COMPUTE = REPO / "computations"
 MANIFEST = COMPUTE / "q0_anchor_manifest.json"
-SKIP = (".git", ".claude", "_deprecated", "node_modules", "__pycache__", "tests")
+SKIP = (".git", ".claude", "_deprecated", "fsh-guts", "node_modules", "__pycache__", "tests")
 
 # The anchor-DEFINING witness. Reading it IS an explicit muon pin (AGENTS.md
 # §"NEVER re-pin an anchor-DEFINING witness"), so it is exempt from this audit.

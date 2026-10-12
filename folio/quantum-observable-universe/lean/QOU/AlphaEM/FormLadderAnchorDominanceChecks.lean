@@ -53,7 +53,7 @@ def predMuon : ℝ := 137.036010188814  -- noqa: P31 - RECORDED witness output, 
 CORRECTED 2026-09-04.  This docstring said the value "must track
 `alpha-em-form-ladder.witness.json`" — and that witness did not contain it.
 `137.035999084` appears nowhere in it; the only in-tree witnesses carrying it
-are under `computations/_deprecated/`.  The real source is the producer,
+are under `fsh-guts/deprecated/computations/`.  The real source is the producer,
 `computations/alpha_em_form_ladder_probe.py::CODATA_ALPHA_INV`, and the witness
 published `proton_ppb` / `muon_ppb` while recording no value for them to be
 residuals FROM.  The producer now emits `data.codata_reference`, so the

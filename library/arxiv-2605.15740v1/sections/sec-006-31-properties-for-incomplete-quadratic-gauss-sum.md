@@ -8,194 +8,43 @@ pages: 13-14
 source_pdf: 2605.15740v1.pdf
 source_sha256: aa7f99d6633113c6
 doc_brief: "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS — In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology"
+text_source: latex
+latex_prose_ratio: 0.899
+latex_coverage_ratio: 0.696
 ---
-an incomplete quadratic Gauss sum. For simplicity, we writeχ=χ ℓ
-p. Recall thatP:=p 1p2p3.
-Lemma 3.1.Assume that
-(i)P≡2 (mod 4),
-(ii) ifχ(n)̸= 0, thennis odd
-(iii)χis even moduloP, i.e.,χ(P−n) =χ(n).
-Ifqis a primitiveNth root of unity, then
-2
-PNX
-n=0
-
-1− n
-PN
-
-χ(n)q
-n2
-4P =
-PNX
-n=0
-χ(n)q
-n2
-4P.
-Proof.We have
-2
-PNX
-n=0
-
-1− n
-PN
-
-χ(n)q
-n2
-4P
-=
-PNX
-n=0
-
-1− n
-PN
-
-χ(n)q
-n2
-4P +
-PNX
-n=0
-
-1− n
-PN
-
-χ(n)q
-n2
-4P
-=
-PNX
-n=0
-
-1− n
-PN
-
-χ(n)q
-n2
-4P +
-PNX
-n=0
-
-1− (PN−n)
-PN
-
-χ(PN−n)q
-(PN−n) 2
-4P
-=
-PNX
-n=0
-
-1− n
-PN
-
-χ(n)q
-n2
-4P +
-PNX
-n=0
-n
-PN χ(PN−n)q
-(P 2N 2−2nPN+n 2)
-4P
-14 JEREMY LOVEJOY, ROBERT OSBURN, AND MATTHIAS STORZER
-=
-PNX
-n=0
-
-1− n
-PN
-
-χ(n)q
-n2
-4P +
-PNX
-n=0
-n
-PN q
-n2
-4Pχ(PN−n)q
-N(PN−2n)
-4 .(3.1)
-Consider the term
-χ(PN−n)q
-N(PN−2n)
-4 .
-We have two cases according to the parity ofN. First, ifNis odd then sinceP≡2 (mod 4)
-andnis odd we have thatPN−2nis a multiple of 4. Thereforeq
-N(PN−2n)
-4 = 1. Moreover, by
-(iii) we haveχ(PN−n) =χ(n). Hence
-χ(PN−n)q
-N(PN−2n)
-4 =χ(n).
-IfNis even, thenPN−2n≡2 (mod 4) and soq
-N(PN−2n)
-4 =−1. Now sinceNis even we have
-χ(PN−n) =−χ(n). Once again, we find that
-χ(PN−n)q
-N(PN−2n)
-4 =χ(n).
-Using this in (3.1) we have
-2
-PNX
-n=0
-
-1− n
-PN
-
-χ(n)q
-n2
-4P =
-PNX
-n=0
-
-1− n
-PN
-
-χ(n)q
-n2
-4P +
-PNX
-n=0
-n
-PN q
-n2
-4Pχ(n)
-=
-PNX
-n=0
-χ(n)q
-n2
-4P,
-as desired. □
-Remark 3.2.Note that (i) and (ii) in Lemma 3.1 are satisfied for all of the functionsχ ℓ
-p
-considered in Theorem 1.2. Moreover,p 1 = 2 and so by [18, (3.8)] the involutionσ 1 fixes
-ℓ= (1,1,ℓ 3), i.e.,χ ℓ
-p(n+P) =−χ ℓ
-p(n). Now replacenwith−nand use the fact thatχ ℓ
-p is odd
-to obtain (iii) in Lemma 3.1. Finally, note thatχ ℓ
-p is odd moduloNPfor all evenNand even
-moduloNPfor all oddN.
-Next, we recall a result (see [16, Proposition 3] or [29, Corollary 3.9]) which explicitly computes
-the limiting values of the Eichler integrals eΦℓ
-p(τ) asτ→ M
-N .
-Proposition 3.3.LetMandNbe coprime positive integers. We have
-lim
-τ→M
-N
-eΦℓ
-p(τ) =
-PNX
-n=0
-χℓ
-p
-
-1− n
-PN
-
-ζ
-Mn2
-4P
-N .
+We begin with a general result on an incomplete quadratic Gauss sum. For simplicity, we write $\chi = \chi_{\bm{p}}^{\bm{\ell}}$. Recall that $P:=p_1 p_2 p_3$.
+
+::: lemma
+[]{#chiprop label="chiprop"} Assume that
+
+1.  $P \equiv 2 \pmod{4}$,\
+
+2.  if $\chi(n) \neq 0$, then $n$ is odd\
+
+3.  $\chi$ is even modulo $P$, i.e., $\chi(P-n) = \chi(n)$.
+
+If $q$ is a primitive $N$th root of unity, then $$2\sum_{n=0}^{PN} \left(1-\frac{n}{PN}\right) \chi(n) q^{\frac{n^2}{4P}} =  \sum_{n=0}^{PN} \chi(n) q^{\frac{n^2}{4P}}.$$
+:::
+
+::: proof
+*Proof.* We have $$\begin{aligned}
+2\sum_{n=0}^{PN}& \left(1-\frac{n}{PN}\right) \chi(n) q^{\frac{n^2}{4P}} \nonumber \\
+&= \sum_{n=0}^{PN} \left(1-\frac{n}{PN}\right) \chi(n) q^{\frac{n^2}{4P}} + \sum_{n=0}^{PN} \left(1-\frac{n}{PN}\right) \chi(n) q^{\frac{n^2}{4P}} \nonumber \\
+&= \sum_{n=0}^{PN} \left(1-\frac{n}{PN}\right) \chi(n) q^{\frac{n^2}{4P}}  + \sum_{n=0}^{PN} \left(1-\frac{(PN-n)}{PN}\right) \chi(PN-n) q^{\frac{(PN-n)^2}{4P}} \nonumber \\
+&= \sum_{n=0}^{PN} \left(1-\frac{n}{PN}\right) \chi(n) q^{\frac{n^2}{4P}}  + \sum_{n=0}^{PN} \frac{n}{PN} \chi(PN-n) q^{\frac{(P^2N^2 - 2nPN + n^2)}{4P}} \nonumber \\
+&= \sum_{n=0}^{PN} \left(1-\frac{n}{PN}\right) \chi(n) q^{\frac{n^2}{4P}}  + \sum_{n=0}^{PN} \frac{n}{PN} q^{\frac{n^2}{4P}} \chi(PN-n) q^{\frac{N(PN - 2n)}{4}}. \label{tbc}
+\end{aligned}$$ Consider the term $$\chi(PN-n) q^{\frac{N(PN - 2n)}{4}}.$$ We have two cases according to the parity of $N$. First, if $N$ is odd then since $P \equiv 2 \pmod{4}$ and $n$ is odd we have that $PN-2n$ is a multiple of $4$. Therefore $q^{\frac{N(PN - 2n)}{4}} = 1$. Moreover, by $(iii)$ we have $\chi(PN - n) =\chi(n)$. Hence $$\chi(PN-n) q^{\frac{N(PN - 2n)}{4}} = \chi(n).$$ If $N$ is even, then $PN-2n \equiv 2 \pmod{4}$ and so $q^{\frac{N(PN - 2n)}{4}} = -1$. Now since $N$ is even we have $\chi(PN - n) = -\chi(n)$. Once again, we find that $$\chi(PN-n) q^{\frac{N(PN - 2n)}{4}} = \chi(n).$$ Using this in [\[tbc\]](#tbc){reference-type="eqref" reference="tbc"} we have $$\begin{aligned}
+2\sum_{n=0}^{PN} \left(1-\frac{n}{PN}\right) \chi(n) q^{\frac{n^2}{4P}} &= \sum_{n=0}^{PN} \left(1-\frac{n}{PN}\right) \chi(n) q^{\frac{n^2}{4P}}  + \sum_{n=0}^{PN} \frac{n}{PN} q^{\frac{n^2}{4P}} \chi(n) \\
+&= \sum_{n=0}^{PN} \chi(n) q^{\frac{n^2}{4P}},
+\end{aligned}$$ as desired. ◻
+:::
+
+::: remark
+[]{#chiproprmk label="chiproprmk"} Note that (i) and (ii) in Lemma [\[chiprop\]](#chiprop){reference-type="ref" reference="chiprop"} are satisfied for all of the functions $\chi_{\bm{p}}^{\bm{\ell}}$ considered in Theorem [\[main\]](#main){reference-type="ref" reference="main"}. Moreover, $p_1 = 2$ and so by [@hikami3 (3.8)] the involution $\sigma_1$ fixes $\bm{\ell} = (1,1,\ell_3)$, i.e., $\chi_{\bm{p}}^{\bm{\ell}}(n+P) = -\chi_{\bm{p}}^{\bm{\ell}}(n)$. Now replace $n$ with $-n$ and use the fact that $\chi_{\bm{p}}^{\bm{\ell}}$ is odd to obtain (iii) in Lemma [\[chiprop\]](#chiprop){reference-type="ref" reference="chiprop"}. Finally, note that $\chi_{\bm{p}}^{\bm{\ell}}$ is odd modulo $NP$ for all even $N$ and even modulo $NP$ for all odd $N$.
+:::
+
+Next, we recall a result (see [@hikami1 Proposition 3] or [@tm Corollary 3.9]) which explicitly computes the limiting values of the Eichler integrals $\widetilde{\Phi}_{\bm{p}}^{\bm{\ell}}(\tau)$ as $\tau \to \frac{M}{N}$.
+
+::: proposition
+[]{#Elimit label="Elimit"} Let $M$ and $N$ be coprime positive integers. We have $$\lim_{\tau \to \frac{M}{N}} \widetilde{\Phi}_{\bm{p}}^{\bm{\ell}}(\tau) = \sum_{n=0}^{PN} \chi_{\bm{p}}^{\bm{\ell}} \left( 1 - \frac{n}{PN} \right) \zeta_N^{M\frac{n^2}{4P}}.$$
+:::

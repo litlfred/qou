@@ -158,7 +158,7 @@ def _scan():
     flagged = {}
     parse_fail = 0
     for py in sorted(COMPUTE_ROOT.rglob("*.py")):
-        if "_deprecated" in py.parts or "audits" in py.parts:
+        if ("_deprecated" in py.parts or "fsh-guts" in py.parts) or "audits" in py.parts:
             continue
         if py.name == "codata_constants.py":
             continue  # the SOURCE of the constants

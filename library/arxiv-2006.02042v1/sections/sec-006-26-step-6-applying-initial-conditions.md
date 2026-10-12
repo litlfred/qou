@@ -8,38 +8,45 @@ pages: 8-9
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
 doc_brief: "The Strong AJ Conjecture for the Figure 8 Knot — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ"
+text_source: latex
+latex_prose_ratio: 0.941
+latex_coverage_ratio: 0.906
 ---
-ditions (2.4)–(2.8). Firstly, we note that equations (2.4) and (2.5) h old true since we
-chose p2(t, M) = p−2(t, M) = 1 . Secondly, by taking t = 1 in p1(t, M) = p−1(t, M−1)
-we have p1(1, M) = p−1(1, M −1). This implies that p1(1, M) = ˜a1(M) if and only if
-p−1(1, M) = ˜a−1(M). Meaning equations (2.6) and (2.7) are equivalent.
-Thirdly, by taking t = 1 in equation (2.13) we have
-A1(1, M)p0(1, M) + B1(1, M)p1(1, M) = C1(1, M).
-By a direct calculation we can check that A1(1, M)˜a0(M) + B1(1, M)˜a1(M) = C1(1, M).
-This implies that p1(1, M) = ˜a1(M) if and only if p0(1, M) = ˜a0(M). Meaning equations
-(2.6) and (2.8) are equivalent. Hence we have shown that the initial c onditions (2.4)–(2.8)
-reduce to a single equation p1(1, M) = ˜a1(M).
-Since
-p1(1, M) = ˜p1(1, M) + f (1, M)A2(1, M)
-gcd(A2(1, M), B2(1, M)) ,
-by a direct calculation we see that the condition p1(1, M) = ˜ a1(M) is equivalent to
-f (1, M) = M −8 − M −6 + 35M −4 + 18M −2 + 29 + 20 M 2. This suggests that we may
-consider the polynomial f (t, M) in equation (2.14) of the following form
-f (t, M) = M −8 − M −6 + 35M −4 + 18M −2 + 29 + 20M 2 + (t2 − 1)h(t, M)
-for some unknown function h(t, M). Now it remains to ﬁnd h(t, M) explicitly.
-With the change of variable h(t, M) = t8M −6k(t, M), equation (2.14) becomes
-k(t, M) + k(t, M−1)
-= 2 t4 + 2t6 + (1 + t2 − 11t4 − 11t6 + 12t8 + 12t10)(M 2 + M −2)
-+ (1 + t2 − 5t4 − 5t6 + 7t8 + 7t10 + t12 + t14)(M 4 + M −4)
-+ (2 + 2t2 − 10t4 − 10t6 + 9t8 + 9t10 − 2t12 − 2t14 − 2t16 − 2t18)(M 6 + M −6)
-+ (1 + t2 − 7t4 − 7t6 + 7t8 + 7t10)(M 8 + M −8).
-STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT 9
+Now we take into account the initial conditions \eqref{eq: 2}--\eqref{eq}. Firstly, we note that equations \eqref{eq: 2} and \eqref{eq: -2} hold true since we chose $p_2(t,M)=  p_{-2}(t,M)=1.$ Secondly, by taking $t=1$ in $p_1(t,M) = p_{-1}(t,M^{-1})$ we have $p_1(1,M) = p_{-1}(1,M^{-1})$. This implies that $p_1(1,M) = \tilde{a}_{1}(M)$ if and only if $p_{-1}(1,M)= \tilde{a}_{-1}(M)$. Meaning equations  \eqref{eq: 1} and \eqref{eq: -1} are equivalent. 
+
+Thirdly,  by taking $t=1$ in equation \eqref{eq:Dio1} we have 
+$$A_1(1,M)p_0(1,M)+B_1(1,M)p_1(1,M)=C_1(1,M).$$
+By a direct calculation we can check that  $A_1(1,M)\tilde{a}_{0}(M)+B_1(1,M) \tilde{a}_{1}(M)=C_1(1,M)$. This implies that $p_1(1,M) = \tilde{a}_{1}(M)$ if and only if
+$p_0(1,M)= \tilde{a}_{0}(M)$. Meaning equations  \eqref{eq: 1} and \eqref{eq} are equivalent. Hence we have shown that the initial conditions \eqref{eq: 2}--\eqref{eq} reduce to a single equation $p_1(1,M) = \tilde{a}_{1}(M)$. 
+
+Since $$p_1(1,M)=\tilde p_1(1,M)+\frac{f(1,M)A_2(1,M)}{\gcd(A_2(1,M), B_2(1,M))},$$ by a direct calculation we see that the condition $p_1(1,M) = \tilde a_1(M)$ is equivalent to $f(1, M) = M^{-8} - M^{-6} + 35 M^{-4} + 18 M^{-2} + 29 + 20 M^{2}$. This suggests that we may consider the polynomial $f(t,M)$ in equation \eqref{eq:f} of the following form
+$$f(t, M) = M^{-8} - M^{-6} + 35 M^{-4} + 18 M^{-2} + 29 + 20 M^{2} + (t^2 - 1) h(t, M)$$
+for some  unknown function $h(t,M)$. Now it remains to find $h(t,M)$ explicitly.
+
+With the change of variable $h(t, M) = t^8 M^{-6} k(t, M)$, equation \eqref{eq:f} becomes  
+\begin{eqnarray*}
+&& k(t, M) + k(t, M^{-1}) \\
+&=&  2 t^4 + 2 t^6 + (1 + t^2 - 11 t^4 - 11 t^6 + 12 t^8 + 12 t^{10}) (M^2 +M^{-2}) \\ 
+ && + \, (1 + t^2 - 5 t^4 - 5 t^6 + 7 t^8 + 7 t^{10} + t^{12} + t^{14}) (M^4 + M^{-4}) 
+ \\
+ && + \, (2 + 2 t^2 - 10 t^4 - 10 t^6 + 9 t^8 + 9 t^{10} - 2 t^{12} - 2 t^{14} - 
+  2 t^{16} - 2 t^{18}) (M^6 + M^{-6}) \\
+  && + \,  (1 + t^2 - 7 t^4 - 7 t^6 + 7 t^8 + 7 t^{10}) (M^8 + M^{-8}).
+\end{eqnarray*}
 It is easy to see that a solution of this equation is
-k(t, M) = t4 + t6 + (1 + t2 − 11t4 − 11t6 + 12t8 + 12t10)M 2
-+ (1 + t2 − 5t4 − 5t6 + 7t8 + 7t10 + t12 + t14)M 4
-+ (2 + 2t2 − 10t4 − 10t6 + 9t8 + 9t10 − 2t12 − 2t14 − 2t16 − 2t18)M 6
-+ (1 + t2 − 7t4 − 7t6 + 7t8 + 7t10)M 8.
-With this we have an explicit solution f (t, M) and hence an explicit solution b0. More
-precisely, we have
-b0(t, M) = −(−1 + M)(1 + M)(1 + M 2)t4(−M 2 − M 4 − M 6 + t4 + M 8t4 − M 4t8)
-M 2(M − t)(M + t)(−1 + M t)(1 + M t)(M 2 + t2)(1 + M 2t2) .
+\begin{eqnarray*}
+k(t, M) 
+&=&   t^4 +  t^6 + (1 + t^2 - 11 t^4 - 11 t^6 + 12 t^8 + 12 t^{10}) M^2  \\ 
+ && + \, (1 + t^2 - 5 t^4 - 5 t^6 + 7 t^8 + 7 t^{10} + t^{12} + t^{14}) M^4 
+ \\
+ && + \, (2 + 2 t^2 - 10 t^4 - 10 t^6 + 9 t^8 + 9 t^{10} - 2 t^{12} - 2 t^{14} - 
+  2 t^{16} - 2 t^{18}) M^6 \\
+  && + \,  (1 + t^2 - 7 t^4 - 7 t^6 + 7 t^8 + 7 t^{10}) M^8.
+\end{eqnarray*}
+
+With this we have an explicit solution $f(t,M)$ and hence an explicit solution $b_0$. More precisely, we have
+$$
+b_0(t, M) = -\frac{(-1 + M) (1 + M) (1 + M^2) t^4 (-M^2 - M^4 - M^6 + 
+     t^4 + M^8 t^4 - M^4 t^8)}{
+  M^2 (M - t) (M + t) (-1 + M t) (1 + M t) (M^2 + t^2) (1 + M^2 t^2)}.
+$$

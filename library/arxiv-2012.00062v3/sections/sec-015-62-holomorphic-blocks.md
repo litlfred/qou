@@ -8,876 +8,976 @@ pages: 47-60
 source_pdf: 2012.00062v3.pdf
 source_sha256: 2aacb7fa43f5e0da
 doc_brief: "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY — The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional"
+text_source: latex
+latex_prose_ratio: 0.673
+latex_coverage_ratio: 0.723
 ---
-state-integral of the52 knot by
-Z52,m,µ(u;τ) =
-∫
-D
-Φb(v) Φb(v +u) Φb(v−u) e−2πiv2+2π(mb−µb−1)vdv (240)
-for integersm andµ, which agrees with the Andersen-Kashaev invariant of the52 knot when
-m = µ = 0. Here the contourD was introduced in (67). It is expressed in terms of three
-descendant holomorphic blocks, which we denote byAm, Bm and Cm instead of B
-σj
-m for
-j = 1, 2, 3. For|q|⁄ = 1, Am(x;q), Bm(x;q) and Cm(x;q) are given by
-Am(x;q) =H(x,x−1,qm;q) (241a)
-Bm(x;q) =θ(−q1/2x;q)−2xmH(x,x 2,qmx2;q) (241b)
-Cm(x;q) =θ(−q−1/2x;q)−2x−mH(x−1,x−2,qmx−2;q) (241c)
-where H(x,y,z ;qε) :=Hε(x,y,z ;q) for|q|< 1 and ε =± and
-H+(x,y,z ;q) = (qx;q)∞(qy;q)∞
-∞∑
-n=0
-qn(n+1)zn
-(q;q)n(qx;q)n(qy;q)n
-(242a)
-H−(x,y,z ;q) = 1
-(x;q)∞(y;q)∞
-∞∑
-n=0
-(−1)n q
-1
-2n(n+1)x−ny−nzn
-(q;q)n(qx−1;q)n(qy−1;q)n
-. (242b)
-Note that the summand ofH+ (a properq-hypergeometric function) equals to that ofH−
-after replacingq by q−1. This implies thatH± have a common annihilating idealIH with
-respect tox,y,z which can be computed as in the case of Lemma 15.
-Thenexttheoremexpressesthedescendantstate-integralsbilinearlyintermsofdescendant
-holomorphic blocks.
-Theorem 22.(a) The descendant state-integral can be expressed in terms of the descendant
-holomorphic blocks by
-Z52,m,µ(ub;τ) =(−1)m+µqm/2˜qµ/2
-(
-e
-3πi
-4 + 5πi
-12 (τ+τ−1)Am(x;q)A−µ(˜x; ˜q−1)
-+e−πi
-4 +πi
-12 (τ+τ−1)Bm(x;q)B−µ(˜x; ˜q−1) + e−πi
-4 +πi
-12 (τ+τ−1)Cm(x;q)C−µ(˜x; ˜q−1)
-)
-.
-(243)
-(b) The functionsAm(x;q), Bm(x;q) and Cm(x;q) are holomorphic functions of|q|⁄ = 1 and
-meromorphic functions ofx∈ C ∗ with poles inx∈qZ of order at most2.
-(c) Let
-Wm(x;q) =
-
-
-Am(x;q) Bm(x;q) Cm(x;q)
-Am+1(x;q) Bm+1(x;q) Cm+1(x;q)
-Am+2(x;q) Bm+2(x;q) Cm+2(x;q)
-
- (|q|⁄ = 1). (244)
-For all integersm and µ, state-integralZ52,m,µ(u;τ) and the matrix-valued function
-Wm,µ(u;τ) =W−µ(˜x; ˜q−1)∆(τ)Wm(x;q)T, (245)
-48 STA VROS GAROUF ALIDIS, JIE GU, AND MARCOS MARIÑO
-where
-∆(τ) =
-
-
-e
-3πi
-4 + 5πi
-12 (τ+τ−1) 0 0
-0 e −πi
-4 +πi
-12 (τ+τ−1) 0
-0 0 e −πi
-4 +πi
-12 (τ+τ−1)
-
- , (246)
-are holomorphic functions ofτ∈ C ′ and entire functions ofu∈ C .
-Proof. Part (a) follows by applying the residue theorem, just as in the proof of part (a) of
-Theorem 14. A similar result was stated in [Dim15].
-Part (b) follows from the fact that when|q|< 1, the ratio test implies thatH+(x,y,z ;q) is
-an entire function of(x,y,z )∈ C 3 andJ−(x,y,z ;q) is a meromorphic function of(x,y,z )∈
-C 2× C with poles atx =qZ and y∈qZ .
-For part (c), one uses parts (a) and (b) to deduce thatWm,µ(u;τ) is holomorphic ofτ∈ C′
-and meromorphic inu with possible poles of second order atibZ + ib−1Z . An expansion at
-these points, done by the method of Section 6.3, demonstrates that the function is analytic
-at the pointsibZ + ib−1Z . □
-Note that the holomorphic blocks have the symmetry
-Am(x−1;q) =Am(x;q), B m(x−1;q) =Cm(x;q), (247)
-which implies the symmetry of the matrixWm(x;q)
-Wm(x−1;q) =Wm(x;q)
-
-
-1 0 0
-0 0 1
-0 1 0
-
- . (248)
-ConsequentlyWm,µ(u;τ) is invariant under the reﬂectionu↦→−u.
-Lemma 23.(a) The annihilating ideal ofIH of H± is given by
-IJ =⟨yzSx−xzSy + (x2y−xy2)Sz + (−x2y +xy2 +xz−yz), (249)
-−xy2S2
-z +zSy + (y2 +xy2−qyz)Sz + (−y2−z),−qySySz +Sy− 1,
-zS 2
-y + (−x +qy +qxy−q2y2−z−qz)Sy +qxySz + (x−qy−qxy +qz)⟩
-where Sx, Sy and Sz are the shiftsx to qx, y to qy and z to qz, respectively.
-(b) When|q|< 1, we have
-H(x,y,z ;q−1) =
-det
-(
-H(x−1,x−1y,x−2z;q) H(y−1,y−1x,y−2z;q)
-xH(x−1,x−1y,q−1x−2z;q) yH(y−1,y−1x,q−1y−2z;q)
-)
-yθ(−q− 1
-2x;q)θ(−q− 1
-2y;q)θ(−q− 1
-2xy−1;q)
-. (250)
-Proof. Part (a) follows as in the proof of Lemma 15.
-For part (b), observe that both sides of the equation are power series inz andq-holonomic
-functions of z. Using the HF package, we ﬁnd that the(i,j )-entry of the determinant is
-PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY 49
-annihilated by the operatorrij given by
-r11 =−yS3
-z + (x +y +xy−q2z)S2
-z + (−x−x2−xy)Sz +x2
-r12 =−xS3
-z + (x +y +xy−q2z)S2
-z + (−y−xy−y2)Sz +y2
-r21 =−yS3
-z + (x +y +xy−qz)S2
-z + (−x−x2−xy)Sz +x2
-r22 =−xS3
-z + (x +y +xy−qz)S2
-z + (−y−xy−y2)Sz +y2,
-whereas the left hand side of (250), after being multiplied by the denominator of the right
-hand side, is annihilated by the operator
-r =S3
-z + (−1−x−y)S2
-z + (x +y +xy−qz)Sz−xy. (251)
-Using the commandsDFiniteTimes and DFiniteTimes, we computed a 9th order operator
-R (which is too long to type here) that annihilates the determinant, and using the command
-OreReduce, we proved that it is a left multiple ofr. It follows that both sides of (250)
-satisfy the same 9th order recursion with respect toz, with nonvanishing leading term.
-Thus, the identity follows once we prove that the coeﬃcient ofzk in both sides agree, for
-k = 0,..., 8. When|q| < 1, the coeﬃcient ofzk in H(x,y,z ;q) (resp., H(x,y,z ;q−1)) is in
-(qx;q)∞(qy;q)∞Q (x,y,q )(resp., (x;q)−1
-∞ (y;q)−1
-∞ Q (x,y,q )), andthisimpliesthattheequality
-of the coeﬃcient ofzk in the above identity reduces to an equality on the ﬁeldQ (x,y,q )
-of rational functions in three variables. The latter is easy to check fork = 0,..., 8. This
-completes the proof of (250). □
-The next theorem concerns the properties of the linearq-diﬀerence equations satisﬁed by
-the descendant holomorphic blocks.
-Theorem 24. (a) They areq-holonomic functions in the variables(m,x ) with a common
-annihilating ideal
-I52 =⟨P1,P 2,P 3⟩ (252)
-where
-P1 =x(1−q3x2)(1−qx2−q2x2−q3+mx3 +q3x4)− (1−qx)(1 +qx)(1−qx2)(1−q3x2)Sm (253a)
-−x(1−qx)(1 +qx)(1−qx−qx2−q3x2 +q2x3 +q4x3−q3+mx3−q4+mx3 +q4x4−q5x5)Sx
-−q4+mx4(1−qx2)S2
-x
-P2 =x−Sm−xSx +qx2SxSm (253b)
-P3 =x(1−q1+m−qx2)− (1−q1+m +x−qx2 +q2+mx2−qx3)Sm (253c)
-+ (1−qx2)S2
-m +q1+mxSx.
-I52 has rank 3 and the three functions form a basis of solutions of the corresponding system
-of linear equations.
-(b) As functions of an integerm, Am(x;q), Bm(x;q) and Cm(x;q) form a basis of solutions
-of the linearq-diﬀerence equationˆB52(Sm,x,q m,q )fm(x;q) = 0 for|q|⁄ = 1 where
-ˆB52(Sm,x,q m,q ) = (1−Sm)(1−xSm)(1−x−1Sm)−q2+mS2
-m. (254)
-(c) The WronskianWm(x;q) of (254), deﬁned in (244), satisﬁes
-det(Wm(x;q)) =−θ(−q− 1
-2x;q)−2θ(−q− 1
-2x2;q) ( |q|⁄ = 1). (255)
-50 STA VROS GAROUF ALIDIS, JIE GU, AND MARCOS MARIÑO
-(d) The Wronskian satisﬁes the orthogonality relation
-W−1(x;q)W−1(x;q−1)T =
-
-
-1 0 0
-0 0 1
-0 1 x +x−1
-
- . (256)
-It follows that for all integersm,𝓁
-Wm(x;q)W𝓁(x;q−1)T∈ PSL(3, Z [q±,x±]) (257)
-(e)Asfunctionsof x, theyformabasisofalinear q-diﬀerenceequation ˆA52(Sx,x,q m,q )fm(x;q) =
-0 where
-ˆA52(Sx,x,q m,q ) =
-3∑
-j=0
-Cj(x,qm,q )Sj
-x, (258)
-Sx is the operator that shiftsx to qx and
-C0 =−q2+mx2(1−q2x)(1 +q2x)(1−q5x2) (259a)
-C1 =(1−qx)(1 +qx)(1−q5x2)×
-(1−qx−qx2−q4x2 +q2+mx2 +q3+mx2 +q2x3 +q5x3 +q5x4 +q5+mx4−q6x5) (259b)
-C2 =qx(1−q2x)(1 +q2x)(1−qx2)×
-(1−q2x−q2+mx−q2x2−q5x2 +q4x3 +q7x3−q5+mx3−q6+mx3 +q7x4−q9x5) (259c)
-C3 =q8+mx4(1−qx)(1 +qx)(1−qx2) (259d)
-(f) The Wronskian of Equation (258)
-Wm(x;q) =
-
-
-Am(x;q) Bm(x;q) Cm(x;q)
-Am(qx;q) Bm(qx;q) Cm(qx;q)
-Am(q2x;q) Bm(q2x;q) Cm(q2x;q)
-
-, (|q|⁄ = 1) (260)
-satisﬁes
-detWm(x;q) =q−5−2mx−5(1−q2x2)(1−qx2)(1−q3x2)θ(−q− 1
-2x;q)−2θ(−q− 1
-2x2;q). (261)
-Proof. SinceAm(x;q),Bm(x;q), andCm(x;q) are given in terms ofq-proper hypergeometric
-multisums, it follows from the fundamental theorem of Zeilberger [Zei90, WZ92, PWZ96]
-(see also [GL16]) that they areq-holonomic functions in both variablesm and x. Part (a)
-follows from an application of theHF package of Koutschan [Kou09, Kou10].
-Part (b) follows from theHF package. The fact that they are a basis follows from (c).
-For part (c), Equation (254) implies that the determinant of the Wronskian satisﬁes the
-ﬁrst order equationdet(Wm+1(x;q)) = det(Wm(x;q)) (see [GK13, Lem.4.7]). It follows that
-det(Wm(x;q)) = det(W0(x;q)) with initial condition a function ofx given by
-det(W0(x;q)) =−θ(−q− 1
-2x;q)−2θ(−q− 1
-2x2;q) ( |q|⁄ = 1), (262)
-which can be proved in a manner similar to section 5.2. Using Lemma 23 and theHF package
-we ﬁnd the following recursion relation for theq-function H(x,y,z ;q) when|q|< 1
-xyH(x,y,qz ;q)−(x+y+xy−z)H(x,y,z ;q)+(1+x+y)H(x,y,q −1z;q)+H(x,y,q −2z;q) = 0.
-(263)
-PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY 51
-It then follows that
-Hµ,ν,1(z;q) =H(qµ,qν,z ;q), (264)
-Hµ,ν,2(z;q) =z−µH(q−µ,qν−µ,q−2µz;q), (265)
-Hµ,ν,3(z;q) =z−νH(q−ν,qµ−ν,q−2νz;q), (266)
-are three independent solutions to
-qµ+νH(qz;q)− (qµ +qν +qµ+ν−z)H(z;q) + (1 +qµ +qν)H(q−1z;q) +H(q−2z;q) = 0. (267)
-The corresponding Wronskian
-Wµ,ν(z;q) =
-
-
-Hµ,ν,1(q−1z;q) Hµ,ν,2(q−1z;q) Hµ,ν,3(q−1z;q)
-Hµ,ν,1(z;q) Hµ,ν,2(z;q) Hµ,ν,3(z;q)
-Hµ,ν,1(qz;q) Hµ,ν,2(qz;q) Hµ,ν,3(qz;q)
-
- (268)
-satisﬁes the recursion relation (see [GK13, Lem.4.7])
-detWµ,ν(z;q) =q−µ−ν detWµ,ν(q−1z;q) (269)
-which implies that the determinant ofU(z;q) = zµ+νWµ,ν(z;q) is invariant under the shift
-z↦→qz. We can thus identify it with the limitz↦→ 0, which is easy to compute. Since
-lim
-z↦→0
-H(x,y,z ;q) = (qx;q)∞(qy;q)∞, (270)
-we have
-lim
-z↦→0
-detU(z;q)
-= lim
-z↦→0
-det
-
-
-H(qµ,qν,q−1z;q) qµH(q−µ,qν−µ,q−2µq−1z;q) qνH(q−ν,qµ−ν,q−2νqz−1;q)
-H(qµ,qν,z ;q) H(q−µ,qν−µ,q−2µz;q) H(q−ν,qµ−ν,q−2νz;q)
-H(qµ, eν,qz ;q) q−µH(q−µ,qν−µ,q−2µqz;q) q−νH(q−ν,qµ−ν,q−2νqz;q)
-
-
-=(qqµ;q)∞(qqν;q)∞(qq−µ;q)∞(qqν−µ;q)∞(qq−ν;q)∞(qqµ−ν;q)∞ det
-
-
-1 qµ qν
-1 1 1
-1 q−µ q−ν
-
-
-=q−µ−ν(1−qµ)(1−qν)(qµ−qν)
-× (qqµ;q)∞(qqν;q)∞(qq−µ;q)∞(qqν−µ;q)∞(qq−ν;q)∞(qqµ−ν;q)∞. (271)
-We thus have
-zµ+ν detWµ,ν(z;q) =−(qµ;q)∞(qq−µ;q)∞(qqν;q)∞(q−ν;q)∞(qqµ−ν;q)∞(qν−µ;q)∞. (272)
-Using the substitution
-qµ =x−1, q ν =x, z = 1 (273)
-in the above equation and cancelling with theθ-prefactors ofBm(x;q)andCm(x;q)we obtain
-Equation (262) for|q|< 1. The case for|q|> 1 can be obtained by analytic continuation on
-both sides of (262).
-52 STA VROS GAROUF ALIDIS, JIE GU, AND MARCOS MARIÑO
-For part (d), Equation (256) follows from (250). To see this, let us introduce
-~Wm(x;q) =
-
-
-H(x,x−1,qm;q) xmH(x,x 2,qmx2;q) x−mH(x−1,x−2,qmx−2;q)
-H(x,x−1,qm+1;q) xm+1H(x,x 2,qmx2;q) x−m−1H(x−1,x−2,qm+1x−2;q)
-H(x,x−1,qm+2;q) xm+2H(x,x 2,qm+2x2;q) x−m−2H(x−1,x−2,qm+2x−2;q)
-
-.
-(274)
-Then Equation (256) can equally be written as
-~W−1(x;q−1) =
-
-
-1 0 0
-0 0 1
-0 1 x +x−1
-
-
-(
-~W−1(x;q)−1
-)T
-
-
-1 0 0
-0 x−2 0
-0 0 x2
-
-, (275)
-consisting of 9 scalar equations. Each of these equations is a specialization of (250), some-
-times after applying the recursion relation (254).
-Observe that Equation (254) written in matrix form, implies that
-Wm+1(x;q) =
-
-
-0 1 0
-0 0 1
-1 −s(x) s(x)−q2+m
-
-Wm(x;q) (276)
-where
-s(x) =x +x−1 + 1. (277)
-Equation (257) follows from (256) together with (276).
-Part (e) follows from theHF package. The fact that they are a basis follows from (f).
-For part (f), the ﬁrst and third generators of the annihilating ideal (252), which an-
-nihilate Am(x;q), Bm(x;q), Cm(x;q) allow expressing Am(qx;q), Am(q2x;q) in terms of
-Am(x;q),Am+1(x;q),Am+2(x;q), and similarly forBm(qjx;q), Cm(qjx;q) (j = 1, 2). It fol-
-lows that the Wronskian (260) and the Wronskian (244) are related
-Wm(x;q) =Mm(x;q)Wm(x;q) (278)
-PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY 53
-where Mm(x;q) is a 3× 3 matrix with entries
-(Mm(x;q))1,1 =1, (Mm(x;q))1,2 = 0, (Mm(x;q))1,3 = 0,
-(Mm(x;q))2,1 =−q−1−m(1−q1+m−qx2)
-(Mm(x;q))2,2 =q−1−mx−1(1−q1+m +x + (−q +q2+m)x2−qx3)
-(Mm(x;q))2,3 =−q−1−mx−1(1−qx2)
-(Mm(x;q))3,1 =q−5−2mx−3(
-1 + (−q +q2+m)x− (q +q2 +q3)x2
-+(q2 +q3 +q4−q3+m− 2q4+m−q5+m +q5+2m)x3
-+(q3 +q4 +q5)x4 + (−q4−q5−q6 +q5+m +q6+m +q7+m)x5−q6x6 +q7x7)
-(Mm(x;q))3,2 =−q−5−2mx−4(1−qx)(1 +qx)
-(
-1 + (1−q +q2+m)x + (−2q−q3 +q2+m)x2
-+(−q +q2−q3 +q4− 2q3+m−q4+m−q5+m +q4+2m +q5+2m)x3
-+(q2 + 2q4−q3+m−q4+m−q5+m)x4 + (q4−q5 +q6+m)x5−q5x6)
-(Mm(x;q))3,3 =q−5−2mx−4(1−qx)(1 +qx)
-(
-1−qx− (q +q3)x2
-+(q2 +q4−q3+m−q4+m)x3 +q4x4−q5x5)
-(279)
-After taking determinants on both sides, one ﬁnds that
-det(Wm(x;q)) =−q−5−2mx−5(1−qx)(1 +qx)(1−qx2)(1−q3x2) det(Wm(x;q)) (280)
-This, together with (255) concludes the proof of (261). □
-We now come to Conjecture 5 concerning a reﬁnement of theˆA-polynomial. As in Sec-
-tion 5.2, we can use Theorems 22 and 24 to obtain explicit linearq-diﬀerence equations for
-the descendant integrals with respect to theu and the m variables, and in doing so, we
-will obtain a reﬁnement of theˆA-polynomial. To simplify Equation (129), let us deﬁne a
-normalized version of the descendant state-integral
-z52,m,µ(u;τ) = (−1)m+µq−m/2˜q−µ/2Z52,m,µ(u;τ). (281)
-Our next theorem conﬁrms Conjecture 5 for the52 knot.
-Theorem 25. z52,m,k(ub;τ) is aq-holonomic function of (m,u ) with annihilator idealI52
-given in (252). As a function ofu(resp.,m) it is annihilated by the operatorsˆA52(Sx,x,q m,q )
-(resp., ˆB52(Sm,x,q m,q )) given by (254) and (258), whose classical limit is
-ˆA52(Sx,x,q m, 1) =
-− (1−x)2(1 +x)2
-(
-qmx2− (1−x− 2(1−qm)x2 + 2x3 + (1 +qm)x4−x5)Sx
-−x(1− (1 +qm)x− 2x2 + 2(1−qm)x3 +x4−x5)S2
-x−qmx4S3
-x
-)
-,
-(282)
+\label{sub.41holo}
+
+
+
+In this section we give the definition of the holomorphic blocks (and
+their descendants) which factorize the state-integral (and its
+descendants), and discuss their analytic properties, and their linear
+$q$-difference equations.  Note that in this section, as well as in
+Section~\ref{sub.41near1}, all the statements are theorems, whose
+proofs we provide.
+
+Motivated by the state-integral $Z_{\knot{4}_1}(u;\tau)$ of the
+$\knot{4}_1$ knot given in~\eqref{Z41x}, and by the descendant
+state-integral $Z_{\knot{4}_1,m,\mu}(0;\tau)$ given
+in~\eqref{Z410-desc}, we introduce the descendant state-integral of
+the $\knot{4}_1$ knot 
+\begin{equation}
+  \label{Z41x-desc}
+  Z_{\knot{4}_1,m,\mu}(u;\tau) =
+  
+  \re^{-2 \pi \ri u^2} 
+  \int_{\mc{D}} \Phi_\bb(v) \, \Phi_\bb(u+v)
+  \, \re^{-\pi \ri (v^2+4uv) + 2\pi(m \bb - \mu \bb^{-1})v} \, \rd v
+\end{equation}
+for integers $m$ and $\mu$, which agrees with the Andersen-Kashaev
+invariant of the $\knot{4}_1$ knot when $m=\mu=0$. Here the contour
+$\mc{D}$ was introduced in \eqref{Z410-desc}. It is expressed in terms
+of two descendant holomorphic blocks, which we denote by $A_m$ and
+$B_m$ instead of $B^{\s_1}_m$ and $B^{\s_2}_m$, in order to simplify
+the notation.  For $|q| \neq 1$, $A_m(x;q)$ and $B_m(x;q)$ are given
+by
+\begin{subequations}
+  \begin{align}
+    \label{41Am}
+    A_m(x;q) &= \th(-q^{\frac{1}{2}}x;q)^{-2}
+               x^{2m} J(q^m x^2, x; q)\,, \\
+    \label{41Bm}
+    B_m(x;q) &= \th(-q^{-\frac{1}{2}}x;q)
+               x^m J(q^m x, x^{-1}; q)\,,
+  \end{align}
+\end{subequations}
+where $J(x,y;q^\ve):=J^\ve(x,y;q)$ for $|q|<1$ and $\ve=\pm$ is the
+$q$-Hahn Bessel function
+\begin{subequations}
+\begin{align}
+  \label{J41p}
+  J^+(x,y;q) & = (qy;q)_\infty \sum_{n=0}^\infty (-1)^n
+               \frac{q^{\frac{1}{2}n(n+1)} x^n}{(q;q)_n (qy;q)_n}\,, \\
+  \label{J41n}
+  J^-(x,y;q) & = \frac{1}{(y;q)_\infty}
+               \sum_{n=0}^\infty (-1)^n \frac{q^{\frac{1}{2}n(n+1)}
+               x^n y^{-n}}{ (q;q)_n (qy^{-1};q)_n}
+               \,.
+\end{align}
+\end{subequations}
+
+The next theorem expresses the descendant state-integrals bilinearly
+in terms of descendant holomorphic blocks.
+
+\begin{theorem}
+  \label{thm.41a}
+  \rm{(a)} The descendant state-integral can be expressed in terms of
+  the descendant holomorphic blocks by 
+  \begin{align}
+    Z_{\knot{4}_1,m,\mu}(\ub;\tau) 
+    =& (-1)^{m+\mu}q^{m/2}\tq^{\mu/2} \Big(
+    \re^{-\frac{3\pi\ri}{4} -\frac{\pi\ri}{6}(\tau+\tau^{-1})}
+      A_m(x;q) A_{-\mu}(\tx;\tq^{-1}) \\ & +
+    \re^{\frac{3\pi\ri}{4}+\frac{\pi\ri}{3}(\tau+\tau^{-1})}
+      B_{m}(x;q) B_{-\mu}(\tx;\tq^{-1})\Big) \,.
+    \label{41x-desc-fac}
+  \end{align}
+  \rm{(b)} The functions $A_m(x;q)$, $B_m(x;q)$ are holomorphic
+  functions of $|q| \neq 1$ and meromorphic functions of $x \in \BC^*$
+  with poles in $x \in q^\BZ$ of order at most $1$.  \newline
+  \rm{(c)} Let
+  \begin{equation}
+    W_m(x;q) = \begin{pmatrix}
+      A_{m}(x;q) & B_{m}(x;q)  \\
+      A_{m+1}(x;q) & B_{m+1}(x;q) 
+    \end{pmatrix} \qquad (|q| \neq 1) \,.
+    \label{eq:Wm}
+  \end{equation}
+  For all integers $m$ and $\mu$, the state-integral
+  $Z_{\knot{4}_1,m,\mu}(u;\tau)$ and the matrix-valued function
+  \begin{equation}
+    W_{m,\mu}(u;\tau) = W_{-\mu}(\tx;\tq^{-1}) \Delta(\tau) 
+    W_m(x;q)^T \,,
+    \label{W41x-desc}
+  \end{equation}
+  where
+  \begin{equation}
+    \label{D41}
+    \Delta(\tau) = \begin{pmatrix}
+      \re^{-\frac{3\pi\ri}{4}-\frac{\pi\ri}{6}(\tau+\tau^{-1})}&0\\
+      0&\re^{\frac{3\pi\ri}{4}+\frac{\pi\ri}{3}(\tau+\tau^{-1})}
+    \end{pmatrix} \,,
+  \end{equation}
+  are holomorphic functions of $\tau \in \BC'$ and entire
+  functions of $u \in \BC$. 
+\end{theorem}
+
+\begin{proof}
+  Part (a) follows by applying the residue theorem to the
+  state-integral~\eqref{Z41x-desc}, along the lines of the proof of
+  Theorem 1.1 in~\cite{GK:qseries}. A similar result was stated in
+  \cite{dimofte-state}.
+
+  Part (b) follows from the fact that when $|q|<1$, the ratio test
+  implies that $J^+(x,y;q)$ is an entire function function of
+  $(x,y) \in \BC^2$ and $J^-(x,y;q)$ is a meromorphic function of
+  $(x,y)$ with poles in $y \in q^{\BZ}$.
+
+  For part (c), one uses parts (a) and (b) to deduce that
+  $W_{m,\mu}(u;\tau)$ is holomorphic of $\tau\in \IC'$ and meromorphic in
+  $u$ with potential simple poles at $\ri \bb \BZ + \ri \bb^{-1} \BZ$.
+  An expansion at these points, done by the method of
+  Section~\ref{sub.41near1}, demonstrates that the function is analytic
+  at the points $\ri \bb \BZ + \ri \bb^{-1} \BZ$.
+\end{proof}
+
+Note that the summand of $J^+$ (a proper $q$-hypergeometric function)
+equals to that of $J^-$ after replacing $q$ by $q^{-1}$. This implies
+that $J^\pm$ have a common annihilating ideal $\calI_J$ with respect
+to $x,y$ which can be computed (rigorously, along with a provided
+certificate) using the creative telescoping method of
+Zeilberger~\cite{PWZ} implemented in the \texttt{HolonomicFunctions}
+package of Koutschan~\cite{Koutschan,Koutschan:holofunctions}.  Below,
+we will abbreviate this package by~\texttt{HF}.
+
+\begin{lemma}  
+  \label{lem.annJ}
+  The annihilating ideal of $\calI_J$ of $J^\pm$ is given by
+  \begin{equation}
+    \label{annJ}
+    \calI_J = \langle
+    (-x + y) + x S_y - y S_x, \,\, 1 + (-1 - x + q y) S_y + x S_y^2
+    \rangle
+  \end{equation}
+  where $S_x$ and $S_y$ are the shifts $x$ to $qx$ and $y$ to $qy$.
+\end{lemma}
+
+The next theorem concerns the properties of the linear $q$-difference
+equations satisfied by the descendant holomorphic blocks.
+
+\begin{theorem}
+  \label{thm.41b}
+  \rm{(a)} The pair $A_m(x;q)$ and $B_m(x;q)$ are $q$-holonomic
+  functions in the variables $(m,x)$ with a common annihilating ideal
+  \begin{equation}
+    \label{ann41}
+    \calI_{\knot{4}_1} = \langle q^m x^2 + (-q^m + q^{1 + 2 m} x^2) S_m + x^3
+    S_x,  \, 
+    (1-x^{-1}S_m)(1-x^{-2}S_m) + q^{1+m} S_m \rangle
+  \end{equation}
+  where $S_m$ is the shift of $m$ to $m+1$ and $S_x$ is the shift of
+  $x$ to $q x$.  $\calI_{\knot{4}_1}$ has rank 2 and the two functions form
+  a basis of solutions of the corresponding system of linear equations.
+  \newline
+  \rm{(b)} As functions of an integer $m$, $A_m(x;q)$ and
+  $B_m(x;q)$ form a basis of solutions of the linear $q$-difference
+  equation $\Bhat_{\knot{4}_1}(S_m,x,q^m,q) f_m(x;q) = 0$ for $|q| \neq 1$
+  where 
+  \begin{equation}
+    \label{rec41m}
+    \Bhat_{\knot{4}_1}(S_m,x,q^m,q) =  (1-x^{-1}S_m)(1-x^{-2}S_m) + q^{1+m} S_m \,.
+  \end{equation}
+  \rm{(c)} The Wronskian $W_m(x;q)$ of~\eqref{rec41m},
+  defined in ~\eqref{eq:Wm}, satisfies
+  \begin{equation}
+    \label{W410}
+    \det(W_m(x;q)) = x^{3m+3} 
+    \qquad
+    (m \in \BZ) \,.
+  \end{equation}
+  \rm{(d)} The Wronskian satisfies the orthogonality relation
+  \begin{equation}
+    \label{WW41b}
+    W_{-1}(x;q) \,
+    \begin{pmatrix}
+      1 & 0 \\
+      0 & -1
+    \end{pmatrix}
+    \,  W_{-1}(x;q^{-1})^T =
+    \begin{pmatrix}
+      x^{-2}+x^{-1}-1 & 1\\
+      1 & 0
+    \end{pmatrix} \,.
+  \end{equation}
+  It follows that for all integers $m$ and $\ell$ 
+  
+  
+  \begin{equation}
+    \label{WW41}
+    
+    
+    W_m(x;q) \,
+    \begin{pmatrix}
+      1 & 0 \\
+      0 & -1
+    \end{pmatrix} \, W_\ell(x;q^{-1})^T \in \GL(2,\BZ[q^\pm, x^\pm])
+  \end{equation}
+  \rm{(e)} As functions of $x$, $A_m(x;q)$ and $B_m(x;q)$ form a basis
+  of a linear $q$-difference equation
+  $\hat A_{\knot{4}_1} (S_x,x,q^m,q) f_m(x;q) =0$
+where 
+  \begin{equation}
+    \label{rec41x}
+    \hat A_{\knot{4}_1} (S_x,x,q^m,q) = \sum_{j=0}^2 C_j(x,q^m,q) S_x^j \,,
+  \end{equation}
+  $S_x$ is the operator that shifts $x$ to $qx$ and
+  \begin{subequations}
+    \begin{align}
+      \label{rec41x0}
+      C_0 =
+      &q^{2 + 3 m} x^2 (-1 + q^{3 + m} x^2) \\
+      \label{rec41x1}
+      C_1 =
+      & -q^m (-1 + q^{2 + m} x^2) (1 - q x - q^{1 + m} x^2 - q^{3 + m} x^2 - 
+        q^{3 + m} x^3 + q^{4 + 2 m} x^4) \\ 
+      \label{rec41x2}
+      C_2 =
+      & q^2 x^2 (-1 + q^{1 + m} x^2) \,.
+    \end{align}
+  \end{subequations}
+  \rm{(f)} The Wronskian of~\eqref{rec41x}
+  \begin{equation}
+    \label{W41x}
+    \calW_m(x;q) = \begin{pmatrix}
+      A_{m}(x;q) & B_{m}(x;q)  \\
+      A_{m}(qx;q) & B_{m}(qx;q) 
+    \end{pmatrix}, \qquad (|q| \neq 1)
+  \end{equation}
+  satisfies
+  \begin{equation}
+    \label{detW41x}
+    \det(\calW_m(x;q)) = q^m x^{3m}(1-q^{m+1} x^2) \qquad (m \in \BZ) \,.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  Since $A_m(x;q)$ and $B_m(x;q)$ are given in terms of $q$-proper
+  hypergeometric multisums, it follows from the fundamental theorem of
+  Zeilberger~\cite{Zeil:holo,WZ,PWZ} (see also~\cite{GL:survey}) that
+  they are $q$-holonomic functions in both variables $m$ and $x$.
+  Part (a) follows from an application of the \texttt{HF} package of
+  Koutschan~\cite{Koutschan, Koutschan:holofunctions}.
+
+  Part (b) follows from the \texttt{HF} package. The
+  fact that they are a basis follows from (c).
+
+  For part (c), Equation~\eqref{rec41m} implies that the determinant of
+  the Wronskian satisfies the first order
+  equation $\det(W_{m+1}(x;q))=x^3\det(W_{m}(x;q))$
+  (see~\cite[Lem.4.7]{GK:74}). It follows that
+  $\det(W_m(x;q))=x^{3m}\det(W_0(x;q))$ with initial condition a
+  function of $x$ given by Swarttouw~\cite{MR2714507} 
+  \begin{equation}
+    \label{W4100}
+    \det(W_0(x;q)) = x^3 
+    \qquad
+    (|q| \neq 1) \,.
+  \end{equation}
+  We recall the details of the proof which will be useful in the case
+  of the $\knot{5}_2$ knot.  When $|q|<1$, the $q$-Hahn Bessel function
+  $J(x,y;q)$ satisfies the recursion relation
+  \begin{equation}
+    y J(qx,y;q) - (1+y-x)J(x,y;q) + J(q^{-1}x,y;q) = 0.
+    \label{eq:J-rec1}
+  \end{equation}
+  This follows from~\cite{MR2714507}, and can also be proved
+  using the \texttt{HF} package. It then follows that
+  \begin{equation}
+    \cJ_{\nu,1}(z;q) := J(z,q^\nu;q), \quad
+    \cJ_{\nu,2}(z;q) := z^{-\nu}J(q^{-\nu}z,q^{-\nu};q)
+  \end{equation}
+  are two independent solutions to
+  \begin{equation}
+    q^\nu \cJ(qz;q) - (1+q^\nu-x)\cJ(z;q) + \cJ(q^{-1}z;q) = 0.
+  \end{equation}
+  The corresponding Wronskian
+  \begin{equation}
+    \cW_\nu(z;q) =
+    \begin{pmatrix}
+      \cJ_{\nu,1}(z;q) & \cJ_{\nu,2}(z;q)\\
+      \cJ_{\nu,1}(qz;q) & \cJ_{\nu,2}(qz;q)
+    \end{pmatrix}
+  \end{equation}
+  satisfies the recursion relation (see~\cite[Lem.4.7]{GK:74})
+  \begin{equation}
+    \det\cW_\nu(z;q) = q^{-\nu} \det\cW_\nu(q^{-1}z;q)
+  \end{equation}
+  which implies that the determinant of $U(z;q) = z^\nu \cW_\nu(z;q)$ is
+  an elliptic function
+  \begin{equation}
+    \det U(qz;q) = \det U(z;q).
+  \end{equation}
+  It can be computed by the following limit
+  \begin{align}
+    \det U(z;q) =
+    &\lim_{k\rightarrow \infty} \det U(q^k z;q) = \lim_{z\rightarrow 0}
+      \det U(z;q)\nn  =
+    &\lim_{z\rightarrow 0} \Big(
+      q^{-\nu}J(z,q^\nu;q)J(q^{1-\nu}z,q^{-\nu};q) -
+      J(q^{-\nu}z,q^{-\nu};q)J(qz,q^\nu;q)
+      \Big) \nn =
+    &(q^{-\nu}-1)(q^{1+\nu};q)_\infty(q^{1-\nu};q)_\infty,
+  \end{align}
+  where in the last step we just used the $q$-expansion definition of
+  the $q$-Hahn Bessel function.  We thus have
+  \begin{equation}
+    \label{zcw}
+    z^\nu \det \cW_\nu(z;q) = -(q q^\nu;q)_\infty(q^{-\nu};q)_\infty.
+  \end{equation}
+  Using the substitution
+  \begin{equation}
+    z\mapsto x^2,\quad z^\nu \mapsto x
+  \end{equation}
+  in the above equation and cancelling with the
+  $\theta$-prefactors of $A_m(x;q)$ and $B_m(x;q)$ we
+  obtain Equation~\eqref{W4100} for $|q|<1$.
+  The case of $|q|>1$ can be obtained by analytic continuation on both
+  sides of \eqref{W4100}.
+
+  For part (d), Equation~\eqref{rec41m} implies that
+  \begin{equation}
+    W_{m+1}(x;q) =
+    \begin{pmatrix}
+      0&1\\-x^3&x^2+x-q^{1+m}x^3
+    \end{pmatrix} W_m(x;q) \,.
+    \label{eq:W41rec}
+  \end{equation}
+  Hence, Equation~\eqref{WW41} follows from~\eqref{WW41b}. The
+  latter is a direct consequence of the analytic continuation formula
+  \begin{equation}
+    J(x,y;q) = \theta(-q^{1/2}y;q)J(y^{-1}x,y^{-1};q^{-1})
+  \end{equation}
+  which one easily sees by comparing \eqref{J41p} and \eqref{J41n}.
+
+  Part (e) follows from the \texttt{HF} package. The
+  fact that they are a basis follows from (f).
+
+  For part (f), since $A_m(x;q)$ (as well as $B_m(x;q)$) are
+  annihilated by the first generator of~\eqref{ann41}, it follows that
+  \begin{equation}
+    q^m x^2 A_m(x;q) -q^m (1 - q^{1 + m} x^2) A_{m+1}(x;q)
+    + x^3 A_m(qx;q) =0 \,.
+  \end{equation}
+  After solving for the above for $A_m(qx;q)$ (and same for
+  $B_m(qx;q)$) and substituting into the Wronskian~\eqref{W41x}, it
+  follows that the two Wronskians are related by
+  \begin{equation}
+    \label{W41xm}
+    \calW_m(x;q) =
+    \begin{pmatrix} 1 & 0 \\ -q^m x^{-1} & q^m x^{-3}(1-q^{1+m} x^2)
+    \end{pmatrix}
+    W_m(x;q) \,.
+  \end{equation}
+  After taking determinants, it follows that
+  \begin{equation}
+    \det(\calW_m(x;q)) = q^m x^{-3} (1 - q^{1 + m} x^2)\det(W_m(x;q))
+    \label{detW41xm}
+  \end{equation}
+  This, together with~\eqref{W410} concludes the proof of~\eqref{detW41x}.
+\end{proof}
+
+We now come to Conjecture~\ref{conj.ann} concerning a refinement of
+the $\Ahat$-polynomial.  
+Combining Theorems~\ref{thm.41a} and~\ref{thm.41b} we obtain explicit
+linear $q$-difference equations for the descendant integrals with respect
+to the $u$ and the $m$ variables. To simplify our presentation
+keeping an eye on Equation~\eqref{41x-desc-fac}, let us define
+a normalized version of the descendant state-integral by
+\begin{equation}
+  \label{Z41r}
+  z_{\knot{4}_1,m,\mu}(u;\tau) =
+  (-1)^{m+\mu}q^{-m/2}\tq^{-\mu/2}
+  Z_{\knot{4}_1,m,\mu}(u;\tau) \,.
+\end{equation}
+
+\begin{theorem}
+  \label{thm.41c}\rm
+  $z_{\knot{4}_1,m,k}(\ub;\tau)$ is a $q$-holonomic function of $(m,u)$
+  with annihilator ideal $\calI_{\knot{4}_1}$ given in~\eqref{ann41}.
+  As a function of $u$ (resp., $m$) it is annihilated by the operators
+  $\Ahat_{\knot{4}_1}(S_x,x,q^m,q)$ and
+  $\Bhat_{\knot{4}_1}(S_m,x,q^m,q)$ (given respectively
+  by~\eqref{rec41x} and~\eqref{rec41m}), whose classical limit is
+   \begin{equation}
+   \begin{aligned}
+     &  \Ahat_{\knot{4}_1}(S_x,x,q^m,1)\\
+     & = (-1 + q^{m} x^2) (x^2 S_x^2 -q^m (1 - x -2 q^{m} x^2 - q^{m}
+     x^3 + q^{2 m} x^4) S_x + q^{3 m} x^2)
+ \end{aligned}
+  \end{equation}
+  and
+  
+  \begin{equation}
+    \Bhat_{\knot{4}_1}(S_m,x,q^m,1) = (1-x^{-1}S_m)(1-x^{-2}S_m) + q^m S_m.
+  \end{equation}
+ 
+  $\Ahat_{\knot{4}_1}(S_x,x,1,1)$ is the $A$-polynomial of the knot,
+  $\Ahat_{\knot{4}_1}(S_x,x,1,q)$ is the (homogeneous part) of the
+  $\Ahat$-polynomial of the knot and $\Bhat_{\knot{4}_1}(x^2y,x,1,1)$
+  is the defining equation of the curve~\eqref{41critb}.
+\end{theorem}
+
+Note that although the two equations~\eqref{rec41m} and~\eqref{rec41x}
+look quite different, they come from the common annihilating
+ideal~\eqref{ann41} of rank $2$.  This explains their common order,
+assuming that the ideal is generic. The annihilating ideal is easier
+to describe than the $S_m$-free element~\eqref{rec41x} of it. In fact,
+the first generator of $\calI_{\knot{4}_1}$ expresses $S_x$ as a
+polynomial in $S_m$, and eliminating $S_m$, one obtains
+equation~\eqref{rec41x} from~\eqref{rec41m}.  The characteristic
+variety of $\calI_{\knot{4}_1}$ is a complex is a 2-dimensional
+complex surface in $(\BC^*)^4$ and its intersection with a complex
+3-torus contains two special curves, namely the $A$-polynomial and the
+$B$-polynomial of the $\knot{4}_1$ knot.
+
+
+\subsection{Taylor series expansion at $u=0$}
+\label{sub.41near1}
+
+The descendant state-integral is a meromophic function of $u$ which is
+analytic at $u=0$ and factorizes in terms of descendant holomorphic
+blocks~\eqref{41x-desc-fac}. In this section we compute the Taylor
+series of the holomorphic blocks and of the state-integral at $u=0$
+and show how the factorization of the descendant state-integral
+\eqref{41x-desc-fac} reproduces~\eqref{410-desc-fac}.
+
+We begin with some general comments valid for descendant holomorphic
+blocks and state-integrals.  Since the descendant holomorphic blocks
+are products of theta functions times $q$-hypergeometric sums, we need
+to compute the Taylor expansion of each piece. For Taylor expansion of
+the $q$-hypergeometric sums, we
+\begin{subequations}
+\begin{align}
+  &\phi_n(u):=\frac{(q^{1+n}\re^u;q)_\infty}{(q^{1+n};q)_\infty}
+    =\exp\left(-\sum_{l=1}^\infty \frac{1}{l!}E_l^{(n)}(q) u^l \right)
+    \label{eq:phin}\\
+  &\wt{\phi}_n(u):=\frac{(\tq;\tq)_\infty}{(\tq\re^u;\tq)_\infty}
+    \frac{(\tq^{-1};\tq^{-1})_n}{(\tq^{-1}\re^u;\tq^{-1})_n}
+    =\exp\left(\sum_{l=1}^\infty
+    \frac{1}{l!}\wt{E}_l^{(n)}(\tq) u^l\right)
+    \label{eq:tphin}
+  \end{align}
+\end{subequations}
+from~\cite[Prop.2.2]{GK:qseries}, where
+\begin{equation}
+\label{En}
+E_l^{(n)}(q)=\sum_{s=1}^\infty \frac{s^{l-1} q^{s(n+1)}}{1-q^s} 
+\end{equation}
 and
-ˆB52(Sm,x,q m, 1) = (1−Sm)(1−xSm)(1−x−1Sm)−qmS2
-m. (283)
-ˆA52(Sx,x, 1, 1) is theA-polynomial of the knot,ˆA52(Sx,x, 1,q ) is the (homogeneous part) of
-the ˆA-polynomial of the knot andˆB52(y,x, 1, 1) is the deﬁning equation of the curve (233).
-54 STA VROS GAROUF ALIDIS, JIE GU, AND MARCOS MARIÑO
-6.3. Taylor series expansion atu = 0. In this section we discuss the Taylor expansion of
-the descendant holomorphic blocks and descendant state-integral of the52 knots atu = 0.
-Using the deﬁnition ofH(x,y,z ;q) and (161a)–(161b), we ﬁnd
-Am(eu;q) = (q;q)2
-∞
-∞∑
-n=0
-qn(n+1)+nm
-(q;q)3
-n
-φn(u)φn(−u)
-= (q;q)2
-∞
-(
-α(m)
-0 (q) +u2α(m)
-2 (q) +O(u3)
-)
-(284)
+\begin{align}
+  \wt{E}_l^{(n)}(\tq) =
+  \begin{cases}
+    -n+E_l^{(n)}(\tq) \quad &l=1\\
+    E_l^{(n)}(\tq)\quad &l>1\;\text{odd}\\
+    2E_l^{(0)}(\tq) - E_l^{(n)}(\tq)\quad &l>1\;\text{even} \,.
+  \end{cases} 
+\end{align}
+For the Taylor series of the theta functions, we use the well-known
+identity that expresses them in terms of quasi-modular forms (see,
+eg.~\cite[Sec.8, Eqn(76)]{Za:quasimod}, or alternatively observe that
+the theta functions that appear in the bilinear expressions of the
+holomorphic blocks are exponentials of quadratic and linear forms in
+$u$; see for instance~\eqref{ebx2}--\eqref{ebx3}.  Yet alternatively
+(and this is the method that we will use below), when $r$ and $s$ are
+nonzero integers with $r$ odd and positive, we can use the identity
+\begin{equation}
+  \label{thrs}
+  \th(-q^{\frac{r}{2}} x^s;q)
+  =(-1)^{\frac{r+1}{2}}q^{\frac{r^2-1}{8}}x^{-\frac{s(r+1)}{2}}(1-x^s)
+  \phi_0(su)\phi_0(-su)  
+  
+\end{equation}
+whereas when $r$ is odd and negative, we can use the $q$-difference
+equation~\eqref{recth} to bring it to the cass of $r$ odd and positive.
+
+One last comment is that the descendant holomorphic blocks are in
+general meromorphic functions of $u$. However, their bilinear
+combination that appears in the descendant state-integrals is regular
+at $u=0$.
+
+We now give the details of the Taylor series expansion of
+$Z_{\knot{4}_1,m,\mu}(u;\tau)$ and of the descendant holomorphic
+blocks for the $\knot{4}_1$ knot.
+Using the definition of $J(x,y;q)$ and~\eqref{eq:phin}--\eqref{eq:tphin},
+we find
+\begin{align}
+  A_m(\re^u;q)
+  
+  &= (1-\re^{-u})^{-2}(q;q)_\infty^{-3}\phi_0(u)^{-2}\phi_0(-u)^{-2}
+  \sum_{n=0}^\infty \frac{q^{nm}}{(q;q)_n(q^{-1};q^{-1})_n}
+    \phi_n(u) \re^{(2n+2m)u} \nn
+  &= u^{-2}(q;q)_\infty^{-3}
+    \left(\alpha^{(m)}_0(q)+u\alpha^{(m)}_1(q)+\cO(u^2)\right)
+\label{eq:A-uexp-41}
+\end{align}
 where
-α(m)
-0 (q) =H+
-0,m(q), (285)
-α(m)
-2 (q) =
-∞∑
-n=0
-qn(n+1)+nm
-(q;q)3
-n
-(−E(n)
-2 (q)), (286)
+\begin{subequations}
+\begin{align}
+  &\alpha^{(m)}_0(q) = G_m^0(q),\label{eq:a0-41}\\
+  &\alpha^{(m)}_1(q) =
+    \sum_{n=0}^\infty \frac{q^{nm}}{(q;q)_n(q^{-1};q^{-1})_n}
+    (1+2n+2m-E_1^{(n)}(q)),\label{eq:a1-41}
+\end{align}
+\end{subequations}
 and
-Cm(e−u;q) =Bm(eu;q)
-= (1− e−u)−2(q;q)−2
-∞φ0(u)−2φ0(−u)−2
-∞∑
-n=0
-qn(n+1)+nm
-(q;q)3
-n
-φn(u)φn(2u)e(m+2n)u
-=u−2(q;q)−2
-∞
-(
-β(m)
-0 (q) +uβ(m)
-1 (q) +u2β(m)
-2 (q) +O(u3)
-)
-(287)
-where the coeﬃcients satisfy
-β(m)
-0 (q) =H+
-0,m(q), (288)
-β(m)
-1 (q) =H+
-1,m(q), (289)
-β(m)
-2 (q) = 1
-2H+
-2,m(q) +α(m)
-2 (q). (290)
-Similarly, using the deﬁnition ofH(x,y,z ;q−1), we ﬁnd
-Am(eu;q−1) = 1
-(1− eu)(1− e−u)(q;q)2
-∞
-∞∑
-n=0
-(−1)nq
-1
-2n(n+1)−nm
-(q;q)3
-n
-~φn(u)~φn(−u)
-=−u−2(q;q)−2
-∞
-(
-~α(m)
-0 (q) +u2~α(m)
-2 (q) +O(u3)
-)
-(291)
+\begin{align}
+  B_m(\re^u;q)
+  
+  &= (1-\re^u)(q;q)_\infty^3\phi_0(u)\phi_0(-u)
+    \sum_{n=0}^\infty \frac{q^{nm}}
+    {(q;q)_n(q^{-1};q^{-1})_n}
+    \phi_n(-u) \re^{(n+m)u} \nn
+  &= -u(q;q)_\infty^3
+    \left(\beta^{(m)}_0(q)+u\beta^{(m)}_1(q)+\cO(u^2)\right)
+    \label{eq:B-uexp-41}
+\end{align}
 where
-~α(m)
-0 (q) =H−
-0,−m(q), (292)
-~α(m)
-2 (q) =
-∞∑
-n=0
-(−1)nq
-1
-2n(n+1)−nm
-(q;q)3
-n
-(
-− 1
-12 + 2E(0)
-2 (q)−E(n)
-2 (q)
-)
-, (293)
-PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY 55
+\begin{subequations}
+\begin{align}
+  &\beta^{(m)}_0(q) = G_m^0(q),\label{eq:b0-41}\\
+  &\beta^{(m)}_1(q) =
+    \sum_{n=0}^\infty \frac{q^{nm}}{(q;q)_n(q^{-1};q^{-1})_n}
+    \left(\frac{1}{2}+n+m+E_1^{(n)}(q)\right).\label{eq:b1-41}
+\end{align}
+\end{subequations}
+We notice that
+\begin{equation}
+  \beta^{(m)}_1(q) -\alpha^{(m)}_1(q) =
+  
+  -\frac{1}{2} G_m^1(q).
+\end{equation}
+Similarly, using the definition of $J(x,y;q^{-1})$, we find
+\begin{align}
+  A_m(\re^u;q^{-1})
+  &=
+
+    (1-\re^u)(q;q)_\infty^3\phi_0(u)^2\phi_0(-u)^2
+    \sum_{n=0}^\infty\frac{q^{-nm}}{(q;q)_n(q^{-1};q^{-1})_n}
+    \wt{\phi}_n(u)\re^{(2n+2m)u} \nn
+  &=
+    -u(q;q)_\infty^3\left(\wt{\alpha}^{(m)}_0(q)+u
+    \wt{\alpha}^{(m)}_1(q) + \cO(u^2)\right)
+    \label{eq:tA-uexp-41}
+\end{align}
+where
+\begin{subequations}
+\begin{align}
+  &\wt{\alpha}^{(m)}_0(q) = G_{-m}^0(q),\label{eq:ta0-41}\\
+  &\wt{\alpha}^{(m)}_1(q) = \sum_{n=0}^\infty
+    \frac{q^{-nm}}{(q;q)_n(q^{-1};q^{-1})_n}
+    \left(\frac{1}{2}+n+2m+E_1^{(n)}(q)\right),\label{eq:ta1-41}
+\end{align}
+\end{subequations}
 and
-Cm(e−u;q−1) =Bm(eu;q−1)
-= (1− eu)(1− e2u)−1(q;q)2
-∞φ0(u)2φ0(−u)2
-∞∑
-n=0
-(−1)nq
-1
-2n(n+1)−nm
-(q;q)3
-n
-~φn(u)~φn(2u)e(2n+m)u
-= 1
-2(q;q)2
-∞
-(
-~β(m)
-0 (q) +u~β(m)
-1 (q) +u2~β(m)
-2 (q) +O(u3)
-)
-(294)
-where the coeﬃcients satisfy
-~β(m)
-0 (q) =H−
-0,−m(q), (295)
-~β(m)
-1 (q) =−H−
-1,−m(q), (296)
-~β(m)
-2 (q) = 1
-2H−
-2,−m(q) +~α(m)
-2 (q) (297)
-Applying these results to the right hand side of (243), as well as using the trick
-1
-2πi =− 1
-12(τE 2(q)−τ−1E2(˜q)), (298)
-we ﬁnd theO(1/u2) and O(1/u) contributions from (291) and (294) cancel, and theO(u0)
-contributions reproduce (103).
-As an application of the above computations, we demonstrate that Theorem 11, especially
-(91), (93), as well as the recursion relation (86), can be proved by taking theu = 0 limit of
-the analogue identities in Theorem 24.
-Using the expansion formulas of holomorphic blocks (284), (287), (291), (294), the Wron-
-skians can be expanded as
-Wm(eu;q) =
-(∑
-j=0
-W +
-m,j(q)uj
-)
-
-(q;q)2
-∞ 0 0
-0 u−2(q;q)−2
-∞ 0
-0 0 u−2(q;q)−2
-∞
-
-, (299)
-Wm(eu;q−1) =
-(∑
-j=0
-W−
-m,j(q)uj
-)
-
-−u−2(q;q)−2
-∞ 0 0
-0 1
-2(q;q)2
-∞ 0
-0 0 1
-2(q;q)2
-∞
-
- (300)
+\begin{align}
+  B_m(\re^u;q^{-1})
+  &=
+
+  \frac{\phi_0(u)^{-1}\phi_0(-u)^{-1}}{(1-\re^{-u})^2(q;q)_\infty^3}
+    \sum_{n=0}^\infty\frac{q^{-nm}}{(q;q)_n(q^{-1};q^{-1})_n}
+    \wt{\phi}_n(-u)\re^{(n+m)u} \nn
+  &=
+  u^{-2}(q;q)_\infty^{-3}\left(\wt{\beta}^{(m)}_0(q)+u
+    \wt{\beta}^{(m)}_1(q) + \cO(u^2)\right)
+    \label{eq:tB-uexp-41}
+\end{align}
 where
-W +
-m,j(q) =
-
-
-α(m)
-j β(m)
-j (−1)jβ(m)
-j
-α(m+1)
-j β(m+1)
-j (−1)jβ(m+1)
-j
-α(m+2)
-j β(m+2)
-j (−1)jβ(m+2)
-j
-
- (q), W −
-m,j(q) =
-
-
-~α(m)
-j ~β(m)
-j (−1)j~β(m)
-j
-~α(m+1)
-j ~β(m+1)
-j (−1)j~β(m+1)
-j
-~α(m+2)
-j ~β(m+2)
-j (−1)j~β(m+2)
-j
-
- (q).
-(301)
-Note thatα(m)
-j (q) =~α(m)
-j (q) = 0 if j is odd. Taking the determinant of (299), we ﬁnd
-detWm(eu;q) =u−1(q;q)−2
-∞ detWm(q) +O(u0) (302)
-which together with theu-expansion of the right hand side of (255) leads to the determinant
-identity (91). Furthermore, by substituting (299), (300) into the Wronskian relation (256),
-56 STA VROS GAROUF ALIDIS, JIE GU, AND MARCOS MARIÑO
-we ﬁnd the left hand side reduces to
-1
-2W−1(q)
-
-
-0 0 1
-0 2 0
-1 0 0
-
-W−1(q−1)
-
-
-0 0 1
-0 1 0
-1 0 0
-
- +O(u1), (303)
-which together with theu-expansion of the right hand side, leads in the leading order to
-(92) form = 1. The more general case follows from the identity ofm = 1 by applying the
-recursion relations (86) on the Wronskians.
-Finally, from the expression (285),(288) of the leading order coeﬃcientsα(m)
-0 (q), β(m)
-0 (q),
-of Am(eu;q), Bm(eu;q), Cm(eu;q) in the expansion ofu, one concludes that the recursion
-relation (86) should be theu = 0 limit of the recursion relation (254) inm, and one can
-easily check it is indeed the case.
-ϕσ1(τ )
-ϕσ2(τ )
-ϕσ3(τ )
-Figure 10. The singularities in the Borel plane for the seriesϕσj(u;τ) with
-j = 1, 2, 3 of knot 52 where u is close to zero.
-6.4. Stokes matrices near u = 0. In this section we give a conjecture for the Stokes
-matrices of the asymptotic seriesϕ(x;τ).
-We only consider the case whenu is not far away from zero, or equivalentlyx not far
-away from 1. To be more precise, we focus on realx and constrainx to be in the interval
-containing 1 between the two real solutions to the discriminant (236). In this case, there
-are mild changes to the resurgent structure discussed in Section 3.2. Each singular point
-in Figure 4 splits to a cluster of neighboring singular points as shown in Figure 10. In
-particular, each of the six singular pointsιi,j (i⁄=j) splits to a cluster of neighboring three
-separated from each other bylogx. We label the four regions separating singularities on
-positive and negative real axis and the other singularities byI,II,III,IV (see Figure 11).
-In each of the four regions, we have the following the results.
-PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY 57
-III
-IVIII
-Figure 11. Four diﬀerent sectors (and additional two auxiliary regions) in
-the τ-plane for Φ(u;τ) of knot 52 with u close to zero.
-Conjecture 26.The asymptotic series and the holomorphic blocks are related by (15) with
-the diagonal matrix∆(u) as in (246) where the matricesMR(x;q) are given in terms of the
-W−1(x;q) as follows
-MI(x;q) =W−1(x;q)T
-
-
-0 0 −1
-1 −s(x) 0
-0 1 0
-
-, |q|< 1, (304a)
-MII (x;q) =W−1(x−1;q)T
-
-
-0 0 −1
-−s(x) 1 0
-1 0 0
-
-, |q|< 1, (304b)
-MIII (x;q) =W−1(x−1;q)T
-
-
-0 0 −1
-1 1 0
-1 0 0
-
-, |q|> 1, (304c)
-MIV (x;q) =W−1(x;q)T
-
-
-0 0 −1
-1 1 0
-0 1 0
-
-, |q|> 1, (304d)
-and wheres(x) is given in (277).
-Just as inthe case of the41 knot, theabove conjecturecompletely determines the resurgent
-structure of Φ(τ). Indeed, it implies that the Stokes matrices, given by Equations (34)
-58 STA VROS GAROUF ALIDIS, JIE GU, AND MARCOS MARIÑO
-and (33) are explicitly given by:
-S+(x;q) =
-
-
-0 1 0
-0 1 1
-−1 0 0
-
-W−1(x−1;q−1)W−1(x;q)T
-
-
-0 0 −1
-1 1 0
-0 1 0
-
- , (305a)
-S−(x;q) =
-
-
-0 −s(x) 1
-0 1 0
-−1 0 0
-
-W−1(x;q)W−1(x−1;q−1)T
-
-
-0 0 −1
-−s(x) 1 0
-1 0 0
-
- (305b)
-for|q|< 1. Note that Equations (233), (234), (235), (238) imply that (one can also see this
-from (230))
-s(Φσ)(x−1;τ) =s(Φσ)(x;τ) (306)
-for anyτ∈ C whenever the asymptotic series is Borel summable. It follows that the Stokes
-matrices must be invariant under the reﬂectionπ : x↦→ x−1. Using the property (248)
-of Wm(x;q), it is easy to show that the Stokes matrices (305a),(305b) indeed satisfy this
-consistency condition.
-The q↦→ 0 limit of the Stokes matrices factorizes
-S+(x; 0) = Sσ3,σ1(x)Sσ3,σ2(x)Sσ1,σ2(x)
-=
-
-
-1 0 0
-0 1 0
-−s(x) 0 1
-
-
-
-
-1 0 0
-0 1 0
-0 s(x) 1
-
-
-
-
-1 s(x) + 1 0
-0 1 0
-0 0 1
-
-, (307)
-S−(x; 0) = Sσ1,σ3(x)Sσ2,σ3(x)Sσ2,σ1(x)
-=
-
-
-1 0 s(x)
-0 1 0
-0 0 1
-
-
-
-
-1 0 0
-0 1 −s(x)
-0 0 1
-
-
-
-
-1 0 0
-−s(x)− 1 1 0
-0 0 1
-
-, (308)
-where the non-vanishing oﬀ-diagonal entries ofSσi,σj(x) encode the Stokes constants asso-
-ciated to the Borel singularities split fromιi,j. Using the unique factorization Lemma 8 and
-the Stokes matrixS from above, we can compute the Stokes constants and the corresponding
-PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY 59
-matrixS of Equation (36) to arbitrary order inq, and we ﬁnd that
-S+
-σ1,σ1 =S+(q)1,1− 1
-=(−4−x−2− 3x−1− 3x−x2)q + (−1 +x−3 +x−2 +x2 +x3)q2 +O(q3), (309a)
-S+
-σ1,σ2 =(4 +x−2 + 3x−1 + 3x +x2)q
-+(37 +x−4 + 5x−3 + 16x−2 + 30x−1 + 30x + 16x2 + 5x3 +x4)q2 +O(q3), (309b)
-S+
-σ1,σ3 =q + (1 +x−1 +x)q2 +O(q3), (309c)
-S+
-σ2,σ1 =− (4 +x−2 + 3x−1 + 3x +x2)q
-−(37 +x−4 + 5x−3 + 16x−2 + 30x−1 + 30x + 16x2 + 5x3 +x4)q2 +O(q3), (309d)
-S+
-σ2,σ2 =(4 +x−2 + 3x−1 + 3x +x2)q
-+(37 +x−4 + 5x−3 + 16x−2 + 30x + 30x + 16x2 + 5x3 +x4)q2 +O(q3), (309e)
-S+
-σ2,σ3 =− (7 + 2x−2 + 5x−1 + 5x + 2x2)q
-−(59 + 2x−4 + 10x−3 + 27x−2 + 49x−1 + 49x + 27x2 + 10x3 + 2x4)q2 +O(q3),
-(309f)
-S+
-σ3,σ1 =−q− (1 +x−1 +x)q2 +O(q3) (309g)
-S+
-σ3,σ2 =(7 + 2x−2 + 5x−1 + 5x + 2x2)q
-+(59 + 2x−4 + 10x−3 + 27x−2 + 49x−1 + 49x + 27x2 + 10x3 + 2x4)q2 +O(q3),
-(309h)
-S+
-σ3,σ3 =0. (309i)
-Note that the seriesS+
-σ1,σ2 andS+
-σ2,σ2 are diﬀerent, even though their ﬁrst few terms are
-coincidental. They diﬀer in higher orders, as one can already see in theu = 0 limit in
-Section 3.2. The matrixS satisﬁes the symmetry
-S+
-σi,σj(x;q) =−S+
-σϕ(i),σϕ(j)(x;q), i ⁄=j, (310)
-withϕ(1) = 2,ϕ (2) = 1,ϕ (3) = 3, and they display the familiar feature that the entries of the
-matrixS+(x;q) = (S+
-σi,σj(x;q)) (except the upper-left one) are (up to a sign) inN[x±1][[q]].
-Similarly we can extract the Stokes constantsS(𝓁,k) (k <0) associated to the singularities
-below ιi,j in the lower half plane and assemble intoq−1-seriesS−
-σi,σj(x;q−1). We ﬁnd the
-relation
-S−
-σi,σj(x;q) =−S+
-σj,σi(x;q), i⁄=j and S−
-σi,σi(x;q) = +S+
-σϕ(i),σϕ(i)(x;q). (311)
-Let us now verify Conjecture 4 for the52 knot. The same logic presented at the end of
-Section 5.4 also holds here. From the form of the Stokes matrix (305a) as well as (276),(278),
-we immediately conclude that
-S+(x;q)
-··
-=W0(x−1;q−1)·W 0(x;q)T. (312)
-Using the uniform notation for all holomorphic blocks
-(Bα
-52(x;q))α=1,2,3 = (A0(x;q),B 0(x;q),C 0(x;q)), (313)
-60 STA VROS GAROUF ALIDIS, JIE GU, AND MARCOS MARIÑO
-the right hand side of (312) reads2
-W0(x−1;q−1)·W 0(x;q)T =
-(∑
-α
-Bα
-52(qjx;q)Bα
-52(q−ix−1;q−1)
-)
-i,j=0,1,2
-=
-(
-Indrot
-52 (j−i,q
-j+i
-2 x;q)
-)
-i,j=0,1,2
-, (315)
-reproducing the right hand side of (20) in Conjecture 4. Furthermore, the forms of the
-accompanying matrices on the left and on the right are such that the(1, 1) entry ofS+(x;q)
-equates exactly the DGG index with no magnetic ﬂux. By explicit calculation,
-S+(x;q)1,1 =H(x,x−1, 1;q)H(x−1,x, 1;q−1) +H(x,x 2,x 2;q)H(x−1,x−2,x−2;q−1)
-+H(x−1,x−2,x−2;q)H(x,x 2,x 2;q−1)
-=1− (x−2 + 3x−1 + 4 + 3x +x2)q + (x−3 +x−2− 1 +x2 +x3)q2 +O(q3).
-(316)
-The right hand side of the ﬁrst two lines in (316) is the formula for the DGG index given in
-[BDP14].
+\begin{subequations}
+\begin{align}
+  &\wt{\beta}^{(m)}_0(q) = G_{-m}^0(q),\label{eq:tb0-41}\\
+  &\wt{\beta}^{(m)}_1(q) = \sum_{n=0}^\infty
+    \frac{q^{-nm}}{(q;q)_n(q^{-1};q^{-1})_n}
+    (1+2n+m-E_1^{(n)}(q)).\label{eq:tb1-41}
+\end{align}
+\end{subequations}
+We also notice
+\begin{equation}
+  \wt{\beta}_1^{(m)}(q) - \wt{\alpha}_1^{(m)}(q) =
+  \frac{1}{2} G_{-m}^1(q).
+\end{equation}
+Applying these results to the right hand side of \eqref{41x-desc-fac},
+we find the $O(1/u)$ contributions from~\eqref{eq:tA-uexp-41}
+and~\eqref{eq:tB-uexp-41} cancel, and the $O(u^0)$ contributions
+reproduce exactly~\eqref{410-desc-fac}. Notice that the $\sqrt{\tau}$
+terms that appear in~\eqref{410-desc-fac} come from expanding in terms
+of $2\pi\bb\,u$ and $2\pi\bb^{-1}\,u$ in~\eqref{41x-desc-fac}.
+    
+As an application of the above computations, we obtain proof of a
+simplified formula for the $q$-series $G^1(q)$ from~\eqref{Gm0} which
+was found experimentally in~\cite{GZ:qseries}.
+
+\begin{proposition}
+  \label{prop.G}
+  For $|q|<1$, we have:
+  \begin{equation}
+  \label{GGformula}
+  G^1(q) = \sum_{n=0}^\infty (-1)^n \frac{q^{n(n+1)/2}}{(q;q)_n^2}
+  (6n+1) \,.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  We first show that the definition \eqref{Gm0} can equally be written
+  as
+  \begin{equation}
+    G^1(q) = \sum_{n=0}^\infty (-1)^n \frac{q^{n(n+1)/2}}{(q;q)_n^2}
+    \left(1+2n-4E_1^{(n)}(q)\right).\label{eq:G1-im}
+  \end{equation}
+  By definition
+  \begin{equation}
+    E_1^{(n)}(q) = \sum_{s=1}^\infty \frac{q^{s(n+1)}}{1-q^s},
+  \end{equation}
+  they satisfy the recursion relation
+  \begin{equation}
+    E_1^{(n)}(q) - E_1^{(n-1)}(q) = -\frac{q^n}{1-q^n},
+  \end{equation}
+  and therefore
+  \begin{equation}
+    E_1^{(n)}(q) = E_1^{(0)}(q) -\sum_{j=1}^n\frac{q^j}{1-q^j}.
+  \end{equation}
+  Using the identification $E_1(q) = 1-4E_1^{(0)}(q)$, one can then
+  easily show that \eqref{eq:G1-im} is the same
+  as \eqref{Gm0}.
+
+  \eqref{GGformula} follows from \eqref{eq:G1-im} thanks to the
+  non-trivial identity
+  \begin{equation}
+    \sum_{n=0}^\infty \frac{n+E_1^{(n)}(q)}{(q;q)_n(q^{-1};q^{-1})_n}
+    = 0,\quad |q|<1,
+    \label{eq:E1n-id}
+  \end{equation}
+  which now we prove.
+  The crucial fact we use is that when $|q|<1$, $J(x,y;q)$ is
+  symmetric between $x$ and $y$ (see a proof in \cite{Beem}).
+  Let us consider the following expansion in small $u$
+  \begin{align}
+    J(\re^{-u},\re^u;q) =
+    &\sum_{n=0}^\infty (q^{1+n}\re^u;q)_\infty\frac{\re^{-nu}}{(q^{-1};q^{-1})_n} =
+    (q;q)_\infty\sum_{n=0}^\infty \frac{\phi_n(u)\re^{-nu}}{(q;q)_n(q^{-1};q^{-1})_n}\nn =
+    &(q;q)_\infty\sum_{n=0}^\infty \frac{1-(n+E_1^{(n)}(q))u}{(q;q)_n(q^{-1};q^{-1})_n} +
+    O(u^2). 
+  \end{align}
+  Since $J(\re^{-u},\re^u;q) = J(\re^{u},\re^{-u};q)$, the coefficient
+  of $u$ (and in fact, of any odd power of $u$) in the expansion above
+  vanishes, which leads to \eqref{eq:E1n-id}.
+\end{proof}
+
+As a second application, we demonstrate that Theorem~\ref{thm.410},
+especially the identities \eqref{det41}, \eqref{WWT41}, as well as the
+recursion relation \eqref{41qdiff}, can be proved by taking the $u=0$
+limit of the analogue identities in Theorem~\ref{thm.41b}.
+
+Using the expansion formulas of holomorphic blocks \eqref{eq:A-uexp-41},
+\eqref{eq:B-uexp-41}, \eqref{eq:tA-uexp-41}, \eqref{eq:tB-uexp-41},
+the Wronskians can be expanded as
+\begin{align}
+  W_m(\re^u;q) =
+  &\begin{pmatrix}
+    G_m^0(q)+u\alpha_1^{(m)}(q)&G_m^0(q)+u\beta_1^{(m)}(q)\\
+    G_{m+1}^0(q)+u\alpha_1^{(m+1)}(q)&G_{m+1}^0(q)+u\beta_1^{(m+1)}(q)
+  \end{pmatrix}
+  \begin{pmatrix}
+    u^{-2}(q;q)_\infty^{-3}&0\\
+    0&-u(q;q)_\infty^3
+  \end{pmatrix},
+  \label{eq:Wp-uexp-41}\\
+  W_m(\re^u;q^{-1}) =
+  &\begin{pmatrix}
+    G_{-m}^0(q)+u\wt{\alpha}_1^{(m)}(q)
+    &G_{-m}^0(q)+u\wt{\beta}_1^{(m)}(q)\\
+    G_{-m-1}^0(q)+u\wt{\alpha}_1^{(m+1)}(q)
+    &G_{-m-1}^0(q)+u\wt{\beta}_1^{(m+1)}(q)
+  \end{pmatrix}
+  \begin{pmatrix}
+    -u(q;q)_\infty^{3}&0\\
+    0&u^{-2}(q;q)_\infty^{-3}
+  \end{pmatrix}
+  \label{eq:Wn-uexp-41}
+\end{align}
+Taking the determinant of \eqref{eq:Wp-uexp-41}, we find
+\begin{equation}
+  \det W_m(\re^u;q) = \frac{1}{2} \det W_m(q) + O(u)
+\end{equation}
+which together with the $u$-expansion of the right hand side of
+\eqref{W410} leads to the determinant identity \eqref{det41}.
+Furthermore, by substituting \eqref{eq:Wp-uexp-41},
+\eqref{eq:Wn-uexp-41} into the Wronskian relation \eqref{WW41b}, the
+latter also reduces in the leading order to the determinant identity
+\eqref{det41}.  On the other hand, the Wronskian relation
+\eqref{WWT41b} is equivalent to
+\begin{equation}
+  W_m(q) = 2
+  \begin{pmatrix}
+    0&-1\\1&0
+  \end{pmatrix}\left(W_m(q)^{-1}\right)^T
+  \begin{pmatrix}
+    0&1\\-1&0
+  \end{pmatrix}
+\end{equation}
+which can be proved directly by expressing the inverse matrix on the
+right hand side by minors and determinant, using the explicit value of
+the determinant given by the identity \eqref{det41}.
+
+Finally, from the expression \eqref{eq:a0-41},\eqref{eq:b0-41} of the
+leading order coefficients $\alpha_0^{(m)}(q)$, $\beta_0^{(m)}(q)$ of
+$A_m(\re^u;q)$, $B_m(\re^u;q)$ in the expansion of $u$, one concludes
+that the recursion relation \eqref{41qdiff} should be the $u=0$ limit
+of the recursion relation \eqref{rec41m} in $m$, and one can easily
+check it is indeed the case.
+
+
+\subsection{Stokes matrices near $u=0$}
+\label{sub.41stokes}
+
+In this section we conjecture a formula for the Stokes matrices of the
+asymptotic series $\varphi(x;\tau)$.  When we turn on the non-vanising
+deformation parameter $u$, the resurgent structure discussed in
+Section~\ref{sub.41x=1} undergoes significant changes.  Compared to
+Figure~\ref{fig:sings-u0-41} there are many more singular points in
+the Borel plane whose positions depend on $u$ in addition to $\tau$,
+and the Stokes matrices also become $u$-dependent.  However, if we
+focus on the case when $u$ is not far away from zero, equivalent to
+$x$ not far away from 1, the resurgent data is holomorphic in $u$ and
+reduces to those in Section~\ref{sub.41x=1} in the $u=0$ limit.  For
+instance, each singular point in Figure~\ref{fig:sings-u0-41} splits
+to a cluster of neighoring singular points separated with distance
+$\log x$ as shown in Figure~\ref{fig:sings-m-41}. In particular, each
+singular point $\iota_{i,j}$ on the real axis splits to a cluster of
+three, in accord with the off-diagonal entries $\pm 3$ in
+\eqref{eq:S0u041}, and if we choose real $x$, the split singularities
+still lie on the real axis.  As in Section~\ref{sub.41x=1}, we label
+the four regions separating singularities on real axis and all the
+others by $I,II,III,IV$ (see Figure~\ref{fig:secs-m-41}).  In each of
+the four regions, we have the following the results.
+
+\begin{figure}
+\leavevmode
+\begin{center}
+\includegraphics[height=7cm]{fig8_borelplane_s1m}\hspace{4ex}
+\includegraphics[height=7cm]{fig8_borelplane_s2m}
+\end{center}
+\caption{The singularities in the Borel plane for the series
+  $\varphi_{\sigma_{j}} (x;\tau)$ with $j=1,2$ of knot $\knot{4}_1$
+  where $x$ is close to 1. The shortest vertical spacing between
+  singularities is $2\pi\ri$, and the horizontal spacing between
+  neighboring singularities in each cluster is $\log x$.}
+\label{fig:sings-m-41}
+\end{figure}
+
+\begin{figure}
+\leavevmode
+\begin{center}
+\includegraphics[height=7cm]{fig8_regions_m}
+\end{center}
+\caption{Four different sectors in the $\tau$-plane for $\Phi(u;\tau)$
+  of knot $\knot{4}_1$ with $u$ close to zero.}
+\label{fig:secs-m-41}
+\end{figure} 
+
+\begin{conjecture}
+  \label{conj.41M}
+  The asymptotic series and the holomorphic blocks are related
+  by~\eqref{abrelx} with the diagonal matrix $\Delta(\tau)$ as
+  in~\eqref{D41}, where matrices $M_R(x;q)$ are given in terms of the
+  matrices $W_{-1}(x;q)$ as follows 
+\begin{subequations}
+\begin{align}
+  M_{I}(x;q) =
+  &\begin{pmatrix}
+    1&0\\0&-1
+  \end{pmatrix} W_{-1}(x;q)^T
+            \begin{pmatrix}
+              0&1\\-x^{-1}&1
+            \end{pmatrix}, & |q|<1\,,
+  \label{eq:M1-41}\\
+  M_{II}(x;q) =
+  &W_{-1}(x^{-1};q)^T
+    \begin{pmatrix}
+      -x^{-1}&0\\-x^{-1}&1
+    \end{pmatrix}, & |q|<1\,,
+  \label{eq:M2-41}\\
+  M_{III}(x;q) =
+  &W_{-1}(x^{-1};q)^T
+    \begin{pmatrix}
+      -x^{-1}&0\\1+x&1
+    \end{pmatrix}, & |q|>1\,,
+  \label{eq:M3-41}\\
+  M_{IV}(x;q) =
+  &\begin{pmatrix}
+    1&0\\0&-1
+  \end{pmatrix} W_{-1}(x;q)^T
+            \begin{pmatrix}
+              0&1\\-x^{-1}&-x^{-1}-x^{-2}
+            \end{pmatrix}, & |q|>1\,.
+                            \label{eq:M4-41}
+\end{align}
+\end{subequations}
+\end{conjecture} 
+The above conjecture completely determines the resurgent structure of
+$\Phi(\tau)$. Indeed, it implies that the Stokes matrices, defined in 
+Equations~\eqref{4G} and~\eqref{SG}, are explicitly given by:
+
+\begin{subequations}
+\begin{align}
+    \ms{S}^+(x;q) =
+    &\begin{pmatrix}
+      0&-1\\
+      x^{-1}&-1-x
+    \end{pmatrix}
+              \cdot W_{-1}(x^{-1};q^{-1})\cdot W_{-1}(x;q)^T\cdot
+              \begin{pmatrix}
+                0&x\\
+                -1&-1-x^{-1}
+              \end{pmatrix} ,\quad |q|<1\,,
+  \label{eq:Sp-41}\\
+  
+  
+  
+  
+  
+  
+    \ms{S}^-(x;q)=
+    &\begin{pmatrix}
+      x&x\\
+      0&-1
+    \end{pmatrix}
+              \cdot W_{-1}(x;q)\cdot W_{-1}(x^{-1};q^{-1})^T\cdot
+              \begin{pmatrix}
+                x^{-1}&0\\
+                x^{-1}&-1
+              \end{pmatrix},\quad |q|<1\,.
+                                \label{eq:Sn-41}
+\end{align}
+\end{subequations}
+We remark that since $s(\Phi_\s)(x;\tau)$ for $\s=1,2$ transform under
+the reflection $\pi: x\mapsto x^{-1}$ uniformly by \eqref{eq:-xPhi} (see
+the comment below), the Stokes matrices should be invariant under
+$\pi$, and we have checked that \eqref{eq:Sp-41},\eqref{eq:Sn-41}
+indeed satisfy this consistency condition.
+
+In the $q\mapsto 0$ limit,
+\begin{equation}
+  \ms{S}^+(x;0) =
+  \begin{pmatrix}
+    1&x^{-1}+1+x\\0&1
+  \end{pmatrix},\quad
+  \ms{S}^-(x;0) =
+  \begin{pmatrix}
+    1&0\\-x^{-1}-1-x&1
+  \end{pmatrix}
+  \label{eq:S0x41}
+\end{equation}
+A curious corollary of our computation is that the matrices of
+integers \eqref{eq:S0u041} from~\cite{gh-res,GZ:kashaev} which relates
+the asymptotics of the coefficients of $\varphi(\tau)$ to the
+coefficients themselves, spreads out to the matrices \eqref{eq:S0x41}
+with entries in $\IZ[x^{\pm 1}]$.
+
+Using the unique factorization Lemma~\ref{lem.fac} and the Stokes
+matrix $\sf{S}$ from above, we can compute the Stokes constants and
+the corresponding matrix $\calS$ of Equation~\eqref{calS} to arbitrary
+order in $q$, and we find that
+\begin{align}
+  \mc{S}^+_{\s_1,\s_1}(x;q) =
+  &\ms{S}^+(x;q)_{1,1}-1\nn=
+  &(-2 - x^{-2} - 2x^{-1} - 2 x - x^2)q
+    +(-3 - x^{-2} - 2x^{-1} - 2 x - x^2)q^2+\cO(q^3),\\
+  \mc{S}^+_{\s_1,\s_2}(x;q) =
+
+  &\ms{S}^+(x;q)_{1,2}/\ms{S}^+(x;q)_{1,1}
+  -(\mc{S}^{(1,0)}_{\s_1,\s_2}x+\mc{S}^{(0,0)}_{\s_1,\s_2}
+  +\mc{S}^{(-1,0)}_{\s_1,\s_2}x^{-1})\nn=
+  &(3 + x^{-2} + 2x^{-1} + 2 x + x^2)q\nn
+  &+(17 + x^{-4} + 4x^{-3} + 9x^{-2} + 15x^{-1} + 15 x + 9 x^2 + 4 x^3 + x^4)
+  q^2+\cO(q^3),\\
+  \mc{S}^+_{\s_2,\s_1}(x;q) =
+  &\ms{S}^+(x;q)_{2,1}/\ms{S}^+(x;q)_{1,1}\nn=
+  &(-3 - x^{-2} - 2x^{-1} - 2 x - x^2)q\nn
+  &+(-17 - x^{-4} - 4x^{-3} - 9x^{-2} - 15 x^{-1} - 15 x - 9 x^2 - 4 x^3 - x^4)
+  q^2+\cO(q^3),\\
+  \mc{S}^+_{\s_2,\s_2}(x;q) =
+  &\ms{S}^+(x;q)_{2,2} -1-
+    \ms{S}^+(x;q)_{1,2}\ms{S}^+(x;q)_{2,1}/\ms{S}^+(x;q)_{1,1}\nn=
+  &(2 + x^{-2} + 2x^{-1} + 2 x + x^2) q \nn
+  &+ (17 + x^{-4} + 4x^{-3} + 9x^{-2} + 14x^{-1} + 14 x + 9 x^2 + 4 x^3 + x^4)
+  q^2+\cO(q^3).
+\end{align}
+They enjoy the symmetry
+\begin{equation}
+  \mc{S}^{+}_{\s_1,\s_2}(x;q) =
+  -\mc{S}^{+}_{\s_2,\s_1}(x;q)\,,
+\end{equation}
+and experimentally, it appears that the entries of the matrix
+$\mc{S}^+(x;q) = (\mc{S}^+_{\s_i,\s_j}(x;q))$ (except the upper-left
+one) are (up to a sign) in $\BN[x^{\pm 1}][[q]]$. 
+Similarly we can extract the Stokes constants
+$\mc{S}^{(\ell,-k)}_{\s_i,\s_j}$ associated to the singularities in
+the lower half plane, and assemble into $q^{-1}$-series
+$\mc{S}^{-}_{\s_i,\s_j}(x;q^{-1})$.  We find they are related to
+$\mc{S}^+_{\s_i,\s_j}(x;q)$ by
+\begin{gather}
+  \mc{S}^{-}_{\s_i,\s_j}(x;q) = -\mc{S}^{+}_{\s_j,\s_i}(x;q),\;\;i\neq j\,
+  \nn
+  \mc{S}^{-}_{\s_1,\s_1}(x;q) = \mc{S}^{+}_{\s_2,\s_2}(x;q),\;\;
+  \mc{S}^{-}_{\s_2,\s_2}(x;q) = \mc{S}^{+}_{\s_1,\s_1}(x;q)\,.
+\end{gather}
+
+Let us now verify Conjecture~\ref{conj.S3D}.
+From \eqref{eq:Sp-41} we find that indeed
+\begin{equation}
+  \ms{S}^+(x;q) \stackrel{\cdot}{=} W_{-1}(x^{-1};q^{-1})\cdot W_{-1}(x;q)^T.
+\end{equation}
+Using the recursion relation \eqref{eq:W41rec} and the relation
+between two Wronskians \eqref{W41xm}, we further find 
+\begin{equation}
+  \ms{S}^+(x;q) \stackrel{\cdot\cdot}{=} \cW_{0}(x^{-1};q^{-1})\cdot
+  \cW_{0}(x;q)^T.
+  \label{eq:SW41}
+\end{equation}
+If we use the uniform notation for all holomorphic blocks
+\begin{equation}
+  (B_{K}^\alpha(x;q))_{\alpha=1,2} = (A_0(x;q),B_0(x;q)),
+\end{equation}
+the right hand side of \eqref{eq:SW41} reads 
+\begin{equation}
+  \cW_{0}(x^{-1};q^{-1})\cdot \cW_{0}(x;q)^T =
+  \left(
+    \sum_{\alpha}B^{\alpha}_{\knot{4}_1}(q^jx;q)
+    B^{\alpha}_{\knot{4}_1}(q^{-i}x^{-1};q^{-1})
+  \right)_{i,j=0,1}.
+  \label{eq:WW41}
+\end{equation}
+which is precisely the right hand side of \eqref{eq:SInd} in
+Conjecture~\ref{conj.S3D} following \eqref{eq:IndB}.\footnote{Note
+  that because the form of the state integral in \cite{Beem} is
+  slightly different from that in \cite{AK}, which we adopt, our
+  convention for holomorphic blocks is also different from
+  \cite{Beem}.  As a result, the entries of $\eqref{eq:WW41}$ equate
+  the DGG indices computed in \cite{Beem} up to a prefactor
+  \begin{equation}
+    \left(\cW_{0}(x^{-1};q^{-1})\cdot \cW_{0}(x;q)^T\right)_{i+1,j+1} =
+    (-q^{1/2})^{j-i}\text{Ind}_{\knot{4}_1}^{\text{rot}}
+    (j-i,q^{\frac{j+i}{2}}x;q),\quad i,j=0,1.
+  \end{equation}
+  If we take this into account, Conjecture~\ref{conj.S3D} should be
+  modified slightly by stating the accompanying matrices on the left
+  and on the right are in $GL(2,\IZ(x,q^{1/2}))$.}
+In addition, the forms of the accompanying matrices on the left and on the
+right are such that the $(1,1)$ entry of $\ms{S}^+(x;q)$ equates
+exactly the DGG index with no magnetic flux.
+By explicit calculation,
+
+\begin{equation}
+\label{S11v}
+\begin{aligned}
+  \ms{S}^+(x;q)_{1,1}& =
+  J(x, x^{-1};q) J(x, x^{-1}; q^{-1}) + J(x^{-2}, x^{-1};q) J(x^2, x; q^{-1}) \\
+  &=1 -(2x^{-2}+ x^{-1}+2+x + 2x^2)q - (x^{-2}+2x^{-1} +3+ 2x + 
+  x^2) q^2 + O(q^3),
+  \end{aligned}
+\end{equation}
+
+which is the $\text{Ind}^{\text{rot}}_{\knot{4}_1}(0,x;q)$ given in
+\cite{Beem}.

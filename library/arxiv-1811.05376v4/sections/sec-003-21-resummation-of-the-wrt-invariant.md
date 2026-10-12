@@ -8,66 +8,33 @@ pages: 17-18
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
 doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
+text_source: latex
+latex_prose_ratio: 0.883
+latex_coverage_ratio: 0.895
 ---
-We now turn to the resummation of the normalized WRT invariant˜Zk(X). Recall that forµ∈ Q/Z
-we introduced the set
-T (µ) ={m = 1,..., 2P− 1 :−m2/4P =µ mod Z}.
-We also introdude the residue operatorIµ which for a meromorphic functionˆϕ is given by
-Iµ( ˆϕ)(ξ) =−
-∑
-x∈T (µ)
-Res
-
-
-exp
-(
-ξ iy2
-8πP
-)
-(1−e−ξy)
-y
-4P ˆϕ
-( y2
-i8πP
-)
-,y = 2πix
-
-
-Observe that by deﬁnitionT (µ) is empty for all but ﬁnitely manyµ∈ Q/Z and thereforeIµ is 0
-for all but these ﬁnitely manyµ.
-Corollary 10. The polynomialsZθ and the quantum invariant~Zk(X) are determined byB(Z0) as
-follows
-Zθ(k) =e−2πikθIθ (B(Z0)) (k). (40)
-~Zk(X) =LR+(B(Z0))(k) +
-∑
-θ∈ i
-2π Ω mod Z
-Iθ (B(Z0)) (k). (41)
-The identity (41) of Corollary 10 is reminiscent of the typical resummation process from resur-
-gence [6, 19]. The Ohtsuki-series is known to determine τk(X). The new insight provided by
-resurgence is that it does so via resummation as stated in Corollary 10.
-We now prove Corollary 10.
-Proof. It easily follows from (4) that
-F (ζ) =B(Z0)
-( ζ2
-i8Pπ
-) ζ
-4P. (42)
-Resurgence Analysis of Quantum Invariants 18
-Recall from (36) that
-e2πikθ Zθ(k) =−
-∑
-˜m∈T (θ)
-Res
-(F (y)ekg(y)
-1−e−ky ,y = 2πi ˜m
-)
-.
-From this and Equation (42) one easily obtains (40).
-In the proof of Theorem 2 we obtained the following exact formula
-˜Zk(X) =LR+(B)(k) +
-∑
-θ∈CS∗
-C(X)
-e2πikθ Zθ(k). (43)
-Thus we see that (41) follows from this formula and (40).
+We now turn to the resummation of the normalized WRT invariant $\tilde{\mathop{\mathrm{Z}}}_k(X)$. Recall that for $\mu \in \mathbb{Q}/ \mathbb{Z}$ we introduced the set $$\begin{aligned}
+\label{R}
+\mathcal{T}(\mu) = & \{m=1,...,2P -1 :-m^2/4P=\mu \ \mathop{\mathrm{mod}}\ \mathbb{Z} \}.
+\end{aligned}$$ We also introdude the residue operator $\mathcal{I}_\mu$ which for a meromorphic function $\hat{\varphi}$ is given by $$\begin{aligned}
+  \label{Lmu}  \mathcal{I}_{\mu}(\hat{\varphi})(\xi) = -& \sum_{x \in \mathcal{T}(\mu)} \mathop{\mathrm{Res}}\left (\frac{\exp\left(\xi \frac{iy^2}{8\pi P}\right)}{(1-e^{-\xi y})} \frac{y}{ 4P}\hat{\varphi}\left(\frac{y^2}{i8\pi P }\right) , y=2\pi i x\right)
+\end{aligned}$$ Observe that by definition $\mathcal{T}(\mu)$ is empty for all but finitely many $\mu \in \mathbb{Q} / \mathbb{Z}$ and therefore $\mathcal{I}_{\mu}$ is $0$ for all but these finitely many $\mu.$
+
+::: corollary
+[]{#2.2 label="2.2"} The polynomials $\mathop{\mathrm{Z}}_{\theta}$ and the quantum invariant $\widetilde{\mathop{\mathrm{Z}}}_k(X)$ are determined by $\mathcal{B}(\mathop{\mathrm{Z}}_{0})$ as follows $$\begin{aligned}
+ \label{Poooly}  \mathop{\mathrm{Z}}_{\theta} (k) & = e^{-2\pi i k \theta} \mathcal{I}_{\theta}\left(\mathcal{B}(\mathop{\mathrm{Z}}_{0})\right)(k).
+    \\   \widetilde{\mathop{\mathrm{Z}}}_k(X) &= \mathcal{L}_{\mathbb{R}_+}( \mathcal{B}(\mathop{\mathrm{Z}}_{0}))(k)+\sum_{\theta \in \frac{i}{2\pi} \Omega \ \mathop{\mathrm{mod}}\ \mathbb{Z}} \mathcal{I}_{\theta}\left(\mathcal{B}(\mathop{\mathrm{Z}}_{0})\right)(k) \label{Resuuumation} .
+    
+\end{aligned}$$
+:::
+
+The identity [\[Resuuumation\]](#Resuuumation){reference-type="eqref" reference="Resuuumation"} of Corollary [\[2.2\]](#2.2){reference-type="ref" reference="2.2"} is reminiscent of the typical resummation process from resurgence [@Schiappa18; @Dorigoni14]. The Ohtsuki-series is known to determine $\tau_k(X).$ The new insight provided by resurgence is that it does so via resummation as stated in Corollary [\[2.2\]](#2.2){reference-type="ref" reference="2.2"}.
+
+We now prove Corollary [\[2.2\]](#2.2){reference-type="ref" reference="2.2"}.
+
+::: proof
+*Proof.* It easily follows from [\[ComputingBorel\]](#ComputingBorel){reference-type="eqref" reference="ComputingBorel"} that $$\label{TYTY}
+    F(\zeta)= \mathcal{B}(\mathop{\mathrm{Z}}_{0})\left(\frac{\zeta^2}{i8P\pi}\right) \frac{\zeta }{4P}.$$ Recall from [\[eq:formulaforpolynomial\]](#eq:formulaforpolynomial){reference-type="eqref" reference="eq:formulaforpolynomial"} that $$e^{2\pi ik \theta} \mathop{\mathrm{Z}}_{\theta}(k)=- \sum_{\tilde m \in \mathcal{T}(\theta)}  \text{Res} \left( \frac{F(y)e^{kg(y)}}{1-e^{-ky}}, y=2\pi i \tilde m \right).$$ From this and Equation [\[TYTY\]](#TYTY){reference-type="eqref" reference="TYTY"} one easily obtains [\[Poooly\]](#Poooly){reference-type="eqref" reference="Poooly"}.
+
+In the proof of Theorem [\[2.1\]](#2.1){reference-type="ref" reference="2.1"} we obtained the following exact formula $$\label{eq:DecompWRT}
+\tilde{\mathop{\mathrm{Z}}}_k(X) = \mathcal{L}_{\mathbb{R}_+}(\mathcal{B})(k)+ \sum_{\theta \in \mathop{\mathrm{CS}}_{\mathbb{C}}^*(X)} e^{2\pi i k \theta} \mathop{\mathrm{Z}}_\theta(k).$$ Thus we see that [\[Resuuumation\]](#Resuuumation){reference-type="eqref" reference="Resuuumation"} follows from this formula and [\[Poooly\]](#Poooly){reference-type="eqref" reference="Poooly"}. ◻
+:::

@@ -208,7 +208,7 @@ def main() -> int:
     # already migrated in data and need the manifest move, not a re-run.
     todo, paths = [], {}
     for p in HERE.rglob("*.witness.json"):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         try:
             t = p.read_text(encoding="utf-8")
@@ -224,7 +224,7 @@ def main() -> int:
     todo = sorted(set(todo))
     for s in todo:
         for c in HERE.rglob(f"{s}.py"):
-            if "_deprecated" not in c.parts:
+            if ("_deprecated" not in c.parts and "fsh-guts" not in c.parts):
                 paths[s] = c
                 break
 

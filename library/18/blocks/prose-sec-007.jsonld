@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/18/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/18/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "The space ofconf ormal simplices",
-  "pageStart": 5,
-  "pageEnd": 7,
-  "text": "../sections/sec-007-4-the-space-ofconf-ormal-simplices.md",
-  "derivedFrom": "library/18/manifest",
-  "sourceDocument": "library/18/manifest",
+  "title": "Remarks and questions",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "text": "../sections/sec-007-7-remarks-and-questions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/18/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/18/manifest.jsonld",
   "provenance": "ingested"
 }

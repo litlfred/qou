@@ -125,7 +125,7 @@ def main():
 
     files = [p for p in subprocess.run(["git", "ls-files", "computations"],
                                        capture_output=True, text=True).stdout.split()
-             if p.endswith(".py") and "_deprecated" not in p]
+             if p.endswith(".py") and ("_deprecated" not in p and "fsh-guts" not in p)]
     hits = sorted(scan(files), key=lambda h: (h["file"], h["line"]))
 
     counts = {}

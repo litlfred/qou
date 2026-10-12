@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2603.25236v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A Concentration of Measure Phenomenon in Lattice Yang-Mills (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2603.25236v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2603.25236&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2603.25236v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2603.25236v1",
+    "content_type": "application/gzip",
+    "sha256": "11ffa0597cb1322e10f7af91f5e7510e5d6d31c9db4a49895fa50a5f57a2dd03",
+    "bytes": 10421,
+    "fetched": "2026-10-10T15:22:33+00:00",
+    "files": [
+      {
+        "path": "source/files/ym.tex",
+        "role": "tex",
+        "sha256": "aef82d5cd3de1fed09775a95ba1469929161ec9f283c1a3133d1116aa675efb8",
+        "bytes": 29484
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

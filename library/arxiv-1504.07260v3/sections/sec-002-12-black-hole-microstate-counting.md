@@ -8,94 +8,12 @@ pages: 8-9
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
 doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by aZN symmetry acting"
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.938
 ---
-The counting of BPS-states in CHL models have lead to deep insights into the quantum
-properties of certain black holes. In this paper we shall focus on 1/2 BPS-states which in
-the heterotic picture correspond to Dabholkar-Harvey states [30], i.e. with zero excitations
-in the right-moving sector but arbitrary excitations in the left-moving sector. In the type
-IIA picture these are electrically charged black holes with zero classical entropy (so called
-‘small black holes’). In the non-orbifold situation the degeneracyΩ(Q) of 1/2 BPS-states
-with electric charge vectorQ∈ Γ6,22 are famously counted by the Fourier coeﬃcients of the
-discriminant function 1
-∆(τ) = 1
-η(τ)24 =
-∑
-n∈Z
-c(n)qn, (1.7)
-via the relation:
-Ω(Q) =c(Q2/2), (1.8)
-where Q2 is the SO(6, 22; Z)-invariant inner product on Γ6,22. More generally, the 1/2
-BPS-states in CHL models associated with orbifolds of some symmetryg are captured by
-the fourth helicity supertrace [31]
-BCHL[g]
-4 := Trg(−1)FJ4
-3qL0 ¯q
-¯L0, (1.9)
-where J3 is the third component of the massive little group in 4 dimensions. This can
-be viewed as a generating function of the 1/2-BPS index. Consider now the CHL model
-obtained by orbifolding type IIA string theory onK3×S1× ˜S1 by an orderN symmetry
-g with Frame shape (1.4) and let(T,U ) be the Kähler and complex structure moduli of
-the torusT 2 =S1× ˜S1. We show that the fourth helicity supertrace of this CHL model is
-given by
-BCHL[g]
-4 (τ,T,U ) = 3
-2τ2
-∑
-n|N
-m(n)ΘΓ2,2(τ,Tn,Un ), (1.10)
-where ΘΓ2,2 is the standard Narain theta function of the lattice. It is then interesting to
-ask about the role of Fricke S-duality for the counting of BPS-states. We expect that there
-should exist 1/2 BPS-saturated couplings in the theory which are invariant under the Fricke
-action (1.2). To this end, notice that for the unorbifolded theory, there is anR2-correction
-to the Einstein-Hilbert action with couplingfR2 determined by the one-loop topological
-amplitude [32]:
-F1 = 2
-3
-∫
-SL(2,Z)\H
-d2τB 4(τ,T,U ), (1.11)
-via the relation ∂
-∂TfR2 = ∂
-∂TF1, (1.12)
-where F1 depends on both (T,U ) while fR2 is U-independent. Performing the (renormal-
-ized) integral, one obtains the well-known result [32]
-fR2(T ) =− log(T 24
-2 |∆(T )|4) +const. (1.13)
-– 7 –
-Notice that the same discriminant function now appears in aspacetime context, with argu-
-ment given by the Kähler modulusT of the spacetime torus, rather than the world sheet
-parameter τ [5–7, 33]. We generalise this analysis to all CHL models by calculating the
-topological one-loop amplitude in the orbifold theory
-F CHL[g]
-1 = 2
-3
-∫
-SL(2,Z)\H
-d2τB CHL[g]
-4 (τ,T,U ). (1.14)
-We then obtain the following result for the threshold coupling of the CHL model:
-f CHL[g]
-R2 (T ) =− log(T
-∑
-a|Nm(a)
-2 |ηg(T/N )|4) +const, (1.15)
-where ηg is the eta-product associated with the Frame shape (1.4):
-ηg(T ) =
-∏
-a|N
-η(aT )m(a). (1.16)
-The result (1.15) generalises earlier analyses in [7, 34]; for example, for the frame shapes
-124, 1828, 212 and 1−8216 our formula reproduces the four lines of eq. 3.9 in [7]. Thus, the
-Fourier coeﬃcients 1
-ηg(T ) =
-∑
-n∈Z
-cg(n)e2πinT, (1.17)
-capture the 1/2 BPS-degeneracies in the CHL model:
-ΩCHL[g]
-4 (Q) =cg(Q2/2), (1.18)
-generalising the result (1.8). We show that the couplingf CHL[g]
-R2 (T ) is invariant under the
-Fricke T-dualityT→− 1/(NT ) provided that the Frame shape is balanced. Implementing
-string-string dualityT↔S we ﬁnd that in this case the coupling is indeed invariant under
-Fricke S-dualityS→− 1/(NS ).
+The counting of BPS-states in CHL models have lead to deep insights into the quantum properties of certain black holes. In this paper we shall focus on 1/2 BPS-states which in the heterotic picture correspond to Dabholkar-Harvey states [@Dabholkar:1990yf], i.e. with zero excitations in the right-moving sector but arbitrary excitations in the left-moving sector. In the type IIA picture these are electrically charged black holes with zero classical entropy (so called 'small black holes'). In the non-orbifold situation the degeneracy $\Omega(Q)$ of 1/2 BPS-states with electric charge vector $Q\in \Gamma^{6,22}$ are famously counted by the Fourier coefficients of the discriminant function $$\frac{1}{\Delta(\tau)}=\frac{1}{\eta(\tau)^{24}} = \sum_{n\in \mathbb{Z}} c(n) q^{n},$$ via the relation: $$\Omega(Q) = c(Q^2/2),
+\label{1/2BPS}$$ where $Q^2$ is the $SO(6,22;\mathbb{Z})$-invariant inner product on $\Gamma^{6,22}$. More generally, the 1/2 BPS-states in CHL models associated with orbifolds of some symmetry $g$ are captured by the *fourth helicity supertrace* [@Kiritsis:1997hj] $$B^{\text{CHL}[g]}_4:= \text{Tr}_g(-1)^F J_3^4 q^{L_0} \bar{q}^{\bar{L}_0},$$ where $J_3$ is the third component of the massive little group in 4 dimensions. This can be viewed as a generating function of the 1/2-BPS index.
+
+Consider now the CHL model obtained by orbifolding type IIA string theory on $K3\times S^1\times \tilde{S}^1$ by an order $N$ symmetry $g$ with Frame shape ([\[frameshape\]](#frameshape){reference-type="ref" reference="frameshape"}) and let $(T,U)$ be the Kähler and complex structure moduli of the torus $T^2=S^1\times \tilde{S}^1$. We show that the fourth helicity supertrace of this CHL model is given by $$B^{\text{CHL}[g]}_{4}(\tau, T, U)=\frac{3}{2\tau_2}\sum_{n|N}m(n) \Theta_{\Gamma^{2,2}}(\tau,Tn, Un),$$ where $\Theta_{\Gamma^{2,2}}$ is the standard Narain theta function of the lattice. It is then interesting to ask about the role of Fricke S-duality for the counting of BPS-states. We expect that there should exist 1/2 BPS-saturated couplings in the theory which are invariant under the Fricke action ([\[Fricke\]](#Fricke){reference-type="ref" reference="Fricke"}). To this end, notice that for the unorbifolded theory, there is an $R^2$-correction to the Einstein-Hilbert action with coupling $f_{R^2}$ determined by the one-loop topological amplitude [@Harvey:1996ir]: $$F_1=\frac{2}{3} \int_{SL(2, \mathbb{Z})\backslash \mathbb{H}}d^2\tau B_4(\tau, T, U),$$ via the relation $$\frac{\partial}{\partial T} f_{R^2}=\frac{\partial}{\partial T}  F_1,$$ where $F_1$ depends on both $(T,U)$ while $f_{R^2}$ is $U$-independent. Performing the (renormalized) integral, one obtains the well-known result [@Harvey:1996ir] $$f_{R^2}(T)=-\log(T_2^{24}|\Delta(T)|^{4})+const.$$ Notice that the same discriminant function now appears in a *spacetime* context, with argument given by the Kähler modulus $T$ of the spacetime torus, rather than the world sheet parameter $\tau$ [@Ooguri:2004zv; @Dabholkar:2004yr; @Dabholkar:2005by; @Dabholkar:2005dt]. We generalise this analysis to all CHL models by calculating the topological one-loop amplitude in the orbifold theory $$F^{\text{CHL}[g]}_{1} =\frac{2}{3} \int_{SL(2,\mathbb{Z})\backslash \mathbb{H}}d^2\tau B^{\text{CHL}[g]}_4(\tau, T, U).$$ We then obtain the following result for the threshold coupling of the CHL model: $$f^{\text{CHL}[g]}_{R^2}(T)=-\log(T_2^{\sum_{a|N} m(a)}|\eta_g(T/N)|^4)+const,
+\label{fR2CHL}$$ where $\eta_g$ is the eta-product associated with the Frame shape ([\[frameshape\]](#frameshape){reference-type="ref" reference="frameshape"}): $$\eta_g(T)=\prod_{a|N}\eta(aT)^{m(a)}.$$ The result ([\[fR2CHL\]](#fR2CHL){reference-type="ref" reference="fR2CHL"}) generalises earlier analyses in [@Antoniadis:1995zn; @Dabholkar:2005dt]; for example, for the frame shapes $1^{24}, 1^82^8, 2^{12}$ and $1^{-8}2^{16}$ our formula reproduces the four lines of eq. 3.9 in [@Dabholkar:2005dt]. Thus, the Fourier coefficients $$\frac{1}{\eta_g(T)}=\sum_{n\in \mathbb{Z}}c_g(n) e^{2\pi i n T},$$ capture the 1/2 BPS-degeneracies in the CHL model: $$\Omega_4^{\text{CHL}[g]}(Q)=c_g(Q^2/2),$$ generalising the result ([\[1/2BPS\]](#1/2BPS){reference-type="ref" reference="1/2BPS"}). We show that the coupling $f^{\text{CHL}[g]}_{R^2}(T)$ is invariant under the Fricke T-duality $T\to -1/(NT)$ provided that the Frame shape is balanced. Implementing string-string duality $T\leftrightarrow S$ we find that in this case the coupling is indeed invariant under Fricke S-duality $S\to -1/(NS)$.

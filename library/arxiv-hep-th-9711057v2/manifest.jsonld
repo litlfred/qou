@@ -1,22 +1,40 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9711057v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "The microscopic spectrum of the QCD Dirac operator with finite quark masses",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9711057v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9711057v2",
   "contains": [
+    "library/arxiv-hep-th-9711057v2/sections/sec-front-matter",
     "library/arxiv-hep-th-9711057v2/sections/sec-000",
     "library/arxiv-hep-th-9711057v2/sections/sec-001",
     "library/arxiv-hep-th-9711057v2/sections/sec-002",
     "library/arxiv-hep-th-9711057v2/sections/sec-003",
     "library/arxiv-hep-th-9711057v2/sections/sec-004",
     "library/arxiv-hep-th-9711057v2/sections/sec-005",
-    "library/arxiv-hep-th-9711057v2/sections/sec-006"
+    "library/arxiv-hep-th-9711057v2/sections/sec-006",
+    "library/arxiv-hep-th-9711057v2/sections/sec-007",
+    "library/arxiv-hep-th-9711057v2/sections/sec-008",
+    "library/arxiv-hep-th-9711057v2/sections/sec-009"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9711057&metadataPrefix=arXiv), submitted 1998-04-30, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-9711057v2",
+    "title_source": "slug",
     "source_file": "9711057v2.pdf",
     "source_sha256": "acf5cdd7fe848f43b32d96d9b344fc222b0c7d3d1fa8950ce39495e2076237bb",
     "pages": 12,

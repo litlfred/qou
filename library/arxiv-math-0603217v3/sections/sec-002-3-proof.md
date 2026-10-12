@@ -8,136 +8,78 @@ pages: 3-4
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
 doc_brief: "A version of the volume conjecture — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function deﬁned by a"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.976
 ---
-In this section we prove Conjecture 2.1 for torus knots. (To be ho nest, (2.3) is
-proved only up to a constant, that is, we prove (2.4) instead.)
-Let T (a, b ) be the torus knot of type ( a, b ), where a and b are coprime integers
-with a > 1 and b > 1. Then the author proved in [12, Theorem 1.1] the following
-theorem.
-Theorem 3.1 ([12]). Suppose that |r| > 1/ (ab), Re r > 0 and Im r > 0, then
-lim
-N →∞
-log JN
-(
-T (a, b ); exp(2πr √
-−1/N )
-)
-N =
-(
-1 − 1
-2abr − abr
-2
-)
-π
-√
-−1.
-Therefore the functions H
-(
-T (p, q ); u
-)
-and vT (a,b )(u) in Conjecture 2.1 are deﬁned
-as follows:
-H
-(
-T (p, q ); u
-)
-= (u + 2π
-√
-−1)
-
-1 − 1
-2ab
-(
-1 + u
-2π √ − 1
-) −
-ab
-(
-1 + u
-2π √ − 1
-)
-2
-
- π
-√
-−1
-= −(ab(u + 2π √−1) − 2π √−1)2
-4ab
-and
-vT (a,b )(u) = 2 d H
-(
-T (a, b ); u
-)
-d u − 2π
-√
-−1 = −ab(u + 2π
-√
-−1)
-for u with |u + 2π √−1| > 2π/ (ab), Re( u) < 0 and Im( u) > −2π .
-So the volume function V
-(
-T (a, b ); u
-)
-is
-V
-(
-T (a, b ); u
-)
-= Im
-(
-H(T (a, b ); u
-)
-− π Re(u) − 1
-2 Re(u) Im(vT (a,b )(u))
-= − 1
-4 ab Im(u2) − abπ Re(u) + π Re(u)
-− π Re(u) − 1
-2 Re(u)(−ab Im(u) − 2abπ )
-= 0.
-On the other hand the right hand side of (2.4) equals
-− 1
-2
-(
-Re
-(
-u(t)
-)
-(−ab) d Im
-(
-u(t)
-)
-d t + ab Re
-(
-u(t)
-)d Im
-(
-u(t)
-)
-d t
-)
-= 0,
-4 HITOSHI MURAKAMI
-which proves (2.4).
-This conﬁrms Conjecture 2.1 for the torus knot T (a, b ).
-Remark 3.2. The volume function for a torus knot would be zero. See [3, Appen-
-dix B].
-Remark 3.3. Note that the pair
-(
-u, v T (a,b )(u)
-)
-satisﬁes the equality:
-(−1) × u +
-(−1
-ab
-)
-× vT (a,b )(u) = 2 π
-√
-−1.
-So the corresponding geometric object would be the generalized De hn surgery along
-the torus knot T (a, b ) with invariant
-(
-1, 1/ (ab)
-)
-, or the ab-Dehn surgery with cone-
-angle 2 abπ [17, Chapter 4, § 4.5] (see also Remark 2.3). It would be interesting
-that the ab-Dehn surgery along the torus knot T (a, b ) is reducible [10].
+In this section we prove Conjecture [\[conj:parameterization\]](#conj:parameterization){reference-type="ref" reference="conj:parameterization"} for torus knots. (To be honest, [\[eq:volume\]](#eq:volume){reference-type="eqref" reference="eq:volume"} is proved only up to a constant, that is, we prove [\[eq:Schlafli\]](#eq:Schlafli){reference-type="eqref" reference="eq:Schlafli"} instead.)
+
+Let $T(a,b)$ be the torus knot of type $(a,b)$, where $a$ and $b$ are coprime integers with $a>1$ and $b>1$. Then the author proved in [@Murakami:INTJM62004 Theorem 1.1] the following theorem.
+
+::: thm
+Suppose that $|r|>1/(ab)$, $\operatorname{Re}{r}>0$ and $\operatorname{Im}{r}>0$, then $$\lim_{N\to\infty}
+  \frac{\log{J_N\left(T(a,b);\exp(2\pi r\sqrt{-1}/N)\right)}}{N}
+  =
+  \left(1-\frac{1}{2abr}-\frac{abr}{2}\right)\pi\sqrt{-1}.$$
+:::
+
+Therefore the functions $H\bigl(T(p,q);u\bigr)$ and $v_{T(a,b)}(u)$ in Conjecture [\[conj:parameterization\]](#conj:parameterization){reference-type="ref" reference="conj:parameterization"} are defined as follows: $$\begin{aligned}
+  H\bigl(T(p,q);u\bigr)
+  &=
+  (u+2\pi\sqrt{-1})
+  \left(
+    1
+    -\frac{1}{2ab\left(1+\frac{u}{2\pi\sqrt{-1}}\right)}
+    -\frac{ab\left(1+\frac{u}{2\pi\sqrt{-1}}\right)}{2}
+  \right)
+  \pi\sqrt{-1}
+  \\
+  &=
+  \frac{-(ab(u+2\pi\sqrt{-1})-2\pi\sqrt{-1})^2}{4ab}
+  \\
+  \intertext{and}
+  v_{T(a,b)}(u)
+  &=
+  2\frac{d\;H\bigl(T(a,b);u\bigr)}{d\;u}-2\pi\sqrt{-1}
+  =
+  -ab(u+2\pi\sqrt{-1})
+\end{aligned}$$ for $u$ with $|u+2\pi\sqrt{-1}|>2\pi/(ab)$, $\operatorname{Re}(u)<0$ and $\operatorname{Im}(u)>-2\pi$.
+
+So the volume function $V\bigl(T(a,b);u\bigr)$ is $$\begin{split}
+  V\bigl(T(a,b);u\bigr)
+  &=
+  \operatorname{Im}{\bigl(H(T(a,b);u\bigr)}-\pi\operatorname{Re}(u)-\frac{1}{2}\operatorname{Re}(u)\operatorname{Im}(v_{T(a,b)}(u))
+  \\
+  &=
+  -\frac{1}{4}ab\operatorname{Im}(u^2)
+  -ab\pi\operatorname{Re}(u)
+  +\pi\operatorname{Re}(u)
+  \\
+  &\phantom{=}
+  -\pi\operatorname{Re}(u)
+  -\frac{1}{2}\operatorname{Re}(u)(-ab\operatorname{Im}(u)-2ab\pi)
+  \\
+  &=
+  0.
+\end{split}$$
+
+On the other hand the right hand side of [\[eq:Schlafli\]](#eq:Schlafli){reference-type="eqref" reference="eq:Schlafli"} equals $$-\frac{1}{2}
+  \left(
+    \operatorname{Re}\bigl(u(t)\bigr)
+    (-ab)
+    \frac{d\,\operatorname{Im}\bigl(u(t)\bigr)}{d\,t}
+   +ab\operatorname{Re}\bigl(u(t)\bigr)
+    \frac{d\,\operatorname{Im}\bigl(u(t)\bigr)}{d\,t}
+  \right)
+  =
+  0,$$ which proves [\[eq:Schlafli\]](#eq:Schlafli){reference-type="eqref" reference="eq:Schlafli"}.
+
+This confirms Conjecture [\[conj:parameterization\]](#conj:parameterization){reference-type="ref" reference="conj:parameterization"} for the torus knot $T(a,b)$.
+
+::: rem
+The volume function for a torus knot would be zero. See [@Garoufalidis/Le:Kauffman Appendix B].
+:::
+
+::: rem
+Note that the pair $\left(u,v_{T(a,b)}(u)\right)$ satisfies the equality: $$(-1)\times{u}+\left(\frac{-1}{ab}\right)\times{v_{T(a,b)}(u)}=2\pi\sqrt{-1}.$$ So the corresponding geometric object would be the generalized Dehn surgery along the torus knot $T(a,b)$ with invariant $\bigl(1,1/(ab)\bigr)$, or the $ab$-Dehn surgery with cone-angle $2ab\pi$ [@Thurston:GT3M Chapter 4, § 4.5] (see also Remark [\[rem:Dehn\]](#rem:Dehn){reference-type="ref" reference="rem:Dehn"}). It would be interesting that the $ab$-Dehn surgery along the torus knot $T(a,b)$ is reducible [@Moser:PACJM1971].
+:::

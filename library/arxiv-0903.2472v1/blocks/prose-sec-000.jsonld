@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0903.2472v1/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0903.2472v1/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "California Institute of Technology, Pasadena, CA 91125, US A",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-000-1-california-institute-of-technology-pasadena-ca.md",
-  "derivedFrom": "library/arxiv-0903.2472v1/manifest",
-  "sourceDocument": "library/arxiv-0903.2472v1/manifest",
+  "title": "Feynman diagrams and arithmetic TQFT",
+  "pageStart": 10,
+  "pageEnd": 18,
+  "text": "../sections/sec-000-21-feynman-diagrams-and-arithmetic-tqft.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.2472v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.2472v1/manifest.jsonld",
   "provenance": "ingested"
 }

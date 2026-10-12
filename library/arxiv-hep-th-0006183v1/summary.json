@@ -1,0 +1,61 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-0006183v1",
+ "source_sha256": "2c9c4d97ce4f71a3",
+ "brief": "Fine-tuning and the Wilson renormalization group — We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge",
+ "extended": "**Fine-tuning and the Wilson renormalization group**\n\n*M. Bonini and E. Tricarico*\n\n22 pp, 8 sections.\n\n**Abstract.** We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge symmetry. To illustrate this method we systematically compute the non-invariant couplings of the ultraviolet action of the SU(2) pure Yang-Mills theory at one-loop order.\n\n**Outline.** Front matter; 1 Introduction; 2 Renormalization group flow; 3 Effective ST identity; 4 One-loop computations; 5 Conclusions; A Appendix A; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 149
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-2-renormalization-group-flow",
+   "title": "Renormalization group flow",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-3-effective-st-identity",
+   "title": "Effective ST identity",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-4-one-loop-computations",
+   "title": "One-loop computations",
+   "pages": "5-14"
+  },
+  {
+   "id": "sec-004-5-conclusions",
+   "title": "Conclusions",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-005-a-appendix-a",
+   "title": "Appendix A",
+   "pages": "16-21"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "21-22"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

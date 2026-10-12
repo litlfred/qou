@@ -5,160 +5,623 @@
   "file": "ant-v14-n7-s-p03.pdf",
   "sha256": "e32fde16c3ce09407acfefb813437d288c5ffb99a34c6e6251ec55edbaffac10",
   "bytes": 567546,
-  "pages": 44
+  "pages": 44,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.2140/ant.2020.14.1747",
-  "title": "Nouvelles cohomologies de Weil en caractéristique positive",
-  "authors_raw": "Soit K un corps valué de hauteur 1 et d’inégales caractéristiques(0, p), et soit k son corps résiduel",
-  "abstract": "periods” admitting an explicit description by generators and relations. We establish comparison theorems relating this new Weil cohomology to the classical ones: Berthelot’s rigid cohomology and the𝓁-adic cohomologies, for𝓁⁄= p. We also state some conjectures on the ring AK . One of these conjectures implies the independence of𝓁 in cohomology.",
+  "title": "Nouvelles cohomologies de Weil en caract\u00e9ristique positive",
+  "authors_raw": "Joseph Ayoub",
+  "title_lines": [
+   "Nouvelles cohomologies de Weil",
+   "en caract\u00e9ristique positive"
+  ],
+  "abstract": "periods\u201d admitting an explicit description by generators and relations. We establish comparison theorems relating this new Weil cohomology to the classical ones: Berthelot\u2019s rigid cohomology and the \u2113-adic cohomologies, for \u2113\u0338 = p. We also state some conjectures on the ring AK. One of these conjectures implies the independence of \u2113in cohomology.",
   "docinfo": {
    "Producer": "pypdf"
   },
-  "title_lines": [
-   "Nouvelles cohomologies de Weil",
-   "en caractéristique positive",
-   "Joseph Ayoub"
-  ],
-  "title_prev": "Nouvelles cohomologies de Weil en caractéristique positive Joseph Ayoub"
+  "title_raw": "Nouvelles cohomologies de Weil en caract\u00e9ristique positive",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "msp",
+   "text": "Nouvelles cohomologies de Weil en caract\u00e9ristique positive",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
-  {
-   "level": 1,
-   "title": "Introduction 1747",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Motifs algébriques et motifs rigides 1754",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Calcul du complexe des périodes abstraites AK et applications 1775",
-   "page": 1,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Action du groupe de Galois motivique 1784",
-   "page": 1,
-   "source": "inferred",
-   "number": "4"
-  },
   {
    "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1747"
   },
   {
    "level": 1,
-   "title": "Motifs algébriques et motifs rigides",
+   "title": "Motifs alg\u00e9briques et motifs rigides",
    "page": 8,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1754"
   },
   {
    "level": 1,
-   "title": "Calcul du complexe des périodes abstraites AK et applications",
+   "title": "Calcul du complexe des p\u00e9riodes abstraites AK et applications",
    "page": 29,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1775"
   },
   {
    "level": 1,
    "title": "Action du groupe de Galois motivique",
    "page": 38,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1784"
+  },
+  {
+   "level": 1,
+   "title": "\u2192HocoMod",
+   "page": 40,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "1786"
+  },
+  {
+   "level": 1,
+   "title": "Bibliographie",
+   "page": 43,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "1789"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1747",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1748",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1749",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1750",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1751",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1752",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1753",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1754",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1755",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1756",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1757",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1758",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1759",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1760",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1761",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1762",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "1763",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "1764",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1765",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "1766",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "1767",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "1768",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "1769",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "1770",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "1771",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "1772",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "1773",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "1774",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "1775",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "1776",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "1777",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "1778",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "1779",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "1780",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "1781",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "1782",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "1783",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "1784",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "1785",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "1786",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "1787",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "1788",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "1789",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "1790",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-introduction-1747",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1439,
+   "n_words": 222,
+   "label_start": "1747",
+   "label_end": "1747"
+  },
+  {
+   "id": "sec-000-1-introduction",
    "number": "1",
-   "title": "Introduction 1747",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-001-2-motifs-algébriques-et-motifs-rigides-1754",
-   "number": "2",
-   "title": "Motifs algébriques et motifs rigides 1754",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-002-3-calcul-du-complexe-des-périodes-abstraites-ak",
-   "number": "3",
-   "title": "Calcul du complexe des périodes abstraites AK et applications 1775",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-003-4-action-du-groupe-de-galois-motivique-1784",
-   "number": "4",
-   "title": "Action du groupe de Galois motivique 1784",
+   "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 8,
-   "n_chars": 17823,
-   "n_words": 2882
+   "n_chars": 18178,
+   "n_words": 3102,
+   "label_start": "1747",
+   "label_end": "1754"
   },
   {
-   "id": "sec-004-2-motifs-algébriques-et-motifs-rigides",
+   "id": "sec-001-2-motifs-alg\u00e9briques-et-motifs-rigides",
    "number": "2",
-   "title": "Motifs algébriques et motifs rigides",
+   "title": "Motifs alg\u00e9briques et motifs rigides",
    "level": 1,
    "page_start": 8,
    "page_end": 29,
-   "n_chars": 50360,
-   "n_words": 7816
+   "n_chars": 50981,
+   "n_words": 8519,
+   "label_start": "1754",
+   "label_end": "1775"
   },
   {
-   "id": "sec-005-3-calcul-du-complexe-des-périodes-abstraites-ak",
+   "id": "sec-002-3-calcul-du-complexe-des-p\u00e9riodes-abstraites-ak",
    "number": "3",
-   "title": "Calcul du complexe des périodes abstraites AK et applications",
+   "title": "Calcul du complexe des p\u00e9riodes abstraites AK et applications",
    "level": 1,
    "page_start": 29,
    "page_end": 38,
-   "n_chars": 19626,
-   "n_words": 3225
+   "n_chars": 19840,
+   "n_words": 3464,
+   "label_start": "1775",
+   "label_end": "1784"
   },
   {
-   "id": "sec-006-4-action-du-groupe-de-galois-motivique",
+   "id": "sec-003-4-action-du-groupe-de-galois-motivique",
    "number": "4",
    "title": "Action du groupe de Galois motivique",
    "level": 1,
    "page_start": 38,
+   "page_end": 39,
+   "n_chars": 4540,
+   "n_words": 736,
+   "label_start": "1784",
+   "label_end": "1785"
+  },
+  {
+   "id": "sec-004-hocomod",
+   "number": null,
+   "title": "\u2192HocoMod",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 43,
+   "n_chars": 7814,
+   "n_words": 1235,
+   "label_start": "1785",
+   "label_end": "1789"
+  },
+  {
+   "id": "sec-005-bibliographie",
+   "number": null,
+   "title": "Bibliographie",
+   "level": 1,
+   "page_start": 43,
    "page_end": 44,
-   "n_chars": 17682,
-   "n_words": 2700
+   "n_chars": 5354,
+   "n_words": 817,
+   "label_start": "1789",
+   "label_end": "1790"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 8,
+  "toc_entries": 6,
+  "toc_inferred_entries": 6,
+  "toc_inferred_mean_confidence": 0.7,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 7,
-  "chars_total": 105491
+  "chars_total": 108146
  }
 }

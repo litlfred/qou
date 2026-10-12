@@ -1,16 +1,40 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Meromorphic Solutions of Some Difference Equations",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/yanagihara-1980-meromorphic-solutions-difference-equations/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "yanagihara-1980-meromorphic-solutions-difference-equations",
   "contains": [
-    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/sec-000"
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-001",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-002",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-003",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-004",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-005",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-006",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-007",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-008",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-009",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-010",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-011",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-012",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-013",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-014",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-015",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-016",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-017",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-018"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "yanagihara-1980-meromorphic-solutions-difference-equations",
+    "title_source": "slug",
     "source_file": "yanagihara-1980-meromorphic-solutions-difference-equations.pdf",
     "source_sha256": "c5e4a39ec3d43d8fb515eaeb693846a1c003bb01b9091c62e29ff1ac038c7872",
     "pages": 18,

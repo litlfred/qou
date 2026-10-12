@@ -1,0 +1,198 @@
+\newcommand{\nr}{N}
+\newcommand{\set}[1]{\left\{ \def\given{\ \middle| \ }  #1 \right\}  }
+\newcommand{\defeq}{\mathrel{:=}}
+\NewDocumentCommand{\iso}{}{\cong}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\End}{End}
+\renewcommand{\hom}{\operatorname{Hom}}
+
+\NewDocumentCommand{\nset}{m}{\left[#1\right]}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+
+\NewDocumentCommand{\dif}{}{\,\mathrm{d}}
+
+\NewDocumentCommand{\bigoh}{}{\mathrm{O}}
+
+\NewDocumentCommand{\du}{}{\amalg}
+
+%use ifempty from xparse
+\ExplSyntaxOn
+\DeclareExpandableDocumentCommand{\IfEmptyTF}{mmm}
+ {
+    \tl_if_empty:nTF {#1} {#2} {#3}
+ }
+\ExplSyntaxOff
+
+%fix spacing with paried delimiters
+%use these for function arguments
+\def\leftfun#1{\mathopen{}\left#1}
+\def\rightfun#1{\right#1}
+
+%useful for defining named functions
+\NewDocumentCommand{\ParenIfNonempty}{m}{%
+  \IfEmptyTF{#1}{%
+  }{%
+    \leftfun(#1\rightfun)%
+  }
+}
+
+\NewDocumentCommand{\ii}{}{\mathsf{i}}
+\NewDocumentCommand{\tu}{}{2 \pi \ii}
+
+\NewDocumentCommand{\evec}{m}{\mathbf{e}_{#1}}
+
+\NewDocumentCommand{\slg}{}{\operatorname{SL}_2(\mathbb{C})}
+\NewDocumentCommand{\sla}{}{\mathfrak{sl}_2}
+\NewDocumentCommand{\pslg}{}{\operatorname{PSL}_2(\mathbb{C})}
+\NewDocumentCommand{\pjsp}{O{\mathbb{C}}}{\operatorname{#1 P}^{1}}
+\DeclareMathOperator{\hyp}{hyp}
+\NewDocumentCommand{\qn}{}{\triangleleft}
+\NewDocumentCommand{\qninv}{}{\mathbin{\overline{\triangleleft}}}
+
+\NewDocumentCommand{\qgrplong}{O{\xi}}{\mathcal{U}_{#1}(\mathfrak{sl}_2)}
+\NewDocumentCommand{\qgrp}{O{\xi}}{\mathcal{U}_{#1}}
+\NewDocumentCommand{\weyl}{O{\xi}}{\mathcal{W}_{#1}}
+
+\NewDocumentCommand{\mer}{}{\mathbf{m}}
+\NewDocumentCommand{\lon}{}{\mathbf{l}}
+\NewDocumentCommand{\extr}{m}{M_{#1}}
+\NewDocumentCommand{\comp}{m}{S^3 \setminus #1}
+\DeclareMathOperator{\lk}{Lk}
+
+\NewDocumentCommand{\homol}{m m}{\operatorname{H}_{#1}\leftfun(#2\rightfun)}
+\NewDocumentCommand{\cohomol}{m m}{\operatorname{H}^{#1}\leftfun(#2\rightfun)}
+
+%all Reidemeister moves in one macro
+\ExplSyntaxOn
+\NewDocumentCommand{\reid}{m O{}}{
+  \bool_case:nTF
+  {
+    {\str_if_eq_p:NN {#1} {1} } { \operatorname{R}\sb{1} }
+    {\str_if_eq_p:NN {#1} {1f} } { \operatorname{R}\sb{1}^{\operatorname{fr}} }
+    {\str_if_eq_p:NN {#1} {2} } { \operatorname{R}\sb{2}^{#2} }
+    {\str_if_eq_p:NN {#1} {2a} } { \operatorname{R}\sb{2}^{\operatorname{a}} }
+    {\str_if_eq_p:NN {#1} {2b} } { \operatorname{R}\sb{2}^{\operatorname{b}} }
+    {\str_if_eq_p:NN {#1} {3} } { \operatorname{R}\sb{3} }
+  }
+  { } %matches
+  { } %unmatched
+}
+\ExplSyntaxOff
+
+\NewDocumentCommand{\modcat}{m}{#1\operatorname{-mod}}
+\NewDocumentCommand{\tsunit}{}{\mathbf{1}}
+
+\NewDocumentCommand{\sclbrak}{m}{\left\langle #1 \right \rangle}
+
+\NewDocumentCommand{\point}{}{\cdot}
+
+\NewDocumentCommand{\repvar}{m}{\mathsf{R}\leftfun(#1\rightfun)}
+\NewDocumentCommand{\admvar}{m}{\mathsf{A}\leftfun(#1\rightfun)}
+\NewDocumentCommand{\logvar}{m}{\mathfrak{F}\leftfun(#1\rightfun)}
+\NewDocumentCommand{\admvarbdry}{m}{\mathsf{A}^{\partial}_{#1}}
+
+\NewDocumentCommand{\csbun}{O{}}{\mathcal{E}^{#1}}
+\NewDocumentCommand{\qbun}{O{\nr} O{}}{\mathcal{E}_{#1}^{#2}}
+\NewDocumentCommand{\qbunbig}{O{\nr} O{}}{\tilde{\mathcal{E}}_{#1}^{#2}}
+
+\NewDocumentCommand{\qfunc}{O{\nr} m}{\mathcal{Z}_{#1}^{\psi}\ParenIfNonempty{#2}}
+
+\NewDocumentCommand{\qinv}{O{\nr} m}{\mathrm{Z}_{#1}^{\psi}\ParenIfNonempty{#2}}
+
+\NewDocumentCommand{\actq}{O{\nr} m m}{%
+  \mathcal{S}_{#1}\leftfun(#2
+  \IfEmptyTF{#3}{%
+    \rightfun)
+  }{%
+    \middle|#3\rightfun)%
+  }
+}
+
+\NewDocumentCommand{\act}{ m m}{%
+  \mathcal{S}\leftfun(#1
+  \IfEmptyTF{#2}{%
+    \rightfun)
+  }{%
+    \middle|#2\rightfun)%
+  }
+}
+
+
+\NewDocumentCommand{\stint}{O{\nr} m m}{%
+  J_{#1}\leftfun(#2
+  \IfEmptyTF{#3}{%
+    \rightfun)
+  }{%
+    \middle|#3\rightfun)%
+  }
+}
+
+\NewDocumentCommand{\stintadj}{O{\nr} m m}{%
+  \widetilde{J}_{#1}\leftfun(#2
+  \IfEmptyTF{#3}{%
+    \rightfun)
+  }{%
+    \middle|#3\rightfun)%
+  }
+}
+
+\NewDocumentCommand{\crossingfunction}{O{\nr} m m m}{
+  \Omega_{#1}^{#2}\leftfun(#3
+  \IfEmptyTF{#4}{%
+    \rightfun)
+  }{%
+    \middle|#4\rightfun)%
+  }
+}
+
+\NewDocumentCommand{\crossingfunctionclass}{m m}{
+  \Omega^{#1}
+  \IfEmptyTF{#2}{%
+  }{%
+    \leftfun(#2\rightfun)%
+  }
+}
+
+\NewDocumentCommand{\lkfunc}{O{\nr} m}{\mathcal{L}_{#1}\ParenIfNonempty{#2}}
+\NewDocumentCommand{\lklog}{O{} m}{\psi_{#1}\ParenIfNonempty{#2}}
+
+\NewDocumentCommand{\qcat}{O{\nr}}{\mathsf{C}_{#1}}
+\NewDocumentCommand{\tcat}{O{\nr}}{\mathsf{T}_{#1}}
+\NewDocumentCommand{\vect}{}{\mathsf{Vect}}
+
+\NewDocumentCommand{\shadset}{}{\mathsf{U}}
+
+% (quantum) dilogs and q-series stuff
+\NewDocumentCommand{\pf}{O{} m }{\varphi_{#1}\ParenIfNonempty{#2}}
+\NewDocumentCommand{\pfl}{O{\nr} m}{\phi_{#1}\ParenIfNonempty{#2}}
+
+\NewDocumentCommand{\qlfl}{O{\nr} m m}{%
+  \lambda_{#1}\leftfun(#2
+  \IfEmptyTF{#3}{%
+    \rightfun)
+  }{%
+    \middle|#3\rightfun)%
+  }
+}
+
+\NewDocumentCommand{\dll}{m }{\operatorname{L}\ParenIfNonempty{#1}}
+
+\newcommand{\evup}[1]{\operatorname{ev}^\uparrow_{#1}}
+\newcommand{\coevup}[1]{\operatorname{coev}^\uparrow_{#1}}
+\newcommand{\evdown}[1]{\operatorname{ev}^\downarrow_{#1}}
+\newcommand{\coevdown}[1]{\operatorname{coev}^\downarrow_{#1}}
+
+\NewDocumentCommand{\lN}{}{\mathrm{N}}
+\NewDocumentCommand{\lW}{}{\mathrm{W}}
+\NewDocumentCommand{\lS}{}{\mathrm{S}}
+\NewDocumentCommand{\lE}{}{\mathrm{E}}
+\NewDocumentCommand{\up}{}{\uparrow}
+\NewDocumentCommand{\dn}{}{\downarrow}
+
+% macros borrowed from Colleen Delaney
+\newcommand{\parcen}[1]{\phantom{(}#1\phantom{)}}
+\newcommand{\br}{to [out=00,in=180]}

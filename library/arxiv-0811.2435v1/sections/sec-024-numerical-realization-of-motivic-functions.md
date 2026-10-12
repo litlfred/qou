@@ -8,224 +8,84 @@ pages: 75-80
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
 doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+text_source: latex
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.932
 ---
-This section is not used in further consideration, its goal i s only to show
-that the abstractly deﬁned ring
-M
-G,µ
-(X) can be realized as certain ring of
-functions with numerical values.
-Let Z be a scheme of ﬁnite type over a ﬁnite ﬁeld k≃ Fq endowed with
-an action of the group µn of roots of 1 such that n<p =char Fq. We choose
-a prime l⁄= p. Let us deﬁne Y as the quotient ( Z× (A1
-k\{ 0}))/µn with
-respect to the diagonal action of µn. Then we have a morphism
-π :Y→ A1
-k\{ 0}, (z,t )↦→tn∀(z,t )∈ (Z× A1
-k\{ 0})(
-Fq).
-Let j : A1
-k\{ 0}→ A1
-k be the natural embedding. We deﬁne the number
-NZ = TrFr (F (j∗π!(Ql,Y ))|s=1)∈
-Ql ,
-which is the trace of the Frobenius Fr of the ﬁber at s = 1 of the Fourier
-transform of the l-adic sheaf j∗π!(Ql,Y ), where Ql,Y denotes the constant
-sheaf Ql on Y . In fact the number NZ can be considered as an element of
-the cyclotomic ﬁeld Q(ηp), where ηp is a primitive p-th root of 1:
-1 +ηp +··· +ηp−1
-p = 0 .
-We have a canonical non-trivial character χ : Fq→ Q(ηp)∗ given by the
-composition of the trace Tr Fq→Fp : Fq→ Fp with the additive character
-χp : Fp→ Q(ηp)∗, m modp↦→ηm
-p .
-Then
-NZ =
-∑
-s∈(A1
-k\{0})(Fq )
-#(π−1(s)(Fq))χ(s) .
-Notice that the last formula makes sense for constructible Z as well.
-Let now X be a constructible set over a ﬁeld k,char k = 0, endowed with
-an action of an aﬃne algebraic group G.
-16In this way we have circumvented the problem of deﬁning the ca tegory of G-equivariant
-motivic sheaves.
-75
-Deﬁnition 13 We call a model for (X,G ) the following choices:
-• a ﬁnitely generated subring R⊂ k,
-• a schemeX→ Spec(R) of ﬁnite type,
-• an aﬃne group scheme G→ Spec(R) together with an embedding G֒→
-GL(N)R,
-• an action of G onX ,
-• a constructible identiﬁcation over k ofX× Spec(R)Spec(k) with X, as
-well as an isomorphism of groups G×Spec(R)Spec(k)≃G over k, com-
-patible with the actions.
-Such a model always exists, and models form a ﬁlterted system . With a
-given model for ( X,G ) we associate a commutative unital ring
-K(X ) = lim −→
-{open U⊂(X×GL(n))/G}
-∏
-{closed x∈U}
-Q(ηchar k(x)) ,
-where k(x) is the residue ﬁeld of x (which is a ﬁnite ﬁeld).
-Suppose that we are given a model for ( X,G ) and let f∈M G,µ(X). As
-always we assume that the µ-action on X is good and factors through the
-action of some µn.
-Deﬁnition 14 A model for f compatible with the model (R,X,G) for (X,G )
-consists of the following data:
-• a ﬁnite set J, numbers Nj,dj,nj ∈ Z, where j ∈ J, such that all
-numbersNj are positive and invertible in O(X ),
-• G×µNj -equivariant morphisms of constructible sets Yj→X given for
-eachj∈J, whereYj→X areG× µNj -schemes of ﬁnite type, and we
-endowX with the trivial action of the group µNj ,
-These data are required to satisfy the condition that
-f =
-∑
-j∈J
-nj [Yj×Spec(R)Spec(k)→X]· Ldj.
-76
-Models for f always exist. Moreover, for any ﬁnite collection ( fi)I∈I of ele-
-ments ofMG,µ(X) there exists a model for ( X,G ) with compatible models
-for (fi)I∈I .
-Having a model for f we can associate with it an element fnum∈K(X )
-in the following way. Let x∈ (X× GL(N)R)/G be a closed point. We can
-apply the considerations of the beginning of this section to the ﬁber Zj,x over
-the point x, of the map (Yj×GL(N)R)/G→ (X× GL(N)R)/G, whereYj is
-the scheme from the deﬁnition of the model for f . Then for each j we obtain
-an element NZj,x ∈ Q(ηp),p =char k(x). Finally, we set
-fnum(x) :=
-∑
-j∈J
-njqdj
-x NZj,x ,
-whereqx := #k(x). Hence we realize f as a function with values in numbers.
-5 Orientation data on odd Calabi-Yau cate-
-gories
-Considerations of this section are reminiscent of those in Q uantum Field
-Theory when one tries to deﬁne determinants for the Gaussian integral in a
-free theory.
-5.1 Remarks on the motivic Milnor ﬁber of a quadratic
-form
-Although the theory of motivic Milnor ﬁber was deﬁned over a ﬁ eld of char-
-acteristic zero, an essential part of considerations below has meaning over an
-arbitrary ﬁeld k,char k⁄= 2 if we replace the notion of motivic Milnor ﬁber
-by its l-adic version.
-Let now V be a k-vector space endowed with a non-degenerate quadratic
-form Q. We deﬁne an element
-I(Q) = (1−MF 0(Q))L− 1
-2 dimV∈M µ(Spec(k))[L±1/2] ,
-where L1/2 is a formal symbol which satisﬁes the relation ( L1/2)2 = L, and
-Q is interpreted as a function on V . Then the motivic Thom-Sebastiani
-theorem implies that
-I(Q1⊕Q2) = I(Q1)I(Q2) .
-77
-Also we have I(Q) = 1, if Q is a split form: Q =∑
-1≤i≤nxiyi for V = k2n.
-Therefore, we have a homomorphism of groups
-I :Witt (k)→ (Mµ(Spec(k))[L±1/2])× ,
-where Witt (k) is the Witt group of the ﬁeld k. We can think of it as a
-multiplicative character. Let us denote by J2(k) := J2(Spec(k)) the quotient
-of the group Z×k×/(k×)2 by the subgroup generated by the element (2 ,−1).
-There is an obvious homomorphism Witt (k)→ J2(k) given for a quadratic
-form Q by
-[Q]↦→(rkQ, det(Q) mod(k×)2) .
-Notice that all “motivic realizations” of I(Q) in the sense of Section 4.1
-depend only on the image of [ Q] in J2(k). This is similar to the classical
-formula (for k = R and a positive deﬁnite form Q)
-∫
-V
-exp(−Q(x))dx = (2π)− 1
-2 dimV (det(Q))−1/2
-in the sense that the answer depends on dim V and det(Q) only. In particular,
-the homomorphism of rings
-Mµ(Spec(k))→K0(Db
-constr(Gm, Ql))
-(see Section 4.1, (ii), (iii) and Section 4.2) induces (by co mbining with the
-above character) a homomorphism of abelian groups
-Witt (k)→ (K0(Db
-constr(Gm, Ql))[L±1/2])× .
-It is easy to see that it factors through the homomorphism Witt (k)→J2(k).
-For example the element of K0-group corresponding to the pair ( n,a ),n ∈
-2Z + 1,a∈ k× is represented by L−1/2[F ] where F is a local system on Gm
-associated with the double cover of Gm given by y↦→y2a,y∈ Gm(k).
-Question 1 The above considerations give rise to the following questio n.
-Let us consider the family of quadratic forms Qa1,a2(x,y ) = a1x2
-1 + a2x2
-2
-wherea1,a 2∈ k×. Is it true that [Qa1,a2] = [Qa′
-1,a′
-2] in K0(Var k) as long as
-a1a2 =a′
-1a′
-2?
-We expect that the answer to the Question is negative, and thi s is the
-main reason for introducing the equivalence relation for th e motivic functions
-in Section 4.5.
-78
-The above considerations can be generalized to arbitrary co nstructible
-(or ind-constructible) sets. Namely, let X be a constructible set over k. We
-deﬁne the group J2(X) as the quotient of the group
-Constr(X, Z)×
-(
-Constr(X, Gm)/Constr (X, Gm)2)
-by the subgroup consisting of the elements (2 f, (−1)f ),f ∈ Constr(X, Z),
-where we denote by Constr(X,Y ) the set of constructible maps X → Y .
-To a constructible vector bundle V → X endowed with a non-degenerate
-quadratic form Q = (Qx)x∈X we associate the element
-I(V,Q ) := (1−MF 0(Q))L− 1
-2 dimV∈ (Mµ(X)[L±1/2])× .
-Here we treat each Qx as a formal power series on the ﬁber Vx and dimV∈
-Constr(X, Z). One can show that this correspondence gives rise to a homo-
-morphism of groups
-I :J2(X)→ (M
-µ
-(X)[L±1/2])× .
-This fact has a simple “numerical” counterpart: for the case k≃ Fq, two
-aﬃne quadrics given by equations Q1(x) = 0 ,Q 2(x) = 0 have the same
-number of points if Q1,Q 2 are two non-degenerate quadratic forms of equal
-rank and determinant.
-Let us consider a symmetric monoidal category sPic 2(X) consisting of
-constructible super line bundles L→X endowed with an isomorphismL⊗2≃
-1X, where 1X is a trivial even line bundle on X. It is easy to see that the
-group J2(X) is the group of isomorphism classes of objects of sPic 2(X). If
-V → X is a constructible super vector bundle, V = Veven⊕ Π Vodd then
-there is a well-deﬁned super line bundle (called super deter minant bundle)
-sdet(V )→X given by
-sdet(V ) := Π dimV even−dimV odd(
-∧topVeven⊗ (∧topVodd)∗)
-,
-where Π is the parity change functor.
+This section is not used in further consideration, its goal is only to show that the abstractly defined ring $\overline{{\cal M}}^{G,\mu}(X)$ can be realized as certain ring of functions with numerical values.
+
+Let $Z$ be a scheme of finite type over a finite field $\k\simeq{\bf F}_q$ endowed with an action of the group $\mu_n$ of roots of $1$ such that $n<p=char \, {\bf F}_q$. We choose a prime $l\ne p$. Let us define $Y$ as the quotient $(Z\times ({\bf A}^1_{\k}\setminus \{0\}))/\mu_n$ with respect to the diagonal action of $\mu_n$. Then we have a morphism $$\pi: Y\to {\bf A}^1_{\k}\setminus \{0\},\,\,\,(z,t)\mapsto t^n \,\,\forall (z,t)\in (Z\times {\bf A}^1_{\k}\setminus \{0\})(\overline{\bf F}_q)\,.$$ Let $j:{\bf A}^1_{\k}\setminus \{0\}\to {\bf A}^1_{\k}$ be the natural embedding. We define the number $$N_Z=\op{Tr}_{Fr}({\cal F}(j_{\ast}\pi_{!}({\Q}_{l,Y}))_{|s=1})\in \overline{\Q_{l}}\,\,,$$ which is the trace of the Frobenius $Fr$ of the fiber at $s=1$ of the Fourier transform of the $l$-adic sheaf $j_{\ast}\pi_{!}({\Q}_{l,Y})$, where ${\Q}_{l,Y}$ denotes the constant sheaf $\Q_l$ on $Y$. In fact the number $N_Z$ can be considered as an element of the cyclotomic field $\Q(\eta_p)$, where $\eta_p$ is a primitive $p$-th root of $1$: $$1+\eta_p+\dots+\eta_p^{p-1}=0\,\,.$$
+
+We have a canonical non-trivial character $\chi:{\bf F}_q\to \Q(\eta_p)^{\ast}$ given by the composition of the trace $\op{Tr}_{{\bf F}_q\to{\bf F}_p}:{\bf F}_q\to {\bf F}_p$ with the additive character $$\chi_p:{\bf F}_p\to \Q(\eta_p)^{\ast}, \,\,\,m\op{mod} p\mapsto \eta_p^m\,.$$ Then $$N_Z=\sum_{s\in ({\bf A}^1_{\k}\setminus \{0\})({\bf F}_q)}\#(\pi^{-1}(s)({\bf F}_q))\,\chi(s)\,\,.$$ Notice that the last formula makes sense for constructible $Z$ as well.
+
+Let now $X$ be a constructible set over a field $\k, char\,\k=0$, endowed with an action of an affine algebraic group $G$.
+
+::: defn
+We call a model for $(X,G)$ the following choices:
+
+-   a finitely generated subring $R\subset \k$,
+
+-   a scheme ${\cal X}\to Spec(R)$ of finite type,
+
+-   an affine group scheme ${\cal G}\to Spec(R)$ together with an embedding ${\cal G}\hookrightarrow GL(N)_R$,
+
+-   an action of ${\cal G}$ on ${\cal X}$,
+
+-   a constructible identification over $\k$ of ${\cal X}\times_{Spec(R)}Spec(\k)$ with $X$, as well as an isomorphism of groups ${\cal G}\times_{ Spec(R)}Spec(\k)\simeq G$ over $k$, compatible with the actions.
+:::
+
+Such a model always exists, and models form a filterted system. With a given model for $(X,G)$ we associate a commutative unital ring $$K({\cal X})=\varinjlim_{\{\mathrm{open}\,\,\,U\subset ({\cal X}\times GL(n))/{\cal G}\}}\prod_{\{\mathrm{closed}\,\,\,x\in U\}}\Q(\eta_{char\, \k(x)})\,\,,$$ where $\k(x)$ is the residue field of $x$ (which is a finite field).
+
+Suppose that we are given a model for $(X,G)$ and let $f\in {\cal M}^{G,\mu}(X)$. As always we assume that the $\mu$-action on $X$ is good and factors through the action of some $\mu_n$.
+
+::: defn
+A model for $f$ compatible with the model $(R,{\cal X},{\cal G})$ for $(X,G)$ consists of the following data:
+
+-   a finite set $J$, numbers $N_j,d_j, n_j\in \Z$, where $j\in J$, such that all numbers $N_j$ are positive and invertible in ${\cal O}({\cal X})$,
+
+-   ${\cal G} \times \mu_{N_j}$-equivariant morphisms of constructible sets ${\cal Y}_j\to {\cal X}$ given for each $j\in J$, where ${\cal Y}_j\to {\cal X}$ are ${\cal G}\times \mu_{N_j}$-schemes of finite type, and we endow ${\cal X}$ with the trivial action of the group $\mu_{N_j}$,
+
+These data are required to satisfy the condition that $$f=\sum_{j\in J}\,n_j\,[{\cal Y}_j\times_{Spec(R)}Spec(\k)\to X]\cdot{\mathbb L}^{d_j}\,.$$
+:::
+
+Models for $f$ always exist. Moreover, for any finite collection $(f_i)_{I\in I}$ of elements of ${\cal M}^{G,\mu}(X)$ there exists a model for $(X,G)$ with compatible models for $(f_i)_{I\in I}$ .
+
+Having a model for $f$ we can associate with it an element $f_{num}\in K({\cal X})$ in the following way. Let $x\in ({\cal X}\times GL(N)_R)/{\cal G}$ be a closed point. We can apply the considerations of the beginning of this section to the fiber $Z_{j,x}$ over the point $x$, of the map $({\cal Y}_j\times GL(N)_R)/{\cal G}\to ({\cal X}\times GL(N)_R)/{\cal G}$, where ${\cal Y}_j$ is the scheme from the definition of the model for $f$. Then for each $j$ we obtain an element $N_{Z_{j,x}}\in \Q(\eta_p), p=char\,\k(x)$. Finally, we set $$f_{num}(x):=\sum_{j\in J}n_j\,q_x^{d_j}N_{Z_{j,x}}\,\,,$$ where $q_x:=\#\k(x)$. Hence we realize $f$ as a function with values in numbers.
+
+# Orientation data on odd Calabi-Yau categories
+
+Considerations of this section are reminiscent of those in Quantum Field Theory when one tries to define determinants for the Gaussian integral in a free theory.
+
+## Remarks on the motivic Milnor fiber of a quadratic form
+
+Although the theory of motivic Milnor fiber was defined over a field of characteristic zero, an essential part of considerations below has meaning over an arbitrary field $\k, char\,\k\ne 2$ if we replace the notion of motivic Milnor fiber by its $l$-adic version.
+
+Let now $V$ be a $\k$-vector space endowed with a non-degenerate quadratic form $Q$. We define an element $${I}(Q)=(1-MF_0(Q)){\mathbb L}^{-{1\over{2}}\dim V}\in {\cal M}^{\mu}(Spec(\k))[{\mathbb L}^{\pm 1/2}]\,\,,$$ where ${\mathbb L}^{1/2}$ is a formal symbol which satisfies the relation $({\mathbb L}^{1/2})^2={\mathbb L}$, and $Q$ is interpreted as a function on $V$. Then the motivic Thom-Sebastiani theorem implies that $${I}(Q_1\oplus Q_2)={I}(Q_1){I}(Q_2)\,\,.$$ Also we have ${I}(Q)=1$, if $Q$ is a split form: $Q=\sum_{1\le i\le n}x_iy_i$ for $V=\k^{2n}$. Therefore, we have a homomorphism of groups $$I:Witt(\k)\to ({\cal M}^{\mu}(Spec(\k))[{\mathbb L}^{\pm 1/2}])^{\times}\,\,,$$ where $Witt(\k)$ is the Witt group of the field $\k$. We can think of it as a multiplicative character. Let us denote by $J_2(\k):=J_2(Spec(\k))$ the quotient of the group $\Z\times \k^{\times}/(\k^{\times})^2$ by the subgroup generated by the element $(2,-1)$. There is an obvious homomorphism $Witt(\k)\to J_2(\k)$ given for a quadratic form $Q$ by $$[Q]\mapsto (\op{rk}Q, \op{det}(Q)\op{mod}(\k^{\times})^2)\,\,.$$ Notice that all "motivic realizations\" of ${I}(Q)$ in the sense of Section 4.1 depend only on the image of $[Q]$ in $J_2(\k)$. This is similar to the classical formula (for $\k=\R$ and a positive definite form $Q$) $$\int_V\exp(-Q(x))dx=(2\pi)^{-{1\over{2}}\dim V}(\op{det}(Q))^{-1/2}$$ in the sense that the answer depends on $\dim V$ and $\op{det}(Q)$ only. In particular, the homomorphism of rings $${\cal M}^{\mu}(Spec(\k))\to K_0(D^b_{\op{constr}}({\bf G}_m, \Q_l))$$ (see Section 4.1, (ii), (iii) and Section 4.2) induces (by combining with the above character) a homomorphism of abelian groups $$Witt(\k)\to (K_0(D^b_{\op{constr}}({\bf G}_m, \Q_l))[{\mathbb L}^{\pm 1/2}])^{\times}\,\,.$$ It is easy to see that it factors through the homomorphism $Witt(\k)\to J_2(\k)$. For example the element of $K_0$-group corresponding to the pair $(n,a), n\in 2\Z+1, a\in \k^{\times}$ is represented by ${\mathbb L}^{-1/2}[F]$ where $F$ is a local system on ${\bf G}_m$ associated with the double cover of ${\bf G}_m$ given by $y\mapsto y^2a, y\in {\bf G}_m(\kk)$.
+
+::: que
+The above considerations give rise to the following question. Let us consider the family of quadratic forms $Q_{a_1,a_2}(x,y)=a_1x_1^2+a_2x_2^2$ where $a_1,a_2\in \k^{\times}$. Is it true that $[Q_{a_1,a_2}]=[Q_{a_1^{\prime},a_2^{\prime}}]$ in $K_0(Var_{\k})$ as long as $a_1a_2=a_1^{\prime}a_2^{\prime}$?
+:::
+
+We expect that the answer to the Question is negative, and this is the main reason for introducing the equivalence relation for the motivic functions in Section 4.5.
+
+The above considerations can be generalized to arbitrary constructible (or ind-constructible) sets. Namely, let $X$ be a constructible set over $\k$. We define the group $J_2(X)$ as the quotient of the group $$Constr(X,\Z)\times \bigl(Constr(X,{\bf G}_m)/Constr(X,{\bf G}_m)^2\bigr)$$ by the subgroup consisting of the elements $(2f,(-1)^f), f\in Constr(X,\Z)$, where we denote by $Constr(X,Y)$ the set of constructible maps $X\to Y$. To a constructible vector bundle $V\to X$ endowed with a non-degenerate quadratic form $Q=(Q_x)_{x\in X}$ we associate the element $${I}(V,Q):=(1-MF_0(Q)){\mathbb L}^{-{1\over{2}}\dim V}\in ({\cal M}^{\mu}(X)[{\mathbb L}^{\pm 1/2}])^{\times}\,\,.$$ Here we treat each $Q_x$ as a formal power series on the fiber $V_x$ and $\dim V\in Constr(X,\Z)$. One can show that this correspondence gives rise to a homomorphism of groups $$\overline{I}: J_2(X)\to (\overline{{\cal M}}^{\mu}(X)[{\mathbb L}^{\pm 1/2}])^{\times}\,\,.$$ This fact has a simple "numerical" counterpart: for the case $\k\simeq {\mathbf F}_q$, two affine quadrics given by equations $Q_1(x)=0, Q_2(x)=0$ have the same number of points if $Q_1,Q_2$ are two non-degenerate quadratic forms of equal rank and determinant.
+
+Let us consider a symmetric monoidal category $sPic_2(X)$ consisting of constructible super line bundles $L\to X$ endowed with an isomorphism $L^{\otimes 2}\simeq {\bf 1}_X$, where ${\bf 1}_X$ is a trivial even line bundle on $X$. It is easy to see that the group $J_2(X)$ is the group of isomorphism classes of objects of $sPic_2(X)$. If $V\to X$ is a constructible super vector bundle, $V=V^{even}\oplus \Pi V^{odd}$ then there is a well-defined super line bundle (called super determinant bundle) $\op{sdet}(V)\to X$ given by $$\op{sdet}(V):=\Pi^{\dim V^{even}-\dim V^{odd}}\left(\wedge^{top}V^{even}\otimes (\wedge^{top}V^{odd})^{\ast}\right)\,\,,$$ where $\Pi$ is the parity change functor.
+
 Recall canonical isomorphisms:
-1. sdet(V∗)≃ sdet(Π( V ))≃ (sdet(V ))∗,
-2. sdet(⊕i∈IVi)≃⊗ i∈I sdet(Vi),
-3. if V carries an odd diﬀerential d then sdet(V )≃ sdet(H•(V,d )),
-79
-4. for an exact triangle of complexes ( V•
-1,d 1)→ (V•
-2,d 2)→ (V•
-3,d 3) there
-is a canonical isomorphism
-sdet(V•
-2 )≃ sdet(V•
-1 )⊗ sdet(V•
-3 ) .
-In case if V carries a non-degenerate quadratic form Q = (Qx)x∈X we
-have a canonical isomorphism sdet( V )≃ (sdet(V ))∗. Therefore in this case
-we have a well-deﬁned object of sPic 2(X). Its class in the group J2(X) is
-represented by the pair
-(dimV, {det(Qx)}x∈X mod(Constr(X, Gm))2) .
-The above considerations can be generalized to the case when X is acted
-by an algebraic group G. Then one replaces the category sPic 2(X) by the
-category sPic 2(X,G ) of G-equivariant constructible super line bundles L
-endowed with a G-equivariant isomorphism L⊗2≃ 1X. The group of iso-
-morphism classes of sPic 2(X,G ) we denote by J2(X,G ). In what follows we
-will often omit the word “equivariant” in the consideration s involving the
-category sPic 2(X,G ).
-Remark 19 Let us make an additional assumption that √−1∈ k. In this
-case the quadratic form x2 +y2 = (x +√−1y)(x−√−1y) is split. Then
-MF 0(x2 +y2) = 1− L and we can consider the element L1/2 := 1−MF 0(x2)
-which enjoys the property (L1/2)2 = L. Furthermore, the group J2(X) can be
-canonically identiﬁed with the product
-Constr(X, Z/2Z)×Constr(X, Gm)/(Constr(X, Gm))2 .
-Therefore the isomorphism classes of objects of sPic 2(X) can be identiﬁed
-with pairs (constructible µ2-function, constructible µ2-torsor).
+
+1.  $\op{sdet}(V^{\ast})\simeq \op{sdet}(\Pi(V))\simeq (\op{sdet}(V))^{\ast}$,
+
+2.  $\op{sdet}(\oplus_{i\in I}V_i)\simeq \otimes_{i\in I}\op{sdet}(V_i)$,
+
+3.  if $V$ carries an odd differential $d$ then $\op{sdet}(V)\simeq \op{sdet}(H^{\bullet}(V,d))$,
+
+4.  for an exact triangle of complexes $(V_1^{\bullet},d_1)\to (V_2^{\bullet},d_2)\to (V_3^{\bullet},d_3)$ there is a canonical isomorphism $$\op{sdet}(V_2^{\bullet})\simeq \op{sdet}(V_1^{\bullet})\otimes \op{sdet}(V_3^{\bullet})\,\,.$$
+
+In case if $V$ carries a non-degenerate quadratic form $Q=(Q_x)_{x\in X}$ we have a canonical isomorphism $\op{sdet}(V)\simeq (\op{sdet}(V))^{\ast}$. Therefore in this case we have a well-defined object of $sPic_2(X)$. Its class in the group $J_2(X)$ is represented by the pair $$(\dim V,\,\,\{\op{det}(Q_x)\}_{x\in X}\op{ mod}(Constr(X,{\bf G}_m))^2)\,\,.$$
+
+The above considerations can be generalized to the case when $X$ is acted by an algebraic group $G$. Then one replaces the category $sPic_2(X)$ by the category $sPic_2(X,G)$ of $G$-equivariant constructible super line bundles $L$ endowed with a $G$-equivariant isomorphism $L^{\otimes 2}\simeq {\bf 1}_X$. The group of isomorphism classes of $sPic_2(X,G)$ we denote by $J_2(X,G)$. In what follows we will often omit the word "equivariant\" in the considerations involving the category $sPic_2(X,G)$.
+
+::: rmk
+Let us make an additional assumption that $\sqrt{-1}\in \k$. In this case the quadratic form $x^2+y^2=(x+\sqrt{-1}y)(x-\sqrt{-1}y)$ is split. Then $MF_0(x^2+y^2)=1-{\mathbb L}$ and we can consider the element ${\mathbb L}^{1/2}:=1-MF_0(x^2)$ which enjoys the property $({\mathbb L}^{1/2})^2={\mathbb L}$. Furthermore, the group $J_2(X)$ can be canonically identified with the product $$Constr(X,\Z/2\Z)\times Constr(X,{\bf G}_m)/(Constr(X,{\bf G}_m))^2\,\,.$$ Therefore the isomorphism classes of objects of $sPic_2(X)$ can be identified with pairs *(constructible $\mu_2$-function, constructible $\mu_2$-torsor)*.
+:::

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0707.2340v2/sections/sec-011",
   "@type": [
     "doco:Section"
   ],
-  "title": "The Partial Symmetrization Procedure",
-  "pageStart": 29,
-  "pageEnd": 31,
+  "title": "Graphs, Laplacians, Spanning Trees and the Random Cluster Model",
+  "pageStart": 18,
+  "pageEnd": 20,
   "contains": [
     "library/arxiv-0707.2340v2/blocks/prose-sec-011"
   ],
-  "derivedFrom": "library/arxiv-0707.2340v2/manifest",
-  "sourceDocument": "library/arxiv-0707.2340v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2340v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2340v2/manifest.jsonld",
   "provenance": "ingested"
 }

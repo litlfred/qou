@@ -1,0 +1,45 @@
+%auto-ignore
+%this ensures the arxiv doesn't try to start TeXing here.
+\usepackage{ifpdf}
+
+\ifpdf
+\usepackage[pdftex,plainpages=false,hypertexnames=false,pdfpagelabels]{hyperref}
+\else
+\usepackage[dvips,plainpages=false,hypertexnames=false]{hyperref}
+\fi
+
+\usepackage[usenames]{color}
+
+\input{\pathtotrunk preamble.tex}
+
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage[dvips]{graphicx}
+\fi
+
+%must load tikz after graphicx
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,scopes}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{decorations,decorations.pathreplacing}
+\input{\pathtotrunk diagrams/tikz/TikzStyles}
+
+% This switches fonts to the Palatino family.
+%\renewcommand{\familydefault}{ppl}
+
+\usepackage{microtype}
+%\usepackage{bellek}
+
+%%% futzing with margins following Dror (from Karoubi)
+%\marginparwidth 0pt%
+%\marginparsep 0pt
+
+\textwidth   5.5in%
+\textheight  9.0in%
+\oddsidemargin 12pt%
+\evensidemargin 12pt
+
+\topmargin -.6in%
+\headsep .5in

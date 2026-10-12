@@ -32,7 +32,7 @@ import sympy as sp
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 NAMES = {"q_int", "qint", "q_integer", "qb", "qbracket", "bracket", "q_num"}
-SKIP = ("_deprecated", ".lake", "node_modules", "/tests/")
+SKIP = ("_deprecated", "fsh-guts", ".lake", "node_modules", "/tests/")
 
 Q = sp.Symbol("q", positive=True)
 

@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/aif-2009-59-1-347-0/sections/sec-007",
   "@type": [
     "doco:Section"
@@ -13,9 +18,9 @@
     "library/aif-2009-59-1-347-0/blocks/lem-sec-007-02",
     "library/aif-2009-59-1-347-0/blocks/lem-sec-007-03",
     "library/aif-2009-59-1-347-0/blocks/def-sec-007-04",
-    "library/aif-2009-59-1-347-0/blocks/rem-sec-007-05"
+    "library/aif-2009-59-1-347-0/blocks/remark-sec-007-05"
   ],
-  "derivedFrom": "library/aif-2009-59-1-347-0/manifest",
-  "sourceDocument": "library/aif-2009-59-1-347-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
   "provenance": "ingested"
 }

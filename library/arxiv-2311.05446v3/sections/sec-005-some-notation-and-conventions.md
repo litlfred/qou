@@ -8,31 +8,24 @@ pages: 8-8
 source_pdf: 2311.05446v3.pdf
 source_sha256: c5809730f598a56d
 doc_brief: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY — We study the connection between the concavity properties of a measureνand the convexity properties of the associated"
+text_source: latex
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 0.808
 ---
-•The standard Euclidean norm onR n is denoted by|·|.
-•LetK⊆R n be a measurable subset. We denote byP(K) the space
-of all Borel probability measures onK,P 2(K) all Borel probability
-measures onKwith finite second moments, andP ac(K) the space of
-Borel probability measures onKabsolutely continuous with respect
-to the Lebesgue measure Vol n onR n. Further, we setP 2,ac(K) =
-P2(K)∩P ac(K).
-•We will sometimes write
-R
-ffor
-R
-f(x) dx. Lebesgue measure is the
-only case when the measure may not be specified in the integral.
-•Letνbe a Borel measure onR n. For every Borel setKsuch that
-ν(K)>0, we define the probability measureν K by settingν K(E) =
-ν(E∩K)
-ν(K) , for everyE.
-•Aneven functionis a functionfsatisfyingf(x) =f(−x) for allx.
-Anodd functionis a function satisfyingf(−x) =−f(x) for allx.
-Aneven measureis a measureµonR n satisfyingµ(E) =µ(−E) for
-all measurable setsE.
-Acknowledgments:We would like to thank Emanuel Milman for provid-
-ing some useful references regarding the Logarithmic Sobolev inequality. We
-would also like to thank the anonymous referees for their very useful sug-
-gestions and corrections. The authors were supported by ISF grant 1468/19
-and NSF-BSF grant 2022707.
-Declarations of interest:none.
+-   The standard Euclidean norm on $\mathbb{R}^n$ is denoted by $\vert \cdot \vert$ .
+
+-   Let $K \subseteq \mathbb{R}^n$ be a measurable subset. We denote by $\mathcal{P}(K)$ the space of all Borel probability measures on $K$, $\mathcal{P}_{2}(K)$ all Borel probability measures on $K$ with finite second moments, and $\mathcal{P}_{ac}(K)$ the space of Borel probability measures on $K$ absolutely continuous with respect to the Lebesgue measure $\textnormal{Vol}_{n}$ on $\mathbb{R}^n$. Further, we set $\mathcal{P}_{2,ac}(K) = \mathcal{P}_{2}(K) \cap \mathcal{P}_{ac}(K)$.
+
+-   We will sometimes write $\int f$ for $\int f(x) \textnormal{ d}x$. Lebesgue measure is the only case when the measure may not be specified in the integral.
+
+-   Let $\nu$ be a Borel measure on $\mathbb{R}^n$. For every Borel set $K$ such that $\nu(K) >0$, we define the probability measure $\nu_{K}$ by setting $\nu_{K}(E) = \frac{\nu(E \cap K)}{\nu(K)}$, for every $E$.
+
+-   An *even function* is a function $f$ satisfying $f(x) = f(-x)$ for all $x$. An *odd function* is a function satisfying $f(-x) = - f(x)$ for all $x$. An *even measure* is a measure $\mu$ on $\mathbb{R}^n$ satisfying $\mu(E) = \mu (-E)$ for all measurable sets $E$.
+
+#### **Acknowledgments:**
+
+We would like to thank Emanuel Milman for providing some useful references regarding the Logarithmic Sobolev inequality. We would also like to thank the anonymous referees for their very useful suggestions and corrections. The authors were supported by ISF grant 1468/19 and NSF-BSF grant 2022707.
+
+#### **Declarations of interest:**
+
+none.

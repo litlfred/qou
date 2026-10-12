@@ -5,7 +5,11 @@
   "file": "1511.00400v2.pdf",
   "sha256": "6cb493049394ce3a7d917563e29281f448530b6c2ca6d70b690693483a09f44f",
   "bytes": 679638,
-  "pages": 55
+  "pages": 55,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
   "doi": null,
   "title": "Reidemeister torsion, hyperbolic three-manifolds, and character varieties",
   "authors_raw": "November 6, 2018",
-  "abstract": "This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume. Torsions are viewed as topological invaria nts and also as functions on the variety of representations in SL 2(C). In both cases, the torsions may also be computed after composing with ﬁnite dim ensional representations of SL 2(C). In addition the paper deals with the torsion of the adjoint representation as a function on the variety of PSLn+ 1(C)- characters, using that the ﬁrst cohomology group with coeﬃc ients twisted by the adjoint is the tangent space to the variety of characte rs.",
+  "abstract": "This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of \ufb01nite volume. Torsions are viewed as topological invaria nts and also as functions on the variety of representations in SL 2(C). In both cases, the torsions may also be computed after composing with \ufb01nite dim ensional representations of SL 2(C). In addition the paper deals with the torsion of the adjoint representation as a function on the variety of PSLn+ 1(C)- characters, using that the \ufb01rst cohomology group with coe\ufb03c ients twisted by the adjoint is the tangent space to the variety of characte rs.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181106022117-05'00'",
@@ -28,9 +32,9 @@
   "title_lines": [
    "Reidemeister torsion, hyperbolic three-manifolds",
    "and character varieties",
-   "Joan Porti ∗"
+   "Joan Porti \u2217"
   ],
-  "title_prev": "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗"
+  "title_prev": "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti \u2217"
  },
  "toc": [
   {
@@ -650,6 +654,251 @@
   "likely_scanned": false,
   "toc_entries": 44,
   "sections": 30,
-  "chars_total": 136289
+  "chars_total": 136289,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 44,
+   "overlaid": 25,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-21-combinatorial-torsion",
+     "title": "Combinatorial torsion",
+     "prose_ratio": 0.228,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-2-combinatorial-and-analytic-torsions",
+     "title": "Combinatorial and analytic torsions",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.186,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-003-212-twisted-chain-complexes",
+     "title": "Twisted chain complexes",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-22-geometric-properties-of-combinatorial-torsion",
+     "title": "Geometric properties of combinatorial torsion",
+     "prose_ratio": 0.258,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-221-mayer-vietoris",
+     "title": "Mayer-Vietoris",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.786,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-222-polynomials",
+     "title": "Polynomials",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-223-examples",
+     "title": "Examples",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-23-analytic-torsion",
+     "title": "Analytic torsion",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-3-torsion-of-hyperbolic-three-manifold-with-repr",
+     "title": "Torsion of hyperbolic three-manifold with representations in SL2(C)",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-31-torsions-from-lifts-of-the-holonomy-represent",
+     "title": "Torsions from lifts of the holonomy representation",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-313-cusped-hyperbolic-3-manifolds",
+     "title": "Cusped hyperbolic 3-manifolds",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-314-the-twisted-polynomial",
+     "title": "The twisted polynomial",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-32-torsion-on-the-variety-of-characters",
+     "title": "Torsion on the variety of characters",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-321-the-distinguished-curve-of-characters",
+     "title": "The distinguished curve of characters",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-41-representations-of-sl2c",
+     "title": "Representations of SL2(C)",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-42-higher-torsions-for-closed-manifolds",
+     "title": "Higher torsions for closed manifolds",
+     "prose_ratio": 0.896,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-43-functions-on-the-variety-of-characters",
+     "title": "Functions on the variety of characters",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-431-generic-cohomology-on-the-distinguished-comp",
+     "title": "Generic cohomology on the distinguished component",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-432-higher-torsions-on-the-variety-of-characters",
+     "title": "Higher torsions on the variety of characters",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-44-evaluation-at-the-holonomy",
+     "title": "Evaluation at the holonomy",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-441-cohomolgy-at-the-character-of-the-holonomy",
+     "title": "Cohomolgy at the character of the holonomy",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-45-quantum-invariants",
+     "title": "Quantum invariants",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-51-local-parameters-and-change-of-curve",
+     "title": "Local parameters and change of curve",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-52-an-example",
+     "title": "An example",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-appendix-a-not-approximating-the-trivial-represe",
+     "title": "Appendix A Not approximating the trivial representation",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-appendix-b-cohomology-on-the-variety-or-characte",
+     "title": "Appendix B Cohomology on the variety or characters",
+     "prose_ratio": 0.9,
+     "coverage_ratio": 0.889,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-b1-the-complete-structure",
+     "title": "B.1 The complete structure",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-028-b12-a-basis-in-cohomology",
+     "title": "B.1.2 A basis in cohomology",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-029-b2-generic-representations-in-the-distinguished",
+     "title": "B.2 Generic representations in the distinguished component.",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.284,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

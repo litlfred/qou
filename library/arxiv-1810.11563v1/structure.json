@@ -5,7 +5,11 @@
   "file": "1810.11563v1.pdf",
   "sha256": "8e17ac8b91bc3cc9fc90ff43301f70369036431cfa8679a27b7a408f4bcd9d93",
   "bytes": 4141039,
-  "pages": 84
+  "pages": 84,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
   "doi": null,
   "title": "Three Lectures on Complexity and Black Holes",
   "authors_raw": "Stanford Institute for Theoretical Physics and Department of Physics",
-  "abstract": "This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The ﬁrst lecture describes the meaning of quantum complexity, the analogy between entropy and complexity, and the second law of complexity. Lecture two reviews the connection between the second law of complexity and the interior of black holes. I discuss how ﬁrewalls are related to periods of non-increasing complexity which typically only occur after an exponentially long time. The ﬁnal lecture is about the thermodynamics of complexity, and “uncomplexity” as a resource for doing computational work. I explain the remarkable power of “one clean qubit,” in both computational terms and in space-time terms. The lectures can also be found online at https://static.ias.edu/pitp/2018/ node/1796.html . arXiv:1810.11563v1 [hep-th] 27 Oct 2018",
+  "abstract": "This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled \u201dFrom Qubits to Spacetime.\u201d The \ufb01rst lecture describes the meaning of quantum complexity, the analogy between entropy and complexity, and the second law of complexity. Lecture two reviews the connection between the second law of complexity and the interior of black holes. I discuss how \ufb01rewalls are related to periods of non-increasing complexity which typically only occur after an exponentially long time. The \ufb01nal lecture is about the thermodynamics of complexity, and \u201cuncomplexity\u201d as a resource for doing computational work. I explain the remarkable power of \u201cone clean qubit,\u201d in both computational terms and in space-time terms. The lectures can also be found online at https://static.ias.edu/pitp/2018/ node/1796.html . arXiv:1810.11563v1 [hep-th] 27 Oct 2018",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20181030003647Z",
@@ -831,6 +835,358 @@
   "likely_scanned": false,
   "toc_entries": 50,
   "sections": 44,
-  "chars_total": 121484
+  "chars_total": 121484,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "All.tex",
+   "tex_sections": 48,
+   "overlaid": 37,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-preface",
+     "title": "Preface",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-how-huge",
+     "title": "How Huge?",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-volume-of-cpn",
+     "title": "Volume of CP(N)",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-relative-complexity",
+     "title": "Relative Complexity",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-dual-role-of-unitaries",
+     "title": "Dual Role of Unitaries",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-71-relative-complexity-of-unitaries",
+     "title": "Relative Complexity of Unitaries",
+     "prose_ratio": 0.903,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-72-complexity-is-discontinuous",
+     "title": "Complexity is Discontinuous",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.89,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-8-graph-theory-perspective",
+     "title": "Graph Theory Perspective",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.622,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-81-collisions-and-loops",
+     "title": "Collisions and Loops",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-9-the-second-law-of-quantum-complexity",
+     "title": "The Second Law of Quantum Complexity",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.823,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-91-hamiltonian-evolution",
+     "title": "Hamiltonian Evolution",
+     "prose_ratio": 0.647,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-10-preface",
+     "title": "Preface",
+     "prose_ratio": 0.187,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-11-the-black-hole-quantum-circuit-correspondence",
+     "title": "The Black Hole-Quantum Circuit Correspondence",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-111-two-problems",
+     "title": "Two Problems",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-112-circuits-and-black-holes",
+     "title": "Circuits and Black Holes",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-12-the-growth-of-wormholes",
+     "title": "The Growth of Wormholes",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.713,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-121-properties-of-growth",
+     "title": "Properties of Growth",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.924,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-122-rindler-time-and-cv",
+     "title": "Rindler Time and CV",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-13-exponential-time-breakdown-of-gr",
+     "title": "Exponential Time Breakdown of GR",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.813,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-131-cv",
+     "title": "C=V",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.855,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-14-precursors",
+     "title": "Precursors",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-141-the-epidemic-model",
+     "title": "The Epidemic Model",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-142-lyapunov-and-rindler",
+     "title": "Lyapunov and Rindler",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-15-precursors-and-black-holes",
+     "title": "Precursors and Black Holes",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.678,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-151-instability-of-white-holes",
+     "title": "Instability of White Holes",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-16-complexity-and-firewalls",
+     "title": "Complexity and Firewalls",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.637,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-161-firewalls-are-fragile",
+     "title": "Firewalls are Fragile",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-162-what-happens-after-exponential-time",
+     "title": "What Happens After Exponential Time?",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-028-163-the-fragility-of-complexity-equilibrium",
+     "title": "The Fragility of Complexity Equilibrium",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-17-do-typical-states-have-firewalls",
+     "title": "Do Typical States have Firewalls?",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-171-ads-black-holes",
+     "title": "AdS Black Holes",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-172-evaporating-black-holes",
+     "title": "Evaporating Black Holes",
+     "prose_ratio": 0.591,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-032-18-preface",
+     "title": "Preface",
+     "prose_ratio": 0.143,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-033-19-negentropy",
+     "title": "Negentropy",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-20-uncomplexity",
+     "title": "Uncomplexity",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-035-201-the-auxiliary-system",
+     "title": "The Auxiliary System",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-036-202-combining-auxiliary-systems",
+     "title": "Combining Auxiliary Systems",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-21-uncomplexity-as-a-resource",
+     "title": "Uncomplexity as a Resource",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-22-the-power-of-one-clean-qubit",
+     "title": "The Power of One Clean Qubit",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-039-221-the-protocol",
+     "title": "The Protocol",
+     "prose_ratio": 0.759,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-040-231-ca",
+     "title": "CA",
+     "prose_ratio": 0.043,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-041-222-expending-uncomplexity-and-negentropy",
+     "title": "Expending Uncomplexity and Negentropy",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-042-23-spacetime-and-uncomplexity",
+     "title": "Spacetime and Uncomplexity",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.082,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-043-232-geometric-interpretation-of-uncomplexity",
+     "title": "Geometric Interpretation of Uncomplexity",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.998,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

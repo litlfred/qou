@@ -8,190 +8,241 @@ pages: 9-12
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
 doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
+text_source: latex
+latex_prose_ratio: 0.902
+latex_coverage_ratio: 0.938
 ---
-to V , we will use two descriptions of Σ and V . In particular, we choose branch cuts in the
-upper half plane to deﬁne a function Λ (see Figure 2).
-Figure 2. The two conventions for the branch cuts of the function V .
-Taking the principle branch of Li 2 we ﬁnd that for
-V (z+, m+) = B Li2(e(z+))
-(2πi)2 + B
-24 + A
-2 z+(z+ + 1) + m+z+ ,
-Λ( z−, m−) = −B Li2(e(−z−))
-(2πi)2 + B
-12− B
-2
-(
-z−− 1
-2
-) 2
-+ A
-2 z−(z− + 1) + m−z− ,
-(29)
-and p = (z+, m+)∈ Σ we have 3
-V (p) = V (z+, m+) = Λ( z−, m−)∈ C/Z , (30)
-where z− = z−(p) = z+(p) and m− = m−(p) = m+(p) +B⌊z+(p)⌋. It will be useful to regard
-the surface Σ as being given by A-copies of the complex plane, glued together along the
-branch cuts at each integer point k∈ Z. In particular, allowing only m∈{ 0,··· , A− 1} as
-opposed to m∈ Z. This can always be done using the second relation in Equation ( 3). We
-have the derivative V ′ : Σ → C given by
-V ′(z+, m+) = −B log(1− e(z+))
-2πi + Az+ + A
-2 + m+ ,
-Λ ′(z−, m−) = −B log(1− e(−z−))
-2πi + (A− B)z− + A
-2 + B
-2 + m− .
-(31)
-3In fact we have more generally, V (z, m ) = Λ( z, m + Bk)− Bk(k + 1)/ 2∈ C for k =⌊Re(z)⌋.
-10 VERONICA F ANTINI AND CAMPBELL WHEELER
-Fix a critical point p0 = (z0, m0) satisfying V ′(p0) = 0, as given in Equation (
-5). Denote the
-critical value of p0 as V0 = V (p0). We are interested in the level sets
-Re((V (p)− V0)e−iϑ)∈ cos(2πϑ)Z (32)
-as we vary ϑ∈ (−π/2, π/2)∪ (π/2, 3π/2).
-Deﬁnition 2.1. If p∈ Σ such that V (p)∈ V0− ieiϑλ + Z for some constant λ > 0, then
-let Γ p,ϑ denote the connected component of V0− ieiϑR≥λ + Z containing p. For the critical
-point p0, letCp0,ϑ denote the connected component of V0− ieiϑR≥0 + Z containing p0.
-Lemma 2.2. Suppose that eiϑ∈ C\S(V0) and p∈ Σ such that V (p)∈ V0− ieiϑR≥0 + Z.
-Then the set Γ p,ϑ is a smooth curve with a parametrisation γ : R≥0→ Σ such that
-lim
-t→∞
-γ′(t) = i
-√
-ieiϑ or − i
-√
-ieiϑ|(A− B)|
-A− B . (33)
-Proof. Firstly, notice that
-Li2(e(z))
-(2πi)2 + 1
-24 = −Li2(1− e(z))
-(2πi)2 − Li1(e(z))
-2πi z (34)
-and therefore, for small enough |z| there is a constant C0 > 0 such that
-⏐
-⏐
-⏐Li2(e(z))
-(2πi)2 + 1
-24
-⏐
-⏐
-⏐ < C 0|z log(−iz)| . (35)
-Therefore, there exists constants C1, C2 > 0 such that, for k ∈ Z and small enough |z|
-(independent of k), the representative of V with the smallest absolute value
-4 satisﬁes
-|V (z + k, m)| =
-⏐
-⏐
-⏐
-⏐
-B Li2(e(z))
-(2πi)2 + B
-24 + A
-2 (z + k)(z + k + 1) + mz
-⏐
-⏐
-⏐
-⏐
-< BC 0|z log(z)| + A|z|2 +|Ak + m + A
-2||z| < C 1|z log(−iz)| + C2(1 +|k|)|z| ,
-(36)
+To effectively understand the structure of thimbles associated to $V$, we will use two descriptions of $\Sigma$ and $V$. In particular, we choose branch cuts in the upper half plane to define a function $\Lambda$ (see Figure~\ref{fig:branchcut}).
+\begin{figure}[ht]
+\begin{tikzpicture}
+\draw[<->,thick] (-3,-1.5) -- (-3,1.5);
+\draw[<->,thick] (-4.5,0) -- (-1.5,0);
+\draw[red,snake it] (-3,0) -- (-3,-1.5);
+\draw[red,snake it] (-2,0) -- (-2,-1.5);
+\draw[red,snake it] (-3.5,0) -- (-3.5,-1.5);
+\draw[red,snake it] (-2.5,0) -- (-2.5,-1.5);
+\draw[red,snake it] (-4,0) -- (-4,-1.5);
+
+.. controls (-3.555,-2) and (-1.5,-1) .. (-1.5,0);
+
+
+\draw[<->,thick] (6,-1.5) -- (6,1.5);
+\draw[<->,thick] (4.5,0) -- (7.5,0);
+\draw[red,snake it] (5,0) -- (5,1.5);
+\draw[red,snake it] (7,0) -- (7,1.5);
+\draw[red,snake it] (6.5,0) -- (6.5,1.5);
+\draw[red,snake it] (6,0) -- (6,1.5);
+\draw[red,snake it] (5.5,0) -- (5.5,1.5);
+
+
+\end{tikzpicture}
+\caption{The two conventions for the branch cuts of the function $V$.}\label{fig:branchcut}
+\end{figure}
+
+\noindent Taking the principle branch of $\Li_2$ we find that for
+\be\label{eq:V_Lambda}
+\begin{aligned}
+  V(z_+,m_+)
+  &\=
+  B\frac{\Li_{2}(\e(z_+))}{(2\pi i)^2}+\frac{B}{24}+\frac{A}{2}z_+(z_++1)+m_+z_+\,,\\
+  \Lambda(z_-,m_-)
+  &\=
+  -\frac{B\Li_{2}(\e(-z_-))}{(2\pi i)^2}
+  +\frac{B}{12}
+  -\frac{B}{2}\Big(z_--\frac{1}{2}\Big)^2
+  +\frac{A}{2}z_-(z_-+1)+m_-z_-\,,
+\end{aligned}
+\ee
+and $p=(z_+,m_+)\in\Sigma$ we have\footnote{In fact we have more generally, $V(z,m)=\Lambda(z,m+Bk)-Bk(k+1)/2\in\BC$ for $k=\lfloor \Re(z)\rfloor$.}
+\be
+  V(p)\=V(z_+,m_+)\=\Lambda(z_-,m_-)\in\BC/\BZ\,,
+\ee
+where $z_-=z_-(p)=z_+(p)$ and $m_-=m_-(p)=m_+(p)+B\lfloor z_+(p)\rfloor$.
+
+
+
+
+
+
+
+
+
+It will be useful to regard the surface $\Sigma$ as being given by $A$-copies of the complex plane, glued together along the branch cuts at each integer point $k\in\BZ$. In particular, allowing only $m\in\{0,\cdots,A-1\}$ as opposed to $m\in\BZ$. This can always be done using the second relation in Equation~\eqref{eq:surface}. We have the derivative $V':\Sigma\rightarrow\BC$ given by
+\be\label{eq:tangent}
+\begin{aligned}
+  V'(z_+,m_+)
+  &\=
+  \frac{-B\log(1-\e(z_+))}{2\pi i}+Az_++\frac{A}{2}+m_+\,,\\
+  \Lambda'(z_-,m_-)
+  &\=
+  \frac{-B\log(1-\e(-z_-))}{2\pi i}+(A-B)z_-+\frac{A}{2}+\frac{B}{2}+m_-\,.
+\end{aligned}
+\ee
+Fix a critical point $p_0=(z_0,m_0)$ satisfying $V'(p_0)=0$, as given in Equation~\eqref{eq:crit.pts}. Denote the critical value of $p_0$ as $V_{0}=V(p_0)$. We are interested in the level sets 
+\be
+\Re((V(p)-V_0) e^{-i\vartheta})\in\cos(2\pi\vartheta)\BZ
+\ee
+as we vary $\vartheta\in(-\pi/2,\pi/2)\cup(\pi/2,3\pi/2)$. 
+\begin{definition}\label{def:GGamma_p}
+If $p\in\Sigma$ such that $V(p)\in V_0-i e^{i\vartheta}\lambda+\BZ$ for some constant $\lambda>0$, then let~$\Gamma_{p,\vartheta}$ denote the connected component of $V_0-i e^{i\vartheta}\BR_{\geq\lambda}+\BZ$ containing~$p$. For the critical point $p_0$, let $\mathcal{C}_{p_0,\vartheta}$ denote the connected component of $V_0-i e^{i\vartheta}\BR_{\geq0}+\BZ$ containing $p_0$.
+\end{definition}
+\begin{lemma}\label{lem:thimble}
+Suppose that $ e^{i\vartheta}\in\BC\backslash\mathcal{S}(V_{0})$ and $p\in\Sigma$ such that $V(p)\in V_0-i e^{i\vartheta}\BR_{\geq0}+\BZ$. Then the set $\Gamma_{p,\vartheta}$ is a smooth curve with a parametrisation $\gamma:\BR_{\geq0}\rightarrow\Sigma$ such that
+\be\label{eq:tangent.lim}
+  \lim_{t\to\infty}
+  \gamma'(t)
+  \=
+  i\sqrt{i e^{i\vartheta}}
+  \quad\text{or}\quad
+  -i\sqrt{i e^{i\vartheta}\frac{|(A-B)|}{A-B}}\,.
+\ee
+\end{lemma}
+\begin{proof}
+Firstly, notice that
+\be
+  \frac{\Li_{2}(\e(z))}{(2\pi i)^2}+\frac{1}{24}
+  \=
+  -\frac{\Li_{2}(1-\e(z))}{(2\pi i)^2}
+  -\frac{\Li_{1}(\e(z))}{2\pi i}z
+\ee
+and therefore, for small enough $|z|$ there is a constant $C_0>0$ such that
+\be
+  \Big|\frac{\Li_{2}(\e(z))}{(2\pi i)^2}+\frac{1}{24}\Big|
+  <
+  C_0|z\log(-iz)|\,.
+\ee
+Therefore, there exists constants $C_1,C_2>0$ such that, for $k\in\BZ$ and small enough $|z|$ (independent of $k$), the representative of $V$ with the smallest absolute value\footnote{That means we choose a representative with $|\Re(V(z+k))|\leq1/2$.} satisfies
+\be\label{eq:size.V}
+\begin{aligned}
+  &|V(z+k,m)|
+  \=
+  \bigg|\frac{B\Li_{2}(\e(z))}{(2\pi i)^2}+\frac{B}{24}
+  +\frac{A}{2}(z+k)(z+k+1)+mz\bigg|\\
+  &<
+  BC_0|z\log(z)|
+  +
+  A|z|^2+|Ak+m+\frac{A}{2}||z|
+  <
+  C_1|z\log(-iz)|+C_2(1+|k|)|z|\,,
+\end{aligned}
+\ee
 and similarly
-|Λ( z + k, m)| < C 1|z log(iz)| + C2(1 +|k|)|z| . (37)
-Consider the set 5
-Σ ǫ =
-⋃
-±
-{
-x∈ Σ
-⏐
-⏐
-⏐Im(z±(p))∈± R≥0 and∀k∈ Z |z±(x)− k|≥ ǫ
-1 +|k|
-}
-. (38)
-Given eiϑ /∈S (V0) the set
-V0− ieiϑR≥0 + Z (39)
-is disjoint from 0∈ C/Z. From Equations ( 36) and ( 37) for any δ > 0, small enough ǫ = ǫ(δ),
-and x∈ Σ\Σ ǫ we have|V (x)| < δ . Therefore, there exists ǫ > 0 such that Γ p,ϑ⊂ Σ ǫ.
-4That means we choose a representative with |Re(V (z + k))|≤ 1/ 2.
-5Here we restrict to m = 0, . . . , A − 1 to have a ﬁnite number of conditions for each point x.
-SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS 11
-On the set Σ ǫ we can approximate the derivative of V . To do this we notice that for a
-ﬁxed α∈ (0, 1) there exists constants C3, C4 > 0 such that for p∈ Σ ǫ with Im( z+(p))≥ 0
-and k∈ Z with Re( z+(p)− k)∈ (−1/2, 1/2] we have bounds
-⏐
-⏐
-⏐log(1− e(z))
-2πi
-⏐
-⏐
-⏐≤ C3
-|z− k|α≤ C3(1 +|k|)α
-ǫα < C4|z|α
-ǫα . (40)
-Therefore, there is a constant C5 such that
-|V ′(z)− Az| <|z|
-( C5
-|z|1−α + A
-2|z| + m
-|z|
-)
-. (41)
-A similar bound works for Im( z−(p))≤ 0 replacing A by A− B. Therefore, for any δ1 > 0
-there exists an M > 0 such that for p∈ Σ ǫ with Im( z+(p))≥ 0 and|z+(p)| > M
-|V ′(p)− Az+(p)| <|z+(p)|δ1 , (42)
-and for Im( z−(p))≤ 0 and|z−(p)| > M we ﬁnd that
-|V ′(p)− (A− B)z−(p)| <|z−(p)|δ1 . (43)
-Given the set of p∈ Σ ǫ with|z±(p)|≤ M is compact, we see that the intersection with Γ p,ϑ
-is also compact. The remaining portion of Γ p,ϑ therefore has |z±(p)| > M . Assuming that
-M is big enough, |z+(p)| > M , and Im( z+(p)) > 0 we see that
-|Im(V (p)− V (p0)− A
-2 z+(p)(z+(p) + 1)− mz+(p))|≤ C6 , (44)
-for some constant C6 > 0. Given that Im( V (p)− V (p0))Im(ieiϑ)−1 < 0, this implies that
-Re(z+(p))Im(ieiϑ) < 0. Therefore, the quadrant containing z+(p) is determined by the sign
-of Im( ieiϑ). Moreover, the curve Γ p,ϑ has tangent at a point p given by
-eiϑ
-iV ′(p) . (45)
-Therefore for |z+(p)| > M , there is a constant C7 independent of δ1 such that for all
-Im(z+(p))≥ 0
-⏐
-⏐
-⏐eiϑ|z+(p)|
-iV ′(p) − eiϑ|z+(p)|
-iAz+(p)
-⏐
-⏐
-⏐ < δ 1C7 . (46)
-Therefore, the tangent direction always points towards a line para llel to i
-√
-ieiϑ, which is
-in the same quadrant as z+(p). Similarly for the lower half plane we ﬁnd that the tangent
-direction always points towards a line parallel to −i
-√
-i(A− B)eiϑ, which is in the same
-quadrant as z−(p). Therefore, in the limit, the tangent is described by Equation ( 33). □
-Corollary 2.3. If eiϑ∈ C\S(V0), then the setCp0,ϑ is a smooth curve with a parametrisation
-γ : R→ Σ such that the limit of γ′ at±∞ is given in Equation ( 33).
-This describes the limiting behaviour of the thimbles associated to the ﬁnite set of critical
-points of V . We see that outside a compact set the behaviour is trivial and tend s to a
-straight line towards inﬁnity. This is illustrated in the following example.
-12 VERONICA F ANTINI AND CAMPBELL WHEELER
-Example 2.4. As an example of Corollary
-2.3, we can consider the case ( A, B) = (1 , 2).
-As we saw in the introduction, the critical points were located at ( −5/6, 0) and (−1/6, 0) in
-Equation ( 6). Taking ϑ = 1.6650 we plot the set C(−5/6,0),ϑ in Figure 3. We can see that the
-thimble wraps around the branch points at −2 and−1 and then tends to inﬁnity along lines
-parallel to those predicted by Equation ( 33).
-Figure 3. This ﬁgure depicts in orange the analytic continuation of the set
-C(−5/6,0),ϑ for ϑ = 1.6650 and ( A, B) = (1 , 2). The blue lines are parallel to the
-lines
-√
-−ieiϑ and
-√
-ieiϑ. The red crosses are the branch points of V .
-Lemma 2.2 gives a complete description of the thimbles outside a compact set (d epend-
-ing on ϑ). Next we study the behaviour of the thimbles inside the compact se t given by
-Corollary 2.3 (speciﬁcally the constant M from Lemma 2.2). This will be described in the
-following sections.
+\be\label{eq:size.lam}
+  |\Lambda(z+k,m)|
+  <
+  C_1|z\log(iz)|+C_2(1+|k|)|z|\,.
+\ee
+Consider the set\footnote{Here we restrict to $m=0,\dots,A-1$ to have a finite number of conditions for each point $x$.}
+\be
+  \Sigma_\epsilon\=\bigcup_{\pm}\Big\{x\in\Sigma\,\Big|\,\Im(z_{\pm}(p))\in\pm\BR_{\geq0}\text{ and }\forall k\in\BZ\quad|z_{\pm}(x)-k|\geq\frac{\epsilon}{1+|k|}\Big\}\,.
+\ee
+Given $ e^{i\vartheta}\notin\mathcal{S}(V_{0})$ the set
+\be
+  V_0-i e^{i\vartheta}\BR_{\geq0}+\BZ
+\ee
+is disjoint from $0\in\BC/\BZ$. From Equations~\eqref{eq:size.V}~and~\eqref{eq:size.lam} for any $\delta>0$, small enough $\epsilon=\epsilon(\delta)$, and $x\in\Sigma\backslash\Sigma_{\epsilon}$ we have $|V(x)|<\delta$. Therefore, there exists $\epsilon>0$ such that $\Gamma_{p,\vartheta}\subset\Sigma_\epsilon$. 
+
+On the set $\Sigma_{\epsilon}$ we can approximate the derivative of $V$. To do this we notice that for a fixed $\alpha\in(0,1)$ there exists constants $C_{3},C_{4}>0$ such that for $p\in\Sigma_{\epsilon}$ with $\Im(z_{+}(p))\geq0$ and $k\in\BZ$ with $\Re(z_+(p)-k)\in(-1/2, 1/2]$ we have bounds
+\be
+  \Big|\frac{\log(1-\e(z))}{2\pi i}\Big|
+  \leq
+  \frac{C_{3}}{|z-k|^{\alpha}}
+  \leq
+  \frac{C_{3}(1+|k|)^{\alpha}}{\epsilon^{\alpha}}
+  <\frac{C_{4}|z|^{\alpha}}{\epsilon^{\alpha}}\,.
+\ee
+Therefore, there is a constant $C_{5}$ such that
+\be
+  |V'(z)-Az|
+  <
+  |z|\Big(\frac{C_{5}}{|z|^{1-\alpha}}+\frac{A}{2|z|}+\frac{m}{|z|}\Big)\,.
+\ee
+A similar bound works for $\Im(z_-(p))\leq 0$ replacing $A$ by $A-B$. Therefore, for any $\delta_1>0$ there exists an $M>0$ such that for $p\in\Sigma_{\epsilon}$ with $\Im(z_+(p))\geq0$ and $|z_+(p)|>M$ 
+\be
+  |V'(p)-Az_+(p)|<|z_+(p)|\delta_1\,,
+\ee
+and for $\Im(z_-(p))\leq0$ and $|z_-(p)|>M$ we find that
+\be
+  |V'(p)-(A-B)z_-(p)|<|z_-(p)|\delta_1\,.
+\ee
+Given the set of $p\in\Sigma_{\epsilon}$ with $|z_{\pm}(p)|\leq M$ is compact, we see that the intersection with $\Gamma_{p,\vartheta}$ is also compact. The remaining portion of $\Gamma_{p,\vartheta}$ therefore has $|z_\pm(p)|>M$. Assuming that $M$ is big enough, $|z_+(p)|>M$, and $\Im(z_+(p))>0$ we see that
+\be
+  |\Im(V(p)-V(p_0)-\tfrac{A}{2}z_+(p)(z_+(p)+1)-mz_+(p))|
+  \leq
+  C_{6}\,,
+\ee
+for some constant $C_6>0$.
+Given that $\Im(V(p)-V(p_0))\Im(i e^{i\vartheta})^{-1}<0$, this implies that $\Re(z_+(p))\Im(i e^{i\vartheta})<0$. Therefore, the quadrant containing $z_+(p)$ is determined by the sign of $\Im(i e^{i\vartheta})$. Moreover, the curve $\Gamma_{p,\vartheta}$ has tangent at a point $p$ given by
+\be\label{eq:tangent-GGamma_p}
+  \frac{ e^{i\vartheta}}{iV'(p)}\,.
+\ee
+Therefore for $|z_+(p)|>M$, there is a constant $C_{7}$ independent of $\delta_1$ such that for all $\Im(z_+(p))\geq 0$
+\be\label{eq:tangent-outside-ball}
+  \Big|\frac{e^{i\vartheta}|z_+(p)|}{i V'(p)}-\frac{e^{i\vartheta}|z_+(p)|}{i Az_+(p)}\Big|
+  <\delta_1C_7\,.
+\ee
+Therefore, the tangent direction always points towards a line parallel to $i\sqrt{i e^{i\vartheta}}$, which is in the same quadrant as $z_+(p)$. Similarly for the lower half plane we find that the tangent direction always points towards a line parallel to $-i\sqrt{i(A-B) e^{i\vartheta}}$, which is in the same quadrant as $z_-(p)$. Therefore, in the limit, the tangent is described by Equation~\eqref{eq:tangent.lim}.
+\end{proof}
+\begin{corollary}\label{cor:thimble}
+If $e^{i\vartheta}\in\BC\backslash\mathcal{S}(V_{0})$, then the set $\mathcal{C}_{p_0,\vartheta}$ is a smooth curve with a parametrisation $\gamma:\BR\rightarrow\Sigma$ such that the limit of $\gamma'$ at $\pm\infty$ is given in Equation~\eqref{eq:tangent.lim}.
+\end{corollary}
+This describes the limiting behaviour of the thimbles associated to the finite set of critical points of $V$. We see that outside a compact set the behaviour is trivial and tends to a straight line towards infinity.
+This is illustrated in the following example.
+\begin{example}
+As an example of Corollary~\ref{cor:thimble}, we can consider the case $(A,B)=(1,2)$. As we saw in the introduction, the critical points were located at $(-5/6,0)$ and $(-1/6,0)$ in Equation~\eqref{eq:41.crit.val}. Taking $\vartheta=1.6650$ we plot the set $\calC_{(-5/6,0),\vartheta}$ in Figure~\ref{fig:thimb.41}. We can see that the thimble wraps around the branch points at $-2$ and $-1$ and then tends to infinity along lines parallel to those predicted by Equation~\eqref{eq:tangent.lim}.
+\begin{figure}[ht]
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (3.2,0);
+\draw[<->,thick] (0,-2) -- (0,0.5);
+\draw[orange,thick,<->] (-0.43333, -1.9326)--(-0.44333, -1.7687)--(-0.45333, -1.6119)--(-0.46333, -1.4632)--(-0.47333, -1.3237)--(-0.48333, -1.1942)--(-0.49333, -1.0754)--(-0.50333, -0.96772)--(-0.51333, -0.87121)--(-0.52333, -0.78545)--(-0.53333, -0.70972)--(-0.54333, -0.64306)--(-0.55333, -0.58439)--(-0.56333, -0.53264)--(-0.57333, -0.48678)--(-0.58333, -0.44592)--(-0.59333, -0.40928)--(-0.60333, -0.37619)--(-0.61333, -0.34612)--(-0.62333, -0.31860)--(-0.63333, -0.29327)--(-0.64333, -0.26982)--(-0.65333, -0.24799)--(-0.66333, -0.22758)--(-0.67333, -0.20840)--(-0.68333, -0.19032)--(-0.69333, -0.17322)--(-0.70333, -0.15699)--(-0.71333, -0.14154)--(-0.72333, -0.12681)--(-0.73333, -0.11273)--(-0.74333, -0.099259)--(-0.75333, -0.086346)--(-0.76333, -0.073958)--(-0.77333, -0.062065)--(-0.78333, -0.050641)--(-0.79333, -0.039667)--(-0.80333, -0.029127)--(-0.81333, -0.019008)--(-0.82333, -0.0093009)--(-0.83333, 0)--(-0.84333, 0.0088985)--(-0.85333, 0.017396)--(-0.86333, 0.025491)--(-0.87333, 0.033181)--(-0.88333, 0.040462)--(-0.89333, 0.047330)--(-0.90333, 0.053778)--(-0.91333, 0.059802)--(-0.92333, 0.065397)--(-0.93333, 0.070561)--(-0.94333, 0.075292)--(-0.95333, 0.079593)--(-0.96333, 0.083470)--(-0.97333, 0.086930)--(-0.98333, 0.089986)--(-0.99333, 0.092652)--(-1.0033, 0.094944)--(-1.0133, 0.096881)--(-1.0233, 0.098481)--(-1.0333, 0.099765)--(-1.0433, 0.10075)--(-1.0533, 0.10145)--(-1.0633, 0.10190)--(-1.0733, 0.10209)--(-1.0833, 0.10206)--(-1.0933, 0.10181)--(-1.1033, 0.10136)--(-1.1133, 0.10073)--(-1.1233, 0.099910)--(-1.1333, 0.098927)--(-1.1433, 0.097789)--(-1.1533, 0.096503)--(-1.1633, 0.095080)--(-1.1733, 0.093526)--(-1.1833, 0.091850)--(-1.1933, 0.090059)--(-1.2033, 0.088160)--(-1.2133, 0.086158)--(-1.2233, 0.084060)--(-1.2333, 0.081871)--(-1.2433, 0.079596)--(-1.2533, 0.077241)--(-1.2633, 0.074810)--(-1.2733, 0.072308)--(-1.2833, 0.069739)--(-1.2933, 0.067106)--(-1.3033, 0.064415)--(-1.3133, 0.061669)--(-1.3233, 0.058870)--(-1.3333, 0.056024)--(-1.3433, 0.053133)--(-1.3533, 0.050200)--(-1.3633, 0.047228)--(-1.3733, 0.044221)--(-1.3833, 0.041182)--(-1.3933, 0.038113)--(-1.4033, 0.035017)--(-1.4133, 0.031897)--(-1.4233, 0.028756)--(-1.4333, 0.025596)--(-1.4433, 0.022420)--(-1.4533, 0.019230)--(-1.4633, 0.016030)--(-1.4733, 0.012821)--(-1.4833, 0.0096063)--(-1.4933, 0.0063882)--(-1.5033, 0.0031691)--(-1.5233, -0.0032617)--(-1.5333, -0.0064685)--(-1.5433, -0.0096661)--(-1.5533, -0.012852)--(-1.5633, -0.016024)--(-1.5733, -0.019179)--(-1.5833, -0.022314)--(-1.5933, -0.025428)--(-1.6033, -0.028516)--(-1.6133, -0.031577)--(-1.6233, -0.034607)--(-1.6333, -0.037604)--(-1.6433, -0.040564)--(-1.6533, -0.043484)--(-1.6633, -0.046362)--(-1.6733, -0.049194)--(-1.6833, -0.051976)--(-1.6933, -0.054705)--(-1.7033, -0.057377)--(-1.7133, -0.059988)--(-1.7233, -0.062535)--(-1.7333, -0.065012)--(-1.7433, -0.067416)--(-1.7533, -0.069742)--(-1.7633, -0.071984)--(-1.7733, -0.074138)--(-1.7833, -0.076197)--(-1.7933, -0.078156)--(-1.8033, -0.080008)--(-1.8133, -0.081747)--(-1.8233, -0.083365)--(-1.8333, -0.084854)--(-1.8433, -0.086205)--(-1.8533, -0.087409)--(-1.8633, -0.088456)--(-1.8733, -0.089335)--(-1.8833, -0.090032)--(-1.8933, -0.090535)--(-1.9033, -0.090829)--(-1.9133, -0.090896)--(-1.9233, -0.090717)--(-1.9333, -0.090270)--(-1.9433, -0.089532)--(-1.9533, -0.088475)--(-1.9633, -0.087065)--(-1.9733, -0.085264)--(-1.9833, -0.083029)--(-1.9933, -0.080306)--(-2.0033, -0.077028)--(-2.0133, -0.073115)--(-2.0233, -0.068459)--(-2.0333, -0.062912)--(-2.0433, -0.056253)--(-2.0533, -0.048106)--(-2.0633, -0.037701)--(-2.0733, -0.022747)--(-2.0793, -0.0057982)--(-2.0793, 0.016623)--(-2.0733, 0.033969)--(-2.0633, 0.049578)--(-2.0533, 0.060644)--(-2.0433, 0.069475)--(-2.0333, 0.076853)--(-2.0233, 0.083160)--(-2.0133, 0.088626)--(-2.0033, 0.093398)--(-1.9933, 0.097586)--(-1.9833, 0.10127)--(-1.9733, 0.10451)--(-1.9633, 0.10736)--(-1.9533, 0.10986)--(-1.9433, 0.11205)--(-1.9333, 0.11396)--(-1.9233, 0.11560)--(-1.9133, 0.11701)--(-1.9033, 0.11821)--(-1.8933, 0.11921)--(-1.8833, 0.12002)--(-1.8733, 0.12066)--(-1.8633, 0.12115)--(-1.8533, 0.12149)--(-1.8433, 0.12169)--(-1.8333, 0.12177)--(-1.8233, 0.12172)--(-1.8133, 0.12157)--(-1.8033, 0.12132)--(-1.7933, 0.12097)--(-1.7833, 0.12052)--(-1.7733, 0.12000)--(-1.7633, 0.11939)--(-1.7533, 0.11872)--(-1.7433, 0.11797)--(-1.7333, 0.11716)--(-1.7233, 0.11629)--(-1.7133, 0.11536)--(-1.7033, 0.11438)--(-1.6933, 0.11336)--(-1.6833, 0.11229)--(-1.6733, 0.11118)--(-1.6633, 0.11003)--(-1.6533, 0.10885)--(-1.6433, 0.10763)--(-1.6333, 0.10639)--(-1.6233, 0.10512)--(-1.6133, 0.10383)--(-1.6033, 0.10253)--(-1.5933, 0.10120)--(-1.5833, 0.099861)--(-1.5733, 0.098509)--(-1.5633, 0.097149)--(-1.5533, 0.095783)--(-1.5433, 0.094413)--(-1.5333, 0.093042)--(-1.5233, 0.091672)--(-1.5133, 0.090306)--(-1.5033, 0.088946)--(-1.4933, 0.087595)--(-1.4833, 0.086255)--(-1.4733, 0.084929)--(-1.4633, 0.083620)--(-1.4533, 0.082329)--(-1.4433, 0.081060)--(-1.4333, 0.079815)--(-1.4233, 0.078597)--(-1.4133, 0.077409)--(-1.4033, 0.076253)--(-1.3933, 0.075132)--(-1.3833, 0.074049)--(-1.3733, 0.073007)--(-1.3633, 0.072009)--(-1.3533, 0.071058)--(-1.3433, 0.070157)--(-1.3333, 0.069311)--(-1.3233, 0.068521)--(-1.3133, 0.067792)--(-1.3033, 0.067127)--(-1.2933, 0.066530)--(-1.2833, 0.066005)--(-1.2733, 0.065556)--(-1.2633, 0.065187)--(-1.2533, 0.064903)--(-1.2433, 0.064707)--(-1.2333, 0.064605)--(-1.2233, 0.064601)--(-1.2133, 0.064699)--(-1.2033, 0.064906)--(-1.1933, 0.065226)--(-1.1833, 0.065663)--(-1.1733, 0.066223)--(-1.1633, 0.066910)--(-1.1533, 0.067729)--(-1.1433, 0.068683)--(-1.1333, 0.069775)--(-1.1233, 0.071008)--(-1.1133, 0.072381)--(-1.1033, 0.073893)--(-1.0933, 0.075540)--(-1.0833, 0.077314)--(-1.0733, 0.079204)--(-1.0633, 0.081195)--(-1.0533, 0.083267)--(-1.0433, 0.085395)--(-1.0333, 0.087555)--(-1.0233, 0.089719)--(-1.0133, 0.091859)--(-1.0033, 0.093951)--(-0.99333, 0.095976)--(-0.98333, 0.097917)--(-0.97333, 0.099764)--(-0.96333, 0.10151)--(-0.95333, 0.10315)--(-0.94333, 0.10469)--(-0.93333, 0.10612)--(-0.92333, 0.10745)--(-0.91333, 0.10868)--(-0.90333, 0.10982)--(-0.89333, 0.11087)--(-0.88333, 0.11183)--(-0.87333, 0.11271)--(-0.86333, 0.11351)--(-0.85333, 0.11424)--(-0.84333, 0.11490)--(-0.83333, 0.11549)--(-0.82333, 0.11602)--(-0.81333, 0.11650)--(-0.80333, 0.11691)--(-0.79333, 0.11728)--(-0.78333, 0.11759)--(-0.77333, 0.11786)--(-0.76333, 0.11808)--(-0.75333, 0.11826)--(-0.74333, 0.11840)--(-0.73333, 0.11850)--(-0.72333, 0.11857)--(-0.71333, 0.11861)--(-0.70333, 0.11861)--(-0.69333, 0.11859)--(-0.68333, 0.11854)--(-0.67333, 0.11846)--(-0.66333, 0.11836)--(-0.65333, 0.11824)--(-0.64333, 0.11811)--(-0.63333, 0.11795)--(-0.62333, 0.11777)--(-0.61333, 0.11758)--(-0.60333, 0.11738)--(-0.59333, 0.11717)--(-0.58333, 0.11694)--(-0.57333, 0.11671)--(-0.56333, 0.11646)--(-0.55333, 0.11622)--(-0.54333, 0.11596)--(-0.53333, 0.11571)--(-0.52333, 0.11545)--(-0.51333, 0.11519)--(-0.50333, 0.11493)--(-0.49333, 0.11468)--(-0.48333, 0.11443)--(-0.47333, 0.11418)--(-0.46333, 0.11394)--(-0.45333, 0.11370)--(-0.44333, 0.11348)--(-0.43333, 0.11326)--(-0.42333, 0.11306)--(-0.41333, 0.11287)--(-0.40333, 0.11269)--(-0.39333, 0.11253)--(-0.38333, 0.11238)--(-0.37333, 0.11226)--(-0.36333, 0.11215)--(-0.35333, 0.11207)--(-0.34333, 0.11200)--(-0.33333, 0.11197)--(-0.32333, 0.11195)--(-0.31333, 0.11197)--(-0.30333, 0.11201)--(-0.29333, 0.11209)--(-0.28333, 0.11219)--(-0.27333, 0.11233)--(-0.26333, 0.11251)--(-0.25333, 0.11272)--(-0.24333, 0.11297)--(-0.23333, 0.11326)--(-0.22333, 0.11359)--(-0.21333, 0.11397)--(-0.20333, 0.11439)--(-0.19333, 0.11485)--(-0.18333, 0.11536)--(-0.17333, 0.11592)--(-0.16333, 0.11653)--(-0.15333, 0.11719)--(-0.14333, 0.11791)--(-0.13333, 0.11867)--(-0.12333, 0.11948)--(-0.11333, 0.12034)--(-0.10333, 0.12125)--(-0.093333, 0.12221)--(-0.083333, 0.12321)--(-0.073333, 0.12425)--(-0.063333, 0.12532)--(-0.053333, 0.12643)--(-0.043333, 0.12756)--(-0.033333, 0.12870)--(-0.023333, 0.12986)--(-0.013333, 0.13101)--(-0.0033333, 0.13217)--(0.0066667, 0.13331)--(0.016667, 0.13443)--(0.026667, 0.13553)--(0.036667, 0.13660)--(0.046667, 0.13764)--(0.056667, 0.13865)--(0.066667, 0.13962)--(0.076667, 0.14055)--(0.086667, 0.14144)--(0.096667, 0.14229)--(0.10667, 0.14310)--(0.11667, 0.14387)--(0.12667, 0.14461)--(0.13667, 0.14530)--(0.14667, 0.14596)--(0.15667, 0.14659)--(0.16667, 0.14718)--(0.17667, 0.14773)--(0.18667, 0.14826)--(0.19667, 0.14875)--(0.20667, 0.14921)--(0.21667, 0.14965)--(0.22667, 0.15006)--(0.23667, 0.15044)--(0.24667, 0.15080)--(0.25667, 0.15114)--(0.26667, 0.15145)--(0.27667, 0.15174)--(0.28667, 0.15202)--(0.29667, 0.15227)--(0.30667, 0.15251)--(0.31667, 0.15273)--(0.32667, 0.15293)--(0.33667, 0.15312)--(0.34667, 0.15330)--(0.35667, 0.15347)--(0.36667, 0.15362)--(0.37667, 0.15376)--(0.38667, 0.15390)--(0.39667, 0.15402)--(0.40667, 0.15414)--(0.41667, 0.15425)--(0.42667, 0.15436)--(0.43667, 0.15445)--(0.44667, 0.15455)--(0.45667, 0.15464)--(0.46667, 0.15473)--(0.47667, 0.15482)--(0.48667, 0.15491)--(0.49667, 0.15499)--(0.50667, 0.15508)--(0.51667, 0.15517)--(0.52667, 0.15527)--(0.53667, 0.15536)--(0.54667, 0.15546)--(0.55667, 0.15557)--(0.56667, 0.15568)--(0.57667, 0.15579)--(0.58667, 0.15592)--(0.59667, 0.15605)--(0.60667, 0.15619)--(0.61667, 0.15634)--(0.62667, 0.15651)--(0.63667, 0.15668)--(0.64667, 0.15687)--(0.65667, 0.15707)--(0.66667, 0.15728)--(0.67667, 0.15751)--(0.68667, 0.15775)--(0.69667, 0.15801)--(0.70667, 0.15829)--(0.71667, 0.15858)--(0.72667, 0.15890)--(0.73667, 0.15923)--(0.74667, 0.15958)--(0.75667, 0.15996)--(0.76667, 0.16035)--(0.77667, 0.16077)--(0.78667, 0.16121)--(0.79667, 0.16167)--(0.80667, 0.16216)--(0.81667, 0.16267)--(0.82667, 0.16321)--(0.83667, 0.16377)--(0.84667, 0.16435)--(0.85667, 0.16496)--(0.86667, 0.16559)--(0.87667, 0.16625)--(0.88667, 0.16693)--(0.89667, 0.16763)--(0.90667, 0.16835)--(0.91667, 0.16909)--(0.92667, 0.16985)--(0.93667, 0.17062)--(0.94667, 0.17140)--(0.95667, 0.17220)--(0.96667, 0.17300)--(0.97667, 0.17381)--(0.98667, 0.17462)--(0.99667, 0.17543)--(1.0067, 0.17624)--(1.0167, 0.17704)--(1.0267, 0.17784)--(1.0367, 0.17862)--(1.0467, 0.17939)--(1.0567, 0.18015)--(1.0667, 0.18089)--(1.0767, 0.18162)--(1.0867, 0.18233)--(1.0967, 0.18302)--(1.1067, 0.18369)--(1.1167, 0.18434)--(1.1267, 0.18498)--(1.1367, 0.18559)--(1.1467, 0.18618)--(1.1567, 0.18676)--(1.1667, 0.18731)--(1.1767, 0.18785)--(1.1867, 0.18837)--(1.1967, 0.18887)--(1.2067, 0.18936)--(1.2167, 0.18983)--(1.2267, 0.19028)--(1.2367, 0.19072)--(1.2467, 0.19114)--(1.2567, 0.19154)--(1.2667, 0.19194)--(1.2767, 0.19232)--(1.2867, 0.19269)--(1.2967, 0.19304)--(1.3067, 0.19339)--(1.3167, 0.19372)--(1.3267, 0.19405)--(1.3367, 0.19436)--(1.3467, 0.19467)--(1.3567, 0.19497)--(1.3667, 0.19526)--(1.3767, 0.19554)--(1.3867, 0.19582)--(1.3967, 0.19609)--(1.4067, 0.19636)--(1.4167, 0.19662)--(1.4267, 0.19688)--(1.4367, 0.19713)--(1.4467, 0.19739)--(1.4567, 0.19764)--(1.4667, 0.19788)--(1.4767, 0.19813)--(1.4867, 0.19838)--(1.4967, 0.19862)--(1.5067, 0.19887)--(1.5167, 0.19912)--(1.5267, 0.19936)--(1.5367, 0.19961)--(1.5467, 0.19987)--(1.5567, 0.20012)--(1.5667, 0.20038)--(1.5767, 0.20065)--(1.5867, 0.20092)--(1.5967, 0.20119)--(1.6067, 0.20147)--(1.6167, 0.20176)--(1.6267, 0.20205)--(1.6367, 0.20235)--(1.6467, 0.20266)--(1.6567, 0.20298)--(1.6667, 0.20330)--(1.6767, 0.20363)--(1.6867, 0.20398)--(1.6967, 0.20433)--(1.7067, 0.20469)--(1.7167, 0.20507)--(1.7267, 0.20546)--(1.7367, 0.20585)--(1.7467, 0.20626)--(1.7567, 0.20669)--(1.7667, 0.20712)--(1.7767, 0.20757)--(1.7867, 0.20803)--(1.7967, 0.20850)--(1.8067, 0.20899)--(1.8167, 0.20949)--(1.8267, 0.21001)--(1.8367, 0.21053)--(1.8467, 0.21107)--(1.8567, 0.21163)--(1.8667, 0.21219)--(1.8767, 0.21277)--(1.8867, 0.21336)--(1.8967, 0.21396)--(1.9067, 0.21457)--(1.9167, 0.21520)--(1.9267, 0.21583)--(1.9367, 0.21646)--(1.9467, 0.21711)--(1.9567, 0.21775)--(1.9667, 0.21841)--(1.9767, 0.21906)--(1.9867, 0.21972)--(1.9967, 0.22038)--(2.0067, 0.22103)--(2.0167, 0.22169)--(2.0267, 0.22234)--(2.0367, 0.22299)--(2.0467, 0.22363)--(2.0567, 0.22426)--(2.0667, 0.22489)--(2.0767, 0.22551)--(2.0867, 0.22612)--(2.0967, 0.22672)--(2.1067, 0.22731)--(2.1167, 0.22789)--(2.1267, 0.22846)--(2.1367, 0.22903)--(2.1467, 0.22958)--(2.1567, 0.23011)--(2.1667, 0.23064)--(2.1767, 0.23116)--(2.1867, 0.23167)--(2.1967, 0.23216)--(2.2067, 0.23265)--(2.2167, 0.23313)--(2.2267, 0.23359)--(2.2367, 0.23405)--(2.2467, 0.23450)--(2.2567, 0.23493)--(2.2667, 0.23536)--(2.2767, 0.23579)--(2.2867, 0.23620)--(2.2967, 0.23660)--(2.3067, 0.23700)--(2.3167, 0.23739)--(2.3267, 0.23778)--(2.3367, 0.23816)--(2.3467, 0.23853)--(2.3567, 0.23890)--(2.3667, 0.23926)--(2.3767, 0.23962)--(2.3867, 0.23997)--(2.3967, 0.24032)--(2.4067, 0.24066)--(2.4167, 0.24101)--(2.4267, 0.24135)--(2.4367, 0.24168)--(2.4467, 0.24202)--(2.4567, 0.24235)--(2.4667, 0.24268)--(2.4767, 0.24302)--(2.4867, 0.24335)--(2.4967, 0.24368)--(2.5067, 0.24401)--(2.5167, 0.24434)--(2.5267, 0.24467)--(2.5367, 0.24501)--(2.5467, 0.24534)--(2.5567, 0.24568)--(2.5667, 0.24602)--(2.5767, 0.24637)--(2.5867, 0.24671)--(2.5967, 0.24706)--(2.6067, 0.24741)--(2.6167, 0.24777)--(2.6267, 0.24813)--(2.6367, 0.24850)--(2.6467, 0.24887)--(2.6567, 0.24925)--(2.6667, 0.24963)--(2.6767, 0.25002)--(2.6867, 0.25041)--(2.6967, 0.25081)--(2.7067, 0.25122)--(2.7167, 0.25164)--(2.7267, 0.25206)--(2.7367, 0.25249)--(2.7467, 0.25292)--(2.7567, 0.25337)--(2.7667, 0.25382)--(2.7767, 0.25428)--(2.7867, 0.25475)--(2.7967, 0.25522)--(2.8067, 0.25571)--(2.8167, 0.25620)--(2.8267, 0.25670)--(2.8367, 0.25720)--(2.8467, 0.25772)--(2.8567, 0.25824)--(2.8667, 0.25877)--(2.8767, 0.25930)--(2.8867, 0.25985)--(2.8967, 0.26039)--(2.9067, 0.26095)--(2.9167, 0.26151)--(2.9267, 0.26207)--(2.9367, 0.26264)--(2.9467, 0.26321)--(2.9567, 0.26379)--(2.9667, 0.26436)--(2.9767, 0.26494)--(2.9867, 0.26552)--(2.9967, 0.26610)--(3.0067, 0.26668)--(3.0167, 0.26726)--(3.0267, 0.26783)--(3.0367, 0.26841)--(3.0467, 0.26898)--(3.0567, 0.26955)--(3.0667, 0.27011)--(3.0767, 0.27067)--(3.0867, 0.27123)--(3.0967, 0.27178)--(3.1067, 0.27232)--(3.1167, 0.27286);
+\filldraw[red] (-5/6,0) circle (1pt);
+\draw[ultra thick,red,xshift=3cm] (-0.04,-0.04)--(0.04,0.04);
+\draw[ultra thick,red,xshift=3cm] (0.04,-0.04)--(-0.04,0.04);
+\draw[ultra thick,red,xshift=2cm] (-0.04,-0.04)--(0.04,0.04);
+\draw[ultra thick,red,xshift=2cm] (0.04,-0.04)--(-0.04,0.04);
+\draw[ultra thick,red,xshift=1cm] (-0.04,-0.04)--(0.04,0.04);
+\draw[ultra thick,red,xshift=1cm] (0.04,-0.04)--(-0.04,0.04);
+\draw[ultra thick,red] (-0.04,-0.04)--(0.04,0.04);
+\draw[ultra thick,red] (0.04,-0.04)--(-0.04,0.04);
+\draw[ultra thick,red,xshift=-1cm] (-0.04,-0.04)--(0.04,0.04);
+\draw[ultra thick,red,xshift=-1cm] (0.04,-0.04)--(-0.04,0.04);
+\draw[ultra thick,red,xshift=-2cm] (-0.04,-0.04)--(0.04,0.04);
+\draw[ultra thick,red,xshift=-2cm] (0.04,-0.04)--(-0.04,0.04);
+\draw[blue,yshift=0.12cm,->,opacity=0.5] (0,0)--(3.1964,0.15074);
+\draw[blue,xshift=-0.51cm,->,opacity=0.5] (0,0)--(0.094213,-1.9978);
+\end{tikzpicture}
+\caption{This figure depicts in \textcolor{orange}{orange} the analytic continuation of the set $\calC_{(-5/6,0),\vartheta}$ for $\vartheta=1.6650$ and $(A,B)=(1,2)$. The \textcolor{blue}{blue} lines are parallel to the lines $\sqrt{-i e^{i\vartheta}}$ and $\sqrt{i e^{i\vartheta}}$. The \textcolor{red}{red} crosses are the branch points of $V$.
+
+}\label{fig:thimb.41}
+\end{figure}
+\end{example}
+Lemma~\ref{lem:thimble} gives a complete description of the thimbles outside a compact set (depending on $\vartheta$). Next we study the behaviour of the thimbles inside the compact set given by Corollary~\ref{cor:thimble} (specifically the constant $M$ from Lemma~\ref{lem:thimble}). This will be described in the following sections.

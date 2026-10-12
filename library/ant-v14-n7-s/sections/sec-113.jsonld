@@ -1,16 +1,30 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-113",
   "@type": [
     "doco:Section"
   ],
-  "title": "References",
-  "pageStart": 226,
-  "pageEnd": 229,
+  "title": "Introduction and statement of results",
+  "pageStart": 187,
+  "pageEnd": 192,
   "contains": [
-    "library/ant-v14-n7-s/blocks/prose-sec-113"
+    "library/ant-v14-n7-s/blocks/prose-sec-113",
+    "library/ant-v14-n7-s/blocks/thm-sec-113-01",
+    "library/ant-v14-n7-s/blocks/thm-sec-113-02",
+    "library/ant-v14-n7-s/blocks/thm-sec-113-03",
+    "library/ant-v14-n7-s/blocks/thm-sec-113-04",
+    "library/ant-v14-n7-s/blocks/thm-sec-113-05",
+    "library/ant-v14-n7-s/blocks/thm-sec-113-06",
+    "library/ant-v14-n7-s/blocks/thm-sec-113-07",
+    "library/ant-v14-n7-s/blocks/thm-sec-113-08",
+    "library/ant-v14-n7-s/blocks/cor-sec-113-09"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"
 }

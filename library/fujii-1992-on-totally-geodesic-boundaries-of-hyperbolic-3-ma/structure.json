@@ -5,127 +5,327 @@
   "file": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf",
   "sha256": "d3d3bf68955ad7758d80d069b510192d95ca7e5a05882a2a03ebff5d25f90694",
   "bytes": 1132571,
-  "pages": 14
+  "pages": 14,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:25Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "On totally geodesic boundaries of hyperbolic 3-manifolds",
-  "authors_raw": "By a hyperbolic manifold, we will mean a Riemannian manifold with con-",
+  "title": "M. FUJJI",
+  "authors_raw": "KODAI MATH. J",
+  "title_lines": [
+   "M. FUJJI"
+  ],
   "abstract": null,
   "docinfo": {
-   "CreationDate": "D:20050111151656Z",
-   "Title": "",
    "Creator": "ABBYY FineReader",
-   "Author": "",
-   "Producer": ""
+   "CreationDate": "D:20050111151656Z"
   },
-  "title_prev": "M. FUJJI KODAI MATH. J. 15 (1992), 244-257 ON TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS By MICHIHIKO FUJII Introduction",
-  "title_lines": [
-   "M. FUJJI",
-   "KODAI MATH. J",
-   "15 (1992), 244-257",
-   "ON TOTALLY GEODESIC BOUNDARIES OF",
-   "HYPERBOLIC 3-MANIFOLDS",
-   "By MICHIHIKO FUJII",
-   "Introduction"
-  ]
+  "title_raw": "M. FUJJI",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ON TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS {p, q) is close to oo in R",
+   "text": "M. FUJJI",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with",
+   "title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with two torus cusps.",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "(a)). We write S=S(z). The three numbers z, z' :=(z-l)/z and z\" : = l/(l-z)",
-   "page": 2,
+   "title": "UdC",
+   "page": 10,
    "source": "inferred",
-   "number": "1.1"
+   "number": "F",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
-   "title": "A deformation space of the hyperbolic structure on the 3-manifold",
-   "page": 5,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Deformations of the flat structure of the cusp torus of the hyperbolic",
-   "page": 8,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "References",
+   "level": 2,
+   "title": "B.A. EPSTEIN AND R.C. PENNER,",
    "page": 13,
    "source": "inferred",
-   "number": null
+   "number": "D",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "KAPOVICH,",
+   "page": 13,
+   "source": "inferred",
+   "number": "M",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1.2",
+   "title": "The vertices O are ideal ones. All boundary faces of this polyhedron are all totally geodesic. All dihedral angles are \u03c0/2. Right-angled sixteen quadrilaterals with two ideal vertices are isometric to each other. The totally geodesic boundary \u03a3 of M consists of the two right-angled octagons",
+   "page": 3,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "1.3",
+   "title": "Glue\u039b toC;, B[ to",
+   "page": 3,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.1",
+   "title": "The cusp torus corresponding to S\\ developed on complex plane with the oriented base ri, \u03c42 for the lattice A drawn in",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.2",
+   "title": "The fundamental domain for the flat torus",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4190,
+   "n_words": 721,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-an-ideal-tetrahedral-decomposition-of-a-hyperb",
    "number": "1",
-   "title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with",
+   "title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with two torus cusps.",
    "level": 1,
    "page_start": 2,
-   "page_end": 2,
-   "n_chars": 715,
-   "n_words": 128
+   "page_end": 10,
+   "n_chars": 9486,
+   "n_words": 1820,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-11-a-we-write-ssz-the-three-numbers-z-z-z-lz-and",
-   "number": "1.1",
-   "title": "(a)). We write S=S(z). The three numbers z, z' :=(z-l)/z and z\" : = l/(l-z)",
+   "id": "sec-001-f-udc",
+   "number": "F",
+   "title": "UdC",
    "level": 2,
-   "page_start": 2,
-   "page_end": 5,
-   "n_chars": 1840,
-   "n_words": 336
-  },
-  {
-   "id": "sec-002-2-a-deformation-space-of-the-hyperbolic-structur",
-   "number": "2",
-   "title": "A deformation space of the hyperbolic structure on the 3-manifold",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 8,
-   "n_chars": 3656,
-   "n_words": 688
-  },
-  {
-   "id": "sec-003-3-deformations-of-the-flat-structure-of-the-cusp",
-   "number": "3",
-   "title": "Deformations of the flat structure of the cusp torus of the hyperbolic",
-   "level": 1,
-   "page_start": 8,
+   "page_start": 10,
    "page_end": 13,
-   "n_chars": 9856,
-   "n_words": 1775
+   "n_chars": 6836,
+   "n_words": 1227,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
+   "id": "sec-002-m-kapovich",
+   "number": "M",
+   "title": "KAPOVICH,",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 266,
+   "n_words": 45,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-d-ba-epstein-and-rc-penner",
+   "number": "D",
+   "title": "B.A. EPSTEIN AND R.C. PENNER,",
+   "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1123,
-   "n_words": 165
+   "n_chars": 990,
+   "n_words": 147,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 5,
+  "toc_entries": 4,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 4,
+  "figure_sequence_gaps": [
+   "figure 1.1"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 5,
-  "chars_total": 17190
+  "chars_total": 21768
  }
 }

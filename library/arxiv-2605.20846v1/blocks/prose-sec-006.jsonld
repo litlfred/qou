@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2605.20846v1/blocks/prose-sec-006",
+  "kind": "prose",
+  "title": "Local Models of Excellent Morse Failures",
+  "pageStart": 38,
+  "pageEnd": 46,
+  "text": "../sections/sec-006-local-models-of-excellent-morse-failures.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.20846v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.20846v1/manifest.jsonld",
+  "provenance": "ingested"
+}

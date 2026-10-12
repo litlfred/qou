@@ -8,228 +8,137 @@ pages: 2-6
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
 doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
+text_source: latex
+latex_prose_ratio: 0.997
+latex_coverage_ratio: 0.963
 ---
-2 The many dimensions of the volume conjecture 5
-2.1 Parametrized VC . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
-2.2 Quantum VC . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
-2.3 Groups and representations . . . . . . . . . . . . . . . . . . . . . . . . 10
-2.4 Links and 3-manifolds . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
-3 TQFT 13
-3.1 Cutting and gluing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
-3.2 Quantization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
-3.2.1 Methods . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
-3.2.2 Simple examples . . . . . . . . . . . . . . . . . . . . . . . . . . 20
-3.3 Chern-Simons theory . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
-3.3.1 Quantization of Chern-Simons theory . . . . . . . . . . . . . . . 23
-3.3.2 Synthesis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
-1 Preliminaries
-Let K be an oriented knot (or link) in the three-sphere S3. The original volume
-conjecture [1, 2] relates the N-colored Jones polynomial of K to the hyperbolic volume
-of the knot complement S3\K:
-N-colored Jones poly of K ←→ hyperbolic volume of S3\K
-(combinatorial, rep. theory) (geometric) . (1.1)
-We begin by reviewing some of the deﬁnitions and ingredients that enter on the two
-sides here in order to make this statement more precise, and to serve as a precursor
-for its subsequent generalization.
-Jones polynomials
-The (non-colored) Jones polynomial J(K;q) of a knot or link can be deﬁned combina-
-torially via the skein relation
-qJ (
- )−q−1J(
- ) = (q
-1
-2−q− 1
-2 )J(
- ), (1.2)
-1
-along with the normalization 1
-J(
- ) =q
-1
-2 +q− 1
-2 for
- = unknot, (1.3)
+[]{#sec:basics label="sec:basics"}
+
+Let $K$ be an oriented knot (or link) in the three-sphere $S^3$. The original volume conjecture [@Kashaev-1997; @Mur-Mur] relates the $N$-colored Jones polynomial of $K$ to the hyperbolic volume of the knot complement $S^3\backslash K$:
+
+$$\begin{array}{c@{\qquad}c@{\qquad}c} \text{$N$-colored Jones poly of $K$} & \longleftrightarrow & \text{hyperbolic volume of $S^3\backslash K$} \\
+\text{(combinatorial, rep. theory)} & & \text{(geometric)\,.}
+\end{array} \label{VCtext}$$
+
+We begin by reviewing some of the definitions and ingredients that enter on the two sides here in order to make this statement more precise, and to serve as a precursor for its subsequent generalization.
+
+### Jones polynomials
+
+The (non-colored) Jones polynomial $J(K;q)$ of a knot or link can be defined combinatorially via the skein relation
+
+$$q\,J({\,\raisebox{-.13cm}{\includegraphics[width=.5cm]{overcrossing}}\,}) - q^{-1}J({\,\raisebox{-.13cm}{\includegraphics[width=.5cm]{undercrossing}}\,}) = (q^\frac12-q^{-\frac12})\,J({\,\raisebox{-.13cm}{\includegraphics[width=.5cm]{smoothing}}\,})\,, \label{skein}$$
+
+along with the normalization[^1]
+
+$$J({\,\raisebox{-.08cm}{\includegraphics[width=.4cm]{unknot}}\,}) = q^\frac12+q^{-\frac12} \quad\qquad \text{for ${\,\raisebox{-.08cm}{\includegraphics[width=.4cm]{unknot}}\,}=$ unknot}\,, \label{JU}$$
+
 and the rule
-J(K1⊔K2) =J(K1)J(K2) (1.4)
-for any disjoint union of knots or links. Thus, for example, the (right-handed) trefoil
-and ﬁgure-eight knots have Jones polynomials
-J(31) =q− 1
-2 +q− 3
-2 +q− 5
-2−q− 9
-2,
-J(41) =q
-5
-2 +q− 5
-2.
-In general, J(K,q ) is a Laurent polynomial, J(K,q )∈ Z[q
-1
-2,q− 1
-2 ].
-The combinatorial construction of the Jones polynomial is intimately related to
-representation theory of SU (2) — or the closely related representation theories of the
-quantum group Uq(su(2)) or the aﬃne Lie algebra ˆsu(2). In particular, the classical
-Jones polynomial above is obtained by “coloring” the knot (or link) K in S3 with the
-2-dimensional representation of SU (2). More generally, such a knot or link can be
-colored with any ﬁnite-dimensional representation R of SU (2), leading to a colored
-Jones polynomial JR(K,q ). The N-colored Jones polynomial JN(K,q ) takes R to be
-the irreducible N-dimensional representation [3, 4, 5]. The colored Jones polynomial
-can again be computed in a purely algebraic/combinatorial manner, by using the two
-rules
-J⊕iRi(K;q) =
-∑
-i
-JRi(K;q) (1.5a)
+
+$$J(K_1\sqcup K_2) = J(K_1)\,J(K_2)\,$$
+
+for any disjoint union of knots or links. Thus, for example, the (right-handed) trefoil and figure-eight knots have Jones polynomials
+
+$$\begin{aligned}
+ J(\mathbf{3_1}) &= q^{-\frac12}+q^{-\frac32}+q^{-\frac52}-q^{-\frac92}\,, \\
+J(\mathbf{4_1}) &= q^{\frac52}+q^{-\frac52}\,.
+\end{aligned}$$
+
+In general, $J(K,q)$ is a Laurent polynomial, $J(K,q)\in {\mathbb{Z}}[q^\frac12,q^{-\frac12}]$.
+
+The combinatorial construction of the Jones polynomial is intimately related to representation theory of $SU(2)$ --- or the closely related representation theories of the quantum group $U_q(su(2))$ or the affine Lie algebra $\widehat{su(2)}$. In particular, the classical Jones polynomial above is obtained by "coloring" the knot (or link) $K$ in $S^3$ with the 2-dimensional representation of $SU(2)$. More generally, such a knot or link can be colored with any finite-dimensional representation $R$ of $SU(2)$, leading to a colored Jones polynomial $J_R(K,q)$. The *N-colored* Jones polynomial $J_N(K,q)$ takes $R$ to be the irreducible $N$-dimensional representation [@Wit-Jones; @Resh-Tur; @Kir-Mel]. The colored Jones polynomial can again be computed in a purely algebraic/combinatorial manner, by using the two rules
+
+$$\label{NJ}
+\begin{equation}
+ J_{\oplus_iR_i}(K;q) = \sum_i J_{R_i}(K;q)\, \vspace{-.5cm}\end{equation}
 and
-JR(Kn;q) =JR⊗n(K;q), (1.5b)
+\begin{equation}J_R(K^n;q) = J_{R^{\otimes n}}(K;q)\,,\,  \end{equation}$$
+
 together with
-JR(K1⊔K2) =JR(K1)JR(K2), (1.6)
-and the fact that J1(K;q) =JR=⊘(K;q)≡ 1. The ﬁrst rule says that if R is reducible,
-then JR splits as a sum over irreducible components. The second rule says that the
-R-colored Jones polynomial for the n-cabling of a knot (formed by taking n copies of
-the knot or link, slightly displaced away from one another 2) is equal to the colored
-Jones polynomial of the original knot but in representation R⊗n.
-For example, from (1.5a-b) and the fact thatJN=2(K,q ) =J(K,q ), it is easy to see
-that
-JN(
- ) = q
-N
-2−q−N
-2
-q
-1
-2−q− 1
-2
-. (1.7)
-1The most common normalization for the unknot seen in the mathematics literature is J(
- ) = 1.
-For the connection with topological quantum ﬁeld theory, however, (1.3) is much more natural.
-2This displacement must be done in a way that produces zero linking number between the various
-copies.
-2
-More generally, for any knot K, relations (1.5) can be used to reduce JN(K;q) to
-ordinary Jones polynomials of K and its cablings. We have
-J1(K;q) = 1,
-J2(K;q) =J(K;q),
-J3(K;q) =J(K2;q)− 1,
-J4(K;q) =J(K3;q)− 2J(K;q),
-...,
-where the expressions for J3, J4, etc. follow from the rules for decomposing repre-
-sentations of SU (2): 2⊗2 = 1⊕ 3 , 2⊗3 = ( 1⊕ 3)⊗ 2 = 2⊕ 2⊕ 4 , etc. Since
-J(K;q)∈ Z[q
-1
-2,q− 1
-2 ] for anyK, it is clear that the colored Jones polynomials JN(K;q)
-will also be elements of Z[q
-1
-2,q− 1
-2 ] .
-We have explained the left side of (1.1), completely, if somewhat tersely, in terms
-of algebra and combinatorics. The right side has a very diﬀerent interpretation.
-Hyperbolic volumes
-It was conjectured by Thurston [6] (and is now proved [7]) that every three-manifold
-may be decomposed into pieces that admit exactly one of eight diﬀerent geometric
-structures. The most common structure by far is hyperbolic. Indeed, in the case of
-knot complements in S3 this statement can be made exact: a knot complement has a
-hyperbolic structure if and only if it is not a torus or satellite knot [6]. By deﬁnition,
-a “hyperbolic structure” refers to a geodesically-complete metric of constant curvature
-−1. If a hyperbolic structure does exist on a manifold M, then it is unique, and the
-corresponding hyperbolic volume Vol(M) is a well-deﬁned topological invariant.
-In fact, there also exists a natural complexiﬁcation of the hyperbolic volume of a
-three-manifold M, obtained as
-Vol(M) +iCS(M), (1.8)
-where CS(M) is the so-called Chern-Simons invariant of M. To understand this, sup-
-pose that M allows a spin structure (as all knot/link complements in S3 do) and
-consider ﬂat SL(2, C) connections on M in place of hyperbolic metrics. 3 There exists
-a ﬂat connectionA whose real and imaginary parts can be interpreted, respectively, as
-the vielbein and spin connection of the hyperbolic metric. The real part of the quantity
-i
-2ICS(A) = i
-2
-∫
-M
-(
-A∧ dA + 2
-3A∧A∧A
-)
-(1.9)
-3Recall that a “G-connection” on a principalG-bundleE→M can be written locally as a g-valued
-one-formA. The bundle E is typically taken to be trivial in the present context, E = G×M. A
-gauge transformation (a change of coordinates on E) induced by an element g∈ Γ(E) acts locally on
-the connection asA↦→ g−1Ag +g−1dg.
-3
-then reproduces Vol(M), while the imaginary part deﬁnes CS( M). The expression
-ICS(A) is the so-called Chern-Simons functional of A. Further details can be found
-e.g. in [8, 9] or [10, 11]. Under gauge transformations acting on A, the functional
-ICS(A) is only well-deﬁned up to shifts of 8 π2, leading to an ambiguity of 4 π2 in
-the deﬁnition of CS( M). Because of this, it is often convenient to exponentiate the
-complexiﬁed volume (1.8), writing it in the unambiguous form
-Z(M) =e
-i
-4πICS (A) =e
-1
-2π
-(
-Vol(M)+iCS(M)
-)
-. (1.10)
-For hyperbolic knot complements, the full complexiﬁed volume Z(M) can be eﬃ-
-ciently computed in terms of ideal hyperbolic triangulations, cf. [12, 13, 14].
-The Volume Conjecture
-We have not said much yet about the variable q appearing in the Jones polynomials.
-Strictly speaking, this variable should be a root of unity 4
-q =e
-2πi
-k , k ∈ Z+. (1.11)
-At the special value k =N, all Jones polynomials JN(K;q) vanish, but the ratio
-VN(K,q ) = JN(K;q)
-JN(
- ;q) (1.12)
-remains ﬁnite. The original volume conjecture [1, 2] then states that
-lim
-N→∞
-2π log
-⏐⏐VN(K;q =e
-2πi
-N )
-⏐⏐
-N = Vol(M). (1.13)
-It is also possible to remove the absolute value and exponentiate to obtain the com-
-plexiﬁed generalization (cf. [15])
-VN(K;q =e
-2πi
-N )
-N→∞
-∼ Z(M)N =e
-N
-2π
-(
-Vol(M)+iCS(M)
-)
-. (1.14)
-As an example, consider the ﬁgure-eight knot (Figure 1), the simplest hyperbolic
-knot. The colored Jones polynomial (see e.g. [1] or [16]) is
-VN(41;q =e
-2πi
-N ) =
-N−1∑
-m=0
-(q)m(q−1)m, (x)m := (1−x)(1−x2)··· (1−xm). (1.15)
-4In terms of representation theory, the integer k is identiﬁed as the level of the aﬃne Lie algebra
-ˆsu(2)k. The representation theory of the quantum group Uq(su(2)) also (crucially) simpliﬁes greatly
-when q is a root of unity, becoming essentially equivalent to the representation theory of ˆsu(2)k. See
-also Sections 3.3.1-3.3.2.
-4
-Figure 1: The ﬁgure-eight knot, 41
-The hyperbolic volume of the ﬁgure-eight knot complement is
-Vol(S3\41) = 2 Vol(∆) = 2.02988..., (1.16)
-where Vol(∆) = Im Li 2(eiπ
-3 ) denotes the volume of a regular hyperbolic ideal tetra-
-hedron. The Chern-Simons invariant CS( S3\41) vanishes. It is fairly straightforward
-(and an informative exercise5) to show that in the limit N→∞ one has, as expected,
-lim
-N→∞
-2π logVN(41;e
-2πi
-N )
-N = Vol(S3\41). (1.17)
+
+$$J_R(K_1\sqcup K_2) = J_R(K_1)J_R(K_2)\,,$$
+
+and the fact that $J_1(K;q)=J_{R=\oslash}(K;q)\equiv 1$. The first rule says that if $R$ is reducible, then $J_R$ splits as a sum over irreducible components. The second rule says that the $R$-colored Jones polynomial for the $n$-cabling of a knot (formed by taking $n$ copies of the knot or link, slightly displaced away from one another[^2]) is equal to the colored Jones polynomial of the original knot but in representation $R^{\otimes n}$.
+
+For example, from ([\[NJ\]](#NJ){reference-type="ref" reference="NJ"}a-b) and the fact that $J_{N=2}(K,q) = J(K,q)$, it is easy to see that
+
+$$J_N({\,\raisebox{-.08cm}{\includegraphics[width=.4cm]{unknot}}\,}) = \frac{q^{\frac N2}-q^{-\frac N2}}{q^{\frac12}-q^{-\frac12}}\,.$$
+
+More generally, for any knot $K$, relations [\[NJ\]](#NJ){reference-type="eqref" reference="NJ"} can be used to reduce $J_N(K;q)$ to ordinary Jones polynomials of $K$ and its cablings. We have
+
+$$\begin{aligned}
+J_1(K;q) &= 1\,, \\
+J_2(K;q) &= J(K;q)\,, \\
+J_3(K;q) &= J(K^2;q)-1\,, \\
+J_4(K;q) &= J(K^3;q)-2J(K;q)\,, \\
+ &\;\;\ldots,
+\end{aligned}$$
+
+where the expressions for $J_3$, $J_4$, etc. follow from the rules for decomposing representations of $SU(2)$: $\mathbf{2}^{\otimes2} = \mathbf{1}\oplus\mathbf{3}$ ,  $\mathbf{2}^{\otimes 3}=(\mathbf{1}\oplus\mathbf{3})\otimes \mathbf{2}=\mathbf{2}\oplus\mathbf{2}\oplus\mathbf{4}$ , etc. Since $J(K;q) \in {\mathbb{Z}}[q^\frac12,q^{-\frac12}]$ for any $K$, it is clear that the colored Jones polynomials $J_N(K;q)$ will also be elements of ${\mathbb{Z}}[q^\frac12,q^{-\frac12}]$ .
+
+We have explained the left side of [\[VCtext\]](#VCtext){reference-type="eqref" reference="VCtext"}, completely, if somewhat tersely, in terms of algebra and combinatorics. The right side has a very different interpretation.
+
+### Hyperbolic volumes
+
+It was conjectured by Thurston [@thurston-1982] (and is now proved [@Perelman-geometrization]) that every three-manifold may be decomposed into pieces that admit exactly one of eight different geometric structures. The most common structure by far is hyperbolic. Indeed, in the case of knot complements in $S^3$ this statement can be made exact: a knot complement has a hyperbolic structure if and only if it is not a torus or satellite knot [@thurston-1982]. By definition, a "hyperbolic structure" refers to a geodesically-complete metric of constant curvature $-1$. If a hyperbolic structure does exist on a manifold $M$, then it is unique, and the corresponding hyperbolic volume ${\rm Vol}(M)$ is a well-defined topological invariant.
+
+In fact, there also exists a natural complexification of the hyperbolic volume of a three-manifold $M$, obtained as
+
+$${\rm Vol}(M) + i {\rm CS}(M)\,, \label{VolCS}$$
+
+where ${\rm CS}(M)$ is the so-called Chern-Simons invariant of $M$. To understand this, suppose that $M$ allows a spin structure (as all knot/link complements in $S^3$ do) and consider flat $SL(2,{\mathbb{C}})$ connections on $M$ in place of hyperbolic metrics.
+
+[^3]
+
+There exists a flat connection ${\cal A}$ whose real and imaginary parts can be interpreted, respectively, as the vielbein and spin connection of the hyperbolic metric. The real part of the quantity
+
+$$\frac{i}{2}I_{CS}({\cal A}) = \frac{i}{2}\int_M\Big({\cal A}\wedge d{\cal A}+\frac{2}{3}{\cal A}\wedge{\cal A}\wedge{\cal A}\Big) \label{ICS}$$
+
+then reproduces ${\rm Vol}(M)$, while the imaginary part defines ${\rm CS}(M)$. The expression $I_{CS}({\cal A})$ is the so-called Chern-Simons functional of ${\cal A}$. Further details can be found *e.g.* in [@Wit-CSGrav; @witten-1991] or [@gukov-2003; @DGLZ]. Under gauge transformations acting on ${\cal A}$, the functional $I_{CS}({\cal A})$ is only well-defined up to shifts of $8\pi^2$, leading to an ambiguity of $4\pi^2$ in the definition of ${\rm CS}(M)$. Because of this, it is often convenient to exponentiate the complexified volume [\[VolCS\]](#VolCS){reference-type="eqref" reference="VolCS"}, writing it in the unambiguous form
+
+$$Z(M) =  e^{\frac{i}{4\pi}I_{CS}({\cal A})} = e^{\frac{1}{2\pi}\big({\rm Vol}(M)+i{\rm CS}(M)\big)}\,. \label{Zcl}$$
+
+For hyperbolic knot complements, the full complexified volume $Z(M)$ can be efficiently computed in terms of ideal hyperbolic triangulations, *cf.* [@snap; @neumann-2004; @zickert-2008].
+
+### The Volume Conjecture
+
+We have not said much yet about the variable $q$ appearing in the Jones polynomials. Strictly speaking, this variable should be a root of unity
+
+[^4]
+
+$$q = e^{\frac{2\pi i}{k}}\,, \qquad k \in {\mathbb{Z}}_+\,.$$
+
+At the special value $k=N$, all Jones polynomials $J_N(K;q)$ vanish, but the ratio
+
+$$V_N(K,q) =  \frac{J_N(K;q)}{J_N({\,\raisebox{-.08cm}{\includegraphics[width=.4cm]{unknot}}\,};q)}$$
+
+remains finite. The original volume conjecture [@Kashaev-1997; @Mur-Mur] then states that
+
+$$\lim_{N\to\infty} \frac{2\pi\log\big|V_N(K;q=e^{\frac{2\pi i}{N}})\big|}{N} = {\rm Vol}(M)\,.$$
+
+It is also possible to remove the absolute value and exponentiate to obtain the complexified generalization (*cf.* [@Mur-cx])
+
+$$\boxed{V_N(K;q=e^{\frac{2\pi i}{N}}) \;\overset{N\to\infty}{\sim}\;  Z(M)^N = e^{\frac{N}{2\pi}\big({\rm Vol}(M)+i{\rm CS}(M)\big)}}\,.  \label{VC}$$
+
+![The figure-eight knot, $\mathbf{4_1}$](knot41){#fig:41 width="1.5in"}
+
+As an example, consider the figure-eight knot (Figure [1](#fig:41){reference-type="ref" reference="fig:41"}), the simplest hyperbolic knot. The colored Jones polynomial (see *e.g.* [@Kashaev-1997] or [@Habiro-Jones]) is
+
+$$V_N(\mathbf{4_1};q=e^{\frac{2\pi i}{N}}) = \sum_{m=0}^{N-1}(q)_m(q^{-1})_m\,,\qquad (x)_m := (1-x)(1-x^2)\cdots(1-x^m)\,.$$
+
+The hyperbolic volume of the figure-eight knot complement is
+
+$${\rm Vol}(S^3\backslash\mathbf{4_1}) = 2\,{\rm Vol}(\Delta) = 2.02988...\,, \label{vol41}$$
+
+where ${\rm Vol}(\Delta) = {\rm Im}\,{\rm Li}_2(e^{i\frac{\pi}{3}})$ denotes the volume of a regular hyperbolic ideal tetrahedron. The Chern-Simons invariant ${\rm CS}(S^3\backslash\mathbf{4_1})$ vanishes. It is fairly straightforward (and an informative exercise[^5]) to show that in the limit $N\to\infty$ one has, as expected,
+
+$$\lim_{N\to\infty} \frac{2\pi \log V_N(\mathbf{4_1};e^{\frac{2\pi i}{N}})}{N} = {\rm Vol}(S^3\backslash\mathbf{4_1})\,.$$
+
+[^1]: The most common normalization for the unknot seen in the mathematics literature is $J(\raisebox{-.05cm}{\includegraphics[width=.3cm]{unknot}})=1$. For the connection with topological quantum field theory, however, [\[JU\]](#JU){reference-type="eqref" reference="JU"} is much more natural.
+
+[^2]: This displacement must be done in a way that produces zero linking number between the various copies.
+
+[^3]: Recall that a "$G$-connection" on a principal $G$-bundle $E\to M$ can be written locally as a ${\frak{g}}$-valued one-form ${\cal A}$. The bundle $E$ is typically taken to be trivial in the present context, $E=G\times M$. A gauge transformation (a change of coordinates on $E$) induced by an element $g\in\Gamma(E)$ acts locally on the connection as ${\cal A}\mapsto g^{-1}{\cal A}g+g^{-1}dg$.
+
+[^4]: In terms of representation theory, the integer $k$ is identified as the level of the affine Lie algebra $\widehat{su(2)}_k$. The representation theory of the quantum group $U_q(su(2))$ also (crucially) simplifies greatly when $q$ is a root of unity, becoming essentially equivalent to the representation theory of $\widehat{su(2)}_k$. See also Sections [\[sec:TQFT_CS\]](#sec:TQFT_CS){reference-type="ref" reference="sec:TQFT_CS"}-[\[sec:path\]](#sec:path){reference-type="ref" reference="sec:path"}.
+
+[^5]: One method involves analytically continuing the summand as a ratio of quantum dilogarithm functions (*cf.* [@Fad-Kash; @DGLZ]), approximating the sum by an integral, and evaluating it at its saddle point.

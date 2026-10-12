@@ -6,7 +6,12 @@
   "sha256": "a5097e763dd89d06ccdddc79920f425d30d320a8f8ac6e1dc4150be11d5f7314",
   "bytes": 998768,
   "pages": 31,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:22Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,201 +21,1281 @@
    "stamp_date": "6 Apr 2026"
   },
   "doi": null,
-  "title": "Edge universality in Floquet sideband spectra Miguel Tierz",
-  "authors_raw": "Shanghai Institute for Mathematics and Interdisciplinary Sciences (SIMIS)",
+  "title": "Edge universality in Floquet sideband spectra",
+  "authors_raw": "Miguel Tierz",
   "title_lines": [
-   "Edge universality in Floquet sideband spectra",
-   "Miguel Tierz"
+   "Edge universality in Floquet sideband spectra"
   ],
   "abstract": "We show that, for non-interacting fermions under a monochromatic phase drive (Tien\u2013 Gordon regime), the outgoing sideband occupations at a sharp Fermi edge are governed by the discrete Bessel kernel\u2014an exact result at any drive amplitude A. In the large-amplitude regime the edge of this kernel converges, on the A1/3 scale, to the Airy kernel of random matrix theory. This universality has a direct transport consequence: the deficit of the photo-assisted shot-noise slope from its high-bias plateau collapses onto the Airy-kernel diagonal. The deriva- tion rests on a bridge between the linear detection chain and the Floquet scattering matrix: commensurate gating isolates a single coherence-order block of the one-body correlator. We identify the crossover temperature below which the Airy scaling is sharp, extend the analysis to biased two-terminal occupations, and argue that multi-tone drives make Pearcey-kernel cusps accessible in Floquet\u2013Sambe space.",
   "docinfo": {
    "Title": "Edge universality in Floquet sideband spectra",
    "Author": "Miguel Tierz",
    "Producer": "pikepdf 8.15.1",
-   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
-   "CreationDate": ""
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "Edge universality in Floquet sideband spectra",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Edge universality in Floquet sideband spectra",
+   "heading": "Edge universality in Floquet sideband spectra",
+   "outline": "Introduction",
+   "text": "Edge universality in Floquet sideband spectra",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 1,
-   "source": "inferred",
-   "number": null
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
-   "title": "Monochromatic, spatially uniform phase drive (Tien\u2013Gordon regime [7]). The drive enters",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "title": "Measurement-side viewpoint: windowing, demodulation, and the detection kernel",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "A linear readout functional",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Why the detection kernel must appear in the theory",
+   "page": 5,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
-   "title": "Wide-band static scatterer. The energy-independent factorization Snm(E) = U(E)Jn\u2212m(A)",
-   "page": 2,
-   "source": "inferred",
-   "number": "3"
+   "title": "Input\u2013output Floquet scattering and outgoing correlators",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
-   "level": 1,
-   "title": "Zero temperature. More precisely, kBTel \u226a\u210f\u2126\u03baA = \u210f\u2126(A/2)1/3. The crossover parameter is",
-   "page": 2,
-   "source": "inferred",
-   "number": "5"
+   "level": 2,
+   "title": "Sideband operators and the Floquet scattering matrix",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
-   "level": 1,
-   "title": "Large drive amplitude A \u226b1. The Airy limit is an asymptotic statement as A \u2192\u221e; the edge",
-   "page": 2,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "(\u03c90; t0)\u27e9=",
+   "level": 2,
+   "title": "Connecting the measurement to the correlator",
    "page": 7,
-   "source": "inferred",
-   "number": "0"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "Ai(s+u) Ai(t+u) du. Figure 7(b)",
+   "title": "Monochromatic phase drive and Toeplitz Floquet scattering",
+   "page": 9,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 1,
+   "title": "Free fermions and the discrete Bessel kernel",
+   "page": 10,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 2,
+   "title": "Extension: two-terminal devices and multi-step occupations",
+   "page": 11,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 1,
+   "title": "Soft edge and the Airy kernel",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
+  },
+  {
+   "level": 1,
+   "title": "Beyond the fold: cusps, multi-tone drives, and the Pearcey kernel",
+   "page": 14,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 2,
+   "title": "How a cusp arises in Floquet scattering",
+   "page": 15,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
+  },
+  {
+   "level": 2,
+   "title": "The Pearcey kernel",
+   "page": 16,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 2,
+   "title": "Expected diagnostic signatures: fold versus cusp",
+   "page": 16,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 2,
+   "title": "Why Floquet edges are richer than standard RMT edges",
+   "page": 16,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 1,
+   "title": "What the measurement sees at the soft edge",
+   "page": 18,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 1,
+   "title": "Photo-assisted shot noise at the Airy edge",
+   "page": 20,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
+  },
+  {
+   "level": 2,
+   "title": "The plateau deficit",
+   "page": 20,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
+  },
+  {
+   "level": 2,
+   "title": "Finite temperature and the crossover scale",
+   "page": 23,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion and outlook",
    "page": 24,
-   "source": "inferred",
-   "number": "0"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
+  },
+  {
+   "level": 2,
+   "title": "Summary",
+   "page": 24,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
+  },
+  {
+   "level": 2,
+   "title": "Experimental platforms",
+   "page": 25,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
+  },
+  {
+   "level": 2,
+   "title": "Open directions",
+   "page": 26,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 1,
-   "title": "Ai(s +",
+   "title": "Technical proofs",
    "page": 27,
-   "source": "inferred",
-   "number": "0"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
-   "level": 1,
-   "title": "References",
+   "level": 2,
+   "title": "Christoffel\u2013Darboux identity for the discrete Bessel kernel",
+   "page": 27,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
+  },
+  {
+   "level": 2,
+   "title": "Proof of the soft-edge Airy limit (Theorem 6.1)",
+   "page": 27,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
+  },
+  {
+   "level": 2,
+   "title": "Photo-assisted noise from the correlator framework (sketch)",
    "page": 28,
-   "source": "inferred",
-   "number": null
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   }
  ],
- "toc_source": "inferred",
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Windowed analysis of a Floquet signal",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Floquet scattering between harmonics. Sideband n receives amplitude from m via Snm",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Airy scaling collapse of sideband occupations. (a) Diagonal of the discrete Bessel kernel",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Two-point kernel at the soft edge for A = 100",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "(a) Heat map of the discrete Bessel kernel K(disc)",
+   "page": 20,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Comparison of Ai2(s) (dashed) and the Airy-kernel diagonal KAi(s, s) = Ai\u2032(s)2\u2212s Ai(s)2",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "(a) Plateau deficit collapse at T = 0 (V",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 963,
-   "n_words": 142
+   "n_chars": 1191,
+   "n_words": 171,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-introduction",
+   "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 3451,
-   "n_words": 528
+   "page_end": 4,
+   "n_chars": 10272,
+   "n_words": 1600,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
-   "id": "sec-002-2-monochromatic-spatially-uniform-phase-drive-ti",
-   "number": "2",
-   "title": "Monochromatic, spatially uniform phase drive (Tien\u2013Gordon regime [7]). The drive enters",
+   "id": "sec-001-measurement-side-viewpoint-windowing-demodulatio",
+   "number": null,
+   "title": "Measurement-side viewpoint: windowing, demodulation, and the detection kernel",
    "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 165,
-   "n_words": 22
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 279,
+   "n_words": 47,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-3-wide-band-static-scatterer-the-energy-independ",
-   "number": "3",
-   "title": "Wide-band static scatterer. The energy-independent factorization Snm(E) = U(E)Jn\u2212m(A)",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 555,
-   "n_words": 89
+   "id": "sec-002-a-linear-readout-functional",
+   "number": null,
+   "title": "A linear readout functional",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2326,
+   "n_words": 383,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-004-5-zero-temperature-more-precisely-kbtel-\u210f\u03c9\u03baa-\u210f\u03c9a",
-   "number": "5",
-   "title": "Zero temperature. More precisely, kBTel \u226a\u210f\u2126\u03baA = \u210f\u2126(A/2)1/3. The crossover parameter is",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 95,
-   "n_words": 19
+   "id": "sec-003-why-the-detection-kernel-must-appear-in-the-theo",
+   "number": null,
+   "title": "Why the detection kernel must appear in the theory",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1127,
+   "n_words": 177,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-005-6-large-drive-amplitude-a-1-the-airy-limit-is-an",
-   "number": "6",
-   "title": "Large drive amplitude A \u226b1. The Airy limit is an asymptotic statement as A \u2192\u221e; the edge",
+   "id": "sec-004-inputoutput-floquet-scattering-and-outgoing-corr",
+   "number": null,
+   "title": "Input\u2013output Floquet scattering and outgoing correlators",
    "level": 1,
-   "page_start": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 353,
+   "n_words": 55,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-005-sideband-operators-and-the-floquet-scattering-ma",
+   "number": null,
+   "title": "Sideband operators and the Floquet scattering matrix",
+   "level": 2,
+   "page_start": 6,
    "page_end": 7,
-   "n_chars": 13612,
-   "n_words": 2179
+   "n_chars": 1839,
+   "n_words": 311,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-006-0-\u03c90-t0",
-   "number": "0",
-   "title": "(\u03c90; t0)\u27e9=",
-   "level": 1,
+   "id": "sec-006-connecting-the-measurement-to-the-correlator",
+   "number": null,
+   "title": "Connecting the measurement to the correlator",
+   "level": 2,
    "page_start": 7,
-   "page_end": 24,
-   "n_chars": 48371,
-   "n_words": 8315
+   "page_end": 9,
+   "n_chars": 5965,
+   "n_words": 965,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
-   "id": "sec-007-0-aisu-aitu-du-figure-7b",
-   "number": "0",
-   "title": "Ai(s+u) Ai(t+u) du. Figure 7(b)",
+   "id": "sec-007-monochromatic-phase-drive-and-toeplitz-floquet-s",
+   "number": null,
+   "title": "Monochromatic phase drive and Toeplitz Floquet scattering",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 3350,
+   "n_words": 562,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-008-free-fermions-and-the-discrete-bessel-kernel",
+   "number": null,
+   "title": "Free fermions and the discrete Bessel kernel",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 4805,
+   "n_words": 825,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-009-extension-two-terminal-devices-and-multi-step-oc",
+   "number": null,
+   "title": "Extension: two-terminal devices and multi-step occupations",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2418,
+   "n_words": 461,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-010-soft-edge-and-the-airy-kernel",
+   "number": null,
+   "title": "Soft edge and the Airy kernel",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 5507,
+   "n_words": 971,
+   "label_start": "12",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-011-beyond-the-fold-cusps-multi-tone-drives-and-the",
+   "number": null,
+   "title": "Beyond the fold: cusps, multi-tone drives, and the Pearcey kernel",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1850,
+   "n_words": 327,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-012-how-a-cusp-arises-in-floquet-scattering",
+   "number": null,
+   "title": "How a cusp arises in Floquet scattering",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1360,
+   "n_words": 238,
+   "label_start": "15",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-013-the-pearcey-kernel",
+   "number": null,
+   "title": "The Pearcey kernel",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 623,
+   "n_words": 127,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-014-expected-diagnostic-signatures-fold-versus-cusp",
+   "number": null,
+   "title": "Expected diagnostic signatures: fold versus cusp",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1530,
+   "n_words": 267,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-015-why-floquet-edges-are-richer-than-standard-rmt-e",
+   "number": null,
+   "title": "Why Floquet edges are richer than standard RMT edges",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 5482,
+   "n_words": 874,
+   "label_start": "16",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-016-what-the-measurement-sees-at-the-soft-edge",
+   "number": null,
+   "title": "What the measurement sees at the soft edge",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 7193,
+   "n_words": 1182,
+   "label_start": "18",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-017-photo-assisted-shot-noise-at-the-airy-edge",
+   "number": null,
+   "title": "Photo-assisted shot noise at the Airy edge",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1087,
+   "n_words": 170,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-018-the-plateau-deficit",
+   "number": null,
+   "title": "The plateau deficit",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 7564,
+   "n_words": 1386,
+   "label_start": "20",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-019-finite-temperature-and-the-crossover-scale",
+   "number": null,
+   "title": "Finite temperature and the crossover scale",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2215,
+   "n_words": 377,
+   "label_start": "23",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-020-conclusion-and-outlook",
+   "number": null,
+   "title": "Conclusion and outlook",
    "level": 1,
    "page_start": 24,
-   "page_end": 27,
-   "n_chars": 12423,
-   "n_words": 1888
+   "page_end": 24,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "24",
+   "label_end": "24"
   },
   {
-   "id": "sec-008-0-ais",
-   "number": "0",
-   "title": "Ai(s +",
+   "id": "sec-021-summary",
+   "number": null,
+   "title": "Summary",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2737,
+   "n_words": 431,
+   "label_start": "24",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-022-experimental-platforms",
+   "number": null,
+   "title": "Experimental platforms",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2959,
+   "n_words": 448,
+   "label_start": "25",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-023-open-directions",
+   "number": null,
+   "title": "Open directions",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3431,
+   "n_words": 483,
+   "label_start": "26",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-024-technical-proofs",
+   "number": null,
+   "title": "Technical proofs",
    "level": 1,
    "page_start": 27,
-   "page_end": 28,
-   "n_chars": 2027,
-   "n_words": 373
+   "page_end": 27,
+   "n_chars": 314,
+   "n_words": 47,
+   "label_start": "27",
+   "label_end": "27"
   },
   {
-   "id": "sec-009-references",
+   "id": "sec-025-christoffeldarboux-identity-for-the-discrete-bes",
    "number": null,
-   "title": "References",
-   "level": 1,
+   "title": "Christoffel\u2013Darboux identity for the discrete Bessel kernel",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 623,
+   "n_words": 110,
+   "label_start": "27",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-026-proof-of-the-soft-edge-airy-limit-theorem-61",
+   "number": null,
+   "title": "Proof of the soft-edge Airy limit (Theorem 6.1)",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1593,
+   "n_words": 310,
+   "label_start": "27",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-027-photo-assisted-noise-from-the-correlator-framewo",
+   "number": null,
+   "title": "Photo-assisted noise from the correlator framework (sketch)",
+   "level": 2,
    "page_start": 28,
    "page_end": 31,
-   "n_chars": 7956,
-   "n_words": 1096
+   "n_chars": 9145,
+   "n_words": 1288,
+   "label_start": "28",
+   "label_end": "31"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 10,
-  "sections": 10,
-  "chars_total": 89618
+  "toc_entries": 28,
+  "toc_inferred_entries": 0,
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 29,
+  "chars_total": 89138,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 24,
+   "overlaid": 23,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-measurement-side-viewpoint-windowing-demodulatio",
+     "title": "Measurement-side viewpoint: windowing, demodulation, and the detection kernel",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-a-linear-readout-functional",
+     "title": "A linear readout functional",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.876,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-why-the-detection-kernel-must-appear-in-the-theo",
+     "title": "Why the detection kernel must appear in the theory",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-inputoutput-floquet-scattering-and-outgoing-corr",
+     "title": "Input\u2013output Floquet scattering and outgoing correlators",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-sideband-operators-and-the-floquet-scattering-ma",
+     "title": "Sideband operators and the Floquet scattering matrix",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-connecting-the-measurement-to-the-correlator",
+     "title": "Connecting the measurement to the correlator",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-monochromatic-phase-drive-and-toeplitz-floquet-s",
+     "title": "Monochromatic phase drive and Toeplitz Floquet scattering",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-free-fermions-and-the-discrete-bessel-kernel",
+     "title": "Free fermions and the discrete Bessel kernel",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-extension-two-terminal-devices-and-multi-step-oc",
+     "title": "Extension: two-terminal devices and multi-step occupations",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-soft-edge-and-the-airy-kernel",
+     "title": "Soft edge and the Airy kernel",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-beyond-the-fold-cusps-multi-tone-drives-and-the",
+     "title": "Beyond the fold: cusps, multi-tone drives, and the Pearcey kernel",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.709,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-how-a-cusp-arises-in-floquet-scattering",
+     "title": "How a cusp arises in Floquet scattering",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-the-pearcey-kernel",
+     "title": "The Pearcey kernel",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-expected-diagnostic-signatures-fold-versus-cusp",
+     "title": "Expected diagnostic signatures: fold versus cusp",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-why-floquet-edges-are-richer-than-standard-rmt-e",
+     "title": "Why Floquet edges are richer than standard RMT edges",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-what-the-measurement-sees-at-the-soft-edge",
+     "title": "What the measurement sees at the soft edge",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-photo-assisted-shot-noise-at-the-airy-edge",
+     "title": "Photo-assisted shot noise at the Airy edge",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-the-plateau-deficit",
+     "title": "The plateau deficit",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-finite-temperature-and-the-crossover-scale",
+     "title": "Finite temperature and the crossover scale",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-conclusion-and-outlook",
+     "title": "Conclusion and outlook",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-summary",
+     "title": "Summary",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-experimental-platforms",
+     "title": "Experimental platforms",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-open-directions",
+     "title": "Open directions",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-technical-proofs",
+     "title": "Technical proofs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-christoffeldarboux-identity-for-the-discrete-bes",
+     "title": "Christoffel\u2013Darboux identity for the discrete Bessel kernel",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-proof-of-the-soft-edge-airy-limit-theorem-61",
+     "title": "Proof of the soft-edge Airy limit (Theorem 6.1)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-photo-assisted-noise-from-the-correlator-framewo",
+     "title": "Photo-assisted noise from the correlator framework (sketch)",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

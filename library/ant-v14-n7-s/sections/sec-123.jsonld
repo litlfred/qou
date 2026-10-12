@@ -1,22 +1,29 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-123",
   "@type": [
     "doco:Section"
   ],
-  "title": "1A. Statement of the main theorem",
-  "pageStart": 246,
-  "pageEnd": 249,
+  "title": "2B. Rational points on twisted Hurwitz spaces over finite fields",
+  "pageStart": 232,
+  "pageEnd": 238,
   "contains": [
     "library/ant-v14-n7-s/blocks/prose-sec-123",
-    "library/ant-v14-n7-s/blocks/thm-sec-123-01",
-    "library/ant-v14-n7-s/blocks/cor-sec-123-02",
-    "library/ant-v14-n7-s/blocks/rem-sec-123-03",
-    "library/ant-v14-n7-s/blocks/cor-sec-123-04",
-    "library/ant-v14-n7-s/blocks/rem-sec-123-05",
-    "library/ant-v14-n7-s/blocks/cor-sec-123-06"
+    "library/ant-v14-n7-s/blocks/prop-sec-123-01",
+    "library/ant-v14-n7-s/blocks/remark-sec-123-02",
+    "library/ant-v14-n7-s/blocks/thm-sec-123-03",
+    "library/ant-v14-n7-s/blocks/thm-sec-123-04",
+    "library/ant-v14-n7-s/blocks/thm-sec-123-05",
+    "library/ant-v14-n7-s/blocks/lem-sec-123-06",
+    "library/ant-v14-n7-s/blocks/prop-sec-123-07",
+    "library/ant-v14-n7-s/blocks/prop-sec-123-08"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"
 }

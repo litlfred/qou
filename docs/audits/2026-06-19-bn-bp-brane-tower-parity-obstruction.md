@@ -179,5 +179,5 @@ structural condition any survivor must meet.
   check was run at n=9.
 - **No fit; single embedding committed a priori; nothing wired; TIERED.**
 - **Corpus-grep clean** — the H₆/H₉ `χ_λ(𝓑_n−𝓑_p)` genuinely did not exist (the n=6
-  hits were all `computations/_deprecated/`); this is the first live higher-level
+  hits were all `fsh-guts/deprecated/computations/`); this is the first live higher-level
   datum, and it is a structural negative on the obvious embedding.

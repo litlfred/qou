@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0008027v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0008027v1",
+  "contains": [
+    "library/arxiv-math-0008027v1/sections/sec-front-matter",
+    "library/arxiv-math-0008027v1/sections/sec-000",
+    "library/arxiv-math-0008027v1/sections/sec-001",
+    "library/arxiv-math-0008027v1/sections/sec-002",
+    "library/arxiv-math-0008027v1/sections/sec-003",
+    "library/arxiv-math-0008027v1/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0008027&metadataPrefix=arXiv), submitted 2000-08-03, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0008027v1",
+    "title_source": "slug",
+    "source_file": "0008027v1.pdf",
+    "source_sha256": "8bce0b8a1bca372edf9322e8109cd25e0ac04fab6d3bf3d0b37784c537446dda",
+    "pages": 21,
+    "arxiv": {
+      "id": "math/0008027",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "3 Aug 2000"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

@@ -5,7 +5,11 @@
   "file": "1808.08110v1.pdf",
   "sha256": "4bf98566792d47bdc7c72bce3c3d0e4a82dbc3ec5d8287d112b180e94c7fb443",
   "bytes": 175984,
-  "pages": 18
+  "pages": 18,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
   "doi": null,
   "title": "Exceptional quantum geometry and particle physics II",
   "authors_raw": "AND PARTICLE PHYSICS II",
-  "abstract": "We continue the study undertaken in [13] of the relevance of t he exceptional Jordan algebra J 8 3 of hermitian 3 × 3 octonionic matrices for the description of the internal space of the fundamental fermions of the Standard Model with 3 generations. By using the sugges tion of [30] (properly justiﬁed here) that the Jordan algebra J 8 2 of hermitian 2 × 2 octonionic matrices is relevant for the description of the internal space of the fundamental fermions of one generation, we show that, based on the same principles and the same framework as in [13] , there is a way to describe the internal space of the 3 generations wh ich avoids the introduction of new fundamental fermions and whe re there is no problem with respect to the electroweak symmetry. LPT-ORSAY 18-78 1Laboratoire de Physique Th´ eorique, CNRS, Universit´ e Paris-Sud, Universit´ e Paris- Saclay, Bˆ atiment 210, F-91 405 Orsay. Michel.Dubois-Violette@u-psud.fr 2INRNE, Bulgarian Academy of Sciences, Tsarigradsko Chaussee 72 , BG-1784 Soﬁa. ivbortodorov@gmail.com",
+  "abstract": "We continue the study undertaken in [13] of the relevance of t he exceptional Jordan algebra J 8 3 of hermitian 3 \u00d7 3 octonionic matrices for the description of the internal space of the fundamental fermions of the Standard Model with 3 generations. By using the sugges tion of [30] (properly justi\ufb01ed here) that the Jordan algebra J 8 2 of hermitian 2 \u00d7 2 octonionic matrices is relevant for the description of the internal space of the fundamental fermions of one generation, we show that, based on the same principles and the same framework as in [13] , there is a way to describe the internal space of the 3 generations wh ich avoids the introduction of new fundamental fermions and whe re there is no problem with respect to the electroweak symmetry. LPT-ORSAY 18-78 1Laboratoire de Physique Th\u00b4 eorique, CNRS, Universit\u00b4 e Paris-Sud, Universit\u00b4 e Paris- Saclay, B\u02c6 atiment 210, F-91 405 Orsay. Michel.Dubois-Violette@u-psud.fr 2INRNE, Bulgarian Academy of Sciences, Tsarigradsko Chaussee 72 , BG-1784 So\ufb01a. ivbortodorov@gmail.com",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20180826201924-04'00'",
@@ -126,6 +130,40 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 3,
-  "chars_total": 29448
+  "chars_total": 29448,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 8,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.549,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-5-w2-triality-and-the-3-generations",
+     "title": "W2-triality and the 3 generations",
+     "prose_ratio": 0.638,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-8-discussion",
+     "title": "Discussion",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.489,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

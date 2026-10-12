@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s0894-0347-00-00337-4/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "Poissonization and correlation functions. For θ > 0, consider the pois-",
+  "title": "Poissonization and correlation functions",
   "pageStart": 3,
   "pageEnd": 4,
-  "text": "../sections/sec-002-12-poissonization-and-correlation-functions-for.md",
-  "derivedFrom": "library/s0894-0347-00-00337-4/manifest",
-  "sourceDocument": "library/s0894-0347-00-00337-4/manifest",
+  "text": "../sections/sec-002-12-poissonization-and-correlation-functions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-00-00337-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-00-00337-4/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1409.2849v1/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1409.2849v1/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Sub-critical changes of measures",
   "pageStart": 19,
   "pageEnd": 20,
   "text": "../sections/sec-008-35-sub-critical-changes-of-measures.md",
-  "derivedFrom": "library/arxiv-1409.2849v1/manifest",
-  "sourceDocument": "library/arxiv-1409.2849v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.2849v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.2849v1/manifest.jsonld",
   "provenance": "ingested"
 }

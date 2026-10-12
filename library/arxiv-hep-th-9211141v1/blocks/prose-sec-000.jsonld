@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9211141v1/blocks/prose-sec-000",
   "kind": "prose",
   "title": "INTRODUCTION AND SUMMARY OF RESULTS",
   "pageStart": 2,
-  "pageEnd": 5,
-  "text": "../sections/sec-000-i-introduction-and-summary-of-results.md",
-  "derivedFrom": "library/arxiv-hep-th-9211141v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9211141v1/manifest",
+  "pageEnd": 9,
+  "text": "../sections/sec-000-1-introduction-and-summary-of-results.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9211141v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9211141v1/manifest.jsonld",
   "provenance": "ingested"
 }

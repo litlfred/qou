@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0103005v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-nucl-th-0103005v2",
+  "contains": [
+    "library/arxiv-nucl-th-0103005v2/sections/sec-front-matter",
+    "library/arxiv-nucl-th-0103005v2/sections/sec-000",
+    "library/arxiv-nucl-th-0103005v2/sections/sec-001",
+    "library/arxiv-nucl-th-0103005v2/sections/sec-002",
+    "library/arxiv-nucl-th-0103005v2/sections/sec-003",
+    "library/arxiv-nucl-th-0103005v2/sections/sec-004",
+    "library/arxiv-nucl-th-0103005v2/sections/sec-005",
+    "library/arxiv-nucl-th-0103005v2/sections/sec-006",
+    "library/arxiv-nucl-th-0103005v2/sections/sec-007",
+    "library/arxiv-nucl-th-0103005v2/sections/sec-008",
+    "library/arxiv-nucl-th-0103005v2/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:nucl-th/0103005&metadataPrefix=arXiv), submitted 2001-03-06, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-nucl-th-0103005v2",
+    "title_source": "slug",
+    "source_file": "0103005v2.pdf",
+    "source_sha256": "c2aaa21b51d7bc107ff141a37385ce66140f1069f1df3e8c6bbf9441affe3ba2",
+    "pages": 43,
+    "arxiv": {
+      "id": "nucl-th/0103005",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "6 Mar 2001"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

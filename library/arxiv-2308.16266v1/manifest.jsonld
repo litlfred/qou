@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2308.16266v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2308.16266v1",
+  "contains": [
+    "library/arxiv-2308.16266v1/sections/sec-000",
+    "library/arxiv-2308.16266v1/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2308.16266&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2308.16266v1",
+    "title_source": "slug",
+    "source_file": "2308.16266v1.pdf",
+    "source_sha256": "59f0cbfb48d717bb4ef70dc7ceaa287a724d0a0ed30bbe659747b3b6bad14d09",
+    "pages": 7,
+    "arxiv": {
+      "id": "2308.16266",
+      "version": "1",
+      "primary_class": "nucl-th",
+      "stamp_date": "30 Aug 2023"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

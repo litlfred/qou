@@ -1,8 +1,14 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+    }
+  ],
   "@id": "library/deligne-mostow-1986/blocks/cor-sec-020-07",
   "@type": [
-    "folio:Corollary",
+    "folio-assistant-sci:Corollary",
     "doco:Section"
   ],
   "kind": "corollary",
@@ -11,6 +17,6 @@
   "pageEnd": 64,
   "text": "cor-sec-020-07.md",
   "derivedFrom": "library/deligne-mostow-1986/sections/sec-020",
-  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
   "provenance": "ingested"
 }

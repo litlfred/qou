@@ -7,7 +7,11 @@
   "bytes": 267380,
   "pages": 26,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -127,6 +131,40 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 3,
-  "chars_total": 45969
+  "chars_total": 45969,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "brieskorn.tex",
+   "tex_sections": 9,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-s-matrix-and-the-reidemeister-torsion",
+     "title": "S-matrix and the Reidemeister Torsion",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-the-ohtsuki-invariant",
+     "title": "The Ohtsuki Invariant",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.593,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

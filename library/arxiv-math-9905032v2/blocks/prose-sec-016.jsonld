@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9905032v2/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9905032v2/blocks/prose-sec-016",
   "kind": "prose",
-  "title": "Introduce the following kernel L",
-  "pageStart": 12,
-  "pageEnd": 14,
-  "text": "../sections/sec-016-2-introduce-the-following-kernel-l.md",
-  "derivedFrom": "library/arxiv-math-9905032v2/manifest",
-  "sourceDocument": "library/arxiv-math-9905032v2/manifest",
+  "title": "Fredholm determinants and determinantal processes",
+  "pageStart": 36,
+  "pageEnd": 38,
+  "text": "../sections/sec-016-a1-fredholm-determinants-and-determinantal-proce.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9905032v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9905032v2/manifest.jsonld",
   "provenance": "ingested"
 }

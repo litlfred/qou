@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "A conjecture of Joseph",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-010-11-a-conjecture-of-joseph.md",
-  "derivedFrom": "library/invariant-eigendistributions-2/manifest",
-  "sourceDocument": "library/invariant-eigendistributions-2/manifest",
+  "title": "Harmonic polynomials",
+  "pageStart": 16,
+  "pageEnd": 21,
+  "text": "../sections/sec-010-8-harmonic-polynomials.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/invariant-eigendistributions-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/invariant-eigendistributions-2/manifest.jsonld",
   "provenance": "ingested"
 }

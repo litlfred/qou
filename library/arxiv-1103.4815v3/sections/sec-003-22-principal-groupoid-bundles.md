@@ -8,91 +8,171 @@ pages: 6-9
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
 doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
+text_source: latex
+latex_prose_ratio: 0.902
+latex_coverage_ratio: 0.931
 ---
-We give the deﬁnition of a principal bundle in exactly the same way as we are going to deﬁne
-principal 2-bundles in Section 6.
-Deﬁnition 2.2.1. LetM be a smooth manifold, and let Γ be a Lie groupoid.
-– 6 –
-1. A principal Γ -bundle over M is a smooth manifold P with a surjective submersion π :
-P /d47/d47 M and a right Γ -action (α,ρ ) that respects the projection π, such that
-τ :P α ×t Γ 1 /d47/d47 P ×M P : (p,g ) ✤ /d47/d47 (p,ρ (p,g ))
-is a diﬀeomorphism.
-2. Let P1 and P2 be principal Γ -bundles over M . A morphism ϕ :P1 /d47/d47 P2 is a Γ -equivariant
-smooth map that respects the projections to M .
-Principal Γ-bundles over M form a category BunΓ (M ). In fact, this category is a groupoid, i.e.
-all morphisms between principal Γ-bundles are invertible. There is an evident notion of a pullback
-f ∗P of a principal Γ-bundle P overM along a smooth map f :X /d47/d47 M , and similarly, morphisms
-between principal Γ-bundles pull back. These deﬁne a functor
-f ∗ : BunΓ (M ) /d47/d47 BunΓ (X).
-These functors make principal Γ-bundles a prestack over smooth manifolds. One can easily show
-that this prestack is a stack (for the Grothendieck topology of su rjective submersions).
-Example 2.2.2 (Ordinary principal bundles) . ForG a Lie group, we have an equality of categories
-BunBG(M ) = BunG(M ),
-i.e. Deﬁnition 2.2.1 reduces consistently to the deﬁnition of an ordinar y principal G-bundle.
-Example 2.2.3 (Trivial principal groupoid bundles) . ForM a smooth manifold and f :M /d47/d47 Γ 0
-a smooth map, P :=M f×t Γ 1 andπ(m,g ) := m deﬁne a surjective submersion, and α(m,g ) := s(g)
-and ρ((m,g ),h ) := (m,g ◦h) deﬁne a right action of Γ on P that preserves the ﬁbers. The map τ
-we have to look at has the inverse
-τ −1 :P ×M P /d47/d47 P π ×t Γ 1 : ((m,g 1), (m,g 2)) ✤ /d47/d47 ((m,g 1),g −1
-1 ◦g2),
-which is smooth. Thus we have deﬁned a principal Γ-bundle, which we d enote by If and which we
-call the trivial bundle for the map f . Any bundle that is isomorphic to a trivial bundle is called
-trivializable.
-Example 2.2.4 (Discrete structure groupoids) . ForX a smooth manifold, we have an equivalence
-of categories
-BunXdis(M ) ∼=C∞(M,X )dis.
-Indeed, for a given principal Xdis-bundle P one observes that the anchor α : P /d47/d47 X descends
-along the bundle projection to a smooth map f :M /d47/d47 X, and that isomorphic bundles determine
-the same map. Conversely, one associates to a smooth map f :M /d47/d47 X the trivial principal Xdis-
-bundle If overM .
-– 7 –
-Example 2.2.5 (Exact sequences) . Let
-1 /d47/d47H t /d47/d47G
-p /d47/d47K /d47/d47 1 (2.2.1)
-be an exact sequence of Lie groups, and let Γ := G/ /Hbe the action groupoid associated to the Lie
-group homomorphismt :H /d47/d47 G as explained in Example 2.1.1 (d). In this situation, p :G /d47/d47 K
-is a surjective submersion, and
-α :G /d47/d47 Γ 0 :g ✤ /d47/d47 g and ρ :Gα ×t Γ 1 /d47/d47 G : (g, (h,g ′)) ✤ /d47/d47 g′
-deﬁne a smooth right action of Γ on G that preserves p. The inverse of the map τ is
-τ −1 :G ×KG /d47/d47 Gα ×t Γ 1 : (g1,g 2) ✤ /d47/d47 (g1, (t−1(g1g−1
-2 ),g 2)),
-which is smooth because t is an embedding. Thus, G is a principal Γ-bundle over K.
-Next we provide some elementary statements about trivial principa l Γ-bundles.
-Lemma 2.2.6. A principal Γ -bundle over M is trivializable if and only if it has a smooth section.
-Proof. A trivial bundle If has the section
-sf :M /d47/d47 If :x ✤ /d47/d47 (x, idf (x));
-and so any trivializable bundle has a section. Conversely, suppose a p rincipal Γ-bundle P has a
-smooth section s :M /d47/d47 P . Then, with f :=α ◦s,
-ϕ : If /d47/d47 P : (m,g ) ✤ /d47/d47 ρ(s(m),g )
-is an isomorphism. □
-The following consequence shows that principal Γ-bundles of Deﬁnit ion 2.2.1 are locally trivial-
-izable in the usual sense.
-Corollary 2.2.7. Let P be a principal Γ -bundle over M . Then, every point x ∈ M has an open
-neighborhoodU over which P has a trivialization: a smooth map f : U /d47/d47 Γ 0 and a morphism
-ϕ : If /d47/d47 P |U .
-Proof. One can choose U such that the surjective submersion π :U /d47/d47 P has a smooth section.
-Then, Lemma 2.2.6 applies to the restriction P |U . □
-We determine the Hom-set Hom(If1, If2 ) between trivial principal Γ-bundles deﬁned by smooth
-mapsf1,f 2 :M /d47/d47 Γ 0. To a bundle morphism ϕ : If1
-/d47/d47 If2 one associates the smooth function
-g :M /d47/d47 Γ 1 which is uniquely deﬁned by the condition
-(ϕ ◦sf1 )(x) = sf2 (x) ◦g(x).
-for all x ∈ M . It is straightforward to see that
-– 8 –
-Lemma 2.2.8. The above construction deﬁnes a bijection
-Hom(If1, If2 ) /d47/d47 {g ∈ C∞(M, Γ 1) |s ◦g =f1 and t ◦g =f2} ,
-under which identity morphisms correspond to constant maps and the composition of bundle mor-
-phisms corresponds to the point-wise composition of functi ons.
-Finally, we consider the case of principal bundles for action groupoid s.
-Lemma 2.2.9. SupposeX/ /His a smooth action groupoid. The category BunX/ /H(M ) is equivalent
-to a category with
-• Objects: principal H-bundles PH over M together with a smooth, H-anti-equivariant map
-f : PH /d47/d47 X, i.e. f (p ·h) = h−1f (p).
-• Morphisms: bundle morphisms ϕH :PH /d47/d47 P ′
-H that respect the maps f and f ′.
-Proof. For a principal X/ /H-bundle (P,α,ρ ) we set PH :=P with the given projection to M . The
-action of H on PH is deﬁned by
-p⋆h :=ρ(p, (h,h −1 ·α(p))).
-This action is smooth, and it follows from the axioms of the principal bu ndleP that it is principal.
-The map f : PH /d47/d47 X is the anchor α. The remaining steps are straightforward and left as an
-exercise. □
+We give the definition of a principal  bundle in exactly the same way as we are going to define principal \emph{2-}bundles in Section \ref{sec:2bundle}.
+
+\begin{definition}
+\label{def:pgb}
+Let $M$ be a smooth manifold, and let $\Gamma$ be a Lie groupoid.
+\begin{enumerate}
+\item 
+A \emph{principal $\Gamma$-bundle over $M$} is a smooth manifold $P$ with a surjective submersion $\pi: P \to M$ and a right $\Gamma$-action $(\alpha,\rho)$ that respects the projection $\pi$, such that
+\begin{equation*}
+\tau: P \lli{\alpha} \times_{t} \Gamma_1 \to P \times_M P : (p,g) \mapsto (p,\rho(p,g))
+\end{equation*}
+is a diffeomorphism.
+
+\item
+Let $P_1$ and $P_2$ be  principal $\Gamma$-bundles over $M$. A \emph{morphism} $\varphi: P_1 \to P_2$
+is a $\Gamma$-equivariant smooth map that respects the projections to $M$.
+\end{enumerate}
+\end{definition}
+
+Principal $\Gamma$-bundles over $M$ form a category $\bun {\Gamma} M$.
+In fact, this category is a groupoid, i.e. all morphisms between principal $\Gamma$-bundles are invertible. 
+There is an evident notion of a pullback $f^{*}P$ of a principal $\Gamma$-bundle $P$ over $M$ along a smooth map $f: X \to M$, and similarly, morphisms between principal $\Gamma$-bundles pull back. These define a functor
+\begin{equation*}
+f^{*}: \bun \Gamma M \to \bun \Gamma X\text{.}
+\end{equation*} 
+These functors make principal $\Gamma$-bundles a prestack over smooth manifolds. One can  easily show that this prestack is a stack (for the Grothendieck topology of surjective submersions). 
+
+
+\begin{example}[Ordinary principal bundles]
+\label{ex:grpdbun}
+For $G$ a Lie group, we have an equality of categories
+\begin{equation*}
+\bun {\mathcal{B}G} M = \bun G M\text{,}
+\end{equation*}
+i.e. Definition \ref{def:pgb} reduces consistently to the definition of an ordinary principal $G$-bundle. 
+\end{example}
+
+\begin{example}
+[Trivial principal groupoid bundles]  
+\label{trivialbundle}
+For $M$ a smooth manifold and $f: M \to \Gamma_0$ a smooth map, 
+$P := M \lli f \times_t \Gamma_1$
+and
+$\pi(m,g) := m$ define a surjective submersion, and
+$\alpha(m,g) := s(g)$ and $\rho((m,g),h) \df (m, g \circ h)$
+define a right action of $\Gamma$ on $P$ that preserves the fibers. 
+The map $\tau$
+we have to look at has the inverse 
+\begin{equation*}
+\tau^{-1}: P \times_M P \to P \lli{\pi} \times_{t} \Gamma_1: ((m,g_1),(m,g_2)) \mapsto ((m,g_1),g_1^{-1} \circ g_2)\text{,}
+\end{equation*}
+which is smooth. Thus we have defined a principal $\Gamma$-bundle, which we denote by $\trivlin_f$ and which we  call the \emph{trivial bundle for the map $f$}. Any bundle that is isomorphic to a trivial bundle is called \emph{trivializable}. 
+\end{example}
+
+\begin{example}[Discrete structure groupoids]
+\label{ex:idmorphbundle}
+For $X$ a smooth manifold, we have an equivalence of categories
+\begin{equation*}
+\bun {\idmorph X}M \cong \idmorph{C^{\infty}(M,X)}\text{.}
+\end{equation*}
+Indeed, for a given principal $\idmorph{X}$-bundle $P$ one observes that the anchor $\alpha:P \to X$ descends along the bundle projection to a smooth map $f:M \to X$, and that isomorphic bundles determine the same map. Conversely, one associates to a smooth map $f: M \to X$ the trivial principal $\idmorph{X}$-bundle $\trivlin_f$ over $M$. 
+\end{example}
+
+\begin{example}[Exact sequences]
+Let
+\begin{equation}
+\label{exact1}
+\alxydim{}{1 \ar[r] & H \ar[r]^{t} & G \ar[r]^{p} & K \ar[r] & 1}
+\end{equation} 
+be an exact sequence of Lie groups, and let  $\Gamma := \act GH$ be the action groupoid associated to the Lie group homomorphism $t:H \to G$ as explained in Example \ref{exliecat} \erf{extHG}. In this situation, $p:G \to K$ is a surjective submersion, and
+\begin{equation*}
+\alpha:G \to \Gamma_0:g \mapsto g
+\quand
+\rho: G \lli{\alpha}\times_{t}\Gamma_1 \to G: (g,(h,g')) \mapsto g'
+\end{equation*}
+define a smooth right action of $\Gamma$ on $G$ that preserves $p$. The inverse of the  map $\tau$ is
+\begin{equation*}
+\tau^{-1}: G \times_K G \to G \lli{\alpha}\times_{t}\Gamma_1: (g_1,g_2) \mapsto (g_1, (t^{-1}(g_1g_2^{-1}),g_2))\text{,}
+\end{equation*}
+which is smooth because $t$ is an embedding. Thus, $G$ is a principal $\Gamma$-bundle over $K$. 
+\end{example}
+
+
+
+Next we  provide some elementary statements about trivial principal $\Gamma$-bundles.
+
+\begin{lemma}
+\label{lem:loctriv}
+A principal $\Gamma$-bundle over $M$ is trivializable if and only if it has a smooth section.
+\end{lemma}
+
+\begin{proof}
+A trivial bundle $\trivlin_f$ has the section
+\begin{equation*}
+s_f: M \to \trivlin_{f}: x \mapsto (x,\id_{f(x)})\text{;}
+\end{equation*}
+and so any trivializable bundle has a section. Conversely, suppose a principal $\Gamma$-bundle $P$ has a smooth section $s: M \to P$. Then, with $f := \alpha \circ s$,
+\begin{equation*}
+\varphi: \trivlin_f \to P: (m,g) \mapsto \rho(s(m),g)
+\end{equation*}
+is an isomorphism.
+\end{proof}
+
+The following consequence shows that principal $\Gamma$-bundles of Definition \ref{def:pgb}  are locally trivializable in the usual sense.
+
+\begin{corollary}
+Let $P$ be a principal $\Gamma$-bundle over $M$. Then, every point $x\in M$ has an open neighborhood $U$ over which $P$ has a  trivialization: a smooth map $f: U \to \Gamma_0$ and a morphism
+$\varphi: \trivlin_f \to P|_U$.
+\end{corollary}
+
+\begin{proof}
+One can choose $U$ such that the surjective submersion $\pi:U \to P$ has a smooth section. Then, Lemma \ref{lem:loctriv} applies to the restriction $P|_U$.
+\end{proof}
+
+We  determine the Hom-set $\hom {\trivlin_{f_1}} {\trivlin_{f_2}}$ between trivial principal $\Gamma$-bundles defined by smooth maps $f_1,f_2\maps M \to \Gamma_0$. To a bundle morphism $\varphi: \trivlin_{f_1} \to \trivlin_{f_2}$ one associates the smooth function $g: M \to \Gamma_1$ which is uniquely defined by the condition
+\begin{equation*}
+(\varphi \circ s_{f_1})(x) = s_{f_2}(x) \circ g(x)\text{.}
+\end{equation*}
+for all $x\in M$. It is straightforward to see that
+
+\begin{lemma}
+\label{homsets}
+The above construction defines a bijection
+\begin{equation*}
+\hom {\trivlin_{f_1}} {\trivlin_{f_2}} \to \left \lbrace g \in C^{\infty}(M,\Gamma_1) \;|\; s \circ  g=f_1\;\text{ and }\;t \circ g=f_2 \right \rbrace\text{,}
+\end{equation*}
+under which identity morphisms correspond to constant maps and the composition of  bundle morphisms corresponds to the point-wise composition of functions. \end{lemma}
+
+
+
+Finally, we consider the case of principal bundles for action groupoids. 
+
+\begin{lemma}
+\label{actionbundles}
+Suppose $\act X H$ is a smooth action groupoid. The category $\bun {\act XH}M$ is equivalent to a category with 
+\begin{itemize}
+\item
+Objects: principal $H$-bundles $P_H$ over $M$ together with a smooth, $H$-anti-equivariant map $f\colon P_H \to X$, i.e. $f(p\cdot h) = h^{-1}f(p)$. 
+
+\item
+Morphisms: bundle morphisms $\varphi_H:P_H \to P'_H$ that respect the maps $f$ and $f'$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+For a principal $\act XH$-bundle $(P, \alpha, \rho)$ we set $P_H := P$ with the given projection to $M$. The action of $H$ on $P_H$ is defined by
+\begin{equation*}
+p\star h := \rho(p,(h,h^{-1}\cdot\alpha(p)))\text{.}
+\end{equation*}
+This action is smooth, and it follows from the axioms of the principal bundle $P$ that it is principal.
+\begin{comment}
+Freeness is clear. It is transitive: for $p_1,p_2 \in P$ there exists a morphism $(h,x)$ with $p_2 = \rho(p_1,(h,x))$, where $\alpha(p_1) = hx$ and $\alpha(p_2) = x$. Then,
+\begin{equation*}
+p_1 \cdot h = \rho(p_1,(h,h^{-1}\cdot \alpha(p_1)))= \rho(p_1,(h,x)) = p_2\text{.}
+\end{equation*}
+\end{comment}
+The map $f: P_H \to X$ is  the anchor $\alpha$. 
+\begin{comment}
+The anti-equivariance is easy to see:
+\begin{equation*}
+\alpha(p \star h) = \alpha(\rho(p,(h,h^{-1}\alpha(p)))) = s((h,h^{-1}\alpha(p)))=h^{-1}\alpha(p)\text{.}
+\end{equation*}
+\end{comment}
+The remaining steps are straightforward and  left as an exercise.
+\end{proof}

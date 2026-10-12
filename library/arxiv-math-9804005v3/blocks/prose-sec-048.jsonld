@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/blocks/prose-sec-048",
+  "kind": "prose",
+  "title": "Assume B is graded GKdim-Macaulay. Since A/(tn) is graded GKdim-Macaulay",
+  "pageStart": 28,
+  "pageEnd": 29,
+  "text": "../sections/sec-048-3-assume-b-is-graded-gkdim-macaulay-since-atn-is.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested"
+}

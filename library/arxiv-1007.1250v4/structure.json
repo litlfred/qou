@@ -5,7 +5,11 @@
   "file": "1007.1250v4.pdf",
   "sha256": "541ba4fb3068de8b464453d4bca4b572f5b0004c4ff948bf487c38f9b96e8a87",
   "bytes": 2493937,
-  "pages": 139
+  "pages": 139,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
   "doi": null,
   "title": "Nonabelian Multiplicative Integration on Surfaces",
   "authors_raw": null,
-  "abstract": "We construct a 2 -dimensional twisted nonabelian multiplicative integral . This is done in the context of a Lie crossed module (an object composed of two Lie groups interacting), and a pointed manifold. The integrand is a connection-curvature pair, that consists of a Lie algebra valued 1-form and a Lie algebra valued 2-form, satisfying a certain differential equation. The geometric cycle of the integration is a kite in the pointed manifold. A kite is made up of a 2-dimensional simplex in the manifold, together with a path connecting this simplex to the base point of the manifold. The multiplicative integral is an element of the second Lie group in the crossed module. We prove several properties of the multiplicative integral. Among them is the 2-dimensional nonabelian Stokes Theorem, which is a generalization of Schlesinger’s Theorem. Our main result is the 3 -dimensional nonabelian Stokes Theorem. This is a totally new result. The methods we use are: the CBH Theorem for the nonabelian exponential map; piecewise smooth geometry of polyhedra; and some basic algebraic topol- ogy. The motivation for this work comes from twisted deformation quantization and descent for nonabelian gerbes. Similar questions arise in nonabelian gauge theory.",
+  "abstract": "We construct a 2 -dimensional twisted nonabelian multiplicative integral . This is done in the context of a Lie crossed module (an object composed of two Lie groups interacting), and a pointed manifold. The integrand is a connection-curvature pair, that consists of a Lie algebra valued 1-form and a Lie algebra valued 2-form, satisfying a certain differential equation. The geometric cycle of the integration is a kite in the pointed manifold. A kite is made up of a 2-dimensional simplex in the manifold, together with a path connecting this simplex to the base point of the manifold. The multiplicative integral is an element of the second Lie group in the crossed module. We prove several properties of the multiplicative integral. Among them is the 2-dimensional nonabelian Stokes Theorem, which is a generalization of Schlesinger\u2019s Theorem. Our main result is the 3 -dimensional nonabelian Stokes Theorem. This is a totally new result. The methods we use are: the CBH Theorem for the nonabelian exponential map; piecewise smooth geometry of polyhedra; and some basic algebraic topol- ogy. The motivation for this work comes from twisted deformation quantization and descent for nonabelian gerbes. Similar questions arise in nonabelian gauge theory.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20181026195549Z",
@@ -138,6 +142,32 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 2,
-  "chars_total": 241306
+  "chars_total": 241306,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper_arxiv.tex",
+   "tex_sections": 74,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-0-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

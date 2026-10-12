@@ -8,23 +8,16 @@ pages: 42-43
 source_pdf: 0904.1247v3.pdf
 source_sha256: 4a6f4dee6af66dac
 doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — W e apply the ideas of derived algebraic geometry and topolog ical ﬁeld theory to the representation theory of reductive groups."
+text_source: latex
+latex_prose_ratio: 0.833
+latex_coverage_ratio: 0.938
 ---
-when X =BB, Y =BG, for a reductive group G and Borel subgroup B⊂G. We take ˜X =BN ,
-for the unipotent radical N⊂ B, and take AX = π∗CBN ∈D (BB) where π : BN → BB is the
-naturalH =B/N torsor. Thus we are studying the bimonodromic Hecke category ˜HG of unipotent
-bimonodromicD-modules on N\G/N.
-Theorem 7.7. The category of unipotent character sheaves Ch G is equivalent to both the trace and
-center of the bimonodromic Hecke category ˜HG. The equivalences ﬁt into natural adjoint commuta-
-tive diagrams
-˜HG
-tr
-/d123/d123✈✈✈✈✈✈✈✈✈
-˜F
-/d15/d15
-Tr( ˜HG) ∼ /d47/d47Ch G
-˜F r
-/d79/d79
-∼ /d47/d47 Z( ˜HG)
-z
-/d99/d99●●●●●●●●●
-42
+Now we apply our previous results to our motivating example when $X=BB$, $Y=BG$, for a reductive group $G$ and Borel subgroup $B\subset G$. We take $\tilde X = BN$, for the unipotent radical $N\subset B$, and take $\mathcal A_X = \pi_*\mathbb C_{BN} \in {\mathcal D}(BB)$ where $\pi:BN\to BB$ is the natural $H= B/N$ torsor. Thus we are studying the bimonodromic Hecke category $\tilde \mathcal H_G$ of unipotent bimonodromic ${\mathcal D}$-modules on $N\backslash G/N$.
+
+::: theorem
+[]{#thm mon char shvs label="thm mon char shvs"} The category of unipotent character sheaves ${Ch}_{G}$ is equivalent to both the trace and center of the bimonodromic Hecke category $\tilde \mathcal H_{G}$. The equivalences fit into natural adjoint commutative diagrams $$\xymatrix{
+&  \tilde\mathcal H_{G} \ar[dl]_-\mathfrak {tr}\ar[d]<-1ex>_-{\tilde F}&\\
+ \operatorname{Tr}(\tilde\mathcal H_{G}) \ar[r]^-\sim & \ar[u]<-1ex>_-{\tilde F^r} {Ch}_{G} \ar[r]^-\sim
+ &  \ar[ul]_-\mathfrak z\operatorname{Z}(\tilde\mathcal H_G)
+   }$$
+:::

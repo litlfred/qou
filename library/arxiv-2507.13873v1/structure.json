@@ -5,7 +5,11 @@
   "file": "2507.13873v1.pdf",
   "sha256": "fa1d38d08dc4976a3e03dc9c9a2ad31a0ccb4b37ac32b836b4a9e79573bda9ca",
   "bytes": 1013439,
-  "pages": 44
+  "pages": 44,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
   "doi": null,
   "title": "Probing the singularity at the holographic screen via q-holography",
   "authors_raw": "Department of Physics and Astronomy",
-  "abstract": "We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the global symmetry of a q-deformed CFT. More precisely, we consider the 2d sinh dilaton gravity model, whose classical metric solutions exhibit a curvature singularity at the holographic boundary. Our aim is to probe this UV near-boundary regime by injecting a small probe into the bulk, and identifying the geometrical features it observes. At the level of the two- point correlator, we see the emergence ofq-deformed hyperbolic disk isometries. By formulating DSSYK in terms of the analogous sine dilaton gravity model, we expect this q-deformed holographic duality to persist. July 21, 2025 ∗andreas.belaey@ugent.be †thomas.mertens@ugent.be ‡jacopo.papalini@ugent.be arXiv:2507.13873v1 [hep-th] 18 Jul 2025",
+  "abstract": "We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the global symmetry of a q-deformed CFT. More precisely, we consider the 2d sinh dilaton gravity model, whose classical metric solutions exhibit a curvature singularity at the holographic boundary. Our aim is to probe this UV near-boundary regime by injecting a small probe into the bulk, and identifying the geometrical features it observes. At the level of the two- point correlator, we see the emergence ofq-deformed hyperbolic disk isometries. By formulating DSSYK in terms of the analogous sine dilaton gravity model, we expect this q-deformed holographic duality to persist. July 21, 2025 \u2217andreas.belaey@ugent.be \u2020thomas.mertens@ugent.be \u2021jacopo.papalini@ugent.be arXiv:2507.13873v1 [hep-th] 18 Jul 2025",
   "docinfo": {
    "Author": "Andreas Belaey; Thomas G. Mertens; Jacopo Papalini",
    "Creator": "arXiv GenPDF (tex2pdf:)",
@@ -27,9 +31,9 @@
   "title_lines": [
    "Probing the singularity at the holographic screen via",
    "q-holography",
-   "Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡"
+   "Andreas Belaey,\u2217 Thomas G. Mertens,\u2020 Jacopo Papalini,\u2021"
   ],
-  "title_prev": "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡"
+  "title_prev": "Probing the singularity at the holographic screen via q-holography Andreas Belaey,\u2217 Thomas G. Mertens,\u2020 Jacopo Papalini,\u2021"
  },
  "toc": [
   {
@@ -252,6 +256,103 @@
   "likely_scanned": false,
   "toc_entries": 13,
   "sections": 12,
-  "chars_total": 83676
+  "chars_total": 83676,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Draftv6.tex",
+   "tex_sections": 9,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-correlation-functions-on-the-quantum-disk",
+     "title": "Correlation functions on the quantum disk",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-q-correlation-functions",
+     "title": "q-Correlation functions",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-quantum-hyperbolic-disk",
+     "title": "Quantum hyperbolic disk",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-a-candidate-bulk-description-for-q-holography",
+     "title": "A candidate bulk description for q-holography",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.796,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-definition-and-classical-structure-of-sinh-dilat",
+     "title": "Definition and classical structure of sinh dilaton gravity",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-probe-regime-of-sinh-dilaton-gravity",
+     "title": "Probe regime of sinh dilaton gravity",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.924,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-concluding-remarks",
+     "title": "Concluding remarks",
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-corepresentations-of-quasi-primary-operators",
+     "title": "Corepresentations of (quasi)-primary operators",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-dilaton-gravity-models",
+     "title": "Dilaton gravity models",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-holographic-counterterm",
+     "title": "Holographic counterterm",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-sinh-dilaton-gravity-quantization",
+     "title": "Sinh dilaton gravity quantization",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -8,106 +8,144 @@ pages: 21-26
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
 doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
+text_source: latex
+latex_prose_ratio: 0.982
+latex_coverage_ratio: 0.989
 ---
-Each vertex of the tree represents a unitary operator and for that reason we can think of
-the tree as being embedded in SU (2K). Suppose a collision does occur. This means that
-two leaves of the tree are located at the same point is SU (2K). We can represent this by
-drawing the two leaves as a single leaf as in ﬁgure 10.
-20
-Figure 10: Two paths collide on the same epsilon-ball.
-The ﬁgure illustrates the fact that collisions induce loops in the graph. This allows us to
-translate the rarity of collisions into graph-theoretic terms. No collisions at all would mean
-no loops, i.e., exact tree-ness. But as we will see, eventually for very large depth, collisions
-must happen. This means that very large loops must occur. The correct formulation,
-which we will come back to, is that small loops must be absent or very rare.
-Since the number of epsilon-regulated unitaries is ﬁnite we will eventually run out of
-room on SU (2K). That happens when the number of leaves (as given by 8.24) is equal to
-the total number of epsilon-balls as given in 6.13. This determines the maximum possible
-complexity.
-(2K
-e
-)Cmax
-=
-(2K
-ϵ2
-)4K/2
-(8.25)
+Each vertex of the tree represents a unitary operator and for that reason we can think of the tree as being embedded in $SU(2^K).$ 
+Suppose a collision does occur. This means that two leaves of the tree are located at the same point is $\suk.$ We can represent this by drawing the two leaves as a single leaf as in figure \ref{collision}. 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=.4]{collision.pdf}
+\caption{Two paths collide on the same epsilon-ball.}
+\label{collision}
+\end{center}
+\end{figure}
+
+The figure illustrates the fact that collisions induce loops in the graph. This allows us to translate the rarity of collisions into graph-theoretic terms. No collisions at all would mean no loops, i.e., exact tree-ness. But as we will see, eventually for very large depth, collisions must happen. This means that very large loops must occur. The correct formulation, which we will come back to, is that small loops must be absent or very rare. 
+
+\bn
+
+ Since the number of epsilon-regulated unitaries is finite we will eventually
+ run out of room on $\suk$.  That happens when the number of leaves (as given by \ref{N=expC}) is equal to the total number of epsilon-balls as given in
+  \ref{V-in-e-balls}. This determines the maximum possible complexity.
+ 
+ 
+\be 
+\left(  \frac{2K}{e}   \right)^{\CC_{max}} = \left(  \frac{2^K}{\epsilon^2} \right)^{4^K/2}
+\ee
 or
-Cmax = 4K
-[1
-2 +| logϵ|
-logK
-]
-(8.26)
-Again, strong dependence on K, weak dependence on ϵ. Roughly
-Cmax∼ 4K.
-21
-Apart from a factor of K which is swamped by the exponential, this is also the depth
-at which collisions must occur. In other words it is the maximum radius at which the tree
-stops being tree-like. Finally it is also the largest distance between nodes of the tree—the
-diameter of the graph.
-We can now state the no-collision assumption more precisely.
-Loops smaller than 4K are absent or very rare.
-In graph-theoretic terms, the girth of the graph is ∼ 4K.
-Another point follows from the fact that the total number of unitaries is ∼e4K
-. We may
-identify this with the number of vertices in the graph. This implies that the diameter of
-the graph is logarithmic in the number of vertices.
-The breakdown of no-collisions
-Let’s consider what happens when the tree-ness breaks down. Up to that point the graph
-is a d-regular tree similar to ﬁgure 11 except with much higher degree.
-Figure 11: Regular tree with degree 3
-22
-But once we reach Cmax the graph can not continue to grow. Collisions occur and loops
-must form. The graph must double back on itself and revisit previously visited epsilon-
-balls8. We show a couple of possible loops that might form in ﬁgure 12.
-Figure 12: Graph ceases being a tree and doubles back. Since a group-space is homoge-
-neous the structure must look the same from every vertex. The shortest loops (girth of
-graph) is of order 4 K. Thus the red loop is too short. The loops must look more like the
-blue loop.
-Now we know that any loop which passes through the central node must be very big,
-namely of length ∼ 4K. But because the space SU (2K) is a group space, every point on
-the graph is the same as every other point. Thus it must be that loops passing through
-any point must be equally long. It is clear from the ﬁgure that loop containing the red
-segment is much shorter and should not occur, but the loop containing the blue segment
-is long and may occur.
-Let me summarize the conjectured properties of circuit graphs generated by iterating one-
-step circuits:
-8If we follow an epsilon ball from the identity it will not in general perfectly coincide with an epsilon
-ball after executing a loop. There is a bit of sloppiness but it doesn’t seem to be important. Note that if
-ϵ is decreased the maximum complexity increases and the graph becomes bigger.
-23
-1. The degree is the same for all vertices and is given by
-degree = K !
-(K/2 )!∼
-(2K
-e
-) K
-2
-. (8.27)
-This is much smaller than the number of vertices. The graph can be said to be
-sparse.
-2. The number of vertices in the graph is of order e4K
-.
-3. The greatest distance between vertices (diameter) is Cmax∼ 4K. The diameter is
-therefore logarithmic in the number of vertices.
-4. Loops of length less than 4 K are rare or absent.
-5. The graph is homogenous and from any point looks tree-like out to distances of order
-the diameter.
-These properties are very familiar to graph theorists. They are the properties of a
-good expander graph. Graphs of this type are discrete analogs of ﬁniite negatively curved
-geometries such as the hyperbolic plane, with identiﬁcations that render it compact 9
-Figure 13: 50-vertex, (almost) regulard = 4 expander. Generated by some AI optimization
-protocol.
-9The relation between complexity and such geometries was described in Brown, Susskind and Zhao,
-https://arxiv.org/pdf/1608.02612.pdf.
-24
-Figure 14: 120 vertex, regulard = 4 Ramanujan-expander. Quoting Donetti, et al.: “Some
-remarks on its topological properties are in order. The average distance 3.714 is relatively
-small (i.e. one reaches any of the 120 nodes starting from any arbitrary origin in less than
-four steps, on average.” Note: log 120 = 4.78749174278. Not too diﬀerent from 3.714. The
-authors then go on to say, “The clustering coeﬃcient vanishes, reﬂecting the absence of
-short loops (triangles), and the minimum loop size is large, equal to 6, and identical for
-all the nodes. In a nutshell: the network homogeneity is remarkable; all nodes look alike,
-forming rather intricate, decentralized structure, with delta-peak distributed topological
-properties.”
+
+
+
+\be 
+\CC_{max} = 4^K \left[\frac{1}{2} +\frac{|\log{\epsilon}|}{\log{K}}
+\right]
+\ee
+Again, strong dependence on $K$, weak dependence on $\epsilon.$
+\bn
+Roughly  $$\CC_{max} \sim 4^K.$$
+
+Apart from a factor of $K$ which is swamped by the exponential, this is also the depth at which collisions must occur. In other words it is the maximum radius at which the tree stops being tree-like. Finally it is also the largest distance  between nodes of the tree---the diameter of the graph.
+
+We can now state the no-collision assumption more precisely. 
+
+\bn
+
+\it 
+
+Loops smaller than $4^K$ are absent or very rare.\rm  
+
+\bn
+In graph-theoretic terms, the girth of the graph is $\sim 4^K.$
+
+\bn
+Another point follows from the fact that the total number of unitaries is $\sim   e^{4^K}$. We may identify this with the number of vertices in the graph. This implies that the diameter of the graph is logarithmic in the number of vertices.
+
+\bn
+
+
+\subsubsection{The breakdown of no-collisions}
+Let's consider what happens when the tree-ness breaks down.
+Up to that point the graph is a d-regular tree similar to figure \ref{bethe} except with much higher degree.
+ 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=.3]{bethe.pdf}
+\caption{Regular tree with degree 3}
+\label{bethe}
+\end{center}
+\end{figure}
+
+
+\bn
+But once we reach $\CC_{max}$ the graph can not continue to grow. Collisions occur and loops must form. The graph must double back on itself and revisit previously visited epsilon-balls\footnote{If we follow an epsilon ball from the identity it will not in general perfectly coincide with an epsilon ball after executing a loop. There is a bit of sloppiness but it doesn't seem to be important. Note that if $\epsilon $  is decreased the maximum complexity increases and the graph becomes bigger.}. We show a couple of possible loops that might form in figure \ref{bethe-2}.
+ 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=.3]{bethe-2.pdf}
+\caption{Graph ceases being a tree and doubles back. Since a group-space is homogeneous the structure must look the same from every vertex. The shortest loops (girth of graph) is of order $4^K.$ Thus the red loop is too short. The loops must look more like the blue loop.}
+\label{bethe-2}
+\end{center}
+\end{figure}
+
+Now we know that any loop which passes through the central node must be very big, namely of length $\sim 4^K.$  But because the space $\suk$ is a group space, every point on the graph is the same as every other point. Thus it must be that loops passing through any point must be equally long. It is clear from the figure that loop containing the red segment is much shorter and should not occur, but the loop containing the blue segment is long and may occur. 
+
+
+
+
+\bn
+Let me summarize the conjectured properties of circuit graphs generated by iterating one-step circuits: 
+
+\begin{enumerate}
+\item The degree is the same for all vertices and is given by
+\be 
+\rm degree \it = \frac{K!}{\left(  K/2 \right)!}  \sim \left(  \frac{2K}{e}   \right)^{\frac{K}{2}}.
+\ee
+This is much smaller than the number of vertices. The graph can be said to be sparse.
+
+\item The number of vertices in the graph is of order $e^{4^K}.$
+
+\item  The greatest distance between vertices (diameter)  is $\CC_{max} \sim 4^K$. The diameter is therefore logarithmic in the number of vertices.
+
+\item Loops of length less than $4^K$ are rare or absent.
+
+\item The graph is homogenous and from any point looks tree-like out to distances of order the diameter.
+
+\end{enumerate}
+
+These properties are very familiar to graph theorists. They are the properties of a good \it expander \rm graph.  Graphs of this type are discrete analogs of finiite negatively curved geometries such as the hyperbolic plane, with identifications that render it compact\footnote{The relation between complexity and such geometries was described in Brown, Susskind and Zhao, \url{https://arxiv.org/pdf/1608.02612.pdf}.} 
+
+
+
+
+
+
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=.2]{expander.pdf}
+\caption{50-vertex, (almost) regular $d=4$ expander. Generated by some AI optimization  protocol.} 
+\label{expander}
+\end{center}
+\end{figure}
+
+
+ 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=.2]{expander2.pdf}
+\caption{120 vertex, regular  $d=4$ Ramanujan-expander. Quoting Donetti, et al.:
+``Some remarks on its topological properties are in order. The average distance 3.714 is relatively small (i.e. one
+reaches any of the 120 nodes starting from any arbitrary origin in less than four steps, on average."  Note: $\log{120}=4.78749174278$. Not too different from  3.714.  The authors then go on to say, ``The clustering coefficient vanishes,
+reflecting the absence of short loops (triangles), and the minimum loop size is large, equal to 6, and identical for
+all the nodes. In a nutshell: the network homogeneity is remarkable; all nodes look alike, forming rather intricate,
+decentralized structure, with delta-peak distributed topological properties."}   
+\label{expander2}
+\end{center}
+\end{figure}
+
+
+
+\bn

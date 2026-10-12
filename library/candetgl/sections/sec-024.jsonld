@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/candetgl/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "APPENDIX: THE DECAY RATE OF A„V… AND BS„V… AT INFINITY",
+  "pageStart": 26,
+  "pageEnd": 29,
+  "contains": [
+    "library/candetgl/blocks/prose-sec-024"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/candetgl/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/candetgl/manifest.jsonld",
+  "provenance": "ingested"
+}

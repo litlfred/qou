@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/equations-aux-q-differences/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/equations-aux-q-differences/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "Introduction",
-  "pageStart": 1,
-  "pageEnd": 3,
-  "text": "../sections/sec-001-1-introduction.md",
-  "derivedFrom": "library/equations-aux-q-differences/manifest",
-  "sourceDocument": "library/equations-aux-q-differences/manifest",
+  "title": "Br´eviaire",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "text": "../sections/sec-001-2-breviaire.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/equations-aux-q-differences/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/equations-aux-q-differences/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1705.10485v2/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1705.10485v2/blocks/prose-sec-020",
   "kind": "prose",
-  "title": "(2−|ξ|)+. Finally,sinc(x)≤ min(1, 1",
-  "pageStart": 14,
-  "pageEnd": 15,
-  "text": "../sections/sec-020-2-2ξ-finallysincx-min1-1.md",
-  "derivedFrom": "library/arxiv-1705.10485v2/manifest",
-  "sourceDocument": "library/arxiv-1705.10485v2/manifest",
+  "title": "Uniform weighted dependency graphs",
+  "pageStart": 41,
+  "pageEnd": 42,
+  "text": "../sections/sec-020-52-uniform-weighted-dependency-graphs.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.10485v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.10485v2/manifest.jsonld",
   "provenance": "ingested"
 }

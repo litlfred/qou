@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T22:22:28Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-10-10T10:40:00Z
 parent: qou-avtq
 ---
 
@@ -24,3 +24,9 @@ Evidence: `d5eeff99c5`/`0feccb2b09` (2026-08-23) landed only the audit `docs/aud
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-10-10 — follow-up review (re-check of the `qou-avtq` sweep flags)
+
+**Scope is wider than the bean's 8 artifacts: 16 carriers.** They include the published proof block `q-beta-radius-of-convergence-gate-proof.md` (lines 52, 56, 93, 95) and five doc/scope files not on the list. Suggested order: the proof block and the Lean docstring first.
+
+Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.

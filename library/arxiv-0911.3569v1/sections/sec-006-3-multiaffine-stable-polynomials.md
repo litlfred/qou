@@ -8,12 +8,18 @@ pages: 8-8
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
 doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.84
 ---
-A polynomial f is multiaﬃne if each indeterminate occurs at most to the ﬁrst
-power in f. For a set S of polynomials, let SMA denote the set of multiaﬃne
-polynomials in S. For multiaﬃne f ∈ C[x]MA and i ∈ [m] we use the “ultra-
-shorthand” notation f = fi +xifi in which fi = f|xi=0 and fi = ∂if. This
-notation is extended to multiple distinct indices in the obvious way – in particular,
-f =fij +xifj
-i +xjfi
-j +xixjfij.
+A polynomial $f$ is \emph{multiaffine} if each indeterminate occurs
+at most to the first power in $f$.  For a set $\EuScript{S}$ of polynomials,
+let $\EuScript{S}^\ma$ denote the set of multiaffine polynomials in
+$\EuScript{S}$.  For multiaffine $f\in\CC[\x]^{\ma}$ and $i\in[m]$
+we use the ``ultra-shorthand'' notation $f = f^{i} + x_{i} f_{i}$
+in which $f^{i} = f|_{x_{i}=0}$ and $f_{i} = \partial_{i} f$.
+This notation is extended to multiple distinct indices in the
+obvious way -- in particular,
+$$
+f = f^{ij} + x_{i} f_{i}^{j} + x_{j} f_{j}^{i} + x_{i} x_{j} f_{ij}.
+$$

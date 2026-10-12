@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/104171-owr-2018-52/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/104171-owr-2018-52/blocks/prose-sec-011",
   "kind": "prose",
   "title": "Main question",
   "pageStart": 36,
   "pageEnd": 36,
   "text": "../sections/sec-011-1-main-question.md",
-  "derivedFrom": "library/104171-owr-2018-52/manifest",
-  "sourceDocument": "library/104171-owr-2018-52/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
   "provenance": "ingested"
 }

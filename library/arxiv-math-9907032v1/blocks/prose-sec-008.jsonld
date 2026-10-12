@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9907032v1/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9907032v1/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "(a triangle cannot have all angles greater than π/3), we get",
-  "pageStart": 16,
-  "pageEnd": 16,
-  "text": "../sections/sec-008-3-a-triangle-cannot-have-all-angles-greater-than.md",
-  "derivedFrom": "library/arxiv-math-9907032v1/manifest",
-  "sourceDocument": "library/arxiv-math-9907032v1/manifest",
+  "title": "Remarks and Corollaries",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "text": "../sections/sec-008-61-remarks-and-corollaries.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9907032v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9907032v1/manifest.jsonld",
   "provenance": "ingested"
 }

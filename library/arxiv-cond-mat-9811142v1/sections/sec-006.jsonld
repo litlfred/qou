@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-cond-mat-9811142v1/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "Discussion",
-  "pageStart": 25,
-  "pageEnd": 30,
+  "title": "Gaussian ensemble",
+  "pageStart": 18,
+  "pageEnd": 25,
   "contains": [
     "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/arxiv-cond-mat-9811142v1/manifest",
-  "sourceDocument": "library/arxiv-cond-mat-9811142v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-cond-mat-9811142v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-cond-mat-9811142v1/manifest.jsonld",
   "provenance": "ingested"
 }

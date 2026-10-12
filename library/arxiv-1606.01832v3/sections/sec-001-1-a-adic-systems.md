@@ -8,136 +8,204 @@ pages: 4-7
 source_pdf: 1606.01832v3.pdf
 source_sha256: da982c95b9674382
 doc_brief: "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-of decaying functions that were established in [Ye1].
-The reader might wonder whether the distinction between ﬂatness and adic ﬂat-
-ness is genuine. The answer is that these notions are indeed distinct. In Theorem
-6.2 we give an example of a ring A and a weakly proregular ideal a⊆A, such that
-the a-adic completion ˆA – which is an a-adically ﬂat A-module by Theorem 0.4 –
-is not ﬂat over A. This example is not exotic at all. The ring is
-A := K[[t1]]⊗K K[[t2]],
-where K is a ﬁeld of characteristic 0; and the ideal is a := (t1,t 2).
-In Sections 3 and 4 we use derived category methods. All the necessary back-
-ground on these methods can be found in the new book [Ye3]. Perhaps some of
-the results in Section 3 could be proved using only classical homological algebra
-(i.e. Ext, Tor and related spectral sequences); but even if so, the proofs would very
-likely be much longer and more diﬃcult to understand. The proofs in Section 4,
-that involve the MGM Equivalence, deﬁnitely require the use of derived categories.
-The content of this paper belongs to commutative algebra. However, it is ex-
-pected to have applications in noncommutative ring theory and representation the-
-ory. Indeed, our paper [Ye1] was written as part of our project on deformation
-quantization, for which we needed sharper results on a-adically complete ﬂat non-
-commutative central A-rings (and sheaves of this type). See the paper [Ye2] and
-its references.
-Acknowledgments. Thanks to Liran Shaul, Sean Sather-Wagstaﬀ, Asaf Yekutieli,
-Steven Kleiman, Brian Conrad, Ofer Gabber, Lorenzo Ramero, Pierre Deligne,
-Johan de Jong, Ilya Tyomkin and Leonid Positselski for helpful discussions. We
-also wish to thank the anonymous referee, for reading the paper carefully and
-suggesting several improvements.
-1. a-Adic Systems
-Throughout the paper A is a commutative ring, and a is an ideal in it. Recall
-the inverse system of rings {Ak}k∈N, where Ak =A/ak+1.
-Deﬁnition 1.1. An a-adic system of A-modules is data
-M =
-(
-{Mk}k∈N,{νk}k∈N
-{
-,
-where Mk is an Ak-module, and νk :Mk+1→Mk is an A-module homomorphism,
-called the k-th transition. The condition is that for every k, the homomorphism
-Ak⊗Ak+1Mk+1→Mk
-induced by the transition νk is bijective.
-Usually the collection of transitions {νk}k∈N will remain implicit.
-FLATNESS AND COMPLETION REVISITED 5
-Deﬁnition 1.2. LetM ={Mk}k∈N andN ={Nk}k∈N be a-adic systems. A mor-
-phism of a-adic systems φ:M→N is a collection of A-module homomorphisms
-φk : Mk→Nk, that commute with the transitions in M andN. In this way the
-a-adic systems become a category, that we denote by Sys(A, a).
-Deﬁnition 1.3. LetM ={Mk}k∈N be an a-adic system of A-modules. The limit
-ofM is the A-module ˆM := lim←k Mk.
-Example 1.4. Consider anA-moduleM. There is an induced a-adic systemM =
-{Mk}k∈N, deﬁned by Mk :=Ak⊗AM, with the obvious transitions. The limit of
-the system M is the a-adic completion of the module M.
+\label{sec:adic-sys}
+
+Throughout the paper $A$ is a commutative ring, and $\a$ is an ideal in it. 
+Recall the inverse system of rings 
+$\{ A_k \}_{k \in \N}$, where $A_k = A / \a^{k + 1}$. 
+
+\begin{dfn} \label{dfn:15}
+An {\em $\a$-adic system of $A$-modules} is data 
+\[ \bsym{M} = \bigl( \{ M_k \}_{k \in \N}, \, \{ \nu_{k} \}_{k \in \N} \bigr) , 
+\]
+where $M_k$ is an $A_k$-module, and 
+$\nu_{k} : M_{k + 1} \to M_k$
+is an $A$-module homomorphism, called the {\em $k$-th transition}.
+The condition is that for every $k$, the homomorphism 
+\[ A_k \ot_{A_{k + 1}} M_{k + 1} \to M_k  \]
+induced by the transition $\nu_k$ is bijective. 
+\end{dfn}
+
+Usually the collection of transitions $\{ \nu_k \}_{k \in \N}$
+will remain implicit.
+
+\begin{dfn} \label{dfn:22}
+Let $\bsym{M} = \{ M_k \}_{k \in \N}$ and 
+$\bsym{N} = \{ N_k \}_{k \in \N}$ be $\a$-adic systems. A {\em morphism of 
+$\a$-adic systems}
+$\bsym{\phi}: \bsym{M} \to \bsym{N}$
+is a collection of $A$-module homomorphisms 
+$\phi_k : M_k \to N_k$, that commute with the transitions in 
+$\bsym{M}$ and $\bsym{N}$. 
+In this way the $\a$-adic systems become a category, that we denote by 
+$\cat{Sys} (A, \a)$.
+\end{dfn}
+
+\begin{dfn} \label{dfn:200}
+Let $\bsym{M} = \{ M_k \}_{k \in \N}$ be an $\a$-adic system of $A$-modules.
+The {\em limit} of $\bsym{M}$ is the $A$-module 
+$\what{M} := \lim_{\leftarrow k} \, M_k$.
+\end{dfn}
+
+\begin{exa} \label{exa:126}
+Consider an $A$-module $M$. There is an {\em induced $\a$-adic system}
+$\bsym{M} = \lb \{ M_k \}_{k \in \N}$, 
+defined by $M_k := A_k \ot_A M$,
+with the obvious transitions. 
+The limit of the system $\bsym{M}$ is the $\a$-adic completion of the module 
+$M$. 
+\end{exa}
+
 Two obvious questions come to mind:
-Question 1.5. Is the limit ˆM of every a-adic system{Mk}k∈N an a-adically com-
-plete module?
-Question 1.6. Is every a-adic system{Mk}k∈N induced by a module M ?
-Suppose A is noetherian, with a-adic completion ˆA. Let {Mk}k∈N be an a-adic
-system such that each Mk is a ﬁnitely generated Ak-module. In this case it is well
-known that the limit ˆM is a ﬁnitely generated ˆA-module, and hence it is complete.
-Moreover, the system {Mk}k∈N is induced from ˆM. See [AM], [Ma] or [CA]. We
-see that both questions have positive answers in this case.
-At the opposite end, here is a counterexample to Question 1.5, when the ideal a
-is not ﬁnitely generated.
-Example 1.7. Take the ring A = K[t0,t 1,...] of polynomials in countably many
-variables over a ﬁeld K. Let a be the maximal ideal generated by the variables.
-Consider the A-module M =A. Let M ={Mk}k∈N be the a-adic system induced
-by M (so actually Mk = Ak), and let ˆM be the limit of this system. Then ˆM
-is the a-adic completion of the module M. As shown in [Ye1, Example 1.8], the
-A-module ˆM is not a-adically complete. It is also shown there that the canonical
-homomorphisms Ak⊗AˆM→Mk are not bijective.
-We could not ﬁnd a counterexample to Question 1.6.
-As the next theorem shows, both questions have positive answers when the ideal
-a is ﬁnitely generated.
-Theorem 1.8. Let A be a commutative ring, let a be a ﬁnitely generated ideal in
-A, and let {Mk}k∈N be an a-adic system of A-modules, with limit ˆM. Then :
-(1) The A-module ˆM is a-adically complete.
-(2) For every k≥0 the canonical homomorphism Ak⊗AˆM→Mk is bijective.
-Proof. (1) For each k let ˆMk :=Ak⊗A ˆM. In this way we obtain a second a-adic
-system{ˆMk}k∈N. Its limit is the module ˆˆM, which is the a-adic completion of
-the module ˆM. According to [Ye1, Corollary 3.6] the A-module ˆˆM is a-adically
-complete.
-For eachk there is the canonical homomorphism πk : ˆM→Mk of the limit, and
-the canonical homomorphism τk : ˆM→ˆMk induced by A→Ak. There is also the
-6 AMNON YEKUTIELI
-canonical homomorphism φk : ˆMk→Mk from item (2). They form a commutative
-diagram
-ˆM
-τk //
-πk
-$$ˆMk
-φk //Mk
-Passing to the limit we obtain the commutative diagram
-ˆM τ //
-=
-##ˆˆM
-φ // ˆM
-We see thatτ=τˆM is a split injection, and thus ˆM is a direct summand of ˆˆM. But
-a direct summand of an a-adically complete module is itself a-adically complete; so
-we conclude that ˆM is a-adically complete. This means that the homomorphism
-τˆM : ˆM→ˆˆM is bijective. But then φis also bijective.
-(2) Continuing with the same notation, for each k let Lk := Ker(φk). We get an
-inverse system of exact sequences
-(1.9) 0 →Lk→ˆMk
-φk
-−→Mk→0.
-If we apply the functor Ak⊗Ak+1−to the sequence with index k + 1, we get an
-exact sequence isomorphic to
-Ak⊗Ak+1Lk+1→ˆMk
-φk
-−→Mk→0.
-We see that the homomorphism Lk+1→Lk is surjective. Deﬁne ˆL := lim←k Lk.
-Passing to the limit in (1.9), the Mittag-Leﬄer argument says that
-0→ˆL→ˆˆM
-φ
-− →ˆM→0
-is an exact sequence. We already know that φis bijective, and therefore ˆL = 0.
-Finally, because the canonical homomorphism ˆL→Lk is surjective, it follows that
-Lk = 0 and that φk is bijective. □
-Corollary 1.10. If the ideal a is ﬁnitely generated, then every a-adic system
-{Mk}k∈N is induced from a module.
-Proof. By item (2) of the theorem, the system{Mk}k∈N is induced from the module
-ˆM. □
-Let Moda-comA be the category of a-adically complete modules (a full subcate-
-gory of ModA).
-Corollary 1.11. If the ideal a is ﬁnitely generated, then the functor sending a
-moduleM to the induced a-adic system{Mk}k∈N is an equivalence of categories
-Moda-comA→Sys(A, a).
-Its quasi-inverse is the limit functor.
-Proof. LetM be a complete module, and let M be the induced a-adic system. As
-mentioned in Example 1.4, the limit of M is the a-adic completion ˆM of M. But
-M∼= ˆM.
-FLATNESS AND COMPLETION REVISITED 7
-Conversely, if we start with ana-adic systemM, with limitˆM, then by Theorem
-1.8 the module ˆM is complete, and the a-adic system induced by ˆM is isomorphic
-toM. □
+
+\begin{que} \label{que:265}
+Is the limit $\what{M}$ of every $\a$-adic system $\{ M_k \}_{k \in \N}$ an 
+$\a$-adically complete module?
+\end{que}
+
+\begin{que} \label{que:266}
+Is every $\a$-adic system $\{ M_k \}_{k \in \N}$ induced by a module $M$~?
+\end{que}
+
+Suppose $A$ is noetherian, with $\a$-adic  completion $\what{A}$.
+Let $\{ M_k \}_{k \in \N}$ be an $\a$-adic system such that each 
+$M_k$ is a finitely generated $A_k$-module. In this case it is 
+well known that the limit $\what{M}$ is a finitely generated $\what{A}$-module, 
+and hence it is complete. Moreover, the system $\{ M_k \}_{k \in \N}$
+is induced from $\what{M}$. See \cite{AM}, \cite{Ma} or \cite{CA}. We see that 
+both questions have positive answers in this case. 
+
+At the opposite end, here is a counterexample to Question \ref{que:265},
+when the ideal $\a$ is not finitely generated. 
+
+\begin{exa} \label{exa:260}
+Take the ring  
+$A = \K[t_0, t_1, \ldots ]$ 
+of polynomials in countably many variables over a field $\K$. 
+Let $\a$ be the maximal ideal generated by the variables. 
+Consider the $A$-module $M = A$. Let 
+$\bsym{M} = \{ M_k \}_{k \in \N}$ be the 
+$\a$-adic system induced by $M$ (so actually $M_k = A_k$), and let 
+$\what{M}$ be the limit of this system.
+Then $\what{M}$ is the $\a$-adic completion of the module $M$. As shown in 
+\cite[Example 1.8]{Ye1}, the $A$-module $\what{M}$ is not $\a$-adically 
+complete. It is also shown there that the canonical homomorphisms 
+$A_k \ot_A \what{M} \to M_k$ are not bijective. 
+\end{exa}
+
+We could not find a counterexample to Question \ref{que:266}.
+
+As the next theorem shows, both questions have positive answers when the 
+ideal $\a$ is finitely generated. 
+
+\begin{thm} \label{thm:230}
+Let $A$ be a commutative ring, let $\a$ be a finitely generated ideal in $A$, 
+and let $\{ M_k \}_{k \in \N}$ be an $\a$-adic system of 
+$A$-modules, with limit $\what{M}$. Then\tup{:}
+\begin{enumerate}
+\item The $A$-module $\what{M}$ is $\a$-adically complete.
+
+\item For every $k \geq 0$ the canonical homomorphism 
+$A_k \ot_A \what{M} \to M_k$ is bijective.
+\end{enumerate} 
+\end{thm}
+
+\begin{proof}
+(1) For each $k$ let 
+$\what{M}_k := A_k \ot_A \what{M}$. 
+In this way we obtain a second $\a$-adic system 
+$\{ \what{M}_k  \}_{k \in \N}$. Its limit is the module 
+$\mhat{\what{M}}$, which is the $\a$-adic completion of the module 
+$\what{M}$. According to \cite[Corollary 3.6]{Ye1} the $A$-module 
+$\mhat{\what{M}}$ is $\a$-adically complete.
+
+For each $k$ there is the canonical homomorphism 
+$\pi_k : \what{M} \to M_k$ of the limit, and the canonical homomorphism 
+$\tau_k : \what{M} \to \what{M}_k$ 
+induced by $A \to A_k$. There is also the canonical homomorphism
+$\phi_k : \what{M}_k \to M_k$ from item (2). 
+They form a commutative diagram 
+\[ \UseTips \xymatrix @C=6ex @R=6ex {
+\what{M}
+\ar[r]^{\tau_k}
+\ar@(ur,ul)[rr]^{\pi_k}
+&
+\what{M}_k
+\ar[r]^{\phi_k}
+& 
+M_k
+} \]
+Passing to the limit we obtain the commutative diagram 
+\[ \UseTips \xymatrix @C=6ex @R=6ex {
+\what{M}
+\ar[r]^{\tau}
+\ar@(ur,ul)[rr]^{=}
+&
+\mhat{\what{M}}
+\ar[r]^{\phi}
+& 
+\what{M}
+} \]
+
+We see that $\tau = \tau_{\what{M}}$ is a split injection, and thus $\what{M}$ 
+is a direct summand of $\mhat{\what{M}}$. But a direct summand of an  
+$\a$-adically complete module is itself $\a$-adically complete; 
+so we conclude that $\what{M}$ is $\a$-adically complete. 
+This means that the homomorphism 
+$\tau_{\what{M}} : \what{M} \to \what{\what{M}}$ 
+is bijective. But then $\phi$ is also bijective. 
+
+\medskip \noindent 
+(2) Continuing with the same notation, for each $k$ let 
+$L_k := \opn{Ker}(\phi_k)$. We get an inverse system of exact sequences 
+\begin{equation} \label{eqn:230}
+ 0 \to L_k \to \what{M}_k \xar{\phi_k} M_k \to  0 . 
+\end{equation}
+If we apply the functor $A_k \ot_{A_{k + 1}} -$ to the sequence with index
+$k + 1$, we get an exact sequence isomorphic to 
+\[  A_k \ot_{A_{k + 1}} L_{k + 1} \to \what{M}_k \xar{\phi_k} M_k \to  0 . \]
+We see that the homomorphism $L_{k + 1} \to L_k$ is surjective.
+Define $\what{L} := \lim_{\leftarrow k} \, L_k$.
+Passing to the limit in (\ref{eqn:230}), the Mittag-Leffler argument says that 
+\[ 0 \to \what{L} \to \mhat{\what{M}} \xar{\phi} \what{M} \to 0  \]
+is an exact sequence. We already know that $\phi$ is bijective, and therefore 
+$\what{L} = 0$. Finally, because the canonical homomorphism 
+$\what{L} \to L_k$ is surjective, it follows that $L_k = 0$ and that $\phi_k$ is 
+bijective. 
+\end{proof}
+
+\begin{cor} \label{cor:333}
+If the ideal $\a$ is finitely generated, then every $\a$-adic system \lb 
+$\{ M_k \}_{k \in \N}$ is induced from a module.
+\end{cor}
+
+\begin{proof}
+By item (2) of the theorem, the system $\{ M_k \}_{k \in \N}$ is induced from 
+the module $\what{M}$.
+\end{proof}
+
+Let $\cat{Mod}_{\a\tup{-com}} A$ be the category of $\a$-adically complete 
+modules (a full subcategory of $\cat{Mod} A$). 
+
+\begin{cor} \label{cor:263}
+If the ideal $\a$ is finitely generated, then the functor sending a module $M$ 
+to the induced $\a$-adic system $\{ M_k \}_{k \in \N}$ is an equivalence of 
+categories
+\[ \cat{Mod}_{\a\tup{-com}} A \to \cat{Sys} (A, \a) . \]
+Its quasi-inverse is the limit functor. 
+\end{cor}
+
+\begin{proof}
+Let $M$ be a complete module, and let $\bsym{M}$ be the induced $\a$-adic 
+system. As mentioned in Example \ref{exa:126}, the limit of $\bsym{M}$
+is the $\a$-adic completion $\what{M}$ of $M$. But $M \cong \what{M}$.
+
+Conversely, if we start with an $\a$-adic system $\bsym{M}$, 
+with limit $\what{M}$, then by Theorem \ref{thm:230} the module 
+$\what{M}$ is complete, and the $\a$-adic system induced by $\what{M}$ is 
+isomorphic to $\bsym{M}$. 
+\end{proof}

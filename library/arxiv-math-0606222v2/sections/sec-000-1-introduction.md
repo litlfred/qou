@@ -8,207 +8,55 @@ pages: 1-4
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
 doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.988
 ---
-Let F be a local ﬁeld and let KF be the maximal compact subgroup of GL d(F). That is,
-(1.1) KF =
-
-
-
-
-
-O(d) if F = R,
-U(d) if F = C,
-GLd(O) if F non-Archimedean,
-where in the latter case O denotes the ring of integers of F. Let G(n,d ; F) be the Grassman-
-nian of n-dimensional subspaces of a ﬁxed d-dimensional vector space over F. Throughout
-we assume that n ≤ d/2. The group KF acts transitively on G(n,d ; F). Letting MF be
-a stabilizer of a point we may identify G(n,d ; F) with KF/MF. The pair ( KF, MF) is a
-Gelfand pair, in the sense that each (continuous, complex) irreduc ible KF-representation
-has a subspace of MF-ﬁxed vectors which is at most one-dimensional. The irreducible
-representations having a one-dimensional subspace of MF-ﬁxed vectors are called MF-
-spherical. In this paper we derive explicit dimension formulas for the ir reducible MF-
-spherical KF-representations.
-For all local ﬁelds F the equivalence classes of the irreducible MF-spherical KF-repre-
-sentations are naturally parameterized by the set Λ n of partitions of at most n parts
-2000 Mathematics Subject Classiﬁcation. 33D52, 33D80.
-The ﬁrst author is supported by the Israel Science Foundation, I SF grant no. 555104, and by the
-Edmund Landau Minerva Center for Research in Mathematical Analy sis and Related Areas, sponsored by
-the Minerva Foundation (Germany). The second author is support ed by the Netherlands Organization for
-Scientiﬁc Research (NWO) in the VIDI-project ‘Symmetry and modu larity in exactly solvable models’.
-1
-2 URI ONN AND JASPER V. STOKMAN
-(see e.g. [12] and [5] for F Archimedean, and [2] for F non-Archimedean). This is quite
-remarkable, taking into consideration that the representation th eory of KF for F non-
-Archimedean is of a completely diﬀerent nature compared to the rep resentation theory for
-F Archimedean. In each case there is a natural explicit labeling of the ir reducible MF-
-spherical KF-representationsV F
-λ by partitions λ ∈ Λ n which we shall describe in detail.
-The zonal spherical functions ϕF
-λ associated to V F
-λ (λ ∈ Λ n) form a linear basis of the
-Hecke algebra of MF-biinvariant representative functions on KF. The starting point for
-the derivation of the explicit dimension formulas for the irreducible MF-spherical KF-
-representations is the representation theoretic dimension formu la
-(1.2) Dim C
-(
-V F
-λ
-)
-=
-(
-ϕF
-λ(e)
-) 2
-∫
-KF
-|ϕF
-λ(g)|2dg, λ ∈ Λ n
-where e ∈ K F is the unit element and integration is with respect to the normalized Ha ar
-measure on KF. The second key ingredient is the fact that the zonal spherical fu nctions
-ϕF
-λ for the diﬀerent local ﬁelds F relate to various degenerations of the multivariable little
-q-Jacobi polynomials from [26], see [12], [5] and [23]. As a result, we are led to consider
-generalized dimensions deﬁned in terms of evaluations and quadratic norms of multivariable
-little q-Jacobi polynomials, which interpolate between the various classica l dimensions.
-The multivariable littleq-Jacobi polynomials P L
-λ (z) (λ ∈ Λ n) are symmetric polynomials
-in n variables z = (z1,...,z n) depending on four auxiliary parameters, which arise as
-degenerations of the Macdonald-Koornwinder polynomials [15]. They form an orthogonal
-system with respect to an explicit discrete probability orthogonality measure deﬁned in
-terms of an iterated Jackson integral (see [26]), which induces a no rm ‖·‖L on the symmetric
-polynomials in z. The generalized dimensions referred to in the previous paragraph are
-(1.3) d(λ) = P L
-λ (0)2
-‖P L
-λ ‖2
-L
-, λ ∈ Λ n,
-compare with the representation theoretic dimension formula (1.2) .
-We show that the dimension of V F
-λ can be obtained as a classical ( q = 1) degener-
-ation of d(λ) for F Archimedean, and as a p-adic (q = 0) degeneration of d(λ) for F
-non-Archimedean. For special values of the four auxiliary paramet ers of the multivari-
-able little q-Jacobi polynomials we show that the generalized dimensions d(λ) (λ ∈ Λ n)
-themselves have a representation theoretic interpretation as th e quantum dimensions of
-irreducible spherical quantum representations associated to the one-parameter family of
-quantum complex Grassmannians from [20] and [5]. In this case the ke y ingredient is
-the identiﬁcation in [20] and [5] of the associated quantum zonal sph erical functions with
-Macdonald-Koornwinder polynomials, as well as with degenerations o f the Macdonald-
-Koornwinder polynomials known as multivariable big and little q-Jacobi polynomials.
-Cherednik’s double aﬃne Hecke algebra techniques have led to explicit evaluation for-
-mulas and to explicit quadratic norm evaluations for the Macdonald-K oornwinder poly-
-nomials in [24] (see also [3] and [28]). The quadratic norms ‖Pλ‖2
-L of the multivariable
-little q-Jacobi polynomials (as well as for multivariable big q-Jacobi polynomials) have
-been explicitly evaluated in [27] by degenerating the quadratic norm e valuations of the
-QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIO NS 3
-Macdonald-Koornwinder polynomials. In exactly the same way we der ive in this paper
-evaluation formulas for the multivariable big and little q-Jacobi polynomials. This leads to
-explicit expressions for the interpolating, generalized dimensions d(λ) (λ ∈ Λ n). Explicit
-(quantum) dimension formulas for the irreducible spherical (quant um) representations as-
-sociated to the various (quantum) Grassmannians are subsequen tly derived by degenerating
-the explicit expression for d(λ) (λ ∈ Λ n).
-The contents of the paper is as follows. In Section 2 we introduce th e multivariable little
-q-Jacobi polynomials and the associated generalized dimensions. In S ection 3 we discuss
-the representation theory of general Compact Quantum Group ( CQG) algebras from [4]
-and [7]. CQG algebras form the natural setting to capture the harmonic analyt ic structures
-of the various (quantum) Grassmannians under consideration in th is paper.
-In Section 4 we specialize the general representation theoretic se tup from Section 3
-to the classical CQG algebra of representative functions on the compact group KF. We
-discuss the harmonic analytic implications for the associated Grassm annian KF/MF. We
-pay close attention to the speciﬁc parametrization of the irreducib le MF-spherical KF-
-representations by Λ n. We state the explicit dimension formulas, which are new in case
-of non-Archimedean local ﬁelds F (see Theorem 4.5). Although the results are essentially
-classical for Archimedean local ﬁelds F (see e.g. [12], [5], [30] and [23]), we have decided
-to give a detailed exposition in case of F = C in order to highlight the similarities and
-diﬀerences to the results for the Grassmannians over non-Archim edean local ﬁelds F, as
-well as to the results for the quantum complex Grassmannians in the subsequent sections.
-In Section 5 we specialize the setup from Section 3 to the CQG algebra of quantized
-representative functions on KC = U(n), and we discuss the associated harmonic analysis
-on the standard quantum complex Grassmannian. In particular, we state explicit quantum
-dimension formulas for the associated irreducible spherical quantu m representations.
-In Section 6 we introduce the Macdonald-Koornwinder polynomials an d the multivari-
-able big and little q-Jacobi polynomials. We derive explicit evaluation formulas for the
-multivariable big and little q-Jacobi polynomials. Subsequently we derive in Section 7
-explicit expressions for the generalized dimensions as well as for the ir p-adic (q = 0) de-
-generations.
-In Section 8 we discuss the present approach for the one-parame ter family of quantum
-complex Grassmannians from [20] and [5]. Following closely the analysis of Noumi [19]
-for other examples of quantum symmetric spaces, we express the quantum dimensions
-of the associated irreducible spherical quantum representations in terms of evaluations
-and quadratic norms of Macdonald-Koornwinder polynomials, as well as of multivariable
-big and little q-Jacobi polynomials. In particular, we obtain the representation t heoretic
-interpretation of the generalized dimensions for special paramete rs as quantum dimensions
-of irreducible spherical quantum representations. In this contex t we remark that a similar
-approach can be followed for quantum real Grassmannians using th e harmonic analytic
-results from [30] and [17], but we do not pursue it in this paper.
-4 URI ONN AND JASPER V. STOKMAN
-Notations and conventions. Representations of topological groups are complex and are
-required to be continuous. We set
-(1.4) E = C(a,b,c,d,q,t )
-for the ﬁeld of rational functions in six indeterminates a,b,c,d,q and t. We set Λ n for the
-partitions of at most n parts. It is the cone
-Λ n =
-n⨁
-r=1
-Z+ωr
-in Zn, where ωr = (1 r, 0n−r) ∈ Λ n is the fundamental partition consisting of r ones and
-n −r zeros. We write ω0 = (0 n) ∈ Λ n for the zero partition. For a partition λ ∈ Λ n we
-denote λ′ for the conjugate partition and we set λ′
-0 = n. In addition we write |λ| for the
-weight of λ,l(λ) = λ′
-1 for the length of λ, and ∂λ′ = (λ′
-j −λ′
-j+1)j≥0 for the positive integral
-diﬀerences of the conjugate partition (whose sum equals n). For n-vectors u,v,w we set
-uvw = (u1vw1
-1 ,...,u nvwn
-n ). We occasionally use this notation when u or v are scalars, in
-which we use the corresponding n-vectors having all entries equal to the given scalar. We
-recall some standard notations from basic hypergeometric series (see e.g. [8]). For j ∈ Z+
-we set
-(
-a;q
-)
-j = (1 −a)(1 −aq) · · · (1 −aqj−1) (empty product is one) for the q-shifted
-factorial. We write
-(
-a1,...,a m;q
-)
-j =∏ m
-s=1
-(
-as;q
-)
-j for products of q-shifted factorials. For
-m,l,l 1,...,l k ∈ Z+ with l ≤m, we use the notations
-[m] = 1 −qm
-1 −q , [m]q! =
-m∏
-j=1
-[j]q,
-[ m
-l1 l2 · · · lk
-]
-q
-= [m]q!
-[l1]q! · · ·[lk]q!,
-(m
-l
-)
-q
-=
-[ m
-l m−l
-]
-q
-.
-In terms of q-shifted factorials, the q-factorial can be expressed as
-(1.5) [ m]q! = q
-1
-2 m(m−1)
-(
-q−1;q−1)
-m
-(1 −q−1)m.
-We use standard notations for the basic hypergeometric series r+1φr, see e.g. [8].
+Let $\mathbb{F}$ be a local field and let $\mathcal{K}_{\mathbb{F}}$ be the maximal compact subgroup of $\hbox{GL}_d(\mathbb{F})$. That is, $$\label{KF}
+\mathcal{K}_{\mathbb{F}}=
+\begin{cases}
+\hbox{O}(d)\qquad &\hbox{ if } \mathbb{F}=\mathbb{R},\\
+\hbox{U}(d)\qquad &\hbox{ if } \mathbb{F}=\mathbb{C},\\
+\hbox{GL}_d(\mathcal{O})\qquad &\hbox{ if } \mathbb{F}\,\,
+\hbox{non-Archimedean,}
+\end{cases}$$ where in the latter case $\mathcal{O}$ denotes the ring of integers of $\mathbb{F}$. Let $\mathcal{G}(n,d;\mathbb{F})$ be the Grassmannian of $n$-dimensional subspaces of a fixed $d$-dimensional vector space over $\mathbb{F}$. Throughout we assume that $n\leq d/2$. The group $\mathcal{K}_{\mathbb{F}}$ acts transitively on $\mathcal{G}(n,d;\mathbb{F})$. Letting $\mathcal{M}_{\mathbb{F}}$ be a stabilizer of a point we may identify $\mathcal{G}(n,d;\mathbb{F})$ with $\mathcal{K}_{\mathbb{F}}/\mathcal{M}_{\mathbb{F}}$. The pair $(\mathcal{K}_{\mathbb{F}},\mathcal{M}_{\mathbb{F}})$ is a Gelfand pair, in the sense that each (continuous, complex) irreducible $\mathcal{K}_{\mathbb{F}}$-representation has a subspace of $\mathcal{M}_{\mathbb{F}}$-fixed vectors which is at most one-dimensional. The irreducible representations having a one-dimensional subspace of $\mathcal{M}_{\mathbb{F}}$-fixed vectors are called $\mathcal{M}_{\mathbb{F}}$-spherical. In this paper we derive explicit dimension formulas for the irreducible $\mathcal{M}_{\mathbb{F}}$-spherical $\mathcal{K}_{\mathbb{F}}$-representations.
+
+For all local fields $\mathbb{F}$ the equivalence classes of the irreducible $\mathcal{M}_{\mathbb{F}}$-spherical $\mathcal{K}_{\mathbb{F}}$-representations are naturally parameterized by the set $\Lambda_n$ of partitions of at most $n$ parts (see e.g. [@JC] and [@DS] for $\mathbb{F}$ Archimedean, and [@BO2] for $\mathbb{F}$ non-Archimedean). This is quite remarkable, taking into consideration that the representation theory of $\mathcal{K}_{\mathbb{F}}$ for $\mathbb{F}$ non-Archimedean is of a completely different nature compared to the representation theory for $\mathbb{F}$ Archimedean. In each case there is a natural explicit labeling of the irreducible $\mathcal{M}_{\mathbb{F}}$-spherical $\mathcal{K}_{\mathbb{F}}$-representations $V_\lambda^{\mathbb{F}}$ by partitions $\lambda\in\Lambda_n$ which we shall describe in detail.
+
+The zonal spherical functions $\varphi_\lambda^{\mathbb{F}}$ associated to $V_\lambda^{\mathbb{F}}$ ($\lambda\in\Lambda_n$) form a linear basis of the Hecke algebra of $\mathcal{M}_{\mathbb{F}}$-biinvariant representative functions on $\mathcal{K}_{\mathbb{F}}$. The starting point for the derivation of the explicit dimension formulas for the irreducible $\mathcal{M}_{\mathbb{F}}$-spherical $\mathcal{K}_{\mathbb{F}}$-representations is the representation theoretic dimension formula $$\label{repdimintro}
+\textup{Dim}_{\mathbb{C}}\bigl(V_\lambda^{\mathbb{F}}\bigr)=
+\frac{\bigl(\varphi_\lambda^{\mathbb{F}}(e)\bigr)^2}
+{\int_{\mathcal{K}_{\mathbb{F}}}|\varphi_\lambda^{\mathbb{F}}(g)|^2dg},\qquad
+\lambda\in\Lambda_n$$ where $e\in\mathcal{K}_{\mathbb{F}}$ is the unit element and integration is with respect to the normalized Haar measure on $\mathcal{K}_{\mathbb{F}}$. The second key ingredient is the fact that the zonal spherical functions $\varphi_\lambda^{\mathbb{F}}$ for the different local fields $\mathbb{F}$ relate to various degenerations of the multivariable little $q$-Jacobi polynomials from [@S0], see [@JC], [@DS] and [@OU1]. As a result, we are led to consider generalized dimensions defined in terms of evaluations and quadratic norms of multivariable little $q$-Jacobi polynomials, which interpolate between the various classical dimensions.
+
+The multivariable little $q$-Jacobi polynomials $P_\lambda^L(z)$ ($\lambda\in\Lambda_n$) are symmetric polynomials in $n$ variables $z=(z_1,\ldots,z_n)$ depending on four auxiliary parameters, which arise as degenerations of the Macdonald-Koornwinder polynomials [@K]. They form an orthogonal system with respect to an explicit discrete probability orthogonality measure defined in terms of an iterated Jackson integral (see [@S0]), which induces a norm $\|\cdot\|_L$ on the symmetric polynomials in $z$. The generalized dimensions referred to in the previous paragraph are $$\label{tildeD}
+d(\lambda)=\frac{P_\lambda^L(0)^2}{\|P_\lambda^L\|_L^2},\qquad
+\lambda\in\Lambda_n,$$ compare with the representation theoretic dimension formula [\[repdimintro\]](#repdimintro){reference-type="eqref" reference="repdimintro"}.
+
+We show that the dimension of $V_\lambda^{\mathbb{F}}$ can be obtained as a classical ($q=1$) degeneration of $d(\lambda)$ for $\mathbb{F}$ Archimedean, and as a $p$-adic ($q=0$) degeneration of $d(\lambda)$ for $\mathbb{F}$ non-Archimedean. For special values of the four auxiliary parameters of the multivariable little $q$-Jacobi polynomials we show that the generalized dimensions $d(\lambda)$ ($\lambda\in\Lambda_n$) themselves have a representation theoretic interpretation as the quantum dimensions of irreducible spherical quantum representations associated to the one-parameter family of quantum complex Grassmannians from [@NDS] and [@DS]. In this case the key ingredient is the identification in [@NDS] and [@DS] of the associated quantum zonal spherical functions with Macdonald-Koornwinder polynomials, as well as with degenerations of the Macdonald-Koornwinder polynomials known as multivariable big and little $q$-Jacobi polynomials.
+
+Cherednik's double affine Hecke algebra techniques have led to explicit evaluation formulas and to explicit quadratic norm evaluations for the Macdonald-Koornwinder polynomials in [@Sa] (see also [@vD] and [@S2]). The quadratic norms $\|P_\lambda\|_L^2$ of the multivariable little $q$-Jacobi polynomials (as well as for multivariable big $q$-Jacobi polynomials) have been explicitly evaluated in [@S] by degenerating the quadratic norm evaluations of the Macdonald-Koornwinder polynomials. In exactly the same way we derive in this paper evaluation formulas for the multivariable big and little $q$-Jacobi polynomials. This leads to explicit expressions for the interpolating, generalized dimensions $d(\lambda)$ ($\lambda\in\Lambda_n$). Explicit (quantum) dimension formulas for the irreducible spherical (quantum) representations associated to the various (quantum) Grassmannians are subsequently derived by degenerating the explicit expression for $d(\lambda)$ ($\lambda\in\Lambda_n$).
+
+The contents of the paper is as follows. In Section [\[qJsection\]](#qJsection){reference-type="ref" reference="qJsection"} we introduce the multivariable little $q$-Jacobi polynomials and the associated generalized dimensions. In Section [\[CQG\]](#CQG){reference-type="ref" reference="CQG"} we discuss the representation theory of general Compact Quantum Group ([CQG]{.sans-serif}) algebras from [@DK] and [@F]. [CQG ]{.sans-serif}algebras form the natural setting to capture the harmonic analytic structures of the various (quantum) Grassmannians under consideration in this paper.
+
+In Section [\[local\]](#local){reference-type="ref" reference="local"} we specialize the general representation theoretic setup from Section [\[CQG\]](#CQG){reference-type="ref" reference="CQG"} to the classical [CQG ]{.sans-serif}algebra of representative functions on the compact group $\mathcal{K}_{\mathbb{F}}$. We discuss the harmonic analytic implications for the associated Grassmannian $\mathcal{K}_{\mathbb{F}}/\mathcal{M}_{\mathbb{F}}$. We pay close attention to the specific parametrization of the irreducible $\mathcal{M}_{\mathbb{F}}$-spherical $\mathcal{K}_{\mathbb{F}}$-representations by $\Lambda_n$. We state the explicit dimension formulas, which are new in case of non-Archimedean local fields $\mathbb{F}$ (see Theorem [\[thm-dim-padic\]](#thm-dim-padic){reference-type="ref" reference="thm-dim-padic"}). Although the results are essentially classical for Archimedean local fields $\mathbb{F}$ (see e.g. [@JC], [@DS], [@Su] and [@OU1]), we have decided to give a detailed exposition in case of $\mathbb{F}=\mathbb{C}$ in order to highlight the similarities and differences to the results for the Grassmannians over non-Archimedean local fields $\mathbb{F}$, as well as to the results for the quantum complex Grassmannians in the subsequent sections.
+
+In Section [\[qGrassmannian\]](#qGrassmannian){reference-type="ref" reference="qGrassmannian"} we specialize the setup from Section [\[CQG\]](#CQG){reference-type="ref" reference="CQG"} to the [CQG ]{.sans-serif}algebra of quantized representative functions on $\mathcal{K}_{\mathbb{C}}=\hbox{U}(n)$, and we discuss the associated harmonic analysis on the standard quantum complex Grassmannian. In particular, we state explicit quantum dimension formulas for the associated irreducible spherical quantum representations.
+
+In Section [\[evaluation\]](#evaluation){reference-type="ref" reference="evaluation"} we introduce the Macdonald-Koornwinder polynomials and the multivariable big and little $q$-Jacobi polynomials. We derive explicit evaluation formulas for the multivariable big and little $q$-Jacobi polynomials. Subsequently we derive in Section [\[Dimensionsection\]](#Dimensionsection){reference-type="ref" reference="Dimensionsection"} explicit expressions for the generalized dimensions as well as for their $p$-adic ($q=0$) degenerations.
+
+In Section [\[quantum\]](#quantum){reference-type="ref" reference="quantum"} we discuss the present approach for the one-parameter family of quantum complex Grassmannians from [@NDS] and [@DS]. Following closely the analysis of Noumi [@N] for other examples of quantum symmetric spaces, we express the quantum dimensions of the associated irreducible spherical quantum representations in terms of evaluations and quadratic norms of Macdonald-Koornwinder polynomials, as well as of multivariable big and little $q$-Jacobi polynomials. In particular, we obtain the representation theoretic interpretation of the generalized dimensions for special parameters as quantum dimensions of irreducible spherical quantum representations. In this context we remark that a similar approach can be followed for quantum real Grassmannians using the harmonic analytic results from [@Su] and [@L], but we do not pursue it in this paper.
+
+**Notations and conventions.** Representations of topological groups are complex and are required to be continuous. We set $$\label{Fz}
+\mathbb{E}=\mathbb{C}(a,b,c,d,q,t)$$ for the field of rational functions in six indeterminates $a,b,c,d,q$ and $t$. We set $\Lambda_n$ for the partitions of at most $n$ parts. It is the cone $$\Lambda_n=\bigoplus_{r=1}^n\mathbb{Z}_+\omega_r$$ in $\mathbb{Z}^n$, where $\omega_r=(1^r,0^{n-r})\in\Lambda_n$ is the fundamental partition consisting of $r$ ones and $n-r$ zeros. We write $\omega_0=(0^n)\in\Lambda_n$ for the zero partition. For a partition $\lambda\in\Lambda_n$ we denote $\lambda^\prime$ for the conjugate partition and we set $\lambda_0^\prime=n$. In addition we write $|\lambda|$ for the weight of $\lambda$, $l(\lambda)=\lambda_1^\prime$ for the length of $\lambda$, and $\partial\lambda^\prime=(\lambda_j^\prime-\lambda_{j+1}^\prime)_{j\geq
+0}$ for the positive integral differences of the conjugate partition (whose sum equals $n$). For $n$-vectors $u,v,w$ we set $uv^w=(u_1
+v_1^{w_1},\ldots,u_n v_n^{w_n})$. We occasionally use this notation when $u$ or $v$ are scalars, in which we use the corresponding $n$-vectors having all entries equal to the given scalar. We recall some standard notations from basic hypergeometric series (see e.g. [@GR]). For $j\in\mathbb{Z}_{+}$ we set $\bigl(a;q\bigr)_j=(1-a)(1-aq)\cdots (1-aq^{j-1})$ (empty product is one) for the $q$-shifted factorial. We write $\bigl(a_1,\ldots,a_m;q\bigr)_j=\prod_{s=1}^m\bigl(a_s;q\bigr)_j$ for products of $q$-shifted factorials. For $m,l,l_1,\ldots,l_k\in\mathbb{Z}_+$ with $l\leq m$, we use the notations $$\begin{split}
+\lbrack m\rbrack_{}&=\frac{1-q^{m}}{1-q},\qquad \qquad\qquad\lbrack
+m\rbrack_{q}!=\prod_{j=1}^m\lbrack
+j\rbrack_{q},\\
+\bigg[{m \atop l_1~ l_2~ \cdots ~l_k}\bigg]_{q}&=
+\frac{[m]_{q}!}{[l_1]_{q}! \cdots [l_k]_{q}!}, \qquad \left({m \atop
+l}\right)_{q}=\bigg[{m \atop l~~ m-l}\bigg]_{q}.
+\end{split}$$ In terms of $q$-shifted factorials, the $q$-factorial can be expressed as $$\label{brackq}
+\lbrack
+m\rbrack_{q}!=q^{\frac{1}{2}m(m-1)}\frac{\bigl(q^{-1};q^{-1}\bigr)_m}{(1-q^{-1})^m}.$$ We use standard notations for the basic hypergeometric series ${}_{r+1}\phi_r$, see e.g. [@GR].

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-cond-mat-9811142v1/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "(4XY ) ρT hard",
-  "pageStart": 30,
-  "pageEnd": 36,
+  "title": "Discussion",
+  "pageStart": 25,
+  "pageEnd": 26,
   "contains": [
     "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/arxiv-cond-mat-9811142v1/manifest",
-  "sourceDocument": "library/arxiv-cond-mat-9811142v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-cond-mat-9811142v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-cond-mat-9811142v1/manifest.jsonld",
   "provenance": "ingested"
 }

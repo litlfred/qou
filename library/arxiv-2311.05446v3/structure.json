@@ -7,7 +7,11 @@
   "bytes": 531012,
   "pages": 32,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -238,6 +242,105 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 12,
-  "chars_total": 72362
+  "chars_total": 72362,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 10,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-improved-brunnminkowski-inequalities",
+     "title": "Improved Brunn\u2013Minkowski inequalities",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.882,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-weighted-brunnminkowski-inequalities-for-star",
+     "title": "Weighted Brunn\u2013Minkowski inequalities for star bodies",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 0.908,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-14-functional-inequalities",
+     "title": "Functional Inequalities",
+     "prose_ratio": 0.049,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-13-towards-the-best-possible-exponent-in-the-ent",
+     "title": "Towards the best possible exponent in the entropy inequality",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.552,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-some-notation-and-conventions",
+     "title": "Some notation and conventions:",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.808,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-2-optimal-transport-entropy-and-an-overview-of-o",
+     "title": "Optimal transport, entropy, and an overview of our method",
+     "prose_ratio": 0.998,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-3-dimensional-convexity-properties-of-relative-e",
+     "title": "Dimensional convexity properties of relative entropy for log-concave measures with homogeneous potential",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-4-dimensional-convexity-properties-of-the-gaussi",
+     "title": "Dimensional convexity properties of the Gaussian relative entropy",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-5-applications-to-functional-inequalities",
+     "title": "Applications to functional inequalities",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

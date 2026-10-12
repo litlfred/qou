@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-055",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-055",
   "kind": "prose",
-  "title": "Loop integrals",
-  "pageStart": 97,
-  "pageEnd": 99,
-  "text": "../sections/sec-055-loop-integrals.md",
-  "derivedFrom": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
-  "sourceDocument": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
+  "title": "Uncertainty analysis",
+  "pageStart": 95,
+  "pageEnd": 97,
+  "text": "../sections/sec-055-uncertainty-analysis.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
   "provenance": "ingested"
 }

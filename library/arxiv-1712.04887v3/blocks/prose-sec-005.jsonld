@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1712.04887v3/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1712.04887v3/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Compatibilities",
   "pageStart": 14,
   "pageEnd": 15,
   "text": "../sections/sec-005-24-compatibilities.md",
-  "derivedFrom": "library/arxiv-1712.04887v3/manifest",
-  "sourceDocument": "library/arxiv-1712.04887v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.04887v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.04887v3/manifest.jsonld",
   "provenance": "ingested"
 }

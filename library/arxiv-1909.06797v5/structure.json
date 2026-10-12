@@ -6,7 +6,11 @@
   "sha256": "87095d7e46ebe286a2d65cc1c9dc6ddf386c8bfb65e20dc34c0fe23ce14e5e64",
   "bytes": 452314,
   "pages": 34,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -300,6 +304,114 @@
   "likely_scanned": false,
   "toc_entries": 20,
   "sections": 12,
-  "chars_total": 69218
+  "chars_total": 69218,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Plancherel_growth_modified.tex",
+   "tex_sections": 14,
+   "overlaid": 11,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-review-1-droplet-description-of-unitary-matrix",
+     "title": "Review 1 : Droplet description of unitary matrix models",
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-21-the-large-n-droplets",
+     "title": "The large N droplets",
+     "prose_ratio": 0.902,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-31-the-universal-diagram-and-automodel",
+     "title": "The Universal Diagram and Automodel",
+     "prose_ratio": 0.921,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-32-fluctuations-of-automodel-diagrams",
+     "title": "Fluctuations of automodel diagrams",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-41-a-connection-between-young-lattice-and-gross",
+     "title": "A connection between Young lattice and Gross-Witten-Wadia model",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-5-large-n-analysis-of-partition-function-an-alte",
+     "title": "Large N analysis of partition function : an alternate proof of the limit shape theorem",
+     "prose_ratio": 0.879,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-51-large-n-solutions-and-automodel-diagrams",
+     "title": "Large N solutions and automodel diagrams",
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-52-a-connection-with-automodel",
+     "title": "A connection with automodel",
+     "prose_ratio": 0.839,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-6-the-hilbert-space-for-plancherel-growth",
+     "title": "The Hilbert space for Plancherel growth",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-61-droplet-quantisation",
+     "title": "Droplet quantisation",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-7-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.89,
+     "coverage_ratio": 0.438,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

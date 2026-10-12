@@ -1,0 +1,289 @@
+\section{Local Mutation}\label{sec:setup}
+
+In this section, we begin by constructing local higher mutations. Subsequently, we gather some symplectic properties of the objects involved in the construction and prove that local mutations preserve monotonicity of Lagrangians.
+
+
+\subsection{Construction of Local Higher Mutation}
+
+Similar to defining a Lagrangian torus over a closed loop in $\C^*$ as in (\ref{eqn:lagtoru}) we can define a Lagrangian over a simple open path in $\C^*$.  
+
+\begin{defn}\label{defn:torusseg}
+Let $\gamma : [0, 1] \to \C^*$ be a path that does not intersect itself. Assume $\gamma(0) \neq \gamma(1)$.  We define $T_\gamma$,  a \textit{torus segment} over $\gamma$,  as follows, 
+
+\begin{equation}
+\label{eq:lagcyl}
+    T_{\gamma} =\bigg \{ (z_1, z_2, \dots z_n) \in \C^n \bigg|  \pi_m  (z_1, z_2, \dots z_n) \in \gamma,   |z_1| = |z_2| = \dots |z_n| \bigg \}.
+\end{equation} 
+\end{defn}
+\noindent 
+\noindent For a non-intersecting path $\gamma$,  the torus segment $T_\gamma$ is diffeomorphic to the product of a $(n-1)$ dimensional torus and a closed interval of the real line. 
+
+\begin{figure}[ht]
+    \centering
+    \incfig{1}{lagoverpath}
+    \caption{Torus segment $T_\gamma$ over a path $\gamma$}
+    \label{fig:lagoverpath}
+\end{figure}
+
+
+
+\begin{defn}[Admissible Path] We call a path $\gamma : (-t, t) \to \C^*$ \textit{admissible} if there exists an $\e >0 $ such that \begin{enumerate}
+    \item  $\gamma (x) = x$ for $x\in (-t, -\e) \cup (\e, t)$,
+    \item  image of $\gamma|_{(-t+\e, t-\e)}$ lies in the disc $\D(t-\e)$ of radius $t-\e$ ,
+    \item $\gamma$ lies completely inside the upper half plane.
+\end{enumerate}
+ 
+\end{defn}
+
+
+\begin{figure}[ht]
+    \centering
+    \incfig{1}{gamma}
+    \caption{Admissible path $\gamma$}
+    \label{fig:gamma}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{1.5}{locpic}
+    \caption{Locally mutable $L$ in $M$}
+    \label{fig:locpic}
+\end{figure}
+
+
+\begin{defn}[Locally mutable]\label{defn:locallymutable}
+We call a Lagrangian $L \hookrightarrow (M, \omega)$ \textit{locally mutable} if the following hold:
+ 
+ \begin{enumerate}
+     \item  There  is an open set $B$ in $M$ that is symplectomorphic via $\phi$ to an open ball $B(0)$ around $0 \in \C^n$ such that   $ \phi ( B \cap L) = T_\gamma$ for some admissible path $\gamma$ in $\C$.
+     \item $i_*:H_1( B \cap L) \hookrightarrow H_1(L)$ is a split injection, i.e., $0 \rightarrow H_1 (T_\gamma) \to H_1(L)$ extends to split short exact sequence. Here $i_*$ is induced from $i:\phi\inv(T_\gamma) \to L$. 
+      \item $L \setminus B$ is connected.
+ \end{enumerate}
+\end{defn}
+
+
+
+\begin{example}
+Note that we can use a Hamiltonian isotopy (with respect to $\omega_n$) to map a circle in the complex plane that does not pass through 0 to a curve $\gamma$ that has an arc which is admissible.  Thus, a similar argument as Lemma \ref{lemm:hamiso} shows that the Clifford and Chekanov tori are locally mutable. 
+
+\end{example}
+
+
+\begin{remark}
+For dimension $2$, \cite{haug} proves that if there is an isotropic surgery disc $D$ whose boundary cleanly intersects a Lagrangian $L$, then $L$ satisfies condition (1) of Definition \ref{defn:locallymutable}. 
+\end{remark}
+
+\begin{defn}[Mutation neighborhood]\label{defn:mutnbd}
+The open set $B$ in Definition \ref{defn:locallymutable} is called the mutation neighborhood. 
+\end{defn}
+
+
+
+
+Now we can define local higher mutations.  Intuitively,  Local Higher Mutation is a cut-paste construction where we cut out a torus segment over a path and replace it with another torus segment over ``flipped" curve that goes around $0$ in the opposite direction.  We need to replace the curve while preserving some symplectic area so that eventually we preserve monotonicity of Lagrangians.  
+
+\begin{defn}\label{defn:lambdan}
+   We define $\lambda_n$ as the  1-form  on $\C^*$ given by  $\lambda_n = \frac{xdy-ydx}{2(x^2+y^2)^{\frac{n-1}{n}}}$.  The form $\lambda_n$ is obtained by pulling back the 1-form $\lambda_0 = \sum_i x_idy_i - y_idx_i,$ on $\C^n$, under the diagonal $n^{th}$-root map, $z\mapsto (z^{1/n},  \dots,  z^{1/n})$.   
+\end{defn}
+
+\begin{defn}[Local Higher Mutation]\label{defn:mutation}
+ Given a locally mutable Lagrangian $L$,  the local higher mutation $L_\mu$ of $L$ is the Lagrangian obtained by removing $\phi\inv ( T_c)$  for an arc $c$ of $\gamma$ i.e.  $c:(-r, r) \to \C^*$ and $c(x)=\gamma(x)$ and gluing back $\phi \inv (T_{c'})$ for a curve $c'$  such that,
+ \begin{enumerate}
+    
+     \item there is an $\e>0$ such that $c(x)= c'(x)$ for $x\in (-r, -r+\e) \cup (r-\e, r)$,
+     \item the glued curve $c\cup c'$ is homotopic to the unit circle around 0 ,
+     \item the resulting curve $\gamma' = (\gamma \setminus c )\cup c'$ is smooth,
+     \item $\int_c \lambda_n = \int_{c'} \lambda_n$.
+ \end{enumerate}
+\end{defn}
+
+\begin{defn}[Mutated admissible path]
+    Given an admissible path $\gamma$, we call the curve $\gamma'$ as constructed in Definition \ref{defn:mutation} the mutated admissible path of $\gamma$.
+\end{defn}
+
+
+\begin{remark}
+For dimension $2$, Lagrangian mutation is the same as performing an anti-surgery as defined in \cite{haug} followed by a Lagrangian surgery. 
+\end{remark}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{0.4}{gamm}
+    \caption{Mutation of paths}
+    \label{fig:gamm}
+\end{figure}
+
+
+We will show that the monodromy of the fiber torus around the origin is trivial in the mapping class group.  In Definition \ref{defn:mutation}, condition (1) implies replacing $c$ with $c'$ does not change the topology of the Lagrangian $L$.  We will also show that condition (3) implies that the symplectic areas of the discs remain the same after local higher mutation and Lemma \ref{lemm:hamiso} implies all such choices of paths $c'$ produces Hamiltonian isotopic $L_\mu$. 
+ 
+ 
+ 
+ 
+
+The construction of higher mutation is related to an example of special Lagrangian fibration that appears in \cite{joy}.  When $\gamma$ is the real axis,  $T_\gamma$ is the Harvey-Lawson cone when $k\text{ is odd}$ (see example 3.5 in \cite{joy}).   Consider the Harvey-Lawson Lagrangian fibration in dimension 3 $$\rho : \C^3 \to \R^3 $$    $$\rho(z_1, z_2, z_3) = (\text{Im} (z_1z_2z_3), |z_1^2|-|z_2^2|, |z_1^2|-|z_3^2|). $$
+The singular Lagrangian $\rho \inv (0)$ is the Harvey-Lawson cone.  The Clifford and Chekanov type tori can be Hamiltonian isotoped so that they match the Harvey-Lawson fibers locally near 0.  In this setting,  higher mutation can be thought of as replacing $\rho\inv (\epsilon, 0, 0)$ with $\rho\inv(-\epsilon, 0, 0)$ locally and gluing it back appropriately. 
+
+
+\subsection{Monodromy of the fiber Lagrangian torus}
+
+We will use symplectic parallel transport of the fibration $\pi_m$ (see Equation (\ref{eq:pim}) for definition of $\pi_m$) to obtain various properties of the Lagrangians we have been considering so far. One way to verify the manifold $T_\gamma$ is a Lagrangian, is by showing it is obtained by a symplectic parallel transport of a Lagrangian in a fiber. Notice that $\pi_m$ is a fibration over $\C^*$. The standard symplectic form $\omega_0$ in $\C^n$ induces a symplectic horizontal distribution, which allows us to parallel transport between fibers such that the parallel transport maps are symplectomorphisms of the fiber.
+
+We describe how a symplectic fibration provides us a splitting of the tangent bundle of the total space of the fibration. The tangent bundle of $\C^n$ splits into vertical and horizontal components under the fibration $\pi_m$. Away from the locus of critical points of $\pi_m$, the vertical bundle $V$ of the fibration is sub bundle obtained as the kernel bundle $\ker d\pi_m$ i.e. over a point $z\in \C^n$, the fiber $V_z$ of the vertical bundle is given as $V|_z = \ker d\pi_m(z)$. The horizontal bundle $H$ is defined as the symplectic complement $V^\omega$ of the vertical bundle $V$.  We can explicitly compute $\ker d\pi_m$ at a point $z =(z_1,\dots z_n) \in \C ^n$ to obtain $V_z$. For a point $z$ such that $\pi_m(z)\neq 0$, we have that
+\begin{align*}
+V_z &= \text{Span}_\C(X_1(z),\dots, X_{n-1}(z)),    \\
+\text{ where }& X_i(z) = (0, \dots 0, \quad \underbrace{ z_i}_{i\th \text{ spot. }} ,\quad 0, \dots ,-z_n ).
+\end{align*}
+A direct computation can be done to obtain symplectic complement to the vertical bundle over any $z$ such that $\pi_m(z)\neq 0$. We have the following relation.
+
+\begin{equation}\label{eq:vertbundle}
+    H_z = \text{Span}_\C \bigg \{ \big (\frac{z_1}{|z_1|^2}, \dots \frac{z_n}{|z_n|^2}\big ) \bigg\}
+\end{equation}
+
+
+\begin{defn}
+We define $T_{\ul z }$, the Lagrangian torus in the fiber over $\ul z\in \C^*$ to be the torus given by the relations $|z_1|=\dots=|z_n|$ in the fiber $\pi_m\inv (\ul z)$.
+\end{defn}
+
+\begin{lemma}
+The manifold $T_\gamma$ is a Lagrangian submanifold of $\C^n$ equipped with the standard symplectic structure and $T_\gamma$ is diffeomorphic to a torus.  
+\end{lemma}
+
+\begin{proof}
+Note that when $|z_1|=\dots=|z_n|$ for some $z=(z_1,\dots,z_n) \in \C^n$, from equation (\ref{eq:vertbundle}) we have that the horizontal distribution at $z$ is just $\C .z$. The torus $T_{\ul z}$ is a Lagrangian submanifold in $\pi_m\inv (\ul z) $ by a direct computation and the manifold $T_\gamma$ is the union of tori $T_{\gamma(t)}$ for all $t$, i.e. $ \cup_t T_{\gamma(t)}$. A simple check shows that the map $z\mapsto (z^{\frac{1}{n}} z_1, \dots ,z^{\frac{1}{n}} z_n )$ is a horizontal section for $(z_1,\dots,z_n) \in \pi_m \inv (1)$ such that $|z_1|=\dots=|z_n|$. This proves that the symplectic parallel transport from the fiber over the point $a$ to the fiber over the point $ b$ maps the Lagrangian torus $T_a$ to the torus $T_b$. Thus $T_\gamma$ is a Lagrangian.
+
+From the proof above one gets that the monodromy obtained from a circle around origin $T_1 \to T_1$ is multiplication by an $n^{th}$ root of unity $\xi$ on all factors, thus $T_\gamma$ is a trivial bundle over $\gamma$ hence a torus.
+\end{proof}
+
+\begin{remark} \label{rem:torsseglag}
+The proof above also shows that torus segments are Lagrangian submanifolds.
+\end{remark}
+
+
+\begin{lemma}\label{lemm:Texactlag}
+The torus segment $T_\gamma$ is an exact Lagrangian for any smooth, non-intersecting  path $\gamma : \interval \to \C^*$ .
+\end{lemma}
+
+\begin{proof}
+
+The standard symplectic form $\omega_0$ has a standard primitive $\lambda_0 = \sum_{i=1}^{n}\frac{1}{2}(x_idy_i-y_idx_i)$. The restriction of $\lambda_0$ to $T_\gamma$ is closed because $T_\gamma $ is a Lagrangian. Now, to show that it is exact, it is enough to show that  line integrals of $\lambda_0$ over the generators of $H_1(T_\gamma)$ is $0$. Clearly the torus segment $T_\gamma$ retracts onto $T_p$ for any $p$ on $\gamma$ thus $H_1(T_\gamma) \cong \mathbb{Z}^{n-1}$. The generators are given by the \textit{standard }$n-1$ \textit{loops} $S^1 \to T_p$, $\theta \mapsto (p_1,\dots ,e^{i\theta}p_i,\dots,e^{-i\theta}p_n)$ where $(p_1,\dots,p_n) \in T_p$ .  Using Stokes' theorem and the fact that $|p_i| = |p_n|$, we see that the line integral $\lambda_0$ over the $n-1$ generators is $0$. Thus $T_\gamma$ is exact.
+
+\end{proof}
+
+\begin{lemma}\label{rem:texactlag}
+For any path $c$ to the Lagrangian torus in the fiber over $p$, i.e. $c:[0,1] \to T_p$, we have $\int_c \lambda_0 = 0$.
+\end{lemma}
+
+
+\begin{proof}
+From \ref{lemm:Texactlag}, the one form $\lambda_0$ restricted to the Lagrangian,  $T_\gamma$ is exact. Thus, we have that the line integral $\int_c \lambda_0 $ depends solely on the end points $c(0), c(1)$. Now choose a path from $c(0)$ to $c(1)$ that is a composition of arcs from the standard $n-1$ loops defined above. Since $\lambda_0$ is rotationally invariant, a direct computation shows that the integral of $\lambda_0$ over any arc of the standard $n-1$ loops is 0. Thus, we have that $\int_c \lambda_0 = 0 $.
+
+\end{proof}
+
+
+
+
+ 
+ 
+ \subsection{Hamiltonian isotopy} \label{ssub:hamiso}
+ 
+ 
+In this subsection, we study the Hamiltonian isotopy classes of the family of Lagrangians $T_\gamma$ based on properties of the path $\gamma$. We follow the approach of Corollary 2.5 in \cite{lekiliRational} to provide a condition on paths $\gamma$ and $\gamma'$ that is sufficient to make the torus segments $T_\gamma$ and $T_\gamma'$ Hamiltonian isotopic. We study the case of smoothly isotoping the path $\gamma_0 : [0,1] \to \C^*$ to another path $\gamma_1$ where $\gamma_s$ is fixed in a small neighborhood of $0$ and $1$, i.e., there is an $\e$ such that $\gamma_s (t) = \gamma_0 (t)$ for $t\in [0,\e) \cup (1-\e,1]$. Call $\gamma(0)=a$ , $\gamma(1)=b$.
+\begin{lemma}\label{lemm:hamiso}
+Let $\gamma_s$ be an isotopy of paths that is constant on endpoints as described above, such that $\int_{\gamma_s}\lambda_n$ is constant, $T_{\gamma_0} $ is Hamiltonian isotopic to $T_{\gamma_1}$
+\end{lemma}
+ 
+\begin{proof}
+The isotopy $\ol \gamma:\interval \times \interval \to \C^*$, of paths $\gamma_s:=\ol \gamma (s,\_)$, from the curve $\gamma_0$ to $\gamma_1$, lifts to an isotopy of embedded manifolds (with boundary) from the torus segment $T_{\gamma_0}$ to $T_{\gamma_1}$ via torus segments. Since we know that each torus segment is a Lagrangian manifold, we have a Lagrangian isotopy between $T_{\gamma_0}$ to $T_{\gamma_1}$. An equivalent condition to Lagrangian isotopy being a result of ambient Hamiltonian isotopy is that the Lagrangian isotopy is exact, see Section 6.1 \cite{polGeom}. To deal with an isotopy of  manifolds with boundary,  we use the relative de Rham model to define exactness. In our setting, being exact turns out to be the same as having the integral $\int_{c_s} \lambda_0$ for an isotopy (induced from the Lagrangian isotopy) of curves $c_s \in H_1(T_{\gamma_s},T_a \cup T_b)$ invariant of isotopy in the $s$-direction. Here $c$ is a homotopy of paths lying on the isotopy of the torus segments over $\ol \gamma$ with boundary on the torii $T_a,T_b$ i.e. $c_s:=c(s,\_)$ is a path (or loops) in $T_{\gamma_{s}}$ such that the boundary (if any) $\del c_s$ lies on the boundary $T_a \cup T_b$ of the torus segment. We have observed that the torus segment $T_\gamma$ is an exact Lagrangian in Lemma \ref{lemm:Texactlag} and that the integrals of $\lambda_0$ are 0 on paths that lie in a single fiber  $T_z$ in Lemma \ref{rem:texactlag}. Thus,  it is enough to check whether $\int_{c_s} \lambda_0$ is invariant of $s$ for a family of curves $c_s$ that descend to the path $\gamma_s$. A candidate for such a lift is $c_s(t) = (\gamma_s(t)^{1/n}, \dots, \gamma_s(t)^{1/n})$. Clearly $\int_{c_s}\lambda_0 = \int_{\gamma_s} \lambda_n$ from the definition of $\lambda_n$. From the hypothesis of the lemma, we see that $\int_{c_s}\lambda_0$ is invariant of $s$. Thus, we have proved the Lemma.
+
+\end{proof}
+
+ \begin{cor}
+ If  $\gamma_0$ and $\gamma_1$  are two admissible paths that are equal near the ends and $\int_{\gamma_0} \lambda_n = \int_{\gamma_1} \lambda_n $ then $T_{\gamma_0}$ is Hamiltonian isotopic to $T_{\gamma_1}$.
+ \end{cor}
+ \begin{proof}
+ Lemma \ref{lemm:hamiso}  reduces the problem of finding a Hamiltonian isotopy of the Lagrangian $T_\gamma$ for admissible paths $\gamma$ to finding an isotopy of $\gamma$ that keeps the line integral with respect to $\lambda_n$ constant. Assume that $\gamma_0$ and $\gamma_1$ are two admissible paths that are equal near the ends, are isotopic to each other and $\int_{\gamma_0} \lambda_n = \int_{\gamma_1} \lambda_n $. We can `close up' $\gamma_0$ and $\gamma_1$ to an embedded circle with the same area by attaching a path  $\gamma_u$ that lies in the upper half plane. Lemma 2.3 of \cite{lekiliRational} show that $\gamma_0 \cup \gamma_u$ is Hamiltonian isotopic with respect to the symplectic form  $\omega_n=d\lambda_n$ to $\gamma_1 \cup \gamma_u$ where the isotopy is constant on $\gamma_u$. Thus we get an isotopy $\gamma_s$ of $\gamma_0$ to $\gamma_1$ such that  $\int_{\gamma_s}\lambda_n$ is constant. Thus, using Lemma \ref{lemm:hamiso} we finish the proof of our corollary.
+ \end{proof}
+
+
+\noindent We define a cylindrical version of the Lagrangian $T_\gamma$ when the path $\gamma$ is chosen to be cylindrical. The construction depends on choosing a path on $\C$ that lies on the real line away from a compact set.
+
+\begin{defn}[Cylindrical path]
+ A cylindrical path is defined as a map $\gamma: \R \to \C^*$ such that  $\gamma(r) \in \R$  when $|r|>M$ for some $M>0$ and the following have the following limits 
+ $$\lim_{r \to \pm \infty} \gamma(r) = \pm \infty.$$
+ \end{defn}
+ 
+ \begin{defn}[Asymptotically cylindrical path]
+ A path $\gamma : \R \to \C^*$ is defined to asymptotically cylindrical if there is an $\e\neq 0$  such that  $\gamma(r) \in \R+i\e$  when $|r|>M$ for some $M>0$ and the following have the following limits 
+ $$\lim_{r \to \pm \infty} \gamma(r) = \pm \infty.$$
+ \end{defn}
+ 
+ \begin{defn}[Cylindrical extension]
+ Let $\gamma:(-t,t)$ be an admissible path. From the definition of admissible path, we know there is an $\e>0$ such that $\gamma(x)=x$ for $x\in(-t,t)\setminus (-\e,\e)$. The cylindrical extension $\gamma^e$ is defined as 
+ \begin{align*}
+     \gamma^e(x) = x \text{ for x } \in \R\setminus(-\e,\e) \\
+     \gamma^e(x) = \gamma(x) \text{ otherwise.}
+ \end{align*}
+ \end{defn}
+
+ 
+ 
+We conclude this subsection with the definition of a cylindrical version of  torus segments, that shows up in the later sections as a result of neck stretching. We define a Lagrangian $T_\gamma$ over a cylindrical path $\gamma$ similarly as we define a torus-segment in Definition \ref{defn:torusseg}. We can similarly define $T_\gamma$ for an asymptotically cylindrical path $\gamma$.
+
+Since the path $\gamma$ lies on the real axis near its ends, the Lagrangian $T_\gamma$ has cylindrical ends in the sense that for large $R>0$, $T_\gamma \setminus B_R(0) =  [M,\infty) \times \Lambda $ for some $M>0$ in cylindrical coordinates $\R \times S^{2n-1} $ of $\C^n\setminus \{0\}$  where $\Lambda$ is the disjoint union of two Legendrian tori $T_+,T_-$ in the unit sphere $S^{2n-1}$ given by the equations 
+\begin{equation} \label{def:tplusminus}
+    T_\pm = \bigg \{ (z_1,\dots,z_n) \in S^{2n-1} \bigg | |z_1| = |z_2| = ..=|z_n| , z_1.z_2.\dots.z_n \in  \R^\pm  \bigg \} .
+\end{equation}
+
+\subsection{Mutation preserves monotonicity}
+In this subsection, we will describe which Lagrangians can be locally mutated and explain the construction of local mutations and show that monotonicity of Lagrangians is preserved under the operation of mutation.
+
+
+
+
+
+\begin{lemma}\label{mutmono}
+
+
+If L is a locally mutable monotone Lagrangian, then its mutation $L_\mu$ is also monotone.
+\end{lemma}
+
+\begin{proof}
+To fix notation, we use $B$ to denote the mutation neighborhood of $L$, $\gamma$ to denote the curve that determines $T_\gamma$ as in  Definition \ref{defn:locallymutable} and $\gamma'$ to denote the path for the mutation. For any disc $u^\mu $ with boundary on $L_\mu$, we will construct a disc with boundary on $L$, $u$, with the same area and Maslov number as $u^\mu$, which would prove that $L_\mu$ is monotone. Since $L=L_\mu$ outside the mutation neighborhood, we need to modify $u^\mu$ only where it enters the mutation neighborhood. Let $\del u^\mu$ denote the restriction of the disc $u^\mu$ to the boundary circle  and assume that on the domain interval $[p,q]$, $\del u^\mu$ is a map to the mutation neighborhood i.e. $\del u^\mu : [p,q] \to B$. We can choose points $p,q$ on the circle so that the $[p,q]$ is a maximal subset of the boundary circle with this property. There can be two cases,
+\begin{enumerate}
+
+
+    \item $\del u^\mu (p)$ and $\del u^\mu(q)$ lie on the same end of $T_\gamma$, i.e.\ $\pi_m(\del u^\mu(p)) = \pi_m(\del u^\mu(q))=:z$,
+    \item $\del u^\mu (p)$ and $\del u^\mu(q)$ lie on the opposite ends of $T_\gamma$, i.e.\ $\pi_m(\del u^\mu(p)) \neq \pi_m(\del u^\mu(q))$.
+\end{enumerate}
+ 
+ For case (1), we can homotope the path $\del u^\mu$ over $[p,q]$ through paths in $L_\mu$  while fixing the end points to a path that lies completely on a single torus fiber $T_z \sub T_\gamma$. We can use this homotopy to extend $u^\mu$ so that the boundary on $[p,q]$ lies on $T_z$, call the extended map $u_{pre}$. Note that this doesn't change the area since the homotopy of paths lied in a Lagrangian, also, it doesn't change the Maslov number of the boundary. Since $\del u_{pre}$ maps the boundary $[p,q]$ to $T_z$, using the fact that $z\in \gamma$ we get that $\del u_{pre} ([p,q]) \sub L$ since $L = T_\gamma$ in the mutation neighborhood.
+
+
+
+ For case (2), as a preliminary step, we homotope $\del u^\mu$ to a path on $T_{\gamma'}$ such that on $(p+e,q-e)$ for small $e$, $\del u^\mu$ is a horizontal section of $\gamma'$. We then attach horizontal sections over the discs bounding $\gamma \cup \gamma'$ and not containing 0 to extend $u^\mu$ to $u_{prepre}$ so that the boundary lies on $T_\gamma$. We need to deal with the case of discs containing 0 carefully, note that since the horizontal section is given by taking the $n\th$ root, it can't be defined in a neighborhood of 0, but only on a slit neighborhood, i.e., after removing a half-line starting at 0. We can remove a ray $\R^+$ from the neighborhood and then attach two copies of a line to the neighborhood to get a domain topologically looking like a radial sector removed from a disc. Call the two newly attached lines as $l_1, l_2$. Refer to figure (\ref{fig:monotonicity_sections}). We can continuously define an $n\th$ root map over this domain (colored yellow in the figure), and then attach a sector ( colored green in the figure) of 0 symplectic area that lies on $T_{\R^+}$ and is a homotopy between the two branches of the horizontal section over $l_1,l_2$. Use this homotopy to extend $u_{prepre}$ to $u_{pre}$. The boundary of $u_{pre}$ on $[p,q]$ lies on $L$. Note that, as before, the symplectic area of $u_{pre}$ is the same as that of $u^\mu$ from the fact that the area contributions from the horizontal sections cancel out from condition (4) in Definition \ref{defn:mutation}. Also, the Maslov number doesn't change since the generators of $H_1(T_z)$ have Maslov number 0.
+\begin{figure}[ht]
+    \centering
+    \incfig{1.5}{monosec}
+    \caption{Disc used in creating homotopy from $u_{prepre}$ to $u_{pre}$ }
+    \label{fig:monotonicity_sections}
+\end{figure}
+
+After extending $u^\mu$ as shown in the last two paragraphs for every maximal domain $[p,q]$ on the boundary where $\del u^\mu$ is a map to the mutation neighborhood, we can get a map $u$ that has the following properties, 
+\begin{itemize}
+    \item the boundary of the map lies on $L$,
+    \item the Maslov number is $I_m(u^\mu)$,
+    \item  the symplectic area is $\omega(u^\mu)$.
+\end{itemize}
+Since $L$ is monotone, we get that $I_m(u^\mu)  = \lambda \omega(u^\mu)$. The constant $\lambda$ doesn't depend on $u^\mu$ we began with. Thus, by repeating this construction for each $u^\mu \in \pi_2(M,L_\mu)$ we see that $L_\mu$ is monotone.
+
+\end{proof}
+
+\begin{defn}\label{defn:monotup}(Monotone tuple of Lagrangians, Definition 4.1.2 in \cite{quilt})
+A pair of Lagrangians $(L_1,L_2)$ is called a monotone pair if there is a  there exists a $\tau$ for which we have the following an action-index relation for maps with boundary on $L_i$. Let $u : \Sigma\to M$ where $\del \Sigma = \{C_i\}$ and $u(C_i) \sub L_i$, then we have $$2\int u^*\omega = \tau \mu(u).$$
+\end{defn}
+
+\noindent We can use the method of Lemma \ref{mutmono} to prove that monotonicity of a Lagrangian pair is preserved when one of the Lagrangians is mutated.
+
+\begin{lemma}\label{lemm:mutmonopair}
+If $(L,K)$ is a monotone pair of Lagrangians and $L$ is locally mutable, then the pair $(L_\mu,K)$ is also a monotone pair.
+\end{lemma}

@@ -8,575 +8,108 @@ pages: 22-30
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
 doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
+text_source: latex
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 0.961
 ---
-system description of the standard model, the chiral symmetry is broken by hand via
-the ansatz (3.16). This procedure is not quite satisfying. Instead, within the context of
-causal fermion systems, it would be desirable to explain the chiral symmetry breaking
-from the interactions as described by the causal action principle. This should be
-achieved in a manner consistent with octonionic theories where it has recently been
-proposed that algebraic symmetry breaking on a physical system described by a tensor
-product of division algebras can be induced via the identification of certain complex
-structures within the (tensor product of) division algebras [62].
-With regards to the causal action principle, we could generalize (3.16) or replace
-it by an alternative ansatz which does not break the chiral symmetry ad hoc. Using
-the methods introduced in [39], one can analyze the dynamics of the resulting systems
-in the continuum limit. This procedure also opens the pathway to phenomenological
-considerations that extend to both the standard model gauge interaction sectors and
-the gravitational sector. We envisage three main scenarios, depending on whether the
-chiral symmetry breaking happens in the gauge sectors related to the standard model,
-or in the gravity sector, or in both these sectors.
-(1) It is natural to connect the breakdown of the exact left-right symmetry to a
-spontaneous violation of parity that is either instantiated as an asymmetric min-
-imization of the potential, or can be traced back to a dynamical origin im-
-plemented through the loop corrections to the potential. Senjanovic and Mo-
-hapatra considered in [94], as an example of this mechanism, a theory with
-gauge group SU(2) L×SU(2)R×U(1), unifying weak and electromagnetic inter-
-actions, with extended Higgs sector defined by the multiplets Φ L and ΦR, re-
-spectively in the representations ( 1
-2, 0, 1) and ( 1
-2, 0, 1). The multiplets fulfill the
-relationQ =T 3
-L +T 3
-R + 1
-2Y , withQ electric charge,Y hypercharge andT 3
-L,R third
-component of the isospin for the SU(2) L, SU(2)R sector. This implies that
-ΦL,R =
- 
-Φ†
-L,R
-Φ0
-L,R
-!
-,
-CAUSAL FERMION SYSTEMS AND OCTONIONS 23
-where the left-right discrete symmetry is manifest. Taking then into account a
-general potential for ΦL and ΦR that does not spoil renormalizability and gauge
-invariance and is left-right symmetric, i.e.
-V (ΦL, ΦR) =−µ2
-
-Φ†
-LΦL + Φ†
-RΦR
-
-+λ1
-h
-(Φ†
-LΦL)2 + (Φ†
-RΦR)2
-i
-+λ2(Φ†
-LΦL)(Φ†
-RΦR),
-it was demonstrated, inspecting the equations for the minima, i.e. ∂V/∂ Φ†
-L = 0
-and ∂V/∂ Φ†
-R = 0, the existence of asymmetric solutions. These correspond to a
-range of values of the real parameters µ2, λ1,2 for which⟨ΦL⟩ = 0 and ⟨ΦR⟩ =
-uR̸= 0, the value of uR being determined by the constraint −µ2 + 2λ1u2
-R = 0,
-yielding
-uR =
- µ2
-2λ1
- 1
-2
-.
-The solutions with lowest energy that violate parity then corresponds to the pa-
-rameter space µ2 > 0 and λ2 > 2λ1, providing a model with spontaneous par-
-ity violation. This solution can be shown [94] to arise as a higher order effect,
-following the perspective of Coleman and Weinberg [23]. This can be immedi-
-ately recognized if one simply focuses on the U(1) L×SU(1)R gauge group, taking
-into account only the two multiplets ϕL and ϕR, respectively in the representa-
-tions (1, 0) and (0, 1). The effective potential in the one loop approximation was
-therefore provided in [94], extending the results of [23], by the expression
-V (ϕL,ϕR) =λ1
-
-(ϕ⋆
-LϕL)2 + (ϕ⋆
-RϕR)2
-+λ2(ϕ⋆
-LϕL)(ϕ⋆
-RϕR)
-+ 3g4
-64π2 (ϕ⋆
-LϕL)2
-
-lnϕ⋆
-LϕL
-M 2 − 25
-6
-
-+ 3g4
-64π2 (ϕ⋆
-RϕR)2
-
-lnϕ⋆
-RϕR
-M 2 − 25
-6
-
-+ O(λ2
-1,λ 1g2,... ),
-recovered in the Landau gauge and withλ1∼g2. For normalized couplings within
-the rangeλ2> 3g2/64π2 the potential has the minima⟨ϕL⟩ = 0 and⟨ϕR⟩2 =vR̸=
-0, where vR fulfills the constraint
-ln v2
-R
-M 2− 25
-6 =−1
-2− 64π2
-3g4 λ1.
-It is natural to extend the same mechanism considered in [94] to any sector of
-the standard model, taking into account the mirror images of the chiral-symmetry
-broken content of matter that is present in the Universe, as first suggested by Lee
-and Yang in [78]. Mirror models [18, 19, 76, 56, 87, 86, 14, 13] have then been
-proven to provide a rich phenomenology [9, 10, 11], including the possibility to
-account for dark matter [72, 12]. A minimal realization of this scenario certainly
-encodes the dark photon [70, 66, 22], a model yielding rich phenomenological
-consequences in the multi-messenger perspective [3]. The model encodes the La-
-grangian for the hidden sector
-L =Dµs†Dµs + ¯χ(iγµDµ−µχ)χ− 1
-4F′
-µνF′µν− ε
-2FµνFµν + V(s,χ ),
-where F′
-µν denotes the field-strength of the dark photon A′µ, Fµν denotes the
-field-strength of the photon Aµ, ε is a technically naturally small parameter that
-introduces a mixing term among the two gauge sectors, Dµ = ∂µ + ig′A′
-µ is the
-24 F. FINSTER, N.G. GRESNIGT, J.M. ISIDRO, A. MARCIAN `O, C.F. PAGANINI, AND T.P. SINGH
-covariant derivative with respect to the gauge photon, with g′ coupling constant
-in the dark sector, s is a scalar singlet and χ denotes a Dirac fermion charged
-under the dark U′(1), but transforming like a singlet under the standard model
-gauge sector. An effective non-renormalizable potential related to a not-unifying
-theory can be claimed to be responsible for the spontaneous symmetry breaking
-of the dark U′(1)-symmetry, e.g.
-V (s,χ ) =y′s¯χχ +m2
-ss†s + λs
-4 (s†s)2 + 1
-Λ2 (s†s)3 +···
-with y′ Yukawa coupling between the s and χ fields. Selecting the vacuum
-state⟨s⟩ = vs, with v2
-s =−4m2
-s/λs, induces the spontaneous breakdown of the
-U′(1)-symmetry, and then provide the massm2
-A′ =g′2v2
-s to the dark photon. The
-dimension six operators are responsible for first order phase transitions, which in
-turn leave an imprinting in the stochastic background of gravitational waves of
-cosmological origin [3]. A dynamical mechanism of the type investigated in [94]
-could be investigated as being responsible for the spontaneous symmetry breaking
-that provides a mass to the dark photon.
-Another phenomenologically relevant study-case is offered by the Majoron mo-
-del. This introduces a U(1) global symmetry that account for the conservation
-of the baryon-lepton number. The symmetry is then spontaneously broken by a
-complex scalar field that is coupled to neutrinos and to the Higgs particle. This
-mechanism then entails additional terms to the total Lagrangian that are beyond
-the standard model, namely
-LMajoron =fH ¯LνR +hσ¯νRνc
-R +h.c. +V (σ,H ),
-where σ denotes the complex scalar field
-σ = 1√
-2(vB−L +ρ + iφ),
-h and f are Yukawa matrices, and
-V (σ,H ) =V0(σ,H ) +V1(σ) +V2(h,σ ). (5.1)
-In (5.1), the renormalizable dimension four operators read
-V0(σ,H ) =λσ
- 
-|σ|2− v2
-B−L
-2
-!2
-+λH
-
-|H|2− v2
-2
-2
-+λσH
- 
-|σ|2− v2
-B−L
-2
-!
-|H|2− v2
-2
-
-,
-the dimension five self-interaction operators for the complex scalar σ, suppressed
-by the new physics energy scale Λ, are expressed by
-V1(σ) = λ1
-Λσ5 + λ2
-Λσ⋆σ4 + λ3
-Λ (σ⋆)2σ3 + h.c.,
-and finally dimension six operators that eventually realize first order phase tran-
-sitions [4] acquire the form
-V2(H,σ ) =β1
-(H†H)2σ
-Λ +β2
-(H†H)σ2σ⋆
-Λ +β3
-(H†H)σ3
-Λ + h.c..
-CAUSAL FERMION SYSTEMS AND OCTONIONS 25
-The Majoron corresponds to the pseudo-scalar field φ, a Nambu-Goldstone boson
-that emerges due to the spontaneous breakdown of the U(1) symmetry.
-The model can be naturally connected to neutrino mass-generation [5], while
-accounting for a multiplicity of phenomenological instantiations. Due to the spon-
-taneous symmetry breaking of the global U(1) symmetry, RH neutrinos acquire a
-Majorana mass
-M = 1√
-2hvB−L,
-while LH neutrinos acquire a Dirac mass
-m = 1√
-2fv.
-The model naturally implements a see-saw mechanism based upon the hierar-
-chyM> >m; namely,
-N =νR +νc
-R + m
-M (νL +νc
-L),ν =νL +νc
-L− m
-M (νR +νc
-R),
-which finally providemN≃M andmν≃m2/M, formN mass of the right-handed
-neutrino N.
-Gauging the dark photon with the Majoron also provides an interesting possi-
-bility for phenomenology. This is in principle a scenario that enables to encode the
-paradigm developed in [94], but the exact implementation of which will anyway
-require a detailed study.
-(2) Parity being violated at cosmological scales is a fascinating possibility that, when
-proven real, would be ground-breaking as much as it was the discovery by Chien-
-Shiung Wu of parity violation in the weak interactions, later theoretically ac-
-counted for in the model developed by Lee and Yang in [78]. Theoretically, the
-breakdown of the chiral symmetry induces in the gravitational field an imbalance
-among the amplitudes of the chiral components of the phase-space variables. A
-prototype of this unbalance is due to the inclusion in the action of gravity of a
-Pontryagin term, which plays the role of the θ-sector in Yang-Mills theory, no-
-tably in QCD. Within this latter, the effect cannot be classical, as the Pontryagin
-term, topological, does not affect the equations of motion. Conversely, the θ-
-term affects the vacuum of the quantum theory, modifying its topology. For the
-gravitational field, instead, parity violation at the classical level can only be intro-
-duced dynamically, coupling the gravitational Pontryagin term with a dynamical
-(pseudo-)scalar field or a fermionic bilinear, i.e.
-Sgravity =SEH + α
-4
-Z
-ϕRµνRρσϵµνρσ, (5.2)
-having denoted withSEH the Einstein-Hilbert action, with ϵ the Levi-Civita sym-
-bol, with ϕ either a scalar or a pseudo-scalar field, and with α a scale with inverse
-dimension of mass. The inclusion of a pseudo-scalar field does not spoil the parity
-symmetry of the theory. Nonetheless, when the pseudo-scalar field evolves, for
-instance dynamically, towards its vacuum state, the chiral symmetry of gravity is
-manifestly broken. Chiral symmetry is dynamically broken for a background (ho-
-mogeneous) solution of ϕ on a Friedmann-Lemaˆ ıtre-Robertson-Walker (FLRW)
-metric of the type ds2 = dt2−a2(t)d⃗ x2. Here, the non-vanishing components of
-26 F. FINSTER, N.G. GRESNIGT, J.M. ISIDRO, A. MARCIAN `O, C.F. PAGANINI, AND T.P. SINGH
-the gravitational perturbations can be expressed in terms of the of the left/right-
-circular polarization basis
-h11 =− 1√
-2(hL +hR), h 22 = 1√
-2(hL +hR)
-h12 =h21 = i√
-2(hL−hR),
-fulfill the equations
-¯□hR =i 16πG
-a
-¨¯ϕ−H ˙¯ϕ
-
-∂z ˙hR
-¯□hL =−i 16πG
-a
-¨¯ϕ−H ˙¯ϕ
-
-∂z ˙hL ,
-having denoted with ¯□ the D’Alembertian operator on the FLRW metric, with ¯ϕ
-the dynamical solution for ϕ consistent with the FLRW background, with dots
-derivatives with respect to the time t, and introduced the Hubble parameter H =
-˙a/a. The dynamics of the scalar field can be thought to be generated at the
-quantum level — the path integral for he scalar field will entail a kinematic term
-for it. Alternatively, a free Lagrangian for ϕ can be added to (5.2), i.e.
-Sϕ
-free =
-Z
-d4x√−g
- 
-gµν∂µϕ∂νϕ +m2
-ϕϕ2
-.
-The Pontryagin term (improperly called in the literature “gravitational Chern-
-Simons” term) can be recovered from the chiral anomaly, evaluated on a gravi-
-ton condensate [93, 57] — the gravitons condensate arises from considering a
-fixed background of the gravitational field strength, or in other words constant
-eclectic and magnetic gravitational components. For this purpose, we may com-
-bine ∂µJµ
-5 = 2im ¯ψγ5ψ, which holds due to the equation of motion for Jµ
-5 =
-¯ψγ5γµψ, with the chiral anomaly calculated in a coherent state of gravitons |h⟩,
-i.e.
-⟨h|∂µJµ
-5|h⟩ =− 1
-384π2RµνRρσϵµνρσ ,
-hence obtaining
-⟨h| ¯ψγ5ψ|h⟩≃ RµνRρσϵµνρσ .
-The gravitational Chern-Simons term in (5.2), may then originate from a Yukawa
-coupling term of the form
-LYukawa =yϕ ¯ψγ5ψ.
-A dynamical solution for ϕ would then dynamically break the chiral symmetry of
-the gravitational sector, with possible observational consequences [100, 25].
-Let us consider now a step forward in this direction, assuming that the very
-same gauge fields emerge as fermionic condensates. We may have two possibilities:
-i) the fermionic fields that undergo condensation are the standard model ones,
-and no extra matter degrees of freedom are requested; ii) extra fermionic fields
-are requested, as a technicolor sector of the gauge interactions. The second option
-opens the pathway to a plethora of possibilities, which we would entail eventually
-a loss of falsifiability of the theory. Let us suppose then to work within the first
-working assumption.
-CAUSAL FERMION SYSTEMS AND OCTONIONS 27
-To address condensation, we consider the mechanism proposed by Bjorken [17,
-15, 16] to obtain gauge fields from the Nambu–Jona-Lasinio condensation mech-
-anism [84, 85]. We may start from the Nambu–Jona-Lasinio Lagrangian density
-LNJL = ¯ψ (i∂ /−m)ψ + G
-2
-  ¯ψγµψ
-2,
-with G coupling constant of the self-interaction, and then write the generating
-functional path integral
-WNJL[J] =
-Z
-D ¯ψDψei
-R
-d4x[LNJL− ¯ψγµψµ]
-=N
-Z
-D ¯ψDψDAei
-R
-d4x[LNJL− ¯ψγµψµ− 1
-2G (Aµ−G ¯ψγµψ)2],
-where in the last step the integration over an auxiliary Gaussian factor was in-
-troduced, yielding multiplication by a constant. One can immediately notice
-that−iGgµν plays the role of the bare photon propagator ie2
-0gµν/q2.
-At the Lagrangian density level, the auxiliary fieldA is still a Lagrangian multi-
-plier. Nonetheless, at the path integral level, integration over the fermionic fields
-will turn the auxiliary field A into a dynamical one. Indeed, one can immediately
-find that
-WNJL[J] =N′
-Z
-DAe−i
-R
-d4x
-h
-A2
-2G−V (A−J)
-i
-=N′
-Z
-DAe
-−i
-R
-d4x
-
-(A+J)2
-2G −V (A)
-
-,
-withA2 =AµAµ and where the one loop effective potentialV (A) is obtained from
-i
-Z
-d4xV (A) = ln det(i∂ /+/ A(x)−m)− ln det(i∂ /−m)
-= Tr ln 1
-i∂ /−m(i∂ /+/ A(x)−m)
-=
-Z
-d4x
-
-Tr/ A(x)SF (x,x )− 1
-2Tr
-Z
-d4y / A(x)SF (x,y )/ A(y)SF (y,x ) +...
-
-,
-where the trace Tr denotes summation over the spinorial indices. Expanding in
-power series of A, keeping only quadratic and quartic terms, entail the contribu-
-tions from the lowest orders or the vacuum polarization integral.
-Z
-d4xV (2)(x) = 1
-2
-Z d4q
-(2π)4
-˜Aµ(q) ˜Aν(q)
- 
-qµqν−gµνq2
-Π(q2)
-= 1
-2
-Z d4q
-(2π)4
-˜Aµ(q) ˜Aν(q)
- 
-qµqν−gµνq2 1
-e2(q)
-≃ 1
-4e2(0)
-Z
-d4xFµν(x)Fµν(x),
-where Π(q2) is recovered from the vacuum polarization integral in quantum elec-
-trodynamics
-Π(q2) = 1
-12π2 ln Λ2
-q2 , (5.3)
-28 F. FINSTER, N.G. GRESNIGT, J.M. ISIDRO, A. MARCIAN `O, C.F. PAGANINI, AND T.P. SINGH
-where a momentum cut-off Λ has been introduced. This entails the running of
-the coupling constant
-1
-e(q2) = 1
-12π2 ln Λ2
-q2 .
-The effective action for the vector condensate due to quadratic term is finally
-provided by the expression
-S(2) =
-Z
-d4xL(2)(x) =
-Z
-d4x
- 1
-4e2FµνFµν + A2
-2G
-
-. (5.4)
-It is relevant also to notice that, within this framework, condensation is a by-
-product of a spontaneous breakdown of the Lorentz symmetry, as the condensation
-value ofAµ survives when the current Jµ is set to zero. Quartic and higher terms
-for V (A) will be also generated and shall be added to (5.4), potentially entailing
-a potential in A for a spontaneous symmetry breaking.
-We shall at this point comment on the fact that the spontaneous Lorentz sym-
-metry breaking may leave potential non-covariant effects, as well as violations
-of the gauge invariance. Not to be the ill-defined, the theory must be therefore
-restricted to low energies. On the other hands, the low-energy limit will repre-
-sent an equilibrium limit in a renormalization group flow perspective, with higher
-order terms becoming relevant at higher energies. The energy reference scale for
-these considerations would be dictated by the self-interaction coupling constant
-of fermions, G. The running of this coupling constant induces the definition of
-theories at the boundaries. The theory at equilibrium, in the infrared limit, can
-be then formally extended up to high energies, but at the cost of considering the
-loop corrections.
-The relation between the regularization scheme in causal fermion systems and
-in this condensation mechanism may solve sole of the problems of consistency of
-this mechanism proposed by Bjorken. At the same time, one may extend the
-argument so to account for both Yang-Mills fields and gravity — with the caveat
-of evading the Weinberg-Witten theorem.
-(3) We finally comment on another perspective, accounting for unification of gravity
-with other forces. Ultimately, this perspective could be combined with the one
-referring to condensation that we spelled out in the previous point.
-For this purpose, we take into account the gravi-weak unification paradigm
-proposed in [8]. This is an extended BF theory with GL(2 , C)L× GL(2, C)R
-symmetry group, which in spinorial indices A,B = 0, 1 reads
-SGW =
-Z i
-4πG
-h
-BAB∧FAB−BA′B′
-∧FA′B′ + λ
-6G
-
-BAB∧BAB−BA′B′∧BA′B′
-
-− 1
-2ΨABCDB(AB∧BCD) + 1
-2ΨA′B′C′D′B(A′B′
-∧BC′D′)− ΨA′B′ABBA′B′
-∧BAB
-i
-+ ig2
-2
- 
-Ψ2
-ABCD + Ψ2
-A′B′C′D′ + Ψ2
-ABC ′D′
-
-BAB∧BAB−BA′B′∧BA′B′
-
-,
-where primed and unprimed indices labeling variables in the two symmetry sec-
-tors, namely GL(2 , C)L and GL(2, C)R, are obtained from the Infeld–van der
-Waerden map ea→ eAA′
-= eaσAA′
-a , involving the the Infeld–van der Waerden
-CAUSAL FERMION SYSTEMS AND OCTONIONS 29
-symbols σAA′
-a ; each GL(2, C) connection Aab, with a,b = 1,... 4, rewrites accord-
-ing to
-Aab =AAA′BB ′
-=ϵABAA′B′
-+ϵA′B′AAB,
-and consequently for the field strength of each GL(2 , C) connection Aab it holds
-Fab =FAA′BB ′
-=ϵABFA′B′
-+ϵA′B′FAB,
-where FAB = dAAB +A C
-A ∧ACB denotes the field strength of AAB, and sim-
-ilar expression follows for FA′B′ = dAA′B′ + A C′
-A′ ∧ AC′B′ in terms of AA′B′
-;
-BAB andBA′B′
-are, in four dimensions, two-forms that are valued in the algebra
-of GL(2, C)C, with indices
-Bab =BAA′BB ′
-=ϵABBA′B′
-+ϵA′B′BAB ;
-the multiplets of scalar fields have been introduced, as Lagrangian multipliers,
-which in the Lorentzian indices read Ψabcd, and in the spinorial indices decompose
-into pure spin-2 fields, i.e. ΨABCD and ΨA′B′C′D′, totally symmetric, and ΨABA′B′,
-with mixed components and symmetric pairs of indices; the dimensionless cos-
-mological constant λ = GΛ and dimensionless coupling constant g have been
-introduced.
-An explicit solution that breaks the left-right symmetry has been recovered
-in [8], which simultaneously provides gravity on one side, and the electroweak
-interactions on the other side provided with parity violation. Indeed, at the lowest
-order of the symmetry breaking solution, one obtains
-S(0) =
-Z i
-4πG ΣAB∧FAB + λ
-12πG2e− e
-4g2
-YM
-FA′B′
-µν FA′B′ρσgµρgνσ
-−iΘFA′B′
-∧FA′B′
-+ 9G2
-(16π)2λ2e(F(A′B′∧FC′D′))2, (5.5)
-with ΣAB =eA
-C′∧eBC ′
-,FAB =RAB field strength of the spin-connection, and Θ
-and g2
-YM known functions of both λ and g2. The Yang-Mills sector is parity
-violating, as suggested by the appearance of the Pontryagin term.
-The inspection of the first order correction in g2 to (5.5) provides the existence
-of terms such as
-S(1) =
-Z ig2
-4πG
-
-bAB∧FAB + λ
-3GbAB∧ ΣAB
-+ λg2
-3GbAB∧bAB + λg2
-3GbA′B′∧bA′B′
-
-+... ,
-with bAB and bA′B′
-auxiliary fields determined by variation of S(1). The bAB,
-in particular, are responsible for the emergence of parity violating effects also in
-the gravitational sector: varying with respect to bAB provides the gravitational
-Pontryagin density, which is not multiplied by other evolving fields.
-This proposal for gravi-weak unification resonates strongly with theE8×E8 unifica-
-tion proposed in [88]. In the latter work, spontaneous chiral symmetry breaking gives
-rise to the electroweak sector SU (2)L×U(1)Y →U(1)em, and also to a ‘darkelectro-
-grav’ sector SU (2)R×U(1)YDEM → U(1)DEM . The broken SU (2)R symmetry has
-30 F. FINSTER, N.G. GRESNIGT, J.M. ISIDRO, A. MARCIAN `O, C.F. PAGANINI, AND T.P. SINGH
-been proposed as the origin of general relativity, and the unbroken DEM (Dark Electro-
-magnetism) symmetry has been suggested [46] to be the origin of Milgrom’s Modified
-Newtonian Dynamics (MOND).
+[]{#secchiralsymm label="secchiralsymm"} As explained in Section [\[seccfssm\]](#seccfssm){reference-type="ref" reference="seccfssm"}, in the causal fermion system description of the standard model, the chiral symmetry is broken by hand via the ansatz [\[asymmetry\]](#asymmetry){reference-type="eqref" reference="asymmetry"}. This procedure is not quite satisfying. Instead, within the context of causal fermion systems, it would be desirable to explain the chiral symmetry breaking from the interactions as described by the causal action principle. This should be achieved in a manner consistent with octonionic theories where it has recently been proposed that algebraic symmetry breaking on a physical system described by a tensor product of division algebras can be induced via the identification of certain complex structures within the (tensor product of) division algebras [@furey231].
+
+With regards to the causal action principle, we could generalize [\[asymmetry\]](#asymmetry){reference-type="eqref" reference="asymmetry"} or replace it by an alternative ansatz which does not break the chiral symmetry ad hoc. Using the methods introduced in [@cfs], one can analyze the dynamics of the resulting systems in the continuum limit. This procedure also opens the pathway to phenomenological considerations that extend to both the standard model gauge interaction sectors and the gravitational sector. We envisage three main scenarios, depending on whether the chiral symmetry breaking happens in the gauge sectors related to the standard model, or in the gravity sector, or in both these sectors.
+
+1.  It is natural to connect the breakdown of the exact left-right symmetry to a spontaneous violation of parity that is either instantiated as an asymmetric minimization of the potential, or can be traced back to a dynamical origin implemented through the loop corrections to the potential. Senjanovic and Mohapatra considered in [@Senjanovic:1975rk], as an example of this mechanism, a theory with gauge group SU(2)$\!\!\!\phantom{a}_L\times$SU(2)$\!\!\!\phantom{a}_R\times$U(1), unifying weak and electromagnetic interactions, with extended Higgs sector defined by the multiplets $\Phi_L$ and $\Phi_R$, respectively in the representations $(\frac{1}{2},0,1)$ and $(\frac{1}{2},0,1)$. The multiplets fulfill the relation $Q=T^3_L+T^3_R+\frac{1}{2}Y$, with $Q$ electric charge, $Y$ hypercharge and $T^3_{L ,R}$ third component of the isospin for the SU(2)$\!\!\!\phantom{a}_L$, SU(2)$\!\!\!\phantom{a}_R$ sector. This implies that $$\Phi_{L ,  R}= \begin{pmatrix} \Phi^{\dagger}_{L ,  R} \\ \Phi^0_{L ,  R} \end{pmatrix} \:,$$ where the left-right discrete symmetry is manifest. Taking then into account a general potential for $\Phi_L$ and $\Phi_R$ that does not spoil renormalizability and gauge invariance and is left-right symmetric, i.e. $$\begin{aligned}
+    V(\Phi_L, \Phi_R) &= -\mu^2 \left( \Phi_L^\dagger \Phi_L + \Phi_R^\dagger \Phi_R \right) + \lambda_1 \left[ (\Phi_L^\dagger \Phi_L)^2 + (\Phi_R^\dagger \Phi_R)^2 \right] \nonumber \\
+    &\quad\: +\lambda_2 (\Phi_L^\dagger \Phi_L) (\Phi_R^\dagger \Phi_R)\:,
+    \end{aligned}$$ it was demonstrated, inspecting the equations for the minima, i.e. $\partial V/\partial \Phi^\dagger_L=0$ and $\partial V/\partial \Phi^\dagger_R=0$, the existence of asymmetric solutions. These correspond to a range of values of the real parameters $\mu^2$, $\lambda_{1,2}$ for which $\langle \Phi_L\rangle=0$ and $\langle \Phi_R\rangle=u_R\neq 0$, the value of $u_R$ being determined by the constraint $-\mu^2+2\lambda_1 u_R^2=0$, yielding $$u_R=\left( \frac{\mu^2}{2 \lambda_1} \right)^{\frac{1}{2}} \:.$$ The solutions with lowest energy that violate parity then corresponds to the parameter space $\mu^2>0$ and $\lambda_2 > 2 \lambda_1$, providing a model with spontaneous parity violation. This solution can be shown [@Senjanovic:1975rk] to arise as a higher order effect, following the perspective of Coleman and Weinberg [@Coleman:1973jx]. This can be immediately recognized if one simply focuses on the U(1)$\!\!\!\phantom{a}_L\times$SU(1)$\!\!\!\phantom{a}_R$ gauge group, taking into account only the two multiplets $\phi_L$ and $\phi_R$, respectively in the representations $(1,0)$ and $(0,1)$. The effective potential in the one loop approximation was therefore provided in [@Senjanovic:1975rk], extending the results of [@Coleman:1973jx], by the expression $$\begin{aligned}
+    \qquad \quad V(\phi_L, \phi_R) &= \lambda_1 \left[ (\phi_L^\star \phi_L)^2 + (\phi_R^\star \phi_R)^2 \right] + \lambda_2 (\phi_L^\star \phi_L)(\phi_R^\star \phi_R) \\
+    &\quad\:+ \frac{3 g^4}{64 \pi^2} (\phi_L^\star \phi_L)^2 \!\! \left[ \ln \frac{\phi_L^\star \phi_L}{M^2} -\frac{25}{6}\right] 
+    \!\!+\!\! \frac{3 g^4}{64 \pi^2} (\phi_R^\star \phi_R)^2 \left[ \ln \frac{\phi_R^\star \phi_R}{M^2} -\frac{25}{6}\right] \\
+    &\quad\: + {\mathscr{O}}(\lambda_1^2, \lambda_1g^2, \dots)\:,
+    \end{aligned}$$ recovered in the Landau gauge and with $\lambda_1\sim g^2$. For normalized couplings within the range $\lambda_2 > 3 g^2 / 64 \pi^2$ the potential has the minima $\langle\phi_L \rangle=0$ and $\langle\phi_R \rangle^2=v_R\neq 0$, where $v_R$ fulfills the constraint $$\ln \frac{v_R^2}{M^2}   -\frac{25}{6} = -\frac{1}{2} - \frac{64 \pi^2}{3 g^4} \lambda_1 \:.$$
+
+    It is natural to extend the same mechanism considered in [@Senjanovic:1975rk] to any sector of the standard model, taking into account the mirror images of the chiral-symmetry broken content of matter that is present in the Universe, as first suggested by Lee and Yang in [@Lee:1956qn]. Mirror models [@MDM1; @MDM2; @MDM3; @MDM4; @MDM5; @MDM6; @MDM7; @MDM8] have then been proven to provide a rich phenomenology [@MDMP1; @MDMP2; @MDMP3], including the possibility to account for dark matter [@MDMPDM1; @MDMPDM2]. A minimal realization of this scenario certainly encodes the dark photon [@dpA; @dpB; @dpC], a model yielding rich phenomenological consequences in the multi-messenger perspective [@dp18]. The model encodes the Lagrangian for the hidden sector $$\mathcal{L}=\mathcal{D}_\mu s^\dagger \mathcal{D}^\mu s + \bar{\chi} (\rm{i}\gamma^\mu \mathcal{D}_\mu - \mu_\chi ) \chi -\frac{1}{4} F'_{\mu \nu} {F'}^{\mu \nu}  -\frac{\varepsilon}{2} F_{\mu \nu} {F}^{\mu \nu} + V(s,\chi) \:,$$ where $F'_{\mu\nu}$ denotes the field-strength of the dark photon ${A'}_\mu$, $F_{\mu\nu}$ denotes the field-strength of the photon $A_\mu$, $\varepsilon$ is a technically naturally small parameter that introduces a mixing term among the two gauge sectors, $\mathcal{D}_\mu =\partial_\mu + \rm{i}g' A'_\mu$ is the covariant derivative
+
+    with respect to the gauge photon, with $g'$ coupling constant in the dark sector, $s$ is a scalar singlet and $\chi$ denotes a Dirac fermion charged under the dark ${\rm{U}}'(1)$, but transforming like a singlet under the standard model gauge sector. An effective non-renormalizable potential related to a not-unifying theory can be claimed to be responsible for the spontaneous symmetry breaking of the dark ${\rm{U}}'(1)$-symmetry, e.g. $$V(s,\chi)= y' s \bar{\chi}\chi + m_s^2 s^\dagger s + \frac{\lambda_s}{4} (s^\dagger s)^2 + \frac{1}{\Lambda^2} (s^\dagger s)^3 +\cdots$$ with $y'$ Yukawa coupling between the $s$ and $\chi$ fields. Selecting the vacuum state $\langle s \rangle=v_s$, with $v_s^2=- 4 m_s^2/\lambda_s$, induces the spontaneous breakdown of the ${\rm{U}}'(1)$-symmetry, and then provide the mass $m_{A'}^2={g'}^2 v_s^2$ to the dark photon. The dimension six operators are responsible for first order phase transitions, which in turn leave an imprinting in the stochastic background of gravitational waves of cosmological origin [@dp18]. A dynamical mechanism of the type investigated in [@Senjanovic:1975rk] could be investigated as being responsible for the spontaneous symmetry breaking that provides a mass to the dark photon.
+
+    Another phenomenologically relevant study-case is offered by the Majoron model. This introduces a ${\rm{U}}(1)$ global symmetry that account for the conservation of the baryon-lepton number. The symmetry is then spontaneously broken by a complex scalar field that is coupled to neutrinos and to the Higgs particle. This mechanism then entails additional terms to the total Lagrangian that are beyond the standard model, namely $$\mathcal{L}_{\rm Majoron }= f H \bar{L} \nu_R + h \sigma \bar{\nu}_R \nu_R^c + h.c. + V(\sigma, H) \:,$$ where $\sigma$ denotes the complex scalar field $$\sigma=\frac{1}{\sqrt{2}}(v_{\rm B-L}+ \rho +\rm{i}\varphi) \:,$$ $h$ and $f$ are Yukawa matrices, and $$\label{Vs}
+    V(\sigma, H)=V_0(\sigma, H)+V_1(\sigma)+V_2(h,\sigma)\,.$$ In [\[Vs\]](#Vs){reference-type="eqref" reference="Vs"}, the renormalizable dimension four operators read $$\begin{aligned}
+    V_0(\sigma, H) &= \lambda_{\sigma} \left( |\sigma|^2 -\frac{v_{\rm B-L}^2}{2} \right)^2  +  \lambda_H \left( |H|^2 -\frac{v^2}{2} \right)^2 \\ 
+    &\quad\:+ \lambda_{\sigma H}  \left( |\sigma|^2 -\frac{v_{B-L}^2}{2} \right) \left( |H|^2 -\frac{v^2}{2} \right) ,
+    \end{aligned}$$ the dimension five self-interaction operators for the complex scalar $\sigma$, suppressed by the new physics energy scale $\Lambda$, are expressed by $$V_1(\sigma)= \frac{\lambda_1}{\Lambda} \sigma^5 +  \frac{\lambda_2}{\Lambda} \sigma^\star \sigma^4 +  \frac{\lambda_3}{\Lambda} (\sigma^\star)^2 \sigma^3 + {\rm h.c.}\,,$$ and finally dimension six operators that eventually realize first order phase transitions [@Addazi:2017oge] acquire the form $$V_2(H,\sigma)= \beta_1 \frac{(H^\dagger H)^2\sigma}{\Lambda} +  \beta_2 \frac{(H^\dagger H)\sigma^2 \sigma^\star}{\Lambda} +  \beta_3 \frac{(H^\dagger H)\sigma^3 }{\Lambda} + {\rm h.c.}\:.$$ The Majoron corresponds to the pseudo-scalar field $\varphi$, a Nambu-Goldstone boson that emerges due to the spontaneous breakdown of the ${\rm{U}}(1)$ symmetry.
+
+    The model can be naturally connected to neutrino mass-generation [@Addazi:2019dqt], while accounting for a multiplicity of phenomenological instantiations. Due to the spontaneous symmetry breaking of the global ${\rm{U}}(1)$ symmetry, RH neutrinos acquire a Majorana mass $$M= \frac{1}{\sqrt{2}} h v_{\rm B-L} \:,$$ while LH neutrinos acquire a Dirac mass $$m= \frac{1}{\sqrt{2}} f v \:.$$ The model naturally implements a see-saw mechanism based upon the hierarchy $M\!>\!\!>\!m$; namely, $$N= \nu_R + \nu_R^c +\frac{m}{M} (\nu_L + \nu_L^c)\,,
+    \nu= \nu_L + \nu_L^c -\frac{m}{M} (\nu_R + \nu_R^c)\,,$$ which finally provide $m_N\simeq M$ and $m_\nu\simeq m^2/M$, for $m_N$ mass of the right-handed neutrino $N$.
+
+    Gauging the dark photon with the Majoron also provides an interesting possibility for phenomenology. This is in principle a scenario that enables to encode the paradigm developed in [@Senjanovic:1975rk], but the exact implementation of which will anyway require a detailed study.
+
+2.  Parity being violated at cosmological scales is a fascinating possibility that, when proven real, would be ground-breaking as much as it was the discovery by Chien-Shiung Wu of parity violation in the weak interactions, later theoretically accounted for in the model developed by Lee and Yang in [@Lee:1956qn]. Theoretically, the breakdown of the chiral symmetry induces in the gravitational field an imbalance among the amplitudes of the chiral components of the phase-space variables. A prototype of this unbalance is due to the inclusion in the action of gravity of a Pontryagin term, which plays the role of the $\theta$-sector in Yang-Mills theory, notably in QCD. Within this latter, the effect cannot be classical, as the Pontryagin term, topological, does not affect the equations of motion. Conversely, the $\theta$-term affects the vacuum of the quantum theory, modifying its topology. For the gravitational field, instead, parity violation at the classical level can only be introduced dynamically, coupling the gravitational Pontryagin term with a dynamical (pseudo-)scalar field or a fermionic bilinear, i.e.
+
+    $$\label{lagrav}
+    \mathcal{S}_{\rm gravity} = \mathcal{S}_{\rm EH} + \frac{\alpha}{4} \int \phi R_{\mu \nu} R_{\rho \sigma} \epsilon^{\mu \nu \rho \sigma}\,,$$ having denoted with $\mathcal{S}_{\rm EH}$ the Einstein-Hilbert action, with $\epsilon$ the Levi-Civita symbol, with $\phi$ either a scalar or a pseudo-scalar field, and with $\alpha$ a scale with inverse dimension of mass. The inclusion of a pseudo-scalar field does not spoil the parity symmetry of the theory. Nonetheless, when the pseudo-scalar field evolves, for instance dynamically, towards its vacuum state, the chiral symmetry of gravity is manifestly broken. Chiral symmetry is dynamically broken for a background (homogeneous) solution of $\phi$ on a Friedmann-Lemaître-Robertson-Walker (FLRW) metric of the type $ds^2=dt^2-a^2(t)d\vec{x}^2$. Here, the non-vanishing components of the gravitational perturbations can be expressed in terms of the of the left/right-circular polarization basis $$\begin{aligned}
+    &h_{11}= - \frac{1}{\sqrt{2}} (h_L + h_R)\,, \qquad h_{22}=  \frac{1}{\sqrt{2}} (h_L + h_R) \nonumber\\
+    &h_{12}=h_{21}=  \frac{i}{\sqrt{2}} (h_L - h_R) \nonumber\,,
+    \end{aligned}$$ fulfill the equations $$\begin{aligned}
+    & \bar{\Box} h_R= i \frac{16 \pi G}{a} \left( \ddot{\bar{\phi}} -  H\, \dot{\bar{\phi}}  \right)  \partial_z \dot{h}_R \
+     \nonumber\\
+    & \bar{\Box} h_L= - i \frac{16 \pi G}{a} \left( \ddot{\bar{\phi}} -  H\, \dot{\bar{\phi}}  \right)  \partial_z \dot{h}_L \
+     \nonumber\,,
+    \end{aligned}$$ having denoted with $\bar{\Box}$ the D'Alembertian operator on the FLRW metric, with $\bar{\phi}$ the dynamical solution for $\phi$ consistent with the FLRW background, with dots derivatives with respect to the time $t$, and introduced the Hubble parameter $H=\dot{a}/a$. The dynamics of the scalar field can be thought to be generated at the quantum level --- the path integral for he scalar field will entail a kinematic term for it. Alternatively, a free Lagrangian for $\phi$ can be added to [\[lagrav\]](#lagrav){reference-type="eqref" reference="lagrav"}, i.e. $$\mathcal{S}_{\rm free}^{\phi} = \int d^4 x \sqrt{-g} \left( g^{\mu \nu} \partial_\mu \phi \partial_\nu \phi + m^2_\phi \, \phi^2 \right)\:.$$ The Pontryagin term (improperly called in the literature "gravitational Chern-Simons" term) can be recovered from the chiral anomaly, evaluated on a graviton condensate [@Schwartz; @Fujikawa] --- the gravitons condensate arises from considering a fixed background of the gravitational field strength, or in other words constant eclectic and magnetic gravitational components. For this purpose, we may combine $\partial_\mu J_5^\mu= 2 i m \,  \bar{\psi} \gamma^5 \psi$, which holds due to the equation of motion for $J_5^\mu=\bar{\psi}  \gamma^5 \gamma^\mu \psi$, with the chiral anomaly calculated in a coherent state of gravitons $| h\rangle$, i.e. $$\langle h | \partial_\mu J_5^\mu | h \rangle = - \frac{1}{384 \pi^2}  R_{\mu \nu} R_{\rho \sigma} \epsilon^{\mu \nu \rho \sigma}\ \:,$$ hence obtaining $$\langle h |   \bar{\psi} \gamma^5 \psi | h \rangle \simeq  R_{\mu \nu} R_{\rho \sigma} \epsilon^{\mu \nu \rho \sigma}\:.$$ The gravitational Chern-Simons term in [\[lagrav\]](#lagrav){reference-type="eqref" reference="lagrav"}, may then originate from a Yukawa coupling term of the form $$\mathcal{L}_{\rm Yukawa} = y \, \phi\,  \bar{\psi} \gamma^5 \psi \:.$$ A dynamical solution for $\phi$ would then dynamically break the chiral symmetry of the gravitational sector, with possible observational consequences [@alexander2022chernsimons; @crequesarbinowski2023parityviolating].
+
+    Let us consider now a step forward in this direction, assuming that the very same gauge fields emerge as fermionic condensates. We may have two possibilities: i) the fermionic fields that undergo condensation are the standard model ones, and no extra matter degrees of freedom are requested; ii) extra fermionic fields are requested, as a technicolor sector of the gauge interactions. The second option opens the pathway to a plethora of possibilities, which we would entail eventually a loss of falsifiability of the theory. Let us suppose then to work within the first working assumption.
+
+    To address condensation, we consider the mechanism proposed by Bjorken [@Bjo1; @Bjo2; @Bjo3] to obtain gauge fields from the Nambu--Jona-Lasinio condensation mechanism [@NJL1; @NJL2]. We may start from the Nambu--Jona-Lasinio Lagrangian density $$\mathcal{L}_{\rm NJL}=\bar{\psi} \left( i \mbox{$\partial$ \hspace{-1.2 em} $/$}-m \right) \psi + \frac{G}{2} \left( \bar{\psi} \gamma_\mu \psi  \right)^2,$$ with $G$ coupling constant of the self-interaction, and then write the generating functional path integral
+
+    $$\begin{aligned}
+    \mathcal{W}_{\rm NJL}[J] &=\int \mathcal{D}\bar{\psi}\,  \mathcal{D}\psi e^{ i \int d^4 x \left[  \mathcal{L}_{\rm NJL} - \bar{\psi} \gamma_\mu \psi ^\mu  \right]} \\ 
+    &= N \int \mathcal{D}\bar{\psi}\,  \mathcal{D}\psi \, \mathcal{D}A \, e^{ i \int d^4 x \left[  \mathcal{L}_{\rm NJL} - \bar{\psi} \gamma_\mu \psi ^\mu  -\frac{1}{2G} (A_\mu -G \bar{\psi}\gamma_\mu \psi )^2\right]} \,,
+    \end{aligned}$$ where in the last step the integration over an auxiliary Gaussian factor was introduced, yielding multiplication by a constant. One can immediately notice that $-iG g_{\mu \nu}$ plays the role of the bare photon propagator $i e_0^2 g_{\mu \nu}/q^2$.
+
+    At the Lagrangian density level, the auxiliary field $A$ is still a Lagrangian multiplier. Nonetheless, at the path integral level, integration over the fermionic fields will turn the auxiliary field $A$ into a dynamical one. Indeed, one can immediately find that $$\begin{aligned}
+    \mathcal{W}_{\rm NJL}[J] &= N' \, \int \mathcal{D} A e^{- i \int d^4x \left[ \frac{A^2}{2G} - V(A-J) \right] } \\
+    &= N' \, \int \mathcal{D} A e^{- i \int d^4x \left[ \frac{(A+J)^2 }{2G} - V(A) \right] } \,, \nonumber
+    \end{aligned}$$ with $A^2= A_\mu A^\mu$ and where the one loop effective potential $V(A)$ is obtained from $$\begin{aligned}
+    & i \int  d^4 x V(A) = \ln {\rm det} (i \mbox{$\partial$ \hspace{-1.2 em} $/$}+ \slash \!\!\!\! A(x) -m) - \ln {\rm det} (i \mbox{$\partial$ \hspace{-1.2 em} $/$}-m) \\
+    &= {\rm Tr}\, \ln \frac{1}{i \mbox{$\partial$ \hspace{-1.2 em} $/$}-m} (i \mbox{$\partial$ \hspace{-1.2 em} $/$}+ \slash \!\!\!\! A(x) -m) \\
+    &= \int d^4x\: \bigg[  {\rm Tr}\, \slash \!\!\!\! A(x) S_{F}(x,x) -\frac{1}{2} {\rm Tr} \,\int d^4 y\,\, \slash \!\!\!\! A(x) \, S_{F}(x,y)  \, \slash \!\!\!\! A(y) S_{F}(y,x) + \dots \bigg] \,,
+    \end{aligned}$$ where the trace Tr denotes summation over the spinorial indices. Expanding in power series of $A$, keeping only quadratic and quartic terms, entail the contributions from the lowest orders or the vacuum polarization integral. $$\begin{aligned}
+    \int d^4 x V^{(2)}(x)
+    &= \frac{1}{2} \int \frac{d^4 q}{(2\pi)^4} \, \tilde{A}_\mu (q)  \, \tilde{A}_\nu (q) \, \left( q_\mu q_\nu  - g_{\mu \nu} q^2 \right) \Pi(q^2) \\
+    &= \frac{1}{2} \int \frac{d^4 q}{(2\pi)^4} \, \tilde{A}_\mu (q)  \, \tilde{A}_\nu (q) \, \left( q_\mu q_\nu  - g_{\mu \nu} q^2 \right) \frac{1}{e^2(q)} \\
+    &\simeq \frac{1}{4 e^2(0)} \int d^4 x F_{\mu \nu} (x) F^{\mu \nu} (x)\,,
+     
+    \end{aligned}$$ where $\Pi(q^2)$ is recovered from the vacuum polarization integral in quantum electrodynamics $$\begin{aligned}
+    \Pi(q^2)=\frac{1}{12\pi^2} \ln \frac{\Lambda^2}{q^2} 
+    \,,
+     
+    \end{aligned}$$ where a momentum cut-off $\Lambda$ has been introduced. This entails the running of the coupling constant $$\frac{1}{e(q^2)}=\frac{1}{12\pi^2} \ln \frac{\Lambda^2}{q^2} \:.$$
+
+    The effective action for the vector condensate due to quadratic term is finally provided by the expression $$\label{Affect}
+    \mathcal{S}^{(2)}= \int d^4 x\, \mathcal{L}^{(2)}(x) = \int d^4x \left[ \frac{1}{4 e^2} F_{\mu \nu} F^{\mu \nu} + \frac{A^2}{2 G} \right]\,.$$ It is relevant also to notice that, within this framework, condensation is a by-product of a spontaneous breakdown of the Lorentz symmetry, as the condensation value of $A_\mu$ survives when the current $J_\mu$ is set to zero. Quartic and higher terms for $V(A)$ will be also generated and shall be added to [\[Affect\]](#Affect){reference-type="eqref" reference="Affect"}, potentially entailing a potential in $A$ for a spontaneous symmetry breaking.
+
+    We shall at this point comment on the fact that the spontaneous Lorentz symmetry breaking may leave potential non-covariant effects, as well as violations of the gauge invariance. Not to be the ill-defined, the theory must be therefore restricted to low energies. On the other hands, the low-energy limit will represent an equilibrium limit in a renormalization group flow perspective, with higher order terms becoming relevant at higher energies. The energy reference scale for these considerations would be dictated by the self-interaction coupling constant of fermions, $G$. The running of this coupling constant induces the definition of theories at the boundaries. The theory at equilibrium, in the infrared limit, can be then formally extended up to high energies, but at the cost of considering the loop corrections.
+
+    The relation between the regularization scheme in causal fermion systems and in this condensation mechanism may solve sole of the problems of consistency of this mechanism proposed by Bjorken. At the same time, one may extend the argument so to account for both Yang-Mills fields and gravity --- with the caveat of evading the Weinberg-Witten theorem.
+
+3.  We finally comment on another perspective, accounting for unification of gravity with other forces. Ultimately, this perspective could be combined with the one referring to condensation that we spelled out in the previous point.
+
+    For this purpose, we take into account the gravi-weak unification paradigm proposed in [@Alexander_2014]. This is an extended BF theory with $\text{GL}(2, \mathbb{C})_L\times \text{GL}(2, \mathbb{C})_R$ symmetry group, which in spinorial indices $A,B=0,1$ reads $$\begin{aligned}
+    &\mathcal{S}_{\rm GW} =\int \frac{i}{4\pi G} \Big[ B^{AB} \wedge F_{AB} - B^{A'B'} \wedge F_{A'B'}  + \frac{\lambda}{6G}   \left( B_{AB} \wedge B^{AB} - B_{A'B'} \wedge B^{A'B'}   \right) \nonumber \\
+    &-\frac{1}{2} \Psi_{ABCD} \, B^{(AB} \wedge B^{CD)} + \frac{1}{2} \Psi_{A'B'C'D'} \, B^{(A'B'} \wedge B^{C'D')}- \Psi_{A'B'AB} \, B^{A'B'} \wedge B^{AB} \Big] \nonumber \\
+    &+ \frac{i g^2}{2} \left( \Psi^2_{ABCD} + \Psi^2_{A'B'C'D'} + \Psi^2_{ABC'D'} \right)  \left( B_{AB} \wedge B^{AB} - B_{A'B'} \wedge B^{A'B'}   \right)\,,
+    \end{aligned}$$ where primed and unprimed indices labeling variables in the two symmetry sectors, namely $\text{GL}(2, \mathbb{C})_L$ and $\text{GL}(2, \mathbb{C})_R$, are obtained from the Infeld--van der Waerden map $e^a \rightarrow e^{AA'}=e^a \, \sigma^{AA'}_a$, involving the the Infeld--van der Waerden symbols $\sigma^{AA'}_a$; each $\text{GL}(2, \mathbb{C})$ connection $A^{ab}$, with $a,b=1,\dots 4$, rewrites according to $$A^{ab}= A^{AA'BB'}= \epsilon_{AB} A^{A'B'} +  \epsilon_{A'B'} A^{AB} \:,$$ and consequently for the field strength of each $\text{GL}(2, \mathbb{C})$ connection $A^{ab}$ it holds $$F^{ab}= F^{AA'BB'}= \epsilon_{AB} F^{A'B'} +  \epsilon_{A'B'} F^{AB} \:,$$ where $F_{AB}=dA_{AB}+A_A^{\ C} \wedge A_{CB}$ denotes the field strength of $A^{AB}$, and similar expression follows for $F_{A'B'}=dA_{A'B'}+A_{A'}^{\ C'} \wedge A_{C'B'}$ in terms of $A^{A'B'}$; $B^{AB}$ and $B^{A'B'}$ are, in four dimensions, two-forms that are valued in the algebra of $\text{GL}(2, \mathbb{C})_\mathbb{C}$, with indices $$B^{ab}= B^{AA'BB'}= \epsilon_{AB} B^{A'B'} +  \epsilon_{A'B'} B^{AB} \:;$$ the multiplets of scalar fields have been introduced, as Lagrangian multipliers, which in the Lorentzian indices read $\Psi_{abcd}$, and in the spinorial indices decompose into pure spin-2 fields, i.e. $\Psi_{ABCD}$ and $\Psi_{A'B'C'D'}$, totally symmetric, and $\Psi_{ABA'B'}$, with mixed components and symmetric pairs of indices; the dimensionless cosmological constant $\lambda=G\Lambda$ and dimensionless coupling constant $g$ have been introduced.
+
+    An explicit solution that breaks the left-right symmetry has been recovered in [@Alexander_2014], which simultaneously provides gravity on one side, and the electroweak interactions on the other side provided with parity violation. Indeed, at the lowest order of the symmetry breaking solution, one obtains $$\begin{aligned}
+     \label{grave}
+    \mathcal{S}^{(0)}=\!\!\!\!\!\!\!\!\!&&\int \frac{i}{4 \pi G} \Sigma^{AB} \wedge F_{AB} + \frac{\lambda}{12 \pi G^2} e - \frac{e}{4 g^2_{\rm YM}} F^{A'B'}_{\mu \nu} F_{A'B' \rho \sigma} g^{\mu \rho} g^{\nu \sigma} \nonumber\\
+    &&- i \Theta F^{A'B'} \wedge F^{A'B'} + \frac{9G^2}{(16\pi)^2 \lambda^2 e}(F_{(A'B'}\wedge F_{C'D')})^2\,,
+    \end{aligned}$$ with $\Sigma^{AB}=e^A_{\ C'} \wedge e^{B C'}$, $F_{AB}=R_{AB}$ field strength of the spin-connection, and $\Theta$ and $g^2_{\rm YM}$ known functions of both $\lambda$ and $g^2$. The Yang-Mills sector is parity violating, as suggested by the appearance of the Pontryagin term.
+
+    The inspection of the first order correction in $g^2$ to [\[grave\]](#grave){reference-type="eqref" reference="grave"} provides the existence of terms such as $$\begin{aligned}
+     \label{grawi}
+    \mathcal{S}^{(1)}=
+    \int \frac{i g^2}{4 \pi G} \bigg[& b^{AB} \wedge F_{AB} + \frac{\lambda}{3G} b_{AB} \wedge \Sigma^{AB} \nonumber\\
+    &+  \frac{\lambda g^2}{3G} b_{AB} \wedge b^{AB} +  \frac{\lambda g^2}{3G} b_{A'B'} \wedge b^{A'B'} \bigg] 
+
+    + \dots \,, 
+    \end{aligned}$$ with $b^{AB}$ and $b^{A'B'}$ auxiliary fields determined by variation of $\mathcal{S}^{(1)}$. The $b^{AB}$, in particular, are responsible for the emergence of parity violating effects also in the gravitational sector: varying with respect to $b^{AB}$ provides the gravitational Pontryagin density, which is not multiplied by other evolving fields.
+
+This proposal for gravi-weak unification resonates strongly with the $E_8 \times E_8$ unification proposed in [@Kaushik]. In the latter work, spontaneous chiral symmetry breaking gives rise to the electroweak sector $SU(2)_L\times U(1)_Y \rightarrow U(1)_{em}$, and also to a 'darkelectro-grav' sector $SU(2)_R \times U(1)_{YDEM}\rightarrow U(1)_{DEM}$. The broken $SU(2)_R$ symmetry has been proposed as the origin of general relativity, and the unbroken DEM (Dark Electromagnetism) symmetry has been suggested [@mond] to be the origin of Milgrom's Modified Newtonian Dynamics (MOND).

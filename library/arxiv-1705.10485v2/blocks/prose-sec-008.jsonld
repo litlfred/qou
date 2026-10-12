@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1705.10485v2/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1705.10485v2/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "The notion of zone of control",
-  "pageStart": 6,
-  "pageEnd": 8,
-  "text": "../sections/sec-008-21-the-notion-of-zone-of-control.md",
-  "derivedFrom": "library/arxiv-1705.10485v2/manifest",
-  "sourceDocument": "library/arxiv-1705.10485v2/manifest",
+  "title": "Bounds on the Kolmogorov distance",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "../sections/sec-008-25-bounds-on-the-kolmogorov-distance.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.10485v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.10485v2/manifest.jsonld",
   "provenance": "ingested"
 }

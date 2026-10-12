@@ -7,7 +7,11 @@
   "bytes": 514480,
   "pages": 27,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "text-layer",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -188,6 +192,44 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 5,
-  "chars_total": 61384
+  "chars_total": 61384,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "ANhepv2.tex",
+   "tex_sections": 5,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-2-the-random-matrix-model",
+     "title": "The Random Matrix Model",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-3-the-eigenvalue-picture",
+     "title": "The eigenvalue picture",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-5-the-microscopic-weakly-non-chiral-large-n-limi",
+     "title": "The microscopic weakly non-chiral large-N limit",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-6-conclusions",
+     "title": "Conclusions",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

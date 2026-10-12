@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1912.13486v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1912.13486v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1912.13486v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1912.13486&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1912.13486v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1912.13486v2",
+    "content_type": "application/gzip",
+    "sha256": "751e99fa8299fcd495f2e1c3d15595522b9ebfa24f7f3acbc0a2ba9dbc4cbe62",
+    "bytes": 595763,
+    "fetched": "2026-10-10T15:15:01+00:00",
+    "files": [
+      {
+        "path": "source/files/indexplumbing.bbl",
+        "role": "bbl",
+        "sha256": "8ae36c395183a79a2b1aefa43b643f41865bedb3736379f58514b6a7b89eb149",
+        "bytes": 8487
+      },
+      {
+        "path": "source/files/indexplumbing.tex",
+        "role": "tex",
+        "sha256": "d3621c28b96917de0070bd909d33b2f90b8d7dc9d704fdd467fd4cc3743f55c8",
+        "bytes": 65387
+      },
+      {
+        "path": "source/files/jheppub.sty",
+        "role": "sty",
+        "sha256": "3b5fb4f3940c868b3dbcb7525099e4b535faa21d6d830652cfe5508cedb61eab",
+        "bytes": 11797
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

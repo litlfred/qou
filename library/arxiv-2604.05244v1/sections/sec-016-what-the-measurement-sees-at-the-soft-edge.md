@@ -1,0 +1,47 @@
+---
+doc_id: arxiv-2604.05244v1
+doc_title: "Edge universality in Floquet sideband spectra"
+section_id: sec-016-what-the-measurement-sees-at-the-soft-edge
+section_title: "What the measurement sees at the soft edge"
+section_number: null
+pages: 18-20
+source_pdf: 2604.05244v1.pdf
+source_sha256: a5097e763dd89d06
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.989
+---
+[]{#sec:readout-edge label="sec:readout-edge"} We can now bring the threads of the paper together. The Airy kernel is a property of the outgoing many-body state at fixed central energy $E$ [@TracyWidom1994; @DeanLeDoussal2019], not of the instrument. The role of the detection kernel is to select the coherence order $k$ of the Floquet correlator; it does not by itself isolate the soft edge. Combining the projection identity [\[eq:projection\]](#eq:projection){reference-type="eqref" reference="eq:projection"} with the exact block selection of Lemma [\[lem:block\]](#lem:block){reference-type="ref" reference="lem:block"}, one sees that an integer-period gate and analysis frequency $\omega_0=k\Omega$ give access to a $\mathcal G$-weighted, $E$-integrated sum over the $k$-th off-diagonal of $C$ (Eq. [\[eq:u0-block\]](#eq:u0-block){reference-type="eqref" reference="eq:u0-block"}). To probe the edge specifically, one needs an observable whose coupling is concentrated near $\nu=n-m_F(E)\sim A$.
+
+#### An edge-selective observable (ideal, fixed-$E$).
+
+At fixed central energy $E$, the theoretically cleanest probe of the edge is a sideband-windowed count operator. Let $\chi:\mathbb R\to[0,1]$ be a smooth cutoff and define $$\hat Y_\chi(E) := \sum_n \chi\!\left(\frac{n-m_F(E)-A}{\kappa_A}\right) b_n^\dagger(E)b_n(E).
+  \label{eq:Ychi}$$ This is a diagonal observable ($k=0$) with $\mathcal G_{nn}(E)=\chi\big((n-m_F(E)-A)/\kappa_A\big)$. Its expectation value converges to a universal Airy functional: $$\langle\hat Y_\chi(E)\rangle = \sum_n \chi\!\left(\frac{n-m_F(E)-A}{\kappa_A}\right) K_A^{\rm (disc)}(n-m_F,\,n-m_F)
+  \;\xrightarrow[A\to\infty]{}\;
+  \int_{-\infty}^\infty \chi(s)\,K_{\mathop{\mathrm{Ai}}}(s,s)\,ds,
+  \label{eq:Ychi-mean}$$ where the limit follows from Theorem [\[thm:airy\]](#thm:airy){reference-type="ref" reference="thm:airy"} and a Riemann-sum argument. Choosing $\chi=\mathbf 1_{[s_0,\infty)}$ gives the edge count beyond threshold $s_0$. At fixed $E$, the *zero-count probability*---i.e., the probability that no outgoing fermion occupies any sideband beyond $s_0$---is the Fredholm determinant $F_2(s_0)=\det(\mathrm{Id}-K_{\mathop{\mathrm{Ai}}}|_{[s_0,\infty)})$, which is the Tracy--Widom distribution [@TracyWidom1994; @Forrester2010]. (The full counting statistics of the edge count involve more general Fredholm-determinant expressions, not just the zero-count probability.) For an energy-integrated measurement, the count is a superposition of independent fixed-$E$ contributions and its statistics are not directly $F_2$; an energy-resolved readout is needed to access the single-fiber determinantal structure.
+
+We emphasize that $\hat Y_\chi(E)$ is an *ideal* observable: it requires $E$-resolution (i.e., the ability to select a narrow slice of the Floquet Brillouin zone) and knowledge of $m_F(E)$ (which sets the edge location at each $E$). It serves as the benchmark against which practical measurement schemes should be compared.
+
+#### The measurement gap: coherence order versus sideband index.
+
+A key limitation of the windowed-heterodyne readout (Sec. [\[sec:measurement\]](#sec:measurement){reference-type="ref" reference="sec:measurement"}) must be stated clearly. Fourier binning at $\omega_0=k\Omega$ resolves the *coherence order* $k=n-p$, not the individual sideband index $n$. The $k=0$ first moment, Eq. [\[eq:u0-block\]](#eq:u0-block){reference-type="eqref" reference="eq:u0-block"}, is a sum $\sum_n\int dE\,\mathcal G_{nn}C_{nn}$ running over *all* sidebands---bulk and edge alike. There is no software post-processing step that turns a coherence-order measurement into a sideband-resolved one; the information about *which* $n$ contributed is lost in the time-domain projection. Consequently, the edge-selective observable $\hat Y_\chi(E)$ defined above is not directly accessible from a standard heterodyne record.
+
+Three physical routes can bridge this gap, listed in order of decreasing directness:
+
+*(i) Energy-resolving detection* (most direct). Since sideband $n$ at central energy $E$ carries total energy $E_n=E+n\hbar\Omega$, a narrow-band detector centered at energy $\varepsilon$ selects the unique $(n,E)$ pair satisfying $E+n\hbar\Omega=\varepsilon$ (within the Floquet Brillouin zone). The measured occupancy at $\varepsilon$ is then $C_{nn}(E)$ for that pair. Scanning $\varepsilon$ across the edge region $\varepsilon\sim\mu+A\hbar\Omega$ traces out the sideband occupation profile, giving access to the rescaled density $\kappa_A C_{nn}\to K_{\mathop{\mathrm{Ai}}}(s,s)$.
+
+*(ii) Shot noise plateau deficit* (cleanest standard transport observable). For a flat-transmission two-terminal conductor, the DC current is linear in bias and $dI/dV$ is featureless. However, the shot noise $S_I(V)$ carries the sideband structure: its first bias derivative realizes the diagonal discrete Bessel kernel $K_A^{\rm(disc)}(\nu_V,\nu_V)$ as a function of bias voltage (Sec. [\[sec:transport\]](#sec:transport){reference-type="ref" reference="sec:transport"}), providing a parameter-free prediction of the Airy scaling in a standard DC noise measurement.
+
+*(iii) Differential conductance* (nonlinear devices only). For devices with energy-dependent transmission (superconductor--insulator--superconductor (SIS) junctions [@TienGordon1963], resonant levels [@PedersenBuett1998]), $dI/dV$ exhibits a photon-assisted step structure with heights $\propto J_k^2(A)$; the envelope of the rescaled heights $\kappa_A^2 J_k^2(A)$ approaches $\mathop{\mathrm{Ai}}^2(s)$ at the sideband edge. This route does not apply to a flat-transmission QPC.
+
+In all three cases, the detection kernel of Sec. [\[sec:measurement\]](#sec:measurement){reference-type="ref" reference="sec:measurement"} still plays a role (through gating, filtering, and spectral leakage), but the edge-selective information comes from an *additional* spectral or transport degree of freedom, not from the coherence-order projection alone.
+
+#### Two-point correlations and diagnostic strategy.
+
+At fixed $E$, the two-point connected correlator is $\langle N_\nu N_\lambda\rangle_c = -|K_A^{\rm (disc)}(\nu,\lambda)|^2$ (Eq. [\[eq:determinantal\]](#eq:determinantal){reference-type="eqref" reference="eq:determinantal"}), and the rescaled version converges to $-|K_{\mathop{\mathrm{Ai}}}(s,t)|^2$ (Corollary [\[cor:airyprocess\]](#cor:airyprocess){reference-type="ref" reference="cor:airyprocess"}). Accessing this experimentally requires either sideband-resolved detection (route (i) above applied at two energies) or shot-noise cross-correlations between two spectrally selective channels. The result is generically a weighted aggregate over products of $C$ entries, not a single $|C_{np}|^2$; but for a sufficiently narrow spectral window, the dominant contribution comes from a single $(n,E)$ pair and the Airy form is recovered.
+
+Two exponent plots and one gap-probability test suffice to identify the universality class and verify universality. First, the rescaled edge density $\kappa_A\langle N_{\nu_A(s)}\rangle\to K_{\mathop{\mathrm{Ai}}}(s,s)$ has the tail [@TracyWidom1994] $$K_{\mathop{\mathrm{Ai}}}(s,s)\sim\frac{1}{8\pi s}\,e^{-4s^{3/2}/3}\qquad(s\to+\infty),$$ so a plot of $\log(\kappa_A\langle N_{\nu_A(s)}\rangle)$ versus $s^{3/2}$ is asymptotically linear with slope $-4/3$ at a fold. Departure from linearity in this plot---e.g., curvature consistent with a different power of the edge coordinate---would signal a non-fold singularity (Sec. [\[sec:pearcey\]](#sec:pearcey){reference-type="ref" reference="sec:pearcey"}). Second, the sideband-resolved noise covariance, plotted on the same axes, provides a consistency check (note that the connected correlator is negative, so one plots its absolute value). Third, the gap probability $\Pr(N_\nu=0\ \forall\,\nu\ge\nu_A(s_0))$---the probability that no outgoing fermion lies beyond the scaled position $s_0$---is, at fixed $E$, the Fredholm determinant $\det(\mathrm{Id}-K_{\mathop{\mathrm{Ai}}}|_{[s_0,\infty)})$. As a function of $s_0$, this is the Tracy--Widom $F_2$ distribution [@TracyWidom1994; @Forrester2010]. (On a finite interval $[a,b]$, the gap probability is a different Fredholm determinant, not directly $F_2$.) This is a more discriminating test of edge universality than any single-site observable, though it requires $E$-resolved detection to access the determinantal structure.
+
+![(a) Heat map of the discrete Bessel kernel $K_A^{\rm (disc)}(\nu,\lambda)$ for $A=30$. The dashed lines mark the edge at $\nu,\lambda=A$; correlations are concentrated inside the "Fermi square" $\nu,\lambda\lesssim A$ and decay rapidly beyond. (b) Normalized detection response $|c_{\rm det}|^2/L^2$ as a function of detuning from the nearest harmonic, for rectangular gates of $N=1,2,4,8$ drive periods. For a non-integer-period gate, spectral leakage from adjacent harmonics contaminates the block-resolved measurement; integer-period gates eliminate this leakage entirely (Lemma [\[lem:block\]](#lem:block){reference-type="ref" reference="lem:block"}).](fig_correlator_leakage.pdf){#fig:correlator-leakage width="\\linewidth"}

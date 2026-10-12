@@ -319,7 +319,7 @@ def scan_source(fps):
     """
     out: dict[str, list] = {}
     for f in sorted(_COMPUTATIONS.rglob("*.py")):
-        if any(s in f.parts for s in ("_deprecated", "__pycache__", ".git")):
+        if any(s in f.parts for s in ("_deprecated", "fsh-guts", "__pycache__", ".git")):
             continue
         try:
             src = f.read_text(encoding="utf-8", errors="replace")
@@ -448,7 +448,7 @@ def main() -> int:
     # appeared the moment the source arm started recording literals.
     _self_witness = _HERE / (Path(__file__).stem + ".witness.json")
     files = sorted(p for p in _ROOT.rglob("*.witness.json")
-                   if "_deprecated" not in str(p) and ".git" not in str(p)
+                   if ("_deprecated" not in str(p) and "fsh-guts" not in str(p)) and ".git" not in str(p)
                    and p != _self_witness)
     grouped_hits: dict[str, list] = {}
     borro_hits: dict[str, list] = {}

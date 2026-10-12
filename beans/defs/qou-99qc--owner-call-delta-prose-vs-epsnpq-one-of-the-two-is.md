@@ -3334,6 +3334,55 @@ all, so a grep on the identifier cannot find them. Full per-site table and blast
 radius on `qou-6moa`; fixed so far in AGENTS.md and
 `QOU/Mass/AltCharShiftMultiset.lean` (PR #7459).
 
+
+## 2026-10-10 — the energy / O'Hara selection principle, route 1: what an embedding energy can and cannot select
+
+Full entry on `qou-pzsi`; probe `computations/probes/ohara_link_energy/`.
+
+- **The 2-crossing gluon dressings close to two links, not four.** `gluon_s0_s1` ≅ `gluon_s0_s0` = `nuc11_interleaved`, and `gluon_s1_s0` ≅ `gluon_s1_s1`, by hand-checked braid conjugacy. Any closure or embedding energy therefore ties the live element with `gluon_s0_s1` by construction.
+- **Flowed link Möbius energy (upper bounds, multi-start).** It ranks `nuc9` (234.2) well below both dressing classes (≈291), which sit well below `gen_grouped` (>311). It does **not** separate the two dressing classes: the gap is 1.1 against a combined error of 1.2.
+- **So the owner's 2026-09-14 direction is confirmed as the right class.** The energy is order-sensitive where letter-sums are not. But on this candidate set it **cannot pick among the gluon dressings**, and it cannot see the letter decoration at all.
+- The gluon dressing stays unselected. No dashboard row was re-scored.
+
+## 2026-10-11 route 2 status
+
+- The gluon tail is ALLOWED (owner ruling, 2026-10-11).
+- The q-deformed recipe uses t = −q₀ (owner ruling). PR #7647 merged; it gives no ranking.
+- Option 1, ropelength on fresh 11-letter words, FAILED its pre-registered test (24-way tie). PR #7651 merged.
+- Option 1b pre-registers a same-loop-up-to-symmetry rule on fresh 13-letter words (branch claude/bring-route2-sameloop-2026-10-11).
+- No word is selected by route 2.
+
+**2026-10-11 (route 2, options 1b/1c, PRs #7672 merged, #7679).** On fresh 13-letter words: 316 classes = 33 braids; the shortest Bring loop carries 3 braids (88 spellings of one), so Bring-loop energies select loops, not words. The owner-ruled q-length at t = -q0 separates braids: alone it picks sigma0*Delta^4 (length ln q0, no Bring loop); Bring-loop-first picks a different braid. Contaminated read-across to the seen candidates: rule A -> nuc11_interleaved (the scored element), rule B -> class A. The two rules disagree; which (if either) is the selection principle is an OPEN owner decision. Nothing selected. Bean stays open.
+
+## 2026-10-11 — option 1d (11-letter, all 94 classes; PR #7679, 007720dbbf)
+
+Pre-registered rules on all 94 positive 11-letter word classes (16 braids). Rule A (q-length at t=−q₀ alone) picks the braid of nuc11_interleaved (parabolic, E_q = ln q₀, no Bring loop). Rule B (shortest Bring loop, L = 4.6031833095, then q-length) picks the braid of class A (gluon_s1_s0/s1_s1, E_q = 2.6496). Both decided, they disagree; contaminated (seen q-lengths known beforehand). The selection rule remains an OPEN owner decision — this bean stays open.
+
+## 2026-10-11 — CORRECTION: route 2 used sign-erased candidates (results_signed.md)
+
+Route 2 and options 1 through 1d (and route 1, ohara_link_energy) took the seen candidates from the sign-erased generator list in qbeta_candidate_closures_are_links_probe. The canonical nucleon (pyhecke.atom.build_nucleon_nf) has a (σ₀σ₁⁻¹)³ core and averaged ud letters, so it is a SUM OF FOUR BRAIDS. Under route 2 every proton term has a Bring loop (L = 9.21 / 15.94 / 6.37 / 20.44), whereas the sign-erased nuc11 is parabolic with no loop. Every seen-candidate read-across from route 2 is WITHDRAWN, including 1d's "Rule A → nuc11, Rule B → class A". The fresh-positive-word results stand. γγ words (σ₀σ₁⁻¹)^k never get a Bring loop under route 2's "exactly one fixed point" rule: this is a limit of the rule (3 ∤ k: no conjugate of Γ₀(2) contains the word; 3 | k: the word is pure, so all three conjugates contain it). Scope (a). The selection rule stays OPEN.
+
+
+## 2026-10-11 (PR #7695)
+
+Neutron expansion in `signed_candidates_probe.py` was wrong (uu→dd instead of ud·ud·dd); fixed and now checked against `build_nucleon_nf_mp`. Core (σ₀σ₁⁻¹)³ and 00001100011 are the same Bring loop though not conjugate. B3: under Hecke H₃(q₀) the 2×2 quantity reduces to Wedderburn characters, x = |χ_(2,1)|/√|χ_(3)χ_(1³)|, det = −([2]_q/2)⁴ for both nucleons; under Burau t = −q₀, det = χ_(3). The normalisations disagree in type on every row; neither adopted; B4 (no energy for sums) stays default. Selection still OPEN.
+
+## 2026-10-11 — quark template tracked order by order in q (reading 3)
+
+Probe `computations/probes/quark_template/` (pre-registered at 6b9dd5d172; exact over Q(q); 4/4 checks).
+
+- **Flavour is invisible at order t⁰** (t = q − 1): since σ⁻¹ = σ − h, every quark letter equals σ at q = 1, all 8 template variants give the same element, and χ_(2,1) = 0 there. So reading 3 holds with equality at order zero for every template. The verdict is decided at order t¹ (where the sign bits enter), or at t³ when t¹ cancels. No verdict flips between truncation orders t¹…t⁶ or across the sub-interval of (1, ∞) containing q₀.
+- **k = 0, builder placement:** the corpus template (u = σ, d = σ⁻¹, ud = average) FAILS reading 3 for both nucleons (χ_(2,1) = −0.09198 p, −0.18200 n). Its sign changes exactly at q*² + q*⁻² = 1 + 2cos(2π/7), q* = 1.27890, above q₀. Every bar-swapped template (u = σ⁻¹, d = σ) passes for both nucleons, under every pair rule. The two flavour-blind templates also pass.
+- **With the gluon pair σ₀σ₀:** no template passes for both nucleons.
+- **Placement varied too:** the corpus template has 4/8 admissible placements per nucleon; the builder's is not one of them. So reading 3 constrains sign map and placement jointly, not the template alone.
+- **Tension, unresolved:** this bean's 2026-09-05 "swap refuted" rests on a comparison with measured binding data, which cannot select under the no-fitting rule. Reading 3, the ruled derived test, points to the swap at k = 0 and the builder placement. This is an owner decision. The bean stays open.
+
+## 🟧 OWNER RULING 2026-10-12 — quark sign map: option 4, derive it, do not pick it
+
+Asked in the six-part frame on PR #7718 (comment 6130340849). The four options were: 1 keep S+ (status quo); 2 adopt the swap S− (u = σ⁻¹, d = σ), which passes reading 3 at the builder placement; 3 keep S+ and move the letters to placement 011 or 100; 4 pick nothing by hand. **The owner chose 4.** The quark sign map and the letter placement must be outputs of the γγ construction plus reading 3 at every tower level (`qou-ales`), not a template choice. The template stays open and nothing is re-scored. The dashboard knowingly keeps scoring an element that reading 3 rejects until a derivation lands. The 2026-09-05 data-based "swap refuted" in `qou-y2np` is a comparison with data, so it counts as a selection neither way. This bean stays open (rule 13a). Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+**2026-10-11 — 🟧 OWNER RULING (thread chat, ofri, verbatim): "3... but let's go through γγ production step by step to get to one and two nucleons. each collision/interaction shifts things up the tower".** Option 3 of the #7702 decision: **reading 3 applies at EVERY level of the tower** (nucleon in H_3, A nucleons in H_{3A}, all checked). On the #7702 family this coincides with the H_3 verdicts; the live element stays excluded. Next: walk γγ production step by step, tracking the tower level of each collision (h-order and n). Walk-through: /mnt/project-files/qbeta-ohara/gg-production-walkthrough.md. Bean stays open (rule 13a).
+
 ### Cross-link (2026-10-11)
 
 the p-n interface convention R3 made canonical is the one the corpus's uniqueness theorem does NOT cover (it fails `BarInvariant`), so "canonical" there is not proved canonicity. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).

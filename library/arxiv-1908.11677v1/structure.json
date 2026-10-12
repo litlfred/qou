@@ -7,7 +7,11 @@
   "bytes": 209234,
   "pages": 19,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -134,6 +138,56 @@
   "likely_scanned": false,
   "toc_entries": 6,
   "sections": 5,
-  "chars_total": 31288
+  "chars_total": 31288,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 6,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-variational-formulae",
+     "title": "Variational formulae",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-31-strategy",
+     "title": "Strategy",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-32-estimates-and-continuity-of-the-quantities-in",
+     "title": "Estimates and continuity of the quantities in (??)",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.591,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

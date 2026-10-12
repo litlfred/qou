@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s/sections/sec-170",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "3A1. A general set-up",
+  "pageStart": 298,
+  "pageEnd": 308,
+  "contains": [
+    "library/ant-v14-n7-s/blocks/prose-sec-170",
+    "library/ant-v14-n7-s/blocks/lem-sec-170-01",
+    "library/ant-v14-n7-s/blocks/lem-sec-170-02",
+    "library/ant-v14-n7-s/blocks/prop-sec-170-03",
+    "library/ant-v14-n7-s/blocks/lem-sec-170-04",
+    "library/ant-v14-n7-s/blocks/prop-sec-170-05",
+    "library/ant-v14-n7-s/blocks/thm-sec-170-06",
+    "library/ant-v14-n7-s/blocks/prop-sec-170-07",
+    "library/ant-v14-n7-s/blocks/thm-sec-170-08",
+    "library/ant-v14-n7-s/blocks/prop-sec-170-09",
+    "library/ant-v14-n7-s/blocks/prop-sec-170-10",
+    "library/ant-v14-n7-s/blocks/lem-sec-170-11",
+    "library/ant-v14-n7-s/blocks/prop-sec-170-12",
+    "library/ant-v14-n7-s/blocks/prop-sec-170-13"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "provenance": "ingested"
+}

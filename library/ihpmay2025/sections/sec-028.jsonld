@@ -1,19 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ihpmay2025/sections/sec-028",
   "@type": [
     "doco:Section"
   ],
-  "title": "The Bers-Sullivan-Thurston Density Conjecture and other consequences",
+  "title": "The Ending Lamination Theorem",
   "pageStart": 37,
-  "pageEnd": 38,
+  "pageEnd": 37,
   "contains": [
-    "library/ihpmay2025/blocks/prose-sec-028",
-    "library/ihpmay2025/blocks/thm-sec-028-01",
-    "library/ihpmay2025/blocks/thm-sec-028-02",
-    "library/ihpmay2025/blocks/cor-sec-028-03"
+    "library/ihpmay2025/blocks/prose-sec-028"
   ],
-  "derivedFrom": "library/ihpmay2025/manifest",
-  "sourceDocument": "library/ihpmay2025/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
   "provenance": "ingested"
 }

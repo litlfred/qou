@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0111205v1/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0111205v1/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "It is well known to be related to Drinfel’d’s notion of the qu antum double of a ﬁnite",
-  "pageStart": 1,
-  "pageEnd": 2,
-  "text": "../sections/sec-001-c-it-is-well-known-to-be-related-to-drinfelds-no.md",
-  "derivedFrom": "library/arxiv-math-0111205v1/manifest",
-  "sourceDocument": "library/arxiv-math-0111205v1/manifest",
+  "title": "Preliminaries",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-001-2-preliminaries.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0111205v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0111205v1/manifest.jsonld",
   "provenance": "ingested"
 }

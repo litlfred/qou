@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/schechtman-varchenko1991-arrangements/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "References",
+  "pageStart": 55,
+  "pageEnd": 56,
+  "text": "../sections/sec-008-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/schechtman-varchenko1991-arrangements/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/schechtman-varchenko1991-arrangements/manifest.jsonld",
+  "provenance": "ingested"
+}

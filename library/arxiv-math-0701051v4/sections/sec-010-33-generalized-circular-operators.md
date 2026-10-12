@@ -8,136 +8,75 @@ pages: 11-13
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
 doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
+text_source: latex
+latex_prose_ratio: 0.943
+latex_coverage_ratio: 0.942
 ---
-functions on R+. We equip it with an expected value φ : D → C given by
-φ(f ) =
-∫ ∞
-0 f (t)dt.
-We consider an operator-valued probability space, which by deﬁnition
-is some ∗-algebra A such that D ⊆ A and equipped with a conditional
-expectation E : A → D . For a given (generalized) Young diagramλ let T ∈
-A be a generalized circular operator [VDN92, Spe98] with a covariance
-[
-k(T, f T ∗)
-]
-(s) =
-∫
-t:(t,s)∈λ
-f (t) dt,
-[
-k(T ∗, f T)
-]
-(s) = −
-∫
-t:(s,t)∈λ
-f (t) dt,(16)
-[
-k(T, f T)
-]
-(s) = 0 ,
-[
-k(T ∗, f T∗)
-]
-(s) = 0 .
-Theorem 10. For any (generalized) Young diagramλ
-Rλ
-l+1 = φ
-[
-(T ∗T )l]
-.
-Proof. It is easy to check that for permutations σ1, σ2 which contribute to
-(15) the corresponding bipartite graph is a tree therefore t he calculation of
-N λ(σ1, σ2) is particularly simple, namely it is a certain iterated inte gral.
-The same iterated integral appears in the nested evaluation of amalgamated
-free cumulants therefore N λ(σ1, σ2) = ±φ
-[
-kσ2(T ∗, T, · · · , T ∗, T )
-]
-. The
-plus/minus sign is due to the minus sign in the covariance (16). It is easy to
-check that in fact
-(−1)|σ1|N λ(σ1, σ2) = φ
-[
-kσ2(T ∗, T, · · · , T ∗, T )
-]
-.
-The moment-cumulant formula
-E
-[
-(T ∗T )l]
-=
-∑
-σ∈NC2
-kσ(T ∗, T, · · · , T ∗, T )
-ﬁnishes the proof since there is a bijective correspondence between non-
-crossing pair partitions and the minimal factorizations. □
-12 V ALENTIN FÉRAY AND PIOTR ´SNIADY
-Due to the analytic machinery of free probability the calcul ation of the
-moments of T in a closed form is possible in many cases therefore Theorem
-10 gives a practical method of calculating the free cumulant s of the Young
-diagrams.
-4. T ECHNICAL ESTIMATES
-4.1. Estimates for the number of colorings N λ(σ1, σ2). As we already
-mentioned in Example 3 to permutations σ1, σ2 we can associate a bipartite
-graph C(σ1) ⊔ C(σ2) with an edge between c1 ∈ C(σ1) and c2 ∈ C(σ2) if
-c1 ∩ c2 ⁄= ∅.
-For a bipartite graph G = C1 ⊔ C2 (not necessarily arising from the
-above construction) and a Young diagramλ we deﬁne N λ(G) as the number
-of colorings h of the vertices of C1 ⊔ C2 which are compatible with the
-Young diagram λ (the deﬁnition of compatibility in this context is a natural
-extension of the old one, i.e. we require that if c1 ∈ C1 and c2 ∈ C2 are
-connected by an edge then
-(
-h(c1), h(c2)
-)
-∈ λ).
-We denote byGp,q a full bipartite graph for which|C1| = p and |C2| = q.
-Lemma 11. Let G be a ﬁnite bipartite graph with a property that the degree
-of any vertex is non-zero. It is possible (not necessarily in a unique way) to
-remove some of the edges of G in such a way that the resulting graph ˜G is
-a disjoint union of the graphs of the form G1,1, Gk,1, G1,k.
-Assume that a Young diagram λ consists of n boxes. Then, for any A ≥
-r(λ), c(λ)
-(17) N λ(G) ≤ A(number of vertices of G)
-( n
-A2
-) (number of connected components of ˜G)
-.
-Proof. If the graph G contains an edge which connects two vertices of de-
-gree bigger than one we remove it and iterate this procedure; if no such
-edge exists then the resulting graph ˜G has the desired property.
-Clearly, N λ(G) ≤ N λ( ˜G) therefore it is enough to ﬁnd a suitable up-
-per bound for N λ( ˜G). Since both sides of (17) are multiplicative with
-respect to the disjoint sum of graphs it is enough to prove (17 ) for ˜G ∈
-{G1,1, Gk,1, G1,k}. Now, the lemma follows from:
-N λ(Gk,1) =
-∑
-i
-λk
-i ≤
-∑
-i
-λiAk−1 = nAk−1
-and the analogous inequality for N λ(G1,k). □
-ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS 13
-Proposition 12. Suppose that r(λ), c(λ) ≤ A ≤ n and σ1, σ2 ∈ Sl and
-π = σ1σ2. Then
-(18) N λ(σ1, σ2) ≤ A|C(σ1)|+|C(σ2)|
-( n
-A2
-) orbits(σ1,σ2)
-≤ Al−|C(π)|n|C(π)|
-( 1
-A
-) o(σ1,σ2)
-,
-where orbits(σ1, σ2) denotes the number of orbits in the action of ⟨σ1, σ2⟩
-on the set {1, . . . , n} and
-o(σ1, σ2) = l − |C(σ1)| − |C(σ2)| + orbits(σ1, σ2).
-Proof. The ﬁrst inequality is a simple corollary from Lemma 11 sinceA2 ≥
-r(λ)c(λ) ≥ n and the number of connected components of ˜G is bounded
-from below byorbits(σ1, σ2). The second inequality follows by multiplying
-by ( n
-A
-) |C(π)|−orbits(σ1,σ2)
-≥ 1. □
+Let $\mathcal{D}$ be the algebra of continuous functions on $\mathbb{R}_+$. We equip it with an expected value $\phi:\mathcal{D}\rightarrow \mathbb{C}$ given by $\phi(f)=\int_0^{\infty} f(t) dt$.
+
+We consider an operator-valued probability space, which by definition is some $\ast$-algebra $\mathcal{A}$ such that $\mathcal{D}\subseteq \mathcal{A}$ and equipped with a conditional expectation $\mathbb{E}:\mathcal{A}\rightarrow\mathcal{D}$. For a given (generalized) Young diagram $\lambda$ let $T\in\mathcal{A}$ be a generalized circular operator [@VoiculescuDykemaNica1992; @Speicher1998] with a covariance $$\begin{aligned}
+\nonumber \big[ k(T,f T^\ast)\big] (s)&= \int_{t:  (t,s)\in\lambda }f(t)\ dt,
+\\
+\label{eq:strangesign}
+\big[ k(T^\ast,f T)\big] (s)&= -\int_{t:  (s,t)\in\lambda }f(t)\ dt, \\
+\nonumber \big[ k(T,f T)\big] (s)&= 0,\\
+\nonumber \big[ k(T^\ast,f T^\ast)\big] (s)&= 0.
+\end{aligned}$$
+
+::: theorem
+[]{#theo:free-proba-may-help label="theo:free-proba-may-help"} For any (generalized) Young diagram $\lambda$ $$R_{l+1}^{\lambda}= \phi\big[ (T^\ast T)^l \big].$$
+:::
+
+::: proof
+*Proof.* It is easy to check that for permutations $\sigma_1,\sigma_2$ which contribute to [\[eq:freecumulants-come\]](#eq:freecumulants-come){reference-type="eqref" reference="eq:freecumulants-come"} the corresponding bipartite graph is a tree therefore the calculation of $N^{\lambda}(\sigma_1,\sigma_2)$ is particularly simple, namely it is a certain iterated integral. The same iterated integral appears in the nested evaluation of amalgamated free cumulants therefore $N^{\lambda}(\sigma_1,\sigma_2)=\pm
+\phi\big[ k_{\sigma_2}(T^\ast,T,\cdots,T^\ast,T)\big]$. The plus/minus sign is due to the minus sign in the covariance [\[eq:strangesign\]](#eq:strangesign){reference-type="eqref" reference="eq:strangesign"}. It is easy to check that in fact $$(-1)^{|\sigma_1|} N^{\lambda}(\sigma_1,\sigma_2)=
+\phi\big[ k_{\sigma_2}(T^\ast,T,\cdots,T^\ast,T)\big].$$
+
+The moment-cumulant formula $$\mathbb{E}\big[ (T^\ast T)^l \big]= \sum_{\sigma\in\mathop{\mathrm{NC}}_2}
+k_{\sigma}(T^\ast,T,\cdots,T^\ast,T)$$ finishes the proof since there is a bijective correspondence between non-crossing pair partitions and the minimal factorizations. ◻
+:::
+
+Due to the analytic machinery of free probability the calculation of the moments of $T$ in a closed form is possible in many cases therefore Theorem [\[theo:free-proba-may-help\]](#theo:free-proba-may-help){reference-type="ref" reference="theo:free-proba-may-help"} gives a practical method of calculating the free cumulants of the Young diagrams.
+
+# Technical estimates {#sec:technical}
+
+## Estimates for the number of colorings $N^\lambda(\sigma_1,\sigma_2)$ {#eq:estimate-lambda}
+
+As we already mentioned in Example [\[example1\]](#example1){reference-type="ref" reference="example1"} to permutations $\sigma_1,\sigma_2$ we can associate a bipartite graph $C(\sigma_1)\sqcup C(\sigma_2)$ with an edge between $c_1\in C(\sigma_1)$ and $c_2\in C(\sigma_2)$ if $c_1\cap c_2\neq \emptyset$.
+
+For a bipartite graph $G=C_1\sqcup C_2$ (not necessarily arising from the above construction) and a Young diagram $\lambda$ we define $N^{\lambda}(G)$ as the number of colorings $h$ of the vertices of $C_1\sqcup C_2$ which are compatible with the Young diagram $\lambda$ (the definition of compatibility in this context is a natural extension of the old one, i.e. we require that if $c_1\in C_1$ and $c_2\in C_2$ are connected by an edge then $\big( h(c_1),h(c_2) \big)\in \lambda$).
+
+We denote by $G_{p,q}$ a full bipartite graph for which $|C_1|=p$ and $|C_2|=q$.
+
+::: lemma
+[]{#lem:grafGprim label="lem:grafGprim"}
+
+Let $G$ be a finite bipartite graph with a property that the degree of any vertex is non-zero. It is possible (not necessarily in a unique way) to remove some of the edges of $G$ in such a way that the resulting graph $\tilde{G}$ is a disjoint union of the graphs of the form $G_{1,1}$, $G_{k,1}$, $G_{1,k}$.
+
+Assume that a Young diagram $\lambda$ consists of $n$ boxes. Then, for any $A \geq r(\lambda),c(\lambda)$ $$\label{eq:szacowanie-lambdy}
+N^{\lambda}(G)\leq A^{\text{(number of vertices of $G$)}} 
+\left(\frac{n}{A^2}\right)^{\text{(number of connected components of
+$\tilde{G}$)}}.$$
+:::
+
+::: proof
+*Proof.* If the graph $G$ contains an edge which connects two vertices of degree bigger than one we remove it and iterate this procedure; if no such edge exists then the resulting graph $\tilde{G}$ has the desired property.
+
+Clearly, $N^\lambda(G)\leq N^\lambda(\tilde{G})$ therefore it is enough to find a suitable upper bound for $N^\lambda(\tilde{G})$. Since both sides of [\[eq:szacowanie-lambdy\]](#eq:szacowanie-lambdy){reference-type="eqref" reference="eq:szacowanie-lambdy"} are multiplicative with respect to the disjoint sum of graphs it is enough to prove [\[eq:szacowanie-lambdy\]](#eq:szacowanie-lambdy){reference-type="eqref" reference="eq:szacowanie-lambdy"} for $\tilde{G}\in\{G_{1,1},G_{k,1}, G_{1,k}\}$. Now, the lemma follows from: $${N^\lambda}(G_{k,1})=\sum_i \lambda_i^k\leq  
+\sum_i \lambda_i A^{k-1} = n A^{k-1}$$ and the analogous inequality for ${N^\lambda}(G_{1,k})$. ◻
+:::
+
+::: proposition
+[]{#prop:bipartite-graphs label="prop:bipartite-graphs"} Suppose that $r(\lambda),c(\lambda) \leq A \leq n$ and $\sigma_1,\sigma_2\in S_l$ and $\pi=\sigma_1 \sigma_2$. Then $$\begin{gathered}
+\label{eq:swider}
+N^\lambda(\sigma_1,\sigma_2)  \leq  A^{|C(\sigma_1)|+|C(\sigma_2)|}\left(\frac{n}{A^2}\right)^{\mathop{\mathrm{orbits}}(\sigma_1,\sigma_2)} 
+\\ \leq   A^{l-|C(\pi)|} n^{|C(\pi)|}
+\left(\frac{1}{A}\right)^{o(\sigma_1,\sigma_2)},
+\end{gathered}$$ where $\mathop{\mathrm{orbits}}(\sigma_1,\sigma_2)$ denotes the number of orbits in the action of $\langle \sigma_1,\sigma_2\rangle$ on the set $\{1,\dots,n\}$ and $$o(\sigma_1,\sigma_2)=l-|C(\sigma_1)|-|C(\sigma_2)| +\mathop{\mathrm{orbits}}(\sigma_1,\sigma_2).$$
+:::
+
+::: proof
+*Proof.* The first inequality is a simple corollary from Lemma [\[lem:grafGprim\]](#lem:grafGprim){reference-type="ref" reference="lem:grafGprim"} since $A^2\geq r(\lambda) c(\lambda) \geq n$ and the number of connected components of $\tilde{G}$ is bounded from below by $\mathop{\mathrm{orbits}}(\sigma_1,\sigma_2)$. The second inequality follows by multiplying by $$\left( \frac{n}{A}
+\right)^{|C(\pi)|-\mathop{\mathrm{orbits}}(\sigma_1,\sigma_2)} 
+\geq 1.\qedhere$$ ◻
+:::

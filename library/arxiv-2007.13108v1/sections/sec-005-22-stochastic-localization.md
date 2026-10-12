@@ -8,118 +8,98 @@ pages: 7-9
 source_pdf: 2007.13108v1.pdf
 source_sha256: b298478f5f5b948d
 doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
+text_source: latex
+latex_prose_ratio: 0.944
+latex_coverage_ratio: 0.976
 ---
-We construct a stochastic process driven by a Brownian motio n, which we refer to as stochastic
-localization. A somewhat similar process was originally used in [6] to est ablish concentration
-properties for log-concave measures on Rn. Here we use a discrete version, similar to the con-
-struction which appears in [7, 8]. In this section we occasio nally allow ourselves to omit some
-of the details of the proofs, and the reader is referred to [7] for more rigorous derivations.
-Let Bt be a standard Brownian motion on Rn adapted to a ﬁltration Ft. Consider the system
-of equations,
-F0(x) = 0 , dF t(x) = Ft(x)⟨x − at, dB t⟩, ∀x ∈ C n, (10)
-where at :=
-∫
-xdνt(x) :=
-∫
-xFt(x)dν(x).
-We think of this process (νt)t as an evolution of measures on Cn, which starts with the mea-
-sure ν0 = ν, and as seen below, ends up with a Dirac measure whose support is ν-distributed.
-Let us ﬁrst summarize some useful properties of this process .
-Proposition 9. The process deﬁned above satisﬁes the following properties .
-1. Almost surely, for all t, νt is a probability measure.
-2. F or all A ⊂ C n, the process νt(A) is a martingale.
-3. The process at almost surely converges to a point in Cn, and a∞ := lim t→∞ at is dis-
-tributed according to the law ν. Moreover , the measureνt almost-surely weakly converges
-to a Dirac measure at a∞.
-Proof. We have
-dνt(Cn) = d
-∫
-Cn
-Ft(x)ν(x) =
-∫
-Cn
-(x − at)dνt(x)dBt = 0,
-which proves the ﬁrst part. The second part is evident from th e deﬁnition. For the third part, a
-calculation gives,
-dat = d
-∫
-Cn
-xνt(x)
-=
-( ∫
-Cn
-x ⊗ (x − at)νt(dx)
-)
-dBt
-=
-( ∫
-Rd
-(x − at)⊗2νt(dx)
-)
-dBt
-= Cov(νt)dBt. (11)
-Therefore, at is a martingale, and
-d[⟨at, e i⟩]t =
-∑
-j∈[n]
-Cov(νt)2
-i,j ≥ Cov(νt)2
-i,i = (1 − ⟨at, e i⟩2)2dt, (12)
-implying that ⟨at, e i⟩ converges to {±1} almost surely and that νt converges weakly to to δa∞ ,
-which also implies that
-lim
-t→∞
-at ∈ A ⇔ lim
-t→∞
-νt(A) = 1 ,
-7
-for all A ⊂ C n. Since νt(A) is a martingale, we have that
-P
-(
-lim
-t→∞
-at ∈ A
-)
-= lim
-t→∞
-Eνt(A) = ν(A),
+\label{sec:stochastic}
+We construct a stochastic process driven by a Brownian motion, which we refer to as \emph{stochastic localization}. A somewhat similar process was originally used in \cite{Eldan-thin-KLS} to establish concentration properties for log-concave measures on $\RR^n$. Here we use a discrete version, similar to the construction which appears in \cite{Eldan-taming, eldan2020spectral}. In this section we occasionally allow ourselves to omit some of the details of the proofs, and the reader is referred to \cite{Eldan-taming} for more rigorous derivations. \\
+
+Let $B_t$ be a standard Brownian motion on $\RR^n$ adapted to a filtration $\FF_t$. Consider the system of equations,
+\begin{equation}\label{eq:localization}
+F_0(x) = 0, ~~ d F_t (x) = F_t(x) \langle x - a_t,  d B_t \rangle, ~~ \forall x \in \DC,
+\end{equation}
+where $a_t := \int x d \nu_t(x) := \int x F_t(x) d \nu(x)$. \\
+
+We think of this process $(\nu_t)_t$ as an evolution of measures on $\DC$, which starts with the measure $\nu_0 = \nu$, and as seen below, ends up with a Dirac measure whose support is $\nu$-distributed. Let us first summarize some useful properties of this process.
+\begin{proposition} \label{prop:basicprops}
+The process defined above satisfies the following properties.
+\begin{enumerate}
+\item 
+Almost surely, for all $t$, $\nu_t$ is a probability measure.
+\item
+For all $A \subset \DC$, the process $\nu_t(A)$ is a martingale.
+\item 
+The process $a_t$ almost surely converges to a point in $\DC$, and $a_\infty := \lim_{t \to \infty} a_t$ is distributed according to the law $\nu$. Moreover, the measure $\nu_t$ almost-surely weakly converges to a Dirac measure at $a_\infty$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+We have
+$$
+d \nu_t(\DC) = d \int_{\DC} F_t(x) \nu(x) = \int_{\DC} (x - a_t) d \nu_t(x) d B_t = 0,
+$$
+which proves the first part. The second part is evident from the definition. For the third part, a calculation gives,
+\begin{align}
+da_t ~& = d \int_{\DC} x \nu_t(x)  \nonumber \\
+& = \left (\int_{\DC} x \otimes (x - a_t)\nu_t(dx) \right ) dB_t \nonumber \\
+& = \left (\int_{\RR^d} (x - a_t)^{\otimes 2} \nu_t(dx) \right ) dB_t \nonumber \\ 
+& = \COV(\nu_t) dB_t. \label{eq:dat}
+\end{align}
+Therefore, $a_t$ is a martingale, and 
+\begin{equation}\label{eq:atfast}
+d [\langle a_t, e_i \rangle]_t = \sum_{j \in [n]} \COV(\nu_t)_{i,j}^2 \geq \COV(\nu_t)_{i,i}^2 = (1 - \langle a_t, e_i \rangle^2)^2 dt,
+\end{equation}
+implying that $\langle a_t, e_i \rangle$ converges to $\{\pm 1\}$ almost surely and that $\nu_t$ converges weakly to to $\delta_{a_\infty}$, which also implies that
+$$
+\lim_{t \to \infty} a_t \in A \Leftrightarrow \lim_{t \to \infty} \nu_t(A) = 1,
+$$
+for all $A \subset \DC$. Since $\nu_t(A)$ is a martingale, we have that 
+$$
+\PP \left ( \lim_{t \to \infty} a_t \in A \right ) = \lim_{t \to \infty} \EE \nu_t(A) = \nu(A),
+$$
 implying the third part.
-Next, we have by Itˆ o’s formula, for all x ∈ C n,
-d log Ft(x) = dFt(x)
-Ft(x) − d[F (x)]t
-2Ft(x)2
-= ⟨x − at, dB t⟩ − 1
-2 |x − at|2dt
-= ⟨x, dB t + atdt⟩ + dZt (13)
-where Zt is an Itˆ o process that does not depend on x (here we used the fact that |x|2 is constant
-on Cn). Therefore,
-log Ft(x) = ⟨x, w t⟩ + ct
-where ct is some Itˆ o process andwt = Bt +
-∫ t
-0 asds. The above display and the fact that νt is a
-probability measure, implies that
-νt = τwtν, (14)
-and therefore also
-at =
-∫
-Cn
-xdνt(x) =
-∫
-Cn
-xdτwtν(x) = aν(wt).
-The process wt thus satisﬁes the equation
-w0 = 0, dw t = dBt + aν(wt)dt. (15)
-The above equation gives an alternative construction for th e process deﬁned in (10). Due to the
-Markov property of the measure-valued process νt, the above discussion leads to the following
-result.
-Proposition 10. Given a measure ν and a vector v ∈ Rn, consider the process deﬁned by the
-equation
-u0 = v, du t = dBt + aν(ut)dt.
-Then X = lim t→∞ aν(ut) exists and is a point in Cn almost surely, and has the law τvν.
-Proof. Consider the measure ˜ν = τvν and let wt be the process constructed as above with ν
-replaced by ˜ν in equation (10). Observe that by deﬁnition
-a˜ν(x) = aν(x + v), ∀x ∈ Rn.
-In light of (15) and by the uniqueness of the solution to the ab ove SDE, we have that wt +v = ut
-almost surely, for all t. The result now follows from part 3 of Proposition 9 and the fa ct that
-at = a˜ν(wt) = aν(ut).
-8
+\end{proof}
+
+Next, we have by It\^o's formula, for all $x \in \DC$,
+\begin{align}
+d \log F_t(x) & = \frac{d F_t(x)}{F_t(x)} - \frac{d[F(x)]_t}{2 F_t(x)^2} \nonumber \\
+& = \langle x-a_t, d B_t \rangle - \frac{1}{2}  |x-a_t|^2 dt \nonumber \\
+& = \langle x, d B_t + a_t dt \rangle + d Z_t
+\end{align}
+where $Z_t$ is an It\^o process that does not depend on $x$ (here we used the fact that $|x|^2$ is constant on $\DC$). Therefore,
+$$
+\log F_t(x) = \left \langle x, w_t  \right \rangle + c_t
+$$
+where $c_t$ is some It\^o process and $w_t = B_t + \int_0^t a_s ds$. The above display and the fact that $\nu_t$ is a probability measure, implies that
+\begin{equation}\label{eq:tilts}
+\nu_t = \tau_{w_t} \nu,
+\end{equation}
+and therefore also 
+$$
+a_t = \int_{\DC} x d \nu_t(x) = \int_{\DC} x d \tau_{w_t} \nu(x) = a_\nu(w_t).
+$$ 
+The process $w_t$ thus satisfies the equation
+\begin{equation}\label{eq:dvt}
+w_0 = 0, ~~ d w_t = d B_t + a_\nu(w_t) dt.
+\end{equation}
+The above equation gives an alternative construction for the process defined in \eqref{eq:localization}. Due to the Markov property of the measure-valued process $\nu_t$, the above discussion leads to the following result.
+\begin{proposition} \label{prop:alt}
+Given a measure $\nu$ and a vector $v \in \RR^n$, consider the process defined by the equation
+$$
+u_0 = v, ~~~ d u_t = d B_t + a_\nu(u_t) dt.
+$$
+Then $X = \lim_{t \to \infty} a_\nu(u_t)$ exists and is a point in $\DC$ almost surely, and has the law $\tau_{v} \nu$. 
+\end{proposition}
+\begin{proof}
+Consider the measure $\tilde \nu = \tau_{v} \nu$ and let $w_t$ be the process constructed as above with $\nu$ replaced by $\tilde \nu$ in equation \eqref{eq:localization}. Observe that by definition 
+$$
+a_{\tilde \nu}(x) = a_\nu(x + v), ~~ \forall x \in \RR^n.
+$$	
+In light of \eqref{eq:dvt} and by the uniqueness of the solution to the above SDE, we have that $w_t + v = u_t$ almost surely, for all $t$. The result now follows from part 3 of Proposition \ref{prop:basicprops} and the fact that 
+$$
+a_t = a_{\tilde \nu}(w_t) = a_\nu(u_t).
+$$
+\end{proof}
+
+
+\section{Proof of Theorem \ref{thm:main}}

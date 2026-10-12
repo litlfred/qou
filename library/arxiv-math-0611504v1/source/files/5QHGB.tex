@@ -1,0 +1,185 @@
+\section{The QHFT bordism category}\label{BORDCAT}
+We define first a {\it topological} $(2+1)$-bordism category. Then we
+will give it more structure, including the parameter spaces of the
+previous sections.
+
+\subsection{Marked topological bordisms}\label{top-bord}
+Like in Section \ref{PARAM}, for every $(g,r)\in \N \times \N$
+such that $g\geq 0$, $r>0$, and $r>2$ if $g=0$, fix a compact
+closed oriented base surface $S$ of genus $g$ with a set
+$V=\{v_1,\ldots,v_r\}$ of $r$ marked points. Denote by $-S$ the
+same surface with the opposite orientation, and write $*S$ for
+$S=+S$ or $-S$. Moreover, fix a set of disjoint embedded closed
+segments $a_{v_i}$ in $S$ such that $a_{v_i}$ has one end point at
+$v_i$. We say that {\it $v_i$ is framed by $a_{v_i}$}.
+
+We say that two orientation preserving diffeomorphisms $\phi_1: *
+S \to \Sigma_1$ and $\phi_2: * S \to \Sigma_2$ are equivalent if
+there is an orientation-preserving diffeomorphism $h: \Sigma_1 \to
+\Sigma_2$ such that $(\phi_2)^{-1}\circ h \circ \phi_1$ pointwise
+fixes the segments $a_{v_i}$ and is isotopic to the identity
+automorphism of $S$ relatively to $\{a_{v_i}\}$. We write $[*
+S,\phi]$ for such an equivalence class.
+
+Let $Y$ be an oriented compact $3$-manifold with (possibly empty)
+boundary $\partial Y$, with an input/output bipartition $\partial Y =
+\partial_-Y \cup \partial_+ Y$ of the boundary components (we say that
+$\partial_- Y$ is ``at the bottom'' of $Y$, while $\partial_+Y$ is
+``on the top'').  Each boundary component inherits the boundary
+orientation, via the usual convention {\it last is the ingoing
+normal}. Let $L_\Ff$ be a properly embedded {\it non-empty} framed
+tangle in $Y$. This means that $L_\Ff$ is a disjoint union of properly
+embedded orientable {\it ribbons}. We split $L_\Ff = (L_\Ff)_i\cup
+(L_\Ff)_b$, where $(L_\Ff)_i$ is the {\it internal} part of $L_\Ff$
+made by its closed connected components, homeomorphic to the annulus
+$S^1 \times [0,1]$, while $(L_\Ff)_b$ is the union of the components
+homeomorphic to the quadrilateral $I\times [0,1]$.  We consider
+$L_\Ff$ up to proper ambient isotopy. For every boundary component
+$\Sigma$ of $Y$, we assume that $(L_\Ff)_b\cap \Sigma \ne \emptyset$,
+and that $(L_\Ff)_b\cap \Sigma$ consists of at least two segments if
+$g(\Sigma)=0$ (we do not require that every component of $(L_\Ff)_b$
+goes from $\partial_-$ towards $\partial_+$). Hence, on each
+boundary component $\Sigma$ of $Y$ we have a set of marked points
+framed by $L_\Ff \cap \Sigma$. Also, associated to $\partial_\pm$ we
+have a finite disjoint union $\textstyle \alpha_\pm = \coprod_{\phi(*
+S) \in \partial_\pm} [*S,\phi]$ of equivalence classes of
+diffeomorphisms as above.
+
+\smallskip
+
+Consider the topological $(2+1)$-bordism category with objects the
+empty set and any finite union of the $[* S,\phi]$, and morphisms the
+triples $(Y,L_\Ff,\alpha_\pm)$ as above. We say that
+$(Y,L_\Ff,\alpha_\pm)$ is a {\it bordism from $\alpha_-$ to $\alpha_+$
+with support $(Y,L_\Ff)$}. We allow the case when $Y$ is a closed
+manifold, so that $\partial Y = \emptyset$ and $(Y,L_\Ff)$ is a
+morphism from the empty set to itself. We stress that $L_\Ff$ is
+non-empty in any case.
+
+We can reformulate this category in a setup closer to that of the
+phase space parameters of Section \ref{PARAM}, as follows. If we cut
+open each $a_{v_i}$ in $S$ we get an oriented surface $F$ with $r$
+boundary bigon components. This is the domain of an elementary object
+$[* F,\phi]$, where the target surfaces $\Sigma$ have now $r$ boundary
+components, and the diffeomorphisms $\phi$ are considered up to
+isotopy rel($\partial$).
+
+\smallskip
+
+Consider a bordism $(Y,L_\Ff,\alpha_\pm)$. On the boundary of each
+ribbon component of $L_\Ff$ we keep track of a {\it tangle} line
+$X\times \{0\}$ ($X=S^1$ or $I$) for the corresponding component of
+the unframed tangle $L$, and there is a {\it longitudinal} line
+$X\times \{1\}$ that specifies the framing of the normal bundle of the
+parallel tangle line. These make a pair
+$\bar{\lambda}=(\lambda,\lambda')$ of parallel {\it unframed} tangles
+in $Y$. Cutting open each ribbon we get a $3$-manifold with corners
+$\tilde{Y}$. The boundary $\partial \tilde{Y}$ has two {\it
+  ``horizontal''} parts $\partial_\pm \tilde{Y}$ contained in
+$\partial_\pm Y$, and a ``vertical'' {\it tunnel} part $\widetilde
+{L}_\Ff$. The horizontal parts intersect the tunnel part at the corner
+locus; this is a union of bigons contained in $\partial Y$. Each
+boundary component $\Sigma$ of $Y$ corresponds to a horizontal
+boundary component of $\tilde{Y}$, still denoted by $\Sigma$. Each
+tunnel boundary component is made by the union of two copies of $X
+\times (0,1)$, glued each to the other at $\lambda \cup \lambda'$. The
+horizontal boundary components are the targets of elementary objects
+$[* F,\phi]$, and each triple $(\tilde{Y},\tilde{L}_\Ff)$ supports a
+morphism between such objects. Clearly, we can recover $(Y,L_\Ff)$
+from $(\tilde{Y},\tilde{L}_\Ff)$, so that we have two equivalent
+settings to describe the same topological bordism category.
+
+\subsection{Boundary structures}\label{QHB-def}
+We equip a marked topological bordism with additional boundary
+structures by using the notions of section \ref{PARAM}. Fix an
+$e$-triangulation $(T,b)$ of $F$. Following Remark \ref{W_mean}
+and the definition of log-branches, we put:
+
+\begin{defi}\label{log-I}{\rm Let $z \in \Zz_I(T,b)^\pm$, and $e$ be a
+non boundary edge of $T$. Denote ${\rm l}_z(e)$ the canonical
+log-branch of $W^\pm(z)(e)$, computed from the idealization of Star$(e)$ as in Lemma \ref{canonicalflat} and before Definition \ref{phasespace}. For any
+collection $m=\{m_\lambda\}_\lambda$ of integers, one for each edge
+$\lambda$ in $T$, the {\it classical Log-$\Ii$-parameter} of $(z,m)$
+at $e$ is $${\rm l}_{(z,m)}(e) = {\rm l}_z(e)+
+\sqrt{-1}\pi(m_{a}+m_{c}-m_{b}-m_{d}),$$ where $a$, $\ldots, d$ make
+Link$(e)$ with $a$, $c$ opposite and $e$, $a$ have coherent branching
+orientations (see Figure \ref{LogIfig}). Similarly, for every $N>1$
+and any other collection $n=\{n_\lambda\}_\lambda$ of integers, the
+{\it quantum Log-$\Ii$-parameter} at $e$ is $${\rm
+  l}_{(z,m)}(e)+\sqrt{-1}\pi
+N(m_{a}+m_{c}-m_{b}-m_{d})-*_b\sqrt{-1}\pi(N+1)(n_{a}+n_{c}-n_{b}-n_{d}).$$
+We call the collections $$f=\{f_e\}_e=\{({\rm
+  l}_{(z,m)}(e)-\log(W^\pm(z)(e)))/\pi\sqrt{-1}\}_e$$ and
+$$c=\{c_e\}_e=\{n_{a}+n_{c}-n_{b}-n_{d}\}_e$$ the flattenings of
+$(z,m)$ and the charge of $n$ respectively, and we denote
+generically by $\Ll$ any such a system of classical or quantum
+($\pm$)-Log-$\Ii$-parameters.}
+\end{defi}
+Remark that if $z\in \Zz_I(T,b,\mathcal{C}^-)$ and $\mathcal{C}$
+has no trivial entries, then the ($-$)-Log-$\Ii$-parameters depend
+on $W^-(z)$, not on $z$, because of Proposition \ref{no-gauge}.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=4cm]{LogIfig.eps}
+\caption{\label{LogIfig} Notations for Log-$\Ii$-parameters.}
+\end{center}
+\end{figure}
+
+\begin{defi} \label{QHBdef} {\rm The QHFT category is the
+    $(2+1)$-bordism category with objects the empty set
+    and any finite union of the $[*F,(T,b,\Ll),\phi]$, where $\Ll$ is a
+    system of ($+$)-Log-$\Ii$-parameters, and morphisms the 4-uples
+    $(\tilde{Y},\tilde{L}_\Ff,\rho,\alpha_\pm)$, where: $\rho$ is a
+    conjugacy class of $PSL(2,\C)$-valued representations of
+    $\pi_1(\tilde{Y} \setminus \tilde{L}_\Ff)$; $\alpha_\pm$ are QHFT
+    objects with targets $\partial_\pm \tilde{Y}$, such that for every
+    $[* F,(T,b,\Ll),\phi]$, the character $\phi^*(\rho)$ coincides
+    with $\Theta(W^+(z))$. We say that $(\tilde{Y},\tilde{L}_\Ff,
+    \rho)$ is the support of a QHFT bordism from $\alpha_-$ to
+    $\alpha_+$, and that $\alpha_\pm$ is a QHFT surface.}
+\end{defi}
+Given bordisms $\Bb$ and $\Bb'$ from $\alpha_-$ to $\alpha_+$ and
+$\alpha_-'$ to $\alpha_+'$, respectively, assume that $\beta_+$
+and $\beta'_-$ are subobjects of $\alpha_+$ and $\alpha'_-$ that
+coincide up to the change of orientation.
+\begin{defi}\label{composition}{\rm
+The bordism $\Bb''$ from $\alpha''_- = \alpha_- \cup (\alpha'_-
+\setminus \beta'_-)$ to $\alpha''_+ = \alpha'_+ \cup (\alpha_+
+\setminus \beta_+)$ obtained by gluing $\Bb$ and $\Bb'$ along
+$\beta_+$ is called the {\it composition} of $\Bb$ followed by
+$\Bb'$. We write $\Bb'' = \Bb'*\Bb$. }
+\end{defi}
+
+\noindent {\bf Examples from hyperbolic geometry.} Any
+topologically tame hyperbolic $3$-manifold $Y$ with hyperbolic
+holonomy $\rho$ and a tangle $L_\Ff$ of singularities makes a QHFT
+bordism. More specifically, any geometrically finite non compact
+complete hyperbolic $3$-manifold $Y$ defines a triple
+$(Y',L_\Ff,\rho)$ with a {\it non empty} link $L_\Ff$, as follows.
+The manifold $Y$ has a natural compactification $\bar{Y}$, with $Y
+\cong {\rm Int}(\bar{Y})$, which is a ``pared'' manifold
+$(\bar{Y},P)$. Here $P$ is a union of disjoint tori or annuli
+embedded in the boundary of $\bar{Y}$. The tori correspond to the
+cusps of $Y$. Each annulus $A$ of $P$ comes from a couple of cusps
+on some boundary component of (a small neighborhood of) the convex
+core of $Y$; $A$ is fibered by geodesic arcs. If $A$ is separating
+the cusps belong to different components. Define $Y''$ as the
+result of attaching a $2$-handle to $\bar{Y}$ at each annulus $A$,
+so that $P$ is contained in the interior of $Y''$ and is
+transverse to $\partial Y''$. Equivalently, $Y''$ contains a
+properly embedded framed $1$-tangle $L_\Ff'$ made by the cocores
+of the $2$-handles, the framing being determined by the fibration
+by intervals of the annuli of $P$. Let us choose a framing at each
+torus of $P$. By Dehn filling we get a manifold $Y'$, and $Y''$ is
+the exterior in $Y'$ of the union $L_\Ff''$ of the framed cores of
+the filling solid tori. Hence, if every boundary component of the
+convex core of $Y$ contains at least one cusp, associated to $Y$
+and the cusp framings we have $(Y',L_\Ff,\rho)$, where $L_\Ff
+=L_\Ff' \cup L_\Ff''$ intersects all the boundary components of
+$Y'$, and $\rho$ is a $PSL(2,\mc)$-character of $Y'\setminus L_\Ff
+\cong Y$. If furthermore $\rho$ is the holonomy of a complete
+hyperbolic metric on $Y$ and $Y$ has infinite volume ends, then
+$\partial Y'$ is non empty. We can give the triple
+$(Y',L_\Ff,\rho)$ a natural boundary structure $\alpha_- \cup
+\alpha_+$, induced by exponential $\Ii$-parameters of the pleated
+surfaces in the boundary of the convex core (see eg. \cite{Ep}).

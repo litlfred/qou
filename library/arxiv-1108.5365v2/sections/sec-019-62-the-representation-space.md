@@ -8,109 +8,86 @@ pages: 48-51
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
 doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.899
 ---
-We introduce the transformations such that A acts on H canonically, and ˆA acts
-on ˆH canonically. We will use capital letter to denote the transformed fu nction.
-All the new Hilbert spaces are L2(R× R).
-Deﬁnition 6.2. We deﬁne T :H−→H rep by
-T :f (s,t )↦→
-∫
-R
-f (α,t−s + iQ
-2 )e2πiαsdα, (6.12)
-T −1 :F (s,t )↦→
-∫
-R
-F (α,t +α− iQ
-2 )e−2πiαsdα, (6.13)
-or simply T = (t↦→t−s)◦F −1
-s ◦ (t↦→t + iQ
-2 ).
-Similarly we deﬁne ˆT : ˆH−→ ˆHrep by
-ˆT : ˆf (s,t )↦→
-∫
-ˆf (α,t−s + iQ
-2 )e−2πiαteπQαdα, (6.14)
-48
-ˆT −1 : ˆF (s,t )↦→
-∫
-ˆF (α,t +α− iQ
-2 )e2πis(α+t)dα, (6.15)
-or simply ˆT = (t↦→t−s)◦F s◦ (t↦→t + iQ
-2 )◦e−2πist.
-Proposition 6.3. Under the transformations, both the spaces Hrep and ˆHrep carry
-the usual inner product with respect to the standard Lebesgu e measure:
-⟨F (s,t ),G (s,t )⟩ =
-∫
-R
-∫
-R
-G(s,t )F (s,t )dsdt. (6.16)
-Proposition 6.4. Under the transformations, the action of A onHrep is given by
-A =e2πbs, B =e2πbps, (6.17)
-and the action of ˆA on ˆHrep is given by
-ˆA =e−2πbs, ˆB =e2πbps. (6.18)
-Proof. Let us demonstrate the use of transformation rule for say, the o perator B.
-The rest is similar. Recall that B acts on H as e2πbse−2πbpt. Hence under the
-transformation it becomes
-e2πbse−2πbpt ↦→t↦→t+ iQ
-2
-e2πbse−2πbpt
-↦→F −1
-s
-e2πbpse−2πbpt
-↦→t↦→t−s e2πbps.
+\label{sec:Trans:rep}
+We introduce the transformations such that $\cA$ acts on $\cH$ canonically, and $\hat{\cA}$ acts on $\hat{\cH}$ canonically. We will use capital letter to denote the transformed function. All the new Hilbert spaces are $L^2(\R\x\R)$.
+
+\begin{Def} We define $\cT: \cH \to \cH_{rep}$ by
+\Eq{\cT: f(s,t)\mapsto \int_\R f(\a, t-s+\frac{iQ}{2})e^{2\pi i\a s} d\a,}
+\Eq{\cT\inv: F(s,t)\mapsto \int_\R F(\a, t+\a-\frac{iQ}{2})e^{-2\pi i\a s}d\a,}
+or simply $\cT = (t\mapsto t-s)\circ \cF_s\inv\circ (t\mapsto t+\frac{iQ}{2})$.
+
+Similarly we define $\hat{\cT}:\hat{\cH}\to\hat{\cH}_{rep}$ by
+\Eq{\hat{\cT}: \hat{f}(s,t)\mapsto \int \hat{f}(\a, t-s+\frac{iQ}{2})e^{-2\pi i\a t}e^{\pi Q\a}d\a,}
+\Eq{\hat{\cT}\inv: \hat{F}(s,t)\mapsto \int \hat{F}(\a,t+\a-\frac{iQ}{2})e^{2\pi is(\a+t)}d\a,}
+or simply $\hat{\cT}=(t\mapsto t-s)\circ \cF_s \circ (t\mapsto t+\frac{iQ}{2})\circ e^{-2\pi is t}$.
+\end{Def}
+
+\begin{Prop} Under the transformations, both the spaces $\cH_{rep}$ and $\hat{\cH}_{rep}$ carry the usual inner product with respect to the standard Lebesgue measure:
+\Eq{\<F(s,t), G(s,t)\> = \int_\R \int_\R \over[G(s,t)]F(s,t) dsdt.}
+\end{Prop}
+
+\begin{Prop} Under the transformations, the action of $\cA$ on $\cH_{rep}$ is given by
+\Eq{A=e^{2\pi bs},\tab B= e^{2\pi bp_s},}
+and the action of $\hat{\cA}$ on $\hat{\cH}_{rep}$ is given by
+\Eq{\hat{A}=e^{-2\pi bs},\tab \hat{B}=e^{2\pi bp_s}.}
+\end{Prop}
+\begin{proof} Let us demonstrate the use of transformation rule for say, the operator $B$. The rest is similar.
+Recall that $B$ acts on $\cH$ as $e^{2\pi b s}e^{-2\pi bp_t}$. Hence under the transformation it becomes
+\begin{eqnarray*}
+e^{2\pi b s}e^{-2\pi bp_t}&\mapsto_{t\mapsto t+\frac{iQ}{2}}& e^{2\pi b s}e^{-2\pi bp_t}\\
+&\mapsto_{\cF_s\inv}& e^{2\pi b p_s}e^{-2\pi bp_t}\\
+&\mapsto_{t\mapsto t-s}& e^{2\pi b p_s}.
+\end{eqnarray*}
+\end{proof}
+
 As a corollary, we have
-Corollary 6.5. As a representation of A we have
-H≃H irr⊗L2(R), (6.19)
-whereHirr is the canonical irreducible representation (1.2) ofA on L2(R).
-Let us also note that
-Proposition 6.6. The product of two elements in A induces a twisted product on
-H by
-F·G =T (T −1(F )·T −1(G)) =
-∫
-R
-F (s,τ )G(τ,t )dτ. (6.20)
+\begin{Cor} As a representation of $\cA$ we have
+\Eq{\cH\simeq \cH_{irr} \ox L^2(\R),}
+where $\cH_{irr}$ is the canonical irreducible representation \eqref{Hirr} of $\cA$ on $L^2(\R)$.
+\end{Cor}
+
+Let us also note that 
+\begin{Prop} The product of two elements in $\cA$ induces a twisted product on $\cH$ by
+\Eq{F\cdot G = \cT(\cT\inv(F)\cdot \cT\inv(G)) = \int_\R F(s,\t)G(\t,t) d\t.}
+\end{Prop}
+
 We can do the same analysis to the dual space:
-49
-Proposition 6.7. Under the transformations, the action of ˆA onHrep is given by
-ˆA =e2πb(ps+pt), ˆB =Gb(Q
-2 +is−it)◦e2πb(pt+s)◦Gb(Q
-2 +is−it)−1, (6.21)
-and the action of A on ˆHrep is given by
-A =e2πb(ps+pt),B =Gb(Q
-2−is +it)−1◦e2πb(pt−s)◦Gb(Q
-2−is +it). (6.22)
-Remark 6.8. Note that the action of A on ˆH is obtained by the ξ transformation.
-Moreover, recall that Gb( Q
-2 +is) is unitary, hence the action above is still positive.
-Finally we will need to describe the action of the modular conjugation J and ˆJ
-that are crucial in the construction of the multiplicative unitary for the quantum
-double.
-Proposition 6.9. The action of J and ˆJ onHrep is given by
-J :F (s,t )↦→
-F (t,s ), (6.23)
-ˆJ :F (s,t )↦→F (−s,−t)eπis2−πit2
-νi/8, (6.24)
-whereν =e−2πQ2
-.
-Similarly, the action of ˆJ on ˆHrep is also given by
-ˆJ : ˆF (s,t )↦→ˆF (t,s ), (6.25)
-while the action of J on ˆHrep is given by
-J : ˆF (s,t )↦→ˆF (−s,−t)eπit2−πis2
-ν−i/8. (6.26)
-Proposition 6.10. The action of AdJ onA is given by:
-J(x)J = ˆR∗(x∗), (6.27)
-where ˆR∗ is an anti-homomorphism given by
-ˆR∗(A) = ˆA∗, ˆR∗(B) = ˆB∗, (6.28)
-where
-ˆA∗ =e2πbt, ˆB∗ =e−2πbpt. (6.29)
-The action of Ad ˆJ on ˆA is given by:
-ˆJ(y) ˆJ =R∗(y∗), (6.30)
-whereR∗ is an anti-homomorphism given by
-R∗( ˆA) = A∗, R ∗( ˆB) = B∗, (6.31)
-where
-A∗ =e−2πbt, B ∗ =e−2πbpt. (6.32)
-50
-Corollary 6.11. J◦A◦ J commutes withA as operators on Hrep, and similarly
-ˆJ◦ ˆA◦ ˆJ commutes with ˆA as operators on ˆHrep, which veriﬁes Theorem 2.11.
+\begin{Prop} Under the transformations, the action of $\hat{\cA}$ on $\cH_{rep}$ is given by
+\Eq{\hat{A}=e^{2\pi b(p_s+p_t)},\tab \hat{B}=G_b(\frac{Q}{2}+is-it)\circ e^{2\pi b(p_t+s)}\circ G_b(\frac{Q}{2}+is-it)\inv,}
+and the action of $\cA$ on $\hat{\cH}_{rep}$ is given by
+\Eq{A=e^{2\pi b(p_s+p_t)}, B=G_b(\frac{Q}{2}-is+it)\inv\circ e^{2\pi b(p_t-s)}\circ G_b(\frac{Q}{2}-is+it).}
+\end{Prop}
+\begin{Rem} Note that the action of $\cA$ on $\hat{\cH}$ is obtained by the $\xi$ transformation. Moreover, recall that $G_b(\frac{Q}{2}+is)$ is unitary, hence the action above is still positive.
+\end{Rem}
+
+Finally we will need to describe the action of the modular conjugation $J$ and $\hat{J}$ that are crucial in the construction of the multiplicative unitary for the quantum double.
+
+\begin{Prop} The action of $J$ and $\hat{J}$ on $\cH_{rep}$ is given by
+\Eq{J: F(s,t)\mapsto \over[F](t,s),}
+\Eq{\hat{J}:F(s,t)\mapsto \over[F](-s,-t)e^{\pi is^2-\pi it^2}\nu^{i/8},}
+where $\nu=e^{-2\pi Q^2}$.
+
+Similarly, the action of $\hat{J}$ on $\hat{\cH}_{rep}$ is also given by
+\Eq{\hat{J}: \hat{F}(s,t)\mapsto \overline{\hat{F}}(t,s),}
+while the action of $J$ on $\hat{\cH}_{rep}$ is given by
+\Eq{J:\hat{F}(s,t)\mapsto \overline{\hat{F}}(-s,-t)e^{\pi it^2-\pi is^2}\nu^{-i/8}.}
+\end{Prop}
+
+\begin{Prop} \label{AdJ} The action of $Ad J$ on $\cA$ is given by:
+\Eq{J(x)J=\hat{R}_*(x^*),}
+where $\hat{R}_*$ is an anti-homomorphism given by
+\Eq{\hat{R}_*(A)=\hat{A}_*,\tab \hat{R}_*(B)=\hat{B}_*,}
+where \Eq{\hat{A}_* =e^{2\pi bt},\tab \hat{B}_*=e^{-2\pi bp_t}.}
+The action of $Ad \hat{J}$ on $\hat{\cA}$ is given by:
+\Eq{\hat{J}(y)\hat{J}=R_*(y^*),}
+where $R_*$ is an anti-homomorphism given by
+\Eq{R_*(\hat{A})=A_*,\tab R_*(\hat{B})=B_*,}
+where \Eq{A_* =e^{-2\pi bt}, \tab B_*=e^{-2\pi bp_t}.}
+\end{Prop}
+
+\begin{Cor}\label{Jcom} $J\circ \cA\circ J$ commutes with $\cA$  as operators on $\cH_{rep}$, and similarly $\hat{J}\circ \hat{\cA}\circ \hat{J}$ commutes with $\hat{\cA}$ as operators on  $\hat{\cH}_{rep}$, which verifies Theorem \ref{MvN}.
+\end{Cor}

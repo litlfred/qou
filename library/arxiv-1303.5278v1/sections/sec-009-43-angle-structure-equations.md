@@ -9,28 +9,14 @@ source_pdf: 1303.5278v1.pdf
 source_sha256: 92e417c93f8b883a
 doc_brief: "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of"
 duplicate_of: "topologicalinvariance3dindex"
+text_source: latex
+latex_prose_ratio: 0.919
+latex_coverage_ratio: 0.74
 ---
-given in Deﬁnition 2.13. In this section, we will refer to the angle variables within theith
-tetrahedron, α(qi),α (q′
-i),α (q′′
-i ), asZi,Z′
-i,Z′′
-i respectively.
-We can view a quad-choiceQ for T (as in Deﬁnition 2.12) as a choice of pair of opposite
-edges at each tetrahedron∆i for i = 1,...,N . The quad-choiceQ can be used to eliminate
-one of the three variablesZi,Z′
-i,Z′′
-i at each tetrahedron using the relationZi +Z′
-i +Z′′
-i =π.
-Doing so, equations (3) take the form
-AZ + BZ′′ =πν,
-whereν∈ ZN. (For example, if we eliminate the variablesZ′
-i then A = A− B, B = C− B
-andν = 2(1,..., 1)T− B(1,..., 1)T.
-The matrices (A|B) have some keysymplectic properties, discovered by Neumann-Zagier
-whenM is a hyperbolic 3-manifold (andT is well-adapted to the hyperbolic stucture) [NZ85],
-18 STA VROS GAROUF ALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN
-and later generalised to the case of arbitrary 3-manifolds in [Neu92]. Neumann-Zagier show
-that the rank of(A|B) is N−r, wherer is the number of boundary components ofM; all
-assumed to be tori.
+[]{#sub.ge label="sub.ge"}
+
+Recall the equations for a generalised angle structure as given in Definition [\[matrix equations\]](#matrix equations){reference-type="ref" reference="matrix equations"}. In this section, we will refer to the angle variables within the $i$th tetrahedron, $\alpha(q_i) ,\alpha(q_i'),\alpha(q_i'')$, as $Z_i,Z_i',Z_i''$ respectively.
+
+We can view a quad-choice $Q$ for $\mathcal{T}$ (as in Definition [\[choice_of_quads\]](#choice_of_quads){reference-type="ref" reference="choice_of_quads"}) as a choice of pair of opposite edges at each tetrahedron $\Delta_i$ for $i=1,\dots,N$. The quad-choice $Q$ can be used to eliminate one of the three variables $Z_i,Z'_i,Z''_i$ at each tetrahedron using the relation $Z_i+Z'_i+Z''_i=\pi$. Doing so, equations [\[eq.angle1\]](#eq.angle1){reference-type="eqref" reference="eq.angle1"} take the form $$\mathbf A \, Z + \mathbf B \, Z'' = \pi \boldsymbol{\nu} \,,$$ where $\boldsymbol{\nu} \in \mathbb Z^{N}$. (For example, if we eliminate the variables $Z'_i$ then $\mathbf A = \overline{\mathbf A}-\overline{\mathbf B}$, $\mathbf B = \overline{\mathbf C}-\overline{\mathbf B}$ and $\boldsymbol{\nu} = 2 (1,\dots,1)^T - \overline{\mathbf B} (1,\dots,1)^T$.
+
+The matrices $(\mathbf A|\mathbf B)$ have some key *symplectic properties*, discovered by Neumann-Zagier when $M$ is a hyperbolic 3-manifold (and $\mathcal{T}$ is well-adapted to the hyperbolic stucture) [@NZ], and later generalised to the case of arbitrary 3-manifolds in [@Neumann-combi]. Neumann-Zagier show that the rank of $(\mathbf A|\mathbf B)$ is $N-r$, where $r$ is the number of boundary components of $M$; all assumed to be tori.

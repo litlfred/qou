@@ -8,7 +8,8 @@ pages: 14-14
 source_pdf: 1702.00039v1.pdf
 source_sha256: b47ca7d1cf7b44be
 doc_brief: "Gentle introduction to Soergel bimodules I: The basics NICOLAS LIBEDINSKY — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-In this section we give an explicit calculation of the Kazhdan-Lusztig basis for
-the examples A, B and C and we will give the formula (without a proof) for
-example D.
+In this section we give an explicit calculation of the Kazhdan-Lusztig basis for the examples A, B and C and we will give the formula (without a proof) for example D.

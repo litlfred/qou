@@ -1,1 +1,0 @@
-immediately implies the following.

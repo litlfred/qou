@@ -8,52 +8,61 @@ pages: 31-32
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
 doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+text_source: latex
+latex_prose_ratio: 0.952
+latex_coverage_ratio: 0.931
 ---
-K a ring homomorphism. Denote by K[t±1] the corresponding skew Laurent polynomial ring
-over K. The elements in K[t±1] are formal sums ∑ s
-i=−raiti withai ∈ K and multiplication
-in K[t±1] is given by the rule tia =γi(a)ti for any a ∈ K.
-LetN be a 3–manifold and let φ ∈H 1(N ; Z) be non–trivial. Following Turaev [Tu02b] we
-call a ring homomorphism ϕ : Z[π1(N )] → K[t±1]φ–compatible if for any g ∈π1(N ) we have
-ϕ(g) = ktφ(g) for some k ∈ K. Given a φ–compatible homomorphism ϕ : Z[π1(N )] → K[t±1]
-we consider the K[t±1]–module
-Hi(N ; K[t±1]) = Hi(C∗( ˜N ) ⊗Z[π1(N )] K[t±1])
-where ˜N is the universal cover of N . Since K[t±1] is a principal ideal domain (PID) (cf.
-[Co04, Proposition 4.5]) we can decompose
-Hi(N ; K[t±1]) ∼
-=
-l⨁
-k=1
-K[t±1]/(pk(t))
-for pk(t) ∈ K[t±1], 1 ≤ k ≤ l. We deﬁne ∆ ϕ
-N,φ,i := ∏ l
-k=1pk(t) ∈ K[t±1]. As for twisted
-Alexander polynomials we write ∆ ϕ
-N,φ = ∆ ϕ
-N,φ,1. Non–commutative Alexander polynomials
-have in general a high indeterminacy, we refer to [Co04, p. 36 7] and [Fr07, Theorem 3.1]
-for a discussion of the indeterminacy. Note though that the d egree of a non–commutative
-Alexander polynomial is well–deﬁned.
-The following theorem was proved for knots by Cochran [Co04] and extended to 3–
-manifolds by Harvey [Ha05] and Turaev [Tu02b].
-Theorem 10.1. Let N be a 3–manifold with empty or toroidal boundary and let φ ∈
-H 1(N ; Z) non–trivial. Let ϕ : Z[π1(N )] → K[t±1] be a φ–compatible homomorphism.
-(1) If the image of π1(N ) → K[t±1] is non–cyclic, then
-deg(∆ ϕ
-N,φ,0) = 0.
-(2) If the image of π1(N ) → K[t±1] is non–cyclic and if ∆ ϕ
-N,φ ⁄= 0, then
-deg(∆ ϕ
-N,φ,2) = 0.
-32 STEF AN FRIEDL AND STEF ANO VIDUSSI
-(3) If ∆ ϕ
-N,φ ⁄= 0, then we have the following inequality
-||φ||T ≥ deg(∆ ϕ
-N,φ) − deg(∆ ϕ
-N,φ,0) − deg(∆ ϕ
-N,φ,2)
-and equality holds if φ is a ﬁbered class and N ⁄=S1 ×D2,N ⁄=S1 ×S2.
-We refer to [Fr07] for the deﬁnition of a twisted non–commuta tive Alexander polynomial
-and to a corresponding generalization of Theorem 10.1, we al so refer to [Fr07] for a reinter-
-pretation of the third statement of Theorem 10.1 in terms of a certain non–commutative
-Reidemeister torsion.
+\label{sec:phicompatible}
+
+
+
+Let $\mathbb{K}$ be a (skew) field and $\gamma:\mathbb{K}\to \mathbb{K}$ a ring homomorphism. Denote by $\mathbb{K}[t^{\pm 1}]$ the corresponding skew Laurent
+polynomial ring over $\mathbb{K}$. The elements in $\mathbb{K}[t^{\pm 1}]$ are formal sums
+$\sum_{i=-r}^s a_it^i$ with $a_i\in \mathbb{K}$ and multiplication in $\mathbb{K}[t^{\pm 1}]$ is given by the rule
+$t^ia=\gamma^i(a)t^i$ for any $a\in \mathbb{K}$.
+
+
+
+Let $N$ be a 3--manifold and let $\phi \in H^1(N;\mathbb{Z})$ be non--trivial.
+Following Turaev \cite{Tu02b} we call a ring homomorphism $\varphi:\mathbb{Z}[\pi_1(N)] \to \mathbb{K}[t^{\pm 1}]$ \emph{$\phi$--compatible}
+if for any $g\in \pi_1(N)$ we have $\varphi(g)=kt^{\phi(g)}$ for some $k\in \mathbb{K}$.
+Given a $\phi$--compatible  homomorphism $\varphi:\mathbb{Z}[\pi_1(N)]\to \mathbb{K}[t^{\pm 1}]$ we  consider
+the  $\mathbb{K}[t^{\pm 1}]$--module
+\[ H_i(N;\mathbb{K}[t^{\pm 1}])= H_i(C_*(\tilde{N})\otimes_{\mathbb{Z}[\pi_1(N)]} \mathbb{K}[t^{\pm 1}])\]
+ where $\tilde{N}$ is the universal cover of $N$.
+Since $\mathbb{K}[t^{\pm 1}]$ is a principal ideal domain
+(PID) (cf. \cite[Proposition~4.5]{Co04}) we can decompose
+\[ H_i(N;\mathbb{K}[t^{\pm 1}])\cong \bigoplus_{k=1}^l
+\mathbb{K}[t^{\pm 1}]/(p_k(t))\] for $p_k(t)\in \mathbb{K}[t^{\pm 1}]$, $1 \le k \le l$. We define
+$\Delta_{N,\phi,i}^\varphi\mathrel{\mathop:}=\prod_{k=1}^lp_k(t) \in \mathbb{K}[t^{\pm 1}]$.
+As for twisted Alexander polynomials we write $\Delta_{N,\phi}^\varphi=\Delta_{N,\phi,1}^\varphi$.
+Non--commutative Alexander polynomials have in general a high indeterminacy,
+we refer to \cite[p.~367]{Co04} and
+\cite[Theorem~3.1]{Fr07} for a discussion of the indeterminacy.
+Note though that the degree of a non--commutative Alexander polynomial is well--defined.
+
+
+
+
+
+The following theorem was proved for knots by Cochran \cite{Co04} and extended to 3--manifolds by
+Harvey \cite{Ha05} and Turaev \cite{Tu02b}.
+
+\begin{theorem}\label{thm:lowerboundho}
+Let $N$ be a 3--manifold with empty or toroidal boundary and let $\phi\in H^1(N;\mathbb{Z})$ non--trivial.
+Let $\varphi:\mathbb{Z}[\pi_1(N)]\to \mathbb{K}[t^{\pm 1}]$ be a $\phi$--compatible  homomorphism.
+\begin{enumerate}
+\item If the image of $\pi_1(N)\to \mathbb{K}[t^{\pm 1}]$ is non--cyclic, then
+\[ \deg(\Delta_{N,\phi,0}^\varphi)=0.\]
+\item If the image of $\pi_1(N)\to \mathbb{K}[t^{\pm 1}]$ is non--cyclic and if $\Delta_{N,\phi}^\varphi\ne 0$, then
+\[ \deg(\Delta_{N,\phi,2}^\varphi)=0.\]
+\item If $\Delta_{N,\phi}^\varphi\ne 0$, then we have the following inequality
+\[ ||\phi||_T \geq \deg(\Delta_{N,\phi}^\varphi)- \deg(\Delta_{N,\phi,0}^\varphi)-\deg(\Delta_{N,\phi,2}^\varphi)\]
+and equality holds if $\phi$ is a fibered class and $N\ne S^1\times D^2, N\ne S^1\times S^2$.
+\end{enumerate}
+\end{theorem}
+
+We refer to \cite{Fr07} for the definition of a twisted non--commutative Alexander polynomial
+and to a corresponding generalization of Theorem \ref{thm:lowerboundho}, we also refer to \cite{Fr07} for
+a reinterpretation of the third statement of
+Theorem \ref{thm:lowerboundho} in terms of a certain non--commutative Reidemeister torsion.

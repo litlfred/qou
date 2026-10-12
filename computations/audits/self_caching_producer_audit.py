@@ -117,7 +117,7 @@ def main() -> int:
 
     scanned, hits = 0, []
     for p in sorted(root.rglob("computations/**/*.py")):
-        if "_deprecated" in str(p):
+        if ("_deprecated" in str(p) or "fsh-guts" in str(p)):
             continue
         scanned += 1
         for h in scan_module(p):

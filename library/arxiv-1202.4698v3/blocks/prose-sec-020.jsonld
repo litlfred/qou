@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1202.4698v3/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1202.4698v3/blocks/prose-sec-020",
   "kind": "prose",
-  "title": "Applications to the geometric construction of three-dimensional gauge theories?",
-  "pageStart": 21,
-  "pageEnd": 22,
-  "text": "../sections/sec-020-64-applications-to-the-geometric-construction-of.md",
-  "derivedFrom": "library/arxiv-1202.4698v3/manifest",
-  "sourceDocument": "library/arxiv-1202.4698v3/manifest",
+  "title": "Three-dimensional gauge theories on duality walls",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "text": "../sections/sec-020-61-three-dimensional-gauge-theories-on-duality-w.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.4698v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.4698v3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s/blocks/prose-sec-046",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s/blocks/prose-sec-046",
   "kind": "prose",
-  "title": "1C2. The generalization to negative numbers of iterations of the Frobenius",
-  "pageStart": 56,
-  "pageEnd": 57,
-  "text": "../sections/sec-046-1c2-the-generalization-to-negative-numbers-of-it.md",
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "title": "1B3. The weighted Ihara action and contraction mappings",
+  "pageStart": 53,
+  "pageEnd": 55,
+  "text": "../sections/sec-046-1b3-the-weighted-ihara-action-and-contraction-ma.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,30 +8,39 @@ pages: 14-15
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
 doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
+text_source: latex
+latex_prose_ratio: 0.951
+latex_coverage_ratio: 0.929
 ---
-3–sphere with |H1(M, Z)| = b. By Theorem 3, for any root of unity ξ of order pr
-τ′
-M (ξ) ∈ Z[1/b][epr] ≃ Z[1/b, er][x]
-(fp(x + er)) .
-where
-fp(t) := tp − ep
-r
-t − er
-.
+\label{Oht}
+ Suppose $M$ is a rational
+homology 3--sphere with $|H_1(M,\Z)|=b$.
+By Theorem \ref{main}, for any root of unity $\xi$ of order $pr$
+$$\tau'_M(\xi)\in \Z[1/b][e_{pr}] \simeq \frac{\Z[1/b,e_r][x]}{(f_p(x+e_r))}\; .$$ where
+\[
+f_p(t):= \frac{t^p - e_r^p}{t-e_r}.
+\]
 Hence we can write
-(15) τ′
-M (erep) =
-p−2∑
-n=0
-ap,n xn
-where ap,n ∈ Z[1/b, er]. The following proposition proven in [2] shows that the coeﬃcients
-ap,n stabilize as p → ∞.
-Proposition 9. [Beliakova–B¨ uhler–Le]Suppose M is a rational homology 3–sphere with
-|H1(M, Z)| = b, and r is an odd positive integer. For every non–negative integer n, there
-exists a unique invariant an = an(M) ∈ Z[1/b, er] such that for every prime p > max(b, r),
-we have
-(16) an ≡ ap,n (mod p) in Z[1/b, er] for 0 ≤ n ≤ p − 2.
-Moreover, the formal series ∑
-n an(q − er)n is equal to the Taylor expansion of the uniﬁed
-invariant IM at er.
-UNIFIED 3–MANIFOLD INV ARIANTS 15
+\be\label{Ohtsuki}
+\tau'_M(e_{r}e_{p})= \sum_{n=0}^{p-2} a_{p,n} x^n
+\ee
+where  $a_{p,n}\in \Z[1/b,e_r]$.
+The following proposition proven in \cite{BBL}
+shows that the coefficients $a_{p,n}$
+stabilize as $p\to \infty$.
+\begin{proposition}{\rm [Beliakova--B\"uhler--Le]}
+\label{main-cor1} Suppose $M$ is a
+rational homology 3--sphere with $|H_1(M,\Z)|=b$, and $r$ is an odd
+positive integer.
+For every non--negative integer $n$,
+there exists a unique invariant $a_n= a_n(M) \in \Z[1/b,e_r]$ such that
+for every prime $p > \max (b,r)$,
+ we have
+\begin{equation}
+a_n\equiv a_{p,n} \pmod p\;\;\; \text{in $ \Z[1/b,e_r]$ for} \;\;\;
+0\le n \le  p-2.
+\label{5501}
+\end{equation}
+Moreover, the formal series $\sum_{n} a_n (q-e_r)^n$ is equal to the Taylor
+ expansion of the unified invariant $I_M$ at $e_r$.
+\end{proposition}

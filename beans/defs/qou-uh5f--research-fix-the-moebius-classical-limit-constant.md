@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T20:01:59Z
-updated_at: 2026-10-04T15:24:04Z
+updated_at: 2026-10-10T14:00:00Z
 parent: qou-v2om
 ---
 
@@ -82,3 +82,31 @@ completion.
   established as inapplicable to the scored elements (all 2-component links).
 - `qou-15oa` / `vta3` / `ne0m` — the Frobenius–Hopf kernel, which route 2 needs
   explicitly.
+
+## 2026-10-10 — regulator universality proved (sorry-free); constant is a scheme datum
+
+New library file `folio/quantum-observable-universe/lean/QOU/MobiusRegulator.lean`
+(Mathlib-only imports, imported by nothing). lean-direct
+`lean -DautoImplicit=false -s 65536` exit 0; `#print axioms` on all eight
+declarations: `[propext, Classical.choice, Quot.sound]`, no `sorryAx`.
+
+- `bfhw_regularization_integral`: `∫₀^l 2∫_ε^{l/2} v⁻² = 2l/ε − 4` (l, ε > 0).
+  **Sign checked against `library/arxiv-math-9301212v1` eqs. (1),(3):** the
+  integral as printed equals `2l/ε − 4`; BFHW's "`= 4 − 2l/ε`" is the signed
+  contribution of the subtracted `−∬D⁻²` term (`bfhw_regularization_term`).
+- `regulator_difference` / `regEnergy_sub` / `regEnergy_sub_indep`: if
+  `E_R(γ) = lim_{ε→0⁺}(A_ε(γ) − R(ε,L(γ)))` and `R₁ − R₂ → c`, then
+  `E_{R₁}(γ) − E_{R₂}(γ) = −c` for every γ where both limits exist, same for all γ.
+- `bfhw_minus_minimalSubtraction`: `E_BFHW(γ) = E_{2l/ε}(γ) + 4` for every curve of
+  positive length where both limits exist — the round-circle "4" is exactly the
+  finite part of the BFHW regulator.
+- `regulator_shift`: `R − k` is an admissible regulator with the same divergent
+  part and moves every energy by `+k`.
+
+**What this does and does not settle.** It shows, at the classical level, that an
+additive classical-limit constant is fixed by the choice of the regulator's finite
+part and by nothing in the energy density — the classical-side counterpart of
+`classicalLimitConst_surjective`. It does NOT derive `classicalLimitConst` for
+`CategoricalMobiusEnergy`: that still needs the categorical side to *supply* a
+regulator (route 2: is the antipode/diagonal subtraction exactly `R_BFHW`, or
+`R_BFHW` up to a constant?). Bean stays open.

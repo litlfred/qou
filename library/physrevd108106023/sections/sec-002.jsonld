@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/physrevd108106023/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "Fk ˜Fk /C1/C1/C1 /C1/C1/C1 Fk ˜Fk /C1/C1/C1 Fk ˜Fk",
-  "pageStart": 5,
-  "pageEnd": 5,
+  "title": "DOUBLE TWIST KNOTS",
+  "pageStart": 2,
+  "pageEnd": 3,
   "contains": [
     "library/physrevd108106023/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/physrevd108106023/manifest",
-  "sourceDocument": "library/physrevd108106023/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/physrevd108106023/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/physrevd108106023/manifest.jsonld",
   "provenance": "ingested"
 }

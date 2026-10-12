@@ -343,7 +343,7 @@ def main() -> int:
         # keys above will land with it.
         "scriptFile": Path(__file__).name,
         "engine": "python",
-        "auditOnly": "docs/audits/_deprecated/2026-05-04-sublemma-2-1-categorical-proof.md",
+        "auditOnly": "fsh-guts/deprecated/docs/audits/2026-05-04-sublemma-2-1-categorical-proof.md",
         "computation": "sublemma-2-1-alpha-shift-extract",
         "description": (
             "Extracts α_shift(I; λ, μ, ν) per λ ⊢ 6 in the deuteron "

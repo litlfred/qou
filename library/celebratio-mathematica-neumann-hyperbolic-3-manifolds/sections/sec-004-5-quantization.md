@@ -4,123 +4,241 @@ doc_title: "Jump to Bibliography by Stavros Garoufalidis and Don Zagier Publishe
 section_id: sec-004-5-quantization
 section_title: "Quantization"
 section_number: 5
-pages: 13-16
+pages: 12-16
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
-doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
-duplicate_of: "arxiv-2304.12545v1"
+toc_source: inferred
 ---
-Per haps the most far-reach ing con sequences of Wal ter’s work on the com bin at or ‐
-ics of 3-di men sion al tri an gu la tions have been the ap plic a tions of the sym plect ic
-struc ture to quant iz a tion.
-Re call the defin i tion of  for a single tet ra hed ron  as the abeli an group
-with the sym plect ic struc ture (11). This sym plect ic struc ture on each space
- for any ideal tet ra hed ron  leads to an in teg ral Lag rangi an sub space of
+nections to number theory described in Section 6.
+Define an 
+ matrix 
+ whose rows form a -basis for the lattice
+spanned by the edge equations  (1) together with one “peripheral” equation (a
+coprime linear combination of the meridian and longitude equations in  (2)) at
+each cusp. Then the above cited results in [1] imply that 
+ is symmetric and
+that 
+ has rank 
+, meaning that its 
+ columns generate 
+. Together, these
+two statements are equivalent to saying that 
+ can be extended to a 
+matrix
+in 
+, meaning that
+But in fact the 
+ columns of 
+ span the lattice 
+, which is equivalent to saying
+that 
+ can be completed to a 
+ symplectic matrix over  . (We will call
+such a matrix half-symplectic.) This follows from the chain complex defined by
+Walter in [2]. Explicitly, for any simplex 
+, let 
+ be the abelian group generated
+by 
+ (corresponding to the pairs of opposite edges) subject to the relation
+. This is a free abelian group of rank 2, with a canonical nonsin‐
+gular, skew-symmetric bilinear form given by ([2], Section 4)
+The Neumann chain complex associated to an ideal triangulation is then defined
+by
 ⇧
-8/8/26, 4:27 AM Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/ 13/27
-the 10-di men sion al sym plect ic space
-as so ci ated to five tet ra hedra  that par ti cip ate in a 2-3 Pach ner move.
-Roughly speak ing, the Lag rangi an sub space re cords the lin ear re la tions among the
-angles of the five tet ra hedra, where the signed sum of the angles around each in ‐
-teri or edge of the Pach ner move is zero.
-The quant iz a tion of this Lag rangi an sub space has ap peared nu mer ous times in the
-math em at ics and phys ics lit er at ure, un der dif fer ent names, and has led to in ter est ‐
-ing quantum in vari ants in di men sions 2, 3 and 4. We briefly dis cuss this now. In
-di men sion 2, Kashaev and in de pend ently Fo ck–Gon char ov [e8], [e17], [e13] used
-the above NZ-sym plect ic struc ture to study the change of co ordin ates of ideally
-tri an gu lated sur faces un der a 2-2 Pach ner move. They found that the cor res pond ‐
-ing iso morph ism of com mut at ive al geb ras can be de scribed in terms of cluster al ‐
-geb ras, lead ing to two dual sets of co ordin ates (the so-called -co ordin ates and
-the -co ordin ates) whose quant iz a tion leads to a rep res ent a tion of the so-called
-Ptolemy group oid, and in par tic u lar of the map ping class group of a punc tured
-sur face, and also of braid groups. These rep res ent a tions are al ways in fin ite-di men ‐
-sion al (be cause there are no fi nite square matrices  and  sat is fy ing the re la tion
-), the Hil bert spaces are typ ic ally  for some , and the cor ‐
-res pond ing the ory is usu ally known as quantum Teichmüller the ory.
-Go ing one di men sion high er, the -co ordin ates of a 3-di men sion al ideal tri an gu ‐
-la tion are noth ing but the shapes of the ideal tet ra hedra, where as the -co ordin ‐
-ates are the Ptolemy vari ables of the ideal tet ra hedra. The lat ter are as sign ments of
-nonzero com plex num bers to the edges of the ideal tri an gu la tion (where iden ti fied
-edges are giv en the same vari able) that sat is fy a sys tem of quad rat ic equa tions: a
-(suit ably) signed sum , where ,  and  are the Ptolemy
-vari ables of the three pairs of op pos ite edges. It turns out that the NZ glu ing equa ‐
-tions for shapes are equi val ent to the Ptolemy equa tions (see for in stance [e25]),
-and this is not only the or et ic ally in ter est ing, but prac tic ally, too. The quant iz a tion
-of the shape and Ptolemy vari ables of an ideal tri an gu la tion uses two in gredi ents,
-the kin emat ic al ker nel of Kashaev [e30] and a spe cial func tion, the Fad deev
-quantum di log ar ithm that sat is fies an in teg ral pentagon iden tity. Ac cord ing to
-Kashaev, the kin emat ic al ker nel is noth ing but the quant iz a tion of the NZ Lag ‐
-rangi an men tioned above. The out come of this quant iz a tion is the ex ist ence of to ‐
-po lo gic al in vari ants of ideally tri an gu lated 3-man i folds, the in vari ants be ing ana ‐
-lyt ic func tions in a cut place , ex pressed in terms of fi nite-di ‐
-men sion al state in teg rals whose in teg rand is of ten de term ined by the com bin at or i ‐⇧
-8/8/26, 4:27 AM Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/ 14/27
-al data of an ideal tri an gu la tion, namely its Neu mann–Za gi er matrices. This con ‐
-struc tion, which is of ten known as quantum hy per bol ic geo metry, has been ax io ‐
-mat ized by Kashaev, and uses as in put the com bin at or i al data of an ideal tri an gu ‐
-la tion to geth er with a self-dual loc ally com pact abeli an group with fixed Gaus si an,
-Four i er ker nel and quantum di log ar ithm. This then leads to fur ther ana lyt ic in ‐
-vari ants of 3-man i folds, two ex amples of which are the Kashaev–Luo–Vartan ov
-in vari ants [e28] and the mero morph ic 3D-in dex [e32], for which the LCA groups
-are  and , re spect ively. It is worth not ing that the An der sen–Kashaev
-state in teg rals are con jec tured to be the par ti tion func tion of com plex Chern–Si ‐
-mons the ory (i.e., Chern–Si mons the ory with com plex gauge group). The lat ter is
-not known to sat is fy the cut-and-paste ar gu ments that the  Chern–Si mons
-the ory does, and as a res ult, one does not have an a pri ori defin i tion of com plex
-Chern–Si mons the ory oth er than the state in teg rals, nor a clear reas on why the in ‐
-fin ite-di men sion al path in teg ral loc al izes to a fi nite-di men sion al one.
-Fi nally, go ing yet one di men sion high er, the five ideal tet ra hedra that par ti cip ate
-in a 2-3 Pach ner move form the bound ary of a single 4-di men sion al sim plex, a
-penta choron. (Ex cuse our Greek.) This gives a 4-di men sion al in ter pret a tion of the
-NZ-struc ture and of the kin emat ic al ker nel, and us ing a com plex root of unity,
-Kashaev was able to give a tensor in vari ant un der 4-di men sion al Pach ner moves
-and thus con struct cor res pond ing to po lo gic al in vari ants of closed, tri an gu lated 4-
-man i folds at roots of unity [e30]. This con cludes our dis cus sion of the kin emat ic al
-ker nel in di men sions 2, 3 and 4.
-In a dif fer ent dir ec tion, math em at ic al phys i cists, us ing cor res pond ence prin ciples
-among su per sym met ric the or ies, have came up with un ex pec ted con struc tions of
-vari ous col lec tions of -series with in teger coef fi cients as so ci ated to 3-man i folds.
-Per haps the most re mark able of these is the 3D-in dex of Dimofte, Gai otto and
-Gukov [e23], [e22], where the -series in ques tion, which in this case are in dexed
-by pairs of in tegers, were defined ex pli citly in terms of the NZ-matrices of a suit ‐
-able ideal tri an gu la tion, with their coef fi cients count ing the num ber of BPS states
-of a su per sym met ric the ory. This DGG 3D-in dex was sub sequently shown [e27] to
-be a to po lo gic al in vari ant of cusped hy per bol ic 3-man i folds, and was also ex ten ‐
-ded to a mero morph ic func tion of two vari ables (in case the bound ary of the 3-
-man i fold is a single tor us) whose Laurent coef fi cients are the DGG in dex [e32].
-A quite dif fer ent place where the NZ equa tions ap pear in quantum to po logy is in
-con nec tion with the Kashaev in vari ant and Kashaev’s fam ous Volume Con jec ture.
-The Kashaev in vari ant  is a com put able al geb ra ic num ber that was defined
-for any knot  and any pos it ive in teger  by Kashaev [e5] in 1995 us ing ideas of
-quantum to po logy sim il ar to those dis cussed above, and of which an al tern at ive
-defin i tion in terms of the so-called colored Jones poly no mi al was later found by⇧
-8/8/26, 4:27 AM Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/ 15/27
-H. Murakami and J. Murakami. The Volume Con jec ture [e6] says that the log ar ‐
-ithm of  is asymp tot ic ally equal to  times the hy per bol ic volume of
-the knot com ple ment  whenev er  is hy per bol ic, a very sur pris ing
-con nec tion between hy per bol ic geo metry and 3-di men sion al quantum to po logy
-that has giv en rise to a great deal of sub sequent re search and has been re fined in
-many ways and by sev er al au thors in con nec tion with com plex Chern–Si mons
-the ory. In par tic u lar, one has the con jec tur al sharpen ing [e16], [e18]
-to all or ders in  as , where  is a power series in  with al geb ra ic
-coef fi cients that can be com puted to any or der in any ex pli cit ex ample, e.g.,
-for the  (fig ure-8) knot. In [e20], an ex pli cit can did ate for this power series is
-con struc ted for any knot as a form al Gaus si an in teg ral whose in teg rand is defined
-in terms of the NZ data of an ideal tri an gu la tion of . It is not yet known bey ond
-the lead ing term that the series con struc ted there is a to po lo gic al in vari ant (i.e.,
-in de pend ent of the choice of tri an gu la tion), al though this would of course fol low
-from the con jec ture that the asymp tot ic for mula (13) holds with this series. In a
-fol low-up pa per [e31], the con struc tion was ex ten ded, still us ing NZ data in an es ‐
-sen tial way, to give an ex pli citly com put able power series  for any ,
-with , that is ex pec ted to be the power series pre dicted by the quantum
-mod u lar ity con jec ture for knots that we will dis cuss in the next sec tion.
-Fi nally, it is worth not ing that the NZ-equa tions and their sym plect ic prop er ties
-lead to an ex pli cit quant iz a tion of the shape vari ables, where one re places each ,
- and  by op er at ors that suit ably com mute. This was car ried out by Dimofte
-[e21], who defined a quant ized ver sion of the glu ing equa tions, a so-called
-quantum curve, which is ex pec ted to an ni hil ate the par ti tion func tion of com plex
-Chern–Si mons the ory and to be ul ti mately re lated to the asymp tot ics of quantum
-in vari ants.
+8/8/26, 4:27 AM
+Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
+https://celebratio.org/Neumann_WD/article/1106/
+12/27
+Here 
+ and 
+ are the free abelian groups on the unoriented 0- and 1-simplices
+(cusps and edges), respectively, and
+(sum over the 3-simplices or tetrahedra), while  maps any cusp to the sum of its
+incident edges, the 
+-component of  of any edge is the sum of the edges of 
+that are identified with it, and 
+ and 
+ are the duals of  and  with respect to
+the obvious scalar products on 
+ and the symplectic form on  . Walter shows
+([2], Theorem 4.1) that the sequence (12) is a chain complex and, at least after
+tensoring with 
+, is exact except in the middle, where the homology is the
+sum of  rank-2 modules isomorphic to 
+ 
+. Note that the
+map  is given precisely by the matrix 
+ as defined in (1) if we choose
+the obvious basis for 
+ and the basis of  given by choosing the basis 
+ for
+every 
+. The rest of the proof that 
+ is half-symplectic follows easily from the
+theorem just quoted and will be left to the reader.
+We make two remarks about this. The first is that both the construction of the
+chain complex and the statement about its homology were done in [2] also for 3-
+manifolds with boundary components of arbitrary genus (so the vertices of 
+need not be cusps), and of course also do not require any hyperbolic structure.
+The other is that the gluing equations of [1] and the symplectic results of [2] were
+extended to arbitrary 
+-representations in [e29].
+Half-symplectic matrices occur in other contexts, e.g., in connection with Nahm’s
+conjecture on the modularity of certain -hypergeometric series, and also lead to a
+new description of the Bloch group. Both topics will be discussed in more detail in
+Section 6.
+5. Quantization
+Perhaps the most far-reaching consequences of Walter’s work on the combinator‐
+ics of 3-dimensional triangulations have been the applications of the symplectic
+structure to quantization.
+Recall the definition of 
+ for a single tetrahedron 
+ as the abelian group
+with the symplectic structure  (11). This symplectic structure on each space
+ for any ideal tetrahedron 
+ leads to an integral Lagrangian subspace of
+⇧
+8/8/26, 4:27 AM
+Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
+https://celebratio.org/Neumann_WD/article/1106/
+13/27
+the 10-dimensional symplectic space
+associated to five tetrahedra 
+ that participate in a 2-3 Pachner move.
+Roughly speaking, the Lagrangian subspace records the linear relations among the
+angles of the five tetrahedra, where the signed sum of the angles around each in‐
+terior edge of the Pachner move is zero.
+The quantization of this Lagrangian subspace has appeared numerous times in the
+mathematics and physics literature, under different names, and has led to interest‐
+ing quantum invariants in dimensions 2, 3 and 4. We briefly discuss this now. In
+dimension 2, Kashaev and independently Fock–Goncharov [e8], [e17], [e13] used
+the above NZ-symplectic structure to study the change of coordinates of ideally
+triangulated surfaces under a 2-2 Pachner move. They found that the correspond‐
+ing isomorphism of commutative algebras can be described in terms of cluster al‐
+gebras, leading to two dual sets of coordinates (the so-called 
+-coordinates and
+the 
+-coordinates) whose quantization leads to a representation of the so-called
+Ptolemy groupoid, and in particular of the mapping class group of a punctured
+surface, and also of braid groups. These representations are always infinite-dimen‐
+sional (because there are no finite square matrices  and  satisfying the relation
+), the Hilbert spaces are typically 
+ for some  , and the cor‐
+responding theory is usually known as quantum Teichmüller theory.
+Going one dimension higher, the 
+-coordinates of a 3-dimensional ideal triangu‐
+lation are nothing but the shapes of the ideal tetrahedra, whereas the 
+-coordin‐
+ates are the Ptolemy variables of the ideal tetrahedra. The latter are assignments of
+nonzero complex numbers to the edges of the ideal triangulation (where identified
+edges are given the same variable) that satisfy a system of quadratic equations: a
+(suitably) signed sum 
+, where 
+, 
+ and 
+ are the Ptolemy
+variables of the three pairs of opposite edges. It turns out that the NZ gluing equa‐
+tions for shapes are equivalent to the Ptolemy equations (see for instance [e25]),
+and this is not only theoretically interesting, but practically, too. The quantization
+of the shape and Ptolemy variables of an ideal triangulation uses two ingredients,
+the kinematical kernel of Kashaev [e30] and a special function, the Faddeev
+quantum dilogarithm that satisfies an integral pentagon identity. According to
+Kashaev, the kinematical kernel is nothing but the quantization of the NZ Lag‐
+rangian mentioned above. The outcome of this quantization is the existence of to‐
+pological invariants of ideally triangulated 3-manifolds, the invariants being ana‐
+lytic functions in a cut place 
+, expressed in terms of finite-di‐
+mensional state integrals whose integrand is often determined by the combinatori‐
+⇧
+8/8/26, 4:27 AM
+Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
+https://celebratio.org/Neumann_WD/article/1106/
+14/27
+al data of an ideal triangulation, namely its Neumann–Zagier matrices. This con‐
+struction, which is often known as quantum hyperbolic geometry, has been axio‐
+matized by Kashaev, and uses as input the combinatorial data of an ideal triangu‐
+lation together with a self-dual locally compact abelian group with fixed Gaussian,
+Fourier kernel and quantum dilogarithm. This then leads to further analytic in‐
+variants of 3-manifolds, two examples of which are the Kashaev–Luo–Vartanov
+invariants [e28] and the meromorphic 3D-index [e32], for which the LCA groups
+are 
+ and 
+, respectively. It is worth noting that the Andersen–Kashaev
+state integrals are conjectured to be the partition function of complex Chern–Si‐
+mons theory (i.e., Chern–Simons theory with complex gauge group). The latter is
+not known to satisfy the cut-and-paste arguments that the 
+ Chern–Simons
+theory does, and as a result, one does not have an a priori definition of complex
+Chern–Simons theory other than the state integrals, nor a clear reason why the in‐
+finite-dimensional path integral localizes to a finite-dimensional one.
+Finally, going yet one dimension higher, the five ideal tetrahedra that participate
+in a 2-3 Pachner move form the boundary of a single 4-dimensional simplex, a
+pentachoron. (Excuse our Greek.) This gives a 4-dimensional interpretation of the
+NZ-structure and of the kinematical kernel, and using a complex root of unity,
+Kashaev was able to give a tensor invariant under 4-dimensional Pachner moves
+and thus construct corresponding topological invariants of closed, triangulated 4-
+manifolds at roots of unity [e30]. This concludes our discussion of the kinematical
+kernel in dimensions 2, 3 and 4.
+In a different direction, mathematical physicists, using correspondence principles
+among supersymmetric theories, have came up with unexpected constructions of
+various collections of -series with integer coefficients associated to 3-manifolds.
+Perhaps the most remarkable of these is the 3D-index of Dimofte, Gaiotto and
+Gukov [e23], [e22], where the -series in question, which in this case are indexed
+by pairs of integers, were defined explicitly in terms of the NZ-matrices of a suit‐
+able ideal triangulation, with their coefficients counting the number of BPS states
+of a supersymmetric theory. This DGG 3D-index was subsequently shown [e27] to
+be a topological invariant of cusped hyperbolic 3-manifolds, and was also exten‐
+ded to a meromorphic function of two variables (in case the boundary of the 3-
+manifold is a single torus) whose Laurent coefficients are the DGG index [e32].
+A quite different place where the NZ equations appear in quantum topology is in
+connection with the Kashaev invariant and Kashaev’s famous Volume Conjecture.
+The Kashaev invariant 
+ is a computable algebraic number that was defined
+for any knot 
+ and any positive integer  by Kashaev [e5] in 1995 using ideas of
+quantum topology similar to those discussed above, and of which an alternative
+definition in terms of the so-called colored Jones polynomial was later found by
+⇧
+8/8/26, 4:27 AM
+Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
+https://celebratio.org/Neumann_WD/article/1106/
+15/27
+H. Murakami and J. Murakami. The Volume Conjecture [e6] says that the logar‐
+ithm of 
+ is asymptotically equal to 
+ times the hyperbolic volume of
+the knot complement 
+ whenever 
+ is hyperbolic, a very surprising
+connection between hyperbolic geometry and 3-dimensional quantum topology
+that has given rise to a great deal of subsequent research and has been refined in
+many ways and by several authors in connection with complex Chern–Simons
+theory. In particular, one has the conjectural sharpening [e16], [e18]
+to all orders in 
+ as 
+, where 
+ is a power series in  with algebraic
+coefficients that can be computed to any order in any explicit example, e.g.,
+for the 
+ (figure-8) knot. In [e20], an explicit candidate for this power series is
+constructed for any knot as a formal Gaussian integral whose integrand is defined
+in terms of the NZ data of an ideal triangulation of 
+. It is not yet known beyond
+the leading term that the series constructed there is a topological invariant (i.e.,
+independent of the choice of triangulation), although this would of course follow
+from the conjecture that the asymptotic formula (13) holds with this series. In a
+follow-up paper [e31], the construction was extended, still using NZ data in an es‐
+sential way, to give an explicitly computable power series 
+ for any 
+,
+with 
+, that is expected to be the power series predicted by the quantum
+modularity conjecture for knots that we will discuss in the next section.
+Finally, it is worth noting that the NZ-equations and their symplectic properties
+lead to an explicit quantization of the shape variables, where one replaces each ,
+ and 
+ by operators that suitably commute. This was carried out by Dimofte
+[e21], who defined a quantized version of the gluing equations, a so-called
+quantum curve, which is expected to annihilate the partition function of complex
+Chern–Simons theory and to be ultimately related to the asymptotics of quantum
+invariants.

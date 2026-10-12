@@ -1,0 +1,1265 @@
+\chapter{The eight geometries} \label{eight:chapter}
+We have concluded the previous chapter by defining a \emph{geometric decomposition} of three-manifolds along sphere and tori. The reason for using this terminology is the famous \emph{geometrisation conjecture}, proposed by Thurston in 1982 and proved by Perelman in 2003, which states that each of the blocks of the decomposition should be \emph{geometric}, in the sense that it may be equipped with a nice Riemannian metric.
+
+There are eight nice Riemannian metrics available in dimension three. Three of them are the constant curvature ones (hyperbolic, elliptic, and flat), while the other five are some kind of (sometimes twisted) products of low-dimensional geometries. All these metrics are \emph{homogeneous}: distinct points have isometric neighbourhoods.
+
+The Seifert manifolds studied in the previous chapters occupy precisely six of these eight geometries, and we analyse them in detail here.
+
+\section{Introduction}
+A connected Riemannian manifold $M$ is \emph{homogeneous} if for every $p,q\in M$ there is an isometry of $M$ sending $p$ to $q$, and is \emph{isotropic} if at each point $p$ every isometry of $T_pM$ is realised by an isometry of $M$. It is easy to prove that a complete isotropic manifold is also homogeneous and has constant sectional curvature: the fundamental examples of isotropic spaces are $S^n$, $\matR^n$, and $\matH^n$.\index{manifold!Riemannian manifold!homogeneous Riemannian manifold}\index{manifold!Riemannian manifold!isotropic Riemannian manifold}
+
+The homogeneous condition alone (without isotropy) is more relaxed and produces manifolds that may not have constant sectional curvature.
+We introduce in this chapter eight important homogeneous simply-connected complete Riemannian 3-manifolds:
+$$S^3,\ \matR^3,\ \matH^3,\ S^2\times \matR,\ \matH^2\times \matR,\ \Nil,\ \Sol,\ \widetilde{\SL_2}.$$
+The first three manifolds are also isotropic and have constant sectional curvature, the other five are not. 
+
+Let $M$ be one of these eight model manifolds. We say that a Riemannian 3-manifold $N$ has a \emph{geometric structure modelled on $M$} if $N$ is locally isometric to $M$, that is if every point $p\in N$ has an open neighbourhood isometric to some open set in $M$. This implies that $N$ is \emph{locally homogeneous}: every two points $p,q\in N$ have isometric neighbourhoods $U(p) \isom U(q)$, both isometric to an $\varepsilon$-ball at any point of $M$.
+
+If $N$ is complete, the developing map construction of Theorem \ref{simply:teo} applies also in this context and shows that $N = M/_\Gamma$ for some discrete group $\Gamma <\Iso(M)$ acting freely. \index{geometric structure}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||ccc}
+       & \phantom{\Big|} $\chi>0$ & $\chi = 0$ & $\chi<0$ \\
+ \hline \hline
+ $e=0$ & \phantom{\Big|} $S^2 \times \matR$ & $\matR^3$ & $\matH^2 \times \matR$ \\
+ $e\neq 0$ & \phantom{\big|} $S^3$ & $\Nil$ & $\widetilde {\SL_2}$
+\end{tabular}
+\vspace{.2 cm}
+\nota{The closed manifolds modelled on six geometries are precisely the six commensurable classes of Seifert manifolds, distinguished by the numbers $e$ and $\chi$.}
+\label{Seifert:geometry:table}
+\end{center}
+\end{table}
+
+We now start a long journey through these eight geometries. The final goal of this chapter is to prove the following.
+
+\begin{teo} \label{Seifert:geometrisation:teo}
+A closed orientable 3-manifold has a geometric structure modelled on one of the following six geometries:
+$$S^3,\ \matR^3,\ S^2\times \matR,\ \matH^2\times \matR,\ \Nil,\ \widetilde{\SL_2}$$
+if and only if it is a Seifert manifold of the appropriate commensurability class, as prescribed by Table \ref{Seifert:geometry:table}. It has a $\Sol$ geometric structure if and only if it is a torus (semi-)bundle of Anosov type.
+\end{teo}
+
+It is a surprising (and maybe disappointing) fact that, despite its elegance and generality, the only known proof of this theorem available today works by investigating each geometry separately and carefully, often employing quite different techniques. We start with the elliptic case.
+
+\section{Elliptic three-manifolds}
+We start our journey by investigating elliptic 3-manifolds, that is manifolds modelled on $S^3$. We want to prove the following.
+
+\begin{teo} \label{S3:teo}
+A closed 3-manifold $M$ admits an elliptic metric if and only if it is a Seifert manifold  with $e\neq 0$ and $\chi>0$.
+\end{teo}
+
+An important ingredient of the proof is the complete classification of elliptic three-manifolds: to achieve this goal we need to study the isometries of $S^3$, and these are described elegantly via quaternions. 
+
+\subsection{Unit quaternions}
+We write as usual a \emph{quaternion} as\index{quaternion}
+$$q= a+bi+cj+dk$$
+with $a,b,c,d \in \matR$ and $i^2 = j^2 = k^2 =ijk = -1$. Quaternions form a non-commutative algebra, whose group structure is identified with $\matR^4$ by sending $q$ to $(a,b,c,d)$ and with $\matC^2$ by sending $q$ to $(a+bi, c+di)$. The norm is
+$$|q| = \sqrt{a^2 + b^2 + c^2 + d^2}$$
+and we have $|qq'| = |q||q'|$. The conjugate of $q$ is
+$$\bar q = a-bi-cj-dk$$
+and we have $|q|^2 = q\bar q$.
+Unit quaternions are identified with $S^3$ and are closed under multiplication: this gives $S^3$ a Lie group structure. 
+\begin{ex}
+The centre of $S^3$ is $\{\pm 1\}$.
+\end{ex}
+Left or right multiplication by a fixed element $q\in S^3$ is an orientation-preserving isometry of both $\matR^4$ and $S^3$. We consider the homomorphism
+\begin{align*}
+\Psi\colon S^3 \times S^3 & \longrightarrow \Iso^+(S^3) = \SO(4) \\
+(q_1, q_2) & \longmapsto \left\{x \longmapsto q_1xq_2^{-1}\right\}
+\end{align*}
+
+\begin{prop}
+The homomorphism $\Psi$ is a degree-2 covering with kernel $\{\pm (1,1)\}$. Therefore it induces an isomorphism
+$$\SO(4) = S^3\times S^3 /_{\{\pm (1,1)\}}.$$
+\end{prop}
+\begin{proof}
+If $(q_1,q_2)$ lies in the kernel, by setting $x=1$ we get $q_1q_2^{-1}=1$ and so $q_1=q_2$. The general $x$ implies that $q_1=q_2$ lies in the centre and hence $(q_1,q_2) = \pm(1,1)$. Since $\SO(4)$ has the same dimension $6$ of $S^3\times S^3$ and is connected, we get a covering by Proposition \ref{Lie:covering:prop}.
+\end{proof}
+
+We now specialise $\Psi$ to the case $q=q_1=q_2$. The isometry
+$$x \longmapsto qxq^{-1}$$
+fixes $1$ and hence preserves the orthogonal 3-space generated by $i,j,k$, which we identify with $\matR^3$. We get a homomorphism
+\begin{align*}
+\Phi\colon S^3 & \longrightarrow \Iso^+(\matR^3) = \SO(3) \\
+q & \longmapsto \left\{x \longmapsto qxq^{-1}\right\}
+\end{align*}
+\begin{prop}
+The homomorphism $\Phi$ is a degree-2 covering with kernel $\pm 1$. Therefore it induces an isomorphism
+$$\SO(3) = S^3/_{\{\pm 1\}}.$$
+\end{prop}
+\begin{proof}
+The centre of $S^3$ is $\{\pm 1\}$ and $\SO(3)$ is connected and has dimension 3 like $S^3$, hence $\Phi$ is a covering.
+\end{proof}
+The real part of $q=a+bi+cj+dk$ is of course $a$.
+\begin{cor}
+Two elements $q,q' \in S^3$ are conjugate if and only if they have the same real part.
+\end{cor}
+\begin{proof}
+Conjugations are isometries that fix the real axis and hence preserve the real part; rotations in $\SO(3)$ connect any two elements with the same real part.
+\end{proof}
+\begin{cor} \label{unit:complex:cor}
+Every unit quaternion is conjugate to a unit complex quaternion $q=a\pm bi$, unique up to complex conjugation.
+\end{cor}
+The conjugacy classes in $S^3$ are the poles $+1$ and $-1$, and the parallel two-spheres between them. Let the \emph{imaginary two-sphere} be the maximal two-sphere consisting of all elements with zero real part.
+\begin{cor}
+The only element in $S^3$ of order two is $-1$. The elements of order four form the imaginary two-sphere and are all conjugate.
+\end{cor}
+\begin{proof}
+An element of order four is conjugate to a complex one $a+bi$, which must be $\pm i$ and is hence purely imaginary.
+\end{proof}
+
+\begin{ex}
+By sending the unit quaternion $(w,z)\in\matC^2$ to the matrix
+$$\begin{pmatrix} w & z \\ -\bar z & \bar w \end{pmatrix}$$
+we get a Lie group isomorphism between $S^3$ and $\SU(2)$.
+\end{ex}
+
+Note that $\bar q = q^{-1}$ on unit quaternions.
+The inversion $q \mapsto q^{-1}$ is an orientation-reversing isometry of $S^3$. 
+
+\subsection{Finite groups of quaternions}
+We classify the finite subgroups of the Lie group $S^3$. Recall from Proposition \ref{subgroups:SO3:prop} that the finite subgroups of $\SO(3)$ up to conjugation are:
+$$C_n, \quad D_{2m}, \quad T_{12} \isom A_4, \quad O_{24} \isom S_4, \quad I_{60} \isom A_5$$
+with $n\geqslant 1$ and $m\geqslant 2$. Here $C_n$ is cyclic generated by a $\frac{2\pi}n$-rotation, and $D_{2m}$, $T$, $O$, $I$ are the orientation-preserving isometry groups of the regular $m$-prism, tetrahedron, octahedron (or cube), and icosahedron (or dodecahedron). The group $D_{2m}$ is the dihedral group. The subscript always indicates the order of the group (except in the alternating $A_n$ and symmetric $S_n$ that have order $\frac{n!}2$ and $n!$).
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||cc}
+\phantom{\Big|} \!\! & name        & elements \\
+ \hline \hline
+\phantom{\Big|} \!\!  $C_n$ & cyclic & $\big\{e^{\frac{2a\pi i}n}\big\}_{a=1,\ldots, n}$ \\
+\phantom{\Big|} \!\!  $D_{4m}^*$ & binary dihedral & $\big\{e^{\frac{a\pi i}m}$, $e^{\frac{a\pi i}m}j\big\}_{a=1,\ldots, 2m}$  \\
+\phantom{\Big|} \!\!  $T_{24}^*$ & binary tetrahedral & $\big\{\pm 1 ,\ \pm\, i,\ \pm\, j,\ \pm\, k,\ \frac 12 \big(\!\pm 1 \pm i \pm j \pm k\big)\big\}$ \\
+\phantom{\Big|} \!\!  $O_{48}^*$ & binary octahedral & 
+$T_{24}^* \cup \big\{\frac {\pm 1 \pm i}{\sqrt 2},\ \frac {\pm 1 \pm j}{\sqrt 2}, \ldots, \frac {\pm i \pm k}{\sqrt 2},\ \frac {\pm j \pm k}{\sqrt 2} \big\}$ \\
+\phantom{\Big|}  \!\!  $I_{120}^*$ & binary icosahedral &
+$T_{24}^* \cup \big\{\pm \frac 1 2i \pm \frac{\sqrt 5 -1}4 j \pm \frac{\sqrt 5 + 1}4 k, \ldots \big\} $ \\
+\end{tabular}
+\vspace{.2 cm}
+\nota{Every finite subgroup of $S^3$ is conjugate to one of these groups. 
+The group $O_{48}^*$ consists of $T_{24}^*$ and the $6\times 4 = 24$ numbers obtained from $\frac {\pm 1 \pm i}{\sqrt 2}$ by permuting the elements $1,i,j,k$ and varying the signs. The group $I^*_{120}$ consists of $T_{24}^*$ and the $12 \times 8 = 96$ numbers obtained from $\pm \frac 12i \pm \frac{\sqrt 5 -1}4 j \pm \frac{\sqrt 5 + 1}4 k$ by permuting the elements $1,i,j,k$ with an \emph{even} permutation and varying the signs.}
+\label{binary:table}
+\end{center}
+\end{table}
+
+We defined above a degree-2 covering $\Phi\colon S^3 \to SO(3)$. Let 
+$$D_{4m}^*, \quad T_{24}^*, \quad O_{48}^*, \quad I_{120}^*$$ 
+be the counterimages of $D_{2m}$, $T_{12}$, $O_{24}$, $I_{60}$ along $\Phi$. They are called the \emph{binary} dihedral, tetrahedral, octahedral, and icosahedral group. 
+We now classify the finite subgroups of $S^3$.\index{group!binary group}
+
+\begin{prop}
+Every finite subgroup of $S^3$ is either binary or cyclic. The finite subgroups up to conjugation are listed in Table \ref{binary:table}.
+\end{prop}
+\begin{proof}
+If $G<S^3$ is finite then $\Phi(G) = C_n, D_{2m}, T, O$, or $I$ up to conjugation. If $\Phi^{-1}(\Phi(G)) = G$ we are done (the counterimage of $C_n$ is still cyclic: exercise). This holds precisely when $-1 \in G.$
+
+If $G$ has even order, it contains an order-2 element which is necessarily $-1$ and we are done. If $G$ has odd order then $\Psi(G)$ has odd order and is cyclic, hence $G$ is contained in the cyclic $\Psi^{-1}(\Psi(G))$ and is hence cyclic.
+\end{proof}
+
+The smallest non-abelian group in the list is the \emph{quaternion group} $Q_8 = D_8^*$ consisting of the \emph{Lipschitz units}\index{group!quaternion group}\index{Lipschitz unit} 
+$$Q_8 = \{ \pm 1, \pm i, \pm j, \pm k \}.$$
+The quaternion group is contained in $T_{24}^*$ as a normal subgroup, giving an exact sequence
+\begin{equation} \label{Q8:eqn}
+0 \longrightarrow Q_8 \longrightarrow T_{24}^* \longrightarrow \matZ_3 \longrightarrow 0.
+\end{equation}
+The binary dihedral group $D_{4m}^*$ contains the index-two cyclic group $C_{2m}$, giving an exact sequence
+\begin{equation} \label{D4n:eqn}
+0 \longrightarrow C_{2m} \longrightarrow D_{4m}^* \longrightarrow \matZ_2 \longrightarrow 0.
+\end{equation}
+
+\begin{rem}
+Every group $\Gamma$ in Table \ref{binary:table} acts freely and isometrically on $S^3$ by right multiplication, hence $S^3/_\Gamma$ is an elliptic manifold with fundamental group $\Gamma$. The only perfect group in the list (\emph{i.e.}~with trivial abelianisation) is $I^*_{120}$ and we will soon see that $S^3/_{I^*_{120}}$ is the ubiquitous Poincar\'e homology sphere $\Sigma(2,3,5)$, defined in Section \ref{Seifert:homology:sphere:subsection}.
+\end{rem}
+
+\subsection{Regular polytopes} \label{regular:polytopes:subsection}
+There are six regular polytopes in dimension four, listed in Table \ref{polytopes:table}, and the finite groups of $S^3$ can be used to describe five of them. The convex hull of $Q_8$ in $\matR^4$ is the \emph{16-cell}, whose dual is the \emph{hypercube}. 
+The group $T_{24}^*$ consists of the vertices of the 16-cell and of the dual hypercube altogether.\index{regular polytope} 
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||ccccc}
+\phantom{\Big|} \!\! name & vertices & edges & faces & facets & Schl\"afli \\
+ \hline \hline
+\phantom{\Big|} \!\!  simplex & 5 & 10 & 10 & 5 tetrahedra & $\{3,3,3\}$ \\
+\phantom{\Big|} \!\!  hypercube & 16 & 32 & 24 & 8 cubes & $\{4,3,3\}$ \\
+\phantom{\Big|} \!\!  $16$-cell & 8 & 24 & 32 & 16 tetrahedra & $\{3,3,4\}$ \\
+\phantom{\Big|} \!\!  $24$-cell & 24 & 96 & 96 & 24 octahedra & $\{3,4,3\}$ \\
+\phantom{\Big|} \!\!  $120$-cell & 600 & 1200 & 720 & 120 dodecahedra & $\{5,3,3\}$ \\
+\phantom{\Big|} \!\!  $600$-cell & 120 & 720 & 1200 & 600 tetrahedra & $\{3,3,5\}$
+\end{tabular}
+\vspace{.2 cm}
+\nota{The six regular polytopes in dimension four, with their Schl\"afli notation (see Section \ref{regular:subsection}). The groups $Q_8$, $T_{24}^*$, and $I_{120}^*$ consist of the vertices of the 16-cell, 24-cell, and 600-cell respectively.}
+\label{polytopes:table}
+\end{center}
+\end{table}
+
+The convex hull of $T_{24}^*$ is the \emph{24-cell}: this is the unique self-dual regular polytope in all dimensions $n\geqslant 3$ which is not a simplex! See Figure \ref{24cell:fig}. The group $O_{48}^*$ consists of the vertices of the 24-cell and of its dual. Finally, the convex hull of $I_{120}^*$ is the \emph{600-cell}, whose dual is the \emph{120-cell}. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 7 cm] {\iftoggle{BW}{Stereographic_polytope_24cell_faces-BW}{768px-Stereographic_polytope_24cell_faces}}
+\nota{A stereographic projection of the tessellation of $S^3$ induced by the 24-cell. Its $24$ vertices form the binary tetrahedral group $T_{24}^*$. Its facets are 24 regular octahedra.}
+\label{24cell:fig}
+\end{center}
+\end{figure}
+
+
+\subsection{Classification of elliptic 3-manifolds}
+We now want to classify all the elliptic 3-manifolds. We start with a linear algebra exercise.
+\begin{ex}
+Let $A \in \On(4)$ be an orthogonal transformation. Then
+\begin{itemize}
+\item if $\det A = -1$, it fixes pointwise a line,
+\item if $\det A = +1$, it preserves two orthogonal planes and acts as a rotation on each.
+\end{itemize}
+\end{ex}
+
+Every elliptic 3-manifold is isometric to $S^3/_\Gamma$ for some finite subgroup $\Gamma < \On(4)$ acting freely. The exercise implies that $\Gamma < \SO(4)$, since orientation-reversing elements fix some point in $S^3$. Therefore we get:
+
+\begin{cor}
+Every elliptic 3-manifold is orientable.
+\end{cor}
+
+We have already encountered the lens space $L(p,q) = S^3/_\Gamma$ where the cyclic group $\Gamma = C_{p,q}$ is generated by the isometry 
+$$(z,w) \longmapsto (\omega z, \omega^q w)\quad {\rm with}\  \omega = e^\frac{2\pi i}p.$$ 
+Another consequence of the exercise is the following. 
+\begin{cor} \label{abelian:SO4:cor}
+Every finite abelian group $\Gamma < \SO(4)$ acting freely is conjugate to $C_{p,q}$ for some coprime $p,q$.
+\end{cor}
+\begin{proof}
+An abelian $\Gamma$ fixes two orthogonal planes $U$ and $V$ and acts on each as rotations. The restriction map $\Gamma \to \Iso^+(U)$ is injective because $\Gamma$ acts freely on $S^3$. Therefore $\Gamma$ is cyclic, generated by an element that acts on both planes by rotations of order $p=|\Gamma|$, so $\Gamma$ is conjugate to $C_{p,q}$.
+\end{proof}
+
+We now want to construct non-abelian examples. It is convenient to look at $\SO(4)$ as the image of $S^3\times S^3$ via the surjective map $\Psi$ defined above. Which elements of $S^3\times S^3$ act freely on $S^3$? The answer is particularly simple.
+\begin{prop} \label{conj:fixed:prop}
+The isometry $\Psi(q_1,q_2)$ of $S^3$ has a fixed point if and only if $q_1$ and $q_2$ are conjugate in $S^3$.
+\end{prop}
+\begin{proof}
+We have $q_1xq_2^{-1}=x$ for some $x\in S^3$ if and only if $q_1 = xq_2x^{-1}$, that is $q_1$ and $q_2$ are conjugate.
+\end{proof}
+The following corollary will help to rule out many cases.
+\begin{cor} \label{no:four:cor}
+If $q_1$ and $q_2$ have both order four, the isometry $\Psi(q_1,q_2)$ has a fixed point.
+\end{cor}
+We now construct more examples.
+\begin{prop} If two finite subgroups $G,H < S^3$ have coprime orders, the image $\Psi(G \times H)$ acts freely on $S^3$.
+\end{prop}
+\begin{proof}
+If $(g_1, g_2) \in G \times H$ is non-trivial, the elements $g_1$ and $g_2$ have coprime and hence distinct orders, thus they are not conjugate.
+\end{proof}
+\begin{cor}
+If $G$ is a group from Table \ref{binary:table} and $n$ is coprime with the order of $G$, then $\Psi(G\times C_n)$ acts freely on $S^3$.
+\end{cor}
+This corollary produces most of the non-cyclic subgroups of $\SO(4)$ acting freely on $S^3$, but not all of them! Table \ref{finite:freely:table} lists all the finite subgroups of $\SO(4)$ acting freely, up to conjugation in $\On(4)$. The first line shows the cyclic groups $C_{p,q}$, and the other families of groups are all of type $\Psi(G\times C_n)$, except the ones in the third and fifth line which we now explain.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||cccc}
+\phantom{\Big|}\!\! $\Gamma$      & conditions & $|\Gamma|$ & $Z$ & $\Gamma/_Z$ \\
+ \hline \hline
+\phantom{\Big|}\!\! $C_{p,q}$ & $p>0$, $(p,q)=1$ & $p$ & $C_p$ & $\{e\}$ \\
+\phantom{\Big|}\!\! $\Psi\big(D_{4m}^* \times C_n\big)$ & $m>1 ,n>0$, $(4m,n)=1$ & $4mn$ & $C_{2n}$ & $D_{2m}$ \\
+\phantom{\Big|}\!\! $\Gamma \underset 2< \Psi\big(D_{4m}^* \times C_{4n}\big)$ & $m>1,n>0$, $n$ even, $(m,n)=1$ & $4mn$ & $C_{2n}$ & $D_{2m}$ \\
+\phantom{\Big|}\!\! $\Psi\big(T_{24}^* \times C_n\big)$ & $n>0$, $(24,n)=1$ & $24n$ & $C_{2n}$ & $T_{12}$ \\
+\phantom{\Big|}\!\! $\Gamma \underset 3< \Psi\big(T_{24}^* \times C_{6n}\big)$ & $n>0$, $n$ odd, $3|n$ & $24n$ & $C_{2n}$ & $T_{12}$ \\
+\phantom{\Big|}\!\! $\Psi\big(O_{48}^* \times C_n\big)$ & $n>0$, $(48,n)=1$ & $48n$ & $C_{2n}$ & $O_{24}$ \\
+\phantom{\Big|}\!\! $\Psi\big(I_{120}^* \times C_n\big)$ & $n>0$, $(120,n)=1$ & $120n$ & $C_{2n}$ & $I_{60}$
+\end{tabular}
+\vspace{.2 cm}
+\nota{The finite subgroups $\Gamma < \SO(4)$ that act freely on $S^3$, up to conjugation in $\On(4)$. For each we show its centre $Z$ and the quotient $\Gamma/_Z$. If $\Gamma$ is not cyclic, the two groups $Z$ and $\Gamma/_Z$ determine $\Gamma$ up to conjugation (note that $n$ satisfies some congruence equality which separates lines 2,3 and 4,5).
+The symbol $\Gamma <_i G$ indicates that $\Gamma$ has index $i$ in $G$.}
+\label{finite:freely:table}
+\end{center}
+\end{table}
+
+\begin{rem} \label{image:product:rem}
+For all groups in Table \ref{finite:freely:table} of type $G\times C_n$, we have $\Psi(G\times C_n) \isom G\times C_n$ because $n$ is odd and hence $(-1,-1)\not\in G\times C_n$.
+\end{rem}
+
+In the third line of Table \ref{finite:freely:table}, the group $\Gamma$ is an index-two subgroup of $\Psi(D_{4m}^* \times C_{4n})$. It is the image along $\Psi$ of the kernel of the map
+\begin{align*}
+D^*_{4m} \times C_{4n} & \longrightarrow \matZ_2 \\
+(g_1, g_2) & \longmapsto f_1(g_1) + f_2(g_2)
+\end{align*}
+where $f_1$ is the map in (\ref{D4n:eqn}) and $f_2$ is the surjective homomorphism $C_{4n} \to \matZ_2$. Analogously, the group $\Gamma$ in the fifth line is an index-three subgroup of $\Psi(T_{24}^* \times C_{6n})$: it is the image along $\Psi$ of the kernel of the map
+\begin{align*}
+T^*_{24} \times C_{6n} & \longrightarrow \matZ_3 \\
+(g_1, g_2) & \longmapsto f_1(g_1) + f_2(g_2)
+\end{align*}
+where $f_1$ is the map in (\ref{Q8:eqn}) and $f_2$ is any surjective homomorphism $C_{6n} \to \matZ_3$. Both $f_1$ and $f_2$ are well-defined only up to automorphisms of $\matZ_3$, but the kernel is well-defined up to conjugation in $S^3\times S^3$ anyway: there are four possibilities and they are related by conjugations via the elements $(1,j)$ and $\big(\frac{1+i}{\sqrt 2},1\big)$, as one can easily check (these conjugations permute the cosets of $C_{2n} \triangleleft C_{6n}$ and $Q_8 \triangleleft T_{24}^*$).
+
+\begin{prop} \label{finite:SO4:prop}
+The finite subgroups of $SO(4)$ shown in Table \ref{finite:freely:table} act freely on $S^3$.
+\end{prop}
+\begin{proof}
+We only need to prove this for the groups $\Gamma$ that belong to the third and fifth family. Concerning the third, pick an element $(g_1,g_2) \in S^3\times S^3$ that projects to a non-trivial element in $\Gamma$. We want to prove that $g_1$ and $g_2$ have distinct orders and are hence non-conjugate.
+
+By hypothesis $f_1(g_1) + f_2(g_2)=0$ in $\matZ_2$ and hence $f_1(g_1) = f_2(g_2)$ is either 0 or 1. In the first case we get $g_1 \in C_{2m}$ and $g_2 \in C_{2n}$ which have distinct orders since $(m,n)=1$ and $(g_1,g_2) \neq \pm (1,1)$. In the second case $g_1 \in D_{4m}^* \setminus C_{2m}$ has order four (check from Table \ref{binary:table}) and $g_2 \in C_{4n} \setminus C_{2n}$ does not have order four since $n$ is even. 
+
+The fifth family is treated similarly. Pick $(g_1, g_2) \in \Gamma$ with non-trivial image in $SO(4)$. If $f_1(g_1) = f_2(g_2) = 0$ then $g_1 \in Q_8$ has order 1, 2, or 4 and $g_2 \in C_{2n}$ does not have order 4 since $n$ is odd. If $f_1(g_1) = - f_2(g_2) \neq 0$ then $g_1\in T_{24}^* \setminus Q_8$ has order 3 or 6 (check from Table \ref{binary:table}) while $g_2 \in C_{6n} \setminus C_{2n}$ cannot have order 3 or 6 since $3$ divides $n$.
+\end{proof}
+
+We now show that Table \ref{finite:freely:table} exhausts all possibilities.
+
+\begin{prop}
+Every finite subgroup of $SO(4)$ acting freely on $S^3$ is conjugate in $\On(4)$ to one in Table \ref{finite:freely:table}.
+\end{prop}
+\begin{proof}
+Let a finite $\Gamma < SO(4)$ act freely on $S^3$. We consider its counterimage $G = \Psi^{-1}(\Gamma)$ in $S^3\times S^3$. 
+
+We note that the orientation-reversing isometry $q \mapsto q^{-1}$ of $S^3$ conjugates $\Psi(q_1,q_2)$ to $\Psi(q_2,q_1)$, since
+$$x \longmapsto (q_1x^{-1}q_2^{-1})^{-1} = q_2xq_1^{-1}.$$
+Therefore via conjugation in $\On(4)$ we may swap the factors of $S^3\times S^3$.
+
+If $G$ is a product $G=G_1 \times G_2$, then $G_1$ and $G_2$ are some groups from Table \ref{binary:table}. If they are both cyclic, then $\Gamma$ is abelian and we conclude by Corollary \ref{abelian:SO4:cor}.
+If they are both non-cyclic, they both contain order-4 elements and we get a contradiction from Proposition \ref{no:four:cor}.
+
+Therefore $G = G_1 \times C_k$ with $G_1$ equal to $D_{4m}^*$, $T_{24}^*$, $O_{48}^*$, or $I_{120}^*$, and $k$ not divisible by four. Since $(-1,-1) \in G$ we get $k=2n$, and $n$ odd implies that $\Psi (G_1 \times C_n) = \Psi(G_1 \times C_{2n})$. Moreover $n$ is coprime with the order of $G_1$ otherwise Proposition \ref{conj:fixed:prop} would easily give a fixed point. Therefore we get a product group as in Table \ref{finite:freely:table}.
+
+We are left to consider the case $G$ is not a product. Let $G_1 \times G_2$ (resp.~$G_1' \times G_2'$) be the smallest (resp.~biggest) product subgroup of $S^3\times S^3$ such that 
+$$G_1' \times G_2' < G < G_1 \times G_2.$$
+The subgroup $G_1$ (resp.~$G_1'$) consists of all $g_1\in S^3$ such that $(g_1,g_2) \in G$ for some $g_2$ (resp.~such that $(g_1,1)\in G$).
+It is easy to check that $G_i'\triangleleft G_i$ and 
+$${G}/_{G_1' \times G_2'} \isom {G_1}/_{G_1'} \isom {G_2}/_{G_2'}.$$
+Each $G_i$ and $G_i'$ is finite and hence conjugate to one in Table \ref{binary:table}. 
+If both $G_1$ and $G_2$ are cyclic, the group $\Gamma$ is abelian and we are done. We henceforth suppose that $G_1$ and $G_2$ are not both cyclic.
+
+By the same reasoning above, up to reordering $G_2'$ contains no order-4 elements and hence $G_2' = C_s$ with $s$ not divisible by four. 
+
+We now prove that $G_1'$ contains all the order-4 elements of $G_1$.
+To do so we pick an order-4 element $g_1 \in G_1$ and prove that $\pm g_1 \in G_1'$: this suffices since $g_1 = (-g_1)^3$. We have $(g_1,g_2) \in G$ for some $g_2$ of some order $2^tk$ with $k$ odd. We have $(g_1^k,g_2^k) = (\pm g_1, g_2^k)$, so up to replacing $g_2$ with $g_2^k$ we may suppose $k=1$ and $g_2$ has order $2^t$. 
+
+We have $(1,g_2^4) = (g_1^4,g_2^4) \in G$ and hence $g_2^4 \in G_2'$. Suppose $s$ is odd. Therefore $g_2^4 \in G_2' = C_s$ is trivial and $g_2$ has order $2^t$; thus $g_2$ has order $1,2,$ or $4$. It cannot have order $4$ by Corollary \ref{no:four:cor}, therefore $g_2= \pm 1$ and hence $\pm g_1 \in G_1'$ as required.
+
+If $s$ is even we get the same conclusion: now $(-1,g_2^2) = (g_1^2,g_2^2) \in G$ hence $(1,-g_2^2) \in G$ gives $-g_2^2 \in G_2'$ and thus $g_2^2 \in G_2'$ since $n$ is even. Again this implies that $g_2$ has order 1,2, or 4 and we conclude as above.
+
+We have proved that $G_1'$ contains all order-4 elements of $G_1$. The groups $D_{4n}^*$, $O_{48}^*$, and $I_{120}^*$ are generated by their order-4 elements (exercise), hence $G_1' \neq G_1$ implies that $G_1$ is not one of them. Then it is either cyclic or $T_{24}^*$.
+
+If $G_1= C_h$ is cyclic, then $G_1'$ and $G_1/_{G_1'} \isom G_2/_{G_2'}$ also are. By assumption $G_2$ is not cyclic, but it contains the cyclic $G_2'$ with non-trivial cyclic quotient: the only possibility from Table \ref{binary:table} is that $G_2 = D_{4m}^*$ and $G_2' = C_{2m}$. Therefore $G$ is an index-two subgroup of $G_1\times G_2 = C_h \times D_{4m}^* $ as in the third line of Table \ref{finite:freely:table}. 
+
+We need to prove that $h=4n$ with $n$ even and $(n,m)=1$. Since $G_1' < G_1$ has index two, $h$ is even. Since $(1,-1) \in G_1' \times C_{2m}< G$, we also have $(-1,1)\in G$ and hence $-1\in G_1'$. Therefore $|G_1'|$ is even and $4|h$. Since $G_1'$ contains all order-4 elements of $G_1$, four divides $|G_1'|$ and hence $8|h$. Therefore $h=4n$ with $n$ even, as required.
+Moreover $(m,n)=1$ since $G_1' \times G_2' = C_{2n} \times C_{2m} \subset G$.
+
+If $G_1 = T_{24}^*$ the order-4 elements generate the index-three subgroup $Q_8$ and hence $G_1' = Q_8$ and $G_2/_{G_2'} \isom G_1/_{G_1'} \isom \matZ_3$. Recall that $G_2' = C_s$ with $s$ not divisible by four. As above, $-1 \in G_1'$ implies $-1 \in G_2'$ and hence $s = 2n$ with $n$ odd. Therefore $G_2$ has order $6n$ and must hence be cyclic. 
+
+The group $G$ is an index-3 subgroup of $G_1\times G_2 = T_{24}^* \times C_{6n} $ as in the third line of Table \ref{finite:freely:table}. We must have $3|n$ otherwise $G$ contains an element $(g_1,g_2)$ with both $g_1,g_2$ having order 3 (see the proof of Proposition \ref{finite:SO4:prop}).
+\end{proof}
+
+We can finally summarise our discoveries:
+
+\begin{cor} 
+Table \ref{finite:freely:table} lists all the finite subgroups $\Gamma < SO(4)$ acting freely on $S^3$ up to conjugation in $\On(4)$, without repetitions. 
+\end{cor}
+\begin{proof}
+There are no repetitions because the non-cyclic groups listed are all non-isomorphic: the isomorphism types of the centre $Z$ and $\Gamma/_Z$ suffice to determine $\Gamma$ in that list, see Table \ref{finite:freely:table} (note that $n$ satisfies some congruence equality which separates the lines 2,3 and 4,5).
+
+To compute $|\Gamma|$, we use Remark \ref{image:product:rem} and note that $(-1,-1)$ belongs to $(D_{4m}^* \times C_{4n})$ and $(T_{24}^* \times C_{6n})$.
+
+To compute $Z$ and $\Gamma/_Z$, we note that in all the non-cyclic cases $\Gamma$ is the image of a subgroup in some product $G^* \times C_{kn}$ which is ``diagonal'', in the sense that it maps surjectively to both factors $G^*$ and $C_{kn}$. The map onto $G^*$ pushes-forward to a surjection $\Gamma \to G$, whose kernel is easily detected as being the centre $Z$ and isomorphic to $C_{2n}$ in all cases.
+\end{proof}
+
+
+\subsection{Seifert fibrations of elliptic 3-manifolds}
+We now turn back to Seifert manifolds and prove Theorem \ref{S3:teo}. Let $S^1\subset S^3$ be the unit complex numbers. Recall that $S^3\times S^3$ acts on $S^3$ via $\Psi$. The following proposition is crucial: it says that a big Lie subgroup of $S^3\times S^3$ preserves the Hopf fibration; later on we will discover that every finite subgroup $\Gamma$ of $S^3\times S^3$ acting freely may be conjugated into this big group and hence every quotient $S^3/_\Gamma$ inherits a Seifert structure from the Hopf fibration, hence every elliptic three-manifold is Seifert. 
+
+\begin{prop}
+The group $S^1\times S^3$ preserves the Hopf fibration.
+\end{prop}
+\begin{proof}
+Represent quaternions as pairs $(z_1,z_2)$ of complex numbers. The Hopf fibration $S^3 \to \matCP^1$ is the map $(z_1,z_2) \to [z_1,z_2]$. 
+One checks easily that quaternion multiplication acts as follows:
+$$(z_1, z_2) (w_1,w_2) = (z_1w_1 - z_2 \bar{w}_2, z_2 \bar{w}_1 + z_1w_2).$$
+Therefore right-multiplication by $(w_1,w_2)\in S^3$ acts $\matC$-linearly on $\matC^2$ and hence preserves the Hopf fibration.
+
+Left multiplication by $(w_1,w_2)$ is \emph{not} $\matC$-linear in general, but it is so when $(w_1,w_2) = (w_1,0) \in S^1$, since $(w_1,0)(z_1,z_2) = (w_1z_1, w_1z_2).$
+Therefore $S^1\times S^3$ preserves each fibre of the Hopf fibration.
+\end{proof}
+
+We can finally prove Theorem \ref{S3:teo}.
+\begin{teo}
+A closed 3-manifold $M$ admits an elliptic metric if and only if it is a Seifert manifold  with $e\neq 0$ and $\chi>0$.
+\end{teo}
+\begin{proof}
+If $M$ is elliptic then $M=S^3/_\Gamma$ for some finite subgroup $\Gamma < SO(4)$ acting freely. If $\Gamma$ is conjugate to $C_{p,q}$ we get a lens space and we are done. Otherwise Table \ref{finite:freely:table} shows that $\Gamma$ is conjugate to the image of a subgroup of $S^1\times S^3$ (because $C_n < S^1$). Therefore up to conjugation $\Gamma$ preserves the Hopf fibration of $S^3$, which descends to a Seifert fibration. We have $\chi>0$ and $e\neq 0$ because the universal cover of $M$ is $S^3$.
+
+Conversely, we now show that every Seifert manifold with $\chi >0$ and $e \neq 0$ arises as an elliptic manifold $S^3/_\Gamma$. The Seifert manifolds were listed in Table \ref{elliptic:table}, and the corresponding $\Gamma$ is shown in Table \ref{elliptic:Seifert:table}.
+To verify the correspondence, note that the centre $Z$ of $\Gamma = \pi_1(M)$ and the quotient $\Gamma/_Z$ are shown in Table \ref{finite:freely:table} and they fully determine $\Gamma$. Proposition \ref{elliptic:center:prop} says that $Z<\pi_1(M)$ is generated by a regular fibre and $\Gamma/_Z$ is the orbifold fundamental group of the base.
+\end{proof}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||c||c}
+\phantom{\Big|} fibration        & condition & $\Gamma$ \\
+ \hline \hline
+\phantom{\Big|} $\big(S^2,(2,1),(2,1),(p,q)\big)$ & ${p+q}>0$ odd &
+$\Psi\big(D_{4p}^* \times C_{p+q}\big)$  \\
+\phantom{\Big|} $\big(S^2,(2,1),(2,1),(p,q)\big)$ & ${p+q}>0$ even &
+$\Gamma \underset 2< \Psi\big(D_{4p}^* \times C_{4(p+q)}\big)$ \\
+\phantom{\Big|} $\big(S^2,(2,1),(3,1),(3,q)\big)$ & $3 \nmid 5+2q$ &
+$\Psi\big(T_{24}^* \times C_{|5+2q|}\big)$ \\
+\phantom{\Big|} $\big(S^2,(2,1),(3,1),(3,q)\big)$ & $3|5+2q>0$ &
+$\Gamma \underset 3< \Psi\big(T_{24}^* \times C_{6(5+2q)}\big)$ \\
+\phantom{\Big|} $\big(S^2,(2,1),(3,1),(4,q)\big)$ & &
+$\Psi\big(O_{48}^* \times C_{|10+3q|}\big)$ \\
+\phantom{\Big|} $\big(S^2,(2,1),(3,1),(5,q)\big)$ & &
+$\Psi\big(I_{120}^* \times C_{|25+6q|}\big)$
+\end{tabular}
+\vspace{.2 cm}
+\nota{The non-lens elliptic manifolds, listed without repetitions. For each we show its Seifert fibration and fundamental group $\Gamma < \SO(4)$. Here $p>1$. The integer $q$ may be negative, if not forbidden explicitly. In the fourth line $3$ divides $5+2q$, which must be positive. }
+\label{elliptic:Seifert:table}
+\end{center}
+\end{table}
+
+In particular we have the following:
+\begin{align*}
+\pi_1\big(S^2,(2,1),(2,1),(2,-1)\big) & = Q_8, \\
+\pi_1\big(S^2,(2,1),(2,1),(p,1-p)\big) & = D_{4p}^*, \\
+\pi_1\big(S^2,(2,1),(3,1),(3,-2)\big) & = T_{24}^*, \\
+\pi_1\big(S^2,(2,1),(3,1),(4,-3)\big) & = O_{48}^*, \\
+\pi_1\big(S^2,(2,1),(3,1),(5,-4)\big) & = I_{120}^*. 
+\end{align*}
+
+The latter is Poincar\'e's homology sphere, the unique elliptic three-manifold with perfect fundamental group (see Section \ref{Seifert:homology:sphere:subsection}).\index{Poincar\'e homology sphere}
+
+\section{Flat three-manifolds}
+We now turn to flat three-manifolds. In dimension two, every orientation-preserving isometry of $\matR^2$ is a translation, and this easily implies that every flat orientable closed surface is a torus. In dimension three we also have \emph{rototranslations}, which produce more orientable manifolds. 
+
+We now classify all the closed flat orientable three-manifolds up to diffeomorphism and prove the following.
+\begin{teo} \label{main:flat:teo}
+A closed orientable 3-manifold $M$ admits a flat metric if and only if it is a Seifert manifold with $e=\chi=0$.
+\end{teo}
+There are six such manifolds, listed in Table \ref{seven:table}. 
+
+\subsection{Classification}
+Every closed flat 3-manifold is isometric to $\matR^3/_\Gamma$ for some crystallographic group $\Gamma< \Iso(\matR^3)$ acting freely, see Section \ref{crystallographic:subsection}.
+
+\begin{ex}
+Every element in $\Gamma$ is either a translation or a rototranslation (defined in Example \ref{rototranslation:example}).
+\end{ex}
+
+We prove one half of Theorem \ref{main:flat:teo}.
+
+\begin{prop} \label{flat:to:Seifert:prop}
+Every closed orientable flat 3-manifold is a Seifert manifold with $e=\chi=0$.
+\end{prop}
+\begin{proof}
+We have $M=\matR^3/_\Gamma$. Recall the exact sequence
+$$0 \longrightarrow H \longrightarrow \Gamma \longrightarrow r(\Gamma) \longrightarrow 0$$
+where $H \triangleleft \Gamma$ is the translation subgroup and $r(\Gamma)<SO(3)$ is finite by Proposition \ref{finite:image:r:prop}. We now prove that $\Gamma$ preserves a foliation of $\matR^3$ into parallel lines that projects to a Seifert structure on $M$.
+
+If $r(\Gamma)$ is trivial, then $\Gamma = H$ consists of translations and preserves many foliations into parallel lines that project to a Seifert structure on the quotient 3-torus $M$. If $r(\Gamma)$ is non-trivial, it is isomorphic to $C_n$, $D_{2m}$, $T_{12}$, $O_{24}$, or $I_{60}$. If $r(\Gamma) = C_n$ or $D_{2m}$, it has a common fixed vector line $l\subset \matR^3$ and $\Gamma$ preserves the foliation of lines parallel to $l$.
+
+If $r(\Gamma) = T_{12}, O_{24}$, or $I_{60}$ we obtain a contradiction as follows. In all cases we have $T_{12}\subset r(\Gamma)$. The group $T_{12}$ consists of the identity, the $\pi$-rotations along the three coordinate axis, and the $\pm\frac {2\pi}3$-rotations along the axis spanned by $(1,1,1), (1,-1,-1), (-1,1,-1)$, and $(1,-1,-1)$. 
+
+Pick a rototranslation $h\in \Gamma$ with axis $l$ parallel to $(1,1,1)$, and up to conjugating $\Gamma$ by a translation we may suppose that $l$ contains the origin $0\in\matR^3$. We have $h(0) = (d,d,d)$ for some $d\neq 0$. Since $h^3$ is a translation we get $(3d,3d,3d) \in H$. 
+
+The group $\Gamma$ and hence $T_{12}$ acts on $H$ via conjugation. Therefore $H$ is $T_{12}$-symmetric and $(3d,-3d,-3d)\in H$ using the $\pi$-rotation along the first axis. Hence $t=(6d,0,0) = (3d,3d,3d) + (3d,-3d,-3d) \in H$. The composition $t\circ h^2$ has a fixed point, because it sends $0$ to $(2d,2d,2d)-(6d,0,0) = (-4d,2d,2d)$ which is orthogonal to $l$: a contradiction.
+
+In all cases $M$ has a Seifert structure. By Bieberbach's Theorem (stated as Corollary \ref{Bieberbach:cor}) the manifold $M$ is finitely covered by the 3-torus, and hence $\chi=e=0$ by Proposition \ref{cover:Seifert:prop}.
+\end{proof}
+
+We now prove the other half.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {flat.pdf}
+\nota{The six closed orientable flat 3-manifolds, up to diffeomorphism. Each is constructed by pairing isometrically the faces of a polyhedron in $\matR^3$ according to the labels. When a face has no label, it is simply paired to its opposite by a translation. The polyhedra shown here are three cubes, two prisms with regular hexagonal basis, and one parallelepiped made of two cubes.}
+\label{flat:fig}
+\end{center}
+\end{figure}
+
+\begin{prop}
+Every closed Seifert manifold $M$ with $e=\chi = 0$ admits a flat metric.
+\end{prop}
+\begin{proof}
+There are six such Seifert manifolds up to diffeomorphism, listed in Table \ref{seven:table}. We build a flat metric for each in Figure \ref{flat:fig}.
+
+The figure shows six flat manifolds, constructed by identifying isometrically the faces of a polyhedron in $\matR^3$. The reader is invited to check that each construction gives indeed a flat manifold, by verifying that the flat metric extends to the edges and to the vertices.
+
+In all cases the foliation by parallel horizontal lines (orthogonal to the $P$ faces) descends to a Seifert fibration on the flat manifold. By looking at these lines one checks that the base surface of the fibration is respectively
+$$T,\ (S^2,2,2,2,2),\ (S^2,2,4,4),\ (S^2,2,3,6),\ (S^2,3,3,3),\ (\matRP^2,2,2).$$
+These orbifolds are obtained respectively from the figures by considering: the square torus, its quotient via a $\pi$-rotation, via a $\frac{\pi}4$-rotation, the quotient of a hexagon torus by a $\frac \pi 3$-rotation, by a $\frac{2\pi}3$-rotation, and the quotient of a Klein bottle via a $\pi$-rotation.
+
+These flat Seifert manifolds have $e=0$ by Proposition \ref{flat:to:Seifert:prop}, and hence they are precisely those listed in Table \ref{seven:table}.
+\end{proof}
+
+We have proved Theorem \ref{main:flat:teo}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 2.5 cm] {\iftoggle{BW}{HW-BW}{HW}}
+\nota{The Hantsche-Wendt manifold $M=\matR^3/_\Gamma$. The group $\Gamma$ is generated by three rototranslations along the three \iftoggle{BW}{grey}{red} axis shown, each of angle $\pi$ and with unit displacement (this is a unit cube). A fundamental domain for $\Gamma$ is made of two unit cubes as in Figure \ref{flat:fig}-(bottom, right).}
+\label{HW:fig}
+\end{center}
+\end{figure}
+
+\begin{rem}
+The rotational image $r(\Gamma) < SO(3)$ of $\Gamma$ for the six flat manifolds $M=\matR^3/_\Gamma$ constructed in Figure \ref{flat:fig} is respectively $\{e\}$, $C_2$, $C_4$, $C_6$, $C_3$, and the dihedral $D_4 = C_2\times C_2$. The sixth manifold is called the \emph{Hantzsche-Wendt manifold}: the group $\Gamma$ is generated by three rototranslations as in Figure \ref{HW:fig}.\index{three-manifold!Hantzsche-Wendt manifold}
+\end{rem}
+
+In contrast with the hyperbolic case, a finite-volume complete flat manifold is necessarily closed (see Proposition \ref{finite:volume:flat:prop}). The Seifert manifolds with boundary and $\chi=0$ are diffeomorphic to the bundles $T\times I$ and $K\timtil I$. Their interiors $T\times \matR$ and $K\timtil \matR$ may be given an \emph{infinite}-volume complete flat structure. The lack of a finite-volume complete flat structure for $K\timtil \matR$ is a reason for preferring the geometric decomposition to the canonical torus decomposition, see Section \ref{geometric:decomposition:subsection}.
+
+\section{The product geometries}
+The eight three-dimensional geometries include the three isotropic ones, plus five more. Among the five non-isotropic geometries, two are products of lower-dimensional geometries. We analyse them here.
+
+\subsection{$S^2 \times \matR$ geometry.}
+We equip $S^2\times \matR$ with the product metric. The product $S^2\times \matR$ is the poorest of the eight geometries, in the sense that there are very few manifolds modelled on $S^2\times \matR$. 
+
+Recall that the sectional curvature is a number assigned to every plane in the tangent space of every point $p\in S^2 \times \matR$. One such plane is \emph{horizontal} if it is tangent to the $S^2$ factor and \emph{vertical} if it contains the line tangent to the $\matR$ factor.
+
+\begin{prop}
+The sectional curvatures of horizontal and vertical planes are $1$ and $0$, respectively.
+\end{prop}
+\begin{proof}
+Let $\gamma \subset S^2$ be a closed geodesic. The surfaces $S^2 \times y$ and $\gamma\times \matR$ are totally geodesic, because they are fixed by some isometric reflections of $S^2\times \matR$. Therefore the sectional curvatures of horizontal and vertical planes equal the gaussian curvatures of these surfaces, which are $1$ and $0$.
+\end{proof}
+
+\begin{prop}
+We have
+$$\Iso(S^2\times \matR) = \Iso(S^2) \times \Iso(\matR).$$
+\end{prop}
+\begin{proof}
+We certainly have the inclusion $\supset$, which gives to every point $x\in S^2\times \matR$ a stabiliser in $\Iso^+(S^2\times \matR)$ isomorphic to $\SO(2) \rtimes C_2$, a proper maximal subgroup of $\SO(3)$ by Proposition \ref{subgroups:SO3:prop}. 
+
+If there were more isometries that that, there would be more fixing $p$ since they act transitively on $S^2\times \matR$ and the stabiliser would be the whole of $\SO(3)$, a contradiction because the sectional curvature of $S^2\times \matR$ is not constant.
+\end{proof}
+Since the isometry groups of $S^2$ and $\matR$ have two connected components each, the group $\Iso(S^2\times \matR)$ has four connected components, two of which are orientation-preserving.
+
+\begin{prop}
+An orientable manifold $M$ admits a finite-volume $S^2\times \matR$ geometry $\Longleftrightarrow$ $M$ is a closed Seifert manifold with $e= 0$ and $\chi>0$. 
+\end{prop}
+\begin{proof}
+The closed Seifert manifolds with $e=0$ and $\chi>0$ are
+just $S^2\times S^1$ and $\matRP^2 \timtil S^1$, and they are diffeomorphic to $(S^2\times \matR)/_{\Gamma}$ where $\Gamma$ is generated respectively by 
+$$\big\{(\id, \tau)\big\}, \qquad \big\{(\iota, r), (\iota, r')\big\}$$
+where $\tau$ is any translation, $\iota$ is the antipodal map and $r,r'$ are reflections with respect to distinct points in $\matR$.
+
+Conversely, pick an orientable $M = (S^2\times S^1)/_\Gamma$. The discrete subgroup $\Gamma < \Iso(S^2) \times \Iso(\matR)$ preserves the foliation into spheres $S^2\times \{x\}$ which descends into a foliation into spheres and/or projective planes for $M$. Therefore $M$ decomposes into orientable interval bundles $S^2\times I$ and $\matRP^2\timtil I$, and is hence either $S^2\times S^1$ or $\matRP^2 \timtil S^1$.
+\end{proof}
+
+\subsection{$\matH^2 \times \matR$ geometry}
+We give $\matH^2 \times \matR$ the product metric. The discussion of the previous section applies as is to this case, showing that horizontal and vertical planes in the tangent spaces have sectional curvature $-1$ and $0$. This in turn implies that
+$$\Iso(\matH^2\times \matR) = \Iso(\matH^2) \times \Iso(\matR)$$
+has four connected components, two being orientation-preserving. It is convenient to write the exact sequence
+$$0 \longrightarrow \Iso(\matR) \longrightarrow \Iso(\matH^2\times \matR) \stackrel p \longrightarrow \Iso(\matH^2) \longrightarrow 0.$$
+A discrete group $\Gamma<\Iso(X)$ is \emph{cofinite} if $X/_\Gamma$ has finite volume.
+
+\begin{prop} \label{H2R:prop}
+A discrete group $\Gamma < \Iso(\matH^2 \times \matR)$ is cofinite if and only if both $p(\Gamma)$ and $\Gamma \cap \ker p$ are discrete and cofinite.
+\end{prop}
+\begin{proof} 
+If $p(\Gamma)$ is discrete we get
+\begin{equation} \label{volume:product:eqn}
+\Vol \big((\matH^2\times \matR)/_\Gamma \big) = \Area(\matH^2/_{p(\Gamma)}) \times {\rm Length}\big(\matR/ _{\Gamma \cap \ker p}\big). 
+\end{equation}
+This surprisingly simple formula is proved by picking a fundamental domain $D\subset \matH^2$ for $p(\Gamma)$ and noticing that 
+$$\Vol \big((\matH^2\times \matR)/_\Gamma \big) = \Vol\big(p^{-1}(D)/_{\Gamma \cap \ker p}\big).$$ 
+We deduce that $\Gamma$ is cofinite if and only if both $p(\Gamma)$ and $\Gamma \cap \ker p$ are. 
+
+If $p(\Gamma)$ is not discrete, we prove that $\Gamma$ cannot be cofinite. Up to replacing $\Gamma$ with an index-four subgroup we may suppose 
+$$\Gamma < \Iso^+(\matH^2) \times \Iso^+(\matR) = \Iso^+(\matH^2) \times \matR.$$
+Pick a neighbourhood $U\subset \Iso^+(\matH^2) \times \matR$ of $e$ such that $[U,U] \subset U$ and $U\cap\Gamma = \{e\}$. Let $f,g \in \Gamma$ be two elements. 
+We now prove that if $p(f), p(g) \in p(U)$ then $f$ and $g$ commute.
+We note that the commutator $[f,g]$ depends only on the images $p(f)$ and $p(g)$, and since they lie in $p(U)$ we may suppose that $f,g\in U$ and get $[f,g]\in U\cap \Gamma$, which must be trivial.
+
+The elements in $p(\Gamma)\cap p(U)$ commute. Two non-trivial elements in $\Iso^+(\matH^2)$ commute if and only if they are both hyperbolic, parabolic, or elliptic fixing the same line, point in $\partial \matH^2$, or point in $\matH^2$. Therefore all the isometries in $p(\Gamma)\cap p(U)$ are of the same type and fix the same line or point.
+
+Analogously, for every $f \in \Gamma$ we pick a neighbourhood $U_f$ of $e$ such that $[f, U_f] \subset U$ and conclude that $f$ commutes with all the elements in $\Gamma $ projecting to $p(U_f)$. (There are non-trivial such elements since $p(\Gamma)$ is not discrete.) Therefore $p(f)$ also fixes the same line or point as above.
+
+We have proved that $p(\Gamma)$ fixes a line, a horocycle, or a point in $\matH^2$ and hence fixes its inverse image in $\matH^2 \times \matR$ which is a line or a Euclidean plane. Moreover $\Gamma$ acts freely and proper discontinuously on it: hence $\Gamma =\matZ$ or $\matZ^2$ up to finite index and it is easy to deduce that $\Gamma$ is not cofinite.
+\end{proof}
+
+\begin{cor} \label{H2R:cor}
+If the interior of a compact orientable manifold $M$ admits a finite-volume complete $\matH^2\times \matR$ geometry then $M$ is a Seifert manifold with $\chi<0$. If $M$ is closed then also $e = 0$.
+\end{cor}
+\begin{proof}
+We have $\interior M = (\matH^2\times \matR)/_\Gamma$ with $\Gamma$ cofinite: by Proposition \ref{H2R:prop} the group $\Gamma \cap \ker p$ quotients every line $\{x\}\times \matR$ to a circle in $M$, giving a Seifert fibration $M\to S$ onto the finite-area orbifold $S=\matH^2/_{p(\Gamma)}$. We have $\chi(S)<0$, and either $e(M)=0$ or $\partial M \neq \emptyset$ because $\matH^2 \times y$ projects to a section for $M\to S$.
+\end{proof}
+
+We now prove the converse of Corollary \ref{H2R:cor}.
+\begin{prop}
+If $M$ is a Seifert manifold with  $\chi<0$ and either $\partial M \neq \emptyset$ or $e = 0$, the interior of $M$ admits a finite-volume complete $\matH^2\times S^1$ geometry.
+\end{prop}
+\begin{proof}
+By hypothesis there is a section $\Sigma$ of $M\to S$, which is the fibre of a bundle $M\to O$ over a 1-orbifold $O$, see Section \ref{Seifert:fibers:subsection}. The two structures give two exact sequences
+\begin{align*}
+0 \longrightarrow K \longrightarrow \pi_1(M) & \stackrel f\longrightarrow \pi_1(S) \longrightarrow 0, \\
+0 \longrightarrow \pi_1(\Sigma) \longrightarrow \pi_1(M) & \stackrel g\longrightarrow \pi_1(O) \longrightarrow 0.
+\end{align*}
+Since $\chi(S)<0$ we may write $S= \matH^2/_\Gamma$ and identify $\pi_1(S)$ with $\Gamma < \Iso(\matH^2)$. Analogously we consider $\pi_1(O)$ inside $\Iso(\matR)$.
+The map 
+$$(f,g) \colon \pi_1(M) \longrightarrow \Iso(\matH^2) \times \Iso(\matR)$$
+is injective and its image is discrete and acts freely on $\matH^2\times \matR$, inducing a finite-volume $\matH^2 \times \matR$ structure on $M$.
+\end{proof}
+
+\section{Nil geometry}
+There are still three non-isotropic geometries to analyse. These geometries are not products, but they have a reasonable bundle structure, so that many of the arguments of the previous section can be extended with not much effort.
+
+We start with the geometry $\Nil$, which is a $\matR$-bundle over $\matR^2$. This geometry is fully carried by a Lie group called the \emph{Heisenberg group}.\index{group!Heisenberg group}\index{$\Nil$\ geometry}
+
+\subsection{The Heisenberg group} 
+The \emph{Heisenberg group} consists of all matrices
+$$\begin{pmatrix} 1 & x & z \\ 0 & 1 & y \\ 0 & 0 & 1 \end{pmatrix}$$
+with $x, y, z \in \matR$, with the multiplication operation. This is a nilpotent (but non-abelian) Lie group (see Exercise \ref{Heisenberg:ex}) and is hence also called Nil. It is clearly diffeomorphic to $\matR^3$.
+There is a Lie groups exact sequence
+$$ 0 \longrightarrow \matR \longrightarrow \Nil \longrightarrow \matR^2 \longrightarrow 0$$
+where $\matR = [\Nil, \Nil] $ is the centre of $\Nil$ and consists of all matrices with $x=y=0$. Therefore Nil is naturally a line bundle over $\matR^2$.
+We identify Nil with $\matR^3$ using the coordinates $(x,y,z)$. The product operation becomes
+$$(x,y,z) \cdot (x',y',z') = (x+x', y+y', z+z'+xy').$$
+\begin{ex} \label{Nil:commutator:ex}
+The commutator of two elements is
+$$\big[(x,y,z), (x',y',z')\big] = (0,0,xy'-x'y).$$
+\end{ex}
+
+\subsection{The geometry of Nil}
+Every left-invariant Riemannian structure on a Lie group $G$ is constructed by fixing a scalar product at the tangent space $T_e G$ of $e\in G$ and then extending it by left-multiplication. Here $e=(0,0,0)$ and we give $T_e\Nil = \matR^3$ the Euclidean scalar product. This defines a left-invariant Riemannian structure on $\Nil$.
+
+\begin{ex} \label{metric:tensor:Nil:ex}
+The metric tensor at $(x,y,z)$ is
+$$
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & x^2 + 1 & -x \\
+0 & -x & 1
+\end{pmatrix}.
+$$
+\end{ex}
+The following triple is an orthonormal basis at $(x,y,z)$:
+\begin{equation} \label{orthonormal:eqn}
+(1,0,0), \quad (0,1,x), \quad (0,0,1).
+\end{equation}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {Standard_contact_structure.pdf}
+\nota{The planes orthogonal to the $z$ axis in $\Nil$ form the standard contact structure on $\matR^3$.}
+\label{contact:fig}
+\end{center}
+\end{figure}
+
+The planes spanned by the first two vectors form the standard \emph{contact structure} in $\matR^3$ shown in Figure \ref{contact:fig}. It is a non-integrable distribution of planes: no surface is tangent to it at every point.\index{contact structure}
+
+We remark that the metric tensor has unit determinant at every point: therefore the volume form on $\Nil$ is the standard one on $\matR^3$.
+
+We can calculate the Christoffel symbols $\Gamma_{ij}^k$ by hand or using a computer code; these are all zero except the following:
+$$\Gamma^1_{22} = -x, \quad \Gamma^1_{23} = \Gamma^1_{32} = \frac 12,$$  
+$$\Gamma^2_{12} = \Gamma^2_{21} = \frac x 2, \quad \Gamma^2_{13} = \Gamma^2_{31} = -\frac 12, $$
+$$\Gamma^3_{12} = \Gamma^3_{21} = \frac{x^2-1}2, \quad \Gamma^3_{13} = \Gamma^3_{31} = -\frac x2.$$
+The Ricci tensor at $(x,y,z)$ is 
+$$R_{ij} = \frac 12 \cdot \begin{pmatrix}
+-1 & 0 & 0 \\
+0 & {x^2-1} & -x \\
+0 & -x & 1
+\end{pmatrix}.
+$$
+When $x=0$ the Ricci tensor is a diagonal matrix with entries $-\frac 12, -\frac 12, \frac 12$. For a unit vector $v\in T_p\Nil$, recall that $R_{ij}v^iv^j$ equals twice the average value of the sectional curvatures of the planes containing $v$: this average value ranges here from $-\frac 14$ to $\frac 14$ and is maximal when $v=(0,0,\pm 1)$. This holds when $x=0$ and hence at all points $p\in \Nil$ by left-multiplication.
+
+\subsection{The isometry group of Nil}
+The group Nil acts on itself isometrically by left-multiplication. Left-multiplication by $(a,b,c)$ preserves the bundle $\Nil \to \matR^2$ and induces on $\matR^2$ a translation by the vector $(a,b)$. 
+
+There are also more complicate isometries of $\Nil$ that preserve the bundle structure but induce rotations on $\matR^2$: one such isometry $\varphi$ sends $(x,y,z)$ to 
+$$\Big(x\cos\theta -y\sin \theta, \  x\sin \theta + y \cos \theta,\ z+ \frac 12 (x^2-y^2)\sin \theta \cos \theta - xy\sin^2 \theta \Big).$$
+This map preserves the bundle and induces a rotation on $\matR^2$.
+\begin{prop} \label{varphi:isometry:prop}
+The map $\varphi$ is an isometry of $\Nil$.
+\end{prop}
+\begin{proof}
+Set $(x',y',z') = \varphi (x,y,z)$. The differential $d\varphi$ at $(x,y,z)$ is
+$$
+\begin{pmatrix} 
+\cos \theta & -\sin \theta & 0 \\
+\sin \theta & \cos \theta & 0 \\
+x\sin\theta \cos\theta - y\sin^2 \theta & - y\sin\theta\cos \theta  - x\sin^2\theta & 1 
+\end{pmatrix} 
+$$
+and may be rewritten as
+$$
+\begin{pmatrix} 
+\cos \theta & -\sin \theta & 0 \\
+\sin \theta & \cos \theta & 0 \\
+x'\sin \theta & x'\cos \theta - x & 1.
+\end{pmatrix} 
+$$
+The differential $d\varphi$ sends the orthonormal basis (\ref{orthonormal:eqn}) to
+$$(\cos\theta, \sin \theta, x'\sin\theta), \quad (-\sin\theta, \cos\theta, x'\cos\theta), \quad (0,0,1).$$
+These vectors at $(x',y',z')$ are also orthonormal.
+\end{proof}
+
+We deduce the following.
+
+\begin{prop} \label{Nil:isometries:prop}
+Every isometry of $\Nil$ preserves the line bundle and induces an isometry of $\matR^2$. We have
+$$0 \longrightarrow \matR \longrightarrow \Iso^+(\Nil) \stackrel p \longrightarrow \Iso(\matR^2) \longrightarrow 0$$
+where $\matR$ is the centre of $\Nil$.
+The group $\Iso^+(\Nil)$ has two components.
+\end{prop}
+\begin{proof}
+The rotational isometries $\varphi$ with angle $\theta$ introduced above form a $S^1$-subgroup of $\Iso^+(\Nil)$. The subgroups $S^1$ and $\Nil$ belong to the component $\Iso^+_\circ(\Nil) < \Iso^+(\Nil)$ containing the identity, which hence has dimension at least $1+3=4$ and acts transitively on $\Nil$. Stabilisers have dimension at least $4-3=1$ and cannot have bigger dimension by Proposition \ref{subgroups:SO3:prop}, otherwise $\Nil$ would have constant sectional curvature: therefore $\dim(\Iso^+_\circ(\Nil))=4$ and $\Iso^+_\circ(\Nil)$ is generated by $S^1$ and $\Nil$, and it preserves the line bundle since $S^1$ and $\Nil$ do.
+
+The subgroup $\Iso^+_\circ(\Nil)$ preserves the orientation of the fibres and of $\matR^2$.
+We leave as an exercise the existence of another component of $\Iso^+(\Nil)$ which inverts the orientation of the fibres and of $\matR^2$.
+\end{proof}
+
+\begin{example}  \label{Nil:example}
+A manifold $M = \Nil/_\Gamma$ modelled on Nil is described in Figure \ref{Nil_example:fig}. The figure shows a fundamental domain for the group $\Gamma<\Iso^+(\Nil)$ generated by the isometries
+$$(x,y,z) \longmapsto (x+1,y,z+y),$$
+$$(x,y,z) \longmapsto (x, y+1, z), \quad (x,y,z) \longmapsto (x,y,z+1).$$
+obtained by left-multiplication with the canonical basis of $\matR^3$.
+Both the unit cube and $M$ have volume one. The manifold $M$ is clearly a torus bundle with monodromy $\matr 1101$ and is hence diffeomorphic to the Seifert manifold $\big(T,(1,1)\big)$ by Exercise \ref{Me:ex}.
+\end{example}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {Nil_example.pdf}
+\nota{The $\Nil$\ manifold $M=\Nil/_\Gamma$ is obtained by identifying the faces of this unit cube as follows: the triangular faces are glued via the affine maps as shown by the labels, and the pairs of unlabelled opposite square faces are identified by translations. The cube is a fundamental domain for $\Gamma$.}
+\label{Nil_example:fig}
+\end{center}
+\end{figure}
+
+A group $\Gamma< \Iso(X)$ is \emph{cocompact} if $X/_\Gamma$ is compact.
+We prove that cocompact groups in $\Iso(\matR^2)$ do not lift.
+
+\begin{prop} \label{Nil:no:lift:prop}
+Let $\Gamma < \Iso(\matR^2)$ be discrete and cocompact. There is no homomorphism $f\colon \Gamma \to \Iso^+(\Nil)$ such that $p\circ f = \id$.
+\end{prop}
+\begin{proof}
+Up to taking a finite-index subgroup we may suppose that $\Gamma$ is generated by two translations along independent vectors $(x,y)$ and $(x',y')$. We prove that two lifts $\varphi, \varphi' \in \Iso^+(\Nil)$ of these translations never commute, thus forbidding the existence of a homomorphism $f$.
+
+If $\varphi$, $\varphi' \in \Nil$, Exercise \ref{Nil:commutator:ex} gives $[\varphi, \varphi'] = xy'-x'y \neq 0$. All the other lifts are of type $g\varphi, g'\varphi'$ for some $g,g'\in \matR$, hence we get the same commutator. 
+\end{proof}
+
+Let $\Iso_0^+(\Nil)$ be the connected component of $\Iso^+(\Nil)$ containing $e$.
+
+\begin{ex} \label{isonil:nilpotente:ex}
+We have 
+$$\big[\Iso_0^+(\Nil), \Iso_0^+(\Nil)\big] = \matR.$$ 
+Therefore $\Iso_0^+(\Nil)$ is nilpotent.
+\end{ex}
+
+\begin{cor} \label{Nil:is:Nil:cor}
+If a three-manifold $M$ has a $\Nil$ geometry, then $\pi_1(M)$ is virtually nilpotent.
+\end{cor}
+\begin{proof}
+It has a nilpotent subgroup of index at most two, because
+the subgroup $\Iso_0^+(\Nil)< \Iso^+(\Nil)$ is nilpotent and has index two.
+\end{proof}
+
+\subsection{Nil geometry}
+We now classify the manifolds modelled on $\Nil$. 
+
+\begin{prop} \label{Nil:cofinite:prop}
+A discrete group $\Gamma < \Iso^+ (\Nil)$ is cofinite if and only if both $p(\Gamma)$ and $\Gamma \cap \ker p$ are discrete and cofinite.
+\end{prop}
+\begin{proof}
+We follow the proof of Proposition \ref{H2R:prop}. Up to taking finite-index subgroups we may suppose that $\Gamma<\Iso^+_0(\Nil)$.
+If $p(\Gamma)$ is discrete the proof of Proposition \ref{H2R:prop} applies also here; note that the formula (\ref{volume:product:eqn}) holds because the volume form in $\Nil$ is the standard one on $\matR^3$.
+
+If $p(\Gamma)$ is not discrete then that proof shows that there is a neighbourhood $U\subset \Iso^+(\Nil)$ of $e$ such that every two elements $f,g\in\Gamma$ projecting in $p(U)$ commute. (It is still true that $[f,g]$ depends only on $p(f)$ and $p(g)$ since $\ker p = \matR$ is central.) We deduce again that the isometries in $p(\Gamma)$ commute: hence they are either rotations fixing the same point or translations. 
+
+In the former case $\Gamma$ is not cofinite. In the latter, we get $\Gamma < \Nil$ acting as left-multiplication. Every two $f,g \in \Gamma$ projecting to $p(U)$ commute and hence project to parallel translations by Exercise \ref{Nil:commutator:ex}. As in the proof of Proposition \ref{H2R:prop} we deduce that $p(\Gamma)$ preserves a line, and hence it is not cofinite.
+\end{proof}
+
+
+\begin{cor} If the interior of a compact orientable manifold $M$ admits a finite-volume complete $\Nil$ geometry then $M$ is a closed Seifert manifold with $\chi=0$ and $e \neq 0$.
+\end{cor}
+\begin{proof}
+We have $\interior M = \Nil/_\Gamma$ with $\Gamma$ cofinite and Proposition \ref{Nil:cofinite:prop} provides a Seifert fibration $M\to S$ over a finite-area orbifold $S=\matR^2/_{p(\Gamma)}$. Finite-area flat orbifolds have $\chi(S)=0$ and are closed (there are no cusps in flat geometry), hence $M$ is closed. 
+
+We have $e\neq 0$, otherwise up to finite-index we would get $M = T\times S^1$ contradicting Proposition \ref{Nil:no:lift:prop}.
+\end{proof}
+
+We prove the converse.
+
+\begin{prop} \label{Nil:construct:prop}
+If $M$ is a closed Seifert manifold with $\chi=0$ and $e\neq 0$, then $M$ admits a $\Nil$ geometry.
+\end{prop}
+\begin{proof}
+We have
+$$ M = \big(S, (p_1,q_1), \ldots, (p_k, q_k) \big).$$
+Suppose $S$ is a closed orientable surface of genus $g\geqslant 0$. In the following $\pi_1(S)$ is the orbifold fundamental group. We have:
+\begin{align*}
+\pi_1(S) & = \langle a_1, b_1, \ldots, a_g, b_g, c_1, \ldots, c_k \ |\ [a_1,b_1]\cdots [a_g,b_g] c_1 \cdots c_k, c_i^{p_i} \rangle, \\
+\pi_1(M) & = \langle a_1, b_1, \ldots, a_g, b_g, c_1, \ldots, c_k, l \ |\ [a_1,b_1]\cdots [a_g,b_g] c_1 \cdots c_k, c_i^{p_i}l^{q_i}, \\ 
+& \qquad [a_i,l], [b_i,l] \rangle. 
+\end{align*}
+We fix any flat structure on the orbifold $S$ and get an injection $\pi_1(S) \to\Iso^+(\matR^2)$. We now want to lift this map to an injection $\pi_1(M) \to \Iso^+(\Nil)$, so that the resulting diagram commutes:
+$$
+\xymatrix{ 
+\pi_1(M) \ar@{.>}[r] \ar[d] & \Iso^+(\Nil) \ar[d] \\
+\pi_1(S)\ar[r] & \Iso^+(\matR^2)
+}
+$$
+Recall that $\Iso_0^+(\Nil)$ contains the group $\matR$ of vertical translations: we use the multiplicative notation and indicate it as $\matR_{>0}$. We note that $\matR_{>0}$ is central in $\Iso_0^+(\Nil)$ because it commutes with $\Nil$ and the isometries $\varphi$ from Proposition \ref{varphi:isometry:prop}, which altogether generate $\Iso_0^+(\Nil)$.
+
+We identify $\pi_1(S)$ with its image in $\Iso^+(\matR^2)$.
+We lift arbitrarily $a_i,b_i,c_i$ inside $\Iso^+(\Nil)$ and pick $l\in \matR_{>0}$. We get
+\begin{align*}
+[a_1,b_1]\cdots [a_g,b_g] c_1 \cdots c_k & = e^\mu, \\
+c_i^{p_i}l^{q_i} & = e^{\lambda_i}
+\end{align*}
+for some $\mu, \lambda_i \in \matR$. To get a homomorphism $\pi_1(M) \to \Iso^+(\Nil)$ we need $\mu = \lambda_i = 0$. To obtain that we change the lifts as $c_i' = e^{t_i} c_i$, $l' = e^u l$ to get
+\begin{align*}
+[a_1,b_1]\cdots [a_g,b_g] c'_1 \cdots c'_k & = e^{t_1 + \ldots + t_k + \mu}, \\
+(c'_i)^{p_i}(l')^{q_i} & = e^{t_ip_i+ uq_i + \lambda_i}.
+\end{align*}
+We want
+\begin{align*}
+t_1+\ldots + t_k &= - \mu, \\
+t_ip_i + uq_i &= - \lambda_i.
+\end{align*}
+The determinant of the $k\times k$ coefficient matrix was already calculated in the proof of Proposition \ref{Seifert:homology:prop}, and is
+$$\pm\sum \frac{q_i}{p_i} (p_1\cdots p_k)= \pm e \cdot p_1\cdots p_k \neq 0.$$
+Therefore the linear system has a unique solution $(t_1,\ldots, t_k, u)$. The lift $l'$ is necessarily non-trivial, otherwise we would get a lift $\pi_1(S) \to \Iso^+(\Nil)$ that is excluded by Proposition \ref{Nil:no:lift:prop}. Therefore the lift is injective.
+
+If $S$ is non-orientable the proof is similar and left as an exercise.
+\end{proof}
+
+\section{$\widetilde{\SL_2}$ geometry}
+The $\widetilde{\SL_2}$ geometry is similar to $\Nil$, but it is now a $\matR$-bundle over $\matH^2$. The geometry is again fully carried by the Lie group $\widetilde{\SL_2}$, which is the universal cover of both $\SL_2(\matR)$ and $\PSLR$. It is convenient to identify $\PSLR$ with the unit tangent bundle of $\matH^2$.\index{$\widetilde{\SL_2}$ geometry}
+
+\subsection{The unit tangent bundle}
+The tangent bundle $TM$ of a Riemannian $n$-manifold $M$ has a natural Riemannian structure, which we briefly introduce.
+
+The tangent space at any point $x\in TM$ splits into a \emph{vertical} subspace $V_x  = \ker dp_x$ where $p\colon TM \to M$ is the projection, and a \emph{horizontal} subspace $H_x $ determined by the metric tensor on $M$ as follows: use the parallel transport to move the tangent vector $x$ along all geodesics exiting from $p(x)$; the result is a small $n$-surface in $TM$ containing $x$ and we set $H_x$ to be its tangent space at $x$. 
+
+To define a metric on $TM$ we impose that $V_x$ and $H_x$ be orthogonal and we give to each space the metric of $T_xM$, via the natural identification $V_x = T_xM$ and via the isomorphism $dp_x\colon H_x \to T_xM$. 
+
+The \emph{unit tangent bundle} $UM\subset TM$ consists of all unitary tangent vectors and inherits a Riemannian structure. Every isometry $f\colon M \to M$ induces an isometry $df\colon UM \to UM$.
+
+
+\subsection{The space $U\matH^2$}
+We now focus on the case $M=\matH^2$ we are interested in. Parallel transport was defined explicitly in Section \ref{parallel:subsection}. 
+We represent $\matH^2$ using the upper half-plane model $H^2 = \{\Im z > 0\}$, so that $TH^2 = H^2 \times \matC$ and $UH^2 = H^2 \times S^1$ has coordinates $(z,\theta)$. The tangent space $T_{(z,\theta)}UH^2$ is naturally identified with $\matC\times \matR = \matR^3$.
+
+\begin{lemma} \label{UH2:tensor:lemma}
+The metric tensor of $UH^2$ at $(z,\theta)$ is
+$$
+\begin{pmatrix}
+2y^{-2} & 0 & y^{-1} \\
+0 & y^{-2} & 0 \\
+y^{-1} & 0 & 1 
+\end{pmatrix}
+$$
+where $z=x+iy$.
+\end{lemma}
+\begin{proof}
+We first consider the disc model $D^2$ of $\matH^2$ with $TD^2 = D^2 \times \matC$ and $T_{(z,v)} TD^2 = \matC \times \matC$.  
+We focus at a point $(0,v)$ and determine the decomposition 
+$$T_{(0,v)} = H_{(0,v)} \oplus V_{(0,v)}.$$ 
+We have $V_{(0,v)} = 0 \times \matC$ and we now determine $H_{(0,v)}$. Every geodesic through $0$ is a Euclidean line $l$ and the parallel transport of $v\in T_0D^2$ along $l$ forms a constant angle with $l$: the parallel transport of $v$ at $z\in l$ is just the rescaled vector $(1-|z|^2)v$. Parallel transports of $v$ along lines passing through $0$ form a surface, which is the graph of the function $f(z) = (1-|z|^2)v$, whose tangent plane at $0$ is $H_{(0,v)} = \matC \times 0$ since $\frac{\partial f}{\partial x} = \frac{\partial f}{\partial y} = 0$ at $0$.
+
+We have discovered that the horizontal and vertical planes at $(0,v)$ are just the coordinate ones of $T_{(0,v)} = \matC \times \matC$. By definition these are orthogonal and inherit a metric tensor from that of $T_0D^2$, which is $4$ times the Euclidean one. Therefore the metric tensor at $T_{(0,v)} = \matC^2$ is $4$ times the Euclidean one. 
+
+We now turn to the unitary sub-bundle $UD^2 = D^2 \times S^1$. We use the natural identifications $T_{(0,\theta)} UD^2 = \matC \times \matR = \matR^3$ and we deduce that the vectors $(1,0,0)$, $(0,1,0)$, $(0,0,1) \in T_{(0,\theta)}$ are orthogonal and have norm $2,2,1$ respectively. 
+
+The M\"obius transformation
+$$f(z) = \frac{z - i}{i z - 1}$$
+is an isometry between the two models $D^2$ and $H^2$ that sends $0$ to $i$. 
+It is holomorphic and its complex derivative is
+$$f'(z) = \frac{-2}{(iz-1)^2}.$$
+The isometry $f\colon D^2\to H^2$ induces an isometry $f_*\colon UD^2 \to UH^2$, that is $f_*\colon D^2\times S^1 \to H^2 \times S^1$, which is as follows:
+\begin{align*}
+f_*(z,\theta) & = \left(\frac{z-i}{iz-1}, \theta + {\rm arg} (f'(z))\right) \\
+& = \left(\frac{z-i}{iz-1}, \theta +\pi - 2 {\rm arg} (iz-1)\right)  \\
+& = \left(\frac{z-i}{iz-1}, \theta +\pi - 2 \Im \log (iz-1)\right).  
+\end{align*}
+In particular $f_*(0,\theta) = (i, \theta + \pi)$.
+Recall that the Jacobians of a holomorphic $g$ and of $\log g$ are
+$$
+Jg = \begin{pmatrix} \Re g' & -\Im g' \\ \Im g' & \Re g' \end{pmatrix},
+\quad
+J(\log g) = \begin{pmatrix} \Re \frac{g'}g & -\Im \frac{g'}g \\ \Im \frac{g'}g & \Re \frac{g'}g \end{pmatrix}.
+$$
+The differential of $f_*$ at the point $(z,\theta)$ is hence
+$$
+(df_*)_{(z,\theta)} =
+\begin{pmatrix}
+\Re \frac{-2}{(iz-1)^2} & - \Im \frac{-2}{(iz-1)^2} & 0 \\
+\Im \frac{-2}{(iz-1)^2} & \Re \frac{-2}{(iz-1)^2} & 0 \\
+-2 \Im \frac{1}{z+i} & - 2 \Re \frac{1}{z+i} & 1 
+\end{pmatrix}.
+$$
+In particular at $z=0$ we get
+$$
+(df_*)_{(0,\theta)} =
+\begin{pmatrix}
+-2 & 0 & 0 \\ 
+0 & -2 & 0 \\
+2 & 0 & 1 
+\end{pmatrix}.
+$$
+Since this is an isometry, the three image vectors $(-2,0,2)$, $(0,-2,0)$, and $(0,0,1)$ are orthogonal with norm $2,2,1$, hence $(1,0,-1)$, $(0,1,0)$, and $(0,0,1)$ form an orthonormal basis at $T_{(i,\theta+\pi)}UH^2$ and the metric tensor there is
+$$\begin{pmatrix}
+2 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 1
+\end{pmatrix}.
+$$
+The tensor is independent of $\theta$. To find its value at $(z,\theta)$ for a generic $z\in H^2$ it suffices to transport it via an isometry that sends $i$ to $z$. Every such isometry is a composition of a horizontal translation (which does not change the tensor) and a dilation $g(z) = \lambda z$ with $\lambda >0$. We have $g'(z) = \lambda$ and $g_*(z,\theta) = (\lambda z, \theta)$, therefore $dg_*$ sends the above orthonormal basis at $T_{(i,\theta)}$ to the basis $(\lambda, 0, -1)$, $(0,\lambda,0)$, $(0,0,1)$. The metric tensor at $(\lambda i, \theta)$ is hence
+$$\begin{pmatrix}
+2\lambda^{-2} & 0 & \lambda^{-1} \\
+0 & \lambda^{-2} & 0 \\
+\lambda^{-1} & 0 & 1
+\end{pmatrix}.
+$$
+The proof is complete.
+\end{proof}
+At a point $(x,y,\theta) \in UH^2$, an orthonormal basis is
+\begin{equation} \label{UH2:orthonormal:eqn}
+(y,0,-1), \quad (0,y,0), \quad (0,0,1).
+\end{equation}
+The planes orthogonal to $(0,0,1)$ form a contact structure similar to the one drawn in Figure \ref{contact:fig}. 
+
+We remark that the metric tensor at $(x,y,\theta)$ has determinant $y^{-4}$, like in the product metric $H^2 \times S^1$: therefore the volume form in $UH^2$ is the same as in the product metric (although the metric tensor is not).
+
+The non-zero Christoffel symbols at $(x,y,\theta)$ are:
+$$\Gamma^1_{12} = \Gamma^1_{21} = -\frac 3{2y}, \quad 
+\Gamma^1_{23} = \Gamma^1_{32} = -\frac 12,$$
+$$\Gamma^2_{11} = \frac 2y, \quad
+\Gamma^2_{13} = \Gamma^2_{31} = \frac 12, \quad \Gamma^2_{22} = -\frac 1y,$$
+$$\Gamma^3_{12} = \Gamma^3_{21} = \frac 1{y^2}, \quad
+\Gamma^3_{23} = \Gamma^3_{32} = \frac 1{2y}.$$
+The Ricci tensor is
+$$
+R_{ij} = \frac 12 \cdot
+\begin{pmatrix}
+-2 y^{-2} & 0 & y^{-1} \\
+0 & - 3y^{-2} & 0 \\
+y^{-1} & 0 & 1
+\end{pmatrix}.
+$$
+When $y=1$ we can represent the Ricci tensor in the orthonormal basis (\ref{UH2:orthonormal:eqn}) and get a diagonal matrix with values $-\frac 32$, $-\frac 32$, $\frac 12$. For a vector $v\in T_{(z,\theta)} U\matH^2$, recall that $R_{ij}v_iv_j$ is twice the average value of the sectional curvatures of the planes containing $v$: this average value ranges from $-\frac 34$ to $\frac 14$ and is maximal when $v=(0,0,\pm 1)$. This holds when $y=1$ and hence for any $z\in U\matH^2$ by acting via isometries of $\matH^2$. 
+
+\subsection{$\widetilde{\SL_2}$ geometry}
+Let $\widetilde {\SL_2}$ be the universal cover of $\SL_2 = \SL_2(\matR)$. 
+As a universal cover of a Lie group, it is also a Lie group.
+We have coverings
+$$\widetilde{\SL_2} \longrightarrow \SL_2 \longrightarrow \PSLR = \Iso^+(\matH^2).$$
+The group $\PSLR$ acts freely and transitively on $U\matH^2$ and hence we can identify $\PSLR$ with $U\matH^2$. With this identification $\PSLR$ inherits a left-invariant Riemannian metric that lifts to a left-invariant Riemannian metric on the Lie group $\widetilde{\SL_2}$. 
+
+In the previous section we have identified $U\matH^2$ with $H^2 \times S^1$ and we can likewise identify $\widetilde{\SL_2}$ with $H^2 \times \matR$, and get an explicit metric tensor from Lemma \ref{UH2:tensor:lemma}.
+
+Since $U\matH^2$ is a circle bundle over $\matH^2$, likewise $\widetilde{\SL_2}$ is a line bundle over $\matH^2$. The group $\matR$ acts isometrically on $\widetilde \SL_2$ by translating every fibre.
+
+\begin{prop}
+Every isometry of $\widetilde{\SL_2}$ preserves the line bundle and induces an isometry of $\matH^2$. We have
+$$0 \longrightarrow \matR \longrightarrow \Iso^+(\widetilde{\SL_2}) \stackrel p\longrightarrow \Iso(\matH^2) \longrightarrow 0.$$
+The group $\Iso^+(\widetilde{\SL_2})$ has two components. 
+\end{prop}
+\begin{proof}
+The groups $\matR$ and $\widetilde{\SL_2}$ belong to the component $\Iso^+_\circ (\widetilde{\SL_2})$ containing $e$ which has dimension at least $1+3=4$. We conclude as in the proof of Proposition \ref{Nil:isometries:prop}.
+\end{proof}
+
+\begin{ex}
+The unit tangent bundle of a finite-area complete hyperbolic surface is naturally a manifold modelled on $\widetilde{\SL_2}$.
+\end{ex}
+
+As for $\Nil$, cocompact groups do no lift.
+
+\begin{prop} \label{SL2:no:lift:prop}
+Let $\Gamma < \Iso(\matH^2)$ be discrete and cocompact. There is no homomorphism $f\colon \Gamma \to \Iso^+(\widetilde{\SL_2})$ such that $p\circ f = \id$.
+\end{prop}
+\begin{proof}
+Up to taking a finite index subgroup we may suppose that $\Gamma$ acts freely and hence $S=\matH^2/_\Gamma$ is a closed hyperbolic surface. If $\Gamma$ lifts, consider the group $G< \Iso^+(\widetilde{\SL_2})$ generated by $f(\Gamma)$ and $2 \pi\in \matR$, isomorphic to $\Gamma \times \matZ$. The quotient $\widetilde{\SL_2}/_G$ is naturally the unit tangent bundle of $S$ and is hence the Seifert manifold $\big(S, (1, \chi(S))\big)$ by Remark \ref{bundle:oss}. Its fundamental group is however not a product $\Gamma \times \matZ$ by Exercise \ref{bundle:ex}.
+\end{proof}
+
+\begin{prop} \label{SL2:cofinite:prop}
+A discrete group $\Gamma < \Iso^+(\widetilde{\SL_2})$ is cofinite if and only if both $p(\Gamma)$ and $\Gamma \cap \ker p$ are discrete and cofinite.
+\end{prop}
+\begin{proof}
+Same proof as Proposition \ref{H2R:prop}, with a minor variation: if $p(\Gamma)$ is not discrete, up to taking an index-two subgroup we suppose that $p(\Gamma) <  \Iso^+(\matH^2)$; the $\matR$-action commutes with $\Gamma$ and $[f,g]$ depends only on $p(f)$ and $p(g)$, so that proof applies.
+\end{proof}
+
+We now classify the manifolds having a $\widetilde{\SL_2}$ geometry.
+
+\begin{cor}
+If the interior of a compact orientable manifold $M$ admits a finite-volume complete $\widetilde{\SL_2}$ geometry then $M$ is a Seifert manifold with $\chi<0$. If $M$ is closed then $e\neq 0$.
+\end{cor}
+\begin{proof}
+We have $\interior M= \widetilde{\SL_2}/_\Gamma$ with $\Gamma$ cofinite. Proposition \ref{SL2:cofinite:prop} furnishes a Seifert fibration $M\to S$ over the finite-area orbifold $S=\matH^2/_{p(\Gamma)}$. If $M$ is closed we get $e\neq 0$: if not, up to taking a finite index subgroup we would get $M=S\times S^1$ contradicting Proposition \ref{SL2:no:lift:prop}.
+\end{proof}
+
+We now prove the converse.
+
+\begin{prop}
+If $M$ is a Seifert manifold with $\chi<0$ and either $\partial M\neq \emptyset$ or $e\neq 0$, the interior of $M$ admits a finite-volume $\widetilde{\SL_2}$ geometry.
+\end{prop}
+\begin{proof}
+If $M$ is closed we apply the proof of Proposition \ref{Nil:construct:prop}. If $\partial M \neq \emptyset$ the presentations of $\pi_1(S)$ and $\pi_1(M)$ are as described there, except that they do not contain the relator $c_i^{p_i}$ whenever $c_i$ represents a boundary component of $M$. So we have less constraints and we easily see that a solution to the final linear problem exists also in this case. 
+\end{proof}
+
+\section{Sol geometry}
+The $\Sol$ geometry is the least symmetric one among the eight. It has a bundle structure, but with a one-dimensional basis: it is a $\matR^2$-bundle over $\matR$. Again, the geometry is fully governed by a Lie group $\Sol$.\index{$\Sol$ geometry}
+
+\subsection{The Lie group Sol}
+The Lie group $\Sol$ is the space $\matR^3$ equipped with the following operation
+$$(x,y,z)\cdot(x',y',z') = (x+ e^{-z}x', y+e^zy', z+z').$$
+\begin{ex} \label{Sol:conti:ex}
+We have
+\begin{align*}
+(x,y,z)^{-1} & = (-xe^z, -ye^{-z}, -z), \\
+[(x,y,z),(x',y',z')] & = \big(x(1\!-\!e^{-z'}) - x'(1\!-\!e^{-z}), y(1\!-\!e^{z'}) - y'(1\!-\!e^z), 0\big), \\
+[(x,y,z), (x',y',0)] & = \big(- x'(1-e^{-z}), - y'(1 - e^z), 0\big). \
+\end{align*}
+\end{ex}
+The subgroup $\matR^2$ consisting of all elements $(x,y,0)$ is the centre of $\Sol$ and by setting $p(x,y,z)=z$ we get an exact sequence
+$$0 \longrightarrow \matR^2 \longrightarrow \Sol \stackrel p \longrightarrow \matR \longrightarrow 0.$$
+Therefore $\Sol$ is a plane bundle over $\matR$. Exercise \ref{Sol:conti:ex} implies the following.
+\begin{ex} We have $[\Sol, \Sol] = \matR^2$ and hence $\Sol$ is solvable. However $[\Sol, \matR^2] = \matR^2$ and hence $\Sol$ is not nilpotent.
+\end{ex}
+
+We define a Riemannian metric on $\Sol$ by assigning the scalar product
+$$\begin{pmatrix}
+e^{2z} & 0 & 0 \\
+0 & e^{-2z} & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+$$
+to the point $(x,y,z)$. The metric is left-invariant and every plane $z=k$ is isometric to the Euclidean $\matR^2$. This is the geometry with the smallest amount of symmetries.
+
+We remark that the metric tensor has unit determinant at every point: therefore the volume form on $\Sol$ is the standard one on $\matR^3$.
+
+The non-zero Christoffel symbols at $(x,y,z)$ are
+$$\Gamma^1_{13} = \Gamma^1_{31} = 1,$$
+$$\Gamma^2_{23} = \Gamma^2_{32} = -1,$$
+$$\Gamma^3_{11} = -e^{2z}, \quad \Gamma^3_{22} = e^{-2z}.$$
+The Ricci tensor is
+$$\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & -2
+\end{pmatrix}.
+$$
+The average value of the sectional curvatures of the planes containing $v\in T_{(x,y,z)} \Sol$ ranges from $-1$ to $0$, and is minimal when $v=(0,0,\pm 1)$.
+
+\subsection{Sol geometry}
+We start with a simple exercise.
+\begin{ex} \label{D8:ex}
+The eight maps 
+$$(x,y,z) \mapsto (\pm x, \pm y,z), \qquad (x,y,z) \mapsto (\pm y, \pm x, -z)$$
+are isometries and form the dihedral group $D_8$. The orientation-preserving ones form the subgroup $D_4 = \matZ_2 \times \matZ_2$.
+\end{ex}
+Let $\Iso_*(\matR^2) < \Iso(\matR^2)$ be the subgroup consisting of all maps $v\mapsto \pm v +b$. It has two components, one being the translations $\matR^2$.
+\begin{prop}
+Every isometry of $\Sol$ preserves the plane bundle and induces an isometry of $\matR$. We have
+$$0 \longrightarrow \Iso_*(\matR^2) \longrightarrow \Iso^+(\Sol) \stackrel p \longrightarrow \Iso(\matR) \longrightarrow 0.$$
+The group $\Iso^+(\Sol)$ has four components, one of which is $\Sol$ acting by left-multiplication. 
+\end{prop}
+\begin{proof}
+The group $\Sol$ acts transitively and freely on $\Sol$ itself, and to conclude it suffices to check that the stabiliser of the origin $0$ is the dihedral $D_4$ described in Exercise \ref{D8:ex}. 
+
+The Ricci tensor tells us that an isometry fixing a point also fixes the vertical axis and the horizontal plane. Therefore the vertical unitary constant vector field $X=(0,0,1)$ is preserved up to sign by any isometry of $\Sol$. The covariant differentiation $v \mapsto \nabla_v X$ defines an endomorphism of $T_p \Sol$ for all $p \in \Sol$. We have $\nabla_{e_i} X = \Gamma_{i3}^ke_k$ and therefore the endomorphism is
+$$\begin{pmatrix}
+1 & 0 & 0 \\
+0 & -1 & 0 \\
+0 & 0 & 0 
+\end{pmatrix}.
+$$
+The three coordinate axis are precisely the eigenvectors of the endomorphism, and being intrinsically defined they are preserved by every isometry. Therefore the orientation-preserving stabiliser of a point is $D_4$.
+\end{proof}
+
+
+\begin{prop}
+A discrete group $\Gamma < \Iso^+(\Sol)$ is cofinite if and only if both $p(\Gamma)$ and $\Gamma \cap \ker p$ are discrete and cofinite.
+\end{prop}
+\begin{proof}
+If $p(\Gamma)$ is discrete we get
+$$\Vol \big(\Sol/_\Gamma \big) = {\rm Length}(\matR/_{p(\Gamma)}) \times \Area\big(\matR^2/ _{\Gamma \cap \ker p}\big). $$
+This formula is proved as above by taking a fundamental domain for $p(\Gamma)$. We now prove that $p(\Gamma)$ is in fact discrete (since $\Gamma$ is).
+
+Up to taking an index-four subgroup we suppose that $\Gamma < \Sol$. 
+If $\gamma \in \Sol$ does not lie in $\matR^2$, then it fixes a vertical line. To prove that, note that $\gamma = (x,y,z)$ acts on $\matR^3$ as an affine transformation, which permutes the vertical lines and acts on $\matR^2$ as $(x',y') \mapsto (x+e^{-z}x', y+e^zy')$. If $z \neq 0$ this map has a fixed point (because $1$ is not an eigenvalue of its linearisation).
+
+If $\Gamma$ is abelian, either it is contained in $\matR^2$ or it fixes a vertical line: in both cases we get a discrete $p(\Gamma)$. If $\Gamma$ is non-abelian, then $[\Gamma, \Gamma]<\matR^2$ is non-trivial so $\Gamma$ contains a non-trivial element $\gamma \in \matR^2$ and another $\eta \not \in \matR^2$. The elements $\gamma$ and $\eta\gamma\eta^{-1}$ are both in $\matR^2$ and independent, hence $\matR^2 /_{\Gamma \cap \ker p}$ is compact. This implies easily that $p(\Gamma)$ is discrete (since $\Gamma$ is).
+\end{proof}
+
+We now classify the manifolds modelled on $\Sol$. Recall that every semi-bundle is doubly covered by a canonical bundle. A torus bundle is \emph{of Anosov type} if its monodromy is Anosov. A torus semi-bundle is of Anosov type if its double-covering is.
+
+\begin{prop} \label{Sol:bundle:prop}
+The interior of a compact orientable manifold $M$ admits a finite-volume complete $\Sol$ geometry if and only if it is a torus (semi-)bundle of Anosov type.
+\end{prop}
+\begin{proof}
+If $\interior M= \Sol/_\Gamma$ has finite volume, then both $\Gamma \cap \ker p$ and $p(\Gamma)$ are discrete and cofinite. The horizontal foliation of $\Sol$ into Euclidean planes $z=k$ is preserved by $\Gamma$ and projected to a surface bundle over the 1-orbifold $\matR /_{p(\Gamma)}$, which is either $S^1$ or an interval. The fibres are flat and have finite area, hence they are tori or Klein bottles. 
+
+If $p(\Gamma)$ acts by translations, then $M$ is a torus bundle with an Anosov monodromy $\pm\matr {e^{-z}} 0 0 {e^z}$ for some $z>0$. If $M$ is a semi-bundle, this holds on its double-covering.
+
+Conversely, let $M_A$ be a torus bundle with Anosov monodromy $A\in \SLZ$. We have $M_A = \matR^3/_\Gamma$ where $\Gamma$ is generated by the affine maps
+$$(x,y,z) \mapsto (x+1,y,z), \quad (x,y,z) \mapsto (x,y+1,z), \quad (\bar x,z) \mapsto 
+(A\bar x, z+h)$$
+where $\bar x = (x,y)$ and $h>0$ is any positive number. A linear isomorphism $\psi$ of $\matR^2$ conjugates $A$ into a diagonal matrix $\pm\matr {e^{-a}} 0 0 {e^a}$ for some $a>0$ and transforms the generators into
+$$(\bar x,z) \mapsto (\bar x +\bar v ,z), \ (\bar x,z) \mapsto (\bar x + \bar w, z), \ (x,y,z) \mapsto (\pm e^{-a}x, \pm e^{a}y, z+h)$$
+where $\bar v = \psi(1,0)$ and $\bar w = \psi(0,1)$. If $\tr A>0$ and $h=a$ these maps are left-multiplications by the following elements of $\Sol$:
+$$(\bar v,0), \quad (\bar w,0), \quad (\bar 0,a)$$
+where $\bar 0 = (0,0)$, and we are done. If $\tr A <0$ we compose the third generator with the isometry $(x,y,z)\mapsto (-x,-y,z)$. 
+
+If $M$ is a semi-bundle double-covered by $M_A$, we represent it as $\matR^3/_{\Gamma'}$ where $\Gamma'$ is generated by the group $\Gamma$ representing $M_A$ plus the element
+$$(x,y,z) \mapsto \left(x+\frac 12, -y, -z\right)$$
+which will be transformed via $\psi$ into an isometry of $\Sol$.
+\end{proof}
+
+\begin{cor} \label{Sol:not:Nil:cor}
+If a closed three-manifold $M$ has a $\Sol$ geometry, then $\pi_1(M)$ is virtually solvable but not virtually nilpotent.
+\end{cor}
+\begin{proof}
+It is virtually solvable because $\Sol$ has finite index in $\Iso^+(\Sol)$. The proof of Proposition \ref{Sol:bundle:prop} shows that
+up to finite index $M=\Sol/_\Gamma$ and $\Gamma$ is generated by
+$$(\bar v,0), \quad (\bar w,0), \quad (\bar 0,a).$$
+Exercise \ref{Sol:conti:ex} implies that $[(\bar 0,a), (\bar v,0)] = (\bar v',0)$ for some $\bar v' \neq 0$ and hence $\Gamma$ is not nilpotent. This holds for any $\Gamma$ of this kind, and therefore $\Gamma$ is not virtually nilpotent, either.
+\end{proof}
+
+\section{Summary}
+We have proudly completed the proof of Theorem \ref{Seifert:geometrisation:teo}. We state that theorem again here:
+
+\begin{teo} 
+A closed orentable 3-manifold has a geometric structure modelled on one of the following six geometries:
+$$S^3,\ \matR^3,\ S^2\times \matR,\ \matH^2\times \matR,\ \Nil,\ \widetilde{\SL_2}$$
+if and only if it is a Seifert manifold of the appropriate commensurability class, as prescribed by Table \ref{Seifert:geometry:table}. It has a $\Sol$ geometric structure if and only if it is a torus (semi-)bundle of Anosov type.
+\end{teo}
+
+We can deduce that the eight geometries are mutually exclusive:
+
+\begin{prop}
+Two closed 3-manifolds admitting different geometries are not diffeomorphic, and not even commensurable.
+\end{prop}
+\begin{proof}
+We already know that the six Seifert geometries form six distinct commensurability classes. A manifold of type $\Sol$ is not Seifert by Proposition \ref{torus:bundle:prop}. A closed hyperbolic manifold is neither Seifert nor Sol because its fundamental group is infinite and does not contain an infinite normal abelian subgroup by Corollary \ref{normal:abelian:cor} (as opposite to the other geometries, see Proposition \ref{infinite:K:prop}).
+
+Two manifolds having different geometries cannot be commensurable, since a common finite cover would inherit both geometries. 
+\end{proof}
+
+In fact one can tell the geometry of the manifold directly from its fundamental group. 
+
+\begin{prop}
+Let $M$ be a closed manifold modelled on one $\matX$ of the eight geometries; this flowchart shows how to determine $\matX$ from $\pi_1(M)$:
+\begin{itemize}
+\item if $\pi_1(M)$ is finite, then $\matX = S^3$; otherwise
+\item if $\pi_1(M)$ is virtually cyclic, then $\matX = S^2\times \matR$; otherwise
+\item if $\pi_1(M)$ is virtually abelian, then $\matX = \matR^3$; otherwise
+\item if $\pi_1(M)$ is virtually nilpotent, then $\matX = \Nil$; otherwise
+\item if $\pi_1(M)$ is virtually solvable, then $\matX = \Sol$; otherwise
+\item if $\pi_1(M)$ contains a normal cyclic group $K$, then:
+\begin{itemize}
+\item if a finite-index subgroup of the quotient lifts, then $\matX = \matH^2 \times \matR$, 
+\item otherwise $\matX = \widetilde{\SL_2}$; 
+\end{itemize}
+\item otherwise $\matX = \matH^3$.
+\end{itemize}
+\end{prop}
+\begin{proof}
+The virtually abelian cases were settled in Section \ref{virtually:abelian:subsection}. The $\Nil$ and $\Sol$ geometries were considered by Corollaries \ref{Nil:is:Nil:cor} and \ref{Sol:not:Nil:cor}. 
+
+If $\matX = \matH^2\times \matR$ or $\widetilde{\SL_2}$ then 
+$\pi_1(M)$ surjects onto $\pi_1(S)$ for some closed hyperbolic surface $S$. 
+This implies that $\pi_1(M)$ is not solvable, for otherwise
+(by Propositions \ref{subgroup:prop} and \ref{solvable:normal:prop})
+the group $\pi_1(S)$ would also be, and hence it would contain a normal cyclic subgroup, contradicting Corollary \ref{normal:abelian:cor}.
+
+If $\matX = \widetilde{\SL_2}$ then $\pi_1(S) = \pi_1(M)/_K$ and no finite-index subgroup of $\pi_1(S)$ can lift to $\pi_1(M)$ by Proposition \ref{SL2:no:lift:prop}.
+
+Finally, if $\matX=\matH^3$ then $\pi_1(M)$ contains no normal cyclic group $K$ by Corollary \ref{normal:abelian:cor} again.
+\end{proof}
+
+The boundary case is slightly different. Of the eight geometries, only three produce non-compact finite-volume complete orientable manifolds:
+$$\matH^3,\ \matH^2 \times \matR,\ \widetilde{\SL_2}.$$
+These non-compact finite-volume manifolds are diffeomorphic to the interior of a compact manifold $M$ with boundary consisting of tori.
+
+\begin{teo}
+Let $M$ be a compact orientable 3-manifold with boundary consisting of tori. The following are equivalent:
+\begin{itemize}
+\item $M$ has a finite-volume complete $\matH^2 \times \matR$ structure,
+\item $M$ has a finite-volume complete $\widetilde{\SL_2}$ structure,
+\item $M$ is Seifert with $\chi<0$.
+\end{itemize}
+\end{teo}
+
+In contrast with the closed case, a non-closed $M$ may admit two different geometric structures of Seifert type. On the other hand, a manifold $M$ cannot admit both a hyperbolic and a Seifert structure. 
+
+\section{The geometrisation conjecture} \label{geometrisation:section}
+
+We can finally state the famous Geometrisation Conjecture, proposed by Thurston in 1982 and proved twenty years later by Perelman in 2002.
+
+\subsection{Statement and main consequences}
+We say that a compact 3-manifold with (possibly empty) boundary consisting of tori is \emph{geometric} if its interior has a finite-volume complete geometric structure modelled on one of the eight geometries:\index{three-manifold!geometric three-manifold} 
+$$S^3,\ \matR^3,\ \matH^3,\ S^2\times \matR,\ \matH^2\times \matR,\ \Nil,\ \Sol,\ \widetilde{\SL_2}.$$
+The following conjecture was formulated by Thurston in 1982:\index{geometrisation conjecture}
+
+\begin{conj}[Geometrisation Conjecture]
+Let $M$ be an irreducible orientable compact 3-manifold with (possibly empty) boundary consisting of tori. Every block of the geometric decomposition of $M$ is geometric.
+\end{conj}
+
+The conjecture has been proved by Perelman in 2002 and its proof goes very very far from the scope of this book. It is however quite easy to deduce important consequences from it.
+
+\begin{conj}[Poincar\'e conjecture] \label{Poincare:conj}
+Every simply connected closed 3-manifold $M$ is diffeomorphic to $S^3$.
+\end{conj}
+\begin{proof}[Proof using geometrisation]
+Via the prime decomposition we may restrict to the case $M$ is prime, hence irreducible. The group $\pi_1(M)$ is trivial and hence does not contain $\matZ \times \matZ$: every torus in $M$ is thus compressible and the geometric decomposition is trivial. By geometrisation $M$ is itself geometric. The only geometry with finite fundamental groups is $S^3$, and hence $M= S^3/_\Gamma$ is elliptic. Since $M$ is simply connected, the group $\Gamma = \pi_1(M)$ is trivial and hence $M=S^3$.
+\end{proof}
+
+\begin{conj}[Elliptisation]  \label{finite:conj}
+Every closed 3-manifold $M$ with finite $\pi_1(M)$ is elliptic.
+\end{conj}
+\begin{proof}[Proof using geometrisation]
+Same proof as above. Note that this is \emph{not} a consequence of Poincar\'e conjecture in general, for a manifold covered by $S^n$ needs not to be elliptic a priori.
+\end{proof}
+
+\begin{conj}[Hyperbolisation] \label{hyperbolisation:conj}
+Every closed irreducible 3-manifold $M$ with infinite $\pi_1(M)$ not containing $\matZ \times \matZ$ is hyperbolic.
+\end{conj}
+\begin{proof}[Proof using geometrisation]
+Since $\pi_1(M)$ does not contain $\matZ\times \matZ$ every torus is compressible and the geometric decomposition of $M$ is trivial. By geometrisation $M$ is geometric. Its geometry is not $S^3$ since $\pi_1(M)$ is infinite, and is not $S^2\times \matR$ since $M$ is irreducible. In the other Seifert geometries and in $\Sol$ the fundamental group $\pi_1(M)$ always contain a $\matZ\times \matZ$ (there is always a finite covering containing an incompressible torus).
+\end{proof}
+
+\begin{cor} 
+Let $\tilde M \to M$ be a finite covering. If $\tilde M$ is geometric, then $M$ also is (with the same geometry).
+\end{cor}
+\begin{proof}[Proof using geometrisation]
+Note that this is stronger than Conjecture \ref{finite:conj}. 
+Since $\tilde M$ is geometric, it is irreducible and hence also $M$ is. Proposition \ref{JSJ:lifts:prop} implies that the geometric decomposition of $M$ is trivial, and by geometrisation $M$ is geometric.
+\end{proof}
+
+Concerning bounded manifolds, we get the following simple statement.
+
+\begin{cor} \label{simple:bounded:hyperbolic}
+Every simple compact manifold $M$ bounded by a non-empty collection of tori is hyperbolic.
+\end{cor}
+\begin{proof}[Proof using geometrisation]
+Being simple, it is geometric. Seifert manifolds with boundary are never simple.
+\end{proof}
+
+That statement is not true for closed manifolds, because many Seifert manifolds fibering over $S^2$ with at most 3 singular fibres are simple. 
+
+\subsection{Surface bundles}
+There is a nice way to formulate geometrisation for surface bundles. 
+We start with the much simpler torus case.
+
+\begin{prop}
+Let $M_A$ be a torus bundle with monodromy $A \neq \pm I$. The following holds:
+\end{prop}
+\begin{itemize}
+\item if $|\tr A|<2$, \emph{i.e.}~$A$ has finite order, then $M_A$ is flat;
+\item if $|\tr A|=2$, \emph{i.e.}~$A$ is reducible, then $M_A$ is $\Nil$;
+\item if $|\tr A|>2$, \emph{i.e.}~$A$ is Anosov, then $M_A$ is $\Sol$.
+\end{itemize}
+\begin{proof}
+Use Proposition \ref{torus:bundle:prop}.
+\end{proof}
+
+We now turn to the generic case. Let $\Sigma$ be a closed orientable surface with $\chi(\Sigma)<0$.
+\begin{teo} \label{fibering:geometrisation:teo}
+Let $M_\psi$ be a surface bundle with fibre $\Sigma$ and monodromy $\psi \in \MCG(\Sigma)$. The following holds:
+\begin{itemize}
+\item if $\psi$ has finite order, then $M_\psi$ has a $\matH^2 \times \matR$ geometry,
+\item if $\psi$ is reducible, then $M_\psi$ contains an essential torus,
+\item if $\psi$ is pseudo-Anosov, then $M_\psi$ is hyperbolic.
+\end{itemize}
+\end{teo}
+\begin{proof}[Proof using geometrisation]
+Use Proposition \ref{trichotomy:prop}.
+\end{proof}
+
+Theorem \ref{fibering:geometrisation:teo} was initially proved by Thurston in the 1980s. In the same years Thurston also proved the geometrisation conjecture for all Haken 3-manifolds. Before Perelman's proof the conjecture was open ``only'' in the non-Haken case, and it naturally split in three parts: the Conjectures \ref{Poincare:conj}, \ref{finite:conj}, and \ref{hyperbolisation:conj}. Perelman's proof certifies geometrisation in all cases with a unified technique.
+
+\subsection{References}
+This chapter contains many technical proofs. Most of them were taken from Scott \cite{S}, that is the standard reference on the geometrisation of Seifert manifolds, and Thurson's book \cite{Th_book}. We have also consulted a nice survey of Bonahon \cite{B3}, that contains in particular the suggestion of calculating the Ricci tensors in the non-product geometries. Thurson's geometrisation conjecture appears in \cite{Th_conj} in 1982, while Perelman's proof consists of three papers that he sent to the arXiv in 2003 \cite{Pe1, Pe2, Pe3}.
+

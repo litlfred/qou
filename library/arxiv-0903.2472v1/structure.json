@@ -5,7 +5,13 @@
   "file": "0903.2472v1.pdf",
   "sha256": "637cfd1d4d833c029b7c05ca0da874c71320e19c4c695425163beabb83d14f7d",
   "bytes": 808783,
-  "pages": 61
+  "pages": 61,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,1284 +22,1310 @@
   },
   "doi": null,
   "title": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group",
-  "authors_raw": "Tudor Dimofte,1 Sergei Gukov, 1,2 Jonatan Lenells, 3 and Don Zagier 4,5",
-  "abstract": "We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with comple x gauge group GC, sometimes in multiple ways. In the background of a non-abelian irreduc ible ﬂat connection, per- turbative GC invariants turn out to be interesting topological invarian ts, which are very diﬀerent from ﬁnite type (Vassiliev) invariants obtained in a theory with compact gauge group G. We explore various aspects of these invariants and present an example where we compute them explicitly to high loop order. We also introd uce a notion of “arithmetic TQFT” and conjecture (with supporting numerical evidence) thatSL(2, C) Chern-Simons theory is an example of such a theory. CALT-68-2716",
-  "docinfo": {
-   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180530134935-04'00'",
-   "Creator": "dvips(k) 5.95a Copyright 2005 Radical Eye Software",
-   "Title": "arXiv:0903.2472v1  [hep-th]  13 Mar 2009"
-  },
+  "authors_raw": "Tudor Dimofte,1 Sergei Gukov,1,2 Jonatan Lenells,3 and Don Zagier4,5",
   "title_lines": [
    "Exact Results for Perturbative Chern-Simons Theory",
    "with Complex Gauge Group"
-  ]
+  ],
+  "abstract": "We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with complex gauge group GC, sometimes in multiple ways. In the background of a non-abelian irreducible \ufb02at connection, per- turbative GC invariants turn out to be interesting topological invariants, which are very di\ufb00erent from \ufb01nite type (Vassiliev) invariants obtained in a theory with compact gauge group G. We explore various aspects of these invariants and present an example where we compute them explicitly to high loop order. We also introduce a notion of \u201carithmetic TQFT\u201d and conjecture (with supporting numerical evidence) that SL(2, C) Chern-Simons theory is an example of such a theory. CALT-68-2716",
+  "docinfo": {
+   "Title": "arXiv:0903.2472v1  [hep-th]  13 Mar 2009",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.95a Copyright 2005 Radical Eye Software",
+   "CreationDate": "D:20180530134935-04'00'"
+  },
+  "title_raw": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:0903.2472v1 [hep-th] 13 Mar 2009",
+   "heading": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group",
+   "text": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "California Institute of Technology, Pasadena, CA 91125, US A",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Department of Physics and Department of Mathematics,",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Centre for Mathematical Sciences, Wilberforce Road,",
-   "page": 1,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Max-Planck-Institut f¨ ur Mathematik, Vivatsgasse 7, D-53 111 Bonn, Germany",
-   "page": 1,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Coll` ege de France, 3 rue d’Ulm, F-75005 Paris, France",
-   "page": 1,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Perturbation theory around a non-trivial ﬂat connection",
+   "title": "Introduction and summary",
    "page": 10,
    "source": "inferred",
-   "number": "2"
+   "number": "1",
+   "confidence": 0.5,
+   "evidence": [
+    "latex"
+   ],
+   "page_label": "9"
+  },
+  {
+   "level": 1,
+   "title": "Perturbation theory around a non-trivial flat connection",
+   "page": 10,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
   },
   {
    "level": 2,
-   "title": "F eynman diagrams and arithmetic TQFT",
+   "title": "Feynman diagrams and arithmetic TQFT",
    "page": 10,
    "source": "inferred",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
   },
   {
    "level": 2,
-   "title": "Quantization of Mﬂat (GC, Σ)",
+   "title": "Quantization of ${{\\cal M}}_{{\\rm flat}} (G_{{\\mathbb{C}}}, \\Sigma)$",
    "page": 15,
    "source": "inferred",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "14"
   },
   {
    "level": 3,
    "title": "Analytic continuation",
    "page": 18,
    "source": "inferred",
-   "number": "2.2.1"
-  },
-  {
-   "level": 1,
-   "title": "(M ;u)",
-   "page": 19,
-   "source": "inferred",
-   "number": "0"
+   "number": "2.2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
   },
   {
    "level": 3,
-   "title": "A hierarchy of diﬀerential equations",
+   "title": "A hierarchy of differential equations",
    "page": 20,
    "source": "inferred",
-   "number": "2.2.2"
-  },
-  {
-   "level": 1,
-   "title": "(u +jℏ)− 1",
-   "page": 20,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "S′′′",
-   "page": 21,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "S′′",
-   "page": 21,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(u) = const +",
-   "page": 22,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u)− const =",
-   "page": 22,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u), and it never aﬀects the higher-order terms S(α)",
-   "page": 22,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u) = i",
-   "page": 23,
-   "source": "inferred",
-   "number": "0"
+   "number": "2.2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Classical and quantum symmetries",
    "page": 23,
    "source": "inferred",
-   "number": "2.3"
-  },
-  {
-   "level": 1,
-   "title": "A ∧ A ∧ A",
-   "page": 23,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(u) = S(α)",
-   "page": 24,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u) (mod 2 πu). (2.58)",
-   "page": 24,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u). Note that in the",
-   "page": 25,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u) =−S(α)",
-   "page": 25,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u) (mod 2 πu), (2.66)",
-   "page": 25,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "Vol (M ;u) behavior of the geometric and conjugate branches",
-   "page": 25,
-   "source": "inferred",
-   "number": "2"
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Brane quantization",
    "page": 25,
    "source": "inferred",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "24"
   },
   {
    "level": 1,
-   "title": "A state integral model for perturbative SL(2,C) Chern-Simons theory",
+   "title": "A state integral model for perturbative $SL(2,{\\mathbb{C}})$ Chern-Simons theory",
    "page": 27,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Ideal triangulations of hyperbolic 3-manifolds",
    "page": 27,
    "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 1,
-   "title": "(Log(z) +πiq)(Log(1−z) +πir) + π2qr",
-   "page": 31,
-   "source": "inferred",
-   "number": "2"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "26"
   },
   {
    "level": 2,
-   "title": "Hikami’s invariant",
+   "title": "Hikami's invariant",
    "page": 32,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "Quantum dilogarithm",
    "page": 34,
    "source": "inferred",
-   "number": "3.3"
-  },
-  {
-   "level": 1,
-   "title": "The asymptotic formula (3.18) can be reﬁned to the asymptoti c expansion",
-   "page": 35,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "The function (x;q)∞ and its reciprocal have the Taylor expansions",
-   "page": 35,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The function Φ( z;τ ) deﬁned (initially for Re ( τ ) > 0 and |Re (z)| < 1",
-   "page": 36,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Re (τ ))",
-   "page": 36,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The functional equations (3.33) show that",
-   "page": 37,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "From (3.30) we also ﬁnd the Taylor expansion of I(z;τ ) at z = 0,",
-   "page": 37,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "The quantum dilogarithm is related via the Jacobi triple pro duct formula to the Jacobi",
-   "page": 38,
-   "source": "inferred",
-   "number": "6"
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "33"
   },
   {
    "level": 2,
-   "title": "A state integral model for Z (ρ)(M ; ℏ)",
+   "title": "A state integral model for $Z^{(\\rho)} (M;\\hbar)$",
    "page": 39,
    "source": "inferred",
-   "number": "3.4"
-  },
-  {
-   "level": 1,
-   "title": "(u) = V (p(geom)(u),u ). (3.45)",
-   "page": 39,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u) and matrix elements (3.13)-",
-   "page": 39,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u) = V (p(α)(u),u ) (3.47)",
-   "page": 40,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u)− 1",
-   "page": 42,
-   "source": "inferred",
-   "number": "0"
+   "number": "3.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "38"
   },
   {
    "level": 1,
    "title": "Examples and computations",
    "page": 43,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "42"
   },
   {
    "level": 2,
-   "title": "Numerical veriﬁcation of the arithmeticity conjecture",
+   "title": "Numerical verification of the arithmeticity conjecture",
    "page": 44,
    "source": "inferred",
-   "number": "4.1"
-  },
-  {
-   "level": 1,
-   "title": "(0) = s1 + 1",
-   "page": 45,
-   "source": "inferred",
-   "number": "1"
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "43"
   },
   {
    "level": 2,
-   "title": "Perturbative SL(2, C) invariants for the ﬁgure-8 knot complement",
+   "title": "Perturbative $SL(2,{\\mathbb{C}})$ invariants for the figure-8 knot complement",
    "page": 48,
    "source": "inferred",
-   "number": "4.2"
-  },
-  {
-   "level": 1,
-   "title": "Re (z)≤ Im (z), Im (z)≤ 1√",
-   "page": 49,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(1− Re (z))}",
-   "page": 49,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Re (z)≤ Im (z)≤ 1√",
-   "page": 49,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Re (z)} (4.22)",
-   "page": 49,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(Vol (M ; 0) +iCS(M ; 0)) +",
-   "page": 50,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(Vol (M ;u) +iCS(M ;u)) +vgeom(u)Re (u) +iπu, (4.33)",
-   "page": 50,
-   "source": "inferred",
-   "number": "2"
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "47"
   },
   {
    "level": 3,
    "title": "Quantization",
    "page": 51,
    "source": "inferred",
-   "number": "4.2.1"
+   "number": "4.2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "50"
   },
   {
-   "level": 1,
-   "title": "Vol (41; 0) +",
+   "level": 3,
+   "title": "Geometric branch",
    "page": 52,
    "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "51"
   },
   {
-   "level": 1,
-   "title": "(0) = i",
-   "page": 52,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(Vol (41; 0) +iCS(41; 0)) =",
-   "page": 52,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(u) into the hierarchy of equations, the rest are readily",
-   "page": 52,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u) in the perturbative Chern-Simons par-",
-   "page": 53,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(u) =−i",
+   "level": 3,
+   "title": "Conjugate branch",
    "page": 54,
    "source": "inferred",
-   "number": "0"
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "53"
   },
   {
-   "level": 1,
-   "title": "(u) = −S(geom)",
+   "level": 3,
+   "title": "Abelian branch",
    "page": 54,
    "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u). As for the geometric branch, this is then substituted",
-   "page": 54,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u) =",
-   "page": 54,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(0) = 0. From the hierarchy of diﬀerential",
-   "page": 54,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u) = log m(m2− 1)",
-   "page": 54,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(u) = 0",
-   "page": 54,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(u) = 4(m2− 1)2",
-   "page": 54,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(u) = 0",
-   "page": 54,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(u) = 4(m2− 1)2",
-   "page": 54,
-   "source": "inferred",
-   "number": "5"
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "53"
   },
   {
    "level": 3,
    "title": "State integral model",
    "page": 55,
    "source": "inferred",
-   "number": "4.2.2"
-  },
-  {
-   "level": 1,
-   "title": "(u) = V (α)(u), (4.57)",
-   "page": 57,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(u) =− 1",
-   "page": 57,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgments",
-   "page": 58,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 58,
-   "source": "inferred",
-   "number": null
+   "number": "4.2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "54"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Two kinds of 2-loop Feynman diagrams that contribute to S(\u03c1)",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Hierarchy of di\ufb00erential equations derived from bA(\u02c6l, \u02c6m) Z(\u03b1)(M; \u210f, u) = 0",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "An ideal tetrahedron in H3",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The 2-3 Pachner move",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The complex z-plane, showing poles (X\u2019s) and zeroes (O\u2019s) of \u03a6\u210f(z) at \u210f= 3",
+   "page": 37,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "36"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "a) \ufb01gure-8 knot 41, and b) three-twist knot 52",
+   "page": 44,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Perturbative invariants S(geom)",
+   "page": 53,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "52"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Perturbative invariants S(abel)",
+   "page": 54,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "53"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Plots of |e\u03a5(\u210f,p,u)| and its logarithm at u = 0 and \u210f= i",
+   "page": 55,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "54"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Plots of |e\u03a5(\u210f,p,u)| and its logarithm at u = 1",
+   "page": 56,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "55"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Poles, zeroes, and critical points of e\u03a5(\u210f,p,u) for u = 1",
+   "page": 56,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "55"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-california-institute-of-technology-pasadena-ca",
-   "number": "1",
-   "title": "California Institute of Technology, Pasadena, CA 91125, US A",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-001-2-department-of-physics-and-department-of-mathem",
-   "number": "2",
-   "title": "Department of Physics and Department of Mathematics,",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 54,
-   "n_words": 8
-  },
-  {
-   "id": "sec-002-3-centre-for-mathematical-sciences-wilberforce-r",
-   "number": "3",
-   "title": "Centre for Mathematical Sciences, Wilberforce Road,",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 34,
-   "n_words": 5
-  },
-  {
-   "id": "sec-003-4-max-planck-institut-f-ur-mathematik-vivatsgass",
-   "number": "4",
-   "title": "Max-Planck-Institut f¨ ur Mathematik, Vivatsgasse 7, D-53 111 Bonn, Germany",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-004-5-coll-ege-de-france-3-rue-dulm-f-75005-paris-fr",
-   "number": "5",
-   "title": "Coll` ege de France, 3 rue d’Ulm, F-75005 Paris, France",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 10,
-   "n_chars": 22923,
-   "n_words": 4019
+   "n_chars": 23922,
+   "n_words": 4000,
+   "label_start": null,
+   "label_end": "9"
   },
   {
-   "id": "sec-005-2-perturbation-theory-around-a-non-trivial-ﬂat-c",
-   "number": "2",
-   "title": "Perturbation theory around a non-trivial ﬂat connection",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 523,
-   "n_words": 84
-  },
-  {
-   "id": "sec-006-21-f-eynman-diagrams-and-arithmetic-tqft",
+   "id": "sec-000-21-feynman-diagrams-and-arithmetic-tqft",
    "number": "2.1",
-   "title": "F eynman diagrams and arithmetic TQFT",
+   "title": "Feynman diagrams and arithmetic TQFT",
    "level": 2,
    "page_start": 10,
-   "page_end": 15,
-   "n_chars": 13387,
-   "n_words": 2401
-  },
-  {
-   "id": "sec-007-22-quantization-of-mﬂat-gc-σ",
-   "number": "2.2",
-   "title": "Quantization of Mﬂat (GC, Σ)",
-   "level": 2,
-   "page_start": 15,
    "page_end": 18,
-   "n_chars": 7271,
-   "n_words": 1313
+   "n_chars": 21680,
+   "n_words": 3844,
+   "label_start": "9",
+   "label_end": "17"
   },
   {
-   "id": "sec-008-0-m-u",
-   "number": "0",
-   "title": "(M ;u)",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 992,
-   "n_words": 179
-  },
-  {
-   "id": "sec-009-221-analytic-continuation",
+   "id": "sec-001-221-analytic-continuation",
    "number": "2.2.1",
    "title": "Analytic continuation",
    "level": 3,
    "page_start": 18,
-   "page_end": 20,
-   "n_chars": 4265,
-   "n_words": 771
-  },
-  {
-   "id": "sec-010-222-a-hierarchy-of-diﬀerential-equations",
-   "number": "2.2.2",
-   "title": "A hierarchy of diﬀerential equations",
-   "level": 3,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 1610,
-   "n_words": 312
-  },
-  {
-   "id": "sec-011-0-u-jℏ-1",
-   "number": "0",
-   "title": "(u +jℏ)− 1",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 21,
-   "n_chars": 768,
-   "n_words": 159
-  },
-  {
-   "id": "sec-012-2-s",
-   "number": "2",
-   "title": "S′′",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 110,
-   "n_words": 39
-  },
-  {
-   "id": "sec-013-6-s",
-   "number": "6",
-   "title": "S′′′",
-   "level": 1,
-   "page_start": 21,
-   "page_end": 22,
-   "n_chars": 1206,
-   "n_words": 266
-  },
-  {
-   "id": "sec-014-0-u-const",
-   "number": "0",
-   "title": "(u) = const +",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 1553,
-   "n_words": 288
-  },
-  {
-   "id": "sec-015-0-u-const",
-   "number": "0",
-   "title": "(u)− const =",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 154,
-   "n_words": 28
-  },
-  {
-   "id": "sec-016-0-u-and-it-never-aﬀects-the-higher-order-terms-s",
-   "number": "0",
-   "title": "(u), and it never aﬀects the higher-order terms S(α)",
-   "level": 1,
-   "page_start": 22,
    "page_end": 23,
-   "n_chars": 1208,
-   "n_words": 225
+   "n_chars": 11121,
+   "n_words": 2119,
+   "label_start": "17",
+   "label_end": "22"
   },
   {
-   "id": "sec-017-0-u-i",
-   "number": "0",
-   "title": "(u) = i",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 23,
-   "n_chars": 115,
-   "n_words": 24
-  },
-  {
-   "id": "sec-018-23-classical-and-quantum-symmetries",
+   "id": "sec-002-23-classical-and-quantum-symmetries",
    "number": "2.3",
    "title": "Classical and quantum symmetries",
    "level": 2,
    "page_start": 23,
-   "page_end": 23,
-   "n_chars": 2495,
-   "n_words": 444
-  },
-  {
-   "id": "sec-019-3-a-a-a",
-   "number": "3",
-   "title": "A ∧ A ∧ A",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 24,
-   "n_chars": 1299,
-   "n_words": 262
-  },
-  {
-   "id": "sec-020-0-u-sα",
-   "number": "0",
-   "title": "(u) = S(α)",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 24,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-021-0-u-mod-2-πu-258",
-   "number": "0",
-   "title": "(u) (mod 2 πu). (2.58)",
-   "level": 1,
-   "page_start": 24,
    "page_end": 25,
-   "n_chars": 1227,
-   "n_words": 220
+   "n_chars": 6867,
+   "n_words": 1232,
+   "label_start": "22",
+   "label_end": "24"
   },
   {
-   "id": "sec-022-0-u-note-that-in-the",
-   "number": "0",
-   "title": "(u). Note that in the",
-   "level": 1,
-   "page_start": 25,
-   "page_end": 25,
-   "n_chars": 1427,
-   "n_words": 274
-  },
-  {
-   "id": "sec-023-0-u-sα",
-   "number": "0",
-   "title": "(u) =−S(α)",
-   "level": 1,
-   "page_start": 25,
-   "page_end": 25,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-024-0-u-mod-2-πu-266",
-   "number": "0",
-   "title": "(u) (mod 2 πu), (2.66)",
-   "level": 1,
-   "page_start": 25,
-   "page_end": 25,
-   "n_chars": 68,
-   "n_words": 16
-  },
-  {
-   "id": "sec-025-2-vol-m-u-behavior-of-the-geometric-and-conjugat",
-   "number": "2",
-   "title": "Vol (M ;u) behavior of the geometric and conjugate branches",
-   "level": 1,
-   "page_start": 25,
-   "page_end": 25,
-   "n_chars": 237,
-   "n_words": 39
-  },
-  {
-   "id": "sec-026-24-brane-quantization",
+   "id": "sec-003-24-brane-quantization",
    "number": "2.4",
    "title": "Brane quantization",
    "level": 2,
    "page_start": 25,
    "page_end": 27,
-   "n_chars": 4363,
-   "n_words": 836
+   "n_chars": 5817,
+   "n_words": 1080,
+   "label_start": "24",
+   "label_end": "26"
   },
   {
-   "id": "sec-027-3-a-state-integral-model-for-perturbative-sl2c-c",
-   "number": "3",
-   "title": "A state integral model for perturbative SL(2,C) Chern-Simons theory",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 1396,
-   "n_words": 248
-  },
-  {
-   "id": "sec-028-31-ideal-triangulations-of-hyperbolic-3-manifold",
+   "id": "sec-004-31-ideal-triangulations-of-hyperbolic-3-manifold",
    "number": "3.1",
    "title": "Ideal triangulations of hyperbolic 3-manifolds",
    "level": 2,
    "page_start": 27,
-   "page_end": 31,
-   "n_chars": 10994,
-   "n_words": 1974
-  },
-  {
-   "id": "sec-029-2-logz-πiqlog1z-πir-π2qr",
-   "number": "2",
-   "title": "(Log(z) +πiq)(Log(1−z) +πir) + π2qr",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 32,
-   "n_chars": 521,
-   "n_words": 100
-  },
-  {
-   "id": "sec-030-32-hikamis-invariant",
-   "number": "3.2",
-   "title": "Hikami’s invariant",
-   "level": 2,
-   "page_start": 32,
    "page_end": 33,
-   "n_chars": 3570,
-   "n_words": 627
+   "n_chars": 14629,
+   "n_words": 2601,
+   "label_start": "26",
+   "label_end": "32"
   },
   {
-   "id": "sec-031-33-quantum-dilogarithm",
+   "id": "sec-005-33-quantum-dilogarithm",
    "number": "3.3",
    "title": "Quantum dilogarithm",
    "level": 2,
    "page_start": 33,
-   "page_end": 35,
-   "n_chars": 4936,
-   "n_words": 936
-  },
-  {
-   "id": "sec-032-1-the-asymptotic-formula-318-can-be-reﬁned-to-th",
-   "number": "1",
-   "title": "The asymptotic formula (3.18) can be reﬁned to the asymptoti c expansion",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 35,
-   "n_chars": 799,
-   "n_words": 161
-  },
-  {
-   "id": "sec-033-2-the-function-xq-and-its-reciprocal-have-the-ta",
-   "number": "2",
-   "title": "The function (x;q)∞ and its reciprocal have the Taylor expansions",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 36,
-   "n_chars": 916,
-   "n_words": 176
-  },
-  {
-   "id": "sec-034-3-the-function-φ-zτ-deﬁned-initially-for-re-τ-0",
-   "number": "3",
-   "title": "The function Φ( z;τ ) deﬁned (initially for Re ( τ ) > 0 and |Re (z)| < 1",
-   "level": 1,
-   "page_start": 36,
-   "page_end": 36,
-   "n_chars": 5,
-   "n_words": 3
-  },
-  {
-   "id": "sec-035-2-re-τ",
-   "number": "2",
-   "title": "Re (τ ))",
-   "level": 1,
-   "page_start": 36,
-   "page_end": 37,
-   "n_chars": 939,
-   "n_words": 219
-  },
-  {
-   "id": "sec-036-4-the-functional-equations-333-show-that",
-   "number": "4",
-   "title": "The functional equations (3.33) show that",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 1625,
-   "n_words": 289
-  },
-  {
-   "id": "sec-037-5-from-330-we-also-ﬁnd-the-taylor-expansion-of-i",
-   "number": "5",
-   "title": "From (3.30) we also ﬁnd the Taylor expansion of I(z;τ ) at z = 0,",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 38,
-   "n_chars": 1025,
-   "n_words": 241
-  },
-  {
-   "id": "sec-038-6-the-quantum-dilogarithm-is-related-via-the-jac",
-   "number": "6",
-   "title": "The quantum dilogarithm is related via the Jacobi triple pro duct formula to the Jacobi",
-   "level": 1,
-   "page_start": 38,
-   "page_end": 39,
-   "n_chars": 2782,
-   "n_words": 559
-  },
-  {
-   "id": "sec-039-34-a-state-integral-model-for-z-ρm-ℏ",
-   "number": "3.4",
-   "title": "A state integral model for Z (ρ)(M ; ℏ)",
-   "level": 2,
-   "page_start": 39,
-   "page_end": 39,
-   "n_chars": 1495,
-   "n_words": 269
-  },
-  {
-   "id": "sec-040-0-u-v-pgeomuu-345",
-   "number": "0",
-   "title": "(u) = V (p(geom)(u),u ). (3.45)",
-   "level": 1,
-   "page_start": 39,
-   "page_end": 39,
-   "n_chars": 58,
-   "n_words": 9
-  },
-  {
-   "id": "sec-041-0-u-and-matrix-elements-313",
-   "number": "0",
-   "title": "(u) and matrix elements (3.13)-",
-   "level": 1,
-   "page_start": 39,
-   "page_end": 40,
-   "n_chars": 353,
-   "n_words": 70
-  },
-  {
-   "id": "sec-042-0-u-v-pαuu-347",
-   "number": "0",
-   "title": "(u) = V (p(α)(u),u ) (3.47)",
-   "level": 1,
-   "page_start": 40,
-   "page_end": 42,
-   "n_chars": 5597,
-   "n_words": 1013
-  },
-  {
-   "id": "sec-043-0-u-1",
-   "number": "0",
-   "title": "(u)− 1",
-   "level": 1,
-   "page_start": 42,
    "page_end": 43,
-   "n_chars": 3700,
-   "n_words": 675
+   "n_chars": 24362,
+   "n_words": 4626,
+   "label_start": "32",
+   "label_end": "42"
   },
   {
-   "id": "sec-044-4-examples-and-computations",
+   "id": "sec-006-4-examples-and-computations",
    "number": "4",
    "title": "Examples and computations",
    "level": 1,
    "page_start": 43,
-   "page_end": 44,
-   "n_chars": 2854,
-   "n_words": 494
-  },
-  {
-   "id": "sec-045-41-numerical-veriﬁcation-of-the-arithmeticity-co",
-   "number": "4.1",
-   "title": "Numerical veriﬁcation of the arithmeticity conjecture",
-   "level": 2,
-   "page_start": 44,
-   "page_end": 45,
-   "n_chars": 1384,
-   "n_words": 251
-  },
-  {
-   "id": "sec-046-1-0-s1-1",
-   "number": "1",
-   "title": "(0) = s1 + 1",
-   "level": 1,
-   "page_start": 45,
-   "page_end": 48,
-   "n_chars": 6057,
-   "n_words": 1189
-  },
-  {
-   "id": "sec-047-42-perturbative-sl2-c-invariants-for-the-ﬁgure-8",
-   "number": "4.2",
-   "title": "Perturbative SL(2, C) invariants for the ﬁgure-8 knot complement",
-   "level": 2,
-   "page_start": 48,
-   "page_end": 49,
-   "n_chars": 1635,
-   "n_words": 339
-  },
-  {
-   "id": "sec-048-3-re-z-im-z-im-z-1",
-   "number": "3",
-   "title": "Re (z)≤ Im (z), Im (z)≤ 1√",
-   "level": 1,
-   "page_start": 49,
-   "page_end": 49,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-049-3-1-re-z",
-   "number": "3",
-   "title": "(1− Re (z))}",
-   "level": 1,
-   "page_start": 49,
-   "page_end": 49,
-   "n_chars": 28,
-   "n_words": 9
-  },
-  {
-   "id": "sec-050-3-re-z-im-z-1",
-   "number": "3",
-   "title": "Re (z)≤ Im (z)≤ 1√",
-   "level": 1,
-   "page_start": 49,
-   "page_end": 49,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-051-3-re-z-422",
-   "number": "3",
-   "title": "Re (z)} (4.22)",
-   "level": 1,
-   "page_start": 49,
-   "page_end": 50,
-   "n_chars": 3594,
-   "n_words": 649
-  },
-  {
-   "id": "sec-052-2-vol-m-0-icsm-0",
-   "number": "2",
-   "title": "(Vol (M ; 0) +iCS(M ; 0)) +",
-   "level": 1,
-   "page_start": 50,
-   "page_end": 50,
-   "n_chars": 103,
-   "n_words": 25
-  },
-  {
-   "id": "sec-053-2-vol-m-u-icsm-u-vgeomure-u-iπu-433",
-   "number": "2",
-   "title": "(Vol (M ;u) +iCS(M ;u)) +vgeom(u)Re (u) +iπu, (4.33)",
-   "level": 1,
-   "page_start": 50,
    "page_end": 51,
-   "n_chars": 614,
-   "n_words": 122
+   "n_chars": 16520,
+   "n_words": 3140,
+   "label_start": "42",
+   "label_end": "50"
   },
   {
-   "id": "sec-054-421-quantization",
+   "id": "sec-007-421-quantization",
    "number": "4.2.1",
    "title": "Quantization",
    "level": 3,
    "page_start": 51,
    "page_end": 52,
-   "n_chars": 3089,
-   "n_words": 575
+   "n_chars": 2973,
+   "n_words": 556,
+   "label_start": "50",
+   "label_end": "51"
   },
   {
-   "id": "sec-055-2-vol-41-0",
-   "number": "2",
-   "title": "Vol (41; 0) +",
-   "level": 1,
+   "id": "sec-008-geometric-branch",
+   "number": null,
+   "title": "Geometric branch",
+   "level": 3,
    "page_start": 52,
-   "page_end": 52,
-   "n_chars": 265,
-   "n_words": 46
-  },
-  {
-   "id": "sec-056-0-0-i",
-   "number": "0",
-   "title": "(0) = i",
-   "level": 1,
-   "page_start": 52,
-   "page_end": 52,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-057-2-vol-41-0-ics41-0",
-   "number": "2",
-   "title": "(Vol (41; 0) +iCS(41; 0)) =",
-   "level": 1,
-   "page_start": 52,
-   "page_end": 52,
-   "n_chars": 126,
-   "n_words": 22
-  },
-  {
-   "id": "sec-058-0-u-into-the-hierarchy-of-equations-the-rest-are",
-   "number": "0",
-   "title": "(u) into the hierarchy of equations, the rest are readily",
-   "level": 1,
-   "page_start": 52,
-   "page_end": 53,
-   "n_chars": 1068,
-   "n_words": 188
-  },
-  {
-   "id": "sec-059-0-u",
-   "number": "0",
-   "title": "(u) =",
-   "level": 1,
-   "page_start": 53,
-   "page_end": 53,
-   "n_chars": 1079,
-   "n_words": 121
-  },
-  {
-   "id": "sec-060-1-u-in-the-perturbative-chern-simons-par",
-   "number": "1",
-   "title": "(u) in the perturbative Chern-Simons par-",
-   "level": 1,
-   "page_start": 53,
    "page_end": 54,
-   "n_chars": 698,
-   "n_words": 127
+   "n_chars": 3412,
+   "n_words": 540,
+   "label_start": "51",
+   "label_end": "53"
   },
   {
-   "id": "sec-061-0-u-i",
-   "number": "0",
-   "title": "(u) =−i",
-   "level": 1,
+   "id": "sec-009-conjugate-branch",
+   "number": null,
+   "title": "Conjugate branch",
+   "level": 3,
    "page_start": 54,
    "page_end": 54,
-   "n_chars": 72,
-   "n_words": 17
+   "n_chars": 580,
+   "n_words": 105,
+   "label_start": "53",
+   "label_end": "53"
   },
   {
-   "id": "sec-062-0-u-sgeom",
-   "number": "0",
-   "title": "(u) = −S(geom)",
-   "level": 1,
+   "id": "sec-010-abelian-branch",
+   "number": null,
+   "title": "Abelian branch",
+   "level": 3,
    "page_start": 54,
    "page_end": 54,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 87,
+   "n_words": 13,
+   "label_start": "53",
+   "label_end": "53"
   },
   {
-   "id": "sec-063-0-u-as-for-the-geometric-branch-this-is-then-sub",
-   "number": "0",
-   "title": "(u). As for the geometric branch, this is then substituted",
-   "level": 1,
-   "page_start": 54,
-   "page_end": 54,
-   "n_chars": 779,
-   "n_words": 134
-  },
-  {
-   "id": "sec-064-0-0-0-from-the-hierarchy-of-diﬀerential",
-   "number": "0",
-   "title": "(0) = 0. From the hierarchy of diﬀerential",
-   "level": 1,
-   "page_start": 54,
-   "page_end": 54,
-   "n_chars": 57,
-   "n_words": 8
-  },
-  {
-   "id": "sec-065-1-u-log-mm2-1",
-   "number": "1",
-   "title": "(u) = log m(m2− 1)",
-   "level": 1,
-   "page_start": 54,
-   "page_end": 54,
-   "n_chars": 19,
-   "n_words": 4
-  },
-  {
-   "id": "sec-066-2-u-0",
-   "number": "2",
-   "title": "(u) = 0",
-   "level": 1,
-   "page_start": 54,
-   "page_end": 54,
-   "n_chars": 7,
-   "n_words": 1
-  },
-  {
-   "id": "sec-067-3-u-4m2-12",
-   "number": "3",
-   "title": "(u) = 4(m2− 1)2",
-   "level": 1,
-   "page_start": 54,
-   "page_end": 55,
-   "n_chars": 606,
-   "n_words": 117
-  },
-  {
-   "id": "sec-068-422-state-integral-model",
+   "id": "sec-011-422-state-integral-model",
    "number": "4.2.2",
    "title": "State integral model",
    "level": 3,
-   "page_start": 55,
-   "page_end": 57,
-   "n_chars": 5831,
-   "n_words": 1103
-  },
-  {
-   "id": "sec-069-0-u-v-αu-457",
-   "number": "0",
-   "title": "(u) = V (α)(u), (4.57)",
-   "level": 1,
-   "page_start": 57,
-   "page_end": 57,
-   "n_chars": 21,
-   "n_words": 5
-  },
-  {
-   "id": "sec-070-1-u-1",
-   "number": "1",
-   "title": "(u) =− 1",
-   "level": 1,
-   "page_start": 57,
-   "page_end": 58,
-   "n_chars": 1509,
-   "n_words": 266
-  },
-  {
-   "id": "sec-071-acknowledgments",
-   "number": null,
-   "title": "Acknowledgments",
-   "level": 1,
-   "page_start": 58,
-   "page_end": 58,
-   "n_chars": 570,
-   "n_words": 94
-  },
-  {
-   "id": "sec-072-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 58,
+   "page_start": 54,
    "page_end": 61,
-   "n_chars": 8177,
-   "n_words": 1267
+   "n_chars": 16277,
+   "n_words": 2843,
+   "label_start": "53",
+   "label_end": "60"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 75,
-  "sections": 73,
-  "chars_total": 148242
+  "toc_entries": 21,
+  "toc_inferred_entries": 21,
+  "toc_inferred_mean_confidence": 0.976,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 11,
+  "figure_sequence_gaps": [
+   "figure 4"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 2,
+    "items": [
+     "Introduction and summary",
+     "A hierarchy of di\ufb00erential equations"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 2,
+    "items": [
+     "A state integral model for perturbative SL(2, C) Chern-Simons theory: listed p27, found p55",
+     "A state integral model for Z(\u03c1)(M; \u210f): listed p39, found p55"
+    ]
+   }
+  },
+  "sections": 13,
+  "chars_total": 148247,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "statesum.tex",
+   "tex_sections": 21,
+   "overlaid": 11,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-21-feynman-diagrams-and-arithmetic-tqft",
+     "title": "Feynman diagrams and arithmetic TQFT",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.998,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-221-analytic-continuation",
+     "title": "Analytic continuation",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-23-classical-and-quantum-symmetries",
+     "title": "Classical and quantum symmetries",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-24-brane-quantization",
+     "title": "Brane quantization",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-31-ideal-triangulations-of-hyperbolic-3-manifold",
+     "title": "Ideal triangulations of hyperbolic 3-manifolds",
+     "prose_ratio": 0.858,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-33-quantum-dilogarithm",
+     "title": "Quantum dilogarithm",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.91,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-4-examples-and-computations",
+     "title": "Examples and computations",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-421-quantization",
+     "title": "Quantization",
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-geometric-branch",
+     "title": "Geometric branch",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-conjugate-branch",
+     "title": "Conjugate branch",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-abelian-branch",
+     "title": "Abelian branch",
+     "prose_ratio": 0.141,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-422-state-integral-model",
+     "title": "State integral model",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.509,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

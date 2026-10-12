@@ -1,0 +1,185 @@
+\usepackage{theorem}
+\usepackage{amssymb}
+\theoremheaderfont{\scshape}
+
+\newtheorem{Proposition}{Proposition}
+  \newtheorem{Remark}[Proposition]{Remark}
+  \newtheorem{Corollary}[Proposition]{Corollary}
+  \newtheorem{Lemma}[Proposition]{Lemma}
+  \newtheorem{Theo}[Proposition]{Theorem}
+  \newtheorem{Theorem}[Proposition]{Theorem}
+\newtheorem{Theoreme}[Proposition]{Theorìeme}
+\def\e{\mathrm{e}}
+\def\i{\mathrm{i}}
+
+\def\Tm{\begin{Theorem}\label}
+\def\Pp{\begin{Proposition}\label}
+\def\Rm{\begin{Remark}\label}
+\def\Lm{\begin{Lemma}\label}
+\def\Co{\begin{Corollary}\label}
+
+
+\def\eTm{\end{Theorem}}
+\def\ePp{\end{Proposition}}
+\def\eRm{\end{Remark}}
+\def\eLm{\end{Lemma}}
+\def\eCo{\end{Corollary}}
+
+
+\def\bfC{{\bf C}}
+\def\bfr{{\bf r}}
+\def\Qp{{\bf Q}_\perp}
+\def\qp{{\bf q}_\perp}
+\def\FP{{\bf F}_\perp}
+\def\dpp{{\bf D}_\perp}
+\def\rp{{\bf r}_\perp}
+\def\Rp{{\bf R}_\perp}
+\def\bpl{{\hskip 0.1ex\rule[0.25ex]{0.5em}{0.22ex}
+\hskip -0.7ex\rule[-0.2ex]{0.22ex}{0.5em}\ }}
+\def\bmi{{\hskip 0.1ex\rule[0.25ex]{0.5em}{0.22ex}}}
+\def\Bpl{{\rule[0.3ex]{0.75em}{0.3ex}
+\hskip -1ex\rule[-0.4ex]{0.3ex}{0.75em}\ +}}
+\def\Bmi{{\rule[0.3ex]{0.75em}{0.3ex}}}
+
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\def\Box{{\hfill\hbox{\enspace${\sqre}$}} \smallskip}
+\def\sqr#1#2{{\vcenter{\vbox{\hrule height .#2pt
+                             \hbox{\vrule width .#2pt height#1pt \kern#1pt
+                                   \vrule width .#2pt}
+                             \hrule height .#2pt}}}}
+\def\sqre{\mathchoice\sqr54\sqr54\sqr{4.1}3\sqr{3.5}3}
+
+\def\N{\hbox{\it I\hskip -2pt N}}
+\newcommand{\bT}[1]{\begin{theorem}\label{#1}}
+\newcommand{\be}[1]{\begin{equation}\label{#1}}
+\newcommand{\ba}[1]{\begin{eqnarray}\label{#1}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\ea}{\end{eqnarray}}
+\newcommand{\bl}[1]{\begin{lemma}\label{#1}}
+\newcommand{\bp}[1]{\begin{proposition}\label{#1}}
+\newcommand{\br}[1]{\begin{remark}\label{#1}}
+\def\lfty{L_{-\infty}}
+\def\bchi{\mbox{\raisebox{.4ex}{\begin{Large}$\chi$\end{Large}}}}
+\def\n{{\cal N}}
+
+\def\bflam{{\boldsymbol \lambda}}
+\def\bfw{\mathbf{w}}
+\def\bfbet{{\boldsymbol \beta}}
+\def\D{\raisebox{1ex}{\small e}\mathcal{D}'_{m,\nu}}
+\def\bfW{\mathbf{W}}
+\def\bfdel{\boldsymbol\delta}
+\def\erm{\mathrm{e}}
+\def\irm{\mathrm{i}}
+\def\drm{\mathrm{d}}
+
+%\def\RR{\hbox{ I\hskip -2pt R}}
+\def\RR{\mathbb{R}}
+\def\DD{\mathbb{D}}
+%\def\CC{\hbox{\it l\hskip -5.5pt C\/}}
+\def\CC{\mathbb{C}}
+%\def\NN{\hbox{\it I\hskip -2pt N}}
+\def\NN{\mathbb{N}}
+\def\ZZ{\mathbb{Z}}
+%\def\ZZ{\hbox{\sf Z\hskip -4pt Z}}
+\def\z{\noindent}
+\def\bff{{\bf f}}
+\def\bffz{{\bf F}_0}
+\def\bfd{\mathbf{D}}
+\def\bfdd{\mathbf{d}}
+%\def\bfd{\mathbf{\partial_{y_{\mathrm j}}}\mathbf{g}}
+\def\bfsd{{\bf d}}
+\def\bfh{{\bf h}}
+\def\bfq{{\bf q}}
+\def\bfH{{\bf H}}\def\bfY{{\bf Y}}
+\def\bfhl{{\bf H^{*l}}}
+\def\bfsgl{{\bf g_{l}}}
+\def\bfYl{{\bf Y^{*l}}}
+\def\bfl{{\bf l}}
+\def\bfgg{\mathbf{g}}
+\def\bfg{{\bf G}}
+\def\bfs{\mathbf{s}}
+\def\bfv{{\mathbf{v}}}
+\def\bfV{\mathbf{V}}
+\def\bog{{\bf g}}
+\def\bogl{{\bf g}^{(\bfl)}}
+\def\bfgl{{\bf G_{l}}}
+\def\calm{{\cal M}}
+\def\cals{{\cal S_\beta}}
+\def\calv{{\DD_\epsilon}}
+\def\caln{{\cal N}}
+\def\calnb{{{\cal N}}}
+\def\lloc{{L}^1_{loc}}
+\def\lray{{L_{ray}}}
+\def\lb{L^1_b}
+\def\lone{{L^1}}
+\def\cala{{\cal A}}
+\def\calp{{\cal P}}
+\def\ga{\hat{\Gamma}}
+\def\gc{\hat{\Gamma}_c}
+\def\hatc{\hat C}
+\def\bc{\hat{B}_c}
+\def\bcp{\hat{B}'_c}
+\def\hb{\hat{B}}
+\def\bfi{{\bf I}}
+\def\bfii{\mathbf{i}}
+\def\bfa{{\bf a}}
+\def\bfB{{\bf B}}
+\def\bfA{{\bf A}}
+\def\bfQ{{\bf Q}}
+\def\zpp{(z\oplus\gc(z))}
+\def\ppp{(p\oplus\gc(-p))}
+\def\zp{z\oplus\gc(z)}
+\def\pp{p\oplus\gc(-p)}
+\def\betapp{(\beta\oplus\bc)}
+\def\betap{\beta\oplus\bc}
+\def\hM{\hat{M}(z)}
+\def\bfT{{\bf T}}
+\def\bft{{\bf t}}
+\def\bfy{{\bf y}}
+\def\hatby{\tilde{\bfy}}
+\def\haty{\tilde{y}}
+\def\bfv{{\bf v}}
+\def\bfR{{\bf R}}
+\def\bfz{{\bf z}}
+\def\lap{{\cal L}}
+\def\lapi{{\cal L}^{-1}}
+\def\bfZ{{\bf Z}}
+\def\bfk{{\bf k}}
+\def\bfj{{\bf j}}
+\def\bfn{{\bf n}}
+\def\bfm{{\bf m}}
+\def\bfdl{{\bf d_l}}
+\def\bfdm{{\bf d_m}}
+\def\lap{ }
+\def\lap{{\cal L}}
+\def\lapi{{\cal L}^{-1}}
+\def\bor{{\cal B}}
+\def\cald{{\cal D}}
+\def\sect{{S_1}}
+\def\bfZ{{\bf Z}}
+\def\bfk{{\bf k}}
+\def\bfn{{\bf n}}
+\def\bfm{{\bf m}}
+\def\bfdl{{\bf d_l}}
+\def\bfdm{{\bf d_m}}
+\def\heav{{\cal H}}
+\def\QQ{\mathbb{Q}}
+
+%%\newtheorem{Corollary}[Propo]{Corollary}
+%%\newtheorem{Lemma}[Propo]{Lemma}
+%%\newtheorem{Remark}[Propo]{Remark}
+%%\newtheorem{Propo}{Proposition}
+%%\newtheorem{Theo}[Propo]{Theorem}
+%%\newcommand{\Rm}[1]{\begin{Remark}\label{#1}}
+
+%%\newcommand{\Lm}[1]{\begin{Lemma}\label{#1}}
+%%\newcommand{\Tm}[1]{\begin{Theo}\label{#1}}
+%%\newcommand{\Pp}[1]{\begin{Propo}\label{#1}}
+%%\newcommand{\Co}[1]{\begin{Corollary}\label{#1}}
+
+%%\newcommand{\Tm}[1]{\begin{Theo}\label{#1}}
+%%\newcommand{\Pp}[1]{\begin{Propo}\label{#1}}
+%%\newcommand{\Co}[1]{\begin{Corollary}\label{#1}}

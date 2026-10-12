@@ -9,9 +9,11 @@ typeclass packaging the four ingredients of the construction.
 
 Unlike `MuArchContinuumLimit`, the GNS construction is **not
 conjectural**: it is the Jones–Wenzl subfactor machinery
-([jones1985], [wenzl1988]), valid in the positivity regime
-`q^{1/2} + q^{-1/2} > 2` which covers the QOU substrate
-`q_0 ≈ 1.11`.
+([jones1985], [wenzl1988]). Under convention D the trace factors through
+Temperley–Lieb with loop value `[2]_q = q + q⁻¹ ≥ 2`, so positivity holds for
+every real `q > 0` (Jones), including the QOU substrate `q_0 ≈ 1.11`. The old
+"regime `q^{1/2} + q^{-1/2} > 2`" only excluded `q = 1`. The per-block
+weights are proved positive in `QOU.SchurWeyl.ocneanuWeight_conventionD_pos_of_two_rows`.
 
 The class fields are the *data* of the construction (positive
 tracial state on the inductive system, trace ideal, Hilbert-space
@@ -49,7 +51,7 @@ class HasMarkovGnsEmbedding (A : Type u) (H : Type v)
   trM_add : ∀ (x y : A), trM (x + y) = trM x + trM y
   /-- **Traciality** (cyclicity): `tr_M(x · y) = tr_M(y · x)`. -/
   trM_cyclic : ∀ (x y : A), trM (x * y) = trM (y * x)
-  /-- **Positivity** (Wenzl regime): `tr_M(x* x) ≥ 0`. -/
+  /-- **Positivity** (every real `q > 0` under convention D): `tr_M(x* x) ≥ 0`. -/
   trM_pos : ∀ (x : A), 0 ≤ trM (star x * x)
   /-- **Faithfulness on the GNS quotient**:
       `tr_M(x* x) = 0 → x ∈ trace ideal`. Encoded via an explicit

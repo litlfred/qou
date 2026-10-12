@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/descendants-colored-jones/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/descendants-colored-jones/blocks/prose-sec-005",
   "kind": "prose",
   "title": "The colored Jones polynomials at roots of unity",
   "pageStart": 12,
   "pageEnd": 13,
   "text": "../sections/sec-005-the-colored-jones-polynomials-at-roots-of-unity.md",
-  "derivedFrom": "library/descendants-colored-jones/manifest",
-  "sourceDocument": "library/descendants-colored-jones/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
   "provenance": "ingested"
 }

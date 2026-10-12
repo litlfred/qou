@@ -8,56 +8,38 @@ pages: 15-16
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
 doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+text_source: latex
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.984
 ---
-Finally, the technique of coupling the QCD Lagrangian to ext ernal ﬁelds also allows us to determine
-the current divergences for rigid external ﬁelds, i.e., ﬁel ds which are not simultaneously transformed.
-For the sake of simplicity we restrict ourselves to the two-ﬂ avor sector. (The generalization to the
-three-ﬂavor case is straightforward.)
-Consider a global chiral transformation only and assume that the external ﬁel ds are not simultane-
-ously transformed. In this case the divergences of the curre nts read [Fuchs and Scherer, 2003]
-∂µV µ
-i = i¯qγ µ[τi
-2,v µ]q +i¯qγ µγ5[τi
-2,a µ]q −i¯q[τi
-2,s ]q − ¯qγ5[τi
-2,p ]q, (55)
-∂µAµ
-i = i¯qγ µγ5[τi
-2,v µ]q +i¯qγ µ[τi
-2,a µ]q +i¯qγ5{τi
-2,s }q + ¯q{τi
-2,p }q. (56)
-As an example, let us consider the QCD Lagrangian for a ﬁnite l ight quark mass ˆm = mu = md
-in combination with a coupling to an external electromagnet ic ﬁeld Aµ [see Eq. (51), aµ = 0 = p].
-The expressions for the divergence of the vector and axial-v ector currents, respectively, are given by
-[Fuchs and Scherer, 2003]
-∂µV µ
-i = −ǫ3ijeAµ ¯qγ µτj
-2q = −ǫ3ijeAµV µ
-j , (57)
-∂µAµ
-i = −eAµǫ3ij ¯qγ µγ5
-τj
-2q + 2 ˆmi¯qγ5
-τi
-2q = −eAµǫ3ijAµ
-j + ˆmPi, (58)
-with the isovector pseudoscalar density Pi =i¯qγ5τiq. In fact, Eq. (58) is incomplete, because the third
-component of the axial-vector current, Aµ
-3 , has an anomaly which is related to the decay π0 →γγ . The
-full equation reads
-∂µAµ
-i = ˆmPi −eAµǫ3ijAµ
-j +δi3
-e2
-32π2ǫµνρσ F µνF ρσ, ǫ 0123 = 1, (59)
-where Fµν =∂µAν −∂νAµ is the electromagnetic ﬁeld strength tensor.
-We emphasize the formal similarity of Eq. (58) to the (pre-QC D) PCAC (Partially Conserved Axial-
-Vector Current) relation obtained by Adler [Adler, 1965] th rough the inclusion of the electromagnetic
-interactions with minimal electromagnetic coupling. Sinc e in QCD the quarks are taken as truly ele-
-mentary, their interaction with an (external) electromagn etic ﬁeld is of such a minimal type. In Adler’s
-version, the right-hand side of Eq. (59) contains a renormal ized ﬁeld operator creating and destroy-
-ing pions instead of ˆ mPi. From a modern point of view, the combination ˆ mPi/(M 2
-πFπ) serves as an
-interpolating pion ﬁeld. Furthermore, the anomaly term is n ot yet present in Ref. [Adler, 1965].
-15
+[]{#subsec_pcacpeef label="subsec_pcacpeef"} Finally, the technique of coupling the QCD Lagrangian to external fields also allows us to determine the current divergences for rigid external fields, i.e., fields which are *not* simultaneously transformed. For the sake of simplicity we restrict ourselves to the two-flavor sector. (The generalization to the three-flavor case is straightforward.)
+
+Consider a *global* chiral transformation only and assume that the external fields are *not* simultaneously transformed. In this case the divergences of the currents read [@Fuchs:2003vw] $$\begin{aligned}
+\label{2:1:7:divv}
+\partial_\mu V^\mu_i&=&i\bar{q}\gamma^\mu[\frac{\tau_i}{2},v_\mu]q
++i\bar{q}\gamma^\mu\gamma_5[\frac{\tau_i}{2},a_\mu]q
+-i\bar{q}[\frac{\tau_i}{2},s]q-\bar{q}\gamma_5[\frac{\tau_i}{2},p]q,\\
+\label{2:1:7:diva}
+\partial_\mu A^\mu_i&=&i\bar{q}\gamma^\mu\gamma_5[\frac{\tau_i}{2},v_\mu]q
++i\bar{q}\gamma^\mu[\frac{\tau_i}{2},a_\mu]q
++i\bar{q}\gamma_5\{\frac{\tau_i}{2},s\}q
++\bar{q}\{\frac{\tau_i}{2},p\}q.
+\end{aligned}$$
+
+As an example, let us consider the QCD Lagrangian for a finite light quark mass $\hat{m}=m_u=m_d$ in combination with a coupling to an external electromagnetic field ${\cal A}_\mu$ \[see Eq. ([\[2:1:6:rlasu2\]](#2:1:6:rlasu2){reference-type="ref" reference="2:1:6:rlasu2"}), $a_\mu=0=p$\]. The expressions for the divergence of the vector and axial-vector currents, respectively, are given by [@Fuchs:2003vw] $$\begin{aligned}
+\label{2:1:7:divvsc}
+\partial_\mu V^\mu_i&=&-\epsilon_{3ij}e{\cal A}_\mu \bar{q}\gamma^\mu
+\frac{\tau_j}{2}q=-\epsilon_{3ij}e{\cal A}_\mu V^\mu_j,\\
+\label{2:1:7:divasc}
+\partial_\mu A^\mu_i
+&=&-e {\cal A}_\mu \epsilon_{3ij} \bar{q}\gamma^\mu
+\gamma_5 \frac{\tau_j}{2} q+2\hat m i\bar{q}\gamma_5 \frac{\tau_i}{2}q
+=-e {\cal A}_\mu \epsilon_{3ij} A^\mu_j+\hat m P_i,
+\end{aligned}$$ with the isovector pseudoscalar density $P_i=i\bar{q}\gamma_5 \tau_i q$. In fact, Eq. ([\[2:1:7:divasc\]](#2:1:7:divasc){reference-type="ref" reference="2:1:7:divasc"}) is incomplete, because the third component of the axial-vector current, $A^\mu_3$, has an anomaly which is related to the decay $\pi^0\to\gamma\gamma$. The full equation reads $$\label{2:1:7:divascfull}
+\partial_\mu A^\mu_i
+=\hat m P_i-e {\cal A}_\mu \epsilon_{3ij} A^\mu_j
++\delta_{i3}
+\frac{e^2}{32\pi^2}\epsilon_{\mu\nu\rho\sigma}{\cal F}^{\mu\nu}
+{\cal F}^{\rho\sigma}, \quad \epsilon_{0123}=1,$$ where ${\cal F}_{\mu\nu}=\partial_\mu{\cal A}_\nu-\partial_\nu{\cal A}_\mu$ is the electromagnetic field strength tensor.
+
+We emphasize the formal similarity of Eq. ([\[2:1:7:divasc\]](#2:1:7:divasc){reference-type="ref" reference="2:1:7:divasc"}) to the (pre-QCD) PCAC (Partially Conserved Axial-Vector Current) relation obtained by Adler [@Adler:1965:5:5] through the inclusion of the electromagnetic interactions with minimal electromagnetic coupling. Since in QCD the quarks are taken as truly elementary, their interaction with an (external) electromagnetic field is of such a minimal type. In Adler's version, the right-hand side of Eq. ([\[2:1:7:divascfull\]](#2:1:7:divascfull){reference-type="ref" reference="2:1:7:divascfull"}) contains a renormalized field operator creating and destroying pions instead of $\hat m P_i$. From a modern point of view, the combination $\hat m P_i/(M_\pi^2 F_\pi)$ serves as an interpolating pion field. Furthermore, the anomaly term is not yet present in Ref. [@Adler:1965:5:5].

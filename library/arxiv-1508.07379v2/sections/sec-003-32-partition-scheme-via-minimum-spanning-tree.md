@@ -8,337 +8,141 @@ pages: 8-13
 source_pdf: 1508.07379v2.pdf
 source_sha256: c3dbf93d1cac198e
 doc_brief: "Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity — We establish new lower bounds for the convergence radius of the Ma yer series and the Virial series of a continuous"
+text_source: latex
+latex_prose_ratio: 0.975
+latex_coverage_ratio: 0.986
 ---
-The key point now is to ﬁnd a partition scheme M in such a way that is possible to ﬁnd a good
-bound for the factor exp {−β ∑
-{i,j }∈EM (τ )\E+
-τ
-V (xi − xj)} appearing in the r.h.s. of (3.2).
-We will construct explicitly our partition scheme M : Tn → G n by ﬁrst deﬁning an auxiliary map
-T : Gn → T n and then deriving M from T according to the following proposition.
-Proposition 2 The following statements are equivalent.
-1. There are two maps
-Gn
-T /d47/d47 TnM
-/d111/d111
-such that T −1(τ) = {g ∈ G n : τ ⊂ g ⊂ M (τ)} for every τ ∈ T n.
-2. M is a partition scheme in Gn.
-8
-Proof. 1 ⇒ 2. Since g ∈ T −1(T (g)), we have T (g) ⊂ g for all g ∈ G n. In particular, for every
-tree τ we have T (τ) ⊂ τ which implies T (τ) = τ because both are trees. I.e., T is surjective and
-thus the intervals T −1(τ) are nonempty. This implies that Gn is the disjoint union of the intervals
-Gn = ⋃
-τ∈Tn T −1(τ) = ⋃
-τ∈Tn[τ, M (τ)]. Hence in view of Deﬁnition 3 we conclude that M is a
-partition scheme in Gn.
-2 ⇒ 1. If M is a partition scheme then for any g ∈ G n there exists a unique tree τ ∈ T n such that
-g ∈ [τ, M (τ)]. Therefore we can deﬁne the map T from Gn to Tn such that, for all g ∈ [τ, M (τ)],
-T (g) = τ. □
-We thus start by ﬁrst deﬁning the map T from Gn to Tn. In order to do that, assume we have
-a function deﬁned on the edges of the complete graph, f : En → R∗. Then, for every connected
-graph g ∈ G n there is at least a tree τ ⊂ g, among the trees τ′ ⊂ g, which minimizes the value
-of ∑
-e∈Eτ ′ f (e). This tree is called a minimum spanning tree of g w.r.t. f . If f is such that this
-minimum spanning tree is unique for each graph g ∈ G n, then f induces a map, say Tf , from Gn to
-Tn which associates to each g ∈ G n this unique minimum spanning tree.
-Let now V be a stable and tempered pair potential in Rdn and let ( x1, . . . , x n) ∈ Rdn be given. We
-would like to consider as the function f : En → R∗ the one that associates to each {i, j } ∈ En the
-value V (xi − xj). The problem is that such f , depending on the potential V and the conﬁguration
-(x1, . . . , x n) ∈ Rdn chosen, in general does not guarantee that each g ∈ G n contains a unique
-minimum spanning tree w.r.t. to f . In order to avoid multiple minima, we will therefore modify
-the codomain of the function f by adding n(n − 1)/ 2 auxiliary “coordinates” (which will take only
-integers values), each of them one-to-one associated to an e dge of En. These coordinates will permit
-to distinguish eventual multiple minimum trees.
-To carry out this procedure, we need to widen our framework an d consider, instead of functions
-from En to R∗, a suitable class of more general functions f : En → K with K being a totally ordered
-Abelian monoid and having the key property that ∑
-e∈Eτ f (e) is diﬀerent for diﬀerent trees τ ∈ T n.
-We recall that a totally ordered Abelian monoid (shortly tomonid) is a structure ( K, +, 0, ≥) such
-that ( K, +, 0) is an Abelian (i.e. commutative) monoid, ( K, ≥) is a totally ordered set and for
-all x, y, z ∈ K we have that x ≥ y implies x + z ≥ y + z (i.e. the total order ≥ is translational
-invariant).
-Deﬁnition 4 Let f : En → K where K is a totally ordered Abelian monoid. We say that f is
-admissible if for any τ, τ ′ ∈ T n such that τ ⁄= τ′ we have that ∑
-e∈E(τ) f (e) ⁄= ∑
-e∈E(τ ′) f (e).
-Once an admissible function f : En → K has been given, we can deﬁne the maps Tf from Gn to Tn
-Mf from Tn to Gn as follows.
-Deﬁnition 5 Let K be a totally ordered Abelian monoid. Let f : En → K be an admissible function.
-Then, for every g ∈ G n there is a unique spanning tree τ ⊂ g for which ∑
-e∈E(τ) f (e) is minimum.
-We deﬁne the map Tf : Gn → T n such that Tf (g) is this unique minimum spanning tree of g.
-Deﬁnition 6 Let K be a totally ordered Abelian monoid and let f : En → K be an admissible
-function. We deﬁne the map Mf : Tn → G n such that Mf (τ) is the graph on the vertices [n] whose
-edges are the {i, j } such that f ({i, j }) ≥ f (e) for every edge e ∈ Eτ belonging to the path from i to
-j through τ.
-9
-Thus we have constructed
-Gn
-Tf /d47/d47 Tn
-Mf
-/d111/d111
-Observe that τ ⊂ Mf (τ) and Tf (g) ⊂ g. Moreover, these two maps Tf , Mf satisfy the hypothesis
-of the Proposition 2. This is the content of the following lem ma.
-Lemma 1 Let f : En → K be an admissible function and τ ∈ T n. Let Tf and Mf be the maps
-given in Deﬁnitions 5 and 6 respectively. Then
-T −1
-f (τ) = {g ∈ G n : τ ⊂ g ⊂ Mf (τ)}
-and therefore Mf is a partition scheme in Gn.
-Proof. Let g ∈ T −1
-f (τ). We have τ = Tf (g) ⊂ g. Now take {i, j } ∈ Eg, and let e ∈ Eτ be any
-edge belonging to the path from i to j in τ. Consider τ′ the graph obtained from τ after replacing
-the edge e by {i, j }. Clearly τ′ is connected and has n − 1 edges, so it is a tree. By minimality of
-τ we must have f (d) ≤ f ({i, j }), whence {i, j } ∈ EMf (τ). Therefore g ⊂ Mf (τ).
-Conversely, let τ ⊂ g ⊂ Mf (τ). We must show Tf (g) = τ. By cardinality, it suﬃces to show
-Tf (g) ⊂ τ. Proceeding by contradiction, take {i, j } ∈ ETf (g) \ Eτ . Consider the path pτ ({i, j }) in
-τ joining i with j. Since Tf (g) ⊂ Mf (τ), f ({i, j }) is greater or equal than the corresponding value
-for any edge in the path pτ ({i, j }). If we remove {i, j } from Tf (g), the tree splits into two trees.
-Necessarily, at least one of the edges in the path pτ ({i, j }) joins a vertex of one tree with a vertex
-of the other. Thus, by adding this edge we obtain a connected g raph with n − 1 edges, a new tree,
-which contradicts the minimality of Tf (g).
-We now provide an explicit construction for the admissible f unction f of Deﬁnition 5.
-We start by specifying the totally ordered Abelian monoid K. Assume to have chosen an order
-in En (e.g. the lexicographic order: {i, j } < {i′, j ′} if either i < i ′ or i = i′ and j < j ′). Let
-N0 = N ∪ {0} and consider the set
-NEn
-0 =
-|En| times
-/bracehtipdownleft /bracehtipupright/bracehtipupleft /bracehtipdownright
-N0 × · · · × N0
-such that the mth entry (with 1 ≤ m ≤ |En|) of an element x ∈ NEn
-0 corresponds to the mth edge
-w.r.t. the order chosen of En. Now we set
-K .= R∗ × NEn
-0 (3.6)
-An element of K is thus an ordered ( |En| + 1)-tuple such that the ﬁrst entry is a real number while
-the remaining |En| entries are natural numbers or zero.
-The set K deﬁned in (3.6) has a canonical structure of Abelian monoid a nd can also be endowed
-with a natural total order by considering the lexicographic al order on R∗ × Nm
-0 , prioritizing the
-entries from left to right. It is easy to show that such an orde r is translational invariant respect to
-the standard sum in K which is thus a totally ordered Abelian monoid.
-We are now ready to deﬁne the function f : En → K. Let 1{i,j } be the element of NEn
-0 with all
-entries zero except the one at the position corresponding to the edge {i, j } which is equal to one.
-10
-Deﬁnition 7 Given a pair potential V and given (x1, . . . , x n) ∈ Rdn, deﬁne the function
-f : En → K : {i, j } ↦→V (xi − xj) × 1{i,j } (3.7)
-Remark. The function f above is, for every pair potential V and for any ( x1, . . . , x n) ∈ Rdn,
-admissible according to Deﬁnition 5 and thus, according to D eﬁnition 6 and Lemma 1, the map
-Mf : Tn → G n is a partition scheme in Gn. This is our new partition scheme. The advantage
-to consider this new partition Mf scheme instead of the one originally proposed by Penrose is
-manifestly clear in the following key lemma which practical ly concludes the proof of Proposition 1.
-Lemma 2 Let V : Rd → R∗ be a stable pair potential with stability constant B, and τ ∈ T n. Then,
-for every (x1, ..., x n) ∈ Rdn,
-∑
-{i,j }∈EMf (τ )\E+
-τ
-V (xi − xj) ≥ −Bn (3.8)
-where f is the function given in Deﬁnition 7, Mf (τ) is the graph given in Deﬁnition 6 and E+
-τ is
-the subset of Eτ deﬁned in (3.3).
-Proof. In the following, Vij denotes V (xi − xj), and we will make implicit use of the following
-trivial fact:
-(x, σ ) ≥ (x′, σ ′) ⇒ x ≥ x′ for ( x, σ ), (x′, σ ′) ∈ R∗ × NEn
-0
-Now we proceed to show that the inequality (3.8) holds true. T he set of edges Eτ \ E+
-τ forms the
-forest {τ1, ..., τ k}. Let us denote Vτs the vertex set of the tree τs of the forest. Assume i ∈ V τa,
-j ∈ V τb. If a ⁄= b, the path from i to j through τ involves an edge e in E+
-τ . Thus, if in addition
-{i.j } ∈ EMf (τ), we have Vij ≥ Ve ≥ 0. If a = b, the path from i to j through τ is contained in τa.
-Thus, if in addition {i, j } /∈ EMf (τ), we must have Vij ≤ Ve ≤ 0 for some edge e in that path. This
-allows to bound:
-∑
-{i,j }∈EMf (τ )\E+
-τ
-Vij ≥
-k∑
-s=1
-∑
-{i,j }⊂Vτs
-Vij ≥
-k∑
-s=1
-−|Vτs|B ≥ −nB □
-3.3 Conclusion of the proof of Proposition 1
-We now have all ingredients to conclude the proof of Proposit ion 1. Indeed, for any ﬁxed conﬁgu-
-ration ( x1, . . . , x n) ∈ Rdn, by Corollary 1 and Lemma 1 we have
-⏐⏐⏐
-∑
-g∈Gn
-∏
-{i,j }∈Eg
-(e−βV (xi−xj) − 1)
-⏐⏐⏐ ≤
-
- ∏
-{i,j }∈Eτ
-(1 − e−β |V (xi−xj)|)
-
- e
-−β ∑
-{i,j }∈EMf (τ )\E+τ
-V (xi−xj)
-≤
-≤ eβBn ∑
-τ∈Tn
-∏
-{i,j }∈τ
-(1 − e−β |V (xi−xj)|)
-where f is the admissible function given in (3.7), Mf is the partition scheme given in Deﬁnition 6
-and where to get the inequality of the last line we have used Le mma 2.
-11
-4 Proof of Theorem 1
-To deduce Theorem 1 from Proposition 1 we just need to show the following easy lemma.
-Lemma 3 For any τ ∈ Tn it holds
-∫
-Λ
-dx1 . . .
-∫
-Λ
-dxn
-∏
-{i,j }∈Eτ
-(
-1 − e−β |V (xi−xj)|
-)
-≤ |Λ |
-[
-ˆC(β )
-] n−1
-Proof. Without loss of generality we can always assume (eventuall y through a renomination of the
-indices in the integral of the l.h.s. of equation above) that Eτ = {2, j 2}, {3, j 3}, . . . {n, j n} with
-jk < k for all k = 2, . . . , n , so that
-∫
-Λ
-dx1 . . .
-∫
-Λ
-dxn
-∏
-{i,j }∈Eτ
-(
-1 − e−β |V (xi−xj)|
-)
-=
-∫
-Λ
-dx1 . . .
-∫
-Λ
-dxn
-n∏
-k=2
-(
-1 − e−β |V (xk−xjk )|
-)
-Deﬁne the following change of variables ( x1, . . . , x n) → (y1, . . . , y n) in the integral
-y1 = x1, y k = xk − xjk, ∀k = 2, . . . , n (4.1)
-The Jacobian matrix of such transformation (4.1), being low er triangular with entries of the diagonal
-all equal to one, has determinant equal to one. Therefore we h ave
-∫
-Λ
-dx1 . . .
-∫
-Λ
-dxn
-n−1∏
-k = 1
-(
-1 − e−β |V (xik −xjk )|
-)
-≤
-≤
-∫
-Λ
-dy1
-∫
-R3
-dy2 . . .
-∫
-R3
-dyn
-n∏
-j=2
-(
-1 − e−β |V (yj )|
-)
-=
-= |Λ |
-[ ∫
-R3
-(1 − e−β |V (x)|)dx
-] n−1
-= |Λ |
-[
-ˆC(β )
-] n−1
-□
-Theorem 1 follows now straightforwardly. Indeed, from Prop osition 1 and Lemma 3 we get the
-following bound for the absolute value of the Mayer coeﬃcien t Cn(β, Λ).
-|Cn(β, Λ) | ≤ 1
-|Λ |
-1
-n!
-∫
-Λ
-dx1 . . .
-∫
-Λ
-dxn
-⏐⏐⏐⏐⏐⏐
-∑
-g∈Gn
-∏
-{i,j }∈Eg
-[
-e−βV (xi−xj)| − 1
-]
-⏐⏐⏐⏐⏐⏐
-≤
-≤ eβBn
-|Λ |
-1
-n!
-∫
-Λ
-dx1 . . .
-∫
-Λ
-dxn
-∑
-τ∈Tn
-∏
-{i,j }∈Eτ
-(1 − e−β |V (xi−xj)|) =
-= eβBn
-|Λ |
-1
-n!
-∑
-τ∈Tn
-∫
-Λ
-dx1 . . .
-∫
-Λ
-dxn
-∏
-{i,j }∈Eτ
-(1 − e−β |V (xi−xj)|) ≤
-≤ eβBn 1
-n!
-[
-ˆC(β )
-] n−1 ∑
-τ∈Tn
-1 = eβBn nn−2
-n!
-[
-ˆC(β )
-] n−1
-where in the last line we have also used the Cayley formula ∑
-τ∈Tn 1 = |Tn| = nn−2 (see [4]). This
-concludes the proof of Theorem 1.
-12
+[]{#asas label="asas"}
+
+The key point now is to find a partition scheme $\bm M$ in such a way that is possible to find a good bound for the factor $\exp\{-\b\sum_{\{i,j\}\in E_{\bm{M}(\t)}\backslash E^+_\t}V(x_i-x_j)\}$ appearing in the r.h.s. of ([\[tre\]](#tre){reference-type="ref" reference="tre"}).
+
+\
+We will construct explicitly our partition scheme $\bm M: {\mathcal T}_n\to {\mathcal G}_n$ by first defining an auxiliary map $\bm T :{\mathcal G}_n\to {\mathcal T}_n$ and then deriving $\bm M$ from $\bm T$ according to the following proposition.
+
+::: pro
+[]{#twomaps label="twomaps"} The following statements are equivalent.
+
+-   There are two maps $$\xymatrix{{\mathcal G}_n \ar@<.5ex>[r]^\Ti & {\mathcal T}_n \ar@<.5ex>[l]^\Mi}$$ such that $\Ti^{-1}(\tau)=\{g \in {\mathcal G}_n:\, \tau \subset g \subset \Mi(\tau)\}$ for every $\tau \in {\mathcal T}_n$.
+
+-   $\Mi$ is a partition scheme in ${\mathcal G}_n$.
+:::
+
+\
+*Proof*. $1\Rightarrow2$. Since $g \in \Ti^{-1}(\Ti(g))$, we have $\Ti(g) \subset g$ for all $g \in {\mathcal G}_n$. In particular, for every tree $\tau$ we have $\Ti(\tau) \subset \tau$ which implies $\Ti(\tau)=\tau$ because both are trees. I.e., $\Ti$ is surjective and thus the intervals $\Ti^{-1}(\tau)$ are nonempty. This implies that ${\mathcal G}_n$ is the disjoint union of the intervals ${\mathcal G}_n = \bigcup_{\tau \in {\mathcal T}_n} \Ti^{-1}(\tau)=\bigcup_{\tau \in {\mathcal T}_n}[\t, \Mi(\t)]$. Hence in view of Definition [\[partschem\]](#partschem){reference-type="ref" reference="partschem"} we conclude that $\Mi$ is a partition scheme in ${\mathcal G}_n$.
+
+\
+$2\Rightarrow1$. If $\Mi$ is a partition scheme then for any $g\in {\mathcal G}_n$ there exists a unique tree $\t\in {\mathcal T}_n$ such that $g\in [\t,\bm M(\t)]$. Therefore we can define the map $\bm T$ from ${\mathcal G}_n$ to ${\mathcal T}_n$ such that, for all $g\in [\t,\bm M(\t)]$, $\bm T(g)=\t$. $\Box$
+
+\
+We thus start by first defining the map $\bm T$ from ${\mathcal G}_n$ to ${\mathcal T}_n$. In order to do that, assume we have a function defined on the edges of the complete graph, $f: E_n \to {\mathbb R}^*$. Then, for every connected graph $g \in {\mathcal G}_n$ there is at least a tree $\tau \subset g$, among the trees $\tau' \subset g$, which minimizes the value of $\sum_{e \in E_{\tau'}} f(e)$. This tree is called a minimum spanning tree of $g$ w.r.t. $f$. If $f$ is such that this minimum spanning tree is unique for each graph $g \in {\mathcal G}_n$, then $f$ induces a map, say $\bm T_f$, from ${\mathcal G}_n$ to ${\mathcal T}_n$ which associates to each $g \in {\mathcal G}_n$ this unique minimum spanning tree.
+
+\
+Let now $V$ be a stable and tempered pair potential in ${\mathbb{R}}^{dn}$ and let $(x_1,\dots,x_n)\in \mathbb{R}^{dn}$ be given. We would like to consider as the function $f: E_n \to  {\mathbb R}^*$ the one that associates to each $\{i,j\}\in E_n$ the value $V(x_i-x_j)$. The problem is that such $f$, depending on the potential $V$ and the configuration $(x_1,\dots,x_n)\in \mathbb{R}^{dn}$ chosen, in general does not guarantee that each $g\in {\mathcal G}_n$ contains a unique minimum spanning tree w.r.t. to $f$. In order to avoid multiple minima, we will therefore modify the codomain of the function $f$ by adding $n(n-1)/2$ auxiliary "coordinates\" (which will take only integers values), each of them one-to-one associated to an edge of $E_n$. These coordinates will permit to distinguish eventual multiple minimum trees.
+
+\
+To carry out this procedure, we need to widen our framework and consider, instead of functions from $E_n$ to $\mathbb{R}^*$, a suitable class of more general functions $f:E_n\to {\mathbb K}$ with ${\mathbb K}$ being a totally ordered Abelian monoid and having the key property that $\sum_{e \in E_{\tau}} f(e)$ is different for different trees $\tau \in {\mathcal T}_n$. We recall that a *totally ordered Abelian monoid* (shortly *tomonid*) is a structure $({\mathbb K}, + ,0, \ge)$ such that $({\mathbb K}, + ,0)$ is an Abelian (i.e. commutative) monoid, $({\mathbb K}, \ge)$ is a totally ordered set and for all $x, y, z\in  {\mathbb K}$ we have that $x\ge y$ implies $x + z \ge y + z$ (i.e. the total order $\ge$ is translational invariant).
+
+::: defi
+[]{#fadm label="fadm"} Let $f: E_n \to {\mathbb K}$ where ${\mathbb K}$ is a totally ordered Abelian monoid. We say that $f$ is admissible if for any $\t,\t'\in {\mathcal T}_n$ such that $\t\neq \t'$ we have that $\sum_{e \in E(\tau)} f(e)\neq \sum_{e \in E(\tau')} f(e)$.
+:::
+
+\
+Once an admissible function $f: E_n \to {\mathbb K}$ has been given, we can define the maps $\bm T_f$ from ${\mathcal G}_n$ to ${\mathcal T}_n$ $\bm M_f$ from ${\mathcal T}_n$ to ${\mathcal G}_n$ as follows.
+
+::: defi
+[]{#hyp label="hyp"} Let $\mathbb{K}$ be a totally ordered Abelian monoid. Let $f: E_n \to {\mathbb K}$ be an admissible function. Then, for every $g \in {\mathcal G}_n$ there is a unique spanning tree $\t \subset g$ for which $\sum_{e \in E(\tau)} f(e)$ is minimum. We define the map $\bm T_f: \GG_n\to \TT_n$ such that $\bm T_f(g)$ is this unique minimum spanning tree of $g$.
+:::
+
+::: defi
+[]{#d4 label="d4"} Let $\mathbb{K}$ be a totally ordered Abelian monoid and let $f: E_n \to {\mathbb K}$ be an admissible function.
+
+We define the map $\bm M_f:{\mathcal T}_n\to{\mathcal G}_n$ such that $\bm M_f( \tau )$ is the graph on the vertices $[n]$ whose edges are the $\{i,j\}$ such that $f(\{i,j\}) \geq f(e)$ for every edge $e \in E_\tau$ belonging to the path from $i$ to $j$ through $\tau$.
+:::
+
+\
+Thus we have constructed $$\xymatrix{{\mathcal G}_n \ar@<.5ex>[r]^{\bm T_f} & {\mathcal T}_n \ar@<.5ex>[l]^{\bm M_f}}$$ Observe that $\tau \subset \bm M_f(\tau)$ and $\bm T_f(g) \subset g$. Moreover, these two maps ${\bm T_f}$, ${\bm M_f}$ satisfy the hypothesis of the Proposition [\[twomaps\]](#twomaps){reference-type="ref" reference="twomaps"}. This is the content of the following lemma.
+
+::: lem
+[]{#l1 label="l1"} Let $f: E_n \to  {\mathbb K}$ be an admissible function and $\tau \in {\mathcal T}_n$. Let $\bm T_f$ and $\bm M_f$ be the maps given in Definitions [\[hyp\]](#hyp){reference-type="ref" reference="hyp"} and [\[d4\]](#d4){reference-type="ref" reference="d4"} respectively. Then $$\bm T_f^{-1}(\tau)=\{g \in {\mathcal G}_n :\, \tau \subset g \subset \bm M_f(\tau)\}$$ and therefore $\bm M_f$ is a partition scheme in ${\mathcal G}_n$.
+:::
+
+::: proof
+*Proof.* Let $g \in \bm T_f^{-1}(\tau)$. We have $\tau=\bm T_f(g) \subset g$. Now take $\{i,j\} \in E_g$, and let $e \in E_\tau$ be any edge belonging to the path from $i$ to $j$ in $\tau$. Consider $\tau'$ the graph obtained from $\tau$ after replacing the edge $e$ by $\{i,j\}$. Clearly $\tau'$ is connected and has $n-1$ edges, so it is a tree. By minimality of $\tau$ we must have $f(d) \leq f(\{i,j\})$, whence $\{i,j\} \in E_{\bm M_f(\tau)}$. Therefore $g \subset \bm M_f(\tau)$.
+
+\
+Conversely, let $\tau \subset g \subset \bm M_f(\tau)$. We must show $\bm T_f(g)=\tau$. By cardinality, it suffices to show $\bm T_f(g) \subset \tau$. Proceeding by contradiction, take $\{i,j\} \in E_{\bm T_f(g)} \setminus E_\tau$. Consider the path $p^\t(\{i,j\})$ in $\tau$ joining $i$ with $j$. Since $\bm T_f(g) \subset \bm M_f(\tau)$, $f(\{i,j\})$ is greater or equal than the corresponding value for any edge in the path $p^\t(\{i,j\})$. If we remove $\{i,j\}$ from $\bm T_f(g)$, the tree splits into two trees. Necessarily, at least one of the edges in the path $p^\t(\{i,j\})$ joins a vertex of one tree with a vertex of the other. Thus, by adding this edge we obtain a connected graph with $n-1$ edges, a new tree, which contradicts the minimality of $\bm T_f (g)$. ◻
+:::
+
+\
+We now provide an explicit construction for the admissible function $f$ of Definition [\[hyp\]](#hyp){reference-type="ref" reference="hyp"}.
+
+\
+We start by specifying the totally ordered Abelian monoid $\mathbb{K}$. Assume to have chosen an order in $E_n$ (e.g. the lexicographic order: $\{i,j\}<\{i',j'\}$ if either $i<i'$ or $i=i'$ and $j<j'$). Let $\mathbb{N}_0=\mathbb{N}\cup\{0\}$ and consider the set $${\mathbb N}_0^{E_n}=\overbrace{{\mathbb N}_0\times \cdots \times \mathbb N_0}^{|E_n|~{\rm  times}}$$ such that the $m^{\rm th}$ entry (with $1\le m\le |E_n|$) of an element $x\in {\mathbb N}_0^{E_n}$ corresponds to the $m^{\rm th}$ edge w.r.t. the order chosen of $E_n$. Now we set []{#tomonoid label="tomonoid"} \^\*\_0\^E_n An element of ${\mathbb{K}}$ is thus an ordered $(|E_n|+1)$-tuple such that the first entry is a real number while the remaining $|E_n|$ entries are natural numbers or zero.
+
+\
+The set ${\mathbb{K}}$ defined in ([\[tomonoid\]](#tomonoid){reference-type="ref" reference="tomonoid"}) has a canonical structure of Abelian monoid and can also be endowed with a natural total order by considering the lexicographical order on $\mathbb{R}^*\times \mathbb{N}_0^m$, prioritizing the entries from left to right. It is easy to show that such an order is translational invariant respect to the standard sum in ${\mathbb{K}}$ which is thus a totally ordered Abelian monoid.\
+We are now ready to define the function $f:E_n\to \mathbb{K}$. Let $\bm 1_{\{i,j\}}$ be the element of ${\mathbb N}_0^{E_n}$ with all entries zero except the one at the position corresponding to the edge $\{i,j\}$ which is equal to one.
+
+::: defi
+[]{#fV label="fV"} Given a pair potential $V$ and given $(x_1,\dots,x_n)\in  \mathbb{R}^{dn}$, define the function []{#effe label="effe"} f:  E_n :  {i,j}V(x_i-x_j)\_{i,j}
+:::
+
+\
+**Remark**. The function $f$ above is, for every pair potential $V$ and for any $(x_1,\dots,x_n)\in  \mathbb{R}^{dn}$, admissible according to Definition [\[hyp\]](#hyp){reference-type="ref" reference="hyp"} and thus, according to Definition [\[d4\]](#d4){reference-type="ref" reference="d4"} and Lemma [\[l1\]](#l1){reference-type="ref" reference="l1"}, the map $\bm M_f:{\mathcal T}_n\to{\mathcal G}_n$ is a partition scheme in ${\mathcal G}_n$. This is our new partition scheme. The advantage to consider this new partition $\bm M_f$ scheme instead of the one originally proposed by Penrose is manifestly clear in the following key lemma which practically concludes the proof of Proposition [\[pro1\]](#pro1){reference-type="ref" reference="pro1"}.
+
+::: lem
+[]{#stabp label="stabp"} Let $V: {\mathbb R}^d \to {\mathbb R}^*$ be a stable pair potential with stability constant $B$, and $\tau \in {\mathcal T}_n$. Then, for every $(x_1,...,x_n) \in {\mathbb R}^{dn}$, []{#Peb label="Peb"} \_{i,j} E\_M_f() E\_\^+ V(x_i-x_j) -Bn where $f$ is the function given in Definition [\[fV\]](#fV){reference-type="ref" reference="fV"}, $\bm M_f(\tau)$ is the graph given in Definition [\[d4\]](#d4){reference-type="ref" reference="d4"} and $E_\tau^+$ is the subset of $E_\t$ defined in ([\[t+\]](#t+){reference-type="ref" reference="t+"}).
+:::
+
+::: proof
+*Proof.* In the following, $V_{ij}$ denotes $V(x_i - x_j)$, and we will make implicit use of the following trivial fact: $$(x,\sigma) \geq (x',\sigma') \Rightarrow x \geq x' \ \ \mbox{ for } (x,\sigma), (x',\sigma') \in \mathbb{R}^*\times{\mathbb N}_0^{E_n}$$ Now we proceed to show that the inequality ([\[Peb\]](#Peb){reference-type="ref" reference="Peb"}) holds true. The set of edges $E_\t\setminus E_\tau^+$ forms the forest $\{\tau_1,...,\tau_k\}$. Let us denote ${\mathcal V}_{\tau_s}$ the vertex set of the tree $\tau_s$ of the forest. Assume $i \in {\mathcal V}_{\tau_a}$, $j \in {\mathcal V}_{\tau_b}$. If $a \neq b$, the path from $i$ to $j$ through $\tau$ involves an edge $e$ in $E_\tau^+$. Thus, if in addition $\{i.j\} \in
+E_{\bm M_f(\tau)}$, we have $V_{ij} \geq V_e \geq 0$. If $a=b$, the path from $i$ to $j$ through $\tau$ is contained in $\tau_a$. Thus, if in addition $\{i,j\} \notin E_{\bm M_f(\tau)}$, we must have $V_{ij} \leq V_e \leq 0$ for some edge $e$ in that path. This allows to bound:
+
+$$\sum_{\{i,j\} \in E_{\bm M_f(\tau)} \setminus E_\tau^+} V_{ij} \geq \sum_{s=1}^k \sum_{\{i,j\} \subset {\mathcal V}_{\tau_s}} V_{ij} \geq
+ \sum_{s=1}^k -|\mathcal V_{\tau_s}|B \ge -nB  ~~~~~~~~~~~~~~~~~~\Box$$ ◻
+:::
+
+## Conclusion of the proof of Proposition [\[pro1\]](#pro1){reference-type="ref" reference="pro1"}
+
+We now have all ingredients to conclude the proof of Proposition [\[pro1\]](#pro1){reference-type="ref" reference="pro1"}. Indeed, for any fixed configuration $(x_1,\dots,x_n)\in \mathbb{R}^{dn}$, by Corollary [\[cor1\]](#cor1){reference-type="ref" reference="cor1"} and Lemma [\[l1\]](#l1){reference-type="ref" reference="l1"} we have
+
+$$\Big| \sum_{g \in {\mathcal G}_n} \prod_{\{i,j\} \in E_g} (e^{-\b V(x_i-x_j)}-1) \Big| \leq
+ \left[ \prod_{\{i,j\} \in E_\tau} (1-e^{-\b| V(x_i-x_j)|})\right]
+ e^{-\b \sum_{\{i,j\} \in E_{\bm M_f(\tau)} \setminus E^+_\tau}V(x_i-x_j)}~\le$$ $$~~~~~~~ \le e^{\b Bn}\sum_{\tau \in {\mathcal T}_n} \prod_{\{i,j\} \in \tau} (1-e^{-\b| V(x_i-x_j)|})$$
+
+where $f$ is the admissible function given in ([\[effe\]](#effe){reference-type="ref" reference="effe"}), $\bm M_f$ is the partition scheme given in Definition [\[d4\]](#d4){reference-type="ref" reference="d4"} and where to get the inequality of the last line we have used Lemma [\[stabp\]](#stabp){reference-type="ref" reference="stabp"}.
+
+# Proof of Theorem [\[teo1\]](#teo1){reference-type="ref" reference="teo1"}
+
+To deduce Theorem [\[teo1\]](#teo1){reference-type="ref" reference="teo1"} from Proposition [\[pro1\]](#pro1){reference-type="ref" reference="pro1"} we just need to show the following easy lemma.
+
+::: lem
+[]{#le3 label="le3"} For any $\t\in T_n$ it holds $$\int_{\L}dx_1\dots \int_{\L}dx_{n} \prod_{\{i,j\}\in E_{\t}}
+\left(1-e^{-\b |V(x_i-x_j)|}\right)\le
+|\L|\left[\hat C(\b)\right]^{n-1}$$
+:::
+
+\
+**Proof**. Without loss of generality we can always assume (eventually through a renomination of the indices in the integral of the l.h.s. of equation above) that $E_{\t}~=~\{2,j_2\},\{3,j_3\},\dots \{n,j_{n}\}$ with $j_k<k$ for all $k=2,\dots, n$, so that $$\int_{\L}dx_1\dots \int_{\L}dx_{n} \prod_{\{i,j\}\in E_{\t}}
+\left( 1- e^{ -\b |V(x_i -x_j)|}\right)~
+=~
+\int_{\L}dx_1\dots \int_{\L}dx_{n} \prod_{k=2}^{n}
+\left(1-e^{ -\b |V(x_{k} -x_{j_k})|}\right )$$
+
+\
+Define the following change of variables $(x_1,\dots,x_n) \to (y_1,\dots, y_n)$ in the integral []{#change label="change"} y_1 =x_1,     y\_k= x\_k-x\_j_k,       k =2,...,n The Jacobian matrix of such transformation ([\[change\]](#change){reference-type="ref" reference="change"}), being lower triangular with entries of the diagonal all equal to one, has determinant equal to one. Therefore we have $$\int_{\L}dx_1\dots\int_{\L}dx_{n} \prod_{k~=~1}^{n-1} \left(1-e^{ -\b |V(x_{i_k} -x_{j_k})|}\right ) ~\le$$ $$\le~
+\int_{\L}dy_1\int_{\mathbb{R}^3}dy_2\dots
+\int_{\mathbb{R}^3}dy_{n}
+ \prod_{j=2}^{n}
+\left( 1- e^{ -\b |V(y_j)|}\right )~=$$ $$=~
+|\L|\left[\int_{\mathbb{R}^3}(1-   e^{ -\b |V(x)|})dx\right]^{n-1}~= |\L|\left[\hat C(\b)\right]^{n-1}$$ $\Box$
+
+\
+Theorem [\[teo1\]](#teo1){reference-type="ref" reference="teo1"} follows now straightforwardly. Indeed, from Proposition [\[pro1\]](#pro1){reference-type="ref" reference="pro1"} and Lemma [\[le3\]](#le3){reference-type="ref" reference="le3"} we get the following bound for the absolute value of the Mayer coefficient $C_n(\b,\L)$. $$|C_n(\b,\L)|~\le ~{1\over |\L|}{1\over n!}\int_{\L}\,dx_1
+\dots \int_{\L} dx_n\: \left|\sum\limits_{g\in {\mathcal G}_{n}}
+\prod\limits_{\{i,j\}\in E_g}\left[  e^{ -\b V(x_i-x_j)|} -1\right]\right|\le$$ $$~~~~~~~~~~~~~~\le ~{e^{\b Bn}\over |\L|}{1\over n!}\int_{\L}\,dx_1
+\dots \int_{\L} dx_n\: \sum_{\tau \in {\mathcal T}_n} \prod_{\{i,j\} \in E_\tau} (1-e^{-\b| V(x_i-x_j)|}) =$$ $$~~~~~~~~~~~~~~= ~{e^{\b Bn}\over |\L|}{1\over n!}\sum_{\tau \in {\mathcal T}_n}\int_{\L}\,dx_1
+\dots \int_{\L} dx_n\:  \prod_{\{i,j\} \in E_\tau} (1-e^{-\b| V(x_i-x_j)|}) \le$$ $$~~~~~~\le ~{e^{\b Bn}}{1\over n!}\left[\hat C(\b)\right]^{n-1} \sum_{\tau \in {\mathcal T}_n} 1~ =~{e^{\b Bn}}{n^{n-2}\over n!}\left[\hat C(\b)\right]^{n-1}
+~$$ where in the last line we have also used the Cayley formula $\sum_{\tau \in {\mathcal T}_n} 1=|\mathcal T_n|=n^{n-2}$ (see [@Ca]).
+
+This concludes the proof of Theorem [\[teo1\]](#teo1){reference-type="ref" reference="teo1"}.

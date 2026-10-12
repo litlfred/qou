@@ -8,152 +8,192 @@ pages: 33-36
 source_pdf: 1304.0323v3.pdf
 source_sha256: 92e2b9dc876e1a52
 doc_brief: "SYMMETRIC QUIVER HECKE ALGEBRAS — Let J be a set of pairs consisting of good U ′ q(g)-modules and invertible elements in the base ﬁeld C(q)."
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 0.817
 ---
-proving our main theorem.
-Proposition 3.3.1 ([23, Corollary 2.9], [ 31, Theorem 4.6]) . If the quiver associated
-with RJ is of ﬁnite type A,D,E , then RJ (β) has a ﬁnite global dimension for every
-β∈ Q+.
-Proposition 3.3.2. Let A→ B be a homomorphism of algebras. We assume the
-following conditions:
-(a) B is a ﬁnitely generated projective A-module,
-(b) HomA(B,A ) is a projective B-module,
-(c) the global dimension of B is ﬁnite.
+The following
+propositions are  key ingredients in proving our main theorem.
+\begin{prop}[{\cite[Corollary 2.9]{Kato12}, \cite[Theorem 4.6]{McNa12}}]
+\label{pro:finite global dimension}
+If the quiver associated with  $R^J$   is of   finite  type $A,D,E$, then $R^J( \beta )$ has
+a finite global dimension  for every $\beta \in \rootl^+$.
+\end{prop}
+
+
+
+\begin{prop} \label{pro:projectivity}
+Let $A\to B$ be a homomorphism of algebras.
+We assume the following conditions:
+\bna
+\item $B$ is a finitely generated projective $A$-module,
+\item $\Hom_A(B,A)$ is a projective $B$-module,
+\item the global dimension of $B$ is finite.
+\ee
 Then we have:
-(i) any B-module projective over A is projective over B,
-(ii) any B-module ﬂat over A is ﬂat over B.
-Proof. Since the proof is similar, we give only the proof of (ii).
-Let us denote by ﬂat . dimAM the ﬂat dimension of an A-module M. Then we have
-ﬂat. dimA(M)≤ ﬂat. dimB(M)
-for any B-module M, because Tor A
-k (N,M )≃ TorB
-k (N⊗AB,M ) for any Aopp-module
-N and k∈ Z by (a).
-34 S.-J. KANG, M. KASHIW ARA, M. KIM
-By (b), Hom A(B,A )⊗AL is a ﬂat B-module if L is a ﬂat A-module. Indeed,
-the functor X⊗B HomA(B,A ) is exact in X ∈ Mod(Bopp) and hence the functor
-X⊗B HomA(B,A )⊗AL is also exact in X.
-On the other hand, for any A-module L, the canonical B-module homomorphism
-HomA(B,A )⊗
-A
-L→ HomA(B,L ), f ⊗s↦−→(B∋b↦→f (b)s)
-is an isomorphism by (a). Hence we conclude that Hom A(B,L ) is a ﬂat B-module for
-any ﬂat A-module L. It immediately implies that
-ﬂat. dimB
-(
-HomA(B,L )
-)
-≤ ﬂat. dimA(L) for any A-module L.
-Now, letM be a B-module. Then there exists a canonical B-module homomorphism
-ϕM : M→ HomA(B,M )
-given by ϕM (x)(b) = bx. It is evidently injective.
-In order to prove the proposition, it is enough to show the following s tatement for
-anyd≥ 0:
-for any B-module M, ﬂat. dimA(M)≤d implies ﬂat. dimB(M)≤d.
-We shall show it by the descending induction on d. If d≫ 0, it is a consequence of (c).
-Let M be a B-module with ﬂat . dimA(M)≤d. We have an exact sequence
-0→M
-ϕM
-−−→HomA(B,M )→N→ 0.
+\bni
+\item any $B$-module projective over $A$ is projective over $B$,
+\item any $B$-module flat over $A$ is flat over $B$.
+\ee
+\end{prop}
+
+\begin{proof}
+Since the proof is similar, we give only the proof of (ii).
+
+Let us denote by $\fd M$ the flat dimension of an $A$-module $M$.
+Then we have $$\fd(M)\le\fd[B](M)$$ for any $B$-module $M$,
+because $\Tor_k^A(N,M)\simeq \Tor_k^B(N\tens_A B,M)$ for any
+$A^\opp$-module $N$ and $k\in\Z$ by (a).
+
+
+By (b),  $\Hom_A(B,A)\tens_AL$ is a flat $B$-module
+if $L$ is a flat $A$-module. Indeed,
+the functor $X\tens_B\Hom_A(B,A)$ is exact in $X\in\Mod(B^\opp)$
+and hence the functor $X\tens_B\Hom_A(B,A)\tens_AL$
+is also exact in $X$.
+
+On the other hand, for any $A$-module $L$, the canonical $B$-module homomorphism
+$$\Hom_A(B,A)\tens_AL\to \Hom_A(B,L),
+\qquad f\tens s\longmapsto (B\ni b\mapsto f(b)s)
+$$
+is an isomorphism by (a).
+Hence we conclude that
+$\Hom_A(B,L)$ is a flat $B$-module
+for any flat $A$-module $L$.
+It immediately implies that
+$$\fd[B]\bl\Hom_A(B,L)\br\le\fd (L)\quad\text{for any $A$-module $L$.}$$
+
+Now, let $M$ be a $B$-module.
+Then there exists a canonical $B$-module homomorphism
+$$\vphi_M\colon M\to \Hom_A(B,M)$$
+given by $\vphi_M(x)(b)=bx$.
+It is evidently injective.
+
+In order to prove the proposition,
+it is enough to show the following statement for any $d\ge0$:
+\eq \text{for any $B$-module $M$,
+$\fd (M)\le d$ implies $\fd[B](M)\le d$.} \nonumber
+\eneq
+We shall show it by the descending induction on $d$.
+If $d\gg0$, it is a consequence of (c).
+Let $M$ be a $B$-module with $\fd(M)\le d$.
+We have an exact sequence
+$$0\to M\To[\vphi_M] \Hom_A(B,M)\to N\to 0.$$
 Then
-ﬂat. dimA
-(
-HomA(B,M )
-)
-≤ ﬂat. dimB
-(
-HomA(B,M )
-)
-≤ ﬂat. dimA(M)≤d.
-Hence we have ﬂat . dimAN≤d + 1, which implies that ﬂat . dimB(N)≤d + 1 by the
-induction hypothesis. Finally, we conclude that ﬂat . dimB(M)≤d. Thus the induction
-proceeds. □
-Theorem 3.3.3. If the quiver associated with RJ is of ﬁnite type A,D,E , then the
-functorFβ is exact for every β∈ Q+.
-Proof. Let us apply Proposition 3.3.2 withA = Popp
-β andB =RJ (β)opp. The conditions
-(a) and (b) are well-known, and (c) is nothing but Proposition 3.3.1. Therefore, ˆV⊗β
-is a ﬂat RJ (β)opp-module since it is a ﬂat Popp
-β -module. □
-4. Quantum affine algebra U′
-q(ˆslN ) and the category CJ
-In this section, we investigate the tensor category structure of CˆslN
-(N≥ 2) via its
-vector representation using the method introduced in the previou s section. In the case
-of g = ˆslN , we have I ={0, 1,...,N − 1} and
-(αi,αj) = 2δi,j−δ(i≡j + 1 mod N)−δ(i≡j− 1 mod N).
-SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 35
-The base ﬁeld k is C(q).
-4.1. R-matrix for V (̟1) of U′
-q(ˆslN ). Let V :=V (̟1) be the fundamental represen-
-tation of U′
-q(ˆslN ) of fundamental weight ̟1. Then V =
-N⨁
-k=1
-kuk with the action
-ei(uk) = δ(k≡i + 1 mod N )ui,
-fi(uk) = δ(k≡i mod N)ui+1,
-Kiuk = qδ(k≡i mod N )−δ(k≡i+1 mod N )uk.
-Here u0 =uN .
+$$\fd\bl\Hom_A(B,M)\br\le\fd[B]\bl\Hom_A(B,M)\br\le \fd (M)\le d.$$
+Hence we have $\fd[A]N\le d+1$,
+which implies that $\fd[B](N)\le d+1$
+by the induction hypothesis.
+Finally, we conclude that
+$\fd[B](M)\le d$.
+Thus the induction proceeds.
+\end{proof}
+
+
+
+\begin{theorem} \label{thm:exact}
+If the quiver associated with  $R^J$  is of finite type $A, D, E$,
+then the functor  $\F_\beta$ is exact  for every $\beta \in
+\rootl^+$.
+\end{theorem}
+\begin{proof}
+Let us apply Proposition \ref{pro:projectivity} with $A=\mathbb{P}_{ \beta }^\opp$
+and $B= R^J({ \beta })^\opp$.
+The conditions (a) and (b) are well-known, and (c) is nothing but Proposition \ref{pro:finite global dimension}. Therefore,
+$\bV[{ \beta }]$ is a flat $R^J({ \beta })^\opp$-module
+since it is a flat $\mathbb{P}_{ \beta }^\opp$-module.
+\end{proof}
+
+
+\section{Quantum affine algebra $\UA$
+and the category $\mathcal C_{J}$}
+
+In this section, we investigate the tensor category structure
+of  $\CC_{\slnh}$  ($N\ge2$)  via its
+vector representation using the method introduced in the previous section.
+ In the case of $\g=\slnh$, we have
+$I=\{0,1,\ldots,N-1\}$ and
+$$(\al_i,\al_j)=
+2\delta_{i,j}-\delta(i\equiv j+1\mod N)-\delta(i\equiv j-1\mod N).$$
+The base field $\cor$ is $\C(q)$.
+
+
+
+\subsection{R-matrix for $V(\varpi_1)$ of $\UA$}
+
+Let $V\seteq V(\varpi_1)$ be the fundamental representation of $\UA$
+of fundamental weight $\varpi_1$.
+Then
+$V=\soplus_{k=1}^{N}\cor u_k$
+with the action
+\eqn
+e_i(u_k)&=&\delta({k\equiv i+1\hs{-1ex}\mod N}) u_{i}, \\
+f_i(u_k)&=&\delta({k\equiv i\hs{-1ex}\mod N}) u_{i+1},\\
+K_iu_k&=&q^{\delta(k\equiv i\hs{-1ex}\mod N)-\delta(k\equiv i+1\hs{-1ex}\mod N)}u_k.
+\eneqn
+Here $u_0=u_N$.
+
 The normalized R-matrix
-R =Rnorm
-V (̟1),V (̟1) : Vz⊗Vz′→Vz′⊗Vz
+$$R=\Rnorm_{V(\varpi_1), V(\varpi_1)} \col
+V_{z} \otimes V_{z'}
+\rightarrow V_{z'} \otimes V_{z}$$
 is explicitly given by
-R((ui)z⊗(uj)z′)
-=
-
-
-
-(1−q2)z′δ(i>j)zδ(i<j)
-z′−q2z (ui)z′⊗(uj)z + q(z′−z)
-z′−q2z (uj)z′⊗(ui)z if i⁄=j,
-(ui)z′⊗(ui)z if i =j.
-(4.1.1)
-It shows that dV,V (z′/z) = z′/z−q2.
-LetS ={V}, J = Z and let X : J→ k× be the map given by X(j) = q2j. Then we
-have
-dij =δ(j =i + 1) for i,j∈J.(4.1.2)
-Then, for i,j∈J, we have
-(αi,αj) =
-
-
-
-−1 if i−j =±1,
-2 if i =j,
-0 otherwise,
+\eq&&
+\ba{l}
+ R((u_i)_z\tens (u_j)_{z'})\\
+\hs{5ex}=\bc \dfrac{(1-q^2)z'{}^{\delta(i>j)}z^{\delta(i<j)}}{z'-q^2z}
+(u_i)_{z'}\tens (u_j)_z+
+ \dfrac{q(z'-z)}{z'-q^2z}(u_j)_{z'}\tens (u_i)_z&\text{if $i\not=j$,}\\
+(u_i)_{z'}\tens (u_i)_z&\text{if $i=j$.}
+\ec\ea\label{eq: RV}
+\eneq
+ It shows that $d_{V,V}(z'/z)=z'/z-q^2$.
+
+\smallskip
+
+Let $\mathcal{S}=\{V\}$,
+$J=\Z$ and let $X\col J\to \cor^\times$ be the
+map given by $X(j)=q^{2j}$.
+Then we have
+\eq
+d_{ij}=\delta(j=i+1)\qtext{for $i,j\in J$.}
+\eneq
+Then, for $i,j\in J$, we have
+$$(\al_i,\al_j)=\begin{cases}-1&\text{if $i-j=\pm1$,}\\
+2&\text{if $i=j$,}\\
+0&\text{otherwise,}
+\end{cases}$$
 and
-Qij(u,v ) =
-
-
-
-±(u−v) if j =i± 1,
-0 if i =j,
-1 otherwise.
-Therefore the corresponding Khovanov-Lauda-Rouquier algebr aR =RJ is of type A∞.
+$$Q_{ij}(u,v)=\begin{cases}
+\pm(u-v)&\text{if $j=i\pm1$,}\\
+0&\text{if $i=j$,}\\
+1&\text{otherwise.}
+\end{cases}$$
+Therefore the corresponding \KLR\ $R=R^J$ is of type $\mathrm{A}_{\infty}$.
+
+\medskip
+
 We take
-PJ = ⨁
-a∈Z
-Zǫa
-as the weight lattice with ( ǫa,ǫb) = δa,b. The root lattice QJ = ⨁
-i∈J
-Zαi is embedded
-intoPJ byαi =ǫi−ǫi+1. We write as usual Q+
-J for ⨁
-i∈J
-Z≥0αi.
-36 S.-J. KANG, M. KASHIW ARA, M. KIM
-Note that, for β∈ Q+
-J and ν∈Jβ, we have
-(τa+1τaτa+1−τaτa+1τa)e(ν) =
-{
-±e(ν) if νa =νa+2 =νa+1∓ 1,
-0 otherwise.
-Also, we have
-Pij(u,v ) = (u−v)δ(j=i+1)ci,j(u,v ).
-We will choose ci,j(u,v ) satisfying ( 3.1.1) later in Theorem 4.6.5. Recall that the
-functor
-F : ⨁
-β∈Q+
-J
-Modgr(R(β))→ Mod(U′
-q(ˆslN ))
-deﬁned in ( 3.2.1) is exact (Theorem 3.3.3).
+$$P_J=\soplus_{a\in \Z}\Z\oep_a$$
+as the weight lattice with $(\oep_a,\oep_b)=\delta_{a,b}$.
+The root lattice $\rtl_J=\soplus_{i\in J}\Z\al_i$
+is embedded into $P_J$ by
+$\al_i=\oep_i-\oep_{i+1}$. We write as usual $\rtl_J^+$
+for $\soplus_{i\in J}\Z_{\ge0}\al_i$.
+
+
+Note that,  for $\beta\in \rtl^+_J$ and $\nu\in J^\beta$,  we have
+$$(\tau_{a+1}\tau_a\tau_{a+1}-\tau_a\tau_{a+1}\tau_{a})e(\nu)
+=\begin{cases}\pm e(\nu)&\text{if $\nu_a=\nu_{a+2}=\nu_{a+1}\mp1$,}\\
+0&\text{otherwise.}
+\end{cases}$$
+ Also,  we have
+$$P_{ij}(u,v)=(u-v)^{\delta(j=i+1)}c_{i,j}(u,v).$$
+ We will choose
+$c_{i,j}(u,v)$  satisfying \eqref{cond:cij} later in  Theorem \ref{thm:cij}.
+Recall  that
+ the functor $$\F \col \soplus_{\beta\in  \rtl^+_J} \Modg(R(\beta))\to
+\Mod( \UA) $$
+ defined in \eqref{eq:the functor} is exact (Theorem \ref{thm:exact}).
+
+\bigskip

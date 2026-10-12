@@ -1,0 +1,76 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2404.19155v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2404.19155v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2404.19155v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2404.19155&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2404.19155v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2404.19155v2",
+    "content_type": "application/gzip",
+    "sha256": "63d844807a75f0792cb5d620012e772c966ca4283e8edd3076eb79dd92c30775",
+    "bytes": 176887,
+    "fetched": "2026-10-10T15:20:08+00:00",
+    "files": [
+      {
+        "path": "source/files/biblatex.sty",
+        "role": "sty",
+        "sha256": "cd7d2bb7fa93cd406863f6e43bc3ef08ff34b18a55f6015db759d8d34ebe9984",
+        "bytes": 533961
+      },
+      {
+        "path": "source/files/blx-case-expl3.sty",
+        "role": "sty",
+        "sha256": "35a9fcb0f0620ddf7202917911e1f7dd21a20e20b32180d1c273ee3fbc859772",
+        "bytes": 9961
+      },
+      {
+        "path": "source/files/hyphenation.tex",
+        "role": "tex",
+        "sha256": "95fcb7df777f588d4dbfa23ec7c726f5e5d2f121a90a92cc996296f4cf0fa63b",
+        "bytes": 533
+      },
+      {
+        "path": "source/files/note-macros.tex",
+        "role": "tex",
+        "sha256": "905d06d713cdc984cc73896c50fb60ca777ab46ae4853bde6e37a770ee2b1cf0",
+        "bytes": 1427
+      },
+      {
+        "path": "source/files/note.bbl",
+        "role": "bbl",
+        "sha256": "97ceaf6a61fae83fdfbc12f559debecc1fbb4fc675b4caa7615796162c2af97b",
+        "bytes": 40102
+      },
+      {
+        "path": "source/files/note.tex",
+        "role": "tex",
+        "sha256": "ad136a60f76bfac297c2526ff0b78bb3bd41427cb241e9205d878b9c8b0d1f05",
+        "bytes": 64214
+      },
+      {
+        "path": "source/files/sl2art.cls",
+        "role": "cls",
+        "sha256": "9ea74b9904877c307ded6ab4f8ea77c3db142fde21af19bc9da8c3cd415017c2",
+        "bytes": 6605
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

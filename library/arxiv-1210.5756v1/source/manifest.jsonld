@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1210.5756v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1210.5756v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1210.5756v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1210.5756&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1210.5756v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1210.5756v1",
+    "content_type": "application/gzip",
+    "sha256": "4faf32155e0bb5fa7885ac491b23d7c2fdb1f5f1481d91d7c4e0a2ffeab4617c",
+    "bytes": 3120798,
+    "fetched": "2026-10-10T15:07:21+00:00",
+    "files": [
+      {
+        "path": "source/files/Contact_Graphs_Revisited.tex",
+        "role": "tex",
+        "sha256": "135203de03c06814e7434ad825d753e15b46523e073b62b310c6bdbd85abda73",
+        "bytes": 79762
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

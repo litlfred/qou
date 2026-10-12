@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T18:48:29Z
-updated_at: 2026-10-04T15:20:53Z
+updated_at: 2026-10-10T07:18:47Z
 parent: qou-mub3
 ---
 
@@ -25,3 +25,22 @@ has one owner -- #5770 owns e505ecfa, this bean does not. Coordination comment
 posted there with the three traps (cffi, the summarize-library step, shared
 doc_id). uploads/ is now 29 PDFs; this bean covers only the pre-existing
 un-ingested backlog, not #5770's batch.
+
+
+## COUNT IS STALE — it is 10, not 19 (measured 2026-10-10)
+
+`ls uploads/*.pdf | wc -l` -> **10**; `ls -d library/*/ | wc -l` -> 662. The
+title says "the remaining 19", so the queue has **drained by 9**, not grown.
+
+Correcting it because the direction matters: an agent reading "19" budgets for
+twice the work that is left. (An earlier pass of this cleanup read a checkout
+1245 commits behind and recorded "23, the queue GREW by 4" — the opposite of the
+truth. Re-measure on the live tree, not on a stale clone.)
+
+**Why it is cited from the eightfold arc:** AGENTS.md corpus-grep path 5 searches
+`library/` only, so anything still in `uploads/` is invisible to every
+"has the corpus got this?" check — which is how a held source gets re-derived.
+Several `CITE:`-class beans say "source X is not held"; some of those sources may
+be sitting in `uploads/`. Run this before buying such a citation.
+
+Mover: `scripts/migrate-uploads-to-library.py`.

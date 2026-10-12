@@ -8,99 +8,33 @@ pages: 7-8
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
 doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+text_source: latex
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 0.977
 ---
-Due to the ﬂavor independence of the covariant derivative, L0
-QCD is invariant under the inﬁnitesimal
-global transformations of the left- and right-handed quark ﬁelds,
-qL ≡
-
-
-
-uL
-dL
-sL
-
-
- ↦→
-(
-/BD −i
-8∑
-a=1
-ǫL
-a
-λa
-2 −iǫL
-)
-qL,
-qR ≡
-
-
-
-uR
-dR
-sR
-
-
- ↦→
-(
-/BD −i
-8∑
-a=1
-ǫR
-a
-λa
-2 −iǫR
-)
-qR. (15)
-Note that the Gell-Mann matrices act in ﬂavor space. L0
-QCD is said to have a classical global U(3)L ×
-U(3)R symmetry. Applying Noether’s theorem [Noether, 1918], [Hi ll, 1951], [Gell-Mann and L´ evy, 1960],
-from such an invariance one would expect a total of 2 × (8 + 1) = 18 conserved currents:
-Lµ
-a = ¯qLγµλa
-2 qL, L µ = ¯qLγµqL, R µ
-a = ¯qRγµλa
-2 qR, R µ = ¯qRγµqR. (16)
-Making use of
-PLγµPR ±PRγµPL =
-{
-γµ
-γµγ5
-,
-we introduce the linear combinations
-V µ
-a = Rµ
-a +Lµ
-a = ¯qγ µλa
-2 q, (17)
-Aµ
-a = Rµ
-a −Lµ
-a = ¯qγ µγ5
-λa
-2 q, (18)
-which under a parity transformation of the quark ﬁelds, q(t,⃗ x) ↦→γ0q(t, −⃗ x), transform as vector and
-axial-vector current densities, respectively,
-P :V µ
-a (t,⃗ x) ↦→Vaµ(t, −⃗ x), (19)
-P :Aµ
-a(t,⃗ x) ↦→ −Aaµ(t, −⃗ x). (20)
-The conserved singlet vector current results from a transfo rmation of all left-handed and right-handed
-quark ﬁelds by the same phase,
-V µ =Rµ +Lµ = ¯qγ µq. (21)
-The singlet axial-vector current originates from a transfo rmation of all left-handed quark ﬁelds with
-one phase and all right-handed with the opposite phase,
-Aµ =Rµ −Lµ = ¯qγ µγ5q. (22)
-Quantum ﬂuctuations destroy the singlet axial-vector curr ent conservation and there will be extra terms,
-referred to as anomalies [Bell and Jackiw, 1969], [Adler, 19 69], [Adler and Bardeen, 1969], resulting in
-∂µAµ = 3g2
-3
-32π2ǫµνρσ Gµν
-a Gρσ
-a , ǫ 0123 = 1.
-The factor of three originates from the number of ﬂavors. In t he large Nc (number of colors) limit of
-Ref. [’t Hooft, 1974] the singlet axial-vector current is co nserved, because the strong coupling constant
-behaves as g2
-3 ∼N −1
-c .
-7
+[]{#subsubsec_agsl label="subsubsec_agsl"} Due to the flavor independence of the covariant derivative, ${\cal L}^0_{\rm QCD}$ is invariant under the infinitesimal global transformations of the left- and right-handed quark fields, $$\begin{aligned}
+\label{2:1:3:u3lu3r}
+q_L\equiv
+\left(\begin{array}{c}u_L\\d_L\\s_L\end{array}\right)&\mapsto&
+\left({\mathbbm 1}-i\sum_{a=1}^8
+\epsilon^L_a\frac{\lambda_a}{2}-i\epsilon^L\right)q_L,\nonumber\\
+q_R\equiv\left(\begin{array}{c}u_R\\d_R\\s_R\end{array}\right) &\mapsto& \left({\mathbbm 1}-i\sum_{a=1}^8
+\epsilon^R_a\frac{\lambda_a}{2}-i\epsilon^R\right)q_R.
+\end{aligned}$$ Note that the Gell-Mann matrices act in flavor space. ${\cal L}^0_{\rm QCD}$ is said to have a classical *global* $\mbox{U(3)}_L\times\mbox{U(3)}_R$ symmetry. Applying Noether's theorem [@Noether:1918], [@Hill:1951], [@Gell-Mann:1960np], from such an invariance one would expect a total of $2\times(8+1)=18$ conserved currents: $$\label{2:1:3:str} L^{\mu}_a=\bar{q}_L\gamma^\mu \frac{\lambda_a}{2}q_L,\quad
+L^{\mu}=\bar{q}_L\gamma^\mu q_L,\quad
+R^{\mu}_a=\bar{q}_R\gamma^\mu \frac{\lambda_a}{2}q_R,\quad
+R^{\mu}=\bar{q}_R\gamma^\mu q_R.$$ Making use of $$P_L\gamma^\mu P_R\pm P_R\gamma^\mu P_L
+=\left\{\begin{array}{l}\gamma^\mu\\\gamma^\mu\gamma_5\end{array}\right.,$$ we introduce the linear combinations $$\begin{aligned}
+\label{2:1:3:v}
+V^{\mu}_a&=& R^{\mu}_a+L^{\mu}_a=\bar{q}\gamma^\mu\frac{\lambda_a}{2}q,\\
+\label{2:1:3:a}
+A^{\mu}_a&=&R^{\mu}_a-L^{\mu}_a=\bar{q}\gamma^\mu\gamma_5
+\frac{\lambda_a}{2}q,
+\end{aligned}$$ which under a parity transformation of the quark fields, $q(t,\vec x)\mapsto \gamma_0 q(t,-\vec x)$, transform as vector and axial-vector current densities, respectively, $$\begin{aligned}
+\label{2:1:3:pv}
+P:V^{\mu}_a(t,\vec{x})\mapsto V_{a\mu}(t,-\vec{x}),\\
+\label{2:1:3pa} P: A^{\mu}_a(t,\vec{x})\mapsto -A_{a\mu}(t,-\vec{x}).
+\end{aligned}$$ The conserved singlet vector current results from a transformation of all left-handed and right-handed quark fields by the *same* phase, $$\label{2:1:3:sv}
+V^\mu=R^{\mu}+L^{\mu}=\bar{q}\gamma^\mu q.$$ The singlet axial-vector current originates from a transformation of all left-handed quark fields with one phase and all right-handed with the *opposite* phase, $$\label{2:1:3:sav}
+A^\mu= R^{\mu}-L^{\mu}=\bar{q}\gamma^\mu\gamma_5q.$$ Quantum fluctuations destroy the singlet axial-vector current conservation and there will be extra terms, referred to as anomalies [@Bell:1969ts], [@Adler:1969gk], [@Adler:1969er], resulting in $$\partial_\mu A^\mu=\frac{3 g^2_3}{32\pi^2}\epsilon_{\mu\nu\rho\sigma}
+{\cal G}^{\mu\nu}_a {\cal G}^{\rho\sigma}_a,\quad \epsilon_{0123}=1.$$ The factor of three originates from the number of flavors. In the large $N_c$ (number of colors) limit of Ref. [@{'tHooft:1973jz}] the singlet axial-vector current is conserved, because the strong coupling constant behaves as $g^2_3\sim N_c^{-1}$.

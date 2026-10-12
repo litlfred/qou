@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/np-b250-1985-465/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/np-b250-1985-465/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Effective low-energy lagrangian",
   "pageStart": 6,
   "pageEnd": 8,
   "text": "../sections/sec-003-3-effective-low-energy-lagrangian.md",
-  "derivedFrom": "library/np-b250-1985-465/manifest",
-  "sourceDocument": "library/np-b250-1985-465/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
   "provenance": "ingested"
 }

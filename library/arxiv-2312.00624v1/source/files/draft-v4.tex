@@ -1,0 +1,2024 @@
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1
+
+\usepackage{jheppub}
+\usepackage{amsmath,amssymb,amsthm,amscd,graphicx}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{mathstyle}
+%\usepackage[notref,notcite]{showkeys}
+
+\input epsf.sty
+
+\addtolength{\oddsidemargin}{-0.8cm}
+\addtolength{\evensidemargin}{-0.8cm}
+\addtolength{\textwidth}{1.6cm}
+%\setlength{\oddsidemargin}{0.75in}
+%\setlength{\evensidemargin}{0.75in}
+%\setlength{\topmargin}{0.5in}
+%\setlength{\textwidth}{7.0in}
+%\setlength{\textheight}{8.5in}
+\renewcommand{\baselinestretch}{1}
+\jot=2mm
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\CA}{{\cal A}}
+\newcommand{\CB}{{\cal B}}
+\newcommand{\CC}{{\cal C}}
+\newcommand{\CE}{{\cal E}}
+\newcommand{\CF}{{\cal F}}
+\newcommand{\CG}{{\cal G}}
+\newcommand{\CH}{{\cal H}}
+\newcommand{\CI}{{\cal I}}
+\newcommand{\CJ}{{\cal J}}
+\newcommand{\CK}{{\cal K}}
+\newcommand{\CL}{{\cal L}}
+\newcommand{\CM}{{\cal M}}
+\newcommand{\CN}{{\cal N}}
+\newcommand{\CO}{{\cal O}}
+\newcommand{\CP}{{\cal P}}
+\newcommand{\CQ}{{\cal Q}}
+\newcommand{\CR}{{\cal R}}
+\newcommand{\CS}{{\cal S}}
+\newcommand{\CT}{{\cal T}}
+\newcommand{\CU}{{\cal U}}
+\newcommand{\CV}{{\cal V}}
+\newcommand{\CW}{{\cal W}}
+\newcommand{\CX}{{\cal X}}
+\newcommand{\CY}{{\cal Y}}
+\newcommand{\CZ}{{\cal Z}}
+
+\def\IZ{{\mathbb Z}}
+\def\IR{{\mathbb R}}
+\def\IH{{\mathbb H}}
+\def\IC{{\mathbb C}}
+\def\IQ{{\mathbb Q}}
+\def\IN{{\mathbb N}}
+\def\IP{{\mathbb P}}
+\def\IT{{\mathbb T}}
+\def\IS{{\mathbb S}}
+\def\IF{{\mathbb F}}
+\newcommand\TT{{\mathbb T}}
+\def\IE{\mathbb{E}}
+\def\FE{\bm{4}_1}
+\def\TT{\bm{5}_2}
+\def\e{\epsilon}
+\def\u{\upsilon}
+
+\def\bba{{\bf{A}}}
+\def\bbb{{\bf{B}}}
+\def\bbc{{\bf{C}}}
+\def\bbd{{\bf{D}}}
+\def\bbe{{\bf{E}}}
+\def\bbf{{\bf{F}}}
+\def\bbg{{\bf{G}}}
+\def\bbh{{\bf{H}}}
+\def\bbi{{\bf{I}}}
+\def\bbj{{\bf{J}}}
+\def\bbk{{\bf{K}}}
+\def\bbl{{\bf{L}}}
+\def\bbm{{\bf{M}}}
+\def\bbn{{\bf{N}}}
+%\def\bbo{{\bf{O}}}
+\def\bbp{{\bf{P}}}
+\def\bbq{{\bf{Q}}}
+\def\bbr{{\bf{R}}}
+\def\bbs{{\bf{S}}}
+\def\bbt{{\bf{T}}}
+\def\bbu{{\bf{U}}}
+\def\bbv{{\bf{V}}}
+\def\bbw{{\bf{W}}}
+\def\bbx{{\bf{X}}}
+\def\bby{{\bf{Y}}}
+
+\newcommand{\tr}{{\rm Tr}}
+\newcommand{\re}{{\rm e}}
+\newcommand{\rp}{{\rm p}}
+\newcommand{\ri}{{\rm i}}
+\newcommand{\rd}{{\rm d}}
+\newcommand{\nf}{N_f}
+\renewcommand{\d}{\partial}
+\def\diff{{\rm diff}}
+\def\Diff{{\rm Diff}}
+\def\Det{{\rm Det}}
+\def\Hom{{\rm Hom}}
+\def\half {{1\over 2}}
+\newcommand{\Balpha}{\boldsymbol{\alpha}}
+\newcommand{\bg}{\boldsymbol{\gamma}}
+\newcommand{\bq}{\boldsymbol{q}}
+\newcommand{\mA}{\mathsf{A}}
+\newcommand{\mB}{\mathsf{B}}
+\newcommand{\mC}{\mathsf{C}}
+\newcommand{\mO}{\mathsf{O}}
+\newcommand{\mrho}{\mathsf{\rho}}
+\newcommand{\mR}{\mathsf{R}}
+\newcommand{\mQ}{\mathsf{Q}}
+\newcommand{\mV}{\mathsf{V}}
+\newcommand{\mP}{\mathsf{P}}
+\newcommand{\mS}{\mathsf{S}}
+\newcommand{\mT}{\mathsf{T}}
+\newcommand{\mU}{\mathsf{U}}
+\newcommand{\mt}{\mathsf{t}}
+\newcommand{\mL}{\mathsf{L}}
+\newcommand{\mx}{\mathsf{x}}
+\newcommand{\mX}{\mathsf{X}}
+\newcommand{\my}{\mathsf{y}}
+\newcommand{\mm}{\mathsf{p}}
+\newcommand{\im}{\mathsf{i}}
+\newcommand{\mH}{\mathsf{H}}
+\newcommand{\mJ}{\mathsf{J}}
+\newcommand{\mh}{\mathsf{h}}
+\newcommand{\mq}{\mathsf{q}}
+\newcommand{\Bbdelta}{\bdelta}
+\newcommand{\m}{\mathsf{m}}
+\newcommand{\ml}{\mathsf{l}}
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\balpha}{\boldsymbol{\alpha}}
+\newcommand{\blam}{\boldsymbol{\lambda}}
+\newcommand{\bn}{\boldsymbol{n}}
+\newcommand{\bse}{\boldsymbol{e}}
+
+\def\O{\Omega}
+\def\da{{\dot{\a}}}
+\def\db{{\dot{\b}}}
+\def\dg{{\dot{\g}}}
+\def\dd{{\dot{\d}}}
+\def\tq{{\tilde{q}}}
+\def\tD{{\tilde{D}}}
+\def\wq{{\widetilde{q}}}
+\def\tps{{\tilde{\psi}}}
+\def\wg{{\widetilde{g}}}
+\def\wG{{\widetilde{G}}}
+\def\tq{{\tilde{q}}}
+\def\tx{{\tilde{x}}}
+
+\newcommand{\fadn}{\phi_{\mathsf{b}}}
+\newcommand{\mb}{{\mathsf{b}}}
+\newcommand{\bb}{{\mathsf{b}}}
+\newcommand{\mg}{{\mathsf{g}}}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\ba}{\begin{aligned}}
+\newcommand{\ea}{\end{aligned}}
+\newcommand{\ben}{\begin{eqnarray}\displaystyle}
+\newcommand{\een}{\end{eqnarray}}
+\newcommand{\refb}[1]{(\ref{#1})}
+\newcommand{\p}{\partial}
+\newcommand{\sectiono}[1]{\section{#1}\setcounter{equation}{0}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\newcommand{\fad}{\operatorname{\Phi}_{\mathsf{b}}}
+\newcommand{\fag}{\operatorname{\Phi}_{\mathsf{g}}}
+\newcommand{\fadm}{\operatorname{\Phi}_{1/\mathsf{b}}}
+\newcommand{\fadi}{\fad^*}
+\newcommand{\mypsi}[2]{\operatorname{\Psi}_{#1,#2}}
+\newcommand{\tilmypsi}[2]{\operatorname{\tilde{\Psi}}_{#1,#2}}
+\newcommand{\myh}{\mathsf{h}_{\mathsf{b}}}
+\newcommand{\myset}{\Delta_{\mathsf{b}}}
+\newcommand{\figref}[1]{Fig.~\protect\ref{#1}}
+
+\title{\Huge{\boldmath On the structure of wave functions in complex Chern--Simons theory}}
+
+\author{Marcos Mari\~no and Claudia Rella}
+
+\affiliation{D\'epartement de Physique Th\'eorique and Section de Math\'ematiques\\ Universit\'e de Gen\`eve, CH-1211 Gen\`eve, Switzerland}
+
+\emailAdd{marcos.marino@unige.ch} 
+\emailAdd{claudia.rella@unige.ch} 
+
+\abstract{We study the structure of wave functions in complex Chern--Simons theory on the complement of a hyperbolic knot, emphasizing the similarities with the topological string/spectral theory correspondence. We first conjecture a hidden integrality structure in the holomorphic blocks and show that this structure guarantees the cancellation of potential singularities in the full non-perturbative wave function at rational values of the coupling constant. We then develop various techniques to determine the wave function at such rational points. Finally, we illustrate our conjectures and obtain explicit results in the examples of the figure-eight and the three-twist knots. In the case of the figure-eight knot, we also perform a direct evaluation of the state integral in the rational case and observe that the resulting wave function has the features of the ground state for a quantum mirror curve. }
+
+\makeatletter
+\gdef\@fpheader{\null}
+\makeatother
+
+\begin{document}
+
+\maketitle
+\flushbottom
+
+
+\sectiono{Introduction} \label{sec: intro}
+Chern--Simons (CS) theory with a complex gauge group has been an excellent laboratory for studying various aspects of quantum field theory (QFT) since it is essentially exactly solvable. 
+In recent years, building on previous work by physicists and mathematicians, perturbative and non-perturbative methods have been introduced, making it possible 
+to calculate various observables, and many beautiful and interesting results have been obtained. 
+For example, for the complements of hyperbolic knots in the three-sphere, the wave function of the theory with gauge group $\text{SL}(2,\IC)$ has been defined rigorously~\cite{ak}, inspired in part by physics developments~\cite{hikami07, dglz}. 
+This wave function satisfies, in addition, a difference equation, which can be determined by an appropriate quantization of the classical $A$-polynomial of the knot~\cite{stavros-aj}, as expected from physics arguments~\cite{gukov}. 
+
+In this paper, we will further study the wave functions for complements of hyperbolic knots in CS theory with gauge group $\text{SL}(2,\IC)$.
+As we will show, they share many structural similarities with the wave functions occurring in topological string theory and, more precisely, in the context of the so-called topological string/spectral theory (TS/ST) correspondence~\cite{ghm,cgm,wzh, mmrev} and its open string version~\cite{mz-wv,mz-wv2,szabolcs,fgrassi}. Indeed, it has been found in both cases that the WKB expansion in $\hbar$ of the perturbative wave function of the topological string can be resummed into a $q$-series\footnote{This is a resummation of a {\it convergent} series, so it does not involve the more sophisticated techniques of resummation of divergent series, like Borel resummation.}, where $q= \re^{\ri \hbar}$. However, this $q$-series displays singularities at all points of the form 
+%
+\be \label{hsingular}
+\hbar \in 2 \pi \IQ \, .
+\ee
+%
+Since these singularities are not present in the non-perturbative definition of the wave function, 
+they are an artifact of the resummed WKB expansion. This feature, in turn, requires the presence of a 
+non-perturbative sector that cancels the singularities and leads to a finite answer for the full wave function. 
+The cancellation of singularities at the values of $\hbar$ in Eq.~\eqref{hsingular} is a defining attribute of Faddeev's quantum dilogarithm~\cite{faddeev}, which can be regarded as a simple example of a wave function in complex CS theory. 
+A similar cancellation mechanism has appeared in a more complicated context in ABJM theory, where it is sometimes referred to as the  
+HMO mechanism~\cite{hmo2}, and is one of the facets of the non-perturbative proposal for topological string theory put forward in~\cite{ghm,cgm,wzh}. 
+%
+Moreover, the concrete realization of the cancellation of singularities in topological string theory is a consequence of the integrality structure of the topological string amplitudes. 
+In the closed string case, one has the Gopakumar--Vafa integrality~\cite{gv} and its refinement~\cite{hiv}. 
+In the open string case, as shown in~\cite{kpamir,mz-wv,szabolcs}, one needs an integrality 
+property akin to the one found in~\cite{ov,lmv,nawata}. In this paper, we conjecture a similar integrality structure for 
+the resummed WKB expansion of the wave functions of complex CS theory and support our claims with explicit evidence obtained in examples. 
+This integrality structure, indeed, guarantees the cancellation of singularities. 
+A similar integrality property has been found in~\cite{ekholm}, and it would be interesting to clarify its relationship with our results. 
+
+Our integrality conjecture characterizes the so-called holomorphic blocks of the wave functions~\cite{bdp}, and the corresponding integer invariants can be calculated from these blocks when they are explicitly known. 
+Analogously to the case of topological string theory, at the special values of $\hbar$ in Eq.~\eqref{hsingular}, which we refer to as rational points, the generic formula for the exact wave function has an apparent singularity. However, after the cancellation mechanism takes place, one typically finds a relatively simpler expression. It is an interesting task to determine this expression for 
+general rational numbers, as it was done for Faddeev's quantum dilogarithm in~\cite{garou-kas}. 
+In this paper, we develop various independent techniques to achieve this goal, following ideas proposed in the context of the open TS/ST correspondence~\cite{butterfly,hsx,szabolcs}. 
+To begin with, one can use the underlying integrality structure to derive an explicit answer at rational values of $\hbar$ in terms of the newly introduced integer invariants. 
+Second, one can start directly from the AJ equation for the wave function and specialize it to rational values, where one finds a quasi-periodic structure similar to the one appearing in spectral problems on lattices. 
+Finally, one can directly evaluate the Andersen--Kashaev state integral at rational points using the techniques of~\cite{garou-kas}. 
+We apply these three distinct methods and explicitly show that they lead to the same results in various examples. 
+
+The paper is organized as follows. 
+In Section~\ref{sec: theory}, we review the necessary background notions on complex CS theory and the AJ conjecture. 
+In Section~\ref{sec: main}, we present most of our results. In particular, we state the integrality conjecture for the WKB resummed wave function and show how it implies the cancellation of singularities at rational values of $\hbar$.
+We also provide two different techniques for evaluating the wave function at rational points. 
+In Section~\ref{sec: examples}, we illustrate these results by performing explicit computations in the concrete examples of the figure-eight and the three-twist knots. 
+In Section~\ref{sec: stateintegral}, we evaluate directly the state integral in the rational case for the figure-eight knot. 
+Finally, we conclude and list some open problems in Section~\ref{sec-conclusions}. 
+In the three Appendices, we provide additional details on the calculations we perform in Section~\ref{sec: main} and recall some useful properties of Faddeev's quantum dilogarithm. 
+
+\section{Complex Chern--Simons theory and the $A$-polynomial} \label{sec: theory}
+In this section, we review the fundamental aspects of complex CS theory on a closed three-manifold and the construction of the classical and quantum $A$-polynomials. 
+The physical understanding of the connection to A-polynomials was 
+developed in~\cite{gukov}, and an excellent summary can be found in~\cite{dimofte-rev}. 
+The AJ conjecture, which is at the basis of many of our computations, was proposed in~\cite{stavros-aj}. 
+We pay special attention to the case of CS theory with $\text{SL}(2,\IC)$ gauge group on the complement of a hyperbolic knot in the three-sphere and introduce the two benchmark examples that we will consider later in this work, that is, the figure-eight and the three-twist knots.
+
+\subsection{Classical and quantum $A$-polynomials} \label{sec: Apoly}
+The classical action of CS theory with complex gauge group $G_{\IC}$ can be written as~\cite{witten91}
+%
+\be
+S = \frac{t}{8 \pi} \int_M \tr\left(\CA \wedge d\CA + \frac{2}{3} \CA \wedge \CA \wedge \CA \right) +  \frac{t'}{8 \pi} \int_M \tr\left(\bar{\CA} \wedge d\bar{\CA} + \frac{2}{3} \bar{\CA} \wedge \bar{\CA} \wedge \bar{\CA} \right) \, ,
+\ee 
+%
+where $M$ is the underlying closed three-manifold, whose boundary is the 
+closed Riemann surface $\Sigma = \d M$, $\CA$ is the complex gauge field, which is a one-form on $M$ taking values in the Lie algebra $\mathfrak{g}_{\IC}$, and $t, t'$ are complex coefficients such that $t=k+s$ and $t'=k-s$ where $k \in \IZ$. For the theory to be unitary, $s$ must be real or purely imaginary, although we will not need this in our discussion. We also introduce the complex coupling constant $\mb^2$ defined by
+%
+\be
+\mb^2= \frac{t'}{t} \, . 
+\ee
+%
+The classical phase space of the theory is the moduli space of flat $G_{\IC}$-connections on $\Sigma$ modulo gauge transformations, that is, 
+\be \label{phase_space}
+\CM_{\rm{flat}} (G_{\IC}, \Sigma) = \Hom\left(\pi_1(\Sigma), G_{\IC} \right) / \sim \, ,
+\ee
+where $\pi_1$ denotes the fundamental group and $\sim$ is conjugation by elements of $G_{\IC}$. This comes naturally equipped with a symplectic two-form
+\be \label{omega}
+\omega = \frac{t}{8 \pi} \int_{\Sigma} \tr\left(\delta \CA \wedge \delta \CA \right) + \frac{t'}{8 \pi} \int_{\Sigma} \tr\left(\delta \bar{\CA} \wedge \delta \bar{\CA} \right) \, .
+\ee
+%
+A classical solution on $M$ is a gauge equivalence class of flat $G_{\IC}$-connections on $M$, which are gauge connections $\CA$ satisfying the property
+\be
+d \CA + \CA \wedge \CA = 0 \, ,
+\ee
+and analogously for $\bar{\CA}$. The moduli space of classical solutions on $M$ is a Lagrangian submanifold of the classical phase space.
+Namely, the submanifold
+\be
+\CL = \CM_{\rm{flat}} (G_{\IC}, M) \subset \CM_{\rm{flat}} (G_{\IC}, \Sigma) 
+\ee
+is Lagrangian with respect to the symplectic structure $\omega$ in Eq.~\eqref{omega}.
+%
+In this paper, we will focus on a three-manifold $M$ obtained as the complement of a hyperbolic knot $\CK$ in the three-sphere $\IS^3$, that is,
+%
+\be
+\label{MK}
+M = \IS^3 \backslash \CK \, ,
+\ee
+which has a single toral boundary $\Sigma = \IT^2$. Its moduli space of flat $G_{\IC}$-connections is a complex Lagrangian submanifold $\CL$ of the full phase space
+\be \label{phase_spaceK}
+\CM_{\rm{flat}} (G_{\IC}, \IT^2) = \left( \IT_{\IC} \times \IT_{\IC} \right) / \CW \, ,
+\ee
+where $\IT_{\IC}$ is the maximal toral subgroup of $G_{\IC}$ and $\CW$ is the Weyl group.
+%
+Let us denote by $\bm{P}=(P_1, \dots, P_r)$ and $\bm{X}=(X_1, \dots, X_r)$, where $r$ is the rank of the gauge group, the complex variables parametrizing each copy of the maximal torus $\IT_{\IC}$ in Eq.~\eqref{phase_spaceK}, which are defined modulo the action of the Weyl group\footnote{$\bm{P}$ and $\bm{X}$ can be interpreted as the vectors of eigenvalues of the holonomies of the flat gauge connections on the boundary torus over its two basic one-cycles.}. 
+It follows that the irreducible components of $\CL$ are described by $\CW$-invariant polynomial equations
+\be \label{Apoly_eqs}
+A_{\CK, i} (\bm{P}, \bm{X}) = 0 \, , \quad i=1, \dots, r \, ,
+\ee
+where the polynomials $A_{\CK, i} (\bm{P}, \bm{X})$ have coefficients in $\IR$.
+
+Quantizing the classical phase space in Eq.~\eqref{phase_space} with its symplectic structure in Eq.~\eqref{omega} produces a Hilbert space $\CH_{\Sigma}$. In the quantized theory, the path integral over the manifold $M$ leads to a vector $|M\rangle \in \CH_{\Sigma}$, while the polynomials $A_{\CK, i}(\bm{P}, \bm{X})$ in Eq.~\eqref{Apoly_eqs} are expected to produce quantum operators $\hat{A}_{\CK, i}(\hat{\bm{P}}, \hat{\bm{X}},q)$, $i=1, \dots, r$, acting on $\CH_{\Sigma}$, which annihilate the state $|M\rangle$. Here, the complex variables $\bm{P}, \bm{X}$ are promoted to the operators $\hat{\bm{P}}, \hat{\bm{X}}$, which satisfy the commutation relations
+\be
+\hat{P}_i \hat{X}_j = q^{\delta_{ij}} \hat{X}_j \hat{P}_i \, , \quad i,j=1, \dots, r \, ,
+\ee
+where $\delta_{ij}$ is the Kronecker delta, we have introduced $q= \re^{\ri \hbar}$, and 
+\be
+\hbar = 2 \pi \mb^2
+\ee 
+is the complex coupling parameter playing the role of Planck's constant. We will sometimes denote $\tau= \mb^2$. Note that the quantization of the theory depends on the level $k$ and, in this work, we will restrict ourselves to the case $k=1$. 
+See, {\it e.g.},~\cite{dimofte-levelk}. The classical constraints in Eq.~\eqref{Apoly_eqs} become Schr\"odinger-like operator equations in the quantum theory. Namely,
+%
+\be \label{quantumApoly}
+\hat{A}_{\CK, i}(\hat{\bm{P}}, \hat{\bm{X}},q) \chi_{\CK}(\hbar) = 0 \, , \quad i=1, \dots, r \, ,
+\ee
+where $\chi_\CK(\hbar)$ is the partition function associated to the manifold $M$ in Eq.~\eqref{MK} defined by the complement of the knot $\CK$. Following the conventions of~\cite{ggm2}, we define the continuous complex variables $\bm{u}=(u_1, \dots, u_r)$ such that
+\be
+X_i = \re^{2 \pi \mb u_i} \, , \quad i=1, \dots, r \, .
+\ee
+The corresponding quantum operators $\hat{u}_i$ determine a complete basis of states $|u\rangle \in \CH_{\Sigma}$ on which they act by multiplication. 
+Therefore, the partition function on $M$ can be regarded as a wave function in $u$-space, which we represent as
+\be
+\chi_{\CK}(\bm{u}; \hbar) \, .
+\ee
+%
+We stress that the quantization of the $A$-polynomials in Eq.~\eqref{Apoly_eqs} is not obtained simply by promoting $\bm{P}, \bm{X}$ to their operator counterpart. 
+On top of ordering issues, the resulting operators have a non-trivial dependence on $\hbar$ through $q$. 
+It is fair to say that the spectral theory of these operators is not entirely understood, and a deeper grasp of this issue might clarify the corresponding non-trivial quantization problem. 
+A concrete way of constructing the quantized $A$-polynomials is, for example, to use the original AJ conjecture of~\cite{stavros-aj}. 
+
+The wave function $\chi_{\CK}(\bm{u}; \hbar)$ can be calculated perturbatively in a saddle-point approximation where the saddle, or classical solution, of the EOM is described by the homomorphism 
+\be
+\rho : \pi_1(M) \rightarrow G_{\IC} \, .
+\ee
+Equivalently, the saddle points can be identified with the different classical solutions $\bm{P}^{(\alpha)}$ to Eq.~\eqref{Apoly_eqs} for fixed $\bm{X}$, which we denote with the additional discrete label $\alpha$. We recall that the branches of the polynomials in Eq.~\eqref{Apoly_eqs} come in conjugate pairs due to the symmetry of the theory under conjugation. Thus, each flat connection $\CA^{(\rho)}$, labeled by $\rho \in \Hom\left(\pi_1(M), G_{\IC} \right)$, has a conjugate flat connection $\CA^{(\bar{\rho})}$, corresponding to the conjugate homomorphism $\bar{\rho}$. We will subsequently denote by $\bar{\alpha}$ the branch which is conjugate to $\alpha$.
+%
+There is always an abelian branch $\alpha = \rm{abel}$ described by $P_1=\dots=P_r=1$, which is self-conjugate, and a geometric branch\footnote{On the geometric branch, $\bm{u}$ can be thought of as parametrizing the quantum deformations of the complex hyperbolic structure of $M$.} $\alpha = \rm{geom}$ containing the discrete faithful representation of $\pi_1(M)$ into $\text{PSL}(2, \IC)$, which has a distinct conjugate $\alpha = \rm{conj}$. 
+In the rest of this work, we will only consider non-abelian branches. Therefore, we simplify the factor corresponding to the abelian classical solution from the polynomials in Eq.~\eqref{Apoly_eqs} and proceed to quantize the simplified form.
+
+When computed in the saddle-point approximation, that is, using the WKB method, the perturbative wave function, denoted by $\chi_{\CK}^{(\alpha), \rm{WKB}}(\bm{u};\hbar)$ is given by an asymptotic power series in $\hbar$ of the form~\cite{dglz}
+\be \label{WKB}
+ \chi_{\CK}^{(\alpha), \rm{WKB}}(\bm{u};\hbar) = \exp \left( \frac{1}{\hbar} S_0^{(\alpha)}(\bm{u}) - \frac{\delta^{(\alpha)}}{2} \log \hbar + \sum_{n=0}^{\infty} S_{n+1}^{(\alpha)}(\bm{u}) \hbar^n  \right) \, ,
+\ee
+where the leading coefficient $S_0^{(\alpha)}(\bm{u})$ is determined by the classical CS functional, the next-to-leading coefficient $\delta^{(\alpha)}$ is an integer, and the higher-order coefficients $S_n^{(\alpha)}(\bm{u})$, $n \ge 1$, are obtained, in principle, by summing systematically the contributions of Feynman diagrams with $n$-loops. Note that $\delta^{(\alpha)} = 0$ for $\alpha \ne \rm{abel}$. 
+
+\subsection{The case of $\text{SL}(2,\IC)$ gauge group} \label{sec: sl2c}
+In this work, we take $G_{\IC} = \text{SL}(2,\IC)$. Therefore, we have simply $r=1$, and 
+\be
+A_{\CK}(P,X)=A_{\CK, 1}(P_1,X_1)
+\ee
+is the classical $A$-polynomial of the knot~\cite{Cooper:1994aa}.
+The operators $\hat{P}, \hat{X}$ act on $u$-states as
+\be
+\hat{P} |u\rangle = |u+ \ri \mb \rangle \, , \quad \hat{X} |u\rangle = X |u\rangle \, .
+\ee
+Equivalently, $\hat{P}$ is the operator that shifts $X$ into $q X$, and $\hat{X}$ is the ordinary multiplication.
+Building on previous results~\cite{hikami01, hikami07, dglz}, the exact, non-perturbative partition function $\chi_{\CK}(u; \hbar)$ has been constructed from an ideal triangulation of $M$ and identified with a finite-dimensional integral whose integrand is a product of Faddeev’s quantum dilogarithm functions~\cite{faddeev}, known as the state-integral invariant, or Andersen--Kashaev invariant~\cite{ak, ak2, dimofte-rev}. This is a holomorphic function of $\hbar \in \IC' = \IC \backslash (-\infty, 0 ]$ and $u \in \IC$. It can be explicitly verified~\cite{amalusa} that it obeys the $q$-difference equation encoded in the quantized $A$-polynomial of the knot, that is, 
+\be \label{AJ-eq}
+\hat{A}_{\CK}(\hat{P}, \hat{X},q) \chi_{\CK}(u;\hbar) = 0 \, .
+\ee
+
+Recall that $S$-duality exchanges $\mb$ with $1/\mb$. Therefore, the $S$-dual images of $\hbar$ and $q$ are
+\be
+\hbar_D={4 \pi^2 \over \hbar} = \frac{2 \pi}{\tau} \, , \quad q_D= \re^{\ri \hbar_D} = \re^{\frac{2 \pi \ri}{\tau}}= \tilde q^{-1},
+\ee
+where we have introduced $\tq = \re^{-{2 \pi \ri \over \tau}}$, while the variable $u$ is invariant under the action of $S$-duality and $X$ transforms into 
+\be
+X_D = \re^{\frac{2 \pi u}{\mb}} = X^{2 \pi \over \hbar} \, .
+\ee
+Remarkably, the wave function $\chi_{\CK}(u;\hbar)$ is also invariant under this transformation, that is, 
+\be
+\chi_{\CK}(u;\hbar)=\chi_{\CK}(u;\hbar_D) \, ,
+\ee
+and, in particular, it satisfies the $S$-dual quantum $A$-polynomial equation
+\be
+\hat A_\CK(\hat{P}_D, \hat{X}_D, q_D)\chi_{\CK}(u;\hbar)=0 \, ,
+\ee
+where $\hat{P}_D$ is the quantum operator acting on $u$-states by shifting $u$ into $u + \ri/\mb$, or, equivalently, transforming $X_D$ into $q_D X_D$, and $\hat{X}_D$ acts by multiplication.
+
+\begin{figure}[htb!]
+\center
+ \includegraphics[width=0.3\textwidth]{figure-eight.pdf} \quad \quad
+ \includegraphics[width=0.3\textwidth]{three-twist.pdf}
+ \caption{The hyperbolic knots known as the figure-eight knot ($\FE$), on the left side, and the three-twist knot ($\TT$), on the right side.}
+ \label{fig: simple_knots}
+\end{figure}
+%
+Throughout this work, we look at two concrete examples of hyperbolic knots, which allow us to perform explicit and detailed calculations to provide support to and give insight into our claims. These are the figure-eight and the three-twist knots. 
+%
+\begin{example} \label{41example}
+The figure-eight knot, also denoted by $\FE$, is shown on the left side of Fig.~\ref{fig: simple_knots}. 
+Its classical $A$-polynomial can be written in symmetrized form as
+%
+\be
+A_{\FE}(P, X) = P^{-1} + P -( X^2+ X^{-2} -X -X^{-1} -2) \, .
+\ee
+%
+The corresponding polynomial equation $A_{\FE}(P, X)=0$ has only two distinct non-abelian branches.
+Explicitly, the geometric and conjugate branches are labeled as
+\be
+\alpha = \rm{geom}, \rm{conj} \, ,
+\ee
+and they are described by
+\be \label{classicP}
+P^{(\rm{geom}, \rm{conj})} = \frac{T(X) \pm (1-X^2) \sqrt{\Delta(X)} }{2 X^2} \, , 
+\ee
+where we have introduced
+\begin{subequations}
+\begin{align}
+T(X) &= 1 - X - 2 X^2 - X^3 + X^4 \, , \label{classicT} \\
+\Delta(X) &= 1 - 2 X -  X^2 - 2 X^3 + X^4 \, . \label{classicD}
+\end{align}
+\end{subequations}
+% 
+Building on the results and conventions of~\cite{ggm2}, the descendant $\hat A$-operator is given by
+%
+\begin{equation}
+    \label{rec41x}
+    \hat A_{\bf{4}_1} (\hat{P},\hat{X},q^m,q) = \sum_{j=0}^2 C_j(\hat{X},q^m,q) \hat{P}^j \, ,
+\end{equation}
+%
+where $m$ takes values in $\IZ$ and the coefficient functions $C_j(\hat{X},q^m,q)$ are 
+%
+\begin{subequations}
+\begin{align}
+      \label{rec41x0}
+      C_0(\hat{X},q^m,q) =&q^{2 + 3 m} \hat{X}^2 (-1 + q^{3 + m} \hat{X}^2) \, , \\
+      \label{rec41x1}
+      C_1(\hat{X},q^m,q) =& -q^m (-1 + q^{2 + m} \hat{X}^2) (1 - q \hat{X} - q^{1 + m} \hat{X}^2 \\
+      &- q^{3 + m} \hat{X}^2 - q^{3 + m} \hat{X}^3 + q^{4 + 2 m} \hat{X}^4) \, ,\nonumber \\ 
+      \label{rec41x2}
+      C_2(\hat{X},q^m,q) =& q^2 \hat{X}^2 (-1 + q^{1 + m} \hat{X}^2) \, .
+\end{align}
+\end{subequations}
+If we set $m=0$, symmetrize by multiplying by $\hat{P}^{-1}$, simplify a common factor $q^2 \hat{X}^2$, and perform the change of variable $\hat{X} \rightarrow q^{-1} \hat{X}$, we obtain the conventional 
+$\hat A$-operator of the figure-eight knot, that is, 
+%
+\begin{equation}
+    \label{41Ahat}
+    \hat A_{\bf{4}_1} (\hat{P},\hat{X},q) = C_0(\hat{X},q) \hat{P}^{-1} + C_1(\hat{X},q) + C_2(\hat{X},q) \hat{P} \, ,
+\end{equation}
+%
+where the coefficient functions $C_j(\hat{X},q)$ are 
+%
+\begin{subequations}
+\begin{align}
+      \label{41xC0}
+      C_0(\hat{X},q) =&q \hat{X}^2-1 \, ,\\
+      \label{41xC1}
+      C_1(\hat{X},q) =& - (\hat{X}^2-1)( \hat{X}^2 + \hat{X}^{-2} - \hat{X} - \hat{X}^{-1} - q - q^{-1} ) \, ,\\ 
+      \label{41xC2}
+      C_2(\hat{X},q) =& q^{-1} \hat{X}^2-1 \, .
+\end{align}
+\end{subequations}
+\end{example}
+
+\begin{example} \label{52example}
+The three-twist knot, also denoted by $\TT$, is shown on the right side of Fig.~\ref{fig: simple_knots}.
+Its classical $A$-polynomial can be written in symmetrized form as
+%
+\be
+\ba
+A_{\TT}(P, X) = &P^{-1} -(X^{-2} -X^{-1} +2 X + 2 X^2 - X^3) \\
+&- (X^{-1} - 2 - 2 X + X^3 - X^4) P - X^2 P^2 \, .
+\ea
+\ee
+%
+The corresponding polynomial equation $A_{\TT}(P, X)=0$ has three distinct non-abelian branches: the geometric branch, its conjugate, and a third, self-conjugate branch. We label them by 
+\be
+\alpha = \rm{geom}, \rm{conj}, \rm{\text{self}} \, .
+\ee
+Again, following~\cite{ggm2}, the descendant $\hat A$-operator is given by 
+%
+\begin{equation}
+    \label{rec52x}
+    \hat A_{\bf{5}_2} (\hat{P},\hat{X},q^m,q) = \sum_{j=0}^3 C_j(\hat{X},q^m,q) \hat{P}^j \, ,
+\end{equation}
+%
+where $m$ takes values in $\IZ$ and the coefficient functions $C_j(\hat{X},q^m,q)$ are 
+%
+\begin{subequations}
+\begin{align}
+      \label{rec52x0}
+      C_0(\hat{X},q^m,q) =
+      &-q^{2 + m} \hat{X}^2 (1-q^2 \hat{X})(1+q^2 \hat{X})(1-q^5 \hat{X}^2) \, , \\
+      \label{rec52x1}
+      C_1(\hat{X},q^m,q) =
+      & (1-q \hat{X})(1+q \hat{X})(1-q^5 \hat{X}^2)(1-q\hat{X}-q\hat{X}^2-q^4\hat{X}^2 \\
+      &+q^{2+m}\hat{X}^2+q^{3+m}\hat{X}^2+q^2\hat{X}^3+q^5\hat{X}^3+q^5\hat{X}^4+q^{5+m}\hat{X}^4-q^6\hat{X}^5) \, , \nonumber\\ 
+      \label{rec52x2}
+      C_2(\hat{X},q^m,q) =
+      & q\hat{X}(1-q^2\hat{X})(1+q^2\hat{X})(1-q\hat{X}^2)(1-q^2\hat{X}-q^{2+m}\hat{X}-q^2\hat{X}^2-q^5\hat{X}^2 \\
+      &+q^4\hat{X}^3+q^7\hat{X}^3-q^{5+m}\hat{X}^3-q^{6+m}\hat{X}^3+q^7\hat{X}^4-q^9\hat{X}^5) \, , \nonumber \\
+      \label{rec52x3}
+      C_3(\hat{X},q^m,q) =
+      & q^{8+m}\hat{X}^4(1-q\hat{X})(1+q\hat{X})(1-q\hat{X}^2) \,.
+\end{align}
+\end{subequations}
+%
+If we set $m=0$, symmetrize by multiplying by $\hat{P}^{-2}$, and perform the change of variable $\hat{X} \rightarrow q^{-1} \hat{X}$, we obtain the conventional 
+$\hat A$-operator of the three-twist knot, that is, 
+%
+\be \label{52Ahat}
+\ba
+\hat A_{\bf{5}_2}(\hat{P},\hat{X},q) = C_0(\hat{X},q) \hat{P}^{-2} + C_1(\hat{X},q) \hat{P}^{-1} + C_2(\hat{X},q) + C_3(\hat{X},q) \hat{P} \, ,
+\ea
+\ee
+%
+where we have defined
+\begin{subequations} \label{52xC}
+\begin{align}
+      \label{52xC0}
+      C_0(\hat{X},q) =&-\hat{X}^2 (1-q^2 \hat{X}^2) (1-q^3 \hat{X}^2) \, , \\
+      \label{52xC1}
+      C_1(\hat{X},q) =& (1-\hat{X}^2) (1-q^3 \hat{X}^2)(q^2 \hat{X}^3-q^2 \hat{X}^2-q \hat{X}^5 \\
+      &+2 q \hat{X}^4+q^{-1}\hat{X}^3+q \hat{X}^2-q^{-1}\hat{X}^2+\hat{X}^2-\hat{X}+1) \, , \nonumber \\ 
+      \label{52xC2}
+      C_2(\hat{X},q) =& \hat{X} (1-q^2 \hat{X}^2) (1-q^{-1}\hat{X}^2) (-q^4 \hat{X}^5+q^4 \hat{X}^3 \\
+      &+q^3 \hat{X}^4-q^3 \hat{X}^3-q^3 \hat{X}^2-q^2 \hat{X}^3+q \hat{X}^3-2 q \hat{X}-\hat{X}^2+1)  \, , \nonumber \\
+      \label{52xC3}
+      C_3(\hat{X},q) =& q^4 \hat{X}^4 (1-\hat{X}^2)(1-q^{-1}\hat{X}^2) \, .
+\end{align}
+\end{subequations}
+\end{example}
+
+\section{The structure of the wave function} \label{sec: main}
+
+In this section, we study the non-perturbative wave function $\chi_{\CK}(u;\hbar)$ introduced in Section~\ref{sec: theory} by exploiting ideas from topological string theory. In particular, we propose various new conjectures on the structure of this wave function, which are motivated by similar results in the open version of the TS/ST correspondence~\cite{kpamir, mz-wv,mz-wv2, szabolcs} and by our detailed analysis of the examples presented in Section~\ref{sec: examples}. 
+In the following, we will not explicitly indicate the knot $\CK$ to avoid the cluttering of notation. 
+
+\subsection{General conjectures} \label{sec: conjectures}
+Our {\it first claim} is that the WKB expansion in Eq.~\eqref{WKB} can be resummed at all orders in $\hbar$ and order by order in 
+$X=\re^{2 \pi \mb u}$. Explicitly, for a fixed choice of $\alpha$, we have that
+%
+\be \label{WKB-conj}
+\chi^{(\alpha), \rm{WKB}} (u; \hbar)=\exp \left(  {\ri \over \hbar} s^{(\alpha)}_0(x) + s^{(\alpha)}_1(x) + \phi^{(\alpha), \rm{WKB}}(X;q) \right) \, ,
+\ee
+%
+where $s^{(\alpha)}_{0,1}(x)$ are $\IR$-polynomials in the variable\footnote{The $S$-dual image of $x$ is $x_D = \log X_D = 2 \pi x /\hbar$.} $x= \log X$ and
+\be \label{phi-struc}
+\phi^{(\alpha), \rm{WKB}}(X;q) = \sum_{n \ge 1} a^{(\alpha)}_n(q) X^n + a^{(\alpha)}_{-n}(q) X^{-n} \, .
+\ee
+%
+The coefficient functions $a^{(\alpha)}_{\pm n}(q)$ can be written as
+\be \label{ahatf-def}
+a^{(\alpha)}_{\pm n}(q)= {\hat{a}_{\pm n}^{(\alpha)} (q) \over n (q^n-1) q^{\sigma_{\alpha, \pm n}}} \, , \quad n \in \IZ_{>0} \, ,
+\ee
+where $\hat{a}^{(\alpha)}_{\pm n} (q) \in \IZ [q]$ such that 
+\be 
+\hat{a}^{(\rm{geom})}_{- n} (q) = 0 \, , \quad n \in \IZ_{>0} \, ,
+\ee
+and $\sigma_{\alpha, m}$ is a function of $m \in \IZ_{\ne 0}$ which takes values in $\IN$, depends on the choice of classical branch $\alpha$, and satisfies
+\be
+\sigma_{{\rm geom}, m} = 0 \, ,  \quad \sigma_{\alpha, - |m|} = 0 \, \quad \forall \alpha \, .
+\ee
+Note that we use the same notation for the perturbative WKB series in Eq.~\eqref{WKB} and its resummation in terms of $q$ in Eq.~\eqref{WKB-conj}. However, in the rest of this paper, we will always refer to the resummed version of $\chi^{(\alpha), \rm{WKB}} (u; \hbar)$ as in Eq.~\eqref{WKB-conj}. 
+%
+In fact, there is additional structure in the resummed perturbative wave function. Our {\it second claim} is that $\phi^{(\alpha), \rm{WKB}}(X;q)$ has an integrality/multicovering-type structure. 
+Namely, for a fixed choice of $\alpha$, we have that
+\be \label{multi-conj}
+\phi^{(\alpha), \rm{WKB}}(X;q)= \sum_{k, s\ge 1}{D^{(\alpha)}_s(q^k) \over k (q^k-1) q^{k \sigma_{\alpha, s}}} X^{s k} + {D^{(\alpha)}_{-s}(q^k) \over k (q^k-1) q^{k \sigma_{\alpha, -s}}} X^{- s k} \, ,
+\ee
+%
+where $D^{(\alpha)}_{\pm s}(q) \in \IZ[q]$. Equivalently, we can write the coefficient functions from Eq.~\eqref{phi-struc} as
+ %
+ \be \label{struc-an}
+ a^{(\alpha)}_{\pm n}(q)= \sum_{k|n} {D^{(\alpha)}_{\pm {n \over k}}(q^k) \over k(q^k-1) q^{k \sigma_{\alpha, \pm {n \over k}}}} \, , \quad n \in \IZ_{>0} \, ,
+ \ee
+ %
+ where the sum runs over all positive integer divisors of $n$. 
+ %
+Since the following discussion holds for all non-abelian choices of the classical branch, let us now drop the explicit dependence on $\alpha$ to simplify the notation and introduce
+ %
+\be \label{Dtilde1}
+\tD_{\pm s}(q)= {D_{\pm s}(q) \over (q-1) q^{\sigma_{\pm s}}} \, , \quad s \in \IZ_{>0} \, . 
+\ee
+%
+As a consequence of Eq.~\eqref{multi-conj}, we can write 
+%
+\be \label{Exp}
+\ba
+\exp \left( \phi^{\rm WKB}(X;q) \right)=& \exp\left( \sum_{k, s\ge 1} {1 \over k} \tD_s(q^k) X^{sk} \right) \exp\left( \sum_{k, s\ge 1} {1 \over k} \tD_{-s}(q^k) X^{-sk} \right) \\
+=& {\rm Exp}_{X,q}\left( \sum_{s\ge 1} \tD_s(q) X^s \right) {\rm Exp}_{X,q}\left( \sum_{s\ge 1} \tD_{-s}(q) X^{-s} \right) \, , 
+\ea
+\ee
+%
+where ${\rm Exp}_{X,q}$ is the plethystic exponential in the variables $X, q$. See, {\it e.g.},~\cite{lm-pv}. 
+It follows that we can extract the functions $\tD_{\pm s}(q)$ by applying the plethystic logarithm in the same two variables, which we denote by ${\rm Log}_{X,q}$, to both sides of Eq.~\eqref{Exp}. Specifically, we find that
+%
+\be
+\sum_{s\ge 1} \tD_{\pm s}(q) X^{\pm s}={\rm Log}_{X,q} \left( \exp\left( \sum_{n \ge 1} a_{\pm n}(q) X^{\pm n}\right) \right)= \sum_{k, n\ge 1} {\mu(k) \over k} a_{\pm n} (q^k) X^{\pm n k} \, , 
+\ee
+%
+where $\mu(k)$ is the M\"obius function, which leads to the closed formula
+%
+\be \label{Dtilde2}
+\tD_{\pm s}(q)= \sum_{k|s}  {\mu(k) \over k} a_{\pm {s\over k}} (q^k) \, , \quad s \in \IZ_{>0} \, . 
+\ee
+Note that this is the formal inverse of Eq.~\eqref{struc-an}, which can be equivalently written as
+%
+\be \label{struc-an2}
+a_{\pm n}(q)= \sum_{k|n} {1 \over k} \tD_{\pm {n\over k}}(q^k) \, , \quad n \in \IZ_{>0} \, .
+\ee
+%
+We comment that, in both examples of the figure-eight and the three-twist knots studied in Section~\ref{sec: examples}, we have precise expressions for $\sigma_{\alpha, m}$ for all choices of $\alpha \ne \rm{geom}$, which are given in Eqs.~\eqref{sigma41},~\eqref{sigma52}, and~\eqref{sigma52self}.
+Moreover, our statements above simplify notably in the particular case of the geometric branch, whose function $\phi^{(\rm{geom}), \rm{WKB}}(X;q)$ has a series expansion including only the positive powers of $X$ and whose coefficients $a^{(\rm{geom})}_{n}(q)$ have a trivial factor of $q^{\sigma_{{\rm geom}, n}}=1$ in the denominator.
+
+Let us explain how our conjectures originate from insights from the TS/ST correspondence. See~\cite{mmrev} for a review and further references. In the context of the TS/ST correspondence, the analog of the AJ conjecture for the wave function in Eq.~\eqref{AJ-eq} is given by the quantization of the mirror curve to a toric Calabi--Yau threefold, which defines a spectral problem. Its wave function can be computed in 
+the WKB approximation as a formal power series in $\hbar$. It was noted in~\cite{kpamir, mz-wv} that this $\hbar$-expansion can be suitably resummed, producing the same picture that we have described in our claims above. This structure is similar to the one appearing in perturbative open topological string theory~\cite{ov, lmv}, but it is slightly less constrained. Specifically, one has the structure of~\cite{ov} but not the more detailed substructure found in~\cite{lmv}. The integrality property in Eq.~\eqref{multi-conj} defines what is called an {\it admissible series} in~\cite{ks}\footnote{We thank Stavros Garoufalidis for pointing this out to us.} and is found in other examples like, {\it e.g.}, in~\cite{as}. 
+
+We can now ask how the resummed, perturbative partition functions in Eq.~\eqref{WKB-conj} relate to the exact partition function $\chi(u;\hbar)$ described in Section~\ref{sec: theory}. 
+It follows both from physical arguments~\cite{bdp} and from explicit calculations~\cite{gk-qseries, dimofte-levelk, ggm2} that the 
+exact wave function can be decomposed as
+%
+\be \label{exactconj}
+\chi(u; \hbar)=\sum_{\alpha} \mC_\alpha \, \CS^{(\alpha)} (X; q)\CS^{(\alpha)} (X_D;q_D) \, , 
+\ee
+%
+where the sum runs over the different branches of the classical $A$-polynomial labeled by $\alpha$, $\mC_\alpha$ 
+is an appropriate complex constant, and $\CS^{(\alpha)} (X; q)$ is known as {\it holomorphic block}. 
+Since the holomorphic block must reproduce the perturbative expansion of the wave function, it can be identified with the resummed WKB series in Eq.~\eqref{WKB-conj}, that is, 
+%
+\be \label{block-resummed}
+\CS^{(\alpha)} (X; q) = \exp \left(\frac{\ri}{\hbar} s^{(\alpha)}_0(x) +  s^{(\alpha)}_1(x) + \phi^{(\alpha), \rm{WKB}}(X;q)\right) \, .
+\ee
+%
+Therefore, our conjecture in Eq.~\eqref{multi-conj} implies that holomorphic blocks in complex CS theory have the stated integrality/multicovering property, {\it i.e.}, they are admissible series in the Kontsevich--Soibelman sense. This could have been anticipated from the relation between holomorphic blocks and open topological string partition functions in some examples~\cite{bdp}. 
+Indeed, we will show in Section~\ref{sec: examples} that, starting from the known closed expression for the holomorphic and antiholomorphic blocks, we can successfully verify the integrality structure of Eq.~\eqref{multi-conj} in the examples of the figure-eight and the three-twist knots for all choices of the saddle connection $\alpha$. 
+
+Let us comment that the structure in Eqs.~\eqref{exactconj},~\eqref{block-resummed} is again similar to what has been found in the open TS/ST correspondence~\cite{kpamir, mz-wv, mz-wv2, szabolcs, fgrassi}: the exact wave functions are given by sums of products of the resummed WKB wave functions and their duals\footnote{In the TS/ST correspondence, one can also define {\it off-shell} wave functions, in which case the dual blocks differ from the original ones.}.
+%
+ As we mentioned in Section~\ref{sec: intro}, a structure similar to the one in Eq.~\eqref{phi-struc} has already been conjectured in~\cite{ekholm}, where the resummed WKB expansion is obtained by solving directly the quantized $A$-polynomial equation. The approach of~\cite{ekholm} does not appeal to the decomposition into holomorphic blocks, and our explicit results for the resummation of the WKB expansion in the case of, {\it e.g.}, the figure-eight knot in Section~\ref{sec: examples} appear to be different from those in~\cite{ekholm}\footnote{One reason for this difference, which was pointed out to us by Sergei Gukov, is that the results of~\cite{ekholm} involve the super $A$-polynomial, and they might lead to a different specialization for $\text{SL}(2,\IC)$.}. 
+
+\subsection{Cancellation of singularities} \label{sec: cancellation}
+Again, we hide the explicit dependence on the classical solution $\alpha$ to simplify the notation. Here and in the rest of this work, we will only re-introduce it when necessary.
+%
+Recall that the exact wave function $\chi(u;\hbar)$ is well-defined for $\hbar>0$. In particular, it is well-defined for
+%
+\be \label{rathbar}
+\hbar = 2 \pi {P \over Q} \, ,
+\ee
+%
+where $P, Q$ are coprime positive integers. We will refer to values of $\hbar$ of the form in Eq.~\eqref{rathbar} as {\it rational values}. 
+On the other hand, due to the conjectured integrality structure in Eq.~\eqref{multi-conj}, $\phi^{\rm WKB} (X; q)$ is singular for these values of $\hbar$ precisely, thus implying that the singularities have to cancel in the sum
+%
+\be \label{phi-sum}
+\phi^{\rm WKB} (X; q) +\phi^{\rm WKB} (X_D; q_D) \, ,
+  \ee
+ %
+which appears in the formula for $\chi(u;\hbar)$ in Eq.~\eqref{exactconj}.
+This leads to non-trivial constraints on the coefficients $\hat a_{\pm n}(q)$ in Eq.~\eqref{ahatf-def}. This type of cancellation of singularities played a major role in the understanding of the ABJM matrix model~\cite{hmo2} and the TS/ST correspondence~\cite{km, ghm, wzh}. 
+
+We will now study how this cancellation occurs in the exact wave function $\chi(u;\hbar)$ as given in Eq.~\eqref{exactconj}, and, in Section~\ref{sec: rational1}, we will 
+compute the finite, well-defined piece which is left from the cancellation and constitutes the sum in Eq.~\eqref{phi-sum}. Moreover, as we will see following~\cite{szabolcs} in Section~\ref{sec: rational3}, it is possible to compute this finite part by using only the information contained in the quantum operator $\hat{A}(\hat{P}, \hat{X},q)$. 
+We take 
+\be
+q=\re^{\ri \hbar}=\re^{2 \pi \ri {P \over Q}} \, , \quad  P,Q \in \IZ_{>0} \; \; \text{coprime} \, , 
+\ee
+and, substituting into Eq.~\eqref{phi-struc}, we find that the possible singularities of $\phi^{\rm WKB} (X; q)$ occur in $a_{\pm n}(q)$ when $n=s Q$ and $s \in \IZ_{>0}$. For these values of $n$, the coefficient functions $a_{\pm n}(q)$ in Eq.~\eqref{ahatf-def} become
+\be \label{ahatsQ}
+a_{\pm s Q}\left(q \right) = \frac{\hat{a}_{ \pm sQ}\left( q \right)}{sQ (q^{sQ}-1) q^{ \sigma_{\pm sQ}}} \, .
+\ee
+Similarly, considering the dual variable
+\be
+q_D=\re^{{4 \pi^2 \over \hbar}}=\re^{2 \pi \ri {Q \over P}} \, , 
+\ee
+the possible singularities of the dual function $\phi_{\rm WKB} (X_D; q_D)$ occur in $a_{\pm n} (q_D)$ when $n=s P$ and $s \in \IZ_{>0}$. Indeed, the coefficient functions $a_{\pm n}(q_D)$ in Eq.~\eqref{ahatf-def} become
+\be \label{ahatsP}
+a_{\pm s P}\left( q_D\right) = \frac{\hat{a}_{\pm sP}\left( q_D \right)}{sP (q_D^{sP}-1) q_D^{ \sigma_{\pm sP}}}  \, .
+\ee
+%
+Let us now introduce
+\be \label{hbareps}
+q_{\e}= \re^{\ri \hbar_{\e}} \, , \quad q_{\e, D}= \re^{{ 4 \pi^2 \ri \over  \hbar_{\e}}} \, , \quad \hbar_{\e}=  2 \pi {P \over Q}+ \epsilon \, , \quad 0 < \e \ll 1 \, ,
+\ee
+and consider the limit $\e \rightarrow 0$. As detailed in Appendix~\ref{app: eps}, Eqs.~\eqref{ahatsQ},~\eqref{ahatsP} produce the NLO $\e$-expansions
+\begin{subequations}
+\begin{align}
+a_{\pm s Q}\left( q_{\e} \right) &= \left(- \frac{\ri}{(sQ)^2 \e} -\frac{1}{2sQ} + \frac{1}{(sQ)^2} q \frac{\d }{\d q} \right) \frac{ \hat{a}_{\pm sQ}(q) }{q^{\sigma_{\pm sQ}}} + \CO(\e) \, , \label{pole} \\
+a_{\pm s P}\left( q_{\e, D} \right) &= \left( \frac{\ri}{(sQ)^2 \e} +\frac{1}{sP}\left(\frac{\ri}{2 \pi sQ}- {1 \over 2} \right) + \frac{1}{(sP)^2} q_D \frac{\d }{\d q_D} \right) \frac{ \hat{a}_{\pm sP}(q_D)}{q_D^{\sigma_{\pm sP}}}  + \CO(\e) \, . \label{poleD}
+\end{align}
+\end{subequations}
+We then require the cancellation of the $\e$-poles in Eqs.~\eqref{pole},~\eqref{poleD}, which yields the relation
+%
+\be
+\label{aas}
+\hat a_{\pm sQ}\left(\re^{2 \pi \ri {P \over Q}} \right) \re^{- 2 \pi \ri {P \over Q} \sigma_{\pm sQ}} =  \hat a_{\pm sP} \left(\re^{2 \pi \ri {Q \over P}} \right) \re^{- 2 \pi \ri {Q \over P} \sigma_{\pm sP}} \, ,
+ \ee
+ %
+for all $s, P, Q \in \IZ_{>0}$ with $P,Q$ coprime.
+We remark that, for the geometric branch, the formula in Eq.~\eqref{aas} assumes the simplified form\footnote{A similar cancellation requirement was obtained in~\cite{szabolcs} in the study of the wave function for quantum mirror curves.}
+%
+\be
+\label{aas-geom}
+\hat a^{(\rm{geom})}_{sQ}\left(\re^{2 \pi \ri {P \over Q}} \right)  =  \hat a^{(\rm{geom})}_{sP} \left(\re^{2 \pi \ri {Q \over P}} \right)  \, , 
+ \ee
+ %
+ where again $s, P, Q \in \IZ_{>0}$ with $P,Q$ coprime.
+ 
+ Let us now prove that the cancellation formula in Eq.~\eqref{aas} is indeed a consequence of the integrality structure presented in Eq.~\eqref{multi-conj}. More precisely, Eqs.~\eqref{ahatf-def},~\eqref{struc-an} imply that
+ \be \label{an-dec}
+ \hat{a}_n(q) q^{-\sigma_n}= \sum_{k|n} k D_k \left( q^{n \over k} \right) q^{-{n \over k} \sigma_k} \sum_{j=0}^{k-1} q^{{n \over k}j} \, ,
+ \ee
+and, after substituting $n=sQ$ and $q = \re^{2 \pi \ri {P \over Q}}$ with $s, P, Q$ as above, we obtain
+ \be \label{asQtemp}
+ \hat{a}_{sQ}\left(\re^{2 \pi \ri {P \over Q}}\right) \re^{- 2 \pi \ri {P \over Q} \sigma_{sQ}}= \sum_{k| sQ} k D_k \left( \re^{2 \pi \ri \frac{sP}{k}} \right) \re^{- 2 \pi \ri \frac{sP}{k} \sigma_{k}} \sum_{j=0}^{k-1} \re^{2 \pi \ri \frac{sP}{k} j} \, .
+ \ee
+Since the sum over $j$ on the RHS is non-zero if and only if $k | s$, Eq.~\eqref{asQtemp} gives
+\be  \label{cs-sequenceP}
+ \hat{a}_{sQ}\left(\re^{2 \pi \ri {P \over Q}}\right) \re^{- 2 \pi \ri {P \over Q} \sigma_{sQ}}= \sum_{k| s} k^2 D_k (1) = c_s \in \IZ \, , \quad s \in \IZ_{>0} \, ,
+ \ee
+which is independent of the choice of $P,Q \in \IZ_{>0}$ coprime, thus proving the cancellation identity in Eq.~\eqref{aas}.
+We note that the case of $\hat{a}_{-n}(q)$ is handled analogously, yielding the same result. In particular, recalling that $\sigma_{-n}=0$, $n \in \IZ_{>0}$, it defines the sequence of integers
+\be  \label{cs-sequenceM}
+ \hat{a}_{-sQ}\left(\re^{2 \pi \ri {P \over Q}}\right) = \sum_{k| s} k^2 D_{-k} (1) = c_{-s} \in \IZ \, , \quad s \in \IZ_{>0} \, .
+\ee
+ Finally, applying the M\"obius inversion formula for arithmetic functions, we deduce that
+ %
+\be
+D_{\pm s}(1)= {1\over s^2} \sum_{k|s} \mu(k) c_{\pm{ s \over k}} \, , \quad s \in \IZ_{>0} \, ,
+\ee
+%
+where $\mu(k)$ is the M\"obius function. 
+As we will see, the construction presented here is experimentally verified for the knots ${\bf 4}_1$ and ${\bf 5}_2$ in Section~\ref{sec: examples}.
+
+\subsection{The wave function in the rational case, I} \label{sec: rational1}
+We will now apply the results obtained in Section~\ref{sec: cancellation} to derive explicitly the exact wave function $\chi(u;\hbar)$ in Eq.~\eqref{exactconj} as a power series in $X, X^{-1}$ for rational values of $\hbar$. 
+Let us start from the holomorphic components $\phi^{(\alpha), {\rm WKB}} (X; q)$ and fix $\hbar$ as in Eq.~\eqref{rathbar}, that is, 
+\be
+q=\re^{\ri \hbar}=\re^{2 \pi \ri {P \over Q}} \, , \quad  P,Q \in \IZ_{>0} \; \; \text{coprime} \, .
+\ee
+As before, we drop the label $\alpha$ for simplicity and we intend the following discussion to hold for each choice of the classical branch independently. The singular terms come from the values $n = sQ$ for $s \in \IZ_{>0}$, while choosing $n= sQ+k$ with $1 \le k \le Q-1$ produces only regular terms.
+Specifically, the terms involving singularities are obtained by substituting Eq.~\eqref{pole} into Eq.~\eqref{phi-struc} and contain the non-singular contributions
+%
+\be \label{finitep1}
+\sum_{s \ge 1} \left( -{1\over 2} +{1\over  sQ} q {\partial \over \partial q} \right) \frac{\hat a_{\pm s Q} (q)}{s Q q^{\sigma_{\pm sQ}}}  X^{\pm sQ} \, .
+\ee
+%
+The regular terms associated with $n \ne sQ$ are instead 
+%
+\be \label{finitep2}
+\sum_{k=1}^{Q-1} \frac{1}{q^k-1} \sum_{s \ge 0} {\hat a_{\pm (s Q +k)} (q) \over (sQ+k) q^{\sigma_{\pm (sQ+k)}}} X^{\pm (sQ+k)} \, ,
+\ee
+%
+where we have used that $q^{sQ+k}= q^k$. Thus, the sum of the quantities in Eqs.~\eqref{finitep1},~\eqref{finitep2} is the finite part of $\phi^{\rm WKB}(X;q)$ evaluated at the rational point in Eq.~\eqref{rathbar}.
+It is convenient to introduce the functions
+%
+\begin{subequations} \label{phifunct-parts}
+\begin{align}
+\varphi^{(+)}_Q(X)&= \sum_{s \ge 1} {\hat a_{s Q} (q) \over sQ q^{\sigma_{sQ}}} X^{sQ}    \, , \\
+\varphi^{(-)}_Q(X)&= \sum_{s \ge 1}  {\hat a_{-s Q} (q) \over (-sQ) q^{sQ + \sigma_{-sQ}}} X^{-sQ}   \, , \\
+\varphi^{(+)}_k(X)&=  \sum_{s \ge 0} {\hat a_{s Q +k} (q) \over (sQ+k) q^{\sigma_{sQ+k}}} X^{sQ+k}\, , \quad k=1, \dots, Q-1 \, , \\
+\varphi^{(-)}_k(X)&=  \sum_{s \ge 0} {\hat a_{-(s Q +k)} (q) \over -(sQ+k) q^{sQ+k + \sigma_{-(sQ+k)}}} X^{-(sQ+k)}\, , \quad k=1, \dots, Q-1 \, ,
+\end{align}
+\end{subequations}
+%
+where we hide the dependence on $q$ to simplify the notation. Moreover, we define
+%
+\begin{subequations} \label{phifunct}
+\begin{align}
+\varphi_Q(X)&=  \varphi^{(+)}_Q(X) + \varphi^{(-)}_Q(X)  \, , \\
+\varphi_k(X)&=  \varphi^{(+)}_k(X) - q^k \varphi^{(-)}_k(X) \, , \quad k=1, \dots, Q-1 \, .
+\end{align}
+\end{subequations}
+%
+Putting Eqs.~\eqref{finitep1},~\eqref{finitep2} together and suitably identifying the functions just introduced in Eq.~\eqref{phifunct}, we can write the holomorphic block as
+%
+\be \label{phirat}
+\phi^{\rm WKB}(X;q)= -{1\over 2} \varphi_Q(X) + q{\partial \over \partial q} \int_0^X \varphi_Q(X') {\rd X '\over X'} + 
+\sum_{k=1}^{Q-1} { \varphi_k(X) \over q^k-1} \, .
+\ee
+
+Let us now consider the antiholomorphic component $\phi^{\rm WKB} (X_D; q_D)$ and fix $\hbar$ as above. The derivation in this case is very similar to the previous one, but the novelty is the appearance of $\log X$ terms, which originate from the $\epsilon$-expansion of the dual variable 
+\be
+X_D=X^{2 \pi \over \hbar}=X^{Q \over P} \, .
+\ee 
+Let us add a small positive term $\e$ to the rational value of $\hbar$ as in Eq.~\eqref{hbareps}.
+Then, we consider the limit $\e \rightarrow 0$ and find that
+%
+\be \label{XDeps}
+X_{\e,D}=X^{2 \pi \over \hbar_{\e}}=X^{{Q \over P} {1 \over 1+ {\epsilon \over 2 \pi} {Q \over P}}}= X^{Q\over P} \left( 1 -{Q^2  \over 2 \pi P^2} \e \log X +  \CO(\e^2) \right) \, .
+\ee
+%
+As described before, the singular terms come from the values $n = sP$ for $s \in \IZ_{>0}$, while choosing $n= sP+k$ with $1 \le k \le P-1$ produces only regular terms.
+Specifically, the terms involving singularities are obtained by substituting Eqs.~\eqref{poleD},~\eqref{XDeps} into the Eq.~\eqref{phi-struc} and contain the non-singular contributions
+%
+\be \label{finitep1D}
+\sum_{s \ge 1} \left( \frac{\ri}{2 \pi sQ}-{1\over 2} +{1\over  sP} q_D {\partial \over \partial q_D} \mp \frac{\ri}{2 \pi} \log X \right) \frac{ \hat a_{\pm s P} (q_D) }{s P q_D^{\sigma_{\pm sP}}} X^{\pm sQ} \, .
+\ee
+%
+The regular terms associated with $n \ne sP$ are instead 
+%
+\be \label{finitep2D}
+\sum_{k=1}^{P-1} \frac{1}{q_D^k-1} \sum_{s \ge 0} {\hat a_{\pm (s P +k)} (q_D) \over (sP+k) q_D^{\sigma_{\pm (sP+k)}}} X^{\pm (sP+k){Q \over P}} \, ,
+\ee
+%
+where we have used that $q_D=\re^{2 \pi {Q \over P}}$ and thus $q_D^{sP+k}= q_D^k$. 
+Therefore, the sum of the quantities in Eqs.~\eqref{finitep1D},~\eqref{finitep2D} is the finite part of the function $\phi^{\rm WKB}(X_D;q_D)$ evaluated at the rational point in Eq.~\eqref{rathbar}.
+As for the holomorphic block, we introduce the functions 
+%
+\begin{subequations} \label{phitildefunct-parts}
+\begin{align}
+\widetilde \varphi^{(+)}_P(X_D)&= \sum_{s \ge 1} {\hat a_{s P} (q_D) \over sP q_D^{\sigma_{sP}}} X_D^{sP}  \, ,\\
+\widetilde \varphi^{(-)}_P(X_D)&= \sum_{s \ge 1} {\hat a_{-s P} (q_D) \over -(sP) q_D^{sP+\sigma_{-sP}}} X_D^{-sP}  \, ,\\
+\widetilde \varphi^{(+)}_k(X_D)&=  \sum_{s \ge 0} {\hat a_{s P +k} (q_D) \over (sP+k) q_D^{\sigma_{sP+k}}} X_D^{sP+k}  \, , \quad k=1, \dots, P-1 \, , \\
+\widetilde \varphi^{(-)}_k(X_D)&=  \sum_{s \ge 0} {\hat a_{-(s P +k)} (q_D) \over -(sP+k) q_D^{sP+k+\sigma_{-(sP+k)}}} X_D^{-(sP+k)}  \, , \quad k=1, \dots, P-1 \, , 
+\end{align}
+\end{subequations}
+%
+where we hide the dependence on $q_D$ to simplify the notation. Moreover, we define
+%
+\begin{subequations} \label{phitildefunct}
+\begin{align}
+\widetilde  \varphi_P(X_D)&=  \widetilde \varphi^{(+)}_P(X_D) + \widetilde \varphi^{(-)}_P(X_D)  \, , \\
+\widetilde  \varphi_k(X_D)&=  \widetilde \varphi^{(+)}_k(X_D) - q_D^k \widetilde \varphi^{(-)}_k(X_D) \, , \quad k=1, \dots, Q-1 \, .
+\end{align}
+\end{subequations}
+%
+Putting Eqs.~\eqref{finitep1D},~\eqref{finitep2D} together and suitably identifying the functions just introduced in Eq.~\eqref{phitildefunct}, we can now write the antiholomorphic block as
+%
+\be \label{phiratD}
+\ba
+\phi^{\rm WKB}(X_D;q_D)=& -\left( {1\over 2} + {\ri \over 2 \pi} \log X \right) \widetilde \varphi_P(X_D) \\
+&+ \left({\ri P \over 2 \pi Q} + q_D{\partial \over \partial q_D} \right) \int_0^{X_D} \widetilde \varphi_P(X_D') {\rd X_D' \over X_D'} + \sum_{k=1}^{P-1} { \widetilde \varphi_k(X_D)\over q_D^k-1} \, .
+\ea
+\ee
+
+Finally, we observe that 
+\be \label{rel-phi}
+\widetilde \varphi^{(+)}_P(X_D)={Q \over P} \varphi^{(+)}_Q(X) \, , \quad  \widetilde \varphi^{(-)}_P(X_D)={Q \over P} q^{s Q \left( 1- \frac{Q}{P} \right)} \varphi^{(-)}_Q(X) \, ,
+\ee
+as a direct consequence of the cancellation symmetry in Eq.~\eqref{aas}. 
+Therefore, after summing Eqs.~\eqref{phirat},~\eqref{phiratD} and using the relations in Eq.~\eqref{rel-phi}, we obtain the expression
+\be \label{phirat-final}
+\ba
+\phi^{\rm WKB}(X;q)+ \phi^{\rm WKB}(X_D;q_D)= & \left( -{1 \over 2} - {Q \over 2 P} - {\ri Q \over 2 \pi P} \log X \right) \varphi_Q(X) \\
+&+ \left( {\ri Q \over 2 \pi P} + 2 q {\partial \over \partial q} \right)\int_0^X \varphi_Q(X') {\rd X '\over X'} \\
+&+ s Q \left( 1- \frac{Q}{P} \right) \int_0^X \varphi^{(-)}_Q(X') {\rd X '\over X'} \\
+&+ \sum_{k=1}^{Q-1} { \varphi_k(X)\over q^k-1} + \sum_{k=1}^{P-1} { \widetilde \varphi_k(X^{Q \over P})\over q^{k{Q^2 \over P^2}}-1} \, .
+\ea
+\ee
+%
+Moreover, the power series defined in Eqs.~\eqref{phifunct},~\eqref{phitildefunct}, which dictate the formula for the exact wave function at rational points following Eq.~\eqref{phirat-final}, are determined by the function
+\be \label{upsilon}
+\Upsilon (X)=\Upsilon^{(+)} (X)+\Upsilon^{(-)} (X)=\sum_{n \ge 1} {\hat{a}_n (q) \over n q^{\sigma_n}} X^n + \sum_{n \ge 1} {\hat{a}_{-n} (q) \over (-n) q^{n+\sigma_{-n}}} X^{-n} \, ,
+\ee
+where, again, we hide the dependence on $q$ to simplify the notation. Indeed, we can write
+%
+\begin{subequations}
+\begin{align}
+\varphi_Q(X)&={1\over Q} \sum_{m=0}^{Q-1}  \Upsilon (q^m X)  \, , \label{varphiQ-U} \\
+\varphi^{(\pm)}_k(X)&={1\over Q} \sum_{m=0}^{Q-1} q^{\mp m k} \, \Upsilon^{(\pm)} (q^m X,q) \, , \quad k=1, \dots, Q-1 \, , 
+\end{align}
+\end{subequations}
+%
+and similarly
+\begin{subequations}
+\begin{align}
+\widetilde \varphi_P(X_D)&={1\over P} \sum_{m=0}^{P-1}  \Upsilon (q_D^m X_D)  \, , \\
+\widetilde \varphi^{(\pm)}_k(X_D)&={1\over P} \sum_{m=0}^{P-1} q_D^{\mp m k} \, \Upsilon^{(\pm)} (q_D^m X_D) \, , \quad k=1, \dots, P-1 \, .
+\end{align}
+\end{subequations}
+Let us stress that the derivation we have presented here implies a fixed choice of the classical branch. Indeed, the functions $\Upsilon (X), \varphi_Q(X), \varphi_k(X), \widetilde \varphi_P(X_D), \widetilde \varphi_k(X_D)$ are implicitly dependent on the label $\alpha$.
+We note that, applying Eqs.~\eqref{cs-sequenceP},~\eqref{cs-sequenceM}, we can simply read off the integer coefficients $c_{\pm s}$, $s \in \IZ_{>0}$, from the function $\varphi_Q(X)$. Namely, we have that
+%
+\be \label{varphiQ-cs}
+\varphi_Q(X)=\sum_{s \ge 1} {c_s \over sQ} X^{sQ} - {c_{-s} \over sQ} X^{-sQ} \, ,
+\ee
+after substituting $q^{sQ}=1$. 
+In Appendix~\ref{app: rational2}, we describe an alternative way of computing the integer sequences $\{ c_{\pm s} \}$, $s \in \IZ_{>0}$ using Eq.~\eqref{phirat-final}.
+We will show in Section~\ref{sec: examples} that, starting from the known closed expression for the holomorphic and antiholomorphic blocks, we can successfully compute the integer coefficients for both series in $X, X^{-1}$ and all choices of the saddle connection $\alpha$ in the examples of the figure-eight and the three-twist knots. 
+
+\subsection{The wave function in the rational case, II} \label{sec: rational3}
+In Section~\ref{sec: rational1}, we showed that the exact wave function $\chi(u; \hbar)$ in Eq.~\eqref{exactconj} at rational values of $\hbar$ is determined by the functions $\Upsilon^{(\alpha)} (X)$, defined in Eq.~\eqref{upsilon}, and their derivatives with respect to $q$, up to the constants $\mC_\alpha$ and the exponential prefactors containing $s^{(\alpha)}_{0,1}(x)$. We will now prove that the functions $\Upsilon^{(\alpha)} (X)$ can be obtained by solving directly the quantum $A$-polynomial in closed form. We will focus on $q$-difference equations of order two and three. These are the relevant cases for the examples studied in Section~\ref{sec: examples}. The matrix formalism presented below was used in~\cite{szabolcs} for a second-order $q$-difference equation in the context of quantum mirror curves.
+
+\subsubsection{Solving a second-order $q$-difference equation} \label{sec: 2nd-order}
+Recall that, for each choice of $\alpha$, the resummed perturbative wave function $\chi^{(\alpha), \rm{WKB}}(u; \hbar)$ is given in Eq.~\eqref{WKB-conj}. Equivalently, we write
+\be \label{chi-matrix-2}
+\chi^{(\alpha), \rm{WKB}}(u; \hbar) = \re^{\frac{\ri}{\hbar} s^{(\alpha)}_0(x) +  s^{(\alpha)}_1(x)} \Psi^{(\alpha), \rm{WKB}}(X;q) \, ,
+\ee
+where we have introduced the notation
+\be \label{Psi}
+\Psi^{(\alpha), \rm{WKB}}(X;q) = \exp\left( \phi^{(\alpha), \rm{WKB}}(X;q)\right) \, ,
+\ee
+which will be useful in the following discussion. Let us assume that the corresponding quantum $A$-polynomial equation, that is, 
+\be \label{Aeq-matrix}
+\hat{A}(\hat{P}, \hat{X}, q) \chi^{(\alpha), \rm{WKB}}(u; \hbar) = 0 \, ,
+\ee
+is of second order. After appropriately accounting for the correction due to the exponential prefactor containing the functions $s^{(\alpha)}_{0,1}(x)$ in Eq.~\eqref{chi-matrix-2}, the $q$-difference equation above becomes 
+%
+\be \label{Psi-eq}
+\Psi^{(\alpha), \rm{WKB}}(q X;q)+A(X)\Psi^{(\alpha), \rm{WKB}}(X;q)+B(X)\Psi^{(\alpha), \rm{WKB}}(q^{-1} X;q)=0 \, ,
+\ee
+%
+where $A(X), B(X)$ are functions of $X$ and $q$.
+Let us observe that, due to the conjectural structure in Eqs.~\eqref{phi-struc},~\eqref{ahatf-def}, we have
+%
+\be \label{uU-def}
+ \upsilon^{(\alpha)} (X) = {\Psi^{(\alpha), \rm{WKB}} (q X;q) \over \Psi^{(\alpha), \rm{WKB}}(X;q)}=\exp\left( \Upsilon^{(\alpha)} (X) \right) \, , 
+\ee
+%
+and we can now write Eq.~\eqref{Psi-eq} in terms of the above function $\upsilon^{(\alpha)} (X)$ as
+\be \label{VVab}
+\upsilon (X)\upsilon(q^{-1} X)+A(X) \upsilon(q^{-1} X)+B(X)=0 \, ,
+\ee
+where we have dropped the label $\alpha$ from the notation for simplicity.
+%
+Let us further assume that $\hbar$ is fixed as in Eq.~\eqref{rathbar}, that is, 
+\be \label{q-rat}
+q=\re^{\ri \hbar}=\re^{2 \pi \ri {P \over Q}} \, , \quad  P,Q \in \IZ_{>0} \; \; \text{coprime} \, ,
+\ee
+and introduce the sequence of functions $\{\upsilon_k \}$, $k \in \IZ_{\ge 0}$, of $X$ and $q$ defined by
+%
+\be
+\upsilon_k = \upsilon (q^{-k} X)\, .
+\ee
+%
+They satisfy the system of equations
+%
+\be \label{vkvk1}
+\upsilon_k \upsilon_{k+1}+A(q^{-k} X) \upsilon_{k+1}+B(q^{-k} X)=0 \, , \quad 0 \le k \le Q-1 \, ,
+\ee
+%
+as a consequence of Eq.~\eqref{VVab}. We solve this system recursively, as follows. We define the sequences $\{ a^{(k)}(X) \}$ and $\{ b^{(k)}(X) \}$, $k \in \IZ_{\ge 0}$, via the relations
+\begin{subequations} \label{ABvprods}
+\begin{align}
+	 &a^{(1)}(X) =A(X),\\
+	 & b^{(1)}(X) =B(X), \\
+	 &\upsilon_0 \upsilon_1 \cdots \upsilon_{k}+a^{(k)}(X) \upsilon_{k}+b^{(k)}(X) =0 \, , \quad k > 1 \, . \label{ABvprods-last}
+\end{align}
+\end{subequations}
+%
+If we multiply Eq.~\eqref{ABvprods-last} by $\upsilon_{k+1}$ and apply Eq.~\eqref{vkvk1}, we obtain a recursion relation which can be written in 
+matrix form as
+%
+\be
+	\begin{pmatrix}
+		a^{(k+1)}(X) \\
+		b^{(k+1)}(X)
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		-A(q^{-k} X) &  1 \\
+		-B(q^{-k} X)  & 0 
+	\end{pmatrix}
+	\begin{pmatrix}
+		a^{(k)}(X) \\
+		b^{(k)}(X)
+	\end{pmatrix} \, ,
+\ee
+%
+and it can be solved as 
+\be
+	\label{relQm1}
+	\begin{pmatrix}
+		a^{(Q)}(X) \\
+		b^{(Q)}(X)
+	\end{pmatrix}
+	=
+	{\mathcal M}_Q(X)
+	\begin{pmatrix}
+		-1 \\
+		0
+	\end{pmatrix} \, .
+\ee
+%
+Here, ${\mathcal M}_Q(X)$ is the matrix
+\be \label{matrix2}
+\CM_Q(X)	
+	=
+	\prod_{k=1}^{Q}
+	\begin{pmatrix}
+		-A(q^k X) &  1 \\
+		-B(q^k X)  & 0 
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\CM_{11}(X) &  \CM_{12}(X) \\
+		\CM_{21}(X)  & \CM_{22}(X) 
+	\end{pmatrix} \, ,
+\ee
+%
+where the product is ordered from left to right as $k$ increases. 
+Recalling that $q^Q=1$, we obtain
+%
+\be \label{MqM}
+\ba
+	{\mathcal M}_Q(q^{-1} X) &= 
+	\begin{pmatrix}
+		-A(X) &  1 \\
+		-B(X)  & 0 
+	\end{pmatrix}
+	{\mathcal M}_Q(X)
+	\begin{pmatrix}
+		-A( X) &  1 \\
+		-B(X)  & 0 
+	\end{pmatrix}^{-1} \\
+	&= 
+	\begin{pmatrix}
+		\CM_{22} -A \CM_{12} & \frac{A}{B} \left(\CM_{11}+A \CM_{12} \right) - \frac{1}{B} \left( \CM_{21}+A \CM_{22} \right) \\
+		-B \CM_{12}  & \CM_{11}+A \CM_{12}
+	\end{pmatrix} \, , 
+\ea
+\ee
+%
+where we have removed the explicit dependence on $X$ for compactness.
+Following Eqs.~\eqref{relQm1},~\eqref{MqM}, we find that\footnote{There is a sign misprint in the corresponding equation in~\cite{szabolcs}.}
+%
+\be \label{abM2}
+	\begin{pmatrix}
+		a^{(Q)}(q^{-1}X) \\
+		b^{(Q)}(q^{-1}X)
+	\end{pmatrix}
+	=\begin{pmatrix}
+		{-\mathcal M}_{22}(X)+A(X){\mathcal M}_{12}(X) \\
+		B(X){\mathcal M}_{12}(X)
+	\end{pmatrix} \, .
+\ee
+%
+Let us now define the function
+%
+\be
+	\Pi \upsilon  = \upsilon_0 \upsilon_1 \cdots \upsilon_{Q-1} \, ,
+\ee
+which is invariant under $q$-shifts. We consider Eq.~\eqref{ABvprods-last} for $k=Q$ and, shifting $X$ into $q^{-1}X$, we produce the system
+\be
+	\begin{cases}
+	\upsilon_0(\Pi \upsilon+ a^{(Q)}(X))+b^{(Q)}(X)=0 \, , \\
+	\upsilon_1(\Pi \upsilon+a^{(Q)}(q^{-1}X))+b^{(Q)}(q^{-1}X)=0 \, .
+	\end{cases}
+\ee
+%
+By substituting the expressions for $a^{(Q)}(X), a^{(Q)}(q^{-1}X)$ and $b^{(Q)}(X), b^{(Q)}(q^{-1}X)$ in terms of the entries of the original matrix $\mathcal M_Q(X)$ in Eqs.~\eqref{relQm1},~\eqref{abM2} and then using Eq.~\eqref{vkvk1} with $k=0$, we can rewrite the system above as
+%
+\be \label{v0system}
+	\begin{cases}
+	\upsilon_0(\Pi \upsilon- {\mathcal M}_{11}(X))- {\mathcal M}_{21}(X)=0 \, , \\
+	\Pi \upsilon - {\mathcal M}_{22}(X)-\upsilon_0  {\mathcal M}_{12}(X)=0\, , 
+	\end{cases}
+\ee
+%
+or, equivalently, in the matrix form
+%
+\be
+	\begin{pmatrix}
+		{\mathcal M}_{11}(X)-\Pi \upsilon & {\mathcal M}_{21}(X) \\
+		{\mathcal M}_{12}(X) & {\mathcal M}_{22}(X)-\Pi \upsilon
+	\end{pmatrix}
+	\begin{pmatrix}
+		\upsilon_0 \\
+		1
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		0 \\
+		0
+	\end{pmatrix} \, .
+\ee
+%
+It follows straightforwardly that $\Pi \upsilon$ is an eigenvalue of the transpose matrix $\mathcal M_Q(X)^{\rm T}$ with eigenvector $(\u_0, 1)^{\rm T}$. Specifically, we have that
+%
+\be \label{Piu-2}
+\Pi \upsilon =  \frac{ {\rm tr}{\mathcal M_Q}(X) \pm \sqrt{\Delta_Q(X)} }{2} \, ,
+\ee
+%
+where we have introduced
+\be
+\Delta_Q(X) =  ({\rm tr}{\mathcal M_Q}(X))^2 - 4 \,\, {\rm det}{\mathcal M_Q}(X) \, ,
+\ee
+while ${\rm det}{\mathcal M_Q}(X)$ and ${\rm tr}{\mathcal M_Q}(X) $ denote the trace and determinant of the matrix, respectively.
+Note that, following Eq.~\eqref{matrix2}, both ${\rm det}{\mathcal M_Q}(X)$ and ${\rm tr}{\mathcal M_Q}(X) $ are invariant under $q$-shifts and so depend on $X$ through $X^Q$. 
+The function $\upsilon_0$ can be found, for example, using the second line of Eq.~\eqref{v0system}, yielding
+%
+\be \label{uo-2}
+\upsilon_0 = \frac{ \Pi v - {\mathcal M}_{22}(X) }{{\mathcal M}_{12}(X)} =  \frac{ {\mathcal M}_{11}(X) - {\mathcal M}_{22}(X) \pm \sqrt{\Delta_Q(X)} }{2 {\mathcal M}_{12}(X)} \, ,
+\ee
+%
+while the functions $\upsilon_k$, $k \in \IZ_{>0}$, are obtained by successively $q$-shifting $\upsilon_0$. This gives the solution to Eq.~\eqref{VVab} for all rational values of $\hbar$. 
+However, we stress that, for such a solution to be consistent with the original choice of a classical branch labeled by $\alpha$, we must impose that, taking $P=Q=1$, we find 
+\be \label{branch}
+\u_0= \Pi \u = P^{(\alpha)} \, ,
+\ee
+where $P^{(\alpha)}$ is the selected non-abelian solution of the classical $A$-polynomial at fixed $X$ after taking into account the corrections due to the exponential prefactor in Eq.~\eqref{chi-matrix-2}. In this way, we remove the sign ambiguity in Eq.~\eqref{Piu-2} and correspondingly in Eq.~\eqref{uo-2}.
+We conclude by observing that Eq.~\eqref{uU-def} implies
+\begin{subequations} \label{2nd-end}
+\begin{align}
+	\Upsilon (X) &= \log \upsilon_0 = \log \left ( \frac{ {\mathcal M}_{11}(X)- {\mathcal M}_{22}(X) \pm \sqrt{\Delta_Q(X)} }{2 {\mathcal M}_{12}(X)} \right ) \, , \\
+	\varphi_Q(X) &= \frac{1}{Q} \log \Pi\upsilon = \frac{1}{Q} \log \left ( \frac{ {\rm tr}{\mathcal M}_Q(X) \pm \sqrt{\Delta_Q(X)} }{2} \right ) \, ,
+\end{align}
+\end{subequations}
+where we have applied the relation
+\be \label{varphi-Unew}
+\Pi \u = \exp \left( \sum_{m=0}^{Q-1} \Upsilon(q^m X) \right) = \exp \left(Q \varphi_Q (X) \right) \, ,
+\ee
+which is a direct consequence of Eq.~\eqref{varphiQ-U}. Again, the sign ambiguity in Eq.~\eqref{2nd-end} is resolved by the requirement in Eq.~\eqref{branch}.
+
+\subsubsection{Solving a third-order $q$-difference equation} \label{sec: 3rd-order}
+We will show how the matrix formalism of Section~\ref{sec: 2nd-order} can be applied to solve a third-order $q$-difference equation in closed form. 
+In particular, let us return to the quantum $A$-polynomial equation satisfied by the resummed perturbative wave function $\chi^{(\alpha), \rm{WKB}}(u; \hbar)$ in Eq.~\eqref{Aeq-matrix} and assume it is of order three.
+As before, after appropriately accounting for the correction due to the exponential prefactor containing the functions $s^{(\alpha)}_{0,1}(x)$ in Eq.~\eqref{chi-matrix-2}, the $q$-difference equation takes the form 
+%
+\be
+\label{Psi-eq3}
+\Psi^{(\alpha), \rm{WKB}}(q X;q)+A(X)\Psi^{(\alpha), \rm{WKB}}(X;q)+B(X)\Psi^{(\alpha), \rm{WKB}}(q^{-1} X;q) +C(X)\Psi^{(\alpha), \rm{WKB}}(q^{-2} X;q)=0 \, ,
+\ee
+%
+where $A(X), B(X), C(X)$ are functions of $X$ and $q$. We can now introduce the function $\u^{(\alpha)}(X)$ as in Eq.~\eqref{uU-def} and write Eq.~\eqref{Psi-eq3} equivalently as
+%
+\be \label{VVab3}
+\upsilon (X) \upsilon(q^{-1} X) \upsilon(q^{-2} X) + A(X) \upsilon(q^{-1} X)\upsilon(q^{-2} X) + B(X) \upsilon(q^{-2} X) + C(X) = 0 \, ,
+\ee
+where we have dropped the label $\alpha$ from the notation for simplicity.
+Let us further assume that $q$ is fixed as in Eq.~\eqref{q-rat} and define the the sequence of functions $\{\upsilon_k(X) \}$, $k \in \IZ_{\ge 0}$, of $X$ and $q$ by
+\be
+\upsilon_k = \upsilon (q^{-k} X) \, .
+\ee
+It follows from shifting $X$ into $q^{-k}X$ in Eq.~\eqref{VVab3} that they satisfy the system of equations
+\be \label{vkvk13}
+\u_k \u_{k+1} \u_{k+2} + A(q^{-k} X) \u_{k+1} \u_{k+2} + B(q^{-k} X) \u_{k+2} + C(q^{-k} X) = 0 \, , \quad 0 \le k \le Q-1 \, .
+\ee
+In order to solve the above system recursively, let us define the sequences $\{ a^{(k)}(X)\}$, $\{b^{(k)}(X)\}$, and $\{c^{(k)}(X)\}$, $k \in \IZ_{\ge 0}$, via the relations
+\begin{subequations} \label{ABvprods3}
+\begin{align}
+&a^{(1)}(X) = A(X) \, , \\
+&b^{(1)}(X) = B(X) \, , \\
+&c^{(1)}(X) = C(X) \, , \\
+&\u_0 \u_1 \cdots \u_{k+1} + a^{(k)}(X) \u_k \u_{k+1} + b^{(k)}(X) \u_{k+1} + c^{(k)}(X)=0 \, , \quad k>1 \, . \label{ABvprods3-last}
+\end{align}
+\end{subequations}
+If we multiply Eq.~\eqref{ABvprods3-last} by $\u_{k+2}$ and apply Eq.~\eqref{vkvk13}, we obtain a recursion relation which can be written in matrix form as
+%
+\be
+	\begin{pmatrix}
+		a^{(k+1)}(X) \\
+		b^{(k+1)}(X) \\
+		c^{(k+1)}(X)
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		-A(q^{-k} X) & 1 & 0 \\
+		-B(q^{-k} X)  & 0 & 1 \\
+		-C(q^{-k} X) & 0 & 0
+	\end{pmatrix}
+	\begin{pmatrix}
+		a^{(k)}(X) \\
+		b^{(k)}(X) \\
+		c^{(k)}(X)
+	\end{pmatrix} \, ,
+\ee
+%
+and it can be solved as 
+\be
+	\label{relQm13}
+	\begin{pmatrix}
+		a^{(Q)}(X) \\
+		b^{(Q)}(X) \\
+		c^{(Q)}(X)
+	\end{pmatrix}
+	=
+	{\mathcal M}_Q(X)
+	\begin{pmatrix}
+		-1 \\
+		0 \\
+		0
+	\end{pmatrix} \, .
+\ee
+%
+Here, ${\mathcal M}_Q(X)$ is the matrix 
+\be \label{matrix3}
+\CM_Q(X)	
+	=
+	\prod_{k=1}^{Q}
+	\begin{pmatrix}
+		-A(q^k X) &  1 & 0 \\
+		-B(q^k X)  & 0 & 1 \\ 
+		-C(q^k X) & 0 & 0
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		\CM_{11}(X) &  \CM_{12}(X) & \CM_{13}(X) \\
+		\CM_{21}(X)  & \CM_{22}(X) & \CM_{23}(X) \\ 
+		\CM_{31}(X) & \CM_{32}(X) & \CM_{33}(X)
+	\end{pmatrix} \, ,
+\ee
+%
+where the product is ordered from left to right as $k$ increases. As before, let us introduce
+%
+\be
+	\Pi \upsilon  = \upsilon_0 \upsilon_1 \cdots \upsilon_{Q-1} \, ,
+\ee
+which is invariant under $q$-shifts. Moreover, as it will be useful in the following, we compute the $q$-shifted matrix
+\be
+\CM_Q(q^{-1} X) =
+\begin{pmatrix}
+  -A(X) & 1 & 0 \\
+  -B(X) & 0 & 1 \\
+  -C(X) & 0 & 0
+\end{pmatrix}
+\CM_Q(X)
+\begin{pmatrix}
+  -A(X) & 1 & 0 \\
+  -B(X) & 0 & 1 \\
+  -C(X) & 0 & 0
+\end{pmatrix}^{-1} \, ,
+\ee
+and we obtain in this way
+\be \label{dict}
+  \begin{pmatrix}
+  -A \CM_{12} + \CM_{22} & -A \CM_{13} + \CM_{23} & \frac{A}{C} (\CM_{11}+ A \CM_{12}+ B \CM_{13}) - \frac{1}{C} (\CM_{21}+ A \CM_{22}+ B \CM_{23}) \\
+  -B \CM_{12} + \CM_{32} & -B \CM_{13} + \CM_{33} & \frac{B}{C} (\CM_{11}+ A \CM_{12}+ B \CM_{13}) - \frac{1}{C} (\CM_{21}+ A \CM_{22}+ B \CM_{23}) \\
+  -C \CM_{12} & -C \CM_{13} & (\CM_{11}+ A \CM_{12}+ B \CM_{13})
+\end{pmatrix} \, ,
+\ee
+where we have removed the explicit dependence on $X$ for compactness.
+Let us now take Eq.~\eqref{ABvprods3-last} for $k=Q$, which gives 
+\be \label{start3}
+\u_0 \u_1 (\Pi \u + a^{(Q)}(X)) + b^{(Q)}(X) \u_1 + c^{(Q)}(X) = 0 \, .
+\ee
+Eq.~\eqref{relQm13} allows us to express the functions $a^{(Q)}(X)$, $b^{(Q)}(X)$, and $c^{(Q)}(X)$ in terms of the entries of the matrix $\mathcal M_Q(X)$, so that Eq.~\eqref{start3} becomes
+\be \label{case1}
+\u_0 \u_1 (\Pi \u - \CM_{11}(X)) - \CM_{21}(X) \u_1 - \CM_{31}(X) = 0 \, .
+\ee
+Shifting $X$ into $q^{-1}X$, using Eq.~\eqref{vkvk13} with $k=0$, and applying the dictionary encoded in the matrix in Eq.~\eqref{dict}, we find the second equation
+\be \label{case2}
+\u_1 (\Pi \u - \CM_{22}(X)) - \CM_{32}(X) - \CM_{12}(X) \u_0 \u_1 = 0 \, .
+\ee
+Subsequently shifting $X$ into $q^{-1}X$ in the equation above, again using Eqs.~\eqref{vkvk13},~\eqref{dict}, we obtain the third equation
+\be \label{case3}
+\Pi \u - \CM_{33}(X) - \CM_{23}(X) \u_1 - \CM_{13}(X) \u_0 \u_1 = 0 \, .
+\ee
+Eqs.~\eqref{case1},~\eqref{case2},~\eqref{case3} assemble into a cubic system which can be written in matrix form as
+\be
+\begin{pmatrix}
+\CM_{11}(X) - \Pi \u & \CM_{21}(X) & \CM_{31}(X) \\
+\CM_{12}(X) & \CM_{22}(X) - \Pi \u & \CM_{32}(X) \\
+\CM_{13}(X)  & \CM_{23}(X) & \CM_{33}(X) - \Pi \u
+\end{pmatrix}
+\begin{pmatrix}
+\u_0 \u_1 \\
+\u_1 \\
+1
+\end{pmatrix} = 
+\begin{pmatrix}
+0 \\
+0 \\
+0
+\end{pmatrix} \, .
+\ee
+We conclude that $\Pi \u$ is an eigenvalue of the transpose matrix $\CM_Q(X)^{\rm T}$ with eigenvector $(\u_0 \u_1, \u_1, 1)^{\rm T}$. The characteristic polynomial is
+\be
+p(z) = \det (z \mathbb{I}_3 - \CM_Q^{\rm T}) = z^3 + d_2 z^2 + d_1 z + d_0 \, , 
+\ee
+where $\mathbb{I}_3$ is the 3x3 identity matrix and
+\begin{subequations}
+\begin{align}
+d_2=& - \CM_{11} - \CM_{22} - \CM_{33} \, , \\
+d_1=& - \CM_{23} \CM_{32} - \CM_{12} \CM_{21} - \CM_{13} \CM_{31} + \CM_{11} \CM_{22} + \CM_{11} \CM_{33} + \CM_{22} \CM_{33} \, , \\
+d_0=& - \CM_{11} \CM_{22} \CM_{33} + \CM_{11} \CM_{23} \CM_{32} + \CM_{22} \CM_{31} \CM_{13} + \CM_{33} \CM_{21} \CM_{12} \\
+& - \CM_{21} \CM_{13} \CM_{32} - \CM_{31} \CM_{12} \CM_{23} \, . \nonumber
+\end{align}
+\end{subequations}
+The eigenvalues of the matrix $\CM_Q(X)^{\rm T}$ are the roots of $p(z)$, that is, 
+\be \label{Pi3}
+\Pi \u = -\frac{1}{3} \left( d_2 + \Theta_2 + \frac{\Theta_0}{\Theta_2} \right) \, ,
+\ee
+where we have
+\begin{subequations} 
+\begin{align}
+\Theta_0 &= d_2^2 - 3 d_1 \, , \\
+\Theta_1 &= 2 d_2^3 - 9 d_2 d_1 + 27 d_0 \, , \\
+\Theta_2 &= { \re^{m {\pi \ri \over 3}} \over 2} \sqrt[3]{\Theta_1+\sqrt{\Theta_1^4 - 4 \Theta_0^3}}\, ,  \quad m=0, 1, 2 \, . \label{theta2-m}
+\end{align}
+\end{subequations}
+The function $\u_0$ is obtained, for example, by solving the system of Eqs.~\eqref{case2},~\eqref{case3}, yielding
+\be \label{u03}
+\u_0 =  \frac{\CM_{22} \CM_{33}-\CM_{22} \Pi \u -\CM_{23} \CM_{32}-\CM_{33} \Pi \u+ (\Pi \u)^2}{-\CM_{12} \CM_{33}+\CM_{12} \Pi \u +\CM_{13} \CM_{32}} \, , 
+\ee
+while the functions $\upsilon_k$, $k \in \IZ_{>0}$, are computed by successively $q$-shifting $\upsilon_0$.
+This gives the solution to Eq.~\eqref{VVab3} for all rational values of $\hbar$.
+As we have done in Section~\ref{sec: 2nd-order}, we can now fix the ambiguity in Eq.~\eqref{Pi3} and correspondingly in Eq.~\eqref{u03}, that is, the value of $m=0,1,2$ in the definition of $\Theta_2$, by imposing the consistency of the solution with the original choice of a non-abelian classical branch labeled by $\alpha$. Specifically, we require that Eq.~\eqref{branch} holds in the case of $P=Q=1$ after accounting for the exponential prefactor in Eq.~\eqref{chi-matrix-2}.
+Again, we conclude by observing that Eqs.~\eqref{uU-def},~\eqref{varphi-Unew} yield
+\be \label{dict-end}
+	\Upsilon (X) = \log \upsilon_0 \, , \quad \varphi_Q(X) = \frac{1}{Q} \log \Pi\upsilon \, .
+\ee 
+Note that the procedure described here for a third-order $q$-difference equation can be generalized to higher orders.
+ 
+\section{Examples} \label{sec: examples}
+In this section, we will illustrate how the conjectures and calculation methods of Section~\ref{sec: main} apply to the two simplest hyperbolic knots, {\it i.e.}, the figure-eight and the three-twist knots. We will first verify the integrality structure of Eq.~\eqref{multi-conj} starting from the known decomposition into holomorphic and antiholomorphic blocks. We will then determine the wave function at rational values of $\hbar$ following the matrix formalism of Section~\ref{sec: rational3} and cross-check the agreement of our results. 
+
+\subsection{The figure-eight knot} \label{sec: 41}
+The state integral of the figure-eight knot $\chi_{{\bf{4}}_1}(u;\hbar)$ can be expressed explicitly as~\cite{bdp,dimofte-levelk,ggm2}
+%
+ \be \label{chi41}
+ \ba
+ \chi_{{\bf{4}}_1}(u;\hbar)=\re^{-\frac{\pi\ri}{12}-\frac{2\pi\ri}{3}c_\mb^2} \Big(
+    &\re^{\pi\ri(-2u^2-4c_\mb u)}
+     \CJ(\re^{4\pi\mb u},\re^{2\pi\mb u};q)
+     \CJ(\re^{4\pi\mb^{-1}u},\re^{2\pi\mb^{-1} u};\tq^{-1})\\
+     +&\re^{\pi\ri(u^2-2c_\mb u)}
+     \CJ(\re^{2\pi\mb u},\re^{-2\pi\mb u};q)
+     \CJ(\re^{2\pi\mb^{-1}u},\re^{-2\pi\mb^{-1} u};\tq^{-1})
+      \Big) \, ,
+\ea
+\ee
+%
+where $c_{\mb}= \ri (\mb + \mb^{-1})/2$ and the $q$-special function $\CJ(x,y;q)$ is defined by\footnote{$\CJ(x,y;q)$ is closely related to the Hahn-Exton $q$-Bessel function~\cite{swarttouw, swarttouw2}.} 
+%
+\begin{equation}
+\CJ(x,y;q) = (y q;q)_\infty \sum_{n=0}^\infty (-1)^n \frac{q^{n(n+1)/2} x^n}{(q;q)_n (y q;q)_n} \, ,
+\end{equation}
+%
+while $(y q;q)_\infty$ and $(y q;q)_n$ denote the quantum dilogarithm and the $q$-shifted factorial, respectively. See Appendix~\ref{app: faddeev} for their definitions.
+By means of Eq.~\eqref{chi41}, we can identify
+%
+\begin{subequations}
+\begin{align}
+  \phi^{(\rm{geom}), \rm{WKB}}(X;q)& =  \log \CJ(X^2,X;q) \, , \label{phi41geom}\\
+  \phi^{(\rm{conj}), \rm{WKB}}(X;q) &=  \log \CJ(X,X^{-1};q) \, , \label{phi41conj}
+\end{align}
+\end{subequations}
+together with $C_{\rm{geom}} = C_{\rm{conj}} = \re^{\frac{\pi\ri}{4}}$ and 
+\begin{subequations}
+\begin{align}
+  {\ri s^{(\rm{geom})}_0(x) \over \hbar} + s^{(\rm{geom})}_1(x) + {\ri s^{(\rm{geom})}_0(x_D) \over \hbar_D} + s^{(\rm{geom})}_1(x_D) &= {x^2 \over\ri \hbar} + {2 \pi x \over\hbar} + x + {\pi^2 \ri \over 3 \hbar} + {\ri \hbar \over 12} \, , \label{s01geom41}\\
+  {\ri s^{(\rm{conj})}_0(x) \over \hbar} + s^{(\rm{conj})}_1(x) + {\ri s^{(\rm{conj})}_0(x_D) \over \hbar_D} + s^{(\rm{conj})}_1(x_D) &=  {\ri x^2 \over 2 \hbar} + { \pi x \over\hbar} + {x \over 2} + {\pi^2 \ri \over 3 \hbar} + {\ri \hbar \over 12} \, . \label{s01conj41}
+\end{align}
+\end{subequations}
+Indeed, the two terms in the RHS of Eq.~\eqref{chi41} represent the contributions coming from the geometric and conjugate branches, respectively. These are the only two non-abelian branches of the $\FE$-knot, as described in Example~\ref{41example}.
+Moreover, we solve Eqs.~\eqref{s01geom41},~\eqref{s01conj41} order by order in $x$ and $\hbar$ and obtain that
+\begin{subequations}
+\begin{align} 
+  s^{(\rm{geom})}_0(x) &= \frac{\pi^2}{3} - \frac{x^2}{2} \, , \quad s^{(\rm{geom})}_1(x) = x \, , \label{s01geom41-new} \\
+  s^{(\rm{conj})}_0(x) &= \frac{\pi^2}{3} + \frac{x^2}{4} \, , \quad s^{(\rm{conj})}_1(x) = \frac{x}{2} \, . \label{s01conj41-new}
+\end{align}
+\end{subequations}
+In this way, we have fully determined the perturbative wave functions $\chi^{(\alpha), \rm{WKB}}(u;\hbar)$ of the figure-eight knot in the resummed form of Eq.~\eqref{WKB-conj}. We verify successfully that they are annihilated by the $\hat A$-operator in Eq.~\eqref{41Ahat}, as expected.
+
+Let us now test the conjectural integrality structure in Eq.~\eqref{multi-conj} for both the geometric and the conjugate branches. 
+Expanding the RHS of Eqs.~\eqref{phi41geom},~\eqref{phi41conj} gives
+\begin{subequations}
+\begin{align}
+  \phi^{(\rm{geom}), \rm{WKB}}(X;q)& = \sum_{k \ge 1} \frac{q^k X^k}{k(q^k-1)} + \log \left(\sum_{n \ge 0} \frac{(-1)^n q^{n(n+1)/2} X^{2n}}{\prod_{i=1}^n (1-q^i) (1-q^i X)}  \right)  \, , \label{phi41geom-exp}\\
+  \phi^{(\rm{conj}), \rm{WKB}}(X;q) &=  \sum_{k \ge 1} \frac{q^k X^{-k}}{k(q^k-1)} + \log \left(\sum_{n \ge 0}  \frac{ (-1)^n q^{n(n+1)/2} X^{2n}}{\prod_{i=1}^n (1-q^i) (X-q^i)} \right)  \, . \label{phi41conj-exp}
+\end{align}
+\end{subequations}
+%
+Let us note that both terms on the RHS of Eq.~\eqref{phi41geom-exp} for the geometric branch contribute with positive powers of $X$.
+For the conjugate branch, we note that the negative powers of $X$ arise entirely from the first term on the RHS of Eq.~\eqref{phi41conj-exp}, while a factor of $q^{\sigma_{{\rm conj}, n}}$ with
+\be \label{sigma41}
+\sigma_{{\rm conj}, n} = \left\lfloor \frac{n^2}{8} \right\rfloor \, , \quad n \in \IZ_{>0} \, ,
+\ee
+appears in the denominator of the power series in $X$ obtained by expanding the second term. Let us stress that this negative power of $q$ arises from the factors $\prod_{i=1}^n(X-q^i)^{-1}$ in the summand inside the logarithm, and it is absent from both the $X^{-1}$-series for the conjugate branch and the $X$-series for the geometric branch.
+
+After extracting the coefficients $a^{(\alpha)}_{\pm n}(q)$, $n \in \IZ_{>0}$, from the series for $\phi^{(\alpha), \rm{WKB}}(X;q)$, one can obtain the functions $D_{\pm s}^{(\alpha)}(q)$, $s \in \IZ_{>0}$, by applying the formulae in Eqs.~\eqref{Dtilde1},~\eqref{Dtilde2}. It is non-trivial that the resulting functions are polynomials with integer coefficients. In particular, the first few of them are
+\be
+\ba
+D^{({\rm geom})}_1(q) &= D^{({\rm geom})}_2(q) = q \, , \quad D^{({\rm geom})}_3(q) = q^2 \, , \quad D^{({\rm geom})}_4(q)=q^3 \, , \\
+D^{({\rm geom})}_5(q) &= q^3(1+q) \, , \quad D^{({\rm geom})}_6(q) = q^4 (1 + 2 q) \, , \quad D^{({\rm geom})}_7(q) = q^4 (1 + q) (1 + q + q^2) \, , %\quad D^{({\rm geom})}_8(q) = q^5 (2 + 3 q + 4 q^2 + q^3 + q^4) \, ,
+\ea
+\ee
+for the geometric solution, and
+\be
+\ba
+D^{({\rm conj})}_1(q) &= 0 \, , \quad D^{({\rm conj})}_2(q) = D^{({\rm conj})}_3(q) = D^{({\rm conj})}_4(q)=-1 \, , \quad D^{({\rm conj})}_5(q) &= -1-q \, , \\
+ D^{({\rm conj})}_6(q) &= -2-q \, , \quad D^{({\rm conj})}_7(q) = -(1 + q) (1 + q + q^2) \, ,
+\ea
+\ee
+for its conjugate. Trivially, we have that 
+\be
+D^{({\rm conj})}_{-1}(q) = q \, , \quad D^{({\rm conj})}_{-s}(q) = 0 \quad s \ge 2 \, .
+\ee
+We have verified the integrality structure numerically up to $s=20$. It is then straightforward to compute the integers $c_{\pm s}$, $s \in \IZ_{>0}$, using Eqs.~\eqref{cs-sequenceP},~\eqref{cs-sequenceM}, which give
+%
+\begin{subequations}
+\begin{align}
+\{ c^{(\rm{geom})}_s\}_{s \in \IZ_{>0}}&=\{ 1, 5, 10, 21, 51, 122, 295, 725, 1792, 4455, 11133, 27930,  \dots \} \, , \label{cs41geom} \\
+\{ c^{(\rm{conj})}_s\}_{s \in \IZ_{>0}}&= (-1) \{ 0, 4, 9, 20, 50, 121, 294, 724, 1791, 4454, 11132, 27929, \dots \} \, ,  \label{cs41conj}
+\end{align}
+\end{subequations}
+%
+while $c^{(\rm{conj})}_{-s} = 1$ for all $s \in \IZ_{>0}$. We point out that the integers in Eq.~\eqref{cs41geom} appear to match numerically the sequence\footnote{This is the entry A$132461$ in the On-Line Encyclopedia of Integer Sequences.}
+%
+\be
+\label{sequence-ex}
+\sum_{k=0}^{\left\lfloor s/2 \right\rfloor} \left( {s-k \choose k} + {s-k-1 \choose k-1} \right)^2 \, , \quad s \in \IZ_{>0} \, .
+\ee
+%
+Moreover, we remark that the above sequences of integers satisfy
+\be \label{cs-rel41}
+c^{(\rm{geom})}_s + c^{(\rm{conj})}_s = c^{(\rm{conj})}_{-s} \, , \quad s \in \IZ_{>0} \, .
+\ee
+The same integer constants are obtained by implementing the alternative computational method proposed in Appendix~\ref{app: rational2}.
+
+Let us now go back to the quantum $A$-polynomial for the $\FE$-knot written in Eq.~\eqref{41Ahat}. The corresponding second-order $q$-difference equation is
+\be \label{Ahat-41}
+\hat{A}_{\FE}(\hat{P}, \hat{X}, q) \chi^{(\alpha), \rm{WKB}}(u; \hbar) = 0 \, ,
+\ee
+where $\chi^{(\alpha), \rm{WKB}}(u; \hbar)$ is the resummed perturbative wave function in Eq.~\eqref{chi-matrix-2} associated with the branch $\alpha$.
+In the rational case of $q= \re^{2 \pi \ri {P \over Q}}$ with $P, Q \in \IZ_{>0}$ coprime, Eq.~\eqref{Ahat-41} can be solved in closed form by directly applying the results of Section~\ref{sec: 2nd-order}. 
+For simplicity, let us consider the classical solution $\alpha = \rm{geom}$ and drop the label from our notation.
+After suitably taking into account the exponential prefactor containing the functions $s_{0,1}(x)$ in Eq.~\eqref{s01geom41-new}, the $q$-difference equation above assumes the form in Eq.~\eqref{Psi-eq} with the identifications
+ \be \label{coeffs-qdiff}
+ \ba
+ A(X)= -q^{-2} X^{-2} {X^2-1 \over q^{-1}X^2-1} \tilde{a}(X;q) \, , \quad B(X)= q^{-2}  X^{-4} {qX^2-1 \over q^{-1}X^2-1} \, ,
+  \ea
+ \ee
+ where we have introduced the function
+ \be \label{atilde}
+ \tilde{a}(X;q) = X^2+ X^{-2} -X-X^{-1}-q-q^{-1} \, .
+ \ee
+Substituting the expressions in Eq.~\eqref{coeffs-qdiff} into Eq.~\eqref{matrix2}, we compute the matrix $\CM_Q(X)$ and obtain explicit formulae for $\rm{tr} \CM_Q(X)$, $\det \CM_Q(X)$, and $\Delta_Q(X)$. Specifically, we find that
+\begin{subequations} \label{funct-mat41}
+\begin{align}
+\rm{tr} \CM_Q(X) &= X^{-4 Q} \left(1- X^Q - 2 X^{2 Q} - X^{3 Q} + X^{4 Q} \right) \, , \\
+\det \CM_Q(X) &=X^{-4 Q} \, , \\
+\Delta_Q(X) &= X^{-8 Q}\left(1-X^{2 Q}\right)^2 \left(1-2 X^{Q} -X^{2 Q}-2 X^{3 Q}+X^{4 Q}\right) \, ,
+\end{align}
+\end{subequations}
+and plugging these into Eq.~\eqref{2nd-end} with a choice of plus sign to satisfy the requirement in Eq.~\eqref{branch} for $\alpha=\text{geom}$, we obtain the functions $\Upsilon (X)$ and $\varphi_Q(X)$. Observe that all functions in Eq.~\eqref{funct-mat41}, and thus also $\varphi_Q(X)$, depend on $X$ through $X^Q$, as expected, and we can identify
+\begin{subequations} 
+\begin{align}
+\rm{tr} \CM_Q(X) &= X^{-4 Q} T(X^Q) = X^{-2 Q} \tilde{a}(X^Q; 1) \, , \\
+\Delta_Q(X) &= X^{-8 Q}\left(1-X^{2 Q}\right)^2 \Delta(X^Q) = X^{-4 Q} \left(\tilde{a}(X^Q; 1)^2 - 4 \right) \, ,
+\end{align}
+\end{subequations}
+where $\tilde{a}(X; q)$ is defined in Eq.~\eqref{atilde}, while $T(X)$ and $\Delta(X)$ are the functions introduced in Eqs.~\eqref{classicT},~\eqref{classicD}, respectively, which appear in the formula for the solutions to the classical $A$-polynomial of the figure-eight knot in Eq.~\eqref{classicP}.
+In particular, it follows that
+\be \label{8varphiQ}
+\varphi_Q(X)= \frac{1}{Q} \log \left(\frac{T(X^Q) + (1-X^{2 Q})\sqrt{\Delta(X^Q)}}{2 X^{4 Q}} \right) = \frac{1}{Q} \log \left(\frac{\tilde{a}(X^Q; 1) + \sqrt{\tilde{a}(X^Q; 1)^2-4}}{2 X^{2 Q}} \right) \, ,
+\ee
+which gives us another way to numerically evaluate the integer constants $c_s$, $s \in \IZ_{>0}$ for the geometric branch, following Eq.~\eqref{varphiQ-cs} for any choice of $P, Q \in \IZ_{>0}$ coprime, in full agreement with our previous computations. In principle, one could use the formula for $\varphi_Q(X)$ with $P=Q=1$, that is, 
+\be
+\label{8varphi1}
+\varphi_1(X)= \log \left( {\tilde{a}(X;1) + {\sqrt{\tilde{a}(X;1)^2- 4}} \over 2 X^2} \right) \, ,
+\ee
+to derive the conjectural expression in Eq.~\eqref{sequence-ex}, but we have not attempted to do so. The same formalism can be applied to the conjugate branch of the figure-eight knot, in which case the appropriate functions $s_{0,1}(x)$ are written in Eq.~\eqref{s01conj41-new} and the sign ambiguity in Eq.~\eqref{2nd-end} is resolved by imposing the condition in Eq.~\eqref{branch} with $\alpha = \text{conj}$, which implies a choice of minus sign. Again, the corresponding computation of the integer constants $c_{\pm s}$, $s \in \IZ_{>0}$, for the conjugate branch agrees with the results obtained above.
+
+\subsection{The three-twist knot} \label{sec: 52}
+The state integral of the three-twist knot $\chi_{{\bf{5}}_2}(u;\hbar)$ can be expressed explicitly as~\cite{bdp,dimofte-levelk,ggm2}
+%
+ \be \label{chi52}
+ \ba
+ \chi_{{\bf{5}}_2}(u;\hbar)=&\re^{-\frac{\pi\ri}{12}-\frac{5\pi\ri}{3}c_\mb^2}\Big(
+    \re^{\pi\ri(-2u^2-4c_\mb u)}
+     \CH(\re^{2 \pi \mb u},\re^{4 \pi \mb u},\re^{4 \pi \mb u}, ;q)
+     \CH(\re^{2 \pi \mb^{-1} u},\re^{4 \pi \mb^{-1} u},\re^{4 \pi \mb^{-1} u};\tq^{-1})\\
+      &+\re^{\pi\ri(-2u^2+4c_\mb u)}
+     \CH(\re^{-2 \pi \mb u},\re^{-4 \pi \mb u},\re^{-4 \pi \mb u};q)
+     \CH(\re^{-2 \pi \mb^{-1} u},\re^{-4 \pi \mb^{-1} u},\re^{-4 \pi \mb^{-1} u};\tq^{-1}) \\
+     &+\CH(\re^{2 \pi \mb u},\re^{-2 \pi \mb u},1;q)
+     \CH(\re^{2 \pi \mb^{-1} u},\re^{-2 \pi \mb^{-1} u},1;\tq^{-1})
+      \Big) \, ,
+\ea
+\ee
+%
+where $c_{\mb}= \ri (\mb + \mb^{-1})/2$ and the $q$-special function $\CH(x,y,z;q)$ is defined by\footnote{$\CH(x,y;q)$ is closely related to the $q$-hypergeometric function.} 
+%
+  \begin{equation}
+    \CH(x,y,z;q) = (x q;q)_\infty (y q;q)_\infty \sum_{n=0}^\infty \frac{q^{n(n+1)} z^n}{(q;q)_n (x q;q)_n (y q;q)_n} \, ,
+  \end{equation}
+%
+while $(x q;q)_\infty$ and $(x q;q)_n$ denote the quantum dilogarithm and the $q$-shifted factorial, respectively. See Appendix~\ref{app: faddeev} for their definitions.
+As for the case of the figure-eight knot in Section~\ref{sec: 41}, using Eq.~\eqref{chi52}, we can identify 
+%
+\begin{subequations}
+\begin{align}
+  \phi^{(\rm{geom}), \rm{WKB}}(X;q)& =  \log \CH(X,X^2,X^2;q) \, , \label{phi52geom} \\
+  \phi^{(\rm{conj}), \rm{WKB}}(X;q) &=  \log \CH(X^{-1},X^{-2},X^{-2};q) \, , \label{phi52conj} \\
+  \phi^{(\rm{self}), \rm{WKB}}(X;q) &=  \log \CH(X,X^{-1},1;q) \, , \label{phi52self}
+\end{align}
+\end{subequations}
+together with $C_{\rm{geom}} = C_{\rm{conj}} = C_{\rm{self}} = \re^{\frac{3 \pi \ri}{4}}$ and 
+\begin{subequations}
+\begin{align}
+  {\ri  s^{(\rm{geom})}_0(x) \over \hbar}+ s^{(\rm{geom})}_1(x) + {\ri s^{(\rm{geom})}_0(x_D) \over \hbar_D} + s^{(\rm{geom})}_1(x_D) 
+  &= {x^2 \over\ri \hbar} + {2 \pi x \over\hbar} + x +{5 \pi^2 \ri \over 6 \hbar} + {5 \ri \hbar \over 24} \, , \label{s01geom52}\\
+  {\ri s^{(\rm{conj})}_0(x) \over \hbar} + s^{(\rm{conj})}_1(x) + {\ri s^{(\rm{conj})}_0(x_D) \over \hbar_D} + s^{(\rm{conj})}_1(x_D) 
+  &= {x^2 \over \ri \hbar} - { 2 \pi x \over\hbar}- x + {5 \pi^2 \ri \over 6 \hbar} + {5 \ri \hbar \over 24} \, , \label{s01conj52}\\
+  {\ri s^{(\rm{self})}_0(x) \over \hbar} + s^{(\rm{self})}_1(x) + {\ri s^{(\rm{self})}_0(x_D) \over \hbar_D} + s^{(\rm{self})}_1(x_D) 
+  &= {5 \pi^2 \ri \over 6 \hbar} + {5 \ri \hbar \over 24} \, .\label{s01self52}
+\end{align}
+\end{subequations}
+Indeed, the three terms in the RHS of Eq.~\eqref{chi52} capture the contributions to the exact partition function coming from the geometric, conjugate, and self-conjugate branches, respectively. These are the only three non-abelian branches of the $\TT$-knot, as described in Example~\ref{52example}.
+Moreover, as before, we solve Eqs.~\eqref{s01geom52},~\eqref{s01conj52}, and~\eqref{s01self52} order by order in $x$ and $\hbar$ and obtain that
+\begin{subequations}
+\begin{align}
+  s^{(\rm{geom})}_0(x) &= \frac{5 \pi^2}{6} - \frac{x^2}{2} \, , \quad s^{(\rm{geom})}_1(x) = x \, , \label{s01geom52-new}\\
+  s^{(\rm{conj})}_0(x) &= \frac{5 \pi^2}{6} - \frac{x^2}{2} \, , \quad s^{(\rm{conj})}_1(x) = -x \, , \label{s01conj52-new}\\
+  s^{(\rm{self})}_0(x) &= \frac{5 \pi^2}{6} \, , \quad s^{(\rm{self})}_1(x) = 0 \, . \label{s01self52-new}
+\end{align}
+\end{subequations}
+In this way, we have fully determined the perturbative wave functions $\chi^{(\alpha), \rm{WKB}}(u;\hbar)$ of the three-twist knot in the resummed form of Eq.~\eqref{WKB-conj}. As before, we verify successfully that they are annihilated by the $\hat A$-operator in Eq.~\eqref{52Ahat}, as expected.
+
+Let us now test the integrality conjecture in Eq.~\eqref{multi-conj} for all three non-abelian branches. 
+Expanding the RHS of Eqs.~\eqref{phi52geom},~\eqref{phi52conj}, and~\eqref{phi52self} gives
+\begin{subequations}
+\begin{align}
+  \phi^{(\rm{geom}), \rm{WKB}}(X;q)& = \sum_{k \ge 1} \frac{q^k (X^k+X^{2k})}{k(q^k-1)} + \log \left(\sum_{n \ge 0} \frac{q^{n(n+1)} X^{2n}}{\prod_{i=1}^n (1-q^i) (1-q^i X)(1-q^i X^2)} \right)  \, , \label{phi52geom-exp}\\
+  \phi^{(\rm{conj}), \rm{WKB}}(X;q) &=  \sum_{k \ge 1} \frac{q^k (X^{-k}+X^{-2k})}{k(q^k-1)} + \log \left(\sum_{n \ge 0} \frac{q^{n(n+1)} X^{n}}{\prod_{i=1}^n (1-q^i) (X-q^i)(X^2-q^i)} \right)  \, , \label{phi52conj-exp}\\
+  \phi^{(\rm{self}), \rm{WKB}}(X;q) &=  \sum_{k \ge 1} \frac{q^k (X^k+X^{-k})}{k(q^k-1)} + \log \left(\sum_{n \ge 0} \frac{q^{n(n+1)} X^{n}}{\prod_{i=1}^n (1-q^i) (1-q^i X)(X-q^i)} \right)  \, . \label{phi52self-exp}
+\end{align}
+\end{subequations}
+%
+Both terms on the RHS of Eq.~\eqref{phi52geom-exp} for the geometric branch contribute with positive powers of $X$.
+For the conjugate branch, we note that the negative powers of $X$ arise entirely from the first term on the RHS of Eq.~\eqref{phi52conj-exp}, while a factor of $q^{\sigma_{{\rm conj}, n}}$ with
+\be \label{sigma52}
+\sigma_{{\rm conj}, n} = \left\lfloor \frac{n^2}{4} \right\rfloor \, , \quad n \in \IZ_{>0} \, ,
+\ee
+appears in the denominator of the power series in $X$ obtained by expanding 
+the second term. Let us stress that this negative power of $q$ arises from the 
+factors\footnote{Note that there are twice as many contributing factors of $q^{-1}$ here compared to the conjugate branch of the figure-eight knot, in agreement with the observed formulae for the functions $\sigma_{{\rm conj}, n}$ in Eqs.~\eqref{sigma41},~\eqref{sigma52}.} $\prod_{i=1}^n(X-q^i)^{-1}(X^2-q^i)^{-1}$ in the summand inside the logarithm, and it is absent from both the $X^{-1}$-series for the conjugate branch and the $X$-series 
+for the geometric branch.
+Finally, in the case of the self-conjugate branch, the first term on the RHS 
+of Eq.~\eqref{phi52self-exp} supplies both positive and negative powers of $X$, 
+while the second term only adds to the $X$-series after expansion. Here, a more 
+complicated factor of $q^{\sigma_{{\rm self}, n}}$ with
+\be \label{sigma52self}
+\sigma_{{\rm self}, n} = \left\lfloor \frac{1}{24} \left(P \left(\left\lfloor \frac{2 (n+2)}{3} 
+\right\rfloor \right)^2-1 \right) \right\rfloor \, , \quad n \in \IZ_{>0} \, ,
+\ee
+where $P(n)$ denotes the $n$-th prime number, occurs in the denominator of the power series in $X$ after summing up the contribution from the expansion of the second term on the RHS of Eq.~\eqref{phi52self-exp}. 
+This originates from the factors $\prod_{i=1}^n(X-q^i)^{-1}$ in the summand inside the logarithm.
+
+As we have done for the $\FE$-knot, after extracting the coefficients $a^{(\alpha)}_{\pm n}(q)$, $n \in \IZ_{>0}$, from the series for $\phi^{(\alpha), \rm{WKB}}(X;q)$, we obtain the functions $D_{\pm s}^{(\alpha)}(q)$, $s \in \IZ_{>0}$, by applying the formulae in Eqs.~\eqref{Dtilde1},~\eqref{Dtilde2}. Again, these are non-trivial polynomials with integer coefficients. In particular, the first few of them are
+\be
+\ba
+D^{({\rm geom})}_1(q) &= q \, , \quad D^{({\rm geom})}_2(q) = -q(-1 + q) \, , \quad D^{({\rm geom})}_3(q) = D^{({\rm geom})}_4(q)=-q^3 \, , \\
+D^{({\rm geom})}_5(q) &= q^4 (-1 + q^2) \, , \quad D^{({\rm geom})}_6(q) = q^4 (-1 + 2 q^2 + q^4) \, , \\
+D^{({\rm geom})}_7(q) &= q^5 (-1 + q (1 + q)^2) \, , 
+\ea
+\ee
+for the geometric solution, 
+\be
+\ba
+D^{({\rm conj})}_1(q) &= D^{({\rm conj})}_2(q) = -1 \, , \quad D^{({\rm conj})}_3(q) = -2 - q \, , \quad D^{({\rm conj})}_4(q)=-(1 + q) (1 + 2 q) \, , \\
+D^{({\rm conj})}_5(q) &= -2 - 2 q - 7 q^2 - 4 q^3 - q^4 \, , \\
+D^{({\rm conj})}_6(q) &= -(1 + q) (1 + 2 q + 3 q^2 + 6 q^3 + 7 q^4 + 2 q^5) \, \\
+D^{({\rm conj})}_7(q) &= -2 - 2 q - 8 q^2 - 11 q^3 - 20 q^4 - 23 q^5 - 32 q^6 - 19 q^7 - 6 q^8 - q^9 \, , 
+ \ea
+\ee
+for its conjugate, and
+\be
+\ba
+D^{({\rm self})}_1(q) =& 2 q \, , \quad D^{({\rm self})}_2(q) = 1 + q^2 \, , \quad D^{({\rm self})}_3(q) =1 + q^2 + 2 q^4 \, , \\
+D^{({\rm self})}_4(q) =&-1 - q + q^2 + 2 q^4 + 3 q^6 + q^7 \, , \\
+D^{({\rm self})}_5(q) =& -1 + q - q^2 + 2 q^3 + 4 q^5 + q^6 + 6 q^7 + 2 q^8 + 2 q^9 \, , \\
+D^{({\rm self})}_6(q) =&  -1 - q^2 - 2 q^4 + 2 q^5 - 2 q^6 + 4 q^7 + q^8 + 8 q^9 + 4 q^{10} \\
+& + 11 q^{11} + 7 q^{12} + 5 q^{13} + 3 q^{14} + q^{15} \, , \\
+D^{({\rm self})}_7(q) =& -1 - q^3 - 2 q^5 + q^6 - 4 q^7 + 4 q^8 - 3 q^9 + 9 q^{10} + 4 q^{11} + 18 q^{12} \\
+&+ 12 q^{13} + 27 q^{14} + 18 q^{15} + 17 q^{16} + 10 q^{17} + 8 q^{18} + 
+ 2 q^{19} + 2 q^{20} \, ,
+\ea
+\ee
+for the self-conjugate one. Trivially, we have that 
+\be
+\ba
+D^{({\rm conj})}_{-1}(q) = D^{({\rm conj})}_{-2}(q) &= q \, , \quad D^{({\rm conj})}_{-s}(q) = 0 \quad s \ge 3 \, , \\
+D^{({\rm self})}_{-1}(q) &= q \, , \quad D^{({\rm self})}_{-s}(q) = 0 \quad s \ge 2 \, .
+\ea
+\ee
+We have verified numerically that the polynomials $D_{\pm s}(q)$ have integer coefficients up to $s=20$ for all three branches. We then compute the integers $c_{\pm s}$, $s \in \IZ_{>0}$, using Eqs.~\eqref{cs-sequenceP},~\eqref{cs-sequenceM}, which give
+%
+\begin{subequations}
+\begin{align}
+\{ c^{(\rm{geom})}_s\}_{s \in \IZ_{>0}}=&\{ 1, 1, -8, -15, 1, 64, 148, 49, -575, -1599, -1088, 5088,  \dots \} \, , \label{cs52geom} \\
+\{ c^{(\rm{conj})}_s\}_{s \in \IZ_{>0}}=& (-1) \{ 1, 5, 28, 101, 401, 1544, 6077, 24101, 96418, 388205, 1571307, 6387608, \dots \} \, , \label{cs52conj}\\
+\{ c^{(\rm{self})}_s\}_{s \in \IZ_{>0}}=& \{ 2, 10, 38, 122, 402, 1486, 5931, 24058, 96995, 389810, 1572397, 6382526 \dots \} \, , \label{cs52self}
+\end{align}
+\end{subequations}
+%
+while $c^{(\rm{conj})}_{-s} = [s]_2+ 5 [s+1]_2$, where $[s]_2$ denotes the remainder of the division of $s$ by $2$, and $c^{(\rm{self})}_{-s} = 1$ for all $s \in \IZ_{>0}$. 
+We observe that the above sequences of integers satisfy the relation
+\be \label{cs-rel52}
+c^{(\rm{geom})}_s + c^{(\rm{conj})}_s + c^{(\rm{self})}_s = c^{(\rm{conj})}_{-s} + c^{(\rm{self})}_{-s} \, , \quad s \in \IZ_{>0} \, .
+\ee
+which corresponds to the analogous formula in Eq.~\eqref{cs-rel41} for the figure-eight knot. Note that, in both our examples, the sum of the integer sequences $\{c_s\}$ over all branches equals the sum of the integer sequences $\{c_{-s}\}$, which is a periodic function of $s \in \IZ_{>0}$. Again, the alternative computational approach of Appendix~\ref{app: rational2} agrees with the above results.
+
+Let us now go back to the quantum $A$-polynomial for the $\TT$-knot written in Eq.~\eqref{52Ahat}. The corresponding $q$-difference equation in the form of Eq.~\eqref{AJ-eq} is of third order. Precisely, we have 
+\be \label{Ahat-52}
+\hat{A}_{\TT}(\hat{P}, \hat{X}, q) \chi^{(\alpha), \rm{WKB}}(u; \hbar) = 0 \, ,
+\ee
+where $\chi^{(\alpha), \rm{WKB}}(u; \hbar)$ is the resummed perturbative wave function in Eq.~\eqref{chi-matrix-2} associated with the branch $\alpha$.
+In the rational case of $q= \re^{2 \pi \ri {P \over Q}}$ with $P, Q \in \IZ_{>0}$ coprime, Eq.~\eqref{Ahat-52} can be solved in closed form by directly applying the results of Section~\ref{sec: 3rd-order}. 
+As for the $\FE$-knot, let us consider the case $\alpha = \rm{geom}$ and drop the label to simplify our notation.
+After appropriately accounting for the exponential prefactor containing the functions $s_{0,1}(x)$ in Eq.~\eqref{s01geom52-new}, the $q$-difference equation above assumes the form in Eq.~\eqref{Psi-eq3} with the identifications
+ \be \label{coeffs-qdiff52}
+ \ba
+  A(X)= q^{-2} X^{-2} \frac{C_2(X,q)}{C_3(X,q)} \, , \quad B(X)= q^{-2} X^{-4} \frac{C_1(X,q)}{C_3(X,q)} \, , \quad C(X) = X^{-6} \frac{C_0(X,q)}{C_3(X,q)} \, ,
+  \ea
+ \ee
+ %
+ where $C_0,C_1,C_2,C_3$ are the coefficient functions defined in Eq.~\eqref{52xC}. Substituting the expressions in Eq.~\eqref{coeffs-qdiff52} into Eq.~\eqref{matrix3} and computing the matrix $\CM_Q(X)$, we can then derive explicit formulae for $\Pi \u$ and $\u_0$ from Eqs.~\eqref{Pi3},~\eqref{u03}. We stress that the ambiguity in the definition of $\Theta_2$ is resolved by requiring Eq.~\eqref{branch} to be satisfied with $\alpha=\text{geom}$, which implies the choice $m=2$. Plugging these into Eq.~\eqref{dict-end}, we find the functions $\Upsilon (X)$ and $\varphi_Q(X)$ for the geometric branch of the three-twist knot. We can easily use the resulting explicit expression for $\varphi_Q(X)$ to numerically evaluate the integer constants $c_s$, $s \in \IZ_{>0}$, for the geometric branch by applying Eq.~\eqref{varphiQ-cs} for any choice of $P, Q \in \IZ_{>0}$ coprime, thus producing a third independent computation which is in perfect agreement with the previous two. The same discussion can be applied to the conjugate and self-conjugate branches of the $\TT$-knot, in which case the appropriate functions $s_{0,1}(x)$ are written in Eqs.~\eqref{s01conj52-new},~\eqref{s01self52-new} and the ambiguity in the choice of $m$ in Eq.~\eqref{theta2-m} is fixed by imposing the condition in Eq.~\eqref{branch} with $\alpha = \text{conj}, \text{self}$, yielding $m=1$ and $m=0$, respectively. Again, the corresponding integer constants $c_{\pm s}$, $s \in \IZ_{>0}$, for the conjugate and self-conjugate branches match our previous results.
+
+\section{The wave function from the state integral} \label{sec: stateintegral}
+In this section, we consider the Andersen--Kashaev invariant~\cite{ak, ak2, dimofte-rev} $\chi_{\CK}(u;\hbar)$ in its original form as a finite-dimensional state integral, whose integrand is a product of Faddeev’s quantum dilogarithm functions~\cite{faddeev}. We evaluate it directly at rational values of $\hbar$ by applying the techniques of~\cite{garou-kas}, thus providing a third method for the computation of the exact wave function. For simplicity, we focus on the case of the figure-eight knot and show that this third approach agrees with the two previous methods presented in Section~\ref{sec: main}. 
+A similar calculation in the case $\mb^2=1$ was done in unpublished work by Szabolcs Zakany. 
+
+\subsection{Evaluation at rational points}
+Following the conventions of~\cite{ak}, the state integral for the $\FE$-knot takes the form
+\be \label{41ak}
+\chi_{\FE}(u;\hbar) = \frac{1}{2 \pi \mb} \re^{-\frac{x}{2}-\frac{x}{2 \mb^2}-\frac{\ri x^2}{2 \pi \mb^2}} \int_{\IR + \ri 0} \frac{\Phi_{\mb}\left(\frac{x-y}{2 \pi \mb} \right)}{\Phi_{\mb}\left(\frac{y}{2 \pi \mb} \right)} \re^{\frac{\ri x y}{\pi \mb^2}} dy \, ,
+\ee
+where $x = 2 \pi \mb u$ and $\hbar = 2 \pi \mb^2$, as before, while $\Phi_{\mb}(z)$ denotes the Faddeev's quantum dilogarithm. We refer to Appendix~\ref{app: faddeev} for its definition and some useful properties.
+Let us define the function 
+\be
+f(y) = \frac{\Phi_{\mb}\left(\frac{x-y}{2 \pi \mb} \right)}{\Phi_{\mb}\left(\frac{y}{2 \pi \mb} \right)} \re^{\frac{\ri x y}{\pi \mb^2}} \, ,
+\ee
+where we consider $x \in \IR$ fixed. The singularities of $f(y)$ are poles located at the points
+\begin{subequations} \label{y-poles}
+\begin{align}
+y &= x - \pi \ri \left(2 M + 1 \right) - \pi \ri \mb^2 \left(2 N + 1 \right) \, , \\
+y &= -  \pi \ri \left(2 M + 1 \right) - \pi \ri \mb^2 \left(2 N + 1 \right) \, , 
+\end{align}
+\end{subequations}
+where $M, N \in \IN$, as dictated by the singular structure of Faddeev's quantum dilogarithm in Appedix~\ref{app: faddeev}.
+Therefore, $f(y)$ is a holomorphic function in the upper half-plane. 
+Let us now fix the rational value
+\be
+\mb^2 = \frac{P}{Q} \, ,  \quad  P,Q \in \IZ_{>0} \; \; \text{coprime} \, ,
+\ee
+and observe that the function $f(y)$ satisfies the relation
+\be \label{f-shiftP}
+\ba
+f(y + 2 \pi \ri P) = f(y+2 \pi \ri \mb^2 Q) &= \Phi_{\mb}\left(\frac{x-y}{2 \pi \mb} - \ri \mb Q \right) \Phi_{\mb}\left(\frac{y}{2 \pi \mb} + \ri \mb Q \right)^{-1} \re^{\frac{\ri x y}{\pi \mb^2}- 2 x Q} \\
+&= f(y) \left( 1 + \re^{Q(x-y) - \pi \ri P Q} \right) \left( 1 + \re^{Q y + \pi \ri P Q} \right) \re^{-2 x Q} \, ,
+\ea
+\ee
+and similarly
+\be \label{f-shiftM}
+\ba
+f(y - 2 \pi \ri P) = f(y-2 \pi \ri \mb^2 Q) &= \Phi_{\mb}\left(\frac{x-y}{2 \pi \mb} + \ri \mb Q \right) \Phi_{\mb}\left(\frac{y}{2 \pi \mb} - \ri \mb Q \right)^{-1} \re^{\frac{\ri x y}{\pi \mb^2}+ 2 x Q} \\
+&= f(y) \left( 1 + \re^{Q(x-y) + \pi \ri P Q} \right)^{-1} \left( 1 + \re^{Q y - \pi \ri P Q} \right)^{-1} \re^{2 x Q} \, , 
+\ea
+\ee
+where we have applied the periodicity formulae for $\Phi_{\mb}(z)$ at rational values in Eqs.~\eqref{phibrat-perP},~\eqref{phibrat-perM}.
+Since $P,Q \in \IZ_{>0}$ and thus $\re^{\pi \ri P Q} = \re^{- \pi \ri P Q}$, it follows from Eqs.~\eqref{f-shiftP},~\eqref{f-shiftM} that $f(y)$ satisfies the functional equation
+\be
+f(y + 2 \pi \ri P) f(y - 2 \pi \ri P) = f(y)^2 \, .
+\ee
+It is straightforward to verify that 
+\be
+f(y) (f(y)-f(y+2 \pi \ri P)) \ne 0 \, , \quad \forall y \in \IR + \ri 0 \, ,
+\ee
+and therefore we can use Lemma~2.1 from~\cite{garou-kas} to write
+\be \label{int-lemma}
+\int_{\IR + \ri 0} f(y) dy = \left( \int_{\IR + \ri 0} - \int_{\IR + \ri 0 + 2 \pi \ri P} \right) \frac{f(y)}{1- f(y+2 \pi \ri P)/f(y)} dy \, .
+\ee
+Let us now compute the integral on the RHS of Eq.~\eqref{int-lemma} applying the residue theorem. We start by using Eq.~\eqref{f-shiftP} to express the integrand in the form
+\be \label{integrand}
+\frac{f(y)}{1- f(y+2 \pi \ri P)/f(y)} = \frac{f(y) \re^{2 x Q}}{G(x,y)} \, ,
+\ee
+where we have introduced the function
+\be
+G(x,y) = \re^{2 x Q} - \left( 1 + \re^{Q(x-y) - \pi \ri P Q} \right) \left( 1 + \re^{Q y + \pi \ri P Q} \right) \, .
+\ee
+Since the numerator in Eq.~\eqref{integrand} is holomorphic in the upper half of the complex plane, the relevant singularities of the integrand are the solutions to $G(x,y) = 0$ at fixed $x \in \IR$ which lie within the domain of integration. Specifically, these are
+\be \label{y-sing}
+y_{\pm, k}(x) = 2 \pi \ri \frac{k}{Q} - \ri \pi P - \frac{1}{Q} \log \left( -\frac{1 + \re^{x Q} - \re^{2 x Q} \pm \sqrt{\Delta(\re^{x Q})}}{2 \re^{x Q}} \right) \, ,
+\ee
+where $k \in \IZ$ such that $0 \le k \le P Q -1$, the function $\Delta(X)$ is defined by
+\be \label{Delta}
+\Delta(X) = 1- 2 X - X^2 - 2 X^3 + X^4 \, ,
+\ee
+and the branch of the logarithm is chosen in such a way that $\Im (y_{\pm,0}(x)) \in (0, \, 2 \pi/Q]$ for each value of $x \in \IR$. Note that $\Delta(X)$ is the same function introduced in Eq.~\eqref{classicD}, which appears in the formula for the solutions to the classical $A$-polynomial of the figure-eight knot in Eq.~\eqref{classicP} and in the formula for the function $\varphi_Q(X)$ obtained via the matrix formalism of Section~\ref{sec: 3rd-order} in Eq.~\eqref{8varphiQ}. Besides, the functions $y_{\pm, k}(x)$ only depend on $x$ through $\re^{x Q}=X^Q$.
+%
+We denote $y_{\pm}(x) = y_{\pm, 0}(x)$ for simplicity, so that
+\be
+y_{\pm, k}(x) = y_{\pm}(x) + 2 \pi \ri \frac{k}{Q} \, , \quad 0 \le k \le P Q -1 \, .
+\ee
+For $y_{\pm, k}^{(\e)}(x) =y_{\pm, k}(x) + \e$ and $\e \rightarrow 0^+$, we have the asymptotic expansions
+\be
+\frac{1}{G\left( x, y_{\pm, k}^{(\e)}(x) \right)} = \mp \frac{1}{\e Q \sqrt{\Delta(\re^{x Q})}} + \CO (\e^0) \, , \quad 0 \le k \le P Q -1 \, .
+\ee
+Note that the leading-order term in the expansion above does not depend on the integer $k$. The integral in Eq.~\eqref{int-lemma} can then be evaluated via the sum of residues of the integrand in Eq.~\eqref{integrand} at the singularities in Eq.~\eqref{y-sing}. We find in this way that
+\be \label{int-sol}
+\ba
+\int_{\IR + \ri 0} f(y) dy &= 2 \pi \ri \sum_{k=0}^{P Q - 1} \underset{y(x) = y_{\pm, k}(x)}{\text{Res}} \left( \frac{f(y) \re^{2 x Q}}{G(x,y)} \right)  \\
+&= - \frac{2 \pi \ri \re^{2 x Q} }{Q \sqrt{\Delta(\re^{x Q})}} \sum_{k=0}^{P Q - 1}  \re^{-\frac{2 x k}{P}} \left( \re^{F_k(y_+(x))} - \re^{F_k(y_-(x))} \right) \, ,
+%&= - \frac{2 \pi \ri \re^{2 x Q} }{Q \sqrt{\Delta_Q(x)}} \sum_{k=0}^{P Q - 1}  \re^{-\frac{2 x k}{P}} \left( \re^{\frac{\ri x y_+ Q}{\pi P}} \frac{\Phi_{\mb}\left( \frac{x - y_+}{2 \pi \mb} - \ri \mb \frac{k}{P} \right)}{\Phi_{\mb}\left( \frac{y_+}{2 \pi \mb} + \ri \mb \frac{k}{P} \right)}  -  \re^{\frac{\ri x y_- Q}{\pi P}} \frac{\Phi_{\mb}\left( \frac{x - y_-}{2 \pi \mb} - \ri \mb \frac{k}{P} \right)}{\Phi_{\mb}\left( \frac{y_-}{2 \pi \mb} + \ri \mb \frac{k}{P} \right)} \right) \, .
+\ea
+\ee
+where we have introduced the notation
+\be \label{Fk}
+F_k(y(x)) = \frac{\ri Q x y(x)}{\pi P} + \log \Phi_{\mb}\left( \frac{x - y(x)}{2 \pi \mb} - \ri \mb \frac{k}{P} \right) - \log \Phi_{\mb}\left( \frac{y(x)}{2 \pi \mb} + \ri \mb \frac{k}{P} \right) \, ,
+\ee
+for $0 \le k \le P Q -1$. Therefore, substituting Eq.~\eqref{int-sol} into Eq.~\eqref{41ak}, we obtain that the state-integral invariant of the figure-eight knot at rational values is given exactly by
+\be \label{state-fact}
+\chi_{\FE}(u;\hbar) = \frac{\re^{\frac{x^2 Q}{2 \pi \ri P}+x\left( 2 Q -\frac{1}{2}-\frac{Q}{2 P}\right)} }{\ri \mb Q \sqrt{\Delta(\re^{x Q})}} \sum_{k=0}^{P Q - 1}  \re^{-\frac{2 x k}{P}} \left( \re^{F_k(y_+(x))} - \re^{F_k(y_-(x))} \right) \, .
+\ee
+We conclude by noting that $\Phi_{\mb}(z)$ for $\mb^2 \in \IQ_{>0}$ can be expressed explicitly in terms of more elementary functions~\cite{garou-kas}. The relevant formula is written in Eq.~\eqref{phib-rat} and can be used to simplify the computational implementation of Eq.~\eqref{state-fact} for arbitrary $P, Q \in \IZ_{>0}$ coprime. 
+
+%
+\begin{figure}[htb!]
+\center
+ \includegraphics[width=0.47\textwidth]{state-unit-P.pdf} \quad \quad
+\includegraphics[width=0.47\textwidth]{state-unit-M.pdf} \\
+ \includegraphics[width=0.47\textwidth]{state-unit.pdf} 
+ \caption{The state integral $\chi_{\FE}(u;\hbar)$ in the closed form of Eq.~\eqref{state-fact} as a function of $x \in \IR$, at the bottom, and its components $\chi_{\FE}^{(\pm)}(u;\hbar)$ in Eq.~\eqref{state-pieces}, in the top left and top right, respectively, for $P=Q=1$. The real and imaginary parts are displayed in blue and red.}
+ \label{fig: state-unit}
+\end{figure}
+%
+We will now comment on the most notable features of the exact expression for the non-perturbative wave function in Eq.~\eqref{state-fact}. It will be useful to introduce
+\be \label{state-pieces}
+ \chi_{\FE}^{(\pm)}(u;\hbar) = \frac{\re^{\frac{x^2 Q}{2 \pi \ri P}+x\left( 2 Q -\frac{1}{2}-\frac{Q}{2 P}\right)} }{\ri \mb Q \sqrt{\Delta(\re^{x Q})}} \sum_{k=0}^{P Q - 1}  \re^{-\frac{2 x k}{P}} \re^{F_k(y_{\pm}(x))} \, ,
+\ee
+where again $x \in \IR$, so that we write
+\be \label{difference}
+\chi_{\FE}(u;\hbar) = \chi_{\FE}^{(+)}(u;\hbar) - \chi_{\FE}^{(-)}(u;\hbar) \, . 
+\ee
+Observe that the $S$-duality, which acts in the rational case via $P \leftrightarrow Q$ and $x \rightarrow x Q/P$, leaves $\Delta(\re^{x Q})$ unchanged while transforming $y_{\pm, k}(x)$ into $y_{\pm, k}(x) Q/P$, and therefore the closed formula for the state integral of the $\FE$-knot in Eq.~\eqref{state-fact} is $S$-invariant, as expected. Similarly, we also find that its components in Eq.~\eqref{state-pieces} are themselves invariant under $S$-duality. 
+Moreover, we have that 
+\be
+\Im(\chi_{\FE}^{(+)}(u;\hbar)) = \Im( \chi_{\FE}^{(-)}(u;\hbar)) \, ,
+\ee
+while both $\Re( \chi_{\FE}^{(\pm)}(u;\hbar) )$ and $\Im( \chi_{\FE}^{(\pm)}(u;\hbar) )$ are even functions of $x \in \IR$ with singularities located at the points
+\be
+x = \frac{1}{Q} \log \left( \frac{3 \pm \sqrt{5}}{2} \right) \, , 
+\ee
+which correspond to the zeros of $\Delta(\re^{x Q})$ in Eq.~\eqref{Delta} and, as such, do not depend on the value of $P$.
+The discontinuities of $\Re( \chi_{\FE}^{(\pm)}(u;\hbar) )$ cancel with each other to give a smooth difference function in Eq.~\eqref{difference}, which is itself symmetric under $x \rightarrow -x$.
+Remarkably, we find that the total state integral $\chi_{\FE}(u;\hbar)$ is a real-valued smooth square-integrable function of $x \in \IR$, while both functions $\chi_{\FE}^{(\pm)}(u;\hbar)$ are neither real-valued, smooth, or square-integrable when considered separately.
+To illustrate these properties with an example, we show in Fig.~\ref{fig: state-unit} the functions in Eqs.~\eqref{state-fact},~\eqref{state-pieces} for the benchmark choice $P=Q=1$. The same features and similar functional profiles are verified for various choices of $P, Q \in \IZ_{>0}$ coprime. We show in Fig.~\ref{fig: state-full} the full non-perturbative wave function for a sample of small values of $\mb^2 \in \IQ_{>0}$.
+%
+\begin{figure}[htb!]
+\center
+ \includegraphics[width=0.47\textwidth]{state-full-1.pdf} \quad \quad
+ \includegraphics[width=0.47\textwidth]{state-full-2.pdf}
+ \caption{The real part of the state integral $\chi_{\FE}(u;\hbar)$ in the closed form of Eq.~\eqref{state-fact} as a function of $x \in \IR$ for rational values of $\mb^2$. We show $\mb^2 = 1/3$ (in red), $1/2$ (in green), $2/3$ (in blue), and $1$ (in black), on the left, and $\mb^2 = 3$ (in red), $2$ (in green), $3/2$ (in blue), and $1$ (in black), on the right. The imaginary part is identically zero and not displayed explicitly in the plot.}
+ \label{fig: state-full}
+\end{figure}
+%
+ We observe that $\chi_{\FE}(u;\hbar)$ has a Gaussian-type profile centered at $x=0$ with lateral oscillations around the $x$-axis, which are quickly dampened. 
+The peak at the origin can be evaluated directly from Eqs.~\eqref{y-sing},~\eqref{Fk}, and~\eqref{state-fact} for arbitrary $P, Q \in \IZ_{>0}$ coprime, yielding a result which is left unchanged by $P \leftrightarrow Q$, as expected from the $S$-invariance of the state integral and evident in Fig.~\ref{fig: state-full}. In particular, the highest peak corresponds to the choice $P=Q=1$ and amounts to
+\be
+\chi_{\FE}(0; 2 \pi) = \frac{2}{\sqrt{3}} \sinh \left( \frac{V}{2 \pi} \right) \, , \quad V = 2 \, \Im \left( \text{Li}_2 \left( \re^{\frac{\pi \ri}{3}}\right)\right) = 2.0298832 \dots \, ,
+\ee
+where $\text{Li}_2(z)$ is the standard dilogarithm and $V$ is the volume of the $\FE$-knot, as expected~\cite{garou-kas}. 
+As $\mb^2>1$ increases, the shape of the function $\chi_{\FE}(u;\hbar)$ widens, while for decreasing $\mb^2<1$, the shape tightens, and in both cases the peak lowers.
+
+We point out that the structure of the exact wave function at rational values for the figure-eight knot obtained here is tantalizingly close to what has been found in the spectral theory of quantum mirror curves. The case of $\hbar=2 \pi$, corresponding to $\mb^2=1$, was studied in detail in~\cite{mz-wv,mz-wv2}. As in Eq.~\eqref{difference}, the wave functions in~\cite{mz-wv,mz-wv2} are the sums of two individual functions corresponding to two different choices of branch cut in the mirror curve. Each component function is singular when considered alone. Still, the singularities cancel each other in the sum, and one obtains a square-integrable wave function in the end, similar to the one plotted in Fig.~\ref{fig: state-unit}. We observe that, in the case of the quantum mirror curves studied in~\cite{mz-wv,mz-wv2}, one is working with exponentiated Heisenberg operators, and the resulting wave functions do not satisfy the nodal theorem for the Schr\"odinger operator typical of confining potentials, since the ground state changes sign in a small region. This same feature is also evident in our plots for the exact wave functions of the $\FE$-knot at rational points shown in Fig.~\ref{fig: state-unit} and Fig.~\ref{fig: state-full}. Such a property suggests that the wave function occurring in complex CS theory is a ground state for an appropriate spectral definition of the quantum $A$-polynomial. We will return to this point in the conclusions. 
+
+Finally, let us stress that the results above provide a third method for the computation of the exact wave function at rational values of $\hbar$ to be compared with the previous two presented in Section~\ref{sec: main}. We conclude by verifying numerically that our closed formula in Eq.~\eqref{state-fact} for the state integral of the figure-eight knot at rational values matches the results of Section~\ref{sec: 41}. Specifically, the two components $\chi_{\FE}^{(\pm)}(u;\hbar) $ in Eq.~\eqref{state-pieces} can be identified with the two terms in the holomorphic/antiholomorphic block decomposition in Eq.~\eqref{chi41}, which correspond to the conjugate and geometric classical branches, respectively. This identification will be formally clarified in the discussion in the following section.
+
+\subsection{Factorization and two special subcases}
+Let us apply the explicit formula for the Faddeev's quantum dilogarithm at the rational point $\mb^2=P/Q$, $P, Q \in \IZ_{>0}$ coprime, in Eq.~\eqref{phib-rat} to the expression for $F_k(y(x))$, $0 \le k \le PQ-1$, which is given in Eq.~\eqref{Fk}. After appropriately rearranging the terms, we find the factorization
+\be \label{Fk-fact}
+\re^{F_k(y(x))} = \re^{F_0(y(x))} f_{0,k}(y(x)) f_{1,k}(y(x)) f_{2,k}(y(x)) \, , 
+\ee 
+where we have introduced the functions
+\begin{subequations}
+\begin{align}
+f_{0,k}(y(x)) &= \left[\left( 1 - \re^{Q(x-y(x))+ \pi \ri (P+Q)} \right) \left( 1 - \re^{Q y(x)+ \pi \ri (P+Q)} \right)\right]^{\frac{k}{P Q}} \, , \\
+f_{1,k}(y(x)) &=\prod_{j=1}^{Q-1} 
+\left[ \frac{\left(1 + \re^{x-y(x)+ \frac{\pi \ri P}{Q}(2j+1)} \right) \left(1 + \re^{y(x)+ \frac{\pi \ri P}{Q}(2j+1+2k/P)} \right)}{\left(1 + \re^{x-y(x)+ \frac{\pi \ri P}{Q}(2j+1-2k/P)} \right) \left(1 + \re^{y(x)+ \frac{\pi \ri P}{Q}(2j+1)} \right)} \right]^{j \over Q}  \, , \\
+f_{2,k}(y(x)) &=\prod_{j=1}^{P-1} 
+\left[ \frac{\left(1 + \re^{\frac{Q}{P}(x-y(x))+ \frac{\pi \ri Q}{P}(2j+1)} \right) \left(1 + \re^{\frac{Q}{P} y(x)+ \frac{\pi \ri Q}{P}(2j+1+2k/Q)} \right)}{\left(1 + \re^{\frac{Q}{P}(x-y(x))+ \frac{\pi \ri Q}{P}(2j+1-2k/Q)} \right) \left(1 + \re^{\frac{Q}{P} y(x)+ \frac{\pi \ri Q}{P}(2j+1)} \right)}  \right]^{j \over P} \, ,
+\end{align}
+\end{subequations}
+for $0 \le k \le PQ-1$. Thus, we can write the state integral for arbitrary rational values of $\mb^2$ in Eq.~\eqref{state-fact} in the equivalent form
+\be \label{state-fact-PQ}
+\chi_{\FE}(u;\hbar) = \frac{\re^{\frac{x^2 Q}{2 \pi \ri P}+x\left( 2 Q -\frac{1}{2}-\frac{Q}{2 P}\right)} }{\ri \mb Q \sqrt{\Delta(\re^{x Q})}} \left[\re^{F_0(y_+(x))} \CA(y_+(x)) - \re^{F_0(y_-(x))} \CA(y_-(x)) \right] \, , 
+\ee
+where the function $\CA(y(x))$ is defined by
+\be
+\CA(y(x)) = \sum_{k=0}^{P Q - 1}  \re^{-\frac{2 x k}{P}} f_{0,k}(y(x)) f_{1,k}(y(x)) f_{2,k}(y(x)) \, ,
+\ee
+and $F_0(y(x))$ can be expressed explicitly in terms of more elementary functions using Eq.~\eqref{phib-rat}. 
+We stress that the formula for the state integral in Eq.~\eqref{state-fact-PQ} allows us to more clearly separate the contributions from the two non-abelian saddle connections of the $\FE$-knot labeled by $\alpha = \text{geom}, \text{conj}$, as in the holomorphic/antiholomorphic block decomposition in Eq.~\eqref{exactconj}. Indeed, expanding the functions $F_0(y_{\mp}(x))$ in powers of $X, X^{-1}$ and suitably identifying the terms in the expansions, we derive the integer constants $c_{\pm s}$, $s \in \IZ_{>0}$, previously written in Eqs.~\eqref{cs41geom},~\eqref{cs41conj}, for the geometric and conjugate branches, respectively.
+
+Let us consider now the two special choices $\mb^2 = P$ and $\mb^2 = 1/Q$ for $P, Q \in \IZ_{>0}$. In both subcases, the closed formula for the state integral of the figure-eight knot in Eq.~\eqref{state-fact-PQ} specializes in a correspondingly simpler and more compact form. 
+%
+We start by choosing $\mb^2= P$ positive integer. After some manipulations, the factorization formula in Eq.~\eqref{Fk-fact} reduces to the relation
+\be \label{Fk-P-fact}
+\re^{F_k(y(x))} = \re^{F_0(y(x))} \prod_{j=0}^{k-1} \left(1 + \re^{\frac{1}{P}(x-y(x))-\frac{\pi \ri}{P} (2j+1)} \right) \left(1 + \re^{\frac{1}{P}y(x)+\frac{\pi \ri}{P} (2j+1)} \right) \, , 
+\ee
+where $0 \le k \le P -1$, and we can write the state integral in Eq.~\eqref{state-fact-PQ} for $\mb^2=P$ as
+\be \label{state-fact-P}
+\chi_{\FE}(u;\hbar) = \frac{\re^{\frac{x^2}{2 \pi \ri P}+x\left( \frac{3}{2}-\frac{1}{2 P}\right)} }{\ri \mb \sqrt{\Delta(\re^x)}} \left[ \re^{F_0(y_+(x))} \CB(y_+(x)) - \re^{F_0(y_-(x))} \CB(y_-(x)) \right] \, ,
+\ee
+where the function $\CB(y(x))$ is simply defined by
+\be
+\CB(y(x)) = \sum_{k=0}^{P - 1}  \re^{-\frac{2 x k}{P}} \prod_{j=0}^{k-1} \left(1 + \re^{\frac{1}{P}(x-y(x))-\frac{\pi \ri}{P} (2j+1)} \right) \left(1 + \re^{\frac{1}{P}y(x)+\frac{\pi \ri}{P} (2j+1)} \right) \, ,
+\ee
+and $F_0(y(x))$ can be expressed explicitly by means of Eq.~\eqref{phib-ratP}. 
+Let us now choose $\mb^{-2}= Q$ positive integer. After some manipulations, the factorization formula in Eq.~\eqref{Fk-fact} becomes
+\be \label{Fk-M-fact}
+\re^{F_k(y(x))} = \re^{F_0(y(x))} \prod_{j=0}^{k-1} \left(1 + \re^{x-y(x)-\frac{\pi \ri}{Q} (2j+1)} \right) \left(1 + \re^{y(x)+\frac{\pi \ri}{Q} (2j+1)} \right) \, ,
+\ee
+and the exact partition function in Eq.~\eqref{state-fact-PQ} for $\mb^2=1/Q$ assumes the simplified form
+\be \label{state-fact-M}
+\chi_{\FE}(u;\hbar) = \frac{\re^{\frac{x^2 Q}{2 \pi \ri}+x\left( \frac{3 Q}{2} -\frac{1}{2} \right)} }{\ri \mb Q \sqrt{\Delta(\re^{x Q})}} \left[ \re^{F_0(y_+(x))} \CC(y_+(x)) - \re^{F_0(y_-(x))} \CC(y_-(x)) \right] \, ,
+\ee
+where the function $\CC(y(x))$ is given by
+\be
+\CC(y(x)) = \sum_{k=0}^{Q - 1}  \re^{-2 x k} \prod_{j=0}^{k-1} \left(1 + \re^{x-y(x)-\frac{\pi \ri}{Q} (2j+1)} \right) \left(1 + \re^{y(x)+\frac{\pi \ri}{Q} (2j+1)} \right) \, ,
+\ee
+and $F_0(y(x))$ can be expressed explicitly by means of  Eq.~\eqref{phib-ratQ}. 
+We observe that the reduced factorization formulae in Eq.~\eqref{Fk-P-fact},~\eqref{Fk-M-fact} for $\mb^2 = P$ and $\mb^2 = 1/Q$ with $P, Q \in \IZ_{>0}$ can alternatively be derived by substituting $\ri \mb k / P = \ri \mb^{-1} k$ and $\ri \mb k / P = \ri \mb k$ into the arguments of the Faddeev's quantum dilogarithms in Eq.~\eqref{Fk} and applying the periodicity properties in Eqs.~\eqref{PM},~\eqref{MM} and Eqs.~\eqref{PP},~\eqref{MP} to the resulting formulae for $F_k(y(x))$, $0 \le k \le PQ-1$, respectively. In the general case of $\mb^2 = P/Q$, instead, we cannot resort to these quasi-periodicity properties because the functions $F_k(y(x))$ contain, in general, a fractional shift in the arguments of the Faddeev's quantum dilogarithms. 
+
+\sectiono{Conclusions}\label{sec-conclusions}
+In this paper, we have made various observations on the structure of the wave functions in CS theory with gauge group $\text{SL}(2,\IC)$ on the complement of a hyperbolic knot in the three-sphere. 
+We have first conjectured explicit integrality properties for the resummed WKB expansion of the wave function, which can be tested directly using the decomposition into holomorphic/anti-holomorphic blocks. 
+Our integrality conjecture guarantees that the singularities appearing in the holomorphic blocks at rational values of $\hbar$ get canceled against those occurring in the corresponding anti-holomorphic blocks. 
+We have then developed various techniques to compute the wave function in the rational case effectively. In particular, we have analyzed the quantum $A$-polynomial at rational points by exploiting the underlying quasi-periodic structure, and we have solved the associated $q$-dfference equation in closed form in the general cases of order two and three. 
+The calculation methods we have introduced have been applied to the examples of the figure-eight and the three-twist knots, and our conjectural statements have been verified.
+Finally, we have performed a direct evaluation of the Andersen--Kashaev state integral of the figure-eight knot at rational values, which gave us further insights into the properties of the exact wave functions. All computational approaches have yielded compatible results.
+
+Our investigation raises two main questions. The first one concerns the interpretation of the integrality structure of the resummed WKB expansion of the wave function in terms of an enumerative problem, or a BPS counting problem, in the dual supersymmetric theory~\cite{dgg}. The second one concerns the shape of the wave function obtained by directly evaluating the state integral. As highlighted in Section~\ref{sec: stateintegral}, this is enticingly similar to the functional profiles of the ground state wave functions computed in the context of the TS/ST correspondence~\cite{mz-wv, mz-wv2}. This observation raises the issue of understanding the AJ conjecture from a purely quantum mechanical point of view. 
+The AJ conjecture can be explained, {\it a priori}, as a consequence of the quantization of the classical moduli space described by the $A$-polynomial, as pointed out in~\cite{gukov} and briefly recalled in Section~\ref{sec: theory}.
+However, the precise details of this quantization procedure still need to be fully understood from a physical perspective. We know that the quantization is non-trivial and cannot be obtained by simply promoting the classical variables $X, P$ to Weyl operators. In addition, the classical phase space is not compact, which carries various problems concerning its appropriate quantization. From a quantum mechanical angle, in such a situation, we would generically expect to have at most metastable states with complex energies. We are, therefore, tempted to conjecture that the observed non-trivial quantization of the $A$-polynomial is required to obtain a normalizable wave function with precisely zero energy. We hope to address this question in the near future. 
+
+\section*{Acknowledgements} 
+We want to thank Stavros Garoufalidis, Jie Gu, and Sergei Gukov for valuable discussions. We are particularly grateful to Szabolcs Zakany for initial collaboration on this subject some years ago. 
+This research is supported in part by the ERC-SyG project 
+``Recursive and Exact New Quantum Theory" (ReNewQuantum), which 
+received funding from the European Research Council (ERC) under the European 
+Union's Horizon 2020 research and innovation program, grant agreement No. 810573. 
+
+\appendix
+
+\sectiono{Computing the $\epsilon$-expansions} \label{app: eps}
+For completeness, we include here the details of the computations performed in Section~\ref{sec: cancellation}.
+We observe that, as a consequence of Eqs.~\eqref{ahatf-def},~\eqref{struc-an}, the coefficient functions $\hat{a}_{\pm n}(q)$ satisfy the relation
+ \be
+ \hat{a}_{\pm n}(q) q^{-\sigma_{\pm n}}= \sum_{k|n} k D_{\pm k} \left( q^{n \over k} \right) q^{-{n \over k} \sigma_{\pm k}} \sum_{j=0}^{k-1} q^{{n \over k}j} \, , \quad n \in \IZ_{>0} \, , 
+ \ee
+and we write the $\IZ$-polynomials $D_{\pm k} (q)$ explicitly as
+\be
+D_{\pm k}(q)= \sum_{\ell=0}^{\deg{D_{\pm k}}} D_{\pm k, \ell} \; q^\ell \, , \quad k \in \IZ_{>0} \, , 
+\ee
+where $D_{\pm k, \ell}$ is an integer and $\deg{D_{\pm k}}$ denotes the degree of the polynomial.
+Let us now take 
+\be
+q=\re^{2 \pi \ri {P \over Q}} \, , \quad  P,Q \in \IZ_{>0} \; \; \text{coprime} \, , 
+\ee
+while we introduce
+\be
+q_{\e}= \re^{\ri \hbar_{\e}} \, , \quad \hbar_{\e}=  2 \pi {P \over Q}+ \epsilon \, , \quad 0 < \e \ll 1 \, ,
+\ee
+and consider the limit $\e \rightarrow 0$.
+In the case $n= s Q$, $s \in \IZ_{>0}$, we have the $\e$-expansions
+\begin{subequations}
+\begin{align}
+D_{\pm k}\left( q_{\e}^{s Q \over k} \right) &= \left( 1 + \ri \e \, q {\partial \over \partial q} \right) D_{\pm k}\left( q^{s Q \over k} \right) + \CO(\e^2) \, , \\
+\sum_{j=0}^{k-1} q_{\e}^{{s Q \over k}(j-\sigma_{\pm k})} &= \left( 1 + \ri \e \, q {\partial \over \partial q} \right) \sum_{j=0}^{k-1} q^{{s Q \over k}(j-\sigma_{\pm k})} + \CO(\e^2) \, ,
+\end{align}
+\end{subequations}
+and therefore also
+\be \label{exp-ahat}
+ \hat{a}_{\pm s Q}(q_{\e}) q_{\e}^{-\sigma_{\pm s Q}} = \left( 1 + \ri \e \, q {\partial \over \partial q} \right) \hat{a}_{\pm s Q}(q) q^{-\sigma_{\pm s Q}} + \CO(\e^2) \, .
+\ee
+We now observe that 
+\be \label{exp-frac}
+\frac{1}{q_{\e}^{s Q }-1} = -\frac{\ri}{s Q \e}-\frac{1}{2} + \CO(\e) \, ,
+\ee
+and, combining Eqs.~\eqref{exp-ahat},~\eqref{exp-frac}, we finally obtain the NLO $\e$-expansion in Eq.~\eqref{pole}.
+%
+On the dual side, we consider
+\be
+q_D=q^{Q^2 \over P^2}=\re^{2 \pi \ri {Q \over P}} \, , \quad  q_{\e, D}= \re^{4 \pi^2 \ri \over \hbar_{\e}} \, ,
+\ee
+and take again the limit $\e \rightarrow 0$. It follows that
+\be
+q_{\e, D}= q_D \, \re^{- \e {Q^2 \over P^2}+ \CO(\e^2)} \, .
+\ee
+Similarly to the case above, when $n= s P$, $s \in \IZ_{>0}$, we have the $\e$-expansions
+\begin{subequations}
+\begin{align}
+D_{\pm k}\left( q_{\e,D}^{s P \over k} \right) &= \left( 1 - \ri \e \frac{Q^2}{P^2} \, q_D {\partial \over \partial q_D} \right) D_{\pm k}\left( q_D^{s P \over k} \right) + \CO(\e^2) \, , \\
+\sum_{j=0}^{k-1} q_{\e,D}^{{s P \over k}(j-\sigma_{\pm k})} &= \left( 1 - \ri \e \frac{Q^2}{P^2} \, q_D {\partial \over \partial q_D} \right) \sum_{j=0}^{k-1} q_D^{{s P \over k}(j-\sigma_{\pm k})} + \CO(\e^2) \, ,
+\end{align}
+\end{subequations}
+and therefore also
+\be \label{exp-ahatD}
+ \hat{a}_{\pm s P}(q_{\e,D}) q_{\e,D}^{-\sigma_{\pm s P}} = \left( 1 - \ri \e \frac{Q^2}{P^2} \, q_D {\partial \over \partial q_D} \right)   \hat{a}_{\pm s P}(q_{D}) q_{D}^{-\sigma_{\pm s P}} + \CO(\e^2) \, .
+\ee
+Finally, we note that 
+\be \label{exp-fracD}
+\frac{1}{q_{\e,D}^{s P}-1} = \frac{\ri P}{s Q^2 \e}-\frac{1}{2} + \frac{\ri}{2 \pi s Q} + \CO(\e) \, ,
+\ee
+and, combining Eqs.~\eqref{exp-ahatD},~\eqref{exp-fracD}, we obtain the NLO $\e$-expansion in Eq.~\eqref{poleD}.
+
+\sectiono{An alternative way of obtaining the integer sequences} \label{app: rational2}
+We present an alternative, simple way of computing the integer sequences $\{c_{\pm s} \}$, $s \in \IZ_{>0}$, defined in Eqs.~\eqref{cs-sequenceP},~\eqref{cs-sequenceM}, using the results on the exact wave function at rational values obtained in Section~\ref{sec: rational1}. Let us denote by $\phi_{(\pm)}^{\rm WKB} (X; q)$ the contributions to the holomorphic block $\phi^{\rm WKB} (X; q)$ from the positive and negative powers of $X$, respectively, so that Eq.~\eqref{phi-struc} assumes the form
+\be
+\phi^{\rm WKB} (X; q) = \phi_{(+)}^{\rm WKB} (X; q) + \phi_{(-)}^{\rm WKB} (X; q) \, ,
+\ee
+and analogously for the antiholomorphic block $\phi^{\rm WKB} (X_D; q_D)$.
+We fix $\hbar$ as in Eq.~\eqref{rathbar} and consider the formula for $\phi^{\rm WKB} (X; q)+\phi^{\rm WKB} (X_D; q_D)$ in Eq.~\eqref{phirat-final}. 
+Setting the values $P=Q=1$, the $X$-series component becomes
+\be \label{intP1}
+\frac{\ri}{2 \pi} \sum_{s \ge 1} \frac{X^s}{s^2} \left[\left( 2 \pi \ri s + 1 - s \log X + 4 \pi \ri \sigma_s \right)  \hat{a}_s(1) -  4 \pi \ri \frac{\d}{\d q} \hat{a}_s(q)_{q=1} \right] \, .
+\ee
+Let us now go back to the sum in Eq.~\eqref{phi-sum} and apply the change of variable $\hbar \rightarrow -\hbar$, which transforms $q,q_D$ into $q^{-1}, q_D^{-1}$, while we keep $X,X_D$ fixed.
+After performing the $\e$-expansion as in Section~\ref{sec: cancellation} and then taking $P=Q=1$ in the sum $\phi_{(+)}^{\rm WKB} (X; q^{-1}) + \phi_{(+)}^{\rm WKB} (X_D; q_D^{-1})$, we find the very close but not identical quantity
+\be \label{intP2}
+\frac{\ri}{2 \pi} \sum_{s \ge 1} \frac{X^s}{s^2} \left[\left( 2 \pi \ri s - 1 + s \log X + 4 \pi \ri \sigma_s \right)  \hat{a}_s(1) -  4 \pi \ri \frac{\d}{\d q} \hat{a}_s(q)_{q=1} \right] \, .
+\ee
+By taking the difference of Eqs.~\eqref{intP1},~\eqref{intP2}, we arrive at
+\be \label{intP-final}
+\frac{\ri}{\pi} \sum_{s \ge 1} \frac{X^s}{s^2} (1-s \log X)  \hat{a}_s(1) \, .
+\ee
+Therefore, if we compute the function
+\be
+\left[ \left(\phi_{(+)}^{\rm WKB} (X; q) + \phi_{(+)}^{\rm WKB} (X_D; q_D) \right) - \left( \phi_{(+)}^{\rm WKB} (X; q^{-1}) + \phi_{(+)}^{\rm WKB} (X_D; q_D^{-1}) \right) \right]_{P=Q=1} \, ,
+\ee
+its expansion in powers of $X$ is precisely the series in Eq.~\eqref{intP-final}. From the coefficients of this expansion, we can easily extract the desired integers $c_s = \hat{a}_s(1)$ for $s \in \IZ_{>0}$.
+%
+Let us now consider the $X^{-1}$-series component of Eq.~\eqref{phirat-final}. Again, setting the values $P=Q=1$, we find
+\be \label{intM1}
+\frac{\ri}{2 \pi} \sum_{s \ge 1} \frac{X^{-s}}{s^2} \left[\left( 2 \pi \ri s + 1 + s \log X \right)  \hat{a}_{-s}(1) -  4 \pi \ri \frac{\d}{\d q} \hat{a}_{-s}(q)_{q=1} \right] \, .
+\ee
+As before, we go back to the sum in Eq.~\eqref{phi-sum} and apply the change of variable $\hbar \rightarrow -\hbar$, which transforms $q,q_D$ into $q^{-1}, q_D^{-1}$, while we keep $X,X_D$ fixed.
+After performing the $\e$-expansion as in Section~\ref{sec: cancellation} and then taking $P=Q=1$ in the sum $\phi_{(-)}^{\rm WKB} (X; q^{-1}) + \phi_{(-)}^{\rm WKB} (X_D; q_D^{-1})$, we find the slightly different quantity
+\be \label{intM2}
+\frac{\ri}{2 \pi} \sum_{s \ge 1} \frac{X^{-s}}{s^2} \left[\left( 2 \pi \ri s - 1 - s \log X \right)  \hat{a}_{-s}(1) -  4 \pi \ri \frac{\d}{\d q} \hat{a}_{-s}(q)_{q=1} \right] \, .
+\ee
+By taking the difference of Eqs.~\eqref{intM1},~\eqref{intM2}, we arrive at
+\be \label{intM-final}
+\frac{\ri}{\pi} \sum_{s \ge 1} \frac{X^{-s}}{s^2} (1+s \log X)  \hat{a}_{-s}(1) \, .
+\ee
+Accordingly, if we compute the function
+\be
+\left[ \left(\phi_{(-)}^{\rm WKB} (X; q) + \phi_{(-)}^{\rm WKB} (X_D; q_D) \right) - \left( \phi_{(-)}^{\rm WKB} (X; q^{-1}) + \phi_{(-)}^{\rm WKB} (X_D; q_D^{-1}) \right) \right]_{P=Q=1} \, ,
+\ee
+its expansion in powers of $X^{-1}$ is precisely the series in Eq.~\eqref{intM-final}. From the coefficients of this expansion, we can straightforwardly obtain the desired integers $c_{-s} = \hat{a}_{-s}(1)$ for $s \in \IZ_{>0}$.
+
+\sectiono{Faddeev's quantum dilogarithm and other special functions} \label{app: faddeev}
+The quantum dilogarithm is the function of two variables defined by the series~\cite{fk, Kirillov}
+\be \label{eq: dilog}
+(z q^{\alpha}; \, q)_{\infty} = \prod_{n=0}^{\infty} (1- z q^{\alpha+n}) \, , \quad \alpha \in \IR \, ,
+\ee
+which is analytic in $z,q \in \IC$ with $|z|, |q| <1$, and it has asymptotic expansions around $q$ a root of unity.
+Furthermore, we denote by
+\be \label{eq: qFactor}
+(z; \, q)_m = \prod_{n=0}^{m-1} (1- z q^n) = \frac{(z; \, q)_{\infty}}{(z q^m; \, q)_{\infty}} \, , \quad m \in \IZ \, ,
+\ee
+with $(z; \, q)_0=1$, the $q$-shifted factorials, also known as $q$-Pochhammer symbols.
+Faddeev's quantum dilogarithm $\Phi_{\mb}(z)$ is defined in the strip $| \Im (z) | < | \Im (c_{\mb}) |$ as~\cite{faddeev, fk}
+\be \label{eq: intPhib}
+\Phi_{\mb}(z) = \exp \left( \int_{\IR + \ri \epsilon} \frac{\re^{-2 \ri z y}}{4 \sinh(y \mb ) \sinh(y \mb^{-1})} \frac{\rd y}{y} \right) \, ,
+\ee
+which can be analytically continued to the whole complex $z$-plane for all values of $\mb$ such that $\mb^2 \notin \IR_{\le 0}$. When $\Im(\mb^2) >0$, the formula in Eq.~\eqref{eq: intPhib} is equivalent to
+\be \label{eq: seriesPhib}
+\Phi_{\mb}(z) = \frac{( \re^{2 \pi \mb (z + c_{\mb})}; \, q)_{\infty}}{(  \re^{2 \pi \mb^{-1} (z - c_{\mb})}; \, \tilde{q})_{\infty}} = \prod_{n=0}^{\infty} \frac{1-  \re^{2 \pi \mb (z + c_{\mb})} q^n}{1- \re^{2 \pi \mb^{-1} (z - c_{\mb})} \tilde{q}^n}\, ,
+\ee
+where $q = \re^{2 \pi \text{i} \mb^2}$, $\tilde{q} = \re^{- 2 \pi \text{i} \mb^{-2}}$, and $c_{\mb} = \ri (\mb + \mb^{-1})/2$. 
+It follows that $\Phi_{\mb}(z)$ is a meromorphic function with poles at the points $z = c_{\mb} + \ri m \mb + \ri n \mb^{-1}$ and zeros at the points $z = -c_{\mb} - \ri m \mb - \ri n \mb^{-1}$ for $m,n \in \IN$. 
+It satisfies the inversion property
+\be
+\Phi_{\mb}(z) \Phi_{\mb}(-z) = \re^{\pi \ri z^2} \Phi_{\mb}(0)^2 \, , \quad \Phi_{\mb}(0) = \left( \frac{q}{\tilde{q}} \right)^{1/48} = \re^{\pi \ri (\mb^2 + \mb^{-2})/24} \, ,
+\ee
+the complex conjugation property
+\be
+\Phi_{\mb}(z)^* = \Phi_{\mb^*}(z^*)^{-1} \, ,
+\ee
+and the symmetries
+\be
+\Phi_{\mb}(z) = \Phi_{-\mb}(z) = \Phi_{\frac{1}{\mb}}(z) \, .
+\ee
+Moreover, Faddeev's quantum dilogarithm is a quasi-periodic function. Precisely, as a direct consequence of its definition in Eq.~\eqref{eq: seriesPhib}, we find the relations
+\begin{subequations} \label{periodicity}
+\begin{align} 
+\Phi_{\mb}(z + \ri \mb k) &= \Phi_{\mb}(z) \prod_{j=0}^{k-1} \left( 1 + \re^{2 \pi \mb z + \pi \ri \mb^2 (2 j +1)} \right)^{-1} \, , \label{PP}\\
+\Phi_{\mb}(z - \ri \mb k) &= \Phi_{\mb}(z) \prod_{j=0}^{k-1} \left( 1 + \re^{2 \pi \mb z - \pi \ri \mb^2 (2 j +1)} \right) \, , \label{MP} \\
+\Phi_{\mb}(z + \ri \mb^{-1} k) &= \Phi_{\mb}(z) \prod_{j=0}^{k-1} \left( 1 + \re^{2 \pi \mb^{-1} z + \pi \ri \mb^{-2} (2 j +1)} \right)^{-1} \, , \label{PM} \\
+\Phi_{\mb}(z - \ri \mb^{-1} k) &= \Phi_{\mb}(z) \prod_{j=0}^{k-1} \left( 1 + \re^{2 \pi \mb^{-1} z - \pi \ri \mb^{-2} (2 j +1)} \right) \, , \label{MM}
+\end{align}
+\end{subequations}
+where $k \in \IZ_{>0}$. If we consider the special case of $\mb^2 \in \IQ_{>0}$ and, specifically, take
+\be \label{rat-b2}
+\mb^2 = \frac{P}{Q} \, ,  \quad  P,Q \in \IZ_{>0} \; \; \text{coprime} \, ,
+\ee
+then the periodicity formulae above give in particular
+\begin{subequations}
+\begin{align}
+\Phi_{\mb}(z + \ri \mb Q) &= \Phi_{\mb}(z) \left( 1 + \re^{2 \pi \mb Q z + \pi \ri P Q} \right)^{-1} \, , \label{phibrat-perP} \\
+\Phi_{\mb}(z - \ri \mb Q) &= \Phi_{\mb}(z) \left( 1 + \re^{2 \pi \mb Q z - \pi \ri P Q} \right)^ \, . \label{phibrat-perM}
+\end{align}
+\end{subequations}
+Finally, in the above rational case of Eq.~\eqref{rat-b2}, it was shown in~\cite{garou-kas} that Faddeev's quantum dilogarithm can be expressed as
+\be \label{phib-rat}
+\ba
+\Phi_{\mb} \left( \frac{z}{2 \pi \mb} \right) = \exp\left[\frac{\ri}{2 \pi P Q}  \right. & \text{Li}_2\left( \re^{w(z)} \right) + \left( 1 + \frac{\ri w(z)}{2 \pi P Q} \right) \log \left( 1 - \re^{w(z)}\right) \\
+&\left. - \log D_Q\left( \re^{\frac{w(z)}{Q}}; \, \re^{2 \pi \ri \frac{P}{Q}} \right) - \log D_P\left( \re^{\frac{w(z)}{P}}; \, \re^{2 \pi \ri \frac{Q}{P}} \right)  \right] \, ,
+\ea
+\ee
+where $w(z) = Q z + \pi \ri (P + Q)$, $\text{Li}_2(z)$ is the standard dilogarithm, and 
+\be
+D_N(z; \,q)= \prod_{j=1}^{N-1} \left(1- z q^j \right)^{j/N} \, , \quad N \in \IZ_{>0} \, ,
+\ee
+is the $N$-th cyclic quantum dilogarithm with $D_1(z; q) = 1$. In the special subcases of $\mb^2 = P$ positive integer and $\mb^2 = 1/Q$ positive unit fraction, the formula in Eq.~\eqref{phib-rat} simplifies into
+\begin{subequations}
+\begin{align}
+\Phi_{\mb} \left( \frac{z}{2 \pi \mb} \right) =& \exp\left[\frac{\ri}{2 \pi P} \text{Li}_2\left( - \re^{z + \pi \ri P} \right) + \left(\frac{P-1}{2 P} + \frac{\ri z}{2 \pi P} \right) \log \left( 1 + \re^{z + \pi \ri P}\right) \right.  \label{phib-ratP} \\
+&\left. \quad \quad \; -\log D_P\left( -\re^{\frac{z}{P} + \frac{\pi \ri}{P}}; \, \re^{\frac{2 \pi \ri}{P}} \right)  \right] \, , \nonumber \\
+\Phi_{\mb} \left( \frac{z}{2 \pi \mb} \right) =& \exp\left[\frac{\ri}{2 \pi Q} \text{Li}_2\left( - \re^{Q z + \pi \ri Q} \right) + \left(\frac{Q-1}{2 Q} + \frac{\ri z}{2 \pi} \right) \log \left( 1 + \re^{Q z + \pi \ri Q}\right) \right. \label{phib-ratQ} \\
+&\left. \quad \quad \; -\log D_Q\left( -\re^{z + \frac{\pi \ri}{Q}}; \, \re^{\frac{2 \pi \ri}{Q}} \right)  \right] \, , \nonumber
+\end{align}
+\end{subequations}
+respectively.
+
+\bibliographystyle{JHEP}
+
+\linespread{0.6}
+%\bibliographystyle{apsrev4-1}
+%\bibliographystyle{nature}
+\bibliography{biblio-apol}
+
+\end{document}

@@ -1,0 +1,33 @@
+{
+ "url": "https://arxiv.org/e-print/2407.04744v2",
+ "content_type": "application/gzip",
+ "sha256": "c6acc6f85b4314f6b06e95e1fe4da60b5b7c265581b13ea2365ebcc8b26e698d",
+ "bytes": 8600624,
+ "fetched": "2026-10-10T15:20:29+00:00",
+ "files": [
+  {
+   "path": "files/bib_magn.bib",
+   "role": "bib",
+   "sha256": "2eea1d4eb998a307d17fef10ef3281f86eda3ab64d1d6633fd904cff56c140eb",
+   "bytes": 7038
+  },
+  {
+   "path": "files/biblio.bib",
+   "role": "bib",
+   "sha256": "68d1dff767e1fd6c5654eec31103d8f79bf7713e06b84ee90fb70cb3999d5abe",
+   "bytes": 172167
+  },
+  {
+   "path": "files/paper_v9.bbl",
+   "role": "bbl",
+   "sha256": "30e5d51e5f95c17661ce1ac0e9b44fdb1b21f7c2cb4be356978846a020ca270a",
+   "bytes": 98935
+  },
+  {
+   "path": "files/paper_v9.tex",
+   "role": "tex",
+   "sha256": "71ee9361f10dba60738564324bb08a5999124a2c43dc62bfcf2e93b6e32f7482",
+   "bytes": 124610
+  }
+ ]
+}

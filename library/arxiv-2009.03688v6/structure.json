@@ -5,7 +5,12 @@
   "file": "2009.03688v6.pdf",
   "sha256": "8eb9b4cbe2690730e6267dd96dba32aa9079dfe2b0b9e8c5e2ea7893e1ea0a45",
   "bytes": 309708,
-  "pages": 48
+  "pages": 48,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:21Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -15,22 +20,29 @@
    "stamp_date": "30 Oct 2020"
   },
   "doi": null,
-  "title": "E8-singularity, invariant theory and modular forms",
-  "authors_raw": null,
-  "abstract": "As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0 can be obtained from a quotient CY /SL(2, 13) over the modular curve X(13), where Y ⊂ CP5 is a complete intersection curve given by a system of SL(2, 13)-invariant polynomials and CY is a cone over Y . It is diﬀerent from the Kleinian singularity C2/Γ, where Γ is the binary icosahedral group. This gives a negative answer to Arnol’d and Brieskorn’s questions about t he mys- terious relation between the icosahedron and E8, i.e., the E8-singularity is not necessarily the Kleinian icosahedral singularity. In particular, t he equa- tion of E8-singularity possesses inﬁnitely many kinds of distinct modular parametrizations, and there are inﬁnitely many kinds of distinct con struc- tions of the E8-singularity. They form a variation of the E8-singularity struc- ture over the modular curve X(13), for which we give its algebraic version, geometric version, j-function version and the version of Poincar´ e homology 3- sphere as well as its higher dimensional lifting, i.e., Milnor’s exotic 7-sph ere. Moreover, there are variations of Q18 and E20-singularity structures over X(13). Thus, three diﬀerent algebraic surfaces, the equations of E8, Q18 and E20-singularities can be realized from the same quotients CY /SL(2, 13) over the modular curve X(13) and have the same modular parametrizations. 1",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20201101201653-05'00'",
-   "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  },
+  "title": "E 8 -singularity, invariant theory and modular forms",
+  "authors_raw": "Lei Yang",
   "title_lines": [
    "E8-singularity, invariant theory and modular",
-   "forms",
-   "Lei Yang"
+   "forms"
   ],
-  "title_prev": "E8-singularity, invariant theory and modular forms Lei Yang"
+  "abstract": "As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0 can be obtained from a quotient CY /SL(2, 13) over the modular curve X(13), where Y \u2282CP5 is a complete intersection curve given by a system of SL(2, 13)-invariant polynomials and CY is a cone over Y . It is di\ufb00erent from the Kleinian singularity C2/\u0393, where \u0393 is the binary icosahedral group. This gives a negative answer to Arnol\u2019d and Brieskorn\u2019s questions about the mys- terious relation between the icosahedron and E8, i.e., the E8-singularity is not necessarily the Kleinian icosahedral singularity. In particular, the equa- tion of E8-singularity possesses in\ufb01nitely many kinds of distinct modular parametrizations, and there are in\ufb01nitely many kinds of distinct construc- tions of the E8-singularity. They form a variation of the E8-singularity struc- ture over the modular curve X(13), for which we give its algebraic version, geometric version, j-function version and the version of Poincar\u00b4e homology 3- sphere as well as its higher dimensional lifting, i.e., Milnor\u2019s exotic 7-sphere. Moreover, there are variations of Q18 and E20-singularity structures over X(13). Thus, three di\ufb00erent algebraic surfaces, the equations of E8, Q18 and E20-singularities can be realized from the same quotients CY /SL(2, 13) over the modular curve X(13) and have the same modular parametrizations. 1",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20201101201653-05'00'"
+  },
+  "title_raw": "E8-singularity, invariant theory and modular forms",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "E 8 -singularity, invariant theory and modular forms",
+   "text": "E8-singularity, invariant theory and modular forms",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -38,291 +50,467 @@
    "title": "Abstract",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Contents",
+   "page": 2,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Standard construction: E8-singularity as the icosahedral singularity",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Invariant theory and modular forms for SL(2 , 13)",
-   "page": 2,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "A diﬀerent construction: E8-singularity from CY /SL(2, 13) over X(13)",
-   "page": 2,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Q 18 and E20-singularities from CY /SL(2, 13) over X(13) and",
-   "page": 2,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "T A(z), A",
-   "page": 7,
-   "source": "inferred",
-   "number": "4"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Standard construction: E8-singularity as the",
    "page": 14,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "We see this",
-   "page": 15,
+   "title": "icosahedral singularity",
+   "page": 14,
    "source": "inferred",
-   "number": "30"
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Invariant theory and modular forms for SL (2, 13)",
+   "title": "Invariant theory and modular forms for SL(2, 13)",
    "page": 16,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "(1 + O(q)),",
-   "page": 26,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(1 + O(q)),",
-   "page": 26,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "(−1 + O(q)),",
-   "page": 26,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "(−1 + O(q)),",
-   "page": 27,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(−3 + O(q)),",
-   "page": 27,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(1 + O(q)),",
-   "page": 27,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(−1 + O(q)),",
-   "page": 27,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(6 + O(q)),",
-   "page": 27,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(8 + O(q)),",
-   "page": 27,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(2 + O(q)),",
-   "page": 27,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(1 + O(q))5+",
-   "page": 30,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(−1 + O(q))+",
-   "page": 30,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(−3 + O(q)) + 2ζ 3νq",
-   "page": 30,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(−3 + O(q)) + 2ζ 9νq",
-   "page": 30,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(1 + O(q))+",
-   "page": 30,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(−1 + O(q)) + 2ζ 10νq",
-   "page": 30,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(−1 + O(q)) + 2ζ 4νq",
-   "page": 30,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(−1 + O(q))+",
-   "page": 30,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(6 + O(q)) + ζ 5νq",
-   "page": 30,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(8 + O(q)) + ζ 6νq",
-   "page": 30,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(−3 + O(q)) + ζ 8νq",
-   "page": 30,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(2 + O(q)) + ζ 7νq",
-   "page": 30,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(1 + O(q))2+",
-   "page": 32,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(1 + O(q))+",
-   "page": 32,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(1 + O(q))5+",
-   "page": 33,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(1 + O(q))2+",
-   "page": 35,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(1 + O(q))]",
-   "page": 35,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "(1 + O(q))]2",
-   "page": 36,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "A diﬀerent construction: E8-singularity from",
+   "title": "A di\ufb00erent construction: E8-singularity from",
    "page": 39,
    "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Q18 and E20-singularities from CY /SL(2, 13) over",
-   "page": 42,
-   "source": "inferred",
-   "number": "5"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 46,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.55,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 102,
+   "n_words": 13,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-abstract",
    "number": null,
@@ -330,365 +518,111 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1381,
-   "n_words": 222
+   "n_chars": 1366,
+   "n_words": 215,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-001-contents",
+   "number": null,
+   "title": "Contents",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2,
+   "n_words": 1,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-002-2-standard-construction-e8-singularity-as-the-ic",
-   "number": "2",
-   "title": "Standard construction: E8-singularity as the icosahedral singularity",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-003-3-invariant-theory-and-modular-forms-for-sl2-13",
-   "number": "3",
-   "title": "Invariant theory and modular forms for SL(2 , 13)",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-004-4-a-diﬀerent-construction-e8-singularity-from-cy",
-   "number": "4",
-   "title": "A diﬀerent construction: E8-singularity from CY /SL(2, 13) over X(13)",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 58,
-   "n_words": 9
-  },
-  {
-   "id": "sec-005-5-q-18-and-e20-singularities-from-cy-sl2-13-over",
-   "number": "5",
-   "title": "Q 18 and E20-singularities from CY /SL(2, 13) over X(13) and",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 7,
-   "n_chars": 8103,
-   "n_words": 2035
-  },
-  {
-   "id": "sec-006-4-t-az-a",
-   "number": "4",
-   "title": "T A(z), A",
-   "level": 1,
-   "page_start": 7,
    "page_end": 14,
-   "n_chars": 14201,
-   "n_words": 2793
+   "n_chars": 22056,
+   "n_words": 4300,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-2-standard-construction-e8-singularity-as-the",
+   "id": "sec-003-2-standard-construction-e8-singularity-as-the",
    "number": "2",
    "title": "Standard construction: E8-singularity as the",
    "level": 1,
    "page_start": 14,
-   "page_end": 15,
-   "n_chars": 2505,
-   "n_words": 510
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-30-we-see-this",
-   "number": "30",
-   "title": "We see this",
+   "id": "sec-004-icosahedral-singularity",
+   "number": null,
+   "title": "icosahedral singularity",
    "level": 1,
-   "page_start": 15,
+   "page_start": 14,
    "page_end": 16,
-   "n_chars": 1707,
-   "n_words": 356
+   "n_chars": 4109,
+   "n_words": 784,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-3-invariant-theory-and-modular-forms-for-sl-2-13",
+   "id": "sec-005-3-invariant-theory-and-modular-forms-for-sl2-13",
    "number": "3",
-   "title": "Invariant theory and modular forms for SL (2, 13)",
+   "title": "Invariant theory and modular forms for SL(2, 13)",
    "level": 1,
    "page_start": 16,
-   "page_end": 26,
-   "n_chars": 13917,
-   "n_words": 3852
-  },
-  {
-   "id": "sec-010-4-1-oq",
-   "number": "4",
-   "title": "(1 + O(q)),",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 26,
-   "n_chars": 9,
-   "n_words": 4
-  },
-  {
-   "id": "sec-011-26-2-oq",
-   "number": "26",
-   "title": "(2 + O(q)),",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 26,
-   "n_chars": 59,
-   "n_words": 20
-  },
-  {
-   "id": "sec-012-8-1-oq",
-   "number": "8",
-   "title": "(−1 + O(q)),",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 26,
-   "n_chars": 888,
-   "n_words": 316
-  },
-  {
-   "id": "sec-013-26-6-oq",
-   "number": "26",
-   "title": "(6 + O(q)),",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 27,
-   "n_chars": 571,
-   "n_words": 168
-  },
-  {
-   "id": "sec-014-26-3-oq",
-   "number": "26",
-   "title": "(−3 + O(q)),",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 276,
-   "n_words": 92
-  },
-  {
-   "id": "sec-015-26-8-oq",
-   "number": "26",
-   "title": "(8 + O(q)),",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 30,
-   "n_chars": 2716,
-   "n_words": 717
-  },
-  {
-   "id": "sec-016-2-1-oq5",
-   "number": "2",
-   "title": "(1 + O(q))5+",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 14,
-   "n_words": 5
-  },
-  {
-   "id": "sec-017-2-1-oq",
-   "number": "2",
-   "title": "(−1 + O(q))+",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 10,
-   "n_words": 4
-  },
-  {
-   "id": "sec-018-26-3-oq-2ζ-3νq",
-   "number": "26",
-   "title": "(−3 + O(q)) + 2ζ 3νq",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-019-26-3-oq-2ζ-9νq",
-   "number": "26",
-   "title": "(−3 + O(q)) + 2ζ 9νq",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 1,
-   "n_words": 1
-  },
-  {
-   "id": "sec-020-26-1-oq",
-   "number": "26",
-   "title": "(1 + O(q))+",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 12,
-   "n_words": 4
-  },
-  {
-   "id": "sec-021-26-1-oq-2ζ-10νq",
-   "number": "26",
-   "title": "(−1 + O(q)) + 2ζ 10νq",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 1,
-   "n_words": 1
-  },
-  {
-   "id": "sec-022-26-1-oq-2ζ-4νq",
-   "number": "26",
-   "title": "(−1 + O(q)) + 2ζ 4νq",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 29,
-   "n_words": 9
-  },
-  {
-   "id": "sec-023-26-6-oq-ζ-5νq",
-   "number": "26",
-   "title": "(6 + O(q)) + ζ 5νq",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-024-26-8-oq-ζ-6νq",
-   "number": "26",
-   "title": "(8 + O(q)) + ζ 6νq",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 29,
-   "n_words": 9
-  },
-  {
-   "id": "sec-025-26-3-oq-ζ-8νq",
-   "number": "26",
-   "title": "(−3 + O(q)) + ζ 8νq",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-026-26-2-oq-ζ-7νq",
-   "number": "26",
-   "title": "(2 + O(q)) + ζ 7νq",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 31,
-   "n_chars": 1538,
-   "n_words": 385
-  },
-  {
-   "id": "sec-027-4-1-oq",
-   "number": "4",
-   "title": "(1 + O(q))+",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 32,
-   "n_chars": 1613,
-   "n_words": 367
-  },
-  {
-   "id": "sec-028-2-1-oq2",
-   "number": "2",
-   "title": "(1 + O(q))2+",
-   "level": 1,
-   "page_start": 32,
-   "page_end": 33,
-   "n_chars": 1524,
-   "n_words": 402
-  },
-  {
-   "id": "sec-029-4-1-oq5",
-   "number": "4",
-   "title": "(1 + O(q))5+",
-   "level": 1,
-   "page_start": 33,
-   "page_end": 35,
-   "n_chars": 3009,
-   "n_words": 832
-  },
-  {
-   "id": "sec-030-4-1-oq2",
-   "number": "4",
-   "title": "(1 + O(q))2+",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 35,
-   "n_chars": 329,
-   "n_words": 101
-  },
-  {
-   "id": "sec-031-26-1-oq",
-   "number": "26",
-   "title": "(1 + O(q))]",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 36,
-   "n_chars": 1844,
-   "n_words": 482
-  },
-  {
-   "id": "sec-032-26-1-oq2",
-   "number": "26",
-   "title": "(1 + O(q))]2",
-   "level": 1,
-   "page_start": 36,
    "page_end": 39,
-   "n_chars": 3750,
-   "n_words": 1008
+   "n_chars": 31329,
+   "n_words": 7645,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-033-4-a-diﬀerent-construction-e8-singularity-from",
+   "id": "sec-006-4-a-di\ufb00erent-construction-e8-singularity-from",
    "number": "4",
-   "title": "A diﬀerent construction: E8-singularity from",
+   "title": "A di\ufb00erent construction: E8-singularity from",
    "level": 1,
    "page_start": 39,
-   "page_end": 42,
-   "n_chars": 6843,
-   "n_words": 1438
-  },
-  {
-   "id": "sec-034-5-q18-and-e20-singularities-from-cy-sl2-13-over",
-   "number": "5",
-   "title": "Q18 and E20-singularities from CY /SL(2, 13) over",
-   "level": 1,
-   "page_start": 42,
    "page_end": 46,
-   "n_chars": 4945,
-   "n_words": 1183
+   "n_chars": 11465,
+   "n_words": 2253,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-035-references",
+   "id": "sec-007-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 46,
    "page_end": 48,
-   "n_chars": 5318,
-   "n_words": 810
+   "n_chars": 5269,
+   "n_words": 761,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 41,
-  "sections": 36,
-  "chars_total": 77206
+  "toc_entries": 8,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 0.688,
+  "toc_inferred_empty_share": 0.25,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 75698
  }
 }

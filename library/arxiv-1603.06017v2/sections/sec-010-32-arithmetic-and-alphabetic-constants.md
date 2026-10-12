@@ -8,14 +8,31 @@ pages: 9-9
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
 doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+text_source: latex
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 1.0
 ---
-Arithmetic constants in a predicate are allowed to be natural numbers only. There is, however, another type of constant: the
-alphabetic constant. Alphabetic constants are useful when referring to symbols at particular positions in automatic words.
-For example, the predicate that accepts positions for which the automatic word W is 1 is written as W [i] = @1. In order
-to draw the distinction between alphabetic and arithmetic constants, we use alphabetic constants with a preﬁx of @. The
-reason we call these constants alphabetic (as opposed to arithmetic) is due to the fact that Walnut does not allow (and it does
-not make much sense to allow) predicates that are comparing indexing expressions 3.6 and arithmetic expressions 3.5, e.g.,
-expressions such as W [i] = a +b is not allowed. As we will see in Section 3.8, the only objects that can be compared with
-indexing expressions are alphabetic constants and indexing expressions themselves.
-Alphabetic constants are ordered like ordinary integers, so we can compare alphabetic constants, just like we can compare
-arithmetic constants. For example, @−1 < @1 is a valid predicate, and it is always true; see Sections 3.6 and 3.8. However, we
+\label{sec:arithmetic and alphabetic constants}
+Arithmetic constants in a predicate are allowed to be natural
+numbers only. There is, however, another type of constant:  the alphabetic
+constant. Alphabetic constants are useful when referring to symbols at
+particular positions in automatic words. For example, the predicate that
+accepts positions for which the automatic word $W$ is $1$ is written as
+$W[i]=@1$. In order to draw the distinction between alphabetic and
+arithmetic constants, we use alphabetic constants with a prefix of $@$.
+The reason we call these constants alphabetic (as opposed to
+arithmetic) is due to the fact that Walnut does not allow (and it does
+not make much sense to allow) predicates that are comparing indexing
+expressions \ref{sec:indexing expressions} and arithmetic expressions
+\ref{sec:arithmetic expressions}, e.g., expressions such as
+$W[i]=a+b$ is not allowed. As
+we will see in Section \ref{sec:relative expressions}, the only objects
+that can be compared with indexing expressions are alphabetic constants
+and indexing expressions themselves.
+
+Alphabetic constants are ordered like ordinary integers, so we can
+compare alphabetic constants, just like we can compare arithmetic
+constants. For example, $@-1<@1$ is a valid predicate, and it is always
+true; see Sections \ref{sec:indexing expressions} and \ref{sec:relative
+expressions}. \emph{However, we cannot use alphabetic constants in arithmetic
+expressions.}

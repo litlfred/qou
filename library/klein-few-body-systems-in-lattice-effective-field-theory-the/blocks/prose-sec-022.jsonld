@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-022",
   "kind": "prose",
-  "title": "Regularization Methods for Nuclear Lattice Effective Field Theory",
-  "pageStart": 46,
+  "title": "Introduction",
+  "pageStart": 45,
   "pageEnd": 46,
-  "text": "../sections/sec-022-regularization-methods-for-nuclear-lattice-effec.md",
-  "derivedFrom": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
-  "sourceDocument": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest",
+  "text": "../sections/sec-022-introduction.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
   "provenance": "ingested"
 }

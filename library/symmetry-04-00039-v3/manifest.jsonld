@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/symmetry-04-00039-v3/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-04-00039-v3/manifest.jsonld",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Knots on a Torus: A Model of the Elementary Particles",
   "contains": [
+    "library/symmetry-04-00039-v3/sections/sec-front-matter",
     "library/symmetry-04-00039-v3/sections/sec-000",
     "library/symmetry-04-00039-v3/sections/sec-001",
     "library/symmetry-04-00039-v3/sections/sec-002",
@@ -41,11 +47,22 @@
     "library/symmetry-04-00039-v3/sections/sec-032",
     "library/symmetry-04-00039-v3/sections/sec-033",
     "library/symmetry-04-00039-v3/sections/sec-034",
-    "library/symmetry-04-00039-v3/sections/sec-035"
+    "library/symmetry-04-00039-v3/sections/sec-035",
+    "library/symmetry-04-00039-v3/sections/sec-036",
+    "library/symmetry-04-00039-v3/sections/sec-037",
+    "library/symmetry-04-00039-v3/sections/sec-038",
+    "library/symmetry-04-00039-v3/sections/sec-039",
+    "library/symmetry-04-00039-v3/sections/sec-040",
+    "library/symmetry-04-00039-v3/sections/sec-041",
+    "library/symmetry-04-00039-v3/sections/sec-042",
+    "library/symmetry-04-00039-v3/sections/sec-043"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "symmetry-04-00039-v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "symmetry-04-00039-v3.pdf",
     "source_sha256": "1aa8a81916887f8e2a6b8932843c497f6113993a49ac6e96ca02ce55db738114",
     "pages": 77,

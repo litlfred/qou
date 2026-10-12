@@ -8,164 +8,45 @@ pages: 50-52
 source_pdf: 1608.07308v1.pdf
 source_sha256: bcc3b6f1a91a55c6
 doc_brief: "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOV ANOV-ROZANSKY HOMOLOGY — We construct a categoriﬁcation of the maximal commutative subalgebra of the type A Hecke algebra."
+text_source: latex
+latex_prose_ratio: 0.925
+latex_coverage_ratio: 0.772
 ---
-word inS3. Remark that the following equation holds for alla andb:
-(6.10) Tr(σ1σ2σ1La
-2Lb
-3) = Tr(σ2σ1σ1La
-2Lb
-3),
-sinceσ1 commutes both withL2 andL3 and the trace satisﬁes Tr(σσ′) = Tr(σ′σ). By Corol-
-lary 3.4, these traces are isomorphic up to a twist by a permutation (1 2). In particular, the
-left hand side of (6.10) is supported on {x1 = x3}, while the right hand side is supported on
-{x2 =x3}. Furthermore,
-ι∗(σ2σ1σ1) =L2⊗ι∗(σ2) =L2⊗O FHilb(2∼3).
-Note that in the notations of Section 6, FHilb(2∼ 3) =Z2∪Z5. There is a natural involution
-j12 on FHilb3 which exchangesx1 andx2 inZ1, acts trivially on Z2 andZ3 and permutes Z4
-andZ5. We arrive at the following conjecture:
-Conjecture 6.4. One hasι∗(σ1σ2σ1) =j∗
-12(L2⊗OZ2∪Z5).
-6.4. The ﬁgure eight knot. In this section we describe a sheaf for the braidβ =σ1σ−1
-2 σ1σ−1
-2
-representing the ﬁgure eight knot. There is a skein exact sequence relatingBβ with the follow-
-ing objects in SBim3:
-σ1σ2σ1σ−1
-2 =σ2σ1,σ 1σ1σ−1
-2 =L2σ−1
-2 .
-More precisely, there is an exact sequence:
-(6.11) 0← −σ2σ1← −Cone
-[
-L2σ−1
-2
-x1−x2
-←−−−L2σ−1
-2
-]
-← −Bβ← −0.
-FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOV ANOV-ROZANSKY HOMOLOGY 51
-Proposition 6.5. The following identity holds:
-ι∗ Cone
-[
-σ−1
-2
-x1−x2
-←−−−σ−1
-2
-]
-≃
-[
-L2L−1
-3 ⊕qtL−1
-3
-]
-Z2
-.
-Proof. By (3.49) one has:
-OFHilb(1∼2)≃ [OFHilb3(C)
-x1−x2
-←−−−qOFHilb3(C)
-y21
-←−qtL−1
-2 |FHilb(1∼2)]
-(note that this is also a skein exact sequence forσ−1
-1 , 1,σ 1) and
-ι∗(σ−1
-2 ) =L2L−1
-3 ⊗O FHilb(2∼3).
-SinceOFHilb(2∼3)⊗O FHilb(1∼2) =OZ2, one has an exact sequence:
-0←L 2L−1
-3 |Z2← −ι∗ Cone
-[
-σ−1
-2
-x1−x2
-←−−−σ−1
-2
-]
-← −qtL−1
-3 |Z2← −0.
-It remains to notice that
-ExtZ2(L2L−1
-3 ,L−1
-3 ) =H∗(Z2,L−1
-2 ) =H∗(P1,O(−1)) = 0.
-□
-Proposition 6.6. Consider the braidβ =σ1σ−1
-2 σ1σ−1
-2 representing the ﬁgure eight knot. Then,
-assuming Conjecture 1.1 and 3.26, one has
-ι∗(β) =OP1⊕qtL2L−1
-3 .
-Proof. By (6.11) and Proposition 6.5 one has:
-0← −OZ2
-α
-← −
-[
-L2
-2L−1
-3 ⊕qtL2L−1
-3
-]
-Z2
-← −qt(ι∗Bβ)← −0.
-Let us compute the mapα. Remark that:
-HomZ2(L2L−1
-3 ,O) =H0(Z2,L−1
-2 L3) =H0(P1,O(1)⊕qtO(−2)),
-HomZ2(L2
-2L−1
-3 ,O) =H0(Z2,L−2
-2 L3) =H0(P1,O⊕ qtO(−3)).
-Thereforeα is the unique degree 1 mapL2
-2L−1
-3 →O and vanishes onL2L−1
-3 , so
-ι∗Bβ≃L 2L−1
-3 ⊕q−1t−1 Cone[O
-α
-← −L2
-2L−1
-3 ]≃O P1⊕L 2L−1
-3 .
-□
-Using this result, we can compute the reduced homology of β· FTa
-2FTb
-3 by computing the
-homology of each summand individually. Since FHilb3(point) is a blowup of the punctual
-Hilbert scheme of 3 points, and P1 is the exceptional divisor, the tautological bundle is trivial
-on P1:T 3⊗O P1≃ (q +t)OP1. Similarly, FT3⊗O P1≃qtOP1. We get the following equation:
-(6.12)
-∫
-FHilb3(point)
-OP1⊗ FTa
-2FTb
-3⊗∧•T
-∨
-3 = (1 +aq−1)(1 +at−1)(qt)b
-∫
-P1
-O(a).
-Equations (6.12) and (6.7) can be used to compute the homology ofβ·La
-2Lb
-3 for alla andb.
-In particular:
-H∗(FHilb3(point),L2L−1
-3 ) =H∗(FHilb3(point),L−1
-3 ) = 0,
-H∗(FHilb3(point),L−2
-3 ) =H∗+1(P1,O(−1)) = 0,
-H∗(FHilb3(point),L2L−2
-3 ) =H∗+1(P1,O) = C[1],
-so ∫
-FHilb3(point)
-L2L−1
-3 ⊗∧•T
-∨
-3 =aC[1],
-52 EUGENE GORSKY, ANDREI NEGUT , , AND JACOB RASMUSSEN
-and
-HHH(β) = (1 +aq−1)(1 +at−1) +a√qt.
-One can compare this with [21, Table 5.7].
-7. C ATEGORICAL IDEMPOTENTS AND EQUIVARIANT LOCALIZATION
+[]{#sub:longest label="sub:longest"}
+
+Let us describe the sheaf for the positive lift $\sigma_1\sigma_2\sigma_1$ of the longest word in $S_3$. Remark that the following equation holds for all $a$ and $b$: $$\label{eqn:conj for 121}
+\mathop{\mathrm{Tr}}(\sigma_1\sigma_2\sigma_1\mathcal{L}_2^{a}\mathcal{L}_3^{b})=\mathop{\mathrm{Tr}}(\sigma_2\sigma_1\sigma_1\mathcal{L}_2^{a}\mathcal{L}_3^{b}),$$ since $\sigma_1$ commutes both with $\mathcal{L}_2$ and $\mathcal{L}_3$ and the trace satisfies $\mathop{\mathrm{Tr}}(\sigma \sigma') = \mathop{\mathrm{Tr}}(\sigma'\sigma)$. By Corollary [\[cor:trace twisted identity\]](#cor:trace twisted identity){reference-type="ref" reference="cor:trace twisted identity"}, these traces are isomorphic up to a twist by a permutation $(1\ 2)$. In particular, the left hand side of [\[eqn:conj for 121\]](#eqn:conj for 121){reference-type="eqref" reference="eqn:conj for 121"} is supported on $\{x_1=x_3\}$, while the right hand side is supported on $\{x_2=x_3\}$. Furthermore, $$\iota_*(\sigma_2\sigma_1\sigma_1) = L_2\otimes \iota_*(\sigma_2)=L_2\otimes \mathcal{O}_{\mathrm{FHilb}(2\sim 3)}.$$ Note that in the notations of Section [\[sec:n=3\]](#sec:n=3){reference-type="ref" reference="sec:n=3"}, $\mathrm{FHilb}(2\sim 3)=Z_2\cup Z_5$. There is a natural involution $j_{12}$ on $\mathrm{FHilb}_3$ which exchanges $x_1$ and $x_2$ in $Z_1$, acts trivially on $Z_2$ and $Z_3$ and permutes $Z_4$ and $Z_5$. We arrive at the following conjecture:
+
+::: conjecture
+One has $\iota_*(\sigma_1\sigma_2\sigma_1)=j_{12}^{*}(L_2\otimes \mathcal{O}_{Z_2\cup Z_5}).$
+:::
+
+## The figure eight knot {#sub:figure eight}
+
+In this section we describe a sheaf for the braid $\beta=\sigma_1\sigma_2^{-1}\sigma_1\sigma_2^{-1}$ representing the figure eight knot. There is a skein exact sequence relating $B_{\beta}$ with the following objects in $\mathrm{SBim}_3$: $$\sigma_1\sigma_2\sigma_1\sigma_2^{-1}=\sigma_2\sigma_1, \sigma_1\sigma_1\sigma_2^{-1}=\mathcal{L}_2\sigma_2^{-1}.$$ More precisely, there is an exact sequence: $$\label{skein fig 8}
+0\xleftarrow{}\sigma_2\sigma_1\xleftarrow{}\mathop{\mathrm{Cone}}\left[\mathcal{L}_2\sigma_2^{-1}\xleftarrow{x_1-x_2} \mathcal{L}_2\sigma_2^{-1}\right]\xleftarrow{}B_{\beta}\xleftarrow{} 0.$$
+
+::: proposition
+[]{#prop:cone label="prop:cone"} The following identity holds: $$\iota_*\mathop{\mathrm{Cone}}\left[\sigma_2^{-1}\xleftarrow{x_1-x_2} \sigma_2^{-1}\right]\simeq \left[\mathcal{L}_2\mathcal{L}_3^{-1}\oplus qt\mathcal{L}_3^{-1}\right]_{Z_2}.$$
+:::
+
+::: proof
+*Proof.* By [\[eq:mf\]](#eq:mf){reference-type="eqref" reference="eq:mf"} one has: $$\mathcal{O}_{\mathrm{FHilb}(1\sim 2)}\simeq [\mathcal{O}_{\mathrm{FHilb}_3(\mathbb{C})}\xleftarrow{x_1-x_2}q\mathcal{O}_{\mathrm{FHilb}_3(\mathbb{C})}\xleftarrow{y_{21}}qt\mathcal{L}_2^{-1}|_{\mathrm{FHilb}(1\sim 2)}]$$ (note that this is also a skein exact sequence for $\sigma_1^{-1},\mathbf{1}, \sigma_1$) and $$\iota_*(\sigma_2^{-1})=\mathcal{L}_2\mathcal{L}_3^{-1}\otimes \mathcal{O}_{\mathrm{FHilb}(2\sim 3)}.$$ Since $\mathcal{O}_{\mathrm{FHilb}(2\sim 3)}\otimes \mathcal{O}_{\mathrm{FHilb}(1\sim 2)}=\mathcal{O}_{Z_2}$, one has an exact sequence: $$0\leftarrow{} \mathcal{L}_2\mathcal{L}_3^{-1}|_{Z_2}\xleftarrow{} \iota_*\mathop{\mathrm{Cone}}\left[\sigma_2^{-1}\xleftarrow{x_1-x_2} \sigma_2^{-1}\right] \xleftarrow{}qt\mathcal{L}_3^{-1}|_{Z_2}
+\xleftarrow{} 0.$$ It remains to notice that $$\mathop{\mathrm{Ext}}_{Z_2}(\mathcal{L}_2\mathcal{L}_3^{-1},\mathcal{L}_3^{-1})=H^{*}(Z_2,L_2^{-1})=H^{*}(\mathbb{P}^1,\mathcal{O}(-1))=0.$$ ◻
+:::
+
+::: proposition
+Consider the braid $\beta=\sigma_1\sigma_2^{-1}\sigma_1\sigma_2^{-1}$ representing the figure eight knot. Then, assuming Conjecture [\[conj:1\]](#conj:1){reference-type="ref" reference="conj:1"} and [\[conj:knots\]](#conj:knots){reference-type="ref" reference="conj:knots"}, one has $$\iota_*(\beta)=\mathcal{O}_{\mathbb{P}^1}\oplus qt\mathcal{L}_2\mathcal{L}_3^{-1}.$$
+:::
+
+::: proof
+*Proof.* By [\[skein fig 8\]](#skein fig 8){reference-type="eqref" reference="skein fig 8"} and Proposition [\[prop:cone\]](#prop:cone){reference-type="ref" reference="prop:cone"} one has: $$0\xleftarrow{}\mathcal{O}_{Z_2}\xleftarrow{\alpha}\left[\mathcal{L}_2^2\mathcal{L}_3^{-1}\oplus qt\mathcal{L}_2\mathcal{L}_3^{-1}\right]_{Z_2}\xleftarrow{}qt(\iota_*B_{\beta})\xleftarrow{} 0.$$ Let us compute the map $\alpha$. Remark that: $$\mathop{\mathrm{Hom}}_{Z_2}(\mathcal{L}_2\mathcal{L}_3^{-1},\mathcal{O})=H^0(Z_2,\mathcal{L}_2^{-1}\mathcal{L}_3)=H^0(\mathbb{P}^1,\mathcal{O}(1)\oplus qt\mathcal{O}(-2)),$$ $$\mathop{\mathrm{Hom}}_{Z_2}(\mathcal{L}_2^2\mathcal{L}_3^{-1},\mathcal{O})=H^0(Z_2,\mathcal{L}_2^{-2}\mathcal{L}_3)=H^0(\mathbb{P}^1,\mathcal{O}\oplus qt\mathcal{O}(-3)).$$ Therefore $\alpha$ is the unique degree 1 map $\mathcal{L}_2^2\mathcal{L}_3^{-1}\to \mathcal{O}$ and vanishes on $\mathcal{L}_2\mathcal{L}_3^{-1}$, so $$\iota_*B_{\beta}\simeq \mathcal{L}_2\mathcal{L}_3^{-1}\oplus q^{-1}t^{-1}\mathop{\mathrm{Cone}}[\mathcal{O}\xleftarrow{\alpha} \mathcal{L}_2^2\mathcal{L}_3^{-1}]\simeq \mathcal{O}_{\mathbb{P}^1}\oplus \mathcal{L}_2\mathcal{L}_3^{-1}.$$ ◻
+:::
+
+Using this result, we can compute the reduced homology of $\beta\cdot \mathbf{FT}_2^{a}\mathbf{FT}_3^{b}$ by computing the homology of each summand individually. Since $\mathrm{FHilb}_3(\mathrm{point})$ is a blowup of the punctual Hilbert scheme of 3 points, and $\mathbb{P}^1$ is the exceptional divisor, the tautological bundle is trivial on $\mathbb{P}_1$: $\overline{\mathcal{T}}_3\otimes \mathcal{O}_{\mathbb{P}^1}\simeq (q+t)\mathcal{O}_{\mathbb{P}^1}$. Similarly, $\mathbf{FT}_3\otimes \mathcal{O}_{\mathbb{P}^1}\simeq qt\mathcal{O}_{\mathbb{P}^1}$. We get the following equation: $$\label{eq: 3 strand square}
+\int_{\mathrm{FHilb}_3(\mathrm{point})}\mathcal{O}_{\mathbb{P}^1}\otimes \mathbf{FT}_2^{a}\mathbf{FT}_3^{b}\otimes \wedge^{\bullet}\overline{\mathcal{T}}_3^{\vee}=
+(1+aq^{-1})(1+at^{-1})(qt)^{b}\int_{\mathbb{P}^1}\mathcal{O}(a).$$
+
+Equations [\[eq: 3 strand square\]](#eq: 3 strand square){reference-type="eqref" reference="eq: 3 strand square"} and [\[eqn:3 strand torus\]](#eqn:3 strand torus){reference-type="eqref" reference="eqn:3 strand torus"} can be used to compute the homology of $\beta\cdot \mathcal{L}_2^{a}\mathcal{L}_3^{b}$ for all $a$ and $b$. In particular: $$H^*(\mathrm{FHilb}_3(\mathrm{point}),\mathcal{L}_2\mathcal{L}_3^{-1})=H^*(\mathrm{FHilb}_3(\mathrm{point}),\mathcal{L}_3^{-1})=0,$$ $$H^*(\mathrm{FHilb}_3(\mathrm{point}),\mathcal{L}_3^{-2})=H^{*+1}(\mathbb{P}^1,\mathcal{O}(-1))=0,$$ $$H^*(\mathrm{FHilb}_3(\mathrm{point}),\mathcal{L}_2\mathcal{L}_3^{-2})=H^{*+1}(\mathbb{P}^1,\mathcal{O})=\mathbb{C}[1],$$ so $$\int_{\mathrm{FHilb}_3(\mathrm{point})}\mathcal{L}_2\mathcal{L}_3^{-1}\otimes \wedge^{\bullet}\overline{\mathcal{T}}_3^{\vee}=a\mathbb{C}[1],$$ and $$\mathop{\mathrm{HHH}}(\beta)=(1+aq^{-1})(1+at^{-1})+a\sqrt{qt}.$$ One can compare this with [@DGR Table 5.7].
+
+# Categorical idempotents and equivariant localization {#sec:equiv}

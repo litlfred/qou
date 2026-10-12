@@ -21,7 +21,7 @@ to numerical computations but are NOT part of the formal chain.
 | **GaugeTheory** | generic `k` | ✓ | Categorical connection, action |
 | **VolumeForm** | generic `k` | ✓ | Volume from rigidity |
 | **PathIntegrals** | generic `k` | ✓ | Braid group, quantum SU(2) |
-| **Torsion/** | generic `k` | ✓ | Jet prolongation, brane tower, descent |
+| **Torsion/** | generic `k` + `ℝ` realisation modules | partial | Jet prolongation, brane tower, descent (generic `k`). Post-wall, **not** formal chain: `Torsion/ArchimedeanMassIdentity` (substrate field + integrand order; its generic core is `Torsion/MassIdentity` over `[CommRing R]`), `Torsion/TopologicalMass` (consumes it; `ℝ` throughout), `HeckeMassElement.mass` (`[NormedCommRing R] → ℝ`). `ℝ`/`Real.` also occurs in `MassGap`, `neutron_proton_splitting`, `quantum_dilogarithm`, `BraneTower`, `weak_equiv_invariance`, `mass_decomposition_categorical` — not yet triaged (measured 2026-10-10, bean `qou-puwe`) |
 | **KnotTheory** | `ℤ` | ✓ | Crossing sign, braid word |
 | **KnotRegistry** | `ℤ` | ✓ | Knot data (integer invariants) |
 | **BringsSurface** | `ℂ` | — | Archimedean realisation |

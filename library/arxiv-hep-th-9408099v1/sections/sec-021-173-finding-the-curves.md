@@ -1,0 +1,323 @@
+---
+doc_id: arxiv-hep-th-9408099v1
+doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+section_id: sec-021-173-finding-the-curves
+section_title: "Finding the Curves"
+section_number: 17.3
+pages: 75-81
+source_pdf: 9408099v1.pdf
+source_sha256: b534faddd2e3aa71
+toc_source: inferred
+---
+Now we would like to ﬁnd a suitable set of curves Ca on which λ will have poles. In this
+section we set v = 1 and work on the uncompactiﬁed manifold X given by y2 = F(x, u).
+To guess what the Ca may be, let us look back to some of the models treated earlier,
+for instance the massive Nf = 2 theory. In equation (15.3), we found an explicit formula
+for λ in this theory; it had poles at
+x = ±1
+8Λ2
+2
+y = ± i
+8Λ2
+2(m1 ± m2).
+(17.20)
+74
+This can be interpreted as follows. The equation y2 = F(x, u) describes a double
+cover of the x −u plane. The equation
+x = ±Λ2
+2/8
+(17.21)
+describes (for a given choice of the sign) a line in that plane. A generic line L in the x −u
+plane would be described by
+x = βu + θ,
+(17.22)
+for some β, θ. The double cover y2 = F(x, u), restricted to the line L, would be given by
+an equation
+y2 = g(u)
+(17.23)
+where generically g(u) is not the square of a polynomial.
+That being so, the double
+cover of L is generically an irreducible complex curve, which is obviously invariant under
+α : y →−y. That is not what we want, because ω is odd under α; we need cycles on X that
+are odd. For the special case that the parameters in (17.22) are as in (17.21), the double
+cover (17.23) reduces to y2 = −(m1 ± m2)2Λ24/64. Here the right hand side is the square
+of a polynomial (in fact a constant), and so the double cover consists of two branches, with
+y = i(m1 ± m2)Λ22/8 or y = −i(m1 ± m2)Λ22/8. If we call the two branches D+,± and
+D−, ± (the second subscript denotes the sign for x in (17.21), and the ﬁrst is the sign of
+y), then the diﬀerences C± = D+,± −D−,± are divisors that are odd under α. The explicit
+determination of the residue of λ in section 15 amounted to expressing the cohomology
+class [ω] as a linear combination of C+ and C−.
+We can imitate this in the case at hand
+y2 = (x −e1u)(x −e2u)(x −e3u) + F1(x, u)
+(17.24)
+(where F1(x, u) is of degree ≤2 in x and u). We introduce the line L of (17.22), and
+consider again the double cover of L deduced from (17.24). This is described by an equation
+y2 = g(u) where for generic u, g(u) is cubic. If g is cubic, it cannot be a square, so y2 = g(u)
+describes an irreducible cover of L, necessarily invariant under y ↔−y.
+75
+Therefore, we must adjust the coeﬃcients in (17.22) to kill the cubic term in g(u).
+This requires that we set β = ei for some i. Then g is quadratic in u and the equation for
+the double cover is of the general form
+y2 = Au2 + Bu + C.
+(17.25)
+The polynomial on the right hand side of (17.25) is a square when and only when the
+discriminant vanishes,
+0 = ∆= B2 −4AC,
+(17.26)
+When ∆= 0, (17.25) can be written in the form y2 = A(u−t)2 for some t, and its solutions
+consist of two branches y = ±
+√
+A(u −t). If we call these branches D+ and D−, we get a
+divisor C = D+ −D−that is odd under α.
+Now actually, A is linear in θ, B is quadratic, and C is cubic. So the discriminant is
+quartic in θ and has four zeroes θa. For each we get a line La whose double cover has two
+components D±,a. So we get four odd divisors Ca = D+,a −D−,a. As we discussed in the
+last subsection, four is the dimension of the odd part of the cohomology of X, so there are
+as many Ca as we would need for a basis of that odd part. We will see that they are a
+basis.
+But actually, the above construction began by setting β = ei for some ﬁxed i. We
+could have carried out the above steps for any i = 1, 2, or 3. So making the dependence on
+i explicit, we have divisors D(i)±,a, and α-odd divisors C(i)a. Of course, Spin(8) triality
+permutes the (i) superscript.
+Intersection Pairings
+We would like to prove that the C(i)a of ﬁxed i do furnish a basis of the odd part of
+the cohomology. Since there are four of them, it suﬃces to prove that they are linearly
+independent; for this purpose, it is enough to work on X (where the intersection pairings are
+topological invariants) and prove that the matrix of intersection pairings is non-degenerate.
+So we have to calculate C(i)a∩C(i)b. For a̸ = b, this vanishes, for the following reason.
+The divisors D(i)±,a are given by
+x = eiu + θav
+y = ±
+√
+A(u −tav)v.
+(17.27)
+76
+(Since we are working on X, we have restored v. In doing this, we made the equations
+homogeneous, remembering that x, u, v, y have degree 1, 1, 1, 2.) Any two of these curves
+(for distinct a and b, but regardless of the independent choices of ± signs) meet precisely
+at the Z2 orbifold point x −e1u = y = v = 0, so the pairings of these curves with distinct
+a and b are
+D(i)
+±,a ∩D(i)
+±,b = 1
+2
+(17.28)
+where the two ± signs are chosen independently. (The 1/2 comes because an intersection
+at the orbifold point is counted with weight 1/2.) Recalling that C(i)a = D(i)+,a −D(i)−,a
+we get C(i)a ∩C(i)b = 0 for a̸ = b. However, C(i)a ∩C(i)a = −4.16 Putting these results
+together,
+C(i)
+a ∩C(i)
+b = −4δab.
+(17.29)
+This matrix is in particular nondegenerate, showing that for ﬁxed i, the C(i)a give a basis
+of the relevant piece of the cohomology.
+Triality
+This result may seem esoteric, but by extending it a bit, we will see Spin(8) triality
+at work in the classical geometry.
+To this end, we want to calculate the intersections
+C(i)a ∩C(j)b for i̸ = j. We claim that
+C(i)
+a ∩C(j)
+b = ±2,
+for i̸ = j.
+(17.30)
+Granted this, let us see how the statement is connected with Spin(8) triality.
+Since the C(i)a of ﬁxed i are a basis of the odd part of the cohomology, the C(j)a can
+be expanded as linear combinations of the C(i)a. In fact, we will expand everything in
+terms of the C(1)a. Comparing (17.30) to (17.29), we see that the expansion coeﬃcients
+are all ±1/2. In the above we adopted no particular convention as to what was D(i)+,a
+and what was D(i)−,a, so we have not ﬁxed the signs of the C(i)a. Picking an arbitrary
+16 The value is obviously independent of i and a. That it is −4 requires a slightly more detailed
+analysis that we omit. The value −4 in fact follows from our determination below that C(i)
+a ∩
+C(j)
+b = ±2 for i̸ = j.
+77
+sign for C(2)1, we can ﬁx the signs of all the C(1)a by requiring that the expansion of C(2)1
+has all plus signs:
+C(2)
+1 = 1
+2
+
+C(1)
+1 + C(1)
+2 + C(1)
+3 + C(1)
+4
+
+.
+(17.31)
+Now, we consider C(2)a with a > 1. We can carry out a relabeling of the a index, since its
+meaning has not been ﬁxed in any special way. The C(2)a, a > 1 are orthogonal to C(2)1,
+and have expansion coeﬃcients ±1/2 in terms of the C(1)a. These conditions are enough
+to ensure that, up to permutations on the a index and changes in sign of C(2)a,
+C(2)
+2 = 1
+2
+
+C(1)
+1 + C(1)
+2 −C(1)
+3 −C(1)
+4
+
+C(2)
+3 = 1
+2
+
+C(1)
+1 −C(1)
+2 + C(1)
+3 −C(1)
+4
+
+C(2)
+4 = 1
+2
+
+C(1)
+1 −C(1)
+2 −C(1)
+3 + C(1)
+4
+
+.
+(17.32)
+It remains to consider the C(3)a. They must have expansion coeﬃcients of ±1/2 in
+terms of either the C(1)a or the C(2)a. This ensures that, up to permutations and sign
+changes of the C(3)a, they are given by
+C(3)
+1 = 1
+2
+
+C(1)
+1 + C(1)
+2 + C(1)
+3 −C(1)
+4
+
+C(3)
+2 = 1
+2
+
+C(1)
+1 + C(1)
+2 −C(1)
+3 + C(1)
+4
+
+C(3)
+3 = 1
+2
+
+C(1)
+1 −C(1)
+2 + C(1)
+3 + C(1)
+4
+
+C(3)
+4 = 1
+2
+
+−C(1)
+1 + C(1)
+2 + C(1)
+3 + C(1)
+4
+
+.
+(17.33)
+Let us compare this to Spin(8) triality.
+The Nf
+= 4 theory has four masses
+m1, m2, m3, m4 which are the “eigenvalues” of a mass matrix that is in the adjoint repre-
+sentation of Spin(8). So they transform under triality like the weights of Spin(8). Under
+the exchange of the vector with the positive chirality spinor (leaving the negative chirality
+spinor ﬁxed) the masses transform by a formula that was already presented in (10.4):
+m′
+1 = 1
+2 (m1 + m2 + m3 + m4)
+m′
+2 = 1
+2 (m1 + m2 −m3 −m4)
+m′
+3 = 1
+2 (m1 −m2 + m3 −m4)
+m′
+4 = 1
+2 (m1 −m2 −m3 + m4) .
+(17.34)
+78
+Under the exchange of the vector with the other spinor, the masses transform to
+m′′
+1 = 1
+2 (m1 + m2 + m3 −m4)
+m′′
+2 = 1
+2 (m1 + m2 −m3 + m4)
+m′′
+3 = 1
+2 (m1 −m2 + m3 + m4)
+m′′
+4 = 1
+2 (−m1 + m2 + m3 + m4) .
+(17.35)
+These formulas have precisely the same structure as (17.31), (17.32), and (17.33)!
+This means the following. Suppose that we introduce masses mi, i = 1 . . .4 in the
+Nf = 4 theory and determine the equation y2 = F(x, u, mi, τ) by requiring that the
+“periods” of ω = (
+√
+2/8π) dx du/y are proportional to the mi in the sense that
+[ω] = −1
+√
+2
+X
+a
+ma[C(1)
+a].
+(17.36)
+The above equations will then ensure that it is also true that
+[ω] = −1
+√
+2
+X
+a
+m′
+a[C(2)
+a] = −1
+√
+2
+X
+a
+m′′
+a[C(3)
+a].
+(17.37)
+In brief, ω is triality invariant; this is achieved because triality permutes C(1)a, C(2)a, and
+C(3)a and also ma, m′a, and m′′a in the same way. In this sense, the structure of the
+complex manifold X makes triality invariance of the physics possible.
+Actually, the formulas (17.34) and (17.35) were not quite uniquely determined, since
+triality is only uniquely deﬁned up to a Weyl transformation. The Weyl group acts on
+the m’s by permutations and sign changes, so the arbitrariness that was ﬁxed to write the
+triality transformation as in (17.34) and (17.35) has the same structure as the arbitrariness
+that was ﬁxed in writing the transformations of the C’s.
+(17.37) could similarly be modiﬁed by a Weyl transformation (permutations and pair-
+wise sign changes of the m’s) without spoiling triality. This would not be an essential
+change. It would also be possible to multiply the right hand side by a constant. Since we
+have not proved that the C(i)a are an integral basis for the cohomology, and also because
+we have not analyzed the monodromies of a and aD precisely enough, we cannot assert
+79
+now that (17.37) is correctly normalized. (This may be the reason for a factor of two that
+will appear later.)
+It remains to justify (17.30). Two lines L : x = eiu + θi a and L′ : x = eju + θj b
+with i̸ = j are not parallel and intersect at a point P on the x −u plane. On the double
+cover y2 = F(x, u) there are two points P± lying above P. Each double cover D(i)±,a of
+L and each double cover D(j)±,b of L′ contains either P+ or P−. If for instance, we ﬁx
+conventions so that P+ is contained in D(i)+,a and D(j)+,b and P−in the others, then
+the D(i)+,a ∩D(j)+,b = D(i)−,a ∩D(j)−,b = 1, while the other intersections are zero. So
+C(i)a ∩C(j)b = 2. With other conventions, we could get C(i)a ∩C(j)b = −2.
+So the
+intersections are ±2, as claimed in (17.30). (There is no way to pick conventions so that
+the intersection is +2 for all i, j, a, b.)

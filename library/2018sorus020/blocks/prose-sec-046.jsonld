@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/2018sorus020/blocks/prose-sec-046",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/2018sorus020/blocks/prose-sec-046",
   "kind": "prose",
-  "title": "Proof of Main Theorem 1",
-  "pageStart": 55,
-  "pageEnd": 58,
-  "text": "../sections/sec-046-231-proof-of-main-theorem-1.md",
-  "derivedFrom": "library/2018sorus020/manifest",
-  "sourceDocument": "library/2018sorus020/manifest",
+  "title": "The torsion at ideal points",
+  "pageStart": 91,
+  "pageEnd": 91,
+  "text": "../sections/sec-046-33-the-torsion-at-ideal-points.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -5,7 +5,11 @@
   "file": "2311.02632v2.pdf",
   "sha256": "0da5ba097b79340da4dd5da53cb90327f46bbea249bcaf9945d25cb048edcd68",
   "bytes": 1237561,
-  "pages": 40
+  "pages": 40,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -339,6 +343,126 @@
   "likely_scanned": false,
   "toc_entries": 21,
   "sections": 15,
-  "chars_total": 73499
+  "chars_total": 73499,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 18,
+   "overlaid": 9,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-background",
+     "title": "Background",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-laplacian-on-riemannian-manifolds",
+     "title": "Laplacian on Riemannian manifolds",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.898,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-two-models-of-hyperbolic-plane",
+     "title": "Two models of hyperbolic plane",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-selberg-trace-formula",
+     "title": "Selberg trace formula",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-3-explicit-uniformization-of-the-fricke-macbeath",
+     "title": "Explicit uniformization of the Fricke-Macbeath surface and its fundamental domain",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-31-hurwitz-surfaces-and-the-fricke-macbeath-surf",
+     "title": "Hurwitz surfaces and the Fricke-Macbeath surface",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-33-fundamental-domain-for",
+     "title": "Fundamental domain for",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-34-length-spectrum-of-the-fricke-macbeath-surfac",
+     "title": "Length spectrum of the Fricke-Macbeath surface",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-4-multiplicity-of-the-first-eigenvalue",
+     "title": "Multiplicity of the first eigenvalue",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-41-overview-of-the-proof",
+     "title": "Overview of the proof",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-5-numerical-determination-of-the-eigenspace-asso",
+     "title": "Numerical determination of the eigenspace associated to 1",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.326,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-013-appendix-b-gap-code-for-the-automorphism-group-o",
+     "title": "Appendix B. GAP code for the automorphism group of the Fricke-Macbeath surface",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,1109 @@
+
+
+
+
+
+
+\section{Two strands}\label{sec: two str}
+
+In this section we study the properties of the matrix factorizations that generate the braid group on two strands. In particular we show that $\calC_+$ is the inverse to $\calC_-$.
+
+
+
+\subsection{General method of the proof}
+It is easier to discuss the reduced convolution and we  focus on this operation.
+From construction of the reduced convolution $\bar{\star}$ we see that the key step of computation of  $\calG\bar{\star}\calF$ is the "computation" of
+$\CE_{\frn^{2}}(\bar{\pi}_{12}^*\otimes_B \bar{\pi}_{23}^*)(\calG\boxtimes\calF)$. The latter complex is  a matrix factorization with non-trivial potential,
+we can not compute its cohomology in conventional sense, since the differential does not square to $0$. However, we can get quite close to that by contracting
+the part of the complex with non-trivial action of $\frn^{(2)}$. We give details below.
+
+To simplify notations we consider problem of simplifying of the complex $\CE_{\frn}(\calF)^T$ where $\calF\in \MF_B(G\times Z, F)$, $F\in \CC[G\times Z]^B$ and $B$ acts on $G$ by the left multiplication
+and acts trivially on $Z$.
+Let $R=\CC[G]$ and $R\langle \chi\rangle$ is the ring with $B$-equivariant structure twisted by the character $\chi\in \Hom(T,\CC^*)$:
+$b\cdot 1=\chi(b) 1$ for $b\in B$ and $1\in R\langle\chi\rangle$ is the generator of $R$-module
+$R\langle \chi\rangle$.   We assume  that the matrix factorization that we study is the sum of free $R$-modules $\calF=(M,D)$
+$M=\oplus_{i=1}^N M_i$ and $M_i=\CC[Z]\otimes R\langle \chi^i\rangle$. It is well known that the CE homology of such free modules has a geometric interpretation,
+we were unable to pinpoint a proof of the interpretation and provide an outline of a  proof for it
+
+\begin{proposition}\label{prop: homs G/B} For any \(\chi\in \Hom(T,\CC^*)\)
+  $$ \textup{H}^*_{\Lie}(\frn,R\langle -\chi\rangle)^T=\textup{H}^*(G/B,L_\chi),$$
+  where LHS is the coherent sheaf cohomology.
+\end{proposition}
+\begin{proof}
+  Let \(S_n\) be the symmetric group  and \(B_-\subset G=GL_n\) the subgroup of lower triangular matrices.
+  The Bruhat decomposition \(G=B S_n B\) implies   \(G=B_- S_n B\) because \(B_-=w_0 B w_0\) with \(w_0\in S_n\) being the longest element of \(S_n\).
+  Each subset \(G_w=B_- w B\subset G\) is an open \(B\)-invariant subset of \(G\) and let us denote by \(R_w\) the ring of regular functions on \(G_w\).
+  Respectively, we denote by \(G_{S}:=\cap_{w\in S} G_{w}\) where \(S\subset S_n\) is a finite subset and we use notation \(R_S\) for the ring of regular
+  functions on \(G_S\). In particular, we have \(R=R_\emptyset\).
+  
+  There are natural inclusion maps \(R_S\to R_{S'}\) for \(S\subset S'\) and these inclusions maps with appropriate sings form a Cech  resolution \(\check{C}_\bullet(R)\) of
+  \(R\) by free \(\frn\)-modules \(\check{C}_i(R)=\sum_{|S|=i} R_S\). On other hand let us observe that the decomposition above turns in a  Cech cover \(\check{C}_\bullet(G/U)\) of
+  \(G/U\), \(G/U=\cup_{w\in S_n} B_-w\), we use same notation for the resolution of the sheaf of regular functions on \(G/U\) induced by the cover.
+  
+  Next we observe that \(R_w=\CC[B_-]\otimes \CC[U]\), \(\mathrm{Lie}(U)=\frn\) and \(\frn\) does
+  not act on the first factor. Since \(H^*_{Lie}(\frn,\CC[U])=\CC\) we see that \(H^*_{Lie}(\frn,R)=\check{C}_*(G/U)\). The last isomorphism is \(T\)-equivariant hence the proposition
+  follows.
+  
+  
+\end{proof}
+
+
+LHS of the last equation is the total space cohomology of the line bundle $L_\chi$. The fiber of $L_\chi$ at $V^\bullet=\{V^1\subset \dots\subset V^n \}\in G/B$ is equal to
+$\bigotimes_i (V^{i+1}/V^i)^{d_i}$ where $\chi=\sum d_i \alpha_i$. The most important case of this theorem is the case $n=2$:
+$$\textup{H}^*_{\Lie}(\frn, R\langle -k\alpha \rangle)=\textup{H}^*(\mathbb{P}^1,\calO(k)).$$
+
+The other way to present previous proposition is to say that we use homotopy equivalence $\CE_{\frn}(R\langle\chi\rangle)^T\sim \oplus_i H^i(G/B,L_\chi)$ where the RHS is complex with zero differential.
+The homotopy could be constructed explicitly by combining Chech resolution technique with the Gauss elimination method from below.
+%iterative application of the Gauss elimination lemma (explained below) to the differentials  of the complex. The Gauss elimination lemma holds in the matrix factorization
+%setting, we state below, and
+%this  homotopic reformulation of the proposition~\ref{prop: homs G/B} generalizes to the case of matrix factorizations:
+
+\begin{proposition} Let $\calF=(M,D)\in \MFs_B(G\times Z,F)$ as above then there is a homotopy equivalence
+$$ \CE_{\frn}(\calF)^T\sim (\oplus_{i=1}^N H^*(G/B, L_{\rho_i}), \bar{D})\in \MFs(Z,F),$$
+where $\bar{D}$ is the differential induced by the differential $D$.% by iterated application of Gauss elimination.
+\end{proposition}
+\begin{proof}
+  As in the proof of proposition~\ref{prop: homs G/B} we can construct the Cech resolution \(\check{C}_\bullet(M)\) of \(M\). Since the Chevalley-Eilenberg differential \(d_{CE}\)
+  is acyclic on term of the \(\check{C}_\bullet(M)\) we apply Gauss elimination to construct homotopy
+  \(\CE_{\frn}(\calF)\sim (H^0_{Lie}(\frn,\check{C}_\bullet(M),D')\) with \(D'\) induced by \(D\).
+  As it is explained in proposition~\ref{prop: homs G/B} \(H^*(H^0(\frn,\check{C}_\bullet(M)),d_{\check{C}})=H^*(G/B,M)=\oplus_i H^*(B/G,L_{\rho_i})\)
+  hence we again can apply the Gauss elimination and obtain the homotopy from the statement of the proposition.
+  \end{proof}
+
+  The Gauss elimination lemma is the standard tool of homological algebra, one can find more discussion (and applications) of this lemma in \cite{BN} in the case of complexes
+  of vector spaces. Our proof below is very close to the argument of \cite{BN}.
+
+\begin{lemma} Suppose \(M= W\oplus V\), \(V=V^0\oplus V^1\), \(W=W^0\oplus W^1\) and \[D^{i,i+1}=d_{VV}^{i,i+1}+d_{VW}^{i,i+1}+d_{Wv}^{i,i+1}+d_{WW}^{i,i+1},\]
+  \(d_{AB}^{i,i+1}\in Hom(B^{i+1},A^i)\) form the matrix factorization \((M,D)\in \textup{MF}(Z,F)\), \(D=D^{01}+D^{10}\).
+  Let us also assume \(d^{10}_{VV}=\phi\) is an isomorphism. 
+
+ Then there is a homotopy equivalence in the category of matrix factorizations
+ \[ (M,D)\sim (W,D_W),\quad D_W=D_W^{10}+D_W^{01},\]
+ \[D_W^{10}=d_{WW}^{10}-d_{WV}^{10}\circ\phi^{-1}\circ d_{VW}^{10},\quad D_W^{01}=d_{WW}^{01}.\]
+\end{lemma}
+\begin{proof}
+  Let us that \((W,D_W)\in \textup{MF}(Z,F)\). First, let us first compute \(D^2_W|_{W^0}\):
+  \[d_{WW}^{01}\circ (d_{WW}^{10}-d_{WV}^{10}\circ\phi^{-1}\circ d_{VW}^{10})=d_{WW}^{01}\circ d_{WW}^{10}+d^{01}_{WV}\circ d^{10}_{VV}\circ \phi^{-1}\circ d_{VW}^{10}=F,\]
+  where we used \(d_{WW}^{01}\circ d_{WV}^{10}+d_{WV}^{01}\circ d_{VV}^{10}=0\) for the first equality. The check that \(D^2_W|_{W^1}=F\) is similar.
+
+  Next we define morphisms \(i:W\rightarrow M\) and \(\pi:M\rightarrow W\):
+  \[ i=
+    \begin{bmatrix}
+      1\\
+      \psi
+    \end{bmatrix},\quad
+   \pi= \begin{bmatrix}
+      1&\rho
+    \end{bmatrix},
+  \]
+  here \(\psi=\psi_{VW}^{00}+\psi_{VW}^{11},\rho=\rho_{WV}^{00}+\rho_{WV}^{11}\)  and \(\psi_{VW}^{00}=-\phi^{-1}\circ d_{VW}^{10}\), \(\psi_{VW}^{11}=0\),
+  \(\rho_{WV}^{00}=0\), \(\rho_{WV}^{11}=-d_{WV}^{10}\circ \phi^{-1}\).
+
+  It is immediate to see that \( D\circ i=i\circ D_W\) and \(D_W\circ \pi=\pi\circ D\). Also since \(\psi\circ \pi=0\) and \(\pi\circ\psi=0\) we get \(\pi\circ i=1\).
+  On the other hand we can extend by \(0\) the map \(\phi^{-1}\) to obtain \(\phi'\in \oplus_i\Hom(V^{i},V^{i+1})\) and
+  \[\chi=
+    \begin{bmatrix}
+    \phi'&0\\0&0  
+    \end{bmatrix}.
+  \]
+  Since \(\phi^{-1}\circ d_{VV}^{10}=1\) and \(d_{VV}^{10}\circ \phi^{-1}=1\) we see that \(i\circ \pi-1=\chi\circ D+D\circ \chi\)
+\end{proof}  
+
+
+Thus to obtain the reduction $\bar{D}$ from the lemma we apply previous lemma to our complex $\CE_{\frn}(\calF)^T$. To keep exposition clear let us explain one would apply
+the elimination lemma to construct homotopy $(\oplus_{i=0}^N C_i, d_\bullet)\sim (H^\bullet(C,d),0)$: the case of matrix factorizations from proposition~\ref{prop: homs G/B} differs from this model case
+by feature that on every step of our construction we need to compute correction differentials.
+
+Indeed, in our model case we can construct a non-canonical splitting
+$C_0=\textup{Im} d_1\oplus H^0(C,d)$, $C_1=\Ker d_1\oplus C_1/\Ker d_1$. The differential $d_1$ provides an isomorphism between $\textup{Im} d_1$ and $C_1/\Ker d_1$ and we can apply elimination lemma to
+obtain homotopy equivalent complex $(C',d)\oplus (\textup{H}^0(C,d),0)$: $C_i'=C_i$, $i>1$, $C'_1=\Ker d_1$. Now we can apply the case method to the complex $(C',d)$ and so on.
+
+%the push-forward along the intermediate flag space. We perform this push-forward with the help of the following two facts. Consider a product of varieties $X = Y\times Z$ and the projection map $\pi\colon X\rightarrow Y$.
+%\begin{itemize}
+%\item[1.]
+%For a complex of vector bundles $E_1\xrightarrow{f} E_2$ over $X$ there is a relation
+%\begin{equation}
+%\pi_*(E_1\xrightarrow{f} E_2)  = \Bigl(\pi_* (E_1) \xrightarrow{\pi_* f}\pi_*(E)\Bigr).
+%\end{equation}
+%\item[2.]
+%For two vector bundles $E\rightarrow Y$ and $F\rightarrow Z$ there is a relation
+%%For a tensor product of vector bundles $(E\rightarrow Y)\otimes (F\rightarrow Z)$ considered as a vector bundle over $X$ there is a relation
+%\begin{equation}
+%\pi_*\bigl(\pi^*E\otimes (\pi')^*F\bigr) = E\otimes \rmHu(F),
+%\end{equation}
+%where $\pi':X\rightarrow Z$ is the other projection.
+%\end{itemize}
+%Another useful fact is that a cohomology of a vector bundle $E$ over a flag space $\cB$ is isomorphic to the \xCE\ cohomology of the corresponding $\mBp$-module $M$:
+%\begin{equation}
+%\rmHu(E) \cong \rmHu(\mfg,M).
+%\end{equation}
+%Hence push-forward amounts to forgetting the variables of $\xG$ and including the \xCE\ complex. If the action of the differentials of the \xCE\ complex depends only on the variables of $\xG$ (that is, if the action of the generators of $\mfbp$ on the generators of the module depends only on the variables of $\xG$), then push-forward amounts to taking the \xCE\ cohomology.
+
+
+
+
+
+To simplify notations, we assume for the rest of the section that \(G=G_2=SL_2\), \(B=B_2\subset G_2\), \(\frb=\textup{Lie}(B_2)\). 
+Respectively, character group of \(B_2\) under this assumption  is \(\ZZ\), \(1\in\ZZ\) corresponds to the character \(\chi_1\) from the section~\ref{ssec:gens}
+
+\subsection{Equivariant structure for the generators}
+In this subsection we discuss the equivariant structure of the generators of the braid group. We also introduce the matrix factorization
+$\calC_\bullet$ that corresponds to the blob or fat point in the MOY calculus \cite{MOY}. We use this connection later to relate our homology theory of
+links to the HOMFLY-PT polynomial.
+
+%This time $\xG = \SLv{2}$ and $\mfg = \slt$ and $B\subset \xG$ is its Borel subgroup.
+We use the following parameterization of the variety $\calX^\circ_2(G)=\frg\times G\times \frn^2$:
+\begin{align*}
+\xX &= \xmtr{ \SymbolPrint{\xz} & \SymbolPrint{\xo} \\ \SymbolPrint{\xmo} & -\xz },&
+\xYi & = \xmtr{0 & \SymbolPrint{\yi} \\ 0 & 0 }\quad i=1,2,&
+\xg &=\xmtr{ \SymbolPrint{\exaoo} & \SymbolPrint{\exaot} \\ \SymbolPrint{\exato} & \SymbolPrint{\exatt} }.
+\end{align*}
+The tori $T^{(1)}$, $T^{(2)}$ of the Borel groups in the product $B^2$ are $\CC^*$ and the weights of their action are
+in the table:
+\[
+\begin{tabu}{| c ||r |r |r |r |r | r | r | r | r | r|}
+\hline
+\text{variable} &
+\exaoo &\exaot & \exato &\exatt & \xmo & \xz & \xo &\txz & \yo & \yt
+\\
+\hline
+T^{(1)} &
+1 & 1 & -1 & -1 & -2 & 0 & 2 & 1 & 2 & 0
+\\
+\hline
+T^{(2)} &
+-1 & 1 & -1 & 1 & 0 & 0 & 0 & -1 & 0 & 2
+\\
+\hline
+\end{tabu}.
+\]
+
+The generator of the nilpotent part of $\Lie(B)$, $\frn=\langle \delta\rangle$ acts on the coordinates by
+\begin{align*}
+\dlto\exaoo &= \exato,&\dlto\exaot & = \exatt,&\dlto\xz & = \xmo,&\dlto\xo & = -2\xz,
+%& \dlto \txz & = 2\xmo\exaoo,
+%\\
+%\dlto(2\xz \exaoo + \xo\exato) & = 2\xmo\exaoo,
+\\
+\dltt\exaot & = -\exaoo,&\dltt\exatt&=-\exato, % & \dltt\txz & = 0,
+\end{align*}
+%\begin{align}
+%\dlto\exaoo&=\exato, &\dlto\exaot &= \exatt, &\dltt\exaot&=-\exaoo,&\dltt\exatt &= -\exato,
+%\\
+%\dltt\exboo&=\exbto, &\dltt\exbot &=\exbtt,&\dlth\exbot&=-\exboo,&\dlth\exbtt&=-\exbto,
+%\\
+%\dlto\excoo &= \excto, &\dlto\excot &= \exctt, &\dlth\excot&=-\excoo,&\dlth\exctt &=-\excto.
+%\end{align}
+In the table above and in the proofs in this section we use following functions of the coordinates:
+\begin{align*}
+\SymbolPrint{\txz} & = 2\xz \exaoo + \xo\exato, & \SymbolPrint{\ttxz} & = 2 \xz \exaot + \xo \exatt,
+\end{align*}
+so that
+\begin{align*}
+\dlto\txz & = 2\xmo\exaoo, & \dlto \ttxz &= 2\xmo \exaot, & \dltt\ttxz & = -\txz.
+\end{align*}%
+%
+%
+%where we introduced a shortcut notation for future use: $\txz = 2\xz \exaoo + \xo\exato$.
+
+The matrix factorization was discussed previously but in this section we need an explicit description of this matrix factorization as a strongly
+$B^2$-equivariant matrix factorization. We use  Koszul matrix factorization conventions of the subsection~\ref{ssec: str eq Kosz}, so
+the matrix factorization of the identity braid has the form
+\begin{equation*}
+\crXpr =
+\begin{bmatrix}
+\xmo & \yo - \yt\exaoo^2 & \theta_1
+\\
+\yt\txz
+%(2\xz \exaoo + \xo\exato)
+& \exato & \theta_2
+\end{bmatrix},\quad
+\dlto\theta_1 = -2\yt\exaoo\theta_2,
+\end{equation*}
+with $\dgTsc\theta_1=(2,1)$ and $\dgTsc\theta_2=(0,-1)$.
+The blob matrix factorization has the form
+\begin{equation*}
+\crXbl=
+\begin{bmatrix}
+\xmo & \yo - \yt\exaoo^2 & \theta_1
+\\
+\exato \txz
+%(2\xz \exaoo + \xo\exato)
+& \yt & \theta_2'
+\end{bmatrix},\quad
+\dlto\theta_1 = -2\exato\exaoo\theta_2'
+\end{equation*}
+or equivalently
+\begin{equation*}
+\crXbl=\begin{bmatrix}
+\xmo & \yo & \theta'_1
+\\
+-\exaoo^2\xmo+
+\exato \txz
+%(2\xz \exaoo + \xo\exato)
+& \yt & \theta_2'
+\end{bmatrix},\quad \theta'_1=\theta_1 +\exatt^2\theta_2',\quad
+\dlto\theta'_1 = 0
+\end{equation*}
+
+The matrix factorization of the positive intersection is % (up to a possible shift of weights)
+\begin{equation*}
+\crXp= (\sha\shq\sht)^{-1}
+\begin{bmatrix}
+\xmo & \yo - \yt\exaoo^2 & \theta_1
+\\
+%2\xz \exaoo + \xo\exato
+\txz & \exato\yt & \theta_2
+\end{bmatrix}
+%\brwsh{-1}{1}\ztsh{1}
+,\quad
+\dlto\theta_1 = -2\exaoo\theta_2,
+\end{equation*}
+while
+\begin{equation*}
+\crXn = \sha\,\crXp\brwsh{-1}{-1}.
+\end{equation*}
+
+%\footnote{Note that we need an overall shift $(\sht \sha\shq^3)^{1-N}$, where $N$ is the number of strands in the braid}
+
+\subsection{Properties of the basic matrix factorizations}
+In this subsection we collect various facts about the matrix factorizations from the previous subsection. In particular we explain how one can interpret
+the positive intersection matrix factorization as a cone of the identity matrix factorization and the blob matrix factorization.
+
+\begin{proposition} We have the following homotopy
+\[
+\crXpr\sim \crXpr\brwsh{1}{-1}.
+\]
+\end{proposition}
+\begin{proof} Let \(R=\CC[\calXr_2]\) then we have
+ the following diagram
+%%%$$$remove
+
+%\includegraphics[scale=0.35, width=6in,height=2in]
+%{dia1a.eps}
+%[scale=0.35, width=610,height=642]
+
+
+%%%%%%%%%%%%%%%%%% $removed %%%%%%%%%%%%%%%%%%
+\begin{equation*}
+%%%%%%%\xymatrix@C=3cm@R=1.75cm{
+%%%%%%%\rgR
+%%%%%%%\ar@<0.4ex>[r]^-{2\xz + \xo z }
+%%%%%%%\ar@<0.4ex>[d]^-{2\xz + \xo(z + w)}
+%%%%%%%&
+%%%%%%%\ktht_2\rgR\ar@<0.4ex>[l]^-{wy}
+%%%%%%%\ar@<0.4ex>[d]^-{}
+%%%%%%%\\
+%%%%%%%\Bigl(x
+%%%%%%%\ar@<0.4ex>[r]^-{2\xz + \xo z }
+%%%%%%%\ar@<0.4ex>[u]^-{(w-z)y}
+%%%%%%%&
+%%%%%%%x\Bigr)\ar@<0.4ex>[l]^-{wy}
+%%%%%%%\ar@<0.4ex>[u]^-{}
+%%%%%%%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tikzcd}[column sep=3cm, row sep=1.75cm]
+&
+\rgR
+\arrow[xshift=-0.35ex]{r}{\yt\txz}
+\arrow[xshift=-0.35ex]{d}{\exatt}
+\arrow[dashed, bend left=40]{r}{\exaot}
+&
+\rgR
+\arrow[xshift=-0.35ex]{l}{\exato}
+\arrow[xshift=-0.35ex]{d}{\exatt}
+&
+\\
+\vphantom{1mm}
+&
+\rgR
+\arrow[phantom,pos=0.02]{l}{\Bigl(}
+\arrow[xshift=-0.35ex]{r}{\yt\txz}
+\arrow[xshift=-0.35ex]{u}{\exaoo}
+\arrow[bend right=40,dashed,']{r}{\exaot}
+&
+\rgR
+\arrow[phantom,pos=0.22]{r}{\Bigr)\brwsh{1}{-1}}
+\arrow [xshift=-0.35ex]{l}{\exato}
+\arrow[xshift=-0.35ex]{u}{\exaoo}
+&
+\vphantom{1mm}
+\end{tikzcd}
+\end{equation*}
+
+
+
+
+%%%%%%%%%%%%%%%%%% $removed %%%%%%%%%%%%%%%%%%
+Here dashed arrows denote homotopy morphisms and we used the relation
+$\exaoo\exatt - \exaot\exato = 1$.
+\end{proof}
+\begin{proposition}\label{prop: cones} We have following homotopies:
+\begin{align*}
+\crXp & \sim(\sha\shq\sht)^{-1}\Bigl(\crXpr \xrightarrow{\;\xchp\;}\crXbl\brwsh{-1}{-1} \Bigr), &
+\crXn & \sim
+\sha(\shq\sht)^{-1}
+\Bigl(\crXbl\brwsh{-1}{-1} \xrightarrow{\;\xchm\;}(\shq\sht)^2\,\crXpr\brwsh{-1}{1} \Bigr),%\ztsho,
+\end{align*}
+where
+%%%%%%%%%%%% $removed %%%%%%%%%%%%%%%%%
+
+%\includegraphics[scale=0.35, width=7in,height=2.2in]
+%%[scale=0.45]
+%%,natwidth=610,natheight=642]
+%{dia2a.eps}
+
+\begin{equation*}
+\begin{tikzcd}[column sep=3cm, row sep=1.75cm]
+\crXpr
+\arrow{d}{\xchp}
+& \sht^{-1}\rgRmomo
+%\arrow[xshift=-0.35ex]{r}{-\exato}
+\arrow[xshift=-0.35ex]{r}{-\exato}
+\arrow{d}{1}
+&
+\rgR
+%\arrow[xshift=-0.35ex]{l}{-\yt\txz}
+\arrow[xshift=-0.35ex]{l}{-\yt\txz}
+\arrow{d}{-\txz}
+\\
+\crXbl\arrow[phantom,pos=0.22]{r}{\brwsh{-1}{-1}}
+\arrow{d}{\xchm}
+%& \rgR \arrow[xshift=-0.35ex]{r}{\exato\txz}
+& \rgR \arrow[xshift=-0.35ex]{r}{\exato\txz}
+\arrow{d}{-\txz}
+&
+\shq^2\sht\rgRmomo
+%\arrow[xshift=-0.35ex]{l}{\yt}
+\arrow[xshift=-0.35ex]{l}{\yt}
+\arrow{d}{1}
+\\
+(\shq\sht)^2\,\crXpr \arrow[phantom,pos=0.22]{r}{\brwsh{-1}{1}}%\ztsho}
+%& \shq^2\sht\,\rgR \arrow[xshift=-0.35ex]{r}{-\exato}
+& \shq^2\sht\,\rgR \arrow[xshift=-0.35ex]{r}{-\exato}
+&
+\shq^2\sht^2\,\rgRmomo
+%\arrow[xshift=-0.35ex]{l}{-\yt\txz}
+\arrow[xshift=-0.35ex]{l}{-\yt\txz}
+\end{tikzcd}
+\end{equation*}
+
+\end{proposition}
+
+%As a corollary, we get the skein relation
+%\[
+%a[\crXp] - a^{-1}[\crXn] = (q - q^{-1})[\crXp]
+%\]
+
+\subsection{Inversion of the elementary positive braid}
+
+Main result of this section is the following
+
+\begin{theorem}\label{thm: two strands} Inside convolution algebra \((\MF_{G\times B^2}(G_2),\star)\) we have
+\[
+\crXp \star \crXn \sim \crXpr
+\]
+\end{theorem}
+
+
+%before we proceed to the proof, we would like to discuss the method for our proof.
+
+
+
+
+
+\subsection{Proof of theorem \ref{thm: two strands}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\def\gxv#1{ g_{#1}}
+%\def\gxo{ \gxv{1}}
+%\def\gxt{ \gxv{2}}
+%\def\gxh{ \gxv{3}}
+%\def\gxot{ \gxv{12}}
+%\def\gxth{ \gxv{23}}
+%\def\gxoh{ \gxv{13}}
+\def\yh{ y_3 }
+
+
+\def\exav#1{a_{#1}}
+\def\exaoo{\exav{11}}
+\def\exaot{\exav{12}}
+\def\exato{\exav{21}}
+\def\exatt{\exav{22}}
+\def\exbv#1{b_{#1}}
+\def\exboo{\exbv{11}}
+\def\exbot{\exbv{12}}
+\def\exbto{\exbv{21}}
+\def\exbtt{\exbv{22}}
+\def\excv#1{c_{#1}}
+\def\excoo{\excv{11}}
+\def\excot{\excv{12}}
+\def\excto{\excv{21}}
+\def\exctt{\excv{22}}
+
+\def\xXtl{ \tilde{\xX} }
+\def\dgBs{ \deg_{\mflg^2}}
+\def\dltv#1{ \delta_{#1}}
+\def\dlto{ \dltv{1} }
+\def\dltt{ \dltv{2}}
+
+%\def\crX{\mathbf{X}}
+%\def\crXv#1{ \crX_{#1}}
+%\def\crXpr{\crXv{\parallel}}
+%\def\crXbl{\crXv{\bullet}}
+%\def\crXp{\crXv{+}}
+%\def\crXn{\crXv{-}}
+
+\def\brwsh#1#2{ \langle #1,#2 \rangle }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In order to compute a convolution of two objects, we introduce the matrices $\gxot=||a_{ij}||$, $\gxth=||b_{ij}||$ and $g_{13} = ||c_{ij}||$ so that
+\begin{align}\label{eqn: diffs}
+\dlto\exaoo&=\exato, &\dlto\exaot &= \exatt, &\dltt\exaot&=-\exaoo,&\dltt\exatt &= -\exato,
+\\
+\dltt\exboo&=\exbto, &\dltt\exbot &=\exbtt,&\dlth\exbot&=-\exboo,&\dlth\exbtt&=-\exbto,
+\\
+\dlto\excoo &= \excto, &\dlto\excot &= \exctt, &\dlth\excot&=-\excoo,&\dlth\exctt &=-\excto.
+\end{align}
+We also introduce $\xX'=\Adv{\gxot^{-1}}\xX$:
+\begin{align*}
+\xmo' &=
+-2\exaoo \exato \xz - \exato^2\xo + \exaoo^2\xmo
+%-2 a11 a21 x0 - a21^2 x1 + a11^2 xm1
+\\
+\xz' & = (\exaot\exato + \exaoo\exatt)\xz + \exato\exatt\xo - \exaoo\exaot\xmo, \\
+\xo' & = 2\exaot\exatt\xz + \exatt^2 \xo - \exaot^2 \xmo.
+\end{align*}
+For computation of convolution $\calC_+\star\calC_-$ we need to analyze the pull-back  matrix factorization:
+\begin{gather*}
+\calC_{+-}:=\pi_{12}^{\circ*}(\crXp) \otimes \pi_{23}^{\circ*}( \crXn) =
+\begin{bmatrix}
+\xmo & \yo - \yt\exaoo^2 & \theta_1
+\\
+2\xz \exaoo + \xo\exato & \exato\yt & \theta_2
+\\
+\xmo' & \yt - \yh\exboo^2 & \theta_3
+\\
+2\xz' \exboo + \xo'\exbto & \exbto\yh & \theta_4
+\end{bmatrix}'
+%\brhsh{0}{-1}{-1},
+\\
+\dlto\theta_1 = -2\exaoo\theta_2,\qquad
+\dltt\theta_3 =-2\exboo\theta_4,
+\end{gather*}
+ we used a shortcut notation $[-]' = [-]\brhsh{0}{-1}{-1}$, and $ [-]\brhsh{0}{-1}{-1}$ stands for the shift of the action of the torus $(\CC^*)^3=T^{(1)}\times T^{(2)}\times T^{(3)}$.
+%Note the relation
+%\begin{equation}
+%2\xz' \exboo + \xo'\exbto =
+%-\xmo(\exboo\exaoo\exaot+\excoo\exaot)
+%+\excto(2\xz\exaot + \xo\exatt) + \exboo\exatt(2\xz\exaoo + \xo\exato).
+%\end{equation}
+%
+%where $\xX'=\Adv{\gxot^{-1}}\xX$:
+%\begin{align}
+%\xmo' &=
+%-2\exaoo \exato \xz - \exato^2\xo + \exaoo^2\xmo
+%%-2 a11 a21 x0 - a21^2 x1 + a11^2 xm1
+%\\
+%\xz' & = (\exaot\exato + \exaoo\exatt)\xz + \exato\exatt\xo - \exaoo\exaot\xmo, &
+%\xo' & = 2\exaot\exatt\xz + \exatt^2 \xo - \exaot^2 \xmo.
+%\end{align}
+%so that
+%\begin{equation}
+%2\xz' \exboo + \xo'\exbto =
+%-\xmo(\exboo\exaoo\exaot+\excoo\exaot)
+%+\excto(2\xz\exaot + \xo\exatt) + \exboo\exatt(2\xz\exaoo + \xo\exato).
+%\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\begin{equation}
+%\crXp * \crXp =
+%\begin{bmatrix}
+%\xmo & \yo - \yt\exaoo^2 & \theta_1
+%\\
+%2\xz \exaoo + \xo\exato & \exato\yt & \theta_2
+%\\
+%\xmo' & \yt - \yh\exboo^2 & \theta_3
+%\\
+%-\xmo(\exboo\exaoo\exaot+\excoo\exaot)
+%2\xz' \exboo + \xo'\exbto & \exbto\yh & \theta_4
+%\end{bmatrix}
+%\end{equation}
+
+
+Next we get rid of $\yt$, that is, we need to find
+a matrix factorization on $\frg\times G\times \frn$ that is homotopy equivalent to $\calC_{+-}$ as
+the matrix factorization over $\pi_{13}^{\circ *}(\CC[\calX_2^\circ])$. We use the row transformations together with the contraction of the injective differential to do that. The result of the row transformation is the LHS of the equation below:
+\begin{equation*}%\calC_{+-} =
+\begin{bmatrix}
+\xmo & \yo - \yh\exaoo^2\exboo^2 & \theta'_1
+\\
+2\xz \exaoo + \xo\exato & \exato\exboo^2\yh & \theta'_2
+\\
+0 & \yt - \yh\exboo^2 & \theta_3
+\\
+2\xz' \exboo + \xo'\exbto & \exbto\yh & \theta_4
+\end{bmatrix}' \sim
+\begin{bmatrix}
+\xmo & \yo - \yh\exaoo^2\exboo^2 & \theta'_1
+\\
+2\xz \exaoo + \xo\exato & \exato\exboo^2\yh & \theta'_2
+\\
+2\xz' \exboo + \xo'\exbto & \exbto\yh & \theta_4
+\end{bmatrix}',
+\end{equation*}
+where
+\begin{align*}
+\theta'_1 & = \theta_1 +\exaoo^2\theta_3, &
+\theta'_2 & = \theta_2 - \exato\theta_3,
+\end{align*}
+so that
+\begin{align*}
+\dlto \theta'_1 &= -2\exaoo\theta'_2,
+&
+\dltt\theta'_1 & = -2\exboo\exaoo^2\theta_4,&
+\dltt\theta'_2 =  2\exboo\exato\theta_4.
+\end{align*}
+After performing two row operations with the help of the relation
+\begin{equation*}
+2\xz' \exboo + \xo'\exbto =
+-\xmo(\exboo\exaoo\exaot+\excoo\exaot)
++\excto(2\xz\exaot + \xo\exatt) + \exboo\exatt(2\xz\exaoo + \xo\exato).
+\end{equation*}
+we find
+\begin{equation*}
+\calC_{+-} \sim
+\begin{bmatrix}
+\xmo & \yo - \yh\excoo^2 & \theta''_1
+\\
+2\xz \exaoo + \xo\exato & \excto\exboo\yh & \theta''_2
+\\
+(2\xz\exaot + \xo\exatt)\excto & \exbto\yh & \theta_4
+\end{bmatrix}'
+=
+\begin{bmatrix}
+\xmo & \yo - \yh\excoo^2 & \theta''_1
+\\
+\txz & \excto\exboo\yh & \theta''_2
+\\
+\ttxz\,\excto & \exbto\yh & \theta_4
+\end{bmatrix}'
+\end{equation*}
+where
+\begin{align*}
+\theta''_1&=\theta'_1-(\exboo\exaoo\exaot+\excoo\exaot)\theta_4
+,&
+\theta''_2&=\theta'_2 +\exatt \exboo\theta_4,
+\end{align*}
+so that
+\begin{align}\label{eq: diff CE twoline}
+\dlto\theta_1'' & = -2\exaoo\theta_2'' - 2 \exaot\excto\theta_4, &
+\dltt\theta_2'' & = \excto \theta_4.
+\end{align}
+
+
+
+
+
+
+
+
+The Borel group $B^{(2)}$ acts trivially on the first line of the last matrix factorization thus to complete our computation of $\calC_+\star\calC_-$ we
+  need to analyze the complex composed of the last two lines of the above Koszul complex:
+
+$$
+ C=\begin{bmatrix}
+\txz & \excto\exboo\yh & \theta''_2
+\\
+\ttxz\,\excto & \exbto\yh & \theta_4
+\end{bmatrix}
+$$
+
+More precisely, we need to study the $\CC^*$-invariant part of the complex $\CE_\frn^{(2)}(C)$. First let us notice that the ring $R:=\CC[\calXr_3]$ factors as
+$R'\times \bar{\pi}_{13}^*(\CC[\calXr_2])$ where $R'=\CC[G]$ and the second factor is $B^{(2)}$-invariant and thus  $\CE_\frn^{(2)}(C)=\CE_\frn^{(2)}(C')\otimes \bar{\pi}_{13}(\calXr_2)$
+where $C'$ is the matrix factorization $C$ consider as the matrix factorization over $R'$.
+Let us depict the complex  $\CE_\frn^{(2)}(C')^{T^{(2)}}$ below
+
+$$
+\begin{tikzcd}[row sep=scriptsize, column sep=scriptsize]
+&\left[ \theta''_2;0\right]\arrow[dl] \arrow[rr,shift left=0.5ex] \arrow[dd, dashed, two heads] & & \left[1;1\right] \arrow[dl] \arrow[dd, dashed,blue]\arrow[ll,shift left=0.5ex,blue] \\
+\left[\theta''_2\theta_4;1\right]\arrow[ur, shift left=1ex,red]  \arrow[dd, dashed, red] & & \left[\theta_4;2\right] \arrow[ur,shift right=1ex]\\
+& \left[\theta''_2;-2\right] e^* \arrow[dl] \arrow[rr, shift left=0.5ex] &  & \left[1;-1\right] e^* \arrow[dl]\arrow[ll, shift left=0.5ex] \\
+\left[\theta''_2\theta_4;-1\right]e^* \arrow[ur,shift right=1ex] \arrow[rr, shift left=0.5ex] & & \left[\theta_4,0\right]e^*\arrow[ur, shift right=1ex, blue]
+\arrow[ll, shift left=0.5ex,red]\\
+ \arrow[from=2-3, to=4-3, crossing over, dashed, hook]
+\arrow[to=4-3, from=1-2, crossing over,dashed,green]
+\arrow[from=2-1, to=2-3, shift left=0.5ex,crossing over]
+\arrow[to=2-1, from=2-3, shift left=0.5ex,crossing over]
+\end{tikzcd}
+$$
+
+
+% \includegraphics
+% %[trim=80mm 0mm 0mm 0mm,scale=0.5]
+% [trim=80mm 0mm 0mm 0mm,scale=0.5, width=7in,height=2.2in]
+% %,natwidth=610,natheight=642]
+% {dia3a.eps}
+
+where $e^*$ is the basis of $\frn^*=\Hom(\frn,\CC)$ and  $[\alpha;k]$ stands for $R[k]\alpha$ which  is the part of the ring of $\CC^*$ weight $k$ . In the picture the dashed arrows are the Chevalley-Eilenberg  differentials for $\cohog{*}{\frn,\bullet}$.
+
+Note that $\cohog{*}{\frb,R\langle 1\rangle}=0$ hence the blue and red dashed arrows in the diagram are isomorphisms and we can contract them but some new morphisms would appear after we perform the contraction.
+
+Indeed, if we contract red  dashed arrow we obtain four correction morphisms. The first correction morphism $d_1$ is obtained by following blue arrows (dashed arrow in reverse direction) starting at $R[0]\theta_4 e^*$ and ending at $R[0]\theta''_2$:
+$$d_1=b_{21}y_3\delta^{-1}_2(2x_0a_{11}+x_1a_{21})=b_{21}y_3(2x_0a_{12}+x_1a_{22}).$$
+Thus we obtained the differential that goes in the direction opposite of the diagonal green dashed  arrow.
+The another corrections differentials have the following origins and destinations:
+$$d_2: R[0]\theta_4e^*\to R[2]\theta_4,\quad d_3: R[-2]\theta''_2e^*\to R[0]\theta''_2,\quad d_4: R[-2]\theta''_2e^*\to R[2]\theta_4.$$
+
+Similarly, contraction of the blue dashed arrow results yields four correction morphisms. The first correction morphism $d_5$ is obtained by following red arrows (dashed arrow in reverse direction) starting at at $R[0]\theta_4 e^*$ and ending at $R[0]\theta''_2$:
+$$d_5=(2x_0a_{11}+x_1a_{21})\delta_2^{-1}(b_{21}y_3)=b_{11}y_3(2x_0a_{11}+x_1a_{21}).$$
+Thus we obtained another differential that goes in the direction opposite of the direction of diagonal dashed green arrow.
+The another corrections differentials have the following origins and destinations:
+$$d_6: R[0]\theta_4e^*\to R[2]\theta_4,\quad d_7: R[-2]\theta''_2e^*\to R[0]\theta''_2,\quad d_8: R[-2]\theta''_2e^*\to R[2]\theta_4.$$
+
+Finally, let us notice that since $\cohog{0}{\frb,R\langle 2\rangle}=\cohog{1}{\frb,R}=0$,   $\cohog{1}{\frb,R\langle 2\rangle}=\cohog{0}{\frb,R}=\CC[c,x,y]$ we see that Chevalley-Eilenberg differential: $d_{10}:R[2]\theta_4\to R[0]\theta_4 e^*$ is
+injective and Chevalley-Eilenberg differential: $d_{11}:R[0]\theta''_2\to R[-2]\theta''_2 e^*$ is surjective. Thus we can perform contraction along these differentials and obtain two term complex consisting of   $\cohog{1}{\frb,R\langle 2\rangle}=\CC[c,x,y]$,
+$\cohog{0}{\frb,R}=\CC[c,x,y]$ and differentials between them. Let us point out that the differentials $d_2,d_3,d_4,d_6,d_7,d_9$ do not result in any correction differential after the contraction since none of these differentials ends on the
+target of the arrows $d_{10},d_{11}$.
+
+Thus the only differentials in our final complex are the following. The differential that starts at $\cohog{1}{\frb,R\langle 2\rangle}$ and ends at $\cohog{0}{\frb,R}$ is the sum of $d_2$ and $d_5$:
+$$d_2+d_5=y_3(2x_0c_{11}+x_1c_{21}).$$
+The differential going in the reverse direction is the green arrow differential caused by (\ref{eq: diff CE twoline}) that is it is just a multiplication by $c_{21}$. Thus
+we have shown that
+$$\CE_{\frn^{(2)}}(\calC_{+-})^{T^{(2)}}\sim \calC_\parallel.$$
+
+
+
+\section{Three strands and two crossings}\label{sec: three str 2}
+In this section we compute explicitly the matrix factorizations $\calC_1\bar{\star}\calC_2$ and $\calC_2\bar{\star}\calC_1$. Both of these matrix factorizations
+turn out to be Koszul matrix factorizations and we start with explanations for the equations defining these Koszul factorizations. Then we proceed with
+computations of the convolution.
+
+\subsection{A geometric interpretation for the matrix factorization}
+Let us fix notations:
+$$X=\begin{bmatrix} \SymbolPrint{x_{11}}& \SymbolPrint{x_{12}}& \SymbolPrint{x_{13}}\\ 0&
+  \SymbolPrint{x_{22}}& \SymbolPrint{x_{23}}\\ 0& 0& \SymbolPrint{x_{33}}\end{bmatrix},\quad
+a=\begin{bmatrix} a_{11}&a_{12}&\SymbolPrint{a_{13}}\\a_{21}&a_{22}&\SymbolPrint{a_{23}}\\ \SymbolPrint{a_{31}}&\SymbolPrint{a_{32}}&\SymbolPrint{a_{33}}\end{bmatrix}$$
+We assume in this section that all group elements have determinant $1$.
+
+\begin{proposition}\label{prop: geom 3 cross MF} If the the  following equations hold
+\begin{gather}
+\exaho = 0
+\label{eq: eq.rl21}
+\\
+\label{eq: eq.rl22}
+ (\xoo - \xtt) \exaoo + \xot\exato = 0
+ \\
+ \label{eq: eq.rl23}
+ \def\aiv#1#2{ (a^{-1})_{#1#2}}
+\def\aioo{\aiv{1}{1}}
+\def\aiot{\aiv{1}{2}}
+\def\aioh{\aiv{1}{3}}
+\def\aito{\aiv{2}{1}}
+\def\aitt{\aiv{2}{2}}
+\def\aith{\aiv{2}{3}}
+\def\aiho{\aiv{3}{1}}
+\def\aiht{\aiv{3}{2}}
+\def\aihh{\aiv{3}{3}}
+\aihh(\xoo-\xhh) -\aiht\xth -\aiho\xoh=0.
+ \end{gather}
+then
+$$ \Ad^{-1}_a(X)\in \frb.$$
+
+\end{proposition}
+\begin{proof}
+The first two equations (\ref{eq: eq.rl21},\ref{eq: eq.rl22}) imply
+$((X-x_{22}\mathrm{I}_3)a)_{\bullet 1}=0$ and hence
+\begin{equation*}
+(a^{-1}(X-x_{22}\mathrm{I}_3)a)_{\bullet 1}=0.
+\end{equation*}
+%Thus the first two
+%equations imply that $\Ad_a^{-1}(X)_{i 1}=0$ for $i=2,3$.
+
+The equation $(a^{-1}(X-x_{11}\mathrm{I}_3))_{3\bullet}=0$ is equivalent to the
+system consisting of the equation (\ref{eq: eq.rl23}) and  equation:
+\begin{equation}\label{eq: eq aux}
+ (a^{-1})_{31}x_{12}+(a^{-1})_{32}(x_{22}-x_{11})=0.
+\end{equation}
+Now let us observe that if $a_{31}=0$ then $(a^{-1})_{31}=a_{12}a_{32}$ and $(a^{-1})_{32}=-a_{11}a_{32}$ thus
+the equation (\ref{eq: eq aux}) is equal to $a_{32}$ times (\ref{eq: eq.rl22}) modulo $a_{31}$ and the statement follows.
+\end{proof}
+
+Let us denote the LHS of (\ref{eq: eq.rl22}) by $f$ and LHS of (\ref{eq: eq.rl23}) by $g$.
+
+\begin{proposition} The elements $a_{31},f,g$ form  a regular sequence in $\CC[\frb\times G]$.
+\end{proposition}
+\begin{proof}
+We use the Bruhat cover of the group to show it.
+Indeed, if $a_{31}=0$ then either $a_{11}\ne 0$ or $a_{21}\ne 0$. Let's treat the case $a_{11}\ne 0$ first.
+then either $(a^{-1})_{32}\ne 0$ and
+$a_{31}, f/a_{11}, g/(a^{-1})_{32}$ is regular
+or $(a^{-1})_{33}\ne 0$ and $a_{31}, f/a_{11}, g/(a^{-1})_{33}$ is regular.
+The second case $a_{21}\ne 0$ is analogous since then either $(a^{-1})_{31}\ne 0$ and
+$a_{31}, f/a_{21}, g/(a^{-1})_{31}$ is regular or $(a^{-1})_{33}\ne 0$ and
+$a_{31}, f/a_{21}, g/(a^{-1})_{33}$ is regular. Since we show regularity in each affine chart the statement follows.
+\end{proof}
+
+Let us point out that the proof of the proposition~\ref{prop: geom 3 cross MF}  implies that the ideal $I'_{12}=(a_{31},f,g)\subset \CC[\frg\times G]$  defines the subvariety
+that consists of pairs $(X,g)$ such that
+$$ \Ad_g(X)-\textup{diag}(X_{22},X_{33},X_{11})\in \frn.$$
+The later matrix equation if $B^2$-invariant hence the ideal $I'_{12}$ is $B^2$-invariant too.
+
+The ideal $I_{12}=(a_{31},f,g)\subset \CC[\calXr_2]$ contains the potential $\Wr$  and because of regularity of the sequence  and of $B^2$-invariance we have, according to the Lemma~\ref{lem: ext MF eq}
+the following well-defined matrix factorization
+$$\bcalC_{12}=\mathrm{K}^{\Wr}(I_{12})\in \MF_{B^2}(\calXr_2,\Wr).$$
+
+Indeed, the regularity of \((a_{31},f,g)\) implies that the Koszul complex \(\mathrm{K}(a_{31},f,g)\) is homotopic to \(\CC[\calXr_2]/I_{12}\) supported in the zeroth homological degree. Thus the conditions of
+the Lemma~\ref{lem: ext MF eq} are satisfied and there is a unique matrix factorization \(\mathrm{K}^{\Wr}(I_{12})\) that extends \(\mathrm{K}(a_{31},f,g)\).
+
+Let us define the following elements of $\CC[\frb\times G]$:
+$$ h=(a^{-1})_{32} x_{23}+(a^{-1})_{33}(x_{33}-x_{22}),\quad k=a_{11}(x_{11}-x_{33})+a_{21}x_{12}+a_{31}x_{13}.$$
+
+Proof of the proposition below is parallel to the propositions above and we leave them for reader to check
+\begin{proposition}We have
+\begin{enumerate}
+\item The conditions $(a^{-1})_{31}=0, h=0, k=0$ imply $\Ad^{-1}_{a}(X)\in \frb$.
+\item The sequence $(a^{-1})_{31}, h, k$ is regular in $\CC[\frb\times G]$.
+\end{enumerate}
+\end{proposition}
+
+Let $I_{21}=((a^{-1})_{31},h,k)\subset \CC[\calXr_2]$ the ideal.
+Then analogously to the previous case we can define complex
+$$ \bcalC_{21}:=\mathrm{K}^{\Wr}(I_{21})\in \MF_{B^2}(\calXr_2,\Wr).$$
+
+The main result of this section is the formula for the matrix factorization for the braid on three strands with two crossings:
+\begin{lemma} \label{lem: two cross}We have
+$$ \bcalC^{(1)}_+\bar{\star}\bcalC^{(2)}_+=\bcalC_{12},\quad \bcalC^{(2)}_+\bar{\star}\bcalC^{(1)}_-=\bcalC_{21}.$$
+\end{lemma}
+
+
+% \subsection{Conditions for cyclic permutations}
+% For $\sigma = \bigl(\begin{smallmatrix} 1 & 2 & 3\\ 2 & 3 & 1\end{smallmatrix}\bigr)$ we have three conditions. The first two conditions are that the first column of the matrix
+% \[
+% \xgot =\xbmtr{\exaoo & \exaot & \exaoh\\ \exato & \exatt & \exath \\ \exaho & \exaht & \exahh}
+% \]
+% is the second eigenvector of $\xX$:
+% \begin{equation}
+% \label{eq.twrel}
+%\exaho = 0,\qquad (\xoo - \xtt) \exaoo + \xot\exato = 0.
+%\end{equation}
+%The second condition is that the third eigenvector of $\xX$ is a linear combination of the first two columns of $\xgot$, that is, there exists a number $\alpha$ such that
+%\begin{equation*}
+%\xbmtr{\xoo-\xhh & \xot & \xoh \\ 0 & \xtt-\xhh & \xth }
+%\left(\alpha\xbmtr{\exaoo \\ \exato \\ 0} + \xbmtr{\exaot \\ \exatt \\ \exaht} \right) = 0.
+%\end{equation*}
+%that is, a system of two linear equations on $\alpha_1$ and $\alpha_2$:
+%\begin{align}
+%\alpha_1\bigl( (\xoo-\xhh) \exaoo + \xot \exato\ \bigr)  +
+%\alpha_2\bigl((\xoo-\xhh) \exaot + \xot \exatt + \xoh \exaht\bigr) & = 0
+%\\
+%\alpha_1\bigl( (\xtt-\xhh)\exato \bigr) + \alpha_2\bigl((\xtt-\xhh)\exatt + \xth \exaht\bigr) & =0
+%\end{align}
+%should have a non-trivial solution. The first equation can be simplified with the help of the second equation of \eqref{eq.twrel}:
+%\begin{align}
+%\alpha_1\bigl( (\xtt-\xhh) \exaoo \bigr)  +
+%\alpha_2\bigl((\xoo-\xhh) \exaot + \xot \exatt + \xoh \exaht\bigr) & = 0
+%\\
+%\alpha_1\bigl( (\xtt-\xhh)\exato \bigr) + \alpha_2\bigl((\xtt-\xhh)\exatt + \xth \exaht\bigr) & =0
+%\end{align}
+%so that if we absorb $(\xtt-\xhh)$ into $\alpha_1$, then the condition is that the determinant is zero:
+%\[
+%\exaoo \bigl((\xtt-\xhh)\exatt + \xth\exaht\bigr) - \exato\bigl((\xoo-\xhh) \exaot + \xot \exatt + \xoh \exaht\bigr) = 0.
+%\]
+%Thus overall we have three relations:
+%\begin{gather}
+%\exaho = 0
+%\label{eq.rl21}
+%\\
+%\label{eq.rl22}
+ %(\xoo - \xtt) \exaoo + \xot\exato = 0
+ %\\
+ %\label{eq.rl23}
+ %\exaoo \bigl((\xtt-\xhh)\exatt + \xth\exaht\bigr) - \exato\bigl((\xoo-\xhh) \exaot + \xot \exatt + \xoh \exaht\bigr) = 0.
+%\end{gather}
+%If the second relation is multiplied by $\exatt$ and added to the third relation, then we get
+%\begin{gather}
+%\exaho = 0
+%\label{eq.rl21}
+%\\
+%\label{eq.rl22}
+% (\xoo - \xtt) \exaoo + \xot\exato = 0
+ %\\
+ %\label{eq.rl23}
+ %(\xoo-\xhh)(\exaoo\exatt-\exaot\exato) + \exaht(\exaoo\xth-\exato\xoh)=0.
+% %\exaoo \bigl((\xtt-\xhh)\exatt + \xth\exaht\bigr) - \exato\bigl((\xoo-\xhh) \exaot + \xot \exatt + \xoh \exaht\bigr) = 0.
+%\end{gather}
+%The last one can be equivalently presented as
+%\def\aiv#1#2{ (a^{-1})_{#1#2}}
+%\def\aioo{\aiv{1}{1}}
+%\def\aiot{\aiv{1}{2}}
+%\def\aioh{\aiv{1}{3}}
+%\def\aito{\aiv{2}{1}}
+%\def\aitt{\aiv{2}{2}}
+%\def\aith{\aiv{2}{3}}
+%\def\aiho{\aiv{3}{1}}
+%\def\aiht{\aiv{3}{2}}
+%\def\aihh{\aiv{3}{3}}
+%\[
+%\aihh(\xoo-\xhh) -\aiht\xth -\aiho\xoh=0.
+%\]
+\subsection{Proof of Lemma~\ref{lem: two cross}}
+We present only a proof for the first equation. The second equation is obtained from the first by applying the involution $D$.
+
+Since $\bcalC_+^{(2)}=\Indb_{1,2}(\bcalC_+)$ we can use the proposition~\ref{prop: small prod 2} and the corrections for the $B_2$ equivariant structure from
+the subsection~\ref{ssec: conv rk 1} to proceed with our computation of  $\bcalC_+^{(1)}\bar{\star}\bcalC_+^{(2)}$.
+
+First we introduce the matrices
+\begin{align*}
+\xgot & = \xbmtr{\exaoo & \exaot & \exaoh\\ \exato & \exatt & \exath \\ \exaho & \exaht & \exahh}, &
+\xgth &= \xbmtr{ 1& 0 & 0 \\ 0 & \SymbolPrint{\exbtt} & \SymbolPrint{\exbth} \\ 0 & \SymbolPrint{\exbth} & \SymbolPrint{\exbhh}} &
+                                                                                                                         \xgoh & = \xbmtr{\SymbolPrint{\excoo} & \SymbolPrint{\excot} & \SymbolPrint{\excoh}\\
+  \SymbolPrint{\excto} & \SymbolPrint{\exctt} & \SymbolPrint{\excth} \\ \SymbolPrint{ \excho} & \SymbolPrint{\excht} & \SymbolPrint{\exchh}}.
+\end{align*}
+They satisfy the relation
+\[
+\xgoh = \xgot \xgth.
+\]
+Polynomials of the entries of the matrices  $a$, $c$, $X$ and $Y$ span the space of regular functions on the space $\calX_3(G_3,G_{2,3})$.
+
+
+By the proposition~\ref{prop: small prod 1} $\bcalC^{(1)}_+\bar{\star}\bcalC^{(2)}_+=
+\brpi_{13*}(\CE_{\frn^{(2)}_2}((\bar{\pi}^*_{12}\otimes_{B_2} \bar{\pi}^*_{23})( (\bar{\calC}_+^{(1)})\boxtimes\bcalC_+^{(2)})))$ where
+$$\brpi_{12}:\calXr_3(G_3,G_{2,3})\to \calXr_2(G_3),\quad \brpi_{23}: \calXr_3(G_3,G_{2,3})\to \calXr_2(G_2), $$
+$$\brpi_{13}:\calXr_3(G_3,G_{2,3})\to \calXr_2(G_3).$$
+
+
+
+We introduce the matrices
+\def\xtX{ \tilde{\xX}}
+\def\tXt{\xtX_2}
+\def\tXtp{\tXt^+}
+\def\tXtm{\tXt^-}
+\def\xtY{ \tilde{\xY} }
+\def\tYt{ \xtY_2 }
+\def\ty{ \tilde{y} }
+\begin{align*}
+\tXt & = \Adv{\xigot}\xX = ||\tx_{ij} ||, &
+\tYt& =  \Adv{\xgth} \xY = || \ty_{ij} ||.
+\end{align*}
+
+
+The tensor product $(\bar{\pi}_{12}\otimes_{B_2} \bar{\pi}_{23})^* (\bar{\calC}_+^{(1)}\boxtimes\bcalC_+^{(2)})$ in the above tensor product is the Koszul complex:
+\[ C_{12}=
+\xbmtr{
+a_{31}&*&\theta_0\\
+(\xoo-\xtt)\exaoo + \xot\exato & * &\theta_1
+\\
+\exaht & * &\theta_2
+\\
+(\txtt-\txhh)\exbtt + \txth\exbht & * &\theta_3
+}
+%=
+%\xbmtr{
+%(\xoo-\xtt)\excoo + \xot\excto & * &\theta_1
+%\\
+%\exbhh \excht - \exbht \exchh & * &\theta_2
+%\\
+%(\txtt-\txhh)\exbtt + \txth\exbht & * &\theta_3
+%}
+\]
+
+
+
+Since
+\[
+\xigth =
+\xbmtr{ 1 & 0 & 0 \\ 0 & \exbhh & -\exbth \\ 0 & -\exbth & \exbtt},
+\]
+it turns out that $\exaho = \excho$. Thus we can use the row operations to remove $ \excho$ from the other rows of $C_{12}$. After completing the process we obtain
+the matrix factorization $C'_{12}$ with last last three rows equal to the rows of $C_{12}$ with $c_{31}=a_{31}=0$ and the first row  matching with
+the row of
+$\calC_{12}$ that contains the relation~\eqref{eq: eq.rl21}. The last row is $B^{(2)}_2$ invariant  hence for our computation of $\CE_{\frn^{(2)}_2}(C_{12})$ we only need to analyze the part of the complex $C'_{12}$ that consists of
+the last three lines:
+\[
+C''_{12}=\xbmtr{
+(\xoo-\xtt)\exaoo + \xot\exato & * &\theta_1
+\\
+\exaht & * &\theta_2
+\\
+(\txtt-\txhh)\exbtt + \txth\exbht & * &\theta_3
+}
+=
+\xbmtr{
+(\xoo-\xtt)\excoo + \xot\excto & * &\theta_1
+\\
+\exbhh \excht - \exbht \exchh & * &\theta_2
+\\
+(\txtt-\txhh)\exbtt + \txth\exbht & * &\theta_3
+}
+\]
+The first two rows come from the (1,2)-crossing and the second row comes from the (2,3)-crossing.
+It turns out that the first row of $C''_{12}$  matches the  row of $\calC_{12}$ that contains the relation~\eqref{eq: eq.rl22} and it is $B_2^{(2)}$-invariant.
+So complete our computation of $\CE_{\frn_2^{(2)}}(C_{12})^{T^{(2)}}$ we have to simplify only the remaining two rows:
+\[
+C=\xbmtr{
+\exbhh \excht - \exbht \exchh & * &\theta_2
+\\
+(\txtt-\txhh)\exbtt + \txth\exbht & * &\theta_3
+} =
+\xbmtr{
+\kappa_2 & * &\theta_2
+\\
+\kappa_3 & * &\theta_3
+}
+\]
+where
+\[
+\kappa_2 = \exaht = \exbhh \excht - \exbht \exchh,\qquad
+\kappa_3 = (\txtt-\txhh)\exbtt + \txth\exbht.
+\]
+
+To write out our Chevalley-Eilenberg complex we need to explain the $B_2$-equivariant structure on $C$ and it is done below.
+Denote the elements of Borel group $B^{(2)}_2$  as
+\[
+\brht = \xbmtr{
+1 & 0 & 0
+\\
+0 & \ybettt & \ybetth
+\\
+0 & 0 & \ybettt^{-1}%\ybethh
+}
+\]
+Its action is
+\[
+\xgot\mapsto \xgot\briht,\qquad
+\xgth\mapsto \brht\xgth,\qquad
+\tXt\mapsto \Adv{\brht} \tXt.
+\]
+The weights of the action of $diag(0,1,-1)\in \Lie(B_2^{(2)})$  on  the \rhs elements in the Koszul rows of $C$ are -1 and 1 respectively, hence the weights of $\theta_2$ and $\theta_3$ are 1 and -1.
+
+It remains to establish the action of $\ybetth$ denoted by $\dltt$. One way to figure out this action is to use formulas (\ref{eq: pi12Bpi23 1}) and (\ref{eq: pi12Bpi23 2}) to fix the
+equivariant structure on $C_{12}$ and then follow up the changes of this equivariant structure as do our reduction from $C_{12}$ to $C$. However, we choose a different method:
+we just show that there is a unique strongly $B_2$-equivariant structure on $C$ and compute it explicitly.
+
+The element $\kappa_2$ is $\dltt$-invariant. The variation $\dltt\kappa_3$ can be computed by brute force, but since we are interested in it being proportional to the second element, we use an indirect computation. Present $\tXt$ as a sum of the upper-triangular and strictly lower-triangular parts:
+\[
+\tXt = \tilde{X}_{2,+} + \tilde{X}_{2,--}.
+\]
+Note that
+\[
+\kappa_3\exbht = -(\Adv{\xigth}\tilde{X}_{2,+})_{32}.
+\]
+while $\dltt\exbht=0$, so
+\[
+\dltt\kappa_3 = -\dltt(\Adv{\xigth}\tilde{X}_{2,+})_{32}/\exbht.
+\]
+The matrix
+\[
+\Adv{\xigth}\tXt = \Adv{\xigth}\Adv{\xigot}\tilde{X}_1 = \Adv{\xigoh}\tilde{X}_1
+\]
+is Borel-invariant, hence
+\[
+\dltt\kappa_3 = \dltt(\Adv{\xigth}\tilde{X}_{2,--})_{32}/\exbht.
+\]
+A direct computation shows that
+\[
+(\Adv{\xigth}\tilde{X}_{2,--})_{32} = \exbtt^2 (\tilde{X}_{2,--})_{32} = \exbtt^2\tx_{32}.
+\]
+The formulas for action of \(B^{(2)}\) imply  that $\dltt\tx_{32}=0$, while $\dltt\exbtt=\exbht$, so
+\[
+\dltt\kappa_3 = 2\tx_{32}\exbtt,
+\]
+while
+\begin{multline*}
+\tx_{32} = \exaht\left(
+  (\xoo - \xtt)\exaot\exato + \exato\exatt\xot\right.\\
+\left.+ (\xhh-\xtt)(\exaoo\exatt-\exaot\exato) + \exaht
+(\exato\xoh -\exaoo\xth)\right)
+\end{multline*}
+Since the Koszul differential $\kappa_2\theta_2 + \kappa_3\theta_3$ must remain Borel-invariant, it follows that
+\begin{multline}
+\label{eq:varxta}
+\dltt\theta_2 = -2\exbtt\left(
+(\xoo - \xtt)\exaot\exato + \exato\exatt\xot\right.\\
+\left. + (\xhh-\xtt)(\exaoo\exatt-\exaot\exato) + \exaht
+(\exato\xoh -\exaoo\xth)\right)\theta_3
+\end{multline}
+\def\xith{\xi_{23}}
+
+
+Similarly to the case of two strands we have tensor product decomposition $R=\calXr_3=R'\otimes \bar{\pi}^*_{13}(\CC[\calXr_2])$ where $R'=\CC[G_{2,3}]=\CC[G_2]$ is the factor with non-trivial $B^{(2)}_2$-action.
+Thus we can use the equality  $\CE_{\frn^{(2)}_2}(C)^{T^{(2)}}=\CE_{\frn^{(2)}_2}(C')^{T^{(2)}}\otimes \bar{\pi}_{13}^*(\CC[\calX_3])$ were $C'$ is the complex $C$ considered as the matrix factorization of  $R'$-modules.
+
+
+
+The complex  of $T^{(2)}$-invariant part of the complex $\CE_{\frn_2^{(2)}}(C')$ has the following shape:
+
+
+$$
+\begin{tikzcd}[row sep=scriptsize, column sep=scriptsize]
+&\left[ \theta_2;0\right]\arrow[dl] \arrow[rr,shift left=0.5ex] \arrow[dd, dashed, two heads] & & \left[1;1\right] \arrow[dl] \arrow[dd, dashed,blue]\arrow[ll,shift left=0.5ex,blue] \\
+\left[\theta_2\theta_3;1\right]\arrow[ur, shift left=1ex,red]  \arrow[dd, dashed, red] & & \left[\theta_3;2\right] \arrow[ur,shift right=1ex]\\
+& \left[\theta_2;-2\right] e^* \arrow[dl] \arrow[rr, shift left=0.5ex] &  & \left[1;-1\right] e^* \arrow[dl]\arrow[ll, shift left=0.5ex] \\
+\left[\theta_2\theta_3;-1\right]e^* \arrow[ur,shift right=1ex] \arrow[rr, shift left=0.5ex] & & \left[\theta_3,0\right]e^*\arrow[ur, shift right=1ex, blue]
+\arrow[ll, shift left=0.5ex,red]\\
+\arrow[to=4-3, from=2-3, crossing over, dashed, hook]\\
+\arrow[to=4-3, from=1-2, dashed, crossing over,green]
+\arrow[from=2-1, to=2-3, shift left=0.5ex,crossing over]
+\arrow[to=2-1, from=2-3, shift left=0.5ex,crossing over]
+\end{tikzcd}
+$$
+
+
+% \includegraphics[trim=20mm 0mm 0mm 0mm,scale=0.5,width=7in,height=2.2in]
+% %,natwidth=610,natheight=642]
+% {dia4a.eps}
+% where $e^*$ is the basis of $\frn^*=\Hom(\frn,\CC)$, $R=\CC[\calX_2]$ and $R[k]$ is the part of the ring of $\CC^*$ weight $k$ . In the picture the dashed arrows are the Eilenberg-Chevalley  differentials for $\cohog{*}{\frn,\bullet}$.
+% The green arrow is the differential (\ref{eq:varxta}).
+
+The shape of the complex is identical to the shape of the complex from the proof of the theorem~\ref{thm: two strands}. Thus we can perform the same sequence of contractions as in the proof of
+the theorem~\ref{thm: two strands}. As we have seen in the proof of theorem~\ref{thm: two strands},
+at the end of our contraction process, all vertices of the complex except two connected by the green dashed arrow can be contracted to $0$ and the vertices $R[0]\theta_3 e_3^*$ to $H^1(\mathbb{P}^1,\calO(-2))\otimes \brpi_{13}^*(\CC[\calX_2])$,
+$R[0]\theta_2$ to $H^0(\mathbb{P}^1,\calO)\otimes \brpi_{13}^*(\CC[\calX_2]).$
+
+Thus at the end we obtain a two term Koszul complex and as we have seen previously all of the new correction differentials
+in the final complex will be running in the direction opposite to the direction of the green arrow. Let's study the differential that induced by the green arrow in our final complex.
+
+
+
+ The target of our differential
+ is \(\textup{H}^1(\mathbb{P}^1,\calO(-2))\otimes \brpi_{13}^*(\CC[\calX_2])=\textup{H}^1_{\Lie}(\frn,R\langle -2\rangle)\otimes \brpi_{13}^*(\CC[\calX_2]),\) hence we can
+  replace the coefficients of the differential by the expressions that are homologous with respect to the differential $\dltt$. Below we take advantage of this observation.
+ Indeed,  note that
+\[
+\dltt\exbtt = \exbht,\qquad \dltt\exbth = \exbhh,
+\]
+so, first, $\dltt(\exbtt^2) = 2\exbtt\exbht$, hence $\exbtt\exbht$ is exact and, second, $\dltt(\exbtt\exbth) =
+\exbht\exbth + \exbtt\exbhh$, hence in view of $\exbtt\exbhh-\exbth\exbht=1$ we find $\exbtt\exbhh\sim \frac{1}{2}$. As a result,
+\def\shlf{\tfrac{1}{2}}
+\begin{equation}\label{eq:homoac}
+\exbtt \xbmtr{\exaoo & \exaot & \exaoh\\ \exato & \exatt & \exath \\ \exaho & \exaht & \exahh} =
+\xgoh\exbtt\xigth \sim\xgoh
+\xbmtr{1 & 0 & 0\\ 0 & \shlf & * \\ 0  & 0 & *} =
+\xbmtr{\excoo & \shlf\excot & * \\
+\excto & \shlf\exctt  & *\\
+\excho & \shlf\excht & *}
+\end{equation}
+Note that in the expression~\eqref{eq:varxta} each term has a product of an element from the first column and the second column of the matrix $\xgot$, also the first column of \(g_{13}=c\)
+is equal to the first column of \(g_{12}=a\). Thus we can combine the last observation with (\ref{eq:homoac}) to see that 
+ the differential induced by the green arrow
+is homologous to
+\[
+-\Bigl(
+(\xoo - \xtt)\excot\excto + \excto\exctt\xot + (\xhh-\xtt)(\excoo\exctt-\excot\excto) + \excht
+(\excto\xoh -\excoo\xth)\Bigr)
+\]
+
+Since this is the third condition of~\eqref{eq: eq.rl23} we have shown that the matrix factorization $\bcalC_+^{(1)}\bar{\star}\bcalC_+^{(2)}$ is actually an element of
+$\MF_{B^2}(\calXr_2,\Wr)$ and its positive part in the sense of Lemma~\ref{lem: ext MF eq}  is a Koszul complex for the regular sequence $(c_{31},f,g)$. Hence by the lemma~\ref{lem: uniq MF+eq}
+there is an isomorphism between $\bcalC_+^{(1)}\bar{\star}\bcalC_+^{(2)}$ and $\bcalC_{12}$.
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "FinalVerMF_2017_corrected.tex"
+%%% End:

@@ -5,7 +5,11 @@
   "file": "9911033v1.pdf",
   "sha256": "196c05d2e34195653ef31ee00f2c180e013cf06258baa3f4b8fde1a5a5a79592",
   "bytes": 293581,
-  "pages": 34
+  "pages": 34,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -89,7 +93,7 @@
   },
   {
    "level": 1,
-   "title": "(−δx(y) + 1",
+   "title": "(\u2212\u03b4x(y) + 1",
    "page": 7,
    "source": "inferred",
    "number": "4"
@@ -110,7 +114,7 @@
   },
   {
    "level": 1,
-   "title": "Let S ∈H 0(M,K m",
+   "title": "Let S \u2208H 0(M,K m",
    "page": 14,
    "source": "inferred",
    "number": "2"
@@ -124,7 +128,7 @@
   },
   {
    "level": 1,
-   "title": "In a neighborhood Ux of x, ϕ can be written as",
+   "title": "In a neighborhood Ux of x, \u03d5 can be written as",
    "page": 22,
    "source": "inferred",
    "number": "1"
@@ -145,7 +149,7 @@
   },
   {
    "level": 1,
-   "title": "There are decompositions U ′",
+   "title": "There are decompositions U \u2032",
    "page": 28,
    "source": "inferred",
    "number": "2"
@@ -159,7 +163,7 @@
   },
   {
    "level": 1,
-   "title": "(Ui|Cδj (Rj ),v 1j)Cδj (Rj ) = 0 for i ⁄=j, 1 ≤i,j ≤s;",
+   "title": "(Ui|C\u03b4j (Rj ),v 1j)C\u03b4j (Rj ) = 0 for i \u2044=j, 1 \u2264i,j \u2264s;",
    "page": 29,
    "source": "inferred",
    "number": "2"
@@ -235,9 +239,9 @@
    "n_words": 875
   },
   {
-   "id": "sec-006-4-δxy-1",
+   "id": "sec-006-4-\u03b4xy-1",
    "number": "4",
-   "title": "(−δx(y) + 1",
+   "title": "(\u2212\u03b4x(y) + 1",
    "level": 1,
    "page_start": 7,
    "page_end": 11,
@@ -267,7 +271,7 @@
   {
    "id": "sec-009-2-let-s-h-0mk-m",
    "number": "2",
-   "title": "Let S ∈H 0(M,K m",
+   "title": "Let S \u2208H 0(M,K m",
    "level": 1,
    "page_start": 14,
    "page_end": 17,
@@ -285,9 +289,9 @@
    "n_words": 1690
   },
   {
-   "id": "sec-011-1-in-a-neighborhood-ux-of-x-ϕ-can-be-written-as",
+   "id": "sec-011-1-in-a-neighborhood-ux-of-x-\u03d5-can-be-written-as",
    "number": "1",
-   "title": "In a neighborhood Ux of x, ϕ can be written as",
+   "title": "In a neighborhood Ux of x, \u03d5 can be written as",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
@@ -317,7 +321,7 @@
   {
    "id": "sec-014-2-there-are-decompositions-u",
    "number": "2",
-   "title": "There are decompositions U ′",
+   "title": "There are decompositions U \u2032",
    "level": 1,
    "page_start": 28,
    "page_end": 29,
@@ -335,9 +339,9 @@
    "n_words": 52
   },
   {
-   "id": "sec-016-2-uicδj-rj-v-1jcδj-rj-0-for-i-j-1-ij-s",
+   "id": "sec-016-2-uic\u03b4j-rj-v-1jc\u03b4j-rj-0-for-i-j-1-ij-s",
    "number": "2",
-   "title": "(Ui|Cδj (Rj ),v 1j)Cδj (Rj ) = 0 for i ⁄=j, 1 ≤i,j ≤s;",
+   "title": "(Ui|C\u03b4j (Rj ),v 1j)C\u03b4j (Rj ) = 0 for i \u2044=j, 1 \u2264i,j \u2264s;",
    "level": 1,
    "page_start": 29,
    "page_end": 34,
@@ -360,6 +364,126 @@
   "likely_scanned": false,
   "toc_entries": 19,
   "sections": 18,
-  "chars_total": 47955
+  "chars_total": 47955,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "s1.tex",
+   "tex_sections": 5,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introductions-1",
+     "title": "Introductions 1",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-2-a-lower-bound-estimate-4",
+     "title": "A lower bound estimate 4",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-3-a-counterexample-11",
+     "title": "A counterexample 11",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-4-partial-uniform-estimates-17",
+     "title": "Partial uniform estimates 17",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-5-the-uniform-corona-problem-24",
+     "title": "The uniform corona problem 24",
+     "prose_ratio": 0.566,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-2-a-lower-bound-estimate",
+     "title": "A lower bound estimate",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-4-\u03b4xy-1",
+     "title": "(\u2212\u03b4x(y) + 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-3-a-counterexample",
+     "title": "A counterexample",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-c-then-f-is-a",
+     "title": "Then f is a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-let-s-h-0mk-m",
+     "title": "Let S \u2208H 0(M,K m",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-4-partial-uniform-estimates",
+     "title": "Partial uniform estimates",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-1-in-a-neighborhood-ux-of-x-\u03d5-can-be-written-as",
+     "title": "In a neighborhood Ux of x, \u03d5 can be written as",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-2-there-is-a-constant-c13-such-that",
+     "title": "There is a constant C13 such that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-5-the-uniform-corona-problem",
+     "title": "The uniform corona problem",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-2-there-are-decompositions-u",
+     "title": "There are decompositions U \u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-3-by-54-and-55",
+     "title": "By (5.4) and (5.5),",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-2-uic\u03b4j-rj-v-1jc\u03b4j-rj-0-for-i-j-1-ij-s",
+     "title": "(Ui|C\u03b4j (Rj ),v 1j)C\u03b4j (Rj ) = 0 for i \u2044=j, 1 \u2264i,j \u2264s;",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-031",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-031",
   "kind": "prose",
   "title": "References",
   "pageStart": 120,
   "pageEnd": 123,
   "text": "../sections/sec-031-references.md",
-  "derivedFrom": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest",
-  "sourceDocument": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
   "provenance": "ingested"
 }

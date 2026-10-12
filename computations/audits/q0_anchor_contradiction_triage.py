@@ -69,7 +69,7 @@ for p in (str(HERE), str(COMPUTE), str(COMPUTE / "substrate")):
 import witness_constant_staleness as G  # noqa: E402
 from q0_producer_pin_classifier import classify, find_producer  # noqa: E402
 
-SKIP_PARTS = (".git", ".claude", "_deprecated", "node_modules")
+SKIP_PARTS = (".git", ".claude", "_deprecated", "fsh-guts", "node_modules")
 
 # A field whose NAME says it holds a muon or comparison value is not a
 # contradiction -- it is the producer documenting itself.

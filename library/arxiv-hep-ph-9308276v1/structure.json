@@ -5,7 +5,13 @@
   "file": "9308276v1.pdf",
   "sha256": "498931b15afb3f650b39794aa3624328e154dd4ae3ee83e68564ee4b11000aff",
   "bytes": 206018,
-  "pages": 24
+  "pages": 24,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,589 +21,640 @@
    "stamp_date": "14 Aug 1993"
   },
   "doi": null,
-  "title": "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs",
-  "authors_raw": "Maria J. Herrero \u2217 and Ester Ruiz Morales \u2020",
-  "abstract": "The most general chiral Lagrangian for electroweak interac tions with the complete set of SU (2)L \u00d7 U (1)Y invariant operators up to dimen- sion four is considered. The two-point and three-point func tions with external gauge \ufb01elds are derived from this e\ufb00ective chiral L agrangian to one-loop order in a generic R\u03be-gauge. The same set of Green\u2019s functions are paralelly studied in the renormalizable standard model to one-loop order, in a R\u03be-gauge and in the large Higgs mass limit. An appropri- ate set of matching conditions connecting the Green\u2019s funct ions of the two theories allows us to derive, systematically, the value s of the chi- ral Lagrangian coe\ufb03cients corresponding to the large Higgs mass limit of the standard model. These chiral parameters represent th e non- decoupling e\ufb00ects of a heavy Higgs particle and incorporate both the leading logarithmic dependence on MH and the next to leading constant contributions. Some phenomenological implications are al so discussed. FTUAM 93/24 July 1993 \u2217 e\u2013mail:herrero@vm1.sdi.uam.es \u2020e\u2013mail: meruiz@vm1.sdi.uam.es, meruiz@slacvm.bitnet 0",
+  "title": "arXiv:hep-ph/9308276v1 14 Aug 1993",
+  "authors_raw": "Maria J. Herrero\u2217and Ester Ruiz Morales\u2020",
+  "title_lines": [
+   "The Electroweak Chiral Lagrangian for the",
+   "Standard Model with a heavy Higgs"
+  ],
+  "abstract": "The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L \u00d7 U(1)Y invariant operators up to dimen- sion four is considered. The two-point and three-point functions with external gauge \ufb01elds are derived from this e\ufb00ective chiral Lagrangian to one-loop order in a generic R\u03be-gauge. The same set of Green\u2019s functions are paralelly studied in the renormalizable standard model to one-loop order, in a R\u03be-gauge and in the large Higgs mass limit. An appropri- ate set of matching conditions connecting the Green\u2019s functions of the two theories allows us to derive, systematically, the values of the chi- ral Lagrangian coe\ufb03cients corresponding to the large Higgs mass limit of the standard model. These chiral parameters represent the non- decoupling e\ufb00ects of a heavy Higgs particle and incorporate both the leading logarithmic dependence on MH and the next to leading constant contributions. Some phenomenological implications are also discussed. FTUAM 93/24 July 1993 \u2217e\u2013mail:herrero@vm1.sdi.uam.es \u2020e\u2013mail: meruiz@vm1.sdi.uam.es, meruiz@slacvm.bitnet 0",
   "docinfo": {
+   "Title": "arXiv:hep-ph/9308276v1  14 Aug 1993",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181020145000-04'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:hep-ph/9308276v1  14 Aug 1993"
+   "CreationDate": "D:20181020145000-04'00'"
+  },
+  "title_raw": "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-ph/9308276v1 14 Aug 1993",
+   "heading": "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs",
+   "text": "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "The electroweak chiral Lagrangian",
    "page": 3,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
-   "title": "B\u00b5 \u03c4 3. (2)",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u03c02\u03c41 \u2212 \u03c01\u03c42) +",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "T r",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "T r",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "B\u00b5\u03bdT r",
-   "page": 6,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "B\u00b5\u03bdT r (T [V \u00b5, V \u03bd])",
-   "page": 6,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The relation with Longhitano\u2019s notation is the following: a0 = g2\u03b21 ; a1 = g",
-   "page": 6,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "E\ufb00ective Lagrangian parameters for a heavy Higgs",
+   "title": "Effective Lagrangian parameters for a heavy Higgs",
    "page": 8,
    "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) = g\u20322 1",
-   "page": 12,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) = 1",
-   "page": 12,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) = 1",
-   "page": 12,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) = \u22121",
-   "page": 12,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) = 0 , \u03b4a 8 = 0",
-   "page": 12,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) = 0 , \u03b4a 9 = 0",
-   "page": 12,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) = \u22121",
-   "page": 12,
-   "source": "inferred",
-   "number": "11"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) = 0 , \u03b4a 12 = 0",
-   "page": 12,
-   "source": "inferred",
-   "number": "12"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) = 0 , \u03b4a 13 = 0",
-   "page": 12,
-   "source": "inferred",
-   "number": "13"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) = L",
-   "page": 13,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) \u2212 1",
-   "page": 13,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) \u2212 1",
-   "page": 13,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) = L",
-   "page": 14,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) + 1",
-   "page": 14,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) \u2212 a",
-   "page": 14,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) + 1",
-   "page": 14,
-   "source": "inferred",
-   "number": "2"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Some physical consequences",
    "page": 14,
    "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(MZ)",
-   "page": 14,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "(MZ) + a",
-   "page": 14,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "(MZ)",
-   "page": 14,
-   "source": "inferred",
-   "number": "13"
-  },
-  {
-   "level": 1,
-   "title": "(MZ) + a",
-   "page": 14,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5)",
-   "page": 15,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) + g\u20322",
-   "page": 15,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5) \u2212 a",
-   "page": 15,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(\u00b5)",
-   "page": 15,
-   "source": "inferred",
-   "number": "2"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 16,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "15"
   },
   {
    "level": 1,
-   "title": "M 2",
+   "title": "Aknowledgments",
+   "page": 17,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "16"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A",
+   "page": 18,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
+  },
+  {
+   "level": 1,
+   "title": "Appendix B",
+   "page": 18,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
+  },
+  {
+   "level": 2,
+   "title": "Two point functions",
+   "page": 19,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
+  },
+  {
+   "level": 2,
+   "title": "Three point functions",
    "page": 20,
    "source": "inferred",
-   "number": "4"
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "19"
   },
   {
    "level": 1,
-   "title": "References",
-   "page": 23,
+   "title": "Figure Captions",
+   "page": 22,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "21"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1098,
-   "n_words": 168
+   "n_chars": 1350,
+   "n_words": 195,
+   "label_start": null,
+   "label_end": "1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 957,
-   "n_words": 154
+   "n_chars": 567,
+   "n_words": 85,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-002-2-the-electroweak-chiral-lagrangian",
+   "id": "sec-001-2-the-electroweak-chiral-lagrangian",
    "number": "2",
    "title": "The electroweak chiral Lagrangian",
    "level": 1,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 4194,
-   "n_words": 721
-  },
-  {
-   "id": "sec-003-4-t-r",
-   "number": "4",
-   "title": "T r",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 4,
-   "n_chars": 810,
-   "n_words": 172
-  },
-  {
-   "id": "sec-004-2-b\u00b5-\u03c4-3-2",
-   "number": "2",
-   "title": "B\u00b5 \u03c4 3. (2)",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 375,
-   "n_words": 101
-  },
-  {
-   "id": "sec-005-2-\u03c02\u03c41-\u03c01\u03c42",
-   "number": "2",
-   "title": "(\u03c02\u03c41 \u2212 \u03c01\u03c42) +",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 6,
-   "n_chars": 3850,
-   "n_words": 768
-  },
-  {
-   "id": "sec-006-2-b\u00b5\u03bdt-r",
-   "number": "2",
-   "title": "B\u00b5\u03bdT r",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 23,
-   "n_words": 9
-  },
-  {
-   "id": "sec-007-2-b\u00b5\u03bdt-r-t-v-\u00b5-v-\u03bd",
-   "number": "2",
-   "title": "B\u00b5\u03bdT r (T [V \u00b5, V \u03bd])",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 1262,
-   "n_words": 277
-  },
-  {
-   "id": "sec-008-2-the-relation-with-longhitanos-notation-is-the",
-   "number": "2",
-   "title": "The relation with Longhitano\u2019s notation is the following: a0 = g2\u03b21 ; a1 = g",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 8,
-   "n_chars": 2889,
-   "n_words": 574
-  },
-  {
-   "id": "sec-009-3-e\ufb00ective-lagrangian-parameters-for-a-heavy-hig",
-   "number": "3",
-   "title": "E\ufb00ective Lagrangian parameters for a heavy Higgs",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 12,
-   "n_chars": 10384,
-   "n_words": 1987
-  },
-  {
-   "id": "sec-010-0-\u00b5-g2-1",
-   "number": "0",
-   "title": "(\u00b5) = g\u20322 1",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 63,
-   "n_words": 25
-  },
-  {
-   "id": "sec-011-1-\u00b5-1",
-   "number": "1",
-   "title": "(\u00b5) = 1",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 134,
-   "n_words": 52
-  },
-  {
-   "id": "sec-012-3-\u00b5-1",
-   "number": "3",
-   "title": "(\u00b5) = \u22121",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 63,
-   "n_words": 24
-  },
-  {
-   "id": "sec-013-8-\u00b5-0-\u03b4a-8-0",
-   "number": "8",
-   "title": "(\u00b5) = 0 , \u03b4a 8 = 0",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 4,
-   "n_words": 2
-  },
-  {
-   "id": "sec-014-9-\u00b5-0-\u03b4a-9-0",
-   "number": "9",
-   "title": "(\u00b5) = 0 , \u03b4a 9 = 0",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 41,
-   "n_words": 14
-  },
-  {
-   "id": "sec-015-12-\u00b5-0-\u03b4a-12-0",
-   "number": "12",
-   "title": "(\u00b5) = 0 , \u03b4a 12 = 0",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 4,
-   "n_words": 2
-  },
-  {
-   "id": "sec-016-13-\u00b5-0-\u03b4a-13-0",
-   "number": "13",
-   "title": "(\u00b5) = 0 , \u03b4a 13 = 0",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 13,
-   "n_chars": 3403,
-   "n_words": 651
-  },
-  {
-   "id": "sec-017-10-\u00b5-l",
-   "number": "10",
-   "title": "(\u00b5) = L",
-   "level": 1,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-018-10-\u00b5-1",
-   "number": "10",
-   "title": "(\u00b5) \u2212 1",
-   "level": 1,
-   "page_start": 13,
    "page_end": 14,
-   "n_chars": 83,
-   "n_words": 30
+   "n_chars": 29079,
+   "n_words": 5344,
+   "label_start": "1",
+   "label_end": "13"
   },
   {
-   "id": "sec-019-3-\u00b5",
-   "number": "3",
-   "title": "(\u00b5)",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-020-9-\u00b5-1",
-   "number": "9",
-   "title": "(\u00b5) + 1",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 15,
-   "n_words": 5
-  },
-  {
-   "id": "sec-021-3-\u00b5-a",
-   "number": "3",
-   "title": "(\u00b5) \u2212 a",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 1069,
-   "n_words": 197
-  },
-  {
-   "id": "sec-022-4-some-physical-consequences",
+   "id": "sec-002-4-some-physical-consequences",
    "number": "4",
    "title": "Some physical consequences",
    "level": 1,
    "page_start": 14,
-   "page_end": 14,
-   "n_chars": 1092,
-   "n_words": 192
-  },
-  {
-   "id": "sec-023-0-mz",
-   "number": "0",
-   "title": "(MZ)",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 15,
-   "n_words": 6
-  },
-  {
-   "id": "sec-024-8-mz-a",
-   "number": "8",
-   "title": "(MZ) + a",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 15,
-   "n_chars": 2195,
-   "n_words": 454
-  },
-  {
-   "id": "sec-025-3-\u00b5-g2",
-   "number": "3",
-   "title": "(\u00b5) + g\u20322",
-   "level": 1,
-   "page_start": 15,
    "page_end": 16,
-   "n_chars": 1966,
-   "n_words": 352
+   "n_chars": 5243,
+   "n_words": 953,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-026-5-conclusions",
+   "id": "sec-003-5-conclusions",
    "number": "5",
    "title": "Conclusions",
    "level": 1,
    "page_start": 16,
-   "page_end": 20,
-   "n_chars": 4352,
-   "n_words": 985
+   "page_end": 17,
+   "n_chars": 1192,
+   "n_words": 181,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-027-4-m-2",
-   "number": "4",
-   "title": "M 2",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 23,
-   "n_chars": 2257,
-   "n_words": 577
-  },
-  {
-   "id": "sec-028-references",
+   "id": "sec-004-aknowledgments",
    "number": null,
-   "title": "References",
+   "title": "Aknowledgments",
    "level": 1,
-   "page_start": 23,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 640,
+   "n_words": 100,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-005-appendix-a",
+   "number": null,
+   "title": "Appendix A",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 713,
+   "n_words": 199,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-006-appendix-b",
+   "number": null,
+   "title": "Appendix B",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 373,
+   "n_words": 61,
+   "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-007-two-point-functions",
+   "number": null,
+   "title": "Two point functions",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1640,
+   "n_words": 406,
+   "label_start": "18",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-008-three-point-functions",
+   "number": null,
+   "title": "Three point functions",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 1364,
+   "n_words": 305,
+   "label_start": "19",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-009-figure-captions",
+   "number": null,
+   "title": "Figure Captions",
+   "level": 1,
+   "page_start": 22,
    "page_end": 24,
-   "n_chars": 3511,
-   "n_words": 518
+   "n_chars": 3879,
+   "n_words": 572,
+   "label_start": "21",
+   "label_end": "23"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 39,
-  "sections": 29,
-  "chars_total": 46113
+  "toc_entries": 11,
+  "toc_inferred_entries": 11,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 46040,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 11,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.179,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-2-the-electroweak-chiral-lagrangian",
+     "title": "The electroweak chiral Lagrangian",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.894,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-4-some-physical-consequences",
+     "title": "Some physical consequences",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-5-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-aknowledgments",
+     "title": "Aknowledgments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-appendix-a",
+     "title": "Appendix A",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-appendix-b",
+     "title": "Appendix B",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-two-point-functions",
+     "title": "Two point functions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-three-point-functions",
+     "title": "Three point functions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-figure-captions",
+     "title": "Figure Captions",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.152,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

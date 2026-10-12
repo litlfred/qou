@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/blocks/prose-sec-053",
+  "kind": "prose",
+  "title": "Noetherian Connected Filtrations",
+  "pageStart": 30,
+  "pageEnd": 31,
+  "text": "../sections/sec-053-6-noetherian-connected-filtrations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested"
+}

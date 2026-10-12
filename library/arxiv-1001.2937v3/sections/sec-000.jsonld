@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1001.2937v3/sections/sec-000",
   "@type": [
     "doco:Section"
   ],
-  "title": "Str(M[U−U−1])+i 1",
-  "pageStart": 2,
-  "pageEnd": 2,
+  "title": "Microscopic Spectrum of the Wilson Dirac Operator",
+  "pageStart": 1,
+  "pageEnd": 4,
   "contains": [
     "library/arxiv-1001.2937v3/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/arxiv-1001.2937v3/manifest",
-  "sourceDocument": "library/arxiv-1001.2937v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1001.2937v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1001.2937v3/manifest.jsonld",
   "provenance": "ingested"
 }

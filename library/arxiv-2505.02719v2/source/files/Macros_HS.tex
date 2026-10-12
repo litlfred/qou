@@ -1,0 +1,85 @@
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\renewcommand{\d}{\dd}
+\newcommand{\ceq}{\coloneq}
+\newcommand{\qec}{\eqqcolon}
+
+% from https://www.grputland.com/2015/02/fine-control-over-sizes-of-fractions-in-latex.html
+\newcommand{\sdfrac}[2]{\mbox{\small$\displaystyle\frac{#1}{#2}$}}
+\newcommand{\fdfrac}[2]{\mbox{\footnotesize$\displaystyle\frac{#1}{#2}$}}
+\newcommand{\ltfrac}[2]{\mbox{\large$\frac{#1}{#2}$}}
+
+
+% {〈pre code〉} {〈left_delim〉} {〈right_delim〉} {〈post code〉} {〈body〉}
+\DeclarePairedDelimiterXPP{\pars}[1]{\mathop{}}{\lparen}{\rparen}{}{#1}
+\DeclarePairedDelimiterXPP{\abs}[1]{\mathop{}}{\lvert}{\rvert}{}{#1}
+\DeclarePairedDelimiterXPP{\norm}[1]{\mathop{}}{\lVert}{\rVert}{}{#1}
+\DeclarePairedDelimiterXPP{\seminorm}[1]{\mathop{}}{\lbrack}{\rbrack}{}{#1}
+\DeclarePairedDelimiterXPP{\inner}[1]{\mathop{}}{\langle}{\rangle}{}{#1}
+\DeclarePairedDelimiterXPP{\iinner}[1]{\mathop{}}{\langle\!\langle}{\rangle\!\rangle}{}{#1}
+\DeclarePairedDelimiterXPP{\brackets}[1]{\mathop{}}{\lbrack}{\rbrack}{}{#1}
+\DeclarePairedDelimiterXPP{\braces}[1]{\mathop{}}{\lbrace}{\rbrace}{}{#1}
+
+\DeclarePairedDelimiterXPP{\floor}[1]{\mathop{}}{\lfloor}{\rfloor}{}{#1}
+\DeclarePairedDelimiterXPP{\ceil}[1]{\mathop{}}{\lceil}{\rceil}{}{#1}
+
+\DeclarePairedDelimiterXPP{\intervalcc}[1]{\mathop{}}{\lbrack}{\rbrack}{}{#1}
+\DeclarePairedDelimiterXPP{\intervalco}[1]{\mathop{}}{\lbrack}{\rparen}{}{#1}
+\DeclarePairedDelimiterXPP{\intervaloc}[1]{\mathop{}}{\lparen}{\rbrack}{}{#1}
+\DeclarePairedDelimiterXPP{\intervaloo}[1]{\mathop{}}{\lparen}{\rparen}{}{#1}
+
+\DeclarePairedDelimiterXPP{\myset}[2]{\mathop{}}{\lbrace}{\rbrace}{}{#1\,\delimsize\vert\,\mathopen{}#2}
+
+
+\newcommand{\Circle}{{\R\slash\Z}}
+
+\newcommand{\AmbDim}{{n}}
+\newcommand{\AmbSpace}{{\R^\AmbDim}}
+\newcommand{\DomDim}{{m}}
+\newcommand{\DomSpace}{\R^\DomDim}
+\newcommand{\Domain}{{\varOmega}}
+
+\newcommand{\BendingEnergy}{E_{\smash{\mathrm{b}}}}
+\newcommand{\GenericEnergy}{\mathcal{E}}
+\newcommand{\MixedEnergy}{\mathcal{T}}
+
+\newcommand{\mynewpage}{\newpage}
+
+% for editing
+\newcommand{\HenrikSpeaking}[1]{{\color{Plum}Henrik: \emph{#1}}}
+\newcommand{\Henrik}[1]{{\color{Plum}#1}}
+\newcommand{\Outdated}[1]{{\color{Gray}#1}}
+
+
+\newcommand{\HeikoSpeaking}[1]{{\color{NavyBlue}Heiko: \emph{#1}}}
+\newcommand{\Heiko}[1]{{\color{NavyBlue}#1}}
+
+
+% % for seeing how long the paper is without comments
+% \newcommand{\HenrikSpeaking}[1]{}
+% \newcommand{\Henrik}[1]{#1}
+% \newcommand{\mynewpage}{}
+
+\newcommand{\qand}{\quad \text{and} \quad}
+\newcommand{\qor}{\quad \text{or} \quad}
+
+
+% for indices in names of function spaces
+
+\newcommand{\inj}{{\smash{\mathrm{i}}}}
+\newcommand{\reg}{{\smash{\mathrm{r}}}}
+\newcommand{\injreg}{{\smash{\mathrm{ir}}}}
+\newcommand{\unitspeed}{{\smash{\mathrm{a}}}}
+\newcommand{\injunitspeed}{{\smash{\mathrm{ia}}}}
+\newcommand{\homeom}{{\smash{\mathrm{e}}}}
+\newcommand{\periodic}{{\smash{\mathrm{p}}}}
+\newcommand{\loc}{{\smash{\mathrm{loc}}}}
+
+% for indices in names of function spaces
+
+\newcommand{\PalaisSmale}{PS}
+
+\newcommand{\va}{{\color{ForestGreen}a}}
+\newcommand{\vb}{{\color{BrickRed}b}}
+\newcommand{\vc}{{\color{NavyBlue}c}}
+
+\newcommand{\underbraced}[2]{\underset{#1}{\underbrace{#2}}}

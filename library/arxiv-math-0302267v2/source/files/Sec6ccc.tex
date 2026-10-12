@@ -1,0 +1,555 @@
+
+
+\newpage
+
+%\footline={\hss\folio\hss}
+%\pageno=1
+
+\dspace
+\subhead
+6. Profondeur 
+\endsubhead
+
+\subhead
+6.1
+\endsubhead
+Avec les notations de 5.1, pour tout point
+base $x$, l'inclusion de $X$ dans
+$A^*$ induit un morphisme du
+groupe fondamental motivique de $X$ dans
+celui, $\dbQ(1)$, de $A^*$.
+On d\'efinit la filtration par la profondeur
+$D$ de $\pi_1(X,x)$ par
+$$
+\align
+&D^0\pi_1(X,x):=\pi_1(X,x)\tag6.1.1\\
+&D^1\pi_1(X,x):=\Ker(\pi_1(X,x)
+\to \pi_1(A^*,x)
+\endalign
+$$
+et, pour $n\Ge 1$, 
+$$
+\align
+D^n\pi_1(X,x):=&\text{le $n^{\ieme}$ groupe de la}\\
+&\text{s\'erie centrale descendante de
+$D^1\pi_1(X,x)$}.
+\endalign
+$$
+On filtre de m\^{e}me les alg\`ebres de Lie:
+$$
+D^n\Lie\,\pi_1(X,x)=\Lie\,D^n\pi_1(X,x).
+\tag6.1.2
+$$
+
+Si on pousse le $\pi_1(X,x)$-torseur $P_{y,x}$
+par $\pi_1\to \pi_1/D^n$, les
+$P_{y,x}/D^n$ obtenus forment un
+groupo{\umi}de quotient du groupo{\umi}de
+des $P_{y,x}$.
+
+Appliquons A.10, A.11.
+La filtration par la profondeur induit une
+filtration de l'alg\`ebre enveloppante
+compl\'et\'ee $\scrU\uphat\Lie\,\pi_1(X,x)$
+ainsi que de l'alg\`ebre affine
+$\scrO(\pi_1(X,x))$, qui en est duale.
+Elle induit aussi  une filtration sur les
+alg\`ebres affines des torseurs $P_{y,x}$.
+L'alg\`ebre affine du quotient
+$\pi_1(X,x)/D^{n+1}$ de $\pi_1(X,x)$ est la
+sous-alg\`ebre de l'alg\`ebre affine de
+$\pi_1(X,x)$ engendr\'ee par $D^{-n}
+\scrO(\pi_1(X,x))$.
+De m\^{e}me pour les $P_{y,x}$.
+
+\subhead
+6.2
+\endsubhead
+En r\'ealisation $\omega$, l'alg\`ebre de Lie
+de $\pi_1(X,x)$ est $\scrL^{\uphat}$ (5.8), le
+compl\'et\'e de l'alg\`ebre de Lie libre
+$\scrL$ engendr\'ee par $e_0$ et les $e_\zeta$
+($\zeta\in\mu_N$).
+La filtration de profondeur 
+est d\'eduite 
+la graduation par le degr\'e en les $e_\zeta$,
+appel\'e le {\it $D$-degr\'e}.
+Cette graduation 
+est compatible \`a la
+graduation provenant de celle de $\omega$ pour
+laquelle $e_0$ et les $e_\zeta$ sont de
+degr\'e un et est $\mu_N$-\'equivariante.
+Elle se propage aux alg\`ebres
+enveloppantes, aux alg\`ebres affines et aux
+alg\`ebres affines des torseurs triviaux
+$(P_{y,x})_\omega$.
+L'action correspondante $\rho_D$ de $\dbG_m$
+pour laquelle $\rho_D(\lambda)$ fixe $e_0$ et
+transforme $e_\zeta$ en $\lambda e_\zeta$ sera
+appell\'ee action ``$D$-degr\'e''.
+
+On prendra garde que les filtrations $D$ sont
+motiviques et stables par l'automorphisme
+$u\mapsto u^{-1}$ de $X$, mais que le
+$D$-degr\'e est d\'efini seulement en
+r\'ealisation $\omega$ et n'est pas stable par
+$u\mapsto u^{-1}$.
+L'automorphisme de $\scrL\uphat$ induit par
+$u\mapsto u^{-1}$  \'echange $e_0$, qui est
+homog\`ene de $D$-degr\'e $0$, et
+$e_\infty=-e_0-\sum e_\zeta$,  qui ne l'est
+pas.
+
+\subhead
+6.3
+\endsubhead
+Le $\MT(\scrO[1/N])$-sch\'ema en groupe $V$
+de 5.15 agit sur $P_{0,0}$ et $P_{1,0}$.
+On d\'efinit la filtration $D$ de $\Lie\,V$
+par la condition que $D^p\Lie\,V$ soit maximal
+tel que l'action de $\Lie\,V$ sur
+$\scrO(P_{0,0})$ et $\scrO(P_{0,1})$ envoie
+$D^p\Lie\,V\otimes D^q\scrO(P_{0,0})$ dans
+$D^{p+q}\scrO(P_{0,0})$ et $D^p\Lie\,V\otimes
+D^q\scrO(P_{1,0})$ dans
+$D^{p+q}\scrO(P_{1,0})$.
+
+Passons \`a la r\'ealisation $\omega$, o\`u
+$V_\omega$ s'identifie \`a
+$\left(\prod,\circ\right)$ agissant sur les copies
+$\prod_0$ et $\prod_{1,0}$ de $\prod$ par
+$g\mapsto\left<g\right>_0$ et
+$\left<g\right>_{1,0}$.
+
+\proclaim{Proposition 6.4}
+L'action ``$D$-degr\'e'' $\rho_D$ de $\dbG_m$
+sur $\prod$ respecte les actions
+$\left<g\right>_0$ et $\left<g\right>_{10}$ de
+$\left(\prod,\circ\right)$ sur $\prod$.
+Elle respecte donc la loi de groupe $\circ$ sur
+$\prod$ et le crochet $\{\,\,,\,\,\}$ de
+$\scrL\uphat$.
+\endproclaim
+
+L'action $\left<g\right>_0$ de $g\in\prod$ sur
+le groupe $\prod$ est caract\'eris\'ee par les
+propri\'et\'es de commuter \`a l'action de
+$\mu_N$ sur $\prod$, de fixer $\exp(e_0)$ et
+d'envoyer $\exp(e_1)$ sur $g^{-1}\exp(e_1)g$.
+Son conjugu\'e par $\rho_D(\lambda)$ commute
+encore \`a $\mu_N$, fixe $\exp(e_0)$ et envoie
+$\exp(\lambda e_1)$ sur\break
+$\rho_D(\lambda)(g)^{-1}\exp(\lambda e_1)
+\rho_D(\lambda)(g)$.
+Cette derni\`ere propri\'et\'e \'equivaut \`a
+envoyer $\exp(e_1)$ sur
+$\rho_D(\lambda)(g)^{-1}\exp(e_1)
+\rho_D(\lambda)(g)$: $\rho_D(\lambda)$
+conjugue $\left<g\right>_0$ en
+$\left<\rho_D(\lambda)(g)\right>_0$.
+Conjugant $\left<g\right>_{10}\colon\,x\mapsto
+g\left<g\right>_0(x)$ par $\rho_D(\lambda)$,
+on en d\'eduit que $\rho_D(\lambda)$
+transforme $\left<g\right>_{10}$ en
+$\left<\rho_D(\lambda)(g)\right>_{10}$.
+
+\subhead
+6.5
+\endsubhead
+Puisque l'action de $\Lie\,V_\omega=(\scrL\uphat,
+\{\,\,,\,\,\})$ sur $\scrO(P_{1,0})_\omega$
+est fid\`ele, il r\'esulte de 6.4 que la
+filtration $D$ de $\Lie\,V_\omega$ co{\umi}ncide
+avec la filtration $D$ de $\scrL\uphat$
+d\'eduite de la graduation par le $D$-degr\'e
+de $\scrL$.
+En particulier, $D^0\Lie\,V_\omega=\Lie\,V_\omega$.
+
+Transportons \`a $V_\omega$ l'action
+``$D$-degr\'e'' $\rho_D$ de $\dbG_m$ sur
+$\left(\prod,\circ\right)$.
+Cette action gradue $\Lie(V_\omega)$, son
+alg\`ebre enveloppante universelle
+compl\'et\'ee et l'alg\`ebre affine
+$\scrO(V_\omega)$.
+Les filtrations correspondantes
+co{\umi}ncident avec celles d\'efinie par la
+filtration $D$ de $\Lie\,V_\omega$ par les
+$D^p\Lie\,V_\omega$.
+Il en r\'esulte que l'isomorphisme de 
+sch\'emas de $V_\omega$ 
+avec $\prod$ induit un isomorphisme de
+$V_\omega/D^pV_\omega$ avec $\prod/D^p\prod$,
+les alg\`ebres affines des quotients \'etant
+dans les deux cas les sous-alg\`ebres
+engendr\'ees par $D^{-p}$ des alg\`ebres
+affines (A.10).
+Plus pr\'ecis\'ement, l'action de $V_\omega$
+sur $\prod_{10}$ fait de $\prod_{10}$ un
+espace principal homog\`ene sous $V_\omega$,
+trivialis\'e par $1_{10}$ fixe sous $\rho_D$,
+et induit une action principale homog\`ene de
+$V_\omega/D^pV_\omega$ sur $\prod_{10}/D^p$.
+Ind\'ependamment du foncteur fibre, il reste
+vrai que l'action de $V$ sur $P_{0,0}$ et
+$P_{1,0}$ induit une action de $V/D^pV$ sur
+$P_{0,0}/D^p$ et $P_{1,0}/D^p$, et que
+$P_{1,0}/D^p$ est un espace principal
+homog\`ene sous $V/D^pV$. 
+
+\proclaim{Proposition 6.6}
+Le morphisme 5.15 de $U$ dans $V$ se factorise
+par $D^1V$.
+\endproclaim
+
+Le quotient $D^1V/D^2$ \'etant ab\'elien, ce
+morphisme induit
+$$
+U^{\ab}\to D^1V/D^2V.\tag6.6.1
+$$
+
+\demo{Preuve}
+D'apr\`es 6.5, il suffit de v\'erifier que $U$
+agit trivialement sur $P_{1,0}/D^1$, le
+$\dbQ(1)$-torseur des chemins, dans
+$A^*$, de $1_0$ \`a $1$.
+En effet, $P_{\mu,\lambda_0}$
+($A^*$) est canoniquement
+isomorphe \`a
+$P_{\mu,\lambda}(A^*)$, et,
+faisant $\lambda=\mu$, on voit que
+$P_{1,0}/D^1$ est le $\dbQ(1)$-torseur trivial,
+sur lequel $U$ agit trivialement.
+\enddemo
+
+\subhead
+6.7
+\endsubhead
+Nous nous proposons de montrer que (6.6.1) est
+injectif et de calculer son image.
+Noter que l'action de $U$ sur $U^{\ab}$, ainsi
+que l'action de $U$ sur $D^1V/D^2V$
+(d\'eduite de l'action int\'erieure de $V$ sur
+lui-m\^{e}me), sont triviales.
+Les deux membres de (6.6.1) sont donc des
+produits de sch\'emas en groupe vectoriels
+$\dbQ(n)$, et le passage \`a la r\'ealisation
+$\omega$ ne perd aucune information.
+
+En r\'ealisation $\omega$, le noyau $D^1\scrL$
+de $\Lib(e_0,(e_\zeta))\to\Lib(e_0)$:
+$e_0\mapsto e_0$, $e_\zeta\mapsto 0$, est,
+pour le crochet [\quad], l'alg\`ebre de $\Lie$
+libre engendr\'ee par les $(\ad\,e_0)^n(e_\zeta)$
+($n\Ge 0$, $\zeta\in\mu_N)$, de $D$-degr\'e
+$1$.
+Le quotient $D^1\scrL/D^2\scrL$ a donc pour
+base les images des $(\ad\,e_0)^n(e_\zeta)$,
+$\ad\,e_0$ \'etant pris au sens du crochet
+$[\,\,,\,\,]$.
+
+Notons $\scrE^n$ la composante de poids $-2n$
+de $D^1\scrL/D^2\scrL$, de base les images des\break
+$(\ad\,e_0)^{n-1}(e_\zeta)$.
+Le quotient $\Gr_D^1(\scrL\uphat)$ est le
+produit des $\scrE^n$.
+Quand $n$ sera fix\'e, nous \'ecrisons
+simplement $\scrE$ pour $\scrE^n$, et
+$E_\zeta$ pour la base des
+$(\ad\,e_0)^{n-1}(e_\zeta)$.
+
+Fixons un plongement complexe $\sigma$ de $k$.
+L'\'el\'ement $\dch(\sigma)$ de
+$V_\omega(\dbC)\Subset\dbC\ll e_0,(e_\zeta)\gg$
+a un coefficient de $e_0$ nul (5.17).
+Il est donc dans $D^1V_\omega(\dbC)$.
+Calculons sa projection dans
+$D^1V_\omega/D^2V_\omega$, d'alg\`ebre de Lie
+$D^1\scrL\uphat/D^2\scrL\uphat$.
+Pour
+$$
+x=\sum\lambda_{n,\zeta}(\ad e_0)^{n-1}(e_\zeta)
++\text{\rm termes de $D$-degr\'e $\Ge 2$},
+$$
+l'exponentielle de $x$ dans $V_\omega=\prod$
+est donn\'ee par 5.14 (ii).
+On a
+$$
+\exp(x)=1+x+\text{\rm termes de $D$-degr\'e $\Ge
+2$},
+$$
+et $\lambda_{n,\zeta}$ est donc le coefficient
+de $e_0^{n-1}e_\zeta$ dans $x$.
+
+D'apr\`es 5.17, la projection de
+$\dch(\sigma)$ dans $D^1V_\omega/D^2V_\omega$
+est donc l'exponentielle de l'\'el\'ement
+$$
+\dch^1(\sigma)=\sum\limits_{n,\zeta}
+\biggl(\sum\limits_{m}
+\frac{\sigma(\zeta^{-m})}{m^n}\biggr)
+(\ad\,e_0)^{n-1}(e_\zeta)
+$$
+de son alg\`ebre de Lie $\prod\scrE^n$.
+Pour $n=1$, $\zeta=1$, la somme sur $m$ diverge
+et est \`a remplacer par $0$.
+
+Identifions $U^{\ab}$ et $D^1V/D^2V$ \`a
+leurs alg\`ebre de Lie par l'application
+exponentielle et projetons sur $U^{\ab}$ et
+$D^1V/D^2V$.
+On obtient qu'il existe $a_\sigma$ dans 
+$\gru_\omega^{\ab}
+\widehat{\otimes}\dbC$ v\'erifiant
+$$
+\align
+&\text{Image de $a_\sigma$ dans
+$\left(\Lie\,D^1V_\omega/D^2V_\omega=\prod \scrE^n\right)\widehat{\otimes}\dbC $}
+\tag6.7.1\\
+&=\text{$\dch^1(\sigma)+$ \'el\'ement de
+$\prod(2\pi i)^n\scrE^n$}.
+\endalign
+$$
+
+Notons  $\scrI$ l'image de Lie $U_\omega$ dans Lie
+$V_\omega$.
+La filtration $D$ de Lie $V$ induit une
+filtration $D$ de $\scrI$.
+On prendra garde que l'action ``$D$-degr\'e''
+de $\dbG_m$ sur $\Lie\,V_\omega$ n'a aucune
+raison de respecter $\scrI$ (et en fait ne
+respecte pas $\scrI$).
+
+\proclaim{Th\'eor\`eme 6.8}\enspace
+{\rm (i)} Le morphisme (6.6.1) est injectif; il
+induit donc un isomorphisme de
+$\gru_\omega^{\ab}$ avec $\scrI/D^2\scrI$.
+
+\noindent
+{\rm (ii)} En r\'ealisation $\omega$ et en poids
+$-2n$, l'image dans $\scrE:=\scrE^n$ de
+$\omega_n(\gru^{\ab})$ est le sous-espace
+$\scrE_{\distr}^+$ des $\sum x_\zeta E_\zeta$
+v\'erifiant la relation de parit\'e
+$$
+x_{\zeta^{-1}}=(-1)^{n-1}x_\zeta\tag6.8.1
+$$
+et la relation de distribution de poids $n-1$
+(resp. de distribution trou\'ee si $n=1$): si
+$N=Md$ avec $d\Ge 1$ et que $\eta^M=1$, on a
+$$
+x_\eta=\frac{1}{d^{n-1}}\sum\limits_{\zeta^d=\eta}
+x_\zeta\tag6.8.2
+$$
+(resp. $x_1=0$ et (6.8.2) seulement pour
+$\eta\not=1$ si $n=1$).
+\endproclaim
+
+\remark\nofrills{\bf Remarque 6.9 {\rm (i)}.}\enspace
+La relation de parit\'e (6.8.1) est la
+relation (6.8.2) pour $d=-1$.
+
+(ii)\enspace
+Le $\dbQ$-espace vectoriel $\scrE_{\distr}^+$
+est muni de formes lin\'eaires $x\mapsto
+x_\zeta$ v\'erifiant les relations de parit\'e
+et de distribution de 6.8 (ii), et est
+universel pour cette propri\'et\'e.
+Son dual $\scrD_{\distr}^+$ est muni d'une
+application $\mu_N\to\scrD_{\distr}^+$ v\'erifiant
+les m\^{e}mes identit\'es, et est universel
+pour cette propri\'et\'e: c'est l'espace dans
+lequel prend ses valeurs la distribution de
+poids $n-1$ (resp. trou\'ee si $n=1$) de
+parit\'e $(-1)^{n-1}$ universelle.
+\endremark
+
+\demo{6.10 Preuve de 6.8}
+Pour $\sigma$ un plongement complexe de $k$,
+posons
+$$
+d_\sigma:=\sum\limits_{\zeta}\sum\limits_{m}
+\frac{\sigma(\zeta^{-m})}{m^n}E_\zeta.
+\tag6.10.1
+$$
+Pour $n=1$, le coefficient, divergent, de
+$E_1$ est \`a remplacer par z\'ero.
+
+D'apr\`es 6.7.1, il existe $a_\sigma$ dans
+l'image de $\omega_n(\gru^{\ab})$ tel que
+$$
+d_\sigma\equiv a_\sigma\pmod{(2\pi i)^n\scrE}.
+\tag6.10.2
+$$
+\enddemo
+
+\medskip\noindent
+{\sans Cas $n=1$.}\enspace
+Fixons $\sigma$ et identifions $k$ \`a son
+image dans $\dbC$ par $\sigma$.
+En particulier, \'ecrivons $\zeta$ pour
+$\sigma\zeta$.
+Avec cette notation, (6.10.1) se r\'ecrit
+$$
+(d_\sigma)_\zeta=-\log(1-\zeta).
+$$
+
+D'apr\`es (2.3.1), $\omega_n(\gru^{\ab})$ est
+le dual de $\scrO_N[1/N]^*\otimes\dbQ$.
+Si $\scrO_N^+$ est la partie r\'eelle de
+$\scrO_N$, c'est encore le dual de
+$\scrO_N^+[1/N]^*\otimes\dbQ$.
+Soit $\scrF$ son image dans $\scrE$.
+
+Puisque $a_\sigma$ est dans $\scrF_\dbC$, sa
+partie r\'eelle est dans $\scrF_\dbR$.
+Prenant la partie r\'eelle de (6.10.2), on
+obtient que
+$$
+-\sum \log\vert1-\zeta\vert~E_\zeta
+$$
+est dans $\scrF_\dbR$.
+
+D'apr\`es un th\'eor\`eme de Bass (1966) (cf.
+Washington (1997) 8.9 et 12.18),
+$\scrO_N[1/N]^*\otimes\dbQ$, muni de
+$\zeta\mapsto 1-\zeta$ (resp. $1$ si
+$\zeta=1$) est la distribution trou\'ee paire
+universelle sur $\mu_N$.
+Puisque $\scrO_M^+[1/N]^*
+\otimes\dbQ\simover\scrO_N[1/N]^*\otimes\dbQ$, 
+l'application 
+$x\mapsto \log\,\vert x\vert$ est injective sur
+$\scrO_N[1/N]^*/\torsion$ et il n'y a donc
+d'autres relations rationnelles entre les
+$\log\,\vert1-\zeta\vert$ que celles
+d\'eduites de (6.8.1) et (6.8.2).
+L'image  $\scrF$ contient donc
+$\scrE_{\distr}^+$.
+Puisque $\scrE_{\distr}^+$ a le m\^{e}me rang
+que $\scrO_N^*[1/N]^*\otimes\dbQ$, (i) et (ii)
+en r\'esultent.
+
+\medskip\noindent
+{\sans Cas $n>1$.}\enspace
+Soit $\scrF$ l'image de
+$\omega_n*(\gru^{\ab})$ dans $\scrE$.
+Prenant, selon la parit\'e de $n$, la partie
+r\'eelle ou la partie imaginaire de (6.10.2),
+on obtient que pour tout $\sigma$
+$$
+d_\sigma+(-1)^{n-1}\dbar_\sigma
+$$
+est dans $\scrF_\dbC$.
+Il r\'esulte de (6.10.1) et des identit\'es
+$$
+\align
+&\sum\limits_{\zeta^d=\eta}\zeta^m
+=\cases
+0 &\text{si $d\nmid m$}\\
+d\eta^{m/d} &\text{si $d\mid m$}
+\endcases\\
+\vspace{5pt}
+&\zeta^{-1}=\zetabar
+\endalign
+$$
+que les $d_\sigma+(-1)^{n-1}\dbar_\sigma$ sont
+dans $(\scrE_{\distr}^+)_\dbC$.
+
+\proclaim{Lemme 6.11}
+Le sous-espace $W$ de $\scrE_\dbC$ engendr\'e
+par les $d_\sigma\pm (-1)^{n-1}\dbar_\sigma$
+est de dimension au moins \'egale au nombre de
+caract\`eres de $(\dbZ/N\dbZ)^*$ de parit\'e
+$(-1)^{n-1}$.
+\endproclaim
+
+D\'eduisons 6.8 de 6.11.
+La borne inf\'erieure 6.11 pour la dimension
+de $W$ co{\umi}ncide tant avec la dimension de
+$\omega(\gru^{\ab})_n$ (2.3.1) qu'avec la
+dimension de $\scrE_{\distr}^+$ (Kubert (1979)
+App.).
+Puisque $W$ est contenu dans l'image
+complexifi\'ee $\scrF_\dbC$, $W$ est \'egal
+\`a cette image, (6.1.1) est injectif.
+De m\^{e}me, puisque $S$ est contenu dans
+$(\scrE_{\distr}^+)_{\dbC}$, on a \'egalit\'e,
+prouvant 6.8.
+
+\demo{Preuve de $6.11$}
+On peut supposer que $k=\dbQ(\exp(2\pi
+i/N))\Subset \dbC$.
+On identifie l'ensemble des plongements
+complexes de $k$ \`a $(\dbZ/N)^*$ par
+$\zeta\mapsto \zeta^a$, et $\mu_N$ \`a
+$\dbZ/N$ par $b\mapsto\exp(2\pi i\,b/N)$.
+Avec ces notations, $W$ est l'image de
+l'application
+$$
+F\colon\, \dbC^{(\dbZ/N)^*}\to
+\dbC^{\dbZ/N}
+$$
+de matrice
+$$
+\sum\limits_{m}\,
+\frac{\exp(-2\pi i\,abm)}{m^n}
++(-1)^{n-1}
+\frac{\exp(-2\pi i\,abm)}{m^n}\,\,.
+$$
+Il nous faut minorer le rang de $F$.
+Il sera plus commode de consid\'erer
+l'application transpos\'ee ${}^tF$.
+Les applications $F$ et ${}^tF$ sont
+\'equivariantes, pour les actions $e_x\mapsto
+e_{ax}^{-1}$ et $e_x\mapsto e_{ax}$ de
+$(\dbZ/N)^*$ sur les deux membres, et il
+suffit de v\'erifier que pour tout caract\`ere
+$\chi$ de $(\dbZ/N)^*$ de parit\'e
+$(-1)^{n-1}$, la $\chi$-partie de ${}^tF$
+est non nulle.
+Soient $M$ le diviseur de $N$ tel que $\chi$
+provienne d'un caract\`ere primitif $\chi_0$
+de $(\dbZ/M)^*$, et prolongeant $\chi_0$ par $0$
+sur $\dbZ/M$.
+V\'erifions que l'image par ${}^tF$ du vecteur
+$(\chi_0(b))_{b\in\dbZ/N}$ est non nulle.
+Prenant la composante $a=1$, on se ram\`ene
+\`a v\'erifier que
+$$
+\sum\limits_{b,m}\,
+\frac{\exp(2\pi i\,bm).\chi_0(b)}{m^n}
+\not=0
+$$
+C'est en effet $N/M$ fois le produit de la
+somme de Gau{\ss} $\sum\exp(2\pi
+i\,b)\chi_0(b)$ (somme sur $(\dbZ/M)^*$)
+par $L(\chi_0,n)$.
+\enddemo
+
+\remark{\bf Remarque 6.12}
+L'argument utilis\'e pour $n>1$, utilisant
+tous les plongements complexes et (6.10.2)
+modulo $(2\pi i)^n\scrE\otimes\dbR$
+plut\^{o}t qu'un seul plongement et (6.10.2)
+modulo $2\pi i\scrE$, s'applique aussi pour
+$n=1$ si $N$ n'a qu'un seul facteur premier.
+Dans ce cas en effet, l'application
+r\'egulateur de $\scrO_N^*[1/N]$ dans $\dbR^m$,
+$m$ le nombre de places \`a l'infini, a un
+noyau fini et  une image discr\`ete.
+\endremark
+
+\remark{\bf Remarque 6.13}
+Combinant les r\'esultats de cet article avec
+ceux de Goncharov (2001), on obtient
+imm\'ediatement l'analogue motivique de
+r\'esultats de loc. cit. sur les alg\`ebres de
+Lie de Galois: remplacer syst\'ematiquement
+l'alg\`ebre de Lie de Galois $g_N^\ell$
+par $\im(\Lie\,U_\omega\to\Lie\,V_\omega)$
+(voir 10.5.3) qui est son analogue motivique,
+et travailler sur $\dbQ$ plut\^{o}t que
+$\dbQ_\ell$.
+\endremark
+

@@ -1,0 +1,87 @@
+% Declare that this style file requires at least LaTeX version 2e.
+\NeedsTeXFormat{LaTeX2e}
+
+% Provide the name of your page, the date it was last updated, and a comment about what it's used for
+\ProvidesPackage{mystyle}[2010/07/28 BBischof's custom LaTeX style]
+
+% Now paste your code from the preamble here
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{thm}[theorem]{Theorem}
+\newtheorem*{thmnn}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+%\theoremstyle{remark}
+\numberwithin{equation}{section}
+
+
+\newcommand{\nc}{\newcommand}
+\nc{\dmo}{\DeclareMathOperator}
+\nc{\reflem}[1]{Lemma~\ref{#1}}
+\nc{\refprop}[1]{Proposition~\ref{#1}}
+\usepackage{dsfont}
+
+\def\Re{\operatorname{Re}}
+\def\Im{\operatorname{Im}}
+\def\i{\mathrm{i}}
+\def\ol#1{\overline{#1}}
+%\nc{\abs}[1]{\left| #1 \right|}
+\nc{\abs}[1]{\lvert#1\rvert}
+\nc{\conj}[1]{\overline{#1}}
+\nc{\disk}{\mathfrak{D}}
+\nc{\Del}{\Delta(2,3,7)}
+\nc{\Delp}{\Delta^{+}(2,3,7)}
+\nc{\F}{\calF}
+\nc{\X}{\calX}
+\nc{\what}{\widehat}
+\nc{\dist}{d}
+\nc{\distH}{\dist_{\uhp}}
+\nc{\distD}{\dist_{\disk}}
+\nc{\pmat}[4]{\begin{pmatrix} #1 & #2 \\ #3 & #4\end{pmatrix}}
+\nc{\uhp}{\mathfrak{H}}
+\nc{\hatf}{h}
+\nc{\ff}{g}
+
+\nc{\La}{\Lambda}
+\nc{\la}{\lambda}
+\nc{\eps}{\varepsilon}
+
+\nc{\Q}{\mathbb{Q}}
+\nc{\R}{\mathbb{R}}
+\nc{\C}{\mathbb{C}}
+\nc{\Z}{\mathbb{Z}}
+\nc{\N}{\mathbb{N}}
+
+\nc{\calC}{\mathcal{C}}
+\nc{\calF}{\mathcal{F}}
+\nc{\calG}{\mathcal{G}}
+\nc{\calI}{\mathcal{I}}
+\nc{\calS}{\mathcal{S}}
+\nc{\calX}{\mathcal{X}}
+
+
+
+\dmo{\Aut}{Aut}
+\dmo{\Isom}{Isom}
+\dmo{\GL}{GL}
+\dmo{\id}{id}
+\dmo{\SL}{SL}
+\dmo{\PSL}{PSL}
+\dmo{\PSU}{PSU}
+\dmo{\area}{area}
+\dmo{\arccosh}{arccosh}
+\dmo{\sys}{sys}
+\dmo{\Tr}{tr}
+\dmo{\sgn}{sgn}
+\dmo{\ext}{ext}
+\dmo{\arcosh}{arcosh}
+
+
+% Finally, we'll use \endinput to indicate that LaTeX can stop reading this file. LaTeX will ignore anything after this line.
+\endinput
