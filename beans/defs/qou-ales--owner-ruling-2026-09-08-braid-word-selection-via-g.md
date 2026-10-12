@@ -244,3 +244,10 @@ Asked in the six-part frame on PR #7718 (comment 6130340849). The four options w
 - K4 confirms the Jones absorption law on characters under convention D; the Lean class stays open.
 
 Scope (a); bean stays open. Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+**2026-10-12 — option 4, step 1 (issue #7754, `computations/probes/gg_quark_letters/`).** Pre-registered at bca743c8b98, 4/4 checks, exact over ℤ[h]. The confined core V³ = (σ₀σ₁⁻¹)³ = 1 + h²(T_{s₀s₁} − T_{s₁s₀}) + h³(σ₁ − σ₀) + O(h⁴).
+- It has **no h¹ term**, so it supplies no first-order (flavour) content.
+- Every deviation up to h³ is **odd under σ₀↔σ₁**, because φ(V) = V⁻¹: it measures the vertex orientation.
+- Its first single letters are the antisymmetric pair +σ₁ − σ₀ at h³.
+
+The bare U = σ₀σ₁ is φ-symmetric at every power and cannot separate the generators. No flavour dictionary is derived: generator signs are not flavour signs without a placement rule. Nothing is adopted; the bean stays open. Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
