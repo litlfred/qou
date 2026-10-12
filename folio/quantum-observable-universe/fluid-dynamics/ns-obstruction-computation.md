@@ -22,12 +22,12 @@ However, the **local** Euler class pinned to a specific point $p \in \Sigma$ der
 $$
   H^2_{\{p\}}(\Sigma_4, \mathbb{Z})
    \cong 
-  H^2(D^4, S^3; \mathbb{Z})
+  H^2(D^2, S^1; \mathbb{Z})
    \cong 
   \mathbb{Z},
 $$
 
-where $D^4$ defines a tight ball encircling $p$ and $S^3$ defines its boundary (acknowledging Bring's surface possesses real dimension 4). The Euler class therefore maps directly to the **local degree** precisely at $p$:
+where $D^2$ is a small closed disc around $p$ and $S^1$ is its boundary circle (Bring's surface has real dimension 2). The Euler class therefore maps directly to the **local degree** precisely at $p$:
 
 $$
   e(\xi)|_p = -6 \cdot \deg_p(\xi) \in \mathbb{Z}.
