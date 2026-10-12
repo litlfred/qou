@@ -175,7 +175,9 @@ These are proved without sorry; their only axioms are `propext`, `Classical.choi
 - `KZTwoStrandHecke`: for two strands the KZ holonomy is `θ(σ₀) = e^{θ(1−c)} e₊ − e^{−θ(1+c)} e₋`. After rescaling it satisfies the Hecke quadratic with `q = e^{2πiκ}`, so it factors through `H_1(q)`.
 - `KohnoComparison`: two representations of `∏ M_{d_i}` are conjugate exactly when the ranks of their matrix-unit idempotents agree. On a preconnected parameter set, continuous families that are conjugate at one point are conjugate everywhere.
 
-Three gaps stand between these and the full theorem.
-1. The Hecke quadratic for the KZ generator when `n ≥ 3`. This needs the local monodromy at the collision divisor, i.e. the regular-singularity analysis.
+- `KZHolonomy/LocalMonodromy` (2026-10-12): for every strand count `n ≥ 2`, every representation `ρ : S_n →* A` into a complete normed `ℂ`-algebra, every coupling `κ ∈ ℂ` and every `c ∈ ℂ`, the rescaled generator `β_j = e^{2πiκc} θ(σ_j)` satisfies `β_j² = (q − q⁻¹)β_j + 1` with `q = e^{2πiκ}` (`kzBraidRep_sigma_isHeckeQuad`), so `kzBraidRep` factors through `H_n(q)` (`heckeOfKZ`, `heckeOfKZ_σ`). Proof: near `z₀ = z₁` the KZ coefficient along the half-turn is `iπ M(u)`, `M(u) = 2κ(P − c) + O(u)` holomorphic on `|u| < 3`; for non-resonant `κ` (`κ ∉ ±ℕ/4`) the convergent Fuchsian solution `H(u)u^{M₀}` gives `θ(σ₀) H(1) = H(1) · P e^{iπ M₀}`, using the exchange symmetry `H(−u) = P H(u) P` (from uniqueness of the formal solution) and invertibility of `H(1)` (ODE along `[ε,1]`). The resonant set is countable and the Hecke defect is continuous in `κ`, so it vanishes for every `κ`.
+
+Two gaps stand between these and the full theorem (gap 1 below is closed by `LocalMonodromy`).
+1. ~~The Hecke quadratic for the KZ generator when `n ≥ 3`.~~ Closed 2026-10-12, see `LocalMonodromy` above. Normalisation: `q = e^{2πiκ}` for the KZ form `κ Σ_{a≠b} d log(z_a − z_b)(ρ(s_ab) − c)` summed over ordered pairs (residue `2κ(P − c)`).
 2. Continuity in `q` of the Wedderburn isomorphism. `heckeWedderburn` is currently built one `q` at a time.
 3. A base point. At coupling 0 we have `q = 1`, which the generic Wedderburn excludes. So either the decomposition of `ℂ[S_n]` must glue continuously onto the generic one, or the base point must be chosen elsewhere.
