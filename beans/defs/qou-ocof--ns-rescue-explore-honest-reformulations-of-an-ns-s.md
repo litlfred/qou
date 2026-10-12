@@ -35,3 +35,14 @@ Two independent defects were found:
 - the computation (c).1 and the Levi chain (descartes-proof Step 3, levi-degeneracy (B)) take opposite branches.
 
 The bean stays open: the 3D NS question on M remains the open Clay-type problem.
+
+## 2026-10-12: external claim noted by the owner. UNVERIFIED, not a corpus fact
+The owner relayed a report that OpenAI published a 166-page paper, "Finite Time Blowup for Navier–Stokes", with a claimed Lean formalization. It asserts finite-time blowup for 3D incompressible NS with a smooth, compactly supported FORCE f, starting from rest, with bounded energy and ||u||_∞ → ∞. That is Fefferman's Alternatives (C) on R^3 and (D) on T^3, and it explicitly does NOT address the unforced (A)/(B). Status per the relay: under review. Not held in library/, not read by any agent, and not checked.
+
+**Bearing on this corpus (my analysis, conditional on the claim):**
+- It does not rescue thm:ns-singularity-descartes. It is analytic, on R^3/T^3, and forced; the corpus chain is a topological obstruction on Bring's surface.
+- It is consistent with this bean's regular-solution finding. One explicit smooth NS flow on UT(Σ₄) and some forced blowup elsewhere do not conflict.
+- torus-ns-regular asserts that "all smooth initial data" give global smooth solutions. Read in 2D this is true. Read in 3D on T^3 it is unforced Alternative (B), which remains open and which the paper does not settle. Only a FORCED-regularity claim on T^3 would be contradicted by (D), and torus-ns-regular makes none as written.
+- No corpus block cites Fefferman's alternatives or makes a forced-regularity claim (grep: 0 hits).
+
+**Before any content cites it:** ingest the PDF into uploads/ -> library/, read the forcing construction and the Lean statement, and check that the formal statement matches the prose one.
