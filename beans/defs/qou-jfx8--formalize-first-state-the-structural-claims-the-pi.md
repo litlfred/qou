@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T20:12:02Z
+updated_at: 2026-10-12T20:21:22Z
 parent: qou-v2om
 ---
 
@@ -82,3 +82,7 @@ My previous entry said the σ/σ⁻¹ preference is 'derived, no convention left
 
 ## 2026-10-12 — 🟧 OWNER RULING: strands follow the FIBRE Reeb flow ('2 fibre'); chirality wired; both flows checked
 BringUTContactChirality §6–7 + SegmentCollisionDatum Part G (both lean-direct exit 0). Fibre reading: orientation +dx∧dy∧dθ independent of fibre direction ((−η)∧d(−η) = η∧dη); e = −6; chiral invariant = torsion linking residue of the fibre class ℓ = −1/e = 1/6 ∈ ℚ/ℤ (H₁ = ℤ⁸ ⊕ ℤ/6), ℓ ≢ −ℓ. Geodesic reading (checked on owner request): reversed orientation, e = +6, ℓ = −1/6 ≡ 5/6, also chiral. So both flows give chirality, mirror-image; the flow fixes only its sign. Part G: for a covariant Bring energy E(π−θ, ℓ) = E(θ, −ℓ), reflection symmetry ⇔ residue-evenness; a residue-sensitive E is chiral and Part D's θ* = π/2 no longer follows. Fit check: fermion-boson-knot-link-proof's opposite vertical windings ±1 read naturally as particle/antiparticle = oppositely oriented fibre strands (supports, does not prove, the ruling). NOT derived: E's residue dependence (a formula for the Bring energy). Owner follow-up (2026-10-12, mid-turn): 'flow by the knot convolution operator' — queued.
+
+
+## 2026-10-12 — 'flow by the knot convolution operator'
+The convolution letter σ generates the flow σ^t = q^t P_S + q^{−t} e^{±iπt} P_A: on the Alt channel each crossing is a rotation by π, the full twist σ² is one full turn — the algebraic counterpart of the fibre rotation; the ± branch is the chirality, the real part q^{−t}cos(πt) is branch-free. Consequence measured: the A = 2 parity finding is cos(πt) and is scope-limited (see qou-8r6b). Open: identifying the π-per-crossing Alt phase with the geometric fibre rotation of UT(Σ₄) (a conjecture, not proved).

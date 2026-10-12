@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T05:49:42Z
-updated_at: 2026-10-04T15:13:30Z
+updated_at: 2026-10-12T20:21:22Z
 parent: qou-v2om
 ---
 
@@ -21,3 +21,7 @@ Lean: CompositionFeasibilityProgram.lean — CompositionProgram (data B, alphabe
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-12 — SCOPE CORRECTION of the A = 2 parity finding (convolution flow)
+'Every odd power fails on (5,1)' was measured for |m| ≤ 3 only, and is FALSE beyond it. Exact split (ConvolutionFlowParity.lean, exit 0; probe convolution_flow_parity_probe.py 5/5): χ(Wσ^m) = q^m a_S + (−q⁻¹)^m a_A with (5,1) a_S = 0.021792, a_A = 0.700431. Odd m infeasible iff q^{2m} < a_A/a_S ≈ 32.1, i.e. m < 16.63: odd m ≤ 15 fail, odd m ≥ 17 feasible (checked directly at m = 17). Even m ≥ 0 all feasible; negative odd m fail. Feasible power letters for m ∈ [−8, 20]: −8,−6,−4,−2, 0..16 even, 17..20. The parity is the cos(πt) of the convolution flow σ^t = q^t P_S + q^{−t} e^{±iπt} P_A, and it holds only until the Sym channel's q^{2m} overtakes a_A/a_S. Not fitted; no letter selected.
