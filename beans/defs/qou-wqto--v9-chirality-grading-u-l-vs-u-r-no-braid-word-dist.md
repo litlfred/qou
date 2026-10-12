@@ -399,3 +399,18 @@ Verification: lean-direct (`-DautoImplicit=false -s 65536`) exit 0 on BringCone 
 3. There is no map from the `Gen1Quark` labels into these rays.
 
 Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+## 2026-10-12 — gap 1 narrowed: L_i is forced into the commutant of the Reeb triad (issue #7774)
+
+Lean in `QOU/BringCone.lean` (generic `CommRing`, lean-direct exit 0, axioms propext + Quot.sound):
+- `leftMul_comm_reebM_{i,j,k}`: left multiplications commute with every Reeb operator.
+- `commutes_reeb_triad_iff_leftMul`: an R-linear map commuting with M_i, M_j, M_k is left multiplication by f(1).
+
+So the operators commuting with the Reeb triad are exactly the left multiplications. The second complex structure in Γ = J·J′, if it commutes with the Reeb field, must be some L_u; the remaining freedom is the unit u, not the kind of map. This is the quaternionic shadow of Krasnov's two commuting complex structures.
+
+Still open (rule 13a, stays `todo`):
+1. Which u. The commutant does not pick one.
+2. Bring's own cone versus the Hopf model (`qou-rydq`).
+3. A map from V10's eight `Gen1Quark` labels into the rays.
+
+Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
