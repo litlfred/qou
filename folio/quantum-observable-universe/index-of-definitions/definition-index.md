@@ -435,7 +435,7 @@
 | [prop:q-beta-c3-hopf-three-fold-markov](#prop:q-beta-c3-hopf-three-fold-markov) | Categorical derivation of $c_3 = J_{\mathrm{Hopf}}(q=1) = -2$ in the $\mathfrak{Q}_\beta$ precision ladder via 3-fold Markov closure → 2-strand sub-braid Hopf-link substructure → KL classical-limit decategorification | Ch 12 | `qou:QOU.BraidKnot.q_beta_c3_hopf_three_fold_markov` |
 | [prop:helicity-conservation](#prop:helicity-conservation) | Categorical helicity conservation | Ch 18 | `qou:QOU.FluidDynamics.helicity_conservation` |
 | [prop:categorical-lichnerowicz](#prop:categorical-lichnerowicz) | Categorical Lichnerowicz: $\Delta_\nabla^q = \mathfrak{D}_\nabla^2 + \tfrac{1}{4}\,\mathrm{Sc}_q$ | Ch 2 | `qou:QOU.Lichnerowicz.qDirac` |
-| [prop:yekutieli-lifting](#prop:yekutieli-lifting) | Categorical lifting condition holds in the brane tower | Ch 4 | `qou:QOU.BringsSurface.yekutieli_lifting` |
+| [prop:yekutieli-lifting](#prop:yekutieli-lifting) | Categorical lifting condition holds in the brane tower | Ch 4 | `qou:QOU.YekutieliLifting` |
 | [prop:categorical-mass-markov](#prop:categorical-mass-markov) | Categorical mass as Markov trace | Ch 7 | `qou:QOU.CategoricalMassMarkov` |
 | [prop:categorical-neutrality-saturated-shells](#prop:categorical-neutrality-saturated-shells) | Categorical neutrality of saturated shells: full-twist identity action on $\Phi_n$ at magic $n$ | Ch 7 | `qou:QOU.ShellNeutrality.SaturatedShellConjecture` |
 | [prop:mobius-energy](#prop:mobius-energy) | Categorical recovery of Möbius energy | Ch 11 | `qou:QOU.Braiding.mobius_energy` |
