@@ -251,3 +251,11 @@ Scope (a); bean stays open. Session: https://claude.ai/code/session_01A1NHnUY3QM
 - Its first single letters are the antisymmetric pair +σ₁ − σ₀ at h³.
 
 The bare U = σ₀σ₁ is φ-symmetric at every power and cannot separate the generators. No flavour dictionary is derived: generator signs are not flavour signs without a placement rule. Nothing is adopted; the bean stays open. Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+**2026-10-12 — option 4, step 2 (issue #7777, `computations/probes/gg_quark_letters_tl/`).** Pre-registered at 59fcf0d0594, 3/3 checks. In the Jones (Temperley–Lieb) basis, every template letter is c·1 − [2]_q·e_g, with the **same** cap–cup coefficient for every flavour.
+- Flavour is the bar parity of the through coefficient c ∈ {q, q⁻¹, [2]/2}, and the pair content is flavour-blind.
+- V = 1 − [2]q⁻¹e₀ − [2]q·e₁ + [2]²e₀e₁: one through-parity of each, with cross-weighted cap–cups.
+- V³ has through coefficient 1 and flip-odd pair content from t².
+- S+ vs S− on the neutron differs at t¹ only in the through coefficient.
+
+A derivation of the sign map must therefore fix each produced line's through parity; the pair structure cannot. Nothing adopted; the bean stays open. Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
