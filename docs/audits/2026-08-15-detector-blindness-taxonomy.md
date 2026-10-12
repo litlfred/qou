@@ -74,6 +74,7 @@ question.
 | 54 | **the SHAPE of `z`, where the convention is a RATIONAL FOLDED INTO INTEGER COEFFICIENTS** — every convention detector in the repo, which keys on `z` being written as `q**3/(q**2+1)` or `sqrt(q)/(q+1)` (or bound from one), and `scripts/lean-markov-convention-audit.py`, which keys on a `markovZ`-shaped `def` | **a closed form with no `z` in it at all.** `folio/quantum-observable-universe/observations/neutron-proton-mass-splitting.lean` carries `4993 * q0^2 + 20000 * q0 - 4993`, i.e. `10000·(z q² + 2q − z)` at `z = 4993/10000` — the rounded `z_C = 0.4993203342`. No `z` symbol, no `Real.sqrt`, no `markovZ`, and not the decimal `0.4993203342` the producer audit *does* know (it has a selftest for that spelling) | measured 2026-10-10 on `main` `606d034db2`, bean `qou-wgta` critical item 2. The Lean audit reports **23 convention-C defs, 0 actionable, 23 deliberate** and does not name this file; `convention-c-value-audit.py` and `convention-c-producer-audit.py` do not scan `.lean` at all. **It is the one site of the four that bean calls CRITICAL that is still live, and the only one no detector sees** — the other three (`borromean_binding_recompute.py`, `y_lambda_wenzl_bridge.py`, `hecke/hecke_symbolic.py`) are fixed and were all `z`-shaped. It publishes a CODATA comparison: sorry-free `splitting_value : abs (massSplitting 3.7445 - 1.302) < 0.001`, where `z_D` gives `1.0541` MeV (−18.5 % vs CODATA against the C frame's +0.64 %) and the goal would fail by **248× its own tolerance**. A structural scan of the whole tree for this spelling finds this declaration and its provenance audit doc, and nothing else |
 | 55 | **a witness's CITED producer, taken to mean the producer that WRITES THAT PATH** — `computations/audits/witness_producer_resolution_audit.py`, whose test is *"does the witness cite a `.py` that exists"* (3175 of 3510 RESOLVED, 0 `NAMED_BUT_MISSING` on `main`) | **an ORPHAN DUPLICATE: a witness sitting at a path its own cited producer does not write.** The citation resolves, the script exists, the audit says RESOLVED — and nothing has refreshed the file since the producer's write target moved | measured 2026-10-10 on `main` `fbc1f5f580`, bean `qou-bvk7`. `computations/probes/option-e-deuteron-delta-lambda-probe.witness.json` is stamped **2026-07-19** and carries `B_pred_over_me = -0.3882864240747888767…`, which is the **convention-C** deuteron `\|tr_M\|` to rel **7.25e-17**. Running the probe writes `computations/option-e-…` — a *different* path — where the live value is **`-0.1519683392…`**, **2.55× away**. So the C-frame figure survived a drain that took this class from 14 files to 2 **because the detector looked at the path the producer abandoned**. Not a cwd-relative write: `cwd_relative_witness_write_audit.py` reports **0** producers writing a CWD-relative witness, so that cause is excluded. The shallow clone cannot date the divergence (one commit on each path), so WHEN the target moved is undetermined. The fix is a write-target check, not a citation check — `scriptFile`/`computation` says who *claims* it, never who *writes* it. **The worked example is RETIRED as of `ee2b758144e` (2026-10-10): on the owner's pick the orphan moved to `fsh-guts/deprecated/computations/probes/` on branch `cat/cat-harness/fsh-guts` and is gone from `main`, so looking for it here now returns nothing.** The blind spot is unchanged — nothing was done to the audit, only to the one file it could not see |
 | 56 | **the PREDICTION PATH'S CLOSURE AND ITS ARITHMETIC — two independent causes, and repairing the first DEEPENS the error.** [`computations/no_free_parameter_certificate.py`](../../computations/no_free_parameter_certificate.py) walks a first-party import closure from a named entry point and classifies numeric literals in *arithmetic* position | **the external-researcher facade `qou_mass.api.predict()`** — the `predict(obs)` entry point bean `qou-s16e` (T5) names as the thing to certify. Measured by importing the committed classifier and pointing its `_resolve` at `api.py`: **closure = 1 module (itself), 0 literals classified, 1 unresolved import**, against closures of **7–11** for the four computing entry points. 🛑 **The literal count is NOT the signal** — `binding_K_direct` classifies **0** over a 7-module closure, so a bare 0 proves nothing either way. The signal is the **closure collapsing to 1**: the walk never left the file. Three measured causes, none of them a missed case — (a) `SEARCH_ROOTS` is four paths under `computations/` and `tools/qou-substrate/`, and the facade's tree is not among them; (b) every first-party import in `api.py` is **relative** (`from .prediction import …`, `from ._internal.codata_constants import U_MEV`), which a bare-name resolver looks for as a sibling of `computations/`; (c) two of those are **deferred inside function bodies** (lines 238, 381), so a top-level import walk misses them even with the roots fixed | measured 2026-10-10 (`qou-s16e`, PR #7553). 🛑 **The trap is the obvious repair: adding `qou-mass/` to `SEARCH_ROOTS` would make the false all-clear MORE convincing, not less** — `predict()` does no arithmetic at any closure size. It calls `_lookup_row(Z, N)`, which loads a per-Z JSON shard and returns the stored `M_pred_MeV` / `err_ppm` verbatim, so a literal-classifying audit has nothing to classify however far it walks. **The path IS traceable, by a different mechanism, which is why this is a detector gap and not a finding against `qou-mass`:** all **120** shards under `qou-mass/src/qou_mass/data/isotopes/` (**3558** rows) carry `scriptFile canonical_isotope_witness.py`, one uniform `scriptHash e56cabeee1ea`, a `commitSha` and `q0Anchor proton` — 120/120, no field missing — and all 120 are **byte-identical** to their `computations/` sources (sha256, pairwise). So the right audit for that path is **witness provenance**, not literal classification. Distinct from rows 22/25/26, the family where the interesting text is assumed to be a `str` in the AST at the call: here there is no call and no literal, because the quantity was never typed into source. **The reusable rule is about entry points: before adding one to a source-level audit, check that the path COMPUTES** — all four existing entry points do, which is why the gap stayed latent until the facade was tried. Guard: [`computations/audits/predict_path_literal_scope_probe.py`](../../computations/audits/predict_path_literal_scope_probe.py), whose `--selftest` pins the catch (the classifier must be LIVE — it finds 23 literals over `meson_mass_from_hecke`'s closure, so a clean facade result is not a dead classifier, taxonomy row 48) and the limit (`api.py` must still route through `_lookup_row`, asserted structurally so the two checks cannot certify each other). **My own first draft of this row named the literal count as the finding and was wrong** — caught by its own selftest reporting 0 for three of four computing entry points |
+| 57 | **the REMEDY, not the detection — a staleness check that correctly flags a witness and then prescribes a re-run that CANNOT HAPPEN.** `witness.scriptHash` drift is detected exactly right on [`qbeta-braid-nf-sdp-offset.witness.json`](../../computations/probes/qbeta-braid-nf-sdp-offset.witness.json) (recorded `d4bdd964d1d8`, live `0a2c46c6818f`), and §4 of AGENTS.md's idle policy says to refresh it by re-running the producer | **a producer whose convention-D guard `return`s BEFORE `WitnessBuilder` is constructed.** `qbeta_braid_nf_sdp_offset_probe.py` refuses at line ~204; the builder is at ~359. So no run of that file can rewrite the artifact, and what stays on disk is the 2026-08-16 pre-guard record asserting `G1_solve_consistent passed: false` / *"G x* = nf to < 1e-40"* — a PRECISION-GATE miss. The live diagnosis is that `G x = nf` has **no solution for any braid** (`⟨rad, nf⟩ = (−1/q)^writhe ≠ 0`, `QOU.QBeta.signRepValue_ne_zero`, sorry-free). The weaker recorded story is the one that invites the quotient repair the theorem rules out | bean `qou-egqr`, which named that repair as its deferred fix and was still `todo` 8 weeks after the corpus refuted it |
 
 ### 33 — offered by a sibling, taken here to avoid a conflict on the count line (2026-09-04)
 
@@ -999,8 +1000,64 @@ cannot make. A detector that pins its own limit is the part worth copying.
 
 **Note on the count line in AGENTS.md.** That document said "**thirty-five**
 rows" when this row was added and the true count was 39. It has now been stale
-seven times (13 → 16 → 18 → 22 → 35 → 39 → 46 → 47). Re-count the table; do not quote
-the sentence. **The table is at 56 rows as of 2026-10-10**, measured anchored (`grep -cE '^\| [0-9]+ \|'`); the naive `^\| [0-9]` reads 58 because a second table contributes two rows. It has now gone stale on this branch TWICE IN ONE DAY — 50 -> 55 -> 56 — each time because `main` appended a row while the branch held one, so treat any number in this sentence as a reading rather than a fact. It read 47 while
+seven times (13 → 16 → 18 → 22 → 35 → 39 → 46 → 47 → 51 → 56). Re-count the table; do not quote
+the sentence. **The table is at 57 rows as of 2026-10-12**, measured anchored (`grep -cE '^\| [0-9]+ \|'`); the naive `^\| [0-9]` reads 58 because a second table contributes two rows. It has now gone stale on this branch TWICE IN ONE DAY — 50 -> 55 -> 56 — each time because `main` appended a row while the branch held one, so treat any number in this sentence as a reading rather than a fact. It read 47 while
 the table stood at 48, so it was stale by one before row 49 was appended, and
 it read **forty-nine** while this row was being added — a count line inside the
 note telling you not to quote a count line, stale for the eighth and ninth time. Measured, not carried: `grep -cE '^\| *[0-9]+ *\|'` on this file.
+
+### 57 — the remedy was impossible, and the record kept arguing for the refuted fix (2026-10-12)
+
+Every other row here is a detector that fails to *see* something. This one sees
+it correctly. `witness.scriptHash` drift on
+`computations/probes/qbeta-braid-nf-sdp-offset.witness.json` is real and
+flagged: recorded `d4bdd964d1d8`, live `0a2c46c6818f`. AGENTS.md §4's idle
+policy then says what to do — *"refresh genuine `scriptHash` staleness by
+re-running the producer"* — and that instruction cannot be followed, because
+the producer's convention-D guard `return 2`s at line ~204 while
+`WitnessBuilder` is constructed at ~359. **No run of that file can rewrite its
+own artifact.** A probe that refuses by design is frozen at its last
+pre-refusal record.
+
+What makes it worth a row rather than a footnote is *which* record froze. The
+2026-08-16 artifact reports
+
+    G1_solve_consistent  passed: false
+    "G x* = nf to < 1e-40 for both anchors"
+
+— a **precision-gate miss**. That reads as "the solve was close and lost
+digits", which is exactly the diagnosis the corpus has since replaced: the
+pairing `⟨rad, nf⟩ = (−1/q)^writhe(β)` is the sign-representation value and is
+nonzero for every braid word and every `q ≠ 0`
+(`QOU.QBeta.signRepValue_ne_zero`, sorry-free, generic `Field`), so `G x = nf`
+is **unsatisfiable universally** — not ill-conditioned. The frozen record's
+weaker story is the one that invites quotienting by the radical, which the same
+Lean file's docstring calls *"a category error rather than a numerical
+approximation."* So the stale artifact does not merely lag; it argues for the
+repair the corpus refuted, and it is the only machine-readable account of the
+probe on disk. The witness also carries no convention stamp, so nothing but
+the producer's docstring records that it is C-frame.
+
+Bean `qou-egqr` named that quotient as its deferred fix and sat at `todo` for
+eight weeks after `RadicalPairingIsSignRep.lean` ruled it out — the fifth bean
+this session whose own subject had been settled while its status said
+otherwise. Row 39 is the near neighbour (*freshness on the wrong object*) and
+is **not** the same failure: there the check calls a stale witness fresh; here
+the check is right and the prescribed fix does not exist.
+
+Two measurement notes from the same pass, both corrections to the producer's
+own docstring rather than to a detector. It claimed *"BOTH anchors carry a
+radical component of ~47 % of their NF norm (0.47268915 for each,
+identically)"*. The number and the "identically" are both correct and the
+**denominator is not**: `0.47268915119281285398` is exactly `1/‖rad‖`
+(`‖rad‖ = 2.1155552173696784523`), the projection length onto the unit radical
+direction, identical across anchors because `⟨rad, nf⟩ = 1` exactly — both
+anchors are powers of `σ₁σ₂⁻¹`, hence writhe 0, hence `(−1/q)^0 = 1`. The
+radical's share *of the NF norm* is `1/(‖rad‖·‖nf‖)` and **differs**: muon
+`0.461823239529892831`, proton `0.472606756658436762`. Written the old way it
+read as a numerical coincidence between two knots; it is a consequence of the
+theorem the same paragraph goes on to cite. And the docstring carried a splice
+artifact from the 2026-08-19 ⛔ insertion — the clause *"Homogeneity is
+therefore broken and the offset direction becomes"* had been cut from its
+sentence (`…not merely its scale.`) and left dangling at the end of an
+unrelated paragraph 23 lines below, where it had sat through four commits.
