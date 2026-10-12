@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T20:37:20Z
+updated_at: 2026-10-12T20:47:04Z
 parent: qou-v2om
 ---
 
@@ -101,3 +101,7 @@ I told the owner the corpus bond is 'σ² (Hopf link) per shared pair' and elect
 ## 2026-10-12 — 🟧 OWNER RULINGS (final for this session)
 1. Orientation: 'Geodesic α, ℓ = −1/6'. Free strands follow geodesics; the knot-convolution operator # adds fibre turning κ = η(velocity); crossings are oriented by α∧dα. Canonical residue −1/6 (BringUTContactChirality §9, canonicalResidue; §6's +1/6 kept as the superseded record). Part G updated (canonical_residue_not_self_mirror). Lean exit 0.
 2. Molecular bond operator: corpus L_b (σ⁻¹ to a proton of each atom per shared electron, plus crossing table). 3. Electron strands: 3A + 3Z (electron = trefoil in local H₃). Build dispatched to a background agent (branch claude/molecular-word-corpus-lb-2026-10-12, stacked on #7769); unfixed layout choices are to be listed, not chosen.
+
+
+## 2026-10-12 — residue dependence of the Bring energy DERIVED (given one stated modelling step)
+BringResidueEnergy.lean (exit 0) + bring_residue_energy_probe.py (8/8). Step (stated, not proved): ambient fibre linking ℓ enters as the convolution-flow time t = 2ℓ (fractional twist σ^{2ℓ}); exact for the abelian/linking part; consistency e·ℓ = −1 (six pairs = one full negative twist). Energy E(ℓ) = −log μ(2ℓ), μ(t) = q^t w_S + q^{−t} cos(πt) w_A (convention-D bridge weights; μ(1) = z_D, μ(−1) = z_D − h checked). Proved: mirror = bar involution (μ_q(−t) = μ_{1/q}(t)); classical limit q = 1 achiral; chiral part factors μ(t) − μ(−t) = (q^t − q^{−t})(w_S − cos(πt) w_A) with the second factor > 0 under convention D, so chirality ⇔ q ≠ 1 and ℓ ≠ 0, sign = sign(ℓ ln q). At q₀, ℓ = −1/6: μ = 0.854998, E = 0.156656; mirror μ = 0.898764, E = 0.106735; gap 0.049921. Not derived: angle dependence E(θ, ℓ), overall scale α.
