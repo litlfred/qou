@@ -230,6 +230,8 @@ import QOU.KZ.FuchsianAnalytic
 import QOU.KZ.FuchsianConvergence
 import QOU.KZ.FuchsianFormal
 import QOU.KZ.FuchsianParam
+import QOU.KZ.GLnKZ
+import QOU.KZ.GLnResidues
 import QOU.KZ.KZ4
 import QOU.KZ.KZComplex
 import QOU.KZ.KZCorner

@@ -90,6 +90,11 @@ theorem P_mul_P {m : ℕ} (i j k l : Fin m) :
     P n i j * P n k l = permP ℂ n (Equiv.swap k l * Equiv.swap i j) :=
   permP_mul ℂ n _ _
 
+/-- The residues are the split Casimir tensors: `ℏ t_{ij} = ℏ P_{ij}` for `i ≠ j`. -/
+theorem smul_casimirLeg {m : ℕ} {i j : Fin m} (hij : i ≠ j) (c : ℂ) :
+    c • casimirLeg ℂ n i j = c • P n i j := by
+  rw [casimirLeg_eq_flipP ℂ n hij]
+
 /-- The four-point `𝔤𝔩_n` KZ residues `t_{ij} = ℏ P_{ij}`. -/
 noncomputable def kzRes (c : ℂ) : Res (Mat n 4) where
   t12 := c • P n 0 1

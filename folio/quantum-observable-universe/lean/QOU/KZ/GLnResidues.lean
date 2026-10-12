@@ -224,6 +224,33 @@ abbrev flipP (i j : Fin m) : Matrix (Fin m → Fin n) (Fin m → Fin n) K :=
 theorem flipP_mul_self (i j : Fin m) : flipP K n i j * flipP K n i j = 1 :=
   permP_mul_self_of_mul_self K n (Equiv.swap_mul_self i j)
 
+/-- The elementary matrix `E_{ab}` acting on tensor leg `i` of `V^{⊗m}`. -/
+def legE (i : Fin m) (a b : Fin n) : Matrix (Fin m → Fin n) (Fin m → Fin n) K :=
+  Matrix.of fun x y => if y i = b ∧ x = Function.update y i a then 1 else 0
+
+/-- The split `𝔤𝔩_n` Casimir (trace form) on legs `i, j`: `t_{ij} = ∑_{a,b} E^{(i)}_{ab} E^{(j)}_{ba}`. -/
+def casimirLeg (i j : Fin m) : Matrix (Fin m → Fin n) (Fin m → Fin n) K :=
+  ∑ a : Fin n, ∑ b : Fin n, legE K n i a b * legE K n j b a
+
+/-- **The split Casimir on legs `i ≠ j` is the flip `P_{ij}`.** -/
+theorem casimirLeg_eq_flipP {i j : Fin m} (hij : i ≠ j) :
+    casimirLeg K n i j = flipP K n i j := by
+  ext x z
+  simp only [casimirLeg, legE, Matrix.sum_apply, Matrix.mul_apply, Matrix.of_apply, permP,
+    permMat, flipP]
+  simp only [mul_ite, mul_one, mul_zero, ite_and]
+  simp only [Finset.sum_ite_irrel, Finset.sum_const_zero, Finset.sum_ite_eq, Finset.sum_ite_eq',
+    Finset.mem_univ, if_true, Function.update_of_ne hij]
+  have : Function.update (Function.update z j (z i)) i (z j) = z ∘ Equiv.swap i j := by
+    funext k
+    by_cases hki : k = i
+    · subst hki; simp [Equiv.swap_apply_left]
+    · by_cases hkj : k = j
+      · subst hkj; simp [Function.update_of_ne hki, Equiv.swap_apply_right]
+      · simp [Function.update_of_ne hki, Function.update_of_ne hkj,
+          Equiv.swap_apply_of_ne_of_ne hki hkj]
+  simp only [this, eq_comm]
+
 end Perm
 
 end QOU.KZ.GLnResidues
