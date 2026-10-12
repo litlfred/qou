@@ -28,3 +28,11 @@ Tier T3 of qou-533l.
 `pullOneCochain`, `pullOneCocycle`, `pullTwoCochain`, and `obstruction_pull`: pulling γ and ξ back along a refinement f : V j ⟶ U (r j) pulls the obstruction back. Lean-direct exits 0 with no warnings; axioms are standard.
 
 **Remaining for (b):** the colimit over covering families of a Grothendieck topology, i.e. a well-defined class independent of the cover. Then gerbes.
+
+## 2026-10-12: class-level vanishing done
+- `IsCoboundary`: a 2-cochain is a coboundary.
+- `isCoboundary_obstruction_iff`: whether the obstruction vanishes does not depend on the local lift ξ.
+- `isCoboundary_pull`: vanishing survives refinement.
+Lean-direct exits 0; standard axioms.
+
+**Not done.** The CONVERSE, that vanishing on a refinement implies vanishing on the coarser cover, needs 𝓔 (or 𝒜) to be a SHEAF so that lifts glue. That is the real content of the colimit over covers, and the presheaf framework cannot supply it. Next: add the sheaf condition (Mathlib `Presheaf.IsSheaf` over a Grothendieck topology), then gerbes. The design goes to the owner first.
