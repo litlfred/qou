@@ -616,7 +616,7 @@ whose abstract did not extract get a structural brief instead.
 | [`black-samson-phd2010sp`](black-samson-phd2010sp/) | REPRESENTATIONS OF HECKE — 19 sections: Acknowledgments; INTRODUCTION 1; SCHUR-WEYL DUALITY AND QUOTIENTS O |
 | [`bm-markov-j`](bm-markov-j/) | On Markov's Theorem — 1 sections: Document |
 | [`bn`](bn/) | Braid groups and Hodge theory — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove r- ings of P1, highlighting their |
-| [`bq28-r2r7`](bq28-r2r7/) | Classical and Quantum Algorithms for Characters of the Symmetric Group — 1 sections: Full text |
+| [`bq28-r2r7`](bq28-r2r7/) | Classical and Quantum Algorithms for Characters of the Symmetric Group — 1 sections: Document |
 | [`bsmf-2002-130-3-457-0`](bsmf-2002-130-3-457-0/) | Hyperideal polyhedra in hyperbolic 3-space — —A h y p e r i d e a l p o l y h e d r o n i s a n o n - c o m p a c t p o l y h e d r o n i n t h e h y p e r b o l i c 3-space 3 which, in the |
 | [`bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co`](bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/) | RESEARCHARTICLE PSYCHOLOGICALANDCOGNITIVESCIENCEMS The non-Riemannian nature of perceptual color space RoxanaBujacka,1 ,EmilyTeti a,b,JonahMiller a,ElektraCaffrey a,c,andTereceL.Turton a — 2 sections |
 | [`candetgl`](candetgl/) | The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and |
