@@ -1,5 +1,6 @@
 import QOU.Mass.KohnoComparison
 import QOU.Mass.KZHolonomy.Continuity
+import QOU.Mass.KZHolonomy.LocalMonodromy
 import QOU.Mass.BraidHeckeFactor
 import QOU.SchurWeyl.JMProjectorContinuity
 import QOU.IwahoriHecke.TensorEmbedding
@@ -9,9 +10,11 @@ import Mathlib.Analysis.Matrix
 # Assembly of the Kohno comparison: KZ is conjugate to Jimbo on the real segment
 
 This file assembles the rigidity route of docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md
-§5 into one theorem. Everything is proved; the **only hypothesis** of the final theorem is the
-Hecke quadratic relation for the first KZ generator (gap 1 of §5.1, open for `n ≥ 3`; proved for
-two strands in `QOU.Mass.KZTwoStrandHecke.kzTwoStrand_isHeckeQuad`).
+§5 into one theorem, **with no hypotheses**. Gap 1 of §5.1 (the Hecke quadratic for the KZ
+generator) is `QOU.Mass.KZHolonomy.LocalMonodromy.kzBraidRep_sigma_isHeckeQuad`; gaps 2 and 3
+(continuity of the Wedderburn matrix units through `q = 1`, and the base point) are
+`QOU.SchurWeyl.JMProjectorContinuity`. `kz_conj_jimbo` is first proved conditionally on the
+quadratic (`KZQuad`), and `kzQuad_holds` then discharges it.
 
 ## Conventions (checked against the source, not assumed)
 
@@ -46,6 +49,20 @@ two strands in `QOU.Mass.KZTwoStrandHecke.kzTwoStrand_isHeckeQuad`).
   (so `q = e^{t}` real in `[1, e^L]`), then for every such `t` the KZ representation through
   `H_{m+1}(q)` is conjugate to the Jimbo representation by an invertible matrix.
 * `kz_conj_jimbo_σ` — the same, stated on the braid generators.
+* `kzQuad_holds` — the hypothesis holds; `kz_conj_jimbo_hecke`, `kz_conj_jimbo_σ'` are the
+  unconditional statements for every `t ≥ 0`, every `m`, every `c`.
+* `kz_conj_jimbo_pin` — at a real pin `q₀ ≥ 1`, coupling `κ₀ = ln q₀/(2πi)`
+  (`kappa_eq`: `κ(t) = −i t/(2π)`), the rescaled KZ generators are simultaneously conjugate to
+  Jimbo's `Ř(q₀)`. `qOf_mem`: along the segment `q` is real in `[1, q₀]`.
+
+## Scope
+
+* Representation space: `V^{⊗(m+1)}`, `V = ℂ²`, i.e. the KZ system with `ρ = permRep`
+  (the `gl₂`-type Casimir `P − c` with an arbitrary scalar shift `c`).
+* Couplings: the real-`q` ray `κ = t/(2πi)`, `t ≥ 0`. Other couplings (complex `q`, `|q| ≠ 1`
+  off the ray, or `t < 0`) are not covered; for `t < 0` the same argument applies verbatim on
+  `[t, 0]` but is not stated here.
+* Conjugacy, not an explicit intertwiner: `U` is produced by rank comparison.
 -/
 
 namespace QOU.Mass.KohnoAssembly
@@ -415,6 +432,97 @@ theorem kz_conj_jimbo_σ (c : ℂ) {L : ℝ} (H1 : ∀ t ∈ Icc (0 : ℝ) L, KZ
   refine ⟨U, fun j => ?_⟩
   have := hU (Hecke.σ ℂ (qOf t) (qOf t)⁻¹ m j)
   rwa [kzHecke_σ c H1 ht, jimboRep_σ] at this
+
+/-! ## Discharging H1: gap 1 is closed
+
+`QOU.Mass.KZHolonomy.kzBraidRep_sigma_isHeckeQuad` (local monodromy, `LocalMonodromy.lean`)
+proves the Hecke quadratic for every generator, every `ρ`, every `κ, c`, on `≥ 2` strands. -/
+
+/-- **H1 holds unconditionally.** -/
+theorem kzQuad_holds (m : ℕ) (c : ℂ) (t : ℝ) : KZQuad m c t := by
+  intro hm
+  cases m with
+  | zero => exact absurd hm (lt_irrefl 0)
+  | succ k =>
+      exact LocalMonodromy.kzBraidRep_sigma_isHeckeQuad (permRep (R := ℂ) (k := k + 2)) (kappa t) c 0
+
+/-- The KZ representation through `H_{m+1}(q)`, `q = e^{2πiκ(t)}`, for every `t`:
+`σ_j ↦ e^{2πiκc} θ_κ(σ_j)`. -/
+noncomputable def kzHeckeRep (m : ℕ) (c : ℂ) (t : ℝ) :
+    Hecke ℂ (qOf t) (qOf t)⁻¹ m →ₐ[ℂ] Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ :=
+  heckeOfBraidRepOfZero (s := kzScale c t) (kzBraidRep permRep (kappa t) c) (kzQuad_holds m c t)
+
+theorem kzHeckeRep_σ (c : ℂ) (t : ℝ) (j : Fin m) :
+    kzHeckeRep m c t (Hecke.σ ℂ (qOf t) (qOf t)⁻¹ m j) =
+      kzScale c t • ((kzBraidRep permRep (kappa t) c (σ j) :
+        (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+        Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) := by
+  simp only [kzHeckeRep, heckeOfBraidRepOfZero, heckeOfBraidRep_σ]
+
+/-- **Kohno comparison, unconditional, for all real couplings `κ = t/(2πi)`, `t ≥ 0`.**
+For every number of strands `m + 1`, every Casimir shift `c ∈ ℂ` and every `t ≥ 0`, the KZ
+representation of `H_{m+1}(q)`, `q = e^t`, on `V^{⊗(m+1)}`, `V = ℂ²`, is conjugate to the Jimbo
+representation by an invertible matrix. -/
+theorem kz_conj_jimbo_hecke (c : ℂ) {t : ℝ} (ht : 0 ≤ t) :
+    ∃ U : (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ, ∀ h,
+      (U : Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) * kzHeckeRep m c t h =
+        jimboRep (qOf t) (qOf_ne_zero t) m h * U := by
+  have H1 : ∀ s ∈ Icc (0 : ℝ) t, KZQuad m c s := fun s _ => kzQuad_holds m c s
+  have hmem : t ∈ Icc (0 : ℝ) t := ⟨ht, le_rfl⟩
+  have he : kzHecke c H1 t = kzHeckeRep m c t :=
+    Hecke.hom_ext _ _ _ _ fun j => by rw [kzHecke_σ c H1 hmem, kzHeckeRep_σ]
+  obtain ⟨U, hU⟩ := kz_conj_jimbo c H1 hmem
+  exact ⟨U, fun h => by rw [← he]; exact hU h⟩
+
+/-- **Generator form, unconditional.** For every `t ≥ 0` one invertible `U` conjugates every
+rescaled KZ generator to the Jimbo `Ř`-matrix: `U (e^{2πiκc} θ_κ(σ_j)) = Ř_{j,j+1}(q) U`. -/
+theorem kz_conj_jimbo_σ' (c : ℂ) {t : ℝ} (ht : 0 ≤ t) :
+    ∃ U : (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ, ∀ j : Fin m,
+      (U : Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) *
+        (kzScale c t • ((kzBraidRep permRep (kappa t) c (σ j) :
+          (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+          Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)) =
+        strandBraid (qOf t) (qOf t)⁻¹ j * U :=
+  kz_conj_jimbo_σ c (fun s _ => kzQuad_holds m c s) ⟨ht, le_rfl⟩
+
+/-! ## Specialisation to a real pin `q₀ ≥ 1`
+
+No numerical value of `q₀` is used: `q₀` is any real `≥ 1`. The coupling is
+`κ₀ = ln q₀ / (2πi) = −i ln q₀ / (2π)`, purely imaginary, and along `κ(t)`, `t ∈ [0, ln q₀]`,
+the Hecke parameter `q = e^t` runs through the real interval `[1, q₀]`. -/
+
+theorem kappa_eq (t : ℝ) : kappa t = -((t / (2 * Real.pi) : ℝ) : ℂ) * I := by
+  have hπ : (Real.pi : ℂ) ≠ 0 := by exact_mod_cast Real.pi_ne_zero
+  unfold kappa
+  push_cast
+  field_simp
+  rw [Complex.I_sq]
+  ring
+
+/-- The couplings form a preconnected set (the image of `[0, L]`). -/
+theorem isPreconnected_kappa_image (L : ℝ) : IsPreconnected (kappa '' Icc 0 L) :=
+  isPreconnected_Icc.image _ continuous_kappa.continuousOn
+
+/-- Along the segment, `q` is real and lies in `[1, e^L]`. -/
+theorem qOf_mem (L : ℝ) {t : ℝ} (ht : t ∈ Icc (0 : ℝ) L) :
+    ∃ r : ℝ, qOf t = r ∧ 1 ≤ r ∧ r ≤ Real.exp L :=
+  ⟨Real.exp t, qOf_eq t, Real.one_le_exp ht.1, Real.exp_le_exp.mpr ht.2⟩
+
+theorem qOf_log {q₀ : ℝ} (hq₀ : 0 < q₀) : qOf (Real.log q₀) = q₀ := by
+  rw [qOf_eq, Real.exp_log hq₀]
+
+/-- **The Kohno comparison at a real pin `q₀ ≥ 1`.** At the coupling `κ₀ = ln q₀/(2πi)` the
+rescaled KZ generators on `V^{⊗(m+1)}` are simultaneously conjugate to Jimbo's `Ř(q₀)`. -/
+theorem kz_conj_jimbo_pin (c : ℂ) {q₀ : ℝ} (hq₀ : 1 ≤ q₀) :
+    ∃ U : (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ, ∀ j : Fin m,
+      (U : Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) *
+        (kzScale c (Real.log q₀) • ((kzBraidRep permRep (kappa (Real.log q₀)) c (σ j) :
+          (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+          Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)) =
+        strandBraid (q₀ : ℂ) (q₀ : ℂ)⁻¹ j * U := by
+  obtain ⟨U, hU⟩ := kz_conj_jimbo_σ' (m := m) c (Real.log_nonneg hq₀)
+  refine ⟨U, fun j => ?_⟩
+  rw [hU j, qOf_log (lt_of_lt_of_le one_pos hq₀)]
 
 end Assembly
 
