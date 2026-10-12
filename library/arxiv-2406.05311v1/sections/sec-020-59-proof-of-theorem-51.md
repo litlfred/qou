@@ -8,6 +8,7 @@ pages: 31-32
 source_pdf: A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf
 source_sha256: c431fca150329547
 toc_source: outline
+doc_brief: "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD — In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small)"
 ---
 k be a minimal interval, and consider a composition
 v corresponding to some saturated chain in [u, qαw]q

@@ -8,6 +8,7 @@ pages: 34-34
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
 toc_source: outline
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the"
 ---
 The Grace-Walsh-Szeg˝o Coincidence Theorem
 A classical result in the representation theory of SL2(C) is the fact that V (n) ∼= Symn(V (1)).

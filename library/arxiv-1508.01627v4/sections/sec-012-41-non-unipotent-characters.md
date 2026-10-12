@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.615
+doc_brief: "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
 ---
 []{#ssec:nonunipotent label="ssec:nonunipotent"}
 

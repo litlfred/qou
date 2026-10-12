@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.955
+doc_brief: "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD — In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small)"
 ---
 []{#SS:trees label="SS:trees"} A nonzero composition ${\mathbf v}=\mathbf{T}_k \cdots \mathbf{T}_2 \mathbf{T}_1$ is a if each $\mathbf{T}_i$ is a tree and each pair of trees has noncrossing supports. A forest is minimal, so that each pair of trees commute, and commuting them gives an equivalent operator.
 

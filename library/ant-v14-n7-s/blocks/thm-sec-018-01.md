@@ -1,1 +1,1 @@
-Suppose p is a prime with p| m, and suppose that a∈ OF maps to a generator of the
+is directly analogous to the norm-compatibility relations for Euler systems constructed

@@ -8,6 +8,7 @@ pages: 22-23
 source_pdf: 1508.01627v4.pdf
 source_sha256: 778e60219862e371
 toc_source: outline
+doc_brief: "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
 ---
 [1] M. Geck, G. Hiss, F. L¨ubeck, G. Malle, G. Pfeiffer, CHEVIE — A system for computing
 and processing generic character tables for ﬁnite groups of Lie type, Weyl groups and Hecke

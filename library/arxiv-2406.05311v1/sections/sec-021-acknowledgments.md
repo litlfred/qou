@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.821
 latex_coverage_ratio: 1.0
+doc_brief: "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD — In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small)"
 ---
 The authors want to thank the Algebraic Combinatorics Working Seminar at the Fields Institute where this project started in 2016. Benedetti thanks Grant FAPA of the Faculty of Science of Universidad de Los Andes. Bergeron is partially supported by NSERC and the York Research Chair in Applied Algebra. Colmenarejo was partially supported by the AMS-Simons Travel grant. Saliola is partially supported by NSERC. Sottile is partially supported by the Simons Foundation and the National Science Foundation through grant DMS-2201005.

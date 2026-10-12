@@ -11,5 +11,6 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
 ---
 []{#sec:endotriv label="sec:endotriv"} In this section we prove Theorem 2 on the classification of simple endotrivial modules for finite classical groups. Note that the case of linear and unitary groups has already been treated in [@LM15], so we only need to consider symplectic groups and spin groups as in the previous section.

@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1508.01627v4.pdf
 source_sha256: 778e60219862e371
 toc_source: outline
+doc_brief: "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
 ---
 The classical Murnaghan–Nakayama rule provides an eﬃcient recursive method to compute the values
 of irreducible characters of symmetric groups. This method can be adapted to the ﬁnite general linear

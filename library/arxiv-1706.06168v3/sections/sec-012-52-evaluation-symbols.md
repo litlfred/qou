@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 0.98
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the"
 ---
 One way to interpret the stability properties of a given polynomial is via the stability-preservation properties of a particular type of linear operator: the evaluation map. That is, the map which evaluates a polynomial $p(x,y)$ at $(a,b) \neq (0,0)$ preserves strong $\{(a:b)\}$-stability, where $\{(a:b)\}$ is a subset of $\mathbb{CP}^1$ consisting of a single point. Further, given $\lambda \in \mathbb{N}_0^m$ and $(a,b) = (a_1,b_1,\ldots,a_m,b_m) \in \mathbb{C}^{2m}$ (with $(a_j,b_j) \neq 0$ for all $j$), we can define the corresponding evaluation map as an element of $\mathop{\mathrm{Hom}}(V(\lambda),V(0))$ since $V(0) \cong \mathbb{C}$. This allows us to obtain symbols for evaluation maps, and these play an important role in our linear operator characterization.
 
