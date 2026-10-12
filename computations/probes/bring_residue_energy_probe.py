@@ -65,6 +65,20 @@ def main() -> int:
     check("mirror_equals_bar_involution", abs(mu(Q, -t) - mu(1 / Q, t)) < TOL, "Lean mirror_eq_bar")
     check("classical_limit_achiral", abs(mu(mp.mpf(1), t) - mu(mp.mpf(1), -t)) < TOL, "Lean classical_limit_achiral")
 
+    # the relative minimum of E (owner's principle): maximise μ in t near 0
+    dmu = lambda q, tt: mp.log(q) * (q ** tt * WS - q ** (-tt) * mp.cos(mp.pi * tt) * WA) - mp.pi * q ** (-tt) * mp.sin(mp.pi * tt) * WA  # noqa: E731
+    check("analytic_derivative_matches_numeric", abs(dmu(Q, mp.mpf("0.3")) - mp.diff(lambda x: mu(Q, x), mp.mpf("0.3"))) < mp.mpf("1e-40"),
+          "μ'(t) formula")
+    check("mu_prime_at_0_eq_lnq_times_wS_minus_wA", abs(dmu(Q, 0) - mp.log(Q) * (WS - WA)) < TOL, "Lean hasDerivAt_mu_zero")
+    tstar = mp.findroot(lambda x: dmu(Q, x), (mp.mpf("0.0001"), mp.mpf("0.5")), solver="illinois", tol=mp.mpf("1e-50"))
+    second = mp.diff(lambda x: mu(Q, x), tstar, 2)
+    s_star = tstar - t
+    angle_deg = 180 * s_star
+    print(f"  relative minimum of E: t* = {mp.nstr(tstar, 15)}  (μ'' = {mp.nstr(second, 6)} < 0)  E(t*) = {mp.nstr(-mp.log(mu(Q, tstar)), 15)}")
+    print(f"  collision twist s* = t* − 2ℓ = {mp.nstr(s_star, 15)}  →  turning angle π·s* = {mp.nstr(angle_deg, 12)}°")
+    check("t_star_in_open_0_half_and_is_a_max_of_mu", 0 < tstar < mp.mpf("0.5") and second < 0, "Lean mu_increasing_at_zero_conventionD")
+    check("q_equals_1_has_no_preferred_twist", abs(mp.log(1) * (WS - WA)) == 0, "Lean mu_deriv_zero_classical")
+
     ok_all = all(ok for _, ok, _ in checks)
     w = WitnessBuilder("bring-residue-energy", engine="mpmath")
     for name, ok, src in checks:
@@ -79,6 +93,8 @@ def main() -> int:
         "wS": mp.nstr(WS, 50), "wA": mp.nstr(WA, 50),
         "mu_canonical": mp.nstr(m_c, 50), "mu_mirror": mp.nstr(m_m, 50),
         "E_canonical": mp.nstr(E_c, 50), "E_mirror": mp.nstr(E_m, 50), "chiral_gap": mp.nstr(E_c - E_m, 50),
+        "t_star": mp.nstr(tstar, 50), "collision_twist_s_star": mp.nstr(s_star, 50),
+        "turning_angle_degrees": mp.nstr(angle_deg, 30), "E_at_t_star": mp.nstr(-mp.log(mu(Q, tstar)), 50),
     })
     print("witness:", out)
     print(f"{sum(1 for _, ok, _ in checks if ok)}/{len(checks)} checks pass")

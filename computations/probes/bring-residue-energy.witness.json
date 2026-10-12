@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-10-12T20:39:59.593382+00:00",
-  "commitSha": "641024234dfbe2601c5584dede12eb7a765a2a13",
+  "computedAt": "2026-10-12T20:48:52.560033+00:00",
+  "commitSha": "e15f22e7de31c4ca4a8b34313e6fe155c7789d8e",
   "assertions": [
     {
       "name": "weights_match_conventionD_closed_forms",
@@ -59,14 +59,42 @@
       "expected": "1",
       "passed": true,
       "source": "Lean classical_limit_achiral"
+    },
+    {
+      "name": "analytic_derivative_matches_numeric",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "μ'(t) formula"
+    },
+    {
+      "name": "mu_prime_at_0_eq_lnq_times_wS_minus_wA",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean hasDerivAt_mu_zero"
+    },
+    {
+      "name": "t_star_in_open_0_half_and_is_a_max_of_mu",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean mu_increasing_at_zero_conventionD"
+    },
+    {
+      "name": "q_equals_1_has_no_preferred_twist",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean mu_deriv_zero_classical"
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "bring-residue-energy",
   "scriptFile": "bring_residue_energy_probe.py",
-  "scriptHash": "66cbee4ca5fe",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "51979dbcd0c8",
+  "scriptCommitSha": "e15f22e7de31c4ca4a8b34313e6fe155c7789d8e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -97,5 +125,9 @@
   "mu_mirror": "0.89876418722685717518141401708687344399254295213794",
   "E_canonical": "0.15665600398631622789555257727130731133613804718584",
   "E_mirror": "0.10673458456175454392631652495647556010551684677477",
-  "chiral_gap": "0.049921419424561683969236052314831751230621200411071"
+  "chiral_gap": "0.049921419424561683969236052314831751230621200411071",
+  "t_star": "0.021794385874568876890900102811342307034088342837369",
+  "collision_twist_s_star": "0.3551277192079022102242334361446756403674216761707",
+  "turning_angle_degrees": "63.922989457422397840362018506",
+  "E_at_t_star": "-0.00057360694514865950094919238662045052834470376037764"
 }

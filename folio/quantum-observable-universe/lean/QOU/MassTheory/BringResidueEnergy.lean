@@ -49,6 +49,8 @@ only inputs are `q₀`, the two convention-D weights, and `ℓ`.
 -/
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
+import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
 namespace QOU.MassTheory.BringResidueEnergy
 
@@ -98,5 +100,55 @@ theorem canonical_mu_lt_mirror (q t : ℝ) (hq : 1 < q) (ht : t < 0) :
   have h1 := chiral_sign_canonical q t hq ht
   have h2 := chiral_factor_pos_conventionD q (cos (π * t)) (cos_le_one _)
   nlinarith [mul_neg_of_neg_of_pos h1 h2]
+
+/-! ## The relative minimum (owner's principle): a preferred twist direction
+
+Owner (2026-10-12): the collision takes the twist that makes the rotational energy a relative minimum.
+The ambient residue supplies flow time `2ℓ`; the collision adds `s`, total `t = s + 2ℓ`; minimising
+`E = −log μ` maximises `μ`.
+
+* `hasDerivAt_mu_zero`: `μ'(0) = ln q · (w_S − w_A)`.
+* `mu_increasing_at_zero_conventionD`: under convention D, `w_S − w_A = (q⁴+1)/(q²+1)² > 0`, so for
+  `q > 1` `μ` is increasing at `t = 0`. The relative minimum of `E` therefore sits at a positive flow
+  time `t* > 0`: a PREFERRED twist direction (the `σ` side in the canonical orientation), and it
+  vanishes at `q = 1` (`mu_deriv_zero_classical`). The location `t* ∈ (0, 1/2)` and its value are
+  computed in `bring_residue_energy_probe.py`.
+* Through `ConvolutionFlowFibre` (a flow time `s` turns the relative direction by `π s`), the
+  collision's turning angle is `π (t* − 2ℓ)`. That reading is the modelling identification of that
+  file, restated, not new. -/
+
+/-- `μ` in exponential form, `q > 0`. -/
+theorem mu_exp_form (q wS wA t : ℝ) (hq : 0 < q) :
+    mu q wS wA t = exp (log q * t) * wS + exp (-(log q * t)) * cos (π * t) * wA := by
+  unfold mu
+  rw [Real.rpow_def_of_pos hq, Real.rpow_def_of_pos hq]
+  ring_nf
+
+/-- **`μ'(0) = ln q · (w_S − w_A)`.** -/
+theorem hasDerivAt_mu_zero (q wS wA : ℝ) (hq : 0 < q) :
+    HasDerivAt (mu q wS wA) (log q * (wS - wA)) 0 := by
+  have hf : (mu q wS wA) = fun t => exp (log q * t) * wS + exp (-(log q * t)) * cos (π * t) * wA := by
+    funext t; exact mu_exp_form q wS wA t hq
+  rw [hf]
+  have h1 : HasDerivAt (fun t : ℝ => exp (log q * t)) (exp (log q * 0) * log q) 0 :=
+    ((hasDerivAt_id 0).const_mul (log q)).exp.congr_deriv (by simp)
+  have h2 : HasDerivAt (fun t : ℝ => exp (-(log q * t))) (exp (-(log q * 0)) * (-log q)) 0 :=
+    (((hasDerivAt_id 0).const_mul (log q)).neg).exp.congr_deriv (by simp)
+  have h3 : HasDerivAt (fun t : ℝ => cos (π * t)) (-sin (π * 0) * π) 0 :=
+    (((hasDerivAt_id 0).const_mul π).cos).congr_deriv (by simp)
+  have := ((h1.mul_const wS).add ((h2.mul h3).mul_const wA))
+  convert this using 1
+  simp; ring
+
+/-- **Increasing at `t = 0` under convention D for `q > 1`.** -/
+theorem mu_increasing_at_zero_conventionD (q : ℝ) (hq : 1 < q) :
+    0 < log q * ((q ^ 4 + q ^ 2 + 1) / (q ^ 2 + 1) ^ 2 - q ^ 2 / (q ^ 2 + 1) ^ 2) := by
+  apply mul_pos (Real.log_pos hq)
+  rw [div_sub_div_same]
+  apply div_pos _ (by positivity)
+  nlinarith [sq_nonneg (q ^ 2)]
+
+/-- **No preferred direction at `q = 1`.** -/
+theorem mu_deriv_zero_classical (wS wA : ℝ) : log 1 * (wS - wA) = 0 := by simp
 
 end QOU.MassTheory.BringResidueEnergy

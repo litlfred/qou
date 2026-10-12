@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T20:47:04Z
+updated_at: 2026-10-12T20:56:04Z
 parent: qou-v2om
 ---
 
@@ -105,3 +105,7 @@ I told the owner the corpus bond is 'σ² (Hopf link) per shared pair' and elect
 
 ## 2026-10-12 — residue dependence of the Bring energy DERIVED (given one stated modelling step)
 BringResidueEnergy.lean (exit 0) + bring_residue_energy_probe.py (8/8). Step (stated, not proved): ambient fibre linking ℓ enters as the convolution-flow time t = 2ℓ (fractional twist σ^{2ℓ}); exact for the abelian/linking part; consistency e·ℓ = −1 (six pairs = one full negative twist). Energy E(ℓ) = −log μ(2ℓ), μ(t) = q^t w_S + q^{−t} cos(πt) w_A (convention-D bridge weights; μ(1) = z_D, μ(−1) = z_D − h checked). Proved: mirror = bar involution (μ_q(−t) = μ_{1/q}(t)); classical limit q = 1 achiral; chiral part factors μ(t) − μ(−t) = (q^t − q^{−t})(w_S − cos(πt) w_A) with the second factor > 0 under convention D, so chirality ⇔ q ≠ 1 and ℓ ≠ 0, sign = sign(ℓ ln q). At q₀, ℓ = −1/6: μ = 0.854998, E = 0.156656; mirror μ = 0.898764, E = 0.106735; gap 0.049921. Not derived: angle dependence E(θ, ℓ), overall scale α.
+
+
+## 2026-10-12 — relative minimum (owner's principle) gives a preferred twist and a turning angle
+BringResidueEnergy (exit 0): μ'(0) = ln q·(w_S − w_A) (hasDerivAt_mu_zero); under convention D w_S − w_A = (q⁴+1)/(q²+1)² > 0, so for q > 1 the relative minimum of E sits at t* > 0 — a preferred twist direction (σ side, canonical orientation), absent at q = 1. Probe (12/12): t* = 0.0217944 (μ'' = −2.408), collision twist s* = t* − 2ℓ = 0.355128, turning angle π s* = 63.923°. The angle reading uses ConvolutionFlowFibre's identification (flow time s turns the relative direction by πs) and the stated modelling step (ℓ enters as flow time 2ℓ). Nothing fitted.
