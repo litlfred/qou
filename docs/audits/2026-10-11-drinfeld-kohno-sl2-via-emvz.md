@@ -198,8 +198,11 @@ Two gaps stand between these and the full theorem (gap 1 below is closed by `Loc
 - `kz_conj_jimbo_pos`: equivalently, for every real `q₀ > 0`, one invertible `U` conjugates every rescaled KZ generator `e^{2πiκ₀c} θ_{κ₀}(σ_j)` to Jimbo's `Ř_{j,j+1}(q₀)`.
 - The route is §5 steps 1–3: continuity of both families in `t`, the base point at `t = 0`, and rigidity (`conj_of_isPreconnected_hecke`) on `[0, t]` or `[t, 0]`, where every `q ≠ 1` is generic.
 
+**Complex couplings (added the same day).** `kz_conj_jimbo_complex` / `kz_conj_jimbo_complex_σ`: for every complex `κ` with `q = e^{2πiκ}` not a root of unity, the same conjugacy holds. The root-of-unity couplings are countable (`countable_rootOfUnity_couplings`: `q^k = 1` forces `κ ∈ ℚ`), so their complement is path-connected and dense in `ℂ` (real rank 2). The rigidity set is `S = {κ : the q²-integers [d]_{q²}, |d| ≤ m, are distinct}`; it contains that complement (non-roots of unity separate, `qInt2_injective`) and the base point `κ = 0` (`q = 1`), and it lies in the closure of that complement, so it is preconnected. No separation hypothesis remains: it follows from `q` not being a root of unity.
+
+**Identification of the Jimbo map.** `jimboRep_eq_jimbo`: `jimboRep q hq m = JimboActionKernel.jimbo q hq m` (both send `σ_j ↦ Ř_{j,j+1}`; `Hecke.hom_ext`).
+
 **Not proved.**
-- Complex `q` off the positive real axis (couplings `κ` that are not purely imaginary). The rigidity argument needs a connected path to `κ = 0` avoiding roots of unity except `q = 1`, and the separation hypothesis on the `q²`-integers; neither is established off the real ray.
+- Roots of unity `q ≠ 1` (`κ ∈ ℚ ∖ {0}`). There `H_n(q)` is not semisimple and the rank comparison does not apply; whether KZ and Jimbo are still conjugate there is not addressed.
 - An explicit intertwiner. `U` is produced by comparing ranks of block idempotents; nothing identifies it (e.g. with the weight-preserving intertwiner of #7632).
 - `V ≠ ℂ²`, i.e. other representations of `𝔤𝔩_N`/`𝔰𝔩_N`, and the Drinfeld–Kohno theorem in its general form (associator, quasi-Hopf twist).
-- `jimboRep` versus `JimboActionKernel.jimbo`: they agree on generators by construction, hence are equal by `Hecke.hom_ext`, but this equation is not stated in Lean, because `JimboActionKernel` does not compile against the olean cache used here (its cached dependency `SeminormalRep` predates that module's change to a general field).

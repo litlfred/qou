@@ -4,7 +4,11 @@ import QOU.Mass.KZHolonomy.LocalMonodromy
 import QOU.Mass.BraidHeckeFactor
 import QOU.SchurWeyl.JMProjectorContinuity
 import QOU.IwahoriHecke.TensorEmbedding
+import QOU.SchurWeyl.JimboActionKernel
 import Mathlib.Analysis.Matrix
+import Mathlib.Analysis.NormedSpace.Connected
+import Mathlib.Topology.Algebra.Module.Cardinality
+import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 
 /-!
 # Assembly of the Kohno comparison: KZ is conjugate to Jimbo on the real segment
@@ -54,6 +58,9 @@ quadratic (`KZQuad`), and `kzQuad_holds` then discharges it.
 * `kz_conj_jimbo_pin` — at a real pin `q₀ ≥ 1`, coupling `κ₀ = ln q₀/(2πi)`
   (`kappa_eq`: `κ(t) = −i t/(2π)`), the rescaled KZ generators are simultaneously conjugate to
   Jimbo's `Ř(q₀)`. `qOf_mem`: along the segment `q` is real in `[1, q₀]`.
+* `kz_conj_jimbo_complex`, `kz_conj_jimbo_complex_σ` — every complex `κ` with `q(κ)` not a
+  root of unity; the root-of-unity couplings are countable (`countable_rootOfUnity_couplings`),
+  so their complement in `ℂ` is path-connected and dense.
 * `kz_conj_jimbo_real`, `kz_conj_jimbo_pos` — the same at every real `t`, i.e. every real
   `q₀ > 0` (rigidity run on `[t, 0]` for `t < 0`).
 
@@ -61,12 +68,12 @@ quadratic (`KZQuad`), and `kzQuad_holds` then discharges it.
 
 * Representation space: `V^{⊗(m+1)}`, `V = ℂ²`, i.e. the KZ system with `ρ = permRep`
   (the `gl₂`-type Casimir `P − c` with an arbitrary scalar shift `c`).
-* Couplings: the purely imaginary couplings `κ = t/(2πi)`, `t ∈ ℝ`, i.e. every real `q > 0`
-  (`kz_conj_jimbo_real`, `kz_conj_jimbo_pos`). Complex `q` off the positive real axis is not
-  covered.
-* The Jimbo map is `jimboRep`, built here from the universal property; it agrees with
-  `JimboActionKernel.jimbo` on generators, but that identification is not stated in Lean here
-  (that module is not compiled in this container's cache).
+* Couplings: every complex `κ` with `q = e^{2πiκ}` not a root of unity
+  (`kz_conj_jimbo_complex`), and also every real `q > 0` including `q = 1`
+  (`kz_conj_jimbo_real`, `kz_conj_jimbo_pos`). Roots of unity `q ≠ 1` (`κ ∈ ℚ ∖ {0}`) are
+  not covered: there the Hecke algebra is not semisimple and the rank argument does not apply.
+* The Jimbo map is `jimboRep`, built here from the universal property; `jimboRep_eq_jimbo`
+  identifies it with the corpus's `JimboActionKernel.jimbo`.
 * Conjugacy, not an explicit intertwiner: `U` is produced by rank comparison.
 -/
 
@@ -185,10 +192,8 @@ end Perm
 /-! ## The Jimbo action on the skein presentation
 
 `QOU.SchurWeyl.JimboActionKernel.jimbo` is the same map routed through the balanced
-presentation; it is not imported here because its module is not rebuilt in this container's
-olean cache. The map below is defined directly by the universal property of
-`QOU.SchurWeyl.Hecke`, so it agrees with `jimbo` on generators and hence (by `Hecke.hom_ext`)
-everywhere. -/
+presentation. The map below is defined directly by the universal property of
+`QOU.SchurWeyl.Hecke`; `jimboRep_eq_jimbo` proves the two are equal. -/
 
 section JimboHecke
 
@@ -220,6 +225,13 @@ noncomputable def jimboRep (q : K) (hq : q ≠ 0) (m : ℕ) :
 @[simp] theorem jimboRep_σ (q : K) (hq : q ≠ 0) (m : ℕ) (j : Fin m) :
     jimboRep q hq m (Hecke.σ K q q⁻¹ m j) = strandBraid q q⁻¹ j :=
   Hecke.lift_σ _ _ _ _ _ _ _ _ j
+
+/-- **`jimboRep` is the corpus's Jimbo action** `JimboActionKernel.jimbo` (`heckeActionN` read
+through the balanced-presentation bridge): both send `σ_j` to `Ř_{j,j+1}`. -/
+theorem jimboRep_eq_jimbo (q : K) (hq : q ≠ 0) (m : ℕ) :
+    jimboRep q hq m = QOU.SchurWeyl.JimboActionKernel.jimbo q hq m :=
+  Hecke.hom_ext _ _ _ _ fun j => by
+    rw [jimboRep_σ, QOU.SchurWeyl.JimboActionKernel.jimbo_σ]
 
 end JimboHecke
 
@@ -613,6 +625,143 @@ theorem kz_conj_jimbo_pos (c : ℂ) (q₀ : ℝ) (hq₀ : 0 < q₀) :
   have := hU (Hecke.σ ℂ (qOf (Real.log q₀)) (qOf (Real.log q₀))⁻¹ m j)
   rw [kzHeckeRep_σ, jimboRep_σ, qOf_log hq₀] at this
   exact this
+
+/-! ## Complex couplings: every `κ` with `q = e^{2πiκ}` not a root of unity
+
+Parameter space: the whole `κ`-plane. The set `G` of couplings with `q(κ)` a root of unity is
+countable (`κ ∈ ℚ`), so its complement is path-connected (`ℂ` has real rank `2`) and dense.
+The rigidity set is `S = {κ | the q²-integers [d]_{q²}, |d| ≤ m, are distinct}`; it contains
+`ℂ ∖ G` (`qInt2_injective`) and the base point `κ = 0` (`q = 1`, `qInt2_one_injective`), and it
+lies in the closure of `ℂ ∖ G`, hence is preconnected. -/
+
+/-- The Hecke parameter as a function of a complex coupling: `q(κ) = e^{2πiκ}`. -/
+noncomputable def qC (κ : ℂ) : ℂ := Complex.exp (2 * κ * (Real.pi * I))
+
+theorem qC_ne_zero (κ : ℂ) : qC κ ≠ 0 := Complex.exp_ne_zero _
+
+theorem qC_zero : qC 0 = 1 := by simp [qC]
+
+theorem continuous_qC : Continuous qC :=
+  Complex.continuous_exp.comp ((continuous_const.mul continuous_id).mul continuous_const)
+
+/-- **The root-of-unity couplings are countable**: `q(κ)^k = 1` with `k > 0` forces `κ ∈ ℚ`. -/
+theorem countable_rootOfUnity_couplings :
+    {κ : ℂ | ¬ GenericParameter.NotRootOfUnity (qC κ)}.Countable := by
+  refine (Set.countable_range (fun p : ℤ × ℕ => (p.1 : ℂ) / (p.2 : ℂ))).mono ?_
+  intro κ hκ
+  simp only [GenericParameter.NotRootOfUnity, Set.mem_setOf_eq, not_forall, not_not] at hκ
+  obtain ⟨k, hk, hpow⟩ := hκ
+  rw [qC, ← Complex.exp_nat_mul, Complex.exp_eq_one_iff] at hpow
+  obtain ⟨n, hn⟩ := hpow
+  refine ⟨(n, k), ?_⟩
+  have hπ : (Real.pi : ℂ) ≠ 0 := by exact_mod_cast Real.pi_ne_zero
+  have hk' : (k : ℂ) ≠ 0 := by exact_mod_cast hk.ne'
+  show (n : ℂ) / (k : ℂ) = κ
+  rw [div_eq_iff hk']
+  have h2 : (2 * (Real.pi : ℂ) * I) ≠ 0 := by simp [hπ, Complex.I_ne_zero]
+  apply mul_right_cancel₀ h2
+  linear_combination -hn
+
+theorem kzQuadC (m : ℕ) (c κ : ℂ) :
+    ∀ hm : 0 < m, IsHeckeQuad (Complex.exp (2 * κ * (Real.pi * I) * c)) (qC κ) (qC κ)⁻¹
+      ((kzBraidRep (permRep (R := ℂ) (k := m + 1)) κ c (σ ⟨0, hm⟩) :
+        (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+        Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) := by
+  intro hm
+  cases m with
+  | zero => exact absurd hm (lt_irrefl 0)
+  | succ k => exact LocalMonodromy.kzBraidRep_sigma_isHeckeQuad (permRep (R := ℂ) (k := k + 2)) κ c 0
+
+/-- The KZ representation of `H_{m+1}(q(κ))` at a complex coupling `κ`. -/
+noncomputable def kzHeckeC (m : ℕ) (c κ : ℂ) :
+    Hecke ℂ (qC κ) (qC κ)⁻¹ m →ₐ[ℂ] Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ :=
+  heckeOfBraidRepOfZero (s := Complex.exp (2 * κ * (Real.pi * I) * c))
+    (kzBraidRep permRep κ c) (kzQuadC m c κ)
+
+theorem kzHeckeC_σ (c κ : ℂ) (j : Fin m) :
+    kzHeckeC m c κ (Hecke.σ ℂ (qC κ) (qC κ)⁻¹ m j) =
+      Complex.exp (2 * κ * (Real.pi * I) * c) • ((kzBraidRep permRep κ c (σ j) :
+        (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+        Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) := by
+  simp only [kzHeckeC, heckeOfBraidRepOfZero, heckeOfBraidRep_σ]
+
+theorem continuous_kzHeckeC_σ (c : ℂ) (j : Fin m) :
+    Continuous (fun κ => kzHeckeC m c κ (Hecke.σ ℂ (qC κ) (qC κ)⁻¹ m j)) := by
+  have hk := continuous_kzBraidRep_σ
+    (A := Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)
+    (permRep (R := ℂ) (k := m + 1)) c j
+  have hc : Continuous (fun κ : ℂ => Complex.exp (2 * κ * (Real.pi * I) * c) •
+      ((kzBraidRep permRep κ c (σ j) :
+      (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+        Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)) := by
+    refine Continuous.smul ?_ hk
+    exact Complex.continuous_exp.comp
+      (((continuous_const.mul continuous_id).mul continuous_const).mul continuous_const)
+  simpa only [kzHeckeC_σ] using hc
+
+theorem continuous_jimboRepC_σ (j : Fin m) :
+    Continuous (fun κ => jimboRep (qC κ) (qC_ne_zero κ) m (Hecke.σ ℂ (qC κ) (qC κ)⁻¹ m j)) := by
+  simp only [jimboRep_σ, qC]
+  exact (continuous_strandBraid_exp j).comp
+    ((continuous_const.mul continuous_id).mul continuous_const)
+
+theorem kzHeckeC_zero_σ (c : ℂ) (j : Fin m) :
+    kzHeckeC m c 0 (Hecke.σ ℂ (qC 0) (qC 0)⁻¹ m j) =
+      jimboRep (qC 0) (qC_ne_zero 0) m (Hecke.σ ℂ (qC 0) (qC 0)⁻¹ m j) := by
+  rw [kzHeckeC_σ, jimboRep_σ]
+  have hs : Complex.exp (2 * (0 : ℂ) * (Real.pi * I) * c) = 1 := by simp
+  rw [hs, one_smul, kzBraidRep_zero_σ, permRep_adjSwap, qC_zero, inv_one]
+
+/-- **The Kohno comparison at every complex coupling `κ` with `q = e^{2πiκ}` not a root of
+unity.** The KZ representation of `H_{m+1}(q)` on `V^{⊗(m+1)}`, `V = ℂ²`, rescaled by
+`e^{2πiκc}` per crossing, is conjugate to Jimbo's by an invertible matrix. No separation
+hypothesis is needed: it follows from `q` not being a root of unity. -/
+theorem kz_conj_jimbo_complex (c κ : ℂ) (hκ : GenericParameter.NotRootOfUnity (qC κ)) :
+    ∃ U : (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ, ∀ h,
+      (U : Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) * kzHeckeC m c κ h =
+        jimboRep (qC κ) (qC_ne_zero κ) m h * U := by
+  set G : Set ℂ := {κ : ℂ | ¬ GenericParameter.NotRootOfUnity (qC κ)}
+  set S : Set ℂ := {κ : ℂ | Set.InjOn (qInt2 (qC κ)) {d | d ∈ contentRange m}}
+  have hGc : G.Countable := countable_rootOfUnity_couplings
+  have hrank : (1 : Cardinal) < Module.rank ℝ ℂ := by
+    rw [Complex.rank_real_complex]; norm_num
+  have hGcS : Gᶜ ⊆ S := fun x hx =>
+    (qInt2_injective (qC x) (qC_ne_zero x) (by simpa [G] using hx)).injOn
+  have hcl : closure Gᶜ = Set.univ := (hGc.dense_compl ℂ).closure_eq
+  have hS : IsPreconnected S :=
+    (hGc.isPathConnected_compl_of_one_lt_rank hrank).isConnected.isPreconnected.subset_closure
+      hGcS (by rw [hcl]; exact Set.subset_univ _)
+  have hdense : S ⊆ closure (S ∩ {x | GenericParameter.NotRootOfUnity (qC x)}) := by
+    have : Gᶜ ⊆ S ∩ {x | GenericParameter.NotRootOfUnity (qC x)} := fun x hx =>
+      ⟨hGcS hx, by simpa [G] using hx⟩
+    calc S ⊆ closure Gᶜ := by rw [hcl]; exact Set.subset_univ _
+      _ ⊆ _ := closure_mono this
+  have h0 : (0 : ℂ) ∈ S := by
+    show Set.InjOn (qInt2 (qC 0)) _
+    rw [qC_zero]
+    exact (qInt2_one_injective (K := ℂ)).injOn
+  have hκS : κ ∈ S := hGcS (by simpa [G] using hκ)
+  exact conj_of_isPreconnected_hecke (n := m) hS continuous_qC.continuousOn
+    (fun x _ => qC_ne_zero x) (fun x hx => hx) hdense
+    (kzHeckeC m c) (fun x => jimboRep (qC x) (qC_ne_zero x) m)
+    (fun j => (continuous_kzHeckeC_σ c j).continuousOn)
+    (fun j => (continuous_jimboRepC_σ j).continuousOn)
+    (fun _ => Classical.arbitrary _) (x₀ := 0) h0 1
+    (fun j => by rw [kzHeckeC_zero_σ c j]; simp) hκS hκ
+
+/-- **Generator form at a complex coupling.** If `q = e^{2πiκ}` is not a root of unity, one
+invertible `U` satisfies `U · (e^{2πiκc} θ_κ(σ_j)) = Ř_{j,j+1}(q) · U` for every `j`. -/
+theorem kz_conj_jimbo_complex_σ (c κ : ℂ) (hκ : GenericParameter.NotRootOfUnity (qC κ)) :
+    ∃ U : (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ, ∀ j : Fin m,
+      (U : Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) *
+        (Complex.exp (2 * κ * (Real.pi * I) * c) • ((kzBraidRep permRep κ c (σ j) :
+          (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+          Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)) =
+        strandBraid (qC κ) (qC κ)⁻¹ j * U := by
+  obtain ⟨U, hU⟩ := kz_conj_jimbo_complex (m := m) c κ hκ
+  refine ⟨U, fun j => ?_⟩
+  have := hU (Hecke.σ ℂ (qC κ) (qC κ)⁻¹ m j)
+  rwa [kzHeckeC_σ, jimboRep_σ] at this
 
 end Assembly
 
