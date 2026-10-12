@@ -13,10 +13,12 @@ Checked for 1 <= r <= 6 at q in {2, 3/2, -5/7, 1}:
   (d) the trace split  T_m(gamma^p) = sum_{j <= min(m, r-m)} tr(gamma^p | W_{r,j}),
       W_{r,j} = ker E  intersected with V_{r-j}  (V_m = span of states with m ones), 1 <= p <= r + 1;
   (e) records the scalar by which gamma^r (the full twist) acts on W_{r,j}, if it is one.
-      Observed (q = 2, r <= 6): a scalar, q^{r(r-1) - 2j(r-j+1)}.
-Exit status 0 iff (a)-(d) pass.
+      It is the scalar q^{r(r-1) - 2j(r-j+1)} (checked against the Lean `twistScalar`
+      at every sample q), and dim W_{r,j} = C(r,j) - C(r,j-1) (Lean `finrank_Wmod`).
+Exit status 0 iff (a)-(e) pass.
 """
 from fractions import Fraction as Fr
+from math import comb
 from itertools import product
 import sys
 
@@ -191,9 +193,19 @@ def main():
                     checks += 1
                     if Tm != split:
                         fails += 1; print("split FAIL", q, r, p, m)
-                if p == r and q == Fr(2):
-                    print(f"r={r}: full twist gamma^r on W_(r,j):",
-                          {j: (len(W[j]), trW[j][1]) for j in W})
+                if p == r:
+                    for j in W:
+                        n = r - 1
+                        lean_s = (q ** (n - j)) ** (n + 1 - j) * (q ** max(j - 1, 0) / q ** 2) ** j
+                        dim_ok = len(W[j]) == comb(r, j) - (comb(r, j - 1) if j else 0)
+                        checks += 2
+                        if trW[j][1] != lean_s:
+                            fails += 1; print("full twist scalar FAIL", q, r, j, trW[j][1], lean_s)
+                        if not dim_ok:
+                            fails += 1; print("dim W FAIL", q, r, j)
+                    if q == Fr(2):
+                        print(f"r={r}: full twist gamma^r on W_(r,j):",
+                              {j: (len(W[j]), trW[j][1]) for j in W})
     print(f"checks={checks} fails={fails}")
     return 1 if fails else 0
 

@@ -41,12 +41,21 @@ weaker than the usual condition. It holds at `q = 1` in characteristic 0, where 
   * `trace_W_gam_pow_split`:
     `tr(W γ^p) = Σ_{2j ≤ r} (Σ_{m=j}^{r−j} q^{2m}) tr(γ^p | W_{r,j})`.
 
-## Not proved here
-
-The full twist `γ^r` acts on `W_{r,j}` by a scalar. The probe
-`computations/probes/rj_schur_weyl_trace_split_probe.py` finds `q^{r(r−1) − 2j(r−j+1)}`
-(`r ≤ 6`). That scalar is not proved here. Proving it needs either the ribbon element or the
-irreducibility of `W_{r,j}` under the braid group, and neither is formalised.
+* **The full twist on `W_{r,j}`** (`gamW_fullTwist`, `2j ≤ r`): `γ^{rt}` acts on `W_{r,j}`
+  as the scalar `(q^{r(r−1) − 2j(r−j+1)})^t` (`twistScalar`). The proof needs no ribbon
+  element and no irreducibility.
+  * Telescoping gives `γ^r = ρ^r + E K_r`, and `ρ^r` is the scalar `s_j` on `V_j`
+    (`rho_pow_mulVec`).
+  * Write a highest-weight `w` as `E^{r−2j} v`, with `v` of weight `j` (`Ec_bij`).
+  * Then `γ^r w − s_j w = E^{r−2j+1} y` for some `y` of weight `j − 1`, and this vector is
+    killed by `E`.
+  * So `E^{r−2j+2} y = 0`, and `Epow_inj` gives `y = 0`.
+* `finrank_Wmod`: `dim W_{r,j} = C(r,j) − C(r,j−1)`. This is the trace split at `X = 1`, in
+  characteristic 0.
+* **Per-module Rosso–Jones for the full twists.**
+  * `trace_W_fullTwist`:
+    `tr(W γ^{rt}) = Σ_{2j ≤ r} (Σ_{m=j}^{r−j} q^{2m}) s_j^t dim W_{r,j}`.
+  * `markov_fullTwist`: the same for every Markov trace with `z = z_D`.
 
 -- Ref: [jimbo1986] Jimbo, *Lett. Math. Phys.* 11 (1986); [kassel1995] Kassel, *Quantum
 -- Groups*, GTM 155, Ch. VI–VII
@@ -1447,6 +1456,141 @@ theorem fullTwist_mulVec (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) 
     · obtain ⟨i, hi⟩ : ∃ i, j = i + 1 := ⟨j - 1, by omega⟩
       exact Epow_inj hq hqn i (k + 2) (by omega) y (hyS i hi) h2
   rw [h1, hy, Epow_zero_vec, add_zero]
+
+theorem fullTwist_pow_mulVec (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (j : ℕ)
+    (hj : 2 * j ≤ n + 1) {w : (Fin (n + 1) → Fin 2) → R} (hw : Supp (n + 1 - j) w)
+    (hE : Em q n *ᵥ w = 0) :
+    ∀ t, gam q n ^ ((n + 1) * t) *ᵥ w = twistScalar q n j ^ t • w
+  | 0 => by simp
+  | t + 1 => by
+    rw [show (n + 1) * (t + 1) = (n + 1) * t + (n + 1) by ring, pow_add,
+      ← Matrix.mulVec_mulVec, fullTwist_mulVec hq hqn j hj hw hE, Matrix.mulVec_smul,
+      fullTwist_pow_mulVec hq hqn j hj hw hE t, smul_smul, pow_succ, mul_comm]
+
+theorem ext0_Xl {n : ℕ} {X : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R} (hX : WP X)
+    (m : ℕ) (u : St n m → R) : ext0 m (Xl X m u) = X *ᵥ ext0 m u := by
+  classical
+  funext a
+  by_cases ha : ones a = m
+  · simp only [ext0, ha, dif_pos, Xl, Matrix.mulVecLin_apply, Matrix.mulVec, dotProduct, blk,
+      Matrix.of_apply]
+    rw [sum_over_weight (fun c => X a c * (if h : ones c = m then u ⟨c, h⟩ else 0)) m
+      (fun c hc => by simp [hc])]
+    refine Finset.sum_congr rfl fun c _ => ?_
+    rw [dif_pos c.2]
+  · rw [supp_WP hX (supp_ext0 u) a ha]
+    simp only [ext0]; rw [dif_neg ha]
+
+theorem ext0_smul {n m : ℕ} (c : R) (u : St n m → R) : ext0 m (c • u) = c • ext0 m u := by
+  funext a; simp only [ext0, Pi.smul_apply, smul_eq_mul]; split_ifs <;> simp
+
+theorem ext0_inj {n m : ℕ} {x y : St n m → R} (h : ext0 m x = ext0 m y) : x = y := by
+  funext z
+  have := congrFun h z.1
+  simpa only [ext0, z.2, dif_pos] using this
+
+/-- **The full twist on the standard module `W_{r,j}`** (`2j ≤ r`): `γ^{rt}` acts on `W_{r,j}`
+as the scalar `(q^{r(r−1) − 2j(r−j+1)})^t` (`twistScalar`). -/
+theorem gamW_fullTwist (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (j t : ℕ)
+    (hj : 2 * j ≤ n + 1) :
+    gamW hq n ((n + 1) * t) j = twistScalar q n j ^ t • LinearMap.id := by
+  apply LinearMap.ext
+  rintro ⟨u, hu⟩
+  apply Subtype.ext
+  rw [gamW, LinearMap.restrict_apply, LinearMap.smul_apply, LinearMap.id_apply,
+    Submodule.coe_smul]
+  apply ext0_inj
+  rw [ext0_Xl (WP_pow (WP_gam q n) _), ext0_smul]
+  have hE : Em q n *ᵥ ext0 (n + 1 - j) u = 0 := by
+    rw [← ext0_El]
+    have : El q n (n + 1 - j) u = 0 := hu
+    rw [this]; funext c; simp [ext0]
+  exact fullTwist_pow_mulVec hq hqn j hj (supp_ext0 u) hE t
+
+/-! ## 11. Dimensions of the standard modules, and the per-module Rosso–Jones formula -/
+
+theorem blk_one {n : ℕ} (m : ℕ) :
+    blk (1 : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R) m m = 1 := by
+  ext a b
+  simp only [blk, Matrix.of_apply, Matrix.one_apply, Subtype.ext_iff]
+
+theorem trK_one (q : R) {n : ℕ} (m : ℕ) (hX : WP (1 : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R))
+    (hc : (1 : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R) * Em q n = Em q n * 1) :
+    trK q 1 hX hc m = Module.finrank R (LinearMap.ker (El q n m)) := by
+  rw [trK]
+  have : (Xl (1 : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R) m).restrict
+      (ker_El_inv q hX hc m) = LinearMap.id := by
+    apply LinearMap.ext; intro u; apply Subtype.ext
+    show (blk (1 : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R) m m).mulVecLin u.1 = u.1
+    rw [blk_one, Matrix.mulVecLin_one]
+    rfl
+  rw [this, LinearMap.trace_id]
+
+/-- `C(r, m) = Σ_{j ≤ min(m, r−m)} dim W_{r,j}`. -/
+theorem choose_eq_sum_dim (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (m : ℕ)
+    (hm : m ≤ n + 1) :
+    ((n + 1).choose m : R) = ∑ j ∈ Finset.range (min m (n + 1 - m) + 1),
+      (Module.finrank R (Wmod q n j) : R) := by
+  have hX := (WP_one : WP (1 : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R))
+  have hc : (1 : Matrix (Fin (n + 1) → Fin 2) (Fin (n + 1) → Fin 2) R) * Em q n = Em q n * 1 := by
+    rw [one_mul, mul_one]
+  have h := trace_split hq hqn hX hc m hm
+  rw [blk_one, Matrix.trace_one, card_St] at h
+  rw [h]
+  refine Finset.sum_congr rfl fun j _ => ?_
+  rw [trK_one]; rfl
+
+/-- **The dimension of the standard module**: `dim W_{r,j} = C(r, j) − C(r, j − 1)` for
+`2j ≤ r` (`C(r, −1) = 0`). -/
+theorem finrank_Wmod (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) [CharZero R] (j : ℕ)
+    (hj : 2 * j ≤ n + 1) :
+    Module.finrank R (Wmod q n j) + (if j = 0 then 0 else (n + 1).choose (j - 1))
+      = (n + 1).choose j := by
+  have h1 := choose_eq_sum_dim hq hqn j (by omega)
+  rw [min_eq_left (by omega), Finset.sum_range_succ] at h1
+  rcases Nat.eq_zero_or_pos j with h0 | hpos
+  · subst h0
+    simp only [Finset.range_zero, Finset.sum_empty, zero_add] at h1
+    simp only [if_true, add_zero]
+    exact_mod_cast h1.symm
+  · have h2 := choose_eq_sum_dim hq hqn (j - 1) (by omega)
+    rw [min_eq_left (by omega), show j - 1 + 1 = j by omega] at h2
+    rw [← h2] at h1
+    rw [if_neg (by omega)]
+    exact_mod_cast (by rw [h1]; ring : ((Module.finrank R (Wmod q n j) : R)
+      + ((n + 1).choose (j - 1) : R)) = ((n + 1).choose j : R))
+
+/-- **Rosso–Jones per standard module, for the full twists `γ^{rt}`.**
+`tr(W γ^{rt}) = Σ_{2j ≤ r} (Σ_{m=j}^{r−j} q^{2m}) · (q^{r(r−1)−2j(r−j+1)})^t · dim W_{r,j}`. -/
+theorem trace_W_fullTwist (hq : q ≠ 0) {n : ℕ} (hqn : QIntNonzero q (n + 1)) (t : ℕ) :
+    Matrix.trace (W q (n + 1) * gam q n ^ ((n + 1) * t))
+      = ∑ j ∈ Finset.range ((n + 1) / 2 + 1),
+          (∑ m ∈ Finset.Icc j (n + 1 - j), (q ^ 2) ^ m) *
+            (twistScalar q n j ^ t * (Module.finrank R (Wmod q n j) : R)) := by
+  rw [trace_W_gam_pow_split hq hqn]
+  refine Finset.sum_congr rfl fun j hj => ?_
+  have hj' : 2 * j ≤ n + 1 := by
+    have := Finset.mem_range.mp hj; omega
+  rw [gamW_fullTwist hq hqn j t hj', map_smul, LinearMap.trace_id, smul_eq_mul]
+
+/-- **The same for every Markov trace with `z_D`**: on any Hecke family, `n ≤ N`,
+`(q² + 1)^r t(Δ^{2t}) = Σ_{2j ≤ r} (Σ_{m=j}^{r−j} q^{2m}) · s_j^t · dim W_{r,j}`,
+`Δ² = (s₀ ⋯ s_{n−1})^{n+1}` the full twist. -/
+theorem markov_fullTwist (hq : q ≠ 0) (hq1 : q ^ 2 + 1 ≠ 0) {n : ℕ}
+    (hqn : QIntNonzero q (n + 1))
+    {B : Type*} [Ring B] [Algebra R B] {N : ℕ} {s : ℕ → B}
+    (hs : QOU.IwahoriHecke.JonesNormalForm.HeckeFamily N (q - q⁻¹) 1 s) (tr : B →ₗ[R] R)
+    (ht1 : tr 1 = 1) (hcyc : ∀ x y : B, tr (x * y) = tr (y * x))
+    (hmark : ∀ k, k < N → ∀ x ∈ Algebra.adjoin R (s '' Set.Iio k), tr (x * s k) = zD q * tr x)
+    (hn : n ≤ N) (t : ℕ) :
+    (q ^ 2 + 1) ^ (n + 1) * tr (QOU.IwahoriHecke.JonesNormalForm.cox s n ^ ((n + 1) * t))
+      = ∑ j ∈ Finset.range ((n + 1) / 2 + 1),
+          (∑ m ∈ Finset.Icc j (n + 1 - j), (q ^ 2) ^ m) *
+            (twistScalar q n j ^ t * (Module.finrank R (Wmod q n j) : R)) := by
+  rw [markov_cox_eq_quantumTrace' hq hq1 hs tr ht1 hcyc hmark hn, ← gam,
+    ← trace_W_fullTwist hq hqn t]
+  have h1 : (q ^ 2 + 1) ^ (n + 1) ≠ 0 := pow_ne_zero _ hq1
+  field_simp
 
 end QOU.Archimedean.SchurWeylTrace
 
