@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-12T19:04:05Z
+updated_at: 2026-10-12T19:13:19Z
 parent: qou-d8c7
 ---
 
@@ -131,3 +131,15 @@ File: QOU/Archimedean/SchurWeylTrace.lean. Sorry-free; axioms are only propext, 
 - (3) Proved: WP_gam and gam_comm_Em; gamW (γ^p on W_{r,j}); T_gam_pow_split; trace_W_gam_pow_split, which says tr(Wγ^p) = Σ_{2j≤r}(Σ_{m=j}^{r−j} q^{2m}) tr(γ^p|W_{r,j}).
 - Probe computations/probes/rj_schur_weyl_trace_split_probe.py: 22504/22504 exact checks pass.
 - STILL OPEN: the full twist γ^r acts on W_{r,j} by a scalar. The probe finds the scalar q^{r(r−1) − 2j(r−j+1)} for r ≤ 6. The proof needs the ribbon element (Δ² as a function of the quantum Casimir via Jucys–Murphy elements) or irreducibility of W_{r,j} under B_r. Neither is formalised.
+
+
+## 2026-10-12 (later still): full-twist scalar PROVED (PR #7737, commit d4678e2306)
+- SchurWeylTrace.lean §10–11, sorry-free; axioms are only propext, Classical.choice and Quot.sound. The hypothesis is QIntNonzero q r.
+- gamW_fullTwist: γ^{rt} acts on W_{r,j} (for 2j ≤ r) as (twistScalar)^t, where twistScalar = q^{r(r−1)−2j(r−j+1)}.
+  - Route: the telescoping γ^r = ρ^r + E K_r, with ρ^r the scalar s_j on V_j.
+  - Then w = E^{r−2j} v, and γ^r w − s_j w = E^{r−2j+1} y. This vector is killed by E, so Epow_inj gives y = 0.
+  - No ribbon element and no irreducibility were needed.
+- finrank_Wmod (char 0): dim W_{r,j} = C(r,j) − C(r,j−1).
+- trace_W_fullTwist and markov_fullTwist: per-module Rosso–Jones for the full twists.
+- The probe's exact checks now also compare the scalar with the Lean twistScalar and the dims with the binomial formula: 22624/22624 pass.
+- Not done: per-module Rosso–Jones for general s, not a multiple of r. That needs the action of γ (not only γ^r) on W_{r,j}, e.g. its eigenvalues. The torus-link formula itself is already proved in RossoJonesTorusLink.
