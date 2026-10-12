@@ -81,9 +81,10 @@ Four smaller things are also **not** established here, and each is load-bearing 
 * `BraidTower` is **data**. Nothing proves that any `B n` *is* the Artin braid group, that `incl` is
   the strand-adding inclusion, or that `gen n` is a braid generator. The moves are defined relative
   to whatever tower is supplied, and the only tower constructed below is the abelianisation.
-* **No `BraidTower` on the Artin groups exists in this corpus.** The stabilisation homomorphism
-  `BraidGroup n →* BraidGroup (n+1)` it would need is not defined anywhere, so `Framing` is not
-  instantiable there either — see the `Framing` docstring.
+* **This file constructs no `BraidTower` on the Artin groups** (it imports Mathlib only). That
+  tower is `QOU.Torsion.MassTraceMarkovClass.artinTower`, built on the stabilisation homomorphism
+  `QOU.IwahoriHecke.BraidTower.braidTower`; the framing-corrected Markov trace is shown there to be
+  an `IsMarkovInvariant` on it.
 * **No Markov trace is constructed here**, and nothing claims the Iwahori–Hecke tower carries one;
   that is the Jones/Ocneanu theorem, cited and not formalised. `IsScaledMarkov` is a *hypothesis*
   about a given `f`.
@@ -270,9 +271,10 @@ compatible with stabilisation and sending the new generator to `1`.
 the writhe, which for the Artin presentation is `QOU.MathlibExt.Braid.exponentSum` (a different
 file, not importable here under the Mathlib-only constraint). The other two fields are *not*
 available for that tower even in principle at present: `w_incl` and `w_gen` are compatibilities
-with `BraidTower.incl` and `BraidTower.gen`, and the corpus carries **no** stabilisation
-homomorphism `BraidGroup n →* BraidGroup (n+1)` and hence no `BraidTower` on the Artin groups at
-all. The only tower and framing exhibited in this file are the abelianised ones below. -/
+with `BraidTower.incl` and `BraidTower.gen`. A tower on the Artin groups exists downstream
+(`QOU.Torsion.MassTraceMarkovClass.artinTower`), but no `Framing` on it is constructed; the writhe
+correction there is carried by `QOU.IwahoriHecke.JonesNormalisation.jonesFn` directly. The only
+tower and framing exhibited in this file are the abelianised ones below. -/
 structure Framing (T : BraidTower B) where
   /-- The writhe homomorphism at each level. -/
   w : ∀ n, B n →* Multiplicative ℤ
