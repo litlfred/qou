@@ -69,3 +69,13 @@ A fourth reason, Hom(divisible, Z) = 0, holds only for divisible R. I scoped it 
 **Open and promising:** the Atiyah class a(T Sigma_4) in H^1(Sigma, K) = C, proportional to the degree. -6 genuinely enters the jet tower there, but in degree 1 and holomorphically only.
 
 **The same claim recurs** in kummer-tower.md:25-29, ns-obstruction-tower.md:40-47, ns-singularity-descartes-proof.md:16 and vertex-algebra-relations.md:475.
+
+## 2026-10-12: Atiyah route (owner option 1, second round)
+`docs/audits/2026-10-12-atiyah-jet-classes-bring.md`. The holomorphic n-jet extension class of a degree-d line bundle on a genus-g curve lives in Ext^1 = H^1(K) = C for every n, and equals c·n·(d + (n−1)(g−1)). This is a hand derivation with an exact symbolic check for n = 1..5. It matches three classical results: the Atiyah class at n = 1, projective structures at n = 2, and Bol operators on the vanishing locus.
+
+**On Σ₄:**
+- T Σ₄ (d = −6): e_n ∝ 3n(n−3), which is **zero at n = 3**, so not perpetual.
+- K (d = 6): e_n ∝ 3n(n+1), never zero. But every level is a multiple of one scalar, the classes are degree 1, and K is not the bundle the theorem names.
+- Smooth category: every class is 0.
+
+**Verdict:** no reading built on T Σ₄ yields a perpetual obstruction. The surviving L = K reading would restate item 3 as a condition on d, which is an owner decision. Not Lean-checked; the closed-form arithmetic is a one-line `ring`.

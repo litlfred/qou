@@ -35,6 +35,8 @@ counterpart of "the obstruction class is defined" in Yekutieli 2010, Thm 4.17
 * `obstruction_cocycle`: it satisfies the Čech 2-cocycle identity.
 * `obstruction_lift_change`: a different local lift `ξ'` changes it by a
   coboundary, so its class does not depend on `ξ`.
+* `obstruction_pull`: pulling back along a refinement of the cover pulls the
+  obstruction back (`pullOneCochain`, `pullOneCocycle`, `pullTwoCochain`).
 * `exists_lift_iff`: `γ` lifts to a 1-**cocycle** of `𝓔` iff the obstruction is
   the coboundary `α_ij α_jk α_ik⁻¹` of some 1-cochain `α` of `𝒜`.
 
@@ -123,6 +125,32 @@ structure TwoCochain (F : Cᵒᵖ ⥤ GrpCat.{w}) where
       (c : T' ⟶ U k) :
     F.map φ.op (ev i j k a b c) = ev i j k (φ ≫ a) (φ ≫ b) (φ ≫ c)
 
+
+/-! ### Refinement of covers -/
+
+section Refinement
+
+variable {J : Type w'} {V : J → C} (r : J → I) (f : ∀ j, V j ⟶ U (r j))
+
+/-- Pull a 1-cochain back along a refinement `f : V j ⟶ U (r j)`. -/
+def pullOneCochain {F : Cᵒᵖ ⥤ GrpCat.{w}} (ξ : PresheafOfGroups.OneCochain F U) :
+    PresheafOfGroups.OneCochain F V where
+  ev j j' _ a b := ξ.ev (r j) (r j') (a ≫ f j) (b ≫ f j')
+  ev_precomp j j' T T' φ a b := by simp [Category.assoc]
+
+/-- Pull a 1-cocycle back along a refinement. -/
+def pullOneCocycle {F : Cᵒᵖ ⥤ GrpCat.{w}} (γ : PresheafOfGroups.OneCocycle F U) :
+    PresheafOfGroups.OneCocycle F V where
+  toOneCochain := pullOneCochain U r f γ.toOneCochain
+  ev_trans _ _ _ _ _ _ _ := γ.ev_trans _ _ _ _ _ _
+
+/-- Pull a 2-cochain back along a refinement. -/
+def pullTwoCochain {F : Cᵒᵖ ⥤ GrpCat.{w}} (c : TwoCochain U F) : TwoCochain V F where
+  ev j j' j'' _ a b d := c.ev (r j) (r j') (r j'') (a ≫ f j) (b ≫ f j') (d ≫ f j'')
+  ev_precomp j j' j'' T T' φ a b d := by rw [c.ev_precomp]; simp [Category.assoc]
+
+end Refinement
+
 /-- A central extension `1 → 𝒜 → 𝓔 → 𝒢` of presheaves of groups, exact and
 central on every section group, with `𝒜` commutative. -/
 structure PresheafCentralExtension (𝒜 𝓔 𝒢 : Cᵒᵖ ⥤ GrpCat.{w}) where
@@ -210,6 +238,18 @@ theorem obstruction_lift_change (ξ' : PresheafOfGroups.OneCochain 𝓔 U)
   have e := X.injective _ (mul_right_cancel key)
   rw [eq_mul_inv_of_mul_eq e, X.comm _ (t.ev i j a b * t.ev j k b c)]
   group
+
+/-- **Compatibility with refinement.** Pulling `γ` and its local lift `ξ` back
+along a refinement of the cover pulls the obstruction back. -/
+theorem obstruction_pull {J : Type w'} {V : J → C} (r : J → I) (f : ∀ j, V j ⟶ U (r j)) :
+    X.obstruction (pullOneCocycle U r f γ) (pullOneCochain U r f ξ)
+        (fun j j' _ a b => hξ (r j) (r j') (a ≫ f j) (b ≫ f j')) =
+      pullTwoCochain U r f (X.obstruction γ ξ hξ) := by
+  ext j j' j'' T a b d
+  apply X.injective
+  exact ((X.defect_mem (pullOneCocycle U r f γ) (pullOneCochain U r f ξ)
+      (fun j j' _ a b => hξ (r j) (r j') (a ≫ f j) (b ≫ f j')) j j' j'' a b d).choose_spec).trans
+    ((X.defect_mem γ ξ hξ (r j) (r j') (r j'') (a ≫ f j) (b ≫ f j') (d ≫ f j'')).choose_spec).symm
 
 /-- **Lifting criterion.** The `𝒢`-cocycle `γ` lifts to an `𝓔`-cocycle iff its
 obstruction (relative to the local lift `ξ`) is a coboundary. -/
