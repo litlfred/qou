@@ -1,0 +1,261 @@
+import QOU.Mass.KohnoComparison
+import QOU.Mass.KZHolonomy.Continuity
+import QOU.Mass.BraidHeckeFactor
+import QOU.SchurWeyl.JMProjectorContinuity
+import QOU.IwahoriHecke.TensorEmbedding
+
+/-!
+# Assembly of the Kohno comparison: KZ is conjugate to Jimbo on the real segment
+
+This file assembles the rigidity route of docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md
+§5 into one theorem. Everything is proved; the **only hypothesis** of the final theorem is the
+Hecke quadratic relation for the first KZ generator (gap 1 of §5.1, open for `n ≥ 3`; proved for
+two strands in `QOU.Mass.KZTwoStrandHecke.kzTwoStrand_isHeckeQuad`).
+
+## Conventions (checked against the source, not assumed)
+
+* The KZ representation is `QOU.Mass.KZHolonomy.kzBraidRep ρ κ c`, built from the transport of
+  the KZ form with coupling `κ`; its generator, rescaled by `s = e^{2πiκc}`, satisfies the Hecke
+  quadratic with **`q = e^{2πiκ}`** (`KZTwoStrandHecke`). Note `2πiκ`, not `iπκ`: with the
+  corpus's normalisation of `kzForm`, the coupling of the real pin `q₀` is
+  `κ₀ = ln q₀ / (2πi)`, purely imaginary.
+* The Jimbo action is `QOU.SchurWeyl.JimboActionKernel.jimbo q : Hecke ℂ q q⁻¹ m →ₐ Matrix`,
+  `σ_j ↦ Ř_{j,j+1}` (`strandBraid q q⁻¹ j`); `Ř` has eigenvalues `q` (symmetric channel) and
+  `−q⁻¹` (antisymmetric channel).
+* Both are maps out of the **same** algebra `Hecke ℂ q q⁻¹ m` with the same quadratic
+  `β² = (q − q⁻¹)β + 1`. The KZ side needs the scalar `s = e^{2πiκc}` per crossing; that is the
+  whole normalisation mismatch (it absorbs the choice of the Casimir shift `c`, e.g. the
+  `gl₂` vs `sl₂` shift), and it is built into `heckeOfBraidRep`.
+* At `κ = 0` the KZ generator is `ρ(s_j)` (`kzBraidRep_zero_σ`) and `s = 1`; at `q = 1` the
+  Jimbo generator is the flip of sites `j, j+1` (`rCheck_one`). With `ρ = permRep`, the
+  permutation representation of `S_{m+1}` on `V^{⊗(m+1)}`, `V = ℂ²`, the two agree **exactly**
+  (`permRep_adjSwap`), with no scalar.
+
+## Results
+
+* `strandBraid_map` — the Jimbo generator commutes with any ring map of coefficients; with
+  `laurentT := (T 1, T (-1))` over `LaurentPolynomial`, `strandBraid q q⁻¹ j` is the
+  evaluation at `q` of one fixed Laurent-polynomial matrix (`strandBraid_eq_eval`).
+* `continuous_strandBraid_exp` — hence continuous in the coupling.
+* `permRep`, `permRep_adjSwap` — the base point match.
+* `conj_of_isPreconnected_hecke` — the rigidity interface (written by the gap-2/3 prover on
+  PR #7738, comment 6130311989 on #7673; committed here).
+* `kz_conj_jimbo` — **the assembly.** For every `L ≥ 0`, if the first KZ generator satisfies
+  the Hecke quadratic along the segment of couplings `κ(t) = t/(2πi)`, `t ∈ [0, L]`
+  (so `q = e^{t}` real in `[1, e^L]`), then for every such `t` the KZ representation through
+  `H_{m+1}(q)` is conjugate to the Jimbo representation by an invertible matrix.
+* `kz_conj_jimbo_σ` — the same, stated on the braid generators.
+-/
+
+namespace QOU.Mass.KohnoAssembly
+
+open QOU.IwahoriHecke.TensorEmbed QOU.IwahoriHecke.RMatrix
+open QOU.SchurWeyl QOU.SchurWeyl.JMProjector
+open QOU.Mass.KZHolonomy QOU.Mass.BraidHeckeFactor QOU.MathlibExt.Braid
+open Complex Set
+
+/-! ## The Jimbo generator as a function of `q` -/
+
+section JimboFamily
+
+variable {R S : Type*} [CommRing R] [CommRing S]
+
+theorem rCheck_map (f : R →+* S) (q qi : R) : (rCheck q qi).map f = rCheck (f q) (f qi) := by
+  ext a b
+  simp only [Matrix.map_apply, rCheck_apply]
+  split_ifs <;> simp
+
+theorem embedPair_map (f : R →+* S) {n : ℕ} (i j : Fin n)
+    (M : Matrix (Fin 2 × Fin 2) (Fin 2 × Fin 2) R) :
+    (embedPair i j M).map f = embedPair i j (M.map f) := by
+  ext a b
+  simp only [Matrix.map_apply, embedPair_apply]
+  split_ifs <;> simp
+
+/-- **The Jimbo generator commutes with change of coefficients.** -/
+theorem strandBraid_map (f : R →+* S) {m : ℕ} (q qi : R) (j : Fin m) :
+    (strandBraid q qi j).map f = strandBraid (f q) (f qi) j := by
+  simp only [strandBraid, braidAt, embedPair_map, rCheck_map]
+
+/-- **The Jimbo generator is a Laurent-polynomial matrix in `q`.** For every unit `q` of a
+commutative ring, `Ř_{j,j+1}(q, q⁻¹)` is the evaluation at `q` of the fixed matrix
+`Ř_{j,j+1}(T, T⁻¹)` over `R[T, T⁻¹]`. -/
+theorem strandBraid_eq_eval {m : ℕ} (q : Rˣ) (j : Fin m) :
+    strandBraid (q : R) (↑q⁻¹ : R) j =
+      (strandBraid (LaurentPolynomial.T 1 : LaurentPolynomial R) (LaurentPolynomial.T (-1)) j).map
+        (LaurentPolynomial.eval₂ (RingHom.id R) q) := by
+  rw [strandBraid_map]
+  congr 1
+  · simp [LaurentPolynomial.eval₂_T]
+  · simp [LaurentPolynomial.eval₂_T]
+
+/-- **The Jimbo generator is continuous in the coupling.** With `q = e^z`, `z ∈ ℂ`
+(`z = 2πiκ` in the KZ normalisation), every entry is `0`, `1`, `q` or `q − q⁻¹`. -/
+theorem continuous_strandBraid_exp {m : ℕ} (j : Fin m) :
+    Continuous (fun z : ℂ => strandBraid (Complex.exp z) (Complex.exp z)⁻¹ j) := by
+  refine continuous_matrix fun a b => ?_
+  simp only [strandBraid, braidAt, embedPair_apply, rCheck_apply]
+  split_ifs
+  · exact Complex.continuous_exp
+  · exact Complex.continuous_exp.sub (Complex.continuous_exp.inv₀ fun z => Complex.exp_ne_zero z)
+  all_goals exact continuous_const
+
+end JimboFamily
+
+/-! ## The permutation representation and the base point -/
+
+section Perm
+
+variable {R : Type*} [CommRing R] {k : ℕ}
+
+/-- The permutation representation of `S_k` on `V^{⊗k}`, `V = R²`, in the coordinate model
+`(Fin k → Fin 2) → R`: `permRep σ a b = 1` iff `b = a ∘ σ`. -/
+def permRep : Equiv.Perm (Fin k) →* Matrix (Fin k → Fin 2) (Fin k → Fin 2) R where
+  toFun σ := Matrix.of fun a b => if b = a ∘ σ then 1 else 0
+  map_one' := by
+    ext a b
+    simp only [Equiv.Perm.coe_one, Function.comp_id, Matrix.of_apply, Matrix.one_apply]
+    simp only [eq_comm]
+  map_mul' σ τ := by
+    ext a b
+    simp only [Matrix.of_apply, Matrix.mul_apply, Equiv.Perm.coe_mul, mul_ite, mul_one, mul_zero]
+    rw [Finset.sum_eq_single (a ∘ σ)]
+    · simp [Function.comp_assoc]
+    · intro c _ hc; simp [hc]
+    · simp
+
+theorem permRep_apply (σ : Equiv.Perm (Fin k)) (a b : Fin k → Fin 2) :
+    (permRep σ : Matrix _ _ R) a b = if b = a ∘ σ then 1 else 0 := rfl
+
+/-- **At `q = 1` the Jimbo generator is the permutation matrix of the adjacent transposition**,
+exactly (no scalar). This is the base-point match between KZ at coupling `0`
+(`kzBraidRep_zero_σ`) and Jimbo at `q = 1`. -/
+theorem permRep_adjSwap {m : ℕ} (j : Fin m) :
+    (permRep (adjSwap j) : Matrix _ _ R) = strandBraid (1 : R) 1 j := by
+  ext a b
+  rw [permRep_apply, strandBraid, braidAt, embedPair_apply, rCheck_one]
+  simp only [QOU.IwahoriHecke.RMatrix.flip, Matrix.of_apply, Prod.mk.injEq]
+  have hne : (j.castSucc : Fin (m + 1)) ≠ j.succ := by simp [Fin.ext_iff]
+  by_cases hb : b = a ∘ adjSwap j
+  · subst hb
+    simp only [if_true, adjSwap, Function.comp_apply, Equiv.swap_apply_left,
+      Equiv.swap_apply_right, and_self]
+    rw [if_pos]
+    intro k hk1 hk2
+    rw [Equiv.swap_apply_of_ne_of_ne hk1 hk2]
+  · rw [if_neg hb]
+    symm
+    rw [ite_eq_right_iff, ite_eq_right_iff]
+    intro hagree h
+    exfalso
+    apply hb
+    funext k
+    simp only [adjSwap, Function.comp_apply]
+    by_cases hk1 : k = j.castSucc
+    · subst hk1; rw [Equiv.swap_apply_left]; exact h.2.symm
+    · by_cases hk2 : k = j.succ
+      · subst hk2; rw [Equiv.swap_apply_right]; exact h.1.symm
+      · rw [Equiv.swap_apply_of_ne_of_ne hk1 hk2]; exact (hagree k hk1 hk2).symm
+
+end Perm
+
+/-! ## The Jimbo action on the skein presentation
+
+`QOU.SchurWeyl.JimboActionKernel.jimbo` is the same map routed through the balanced
+presentation; it is not imported here because its module is not rebuilt in this container's
+olean cache. The map below is defined directly by the universal property of
+`QOU.SchurWeyl.Hecke`, so it agrees with `jimbo` on generators and hence (by `Hecke.hom_ext`)
+everywhere. -/
+
+section JimboHecke
+
+variable {K : Type*} [Field K]
+
+theorem strandBraid_quad {m : ℕ} {q : K} (hq : q ≠ 0) (j : Fin m) :
+    strandBraid q q⁻¹ j * strandBraid q q⁻¹ j =
+      (q - q⁻¹) • strandBraid q q⁻¹ j + (q * q⁻¹) • (1 : Matrix (Fin (m + 1) → Fin 2) _ K) := by
+  have h := (isHeckeGenerator_braidAt (R := K) q q⁻¹ (i := j.castSucc) (j := j.succ)
+    (by simp [Fin.ext_iff]) (mul_inv_cancel₀ hq))
+  have h' : strandBraid q q⁻¹ j * strandBraid q q⁻¹ j =
+      algebraMap K _ (q - q⁻¹) * strandBraid q q⁻¹ j + 1 := h
+  rw [h', mul_inv_cancel₀ hq, one_smul, Algebra.algebraMap_eq_smul_one, smul_mul_assoc, one_mul]
+
+/-- **The Jimbo action** `H_{m+1}(q) →ₐ M_{2^{m+1}}(K)`, `σ_j ↦ Ř_{j,j+1}`. -/
+noncomputable def jimboRep (q : K) (hq : q ≠ 0) (m : ℕ) :
+    Hecke K q q⁻¹ m →ₐ[K] Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) K :=
+  Hecke.lift K q q⁻¹ m (fun j => strandBraid q q⁻¹ j) (fun j => strandBraid_quad hq j)
+    (fun i hi => braidAt_braid (R := K) q q⁻¹ (i := i.castSucc) (j := i.succ)
+      (k := (⟨(i : ℕ) + 1, hi⟩ : Fin m).succ)
+      (by simp [Fin.ext_iff]) (by simp [Fin.ext_iff]; omega) (by simp [Fin.ext_iff])
+      (mul_inv_cancel₀ hq) |>.trans (by
+        have e : (⟨(i : ℕ) + 1, hi⟩ : Fin m).castSucc = i.succ := by simp [Fin.ext_iff]
+        simp only [strandBraid, e]))
+    (fun i j hij => braidAt_commute (R := K) q q⁻¹ (by simp [Fin.ext_iff])
+      (by simp [Fin.ext_iff]) (by simp [Fin.ext_iff]; omega) (by simp [Fin.ext_iff]; omega)
+      (by simp [Fin.ext_iff]; omega) (by simp [Fin.ext_iff]; omega))
+
+@[simp] theorem jimboRep_σ (q : K) (hq : q ≠ 0) (m : ℕ) (j : Fin m) :
+    jimboRep q hq m (Hecke.σ K q q⁻¹ m j) = strandBraid q q⁻¹ j :=
+  Hecke.lift_σ _ _ _ _ _ _ _ _ j
+
+end JimboHecke
+
+/-! ## The rigidity interface
+
+Written by the gap-2/3 prover (PR #7738; posted as comment 6130311989 on PR #7673) and committed
+here. Two families of Hecke representations over a preconnected parameter set, with continuous
+generator matrices, conjugate on generators at one base point (which may be `q = 1`), are
+conjugate at every generic parameter. -/
+
+section Interface
+
+open QOU.Mathlib (StandardYoungTableau)
+open Hecke
+
+variable {X : Type*} [TopologicalSpace X] {S : Set X} {q : X → ℂ} {n : ℕ}
+  {m : Type*} [Fintype m] [DecidableEq m]
+
+lemma rank_eq_of_intertwine {A B : Matrix m m ℂ} (U : (Matrix m m ℂ)ˣ)
+    (h : (U : Matrix m m ℂ) * A = B * U) : A.rank = B.rank := by
+  have hdet : IsUnit (U : Matrix m m ℂ).det := (Matrix.isUnit_iff_isUnit_det _).mp U.isUnit
+  rw [← Matrix.rank_mul_eq_right_of_isUnit_det (U : Matrix m m ℂ) A hdet, h,
+    Matrix.rank_mul_eq_left_of_isUnit_det (U : Matrix m m ℂ) B hdet]
+
+theorem conj_of_isPreconnected_hecke (hS : IsPreconnected S)
+    (hq : ContinuousOn q S) (hq0 : ∀ x ∈ S, q x ≠ 0)
+    (hsep : ∀ x ∈ S, Set.InjOn (qInt2 (q x)) {d | d ∈ contentRange n})
+    (hdense : S ⊆ closure (S ∩ {x | GenericParameter.NotRootOfUnity (q x)}))
+    (ρ ρ' : ∀ x : X, Hecke ℂ (q x) (q x)⁻¹ n →ₐ[ℂ] Matrix m m ℂ)
+    (hρ : ∀ i, ContinuousOn (fun x => ρ x (σ ℂ (q x) (q x)⁻¹ n i)) S)
+    (hρ' : ∀ i, ContinuousOn (fun x => ρ' x (σ ℂ (q x) (q x)⁻¹ n i)) S)
+    (o : ∀ lam : Nat.Partition (n + 1), StandardYoungTableau (QOU.Mathlib.partitionShape lam))
+    {x₀ : X} (hx₀ : x₀ ∈ S) (U₀ : (Matrix m m ℂ)ˣ)
+    (hU₀ : ∀ i, (U₀ : Matrix m m ℂ) * ρ x₀ (σ ℂ (q x₀) (q x₀)⁻¹ n i)
+      = ρ' x₀ (σ ℂ (q x₀) (q x₀)⁻¹ n i) * U₀)
+    {x : X} (hx : x ∈ S) (hgen : GenericParameter.NotRootOfUnity (q x)) :
+    ∃ U : (Matrix m m ℂ)ˣ, ∀ h, (U : Matrix m m ℂ) * ρ x h = ρ' x h * U := by
+  set W := heckeWedderburn (q x) (hq0 x hx) hgen n
+  have hrank : ∀ lam, ((ρ x).comp W.symm.toAlgHom
+      (KohnoComparison.unit lam (o lam) (o lam))).rank
+      = ((ρ' x).comp W.symm.toAlgHom (KohnoComparison.unit lam (o lam) (o lam))).rank := by
+    intro lam
+    show (ρ x (W.symm (Pi.single lam (Matrix.single (o lam) (o lam) 1)))).rank
+      = (ρ' x (W.symm (Pi.single lam (Matrix.single (o lam) (o lam) 1)))).rank
+    rw [projFamily_eq_wedderburn ρ (o lam) x (hq0 x hx) hgen,
+      projFamily_eq_wedderburn ρ' (o lam) x (hq0 x hx) hgen,
+      IdempotentTraceRigidity.rank_const_of_isPreconnected hS
+        (continuousOn_projFamily ρ hq hq0 hsep hρ (o lam))
+        (isIdempotentElem_projFamily ρ hq hq0 hsep hρ hdense (o lam)) hx hx₀,
+      IdempotentTraceRigidity.rank_const_of_isPreconnected hS
+        (continuousOn_projFamily ρ' hq hq0 hsep hρ' (o lam))
+        (isIdempotentElem_projFamily ρ' hq hq0 hsep hρ' hdense (o lam)) hx hx₀]
+    exact rank_eq_of_intertwine U₀ (projFamily_conj ρ U₀ hU₀ (o lam))
+  obtain ⟨U, hU⟩ := KohnoComparison.exists_conj_of_rank_eq o ((ρ x).comp W.symm.toAlgHom)
+    ((ρ' x).comp W.symm.toAlgHom) hrank
+  refine ⟨U, fun h => ?_⟩
+  have := hU (W h)
+  simpa using this
+
+end Interface
+
+end QOU.Mass.KohnoAssembly
