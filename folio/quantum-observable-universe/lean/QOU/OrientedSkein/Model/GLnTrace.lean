@@ -44,8 +44,9 @@ symmetrically.  We prove:
 
 ## What is not here
 
-* The `OrientedSkeinDatum` itself (the exact pairing `X* ⊣ X` and the mixed crossing `T`) is not
-  built in this file.
+* The `OrientedSkeinDatum` itself (the exact pairing `X* ⊣ X` and the mixed crossing `T`) is built
+  in `QOU.OrientedSkein.Model.GLnDatum`.  That this weighted partial trace coincides with the
+  closure computed in `OS(z, t)` through the datum's cups and caps is not proved.
 * The direct comparison with the matrix model `QOU.IwahoriHecke.TensorMarkovModel` is not made: that
   model's trace lives on the presented algebra `Pres N (q - q⁻¹) 1`, and no map between `Pres` and
   `QOU.SchurWeyl.Hecke` is in the tree.  The cross-check is made instead against `wtrace`, which is
