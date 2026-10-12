@@ -239,6 +239,8 @@ import QOU.KZ.KZEdge
 import QOU.KZ.KZHalfMonodromy
 import QOU.KZ.KZHexagon
 import QOU.KZ.KZPentagon
+import QOU.KZ.KZShift
+import QOU.KZ.KZShiftPhi
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding
 import QOU.Knot.RademacherReversible

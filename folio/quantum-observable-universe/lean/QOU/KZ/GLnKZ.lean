@@ -1,6 +1,7 @@
 import QOU.KZ.GLnResidues
 import QOU.KZ.KZPentagon
 import QOU.KZ.KZHexagon
+import QOU.KZ.KZShiftPhi
 import Mathlib.Analysis.Matrix
 
 /-!
@@ -211,6 +212,31 @@ theorem hexagon_gln (hc : ∀ r : ℚ, (r : ℂ) ≠ c) :
     (KZPentagon.H0_zero _ _ hC) (KZPentagon.H0_gauge _ _ hC)
     (KZPentagon.H0_zero _ _ hC) (KZPentagon.H0_gauge _ _ hC)
     (KZPentagon.H0_zero _ _ hA) (KZPentagon.H0_gauge _ _ hA)
+
+/-- Non-resonance of `ℏ (P_{ij} + P_{kl})` for two flips satisfying the braid relation. -/
+theorem nonResonant_smul_P_add {m : ℕ} {i j k l : Fin m}
+    (hb : Equiv.swap i j * (Equiv.swap k l * Equiv.swap i j) =
+      Equiv.swap k l * (Equiv.swap i j * Equiv.swap k l))
+    (hc : ∀ r : ℚ, (r : ℂ) ≠ c) : NonResonant (c • P n i j + c • P n k l) := by
+  rw [← smul_add]
+  refine nonResonant_smul_sum_two _ _ (P_mul_self _ _) (P_mul_self _ _) ?_ c hc
+  simp only [P, flipP, permP_mul]; congr 1
+
+/-- **The KZ pentagon for `𝔤𝔩_n` in Drinfeld's coproduct form**, on `V^{⊗4}`, `ℏ ∉ ℚ`:
+`Φ^{234} Φ^{1,23,4} Φ^{123} = Φ^{1,2,34} Φ^{12,3,4}`. -/
+theorem pentagon_drinfeld_gln (hc : ∀ r : ℚ, (r : ℂ) ≠ c) :
+    KZPentagon.Φ (kzRes n c).t23 (kzRes n c).t34 (nonResonant_smul_P 1 2 hc)
+        (nonResonant_smul_P 2 3 hc) *
+      KZPentagon.Φ ((kzRes n c).t12 + (kzRes n c).t13) ((kzRes n c).t24 + (kzRes n c).t34)
+        (nonResonant_smul_P_add (by decide) hc) (nonResonant_smul_P_add (by decide) hc) *
+      KZPentagon.Φ (kzRes n c).t12 (kzRes n c).t23 (nonResonant_smul_P 0 1 hc)
+        (nonResonant_smul_P 1 2 hc) =
+    KZPentagon.Φ (kzRes n c).t12 ((kzRes n c).t23 + (kzRes n c).t24)
+        (nonResonant_smul_P 0 1 hc) (nonResonant_smul_P_add (by decide) hc) *
+      KZPentagon.Φ ((kzRes n c).t13 + (kzRes n c).t23) (kzRes n c).t34
+        (nonResonant_smul_P_add (by decide) hc) (nonResonant_smul_P 2 3 hc) :=
+  KZShiftPhi.pentagon_drinfeld _ (kzRes_rel n c) _ _ _ (nonResonant_T123 hc)
+    (nonResonant_T234 hc) _ _ _ _
 
 end Analytic
 
