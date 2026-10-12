@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:31:38Z
-updated_at: 2026-10-12T19:28:29Z
+updated_at: 2026-10-12T19:37:48Z
 parent: qou-xhci
 ---
 
@@ -14,3 +14,5 @@ parent: qou-xhci
 2026-10-12 later: extended to every real q > 0 (kz_conj_jimbo_real, kz_conj_jimbo_pos; rigidity on [t,0] for t<0), sorry-free, axioms clean. Audit doc §5.1/§5.2 updated with the result and the convention q = e^{2 pi i kappa} (lambda = 2 kappa). Still open: complex q off the positive real axis; explicit U; V != C^2; Lean statement jimboRep = JimboActionKernel.jimbo.
 
 2026-10-12 (third pass): kz_conj_jimbo_complex / _complex_sigma: every complex kappa with q = e^{2 pi i kappa} not a root of unity (root-of-unity couplings countable, complement path-connected and dense; rigidity set = {q^2-integers separate}, contains kappa=0). jimboRep_eq_jimbo proved after rebuilding JimboActionKernel's stale cone (59 modules, 0 red). Remaining open: roots of unity q != 1 (non-semisimple); explicit U; V != C^2 / general Drinfeld-Kohno.
+
+2026-10-12 (fourth pass, PR #7744): QOU/Mass/KohnoWeighted.lean, sorry-free. Weight-space rigidity: commute_kzBraidRep (KZ equivariance via ODE uniqueness), both families preserve each total-weight space V_k, trace_res_kz_eq_jimbo, weighted_trace_kz_eq_jimbo (any D scalar on each V_k), siteWeight_trace_kz_eq_jimbo, braidTrace_eq_kz (PR #7632's Markov trace = wi^{m+1} Tr(K^{tensor} KZ(x_beta))), all at q not a root of unity. Not done: the assembled block-diagonal U on all of V^{tensor n} (only its trace consequence).
