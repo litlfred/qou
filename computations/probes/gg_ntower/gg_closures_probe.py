@@ -207,8 +207,8 @@ def h_order(f):
     if f == 0:
         return "0", None
     num, den = sp.fraction(sp.together(f))
-    N = sp.Poly(sp.expand(num), q).compose(sp.Poly(1 + t, t))
-    D = sp.Poly(sp.expand(den), q).compose(sp.Poly(1 + t, t))
+    N = sp.Poly(sp.expand(sp.expand(num).subs(q, 1 + t)), t)
+    D = sp.Poly(sp.expand(sp.expand(den).subs(q, 1 + t)), t)
     f1 = sp.Rational(N.eval(0), D.eval(0))
     diff = (N - D * f1)
     if diff.is_zero:
