@@ -11,7 +11,7 @@ parent: qou-1qhv
 blocked_by:
     - qou-79vu
 created_at: 2026-10-10T18:40:00Z
-updated_at: 2026-10-12T21:00:00Z
+updated_at: 2026-10-12T22:00:00Z
 ---
 
 ## Ruling
@@ -93,3 +93,27 @@ field to repoint and no convention for its shape; the only fsh-guts
 convention on record is the copy's PATH,
 `fsh-guts/retired-pdfs/library/<entry>/<file>` on
 `cat/cat-harness/fsh-guts`.
+
+## 2026-10-12, PR #7761: the 3 gain-neutral "headings" re-cuts applied
+
+Owner ruling 2026-10-12 ("2 ok"): apply the three held re-cuts that lose no
+meaningful section, and keep holding the other four. Before applying, each
+was re-checked under cat-harness-tools main 63f4363, which includes #175's
+matcher:
+
+- `arxiv-1306.3655v1`: 1 -> 6 sections. Lost only the junk title.
+- `arxiv-2504.18825v2`: 16 -> 12. No title lost; the 8 contents-page
+  duplicates are gone.
+- `bq28-r2r7`: 1 -> 1. "Full text" became "Document", p1-15. The matcher
+  places none of its 12 outline entries ("I.. INTRODUCTION" against "I.
+  INTRODUCTION"), which is an upstream matcher gap.
+
+All three now pass pdf-structure/v1 (cat-harness main 9712ed14); all three
+failed it before.
+
+Left: 5 blocks no section references, `arxiv-2504.18825v2/blocks/prose-sec-011..015.jsonld`.
+They are the old cut's blocks, left behind because the section count shrank.
+They are listed and left in place, not pruned or moved.
+
+Still held, untouched: `9511222v1`, `arxiv-1202.0067v3`, `arxiv-2408.04921v2`,
+`1-s2-0-0097316595900136-main`. Each loses a real heading, or changes doc_id.
