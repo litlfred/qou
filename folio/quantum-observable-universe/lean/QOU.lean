@@ -245,6 +245,8 @@ import QOU.KZ.KZPentagon
 import QOU.KZ.KZShift
 import QOU.KZ.KZShiftPhi
 import QOU.KZ.NonResonantInt
+import QOU.KZ.SmallHbar
+import QOU.KZ.ZigZag
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding
 import QOU.Knot.RademacherReversible
