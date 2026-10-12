@@ -47,7 +47,9 @@ replaced by the dimension count of step 3.
 
 ## Scope
 
-* Hypotheses: `[Field K] [CharZero K]`, `q ≠ 0`, `NotRootOfUnity q`.  `CharZero` is inherited
+* Hypotheses: `[Field K] [CharZero K]`, `q ≠ 0`, `NotRootOfUnity q`.  Steps 1–2
+  (`ker ⊆ rad`, the surjection `tlToQuot`) need only `[Field K]`; `CharZero` enters only
+  through the dimension of `H/rad`.  `CharZero` is inherited
   from `TraceQuotGeneric.finrank_traceQuot_eq_catalan` (via `heckeProduct`); `q² + 1 ≠ 0` and
   `(q²)^k ≠ 1` are implied by `NotRootOfUnity q`.
 * Convention D (`z = q³/(q²+1)`) for `wtrace`, as in `TraceQuotGeneric`.
@@ -151,11 +153,13 @@ noncomputable def tlToQuot {q : K} (hq : q ≠ 0) (hq2 : GenericParameter.NotRoo
       apply proj_eq_of_jimbo_eq hq hq2 m
       rw [map_mul, map_mul, jimbo_tlE, jimbo_tlE, ← map_mul, ← map_mul, e_farCommute h])
 
+omit [CharZero K] in
 @[simp] theorem tlToQuot_e {q : K} (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (m : ℕ) (i : Fin m) :
     tlToQuot hq hq2 m (e K (q + q⁻¹) adjFin i) = proj q hq hq2 m (tlE q m i) :=
   lift_e _ _ _ _ _ _ _ _
 
+omit [CharZero K] in
 /-- Every class `π(x)` lies in the image of `tlToQuot`. -/
 theorem proj_mem_range {q : K} (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (m : ℕ) (x : Hecke K q q⁻¹ m) :
@@ -168,15 +172,18 @@ theorem proj_mem_range {q : K} (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfU
     rintro _ ⟨i, rfl⟩
     show proj q hq hq2 m (Hecke.σ K q q⁻¹ m i) ∈ AlgHom.range (tlToQuot hq hq2 m)
     refine ⟨algebraMap K _ q - e K (q + q⁻¹) adjFin i, ?_⟩
+    show tlToQuot hq hq2 m (algebraMap K _ q - e K (q + q⁻¹) adjFin i) = _
     rw [map_sub, AlgHom.commutes, tlToQuot_e, tlE, map_sub, AlgHom.commutes, sub_sub_cancel]
   rw [FreeAlgebra.adjoin_range_ι] at hle
   exact hle (Algebra.mem_top : y ∈ ⊤)
 
+omit [CharZero K] in
 theorem proj_surjective {q : K} (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (m : ℕ) : Function.Surjective (proj q hq hq2 m) := by
   rintro ⟨x⟩
   exact ⟨x, rfl⟩
 
+omit [CharZero K] in
 theorem tlToQuot_surjective {q : K} (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (m : ℕ) : Function.Surjective (tlToQuot hq hq2 m) := by
   intro z
@@ -193,10 +200,11 @@ theorem finrank_tl_eq_catalan_generic {q : K} (hq : q ≠ 0)
     (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ) :
     Module.finrank K (TLFin K (q + q⁻¹) m) = catalan (m + 1) := by
   haveI := finite_tlFin (q + q⁻¹) m
-  refine le_antisymm (TemperleyLiebNormalFormSpanning.finrank_le_catalan _ m) ?_
-  rw [← finrank_quot_eq_catalan hq hq2 m]
-  exact LinearMap.finrank_le_finrank_of_surjective (f := (tlToQuot hq hq2 m).toLinearMap)
-    (tlToQuot_surjective hq hq2 m)
+  refine le_antisymm (QOU.MathlibExt.TemperleyLiebNormalFormSpanning.finrank_le_catalan _ m) ?_
+  rw [← finrank_quot_eq_catalan hq hq2 m, ← finrank_top K (Quot q hq hq2 m),
+    ← (LinearMap.range_eq_top (f := (tlToQuot hq hq2 m).toLinearMap)).mpr
+      (tlToQuot_surjective hq hq2 m)]
+  exact LinearMap.finrank_range_le _
 
 theorem tlToQuot_injective {q : K} (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (m : ℕ) : Function.Injective (tlToQuot hq hq2 m) := by
@@ -253,10 +261,8 @@ theorem jimbo_eq_comp {q : K} (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUn
       = (tlRep (R := K) q q⁻¹ m (mul_inv_cancel₀ hq)).comp (heckeToTLGeneric hq hq2 m) := by
   apply Hecke.hom_ext
   intro i
-  rw [AlgHom.comp_apply, heckeToTLGeneric_σ, ← sub_sub_cancel (algebraMap K _ q)
-    (Hecke.σ K q q⁻¹ m i), map_sub, AlgHom.commutes, map_sub, AlgHom.commutes]
-  congr 1
-  exact jimbo_tlE hq m i
+  rw [AlgHom.comp_apply, heckeToTLGeneric_σ, map_sub, AlgHom.commutes, ← jimbo_tlE hq m i,
+    tlE, map_sub, AlgHom.commutes, sub_sub_cancel]
 
 /-- **`ker(jimbo) = rad(wtrace)`** as two-sided ideals, over any `CharZero` field, for
 `q ≠ 0` not a root of unity.  Removes the ordered-field hypothesis of
