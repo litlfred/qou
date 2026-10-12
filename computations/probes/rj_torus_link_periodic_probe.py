@@ -118,6 +118,21 @@ def closed_rho(r, p, j, prime):
         ex = a * ((r - j - 3) * (d - k) + (j - 1) * k)
     return mono(ex, comb(d, k))
 
+def fix_count(n, p, j):
+    """Lean `fixCount n p j` (r = n + 1)."""
+    d = gcd(n + 1, p); e = (n + 1) // d
+    return comb(d, j // e) if j % e == 0 else 0
+
+def lean_rhoTr(n, p, j, prime):
+    """Lean `rhoTr` / `rho'Tr`, with Lean's truncated Nat subtraction and division."""
+    sub = lambda a, b: max(a - b, 0)
+    S = p * j // (n + 1)
+    if not prime:
+        ex = sub(n, j) * sub(p, S) + (sub(j, 1) - 2) * S
+    else:
+        ex = (sub(n, j) - 2) * sub(p, S) + sub(j, 1) * S
+    return mono(ex, fix_count(n, p, j))
+
 def main():
     fails = 0; checks = 0
     for r in range(2, 7):
@@ -145,6 +160,13 @@ def main():
                     fails += 1; print("rho FAIL", r, p, j, Tr[j])
                 if ladd(Tr2[j], lneg(closed_rho(r, p, j, True))):
                     fails += 1; print("rho' FAIL", r, p, j, Tr2[j])
+            # (2b) the Lean closed forms (QOU/Archimedean/RossoJonesTorusLink.lean, rhoTr / rho'Tr)
+            for j in range(r + 1):
+                checks += 2
+                if ladd(Tr[j], lneg(lean_rhoTr(r - 1, p, j, False))):
+                    fails += 1; print("lean rhoTr FAIL", r, p, j)
+                if ladd(Tr2[j], lneg(lean_rhoTr(r - 1, p, j, True))):
+                    fails += 1; print("lean rho'Tr FAIL", r, p, j)
             # (3) trace formula: sum_m q^{2m} T_m(g^p),
             #     T_m(g^p) = sum_{j<=m} T_j(rho^p) - sum_{j<m} T_j(rho'^p)
             checks += 1
