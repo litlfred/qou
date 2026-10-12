@@ -8,120 +8,109 @@ pages: 6-8
 source_pdf: 0605242v1.pdf
 source_sha256: 65fac7285e4a77f4
 doc_brief: "N-Fold Integer Programming Jesús A. De Loera∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel § — In this article we study a broad class of integer programming problem s in variable dimension."
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.99
 ---
-Minimum cost shipment
-The minimum cost shipment problem concerns the shipment of a large stock of items of several types,
-using various vessels, with minimum possible cost. More pre cisely, the data is as follows. There are t
-types of items. The weight of each item of type j is wj and there are nj items of type j to be shipped.
-There are v available vessels, where vessel k has maximum weight capacity uk. The cost of shipping
-one item of type j on vessel k is pj,k. We now formulate this as an n-fold integer programming prob lem.
-We set n := v, p := 1, q := t + 1. The deﬁning matrix is the row vector A = (Aj) := ( w1, w 2, . . . , w t, 1).
-The variables vector is x = (x1, . . . , x n) with xk = (xk
-1, . . . , x k
-t , x k
-q ), where xk
-j represents the number of
-items of type j to be shipped on vessel k for j = 1, . . . , t , and xk
-q is an extra slack variable representing
-the unused weight capacity in vessel k. The cost vector is c = ( c1, . . . , c n) with ck = ( ck
-1, . . . , c k
-t , c k
-q ),
-where ck
-j := pj,k for j = 1 , . . . , t , and ck
-q := 0. Finally, the demand vector is b = ( b0, b 1, . . . , b n)
-with bk := uk for k = 1, . . . , n , and b0 := (n1, . . . , n t, ∑ v
-k=1 uk − ∑ t
-j=1 njwj). Then the resulting n-fold
-integer programming problem, min {cx : A(n)x = b, x ∈ Nnq}, can be written in scalar form as follows:
-min
-q∑
-j=1
-n∑
-k=1
-ck
-j xk
-j =
-t∑
-j=1
-v∑
-k=1
-pj,kxk
-j
-s.t.
-n∑
-k=1
-xk
-j = b0
-j = nj , j = 1, . . . , t
-n∑
-k=1
-xk
-q = b0
-q =
-v∑
-k=1
-uk −
-t∑
-j=1
-njwj
-q∑
-j=1
-Aj xk
-j =
-t∑
-j=1
-wj xk
-j + xk
-q = bk = uk , k = 1, . . . , n
-xk
-j ∈ N , j = 1, . . . , q , k = 1, . . . , n .
-6
-Assume that the number t of types is ﬁxed, but the numbers nj of items of each type may be very
-large: this is a reasonable assumption in applications (for instance, several types of automobiles to be
-shipped overseas, or several types of appliances to be shipp ed on ground). Then we obtain the following
-striking corollary of Theorem 1.1, showing that the problem is polynomial time solvable, where the
-input size is v plus the bit size of the integer numbers nj, u k, p j,k constituting the data. Note that this
-result is much stronger than the standard results on the pseudo-polynomial time solvability of this
-kind of packing and knapsack-type problems using dynamic pr ogramming: our algorithm can handle
-very large nj and uk, possibly exponential in the dimensional parameter v.
-Corollary 2.5 For any ﬁxed number t of types and type weights wj, the minimum cost shipment
-problem is solvable in time which is polynomial in the number v of vessels and in the bit size of the
-integer numbers nj of items of each type to be shipped, vessel capacities uk, and shipment costs pj,k.
-The cutting stock problem
-This is a classical manufacturing problem, where the usual s etup is as follows: a manufacturer supplies
-rolls of material (such as scotch-tape or band-aid) in one of t diﬀerent widths w1, . . . , w t. The rolls are
-all cut out from standard rolls of common large width u, coming out of the production line. Given
-orders by customers for nj rolls of width wj, the problem facing the manufacturer is to meet the
-orders using the smallest possible number of standard rolls . This is almost a direct special case of
-the minimum cost shipment problem discussed above, with suﬃ ciently many identical vessels, say
-v := ∑ t
-j=1⌈nj/ ⌊u/w j ⌋⌉, of capacity uk := u each, playing the role of the standard rolls, and with cost
-pj,k := wj for each roll of width wj regardless of the standard roll from which it is being cut out . The
-only correction needed is that each slack variable xk
-q = xk
-t+1, measuring the unused width of the kth
-standard roll, has cost of one unit instead of zero, so that th e total cost becomes the number of standard
-rolls used. Thus the formulation as an n-fold program is with n := ∑ t
-j=1⌈nj/ ⌊u/w j ⌋⌉, p := 1, q := t+1,
-A := ( w1, w 2, . . . , w t, 1), variables xk
-j representing the number of rolls of width wj cut out of the kth
-roll for j = 1, . . . , t and xk
-q representing the unused width of the kth standard roll, costs ck
-j := wj for
-j = 1, . . . , t and ck
-q := 1, and demands bk := u for k = 1, . . . , n and b0 := (n1, . . . , n t, nu − ∑ t
-j=1 njwj).
-Again, quite surprisingly, we get the following useful coro llary regarding this classical problem.
-Corollary 2.6 For any ﬁxed t and widths w1, . . . , w t, the cutting stock problem is solvable in time
-polynomial in ∑ t
-j=1⌈nj/ ⌊u/w j ⌋⌉ and in the bit size of the numbers nj of orders and raw roll width u.
-One common approach to the cutting stock problem makes use of so-called cutting patterns, which
-are feasible solutions of the knapsack problem {y ∈ Nt : ∑ t
-j=1 wjyj ≤ u}. This is useful when the
-7
-width u of the standard rolls is of the same order of magnitude as the d emand widths wj. However,
-when u is much larger than the wj, the number of cutting patterns becomes prohibitively larg e to
-handle. But then the values ⌊u/w j⌋ are large and hence n := ∑ t
-j=1⌈nj/ ⌊u/w j ⌋⌉ is small, in which case
-the result of Corollary 2.6 using n-fold integer programming becomes particularly appealing .
+\label{Applications2}
+
+\vskip.5cm\noindent{\sc Minimum cost shipment}
+
+\vskip.2cm\noindent
+The minimum cost shipment problem concerns the shipment of a large stock
+of items of several types, using various vessels, with minimum possible cost.
+More precisely, the data is as follows. There are $t$ types of items.
+The weight of each item of type $j$ is $w_j$ and there are $n_j$ items
+of type $j$ to be shipped. There are $v$ available vessels, where vessel
+$k$ has maximum weight capacity $u_k$. The cost of shipping one item of
+type $j$ on vessel $k$ is $p_{j,k}$. We now formulate this as an n-fold
+integer programming problem. We set $n:=v$, $p:=1$, $q:=t+1$.
+The defining matrix is the row vector $A=(A_j):=(w_1,w_2,\dots,w_t,1)$.
+The variables vector is $x=(x^1,\dots, x^n)$
+with $x^k=(x^k_1,\dots,x^k_t,x^k_q)$, where $x^k_j$ represents the number
+of items of type $j$ to be shipped on vessel $k$ for $j=1,\dots,t$, and
+$x^k_q$ is an extra slack variable representing the unused weight capacity
+in vessel $k$. The cost vector is $c=(c^1,\dots, c^n)$ with
+$c^k=(c^k_1,\dots,c^k_t,c^k_q)$, where $c^k_j:=p_{j,k}$ for $j=1,\dots,t$,
+and $c^k_q:=0$. Finally, the demand vector is $b=(b^0,b^1,\dots,b^n)$ \break
+with  $b^k:=u_k$ for $k=1,\dots,n$, and
+$b^0:=(n_1,\dots,n_t,\sum_{k=1}^v u_k-\sum_{j=1}^t n_jw_j)$.
+Then the resulting n-fold integer programming problem,
+$\min\{cx:\ A^{(n)}x=b,\ x\in\N^{nq}\}$,
+can be written in scalar form as follows:
+\begin{eqnarray*}
+\min & & \sum_{j=1}^q \sum_{k=1}^n c^k_j\,x^k_j
+    \ = \  \sum_{j=1}^t \sum_{k=1}^v p_{j,k}\,x^k_j \\
+s.t. & & \sum_{k=1}^n x^k_j=b^0_j=n_j\,,\quad\quad\ j=1,\dots, t \\
+     & & \sum_{k=1}^n x^k_q=b^0_q=\sum_{k=1}^v u_k-\sum_{j=1}^t n_jw_j \\
+     & & \sum_{j=1}^q A_j\,x^k_j = \sum_{j=1}^t w_j\,x^k_j + x^k_q
+            = b^k = u_k \,,\quad\quad\ k=1,\dots, n\\
+     & & x^k_j\in\N\,,\quad\quad\quad\quad j=1,\dots, q\,,\quad k=1,\dots, n\ .
+\end{eqnarray*}
+Assume that the number $t$ of types is fixed, but the numbers $n_j$ of items
+of each type may be very large: this is a reasonable assumption in applications
+(for instance, several types of automobiles to be shipped overseas, or several
+types of appliances to be shipped on ground). Then we obtain the following
+striking corollary of Theorem \ref{Main}, showing that the problem is
+polynomial time solvable, where the input size is $v$ plus the bit size of
+the integer numbers $n_j, u_k, p_{j,k}$ constituting the data.
+Note that this result is {\em much stronger} than the standard
+results on the {\em pseudo-polynomial time} solvability of this kind of
+packing and knapsack-type problems using dynamic programming: our algorithm
+can handle {\em very large} $n_j$ and $u_k$, possibly exponential
+in the dimensional parameter $v$.
+
+\bc{Shipment}
+For any fixed number $t$ of types and type weights $w_j$, the minimum cost
+shipment problem is solvable in time which is polynomial in the number $v$
+of vessels and in the bit size of the integer numbers $n_j$ of items of each
+type to be shipped, vessel capacities $u_k$, and shipment costs $p_{j,k}$.
+\ec
+
+
+\vskip.5cm\noindent{\sc The cutting stock problem}
+
+\vskip.2cm\noindent
+This is a classical manufacturing problem, where the usual setup is as follows:
+a manufacturer supplies rolls of material (such as scotch-tape or band-aid)
+in one of $t$ different widths $w_1,\dots,w_t$. The rolls are all cut out
+from standard rolls of common large width $u$, coming out of the production line.
+Given orders by customers for $n_j$ rolls of width $w_j$, the problem facing
+the manufacturer is to meet the orders using the smallest possible number
+of standard rolls. This is almost a direct special case of the minimum
+cost shipment problem discussed above, with sufficiently many identical
+vessels, say $v:=\sum_{j=1}^t\lceil n_j / \lfloor u / w_j \rfloor \rceil$,
+of capacity $u_k:=u$ each, playing the role of the standard rolls, and with
+cost $p_{j,k}:=w_j$ for each roll of width $w_j$ regardless of the standard
+roll from which it is being cut out. The only correction needed is that
+each slack variable $x^k_q=x^k_{t+1}$, measuring the unused width of
+the $k$th standard roll, has cost of one unit instead of zero,
+so that the total cost becomes the number of standard rolls used.
+Thus the formulation as an n-fold program is with
+$n:=\sum_{j=1}^t\lceil n_j / \lfloor u/w_j \rfloor \rceil$, $p:=1$, $q:=t+1$,
+$A:=(w_1,w_2,\dots,w_t,1)$, variables $x^k_j$ representing the number
+of rolls of width $w_j$ cut out of the $k$th roll for $j=1,\dots,t$
+and $x^k_q$ representing the unused width of the $k$th standard roll,
+costs $c^k_j:=w_j$ for $j=1,\dots,t$ and $c^k_q:=1$, and demands
+$b^k:=u$ for $k=1,\dots,n$ and $b^0:=(n_1,\dots,n_t,nu-\sum_{j=1}^t n_jw_j)$.
+
+Again, quite surprisingly, we get the following useful
+corollary regarding this classical problem.
+
+\bc{CuttingStock}
+For any fixed $t$ and widths $w_1,\dots,w_t$,
+the cutting stock problem is solvable in time polynomial in
+$\sum_{j=1}^t\lceil n_j / \lfloor u / w_j \rfloor \rceil$ and in
+the bit size of the numbers $n_j$ of orders and raw roll width $u$.
+\ec
+
+One common approach to the cutting stock problem makes use of so-called
+{\em cutting patterns}, which are feasible solutions of the knapsack
+problem $\{y\in\N^t\,:\,\sum_{j=1}^t w_jy_j\leq u\}$. This is useful
+when the width $u$ of the standard rolls is of the same order of magnitude
+as the demand widths $w_j$. However, when $u$ is much larger than the $w_j$,
+the number of cutting patterns becomes prohibitively large to handle.
+But then the values $\lfloor u/w_j\rfloor$ are large and hence
+$n:=\sum_{j=1}^t\lceil n_j / \lfloor u/w_j \rfloor \rceil$
+is small, in which case the result of Corollary \ref{CuttingStock}
+using $n$-fold integer programming becomes particularly appealing.

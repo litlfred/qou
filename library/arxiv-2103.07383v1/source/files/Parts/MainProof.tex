@@ -1,0 +1,250 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_GB
+% !TeX root = ../Analyticity-Menger.tex
+\section{Proof of the main statement}
+\label{sec:MainProof}
+
+We are finally in the position to derive the key ingredient, an iterated recursive estimate for critical points $\gamma$ of the generalized integral Menger curvature $\Mpz$ with respect to a Sobolev norm. Based on that, we prove the main result of this paper.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Recursive estimate and iteration}
+\label{subsec:RecursiveEstimate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In order to show analyticity of a curve, we need to bound its higher derivatives. One possible approach is to bound derivatives by the lower order ones and iterate this procedure inductively. In the following we show how such recursive estimates can be obtained from the Euler-Lagrange equations. 
+
+Let  $\gamma\in C^\infty(\R/\Z,\R^n)$ be  a critical point of $\Mpz$ with respect to fixed length and $p\in(\tfrac 73,\tfrac 83)$.
+By the Lagrange multiplier theorem (see e.g.\ \cite[§9.3~Theorem 1]{Luenberger:1998:OptimizationVectorSpace}), we have the existence of $\lambda \in \R$ such that
+\[
+0 = \delta\Mpz(\gamma,h) + \lambda \delta \LL(\gamma,h).
+\]
+Seeing as by integration by parts and periodicity, we have
+\[
+\delta\LL(\gamma,h) = \int_{\R/\Z} \left<\gamma'(u),h'(u)\right> \d u = - \int_{\R/\Z} \left<\gamma''(u),h(u)\right> \d u
+\]
+for $\gamma$ parametrized by arc-length.
+Combining the decomposition of the first variation of $\Mpz$ mentioned in \eqref{eq:firstVariation} with the $L^2$-forms of the main term $Q^{(p)}$ in \thref{lemma:L2MainTermViaFourier} and the remainder term $R^{(p)}$ in \thref{lemma:L2formRemainder}, we may write
+\[
+0 =  \int_{\R/\Z} \left<12 \bigl(\Qpt(\gamma)(u) + \Rpt(\gamma)(u)\bigr) - \lambda \gamma''(u), h(u)\right> \d u.
+\]
+Thus, we have
+\[
+\label{eq:RelationMainAndRemainderTerms}
+\numberthis
+\Qpt(\gamma) = \frac {\lambda} {12} \gamma'' - \Rpt(\gamma).
+\]
+From this, we may easily deduce the following.
+\begin{corollary}
+	\label{cor:estimateMainTermViaRemainder}
+	Let $\gamma \in C^\infty(\R/\Z,\R^n)$ be a critical point of $\Mpz$ with respect to fixed length and parametrized by arc-length.
+	For $m>\frac 1 2$ there exist constants 
+	$C=C(\gamma,m,n,p)>0$, $r=r(\gamma,m,n,p)>0$, and $\mu=\mu(\gamma, n,p)$ such that
+	\[
+	\begin{split}
+	&\norm[H^{m+3p-7}]{\gamma^{(l+3)}}\\
+	&\le C \sum_{j_1 + \ldots + j_{K-1} = l+1} \binom{l+1}{j_1, \ldots, j_{K-1}} \ p^{(3n)}_{j_1} \left( \left\{\frac{(|\alpha|+1)!}{r^{|\alpha|+1}} \right\}_{|\alpha|\leq j_1}, \{ \| \gamma^{(j+1)} \|_{H^{m+ \frac 32 p -3}}\}_{\substack{j =1, \ldots, j_1\\ i = 1, \ldots, 3n}} \right) \\
+	& \phantom{\le} \cdot \prod_{i=2}^{K-1} {\|\gamma^{(j_i+1)}\|_{H^{m+ \frac 32 p -3}}} + \mu \norm[H^m]{\gamma^{(l+2)}}.
+	\end{split}
+	\]
+\end{corollary}
+\begin{proof}
+	By \thref{cor:Ql}, we may estimate $\norm[H^{m+3p-7}]{\gamma^{(l+3)}} \le \widetilde C \norm[H^m]{\partial^l\Qpt(\gamma)}$.
+	Noting that $\widetilde C$ only depends on $p$ and $n$, we only have to combine this estimate with \eqref{eq:RelationMainAndRemainderTerms} and \thref{lemma:estimateRemainder}. 
+\end{proof}
+
+The obtained estimate is already recursive, however, the difference in the order of differentiability is less than 1 since
+\[
+	3p-7 < \tfrac 32 p -3
+\]
+for any $p\in (\tfrac 73, \tfrac 83)$. This can lead to substantial problems in the iteration of the recursive estimate to bound higher derivatives. Therefore, we iterate the recursive estimate beforehand to get a difference of order at least 1 in the recursion. 
+
+
+To make the structure of the estimate more visible, set
+\[
+\numberthis
+\label{eq:definitionPhi} 
+\begin{split}
+&\Phi(l,n,r,K;x_0,\ldots,x_l) :=\\
+&\sum_{j_1 + \ldots + j_{K-1} = l} \binom{l}{j_1,\ldots,j_{K-1}} p_{j_1}^{(3n)}\left( \left\{ \frac {(\abs{\alpha} +1)!} {r^{\abs{\alpha} +1} } \right\}_{\abs{\alpha} \leq j_1}, \left\{ x_j \right\}_{\substack{j=1,\ldots,j_1\\ i=1,\ldots, 3n}} \right) \cdot \prod_{i=2}^{K-1} x_{j_i}
+\end{split}
+\]
+and note that $\Phi$ is non-decreasing in the $x_i$.
+The upper bound from \thref{cor:estimateMainTermViaRemainder} may be written as 
+\[
+\numberthis
+\label{eq:upperBoundMainTermPhi}
+C \Phi\left(l+1,n,r,K;\norm[H^{m+\frac 3 2 p -3}]{\gamma'}, \ldots, \norm[H^{m+\frac 3 2 p -3}]{\gamma^{(l+2)}}\right) + \mu \norm[H^m]{\gamma^{(l+2)}}.
+\]
+
+\begin{lemma}
+	\label{lemma:iteratedEstimateMainTerm}
+	Let $\gamma \in C^\infty(\R/\Z,\R^n)$ parametrized by arc-length be a critical point of $\Mpz$ with respect to fixed length and $m\geq \frac 5 2$.
+	Then, there exist constants $\widehat C = \widehat C>0$, $\mu=\mu$ and $r>0$ all depending on $\gamma,m,n$ and $p$ 
+	such that
+	\[
+	\begin{split}
+	&\norm[H^{m+3p-7}]{\gamma^{(l+3)}}\\
+	& \le C \Phi\Bigl( l+1, n, r,K;\widehat{C}\Phi\left[1,n,\frac {r} {2\pi},K; \norm[H^m]{\gamma}, \norm[H^m]{\gamma'}\right] + \mu \norm[H^m]{\gamma'}, \ldots,\\
+	&\adjustedalignment{C \Phi\Bigl( l+1, n, r,K;\widehat{C}}{\widehat{C}}\Phi\left[l+2,n,\frac {r} {2\pi},K; \norm[H^m]{\gamma}, \ldots, \norm[H^m]{\gamma^{(l+2)}}\right] + \mu \norm[H^m]{\gamma^{(l+2)}}\Bigr)\\
+	&+\mu \norm[H^m]{\gamma^{(l+2)}}.
+	\end{split}
+	\]
+\end{lemma}
+\begin{proof}
+	Using \thref{cor:estimateMainTermViaRemainder} and \eqref{eq:upperBoundMainTermPhi}, it suffices to bound $\norm[H^{m + \frac 3 2 p -3}]{\gamma^{(\tilde l +1)}}$ for $\tilde l \in \{0, \ldots, l+1\}$.
+	Since $m\ge \frac 52$, we obtain $m + \frac 3 2 p -5 >\frac 1 2$ and may use \thref{lemma:equivalentSobolevNormsDerivative}, \thref{cor:Ql} and \thref{cor:estimateMainTermViaRemainder} to estimate
+	\[  
+	\begin{split}
+	\norm[H^{m + \frac 3 2 p -3}]{\gamma^{(\tilde l +1)}}
+	&\le \norm[H^{m + \frac 3 2 p -5}]{\gamma^{(\tilde l +3)}} \\
+	&\le \widetilde C(p) C \Phi\left({\tilde l}+1,n,r,K;\norm[H^{m-1}]{\gamma'}, \ldots, \norm[H^{m-1}]{\gamma^{({\tilde l}+2)}}\right) + \mu \norm[H^{m + 2 - \frac 3 2 p}]{\gamma^{({\tilde l}+2)}}.
+	\end{split}    
+	\]
+	It holds that $m+2-\frac 3 2 p < m- \frac 3 2 < m-1$ and by \thref{lemma:equivalentSobolevNormsDerivative}, $\norm[H^{m-1}]{\gamma^{(j+1)}} \le 2 \pi \norm[H^m]{\gamma^{(j)}}$.
+	A look at the definition of $\Phi$ together with \thref{lemma:estimateAnalyticFaaDiBruno} enables us to estimate the above by
+	\[
+	\widetilde C(p) C (2\pi)^{K-2} \Phi\left({\tilde l}+1,n,\frac {r} {2\pi},K;\norm[H^{m}]{\gamma}, \ldots, \norm[H^m]{\gamma^{({\tilde l}+1)}}\right) + \tilde \mu \norm[H^{m}]{\gamma^{({\tilde l}+1)}}
+	\]
+	for $\tilde \mu := \tilde\mu(\gamma,m,n,p)>0$.
+	Relabeling $\mu := \max\set{\mu,\tilde \mu}$ gives the desired statement.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Proof of Theorem \ref{thm:main}} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Now we are ready to proof the main statement of this paper by the method of majorants.
+
+\begin{proof}[Proof of \thref{thm:main}]
+	Recall we have given a simple closed curve
+    \[
+        \gamma = (\gamma_1,\ldots, \gamma_n) \in C^\infty(\R/\Z,\R^n)
+    \]
+	parametrized by arc-length which is a critical point of integral Menger curvature $\Mpz + \lambda \mathcal{L}$, subject to a fixed length constraint, where $p\in (\tfrac 73, \tfrac 83)$ and $\lambda \in \R$.
+    We define 
+    \[
+        a_l := \norm[H^\mf]{\gamma^{(l)}}
+    \]
+	for all integers $l\geq 0$ by using the smoothness of the curve $\gamma$. 
+	Our aim is show that there exist positive constants $C_\gamma$ and $r_\gamma$ such that we have for any integer $l\geq 0$
+	\begin{align*}
+	   a_l \leq C_\gamma \frac{l!}{r_\gamma^l};
+	\end{align*}
+	from which the analyticity of the critical point $\gamma$ on $\R/\Z$ immediately follows by \thref{cor:TayloranalyticSob}.
+
+	First we establish a recursive estimate for the terms $a_l$. We begin with applying the criticality of the curve $\gamma$ and
+    \thref{lemma:iteratedEstimateMainTerm} to obtain
+    \[
+        \label{eq:recursiveEstimateA}
+        \numberthis
+        \begin{split}
+        	a_{l+3} \leq & \norm[H^{\mf + 3p - 7}]{ \gamma^{(l+3)} }\\
+            \leq & C \Phi\Bigl( l+1, n, r,K;\widehat{C}\Phi\left[1,n,\frac {r} {2\pi},K; \norm[H^\mf]{\gamma}, \norm[H^\mf]{\gamma'}\right] + \mu \norm[H^\mf]{\gamma'}, \ldots,\\
+            &\adjustedalignment{C \Phi\Bigl( l+1, n, r,K;\widehat{C}}{\widehat{C}}\Phi\left[l+2,n,\frac {r} {2\pi},K; \norm[H^\mf]{\gamma}, \ldots, \norm[H^\mf]{\gamma^{(l+2)}}\right] + \mu \norm[H^\mf]{\gamma^{(l+2)}}\Bigr)\\
+            &+  \mu \norm[H^\mf]{\gamma^{(l+2)}}\\
+            = & C \Phi\Bigl( l+1, n, r,K;\widehat{C}\Phi\left[1,n,\frac {r} {2\pi},K; a_0, a_1\right] + \mu a_1, \ldots,\\
+            &\adjustedalignment{C \Phi\Bigl( l+1, n, r,K;\widehat{C}}{\widehat{C}}\Phi\left[l+2,n,\frac {r} {2\pi},K; a_0, \ldots, a_{l+2}\right] + \mu  a_{l+2}\Bigr) + \mu a_{l+2}.
+    	\end{split}
+    \]
+	for positive constants $C, \widehat C, r, \mu$, all $l\ge 0$ and some $K \in \N$.
+    
+    Next, we try to find $\tilde a_l$ that satisfy this recursive formula with equality and such that the first three coefficients $\tilde a_0, \tilde a_1$ and $\tilde a_2$ are greater than or equal to $a_0,a_1$ and $a_2$, respectively.
+    
+    Define
+    \begin{alignat*}{2}
+        G: \R^{3n} \supseteq B_{\tilde \epsilon}(0) &\to \R^{3n},\\
+        G_i(z) &:= \widehat C \left( 1 + \frac {3n a_0 - \sum_{k=1}^{3n} z_k} {\frac {r} {2\pi}} \right)^{-2} z_i^{K-2} + \mu z_i,\\
+        F: \R^{3n} \supseteq B_{\tilde \epsilon}(0) &\to \R^{3n},\\
+        F_i(y) &:= C \left( 1 + \frac {3n DG_1((a_0,\ldots,a_0)^\transpose)(a_1, \ldots,a_1)^\transpose  - \sum_{k=1}^{3n} y_k} {r} \right)^{-2} y_i^{K-2},\\
+    \end{alignat*}
+    for $\tilde \epsilon := \min\{3n a_0 + \frac {r} {2\pi}, 3n DG_1((a_0,\ldots,a_0)^\transpose)(a_1, \ldots,a_1)^\transpose + r\}$.
+    These functions are clearly analytic and by the Cauchy-Kovalevsky \thref{thm:CK}, there is an analytic $c: (-\epsilon,\epsilon) \to \R^{3n}$ satisfying 
+    \[
+    \numberthis
+    \label{eq:majorantODE}
+    \left\{
+        \begin{split}
+            c''(t) &= \overline{C} \cdot \bigl(F(DG(c(t)) c'(t)) + \mu c'(t)\bigr),\\
+            c(0) &= (a_0,\ldots,a_0)^\transpose,\\
+            c'(0) &= (a_1,\ldots,a_1)^\transpose,
+        \end{split}
+    \right.
+    \]
+    where 
+    \[
+        \overline{C} := \max\left\{1, \frac{a_2} {F_1(DG((a_0,\ldots,a_0)^\transpose)(a_1,\ldots,a_1)^\transpose)} \right\}.
+    \]
+    A little further along, we give a formula for all derivatives of $G(c(t))$ which implies that $\overline C$ is well-defined.
+    
+    Since all entries of the right hand side in \eqref{eq:majorantODE} are identical given the initial values, we have that $c_i(t) = c_1(t)$ for all valid $i$ and $t$.
+    Setting $\tilde a_l := c_1^{(l)}(0)$, we have by definition that 
+    \[
+        \label{eq:tildeAFirstThreeTerms}
+        \numberthis
+        \tilde a_l \ge a_l \text{ for } l=0,1,2.
+    \]
+    It remains to show the recursion.
+    
+    An application of Leibniz' rule and \eqref{universalpoly} yields
+    \[
+        \label{eq:derviativeGc}
+        \numberthis
+        \begin{split}
+            &\restrict{\frac {\d^l} {\d t^l} G_i(c(t))}{t=0}\\
+            = &\widehat C \sum_{j_1+ \ldots +j_{K-1}=l} \binom{l}{j_1, \ldots, j_{K-1}} p_l^{(3n)} \Biggl( \Biggl\{ \Biggl( 1+ 
+            \underbrace{\frac {3n a_0 - \sum_{j=1}^{3n} c_j(0)} {\frac {r} {2\pi}}}_{=0}
+            \Biggr)^{-\abs{\alpha} - 2} \frac {(\abs{\alpha} +1)!} {\left(\frac {r} {2\pi}\right)^{\abs{\alpha}+1}} \Biggr\}_{\abs{\alpha} \le j_1},\\
+            & \phantom{\widehat C \sum_{j_1+ \ldots +j_{K-1}=l} \binom{l}{j_1, \ldots, j_{K-1}} p_l^{(3n)} \Biggl(} \left\{ c_j^{(k)}(0) \right\}_{\substack{k=1,\ldots,j_1\\j=1,\ldots,3n}} \Biggr)
+            \cdot \prod_{k=2}^{K-1} c_i^{(j_k)}(0) + \mu c_i^{(l)}(0)\\
+            = & \widehat C \Phi\left(l,n,\frac {r} {2\pi},K;c_1(0),\ldots,c_1^{(l)}(0)\right) + \mu c_1^{(l)}(0)
+            =\widehat C \Phi\left(l,n,\frac {r} {2\pi},K;\tilde a_0,\ldots, \tilde a_l\right) + \mu \tilde a_l.
+        \end{split}
+    \]
+    Note that this corresponds to the inner $\Phi$ terms in \eqref{eq:recursiveEstimateA}.
+    
+    For $l=1$ this is a polynomial in $\tilde a_0,\tilde a_1$ with positive coefficients, so as long as both $\tilde a_0 = a_0$ and $\tilde a_1 = a_1$ are positive, so is each component of $DG((a_0,\ldots,a_0)^\transpose)(a_1,\ldots,a_1)^\transpose$ and consequently $F_1$ applied to that.
+    Since $\gamma$ is not constant, neither $\gamma$ nor $\gamma'$ are $0 \in H^{\mf}(\R/\Z,\R^n)$ and so $a_0$ and $a_1$ have to be positive, making $\overline C$ well-defined.
+    
+    Analogously to \eqref{eq:derviativeGc}, taking advantage of the identity for all components in $G$,
+    \[
+        \label{eq:derivativeRHS}
+        \begin{split}
+            &\tilde a_{l+3}
+            = c_1^{(l+3)}(0)
+            = \overline C \restrict{\frac {\d^{l+1}} {\d t^{l+1}} F_1\left(\frac {\d}{\d t} G(c(t))\right)}{t=0} + \overline C\mu c^{(l+2)}_1(0)\\
+            =& \overline C C \sum_{j_1 + \ldots + j_{K-1} = l+1} \binom{l+1}{j_1, \ldots, j_{K-1}}\\
+            &\quad p_l^{(3n)} \Biggl( \Biggl\{ \Biggl( 1+ 
+            \underbrace{\frac {3n DG_1(c(0))\dot c(0) - \sum_{j=1}^{3n} \restrict{\frac {\d} {\d t} G_j(c(t))}{t=0}} {r}}_{=0}
+            \Biggr)^{-\abs{\alpha} - 2} \frac {(\abs{\alpha} +1)!} {r^{\abs{\alpha}+1}} \Biggr\}_{\abs{\alpha} \le j_1},\\
+            &\phantom{\quad p_l^{(3n)} \Biggl(}\left\{ \restrict{\frac{\d^{k+1}} {\d t^{k+1}} G_j(c(t))}{t=0} \right\}_{\substack{k=1,\ldots,j_1\\j=1,\ldots,3n}} \Biggr) \cdot \prod_{k=2}^{K-1} \restrict{\frac {\d^{j_k+1}}{\d t^{j_k+1}} G_1(c(t))}{t=0} + \overline{C} \mu \tilde a_{l+2}\\
+            =&\overline{C} C \Phi\left(l+1,n,r,K; \restrict{\frac {\d}{\d t} G_1(c(t))}{t=0},\ldots,\restrict{\frac {\d^{l+2}}{\d t^{l+2}} G_1(c(t))}{t=0}\right)   + \overline{C} \mu \tilde a_{l+2}\\
+            \ge& C \Phi\left(l+1,n,r,K; \restrict{\frac {\d}{\d t} G_1(c(t))}{t=0},\ldots,\restrict{\frac {\d^{l+2}}{\d t^{l+2}} G_1(c(t))}{t=0}\right)  + \mu \tilde a_{l+2},
+        \end{split}
+    \]
+    hence we conclude together with \eqref{eq:derviativeGc} that
+    \[
+    \numberthis
+    \label{eq:recursiveequation}
+    \begin{split}
+    & \tilde a_{l+3} \geq  C \Phi\Bigl( l+1, n, r,K;\widehat{C}\Phi\left[1,n,\frac {r} {2\pi},K; \tilde a_0, \tilde a_1\right] + \mu \tilde  a_1, \ldots,\\
+    &\adjustedalignment{C \Phi\Bigl( l+1, n, r,K;\widehat{C}}{\widehat{C}}\Phi\left[l+2,n,\frac {r} {2\pi},K; \tilde a_0, \ldots, \tilde a_{l+2}\right] + \mu \tilde a_{l+2}\Bigr) + \mu \tilde a_{l+2}.
+    \end{split}
+    \]
+    Using the fact that $\Phi$ is nondecreasing in $x_0,\ldots,x_l$ (see \eqref{eq:definitionPhi})
+    , we obtain
+    by comparing \eqref{eq:recursiveEstimateA} and  \eqref{eq:recursiveequation} inductively with initial values \eqref {eq:tildeAFirstThreeTerms}, that
+    \[  
+            \tilde a_{l} \geq a_{l}
+    \]
+    for all $l \in \N_0$.
+    By the analyticity of $c_1$ in zero and \thref{cor:TayloranalyticSob},
+    we have that there exist positive constants $C_\gamma$ and $r_\gamma$ such that 
+    \[
+        \norm[H^\mf]{ \gamma^{(l)}} = a_l \le \tilde a_l = c_1^{(l)} (0) \le C_\gamma \frac {l!} {r_\gamma^l}
+    \]
+    for all $l\in\N_0$ and thus, $\gamma$ is analytic.
+\end{proof}
+\label{rem:smallerRegularityGain}
+Note that the method presented here ought to work with even smaller differences between the orders of differentiability of the main and the remainder terms. If the regularity gain in one step is $\frac 1 m$ we would expect an analogue of \eqref{eq:recursiveEstimateA} to hold with roughly $m$ layers of nested $\Phi$-terms attainable via an analogue of \thref{lemma:iteratedEstimateMainTerm}.
+This approach would possibly lead to an $m$-th order ODE in place of \eqref{eq:majorantODE}.

@@ -18,7 +18,7 @@ DEPRECATED code, wrong on every bond, while a merged probe already recorded that
 readout as a trap (bean `qou-qnqf`, 2026-09-05). That prompted two questions.
 
   1. Does any published figure have DEPRECATED-only provenance? Measured: **no**.
-     93 decimals live in `computations/_deprecated/` and nowhere live, and none
+     93 decimals live in `fsh-guts/deprecated/computations/` and nowhere live, and none
      of them reaches `content/`. That is a real negative -- the detector is
      selftested against an injected known positive, per bean `qou-5pgl`'s rule
      that a detector without one can report a whole class clean.
@@ -93,9 +93,9 @@ def main() -> int:
     if vals and not _sourced(f"{vals[len(vals) // 2]:.9f}", vals):
         fails.append("a real source value was reported UNSOURCED — the matcher "
                      "is broken")
-    dep = _scan(ROOT.glob("computations/_deprecated/**/*.py"), SRC)
+    dep = _scan(ROOT.glob("fsh-guts/deprecated/computations/**/*.py"), SRC)
     live = _scan([p for p in ROOT.glob("computations/**/*.py")
-                  if "_deprecated" not in str(p)], SRC)
+                  if ("_deprecated" not in str(p) and "fsh-guts" not in str(p))], SRC)
     dep_only = sorted(set(dep) - set(live))
     if not dep_only:
         fails.append("no deprecated-only values found, so the deprecated-"

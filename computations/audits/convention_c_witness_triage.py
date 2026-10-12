@@ -134,7 +134,7 @@ def find_producer(script_file: str | None) -> str | None:
     if not base.endswith('.py'):
         base += '.py'
     hits = [p for p in glob.glob(f'**/{base}', recursive=True)
-            if '_deprecated' not in p and '/_internal/' not in p
+            if ('_deprecated' not in p and 'fsh-guts' not in p) and '/_internal/' not in p
             and '.lake' not in p]
     if not hits:
         return None
@@ -253,7 +253,7 @@ def main() -> int:
 
     records = []
     for path in sorted(glob.glob('computations/**/*.witness.json', recursive=True)):
-        if '_deprecated' in path:
+        if ('_deprecated' in path or 'fsh-guts' in path):
             continue
         try:
             txt = open(path, encoding='utf-8').read()

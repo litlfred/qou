@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s-p08/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "Initiation of the Burgess argument",
-  "pageStart": 21,
-  "pageEnd": 25,
+  "title": "Stratiﬁcation and a Menshov–Rademacher argument",
+  "pageStart": 25,
+  "pageEnd": 31,
   "contains": [
-    "library/ant-v14-n7-s-p08/blocks/prose-sec-005",
-    "library/ant-v14-n7-s-p08/blocks/lem-sec-005-01"
+    "library/ant-v14-n7-s-p08/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/ant-v14-n7-s-p08/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p08/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p08/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p08/manifest.jsonld",
   "provenance": "ingested"
 }

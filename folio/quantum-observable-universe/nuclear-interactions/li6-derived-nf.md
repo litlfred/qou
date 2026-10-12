@@ -15,7 +15,7 @@ $$
 
 $$
   \mathrm{net} \approx +2.754, \qquad
-  |\mathrm{def}| = 0
+  |\mathrm{dem}| = 0
   \quad \text{(all coefficients positive).}
 $$
 

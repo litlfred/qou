@@ -8,227 +8,334 @@ pages: 17-20
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
 doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
+text_source: latex
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.969
 ---
-We now deﬁne a presheaf structure on the family Z 1
-c (R)< := {Z 1
-c (R)<a}a∈∆ , by means of the
-restriction functors
-raa′ :Z 1
-c (R)<a′ →Z 1
-c (R)<a , ( raa′z :=z|Σ 1(∆ a) , raa′ρ := {ρe}e∈∆ a ) , raa′t := {te}e∈∆ a ,
-which obviously fulﬁll the presheaf relations raa′′ =raa′ ◦ra′a′′ , ∀a ⊆a′ ≤a′′ .
-Lemma 3.2. The pair Z⊗ := (Z 1
-c (R)<,r )∆ deﬁnes a simple tensor presheaf. Moreover we have
-ǫ(zρ,wσ)e = ǫ( raa′zρ,raa′wσ )e , ∀e<a ⊆a′ , (3.11)
-where zρ,wσ ∈ obj Z 1
-c (R)<a′ .
-Proof. We assume a ⊂ a′ , otherwise there is nothing to prove. Let zρ,wσ ∈ obj Z 1
-c (R)<a′ and
-t ∈ (zρ,wσ). Then for any path p :e′ →e such that e<a , e′<a ′ , |p| ⊆ ∆ a′
-, we have
-‖te‖2 = ‖z(p)te′w(p)∗‖2 = ‖w(p)t∗
-e′te′w(p)∗‖ = ‖t∗
-e′te′ ‖ = ‖te′ ‖2 ,
-so raa′ is isometric and Z is a presheaf. In the following lines we prove that any raa′ , a ⊆ a′ ,
-preserves tensor product and the families ǫ(·, ·). The fact that the tensor product is preserved is
-evident by (3.8). Passing to the ”symmetry”, we consider a ⊆a′ , zρ,wσ ∈Z 1
-c (R)<a′ and note that
-the operators
-ǫ(raa′zρ,raa′wσ )e , e ∈ ∆ a ,
-should be deﬁned, according to (3.9), using paths poe , po′e in ∆ a with o ⊥o′ ; but since ∆ a ⊆ ∆ a′
-and Σ 1(∆ a) ⊆ Σ 1(∆ a′
-) we have that poe , po′e are paths also in ∆ a′
-, so, since any ǫ(zρ,wσ)e ,
-e ∈ ∆ a′
-, is independent on the choice of poe , po′e , we obtain (3.11) as desired.
-Lemma 3.3. Z 1(R) is the category of sections of Z⊗ .
-Proof. If z ∈ obj Z 1(R) then we deﬁne the family za := z|Σ 1(∆ a) , ∀a ∈ ∆; to add a family of
-charges, for any e<a we set
-{ ∆( ⊥a,e ) := {p : ∂1p ⊥a,∂ 0p =e} ,
-̺a
-e (t) := {adz(p)}(t), ∀t ∈Ra , where p ∈ ∆( ⊥a,e ) .
-By [9, Eq.4.5], ̺a
-e does not depend on the choice of p ∈ ∆( ⊥a,e ), and [9, Lemma 5.1(i,iv)] 5 imply
-that ̺a
-e ∈ locRa . Using [9, Lemma 5.1(ii)] we ﬁnd
-z(b) ·̺a
-∂1b(t) = ̺a
-∂0b(t) ·z(b) , ∀a ∈ ∆ , t ∈Ra , b ∈ Σ 1(∆ a) , (3.12)
+We now define a presheaf structure on the family
+
+$Z^1_c(\EuFrak{R})_< := \{ Z^1_c(\EuFrak{R})_{<a} \}_{a \in \Delta}$,
+
+by means of the restriction functors
+
+$$r_{aa'} : Z^1_c(\EuFrak{R})_{<a'} \to Z^1_c(\EuFrak{R})_{<a}
+\ \ , \ \
+( \ r_{aa'}z := z|_{\Sigma_1(\Delta^a)}
+\ , \
+r_{aa'}\rho := \{ \rho_e \}_{e \in \Delta^a} \ )
+\ \ , \ \
+r_{aa'}t := \{ t_e \}_{e \in \Delta^a}
+\ ,$$
+
+which obviously fulfill the presheaf relations
+
+$r_{aa''} = r_{aa'} \circ r_{a'a''}$, $\forall a \subseteq a' \leq a''$.
+
+::: lem
+[]{#lem.br1 label="lem.br1"} The pair $\EuFrak{Z}_\otimes := (Z^1_c(\EuFrak{R})_<,r)^\Delta$ defines a simple tensor presheaf. Moreover we have
+
+$$\label{eq.lem.br1}
+\epsilon(z_\rho,w_\sigma)_e \ = \ \epsilon( \ r_{aa'}z_\rho , r_{aa'}w_\sigma \ )_e
+\ \ , \ \
+\forall e < a \subseteq a'
+\ ,$$
+
+where $z_\rho , w_\sigma \in {\bf obj \ }Z^1_c(\EuFrak{R})_{<a'}$.
+:::
+
+::: proof
+*Proof.* We assume $a \subset a'$, otherwise there is nothing to prove. Let $z_\rho,w_\sigma \in {\bf obj \ }Z^1_c(\EuFrak{R})_{<a'}$ and $t \in (z_\rho,w_\sigma)$. Then for any path $p : e' \to e$ such that $e < a$, ${e'} < a'$, $|p| \subseteq \Delta^{a'}$, we have
+
+$$\| t_e \|^2 = 
+\| z(p) t_{e'} w(p)^* \|^2 = 
+\| w(p) t_{e'}^* t_{e'} w(p)^* \| = 
+\| t_{e'}^* t_{e'} \| =
+\| t_{e'} \|^2
+\ ,$$
+
+so $r_{aa'}$ is isometric and $\EuFrak{Z}$ is a presheaf.
+
+In the following lines we prove that any $r_{aa'}$, $a \subseteq a'$, preserves tensor product and the families $\epsilon(\cdot,\cdot)$. The fact that the tensor product is preserved is evident by ([\[eq.tens.z1\]](#eq.tens.z1){reference-type="ref" reference="eq.tens.z1"}).
+
+Passing to the \"symmetry\", we consider $a \subseteq a'$, $z_\rho , w_\sigma \in Z^1_c(\EuFrak{R})_{<a'}$ and note that the operators
+
+$$\epsilon( \ r_{aa'}z_\rho , r_{aa'}w_\sigma \ )_e
+\ \ , \ \
+e \in \Delta^a
+\ ,$$
+
+should be defined, according to ([\[eq.sym.z1\]](#eq.sym.z1){reference-type="ref" reference="eq.sym.z1"}), using paths
+
+$p_{oe}$, $p_{o'e}$ in $\Delta^a$ with $o \perp o'$;
+
+but since $\Delta^a \subseteq \Delta^{a'}$ and $\Sigma_1(\Delta^a) \subseteq \Sigma_1(\Delta^{a'})$ we have that $p_{oe}$, $p_{o'e}$ are paths also in $\Delta^{a'}$, so, since any
+
+$\epsilon(z_\rho,w_\sigma)_e$, $e \in \Delta^{a'}$,
+
+is independent on the choice of $p_{oe}$, $p_{o'e}$, we obtain ([\[eq.lem.br1\]](#eq.lem.br1){reference-type="ref" reference="eq.lem.br1"}) as desired. ◻
+:::
+
+::: lem
+[]{#lem.br2 label="lem.br2"} $Z^1(\EuFrak{R})$ is the category of sections of $\EuFrak{Z}_\otimes$.
+:::
+
+::: proof
+*Proof.* If $z \in {\bf obj \ }Z^1(\EuFrak{R})$ then we define the family
+
+$z^a := z|_{\Sigma_1(\Delta^a)}$, $\forall a \in \Delta$;
+
+to add a family of charges, for any $e<a$ we set
+
+$$\left\{
+\begin{array}{ll}
+\Delta(\perp a,e) \ := \ \{ p \ : \ \partial_1p \perp a , \partial_0p = e \} \ ,
+\\
+\varrho^a_e(t) \ := \ \{ {\mathrm{ad}}z(p) \}(t) \ , \  \forall t \in R_a \ ,
+\ \ {\mathrm{where}} \ \ p \in \Delta(\perp a,e) \ .
+\end{array}
+\right.$$
+
+By [@BR08 Eq.4.5], $\varrho^a_e$ does not depend on the choice of $p \in \Delta(\perp a,e)$, and [@BR08 Lemma 5.1(i,iv)]
+
+[^1]
+
+imply that $\varrho^a_e \in {\bf loc}R_a$. Using [@BR08 Lemma 5.1(ii)] we find
+
+$$\label{eq.C1.0}
+z(b) \cdot \varrho^a_{\partial_1b}(t) = \varrho^a_{\partial_0b}(t) \cdot z(b)
+\ \ , \ \
+\forall a \in \Delta \ , \ t \in R_a \ , \ b \in \Sigma_1(\Delta^a)
+\ ,$$
+
 so
-za
-̺ := ( za , ̺a := {̺a
-e }e<a ) ∈ obj Z 1
-c (R)<a .
-Let now a ⊆a′ ; then ∆( ⊥a′,e ) ⊆ ∆( ⊥a,e ) so, by path-invariance of ̺a′
-e ,
-̺a′
-e |Ra := ad z(p′)|Ra = ̺a
-e , ∀p ∈ ∆( ⊥a′,e ) ⊆ ∆( ⊥a,e ),
-5 In this reference an x ∈ M is chosen with a ⊥ {x} , and we have the notation ̺a
-e ≡ yz
-x(e)|Ra , ∀e ∈ ∆ a .
-Moreover, it is proved that ̺a
-e is independent of x .
-17
-and we conclude that {za
-̺ }a is a section of Z. If t ∈ (z,w ) then deﬁning ta
-e :=te , ∀e < a, yields
-an arrow ta of Z 1
-c (R)<a and a section ~t := {ta} , so Z 1(R) is a subcategory of ~Z. On the other
-side, let us consider a section
-(~z, ~̺) ∈ obj ~Z , (~z, ~̺) = {(~za, ~̺a) ∈ obj Z 1
-c (R)<a}a∈∆ .
-Since any a ∈ ∆ has proper closure in M , for any b ∈ Σ 1(∆) there is a ∈ ∆ such that |b| ∈ Σ 1(∆ a)
-and we deﬁne z(b) := ~za(b). Since ~z is a section, the previous deﬁnition does not depend on the
-choice of a > |b|; moreover given c ∈ Σ 2(∆) we have dz(c) = d~za(c) = 1 for any a > |c| so
-z ∈ obj Z 1(R). If ~t := {~ta} is an arrow of ~Z then for any e ∈ ∆ there must be some a ∈ ∆ with
-e<a and we set te := ~ta
-e , so reasoning as above we have that t := {te} is an arrow of Z 1(R). We
-conclude that Z 1(R) = ~Z as desired.
-Lemma 3.4. The subpresheaf S := Z↓ , deﬁned as in Rem.2.1, is a simple, symmetric tensor
-presheaf and ~S =Z 1(R).
-Proof. By deﬁnition we have S = (S,r )∆ , where each Sa , a ∈ ∆, is the full subcategory of
-Z 1
-c (R)<a with objects
-obj Sa := {za
-̺ , z ∈ obj Z 1(R)} .
-By Rem.2.1 we already know that ~S =Z 1(R). Moreover S is clearly simple and tensorial, so we
-only have to check the symmetry property. To this end we note tha t we already know from §3.2
-that, given o,o ′ <a , o ⊥o′ ,
-ǫ(za
-̺,wa
-ς )e := wς (poe)∗ςa
-o (z̺(po′e))∗ ·z̺(po′e)̺a
-e (wς (poe)) , e<a ,
-fulﬁls the symmetry relations, so we only have to prove that ǫ(za
-̺,wa
-ς )e ∈ Re for any e ∈ ∆ a .
-Now, the point is that ǫ(za
-̺,wa
-ς ) is deﬁned exactly as in [9, Eq.5.10] and this time, due to the fact
-that z,w are globally deﬁned , the charges ̺a
-e,ςa
-e extend to endomorphisms ̺x
-e,ςx
-e ∈ endR⊥
-x , where
-R⊥
-x := ∪ω⊥{x}Rω for any x ∈M such that {x} ⊥ e (see [9, §5.1]). The property (3.7) now holds
-in the form
-ǫ(za
-̺,wa
-ς )e · {̺x
-e ◦ςx
-e }(t) = {ςx
-e ◦̺x
-e }(t) ·ǫ(za
-̺,wa
-ς )e , ∀t ∈R⊥
-x ,
-at varying of x ∈M with {x} ⊥ e (see [9, Lemma 5.1(iii)]). So, as remarked in §3.2,
-ǫ(za
-̺,wa
-ς )e ·t′ = t′ ·ǫ(za
-̺,wa
-ς )e , ∀t′ ∈Rω ⊆R⊥
-x , ω ⊥ {x} , ω ⊥e ,
-and we conclude, by punctured Haag duality, that ǫ(za
-̺,wa
-ς )e ∈Re as desired.
-Before to state our main result we select the sectors having a conj ugate. For any a ∈ ∆, we
-denote the full subcategory of Sa with objects za
-̺ , z ∈Z 1,•(R), by S•
-a , and deﬁne
-S• := ( S•,r )∆ .
-By the previous Lemmata, and since by [9, §5.3] we have that Z 1,•(R) is a DR-category, we obtain:
-Theorem 3.5. Let R = (R,j )∆ ⊆BH be a Haag-Kastler net where ∆ is the base of diamonds of
-a globally hyperbolic spacetime M with spacetime dimension ≥ 3 . Then S := (S,r )∆ is a simple,
-symmetric tensor presheaf such that Z 1(R) is the category of sections of S. In particular, S• is
-a DR-presheaf with category of sections Z 1,•(R).
-In the following points we list some consequences of the previous the orem.
-18
-Holonomy of sectors. Let z ∈ obj Z 1(R) and β ˆz the presheaf bundle of tensor powers of z
-deﬁned in (2.15). By deﬁnition, the ﬁbre β ˆza , a ∈ ∆, has objects the tensor powers zn
-a :=z ⊗... ⊗z ,
-n ∈ N (note that a ∈ ∆ plays no role at the level of objects), and arrows
-β(zn
-a,zm
-a ) = {t = (te ∈Re, e∈ ∪a′⊇a∆ a′
-) : zm(b)t∂1b =t∂0bzn(b), ∀b ∈ Σ 1(∪a′⊇a∆ a′
-)} .
-A simpler way to describe β(zn
-a,zm
-a ) is the following: since any a has compact closure, we can ﬁnd
-a′ ∈ ∆ such that a ∈ ∆ a′
-; thus for any t ∈ β(zn
-a,zm
-a ) we can pick ta ∈ Ra , and this suﬃces to
-determine t because of the relation
-te = zm(p)tazn(p)∗ , ∀e ∈ ∪a′⊇a∆ a′
-,
-where p : a → e is a path made of 1-simplices in Σ 1(∪a′⊇a∆ a′
-). In this way, on the arrows, the
-restriction functors take the form rz
-aa′ (ta′) = ta , a ⊆a′ , and have inverse
-rz
-a′a(ta) = ta′ = zm(ba′a)tazn(ba′a)∗ , ba′a := (a′,a ;a′) ∈ Σ 1(∆) .
-Thus, reasoning as in (2.7), we compute the holonomy of β ˆz ,
-χ′
-z :π1(∆) → autβ ˆza , {χ′
-z(p)}(ta) = zm(p)tazn(p)∗ , p :a →a , ta ∈ β(zn
-a,zm
-a ). (3.13)
-Let now in particular z ∈ obj Z 1,•(R). By Theorem 2.3, the sector z deﬁnes a compact Lie group
-Gz ⊆ U(d) and a holonomy representation χz : π1(∆) → QGz := NGz/Gz , which is a complete
-invariant of the presheaf bundle β ˆz . In accord with the proof of [39, Theorem 5.3], the group
-Gz is such that there is a symmetric tensor isomorphism F : β ˆza → ˆπGz . Regarding QGz as
-an automorphism group of ˆπGz (see Ex.2.2), by the argument used to prove [39, Eq.5.5] we have
-χz ◦F =F ◦χ′
-z . It can be easily veriﬁed that d is the statistical dimension of z (see [9, §5.3]), but
-we prefer to not discuss here the details.
-Dual objects and topologically trivial sectors. By Theorem 2.2, any embedding I : S• → C
-yields a full embedding of symmetric tensor C*-categories Z 1,•(R)֒→HilbG(∆), where G is a
-compact group net bundle, and induces lifts ˆχz :π1(∆) →NGz , χz = ˆχz modGz , of the holonomies
-deﬁned by sectors z ∈ obj Z 1,•(R). Let now Z 1
-t (R) denote the subcategory of topologically
-trivial sectors, that is, of those z ∈ obj Z 1(R) such that there is a family ψ = {ψa ∈ UH } with
-z(b) = ψ∗
-∂0bψ∂1b , b ∈ Σ 1(∆). Then zn(p) = 1 for any p :a →a and n ∈ N, and by (3.13) we have
-that χ′
-z(p) is the identity functor for any z ∈ obj Z 1
-t (R). Thus when z ∈ obj Z 1,•
-t (R) we have that
-χ′
-z and χz are trivial, and there is at least one lift ˆχz , the trivial one. We have a full embedding
-Z 1,•
-t (R)֒→HilbGt (∆), where Gt is the trivial net bundle with ﬁbre the Doplicher-Roberts dual Gt
-of Z 1,•
-t (R). But, by the results in [39], we may also have Z 1,•
-t (R)֒→HilbG(∆) for some nontrivial
-group net bundle G.
-Cochains. By Theorem 2.4, any sector z ∈ obj Z 1,•(R) deﬁnes the 1–cochain uz : Σ 1(∆) →NGz
-that classiﬁes lifts ˆχz :π1(∆) →NGz , q ◦ ˆχz =χz . The cochain uz deﬁnes a gerbe in the sense of
-§5, see (5.2).
-Characteristic classes. Let Pz →M denote the locally constant, principal QGz -bundle deﬁned
-by χz . By (2.5), we have characteristic classes ζ↑(z) := [ ζ↑(Pz)] ∈ H 2k−1(M, R/K) that vanish
-when χz is the trivial morphism, that is, when z is a topologically trivial sector. Thus we can
-measure the obstruction of z being a topologically trivial sector in terms of the odd cohomology of
-the given spacetime.
-19
-Chern classes of ﬁelds with ”trivial gauge group”. Let R be a Haag-Kastler net such that
-Gz is trivial for any z ∈ obj Z 1,•(R). Then NGz =QGz = U(d) and χz takes values in U(d) . By
-(2.6) we have Chern classes
-{
-ck(z) := c↑
-k(χz) ∈H 2k−1(M, R/Z) , ∀k = 1,... ,d ,
-ccs(z) := d + ∑ d
-k=1
-(−1)k−1
-(k−1)! ck(z)modQ ∈ Z ⊕Hodd(M, R/Q) . (3.14)
-This is the situation that we expect to hold for quantum ﬁelds with triv ial superselection structure
-in the Minkowski spacetime, as, for example, the free electromagn etic ﬁeld. The classes (3.14) are
-an interesting clue supporting the idea that Brunetti-Ruzzi secto rs describe Aharonov-Bohm-type
-situations ([9, §7]): in fact, in the same way the monodromy phase of the quantum ele ctromagnetic
-potential is described by a class in H 1(M, R/Z), the holonomy of z ∈ obj Z 1,•(R) is measured by
-the ﬁrst Chern class c1(z) ∈H 1(M, R/Z). In this regard, we conjecture that the free electromagnetic
-ﬁeld yields a net such that that Gz is trivial for any z ∈ obj Z 1,•(R).
+
+$$z_\varrho^a \ := \ ( \ z^a \ , \ \varrho^a := \{ \varrho^a_e \}_{e<a} \ ) \ \in \ {\bf obj \ }Z^1_c(\EuFrak{R})_{<a} \ .$$
+
+Let now $a \subseteq a'$; then $\Delta(\perp a',e) \subseteq \Delta(\perp a,e)$ so, by path-invariance of $\varrho^{a'}_e$,
+
+$$\varrho^{a'}_e |_{R_a} 
+\ := \ 
+{\mathrm{ad}}z(p')|_{R_a}
+\ = \
+\varrho^a_e
+\ \ \ , \ \ \qquad
+\forall p \in \Delta(\perp a',e) \subseteq \Delta(\perp a,e)
+\ ,$$
+
+and we conclude that $\{ z_\varrho^a \}_a$ is a section of $\EuFrak{Z}$. If $t \in (z,w)$ then defining
+
+$t^a_e := t_e$, $\forall e<a$,
+
+yields an arrow $t^a$ of $Z^1_c(\EuFrak{R})_{<a}$ and a section $\widetilde t := \{ t^a \}$, so $Z^1(\EuFrak{R})$ is a subcategory of $\widetilde\EuFrak{Z}$.
+
+On the other side, let us consider a section
+
+$$(\widetilde z,\widetilde\varrho) \in {\bf obj \ }\widetilde\EuFrak{Z}
+\ \ , \ \
+(\widetilde z,\widetilde\varrho) \ = \ \{ (\widetilde z^a,\widetilde\varrho^a) \in {\bf obj \ }Z^1_c(\EuFrak{R})_{<a} \}_{a \in \Delta} \ .$$
+
+Since any $a \in \Delta$ has proper closure in $M$, for any $b \in \Sigma_1(\Delta)$ there is $a \in \Delta$ such that
+
+$|b| \in \Sigma_1(\Delta^a)$ and we define
+
+$z(b) := \widetilde z^a(b)$.
+
+Since $\widetilde z$ is a section, the previous definition does not depend on the choice of $a > |b|$; moreover given $c \in \Sigma_2(\Delta)$ we have $dz(c) = d \widetilde z^a(c) = 1$ for any $a > |c|$ so $z \in {\bf obj \ }Z^1(\EuFrak{R})$.
+
+If $\widetilde t := \{ \widetilde t^a \}$ is an arrow of $\widetilde\EuFrak{Z}$ then for any $e \in \Delta$ there must be some $a \in \Delta$ with $e<a$ and we set
+
+$t_e := \widetilde t^a_e$,
+
+so reasoning as above we have that $t := \{ t_e \}$ is an arrow of $Z^1(\EuFrak{R})$. We conclude that $Z^1(\EuFrak{R}) = \widetilde\EuFrak{Z}$ as desired. ◻
+:::
+
+::: lem
+[]{#lem.br3 label="lem.br3"} The subpresheaf $\EuFrak{S}:= \EuFrak{Z}^\downarrow$, defined as in Rem.[\[rem.back1\]](#rem.back1){reference-type="ref" reference="rem.back1"}, is a simple, symmetric tensor presheaf and $\widetilde\EuFrak{S}= Z^1(\EuFrak{R})$.
+:::
+
+::: proof
+*Proof.* By definition we have $\EuFrak{S}= (S,r)^\Delta$, where each $S_a$, $a \in \Delta$, is the full subcategory of $Z^1_c(\EuFrak{R})_{<a}$ with objects
+
+$${\bf obj \ }S_a \ := \ \{  z_\varrho^a \ , \ z \in {\bf obj \ }Z^1(\EuFrak{R}) \} \ .$$
+
+By Rem.[\[rem.back1\]](#rem.back1){reference-type="ref" reference="rem.back1"} we already know that $\widetilde\EuFrak{S}= Z^1(\EuFrak{R})$. Moreover $\EuFrak{S}$ is clearly simple and tensorial, so we only have to check the symmetry property.
+
+To this end we note that we already know from §[\[sec.sym\]](#sec.sym){reference-type="ref" reference="sec.sym"} that, given $o,o' < a$, $o \perp o'$,
+
+$$\epsilon(z_\varrho^a , w_\varsigma^a)_e 
+\ := \
+w_\varsigma(p_{oe})^* \varsigma^a_o(z_\varrho(p_{o'e}))^* \cdot
+z_\varrho(p_{o'e}) \varrho^a_e(w_\varsigma(p_{oe}))
+\ \ , \ \
+e < a
+\ ,$$
+
+fulfils the symmetry relations, so we only have to prove that
+
+$\epsilon(z_\varrho^a , w_\varsigma^a)_e \in R_e$ for any $e \in \Delta^a$.
+
+Now, the point is that $\epsilon(z_\varrho^a , w_\varsigma^a)$ is defined exactly as in [@BR08 Eq.5.10] and this time, due to the fact that $z,w$ *are globally defined*, the charges $\varrho^a_e , \varsigma^a_e$ extend to endomorphisms
+
+$\varrho^x_e , \varsigma^x_e \in {\bf end}R^\perp_x$,
+
+where $R^\perp_x := \cup_{ \overline\omega \perp \{ x \} } R_\omega$ for any $x \in M$ such that $\{ x \} \perp \overline e$ (see [@BR08 §5.1]). The property ([\[eq.int\]](#eq.int){reference-type="ref" reference="eq.int"}) now holds in the form
+
+$$\epsilon(z_\varrho^a , w_\varsigma^a)_e \cdot \{ \varrho^x_e \circ \varsigma^x_e \}(t)
+\ = \
+\{ \varsigma^x_e \circ \varrho^x_e \}(t) \cdot \epsilon(z_\varrho^a , w_\varsigma^a)_e
+\ \ , \ \
+\forall t \in R^\perp_x 
+\ ,$$
+
+at varying of $x \in M$ with $\{ x \} \perp \overline e$ (see [@BR08 Lemma 5.1(iii)]). So, as remarked in §[\[sec.sym\]](#sec.sym){reference-type="ref" reference="sec.sym"},
+
+$$\epsilon(z_\varrho^a , w_\varsigma^a)_e \cdot t' \ = \ 
+t' \cdot \epsilon(z_\varrho^a , w_\varsigma^a)_e 
+\ \ , \ \
+\forall t' \in R_\omega \subseteq R^\perp_x 
+\ , \ 
+\overline\omega \perp \{ x \} \ , \ \omega \perp e
+\ ,$$
+
+and we conclude, by punctured Haag duality, that $\epsilon(z_\varrho^a , w_\varsigma^a)_e \in R_e$ as desired. ◻
+:::
+
+Before to state our main result we select the sectors having a conjugate. For any $a \in \Delta$, we denote the full subcategory of $S_a$ with objects $z_\varrho^a$, $z \in Z^{1,\bullet}(\EuFrak{R})$, by $S^\bullet_a$, and define
+
+$$\EuFrak{S}^\bullet \ := \ (S^\bullet,r)^\Delta \ .$$
+
+By the previous Lemmata, and since by [@BR08 §5.3] we have that $Z^{1,\bullet}(\EuFrak{R})$ is a DR-category, we obtain:
+
+::: thm
+[]{#thm.br label="thm.br"} Let $\EuFrak{R}= (R,j)_\Delta \subseteq BH$ be a Haag-Kastler net where $\Delta$ is the base of diamonds of a globally hyperbolic spacetime $M$ with spacetime dimension $\geq 3$. Then $\EuFrak{S}:= (S,r)^\Delta$ is a simple, symmetric tensor presheaf such that $Z^1(\EuFrak{R})$ is the category of sections of $\EuFrak{S}$. In particular, $\EuFrak{S}^\bullet$ is a DR-presheaf with category of sections $Z^{1,\bullet}(\EuFrak{R})$.
+:::
+
+In the following points we list some consequences of the previous theorem.
+
+#### Holonomy of sectors.
+
+Let $z \in {\bf obj \ }Z^1(\EuFrak{R})$ and ${}_\beta \widehat z$ the presheaf bundle of tensor powers of $z$ defined in ([\[eq.beta\]](#eq.beta){reference-type="ref" reference="eq.beta"}). By definition, the fibre ${}_\beta \widehat z_a$, $a \in \Delta$, has objects the tensor powers
+
+$z^n_a := z \otimes \ldots \otimes z$, $n \in {\mathbb N}$
+
+(note that $a \in \Delta$ plays no role at the level of objects), and arrows
+
+$${}_\beta(z^n_a , z^m_a) 
+\ = \ 
+\{  t = ( t_e \in R_e \, , \, e \in \cup_{a' \supseteq a} \Delta^{a'} ) 
+    \, : \, 
+    z^m(b) t_{\partial_1 b}= t_{\partial_0 b}z^n(b) \, , \, \forall b \in \Sigma_1(\cup_{a' \supseteq a} \Delta^{a'}) \}
+\ .$$
+
+A simpler way to describe ${}_\beta(z^n_a , z^m_a)$ is the following: since any $a$ has compact closure, we can find $a' \in \Delta$ such that $a \in \Delta^{a'}$; thus for any $t \in {}_\beta(z^n_a , z^m_a)$ we can pick $t_a \in R_a$, and this suffices to determine $t$ because of the relation
+
+$$t_e \ = \ z^m(p) \, t_a \, z^n(p)^* \ \ , \ \ \forall e \in \cup_{a' \supseteq a} \Delta^{a'} \ ,$$
+
+where $p : a \to e$ is a path made of 1-simplices in $\Sigma_1(\cup_{a' \supseteq a} \Delta^{a'})$. In this way, on the arrows, the restriction functors take the form
+
+$r^z_{aa'}(t_{a'}) =  t_a$, $a \subseteq a'$,
+
+and have inverse
+
+$$r^z_{a'a}(t_a) \ = \ t_{a'} \ = \  z^m(b_{a'a}) \, t_a \, z^n(b_{a'a})^*
+\ \ , \ \
+b_{a'a} := (a',a;a') \in \Sigma_1(\Delta) \ .$$
+
+Thus, reasoning as in ([\[eq.back3a\]](#eq.back3a){reference-type="ref" reference="eq.back3a"}), we compute the holonomy of ${}_\beta \widehat z$,
+
+$$\label{eq.holz}
+\chi'_z : \pi_1(\Delta) \to {\bf aut}{}_\beta \widehat z_a
+\ \ , \ \
+\{ \chi'_z(p) \}(t_a) \ = \ z^m(p) \, t_a \, z^n(p)^*
+\ \ , \ \qquad
+p : a \to a 
+\ , \
+t_a \in {}_\beta(z^n_a , z^m_a) \ .$$
+
+Let now in particular $z \in {\bf obj \ }Z^{1,\bullet}(\EuFrak{R})$. By Theorem [\[lem_CCS00\]](#lem_CCS00){reference-type="ref" reference="lem_CCS00"}, the sector $z$ defines a compact Lie group $G_z \subseteq {{\mathbb U}(d)}$ and a holonomy representation
+
+$\chi_z : \pi_1(\Delta) \to QG_z := NG_z / G_z$,
+
+which is a complete invariant of the presheaf bundle ${}_\beta \widehat z$. In accord with the proof of [@Vas12 Theorem 5.3], the group $G_z$ is such that there is a symmetric tensor isomorphism
+
+$F : {}_\beta \widehat z_a \to \widehat\pi_{G_z}$.
+
+Regarding $QG_z$ as an automorphism group of $\widehat\pi_{G_z}$ (see Ex.[\[ex.back1\]](#ex.back1){reference-type="ref" reference="ex.back1"}), by the argument used to prove [@Vas12 Eq.5.5] we have
+
+$\chi_z \circ F = F \circ \chi'_z$.
+
+It can be easily verified that $d$ is the statistical dimension of $z$ (see [@BR08 §5.3]), but we prefer to not discuss here the details.
+
+#### Dual objects and topologically trivial sectors.
+
+By Theorem [\[thm_DUAL\]](#thm_DUAL){reference-type="ref" reference="thm_DUAL"}, any embedding
+
+$I : \EuFrak{S}^\bullet \to \EuFrak{C}$
+
+yields a full embedding of symmetric tensor *C\**-categories
+
+$Z^{1,\bullet}(\EuFrak{R}) \hookrightarrow{\bf Hilb}_\EuFrak{G}(\Delta)$,
+
+where $\EuFrak{G}$ is a compact group net bundle, and induces lifts
+
+$\widehat\chi_z : \pi_1(\Delta) \to NG_z$, $\chi_z = \widehat\chi_z \, {\mathrm{mod}} G_z$,
+
+of the holonomies defined by sectors $z \in {\bf obj \ }Z^{1,\bullet}(\EuFrak{R})$.
+
+Let now $Z^1_t(\EuFrak{R})$ denote the subcategory of topologically trivial sectors, that is, of those $z \in {\bf obj \ }Z^1(\EuFrak{R})$ such that there is a family $\psi = \{ \psi_a \in UH \}$ with $z(b) = \psi_{\partial_0b}^* \psi_{\partial_1b}$, $b \in \Sigma_1(\Delta)$.
+
+Then
+
+$z^n(p) = 1$ for any $p : a \to a$ and $n \in {\mathbb N}$,
+
+and by ([\[eq.holz\]](#eq.holz){reference-type="ref" reference="eq.holz"}) we have that $\chi'_z(p)$ is the identity functor for any $z \in {\bf obj \ }Z^1_t(\EuFrak{R})$. Thus when $z \in {\bf obj \ }Z^{1,\bullet}_t(\EuFrak{R})$ we have that $\chi'_z$ and $\chi_z$ are trivial, and there is at least one lift $\widehat\chi_z$, the trivial one. We have a full embedding
+
+$Z^{1,\bullet}_t(\EuFrak{R}) \hookrightarrow{\bf Hilb}_{\EuFrak{G}_t}(\Delta)$,
+
+where $\EuFrak{G}_t$ is the trivial net bundle with fibre the Doplicher-Roberts dual $G_t$ of $Z^{1,\bullet}_t(\EuFrak{R})$. But, by the results in [@Vas12], we may also have
+
+$Z^{1,\bullet}_t(\EuFrak{R}) \hookrightarrow{\bf Hilb}_\EuFrak{G}(\Delta)$
+
+for some nontrivial group net bundle $\EuFrak{G}$.
+
+#### Cochains.
+
+By Theorem [\[thm.gerbe\]](#thm.gerbe){reference-type="ref" reference="thm.gerbe"}, any sector $z \in {\bf obj \ }Z^{1,\bullet}(\EuFrak{R})$ defines the 1--cochain
+
+$u_z : \Sigma_1(\Delta) \to NG_z$
+
+that classifies lifts $\widehat\chi_z : \pi_1(\Delta) \to NG_z$, $q \circ \widehat\chi_z = \chi_z$. The cochain $u_z$ defines a gerbe in the sense of §[\[sec.concl\]](#sec.concl){reference-type="ref" reference="sec.concl"}, see ([\[eq.CON1a\]](#eq.CON1a){reference-type="ref" reference="eq.CON1a"}).
+
+#### Characteristic classes.
+
+Let $P_z \to M$ denote the locally constant, principal $QG_z$-bundle defined by $\chi_z$. By ([\[eq.ccs0\]](#eq.ccs0){reference-type="ref" reference="eq.ccs0"}), we have characteristic classes
+
+$\zeta^\uparrow(z) := [\zeta^\uparrow(P_z)] \in H^{2k-1}(M,{\mathbb R}/ {\mathbb K})$
+
+that vanish when $\chi_z$ is the trivial morphism, that is, when $z$ is a topologically trivial sector. Thus we can measure the obstruction of $z$ being a topologically trivial sector in terms of the odd cohomology of the given spacetime.
+
+#### Chern classes of fields with \"trivial gauge group\".
+
+Let $\EuFrak{R}$ be a Haag-Kastler net such that $G_z$ is trivial for any $z \in {\bf obj \ }Z^{1,\bullet}(\EuFrak{R})$. Then $NG_z = QG_z = {{\mathbb U}(d)}$ and $\chi_z$ takes values in ${{\mathbb U}(d)}$. By ([\[eq.ccs\]](#eq.ccs){reference-type="ref" reference="eq.ccs"}) we have Chern classes
+
+$$\label{eq.ccsz}
+\left\{
+\begin{array}{ll}
+c_k(z) := c_k^\uparrow(\chi_z) \in H^{2k-1}(M,{\mathbb{R/Z}})
+\ , \
+\forall k=1,\ldots \ , d \ ,
+\\
+ccs(z) := d + \sum_{k=1}^d \frac{ (-1)^{k-1}  }{ (k-1)! } \ c_k(z)_{ {\mathrm{mod}}{\mathbb Q}}
+\ \in {\mathbb Z}\oplus H^{odd}(M,{\mathbb{R/Q}}) \ .
+\end{array}
+\right.$$
+
+This is the situation that we expect to hold for quantum fields with trivial superselection structure in the Minkowski spacetime, as, for example, the free electromagnetic field.
+
+The classes ([\[eq.ccsz\]](#eq.ccsz){reference-type="ref" reference="eq.ccsz"}) are an interesting clue supporting the idea that Brunetti-Ruzzi sectors describe Aharonov-Bohm-type situations ([@BR08 §7]): in fact, in the same way the monodromy phase of the quantum electromagnetic potential is described by a class in $H^1(M,{\mathbb{R/Z}})$, the holonomy of $z \in {\bf obj \ }Z^{1,\bullet}(\EuFrak{R})$ is measured by the first Chern class $c_1(z) \in H^1(M,{\mathbb{R/Z}})$.
+
+In this regard, we conjecture that the free electromagnetic field yields a net such that that $G_z$ is trivial for any
+
+$z \in {\bf obj \ }Z^{1,\bullet}(\EuFrak{R})$.
+
+[^1]: In this reference an $x \in M$ is chosen with $a \perp \{ x \}$, and we have the notation $\varrho^a_e \equiv y^z_x(e) |_{R_a}$, $\forall e \in \Delta^a$. Moreover, it is proved that $\varrho^a_e$ is independent of $x$.

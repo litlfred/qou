@@ -122,7 +122,7 @@ MUON_PREFIX = "1.10997859555"
 PROTON_PREFIX = "1.109978582751"
 PINNED_ANCHORS = {"muon", "proton", "comparison"}
 
-SKIP_DIRS = {".git", "__pycache__", "node_modules", "target", "_deprecated"}
+SKIP_DIRS = {".git", "__pycache__", "node_modules", "target", "_deprecated", "fsh-guts"}
 
 
 def witness_index() -> dict[str, list[Path]]:

@@ -6,7 +6,12 @@
   "sha256": "bf0f91277a5874ffca7c63af3dbfb4a97dde8c977aa4c061cefbca8fddedb301",
   "bytes": 624516,
   "pages": 47,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -22,13 +27,21 @@
    "NEGATIVE DEPENDENCE AND",
    "THE GEOMETRY OF POLYNOMIALS"
   ],
-  "abstract": "W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount to the stability of the latter. This class covers important m odels such as de- terminantal measures (e.g. product measures, uniform rand om spanning tree measures) and distributions for symmetric exclusion proce sses. W e show that strongly Rayleigh measures enjoy all virtues of negative de pendence and we also prove a series of conjectures due to Liggett, Pemantle, and W agner, re- spectively. Moreover, we extend Lyons\u2019 recent results on de terminantal mea- sures and we construct counterexamples to several conjectu res of Pemantle and W agner on negative dependence and ultra log-concave ran k sequences.",
+  "abstract": "We introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polynomials that amount to the stability of the latter. This class covers important models such as de- terminantal measures (e.g. product measures, uniform random spanning tree measures) and distributions for symmetric exclusion processes. We show that strongly Rayleigh measures enjoy all virtues of negative dependence and we also prove a series of conjectures due to Liggett, Pemantle, and Wagner, re- spectively. Moreover, we extend Lyons\u2019 recent results on determinantal mea- sures and we construct counterexamples to several conjectures of Pemantle and Wagner on negative dependence and ultra log-concave rank sequences.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181023162915-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181023162915-04'00'"
+  },
+  "title_raw": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS Contents Introduction A Plethora of Negative Dependence Properties and Conjectures Negative Dependence Concepts Strongly Rayleigh Measures Symmetric Homogenization Measures on countably in\ufb01nite sets Towards a Theory of Negative Dependence: Problems",
+   "outline": "1. Introduction",
+   "text": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -37,158 +50,618 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "A Plethora of Negative Dependence Properties and Conjectures",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Negative Dependence Concepts",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Strongly Rayleigh Measures",
    "page": 9,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Symmetric Homogenization",
    "page": 10,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Measures on countably infinite sets",
    "page": 10,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Towards a Theory of Negative Dependence: Problems and Solutions",
    "page": 11,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Negative Dependence in Mathematics and Physics",
    "page": 13,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Real Stable Polynomials and Transcendental Entire Functions",
    "page": 13,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
    "page": 15,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Determinantal Probability Measures",
    "page": 17,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Graphs, Laplacians, Spanning Trees and the Random Cluster Model",
    "page": 18,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Interacting Particle Systems and Exclusion Evolutions",
    "page": 20,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Negative Dependence Theory for Strongly Rayleigh Measures",
    "page": 21,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Symmetric Homogenization via G\u00e5rding Hyperbolic Polynomials",
    "page": 21,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Stability Implies Negative Association",
    "page": 24,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Stochastic Domination and Truncations",
    "page": 25,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "The Partial Symmetrization Procedure",
    "page": 29,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 1,
    "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
    "page": 31,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Almost Exchangeable Measures",
    "page": 33,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 1,
    "title": "Negative Results on Negative Dependence",
    "page": 41,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 1,
    "title": "References",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Subordination relations between negative dependence properties. where gp,q(z) = P",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "13"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 915,
+   "n_words": 130,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -196,8 +669,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 11267,
-   "n_words": 1811
+   "n_chars": 11163,
+   "n_words": 1706,
+   "label_start": null,
+   "label_end": "4"
   },
   {
    "id": "sec-001-2-a-plethora-of-negative-dependence-properties-a",
@@ -206,8 +681,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 377,
-   "n_words": 65
+   "n_chars": 373,
+   "n_words": 61,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-002-21-negative-dependence-concepts",
@@ -216,8 +693,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 9,
-   "n_chars": 13575,
-   "n_words": 2807
+   "n_chars": 13324,
+   "n_words": 2561,
+   "label_start": "4",
+   "label_end": "9"
   },
   {
    "id": "sec-003-22-strongly-rayleigh-measures",
@@ -226,8 +705,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 2198,
-   "n_words": 409
+   "n_chars": 2168,
+   "n_words": 379,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
    "id": "sec-004-23-symmetric-homogenization",
@@ -235,126 +716,434 @@
    "title": "Symmetric Homogenization",
    "level": 2,
    "page_start": 10,
-   "page_end": 13,
-   "n_chars": 9117,
-   "n_words": 1626
+   "page_end": 10,
+   "n_chars": 961,
+   "n_words": 195,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-005-3-negative-dependence-in-mathematics-and-physics",
+   "id": "sec-005-24-measures-on-countably-infinite-sets",
+   "number": "2.4",
+   "title": "Measures on countably infinite sets",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 616,
+   "n_words": 114,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-006-25-towards-a-theory-of-negative-dependence-probl",
+   "number": "2.5",
+   "title": "Towards a Theory of Negative Dependence: Problems and Solutions",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 7152,
+   "n_words": 1206,
+   "label_start": "11",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-007-3-negative-dependence-in-mathematics-and-physics",
    "number": "3",
    "title": "Negative Dependence in Mathematics and Physics",
    "level": 1,
    "page_start": 13,
-   "page_end": 15,
-   "n_chars": 5643,
-   "n_words": 1096
+   "page_end": 13,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-006-32-hadamard-fischer-inequalities-and-gkk-matrice",
+   "id": "sec-008-31-real-stable-polynomials-and-transcendental-en",
+   "number": "3.1",
+   "title": "Real Stable Polynomials and Transcendental Entire Functions",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 5484,
+   "n_words": 997,
+   "label_start": "13",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-009-32-hadamard-fischer-inequalities-and-gkk-matrice",
    "number": "3.2",
    "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
    "level": 2,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 5337,
-   "n_words": 1055
+   "n_chars": 5257,
+   "n_words": 975,
+   "label_start": "15",
+   "label_end": "17"
   },
   {
-   "id": "sec-007-33-determinantal-probability-measures",
+   "id": "sec-010-33-determinantal-probability-measures",
    "number": "3.3",
    "title": "Determinantal Probability Measures",
    "level": 2,
    "page_start": 17,
-   "page_end": 20,
-   "n_chars": 6301,
-   "n_words": 1236
+   "page_end": 18,
+   "n_chars": 2872,
+   "n_words": 491,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-008-35-interacting-particle-systems-and-exclusion-ev",
+   "id": "sec-011-34-graphs-laplacians-spanning-trees-and-the-rand",
+   "number": "3.4",
+   "title": "Graphs, Laplacians, Spanning Trees and the Random Cluster Model",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3280,
+   "n_words": 657,
+   "label_start": "18",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-012-35-interacting-particle-systems-and-exclusion-ev",
    "number": "3.5",
    "title": "Interacting Particle Systems and Exclusion Evolutions",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 4114,
-   "n_words": 731
+   "n_chars": 4075,
+   "n_words": 692,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-009-4-negative-dependence-theory-for-strongly-raylei",
+   "id": "sec-013-4-negative-dependence-theory-for-strongly-raylei",
    "number": "4",
    "title": "Negative Dependence Theory for Strongly Rayleigh Measures",
    "level": 1,
    "page_start": 21,
-   "page_end": 24,
-   "n_chars": 7436,
-   "n_words": 1597
+   "page_end": 21,
+   "n_chars": 937,
+   "n_words": 162,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-010-42-stability-implies-negative-association",
+   "id": "sec-014-41-symmetric-homogenization-via-g\u00e5rding-hyperbol",
+   "number": "4.1",
+   "title": "Symmetric Homogenization via G\u00e5rding Hyperbolic Polynomials",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 6302,
+   "n_words": 1299,
+   "label_start": "21",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-015-42-stability-implies-negative-association",
    "number": "4.2",
    "title": "Stability Implies Negative Association",
    "level": 2,
    "page_start": 24,
-   "page_end": 29,
-   "n_chars": 15144,
-   "n_words": 3155
+   "page_end": 25,
+   "n_chars": 2950,
+   "n_words": 527,
+   "label_start": "24",
+   "label_end": "25"
   },
   {
-   "id": "sec-011-44-the-partial-symmetrization-procedure",
+   "id": "sec-016-43-stochastic-domination-and-truncations",
+   "number": "4.3",
+   "title": "Stochastic Domination and Truncations",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 11863,
+   "n_words": 2365,
+   "label_start": "25",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-017-44-the-partial-symmetrization-procedure",
    "number": "4.4",
    "title": "The Partial Symmetrization Procedure",
    "level": 2,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 4092,
-   "n_words": 815
+   "n_chars": 4026,
+   "n_words": 749,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
-   "id": "sec-012-5-preservation-of-negative-dependence-by-symmetr",
+   "id": "sec-018-5-preservation-of-negative-dependence-by-symmetr",
    "number": "5",
    "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
    "level": 1,
    "page_start": 31,
    "page_end": 33,
-   "n_chars": 8081,
-   "n_words": 1553
+   "n_chars": 7986,
+   "n_words": 1458,
+   "label_start": "31",
+   "label_end": "33"
   },
   {
-   "id": "sec-013-6-almost-exchangeable-measures",
+   "id": "sec-019-6-almost-exchangeable-measures",
    "number": "6",
    "title": "Almost Exchangeable Measures",
    "level": 1,
    "page_start": 33,
    "page_end": 41,
-   "n_chars": 17233,
-   "n_words": 3868
+   "n_chars": 16891,
+   "n_words": 3526,
+   "label_start": "33",
+   "label_end": "41"
   },
   {
-   "id": "sec-014-7-negative-results-on-negative-dependence",
+   "id": "sec-020-7-negative-results-on-negative-dependence",
    "number": "7",
    "title": "Negative Results on Negative Dependence",
    "level": 1,
    "page_start": 41,
    "page_end": 45,
-   "n_chars": 8546,
-   "n_words": 1876
+   "n_chars": 8403,
+   "n_words": 1733,
+   "label_start": "41",
+   "label_end": "45"
   },
   {
-   "id": "sec-015-references",
+   "id": "sec-021-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 45,
    "page_end": 47,
-   "n_chars": 10289,
-   "n_words": 1566
+   "n_chars": 10174,
+   "n_words": 1451,
+   "label_start": "45",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 22,
-  "sections": 16,
-  "chars_total": 128750
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "A Plethora of Negative Dependence Properties and Conjectures"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 23,
+  "chars_total": 127172,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 23,
+   "overlaid": 20,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-a-plethora-of-negative-dependence-properties-a",
+     "title": "A Plethora of Negative Dependence Properties and Conjectures",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-21-negative-dependence-concepts",
+     "title": "Negative Dependence Concepts",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-22-strongly-rayleigh-measures",
+     "title": "Strongly Rayleigh Measures",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-23-symmetric-homogenization",
+     "title": "Symmetric Homogenization",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-24-measures-on-countably-infinite-sets",
+     "title": "Measures on countably infinite sets",
+     "prose_ratio": 0.879,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-25-towards-a-theory-of-negative-dependence-probl",
+     "title": "Towards a Theory of Negative Dependence: Problems and Solutions",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-3-negative-dependence-in-mathematics-and-physics",
+     "title": "Negative Dependence in Mathematics and Physics",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-31-real-stable-polynomials-and-transcendental-en",
+     "title": "Real Stable Polynomials and Transcendental Entire Functions",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-32-hadamard-fischer-inequalities-and-gkk-matrice",
+     "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-33-determinantal-probability-measures",
+     "title": "Determinantal Probability Measures",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-34-graphs-laplacians-spanning-trees-and-the-rand",
+     "title": "Graphs, Laplacians, Spanning Trees and the Random Cluster Model",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-35-interacting-particle-systems-and-exclusion-ev",
+     "title": "Interacting Particle Systems and Exclusion Evolutions",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-4-negative-dependence-theory-for-strongly-raylei",
+     "title": "Negative Dependence Theory for Strongly Rayleigh Measures",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-41-symmetric-homogenization-via-g\u00e5rding-hyperbol",
+     "title": "Symmetric Homogenization via G\u00e5rding Hyperbolic Polynomials",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-42-stability-implies-negative-association",
+     "title": "Stability Implies Negative Association",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-43-stochastic-domination-and-truncations",
+     "title": "Stochastic Domination and Truncations",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-44-the-partial-symmetrization-procedure",
+     "title": "The Partial Symmetrization Procedure",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-5-preservation-of-negative-dependence-by-symmetr",
+     "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-6-almost-exchangeable-measures",
+     "title": "Almost Exchangeable Measures",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-7-negative-results-on-negative-dependence",
+     "title": "Negative Results on Negative Dependence",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

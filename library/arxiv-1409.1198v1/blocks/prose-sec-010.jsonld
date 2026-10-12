@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.1198v1/blocks/prose-sec-010",
+  "kind": "prose",
+  "title": "The trace and split Grothendieck groups",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "../sections/sec-010-35-the-trace-and-split-grothendieck-groups.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.1198v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.1198v1/manifest.jsonld",
+  "provenance": "ingested"
+}

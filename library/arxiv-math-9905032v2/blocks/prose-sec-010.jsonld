@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9905032v2/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9905032v2/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Poissonization and depoissonization. We obtain Theorems 3",
-  "pageStart": 10,
-  "pageEnd": 11,
-  "text": "../sections/sec-010-15-poissonization-and-depoissonization-we-obtain.md",
-  "derivedFrom": "library/arxiv-math-9905032v2/manifest",
-  "sourceDocument": "library/arxiv-math-9905032v2/manifest",
+  "title": "Correlation functions in the bulk of the spectrum",
+  "pageStart": 18,
+  "pageEnd": 18,
+  "text": "../sections/sec-010-3-correlation-functions-in-the-bulk-of-the-spect.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9905032v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9905032v2/manifest.jsonld",
   "provenance": "ingested"
 }

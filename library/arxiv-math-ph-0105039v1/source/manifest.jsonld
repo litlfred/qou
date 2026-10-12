@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-ph-0105039v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-ph-0105039v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0105039v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math-ph/0105039&metadataPrefix=arXiv), submitted 2001-05-28, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-ph-0105039v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math-ph/0105039v1",
+    "content_type": "application/gzip",
+    "sha256": "1cc7bcc7784c7435c99732d211c3cf0f497340930ec4793df3e31f91c69fe4e4",
+    "bytes": 56410,
+    "fetched": "2026-10-10T15:31:32+00:00",
+    "files": [
+      {
+        "path": "source/files/canoquan2.tex",
+        "role": "tex",
+        "sha256": "b7a022f8731a15f74acf8f1b24c935bee5c55350ad7f666e51205820b9c08b5e",
+        "bytes": 111786
+      },
+      {
+        "path": "source/files/fullpage.sty",
+        "role": "sty",
+        "sha256": "a45cc12df261f8c34d6c1f870a3468f2de969966bfffb5fd90e0db087dd42b5e",
+        "bytes": 841
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

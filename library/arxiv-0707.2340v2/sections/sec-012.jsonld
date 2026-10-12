@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0707.2340v2/sections/sec-012",
   "@type": [
     "doco:Section"
   ],
-  "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
-  "pageStart": 31,
-  "pageEnd": 33,
+  "title": "Interacting Particle Systems and Exclusion Evolutions",
+  "pageStart": 20,
+  "pageEnd": 21,
   "contains": [
     "library/arxiv-0707.2340v2/blocks/prose-sec-012"
   ],
-  "derivedFrom": "library/arxiv-0707.2340v2/manifest",
-  "sourceDocument": "library/arxiv-0707.2340v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2340v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2340v2/manifest.jsonld",
   "provenance": "ingested"
 }

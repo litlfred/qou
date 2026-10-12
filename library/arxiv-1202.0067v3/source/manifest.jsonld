@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1202.0067v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1202.0067v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.0067v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1202.0067&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1202.0067v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1202.0067v3",
+    "content_type": "application/gzip",
+    "sha256": "eb06aaa100a2c8ee04cd337f4193b14bd9a2255f4c417dcce852e9e0431c592d",
+    "bytes": 783682,
+    "fetched": "2026-10-10T15:05:53+00:00",
+    "files": [
+      {
+        "path": "source/files/Deflation23.tex",
+        "role": "tex",
+        "sha256": "2598bcefe53a26df70aa797926f145e91ab4f3eb9f230c7cec0969ac504b1db9",
+        "bytes": 102708
+      },
+      {
+        "path": "source/files/youngtabMW.sty",
+        "role": "sty",
+        "sha256": "f6e6da4f988407fddfd80fc074d1482a0c92915e57fd12077f36c4a2e324e316",
+        "bytes": 5543
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

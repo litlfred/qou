@@ -8,14 +8,20 @@ pages: 5-5
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
 doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
+text_source: latex
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 1.0
 ---
-In the present section we recall some mathematical tools that sha ll be used in the sequel. In the
-following lines we start by deﬁning some notations.
-Given a Hilbert space H , we write UH for the unitary group and BH for the C*-algebra of
-bounded operators on H . In the sequel, families of Hilbert spaces H = {Ho}o∈I will be considered
-and we shall write BH = {BHo}o∈I for the corresponding families of C*-algebras; no confusion
-should arise with the case of a single Hilbert space, since it should be cle ar from the context when
-a family is being considered.
-Given a C∗ or von Neumann algebra R , we denote the unitary group of R by UR .
-Given a Hilbert space H and a family R = {Ro}o∈I of C*-subalgebras of BH , we denote the
-smallest C*-subalgebra of BH containing ∪oRo by C∗{Ro}o∈I .
+[]{#sec.back label="sec.back"}
+
+In the present section we recall some mathematical tools that shall be used in the sequel. In the following lines we start by defining some notations.
+
+Given a Hilbert space $H$, we write $UH$ for the unitary group and $BH$ for the *C\**-algebra of bounded operators on $H$.
+
+In the sequel, families of Hilbert spaces $H = \{ H_o \}_{o \in I}$ will be considered and we shall write $BH = \{ BH_o \}_{o \in I}$ for the corresponding families of *C\**-algebras; no confusion should arise with the case of a single Hilbert space, since it should be clear from the context when a family is being considered.
+
+Given a $C^*$ or von Neumann algebra $R$, we denote the unitary group of $R$ by $UR$.
+
+Given a Hilbert space $H$ and a family $R = \{ R_o \}_{o \in I}$ of *C\**-subalgebras of $BH$, we denote the smallest *C\**-subalgebra of $BH$ containing $\cup_o R_o$ by
+
+$C^* \{ R_o \}_{o \in I}$.

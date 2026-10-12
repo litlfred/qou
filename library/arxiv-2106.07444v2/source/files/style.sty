@@ -1,0 +1,165 @@
+%--------------------------------------------------------------------------
+%
+%	Copyright 2020 by Minh-Tam Trinh.
+%
+%	This work is licensed under a Creative Commons Attribution-
+%	NonCommercial-ShareAlike 4.0 Unported License.
+%
+%	http://creativecommons.org/licenses/by-nc-sa/4.0/
+%
+%	Version 21.
+%
+%	The mtpro option requires MTPro2 Lite.
+%
+%	The bf option defines the bb command as mathbf rather than mathbb.
+%
+%	The margin command sets vmargin=#1 and hmargin=#2, accounting for
+%	header space.
+%
+%--------------------------------------------------------------------------
+
+\ProvidesPackage{style}
+
+%--------------------------------------------------------------------------
+%
+%	1. Packages
+%
+%--------------------------------------------------------------------------
+
+%	http://tex.stackexchange.com/a/71544
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{xcolor}
+	\definecolor{jade}{HTML}{00A86B}
+	\definecolor{lapis}{HTML}{26619C}
+	\definecolor{ruby}{HTML}{E0115F}
+\RequirePackage{amsfonts, amsmath, amssymb, amsthm}
+\RequirePackage[main=english,vietnamese]{babel}
+\RequirePackage{comment, etoolbox, hyperref, mathtools, microtype, stmaryrd, textcomp}
+\newif\if@lmodern
+\newif\if@mtpro
+\newif\if@bf
+\DeclareOption{lmodern}{\@lmoderntrue}
+\DeclareOption{mtpro}{\@lmodernfalse\@mtprotrue}
+\DeclareOption{bf}{\@bftrue}
+\ExecuteOptions{lmodern}
+\ProcessOptions\relax
+
+%	http://tex.stackexchange.com/a/142276
+\pdfstringdefDisableCommands{\let\enspace\empty\let\noindent\empty}
+
+%--------------------------------------------------------------------------
+%
+%	2.	Fonts
+%
+%--------------------------------------------------------------------------
+
+\if@lmodern
+	\RequirePackage{lmodern}
+\else
+	\if@mtpro	
+		%	https://tex.stackexchange.com/questions/374353/
+		%	You MUST include \RequirePackage{etex} before \documentclass
+		\renewcommand*\rmdefault{ptm}
+		\RequirePackage[scaled=0.92]{helvet}
+	\fi
+	%	https://tex.stackexchange.com/a/110918	
+	\RequirePackage[lite]{mtpro2}
+	%	\pdfmapfile{=mtpro2.map}
+	\RequirePackage{courier}
+	%	\urlstyle{rm}
+\fi
+\hypersetup{colorlinks,allcolors=lapis}
+
+%--------------------------------------------------------------------------
+%
+% 	3.	Formatting
+%
+%--------------------------------------------------------------------------
+
+\ifdef{\calclayout}{
+	%	In an AMS document class
+	\newcommand{\margin}[2]{
+		\setlength{\textheight}{\paperheight}
+		\addtolength{\textheight}{-#1-#1}
+		\setlength{\textwidth}{\paperwidth}
+		\addtolength{\textwidth}{-#2-#2}
+		\calclayout
+	}
+}{
+	\RequirePackage{geometry}
+	\newcommand{\margin}[2]{\geometry{hmargin=#2,vmargin=#1,includehead}}
+}
+
+%--------------------------------------------------------------------------
+%
+%	4.	Math fonts
+%
+%--------------------------------------------------------------------------
+
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator\OL{O}
+\DeclareMathOperator\UL{U}
+
+\if@bf
+	\newcommand{\bb}{\mathbf}
+\else
+	\newcommand{\bb}{\mathbb}
+\fi
+\newcommand{\fr}{\mathfrak}
+\newcommand{\ur}{\mathrm}
+
+\renewcommand{\sf}{\mathsf}
+%\renewcommand{\tt}{\mathtt}
+
+%	http://tex.stackexchange.com/a/5776/20882
+\newcommand{\define}[3]{\expandafter#1\csname#3\endcsname{#2{#3}}}
+\forcsvlist{\define{\DeclareMathOperator}{}}{ad,codim,coker,gr,id,im,lcm,ord,pr,rad,rk,sgn,supp,tr,val}
+\forcsvlist{\define{\DeclareMathOperator}{}}{Ad,Alt,Ann,Aut,Der,Div,End,Ext,Frob,Gal,Hom,Ind,Inf,Inn,Irr,Iso,Lie,Mat,Max,Out,Pic,Proj,Res,Spec,Spf,Sym,Tor}
+\forcsvlist{\define{\DeclareMathOperator}{}}{GL,PGL,PSL,SL,SO,SU,Sp,USp}
+\forcsvlist{\define{\newcommand}{\mathrm}}{ab,aff,nil,op,red,reg,rs,sep,tor}
+
+%	http://tex.stackexchange.com/a/30491
+\ifdef{\cal}{\renewcommand{\cal}{\mathcal}}{\newcommand{\cal}{\mathcal}}
+
+%--------------------------------------------------------------------------
+%
+%	5. Other commands and operators
+%
+%--------------------------------------------------------------------------
+
+\ifdef{\alert}{\renewcommand{\alert}[1]{\textcolor{ruby}{#1}}}{\newcommand{\alert}[1]{\textcolor{ruby}{#1}}}
+
+\ifdef{\div}{}{\let\div\relax\DeclareMathOperator{\div}{div}}
+\let\Re\relax\DeclareMathOperator{\Re}{Re}
+\let\Im\relax\DeclareMathOperator{\Im}{Im}
+
+\newcommand*{\hatotimes}{\mathrel{\hbox{$\hat{\otimes}$}}}
+\newcommand*{\hattimes}{\mathrel{\hbox{$\hat{\times}$}}}
+
+\if@lmodern
+	\newcommand{\capprod}{\smallfrown}
+	\newcommand{\cupprod}{\smallsmile}
+\fi
+\newcommand{\inject}{\hookrightarrow}
+\newcommand{\normal}{\vartriangleleft}
+\newcommand{\normaleq}{\trianglelefteq}
+\newcommand{\pd}{\partial}
+\newcommand{\rational}{\dashrightarrow}
+\newcommand{\surject}{\twoheadrightarrow}
+\newcommand{\SAut}{\underline{\Aut}}
+\newcommand{\SEnd}{\underline{\End}}
+\newcommand{\SHom}{\underline{\Hom}}
+\newcommand{\SIso}{\underline{\Iso}}
+\newcommand{\bra}[1]{\left[#1\right]}
+\newcommand{\pa}[1]{\left(#1\right)}
+\newcommand{\mat}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\bmat}[1]{\bra{\mat{#1}}}
+\newcommand{\pmat}[1]{\pa{\mat{#1}}}
+\newcommand{\smat}[1]{\begin{smallmatrix}#1\end{smallmatrix}}
+\newcommand{\bsmat}[1]{\bra{\smat{#1}}}
+\newcommand{\psmat}[1]{\pa{\smat{#1}}}
+
+%--------------------------------------------------------------------------
+
+\endinput

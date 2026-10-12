@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/zagier-the-dilogarithm-function/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/zagier-the-dilogarithm-function/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "Li2",
-  "pageStart": 5,
-  "pageEnd": 6,
-  "text": "../sections/sec-009-2-li2.md",
-  "derivedFrom": "library/zagier-the-dilogarithm-function/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function/manifest",
+  "title": "Higher polylogarithms",
+  "pageStart": 56,
+  "pageEnd": 61,
+  "text": "../sections/sec-009-4-higher-polylogarithms.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function/manifest.jsonld",
   "provenance": "ingested"
 }

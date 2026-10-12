@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0006111v2/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0006111v2/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Positive deﬁnite functions. Let ψ be a normalized (i.e. ψ (e) = 1), central",
   "pageStart": 3,
   "pageEnd": 4,
   "text": "../sections/sec-004-12-positive-deﬁnite-functions-let-ψ-be-a-normali.md",
-  "derivedFrom": "library/arxiv-math-0006111v2/manifest",
-  "sourceDocument": "library/arxiv-math-0006111v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0006111v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0006111v2/manifest.jsonld",
   "provenance": "ingested"
 }

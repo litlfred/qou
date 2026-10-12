@@ -1256,6 +1256,39 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "7175c3fab371",
+          "ts": "7f5c5ec9ab48"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 11,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 2,
+            "H4": 1,
+            "H5": 2,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H4/H8: L1 'This links the microscopic categorical data directly to the macroscopic fluid parameter' — no fluid parameter has been introduced; '$\\mathbb G_m$-family of differentials' is undefined.",
+        "notes": "Milnor H1-H8 = [1, 1, 2, 1, 2, 2, 1, 1] (T=11/16, fail); weakest: H1, H2, H4, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): 'We read $q$ off the braiding: it is the eigenvalue of $c_{V,V}$ on $\\mathrm{Sym}^2V$. For $\\mathrm{Rep}(\\mathrm{SU}_q(2))$ this is the deformation parameter of the quantum group. We then deform the differential and the gauge group with $q$.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -1703,6 +1736,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T07:01:36.121Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

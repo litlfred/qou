@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/li-braid-closures/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/li-braid-closures/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Specht modules of the Hecke algebra",
   "pageStart": 4,
   "pageEnd": 6,
   "text": "../sections/sec-004-specht-modules-of-the-hecke-algebra.md",
-  "derivedFrom": "library/li-braid-closures/manifest",
-  "sourceDocument": "library/li-braid-closures/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
   "provenance": "ingested"
 }

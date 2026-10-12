@@ -1,0 +1,148 @@
+\hyphenation{iso-mor-phisms pa-pers ca-te-gory}
+
+% Nice script font. My reference due to Ron Donagi and Paul Aspinwall
+
+\DeclareFontFamily{U}{rsf}{}
+\DeclareFontShape{U}{rsf}{m}{n}{
+  <5> <6> rsfs5 <7> <8> <9> rsfs7 <10-> rsfs10}{}
+\DeclareMathAlphabet{\mathscr}{U}{rsf}{m}{n}
+
+\renewcommand{\mathcal}{\mathscr}
+
+% Gothic font
+%\DeclareMathAlphabet{\mathgth}{U}{euf}{m}{n}
+%\usepackage{oldgerm}
+%\DeclareMathAlphabet{\mathgth}{U}{ygoth}{m}{n}
+
+%\DeclareFontFamily{U}{cyr}{}
+%\DeclareFontShape{U}{cyr}{m}{n}{
+%  <5> wncyr5 <6> wncyr6 <7> wncyr7 <8> wncyr8 <9> wncyr9 <10-> wncyr10}{}
+%\DeclareMathAlphabet{\mathcyr}{U}{cyr}{m}{n}
+%
+%% Cyrillic font, for the TS group
+%\input cyracc.def
+%
+%\newcommand{\Sha}{\mathcyr{\cyracc Sh}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% there should be a \makeatletter-free way of changing this, but I can't find
+% it...
+
+\makeatletter
+\def\operator@font{\sf}
+\makeatother
+%\SetSymbolFont{operators}{normal}{OT1}{cmss}{m}{n}
+
+
+%\setlength{\unitlength}{1 true in}
+
+% 2 CATEGORIES%
+%\newcommand{\gVar}{\mathgth{Var}}
+%\newcommand{\gAlg}{\mathgth{Alg}}
+%\newcommand{\gCat}{\mathgth{Cat}}
+\newcommand{\gVar}{{\mathcal{V}\textsf{ar}}}
+\newcommand{\gAlg}{{\mathcal{A}\textsf{lg}}}
+\newcommand{\gCat}{{\mathcal{C}\textsf{at}}}
+% Gothic letters
+\newcommand{\gC}{\mathcal{C}}
+% bold letters
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\D}{\mathbf{D}}
+% Script/Calligraphic letters
+%\newcommand{\cA}{{\mathscr A}}
+%\newcommand{\cB}{{\mathscr B}}
+\newcommand{\cE}{{\mathcal E}}
+\newcommand{\cF}{{\mathcal F}}
+\newcommand{\cG}{{\mathcal G}}
+\newcommand{\cH}{{\mathcal H}}
+\newcommand{\cO}{{\mathcal O}}
+% Random
+\newcommand{\HKR}{{\mathsf{HKR}}}
+\newcommand{\PBW}{{\mathsf{PBW}}}
+\renewcommand{\k}{\textsf{k}}
+% Math Operators
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\sTr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Td}{td}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\coev}{coev}
+%\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Ob}{obj}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\sHom}{\underline{Hom}}
+\DeclareMathOperator{\bHom}{\textbf{\textsf{Hom}}}
+\DeclareMathOperator{\THom}{{2\mbox{-}Hom}}
+\DeclareMathOperator{\OHom}{1\mbox{-}Hom}
+\DeclareMathOperator{\HH}{HH}
+\DeclareMathOperator{\K}{K}
+
+\renewcommand{\H}{\mathsf H}
+\newcommand{\id}{\mathsf {Id}}
+\newcommand{\Id}{\mathsf {Id}}
+
+% useful abbreviations
+
+
+\newcommand{\iso}{\cong}
+\newcommand{\dual}{\,{\stackrel{\chk}{\longleftrightarrow}}\,}
+
+\newcommand{\chk}{{\scriptscriptstyle\vee}}
+\newcommand{\op}{{\mathsf{op}}}
+\newcommand{\cop}{{\mathsf{cop}}}
+\newcommand{\pt}{{\mathsf{pt}}}
+\newcommand{\bone}{{\mathbf 1}}
+\newcommand{\adjoint}{\dashv}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\raiso}{\stackrel{\sim}{\longrightarrow}}
+\newcommand{\scdot}{{\,\cdot\,}}
+\newcommand{\MP}[2]{{\ensuremath{\left\langle #1,\, #2\right\rangle_{\rm M}}}}
+\newcommand{\MPbig}[2]{{\ensuremath{\Biggl\langle #1,\, #2\Biggr\rangle_{\rm M}}}}
+\newcommand{\SP}[2]{{\ensuremath{\left\langle #1,\, #2\right\rangle_{\rm S}}}}
+\newcommand{\SPbig}[2]{{\ensuremath{\Biggl\langle #1,\, #2\Biggr\rangle_{\rm S}}}}
+% This is used in order to have the heading in lowercase
+%\renewcommand{\uppercase}{}
+\renewcommand{\phi}{\varphi}
+\newcommand{\SerF}{\mathsf{S}}
+%\newcommand{\SerK}{\mathsf{s}}
+\newcommand{\SerK}{\Sigma}
+\newcommand{\kerto}{\to}
+\newcommand{\open}{\textsf{O}}
+\newcommand{\closed}{\textsf{C}}
+\newcommand{\TwoCob}{2\textsf{Cob}_{\text{oc}}}
+\newcommand{\TwoCobL}{\TwoCob^\Lambda}
+\newcommand{\Tcirc}{\circ_2}
+\newcommand{\circv}{\circ_{\text{v}}}
+\newcommand{\circh}{\circ_{\text{h}}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\OO}{\cO}
+\newcommand{\blob}{\bullet}
+% picture commands
+\newcommand{\figdir}{pstex}
+\newcommand{\pstex}[1]{\raisebox{-.45\height}{\input{\figdir/#1.pstex_t}}}
+\newcommand{\pic}{\pstex}
+\newcommand{\pichere}{\text{\fbox{pic}}}
+% Other
+
+
+\newarrow{TeXto}----{->}
+\allowdisplaybreaks
+\newcommand{\Desclabel}[1]{\textsf{#1:}}
+\newenvironment{Description}{\begin{list}{}{\renewcommand{\makelabel}{\Desclabel}
+               \setlength{\labelwidth}{2.5em}
+               \setlength{\labelsep}{0.5em}
+               \setlength{\itemindent}{2em}
+               \setlength{\itemsep}{0.5em}% separation between items
+               \setlength{\rightmargin}{0em}
+               \setlength{\leftmargin}{1em}}}
+               {\end{list}}
+
+
+\newcommand{\pd}[1]{#1^{\dagger}}
+\newcommand{\rote}{{\begin{turn}{270}$\!\!\!\epsilon\ $\end{turn}}}

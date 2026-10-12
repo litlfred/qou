@@ -8,9 +8,8 @@ pages: 7-8
 source_pdf: 2211.08164v2.pdf
 source_sha256: aff9ff3ef5ac28be
 doc_brief: "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann"
+text_source: latex
+latex_prose_ratio: 0.9
+latex_coverage_ratio: 0.829
 ---
-with transitive action on the Weierstrass points turn out to have ge nus at most seven,
-it would be interesting to search for new examples (and inﬁnite collect ion of examples)
-in higher genera, if they exist. If such Riemann surfaces do not exis t for arbitrary
-genus, it would be interesting to ﬁnd an upper bound for their gener a.
-8 SEBASTI ´AN REYES-CAROCCA AND PIETRO SPEZIALI
+Since all the known examples of non-hyperelliptic Riemann surfaces with transitive action on the \we points turn out to have  genus at most seven, it would be interesting to search for new examples (and infinite collection of examples) in higher genera, if they exist. If such Riemann surfaces do not exist for arbitrary genus, it would be interesting to find an upper bound for their genera.

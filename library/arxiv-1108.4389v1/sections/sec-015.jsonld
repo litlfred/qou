@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1108.4389v1/sections/sec-015",
   "@type": [
     "doco:Section"
   ],
-  "title": "Adding supersymmetry",
-  "pageStart": 23,
-  "pageEnd": 24,
+  "title": "Gluing and bipyramids",
+  "pageStart": 48,
+  "pageEnd": 50,
   "contains": [
     "library/arxiv-1108.4389v1/blocks/prose-sec-015"
   ],
-  "derivedFrom": "library/arxiv-1108.4389v1/manifest",
-  "sourceDocument": "library/arxiv-1108.4389v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.4389v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.4389v1/manifest.jsonld",
   "provenance": "ingested"
 }

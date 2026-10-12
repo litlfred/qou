@@ -8,14 +8,16 @@ pages: 15-16
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
 doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
+text_source: latex
+latex_prose_ratio: 0.949
+latex_coverage_ratio: 0.841
 ---
-Deﬁnition 6.5.Let E∈ T(T ). A decoration is of type E if its zero-edges agree withE. A
-Bruhat cocycleτ has typeE if the set of long edges that are diagonal agrees with the zero-edges
-of E. A Ptolemy assignment has typeE if the set of edges whose Ptolemy coordinate is zero
-agrees with the zero-edges ofE.
-Note that the one-to-one-correspondence in Theorem 4.8 preserves the type. We stress that
-the type depends on the triangulation.
-Remark 6.6.Decorations of typeE may not exist. For example, if there is an edge loop where
-all but one edge is zero, the argument in the proof of Lemma 6.2 shows thatE cannot be the
-zero-set of a decoration.
-16 MATTHIAS GOERNER AND CHRISTIAN K. ZICKERT
+::: definition
+Let $E\in\mathop{\mathrm{T}}(\mathcal T)$. A decoration is of *type $E$* if its zero-edges agree with $E$. A Bruhat cocycle $\tau$ has *type $E$* if the set of long edges that are diagonal agrees with the zero-edges of $E$. A Ptolemy assignment has type $E$ if the set of edges whose Ptolemy coordinate is zero agrees with the zero-edges of $E$.
+:::
+
+Note that the one-to-one-correspondence in Theorem [\[thm:OneToOneGeneral\]](#thm:OneToOneGeneral){reference-type="ref" reference="thm:OneToOneGeneral"} preserves the type. We stress that the type depends on the triangulation.
+
+::: remark
+Decorations of type $E$ may not exist. For example, if there is an edge loop where all but one edge is zero, the argument in the proof of Lemma [\[lemma:TransitiveDec\]](#lemma:TransitiveDec){reference-type="ref" reference="lemma:TransitiveDec"} shows that $E$ cannot be the zero-set of a decoration.
+:::

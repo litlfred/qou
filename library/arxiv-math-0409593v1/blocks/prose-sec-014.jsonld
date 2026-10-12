@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0409593v1/blocks/prose-sec-014",
+  "kind": "prose",
+  "title": "Appendix : associativity of kernel transforms",
+  "pageStart": 15,
+  "pageEnd": 15,
+  "text": "../sections/sec-014-6-appendix-associativity-of-kernel-transforms.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0409593v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0409593v1/manifest.jsonld",
+  "provenance": "ingested"
+}

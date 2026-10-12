@@ -8,64 +8,35 @@ pages: 21-22
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
 doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+text_source: latex
+latex_prose_ratio: 0.909
+latex_coverage_ratio: 0.951
 ---
-A rotating black hole in (2 + 1)-dimensional AdS space has metric
-ds2 =−f(r)dt2 + 1
-f(r)dr2 +r2
-(
-dφ− 8GJ
-2r2 dt
-)2
-(3.15)
-f(r) = r2
-𝓁2
-AdS
-− 8GM + (8GJ)2
-4r2 = (r2−r2
-+)(r2−r2
-−)
-r2𝓁2
-AdS
-. (3.16)
-The inner horizon (r−) and outer horizon (r+) are at
-8GM = r2
-+ +r2
-−
-𝓁2
-AdS
-, 8GJ
-𝓁AdS
-= 2r+r−
-𝓁2
-AdS
-. (3.17)
+\label{subsec-rotating}
+
+A rotating black hole in $(2+1)$-dimensional AdS space has metric
+\begin{equation}
+ds^2=-f(r)dt^2+\frac{1}{f(r)}dr^2+r^2\left(d\phi-\frac{8GJ}{2r^2}dt\right)^2
+\end{equation}
+\begin{align}
+f(r)=\frac{r^2}{\lads^2}-8G M+\frac{(8G J)^2}{4r^2} =\frac{(r^2-r_+^2)(r^2-r_-^2)}{r^2 \lads^2}.
+\end{align}
+The inner horizon ($r_-$) and outer horizon ($r_+$) are at
+\begin{align}
+&8G M=\frac{r_+^2+r_-^2}{\lads^2},\ \ \frac{8G J}{\lads}=\frac{2r_+r_-}{\lads^2}. \label{eq:BTZformulaforMJ}
+\end{align}
 The angular momentum is bounded above
-M≥ J
-𝓁AdS
-. (3.18)
-This bound is saturated at extremality. The Penrose diagram for the rotating case is
-similar to that for the charged case in Fig. 4, and at late time, the EH contribution to
-the action of the Wheeler-DeWitt patch is
-dAEH
-dtL
-=−(r2
-+−r2
-−)
-4G𝓁2
-AdS
-. (3.19)
-20
-The YGH surface contribution to the action can also be calculated, and as before it is
-−2 times the EH part, so the total rate of change of the action is
-dAction
-dt = r2
-+−r2
-−
-4G𝓁2
-AdS
-= 2
-√
-M 2− J2
-𝓁2
-AdS
-. (3.20)
+\begin{equation}
+M\geq\frac{J}{\lads}.
+\end{equation}
+This bound is saturated at extremality. The Penrose diagram for the rotating case is similar to that for the charged case in Fig.~\ref{fig-incrementalcharged}, and at late time, the EH contribution to the action of the Wheeler-DeWitt patch is
+\begin{align}
+\frac{d \CA_{\textrm{EH}}}{dt_L} 
+ =-\frac{(r_+^2-r_-^2)}{4G \lads^2}.
+\end{align}
+The YGH surface contribution to the action can also be calculated, and as before it is $-2$ times the EH part, so the total rate of change of the action is
+\begin{align}
+\boxed{\frac{d\CA\textrm{ction}}{dt}=\frac{r_+^2-r_-^2}{4G \lads^2}=2\sqrt{M^2-\frac{J^2}{\lads^2}}.}
+\label{rothole-action}
+\end{align}
+{Extremal rotating BTZ black holes ($J \rightarrow \lads M$) are all torque and no action.}

@@ -8,34 +8,38 @@ pages: 8-9
 source_pdf: 2004.04939v1.pdf
 source_sha256: 59a06f9f7d97cad2
 doc_brief: "BRAID GROUP ACTION ON THE MODULE CATEGORY OF — Let g0 be a simple Lie algebra of type ADE and let U ′ q(g) be the corre- sponding untwisted quantum aﬃne algebra."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Let U ′
-q(g) be an arbitrary quantum aﬃne algebra. We say that a real simple mo dule
-L in C 0
-g is a root module if d(D kM, M ) = δ(k = ±1) for any k.
-BRAID GROUP ACTION ON THE MODULE CATEGORY OF QUANTUM AFFINE A LGEBRAS 9
-Conjecture. For any root module L ∈ C 0
-g , there exists a monoidal autofunctor SL of
-C 0
-g which satisﬁes the following conditions:
-(a) SL satisﬁes similar properties in Theorem 4.1 and Theorem 4.2.
-(b) (Braid relation) For root modules L and L′,
-(1) if d(D kL, L′) = 0 for any k ∈ Z, then
-SL ◦ SL′ ≃ SL′ ◦ SL,
-(2) if d(D kL, L′) = δ(k = 0) for any k ∈ Z, then
-SL ◦ SL′ ◦ SL ≃ SL′ ◦ SL ◦ SL′.
-(c) Let Q be a Q-data, and L := FQ(L(i)). Then the automorphism of Kt(g) induced
-by SL coincides with σi, i.e., the following diagram commutes:
-Kt(g0)
-∼
-ιQ
-/d47/d47
-σ i
-/d15/d15
-Kt(g)
-SL
-/d15/d15
-Kt(g0)
-∼
-ιQ
-/d47/d47 Kt(g).
+Let $\uqpg$ be an arbitrary quantum affine algebra.
+We say that a real simple module $L$ in $\catC^0_\g$ is a {\em root module} if
+$\de(\dual^kM,M)=\delta(k=\pm1)$ for any $k$.
+
+\Conj
+For any root module $L\in\catC^0_\g$, there exists a monoidal autofunctor
+$\Refl_L$ of $\cat$ which satisfies the following conditions:
+\bna
+\item $\Refl_L$ satisfies similar properties in
+Theorem~\ref{thm:S_i(X)} and Theorem~\ref{thm: reflection by root modules}.
+\item {\rm(Braid relation)}
+For root modules $L$ and $L'$,
+\be[{\rm(1)}]
+\item 
+if $\de(\dual^kL,L')=0$ for any $k\in \Z$, then
+$$\Refl_L\circ\Refl_{L'}\simeq\Refl_{L'}\circ\Refl_{L},$$
+\item
+if $\de(\dual^kL,L')=\delta(k=0)$ for any $k\in \Z$, then
+$$\Refl_L\circ\Refl_{L'}\circ\Refl_L\simeq\Refl_{L'}\circ\Refl_{L}\circ\Refl_{L'}.$$
+\ee
+\item 
+Let $Q$ be a Q-data, and $L\seteq\F_Q(L(i))$.
+Then the automorphism of $\Kt(\g)$ induced by $\Refl_L$ coincides with
+$\brd_i$, i.e.,
+the following diagram commutes:
+$$\xymatrix{
+\KT(\g_0)\ar[r]^\sim_{\iota_Q}\ar[d]_{\brd_i}&\Kt(\g)\ar[d]_{\Refl_L}\\
+\KT(\g_0)\ar[r]^\sim_{\iota_Q}&\Kt(\g).
+}$$
+\ee
+\enconj

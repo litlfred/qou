@@ -8,185 +8,52 @@ pages: 12-14
 source_pdf: 2312.00624v1.pdf
 source_sha256: bda867f7b84f69c3
 doc_brief: "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the"
+text_source: latex
+latex_prose_ratio: 0.918
+latex_coverage_ratio: 0.888
 ---
-Again, we hide the explicit dependence on the classical solution α to simplify the notation. Here
-and in the rest of this work, we will only re-introduce it when necessary. Recall that the exact wave
-function χ(u; ℏ) is well-defined for ℏ> 0. In particular, it is well-defined for
-ℏ = 2πP
-Q, (3.15)
-where P,Q are coprime positive integers. We will refer to values of ℏ of the form in Eq. (3.15)
-as rational values . On the other hand, due to the conjectured integrality structure in Eq. (3.6),
-ϕWKB(X;q) is singular for these values of ℏ precisely, thus implying that the singularities have to
-cancel in the sum
-ϕWKB(X;q) +ϕWKB(XD;qD), (3.16)
-which appears in the formula for χ(u; ℏ) in Eq. (3.13). This leads to non-trivial constraints on the
-coefficients ˆa±n(q) in Eq. (3.3). This type of cancellation of singularities played a major role in the
-understanding of the ABJM matrix model [15] and the TS/ST correspondence [6, 8, 39].
-We will now study how this cancellation occurs in the exact wave function χ(u; ℏ) as given
-in Eq. (3.13), and, in Section 3.3, we will compute the finite, well-defined piece which is left from
-the cancellation and constitutes the sum in Eq. (3.16). Moreover, as we will see following [12] in
-Section 3.4, it is possible to compute this finite part by using only the information contained in the
-quantum operator ˆA( ˆP, ˆX,q ). We take
-q = eiℏ = e2πiP
-Q, P,Q ∈ Z>0 coprime, (3.17)
-and, substituting into Eq. (3.2), we find that the possible singularities ofϕWKB(X;q) occur ina±n(q)
-whenn =sQ ands∈ Z>0. For these values ofn, the coefficient functionsa±n(q) in Eq. (3.3) become
-a±sQ (q) = ˆa±sQ (q)
-sQ(qsQ− 1)qσ±sQ
-. (3.18)
-6In the TS/ST correspondence, one can also define off-shell wave functions, in which case the dual blocks differ
-from the original ones.
-7One reason for this difference, which was pointed out to us by Sergei Gukov, is that the results of [22] involve the
-super A-polynomial, and they might lead to a different specialization for SL(2 , C).
-– 11 –
-Similarly, considering the dual variable
-qD = e
-4π2
-ℏ = e2πiQ
-P , (3.19)
-the possible singularities of the dual function ϕWKB(XD;qD) occur in a±n(qD) when n = sP and
-s∈ Z>0. Indeed, the coefficient functions a±n(qD) in Eq. (3.3) become
-a±sP (qD) = ˆa±sP (qD)
-sP (qsP
-D − 1)qσ±sP
-D
-. (3.20)
-Let us now introduce
-qϵ = eiℏϵ, q ϵ,D = e
-4π2i
-ℏϵ , ℏϵ = 2πP
-Q +ϵ, 0<ϵ ≪ 1, (3.21)
-and consider the limit ϵ→ 0. As detailed in Appendix A, Eqs. (3.18), (3.20) produce the NLO
-ϵ-expansions
-a±sQ (qϵ) =
-
-− i
-(sQ)2ϵ− 1
-2sQ + 1
-(sQ)2q ∂
-∂q
- ˆa±sQ(q)
-qσ±sQ
-+O(ϵ), (3.22a)
-a±sP (qϵ,D) =
- i
-(sQ)2ϵ + 1
-sP
- i
-2πsQ− 1
-2
-
-+ 1
-(sP )2qD
-∂
-∂qD
- ˆa±sP (qD)
-qσ±sP
-D
-+O(ϵ). (3.22b)
-We then require the cancellation of the ϵ-poles in Eqs. (3.22a), (3.22b), which yields the relation
-ˆa±sQ
-
-e2πiP
-Q
-
-e−2πiP
-Qσ±sQ = ˆa±sP
-
-e2πiQ
-P
-
-e−2πiQ
-Pσ±sP , (3.23)
-for all s,P,Q ∈ Z>0 with P,Q coprime. We remark that, for the geometric branch, the formula in
-Eq. (3.23) assumes the simplified form 8
-ˆa(geom)
-sQ
-
-e2πiP
-Q
-
-= ˆa(geom)
-sP
-
-e2πiQ
-P
-
-, (3.24)
-where again s,P,Q ∈ Z>0 with P,Q coprime.
-Let us now prove that the cancellation formula in Eq. (3.23) is indeed a consequence of the
-integrality structure presented in Eq. (3.6). More precisely, Eqs. (3.3), (3.7) imply that
-ˆan(q)q−σn =
-X
-k|n
-kDk
-
-q
-n
-k
-
-q−n
-kσk
-k−1X
-j=0
-q
-n
-kj, (3.25)
-and, after substituting n =sQ and q = e2πiP
-Q with s,P,Q as above, we obtain
-ˆasQ
-
-e2πiP
-Q
-
-e−2πiP
-QσsQ =
-X
-k|sQ
-kDk
-
-e2πisP
-k
-
-e−2πisP
-k σk
-k−1X
-j=0
-e2πisP
-k j. (3.26)
-Since the sum over j on the RHS is non-zero if and only if k|s, Eq. (3.26) gives
-ˆasQ
-
-e2πiP
-Q
-
-e−2πiP
-QσsQ =
-X
-k|s
-k2Dk(1) =cs∈ Z, s ∈ Z>0, (3.27)
-8A similar cancellation requirement was obtained in [12] in the study of the wave function for quantum mirror
-curves.
-– 12 –
-which is independent of the choice of P,Q∈ Z>0 coprime, thus proving the cancellation identity in
-Eq. (3.23). We note that the case of ˆ a−n(q) is handled analogously, yielding the same result. In
-particular, recalling that σ−n = 0, n∈ Z>0, it defines the sequence of integers
-ˆa−sQ
-
-e2πiP
-Q
-
-=
-X
-k|s
-k2D−k(1) =c−s∈ Z, s ∈ Z>0. (3.28)
-Finally, applying the M¨ obius inversion formula for arithmetic functions, we deduce that
-D±s(1) = 1
-s2
-X
-k|s
-µ(k)c±s
-k
-, s ∈ Z>0, (3.29)
-whereµ(k) is the M¨ obius function. As we will see, the construction presented here is experimentally
-verified for the knots 41 and 52 in Section 4.
+[]{#sec: cancellation label="sec: cancellation"} Again, we hide the explicit dependence on the classical solution $\alpha$ to simplify the notation. Here and in the rest of this work, we will only re-introduce it when necessary.
+
+Recall that the exact wave function $\chi(u;\hbar)$ is well-defined for $\hbar>0$. In particular, it is well-defined for
+
+$$\label{rathbar}
+\hbar = 2 \pi {P \over Q} \, ,$$
+
+where $P, Q$ are coprime positive integers. We will refer to values of $\hbar$ of the form in Eq. [\[rathbar\]](#rathbar){reference-type="eqref" reference="rathbar"} as *rational values*. On the other hand, due to the conjectured integrality structure in Eq. [\[multi-conj\]](#multi-conj){reference-type="eqref" reference="multi-conj"}, $\phi^{\rm WKB} (X; q)$ is singular for these values of $\hbar$ precisely, thus implying that the singularities have to cancel in the sum
+
+$$\label{phi-sum}
+\phi^{\rm WKB} (X; q) +\phi^{\rm WKB} (X_D; q_D) \, ,$$
+
+which appears in the formula for $\chi(u;\hbar)$ in Eq. [\[exactconj\]](#exactconj){reference-type="eqref" reference="exactconj"}. This leads to non-trivial constraints on the coefficients $\hat a_{\pm n}(q)$ in Eq. [\[ahatf-def\]](#ahatf-def){reference-type="eqref" reference="ahatf-def"}. This type of cancellation of singularities played a major role in the understanding of the ABJM matrix model [@hmo2] and the TS/ST correspondence [@km; @ghm; @wzh].
+
+We will now study how this cancellation occurs in the exact wave function $\chi(u;\hbar)$ as given in Eq. [\[exactconj\]](#exactconj){reference-type="eqref" reference="exactconj"}, and, in Section [\[sec: rational1\]](#sec: rational1){reference-type="ref" reference="sec: rational1"}, we will compute the finite, well-defined piece which is left from the cancellation and constitutes the sum in Eq. [\[phi-sum\]](#phi-sum){reference-type="eqref" reference="phi-sum"}. Moreover, as we will see following [@szabolcs] in Section [\[sec: rational3\]](#sec: rational3){reference-type="ref" reference="sec: rational3"}, it is possible to compute this finite part by using only the information contained in the quantum operator $\hat{A}(\hat{P}, \hat{X},q)$. We take $$q={\rm e}^{{\rm i}\hbar}={\rm e}^{2 \pi {\rm i}{P \over Q}} \, , \quad  P,Q \in {\mathbb Z}_{>0} \; \; \text{coprime} \, ,$$ and, substituting into Eq. [\[phi-struc\]](#phi-struc){reference-type="eqref" reference="phi-struc"}, we find that the possible singularities of $\phi^{\rm WKB} (X; q)$ occur in $a_{\pm n}(q)$ when $n=s Q$ and $s \in {\mathbb Z}_{>0}$. For these values of $n$, the coefficient functions $a_{\pm n}(q)$ in Eq. [\[ahatf-def\]](#ahatf-def){reference-type="eqref" reference="ahatf-def"} become $$\label{ahatsQ}
+a_{\pm s Q}\left(q \right) = \frac{\hat{a}_{ \pm sQ}\left( q \right)}{sQ (q^{sQ}-1) q^{ \sigma_{\pm sQ}}} \, .$$ Similarly, considering the dual variable $$q_D={\rm e}^{{4 \pi^2 \over \hbar}}={\rm e}^{2 \pi {\rm i}{Q \over P}} \, ,$$ the possible singularities of the dual function $\phi_{\rm WKB} (X_D; q_D)$ occur in $a_{\pm n} (q_D)$ when $n=s P$ and $s \in {\mathbb Z}_{>0}$. Indeed, the coefficient functions $a_{\pm n}(q_D)$ in Eq. [\[ahatf-def\]](#ahatf-def){reference-type="eqref" reference="ahatf-def"} become $$\label{ahatsP}
+a_{\pm s P}\left( q_D\right) = \frac{\hat{a}_{\pm sP}\left( q_D \right)}{sP (q_D^{sP}-1) q_D^{ \sigma_{\pm sP}}}  \, .$$
+
+Let us now introduce $$\label{hbareps}
+q_{\epsilon}= {\rm e}^{{\rm i}\hbar_{\epsilon}} \, , \quad q_{\epsilon, D}= {\rm e}^{{ 4 \pi^2 {\rm i}\over  \hbar_{\epsilon}}} \, , \quad \hbar_{\epsilon}=  2 \pi {P \over Q}+ \epsilon \, , \quad 0 < \epsilon\ll 1 \, ,$$ and consider the limit $\epsilon\rightarrow 0$. As detailed in Appendix [\[app: eps\]](#app: eps){reference-type="ref" reference="app: eps"}, Eqs. [\[ahatsQ\]](#ahatsQ){reference-type="eqref" reference="ahatsQ"}, [\[ahatsP\]](#ahatsP){reference-type="eqref" reference="ahatsP"} produce the NLO $\epsilon$-expansions $$\begin{align}
+a_{\pm s Q}\left( q_{\epsilon} \right) &= \left(- \frac{{\rm i}}{(sQ)^2 \epsilon} -\frac{1}{2sQ} + \frac{1}{(sQ)^2} q \frac{\partial}{\partial q} \right) \frac{ \hat{a}_{\pm sQ}(q) }{q^{\sigma_{\pm sQ}}} + {\cal O}(\epsilon) \, , \label{pole} \\
+a_{\pm s P}\left( q_{\epsilon, D} \right) &= \left( \frac{{\rm i}}{(sQ)^2 \epsilon} +\frac{1}{sP}\left(\frac{{\rm i}}{2 \pi sQ}- {1 \over 2} \right) + \frac{1}{(sP)^2} q_D \frac{\partial}{\partial q_D} \right) \frac{ \hat{a}_{\pm sP}(q_D)}{q_D^{\sigma_{\pm sP}}}  + {\cal O}(\epsilon) \, . \label{poleD}
+\end{align}$$ We then require the cancellation of the $\epsilon$-poles in Eqs. [\[pole\]](#pole){reference-type="eqref" reference="pole"}, [\[poleD\]](#poleD){reference-type="eqref" reference="poleD"}, which yields the relation
+
+$$\label{aas}
+\hat a_{\pm sQ}\left({\rm e}^{2 \pi {\rm i}{P \over Q}} \right) {\rm e}^{- 2 \pi {\rm i}{P \over Q} \sigma_{\pm sQ}} =  \hat a_{\pm sP} \left({\rm e}^{2 \pi {\rm i}{Q \over P}} \right) {\rm e}^{- 2 \pi {\rm i}{Q \over P} \sigma_{\pm sP}} \, ,$$
+
+for all $s, P, Q \in {\mathbb Z}_{>0}$ with $P,Q$ coprime. We remark that, for the geometric branch, the formula in Eq. [\[aas\]](#aas){reference-type="eqref" reference="aas"} assumes the simplified form[^1]
+
+$$\label{aas-geom}
+\hat a^{(\rm{geom})}_{sQ}\left({\rm e}^{2 \pi {\rm i}{P \over Q}} \right)  =  \hat a^{(\rm{geom})}_{sP} \left({\rm e}^{2 \pi {\rm i}{Q \over P}} \right)  \, ,$$
+
+where again $s, P, Q \in {\mathbb Z}_{>0}$ with $P,Q$ coprime.
+
+Let us now prove that the cancellation formula in Eq. [\[aas\]](#aas){reference-type="eqref" reference="aas"} is indeed a consequence of the integrality structure presented in Eq. [\[multi-conj\]](#multi-conj){reference-type="eqref" reference="multi-conj"}. More precisely, Eqs. [\[ahatf-def\]](#ahatf-def){reference-type="eqref" reference="ahatf-def"}, [\[struc-an\]](#struc-an){reference-type="eqref" reference="struc-an"} imply that $$\label{an-dec}
+ \hat{a}_n(q) q^{-\sigma_n}= \sum_{k|n} k D_k \left( q^{n \over k} \right) q^{-{n \over k} \sigma_k} \sum_{j=0}^{k-1} q^{{n \over k}j} \, ,$$ and, after substituting $n=sQ$ and $q = {\rm e}^{2 \pi {\rm i}{P \over Q}}$ with $s, P, Q$ as above, we obtain $$\label{asQtemp}
+ \hat{a}_{sQ}\left({\rm e}^{2 \pi {\rm i}{P \over Q}}\right) {\rm e}^{- 2 \pi {\rm i}{P \over Q} \sigma_{sQ}}= \sum_{k| sQ} k D_k \left( {\rm e}^{2 \pi {\rm i}\frac{sP}{k}} \right) {\rm e}^{- 2 \pi {\rm i}\frac{sP}{k} \sigma_{k}} \sum_{j=0}^{k-1} {\rm e}^{2 \pi {\rm i}\frac{sP}{k} j} \, .$$ Since the sum over $j$ on the RHS is non-zero if and only if $k | s$, Eq. [\[asQtemp\]](#asQtemp){reference-type="eqref" reference="asQtemp"} gives $$\label{cs-sequenceP}
+ \hat{a}_{sQ}\left({\rm e}^{2 \pi {\rm i}{P \over Q}}\right) {\rm e}^{- 2 \pi {\rm i}{P \over Q} \sigma_{sQ}}= \sum_{k| s} k^2 D_k (1) = c_s \in {\mathbb Z}\, , \quad s \in {\mathbb Z}_{>0} \, ,$$ which is independent of the choice of $P,Q \in {\mathbb Z}_{>0}$ coprime, thus proving the cancellation identity in Eq. [\[aas\]](#aas){reference-type="eqref" reference="aas"}. We note that the case of $\hat{a}_{-n}(q)$ is handled analogously, yielding the same result. In particular, recalling that $\sigma_{-n}=0$, $n \in {\mathbb Z}_{>0}$, it defines the sequence of integers $$\label{cs-sequenceM}
+ \hat{a}_{-sQ}\left({\rm e}^{2 \pi {\rm i}{P \over Q}}\right) = \sum_{k| s} k^2 D_{-k} (1) = c_{-s} \in {\mathbb Z}\, , \quad s \in {\mathbb Z}_{>0} \, .$$ Finally, applying the Möbius inversion formula for arithmetic functions, we deduce that
+
+$$D_{\pm s}(1)= {1\over s^2} \sum_{k|s} \mu(k) c_{\pm{ s \over k}} \, , \quad s \in {\mathbb Z}_{>0} \, ,$$
+
+where $\mu(k)$ is the Möbius function. As we will see, the construction presented here is experimentally verified for the knots ${\bf 4}_1$ and ${\bf 5}_2$ in Section [\[sec: examples\]](#sec: examples){reference-type="ref" reference="sec: examples"}.
+
+[^1]: A similar cancellation requirement was obtained in [@szabolcs] in the study of the wave function for quantum mirror curves.

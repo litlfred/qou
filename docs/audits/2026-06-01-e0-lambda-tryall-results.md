@@ -169,5 +169,5 @@ scope for this probe and bordering Subgoal-2.
 
 - Harness: [`computations/e0_lambda_tryall.py`](../../computations/e0_lambda_tryall.py)
 - Witness: [`computations/e0-lambda-tryall.witness.json`](../../computations/e0-lambda-tryall.witness.json)
-- Anchor source (deprecated, read-only): `computations/_deprecated/per_block_phi_q.py`
+- Anchor source (deprecated, read-only): `fsh-guts/deprecated/computations/per_block_phi_q.py`
 - Substrate χ caches consumed: `chi-neutron-h3-at-q0-50dps.witness.json`, `chi-proton-h3-at-q0-50dps.witness.json`

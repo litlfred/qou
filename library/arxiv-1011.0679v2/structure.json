@@ -6,7 +6,12 @@
   "sha256": "6fa4bbcf4e908373559c4ee603c5ee3f929a25d722feb3c9ad3774cc344a5363",
   "bytes": 316414,
   "pages": 22,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,13 +26,21 @@
   "title_lines": [
    "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS"
   ],
-  "abstract": "Let \u03c0, \u03c0 \u2032 be tempered representations of an a\ufb03ne Hecke algebra with positive parameters. We study their Euler\u2013Poincar\u00b4 e pairing EP (\u03c0, \u03c0 \u2032), the alter- nating sum of the dimensions of the Ext-groups. We show that EP (\u03c0, \u03c0 \u2032) can be expressed in a simple formula involving an analytic R-group , analogous to a for- mula of Arthur in the setting of reductive p-adic groups. Our proof applies equally well to a\ufb03ne Hecke algebras and to reductive groups over nona rchimedean local \ufb01elds of arbitrary characteristic.",
+  "abstract": "Let \u03c0, \u03c0\u2032 be tempered representations of an a\ufb03ne Hecke algebra with positive parameters. We study their Euler\u2013Poincar\u00b4e pairing EP(\u03c0, \u03c0\u2032), the alter- nating sum of the dimensions of the Ext-groups. We show that EP(\u03c0, \u03c0\u2032) can be expressed in a simple formula involving an analytic R-group, analogous to a for- mula of Arthur in the setting of reductive p-adic groups. Our proof applies equally well to a\ufb03ne Hecke algebras and to reductive groups over nonarchimedean local \ufb01elds of arbitrary characteristic.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210531171151-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20210531171151-04'00'"
+  },
+  "title_raw": "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS Contents Introduction Preliminaries A\ufb03ne Hecke algebras Parabolic induction The Schwartz algebra Analytic R-groups for tempered representations The Euler-Poincar\u00b4e pairing The Arthur formula Algebras of invariants Analytic R-groups for non-tempered repre",
+   "outline": "Introduction",
+   "text": "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -36,81 +49,335 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 4,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Affine Hecke algebras",
    "page": 4,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Parabolic induction",
    "page": 6,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The Schwartz algebra",
    "page": 9,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Analytic R-groups for tempered representations",
    "page": 11,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "The Euler-Poincar\u00e9 pairing",
    "page": 12,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "The Arthur formula",
    "page": 14,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Algebras of invariants",
    "page": 17,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Analytic R-groups for non-tempered representations",
    "page": 20,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "References",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 645,
+   "n_words": 101,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -118,8 +385,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4819,
-   "n_words": 816
+   "n_chars": 4797,
+   "n_words": 793,
+   "label_start": null,
+   "label_end": "3"
   },
   {
    "id": "sec-001-11-affine-hecke-algebras",
@@ -128,8 +397,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 5004,
-   "n_words": 895
+   "n_chars": 4951,
+   "n_words": 841,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-002-1-preliminaries",
@@ -138,8 +409,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 3823,
-   "n_words": 785
+   "n_chars": 3799,
+   "n_words": 761,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-003-12-parabolic-induction",
@@ -148,8 +421,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 7103,
-   "n_words": 1512
+   "n_chars": 7052,
+   "n_words": 1458,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
    "id": "sec-004-13-the-schwartz-algebra",
@@ -158,8 +433,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 5368,
-   "n_words": 1087
+   "n_chars": 5273,
+   "n_words": 992,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
    "id": "sec-005-14-analytic-r-groups-for-tempered-representation",
@@ -167,56 +444,199 @@
    "title": "Analytic R-groups for tempered representations",
    "level": 2,
    "page_start": 11,
-   "page_end": 14,
-   "n_chars": 7137,
-   "n_words": 1456
+   "page_end": 12,
+   "n_chars": 3947,
+   "n_words": 791,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-006-3-the-arthur-formula",
+   "id": "sec-006-2-the-euler-poincar\u00e9-pairing",
+   "number": "2",
+   "title": "The Euler-Poincar\u00e9 pairing",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 3071,
+   "n_words": 576,
+   "label_start": "12",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-007-3-the-arthur-formula",
    "number": "3",
    "title": "The Arthur formula",
    "level": 1,
    "page_start": 14,
    "page_end": 17,
-   "n_chars": 8871,
-   "n_words": 1732
+   "n_chars": 8724,
+   "n_words": 1586,
+   "label_start": "14",
+   "label_end": "17"
   },
   {
-   "id": "sec-007-4-algebras-of-invariants",
+   "id": "sec-008-4-algebras-of-invariants",
    "number": "4",
    "title": "Algebras of invariants",
    "level": 1,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 4444,
-   "n_words": 916
+   "n_chars": 4320,
+   "n_words": 792,
+   "label_start": "17",
+   "label_end": "20"
   },
   {
-   "id": "sec-008-5-analytic-r-groups-for-non-tempered-representat",
+   "id": "sec-009-5-analytic-r-groups-for-non-tempered-representat",
    "number": "5",
    "title": "Analytic R-groups for non-tempered representations",
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 3407,
-   "n_words": 662
+   "n_chars": 3386,
+   "n_words": 641,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-009-references",
+   "id": "sec-010-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 5033,
-   "n_words": 738
+   "n_chars": 4991,
+   "n_words": 696,
+   "label_start": "21",
+   "label_end": "22"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 10,
-  "chars_total": 55009
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 12,
+  "chars_total": 54956,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 10,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.586,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-affine-hecke-algebras",
+     "title": "Affine Hecke algebras",
+     "prose_ratio": 0.417,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-1-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.137,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-003-12-parabolic-induction",
+     "title": "Parabolic induction",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-13-the-schwartz-algebra",
+     "title": "The Schwartz algebra",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-14-analytic-r-groups-for-tempered-representation",
+     "title": "Analytic R-groups for tempered representations",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-2-the-euler-poincar\u00e9-pairing",
+     "title": "The Euler-Poincar\u00e9 pairing",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-3-the-arthur-formula",
+     "title": "The Arthur formula",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-4-algebras-of-invariants",
+     "title": "Algebras of invariants",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.925,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-5-analytic-r-groups-for-non-tempered-representat",
+     "title": "Analytic R-groups for non-tempered representations",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

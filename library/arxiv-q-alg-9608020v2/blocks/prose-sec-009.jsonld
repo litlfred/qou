@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-q-alg-9608020v2/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-q-alg-9608020v2/blocks/prose-sec-009",
   "kind": "prose",
   "title": "Integral representation of Jack polynomials. Writeν ≺λ if",
   "pageStart": 7,
   "pageEnd": 8,
   "text": "../sections/sec-009-6-integral-representation-of-jack-polynomials-wr.md",
-  "derivedFrom": "library/arxiv-q-alg-9608020v2/manifest",
-  "sourceDocument": "library/arxiv-q-alg-9608020v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9608020v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9608020v2/manifest.jsonld",
   "provenance": "ingested"
 }

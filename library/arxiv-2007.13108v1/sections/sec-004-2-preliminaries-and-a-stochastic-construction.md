@@ -8,29 +8,30 @@ pages: 6-7
 source_pdf: 2007.13108v1.pdf
 source_sha256: b298478f5f5b948d
 doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Throughout this section, we ﬁx a probability measure ν on Cn and a Lipschitz test function
-ϕ : Cn → R.
-2.1 Some preliminary deﬁnitions
-For a vector w ∈ Rn, deﬁne the tilt of the measure ν as
-dτwν(x)
-dν(x) := Zν(w)−1e⟨w,x⟩
+Throughout this section, we fix a probability measure $\nu$ on $\DC$ and a Lipschitz test function $\varphi:\DC \to \RR$.
+
+\subsection{Some preliminary definitions}
+For a vector $w \in \RR^n$, define the \emph{tilt} of the measure $\nu$ as
+$$
+\frac{d \tau_{w} \nu(x)}{d \nu(x)} := Z_\nu(w)^{-1}  e^{\langle w, x \rangle} 
+$$
 where
-Zν(w) :=
-∫
-Cn
-e⟨w,x⟩dν.
-Also deﬁne the functions
-aν(w) :=
-∫
-Cn
-xdτwν(x), A ν(w) :=
-∫
-Cn
-(x − aν(w))⊗2 dτwν(x) = Cov( τwν).
+$$
+Z_\nu(w) := \int_{\DC} e^{\langle w, x \rangle} d \nu.
+$$
+Also define the functions
+$$
+a_\nu(w) := \int_{\DC} x d \tau_w \nu(x), ~~ A_\nu(w) := \int_{\DC} \left (x - a_\nu(w) \right )^{\otimes 2} d \tau_w \nu(x) = \COV(\tau_w \nu).
+$$
 A well-known calculation gives,
-aν(w) = ∇L[ν](w), A ν(w) = ∇2L[ν](w) (8)
-(this is the fact that the Log-Laplace transform is the cumul ant-generating function). Thus, if ν
-is β -log-concave, we have
-∇aν(w) = ∇2L[ν](w) ≼ β In. (9)
-6
+\begin{equation}\label{eq:momentgenerating}
+a_\nu(w) = \nabla \mathcal{L} [\nu] (w), ~~ A_\nu(w) = \nabla^2 \mathcal{L} [\nu] (w)
+\end{equation}
+(this is the fact that the Log-Laplace transform is the cumulant-generating function). Thus, if $\nu$ is $\beta$-log-concave, we have
+\begin{equation}\label{eq:nablaa}
+\nabla a_\nu(w) = \nabla^2 \mathcal{L}[\nu] (w) \preceq \beta \Id.
+\end{equation}

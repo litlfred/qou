@@ -7,7 +7,11 @@
   "bytes": 167260,
   "pages": 6,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:19Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -28,120 +32,261 @@
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20181101093517-04'00'"
+  },
+  "title_raw": "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS Enrique Garc\u00b4\u0131a\u2013Berro 1 , 2 , Pablo Lor\u00b4en\u2013Aguilar 1 , 2 , Gabriela Aznar\u2013Sigu\u00b4an 1 , 2 , Santiago Torres 1 , 2 , Judit Camacho 1 , 2 , Leandro G. Althaus 3 , 4 , Alejandro H. C\u00b4orsico 3 , 4 , Baybars K\u00a8ulebi 5 , 2 , & Jord",
+   "text": "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
+   "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "INTRODUCTION",
+   "title": "The stellar dynamo",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "THE STELLAR DYNAMO",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "MAGNETIC WHITE DWARFS IN THE SOLAR",
+   "title": "Magnetic white dwarfs in the solar neighborhood",
    "page": 3,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 1,
-   "title": "SUMMARY AND CONCLUSIONS",
+   "title": "Summary and conclusions",
    "page": 5,
    "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 5,
-   "source": "inferred",
-   "number": null
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "\u2014 Dynamo con\ufb01guration in a white dwarf merger. Temperature (solid line, left scale) and rotational velocity (dashed line, right scale) pro\ufb01les of the \ufb01nal remnant of a white dwarf merger as a function of radius are shown for the case of a binary system",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "\u2014 Mass distribution of the remnants of the mergers. The distribution shows the frequency of the di\ufb00erent merger channels",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 798,
-   "n_words": 128
+   "n_chars": 1803,
+   "n_words": 258,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
-   "title": "INTRODUCTION",
+   "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
    "n_chars": 3475,
-   "n_words": 577
+   "n_words": 577,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-2-the-stellar-dynamo",
+   "id": "sec-001-2-the-stellar-dynamo",
    "number": "2",
-   "title": "THE STELLAR DYNAMO",
+   "title": "The stellar dynamo",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 12504,
-   "n_words": 2116
-  },
-  {
-   "id": "sec-003-3-magnetic-white-dwarfs-in-the-solar",
-   "number": "3",
-   "title": "MAGNETIC WHITE DWARFS IN THE SOLAR",
-   "level": 1,
-   "page_start": 3,
    "page_end": 5,
-   "n_chars": 7124,
-   "n_words": 1206
+   "n_chars": 20649,
+   "n_words": 3481,
+   "label_start": null,
+   "label_end": "5"
   },
   {
-   "id": "sec-004-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 950,
-   "n_words": 148
-  },
-  {
-   "id": "sec-005-4-summary-and-conclusions",
+   "id": "sec-002-4-summary-and-conclusions",
    "number": "4",
-   "title": "SUMMARY AND CONCLUSIONS",
+   "title": "Summary and conclusions",
    "level": 1,
    "page_start": 5,
    "page_end": 6,
    "n_chars": 6899,
-   "n_words": 1187
+   "n_words": 1187,
+   "label_start": "5",
+   "label_end": "6"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 6,
-  "sections": 6,
-  "chars_total": 31750
+  "toc_entries": 4,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 32826,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "MWDs_vL.tex",
+   "tex_sections": 4,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-the-stellar-dynamo",
+     "title": "The stellar dynamo",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-4-summary-and-conclusions",
+     "title": "Summary and conclusions",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.475,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

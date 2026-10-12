@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T16:55:28Z
-updated_at: 2026-10-10T08:30:00Z
+updated_at: 2026-10-10T10:40:00Z
 parent: qou-avtq
 ---
 
@@ -83,3 +83,13 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 ## 2026-10-10 — a witness this bean cites is red (cross-cluster check, verification sweep of `qou-avtq`)
 
 q* reproduces, but the cited witness `qbeta-c3-imq-qstar-ladder-amplification.witness.json` (2026-08-29, no q0Anchor) fails its own `anchors_reproduced_exactly` (0 vs 1). That fits the bean's C-frame scoping, but do not quote the witness as green.
+
+## 2026-10-10 — follow-up review (re-check of the `qou-avtq` sweep flags)
+
+**Cause R2 — the muon pin moved from CODATA 2018 to 2022.** `q_muon_at` is now 1.10997859564274 (was …5557, Δ = 8.5e-11), which moves S(muon) by 3.399e-4 — exactly the miss of `anchors_reproduced_exactly` against the literal at `qbeta_c3_imq_qstar_ladder_amplification_probe.py:82`. Stale reference value, not a mathematical defect.
+
+Re-run gives q* = 1.109978593031523 at 79.744 %. `rem-qstar-decay-sector-q0.md` still says 80.3 %, its table (lines 26–27) prints 1.10997859340… and 1.11023370740… (values this bean retracted), and its interval width 1.281e-8 and gap count 19,921 are CODATA-2018 figures.
+
+**Open steps:** fix the block values; refresh the muon literal (code, needs owner OK).
+
+Checked read-only against qou `main` at `aa914b606a`, mpmath 1.3.0. Full write-up: `qou-review/avtq-reopened-beans-2026-10-10.md` (project files). Status unchanged.

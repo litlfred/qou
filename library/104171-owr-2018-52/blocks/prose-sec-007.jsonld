@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/104171-owr-2018-52/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/104171-owr-2018-52/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Semisimpliﬁcation. Let C denote a k-linear ( k a ﬁeld) braided rigid",
   "pageStart": 29,
   "pageEnd": 30,
   "text": "../sections/sec-007-01-semisimpliﬁcation-let-c-denote-a-k-linear-k-a.md",
-  "derivedFrom": "library/104171-owr-2018-52/manifest",
-  "sourceDocument": "library/104171-owr-2018-52/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
   "provenance": "ingested"
 }

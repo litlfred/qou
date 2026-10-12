@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ds15v1-2008/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ds15v1-2008/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "Mod 5 Identities",
-  "pageStart": 11,
-  "pageEnd": 12,
-  "text": "../sections/sec-009-25-mod-5-identities.md",
-  "derivedFrom": "library/ds15v1-2008/manifest",
-  "sourceDocument": "library/ds15v1-2008/manifest",
+  "title": "Triple Products",
+  "pageStart": 14,
+  "pageEnd": 16,
+  "text": "../sections/sec-009-281-triple-products.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ds15v1-2008/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ds15v1-2008/manifest.jsonld",
   "provenance": "ingested"
 }

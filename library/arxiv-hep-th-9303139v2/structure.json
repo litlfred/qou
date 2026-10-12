@@ -7,7 +7,11 @@
   "bytes": 1050861,
   "pages": 149,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -1249,6 +1253,414 @@
   "likely_scanned": false,
   "toc_entries": 71,
   "sections": 71,
-  "chars_total": 251171
+  "chars_total": 251171,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 40,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-3-kontsevich-model",
+     "title": "Kontsevich model",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-2-ward-identities-for-the-simplest-matrix-models",
+     "title": "Ward identities for the simplest matrix models",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-21-ward-identites-versus-equations-of-motion",
+     "title": "Ward identites versus equations of motion",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-22-virasoro-constraints-for-the-discrete-1-matri",
+     "title": "Virasoro constraints for the discrete 1-matrix model",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-23-cft-formulation-of-matrix-models",
+     "title": "CFT formulation of matrix models",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-24-gross-newman-equation",
+     "title": "Gross-Newman equation",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-25-ward-identities-for-generalized-kontsevich-mo",
+     "title": "Ward identities for Generalized Kontsevich Model",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-26-discrete-virasoro-constraints-for-the-gaussia",
+     "title": "Discrete Virasoro constraints for the Gaussian Kontsevich model",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-27-continuous-virasoro-constraints-for-the-v-x3",
+     "title": "Continuous Virasoro constraints for the V = X3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-3-eigenvalue-models",
+     "title": "Eigenvalue models",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-31-what-are-eigenvalue-models",
+     "title": "What are eigenvalue models",
+     "prose_ratio": 0.007,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-33-itzykson-zuber-and-kontsevich-integrals",
+     "title": "Itzykson-Zuber and Kontsevich integrals",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-34-conventional-multimatrix-models",
+     "title": "Conventional Multimatrix models",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-35-determinant-formulas-for-eigenvalue-models",
+     "title": "Determinant formulas for eigenvalue models",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-36-orthogonal-polinomials",
+     "title": "Orthogonal polinomials",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-37-two-component-models-in-miwa-parametrization",
+     "title": "Two-component models in Miwa parametrization",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-38-equivalence-of-the-discrete-1-matrix-and-gaus",
+     "title": "Equivalence of the discrete 1-matrix and Gaussian Kontsevich models",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-39-volume-of-unitary-group",
+     "title": "Volume of unitary group",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-4-integrable-structure-of-eigenvalue-models",
+     "title": "Integrable structure of eigenvalue models",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-41-the-concept-of-integrability",
+     "title": "The concept of integrability",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-42-the-notion-of-\u03c4-function",
+     "title": "The notion of \u03c4-function",
+     "prose_ratio": 0.013,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-44-basic-determinant-formula-for-the-free-fermio",
+     "title": "Basic determinant formula for the free-fermion correlator",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-024-45-toda-lattice-\u03c4-function-and-linear-reductions",
+     "title": "Toda-lattice \u03c4-function and linear reductions of Toda-lattice hierar-",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-025-46-fermion-correlator-in-miwa-coordinates",
+     "title": "Fermion correlator in Miwa coordinates",
+     "prose_ratio": 0.011,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-026-48-string-equations-and-generic-concept-of-reduc",
+     "title": "String equations and generic concept of reduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-027-49-on-the-theory-of-gkm",
+     "title": "On the theory of GKM",
+     "prose_ratio": 0.009,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-5-continuum-limits-of-discrete-matrix-models",
+     "title": "Continuum limits of discrete matrix models",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-029-51-what-is-continuum-limit",
+     "title": "What is continuum limit",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-030-52-from-toda-chain-to-kdv",
+     "title": "From Toda-chain to KdV",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-031-53-double-scaling-limit-of-1-matrix-model",
+     "title": "Double-scaling limit of 1-matrix model",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-032-54-from-gaussian-to-x3-kontsevich-model",
+     "title": "From Gaussian to X3-Kontsevich model",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-033-6-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-034-7-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-035-8-references",
+     "title": "References",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.742,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-10-this-is-possible-only-for-very-special-kac-mo",
+     "title": "This is possible only for very special Kac-Moody algebras, and such formulation is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-2-z-x2",
+     "title": "Z X2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-13-this-small-correction-is-a-manifestation-of-a",
+     "title": "This small correction is a manifestation of a very general phenomenon: from the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-14-therefore-it-could-be-reasonable-to-use-a-di\ufb00",
+     "title": "Therefore it could be reasonable to use a di\ufb00erent notation: Ln instead of L2n. We",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-2-hn",
+     "title": "Hn",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-1-hm",
+     "title": "Hm",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-3-hb2",
+     "title": "Hb2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-2-hc1",
+     "title": "Hc1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-2-hc2",
+     "title": "Hc2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-16-here-it-is-for-the-\ufb01rst-time-that-we-encounte",
+     "title": "Here it is for the \ufb01rst time that we encounter an important idea: matrix models -",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-18-this-can-be-understood-if-one-notes-that-matr",
+     "title": "This can be understood if one notes that matrix models",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-048-18-particles-are-always-related-to-the-angular-u",
+     "title": "Particles are always related to the \u201dangular (unitary-) matrix\u201d integrals (as everybody",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-21-of-course-one-can-also-use-this-link-just-wit",
+     "title": "Of course, one can also use this link just with the aim to put the rich and beau-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-050-2-d",
+     "title": "(\u2212d",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-051-4-h-2-d",
+     "title": "(h \u22122 d",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-2-det\u03bbn",
+     "title": "(det\u039b)N",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-053-2-trh2det\u03bb-i-i-h",
+     "title": "TrH2Det(\u039b \u2297I \u2212I \u2297H)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-054-23-note-that-this-system-of-functions-\u03d5k-ikhekih",
+     "title": "Note that this system of functions \u03d5k = i\u2212kHek(ih) looks like \u03d50 = 1, \u03d51 = h, \u03d52 =",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-055-2-trh2-cn",
+     "title": "TrH2 = cN",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-056-2-j-d",
+     "title": "J D",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-057-26-note-that-normalization-factor-here-is-di\ufb00ere",
+     "title": "Note that normalization factor here is di\ufb00erent by a factor of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-058-27-we-once-again-emphasize-that-this-trick-is-sp",
+     "title": "We once again emphasize that this trick is speci\ufb01c for the free fermions and for the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-059-28-formulas-in-brackets-are-indeed-correct-befor",
+     "title": "Formulas in brackets are indeed correct, before them the usual symbolic relations are",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-060-29-it-is-also-the-reason-why-these-are-free-ferm",
+     "title": "It is also the reason, why these are free-fermion tau-functions, that appear in the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-061-30-this-relation-is-straightforward-in-the-case",
+     "title": "This relation is straightforward in the case of Virasoro constraints, since Virasoro",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-062-2-t-a-i-i-t-a2-t-at-a-i-i-t-at-a-if-further-t-a",
+     "title": "((T a \u2297I + I \u2297T a)2 \u2212T aT a \u2297I \u2212I \u2297T aT a).) If further, T a \u2297T a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-063-0-uzjz",
+     "title": "U(z)J(z) =",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-064-0-uz\u03c6z",
+     "title": "U(z)\u2202\u03c6(z) = \u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-065-37-we-remind-that-all-conventional-multimatrix-m",
+     "title": "We remind that all conventional multimatrix models (with inter-matrix",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-066-2-\u03c62-u-of-antiperiodic-\ufb01eld-\u03c6u-are",
+     "title": "(\u2202\u03a6)2 (u) of antiperiodic \ufb01eld \u03a6(u)), are:",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-067-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-068-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-069-references",
+     "title": "References",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-070-ii-the-kontsevich-integrals-preprint-spht92-001",
+     "title": "The Kontsevich Integrals, Preprint SPhT/92-001, to appear in",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

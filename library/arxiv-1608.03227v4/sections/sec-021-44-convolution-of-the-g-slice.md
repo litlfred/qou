@@ -8,61 +8,16 @@ pages: 22-23
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.932
+latex_coverage_ratio: 0.964
 ---
-B2 (X2,W )G signiﬁesB2-equivariant matrix
-factorizations from MF B2 (X2,W ) that G-invariant. This description becomes simpler when we introduce a
-smaller space X ◦
-2 := g×G× b2 and the map p◦ : X2→ X ◦
-2 deﬁned by
-p◦(X,g 1,Y 1,g 2,Y 2) = (Ad −1
-g1 (X),g 12,Y 1, Adg12 (Y2)++).
-This map is G-equivariant with the trivial G-action on the target. The space X ◦
-2 is a slice to G-action on
-X2.
-22
-If we deﬁne the function W on X ◦
-2 by
-W (X,g,Y 1,Y 2) = Tr(X(Y1− Adg(Y2)))
-Then the pull back ( p◦)∗ : MF sc
-B2 (X ◦
-2,W )→ MFB2(X2,W )G provides an equivalence of categories.
-Indeed, we have an G×B2-equivariant isomorphism Ψ G : X2→G× X ◦
-2 :
-Ψ G(X,g 1,Y 1,g 2,Y 2) = (g1,p ◦(X,g 1,Y 1,g 2,Y 2)).
-The group G-acts on the ﬁrst factor of G× X ◦
-2 by left multiplication and acts trivially on the second factor
-hence the pull-back functor pr∗
-2 : MF sc
-B2(G× X ◦
-2,W )G → MFsc
-B2 (X ◦
-2,W ) is an isomorphism. Thus the
-equivalence follows because p◦ = Ψ G◦pr2. Thus we can work with the category MF sc
-B2 (X ◦
-2,W ) instead of
-MFsc
-B2(X2,W )G.
-Deﬁne X ◦
-3 := g×G2× n3. The convolution for the objects of MF sc
-B2(X ◦
-2 ,W ) is deﬁned with modiﬁed
-maps π◦
-ij : X ◦
-3 → X ◦
-2 :
-π◦
-12(X,g 12,g 23,Y 1,Y 2,Y 3) = (X,g 12,Y 1,Y 2),
-π◦
-23(X,g 12,g 23,Y 1,Y 2,Y 3) = (Ad −1
-g12 (X),g 23,Y 2,Y 3),
-π◦
-13(X,g 12,g 23,Y 1,Y 2,Y 3) = (Ad −1
-g13 (X),g 13,Y 1,Y 3),
-where g13 =g12g23. The convolution is then deﬁned by
-G⋆F =π◦
-13∗(CEn(2) (π◦,∗
-12 (F )⊗Bπ◦,∗
-23 (G)))T (2)
-.
-Obviously, the pull-back map p∗
-◦ is an isomorphism of the convolution algebras.
+[]{#ssec: Gslice label="ssec: Gslice"} As we mentioned earlier, $\MF_{B^2}(\calX_2,W)^G$ signifies $B^2$-equivariant matrix factorizations from $\MFs_{B^2}(\calX_2,W)$ that $G$-invariant. This description becomes simpler when
+
+we introduce a smaller space $\SymbolPrint{\calX_2^\circ}:=\frg\times G\times \frb^2$ and the map $\SymbolPrint{p_\circ}: \calX_2\to \calX_2^\circ$ defined by $$p_\circ(X,g_1,Y_1,g_2,Y_2)=(\Ad_{g_1}^{-1}(X),g_{12},Y_1,\Ad_{g_{12}}(Y_2)_{++}).$$ This map is $G$-equivariant with the trivial $G$-action on the target. The space $\calX_2^\circ$ is a slice to $G$-action on $\calX_2$.
+
+If we define the function $W$ on $\calX^\circ_2$ by $$W(X,g,Y_1,Y_2)=\Tr(X(Y_1-\Ad_g(Y_2)))$$ Then the pull back $(p_\circ)^*:\MF_{B^2}(\calX_2^\circ,W)\to \MFs_{B^2}(\calX_2,W)^G$ provides an equivalence of categories.
+
+Indeed, we have an $G\times B^2$-equivariant isomorphism $\SymbolPrint{\Psi_G}:\calX_2\to G\times \calX_2^\circ$: $$\Psi_G(X,g_1,Y_1,g_2,Y_2)=(g_1,p_\circ(X,g_1,Y_1,g_2,Y_2)).$$ The group $G$-acts on the first factor of $G\times\calX_2^\circ$ by left multiplication and acts trivially on the second factor hence the pull-back functor $pr_2^*: \MF_{B^2}(G\times\calX_2^\circ,W)^G\to \MF_{B^2}(\calX_2^\circ,W)$ is an isomorphism. Thus the equivalence follows because $p_\circ=\Psi_G\circ pr_2$. Thus we can work with the category $\MF_{B^2}(\calX_2^\circ,W)$ instead of $\MF_{B^2}(\calX_2,W)^{G}$.
+
+Define $\calX_3^\circ:=\frg\times G^2\times \frn^3$. The convolution for the objects of $\MFBt(\calX^\circ_2,W)$ is defined with modified maps $\SymbolPrint{\pi_{ij}^\circ}:\calX_3^\circ\to\calX_2^\circ$: $$\pi^\circ_{12}(X,g_{12},g_{23},Y_1,Y_2,Y_3)=(X,g_{12},Y_1,Y_2),$$ $$\pi^\circ_{23}(X,g_{12},g_{23},Y_1,Y_2,Y_3)=(\Ad_{g_{12}}^{-1}(X),g_{23},Y_2,Y_3),$$ $$\pi^\circ_{13}(X,g_{12},g_{23},Y_1,Y_2,Y_3)=(\Ad_{g_{13}}^{-1}(X),g_{13},Y_1,Y_3),$$ where $g_{13}=g_{12} g_{23}$. The convolution is then defined by $$\calG\star \calF=\pi^\circ_{13*}(\CE_{\frn^{(2)}}( \pi^{\circ,*}_{12}(\calF)\otimes_B\pi^{\circ,*}_{23}(\calG)))^{T^{(2)}}.$$ Obviously, the pull-back map $p_\circ^*$ is an isomorphism of the convolution algebras.

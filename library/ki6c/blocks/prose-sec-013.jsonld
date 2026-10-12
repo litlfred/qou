@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ki6c/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ki6c/blocks/prose-sec-013",
   "kind": "prose",
-  "title": "Li2(x0) + Li2(y0) + Li2(z0) + \u00192",
-  "pageStart": 19,
-  "pageEnd": 20,
-  "text": "../sections/sec-013-2-li2x0-li2y0-li2z0-2.md",
-  "derivedFrom": "library/ki6c/manifest",
-  "sourceDocument": "library/ki6c/manifest",
+  "title": "Calculation of the critical value",
+  "pageStart": 33,
+  "pageEnd": 35,
+  "text": "../sections/sec-013-43-calculation-of-the-critical-value.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
   "provenance": "ingested"
 }

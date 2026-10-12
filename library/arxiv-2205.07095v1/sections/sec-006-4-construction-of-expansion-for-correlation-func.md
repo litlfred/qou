@@ -8,12 +8,8 @@ pages: 8-8
 source_pdf: 2205.07095v1.pdf
 source_sha256: 2ec6916399150e2d
 doc_brief: "Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical"
+text_source: latex
+latex_prose_ratio: 0.935
+latex_coverage_ratio: 1.0
 ---
-density parameter ̺.
-Solution of the equation (3.29) by the iteration method (Rue lle operator
-method [23]) or by the Minlos-Poghosyan method [12] (about t he connec-
-tion between these methods see [21]) leads to the series in th e parameter
-̺a(̺). So, in fact, these equations are nonlinear, because a(̺) depends
-on all correlation functions (see (3.29) and (3.31)). In thi s section, we
-construct expansion in the parameter density ̺, considering the equation
-(3.29) as nonlinear equation.
+Solution of the equation [\[limeq\]](#limeq){reference-type="eqref" reference="limeq"} by the iteration method (Ruelle operator method [@Ru69]) or by the Minlos-Poghosyan method [@MP77] (about the connection between these methods see [@Re2021]) leads to the series in the parameter $\varrho a(\varrho)$. So, in fact, these equations are nonlinear, because $a(\varrho)$ depends on all correlation functions (see [\[limeq\]](#limeq){reference-type="eqref" reference="limeq"} and [\[ratioPF1\]](#ratioPF1){reference-type="eqref" reference="ratioPF1"}). In this section, we construct expansion in the parameter density $\varrho$, considering the equation [\[limeq\]](#limeq){reference-type="eqref" reference="limeq"} as nonlinear equation.

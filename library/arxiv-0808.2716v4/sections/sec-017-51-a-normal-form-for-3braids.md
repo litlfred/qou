@@ -8,71 +8,50 @@ pages: 27-28
 source_pdf: 0808.2716v4.pdf
 source_sha256: ea66f7ddcf9e9fe6
 doc_brief: "CUSP AREAS OF F AREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on t he cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2 –bridge link"
+text_source: latex
+latex_prose_ratio: 0.953
+latex_coverage_ratio: 0.95
 ---
-generators for B3, the braid group on three strands, as in Figure 1. Thus a posit ive word in
-σ1 and σ−1
-2 represents an alternating braid diagram. Let C = (σ1σ2)3 denote a full twist of
-all three strands; C generates the center of B3. For a braid w ∈ B3, let ˆw denote the link
-obtained as the closure of w. Note that ˆw only depends on the conjugacy class of w. We
-denote the conjugacy relation by ∼.
-In the 1920s, Schreier developed a normal form for this braid group [51]. In particular, he
-showed the following.
-Theorem 5.1 (Schreier). Let w ∈ B3 be a braid on 3 strands. Then w is conjugate to a
-braid in exactly one of the following forms:
-(1) C kσp1
-1 σ−q1
-2 · · ·σps
-1 σ−qs
-2 , where k ∈ Z and pi, qi, and s are all positive integers,
-(2) C kσp
-1, for k,p ∈ Z
-(3) C kσ1σ2, for k ∈ Z
-(4) C kσ1σ2σ1, for k ∈ Z, or
-(5) C kσ1σ2σ1σ2, for k ∈ Z.
-This form is unique up to cyclic permutation of the word follow ing C k. Braids in form (1)
-above are called generic.
-Birman and Menasco have shown that nearly every oriented lin k obtained as the closure
-of a 3–braid can be represented by a unique conjugacy class in B3, with an explicit list of
-exceptions [11]. Thus their theorem, combined with Schreie r’s normal form, gives a classiﬁca-
-tion of closed oriented 3–braids. Their paper also contains a modern exposition of Schreier’s
-algorithm for placing braids in normal form.
-Let K = ˆw be a closed 3–braid deﬁned by the word w, and let A be the braid axis of K.
-That is, A is an unknot with the property that the solid torus S3/integerdivideA is swept out by meridian
-disks, with each disk intersecting K in 3 points. Then Mw :=S3/integerdivide(K ∪A) is a 4–punctured
-sphere bundle over the circle. It is well–known, essentiall y due to work of Thurston [55],
-that the Schreier normal form of w predicts the geometry of Mw. We include a proof for
-completeness.
-Theorem 5.2. Mw is hyperbolic if and only if w is generic. Moreover, Mw has nonzero
-Gromov norm if and only if w is generic.
-28 D. FUTER, E. KALF AGIANNI, AND J. PURCELL
-Proof. The braid generators σ1 and σ−1
-2 act on the 4–punctured sphere as the standard
-generators L and R of SL2(Z):
-σ1 ↦→L :=
-[
-1 0
-1 1
-]
-, σ −1
-2 ↦→R :=
-[
-1 1
-0 1
-]
-, C ↦→I =
-[
-1 0
-0 1
-]
-.
-Thus generic 3–braids with normal form (1) correspond to pos itive words employing both
-lettersL andR, hence to pseudo-Anosov monodromies. Thurston showed that a bundle over
-S1 with pseudo-Anosov monodromy is hyperbolic [55]. More conc retely, Gu´ eritaud showed
-how to construct the hyperbolic metric from a positive word i n L and R [31]. (See Sections
-2.2 and 2.3 above for a review of the connection between the mo nodromy word and the
-canonical ideal triangulation of Mw.)
-The braids with normal form (2) correspond to reducible mono dromies of the form Lp. In
-this case, Mw is a graph manifold obtained by gluing two 3–punctured spher e bundles along
-a torus. The braids with normal forms (3–5) correspond to per iodic monodromies, hence Mw
-is Seifert ﬁbered. Thus all non-generic normal forms yield n on-hyperbolic manifolds with
-Gromov norm 0. □
+We begin with some notation. Let $\sigma_1$ and $\sigma_2$ be generators for $B_3$, the braid group on three strands, as in Figure [\[fig:3braid-generators\]](#fig:3braid-generators){reference-type="ref" reference="fig:3braid-generators"}. Thus a positive word in $\sigma_1$ and $\sigma_2^{-1}$ represents an alternating braid diagram. Let $C =
+(\sigma_1 \sigma_2)^3$ denote a full twist of all three strands; $C$ generates the center of $B_3$. For a braid $w \in B_3$, let $\hat{w}$ denote the link obtained as the closure of $w$. Note that $\hat{w}$ only depends on the conjugacy class of $w$. We denote the conjugacy relation by $\sim$.
+
+In the 1920s, Schreier developed a normal form for this braid group [@schreier]. In particular, he showed the following.
+
+::: theorem
+[]{#thm:schreier-normal label="thm:schreier-normal"} Let $w \in B_3$ be a braid on 3 strands. Then $w$ is conjugate to a braid in exactly one of the following forms:
+
+1.  $C^k \sigma_1^{p_1} \sigma_2^{-q_1} \cdots \sigma_1^{p_s}
+    \sigma_2^{-q_s}$, where $k \in {\mathbb{Z}}$ and $p_i$, $q_i$, and $s$ are all positive integers,
+
+2.  $C^k \sigma_1^p$, for $k, p \in {\mathbb{Z}}$
+
+3.  $C^k \sigma_1 \sigma_2$, for $k \in {\mathbb{Z}}$
+
+4.  $C^k \sigma_1 \sigma_2 \sigma_1$, for $k \in {\mathbb{Z}}$, or
+
+5.  $C^k \sigma_1 \sigma_2 \sigma_1 \sigma_2$, for $k \in {\mathbb{Z}}$.
+
+This form is unique up to cyclic permutation of the word following $C^k$. Braids in form $(1)$ above are called *generic*.
+:::
+
+Birman and Menasco have shown that nearly every oriented link obtained as the closure of a 3--braid can be represented by a unique conjugacy class in $B_3$, with an explicit list of exceptions [@birman-menasco:3braids]. Thus their theorem, combined with Schreier's normal form, gives a classification of closed oriented $3$--braids. Their paper also contains a modern exposition of Schreier's algorithm for placing braids in normal form.
+
+Let $K = \hat{w}$ be a closed 3--braid defined by the word $w$, and let $A$ be the braid axis of $K$. That is, $A$ is an unknot with the property that the solid torus $S^3 {\smallsetminus}A$ is swept out by meridian disks, with each disk intersecting $K$ in 3 points. Then $M_w
+:= S^3 {\smallsetminus}(K \cup A)$ is a 4--punctured sphere bundle over the circle. It is well--known, essentially due to work of Thurston [@thurston:hypII], that the Schreier normal form of $w$ predicts the geometry of $M_w$. We include a proof for completeness.
+
+::: theorem
+[]{#thm:hyperbolic-bundle label="thm:hyperbolic-bundle"} $M_w$ is hyperbolic if and only if $w$ is generic. Moreover, $M_w$ has nonzero Gromov norm if and only if $w$ is generic.
+:::
+
+::: proof
+*Proof.* The braid generators $\sigma_1$ and $\sigma_2^{-1}$ act on the 4--punctured sphere as the standard generators $L$ and $R$ of $SL_2({\mathbb{Z}})$: $$\sigma_1 \: \mapsto \: L :=
+\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix}, \qquad
+\sigma_2^{-1} \: \mapsto \: R :=
+\begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}, \qquad
+C \: \mapsto \: I =
+\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}.$$
+
+Thus generic 3--braids with normal form (1) correspond to positive words employing both letters $L$ and $R$, hence to pseudo-Anosov monodromies. Thurston showed that a bundle over $S^1$ with pseudo-Anosov monodromy is hyperbolic [@thurston:hypII]. More concretely, Guéritaud showed how to construct the hyperbolic metric from a positive word in $L$ and $R$ [@gf:two-bridge]. (See Sections [\[sec:ptorus\]](#sec:ptorus){reference-type="ref" reference="sec:ptorus"} and [\[sec:4ps\]](#sec:4ps){reference-type="ref" reference="sec:4ps"} above for a review of the connection between the monodromy word and the canonical ideal triangulation of $M_w$.)
+
+The braids with normal form (2) correspond to reducible monodromies of the form $L^p$. In this case, $M_w$ is a graph manifold obtained by gluing two 3--punctured sphere bundles along a torus. The braids with normal forms (3--5) correspond to periodic monodromies, hence $M_w$ is Seifert fibered. Thus all non-generic normal forms yield non-hyperbolic manifolds with Gromov norm 0. ◻
+:::

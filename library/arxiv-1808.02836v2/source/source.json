@@ -1,0 +1,27 @@
+{
+ "url": "https://arxiv.org/e-print/1808.02836v2",
+ "content_type": "application/gzip",
+ "sha256": "4442db5a7f520d090fc3c6a193024c27aa48a307080ab8eef08195e813f24464",
+ "bytes": 562327,
+ "fetched": "2026-10-10T15:13:32+00:00",
+ "files": [
+  {
+   "path": "files/00_main.bbl",
+   "role": "bbl",
+   "sha256": "22690a5c67145413edb3f8b16b1ec7891caf5a58c2405d80e44c7aad5ac065c3",
+   "bytes": 7810
+  },
+  {
+   "path": "files/00_main.tex",
+   "role": "tex",
+   "sha256": "48b40d72bdae2261031f830d3685a1f6310b930b6c001b18637c476a57897832",
+   "bytes": 127887
+  },
+  {
+   "path": "files/gtart.cls",
+   "role": "cls",
+   "sha256": "6a345f48af18361de1d77187837acfa0d7cd49ffdbe4474b72aff1e2356f1bb7",
+   "bytes": 9422
+  }
+ ]
+}

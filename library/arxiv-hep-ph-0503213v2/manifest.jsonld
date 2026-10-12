@@ -1,29 +1,42 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-0503213v2/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0503213v2/manifest.jsonld",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "A topological model of composite preons",
   "contains": [
+    "library/arxiv-hep-ph-0503213v2/sections/sec-front-matter",
     "library/arxiv-hep-ph-0503213v2/sections/sec-000",
     "library/arxiv-hep-ph-0503213v2/sections/sec-001",
     "library/arxiv-hep-ph-0503213v2/sections/sec-002",
     "library/arxiv-hep-ph-0503213v2/sections/sec-003",
-    "library/arxiv-hep-ph-0503213v2/sections/sec-004",
-    "library/arxiv-hep-ph-0503213v2/sections/sec-005",
-    "library/arxiv-hep-ph-0503213v2/sections/sec-006",
-    "library/arxiv-hep-ph-0503213v2/sections/sec-007",
-    "library/arxiv-hep-ph-0503213v2/sections/sec-008",
-    "library/arxiv-hep-ph-0503213v2/sections/sec-009",
-    "library/arxiv-hep-ph-0503213v2/sections/sec-010",
-    "library/arxiv-hep-ph-0503213v2/sections/sec-011",
-    "library/arxiv-hep-ph-0503213v2/sections/sec-012",
-    "library/arxiv-hep-ph-0503213v2/sections/sec-013"
+    "library/arxiv-hep-ph-0503213v2/sections/sec-004"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-ph/0503213&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-ph-0503213v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0503213v2.pdf",
     "source_sha256": "637a9e53b9b307764b6768995994562f83dfd41ca25d2767671dfc4223558845",
     "pages": 6,

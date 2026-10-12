@@ -8,36 +8,22 @@ pages: 17-18
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
 doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
+text_source: latex
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 0.957
 ---
-There is no so(11, 3) invariant pairing on the space of semi-spinors S+. This is because the
-matrices appearing in (57) have diﬀerent symmetry properties. Th e ﬁrst two terms are anti-
-symmetric (in appropriate sense)
-(ωijEiEj)T =ωijEjEi = −ωijEiEj, (58)
-and, using ( ˜Ei)Tτ = −τ ˜Ei
-(˜ωij ˜Ei ˜Ej)Tτ =τ ˜ωij ˜Ej ˜Ei = −τ ˜ωij ˜Ei ˜Ej. (59)
-The last term is, however, symmetric
-(aijEi ⊗ ˜Ej)T (I ⊗τ ) = ( I ⊗τ )aijEi ⊗ ˜Ej. (60)
-Thus, if we build a paring on O⊗ ˜O using the octonion pairings we have on each of these spaces,
-it will be invariant under so(7), so(4, 3), but not under so(11, 3).
-17
-Instead, there exists an invariant pairing between the spaces of d iﬀerent types of semi-
-spinors S±. The space S− can also be identiﬁed with O ⊗ ˜O. For the expression (1) for the
-Γ-matrices it is easy to see that the action of the Lie algebra on S− is given by
-X ′
-so(11, 3) =
-∑
-i<j
-ωijEiEj ⊗ I + I ⊗
-∑
-i<j
-˜ωij ˜Ei ˜Ej −
-∑
-i,j
-aijEi ⊗ ˜Ej. (61)
-Note the diﬀerent sign in front of the last term as compared to (57) . If we denote elements of
-S+ = O ⊗ ˜O by Ψ, and those of S− = O ⊗ ˜O by Ψ ′ we have the following invariant pairing
-⟨ ⟨Ψ ′, Ψ ⟩ ⟩, (62)
-where the double angle brackets denote the composition of the pair ings on O and ˜O. The
-so(11, 3) invariance is the easily checked property
-⟨ ⟨X ′
-so(11, 3)Ψ ′, Ψ ⟩ ⟩+ ⟨ ⟨Ψ ′,X so(11, 3)Ψ ⟩ ⟩= 0. (63)
+There is no ${\mathfrak so}(11,3)$ invariant pairing on the space of semi-spinors $S_+$. This is because the matrices appearing in ([\[lie-11-3\]](#lie-11-3){reference-type="ref" reference="lie-11-3"}) have different symmetry properties. The first two terms are anti-symmetric (in appropriate sense) $$\begin{aligned}
+(\omega_{ij} E^i E^j)^T = \omega_{ij} E^j E^i = - \omega_{ij} E^i E^j, 
+\end{aligned}$$ and, using $(\tilde{E}^i)^T \tau = - \tau \tilde{E}^i$ $$\begin{aligned}
+(\tilde{\omega}_{ij} \tilde{E}^i \tilde{E}^j)^T \tau = \tau \tilde{\omega}_{ij} \tilde{E}^j \tilde{E}^i = - \tau \tilde{\omega}_{ij} \tilde{E}^i \tilde{E}^j .
+\end{aligned}$$ The last term is, however, symmetric $$\begin{aligned}
+(a_{ij} E^i \otimes \tilde{E}^j)^T ({\mathbb I}\otimes \tau) = ({\mathbb I}\otimes \tau) a_{ij} E^i \otimes \tilde{E}^j.
+\end{aligned}$$ Thus, if we build a paring on ${\mathbb O}\otimes\tilde{{\mathbb O}}$ using the octonion pairings we have on each of these spaces, it will be invariant under ${\mathfrak so}(7),{\mathfrak so}(4,3)$, but not under ${\mathfrak so}(11,3)$.
+
+Instead, there exists an invariant pairing between the spaces of different types of semi-spinors $S_\pm$. The space $S_-$ can also be identified with ${\mathbb O}\otimes \tilde{{\mathbb O}}$. For the expression ([\[Gammas\]](#Gammas){reference-type="ref" reference="Gammas"}) for the $\Gamma$-matrices it is easy to see that the action of the Lie algebra on $S_-$ is given by $$\begin{aligned}
+X'_{{\mathfrak so}(11,3)}= \sum_{i<j} \omega_{ij} E^i E^j \otimes {\mathbb I}+ {\mathbb I}\otimes \sum_{i<j} \tilde{\omega}_{ij} \tilde{E}^i \tilde{E}^j  - \sum_{i,j} a_{ij} E^i \otimes \tilde{E}^j.
+\end{aligned}$$ Note the different sign in front of the last term as compared to ([\[lie-11-3\]](#lie-11-3){reference-type="ref" reference="lie-11-3"}). If we denote elements of $S_+={\mathbb O}\otimes\tilde{{\mathbb O}}$ by $\Psi$, and those of $S_-={\mathbb O}\otimes \tilde{{\mathbb O}}$ by $\Psi'$ we have the following invariant pairing $$\begin{aligned}
+\langle\!\langle\Psi', \Psi\rangle\!\rangle,
+\end{aligned}$$ where the double angle brackets denote the composition of the pairings on ${\mathbb O}$ and $\tilde{{\mathbb O}}$. The ${\mathfrak so}(11,3)$ invariance is the easily checked property $$\begin{aligned}
+\langle\!\langle X'_{{\mathfrak so}(11,3)} \Psi', \Psi\rangle\!\rangle+ \langle\!\langle\Psi', X_{{\mathfrak so}(11,3)} \Psi\rangle\!\rangle=0.
+\end{aligned}$$

@@ -5,7 +5,11 @@
   "file": "1803.04009v2.pdf",
   "sha256": "8b34299b739cd2b0c5b91d5d0a684865020c3a5936671ef4ed089611a39645d0",
   "bytes": 1594639,
-  "pages": 59
+  "pages": 59,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
   "doi": null,
   "title": "Symmetry enhancement and closing of knots in 3d/3d correspondence",
   "authors_raw": "Dongmin Ganga and Kazuya Yonekurab",
-  "abstract": "We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary. After clarifying their construction from a viewpoint of compactiﬁcation of a 6dN = (2, 0) theory of A1-type on a 3-manifold, we propose a topological criterion forSU (2)/SO(3) ﬂavor symmetry enhancement for theu(1) symmetry in the theory associated to a torus boundary, which is expected from the 6d view- point. Base on the understanding of symmetry enhancement, we generalize the construction to closed 3-manifolds by identifying the gauge theory counterpart of Dehn ﬁlling operation. The generalized construction predicts inﬁnitely many 3d dualities from surgery calculus in knot theory. Moreover, by using the symmetry enhancement criterion, we show that theo- ries associated to all hyperboilc twist knots have surprisingSU (3) symmetry enhancement which is unexpected from the 6d viewpoint. arXiv:1803.04009v2 [hep-th] 22 Mar 2018",
+  "abstract": "We revisit Dimofte-Gaiotto-Gukov\u2019s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary. After clarifying their construction from a viewpoint of compacti\ufb01cation of a 6dN = (2, 0) theory of A1-type on a 3-manifold, we propose a topological criterion forSU (2)/SO(3) \ufb02avor symmetry enhancement for theu(1) symmetry in the theory associated to a torus boundary, which is expected from the 6d view- point. Base on the understanding of symmetry enhancement, we generalize the construction to closed 3-manifolds by identifying the gauge theory counterpart of Dehn \ufb01lling operation. The generalized construction predicts in\ufb01nitely many 3d dualities from surgery calculus in knot theory. Moreover, by using the symmetry enhancement criterion, we show that theo- ries associated to all hyperboilc twist knots have surprisingSU (3) symmetry enhancement which is unexpected from the 6d viewpoint. arXiv:1803.04009v2 [hep-th] 22 Mar 2018",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20180323002230Z",
@@ -227,6 +231,61 @@
   "likely_scanned": false,
   "toc_entries": 18,
   "sections": 6,
-  "chars_total": 129614
+  "chars_total": 129614,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "jhepexample.tex",
+   "tex_sections": 12,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction-and-summary",
+     "title": "Introduction and Summary",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.866,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-23-relation-between-the-two-constructions",
+     "title": "Relation between the two constructions",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.865,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-symmetry-enhancement",
+     "title": "Symmetry enhancement",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-42-small-hyperbolic-manifolds",
+     "title": "Small hyperbolic manifolds",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.569,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-b2-the-global-structure-of-the-symmetries-and-t",
+     "title": "B.2 The global structure of the symmetries and 't Hooft anomaly",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-b3-s-transformation-of-3d-scft",
+     "title": "B.3 S-transformation of 3d SCFT",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

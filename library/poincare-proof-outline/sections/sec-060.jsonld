@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/poincare-proof-outline/sections/sec-060",
   "@type": [
     "doco:Section"
   ],
-  "title": "Negated Euclidean axiom",
-  "pageStart": 143,
-  "pageEnd": 150,
+  "title": "Five segment axiom",
+  "pageStart": 140,
+  "pageEnd": 141,
   "contains": [
     "library/poincare-proof-outline/blocks/prose-sec-060"
   ],
-  "derivedFrom": "library/poincare-proof-outline/manifest",
-  "sourceDocument": "library/poincare-proof-outline/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,19 +1,35 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-lat-0003021v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Low-lying Eigenvalues of the QCD Dirac Operator at Finite Temperature",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-lat-0003021v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-lat-0003021v3",
   "contains": [
+    "library/arxiv-hep-lat-0003021v3/sections/sec-front-matter",
     "library/arxiv-hep-lat-0003021v3/sections/sec-000",
     "library/arxiv-hep-lat-0003021v3/sections/sec-001",
     "library/arxiv-hep-lat-0003021v3/sections/sec-002",
-    "library/arxiv-hep-lat-0003021v3/sections/sec-003"
+    "library/arxiv-hep-lat-0003021v3/sections/sec-003",
+    "library/arxiv-hep-lat-0003021v3/sections/sec-004"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-lat/0003021&metadataPrefix=arXiv), submitted 2000-05-19, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-lat-0003021v3",
+    "title_source": "slug",
     "source_file": "0003021v3.pdf",
     "source_sha256": "b35dfd9ab88b71d8f0439c1ee11b9747906d758e0f6783f8b9325dd0616ee809",
     "pages": 21,

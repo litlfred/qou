@@ -8,61 +8,34 @@ pages: 4-5
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 0.932
 ---
-quotient Hilb f ree
-1,n = ﬁHilb
-f ree
-1,n /B, where
-ﬁHilb
-f ree
-1,n ={(X,Y,v )∈ b× n×V| C⟨X,Y⟩v =V}
-is an open subset of the product n×b×V (n, b⊂ gln(V ) being the nilpotent radial and Borel subalgebra), the
-Borel subgroupB⊂ GLn acts on the ﬁrst two factors by conjugation and V is its fundamental representation.
-Denote a ﬂag V• = (V1⊂···⊂ Vn−1⊂ Vn = V )∈ Fl and denote a point in the cotangent bundle T ∗Fl
-as a pair ( Y,V •), where Y is a nilpotent matrix preserving the ﬂag: YV i⊂Vi−1.
-In order to avoid a quotient by a non-reductive group B we can deﬁne Hilb f ree
-1,n equivalently as a GIT
-GLn-quotient of the space of quadruples ( X,Y,V •,v )∈ g×T ∗Fl×V such that C⟨X,Y⟩v =V andXV •⊂V•.
-The fact that these deﬁnitions match follows from covering ﬁHilb1,n by aﬃne charts with free B-action, for
-details see proposition 13.1. The aﬃne cover also provides a ”hands o n” description of the algebraic structure
-of the quotient manifold.
-Let us denote by B∨ the trivial vector bundle over ﬁHilb
-f ree
-1,n with the ﬁber V , we use the same notation
-for its descent to the B-quotient. Respectively,B is the vector bundle dual to B∨.
-The two-dimensional torus Tsc = C∗× C∗ acts on Hilb f ree
-1,n by scaling X,Y : an element ( λ,µ )∈Tsc turns
-a pair of matrices (X,Y ) into (λ−2X,λ 2µ2Y ). We refer to the weights of this action as q-degree and t-degree.
-The torus Tsc acts on the space V by (λ,µ )·v =λv, that is the vectors of V have degree t. We use notation
-qktl for the shift of the Tsc-action:
-(λ,µ )(qktl·x) = λkµl(λ,µ )·x.
-4
-We denote by Dper
-Tsc (Hilbf ree
-1,n ) the derived category of two-periodic complexes on Hilb f ree
-1,n which are Tsc-
-equivariant. Let Brn denote a braid group with n strands and let wr( β) denote the writhe of a braid β
-deﬁned as the diﬀerence between the positive and negative crossin gs. Our main result is the construction of
-the object
-Sβ∈Dper
-Tsc (Hilbf ree
-1,n ),
-such that the hypercohomology of the complex
-Hk(β) := H(Sβ⊗∧ kB)
-deﬁnes an isotopy invariant of L(β). To simplify notations we assume Hk(... ) = 0 for k /∈{ 0, 1,...,n }.
-Theorem 1.1. For any β∈ Brn the triply graded space:
-H(β) :=⊕k∈ZHk(β),
-withHk(β) doubly graded deﬁned by
-Hk(β) := q−wr(β)+n· H(k−wr(β)+n−1)/2(β),
-is an isotopy invariant of the braid closure L(β).
-Let us also introduce a notation for the graded pieces of Hk:Hi,j,k⊂H k is the subspace of vectors that
-are of weight qitj. We show that our invariant categoriﬁes HOMFLY-PT polynomial.
-Theorem 1.2. The bi-graded Euler characteristic of Hk(β) is equal to the HOMFLY-PT polynomial of the
-link L(β):
-P ( L(β)) =
-∑
-i,j,k∈Z
-(−1)jqiak dimHi,j,k(β).
-The ﬁrst categoriﬁcation of HOMFLY-PT polynomial was discovered by Khovanov and Rozansky [27]
-and it is natural to expect that the homology theory from this pape r coincides with one from [27]. We do
-not have a proof for a match of these theories.
+We consider a 'non-commutative analog' of the nested Hilbert scheme defined as a quotient $\SymbolPrint{\Hilb_{1,n}^{free}}=\SymbolPrint{\widetilde{\Hilb}_{1,n}^{free}}/\SymbolPrint{B}$, where $$\widetilde{\Hilb}_{1,n}^{free} = \{
+ (X,Y,v)\in \frb\times\frn\times V\,|\,\CC\langle X,Y\rangle v=\SymbolPrint{V}
+ \}$$ is an open subset of the product $\frn\times\frb\times V$ ($\frn,\frb\subset\mathfrak{gl}_n(\SymbolPrint{V})$ being the nilpotent radial and Borel subalgebra), the Borel subgroup $B\subset\mathrm{GL}_n$ acts on the first two factors by conjugation and $V$ is its fundamental representation.
+
+Denote a flag $V_\bullet=(V_1\subset\cdots \subset V_{n-1}\subset V_n=V)\in \mathrm{Fl}$ and denote a point in the cotangent bundle $T^*\mathrm{Fl}$ as a pair $(Y,V_\bullet )$, where $Y$ is a nilpotent matrix preserving the flag: $Y V_i\subset V_{i-1}$.
+
+In order to avoid a quotient by a non-reductive group $B$ we can define $\Hilb^{free}_{1,n}$ equivalently as a GIT $\mathrm{GL}_n$-quotient of
+
+the space of quadruples $(X,Y,V_\bullet,v)\in \frg\times T^*\mathrm{Fl}\times V$ such that $\CC\langle X,Y\rangle v=V$ and $X V_\bullet\subset V_\bullet$. The fact that these definitions match follows from covering $\widetilde{\Hilb}_{1,n}$ by affine charts with free $B$-action, for details see proposition [\[prop: aff cover\]](#prop: aff cover){reference-type="ref" reference="prop: aff cover"}. The affine cover also provides a \"hands on\" description of the algebraic structure of the quotient manifold.
+
+Let us denote by $\SymbolPrint{\calB^\vee}$ the trivial vector bundle over $\widetilde{\Hilb}_{1,n}^{free}$ with the fiber $V$, we use the same notation for its descent to the $B$-quotient. Respectively, $\SymbolPrint{\calB}$ is the vector bundle dual to $\calB^\vee$.
+
+The two-dimensional torus $\SymbolPrint{\Tsc}=\CC^*\times\CC^*$ acts on $\Hilb_{1,n}^{free}$ by scaling $X,Y$: an element $(\lambda,\mu)\in T_{sc}$ turns a pair of matrices $(X,Y)$ into $(\lambda^{-2}X,\lambda^2 \mu^2Y)$. We refer to the weights of this action as $q$-degree and $t$-degree. The torus $T_{sc}$ acts on the space $V$ by $(\lambda,\mu)\cdot v=\lambda v$, that is the vectors of $V$ have degree $t$. We use notation $\SymbolPrint{  \mathsf{q}^k  \mathsf{t}^l}$ for the shift of the $T_{sc}$-action: $$(\lambda,\mu)(  \mathsf{q}^k  \mathsf{t}^l\cdot x)=\lambda^k\mu^l (\lambda,\mu)\cdot x.$$
+
+We denote by $\SymbolPrint{D^{per}_{T_{sc}}(\Hilb_{1,n}^{free})}$ the derived category of two-periodic complexes on $\Hilb_{1,n}^{free}$ which are $T_{sc}$-equivariant. Let $\Brgrn$ denote a braid group with $n$ strands and let $\SymbolPrint{\xwr(\beta)}$ denote the writhe of a braid $\beta$ defined as the difference between the positive and negative crossings. Our main result is the construction of the object $$\SymbolPrint{\bbS_\beta}\in D^{per}_{T_{sc}}(\Hilb_{1,n}^{free}),$$ such that the hypercohomology of the complex $$\SymbolPrint{\mathbb{H}^k(\beta)}:=\mathbb{H}(\bbS_\beta\otimes \wedge^k\calB)$$ defines an isotopy invariant of $L(\beta)$. To simplify notations we assume $\mathbb{H}^k(\dots)=0$ for $k\notin \{0,1,\dots,n\}$.
+
+::: theorem
+[]{#thm: intro main label="thm: intro main"} For any $\beta\in \Brgr_n$ the triply graded space: $$\SymbolPrint{\mathcal{H}(\beta)}:=\oplus_{k\in\mathbb{Z} }\SymbolPrint{\mathcal{H}^k(\beta)},$$ with $\mathcal{H}^k(\beta)$ doubly graded defined by $$\calH^k(\beta):=  \mathsf{q}^{-\xwr(\beta)+n}\cdot\mathbb{H}^{(k-\xwr(\beta)+n-1)/2}(\beta),$$ is an isotopy invariant of the braid closure $L(\beta)$.
+:::
+
+Let us also introduce a notation for the graded pieces of $\calH^k$: $\SymbolPrint{\calH^{i,j,k}}\subset \calH^k$ is the subspace of vectors that are of weight $q^it^j$. We show that our invariant categorifies HOMFLY-PT polynomial.
+
+::: theorem
+[]{#thm:HOMFLY label="thm:HOMFLY"} The bi-graded Euler characteristic of $\calH^k(\beta)$ is equal to the HOMFLY-PT polynomial of the link $L(\beta)$: $$P\bigl(L(\beta)\bigr) =\sum_{i,j,k\in\mathbb{Z} } (-1)^j q^i a^k\dim  \calH^{i,j,k}(\beta).$$
+:::
+
+The first categorification of HOMFLY-PT polynomial was discovered by Khovanov and Rozansky [@KhR] and it is natural to expect that the homology theory from this paper coincides with one from [@KhR]. We do not have a proof for a match of these theories.

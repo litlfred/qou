@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/19781611972443fm/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Front Matter | Algebraic and Geometric Ideas in the Theory of Discrete Optimization | Society for Industrial and Applied Mathematics",
+  "contains": [
+    "library/19781611972443fm/sections/sec-000",
+    "library/19781611972443fm/sections/sec-001",
+    "library/19781611972443fm/sections/sec-002",
+    "library/19781611972443fm/sections/sec-003",
+    "library/19781611972443fm/sections/sec-004",
+    "library/19781611972443fm/sections/sec-005",
+    "library/19781611972443fm/sections/sec-006",
+    "library/19781611972443fm/sections/sec-007",
+    "library/19781611972443fm/sections/sec-008",
+    "library/19781611972443fm/sections/sec-009",
+    "library/19781611972443fm/sections/sec-010",
+    "library/19781611972443fm/sections/sec-011",
+    "library/19781611972443fm/sections/sec-012",
+    "library/19781611972443fm/sections/sec-013",
+    "library/19781611972443fm/sections/sec-014",
+    "library/19781611972443fm/sections/sec-015",
+    "library/19781611972443fm/sections/sec-016",
+    "library/19781611972443fm/sections/sec-017",
+    "library/19781611972443fm/sections/sec-018",
+    "library/19781611972443fm/sections/sec-019",
+    "library/19781611972443fm/sections/sec-020",
+    "library/19781611972443fm/sections/sec-021",
+    "library/19781611972443fm/sections/sec-022",
+    "library/19781611972443fm/sections/sec-023",
+    "library/19781611972443fm/sections/sec-024",
+    "library/19781611972443fm/sections/sec-025",
+    "library/19781611972443fm/sections/sec-026",
+    "library/19781611972443fm/sections/sec-027",
+    "library/19781611972443fm/sections/sec-028",
+    "library/19781611972443fm/sections/sec-029"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "19781611972443fm",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "1.9781611972443.fm.pdf",
+    "source_sha256": "3f958da310c0deb5ee25a521e67da0aaba01817917100509382c6197df13fd7e",
+    "pages": 16,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

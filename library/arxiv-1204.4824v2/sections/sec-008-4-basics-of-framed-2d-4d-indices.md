@@ -8,10 +8,16 @@ pages: 19-19
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
 doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
+text_source: latex
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 1.0
 ---
-In this section we study the basic properties of the indices Ω
-′
-(L℘,ϑ,a ) counting framed 2d-
-4d BPS states. We will organize these indices into a natural generating function F (℘,ϑ )
-which is the main player in this paper.
-Throughout this section we assume (℘,ϑ ) is generic, in the sense explained in §3.3.
+\label{sec:F-basics}
+
+In this section we study the basic properties of the indices
+$\fro'(L_{\wp,\vartheta}, a)$ counting framed 2d-4d BPS states.  We will organize
+these indices into a natural generating function $F(\wp, \vartheta)$ which is
+the main player in this paper.
+
+Throughout this section we assume $(\wp,\vartheta)$ is generic, in the sense explained in
+\S\ref{sec:framed-bps}.

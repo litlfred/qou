@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1011.1343v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "carbon12.eps (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.1343v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1011.1343&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1011.1343v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1011.1343v1",
+    "content_type": "application/gzip",
+    "sha256": "7f85bedd7d1e9e0d1ea238deb892c0a2b9d032680d35125c39b9000ee79d1de2",
+    "bytes": 96497,
+    "fetched": "2026-10-10T15:03:47+00:00",
+    "files": [
+      {
+        "path": "source/files/gebugm.tex",
+        "role": "tex",
+        "sha256": "bfc7df2048fceffd397cf97834a5c470b7f86ea46ec2a30a6e2ccda552a2ec49",
+        "bytes": 57361
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

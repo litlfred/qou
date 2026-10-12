@@ -5,17 +5,17 @@ Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with substrate parameter $
 
 $$
   E(p, A) = 
-  \underbrace{\left(\frac{a_C}{A^{1/3}} + \frac{a_A}{A}\right)}_{\alpha(A)} p^2
-  - \underbrace{a_A}_{\gamma} p
+  \underbrace{\left(\frac{a_C}{A^{1/3}} + \frac{4a_A}{A}\right)}_{\alpha(A)} p^2
+  - \underbrace{4a_A}_{\gamma} p
   + \delta(A),
 $$
 
-where $a_C = (q - q^{-1}) \lambda_C$ is the Coulomb coefficient, $a_A$ is the Pauli asymmetry coefficient, and $\delta(A)$ collects terms independent of $p$.
+where $a_C = \lambda_C$ is the Coulomb coefficient and $a_A = a_{\mathrm{asym}}$ the Pauli asymmetry coefficient of [beta stability](#prop:beta-stability), the $p$-dependent part is that of $a_C\,p^2/A^{1/3} + a_A (A - 2p)^2/A$, and $\delta(A)$ collects terms independent of $p$.
 
 The continuous minimum is
 
 $$
-  p^*(A) =  \frac{\gamma}{2\alpha(A)} =  \frac{a_A A}{2(a_A + a_C A^{2/3})}.
+  p^*(A) =  \frac{\gamma}{2\alpha(A)} =  \frac{A}{2 + \dfrac{a_C}{2a_A} A^{2/3}}.
 $$
 
 Because $E$ is strictly convex in $p$, the exact integer minimiser $p_{\mathrm{stab}}(A)$ is one of the two nearest integers to the continuous minimum:

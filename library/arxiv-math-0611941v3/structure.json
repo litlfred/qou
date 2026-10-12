@@ -6,7 +6,11 @@
   "sha256": "bf6f2d55c7adee5154d88e2f923c5598f9cf7f0439d1eb0be1c51706d3be1426",
   "bytes": 247380,
   "pages": 16,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -191,6 +195,80 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 8,
-  "chars_total": 36834
+  "chars_total": 36834,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 9,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-kazhdanlusztig-theory-and-the-asymptotic-ring",
+     "title": "Kazhdan\u2013Lusztig theory and the asymptotic ring",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-irreducible-representations-of-w-and-h",
+     "title": "Irreducible representations of W and H",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-23-the-kazhdanlusztig-basis-of-h",
+     "title": "The Kazhdan\u2013Lusztig basis of H",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-25-representations-of-j",
+     "title": "Representations of J",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-3-a-cell-datum-for-h",
+     "title": "A cell datum for H",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-4-examples-and-applications-to-modular-represent",
+     "title": "Examples and applications to modular representations",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

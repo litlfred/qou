@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0808.2716v4/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0808.2716v4 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.2716v4/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0808.2716&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0808.2716v4",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0808.2716v4",
+    "content_type": "application/gzip",
+    "sha256": "f6d1f51f30d387f0697973570dd3ea35030b507b233a4e9a338fd3045a0ff803",
+    "bytes": 99609,
+    "fetched": "2026-10-10T15:01:14+00:00",
+    "files": [
+      {
+        "path": "source/files/farey-cusps.bbl",
+        "role": "bbl",
+        "sha256": "c8d387c501bac58a99f5ddfb8ecc5663557c378bbac450af4a3b2c1f6338c5d4",
+        "bytes": 10909
+      },
+      {
+        "path": "source/files/farey-cusps.tex",
+        "role": "tex",
+        "sha256": "19ea8c466e0a89d4a103a13178307435a7411f655498738fcdb18ff795ec17ef",
+        "bytes": 161694
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

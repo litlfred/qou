@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/poincare-proof-outline/blocks/prose-sec-023",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/poincare-proof-outline/blocks/prose-sec-023",
   "kind": "prose",
-  "title": "Existence and uniqueness of points with a given distance",
-  "pageStart": 54,
-  "pageEnd": 65,
-  "text": "../sections/sec-023-existence-and-uniqueness-of-points-with-a-given.md",
-  "derivedFrom": "library/poincare-proof-outline/manifest",
-  "sourceDocument": "library/poincare-proof-outline/manifest",
+  "title": "H-distance in the Poincaré model",
+  "pageStart": 44,
+  "pageEnd": 48,
+  "text": "../sections/sec-023-h-distance-in-the-poincaré-model.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
   "provenance": "ingested"
 }

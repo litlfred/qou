@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2505.00799v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quantum Modular Forms and Resurgence (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2505.00799v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2505.00799&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2505.00799v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2505.00799v2",
+    "content_type": "application/gzip",
+    "sha256": "3ebc951b4ff27523c42ae03fe41db9ba725d21630bbc362c1544deb75ee5aa9d",
+    "bytes": 26159,
+    "fetched": "2026-10-10T15:21:15+00:00",
+    "files": [
+      {
+        "path": "source/files/EM_LR_QMFs-and-Resurgence_Updated.bbl",
+        "role": "bbl",
+        "sha256": "6777b6ea492f02f45ed87a9589fb8b31e78ff116ebf3afe1c725b646b4efc7ec",
+        "bytes": 6060
+      },
+      {
+        "path": "source/files/EM_LR_QMFs-and-Resurgence_Updated.tex",
+        "role": "tex",
+        "sha256": "072321a15d79a4da86d4aa8de35540fd3c922378e9216821903fe0aa2daebdda",
+        "bytes": 86394
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

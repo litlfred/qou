@@ -1,43 +1,33 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-0103325v4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Quantum algebras in phenomenological description of particle properties",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0103325v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-ph-0103325v4",
   "contains": [
+    "library/arxiv-hep-ph-0103325v4/sections/sec-front-matter",
     "library/arxiv-hep-ph-0103325v4/sections/sec-000",
     "library/arxiv-hep-ph-0103325v4/sections/sec-001",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-002",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-003",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-004",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-005",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-006",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-007",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-008",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-009",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-010",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-011",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-012",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-013",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-014",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-015",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-016",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-017",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-018",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-019",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-020",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-021",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-022",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-023",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-024",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-025",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-026",
-    "library/arxiv-hep-ph-0103325v4/sections/sec-027"
+    "library/arxiv-hep-ph-0103325v4/sections/sec-002"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-ph/0103325&metadataPrefix=arXiv), submitted 2002-10-16, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-ph-0103325v4",
+    "title_source": "slug",
     "source_file": "0103325v4.pdf",
     "source_sha256": "38590174ab836fa16ad0017ff8c948276206d8afd52f4c1288012ee0748bb1fb",
     "pages": 8,

@@ -8,677 +8,182 @@ pages: 57-70
 source_pdf: 1105.0091v1.pdf
 source_sha256: 7d6f72e016b25027
 doc_brief: "E-mail: meliot@phare.normalesup.org — In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible"
+text_source: latex
+latex_prose_ratio: 0.806
+latex_coverage_ratio: 0.966
 ---
-measures
-In this last section, we return to the “algebraic” study of the probability
-measures Pn,ω, and we introduce new observables in O related to the rep-
-resentation theory of the Hecke algebras H (Sn), that are deformations of
-the symmetric group algebrasCSn. We then determine their asymptotic be-
-haviour under the probability measuresPn,ω, thereby proving aq-analog of
-Theorem 17. Finally, we study the systems of coherent measures coming from
-the Jones-Ocneanu traces of the Hecke algebras (cf. §7.2); they form a(q,t )-
-deformation of the system of Plancherel measures described on page 11, see
-§7.3.
-7.1 Hecke algebras of the symmetric groups
-Let us ﬁx a non-negative integern. We recall that the (generic)Iwahori-
-Hecke algebraof the symmetric groupSn is the C(q)-algebra H (Sn) gen-
-erated by elementsT1,T 2,...,T n−1, with presentation:
-
-
-
-∀i≤n− 1, (Ti−q)(Ti + 1) = 0 ;
-∀i≤n− 2, TiTi+1Ti =Ti+1TiTi+1 ;
-∀i,j, |j−i|≥ 2⇒TiTj =TjTi.
-Alinearbasisof H (Sn)consistsinthe Tσ =Ti1Ti2··· Ti𝓁(σ),where σ runsover
-Sn and σ = si1si2··· si𝓁(σ) is any reduced decomposition ofσ in elementary
-transpositions. Thus,H (Sn) is a quantization of the symmetric group algebra
-CSn. In fact, it has the same representation theory: it is a semisimpleC(q)-
-algebra,anditsirreduciblemodules Vλ(q)arelabelledbytheintegerpartitions
-of sizen and have the same dimensions as the irreducible representationsVλ
-58 Pierre-Loïc Méliot
-of Sn, and the same branching rules (see [Mat99], and [GP00] for more details
-on the Iwahori-Hecke algebras in the general setting of Coxeter groups).
-As in the case of the symmetric groupSn, the character theory ofH (Sn)
-can be encoded in the algebraSym of symmetric functions,cf. [Ram91]. A
-normalized trace on H (Sn) is a functionτ : H (Sn)→ C(q) that satisﬁes
-the two hypotheses:
-1. τ is tracial:∀a,b, τ (ab) = τ (ba).
-2. τ is normalized so thatτ (1) = 1.
-The condition of positivity is a little more subtle than in the case of the sym-
-metric group. First, for any value ofq∈ C, we denoteHq(Sn) = H (Sn)⊗C(q)
-C the specialized Hecke algebra obtained by sending the variableq to its value.
-This specialized Hecke algebra is a semisimple algebra isomorphic to CSn
-(whence with the same representation theory) as soon asq⁄= 0 and q is not
-a non-trivial root of unity; in particular, it is the case whenq∈ R∗
-+. Then,
-assuming q∈ R+∗, a positive normalized trace, or character onHq(Sn) is a
-normalized trace Hq(Sn)→ C such that (see [KV89]):
-3. For allσ1,...,σ r in Sn, (τ (TσiTσ−1
-j
-))1≤i,j≤r is hermitian and non-negative
-deﬁnite.
-As in the group case, any trace onH (Sn) is a C(q)-linear combination
-of the irreducible charactersζλ(q) of the modulesVλ(q) of H (Sn); we shall
-also denote byχλ(q) the normalized irreducible character ofVλ(q). A trace on
-Hq(Sn) withq∈ R∗
-+ is positive if and only if it is a positive linear combination
-of theζλ(q). Ifµ = (µ1,...,µ r) is a partition inYn, let us denote
-Tµ = (T1··· Tµ1−1)(Tµ1+1··· Tµ1+µ2−1)··· (Tµ1+···+µr−1+1··· Tµ1+···+µr−1).
-Then, any elementh∈ H (Sn) is conjugated modulo[H (Sn), H (Sn)] to a
-unique linear combination of elementsTµ,µ∈ Yn (cf. [GP00, §8.2] or [Ram91,
-§5]). So, a traceτ : H (Sn)→ C(q) is entirely determined by the valuesτ (Tµ),
-and the character theory ofH (Sn) is given by the character table
-(
-ζλ(q,µ ) = ζλ(q,Tµ)
-)
-λ,µ∈Yn
-.
-Now, using the notations introduced in §1.2, for any partitionµ, we set
-qµ(q,X ) = hµ(qX−X)
-(q− 1)𝓁(µ) ,
-where hµ = ∏𝓁(µ)
-i=1 sµi is the homogeneous symmetric function of type µ;
-qµ(q,X ) is an element of Sym⊗C C(q). A generalization of the Frobenius
-formula 1 reads as follows (see [Ram91, Theorem 4.14]):
-A central limit theorem for the characters ofS∞ and H (S∞) 59
-Proposition 27. For any partitionµ∈ Yn,
-qµ(q,X ) =
-∑
-λ∈Yn
-ζλ(q,µ )sλ(X).
-Then, using exactly the same arguments as in the case ofS∞, we get the
-q-analog of Thoma’s theorem 3:
-Theorem 28. Supposeq∈ R∗
-+. The set of extremal charactersX∗(Hq(S∞))
-can be identiﬁed (homeomorphically) with the Thoma simplexΩ, and the char-
-acter χω(q) corresponding to a pointω = (α,β )∈Ω writes as
-χω(q,Tµ) = qµ(q,A−B +γE ).
-The decomposition ofχω(q)|Hq(Sn) in irreducible characters is
-χω(q) =
-∑
-λ∈Yn
-Pn,ω[λ]χλ(q),
-where Pn,ω[λ] = (dim λ)sλ(A−B +γE ) exactly as before.
-This result provides “new” coherent systems of probability measures on
-Y =⨆
-n∈N Yn comingfromcharactersof Hq(S∞)insteadofcharactersof S∞.
-Moreover, letting the parameterq vary in R∗
-+, we will obtain one-parameter
-families of coherent systems. In the following, we will investigate the (asymp-
-totic) behaviour of certain families coming from the so-called Jones-Ocneanu
-traces of H (S∞). The theory developed in the previous paragraphs holds
-again; however, in the setting of the Hecke algebras, it seems more appriopri-
-ate to enounce the algebraic central limit theorem 17 forq-characters instead
-of characters. The end of this paragraph is devoted to this problem.
-Forλ and µ partitions, we introduce as in §3.1 the symbol
-Σµ(q,λ ) =
-{
-n(n− 1)... (n−|µ| + 1)χλ(q,µ⊔ 1n−|µ|) if n =|λ|≥| µ|,
-0 otherwise.
-At ﬁrst sight, it is not clear that the functionsΣµ(q) are observables of di-
-agrams in the algebraO. However, one can expand the symmetric functions
-qµ(q,X ) as combinations of power sumspµ(X), and therefore write theq-
-characters as linear combinations of characters, see [Ram91, Theorem 5.4] and
-[FM10, Proposition 10]:
-∀λ,µ, (q− 1)𝓁(µ)ζλ(q,Tµ) =
-∑
-|ν|=|µ|
-(qν− 1)⟨hµ|pν⟩
-⟨pν|pν⟩ ζλ(ν)
-60 Pierre-Loïc Méliot
-Here, for a partitionν, qν− 1 is an abbreviation for∏𝓁(ν)
-i=1 qνi− 1. From this,
-one deduces that theΣµ(q) are indeed observables of diagrams, and that they
-are related to theΣµ by the following relations (notice that the change of basis
-is triangular):
-(q− 1)𝓁(µ)Σµ(q) =
-∑
-|ν|=|µ|
-(qν− 1)⟨hµ|pν⟩
-⟨pν|pν⟩ Σν;
-(qµ− 1)Σµ =
-∑
-|ν|=|µ|
-(q− 1)𝓁(ν)⟨pµ|mν⟩ Σν(q).
-Let us ﬁx a parameterω∈Ω. Theorem 17 ensures that the variables
-∆n,ω(µ) =√n
-(Σµ(λ)
-n|µ| −pµ(ω)
-)
-with λ∼ Pn,ω converge jointly to a gaussian vector; since theΣµ(q)’s are
-linear combinations of theΣµ’s, the same result holds for the variables
-∆n,ω(q,µ ) =√n
-(Σµ(q,λ )
-n|µ| −qµ(q,ω )
-)
-.
-We denote by∆∞,ω(q,µ ) the limiting gaussian variables; their covariances
-k(∆∞,ω(q,µ (1)),∆∞,ω(q,µ (2))) are equal by bilinearity to
-∑
-|ν(i)|=|µ(i)|
-Cµ(1),µ(2),ν(1),ν(2) (q) k(∆∞,ω(ν(1)),∆∞,ω(ν(2)))
-=
-∑
-|ν(i)|=|µ(i)|
-a∈ν(1),b∈ν(2)
-ab Cµ(1),µ(2),ν(1),ν(2) (q)
-( pa+b−1(ω)
-pa(ω)pb(ω)− 1
-)
-,
-where
-Cµ(1),µ(2),ν(1),ν(2) (q) = (qν(1)⊔ν(2)
-− 1)
-(q− 1)𝓁(µ(1))+𝓁(µ(2))
-⟨
-hµ(1)
-⏐⏐pν(1)
-⟩⟨
-hµ(2)
-⏐⏐pν(2)
-⟩
-zν(1)zν(2)
-.
-Theorem 29. As n goes to inﬁnity, ifλ∼ Pn,ω, then the variables
-√n
-(
-χλ(q,µ )−χω(q,ω )
-)
-converge jointly to a gaussian vector, whose covariance matrix is given by the
-formula above.
-In particular, whenµ(1) =l andµ(2) =m are partitions of length1, the scalar
-products
-⟨
-hµ(i)
-⏐⏐pν(i)
-⟩
-are all equal to 1 by Frobenius formula 1, and thus,
-k(∆∞,ω(q,l ),∆∞,ω(q,m )) is equal to
-1
-(q− 1)2
-∑
-ν(1)∈Yl
-ν(2)∈Ym
-pν(1)⊔ν(2) (qω−ω)
-zν(1)zν(2)
-
-
-∑
-a∈ν(1)
-b∈ν(2)
-ab
-( pa+b−1(ω)
-pa(ω)pb(ω)− 1
-)
-
-.
-A central limit theorem for the characters ofS∞ and H (S∞) 61
-In the general case, it does not seem possible to simplify this formula; however,
-we obtained a simpliﬁcation in the case of theq-Plancherel measures, see
-[FM10] and [Mél10].
-7.2 Jones-Ocneanu traces and their weights
-AMarkov trace(also-calledJones-Ocneanu trace, [Jon87]) onH (Sn)
-is a normalized trace that satisﬁes the additional condition:
-∀k∈ [ [1,n− 1] ], ∀a∈ H (Sk),τ (Tka) = τ (Tk)τ (a) = zτ (a).
-If z is a ﬁxed parameter, there is a unique corresponding Markov trace on
-H (Sn), characterized by the valuesτz(Tµ) = z|µ|−𝓁(µ).
-Proposition 30. LetXq,z = [1−q+z]−[z]
-1−[q] denote the formal alphabet that cor-
-responds to the following specialization ofSym:
-∀k≥ 1, pk(Xq,z ) = (1−q +z)k−zk
-1−qk .
-The decomposition ofτz in irreducibleq-characters is
-τz =
-∑
-λ∈Yn
-sλ(Xq,z )ζλ(q).
-Proof. The result is due to Ocneanu (unpublished notes) and Wenzl (see
-[Wen88]); we give here a very short proof. If Yq,z = qXq,z− Xq,z, then
-pk(Yq,z ) = (qk− 1)pk(Xq,z ) = zk− (1−q +z)k. Consequently,
-P (u) =
-∞∑
-k=1
-pk(Yq,z )
-k uk = log
-( 1−u(1−q +z)
-1−uz
-)
-H(u) =
-∞∑
-k=0
-hk(Yq,z )uk = expP (u) = 1−u(1−q +z)
-1−uz .
-Hence, hk(Yq,z ) = (q− 1)zk−1, and
-qµ(q,Xq,z ) = hµ(Yq,z )
-(q− 1)𝓁(µ) =
-𝓁(µ)∏
-i=1
-zµi−1 =z|µ|−𝓁(µ) =τz(Tµ).
-Now, because of theq-Frobenius formula 27, for any partitionµ,
-τz(Tµ) = qµ(q,Xq,z ) =
-∑
-λ∈Yn
-sλ(Xq,z )ζλ(q,Tµ).
-Since a trace is characterized by its values on theTµ’s, the result follows
-immediately.
-62 Pierre-Loïc Méliot
-There is a hook length formula for the specializationssλ(Xq,z ) of the Schur
-functions, see for instance [Mac95, §1.3]:
-sλ(Xq,z ) = qn(λ) ∏
-@∈λ
-(1−q) +z(1−qc(@))
-1−qh(@)
-wheren(λ) =∑𝓁(λ)
-i=1 (i− 1)λi, and if@ = (i,j ) is a box of the Young diagram of
-λ,c(@) = i−j is thecontent of @. Now, let us make the change of variables:
-z =−(1−q)(1−t).
-Then, assuming thatq∈ R∗
-+ and t∈ [0, 1], one sees thatsλ(Xq,z ) is positive,
-because
-sλ(Xq,z ) = qb(λ)
-∏
-@∈λ{h(@)}q
-(∏
-@∈λ
-t + (1−t)qc(@)
-)
-with{i}q = 1−qi
-1−q for any positive integeri. Another way to see thatsλ(Xq,z )
-is positive in this situation is to notice that
-Xq,z =A−B,
-whereA andB are the alphabets associated to the point of the Thoma simplex
-ωq,t = (αq,t,βq,t), with
-αq,t = [t(1−q)]
-1− [q] = (t(1−q),t (1−q)q,t (1−q)q2,... );
-βq,t = [(1−t)(1−q)]
-1− [q] = ((1−t)(1−q), (1−t)(1−q)q, (1−t)(1−q)q2,... ).
-In particular:
-Proposition 31. If z =−(1−q)(1−t) with t∈ [0, 1] and q∈ R∗
-+, then the
-Markov traceτz is an irreducible (positive) character ofHq(S∞), and it is
-equal toχωq,t with ωq,t deﬁned by the formulas above.
-Example. Suppose thatt = 1. Then,z = 0 and τ = τ0 is theregular trace
-of Hq(S∞):
-∀ω∈ S∞, τ (Tω) =
-{
-1 if ω = 1,
-0 otherwise.
-Although the deﬁnition of the regular does not seem to depend on the value
-of q, the weights ofτ in its decomposition in irreducible characters vary with
-q:
-∀n, τ|Hq(Sn) = (1−q)n ∑
-λ∈Yn
-(dimλ)sλ(1,q,q 2,... )χλ(q).
-The probability measures corresponding to this decomposition have been stud-
-ied extensively in [FM10]. In the following, we generalize the results of this
-paper by using the general theorems proved in Sections 4 and 5.
-A central limit theorem for the characters ofS∞ and H (S∞) 63
-7.3 (q,t )-Plancherel measures and their asymptotics
-Forq∈ R∗
-+ and t∈ [0, 1], we call(q,t)-Plancherel measureof sizen
-the probability measure Pn,q,t on Yn corresponding to the decomposition of
-the Markov traceτz withz =−(1−q)(1−t). In other words,Pn,q,t = Pn,ωq,t,
-and
-Pn,q,t[λ] = (1−q)n (dimλ) sλ
-( [t]− [t− 1]
-1− [q]
-)
-.
-The (q,t )-Plancherel measures have the following symmetry:
-Pn,q,t[λ] = Pn,q−1,t[λ′].
-Hence, we shall always suppose thatq∈ ]0, 1[, the other case following by a
-symmetry.
-Remark. Whenq goes to1, one recovers the usual Plancherel measures deﬁned
-on page 11
-Pn,q=1,t[λ] = Pn[λ] = (dimλ)2
-n! .
-Hence, the(q,t )-Plancherel measures form a two-parameter deformation of the
-coherent system of Plancherel measures. They are also a generalization of the
-q-Plancherel measures deﬁned in [Ker92,Str08] and studied in [FM10].
-Using the results of §2, one can interpret the(q,t )-Plancherel measures as
-push-forwards of probability measures on the symmetric groups. Let us detail
-a little bit these measures Qn,q,t such that Λ⋆Qn,q,t = Pn,q,t. We could of
-course takeQn,q,t[σ] = Qn,ωq,t [σ], but it will be a little bit easier13 to describe
-the probability measures
-Qn,q,t[σ] = Qn,ωq,t [σ−1] = Fσ(ωq,t) = Lc(σ)(ωq,t).
-Taking σ−1 instead of σ does not change the fact that Λ⋆Qn,q,t = Pn,q,t,
-becausethebilateralKazhdan-Lusztigcells {σ∈ Sn| Λ(σ) = λ}arestabilized
-by the inversionσ↦→ σ−1. Now, for any compositionc∈ Cn, if comaj(c) =∑
-d∈D(c)n−d, then
-∀q∈ ]0, 1[, Lc(1,q,q 2,... ) = qcomaj(c)
-(1−q)(1−q2)··· (1−q)n,
-13 In return, we lose the direct interpretation of the random permutations as generalized
-shuﬄes.
-64 Pierre-Loïc Méliot
-see [Sta91, §7.19]. Using the deﬁnition of the specializationLc(ω) (cf. Para-
-graph 2.2), one sees that:
-Qn,q,t[σ] = Lc(σ)(ωq,t) =
-n∑
-i=0
-Lc(σ)[ [1,i] ](αq,t)Lc(σ)[ [i+1,n] ]
-(βq,t)
-=
-n∑
-i=0
-Lc(σ)[ [1,i] ](αq,t)Lc(σω0)[ [1,n−i] ](βq,t)
-=
-n∑
-i=0
-ti (1−t)n−i
-{i!}q{n−i!}q
-qcomaj(c(σ)[ [1,i] ])+comaj(c(σω0)[ [1,n−i] ]).
-For w word of sizen, we set Qn,q[w] = qcomaj(w)
-{n!}q
-; for anyq∈ R∗
-+, Qn,q is a
-probability measure onSn.
-Proposition 32. As t varies in [0, 1], the measuresQn,q,t provide an inter-
-polation betweenQn,q[σ] and Qn,q[σω0]:
-Qn,q,t[σ] =
-n∑
-i=0
-ti (1−t)n−i Qi,q[σ[ [1,i] ]] Qn−i,q[(σω0)[ [1,n−i] ]]
-whereσ[ [1,i] ]denotes the wordσ(1)σ(2)··· σ(i), and similarly for(σω0)[ [1,n−i] ].
-It wasa priori a non trivial fact that these interpolations correspondvia
-RSKtotheweightsoftheMarkovtraces τ−(1−q)(1−t).Ontheotherhand,letus
-notice that the partsQi,q[σ[ [1,i] ]] Qn−i,q[(σω0)[ [1,n−i] ]] of Qn,q,t[σ] have a simple
-geometric interpretation. Ifσ is a permutation, let us draw its corresponding
-ribbon, see §2.1. We draw a line after thei-th box, and we deﬁnemi(σ) as the
-sum of the following quantities:
-–for each box ∨ before the line and with another box just under, the
-distance between∨ and the line in the ribbon;
-–for each box < after the line and with another box just at the left, the
-distance between < and the line in the ribbon.
-Then, the i-th weight is simply qmi (σ)
-{i!}q{n−i!}q
-; for instance, ifi = 5 and σ =
-64182357, thenmi(σ) = (4 6 + 34 + 18) + (03 + 15 + 27) = 11.
-6
-4
-1 8
-2 3 5 7 =
-∨
-∨
-∨
-< < < .
-A central limit theorem for the characters ofS∞ and H (S∞) 65
-Now, let us describe the asymptotics of the (q,t )-Plancherel measures.
-First, we give the algebraic central limit theorem, noticing that
-pk(ωq,t) = (tk− (t− 1)k)(1−q)k
-1−qk
-for anyk≥ 1.
-Proposition 33.Ifλ∼ Pn,q,t, then asn goes to inﬁnity, the random variables
-√n
-(
-χλ(q,Tl)− (t− 1)l−1(1−q)l−1)
-converge jointly to a gaussian vector(∆∞,q,t(q,l ))l≥1 with covariances
-(1−q)−l−m+2k(∆∞,q,t(q,l ),∆∞,q,t(q,m ))
-=
-∑
-ν(1)∈Yl
-ν(2)∈Ym
-a∈ν(1),b∈ν(2)
-(t− 1)ν−tν
-zν(1)zν(2)
-( 1−ua+b−1
-1−qa+b−1
-1−u
-1−q
-1−qa
-1−ua
-1−qb
-1−ub− 1
-)
-whereu = t−1
-t , ν =ν(1)⊔ν(2), and (t− 1)ν−tν =∏𝓁(ν)
-i=1 ((t− 1)νi−tνi ).
-Remark. Whent = 1, this formula can be simpliﬁed by using a Möbius inver-
-sion formula, and it becomes
-k(∆∞,q,t(q,l ),∆∞,q,t(q,m )) = (q−q2)l+m−3 (1−q2){l− 1}q{m− 1}q
-{l +m− 1}q{l +m− 2}q{l +m− 3}q
-see [Mél10].
-Now, let us give the geometric version of the central limit theorem. We
-have drawn below a random Young diagram taken according to the(q,t )-
-Plancherel measure of parametersn = 300, q = 1
-2 and t = 2
-3. Withq = 1
-2,
-{
-λ =( 1 0 1↪ 49↪ 30↪ 14↪ 8↪... )
-λ′ =( 5 4↪ 30↪ 17↪ 11↪ 8↪... )
-10
-Fig. 8 A random Young diagram under a(q,t )-Plancherel measure.
-66 Pierre-Loïc Méliot
-it is not hard to see that the ﬁrst rows and the ﬁrst columns seem to follow
-geometric progressions of reason 1
-2. Moreover, witht = 2
-3, the ratio between
-the ﬁrst row and the ﬁrst column seems to be close tot
-1−t = 2. This is in
-adequation with Theorems 15 and 19 that state the following (notice that we
-are in the case of inequal coordinates):
-Proposition 34. If λ∼ Pn,q,t, then
-λi =nt (1−q)qi−1 +n1/2Xi +o(n1/2);
-λ′
-j =n (1−t)(1−q)qj−1 +n1/2Yj +o(n1/2),
-where (Xi,Yj)i≥1,j≥1 is a gaussian vector with covariances
-k(Xi,Xj) = δi,jt(1−q)qi−1−t2(1−q)2qi+j−2;
-k(Yi,Yj) = δi,j (1−t)(1−q)qi−1− (1−t)2(1−q)2qi+j−2;
-k(Xi,Yj) =−t(1−t)(1−q)2qi+j−2.
-In particular, fort = 1, we recover Theorems 1 and 2 of [FM10]. Proposition 34
-also gives the asymptotic behaviour of the length of a longest increasing or de-
-creasing subword in a random permutation taken according to the probability
-measure described in Proposition 32.
-Conclusion
+[]{#qtplancherel label="qtplancherel"} In this last section, we return to the "algebraic" study of the probability measures $\mathbb{P}_{n,\omega}$, and we introduce new observables in $\mathscr{O}$ related to the representation theory of the Hecke algebras $\mathscr{H}(\mathfrak{S}_{n})$, that are deformations of the symmetric group algebras $\mathbb{C}\mathfrak{S}_{n}$. We then determine their asymptotic behaviour under the probability measures $\mathbb{P}_{n,\omega}$, thereby proving a $q$-analog of Theorem [\[mainalg\]](#mainalg){reference-type="ref" reference="mainalg"}. Finally, we study the systems of coherent measures coming from the Jones-Ocneanu traces of the Hecke algebras (*cf.* §[0.2](#jonesocneanu){reference-type="ref" reference="jonesocneanu"}); they form a $(q,t)$-deformation of the system of Plancherel measures described on page , see §[0.3](#qtasymptotic){reference-type="ref" reference="qtasymptotic"}.
+
+## Hecke algebras of the symmetric groups
+
+Let us fix a non-negative integer $n$. We recall that the (generic) **Iwahori-Hecke algebra** of the symmetric group $\mathfrak{S}_{n}$ is the $\mathbb{C}(q)$-algebra $\mathscr{H}(\mathfrak{S}_{n})$ generated by elements $T_{1},T_{2},\ldots,T_{n-1}$, with presentation: $$\begin{cases}
+&\forall i \leq n-1,\,\,\,(T_{i}-q)(T_{i}+1)=0\,;\\
+&\forall i \leq n-2,\,\,\,T_{i}T_{i+1}T_{i}=T_{i+1}T_{i}T_{i+1}\,;\\
+&\forall i,j,\,\,\,|j-i| \geq 2 \Rightarrow T_{i}T_{j}=T_{j}T_{i}.
+\end{cases}$$ A linear basis of $\mathscr{H}(\mathfrak{S}_{n})$ consists in the $T_{\sigma}=T_{i_{1}}T_{i_{2}}\cdots T_{i_{\ell(\sigma)}}$, where $\sigma$ runs over $\mathfrak{S}_{n}$ and $\sigma=s_{i_{1}}s_{i_{2}}\cdots s_{i_{\ell(\sigma)}}$ is any reduced decomposition of $\sigma$ in elementary transpositions. Thus, $\mathscr{H}(\mathfrak{S}_{n})$ is a quantization of the symmetric group algebra $\mathbb{C}\mathfrak{S}_{n}$. In fact, it has the same representation theory: it is a semisimple $\mathbb{C}(q)$-algebra, and its irreducible modules $V^{\lambda}(q)$ are labelled by the integer partitions of size $n$ and have the same dimensions as the irreducible representations $V^{\lambda}$ of $\mathfrak{S}_{n}$, and the same branching rules (see [@Mat99], and [@GP00] for more details on the Iwahori-Hecke algebras in the general setting of Coxeter groups).
+
+As in the case of the symmetric group $\mathfrak{S}_{n}$, the character theory of $\mathscr{H}(\mathfrak{S}_{n})$ can be encoded in the algebra $\mathbf{Sym}$ of symmetric functions, *cf.* [@Ram91]. A normalized trace on $\mathscr{H}(\mathfrak{S}_{n})$ is a function $\tau:\mathscr{H}(\mathfrak{S}_{n}) \to \mathbb{C}(q)$ that satisfies the two hypotheses:
+
+1.  $\tau$ is tracial: $\forall a,b,\,\,\tau(ab)=\tau(ba)$.
+
+2.  $\tau$ is normalized so that $\tau(1)=1$.
+
+The condition of positivity is a little more subtle than in the case of the symmetric group. First, for any value of $q \in \mathbb{C}$, we denote $\mathscr{H}_{q}(\mathfrak{S}_{n}) = \mathscr{H}(\mathfrak{S}_{n})\otimes_{\mathbb{C}(q)}\mathbb{C}$ the specialized Hecke algebra obtained by sending the variable $q$ to its value. This specialized Hecke algebra is a semisimple algebra isomorphic to $\mathbb{C}\mathfrak{S}_{n}$ (whence with the same representation theory) as soon as $q\neq0$ and $q$ is not a non-trivial root of unity; in particular, it is the case when $q \in \mathbb{R}_{+}^{*}$. Then, assuming $q \in \mathbb{R}_{+^{*}}$, a positive normalized trace, or character on $\mathscr{H}_{q}(\mathfrak{S}_{n})$ is a normalized trace $\mathscr{H}_{q}(\mathfrak{S}_{n})\to \mathbb{C}$ such that (see [@KV89]):
+
+3.  For all $\sigma_{1},\ldots,\sigma_{r}$ in $\mathfrak{S}_{n}$, $(\tau(T_{\sigma_{i}}T_{\sigma_{j}^{-1}}))_{1\leq i,j\leq r}$ is hermitian and non-negative definite.
+
+As in the group case, any trace on $\mathscr{H}(\mathfrak{S}_{n})$ is a $\mathbb{C}(q)$-linear combination of the irreducible characters $\zeta^{\lambda}(q)$ of the modules $V^{\lambda}(q)$ of $\mathscr{H}(\mathfrak{S}_{n})$; we shall also denote by $\chi^{\lambda}(q)$ the normalized irreducible character of $V^{\lambda}(q)$. A trace on $\mathscr{H}_{q}(\mathfrak{S}_{n})$ with $q \in \mathbb{R}_{+}^{*}$ is positive if and only if it is a positive linear combination of the $\zeta^{\lambda}(q)$. If $\mu=(\mu_{1},\ldots,\mu_{r})$ is a partition in $\mathfrak{Y}_{n}$, let us denote $$T_{\mu}=(T_{1}\cdots T_{\mu_{1}-1})(T_{\mu_{1}+1}\cdots T_{\mu_{1}+\mu_{2}-1})\cdots(T_{\mu_{1}+\cdots+\mu_{r-1}+1}\cdots T_{\mu_{1}+\cdots+\mu_{r}-1}).$$ Then, any element $h \in \mathscr{H}(\mathfrak{S}_{n})$ is conjugated modulo $[\mathscr{H}(\mathfrak{S}_{n}),\mathscr{H}(\mathfrak{S}_{n})]$ to a unique linear combination of elements $T_{\mu}$, $\mu \in \mathfrak{Y}_{n}$ (*cf.* [@GP00 §8.2] or [@Ram91 §5]). So, a trace $\tau : \mathscr{H}(\mathfrak{S}_{n}) \to \mathbb{C}(q)$ is entirely determined by the values $\tau(T_{\mu})$, and the character theory of $\mathscr{H}(\mathfrak{S}_{n})$ is given by the character table $$\left(\zeta^{\lambda}(q,\mu)=\zeta^{\lambda}(q,T_{\mu})\right)_{\lambda,\mu \in \mathfrak{Y}_{n}}.$$ Now, using the notations introduced in §[\[symfunc\]](#symfunc){reference-type="ref" reference="symfunc"}, for any partition $\mu$, we set $$q_{\mu}(q,X)=\frac{h_{\mu}(qX-X)}{(q-1)^{\ell(\mu)}},$$ where $h_{\mu}=\prod_{i=1}^{\ell(\mu)}s_{\mu_{i}}$ is the homogeneous symmetric function of type $\mu$; $q_{\mu}(q,X)$ is an element of $\mathbf{Sym}\otimes_{\mathbb{C}}\mathbb{C}(q)$. A generalization of the Frobenius formula [\[frobenius\]](#frobenius){reference-type="ref" reference="frobenius"} reads as follows (see [@Ram91 Theorem 4.14]):
+
+::: proposition
+[]{#qfrobenius label="qfrobenius"} For any partition $\mu \in \mathfrak{Y}_{n}$, $$q_{\mu}(q,X)=\sum_{\lambda \in \mathfrak{Y}_{n}} \zeta^{\lambda}(q,\mu)\,s_{\lambda}(X) .$$
+:::
+
+Then, using exactly the same arguments as in the case of $\mathfrak{S}_{\infty}$, we get the $q$-analog of Thoma's theorem [\[thomatheorem\]](#thomatheorem){reference-type="ref" reference="thomatheorem"}:
+
+::: theorem
+Suppose $q\in \mathbb{R}_{+}^{*}$. The set of extremal characters $\mathcal{X}^{*}(\mathscr{H}_{q}(\mathfrak{S}_{\infty}))$ can be identified (homeomorphically) with the Thoma simplex $\Omega$, and the character $\chi^{\omega}(q)$ corresponding to a point $\omega=(\alpha,\beta) \in \Omega$ writes as $$\chi^{\omega}(q,T_\mu)=q_{\mu}(q,A-B+\gamma E).$$ The decomposition of ${\chi^{\omega}(q)}_{|\mathscr{H}_{q}(\mathfrak{S}_{n})}$ in irreducible characters is $$\chi^{\omega}(q)=\sum_{\lambda\in \mathfrak{Y}_{n}}\mathbb{P}_{n,\omega}[\lambda]\,\chi^{\lambda}(q),$$ where $\mathbb{P}_{n,\omega}[\lambda]=(\dim\lambda)\,s_{\lambda}(A-B+\gamma E)$ exactly as before.
+:::
+
+This result provides "new" coherent systems of probability measures on $\mathfrak{Y}=\bigsqcup_{n \in \mathbb{N}}\mathfrak{Y}_{n}$ coming from characters of $\mathscr{H}_{q}(\mathfrak{S}_{\infty})$ instead of characters of $\mathfrak{S}_{\infty}$. Moreover, letting the parameter $q$ vary in $\mathbb{R}_{+}^{*}$, we will obtain one-parameter families of coherent systems. In the following, we will investigate the (asymptotic) behaviour of certain families coming from the so-called Jones-Ocneanu traces of $\mathscr{H}(\mathfrak{S}_{\infty})$. The theory developed in the previous paragraphs holds again; however, in the setting of the Hecke algebras, it seems more appriopriate to enounce the algebraic central limit theorem [\[mainalg\]](#mainalg){reference-type="ref" reference="mainalg"} for $q$-characters instead of characters. The end of this paragraph is devoted to this problem.
+
+For $\lambda$ and $\mu$ partitions, we introduce as in §[\[polfunc\]](#polfunc){reference-type="ref" reference="polfunc"} the symbol $$\varSigma_{\mu}(q,\lambda)=\begin{cases}
+n(n-1)\ldots (n-|\mu|+1)\,\chi^{\lambda}(q,\mu \sqcup 1^{n-|\mu|}) &\text{if }n=|\lambda|\geq |\mu|,\\
+0&\text{otherwise}.
+\end{cases}$$ At first sight, it is not clear that the functions $\varSigma_{\mu}(q)$ are observables of diagrams in the algebra $\mathscr{O}$. However, one can expand the symmetric functions $q_{\mu}(q,X)$ as combinations of power sums $p_{\mu}(X)$, and therefore write the $q$-characters as linear combinations of characters, see [@Ram91 Theorem 5.4] and [@FM10 Proposition 10]: $$\forall \lambda,\mu,\,\,\,(q-1)^{\ell(\mu)}\,\zeta^{\lambda}(q,T_{\mu})=\sum_{|\nu|=|\mu|} (q^{\nu}-1)\,\frac{\left\langle h_{\mu}\vphantom{p_{\nu}}\,\right |\left.p_{\nu} \vphantom{h_{\mu}}\right\rangle}{\left\langle p_{\nu}\vphantom{p_{\nu}}\,\right |\left.p_{\nu} \vphantom{p_{\nu}}\right\rangle}\,\zeta^{\lambda}(\nu)$$ Here, for a partition $\nu$, $q^{\nu}-1$ is an abbreviation for $\prod_{i=1}^{\ell(\nu)}q^{\nu_{i}}-1$. From this, one deduces that the $\varSigma_{\mu}(q)$ are indeed observables of diagrams, and that they are related to the $\varSigma_{\mu}$ by the following relations (notice that the change of basis is triangular): $$\begin{aligned}
+(q-1)^{\ell(\mu)}\,\varSigma_{\mu}(q) &= \sum_{|\nu|=|\mu|} (q^{\nu}-1)\,\frac{\left\langle h_{\mu}\vphantom{p_{\nu}}\,\right |\left.p_{\nu} \vphantom{h_{\mu}}\right\rangle}{\left\langle p_{\nu}\vphantom{p_{\nu}}\,\right |\left.p_{\nu} \vphantom{p_{\nu}}\right\rangle}\,\varSigma_{\nu};\\
+(q^{\mu}-1)\,\varSigma_{\mu}&=\sum_{|\nu|=|\mu|} (q-1)^{\ell(\nu)}\,\left\langle p_{\mu}\vphantom{m_{\nu}}\,\right |\left.m_{\nu} \vphantom{p_{\mu}}\right\rangle\,\varSigma_{\nu}(q).
+\end{aligned}$$ Let us fix a parameter $\omega \in \Omega$. Theorem [\[mainalg\]](#mainalg){reference-type="ref" reference="mainalg"} ensures that the variables $$\Delta_{n,\omega}(\mu)=\sqrt{n}\left(\frac{\varSigma_{\mu}(\lambda)}{n^{|\mu|}}-p_{\mu}(\omega)\right)$$ with $\lambda \sim \mathbb{P}_{n,\omega}$ converge jointly to a gaussian vector; since the $\varSigma_{\mu}(q)$'s are linear combinations of the $\varSigma_{\mu}$'s, the same result holds for the variables $$\Delta_{n,\omega}(q,\mu)=\sqrt{n}\left(\frac{\varSigma_{\mu}(q,\lambda)}{n^{|\mu|}}-q_{\mu}(q,\omega)\right).$$ We denote by $\Delta_{\infty,\omega}(q,\mu)$ the limiting gaussian variables; their covariances $k(\Delta_{\infty,\omega}(q,\mu^{(1)}),\Delta_{\infty,\omega}(q,\mu^{(2)}))$ are equal by bilinearity to $$\begin{aligned}
+&\sum_{|\nu^{(i)}|=|\mu^{(i)}|} C_{\mu^{(1)},\mu^{(2)},\nu^{(1)},\nu^{(2)}}(q)\, \,k(\Delta_{\infty,\omega}(\nu^{(1)}),\Delta_{\infty,\omega}(\nu^{(2)}))\\
+=& \sum_{\substack{|\nu^{(i)}|=|\mu^{(i)}| \\ a \in \nu^{(1)}\,,\, b \in \nu^{(2)}}} ab\,\, C_{\mu^{(1)},\mu^{(2)},\nu^{(1)},\nu^{(2)}}(q) \,\,\left(\frac{p_{a+b-1}(\omega)}{p_{a}(\omega)\,p_{b}(\omega)}-1\right),
+ 
+\end{aligned}$$ where $$C_{\mu^{(1)},\mu^{(2)},\nu^{(1)},\nu^{(2)}}(q) =\frac{(q^{\nu^{(1)}\sqcup\nu^{(2)}}-1)}{(q-1)^{\ell(\mu^{(1)})+\ell(\mu^{(2)})}}\,\frac{\left\langle h_{\mu^{(1)}}\vphantom{p_{\nu^{(1)}}}\,\right |\left.p_{\nu^{(1)}} \vphantom{h_{\mu^{(1)}}}\right\rangle\,\left\langle h_{\mu^{(2)}}\vphantom{p_{\nu^{(2)}}}\,\right |\left.p_{\nu^{(2)}} \vphantom{h_{\mu^{(2)}}}\right\rangle }{z_{\nu^{(1)}}\,z_{\nu^{(2)}} }.$$
+
+::: theorem
+As $n$ goes to infinity, if $\lambda \sim \mathbb{P}_{n,\omega}$, then the variables $$\sqrt{n}\left(\chi^{\lambda}(q,\mu)-\chi^{\omega}(q,\omega)\right)$$ converge jointly to a gaussian vector, whose covariance matrix is given by the formula above.
+:::
+
+In particular, when $\mu^{(1)}=l$ and $\mu^{(2)}=m$ are partitions of length $1$, the scalar products $\left\langle h_{\mu^{(i)}}\vphantom{p_{\nu^{(i)}}}\,\right |\left.p_{\nu^{(i)}} \vphantom{h_{\mu^{(i)}}}\right\rangle$ are all equal to $1$ by Frobenius formula [\[frobenius\]](#frobenius){reference-type="ref" reference="frobenius"}, and thus, $k(\Delta_{\infty,\omega}(q,l),\Delta_{\infty,\omega}(q,m))$ is equal to $$\frac{1}{(q-1)^{2}}\sum_{\substack{\nu^{(1)} \in \mathfrak{Y}_{l} \\ \nu^{(2)} \in \mathfrak{Y}_{m} }}  \frac{p_{\nu^{(1)}\sqcup \nu^{(2)}}(q\omega - \omega)}{z_{\nu^{(1)}} \,z_{\nu^{(2)}}}\left(\sum_{\substack{ a \in \nu^{(1)}\\ b \in \nu^{(2)}}} ab\,\left(\frac{p_{a+b-1}(\omega)}{p_{a}(\omega)\,p_{b}(\omega)}-1\right)\right).$$ In the general case, it does not seem possible to simplify this formula; however, we obtained a simplification in the case of the $q$-Plancherel measures, see [@FM10] and [@Mel10].
+
+## Jones-Ocneanu traces and their weights {#jonesocneanu}
+
+A **Markov trace** (also-called **Jones-Ocneanu trace**, [@Jon87]) on $\mathscr{H}(\mathfrak{S}_{n})$ is a normalized trace that satisfies the additional condition: $$\forall k \in \left[\!\left[1,n-1\right]\!\right],\,\,\,\forall a \in \mathscr{H}(\mathfrak{S}_{k}), \tau(T_{k}\,a)=\tau(T_{k})\,\tau(a)=z\,\tau(a).$$ If $z$ is a fixed parameter, there is a unique corresponding Markov trace on $\mathscr{H}(\mathfrak{S}_{n})$, characterized by the values $\tau_{z}(T_{\mu})=z^{|\mu|-\ell(\mu)}$.
+
+::: proposition
+Let $X_{q,z}=\frac{[1-q+z]-[z]}{1-[q]}$ denote the formal alphabet that corresponds to the following specialization of $\mathbf{Sym}$: $$\forall k \geq 1,\,\,\,p_{k}(X_{q,z})=\frac{(1-q+z)^{k}-z^{k}}{1-q^{k}}.$$ The decomposition of $\tau_{z}$ in irreducible $q$-characters is $$\tau_{z}=\sum_{\lambda \in \mathfrak{Y}_{n}}s_{\lambda}(X_{q,z})\,\zeta^{\lambda}(q).$$
+:::
+
+::: proof
+*Proof.* The result is due to Ocneanu (unpublished notes) and Wenzl (see [@Wen88]); we give here a very short proof. If $Y_{q,z}=qX_{q,z}-X_{q,z}$, then $p_{k}(Y_{q,z})=(q^{k}-1)\,p_{k}(X_{q,z})=z^{k}-(1-q+z)^{k}$. Consequently, $$\begin{aligned}
+P(u)&=\sum_{k=1}^{\infty} \frac{p_{k}(Y_{q,z})}{k}\,u^{k}=\log\left( \frac{1-u(1-q+z)}{1-uz}\right)\\
+H(u)&=\sum_{k=0}^{\infty}h_{k}(Y_{q,z})\,u^{k}=\exp P(u)=\frac{1-u(1-q+z)}{1-uz}.
+\end{aligned}$$ Hence, $h_{k}(Y_{q,z})=(q-1)z^{k-1}$, and $$q_{\mu}(q,X_{q,z})=\frac{h_{\mu}(Y_{q,z})}{(q-1)^{\ell(\mu)}}=\prod_{i=1}^{\ell(\mu)} z^{\mu_{i}-1} =z^{|\mu|-\ell(\mu)}=\tau_{z}(T_{\mu}).$$ Now, because of the $q$-Frobenius formula [\[qfrobenius\]](#qfrobenius){reference-type="ref" reference="qfrobenius"}, for any partition $\mu$, $$\tau_{z}(T_{\mu})=q_{\mu}(q,X_{q,z})=\sum_{\lambda \in \mathfrak{Y}_{n}} s_{\lambda}(X_{q,z})\,\zeta^{\lambda}(q,T_{\mu}).$$ Since a trace is characterized by its values on the $T_{\mu}$'s, the result follows immediately. ◻
+:::
+
+There is a hook length formula for the specializations $s_{\lambda}(X_{q,z})$ of the Schur functions, see for instance [@Mac95 §1.3]: $$s_{\lambda}(X_{q,z})=q^{n(\lambda)}\,\prod_{\oblong \in \lambda} \frac{(1-q)+z(1-q^{c(\oblong)})}{1-q^{h(\oblong)}}$$ where $n(\lambda)=\sum_{i=1}^{\ell(\lambda)}(i-1)\lambda_{i}$, and if $\oblong =(i,j)$ is a box of the Young diagram of $\lambda$, $c(\oblong)=i-j$ is the **content** of $\oblong$. Now, let us make the change of variables: $$z=-(1-q)(1-t).$$ Then, assuming that $q \in \mathbb{R}_{+}^{*}$ and $t \in [0,1]$, one sees that $s_{\lambda}(X_{q,z})$ is positive, because $$s_{\lambda}(X_{q,z})=\frac{q^{b(\lambda)}}{\prod_{\oblong \in \lambda} \{h(\oblong)\}_{q}}\,\left(\prod_{\oblong \in \lambda} t+(1-t)q^{c(\oblong)}\right)$$ with $\{i\}_{q}=\frac{1-q^{i}}{1-q}$ for any positive integer $i$. Another way to see that $s_{\lambda}(X_{q,z})$ is positive in this situation is to notice that $$X_{q,z}=A-\overline{B},$$ where $A$ and $B$ are the alphabets associated to the point of the Thoma simplex $\omega_{q,t}=(\alpha_{q,t},\beta_{q,t})$, with $$\begin{aligned}
+\alpha_{q,t} &= \frac{[t(1-q)]}{1-[q]} = (t(1-q),t(1-q)q,t(1-q)q^{2},\ldots);\\
+\beta_{q,t} &= \frac{[(1-t)(1-q)]}{1-[q]} = ((1-t)(1-q),(1-t)(1-q)q,(1-t)(1-q)q^{2},\ldots).
+\end{aligned}$$ In particular:
+
+::: proposition
+If $z=-(1-q)(1-t)$ with $t \in [0,1]$ and $q \in \mathbb{R}_{+}^{*}$, then the Markov trace $\tau_{z}$ is an irreducible (positive) character of $\mathscr{H}_{q}(\mathfrak{S}_{\infty})$, and it is equal to $\chi^{\omega_{q,t}}$ with $\omega_{q,t}$ defined by the formulas above.
+:::
+
+::: example
+Suppose that $t=1$. Then, $z=0$ and $\tau=\tau_{0}$ is the **regular trace** of $\mathscr{H}_{q}(\mathfrak{S}_{\infty})$: $$\forall \omega \in \mathfrak{S}_{\infty},\,\,\,\tau(T_\omega)=\begin{cases}
+1 & \text{if }\omega=1,\\
+0 & \text{otherwise}.
+\end{cases}$$ Although the definition of the regular does not seem to depend on the value of $q$, the weights of $\tau$ in its decomposition in irreducible characters vary with $q$: $$\forall n,\,\,\,\tau_{|\mathscr{H}_{q}(\mathfrak{S}_{n})}=(1-q)^{n}\sum_{\lambda \in \mathfrak{Y}_{n}} (\dim \lambda)\,s_{\lambda}(1,q,q^{2},\ldots)\,\chi^{\lambda}(q).$$ The probability measures corresponding to this decomposition have been studied extensively in [@FM10]. In the following, we generalize the results of this paper by using the general theorems proved in Sections [\[largenumbers\]](#largenumbers){reference-type="ref" reference="largenumbers"} and [\[clt\]](#clt){reference-type="ref" reference="clt"}.
+:::
+
+## $(q,t)$-Plancherel measures and their asymptotics {#qtasymptotic}
+
+  For $q \in \mathbb{R}_{+}^{*}$ and $t \in [0,1]$, we call **(q,t)-Plancherel measure** of size $n$ the probability measure $\mathbb{P}_{n,q,t}$ on $\mathfrak{Y}_{n}$ corresponding to the decomposition of the Markov trace $\tau_{z}$ with $z=-(1-q)(1-t)$. In other words, $\mathbb{P}_{n,q,t}=\mathbb{P}_{n,\omega_{q,t}}$, and $$\mathbb{P}_{n,q,t}[\lambda]=(1-q)^{n}\,(\dim \lambda)\,\, s_{\lambda}\left(\frac{[t]-[t-1]}{1-[q]}\right).$$ The $(q,t)$-Plancherel measures have the following symmetry: $$\mathbb{P}_{n,q,t}[\lambda]=\mathbb{P}_{n,q^{-1},t}[\lambda'].$$ Hence, we shall always suppose that $q \in\, ]0,1[$, the other case following by a symmetry.
+
+::: remark
+When $q$ goes to $1$, one recovers the usual Plancherel measures defined on page $$\mathbb{P}_{n,q=1,t}[\lambda]=\mathbb{P}_{n}[\lambda]=\frac{(\dim \lambda)^{2}}{n!}.$$ Hence, the $(q,t)$-Plancherel measures form a two-parameter deformation of the coherent system of Plancherel measures. They are also a generalization of the $q$-Plancherel measures defined in [@Ker92; @Stra08] and studied in [@FM10].
+:::
+
+Using the results of §[\[randompermutation\]](#randompermutation){reference-type="ref" reference="randompermutation"}, one can interpret the $(q,t)$-Plancherel measures as push-forwards of probability measures on the symmetric groups. Let us detail a little bit these measures $\mathbb{Q}_{n,q,t}$ such that $\Lambda_{\star}\mathbb{Q}_{n,q,t}=\mathbb{P}_{n,q,t}$. We could of course take $\mathbb{Q}_{n,q,t}[\sigma]=\mathbb{Q}_{n,\omega_{q,t}}[\sigma]$, but it will be a little bit easier[^1] to describe the probability measures $$\mathbb{Q}_{n,q,t}[\sigma]=\mathbb{Q}_{n,\omega_{q,t}}[\sigma^{-1}]=F_{\sigma}(\omega_{q,t})=L_{c(\sigma)}(\omega_{q,t}).$$ Taking $\sigma^{-1}$ instead of $\sigma$ does not change the fact that $\Lambda_{\star}\mathbb{Q}_{n,q,t}=\mathbb{P}_{n,q,t}$, because the bilateral Kazhdan-Lusztig cells $\{\sigma\in \mathfrak{S}_{n}\,\,|\,\,\Lambda(\sigma)=\lambda\}$ are stabilized by the inversion $\sigma \mapsto \sigma^{-1}$. Now, for any composition $c \in \mathfrak{C}_{n}$, if $\mathrm{comaj}(c)=\sum_{d \in D(c)} n-d$, then $$\forall q \in\, ]0,1[,\,\,\,L_{c}(1,q,q^{2},\ldots)=\frac{q^{\mathrm{comaj}(c)}}{(1-q)(1-q^{2})\cdots(1-q)^{n}},$$ see [@Stan91 §7.19]. Using the definition of the specialization $L_{c}(\omega)$ (*cf.* Paragraph [\[pushforward\]](#pushforward){reference-type="ref" reference="pushforward"}), one sees that: $$\begin{aligned}
+\mathbb{Q}_{n,q,t}[\sigma]&=L_{c(\sigma)}(\omega_{q,t})=\sum_{i=0}^{n} L_{c(\sigma)_{\left[\!\left[1,i\right]\!\right]}}(\alpha_{q,t}) \,L_{\overline{c(\sigma)_{\left[\!\left[i+1,n \right]\!\right]}}}(\beta_{q,t})\\
+&=\sum_{i=0}^{n} L_{c(\sigma)_{\left[\!\left[1,i\right]\!\right]}}(\alpha_{q,t}) \,L_{c(\sigma\omega_{0})_{\left[\!\left[1,n-i \right]\!\right]}}(\beta_{q,t})\\
+&=\sum_{i=0}^{n} \frac{t^{i}\,(1-t)^{n-i}}{\{i!\}_{q}\,\{n-i!\}_{q}}\,q^{\mathrm{comaj}(c(\sigma)_{\left[\!\left[1,i\right]\!\right]})+\mathrm{comaj}(c(\sigma\omega_{0})_{\left[\!\left[1,n-i\right]\!\right]})}.
+\end{aligned}$$ For $w$ word of size $n$, we set $\mathbb{Q}_{n,q}[w]=\frac{q^{\mathrm{comaj}(w)}}{\{n!\}_{q}}$; for any $q \in \mathbb{R}_{+}^{*}$, $\mathbb{Q}_{n,q}$ is a probability measure on $\mathfrak{S}_{n}$.
+
+::: proposition
+[]{#interpolation label="interpolation"} As $t$ varies in $[0,1]$, the measures $\mathbb{Q}_{n,q,t}$ provide an interpolation between $\mathbb{Q}_{n,q}[\sigma]$ and $\mathbb{Q}_{n,q}[\sigma\omega_{0}]$: $$\mathbb{Q}_{n,q,t}[\sigma]=\sum_{i=0}^{n} t^{i}\,(1-t)^{n-i}\,\mathbb{Q}_{i,q}[\sigma_{\left[\!\left[1,i\right]\!\right]}]\,\mathbb{Q}_{n-i,q}[(\sigma\omega_{0})_{\left[\!\left[1,n-i\right]\!\right]}]$$ where $\sigma_{\left[\!\left[1,i\right]\!\right]}$ denotes the word $\sigma(1)\sigma(2)\cdots \sigma(i)$, and similarly for $(\sigma\omega_{0})_{\left[\!\left[1,n-i\right]\!\right]}$.
+:::
+
+It was *a priori* a non trivial fact that these interpolations correspond *via* RSK to the weights of the Markov traces $\tau_{-(1-q)(1-t)}$. On the other hand, let us notice that the parts $\mathbb{Q}_{i,q}[\sigma_{\left[\!\left[1,i\right]\!\right]}]\,\mathbb{Q}_{n-i,q}[(\sigma\omega_{0})_{\left[\!\left[1,n-i\right]\!\right]}]$ of $\mathbb{Q}_{n,q,t}[\sigma]$ have a simple geometric interpretation. If $\sigma$ is a permutation, let us draw its corresponding ribbon, see §[\[fqsym\]](#fqsym){reference-type="ref" reference="fqsym"}. We draw a line after the $i$-th box, and we define $m_{i}(\sigma)$ as the sum of the following quantities:
+
+-   for each box $\young(\vee)$ before the line and with another box just under, the distance between $\young(\vee)$ and the line in the ribbon;
+
+-   for each box $\young(<)$ after the line and with another box just at the left, the distance between $\young(<)$ and the line in the ribbon.
+
+Then, the $i$-th weight is simply $\frac{q^{m_{i}(\sigma)}}{\{i!\}_{q}\,\{n-i!\}_{q}}$; for instance, if $i=5$ and $\sigma=64182357$, then $m_{i}(\sigma)=(4_{6}+3_{4}+1_{8})+(0_{3}+1_{5}+2_{7})=11$. $$\young(6,4,18,:2357)\quad=\quad\young(\vee,\vee,~\vee,:~<<<)\,.$$
+
+Now, let us describe the asymptotics of the $(q,t)$-Plancherel measures. First, we give the algebraic central limit theorem, noticing that $$p_{k}(\omega_{q,t})=\frac{(t^{k}-(t-1)^{k})(1-q)^{k}}{1-q^{k}}$$ for any $k\geq 1$.
+
+::: proposition
+If $\lambda \sim \mathbb{P}_{n,q,t}$, then as $n$ goes to infinity, the random variables $$\sqrt{n}\left(\chi^{\lambda}(q,T_{l})-(t-1)^{l-1}(1-q)^{l-1}\right)$$ converge jointly to a gaussian vector $(\Delta_{\infty,q,t}(q,l))_{l \geq 1}$ with covariances $$\begin{aligned}
+&(1-q)^{-l-m+2}\,k(\Delta_{\infty,q,t}(q,l),\Delta_{\infty,q,t}(q,m))
+\\
+&=\sum_{\substack{\nu^{(1)}\in \mathfrak{Y}_{l}\\ \nu^{(2)}\in \mathfrak{Y}_{m} \\ a \in \nu^{(1)} \,,\, b \in \nu^{(2)} }} \frac{(t-1)^{\nu} - t^{\nu } }{z_{\nu^{(1)}}\,z_{\nu^{(2)}} } \left(\frac{1-u^{a+b-1}}{1-q^{a+b-1}}\,\frac{1-u}{1-q}\,\frac{1-q^{a}}{1-u^{a}}\,\frac{1-q^{b}}{1-u^{b}}-1\right)
+\end{aligned}$$ where $u= \frac{t-1}{t}$, $\nu=\nu^{(1)}\sqcup \nu^{(2)}$, and $(t-1)^{\nu}-t^{\nu}=\prod_{i=1}^{\ell(\nu)} ((t-1)^{\nu_{i}}-t^{\nu_{i}})$.
+:::
+
+::: remark
+When $t=1$, this formula can be simplified by using a Möbius inversion formula, and it becomes $$k(\Delta_{\infty,q,t}(q,l),\Delta_{\infty,q,t}(q,m))=\frac{(q-q^{2})^{l+m-3}\,(1-q^{2})\,\{l-1\}_{q}\,\{m-1\}_{q}}{\{l+m-1\}_{q}\,\{l+m-2\}_{q}\,\{l+m-3\}_{q}}$$ see [@Mel10].
+:::
+
+Now, let us give the geometric version of the central limit theorem. We have drawn below a random Young diagram taken according to the $(q,t)$-Plancherel measure of parameters $n=300$, $q=\frac{1}{2}$ and $t=\frac{2}{3}$.
+
+<figure>
+<div class="center">
+<p><span><span> <embed src="graphic_qtPlancherel.pdf" /></span></span></p>
+</div>
+<figcaption>A random Young diagram under a <span class="math inline">(<em>q</em>,<em>t</em>)</span>-Plancherel measure.</figcaption>
+</figure>
+
+With $q=\frac{1}{2}$, it is not hard to see that the first rows and the first columns seem to follow geometric progressions of reason $\frac{1}{2}$. Moreover, with $t=\frac{2}{3}$, the ratio between the first row and the first column seems to be close to $\frac{t}{1-t}=2$. This is in adequation with Theorems [\[llngeom\]](#llngeom){reference-type="ref" reference="llngeom"} and [\[almostgeom\]](#almostgeom){reference-type="ref" reference="almostgeom"} that state the following (notice that we are in the case of inequal coordinates):
+
+::: proposition
+[]{#lastone label="lastone"} If $\lambda \sim \mathbb{P}_{n,q,t}$, then $$\begin{aligned}
+\lambda_{i} &= n\,t(1-q)q^{i-1}+n^{1/2}\,X_{i}+o(n^{1/2});\\
+\lambda_{j}'&=n\,(1-t)(1-q)q^{j-1}+n^{1/2}\,Y_{j}+o(n^{1/2}),
+\end{aligned}$$ where $(X_{i},Y_{j})_{i\geq 1,j\geq 1}$ is a gaussian vector with covariances $$\begin{aligned}
+k(X_{i},X_{j})&=\delta_{i,j} \,t(1-q)q^{i-1} -t^{2}(1-q)^{2}q^{i+j-2};\\
+k(Y_{i},Y_{j})&=\delta_{i,j} \,(1-t)(1-q)q^{i-1} -(1-t)^{2}(1-q)^{2}q^{i+j-2};\\
+k(X_{i},Y_{j})&=-t(1-t)(1-q)^{2}q^{i+j-2}.
+\end{aligned}$$
+:::
+
+In particular, for $t=1$, we recover Theorems 1 and 2 of [@FM10]. Proposition [\[lastone\]](#lastone){reference-type="ref" reference="lastone"} also gives the asymptotic behaviour of the length of a longest increasing or decreasing subword in a random permutation taken according to the probability measure described in Proposition [\[interpolation\]](#interpolation){reference-type="ref" reference="interpolation"}.
+
+# Conclusion
+
 Let us summarize the results obtained in this paper:
-1. To any irreducible character ofS∞ or of Hq(S∞) with q∈ R∗
-+, we have
-associated a pointω in the Thoma simplexΩ, and two random models:
-a model (Qn,ω)n∈N of random permutations obtained by generalized riﬄe
-shuﬄes, and a model(Pn,ω)n∈N of random partitions related to the restric-
-tion of the irreducible character to the ﬁnite symmetric groups or their
-Hecke algebras.
-2. The computation of the probabilities of both models can be done using
-specializations of combinatorial Hopf algebras: the Hopf algebraFQSym
-for the permutations, and the Hopf algebraSym for the partitions. This
-interpretation enabled us to see that the two models are related by the
-RSK correspondence.
-3. The model of random partitions satisﬁes a law of large numbers and a
-central limit theorem. In both cases, the asymptotic result can be given an
-algebraic ﬂavour (for the values of the characters), or a geometric ﬂavour
-(for the ﬁrst rows and columns of the partitions). The geometric central
-limit theorem is much more involved than the other results, and cannot
-be proved by using only techniques of moments. Hence, one had to relate
-random permutations and partitions to some conditioned random walks,
-and to the behaviour of the eigenvalues of brownian hermitian matrices.
-A central limit theorem for the characters ofS∞ and H (S∞) 67
-Whenω = 0, our methods do not describe with suﬃcient precision the asymp-
-totic behaviour of the random partitions; however, they can be adapted to this
-purpose, see [IO02]. One obtains again a law of large numbers and a central
-limit theorem, and this CLT seems to have a universality property;cf. [Mél11].
-Hence, the next step in the asymptotic study of the models presented in this
-article would be to understand what happens “in the neighbourhood” of the
-point 0 of the Thoma simplex. More precisely, we would like to understand
-what happens whenω varies withn and converges to0. Let us give a concrete
-example — this is one of the two cases studied in [Mél11], and we refer also
-to [Bia01]. Suppose that
-ωn =
-(( 1
-N,..., 1
-N, 0, 0,...
-)
-, (0, 0,... )
-)
-,
-with N coordinates equal to 1
-N, andcN≃√n. Then, there is a limit shape
-for the random partitionsλ∼ Pn,ωn; it has been found by P. Biane in [Bia01],
-and it is drawn on Figure 9 in the case whenc = 1.
-11
-Fig. 9 Random partition under the Schur-Weyl measure of parameterc = 1.
-Now, the interesting fact is that the ﬂuctuations of the partitions under
-these measures (calledSchur-Weyl measures) are described by a gaussian
-free ﬁeld that does not depend onc (or, to be more precise, only by a trans-
-lation of the ﬂuctuations on thex-axis). More generally, we conjecture the
-following (the statement is willingly left unprecise):
-68 Pierre-Loïc Méliot
-Conjecture 35.This asymptotic behaviour is universal among models of ran-
-dom partitions associated to parameters(ωn)n∈N converging to0 at speed1/√n
-as n goes to inﬁnity.
-There is one example whose study would be very interesting in order to
-prove this conjecture — it has been suggested by M. Bożejko. In some sense,
-the Schur-Weyl measures provide another one-parameter deformation of the
-Plancherel measures: indeed, whenc goes to 0, the limit shape of the parti-
-tions under Schur-Weyl measures converges to the one corresponding to the
-Plancherel measures. On the other hand, the limit shapes under Schur-Weyl
-measures correspond via the Markov-Krein correspondence (see [Ker98]) to
-the Marčenko-Pastur measures, that are a one-parameter deformation of the
-Wigner semicircle law (correspondingvia Markov-Krein to the limit shape of
-the random partitions under Plancherel measures). Now, thefree Meixner
-laws (see e.g. [BB06]) form a two-parameter deformation of the Wigner mea-
-sure, and they generalize the Marčenko-Pastur laws. So it would be extremely
-interesting to construct models of random partitions corresponding to these
-laws, and to study their ﬂuctuations. One can hope that with two parame-
-ters, the computations will be suﬃciently generic in order to understand the
-behaviour of random partitions in the general situation of Conjecture 35. The
-results of this paper have been obtained in a similar way: starting from the
-q-Plancherel measures already studied in [FM10], we have gone to the case of
-(q,t )-Plancherel measures, and we have then realized that our results hold in
-fact for any model of random partitions associated to a point of the Thoma
-simplex.
-References
-AGZ09. G. W. Anderson, A. Guionnet, and O. Zeitouni. An Introduction to Random
-Matrices, volume 118 ofCambridge Studies in Advanced Mathematics. Cambridge
-University Press, 2009.
-AS05. M. Aguiar and F. Sottile. Structure of the Malvenuto-Reutenauer Hopf algebra of
-permutations. Adv. Math., 191(2):225–275, 2005.
-BB06. M. Bożejko and W. Bryc. On a class of free Lévy laws related to a regression
-problem. J. Funct. Anal., pages 59–77, 2006.
-BBO05. P. Biane, P. Bougerol, and N. O’Connell. Littelmann paths and brownian paths.
-Duke Math. J., 130(1):127–167, 2005.
-Bia01. P. Biane. Approximate factorization and concentration for characters of symmetric
-groups. Internat. Math. Res. Notices, 4:179–192, 2001.
-Bia09. P. Biane. From Pitman’s theorem to crystals.Advanced Studies in Pure Mathe-
-matics, 55:1–13, 2009.
-Bil69. P. Billingsley. Convergence of Probability Measures. Wiley, 1969.
-Bri69. D. Brillinger. The calculation of cumulants via conditioning. Ann. Inst. Statist.
-Math., 21:375–390, 1969.
-DFŚ10. M. Dołega, V. Féray, and P. Śniady. Explicit combinatorial interpretation of Kerov
-character polynomials as numbers of permutation factorizations. Adv. Math.,
-225(1):81–120, 2010.
-A central limit theorem for the characters ofS∞ and H (S∞) 69
-DHT01. G. Duchamp, F. Hivert, and J.-Y. Thibon. Noncommutative symmetric functions
-VI: Free quasi-symmetric functions and related algebras.arXiv:math/0105065v1,
-2001.
-Dys62. F. J. Dyson. A brownian-motion model for the eigenvalues of a random matrix.
-J. Math. Phys., 3:1191–1198, 1962.
-FM10. V. Féray and P.-L. Méliot. Asymptotics of q-Plancherel measures. To appear in
-Probability Theory and Related Fields, arXiv:1001.2180v1 [math.RT] , 2010.
-Ful97. W. Fulton. Young Tableaux with Applications to Representation Theory and Ge-
-ometry, volume 35 ofLondon Mathematical Society Students Texts. Cambridge
-University Press, 1997.
-Ful02. J. Fulman. Applications of symmetric functions to cycle and increasing subse-
-quence structure after shuﬄes.J. Alg. Combin., 16:165–194, 2002.
-Ges94. I. M. Gessel. Multipartite P-partitions and inner products of skew Schur functions.
-InCombinatorics and algebra (Boulder, Colo., 1983), pages 289–317. Amer. Math.
-Soc., 1994.
-GK10. R. Gohm and C. Köstler. Noncommutative independence from characters of the
-inﬁnite symmetric groups∞. arXiv:1005.5726, 2010.
-GP00. M. Geck and G. Pfeiﬀer.Characters of Finite Coxeter Groups and Iwahori-Hecke
-Algebras, volume 21 ofLondon Mathematical Society Monographs. Oxford Uni-
-versity Press, 2000.
-IK99. V. Ivanov and S. Kerov. The algebra of conjugacy classes in symmetric groups, and
-partial permutations. In Representation Theory, Dynamical Systems, Combina-
-torial and Algorithmical Methods III, volume 256 ofZapiski Nauchnyh Seminarov
-POMI, pages 95–120, 1999.
-IO02. V. Ivanov and G. Olshanski. Kerov’s central limit theorem for the Plancherel mea-
-sure on Young diagrams. InSymmetric Functions 2001: Surveys of Developments
-and Perspectives, volume 74 ofNATO Science Series II. Mathematics, Physics
-and Chemistry, pages 93–151, 2002.
-JK81. G. D. James and A. Kerber. The Representation Theory of the Symmetric Group,
-volume 16 ofEncyclopedia of Mathematics and its Applications. Addison-Wesley,
-1981.
-Jon87. V. F. R. Jones. Hecke algebra representations of braid groups and link polynomials.
-Ann. of Math., 126(2):335–388, 1987.
-Ker92. S. V. Kerov. q-analogue of the hook walk algorithm and random Young tableaux.
-Funct. Anal. Appl., 26(3):179–187, 1992.
-Ker93. S. V. Kerov. Gaussian limit for the Plancherel measure of the symmetric group.
-Comptes Rendus Acad. Sci. Paris, Série I, 316:303–308, 1993.
-Ker98. S. V. Kerov. Interlacing measures. Amer. Math. Soc. Transl., 181(2):35–83, 1998.
-KO94. S. V. Kerov and G. Olshanski. Polynomial functions on the set of Young diagrams.
-Comptes Rend. Acad. Sci. Paris, Série I, 319:121–126, 1994.
-KOV04. S. V. Kerov, G. Olshanski, and A. M. Vershik. Harmonic analysis on the inﬁnite
-symmetric group. Invent. Math., 158:551–642, 2004.
-KV77. S. V. Kerov and A. M. Vershik. Asymptotics of the Plancherel measure of the
-symmetric group and the limiting form of Young tableaux.Doklady AN SSSR,
-233(6):1024–1027, 1977.
-KV81a. S. V. Kerov and A. M. Vershik. Asymptotic theory of characters of the symmetric
-group. Funct. Anal. Appl., 15(4):246–255, 1981.
-KV81b. S. V. Kerov and A. M. Vershik. Characters and factor representations of the
-inﬁnite symmetric group.Soviet Math. Doklady, 23:389–392, 1981.
-KV84. S. V. Kerov and A. M. Vershik. Characters, factor representations and K-functor
-of the inﬁnite symmetric group. InProc. Intern. Conf. on Operator Algebras and
-Group Representations 1980, volume 2 ofMonographs and Studies in Mathemat-
-ics, pages 23–32. Pitman, London, 1984.
-KV89. S. V. Kerov and A. M. Vershik. Characters and realizations of representations of
-an inﬁnite-dimensional Hecke algebra, and knot invariants.Soviet Math. Doklady,
-38(1):134–137, 1989.
-Lit95. P. Littelmann. Paths and root operators in representation theory. Ann. Math.,
-142(3):499–525, 1995.
-70 Pierre-Loïc Méliot
-LLT02. A. Lascoux, B. Leclerc, and J.-Y. Thibon. The plactic monoid. In Algebraic
-Combinatorics on Words. Cambridge University Press, 2002.
-LS77. B. F. Logan and L. A. Shepp. A variational problem for random Young tableaux.
-Adv. Math., 26:206–222, 1977.
-Mac95. I. G. Macdonald. Symmetric functions and Hall polynomials. Oxford Mathemat-
-ical Monographs. Oxford University Press, 2nd edition, 1995.
-Mat99. A. Mathas. Iwahori-Hecke algebras and Schur algebras of the symmetric group,
-volume 15 ofUniversity Lecture Series. Amer. Math. Soc., 1999.
-Mél10. P.-L. Méliot. Gaussian concentration of the q-characters of the Hecke algebras of
-type A. arXiv:1009.4288v1 [math.RT] , 2010.
-Mél11. P.-L. Méliot. Kerov’s central limit theorem for Schur-Weyl and Gelfand measures.
-Toappearintheproceedingsofthe23thInternationalConferenceonFormalPower
-Series and Algebraic Combinatorics (Reykjavik), 2011.
-MR95. C. Malvenuto and C. Reutenauer. Duality between quasi-symmetric functions and
-Solomon descent algebra.J. Algebra, 177:967–982, 1995.
-O’C03. N. O’Connell. A path-transformation for random walks and the Robinson-
-Schensted correspondence. Trans. Amer. Math. Soc., 355:3669–3697, 2003.
-Oko97. A. Okounkov. On representations of the inﬁnite symmetric group. Representa-
-tion theory, dynamical systems, combinatorial and algorithmic methods II (A. M.
-Vershik, ed.).Zapiski Seminarov POMI, 240:167–229, 1997.
-OV04. A. Okounkov and A. M. Vershik. A new approach to the representation theory of
-the symmetric groups, II.Zapiski Seminarov POMI, 307:57–98, 2004.
-OY02. N. O’Connell and M. Yor. A representation for non-colliding random walks.Elec-
-tron. Comm. Probab., 7:1–12, 2002.
-Pit75. J.W.Pitman. One-dimensionalBrownianmotionandthethree-dimensionalBessel
-process. Advances in Applied Probability, 7:511–526, 1975.
-Ram91. A. Ram. A Frobenius formula for the characters of the Hecke algebras.Invent.
-Math., 106:461–488, 1991.
-Rob38. G. Robinson. On the representations of the symmetric group. Amer. J. Math.,
-60(3):745–760, 1938.
-RY91. D. Revuz and M. Yor.Continuous Martingales and Brownian Motion, volume 293
-of Grundlehren der mathematischen Wissenschaften. Springer-Verlag, 3rd edition,
-1991.
-Sch61. C. Schensted. Longest increasing and decreasing subsequences.Canadian Journal
-of Mathematics, 13:179–191, 1961.
-Śni06a. P. Śniady. Asymptotics of characters of symmetric groups, genus expansion and
-free probability.Discrete Math., 306(7):624–665, 2006.
-Śni06b. P. Śniady. Gaussian ﬂuctuations of characters of symmetric groups and of Young
-diagrams. Probability Theory and Related Fields, 136(2):263–297, 2006.
-Sta91. R. P. Stanley. Enumerative combinatorics. Cambridge University Press, 1991.
-Sta01. R. P. Stanley. A generalized riﬄe shuﬄe and quasisymmetric functions.Annals of
-Combinatorics, 5:479–491, 2001.
-Str08. E. Strahov. A diﬀerential model for the deformation of the Plancherel growth
-process. Adv. Math, 217(6):2625–2663, 2008.
-Tha87. D. H. Thang. Random operators in Banach spaces.Probability and Mathematical
-Statistics, 8:155–167, 1987.
-Tho64. E. Thoma. Die unzerlegbaren, positive-deﬁniten Klassenfunktionen der abzählbar
-unendlichen symmetrischen Gruppe.Math. Zeitschrift, 85:40–61, 1964.
-VV95. M. V. Velasco and A. R. Villena. A random Banach-Steinhaus theorem. Proc.
-Amer. Math. Soc., 123(8):2489–2497, 1995.
-Was81. A. J. Wassermann. Automorphic actions of compact groups on operator algebras.
-Ph.D. Thesis, University of Pennsylvania, 1981.
-Wen88. H. Wenzl. Hecke algebras of typeAn and subfactors. Invent. Math., 92:349–383,
-1988.
-Zel81. A. Zelevinsky. Representations of ﬁnite classical groups: A Hopf algebra approach,
-volume 869 ofLecture Notes in Mathematics. Springer-Verlag, 1981.
+
+1.  To any irreducible character of $\mathfrak{S}_{\infty}$ or of $\mathscr{H}_{q}(\mathfrak{S}_{\infty})$ with $q \in \mathbb{R}_{+}^{*}$, we have associated a point $\omega$ in the Thoma simplex $\Omega$, and two random models: a model $(\mathbb{Q}_{n,\omega})_{n\in \mathbb{N}}$ of random permutations obtained by generalized riffle shuffles, and a model $(\mathbb{P}_{n,\omega})_{n \in \mathbb{N}}$ of random partitions related to the restriction of the irreducible character to the finite symmetric groups or their Hecke algebras.
+
+2.  The computation of the probabilities of both models can be done using specializations of combinatorial Hopf algebras: the Hopf algebra $\mathbf{FQSym}$ for the permutations, and the Hopf algebra $\mathbf{Sym}$ for the partitions. This interpretation enabled us to see that the two models are related by the RSK correspondence.
+
+3.  The model of random partitions satisfies a law of large numbers and a central limit theorem. In both cases, the asymptotic result can be given an algebraic flavour (for the values of the characters), or a geometric flavour (for the first rows and columns of the partitions). The geometric central limit theorem is much more involved than the other results, and cannot be proved by using only techniques of moments. Hence, one had to relate random permutations and partitions to some conditioned random walks, and to the behaviour of the eigenvalues of brownian hermitian matrices.
+
+When $\omega=\mathbf{0}$, our methods do not describe with sufficient precision the asymptotic behaviour of the random partitions; however, they can be adapted to this purpose, see [@IO02]. One obtains again a law of large numbers and a central limit theorem, and this CLT seems to have a universality property; *cf.* [@Mel11]. Hence, the next step in the asymptotic study of the models presented in this article would be to understand what happens "in the neighbourhood" of the point $\mathbf{0}$ of the Thoma simplex. More precisely, we would like to understand what happens when $\omega$ *varies with $n$ and converges to $\mathbf{0}$*. Let us give a concrete example --- this is one of the two cases studied in [@Mel11], and we refer also to [@Bia01]. Suppose that $$\omega_{n}=\left(\left(\frac{1}{N},\ldots,\frac{1}{N},0,0,\ldots\right),(0,0,\ldots)\right),$$ with $N$ coordinates equal to $\frac{1}{N}$, and $cN \simeq \sqrt{n}$. Then, there is a limit shape for the random partitions $\lambda \sim \mathbb{P}_{n,\omega_{n}}$; it has been found by P. Biane in [@Bia01], and it is drawn on Figure [1](#schurweyl){reference-type="ref" reference="schurweyl"} in the case when $c=1$.
+
+<figure id="schurweyl">
+<div class="center">
+<p><span><span> <embed src="graphic_schurweyl.pdf" /> </span></span></p>
+</div>
+<figcaption>Random partition under the Schur-Weyl measure of parameter <span class="math inline"><em>c</em> = 1</span>.<span id="schurweyl" label="schurweyl"></span></figcaption>
+</figure>
+
+Now, the interesting fact is that the fluctuations of the partitions under these measures (called **Schur-Weyl measures**) are described by a gaussian free field that does not depend on $c$ (or, to be more precise, only by a translation of the fluctuations on the $x$-axis). More generally, we conjecture the following (the statement is willingly left unprecise):
+
+::: conjecture
+[]{#lastconjecture label="lastconjecture"} This asymptotic behaviour is universal among models of random partitions associated to parameters $(\omega_{n})_{n \in \mathbb{N}}$ converging to $\mathbf{0}$ at speed $1/\sqrt{n}$ as $n$ goes to infinity.
+:::
+
+There is one example whose study would be very interesting in order to prove this conjecture --- it has been suggested by M. Bożejko. In some sense, the Schur-Weyl measures provide another one-parameter deformation of the Plancherel measures: indeed, when $c$ goes to $0$, the limit shape of the partitions under Schur-Weyl measures converges to the one corresponding to the Plancherel measures. On the other hand, the limit shapes under Schur-Weyl measures correspond *via* the Markov-Krein correspondence (see [@Ker98]) to the Marčenko-Pastur measures, that are a one-parameter deformation of the Wigner semicircle law (corresponding *via* Markov-Krein to the limit shape of the random partitions under Plancherel measures). Now, the **free Meixner laws** (see *e.g.* [@BB06]) form a two-parameter deformation of the Wigner measure, and they generalize the Marčenko-Pastur laws. So it would be extremely interesting to construct models of random partitions corresponding to these laws, and to study their fluctuations. One can hope that with two parameters, the computations will be sufficiently generic in order to understand the behaviour of random partitions in the general situation of Conjecture [\[lastconjecture\]](#lastconjecture){reference-type="ref" reference="lastconjecture"}. The results of this paper have been obtained in a similar way: starting from the $q$-Plancherel measures already studied in [@FM10], we have gone to the case of $(q,t)$-Plancherel measures, and we have then realized that our results hold in fact for any model of random partitions associated to a point of the Thoma simplex.
+
+[^1]: In return, we lose the direct interpretation of the random permutations as generalized shuffles.

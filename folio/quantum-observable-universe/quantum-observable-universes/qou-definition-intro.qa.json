@@ -1256,6 +1256,39 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "b5478bd62d73",
+          "ts": "5bb386eb6959"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 13,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 2,
+            "H4": 2,
+            "H5": 1,
+            "H6": 2,
+            "H7": 2,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: L1 'the QOU on $\\mathrm{SU}(2)$ exactly satisfies these constraints over an arbitrary commutative ring', but ex:quantum-universe-su2(v) shows classical $\\mathrm{SU}(2)$ (symmetric braiding) does not satisfy the well-ordering axiom; the claim needs $\\mathrm{SU}_q(2)$. H8: 'identifying the categorical arrow of time' presents a physical reading as a result.",
+        "notes": "Milnor H1-H8 = [2, 1, 2, 2, 1, 2, 2, 1] (T=13/16, warn); weakest: H2, H5, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): '...closes by checking the axioms on $\\mathrm{Rep}(\\mathrm{SU}_q(2))$.' 'We then show that a non-symmetric braiding well-orders the Hecke basis; remark ... reads this order as time.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -1713,6 +1746,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:02:31.405Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

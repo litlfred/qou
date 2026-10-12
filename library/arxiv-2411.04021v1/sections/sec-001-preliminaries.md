@@ -7,187 +7,120 @@ section_number: null
 pages: 3-7
 source_pdf: 2411.04021v1.pdf
 source_sha256: f5b6980f08d25394
+text_source: latex
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 0.871
 doc_brief: "On the Gram determinants of the Specht modules — For every partitionλ of a positive integern, letSλ be the corresponding Specht module of the symmetric group Sn, and let det(λ)∈ Z denote the Gram"
 ---
-Wefixapositiveinteger n. Apartition isasequence λ = (a1,...,a m)ofnon-negative
-integers such thata1≥a2≥···≥ am. We identify partitions that only differ by a
-stringofzerosattheend. Wesaythat λisapartitionof nif|λ| :=a1+a2+··· +am =
-n. We denote byPn the set of partitions ofn and by P :=S∞
-i=0 Pi the set of all
-partitions. Ifµ = (c1,...,c l) is another partition ofn, we writeλ ⊴µ and say thatλ
-proceedsµ in thedominance (partial) orderif and only ifa1 +··· +ai≤c1 +··· +ci
-for alli≥ 1. We denote
-[λ] ={(i,j )| (i,j )∈ Z× Z, 1≤i≤m, 1≤j≤am}
-to be theYoung diagramof λ, which we can depict as a set of cells witha1 cells in
-the first row,a2 cells in the second row, and so on, see Figure 1. For a cellc∈ [λ],
-we denote thehook lengthhλ(c) to be the number of cells in thehook of c, i.e., the
-number of cells below and to the right ofc, including itself. Thehook diagramof λ
-is the Young diagram, where each cell is filled with its hook length.
-9 8 7 5 3 2 1
-5 4 3 1
-3 2 1
-Figure 1: Hook diagram of(7, 4, 3), with the hook of the cellc = (1, 2) colored gray.
-Note that the entries of the first column of a hook diagram uniquely determine
-the underlying partition. Generalizing that observation, asequence ofβ-numbers
-is a sequence β = ( b1,...,b m) of non-negative integers such that all its entries
-are distinct. For each such sequence, there is a uniqueσ ∈ Sm such that β =
-(bσ(1),...,b σ(m)) is a strictly decreasing sequence, i.e.,bσ(1) > bσ(2) >··· > bσ(m).
-We define the partition
-Part(β) := (bσ(1)−m + 1,bσ(2)−m + 2,...,b σ(m)−m +m)
-3
-and say that β is a sequence of β-numbers for Part(β). Moreover, we say that
-ℓ(β) :=m is the length ofβ and define|β| :=|Part(β)|.
-Let B be the set of all sequences ofβ-numbers. We define the subsets
-Bn :={β∈ B||β| =n}
-of the sequences ofβ-numbers ofn and
-B(λ) :={β∈ B| Part(β) = λ}
-of the sequences ofβ-numbers for the partitionλ.
-Example 2.1.Letλ = (7, 4, 3) as in Figure 1. The first column of its hook diagram
-consists of the sequence(9, 5, 3), so(9, 5, 3) is a sequence ofβ-numbers forλ. Further
-sequences ofβ-numbers forλ include (10, 6, 4, 0), (11, 7, 5, 1, 0) and (1, 0, 6, 8, 12, 2).
-Recall that there is a 1-to-1 correspondence between the partitionsλ of a positive
-integernandtheirreduciblecharacters χλ ofthesymmetricgroup Sn. Thefollowing
-well-known formula gives a convenient way to calculate the degree of each character.
-Proposition 2.2. (cf. [7, Theorem 2.3.21]) Letλ be a partition ofn. Then
-fλ :=χλ(1) = n!Q
-c∈[λ]hλ(c).
-We further setf(0) := 1. A partition is said to be odd (resp. even) if and only iffλ
-is odd (resp. even).
-We say that a partitionλ isq-corefor some positive integerq if there is noc∈ [λ]
-such thatq| hλ(c). There is a unique partitioncoreq(λ), which isq-core, that can
-be constructed from [λ] by successively removing hooks of cells with hook lengths
-a multiple of q, see also [7, Section 2.7]. This is where sequences of β-numbers
-come into play; removing a hook from a Young diagram corresponds to subtracting
-a multiple of a unit vector from a sequence ofβ-numbers forλ.
-Example 2.3.Let λ = (7, 4, 3). Thenλ is not 8-core, ashλ((1, 2)) = 8. Removing
-the corresponding hook, we end up withcore8(λ) = (3, 2, 1).
-We shall need a criterion on the parity offλ. Letr be the non-negative integer
-such that 2r≤n< 2r+1.
-Lemma 2.4. (cf. [1, Lemma 1]) Letλ be a partition ofn. There exists at most
-one cellc∈ [λ] such thathλ(c) = 2 r. Moreover, λ is odd if and only if such a cell
-exists and core2r(λ) is odd.
-4
-Let ei = (0, 0,..., 0, 1, 0,... ) be the sequence that has a1 in position i and 0
-everywhere else.
-Corollary 2.5. Let λ be a partition ofn and let βλ ∈ B(λ). Then there is at
-most one indexi such thatβλ− 2rei∈ Bn−2r. If such an index, sayj, exists, then
-βλ− 2rej∈ B(core2r(λ)).
-Definition 2.6.We define the functionD : P→ P such that for any partitionλ of
-n, we haveD(λ) := core 2r(λ). Moreover, we setD((0)) := (0). Denote D0(λ) := λ
-and Dm(λ) := D(Dm−1(λ)) for any positive integerm. We define theoddness rank
-of the partitionλ by
-OddRank(λ) = min{m∈ Z≥0|Dm+1(λ) = Dm(λ)}.
-Corollary 2.7. Let λ be a partition ofn. Let n =Pr
-i=0ai2i for ai∈{ 0, 1} be the
-decomposition ofn in binary. Thenλ is odd if and only ifOddRank(λ) =Pr
-i=0ai.
-We now define a distance function for the set of partitions, where the distance
-between two partitions is the minimum number of hooks that must be removed and
-added to transform one Young diagram into the other.
-Definition 2.8. (i) Let m be a positive integer and letβ = (b1,...,b m),β′ =
-(b′
-1,...,b ′
-m)∈ Zm. Letdm : Zm× Zm→ Z≥0 be defined by
-dm(β,β′) = #{i| 1≤i≤m, bi̸=b′
-j for all 1≤j≤m},
-i.e., dm(β,β′) is the number of mismatches ofβ and β′.
-(ii) Let λ,µ be partitions. We choose the positive integerm large enough such
-that there are sequences of β-numbers βλ ∈ B(λ), βµ ∈ B(µ) such that
-ℓ(βλ) = ℓ(βµ) = m. We define the distanced : P× P→ Z≥0 by
-d(λ,µ ) := dm(βλ,βµ).
-It is clear that the distance between two partitions is well-defined and that(P,d )
-isametricspace. Notethatforinstanceif λisapartitionof nwith OddRank(λ)> 0,
-then d(λ,D (λ)) = 1.
-The following definition covers theodd branches of a partition, which are the
-main objects we will work with in this paper.
-Definition 2.9.Let λ be a partition ofn.
-(i) Let µ be another partition ofn. We say thatµ is a branch ofλ if λ ⊴µ and
-d(λ,µ ) = 2. Let Pλ be the set of branches ofλ.
-5
-(ii) Let µ be a branch ofλ and letβλ∈ B(λ) (resp. βµ∈ B(µ)) with
-βλ = (b1,b 2,b 3,...,b m), βµ = (b′
-1,b′
-2,b 3,...,b m),
-such thatb1 >b 2, b′
-1 >b′
-2. We define
-h1
-λ(µ) := b1−b′
-2 =b′
-1−b2, h2
-λ(µ) := b2−b′
-2 =b′
-1−b1.
-Note that there are two cellsc1 = (k,j ),c 2 = (l,j )∈ [λ] with k <l such that
-hλ(ci) = hi
-λ(µ) for i = 1, 2. Also, (b1,b′
-2,b 3,...,b m)∈ B and the associated
-partition corresponds to removing the hook ofc2 from the Young diagram of
-λ.
-(iii) We define
-P odd
-λ :={µ∈ Pλ|µ is odd}
-to be the set of odd branches ofλ.
-We are now ready to give the formula for the Gram determinant of a Specht
-module:
-Theorem 2.10. (cf. [6]) Letλ be a partition ofn. The Gram determinant of the
-canonical bilinear form with respect to the standard basis of the Specht moduleSλ is
-given by
-det(λ) :=
-Y
-µ∈Pλ
-h1
-λ(µ)
-h2
-λ(µ)
-εµfµ
-∈ Z,
-whereεµ∈{− 1, 1}. For any primep, we define the integera(p)
-λ such that
-det(λ) = m·pa(p)
-λ ,
-wherem is coprime top.
-Remark2.11. Wedenote (Q×)2 :={x2|x∈ Q×}tobethesetofinvertiblerational
-squares. Letλ be an even partition ofn and letχλ be the character corresponding to
-λ. The orthogonal determinantdet(χλ)∈ Q×/(Q×)2 in the sense of [10] is defined
-to be the rational square class of the Gram determinant of anyρ(Sn)-invariant,
-non-degenerate, symmetric bilinear form of any rational representationρ affording
-the characterχλ. The obvious choice is the canonical bilinear form for the Specht
-module Sλ, and we arrive at
-det(χλ) = det(λ)· (Q×)2 =
-Y
-µ∈P odd
-λ
-h1
-λ(µ)
-h2
-λ(µ)· (Q×)2.
-6
-Example 2.12.Letλ = (2, 1(5)) and letµ = (3, 3, 1) be two partitions of7. Clearly,
-λ ⊴µ in the dominance order.
-We chooseβλ := (7, 5, 4, 3, 2, 1) and βµ = (8, 7, 4, 2, 1, 0) for the sequences of
-β-numbers for λ and µ, respectively. Comparing the two sequences, we see that
-there are two mismatches, sod(λ,µ ) = d6(βλ,βµ) = 2. Soµ is in fact a branch ofλ;
-we calculate thath1
-λ(µ) = 5 and h2
-λ(µ) = 3.
-It is easily seen thatµ is odd; indeed,D(µ) = (3) and f(3) = 1, so the oddness
-follows by Lemma 2.4. In particular, µ is an odd branch ofλ. With the same
-reasoning we see thatλ is even, sinceD(λ) = (2, 1) and (2, 1) is 2-core.
-We further observe thatP odd
-λ ={µ, (7), (5, 1, 1), (3, 1(4))} and thus arrive at
-det(χλ) = 5
-3· 7
-5· 7
-3· 7
-1· (Q×)2 = 7· (Q×)2.
-7 1
-5
-4
-3
-2
-1
-5 3 2
-4 2 1
-1
-Figure 2: Hook diagrams of(2, 1(5)) and (3, 3, 1).
+We fix a positive integer $n$. A *partition* is a sequence $\lambda=(a_1, \dots, a_m)$ of non-negative integers such that $a_1 \geq a_2 \geq \dots \geq a_m$. We identify partitions that only differ by a string of zeros at the end. We say that $\lambda$ is a partition of $n$ if $|\lambda|:= a_1+a_2+ \dots +a_m=n.$ We denote by $\mathscr{P}_n$ the set of partitions of $n$ and by $\mathscr{P}:= \bigcup_{i=0}^{\infty} \mathscr{P}_i$ the set of all partitions. If $\mu=(c_1, \dots, c_l)$ is another partition of $n$, we write $\lambda \trianglelefteq \mu$ and say that $\lambda$ proceeds $\mu$ in the *dominance (partial) order* if and only if $a_1 + \dots +a_i \leq c_1+ \dots +c_i$ for all $i \geq 1$. We denote $$[\lambda]=\{ (i,j) \mid (i,j) \in \mathbb Z \times \mathbb Z, 1 \leq i \leq m, 1 \leq j \leq a_m \}$$ to be the *Young diagram* of $\lambda$, which we can depict as a set of cells with $a_1$ cells in the first row, $a_2$ cells in the second row, and so on, see Figure [1](#Figure1){reference-type="ref" reference="Figure1"}. For a cell $c \in [\lambda]$, we denote the *hook length* $h_{\lambda}(c)$ to be the number of cells in the *hook* of $c$, i.e., the number of cells below and to the right of $c$, including itself. The *hook diagram* of $\lambda$ is the Young diagram, where each cell is filled with its hook length.
+
+<figure id="Figure1" data-latex-placement="ht">
+<div class="ytableau">
+<p>9 &amp; *(lightgray) 8 &amp; *(lightgray) 7 &amp; *(lightgray) 5 &amp; *(lightgray) 3 &amp; *(lightgray) 2 &amp; *(lightgray) 1<br />
+5 &amp; *(lightgray) 4 &amp; 3 &amp; 1<br />
+3 &amp; *(lightgray) 2 &amp; 1</p>
+</div>
+<figcaption>Hook diagram of <span class="math inline">(7, 4, 3)</span>, with the hook of the cell <span class="math inline"><em>c</em> = (1, 2)</span> colored gray.</figcaption>
+</figure>
+
+Note that the entries of the first column of a hook diagram uniquely determine the underlying partition. Generalizing that observation, a *sequence of $\beta$-numbers* is a sequence $\beta=(b_1, \dots, b_m)$ of non-negative integers such that all its entries are distinct. For each such sequence, there is a unique $\sigma \in \mathfrak{S}_m$ such that $\beta=(b_{\sigma(1)}, \dots, b_{\sigma(m)})$ is a strictly decreasing sequence, i.e., $b_{\sigma(1)} > b_{\sigma(2)} > \dots > b_{\sigma(m)}$. We define the partition $$\mathrm{Part}(\beta) \coloneqq (b_{\sigma(1)}-m+1,b_{\sigma(2)}-m+2,\dots,b_{\sigma(m)}-m+m)$$ and say that $\beta$ is a sequence of $\beta$-numbers for $\mathrm{Part}(\beta)$. Moreover, we say that $\ell(\beta) \coloneqq m$ is the length of $\beta$ and define $|\beta|:= |\mathrm{Part}(\beta)|$.
+
+Let $\mathscr{B}$ be the set of all sequences of $\beta$-numbers. We define the subsets $$\mathscr{B}_n:= \{ \beta \in \mathscr{B} \mid |\beta|=n \}$$ of the sequences of $\beta$-numbers of $n$ and $$\mathscr{B}(\lambda):= \{ \beta \in \mathscr{B} \mid \mathrm{Part}(\beta)=\lambda \}$$ of the sequences of $\beta$-numbers for the partition $\lambda$.
+
+::: example
+Let $\lambda=(7,4,3)$ as in Figure [1](#Figure1){reference-type="ref" reference="Figure1"}. The first column of its hook diagram consists of the sequence $(9,5,3)$, so $(9,5,3)$ is a sequence of $\beta$-numbers for $\lambda$. Further sequences of $\beta$-numbers for $\lambda$ include $(10,6,4,0)$, $(11,7,5,1,0)$ and $(1,0,6,8,12,2)$.
+:::
+
+Recall that there is a 1-to-1 correspondence between the partitions $\lambda$ of a positive integer $n$ and the irreducible characters $\chi_{\lambda}$ of the symmetric group $\mathfrak{S}_n$. The following well-known formula gives a convenient way to calculate the degree of each character.
+
+::: proposition
+(cf. [@james1981representation Theorem 2.3.21]) []{#DegreeSpechtModule label="DegreeSpechtModule"} Let $\lambda$ be a partition of $n$. Then $$f_{\lambda}:=\chi_{\lambda}(1)=\frac{n!}{\prod_{c \in [\lambda]} h_{\lambda}(c)}.$$ We further set $f_{(0)}:=1$. A partition is said to be odd (resp. even) if and only if $f_{\lambda}$ is odd (resp. even).
+:::
+
+We say that a partition $\lambda$ is *$q$-core* for some positive integer $q$ if there is no $c \in [\lambda]$ such that $q \mid h_{\lambda}(c)$. There is a unique partition $\mathrm{core}_q(\lambda)$, which is $q$-core, that can be constructed from $[\lambda]$ by successively removing hooks of cells with hook lengths a multiple of $q$, see also [@james1981representation Section 2.7]. This is where sequences of $\beta$-numbers come into play; removing a hook from a Young diagram corresponds to subtracting a multiple of a unit vector from a sequence of $\beta$-numbers for $\lambda$.
+
+::: example
+Let $\lambda=(7,4,3)$. Then $\lambda$ is not $8$-core, as $h_{\lambda}((1,2))=8$. Removing the corresponding hook, we end up with $\mathrm{core}_8(\lambda)=(3,2,1)$.
+:::
+
+We shall need a criterion on the parity of $f_{\lambda}$. Let $r$ be the non-negative integer such that $2^r \leq n <2^{r+1}$.
+
+::: lemma
+(cf. [@OddLattice Lemma 1]) []{#OddnessPartitions label="OddnessPartitions"} Let $\lambda$ be a partition of $n$. There exists at most one cell $c \in [\lambda]$ such that $h_{\lambda}(c)=2^r$. Moreover, $\lambda$ is odd if and only if such a cell exists and $\mathrm{core}_{2^r}(\lambda)$ is odd.
+:::
+
+Let $e_i=(0,0, \dots,0,1,0,\dots)$ be the sequence that has a $1$ in position $i$ and $0$ everywhere else.
+
+::: corollary
+[]{#OddnessBetaNumbers label="OddnessBetaNumbers"} Let $\lambda$ be a partition of $n$ and let $\beta_{\lambda} \in \mathscr{B}(\lambda)$. Then there is at most one index $i$ such that $\beta_{\lambda}-2^r e_i \in \mathscr{B}_{n-2^r}$. If such an index, say $j$, exists, then $\beta_{\lambda}-2^r e_j \in \mathscr{B}(\mathrm{core}_{2^r}(\lambda))$.
+:::
+
+::: definition
+We define the function $D: \mathscr{P} \to \mathscr{P}$ such that for any partition $\lambda$ of $n$, we have $D(\lambda):=\mathrm{core}_{2^r}(\lambda)$. Moreover, we set $D((0)):=(0)$. Denote $D^0(\lambda):=\lambda$ and $D^{m}(\lambda):=D(D^{m-1}(\lambda))$ for any positive integer $m$. We define the *oddness rank* of the partition $\lambda$ by $$\mathrm{OddRank}(\lambda) = \min \{m \in \mathbb Z_{\geq 0} \mid D^{m+1}(\lambda)=D^m(\lambda)\}.$$
+:::
+
+::: corollary
+Let $\lambda$ be a partition of $n$. Let $n= \sum_{i=0}^r a_i 2^i$ for $a_i \in \{0,1 \}$ be the decomposition of $n$ in binary. Then $\lambda$ is odd if and only if $\mathrm{OddRank}(\lambda)= \sum_{i=0}^r a_i.$
+:::
+
+We now define a distance function for the set of partitions, where the distance between two partitions is the minimum number of hooks that must be removed and added to transform one Young diagram into the other.
+
+::: definition
+1.  Let $m$ be a positive integer and let $\beta=(b_1,\dots, b_m), \beta'= (b_1',\dots, b_m')\in \mathbb Z^m$. Let $d_m: \mathbb Z^m \times \mathbb Z ^m \to \mathbb Z_{ \geq 0}$ be defined by $$d_m(\beta,\beta')= \# \{i \mid 1 \leq i \leq m, \ b_i \neq b_j' \ \text{for all} \ 1 \leq j \leq m\},$$ i.e., $d_m(\beta,\beta')$ is the number of mismatches of $\beta$ and $\beta'$.
+
+2.  Let $\lambda, \mu$ be partitions. We choose the positive integer $m$ large enough such that there are sequences of $\beta$-numbers $\beta_{\lambda} \in \mathscr{B}(\lambda)$, $\beta_{\mu} \in \mathscr{B}(\mu)$ such that $\ell(\beta_{\lambda})=\ell(\beta_{\mu})=m$. We define the distance $d:\mathscr{P} \times \mathscr{P} \to \mathbb Z_{ \geq 0}$ by $$d(\lambda, \mu):=d_m(\beta_{\lambda},\beta_{\mu}).$$
+:::
+
+It is clear that the distance between two partitions is well-defined and that $(\mathscr{P},d)$ is a metric space. Note that for instance if $\lambda$ is a partition of $n$ with $\mathrm{OddRank}(\lambda)>0$, then $d(\lambda, D(\lambda))=1$.
+
+The following definition covers the *odd branches* of a partition, which are the main objects we will work with in this paper.
+
+::: definition
+Let $\lambda$ be a partition of $n$.
+
+1.  Let $\mu$ be another partition of $n$. We say that $\mu$ is a branch of $\lambda$ if $\lambda \trianglelefteq \mu$ and $d(\lambda, \mu)=2$. Let $\mathscr{P}_{\lambda}$ be the set of branches of $\lambda$.
+
+2.  Let $\mu$ be a branch of $\lambda$ and let $\beta_{\lambda} \in \mathscr{B}(\lambda)$ (resp. $\beta_{\mu} \in \mathscr{B}(\mu)$) with $$\beta_{\lambda}=(b_1,b_2,b_3, \dots, b_m), \
+    \beta_{\mu}=(b_1',b_2',b_3, \dots, b_m),$$ such that $b_1>b_2$, $b_1'>b_2'$. We define $$h_{\lambda}^1(\mu):=b_1-b_2'=b_1'-b_2, \
+    h_{\lambda}^2(\mu):=b_2-b_2'=b_1'-b_1.$$ Note that there are two cells $c_1=(k,j), c_2 =(l,j) \in [\lambda]$ with $k<l$ such that $h_{\lambda}(c_i)=h_{\lambda}^i(\mu)$ for $i=1,2$. Also, $(b_1,b_2',b_3, \dots, b_m) \in \mathscr{B}$ and the associated partition corresponds to removing the hook of $c_2$ from the Young diagram of $\lambda$.
+
+3.  We define $$\mathscr{P}_{\lambda}^{\mathrm{odd}}:=   \{ \mu \in \mathscr{P}_{\lambda} \mid  \mu \ \textit{is odd}  \}$$ to be the set of odd branches of $\lambda$.
+:::
+
+We are now ready to give the formula for the Gram determinant of a Specht module:
+
+::: theorem
+(cf. [@JamesMurphyFormula]) []{#James-Murphy Formula label="James-Murphy Formula"} Let $\lambda$ be a partition of $n$. The Gram determinant of the canonical bilinear form with respect to the standard basis of the Specht module $S^{\lambda}$ is given by $$\det(\lambda) :=\prod_{\mu \in \mathscr{P}_{\lambda}} \left( \frac{h_{\lambda}^1(\mu) }{h_{\lambda}^2(\mu)} \right)^{\varepsilon_{\mu} f_{\mu}} \in \mathbb{Z},$$ where $\varepsilon_{\mu} \in \{-1,1 \}$. For any prime $p$, we define the integer $a_{\lambda}^{(p)}$ such that $$\det(\lambda)=m \cdot p^{a_{\lambda}^{(p)}},$$ where $m$ is coprime to $p$.
+:::
+
+::: remark
+[]{#RemarkDeterminantFormula label="RemarkDeterminantFormula"} We denote $(\mathbb{Q}^{\times})^2:= \{ x^2 \mid x \in \mathbb Q^{\times}  \}$ to be the set of invertible rational squares. Let $\lambda$ be an even partition of $n$ and let $\chi_{\lambda}$ be the character corresponding to $\lambda$. The orthogonal determinant $\det(\chi_{\lambda}) \in \mathbb{Q}^{\times}/(\mathbb{Q}^{\times})^2$ in the sense of [@NebeOrtDet] is defined to be the rational square class of the Gram determinant of any $\rho(\mathfrak{S}_n)$-invariant, non-degenerate, symmetric bilinear form of any rational representation $\rho$ affording the character $\chi_{\lambda}$. The obvious choice is the canonical bilinear form for the Specht module $S^{\lambda}$, and we arrive at $$\det(\chi_{\lambda})= \det(\lambda) \cdot (\mathbb{Q}^{\times})^2= \prod_{\mu \in \mathscr{P}_{\lambda}^{\mathrm{odd}}} \frac{h_{\lambda}^1(\mu) }{h_{\lambda}^2(\mu)}  \cdot (\mathbb{Q}^{\times})^2.$$
+:::
+
+::: example
+[]{#Example21111331 label="Example21111331"} Let $\lambda=(2,1^{(5)})$ and let $\mu=(3,3,1)$ be two partitions of $7$. Clearly, $\lambda \trianglelefteq \mu$ in the dominance order.
+
+We choose $\beta_{\lambda}:=(7,5,4,3,2,1)$ and $\beta_{\mu}=(8,7,4,2,1,0)$ for the sequences of $\beta$-numbers for $\lambda$ and $\mu$, respectively. Comparing the two sequences, we see that there are two mismatches, so $d(\lambda, \mu)=d_6(\beta_{\lambda}, \beta_{\mu})=2$. So $\mu$ is in fact a branch of $\lambda$; we calculate that $h_{\lambda}^1(\mu)=5$ and $h_{\lambda}^2(\mu)=3$.
+
+It is easily seen that $\mu$ is odd; indeed, $D(\mu)=(3)$ and $f_{(3)}=1$, so the oddness follows by Lemma [\[OddnessPartitions\]](#OddnessPartitions){reference-type="ref" reference="OddnessPartitions"}. In particular, $\mu$ is an odd branch of $\lambda$. With the same reasoning we see that $\lambda$ is even, since $D(\lambda)=(2,1)$ and $(2,1)$ is $2$-core.
+
+We further observe that $\mathscr{P}_{\lambda}^{\mathrm{odd}}= \{\mu, (7), (5,1,1), (3,1^{(4)}) \}$ and thus arrive at $$\det(\chi_{\lambda})= \frac{5}{3} \cdot \frac{7}{5} \cdot \frac{7}{3} \cdot \frac{7}{1} \cdot (\mathbb{Q}^{\times})^2= 7 \cdot (\mathbb{Q}^{\times})^2.$$
+:::
+
+<figure id="Figure2" data-latex-placement="ht">
+<div class="ytableau">
+<p>7 &amp; 1<br />
+5<br />
+4<br />
+3<br />
+2<br />
+1</p>
+</div>
+<p>        </p>
+<div class="ytableau">
+<p>5 &amp; 3 &amp; 2<br />
+4 &amp; 2 &amp; 1<br />
+1</p>
+</div>
+<figcaption>Hook diagrams of <span class="math inline">(2, 1<sup>(5)</sup>)</span> and <span class="math inline">(3, 3, 1)</span>.</figcaption>
+</figure>

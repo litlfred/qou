@@ -1,0 +1,241 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1211.1525v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "51ff1c8f90c025a406a8ec584bf032174c5b5eb6656eab4373950c86dd06f2e1",
+  "file": "1211.1525v2.pdf"
+ },
+ "provenance": {
+  "title": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS",
+  "authors": "MOTOHISA FUKUDA AND PIOTR \u015aNIADY",
+  "arxiv": {
+   "id": "1211.1525",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "23 Apr 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 16,
+  "by_kind": {
+   "lemma": 7,
+   "corollary": 2,
+   "theorem": 7
+  },
+  "formalization_candidates": 16
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.1",
+   "name": null,
+   "statement": "a) The map \u03c4 7\u2192t(\u03c4) is a bijective correspondence between NC(p)",
+   "section_file": "sections/sec-002-21-free-probability-noncrossing-partitions-and-p.md",
+   "section_title": "Free probability, noncrossing partitions and permutations",
+   "pages": "3-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": null,
+   "statement": "Let \u03c4 \u2208Sp be a permutation; we denote by \u03b81, . . . , \u03b8\u2113the",
+   "section_file": "sections/sec-005-24-moments-of.md",
+   "section_title": "Moments of",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2.3",
+   "name": null,
+   "statement": "For an arbitrary integer p \u22651 the expected value of the",
+   "section_file": "sections/sec-005-24-moments-of.md",
+   "section_title": "Moments of",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.1",
+   "name": null,
+   "statement": "shows that the limiting empirical distribution has the com-",
+   "section_file": "sections/sec-007-31-limiting-eigenvalues.md",
+   "section_title": "Limiting eigenvalues",
+   "pages": "11-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.2",
+   "name": null,
+   "statement": "Let assumptions of Theorem 3.1 hold true with an additional",
+   "section_file": "sections/sec-008-32-behavior-of-extreme-eigenvalues.md",
+   "section_title": "Behavior of extreme eigenvalues",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.3",
+   "name": null,
+   "statement": "If m \u2265n and 2p12 max{1, a} \u2264n2, then",
+   "section_file": "sections/sec-008-32-behavior-of-extreme-eigenvalues.md",
+   "section_title": "Behavior of extreme eigenvalues",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.4",
+   "name": null,
+   "statement": "In the regime of Theorem 3.2, we have the following large",
+   "section_file": "sections/sec-008-32-behavior-of-extreme-eigenvalues.md",
+   "section_title": "Behavior of extreme eigenvalues",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.4",
+   "name": null,
+   "statement": "We remark that Theorem 8.2 in [Aub12] gives large deviation results",
+   "section_file": "sections/sec-008-32-behavior-of-extreme-eigenvalues.md",
+   "section_title": "Behavior of extreme eigenvalues",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": null,
+   "statement": "Let l = 1. Then the empirical eigenvalues distribution (4.1)",
+   "section_file": "sections/sec-011-42-random-pure-states.md",
+   "section_title": "Random pure states",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "4.3",
+   "name": null,
+   "statement": "Take random complex Gaussian matrices G of n2 \u00d7l, where",
+   "section_file": "sections/sec-012-43-meander-polynomials-with-our-model.md",
+   "section_title": "Meander polynomials with our model",
+   "pages": "19-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.1",
+   "name": "Banica, Nechita",
+   "statement": "The empirical distribution of ml\u03c1\u0393 con-",
+   "section_file": "sections/sec-013-5-the-case-when-one-of-the-system-parts-is-fixed.md",
+   "section_title": "The case when one of the system parts is fixed",
+   "pages": "21-23",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "A.1. For arbitrary integers p, t \u22650 and D \u22652 the following",
+   "section_file": "sections/sec-014-6-concluding-remark.md",
+   "section_title": "Concluding remark",
+   "pages": "23-29",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "A.2. Let h = hp be a function de\ufb01ned on Sp as in (3.3) and",
+   "section_file": "sections/sec-014-6-concluding-remark.md",
+   "section_title": "Concluding remark",
+   "pages": "23-29",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "A.3 (Harer-Zagier formula [HZ86]). Let \u03b1 \u2208S2n and de\ufb01ne the",
+   "section_file": "sections/sec-014-6-concluding-remark.md",
+   "section_title": "Concluding remark",
+   "pages": "23-29",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "B.1 (Levy\u2019s lemma [L\u00e9v51]). Let f : Sk \u2192R be a function with",
+   "section_file": "sections/sec-015-appendix-b-measure-concentration.md",
+   "section_title": "Appendix B. Measure concentration",
+   "pages": "29-29",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "B.2 (Haagerup, Thorbj\u00f8rnsen). Let mn",
+   "section_file": "sections/sec-015-appendix-b-measure-concentration.md",
+   "section_title": "Appendix B. Measure concentration",
+   "pages": "29-29",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

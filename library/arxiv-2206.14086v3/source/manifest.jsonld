@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2206.14086v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2206.14086v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2206.14086v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2206.14086&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2206.14086v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2206.14086v3",
+    "content_type": "application/gzip",
+    "sha256": "bd7f0850046d09912a7ec871d4376046b298229197751bb75b3b9b261e96ed6c",
+    "bytes": 105243,
+    "fetched": "2026-10-10T15:17:41+00:00",
+    "files": [
+      {
+        "path": "source/files/Survey2021v3.tex",
+        "role": "tex",
+        "sha256": "c30fcf3ae897155cfdc40e51d996bd02b37e578c093ee9d6011f79bb307e2d4f",
+        "bytes": 101986
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

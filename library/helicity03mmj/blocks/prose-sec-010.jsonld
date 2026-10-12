@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/helicity03mmj/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/helicity03mmj/blocks/prose-sec-010",
   "kind": "prose",
   "title": "Linking of Foliations and Brownian Motion",
   "pageStart": 15,
   "pageEnd": 22,
   "text": "../sections/sec-010-5-linking-of-foliations-and-brownian-motion.md",
-  "derivedFrom": "library/helicity03mmj/manifest",
-  "sourceDocument": "library/helicity03mmj/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
   "provenance": "ingested"
 }

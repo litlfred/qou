@@ -3,7 +3,7 @@ import { proof } from "../../schema/builders";
 export default proof({
   label: "prf:categorical-mass-markov",
   title: "Proof of categorical mass markov",
-  uses: ["prop:categorical-mass-markov"],
+  uses: ["prop:categorical-mass-markov", "def:mass-identity"],
   computation: {
     engine: "sympy",
     script: "computations/markov/markov_trace_canonical.py",

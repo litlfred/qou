@@ -5,7 +5,11 @@
   "file": "1203.6551v1.pdf",
   "sha256": "a8e84f8ed63dbccaa746be61f166bedf3f49ac9e57743dbea492c5cfdd606b9f",
   "bytes": 729727,
-  "pages": 25
+  "pages": 25,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
   "doi": null,
   "title": "On the number of hyperbolic 3-manifolds of a given volume",
   "authors_raw": "Craig Hodgson and Hidetoshi Masai",
-  "abstract": "The work of Jørgensen and Thurston shows that there is a ﬁnite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v. W e show that there is an inﬁnite sequence of closed orientabl e hyperbolic 3- manifolds, obtained by Dehn ﬁlling on the ﬁgure eight knot co mplement, that are uniquely determined by their volumes. This gives a seque nce of distinct volumes xi converging to the volume of the ﬁgure eight knot complement w ith N (xi) = 1 for each i. W e also give an inﬁnite sequence of 1-cusped hyper- bolic 3-manifolds, obtained by Dehn ﬁlling one cusp of the ( − 2, 3, 8)-pretzel link complement, that are uniquely determined by their volu mes amongst ori- entable cusped hyperbolic 3-manifolds. Finally, we descri be examples showing that the number of hyperbolic link complements with a given v olume v can grow at least exponentially fast with v.",
+  "abstract": "The work of J\u00f8rgensen and Thurston shows that there is a \ufb01nite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v. W e show that there is an in\ufb01nite sequence of closed orientabl e hyperbolic 3- manifolds, obtained by Dehn \ufb01lling on the \ufb01gure eight knot co mplement, that are uniquely determined by their volumes. This gives a seque nce of distinct volumes xi converging to the volume of the \ufb01gure eight knot complement w ith N (xi) = 1 for each i. W e also give an in\ufb01nite sequence of 1-cusped hyper- bolic 3-manifolds, obtained by Dehn \ufb01lling one cusp of the ( \u2212 2, 3, 8)-pretzel link complement, that are uniquely determined by their volu mes amongst ori- entable cusped hyperbolic 3-manifolds. Finally, we descri be examples showing that the number of hyperbolic link complements with a given v olume v can grow at least exponentially fast with v.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20180802184722-04'00'",
@@ -169,6 +173,62 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 6,
-  "chars_total": 60378
+  "chars_total": 60378,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "hyamfest_arxiv.tex",
+   "tex_sections": 10,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.673,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-5-higher-order-terms-in-the-neumann-zagier-asymp",
+     "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-6-hyperbolic-graphs-with-parabolic-meridians",
+     "title": "Hyperbolic graphs with parabolic meridians",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-7-associated-circle-packings-and-cusp-moduli",
+     "title": "Associated circle packings and cusp moduli",
+     "prose_ratio": 0.577,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-9-some-open-questions",
+     "title": "Some Open Questions",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

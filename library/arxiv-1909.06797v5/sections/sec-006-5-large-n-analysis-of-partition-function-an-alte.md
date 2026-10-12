@@ -8,95 +8,88 @@ pages: 15-16
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
 doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
+text_source: latex
+latex_prose_ratio: 0.879
+latex_coverage_ratio: 0.989
 ---
-The large N analysis of partition function (4.1) was explicitly done in [7]. We brieﬂy review the
-procedure for the readers not familiar with matrix model techniques (for a more comprehensive
-treatment of matrix models, see [42–44]). To analyse the partition function (4.3) we denote a valid
-Young diagram of symmetric group S k by a set of numbers{ni}N
-i=1 where ni denotes the number of
-boxes in ith row. N is an arbitrary positive integer greater than or equal to the height of the ﬁrst
-Figure 4: A generic Young diagram in English notation. HereN is an arbitrary positive integer. The number
-of boxes in the ﬁrst column is less than or equal to N. In general,∃ a number 0 < M≤ N such that ni = 0
-for i = M + 1,··· , N.
-column. See ﬁgure 4. The dimension of a representation λk of S k is given by [24]
-dimλk = k!
-h1!h2!··· hN!
-N∏
-i=1
-i< j
-(hi− h j) (5.1)
+\label{sec:largek}
+
+The large $N$ analysis of partition function (\ref{eq:GCPF2}) was explicitly done in \cite{duttagopakumar}. We briefly review the procedure for the readers not familiar with matrix model techniques (for a more comprehensive treatment of matrix models, see \cite{Marino:2005sj,Eynard:2015aea,eynard_book}). To analyse the partition function (\ref{eq:GCPF3}) we  denote a valid Young diagram of symmetric group $S_k$ by a set of numbers $\{n_i\}_{i=1}^N$ where $n_i$ denotes the number of boxes in $i^{th}$ row. 
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=9cm,height=5.5cm]{YDEng.pdf}
+			\caption{A generic Young diagram in English notation. Here $N$ is an arbitrary positive integer. The number of boxes in the first column is less than or equal to $N$. In general, $\exists$ a number $0<M\leq N$ such that $n_i=0$ for $i=M+1, \cdots, N.$}
+			\label{fig:YD-english}
+	\end{center}
+\end{figure}
+
+$N$ is an arbitrary positive integer greater than or equal to the height of the first column. See figure \ref{fig:YD-english}. The dimension of a representation $\lambda_k$ of $S_k$ is given by \cite{hamermesh}
+
+\ben\label{eq:dimY}
+\text{dim} \lambda_k = \frac{k!}{h_1! h_2! \cdots h_N!} \prod_{i=1\atop i<j }^{N}(h_i-h_j)
+\een
+
 where,
-hi = ni + N− i (5.2)
-is the hook length of the ﬁrst box in ith row.
-We consider the large N limit of the partition function (4.3). In this limit the hook numbers hi∼ N
-(5.2). Therefore we deﬁne the following continuous functions to describe Young diagrams at large
-N
-n(x) = ni
-N, h(x) = hi
-N, where x = i
-N, x∈ [0, 1]. (5.3)
-The function n(x) or h(x) captures the distribution of boxes in a large k Young diagram. The
-relation between n(x) and h(x) follows from equation (5.2) and is given by
-h(x) = n(x) + 1− x. (5.4)
-15
-The number of boxes in a Young diagram in the large N limit is given by
-k =
-N∑
-i=1
-ni−→ N2
-[∫ 1
-0
-dx (h(x) + 1− x)
-]
-= N2
-[∫ 1
-0
-dxh(x)− 1
-2
-]
-= N2k′ (5.5)
+
+\ben\label{eq:hook}
+h_i = n_i + N -i
+\een
+
+is the hook length of the first box in $i^{th}$ row. 
+
+We consider the large $N$ limit of the partition function (\ref{eq:GCPF3}). In this limit the hook numbers $h_i \sim N$ (\ref{eq:hook}). Therefore we define the following continuous functions to describe Young diagrams at large $N$
+
+\ben
+n(x) = \frac{n_{i}}{N}, \quad h(x) = \frac{h_i}{N}, \quad \where \quad x=\frac{i}{N},\quad x\in[0,1].
+\een
+
+The function $n(x)$ or $h(x)$ captures the distribution of boxes in a large $k$ Young diagram. The relation between $n(x)$ and $h(x)$ follows from equation (\ref{eq:hook}) and is given by
+
+\be\label{eq:hook2}
+h(x) = n(x)+1-x.
+\ee
+
+The number of boxes in a Young diagram in the large $N$ limit is given by
+
+\be
+k = \sum_{i=1}^{N} n_i \longrightarrow N^2 \lB \int_0^1 dx \lb h(x)+1-x \rb\rB = N^2 \lB \int_0^1 dx h(x)-\frac12 \rB = N^2 k'
+\ee
+
 where
-k′ =
-∫ 1
-0
-dxh(x)− 1
-2 (5.6)
-is the renormalised box number and is anO(1) quantity. Thus we see that the number of boxes in a
-Young diagram in the largeN limit goes as∼O (N2) and hence N∼O (
-√
-k). The partition function
-(4.3) in N→∞ limit is given by,
-QY =
-∫
-[Dh(x)]e−N2S eﬀ[h(x)] (5.7)
+
+\be
+k' =  \int_0^1 dx h(x)-\frac12\
+\ee
+
+is the renormalised box number and is an ${\cal O}(1)$ quantity. Thus we see that the number of boxes in a Young diagram in the large $N$ limit goes as $\sim {\cal O}(N^2)$ and hence $N\sim {\cal O}(\sqrt{k})$. The partition function (\ref{eq:GCPF3}) in $N \ra \infty$ limit is given by,
+
+\ben
+	\cQ_{\cY} = \int [Dh(x)] e^{-N^2 \seff{h(x)}} 
+\een
+
 where
-−S eﬀ[h(x)] =
-∫ 1
-0
-dx−
-∫ 1
-0
-dy ln|h(x)− h(y)|− 2
-∫ 1
-0
-dxh(x) lnh(x) + k′ ln(zk′) + k′ + 1. (5.8)
-Therefore, the dominant contribution to the partition function comes from the extrema ofS eﬀ[h(x)].
-Varying S eﬀ[h(x)] with respect to h(x) we get the saddle point equation
-−
-∫ u(h′)dh′
-h− h′ = ln
-( h
-ξ
-)
-, where ξ2 = zk′ (5.9)
-where the Young diagram density u(h) is given by
-u(h) =−∂x
-∂h. (5.10)
-Monotonicity of h(x) implies 0≤ u(h)≤ 1. u(h) also satisﬁes two conditions
-∫
-dh u(h) = 1, and
-∫
-h u(h) dh = k′ + 1
-2. (5.11)
-We solve the saddle point equation (5.9) to ﬁnd Young diagram density that satisﬁes the constraints
-(5.11).
+
+\ben 
+-\seff{h(x)}  = \int_0^1 dx\Xint-_0^1 dy \ln|h(x)-h(y)| -2 \int_0^1 dx h(x) \ln h(x) +k' \ln (z k') +k'+1.
+\een
+
+Therefore, the dominant contribution to the partition function comes from the extrema of $\seff{h(x)}$. Varying $\seff{h(x)}$ with respect to $h(x)$ we get the saddle point equation
+
+\ben\label{eq:saddeq2}
+\Xint- \frac{u(h')dh'}{h-h'} = \ln \lb \frac{h}{\xi}\rb, \quad \where \quad \xi^2 = z k'
+\een
+
+where the Young diagram density $u(h)$ is given by
+
+\ben\label{eq:uhdef}
+u(h)=-\frac{\partial x}{\partial h}.
+\een
+
+Monotonicity of $h(x)$ implies $0 \leq u(h) \leq 1$. $u(h)$ also satisfies two conditions
+
+\ben\label{eq:uhcond}
+\int dh\, u(h) =1, \quad \tand \quad \int h\, u(h)\, dh = k'+\frac12.
+\een
+
+We solve the saddle point equation (\ref{eq:saddeq2}) to find Young diagram density that satisfies the constraints (\ref{eq:uhcond}).

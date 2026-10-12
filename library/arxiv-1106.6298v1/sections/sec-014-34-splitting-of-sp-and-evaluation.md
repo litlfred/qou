@@ -8,24 +8,40 @@ pages: 14-14
 source_pdf: 1106.6298v1.pdf
 source_sha256: 23b0754067873a04
 doc_brief: "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s."
+text_source: latex
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 0.969
 ---
-(a, n) = 1 }.
-Suppose p is a prime. Analogously to (13), we have
-Sp ≃ Z[1/p][q]N .
-Observe that N is not Z[1/p]–connected. In fact one has N = ∐∞
-j=0 pjNp, where each
-pjNp is Z[1/p]–connected. Let us deﬁne
-Sp,j := Z[1/p][q]pjNp.
-Note that for every f ∈ S p, the evaluation ev ξ(f ) can be deﬁned for every root ξ of unity.
-For f ∈ S p,j , the evaluation ev ξ(f ) can be deﬁned when ξ is a root of unity of order in
-pjNp. In [2] we proved the following.
-Proposition 8. For every prime p one has
-(14) Sp ≃
-∞∏
-j=0
-Sp,j .
-Let πj : Sp → S p,j denote the projection onto the jth component in the above decom-
-position. Suppose ξ is a root of unity of order r = pjr′, with ( r′, p) = 1. Then for any
-x ∈ S p, one has
-evξ(x) = ev ξ(πj(x)).
-If i ⁄= j then ev ξ(πi(x)) = 0.
+For every integer $a$, we put $\N_a := \{ n \in \N \mid (a,n)=1\}$.
+
+Suppose $p$ is a prime. Analogously to \eqref{cofinal},
+we have
+$$\calS_p \simeq \Z[1/p][q]^\N\,.$$
+
+Observe that $\N$ is not $\Z[1/p]$--connected. In fact one has
+ $\N =\amalg_{j=0}^\infty \; p^j \N_p$, where each $p^j\N_p$ is
+$\Z[1/p]$--connected.
+Let us define
+\[
+\calS_{p,j}:= \Z[1/p][q]^{p^j \N_p}.
+\]
+Note that for every $f \in \calS_p$, the evaluation $\ev_\xi(f)$ can be
+ defined for every root $\xi$ of unity. For $f\in \calS_{p,j}$, the evaluation
+$\ev_\xi(f)$ can be defined  when $\xi$ is a root of unity of order
+in $p^j\N_p$. In \cite{BBL} we proved the following.
+
+
+
+\begin{proposition} For every prime $p$ one has
+\begin{equation} \calS_p\simeq \prod_{j=0}^\infty \calS_{p,j}.
+\label{0912}\end{equation}
+
+\end{proposition}
+
+Let $\pi_j: \calS_p \to \calS_{p,j}$ denote the projection onto the
+$j$th component in the above decomposition.
+Suppose $\xi$ is a root of unity of order $r= p^j r'$,
+with $(r',p)=1$. Then
+for any $x\in \calS_p$, one has
+$$ \ev_\xi(x) = \ev_\xi(\pi_j(x)).$$
+If $i\neq j$ then $\ev_\xi(\pi_i(x))=0$.

@@ -1,0 +1,16 @@
+\begin{tikzpicture}[annular]
+	\clip (0,0) circle (2cm);
+
+	\filldraw[shaded] (158:4cm) -- (0,0) .. controls ++(130:2cm) and ++(50:2cm) .. (0,0)--(-68:4cm) arc (-68:158:4cm);
+	\filldraw[shaded] (-158:4cm)--(0,0)--(-112:4cm);
+
+	\draw[ultra thick] (0,0) circle (2cm);
+	
+	\node at (0,0)  [empty box] (T) {};
+	\node at (T.180) [left] {$\star$};
+	\node at (180:2cm) [right] {$\star$};
+	\node at (0:1cm) {$\cdot$};
+	\node at (20:1cm) {$\cdot$};
+	\node at (-20:1cm) {$\cdot$};
+	
+\end{tikzpicture}

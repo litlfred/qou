@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2211.13362v2/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2211.13362v2/blocks/prose-sec-001",
   "kind": "prose",
   "title": "Bohmian account of the DSE",
   "pageStart": 3,
   "pageEnd": 3,
   "text": "../sections/sec-001-bohmian-account-of-the-dse.md",
-  "derivedFrom": "library/arxiv-2211.13362v2/manifest",
-  "sourceDocument": "library/arxiv-2211.13362v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2211.13362v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2211.13362v2/manifest.jsonld",
   "provenance": "ingested"
 }

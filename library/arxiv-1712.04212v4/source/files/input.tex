@@ -1,0 +1,156 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ascmac}
+\usepackage{amsthm}
+
+\setcounter{tocdepth}{1}
+
+\makeatletter
+\renewcommand{\theequation}{%
+\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+\makeatother 
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem*{thm*}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{ex}{Example}[section]
+\newtheorem{defi}[ex]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\ric}{\operatorname{Ric}}
+\newcommand{\Div}{\operatorname{div}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\pr}{\operatorname{pr}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\tr}{\operatorname{trace}}
+
+\newcommand{\D}{\operatorname{Diam}}
+\newcommand{\PD}{\operatorname{PartDiam}}
+\newcommand{\OD}{\operatorname{ObsDiam}}
+\newcommand{\IR}{\operatorname{InRad}}
+\newcommand{\PI}{\operatorname{PartInRad}}
+\newcommand{\OI}{\operatorname{ObsInRad}}
+\newcommand{\SE}{\operatorname{Sep}}
+\newcommand{\DS}{\operatorname{BSep}}
+\newcommand{\HS}{\operatorname{HS}}
+
+
+\newcommand{\cut}{\mathrm{Cut}\,}
+\newcommand{\inte}{\mathrm{Int}\,}
+\newcommand{\inj}{\mathrm{Inj}}
+\newcommand{\supp}{\mathrm{supp}\,}
+
+\newcommand{\ball}{B^{n}_{\kappa,\lambda}}
+\newcommand{\const}{C_{\kappa,\lambda}}
+\newcommand{\bconst}{\bar{C}_{\kappa,\lambda}}
+\newcommand{\bm}{\partial M}
+
+\usepackage{latexsym}
+\def\qed{\hfill $\Box$} 
+
+\title[$1$-Lipschitz functions on manifolds with boundary]{Concentration of $1$-Lipschitz functions\\ on manifolds with boundary\\ with Dirichlet boundary condition}
+\author{Yohei Sakurai}
+\date{August 16, 2018}
+\address{Institute for Applied Mathematics, University of Bonn, Endenicher Allee 60, D-53115 Bonn, Germany}
+\email{sakurai@iam.uni-bonn.de}
+\subjclass[2010]{Primary 53C23; Secondary 58C40}
+\keywords{Concentration of measure; Manifold with boundary; Comparison theorem; Ricci curvature; Mean curvature; Dirichlet eigenvalue}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In this paper,
+we consider a concentration of measure problem on Riemannian manifolds with boundary.
+We study concentration phenomena of non-negative $1$-Lipschitz functions with Dirichlet boundary condition around zero,
+which is called boundary concentration phenomena.
+We first examine relation between boundary concentration phenomena and large spectral gap phenomena of Dirichlet eigenvalues of Laplacian.
+We will obtain analogue of the Gromov-V. D. Milman theorem and the Funano-Shioya theorem for closed manifolds.
+Furthermore,
+to capture boundary concentration phenomena,
+we introduce a new invariant called the observable inscribed radius.
+We will formulate comparison theorems for such invariant under a lower Ricci curvature bound,
+and a lower mean curvature bound for the boundary.
+Based on such comparison theorems,
+we investigate various boundary concentration phenomena of sequences of manifolds with boundary.
+\end{abstract}
+
+\input{section1}
+\input{section2}
+\input{section3}
+\input{section4}
+\input{section5}
+\input{section6}
+\input{section7}
+
+\begin{thebibliography}{99}
+\bibitem{BE}  D. Bakry and M. \'Emery, \textit{Diffusions hypercontractives}, S\'eminaire de probabilit\'es, XIX, 1983/84, 177--206, Lecture Notes in Math., 1123, Springer, Berlin, 1985.
+\bibitem{BL}  D. Bakry and M. Ledoux, \textit{L\'evy-Gromov's isoperimetric inequality for an infinite-dimensional diffusion generator}, Invent. Math. 123 (1996), no. 2, 259--281.
+\bibitem{B}    V. Bayle, \textit{Propri\'et\'es de concavit\'e du profil isop\'erim\'etrique et applications}, PhD Thesis, Universit\'e Joseph-Fourier-Grenoble I, 2003.
+\bibitem{Bu}  P. Buser, \textit{A note on the isoperimetric constant}, Ann. Sci. \'Ecole Norm. Sup. (4) 15 (1982), no. 2, 213--230.
+\bibitem{C}  J. Cheeger, \textit{A lower bound for the smallest eigenvalue of the Laplacian}, Problems in analysis (Papers dedicated to Salomon Bochner, 1969), pp. 195--199. Princeton Univ. Press, Princeton, N. J., 1970.
+\bibitem{CW} M. F. Chen and F. Wang, \textit{Application of coupling method to the first eigenvalue on manifold}, Sci. China Ser. A 37 (1994), no. 1, 1--14.
+\bibitem{Ch} S. Y. Cheng, \textit{Eigenvalue comparison theorems and its geometric applications}, Math. Z. 143 (1975), no. 3, 289--297.
+\bibitem{CGY} F. R. K. Chung, A. Grigor'yan, S.-T. Yau, \textit{Upper bounds for eigenvalues of the discrete and continuous Laplace operators}, Adv. Math. 117 (1996), no. 2, 165--178.
+\bibitem{CS}   B. Colbois and A. Savo, \textit{Large eigenvalues and concentration}, Pacific J. Math. 249 (2011), no. 2, 271--290.
+\bibitem{F}   K. Funano, \textit{Eigenvalues of Laplacian and multi-way isoperimetric constants on weighted Riemannian manifolds}, preprint arXiv:1307.3919.
+\bibitem{FSa}   K. Funano and Y. Sakurai, \textit{Concentration of eigenfunctions of the Laplacian on a closed Riemannian manifold}, preprint arXiv:1712.09084.
+\bibitem{FSh}   K. Funano and T. Shioya, \textit{Concentration, Ricci curvature, and eigenvalues of Laplacian}, Geom. Funct. Anal. 23 (2013), no. 3, 888--936.
+\bibitem{G}    M. Gromov, \textit{Metric structures for Riemannian and non-Riemannian spaces}, Based on the 1981 French original.
+                      With appendices by M. Katz, P. Pansu and S. Semmes. Translated from the French by Sean Michael Bates. Reprint of the 2001 English edition.
+                      Modern Birkh\"auser Classics. Birkh\"auser Boston, Inc., Boston, MA, 2007.
+\bibitem{GM} M. Gromov and V. D. Milman, \textit{A topological application of the isoperimetric inequality}, Amer. J. Math. 105 (1983), no. 4, 843--854.
+\bibitem{HK}  E. Heintze and H. Karcher, \textit{A general comparison theorem with applications to volume estimates for submanifolds}, Ann. Sci. Ecole Norm. Sup. 11 (1978), 451--470.
+\bibitem{K1}  A. Kasue, \textit{Ricci curvature, geodesics and some geometric properties of Riemannian manifolds with boundary}, J. Math. Soc. Japan 35 (1983), no. 1, 117--131.
+\bibitem{K2}  A. Kasue, \textit{On a lower bound for the first eigenvalue of the Laplace operator on a Riemannian manifold}, Ann. Sci. \'Ecole Norm. Sup. (4) 17 (1984), no. 1, 31--44.
+\bibitem{KM}  A. V. Kolesnikov and E. Milman, \textit{Brascamp-Lieb-type inequalities on weighted Riemannian manifolds with boundary}, J. Geom. Anal. 27 (2017), no. 2, 1680--1702.
+\bibitem{K}  B. Klartag, \textit{Needle decompositions in Riemannian geometry}, Mem. Amer. Math. Soc. 249 (2017), no. 1180, v + 77 pp.
+\bibitem{KLLOT}  T. C. Kwok, L. C. Lau, Y. T. Lee, S. Oveis Gharan and L. Trevisan, \textit{Improved Cheeger's inequality: analysis of spectral partitioning algorithms through higher order spectral gap}, STOC'13---Proceedings of the 2013 ACM Symposium on Theory of Computing, 11--20, ACM, New York, 2013.
+\bibitem{L1}    M. Ledoux, \textit{A simple analytic proof of an inequality by P. Buser}, Proc. Amer. Math. Soc. 121 (1994), no. 3, 951--959.
+\bibitem{L2}    M. Ledoux, \textit{The concentration of measure phenomenon}, Mathematical Surveys and Monographs, 89. American Mathematical Society, Providence, RI, 2001.
+\bibitem{Le}   P. L\'evy, \textit{Probl\'emes concrets d'analyse fonctionnelle. Avec un compl\'ement sur les fonctionnelles analytiques par F. Pellegrino}, (French) 2d ed. Gauthier-Villars, Paris, 1951.
+\bibitem{L}    P. Li, \textit{Geometric analysis}, Cambridge Studies in Advanced Mathematics, 134. Cambridge University Press, Cambridge, 2012.
+\bibitem{LW1} H. Li and Y. Wei, \textit{Rigidity theorems for diameter estimates of compact manifold with boundary},  Int. Math. Res. Not. IMRN (2015), no. 11, 3651--3668.
+\bibitem{LW2} H. Li and Y. Wei, \textit{$f$-minimal surface and manifold with positive $m$-Bakry-\'Emery Ricci curvature}, J. Geom. Anal. 25 (2015), no. 1, 421--435.
+\bibitem{LY}    P. Li and S. T. Yau, \textit{Estimates of eigenvalues of a compact Riemannian manifold}, Geometry of the Laplace operator (Proc. Sympos. Pure Math., Univ. Hawaii, Honolulu, Hawaii, 1979), pp. 205--239, Proc. Sympos. Pure Math., XXXVI, Amer. Math. Soc., Providence, R.I., 1980.
+\bibitem{Li}     A. Lichnerowicz, \textit{Vari\'et\'es riemanniennes \`a tenseur C non n\'egatif}, C. R. Acad. Sci. Paris S\'er. A-B 271 1970 A650--A653.
+\bibitem{Liu}    S. Liu, \textit{An optimal dimension-free upper bound for eigenvalue ratios}, preprint arXiv:1405.2213v3.
+\bibitem{Lo}  J. Lott, \textit{Some geometric properties of the Bakry-\'Emery-Ricci tensor}, Comment. Math. Helv. 78 (2003), no. 4, 865--883.
+\bibitem{M1}  V. D. Milman, \textit{A new proof of A. Dvoretzky's theorem on cross-sections of convex bodies}, (Russian) Funkcional. Anal. i Prilo\v{z}en. 5 (1971), no. 4, 28--37. 
+\bibitem{M2}  V. D. Milman, \textit{The heritage of P. L\'evy in geometrical functional analysis. Colloque Paul L\'evy sur les Processus Stochastiques (Palaiseau, 1987)}, Ast\'erisque No. 157-158 (1988), 273--301.
+\bibitem{Mi1} E. Milman, \textit{On the role of convexity in isoperimetry, spectral gap and concentration}, Invent. Math. 177 (2009), no. 1, 1--43.
+\bibitem{Mi2} E. Milman, \textit{Isoperimetric and concentration inequalities: equivalence under curvature lower bound}, Duke Math. J. 154 (2010), no. 2, 207--239.
+\bibitem{Mi3} E. Milman, \textit{Sharp isoperimetric inequalities and model spaces for curvature-dimension-diameter condition}, J. Eur. Math. Soc. 17 (2015), 1041--1078.
+\bibitem{Mi4} E. Milman, \textit{Beyond traditional Curvature-Dimension I: new model spaces for isoperimetric and concentration inequalities in negative dimension}, Trans. Amer. Math. Soc. 369 (2017), no. 5, 3605--3637.
+\bibitem{Mo}  F. Morgan, \textit{Manifolds with density}, Notices of the AMS (2005), 853--858.
+\bibitem{O1}  S. Ohta, \textit{$(K,N)$-convexity and the curvature-dimension condition for negative $N$}, J. Geom. Anal. 26 (2016), no. 3, 2067--2096.
+\bibitem{O2}  S. Ohta, \textit{Needle decompositions and isoperimetric inequalities in Finlser geometry}, J. Math. Soc. Japan 70 (2018), no. 2, 651--693.
+\bibitem{OT1}  S. Ohta and A. Takatsu, \textit{Displacement convexity of generalized relative entropies}, Adv. Math. 228 (2011), no. 3, 1742--1787.
+\bibitem{OT2}  S. Ohta and A. Takatsu, \textit{Displacement convexity of generalized relative entropies. I\hspace{-.1em}I}, Comm. Anal. Geom. 21 (2013), no. 4, 687--785.
+\bibitem{Q}    Z. Qian, \textit{Estimates for weighted volumes and applications}, Quart. J. Math. Oxford Ser. (2) 48 (1997), no. 190, 235--242.
+\bibitem{S1}     Y. Sakurai, \textit{Rigidity of manifolds with boundary under a lower Bakry-\'Emery Ricci curvature bound}, preprint arXiv:1506.03223v4, to appear in Tohoku Math. J..
+\bibitem{S1.5} Y. Sakurai, \textit{Rigidity phenomena in manifolds with boundary under a lower weighted Ricci curvature bound}, preprint arXiv:1605.02493v2, to appear in J. Geom. Anal..
+\bibitem{S2}     Y. Sakurai, \textit{Comparison geometry of manifolds with boundary under a lower weighted Ricci curvature bound}, preprint arXiv:1612.08483v2.
+\bibitem{Sh}  T. Shioya, \textit{Metric measure geometry. Gromov's theory of convergence and concentration of metrics and measures}, IRMA Lectures in Mathematics and Theoretical Physics, 25. EMS Publishing House, Z\"urich, 2016.
+\bibitem{Sh1}  T. Shioya, \textit{Metric measure limits of spheres and complex projective spaces}, Measure theory in non-smooth spaces, 261--287, Partial Differ. Equ. Meas. Theory, De Gruyter Open, Warsaw, 2017.
+\bibitem{V}    C. Villani, \textit{Optimal Transport: Old and New}, Springer-Verlag, Berlin, 2009.
+\bibitem{Wa} F.-Y. Wang, \textit{Gradient estimates of Dirichlet heat semigroups and application to isoperimetric inequalities}, Ann. Probab. 32 (2004), no. 1A, 424--440.
+\bibitem{WW} G. Wei and W. Wylie, \textit{Comparison geometry for the Bakry-Emery Ricci tensor}, J. Differential Geom. 83 (2009), no. 2, 337--405.
+\bibitem{W}      W. Wylie, \textit{A warped product version of the Cheeger-Gromoll splitting theorem}, Trans. Amer. Math. Soc. 369 (2017), no. 9, 6661--6681.
+\bibitem{WY}    W. Wylie and D. Yeroshkin, \textit{On the geometry of Riemannian manifolds with density}, preprint arXiv:1602.08000 (2016).
+\bibitem{YZ}  T. Yamaguchi and Z. Zhang, \textit{Inradius collapsed manifolds}, preprint arXiv:1512.08136v2.
+\end{thebibliography}
+\end{document}

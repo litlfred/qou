@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/2018sorus020/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Reidemeister torsion on character varieties",
   "contains": [
+    "library/2018sorus020/sections/sec-front-matter",
     "library/2018sorus020/sections/sec-000",
     "library/2018sorus020/sections/sec-001",
     "library/2018sorus020/sections/sec-002",
@@ -54,40 +60,14 @@
     "library/2018sorus020/sections/sec-045",
     "library/2018sorus020/sections/sec-046",
     "library/2018sorus020/sections/sec-047",
-    "library/2018sorus020/sections/sec-048",
-    "library/2018sorus020/sections/sec-049",
-    "library/2018sorus020/sections/sec-050",
-    "library/2018sorus020/sections/sec-051",
-    "library/2018sorus020/sections/sec-052",
-    "library/2018sorus020/sections/sec-053",
-    "library/2018sorus020/sections/sec-054",
-    "library/2018sorus020/sections/sec-055",
-    "library/2018sorus020/sections/sec-056",
-    "library/2018sorus020/sections/sec-057",
-    "library/2018sorus020/sections/sec-058",
-    "library/2018sorus020/sections/sec-059",
-    "library/2018sorus020/sections/sec-060",
-    "library/2018sorus020/sections/sec-061",
-    "library/2018sorus020/sections/sec-062",
-    "library/2018sorus020/sections/sec-063",
-    "library/2018sorus020/sections/sec-064",
-    "library/2018sorus020/sections/sec-065",
-    "library/2018sorus020/sections/sec-066",
-    "library/2018sorus020/sections/sec-067",
-    "library/2018sorus020/sections/sec-068",
-    "library/2018sorus020/sections/sec-069",
-    "library/2018sorus020/sections/sec-070",
-    "library/2018sorus020/sections/sec-071",
-    "library/2018sorus020/sections/sec-072",
-    "library/2018sorus020/sections/sec-073",
-    "library/2018sorus020/sections/sec-074",
-    "library/2018sorus020/sections/sec-075",
-    "library/2018sorus020/sections/sec-076",
-    "library/2018sorus020/sections/sec-077"
+    "library/2018sorus020/sections/sec-048"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "2018sorus020",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2018SORUS020.pdf",
     "source_sha256": "c3f929e5195983cec88f2c01dcc0395771877f7793ca6aa246ae4f8325e44c9f",
     "pages": 110,

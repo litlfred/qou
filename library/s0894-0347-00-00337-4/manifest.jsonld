@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-00-00337-4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-00-00337-4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "s0894-0347-00-00337-4",
   "contains": [
+    "library/s0894-0347-00-00337-4/sections/sec-front-matter",
     "library/s0894-0347-00-00337-4/sections/sec-000",
     "library/s0894-0347-00-00337-4/sections/sec-001",
     "library/s0894-0347-00-00337-4/sections/sec-002",
@@ -24,27 +30,13 @@
     "library/s0894-0347-00-00337-4/sections/sec-015",
     "library/s0894-0347-00-00337-4/sections/sec-016",
     "library/s0894-0347-00-00337-4/sections/sec-017",
-    "library/s0894-0347-00-00337-4/sections/sec-018",
-    "library/s0894-0347-00-00337-4/sections/sec-019",
-    "library/s0894-0347-00-00337-4/sections/sec-020",
-    "library/s0894-0347-00-00337-4/sections/sec-021",
-    "library/s0894-0347-00-00337-4/sections/sec-022",
-    "library/s0894-0347-00-00337-4/sections/sec-023",
-    "library/s0894-0347-00-00337-4/sections/sec-024",
-    "library/s0894-0347-00-00337-4/sections/sec-025",
-    "library/s0894-0347-00-00337-4/sections/sec-026",
-    "library/s0894-0347-00-00337-4/sections/sec-027",
-    "library/s0894-0347-00-00337-4/sections/sec-028",
-    "library/s0894-0347-00-00337-4/sections/sec-029",
-    "library/s0894-0347-00-00337-4/sections/sec-030",
-    "library/s0894-0347-00-00337-4/sections/sec-031",
-    "library/s0894-0347-00-00337-4/sections/sec-032",
-    "library/s0894-0347-00-00337-4/sections/sec-033",
-    "library/s0894-0347-00-00337-4/sections/sec-034"
+    "library/s0894-0347-00-00337-4/sections/sec-018"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "s0894-0347-00-00337-4",
+    "title_source": "slug",
     "source_file": "S0894-0347-00-00337-4.pdf",
     "source_sha256": "1c6848281fc2804c49c895e8bb56a7513d39ffa2be8d41c7bf7dd74615aeaf27",
     "pages": 35,

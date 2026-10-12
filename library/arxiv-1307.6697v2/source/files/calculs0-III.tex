@@ -1,0 +1,1164 @@
+\section{An example: the figure-eight knot}\label{sec:m004}
+The figure eight knot is given as a gluing of two tetrahedra as in Figure \ref{fig:m004}.  We refer to it
+to set the equations of compatibility.
+
+Let $z_{ij}$ and $w_{ij}$ be the coordinates associated to the edge $ij$ of each of the tetrahedra.
+
+%\begin{picture}(200,200)
+%\put(50,50){\includegraphics[scale=0.50]{m004b.eps}}
+%\put(150,50){\hbox{Over here}}
+%\end{picture}
+
+
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.50]{m004b.eps}
+\put(-215,105){1}
+\put(-270,50){3}
+\put(-160,50){4}
+\put(-215,-10){2}
+%
+\put(-69,105){1}
+\put(-125,50){3}
+\put(-15,50){4}
+\put(-69,-10){2}
+\end{center}
+\caption{Triangulation of {\tt m004}}
+\label{fig:m004}
+\end{figure}
+
+We obtain the edge and face equations:
+$$
+(L_e)
+\left \lbrace
+\begin{array}{rcl}
+z_{{23}}w_{{24}}z_{{13}}w_{{31}}z_{{14}}w_{{21}}&=&1\\
+z_{{32}}w_{{42}}z_{{31}}w_{{13}}z_{{41}}w_{{12}}&=&1\\
+z_{{24}}w_{{23}}z_{{21}}w_{{43}}z_{{34}}w_{{41}}&=&1\\
+z_{{42}}w_{{32}}z_{{12}}w_{{34}}z_{{43}}w_{{14}}&=&1.
+\end{array}
+\right.\quad
+(L_f)
+\left \lbrace
+\begin{array}{rcl}
+z_{{21}}z_{{31}}z_{{41}}w_{{21}}w_{{31}}w_{{41}}&=&1\\
+z_{{12}}z_{{32}}z_{{42}}w_{{13}}w_{{23}}w_{{43}}&=&1\\
+z_{{13}}z_{{23}}z_{{43}}w_{{12}}w_{{32}}w_{{42}}&=&1\\
+z_{{14}}z_{{24}}z_{{34}}w_{{14}}w_{{24}}w_{{34}}&=&1.
+\end{array}
+\right.
+$$
+\subsection{Boundary holonomy representation}
+\begin{figure}[ht]
+\begin{center}
+\begin{asy}
+  // % on commence par des declarations
+  // % on declare ce qu'on utilise
+  size(12cm);
+  defaultpen(1);
+  usepackage("amssymb");
+  import geometry;
+  //arrowbar Fleche = Arrow(SimpleHead, 3, 10);
+  // % on declare des choses pour la figure
+  point o = (0,0);
+  pair ph = (2,0);
+  pair pv = (1,2);
+
+  // % on trace la figure
+  draw(o -- o+pv -- o+ph -- (3,2) -- (4,0)--(5,2)-- o+3*ph --(7,2)--(8,0)--(9,2)--(1,2)--cycle, blue);
+  draw(o -- o+4*ph, blue);
+
+  // % on decore des points
+  // dot(o,black+5);
+  // % d'abord les z_ij
+  label("{\small $z_{34}$}", o, 1.5*dir(35));
+  label("\small $ z_{41}$", o+ph, 1.5*dir(35));
+  label("\small $z_{12}$", o+2*ph, 1.5*dir(35));
+  label("\small $z_{23}$", o+3*ph, 1.5*dir(35));
+
+  label("\small $ z_{32}$", o+pv, 4*S);
+  label("\small $ z_{42}$", o+pv+ph, 4*S);
+  label("\small $z_{14}$", o+pv+2*ph, 4*S);
+  label("\small $ z_{24}$", o+pv+3*ph, 4*S);
+
+  label("\small $z_{31}$", o+ph, 1.5*dir(145));
+  label("\small $z_{43}$", o+2*ph, 1.5*dir(145));
+  label("\small $z_{13}$", o+3*ph, 1.5*dir(145));
+  label("\small $ z_{21}$", o+4*ph, 1.5*dir(145));
+
+  label("\small$w_{12}$", o+pv, 1.5*dir(-35));
+  label("\small $w_{32}$", o+pv+ph, 1.5*dir(-35));
+  label("\small $ w_{21}$", o+pv+2*ph, 1.5*dir(-35));
+  label("\small $w_{41}$", o+pv+3*ph, 1.5*dir(-35));
+
+  label("\small$ w_{13}$", o+ph, 4.5*N);
+  label("\small $ w_{34}$", o+ph+ph, 4.5*N);
+  label("\small $w_{24}$", o+ph+2*ph, 4.5*N);
+  label("\small $ w_{43}$", o+ph+3*ph, 4.5*N);
+
+  label("\small $ w_{14}$", o+pv+ph, 1.5*dir(-145));
+  label("\small $ w_{31}$", o+pv+2*ph, 1.5*dir(-145));
+  label("\small $w_{23}$", o+pv+3*ph, 1.5*dir(-145));
+  label("\small $ w_{42}$", o+pv+4*ph, 1.5*dir(-145));
+
+ // % the holonomy curves
+ // % A
+ //%draw ((.5,1)..(8.5,1),red,Arrow(5bp,position=.55));
+  draw ((8,2)--(7.5,1)--(1.5,1)--(1,0),red,Arrow(5bp,position=1.4));
+
+// % B
+draw ((.5,1)..(1,0),green, Arrow(5bp));
+draw ((8,2)..(8.5,1),green,Arrow(5bp));
+
+  // % quelques petits tests
+  // pair p1 = (4, 2);
+  // pair p2 = (7, -1);
+  // guide H = p1{E}..{S}p2;
+  // draw(H,red);
+
+\end{asy}
+\caption{The holonomy of the figure eight cusp. The red line corresponds to $L$ and the green line to $M$} \label{fig:eight}
+\end{center}
+\end{figure}
+
+The meridian and the longitude are computed from the Snappea triangulation.  We follow the algorithm to compute the holonomy along
+the meridian and the longitude along appropriate paths:
+\begin{itemize}
+\item[]
+$(421)^1\rightarrow\ (423)^1\rightarrow\ (324)^0\rightarrow\ (314)^0$
+\item[]
+$(421)^1\rightarrow\ (431)^1\rightarrow\ (214)^0\rightarrow\ (234)^0\rightarrow\ (243)^1\rightarrow\ (241)^1\rightarrow\ (134)^0
+\rightarrow\ (132)^0\rightarrow\ (312)^1\rightarrow\ (342)^1\rightarrow\ (432)^0\rightarrow\ (412)^0\rightarrow\ (134)^1
+\rightarrow\ (132)^1\rightarrow\ (312)^0\rightarrow\ (314)^0$
+\end{itemize}
+The corresponding matrices are:
+$$g_M =
+\left[ \begin {array}{ccc} {\Frac {z_{{12}}z_{{21}}}{z_{{34}}w_{{
+24}}}}&-{\Frac {z_{{12}}z_{{13}}+z_{{34}}z_{{24}}}{z_{{34}}z_{{2
+4}}z_{{13}}}}&-{\Frac {z_{{32}}w_{{42}}}{z_{{13}}}}
+\\ \noalign{\medskip}0&1&z_{{32}}w_{{42}}\\ \noalign{\medskip}0&0&{
+\Frac {w_{{42}}}{z_{{34}}}}\end {array} \right]
+g_L = \left[
+\begin {array}{ccc}
+{\Frac {z_{{13}}z_{{31}}w_{{14}}w_{{23}}}{w_{{
+31}}z_{{42}}w_{{42}}z_{{24}}}}&*&*\\
+0&1&*\\ 0&0&{\Frac {z_{{31}}w_{{13}}z_{{13}}w_{{24}}}
+{z_{{42}}w_{{32}}z_{{24}}w_{{41}}}}\end {array} \right]
+$$
+We therefore deduce the unipotent holonomy equations: $A=A^*=B=B^*=1$ where
+$$
+A=\Frac {z_{{12}}z_{{21}}}{z_{{34}}w_{{24}}},\
+A^*=\Frac {w_{{42}}}{z_{{34}}},\
+B={\Frac {z_{{13}}z_{{31}}w_{{14}}w_{{23}}}{w_{{31}}z_{{42}}w_{{42}}z_{{24}}}}, \
+B^*={\Frac {z_{{31}}w_{{13}}z_{{13}}w_{{24}}}{z_{{42}}w_{{32}}z_{{24}}w_{{41}}}}.
+$$
+
+\subsection{Solutions}
+Here the pre-processing provides a reduced system of 7 polynomial equations in the variables
+$\{z_{14} , z_{43}\}$. All of the 22 other variables belong to $\Q(z_{14} , z_{43})$.
+This reduced system is 0-dimensional and one can easily compute Rational Univariate Representations of its
+zeroes.
+
+One obtain four sets given by their minimal polynomials.
+\begin{itemize}
+\item[$\blacktriangleright$] $f_1 = Y^2-Y+1$. \\
+The complete hyperbolic structure on the complement of the figure-eight knot is obtained from two conjugate solutions.
+In fact, in that case, if $\omega^{\pm}=\frac{1\pm i\sqrt{3}}{2}$ is one root of $f_1$, then
+$$
+z_{12}=z_{21}=z_{34}=z_{43}=w_{12}=w_{21}=w_{34}=w_{43}=\omega^{\pm}
+$$
+is a solution of the equations as obtained in \cite{Thurston}. Its volume is $2.029883212\cdots$.
+
+\item[$\blacktriangleright$] $f_2 = Y^2-Y+1$.
+$$
+z_{12}=z_{34}=w_{34}=w_{43}=
+\overline z_{21}=\overline z_{43}=\overline w_{12}=\overline w_{21}
+= \omega^{\pm}.
+$$
+This solution corresponds to a discrete representation
+of the fundamental group of the complement of  knot in
+$\PU(2,1)$ with faithful boundary holonomy.  Moreover, its action on complex hyperbolic space has limit set the full boundary sphere (\cite{falbeleight}).
+
+\item[$\blacktriangleright$] $f_3 = Y^2+Y+2$.
+Let $\gamma^{\pm} = -\frac 12 \pm i \frac 12 \sqrt 7$ be a root of $f_3$.
+The coordinates are
+$$
+z_{21} = w_{21} = \overline{z}_{43} = \overline{w}_{12} = \frac{5-i\sqrt{7}}{4},\
+z_{12} = w_{2,1}  = \frac{3-i\sqrt{7}}{8},
+w_{34} = \overline{w}_{43} = -\frac{1+i\sqrt 7}2.
+$$
+%z_{34} =\frac{5+i\sqrt{7}}{4},z_{43}  = \frac{3+i\sqrt{7}}{8}
+%w_{12} = \frac{3-i\sqrt{7}}{8},w_{21} = \frac{5-i\sqrt{7}}{4},
+%w_{34}  = \frac{3+i\sqrt{7}}{8},w_{43} =\frac{5+i\sqrt{7}}{4}x
+\item[$\blacktriangleright$] $f_4 = 2Y^2+Y+1$.
+$1/\gamma^{\pm} = -\frac 14 \pm i \frac 14 \sqrt 7$ is a root of $f_4$. We obtain
+$$
+z_{12} = \overline{z}_{34} =  \frac{3-i\sqrt{7}}{2},\
+w_{43} = \overline{w}_{34} = \frac{5+i\sqrt{7}}{8},\
+z_{21} = w_{21} = \overline{z}_{43} = \overline{w}_{12} =\frac{-1+i\sqrt{7}}{4}.
+%,
+%z_{34} =\frac{-1-i\sqrt{7}}{4},z_{43}  = \frac{3+i\sqrt{7}}{2}
+%$$
+%$$
+%w_{12} = \frac{3+i\sqrt{7}}{2},w_{21} = \frac{-1-i\sqrt{7}}{4}
+%w_{34}  = \frac{3-i\sqrt{7}}{2},w_{43} =\frac{-1+i\sqrt{7}}{4}
+$$
+\end{itemize}
+All solutions corresponding to $f_2, f_3, f_4$ were obtained in
+\cite{falbeleight} and $f_3, f_4$ correspond to spherical CR structures with unipotent boundary holonomy of rank one (\cite{DF}).
+%
+%The other solutions, although discrete,
+%have cyclic boundary holonomy.
+%
+
+
+\subsection{Holonomy representation}
+
+%In order to obtain the representation we identify the face
+%$(124)^0$ of the tetrahedron $0$ to the face
+%$(123)^1$ of the  tetrahedron $1$.  The generators are explicitly written from the remaining three face
+%identifications following  paths which pass through the chosen face  $(124)^0= (123)^1$ inside the tetrahedra and transport the projective basis
+%defined by each oriented face.
+%
+%Here are the paths generating the identifications on the polyhedron:
+%\begin{enumerate}
+%\item $(134)^0\rightarrow (124)^0\rightarrow (123)^1\rightarrow (124)^1$
+%\item $(243)^0\rightarrow (241)^0\rightarrow (231)^1\rightarrow (431)^1\rightarrow (314)^1\rightarrow (143)^1$
+%\item $(123)^0\rightarrow (124)^0\rightarrow (123)^1\rightarrow (423)^1$
+%\end{enumerate}
+In order to obtain the representation of the fundamental group of the complement of the figure eight knot we identify the face
+$(324)^0$ of the tetrahedron $0$ to the face
+$(423)^1$ of the  tetrahedron $1$.  The generators are explicitly written from the remaining three face
+identifications following  paths which pass through the chosen face
+$(324)^0= (423)^1$ inside the tetrahedra and transport the projective basis
+defined by each oriented face.
+
+Here are the paths generating the identifications on the polyhedron:
+\begin{enumerate}
+\item $(134)^0\rightarrow\ (341)^0\rightarrow\ (342)^0\rightarrow\ (423)^0\rightarrow\ (234)^0=(243)^1\rightarrow\ (241)^1$
+\item $(214)^0\rightarrow\ (142)^0\rightarrow\ (421)^0\rightarrow\ (423)^0\rightarrow\ (234)^0=(243)^1\rightarrow\ (432)^1\rightarrow\ (431)^1$
+\item $(123)^0\rightarrow\ (231)^0\rightarrow\ (234)^0=(243)^1\rightarrow\ (432)^1\rightarrow\ (324)^1\rightarrow\ (321)^1$
+\end{enumerate}
+
+In order to obtain paths generating the fundamental group with a base point at face $(234)^0$,
+the paths have to be conjugated, respectively, by
+\begin{enumerate}
+\item $(234)^0\rightarrow\ (342)^0\rightarrow\ (341)^0\rightarrow\ (413)^0\rightarrow\ (134)^0$
+\item $(234)^0\rightarrow\ (342)^0\rightarrow\ (423)^0\rightarrow\ (421)^0\rightarrow\ (214)^0$
+\item $(234)^0\rightarrow\ (231)^0\rightarrow\ (312)^0\rightarrow\ (123)^0$
+\end{enumerate}
+The coordinate transformations corresponding to each path are obtained
+by multiplying the coordinate change matrices.  The generators of the
+group representation are obtained as inverse matrices of the coordinate change matrices.
+
+
+
+
+Applying the computations above to the solution $f_2$ we obtain the generators
+$$
+g_1=\left[ \begin {array}{rrr}
+1&0&0\\
+-w^{\pm}&1&0\\
+- w^{\mp}&{-2w^{\mp}}&1
+\end {array} \right],\,
+g_2=\left[ \begin {array}{rrr}
+3 w^{\mp}&6 w^{\mp}&1\\
+3 w^{\pm}&-1&0\\
+1&0&0
+\end {array} \right], \,
+g_3 = \left[ \begin {array}{rrr}
+1& 2w^{\mp}&- w^{\mp}\\
+0&1&{w^{\mp}}\\
+0&0&1\end {array} \right].
+$$
+The group $\langle g_1, g_2, g_3 \rangle$ preserves the hermitian form
+$
+\left[ \begin {array}{rrr}
+0&0&-{w^{\pm}}\\
+0&1&0\\
+-w^{\mp}&0&0
+\end {array} \right]
+$.
+
+For the  solution $f_3$ we obtain
+
+\noindent
+{\small
+$
+g_1=\left[ \begin {array}{ccc}
+1&0&0\\
+-\Frac{2}{\gamma^{\pm}}&1&0\\
+-\Frac{\gamma^{\pm}}{2}&\Frac{2}{\gamma^{\pm}-1}&1
+\end {array} \right]
+$,
+$g_2= \left[ \begin {array}{ccc}
+\Frac{8}{\gamma^{\pm}+3}&\Frac{3}{\gamma^{\pm}+2}&-\Frac{4}{3\gamma^{\pm}+2}\\
+-\Frac{3}{\gamma^{\pm}}&1&0\\
+\Frac{2}{\gamma^{\pm}+2}&0&0
+\end {array} \right]$,
+$g_3=\left[ \begin {array}{ccc}
+1&\Frac{2}{\gamma^{\pm}+2}&-\Frac{1}{\gamma^{\pm}}\\
+0&1&\gamma^{\pm}\\
+0&0&1
+\end {array} \right].
+$
+The group $\langle g_1, g_2, g_3 \rangle$ preserves the hermitian form
+$
+\left[ \begin {array}{rrr}
+0&0&{\gamma^{\mp}}\\
+0&1&0\\
+\gamma^{\pm}&0&0
+\end {array} \right]
+$.
+}
+% $$
+% g_1=\begin{pmatrix}
+%           1&  1 &   -\frac{1}{2}+ \frac{\sqrt{7}}{2}i\\
+% 0 & 1 & -1  \\
+%0 & 0 & 1\\
+%           \end{pmatrix},
+% g_2=\begin{pmatrix}
+%           2 &  \frac{3}{2}+ \frac{\sqrt{7}}{2}i &   -1\\
+%- \frac{3}{2}+ \frac{\sqrt{7}}{2}i & -1 & 0  \\
+%-1 & 0 & 0\\
+%           \end{pmatrix},
+%            g_3=\begin{pmatrix}
+%           1&  0 &   0\\
+% -1 & 1 & 0  \\
+%-\frac{1}{2}- \frac{\sqrt{7}}{2}i& 1 & 1\\
+%           \end{pmatrix}.
+%           $$
+
+Finally, for the solution $f_4$ we obtain
+
+\noindent
+%\begin{center}
+{\small
+$
+g_1 = \left[ \begin {array}{ccc}
+1&0&0\\
+\noalign{\medskip}
+\Frac{2}{\gamma^{\pm}-2}&1&0
+\\ \noalign{\medskip}
+-\Frac{2}{\gamma^{\pm}}&\frac 12 \gamma^{\pm} -1&1\end {array}
+ \right]$,
+$
+g_2= \left[ \begin {array}{ccc}
+-2&-\frac 12 \gamma^{\pm}-3&-1\\ \noalign{\medskip}
+\Frac{8}{\gamma^{\pm}+6}&1&0\\ \noalign{\medskip}
+-1&0&0
+\end {array} \right]$,
+$g_3=\left[ \begin {array}{ccc}
+1&\Frac{4}{\gamma^{\pm}+3}&-\gamma^{\pm}\\ \noalign{\medskip}
+0&1&-\Frac{2}{\gamma^{\pm}-2}
+\\ \noalign{\medskip}0&0&1\end {array} \right].
+$
+}
+%\end{center}
+The group $\langle g_1, g_2, g_3 \rangle$ preserves the hermitian form
+$
+\left[ \begin {array}{rrr}
+0&0&-\frac 12\\
+0&1&0\\
+-\frac 12&0&0
+\end {array} \right]
+$.
+
+Observe that the three generators satisfy the relations
+$$
+g_3g_2^{-1}g_1^{-1}g_2=1 \ \ \ {\mbox{and}}\ \ \ g_3^{-1}g_2g_1^{-1}g_3g_1=1
+$$
+which give a presentation of the fundamental group of the figure eight knot.
+\subsection{Boundary holonomy}
+
+For all solutions in $\PU(2,1)$ we always obtain  $g_L = g_1^{-1} $.
+The meridian is respectively
+$$
+g_M =
+\left[ \begin {array}{rrr}
+1&0&0\\
+0&1&0\\
+\pm\sqrt {3}&0&1
+\end {array} \right],\
+g_M = {g_L}^{-3}, \ g_M = {g_L}^3 .
+$$
+
+\subsection{Some non-unipotent configurations of the figure-eight knot}\label{sec:m004ni}
+
+
+In this section we give examples of non-unipotent representations in order to show how our method can be applied without modification
+to a general holonomy condition. We will only deal with a few examples for the figure eight knot and reserve a complete study of that knot for
+a later paper.
+
+We keep the notations of section \ref{sec:m004}:
+$$
+A=\Frac {z_{{12}}z_{{21}}}{z_{{34}}w_{{24}}},\
+A^*=\Frac {w_{{42}}}{z_{{34}}},\
+B={\Frac {z_{{13}}z_{{31}}w_{{14}}w_{{23}}}{w_{{31}}z_{{42}}w_{{42}}z_{{24}}}}, \
+B^*={\Frac {z_{{31}}w_{{13}}z_{{13}}w_{{24}}}{z_{{42}}w_{{32}}z_{{24}}w_{{41}}}}.
+$$
+We will first impose that $A$ and $A^*$ are primitive cubic roots of unity,
+%that is solutions of $X^2+X+1=0$
+and we find a finite set of solutions.
+In the second case we will impose that $A$ and $A^*$ are primitive sixth roots of unity.
+%that is to say solutions of $X^2-X+1$.
+We find here a finite number of isolated solutions as well a one 1-dimensional component.
+% In all this cases we find parabolic configurations ($\abs A =  \abs{A^*} =  \abs B = \abs{B^*}=1$).
+
+%\subsection{Solutions}
+We start with the case when $A$ and $A^*$ are primitive cubic roots of unity.
+Here the pre-processing provides a reduced system of 5 polynomial equations in the variables
+$\{z_{14}, z_{24}, z_{43}, w_{14}\}$. All of the 20 other variables belong to $\Q(z_{14}, z_{24}, z_{43}, w_{14})$.
+This reduced system is 1-dimensional. After saturation the system becomes 0-dimensional. It has 6 components.
+
+%One obtains six sets given by their minimal polynomials.
+
+Let $\zeta$ be a primitive twelfth root of unity.
+
+The first component corresponds to representations  in $\PGL(2,\Q(\zeta^2))$ and we get $A=1/A^*= \zeta^4$, $B=B^*=1$.
+The volume is 0, we have $g_M^3= g_L = 1$.
+
+The second and the third component give 8 solutions  in $\PGL(3,\Q(\zeta))$. We get
+$A=1/A^*= \zeta^4$, $B=B^*=1$. Their volumes are equal to 0 and we have $g_M^3= g_L = 1$.
+
+The fourth and the fifth components give 8 solutions in $\PGL(3,\Q(\alpha))$ where $\alpha = \pm \sqrt 5 \pm i \sqrt 3$.
+We get $A=A^*=\zeta^4,\, B=B^*=1$. In this case we have $g_M^3 = g_L$ or $g_M^3 = g_L^{-1}$.
+
+The last component gives 4 solutions in $\PGL(3,\bC)$ and 4 solutions in $\PU(2,1)$.
+We get $A=A^*=\zeta^4$ and $B=B^*$ is a root of
+${X}^{4}-175\,{X}^{3}-327\,{X}^{2}-175\,X+1$.
+This last polynomial has 2 conjugated roots with moduli 1 and two
+real roots.  Therefore, the boundary holonomy group has rank 2.
+These solutions belong to $\PU(2,1)$ when $\abs{B}=1$ and the four others give a volume
+$.973235\cdots$, when $B$ is real.
+
+%In conclusion, we obtain 26 solutions. They are all parabolic. Two of them are hyperbolic, four of them are CR.
+\medskip\par\noindent
+We now look at solutions with $A$ and $A^*$ primitive sixth roots of unity.
+We find here seven 0-dimensional components and one 1-dimensional component.
+
+There are 4 hyperbolic solutions corresponding to $A=1/A^*=\zeta^2$ and $B=1/B^* = 7 \pm 4 \sqrt 3$. Their volume is
+$1.2212874588\cdots$. The meridian satisfies $g_M^6=1$.
+
+There are two components in $\PGL(3,\Q(\zeta))$, satisfying $A=1/A^*=\zeta^2$, $B=B^*=-1$. They all satisfy
+$g_M^3 = g_L, \, g_L^2= 1$. None of these belong to $\PU(2,1)$.
+
+There are three components in $\PGL(3,\Q(\beta))$ where $\beta$ is a root of $X^4+X^3-X^2-X+1$. We have
+$A=1/A^*=\zeta^2$, $B=B^*=-1$. They all satisfy
+$g_M^3 = g_L, \, g_L^2= 1$. None of these belong to $\PU(2,1)$.
+
+There is a component giving 4 solutions in $\PGL(3,\bC)$ and 4 solutions in $\PU(2,1)$.
+We get $A=A^*=\zeta^4$ and $B=B^*$ is a root of
+$X^4-27X^3+25X^2-27X+1$.
+This last polynomial has 2 conjugated roots with moduli 1 and two
+real roots.  Therefore, the boundary holonomy group has rank 2.
+These solutions belong to $\PU(2,1)$ when $\abs{B}=1$ and the four others give a volume
+$1.730258\cdots$, when $B$ is real.
+
+The 1-dimensional component corresponds to reducible representations.
+%\comm{PVK: Est-ce qu'on met la suite du paragraphe?}
+We have: $A=1/A^*=\zeta^2$ and $B=1/B^*=-1$.
+The volume of these configurations is 0.
+For all these configurations, the face variables are all equal to $-1$.
+We obtain $z_{ij}z_{ji} = \zeta^{\pm 2},\, w_{ij}w_{ji} = \zeta^{\mp 2}$ for all $i<j$.
+We always obtain $g_M^3=g_L$ and $g_L^2=1$.
+
+
+\section{Description of the unipotent solutions for the first hyperbolic manifolds}
+
+As explained in the last section we solve the system consisting of compatibility equations and the unipotent holonomy conditions plus the inequalities which prevent
+the $z$-coordinates to be 0 or 1.   The solutions will, in turn, give rise to representations in $\PSL(3,\bC)$.
+
+We have computed an exhaustive list of solutions for the eleven first 3-manifolds and for the Whitehead link complement.
+Their main properties are summarized in the Table \ref{DesSols}.
+For these examples the dimension of solutions is at most 1 and there are always isolated solutions besides the hyperbolic one.
+Five of them are 0-dimensional:
+\hyperref[sec:m004]{\tt m004}, \hyperref[sec:m007]{\tt m007}, \hyperref[sec:m009]{\tt m009}, \hyperref[sec:m015]{\tt m015} and
+the \hyperref[sec:wh]{Whitehead link} complement.
+All others are 1-dimensional:
+\hyperref[sec:m003]{\tt m003}, \hyperref[sec:m006]{\tt m006}, \hyperref[sec:m010]{\tt m010}, \hyperref[sec:m011]{\tt m011},
+\hyperref[sec:m016]{\tt m016}, \hyperref[sec:m017]{\tt m017}, \hyperref[sec:m019]{\tt m019}.
+We further analyse the solutions to decide if the corresponding representation is in $\PSL_3(\bR)$, $\PSL_2(\bC)$, $\PSL_2(\bR)$ or $\PU(2,1)$ and compute their volume.  Observe also that, by Mostow rigidity, only one solution corresponds to the complete hyperbolic structure.  This solution is identified as the only one having all positive imaginary parts of the z-coordinates.
+
+In Table \ref{DesSols}, we indicate the {\em name} of the variety, the number {\em 1-D} of 1-dimensional prime components,
+the {\em degrees} of the prime 0-dimensional components.  The isolated solutions studied are the ones not contained in the 1-dimensional components. We indicate the total number of solutions such  that the corresponding representations are in $\PSL_{3}(\bC)$, $\PSL_3(\bR)$, $\PSL_2(\bC)$, $\PSL_2(\bR)$ and $\PU(2,1)$. Observe that $\PSL_3(\bR)\cap \PSL_2(\bC)=\PSL_2(\bR)$  and $\PSL_3(\bR)\cap \PU(2,1)=\PSL_2(\bR)$ so $\PSL_2(\bR)$ solutions are being also redundantly counted in $\PSL_3(\bR)$, $\PSL_2(\bC)$ and $\PU(2,1)$. We also indicate the different
+positive volumes we obtain, writing in boldface the volumes of representations in $\PSL(2,\bC)$. Keep in mind though that real solutions as well as solutions giving rise to $\PU(2,1)$ representations have zero volume.
+
+For the 0-dimensional case, we briefly describe the solutions and in some cases the group representations. In particular, we enumerate in the examples all cases when the boundary holonomy has rank one.  More details can be obtained in the website,
+\href{https://who.rocq.inria.fr/Fabrice.Rouillier/SGT/Home_page.html}{.../SGT}
+including matrix representations of the fundamental groups. In the following description, for the sake of simplicity, we will say that a solution is CR (short for Cauchy-Riemann), when
+the corresponding representation is conjugated to a representation in $\PU(2,1)$. For  each variety we singled out a $\PU(2,1)$ representation with boundary holonomy
+of rank one.  We think that they are natural candidates for being holonomies of a spherical CR structure on the variety.  Again, the difficulty in obtaining a CR structure lies in the definition of an appropriate 2-skeleton
+ (see \cite{falbeleight} for a discussion).
+
+The 1-dimensional components in the examples are not completely described.   They are all degenerate, that is, they are either reducible representations or they have trivial unipotent boundary holonomy and their image is a cyclic group (we thank M. Deraux, A. Guilloux and C. Zickert for discussions about these components which helped us to understand their meaning).  The reducible families arise from our definition of tetrahedra.  In fact we don't impose that the lines of the quadruple of flags be
+in general position and the solutions with all the lines of all flags passing through a fixed point gives the family of reducible representations. We don't enumerate the
+$\PSL(2,\bC),\PU(2,1)$ or $\PSL(3,\bC)$ solutions in these components.  But an important observation is that  in all examples up to three tetrahedra the 1-dimensional components contain at most a finite number of $\PSL(2,\bC)$ solutions which turn out to be real so the volumes presented in the table contain indeed  all volumes of $\PSL(2,\bC)$ representations arising from the given triangulation.
+On the other hand, the 0-dimensional solutions are never reducible nor have trivial boundary holonomy.
+
+%In fact, the $\PSL(2,\bC)$ solutions contained in one dimensional $\PSL(3,\bC)$ components occur only in the following manifolds: m003 (2 solutions), m006 (2 solutions),
+%m010 (1 solution) and m017 (3 solutions).
+
+%On the other hand, $\PU(2,1)$ solutions might appear in families
+%(of real dimension one or two)
+ %inside complex  one dimensional  components (see the worked example m003 in \cite{BFGKR}).  In that example there is a whole complex one dimensional component consisting of CR solutions.  But most of our examples have only isolated $\PU(2,1)$ solutions, namely for m004, m007, m009, m011, m015, m016, m019 and the Whitehead link.
+
+
+
+%Le systme que nous Žtudions dŽcrit la cl™ture de Zariski de l'ensemble des solutions dans PSL(3,C) qui est une variŽtŽ algŽbrique de C^(4*n) ou n est le nombre de tŽtradres.Cette variŽtŽ ˆ des composantes irrŽductibles de dimension 0 ou 1.
+
+%Le tableau principal que nous donnons est celui dŽcrivant les composantes de dimension 0, l'Žtude des composantes de dimension 1 dŽpassant le cadre de cet article.
+
+%En particulier, les solutions donnŽes dans ce tableau et appartenant ˆ PSL(3,R) PSL(2,C), PSL(2,R) ou encore PU(2,1) doivent tre vues comme Žtant des sous-ensembles de ces composantes de dimension 0.
+
+%Cependant, afin que le lecteur puisse faire le lien avec d'autres rŽsultats connus, nous prŽcisons quelques propriŽtŽs des composantes de dimension 1 :
+
+%* lorsque l'on considre une section de ces composantes en rajoutant les contraintes dŽfinissant des solutions de PSL(2,C), ces sections sont toutes de dimension 0 et, plus prŽcisŽment, sont toutes rŽelles. Nous prŽciserons le nombre de ces solutions dans un tableau sŽparŽ afin que le lecteur puisse faire le lien entre la prŽsentation de nos rŽsultats et les rŽsultats dŽjˆ connus.
+
+%*En regardant ces composantes de dimension complexe 1 comme des sous-variŽtŽs de R^(8*n), elles sont alors de dimension 2. Contrairement au cas hyperbolique, l'ajout des contraintes de conjugaison permettant de dŽfinir les solutions de PU(2,1) ne donne pas des sections de dimension 0 mais de dimension 1 ou 2 (d'ailleurs, seul l'exemple m010 est de dimension 1, les autres sont tous de dimension 2).
+
+%Il faut noter que si l'on est intŽressŽ uniquement par les points de PSL(2,C), cette mŽthode n'est certainement pas adaptŽe, il vaut mieux ajouter ds le dŽpart les conditions additionnelles de sorte ˆ ne pas faire face ˆ des composantes de dimension 1 ou des composantes de dimension 0 de haut degrŽ.
+
+%En effet, les composantes contenant les solutions de PSL(2,C) sont de trs petits degrŽs (au plus 4) et l'injection des conditions dans le systme initial permet sans peine de traiter par notre algorithme des cas avec un nombre de tŽtradres plus important (8 tŽtradres).
+\newcolumntype{M}[1]{>{\raggedleft}m{#1}}
+{\small
+%\begin{landscape}
+\begin{table}[!ht]
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{||r|r|r|r|r|r|r|r|M{42mm}||}
+\hline
+ & & \multicolumn{6}{c}{0-dimensional prime components} &  \\
+ \hline
+ & & \multicolumn{6}{c}{Number(s) of Solutions} &\\
+ \hline
+Name&1-D&Ext. Degrees&$\PGL_{3}(\bC)$&$\PSL_{3}(\bR)$&$\PSL_2(\bC)$&$\PSL_2(\bR)$&$\PU(2,1)$&$Volumes$ \tabularnewline
+ \hline
+m003&	2&$2, 2, 8, 8$&	20&	0&	2&	0&	2&	  	  0.648847 {\bf 2.029883}\tabularnewline
+ \hline
+m004&	0&$2, 2, 2, 2$&	8&	0&	2&	0&	6&	  {\bf 2.029883} \tabularnewline
+ \hline
+m006&	2&	$6, 6, 12, 28$&	43&	1&	3&	1&	15&	  	  0.707031  0.719829  0.971648
+  1.284485 {\bf 2.568971}\tabularnewline
+ \hline
+ m007&	0&	$3, 6, 8, 8, 8$&	33&	1&	3&	1&	15&	   0.707031  0.822744  1.336688 {\bf 2.568971}	\tabularnewline
+ \hline
+ m009&	0&	$2, 4, 4, 4, 6,8$&	28&	2&	2&	0&	8&	  	  0.507471  0.791583  1.417971 {\bf 2.666745}\tabularnewline
+ \hline
+ m010&	2&	$2, 6, 6,  12, 12$&	38&	0&	2&	0&	4&	  	  0.251617  0.791583  0.809805
+  0.982389  1.323430 {\bf 2.666745} \tabularnewline
+ \hline
+ m011&	1&	$3, 4, 16, 64$&	87&	5&	7&	3&	21&	  	  0.226838  0.251809  0.328272
+  0.397457  0.452710  0.643302
+  0.685598  0.700395  0.724553
+  0.770297  0.879768  {\bf 0.942707} 0.988006
+  1.099133  1.184650  1.846570  {\bf  2.781834}\tabularnewline
+ \hline
+ m015&	0&	$3, 4, 4, 6, 6$&	23&	3&	3&	1&	11&	  	  0.794323  1.583167 {\bf 2.828122}\tabularnewline
+ \hline
+ m016&	1&	$3, 3, 10, 50$&	66&	4&	6&	4&	24&	  	  0.296355  0.403707  0.710033
+  0.753403  0.773505  0.796590
+  0.886451  1.135560  1.422985
+  1.505989 {\bf 2.828122}\tabularnewline
+ \hline
+ m017&	3&	$3, 4, 6, 6, 44$&	63&	1&	3&	1&	21&	  	  0.527032  0.794323  0.801984
+  0.828705  1.252969  1.588647 {\bf 2.828122}\tabularnewline
+ \hline
+ m019&	1&	$4, 4, 22, 84$&	114&	6&	8&	4&	24&	  	  0.027351  0.062112  0.323395
+  0.332856  0.347159  0.411244
+  0.467624  0.524801  0.544151
+  0.599455  0.638404  0.738805
+  0.758111  0.798098  0.851139
+  0.916588  1.101800  1.130263
+  1.190919  {\bf 1.263709}  1.340255  2.111776
+  {\bf  2.944106}
+  \tabularnewline
+\hline
+Wh. link & 0& $2, 2, 4, 4, 10,10$ &32 & 0& 2& 0& 14 &1.132196  1.683102 {\bf 3.663862}
+  \tabularnewline
+\hline
+ \end{tabular}
+ \vspace{.2in}
+ \caption{Description of the solutions}
+\label{DesSols}
+\end{table}
+%\end{landscape}
+ }
+%\newcolumntype{M}[1]{>{\raggedright}m{#1}}
+%{\tiny
+%\begin{landscape}
+%\begin{figure}
+%\label{DesSols}
+%\begin{tabular}{|r|r|r|r|r|r|r|r|r|M{35mm}|}
+%\hline
+% & & \multicolumn{8}{|c|} {Zero-dimensional prime components}\\
+% \hline
+% & & \multicolumn{6}{|c|}{Number(s) of Solutions} & \multicolumn{2}{|c|}{Distinct Volumes}\\
+% \hline
+% Name&UniDim.&Ext. Degrees&PSL(3,C)&PSL(3,R)&PSL(2,C)&PSL(2,R)&PU(2,1)&PSL(2,C)$\setminus$PSL(2,R)&PSL(3,C)$\setminus$(PSL(3,R)$\cup$PU(2,1)) \tabularnewline
+% \hline
+% m003&	2&	[2, 2, 8, 8]&	20&	0&	2&	0&	2&	  2.029883&	  0.648847\tabularnewline
+% \hline
+%m004&	0&	[2, 2, 2, 2]&	8&	0&	2&	0&	6&	  2.029883& \tabularnewline
+% \hline
+%m006&	2&	[6, 12, 28, 6]&	52&	2&	6&	2&	20&	  2.568971&	  0.707031  0.719829  0.971648
+%  1.284485\tabularnewline
+% \hline
+% m007&	0&	[6, 8, 3, 8, 8]&	33&	1&	3&	1&	15&	  2.568971&	  0.707031  0.822744  1.336688\tabularnewline
+% \hline
+% m009&	0&	[2, 8, 4, 4, 4, 6]&	28&	2&	2&	0&	8&	  2.666745&	  0.507471  0.791583  1.417971\tabularnewline
+% \hline
+% m010&	2&	[6, 6, 4, 12, 12]&	40&	0&	4&	0&	4&	  2.666745&	  0.251617  0.791583  0.809805
+%  0.982389  1.323430\tabularnewline
+% \hline
+% m011&	1&	[4, 16, 3, 64]&	87&	5&	7&	3&	21&	  0.942707  2.781834&	  0.226838  0.251809  0.328272
+%  0.397457  0.452710  0.643302
+%  0.685598  0.700395  0.724553
+%  0.770297  0.879768  0.988006
+%  1.099133  1.184650  1.846570\tabularnewline
+% \hline
+% m015&	0&	[4, 6, 3, 6, 4]&	23&	3&	3&	1&	11&	  2.828122&	  0.794323  1.583167\tabularnewline
+% \hline
+% m016&	1&	[3, 3, 10, 50]&	66&	4&	6&	4&	24&	  2.828122&	  0.296355  0.403707  0.710033
+%  0.753403  0.773505  0.796590
+%  0.886451  1.135560  1.422985
+%  1.505989\tabularnewline
+% \hline
+% m017&	3&	[3, 6, 44, 4, 6]&	63&	1&	3&	1&	21&	  2.828122&	  0.527032  0.794323  0.801984
+%  0.828705  1.252969  1.588647\tabularnewline
+% \hline
+% m019&	1&	[4, 4, 22, 84]&	114&	6&	8&	4&	24&	  1.263709  2.944106&	  0.027351  0.062112  0.323395
+%  0.332856  0.347159  0.411244
+%  0.467624  0.524801  0.544151
+%  0.599455  0.638404  0.738805
+%  0.758111  0.798098  0.851139
+%  0.916588  1.101800  1.130263
+%  1.190919  1.340255  2.111776\tabularnewline
+%\hline
+% \end{tabular}
+% \caption{Description of the solutions}
+% \end{figure}
+% \end{landscape}
+% }
+\newpage
+
+\subsection{The variety {\tt m007} }\label{sec:m007}
+There are three simplices with parameters $u_{ij}$, $v_{ij}$ and $w_{ij}$, $1\leq i,j\leq 4$.
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[scale=0.50]{m007b.eps}
+\end{center}
+\caption{Triangulation of {\tt m007}}
+\label{fig:m007}
+\end{figure}
+%The pre-processing provides a system of 12 polynomials in 6 variables. It has dimension 4 but after saturation the set
+%of solutions is zero dimensional.
+
+\begin{itemize}
+\item[$\blacktriangleright$] $f_1 = Y^3-2Y^2-1$. \\
+The solutions giving rise to $\PSL_2(\bC)$ representations (containing the two conjugate complete hyperboilc ones) are
+$$
+\begin{array}{rcl}
+u_{12} = u_{21} =u_{34} =u_{43} &=&\gamma,\\
+v_{12} = v_{21} =v_{34} =v_{43} &=&2 \gamma - \gamma^2 = -1 /\gamma,\\
+w_{12} = w_{21} =w_{34} =w_{43} &=&\gamma.
+\end{array}
+$$
+where $\gamma$ is a root of $f_1 = Y^3 - 2Y^2-1$. The volume of the hyperbolic solution is
+$\hbox{vol} = 2.5689706009\cdots$.
+\item[$\blacktriangleright$] $f_2 =Y^6-Y^5+Y^4-2Y^3+Y^2+1$. \\
+2 solutions are CR. The four others  define representations with volume
+$.70703052208\cdots$.
+\item[$\blacktriangleright$] $f_3 =Y^8-2Y^7+2Y^6-6Y^5+7Y^4-2Y^3+3Y^2-Y+1$. \\
+4 solutions are CR. The volume of the other representations is
+$0.82274406556\cdots$
+\item[$\blacktriangleright$] $f_4 =3Y^8-6Y^7+7Y^6-4Y^5+4Y^4+4Y^3+4Y^2+1$. \\
+4 solutions are CR. Their volume is
+$.82274406556\cdots$
+\item[$\blacktriangleright$] $f_5 =16Y^8-20Y^7+23Y^6-27Y^5+10Y^4-5Y^3+9Y^2+2Y+4$.\\
+4 solutions are CR. The four others have volume
+$1.3366875264\cdots$
+\end{itemize}
+In conclusion, there are 33 solutions,  15 being CR.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The variety {\tt m009}}\label{sec:m009}
+There are three simplices with parameters $u_{ij}$, $v_{ij}$ and $w_{ij}$, $1\leq i,j\leq 4$.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.50]{m009b.eps}
+\end{center}
+\caption{Triangulation of {\tt m009}}
+\label{fig:m009}
+\end{figure}
+%The pre-processing provides a system of 8 polynomials in 6 variables. It has dimension 4 but after saturation the set
+%of solutions is zero dimensional.
+
+We obtain
+\begin{itemize}
+%[_T^2-_T+2, {u[1, 2] = _T, u[2, 1] = _T, u[3, 4] = _T, u[4, 3] = _T, v[1, 2] = (1/4)*_T+1/4, v[2, 1] = (1/4)*_T+1/4, v[3, 4] = (1/4)*_T+1/4, v[4, 3] = (1/4)*_T+1/4, w[1, 2] = _T, w[2, 1] = _T, w[3, 4] = _T, w[4, 3] = _T}]
+\item[$\blacktriangleright$] $f_1 = Y^2-Y+2$. \\
+The $\PSL(2,\bC)$ solutions (containing the two conjugate complete hyperbolic ones) are given by
+$$
+\begin{array}{rcl}
+u_{12} = u_{21} =u_{34} =u_{43} &=&\gamma,\\
+v_{12} = v_{21} =v_{34} =v_{43} &=&\frac 14 (\gamma+1)\\
+w_{12} = w_{21} =w_{34} =w_{43} &=&\gamma.
+\end{array}
+$$
+where $\gamma= \frac 12 (1\pm i \sqrt 7)$ is a root of $f_1$. The volume of the hyperbolic solution is
+$\hbox{vol} = 2.6667447834\cdots$.
+\item[$\blacktriangleright$] $f_2 = f_3 =  Y^4+Y^3-Y^2-Y+1$. \\
+They correspond to 8 solutions with the same volume $0.50747080320\cdots$ .
+\item[$\blacktriangleright$] $f_4 =  Y^4+2Y^3-Y^2-2Y-4 = (Y^2+Y-1 - \sqrt 5)(Y^2+Y-1+\sqrt 5)$. \\
+There are two real solutions $\gamma^{\pm} = -\frac 12 \pm \frac 12 \sqrt{5+4\sqrt 5}$
+and two conjugate CR solutions corresponding to $\gamma^{\pm} = -\frac 12 \pm \frac 12 i
+\sqrt{-5+4\sqrt 5}.$
+%[[u[1, 2]-w[3, 4], 0], [u[2, 1]-w[4, 3], 0], [u[3, 4]-w[1, 2], 0], [u[4, 3]-w[2, 1], 0], [v[1, 2]-v[3, 4], 0], [v[2, 1]-v[4, 3], 0], [v[3, 4]-v[1, 2], 0], [v[4, 3]-v[2, 1], 0], [w[1, 2]-u[3, 4], 0], [w[2, 1]-u[4, 3], 0], [w[3, 4]-u[1, 2], 0], [w[4, 3]-u[2, 1], 0]]
+We have
+$$
+\begin{array}{l}
+u_{12}=w_{34} = \Frac{\gamma^{\pm}+3}{\gamma^{\pm}+1},\,
+u_{21}=w_{43} = \gamma^{\pm},\,
+u_{34}=w_{12} =\Frac{\gamma^{\pm}-2}{\gamma^{\pm}},\\
+u_{43}=w_{21} = - 1 - \gamma^{\pm},\,
+v_{12}=v_{34} = \Frac{1}{\gamma^{\pm}+3},\,
+v_{21}=v_{43} = \Frac{1}{2-\gamma^{\pm}}.
+\end{array}
+$$
+The two real solutions give rise to representations in $\PSL(3\bR)\setminus \PSL(2,\bR)$.
+Moreover, for all of these solutions we find that the meridian $g_M$ and the longitude $g_L$ satisfy $g_M g_L^2= 1$.
+We find
+$$
+g_M =  \left[ \begin {array}{ccc}
+1 & -2\,{\Frac {\gamma^{\pm}+2}{\gamma^{\pm}\, \left(\gamma^{\pm} +1\right) }}&
+-2{\Frac {\gamma^{\pm}+2}{\gamma^{\pm}\, \left( \gamma^{\pm}+3 \right) }}\\\noalign{\medskip}
+0 & 1 &\Frac{2}{3+\gamma^{\pm}}\\\noalign{\medskip}
+0&0&1
+\end {array}
+\right].
+$$
+\item[$\blacktriangleright$] $f_5 =  Y^6-Y^4+2Y^3+Y^2-Y+1$. \\
+There are two CR solutions and 4 solutions with the same volume $0.79158333031\cdots$.
+\item[$\blacktriangleright$] $f_6 =  8Y^8-16Y^7+22Y^6-25Y^5+16Y^4-6Y^3+Y^2+3Y+1$. \\
+There are 4 CR solutions and 4 solutions with the same volume $1.4179708859\cdots$.
+\end{itemize}
+In conclusion we found 28 solutions, 8 being CR.
+There are 3 different volumes apart from the hyperbolic one.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The $5_2$ knot complement}\label{sec:m015}
+There are three simplices with parameters $u_{ij}$, $v_{ij}$ and $w_{ij}$, $1\leq i,j\leq 4$.
+%The pre-processing provides a system of 12 polynomials in 6 variables.
+%It has dimension 4 but after saturation the set of solutions is zero dimensional.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.50]{m015b.eps}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\caption{Triangulation of {\tt m015}}
+\label{fig:m015}
+\end{figure}
+We find 23 solutions in 5 sets of Galois conjugate solutions.
+\begin{itemize}
+%[_T^4-_T^2+1, _T^3-_T+1, 4*_T^4-4*_T^3-_T^2+_T-1, 17*_T^6-5*_T^5+33*_T^4-11*_T^3+26*_T^2-4*_T+8, _T^6-_T^5-3*_T^3+2*_T^2+_T+1]
+\item[$\blacktriangleright$] $f_1 = Y^3-Y+1$.\\
+The solutions correspond to the two conjugate complete hyperbolic solutions and a real one.
+$$\begin{array}{rcl}
+u_{12} = u_{21} =u_{34} =u_{43} &=& \gamma,\\
+v_{12} = v_{21} =v_{34} =v_{43} &=& \gamma,\\
+w_{12} = w_{21} =w_{34} =w_{43} &=& \gamma.
+\end{array}
+$$
+where $\gamma$ is a root of $f_1$.  The volume is $2.828122\cdots$.
+\item[$\blacktriangleright$] $f_2 =Y^4-Y^2+1$.\\
+We obtain 4 solutions (the 4 12th-roots of unity) that are all CR.
+%We get
+%$$
+%\begin{array}{rcl}
+%u_{21}=v_{21} = \Frac{1}{1-\gamma},
+%u_{12}= \Frac{1-\gamma}{\gamma^2},
+%u_{34}=\Frac{1}{1-\gamma-\gamma^2},
+%u_{43}=\Frac{1-\gamma-\gamma^2}{\gamma},
+%
+%%v_{12} = \overline{v}_{34} = \frac 12 + \eps\eps' \frac 12 i \sqrt 3, \,
+%%u_{43} = \overline{w}_{43} = 1 + \eps i, \ \\
+%%v_{34} = w_{21} = \overline{u}_{21} = \overline{v}_{21} = \frac 12 + \eps i - \eps \eps'\frac 12 i \sqrt 3\\
+%%u_{34}= \overline w_{34} = \frac 14 -\eps \frac 14 i + \eps' \frac 14 \sqrt 3 (1+\eps i)\\
+%%u_{12} =  \overline w_{12} = \frac 12 (1-\eps i)(1 + \eps' \sqrt 3)
+%\end{array}
+%%\begin{array}{rcl}
+%%v_{12} = \overline{v}_{34} = \frac 12 + \eps\eps' \frac 12 i \sqrt 3, \,
+%%u_{43} = \overline{w}_{43} = 1 + \eps i, \ \\
+%%v_{34} = w_{21} = \overline{u}_{21} = \overline{v}_{21} = \frac 12 + \eps i - \eps \eps'\frac 12 i \sqrt 3\\
+%%u_{34}= \overline w_{34} = \frac 14 -\eps \frac 14 i + \eps' \frac 14 \sqrt 3 (1+\eps i)\\
+%%u_{12} =  \overline w_{12} = \frac 12 (1-\eps i)(1 + \eps' \sqrt 3)
+%%\end{array}
+%$$
+\item[$\blacktriangleright$] $f_3 =4Y^4-4Y^3-Y^2+Y-1$.\\
+We obtain 2 real solutions (giving representations in $\PSL(3,\bR)\setminus \PSL(2,\bR)$) that are the roots of
+$$
+4Y^2 -2Y - (1-\sqrt 5),$$
+and 2  complex conjugate solutions that are the roots of
+$$
+4Y^2 -2 Y  - (1+\sqrt 5).
+$$
+These two last solutions are CR.
+We obtain, for these four solutions:
+$$
+\begin{array}{r}
+u_{21} = v_{21}=v_{34}=w_{21} = \Frac{1}{1-\gamma}\,\\
+v_{12}=u_{43}=v_{43}=w_{43}=\Frac{2}{2\gamma +1},\\
+u_{12}=w_{12}=-\gamma(\gamma-1),\,
+u_{34}=w_{34}=\frac 14 - \gamma^2.
+\end{array}
+$$
+Note that in this case the meridian and the longitude are equal:
+$$
+g_M = g_L= \left[ \begin {array}{ccc}
+1 & \Frac{2}{(2\gamma-1)^2}&\Frac{1}{\gamma(2\gamma-1)^2}
+\\\noalign{\medskip}
+0 & 1 &\Frac{1}{\gamma}\\\noalign{\medskip}
+0&0&1
+\end {array}
+\right].
+$$
+The holonomy group, in this case, is generated  by\\
+\centerline{$g_1 = g_M^{-1}$,
+$
+g_2 = \left[ \begin {array}{ccc}
+1&\Frac{2}{(2\gamma-1)^2}&\Frac{1}{\gamma(2\gamma-1)^2}\\\noalign{\medskip}
+\Frac{2}{1-2\gamma} &\Frac{1-4\gamma}{1-4\gamma^2}&\gamma-1 \\\noalign{\medskip}
+\Frac{1}{2\gamma^2(1-2\gamma)}&\Frac{\gamma-1}{2\gamma}&\gamma
+\end {array}
+\right],
+$}
+\centerline{$
+g_3 = \left[ \begin {array}{ccc}
+1&0&0\\\noalign{\medskip}
+-\Frac{1}{2\gamma-1} & 1&0 \\\noalign{\medskip}
+\Frac{1}{2\gamma^2(1-2\gamma)}& -\Frac{1}{2\gamma^2}&1
+\end {array}
+\right],
+$
+$
+g_4=
+\left[ \begin {array}{ccc}
+\Frac{1+4\gamma}{2\gamma}&\Frac{1}{2\gamma(2\gamma-1)}&\Frac{2\gamma}{1-2\gamma}\\\noalign{\medskip}
+\Frac{1}{2\gamma} &\Frac{2\gamma-1}{2\gamma}&0\\\noalign{\medskip}
+1&0&0\end {array}
+\right].
+$}
+where $\gamma$ is one of the four roots of $f_3$.
+\item[$\blacktriangleright$] $f_4 =Y^6-Y^5-3Y^3+2Y^2+Y+1$.\\
+Only two of these roots correspond to CR structures.
+The four others have same volume: $1.583167\cdots$.
+%\item[$\blacktriangleright$] $f_3 =4Y^4-4Y^3-Y^2+Y-1$.\\
+\item[$\blacktriangleright$] $f_5 =17Y^6-5Y^5+33Y^4-11Y^3+26Y^2-4Y+8$.\\
+Only two of these roots correspond to CR structures. The others define representations of volume
+$0.794323\cdots$.
+\end{itemize}
+In conclusion we obtain 23 solutions and 11 of them are CR.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Whitehead link}\label{sec:wh}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.50]{whb.eps}
+\end{center}
+\caption{Triangulation of Whitehead link complement}
+\label{fig:wh}
+\end{figure}
+
+Here we have four tetrahedra with parameters $u_{ij}$, $v_{ij}$, $w_{ij}$ and $x_{ij}$ with $1\leq i,j\leq 4$ glued as in Figure \ref{fig:wh}.
+
+There are 6 different groups of solutions.
+\begin{itemize}
+%lP := [_T^2+1, _T^2+_T+4, _T^4+_T^3+2*_T^2-_T+1, _T^4+_T^3+2*_T^2-_T+1, _T^10-4*_T^8+_T^7+7*_T^6-4*_T^5-8*_T^4+4*_T^3+5*_T^2+1, _T^10-4*_T^8+_T^7+7*_T^6-4*_T^5-8*_T^4+4*_T^3+5*_T^2+1]
+\item[$\blacktriangleright$] $f_1=Y^2+1$.
+The conjugate complete hyperbolic solutions are given by
+$$
+u_{12}=u_{21}=u_{34}=u_{43}=v_{12}=v_{21}=v_{34}=v_{43} =\pm i,
+$$
+$$
+w_{12}=w_{21}=w_{34}=w_{43}=w_{12}=w_{21}=w_{34}=w_{43} =\pm i.
+$$
+\item[$\blacktriangleright$] $f_2=Y^2+Y+4$.\\
+We obtain
+$$
+\begin{array}{l}
+u_{12}=v_{34}=w_{12}=x_{34}=\frac 38 - \frac 18 \gamma,\\
+u_{21}=v_{43}=w_{21}=x_{43}=\gamma,\\
+u_{34}=v_{12}=w_{34}=x_{12}=\overline{\gamma},\\
+u_{43}=v_{21}=w_{43}=x_{21}=\frac 38 - \frac 18 \overline{\gamma}.
+\end{array}
+$$
+where $\gamma = -\frac 12 \pm \frac 12 i \sqrt{15}$.
+
+The holonomies of the meridian and longitude on the first torus (it corresponds to the vertex 1 of the first tetrahedron) are both equal to
+$$
+\left[ \begin {array}{ccc}
+1&2&1\\\noalign{\medskip}
+0&1&1\\\noalign{\medskip}
+0&0&1\end {array}
+\right],
+$$
+while the holonomies of the meridian and longitude of the second torus are equal to
+$$
+ \left[ \begin {array}{ccc} \frac 14+\frac 14\,i\sqrt {15}&\frac 34+\frac 34\,i\sqrt {15}&
+\frac 32+\frac 12\,i\sqrt {15}\\ \noalign{\medskip}
+-\frac 38-\frac 18\,i\sqrt {15}&-2-\frac 12
+\,i\sqrt {15}&-{\frac {21}{8}}-\frac 38\,i\sqrt {15}\\ \noalign{\medskip}
+\frac 32 &{\frac {21}{4}}+\frac 14\,i\sqrt {15}&{\frac {19}{4}}+\frac 14\,i\sqrt {15}
+\end {array} \right].
+$$
+The representation corresponding to this solution was also obtained in \cite{PW} where it is shown that it is the holonomy of a spherical CR
+structure on the complement of the Whitehead link.
+\item[$\blacktriangleright$] $f_3=f_4=Y^4+Y^3+2Y^2-Y+1$.
+All of these 8 solutions are CR.
+\item[$\blacktriangleright$] $f_5=f_6=Y^{10}-4Y^8+Y^7+7Y^6-4Y^5-8Y^4+4Y^3+5Y^2+1$.
+4 of these 20 solutions are CR-spherical.
+\end{itemize}
+Among these 32 solutions, 14 are CR.
+
+%\subsection{The figure eight knot's sister}\label{sec:m003}
+%This manifold is described by two tetrahedra as in Figure \ref{fig:m003}.
+%Let $u_{ij}$ and $v_{ij}$ be the coordinates associated to the edge $ij$.
+%\begin{figure}[ht]
+%\begin{center}
+%\includegraphics[scale=0.50]{m003b.eps}
+%\end{center}
+%\caption{Triangulation of {\tt m003}}
+%\label{fig:m003}
+%\end{figure}
+%The complete set of solution has dimension 1. It is decomposed into 2
+%parts of dimension 1, and 5 isolated 0-dimensional components, that are parametrized in  \cite{BFGKR}.
+%
+%The 0-dimensional components can be described by their Rational Univariate Representation:
+%\begin{itemize}
+%\item[$\blacktriangleright$] $f_1 = Y^2-Y+1$. \\
+%This is the solution corresponding to the hyperbolic structure
+%$$
+%u_{12}=u_{21}=u_{34}=u_{43}=v_{12}=v_{21}=v_{34}=v_{43}=1+\omega
+%$$
+%where $w = \frac 12 + \frac 12 i \sqrt 3$ is a root of $f_1$. The volume of the configuration is
+%$8.1195328512\cdots$.
+%\item[$\blacktriangleright$] $f_1 = Y^2-Y+1$. \\
+%This solution corresponds
+%a spherical CR structure with unipotent boundary holonomy and was obtained in
+%\cite{genzmer}:
+%$$
+%u_{12}= u_{43}=v_{21}=v_{34}= \omega,
+%\
+%u_{21}= u_{34} = v_{12}=v_{43}=\omega^2.
+%$$
+%\item[$\blacktriangleright$] $f_3 = Y^2-Y-1$. \\
+%This solution is real. We obtain
+%$$
+%u_{12}= v_{12}=u_{43}=v_{43} = \tau, \
+%u_{21}= v_{21}=u_{34}=v_{34} = \tau + 2.
+%$$
+%where $\tau = \frac 12 + \frac 12 \sqrt 5$.
+%\item[$\blacktriangleright$] $f_4 = Y^8-2Y^7+5Y^6-8Y^5+7Y^4-7Y^3+5Y^2-Y+1$. \\
+%We obtain 8 solutions. None of them correspond to CR-spherical structure. All of these configurations have the same volume
+%$2.5953875937\cdots$.
+%\item[$\blacktriangleright$] $f_5 = f_4$. \\
+%We obtain 8 more solutions with the same volume.
+%\end{itemize}
+%
+%\subsection{\tt m006}\label{sec:m006}
+%\begin{figure}[ht]
+%\begin{center}
+%\includegraphics[scale=0.50]{m006b.eps}
+%\end{center}
+%\caption{Triangulation of {\tt m006}}
+%\label{fig:m006}
+%\end{figure}
+%\subsection{\tt m010}\label{sec:m010}
+%\begin{figure}[ht]
+%\begin{center}
+%\includegraphics[scale=0.50]{m010b.eps}
+%\end{center}
+%\caption{Triangulation of {\tt m010}}
+%\label{fig:m010}
+%\end{figure}
+%\subsection{\tt m011}\label{sec:m011}
+%\begin{figure}[ht]
+%\begin{center}
+%\includegraphics[scale=0.50]{m011b.eps}
+%\end{center}
+%\caption{Triangulation of {\tt m011}}
+%\label{fig:m011}
+%\end{figure}
+%\subsection{\tt m016}\label{sec:m016}
+%\begin{figure}[ht]
+%\begin{center}
+%\includegraphics[scale=0.50]{m016b.eps}
+%\end{center}
+%\caption{Triangulation of {\tt m016}}
+%\label{fig:m016}
+%\end{figure}
+%\subsection{\tt m017}\label{sec:m017}
+%\begin{figure}[ht]
+%\begin{center}
+%\includegraphics[scale=0.50]{m017b.eps}
+%\end{center}
+%\caption{Triangulation of {\tt m017}}
+%\label{fig:m017}
+%\end{figure}
+%\subsection{\tt m019}\label{sec:m019}.
+%\begin{figure}[ht]
+%\begin{center}
+%\includegraphics[scale=0.50]{m019b.eps}
+%\end{center}
+%\caption{Triangulation of {\tt m019}}
+%\label{fig:m019}
+%\end{figure}
+
+%
+%
+%\section{Torus knots}
+%
+%
+%
+%\subsection{The torus knot $3_1$}
+%The variety is triangulated with 2 tetrahedrons.
+%The only solution we get is
+%$$
+%{ u}_{{0,1}}=
+%{ u}_{{1,0}}=
+%{ u}_{{2,3}}=
+%{ u}_{{3,2}}=
+%{ v}_{{0,1}}=
+%{ v}_{{1,0}}=
+%{ v}_{{2,3}}=
+%{ v}_{{3,2}}=-1.
+%$$
+%
+%\subsection{The torus knot $5_1$}
+%The variety is triangulated with 3 tetraedrons.
+%The edge equations are
+%\begin{eqnarray*}
+%{u}_{{1,2}}{ v}_{{1,3}}{ w}_{{2,3}}{ v}_{{0,2}}{
+% u}_{{2,3}}{ v}_{{3,2}}{ w}_{{1,3}}&=&1,\\
+% { u}_{{2,1}}
+%{ v}_{{3,1}}{ w}_{{3,2}}{ v}_{{2,0}}{ u}_{{3,2}}{
+% v}_{{2,3}}{ w}_{{3,1}}&=&1,\\
+% { u}_{{1,3}}{ v}_{{1,2}}
+%{ u}_{{0,3}}{ w}_{{0,2}}{ v}_{{0,1}}{ u}_{{2,0}}{
+% w}_{{3,0}}{ v}_{{3,0}}{ w}_{{1,2}}&=&1,\\
+% { u}_{{3,1}}
+%{ v}_{{2,1}}{ u}_{{3,0}}{ w}_{{2,0}}{ v}_{{1,0}}{
+% u}_{{0,2}}{ w}_{{0,3}}{ v}_{{0,3}}{ w}_{{2,1}}&=&1,\\
+%{ u}_{{0,1}}{ w}_{{0,1}}&=&1,\\
+%{ u}_{{1,0}}{ w}_{{1,0}}&=&1.
+%\end{eqnarray*}
+%The face equations are
+%\begin{eqnarray*}
+%{ u}_{{1,0}}{ u}_{{2,0}}{ u}_{{3,0}}{ v}_{{1,0}}{
+% v}_{{2,0}}{ v}_{{3,0}}&=&1,\\
+% { u}_{{0,1}}{ u}_{{2,1}}
+%{ u}_{{3,1}}{ v}_{{0,3}}{ v}_{{1,3}}{ v}_{{2,3}}&=&1,\\
+%{ u}_{{0,2}}{ u}_{{1,2}}{ u}_{{3,2}}{ w}_{{0,3}}{
+% w}_{{1,3}}{ w}_{{2,3}}&=&1,\\
+% { u}_{{0,3}}{ u}_{{1,3}}
+%{ u}_{{2,3}}{ w}_{{0,2}}{ w}_{{1,2}}{ w}_{{3,2}}&=&1
+%,\\
+%{ v}_{{0,1}}{ v}_{{2,1}}{ v}_{{3,1}}{ w}_{{1,0}}{
+% w}_{{2,0}}{ w}_{{3,0}}&=&1,\\
+% { v}_{{0,2}}{ v}_{{1,2}}
+%{ v}_{{3,2}}{ w}_{{0,1}}{ w}_{{2,1}}{ w}_{{3,1}}&=&1.
+%\end{eqnarray*}
+%The holonomy equations are
+%$${\frac{{ u}_{{0,3}}{ w}_{{0,2}}{ w}_{{2,3}}}{{
+%v}_{{0,3}}{ v}_{{1,0}}}}={\frac {{ v}_{{1,2}}{ v}_
+%{{2,1}}{ v}_{{3,2}}{ v}_{{2,3}}}{{ u}_{{3,0}}{ v}_
+%{{0,3}}{ v}_{{1,0}}{ w}_{{2,0}}{ w}_{{3,2}}}}={
+%\frac {{ u}_{{2,0}}{ v}_{{0,1}}{ v}_{{0,3}}{ v}_{{
+%2,0}}}{{ u}_{{3,0}}{ w}_{{2,0}}{ w}_{{2,3}}{ w}_{{
+%3,1}}}}={\frac {{ u}_{{2,1}}{ u}_{{1,2}}{ v}_{{0,3}}
+%{ w}_{{1,3}}{ w}_{{3,2}}{ w}_{{0,2}}}{{ u}_{{3,0}}
+%{ u}_{{0,2}}{ v}_{{1,0}}{ v}_{{1,2}}{ v}_{{2,1}}{
+% v}_{{0,2}}}}=1$$
+%
+%We obtain 6 solutions in 2 sets.
+%
+%The first set is given by
+%$$
+%\left \{
+%\begin{array}{rcl}
+%{ u}_{{0,1}}=
+%{ u}_{{1,0}}=
+%{ u}_{{2,3}}=
+%{ u}_{{3,2}}&=&{\tau}^{-1},\\
+%{ v}_{{0,1}}=
+%{ v}_{{1,0}}=
+%{ v}_{{2,3}}=
+%{ v}_{{3,2}}&=&\tau^2,\\
+%{ w}_{{0,1}}=
+%{ w}_{{1,0}}=
+%{ w}_{{2,3}}=
+%{ w}_{{3,2}}&=&\tau
+%\end{array}
+%\right .
+%$$
+%where $\tau = \frac 12 \pm \frac 12 \sqrt 5$. They correspond to the hyperbolic conditions, but none of
+%these solutions is hyperbolic.
+%
+%The second set is related to the polynomial
+%$P=4T^{4}+10T^{3}+11T^{2}+5T+1$ and its 4 roots
+%$u = -\frac 58 + \eps \frac 18\,\sqrt {5} \pm i \frac 18 \left(\sqrt {3} - \eps \sqrt {15} \right)$
+%where $\eps=\pm 1$. We get, when $\eps=1$, 2 CR-spherical solutions  (none of
+%\subsection{The torus knot  $7_1$}
+%The variety is triangulated with 4 tetrahedrons.
+%The edge equations are
+%$$
+%(L_e)
+%\left \{
+%\begin{array}{rcl}
+%u_{{2,3}}u_{{1,4}}x_{{1,3}}v_{{1,4}}w_{{2,4}}&=&1,\\
+%u_{{3,2}}u_{{4,1}}x_{{3,1}}v_{{4,1}}w_{{4,2}}&=&1,\\
+%u_{{2,4}}u_{{1,2}}w_{{1,2}}x_{{1,2}}v_{{1,2}}w_{{4,3}}v_{{4,3}}x_{{3,4}}u_{{4,3}}&=&1,\\
+%u_{{4,2}}u_{{2,1}}w_{{2,1}}x_{{2,1}}v_{{2,1}}w_{{3,4}}v_{{3,4}}x_{{4,3}}u_{{3,4}}&=&1,\\
+%u_{{1,3}}x_{{1,4}}w_{{1,3}}v_{{3,2}}x_{{4,2}}w_{{3,2}}v_{{3,1}}w_{{1,4}}&=&1,\\
+%u_{{3,1}}x_{{4,1}}w_{{3,1}}v_{{2,3}}x_{{2,4}}w_{{2,3}}v_{{1,3}}w_{{4,1}}&=&1,\\
+%v_{{2,4}}x_{{2,3}} &=&1,\\
+%v_{{4,2}}x_{{3,2}}&=&1.
+%\end{array}
+%\right .
+%$$
+%The face equations are
+%$$
+%(L_f)
+%\left \{
+%\begin{array}{rcl}
+%u_{{2,1}}u_{{3,1}}u_{{4,1}}u_{{1,3}}u_{{2,3}}u_{{4,3}}&=&1,\\
+%u_{{1,2}}u_{{3,2}}u_{{4,2}}x_{{1,2}}x_{{3,2}}x_{{4,2}}&=&1,\\
+%u_{{1,4}}u_{{2,4}}u_{{3,4}}w_{{1,3}}w_{{2,3}}w_{{4,3}}&=&1,\\
+%v_{{2,1}}v_{{3,1}}v_{{4,1}}x_{{2,1}}x_{{3,1}}x_{{4,1}}&=&1,\\
+%v_{{1,2}}v_{{3,2}}v_{{4,2}}w_{{2,1}}w_{{3,1}}w_{{4,1}}&=&1,\\
+%v_{{1,3}}v_{{2,3}}v_{{4,3}}x_{{1,4}}x_{{2,4}}x_{{3,4}}&=&1,\\
+%v_{{1,4}}v_{{2,4}}v_{{3,4}}w_{{1,2}}w_{{3,2}}w_{{4,2}}&=&1,\\
+%w_{{1,4}}w_{{2,4}}w_{{3,4}}x_{{1,3}}x_{{2,3}}x_{{4,3}}&=&1.
+%\end{array}
+%\right .
+%$$
+%The holonomy conditions are
+%$$
+%{\frac {v_{{3,4}}}{w_{{3,2}}x_{{4,2}}}}=
+%{\frac {w_{{4,1}}w_{{1,4}}x_{{1,3}}x_{{3,1}}}{v_{{4,3}}w_{{3,2}}x_{{4,2}}}}=
+%{\frac {u_{{3,1}}w_{{1,3}}w_{{4,1}}x_{{4,1}}}{v_{{1,2}}v_{{3,1}}w_{{3,2}}x_{{1,2}}}}=
+%{\frac {v_{{3,4}}v_{{4,3}}v_{{2,4}}v_{{4,2}}w_{{4,1}}x_{{3,4}}x_{{
+%4,3}}}{u_{{1,3}}v_{{1,2}}v_{{3,1}}w_{{3,1}}w_{{3,2}}x_{{1,2}}x_{{1,4}}
+%}}=1
+%$$
+%We obtain 15 solutions in 4 sets given by  polynomials of degrees 2, 3, 4 and 6.
+%
+%The first one corresponds to a root $w$ of $P1 = T^2-T+2$
+%$w_{1,2} = w_{2,1} = \overline w _{3,4} =  \overline w _{4,3} = \frac 12  \pm \frac 12 I \sqrt{7}$.
+%
+%The second one corresponds to the 3 real roots of $P_2 = T^3+2T^2-T-1$.
+%
+%The third one corresponds to the 4 roots of $P_3 = 4T^4+10T^3+11T^2+2T+1$.
+%
+%The last set corresponds to the 6 roots of $P_4 = T^6-2T^5+5T^4+3T^2-T+1$.
+%They are all CR-spherical except for the degree 3 polynomial that corresponds to 3 real solutions for the hyperbolic case.

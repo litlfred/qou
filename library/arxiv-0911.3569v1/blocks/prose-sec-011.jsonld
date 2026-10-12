@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0911.3569v1/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0911.3569v1/blocks/prose-sec-011",
   "kind": "prose",
   "title": "Convergence to the polarization.",
   "pageStart": 13,
   "pageEnd": 14,
   "text": "../sections/sec-011-43-convergence-to-the-polarization.md",
-  "derivedFrom": "library/arxiv-0911.3569v1/manifest",
-  "sourceDocument": "library/arxiv-0911.3569v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.3569v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.3569v1/manifest.jsonld",
   "provenance": "ingested"
 }

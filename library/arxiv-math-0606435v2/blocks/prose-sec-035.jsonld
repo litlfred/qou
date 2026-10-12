@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0606435v2/blocks/prose-sec-035",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0606435v2/blocks/prose-sec-035",
   "kind": "prose",
-  "title": "Positive braid links 27",
-  "pageStart": 27,
-  "pageEnd": 27,
-  "text": "../sections/sec-035-51-positive-braid-links-27.md",
-  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
-  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "title": "Fibered Dean knots (Hirasawa-Murasugi)",
+  "pageStart": 61,
+  "pageEnd": 68,
+  "text": "../sections/sec-035-81-fibered-dean-knots-hirasawa-murasugi.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
   "provenance": "ingested"
 }

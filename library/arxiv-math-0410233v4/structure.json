@@ -5,7 +5,13 @@
   "file": "0410233v4.pdf",
   "sha256": "1f7215c9f21aa2b7eb8d5133c1a63ab14837ae2694c14e3ff1521d54a41616fe",
   "bytes": 458848,
-  "pages": 46
+  "pages": 46,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,21 +21,27 @@
    "stamp_date": "23 Jul 2008"
   },
   "doi": null,
-  "title": "Cusp shapes under cone deformation",
-  "authors_raw": null,
-  "abstract": "A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape. We bound the change in cusp shape when the hyperbolic structure of the manifold is deformed via cone deformation preserving the cusp. The bo unds are in terms of the change in structure in a neighborhood of the si ngular locus alone. We then apply this result to provide information on the cusp s hape of many hyperbolic knots, given only a diagram of the knot. Spec iﬁcally, we show there is a universal constant C such that if a knot admits a prime, twist reduced diagram with at least C crossings per twist reg ion, then the length of the second shortest curve on the cusp torus is bo unded. The bound is linear in the number of twist regions of the diagr am.",
+  "title": "CUSP SHAPES UNDER CONE DEFORMATION",
+  "authors_raw": "JESSICA S. PURCELL",
+  "title_lines": [
+   "CUSP SHAPES UNDER CONE DEFORMATION"
+  ],
+  "abstract": "A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp shape. We bound the change in cusp shape when the hyperbolic structure of the manifold is deformed via cone deformation preserving the cusp. The bounds are in terms of the change in structure in a neighborhood of the singular locus alone. We then apply this result to provide information on the cusp shape of many hyperbolic knots, given only a diagram of the knot. Speci\ufb01cally, we show there is a universal constant C such that if a knot admits a prime, twist reduced diagram with at least C crossings per twist region, then the length of the second shortest curve on the cusp torus is bounded. The bound is linear in the number of twist regions of the diagram.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211119103803-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20211119103803-05'00'"
   },
-  "title_prev": "CUSP SHAPES UNDER CONE DEFORMATION JESSICA S. PURCELL",
-  "title_lines": [
-   "CUSP SHAPES UNDER CONE DEFORMATION",
-   "JESSICA S. PURCELL"
-  ]
+  "title_raw": "CUSP SHAPES UNDER CONE DEFORMATION",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "CUSP SHAPES UNDER CONE DEFORMATION 1. Introduction 1.1. Motivation. The interplay between geometry and topology is an important theme in the study of 3\u2013manifolds. Since Thurston\u2019s work in the late 1970\u2019s, it has been known that any Haken 3\u2013manifold has a geometric decomposition [23]. Recently Perelm",
+   "outline": "1. Introduction",
+   "text": "CUSP SHAPES UNDER CONE DEFORMATION",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -37,179 +49,800 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Motivation",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Cone deformations",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Cusp shapes",
    "page": 3,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Applications to knot theory",
    "page": 5,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Organization of this paper",
    "page": 7,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 7,
    "source": "outline",
-   "number": "1.6"
+   "number": "1.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Background on Cone Deformation",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Infinitesimal deformations",
    "page": 7,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Boundary terms",
    "page": 9,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Change in Cusp Shape",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Boundary relations",
    "page": 11,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Teichmüller Space",
+   "title": "Teichm\u00fcller Space",
    "page": 12,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Normalized lengths on the torus",
    "page": 15,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Bounding the boundary terms",
    "page": 17,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Convex combinations of deformations",
    "page": 18,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Selecting local deformations",
    "page": 19,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Boundary bound",
    "page": 21,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Bounding the meridian",
    "page": 28,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Cusp shapes of hyperbolic knots",
    "page": 31,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "An initial manifold",
    "page": 31,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Finding values for tube radius",
    "page": 39,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem ??",
    "page": 39,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Example: 2–bridge knots",
+   "title": "Example: 2\u2013bridge knots",
    "page": 41,
    "source": "outline",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Proof of Lemma 4.1 when k = 3",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Faces TI illustrated when n = 3",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The top edge of the quadrilateral maps to the shortest path on \u2202U under the covering projection",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Left to right: The link K",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Left: Gluing 2\u2013punctured discs with no crossings. Right: Gluing 2\u2013punctured discs with a single crossing",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Create a trivalent graph by replacing each twist region with an edge",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "(a.) Form of \u0393 if \u03b3 has an edge with a single vertex at both endpoints. (b.) Corresponding form of original link diagram",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Form of \u0393 when \u03b3 has two vertices connected by two distinct edges. In (a), the edges of \u03b3 are the dashed lines, with one of the vertices in A and the other at \u221e",
+   "page": 35,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Possible forms of the original link diagram if \u03b3 contains two vertices connected by two distinct edges",
+   "page": 35,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "The form of the packing of circles about any vertex. Dashed circles correspond to the shaded faces of the polyhedron at this vertex",
+   "page": 37,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Result of taking point of tangency to in\ufb01nity",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Graphs of \u00aff(R) and I(R). Here \u00aff(R) gives the bounds in Theorem 1.8 for given tube radius R. I(R) gives the number of crossings required to guarantee tube radius R",
+   "page": 40,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "Augmented link of a 2\u2013bridge knot with an even number of twist regions, and an even number of crossings per region",
+   "page": 42,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Trivalent graph associated with a 2\u2013bridge knot",
+   "page": 42,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Circle packing associated with a 2\u2013bridge knot",
+   "page": 42,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 888,
+   "n_words": 151,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -218,7 +851,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-11-motivation",
@@ -227,8 +862,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2455,
-   "n_words": 405
+   "n_chars": 2437,
+   "n_words": 387,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-13-cusp-shapes",
@@ -237,8 +874,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 1766,
-   "n_words": 328
+   "n_chars": 1748,
+   "n_words": 310,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-12-cone-deformations",
@@ -247,8 +886,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 5,
-   "n_chars": 6529,
-   "n_words": 1204
+   "n_chars": 6454,
+   "n_words": 1129,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-14-applications-to-knot-theory",
@@ -257,8 +898,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 4617,
-   "n_words": 863
+   "n_chars": 4566,
+   "n_words": 812,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-15-organization-of-this-paper",
@@ -267,8 +910,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 477,
-   "n_words": 89
+   "n_chars": 474,
+   "n_words": 86,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-16-acknowledgments",
@@ -277,8 +922,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 296,
-   "n_words": 49
+   "n_chars": 292,
+   "n_words": 45,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-2-background-on-cone-deformation",
@@ -286,156 +933,405 @@
    "title": "Background on Cone Deformation",
    "level": 1,
    "page_start": 7,
-   "page_end": 9,
-   "n_chars": 5060,
-   "n_words": 1001
+   "page_end": 7,
+   "n_chars": 728,
+   "n_words": 126,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-22-boundary-terms",
+   "id": "sec-008-21-infinitesimal-deformations",
+   "number": "2.1",
+   "title": "Infinitesimal deformations",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4211,
+   "n_words": 812,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-22-boundary-terms",
    "number": "2.2",
    "title": "Boundary terms",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 3047,
-   "n_words": 613
+   "n_chars": 3001,
+   "n_words": 567,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-3-change-in-cusp-shape",
+   "id": "sec-010-3-change-in-cusp-shape",
    "number": "3",
    "title": "Change in Cusp Shape",
    "level": 1,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 171,
-   "n_words": 31
+   "n_chars": 170,
+   "n_words": 30,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-31-boundary-relations",
+   "id": "sec-011-31-boundary-relations",
    "number": "3.1",
    "title": "Boundary relations",
    "level": 2,
    "page_start": 11,
-   "page_end": 15,
-   "n_chars": 9056,
-   "n_words": 1846
+   "page_end": 12,
+   "n_chars": 2095,
+   "n_words": 443,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-33-normalized-lengths-on-the-torus",
+   "id": "sec-012-32-teichm\u00fcller-space",
+   "number": "3.2",
+   "title": "Teichm\u00fcller Space",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 6777,
+   "n_words": 1289,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-33-normalized-lengths-on-the-torus",
    "number": "3.3",
    "title": "Normalized lengths on the torus",
    "level": 2,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 4682,
-   "n_words": 966
+   "n_chars": 4630,
+   "n_words": 919,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-4-bounding-the-boundary-terms",
+   "id": "sec-014-4-bounding-the-boundary-terms",
    "number": "4",
    "title": "Bounding the boundary terms",
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 480,
-   "n_words": 95
+   "n_chars": 479,
+   "n_words": 94,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-41-convex-combinations-of-deformations",
+   "id": "sec-015-41-convex-combinations-of-deformations",
    "number": "4.1",
    "title": "Convex combinations of deformations",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 2628,
-   "n_words": 544
+   "n_chars": 2604,
+   "n_words": 519,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-42-selecting-local-deformations",
+   "id": "sec-016-42-selecting-local-deformations",
    "number": "4.2",
    "title": "Selecting local deformations",
    "level": 2,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 6685,
-   "n_words": 1442
+   "n_chars": 6656,
+   "n_words": 1413,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-43-boundary-bound",
+   "id": "sec-017-43-boundary-bound",
    "number": "4.3",
    "title": "Boundary bound",
    "level": 2,
    "page_start": 21,
    "page_end": 28,
-   "n_chars": 13840,
-   "n_words": 3075
+   "n_chars": 13658,
+   "n_words": 2893,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-5-bounding-the-meridian",
+   "id": "sec-018-5-bounding-the-meridian",
    "number": "5",
    "title": "Bounding the meridian",
    "level": 1,
    "page_start": 28,
    "page_end": 31,
-   "n_chars": 6028,
-   "n_words": 1264
+   "n_chars": 5968,
+   "n_words": 1204,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-6-cusp-shapes-of-hyperbolic-knots",
+   "id": "sec-019-6-cusp-shapes-of-hyperbolic-knots",
    "number": "6",
    "title": "Cusp shapes of hyperbolic knots",
    "level": 1,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 611,
-   "n_words": 120
+   "n_chars": 601,
+   "n_words": 110,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-61-an-initial-manifold",
+   "id": "sec-020-61-an-initial-manifold",
    "number": "6.1",
    "title": "An initial manifold",
    "level": 2,
    "page_start": 31,
    "page_end": 39,
-   "n_chars": 18470,
-   "n_words": 3490
+   "n_chars": 18319,
+   "n_words": 3339,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-62-finding-values-for-tube-radius",
+   "id": "sec-021-62-finding-values-for-tube-radius",
    "number": "6.2",
    "title": "Finding values for tube radius",
    "level": 2,
    "page_start": 39,
    "page_end": 41,
-   "n_chars": 5535,
-   "n_words": 1167
+   "n_chars": 5440,
+   "n_words": 1070,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-020-64-example-2bridge-knots",
+   "id": "sec-022-64-example-2bridge-knots",
    "number": "6.4",
-   "title": "Example: 2–bridge knots",
+   "title": "Example: 2\u2013bridge knots",
    "level": 2,
    "page_start": 41,
    "page_end": 44,
-   "n_chars": 6750,
-   "n_words": 1373
+   "n_chars": 6674,
+   "n_words": 1297,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-023-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 44,
    "page_end": 46,
-   "n_chars": 4288,
-   "n_words": 648
+   "n_chars": 4257,
+   "n_words": 617,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 25,
-  "sections": 22,
-  "chars_total": 103471
+  "toc_inferred_entries": 0,
+  "figure_entries": 16,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 25,
+  "chars_total": 103127,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "jpurcell-cusps.tex",
+   "tex_sections": 30,
+   "overlaid": 16,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-11-motivation",
+     "title": "Motivation",
+     "prose_ratio": 0.61,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-13-cusp-shapes",
+     "title": "Cusp shapes",
+     "prose_ratio": 0.311,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-12-cone-deformations",
+     "title": "Cone deformations",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.598,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-14-applications-to-knot-theory",
+     "title": "Applications to knot theory",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-15-organization-of-this-paper",
+     "title": "Organization of this paper",
+     "prose_ratio": 0.762,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-16-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.397,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-2-background-on-cone-deformation",
+     "title": "Background on Cone Deformation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-21-infinitesimal-deformations",
+     "title": "Infinitesimal deformations",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-22-boundary-terms",
+     "title": "Boundary terms",
+     "prose_ratio": 0.903,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-3-change-in-cusp-shape",
+     "title": "Change in Cusp Shape",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-31-boundary-relations",
+     "title": "Boundary relations",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-32-teichm\u00fcller-space",
+     "title": "Teichm\u00fcller Space",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-33-normalized-lengths-on-the-torus",
+     "title": "Normalized lengths on the torus",
+     "prose_ratio": 0.843,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-4-bounding-the-boundary-terms",
+     "title": "Bounding the boundary terms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-41-convex-combinations-of-deformations",
+     "title": "Convex combinations of deformations",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-42-selecting-local-deformations",
+     "title": "Selecting local deformations",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-43-boundary-bound",
+     "title": "Boundary bound",
+     "prose_ratio": 0.779,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-5-bounding-the-meridian",
+     "title": "Bounding the meridian",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-6-cusp-shapes-of-hyperbolic-knots",
+     "title": "Cusp shapes of hyperbolic knots",
+     "prose_ratio": 0.935,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-61-an-initial-manifold",
+     "title": "An initial manifold",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-62-finding-values-for-tube-radius",
+     "title": "Finding values for tube radius",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-64-example-2bridge-knots",
+     "title": "Example: 2\u2013bridge knots",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/stateintegralsqseries/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "FROM STATE INTEGRALS TO q-SERIES",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "stateintegralsqseries",
   "contains": [
     "library/stateintegralsqseries/sections/sec-000",
     "library/stateintegralsqseries/sections/sec-001",
@@ -23,8 +28,10 @@
     "library/stateintegralsqseries/sections/sec-014"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "stateintegralsqseries",
+    "title_source": "slug",
     "source_file": "state.integrals.qseries.pdf",
     "source_sha256": "a5e86443f35e21c0f0c5f6b515379790b13e99d5390e555f29a04997cac2f1fd",
     "pages": 16,

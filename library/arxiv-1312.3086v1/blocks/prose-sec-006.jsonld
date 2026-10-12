@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1312.3086v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1312.3086v1/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "P+∞",
-  "pageStart": 9,
+  "title": "Conclusion",
+  "pageStart": 8,
   "pageEnd": 10,
-  "text": "../sections/sec-006-2-p.md",
-  "derivedFrom": "library/arxiv-1312.3086v1/manifest",
-  "sourceDocument": "library/arxiv-1312.3086v1/manifest",
+  "text": "../sections/sec-006-6-conclusion.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1312.3086v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1312.3086v1/manifest.jsonld",
   "provenance": "ingested"
 }

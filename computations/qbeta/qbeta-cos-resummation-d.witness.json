@@ -1,0 +1,128 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-10-10T13:10:58.320698+00:00",
+  "commitSha": "39879de5d078fcda2b35c62ecee7f79fb09e3b20",
+  "assertions": [
+    {
+      "name": "reproduces_block_published_values",
+      "computed": "0.0000000000464652515958298639458992480263083915450870140747738279321425",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-10",
+      "source": "q-beta-cos-resummation.md / -table-data.md, 10 significant figures"
+    },
+    {
+      "name": "reproduces_block_published_ppm",
+      "computed": "0.0466241348546024158843285790121438157388222164270747169776573",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0.051",
+      "source": "residuals quoted to 0.1 ppm in the block"
+    },
+    {
+      "name": "ruled_base_cos_moves_residual_away_from_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "cos(alpha) <= 1 while the ruled base lies below Q_ref"
+    },
+    {
+      "name": "alpha_D_bar_even_part_matches_closed_form",
+      "computed": "1.13195988485333904593863991136097397258531639976739227369783e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "Lean QOU.Interactions.eigenphase_bar_even_sum"
+    },
+    {
+      "name": "eps_DeltaS_chain_identity",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "computations/audit_delta_S_chain.py chain identity"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "qbeta-cos-resummation-d",
+  "scriptFile": "qbeta_cos_resummation_d_probe.py",
+  "scriptHash": "917f4ee19112",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "832ce4e14a00d523"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_cos_resummation_d_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_cos_resummation_d_probe.py"
+  },
+  "description": "Convention-D numbers for prop:q-beta-cos-resummation at the proton pin: z_D, h, alpha_D = (z_D-1)h/2, cos(alpha_D); the ruled z_D base and the retired Form A base, each bare and cos-dressed, with eps_Q and the downstream n-p split residual eps_DeltaS = (Q-Q_ref)/(Q_ref+m_e). Neither base is selected by residual. A convention-C eigenphase is carried only as a labelled historical comparison so the block's superseded eps_DeltaS 1015 -> 185 ppm can be scoped as C-measured.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561076887987449912187360000000000",
+    "m_e_MeV": "0.510998950690000000000000000000000000000000000000000000000000",
+    "Q_beta_ref_MeV": "0.782333410000000000000000000000000000000000000000000000000000",
+    "convention": "D (z = q^3/(q^2+1)); C rows historical only"
+  },
+  "data": {
+    "z_D": "0.612688037146465251595829863945899248026308391545087014074774",
+    "h": "0.209060298795639315430846213129674943859757495263063078255215",
+    "alpha_D": "-0.0404857773406427649188472790652144472881373382539130288070463",
+    "cos_alpha_D": "0.999180562853895944674588314891546911851233833906398543668193",
+    "E0_MeV": "4.18598136329447589694506215875900841014348689087871544862230",
+    "damping_Qref_over_Qref_plus_me": "0.604897421404209494326033448134736937060038854535869797899629",
+    "cells": [
+      {
+        "cell": "ruled",
+        "Q_MeV": "0.444700408521780409100962213024942779024902777364453961151380",
+        "eps_Q_ppm": "-431571.753375865145397584115671420987856184261177783572925283",
+        "eps_DeltaS_ppm": "-261056.640767954270292246720304289752685950959490598284264771"
+      },
+      {
+        "cell": "ruled_cos",
+        "Q_MeV": "0.444336004488150013837970364957288720533430567626049685987312",
+        "eps_Q_ppm": "-432037.544596043758583734312257879002593752748427234258105746",
+        "eps_DeltaS_ppm": "-261338.396675953033801475470481302427810953989571862302438720"
+      },
+      {
+        "cell": "formA",
+        "Q_MeV": "0.783645827374621213074939751341396890525736441030255026758350",
+        "eps_Q_ppm": "1677.56784747466310423806563674289523917486922903500536727701",
+        "eps_DeltaS_ppm": "1014.75646516803392592280605467117079480894855351554975120579"
+      },
+      {
+        "cell": "formA_cos_D",
+        "Q_MeV": "0.783003678874281002273691589402925808553152163608486543665497",
+        "eps_Q_ppm": "856.756039961277217716663031080071798483160278795384266532556",
+        "eps_DeltaS_ppm": "518.249519345058454536387745912196156966758536977672371069544"
+      },
+      {
+        "cell": "formA_cos_C_historical",
+        "Q_MeV": "0.782572842136961225244017901557072266898001354123650348776901",
+        "eps_Q_ppm": "306.048717721546934852113189275997938016419525851962243184121",
+        "eps_DeltaS_ppm": "185.128080173828534451855722762930364856046880246371032989143"
+      }
+    ],
+    "z_C_historical": "0.499320334183694452413442680257666303751948164041531945276170",
+    "cos_alpha_C_historical": "0.998630777833329739454001151161805274865829762309650355085606",
+    "bar_defect_abs_zD_q_minus_zD_inv_q": "0.209060298795639315430846213129674943859757495263063078255215",
+    "alpha_D_bar_even_sum": "0.0218531042662609947010096678386941548841069803567611081214237"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

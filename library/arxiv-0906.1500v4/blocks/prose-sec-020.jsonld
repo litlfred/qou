@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-020",
   "kind": "prose",
-  "title": "Bridge from the polynomial torsion to the non–abelian Reide meister tor-",
-  "pageStart": 15,
-  "pageEnd": 16,
-  "text": "../sections/sec-020-61-bridge-from-the-polynomial-torsion-to-the-non.md",
-  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
-  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "title": "Proof for one variable",
+  "pageStart": 21,
+  "pageEnd": 22,
+  "text": "../sections/sec-020-731-proof-for-one-variable.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0906.1500v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0906.1500v4/manifest.jsonld",
   "provenance": "ingested"
 }

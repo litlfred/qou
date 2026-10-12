@@ -6,7 +6,12 @@
   "sha256": "b7ed2a9e85264568cfaa4edb008fc4e3c3fc7bd3a1bc0996e76df2ad59a1f783",
   "bytes": 1874483,
   "pages": 103,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:19Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,18 +21,29 @@
    "stamp_date": "23 Nov 2015"
   },
   "doi": null,
-  "title": "MOD-\u03c6 CONVERGENCE, I:",
-  "authors_raw": "NORMALITY ZONES AND PRECISE DEVIATIONS",
+  "title": "MOD-\u03c6 CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
+  "authors_raw": "VALENTIN F\u00c9RAY, PIERRE-LO\u00cfC M\u00c9LIOT, AND ASHKAN NIKEGHBALI",
   "title_lines": [
-   "MOD-\u03c6 CONVERGENCE, I:"
+   "MOD-\u03c6 CONVERGENCE, I:",
+   "NORMALITY ZONES AND PRECISE DEVIATIONS"
   ],
-  "abstract": "In this paper, we use the framework of mod- \u03c6 convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n\u2208N, which can be lattice or non-lattice distributed. We establish precise estimates of the \ufb02uctuations P[Xn\u2208 tnB], instead of the usual estimates for the rate of exponential decay log(P[Xn\u2208 tnB]). Our approach provides us with a systematic way to characterise the normality zone, that is the zone in which the Gaussian approxima- tion for the tails is still valid. Besides, the residue function measures the extent to which this approximation fails to hold at the edge of the normality zone. The \ufb01rst sections of the article are devoted to a proof of these abstract results and comparisons with existing results. We then propose new examples covered by this the- ory and coming from various areas of mathematics: classical probability theory, number theory (statistics of additive arithmetic functions), combinatorics (statistics of random permutations), random matrix theory (characteristic polynomials of random matrices in compact Lie groups), graph theory (number of subgraphs in a random Erd\u02dd os-R\u00e9nyi graph), and non-commutative probability theory (asymptotics of random character val- ues of symmetric groups). In particular, we complete our theory of precise deviations by a concrete method of cumulants and dependency graphs, which applies to many examples of sums of \u201cweakly dependent\u201d random variables. The large number as well as the variety of examples hint at a universality class for second order \ufb02uctuations. Date: November 24, 2015. 1 arXiv:1304.2934v4 [math.PR] 23 Nov 2015",
+  "abstract": "In this paper, we use the framework of mod-\u03c6 convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n\u2208N, which can be lattice or non-lattice distributed. We establish precise estimates of the \ufb02uctuations P[Xn \u2208tnB], instead of the usual estimates for the rate of exponential decay log(P[Xn \u2208tnB]). Our approach provides us with a systematic way to characterise the normality zone, that is the zone in which the Gaussian approxima- tion for the tails is still valid. Besides, the residue function measures the extent to which this approximation fails to hold at the edge of the normality zone. The \ufb01rst sections of the article are devoted to a proof of these abstract results and comparisons with existing results. We then propose new examples covered by this the- ory and coming from various areas of mathematics: classical probability theory, number theory (statistics of additive arithmetic functions), combinatorics (statistics of random permutations), random matrix theory (characteristic polynomials of random matrices in compact Lie groups), graph theory (number of subgraphs in a random Erd\u02ddos-R\u00e9nyi graph), and non-commutative probability theory (asymptotics of random character val- ues of symmetric groups). In particular, we complete our theory of precise deviations by a concrete method of cumulants and dependency graphs, which applies to many examples of sums of \u201cweakly dependent\u201d random variables. The large number as well as the variety of examples hint at a universality class for second order \ufb02uctuations. Date: November 24, 2015. 1 arXiv:1304.2934v4 [math.PR] 23 Nov 2015",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20151124022337Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20151124022337Z"
+  },
+  "title_raw": "MOD-\u03c6 CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "MOD- \u03c6 CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
+   "outline": "1. Introduction",
+   "text": "MOD-\u03c6 CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -36,815 +52,2812 @@
    "title": "Introduction",
    "page": 4,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Mod-phi convergence",
    "page": 4,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Theoretical results",
    "page": 5,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Applications",
    "page": 7,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Forthcoming works",
    "page": 8,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Discussion on our hypotheses",
    "page": 8,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 9,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Basic examples of mod-convergence",
    "page": 9,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Legendre-Fenchel transforms",
    "page": 12,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Gaussian integrals",
    "page": 13,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Fluctuations in the case of lattice distributions",
    "page": 14,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Lattice and non-lattice distributions",
    "page": 14,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Deviations at the scale O(tn)",
    "page": 16,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Central limit theorem at the scales o(tn) and o(tn23)",
    "page": 21,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Fluctuations in the non-lattice case",
    "page": 25,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "Berry-Esseen estimates",
    "page": 26,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Deviations at scale O(tn)",
    "page": 29,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Central limit theorem at the scales o(tn) and o(tn23)",
    "page": 30,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Normality zones for mod-phi and mod-Gaussian sequences",
    "page": 35,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 2,
    "title": "Discussion and refinements",
    "page": 36,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 1,
    "title": "An extended deviation result from bounds on cumulants",
    "page": 38,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Bounds on cumulants and mod-Gaussian convergence",
    "page": 38,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Precise deviations for random variables with control on cumulants",
    "page": 39,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "Link with the Cram\u00e9r-Petrov expansion",
    "page": 43,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 1,
    "title": "A precise version of the Ellis-G\u00e4rtner theorem",
    "page": 44,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "Technical preliminaries",
    "page": 45,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "A precise upper bound",
    "page": 46,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "A precise lower bound",
    "page": 47,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 1,
    "title": "Examples with an explicit generating function",
    "page": 48,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "Mod-convergence from an explicit formula for the Laplace transform",
    "page": 48,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "Additive arithmetic functions of random integers",
    "page": 50,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 2,
    "title": "Number of cycles in weighted probability measure",
    "page": 55,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "55"
   },
   {
    "level": 2,
    "title": "Rises in random permutations",
    "page": 58,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 2,
    "title": "Characteristic polynomials of random matrices in a compact Lie group",
    "page": 61,
    "source": "outline",
-   "number": "7.5"
+   "number": "7.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   },
   {
    "level": 1,
    "title": "Mod-Gaussian convergence from a factorization of the probability generating function",
    "page": 64,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 2,
    "title": "Background: central limit theorem from location of zeros",
    "page": 64,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 2,
    "title": "Mod-Gaussian convergence from non-negative factorizations",
    "page": 64,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 2,
    "title": "Two examples: uniform permutations and uniform set-partitions",
    "page": 67,
    "source": "outline",
-   "number": "8.3"
+   "number": "8.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "67"
   },
   {
    "level": 2,
    "title": "Third cumulant of the number of blocks in uniform set-partitions",
    "page": 68,
    "source": "outline",
-   "number": "8.4"
+   "number": "8.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 1,
    "title": "Dependency graphs and mod-Gaussian convergence",
    "page": 69,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "69"
   },
   {
    "level": 2,
    "title": "The theory of dependency graphs",
    "page": 70,
    "source": "outline",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "70"
   },
   {
    "level": 2,
    "title": "Joint cumulants",
    "page": 72,
    "source": "outline",
-   "number": "9.2"
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "72"
   },
   {
    "level": 2,
    "title": "Useful combinatorial lemmas",
    "page": 73,
    "source": "outline",
-   "number": "9.3"
+   "number": "9.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "73"
   },
   {
    "level": 2,
    "title": "Proof of the bound on cumulants",
    "page": 76,
    "source": "outline",
-   "number": "9.4"
+   "number": "9.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "76"
   },
   {
    "level": 2,
    "title": "Sums of random variables with a sparse dependency graph",
    "page": 78,
    "source": "outline",
-   "number": "9.5"
+   "number": "9.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "78"
   },
   {
    "level": 1,
    "title": "Subgraph count statistics in Erd\u00f6s-R\u00e9nyi random graphs",
    "page": 80,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "80"
   },
   {
    "level": 2,
    "title": "A bound on cumulants",
    "page": 81,
    "source": "outline",
-   "number": "10.1"
+   "number": "10.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "81"
   },
   {
    "level": 2,
    "title": "Polynomiality of cumulants",
    "page": 83,
    "source": "outline",
-   "number": "10.2"
+   "number": "10.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "83"
   },
   {
    "level": 2,
    "title": "Moderate deviations for subgraph count statistics",
    "page": 85,
    "source": "outline",
-   "number": "10.3"
+   "number": "10.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "85"
   },
   {
    "level": 1,
    "title": "Random character values from central measures on partitions",
    "page": 88,
    "source": "outline",
-   "number": "11"
+   "number": "11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "88"
   },
   {
    "level": 2,
    "title": "Preliminaries",
    "page": 91,
    "source": "outline",
-   "number": "11.1"
+   "number": "11.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "91"
   },
   {
    "level": 2,
    "title": "Bounds and limits of the cumulants",
    "page": 93,
    "source": "outline",
-   "number": "11.2"
+   "number": "11.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "93"
   },
   {
    "level": 2,
    "title": "Asymptotics of the random character values and partitions",
    "page": 96,
    "source": "outline",
-   "number": "11.3"
+   "number": "11.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "96"
   },
   {
    "level": 1,
    "title": "References",
    "page": 100,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "100"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Panorama of the \ufb02uctuations of a sum of n i.i.d. random variables",
+   "page": 10,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Panorama of the \ufb02uctuations of the number of cycles Xn of a",
+   "page": 11,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The Legendre-Fenchel transforms of a Gaussian law and of a Poisson law",
+   "page": 12,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Panorama of the \ufb02uctuations of a sequence of random variables (Xn)n\u2208N that converges modulo a lattice distribution (with x =",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Panorama of the \ufb02uctuations of a sequence of random variables (Xn)n\u2208N that converges modulo an absolutely continuous distribu-",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The in\ufb01mum of F on an admissible closed set C is attained",
+   "page": 45,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "45"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "In some problematic situations, one is only able to prove a non-precise lower bound for large deviations",
+   "page": 47,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Domain \u22060(r, R, \u03c6)",
+   "page": 56,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "56"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Bijection explaining Identity (43)",
+   "page": 76,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "76"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Illustration of the de\ufb01nition of \u03c6H. We can thus write \u03ba(G) = \u2211",
+   "page": 77,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "77"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Panorama of the \ufb02uctuations of a sum of Nn random vari-",
+   "page": 79,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "79"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "For m \u22652, the de\ufb01nition of Hm",
+   "page": 83,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "83"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Graphs involved in the computation of the main term in \u03ba(2)(X(n)",
+   "page": 86,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "86"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "Graphs involved in the computation of the main term in \u03ba(3)(X(n)",
+   "page": 86,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "86"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "86",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "87",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "88",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "89",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "90",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "91",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "92",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 93,
+   "label": "93",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 94,
+   "label": "94",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": "95",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "96",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": "97",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 98,
+   "label": "98",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 99,
+   "label": "99",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 100,
+   "label": "100",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 101,
+   "label": "101",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 102,
+   "label": "102",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": "103",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-12-theoretical-results",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 4443,
+   "n_words": 674,
+   "label_start": "1",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 5303,
+   "n_words": 850,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-001-12-theoretical-results",
    "number": "1.2",
    "title": "Theoretical results",
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 4568,
-   "n_words": 750
+   "n_chars": 4570,
+   "n_words": 752,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
-   "id": "sec-001-13-applications",
+   "id": "sec-002-13-applications",
    "number": "1.3",
    "title": "Applications",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
    "n_chars": 3897,
-   "n_words": 628
+   "n_words": 628,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-002-14-forthcoming-works",
+   "id": "sec-003-14-forthcoming-works",
    "number": "1.4",
    "title": "Forthcoming works",
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 611,
-   "n_words": 96
+   "n_chars": 610,
+   "n_words": 95,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-003-15-discussion-on-our-hypotheses",
+   "id": "sec-004-15-discussion-on-our-hypotheses",
    "number": "1.5",
    "title": "Discussion on our hypotheses",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2097,
-   "n_words": 332
+   "n_chars": 2102,
+   "n_words": 337,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-004-acknowledgements",
+   "id": "sec-005-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 314,
-   "n_words": 55
+   "n_chars": 296,
+   "n_words": 52,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-005-21-basic-examples-of-mod-convergence",
+   "id": "sec-006-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-007-21-basic-examples-of-mod-convergence",
    "number": "2.1",
    "title": "Basic examples of mod-convergence",
    "level": 2,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 6020,
-   "n_words": 1085
+   "n_chars": 6013,
+   "n_words": 1076,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
-   "id": "sec-006-22-legendre-fenchel-transforms",
+   "id": "sec-008-22-legendre-fenchel-transforms",
    "number": "2.2",
    "title": "Legendre-Fenchel transforms",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1271,
-   "n_words": 242
+   "n_chars": 1266,
+   "n_words": 238,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-007-23-gaussian-integrals",
+   "id": "sec-009-23-gaussian-integrals",
    "number": "2.3",
    "title": "Gaussian integrals",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 2549,
-   "n_words": 615
+   "n_chars": 2471,
+   "n_words": 582,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-008-31-lattice-and-non-lattice-distributions",
+   "id": "sec-010-3-fluctuations-in-the-case-of-lattice-distributi",
+   "number": "3",
+   "title": "Fluctuations in the case of lattice distributions",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-011-31-lattice-and-non-lattice-distributions",
    "number": "3.1",
    "title": "Lattice and non-lattice distributions",
    "level": 2,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 4858,
-   "n_words": 973
+   "n_chars": 4867,
+   "n_words": 987,
+   "label_start": "14",
+   "label_end": "16"
   },
   {
-   "id": "sec-009-32-deviations-at-the-scale-otn",
+   "id": "sec-012-32-deviations-at-the-scale-otn",
    "number": "3.2",
    "title": "Deviations at the scale O(tn)",
    "level": 2,
    "page_start": 16,
    "page_end": 21,
-   "n_chars": 8096,
-   "n_words": 1685
+   "n_chars": 8101,
+   "n_words": 1687,
+   "label_start": "16",
+   "label_end": "21"
   },
   {
-   "id": "sec-010-33-central-limit-theorem-at-the-scales-otn-and-o",
+   "id": "sec-013-33-central-limit-theorem-at-the-scales-otn-and-o",
    "number": "3.3",
    "title": "Central limit theorem at the scales o(tn) and o(tn23)",
    "level": 2,
    "page_start": 21,
-   "page_end": 26,
-   "n_chars": 9998,
-   "n_words": 2006
+   "page_end": 25,
+   "n_chars": 8961,
+   "n_words": 1817,
+   "label_start": "21",
+   "label_end": "25"
   },
   {
-   "id": "sec-011-41-berry-esseen-estimates",
+   "id": "sec-014-4-fluctuations-in-the-non-lattice-case",
+   "number": "4",
+   "title": "Fluctuations in the non-lattice case",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 966,
+   "n_words": 171,
+   "label_start": "25",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-015-41-berry-esseen-estimates",
    "number": "4.1",
    "title": "Berry-Esseen estimates",
    "level": 2,
    "page_start": 26,
    "page_end": 29,
-   "n_chars": 5348,
-   "n_words": 1105
+   "n_chars": 5345,
+   "n_words": 1119,
+   "label_start": "26",
+   "label_end": "29"
   },
   {
-   "id": "sec-012-42-deviations-at-scale-otn",
+   "id": "sec-016-42-deviations-at-scale-otn",
    "number": "4.2",
    "title": "Deviations at scale O(tn)",
    "level": 2,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 3228,
-   "n_words": 622
+   "n_chars": 3221,
+   "n_words": 611,
+   "label_start": "29",
+   "label_end": "30"
   },
   {
-   "id": "sec-013-43-central-limit-theorem-at-the-scales-otn-and-o",
+   "id": "sec-017-43-central-limit-theorem-at-the-scales-otn-and-o",
    "number": "4.3",
    "title": "Central limit theorem at the scales o(tn) and o(tn23)",
    "level": 2,
    "page_start": 30,
-   "page_end": 38,
-   "n_chars": 18933,
-   "n_words": 3556
+   "page_end": 36,
+   "n_chars": 13475,
+   "n_words": 2579,
+   "label_start": "30",
+   "label_end": "36"
   },
   {
-   "id": "sec-014-51-bounds-on-cumulants-and-mod-gaussian-converge",
+   "id": "sec-018-45-discussion-and-refinements",
+   "number": "4.5",
+   "title": "Discussion and refinements",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 5117,
+   "n_words": 928,
+   "label_start": "36",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-019-5-an-extended-deviation-result-from-bounds-on-cu",
+   "number": "5",
+   "title": "An extended deviation result from bounds on cumulants",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 245,
+   "n_words": 43,
+   "label_start": "38",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-020-51-bounds-on-cumulants-and-mod-gaussian-converge",
    "number": "5.1",
    "title": "Bounds on cumulants and mod-Gaussian convergence",
    "level": 2,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1525,
-   "n_words": 324
+   "n_chars": 1517,
+   "n_words": 315,
+   "label_start": "38",
+   "label_end": "39"
   },
   {
-   "id": "sec-015-52-precise-deviations-for-random-variables-with",
+   "id": "sec-021-52-precise-deviations-for-random-variables-with",
    "number": "5.2",
    "title": "Precise deviations for random variables with control on cumulants",
    "level": 2,
    "page_start": 39,
    "page_end": 43,
-   "n_chars": 7245,
-   "n_words": 1515
+   "n_chars": 7151,
+   "n_words": 1473,
+   "label_start": "39",
+   "label_end": "43"
   },
   {
-   "id": "sec-016-53-link-with-the-cram\u00e9r-petrov-expansion",
+   "id": "sec-022-53-link-with-the-cram\u00e9r-petrov-expansion",
    "number": "5.3",
    "title": "Link with the Cram\u00e9r-Petrov expansion",
    "level": 2,
    "page_start": 43,
-   "page_end": 45,
-   "n_chars": 3250,
-   "n_words": 578
+   "page_end": 44,
+   "n_chars": 1867,
+   "n_words": 364,
+   "label_start": "43",
+   "label_end": "44"
   },
   {
-   "id": "sec-017-61-technical-preliminaries",
+   "id": "sec-023-6-a-precise-version-of-the-ellis-g\u00e4rtner-theorem",
+   "number": "6",
+   "title": "A precise version of the Ellis-G\u00e4rtner theorem",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 1333,
+   "n_words": 204,
+   "label_start": "44",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-024-61-technical-preliminaries",
    "number": "6.1",
    "title": "Technical preliminaries",
    "level": 2,
    "page_start": 45,
    "page_end": 46,
-   "n_chars": 2240,
-   "n_words": 454
+   "n_chars": 2246,
+   "n_words": 461,
+   "label_start": "45",
+   "label_end": "46"
   },
   {
-   "id": "sec-018-62-a-precise-upper-bound",
+   "id": "sec-025-62-a-precise-upper-bound",
    "number": "6.2",
    "title": "A precise upper bound",
    "level": 2,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 1986,
-   "n_words": 365
+   "n_chars": 1981,
+   "n_words": 359,
+   "label_start": "46",
+   "label_end": "47"
   },
   {
-   "id": "sec-019-63-a-precise-lower-bound",
+   "id": "sec-026-63-a-precise-lower-bound",
    "number": "6.3",
    "title": "A precise lower bound",
    "level": 2,
    "page_start": 47,
    "page_end": 48,
-   "n_chars": 3770,
-   "n_words": 680
+   "n_chars": 2532,
+   "n_words": 472,
+   "label_start": "47",
+   "label_end": "48"
   },
   {
-   "id": "sec-020-71-mod-convergence-from-an-explicit-formula-for",
+   "id": "sec-027-7-examples-with-an-explicit-generating-function",
+   "number": "7",
+   "title": "Examples with an explicit generating function",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 1179,
+   "n_words": 192,
+   "label_start": "48",
+   "label_end": "48"
+  },
+  {
+   "id": "sec-028-71-mod-convergence-from-an-explicit-formula-for",
    "number": "7.1",
    "title": "Mod-convergence from an explicit formula for the Laplace transform",
    "level": 2,
    "page_start": 48,
    "page_end": 50,
-   "n_chars": 3662,
-   "n_words": 715
+   "n_chars": 3661,
+   "n_words": 714,
+   "label_start": "48",
+   "label_end": "50"
   },
   {
-   "id": "sec-021-72-additive-arithmetic-functions-of-random-integ",
+   "id": "sec-029-72-additive-arithmetic-functions-of-random-integ",
    "number": "7.2",
    "title": "Additive arithmetic functions of random integers",
    "level": 2,
    "page_start": 50,
    "page_end": 55,
-   "n_chars": 11094,
-   "n_words": 2181
+   "n_chars": 11124,
+   "n_words": 2208,
+   "label_start": "50",
+   "label_end": "55"
   },
   {
-   "id": "sec-022-73-number-of-cycles-in-weighted-probability-meas",
+   "id": "sec-030-73-number-of-cycles-in-weighted-probability-meas",
    "number": "7.3",
    "title": "Number of cycles in weighted probability measure",
    "level": 2,
    "page_start": 55,
    "page_end": 58,
-   "n_chars": 7927,
-   "n_words": 1462
+   "n_chars": 7926,
+   "n_words": 1463,
+   "label_start": "55",
+   "label_end": "58"
   },
   {
-   "id": "sec-023-74-rises-in-random-permutations",
+   "id": "sec-031-74-rises-in-random-permutations",
    "number": "7.4",
    "title": "Rises in random permutations",
    "level": 2,
    "page_start": 58,
    "page_end": 61,
-   "n_chars": 4980,
-   "n_words": 1052
+   "n_chars": 4924,
+   "n_words": 1033,
+   "label_start": "58",
+   "label_end": "61"
   },
   {
-   "id": "sec-024-75-characteristic-polynomials-of-random-matrices",
+   "id": "sec-032-75-characteristic-polynomials-of-random-matrices",
    "number": "7.5",
    "title": "Characteristic polynomials of random matrices in a compact Lie group",
    "level": 2,
    "page_start": 61,
    "page_end": 64,
-   "n_chars": 5789,
-   "n_words": 1283
+   "n_chars": 5010,
+   "n_words": 1122,
+   "label_start": "61",
+   "label_end": "64"
   },
   {
-   "id": "sec-025-81-background-central-limit-theorem-from-locatio",
+   "id": "sec-033-8-mod-gaussian-convergence-from-a-factorization",
+   "number": "8",
+   "title": "Mod-Gaussian convergence from a factorization of the probability generating function",
+   "level": 1,
+   "page_start": 64,
+   "page_end": 64,
+   "n_chars": 693,
+   "n_words": 119,
+   "label_start": "64",
+   "label_end": "64"
+  },
+  {
+   "id": "sec-034-81-background-central-limit-theorem-from-locatio",
    "number": "8.1",
    "title": "Background: central limit theorem from location of zeros",
    "level": 2,
    "page_start": 64,
    "page_end": 64,
    "n_chars": 1023,
-   "n_words": 165
+   "n_words": 165,
+   "label_start": "64",
+   "label_end": "64"
   },
   {
-   "id": "sec-026-82-mod-gaussian-convergence-from-non-negative-fa",
+   "id": "sec-035-82-mod-gaussian-convergence-from-non-negative-fa",
    "number": "8.2",
    "title": "Mod-Gaussian convergence from non-negative factorizations",
    "level": 2,
    "page_start": 64,
    "page_end": 67,
-   "n_chars": 3982,
-   "n_words": 787
+   "n_chars": 3969,
+   "n_words": 799,
+   "label_start": "64",
+   "label_end": "67"
   },
   {
-   "id": "sec-027-83-two-examples-uniform-permutations-and-uniform",
+   "id": "sec-036-83-two-examples-uniform-permutations-and-uniform",
    "number": "8.3",
    "title": "Two examples: uniform permutations and uniform set-partitions",
    "level": 2,
    "page_start": 67,
    "page_end": 68,
-   "n_chars": 2494,
-   "n_words": 493
+   "n_chars": 2482,
+   "n_words": 478,
+   "label_start": "67",
+   "label_end": "68"
   },
   {
-   "id": "sec-028-84-third-cumulant-of-the-number-of-blocks-in-uni",
+   "id": "sec-037-84-third-cumulant-of-the-number-of-blocks-in-uni",
    "number": "8.4",
    "title": "Third cumulant of the number of blocks in uniform set-partitions",
    "level": 2,
    "page_start": 68,
    "page_end": 69,
-   "n_chars": 3439,
-   "n_words": 656
+   "n_chars": 2257,
+   "n_words": 467,
+   "label_start": "68",
+   "label_end": "69"
   },
   {
-   "id": "sec-029-9-dependency-graphs-and-mod-gaussian-convergence",
+   "id": "sec-038-9-dependency-graphs-and-mod-gaussian-convergence",
    "number": "9",
    "title": "Dependency graphs and mod-Gaussian convergence",
    "level": 1,
    "page_start": 69,
    "page_end": 70,
-   "n_chars": 681,
-   "n_words": 103
+   "n_chars": 1891,
+   "n_words": 294,
+   "label_start": "69",
+   "label_end": "70"
   },
   {
-   "id": "sec-030-91-the-theory-of-dependency-graphs",
+   "id": "sec-039-91-the-theory-of-dependency-graphs",
    "number": "9.1",
    "title": "The theory of dependency graphs",
    "level": 2,
    "page_start": 70,
    "page_end": 72,
-   "n_chars": 4263,
-   "n_words": 761
+   "n_chars": 4265,
+   "n_words": 762,
+   "label_start": "70",
+   "label_end": "72"
   },
   {
-   "id": "sec-031-92-joint-cumulants",
+   "id": "sec-040-92-joint-cumulants",
    "number": "9.2",
    "title": "Joint cumulants",
    "level": 2,
    "page_start": 72,
    "page_end": 73,
-   "n_chars": 3592,
-   "n_words": 674
+   "n_chars": 3622,
+   "n_words": 704,
+   "label_start": "72",
+   "label_end": "73"
   },
   {
-   "id": "sec-032-93-useful-combinatorial-lemmas",
+   "id": "sec-041-93-useful-combinatorial-lemmas",
    "number": "9.3",
    "title": "Useful combinatorial lemmas",
    "level": 2,
    "page_start": 73,
    "page_end": 76,
-   "n_chars": 11071,
-   "n_words": 2382
+   "n_chars": 7479,
+   "n_words": 1551,
+   "label_start": "73",
+   "label_end": "76"
   },
   {
-   "id": "sec-033-94-proof-of-the-bound-on-cumulants",
+   "id": "sec-042-94-proof-of-the-bound-on-cumulants",
    "number": "9.4",
    "title": "Proof of the bound on cumulants",
    "level": 2,
    "page_start": 76,
    "page_end": 78,
-   "n_chars": 3688,
-   "n_words": 748
+   "n_chars": 3700,
+   "n_words": 758,
+   "label_start": "76",
+   "label_end": "78"
   },
   {
-   "id": "sec-034-95-sums-of-random-variables-with-a-sparse-depend",
+   "id": "sec-043-95-sums-of-random-variables-with-a-sparse-depend",
    "number": "9.5",
    "title": "Sums of random variables with a sparse dependency graph",
    "level": 2,
    "page_start": 78,
-   "page_end": 81,
-   "n_chars": 6880,
-   "n_words": 1341
+   "page_end": 80,
+   "n_chars": 2617,
+   "n_words": 508,
+   "label_start": "78",
+   "label_end": "80"
   },
   {
-   "id": "sec-035-101-a-bound-on-cumulants",
+   "id": "sec-044-10-subgraph-count-statistics-in-erd\u00f6s-r\u00e9nyi-rand",
+   "number": "10",
+   "title": "Subgraph count statistics in Erd\u00f6s-R\u00e9nyi random graphs",
+   "level": 1,
+   "page_start": 80,
+   "page_end": 81,
+   "n_chars": 4166,
+   "n_words": 791,
+   "label_start": "80",
+   "label_end": "81"
+  },
+  {
+   "id": "sec-045-101-a-bound-on-cumulants",
    "number": "10.1",
    "title": "A bound on cumulants",
    "level": 2,
    "page_start": 81,
    "page_end": 83,
-   "n_chars": 3250,
-   "n_words": 624
+   "n_chars": 3266,
+   "n_words": 641,
+   "label_start": "81",
+   "label_end": "83"
   },
   {
-   "id": "sec-036-102-polynomiality-of-cumulants",
+   "id": "sec-046-102-polynomiality-of-cumulants",
    "number": "10.2",
    "title": "Polynomiality of cumulants",
    "level": 2,
    "page_start": 83,
    "page_end": 85,
-   "n_chars": 3593,
-   "n_words": 709
+   "n_chars": 3611,
+   "n_words": 729,
+   "label_start": "83",
+   "label_end": "85"
   },
   {
-   "id": "sec-037-103-moderate-deviations-for-subgraph-count-stati",
+   "id": "sec-047-103-moderate-deviations-for-subgraph-count-stati",
    "number": "10.3",
    "title": "Moderate deviations for subgraph count statistics",
    "level": 2,
    "page_start": 85,
-   "page_end": 91,
-   "n_chars": 13367,
-   "n_words": 2531
+   "page_end": 88,
+   "n_chars": 6905,
+   "n_words": 1317,
+   "label_start": "85",
+   "label_end": "88"
   },
   {
-   "id": "sec-038-111-preliminaries",
+   "id": "sec-048-11-random-character-values-from-central-measures",
+   "number": "11",
+   "title": "Random character values from central measures on partitions",
+   "level": 1,
+   "page_start": 88,
+   "page_end": 91,
+   "n_chars": 6381,
+   "n_words": 1190,
+   "label_start": "88",
+   "label_end": "91"
+  },
+  {
+   "id": "sec-049-111-preliminaries",
    "number": "11.1",
    "title": "Preliminaries",
    "level": 2,
    "page_start": 91,
    "page_end": 93,
-   "n_chars": 4564,
-   "n_words": 860
+   "n_chars": 4594,
+   "n_words": 889,
+   "label_start": "91",
+   "label_end": "93"
   },
   {
-   "id": "sec-039-112-bounds-and-limits-of-the-cumulants",
+   "id": "sec-050-112-bounds-and-limits-of-the-cumulants",
    "number": "11.2",
    "title": "Bounds and limits of the cumulants",
    "level": 2,
    "page_start": 93,
    "page_end": 96,
-   "n_chars": 6764,
-   "n_words": 1323
+   "n_chars": 6728,
+   "n_words": 1289,
+   "label_start": "93",
+   "label_end": "96"
   },
   {
-   "id": "sec-040-113-asymptotics-of-the-random-character-values-a",
+   "id": "sec-051-113-asymptotics-of-the-random-character-values-a",
    "number": "11.3",
    "title": "Asymptotics of the random character values and partitions",
    "level": 2,
    "page_start": 96,
    "page_end": 100,
-   "n_chars": 6539,
-   "n_words": 1238
+   "n_chars": 6555,
+   "n_words": 1251,
+   "label_start": "96",
+   "label_end": "100"
   },
   {
-   "id": "sec-041-references",
+   "id": "sec-052-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 100,
    "page_end": 103,
-   "n_chars": 13509,
-   "n_words": 1961
+   "n_chars": 13434,
+   "n_words": 1886,
+   "label_start": "100",
+   "label_end": "103"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 55,
-  "sections": 42,
-  "chars_total": 217955
+  "toc_inferred_entries": 0,
+  "figure_entries": 14,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 4,
+    "items": [
+     "A precise version of the Ellis-G\u00e4rtner theorem",
+     "A precise upper bound",
+     "A precise lower bound",
+     "A bound on cumulants"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 1,
+    "items": [
+     "MOD-\u03c6 CONVERGENCE, I: listed p3, found p1"
+    ]
+   }
+  },
+  "sections": 54,
+  "chars_total": 223358,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "deviant.tex",
+   "tex_sections": 80,
+   "overlaid": 46,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-12-theoretical-results",
+     "title": "Theoretical results",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-13-applications",
+     "title": "Applications",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-14-forthcoming-works",
+     "title": "Forthcoming works",
+     "prose_ratio": 0.912,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-15-discussion-on-our-hypotheses",
+     "title": "Discussion on our hypotheses",
+     "prose_ratio": 0.91,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-21-basic-examples-of-mod-convergence",
+     "title": "Basic examples of mod-convergence",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-22-legendre-fenchel-transforms",
+     "title": "Legendre-Fenchel transforms",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-23-gaussian-integrals",
+     "title": "Gaussian integrals",
+     "prose_ratio": 0.874,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-3-fluctuations-in-the-case-of-lattice-distributi",
+     "title": "Fluctuations in the case of lattice distributions",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-31-lattice-and-non-lattice-distributions",
+     "title": "Lattice and non-lattice distributions",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-32-deviations-at-the-scale-otn",
+     "title": "Deviations at the scale O(tn)",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-33-central-limit-theorem-at-the-scales-otn-and-o",
+     "title": "Central limit theorem at the scales o(tn) and o(tn23)",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-4-fluctuations-in-the-non-lattice-case",
+     "title": "Fluctuations in the non-lattice case",
+     "prose_ratio": 0.886,
+     "coverage_ratio": 0.924,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-41-berry-esseen-estimates",
+     "title": "Berry-Esseen estimates",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-42-deviations-at-scale-otn",
+     "title": "Deviations at scale O(tn)",
+     "prose_ratio": 0.262,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-43-central-limit-theorem-at-the-scales-otn-and-o",
+     "title": "Central limit theorem at the scales o(tn) and o(tn23)",
+     "prose_ratio": 0.567,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-018-45-discussion-and-refinements",
+     "title": "Discussion and refinements",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-5-an-extended-deviation-result-from-bounds-on-cu",
+     "title": "An extended deviation result from bounds on cumulants",
+     "prose_ratio": 0.889,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-51-bounds-on-cumulants-and-mod-gaussian-converge",
+     "title": "Bounds on cumulants and mod-Gaussian convergence",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-52-precise-deviations-for-random-variables-with",
+     "title": "Precise deviations for random variables with control on cumulants",
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-53-link-with-the-cram\u00e9r-petrov-expansion",
+     "title": "Link with the Cram\u00e9r-Petrov expansion",
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-6-a-precise-version-of-the-ellis-g\u00e4rtner-theorem",
+     "title": "A precise version of the Ellis-G\u00e4rtner theorem",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-61-technical-preliminaries",
+     "title": "Technical preliminaries",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-62-a-precise-upper-bound",
+     "title": "A precise upper bound",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-63-a-precise-lower-bound",
+     "title": "A precise lower bound",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-7-examples-with-an-explicit-generating-function",
+     "title": "Examples with an explicit generating function",
+     "prose_ratio": 0.842,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-028-71-mod-convergence-from-an-explicit-formula-for",
+     "title": "Mod-convergence from an explicit formula for the Laplace transform",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-72-additive-arithmetic-functions-of-random-integ",
+     "title": "Additive arithmetic functions of random integers",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-73-number-of-cycles-in-weighted-probability-meas",
+     "title": "Number of cycles in weighted probability measure",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-74-rises-in-random-permutations",
+     "title": "Rises in random permutations",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-75-characteristic-polynomials-of-random-matrices",
+     "title": "Characteristic polynomials of random matrices in a compact Lie group",
+     "prose_ratio": 0.83,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-033-8-mod-gaussian-convergence-from-a-factorization",
+     "title": "Mod-Gaussian convergence from a factorization of the probability generating function",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-81-background-central-limit-theorem-from-locatio",
+     "title": "Background: central limit theorem from location of zeros",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-82-mod-gaussian-convergence-from-non-negative-fa",
+     "title": "Mod-Gaussian convergence from non-negative factorizations",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-036-83-two-examples-uniform-permutations-and-uniform",
+     "title": "Two examples: uniform permutations and uniform set-partitions",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-84-third-cumulant-of-the-number-of-blocks-in-uni",
+     "title": "Third cumulant of the number of blocks in uniform set-partitions",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-9-dependency-graphs-and-mod-gaussian-convergence",
+     "title": "Dependency graphs and mod-Gaussian convergence",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-039-91-the-theory-of-dependency-graphs",
+     "title": "The theory of dependency graphs",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-040-92-joint-cumulants",
+     "title": "Joint cumulants",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-041-93-useful-combinatorial-lemmas",
+     "title": "Useful combinatorial lemmas",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-042-94-proof-of-the-bound-on-cumulants",
+     "title": "Proof of the bound on cumulants",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-043-95-sums-of-random-variables-with-a-sparse-depend",
+     "title": "Sums of random variables with a sparse dependency graph",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-044-10-subgraph-count-statistics-in-erd\u00f6s-r\u00e9nyi-rand",
+     "title": "Subgraph count statistics in Erd\u00f6s-R\u00e9nyi random graphs",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-045-101-a-bound-on-cumulants",
+     "title": "A bound on cumulants",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-046-102-polynomiality-of-cumulants",
+     "title": "Polynomiality of cumulants",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-047-103-moderate-deviations-for-subgraph-count-stati",
+     "title": "Moderate deviations for subgraph count statistics",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-048-11-random-character-values-from-central-measures",
+     "title": "Random character values from central measures on partitions",
+     "prose_ratio": 0.687,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-049-111-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-050-112-bounds-and-limits-of-the-cumulants",
+     "title": "Bounds and limits of the cumulants",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-051-113-asymptotics-of-the-random-character-values-a",
+     "title": "Asymptotics of the random character values and partitions",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-052-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-q-alg-9608020v2/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-q-alg-9608020v2/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Looking at",
   "pageStart": 4,
   "pageEnd": 5,
   "text": "../sections/sec-005-1-looking-at.md",
-  "derivedFrom": "library/arxiv-q-alg-9608020v2/manifest",
-  "sourceDocument": "library/arxiv-q-alg-9608020v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9608020v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9608020v2/manifest.jsonld",
   "provenance": "ingested"
 }

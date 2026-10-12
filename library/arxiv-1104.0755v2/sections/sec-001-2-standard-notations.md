@@ -8,78 +8,52 @@ pages: 4-6
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
 doc_brief: "A connection formula between the Ramanujan function and the q-Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
+text_source: latex
+latex_prose_ratio: 0.653
+latex_coverage_ratio: 0.984
 ---
-In this section, we ﬁx our notations. We assume that q ∈ C∗ satisﬁes
-0< |q|< 1. We deﬁne the q-Pochhammer symbol (a;q)n.
-Deﬁnition 1 For any n ∈ Z≥0,
-(a;q)n =
-{
-1, n = 0,
-(1 −a)(1 −aq) · · ·(1 −aqn−1), n ≥ 1,
-and
-(a;q)∞ = lim
-n→∞
-(a;q)n.
-Moreover,
-(a1,a 2, · · ·,a m;q)∞ = (a1;q)∞(a2;q)∞ · · · (am;q)∞.
-The q-diﬀerence operator σq is given by σqf (x) = f (qx). The basic
-hypergeometric series rϕ s is deﬁned as follows.
-Deﬁnition 2 The basic hypergeometric series is given by
-rϕ s(a1, · · ·,a r;b1, · · ·,b s;q,x ) :=
-∑
-n≥0
-(a1, · · ·,a r;q)n
-(b1, · · ·,b s;q)n(q;q)n
-[
-(−1)nq
-n(n− 1)
-2
-] 1+s−r
-xn.
-We deﬁne the theta function of Jacobi. We denote by θq(x) or more
-shortly θ(x). The theta function of Jacobi is given by following series;
-Deﬁnition 3 For any x ∈ C∗,
-θq(x) = θ(x) =
-∑
-n∈Z
-q
-n(n− 1)
-2 xn.
-4
-The theta function has some important properties. The following lem ma is
-called Jacobi’s triple product identity.
-Lemma 1 For any x ∈ C∗, we have
-θ(x) =
-(
-q, −x, −q
-x ;q
-)
-∞
-.
-The theta function satisﬁes the following q-diﬀerence relation.
-Lemma 2 For any k ∈ Z,θ (x) satisﬁes
-θ(qkx) = q− k(k− 1)
-2 x−kθ(x), ∀x ∈ C∗.
-From lemma2 , we remark that the function θ(−λx)/θ (λx), ∀λ ∈ C∗ satisﬁes
-a q-diﬀerence equation
-u(qx) = −u(x)
-which is also satisﬁed by the function u(x) = eπi( log x
-log q ). From the deﬁnition,
-the theta function has the following inversion formula.
-Lemma 3 For any x ∈ C∗ , one gets
-xθ
-(1
-x
-)
-=θ(x).
-3 Two types of the q-analogue of the Airy
-function
-There are two diﬀerent q-analogue of the Airy function. One is called the
-Ramanujan function which appears in [9]. Ismail [6] pointed out that t he
-Ramanujan function can be considered as a q-analogue of the Airy function.
-The other one is called the q-Airy function which is obtained by K. Kajiwara,
-T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [7] . In this section, we s ee
-the properties of these functions. We explain the reason why they are called
-q-analogue of the Airy function and we show q-diﬀerence equations which
-they satisfy.
-5
+In this section, we fix our notations. We assume that $q\in\mathbb{C}^*$ satisfies $0<~|q|<1$. We define the $q$-Pochhammer symbol $(a;q)_n$.
+
+::: defi
+For any $n\in\mathbb{Z}_{\ge 0}$, $$(a;q)_n=
+\begin{cases}
+1,&\qquad n=0,\\
+(1-a)(1-aq)\cdots (1-aq^{n-1}),&\qquad n\ge 1,
+\end{cases}$$ and $$(a;q)_\infty =\lim_{n\to\infty}(a;q)_n.$$ Moreover, $$(a_1,a_2,\cdots ,a_m;q)_\infty =(a_1;q)_\infty (a_2;q)_\infty\cdots (a_m;q)_\infty .$$
+:::
+
+The $q$-difference operator $\sigma_q$ is given by $\sigma_qf(x)=f(qx)$. The basic hypergeometric series ${}_r\varphi_s$ is defined as follows.
+
+::: defi
+The basic hypergeometric series is given by $${_r\varphi_s}(a_1,\cdots ,a_r;b_1,\cdots ,b_s;q,x)
+:=\sum_{n\ge 0}\frac{(a_1,\cdots ,a_r;q)_n}{(b_1,\cdots ,b_s;q)_n(q;q)_n}
+\left[(-1)^nq^{\frac{n(n-1)}{2}}\right]^{1+s-r}x^n.$$
+:::
+
+We define the theta function of Jacobi. We denote by $\theta_q(x)$ or more shortly $\theta (x)$. The theta function of Jacobi is given by following series;
+
+::: defi
+For any $x\in\mathbb{C}^*$, $$\theta_q(x)=\theta (x)=\sum_{n\in\mathbb{Z}}q^{\frac{n(n-1)}{2}}x^n.$$
+:::
+
+The theta function has some important properties. The following lemma is called Jacobi's triple product identity.
+
+::: lem
+For any $x\in\mathbb{C}^*$, we have $$\theta (x)=\left(q,-x,-\frac{q}{x};q\right)_\infty .$$
+:::
+
+The theta function satisfies the following $q$-difference relation.
+
+::: lem
+[]{#qt label="qt"} For any $k\in\mathbb{Z}, \theta (x)$ satisfies $$\theta (q^kx)=q^{-\frac{k(k-1)}{2}}x^{-k}\theta (x),\qquad \forall x\in\mathbb{C}^*.$$
+:::
+
+From lemma[\[qt\]](#qt){reference-type="ref" reference="qt"} , we remark that the function $\theta (-\lambda x)/\theta (\lambda x)$, $\forall\lambda\in\mathbb{C}^*$ satisfies a $q$-difference equation $$u(qx)=-u(x)$$ which is also satisfied by the function $u(x)=e^{\pi i\left(\frac{\log x}{\log q}\right)}$. From the definition, the theta function has the following inversion formula.
+
+::: lem
+[]{#inv label="inv"} For any $x\in\mathbb{C}^*$ , one gets $$x\theta\left(\frac{1}{x}\right)=\theta (x).$$
+:::
+
+# Two types of the $q$-analogue of the Airy function
+
+There are two different $q$-analogue of the Airy function. One is called the Ramanujan function which appears in [@Ramanujan]. Ismail [@Is] pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The other one is called the $q$-Airy function which is obtained by K.  Kajiwara, T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [@KMNOY] . In this section, we see the properties of these functions. We explain the reason why they are called $q$-analogue of the Airy function and we show $q$-difference equations which they satisfy.

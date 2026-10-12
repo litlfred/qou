@@ -8,214 +8,33 @@ pages: 16-20
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
 doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by aZN symmetry acting"
+text_source: latex
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.874
 ---
-For deﬁniteness, we restrict to a point in the moduli space where, in the type IIA picture,
-the circles S1 and ˜S1 are orthogonal and the B-ﬁeld and Wilson lines alongS1 and ˜S1
-vanish. We denote by R and ˜R the radii of the circles in the type IIA picture. In this
-section, we consider symmetriesˆg = (δ,g ) whereg is a symmetry of orderN of the internal
-K3 model such that theg-twisted sectors satisfy the level-matching condition (i.e.λ = 1
-in the language of the previous section), while the caseλ > 1 is left to appendix A.2.
-Then,δ is simply a shift of2πR/N along the circleS1. Let us ﬁrst take the weak coupling
-limit of heterotic string theory, with all the other moduli ﬁxed. In the type IIA picture
-this corresponds to the limit of large volume ofS1× ˜S1, by the usual exchange of the
-axio-dilaton heterotic modulus with the type IIA Kähler modulus. For very largeR, ˜R,
-– 15 –
-a local observer in the type IIA picture sees a six dimensional space-time. The orbifold
-construction implies that the windingw and momentumm around S1 are quantized as
-w = nR
-N , m = k
-R, n,k ∈ Z . (3.1)
-We label the states in this six-dimensional orbifold theory by
-|w = nR
-N ,m = k
-R,χn,k⟩ , (3.2)
-where χn,k denotes a state in thegn-twisted sector of the internal K3 modelC, with g-
-eigenvalue e
-2πik
-N . As R → ∞, local excitations carry winding number w = 0 and the
-spectrum of momentam approaches a continuum. Such excitations are associated with
-statesχ0,k of the untwisted sector of the internal K3 model with any possibleg-eigenvalue.
-Therefore, inthelarge Rlimit, thelocalphysicsissimplydescribedbytypeIIAstringtheory
-compactiﬁed on the internal K3 modelC. By string-string duality, the same physics can be
-equivalently described by heterotic string compactiﬁed onT 4. The orbifold construction has
-a ‘global’ eﬀect: as a local observer moves by2πR/N around theS1 direction, the states get
-mapped into themselves up to ag transformation acting on the internal K3 model. More
-precisely, a shift by2πR/N multiplies the eigenstates of momentumm = k/R by e
-2πik
-N .
-This is the same as the action ofg on the internal stateχ0,k, since this is ag-eigenstate with
-the same eigenvalue. The same ‘global’ eﬀect occurs in the heterotic string compactiﬁed on
-T 4×S1
-Z ˆN
-, and one can then argue that the two orbifold models are equivalent [56].
-Now, let us consider the strongly coupled limit of the heterotic string onT 4×S1
-Z ˆN
-× ˜S1,
-with all the other moduli being ﬁxed. In the type IIA picture, this means that both radii
-R and ˜R of S1 and ˜S1 become inﬁnitesimal, with their ratio being ﬁxed. It is useful to
-consider T-duality both in theS1 and ˜S1 directions, leading again to a compactiﬁcation of
-a six dimensional type IIA theory along two circlesS′1 and ˜S′1
-of very large radii2
-R′ = N
-R
-˜R′ = 1
-˜R
-. (3.3)
-Notice the non-standard factorN in (3.3): one can check that upon settingn′ = k and
-k′ =n the action on the Narain left- and right-moving momenta
-(pL,pR)≡ 1√
-2(m +w,m−w) = 1√
-2
-(k
-R + nR
-N , k
-R− nR
-N
-)
-n,k∈ Z , (3.4)
-is the expected one
-(pL,pR)→ (p′
-L,p′
-R) = (pL,−pR) , (3.5)
-thus assuring that this is indeed a symmetry of the string theory. As in the previous case, in
-the limitR′→∞ a local observer will see local excitations with vanishing windingw′ = 0
-and spectrum of momentam′ = k′/R′, k′∈ Z approaching a continuum. However, theˆg
-symmetry acts diﬀerently in this T-dual picture. Namely, the states withw′ = 0 and k′
-2Here and in the following, we set the type IIA string length to1
-– 16 –
-quanta of momentum are tensored withg-invariant statesχk′,0 in thegk′
--twisted sector of
-the internal K3 modelC. Thus, in the large R′ limit, the local physics appears as type
-IIA compactiﬁed on an internal CFT whose spectrum consists ofg-invariant twisted and
-untwisted states. But this is simply the orbifoldC′ of the internal K3 model byg. Since we
-assumed thatλ = 1,C′ is again a consistentN = (4, 4) superconformal theory with central
-charge c = 6, and can be either a non-linear sigma model on K3 or on a torusT 4. As
-we move around the circleS1 by a shift2πR′/N, a state|w′ = 0,m′,χk′,0⟩ of momentum
-m′ =k′/R′ picks up a phasee
-2πik′
-N . One can think of this transformation as the action on
-χk′,0 of the quantum symmetryQ: by deﬁnition,Q is the symmetry of the internal orbifold
-CFTC′ that multiplies each state in thegk′
--twisted sector bye
-2πik′
-N . Therefore, this model
-is equivalently described by a type IIA theory compactiﬁed onC′×S′1
-ZN
-× ˜S′1
-, whereC′ is the
-g-orbifold of the original K3 model and theZN-symmetry ˆg′ = (Q,δ′) acts by the quantum
-symmetryQ onC′ and by a shift by2πR′/N along S′1.
-To summarize, we have shown that type IIA onC×T 2
-ZN
-, whereC is a non-linear sigma
-model on K3 and ZN is generated by (δ,g ), is dual to type IIA on C′×T 2
-ZN
-, whereC′ is
-the orbifold ofC by g and ZN is generated by (δ′,Q). The duality acts on the type IIA
-axio-dilaton and on the Kähler and complex structure moduli ofT 2 by a Fricke involution
-SIIA→SIIA TIIA→− 1
-NT IIA
-UIIA→− 1
-NU IIA
-. (3.6)
-At the special points in the moduli space where
-TIIA =iRIIA ˜RIIA
-N UIIA =i RIIA
-N ˜RIIA
-, (3.7)
-eq.(3.6) reduces to (3.3). Furthermore, the moduli determining the non-linear sigma model
-C on K3 are mapped to the moduli determining the orbifold modelC′. A similar T-duality
-was noticed before in [27], where ALE spaces were considered, rather than K3 surfaces.
-If the orbifold theoryC′ can be interpreted again as a non-linear sigma model on K3,
-then this is dual to a weakly-coupled heterotic string compactiﬁed onT 6/ZN. Furthermore,
-if ˆg′ is in the sameO(6, 22, Z) conjugacy class asˆg, then this duality relates two points in
-the moduli space of the same heterotic CHL model. Using the standard correspondence
-between type IIA and heterotic moduli, we obtain the following transformations
-Thet→Thet Shet→− 1
-NS het
-Uhet→− 1
-NU het
-, (3.8)
-We refer to this transformation as (heterotic)Fricke S-duality.
-WhenC′ is not a non-linear sigma model on K3, then the strong coupling dual of the
-heterotic CHL model is a genuinely diﬀerent theory. More precisely, since, in this case,C′
-is necessarily a non-linear sigma model on a torusT 4, the S-dual theory is type IIA on
-T 4×S′1
-ZN
-× ˜S′1
-.
-– 17 –
-Notice that type IIA onT 4×S′1
-⟨ˆg′⟩ × ˜S′1
-has no dual heterotic description. It is natural
-to ask whether there exists any string theory related to this model by an exchange of the
-dilaton and the Kähler moduliS↔T. In fact, this is the case, as shown in [29]: the dual
-theory is again a compactiﬁcation of type IIA onT 4×S′1
-⟨ˆg′′⟩ × ˜S′1
-, where ˆg′′ acts by a shift
-alongS′1 as well as by a symmetry of the non-linear sigma model onT 4 acting only on the
-right-moving oscillators. The symmetry ˆg′′ breaks all spacetime supersymmetries coming
-from right-moving sector of type IIA superstring, but preserves all the left-moving ones,
-thus giving rise to a four dimensionalN = 4 theory. Following [29], we call such a theory
-of (4, 0) type. This should be contrasted with the properties of theˆg′ symmetry, which
-breaks half of the spacetime supersymmetries in both the left- and the right-moving sector;
-therefore, type IIA onT 4×S′1
-⟨ˆg′⟩ × ˜S′1
-is of (2, 2) type.
-Invariance of the four-dimensional low energy equations of motion implies that the
-electric and magnetic charges of the two S-dual models are related by
-(
-Q′
-P′
-)
-=
-(
-0 − 1√
-N√
-N 0
-)(
-Q
-P
-)
-=
-(
-− 1√
-NP√
-NQ
-)
-. (3.9)
-Let Λ′
-e and Λ′
-m denote the electric and magnetic charges in the dual theory. By (3.9),
-Λ′
-e = Λm( 1
-N ) , (3.10)
-and dually
-Λ′
-m∼= Λe(N) (3.11)
-where L(n) denotes a latticesL with the quadratic form rescaled byn (i.e., each vector
-is rescaled by√n). If a theory is self-dual under the Fricke S-duality, using the relation
-Λe∼= Λ∗
-m, we obtain the
-Λ∗
-e∼= Λe(N) (3.12)
-or, equivalently,
-Λm∼= Λ∗
-m(N) . (3.13)
-A latticeL satisfying the conditionL∼=L∗(N) is calledN-modular. Although all integral
-lattices of dimension 2 are N-modular, for higher dimensional latticesN-modularity is a
-very special property. Thus, the fact that the lattice of magnetic charges Λm of a ZN
-self-dual CHL model is an integralN-modular lattice is a very non-trivial prediction of
-S-duality. We will verify this prediction by explicitly computing the latticesΛe and Λm for
-several CHL models.
-When a CHL model is not self-dual, eqs.(3.10) and (3.11) imply
-Λ′
-e = Λm( 1
-N ) Λ ′
-m = Λe(N) , (3.14)
-but we cannot argue that Λ′
-e ∼= Λe and Λ′
-m ∼= Λe, and hence Λe and Λm need not be
-N-modular in this case. We will verify that, in all cases whereC′ is a torus model,N-
-modularity does not hold.
-– 18 –
+For definiteness, we restrict to a point in the moduli space where, in the type IIA picture, the circles $S^1$ and $\tilde S^1$ are orthogonal and the B-field and Wilson lines along $S^1$ and $\tilde S^1$ vanish. We denote by $R$ and $\tilde R$ the radii of the circles in the type IIA picture. In this section, we consider symmetries $\hat g=(\delta,g)$ where $g$ is a symmetry of order $N$ of the internal K3 model such that the $g$-twisted sectors satisfy the level-matching condition (i.e. $\lambda=1$ in the language of the previous section), while the case $\lambda>1$ is left to appendix [\[s:STdualGen\]](#s:STdualGen){reference-type="ref" reference="s:STdualGen"}. Then, $\delta$ is simply a shift of $2\pi R/N$ along the circle $S^1$. Let us first take the weak coupling limit of heterotic string theory, with all the other moduli fixed. In the type IIA picture this corresponds to the limit of large volume of $S^1\times \tilde S^1$, by the usual exchange of the axio-dilaton heterotic modulus with the type IIA Kähler modulus. For very large $R$, $\tilde R$, a local observer in the type IIA picture sees a six dimensional space-time. The orbifold construction implies that the winding $w$ and momentum $m$ around $S^1$ are quantized as $$w=\frac{nR}{N},\qquad \qquad m=\frac{k}{R},\qquad  \qquad\qquad n,k\in\mathbb{Z}\ .$$We label the states in this six-dimensional orbifold theory by $$|w=\frac{nR}{N},m=\frac{k}{R},\chi_{n,k}\rangle\ ,$$where $\chi_{n,k}$ denotes a state in the $g^n$-twisted sector of the internal K3 model $\mathcal{C}$, with $g$-eigenvalue $e^{\frac{2\pi i k}{N}}$. As $R\to \infty$, local excitations carry winding number $w=0$ and the spectrum of momenta $m$ approaches a continuum. Such excitations are associated with states $\chi_{0,k}$ of the untwisted sector of the internal K3 model with any possible $g$-eigenvalue. Therefore, in the large $R$ limit, the local physics is simply described by type IIA string theory compactified on the internal K3 model $\mathcal{C}$. By string-string duality, the same physics can be equivalently described by heterotic string compactified on $T^4$. The orbifold construction has a 'global' effect: as a local observer moves by $2\pi R/N$ around the $S^1$ direction, the states get mapped into themselves up to a $g$ transformation acting on the internal K3 model. More precisely, a shift by $2\pi R/N$ multiplies the eigenstates of momentum $m=k/R$ by $e^{\frac{2\pi ik}{N}}$. This is the same as the action of $g$ on the internal state $\chi_{0,k}$, since this is a $g$-eigenstate with the same eigenvalue. The same 'global' effect occurs in the heterotic string compactified on $\frac{T^4\times S^1}{\mathbb{Z}_{\hat N}}$, and one can then argue that the two orbifold models are equivalent [@VafaWitten95].
+
+Now, let us consider the strongly coupled limit of the heterotic string on $\frac{T^4\times S^1}{\mathbb{Z}_{\hat N}}\times \tilde S^1$, with all the other moduli being fixed. In the type IIA picture, this means that both radii $R$ and $\tilde R$ of $S^1$ and $\tilde S^1$ become infinitesimal, with their ratio being fixed. It is useful to consider T-duality both in the $S^1$ and $\tilde S^1$ directions, leading again to a compactification of a six dimensional type IIA theory along two circles ${S'}^1$ and $\tilde {S'}^1$ of very large radii[^1] $$\label{Tdual} R'=\frac{N}{R}\qquad \tilde R'=\frac{1}{\tilde R}\ .$$Notice the non-standard factor $N$ in [\[Tdual\]](#Tdual){reference-type="eqref" reference="Tdual"}: one can check that upon setting $n'=k$ and $k'=n$ the action on the Narain left- and right-moving momenta $$(p_L,p_R)\equiv \frac{1}{\sqrt2} (m+w,m-w)=\frac{1}{\sqrt2}\bigl(\frac{k}{R}+\frac{nR}{N},\frac{k}{R}-\frac{nR}{N}\bigr) \qquad\qquad n,k\in\mathbb{Z}\ ,$$ is the expected one $$(p_L,p_R)\to (p'_L,p'_R)=(p_L,-p_R)\ ,$$ thus assuring that this is indeed a symmetry of the string theory. As in the previous case, in the limit $R'\to \infty$ a local observer will see local excitations with vanishing winding $w'=0$ and spectrum of momenta $m'=k'/{R'}$, $k'\in \mathbb{Z}$ approaching a continuum. However, the $\hat g$ symmetry acts differently in this T-dual picture. Namely, the states with $w'=0$ and $k'$ quanta of momentum are tensored with $g$-invariant states $\chi_{k',0}$ in the $g^{k'}$-twisted sector of the internal K3 model $\mathcal{C}$. Thus, in the large $R'$ limit, the local physics appears as type IIA compactified on an internal CFT whose spectrum consists of $g$-invariant twisted and untwisted states. But this is simply the orbifold $\mathcal{C}'$ of the internal K3 model by $g$. Since we assumed that $\lambda=1$, $\mathcal{C}'$ is again a consistent $\mathcal{N}=(4,4)$ superconformal theory with central charge $c=6$, and can be either a non-linear sigma model on K3 or on a torus $T^4$. As we move around the circle $S^1$ by a shift $2\pi R'/N$, a state $|w'=0,m',\chi_{k',0}\rangle$ of momentum $m'=k'/{R'}$ picks up a phase $e^{\frac{2\pi ik'}{N}}$. One can think of this transformation as the action on $\chi_{k',0}$ of the quantum symmetry $\mathcal{Q}$: by definition, $\mathcal{Q}$ is the symmetry of the internal orbifold CFT $\mathcal{C}'$ that multiplies each state in the $g^{k'}$-twisted sector by $e^{\frac{2\pi ik'}{N}}$. Therefore, this model is equivalently described by a type IIA theory compactified on $\frac{\mathcal{C}'\times {S'}^1}{\mathbb{Z}_{N}}\times \tilde {S'}^1$, where $\mathcal{C}'$ is the $g$-orbifold of the original K3 model and the $\mathbb{Z}_{N}$-symmetry $\hat{g}'=(\mathcal{Q},\delta')$ acts by the quantum symmetry $\mathcal{Q}$ on $\mathcal{C}'$ and by a shift by $2\pi R'/N$ along ${S'}^1$.
+
+To summarize, we have shown that type IIA on $\frac{\mathcal{C}\times T^2}{\mathbb{Z}_N}$, where $\mathcal{C}$ is a non-linear sigma model on K3 and $\mathbb{Z}_N$ is generated by $(\delta,g)$, is dual to type IIA on $\frac{\mathcal{C}'\times T^2}{\mathbb{Z}_N}$, where $\mathcal{C}'$ is the orbifold of $\mathcal{C}$ by $g$ and $\mathbb{Z}_N$ is generated by $(\delta',\mathcal{Q})$. The duality acts on the type IIA axio-dilaton and on the Kähler and complex structure moduli of $T^2$ by a *Fricke involution* $$\label{FrickeTdual} S_{\text{IIA}}\to S_{\text{IIA}}\qquad T_{\text{IIA}}\to -\frac{1}{NT_{\text{IIA}}}\qquad U_{\text{IIA}}\to -\frac{1}{NU_{\text{IIA}}}\ .$$At the special points in the moduli space where $$T_{\text{IIA}}=i\frac{R_{\text{IIA}}\tilde R_{\text{IIA}}}{N}\qquad U_{\text{IIA}}=i\frac{R_{\text{IIA}}}{N\tilde R_{\text{IIA}}}\ ,$$eq.[\[FrickeTdual\]](#FrickeTdual){reference-type="eqref" reference="FrickeTdual"} reduces to [\[Tdual\]](#Tdual){reference-type="eqref" reference="Tdual"}. Furthermore, the moduli determining the non-linear sigma model $\mathcal{C}$ on K3 are mapped to the moduli determining the orbifold model $\mathcal{C}'$. A similar T-duality was noticed before in [@Vafa:1997mh], where ALE spaces were considered, rather than K3 surfaces.
+
+If the orbifold theory $\mathcal{C}'$ can be interpreted again as a non-linear sigma model on K3, then this is dual to a weakly-coupled heterotic string compactified on ${T^6}/{\mathbb{Z}_{N}}$. Furthermore, if $\hat g'$ is in the same $O(6,22,\mathbb{Z})$ conjugacy class as $\hat g$, then this duality relates two points in the moduli space of the same heterotic CHL model. Using the standard correspondence between type IIA and heterotic moduli, we obtain the following transformations $$\label{hetmodSdual} T_{\text{het}}\to T_{\text{het}}\qquad S_{\text{het}}\to -\frac{1}{NS_{\text{het}}}\qquad U_{\text{het}}\to -\frac{1}{NU_{\text{het}}}\ ,$$ We refer to this transformation as (heterotic) *Fricke S-duality*.
+
+When $\mathcal{C}'$ is not a non-linear sigma model on K3, then the strong coupling dual of the heterotic CHL model is a genuinely different theory. More precisely, since, in this case, $\mathcal{C}'$ is necessarily a non-linear sigma model on a torus $T^4$, the S-dual theory is type IIA on $\frac{T^4\times {S'}^1}{\mathbb{Z}_{N}}\times \tilde {S'}^1$.
+
+Notice that type IIA on $\frac{T^4\times {S'}^1}{\langle\hat g' \rangle}\times \tilde {S'}^1$ has no dual heterotic description. It is natural to ask whether there exists any string theory related to this model by an exchange of the dilaton and the Kähler moduli $S\leftrightarrow T$. In fact, this is the case, as shown in [@Sen:1995ff]: the dual theory is again a compactification of type IIA on $\frac{T^4\times {S'}^1}{\langle\hat g'' \rangle}\times \tilde {S'}^1$, where $\hat g''$ acts by a shift along ${S'}^1$ as well as by a symmetry of the non-linear sigma model on $T^4$ acting only on the right-moving oscillators. The symmetry $\hat g''$ breaks all spacetime supersymmetries coming from right-moving sector of type IIA superstring, but preserves all the left-moving ones, thus giving rise to a four dimensional $\mathcal{N}=4$ theory. Following [@Sen:1995ff], we call such a theory of $(4,0)$ type. This should be contrasted with the properties of the $\hat g'$ symmetry, which breaks half of the spacetime supersymmetries in both the left- and the right-moving sector; therefore, type IIA on $\frac{T^4\times {S'}^1}{\langle\hat g' \rangle}\times \tilde {S'}^1$ is of $(2,2)$ type.
+
+Invariance of the four-dimensional low energy equations of motion implies that the electric and magnetic charges of the two S-dual models are related by $$\label{emcharges}  \begin{pmatrix}
+Q'\\ P'
+\end{pmatrix}= \begin{pmatrix}
+0 & -\frac{1}{\sqrt{N}}\\ \sqrt{N} & 0
+\end{pmatrix}\begin{pmatrix}
+Q\\ P
+\end{pmatrix}=\begin{pmatrix}
+-\frac{1}{\sqrt{N}}P\\ \sqrt{N} Q
+\end{pmatrix}
+\ .$$ Let $\Lambda_e'$ and $\Lambda_m'$ denote the electric and magnetic charges in the dual theory. By [\[emcharges\]](#emcharges){reference-type="eqref" reference="emcharges"}, $$\label{duallatte}  \Lambda_e'=\Lambda_m(\frac{1}{N})\ ,$$and dually $$\label{duallattm} \Lambda_m'\cong \Lambda_e(N)$$ where $L(n)$ denotes a lattices $L$ with the quadratic form rescaled by $n$ (i.e., each vector is rescaled by $\sqrt{n}$). If a theory is self-dual under the Fricke S-duality, using the relation $\Lambda_e\cong \Lambda_m^*$, we obtain the $$\Lambda_e^*\cong \Lambda_e(N)$$or, equivalently, $$\Lambda_m\cong \Lambda_m^*(N)\ .$$ A lattice $L$ satisfying the condition $L\cong L^*(N)$ is called $N$-modular. Although all integral lattices of dimension $2$ are $N$-modular, for higher dimensional lattices $N$-modularity is a very special property. Thus, the fact that the lattice of magnetic charges $\Lambda_m$ of a $\mathbb{Z}_N$ self-dual CHL model is an integral $N$-modular lattice is a very non-trivial prediction of S-duality. We will verify this prediction by explicitly computing the lattices $\Lambda_e$ and $\Lambda_m$ for several CHL models.
+
+When a CHL model is not self-dual, eqs.[\[duallatte\]](#duallatte){reference-type="eqref" reference="duallatte"} and [\[duallattm\]](#duallattm){reference-type="eqref" reference="duallattm"} imply $$\Lambda_e'= \Lambda_m(\frac{1}{N})\qquad \Lambda_m'= \Lambda_e(N)\ ,$$but we cannot argue that $\Lambda_e'\cong \Lambda_e$ and $\Lambda_m'\cong \Lambda_e$, and hence $\Lambda_e$ and $\Lambda_m$ need not be $N$-modular in this case. We will verify that, in all cases where $\mathcal{C}'$ is a torus model, $N$-modularity does not hold.
+
+[^1]: Here and in the following, we set the type IIA string length to $1$

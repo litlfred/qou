@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1507.03238v3/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1507.03238v3/blocks/prose-sec-015",
   "kind": "prose",
   "title": "Edge relations for enhanced Ptolemy assignments",
   "pageStart": 14,
   "pageEnd": 14,
   "text": "../sections/sec-015-52-edge-relations-for-enhanced-ptolemy-assignmen.md",
-  "derivedFrom": "library/arxiv-1507.03238v3/manifest",
-  "sourceDocument": "library/arxiv-1507.03238v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1507.03238v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1507.03238v3/manifest.jsonld",
   "provenance": "ingested"
 }

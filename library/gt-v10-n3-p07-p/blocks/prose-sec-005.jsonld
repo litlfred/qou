@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/gt-v10-n3-p07-p/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/gt-v10-n3-p07-p/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "This transversal isotopy will also correspond to a braid isotopy in",
-  "pageStart": 12,
-  "pageEnd": 13,
-  "text": "../sections/sec-005-c-this-transversal-isotopy-will-also-correspond.md",
-  "derivedFrom": "library/gt-v10-n3-p07-p/manifest",
-  "sourceDocument": "library/gt-v10-n3-p07-p/manifest",
+  "title": "A weak transversal MTWS",
+  "pageStart": 20,
+  "pageEnd": 24,
+  "text": "../sections/sec-005-24-a-weak-transversal-mtws.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gt-v10-n3-p07-p/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gt-v10-n3-p07-p/manifest.jsonld",
   "provenance": "ingested"
 }

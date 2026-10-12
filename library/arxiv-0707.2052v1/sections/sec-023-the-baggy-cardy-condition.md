@@ -8,140 +8,46 @@ pages: 29-31
 source_pdf: 0707.2052v1.pdf
 source_sha256: 0a1d1cca848706be
 doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasiz ing the importance of a pairing which generalizes Mukai’s pairi ng on the cohomology of K3"
+text_source: latex
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.992
 ---
-7.4 The Baggy Cardy Condition.
-In the case of a manifold X that is not necessarily Calabi-Yau we don’t have
-the same coincidence of structure as above: we no longer have a Frobenius
-algebra HH•(X); rather we have an algebra HH•(X) and an inner product
-space HH•(X). This means that we can not formulate the Cardy Condition
-as it stands. We now state a condition which makes sense for an arbitrary,
-non-Calabi-Yau manifold and which is equivalent to the Card y Condition in
-the Calabi-Yau case.
-Theorem 15. Suppose that O is a Calabi-Yau category and C is an inner
-product space, such that for each A ∈ O there are adjoint maps iA : OA A → C
-and iA : C→ OA A . Then the Cardy Condition
-µBA B◦ τ ◦ δA BA = iB ◦ iA 
-is equivalent to the following equality holding for all a ∈ OA A and b ∈ OBB,
-where the map amb: OA B→ OA Bis the map obtained by pre-composing with
-29
-a and post-composing with b:
-⟨
-iB− , iA −
-⟩
-C
-= Tr − m− .
-Proof. The ﬁrst thing to do is examine the left-hand side of the Cardy
-Condition. As O is a Calabi-Yau category there is the following equality of
-morphisms OA A → OBB.
-A 
-B B
-A 
-=
-A 
-BB
-A 
-Note that this does not require any reference to C, but it does fundamentally
-require the symmetry of the inner product. This is reﬂected i n the fact that
-the surfaces underlying the above pictures are diﬀeomorphi c but not ambient
-isotopic.
-This means that the Cardy Condition is equivalent to the foll owing equal-
-ity.
-A 
-B
-A 
-B
-= B
-A 
-By the non-degeneracy of the inner product on OBB this is equivalent to the
-equality of two maps OBB ⊗ OA A → k which are drawn as follows.
-A B B A 
-=
-B A A B
-The right-hand side is instantly identiﬁable as
-⟨
-iB− , iA −
-⟩
-C. The left-hand
-side is identiﬁable as the trace of the triple composition ma p OBB ⊗ OBA ⊗
-OA A → OBA which gives the required result.
-We can now show that the alternative condition given in the ab ove the-
-orem holds for the derived category and Hochschild homology of any space:
-in particular, the Cardy Condition holds for Calabi-Yau spa ces.
-Theorem 16 (The Baggy Cardy Condition) . Let X be a space, let E and
-F be objects in D(X) and consider morphisms
-e ∈ HomD(X)(E , E ) and f ∈ HomD(X)(F , F ).
-Deﬁne the operator
-fme: Hom•
-D(X)(E , F )→ Hom•
-D(X)(E , F )
-30
-to be post-composition by f and pre-composition by e. Then we have
-Tr fme =
-⟨
-ιE (e), ι F (f)
-⟩
-M
-,
-where ιE , ιF are the maps deﬁned in Section 6.2, and Tr denotes the (super)
-trace.
-Proof. The proof is very similar to the proof of the Semi-Hirzebruch -Rie-
-mann-Roch Theorem (Theorem 14). The ﬁrst thing to observe is that
-Hom(E , F ) ∼= E ∨ ◦ F and that fme is just e∨ ◦ f. However, we have
-τR(e) = Σpt ◦ e∨ and Σpt is trivial so e∨ = τR(e). Putting this together with
-the invariance of the Serre trace under the partial trace we g et the following
-sequence, and hence the required result.
-Tr fme = Tr
-
- e∨ fpt
-E F
-X
-pt
-
- = Tr
-
- pt
-X
-pt
-E
-e∨
-F
-f
-
-
-= Tr
-
- ptf
-F
-X
-ept
-E
-
- = Tr
-
- ptf
-F
-X
-pt
-E
-e
-
-
-=
-⟨
-X
-pt
-E
-e ,
-X
-ptf
-F
-⟩
-M
-=
-⟨
-ιE(e), ι F(f)
-⟩
-M
-.
-Observe that the Semi-Hirzebruch-Riemann-Roch Theorem is a direct con-
-sequence of the Baggy Cardy Condition, with e = IdE , f = IdF .
+In the case of a manifold $X$ that is not necessarily Calabi-Yau we don't have the same coincidence of structure as above: we no longer have a Frobenius algebra $\mathop{\mathrm{HH}}^\bullet(X)$; rather we have an algebra $\mathop{\mathrm{HH}}^\bullet(X)$ and an inner product space $\mathop{\mathrm{HH}}_\bullet(X)$. This means that we can not formulate the Cardy Condition as it stands. We now state a condition which makes sense for an arbitrary, non-Calabi-Yau manifold and which is equivalent to the Cardy Condition in the Calabi-Yau case.
+
+::: Theorem
+Suppose that $\textsf{O}$ is a Calabi-Yau category and $\textsf{C}$ is an inner product space, such that for each $A\in \textsf{O}$ there are adjoint maps $i^A\colon \textsf{O}_{AA}\to \textsf{C}$ and $i_A\colon
+  \textsf{C}\to \textsf{O}_{AA}$. Then the Cardy Condition $$\mu_{BAB}\circ\tau\circ\delta_{ABA}=i_B\circ i^A$$ is equivalent to the following equality holding for all $a\in
+  \textsf{O}_{AA}$ and $b\in \textsf{O}_{BB}$, where the map ${}_{a}m_{b}\colon
+  \textsf{O}_{AB}\to \textsf{O}_{AB}$ is the map obtained by pre-composing with $a$ and post-composing with $b$: $$\left\langle i^B{-},i^A{-}\right\rangle_\textsf{C}=
+  \mathop{\mathrm{Tr}}{}_{-}m_{-}.$$
+:::
+
+::: Proof
+The first thing to do is examine the left-hand side of the Cardy Condition. As $\textsf{O}$ is a Calabi-Yau category there is the following equality of morphisms $\textsf{O}_{AA}\to \textsf{O}_{BB}$. $$\raisebox{-.45\height}{}=\raisebox{-.45\height}{}$$ Note that this does not require any reference to $\textsf{C}$, but it does fundamentally require the symmetry of the inner product. This is reflected in the fact that the surfaces underlying the above pictures are diffeomorphic but not ambient isotopic.
+
+This means that the Cardy Condition is equivalent to the following equality. $$\raisebox{-.45\height}{}=\raisebox{-.45\height}{}$$ By the non-degeneracy of the inner product on $\textsf{O}_{BB}$ this is equivalent to the equality of two maps $\textsf{O}_{BB}\otimes
+  \textsf{O}_{AA}\to\textsf{k}$ which are drawn as follows. $$\raisebox{-.45\height}{}=\raisebox{-.45\height}{}$$ The right-hand side is instantly identifiable as $\left\langle
+    i^B{-},i^A{-}\right\rangle_\textsf{C}$. The left-hand side is identifiable as the trace of the triple composition map $\textsf{O}_{BB}\otimes\textsf{O}_{BA}\otimes\textsf{O}_{AA}\to \textsf{O}_{BA}$ which gives the required result.
+:::
+
+We can now show that the alternative condition given in the above theorem holds for the derived category and Hochschild homology of *any* space: in particular, the Cardy Condition holds for Calabi-Yau spaces.
+
+::: Theorem
+[]{#thm:cardy label="thm:cardy"} Let $X$ be a space, let ${\mathscr E}$ and ${\mathscr F}$ be objects in $\mathbf{D}(X)$ and consider morphisms $$e\in \mathop{\mathrm{Hom}}_{\mathbf{D}(X)}({\mathscr E}, {\mathscr E}) \quad\text{and}\quad f\in
+\mathop{\mathrm{Hom}}_{\mathbf{D}(X)}({\mathscr F}, {\mathscr F}).$$ Define the operator $${}_f m_e \colon\mathop{\mathrm{Hom}}^\bullet_{\mathbf{D}(X)}({\mathscr E}, {\mathscr F}) \rightarrow
+\mathop{\mathrm{Hom}}^\bullet_{\mathbf{D}(X)}({\mathscr E}, {\mathscr F})$$ to be post-composition by $f$ and pre-composition by $e$. Then we have $$\mathop{\mathrm{Tr}}{}_f m_e={\ensuremath{\left\langle \iota^{\mathscr E}(e),\, \iota^{\mathscr F}(f)\right\rangle_{\rm M}}},$$ where $\iota^{\mathscr E}$, $\iota^{\mathscr F}$ are the maps defined in Section [\[subsec:iotae\]](#subsec:iotae){reference-type="ref" reference="subsec:iotae"}, and $\mathop{\mathrm{Tr}}$ denotes the (super) trace.
+:::
+
+::: Proof
+The proof is very similar to the proof of the Semi-Hirzebruch-Riemann-Roch Theorem (Theorem [\[thm:hrr\]](#thm:hrr){reference-type="ref" reference="thm:hrr"}). The first thing to observe is that $\mathop{\mathrm{Hom}}({\mathscr E},{\mathscr F})\cong {\mathscr E}^{\scriptscriptstyle\vee}\circ {\mathscr F}$ and that ${}_f m_e$ is just $e^{\scriptscriptstyle\vee}\circ f$. However, we have $\tau_R(e)=\Sigma_{\mathsf{pt}}\circ e^{\scriptscriptstyle\vee}$ and $\Sigma_{\mathsf{pt}}$ is trivial so $e^{\scriptscriptstyle\vee}=\tau_R(e)$. Putting this together with the invariance of the Serre trace under the partial trace we get the following sequence, and hence the required result. $$\begin{aligned}
+    \mathop{\mathrm{Tr}}{}_f m_e&=\mathop{\mathrm{Tr}}\left(\raisebox{-.45\height}{}\right)
+    =\mathop{\mathrm{Tr}}\left( \raisebox{-.45\height}{}\right)\\
+    &=\mathop{\mathrm{Tr}}\left( \raisebox{-.45\height}{}\right)
+    =\mathop{\mathrm{Tr}}\left( \raisebox{-.45\height}{}\right)\\
+    &={\ensuremath{\Biggl\langle \raisebox{-.45\height}{},\, \raisebox{-.45\height}{}\Biggr\rangle_{\rm M}}}
+    ={\ensuremath{\left\langle \iota^{\mathscr E}\!(e),\, \iota^{\mathscr F}\!(f)\right\rangle_{\rm M}}}.\qedhere
+  
+\end{aligned}$$
+:::
+
+Observe that the Semi-Hirzebruch-Riemann-Roch Theorem is a direct consequence of the Baggy Cardy Condition, with $e=\mathsf {Id}_{\mathscr E}$, $f=\mathsf {Id}_{\mathscr F}$.

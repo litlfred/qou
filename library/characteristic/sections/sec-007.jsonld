@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/characteristic/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "Higher rank groups",
-  "pageStart": 11,
-  "pageEnd": 12,
+  "title": "A noncommutative version of the A-polynomial",
+  "pageStart": 4,
+  "pageEnd": 5,
   "contains": [
-    "library/characteristic/blocks/prose-sec-007",
-    "library/characteristic/blocks/lem-sec-007-01"
+    "library/characteristic/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/characteristic/manifest",
-  "sourceDocument": "library/characteristic/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/characteristic/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/characteristic/manifest.jsonld",
   "provenance": "ingested"
 }

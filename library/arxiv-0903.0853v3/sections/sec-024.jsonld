@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0903.0853v3/sections/sec-024",
   "@type": [
     "doco:Section"
   ],
-  "title": "Note however that the “algebraic summation” introduced i n [50] and recalled and used",
-  "pageStart": 13,
-  "pageEnd": 14,
+  "title": "Index theorems and irregularity",
+  "pageStart": 38,
+  "pageEnd": 40,
   "contains": [
     "library/arxiv-0903.0853v3/blocks/prose-sec-024"
   ],
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
   "provenance": "ingested"
 }

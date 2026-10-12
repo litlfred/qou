@@ -8,47 +8,20 @@ pages: 16-17
 source_pdf: 0707.2052v1.pdf
 source_sha256: 0a1d1cca848706be
 doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasiz ing the importance of a pairing which generalizes Mukai’s pairi ng on the cohomology of K3"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-We can now deﬁne the important notion of partial traces.
-Deﬁnition. For a kernel Φ : X→ Y, and kernels Ψ, Θ: Z→ X deﬁne the left
-partial trace
-2-Hom(Φ ◦ Θ, ΣY ◦ Φ ◦ Ψ)→ 2-Hom(Θ, ΣX ◦ Ψ)
-as
-Ψ 
-Θ 
-α ↦→
-Θ 
-α 
-Ψ 
-.
-Similarly we deﬁne a right partial trace
-2-Hom(Θ ′ ◦ Φ, Ψ′ ◦ Φ ◦ ΣX)→ 2-Hom(Θ ′, Ψ′ ◦ ΣY)
-as
-Ψ ′
-Θ ′
-α ′ ↦→
-Θ ′
-α ′
-Ψ ′
-.
-The following key result, proved in the appendix, says that t aking partial
-trace does not aﬀect the Serre trace.
-Theorem 4. For a kernel Φ : X→ Y, a kernel Ψ : Z→ X and a kernel
-morphism α ∈ Hom(Φ ◦ F , ΣY ◦ Φ ◦ Ψ ◦ ΣZ) then the left partial trace of α
-has the same Serre trace as α, i.e., pictorially
-Tr
-
-
-Ψ 
-α 
-Ψ 
-
- = Tr
-
-
-Ψ 
-α 
-Ψ 
- .
-The analogous result holds for the right partial trace.
-16
+We can now define the important notion of partial traces.
+
+::: Definition
+For a kernel $\Phi\colon X\to Y$, and kernels $\Psi,\Theta\colon Z\to X$ define the *left partial trace* $$\mathop{\mathrm{{2\mbox{-}Hom}}}(\Phi\circ\Theta,\Sigma_Y\circ\Phi\circ\Psi) \to
+  \mathop{\mathrm{{2\mbox{-}Hom}}}(\Theta,\Sigma_X\circ\Psi)$$ as $$\raisebox{-.45\height}{}\mapsto\raisebox{-.45\height}{}.$$ Similarly we define a *right partial trace* $$\mathop{\mathrm{{2\mbox{-}Hom}}}(\Theta'\circ\Phi,\Psi'\circ\Phi\circ\Sigma_X) \to
+  \mathop{\mathrm{{2\mbox{-}Hom}}}(\Theta',\Psi'\circ\Sigma_Y)$$ as $$\raisebox{-.45\height}{}\mapsto\raisebox{-.45\height}{}.$$
+:::
+
+The following key result, proved in the appendix, says that taking partial trace does not affect the Serre trace.
+
+::: Theorem
+For a kernel $\Phi\colon X\to Y$, a kernel $\Psi\colon Z\to X$ and a kernel morphism $\alpha\in\mathop{\mathrm{Hom}}(\Phi\circ{\mathscr F},\Sigma_Y\circ\Phi\circ\Psi\circ\Sigma_Z)$ then the left partial trace of $\alpha$ has the same Serre trace as $\alpha$, i.e., pictorially $$\mathop{\mathrm{Tr}}\left(\raisebox{-.45\height}{}\right)=\mathop{\mathrm{Tr}}\left(\raisebox{-.45\height}{}\right).$$ The analogous result holds for the right partial trace.
+:::

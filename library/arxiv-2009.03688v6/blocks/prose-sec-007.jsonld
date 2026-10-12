@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "Standard construction: E8-singularity as the",
-  "pageStart": 14,
-  "pageEnd": 15,
-  "text": "../sections/sec-007-2-standard-construction-e8-singularity-as-the.md",
-  "derivedFrom": "library/arxiv-2009.03688v6/manifest",
-  "sourceDocument": "library/arxiv-2009.03688v6/manifest",
+  "title": "References",
+  "pageStart": 46,
+  "pageEnd": 48,
+  "text": "../sections/sec-007-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2009.03688v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2009.03688v6/manifest.jsonld",
   "provenance": "ingested"
 }

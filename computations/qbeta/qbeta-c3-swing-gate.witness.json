@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T07:58:36.649827+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-10-10T10:40:54.612749+00:00",
+  "commitSha": "3c35e587cb0b9b0563134ce8fc3fc9e1db2b9f9f",
   "assertions": [
     {
       "name": "swing_matches_o2",
-      "computed": "0.000339923141162374",
+      "computed": "4.11623743864996e-11",
       "expected": "0",
-      "passed": false,
+      "passed": true,
       "tolerance": "1e-6",
       "source": "swing from c3_target_at at both anchors vs O2 probe value"
     },
@@ -29,12 +29,12 @@
       "source": "4*swing/sqrt(3) > 0 (muon-minus-proton orientation)"
     }
   ],
-  "allPassed": false,
-  "durationMs": 18,
+  "allPassed": true,
+  "durationMs": 17,
   "computation": "qbeta-c3-swing-gate",
   "scriptFile": "qbeta_c3_swing_gate_probe.py",
-  "scriptHash": "54dd8cc59c66",
-  "scriptCommitSha": "87193feed82818b78130db79125350dbb25683f7",
+  "scriptHash": "6bc7dd29309a",
+  "scriptCommitSha": "aa914b606a6de5e4f447e3746adaa687a9f608c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,11 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "mpmath": "1.4.1"
   },
   "invocation": {
     "argv": [
@@ -68,7 +65,7 @@
       "S_muon": "0.0100229009453018",
       "S_proton": "-0.0394593642958606",
       "swing": "0.0494822652411624",
-      "o2_reference": "0.0491423421"
+      "o2_reference": "0.0494822652"
     },
     "gate": {
       "delta_quad_required": "0.11427439662839",

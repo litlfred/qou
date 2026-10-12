@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ds15v1-2008/blocks/prose-sec-030",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ds15v1-2008/blocks/prose-sec-030",
   "kind": "prose",
-  "title": "Dyson’s Mod 27 Identities",
-  "pageStart": 24,
-  "pageEnd": 25,
-  "text": "../sections/sec-030-227-dysons-mod-27-identities.md",
-  "derivedFrom": "library/ds15v1-2008/manifest",
-  "sourceDocument": "library/ds15v1-2008/manifest",
+  "title": "False Theta Series Identities of Order 15",
+  "pageStart": 38,
+  "pageEnd": 38,
+  "text": "../sections/sec-030-58-false-theta-series-identities-of-order-15.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ds15v1-2008/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ds15v1-2008/manifest.jsonld",
   "provenance": "ingested"
 }

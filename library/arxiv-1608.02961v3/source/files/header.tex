@@ -1,0 +1,99 @@
+\newcommand{\chapterauthor}[1]{
+\begin{center}
+{\bf \normalsize  #1}
+\end{center}
+}
+
+\newcommand{\chapteraddress}[1]{
+\begin{center}
+{ \small \it \addressvalue}
+\end{center}
+}
+
+\newcommand{\chapterabstract}[1]{
+\vspace{\baselineskip}
+\begin{center}
+\textbf{\small Abstract}
+\end{center}
+#1}
+
+\newcommand{\chapterheader}{
+
+\chapter[\titlevalue{}  (by \shortauthorvalue)]{\titlevalue}
+\label{Chapter\IDvalue}
+%\framebox{\tt\IDvalue}
+\chapterauthor{\authorvalue}
+\chapteraddress{\addressvalue}
+\chapterabstract{\abstractvalue}
+\tightmtctrue
+\minitoc
+}
+
+
+\newcommand{\documentheader}{
+\begin{flushright} \small
+  \preprintvalue
+ \end{flushright}
+
+\begin{center}
+{\bf \Large \titlevalue}
+\end{center}
+
+\chapterauthor{\authorvalue}
+\chapteraddress{\addressvalue}
+\chapterabstract{\abstractvalue}
+
+\medskip
+
+This is a contribution to the review volume ``Localization techniques
+in quantum field theories'' (eds. V.~Pestun and M.~Zabzine) which
+contains 17 Chapters available at \cite{ContributionSummary}
+
+\tableofcontents
+}
+
+\newcommand{\ifvolume}[2]{\ifx\ifLONG\undefined#2\else#1\fi}
+
+
+
+\newcommand{\documentfinish}{
+\ifx\ifLONG\undefined
+\bibliographystyle{bibreview} 
+\bibliography{\IDvalue,review}  
+\end{document}
+\else
+\addcontentsline{toc}{section}{References}
+\input{\DIRvalue/\IDvalue.bbl}
+\fi
+}
+
+
+\newcommand{\documentfinishBBL}{
+\addcontentsline{toc}{section}{References}
+\ifx\ifLONG\undefined
+\input{\IDvalue.separate.bbl}
+\end{document}
+\else
+\input{\DIRvalue/\IDvalue.volume.bbl}
+\fi
+}
+
+
+
+\ifx\ifLONG\undefined
+\def\volcite#1{Contribution \cite{Contribution#1}}
+\else 
+\def\volcite#1{Chapter \ref{Chapter#1}}
+\fi
+
+
+\newcommand{\ContributionSummaryBibItemReference}
+{
+\bibitem{ContributionSummary}
+V.~Pestun and M.~Zabzine, eds., {\em Localization techniques in quantum field
+  theory}, vol.~xx.
+\newblock Journal of Physics A, 2016.
+\newblock \href{http://arxiv.org/abs/1608.02952}{{\tt 1608.02952}}.
+\newblock \url{https://arxiv.org/src/1608.02952/anc/LocQFT.pdf},
+  \url{http://pestun.ihes.fr/pages/LocalizationReview/LocQFT.pdf}.
+}

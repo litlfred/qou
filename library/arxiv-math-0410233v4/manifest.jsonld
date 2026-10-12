@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0410233v4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Cusp shapes under cone deformation",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0410233v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0410233v4",
   "contains": [
+    "library/arxiv-math-0410233v4/sections/sec-front-matter",
     "library/arxiv-math-0410233v4/sections/sec-000",
     "library/arxiv-math-0410233v4/sections/sec-001",
     "library/arxiv-math-0410233v4/sections/sec-002",
@@ -27,11 +33,22 @@
     "library/arxiv-math-0410233v4/sections/sec-018",
     "library/arxiv-math-0410233v4/sections/sec-019",
     "library/arxiv-math-0410233v4/sections/sec-020",
-    "library/arxiv-math-0410233v4/sections/sec-021"
+    "library/arxiv-math-0410233v4/sections/sec-021",
+    "library/arxiv-math-0410233v4/sections/sec-022",
+    "library/arxiv-math-0410233v4/sections/sec-023"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0410233&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-0410233v4",
+    "title_source": "slug",
     "source_file": "0410233v4.pdf",
     "source_sha256": "1f7215c9f21aa2b7eb8d5133c1a63ab14837ae2694c14e3ff1521d54a41616fe",
     "pages": 46,

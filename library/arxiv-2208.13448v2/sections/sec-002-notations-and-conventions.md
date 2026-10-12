@@ -8,9 +8,11 @@ pages: 3-3
 source_pdf: 2208.13448v2.pdf
 source_sha256: 8bfa244cf7ca867d
 doc_brief: "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large"
+text_source: latex
+latex_prose_ratio: 0.867
+latex_coverage_ratio: 1.0
 ---
-contain the ﬁeld of rational numbers. In particular, all ﬁel ds are of characteristic zero.
-If G is an algebraic group, we denote by G0 the connected component of the identity of
-G. Let ( k, φ) be a diﬀerence ﬁeld, that is, a ﬁeld equipped with an automorp hism and let
-[A]φ be the diﬀerence system φ(Y ) = AY where A ∈ GLn (k). To lighten notations, we
-denote it [ A] when there is no ambiguity.
+In what follows,  all rings are commutative with identity and contain the field of rational numbers.  In particular, all fields are of characteristic zero. 
+
+If $G$ is an algebraic group, we denote by $G^0$ the connected component of the identity of $G$.
+Let $(\k,\phi)$ be a difference field, that is, a field equipped with an automorphism  and let $[A]_{\phi}$ be the difference system $\phi(Y)=AY$ where $A\in\GL_n\left(\k\right)$. To lighten notations, we denote it $[A]$ when there is no ambiguity.

@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1712.04887v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Bloch groups, algebraic K-theory, units, and Nahm's conjecture",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.04887v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE",
   "contains": [
+    "library/arxiv-1712.04887v3/sections/sec-front-matter",
     "library/arxiv-1712.04887v3/sections/sec-000",
     "library/arxiv-1712.04887v3/sections/sec-001",
     "library/arxiv-1712.04887v3/sections/sec-002",
@@ -23,11 +29,24 @@
     "library/arxiv-1712.04887v3/sections/sec-014",
     "library/arxiv-1712.04887v3/sections/sec-015",
     "library/arxiv-1712.04887v3/sections/sec-016",
-    "library/arxiv-1712.04887v3/sections/sec-017"
+    "library/arxiv-1712.04887v3/sections/sec-017",
+    "library/arxiv-1712.04887v3/sections/sec-018",
+    "library/arxiv-1712.04887v3/sections/sec-019"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1712.04887&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1712.04887v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1712.04887v3.pdf",
     "source_sha256": "024317c20a1d8b66234e608af46941093a675b6399ef480dfedd52a31dcd7bf5",
     "pages": 43,

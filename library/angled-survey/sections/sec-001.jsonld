@@ -1,19 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/angled-survey/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
-  "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
-  "pageStart": 2,
-  "pageEnd": 2,
+  "title": "Gluing equations",
+  "pageStart": 3,
+  "pageEnd": 7,
   "contains": [
-    "library/angled-survey/blocks/prose-sec-001",
-    "library/angled-survey/blocks/thm-sec-001-01",
-    "library/angled-survey/blocks/thm-sec-001-02",
-    "library/angled-survey/blocks/thm-sec-001-03"
+    "library/angled-survey/blocks/prose-sec-001"
   ],
-  "derivedFrom": "library/angled-survey/manifest",
-  "sourceDocument": "library/angled-survey/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/angled-survey/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/angled-survey/manifest.jsonld",
   "provenance": "ingested"
 }

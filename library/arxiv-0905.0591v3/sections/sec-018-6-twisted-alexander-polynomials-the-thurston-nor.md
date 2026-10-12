@@ -8,155 +8,193 @@ pages: 18-21
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
 doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.763
 ---
-manifolds
-6.1. Twisted Alexander polynomials and ﬁbered manifolds. Let φ ∈ H 1(N ; Z) =
-Hom(π1(N ), Z) be non–trivial. We say ( N,φ ) ﬁbers over S1 if there exists a ﬁbration
-p : N → S1 such that the induced map p∗ : π1(N ) → π1(S1) = Z coincides with φ.
-If K is a ﬁbered knot, then it is a classical result of Neuwirth tha t ∆ K is monic and
-that deg(∆ K ) = 2 genus(K). Similarly, twisted Alexander polynomials provide neces sary
-conditions to the ﬁberability of a pair ( N,φ ).
-In order to state the ﬁbering obstructions for a pair ( N,φ ) we need to introduce the
-Thurston norm. Given ( N,φ ) the Thurston norm of φ is deﬁned as
-||φ||T = min{χ−(S) |S ⊂N properly embedded surface dual to φ}.
-Here, given a surface S with connected components S1 ∪ · · · ∪Sk, we deﬁne χ−(S) =∑ k
-i=1 max{−χ(Si), 0}. Thurston [Th86] showed that this deﬁnes a seminorm on H 1(N ; Z)
-which can be extended to a seminorm on H 1(N ; R). As an example consider S3 \νK ,
-where K ⊂S3 is a non–trivial knot. Let φ ∈H 1(S3 \νK ; Z) be a generator, then ||φ||T =
-2 genus(K) − 1.
-A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS 19
-Let N be a 3–manifold N with empty or toroidal boundary and let φ ∈H 1(N ; Z). Re-
-call that we identify the group ring R[Z] with the Laurent polynomial ring R[t±1] and
-we will now identify Q(R[Z]) with the ﬁeld of rational functions Q(t). Given a represen-
-tation γ : π1(N ) → GL(k,R ) we therefore view the corresponding twisted Reidemeister
-torsionτ (N,γ ⊗φ) as an element in Q(t) and we view the corresponding twisted Alexander
-polynomials ∆ γ⊗φ
-N,i as elements in R[t±1].
-We say that the twisted Reidemeister torsion τ (N,γ ⊗φ) is monic if there exist polyno-
-mials p(t),q (t) ∈ R[t±1] with p(t)
-q(t)
-.= τ (N,γ ⊗φ) such that the top coeﬃcients of p(t) and
-q(t) lie in
-{± det(γ(g)) |g ∈π1(N )}.
-We also say that the twisted Alexander polynomial ∆ γ⊗φ
-N,i is monic if one (and equivalently
-any) representative has a top coeﬃcient which is a unit in R.
+\label{section:fibgenus}
+
+
+
+\subsection{Twisted Alexander polynomials and fibered manifolds}\label{section:fib}
+Let $\phi\in H^1(N;\mathbb{Z}) = \mbox{Hom}(\pi_1(N),\mathbb{Z})$ be non--trivial. We say
+\emph{$(N,\phi)$ fibers over $S^{1}$}
+ if there exists
+ a fibration $p:N\to S^1$ such that the induced map $p_*:\pi_1(N)\to \pi_1(S^1)=\mathbb{Z}$ coincides with $\phi$. If
+$K$ is a fibered knot, then it is a classical result of Neuwirth that
+$\Delta_K$ is monic and that $\deg(\Delta_K)=2 \, \mbox{genus}(K)$. Similarly, twisted Alexander polynomials provide necessary conditions to the fiberability of a pair $(N,\phi)$.
+
+
+In order to state the fibering obstructions for a pair $(N,\phi)$
+we need to introduce the Thurston norm. Given $(N,\phi)$ the \emph{Thurston norm} of $\phi$ is defined as
+ \[
+||\phi||_{T}=\min \{ \chi_-(S)\, | \, S \subset N \mbox{ properly embedded surface dual to }\phi\}.
+\]
+Here, given a surface $S$ with connected components $S_1\cup\dots \cup S_k$, we define
+$\chi_-(S)=\sum_{i=1}^k \max\{-\chi(S_i),0\}$.
+ Thurston
+\cite{Th86} showed that this defines a seminorm on $H^1(N;\mathbb{Z})$ which can be extended to a seminorm
+on $H^1(N;\mathbb{R} )$. As an example consider $S^3\setminus \nu K$, where $K\subset S^3$ is a non--trivial knot. Let $\phi\in H^1(S^3\setminus \nu K;\mathbb{Z})$ be a
+generator, then  $||\phi||_T=2\, \mbox{genus}(K)-1$.
+
+Let $N$ be a 3--manifold $N$ with empty or toroidal boundary and let  $\phi\in H^1(N;\mathbb{Z})$.
+Recall that we identify the group ring $R[\mathbb{Z}]$ with the Laurent polynomial ring $R[t^{\pm 1}]$ and we will now identify $Q(R[\mathbb{Z}])$ with the field of rational functions $Q(t)$.
+Given a  representation
+${\gamma}:\pi_1(N)\to \mbox{GL}(k,R)$ we therefore view the corresponding twisted Reidemeister torsion
+$\tau(N,{\gamma \otimes \phi})$ as an element in $Q(t)$ and we view the corresponding twisted
+Alexander polynomials
+$\Delta_{N,i}^{\gamma \otimes \phi}$ as elements in $R[t^{\pm 1}]$.
+
+We say that the twisted Reidemeister torsion $\tau(N,\gamma\otimes \phi)$ is \emph{monic} if there exist
+ polynomials
+$p(t),q(t)\in R[t^{\pm 1}]$ with $\frac{p(t)}{q(t)}\doteq \tau(N,\gamma\otimes \phi)$ such that the
+top coefficients of $p(t)$ and $q(t)$  lie in
+\[ \{ \pm \det(\gamma(g)) \, |\, g\in \pi_1(N)\}.\]
+We also say that the twisted Alexander polynomial $\Delta_{N,i}^{\gamma \otimes \phi}$ is \emph{monic}
+if one (and equivalently any) representative has a top coefficient which is a unit in $R$.
+
+
+
+
+
+
+
+
+
 We recall the following basic lemma:
-Lemma 6.1. Let N be a 3–manifold with empty or toroidal boundary. Let φ ∈ H 1(N ; Z)
-be non–trivial and let γ :π1(N ) → GL(k,R ) be a representation with R a Noetherian UFD.
-Then the following hold:
-(1) ∆ γ⊗φ
-N,0 is monic,
-(2) If ∆ γ⊗φ
-N,1 is non–zero, then ∆ γ⊗φ
-N,2 is monic.
-Proof. As in Section 2.2 we pick a cell decomposition of N with one 0–cell x0 and n 1–
-cells c1,...,c n. We denote the corresponding elements in π1(N,x 0) by c1,...,c n as well.
-Without loss of generality we can assume that φ(c1) > 0. We then get a resolution for
-H0(N ;R[t±1]n) with presentation matrix
-(
-idn − (γ ⊗φ)(c1) ... idn − (γ ⊗φ)(cn)
-)
-.
-We refer to [FK06, Proof of Proposition 6.1] for details. We h ave
-det(idn − (γ ⊗φ)(c1)) = det(idn −tφ(c1)γ(c1)) ∈R[t±1],
-which is monic since the top coeﬃcient equals det( γ(c1)). By deﬁnition ∆ γ⊗φ
-N,0 divides
-det(idn − (γ ⊗φ)(c1)), we therefore see that ∆ γ⊗φ
-N,0 is monic. The claim that ∆ γ⊗φ
-N,2 is monic
-now follows from Proposition 3.7. □
-Remark. Note that if τ (N,γ ⊗φ) is monic, then it follows from the previous lemma and
-from Proposition 3.2 that ∆ γ⊗φ
-N,i ∈ R[t±1] is monic for i = 0, 1, 2. Note though that the
-converse does not hold in general since twisted Alexander po lynomials have in general a
-higher indeterminacy than twisted Reidemeister torsion. F or example, let F be a ﬁeld and
-let γ :π1(N ) → GL(k, F) be a representation such that ∆ γ⊗φ
-N,i ⁄= 0. It follows immediately
-from the deﬁnition that ∆ γ⊗φ
-N,i is monic. However, τ (N,γ ⊗ψ) is not necessarily monic (cf.
-e.g. [GKM05, Example 4.2]).
-We can now formulate the following ﬁbering obstruction theo rem which was proved in
-various levels of generality by Cha [Ch03], Kitano and Morif uji [KM05], Goda, Kitano and
-Morifuji [GKM05], Pajitnov [Pa07], Kitayama [Kiy08a] and [ FK06].
-20 STEF AN FRIEDL AND STEF ANO VIDUSSI
-Theorem 6.2. Let N be a 3–manifold. Let φ ∈H 1(N ; Z) be non–trivial such that (N,φ )
-ﬁbers over S1 and such that N ⁄=S1 ×D2,N ⁄= S1 ×S2. Let γ : π1(N ) → GL(k,R ) be a
-representation. Then τ (N,γ ⊗φ) ∈Q(t) is monic and we have
-k||φ||T = deg(τ (N,γ ⊗φ)).
-Remark. (1) If R is a Noetherian UFD, then the last equality can be rewritten a s
-k||φ||T = deg ∆ γ⊗φ
-N,1 − deg ∆ γ⊗φ
-N,0 − deg ∆ γ⊗φ
-N,2.
-(2) Recall that an alternating knot is ﬁbered if and only if it s ordinary Alexander
-polynomial is monic. In contrast to this classical result it follows from calculations
-by Goda and Morifuji [GM03] (cf. also [Mo08]) that there exis ts an alternating knot
-such that a twisted Reidemeister torsion is monic, but which is not ﬁbered.
-(3) Theorem 6.2 has been generalized by Silver and Williams [ SW09d] to give an ob-
-struction for a general group to admit an epimorphism onto Z such that the kernel
-is a ﬁnitely generated free group.
-Proof. The condition on the degrees is proved in [FK06, Theorem 1.3] for R a Noetherian
-UFD. The monicness of twisted Reidemeister torsion was prov ed by Goda, Kitano and
-Morifuji [GKM05] in the case of a knot complement. The monicn ess of ∆ γ⊗φ
-N,1 was proved
-in [FK06, Theorem 1.3]. The general case of Theorem 6.2 can be obtained by a direct
-calculation as follows. Let S be the ﬁber and f :S →S the monodromy. We endow S with
-a CW–structure such that f is a cellular map. Denote by Di the set of i–cells of S and
-denote by ni the number of i–cells. We can then endow N = (S × [0, 1])/(x, 0) ∼ (f (x), 1)
-with a CW–structure where the i–cells are given by Di and Ei := {c × (0, 1) |c ∈Di−1}. A
-direct calculation using [Tu01, Theorem 2.2] now shows that τ (N,γ ⊗φ) ∈ Q(t) is monic
+
+\begin{lemma}
+Let $N$ be a 3--manifold with empty or toroidal boundary. Let $\phi\in H^1(N;\mathbb{Z})$ be non--trivial  and let
+${\gamma }:\pi_1(N)\to \mbox{GL}(k,R)$ be a  representation with $R$ a Noetherian UFD. Then the following hold:
+\begin{enumerate}
+\item $\Delta_{N,0}^{\gamma \otimes \phi}$ is monic,
+\item If $\Delta_{N,1}^{\gamma \otimes \phi}$ is non--zero, then $\Delta_{N,2}^{\gamma \otimes \phi}$ is monic.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+As in Section \ref{section:comptau} we pick a cell decomposition of $N$ with one 0--cell $x_0$ and $n$ 1--cells $c_1,\dots,c_n$.
+We denote the corresponding elements in $\pi_1(N,x_0)$ by $c_1,\dots,c_n$ as well.
+Without loss of generality we can assume that $\phi(c_1)> 0$.
+We then get a resolution for $H_0(N;R[t^{\pm 1}]^n)$ with presentation matrix
+\[ \begin{pmatrix} \mbox{id}_n -({\gamma \otimes \phi})(c_1) &\dots & \mbox{id}_n -{(\gamma \otimes \phi)}(c_n)\end{pmatrix}. \]
+We refer to \cite[Proof~of~Proposition~6.1]{FK06} for details.
+We have
+\[ \det(\mbox{id}_n-{(\gamma \otimes \phi)}(c_1))=\det(\mbox{id}_n-t^{\phi(c_1)}\gamma(c_1))\in R[t^{\pm 1}], \]
+which is monic since the top coefficient equals $\det(\gamma(c_1))$. By definition
+$\Delta_{N,0}^{\gamma \otimes \phi}$ divides $\det(\mbox{id}_n-({\gamma \otimes \phi})(c_1))$, we therefore see that $\Delta_{N,0}^{\gamma \otimes \phi}$ is monic.
+The claim that $\Delta_{N,2}^{\gamma \otimes \phi}$ is monic now follows from Proposition \ref{prop:dualitydelta}.
+\end{proof}
+
+\begin{remark}
+Note that if $\tau(N,{\gamma \otimes \phi})$ is monic, then it follows from the previous lemma and
+from Proposition \ref{prop:taudelta} that $\Delta_{N,i}^{\gamma \otimes \phi}\in R[t^{\pm 1}]$ is monic for $i=0,1,2$.
+Note though that the converse does not hold in general since  twisted Alexander polynomials have in general a higher indeterminacy than twisted Reidemeister torsion.
+For example, let $\mathbb{F}$ be a field and let $\gamma:\pi_1(N)\to \mbox{GL}(k,\mathbb{F})$ be a representation such that  $\Delta_{N,i}^{\gamma\otimes \phi}\ne 0$. It follows immediately from the definition
+that $\Delta_{N,i}^{\gamma\otimes \phi}$ is monic. However, $\tau(N,\gamma\otimes \psi)$
+is not necessarily monic (cf. e.g. \cite[Example~4.2]{GKM05}).
+\end{remark}
+
+We can now formulate the following fibering obstruction theorem
+which was proved in various levels of generality by
+Cha \cite{Ch03}, Kitano and Morifuji \cite{KM05}, Goda, Kitano and Morifuji \cite{GKM05}, Pajitnov \cite{Pa07}, Kitayama \cite{Kiy08a} and  \cite{FK06}.
+
+
+\begin{theorem} \label{thm:fibob}
+Let $N$ be a 3--manifold. Let $\phi\in H^1(N;\mathbb{Z})$ be non--trivial such that  $(N,\phi)$ fibers over
+$S^1$ and such that $N\ne S^1\times D^2, N\ne S^1\times S^2$. Let
+${\gamma}:\pi_1(N)\to \mbox{GL}(k,R)$ be a  representation. Then  $\tau(N,{\gamma \otimes \phi}) \in Q(t)$ is monic
+and we have
+\[ k ||\phi||_T =\deg(\tau(N,{\gamma \otimes \phi})).\]
+\end{theorem}
+
+\begin{remark}
+\begin{enumerate}
+\item If $R$ is a Noetherian UFD, then the last equality can be rewritten as
+\[ k ||\phi||_T =\deg \Delta_{N,1}^{{\gamma \otimes \phi}}-\deg \Delta_{N,0}^{{\gamma \otimes \phi}}-\deg \Delta_{N,2}^{{\gamma \otimes \phi}}.\]
+\item Recall that an alternating knot is fibered if and only if its ordinary Alexander polynomial is monic. In contrast to this classical result it follows from calculations by Goda and Morifuji \cite{GM03} (cf. also \cite{Mo08})
+that there exists an alternating knot such that a twisted Reidemeister torsion is monic, but which is not fibered.
+\item Theorem \ref{thm:fibob} has been generalized by Silver and Williams \cite{SW09d} to give an obstruction for a general group to admit an epimorphism onto $\Z$ such that the kernel is a finitely generated free group.
+\end{enumerate}
+\end{remark}
+
+\begin{proof}
+The condition on the degrees is proved in \cite[Theorem~1.3]{FK06} for $R$ a Noetherian UFD.
+The monicness of twisted Reidemeister torsion was proved by
+Goda, Kitano and Morifuji \cite{GKM05} in the case of a knot complement.
+The monicness of $\Delta_{N,1}^{\gamma \otimes \phi}$ was proved in \cite[Theorem~1.3]{FK06}.
+The general case of Theorem \ref{thm:fibob}  can be obtained by a direct calculation as follows.
+Let $S$ be the fiber and $f:S\to S$ the monodromy. We endow $S$ with a CW--structure such that $f$ is a cellular map.
+Denote by $D_i$ the set of $i$--cells of $S$ and denote by $n_i$ the number of $i$--cells.
+We can then endow $N=(S\times [0,1])/(x,0)\sim (f(x),1)$ with a CW--structure where the $i$--cells are given by
+$D_i$ and $E_i\mathrel{\mathop:}=\{ c\times (0,1) \, | \, c\in D_{i-1}\}$. A direct calculation using \cite[Theorem~2.2]{Tu01} now shows
+that
+ $\tau(N,{\gamma \otimes \phi}) \in Q(t)$ is monic
 and that
-deg(τ (N,γ ⊗φ)) = −kχ(S) = k||φ||T.
-□
-The calculations in [Ch03], [GKM05] and [FK06] gave evidenc e that twisted Alexander
-polynomials are very successful at detecting non–ﬁbered ma nifolds. The results of Morifuji
-[Mo08, p. 452] also give evidence to the conjecture that the t wisted Alexander polynomial
-corresponding to a ‘generic’ representation detect ﬁbered ness.
-Using a deep result of Agol [Ag08] the authors proved in [FV08 c] (see also [FV10] for an
-outline of the proof) the following converse to Theorem 6.2.
-Theorem 6.3. LetN be a 3–manifold with empty or toroidal boundary. Let φ ∈H 1(N ; Z)
-a nontrivial class. If for any epimorphism γ : π1(N ) → G onto a ﬁnite group the twisted
-Alexander polynomial ∆ γ⊗φ
-N ∈ Z[t±1] is monic and
-k||φ||T = deg(τ (N,γ ⊗φ))
-holds, then (N,φ ) ﬁbers over S1.
-Remark. Building on work of Taubes [Ta94, Ta95], Donaldson [Do96] an d Kronheimer
-[Kr99] the authors also show that Theorem 6.3 implies the fol lowing: If N is a closed 3–
-manifold and if S1 ×N is symplectic, then N ﬁbers over S1. This provides a converse to
-a theorem of Thurston [Th76]. We refer to [FV06, FV08a, FV08b , FV08c] for details, and
-A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS 21
-we refer to Kutluhan–Taubes [KT09], Kronheimer–Mrowka [KM 08] and Ni [Ni08] for an
-alternative proof in the case that b1(N ) = 1.
-It is natural to ask whether ( N,φ ) ﬁbers if all twisted Alexander polynomials are monic.
-An aﬃrmative answer would be of great interest in the study of symplectic structures of
-4–manifolds with a free circle action (cf. [FV07b]). An equi valent question has also been
-raised as a conjecture by Goda and Pajitnov [GP05, Conjectur e 13.2] in the study of Morse–
-Novikov numbers. We refer to [GP05] and [Pa07] for more infor mation on the relationship
-between twisted Alexander polynomials, twisted Novikov ho mology and Morse–Novikov
-numbers.
-Somewhat surprisingly, there is strong evidence to the foll owing much weaker conjecture:
-A pair (N,φ ) ﬁbers if all twisted Alexander polynomials are non–zero. I n fact the authors
-showed the following theorem (cf. [FV07a, Theorem 1.3] and [ FV08b, Theorem 1, Proposi-
-tion 4.6, Corollary 5.6]).
-Theorem 6.4. LetN be a 3–manifold with empty or toroidal boundary and φ ∈H 1(N ; Z)
-non–trivial. Suppose that ∆ γ⊗φ
-N is non–zero for any epimorphism γ : π1(N ) → G onto a
-ﬁnite group. Furthermore suppose that one of the following h olds:
-(1) N =S3 \νK and K is a genus one knot,
-(2) ||φ||T = 0,
-(3) N is a graph manifold,
-(4) φ is dual to a connected incompressible surface S such that π1(S) ⊂π1(N ) is sepa-
-rable,
-then (N,φ ) ﬁbers over S1.
-Here we say that a subgroup A of a group π is separable if for any g ∈π \A there exists an
-epimorphism γ :π →G onto a ﬁnite group G such that γ(g) ⁄∈γ(A). It is conjectured (cf.
-[Th82]) that given a hyperbolic 3–manifold N any ﬁnitely generated subgroup A ⊂π1(N )
-is separable. In particular, if Thurston’s conjecture is tr ue, then Condition (4) of Theorem
-6.4 is satisﬁed for any hyperbolic N .
-The following theorem of Silver–Williams [SW09b] (cf. also [SW09a]) gives an interesting
-criterion for a knot to have vanishing twisted Alexander pol ynomial.
-Theorem 6.5. LetK ⊂S3 a knot. Then there exists an epimorphism γ :π1(S3 \νK ) →G
-to a ﬁnite group such that ∆ γ
-K = 0 if and only if the universal abelian cover of S3 \νK has
-uncountably many ﬁnite covers.
+\[ \deg(\tau(N,{\gamma \otimes \phi}))=-k\chi(S)=k ||\phi||_T.\]
+\end{proof}
+
+
+
+The calculations in \cite{Ch03}, \cite{GKM05} and \cite{FK06} gave evidence that
+twisted Alexander polynomials are very successful at detecting non--fibered manifolds.
+The results of Morifuji \cite[p.~452]{Mo08} also give evidence to the conjecture that the twisted Alexander polynomial corresponding to a `generic' representation
+detect fiberedness.
+
+
+Using a deep result of Agol \cite{Ag08} the authors proved in \cite{FV08c} (see also \cite{FV10} for an outline of the proof)
+the following converse to Theorem \ref{thm:fibob}.
+
+\begin{theorem} \label{thm:fv08} Let $N$ be a $3$--manifold with empty or toroidal boundary.
+ Let $\phi \in H^{1}(N;\mathbb{Z})$ a nontrivial class. If for
+any epimorphism $\gamma:\pi_1(N)\to G$ onto a finite group
+the twisted Alexander polynomial $\Delta_{N}^{\gamma\otimes \phi}\in \mathbb{Z}[t^{\pm 1}]$ is monic
+and  \[ k||\phi||_T=\deg(\tau(N,\gamma\otimes \phi))\] holds,
+then $(N,\phi)$ fibers over $S^1$.
+ \end{theorem}
+
+\begin{remark}
+Building on work of Taubes \cite{Ta94,Ta95}, Donaldson \cite{Do96} and Kronheimer \cite{Kr99} the authors
+also show that Theorem \ref{thm:fv08} implies the following: If $N$ is a closed 3--manifold
+and if $S^1\times N$ is symplectic, then $N$ fibers over $S^1$. This provides a converse to a theorem
+of Thurston \cite{Th76}. We refer to \cite{FV06,FV08a,FV08b,FV08c} for details, and we refer to
+Kutluhan--Taubes \cite{KT09}, Kronheimer--Mrowka \cite{KM08} and  Ni \cite{Ni08} for an alternative proof in the case that $b_1(N)=1$.
+\end{remark}
+
+It is natural to ask whether $(N,\phi)$ fibers if all twisted Alexander polynomials are monic.
+An affirmative answer  would be of great interest in the study of symplectic structures of 4--manifolds with a free circle action (cf. \cite{FV07b}).
+An equivalent question has also been raised as a conjecture by Goda and Pajitnov \cite[Conjecture~13.2]{GP05} in the study of Morse--Novikov numbers. We refer to
+ \cite{GP05} and \cite{Pa07} for more information on the relationship between twisted Alexander polynomials, twisted Novikov homology and Morse--Novikov numbers.
+
+
+Somewhat surprisingly, there is strong evidence to the following much weaker conjecture:
+A pair $(N,\phi)$ fibers if all twisted Alexander polynomials are non--zero.
+In fact the authors showed the following theorem
+(cf. \cite[Theorem~1.3]{FV07a} and \cite[Theorem~1,~Proposition~4.6,~Corollary~5.6]{FV08b}).
+
+\begin{theorem}\label{thm:zerodelta}
+Let $N$ be a 3--manifold with empty or toroidal boundary and $\phi \in H^1(N;\mathbb{Z})$ non--trivial.
+Suppose that $\Delta_{N}^{\gamma\otimes\phi}$ is non--zero for any epimorphism $\gamma:\pi_1(N)\to G$ onto a finite group.
+Furthermore suppose that one of the following holds:
+\begin{enumerate}
+\item $N=S^3\setminus \nu K$ and $K$ is a genus one knot,
+\item $||\phi||_T=0$,
+\item $N$ is a graph manifold,
+\item $\phi$ is dual to a  connected incompressible
+surface $S$ such that $\pi_1(S)\subset \pi_1(N)$ is separable,
+\end{enumerate}
+then $(N,\phi)$ fibers over $S^1$.
+\end{theorem}
+
+Here we say that a subgroup $A$ of a group $\pi$ is \emph{separable} if for any $g\in \pi\setminus A$ there exists an epimorphism ${\gamma}:\pi\to G$ onto a finite group $G$ such that ${\gamma }(g)\not\in {\gamma }(A)$.
+It is conjectured (cf. \cite{Th82}) that given a hyperbolic 3--manifold $N$ any finitely generated subgroup
+$A\subset \pi_1(N)$ is separable. In particular, if Thurston's conjecture is true, then Condition (4) of Theorem
+\ref{thm:zerodelta} is satisfied for any hyperbolic $N$.
+
+The following theorem of Silver--Williams \cite{SW09b} (cf. also \cite{SW09a}) gives an interesting criterion for a knot to have vanishing twisted Alexander polynomial.
+
+\begin{theorem}\label{thm:sw}
+Let $K\subset S^3$ a knot.
+Then there exists an epimorphism ${\gamma }:\pi_1(S^3\setminus \nu K)\to G$ to a finite group such that $\Delta_{K}^{\gamma} =0$
+if and only if the universal abelian cover of $S^3\setminus \nu K$ has uncountably many finite covers.
+\end{theorem}

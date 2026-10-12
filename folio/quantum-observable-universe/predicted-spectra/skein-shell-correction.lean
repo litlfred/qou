@@ -15,7 +15,7 @@ shell-correction energies belongs to a future Archimedean tier
 ## References
 
 - `[manuscript]` `conj:skein-shell-correction`
-- `[manuscript]` `conj:elliptic-stability-locus`
+- `[manuscript]` `rem:elliptic-stability-locus`
 -/
 
 namespace QOU.SkeinShellCorrection

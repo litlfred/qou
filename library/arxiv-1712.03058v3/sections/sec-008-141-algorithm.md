@@ -8,117 +8,28 @@ pages: 10-12
 source_pdf: 1712.03058v3.pdf
 source_sha256: ba48c5bbb2467374
 doc_brief: "Iterated filtering methods for Markov process epidemic models Theresa Stocks1 1Department of Mathematics, Stockholm University, Sweden This manuscript is a preprint of a Chapter to appear in the Handb"
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.878
 ---
-At present this method is the only simulation-based frequentist approach that
-uses the full information contained in the data. Moreover, iterated ﬁltering
-methods have been able to solve likelihood-based inference problems for in-
-fectious disease related questions which were computationally intractable for
-available Bayesian methods (Ionides et al., 2015).
-1.4.1
-Algorithm
-In the following we present the pseudocode for iterated ﬁltering as imple-
-mented in the mif2 function in the R package pomp and explain how to draw
-samples from fXn|Xn−1.
-Pseudocode iterated ﬁltering (mif2) cf. Ionides et al. (2015)
-Input: Simulators for fX0(x0; θ) and fXn|Xn−1(xn|xn−1; θ); evaluator for fYn|Xn(yn|xn; θ);
-data y∗
-1:N
-Algorithmic parameters: # of iterations M; # of particles J; initial parameter swarm
-{θ0
-j, j = 1, . . . , J}; perturbation density hn(θ|ϕ; σ); perturbation scale σ1:M
-CHAPTER 1. ITERATED FILTERING METHODS FOR POMP
-10
-Procedure:
-1.
-For m in 1:M
-2.
-θF,m
-0,j
-∼h0( · |θm−1
-j
-; σm) for j in 1:J
-3.
-XF,m
-0,j
-∼fX0( · ; θF,m
-0,j ) for j in 1:J
-4.
-For n in 1:N
-5.
-θP,m
-n,j ∼hn( · |θF,m
-n−1,j, σm) for j in 1:J
-6.
-XP,m
-n,j
-∼fXn|Xn−1( · |XF,m
-n−1,j; θP,m
-n,j ) for j in 1:J
-7.
-wm
-n,j = fYn|Xn(y∗
-n|XP,m
-n,j ; θP,m
-n,j ) for j in 1:J
-8.
-Draw k1:J with P(kj = i) = wm
-n,i
-. PJ
-u=1 wm
-n,u
-9.
-θF,m
-n,j = θP,m
-n,kj and XF,m
-n,j
-= XP,m
-n,kj for j in 1:J
-10.
-End For
-11.
-Set θm
-j = θF,m
-N,j for j in 1:J
-12.
-End For
-Output: Final parameter swarm, {θM
-j , j = 1, . . . , J}
-In the algorithm the initial parameter values are perturbed (line 2) by a per-
-turbation density where its standard deviation σm is a decreasing function
-of m. The Markov process is initialized (line 3) as a draw from the initial
-density dependent on the proposed parameter vector. What follows in lines
-4 - 10 is a particle ﬁlter as described in the section above with the only dif-
-ference being that the parameter vector is stochastically perturbed in every
-iteration through the data. The M loop repeats the particle ﬁlter with de-
-creasing perturbations and throughout the algorithm the superscripts F and
-P denote ﬁltering and prediction distribution, respectively. The algorithm
-returns the best guess of the parameter swarm after M iterations. In the R
-package pomp the point estimate that the function mif2 returns is the mean
-of the parameter swarm.
-To generate realizations from fXn|Xn−1 we can use the Gillespie algorithm
-(Gillespie, 1977). Given the current state of the system, the algorithm simu-
-lates the waiting time of the next event and updates the number of individuals
-in each compartment and the overall time is incremented accordingly. The
-whole procedure is repeated until a pre-deﬁned stopping time is reached. In
-the case of constant per capita transition rates, the simulation of every indi-
-vidual event gives us a complete and detailed history of the process, however,
-it is usually a very time-consuming task for systems with large population and
-state space, because of the enormous number of events that can take place.
-As a way to speed up such simulations an approximate simulation method
-can be used, the so called τ-leap algorithm which is based on the Gillespie
-algorithm (Gillespie, 2001). The τ-leap algorithm holds all rates constant in
-a small time interval τ and simulates the numbers of events that will occur in
-CHAPTER 1. ITERATED FILTERING METHODS FOR POMP
-11
-this interval, then updates all state variables, computes the transition rates
-again and the procedure is repeated until the stopping time is reached (Er-
-hard et al., 2010; King et al., 2015b). Given the total number of jumps, the
-number of individuals leaving any of the states by any available route during
-a time interval τ is then multinomially distributed. Note that the simulation
-time step is not identical with the time scale the observation process evolves
-on. Both simulation algorithms are conveniently implemented in the pomp
-package as the functions gillespie.sim and euler.sim.
-1.5
-Iterated ﬁltering for SIR model given inci-
-dence data
-1.5.1
+[]{#mif_algorithm label="mif_algorithm"} In the following we present the pseudocode for iterated filtering as implemented in the `mif2` function in the `R` package `pomp` and explain how to draw samples from $f_{\bm{X}_n|\bm{X}_{n-1}}$.\
+**Pseudocode iterated filtering (`mif2`)** cf. [@Ionides2015]\
+**Input:** Simulators for $f_{\bm{X}_0}(\bm{x}_0;\boldsymbol{\theta})$ and $f_{\bm{X}_n|\bm{X}_{n-1}}(\bm{x}_n| \bm{x}_{n-1}; \boldsymbol{\theta})$; evaluator for $f_{\bm{Y}_n|\bm{X}_n}(\bm{y}_n|\bm{x}_n;\boldsymbol{\theta})$; data $\bm{y}^*_{1:N}$\
+**Algorithmic parameters:** \# of iterations $M$; \# of particles $J$; initial parameter swarm $\{\boldsymbol{\theta}^0_j, j=1,\dots,J\}$; perturbation density $h_n(\boldsymbol{\theta}|\varphi;\sigma)$; perturbation scale $\sigma_{1{:}M}$\
+**Procedure:**\
+1. $\quad$ For $m$ in $1{:} M$\
+2. $\quad\quad\quad$ $\boldsymbol{\theta}^{F,m}_{0,j}\sim h_0(\ \cdot \ |\bm{\theta}^{m-1}_{j}; \sigma_m)$ for $j$ in $1{:} J$\
+3. $\quad\quad\quad$ $\bm{X}_{0,j}^{F,m}\sim f_{\bm{X}_0}(\ \cdot \ ; \bm{\theta}^{F,m}_{0,j})$ for $j$ in $1{:} J$\
+4. $\quad\quad\quad$ For $n$ in $1{:} N$\
+5. $\quad\quad\quad\quad\quad$ $\bm{\theta}^{P,m}_{n,j}\sim h_n(\ \cdot \ |\bm{\theta}^{F,m}_{n-1,j},\sigma_m)$ for $j$ in $1{:} J$\
+6. $\quad\quad\quad\quad\quad$ $\bm{X}_{n,j}^{P,m}\sim f_{\bm{X}_n|\bm{X}_{n-1}}(\ \cdot \  |\bm{X}^{F,m}_{n-1,j}; \bm{\theta}^{P,m}_{n,j})$ for $j$ in $1{:} J$\
+7. $\quad\quad\quad\quad\quad$ $w_{n,j}^m = f_{\bm{Y}_n|\bm{X}_n}(\bm{y}^*_n| \bm{X}_{n,j}^{P,m} ; \bm{\theta}^{P,m}_{n,j})$ for $j$ in $1{:} J$\
+8. $\quad\quad\quad\quad\quad$ Draw $k_{1{:}J}$ with $P(k_j=i)=  w_{n,i}^m\Big/\sum_{u=1}^J w_{n,u}^m$\
+9. $\quad\quad\quad\quad\quad$ $\bm{\theta}^{F,m}_{n,j}=\bm{\theta}^{P,m}_{n,k_j}$ and $\bm{X}^{F,m}_{n,j}=\bm{X}^{P,m}_{n,k_j}$ for $j$ in $1{:} J$\
+10. $\quad\quad\quad$ End For\
+11. $\quad\quad\quad$ Set $\bm{\theta}^{m}_{j}=\bm{\theta}^{F,m}_{N,j}$ for $j$ in $1{:} J$\
+12. $\quad$ End For\
+**Output:** Final parameter swarm, $\{\bm{\theta}^M_j, j=1,\dots,J\}$ \
+In the algorithm the initial parameter values are perturbed (line 2) by a perturbation density where its standard deviation $\sigma_m$ is a decreasing function of $m$. The Markov process is initialized (line 3) as a draw from the initial density dependent on the proposed parameter vector. What follows in lines 4 - 10 is a particle filter as described in the section above with the only difference being that the parameter vector is stochastically perturbed in every iteration through the data. The $M$ loop repeats the particle filter with decreasing perturbations and throughout the algorithm the superscripts $F$ and $P$ denote filtering and prediction distribution, respectively. The algorithm returns the best guess of the parameter swarm after $M$ iterations. In the `R` package `pomp` the point estimate that the function `mif2` returns is the mean of the parameter swarm. To generate realizations from $f_{\bm{X}_n|\bm{X}_{n-1}}$ we can use the Gillespie algorithm [@gila]. Given the current state of the system, the algorithm simulates the waiting time of the next event and updates the number of individuals in each compartment and the overall time is incremented accordingly. The whole procedure is repeated until a pre-defined stopping time is reached. In the case of constant per capita transition rates, the simulation of every individual event gives us a complete and detailed history of the process, however, it is usually a very time-consuming task for systems with large population and state space, because of the enormous number of events that can take place. As a way to speed up such simulations an approximate simulation method can be used, the so called *$\tau$-leap algorithm* which is based on the Gillespie algorithm [@gil]. The $\tau$-leap algorithm holds all rates constant in a small time interval $\tau$ and simulates the numbers of events that will occur in this interval, then updates all state variables, computes the transition rates again and the procedure is repeated until the stopping time is reached [@taul; @into]. Given the total number of jumps, the number of individuals leaving any of the states by any available route during a time interval $\tau$ is then multinomially distributed. Note that the simulation time step is not identical with the time scale the observation process evolves on. Both simulation algorithms are conveniently implemented in the `pomp` package as the functions `gillespie.sim` and `euler.sim`.
+
+# Iterated filtering for SIR model given incidence data {#examplesir}

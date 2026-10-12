@@ -8,116 +8,79 @@ pages: 13-15
 source_pdf: 2108.03616v2.pdf
 source_sha256: 63696ad045602440
 doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance mea sures associated with linear spaces."
+text_source: latex
+latex_prose_ratio: 0.93
+latex_coverage_ratio: 0.944
 ---
-An interesting additional fact about circuit imbalances is that the logarithm of the weights
-satisfy the triangle inequality; this was shown in [ DHNV20]. Here, we formulate a stronger
-version and give a simpler proof. Throughout, we assume that M(W ) is non-separable. Thus,
-according to Proposition 2.2, for any i,j ∈ [n] there is a circuit C∈C W with i,j ∈C.
-Theorem 3.21. LetW⊆ Rn be a linear space, and assume M(W ) is non-separable. Then,
-13
-(i) for any distinct i,j,k ∈ [n],KW
-ij ⊆K W
-ik·KW
-kj ; and
-(ii) for any distinct i,j,k ∈ [n], κij≤κik·κkj .
-The proof relies on the following technical lemma that analy zes the scenario when almost all
-vectors in W are elementary.
-Lemma 3.22. LetW⊆ Rn be a subspace s.t. M(W ) is non-separable.
-(i) If F(W ) ={g∈W\{ 0} : supp(g)⁄= [n]}, then KW
-ij ⊆K W
-ik·KW
-kj .
-(ii) If there exists g∈F (W ) such that |supp(g)| =n− 1, then
-F(W ) ={g∈W\{ 0} : supp(g)⁄= [n]} .
-Proof. For part (i), let δ∈K W
-ij and let g∈F (W ) such that {i,j}⊂ supp(g) and|gj/gi| =δ. If
-k∈ supp(g), then|gj/gi| =|gk/gi|·| gj/gk| shows the claim.
-Assume k /∈ supp(g), and pick h∈F (W ) such that {i,k}⊂ supp(h) and let ˜h =hjg−gjh;
-such a h exists by Proposition 2.2. Then ˜hj = 0 and ˜hk⁄= 0, so ˜h∈F (W ) by the assumption.
-If ˜hi = 0 then hjgi =gjhi and so{i,j,k}⊂ supp(h) with hj/hi =gj/gi, therefore h certiﬁes the
-statement as|hj/hi| =|hk/hi|·|hj/hk|. Otherwise, ˜hi⁄= 0 and h′ := ˜hig−gi˜h fulﬁlls h′∈F (W )
-as h′
-i = 0,{j,k}⊂ supp(h′). Now, using that ˜hj = 0 and gk = 0 it is easy to see that
-⏐⏐⏐⏐⏐
-˜hk
-˜hi
-·
-h′
-j
-h′
-k
-⏐⏐⏐⏐⏐ =
-⏐⏐⏐⏐⏐
-˜hk
-˜hi
-·
-˜higj−gi˜hj
-˜higk−gi˜hk
-⏐⏐⏐⏐⏐ =
-⏐⏐⏐⏐⏐
-˜hk
-˜hi
-·
-˜higj
-gi˜hk
-⏐⏐⏐⏐⏐ =
-⏐⏐⏐⏐
-gj
-gi
-⏐⏐⏐⏐. (4)
-We now turn to part (ii). Since there exists g ∈F (W ) with supp( g)⁄= n, we cannot have
-[n]∈C (W ).
-Let g∈F (W ) and i∈ [n] such that supp( g) = [n]\{i}. Consider any h∈ W , supp(h)⁄=
-supp(g) such that supp( h)⁄= [n]. If h /∈F (W ) there exists ℓ∈F (W ) such that supp( ℓ) ⊊
-supp(h). We must have i∈ supp(ℓ), since supp( ℓ)\ supp(g)⁄=∅. Then ˜h := hiℓ−ℓih fulﬁlls
-˜h⁄= 0, ˜hi = 0 and supp( ˜h) ⊊ [n]\{i}, a contradiction to g∈F (W ).
-Proof of Theorem 3.21. Part (ii) immediately follows from part (i), when taking C∈C W such
-that|gC
-j /gC
-i| =κij. We now prove part (i).
-Letδ∈K W
-ij andC∈C W such that i,j ∈C and for g =gC ,|gj/gi| =δ. If k∈C then clearly
-|gj/gi| =|gk/gi|·| gj/gk|∈K W
-ik·KW
-kj . Otherwise, let us select C ′∈C W such that i,k∈C ′, and
-|C∪C ′| is minimal. Let h =gC′
-and J =C ′\ (C∪{k}).
-Claim 3.22.1. Let G = (C∪C ′)\J. Then for the space ˆW := πG(WC∪C′) we have that
-gG,hG∈F ( ˆW ).
-Proof. The statement that hG∈F ( ˆW ) is clear as hC∪C′ ∈F (WC∪C′) and the variables we
-project out J fulﬁll J⊆ supp(h). For the statement on gG assume that there exists ˆg∈F ( ˆW )
-such that supp(ˆg) ⊊ supp(gG). Then there exists a lift ˜ g∈F (WC∪C′) of ˆg and some ℓ∈J such
-thatℓ∈ supp(˜g); note also that ˜gk =gk = 0. The vector ˆh :=hℓ˜g− ˜gℓh fulﬁlls ℓ /∈ supp(ˆh) and
-k∈ supp(ˆh).
-Now pick any circuit ˜h∈F ( ˆW ) such that k∈ supp(˜h) and supp( ˜h)⊆ supp(ˆh). Note that
-J∪{k} is independent, as J∪{k}⊆ C ′\{i} ⊊ C ′. Therefore, supp( ˜h)∩ supp(g)⁄=∅. Hence,
-forT :=C∪ supp(˜h) we have that M(WT ) is non-separable. In particular there exists a circuit
-h′∈F (WT ) such that i,k ∈ supp(h′). As T ⊆ (C∪C ′)\{ℓ}, this is a contradiction to the
-minimal choice of C ′.
-As supp(hD)∪ supp(gD) = D and supp(hD)∩ supp(gD)⁄=∅ we have that F(W ′) is non-
-separable. Further |supp(gD)| =|D|− 1, so we can apply Lemma 3.22 to learn δ∈K W ′
-ij ⊆
-KW ′
-ik ·KW ′
-kj . We can conclude δ∈K W
-ik·KW
-kj from Lemma 3.16.
-14
-If κW = 1, then the reverse inclusion KW
-ik ·K W
-kj ⊆K W
-ij trivially holds, since 1 is the only
-element in these sets. In Proposition 5.4, we give a necessary and suﬃcient condition for KW
-ij =
-KW
-ik·KW
-kj .
-One may ask under which circumstances an element α∈K W
-ik·KW
-kj is also contained in KW
-ij .
-We give a partial answer by stating a suﬃcient condition in a r estrictive setting. For a basis B
-ofM(W ), recallFB(W ⊥) from Lemma 3.12. Then, Lemmas 3.12 and 3.13 together imply:
-Lemma 3.23. Given a basis B ⊆ [n] inM(W ) and g,h ∈ FB ⊆ F(W ⊥) such that i ∈
-supp(g)∩B, j∈ supp(h)∩B and k∈ supp(g)∩ supp(h). Then |hj/hk|·| gk/gi|∈K W
-ij .
+\label{sec:triangle}
+An interesting additional fact about circuit imbalances is that the logarithm of the weights satisfy the triangle inequality; this was shown in \cite{DHNV20}. Here, we formulate a stronger version and give a simpler proof. Throughout, we assume that ${\cal M}(W)$ is non-separable. Thus, according to Proposition~\ref{prop:conn}, for any $i,j\in [n]$ there is a circuit $C\in \circuits_W$ with $i,j\in C$.
+\begin{theorem}\label{thm:imbalance_triangle_inequality}
+Let $W\subseteq \R^n$ be a linear space, and assume ${\cal M}(W)$ is non-separable. Then, 
+  \begin{enumerate}[(i)]
+  \item\label{i:set_triangle_inequality} for any distinct $i,j,k\in [n]$,
+  $\KK_{ij}^W \subseteq \KK_{ik}^W \cdot\KK_{kj}^W$; and 
+  \item \label{i:triangle} for any distinct $i,j,k\in [n]$,
+  $\Le_{ij} \leq \Le_{ik}\cdot \Le_{kj}$.
+  \end{enumerate}
+  \end{theorem}
+
+The proof relies on the following technical lemma that analyzes the scenario when almost all vectors in $W$ are elementary.
+\begin{lemma}
+  \label{lem:helper_triangle}
+   Let $W \subseteq \R^n$ be a subspace s.t.\ $\mathcal{M}(W)$ is non-separable. 
+  \begin{enumerate}[(i)]
+  \item \label{it:prop_helper_second} If $\EE(W) = \set{g \in W\setminus\{0\} : \supp(g)\neq [n]}$, then $\KK_{ij}^W \subseteq \KK_{ik}^W\cdot \KK_{kj}^W$. 
+    \item \label{it:prop_helper_first} If there exists $g \in \EE(W)$ such that $|\supp(g)| = n - 1$, then 
+$$\EE(W) = \set{g \in W\setminus\{0\} : \supp(g)\neq [n]}\, .$$
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+  For part \ref{it:prop_helper_second}, 
+let $\delta \in \KK_{ij}^W$ and let $g \in \EE(W)$ such that $\{i,j\} \subset \supp(g)$ and $|g_j/g_i| = \delta$. If $k \in \supp(g)$, then $|g_j/g_i| = |g_k/g_i| \cdot |g_j/g_k|$ shows the claim.
+
+Assume $k\notin \supp(g)$, and pick $h \in \EE(W)$ such that $\{i,k\} \subset \supp(h)$ and let $\tilde h = h_jg - g_jh$; such a $h$ exists by Proposition~\ref{prop:conn}. Then $\tilde h_j = 0$ and $\tilde h_k \neq 0$, so $\tilde h \in \EE(W)$ by the assumption. If $\tilde h_i = 0$ then $h_jg_i = g_jh_i$ and so $\{i,j,k\} \subset \supp(h)$ with $h_j/h_i = g_j/g_i$, therefore $h$ certifies the statement as $|h_j/h_i| = |h_k/h_i| \cdot |h_j/h_k|$.
+Otherwise, $\tilde h_i \neq 0$ and $h':= \tilde h_ig - g_i\tilde h$ fulfills $h' \in \EE(W)$ as $h'_i = 0$, $\{j, k\} \subset \supp(h')$.
+Now, using that $\tilde h_j = 0$ and $g_k = 0$ it is easy to see that
+\begin{equation}
+  \left|\frac{\tilde h_k}{\tilde h_i}\cdot \frac{h'_j}{h'_k} \right|
+  = \left| \frac{\tilde h_k}{\tilde h_i}\cdot \frac{\tilde h_i g_j - g_i \tilde h_j}{\tilde h_i g_k - g_i\tilde h_k} \right|
+  =  \left| \frac{\tilde h_k}{\tilde h_i}\cdot \frac{\tilde h_i g_j}{g_i\tilde h_k} \right|
+   = \left| \frac{g_j}{g_i} \right| \, .
+\end{equation}
+We now turn to part \ref{it:prop_helper_first}. Since there exists $g \in \EE(W)$ with $\supp(g) \neq n$, we cannot have $[n] \in \circuits(W)$. 
+
+Let $g \in \EE(W)$ and $i \in [n]$ such that $\supp(g) = [n] \setminus \set{i}$. Consider any $h \in W$, $\supp(h) \neq \supp(g)$ such that $\supp(h) \neq [n]$. If $h \notin \EE(W)$ there exists $\ell \in \EE(W)$ such that $\supp(\ell) \subsetneq \supp(h)$. We must have $i \in \supp(\ell)$, since $\supp(\ell)\setminus \supp(g)\neq \emptyset$. Then $\tilde h: = h_i\ell - \ell_ih$ fulfills $\tilde h\neq 0$, $\tilde h_i = 0$ and $\supp(\tilde h) \subsetneq [n]\setminus \set{i}$, a contradiction to $g \in \EE(W)$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:imbalance_triangle_inequality}]
+  \label{proof:lem:imbalance_triangle_inequality}
+Part \ref{i:triangle} immediately follows from part \ref{i:set_triangle_inequality}, when taking
+ $C \in \circuits_W$ such that $|g_j^C/g_i^C| = \Le_{ij}$. We now prove part \ref{i:set_triangle_inequality}.
+ 
+ Let $\delta \in \KK_{ij}^W$ and $C\in \circuits_W$ such that $i,j\in C$ and for $g=g^C$, $|g_j/g_i| = \delta$. If $k \in C$ then clearly $|g_j/g_i| = |g_k/g_i| \cdot |g_j/g_k| \in \KK_{ik}^W\cdot \KK_{kj}^W$. Otherwise,
+ let us select $C'\in \circuits_W$ such that $i,k\in C'$, and $|C\cup C'|$ is minimal. Let $h=g^{C'}$ and $J=C'\setminus (C\cup\{k\})$.
+ 
+\begin{claim}
+Let $G = (C \cup C') \setminus J$. Then for the space
+$\hat W := \pi_{G}(W_{C \cup C'})$ we have that $g_G, h_G \in \EE(\hat W)$. 
+\end{claim}
+\begin{proof}
+The statement that $h_G \in \EE(\hat W)$ is clear as $h_{C \cup C'} \in \EE (W_{C \cup C'})$ and the variables we project out $J$ fulfill $J \subseteq \supp(h)$.
+For the statement on $g_G$ assume that there exists $\hat g \in \EE(\hat W)$ such that $\supp(\hat g) \subsetneq \supp(g_G)$. Then there exists a lift  $\tilde g \in \EE(W_{C \cup C'})$ of $\hat g$ and some $\ell \in J$ such that $\ell \in \supp(\tilde g)$; note also that $\tilde g_k = g_k = 0$. The vector $\hat h := h_\ell \tilde g - \tilde g_\ell h$ fulfills $\ell \notin \supp(\hat h)$ and $k \in \supp(\hat h)$.
+
+Now pick any circuit $\tilde h \in \EE(\hat W)$ such that $k \in \supp(\tilde h)$ and $\supp(\tilde h) \subseteq \supp(\hat h)$. 
+Note that $J \cup \{k\}$ is independent, as $J \cup \{k\} \subseteq C' \setminus \{i\} \subsetneq C'$. Therefore, $\supp(\tilde h) \cap \supp(g) \neq \emptyset$.
+Hence, for $T := C \cup \supp(\tilde h)$ we have that $\mathcal M(W_T)$ is non-separable. In particular there exists a circuit $h' \in \EE(W_T)$ such that $i,k \in \supp(h')$. As $T \subseteq (C \cup C')\setminus \{\ell\}$, this is a contradiction to the minimal choice of $C'$.  
+\end{proof}
+As $\supp(h_D) \cup \supp(g_D) = D$ and $\supp(h_D) \cap \supp(g_D) \neq \emptyset$ we have that $\EE(W')$ is non-separable. Further $|\supp(g_D)| = |D| - 1$, so we can apply Lemma~\ref{lem:helper_triangle} to learn $\delta \in \KK_{ij}^{W'} \subseteq \KK_{ik}^{W'} \cdot \KK_{kj}^{W'}$. We can conclude   $\delta \in \KK_{ik}^W \cdot \KK_{kj}^W$ from Lemma~\ref{lem:circuit_minors}.
+\end{proof}
+
+If $\Le_W=1$, then the reverse inclusion 
+$ \KK_{ik}^W \cdot \KK_{kj}^W \subseteq \KK_{ij}^W$ trivially holds, since 1 is the only element in these sets. In Proposition~\ref{prop:reverse-kappa-1}, we give a necessary and sufficient condition for $\KK_{ij}^W= \KK_{ik}^W \cdot \KK_{kj}^W$.
+
+One may ask under which circumstances an element $\alpha \in \KK_{ik}^W\cdot \KK_{kj}^W$ is also contained in $\KK_{ij}^W$. We give a partial answer by stating a sufficient condition in a  restrictive setting. For a basis $B$ of ${\cal M}(W)$, recall $\EE_B(W^\perp)$ from Lemma~\ref{lem:basis_circuits}. Then, Lemmas~\ref{lem:basis_circuits} and \ref{lem:dual-circuit} together imply:
+
+\begin{lemma}
+Given a basis $B \subseteq [n]$ in $\mathcal{M}(W)$ and $g,h \in \EE_B \subseteq \EE(W^\perp)$ such that $i \in \supp(g) \cap B$, $j \in \supp(h) \cap B$ and $k \in \supp(g) \cap \supp(h)$.
+Then $|h_j/h_k|\cdot |g_k/g_i| \in \KK_{ij}^W$.
+\end{lemma}

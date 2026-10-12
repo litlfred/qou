@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2507.19896v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Generalized Markov traces and Jucys-Murphy elements (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.19896v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2507.19896&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2507.19896v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2507.19896v1",
+    "content_type": "application/gzip",
+    "sha256": "69a25ab1754789d2d05eab88b8a22ebe089c646f2ad524a82cdc896f6336a16a",
+    "bytes": 13711,
+    "fetched": "2026-10-10T15:21:32+00:00",
+    "files": [
+      {
+        "path": "source/files/paper.bbl",
+        "role": "bbl",
+        "sha256": "eb9cc0e80fb39674a559d5ffd343a96cd773d738782fa25913faf1b2599bf3dc",
+        "bytes": 4723
+      },
+      {
+        "path": "source/files/paper.tex",
+        "role": "tex",
+        "sha256": "3d2d3409a0d7addffafac3f41cf841157c2cf2271151bd2dd106aaeb7eeaffa5",
+        "bytes": 36797
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -5,7 +5,11 @@
   "file": "1101.0956v3.pdf",
   "sha256": "28fffdb404e885017ea586c077b33fc65bb6062cdde667887254fb33ae323642",
   "bytes": 352177,
-  "pages": 44
+  "pages": 44,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -28,9 +32,9 @@
   "title_lines": [
    "ALGEBRAIC CONSTRUCTIONS",
    "IN THE CATEGORY OF VECTOR BUNDLES",
-   "CONSTANTIN M. ARCUS ¸"
+   "CONSTANTIN M. ARCUS \u00b8"
   ],
-  "title_prev": "CONSTANTIN M. ARCUS ¸"
+  "title_prev": "CONSTANTIN M. ARCUS \u00b8"
  },
  "toc": [
   {
@@ -197,6 +201,53 @@
   "likely_scanned": false,
   "toc_entries": 15,
   "sections": 5,
-  "chars_total": 63505
+  "chars_total": 63505,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Algebraic_constructions_in_the_category_of_vector_bundles.tex",
+   "tex_sections": 6,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-31-the-pull-back-lie-algebroid-of-a-generalized",
+     "title": "The pull-back Lie algebroid of a generalized Lie algebroid",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-references",
+     "title": "References",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-2-the-category-of-generalized-lie-algebroids",
+     "title": "The category of generalized Lie algebroids",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-6-torsion-and-curvature-forms-identities-of-cart",
+     "title": "Torsion and curvature forms. Identities of Cartan and Bianchi type",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

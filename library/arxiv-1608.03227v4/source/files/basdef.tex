@@ -1,0 +1,538 @@
+%%%%%%%%%% test for Ohtsuki %%%%%5
+%\usepackage{amsart}
+%%%%%%%%%% test for Ohtsuki %%%%%%
+\topmargin=0in                          % top margin (less 1")
+\headheight=0in                         % height of heading
+\headsep=0in                            % separation of heading from body
+\textheight=9in                         % height of body
+%\footheight=3ex                         % height of foot
+\footskip=4ex                           % between bottoms of body & foot
+\textwidth=6in                          % width of body
+\parskip=\medskipamount                 % space between paragraphs
+\abovedisplayskip=1em plus.3em minus.5em        % space above equation (either)
+\belowdisplayskip=1em plus.3em minus.5em        % " below
+\abovedisplayshortskip=.5em plus.2em minus.4em  % " above when no overlap
+\belowdisplayshortskip=.5em plus.2em minus.4em  % " below
+\def\baselinestretch{1.2}       % magnification for line spacing
+\thicklines                     % thick straight lines for pictures
+\hsize=6in                      % " (TeX)
+\lineskip=0pt                   % minimum box separation (TeX)
+
+%\def\Cite#1{\cite{#1}}         % This for Nuclear Physics
+%\def\Cite#1{{$^{\hbox{\scriptsize \cite{#1}}}$}} % This for Physics Review
+%
+%
+%\def\eqn#1{Eq.(\ref{#1})}
+%\def\ordless{{\lower2mm\hbox{$\,\stackrel{\textstyle <}{\sim}\, $}}}
+%\def\ordgt{{\lower2mm\hbox{$\,\stackrel{\textstyle >}{\sim}\, $}}}
+%\def\vev#1{\left\langle #1\right\rangle}
+\newcommand{\bim}[6]{\bibitem{#1}#2, {\em #3\/}$\;${\bf
+#4}$\;$(#5)$\;${#6}.}
+%\newcommand{\bimn}[7]{\bibitem{#1}#2,
+%{\em #3},
+%{ #4}$\;${\bf
+%#5}$\;$(#6)$\;${#7}.}
+
+\newcommand{\bimn}[7]{\bibitem{#1}#2,
+{\em #3}, { #4}\hspace{0.25em}{\bf
+#5}\hspace{0.25em}(#6)\hspace{0.25em}{#7}.}
+
+\newcommand{\bimna}[8]{\bibitem{#1}#2,
+{\em #3}, { #4}\hspace{0.25em}{\bf
+#5}\hspace{0.25em}(#6)\hspace{0.25em}{#7}\hspace{0.25em}(#8).}
+
+
+%\newcommand{\bimn}[7]{\bibitem{#1}#2,
+%{\em #3},
+%{ #4} {\bf #5}$\;(#6)\;{#7}$.}
+
+
+% \def\df{{d}}                         %\partial}}
+%\def\CEDMb{{{\cal D}^c_b}}
+%
+
+
+
+% Poor man's Blackboard Bold characters often used :
+\def\inbar{\vrule height1.5ex width.4pt depth0pt}
+%\def\IB{\relax{\rm I\kern-.18em B}}
+\def\IC{\relax\,\hbox{$\inbar\kern-.3em{\rm C}$}}
+%\def\ID{\relax{\rm I\kern-.18em D}}
+%\def\IE{\relax{\rm I\kern-.18em E}}
+%\def\IF{\relax{\rm I\kern-.18em F}}
+%\def\IG{\relax\,\hbox{$\inbar\kern-.3em{\rm G}$}}
+%\def\IH{\relax{\rm I\kern-.18em H}}
+%\def\II{\relax{\rm I\kern-.18em I}}
+%\def\IK{\relax{\rm I\kern-.18em K}}
+%\def\IL{\relax{\rm I\kern-.18em L}}
+%\def\IM{\relax{\rm I\kern-.18em M}}
+\def\IN{\relax{\rm I\kern-.18em N}}
+%\def\IO{\relax\,\hbox{$\inbar\kern-.3em{\rm O}$}}
+%\def\IP{\relax{\rm I\kern-.18em P}}
+\def\IQ{\relax\,\hbox{$\inbar\kern-.3em{\rm Q}$}}
+\def\IR{\relax{\rm I\kern-.18em R}}
+\def\ZZ{\relax{\sf Z\kern-.4em Z}}
+%\def\fnote#1#2{\begingroup\def\thefootnote{#1}\footnote{#2}\addtocounter
+%               {footnote}{-1}\endgroup}
+%\def\tabroom{\hbox to0pt{\phantom{\Huge A}\hss}}
+%\def\notin{\ \hbox{{$\in$}\kern-.51em\hbox{/}}}
+\def\a{\alpha} \def\b{\beta}   \def\e{\epsilon} \def\g{\gamma}
+\def\G{\Gamma} \def\l{\lambda} \def\om{\omega}
+\def\Om{\Omega}  \def\s{\sigma} \def\th{\theta}
+\def\cA{{\cal A}} \def\cB{{\cal B}} \def\cC{{\cal C}} \def\cD{{\cal D}}
+\def\cE{{\cal E}}
+\def\cF{{\cal F}} \def\cG{{\cal G}} \def\cH{{\cal H}} \def\cI{{\cal I}}
+\def\cJ{{\cal J}} \def\cK{{\cal K}} \def\cL{{\cal L}} \def\cM{{\cal M}}
+\def\cN{{\cal N}} \def\cO{{\cal O}} \def\cP{{\cal P}} \def\cQ{{\cal Q}}
+\def\cR{{\cal R}} \def\cS{{\cal S}} \def\cT{{\cal T}} \def\cV{{\cal V}}
+%\def\phiti{\tilde {\Phi}}
+%\def\bJ{\bar J}  \def\bn{\bar n} \def\bQ{\bar Q}
+%\def\bt{\bar t} \def\bz{\bar z}
+%\def\bPhi{\bar \Phi} \def\bth{\bar \theta}
+%\def\cym{Calabi--Yau manifold}
+%\def\cys{Calabi--Yau manifolds}
+%\def\cy{Calabi--Yau}
+%\def\del{\partial}
+\def\etc{{\it etc\/}}
+%\def\0{\over } \def\1{\vec }
+%\let\qqd=\qquad \def\qqqd{\qquad\qquad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%ENVIRONMENTS%
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}{Proposition}[section]
+%\newtheorem{corollary}{Corollary}[section]
+%\newtheorem{conjecture}{Conjecture}[section]
+%\newtheorem{lemma}{Lemma}[section]
+%\newtheorem{definition}{Definition}[section]
+%\newtheorem{remark}{Remark}[section]
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newtheorem{crl}{Corollary of Conjecture~4.1}
+
+
+%
+\marginparwidth=24pt \headsep=2em \headheight=1em
+\textheight=8.7in \hoffset=-.7in \textwidth=6.5in
+
+
+
+%%%%%%%%%%%% BEGINNING OF DRAFT ... %%%%%%%%%%%%%
+
+\catcode`\@=11
+
+\newif\if@fewtab\@fewtabtrue
+
+%%%%%%%%%%%%                        %%%%%%%%%%%%%
+
+\catcode`\@=11
+
+\newif\if@fewtab\@fewtabtrue
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%%% draftdate %%%%%
+%%%%%%%%%%%%%%%%%%%%%
+{\count255=\time\divide\count255 by 60
+\xdef\hourmin{\number\count255} \multiply\count255
+by-60\advance\count255 by\time
+\xdef\hourmin{\hourmin:\ifnum\count255<10 0\fi\the\count255}}
+\def\ps@draft{\let\@mkboth\@gobbletwo
+    \def\@oddhead{}
+    \def\@oddfoot
+%       {\hbox to 7 cm{$\scriptstyle Draft\ version:\ \draftdate$
+%       {\hbox to 7 cm{\footnotesize {\em Draft version:} \draftdate
+      {\hbox to 7 cm{\footnotesize {\em Draft of \jobname:} \draftdate
+       \hfil}\hskip -7cm\hfil\rm\thepage \hfil}
+    \def\@evenhead{}\let\@evenfoot\@oddfoot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% macros for labeling of formulae %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\ceqno{\global\@fewtabfalse
+    \ifcase\@eqcnt \def\@tempa{& & &}\or \def\@tempa{& &}
+      \or \def\@tempa{&}
+      \or\def\@tempa{}\fi\@tempa
+{\rm(\theequation)}}
+
+\def\aeqno#1{\global\@fewtabfalse
+    \ifcase\@eqcnt \def\@tempa{& & &}\or \def\@tempa{& &}
+      \or \def\@tempa{&}
+      \or\def\@tempa{}\fi\@tempa
+{\rm(\theequation,#1)}}
+
+\def\label#1{\ifnum\draftcontrol=1
+ \global\def\draftnote{$\scriptstyle #1$}\fi
+ \@bsphack\if@filesw {\let\thepage\relax
+   \def\protect{\noexpand\noexpand\noexpand}%
+\xdef\@gtempa{\write\@auxout{\string
+      \newlabel{#1}{{\@currentlabel}{\thepage}}}}}\@gtempa
+   \if@nobreak \ifvmode\nobreak\fi\fi\fi
+  \@esphack}
+
+\def\alabel#1#2{\label{#1}\global\@fewtabfalse
+    \ifcase\@eqcnt \def\@tempa{& & &}\or \def\@tempa{& &}
+      \or \def\@tempa{&}
+      \or\def\@tempa{}\fi\@tempa
+{\hbox to 3cm{\phantom{\rm(\theequation,#2)} \draftnote
+\hfil}\hskip -3cm {\rm(\theequation,#2)}}}
+
+\def\clabel#1{\label{#1}\global\@fewtabfalse
+    \ifcase\@eqcnt \def\@tempa{& & &}\or \def\@tempa{& &}
+      \or \def\@tempa{&}
+      \or\def\@tempa{}\fi\@tempa
+{\hbox to 3cm{\phantom{\rm(\theequation)} \draftnote \hfil}\hskip
+-3cm{\rm(\theequation)}}}
+
+\def\eqnarray{\def\draftnote{{}}\global\@fewtabtrue
+\stepcounter{equation}\let\@currentlabel=\theequation
+\global\@eqnswtrue
+\global\@eqcnt\z@\tabskip\@centering\let\\=\@eqncr
+$$\halign to \displaywidth\bgroup\@eqnsel\hskip\@centering\@eqcnt\z@
+  $\displaystyle\tabskip\z@{##}$&\global\@eqcnt\@ne
+  \hskip 1\arraycolsep \hfil$\displaystyle{##}$\hfil
+  &\global\@eqcnt\tw@ \hskip 1\arraycolsep
+$\displaystyle\tabskip\z@{##}$ \hfil
+\tabskip\@centering&\global\@eqcnt\thr@@\llap{##}\tabskip\z@ \cr}
+
+\def\endeqnarray{\@@eqncr\egroup
+      \global\advance\c@equation\m@ne$$\global\@ignoretrue}
+
+\def\@eqnnum{\hbox to 3cm{\phantom{\rm(\theequation)} \draftnote
+                         \hfil}\hskip -3cm {\rm(\theequation)}}
+
+\def\@@eqncr{\let\@tempa\relax
+    \ifcase\@eqcnt \def\@tempa{& & &}\or \def\@tempa{& &}
+      \or \def\@tempa{&}
+      \or\def\@tempa{}
+\fi\@tempa \if@eqnsw \if@fewtab\@eqnnum\fi
+\stepcounter{equation}\fi\global
+\@eqnswtrue\global\@eqcnt\z@\global\@fewtabtrue\cr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% labels in references %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\draftcite#1{\ifnum\draftcontrol=1#1\else{}\fi}
+
+\def\@lbibitem[#1]#2{\item{}\hskip -3cm \hbox to 2cm
+{\hfil$\scriptstyle\draftcite{#2}$}\hskip
+1cm[\@biblabel{#1}]\if@filesw
+     {\def\protect##1{\string ##1\space}\immediate
+      \write\@auxout{\string\bibcite{#2}{#1}}}\fi\ignorespaces}
+
+\def\@bibitem#1{\item\hskip -3cm \hbox to 2cm
+{\hfil $\scriptstyle\draftcite{#1}$}\hskip 1cm \if@filesw
+\immediate\write\@auxout
+       {\string\bibcite{#1}{\the\value{\@listctr}}}\fi\ignorespaces}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% numbering by sections %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\nsection#1{\section{#1}\setcounter{equation}{0}}
+%\setcounter{figure}{0}
+%\def\nnsection#1{\section*{#1}\setcounter{equation}{0}}
+
+%\def\nappendix#1{\vskip 1cm\no{\bf Appendix #1}\def\thesection{#1}
+%\setcounter{equation}{0}}
+\def\nappendix#1{\def\thesection{A#1}\section*{Appendix #1}
+\def\theequation{{A#1.\arabic{equation}}}
+\def\theproposition{{A#1.\arabic{proposition}}}
+\setcounter{equation}{0} \setcounter{proposition}{0}}
+
+\def\nappendixe{\def\thesection{A}\section*{Appendix }
+\def\theequation{{A.\arabic{equation}}}
+\def\theproposition{{A.\arabic{proposition}}}
+\setcounter{equation}{0} \setcounter{proposition}{0}}
+
+%\def\nappendixsp#1#2{\def\thesection{A#1}\section*{Appendix #2}
+%\def\theequation{{A#1.\arabic{equation}}}
+%\def\theproposition{{A#1.\arabic{proposition}}}
+%\setcounter{equation}{0}
+%\setcounter{proposition}{0}}
+
+\def\nappendixsp#1#2{\def\thesection{A#1}\section*{Appendix #2}
+\def\theequation{{A#1.\arabic{equation}}}
+\def\thetheorem{{A#1.\arabic{theorem}}}
+\setcounter{equation}{0} \setcounter{theorem}{0}}
+
+\def\thecrl{{}}
+
+%\def\thefigure{{\roman{figure}}}
+
+%%%%%%%%%%%%%%%% MY BREAK %%%%%%%%%%%%%
+%\newfam\dlfam \def\dl{\fam\dlfam\tendl} % \dl is double line
+%\textfont\dlfam=\tendl \scriptfont\dlfam=\sevendl
+%\scriptscriptfont\dlfam=\fivedl
+%\newfam\glfam \def\gl{\fam\glfam\tengl} % \gl is gothic letters
+%\textfont\glfam=\tengl \scriptfont\glfam=\sevengl
+%\scriptscriptfont\glfam=\fivegl
+
+
+\def\draftdate{\number\month/\number\day/\number\year\ \ \ \hourmin }
+\def\draft{\pagestyle{draft}\thispagestyle{draft}
+\global\def\draftcontrol{1}} \global\def\draftcontrol{0}
+\catcode`\@=12
+
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\def\theequation{{\thesection.\arabic{equation}}}
+%\def\theequation{{\arabic{equation}}}
+%\renewcommand{\thefigure}{\arabic{figure}}
+
+%%%%%%%%%%%% THE END OF DRAFT ... %%%%%%%%%%%%%%%
+
+
+
+% equation numbering
+%\def\theequation{\thesection.\arabic{equation}}
+%\catcode`@=11
+%\@addtoreset{equation}{section}
+%\catcode`@=12
+%\def\nsection{\section}
+%\def\nnsection{\section*}
+
+%
+
+%SHORTCUT DEFINITIONS
+\def\qq{\begin{eqnarray}}
+\def\qqq{\end{eqnarray}}
+\def\ee{\begin{eqnarray}}
+\def\eee{\end{eqnarray}}
+\def\rx#1{~(\ref{#1})}
+\def\rxw#1{(\ref{#1})}
+\def\ex#1{eq.\hspace*{-3pt}\rx{#1}}
+\def\eex#1{eqs.\hspace*{-3pt}\rx{#1}}
+\def\cx#1{~\cite{#1}}
+\def\rw#1{~\ref{#1}}
+
+\def\xlee#1{ \begin{eqnarray} \label{#1} }
+\def\xeee{ \end{eqnarray} }
+\def\ylee#1{ \begin{eqnarray}\nonumber }
+\def\yeee{ \end{eqnarray} }
+\def\zlee#1{ \begin{displaymath} }
+\def\zleee{ \end{displaymath} }
+\def\wlee#1{ $ }
+\def\weee{ $ }
+
+\def\fg#1{Fig.~\ref{#1}}
+\def\fgs#1{Figs.~\ref{#1}}
+\def\tb#1{Table~\ref{#1}}
+
+
+
+%%%%%%%%%%% HYPHENATION %%%%%%%%%%%%
+\hyphenation{Rei-de-mei-ster} \hyphenation{Re-she-ti-khin}
+\hyphenation{com-po-nent}
+%%%%%%%%%%% END OF HYPHENATION %%%%%%%%
+
+%%%%%%%%%%%%%%  MY DEFINITIONS %%%%%%%%%%%%%%%%
+\newlength{\shiftwidth}
+\addtolength{\shiftwidth}{\textwidth}
+\addtolength{\shiftwidth}{0.7cm}
+\def\shift#1{&&\hbox to \shiftwidth{\hfill $\displaystyle#1$}}
+\newlength{\sshiftwidth}
+\addtolength{\sshiftwidth}{\textwidth}
+\addtolength{\sshiftwidth}{-0.7cm}
+\def\sshift#1{\lefteqn{\hbox to
+\sshiftwidth{\hfill$\displaystyle#1$}}}
+%\def\llefteqn#1{\hbox to 0pt{$\displaystyle #1 $\hss}\hspace*{1in}}
+
+%%%%%%%%%%%%%%%% BEGINNING OF RELEVANT DEFINITIONS %%%%%%%%%%%%%%5
+%%%%%%%%%%%%%% END OF RELEVANT DEFINITIONS %%%%%%%%%%%%%
+
+%%%%%%%%% borrowed from A. Vaintrob %%%%%%%%%
+
+%
+% Templates for drawing Chord Diagrams  (jmf, 9/6/95)
+%
+%
+%
+%\newcommand{\qbezier}{\bezier{120}}
+\def\qbezier{\bezier{120}}
+\setlength{\unitlength}{20pt}
+%
+\def\DottedCircle{
+\bezier{4}(0.966,-0.259)(1.04,0)(0.966,0.259)
+\bezier{4}(0.966,0.259)(0.897,0.518)(0.707,0.707)
+\bezier{4}(0.707,0.707)(0.518,0.897)(0.259,0.966)
+\bezier{4}(0.259,0.966)(0,1.04)(-0.259,0.966)
+\bezier{4}(-0.259,0.966)(-0.518,0.897)(-0.707,0.707)
+\bezier{4}(-0.707,0.707)(-0.897,0.518)(-0.966,0.259)
+\bezier{4}(-0.966,0.259)(-1.04,0)(-0.966,-0.259)
+\bezier{4}(-0.966,-0.259)(-0.897,-0.518)(-0.707,-0.707)
+\bezier{4}(-0.707,-0.707)(-0.518,-0.897)(-0.259,-0.966)
+\bezier{4}(-0.259,-0.966)(0,-1.04)(0.259,-0.966)
+\bezier{4}(0.259,-0.966)(0.518,-0.897)(0.707,-0.707)
+\bezier{4}(0.707,-0.707)(0.897,-0.518)(0.966,-0.259) }
+%
+\def\FullCircle{
+\thicklines \put(0,0){\circle{2}} }
+%
+% now we put some endpoints
+%
+\def\Endpoint[#1]{
+\ifcase#1 \put(1,0){\circle*{0.15}}
+\or\put(0.866,0.5){\circle*{0.15}}
+\or\put(0.5,0.866){\circle*{0.15}} \or\put(0,1){\circle*{0.15}}
+\or\put(-0.5,0.866){\circle*{0.15}}
+\or\put(-0.866,0.5){\circle*{0.15}} \or\put(-1,0){\circle*{0.15}}
+\or\put(-0.866,-0.5){\circle*{0.15}}
+\or\put(-0.5,-0.866){\circle*{0.15}} \or\put(0,-1){\circle*{0.15}}
+\or\put(0.5,-0.866){\circle*{0.15}}
+\or\put(0.866,-0.5){\circle*{0.15}} \fi}
+%
+% smooth arcs
+%
+\def\Arc[#1]{
+\thicklines         % this can be changed!
+\ifcase#1 \bezier{25}(0.966,-0.259)(1.04,0)(0.966,0.259) \or
+\bezier{25}(0.966,0.259)(0.897,0.518)(0.707,0.707) \or
+\bezier{25}(0.707,0.707)(0.518,0.897)(0.259,0.966) \or
+\bezier{25}(0.259,0.966)(0,1.04)(-0.259,0.966) \or
+\bezier{25}(-0.259,0.966)(-0.518,0.897)(-0.707,0.707) \or
+\bezier{25}(-0.707,0.707)(-0.897,0.518)(-0.966,0.259) \or
+\bezier{25}(-0.966,0.259)(-1.04,0)(-0.966,-0.259) \or
+\bezier{25}(-0.966,-0.259)(-0.897,-0.518)(-0.707,-0.707) \or
+\bezier{25}(-0.707,-0.707)(-0.518,-0.897)(-0.259,-0.966) \or
+\bezier{25}(-0.259,-0.966)(0,-1.04)(0.259,-0.966) \or
+\bezier{25}(0.259,-0.966)(0.518,-0.897)(0.707,-0.707) \or
+\bezier{25}(0.707,-0.707)(0.897,-0.518)(0.966,-0.259) \fi}
+%
+% dotted arcs
+%
+\def\DottedArc[#1]{
+\ifcase#1 \bezier{4}(0.966,-0.259)(1.04,0)(0.966,0.259) \or
+\bezier{4}(0.966,0.259)(0.897,0.518)(0.707,0.707) \or
+\bezier{4}(0.707,0.707)(0.518,0.897)(0.259,0.966) \or
+\bezier{4}(0.259,0.966)(0,1.04)(-0.259,0.966) \or
+\bezier{4}(-0.259,0.966)(-0.518,0.897)(-0.707,0.707) \or
+\bezier{4}(-0.707,0.707)(-0.897,0.518)(-0.966,0.259) \or
+\bezier{4}(-0.966,0.259)(-1.04,0)(-0.966,-0.259) \or
+\bezier{4}(-0.966,-0.259)(-0.897,-0.518)(-0.707,-0.707) \or
+\bezier{4}(-0.707,-0.707)(-0.518,-0.897)(-0.259,-0.966) \or
+\bezier{4}(-0.259,-0.966)(0,-1.04)(0.259,-0.966) \or
+\bezier{4}(0.259,-0.966)(0.518,-0.897)(0.707,-0.707) \or
+\bezier{4}(0.707,-0.707)(0.897,-0.518)(0.966,-0.259) \fi}
+%
+% chords
+%
+\def\Chord[#1,#2]{
+\thinlines \ifnum#1>#2\Chord[#2,#1] \else\ifnum#1<#2 \ifcase#1
+\ifcase#2 \or\qbezier(1,0)(0.516,0.138)(0.866,0.5)
+\or\qbezier(1,0)(0.45,0.26)(0.5,0.866)
+\or\qbezier(1,0)(0.327,0.327)(0,1)
+\or\qbezier(1,0)(0.179,0.311)(-0.5,0.866)
+\or\qbezier(1,0)(0.0536,0.2)(-0.866,0.5) \or\put(1, 0){\line(-2,
+0){2}} \or\qbezier(1,0)(0.0536,-0.2)(-0.866,-0.5)
+\or\qbezier(1,0)(0.179,-0.311)(-0.5,-0.866)
+\or\qbezier(1,0)(0.327,-0.327)(0,-1)
+\or\qbezier(1,0)(0.45,-0.26)(0.5,-0.866)
+\or\qbezier(1,0)(0.516,-0.138)(0.866,-0.5) \fi \or\ifcase#2\or
+\or\qbezier(0.866,0.5)(0.378,0.378)(0.5,0.866)
+\or\qbezier(0.866,0.5)(0.26,0.45)(0,1)
+\or\qbezier(0.866,0.5)(0.12,0.446)(-0.5,0.866)
+\or\qbezier(0.866,0.5)(0,0.359)(-0.866,0.5)
+\or\qbezier(0.866,0.5)(-0.0536,0.2)(-1,0) \or\put(0.866,
+0.5){\line(-5, -3){1.73}}
+\or\qbezier(0.866,0.5)(0.146,-0.146)(-0.5,-0.866)
+\or\qbezier(0.866,0.5)(0.311,-0.179)(0,-1)
+\or\qbezier(0.866,0.5)(0.446,-0.12)(0.5,-0.866)
+\or\qbezier(0.866,0.5)(0.52,0)(0.866,-0.5) \fi \or\ifcase#2\or\or
+\or\qbezier(0.5,0.866)(0.138,0.516)(0,1)
+\or\qbezier(0.5,0.866)(0,0.52)(-0.5,0.866)
+\or\qbezier(0.5,0.866)(-0.12,0.446)(-0.866,0.5)
+\or\qbezier(0.5,0.866)(-0.179,0.311)(-1,0)
+\or\qbezier(0.5,0.866)(-0.146,0.146)(-0.866,-0.5) \or\put(0.5,
+0.866){\line(-3, -5){1}} \or\qbezier(0.5,0.866)(0.2,-0.0536)(0,-1)
+\or\qbezier(0.5,0.866)(0.359,0)(0.5,-0.866)
+\or\qbezier(0.5,0.866)(0.446,0.12)(0.866,-0.5) \fi
+\or\ifcase#2\or\or\or \or\qbezier(0,1.)(-0.138,0.516)(-0.5,0.866)
+\or\qbezier(0,1.)(-0.26,0.45)(-0.866,0.5)
+\or\qbezier(0,1.)(-0.327,0.327)(-1,0)
+\or\qbezier(0,1.)(-0.311,0.179)(-0.866,-0.5)
+\or\qbezier(0,1.)(-0.2,0.0536)(-0.5,-0.866) \or\put(0, 1){\line(0,
+-2){2}} \or\qbezier(0,1.)(0.2,0.0536)(0.5,-0.866)
+\or\qbezier(0,1.)(0.311,0.179)(0.866,-0.5) \fi
+\or\ifcase#2\or\or\or\or
+\or\qbezier(-0.5,0.866)(-0.378,0.378)(-0.866,0.5)
+\or\qbezier(-0.5,0.866)(-0.45,0.26)(-1,0)
+\or\qbezier(-0.5,0.866)(-0.446,0.12)(-0.866,-0.5)
+\or\qbezier(-0.5,0.866)(-0.359,0)(-0.5,-0.866)
+\or\qbezier(-0.5,0.866)(-0.2,-0.0536)(0,-1) \or\put(-0.5,
+0.866){\line(3, -5){1}}
+\or\qbezier(-0.5,0.866)(0.146,0.146)(0.866,-0.5) \fi
+\or\ifcase#2\or\or\or\or\or
+\or\qbezier(-0.866,0.5)(-0.516,0.138)(-1,0)
+\or\qbezier(-0.866,0.5)(-0.52,0)(-0.866,-0.5)
+\or\qbezier(-0.866,0.5)(-0.446,-0.12)(-0.5,-0.866)
+\or\qbezier(-0.866,0.5)(-0.311,-0.179)(0,-1)
+\or\qbezier(-0.866,0.5)(-0.146,-0.146)(0.5,-0.866) \or\put(-0.866,
+0.5){\line(5, -3){1.73}} \fi \or\ifcase#2\or\or\or\or\or\or
+\or\qbezier(-1,0)(-0.516,-0.138)(-0.866,-0.5)
+\or\qbezier(-1,0)(-0.45,-0.26)(-0.5,-0.866)
+\or\qbezier(-1,0)(-0.327,-0.327)(0,-1)
+\or\qbezier(-1,0)(-0.179,-0.311)(0.5,-0.866)
+\or\qbezier(-1,0)(-0.0536,-0.2)(0.866,-0.5) \fi
+\or\ifcase#2\or\or\or\or\or\or\or
+\or\qbezier(-0.866,-0.5)(-0.378,-0.378)(-0.5,-0.866)
+\or\qbezier(-0.866,-0.5)(-0.26,-0.45)(0,-1)
+\or\qbezier(-0.866,-0.5)(-0.12,-0.446)(0.5,-0.866)
+\or\qbezier(-0.866,-0.5)(0,-0.359)(0.866,-0.5) \fi
+\or\ifcase#2\or\or\or\or\or\or\or\or
+\or\qbezier(-0.5,-0.866)(-0.138,-0.516)(0,-1)
+\or\qbezier(-0.5,-0.866)(0,-0.52)(0.5,-0.866)
+\or\qbezier(-0.5,-0.866)(0.12,-0.446)(0.866,-0.5) \fi
+\or\ifcase#2\or\or\or\or\or\or\or\or\or
+\or\qbezier(0,-1.)(0.138,-0.516)(0.5,-0.866)
+\or\qbezier(0,-1.)(0.26,-0.45)(0.866,-0.5) \fi
+\or\ifcase#2\or\or\or\or\or\or\or\or\or\or
+\or\qbezier(0.5,-0.866)(0.378,-0.378)(0.866,-0.5) \fi\fi\fi\fi}
+%
+%  Chord + Arcs + Endpoints
+%
+\def\FullChord[#1,#2]{
+\Endpoint[#1] \Endpoint[#2] \Arc[#1] \Arc[#2] \Chord[#1,#2] }
+%
+%  Chord + Endpoints
+%
+\def\EndChord[#1,#2]{
+\Endpoint[#1] \Endpoint[#2] \Chord[#1,#2] }
+%
+%  When using these pictures in equations, one ought to use the
+%  following command
+%
+%           \begin{picture}(2,1)(-1,-0.167)
+%            ...
+%           \end{picture}
+%
+\def\Picture#1{
+\begin{picture}(2,1)(-1,-0.167)
+#1
+\end{picture}
+}
+%
+%   Dotted Chord Diagram
+%
+\def\DottedChordDiagram[#1,#2]{
+\Picture{\DottedCircle \FullChord[#1,#2]} }
+%
+\let\DCD=\DottedChordDiagram
+%
+%
+% Here ends bchords.sty
+%
+
+%%%%%%%%%%%% COMMUTATIVE DIAGRAM DEFINITIONS %%%%%%%%%%%%%%

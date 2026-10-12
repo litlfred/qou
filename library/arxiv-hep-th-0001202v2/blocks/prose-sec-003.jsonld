@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0001202v2/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0001202v2/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Bigrading the Connes-Moscovici subalgebra",
   "pageStart": 5,
   "pageEnd": 6,
   "text": "../sections/sec-003-4-bigrading-the-connes-moscovici-subalgebra.md",
-  "derivedFrom": "library/arxiv-hep-th-0001202v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0001202v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0001202v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0001202v2/manifest.jsonld",
   "provenance": "ingested"
 }

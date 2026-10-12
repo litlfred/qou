@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Invariant theory and modular forms for SL(2 , 13)",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-003-3-invariant-theory-and-modular-forms-for-sl2-13.md",
-  "derivedFrom": "library/arxiv-2009.03688v6/manifest",
-  "sourceDocument": "library/arxiv-2009.03688v6/manifest",
+  "title": "Standard construction: E8-singularity as the",
+  "pageStart": 14,
+  "pageEnd": 14,
+  "text": "../sections/sec-003-2-standard-construction-e8-singularity-as-the.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2009.03688v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2009.03688v6/manifest.jsonld",
   "provenance": "ingested"
 }

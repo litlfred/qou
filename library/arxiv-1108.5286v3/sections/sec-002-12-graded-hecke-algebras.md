@@ -8,30 +8,54 @@ pages: 7-8
 source_pdf: 1108.5286v3.pdf
 source_sha256: 447d90883adce21e
 doc_brief: "Hochschild homology of affine Hecke algebras — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
+text_source: latex
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 1.0
 ---
-Graded Hecke algebras are also known as degenerate (aﬃne) He cke algebras. They
-were introduced by Lusztig in [Lus2]. We call
-˜R = (a∗,R, a,R∨, ∆) (5)
-a degenerate root datum. We pick complex numbers kα forα ∈ ∆, such that kα =kβ
-if α and β are in the same W -orbit. The graded Hecke algebra associated to these
-data is the complex vector space
-H = H( ˜R,k ) = S(t∗) ⊗ C[W ],
-7
-with multiplication deﬁned by the following rules:
-• C[W ] and S(t∗) are canonically embedded as subalgebras;
-• for x ∈ t∗ and sα ∈S we have the cross relation
-x ·sα −sα ·sα(x) = kα⟨x, α∨⟩. (6)
-Multiplication with any ǫ ∈ C× deﬁnes a bijection mǫ : t∗ → t∗, which clearly
-extends to an algebra automorphism of S(t∗). From the cross relation (6) we see
-that it extends even further, to an algebra isomorphism
-mǫ : H( ˜R,ǫk ) → H( ˜R,k ) (7)
-which is the identity on C[W ]. For ǫ = 0 this map is well-deﬁned, but obviously not
-bijective.
-Let Γ be a group of diagram automorphisms of R, and assume that kγ(α) =kα
-for all α ∈R,γ ∈ Γ. Then Γ acts on H by the algebra automorphisms
-ψγ : H → H,
-ψγ(xsα) = γ(x)sγ(α) x ∈ t∗,α ∈ Π . (8)
-By [Sol1, Proposition 5.1.a] the centre of the resulting cro ssed product algebra is
-Z(H ⋊ Γ) = S(t∗)W ⋊Γ = O(t/(W ⋊ Γ)). (9)
-We say that the central character of an H ⋊ Γ-representation is real if it lies in
-a/(W ⋊ Γ).
+Graded Hecke algebras are also known as degenerate (affine) Hecke algebras.
+They were introduced by Lusztig in \cite{Lus-Gr}. We call 
+\begin{equation}
+\tilde{\mc R} = (\mf a^* ,R, \mf a, R^\vee, \Delta )
+\end{equation}
+a degenerate root datum. We pick complex numbers $k_\alpha$ for $\alpha \in \Delta$,
+such that $k_\alpha = k_\beta$ if $\alpha$ and $\beta$ are in the same $W$-orbit.
+The graded Hecke algebra associated to these data is the complex vector space
+\[
+\mh H = \mh H (\tilde{\mc R},k) = S( \mf t^*) \otimes \C [W] ,
+\]
+with multiplication defined by the following rules:
+\begin{itemize}
+\item $\mh C[W]$ and $S (\mf t^* )$ are canonically embedded as subalgebras;
+\item for $x \in \mf t^*$ and $s_\alpha \in S$ we have the cross relation
+\begin{equation}\label{eq:1.1}
+x \cdot s_\alpha - s_\alpha \cdot s_\alpha (x) = 
+k_\alpha \inp{x}{\alpha^\vee} .
+\end{equation}
+\end{itemize}
+Multiplication with any $\ep \in \mh C^\times$ defines a bijection $m_\ep : \mf t^* \to \mf t^*$,
+which clearly extends to an algebra automorphism of $S(\mf t^* )$. From the cross relation
+\eqref{eq:1.1} we see that it extends even further, to an algebra isomorphism
+\begin{equation}\label{eq:1.3}
+m_\ep : \mh H (\tilde{\mc R},\ep k) \to \mh H (\tilde{\mc R}, k)
+\end{equation}
+which is the identity on $\mh C[W]$. For $\ep = 0$ this map is well-defined, but
+obviously not bijective.
+
+Let $\Gamma$ be a group of diagram automorphisms of $\mc R$, and assume that 
+$k_{\gamma (\alpha)} = k_\alpha$ for all $\alpha \in R , \gamma \in \Gamma$.
+Then $\Gamma$ acts on $\mh H$ by the algebra automorphisms
+\begin{equation}
+\begin{split}
+& \psi_\gamma : \mh H \to \mh H \,, \\
+& \psi_\gamma (x s_\alpha ) = \gamma (x) s_{\gamma (\alpha )} 
+  \qquad x \in \mf t^* , \alpha \in \Pi \,.
+\end{split}
+\end{equation}
+By \cite[Proposition 5.1.a]{SolHomGHA} the centre of the resulting crossed product algebra is
+\begin{equation}\label{eq:1.4}
+Z (\mh H \rtimes \Gamma) = S(\mf t^*)^{W \rtimes \Gamma} = 
+\mc O (\mf t / (W \rtimes \Gamma)) .
+\end{equation}
+We say that the central character of an $\mh H \rtimes \Gamma$-representation is real 
+if it lies in $\mf a / (W \rtimes \Gamma)$.
+\vspace{2mm}

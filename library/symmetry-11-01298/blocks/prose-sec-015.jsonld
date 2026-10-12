@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/symmetry-11-01298/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/symmetry-11-01298/blocks/prose-sec-015",
   "kind": "prose",
   "title": "Electric Charge as a Frame of the Knot Complement",
   "pageStart": 18,
   "pageEnd": 19,
   "text": "../sections/sec-015-electric-charge-as-a-frame-of-the-knot-complemen.md",
-  "derivedFrom": "library/symmetry-11-01298/manifest",
-  "sourceDocument": "library/symmetry-11-01298/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
   "provenance": "ingested"
 }

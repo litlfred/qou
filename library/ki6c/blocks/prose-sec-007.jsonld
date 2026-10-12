@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ki6c/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ki6c/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "The saddle point method",
-  "pageStart": 11,
-  "pageEnd": 12,
-  "text": "../sections/sec-007-25-the-saddle-point-method.md",
-  "derivedFrom": "library/ki6c/manifest",
-  "sourceDocument": "library/ki6c/manifest",
+  "title": "Estimate of the range of ∆′",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "text": "../sections/sec-007-32-estimate-of-the-range-of.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
   "provenance": "ingested"
 }

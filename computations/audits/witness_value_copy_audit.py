@@ -101,7 +101,7 @@ def index_witnesses() -> dict[str, set[str]]:
             # is the same principle applied to the other half of the loop, and
             # the omission made the gate LOOSER rather than noisier.
             continue
-        if "_deprecated" in w.parts:
+        if ("_deprecated" in w.parts or "fsh-guts" in w.parts):
             # Still indexed: copying from a RETIRED witness is the worst
             # case, not an exempt one. See the AME instance in the docstring.
             pass
@@ -385,7 +385,7 @@ def scan(idx: dict[str, set[str]]) -> list[dict]:
     roots = ["computations", "tools", "qou-mass", "scripts"]
     for f in sorted(g for r in roots
                     for g in ROOT.joinpath(r).rglob("*.py")):
-        if "_deprecated" in f.parts or "__pycache__" in f.parts:
+        if ("_deprecated" in f.parts or "fsh-guts" in f.parts) or "__pycache__" in f.parts:
             continue
         if "tests" in f.parts or f.name.startswith("test_"):
             continue
@@ -444,7 +444,7 @@ def scan(idx: dict[str, set[str]]) -> list[dict]:
                     "spread": spread,
                     "witnesses": sorted(foreign)[:4],
                     "witness_count": len(foreign),
-                    "deprecated_source": any("_deprecated" in w
+                    "deprecated_source": any(("_deprecated" in w or "fsh-guts" in w)
                                              for w in foreign),
                 })
     return rows

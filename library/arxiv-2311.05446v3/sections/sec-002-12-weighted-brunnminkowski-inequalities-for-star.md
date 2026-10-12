@@ -8,84 +8,31 @@ pages: 3-5
 source_pdf: 2311.05446v3.pdf
 source_sha256: c5809730f598a56d
 doc_brief: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY — We study the connection between the concavity properties of a measureνand the convexity properties of the associated"
+text_source: latex
+latex_prose_ratio: 0.911
+latex_coverage_ratio: 0.908
 ---
-spite the difficulties mentioned above when dealing with non-convex sets, in
-this paper we prove the following theorem:
-Theorem 1.3.LetV:R n→[0,∞)be ap-homogeneous convex function
-for1<p<∞, and letνbe a measure with density dν
-dx proportional toe−V .
-LetK 0,K 1⊆R n be star bodies. Then for all0≤t≤1we have
-ν((1−t)K 0 +tK 1)
-p−1
-pn ≥(1−t)ν(K 0)
-p−1
-pn +tν(K 1)
-p−1
-pn .(6)
-To explain the terminology, we say thatK⊆R n is a star body ifKis a
-Borel set such that for allx∈Kand 0≤λ≤1 we haveλx∈K(i.e. the
-“star” ofKis always assumed to be at the origin). Also recall thatVis
-p-homogeneous ifV(λx) =λ pV(x) for allx∈R n andλ>0.
-Note that one specific choice,V(x) = 1
-2|x|2, gives the Kolesnikov–Livshyts
-result ((4)), but this time without the convexity assumption on the sets. For
-any fixedp>1 the exponent p−1
-pn is asymptotically (for largen) better than
-the result of [34], and again we need no convexity or symmetry assumptions,
-but of course our result is only for homogeneous potentials and not for all
-log-concave measures. Note that asp→∞we have p−1
-pn → 1
-n, the opti-
-mal exponent. This makes sense since for largepthe measureνis almost
-uniform on some convex body, and such uniform measures do satisfy the
-Brunn–Minkowski inequality with exponent 1
-n, applicable to all Borel sets.
-4 GAUTAM AISHWARYA AND LIRAN ROTEM
-As mentioned above, as far as we know none of the previously used tech-
-niques can prove a result like Theorem 1.3. Our proof will therefore follow
-completely different lines, using tools of optimal transport and information
-theory. We lift the problem at hand from the realm of geometry of sets to
-the realm of geometry of measures, where calculus is sometimes “smoother”
-than in classical differential geometry. Arguably, even for the Gaussian mea-
-sure, our proof is simpler than the known arguments.
-The theory of optimal transport gives us a natural way to interpolate
-between two probability measuresµ 0 andµ 1, such that the interpolantµ t
-is supported in the Minkowski average (1−t)·support(µ 0) +t·support(µ 1)
-of the two supports, thereby playing a role parallel to the Minkowski aver-
-aging of sets. Along these interpolations, the relative entropyD(·∥ν) enjoys
-convexity properties of various degrees depending onν. The reader will find
-precise definitions in Section 2. However, the main point is that a variational
-formula forνcan be written in terms of the relative entropyD(·∥ν),
-sup
-µ∈P(K)
-e−D(µ∥ν) =ν(K),(7)
-where the supremum runs over all probability measures onKand is attained
-at the normalized restrictionνK ofνtoK, allowing us to translate convexity
-properties of the relative entropy into concavity properties of the measure
-ν.
-Since the density dνK
-dν is radially decreasing whenKis a star body, we
-will obtain Theorem 1.3 as a corollary to the following result.
-Theorem 1.4.LetV:R n→[0,∞)be ap-homogeneous convex function
-for1<p<∞, and letνbe the probability measure with density proportional
-toe−V . Letµ 0,µ 1 be Borel probability measures, absolutely continuous with
-respect toν, such that dµ0
-dν and dµ1
-dν are radially decreasing. Finally, let
-{µt}t∈[0,1] be the displacement interpolation betweenµ 0 andµ 1. Then
-t7→e −p−1
-pn D(µt∥ν) (8)
-is concave.
-It is well known that the behavior of information-theoretic quantities un-
-der optimal transport is intimately related to the geometry of the underlying
-space, which is useful in the context of Brunn–Minkowski type inequalities
-(see for example Remark 2.11). There are known proofs of the classical
-Brunn–Minkowski or Pr´ ekopa–Leindler inequalities along these lines ([47,
-Chapter 6]). However, to the best of our knowledge this is the first time
-such tools are used to prove previously unknown Brunn–Minkowski type
-inequalities for measures on Euclidean space.
-To prove Theorem 1.4 we split the relative entropyD(µ∥ν) of a measureµ
-into its “internal energy”D(µ∥Voln) and “potential energy”
-R
-Vdµcompo-
-nents. We observe that, under the assumptions onµ 0 andµ 1 as in Theorem
+Despite the difficulties mentioned above when dealing with non-convex sets, in this paper we prove the following theorem:
+
+::: thm
+[]{#thm:main-BM intro label="thm:main-BM intro"}Let $V:\mathbb{R}^{n}\to[0,\infty)$ be a $p$-homogeneous convex function for $1<p<\infty$, and let $\nu$ be a measure with density $\frac{\mathrm{d}\nu}{\mathrm{d}x}$ proportional to $e^{-V}$. Let $K_{0},K_{1}\subseteq\mathbb{R}^{n}$ be star bodies. Then for all $0\le t \le1$ we have $$\text{\ensuremath{\nu\left((1-t)K_{0}+t K_{1}\right)^{\frac{p-1}{pn}}\ge(1-t)\nu(K_{0})^{\frac{p-1}{pn}}+ t \nu\left(K_{1}\right)^{\frac{p-1}{pn}}.}}$$
+:::
+
+To explain the terminology, we say that $K\subseteq\mathbb{R}^{n}$ is a star body if $K$ is a Borel set such that for all $x\in K$ and $0\le \lambda \le1$ we have $\lambda x\in K$ (i.e. the "star" of $K$ is always assumed to be at the origin). Also recall that $V$ is $p$-homogeneous if $V(\lambda x)=\lambda^{p}V(x)$ for all $x\in\mathbb{R}^{n}$ and $\lambda>0$.
+
+Note that one specific choice, $V(x)=\frac{1}{2}\left|x\right|^{2}$, gives the KolesnikovLivshyts result ([\[eq:gassian-BM-2n\]](#eq:gassian-BM-2n){reference-type="eqref" reference="eq:gassian-BM-2n"}), but this time without the convexity assumption on the sets. For any fixed $p>1$ the exponent $\frac{p-1}{pn}$ is asymptotically (for large $n$) better than the result of [@Livshyts23], and again we need no convexity or symmetry assumptions, but of course our result is only for homogeneous potentials and not for all log-concave measures. Note that as $p\to\infty$ we have $\frac{p-1}{pn}\to\frac{1}{n}$, the optimal exponent. This makes sense since for large $p$ the measure $\nu$ is almost uniform on some convex body, and such uniform measures do satisfy the BrunnMinkowski inequality with exponent $\frac{1}{n}$, applicable to all Borel sets.
+
+As mentioned above, as far as we know none of the previously used techniques can prove a result like Theorem [\[thm:main-BM intro\]](#thm:main-BM intro){reference-type="ref" reference="thm:main-BM intro"}. Our proof will therefore follow completely different lines, using tools of optimal transport and information theory. We lift the problem at hand from the realm of geometry of sets to the realm of geometry of measures, where calculus is sometimes "smoother" than in classical differential geometry. Arguably, even for the Gaussian measure, our proof is simpler than the known arguments.
+
+The theory of optimal transport gives us a natural way to interpolate between two probability measures $\mu_{0}$ and $\mu_{1}$, such that the interpolant $\mu_{t}$ is supported in the Minkowski average $(1-t) \cdot \textnormal{support}(\mu_{0}) + t \cdot \textnormal{support}(\mu_{1})$ of the two supports, thereby playing a role parallel to the Minkowski averaging of sets. Along these interpolations, the relative entropy $D(\cdot \Vert \nu)$ enjoys convexity properties of various degrees depending on $\nu$. The reader will find precise definitions in Section [\[sec: overview\]](#sec: overview){reference-type="ref" reference="sec: overview"}. However, the main point is that a variational formula for $\nu$ can be written in terms of the relative entropy $D(\cdot \Vert \nu)$, $$\label{eq: variationalmeasureIntro}
+\sup_{\mu \in \mathcal{P}(K)} e^{- D(\mu \Vert \nu)} = \nu (K),$$ where the supremum runs over all probability measures on $K$ and is attained at the normalized restriction $\nu_{K}$ of $\nu$ to $K$, allowing us to translate convexity properties of the relative entropy into concavity properties of the measure $\nu$.
+
+Since the density $\frac{\textnormal{ d}\nu_{K}}{ \textnormal{ d}\nu}$ is radially decreasing when $K$ is a star body, we will obtain Theorem [\[thm:main-BM intro\]](#thm:main-BM intro){reference-type="ref" reference="thm:main-BM intro"} as a corollary to the following result.
+
+::: thm
+[]{#thm:main-entropy label="thm:main-entropy"}Let $V:\mathbb{R}^{n}\to[0,\infty)$ be a $p$-homogeneous convex function for $1<p<\infty$, and let $\nu$ be the probability measure with density proportional to $e^{-V}$. Let $\mu_{0}$, $\mu_{1}$ be Borel probability measures, absolutely continuous with respect to $\nu$, such that $\frac{\mathrm{d}\mu_{0}}{\mathrm{d}\nu}$ and $\frac{\mathrm{d}\mu_{1}}{\mathrm{d}\nu}$ are radially decreasing. Finally, let $\left\{ \mu_{t}\right\} _{t\in[0,1]}$ be the displacement interpolation between $\mu_{0}$ and $\mu_{1}$. Then $$t\mapsto e^{-\frac{p-1}{pn}\operatorname{D}\left(\mu_{t}\middle\Vert\nu\right)}$$ is concave.
+:::
+
+It is well known that the behavior of information-theoretic quantities under optimal transport is intimately related to the geometry of the underlying space, which is useful in the context of BrunnMinkowski type inequalities (see for example Remark [\[rem: cdhistory\]](#rem: cdhistory){reference-type="ref" reference="rem: cdhistory"}). There are known proofs of the classical BrunnMinkowski or PrékopaLeindler inequalities along these lines ([@Villani03 Chapter 6]). However, to the best of our knowledge this is the first time such tools are used to prove previously unknown BrunnMinkowski type inequalities for measures on Euclidean space.
+
+To prove Theorem [\[thm:main-entropy\]](#thm:main-entropy){reference-type="ref" reference="thm:main-entropy"} we split the relative entropy $D(\mu \Vert \nu)$ of a measure $\mu$ into its "internal energy" $D(\mu \Vert \textnormal{Vol}_{n})$ and "potential energy" $\int V \textnormal{ d}\mu$ components. We observe that, under the assumptions on $\mu_{0}$ and $\mu_{1}$ as in Theorem [\[thm:main-entropy\]](#thm:main-entropy){reference-type="ref" reference="thm:main-entropy"}, $e^{- \frac{p-1}{n} \int V \textnormal{ d}\mu_{t}}$ is concave in $t$. Theorem [\[thm:main-entropy\]](#thm:main-entropy){reference-type="ref" reference="thm:main-entropy"} is then obtained by combining our observation with a result of Erbar, Kuwada, and Sturm [@ErbarKuwadaSturm15] that $e^{- \frac{1}{n} D(\cdot \Vert \textnormal{Vol}_{n})}$ is concave along all displacement interpolations. The aforementioned convexity property of the potential energy is established locally, that is, by taking two derivatives.

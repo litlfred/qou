@@ -1,19 +1,32 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2603.25236v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "A Concentration of Measure Phenomenon in",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2603.25236v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A Concentration of Measure Phenomenon in Lattice Yang-Mills",
   "contains": [
-    "library/arxiv-2603.25236v1/sections/sec-000",
-    "library/arxiv-2603.25236v1/sections/sec-001",
-    "library/arxiv-2603.25236v1/sections/sec-002",
-    "library/arxiv-2603.25236v1/sections/sec-003"
+    "library/arxiv-2603.25236v1/sections/sec-front-matter",
+    "library/arxiv-2603.25236v1/sections/sec-000"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2603.25236&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2603.25236v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2603.25236v1.pdf",
     "source_sha256": "fba6853d6e544e19d5dc4cade32ee0be0dc5ac6b7b70f23e937909b85e96159c",
     "pages": 8,

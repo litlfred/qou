@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2502.06229v5/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A central method in the quantum group and VOA setting: the fundamental generating representation V for all Lie types, following H.Wenzl.",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "contains": [
+    "library/arxiv-2502.06229v5/blocks/prose-sec-011"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2502.06229v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2502.06229v5/manifest.jsonld",
+  "provenance": "ingested"
+}

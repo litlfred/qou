@@ -1,0 +1,1598 @@
+
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xypic}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=Latex.dll}
+%TCIDATA{Version=5.50.0.2890}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{LastRevised=Monday, February 07, 2011 11:17:06}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+
+\hyphenation{theo-ry ca-te-go-ry li-near ge-ne-ra-li-zed geo-me-try dif-fe-ren-tiable me-cha-ni-cal ma-the-ma-tics }
+\textwidth146mm \textheight230mm \oddsidemargin 1.2cm
+\evensidemargin 1.2cm \headsep10mm
+  \topmargin-9mm
+\def\ben{\begin{enumerate}}
+\def\een{\end{enumerate}}
+\def\dd{\displaystyle}
+\def\bit{\begin{itemize}}
+\def\eit{\end{itemize}}
+\def\n{\noindent}
+\def\mk{\medskip }
+\def\bk{\bigswkip }
+\def\sk{\smallskip }
+\def\0{\leqno}
+\def\bk{\bigskip}
+\def\xym{\xymatrix}
+\def\st#1#2{{\mathrel{\mathop{#2}\limits_{#1}}{}\!}}
+\input xy
+\xyoption{all}
+\input{tcilatex}
+\begin{document}
+
+\begin{center}
+\textbf{ALGEBRAIC CONSTRUCTIONS }
+
+\textbf{IN THE CATEGORY OF VECTOR BUNDLES} \ \ \\[0pt]
+\ \ %\bigskip
+
+%\bigskip
+
+by
+
+%\bigskip
+
+{CONSTANTIN M. ARCU\c{S} }
+\end{center}
+
+%\bigskip
+
+
+\begin{abstract}
+In this paper we present the category of generalized Lie algebroids.
+Important results (a theorem of Maurer-Cartan type, theorems of Cartan
+type,...) emphasize the importance and the utility of the objects of this
+new category. \ \ \bigskip\newline
+\textbf{2000 Mathematics Subject Classification:} 00A69, 58A15,
+58B34.\bigskip\newline
+\ \ \ \textbf{Keywords:} vector bundle, (generalized) Lie algebroid,
+interior differential system, exterior differential calculus, exterior
+differential system.
+\end{abstract}
+\
+\
+\tableofcontents
+\
+%\ \ \ \textit{In memory of my uncles}
+
+%\ \ \ \textit{Prof. Dr. Gheorghe RADU and Acad. Dr. Doc. Cornelius RADU}
+
+%\medskip
+%
+%\ \ \ \textit{Dedicated to} \textit{Acad. Prof. Dr. Doc. Radu MIRON at his 83%
+%$^{th}$ anniversary}
+
+%\bigskip
+
+\ \
+
+\section{Introduction}
+
+The motivation for our researches was to extend the notion of Lie algebroid
+using the extension $\mathbf{Mod}$-morphism associated to a $\mathbf{B}^{%
+\mathbf{v}}$-morphism. Using this general framework, we get a panoramic view
+over classical concepts from mathematics. [1]
+
+We introduced the notion of \emph{interior differential system }(IDS) of a
+generalized Lie algebroid, in general, and of a Lie algebroid, in
+particular. We develop the exterior differential calculus for generalized
+Lie algebroids and, in this general framework, we establish the structure
+equations of Maurer-Cartan type and we characterize the involutivity of an
+IDS in a theorem of Cartan type. Finally, using the classical notion of
+\emph{exterior differential system}(see: [2,4,6,7]) (EDS) of a generalized
+Lie algebroid, in general, and of a Lie algebroid, in particular, we
+characterize the involutivity of an IDS in a theorem of Cartan type. In
+particular, we can obtain similar results with classical results for Lie
+algebroids. (see: [3,8,9])
+
+\section{Preliminaries}
+
+In general, if $\mathcal{C}$ is a category, then we denoted by $\left\vert
+\mathcal{C}\right\vert $ the class of objects and for any $A,B{\in }%
+\left\vert \mathcal{C}\right\vert $, we denote by $\mathcal{C}\left(
+A,B\right) $ the set of morphisms of $A$ source and $B$ target.
+
+Let$\mathbf{~Vect},$ $\mathbf{Liealg},~\mathbf{Mod}$\textbf{,} $\mathbf{%
+Man,~B}$ and $\mathbf{B}^{\mathbf{v}}$ be the category of real vector
+spaces, Lie algebras, modules, manifolds, fiber bundles and vector bundles
+respectively.
+
+We know that if $\left( E,\pi ,M\right) \in \left\vert \mathbf{B}^{\mathbf{v}%
+}\right\vert ,$ then $\left( \Gamma \left( E,\pi ,M\right) ,+,\cdot \right) $
+is a $\mathcal{F}\left( M\right) $-module.
+
+In adition, if $\left( E,\pi ,M\right) \in \left\vert \mathbf{B}^{\mathbf{v}%
+}\right\vert $ such that $M$ is paracompact and if $A\subseteq M$ is closed,
+then for any section $u$ over $A$ it exists $\tilde{u}\in $ $\Gamma \left(
+E,\pi ,M\right) $ such that $\tilde{u}_{|A}=u.$
+
+\textbf{Note: }In the following, we consider only vector bundles with
+paracompact base.
+
+\textbf{Proposition 2.1 }If \ $\left( \varphi ,\varphi _{0}\right) \in
+\mathbf{B}^{\mathbf{v}}\left( \left( E,\pi ,M\right) ,\left( E^{\prime },\pi
+^{\prime },M^{\prime }\right) \right) ,$ then it exists a $\mathbf{Mod}$%
+-morphism $\Gamma \left( \varphi ,\varphi _{0}\right) $ of $\Gamma \left(
+E,\pi ,M\right) $ source and $\Gamma \left( E^{\prime },\pi ^{\prime
+},M^{\prime }\right) $ target.
+
+\emph{Proof. }For every $y\in \varphi _{0}\left( M\right) ,$ we fixed $%
+x_{y}\in M$ such that $\varphi _{0}\left( x_{y}\right) =y.$ Then we obtain a
+section $\Gamma \left( \varphi ,\varphi _{0}\right) u$ over the closed set $%
+\varphi _{0}\left( M\right) $ defined by
+\begin{equation*}
+\begin{array}{c}
+\Gamma \left( \varphi ,\varphi _{0}\right) u\left( y\right) =\varphi \left(
+u_{x_{y}}\right) .%
+\end{array}%
+\end{equation*}
+
+As $M^{\prime }$ is paracompact, then it results that the section $\Gamma
+\left( \varphi ,\varphi _{0}\right) u$ can be regarded as a section of $%
+\left( \Gamma \left( E^{\prime },\pi ^{\prime },M^{\prime }\right) +,\cdot
+\right) $.\hfill
+
+So, we obtain a $\mathbf{Mod}$-morphism%
+\begin{equation*}
+\begin{array}{ccc}
+\Gamma \left( E,\pi ,M\right) & ^{\underrightarrow{~\ \ \Gamma \left(
+\varphi ,\varphi _{0}\right) ~\ \ }} & \Gamma \left( E^{\prime },\pi
+^{\prime },M^{\prime }\right) \\
+u & \longmapsto & \Gamma \left( \varphi ,\varphi _{0}\right) u%
+\end{array}%
+\end{equation*}%
+defined by
+\begin{equation*}
+\begin{array}{c}
+\Gamma \left( \varphi ,\varphi _{0}\right) u\left( y\right) =\varphi \left(
+u_{x_{y}}\right) ,%
+\end{array}%
+\end{equation*}%
+for any $y\in \varphi _{0}\left( M\right) .$\hfill \emph{q.e.d.}\medskip
+
+\textbf{Definition 2.1 }A $\mathbf{Mod}$-morphism given by the previous
+proposition is called \emph{the extension }$\mathbf{Mod}$\emph{-morphism
+associated to the }$\mathbf{B}^{\mathbf{v}}$\emph{-morphism }$\left( \varphi
+,\varphi _{0}\right) .$
+
+\textit{Remark 2.1 }The construction of the extension\emph{\ }$\mathbf{Mod}$%
+-morphism associated to a $\mathbf{B}^{\mathbf{v}}$-morphism $\left( \varphi
+,\varphi _{0}\right) $ is not unique, but any two extension $\mathbf{Mod}$%
+-morphisms associated to a $\mathbf{B}^{\mathbf{v}}$-morphism $\left(
+\varphi ,\varphi _{0}\right) $ has the same properties.
+
+\textbf{Example 2.1 }If \ $\left( \varphi ,\varphi _{0}\right) \in \mathbf{B}%
+^{\mathbf{v}}\left( \left( E,\pi ,M\right) ,\left( E^{\prime },\pi ^{\prime
+},M^{\prime }\right) \right) $ such that $\varphi _{0}\in Diff\left(
+M,M^{\prime }\right) ,$ then we obtain the unique $\mathbf{Mod}$-morphism%
+\begin{equation*}
+\begin{array}{ccc}
+\Gamma \left( E,\pi ,M\right) & ^{\underrightarrow{~\ \ \Gamma \left(
+\varphi ,\varphi _{0}\right) ~\ \ }} & \Gamma \left( E^{\prime },\pi
+^{\prime },M^{\prime }\right) \\
+u & \longmapsto & \Gamma \left( \varphi ,\varphi _{0}\right) u%
+\end{array}%
+\end{equation*}%
+defined by
+\begin{equation*}
+\begin{array}{c}
+\left( \Gamma \left( \varphi ,\varphi _{0}\right) u\right) \left( x^{\prime
+}\right) =\varphi \left( u_{\varphi _{0}^{-1}\left( x^{\prime }\right)
+}\right) .%
+\end{array}%
+\end{equation*}
+
+$\Gamma \left( \varphi ,\varphi _{0}\right) $ is called \emph{the }$\mathbf{%
+Mod}$\emph{-morphism associated to the }$\mathbf{B}^{\mathbf{v}}$\emph{%
+-morphism }$\left( \varphi ,\varphi _{0}\right) .$
+
+\section{The category of generalized Lie algebroids}
+
+We know that a Lie algebroid is a vector bundle $\left( F,\nu ,N\right) \in
+\left\vert \mathbf{B}^{\mathbf{v}}\right\vert $ such that there exists
+\begin{equation*}
+\begin{array}{c}
+\left( \rho ,Id_{N}\right) \in \mathbf{B}^{\mathbf{v}}\left( \left( F,\nu
+,N\right) ,\left( TN,\tau _{N},N\right) \right)%
+\end{array}%
+\end{equation*}%
+and an operation
+\begin{equation*}
+\begin{array}{ccc}
+\Gamma \left( F,\nu ,N\right) \times \Gamma \left( F,\nu ,N\right) & ^{%
+\underrightarrow{\,\left[ ,\right] _{F}\,}} & \Gamma \left( F,\nu ,N\right)
+\\
+\left( u,v\right) & \longmapsto & \left[ u,v\right] _{F}%
+\end{array}%
+\end{equation*}%
+with the following properties:
+
+\begin{itemize}
+\item[$LA_{1}$.] the equality holds good
+\begin{equation*}
+\begin{array}{c}
+\left[ u,f\cdot v\right] _{F}=f\left[ u,v\right] _{F}+\Gamma \left( \rho
+,Id_{N}\right) \left( u\right) f\cdot v,%
+\end{array}%
+\end{equation*}%
+for all $u,v\in \Gamma \left( F,\nu ,N\right) $ and $f\in \mathcal{F}\left(
+N\right) ,$
+
+\item[$LA_{2}$.] the $4$-tuple $\left( \Gamma \left( F,\nu ,N\right)
+,+,\cdot ,\left[ ,\right] _{F}\right) $ is a Lie $\mathcal{F}\left( N\right)
+$-algebra$,$
+
+\item[$LA_{3}$.] the $\mathbf{Mod}$-morphism $\Gamma \left( \rho
+,Id_{N}\right) $ is a $\mathbf{LieAlg}$-morphism of $\left( \Gamma \left(
+F,\nu ,N\right) ,+,\cdot ,\left[ ,\right] _{F}\right) $ source and $\left(
+\Gamma \left( TN,\tau _{N},N\right) ,+,\cdot ,\left[ ,\right] _{TN}\right) $
+target.
+\end{itemize}
+
+Obviously, in the definition of the Lie algebroid we use essential the $%
+\mathbf{Mod}$-morphism $\Gamma \left( \rho ,Id_{N}\right) $ associated to
+the $\mathbf{B}^{\mathbf{v}}$-morphism $\left( \rho ,Id_{N}\right) .$
+
+So, we are interested to finding the answer to the following question:
+
+\begin{itemize}
+\item \emph{Could we to extend the notion of Lie algebroid using the
+extension }$\mathbf{Mod}$\emph{-morphism associated to a }$\mathbf{B}^{%
+\mathbf{v}}$\emph{-morphism?}
+\end{itemize}
+
+\textbf{Definition 3.1 }Let $M,N\in \left\vert \mathbf{Man}\right\vert $ and
+$h\in \mathbf{Man}\left( M,N\right) $ be surjective.
+
+If $\left( F,\nu ,N\right) \in \left\vert \mathbf{B}^{\mathbf{v}}\right\vert
+$ such that there exists
+\begin{equation*}
+\begin{array}{c}
+\left( \rho ,\eta \right) \in \mathbf{B}^{\mathbf{v}}\left( \left( F,\nu
+,N\right) ,\left( TM,\tau _{M},M\right) \right)%
+\end{array}%
+\end{equation*}%
+and an operation
+\begin{equation*}
+\begin{array}{ccc}
+\Gamma \left( F,\nu ,N\right) \times \Gamma \left( F,\nu ,N\right) & ^{%
+\underrightarrow{\left[ ,\right] _{F,h}}} & \Gamma \left( F,\nu ,N\right) \\
+\left( u,v\right) & \longmapsto & \left[ u,v\right] _{F,h}%
+\end{array}%
+\end{equation*}%
+with the following properties:\bigskip
+
+\noindent $\qquad GLA_{1}$. the equality holds good
+\begin{equation*}
+\begin{array}{c}
+\left[ u,f\cdot v\right] _{F,h}=f\left[ u,v\right] _{F,h}+\Gamma \left(
+Th\circ \rho ,h\circ \eta \right) \left( u\right) f\cdot v,%
+\end{array}%
+\end{equation*}%
+\qquad \quad\ \ for all $u,v\in \Gamma \left( F,\nu ,N\right) $ and $f\in
+\mathcal{F}\left( N\right) .$
+
+\medskip $GLA_{2}$. the $4$-tuple $\left( \Gamma \left( F,\nu ,N\right)
+,+,\cdot ,\left[ ,\right] _{F,h}\right) $ is a Lie $\mathcal{F}\left(
+N\right) $-algebra,
+
+$GLA_{3}$. the $\mathbf{Mod}$-morphism $\Gamma \left( Th\circ \rho ,h\circ
+\eta \right) $ is a $\mathbf{LieAlg}$-morphism of $\left( \Gamma \left(
+F,\nu ,N\right) ,+,\cdot ,\left[ ,\right] _{F,h}\right) $ source and $\left(
+\Gamma \left( TN,\tau _{N},N\right) ,+,\cdot ,\left[ ,\right] _{TN}\right) $
+target, \medskip \noindent then we will say that \emph{the triple }%
+\begin{equation*}
+\begin{array}{c}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right)%
+\end{array}%
+\leqno(3.1)
+\end{equation*}%
+\emph{is a generalized Lie algebroid. }The couple $\left( \left[ ,\right]
+_{F,h},\left( \rho ,\eta \right) \right) $will be called \emph{generalized
+Lie algebroid structure.}
+
+\textbf{Definition 3.2 }We define the set of morphisms of
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right)
+\end{equation*}%
+source and
+\begin{equation*}
+\left( \left( F^{\prime },\nu ^{\prime },N^{\prime }\right) ,\left[ ,\right]
+_{F^{\prime },h^{\prime }},\left( \rho ^{\prime },\eta ^{\prime }\right)
+\right)
+\end{equation*}%
+target as being the set
+\begin{equation*}
+\begin{array}{c}
+\left\{ \left( \varphi ,\varphi _{0}\right) \in \mathbf{B}^{\mathbf{v}%
+}\left( \left( F,\nu ,N\right) ,\left( F^{\prime },\nu ^{\prime },N^{\prime
+}\right) \right) \right\}%
+\end{array}%
+\end{equation*}%
+such that the $\mathbf{Mod}$-morphism $\Gamma \left( \varphi ,\varphi
+_{0}\right) $ is a $\mathbf{LieAlg}$-morphism of
+\begin{equation*}
+\left( \Gamma \left( F,\nu ,N\right) ,+,\cdot ,\left[ ,\right] _{F,h}\right)
+\end{equation*}%
+source and
+\begin{equation*}
+\left( \Gamma \left( F^{\prime },\nu ^{\prime },N^{\prime }\right) ,+,\cdot
+, \left[ ,\right] _{F^{\prime },h^{\prime }}\right)
+\end{equation*}%
+target.
+
+We remark that we can discuss about \emph{the category }$\mathbf{GLA}$\emph{%
+\ of generalized Lie algebroids.}
+
+Let $\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right) $ be a generalized Lie algebroid.
+
+\begin{itemize}
+\item Locally, for any $\alpha ,\beta \in \overline{1,p},$ we set $\left[
+t_{\alpha },t_{\beta }\right] _{F}\overset{put}{=}L_{\alpha \beta }^{\gamma
+}t_{\gamma }.$ We easily obtain that $L_{\alpha \beta }^{\gamma }=-L_{\beta
+\alpha }^{\gamma },~$for any $\alpha ,\beta ,\gamma \in \overline{1,p}.$
+\end{itemize}
+
+The real local functions $\left\{ L_{\alpha \beta }^{\gamma },~\alpha ,\beta
+,\gamma \in \overline{1,p}\right\} $ will be called the \emph{structure
+functions of the generalized Lie algebroid }$\left( \left( F,\nu ,N\right) ,%
+\left[ ,\right] _{F,h},\left( \rho ,\eta \right) \right) .$
+
+\begin{itemize}
+\item We assume that $\left( F,\nu ,N\right) $ is a vector bundle with type
+fibre the real vector space $\left( \mathbb{R}^{p},+,\cdot \right) $ and
+structure group a Lie subgroup of $\left( \mathbf{GL}\left( p,\mathbb{R}%
+\right) ,\cdot \right) .$
+\end{itemize}
+
+We take $\left( x^{i},y^{i}\right) $ as canonical local coordinates on $%
+\left( TM,\tau _{M},M\right) ,$ where $i\in \overline{1,m}.$
+
+Consider $\left( x^{i},y^{i}\right) \longrightarrow \left( x^{i%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}\left( x^{i}\right) ,y^{i%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}\left( x^{i},y^{i}\right) \right) $ a change of coordinates on $\left(
+TM,\tau _{M},M\right) $. Then the coordinates $y^{i}$ change to $y^{i%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}$ by the rule:
+\begin{equation*}
+\begin{array}{c}
+y^{i%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}=\frac{\partial x^{i%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}}{\partial x^{i}}y^{i}.%
+\end{array}%
+\leqno(3.2)
+\end{equation*}
+
+We take $(\varkappa ^{\tilde{\imath}},z^{\alpha })$ as canonical local
+coordinates on $(F,\nu ,N),$ where $\tilde{\imath}{\in }\overline{1,n}$, $%
+\alpha \in \overline{1,p}.$
+
+Consider $\left( \varkappa ^{\tilde{\imath}},z^{\alpha }\right)
+\longrightarrow \left( \varkappa ^{\tilde{\imath}%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+},z^{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}\right) $ a change of coordinates on $\left( F,\nu ,N\right) $. Then the
+coordinates $z^{\alpha }$ change to $z^{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}$ by the rule:
+\begin{equation*}
+\begin{array}{c}
+z^{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}=\Lambda _{\alpha }^{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}z^{\alpha }.%
+\end{array}%
+\leqno(3.3)
+\end{equation*}
+
+\begin{itemize}
+\item We assume that $\left( \theta ,\mu \right) \overset{put}{=}\left(
+Th\circ \rho ,h\circ \eta \right) $. If $z^{\alpha }t_{\alpha }\in \Gamma
+\left( F,\nu ,N\right) $ is arbitrary, then
+\begin{equation*}
+\begin{array}{c}
+\Gamma \left( Th\circ \rho ,h\circ \eta \right) \left( z^{\alpha }t_{\alpha
+}\right) f\left( h\circ \eta \left( \varkappa \right) \right) =\vspace*{1mm}
+\\
+\displaystyle=\left( \theta _{\alpha }^{\tilde{\imath}}z^{\alpha }\frac{%
+\partial f}{\partial \varkappa ^{\tilde{\imath}}}\right) \left( h\circ \eta
+\left( \varkappa \right) \right) =\left( \left( \rho _{\alpha }^{i}\circ
+h\right) \left( z^{\alpha }\circ h\right) \frac{\partial f\circ h}{\partial
+x^{i}}\right) \left( \eta \left( \varkappa \right) \right) ,%
+\end{array}%
+\leqno(3.4)
+\end{equation*}%
+for any $f\in \mathcal{F}\left( N\right) $ and $\varkappa \in N.$
+\end{itemize}
+
+The coefficients $\rho _{\alpha }^{i}$ respectively $\theta _{\alpha }^{%
+\tilde{\imath}}$ change to $\rho _{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}^{i%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}$ respectively $\theta _{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}^{\tilde{\imath}%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}$ by the rule:
+\begin{equation*}
+\begin{array}{c}
+\rho _{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}^{i%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}=\Lambda _{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}^{\alpha }\rho _{\alpha }^{i}\displaystyle\frac{\partial x^{i%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}}{\partial x^{i}},%
+\end{array}%
+\leqno(3.5)
+\end{equation*}%
+respectively%
+\begin{equation*}
+\begin{array}{c}
+\theta _{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}^{\tilde{\imath}%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}=\Lambda _{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}^{\alpha }\theta _{\alpha }^{\tilde{\imath}}\displaystyle\frac{\partial
+\varkappa ^{\tilde{\imath}%
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}}{\partial \varkappa ^{\tilde{\imath}}},%
+\end{array}%
+\leqno(3.6)
+\end{equation*}%
+where $\left\Vert \Lambda _{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}^{\alpha }\right\Vert =\left\Vert \Lambda _{\alpha }^{\alpha
+%TCIMACRO{\U{b4}}%
+%BeginExpansion
+{\acute{}}%
+%EndExpansion
+}\right\Vert ^{-1}.$
+
+\textit{Remark 3.1 }\emph{The following equalities hold good:}%
+\begin{equation*}
+\begin{array}{c}
+\displaystyle\rho _{\alpha }^{i}\circ h\frac{\partial f\circ h}{\partial
+x^{i}}=\left( \theta _{\alpha }^{\tilde{\imath}}\frac{\partial f}{\partial
+\varkappa ^{\tilde{\imath}}}\right) \circ h,\forall f\in \mathcal{F}\left(
+N\right) .%
+\end{array}%
+\leqno(3.7)
+\end{equation*}%
+\emph{and }%
+\begin{equation*}
+\begin{array}{c}
+\displaystyle\left( L_{\alpha \beta }^{\gamma }\circ h\right) \left( \rho
+_{\gamma }^{k}\circ h\right) =\left( \rho _{\alpha }^{i}\circ h\right) \frac{%
+\partial \left( \rho _{\beta }^{k}\circ h\right) }{\partial x^{i}}-\left(
+\rho _{\beta }^{j}\circ h\right) \frac{\partial \left( \rho _{\alpha
+}^{k}\circ h\right) }{\partial x^{j}}.%
+\end{array}%
+\leqno(3.8)
+\end{equation*}
+
+In the next we build some examples of objects of the category $\mathbf{GLA.}$
+
+\textbf{Theorem 3.1} \emph{Let }$M\in \left\vert \mathbf{Man}_{m}\right\vert
+$\emph{\ and }$g,h\in Iso_{\mathbf{Man}}\left( M\right) $\emph{\ be. Using
+the tangent }$\mathbf{B}^{\mathbf{v}}$\emph{-morphism }$\left( Tg,g\right) $%
+\emph{\ and the operation }%
+\begin{equation*}
+\begin{array}{ccc}
+\Gamma \left( TM,\tau _{M},M\right) \times \Gamma \left( TM,\tau
+_{M},M\right) & ^{\underrightarrow{~\ \ \left[ ,\right] _{TM,h}~\ \ }} &
+\Gamma \left( TM,\tau _{M},M\right) \\
+\left( u,v\right) & \longmapsto & \ \left[ u,v\right] _{TM,h}%
+\end{array}%
+\end{equation*}%
+\emph{where }%
+\begin{equation*}
+\left[ u,v\right] _{TM,h}=\Gamma \left( T\left( h\circ g\right) ^{-1},\left(
+h\circ g\right) ^{-1}\right) \left( \left[ \Gamma \left( T\left( h\circ
+g\right) ,h\circ g\right) u,\Gamma \left( T\left( h\circ g\right) ,h\circ
+g\right) v\right] _{TM}\right) ,
+\end{equation*}%
+\emph{for any }$u,v\in \Gamma \left( TM,\tau _{M},M\right) $\emph{, we
+obtain that}%
+\begin{equation*}
+\begin{array}{c}
+\left( \left( TM,\tau _{M},M\right) ,\left( Tg,g\right) ,\left[ ,\right]
+_{TM,h}\right) \in \left\vert \mathbf{GLA}\right\vert .%
+\end{array}%
+\end{equation*}
+
+For any $\mathbf{Man}$-isomorphisms $g$ and $h$ we obtain new and
+interesting generalized Lie algebroid structures for the tangent vector
+bundle $\left( TM,\tau _{M},M\right) .$ For any base $\left\{ t_{\alpha
+},~\alpha \in \overline{1,m}\right\} $ of the module of sections $\left(
+\Gamma \left( TM,\tau _{M},M\right) ,+,\cdot \right) $ we obtain the
+structure functions%
+\begin{equation*}
+\begin{array}{c}
+L_{\alpha \beta }^{\gamma }=\left( \theta _{\alpha }^{i}\frac{\partial
+\theta _{\beta }^{j}}{\partial x^{i}}-\theta _{\beta }^{i}\frac{\partial
+\theta _{\alpha }^{j}}{\partial x^{i}}\right) \tilde{\theta}_{j}^{\gamma
+},~\alpha ,\beta ,\gamma \in \overline{1,m}%
+\end{array}%
+\end{equation*}%
+where $\theta _{\alpha }^{i},~i,\alpha \in \overline{1,m}$ are real local
+functions such that
+\begin{equation*}
+\begin{array}{c}
+\Gamma \left( T\left( h\circ g\right) ,h\circ g\right) \left( t_{\alpha
+}\right) =\theta _{\alpha }^{i}\frac{\partial }{\partial x^{i}}%
+\end{array}%
+\end{equation*}%
+and $\tilde{\theta}_{j}^{\gamma },~i,\gamma \in \overline{1,m}$ are real
+local functions such that
+\begin{equation*}
+\begin{array}{c}
+\Gamma \left( T\left( h\circ g\right) ^{-1},\left( h\circ g\right)
+^{-1}\right) \left( \frac{\partial }{\partial x^{j}}\right) =\tilde{\theta}%
+_{j}^{\gamma }t_{\gamma }.%
+\end{array}%
+\end{equation*}
+
+In particular, using arbitrary basis for the module of sections and
+arbitrary isometries (symmetries, translations, rotations,...) for the
+Euclidean $3$-dimensional space $\Sigma ,$ we obtain a lot of generalized
+Lie algebroid structures for the tangent vector bundle $\left( T\Sigma ,\tau
+_{\Sigma },\Sigma \right) $.
+
+We assume that $\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F},\left(
+\rho ,Id_{N}\right) \right) $ is a Lie algebroid and let $h\in \mathbf{Man}%
+\left( N,N\right) $ be a surjective application. Let $\mathcal{AF}_{F}$ be a
+vector fibred $\left( n+p\right) $-atlas for the vector bundle $\left( F,\nu
+,N\right) $ and let $\mathcal{AF}_{TN}$ be a vector fibred $\left(
+n+n\right) $-atlas for the vector bundle $\left( TN,\tau _{N},N\right) $.
+
+If $\left( U,\xi _{U}\right) \in \mathcal{AF}_{TN}$ and $\left(
+V,s_{V}\right) \in \mathcal{AF}_{F}$ such that $U\cap h^{-1}\left( V\right)
+\neq \phi $, then we define the application%
+\begin{equation*}
+\begin{array}{ccc}
+\tau _{N}^{-1}(U{\cap }h^{-1}(V))) & {}^{\underrightarrow{\bar{\xi}_{U{\cap }%
+h^{-1}(V)}}} & \left( U{\cap }h^{-1}(V)\right) {\times }\mathbb{R}^{n} \\
+\left( \varkappa ,u\left( \varkappa \right) \right) & \longmapsto & \left(
+\varkappa ,\xi _{U,\varkappa }^{-1}u\left( \varkappa \right) \right) .%
+\end{array}%
+\end{equation*}
+
+\textbf{Proposition 3.1 }\emph{The set}%
+\begin{equation*}
+\begin{array}{c}
+\overline{\mathcal{AF}}_{TN}\overset{put}{=}\underset{U\cap h^{-1}\left(
+V\right) \neq \phi }{\underset{\left( U,\xi _{U}\right) \in \mathcal{AF}%
+_{TN},~\left( V,s_{V}\right) \in \mathcal{AF}_{F}}{\tbigcup }}\left\{ \left(
+U\cap h^{-1}\left( V\right) ,\bar{\xi}_{U{\cap }h^{-1}(V)}\right) \right\}%
+\end{array}%
+\end{equation*}%
+\emph{is a vector fibred }$n+n$\emph{-atlas for the vector bundle }$\left(
+TN,\tau _{N},N\right) .$
+
+\emph{If }$X=X^{\tilde{\imath}}\frac{\partial }{\partial \varkappa ^{\tilde{%
+\imath}}}\in \Gamma \left( TN,\tau _{N},N\right) ,$ \emph{then\ we obtain
+the section }%
+\begin{equation*}
+\begin{array}{c}
+\bar{X}=\bar{X}^{\tilde{\imath}}\circ h\frac{\partial }{\partial \bar{%
+\varkappa}^{\tilde{\imath}}}\in \Gamma \left( TN,\tau _{N},N\right) ,%
+\end{array}%
+\end{equation*}%
+\emph{such that }$\bar{X}\left( \bar{\varkappa}\right) =X\left( h\left( \bar{%
+\varkappa}\right) \right) ,$ \emph{for any }$\bar{\varkappa}\in U\cap
+h^{-1}\left( V\right) .$
+
+The set $\left\{ \frac{\partial }{\partial \bar{\varkappa}^{\tilde{\imath}}}%
+,~\tilde{\imath}\in \overline{1,n}\right\} $ is a base for the $\mathcal{F}%
+\left( N\right) $-module $\left( \Gamma \left( TN,\tau _{N},N\right)
+,+,\cdot \right) .$
+
+\textbf{Theorem 3.2} \emph{If we consider the operation }%
+\begin{equation*}
+\begin{array}{ccc}
+\Gamma \left( F,\nu ,N\right) \times \Gamma \left( F,\nu ,N\right) & ^{%
+\underrightarrow{~\ \ \left[ ,\right] _{F,h}~\ \ }} & \Gamma \left( F,\nu
+,N\right)%
+\end{array}%
+\end{equation*}%
+\emph{defined by}%
+\begin{equation*}
+\begin{array}{ll}
+\left[ t_{\alpha },t_{\beta }\right] _{F,h} & =\left( L_{\alpha \beta
+}^{\gamma }\circ h\right) t_{\gamma },\vspace*{1mm} \\
+\left[ t_{\alpha },ft_{\beta }\right] _{F,h} & =f\left( L_{\alpha \beta
+}^{\gamma }\circ h\right) t_{\gamma }+\rho _{\alpha }^{\tilde{\imath}}\circ h%
+\displaystyle\frac{\partial f}{\partial \bar{\varkappa}^{\tilde{\imath}}}%
+t_{\beta },\vspace*{1mm} \\
+\left[ ft_{\alpha },t_{\beta }\right] _{F,h} & =-\left[ t_{\beta
+},ft_{\alpha }\right] _{F,h},~%
+\end{array}%
+\end{equation*}%
+\emph{for any }$f\in \mathcal{F}\left( N\right) ,$ \emph{then }$\left(
+\left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,Id_{N}\right)
+\right) \in \left\vert \mathbf{GLA}\right\vert .$
+
+The generalized Lie algebroid
+\begin{equation*}
+\begin{array}{c}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho
+,Id_{N}\right) \right)%
+\end{array}%
+\end{equation*}%
+given by the previous theorem, will be called \emph{the generalized Lie
+algebroid associated to the Lie algebroid }$\left( \left( F,\nu ,N\right) ,%
+\left[ ,\right] _{F},\left( \rho ,Id_{N}\right) \right) $ \emph{and to the
+surjective application }$h\in \mathbf{Man}\left( N,N\right) .$
+
+In particular, if $h=Id_{N},$ then the generalized Lie algebroid
+\begin{equation*}
+\begin{array}{c}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,Id_{N}},\left( \rho
+,Id_{N}\right) \right)%
+\end{array}%
+\end{equation*}%
+will be called \emph{the generalized Lie algebroid associated to the Lie
+algebroid}%
+\begin{equation*}
+\begin{array}{c}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F},\left( \rho
+,Id_{N}\right) \right) .%
+\end{array}%
+\end{equation*}
+
+\subsection{The pull-back Lie algebroid of a generalized Lie algebroid}
+
+Let $\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right) $ be a generalized Lie algebroid.
+
+Let $\mathcal{AF}_{F}$ be a vector fibred $\left( n+p\right) $-atlas for the
+vector bundle $\left( F,\nu ,N\right) $ and let $\mathcal{AF}_{TM}$ be a
+vector fibred $\left( m+m\right) $-atlas for the vector bundle $\left(
+TM,\tau _{M},M\right) $.
+
+Let $\left( h^{\ast }F,h^{\ast }\nu ,M\right) $ be the pull-back vector
+bundle through $h.$
+
+If $\left( U,\xi _{U}\right) \in \mathcal{AF}_{TM}$ and $\left(
+V,s_{V}\right) \in \mathcal{AF}_{F}$ such that $U\cap h^{-1}\left( V\right)
+\neq \phi $, then we define the application%
+\begin{equation*}
+\begin{array}{ccc}
+h^{\ast }\nu ^{-1}(U{\cap }h^{-1}(V))) & {}^{\underrightarrow{\bar{s}_{U{%
+\cap }h^{-1}(V)}}} & \left( U{\cap }h^{-1}(V)\right) {\times }\mathbb{R}^{p}
+\\
+\left( \varkappa ,z\left( h\left( \varkappa \right) \right) \right) &
+\longmapsto & \left( \varkappa ,t_{V,h\left( \varkappa \right) }^{-1}z\left(
+h\left( \varkappa \right) \right) \right).%
+\end{array}%
+\end{equation*}
+
+\textbf{Proposition 3.1.1 }\emph{The set}%
+\begin{equation*}
+\begin{array}{c}
+\overline{\mathcal{AF}}_{F}\overset{put}{=}\underset{U\cap h^{-1}\left(
+V\right) \neq \phi }{\underset{\left( U,\xi _{U}\right) \in \mathcal{AF}%
+_{TM},~\left( V,s_{V}\right) \in \mathcal{AF}_{F}}{\tbigcup }}\left\{ \left(
+U\cap h^{-1}\left( V\right) ,\bar{s}_{U{\cap }h^{-1}(V)}\right) \right\}%
+\end{array}%
+\end{equation*}%
+\emph{is a vector fibred }$m+p$\emph{-atlas for the vector bundle }$\left(
+h^{\ast }F,h^{\ast }\nu ,M\right) .$
+
+\emph{If }$z=z^{\alpha }t_{\alpha }\in \Gamma \left( F,\nu ,N\right) ,$
+\emph{then\ we obtain the section }%
+\begin{equation*}
+\begin{array}{c}
+Z=\left( z^{\alpha }\circ h\right) T_{\alpha }\in \Gamma \left( h^{\ast
+}F,h^{\ast }\nu ,M\right)
+\end{array}%
+\end{equation*}%
+\emph{such that }$Z\left( x\right) =z\left( h\left( x\right) \right) ,$
+\emph{for any }$x\in U\cap h^{-1}\left( V\right) .$\bigskip
+
+\textbf{Theorem 3.1.1 }\emph{Let} $\Big({\overset{h^{\ast }F}{\rho }},Id_{M}%
+\Big)$ \emph{be the }$\mathbf{B}^{\mathbf{v}}$\emph{-morphism of }$\left(
+h^{\ast }F,h^{\ast }\nu ,M\right) $\ \emph{source and} $\left( TM,\tau
+_{M},M\right) $\ \emph{target, where}%
+\begin{equation*}
+\begin{array}{rcl}
+h^{\ast }F & ^{\underrightarrow{\overset{h^{\ast }F}{\rho }}} & TM \\
+\displaystyle Z^{\alpha }T_{\alpha }\left( x\right) & \longmapsto & %
+\displaystyle\left( Z^{\alpha }\cdot \rho _{\alpha }^{i}\circ h\right) \frac{%
+\partial }{\partial x^{i}}\left( x\right)%
+\end{array}%
+\leqno(3.1.1)
+\end{equation*}
+
+\emph{Using the operation}
+\begin{equation*}
+\begin{array}{ccc}
+\Gamma \left( h^{\ast }F,h^{\ast }\nu ,M\right) \times \Gamma \left( h^{\ast
+}F,h^{\ast }\nu ,M\right) & ^{\underrightarrow{~\ \ \left[ ,\right]
+_{h^{\ast }F}~\ \ }} & \Gamma \left( h^{\ast }F,h^{\ast }\nu ,M\right)%
+\end{array}%
+\end{equation*}%
+\emph{defined by}%
+\begin{equation*}
+\begin{array}{ll}
+\left[ T_{\alpha },T_{\beta }\right] _{h^{\ast }F} & =\left( L_{\alpha \beta
+}^{\gamma }\circ h\right) T_{\gamma },\vspace*{1mm} \\
+\left[ T_{\alpha },fT_{\beta }\right] _{h^{\ast }F} & \displaystyle=f\left(
+L_{\alpha \beta }^{\gamma }\circ h\right) T_{\gamma }+\left( \rho _{\alpha
+}^{i}\circ h\right) \frac{\partial f}{\partial x^{i}}T_{\beta },\vspace*{1mm}
+\\
+\left[ fT_{\alpha },T_{\beta }\right] _{h^{\ast }F} & =-\left[ T_{\beta
+},fT_{\alpha }\right] _{h^{\ast }F},%
+\end{array}%
+\leqno(3.1.2)
+\end{equation*}%
+\emph{for any} $f\in \mathcal{F}\left( M\right) ,$ \emph{it results that}
+\begin{equation*}
+\begin{array}{c}
+\left( \left( h^{\ast }F,h^{\ast }\nu ,M\right) ,\left[ ,\right] _{h^{\ast
+}F},\left( \overset{h^{\ast }F}{\rho },Id_{M}\right) \right)%
+\end{array}%
+\end{equation*}%
+ia a Lie algebroid which is called \emph{the pull-back Lie algebroid of the
+generalized Lie algebroid }$\left( \left( F,\nu ,N\right) ,\left[ ,\right]
+_{F,h},\left( \rho ,\eta \right) \right) .$
+
+\subsection{Interior Differential Systems}
+
+Let $\left( \left( h^{\ast }F,h^{\ast }\nu ,M\right) ,\left[ ,\right]
+_{h^{\ast }F},\left( \overset{h^{\ast }F}{\rho },Id_{M}\right) \right) $ be
+the pull-back Lie algebroid of the generalized Lie algebroid $\left( \left(
+F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta \right) \right) $.
+
+\textbf{Definition 3.2.1 }Any vector subbundle $\left( E,\pi ,M\right) $ of
+the vector bundle $\left( h^{\ast }F,h^{\ast }\nu ,M\right) $ will be called
+\emph{interior differential system (IDS) of the generalized Lie algebroid }%
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right) .
+\end{equation*}
+
+In particular, if $h=Id_{N}=\eta $, then any vector subbundle $\left( E,\pi
+,N\right) $ of the vector bundle $\left( F,\nu ,N\right) $ will be called
+\emph{interior differential system of the Lie algebroid }%
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F},\left( \rho
+,Id_{N}\right) \right) .
+\end{equation*}
+
+\textit{Remark 3.2.1 }If $\left( E,\pi ,M\right) $ is an IDS of the
+generalized Lie algebroid
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right) ,
+\end{equation*}%
+then we obtain a vector subbundle $\left( E^{0},\pi ^{0},M\right) $ of the
+vector bundle $\left( \overset{\ast }{h^{\ast }F},\overset{\ast }{h^{\ast
+}\nu },M\right) $ such that
+\begin{equation*}
+\Gamma \left( E^{0},\pi ^{0},M\right) \overset{put}{=}\left\{ \Omega \in
+\Gamma \left( \overset{\ast }{h^{\ast }F},\overset{\ast }{h^{\ast }\nu }%
+,M\right) :\Omega \left( S\right) =0,~\forall S\in \Gamma \left( E,\pi
+,M\right) \right\} .
+\end{equation*}
+
+The vector subbundle $\left( E^{0},\pi ^{0},M\right) $ will be called \emph{%
+the annihilator vector subbundle of the IDS }$\left( E,\pi ,M\right) .$
+
+\textbf{Proposition 3.2.1 }\emph{If }$\left( E,\pi ,M\right) $\emph{\ is an
+IDS of the generalized Lie algebroid }%
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right)
+\end{equation*}%
+\emph{such that }$\Gamma \left( E,\pi ,M\right) =\left\langle
+S_{1},...,S_{r}\right\rangle $\emph{, then it exists }$\Theta
+^{r+1},...,\Theta ^{p}\in \Gamma \left( \overset{\ast }{h^{\ast }F},\overset{%
+\ast }{h^{\ast }\nu },M\right) $\emph{\ linearly independent such that }$%
+\Gamma \left( E^{0},\pi ^{0},M\right) =\left\langle \Theta ^{r+1},...,\Theta
+^{p}\right\rangle .$
+
+\textbf{Definition 3.2.2 }The IDS $\left( E,\pi ,M\right) $ of the
+generalized Lie algebroid
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right)
+\end{equation*}%
+will be called \emph{involutive} if $\left[ S,T\right] _{h^{\ast }F}\in
+\Gamma \left( E,\pi ,M\right) ,~$for any $S,T\in \Gamma \left( E,\pi
+,M\right) .$
+
+\textbf{Proposition 3.2.2 }\emph{If }$\left( E,\pi ,M\right) $\emph{\ is an
+IDS of the generalized Lie algebroid }%
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right)
+\end{equation*}%
+\emph{and }$\left\{ S_{1},...,S_{r}\right\} $\emph{\ is a base for the }$%
+\mathcal{F}\left( M\right) $\emph{-submodule }$\left( \Gamma \left( E,\pi
+,M\right) ,+,\cdot \right) $\emph{\ then }$\left( E,\pi ,M\right) $\emph{\
+is involutive if and only if }$\left[ S_{a},S_{b}\right] _{h^{\ast }F}\in
+\Gamma \left( E,\pi ,M\right) ,~$for any $a,b\in \overline{1,r}.$
+
+\section{Exterior differential calculus}
+
+Let $\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right) $ be a generalized Lie algebroid. We denoted by $\Lambda
+^{q}\left( F,\nu ,N\right) $ the set of \emph{differential forms of degree }$%
+q.$ We remark that if
+\begin{equation*}
+\Lambda \left( F,\nu ,N\right) =\underset{q\geq 0}{\oplus }\Lambda
+^{q}\left( F,\nu ,N\right) ,
+\end{equation*}%
+then we obtain \emph{the exterior differential algebra} $\left( \Lambda
+\left( F,\nu ,N\right) ,+,\cdot ,\wedge \right) .$
+
+\textbf{Definition 4.1 }For any $z\in \Gamma \left( F,\nu ,N\right) $, the
+application
+\begin{equation*}
+\begin{array}{c}
+\begin{array}{rcl}
+\Lambda \left( F,\nu ,N\right) & ^{\underrightarrow{~\ \ L_{z}~\ \ }} &
+\Lambda \left( F,\nu ,N\right)%
+\end{array}%
+,%
+\end{array}%
+\end{equation*}%
+defined by%
+\begin{equation*}
+\begin{array}{c}
+L_{z}\left( f\right) =\Gamma \left( Th\circ \rho ,h\circ \eta \right)
+z\left( f\right) ,%
+\end{array}%
+\end{equation*}%
+for any $f\in \mathcal{F}\left( N\right) $ and
+\begin{equation*}
+\begin{array}{cl}
+L_{z}\omega \left( z_{1},...,z_{q}\right) & =\Gamma \left( Th\circ \rho
+,h\circ \eta \right) z\left( \omega \left( \left( z_{1},...,z_{q}\right)
+\right) \right) \\
+& -\overset{q}{\underset{i=1}{\tsum }}\omega \left( \left( z_{1},...,\left[
+z,z_{i}\right] _{F,h},...,z_{q}\right) \right) ,%
+\end{array}%
+\end{equation*}%
+for any $\omega \in \Lambda ^{q}\mathbf{\ }\left( F,\nu ,N\right) $ and $%
+z_{1},...,z_{q}\in \Gamma \left( F,\nu ,N\right) ,$ is called \emph{the
+covariant Lie derivative with respect to the section }$z.$
+
+\textbf{Theorem 4.1 }\emph{If }$z\in \Gamma \left( F,\nu ,N\right) ,$ $%
+\omega \in \Lambda ^{q}\left( F,\nu ,N\right) $\emph{\ and }$\theta \in
+\Lambda ^{r}\left( F,\nu ,N\right) $\emph{, then}%
+\begin{equation*}
+\begin{array}{c}
+L_{z}\left( \omega \wedge \theta \right) =L_{z}\omega \wedge \theta +\omega
+\wedge L_{z}\theta .%
+\end{array}%
+\leqno(4.1)
+\end{equation*}
+
+\textbf{Definition 4.2 }For any $z\in \Gamma \left( F,\nu ,N\right) $, the
+application%
+\begin{equation*}
+\begin{array}{rcl}
+\Lambda \left( F,\nu ,N\right) & ^{\underrightarrow{\ \ i_{z}\ \ }} &
+\Lambda \left( F,\nu ,N\right) \\
+\Lambda ^{q}\left( F,\nu ,N\right) \ni \omega & \longmapsto & i_{z}\omega
+\in \Lambda ^{q-1}\left( F,\nu ,N\right) ,%
+\end{array}%
+\end{equation*}%
+defined by $i_{z}f=0,$ for any $f\in \mathcal{F}\left( N\right) $ and
+\begin{equation*}
+\begin{array}{c}
+i_{z}\omega \left( z_{2},...,z_{q}\right) =\omega \left(
+z,z_{2},...,z_{q}\right) ,%
+\end{array}%
+\end{equation*}%
+for any $z_{2},...,z_{q}\in \Gamma \left( F,\nu ,N\right) $, is called the
+\emph{interior product associated to the section}~$z.$\bigskip
+
+\textbf{Theorem 4.2 }\emph{If }$z\in \Gamma \left( F,\nu ,N\right) $\emph{,
+then for any }$\omega \in $\emph{\ }$\Lambda ^{q}\left( F,\nu ,N\right) $%
+\emph{\ and }$\theta \in $\emph{\ }$\Lambda ^{r}\left( F,\nu ,N\right) $%
+\emph{\ we obtain}
+\begin{equation*}
+\begin{array}{c}
+i_{z}\left( \omega \wedge \theta \right) =i_{z}\omega \wedge \theta +\left(
+-1\right) ^{q}\omega \wedge i_{z}\theta .%
+\end{array}%
+\leqno(4.2)
+\end{equation*}
+
+\textbf{Theorem 4.3 }\emph{For any }$z,v\in \Gamma \left( F,\nu ,N\right) $%
+\emph{\ we obtain}%
+\begin{equation*}
+\begin{array}{c}
+L_{v}\circ i_{z}-i_{z}\circ L_{v}=i_{\left[ z,v\right] _{F,h}}.%
+\end{array}%
+\leqno(4.3)
+\end{equation*}
+
+\noindent
+
+\textbf{Theorem 4.4 }\emph{The application }%
+\begin{equation*}
+\begin{array}{c}
+\begin{array}{ccc}
+\Lambda ^{q}\mathbf{\ }\left( F,\nu ,N\right)  & ^{\underrightarrow{\,\
+d^{F}\,\ }} & \Lambda ^{q+1}\mathbf{\ }\left( F,\nu ,N\right)  \\
+\omega  & \longmapsto  & d\omega
+\end{array}%
+\end{array}%
+\end{equation*}%
+\emph{defined by }$d^{F}f\left( z\right) =\Gamma \left( Th\circ \rho ,h\circ
+\eta \right) \left( z\right) f,$ \emph{for any }$z\in \Gamma \left( F,\nu
+,N\right) ,$ \emph{and}
+\begin{equation*}
+\begin{array}{l}
+d^{F}\omega \left( z_{0},z_{1},...,z_{q}\right) =\overset{q}{\underset{i=0}{%
+\tsum }}\left( -1\right) ^{i}\Gamma \left( Th\circ \rho ,h\circ \eta \right)
+z_{i}\left( \omega \left( \left( z_{0},z_{1},...,\hat{z}_{i},...,z_{q}%
+\right) \right) \right)  \\
+~\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\underset{i<j}{\tsum }%
+\left( -1\right) ^{i+j}\omega \left( \left( \left[ z_{i},z_{j}\right]
+_{F,h},z_{0},z_{1},...,\hat{z}_{i},...,\hat{z}_{j},...,z_{q}\right) \right) ,%
+\end{array}%
+\end{equation*}%
+\emph{for any }$z_{0},z_{1},...,z_{q}\in \Gamma \left( F,\nu ,N\right) ,$
+\emph{is unique with the following property:}%
+\begin{equation*}
+\begin{array}{c}
+L_{z}=d^{F}\circ i_{z}+i_{z}\circ d^{F},~\forall z\in \Gamma \left( F,\nu
+,N\right) .%
+\end{array}%
+\leqno(4.4)
+\end{equation*}
+
+This application will be called\emph{\ the exterior differentiation
+ope\-ra\-tor for the exterior differential algebra of the generalized Lie
+algebroid }$((F,\nu ,N),[,]_{F,h},(\rho ,\eta )).$
+
+\textbf{Theorem 4.5} \emph{The exterior differentiation operator }$d^{F}$%
+\emph{\ given by the previous theorem has the following properties:}\medskip
+
+\noindent 1. \emph{\ For any }$\omega \in $\emph{\ }$\Lambda ^{q}\left(
+F,\nu ,N\right) $\emph{\ and }$\theta \in $\emph{\ }$\Lambda ^{r}\left(
+F,\nu ,N\right) $\emph{\ we obtain }%
+\begin{equation*}
+\begin{array}{c}
+d^{F}\left( \omega \wedge \theta \right) =d^{F}\omega \wedge \theta +\left(
+-1\right) ^{q}\omega \wedge d^{F}\theta .%
+\end{array}%
+\leqno(4.5)
+\end{equation*}
+
+\noindent 2.\emph{\ For any }$z\in \Gamma \left( F,\nu ,N\right) $ \emph{we
+obtain }$L_{z}\circ d^{F}=d^{F}\circ L_{z}.$
+
+\noindent3.\emph{\ }$d^{F}\circ d^{F}=0.$
+
+\bigskip \textbf{Theorem 4.6} (of Maurer-Cartan type)\textbf{\ \ }
+
+\emph{If }$((F,\nu ,N),[,]_{F,h},(\rho ,\eta ))$ \emph{is a generalized Lie
+algebroid and} $d^{F}$\break \emph{is the ex\-te\-rior differentiation
+operator for the exterior differential} $\mathcal{F}(N)$\emph{-algebra}%
+\break $(\Lambda (F,\nu ,N),+,\cdot ,\wedge ),$ \emph{then we obtain the
+structure equations of Maurer-Cartan type }%
+\begin{equation*}
+\begin{array}{c}
+d^{F}t^{\alpha }=-\displaystyle\frac{1}{2}L_{\beta \gamma }^{\alpha
+}t^{\beta }\wedge t^{\gamma },~\alpha \in \overline{1,p}%
+\end{array}%
+\leqno(\mathcal{C}_{1})
+\end{equation*}%
+\emph{and\ }%
+\begin{equation*}
+\begin{array}{c}
+d^{F}\varkappa ^{\tilde{\imath}}=\theta _{\alpha }^{\tilde{\imath}}t^{\alpha
+},~\tilde{\imath}\in \overline{1,n},%
+\end{array}%
+\leqno(\mathcal{C}_{2})
+\end{equation*}%
+\emph{where }$\left\{ t^{\alpha },\alpha \in \overline{1,p}\right\} ~$\emph{%
+is the coframe of the vector bundle }$\left( F,\nu ,N\right) .$\bigskip
+\noindent
+
+This equations will be called \emph{the structure equations of Maurer-Cartan
+type associa\-ted to the generalized Lie algebroid }$\left( \left( F,\nu
+,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta \right) \right) .$
+
+\bigskip\noindent\emph{Proof.} Let $\alpha \in \overline{1,p}$ be arbitrary.
+Since
+\begin{equation*}
+\begin{array}{c}
+d^{F}t^{\alpha }\left( t_{\beta },t_{\gamma }\right) =-L_{\beta \gamma
+}^{\alpha },~\forall \beta ,\gamma \in \overline{1,p}%
+\end{array}%
+\end{equation*}%
+it results that
+\begin{equation*}
+\begin{array}{c}
+d^{F}t^{\alpha }=-\underset{\beta <\gamma }{\tsum }L_{\beta \gamma }^{\alpha
+}t^{\beta }\wedge t^{\gamma }.%
+\end{array}%
+\leqno(1)
+\end{equation*}
+Since $L_{\beta \gamma }^{\alpha }=-L_{\gamma \beta }^{\alpha }$ and $%
+t^{\beta }\wedge t^{\gamma }=-t^{\gamma }\wedge t^{\beta }$, for nay $\beta
+,\gamma \in \overline{1,p},$ it results that
+\begin{equation*}
+\begin{array}{c}
+\underset{\beta <\gamma }{\tsum }L_{\beta \gamma }^{\alpha }t^{\beta }\wedge
+t^{\gamma }=\displaystyle\frac{1}{2}L_{\beta \gamma }^{\alpha }t^{\beta
+}\wedge t^{\gamma }%
+\end{array}%
+\leqno(2)
+\end{equation*}%
+Using the equalities $\left( 1\right) $ and $\left( 2\right) $ it results
+the structure equation $(\mathcal{C}_{1}).$
+
+Let $\tilde{\imath}\in \overline{1,n}$ be arbitrarily. Since $d^{F}\varkappa
+^{\tilde{\imath}}\left( t_{\alpha }\right) =\theta _{\alpha }^{\tilde{\imath}%
+},~$\ for any $\alpha \in \overline{1,p},$ it results the structure equation
+$(\mathcal{C}_{2}).$\hfill \emph{q.e.d.}\bigskip
+
+\bigskip \noindent \textbf{Corollary 4.1 }\emph{If }$\left( \left( h^{\ast
+}F,h^{\ast }\nu ,M\right) ,\left[ ,\right] _{h^{\ast }F},\left( \overset{%
+h^{\ast }F}{\rho },Id_{M}\right) \right) $ \emph{\ is the pull-back Lie
+algebroid associated to the generalized Lie algebroid} $\left( \left( F,\nu
+,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta \right) \right) $ \emph{%
+and }$d^{h^{\ast }F}$\emph{\ is the exterior differentiation operator for
+the exterior differential }$\mathcal{F}\left( M\right) $\emph{-algebra}%
+\break $\left( \Lambda \left( h^{\ast }F,h^{\ast }\nu ,M\right) ,+,\cdot
+,\wedge \right) $\emph{, then we obtain the following structure equations of
+Maurer-Cartan type \ }%
+\begin{equation*}
+\begin{array}{c}
+d^{h^{\ast }F}T^{\alpha }=-\displaystyle\frac{1}{2}\left( L_{\beta \gamma
+}^{\alpha }\circ h\right) T^{\beta }\wedge T^{\gamma },~\alpha \in \overline{%
+1,p}%
+\end{array}%
+\leqno(\mathcal{C}_{1}^{\prime })
+\end{equation*}%
+\emph{and\ }%
+\begin{equation*}
+\begin{array}{c}
+d^{h^{\ast }F}x^{i}=\left( \rho _{\alpha }^{i}\circ h\right) T^{\alpha
+},~i\in \overline{1,m}.%
+\end{array}%
+\leqno(\mathcal{C}_{2}^{\prime })
+\end{equation*}%
+This equations will be called \emph{the structure equations of Maurer-Cartan
+type associated to the pull-back Lie algebroid }%
+\begin{equation*}
+\left( \left( h^{\ast }F,h^{\ast }\nu ,M\right) ,\left[ ,\right] _{h^{\ast
+}F},\left( \overset{h^{\ast }F}{\rho },Id_{M}\right) \right) .
+\end{equation*}
+
+\textbf{Theorem 4.7 (}of Cartan type)\textbf{\ }\emph{Let }$\left( E,\pi
+,M\right) $\emph{\ be an IDS of the generalized Lie algebroid }$\left(
+\left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta \right)
+\right) .$\emph{\ If }$\left\{ \Theta ^{r+1},...,\Theta ^{p}\right\} $\emph{%
+\ is a base for the }$\mathcal{F}\left( M\right) $\emph{-submodule }$\left(
+\Gamma \left( E^{0},\pi ^{0},M\right) ,+,\cdot \right) $\emph{, then the IDS
+}$\left( E,\pi ,M\right) $\emph{\ is involutive if and only if it exists }%
+\begin{equation*}
+\Omega _{\beta }^{\alpha }\in \Lambda ^{1}\left( h^{\ast }F,h^{\ast }\nu
+,M\right) ,~\alpha ,\beta \in \overline{r+1,p}
+\end{equation*}%
+\emph{such that}
+\begin{equation*}
+d^{h^{\ast }F}\Theta ^{\alpha }=\Sigma _{\beta \in \overline{r+1,p}}\Omega
+_{\beta }^{\alpha }\wedge \Theta ^{\beta }\in \mathcal{I}\left( \Gamma
+\left( E^{0},\pi ^{0},M\right) \right) .
+\end{equation*}
+
+\emph{Proof. }Let $\left\{ S_{1},...,S_{r}\right\} $ be a base for the $%
+\mathcal{F}\left( M\right) $-submodule $\left( \Gamma \left( E,\pi ,M\right)
+,+,\cdot \right) $
+
+Let $\left\{ S_{r+1},...,S_{p}\right\} \in \Gamma \left( h^{\ast }F,h^{\ast
+}\nu ,M\right) $ such that $\left\{
+S_{1},...,S_{r},S_{r+1},...,S_{p}\right\} $ is a base for the $\mathcal{F}%
+\left( M\right) $-module
+\begin{equation*}
+\left( \Gamma \left( h^{\ast }F,h^{\ast }\nu ,M\right) ,+,\cdot \right) .
+\end{equation*}
+
+Let $\Theta ^{1},...,\Theta ^{r}\in \Gamma \left( \overset{\ast }{h^{\ast }F}%
+,\overset{\ast }{h^{\ast }\nu },M\right) $ such that $\left\{ \Theta
+^{1},...,\Theta ^{r},\Theta ^{r+1},...,\Theta ^{p}\right\} $ is a base for
+the $\mathcal{F}\left( M\right) $-module
+\begin{equation*}
+\left( \Gamma \left( \overset{\ast }{h^{\ast }F},\overset{\ast }{h^{\ast
+}\nu },M\right) ,+,\cdot \right) .
+\end{equation*}
+
+For any $a,b\in \overline{1,r}$ and $\alpha ,\beta \in \overline{r+1,p}$, we
+have the equalities:%
+\begin{equation*}
+\begin{array}{ccc}
+\Theta ^{a}\left( S_{b}\right) & = & \delta _{b}^{a} \\
+\Theta ^{a}\left( S_{\beta }\right) & = & 0 \\
+\Theta ^{\alpha }\left( S_{b}\right) & = & 0 \\
+\Theta ^{\alpha }\left( S_{\beta }\right) & = & \delta _{\beta }^{\alpha }%
+\end{array}%
+\end{equation*}
+
+We remark that the set of the $2$-forms%
+\begin{equation*}
+\left\{ \Theta ^{a}\wedge \Theta ^{b},\Theta ^{a}\wedge \Theta ^{\beta
+},\Theta ^{\alpha }\wedge \Theta ^{\beta },~a,b\in \overline{1,r}\wedge
+\alpha ,\beta \in \overline{r+1,p}\right\}
+\end{equation*}%
+is a base for the $\mathcal{F}\left( M\right) $-module $\left( \Lambda
+^{2}\left( h^{\ast }F,h^{\ast }\nu ,M\right) ,+,\cdot \right) .$
+
+Therefore, we have%
+\begin{equation*}
+d^{h^{\ast }F}\Theta ^{\alpha }=\Sigma _{b<c}A_{bc}^{\alpha }\Theta
+^{b}\wedge \Theta ^{c}+\Sigma _{b,\gamma }B_{b\gamma }^{\alpha }\Theta
+^{b}\wedge \Theta ^{\gamma }+\Sigma _{\beta <\gamma }C_{\beta \gamma
+}^{\alpha }\Theta ^{\beta }\wedge \Theta ^{\gamma },\leqno\left( 1\right)
+\end{equation*}%
+where, $A_{bc}^{\alpha },B_{b\gamma }^{\alpha }$ and $C_{\beta \gamma
+}^{\alpha },~a,b,c\in \overline{1,r},~\alpha ,\beta ,\gamma \in \overline{%
+r+1,p}$ are real local functions such that $A_{bc}^{\alpha }=-A_{cb}^{\alpha
+}$ and $C_{\beta \gamma }^{\alpha }=-C_{\gamma \beta }^{\alpha }.$
+
+Using the formula%
+\begin{equation*}
+\begin{array}{cl}
+d^{h^{\ast }F}\Theta ^{\alpha }\left( S_{b},S_{c}\right) & =\Gamma \left(
+\overset{h^{\ast }F}{\rho },Id_{M}\right) S_{b}\left( \Theta ^{\alpha
+}\left( S_{c}\right) \right) -\Gamma \left( \overset{h^{\ast }F}{\rho }%
+,Id_{M}\right) S_{c}\left( \Theta ^{\alpha }\left( S_{b}\right) \right) \\
+& -\Theta ^{\alpha }\left( \left[ S_{b},S_{c}\right] _{h^{\ast }F}\right) ,%
+\end{array}%
+\leqno\left( 2\right)
+\end{equation*}%
+we obtain that
+\begin{equation*}
+A_{bc}^{\alpha }=-\Theta ^{\alpha }\left( \left[ S_{b},S_{c}\right]
+_{h^{\ast }F}\right) ,~\leqno\left( 3\right)
+\end{equation*}%
+for any $b,c\in \overline{1,r}$ and $\alpha \in \overline{r+1,p}.$
+
+We admit that $\left( E,\pi ,M\right) $ is an involutive IDS of the
+generalized Lie algebroid $\left( \left( F,\nu ,N\right) ,\left[ ,\right]
+_{F,h},\left( \rho ,\eta \right) \right) .$
+
+As $\left[ S_{b},S_{c}\right] _{h^{\ast }F}\in \Gamma \left( E,\pi ,M\right)
+,$ for any $b,c\in \overline{1,r},$ it results that $\Theta ^{\alpha }\left( %
+\left[ S_{b},S_{c}\right] _{h^{\ast }F}\right) =0,$ for any $b,c\in
+\overline{1,r}$ and $\alpha \in \overline{r+1,p}.$ Therefore, for any $%
+b,c\in \overline{1,r}$ and $\alpha \in \overline{r+1,p},$ we obtain $%
+A_{bc}^{\alpha }=0$ and
+\begin{equation*}
+\begin{array}{ccl}
+d^{h^{\ast }F}\Theta ^{\alpha } & = & \Sigma _{b,\gamma }B_{b\gamma
+}^{\alpha }\Theta ^{b}\wedge \Theta ^{\gamma }+\frac{1}{2}C_{\beta \gamma
+}^{\alpha }\Theta ^{\beta }\wedge \Theta ^{\gamma } \\
+& = & \left( B_{b\gamma }^{\alpha }\Theta ^{b}+\frac{1}{2}C_{\beta \gamma
+}^{\alpha }\Theta ^{\beta }\right) \wedge \Theta ^{\gamma }.%
+\end{array}%
+\end{equation*}
+
+As
+\begin{equation*}
+\Omega _{\gamma }^{\alpha }\overset{put}{=}B_{b\gamma }^{\alpha }\Theta ^{b}+%
+\frac{1}{2}C_{\beta \gamma }^{\alpha }\Theta ^{\beta }\in \Lambda ^{1}\left(
+h^{\ast }F,h^{\ast }\nu ,M\right) ,~
+\end{equation*}
+for any $\alpha ,\beta \in \overline{r+1,p},$ it results the first
+implication.
+
+Conversely, we admit that it exists
+\begin{equation*}
+\Omega _{\beta }^{\alpha }\in \Lambda ^{1}\left( h^{\ast }F,h^{\ast }\nu
+,M\right) ,~\alpha ,\beta \in \overline{r+1,p}
+\end{equation*}%
+such that
+\begin{equation*}
+d^{h^{\ast }F}\Theta ^{\alpha }=\Sigma _{\beta \in \overline{r+1,p}}\Omega
+_{\beta }^{\alpha }\wedge \Theta ^{\beta },~\leqno\left( 4\right)
+\end{equation*}%
+for any $\alpha \in \overline{r+1,p}.$
+
+Using the affirmations $\left( 1\right) ,\left( 2\right) $ and $\left(
+4\right) $ we obtain that $A_{bc}^{\alpha }=0,~$for any $b,c\in \overline{1,r%
+}$ and $\alpha \in \overline{r+1,p}.$
+
+Using the affirmation $\left( 3\right) $, we obtain $\Theta ^{\alpha }\left( %
+\left[ S_{b},S_{c}\right] _{h^{\ast }F}\right) =0,~$for any $b,c\in
+\overline{1,r}$ and $\alpha \in \overline{r+1,p}.$
+
+Therefore, we have $\left[ S_{b},S_{c}\right] _{h^{\ast }F}\in \Gamma \left(
+E,\pi ,M\right) ,~$for any $b,c\in \overline{1,r}.$
+
+Using the \emph{Proposition 3.2.2}, we obtain the second implication.\hfill
+\emph{q.e.d.}\medskip
+
+If $\left( \left( F^{\prime },\nu ^{\prime },N^{\prime }\right) ,\left[ ,%
+\right] _{F^{\prime },h^{\prime }},\left( \rho ^{\prime },\eta ^{\prime
+}\right) \right) $ is an another generalized Lie algebroid and $\left(
+\varphi ,\varphi _{0}\right) $ is a $\mathbf{GLA}$-morphism of
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right)
+\end{equation*}%
+source and
+\begin{equation*}
+\left( \left( F^{\prime },\nu ^{\prime },N^{\prime }\right) ,\left[ ,\right]
+_{F^{\prime },h^{\prime }},\left( \rho ^{\prime },\eta ^{\prime }\right)
+\right)
+\end{equation*}%
+target, then obtain the application
+\begin{equation*}
+\begin{array}{ccc}
+\Lambda ^{q}\left( F^{\prime },\nu ^{\prime },N^{\prime }\right) & ^{%
+\underrightarrow{\ \left( \varphi ,\varphi _{0}\right) ^{\ast }\ }} &
+\Lambda ^{q}\left( F,\nu ,N\right) \\
+\omega ^{\prime } & \longmapsto & \left( \varphi ,\varphi _{0}\right) ^{\ast
+}\omega ^{\prime }%
+\end{array}%
+,
+\end{equation*}%
+where
+\begin{equation*}
+\begin{array}{c}
+\left( \left( \varphi ,\varphi _{0}\right) ^{\ast }\omega ^{\prime }\right)
+\left( z_{1},...,z_{q}\right) =\omega ^{\prime }\left( \Gamma \left( \varphi
+,\varphi _{0}\right) \left( z_{1}\right) ,...,\Gamma \left( \varphi ,\varphi
+_{0}\right) \left( z_{q}\right) \right) ,%
+\end{array}%
+\end{equation*}%
+for any $z_{1},...,z_{q}\in \Gamma \left( F,\nu ,N\right) .$
+
+\textbf{Theorem 4.8 }\emph{If }$\left( \varphi ,\varphi _{0}\right) $\emph{\
+is a }$\mathbf{GLA}$-\emph{morphism of }%
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right)
+\end{equation*}%
+\emph{\ source and }%
+\begin{equation*}
+\left( \left( F^{\prime },\nu ^{\prime },N^{\prime }\right) ,\left[ ,\right]
+_{F^{\prime },h^{\prime }},\left( \rho ^{\prime },\eta ^{\prime }\right)
+\right)
+\end{equation*}%
+\emph{target, then the following affirmations are satisfied:}\medskip
+
+\noindent 1. \emph{For any }$\omega ^{\prime }\in \Lambda ^{q}\left(
+F^{\prime },\nu ^{\prime },N^{\prime }\right) $\emph{\ and }$\theta ^{\prime
+}\in \Lambda ^{r}\left( F^{\prime },\nu ^{\prime },N^{\prime }\right) $\emph{%
+\ we obtain}%
+\begin{equation*}
+\begin{array}{c}
+\left( \varphi ,\varphi _{0}\right) ^{\ast }\left( \omega ^{\prime }\wedge
+\theta ^{\prime }\right) =\left( \varphi ,\varphi _{0}\right) ^{\ast }\omega
+^{\prime }\wedge \left( \varphi ,\varphi _{0}\right) ^{\ast }\theta ^{\prime
+}.%
+\end{array}%
+\leqno(4.13)
+\end{equation*}
+
+\noindent 2.\emph{\ For any }$z\in \Gamma \left( F,\nu ,N\right) $\emph{\
+and }$\omega ^{\prime }\in \Lambda ^{q}\left( F^{\prime },\nu ^{\prime
+},N^{\prime }\right) $\emph{\ we obtain}%
+\begin{equation*}
+\begin{array}{c}
+i_{z}\left( \left( \varphi ,\varphi _{0}\right) ^{\ast }\omega ^{\prime
+}\right) =\left( \varphi ,\varphi _{0}\right) ^{\ast }\left( i_{\varphi
+\left( z\right) }\omega ^{\prime }\right) .%
+\end{array}%
+\leqno(4.14)
+\end{equation*}
+
+\noindent 3. \emph{If }$N=N^{\prime }$ \emph{and }$\left( Th\circ \rho
+,h\circ \eta \right) =\left( Th^{\prime }\circ \rho ^{\prime },h^{\prime
+}\circ \eta ^{\prime }\right) \circ \left( \varphi ,\varphi _{0}\right) ,$
+\emph{then we obtain}
+\begin{equation*}
+\begin{array}{c}
+\left( \varphi ,\varphi _{0}\right) ^{\ast }\circ d^{F^{\prime }}=d^{F}\circ
+\left( \varphi ,\varphi _{0}\right) ^{\ast }.%
+\end{array}%
+\leqno(4.15)
+\end{equation*}
+
+\subsection{Exterior Differential Systems}
+
+Let $\left( \left( h^{\ast }F,h^{\ast }\nu ,M\right) ,\left[ ,\right]
+_{h^{\ast }F},\left( \overset{h^{\ast }F}{\rho },Id_{M}\right) \right) $ be
+the pull-back Lie algebroid of the generalized Lie algebroid $\left( \left(
+F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta \right) \right) $.
+
+\textbf{Definition 4.1.1 }Any ideal $\left( \mathcal{I},+,\cdot \right) $ of
+the exterior differential algebra of the pull-back Lie algebroid $\left(
+\left( h^{\ast }F,h^{\ast }\nu ,M\right) ,\left[ ,\right] _{h^{\ast
+}F},\left( \overset{h^{\ast }F}{\rho },Id_{M}\right) \right) $ closed under
+differentiation operator $d^{h^{\ast }F},$ namely $d^{h^{\ast }F}\mathcal{%
+I\subseteq I},$ will be called \emph{differential ideal of the generalized
+Lie algebroid }$\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left(
+\rho ,\eta \right) \right) .$
+
+In particular, if $h=Id_{N}=\eta $, then any ideal $\left( \mathcal{I}%
+,+,\cdot \right) $ of the exterior differential algebra of the Lie algebroid
+$\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F},\left( \rho
+,Id_{M}\right) \right) $ closed under differentiation operator $d^{F}$ $,$
+namely $d^{F}\mathcal{I\subseteq I},$ will be called \emph{differential
+ideal of the Lie algebroid }$\left( \left( F,\nu ,N\right) ,\left[ ,\right]
+_{F},\left( \rho ,Id_{M}\right) \right) .$
+
+\textbf{Definition 4.1.2 }Let $\left( \mathcal{I},+,\cdot \right) $ be a
+differential ideal of the generalized Lie algebroid $\left( \left( F,\nu
+,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta \right) \right) $ or of
+the Lie algebroid $\left( \left( F,\nu ,N\right) ,\left[ ,\right]
+_{F},\left( \rho ,Id_{M}\right) \right) $ respectively$.$
+
+If it exists an IDS $\left( E,\pi ,M\right) $ such that for all $k\in
+\mathbb{N}^{\ast }$ and $\omega \in \mathcal{I}\cap \Lambda ^{k}\left(
+h^{\ast }F,h^{\ast }\nu ,M\right) $ we have $\omega \left(
+u_{1},...,u_{k}\right) =0,$ for any $u_{1},...,u_{k}\in \Gamma \left( E,\pi
+,M\right) ,$ then we will say that $\left( \mathcal{I},+,\cdot \right) $%
+\emph{\ is an exterior differential system (EDS) of the generalized Lie
+algebroid }%
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right) .
+\end{equation*}
+
+In particular, if $h=Id_{N}=\eta $ and it exists an IDS $\left( E,\pi
+,M\right) $ such that for all $k\in \mathbb{N}^{\ast }$ and $\omega \in
+\mathcal{I}\cap \Lambda ^{k}\left( F,\nu ,M\right) $ we have $\omega \left(
+u_{1},...,u_{k}\right) =0,$ for any $u_{1},...,u_{k}\in \Gamma \left( E,\pi
+,M\right) ,$ then we will say that $\left( \mathcal{I},+,\cdot \right) $%
+\emph{\ is an exterior differential system (EDS) of the Lie algebroid }$%
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F},\left( \rho
+,Id_{N}\right) \right) .$
+
+\textbf{Theorem 4.1.1 (}of Cartan type) \emph{The IDS }$\left( E,\pi
+,M\right) $\emph{\ of the generalized Lie algebroid }$\left( \left( F,\nu
+,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta \right) \right) $\emph{\
+is involutive, if and only if the ideal generated by the }$\mathcal{F}\left(
+M\right) $\emph{-submodule }$\left( \Gamma \left( E^{0},\pi ^{0},M\right)
+,+,\cdot \right) $\emph{\ is an EDS of the generalized Lie algebroid }$%
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right) .$
+
+\emph{Proof. }Let $\left( E,\pi ,M\right) $ be an involutive IDS of the
+generalized Lie algebroid
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right) .
+\end{equation*}
+
+Let $\left\{ \Theta ^{r+1},...,\Theta ^{p}\right\} $ be a base for the $%
+\mathcal{F}\left( M\right) $-submodule $\left( \Gamma \left( E^{0},\pi
+^{0},M\right) ,+,\cdot \right) .$
+
+We know that
+\begin{equation*}
+\mathcal{I}\left( \Gamma \left( E^{0},\pi ^{0},M\right) \right) =\cup _{q\in
+\mathbb{N}}\left\{ \Omega _{\alpha }\wedge \Theta ^{\alpha },~\left\{ \Omega
+_{r+1},...,\Omega _{p}\right\} \subset \Lambda ^{q}\left( h^{\ast }F,h^{\ast
+}\nu ,M\right) \right\} .
+\end{equation*}
+
+Let $q\in \mathbb{N}$ and $\left\{ \Omega _{r+1},...,\Omega _{p}\right\}
+\subset \Lambda ^{q}\left( h^{\ast }F,h^{\ast }\nu ,M\right) $ be arbitrary.
+
+Using the \emph{Theorems 4.5 and 4.7} we obtain
+\begin{equation*}
+\begin{array}{ccl}
+d^{h^{\ast }F}\left( \Omega _{\alpha }\wedge \Theta ^{\alpha }\right) & = &
+d^{h^{\ast }F}\Omega _{\alpha }\wedge \Theta ^{\alpha }+\left( -1\right)
+^{q+1}\Omega _{\beta }\wedge d^{h^{\ast }F}\Theta ^{\beta } \\
+& = & \left( d^{h^{\ast }F}\Omega _{\alpha }+\left( -1\right) ^{q+1}\Omega
+_{\beta }\wedge \Omega _{\alpha }^{\beta }\right) \wedge \Theta ^{\alpha }.%
+\end{array}%
+\end{equation*}
+
+As
+\begin{equation*}
+d^{h^{\ast }F}\Omega _{\alpha }+\left( -1\right) ^{q+1}\Omega _{\beta
+}\wedge \Omega _{\alpha }^{\beta }\in \Lambda ^{q+2}\left( h^{\ast
+}F,h^{\ast }\nu ,M\right)
+\end{equation*}%
+it results that
+\begin{equation*}
+d^{h^{\ast }F}\left( \Omega _{\beta }\wedge \Theta ^{\beta }\right) \in
+\mathcal{I}\left( \Gamma \left( E^{0},\pi ^{0},M\right) \right)
+\end{equation*}
+
+Therefore,
+\begin{equation*}
+d^{h^{\ast }F}\mathcal{I}\left( \Gamma \left( E^{0},\pi ^{0},M\right)
+\right) \subseteq \mathcal{I}\left( \Gamma \left( E^{0},\pi ^{0},M\right)
+\right) .
+\end{equation*}
+
+Conversely, let $\left( E,\pi ,M\right) $ be an IDS of the generalized Lie
+algebroid
+\begin{equation*}
+\left( \left( F,\nu ,N\right) ,\left[ ,\right] _{F,h},\left( \rho ,\eta
+\right) \right)
+\end{equation*}%
+such that the $\mathcal{F}\left( M\right) $-submodule $\left( \mathcal{I}%
+\left( \Gamma \left( E^{0},\pi ^{0},M\right) \right) ,+,\cdot \right) $ is
+an EDS of the generalized Lie algebroid $\left( \left( F,\nu ,N\right) ,%
+\left[ ,\right] _{F,h},\left( \rho ,\eta \right) \right) .$
+
+Let $\left\{ \Theta ^{r+1},...,\Theta ^{p}\right\} $ be a base for the $%
+\mathcal{F}\left( M\right) $-submodule $\left( \Gamma \left( E^{0},\pi
+^{0},M\right) ,+,\cdot \right) .$ As
+\begin{equation*}
+d^{h^{\ast }F}\mathcal{I}\left( \Gamma \left( E^{0},\pi ^{0},M\right)
+\right) \subseteq \mathcal{I}\left( \Gamma \left( E^{0},\pi ^{0},M\right)
+\right)
+\end{equation*}%
+it results that it exists
+\begin{equation*}
+\Omega _{\beta }^{\alpha }\in \Lambda ^{1}\left( h^{\ast }F,h^{\ast }\nu
+,M\right) ,~\alpha ,\beta \in \overline{r+1,p}
+\end{equation*}%
+such that
+\begin{equation*}
+d^{h^{\ast }F}\Theta ^{\alpha }=\Sigma _{\beta \in \overline{r+1,p}}\Omega
+_{\beta }^{\alpha }\wedge \Theta ^{\beta }\in \mathcal{I}\left( \Gamma
+\left( E^{0},\pi ^{0},M\right) \right) .
+\end{equation*}
+
+Using the \emph{Theorem 4.7}, it results that $\left( E,\pi ,M\right) $ is
+an involutive IDS.\hfill \emph{q.e.d.}\medskip
+
+\addcontentsline{toc}{section}{References}
+
+\begin{thebibliography}{9}
+\bibitem{1} C. M. Arcus, \emph{The generalized Lie algebroids and their
+applications}, arXiv: 1007.1451v2, math-ph, 10 Aug (2010).
+
+\bibitem{2} R.L. Bryant, S.S. Chern, R.B. Gardner, H.L. Goldschmidt, and
+P.A. Griffiths, \emph{Exterior Differential Systems,} Springer-Verlag, 1991.
+
+\bibitem{3} J. Grabowski, P. Urbanski, \emph{Lie algebroids and
+Poisson-Nijenhuis structures,} Rep. Math. Phys. \textbf{40} (1997), 196-208.
+
+\bibitem{4} P Griffiths, \emph{Exterior Differential Systems and the
+Calculus of Variations,} Progr. Math., No. 25, Birkh\"{a}user, Boston, MA,
+1983.
+
+\bibitem{5} P.J. Higgins, K. Mackenzei, \emph{Algebraic constructions in the
+category of Lie algebroids}, J. Algebra, \textbf{129}, 194-230, (1990).
+
+\bibitem{6} T. A. Ivey and J. M. Landsberg, \emph{Cartan for Beginners:
+Differential Geometry via Moving Frames and Exterior Differential Systems,}
+Graduate Texts in Mathematics, American Mathematical Society, 2003.
+
+\bibitem{7} N. Kamran, \emph{An elementary introduction to exterior
+differential systems,} In \textquotedblleft Geometric approaches to
+differential equations (Canberra, 1995)\textquotedblright , volume 15 of
+Austral. Math. Soc. Lect. Ser., Cambridge Univ. Press, Cambridge, (2000),
+pages 100--115.
+
+\bibitem{8} K. Mackenzie, \emph{Lie Grupoids and Lie Algebroids in
+Differential Geometry,} London Math. Soc. Lecture Notes Series 124 Cambridge
+Univ. Press, Cambridge, (1987).
+
+\bibitem{9} C.M. Marle, \emph{Lie algebroids and Lie pseudoalgebras},
+arxiv:math DG/0806.0919v2, (2008).
+\end{thebibliography}
+
+\bigskip
+
+\bigskip
+
+\hfill%
+\begin{tabular}{c}
+SECONDARY SCHOOL \textquotedblleft CORNELIUS RADU\textquotedblright, \\
+RADINESTI VILLAGE, 217196, GORJ COUNTY, ROMANIA \\
+e-mail: c\_arcus@yahoo.com, c\_arcus@radinesti.ro%
+\end{tabular}
+
+\end{document}

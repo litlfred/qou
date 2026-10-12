@@ -8,191 +8,88 @@ pages: 12-16
 source_pdf: 0911.1038v2.pdf
 source_sha256: 3bc566efaefd44c6
 doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 0.914
 ---
-In order to prove Theorem 1.1 we would like to show that for eac h integer
-g ≥ 1, functions ˜fg and ˜hg are divisible by the symmetric function
-(p1 + 2g − 1) (p1 + 2g)(p1 + 2g − 1)(p1 + 2g − 2)
-3! ,
-STRUCTURE OF KEROV CHARACTER POLYNOMIALS 13
-where p1 denotes the power symmetric function. By word divisible we
-mean that there exist symmetric functionsfg andhµ such that
-˜fg = (p1 + 2g − 1) (p1 + 2g)(p1 + 2g − 1)(p1 + 2g − 2)
-3! fg
-and
-˜hg = (p1 + 2g − 1) (p1 + 2g)(p1 + 2g − 1)(p1 + 2g − 2)
-3! hg.
-Observe that for ﬁxed g ≥ 1 and for any partition µ there exists number k
-such that |µ| =k + 1 − 2g and then
-˜fg(µ) = k
-( k + 1
-3
-)
-fg(µ),
-˜hg(µ) = k
-( k + 1
-3
-)
-hg(µ)(µ).
-The idea of showing divisibility of symmetric function by symmetric func-
-tion of degree 1 is similar to the case of showing divisibility of some poly-
-nomial by some monomial. The main idea is dividing with a remainder and
-using a fact that if some integer is divisible by inﬁnite numb er of primes
-then it has to be equal to zero. The remainning of this section is a formali-
-sation of this idea.
-The ﬁrst difﬁculty is that we have to deal with polynomials in several
-variables. Hence, in order to show some generalisation of th e “dividing
-with remainder” technique, we need the following technical lemma:
-Lemma 3.1. Let m be a ﬁxed integer and f be a polynomial in vari-
-ables xk,...,x l with the property that f (µk,...,µ l) = 0 for all integers
-µk,...,µ l ≥ 1 which fulﬁll the following equations:
-(13)
-∑
-k≤j≤l
-µj >m,
-(14) µi>µ i+1 + · · · +µl
-for all values ofi for which it makes sense. Thenf = 0.
-The proof of this lemma can be found in Section 4.
-The next lemma is key for this section: it allows to translate information
-about arithmetic properties of Kerov polynomials into info rmation about
-the polynomials governing the coefﬁcients.
-Lemma 3.2. Let f, respectively h, be a symmetric function of degree at
-mostd with rational coefﬁcients,g ≥ 1 be an integer; we deﬁne
-Lk =
-∑
-|µ |=k+1−2g
-(
-l(µ) + 2g − 2
-)
-!f (µ) Rµ,
-14 MACIEJ DOŁ ˛ EGA AND PIOTR ´SNIADY
-respectively,
-L′
-k =
-∑
-|µ |=k+1−2g
-(
-2g − 1
-) l(µ )
-h(µ) Qµ
-and view it as a polynomial inR2,R 3,... .
-Assume that an integer ∆ has a property that all coefﬁcients of Lp+∆
-(respectively, all coefﬁcients of L′
-p+∆ ) are integers divisible by p for an
-inﬁnite number of prime numbersp. Then there exists a symmetric function
-˜f (respectively, ˜h) with rational coefﬁcients of degree at most d − 1 such
-that
-Lk = (k − ∆)
-∑
-|µ |=k+1−2g
-(
-l(µ) + 2g − 2
-)
-! ˜f (µ) Rµ,
-respectively,
-L′
-k = (k − ∆)
-∑
-|µ |=k+1−2g
-(
-2g − 1
-) l(µ ) ˜h(µ) Qµ.
-Proof. For simplicity assume that the coefﬁcients of f (respectively,h) are
-integer numbers; if this is not the case we multiply Lk andf (respectively,
-L′
-k andh) by some common multiple of the denominators.
-Letµ = (µ1,µ 2,... ) be a sequence of indeterminates. We use the nota-
-tion |µ| =µ1+µ2+· · · and deﬁne variablez = |µ|+2g−1−∆ . The family
-of indeterminates µ can be alternatively parametrized by z,µ 2,µ 3,... ; we
-just use the substitutionµ1 =z + ∆ + 1 − 2g −µ2 −µ3 − · · ·. Now we can
-considerf,h ∈ Λ[z] as polynomials in one variable z with coefﬁcients in
-the ring Λ of symmetric functions in variablesµ2,µ 3,... and we can divide
-f andh byz with a remainder. Hence
-f (µ) = ( |µ| + 2g − 1 − ∆) ˜f (µ) +r(µ2,µ 3,... ),
-h(µ) = ( |µ| + 2g − 1 − ∆) ˜h(µ) +s(µ2,µ 3,... )
-for some ˜f, ˜h ∈ Λ[z] and for some r,s ∈ Λ . Below we will show that
-r =s = 0. This would imply that
-f (µ) = ( |µ| + 2g − 1 − ∆) ˜f (µ),
-h(µ) = ( |µ| + 2g − 1 − ∆) ˜h(µ),
-where by substitution z = |µ| + 2g − 1 − ∆ we view ˜f, ˜h ∈ Λ[µ1] as
-polynomials in one variableµ1 with coefﬁcients in Λ . For any permutation
-π of the set of positive integers which moves only ﬁnitely many elements
-STRUCTURE OF KEROV CHARACTER POLYNOMIALS 15
-we have
-(|µ| + 2g − 1 − ∆) ˜f (µ1,µ 2,... ) = f (µ1,µ 2,... ) =
-f (µπ (1),µ π (2),... ) = ( |µ| + 2g − 1 − ∆) ˜f (µπ (1),µ π (2),... )
-hence from the cancellation property
-˜f (µ1,µ 2,... ) = ˜f (µπ (1),µ π (2),... )
-is a symmetric function. In an analogous way we show that˜h is a symmetric
-function. The lemma follows now immediately.
-It remains now to show that r = s = 0 . From the following on let
-µ2 > · · ·> µl be ﬁxed integers bigger than 1 which fulﬁll Equations (14)
-and (13) withm = ∆ −2g. Deﬁneµ1 =p + ∆ + 1 −2g −µ2−µ3 − · · ·−µl,
-wherep is a prime number. Notice that µ1 − 1 < p, because we required
-that ∆ + 1 − 2g −µ2 −µ3 − · · · −µl < 1. We consider the integral vector
-µ = (µ1,...,µ l).
-Ifp is large enough, the parts ofµ are all distinct and it follows that
-[Rµ 1Rµ 2 · · ·Rµ l]Lp+∆ = (l + 2g − 2)!f (µ) (µ1 − 1)(µ2 − 1) · · ·(µl − 1).
-Also, if prime number p is big enough then it does not divide (l + 2g −
-2)! (µ1 − 1)(µ2 − 1) · · ·(µl − 1). It follows that for inﬁnitely many prime
-numbersp the number
-f (µ) = p ˜f (µ) +r(µ2,...,µ l)
-is divisible byp. We proved in this way thatr(µ2,...,µ l, 0,... ) is an inte-
-ger which is divisible by an inﬁnite number of primes hencer(µ2,...,µ l, 0,... ) =
-0. Finaly Lemma 3.1 shows thatr = 0.
-Ifp is big enough then condition (14) holds true for all 1 ≤ i ≤ l − 1
-therefore every partition resulting from µ by gluing together some of its
-parts cannot be obtained by gluing the parts ofµ in some other way (in fact,
-this property is the main reason of introducing Equation (14 )). From (3) it
-follows that
-[Rµ 1Rµ 2 · · ·]L′
-p+∆ =
-∑
-ν≥µ
-(2g − 1)l(ν)(
-l(ν) − 1
-)
-!h(ν),
-whereν ≥µ means that partitionν can be obtained from partitionµ by glu-
-ing some parts of µ. We also know that for inﬁnitely many prime numbers
-16 MACIEJ DOŁ ˛ EGA AND PIOTR ´SNIADY
-p the following number
-∑
-ν≥µ
-(2g − 1)l(ν)(
-l(ν) − 1
-)
-!h(ν) =
-p
-[ ∑
-ν≥µ
-(2g − 1)l(ν)(
-l(ν) − 1
-)
-! ˜h(ν)
-]
-+
-∑
-ν≥µ
-(2g − 1)l(ν)(
-l(ν) − 1
-)
-!s(ν′)
-is divisible by p, where for ν = (ν1,ν 2,... ) we denote ν′ = (ν2,ν 3,... ).
-Notice that the set of values of ν′ which contribute to the right hand side
-does not depend on the choice of p, because onlyν1 depends on the choice
-ofp. Thus we proved that for inﬁnitely many prime numbers p the second
-summand on the right hand side does not depend on the choice of p and is
-a ﬁxed integer divisible by all these prime numbers, hence
-(15)
-∑
-ν≥µ
-(2g − 1)l(ν)(
-l(ν) − 1
-)
-!s(ν′) = 0.
-We will use induction over k to show that s(x2,...,x k, 0,... ) is equal
-to the zero polynomial for any k > 1, which proves that s = 0 . Indeed,
-assume, thats(x2,...,x k, 0,... ) is equal to the zero polynomial fork <l.
-From the induction hypothesis it follows that all summands on the left-hand
-side of (15) vanish, except forν =µ, which shows thats(µ′) = 0 . We use
-Lemma 3.1 to show thats = 0 as claimed. □
+At this step we proved Proposition [\[prop:main-prop\]](#prop:main-prop){reference-type="ref" reference="prop:main-prop"}. In order to prove Theorem [\[theo:main\]](#theo:main){reference-type="ref" reference="theo:main"} we would like to show that for each integer $g
+\geq 1$, functions $\tilde{f}_g$ and $\tilde{h}_g$ are divisible by the symmetric function $$(p_1 + 2g -1)\frac{(p_1 + 2g)(p_1 + 2g -1)(p_1 + 2g
+-2)}{3!},$$ where $p_1$ denotes the power symmetric function. By word divisible we mean that there exist symmetric functions $f_g$ and $h_\mu$ such that $$\tilde{f}_g = (p_1 + 2g -1)\frac{(p_1 + 2g)(p_1 + 2g -1)(p_1 + 2g
+-2)}{3!}f_g$$ and $$\tilde{h}_g = (p_1 + 2g -1)\frac{(p_1 + 2g)(p_1 + 2g -1)(p_1 + 2g
+-2)}{3!}h_g.$$ Observe that for fixed $g \geq 1$ and for any partition $\mu$ there exists number $k$ such that $|\mu| = k + 1 - 2g$ and then $$\tilde{f}_g(\mu) = k \binom{k+1}{3}f_g(\mu),$$ $$\tilde{h}_g(\mu) = k \binom{k+1}{3}h_g(\mu)(\mu).$$ The idea of showing divisibility of symmetric function by symmetric function of degree $1$ is similar to the case of showing divisibility of some polynomial by some monomial. The main idea is dividing with a remainder and using a fact that if some integer is divisible by infinite number of primes then it has to be equal to zero. The remainning of this section is a formalisation of this idea.
+
+The first difficulty is that we have to deal with polynomials in several variables. Hence, in order to show some generalisation of the "dividing with remainder" technique, we need the following technical lemma:
+
+::: lemma
+[]{#lem:zerozero label="lem:zerozero"} Let $m$ be a fixed integer and $f$ be a polynomial in variables $x_k,\dots,x_l$ with the property that $f(\mu_k,\dots,\mu_l)=0$ for all integers $\mu_k,\dots,\mu_l\geq 1$ which fulfill the following equations: $$\label{eq:suma}
+\sum_{k \leq j \leq l}\mu_j > m,$$ $$\label{eq:wzrost}
+\mu_i>\mu_{i+1}+\cdots+\mu_l$$ for all values of $i$ for which it makes sense. Then $f=0$.
+:::
+
+The proof of this lemma can be found in Section [\[sec:technical\]](#sec:technical){reference-type="ref" reference="sec:technical"}.
+
+The next lemma is key for this section: it allows to translate information about arithmetic properties of Kerov polynomials into information about the polynomials governing the coefficients.
+
+::: lemma
+[]{#lem:sie-dzieli label="lem:sie-dzieli"} Let $f$, respectively $h$, be a symmetric function of degree at most $d$ with rational coefficients, $g\geq 1$ be an integer; we define
+
+$$\begin{aligned}
+ L_{k} =  & \sum_{|\mu|=k+1-2g}
+\big(l(\mu) + 2g - 2\big)!\ f(\mu)\ \mathcal{R}_\mu, \\
+\intertext{respectively,}
+L'_{k}&= \sum_{|\mu|=k+1-2g} \big(2g - 1\big)^{l(\mu)}\ h(\mu)\ \mathcal{Q}_\mu
+\end{aligned}$$ and view it as a polynomial in $R_2,R_3,\dots$.
+
+Assume that an integer $\Delta$ has a property that all coefficients of $L_{p+\Delta}$ (respectively, all coefficients of $L'_{p+\Delta}$) are integers divisible by $p$ for an infinite number of prime numbers $p$. Then there exists a symmetric function $\tilde{f}$ (respectively, $\tilde{h}$) with rational coefficients of degree at most $d-1$ such that $$\begin{aligned}
+ L_{k} &= (k-\Delta) \sum_{|\mu|=k+1-2g}
+\big(l(\mu) + 2g - 2\big)!\ \tilde{f}(\mu)\ \mathcal{R}_\mu, \\
+\intertext{respectively,} 
+L'_k&= (k-\Delta) \sum_{|\mu|=k+1-2g}
+\big(2g - 1\big)^{l(\mu)}\ \tilde{h}(\mu)\ \mathcal{Q}_\mu.
+\end{aligned}$$
+:::
+
+::: proof
+*Proof.* For simplicity assume that the coefficients of $f$ (respectively, $h$) are integer numbers; if this is not the case we multiply $L_{k}$ and $f$ (respectively, $L'_k$ and $h$) by some common multiple of the denominators.
+
+Let $\mu=(\mu_1,\mu_2,\dots)$ be a sequence of indeterminates. We use the notation $|\mu|=\mu_1+\mu_2+\cdots$ and define variable $z=|\mu|+2g-1-\Delta$. The family of indeterminates $\mu$ can be alternatively parametrized by $z,\mu_2,\mu_3,\dots$; we just use the substitution $\mu_1=z+\Delta+1-2g-\mu_2-\mu_3-\cdots$. Now we can consider $f,h \in
+\Lambda[z]$ as polynomials in one variable $z$ with coefficients in the ring $\Lambda$ of symmetric functions in variables $\mu_2,\mu_3,\dots$ and we can divide $f$ and $h$ by $z$ with a remainder. Hence $$\begin{aligned}
+ f(\mu)&= (|\mu|+2g-1-\Delta) \tilde{f}(\mu) +
+r(\mu_2,\mu_3,\dots), \\ 
+h(\mu)&= (|\mu|+2g-1-\Delta) \tilde{h}(\mu) +
+s(\mu_2,\mu_3,\dots)  
+\end{aligned}$$ for some $\tilde{f}, \tilde{h} \in \Lambda[z]$ and for some $r, s \in \Lambda$. Below we will show that $r=s=0$. This would imply that $$\begin{aligned}
+ f(\mu)&= (|\mu|+2g-1-\Delta) \tilde{f}(\mu), \\
+h(\mu)&= (|\mu|+2g-1-\Delta) \tilde{h}(\mu),
+\end{aligned}$$ where by substitution $z=|\mu|+2g-1-\Delta$ we view $\tilde{f},\tilde{h}\in
+\Lambda[\mu_1]$ as polynomials in one variable $\mu_1$ with coefficients in $\Lambda$. For any permutation $\pi$ of the set of positive integers which moves only finitely many elements we have $$\begin{gathered}
+ (|\mu|+2g-1-\Delta) \tilde{f}(\mu_1,\mu_2,\dots) =
+f(\mu_1,\mu_2,\dots) =\\ f(\mu_{\pi(1)},\mu_{\pi(2)},\dots) =
+(|\mu|+2g-1-\Delta) \tilde{f}(\mu_{\pi(1)},\mu_{\pi(2)},\dots)
+\end{gathered}$$ hence from the cancellation property $$\tilde{f}(\mu_1,\mu_2,\dots) = \tilde{f}(\mu_{\pi(1)},\mu_{\pi(2)},\dots)$$ is a symmetric function. In an analogous way we show that $\tilde{h}$ is a symmetric function. The lemma follows now immediately.
+
+It remains now to show that $r=s=0$. From the following on let $\mu_2> \cdots >
+\mu_l$ be fixed integers bigger than $1$ which fulfill Equations [\[eq:wzrost\]](#eq:wzrost){reference-type="eqref" reference="eq:wzrost"} and [\[eq:suma\]](#eq:suma){reference-type="eqref" reference="eq:suma"} with $m =
+\Delta - 2g$.
+
+Define $\mu_1=p+\Delta+1-2g-\mu_2-\mu_3-\cdots-\mu_l$, where $p$ is a prime number. Notice that $\mu_1 - 1 < p$, because we required that $\Delta+1-2g-\mu_2-\mu_3-\cdots-\mu_l < 1$. We consider the integral vector $\mu=(\mu_1,\dots,\mu_l)$.
+
+If $p$ is large enough, the parts of $\mu$ are all distinct and it follows that $$[R_{\mu_1} R_{\mu_2} \cdots R_{\mu_l}] L_{p+\Delta} =   (l+2g-2)!\ f(\mu)\
+(\mu_1-1)(\mu_2-1)\cdots(\mu_l-1).$$ Also, if prime number $p$ is big enough then it does not divide $(l+2g-2)!\ (\mu_1-1)(\mu_2-1)\cdots(\mu_l-1)$. It follows that for infinitely many prime numbers $p$ the number $$f(\mu)=  p \tilde{f}(\mu) + r(\mu_2, \dots, \mu_l)$$ is divisible by $p$. We proved in this way that $r(\mu_2, \dots, \mu_l,
+0,
+\dots)$ is an integer which is divisible by an infinite number of primes hence $r(\mu_2, \dots, \mu_l, 0, \dots)=0$. Finaly Lemma [\[lem:zerozero\]](#lem:zerozero){reference-type="ref" reference="lem:zerozero"} shows that $r=0$.
+
+If $p$ is big enough then condition [\[eq:wzrost\]](#eq:wzrost){reference-type="eqref" reference="eq:wzrost"} holds true for all $1\leq i \leq l-1$ therefore every partition resulting from $\mu$ by gluing together some of its parts cannot be obtained by gluing the parts of $\mu$ in some other way (in fact, this property is the main reason of introducing Equation [\[eq:wzrost\]](#eq:wzrost){reference-type="eqref" reference="eq:wzrost"}). From [\[eq:qi\]](#eq:qi){reference-type="eqref" reference="eq:qi"} it follows that $$[R_{\mu_1} R_{\mu_2} \cdots] L'_{p+\Delta} = 
+\sum_{\nu\geq\mu}(2g-1)^{l(\nu)}\big(l(\nu)-1\big)!\ h(\nu),$$ where $\nu\geq\mu$ means that partition $\nu$ can be obtained from partition $\mu$ by gluing some parts of $\mu$.
+
+We also know that for infinitely many prime numbers $p$ the following number $$\begin{gathered}
+\sum_{\nu\geq\mu}(2g-1)^{l(\nu)}\big(l(\nu)-1\big)!\ h(\nu) = \\
+p\left[ \sum_{\nu\geq\mu}(2g-1)^{l(\nu)}\big(l(\nu)-1\big)!\
+\tilde{h}(\nu)\right] 
++ \sum_{\nu\geq\mu}(2g-1)^{l(\nu)}\big(l(\nu)-1\big)!\ s(\nu')
+\end{gathered}$$ is divisible by $p$, where for $\nu
+= (\nu_1,\nu_2,\dots)$ we denote $\nu' = (\nu_2,\nu_3,\dots)$. Notice that the set of values of $\nu'$ which contribute to the right hand side does not depend on the choice of $p$, because only $\nu_1$ depends on the choice of $p$. Thus we proved that for infinitely many prime numbers $p$ the second summand on the right hand side does not depend on the choice of $p$ and is a fixed integer divisible by all these prime numbers, hence $$\label{eq:upper-trangular}
+ \sum_{\nu\geq\mu}(2g-1)^{l(\nu)}\big(l(\nu)-1\big)!\ s(\nu') = 0.$$
+
+We will use induction over $k$ to show that $s(x_2,\dots,x_k,0,\dots)$ is equal to the zero polynomial for any $k > 1$, which proves that $s=0$. Indeed, assume, that $s(x_2,\dots,x_k,0,\dots)$ is equal to the zero polynomial for $k < l$. From the induction hypothesis it follows that all summands on the left-hand side of [\[eq:upper-trangular\]](#eq:upper-trangular){reference-type="eqref" reference="eq:upper-trangular"} vanish, except for $\nu=\mu$, which shows that $s(\mu')=0$. We use Lemma [\[lem:zerozero\]](#lem:zerozero){reference-type="ref" reference="lem:zerozero"} to show that $s=0$ as claimed. ◻
+:::

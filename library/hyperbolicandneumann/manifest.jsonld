@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/hyperbolicandneumann/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hyperbolicandneumann/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "hyperbolicandneumann",
   "contains": [
     "library/hyperbolicandneumann/sections/sec-000",
     "library/hyperbolicandneumann/sections/sec-001",
@@ -15,8 +20,10 @@
     "library/hyperbolicandneumann/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "hyperbolicandneumann",
+    "title_source": "slug",
     "source_file": "HyperbolicAndNeumann.pdf",
     "source_sha256": "3d66fe4c64bdc62b68748987311a0a57ea3f68cb257ba9c9e7b57866287bb7b1",
     "pages": 19,

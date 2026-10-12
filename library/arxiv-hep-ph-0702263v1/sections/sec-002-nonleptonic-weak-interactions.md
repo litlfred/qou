@@ -8,32 +8,66 @@ pages: 7-8
 source_pdf: 0702263v1.pdf
 source_sha256: 8ae381b4eba60286
 doc_brief: "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna — The progress in determining the coupling constants of meson ic chi- ral Lagrangians is reviewed, with emphasis on the"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-The chiral Lagrangian of lowest order, O(GF p2), contains two LECs g8, g 27
-to describe nonleptonic weak decays of kaons [26]. Especially the valu e of the
-octet coupling g8 is very sensitive to chiral corrections [27]. Isospin break-
-ing corrections are potentially important for the 27-plet coupling co nstant
-g27. The present status is presented in Table 3. Although diﬀerent isos pin
-breaking contributions are sizeable the overall corrections are sm all for both
-LECs.
-The LECs of O(GF p4) (22 couplings Ni in the octet and 28 couplings Di in
-the 27-plet Lagrangians) are much less known than their strong co unterparts
-at O(p4). The most recent phenomenological analysis of those combination s
-that occur in the dominant K → 2π, 3π decays can be found in Ref. [29].
-Many more LECs appear in rare K decays and a phenomenological update
-is deﬁnitely needed here.
-6
-IC O(GF p2) IC O(GF p4) IB O(GF p4)
-g8 5. 09 ± 0. 01 3 . 67 ± 0. 14 3 . 65 ± 0. 14
-g27 0. 294 ± 0. 001 0 . 297 ± 0. 014 0 . 303 ± 0. 014
-Table 3: Octet and 27-plet couplings g8, g 27 at O(GF p2) and at next-to-
-leading order, O(GF p4), without (IC) and with (IB) isospin breaking [28].
-Resonance saturation of weak LECs [30] suﬀers from the obvious d raw-
-backs that the weak resonance couplings are unknown and that sh ort-distance
-constraints are missing. Nevertheless, resonance saturation pr ovides at least
-a possible parametrization of the LECs. The most systematic appro ach is
-based on factorization (valid to leading order in 1 /N c) [28, 31] but higher-
-order corrections in 1 /N c may well be sizeable.
-If the situation of the LECs of O(GF p4) is already unsatisfactory, even
-less is known about higher orders. However, the leading (double) ch iral logs
-of O(GF p6) are known [32].
+The chiral Lagrangian of lowest order, $O(G_F p^2)$, contains two LECs
+$g_8,g_{27}$ to describe nonleptonic weak decays of kaons
+\cite{cronin67}. Especially
+the value of the octet coupling $g_8$ is very sensitive to 
+chiral corrections \cite{Kambor:1991ah}. Isospin breaking
+corrections are potentially
+important for the 27-plet coupling constant $g_{27}$. The present
+status is presented in Table \ref{tab:g827}. Although different
+isospin breaking contributions are sizeable the overall
+corrections are small for both LECs.
+
+The LECs of $O(G_F p^4)$ (22 couplings $N_i$ in the octet and 28
+couplings $D_i$ in the 27-plet Lagrangians)
+are much less known than their strong counterparts at $O(p^4)$. 
+The most recent phenomenological analysis of those combinations that 
+occur in the dominant $K\to 2 \pi, 3 \pi$ decays can be found in
+Ref.~\cite{Bijnens:2004ai}. Many more LECs appear in rare $K$ decays 
+and a phenomenological update is definitely needed here.
+
+
+\begin{center} 
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[H]
+\begin{tabular}{|c|ccc|}
+\hline
+&  & & \\[-.4cm] 
+ &  \hspace*{.3cm} IC ~$O(G_F p^2)$ \hspace*{.3cm}  &  \hspace*{.3cm} 
+IC ~$O(G_F p^4)$  \hspace*{.3cm} & \hspace*{.3cm}  IB ~$O(G_F p^4)$  
+\hspace*{.3cm} \\
+\hline 
+& & & \\[-.2cm] 
+\hspace*{.1cm} $g_8$ \hspace*{.1cm}
+& $5.09 \pm 0.01$ & $3.67 \pm 0.14$ &  $3.65 \pm 0.14$ \\[.3cm] 
+$g_{27}$ &  $0.294 \pm 0.001$ &  $0.297 \pm 0.014$ & $0.303 \pm 0.014$
+\\[.2cm]
+\hline 
+\end{tabular}
+\caption{Octet and 27-plet couplings $g_8,
+  g_{27}$ at $O(G_F p^2)$ and at next-to-leading order,
+  $O(G_F p^4)$, without
+  (IC) and with (IB) isospin breaking \cite{Cirigliano:2003gt}.}
+\label{tab:g827} 
+\end{table}
+\end{center} 
+
+
+Resonance saturation of weak LECs \cite{Ecker:1992de} suffers from the 
+obvious drawbacks that the weak resonance couplings are unknown and that
+short-distance constraints are missing. Nevertheless, resonance
+saturation provides at least a possible parametrization of the
+LECs. The most systematic approach is based on
+factorization (valid to leading order in $1/N_c$)
+\cite{Pallante:2001he,Cirigliano:2003gt}  but 
+higher-order corrections in $1/N_c$ may well be sizeable.
+
+If the situation of the LECs of $O(G_F p^4)$ is already
+unsatisfactory, even less is known about higher orders. However, the
+leading (double) chiral logs of $O(G_F p^6)$ are known
+\cite{Buchler:2005jk}.

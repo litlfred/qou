@@ -1,0 +1,41 @@
+% graph constructed from an ILP
+\begin{tikzpicture}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+%\tikzstyle{vertex}=[circle,fill=black!25,minimum size=20pt,inner sep=0pt]
+\tikzstyle{vertex}=[circle,minimum size=20pt,inner sep=0pt]
+%\tikzstyle{vertex}=[]
+\tikzstyle{partition}=[draw=black!20,rectangle,fill=black!5,line width=1pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+    \foreach \pos/\name/\nodeName in {{(2,6)/3/lambda3}, {(6,6)/1/mu1},
+      {(2,1)/0/kappa0}, {(4,1)/1/kappa1}, {(6,1)/2/kappa2},
+      {(1,5)/\rho_1/rho1}, {(2,5)/\rho_2/rho2}, {(3,5)/\rho_3/rho3},
+      {(5,5)/\zeta_1/zeta1}, {(6,5)/\zeta_2/zeta2}, {(7,5)/\zeta_3/zeta3},
+      {(0,3)/\alpha_{11}/alpha11}, {(1,3)/\alpha_{12}/alpha12},
+      {(2,3)/\alpha_{13}/alpha13}, {(3,3)/\alpha_{21}/alpha21},
+      {(4,3)/\alpha_{22}/alpha22}, {(5,3)/\alpha_{23}/alpha23},
+      {(6,3)/\alpha_{31}/alpha31}, {(7,3)/\alpha_{32}/alpha32},
+      {(8,3)/\alpha_{33}/alpha33}} \node[vertex] (\nodeName) at \pos
+             {$\name$};
+\begin{pgfonlayer}{background}
+  \node[partition,fit=(lambda3)]{}; \node[partition,fit=(mu1)]{};
+  \node[partition,fit=(kappa0)]{}; \node[partition,fit=(kappa1)]{};
+  \node[partition,fit=(kappa2)]{};
+  \node[partition,fit=(rho1) (rho2) (rho3)]{}; 
+  \node[partition,fit=(zeta1) (zeta2) (zeta3)]{};
+  \node[partition,fit=(alpha11) (alpha12) (alpha13) (alpha21) (alpha22)
+    (alpha23) (alpha31) (alpha32) (alpha33)]{};
+\end{pgfonlayer}
+    \foreach \source/ \dest in {rho1/alpha11, rho1/alpha12,
+      rho1/alpha13, rho2/alpha21, rho2/alpha22, rho2/alpha23,
+      rho3/alpha31, rho3/alpha32, rho3/alpha33, zeta1/alpha11,
+      zeta2/alpha12, zeta3/alpha13, zeta1/alpha21, zeta2/alpha22,
+      zeta3/alpha23, zeta1/alpha31, zeta2/alpha32, zeta3/alpha33,
+      kappa1/alpha11, kappa2/alpha12, kappa0/alpha13, kappa0/alpha21,
+      kappa1/alpha22, kappa2/alpha23, kappa2/alpha31, kappa0/alpha32,
+      kappa1/alpha33, zeta1/mu1, zeta2/mu1, zeta3/mu1, rho1/lambda3,
+      rho2/lambda3, rho3/lambda3} \path[edge] (\source) -- node {}
+    (\dest);
+\end{tikzpicture}

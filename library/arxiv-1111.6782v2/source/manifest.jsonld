@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1111.6782v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1111.6782v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1111.6782v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1111.6782&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1111.6782v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1111.6782v2",
+    "content_type": "application/gzip",
+    "sha256": "5c5e2e5d12f04337cbc506c14539884c915c49c719b497ec3e232573704271fc",
+    "bytes": 19082,
+    "fetched": "2026-10-10T15:05:41+00:00",
+    "files": [
+      {
+        "path": "source/files/bootstrap.tex",
+        "role": "tex",
+        "sha256": "64ba791c47a49ac1fb68a0d69a664c92a3c8fb9b76ff160d845e17b4c470865a",
+        "bytes": 14618
+      },
+      {
+        "path": "source/files/energy-space.tex",
+        "role": "tex",
+        "sha256": "10c6c608de3165669592566a5bd76aadaf251dc3b2cf20c369df6cf9e9f9e2ec",
+        "bytes": 26796
+      },
+      {
+        "path": "source/files/fractional.tex",
+        "role": "tex",
+        "sha256": "607f834e26c74de9c9cd39e70d1b546dbfd40e7c3f56a5555cffbe975503d366",
+        "bytes": 1257
+      },
+      {
+        "path": "source/files/intro.tex",
+        "role": "tex",
+        "sha256": "c1b8ef35065c21e3cdbe2ff598f9f6d043492dfddb6a6e0ce4b638a287229bf8",
+        "bytes": 10107
+      },
+      {
+        "path": "source/files/statpointohara.tex",
+        "role": "tex",
+        "sha256": "f203e8096071be5c59858757e3ad6f60b694ae8ca9a8bb390adc713d423d1b24",
+        "bytes": 12128
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

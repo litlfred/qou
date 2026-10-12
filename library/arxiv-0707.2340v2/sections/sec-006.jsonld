@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0707.2340v2/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
-  "pageStart": 15,
-  "pageEnd": 17,
+  "title": "Towards a Theory of Negative Dependence: Problems and Solutions",
+  "pageStart": 11,
+  "pageEnd": 13,
   "contains": [
     "library/arxiv-0707.2340v2/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/arxiv-0707.2340v2/manifest",
-  "sourceDocument": "library/arxiv-0707.2340v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2340v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2340v2/manifest.jsonld",
   "provenance": "ingested"
 }

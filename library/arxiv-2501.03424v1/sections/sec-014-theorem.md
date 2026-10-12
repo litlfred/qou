@@ -8,33 +8,33 @@ pages: 12-13
 source_pdf: 2501.03424v1.pdf
 source_sha256: 53e00a30fd850a5b
 doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner — This paper presents an exposition of Soergel bimodules, the categ oriﬁcation of Hecke alge- bras, and their applications to"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.959
 ---
-Bernstein-Gelfand-Gelfand about Verma modules:
-3.2.1 Theorem
-If Hom (Mµ , Mη ) = 1 , then there exists a dominant weight λ∈ h∗ and x, y∈ W such that
-µ = x· λ, η = y· λ,
-with x≥ y in Bruhat order. This brings us our seminal conjecture, stated as follows.
-3.2.2 The Kazhdan-Lusztig conjecture
-For every x, y∈ W, the following holds:
-[M(y·0) : L(x·0)] = hy,x (1).
-This conjecture is the focal application of Soergel bimodules. In th e near future, we will cover
-this in more depth. Kazhdan and Lusztig also proved the following for mula, the
-3.2.3 Kazhdan-Lusztig Inversion F ormula
-Let w0∈ W be the longest eleemnt. For every x, y∈ W, we have the identity
-∑
-z∈W
-(−1)l(y)+l(x)hz,x (v)hzw0,yw 0(v) =
-{
-1 if x = y
-0 else
-Along with the previous conjecture, this implies a similar identity in the G rothendieck group of
-O:
-[L(y·0)] =
-∑
-y≤x
-(−1)l(y)+l(x)hxw0,yw 0(1)[M(x·0)].
-At this point, we might ﬁnd ourselves asking some questions about wh at exactly Kazhdan-
-Lusztig polynomials are. To try shedding some light, we turn to the fo llowing theorem of of Polo
-10, stating roughly that any polynomial with positive coeﬃcients is a K azhdan-Lusztig polynomial
-in some symmetric group.
-12
+\textit{If $\Hom(M_\mu, M_\eta) = 1,$ then there exists a dominant weight $\lambda \in \h^*$ and $x,y \in W$ such that}
+$$\mu = x \cdot \lambda, \eta = y \cdot \lambda,$$
+with $x \ge y$ in Bruhat order. This brings us our seminal conjecture, stated as follows.
+
+
+
+\subsubsection{The Kazhdan-Lusztig conjecture}
+
+\textit{ For every $x,y \in W,$ the following holds:}
+$$[M_{(y\cdot 0)} : L_{(x \cdot 0)}] = h_{y,x}(1).$$
+
+This conjecture is the focal application of Soergel bimodules. In the near future, we will cover this in more depth. Kazhdan and Lusztig also proved the following formula, the 
+
+
+\subsubsection{Kazhdan-Lusztig Inversion Formula}
+Let $w_0 \in W$ be the longest eleemnt. For every $x,y \in W,$ we have the identity
+$$\sum_{z \in W}(-1)^{l(y) + l(x)}h_{z,x}(v)h_{zw_0, yw_0}(v) = \begin{cases}
+    1 \text{ if } x = y \\
+    0 \text{ else}
+\end{cases}$$
+
+Along with the previous conjecture, this implies a similar identity in the Grothendieck group of $\mathcal{O}$:
+
+$$[L_{(y\cdot 0)}] = \sum_{y \le x}(-1)^{l(y) + l(x)}h_{xw_0, yw_0}(1)[M_{(x\cdot 0)}].$$
+
+At this point, we might find ourselves asking some questions about what exactly Kazhdan-Lusztig polynomials are. To try shedding some light, we turn to the following theorem of of Polo \ref{ref11}, stating roughly that any polynomial with positive coefficients is a Kazhdan-Lusztig polynomial in some symmetric group.

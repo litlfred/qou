@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/cjdoubletwistfinal/sections/sec-006",
   "@type": [
     "doco:Section"
@@ -14,7 +19,7 @@
     "library/cjdoubletwistfinal/blocks/lem-sec-006-03",
     "library/cjdoubletwistfinal/blocks/lem-sec-006-04"
   ],
-  "derivedFrom": "library/cjdoubletwistfinal/manifest",
-  "sourceDocument": "library/cjdoubletwistfinal/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cjdoubletwistfinal/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cjdoubletwistfinal/manifest.jsonld",
   "provenance": "ingested"
 }

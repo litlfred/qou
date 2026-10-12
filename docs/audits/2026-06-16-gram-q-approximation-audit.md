@@ -60,7 +60,7 @@ Surveyed via `grep -rn '111, 100|_Q_FRAC|_H_FRAC|_Z_FRAC|4993|exact=True'`:
 | `computations/hecke_core_legacy.py` | re-imports `_*_FRAC` | legacy |
 | `computations/hadron_knot_table.py` | `HeckeEngine(111, 100)` | knot-table; verify if numeric-precision-critical |
 | `tools/pyhecke/tests/test_markov_combo.py`, `test_gram_values.py` | assert the 111/100 / 4993 values | intentional (tests the approximate path) |
-| `computations/_deprecated/*` | many `Fraction(111,100)` | deprecated, out of scope |
+| `fsh-guts/deprecated/computations/*` | many `Fraction(111,100)` | deprecated, out of scope |
 
 ## Recommendation
 

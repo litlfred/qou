@@ -13,7 +13,7 @@ $$
 
 so $G \subseteq \mathrm{SU}(2)$ — or its split real form $\mathrm{SL}(2,\mathbb{R})$, depending on the signature of the Frobenius pairing.
 
-**The two conclusions are independent, and only the first is about the rank.** That $g$ unitary with $\det g = 1$ lies in the special unitary group holds at *every* $N$; it carries no rank content whatever. What fixes $N = 2$ is hypothesis (1) alone, via $\dim \Lambda^2 V = \binom{N}{2} = 1 \iff N = 2$. Stating them as one conjunction is deliberate: an earlier formulation derived "which subgroup" and reported it as though it had also derived "which rank".
+**The two conclusions are independent, and only the first is about the rank.** That $g$ unitary with $\det g = 1$ lies in the special unitary group holds at *every* $N$; it carries no rank content whatever. What fixes $N = 2$ is hypothesis (1) alone, via $\dim \Lambda^2 V = \binom{N}{2} = 1 \iff N = 2$.
 
 **Non-vacuity.** Hypothesis (1) is doing work rather than following from (2). At $N = 3$ it fails — $\dim \Lambda^2 V = 3$ — while the subgroup half applies at $N = 3$ unchanged. So the volume constraint is exactly what distinguishes rank two.
 
@@ -21,4 +21,4 @@ so $G \subseteq \mathrm{SU}(2)$ — or its split real form $\mathrm{SL}(2,\mathb
 
 ## Lean structure
 
-[`SU2EmergenceRankForced.lean`](../lean/QOU/QuantumObservableUniverse/SU2EmergenceRankForced.lean) carries the statement above as `QOU.su2_emergence_rank_forced`, sorry-free, together with the rank-free subgroup half `QOU.mem_specialUnitary_of_unitary_of_det_one` and the non-vacuity check `QOU.su2_emergence_rank_hypothesis_is_load_bearing`. The rank is sourced from `QOU.BraidsAndKnots.exteriorSquareDim_eq_one_iff`; the subgroup half composes the previously proved `QOU.su2_emergence_combined`.
+[`SU2EmergenceRankForced.lean`](../lean/QOU/QuantumObservableUniverse/SU2EmergenceRankForced.lean) carries the statement above as `QOU.su2_emergence_rank_forced`, together with the rank-free subgroup half `QOU.mem_specialUnitary_of_unitary_of_det_one` and the non-vacuity check `QOU.su2_emergence_rank_hypothesis_is_load_bearing`. The rank is sourced from `QOU.BraidsAndKnots.exteriorSquareDim_eq_one_iff`; the subgroup half composes `QOU.su2_emergence_combined`.

@@ -6,7 +6,12 @@
   "sha256": "875ab040b50487a16a60aa5340395bbc110ab3551b601df3419ab433759e699d",
   "bytes": 1506803,
   "pages": 258,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,1756 +21,3740 @@
    "stamp_date": "23 Apr 2007"
   },
   "doi": null,
-  "title": "Proton Stability in Grand Unified Theories, in Strings and in Branes",
-  "authors_raw": "Pran Nath 1, and Pavel Fileviez Pérez2",
+  "title": "arXiv:hep-ph/0601023v3 23 Apr 2007",
+  "authors_raw": "Grand Unified Theories",
   "title_lines": [
-   "Proton Stability",
-   "Grand Unified Theories",
-   "in Strings and in Branes"
+   "Proton Stability"
   ],
-  "abstract": "A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation, SUSY and SUGRA uniﬁed models, uni ﬁ- cation based on extra dimensions, and string-M-theory mode ls. The extra dimensional uniﬁcation includes 5D and 6D and univers al extra dimensional (UED) models, and models based on warped geomet ry. Proton stability in a wide array of string theory and M theory models is reviewed. These include Calabi-Yau models, grand uniﬁed models with Kac-Moody levels k > 1, a new class of heterotic string models, models based on intersecting D branes, and string landscape models. The destabilizing eﬀect of quantum gravity on the proton is d iscussed. The possibility of testing grand uniﬁed models, models base d on extra dimensions and string-M-theory models via their distincti ve modes is investigated. The proposed next generation proton decay experi- ments, HyperK, UNO, MEMPHYS, ICARUS, LANNDD (DUSEL), and LENA would shed signiﬁcant light on the nature of uniﬁcat ion complementary to the physics at the LHC. Mathematical tools for the computation of proton lifetime are given in the appendices. Prospects for the future are discussed.",
+  "abstract": "A broad overview of the current status of proton stability in uni- \ufb01ed models of particle interactions is given which includes non - su- persymmetric uni\ufb01cation, SUSY and SUGRA uni\ufb01ed models, uni\ufb01- cation based on extra dimensions, and string-M-theory models. The extra dimensional uni\ufb01cation includes 5D and 6D and universal extra dimensional (UED) models, and models based on warped geometry. Proton stability in a wide array of string theory and M theory models is reviewed. These include Calabi-Yau models, grand uni\ufb01ed models with Kac-Moody levels k > 1, a new class of heterotic string models, models based on intersecting D branes, and string landscape models. The destabilizing e\ufb00ect of quantum gravity on the proton is discussed. The possibility of testing grand uni\ufb01ed models, models based on extra dimensions and string-M-theory models via their distinctive modes is investigated. The proposed next generation proton decay experi- ments, HyperK, UNO, MEMPHYS, ICARUS, LANNDD (DUSEL), and LENA would shed signi\ufb01cant light on the nature of uni\ufb01cation complementary to the physics at the LHC. Mathematical tools for the computation of proton lifetime are given in the appendices. Prospects for the future are discussed.",
   "docinfo": {
+   "Title": "arXiv:hep-ph/0601023v3  23 Apr 2007",
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126170504-05'00'",
    "Creator": "dvips(k) 5.95a Copyright 2005 Radical Eye Software",
-   "Title": "arXiv:hep-ph/0601023v3  23 Apr 2007"
+   "CreationDate": "D:20241126170504-05'00'"
   },
-  "title_prev": "Proton Stability Grand Unified Theories, in Strings and in Branes"
+  "title_raw": "Proton Stability",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-ph/0601023v3 23 Apr 2007",
+   "heading": "Proton Stability in Grand Uni\ufb01ed Theories, in Strings and in Branes",
+   "text": "Proton Stability",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
-  {
-   "level": 1,
-   "title": "Department of Physics. Northeastern University",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Departamento de F ´ ısica. Centro de F ´ ısica Te´ orica de Part´ ıculas,",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
   {
    "level": 1,
    "title": "Introduction",
    "page": 5,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Experimental bounds and future searches",
    "page": 12,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
    "level": 1,
-   "title": "Nucleon decay in non-supersymmetric sce-",
+   "title": "Nucleon decay in non-supersymmetric scenarios",
    "page": 17,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Baryon number violation in the Standard Model",
    "page": 17,
    "source": "inferred",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
   },
   {
    "level": 2,
-   "title": "Grand uniﬁcation and gauge contributions to the",
+   "title": "Grand unification and gauge contributions to the decay of the proton",
    "page": 18,
    "source": "inferred",
-   "number": "3.2"
-  },
-  {
-   "level": 1,
-   "title": "Vαβ",
-   "page": 20,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Vβα",
-   "page": 20,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(V4V †",
-   "page": 20,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(V1VUD )1α(V3VEN )βl",
-   "page": 20,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Vβα",
-   "page": 20,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(V1VUDV †",
-   "page": 20,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(U †",
-   "page": 20,
-   "source": "inferred",
-   "number": "4"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Proton decay induced by scalar leptoquarks",
    "page": 22,
    "source": "inferred",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "22"
   },
   {
    "level": 1,
-   "title": "Nucleon decay in SUSY and SUGRA uni-",
+   "title": "Nucleon decay in SUSY and SUGRA unified theories",
    "page": 25,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "R-parity violation and the decay of the proton",
    "page": 27,
    "source": "inferred",
-   "number": "4.1"
-  },
-  {
-   "level": 1,
-   "title": "GeV. In the case of the decay channels into antineutrinos, t he decay rates",
-   "page": 28,
-   "source": "inferred",
-   "number": "1"
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "27"
   },
   {
    "level": 2,
-   "title": "Supersymmetry breaking and SUGRA uniﬁcation",
+   "title": "Supersymmetry breaking and SUGRA unification",
    "page": 30,
    "source": "inferred",
-   "number": "4.2"
-  },
-  {
-   "level": 1,
-   "title": "(|H1|2 − |H2|2)2 + ∆ V1,",
-   "page": 33,
-   "source": "inferred",
-   "number": "8"
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "30"
   },
   {
    "level": 2,
-   "title": "Eﬀect of CP violating phases on proton lifetime",
+   "title": "Effect of CP violating phases on proton lifetime",
    "page": 36,
    "source": "inferred",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "Doublet-triplet splitting problem",
    "page": 40,
    "source": "inferred",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "40"
   },
   {
    "level": 2,
-   "title": "Proton decay in SU (5) supersymmetric grand uni-",
+   "title": "Proton decay in $SU(5)$ supersymmetric grand unification",
    "page": 42,
    "source": "inferred",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "42"
   },
   {
    "level": 2,
    "title": "Nucleon decay in SO(10) theories",
    "page": 48,
    "source": "inferred",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "48"
   },
   {
    "level": 2,
-   "title": "Proton decay in models with uniﬁed symmetry",
+   "title": "Proton decay in models with unified symmetry breaking",
    "page": 54,
    "source": "inferred",
-   "number": "4.7"
+   "number": "4.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "54"
   },
   {
    "level": 1,
-   "title": "Testing grand uniﬁcation",
+   "title": "Testing grand unification",
    "page": 56,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "56"
   },
   {
    "level": 2,
-   "title": "Textures, Planck scale eﬀects and proton decay",
+   "title": "Textures, Planck scale effects and proton decay",
    "page": 57,
    "source": "inferred",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "57"
   },
   {
    "level": 2,
-   "title": "Gravitational smearing eﬀects",
+   "title": "Gravitational smearing effects",
    "page": 60,
    "source": "inferred",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "60"
   },
   {
    "level": 2,
-   "title": "Constraints from gauge coupling uniﬁcation",
+   "title": "Constraints from gauge coupling unification",
    "page": 62,
    "source": "inferred",
-   "number": "5.3"
-  },
-  {
-   "level": 1,
-   "title": "C2(Gi)] (151)",
-   "page": 62,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "TeV, or if one has only the gauginos and higgsinos at the 10 2-103 GeV",
-   "page": 66,
-   "source": "inferred",
-   "number": "1"
+   "number": "5.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "Testing GUTs through proton decay",
    "page": 67,
    "source": "inferred",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "67"
   },
   {
    "level": 2,
-   "title": "Proton decay in ﬂipped SU (5)",
+   "title": "Proton decay in flipped $SU(5)$",
    "page": 68,
    "source": "inferred",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "68"
   },
   {
    "level": 2,
    "title": "Upper bound on the proton lifetime in GUTs",
    "page": 71,
    "source": "inferred",
-   "number": "5.6"
+   "number": "5.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "71"
   },
   {
    "level": 1,
-   "title": "Uniﬁcation in Extra Dimensions and Pro-",
+   "title": "Unification in Extra Dimensions and Proton Decay",
    "page": 72,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "72"
   },
   {
    "level": 2,
    "title": "Proton decay in models with 5D",
    "page": 73,
    "source": "inferred",
-   "number": "6.1"
-  },
-  {
-   "level": 1,
-   "title": "Matter on the SU(5) brane",
-   "page": 80,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Matter in the bulk",
-   "page": 80,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Matter on the SM brane",
-   "page": 81,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(δ(x5) −δ(x5 −πR))f5u10.10.5H",
-   "page": 81,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(δ(x5) −η¯5η10δ(x5 −πR))f5u10.¯5.¯5H +h.c. (207)",
-   "page": 81,
-   "source": "inferred",
-   "number": "2"
+   "number": "6.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "73"
   },
   {
    "level": 2,
    "title": "SO(10) models in 5D",
    "page": 84,
    "source": "inferred",
-   "number": "6.2"
-  },
-  {
-   "level": 1,
-   "title": "(B−L). Now under the SU (4)C",
-   "page": 85,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "SO(10) brane model",
-   "page": 86,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "G(4,2,2) brane model",
-   "page": 86,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "SO(10) brane",
-   "page": 92,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "SU (5) ×U(1) brane",
-   "page": 92,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Flipped SU (5) ×U(1) brane",
-   "page": 92,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "SU (4)C ×SU (2)L ×SU (2)R brane",
-   "page": 92,
-   "source": "inferred",
-   "number": "4"
+   "number": "6.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "84"
   },
   {
    "level": 2,
-   "title": "Gauge-Higgs uniﬁcation",
+   "title": "5D Trinification",
+   "page": 87,
+   "source": "inferred",
+   "number": "6.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "87"
+  },
+  {
+   "level": 2,
+   "title": "6D models",
+   "page": 88,
+   "source": "inferred",
+   "number": "6.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "88"
+  },
+  {
+   "level": 2,
+   "title": "Gauge-Higgs unification",
    "page": 94,
    "source": "inferred",
-   "number": "6.5"
+   "number": "6.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "94"
   },
   {
    "level": 2,
-   "title": "Proton decay in universal extra dimension (UED)",
+   "title": "Proton decay in universal extra dimension (UED) models",
    "page": 96,
    "source": "inferred",
-   "number": "6.6"
+   "number": "6.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "96"
   },
   {
    "level": 2,
    "title": "Proton decay in warped geometry",
    "page": 99,
    "source": "inferred",
-   "number": "6.7"
+   "number": "6.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "99"
   },
   {
    "level": 2,
    "title": "Proton stability in kink backgrounds",
    "page": 101,
    "source": "inferred",
-   "number": "6.8"
+   "number": "6.8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "101"
   },
   {
    "level": 1,
    "title": "Proton Decay in String Models",
    "page": 102,
    "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "Baryon and lepton number violating dimension four operat ors are absent",
-   "page": 103,
-   "source": "inferred",
-   "number": "3"
+   "number": "7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "102"
   },
   {
    "level": 2,
    "title": "Proton Stability in Calabi-Yau Models",
    "page": 104,
    "source": "inferred",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "104"
   },
   {
    "level": 2,
-   "title": "Kac-Moody level k > 1 string models and proton",
+   "title": "Kac-Moody level $k>1$ string models and proton decay",
    "page": 109,
    "source": "inferred",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "109"
   },
   {
    "level": 2,
    "title": "A new class of heterotic string models",
    "page": 111,
    "source": "inferred",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Proton decay in M theory compactiﬁcations",
+   "title": "Proton decay in M theory compactifications",
    "page": 112,
    "source": "inferred",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "112"
   },
   {
    "level": 2,
    "title": "Proton decay in intersecting D brane models",
    "page": 114,
    "source": "inferred",
-   "number": "7.5"
+   "number": "7.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "114"
   },
   {
    "level": 2,
    "title": "Nucleon stability in string landscape models",
    "page": 117,
    "source": "inferred",
-   "number": "7.6"
-  },
-  {
-   "level": 1,
-   "title": "This results in the number of",
-   "page": 118,
-   "source": "inferred",
-   "number": "L"
-  },
-  {
-   "level": 1,
-   "title": "This leads to ⟨DX⟩ = m2/g2",
-   "page": 120,
-   "source": "inferred",
-   "number": "X"
+   "number": "7.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "117"
   },
   {
    "level": 2,
-   "title": "Proton decay from black hole and wormhole eﬀects",
+   "title": "Proton decay from black hole and wormhole effects",
    "page": 121,
    "source": "inferred",
-   "number": "7.7"
+   "number": "7.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "121"
   },
   {
    "level": 2,
-   "title": "U (1) string symmetries and proton stability",
+   "title": "$U(1)$ string symmetries and proton stability",
    "page": 122,
    "source": "inferred",
-   "number": "7.8"
+   "number": "7.8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "122"
   },
   {
    "level": 2,
    "title": "Discrete Symmetries and proton stability",
    "page": 124,
    "source": "inferred",
-   "number": "7.9"
+   "number": "7.9",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "124"
   },
   {
    "level": 1,
    "title": "Other Aspects",
    "page": 127,
    "source": "inferred",
-   "number": "8"
+   "number": "8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "127"
   },
   {
    "level": 2,
    "title": "Neutrino masses and proton decay",
    "page": 128,
    "source": "inferred",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "128"
   },
   {
    "level": 2,
    "title": "Proton stability and dark matter",
    "page": 133,
    "source": "inferred",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "133"
   },
   {
    "level": 2,
-   "title": "Exotic B & L violation",
+   "title": "Exotic $B \\ \\& \\ L$ violation",
    "page": 135,
    "source": "inferred",
-   "number": "8.3"
+   "number": "8.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "135"
   },
   {
    "level": 3,
-   "title": "B & L violation involving higher generations",
+   "title": "$|\\Delta B| \\ > \\ 1$ violation and other non-standard $B\\& L$ violation",
+   "page": 135,
+   "source": "inferred",
+   "number": "8.3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "135"
+  },
+  {
+   "level": 3,
+   "title": "$B \\ \\& \\ L$ violation involving higher generations",
    "page": 136,
    "source": "inferred",
-   "number": "8.3.2"
+   "number": "8.3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Monopole catalyzed proton decay",
    "page": 137,
    "source": "inferred",
-   "number": "8.3.3"
+   "number": "8.3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "137"
   },
   {
    "level": 2,
    "title": "Proton decay and the ultimate fate of the universe",
    "page": 138,
    "source": "inferred",
-   "number": "8.4"
+   "number": "8.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "138"
   },
   {
    "level": 1,
    "title": "Summary and Outlook",
    "page": 139,
    "source": "inferred",
-   "number": "9"
+   "number": "9",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "139"
   },
   {
    "level": 1,
    "title": "Summary Table of p decay predictions",
    "page": 144,
    "source": "inferred",
-   "number": "10"
+   "number": "10",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "144"
   },
   {
    "level": 1,
-   "title": "Pij (362)",
+   "title": "Acknowledgments",
+   "page": 146,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "APPENDICES",
+   "page": 147,
+   "source": "inferred",
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "147"
+  },
+  {
+   "level": 1,
+   "title": "Mathematical aspects of $SU(5)$ and $SO(10)$ unification",
+   "page": 147,
+   "source": "inferred",
+   "number": "11",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "147"
+  },
+  {
+   "level": 1,
+   "title": "$d=5$ contributions to the decay of the proton",
    "page": 154,
    "source": "inferred",
-   "number": "6"
+   "number": "12",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "154"
   },
   {
    "level": 1,
-   "title": "Qij (363)",
-   "page": 154,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "(dRidRj)(uLνLk) (410)",
+   "title": "Dressing of the d=5 operators",
    "page": 162,
    "source": "inferred",
-   "number": "2"
+   "number": "13",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "162"
   },
   {
    "level": 1,
-   "title": "(ON )2m + 1",
+   "title": "Sparticle spectrum and renormalization",
    "page": 168,
    "source": "inferred",
-   "number": "2"
+   "number": "14",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "168"
   },
   {
    "level": 1,
-   "title": "M2 MZcWcβ −MZcWsβ",
-   "page": 172,
+   "title": "Renormalization of the $d=5$ and $d=6$ operators",
+   "page": 173,
    "source": "inferred",
-   "number": "0"
+   "number": "15",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "173"
   },
   {
    "level": 1,
-   "title": "These reduce the number",
-   "page": 176,
+   "title": "Effective lagrangian for nucleon decay",
+   "page": 174,
    "source": "inferred",
-   "number": "LL"
+   "number": "16",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "174"
   },
   {
    "level": 1,
-   "title": "(2b1 −b2)¯Λ 0γ5n +",
-   "page": 181,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "GeV. In the previous appendix we already discussed those eﬀ ects for the",
+   "title": "Details of the analysis on testing GUTs",
    "page": 184,
    "source": "inferred",
-   "number": "1"
+   "number": "17",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "184"
   },
   {
    "level": 1,
-   "title": "(K ∗",
-   "page": 184,
+   "title": "Detailed analysis of upper bounds",
+   "page": 189,
    "source": "inferred",
-   "number": "2"
+   "number": "18",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "189"
   },
   {
    "level": 1,
-   "title": "(V1VUD )1α(V3VEN )βl (567)",
-   "page": 190,
+   "title": "Relating 4D parameters to parameters of M theory",
+   "page": 192,
    "source": "inferred",
-   "number": "1"
+   "number": "19",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "192"
   },
   {
    "level": 1,
-   "title": "Case (a) ( V1VUD )11 = 0 (Condition V)",
-   "page": 190,
+   "title": "Gauge coupling unification in string models",
+   "page": 196,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Extra matter at a high scale which can modify the RG evoluti on of",
-   "page": 197,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Non-standard hypercharge normalizations within string models with",
-   "page": 197,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "An M theory solution [227] to the gauge coupling/gravity u niﬁcation,",
-   "page": 197,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 199,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "Susskind, The Anthropic Landscape of String Theory , hep-",
-   "page": 216,
-   "source": "inferred",
-   "number": "L"
-  },
-  {
-   "level": 1,
-   "title": "Wetterich, “Fermion Mass Predictions From Higher Dimens ions,”",
-   "page": 217,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "D. Carone, “Electroweak constraints on extended models w ith extra",
-   "page": 224,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "E. Ibanez, J. E. Kim, H. P. Nilles and F. Quevedo, “Orbifold Com-",
-   "page": 230,
-   "source": "inferred",
-   "number": "L"
-  },
-  {
-   "level": 1,
-   "title": "Antoniadis, J. R. Ellis, J. S. Hagelin and D. V. Nanopoulos , “GUT",
-   "page": 230,
-   "source": "inferred",
-   "number": "I"
-  },
-  {
-   "level": 1,
-   "title": "J. Dixon, J. A. Harvey, C. Vafa and E. Witten, “Strings On Or b-",
-   "page": 231,
-   "source": "inferred",
-   "number": "L"
-  },
-  {
-   "level": 1,
-   "title": "Kokorelis, “Standard models and split supersymmetry fro m inter-",
-   "page": 238,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "H. Albright and S. M. Barr, “Realization of the large mixin g an-",
-   "page": 243,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "H. Albright, “Bounds on the neutrino mixing angles for an S O(10)",
-   "page": 244,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "Coriano and A. E. Faraggi, “String inspired neutrino mass tex-",
-   "page": 244,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "S. Aulakh, “Consistency of the minimal supersymmetric GU T spec-",
-   "page": 248,
-   "source": "inferred",
-   "number": "C"
+   "number": "20",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Idealized p \u2192e+\u03c00 decay in Super-Kamiokande [26]. Fig.(1) gives a schematic presentation of an ideal p \u2192e+\u03c00 decay. Here,",
+   "page": 13,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Idealized p \u2192K+\u03bd decay in Super-Kamiokande, K+ \u2192\u03c0+\u03c00",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Idealized p \u2192K+\u03bd decay in Super-Kamiokande, K+ \u2192\u00b5+\u03bd\u00b5",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Experimental lower bounds on proton lifetimes",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Upper bounds for the R-parity violating couplings. The analysis above shows that the R-parity violating couplings could be large in supersymmetric scenarios with large susy breaking scale",
+   "page": 29,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Contributions to the Bij coe\ufb03cients in a realistic minimal non-SUSY SU(5) [211]",
+   "page": 65,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "P and P\u2032 parities of the components of bulk Higgs multiplets",
+   "page": 79,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "P and P\u2032 parities for the components of bulk gauge multiplets In setting up the Lagrangian in 5D we have to make sure that the Lagrangian is invariant under the full Z2 \u00d7 Z\u2032",
+   "page": 80,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "6",
+   "title": "P and P\u2032 parities of SO(10) vector and chiral multiplets",
+   "page": 86,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "7",
+   "title": "C parities and matter parities from Ref. [310] where L1\u00b1 = (L1 \u00b1",
+   "page": 106,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "8",
+   "title": "The U(1) quantum numbers of the \ufb01elds in a class of string derived models [394] From Table (8) one \ufb01nds that baryon and lepton number dimension four",
+   "page": 123,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "9",
+   "title": "Properties of the dimension six operators under SU(3)L \u00d7 SU(3)R. To obtain the e\ufb00ective Lagrangian for the operators we want to simulate the transformations of Table (9) using the baryon and meson \ufb01elds. For the baryons we introduce the matrix",
+   "page": 177,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Experimental lower bounds on proton decay partial lifetimes [34]",
+   "page": 251,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Gauge contributions to the decay of the proton. In this case the decay of the proton is mediated by vector leptoquarks. The \ufb01elds \u03a8, \u03c8 and \u03a6 are quark \ufb01elds and l corresponds to the leptons. A possible contribution is: \u03a8 = uL, \u03c8 = (uC)L, \u03a6 = (dC",
+   "page": 252,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Higgs contributions to the decay of the proton. In this case proton decay is mediated by scalar leptoquarks T. The \ufb01elds Q = (uL, dL) and L = (\u03bdL, eL)",
+   "page": 253,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Values of the gauge couplings of the Standard Model at di\ufb00erent scales",
+   "page": 254,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Plot of lines of constant M\u03a33",
+   "page": 255,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Values of the gauge couplings at di\ufb00erent scales, in the",
+   "page": 256,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Isoplot for the upper bounds on the total proton lifetime in years in the Majorana neutrino case in the MX\u2013\u03b1GUT plane",
+   "page": 257,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Isoplot for the upper bounds on the total proton lifetime in years in the Dirac neutrino case in the MX\u2013\u03b1GUT plane. The value of the unifying coupling constant is varied from 1/60 to 1/10. The conventional values for MX and \u03b1GUT in SUSY GUTs are marked in thick lines. The experimentally excluded reg",
+   "page": 258,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 70,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 75,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 76,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 77,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 78,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 79,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 80,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 81,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 82,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 83,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 84,
+   "label": "84",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 86,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 87,
+   "label": "87",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "88",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 90,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 91,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 92,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 93,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 94,
+   "label": "94",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 96,
+   "label": "96",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 98,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 99,
+   "label": "99",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 100,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 101,
+   "label": "101",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 102,
+   "label": "102",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 104,
+   "label": "104",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 105,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 106,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 107,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 108,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 109,
+   "label": "109",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 110,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 111,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 112,
+   "label": "112",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 113,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 114,
+   "label": "114",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 115,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 116,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 117,
+   "label": "117",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 118,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 119,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 120,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 121,
+   "label": "121",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 122,
+   "label": "122",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 123,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 124,
+   "label": "124",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 125,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 126,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 127,
+   "label": "127",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 128,
+   "label": "128",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 129,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 130,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 131,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 132,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 133,
+   "label": "133",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 134,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 135,
+   "label": "135",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 136,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 137,
+   "label": "137",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 138,
+   "label": "138",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 139,
+   "label": "139",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 140,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 141,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 142,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 143,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 144,
+   "label": "144",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 145,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 146,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 147,
+   "label": "147",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 148,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 149,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 150,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 151,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 152,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 153,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 154,
+   "label": "154",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 155,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 156,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 157,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 158,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 159,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 160,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 161,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 162,
+   "label": "162",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 163,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 164,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 165,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 166,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 167,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 168,
+   "label": "168",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 169,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 170,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 171,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 172,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 173,
+   "label": "173",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 174,
+   "label": "174",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 175,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 176,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 177,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 178,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 179,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 180,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 181,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 182,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 183,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 184,
+   "label": "184",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 185,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 186,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 187,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 188,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 189,
+   "label": "189",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 190,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 191,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 192,
+   "label": "192",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 193,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 194,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 195,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 196,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 197,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 198,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 199,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 200,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 201,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 202,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 203,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 204,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 205,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 206,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 207,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 208,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 209,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 210,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 211,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 212,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 213,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 214,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 215,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 216,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 217,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 218,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 219,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 220,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 221,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 222,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 223,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 224,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 225,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 226,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 227,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 228,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 229,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 230,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 231,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 232,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 233,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 234,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 235,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 236,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 237,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 238,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 239,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 240,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 241,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 242,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 243,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 244,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 245,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 246,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 247,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 248,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 249,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 250,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 251,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 252,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 253,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 254,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 255,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 256,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 257,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 258,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-department-of-physics-northeastern-university",
-   "number": "1",
-   "title": "Department of Physics. Northeastern University",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 48,
-   "n_words": 5
-  },
-  {
-   "id": "sec-001-2-departamento-de-f-ısica-centro-de-f-ısica-te-o",
-   "number": "2",
-   "title": "Departamento de F ´ ısica. Centro de F ´ ısica Te´ orica de Part´ ıculas,",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 107,
-   "n_words": 12
-  },
-  {
-   "id": "sec-002-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 5150,
-   "n_words": 1254
+   "n_chars": 5560,
+   "n_words": 1290,
+   "label_start": null,
+   "label_end": "5"
   },
   {
-   "id": "sec-003-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 5,
    "page_end": 12,
-   "n_chars": 17712,
-   "n_words": 3034
+   "n_chars": 17531,
+   "n_words": 2852,
+   "label_start": "5",
+   "label_end": "12"
   },
   {
-   "id": "sec-004-2-experimental-bounds-and-future-searches",
+   "id": "sec-001-2-experimental-bounds-and-future-searches",
    "number": "2",
    "title": "Experimental bounds and future searches",
    "level": 1,
    "page_start": 12,
    "page_end": 17,
-   "n_chars": 9254,
-   "n_words": 1676
+   "n_chars": 10763,
+   "n_words": 1842,
+   "label_start": "12",
+   "label_end": "17"
   },
   {
-   "id": "sec-005-3-nucleon-decay-in-non-supersymmetric-sce",
-   "number": "3",
-   "title": "Nucleon decay in non-supersymmetric sce-",
-   "level": 1,
-   "page_start": 17,
-   "page_end": 17,
-   "n_chars": 1571,
-   "n_words": 269
-  },
-  {
-   "id": "sec-006-31-baryon-number-violation-in-the-standard-model",
+   "id": "sec-002-31-baryon-number-violation-in-the-standard-model",
    "number": "3.1",
    "title": "Baryon number violation in the Standard Model",
    "level": 2,
    "page_start": 17,
-   "page_end": 18,
-   "n_chars": 1347,
-   "n_words": 250
-  },
-  {
-   "id": "sec-007-32-grand-uniﬁcation-and-gauge-contributions-to-t",
-   "number": "3.2",
-   "title": "Grand uniﬁcation and gauge contributions to the",
-   "level": 2,
-   "page_start": 18,
-   "page_end": 20,
-   "n_chars": 3895,
-   "n_words": 775
-  },
-  {
-   "id": "sec-008-1-vαβ",
-   "number": "1",
-   "title": "Vαβ",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 57,
-   "n_words": 16
-  },
-  {
-   "id": "sec-009-1-vβα",
-   "number": "1",
-   "title": "Vβα",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 6,
-   "n_words": 3
-  },
-  {
-   "id": "sec-010-2-v4v",
-   "number": "2",
-   "title": "(V4V †",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-011-4-v1vudv",
-   "number": "4",
-   "title": "(V1VUDV †",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 31,
-   "n_words": 7
-  },
-  {
-   "id": "sec-012-1-v1vud-1αv3ven-βl",
-   "number": "1",
-   "title": "(V1VUD )1α(V3VEN )βl",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 70,
-   "n_words": 19
-  },
-  {
-   "id": "sec-013-4-u",
-   "number": "4",
-   "title": "(U †",
-   "level": 1,
-   "page_start": 20,
    "page_end": 22,
-   "n_chars": 3296,
-   "n_words": 691
+   "n_chars": 8772,
+   "n_words": 1758,
+   "label_start": "17",
+   "label_end": "22"
   },
   {
-   "id": "sec-014-33-proton-decay-induced-by-scalar-leptoquarks",
+   "id": "sec-003-33-proton-decay-induced-by-scalar-leptoquarks",
    "number": "3.3",
    "title": "Proton decay induced by scalar leptoquarks",
    "level": 2,
    "page_start": 22,
-   "page_end": 25,
-   "n_chars": 3264,
-   "n_words": 697
-  },
-  {
-   "id": "sec-015-4-nucleon-decay-in-susy-and-sugra-uni",
-   "number": "4",
-   "title": "Nucleon decay in SUSY and SUGRA uni-",
-   "level": 1,
-   "page_start": 25,
    "page_end": 27,
-   "n_chars": 5268,
-   "n_words": 918
+   "n_chars": 8518,
+   "n_words": 1566,
+   "label_start": "22",
+   "label_end": "27"
   },
   {
-   "id": "sec-016-41-r-parity-violation-and-the-decay-of-the-proto",
+   "id": "sec-004-41-r-parity-violation-and-the-decay-of-the-proto",
    "number": "4.1",
    "title": "R-parity violation and the decay of the proton",
    "level": 2,
    "page_start": 27,
-   "page_end": 28,
-   "n_chars": 1397,
-   "n_words": 261
-  },
-  {
-   "id": "sec-017-1-gev-in-the-case-of-the-decay-channels-into-ant",
-   "number": "1",
-   "title": "GeV. In the case of the decay channels into antineutrinos, t he decay rates",
-   "level": 1,
-   "page_start": 28,
-   "page_end": 30,
-   "n_chars": 3242,
-   "n_words": 652
-  },
-  {
-   "id": "sec-018-42-supersymmetry-breaking-and-sugra-uniﬁcation",
-   "number": "4.2",
-   "title": "Supersymmetry breaking and SUGRA uniﬁcation",
-   "level": 2,
-   "page_start": 30,
-   "page_end": 33,
-   "n_chars": 6370,
-   "n_words": 1143
-  },
-  {
-   "id": "sec-019-8-h12-h222-v1",
-   "number": "8",
-   "title": "(|H1|2 − |H2|2)2 + ∆ V1,",
-   "level": 1,
-   "page_start": 33,
-   "page_end": 36,
-   "n_chars": 8998,
-   "n_words": 1690
-  },
-  {
-   "id": "sec-020-43-eﬀect-of-cp-violating-phases-on-proton-lifeti",
-   "number": "4.3",
-   "title": "Eﬀect of CP violating phases on proton lifetime",
-   "level": 2,
-   "page_start": 36,
    "page_end": 40,
-   "n_chars": 8493,
-   "n_words": 1560
+   "n_chars": 28481,
+   "n_words": 5122,
+   "label_start": "27",
+   "label_end": "40"
   },
   {
-   "id": "sec-021-44-doublet-triplet-splitting-problem",
+   "id": "sec-005-44-doublet-triplet-splitting-problem",
    "number": "4.4",
    "title": "Doublet-triplet splitting problem",
    "level": 2,
    "page_start": 40,
-   "page_end": 42,
-   "n_chars": 4325,
-   "n_words": 875
-  },
-  {
-   "id": "sec-022-45-proton-decay-in-su-5-supersymmetric-grand-uni",
-   "number": "4.5",
-   "title": "Proton decay in SU (5) supersymmetric grand uni-",
-   "level": 2,
-   "page_start": 42,
    "page_end": 48,
-   "n_chars": 11233,
-   "n_words": 2042
+   "n_chars": 15462,
+   "n_words": 2773,
+   "label_start": "40",
+   "label_end": "48"
   },
   {
-   "id": "sec-023-46-nucleon-decay-in-so10-theories",
+   "id": "sec-006-46-nucleon-decay-in-so10-theories",
    "number": "4.6",
    "title": "Nucleon decay in SO(10) theories",
    "level": 2,
    "page_start": 48,
-   "page_end": 54,
-   "n_chars": 10989,
-   "n_words": 2134
-  },
-  {
-   "id": "sec-024-47-proton-decay-in-models-with-uniﬁed-symmetry",
-   "number": "4.7",
-   "title": "Proton decay in models with uniﬁed symmetry",
-   "level": 2,
-   "page_start": 54,
-   "page_end": 56,
-   "n_chars": 4373,
-   "n_words": 819
-  },
-  {
-   "id": "sec-025-5-testing-grand-uniﬁcation",
-   "number": "5",
-   "title": "Testing grand uniﬁcation",
-   "level": 1,
-   "page_start": 56,
-   "page_end": 57,
-   "n_chars": 2272,
-   "n_words": 383
-  },
-  {
-   "id": "sec-026-51-textures-planck-scale-eﬀects-and-proton-decay",
-   "number": "5.1",
-   "title": "Textures, Planck scale eﬀects and proton decay",
-   "level": 2,
-   "page_start": 57,
-   "page_end": 60,
-   "n_chars": 5892,
-   "n_words": 1093
-  },
-  {
-   "id": "sec-027-52-gravitational-smearing-eﬀects",
-   "number": "5.2",
-   "title": "Gravitational smearing eﬀects",
-   "level": 2,
-   "page_start": 60,
-   "page_end": 62,
-   "n_chars": 5745,
-   "n_words": 1063
-  },
-  {
-   "id": "sec-028-53-constraints-from-gauge-coupling-uniﬁcation",
-   "number": "5.3",
-   "title": "Constraints from gauge coupling uniﬁcation",
-   "level": 2,
-   "page_start": 62,
-   "page_end": 62,
-   "n_chars": 610,
-   "n_words": 111
-  },
-  {
-   "id": "sec-029-3-c2gi-151",
-   "number": "3",
-   "title": "C2(Gi)] (151)",
-   "level": 1,
-   "page_start": 62,
-   "page_end": 66,
-   "n_chars": 5285,
-   "n_words": 1073
-  },
-  {
-   "id": "sec-030-1-tev-or-if-one-has-only-the-gauginos-and-higgsi",
-   "number": "1",
-   "title": "TeV, or if one has only the gauginos and higgsinos at the 10 2-103 GeV",
-   "level": 1,
-   "page_start": 66,
    "page_end": 67,
-   "n_chars": 1106,
-   "n_words": 232
+   "n_chars": 36238,
+   "n_words": 6617,
+   "label_start": "48",
+   "label_end": "67"
   },
   {
-   "id": "sec-031-54-testing-guts-through-proton-decay",
+   "id": "sec-007-54-testing-guts-through-proton-decay",
    "number": "5.4",
    "title": "Testing GUTs through proton decay",
    "level": 2,
    "page_start": 67,
-   "page_end": 68,
-   "n_chars": 2704,
-   "n_words": 523
-  },
-  {
-   "id": "sec-032-55-proton-decay-in-ﬂipped-su-5",
-   "number": "5.5",
-   "title": "Proton decay in ﬂipped SU (5)",
-   "level": 2,
-   "page_start": 68,
    "page_end": 71,
-   "n_chars": 5120,
-   "n_words": 1027
+   "n_chars": 7796,
+   "n_words": 1495,
+   "label_start": "67",
+   "label_end": "71"
   },
   {
-   "id": "sec-033-56-upper-bound-on-the-proton-lifetime-in-guts",
+   "id": "sec-008-56-upper-bound-on-the-proton-lifetime-in-guts",
    "number": "5.6",
    "title": "Upper bound on the proton lifetime in GUTs",
    "level": 2,
    "page_start": 71,
-   "page_end": 72,
-   "n_chars": 3186,
-   "n_words": 583
-  },
-  {
-   "id": "sec-034-6-uniﬁcation-in-extra-dimensions-and-pro",
-   "number": "6",
-   "title": "Uniﬁcation in Extra Dimensions and Pro-",
-   "level": 1,
-   "page_start": 72,
    "page_end": 73,
-   "n_chars": 2228,
-   "n_words": 389
+   "n_chars": 5404,
+   "n_words": 923,
+   "label_start": "71",
+   "label_end": "73"
   },
   {
-   "id": "sec-035-61-proton-decay-in-models-with-5d",
+   "id": "sec-009-61-proton-decay-in-models-with-5d",
    "number": "6.1",
    "title": "Proton decay in models with 5D",
    "level": 2,
    "page_start": 73,
-   "page_end": 80,
-   "n_chars": 14307,
-   "n_words": 2811
-  },
-  {
-   "id": "sec-036-1-matter-on-the-su5-brane",
-   "number": "1",
-   "title": "Matter on the SU(5) brane",
-   "level": 1,
-   "page_start": 80,
-   "page_end": 80,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-037-2-matter-in-the-bulk",
-   "number": "2",
-   "title": "Matter in the bulk",
-   "level": 1,
-   "page_start": 80,
-   "page_end": 81,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-038-3-matter-on-the-sm-brane",
-   "number": "3",
-   "title": "Matter on the SM brane",
-   "level": 1,
-   "page_start": 81,
-   "page_end": 81,
-   "n_chars": 760,
-   "n_words": 146
-  },
-  {
-   "id": "sec-039-2-δx5-δx5-πrf5u10105h",
-   "number": "2",
-   "title": "(δ(x5) −δ(x5 −πR))f5u10.10.5H",
-   "level": 1,
-   "page_start": 81,
-   "page_end": 81,
-   "n_chars": 9,
-   "n_words": 4
-  },
-  {
-   "id": "sec-040-2-δx5-η5η10δx5-πrf5u1055h-hc-207",
-   "number": "2",
-   "title": "(δ(x5) −η¯5η10δ(x5 −πR))f5u10.¯5.¯5H +h.c. (207)",
-   "level": 1,
-   "page_start": 81,
    "page_end": 84,
-   "n_chars": 5957,
-   "n_words": 1117
+   "n_chars": 21008,
+   "n_words": 3912,
+   "label_start": "73",
+   "label_end": "84"
   },
   {
-   "id": "sec-041-62-so10-models-in-5d",
+   "id": "sec-010-62-so10-models-in-5d",
    "number": "6.2",
    "title": "SO(10) models in 5D",
    "level": 2,
    "page_start": 84,
-   "page_end": 85,
-   "n_chars": 1942,
-   "n_words": 378
+   "page_end": 88,
+   "n_chars": 7798,
+   "n_words": 1489,
+   "label_start": "84",
+   "label_end": "88"
   },
   {
-   "id": "sec-042-2-bl-now-under-the-su-4c",
-   "number": "2",
-   "title": "(B−L). Now under the SU (4)C",
-   "level": 1,
-   "page_start": 85,
-   "page_end": 86,
-   "n_chars": 949,
-   "n_words": 199
-  },
-  {
-   "id": "sec-043-1-so10-brane-model",
-   "number": "1",
-   "title": "SO(10) brane model",
-   "level": 1,
-   "page_start": 86,
-   "page_end": 86,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-044-2-g422-brane-model",
-   "number": "2",
-   "title": "G(4,2,2) brane model",
-   "level": 1,
-   "page_start": 86,
-   "page_end": 92,
-   "n_chars": 9692,
-   "n_words": 1975
-  },
-  {
-   "id": "sec-045-1-so10-brane",
-   "number": "1",
-   "title": "SO(10) brane",
-   "level": 1,
-   "page_start": 92,
-   "page_end": 92,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-046-2-su-5-u1-brane",
-   "number": "2",
-   "title": "SU (5) ×U(1) brane",
-   "level": 1,
-   "page_start": 92,
-   "page_end": 92,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-047-3-flipped-su-5-u1-brane",
-   "number": "3",
-   "title": "Flipped SU (5) ×U(1) brane",
-   "level": 1,
-   "page_start": 92,
-   "page_end": 92,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-048-4-su-4c-su-2l-su-2r-brane",
-   "number": "4",
-   "title": "SU (4)C ×SU (2)L ×SU (2)R brane",
-   "level": 1,
-   "page_start": 92,
-   "page_end": 94,
-   "n_chars": 3524,
-   "n_words": 696
-  },
-  {
-   "id": "sec-049-65-gauge-higgs-uniﬁcation",
-   "number": "6.5",
-   "title": "Gauge-Higgs uniﬁcation",
+   "id": "sec-011-64-6d-models",
+   "number": "6.4",
+   "title": "6D models",
    "level": 2,
-   "page_start": 94,
+   "page_start": 88,
    "page_end": 96,
-   "n_chars": 3675,
-   "n_words": 750
+   "n_chars": 12017,
+   "n_words": 2377,
+   "label_start": "88",
+   "label_end": "96"
   },
   {
-   "id": "sec-050-66-proton-decay-in-universal-extra-dimension-ued",
+   "id": "sec-012-66-proton-decay-in-universal-extra-dimension-ued",
    "number": "6.6",
-   "title": "Proton decay in universal extra dimension (UED)",
+   "title": "Proton decay in universal extra dimension (UED) models",
    "level": 2,
    "page_start": 96,
    "page_end": 99,
-   "n_chars": 5171,
-   "n_words": 927
+   "n_chars": 5128,
+   "n_words": 881,
+   "label_start": "96",
+   "label_end": "99"
   },
   {
-   "id": "sec-051-67-proton-decay-in-warped-geometry",
+   "id": "sec-013-67-proton-decay-in-warped-geometry",
    "number": "6.7",
    "title": "Proton decay in warped geometry",
    "level": 2,
    "page_start": 99,
    "page_end": 101,
-   "n_chars": 5790,
-   "n_words": 1065
+   "n_chars": 5771,
+   "n_words": 1043,
+   "label_start": "99",
+   "label_end": "101"
   },
   {
-   "id": "sec-052-68-proton-stability-in-kink-backgrounds",
+   "id": "sec-014-68-proton-stability-in-kink-backgrounds",
    "number": "6.8",
    "title": "Proton stability in kink backgrounds",
    "level": 2,
    "page_start": 101,
    "page_end": 102,
-   "n_chars": 3388,
-   "n_words": 587
+   "n_chars": 3351,
+   "n_words": 549,
+   "label_start": "101",
+   "label_end": "102"
   },
   {
-   "id": "sec-053-7-proton-decay-in-string-models",
+   "id": "sec-015-7-proton-decay-in-string-models",
    "number": "7",
    "title": "Proton Decay in String Models",
    "level": 1,
    "page_start": 102,
    "page_end": 103,
-   "n_chars": 1860,
-   "n_words": 328
+   "n_chars": 1846,
+   "n_words": 314,
+   "label_start": "102",
+   "label_end": null
   },
   {
-   "id": "sec-054-71-proton-stability-in-calabi-yau-models",
+   "id": "sec-016-71-proton-stability-in-calabi-yau-models",
    "number": "7.1",
    "title": "Proton Stability in Calabi-Yau Models",
    "level": 2,
    "page_start": 103,
-   "page_end": 103,
-   "n_chars": 311,
-   "n_words": 58
-  },
-  {
-   "id": "sec-055-3-baryon-and-lepton-number-violating-dimension-f",
-   "number": "3",
-   "title": "Baryon and lepton number violating dimension four operat ors are absent",
-   "level": 1,
-   "page_start": 103,
-   "page_end": 109,
-   "n_chars": 10509,
-   "n_words": 1978
-  },
-  {
-   "id": "sec-056-72-kac-moody-level-k-1-string-models-and-proton",
-   "number": "7.2",
-   "title": "Kac-Moody level k > 1 string models and proton",
-   "level": 2,
-   "page_start": 109,
    "page_end": 111,
-   "n_chars": 4237,
-   "n_words": 734
+   "n_chars": 15093,
+   "n_words": 2695,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-057-73-a-new-class-of-heterotic-string-models",
+   "id": "sec-017-73-a-new-class-of-heterotic-string-models",
    "number": "7.3",
    "title": "A new class of heterotic string models",
    "level": 2,
    "page_start": 111,
-   "page_end": 112,
-   "n_chars": 2465,
-   "n_words": 439
-  },
-  {
-   "id": "sec-058-74-proton-decay-in-m-theory-compactiﬁcations",
-   "number": "7.4",
-   "title": "Proton decay in M theory compactiﬁcations",
-   "level": 2,
-   "page_start": 112,
    "page_end": 114,
-   "n_chars": 3983,
-   "n_words": 738
+   "n_chars": 6438,
+   "n_words": 1124,
+   "label_start": null,
+   "label_end": "114"
   },
   {
-   "id": "sec-059-75-proton-decay-in-intersecting-d-brane-models",
+   "id": "sec-018-75-proton-decay-in-intersecting-d-brane-models",
    "number": "7.5",
    "title": "Proton decay in intersecting D brane models",
    "level": 2,
    "page_start": 114,
    "page_end": 117,
-   "n_chars": 5930,
-   "n_words": 1158
+   "n_chars": 5880,
+   "n_words": 1105,
+   "label_start": "114",
+   "label_end": "117"
   },
   {
-   "id": "sec-060-76-nucleon-stability-in-string-landscape-models",
+   "id": "sec-019-76-nucleon-stability-in-string-landscape-models",
    "number": "7.6",
    "title": "Nucleon stability in string landscape models",
    "level": 2,
    "page_start": 117,
-   "page_end": 118,
-   "n_chars": 3434,
-   "n_words": 626
-  },
-  {
-   "id": "sec-061-l-this-results-in-the-number-of",
-   "number": "L",
-   "title": "This results in the number of",
-   "level": 1,
-   "page_start": 118,
-   "page_end": 120,
-   "n_chars": 2339,
-   "n_words": 423
-  },
-  {
-   "id": "sec-062-x-this-leads-to-dx-m2g2",
-   "number": "X",
-   "title": "This leads to ⟨DX⟩ = m2/g2",
-   "level": 1,
-   "page_start": 120,
-   "page_end": 121,
-   "n_chars": 2457,
-   "n_words": 451
-  },
-  {
-   "id": "sec-063-77-proton-decay-from-black-hole-and-wormhole-eﬀe",
-   "number": "7.7",
-   "title": "Proton decay from black hole and wormhole eﬀects",
-   "level": 2,
-   "page_start": 121,
-   "page_end": 122,
-   "n_chars": 2535,
-   "n_words": 456
-  },
-  {
-   "id": "sec-064-78-u-1-string-symmetries-and-proton-stability",
-   "number": "7.8",
-   "title": "U (1) string symmetries and proton stability",
-   "level": 2,
-   "page_start": 122,
    "page_end": 124,
-   "n_chars": 3817,
-   "n_words": 700
+   "n_chars": 14638,
+   "n_words": 2571,
+   "label_start": "117",
+   "label_end": "124"
   },
   {
-   "id": "sec-065-79-discrete-symmetries-and-proton-stability",
+   "id": "sec-020-79-discrete-symmetries-and-proton-stability",
    "number": "7.9",
    "title": "Discrete Symmetries and proton stability",
    "level": 2,
    "page_start": 124,
    "page_end": 127,
-   "n_chars": 7589,
-   "n_words": 1322
+   "n_chars": 7547,
+   "n_words": 1279,
+   "label_start": "124",
+   "label_end": "127"
   },
   {
-   "id": "sec-066-8-other-aspects",
+   "id": "sec-021-8-other-aspects",
    "number": "8",
    "title": "Other Aspects",
    "level": 1,
    "page_start": 127,
    "page_end": 128,
-   "n_chars": 1226,
-   "n_words": 214
+   "n_chars": 1217,
+   "n_words": 202,
+   "label_start": "127",
+   "label_end": "128"
   },
   {
-   "id": "sec-067-81-neutrino-masses-and-proton-decay",
+   "id": "sec-022-81-neutrino-masses-and-proton-decay",
    "number": "8.1",
    "title": "Neutrino masses and proton decay",
    "level": 2,
    "page_start": 128,
    "page_end": 133,
-   "n_chars": 10409,
-   "n_words": 1928
+   "n_chars": 10330,
+   "n_words": 1846,
+   "label_start": "128",
+   "label_end": "133"
   },
   {
-   "id": "sec-068-82-proton-stability-and-dark-matter",
+   "id": "sec-023-82-proton-stability-and-dark-matter",
    "number": "8.2",
    "title": "Proton stability and dark matter",
    "level": 2,
    "page_start": 133,
-   "page_end": 135,
-   "n_chars": 2961,
-   "n_words": 504
-  },
-  {
-   "id": "sec-069-83-exotic-b-l-violation",
-   "number": "8.3",
-   "title": "Exotic B & L violation",
-   "level": 2,
-   "page_start": 135,
-   "page_end": 136,
-   "n_chars": 2637,
-   "n_words": 478
-  },
-  {
-   "id": "sec-070-832-b-l-violation-involving-higher-generations",
-   "number": "8.3.2",
-   "title": "B & L violation involving higher generations",
-   "level": 3,
-   "page_start": 136,
    "page_end": 137,
-   "n_chars": 1790,
-   "n_words": 330
+   "n_chars": 7399,
+   "n_words": 1252,
+   "label_start": "133",
+   "label_end": "137"
   },
   {
-   "id": "sec-071-833-monopole-catalyzed-proton-decay",
+   "id": "sec-024-833-monopole-catalyzed-proton-decay",
    "number": "8.3.3",
    "title": "Monopole catalyzed proton decay",
    "level": 3,
    "page_start": 137,
    "page_end": 138,
-   "n_chars": 2417,
-   "n_words": 440
+   "n_chars": 2399,
+   "n_words": 419,
+   "label_start": "137",
+   "label_end": "138"
   },
   {
-   "id": "sec-072-84-proton-decay-and-the-ultimate-fate-of-the-uni",
+   "id": "sec-025-84-proton-decay-and-the-ultimate-fate-of-the-uni",
    "number": "8.4",
    "title": "Proton decay and the ultimate fate of the universe",
    "level": 2,
    "page_start": 138,
    "page_end": 139,
-   "n_chars": 1308,
-   "n_words": 248
+   "n_chars": 1297,
+   "n_words": 236,
+   "label_start": "138",
+   "label_end": "139"
   },
   {
-   "id": "sec-073-9-summary-and-outlook",
+   "id": "sec-026-9-summary-and-outlook",
    "number": "9",
    "title": "Summary and Outlook",
    "level": 1,
    "page_start": 139,
    "page_end": 144,
-   "n_chars": 13528,
-   "n_words": 2331
+   "n_chars": 13398,
+   "n_words": 2199,
+   "label_start": "139",
+   "label_end": "144"
   },
   {
-   "id": "sec-074-10-summary-table-of-p-decay-predictions",
+   "id": "sec-027-10-summary-table-of-p-decay-predictions",
    "number": "10",
    "title": "Summary Table of p decay predictions",
    "level": 1,
    "page_start": 144,
-   "page_end": 154,
-   "n_chars": 15573,
-   "n_words": 3070
+   "page_end": 146,
+   "n_chars": 2784,
+   "n_words": 523,
+   "label_start": "144",
+   "label_end": null
   },
   {
-   "id": "sec-075-6-pij-362",
-   "number": "6",
-   "title": "Pij (362)",
+   "id": "sec-028-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
    "level": 1,
-   "page_start": 154,
-   "page_end": 154,
-   "n_chars": 117,
-   "n_words": 25
+   "page_start": 146,
+   "page_end": 147,
+   "n_chars": 1499,
+   "n_words": 232,
+   "label_start": null,
+   "label_end": "147"
   },
   {
-   "id": "sec-076-6-qij-363",
-   "number": "6",
-   "title": "Qij (363)",
+   "id": "sec-029-appendices",
+   "number": null,
+   "title": "APPENDICES",
    "level": 1,
-   "page_start": 154,
+   "page_start": 147,
    "page_end": 162,
-   "n_chars": 8123,
-   "n_words": 1748
+   "n_chars": 17719,
+   "n_words": 3597,
+   "label_start": "147",
+   "label_end": "162"
   },
   {
-   "id": "sec-077-2-dridrjulνlk-410",
-   "number": "2",
-   "title": "(dRidRj)(uLνLk) (410)",
+   "id": "sec-030-13-dressing-of-the-d5-operators",
+   "number": "13",
+   "title": "Dressing of the d=5 operators",
    "level": 1,
    "page_start": 162,
-   "page_end": 167,
-   "n_chars": 5738,
-   "n_words": 1306
+   "page_end": 168,
+   "n_chars": 8075,
+   "n_words": 1716,
+   "label_start": "162",
+   "label_end": "168"
   },
   {
-   "id": "sec-078-2-on-2m-1",
-   "number": "2",
-   "title": "(ON )2m + 1",
+   "id": "sec-031-14-sparticle-spectrum-and-renormalization",
+   "number": "14",
+   "title": "Sparticle spectrum and renormalization",
    "level": 1,
-   "page_start": 167,
-   "page_end": 172,
-   "n_chars": 4905,
-   "n_words": 1243
-  },
-  {
-   "id": "sec-079-0-m2-mzcwcβ-mzcwsβ",
-   "number": "0",
-   "title": "M2 MZcWcβ −MZcWsβ",
-   "level": 1,
-   "page_start": 172,
-   "page_end": 176,
-   "n_chars": 6535,
-   "n_words": 1340
-  },
-  {
-   "id": "sec-080-ll-these-reduce-the-number",
-   "number": "LL",
-   "title": "These reduce the number",
-   "level": 1,
-   "page_start": 176,
-   "page_end": 181,
-   "n_chars": 7293,
-   "n_words": 1519
-  },
-  {
-   "id": "sec-081-3-2b1-b2λ-0γ5n",
-   "number": "3",
-   "title": "(2b1 −b2)¯Λ 0γ5n +",
-   "level": 1,
-   "page_start": 181,
+   "page_start": 168,
    "page_end": 184,
-   "n_chars": 2750,
-   "n_words": 704
+   "n_chars": 21257,
+   "n_words": 4619,
+   "label_start": "168",
+   "label_end": "184"
   },
   {
-   "id": "sec-082-1-gev-in-the-previous-appendix-we-already-discus",
-   "number": "1",
-   "title": "GeV. In the previous appendix we already discussed those eﬀ ects for the",
+   "id": "sec-032-17-details-of-the-analysis-on-testing-guts",
+   "number": "17",
+   "title": "Details of the analysis on testing GUTs",
    "level": 1,
    "page_start": 184,
-   "page_end": 184,
-   "n_chars": 1478,
-   "n_words": 272
+   "page_end": 189,
+   "n_chars": 7183,
+   "n_words": 1425,
+   "label_start": "184",
+   "label_end": "189"
   },
   {
-   "id": "sec-083-2-k",
-   "number": "2",
-   "title": "(K ∗",
+   "id": "sec-033-18-detailed-analysis-of-upper-bounds",
+   "number": "18",
+   "title": "Detailed analysis of upper bounds",
    "level": 1,
-   "page_start": 184,
-   "page_end": 190,
-   "n_chars": 8402,
-   "n_words": 1741
-  },
-  {
-   "id": "sec-084-1-v1vud-1αv3ven-βl-567",
-   "number": "1",
-   "title": "(V1VUD )1α(V3VEN )βl (567)",
-   "level": 1,
-   "page_start": 190,
-   "page_end": 190,
-   "n_chars": 626,
-   "n_words": 120
-  },
-  {
-   "id": "sec-085-1-case-a-v1vud-11-0-condition-v",
-   "number": "1",
-   "title": "Case (a) ( V1VUD )11 = 0 (Condition V)",
-   "level": 1,
-   "page_start": 190,
-   "page_end": 197,
-   "n_chars": 10026,
-   "n_words": 1932
-  },
-  {
-   "id": "sec-086-1-extra-matter-at-a-high-scale-which-can-modify",
-   "number": "1",
-   "title": "Extra matter at a high scale which can modify the RG evoluti on of",
-   "level": 1,
-   "page_start": 197,
-   "page_end": 197,
-   "n_chars": 57,
-   "n_words": 9
-  },
-  {
-   "id": "sec-087-2-non-standard-hypercharge-normalizations-within",
-   "number": "2",
-   "title": "Non-standard hypercharge normalizations within string models with",
-   "level": 1,
-   "page_start": 197,
-   "page_end": 197,
-   "n_chars": 36,
-   "n_words": 5
-  },
-  {
-   "id": "sec-088-3-an-m-theory-solution-227-to-the-gauge-coupling",
-   "number": "3",
-   "title": "An M theory solution [227] to the gauge coupling/gravity u niﬁcation,",
-   "level": 1,
-   "page_start": 197,
-   "page_end": 199,
-   "n_chars": 3835,
-   "n_words": 708
-  },
-  {
-   "id": "sec-089-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 199,
-   "page_end": 216,
-   "n_chars": 29882,
-   "n_words": 4838
-  },
-  {
-   "id": "sec-090-l-susskind-the-anthropic-landscape-of-string-the",
-   "number": "L",
-   "title": "Susskind, The Anthropic Landscape of String Theory , hep-",
-   "level": 1,
-   "page_start": 216,
-   "page_end": 217,
-   "n_chars": 1571,
-   "n_words": 267
-  },
-  {
-   "id": "sec-091-c-wetterich-fermion-mass-predictions-from-higher",
-   "number": "C",
-   "title": "Wetterich, “Fermion Mass Predictions From Higher Dimens ions,”",
-   "level": 1,
-   "page_start": 217,
-   "page_end": 224,
-   "n_chars": 12501,
-   "n_words": 1991
-  },
-  {
-   "id": "sec-092-c-d-carone-electroweak-constraints-on-extended-m",
-   "number": "C",
-   "title": "D. Carone, “Electroweak constraints on extended models w ith extra",
-   "level": 1,
-   "page_start": 224,
-   "page_end": 230,
-   "n_chars": 11231,
-   "n_words": 1734
-  },
-  {
-   "id": "sec-093-l-e-ibanez-j-e-kim-h-p-nilles-and-f-quevedo-orbi",
-   "number": "L",
-   "title": "E. Ibanez, J. E. Kim, H. P. Nilles and F. Quevedo, “Orbifold Com-",
-   "level": 1,
-   "page_start": 230,
-   "page_end": 230,
-   "n_chars": 93,
-   "n_words": 17
-  },
-  {
-   "id": "sec-094-i-antoniadis-j-r-ellis-j-s-hagelin-and-d-v-nanop",
-   "number": "I",
-   "title": "Antoniadis, J. R. Ellis, J. S. Hagelin and D. V. Nanopoulos , “GUT",
-   "level": 1,
-   "page_start": 230,
-   "page_end": 231,
-   "n_chars": 867,
-   "n_words": 144
-  },
-  {
-   "id": "sec-095-l-j-dixon-j-a-harvey-c-vafa-and-e-witten-strings",
-   "number": "L",
-   "title": "J. Dixon, J. A. Harvey, C. Vafa and E. Witten, “Strings On Or b-",
-   "level": 1,
-   "page_start": 231,
-   "page_end": 238,
-   "n_chars": 13110,
-   "n_words": 2056
-  },
-  {
-   "id": "sec-096-c-kokorelis-standard-models-and-split-supersymme",
-   "number": "C",
-   "title": "Kokorelis, “Standard models and split supersymmetry fro m inter-",
-   "level": 1,
-   "page_start": 238,
-   "page_end": 243,
-   "n_chars": 8760,
-   "n_words": 1340
-  },
-  {
-   "id": "sec-097-c-h-albright-and-s-m-barr-realization-of-the-lar",
-   "number": "C",
-   "title": "H. Albright and S. M. Barr, “Realization of the large mixin g an-",
-   "level": 1,
-   "page_start": 243,
-   "page_end": 244,
-   "n_chars": 1009,
-   "n_words": 157
-  },
-  {
-   "id": "sec-098-c-h-albright-bounds-on-the-neutrino-mixing-angle",
-   "number": "C",
-   "title": "H. Albright, “Bounds on the neutrino mixing angles for an S O(10)",
-   "level": 1,
-   "page_start": 244,
-   "page_end": 244,
-   "n_chars": 1258,
-   "n_words": 192
-  },
-  {
-   "id": "sec-099-c-coriano-and-a-e-faraggi-string-inspired-neutri",
-   "number": "C",
-   "title": "Coriano and A. E. Faraggi, “String inspired neutrino mass tex-",
-   "level": 1,
-   "page_start": 244,
-   "page_end": 248,
-   "n_chars": 6722,
-   "n_words": 1085
-  },
-  {
-   "id": "sec-100-c-s-aulakh-consistency-of-the-minimal-supersymme",
-   "number": "C",
-   "title": "S. Aulakh, “Consistency of the minimal supersymmetric GU T spec-",
-   "level": 1,
-   "page_start": 248,
+   "page_start": 189,
    "page_end": 258,
-   "n_chars": 7624,
-   "n_words": 1330
+   "n_chars": 111305,
+   "n_words": 17684,
+   "label_start": "189",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 102,
-  "sections": 101,
-  "chars_total": 457674
+  "toc_entries": 62,
+  "toc_inferred_entries": 62,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 20,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 2,
+    "items": [
+     "A new class of heterotic string models",
+     "B & L violation involving higher generations"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 35,
+  "chars_total": 456902,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "PR-April-10.tex",
+   "tex_sections": 62,
+   "overlaid": 32,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-experimental-bounds-and-future-searches",
+     "title": "Experimental bounds and future searches",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-31-baryon-number-violation-in-the-standard-model",
+     "title": "Baryon number violation in the Standard Model",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-33-proton-decay-induced-by-scalar-leptoquarks",
+     "title": "Proton decay induced by scalar leptoquarks",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-41-r-parity-violation-and-the-decay-of-the-proto",
+     "title": "R-parity violation and the decay of the proton",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-44-doublet-triplet-splitting-problem",
+     "title": "Doublet-triplet splitting problem",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-46-nucleon-decay-in-so10-theories",
+     "title": "Nucleon decay in SO(10) theories",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-54-testing-guts-through-proton-decay",
+     "title": "Testing GUTs through proton decay",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-56-upper-bound-on-the-proton-lifetime-in-guts",
+     "title": "Upper bound on the proton lifetime in GUTs",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-61-proton-decay-in-models-with-5d",
+     "title": "Proton decay in models with 5D",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-62-so10-models-in-5d",
+     "title": "SO(10) models in 5D",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-64-6d-models",
+     "title": "6D models",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-66-proton-decay-in-universal-extra-dimension-ued",
+     "title": "Proton decay in universal extra dimension (UED) models",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-67-proton-decay-in-warped-geometry",
+     "title": "Proton decay in warped geometry",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-68-proton-stability-in-kink-backgrounds",
+     "title": "Proton stability in kink backgrounds",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-7-proton-decay-in-string-models",
+     "title": "Proton Decay in String Models",
+     "prose_ratio": 0.534,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-71-proton-stability-in-calabi-yau-models",
+     "title": "Proton Stability in Calabi-Yau Models",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.876,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-73-a-new-class-of-heterotic-string-models",
+     "title": "A new class of heterotic string models",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-75-proton-decay-in-intersecting-d-brane-models",
+     "title": "Proton decay in intersecting D brane models",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-76-nucleon-stability-in-string-landscape-models",
+     "title": "Nucleon stability in string landscape models",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-79-discrete-symmetries-and-proton-stability",
+     "title": "Discrete Symmetries and proton stability",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-8-other-aspects",
+     "title": "Other Aspects",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-81-neutrino-masses-and-proton-decay",
+     "title": "Neutrino masses and proton decay",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-82-proton-stability-and-dark-matter",
+     "title": "Proton stability and dark matter",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-833-monopole-catalyzed-proton-decay",
+     "title": "Monopole catalyzed proton decay",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-84-proton-decay-and-the-ultimate-fate-of-the-uni",
+     "title": "Proton decay and the ultimate fate of the universe",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-9-summary-and-outlook",
+     "title": "Summary and Outlook",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-10-summary-table-of-p-decay-predictions",
+     "title": "Summary Table of p decay predictions",
+     "prose_ratio": 0.84,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-028-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-appendices",
+     "title": "APPENDICES",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-13-dressing-of-the-d5-operators",
+     "title": "Dressing of the d=5 operators",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.724,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-14-sparticle-spectrum-and-renormalization",
+     "title": "Sparticle spectrum and renormalization",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-17-details-of-the-analysis-on-testing-guts",
+     "title": "Details of the analysis on testing GUTs",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-033-18-detailed-analysis-of-upper-bounds",
+     "title": "Detailed analysis of upper bounds",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.337,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,27 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/07243231/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Elias, Ben ; Makisumi, Shotaro ; Thiel, Ulrich ; Williamson, Geordie Introduction to Soergel bimodules. (English) \u0001Zbl 07243231 RSME Springer Series 5. Cham: Springer (ISBN 978-3-030-48825-3/hbk; 978-3-030-48828-4/pbk; 978-3-",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/07243231/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "07243231",
   "contains": [
-    "library/07243231/sections/sec-000"
+    "library/07243231/sections/page-001",
+    "library/07243231/sections/page-002",
+    "library/07243231/sections/page-003",
+    "library/07243231/sections/page-004",
+    "library/07243231/sections/page-005"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "07243231",
+    "title_source": "slug",
     "source_file": "07243231.pdf",
     "source_sha256": "e3880af88c7d91a3d9428218f028f5381ccfd5208b957d165102359851c3f6cb",
     "pages": 5,

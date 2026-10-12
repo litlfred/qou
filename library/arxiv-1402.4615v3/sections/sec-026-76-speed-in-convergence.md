@@ -8,142 +8,34 @@ pages: 51-53
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
 doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
+text_source: latex
+latex_prose_ratio: 0.888
+latex_coverage_ratio: 0.963
 ---
-estimate for ⏐
-⏐
-⏐E(α)
-n h( ˜Wd) − Eh(˜Ξ d)
-⏐
-⏐
-⏐
-for non-smooth test functions h. In particular, we shall consider functions h in the
-set H of indicator functions of convex sets. We have the followingresult, which is
-stronger than Theorem 1.3.
-Theorem 7.11. For any integer d ≥ 2, we have
-sup
-h∈H
-|E(α)
-n h( ˜Wd) − E h(˜Ξ d)| = O
-(
-n−1/4)
-.
-Proof. Fix an integer d ≥ 2 and consider the exchangeable pair ( ˜Wd, ˜W ⋆
-d ) deﬁned
-as in the previous sections.
-As shown in Section 7.3, this exchangeable pair fulﬁlls the condition of [RR09,
-Theorem 2.1]. Besides, as mentioned in [RR09, Section 3], th e set H of functions
-fulﬁlls conditions (C1), (C2) and (C3) (with a = 2
-√
-d) from this paper. There-
-fore, one can apply [RR09, Corollary 3.1] and we ﬁnd that ther e exists a constant
-ζ = ζ(d) such that
-(42) sup
-h∈H
-|E(α)
-n h( ˜Wd) − E h(˜Ξ d)| ≤ ζ 2
-(A′ log(1/T ′)
-2 + B′
-2
-√
-T ′ + 2
-√
-dT ′
-)
-,
-52 M. DOŁ ˛ EGA AND V . FÉRAY
-where we deﬁne
-ˆλ(i) :=
-d∑
-m=1
-|(Σ−1/2Λ −1Σ1/2)m,i|,
-A′ :=
-∑
-i,j
-ˆλ(i)
-√
-∑
-k,l
-Σ−1/2
-i,k Σ−1/2
-j,ℓ Var(E(α)
-n ) ˜Wd(W ′
-k − Wk)(W ′
-ℓ − Wℓ),
-B′ :=
-∑
-i,j,k
-ˆλ(i)E(α)
-n
-⏐
-⏐
-⏐
-⏐
-⏐
-∑
-r,s,t
-Σ−1/2
-i,r Σ−1/2
-j,s Σ−1/2
-k,t (W ′
-r − Wr)(W ′
-s − Ws)(W ′
-t − Wt)
-⏐
-⏐
-⏐
-⏐
-⏐,
-T ′ := 1
-4d
-(
-A′
-2 +
-√
-B′
-√
-d + (A′)2
-4
-) 2
-.
-Comparing this with the statement in [RR09], note that in our case, there is no
-remaining matrix R, and hence C ′ = 0 . Besides, for the set H considered here
-(indicator functions of convex subsets of Rd), one can choose a = 2
-√
-d.
-We shall now describe the asymptotic behaviour of the quanti ties above. Note
-that all sums appearing above have ﬁxed number of summands since the summation
-index set is always the set of integers less or equal to d.
-Recall that, in our setting, Λ −1 is the diagonal matrix (n/(i + 1) · δi,j). Be-
-sides Σ−1/2 (well-deﬁned for n big enough) is a bounded matrix (Proposition 7.6).
-Hence for any i ≤ d,
-ˆλ(i) = O(n).
-Consider now A′. It was proven in Section 7.4 (Lemma 7.7 and equation (38)) that,
-for any k and ℓ,
-| Var(E(α)
-n )
-˜Wd(W ′
-k − Wk)(W ′
-ℓ − Wℓ)| = O(n−3).
-Together with the bound on ˆλ(i) and the fact that Σ−1/2 is bounded, this implies
-A′ = O(n−1/2).
-Consider now B′. We have proved that the bound (39) holds in expectation, that is
-E(α)
-n
-⏐
-⏐(W ′
-r − Wr)(W ′
-s − Ws)(W ′
-t − Wt)
-⏐
-⏐ ≤ O(n−3/2).
-As before, the bound above on ˆλ(i) and the fact that Σ−1/2 is bounded implies
-B′ = O(n−1/2).
-Combining the bounds forA′ and B′, we get T ′ = O(n−1/2). Strictly from the def-
-inition of T ′, we also get T ′ ≥ B′, which implies that B′
-2
-√
-T ′ ≤
-√
-B′ = O(n−1/4).
-Plugging all these estimates in equation (42), we get the desired result. □
-LARGE DIAGRAMS AND STRUCTURE CONSTANTS 53
+We now use [@ReinertRollin2009 Corollary 3.1], which gives an estimate for $$\left| \mathbb{E}_n^{(\alpha)}h(\tilde{W}_d) - \mathbb{E}h(\tilde{\Xi}_d) \right|$$ for non-smooth test functions $h$. In particular, we shall consider functions $h$ in the set $\mathcal{H}$ of indicator functions of convex sets. We have the following result, which is stronger than Theorem [\[theo:SpeedConvergence\]](#theo:SpeedConvergence){reference-type="ref" reference="theo:SpeedConvergence"}.
+
+::: theorem
+For any integer $d \ge 2$, we have $$\sup_{h \in \mathcal{H}} |\mathbb{E}_n^{(\alpha)}\, h(\tilde{W}_d) - \mathbb{E}\, h(\tilde{\Xi}_d)| 
+        =O\big(n^{-1/4} \big).$$ []{#theo:SpeedConvergenceConvex label="theo:SpeedConvergenceConvex"}
+:::
+
+::: proof
+*Proof.* Fix an integer $d \ge 2$ and consider the exchangeable pair $(\tilde{W}_d,\tilde{W}^\star_d)$ defined as in the previous sections.
+
+As shown in Section [\[subsec:CheckingHypotheses\]](#subsec:CheckingHypotheses){reference-type="ref" reference="subsec:CheckingHypotheses"}, this exchangeable pair fulfills the condition of [@ReinertRollin2009 Theorem 2.1]. Besides, as mentioned in [@ReinertRollin2009 Section 3], the set $\mathcal{H}$ of functions fulfills conditions $(C1)$, $(C2)$ and $(C3)$ (with $a=2\sqrt{d}$) from this paper. Therefore, one can apply [@ReinertRollin2009 Corollary 3.1] and we find that there exists a constant $\zeta=\zeta(d)$ such that $$\label{eq:ReinertNonSmooth}
+        \sup_{h \in \mathcal{H}} |\mathbb{E}_n^{(\alpha)}\, h(\tilde{W}_d) - \mathbb{E}\, h(\tilde{\Xi}_d)|
+    \le \zeta^ 2 \left(  \frac{A' \log(1/T')}{2} +\frac{B'}{2\sqrt{T'}} +2\sqrt{dT'} \right),$$ where we define $$\begin{aligned}
+        \hat{\lambda}^{(i)} &:= \sum_{m=1}^d |(\varSigma^{-1/2} \Lambda^{-1} \varSigma^{1/2})_{m,i}|,\\
+        A'&:= \sum_{i,j} \hat{\lambda}^{(i)} \sqrt{\sum_{k,l} \varSigma^{-1/2}_{i,k}  \varSigma^{-1/2}_{j,\ell}
+        \mathop{\mathrm{Var}}(\mathbb{E}_n^{(\alpha)})^{\tilde{W}_d} (W'_k -W_k)(W'_\ell-W_\ell)},\\
+        B'&:= \sum_{i,j,k} \hat{\lambda}^{(i)} \mathbb{E}_n^{(\alpha)} \left|
+        \sum_{r,s,t} \varSigma^{-1/2}_{i,r} \varSigma^{-1/2}_{j,s} \varSigma^{-1/2}_{k,t}
+        (W'_r -W_r)(W'_s -W_s)(W'_t -W_t)\right|,\\
+        T'&:= \frac{1}{4d}\left( \frac{A'}{2} + \sqrt{B'\sqrt{d} + \frac{(A')^2}{4}} \right)^2.
+    
+\end{aligned}$$ Comparing this with the statement in [@ReinertRollin2009], note that in our case, there is no remaining matrix $R$, and hence $C'=0$. Besides, for the set $\mathcal{H}$ considered here (indicator functions of convex subsets of $\mathbb{R}^d$), one can choose $a=2\sqrt{d}$.
+
+We shall now describe the asymptotic behaviour of the quantities above. Note that all sums appearing above have fixed number of summands since the summation index set is always the set of integers less or equal to $d$.
+
+Recall that, in our setting, $\Lambda^{-1}$ is the diagonal matrix $(n/(i+1) \cdot  \delta_{i,j})$. Besides $\varSigma^{-1/2}$ (well-defined for $n$ big enough) is a bounded matrix (Proposition [\[prop:SteinCondition2\]](#prop:SteinCondition2){reference-type="ref" reference="prop:SteinCondition2"}). Hence for any $i \le d$, $$\hat{\lambda}^{(i)} = O(n).$$ Consider now $A'$. It was proven in Section [\[subsec:ErrorTerm\]](#subsec:ErrorTerm){reference-type="ref" reference="subsec:ErrorTerm"} (Lemma [\[lem:fourth_moment\]](#lem:fourth_moment){reference-type="ref" reference="lem:fourth_moment"} and equation [\[eq:TechnicalBound\]](#eq:TechnicalBound){reference-type="eqref" reference="eq:TechnicalBound"}) that, for any $k$ and $\ell$, $$|\mathop{\mathrm{Var}}(\mathbb{E}_n^{(\alpha)})^{\tilde{W}_d} (W'_k -W_k)(W'_\ell-W_\ell) | = O(n^{-3}).$$ Together with the bound on $\hat{\lambda}^{(i)}$ and the fact that $\varSigma^{-1/2}$ is bounded, this implies $$A'=O(n^{-1/2}).$$ Consider now $B'$. We have proved that the bound [\[eq:BoundTripleProductGoodCase\]](#eq:BoundTripleProductGoodCase){reference-type="eqref" reference="eq:BoundTripleProductGoodCase"} holds in expectation, that is $$\mathbb{E}_n^{(\alpha)} \left|(W'_r -W_r)(W'_s -W_s)(W'_t -W_t)\right| \leq O(n^{-3/2}).$$ As before, the bound above on $\hat{\lambda}^{(i)}$ and the fact that $\varSigma^{-1/2}$ is bounded implies $$B'=O(n^{-1/2}).$$ Combining the bounds for $A'$ and $B'$, we get $T' = O(n^{-1/2})$. Strictly from the definition of $T'$, we also get $T' \ge B'$, which implies that $\frac{B'}{2\sqrt{T'}} \le \sqrt{B'}=O(n^{-1/4})$. Plugging all these estimates in equation [\[eq:ReinertNonSmooth\]](#eq:ReinertNonSmooth){reference-type="eqref" reference="eq:ReinertNonSmooth"}, we get the desired result. ◻
+:::

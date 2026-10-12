@@ -6,7 +6,11 @@
   "sha256": "dd00cf2cee521bf50a16fc5b62ddfea14fa837dc97a0f29e8a9bac667e59bfed",
   "bytes": 156101,
   "pages": 14,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -99,6 +103,43 @@
   "likely_scanned": false,
   "toc_entries": 4,
   "sections": 3,
-  "chars_total": 18278
+  "chars_total": 18278,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "anc/gut.tex",
+   "tex_sections": 4,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-su5-gauge-symmetry",
+     "title": "SU(5) Gauge Symmetry",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-4-discussion-and-conclusion",
+     "title": "Discussion and Conclusion",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

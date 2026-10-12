@@ -8,145 +8,59 @@ pages: 50-53
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
 doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES"
+text_source: latex
+latex_prose_ratio: 0.897
+latex_coverage_ratio: 0.922
 ---
-Function f(R)lr corresponds to the denominator of Eq.(2.84) and it does not
-depend on where the operator ˆO is placed,
-f(R)lr =
-∑
-S0,SN
-⟨Ψl
-T|R0S0⟩⟨R0S0|[U(∆τ)]N|RNSN⟩⟨RNSN|Ψr
-T⟩
-=fV
-lr (R)gF (R). (2.94)
-Functiong(R)lr corresponds to the numerator of Eq.(2.84), and it depends on ˆOM
-deﬁned in Eq.(2.85) which means the operator ˆO is placed at bead M (its spatial
-conﬁguration is RM),
-g(R)lr =
-∑
-S0,SN
-⟨Ψl
-T|R0S0⟩⟨R0S0|[U(∆τ)]N1 ˆOM[U(∆τ)]N2|RNSN⟩⟨RNSN|Ψr
-T⟩
-=gV
-lr,M(R)gF (R). (2.95)
-FunctiongF (R) in Eqs.(2.94,2.95) is the total free particle propagator,
-gF (R) =
-N−1∏
-I=0
-Gf
-I,I +1, (2.96)
-where the free particle propagator Gf
-I,I +1 in Eq.(2.96) is deﬁned as 7 ,
-Gf
-I,I +1≡⟨RI|e−T ∆τ|RI+1⟩ =
-( m
-2π∆τ ℏ2
-) 3A
-2
-e
-−
-(RI−RI+1)2
-2∆τ ℏ2
-m , (2.98)
-and each of these free particle propagator is represented by the black curved line from
-below in Fig. 2.5, it carries ∆τ and it connects conﬁguration RI and RI+1 (or we
-can say it connects beads I and I + 1). Actually, We can see that the ∏N−1
-I=0 Gf
-I,I +1
-7For any RI and RJ on the time line which is represented by the long horizontal lines in Fig.
-2.5 on which there are black points (beads), the general form of the free particle propagator can be
-written as,
-Gf
-I,J≡⟨RI|e−T∆τ|J−I||RJ⟩ =
-( m
-2π|J−I|∆τ ℏ2
-) 3A
-2
-e
-− (RI−RJ)2
-2|J−I|∆τ ℏ2
-m , (2.97)
-40
-in functions Alr(R) and Blr(R) actually canceled out because they exist in both the
-denominators and the numerators.
-Note that in Alr(R) andBlr(R) in Eqs.(2.90,2.91), both f(R)lr andg(R)lr contain
-gF (R), therefore Alr(R) and Blr(R) can be simpliﬁed as,
-Alr(R) = Re[gV
-lr,M(R)]
-|Re[fV
-lr (R)]|, (2.99)
-Blr(R) = Re[fV
-lr (R)]
-|Re[fV
-lr (R)]|. (2.100)
-The superscriptV ingV
-lr,M(R) andfV
-lr (R) means the potential propagators are involved.
-0 M+1 MM-11 N-1 N
-…
-…
-…
-…
-…
-…
-…
-…
-Figure 2.5: Path diagrams which illustrate the PIMC beads, f(R)lr, and g(R)lr.
-Fig. 2.5 is a visualization of f(R)lr in Eq.(2.94) and g(R)lr in Eq.(2.95). The
-calculations of functions gV
-lr,M(R) in Eq.(2.99) and fV
-lr (R) in Eq.(2.100) can be more
-clear with the help of Fig. 2.5 which contains diagrams that visualize the path. By
-inserting N + 1 complete basis marked by the black dots and labeling them from 0 to
-N, the total time τ is split into N small time step ∆τ soτ =N∆τ. We call each black
-dot a bead. For a given whole spatial conﬁguration R deﬁned by Eq.(2.88), each of
-41
-the beads carries its own spatial conﬁguration. For example, the Ith bead has spatial
-conﬁgurationRI. The long black horizontal line represents the total imaginary time
-of the path τ and we can call it time line, and it has been split into N pieces and
-occupied by N + 1 beads. Each of the black curved lines from the bottom represents
-the corresponding free particle propagator, e.g., if the black curved line connects beads
-I and I + 1, the black curved line just represents the free particle propagator Gf
-I,I +1
-in Eq.(2.96). The red curved line from the upper, on the other hand, represents the
-accordingly potential part of the propagator, e.g., we use PI to denote the red curved
-line as the corresponding e
-−VI∆τ
-2 whereVI is deﬁned in Eq.(2.62) and it has spatial
-conﬁguration RI while P†
-I is the Hermitian conjugate of PI which gives the reverse
-order of Eq.(2.63). The symbol ↓ means the additional propagator inserted when
-needed. For the AV6’ interaction,↓ means 1, for the local chiral N 2LO interaction it
-means the eﬀective G which is Eq.(2.71).
-For a givenl and r order in the trial wave function ΨT , and a givenR of all the
-beads, the calculations of fV
-lr (R) and gV
-lr,M(R) are straightforward. Here we describe
-the computation rule which is basically a two-step process.
-Step one First of all, we just need to follow the order of beads in Fig. 2.5 and replace
-all the red curves and↓ symbols above the black time line with corresponding
-e
-−VI∆τ
-2 or e
-−V†
-I ∆τ
-2 and the eﬀective G. We next replace all of the black curve
-under the black time line with corresponding gF
-IJ which are gaussian functions.
-Step two Then, for fV
-lr (R) in the upper part in Fig. 2.5, we just need to sandwich all
-the ordered operators above the black time line between ⟨ψl
-T| and|ψr
-T⟩ to give
-a (complex) number. This number is the corresponding fV
-lr (R). We multiply
-fV
-lr (R) bygF (R) which is the product of all the black curved lines under the
-time line to ﬁnd f(R)lr.
-42
-The calculations of gV
-lr,M(R) and g(R)lr are similar. The diﬀerence is that when
-calculating gV
-lr,M(R), the additional operator ˆO needs to be placed at the appropriate
-imaginary time as illustrated in the lower panel in Fig. 2.5.
+[]{#secPathDiagrams label="secPathDiagrams"}
+
+Function $f(\mathcal{R})_{lr}$ corresponds to the denominator of Eq.([\[Oraw\]](#Oraw){reference-type="ref" reference="Oraw"}) and it does not depend on where the operator $\hat{O}$ is placed,
+
+::: flalign
+f()\_lr &= \_S_0,S_N \^l_T\| R_0 S_0 R_0 S_0 \| \[U()\]\^N \| R_N S_N R\_N S\_N \| \^r_T \
+& = f\^V\_lr() g\^F() . []{#fRlr label="fRlr"}
+:::
+
+Function $g(\mathcal{R})_{lr}$ corresponds to the numerator of Eq.([\[Oraw\]](#Oraw){reference-type="ref" reference="Oraw"}), and it depends on $\hat{O}_M$ defined in Eq.([\[Orawreduce\]](#Orawreduce){reference-type="ref" reference="Orawreduce"}) which means the operator $\hat{O}$ is placed at bead $M$ (its spatial configuration is $R_M$),
+
+::: flalign
+g()\_lr &= \_S_0,S_N \^l_T\| R_0 S_0 R_0 S_0 \| \[U()\]\^N_1 \_M \[U()\]\^N_2\| R\_N S\_N R\_N S\_N \| \^r_T\
+&= g\^V\_lr,M() g\^F(). []{#gRlr label="gRlr"}
+:::
+
+Function $g^F(\mathcal{R})$ in Eqs.([\[fRlr\]](#fRlr){reference-type="ref" reference="fRlr"},[\[gRlr\]](#gRlr){reference-type="ref" reference="gRlr"}) is the total free particle propagator, $$g^F(\mathcal{R}) = \prod_{I=0}^{N-1} G^f_{I, I+1} ,
+\label{gF}$$ where the free particle propagator $G^f_{I, I+1}$ in Eq.([\[gF\]](#gF){reference-type="ref" reference="gF"}) is defined as[^1], $$G^f_{I, I+1} \equiv \langle R_I | e^{-T \Delta \tau}  | R_{I+1} \rangle
+= \left( \frac{m}{2\pi \Delta \tau \hbar^2} \right)^{\frac{3A}{2}}   e^{  -\frac{ (R_I-R_{I+1})^2 }{2 \Delta \tau \frac{\hbar^2}{m}}  },
+\label{Gfii1}$$ and each of these free particle propagator is represented by the black curved line from below in Fig. [1](#PIMCbeads){reference-type="ref" reference="PIMCbeads"}, it carries $\Delta \tau$ and it connects configuration $R_I$ and $R_{I+1}$ (or we can say it connects beads $I$ and $I+1$). Actually, We can see that the $\prod_{I=0}^{N-1}  G^f_{I, I+1}$ in functions $A_{lr} (\mathcal{R})$ and $B_{lr} (\mathcal{R})$ actually canceled out because they exist in both the denominators and the numerators.
+
+Note that in $A_{lr} (\mathcal{R})$ and $B_{lr} (\mathcal{R})$ in Eqs.([\[Alrform\]](#Alrform){reference-type="ref" reference="Alrform"},[\[Blrform\]](#Blrform){reference-type="ref" reference="Blrform"}), both $f(\mathcal{R})_{lr}$ and $g(\mathcal{R})_{lr}$ contain $g^F(\mathcal{R})$, therefore $A_{lr} (\mathcal{R})$ and $B_{lr} (\mathcal{R})$ can be simplified as, $$\begin{aligned}
+
+A_{lr} (\mathcal{R}) &= \frac{Re[ g^V_{lr,M}(\mathcal{R})]}{|Re[ f^V_{lr}(\mathcal{R})]|  } ,
+\label{Alrsimpform} \\
+B_{lr} (\mathcal{R}) &= \frac{Re[ f^V_{lr}(\mathcal{R})]}{|Re[ f^V_{lr}(\mathcal{R})]|  } .
+\label{Blrsimpform}
+\end{aligned}$$ The superscript $V$ in $g^V_{lr,M}(\mathcal{R})$ and $f^V_{lr}(\mathcal{R})$ means the potential propagators are involved.
+
+<figure id="PIMCbeads">
+<embed src="Figures/PIMCBeads.eps" />
+<figcaption>Path diagrams which illustrate the PIMC beads, <span class="math inline"><em>f</em>(ℛ)<sub><em>l</em><em>r</em></sub></span>, and <span class="math inline"><em>g</em>(ℛ)<sub><em>l</em><em>r</em></sub></span>. </figcaption>
+</figure>
+
+Fig. [1](#PIMCbeads){reference-type="ref" reference="PIMCbeads"} is a visualization of $f(\mathcal{R})_{lr}$ in Eq.([\[fRlr\]](#fRlr){reference-type="ref" reference="fRlr"}) and $g(\mathcal{R})_{lr}$ in Eq.([\[gRlr\]](#gRlr){reference-type="ref" reference="gRlr"}). The calculations of functions $g^V_{lr,M}(\mathcal{R})$ in Eq.([\[Alrsimpform\]](#Alrsimpform){reference-type="ref" reference="Alrsimpform"}) and $f^V_{lr}(\mathcal{R})$ in Eq.([\[Blrsimpform\]](#Blrsimpform){reference-type="ref" reference="Blrsimpform"}) can be more clear with the help of Fig. [1](#PIMCbeads){reference-type="ref" reference="PIMCbeads"} which contains diagrams that visualize the path. By inserting $N+1$ complete basis marked by the black dots and labeling them from 0 to $N$, the total time $\tau$ is split into $N$ small time step $\Delta \tau$ so $\tau=N \Delta \tau$. We call each black dot a bead. For a given whole spatial configuration $\mathcal{R}$ defined by Eq.([\[defmathcalR\]](#defmathcalR){reference-type="ref" reference="defmathcalR"}), each of the beads carries its own spatial configuration. For example, the $I^{\text{th}}$ bead has spatial configuration $R_I$. The long black horizontal line represents the total imaginary time of the path $\tau$ and we can call it time line, and it has been split into $N$ pieces and occupied by $N+1$ beads. Each of the black curved lines from the bottom represents the corresponding free particle propagator, e.g., if the black curved line connects beads $I$ and $I+1$, the black curved line just represents the free particle propagator $G^f_{I, I+1}$ in Eq.([\[gF\]](#gF){reference-type="ref" reference="gF"}). The red curved line from the upper, on the other hand, represents the accordingly potential part of the propagator, e.g., we use $P_I$ to denote the red curved line as the corresponding $e^{\frac{- \mathcal{V}_I \Delta \tau }{2}}$ where $\mathcal{V}_I$ is defined in Eq.([\[PER\]](#PER){reference-type="ref" reference="PER"}) and it has spatial configuration $R_I$ while $P^\dagger_I$ is the Hermitian conjugate of $P_I$ which gives the reverse order of Eq.([\[propagatorv6half\]](#propagatorv6half){reference-type="ref" reference="propagatorv6half"}). The symbol $\downarrow$ means the additional propagator inserted when needed. For the AV6' interaction, $\downarrow$ means 1, for the local chiral N$^2$LO interaction it means the effective $\bm{\mathcal{G}}$ which is Eq.([\[defdownarroweff\]](#defdownarroweff){reference-type="ref" reference="defdownarroweff"}).
+
+For a given $l$ and $r$ order in the trial wave function $\Psi_T$, and a given $\mathcal{R}$ of all the beads, the calculations of $f^V_{lr}(\mathcal{R})$ and $g^V_{lr,M}(\mathcal{R})$ are straightforward. Here we describe the computation rule which is basically a two-step process.
+
+Step one
+
+:   First of all, we just need to follow the order of beads in Fig. [1](#PIMCbeads){reference-type="ref" reference="PIMCbeads"} and replace all the red curves and $\downarrow$ symbols above the black time line with corresponding $e^{\frac{- \mathcal{V}_I \Delta \tau }{2}}$ or $e^{\frac{- \mathcal{V}^\dagger_I \Delta \tau }{2}}$ and the effective $\bm{\mathcal{G}}$. We next replace all of the black curve under the black time line with corresponding $g^F_{IJ}$ which are gaussian functions.
+
+Step two
+
+:   Then, for $f^V_{lr}(\mathcal{R})$ in the upper part in Fig. [1](#PIMCbeads){reference-type="ref" reference="PIMCbeads"}, we just need to sandwich all the ordered operators above the black time line between $\langle \psi_T^l |$ and $| \psi_T^r \rangle$ to give a (complex) number. This number is the corresponding $f^V_{lr}(\mathcal{R})$. We multiply $f^V_{lr}(\mathcal{R})$ by $g^F(\mathcal{R})$ which is the product of all the black curved lines under the time line to find $f(\mathcal{R})_{lr}$.
+
+The calculations of $g^V_{lr,M}(\mathcal{R})$ and $g(\mathcal{R})_{lr}$ are similar. The difference is that when calculating $g^V_{lr,M}(\mathcal{R})$, the additional operator $\hat{O}$ needs to be placed at the appropriate imaginary time as illustrated in the lower panel in Fig. [1](#PIMCbeads){reference-type="ref" reference="PIMCbeads"}.
+
+[^1]: For any $R_I$ and $R_J$ on the time line which is represented by the long horizontal lines in Fig. [1](#PIMCbeads){reference-type="ref" reference="PIMCbeads"} on which there are black points (beads), the general form of the free particle propagator can be written as, $$G^f_{I, J} \equiv \langle R_I | e^{-T \Delta \tau |J-I| }  | R_{J} \rangle
+    = \left( \frac{m}{2\pi |J-I| \Delta \tau \hbar^2} \right)^{\frac{3A}{2}}
+    e^{  -\frac{ (R_I-R_{J})^2 }{2 |J-I| \Delta \tau \frac{\hbar^2}{m}}  },
+    \label{Gfij}$$

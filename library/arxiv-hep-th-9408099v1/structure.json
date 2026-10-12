@@ -5,7 +5,12 @@
   "file": "9408099v1.pdf",
   "sha256": "b534faddd2e3aa71f6de260867887df3eb8b919f9097c7fcf821040d46618f11",
   "bytes": 618410,
-  "pages": 88
+  "pages": 88,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -15,21 +20,31 @@
    "stamp_date": "17 Aug 1994"
   },
   "doi": null,
-  "title": "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD",
-  "authors_raw": "Department of Physics and Astronomy",
-  "abstract": null,
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126154523-05'00'",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:hep-th/9408099v1  17 Aug 1994"
-  },
+  "title": "arXiv:hep-th/9408099v1 17 Aug 1994",
+  "authors_raw": "N. Seiberg",
   "title_lines": [
    "Monopoles, Duality and Chiral Symmetry Breaking",
-   "in N=2 Supersymmetric QCD",
-   "N. Seiberg"
+   "in N=2 Supersymmetric QCD"
   ],
-  "title_prev": "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg"
+  "abstract": null,
+  "docinfo": {
+   "Title": "arXiv:hep-th/9408099v1  17 Aug 1994",
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20241126154523-05'00'"
+  },
+  "title_raw": "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9408099v1 17 Aug 1994",
+   "heading": "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD",
+   "text": "Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -37,480 +52,1175 @@
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "A warm-up example: QED with matter",
    "page": 7,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "QED",
    "page": 7,
    "source": "inferred",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The classical moduli space",
    "page": 8,
    "source": "inferred",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "The quantum moduli space",
    "page": 8,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "BPS-saturated states",
    "page": 10,
    "source": "inferred",
-   "number": "2.4"
-  },
-  {
-   "level": 2,
-   "title": "Breaking N = 2 to N = 1",
-   "page": 10,
-   "source": "inferred",
-   "number": "2.5"
+   "number": "2.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Classical moduli space of QCD with matter",
    "page": 11,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "10"
   },
   {
    "level": 1,
-   "title": "A ﬁrst look at the quantum theory",
+   "title": "A \ufb01rst look at the quantum theory",
    "page": 14,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Symmetries of the quantum theory",
    "page": 14,
    "source": "inferred",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "13"
   },
   {
    "level": 2,
-   "title": "A ﬁrst look at the quantum moduli space",
+   "title": "A \ufb01rst look at the quantum moduli space",
    "page": 15,
    "source": "inferred",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "BPS-saturated states",
    "page": 17,
    "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "(nm + 2ne)). For Nf = 4, the universal cover is Spin(8), with center Z2 × Z2. The",
-   "page": 20,
-   "source": "inferred",
-   "number": "2"
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Duality",
    "page": 20,
    "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "For large mass this happens at large |u| where semiclassical techniques are",
-   "page": 22,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The singularities for Nf = 1, 2, 3",
-   "page": 24,
-   "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "The three singularities cannot all combine together, since the fundamental group of the",
-   "page": 25,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "This theory has the three singularities that do",
-   "page": 27,
-   "source": "inferred",
-   "number": "2"
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Low energy theory near the singularities",
    "page": 28,
    "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "Breaking N = 2 to N = 1",
-   "page": 31,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "This",
-   "page": 33,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The singularities for Nf = 4",
-   "page": 34,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "(m1 +m2 +m3 +m4)",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(m1 +m2 −m3 −m4)",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(m1 −m2 +m3 −m4)",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(m1 −m2 −m3 +m4)",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
+   "number": "8",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "Preliminaries for determining the metric",
    "page": 37,
    "source": "inferred",
-   "number": "11"
-  },
-  {
-   "level": 2,
-   "title": "Nf = 0",
-   "page": 38,
-   "source": "inferred",
-   "number": "11.1"
+   "number": "11",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "Some convenient facts",
    "page": 39,
    "source": "inferred",
-   "number": "11.2"
-  },
-  {
-   "level": 1,
-   "title": "(u ±",
-   "page": 40,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(Λ 2 ± Λ",
-   "page": 41,
-   "source": "inferred",
-   "number": "2"
+   "number": "11.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "General structure of the curve",
    "page": 43,
    "source": "inferred",
-   "number": "11.3"
-  },
-  {
-   "level": 1,
-   "title": "The curve for Nf = 1",
-   "page": 44,
-   "source": "inferred",
-   "number": "12"
-  },
-  {
-   "level": 2,
-   "title": "Massless Nf = 1",
-   "page": 44,
-   "source": "inferred",
-   "number": "12.1"
-  },
-  {
-   "level": 2,
-   "title": "Massive Nf = 1",
-   "page": 45,
-   "source": "inferred",
-   "number": "12.2"
-  },
-  {
-   "level": 1,
-   "title": "The curve for Nf = 2",
-   "page": 47,
-   "source": "inferred",
-   "number": "13"
-  },
-  {
-   "level": 2,
-   "title": "Massless Nf = 2",
-   "page": 47,
-   "source": "inferred",
-   "number": "13.1"
-  },
-  {
-   "level": 2,
-   "title": "Massive Nf = 2",
-   "page": 48,
-   "source": "inferred",
-   "number": "13.2"
-  },
-  {
-   "level": 1,
-   "title": "Then, we should also",
-   "page": 48,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Substituting m2 = 0 and u =m2",
-   "page": 48,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 2,
-   "title": "Massive Nf = 3",
-   "page": 50,
-   "source": "inferred",
-   "number": "14.2"
+   "number": "11.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "42"
   },
   {
    "level": 1,
    "title": "Masses, periods and residues",
    "page": 52,
    "source": "inferred",
-   "number": "15"
-  },
-  {
-   "level": 1,
-   "title": "The Si are abelian conserved charges",
-   "page": 54,
-   "source": "inferred",
-   "number": "2"
+   "number": "15",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "51"
   },
   {
    "level": 1,
    "title": "Structure of the scale invariant theories",
    "page": 56,
    "source": "inferred",
-   "number": "16"
+   "number": "16",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "55"
   },
   {
    "level": 2,
    "title": "The massless case",
    "page": 57,
    "source": "inferred",
-   "number": "16.1"
-  },
-  {
-   "level": 1,
-   "title": "Holomorphy of F is needed in order for the coeﬃcient τ (u, m i, Λ) in front of Wα",
-   "page": 57,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "(1,τ ) for Nf = 4 and",
-   "page": 59,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(1,τ ) for N = 4 and (since",
-   "page": 59,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "The curve for N = 4",
-   "page": 60,
-   "source": "inferred",
-   "number": "16.2"
-  },
-  {
-   "level": 1,
-   "title": "(e3 −e2). In this form it is easy to study the weak coupling",
-   "page": 62,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "For weak coupling and in the N = 4 normalization this is at u ≈ 1",
-   "page": 63,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "The curve for Nf = 4",
-   "page": 65,
-   "source": "inferred",
-   "number": "16.3"
-  },
-  {
-   "level": 1,
-   "title": "In the Nf = 4 normalization this means that it is at u ≈ 2a2 =m2. Hence,",
-   "page": 65,
-   "source": "inferred",
-   "number": "2"
+   "number": "16.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "56"
   },
   {
    "level": 1,
    "title": "The Theory Of The Residues",
    "page": 70,
    "source": "inferred",
-   "number": "17"
-  },
-  {
-   "level": 1,
-   "title": "(with mi",
-   "page": 70,
-   "source": "inferred",
-   "number": "2"
+   "number": "17",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "69"
   },
   {
    "level": 2,
    "title": "The Meaning Of The Residues",
    "page": 71,
    "source": "inferred",
-   "number": "17.1"
+   "number": "17.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "70"
   },
   {
    "level": 2,
    "title": "The Cohomology Of X",
    "page": 73,
    "source": "inferred",
-   "number": "17.2"
+   "number": "17.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "72"
   },
   {
    "level": 2,
    "title": "Finding the Curves",
    "page": 75,
    "source": "inferred",
-   "number": "17.3"
-  },
-  {
-   "level": 1,
-   "title": "(m1 +m2 +m3 −m4)",
-   "page": 80,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(m1 +m2 −m3 +m4)",
-   "page": 80,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(m1 −m2 +m3 +m4)",
-   "page": 80,
-   "source": "inferred",
-   "number": "2"
+   "number": "17.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "74"
   },
   {
    "level": 2,
    "title": "Determination Of The Equation For Nf = 4",
    "page": 81,
    "source": "inferred",
-   "number": "17.4"
-  },
-  {
-   "level": 1,
-   "title": "(α +β)",
-   "page": 85,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(e3 −e2) = 1",
-   "page": 85,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(β −α) to derive (17.58). Actually, to agree with section 16, it is",
-   "page": 85,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "The N = 4 Theory",
-   "page": 85,
-   "source": "inferred",
-   "number": "17.5"
+   "number": "17.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "80"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 87,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "86"
   },
   {
    "level": 1,
    "title": "References",
    "page": 88,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "87"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "86",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "87",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1061,
+   "n_words": 161,
+   "label_start": null,
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -518,8 +1228,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 7,
-   "n_chars": 11348,
-   "n_words": 2055
+   "n_chars": 11266,
+   "n_words": 1973,
+   "label_start": "1",
+   "label_end": "6"
   },
   {
    "id": "sec-001-2-a-warm-up-example-qed-with-matter",
@@ -528,8 +1240,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1780,
-   "n_words": 344
+   "n_chars": 1775,
+   "n_words": 339,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-002-22-the-classical-moduli-space",
@@ -538,8 +1252,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 1318,
-   "n_words": 286
+   "n_chars": 1294,
+   "n_words": 262,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
    "id": "sec-003-23-the-quantum-moduli-space",
@@ -548,8 +1264,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 2008,
-   "n_words": 376
+   "n_chars": 1995,
+   "n_words": 362,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
    "id": "sec-004-24-bps-saturated-states",
@@ -557,636 +1275,268 @@
    "title": "BPS-saturated states",
    "level": 2,
    "page_start": 10,
-   "page_end": 10,
-   "n_chars": 1595,
-   "n_words": 298
-  },
-  {
-   "id": "sec-005-25-breaking-n-2-to-n-1",
-   "number": "2.5",
-   "title": "Breaking N = 2 to N = 1",
-   "level": 2,
-   "page_start": 10,
    "page_end": 11,
-   "n_chars": 950,
-   "n_words": 231
+   "n_chars": 2559,
+   "n_words": 522,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-006-3-classical-moduli-space-of-qcd-with-matter",
+   "id": "sec-005-3-classical-moduli-space-of-qcd-with-matter",
    "number": "3",
    "title": "Classical moduli space of QCD with matter",
    "level": 1,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 5541,
-   "n_words": 1104
+   "n_chars": 5480,
+   "n_words": 1043,
+   "label_start": "10",
+   "label_end": "13"
   },
   {
-   "id": "sec-007-4-a-ﬁrst-look-at-the-quantum-theory",
+   "id": "sec-006-4-a-\ufb01rst-look-at-the-quantum-theory",
    "number": "4",
-   "title": "A ﬁrst look at the quantum theory",
+   "title": "A \ufb01rst look at the quantum theory",
    "level": 1,
    "page_start": 14,
    "page_end": 14,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-008-41-symmetries-of-the-quantum-theory",
+   "id": "sec-007-41-symmetries-of-the-quantum-theory",
    "number": "4.1",
    "title": "Symmetries of the quantum theory",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1335,
-   "n_words": 277
+   "n_chars": 1334,
+   "n_words": 276,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-009-42-a-ﬁrst-look-at-the-quantum-moduli-space",
+   "id": "sec-008-42-a-\ufb01rst-look-at-the-quantum-moduli-space",
    "number": "4.2",
-   "title": "A ﬁrst look at the quantum moduli space",
+   "title": "A \ufb01rst look at the quantum moduli space",
    "level": 2,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 4764,
-   "n_words": 919
+   "n_chars": 4730,
+   "n_words": 883,
+   "label_start": "14",
+   "label_end": "16"
   },
   {
-   "id": "sec-010-5-bps-saturated-states",
+   "id": "sec-009-5-bps-saturated-states",
    "number": "5",
    "title": "BPS-saturated states",
    "level": 1,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 5543,
-   "n_words": 999
+   "n_chars": 7019,
+   "n_words": 1228,
+   "label_start": "16",
+   "label_end": "19"
   },
   {
-   "id": "sec-011-2-nm-2ne-for-nf-4-the-universal-cover-is-spin8-w",
-   "number": "2",
-   "title": "(nm + 2ne)). For Nf = 4, the universal cover is Spin(8), with center Z2 × Z2. The",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 1447,
-   "n_words": 266
-  },
-  {
-   "id": "sec-012-6-duality",
+   "id": "sec-010-6-duality",
    "number": "6",
    "title": "Duality",
    "level": 1,
    "page_start": 20,
-   "page_end": 22,
-   "n_chars": 2667,
-   "n_words": 527
-  },
-  {
-   "id": "sec-013-2-for-large-mass-this-happens-at-large-u-where-s",
-   "number": "2",
-   "title": "For large mass this happens at large |u| where semiclassical techniques are",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 24,
-   "n_chars": 4742,
-   "n_words": 832
-  },
-  {
-   "id": "sec-014-7-the-singularities-for-nf-1-2-3",
-   "number": "7",
-   "title": "The singularities for Nf = 1, 2, 3",
-   "level": 1,
-   "page_start": 24,
-   "page_end": 25,
-   "n_chars": 3855,
-   "n_words": 732
-  },
-  {
-   "id": "sec-015-3-the-three-singularities-cannot-all-combine-tog",
-   "number": "3",
-   "title": "The three singularities cannot all combine together, since the fundamental group of the",
-   "level": 1,
-   "page_start": 25,
-   "page_end": 27,
-   "n_chars": 4092,
-   "n_words": 795
-  },
-  {
-   "id": "sec-016-2-this-theory-has-the-three-singularities-that-d",
-   "number": "2",
-   "title": "This theory has the three singularities that do",
-   "level": 1,
-   "page_start": 27,
    "page_end": 28,
-   "n_chars": 2877,
-   "n_words": 544
+   "n_chars": 18354,
+   "n_words": 3334,
+   "label_start": "19",
+   "label_end": "27"
   },
   {
-   "id": "sec-017-8-low-energy-theory-near-the-singularities",
+   "id": "sec-011-8-low-energy-theory-near-the-singularities",
    "number": "8",
    "title": "Low energy theory near the singularities",
    "level": 1,
    "page_start": 28,
-   "page_end": 31,
-   "n_chars": 5273,
-   "n_words": 980
-  },
-  {
-   "id": "sec-018-9-breaking-n-2-to-n-1",
-   "number": "9",
-   "title": "Breaking N = 2 to N = 1",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 32,
-   "n_chars": 2434,
-   "n_words": 488
-  },
-  {
-   "id": "sec-019-2-this",
-   "number": "2",
-   "title": "This",
-   "level": 1,
-   "page_start": 32,
-   "page_end": 34,
-   "n_chars": 4726,
-   "n_words": 945
-  },
-  {
-   "id": "sec-020-10-the-singularities-for-nf-4",
-   "number": "10",
-   "title": "The singularities for Nf = 4",
-   "level": 1,
-   "page_start": 34,
    "page_end": 37,
-   "n_chars": 6692,
-   "n_words": 1264
+   "n_chars": 19890,
+   "n_words": 3698,
+   "label_start": "27",
+   "label_end": "36"
   },
   {
-   "id": "sec-021-2-m1-m2-m3-m4",
-   "number": "2",
-   "title": "(m1 +m2 +m3 +m4)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 6,
-   "n_words": 3
-  },
-  {
-   "id": "sec-022-2-m1-m2-m3-m4",
-   "number": "2",
-   "title": "(m1 +m2 −m3 −m4)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 6,
-   "n_words": 3
-  },
-  {
-   "id": "sec-023-2-m1-m2-m3-m4",
-   "number": "2",
-   "title": "(m1 −m2 +m3 −m4)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 6,
-   "n_words": 3
-  },
-  {
-   "id": "sec-024-2-m1-m2-m3-m4",
-   "number": "2",
-   "title": "(m1 −m2 −m3 +m4)",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 681,
-   "n_words": 124
-  },
-  {
-   "id": "sec-025-11-preliminaries-for-determining-the-metric",
+   "id": "sec-012-11-preliminaries-for-determining-the-metric",
    "number": "11",
    "title": "Preliminaries for determining the metric",
    "level": 1,
    "page_start": 37,
-   "page_end": 38,
-   "n_chars": 347,
-   "n_words": 61
-  },
-  {
-   "id": "sec-026-111-nf-0",
-   "number": "11.1",
-   "title": "Nf = 0",
-   "level": 2,
-   "page_start": 38,
    "page_end": 39,
-   "n_chars": 2900,
-   "n_words": 598
+   "n_chars": 3244,
+   "n_words": 646,
+   "label_start": "36",
+   "label_end": "38"
   },
   {
-   "id": "sec-027-112-some-convenient-facts",
+   "id": "sec-013-112-some-convenient-facts",
    "number": "11.2",
    "title": "Some convenient facts",
    "level": 2,
    "page_start": 39,
-   "page_end": 40,
-   "n_chars": 762,
-   "n_words": 159
-  },
-  {
-   "id": "sec-028-2-u",
-   "number": "2",
-   "title": "(u ±",
-   "level": 1,
-   "page_start": 40,
-   "page_end": 41,
-   "n_chars": 2569,
-   "n_words": 534
-  },
-  {
-   "id": "sec-029-2-λ-2-λ",
-   "number": "2",
-   "title": "(Λ 2 ± Λ",
-   "level": 1,
-   "page_start": 41,
    "page_end": 43,
-   "n_chars": 3008,
-   "n_words": 603
+   "n_chars": 6285,
+   "n_words": 1230,
+   "label_start": "38",
+   "label_end": "42"
   },
   {
-   "id": "sec-030-113-general-structure-of-the-curve",
+   "id": "sec-014-113-general-structure-of-the-curve",
    "number": "11.3",
    "title": "General structure of the curve",
    "level": 2,
    "page_start": 43,
-   "page_end": 44,
-   "n_chars": 3061,
-   "n_words": 638
-  },
-  {
-   "id": "sec-031-12-the-curve-for-nf-1",
-   "number": "12",
-   "title": "The curve for Nf = 1",
-   "level": 1,
-   "page_start": 44,
-   "page_end": 44,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-032-121-massless-nf-1",
-   "number": "12.1",
-   "title": "Massless Nf = 1",
-   "level": 2,
-   "page_start": 44,
-   "page_end": 45,
-   "n_chars": 2253,
-   "n_words": 461
-  },
-  {
-   "id": "sec-033-122-massive-nf-1",
-   "number": "12.2",
-   "title": "Massive Nf = 1",
-   "level": 2,
-   "page_start": 45,
-   "page_end": 47,
-   "n_chars": 2910,
-   "n_words": 592
-  },
-  {
-   "id": "sec-034-13-the-curve-for-nf-2",
-   "number": "13",
-   "title": "The curve for Nf = 2",
-   "level": 1,
-   "page_start": 47,
-   "page_end": 47,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-035-131-massless-nf-2",
-   "number": "13.1",
-   "title": "Massless Nf = 2",
-   "level": 2,
-   "page_start": 47,
-   "page_end": 48,
-   "n_chars": 1997,
-   "n_words": 404
-  },
-  {
-   "id": "sec-036-132-massive-nf-2",
-   "number": "13.2",
-   "title": "Massive Nf = 2",
-   "level": 2,
-   "page_start": 48,
-   "page_end": 48,
-   "n_chars": 635,
-   "n_words": 137
-  },
-  {
-   "id": "sec-037-2-then-we-should-also",
-   "number": "2",
-   "title": "Then, we should also",
-   "level": 1,
-   "page_start": 48,
-   "page_end": 48,
-   "n_chars": 432,
-   "n_words": 110
-  },
-  {
-   "id": "sec-038-1-substituting-m2-0-and-u-m2",
-   "number": "1",
-   "title": "Substituting m2 = 0 and u =m2",
-   "level": 1,
-   "page_start": 48,
-   "page_end": 50,
-   "n_chars": 3111,
-   "n_words": 658
-  },
-  {
-   "id": "sec-039-142-massive-nf-3",
-   "number": "14.2",
-   "title": "Massive Nf = 3",
-   "level": 2,
-   "page_start": 50,
    "page_end": 52,
-   "n_chars": 3193,
-   "n_words": 675
+   "n_chars": 17671,
+   "n_words": 3585,
+   "label_start": "42",
+   "label_end": "51"
   },
   {
-   "id": "sec-040-15-masses-periods-and-residues",
+   "id": "sec-015-15-masses-periods-and-residues",
    "number": "15",
    "title": "Masses, periods and residues",
    "level": 1,
    "page_start": 52,
-   "page_end": 54,
-   "n_chars": 3770,
-   "n_words": 765
-  },
-  {
-   "id": "sec-041-2-the-si-are-abelian-conserved-charges",
-   "number": "2",
-   "title": "The Si are abelian conserved charges",
-   "level": 1,
-   "page_start": 54,
    "page_end": 56,
-   "n_chars": 4948,
-   "n_words": 968
+   "n_chars": 8721,
+   "n_words": 1702,
+   "label_start": "51",
+   "label_end": "55"
   },
   {
-   "id": "sec-042-16-structure-of-the-scale-invariant-theories",
+   "id": "sec-016-16-structure-of-the-scale-invariant-theories",
    "number": "16",
    "title": "Structure of the scale invariant theories",
    "level": 1,
    "page_start": 56,
    "page_end": 57,
-   "n_chars": 2109,
-   "n_words": 413
+   "n_chars": 2093,
+   "n_words": 397,
+   "label_start": "55",
+   "label_end": "56"
   },
   {
-   "id": "sec-043-161-the-massless-case",
+   "id": "sec-017-161-the-massless-case",
    "number": "16.1",
    "title": "The massless case",
    "level": 2,
    "page_start": 57,
-   "page_end": 57,
-   "n_chars": 362,
-   "n_words": 91
-  },
-  {
-   "id": "sec-044-9-holomorphy-of-f-is-needed-in-order-for-the-coe",
-   "number": "9",
-   "title": "Holomorphy of F is needed in order for the coeﬃcient τ (u, m i, Λ) in front of Wα",
-   "level": 1,
-   "page_start": 57,
-   "page_end": 59,
-   "n_chars": 1797,
-   "n_words": 403
-  },
-  {
-   "id": "sec-045-4-1τ-for-nf-4-and",
-   "number": "4",
-   "title": "(1,τ ) for Nf = 4 and",
-   "level": 1,
-   "page_start": 59,
-   "page_end": 59,
-   "n_chars": 5,
-   "n_words": 2
-  },
-  {
-   "id": "sec-046-2-1τ-for-n-4-and-since",
-   "number": "2",
-   "title": "(1,τ ) for N = 4 and (since",
-   "level": 1,
-   "page_start": 59,
-   "page_end": 60,
-   "n_chars": 2741,
-   "n_words": 564
-  },
-  {
-   "id": "sec-047-162-the-curve-for-n-4",
-   "number": "16.2",
-   "title": "The curve for N = 4",
-   "level": 2,
-   "page_start": 60,
-   "page_end": 62,
-   "n_chars": 4345,
-   "n_words": 863
-  },
-  {
-   "id": "sec-048-2-e3-e2-in-this-form-it-is-easy-to-study-the-wea",
-   "number": "2",
-   "title": "(e3 −e2). In this form it is easy to study the weak coupling",
-   "level": 1,
-   "page_start": 62,
-   "page_end": 63,
-   "n_chars": 765,
-   "n_words": 174
-  },
-  {
-   "id": "sec-049-2-for-weak-coupling-and-in-the-n-4-normalization",
-   "number": "2",
-   "title": "For weak coupling and in the N = 4 normalization this is at u ≈ 1",
-   "level": 1,
-   "page_start": 63,
-   "page_end": 65,
-   "n_chars": 3693,
-   "n_words": 713
-  },
-  {
-   "id": "sec-050-163-the-curve-for-nf-4",
-   "number": "16.3",
-   "title": "The curve for Nf = 4",
-   "level": 2,
-   "page_start": 65,
-   "page_end": 65,
-   "n_chars": 1290,
-   "n_words": 267
-  },
-  {
-   "id": "sec-051-2-in-the-nf-4-normalization-this-means-that-it-i",
-   "number": "2",
-   "title": "In the Nf = 4 normalization this means that it is at u ≈ 2a2 =m2. Hence,",
-   "level": 1,
-   "page_start": 65,
    "page_end": 70,
-   "n_chars": 6501,
-   "n_words": 1409
+   "n_chars": 21840,
+   "n_words": 4520,
+   "label_start": "56",
+   "label_end": "69"
   },
   {
-   "id": "sec-052-17-the-theory-of-the-residues",
+   "id": "sec-018-17-the-theory-of-the-residues",
    "number": "17",
    "title": "The Theory Of The Residues",
    "level": 1,
    "page_start": 70,
-   "page_end": 70,
-   "n_chars": 517,
-   "n_words": 93
-  },
-  {
-   "id": "sec-053-2-with-mi",
-   "number": "2",
-   "title": "(with mi",
-   "level": 1,
-   "page_start": 70,
    "page_end": 71,
-   "n_chars": 1778,
-   "n_words": 344
+   "n_chars": 2289,
+   "n_words": 422,
+   "label_start": "69",
+   "label_end": "70"
   },
   {
-   "id": "sec-054-171-the-meaning-of-the-residues",
+   "id": "sec-019-171-the-meaning-of-the-residues",
    "number": "17.1",
    "title": "The Meaning Of The Residues",
    "level": 2,
    "page_start": 71,
    "page_end": 73,
-   "n_chars": 3484,
-   "n_words": 716
+   "n_chars": 3454,
+   "n_words": 686,
+   "label_start": "70",
+   "label_end": "72"
   },
   {
-   "id": "sec-055-172-the-cohomology-of-x",
+   "id": "sec-020-172-the-cohomology-of-x",
    "number": "17.2",
    "title": "The Cohomology Of X",
    "level": 2,
    "page_start": 73,
    "page_end": 75,
-   "n_chars": 4307,
-   "n_words": 843
+   "n_chars": 4313,
+   "n_words": 849,
+   "label_start": "72",
+   "label_end": "74"
   },
   {
-   "id": "sec-056-173-finding-the-curves",
+   "id": "sec-021-173-finding-the-curves",
    "number": "17.3",
    "title": "Finding the Curves",
    "level": 2,
    "page_start": 75,
-   "page_end": 80,
-   "n_chars": 7660,
-   "n_words": 1575
-  },
-  {
-   "id": "sec-057-2-m1-m2-m3-m4",
-   "number": "2",
-   "title": "(m1 +m2 +m3 −m4)",
-   "level": 1,
-   "page_start": 80,
-   "page_end": 80,
-   "n_chars": 9,
-   "n_words": 4
-  },
-  {
-   "id": "sec-058-2-m1-m2-m3-m4",
-   "number": "2",
-   "title": "(m1 +m2 −m3 +m4)",
-   "level": 1,
-   "page_start": 80,
-   "page_end": 80,
-   "n_chars": 9,
-   "n_words": 4
-  },
-  {
-   "id": "sec-059-2-m1-m2-m3-m4",
-   "number": "2",
-   "title": "(m1 −m2 +m3 +m4)",
-   "level": 1,
-   "page_start": 80,
    "page_end": 81,
-   "n_chars": 2482,
-   "n_words": 478
+   "n_chars": 10245,
+   "n_words": 2101,
+   "label_start": "74",
+   "label_end": "80"
   },
   {
-   "id": "sec-060-174-determination-of-the-equation-for-nf-4",
+   "id": "sec-022-174-determination-of-the-equation-for-nf-4",
    "number": "17.4",
    "title": "Determination Of The Equation For Nf = 4",
    "level": 2,
    "page_start": 81,
-   "page_end": 84,
-   "n_chars": 3904,
-   "n_words": 843
-  },
-  {
-   "id": "sec-061-2-α-β",
-   "number": "2",
-   "title": "(α +β)",
-   "level": 1,
-   "page_start": 84,
-   "page_end": 85,
-   "n_chars": 1284,
-   "n_words": 272
-  },
-  {
-   "id": "sec-062-2-e3-e2-1",
-   "number": "2",
-   "title": "(e3 −e2) = 1",
-   "level": 1,
-   "page_start": 85,
-   "page_end": 85,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-063-2-β-α-to-derive-1758-actually-to-agree-with-sect",
-   "number": "2",
-   "title": "(β −α) to derive (17.58). Actually, to agree with section 16, it is",
-   "level": 1,
-   "page_start": 85,
-   "page_end": 85,
-   "n_chars": 1004,
-   "n_words": 181
-  },
-  {
-   "id": "sec-064-175-the-n-4-theory",
-   "number": "17.5",
-   "title": "The N = 4 Theory",
-   "level": 2,
-   "page_start": 85,
    "page_end": 87,
-   "n_chars": 2565,
-   "n_words": 521
+   "n_chars": 8957,
+   "n_words": 1881,
+   "label_start": "80",
+   "label_end": "86"
   },
   {
-   "id": "sec-065-acknowledgements",
+   "id": "sec-023-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 87,
    "page_end": 88,
-   "n_chars": 305,
-   "n_words": 54
+   "n_chars": 304,
+   "n_words": 53,
+   "label_start": "86",
+   "label_end": "87"
   },
   {
-   "id": "sec-066-references",
+   "id": "sec-024-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 88,
    "page_end": 88,
-   "n_chars": 2226,
-   "n_words": 379
+   "n_chars": 2221,
+   "n_words": 374,
+   "label_start": "87",
+   "label_end": "87"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 68,
-  "sections": 67,
-  "chars_total": 166724
+  "toc_entries": 26,
+  "toc_inferred_entries": 26,
+  "toc_inferred_mean_confidence": 0.746,
+  "toc_inferred_empty_share": 0.04,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 26,
+  "chars_total": 168394
  }
 }

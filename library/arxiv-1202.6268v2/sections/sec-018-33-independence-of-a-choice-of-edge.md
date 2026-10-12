@@ -8,57 +8,35 @@ pages: 17-18
 source_pdf: 1202.6268v2.pdf
 source_sha256: 209af6ae25439050
 doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
+text_source: latex
+latex_prose_ratio: 0.947
+latex_coverage_ratio: 0.918
 ---
-choose matrices A, B, we must ignore the redundant gluing equation corresponding to an
-edge ofT . This was discussed in Section
-2.3. Suppose, then, that we choose a diﬀerent edge
-to ignore. For example, if we choose the ( N− 1)st rather than the N th (and keep the same
-quad type and meridian path), then we obtain new Neumann-Zagier m atrices ~A, ~B, which
-are related to the original ones as
-(3.10) ~A =P(N −1,N ) A, ~B =P(N −1,N ) B,
+[]{#sec.invglue label="sec.invglue"}
+
+We fix $M,\,\mathcal{T},\,\widehat\beta_\mathcal{T}=(z,\mathbf A,\mathbf B,f)$.
+
+In order to choose matrices $\mathbf A,\,\mathbf B$, we must ignore the redundant gluing equation corresponding to an edge of $\mathcal T$. This was discussed in Section [\[sec.NZ\]](#sec.NZ){reference-type="ref" reference="sec.NZ"}. Suppose, then, that we choose a different edge to ignore. For example, if we choose the $(N-1)^{\text{st}}$ rather than the $N^{\text{th}}$ (and keep the same quad type and meridian path), then we obtain new Neumann-Zagier matrices $\widetilde{\mathbf A},\,\widetilde{\mathbf B}$, which are related to the original ones as
+
+$$\widetilde{\mathbf A} =  P_{(N-1,N)}\,\,\mathbf A\,,\qquad \widetilde{\mathbf B} 
+=  P_{(N-1,N)}\,\,\mathbf B\,,$$
+
 where
-(3.11) P(N −1,N ) :=
-
-
-
-
-
-
-
-
-1 0 ··· 0 0 0
-0 1 ··· 0 0 0
-. . .
-0 0 ··· 1 0 0
-−1 −1 ··· − 1 −1 −1
-0 0 ··· 0 0 1
-
-
-
-
-
-
-
-
-.
-Similarly, eliminating the I th rather than the N th edge constraint is implemented by mul-
-tiplying with a matrix P(I,N ) whose I th row is ﬁlled with −1’s. Any such matrix satisﬁes
-detP(I,N ) =−1.
-In the formula for τT , only the determinant part is aﬀected by a change of edge. Then
-(3.12) det
-(~A∆ z′′ +~B∆ −1
-z
-)
-= det
-(
-P(I,N )(A∆ z′′ + B∆ −1
-z )
-)
-=− det
-(
-A∆ z′′ + B∆ −1
-z
-)
-,
-leading to invariance of τT , up to the usual sign.
-18 TUDOR DIMOFTE AND STA VROS GAROUF ALIDIS
+
+$$P_{(N-1,N)} := \begin{pmatrix} 1 & 0 & \cdots & 0 & 0 & 0 \\
+ 0 & 1 & \cdots & 0 & 0 & 0 \\
+ && \ddots &&&\\
+ 0 & 0 &\cdots & 1 & 0 & 0 \\
+ -1 & -1 & \cdots & -1 & -1 & -1 \\
+ 0 & 0 & \cdots & 0 & 0 & 1
+\end{pmatrix}\,.$$
+
+Similarly, eliminating the $I^{\text{th}}$ rather than the $N^{\text{th}}$ edge constraint is implemented by multiplying with a matrix $P_{(I,N)}$ whose $I^{\rm th}$ row is filled with $-1$'s. Any such matrix satisfies $\det P_{(I,N)}=- 1$.
+
+In the formula for $\tau_{\mathcal{T}}$, only the determinant part is affected by a change of edge. Then
+
+$$\det\big(\widetilde{\mathbf A}\Delta_{z''}+\widetilde{\mathbf B}\Delta_{z}^{-1}\big)
+ = \det\big(P_{(I,N)}({\mathbf A}\Delta_{z''}+{\mathbf B}\Delta_{z}^{-1})\big)
+ = - \det\big({\mathbf A}\Delta_{z''}+{\mathbf B}\Delta_{z}^{-1}\big)\,,$$
+
+leading to invariance of $\tau_{\mathcal{T}}$, up to the usual sign.

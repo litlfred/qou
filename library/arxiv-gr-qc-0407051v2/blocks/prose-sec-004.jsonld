@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "N, m i ∈ {−j1, ..., ji} (7)",
-  "pageStart": 4,
-  "pageEnd": 7,
-  "text": "../sections/sec-004-2-n-m-i-j1-ji-7.md",
-  "derivedFrom": "library/arxiv-gr-qc-0407051v2/manifest",
-  "sourceDocument": "library/arxiv-gr-qc-0407051v2/manifest",
+  "title": "The spin probability distribution",
+  "pageStart": 12,
+  "pageEnd": 14,
+  "text": "../sections/sec-004-5-the-spin-probability-distribution.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-gr-qc-0407051v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-gr-qc-0407051v2/manifest.jsonld",
   "provenance": "ingested"
 }

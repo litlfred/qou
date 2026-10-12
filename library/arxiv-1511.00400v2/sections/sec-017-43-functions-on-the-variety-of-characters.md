@@ -8,7 +8,8 @@ pages: 29-29
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
 doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-In this subsection M 3 denotes an orientable hyperbolic 3-manifold of ﬁnite vol-
-ume, with a single cusp. The subsection discusses the torsion as fun ction on the
-variety of characters.
+In this subsection $M^3$ denotes an orientable hyperbolic 3-manifold of finite volume, with a single cusp. The subsection discusses the torsion as function on the variety of characters.

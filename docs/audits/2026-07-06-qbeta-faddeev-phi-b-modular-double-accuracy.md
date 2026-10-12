@@ -78,7 +78,7 @@ Corroborating corpus evidence that the Φ layer was already known-shaky:
   inconsistent "Φ" conventions** (compact `q^{−k}`; odd-power `q^{2k+1}`;
   true `Φ_b` modular double) — a classic source of the "compute may have
   been inaccurate" symptom.
-- A cluster of Φ_q probes sits in `computations/_deprecated/`
+- A cluster of Φ_q probes sits in `fsh-guts/deprecated/computations/`
   (`_phi_q_util.py`, `d_phi_q_series.py`, `per_block_phi_q.py`,
   `brane_tower_per_channel_phi_q.py`, …); the deprecated `d_phi_q_series.py`
   self-notes it returns "the wrong value" pending "a principled fix."

@@ -8,131 +8,118 @@ pages: 21-22
 source_pdf: 1906.12122v2.pdf
 source_sha256: 955e3eda48672e28
 doc_brief: "Nuclear effective field theory: status and perspectives — 34 sections: Contents; Two-body scattering amplitude; Power counting"
+text_source: latex
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.965
 ---
-a. Nonperturbative Coulomb eﬀects As discussed in
-Sec. II.B.7, at the low energies potentially reached in
-scattering Coulomb-photon exchange needs to be treated
-nonperturbatively, which poses additional technical chal-
-lenges. The ﬁrst attempt to study Coulomb eﬀects was
-made in the simpler quartet S-wavepd scattering by Ru-
-pak and Kong (2003). They developed a power count-
-ing that, with some approximations, amounts to iterat-
-ing a Coulomb potential between proton and deuteron
-to all orders, along with the one-nucleon exchange dia-
-gram that also enters in nd scattering. Rupak and Kong
-(2003) calculated the Coulomb-subtracted S-wave phase
-shift in the quartet channel, but could not reach conver-
-gence below pd center-of-mass momenta of 20 MeV (the
-regime where Coulomb eﬀects really are nonperturba-
-tive). Convergence down to 3 MeV was later achieved by
-K¨ onig and Hammer (2011) owing to an improved numer-
-ical procedure. K¨ onig and Hammer (2011) also extended
-the analysis to the doublet S-wave channel, including
-helion, and applied the partial-resummation approach of
-Bedaque et al. (2003b) to calculate higher orders.
-Ando and Birse (2010) carried out a direct momentum-
-space calculation of helion based on a generalization of
-thend integral equation discussed in Sec. II.C.2. Recast-
-ing methods developed by Kok et al. (1979, 1981) into
-EFT, Ando and Birse (2010) included Coulomb eﬀects
-via a fully oﬀ-shell CoulombT matrix and obtained, at a
-single momentum cutoﬀ Λ0 = 380.689 MeV (the ﬁrst cut-
-oﬀ value where the experimental triton binding energy is
-reproduced without a 3N force, H(Λ0) = 0) a 3He bind-
-ing energyB(3He)≃ 7.66 MeV, close to the experimental
-value of about 7.72 MeV. Ando and Birse (2010) treated
-all Coulomb eﬀects nonperturbatively, but considered the
-strong sector only at LO. Kirscher et al. (2010) obtained
-similar numerical results in a calculation that included
-NLO and selected higher-order interactions as part of an
-eﬀective potential which was treated exactly.
-The pionless calculation ofpd scattering and helion was
-revisited and extended by K¨ onig (2013) and K¨ oniget al.
-(2015), who argued that the NLO pd system, within the
-partial-resummation approach, is not properly renormal-
-ized by the isospin-symmetric 3N force alone. The same
-conclusion was reached in a parallel analysis by Vanasse
-et al. (2014), who calculated pd scattering and 3He at
-NLO in strict perturbation theory. Using an asymptotic
-analysis, it was shown that Coulomb at LO requires a
-nonderivative 3N interaction at NLO (but not LO) to
-properly renormalize the pd system. At this level, one
-can no longer predict low-energy pd scattering from nd
-scattering without further input. Fixing the correspond-
-ing LEC to the 3He binding energy gives good agreement
-with an analytically-derived expression, and it also pro-
-vides cutoﬀ-stable results for the phase shift. In contrast,
-Kirscher and Gazit (2016) recently argued that 3He is
-renormalized at NLO without an additional counterterm
-(pd scattering was not investigated). While both calcu-
-lations use Pionless EFT, they diﬀer in the numerical
-implementation and regularization scheme.
-A comparison of the diﬀerent schemes for the count-
-ing of Coulomb eﬀects in pd scattering up to NLO was
-provided by K¨ onig and Hammer (2014). These authors
-argued that for the scattering of composite charged par-
-ticles there is a certain arbitrariness in the deﬁnition of
-Coulomb-subtracted quantities (phase shifts and modi-
-ﬁed ERE parameters), namely whether or not informa-
-tion about the deuteron substructure is included in the
-deﬁnition of the pure Coulomb phase shift.
-b. Perturbative Coulomb eﬀects Renewed interest and de-
-velopments in the strict application of perturbation the-
-ory also motivated a new look into the counting of
-Coulomb eﬀects. The characteristic trinucleon momen-
-tum scale γT∼ 80 MeV≫αmN suggests that Coulomb
-eﬀects should be a perturbative correction to the 3He
-binding energy (compared to the triton as its isospin
-mirror state). Already K¨ onig et al. (2015) showed that
-the calculation of Ando and Birse (2010) can be re-
-produced essentially unchanged when the fully oﬀ-shell
-Coulomb T matrix is replaced by one-photon exchange
-diagrams. However, the calculation of K¨ oniget al. (2015)
-is still nonperturbative becauseB(3He) is extracted from
-the pole in the oﬀ-shell pd amplitude obtained from
-an integral equation that resums both one-nucleon ex-
-change as well as O(α) Coulomb diagrams. K¨ oniget al.
-(2016) instead calculated the binding-energy diﬀerence
-B(3H)−B(3He) as a perturbation around an isospin-
-symmetric LO including a contribution missed in the
-earlier calculation of K¨ oniget al. (2015). Once the log-
-arithmic divergence generated by pp Coulomb eﬀects is
-isolated and properly renormalized, the NLO 3He bind-
-ing energy converges as the cutoﬀ increases without an
-isospin-breaking 3 N force. K¨ onig et al. (2016) ﬁnd
-B(3He) = (7.62±0.17) MeV, supporting the perturbative
-nature of Coulomb in this bound state. The same con-
-clusion was reached independently by Kirscher and Gazit
-(2016). These results suggest that for nuclear ground
-states Coulomb is an NLO eﬀect and isospin-breaking 3N
-forces do not enter up to this order. The same holds for
-pd scattering for center-of-mass momenta k & 20 MeV,
-which K¨ onig (2017) showed to be predicted fromnd scat-
-tering up to NLO.
-22
-c. Dineutron constraints Kirscher and Phillips (2011)
-used Pionless EFT to constrain the neutron-neutron (nn)
-scattering length, for which there exist conﬂicting exper-
-imental determinations of −16.1± 0.4 fm (Huhn et al. ,
-2000, 2001) and−18.7± 0.7 fm (Gonzalez Trotter et al.,
-1999, 2006). Using a model-independent correlation be-
-tween the diﬀerence of the nn and (Coulomb-modiﬁed)
-pp scattering lengths on the one hand and the 3H-3He
-binding-energy diﬀerence on the other, Kirscher and
-Phillips (2011) extracted ann = (−22.9± 4.1) fm from
-an LO calculation where isospin-breaking, nonderivative
-NN contact interactions are included.
-Kirscher and Phillips (2011) only considered negative
-values for ann, thus excluding the possibility of a bound
-shallow state, the existence of which would correspond to
-ann large and positive. Motivated by renewed experimen-
-tal interest in the existence of such a state, Hammer and
-K¨ onig (2014) revisited the calculation and argued that
-the relevant parameter that enters the pionless calcula-
-tion is not ann directly, but rather its inverse, such that
-going from large negative to large positive ann is only
-a small change. Extending the calculation of Kirscher
-and Phillips (2011) to NLO, and taking into account the
-new pd counterterm identiﬁed by Vanasse et al. (2014),
-Hammer and K¨ onig (2014) concluded that Pionless EFT
-currently does not exclude a bound dineutron state.
+\paragraph{Nonperturbative Coulomb effects}
+
+As discussed in Sec.~\ref{sec:pionlessCoulomb}, at the low energies potentially
+reached in scattering Coulomb-photon exchange needs to be treated
+nonperturbatively, which poses additional technical challenges.  The first
+attempt to study Coulomb effects was made in the simpler quartet $S$-wave $pd$
+scattering by \textcite{Rupak:2001ci}.  They developed a power counting
+that, with some approximations, amounts to iterating a Coulomb potential between
+proton and deuteron to all orders, along with the one-nucleon exchange diagram
+that also enters in $nd$ scattering.  \textcite{Rupak:2001ci} calculated the
+Coulomb-subtracted $S$-wave phase shift in the quartet channel, but could not
+reach convergence below $pd$ center-of-mass momenta of $20~\MeV$ (the regime
+where Coulomb effects really are nonperturbative).  Convergence down to $3~\MeV$
+was later achieved by \textcite{Konig:2011yq} owing to an improved numerical
+procedure.  \textcite{Konig:2011yq} also extended the analysis to the doublet
+$S$-wave channel, including helion, and applied the partial-resummation approach
+of \textcite{Bedaque:2002yg} to calculate higher orders.
+
+\textcite{Ando:2010wq} carried out a direct momentum-space calculation of helion
+based on a generalization of the $nd$ integral equation discussed in
+Sec.~\ref{sec:Triton}.  Recasting methods developed by
+\textcite{Kok:1979aa,Kok:1981aa} into EFT, \textcite{Ando:2010wq} included
+Coulomb effects via a fully off-shell Coulomb $T$ matrix and obtained, at a
+single momentum cutoff $\Lambda_0=380.689~\MeV$ (the first cutoff value where
+the experimental triton binding energy is reproduced without a $3N$ force,
+$H(\Lambda_0) = 0$) a \ThreeHe binding energy $B(\ThreeHe) \simeq 7.66~\MeV$,
+close to the experimental value of about $7.72~\MeV$.  \textcite{Ando:2010wq}
+treated all Coulomb effects nonperturbatively, {but considered the strong
+sector only at LO.}  \textcite{Kirscher:2009aj} obtained similar numerical
+results in a calculation that included \NLO and selected higher-order
+interactions as part of an effective potential which was treated exactly.
+
+The pionless calculation of $pd$ scattering and helion was revisited and
+extended by \textcite{Koenig:2013} and \textcite{Konig:2014ufa}, who argued that
+the \NLO $pd$ system, within the partial-resummation approach, is not properly
+renormalized by the isospin-symmetric $3N$ force alone.  The same conclusion was
+reached in a parallel analysis by \textcite{Vanasse:2014kxa}, who calculated
+$pd$ scattering and \ThreeHe at \NLO in strict perturbation theory.  Using an
+asymptotic analysis, it was shown that Coulomb at LO requires a nonderivative
+$3N$ interaction at \NLO (but not \LO) to properly renormalize the $pd$ system.
+{At this level, one can no longer predict low-energy
+$pd$ scattering from $nd$ scattering without further input.}
+Fixing the corresponding LEC to the \ThreeHe binding energy gives good
+agreement with an analytically-derived expression, and it also provides
+cutoff-stable
+results for the phase shift.  In contrast, \textcite{Kirscher:2015zoa} recently
+argued that \ThreeHe is renormalized at NLO without an additional counterterm
+($pd$ scattering was not investigated).  While both calculations use Pionless
+EFT, they differ in the numerical implementation and regularization scheme.
+
+A comparison of the different schemes for the counting of Coulomb effects
+in $pd$ scattering up to \NLO was provided by \textcite{Konig:2013cia}.
+These authors argued that for the scattering of composite charged particles
+there is a certain arbitrariness in the definition of Coulomb-subtracted
+quantities (phase shifts and modified ERE parameters), namely whether or not
+information about the deuteron substructure is included in the definition of
+the pure Coulomb phase shift.
+
+\paragraph{Perturbative Coulomb effects}
+
+Renewed interest and developments in the strict application of perturbation
+theory also motivated a new look into the counting of Coulomb effects.  The
+characteristic trinucleon momentum scale $\gamma_T\sim 80~\MeV \gg \alpha m_N$
+suggests that Coulomb effects should be a perturbative correction to the
+\ThreeHe binding energy (compared to the triton as its isospin mirror state).
+Already \textcite{Konig:2014ufa} showed that the calculation of
+\textcite{Ando:2010wq} can be reproduced essentially unchanged when the fully
+off-shell Coulomb $T$ matrix is replaced by one-photon exchange diagrams.
+However, the calculation of \textcite{Konig:2014ufa} is still nonperturbative
+because $B(\ThreeHe)$ is extracted from the pole in the off-shell $pd$ amplitude
+obtained from an integral equation that resums both one-nucleon exchange as well
+as $\OO(\alpha)$ Coulomb diagrams.  \textcite{Konig:2015aka} instead calculated
+the binding-energy difference $B(\ThreeH)-B(\ThreeHe)$ as a perturbation
+around an isospin-symmetric LO including a contribution missed in the earlier
+calculation of \textcite{Konig:2014ufa}.  Once the logarithmic divergence
+generated by $pp$ Coulomb effects is isolated and properly renormalized, the
+\NLO \ThreeHe binding energy converges as the cutoff increases without an
+isospin-breaking $3N$ force.  \textcite{Konig:2015aka} find $B(\ThreeHe) = (7.62
+\pm 0.17)~\MeV$, supporting the perturbative nature of Coulomb in this bound
+state.  The same conclusion was reached independently by
+\textcite{Kirscher:2015zoa}.  These results suggest that for nuclear ground
+states Coulomb is an \NLO effect and isospin-breaking $3N$ forces do not enter
+up to this order.
+{The same holds for $pd$ scattering for center-of-mass momenta
+$k\gsim20~\MeV$, which \textcite{Konig:2016iny} showed to be
+predicted from $nd$ scattering up to NLO.}
+
+\paragraph{Dineutron constraints}
+
+\textcite{Kirscher:2011zn} used Pionless EFT to constrain the neutron-neutron
+($nn$) scattering length, for which there exist conflicting experimental
+determinations of ${-}16.1\pm0.4~\fm$~\cite{Huhn:2000zz,Huhn:2001yk} and
+${-}18.7\pm0.7~\fm$~\cite{GonzalezTrotter:1999zz,GonzalezTrotter:2006wz}.
+Using a model-independent correlation between the difference of the $nn$ and
+(Coulomb-modified) $pp$ scattering lengths on the one hand and the
+\Triton-\ThreeHe binding-energy difference on the other,
+\textcite{Kirscher:2011zn} extracted $\ann=(-22.9\pm 4.1)~\fm$ from an \LO
+calculation where isospin-breaking, nonderivative $N\!N$ contact interactions
+are included.
+
+\textcite{Kirscher:2011zn} only considered negative values for $\ann$, thus
+excluding the possibility of a bound shallow state, the existence of which would
+correspond to $\ann$ large and positive.  Motivated by renewed experimental
+interest in the existence of such a state, \textcite{Hammer:2014rba} revisited
+the calculation and argued that the relevant parameter that enters the pionless
+calculation is not $\ann$ directly, but rather its inverse, such that going from
+large negative to large positive $\ann$ is only a small change.  Extending the
+calculation of \textcite{Kirscher:2011zn} to \NLO, and taking into account the
+new $pd$ counterterm identified by \textcite{Vanasse:2014kxa},
+\textcite{Hammer:2014rba} concluded that Pionless EFT currently does not
+exclude a bound dineutron state.

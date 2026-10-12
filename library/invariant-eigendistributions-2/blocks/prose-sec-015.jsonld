@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/invariant-eigendistributions-2/blocks/prose-sec-015",
   "kind": "prose",
-  "title": "Theorem. The map",
-  "pageStart": 9,
-  "pageEnd": 11,
-  "text": "../sections/sec-015-51-theorem-the-map.md",
-  "derivedFrom": "library/invariant-eigendistributions-2/manifest",
-  "sourceDocument": "library/invariant-eigendistributions-2/manifest",
+  "title": "Appendix. Comparison with the Kazhdan-Lusztig construction",
+  "pageStart": 28,
+  "pageEnd": 31,
+  "text": "../sections/sec-015-12-appendix-comparison-with-the-kazhdan-lusztig.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/invariant-eigendistributions-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/invariant-eigendistributions-2/manifest.jsonld",
   "provenance": "ingested"
 }

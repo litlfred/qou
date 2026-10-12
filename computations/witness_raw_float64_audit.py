@@ -568,7 +568,7 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
     for p in sorted((scan_root or HERE).rglob("*.witness.json")):
         if (p.name in SELF_OUTPUTS
                 or p.name.startswith(SELF_OUTPUT_PREFIX)
-                or "_deprecated" in p.parts):
+                or ("_deprecated" in p.parts or "fsh-guts" in p.parts)):
             continue
         try:
             d = json.loads(p.read_text(encoding="utf-8"))

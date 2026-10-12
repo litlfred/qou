@@ -8,90 +8,40 @@ pages: 8-9
 source_pdf: 1401.5542v1.pdf
 source_sha256: f7cd278a274f37c5
 doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by theA-coordinates on"
+text_source: latex
+latex_prose_ratio: 0.964
+latex_coverage_ratio: 0.72
 ---
-3.1.2. The ﬁgure-8 knot sister. Consider the ideal triangulation of the ﬁgure-8 knot sister
-shown in Figure 7. The Ptolemy variety P2(T ) is given by
-(3.5)
-c03,0c12,0 +c01,0c23,0 =c02,0c13,0,
-c03,1c12,1 +c01,1c23,1 =c02,1c13,1,
-c01,0 =−c03,0 =c23,0 =−c01,1 =c03,1 =−c23,1
-c02,0 =−c12,0 =c13,0 =−c02,1 =c12,1 =−c13,1
-Selecting representatives ε23,0 and ε13,0 for the 2 edge cycles, P2(T )∈ C2 is given by
-(3.6) c23,0c13,0 +c2
-23,0 =c2
-13,0, c 23,0c13,0 +c2
-23,0 =c2
-13,0.
-This is equivalent to
-(3.7) x2−x− 1 = 0, x = c13,0
-c23,0
-.
-0 2
-31
-0 2
-31
-c02,0
-c01,0 c23,0
-c13,0
-c12,0c03,0
-c13,1
-c23,1
-c02,1
-c01,1 c12,1c03,1
-Figure 6. Ordered triangulation of the
-ﬁgure 8 knot. The signs indicate the
-non-trivial obstruction class.
-0 2
-31
-0 2
-31
-c13,0 c13,1
-c02,1
-c23,1c01,1
-c12,1
-c03,1
-c02,0
-c01,0
-c23,0
-c03,0 c12,0
-Figure 7. Oriented triangulation of the
-ﬁgure 8 knot sister. The signs indicate
-the non-trivial obstruction class.
-Remark 3.4. Note that for ordered triangulations, the identiﬁcation relations (3.2) do not
-involve minus signs. The triangulation in Figure 6 is not oriented.
-3.2. Obstruction classes. Each class inH 2(ˆM; Z/2Z) can be represented by aZ/2Z-valued
-2-cocycle on ˆM, i.e. an assignment of a sign to each face of T .
-Deﬁnition 3.5. Let σ be a Z/2Z-valued 2-cocycle on ˆM. The Ptolemy variety for σ is
-deﬁned as in Deﬁnition 3.1, but with the Ptolemy relation replaced by
-(3.8) σ0,kσ3,kc03,kc12,k +σ0,kσ1,kc01,kc23,k =σ0,kσ2,kc02,kc13,k,
-where σi,k is the sign of the face of ∆ k opposite vertex i.
-Remark 3.6. Multiplyingσ by a coboundary δ(τ) corresponds to multiplying the Ptolemy
-coordinate of a one-cell e byτ(e) (see [7] for details). Hence, up to canonical isomorphism,
-the Ptolemy varietyPσ
-2 (T ) only depends on the cohomology class of σ. The Ptolemy variety
-P2(T ) is the Ptolemy variety for the trivial obstruction class.
-THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS 9
-3.2.1. Examples. In both examples above, H 2(ˆM; Z/2Z) = Z/2Z, and the non-trivial ob-
-struction class σ is indicated in Figures 6 and 7.
-For the Figure-8 knot, Pσ
-2 (T ) is given by
-(3.9) −c23,0c13,0 +c2
-23,0 =−c2
-13,0, −c13,0c23,0 +c2
-13,0 =−c2
-23,0,
+\label{sec:ObstructionClasses}
+Each class in $H^2(\widehat M;\Z/2\Z)$ can be represented by a $\Z/2\Z$-valued $2$-cocycle on $\widehat M$, i.e.~an assignment of a sign to each face of $\T$.  
+\begin{definition} Let $\sigma$ be a $\Z/2\Z$-valued $2$-cocycle on $\widehat M$. The \emph{Ptolemy variety} for $\sigma$ is defined as in Definition~\ref{def:PtolemyVariety}, but with the Ptolemy relation replaced by
+\begin{equation}\label{eq:PtolemyRelationObstruction}
+\sigma_{0,k}\sigma_{3,k}c_{03,k}c_{12,k}+\sigma_{0,k}\sigma_{1,k}c_{01,k}c_{23,k}=\sigma_{0,k}\sigma_{2,k}c_{02,k}c_{13,k},
+\end{equation}
+where $\sigma_{i,k}$ is the sign of the face of $\Delta_k$ opposite vertex $i$.
+\end{definition}
+\begin{remark} Multiplying $\sigma$ by a coboundary $\delta(\tau)$ corresponds to multiplying the Ptolemy coordinate of a one-cell $e$ by $\tau(e)$ (see~\cite{GaroufalidisThurstonZickert} for details). Hence, up to canonical isomorphism, the Ptolemy variety $P^\sigma_2(\T)$ only depends on the cohomology class of $\sigma$. The Ptolemy variety $P_2(\T)$ is the Ptolemy variety for the trivial obstruction class.
+\end{remark}
+
+
+\subsubsection{Examples}
+In both examples above, $H^2(\widehat M;\Z/2\Z)=\Z/2\Z$, and the non-trivial obstruction class $\sigma$ is indicated in Figures~\ref{fig:Fig8Ordered} and~\ref{fig:Fig8SisOri}.
+
+For the Figure-$8$ knot, $P^{\sigma}_2(\T)$ is given by
+\begin{equation}\label{eq:Fig8PtolemyNontrivial}
+-c_{23,0}c_{13,0}+c_{23,0}^2=-c_{13,0}^2,\qquad -c_{13,0}c_{23,0}+c_{13,0}^2=-c_{23,0}^2,
+\end{equation}
 which is equivalent to
-(3.10) x2−x + 1 = 0, x = c13,0
-c23,0
-.
+\begin{equation}
+x^2-x+1=0,\qquad x=\frac{c_{13,0}}{c_{23,0}}.
+\end{equation} 
 The corresponding representations are the geometric representation and its conjugate.
+
 For the Figure 8 knot sister, the Ptolemy variety becomes
-(3.11) −c23,0c13,0−c2
-23,0 =c2
-13,0, −c23,0c13,0−c2
-23,0 =c2
-13,0,
+\begin{equation}\label{eq:Fig8SisPtolemyNontrivial}
+-c_{23,0}c_{13,0}-c_{23,0}^2=c_{13,0}^2,\qquad -c_{23,0}c_{13,0}-c_{23,0}^2=c_{13,0}^2,
+\end{equation}
 which is equivalent to
-(3.12) x2 +x + 1 = 0, x = c13,0
-c23,0
-.
+\begin{equation}
+x^2+x+1=0,\qquad x=\frac{c_{13,0}}{c_{23,0}}.
+\end{equation}

@@ -8,43 +8,45 @@ pages: 4-5
 source_pdf: 1412.4711v1.pdf
 source_sha256: 4fb1d6ee062cca8c
 doc_brief: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
+text_source: latex
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.952
 ---
-key point to study the previous deﬁned spaces is to add a geometric structure
-on it, as usual in the study of moduli spaces. Such a structure is called a
-decoration and will be most easily deﬁned with additional assumption: from
-now on Γ is the fundamental group of a 1-cusped hyperbolic 3-varietyM (as
-the ﬁgure eight knot complement) 2. As M = H3/Γ is a cusped hyperbolic
-manifold, we let P ⊂CP1 = ∂H3 be the set of cusps in the boundary of
-the hyperbolic space. By construction, Γ acts on P. Let moreover Fl be
-the space of complete ﬂags of CPn. There is a natural action of PGL( n, C),
-for whichFl becomes the quotient of PGL(n, C) by the subgroup of upper-
-triangular matrices. Hence, given a representation ρ of Γ in PGL(n, C), we
-have an action of Γ on Fl, through ρ. For these objects and the following,
-we refer to [1].
-Deﬁnition 1.4. Let ρ∈ Hom(Γ,G ). Then Γ acts both on CP1 andFl. A
-decoration of ρ is a Γ-covariant map :
-φ :P→F l.
-Let DecHom(Γ,G ) be the decorated representations variety:
-DecHom(Γ,G ) ={(ρ,φ )|ρ∈ Hom(Γ,G ), φis a decoration of ρ}.
-As the group G = PGL(n, C) acts on Fl, it acts on the space of maps
-P→F l. Moreover, it is easily checked that if φ is a decoration of ρ, then
-g·φ is a decoration of the conjugated g·ρ = gρg−1. Hence G acts on the
-space DecHom(Γ,G ).
-Deﬁnition 1.5. We deﬁne thedecorated monodromy varietiesDecMon(Γ,G )
-as the naive quotient:
-DecMon(Γ,G ) = DecHom(Γ,G )/G.
-2This assumption is not necessary and one may work with a triangulated 3-variety
-(either hyperbolic with more cusps, or with boundary, or even not hyperbolic). We refer
-to [1] for this setting.
-5
-We now proceed by deﬁning a decorated version of the character variety.
-First of all, note that the space of ﬂags Fl is an algebraic variety and the
-action of G is algebraic. Moreover, DecHom(Γ ,G ) is an algebraic variety:
-indeed, choose a ﬁnite fundamental set{p1,...,p r} for the action of Γ onP.
-Then a decorated representation ( ρ,φ ) is uniquely determined by a choice
-of a ﬂag Fi for each pi such that Fi is stabilized by Stab Γ(pi).
-We now consider the algebraic quotient of DecHom(Γ ,G ) under this ac-
-tion:
-Deﬁnition 1.6. We deﬁne the decorated character variety DecX(Γ,G ) as
-the algebraic quotient:
-DecX(Γ,G ) = DecHom(Γ,G )//G.
+From now on, we assume $G=\PGL(n,\bC)$. A key point to study the previous defined spaces is to add a geometric structure on it, as usual in the study of moduli spaces. 
+Such a structure is called a \emph{decoration} and will be most easily defined with additional assumption: from now on $\Gamma$ is the fundamental group of a $1$-cusped hyperbolic $3$-variety $M$ (as the figure eight knot complement)\footnote{This assumption is not necessary and one may work with a triangulated $3$-variety (either hyperbolic with more cusps, or with boundary, or even not hyperbolic). We refer to \cite{BFG} for this setting.}. As $M=\mathbb H^3/\Gamma$ is a cusped hyperbolic manifold, we let
+ $\mathcal P\subset \mathbb{CP}^1=\partial \mathbb H^3$ be the set of cusps in the boundary of the hyperbolic space. By construction, $\Gamma$ acts on $\mathcal P$.
+Let moreover $\mathcal Fl$ be the space of complete flags of $\mathbb{CP}^n$. There is a natural action of $\PGL(n,\bC)$, for which $\mathcal Fl$ becomes the quotient of $\PGL(n,\bC)$ by the subgroup of upper-triangular matrices. Hence, given a representation $\rho$ of $\Gamma$ in $\PGL(n,\bC)$, we have an action of $\Gamma$ on $\mathcal Fl$, through $\rho$.  For these objects and the following, we refer to \cite{BFG}.
+
+\newcommand{\DecHom}{\mathrm{DecHom}}
+
+\begin{defn}
+Let $\rho \in \Hom(\Gamma,G)$. Then $\Gamma$ acts both on $\mathbb{CP}^1$ and $\mathcal Fl$. A \emph{decoration} of $\rho$ is a $\Gamma$-covariant map :
+$$\phi : \mathcal P\to \mathcal Fl.$$
+Let $\DecHom(\Gamma,G)$ be the decorated representations variety:
+$$\DecHom(\Gamma,G)=\{(\rho,\phi)|\; \rho\in \Hom(\Gamma,G), \; \phi\textrm{ is a decoration of }\rho\}.$$ 
+\end{defn}
+
+As the group $G=\PGL(n,\bC)$ acts on $\mathcal Fl$, it acts on the space of maps $\mathcal P\to \mathcal Fl.$
+Moreover, it is easily checked that if $\phi$ is a decoration of $\rho$, then $g\cdot \phi$ is a decoration of the conjugated $g\cdot \rho=g\rho g^{-1} $. 
+Hence $G$ acts on the space $\DecHom(\Gamma,G)$. 
+
+\newcommand{\DecMon}{\mathrm{DecMon}}
+
+\begin{defn}
+We define the \emph{decorated monodromy varieties} $\DecMon(\Gamma,G)$ as the naive quotient:
+$$\DecMon(\Gamma,G)=\DecHom(\Gamma,G)/G.$$
+\end{defn}
+
+
+We now proceed by defining a decorated version of the character variety. 
+First of all, note that the space of flags $\mathcal Fl$ is an algebraic variety and the action of $G$ is algebraic. 
+Moreover, $\DecHom(\Gamma,G)$ is an algebraic variety: indeed, choose a \emph{finite} fundamental set $\{p_1,\ldots,p_r\}$ for the action of $\Gamma$ on $\mathcal P$. 
+Then a decorated representation $(\rho,\phi)$ is uniquely determined by a choice of a flag $F_i$ for each $p_i$ such that $F_i$ is stabilized by $\mathrm{Stab}_\Gamma(p_i)$.
+
+\newcommand{\DecX}{\mathrm{Dec}X}
+
+We now consider the algebraic quotient of $\DecHom(\Gamma,G)$ under this action:
+\begin{defn}
+We define the \emph{decorated character variety} $\DecX(\Gamma,G)$ as the algebraic quotient:
+$$\DecX(\Gamma,G)=\DecHom(\Gamma,G)//G.$$
+\end{defn}

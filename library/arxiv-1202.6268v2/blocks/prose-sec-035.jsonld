@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-035",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-035",
   "kind": "prose",
   "title": "C.1. Symplectic gluing",
   "pageStart": 40,
   "pageEnd": 41,
   "text": "../sections/sec-035-c1-symplectic-gluing.md",
-  "derivedFrom": "library/arxiv-1202.6268v2/manifest",
-  "sourceDocument": "library/arxiv-1202.6268v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.6268v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.6268v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,93 @@
+---
+doc_id: fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh
+doc_title: "Degeneration of hyperbolic structures on the ﬁgure-eight knot complement and points of ﬁnite order on an elliptic curve"
+section_id: sec-008-appendix
+section_title: "Appendix"
+section_number: null
+pages: 10-12
+source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
+source_sha256: bca3996c7a667b18
+toc_source: inferred
+---
+In this appendix, we explicitly state the addition law on the elliptic curve
+E : y2 + xy + y = x3 + x2 (see Knapp [6] or Ueno [11]). The elliptic curve E
+Degeneration of hyperbolic structures and points of ﬁnite order on an elliptic curve
+353
+has a unique point at inﬁnity. Denote this point by O. If we identify (x, y) ∈E
+with the point (1 : x : y) on the corresponding projective variety of E, then
+O = (0 : 0 : 1). Let P = (x1, y1) and Q = (x2, y2) be points on E. The
+following are formulas to compute P + Q:
+• If x1̸ = x2, then
+(x1, y1) + (x2, y2) = (x3, y3),
+where
+x3 =
+
+ y2 −y1
+x2 −x1
+
+2
++
+
+ y2 −y1
+x2 −x1
+
+−1 −x1 −x2,
+y3 = −
+
+ y2 −y1
+x2 −x1
++ 1
+
+x3 −
+
+y1x2 −y2x1
+x2 −x1
+
+−1.
+• If x1 = x2 and y1 + y2 + x2 + 1 = 0, then
+(x1, y1) + (x1, y2) = O.
+• If x1 = x2, y1 = y2 and y1 + y2 + x2 + 1 = 0, then
+2(x1, y1) = O.
+• If x1 = x2, y1 = y2 and y1 + y2 + x2 + 1̸ = 0, then
+2(x1, y1) = (x3, y3),
+where
+x3 =
+
+3x2
+1 + 2x1 −y1
+2y1 + x1 + 1
+
+2
++
+
+3x2
+1 + 2x1 −y1
+2y1 + x1 + 1
+
+−1 −2x1,
+y3 = −
+
+3x2
+1 + 2x1 −y1
+2y1 + x1 + 1
++ 1
+
+x3 −
+
+−x3
+1 −y1
+2y1 + x1 + 1
+
+−1.
+•
+−(x1, y1) = (x1, −x1 −y1 −1).
+The points on E form an abelian group under this addition law. The point O
+is the identity element of the group.
+Department of Mathematics
+Graduate School of Science
+Kyoto University
+Sakyo-ku, Kyoto 606-8502
+Japan
+e-mail: mfujii@math.kyoto-u.ac.jp
+354
+Michihiko Fujii

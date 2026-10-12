@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On the Galois action on motivic fundamental groups of punctured elliptic and rational curves",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
   "contains": [
     "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-000",
     "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-001",
@@ -40,8 +45,10 @@
     "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-031"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
+    "title_source": "slug",
     "source_file": "malkin-2021-galois-action-on-motivic-fundamental-groups-thesis.pdf",
     "source_sha256": "3bc30dc6a4a03a7f8b1674ddd3afa323f3d3ac2122654f91e8ed89dfec08ba2a",
     "pages": 123,

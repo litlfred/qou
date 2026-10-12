@@ -1,0 +1,72 @@
+\section{The Mukai pairing and adjoint kernels}
+\label{sec:adjoint}
+
+In this section we define the Mukai pairing on the Hochschild homology
+of a space and show that the push-forwards of adjoint kernels are
+themselves adjoint linear maps with respect to this pairing.
+
+%\subsection{Definition of the Mukai pairing.}
+First observe from Section~\ref{subsec:adj2functors} that we have two
+isomorphisms:
+\[\tau_R,\tau_L\colon\HH_\blob(X) = \Hom^{-\blob}(\SerK_X^{-1}, \Id_X) \xrightarrow{\sim}\Hom^\blob(\Id_X, \SerK_X),\] 
+given by
+\[\tau_R\left(\pic{vinHH}\right):=\pic{tauRv}\qquad\text{and} \quad
+\tau_L\left(\pic{vprimeinHH}\right):=\pic{tauLvprime}.\]
+Note that this differs slightly from the given definition, but we have used the uniqueness of adjoints.  The above isomorphisms allow the definition of the Mukai pairing as
+follows.
+
+\begin{Definition} %\textbf{(Mukai pairing).}
+  The \emph{Mukai pairing} on the Hochschild homology of a space $X$ is the
+  map
+  \[ \MP{{-}}{{-}} \colon \HH_\blob(X) \otimes \HH_\blob(X) \ra \k, \]
+  defined by
+  \[ \MP{v}{v'}:= \Tr\left(\tau_R(v) \circ \tau_L(v')\right). \]
+  Diagrammatically, this is
+  \[\MP{\pic{vinHH}}{\pic{vprimeinHH}}:=
+  \Tr\left(\pic{tauRv}\pic{tauLvprime}\right).\]
+\end{Definition}
+\medskip
+
+\noindent
+Observe that as $\tau_R$ and $\tau_L$ are both isomorphisms and as the
+Serre pairing is non-degenerate, it follows that the Mukai pairing is
+non-degenerate.
+
+%\subsection{Adjoint kernels and adjoint maps.}
+We can now easily show that adjoint kernels give rise to adjoint maps
+between the corresponding Hoch\-schild homology groups.
+
+\begin{Theorem}[Adjointness]
+\label{thm:adjointness}
+  If $\Phi\colon X\to Y$ and $\Psi\colon Y\to X$ are adjoint kernels,
+  $\Psi\dashv\Phi$, then the corresponding push forwards are adjoint
+  with respect to the Mukai pairing in the sense that for all $w\in
+  \HH_\blob(X)$ and $v\in \HH_\blob(Y)$ we have
+  \[\MP{\Psi_*(v)}{w}=\MP{v}{\Phi_*(w)}.\]
+\end{Theorem}
+
+\begin{Proof}
+  Note first that $\Psi_*=\Phi^*$, by Theorem~\ref{thm:adjadj}.  Thus
+  \begin{align*}
+    \MP{\Psi_*(v)}{w}&=\MP{\Phi^*(v)}{w}
+    =\Tr\left(\pic{tauRPhiv}\pic{tauLw}\right)\\
+    &=\Tr\left(\pic{tauRv}\pic{IdPhiarrow}\pic{tauLw}\right)
+    =\Tr\left(\pic{tauRv}\pic{tauLPhiw}\right)\\
+    &=\MP{v}{\Phi_*(w)}.\qedhere
+  \end{align*}
+\end{Proof}
+
+\begin{Corollary}
+  If the integral kernel $\Phi\colon X \ra Y$ induces an equivalence
+  on derived categories, then $\Phi_*\colon\HH_\blob(X) \ra
+  \HH_\blob(Y)$ is an isometry.
+\end{Corollary}
+
+\begin{Proof}
+  If $\Phi$ induces an equivalence, then it has a left adjoint
+  $\Psi\colon Y\to X$ which induces the inverse, so
+  $\Psi\circ\Phi\cong \Id_X$, and we know that $(\Id_X)_*$
+  is the identity map.  Thus
+  \[ \MP{\Phi_* v}{\Phi_* w} = \MP{\Psi_* \Phi_* v}{w} =
+  \MP{(\Psi\circ \Phi)_* v}{w}= \MP{v}{w}.\qedhere \]
+\end{Proof}

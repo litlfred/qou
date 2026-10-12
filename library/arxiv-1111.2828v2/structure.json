@@ -6,7 +6,11 @@
   "sha256": "90e2f5a9b978d4034ab7f61a8a355de3a3ff724dd127c3ff4f5fa4e15e7b490a",
   "bytes": 614167,
   "pages": 44,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -569,6 +573,229 @@
   "likely_scanned": false,
   "toc_entries": 37,
   "sections": 27,
-  "chars_total": 111338
+  "chars_total": 111338,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "ComplexVolumesPaper.tex",
+   "tex_sections": 36,
+   "overlaid": 25,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.819,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-11-statement-of-our-results",
+     "title": "Statement of our results",
+     "prose_ratio": 0.898,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-13-overview-of-the-paper",
+     "title": "Overview of the paper",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-14-acknowledgment",
+     "title": "Acknowledgment",
+     "prose_ratio": 0.829,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-2-the-cheeger-chern-simons-classes",
+     "title": "The Cheeger-Chern-Simons classes",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-21-simply-connected-simple-lie-groups",
+     "title": "Simply connected, simple Lie groups",
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-22-complex-groups-and-volume",
+     "title": "Complex groups and volume",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-23-the-universal-classes-and-group-cohomology",
+     "title": "The universal classes and group cohomology",
+     "prose_ratio": 0.854,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-24-compact-manifolds-with-boundary",
+     "title": "Compact manifolds with boundary",
+     "prose_ratio": 0.784,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-25-central-elements-of-order-2",
+     "title": "Central elements of order 2",
+     "prose_ratio": 0.885,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-3-the-extended-bloch-group",
+     "title": "The extended Bloch group",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.86,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-31-the-regulator",
+     "title": "The regulator",
+     "prose_ratio": 0.86,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-4-decorations-of-representations",
+     "title": "Decorations of representations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.873,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-41-the-fundamental-class-of-a-decorated-represen",
+     "title": "The fundamental class of a decorated representation",
+     "prose_ratio": 0.887,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-5-generic-decorations-and-ptolemy-coordinates",
+     "title": "Generic decorations and Ptolemy coordinates",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-51-the-geometry-of-the-ptolemy-coordinates",
+     "title": "The geometry of the Ptolemy coordinates",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-6-a-chain-complex-of-ptolemy-assignments",
+     "title": "A chain complex of Ptolemy assignments",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-61-the-map-to-the-extended-bloch-group",
+     "title": "The map to the extended Bloch group",
+     "prose_ratio": 0.878,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-62-stabilization",
+     "title": "Stabilization",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-7-independence-of-the-decoration",
+     "title": "Independence of the decoration",
+     "prose_ratio": 0.734,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-9-recovering-a-representation-from-its-ptolemy-c",
+     "title": "Recovering a representation from its Ptolemy coordinates",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-92-proof-of-theorem-13-and-theorem-18",
+     "title": "Proof of Theorem 1.3 and Theorem 1.8",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-10-examples",
+     "title": "Examples",
+     "prose_ratio": 0.833,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-111-essential-edges",
+     "title": "Essential edges",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-12-gluing-equations-and-ptolemy-assignments",
+     "title": "Gluing equations and Ptolemy assignments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-13-other-fields",
+     "title": "Other fields",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2501.00914v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "L-spaces and knot traces",
+  "contains": [
+    "library/arxiv-2501.00914v2/sections/sec-000",
+    "library/arxiv-2501.00914v2/sections/sec-001",
+    "library/arxiv-2501.00914v2/sections/sec-002",
+    "library/arxiv-2501.00914v2/sections/sec-003",
+    "library/arxiv-2501.00914v2/sections/sec-004",
+    "library/arxiv-2501.00914v2/sections/sec-005",
+    "library/arxiv-2501.00914v2/sections/sec-006",
+    "library/arxiv-2501.00914v2/sections/sec-007",
+    "library/arxiv-2501.00914v2/sections/sec-008",
+    "library/arxiv-2501.00914v2/sections/sec-009",
+    "library/arxiv-2501.00914v2/sections/sec-010",
+    "library/arxiv-2501.00914v2/sections/sec-011",
+    "library/arxiv-2501.00914v2/sections/sec-012",
+    "library/arxiv-2501.00914v2/sections/sec-013",
+    "library/arxiv-2501.00914v2/sections/sec-014",
+    "library/arxiv-2501.00914v2/sections/sec-015",
+    "library/arxiv-2501.00914v2/sections/sec-016",
+    "library/arxiv-2501.00914v2/sections/sec-017",
+    "library/arxiv-2501.00914v2/sections/sec-018",
+    "library/arxiv-2501.00914v2/sections/sec-019",
+    "library/arxiv-2501.00914v2/sections/sec-020"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2501.00914&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2501.00914v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2501.00914v2.pdf",
+    "source_sha256": "d94bd6edf8544d4a019931edf61d67240f30e1d7db0b299daf55003255f1416c",
+    "pages": 37,
+    "arxiv": {
+      "id": "2501.00914",
+      "version": "2",
+      "primary_class": "math.GT",
+      "stamp_date": "13 Mar 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

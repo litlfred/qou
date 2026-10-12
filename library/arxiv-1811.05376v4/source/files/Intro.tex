@@ -1,0 +1,198 @@
+\title{Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres}% and Laplace Integrals}%: Seifert Fibered Manifolds and Surgeries on The Figure Eight Knot
+
+
+\author{Jørgen Ellegaard Andersen and William Elbæk Mistegård   %\footnote{Work supported in part by the center of excellence grant "Center for Quantum Geometry of Moduli Spaces" from the Danish National Research Foundation (DNRF95) and by the ERC-Synergy grant "ReNewQuantum". This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 754411}
+}
+
+
+%\thanks{Work supported in part by the center of excellence grant Center for Quantum Geometry of Moduli Spaces from the Danish National Research Foundation (DNRF95)}
+
+
+\maketitle 
+
+\markboth{ Jørgen Ellegaard Andersen and William Elbæk Petersen}{Resurgence Analysis of Quantum Invariants}% and Laplace Integrals} %$ $ \bigskip
+
+%\bigskip
+%
+%   %Title
+%   \centerline{\Large{Asymptotic expansion of the \newline Witten-Reshetikhin-Turaev Invariants of Mapping Tori I}} \vskip 0.5cm
+%      
+%
+%      %Author
+%      \bigskip\bigskip\centerline{\large by  Jørgen Ellegaard Andersen and William Elbæk Petersen
+%      
+
+
+
+
+\begin{abstract}
+	For a Seifert fibered homology sphere $X$ we show that the $q$-series invariant  $\hat{\z}_0(X;q)$ introduced by Gukov-Pei-Putrov-Vafa, is a  resummation of the Ohtsuki series $\z_0(X)$. We show that for every even $k \in \N$ there exists a full asymptotic expansion of $ \hat{\z}_0(X;q) $ for $q$ tending to $e^{2\pi i/k}$, and in particular that the limit $\hat{\z}_0(X;e^{2\pi i/k})$ exists and is equal to the  WRT  quantum invariant $\tau_k(X)$. We show that the poles of the Borel transform of $\z_0(X)$ coincide with the classical complex Chern-Simons values, which we further show classifies the corresponding  components of the moduli space of flat $\rm{SL}(2,\mathbb{C})$-connections. 
+	\end{abstract}
+
+%%%%   Leave the following commands
+\pagestyle{myheadings}
+
+\date{}
+
+
+
+\maketitle
+
+\section*{Introduction} \label{introduction}
+
+Let $X$ be a closed and oriented $3$-manifold and consider the level $k$ Witten-Reshetikhin-Turaev quantum invariant \cite{ReshetikhinTuraev90,ReshetikhinTuraev91}  \begin{equation} \label{eq:WRTinvariant} \tau_k(X)  \in \C, k \in \mathbb{N}.\end{equation} 
+In \cite{GukovPeiPutrovVada18} Gukov, Pei, Putrov and Vafa proposed the existence of an invariant of $(X,a)$, $a \in \Spin(X),$  which is an integer power series  convergent inside the unit disc \begin{equation} \label{eq:GPPVinvariant} \hat{\z}_a(X;q) \in 2^{-c} q^{\Delta} \Z[[q]]. \end{equation}   In \cite{GukovMarinoPutrov}, $\hat{\z}_a(X;q)$ was conceived as a resummation of the asymptotic expansion of $\tau_k(X)$. The radial limit conjecture \cite{ChengChunFerrariGukovHarrison18, GukovCiprian19,GukovPeiPutrovVada18} postulates that the following limits exists $$ \hat{\z}_a(X,e^{2\pi i/k})=\lim_{q \uparrow e^{2\pi i/k}} \hat{\z}_a(X,q)$$
+ and that these limits recovers $\tau_k(X)$  through an $S$-transform. 
+
+
+We now summarize the main results of this paper. Let $p_1,...,p_n \in \N$  be pairwise coprime integers, and let for the rest of this paper $X$ denote the oriented Seifert fibered homology sphere with $n\geq 3$ exceptional fibers
+ \begin{equation} X= \Sigma(p_1,...,p_n).
+ \end{equation} Let $\mathcal{M}(G)=\mathcal{M}(X,G)$ be the moduli space of flat $G$-connections, let $\s$ be the Chern-Simons action and let  $\z_0= \z_0(X)$ be the Ohtsuki series. Denote the set of classical complex Chern-Simons values by
+$$\CS_{\C}(X)=\s(\mathcal{M}(\SL(2,\C))).$$ 
+  \begin{itemize} 
+  	  \item Theorem \ref{thm:cs} computes $\CS_{\C}(X)$, establishes that $\s$ is injective on $\pi_0(\mathcal{M}(\SL(2,\C)))$ and  that
+  	$$ \pi_0(\mathcal{M}(\SL(2,\R))\sqcup_{\mathcal{M}(\text{U}(1))} \mathcal{M}(\SU(2))) \cong \pi_0(\mathcal{M}(\SL(2,\C))).$$
+  \item Theorem \ref{2.1} establishes that $\CS_{\C}(X)$  coincide with the poles of the Borel transform of  $\z_0(X)$. 
+  \item Theorem \ref{thm:zedhat} establishes that $\hat{\z}_0(X;q)$ is a Borel-Laplace resummation of $\z_0(X)$.
+  \item  Theorem \ref{thm:radiallimit} establishes that $\hat{\z}_0(X;q)$ admits a full asymptotic expansion for $q \rightarrow e^{2\pi i/k}$, and that the radial limit conjecture is true for $X$.
+
+ % \item Theorem \ref{ThmBrieskornSphere} establishes that$$\s: \pi_0(\mathcal{M}(X,\SL(2,\mathbb{C}))) \rightarrow \mathbb{R}/\mathbb{Z}$$ is injective and computes $\CS_{\C}(X)$.
+  
+  
+  \end{itemize}
+We now present these results in full detail.
+
+
+\subsection*{Complex Chern-Simons Theory on $X$}
+
+
+For a rational number $x \in \Q$ let $[x]= x \mod \Z.$ We prove
+
+
+\begin{theorem} \label{thm:cs}
+	The Chern-Simons action $\s$  is injective on $\pi_0(\mathcal{M}(\SL(2,\C)))$ and we have
+	\begin{equation} \CS_{\C}(X)= \{[0]\} \sqcup\left\{ \left[ \frac{-m^2}{4P}\right]  : \text{  $m \in \Z$ is divisible by at most $n-3$ of the $p_j$'s}\right\}.
+	\end{equation}
+	The natural inclusion $ \mathcal{M}(\SL(2,\R))\sqcup_{\mathcal{M}(\text{U}(1))} \mathcal{M}(\SU(2)) \rightarrow  \mathcal{M}(\SL(2,\C))$
+	induces an isomorphism on the level of $\pi_0$
+	$$ \pi_0(\mathcal{M}(\SL(2,\R))\sqcup_{\mathcal{M}(\text{U}(1))} \mathcal{M}(\SU(2))) \cong \pi_0(\mathcal{M}(\SL(2,\C))).$$
+	\end{theorem} 
+
+\subsection*{The Borel transform and Complex Chern-Simons} Set $P=\prod_{j=1}^n p_j.$ For $k\in \N^*$ set $q_k=\exp(2\pi i/k)$ and let $\varsigma \in \C^*$ and $ \phi \in \Q$ be the constants introduced below in \eqref{eq:constants}. We consider the normalized quantum invariant
+\begin{equation}
+\label{def:normquant}
+\widetilde{\z} _k(X)= \varsigma q_k^{\frac{\phi}{4}}  \frac{\tau_k(X)}{\tau_k(\Sph^2\times \Sph^1)} .
+\end{equation} 
+Let $\CS^*(X)=\CS(X)\setminus \{[0]\}$. Introduce the rational function
+\begin{equation} \label{eq:G} G(z)=\prod_{j=1}^n\left(z^{\frac{P}{p_j}}-z^{-\frac{P}{p_j}}\right)\left(z^P-z^{-P}\right)^{2-n}.
+\end{equation} 
+In Theorem \ref{2.1} we use the notion of a resurgent function and the Borel transform, which are recalled below in Definitions \ref{def:res} and \ref{def:Borel} respectively. Let $\kappa=\sqrt{2\pi i P}.$ Building on the work of Lawrence and Rozansky\footnote{A comparison is given at the end of the introduction.}  \cite{LawrenceRozansky} we prove the following %theorem.
+\begin{theorem} \label{2.1}
+	There are uniquely determined polynomials $\z_{\theta} = \z_{\theta}(X)$ for $\theta \in\CS^*_{\C}(X)\}$ of degree at most $n-3$ and a formal power series $\z_{0}=\z_{0}(X) \in x^{-\frac{1}{2}}\C[[x^{-1}]]$ giving the full asymptotic expansion in the Poincare sense
+	\begin{equation} \label{EXPANSIOON}
+	\widetilde{\z} _k(X) \sim_{k \rightarrow \infty} \sum_{\theta \in \CS_{\C}(X)} e^{2\pi ik \theta}\z_{\theta}(k).  
+	\end{equation}
+	The series $\z_0$ is a normalization of the Ohtsuki series of $X$ (see Equation \eqref{eq:Ohtsuki}) whose Borel transform 
+	$\mathcal{B}(\z_{0})$ is the resurgent function 
+	\begin{equation} \label{ComputingBorel}
+	\mathcal{B}(\z_{0})(\zeta)  = \frac{\kappa}{\pi i \sqrt{\zeta}} G\left( \exp\left(\frac{\kappa\sqrt{\zeta}}{P} \right)\right)= \frac{\kappa i}{4\pi } \frac{\prod_{j=1}^n \sinh\left(\frac{\kappa\sqrt{\zeta}}{p_j}\right)}{ \sqrt{\zeta} \left(\sinh\left(\kappa\sqrt{\zeta}\right)\right)^{n-2}},
+	\end{equation} and if $\Omega$ is the set of poles of $\mathcal{B}(\z_{0})$, then
+	\begin{equation} \label{Inclu}
+\Omega =-2\pi i \CS_{\C}^*(X)+ 2\pi i \Z.
+	\end{equation} 
+
+\end{theorem}   
+
+
+
+\begin{remark} In accordance with the asymptotic expansion conjecture (formulated by the first author in \cite{Andersen12Crelle}, and proven in our joint work \cite{AP2} for generic mapping tori and by the first author et al. in \cite{AJHM} for finite order mapping tori with links s and further proven by Marche and Charles for certain surgeries on the figure 8 knot in \cite{CharlesMarchII}), we expect that the sum in (\ref{EXPANSIOON}) should only range over the Chern-Simons values of flat $\SU(2)$-connections 
+$$ \CS(X) = \s(\mathcal{M}(X,\SU(2))),$$
+e.g. that the terms which does not correspond to such values in the sum in (\ref{EXPANSIOON}) vanishes.  
+This is known to be true for $n=3$  \cite{Hikami05b} and in some cases for $n=4$ \cite{Hikami05}.
+However we see from (\ref{Inclu}) that the quantum invariants via resurgence determines all the Chern-Simons values of flat $\SL(2,\C)$-connections.
+\end{remark}
+
+
+\subsection*{A resurgence formula for the GPPV invariant $\mathbf{\hat{\z}}$ }
+
+Let $\Delta \in \mathbb{Q}$ be given by Equation \eqref{def:delta} and consider the GPPV invariant
+\begin{equation}
+\hat{\z}_0(X;q) \in q^{-\Delta} \Z[[q]].
+\end{equation} We recall the definition of $\hat{\z}_0(X;q)$ from \cite{GukovPeiPutrovVada18,GukovCiprian19} and recall that it is convergent for $\lvert q \rvert <1$. 
+
+Set $m_0=P(n-2-\sum_{j=1}^np_j^{-1} ) \in \Z.$ There exists a sequence of integers $\{\chi_m\}_{m=m_0}^{\infty}$ such that for all  $z\in \C$ with $\lvert z \rvert <1$ 
+\begin{equation} \label{eq:Gseries}
+G(z)=(-1)^n\sum_{m=m_0}^{\infty} \chi_m z^m \in \Z[[z]].
+\end{equation} Let $\mathfrak{h}$ denote the upper half-plane. Let $\tau \in \mathfrak{h}$ and set $q=\exp(2\pi i \tau)$ and  $\lambda=(-1)^n \frac{i}{2}(2P)^{-1/2}.$ Let $\varGamma=\varGamma_{+}+\varGamma_{-}$ be the oriented  unbounded contour depicted in Figure \ref{fig:ContourGamma}. We show that the GPPV invariant $\hat{\z}_0(X;q)$ is a resummation (see Appendix \ref{sec:Borel}) of the Ohtsuki series $\z_0(X)$.
+\begin{theorem} \label{thm:zedhat}  %We have that
+	\begin{equation} \label{eq:zedhat}
+	q^{\Delta} \hat{\z}_0(X;q)= \frac{\lambda}{\sqrt{\tau}} \int_{\varGamma} \exp(-\zeta / \tau )  \mathcal{B}(\z_0(X)) (\zeta) \dv \zeta =  \sum_{m=m_0}^{\infty} \chi_m q^{\frac{m^2}{4P}}.
+	\end{equation}
+\end{theorem}
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.9]{THECONTOUR}
+	\caption{The integration contour $\varGamma=\varGamma_++\varGamma_{-}.$}
+	\label{fig:ContourGamma}
+\end{figure}  
+\subsection*{The asymptotic expansion of the GPPV invariant $\hat{\z}$}
+We now turn to the asymptotic expansion of $\hat{\z}_0(X)$ and the radial limit conjecture \cite{ChengChunFerrariGukovHarrison18, GukovCiprian19,GukovPeiPutrovVada18}, which is recalled  in Conjecture \ref{Conj:radiallimt}. Assume that $P$ is even. Set $\delta=\Delta-\phi/4$ and $\mu=(2\lambda \varsigma)^{-1}$. For a positive parameter $t$ set
+\begin{equation}
+q_{k,t}= \exp\left( \frac{2\pi i  }{k- i\frac{2Pt}{\pi }}\right) \in \mathfrak{h}.
+\end{equation} 
+
+\begin{theorem} \label{thm:radiallimit} For each $\theta \in \CS^*_{\C}(X)$  there exists a unique polynomial (defined in \eqref{def:Rtheta}) in $k$ of degree at most $n-3$ with coefficients in formal power series without constant terms
+	\begin{equation}
+	\check{\z}_{\theta}(k,t) \in t\cdot \Q[\pi i, k][[t]]
+	\end{equation} giving a full Poincare asymptotic expansion for small $t$ and fixed even $k$
+	\begin{equation} \label{eq:ZedhatExpansion}
+	(\sqrt{k}\lambda)^{-1} q_{k,t}^{\Delta} \hat{\z}_0(X;q_{k,t}) \ \underset{t \rightarrow 0}{\sim} \ \tilde{\z}_k(X)+ \sum_{\theta \in \CS^*_{\C}(X)} e^{2\pi i k\theta } \check{\z}_{\theta}(k,t).
+	\end{equation} In particular, for every even $k$ we have 
+	\begin{equation} \label{eq:radiallimit}
+	\frac{\mu }{\sqrt{k}}\lim_{q \uparrow q_{k,0}} 	q^{\delta} \hat{\z}_0(X;q) = \frac{\tau_k(X)}{\tau_k(\Sph^2 \times \Sph^1)}.
+	\end{equation}
+	 Thus the radial limit conjecture (Conjecture \ref{Conj:radiallimt}) holds for $X$.
+	
+\end{theorem}
+
+
+ 
+  \subsubsection*{Comparisons with the literature}
+ 
+
+ %We now give a brief comparison with the relevant works from the literature.
+ 
+ 
+ The existence of an asymptotic expansion
+ \begin{equation}  \label{eq:LawRon} \widetilde{\z} _k(X) \sim_{k \rightarrow \infty} \sum_{ \theta \in R(Y) } e^{2\pi ik \theta} \z_{\theta}(k) \end{equation} where $R(Y) \subset \Q / \Z $
+ is a finite set was proven in \cite{LawrenceRozansky}. In this work, it was also shown that $\z_0$ is a normalization of the Ohtsuki series. Our contribution in regard to \eqref{eq:LawRon} is to compute $\CS_{\C}(X)$ and to show $R(X) \subset \CS_{\C}(X).$ 
+ In \cite{LawrenceRozansky} the authors do not adress the Borel transform of $\z_0$.
+ 
+ 
+ The $q$-series from Theorem \ref{thm:zedhat}
+ \begin{equation} \label{eq:q-series}
+ \Psi(q)= \sum_{m=m_0}^{\infty} \chi_m q^{\frac{m^2}{4P}} \in \Z[[q^\frac{1}{4P}]]
+ \end{equation}
+ was considered in the study of  $\tau_k(\Sigma(p_1,p_2,p_3))$ by Lawrence and Zagier \cite{LawrenceZagier}, and further explored by Hikami  \cite{Hikami05}. For $n\geq 4$  Hikami in \cite{Hikami05b} considers a differently defined $q$-series. Our Theorem \ref{thm:radiallimit} generalize the result from \cite{LawrenceZagier}.
+ 
+ The work \cite{GukovMarinoPutrov} of Gukov, Marino and Putrov is one of the main inspirations for this paper. In \cite{GukovMarinoPutrov} the authors analyse $\tau_k(X)$ for some examples with $n=3.$ The identity \eqref{Inclu} was verified for these examples. For $\tau \in \mathfrak{h}$ set $h=2\pi i\tau$ so that $q=\exp(h)$. Consider again the countor integral \begin{equation} \label{eq:contourintegral}
+ \I(h)= \frac{\lambda }{ \sqrt{ \tau}} \int_{\varGamma}   \exp\left(- \frac{2\pi i \xi}{h} \right) \mathcal{B}(\z_0)(\xi) \ \dv \xi .
+ \end{equation}  In \cite{GukovMarinoPutrov} identities of the form 
+ \begin{equation} \label{eq:resformulaae} \I(h)=\Psi(q)
+ \end{equation} where discovered. In a sense, the series $\Psi(q)$ was taken as a definition for $\hat{\z}_0(q)$ for $\Sigma(p_1,p_2,p_3)$, and the GPPV-formula (Definition \ref{df:GPPV}) was only later introduced in \cite{GukovPeiPutrovVada18}. 
+ 
+ In the work \cite{Hiroyuki} of Fuji, Iwaki, Murakami and Terashima the $q$-series $\Psi(q)$ is also considered for general $n\geq 3$, and they prove a radial limit theorem, which is analogous to \eqref{eq:radiallimit}. The also prove an identity of the form \eqref{eq:resformulaae}. In \cite{Hiroyuki} they do not however work with the definition of the GPPV invariant $\hat{\z}_{0}(q)$, although they conjecture that this is equal to $\Psi(q)$. They also consider the  case of the WRT invariant of a knot inside $X$ and prove a difference equation for $\Psi(q)$.
+ 
+ Our Theorem \ref{thm:zedhat} shows 
+ $$q^{\Delta}\hat{\z}_0(q)=\I(h)=\Psi(q)$$ for all Seifert fibered integral homology $3$-spheres $X$ with $n\geq 3$ singular fibers, where $\hat{\z}_0(q)$ is independently defined via the GPPV-formula. We remark that those of our results that overlap with \cite{Hiroyuki} had been presented prior to their submission by the first name author in the online seminar \cite{AndersenRes2020} and by the second author at a seminar \cite{MisteRes2020} at IST, Austria. The $q$-series $\Psi(q)$ was also conjectured to be a normalization of $\hat{\z}_0(q)$ in the second author's thesis \cite{williamelbaekmistegardQuantumInvariantsChernSimons2019} . We also remark that our proof of the radial limit formula \eqref{eq:radiallimit} differs from theirs; our stronger Theorem \ref{thm:radiallimit} is derived using the resurgence formula for $\hat{\z}_0(q)$ from Theorem \ref{thm:zedhat}, whilst their proof of their radial limit theorem uses Gaussian reciprocity directly on $\Psi(q)$. We warmly thank them for cordial coordination.
+ 
+
+ 
+ \subsubsection*{Acknowledgements} We warmly thank S. Gukov for  valuable discussions on the invariant $\hat{\z}_a(q).$ 
+ 
+  
+ 
+ \subsection*{Organization}
+ 
+ In Section \ref{SeifertSection} we prove Theorem \ref{thm:cs} in several steps. Theorem \ref{thm:decompSL2C} gives a decomposition of the moduli space, Corollary \ref{cor:HUHU} computes the Chern-Simons invariants and Theorem \ref{ThmBrieskornSphere} proves that components of this moduli space are classified by their Chern-Simons value. In Section \ref{sec:BOREL} we prove Theorem \ref{2.1}. Corollary \ref{2.2} gives a resurgence formula for $\tilde{\z}_k(X)$, and Proposition \ref{thm:ExactGeneratingFunction} gives an exact formula for its generating function, verifying a special case of a conjecture of Garoufalidis \cite{Garoufalidis08}. In Section \ref{sec:Zhat} we prove Theorem \ref{thm:zedhat} and  in Section \ref{sec:radiallimit} we prove Theorem \ref{thm:radiallimit}. In Appendix \ref{sec:Borel} we present the definition of a resurgent function and the definition of the Borel transform, as well as some generalities on the relation between the Borel transform and the Laplace transform used in this paper. 

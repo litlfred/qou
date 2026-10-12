@@ -1,37 +1,28 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/eps-hep2019-615/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "PoS(EPS-HEP2019)615",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/eps-hep2019-615/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "eps-hep2019-615",
   "contains": [
-    "library/eps-hep2019-615/sections/sec-000",
-    "library/eps-hep2019-615/sections/sec-001",
-    "library/eps-hep2019-615/sections/sec-002",
-    "library/eps-hep2019-615/sections/sec-003",
-    "library/eps-hep2019-615/sections/sec-004",
-    "library/eps-hep2019-615/sections/sec-005",
-    "library/eps-hep2019-615/sections/sec-006",
-    "library/eps-hep2019-615/sections/sec-007",
-    "library/eps-hep2019-615/sections/sec-008",
-    "library/eps-hep2019-615/sections/sec-009",
-    "library/eps-hep2019-615/sections/sec-010",
-    "library/eps-hep2019-615/sections/sec-011",
-    "library/eps-hep2019-615/sections/sec-012",
-    "library/eps-hep2019-615/sections/sec-013",
-    "library/eps-hep2019-615/sections/sec-014",
-    "library/eps-hep2019-615/sections/sec-015",
-    "library/eps-hep2019-615/sections/sec-016",
-    "library/eps-hep2019-615/sections/sec-017",
-    "library/eps-hep2019-615/sections/sec-018",
-    "library/eps-hep2019-615/sections/sec-019",
-    "library/eps-hep2019-615/sections/sec-020",
-    "library/eps-hep2019-615/sections/sec-021"
+    "library/eps-hep2019-615/sections/page-001",
+    "library/eps-hep2019-615/sections/page-002",
+    "library/eps-hep2019-615/sections/page-003",
+    "library/eps-hep2019-615/sections/page-004",
+    "library/eps-hep2019-615/sections/page-005",
+    "library/eps-hep2019-615/sections/page-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "eps-hep2019-615",
+    "title_source": "slug",
     "source_file": "EPS-HEP2019_615.pdf",
     "source_sha256": "b5fb4982d65e9fcd12e812ba1e056d177dac45b3e43a8c5cfad3e9173fcac399",
     "pages": 6,

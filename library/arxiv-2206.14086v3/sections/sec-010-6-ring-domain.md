@@ -8,80 +8,43 @@ pages: 8-9
 source_pdf: 2206.14086v3.pdf
 source_sha256: b6c27f820f963079
 doc_brief: "KPZ limit theorems Jinho Baik∗ — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
+text_source: latex
+latex_prose_ratio: 0.951
+latex_coverage_ratio: 0.922
 ---
-Consider the TASEP on the integer ring ZL = Z/LZ = {0, 1, · · · , L −1} where we identify sites L and 0.
-An equivalent model is the TASEP on Z that is spatially periodic, which we may call the periodic TASEP.
-We call L the size of the ring or the period of the periodic TASEP.
-The number N of particles in the TASEP on the ring is preserved. We assume the step initial condition
-shown in Figure 8. For the convenience of presentation, we assume that L is an even integer and N = L/2 so
-that the particle density ρ = N/L = 1/2. The initial height function of the periodic TASEP is the bottom
-curve in Figure 9. The other curves are the hydrodynamic limits, as time t and period L tend to inﬁnity
-proportionally when t/L = 0.5n for n = 1, 2, · · · , 6.
-Consider two cases, one that t →∞with L ﬁxed and the other that L →∞with t ﬁxed. If t →∞with L
-ﬁxed, the periodic corner growth model becomes essentially a one-dimensional growth model, and we expect
-that the height scales as t1/2 and converges to the Gaussian distribution. On the other hand, if L →∞with
-t ﬁxed, then the periodic TASEP becomes the usual TASEP on Z. Thus, the height scales as t1/3 if we let
-t →∞after taking L →∞. An interesting intermediate regime is when L, t →∞simultaneously such that
-t = O(L3/2).
-(6.1)
-Since the spatial scale for KPZ limit theorems on inﬁnite spaces is t2/3, we expect that the height functions
-at all positions on the ring of size L are correlated non-trivially. If (6.1) holds, we say that we are in the
-relaxation time regime.
-There were some results on transition probabilities and the spectral gap of the generator in the relaxation
-time regime, such as [48]. However, KPZ limit theorems were obtained only recently. The paper [71], which
-is a non-completely rigorous physics paper, and [9] obtained a one-point KPZ limit theorem almost at the
-same time independently. This result was further extended to 2d multi-point distributions in [10,11].
-Theorem 6.1 ( [10]). Consider the TASEP on a ring of size L with the step initial condition and extend it
-to the periodic TASEP. Assume that L is even and ρ = N/L = 1/2 for the convenience of presentation. Set
-T = L3/2.
-8
-For i = 1, · · · , m, let (γi, τi, hi) ∈R × R+ × R and assume that τ1 < · · · < τm. Then,
-lim
-T →∞P
- m
-\
-i=1
-h(γiT 2/3, 2τiT) −τiT
-−T 1/3
-≤hi
-	
-= F pKPZ
-m
-(h; γ, τ)
-for an m-point distribution function F pKPZ
-m
-described in the next section.
-Like the inﬁnite space case, we expect that the height ﬁeld of the periodic models in the relaxation time
-regime converges to a universal ﬁeld, which we may call the periodic KPZ ﬁxed point. The function F pKPZ
-m
-should be the m-point distribution of this conjectured periodic KPZ ﬁxed point with the (periodic) narrow
-wedge initial condition. It is naturally periodic with respect to γi 7→γi + 1. However, unlike the KPZ ﬁxed
-point, F pKPZ
-m
-is not invariant under the rescaling (3.1). Indeed, we conjecture that F pKPZ
-m
-interpolates the
-KPZ ﬁxed point and one-dimensional Brownian motion. Concretely, we expect that
-lim
-ϵ→0 F pKPZ
-m
-(hϵ; γϵ, τ ϵ) = Fm(h; γ, τ)
-where (hϵ
-i, γϵ
-i , τ ϵ
-i ) = ((τiϵ)1/3hi, (τiϵ)2/3γi, τiϵ)
-and Fm is the m-point distribution of the KPZ ﬁxed point, and that
-lim
-s→∞F pKPZ
-m
-(hs; γ, τ s) = Gm(h; τ)
-where (hs
-i, τ s) = (−sτi + s1/2π1/4
-√
-2
-hi, sτi)
-and Gm is the m-point distribution of a Brownian motion at times τ1, · · · , τm. These conjectures were proved
-for m = 1 in [12], assuming γ1 = 0 for the ϵ →0 case.
-Theorem 6.1 is also proved for the discrete-time TASEP on a ring [61]. However, extending the result to
-other integrable models is at the moment a challenge.
-7
+[]{#sec:ring label="sec:ring"}
+
+Consider the TASEP on the integer ring $\mathbb{Z}_L=\mathbb{Z}/L\mathbb{Z}=\{0, 1, \cdots, L-1\}$ where we identify sites $L$ and $0$. An equivalent model is the TASEP on $\mathbb{Z}$ that is spatially periodic, which we may call the periodic TASEP.
+
+We call $L$ the size of the ring or the period of the periodic TASEP.
+
+<figure id="fig:Ringmaro">
+
+<figcaption>Hydrodynamic limits of periodic height function when <span class="math inline"><em>t</em> = <em>O</em>(<em>t</em>)</span></figcaption>
+</figure>
+
+The number $N$ of particles in the TASEP on the ring is preserved.
+
+We assume the step initial condition shown in Figure [\[fig:Ring\]](#fig:Ring){reference-type="ref" reference="fig:Ring"}. For the convenience of presentation, we assume that $L$ is an even integer and $N=L/2$ so that the particle density $\rho=N/L=1/2$. The initial height function of the periodic TASEP is the bottom curve in Figure [1](#fig:Ringmaro){reference-type="ref" reference="fig:Ringmaro"}. The other curves are the hydrodynamic limits, as time $t$ and period $L$ tend to infinity proportionally when $t/L=0.5n$ for $n=1,2, \cdots, 6$.
+
+Consider two cases, one that $t\to\infty$ with $L$ fixed and the other that $L\to\infty$ with $t$ fixed. If $t\to\infty$ with $L$ fixed, the periodic corner growth model becomes essentially a one-dimensional growth model, and we expect that the height scales as $t^{1/2}$ and converges to the Gaussian distribution. On the other hand, if $L\to \infty$ with $t$ fixed, then the periodic TASEP becomes the usual TASEP on $\mathbb{Z}$. Thus, the height scales as $t^{1/3}$ if we let $t\to\infty$ after taking $L\to \infty$. An interesting intermediate regime is when $L, t\to\infty$ simultaneously such that $$\label{eq:relax}
+    t=O(L^{3/2}).$$ Since the spatial scale for KPZ limit theorems on infinite spaces is $t^{2/3}$, we expect that the height functions at all positions on the ring of size $L$ are correlated non-trivially.
+
+If [\[eq:relax\]](#eq:relax){reference-type="eqref" reference="eq:relax"} holds, we say that we are in the relaxation time regime.
+
+There were some results on transition probabilities and the spectral gap of the generator in the relaxation time regime, such as [@Gwa-SpohnBethe]. However, KPZ limit theorems were obtained only recently. The paper [@Prolhac16], which is a non-completely rigorous physics paper, and [@Baik-Liu18] obtained a one-point KPZ limit theorem almost at the same time independently. This result was further extended to 2d multi-point distributions in [@Baik-Liu19; @Baik-Liu21].
+
+::: theorem
+[]{#thm:PTASEP label="thm:PTASEP"} Consider the TASEP on a ring of size $L$ with the step initial condition and extend it to the periodic TASEP.
+
+Assume that $L$ is even and $\rho=N/L= 1/2$ for the convenience of presentation. Set $$T=L^{3/2}.$$ For $i=1, \cdots, m$, let
+
+$(\gamma_i,  \tau_i, \mathsf{h}_i) \in \mathbb{R}\times  \mathbb{R}_+\times \mathbb{R}$ and assume that $\tau_1<\cdots< \tau_m$. Then, $$\lim_{T\to \infty} \mathrm{P}\Big( \bigcap_{i=1}^m  \big\{  \frac{\mathbf{h}(\gamma_i T^{2/3}, 2 \tau_i T) - \tau_i T}{-T^{1/3}} \le \mathsf{h}_i   \big\} \Big) 
+    =   F^{\mathrm{pKPZ}}_m(\mathsf{h}; \gamma, \tau)$$ for an $m$-point distribution function $F^{\mathrm{pKPZ}}_m$ described in the next section.
+:::
+
+Like the infinite space case, we expect that the height field of the periodic models in the relaxation time regime converges to a universal field, which we may call the periodic KPZ fixed point. The function $F^{\mathrm{pKPZ}}_m$ should be the $m$-point distribution of this conjectured periodic KPZ fixed point with the (periodic) narrow wedge initial condition. It is naturally periodic with respect to $\gamma_i\mapsto \gamma_i+1$. However, unlike the KPZ fixed point, $F^{\mathrm{pKPZ}}_m$ is not invariant under the rescaling [\[eq:rescale\]](#eq:rescale){reference-type="eqref" reference="eq:rescale"}. Indeed, we conjecture that $F^{\mathrm{pKPZ}}_m$ interpolates the KPZ fixed point and one-dimensional Brownian motion. Concretely, we expect that $$\lim_{\epsilon\to 0} F^{\mathrm{pKPZ}}_m(\mathsf{h}^\epsilon; \gamma^\epsilon, \tau^\epsilon) =  F_m(\mathsf{h}; \gamma, \tau) 
+     \qquad \text{where $(\mathsf{h}_i^\epsilon, \gamma_i^\epsilon, \tau_i^\epsilon) = ( (\tau_i \epsilon)^{1/3}\mathsf{h}_i, (\tau_i \epsilon)^{2/3} \gamma_i,  \tau_i \epsilon)$}$$ and $F_m$ is the $m$-point distribution of the KPZ fixed point, and that $$\lim_{s\to \infty} F^{\mathrm{pKPZ}}_m ( \mathsf{h}^s; \gamma,  \tau^s  )  = G_m(\mathsf{h}; \tau) 
+    \qquad \text{where $( \mathsf{h}_i^s, \tau^s) = ( - s \tau_i + \frac{s^{1/2} \pi^{1/4} }{\sqrt{2}} \mathsf{h}_i, s \tau_i)$ }$$ and $G_m$ is the $m$-point distribution of a Brownian motion at times $\tau_1, \cdots, \tau_m$. These conjectures were proved for $m=1$ in [@Baik-Liu-Silva20], assuming $\gamma_1=0$ for the $\epsilon\to 0$ case.
+
+Theorem [\[thm:PTASEP\]](#thm:PTASEP){reference-type="ref" reference="thm:PTASEP"} is also proved for the discrete-time TASEP on a ring [@Liao21]. However, extending the result to other integrable models is at the moment a challenge.

@@ -118,7 +118,7 @@ specific and physically motivated rather than vestigial.
 > **🛑 THE EVIDENCE I GAVE FOR (b) IS FALSE — corrected 2026-09-05.** This
 > paragraph read *"(b) by nothing in `computations/` ever having built the
 > `A+Z` object."* Measured, that is wrong:
-> **[`computations/_deprecated/atom_braid_electron.py`](../../computations/_deprecated/atom_braid_electron.py)
+> **[`fsh-guts/deprecated/computations/atom_braid_electron.py`](../../fsh-guts/deprecated/computations/atom_braid_electron.py)
 > builds exactly this object**, and its own docstring says so —
 >
 > > *"ATOMIC BRAID: electrons included in the `H_{A+Z}(q)` braid. The nuclear

@@ -1,17 +1,22 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0910.0096v1/sections/sec-001",
   "@type": [
     "doco:Section"
   ],
   "title": "Preliminaries",
   "pageStart": 1,
-  "pageEnd": 21,
+  "pageEnd": 3,
   "contains": [
     "library/arxiv-0910.0096v1/blocks/prose-sec-001",
     "library/arxiv-0910.0096v1/blocks/lem-sec-001-01",
     "library/arxiv-0910.0096v1/blocks/lem-sec-001-02",
-    "library/arxiv-0910.0096v1/blocks/ex-sec-001-03",
+    "library/arxiv-0910.0096v1/blocks/example-sec-001-03",
     "library/arxiv-0910.0096v1/blocks/conj-sec-001-04",
     "library/arxiv-0910.0096v1/blocks/thm-sec-001-05",
     "library/arxiv-0910.0096v1/blocks/lem-sec-001-06",
@@ -29,15 +34,15 @@
     "library/arxiv-0910.0096v1/blocks/lem-sec-001-18",
     "library/arxiv-0910.0096v1/blocks/thm-sec-001-19",
     "library/arxiv-0910.0096v1/blocks/thm-sec-001-20",
-    "library/arxiv-0910.0096v1/blocks/rem-sec-001-21",
-    "library/arxiv-0910.0096v1/blocks/rem-sec-001-22",
-    "library/arxiv-0910.0096v1/blocks/rem-sec-001-23",
-    "library/arxiv-0910.0096v1/blocks/rem-sec-001-24",
-    "library/arxiv-0910.0096v1/blocks/rem-sec-001-25",
+    "library/arxiv-0910.0096v1/blocks/remark-sec-001-21",
+    "library/arxiv-0910.0096v1/blocks/remark-sec-001-22",
+    "library/arxiv-0910.0096v1/blocks/remark-sec-001-23",
+    "library/arxiv-0910.0096v1/blocks/remark-sec-001-24",
+    "library/arxiv-0910.0096v1/blocks/remark-sec-001-25",
     "library/arxiv-0910.0096v1/blocks/thm-sec-001-26",
-    "library/arxiv-0910.0096v1/blocks/ex-sec-001-27"
+    "library/arxiv-0910.0096v1/blocks/example-sec-001-27"
   ],
-  "derivedFrom": "library/arxiv-0910.0096v1/manifest",
-  "sourceDocument": "library/arxiv-0910.0096v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0910.0096v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0910.0096v1/manifest.jsonld",
   "provenance": "ingested"
 }

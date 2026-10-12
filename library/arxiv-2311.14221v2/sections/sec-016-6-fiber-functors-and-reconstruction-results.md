@@ -8,16 +8,8 @@ pages: 26-26
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
 doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
+text_source: latex
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.983
 ---
-It is a classical result that, out of a ﬁber functor, which is a monoidal,
-exact and faithful functor F :B →vect k, one can reconstruct a (usual)
-Hopf algebra H such thatB is monoidally equivalent to the category of left
-H-comodules. We shall generalize these reconstruction theo rems for a ﬁber
-functor F :B→C , where C is an arbitrary braided tensor category acting
-monoidally on B. The reconstruction of the Hopf algebra from these data
-will be described in a similar way as the case C = vect k. See for example
-[19], [ 22]. The main new ingredient will be the use of the relative coen d, in-
-troduced in [ 3], and the splitting condition; that is, the existence of a se ction
-G :C→B of F . While dealing with the relative (co)end, the primary new
-challenge will be demonstrate that some dinatural transfor mations satisfy
-Equation ( 3.5).
+It is a classical result that, out of a fiber functor, which is a monoidal, exact and faithful functor $F:\Bc\to \vect_\ku$, one can reconstruct a (usual) Hopf algebra $H$ such that $\Bc$ is monoidally equivalent to the category of left $H$-comodules.   We shall generalize these reconstruction theorems for a fiber functor $F:\Bc\to \vc$, where $\vc$ is an arbitrary braided tensor category acting monoidally on $\Bc$. The reconstruction of the Hopf algebra from these data will be described in a similar way as the case $\vc=\vect_\ku$.  See for example \cite{Majid}, \cite{PS}. The main new ingredient will be the use of the relative coend, introduced in \cite{BM}, and the splitting condition; that is, the existence of a section $G:\vc\to \Bc$ of $F$. While dealing with the relative (co)end, the primary new challenge will be demonstrate that some dinatural transformations satisfy Equation \eqref{dinat:coend:module:right}.

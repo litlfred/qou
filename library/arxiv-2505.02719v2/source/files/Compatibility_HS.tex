@@ -1,0 +1,48 @@
+\providecommand{\rm}{}
+\providecommand{\bf}{}
+\providecommand{\sc}{}
+\providecommand{\it}{}
+
+\renewcommand{\rm}{}
+\renewcommand{\bf}{\bfseries}
+\renewcommand{\sc}{\scshape}
+\renewcommand{\it}{\itshape}
+
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\by}{\mathbf{y}}
+
+
+% Fix for \bigoasterisk: We load them without loading the whole package mathabx.
+
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+<-6> mathx5 <6-7> mathx6 <7-8> matha7
+<8-9> mathx8 <9-10> mathx9
+<10-12> mathx10 <12-> mathx12
+}{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareMathSymbol{\bigoasterisk}{\mathop}{mathx}{"C6}
+
+% \usepackage{mathabx}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%CrossREF mit custom label in enumerate%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{ifthen}
+\usepackage{enumitem}
+
+\makeatletter
+\newcommand{\Item}[1][]{%\refstepcounter{enumi}%
+	\ifthenelse{\equal{#1}{}}{%
+		\item%
+	}{%
+		\refstepcounter{Item}%
+		\csname @item\endcsname[#1]%
+		%
+		\protected@edef\@currentlabel{#1}%
+		\protected@edef\cref@currentlabel{[enumi][][]{#1}}%
+	}%
+}
+\makeatother

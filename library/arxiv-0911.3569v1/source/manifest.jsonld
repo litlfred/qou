@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0911.3569v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0911.3569v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.3569v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0911.3569&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0911.3569v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0911.3569v1",
+    "content_type": "application/gzip",
+    "sha256": "f6223df3682dcd558ca6f23f1b66a4ee4ae2c8b51b53627ce64cde2084306b6d",
+    "bytes": 74972,
+    "fetched": "2026-10-10T15:02:44+00:00",
+    "files": [
+      {
+        "path": "source/files/ceb-l.cls",
+        "role": "cls",
+        "sha256": "5540bba548ddba5392606f024ec826efebf276094294c19e5ada9cc38ca6ec2c",
+        "bytes": 1341
+      },
+      {
+        "path": "source/files/ceb_wagner.tex",
+        "role": "tex",
+        "sha256": "3fcbce68e4efb5608725778368f23284b66b1ab384fa9fa40f1a92524c526347",
+        "bytes": 101730
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

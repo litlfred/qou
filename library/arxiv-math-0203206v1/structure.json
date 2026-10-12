@@ -6,7 +6,12 @@
   "sha256": "371611f719e6f53ce655b98560163dfc538246e949059cf8c2f790bfc81c154c",
   "bytes": 499794,
   "pages": 43,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:23Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,642 +21,967 @@
    "stamp_date": "20 Mar 2002"
   },
   "doi": null,
-  "title": "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories",
+  "title": "arXiv:math/0203206v1 [math.QA] 20 Mar 2002",
   "authors_raw": "M. M\u00fcger, J. E. Roberts and L. Tuset",
   "title_lines": [
    "Representations of Algebraic Quantum Groups and",
    "Reconstruction Theorems for Tensor Categories"
   ],
-  "abstract": "We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein reconstruction prob lem. We show that every concrete semisimple tensor \u2217-category with conjugates is equivalent to the category of \ufb01 nite dimensional non-degenerate \u2217- representations of a discrete algebraic quantum group. Wor king in the self-dual framework of algebraic quantum groups, we then relate this to earlier results of S. L . Woronowicz and S. Yamagami. We establish the relation between braidings and R-matrices in this context. Our approach emphasizes the role of the natural transformations of the embedding functor. Thanks t o the semisimplicity of our categories and the emphasis on representations rather than corepresentation s, our proof is more direct and conceptual than previous reconstructions. As a special case, we reprove the classical Tannaka-Krein result for compact groups. It is only here that analytic aspects enter, otherwise we pro ceed in a purely algebraic way. In particular, the existence of a Haar functional is reduced to a well known gene ral result concerning discrete multiplier Hopf \u2217-algebras.",
+  "abstract": "We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein reconstruction problem. We show that every concrete semisimple tensor \u2217-category with conjugates is equivalent to the category of \ufb01nite dimensional non-degenerate \u2217- representations of a discrete algebraic quantum group. Working in the self-dual framework of algebraic quantum groups, we then relate this to earlier results of S. L. Woronowicz and S. Yamagami. We establish the relation between braidings and R-matrices in this context. Our approach emphasizes the role of the natural transformations of the embedding functor. Thanks to the semisimplicity of our categories and the emphasis on representations rather than corepresentations, our proof is more direct and conceptual than previous reconstructions. As a special case, we reprove the classical Tannaka-Krein result for compact groups. It is only here that analytic aspects enter, otherwise we proceed in a purely algebraic way. In particular, the existence of a Haar functional is reduced to a well known general result concerning discrete multiplier Hopf \u2217-algebras.",
   "docinfo": {
+   "Title": "arXiv:math/0203206v1  [math.QA]  20 Mar 2002",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181116194515-05'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/0203206v1  [math.QA]  20 Mar 2002"
+   "CreationDate": "D:20181116194515-05'00'"
+  },
+  "title_raw": "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0203206v1 [math.QA] 20 Mar 2002",
+   "heading": "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories",
+   "text": "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 3,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Tensor Categories",
    "page": 3,
    "source": "inferred",
-   "number": "2.1"
-  },
-  {
-   "level": 1,
-   "title": "For all X,Y,Z \u2208 C the following diagram commutes:",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The following compositions are the identity morphisms of F (X)",
-   "page": 4,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "For every pair ( i,j ) there are only \ufb01nitely many k \u2208 IC such that Nk",
-   "page": 5,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Nk",
-   "page": 5,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "N 0",
-   "page": 5,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "If C is braided, cf. Section 6, then Nk",
-   "page": 5,
-   "source": "inferred",
-   "number": "5"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Algebraic Quantum Groups",
    "page": 6,
    "source": "inferred",
-   "number": "2.2"
-  },
-  {
-   "level": 1,
-   "title": "The linear mappings T1,T 2 fromA \u2297A into M (A \u2297A) such that",
-   "page": 6,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b5 \u2297\u03b9)(\u2206(a)(1 \u2297b)) = ab,",
-   "page": 7,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b9 \u2297\u03b5)(\u2206(a)(b \u2297 1)) = ab,",
-   "page": 7,
-   "source": "inferred",
-   "number": "2"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Discrete and Compact Case",
    "page": 9,
    "source": "inferred",
-   "number": "2.3"
-  },
-  {
-   "level": 1,
-   "title": "S2(a) = faf \u22121 \u2200a \u2208A,",
-   "page": 10,
-   "source": "inferred",
-   "number": "2"
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Examples",
    "page": 11,
    "source": "inferred",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Representation Theory",
    "page": 12,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "The Universal Corepresentation",
    "page": 12,
    "source": "inferred",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
-   "title": "Representations vs. Corepresentations as Tensor \u2217-Categories",
+   "title": "Representations vs. Corepresentations as Tensor $*$-Categories",
    "page": 14,
    "source": "inferred",
-   "number": "3.2"
-  },
-  {
-   "level": 1,
-   "title": "(S \u2297 (\u00b7,\u03b7 ))\u03b2V (\u03be) = ( \u2217 \u2297 (\u03be, \u00b7))\u03b2V (\u03b7) \u2200\u03be,\u03b7 \u2208K,",
-   "page": 17,
-   "source": "inferred",
-   "number": "2"
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Conjugates for Representations and Corepresentations",
    "page": 17,
    "source": "inferred",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "17"
   },
   {
    "level": 1,
-   "title": "V (1 \u2297J \u2217J) = (1 \u2297J \u2217J)(S2 \u2297\u03b9)V ,",
-   "page": 19,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "V \u2208 Corepf (A, \u2206) ,",
-   "page": 19,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Cocommutative Algebraic Quantum Groups vs. Compact Group s",
+   "title": "Cocommutative Algebraic Quantum Groups vs. Compact Groups",
    "page": 20,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "20"
   },
   {
    "level": 1,
-   "title": "From Concrete Tensor Categories to Discrete Quantum Group s",
+   "title": "From Concrete Tensor Categories to Discrete Quantum Groups",
    "page": 25,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "25"
   },
   {
    "level": 2,
-   "title": "Natural Transformations of \u2217-Preserving Functors",
+   "title": "Natural Transformations of $*$-Preserving Functors",
    "page": 25,
    "source": "inferred",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "25"
   },
   {
    "level": 2,
-   "title": "Concrete Tensor \u2217-Categories and Discrete Quantum Semigroups",
+   "title": "Concrete Tensor $*$-Categories and Discrete Quantum Semigroups",
    "page": 28,
    "source": "inferred",
-   "number": "5.2"
-  },
-  {
-   "level": 1,
-   "title": "(a),",
-   "page": 30,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Let a \u2208M (A). As \u2206( a)ij =aXi\u2297Xj and (a \u2297a)ij =ai \u2297aj we \ufb01nd",
-   "page": 30,
-   "source": "inferred",
-   "number": "2"
+   "number": "5.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Conjugates and Antipodes: Discrete Quantum Groups",
    "page": 32,
    "source": "inferred",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "32"
   },
   {
    "level": 2,
-   "title": "The Non- \u2217 Case",
+   "title": "The Non-$*$ Case",
    "page": 36,
    "source": "inferred",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "36"
   },
   {
    "level": 1,
    "title": "Concrete Braided and Symmetric Categories",
    "page": 37,
    "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "(\u2206 \u2297\u03b9)(R) = R13R23,",
-   "page": 37,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(\u03b9 \u2297 \u2206)( R) = R13R12,",
-   "page": 37,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 41,
-   "source": "inferred",
-   "number": null
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "37"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1178,
-   "n_words": 181
+   "n_chars": 1375,
+   "n_words": 202,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2838,
-   "n_words": 448
+   "n_chars": 2819,
+   "n_words": 429,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-21-tensor-categories",
+   "id": "sec-001-21-tensor-categories",
    "number": "2.1",
    "title": "Tensor Categories",
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 9291,
-   "n_words": 1523
+   "n_chars": 8009,
+   "n_words": 1259,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-003-2-preliminaries",
+   "id": "sec-002-2-preliminaries",
    "number": "2",
    "title": "Preliminaries",
    "level": 1,
    "page_start": 3,
-   "page_end": 4,
-   "n_chars": 1520,
-   "n_words": 272
-  },
-  {
-   "id": "sec-004-2-for-all-xyz-c-the-following-diagram-commutes",
-   "number": "2",
-   "title": "For all X,Y,Z \u2208 C the following diagram commutes:",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 116,
-   "n_words": 35
-  },
-  {
-   "id": "sec-005-3-the-following-compositions-are-the-identity-mo",
-   "number": "3",
-   "title": "The following compositions are the identity morphisms of F (X)",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 5,
-   "n_chars": 4735,
-   "n_words": 979
-  },
-  {
-   "id": "sec-006-3-nk",
-   "number": "3",
-   "title": "Nk",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 72,
-   "n_words": 11
-  },
-  {
-   "id": "sec-007-1-for-every-pair-ij-there-are-only-\ufb01nitely-many",
-   "number": "1",
-   "title": "For every pair ( i,j ) there are only \ufb01nitely many k \u2208 IC such that Nk",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 187,
-   "n_words": 50
-  },
-  {
-   "id": "sec-008-4-n-0",
-   "number": "4",
-   "title": "N 0",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 9,
-   "n_words": 2
-  },
-  {
-   "id": "sec-009-5-if-c-is-braided-cf-section-6-then-nk",
-   "number": "5",
-   "title": "If C is braided, cf. Section 6, then Nk",
-   "level": 1,
-   "page_start": 5,
    "page_end": 6,
-   "n_chars": 30,
-   "n_words": 8
+   "n_chars": 7991,
+   "n_words": 1533,
+   "label_start": "3",
+   "label_end": "6"
   },
   {
-   "id": "sec-010-22-algebraic-quantum-groups",
+   "id": "sec-003-22-algebraic-quantum-groups",
    "number": "2.2",
    "title": "Algebraic Quantum Groups",
    "level": 2,
    "page_start": 6,
-   "page_end": 6,
-   "n_chars": 4060,
-   "n_words": 843
-  },
-  {
-   "id": "sec-011-2-the-linear-mappings-t1t-2-froma-a-into-m-a-a-s",
-   "number": "2",
-   "title": "The linear mappings T1,T 2 fromA \u2297A into M (A \u2297A) such that",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 7,
-   "n_chars": 880,
-   "n_words": 181
-  },
-  {
-   "id": "sec-012-1-\u03b5-\u03b9a1-b-ab",
-   "number": "1",
-   "title": "(\u03b5 \u2297\u03b9)(\u2206(a)(1 \u2297b)) = ab,",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 7,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-013-2-\u03b9-\u03b5ab-1-ab",
-   "number": "2",
-   "title": "(\u03b9 \u2297\u03b5)(\u2206(a)(b \u2297 1)) = ab,",
-   "level": 1,
-   "page_start": 7,
    "page_end": 9,
-   "n_chars": 6650,
-   "n_words": 1354
+   "n_chars": 11582,
+   "n_words": 2272,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
-   "id": "sec-014-23-discrete-and-compact-case",
+   "id": "sec-004-23-discrete-and-compact-case",
    "number": "2.3",
    "title": "Discrete and Compact Case",
    "level": 2,
    "page_start": 9,
-   "page_end": 10,
-   "n_chars": 1391,
-   "n_words": 264
-  },
-  {
-   "id": "sec-015-2-s2a-faf-1-a-a",
-   "number": "2",
-   "title": "S2(a) = faf \u22121 \u2200a \u2208A,",
-   "level": 1,
-   "page_start": 10,
    "page_end": 11,
-   "n_chars": 3013,
-   "n_words": 635
+   "n_chars": 4468,
+   "n_words": 941,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-016-24-examples",
+   "id": "sec-005-24-examples",
    "number": "2.4",
    "title": "Examples",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2091,
-   "n_words": 404
+   "n_chars": 2064,
+   "n_words": 377,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-017-3-representation-theory",
+   "id": "sec-006-3-representation-theory",
    "number": "3",
    "title": "Representation Theory",
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 1037,
-   "n_words": 189
+   "n_chars": 1032,
+   "n_words": 181,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-018-31-the-universal-corepresentation",
+   "id": "sec-007-31-the-universal-corepresentation",
    "number": "3.1",
    "title": "The Universal Corepresentation",
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 6085,
-   "n_words": 1316
+   "n_chars": 6030,
+   "n_words": 1258,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
-   "id": "sec-019-32-representations-vs-corepresentations-as-tenso",
+   "id": "sec-008-32-representations-vs-corepresentations-as-tenso",
    "number": "3.2",
-   "title": "Representations vs. Corepresentations as Tensor \u2217-Categories",
+   "title": "Representations vs. Corepresentations as Tensor $*$-Categories",
    "level": 2,
    "page_start": 14,
    "page_end": 17,
-   "n_chars": 8542,
-   "n_words": 1629
+   "n_chars": 9660,
+   "n_words": 1810,
+   "label_start": "14",
+   "label_end": "17"
   },
   {
-   "id": "sec-020-2-s-\u03b7-\u03b2v-\u03be-\u03be-\u03b2v-\u03b7-\u03be\u03b7-k",
-   "number": "2",
-   "title": "(S \u2297 (\u00b7,\u03b7 ))\u03b2V (\u03be) = ( \u2217 \u2297 (\u03be, \u00b7))\u03b2V (\u03b7) \u2200\u03be,\u03b7 \u2208K,",
-   "level": 1,
-   "page_start": 17,
-   "page_end": 17,
-   "n_chars": 1128,
-   "n_words": 233
-  },
-  {
-   "id": "sec-021-33-conjugates-for-representations-and-corepresen",
+   "id": "sec-009-33-conjugates-for-representations-and-corepresen",
    "number": "3.3",
    "title": "Conjugates for Representations and Corepresentations",
    "level": 2,
    "page_start": 17,
-   "page_end": 19,
-   "n_chars": 4627,
-   "n_words": 940
-  },
-  {
-   "id": "sec-022-1-v-1-j-j-1-j-js2-\u03b9v",
-   "number": "1",
-   "title": "V (1 \u2297J \u2217J) = (1 \u2297J \u2217J)(S2 \u2297\u03b9)V ,",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-023-2-v-corepf-a",
-   "number": "2",
-   "title": "V \u2208 Corepf (A, \u2206) ,",
-   "level": 1,
-   "page_start": 19,
    "page_end": 20,
-   "n_chars": 2829,
-   "n_words": 600
+   "n_chars": 7445,
+   "n_words": 1485,
+   "label_start": "17",
+   "label_end": "20"
   },
   {
-   "id": "sec-024-4-cocommutative-algebraic-quantum-groups-vs-comp",
+   "id": "sec-010-4-cocommutative-algebraic-quantum-groups-vs-comp",
    "number": "4",
-   "title": "Cocommutative Algebraic Quantum Groups vs. Compact Group s",
+   "title": "Cocommutative Algebraic Quantum Groups vs. Compact Groups",
    "level": 1,
    "page_start": 20,
    "page_end": 25,
-   "n_chars": 11473,
-   "n_words": 2344
+   "n_chars": 11377,
+   "n_words": 2246,
+   "label_start": "20",
+   "label_end": "25"
   },
   {
-   "id": "sec-025-5-from-concrete-tensor-categories-to-discrete-qu",
+   "id": "sec-011-5-from-concrete-tensor-categories-to-discrete-qu",
    "number": "5",
-   "title": "From Concrete Tensor Categories to Discrete Quantum Group s",
+   "title": "From Concrete Tensor Categories to Discrete Quantum Groups",
    "level": 1,
    "page_start": 25,
-   "page_end": 25,
-   "n_chars": 206,
-   "n_words": 40
-  },
-  {
-   "id": "sec-026-51-natural-transformations-of--preserving-functo",
-   "number": "5.1",
-   "title": "Natural Transformations of \u2217-Preserving Functors",
-   "level": 2,
-   "page_start": 25,
-   "page_end": 28,
-   "n_chars": 8167,
-   "n_words": 1771
-  },
-  {
-   "id": "sec-027-52-concrete-tensor--categories-and-discrete-quan",
-   "number": "5.2",
-   "title": "Concrete Tensor \u2217-Categories and Discrete Quantum Semigroups",
-   "level": 2,
-   "page_start": 28,
-   "page_end": 30,
-   "n_chars": 6208,
-   "n_words": 1274
-  },
-  {
-   "id": "sec-028-1-a",
-   "number": "1",
-   "title": "(a),",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 30,
-   "n_chars": 482,
-   "n_words": 102
-  },
-  {
-   "id": "sec-029-2-let-a-m-a-as-aij-axixj-and-a-aij-ai-aj-we-\ufb01nd",
-   "number": "2",
-   "title": "Let a \u2208M (A). As \u2206( a)ij =aXi\u2297Xj and (a \u2297a)ij =ai \u2297aj we \ufb01nd",
-   "level": 1,
-   "page_start": 30,
    "page_end": 32,
-   "n_chars": 5022,
-   "n_words": 1107
+   "n_chars": 19987,
+   "n_words": 4032,
+   "label_start": "25",
+   "label_end": "32"
   },
   {
-   "id": "sec-030-53-conjugates-and-antipodes-discrete-quantum-gro",
+   "id": "sec-012-53-conjugates-and-antipodes-discrete-quantum-gro",
    "number": "5.3",
    "title": "Conjugates and Antipodes: Discrete Quantum Groups",
    "level": 2,
    "page_start": 32,
-   "page_end": 36,
-   "n_chars": 9787,
-   "n_words": 2171
-  },
-  {
-   "id": "sec-031-54-the-non--case",
-   "number": "5.4",
-   "title": "The Non- \u2217 Case",
-   "level": 2,
-   "page_start": 36,
    "page_end": 37,
-   "n_chars": 5243,
-   "n_words": 972
+   "n_chars": 14698,
+   "n_words": 2794,
+   "label_start": "32",
+   "label_end": "37"
   },
   {
-   "id": "sec-032-6-concrete-braided-and-symmetric-categories",
+   "id": "sec-013-6-concrete-braided-and-symmetric-categories",
    "number": "6",
    "title": "Concrete Braided and Symmetric Categories",
    "level": 1,
    "page_start": 37,
-   "page_end": 37,
-   "n_chars": 586,
-   "n_words": 111
-  },
-  {
-   "id": "sec-033-1-\u03b9r-r13r23",
-   "number": "1",
-   "title": "(\u2206 \u2297\u03b9)(R) = R13R23,",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 37,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-034-2-\u03b9-r-r13r12",
-   "number": "2",
-   "title": "(\u03b9 \u2297 \u2206)( R) = R13R12,",
-   "level": 1,
-   "page_start": 37,
-   "page_end": 41,
-   "n_chars": 11766,
-   "n_words": 2447
-  },
-  {
-   "id": "sec-035-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 41,
    "page_end": 43,
-   "n_chars": 5340,
-   "n_words": 832
+   "n_chars": 17434,
+   "n_words": 3084,
+   "label_start": "37",
+   "label_end": "43"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 36,
-  "sections": 36,
-  "chars_total": 126589
+  "toc_entries": 17,
+  "toc_inferred_entries": 17,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 15,
+  "chars_total": 125971,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 17,
+   "overlaid": 10,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.381,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-21-tensor-categories",
+     "title": "Tensor Categories",
+     "prose_ratio": 0.443,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-22-algebraic-quantum-groups",
+     "title": "Algebraic Quantum Groups",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-discrete-and-compact-case",
+     "title": "Discrete and Compact Case",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-24-examples",
+     "title": "Examples",
+     "prose_ratio": 0.696,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-3-representation-theory",
+     "title": "Representation Theory",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-007-31-the-universal-corepresentation",
+     "title": "The Universal Corepresentation",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-32-representations-vs-corepresentations-as-tenso",
+     "title": "Representations vs. Corepresentations as Tensor $*$-Categories",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-33-conjugates-for-representations-and-corepresen",
+     "title": "Conjugates for Representations and Corepresentations",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-4-cocommutative-algebraic-quantum-groups-vs-comp",
+     "title": "Cocommutative Algebraic Quantum Groups vs. Compact Groups",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-5-from-concrete-tensor-categories-to-discrete-qu",
+     "title": "From Concrete Tensor Categories to Discrete Quantum Groups",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-53-conjugates-and-antipodes-discrete-quantum-gro",
+     "title": "Conjugates and Antipodes: Discrete Quantum Groups",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-6-concrete-braided-and-symmetric-categories",
+     "title": "Concrete Braided and Symmetric Categories",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.613,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

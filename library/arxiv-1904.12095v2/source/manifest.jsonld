@@ -1,0 +1,154 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1904.12095v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1904.12095v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1904.12095v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1904.12095&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1904.12095v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1904.12095v2",
+    "content_type": "application/gzip",
+    "sha256": "a972885477c2f528e98387731e86cf448187113024e80452beedaa5f63d92964",
+    "bytes": 256370,
+    "fetched": "2026-10-10T15:14:05+00:00",
+    "files": [
+      {
+        "path": "source/files/figures_gen/anglesInTet.tex",
+        "role": "tex",
+        "sha256": "e2d3ddd8795ffb792d177cd235ebe5f2bd83440ed7abf8ae735ccc3b720465f3",
+        "bytes": 838
+      },
+      {
+        "path": "source/files/figures_gen/doublyTruncatedCocycle.tex",
+        "role": "tex",
+        "sha256": "fcf7b07980e30a2afdbbe9d910a79a3e384fe08d9a08c59f598bfab66d317535",
+        "bytes": 859
+      },
+      {
+        "path": "source/files/figures_gen/doublyTruncatedCocycle_Prism.tex",
+        "role": "tex",
+        "sha256": "3df22e3f1cb2f15effe529cada107aa1bb84c091ac45a213993de1dd4b3bdeec",
+        "bytes": 187
+      },
+      {
+        "path": "source/files/figures_gen/geodesicTrajectory.tex",
+        "role": "tex",
+        "sha256": "c11b50614a470329b802842c5dc9d9a42755ed9f0975c6bc7bce77fc8d9441dd",
+        "bytes": 2024
+      },
+      {
+        "path": "source/files/figures_gen/gimbalLoop.tex",
+        "role": "tex",
+        "sha256": "96c95e5a9c9ee6cf3318aa134e0e7ede1e170038ab928b7e5d720279311c1a39",
+        "bytes": 413
+      },
+      {
+        "path": "source/files/figures_gen/gimbalLoopAlgorithm.tex",
+        "role": "tex",
+        "sha256": "5fbdf6983de8a48d06f66fe4eb37f5e2ee01f534485438e962c7e875a5e732b9",
+        "bytes": 186
+      },
+      {
+        "path": "source/files/figures_gen/gimbalLoopExtended.tex",
+        "role": "tex",
+        "sha256": "5d5cbf8e01a267d2008814b0cc8ec803e04e65c1134ad0395bb9e754ac219f28",
+        "bytes": 185
+      },
+      {
+        "path": "source/files/figures_gen/gimbalLoopSkeleton.tex",
+        "role": "tex",
+        "sha256": "61a37e13f4101bad461db038b5c855100e52af52e272bc00967cfa7b99c3c1ee",
+        "bytes": 185
+      },
+      {
+        "path": "source/files/figures_gen/gimbalLoopTriangulation.tex",
+        "role": "tex",
+        "sha256": "bb220d1f0f20ee529572642988b85610cb965b526f75c0deffdc257213372eca",
+        "bytes": 3958
+      },
+      {
+        "path": "source/files/figures_gen/tetInStandardPosition.tex",
+        "role": "tex",
+        "sha256": "02c318794d36222dd3c516e4e148639a03eafe463958c986b391e0d2e41d8e45",
+        "bytes": 2065
+      },
+      {
+        "path": "source/files/nmd/article.cls",
+        "role": "cls",
+        "sha256": "0d6f64e2165a8537c489df61df9535e862b9348054fc85555309a0bccda12670",
+        "bytes": 3759
+      },
+      {
+        "path": "source/files/nmd/common.sty",
+        "role": "sty",
+        "sha256": "0df2c7177bbb828d60556eab0e328762719ce2cbdaa7a22fb52819ee0e8f10a1",
+        "bytes": 2508
+      },
+      {
+        "path": "source/files/nmd/custom.cls",
+        "role": "cls",
+        "sha256": "78a538cd6f043520591351ab5454d9e8aa7e7df05e5ee01b336c9723be53097f",
+        "bytes": 5699
+      },
+      {
+        "path": "source/files/nmd/fonts.sty",
+        "role": "sty",
+        "sha256": "1f74b7176a1f9717abe21ac737f0489daa0268437a28f743de926c8176f6401c",
+        "bytes": 1683
+      },
+      {
+        "path": "source/files/nmd/graphics.sty",
+        "role": "sty",
+        "sha256": "12e5785b8cd2f737c8d72be68d2b4d4bef09faeba04511834b6a57557463295c",
+        "bytes": 2863
+      },
+      {
+        "path": "source/files/nmd/math.sty",
+        "role": "sty",
+        "sha256": "39e1067168b1e6ac8eb3767a3ea1dfacfc5b45a503390ab3c588f49c71114545",
+        "bytes": 19522
+      },
+      {
+        "path": "source/files/nmd/thm.sty",
+        "role": "sty",
+        "sha256": "1f63031cb941bb41c85e699581cb7a8cfba6a5504463225377ea23578627ce84",
+        "bytes": 5065
+      },
+      {
+        "path": "source/files/nmd/title.sty",
+        "role": "sty",
+        "sha256": "b7662f532152f4b924a6ce2b0e051f697669b3695bfdb74f94417865c9ae4ad4",
+        "bytes": 2994
+      },
+      {
+        "path": "source/files/verifyingClosedManifolds.bbl",
+        "role": "bbl",
+        "sha256": "051c3cf93baba78f9c3db2a902b695e7a314288d58d33e9eabc599a5304dca1a",
+        "bytes": 6038
+      },
+      {
+        "path": "source/files/verifyingClosedManifolds.tex",
+        "role": "tex",
+        "sha256": "bd4a72a57a6751701c4be2edbcf2406f31007b5a1c68416ac9a74e58625c8d2e",
+        "bytes": 80195
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

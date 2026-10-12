@@ -8,82 +8,27 @@ pages: 6-7
 source_pdf: 1007.2335v1.pdf
 source_sha256: a55d544d1740523f
 doc_brief: "Hopf solitons in the Nicole model — The Nicole model is a conformal ﬁeld theory in three-dimensi onal space."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.959
 ---
-Initial conditions, for a range of values of Q, need to be provided for the volume-preserving
-ﬂow algorithm discussed in the previous section. We use the approac h introduced in [6],
-which is brieﬂy reviewed in this section.
-To construct an initial ﬁeld the spatial coordinates ( x1, x 2, x 3) ∈ R3 are ﬁrst mapped to
-the unit three-sphere via a degree one spherically equivariant map. Explicitly, introduce the
-complex coordinates Z1, Z 0 (on the unit three-sphere |Z1|2 + |Z0|2 = 1) as
-(Z1, Z 0) =
-(
-(x1 + ix2) sin g
-r , cos g + isin g
-r x3
-)
-, (3.1)
-where the proﬁle function g(r) is a monotonically decreasing function of the radius r, with
-boundary conditions g(0) = π and g(∞) = 0 .
-The initial condition is obtained by taking the stereographic project ion of φ to be a
-rational function of Z1 and Z0. The simplest example is to take
-φ 1 + iφ 2
-1 + φ 3
-= Z1
-Z0
-, (3.2)
-which has Q = 1 and is identical to the exact solution (2.3) if the proﬁle function is t aken
-to be g = tan − 1(2rλ/ (r2 − λ 2)).
-Other choices of rational functions and proﬁle functions do not giv e exact solutions but
-do provide suitable initial conditions for the numerical simulation.
-An obvious generalization of (3.2) is given by
-φ 1 + iφ 2
-1 + φ 3
-= Z n
-1
-Z m
-0
-. (3.3)
-This is an axially symmetric ﬁeld with Hopf charge Q = nm. As discussed later, under
-volume-preserving ﬂow this initial condition yields the solution of type An,m , obtained pre-
-viously using toroidal coordinates [10].
-Initial ﬁelds that are not axially symmetric and include knots and links c an be obtained
-from less symmetric rational maps. For full details see [6] but some e xamples that are used
-in this paper include the ( a, b )-torus knot (here a, b are coprime positive integers with a > b )
-φ 1 + iφ 2
-1 + φ 3
-= Z α
-1 Z β
-0
-Z a
-1 + Z b
-0
-, (3.4)
-where α is a positive integer and β is a non-negative integer. The Hopf charge of this ﬁeld
-is Q = αb + βa. The position of this ﬁeld is an ( a, b )-torus knot and we denote a ﬁeld of this
-type by Ka,b . Of particular relevance will be the simplest torus knot, the trefoil k not, which
-corresponds to ( a, b ) = (3 , 2) and can be obtained with Q = 7 from the choice α = 2 and
-β = 1.
-In all the conﬁgurations discussed above, the position curve cont ains only a single com-
-ponent. However, Hopf solitons also exist in which the position curve contains disconnected
-6
-components that are linked. In the simplest case there are just tw o components and such a
-linked conﬁguration will be denoted by the type Lα,β
-p,q , where p and q denote the Hopf charges
-of the two components if each is taken in isolation, and α and β are the additional contri-
-butions to the Hopf charge due the linking of each of the component s with the other. The
-total Hopf charge is therefore Q = p + q + α + β. Initial ﬁelds of this type can be constructed
-using a rational map in which the denominator is reducible. As an examp le, the ﬁeld
-φ 1 + iφ 2
-1 + φ 3
-= Z n+1
-1
-Z 2
-1 − Z 2
-0
-, (3.5)
-is of the type L1, 1
-n,n . It consists of two Hopf solitons that are each of the topological ty pe An, 1
-and are linked once to create a ﬁeld with Hopf charge Q = 2n + 2.
-The construction described in this section is easily applied to the situa tion of a ﬁnite
-simulation region Ω by replacing the proﬁle function boundary conditio n g(∞) = 0 by the
-condition that g = 0 on the boundary ∂Ω .
+Initial conditions, for a range of values of $Q,$ need to be provided for the volume-preserving flow algorithm discussed in the previous section. We use the approach introduced in [@Su], which is briefly reviewed in this section.
+
+To construct an initial field the spatial coordinates $(x_1,x_2,x_3)\in \hbox{\mybb R}^3$ are first mapped to the unit three-sphere via a degree one spherically equivariant map. Explicitly, introduce the complex coordinates $Z_1,Z_0$ (on the unit three-sphere $|Z_1|^2+|Z_0|^2=1$) as $$(Z_1,Z_0)=\bigg((x_1+ix_2)\frac{\sin g}{r},\cos
+g+i\frac{\sin g}{r}x_3\bigg),$$where the profile function $g(r)$ is a monotonically decreasing function of the radius $r$, with boundary conditions $g(0)=\pi$ and $g(\infty)=0.$
+
+The initial condition is obtained by taking the stereographic projection of $\mbox{\boldmath $\phi$}$ to be a rational function of $Z_1$ and $Z_0.$ The simplest example is to take $$\frac{\phi_1+i\phi_2}{1+\phi_3}=\frac{Z_1}{Z_0},
+\label{Qnm11}$$ which has $Q=1$ and is identical to the exact solution ([\[Q1\]](#Q1){reference-type="ref" reference="Q1"}) if the profile function is taken to be $g=\tan^{-1}(2r\lambda/(r^2-\lambda^2)).$
+
+Other choices of rational functions and profile functions do not give exact solutions but do provide suitable initial conditions for the numerical simulation.
+
+An obvious generalization of ([\[Qnm11\]](#Qnm11){reference-type="ref" reference="Qnm11"}) is given by $$\frac{\phi_1+i\phi_2}{1+\phi_3}=\frac{Z_1^n}{Z_0^m}.
+\label{Qnm}$$ This is an axially symmetric field with Hopf charge $Q=nm.$ As discussed later, under volume-preserving flow this initial condition yields the solution of type ${\cal A}_{n,m},$ obtained previously using toroidal coordinates [@ASVW].
+
+Initial fields that are not axially symmetric and include knots and links can be obtained from less symmetric rational maps. For full details see [@Su] but some examples that are used in this paper include the $(a,b)$-torus knot (here $a,b$ are coprime positive integers with $a>b$) $$\frac{\phi_1+i\phi_2}{1+\phi_3}=\frac{Z_1^\alpha Z_0^\beta}{Z_1^a+Z_0^b},
+\label{Qab}$$ where $\alpha$ is a positive integer and $\beta$ is a non-negative integer. The Hopf charge of this field is $Q=\alpha b+\beta a.$ The position of this field is an $(a,b)$-torus knot and we denote a field of this type by ${\cal K}_{a,b}.$ Of particular relevance will be the simplest torus knot, the trefoil knot, which corresponds to $(a,b)=(3,2)$ and can be obtained with $Q=7$ from the choice $\alpha=2$ and $\beta=1.$
+
+In all the configurations discussed above, the position curve contains only a single component. However, Hopf solitons also exist in which the position curve contains disconnected components that are linked. In the simplest case there are just two components and such a linked configuration will be denoted by the type ${\cal L}_{p,q}^{\alpha,\beta},$ where $p$ and $q$ denote the Hopf charges of the two components if each is taken in isolation, and $\alpha$ and $\beta$ are the additional contributions to the Hopf charge due the linking of each of the components with the other. The total Hopf charge is therefore $Q=p+q+\alpha+\beta.$ Initial fields of this type can be constructed using a rational map in which the denominator is reducible. As an example, the field $$\frac{\phi_1+i\phi_2}{1+\phi_3}=\frac{Z_1^{n+1}}{Z_1^2-Z_0^2},
+\label{Qlink}$$ is of the type ${\cal L}_{n,n}^{1,1}.$ It consists of two Hopf solitons that are each of the topological type ${\cal A}_{n,1}$ and are linked once to create a field with Hopf charge $Q=2n+2.$
+
+The construction described in this section is easily applied to the situation of a finite simulation region $\Omega$ by replacing the profile function boundary condition $g(\infty)=0$ by the condition that $g=0$ on the boundary $\partial \Omega.$

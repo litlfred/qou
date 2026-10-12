@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/s0894-0347-08-00618-8/sections/sec-015",
   "@type": [
     "doco:Section"
   ],
-  "title": "The partial symmetrization procedure",
-  "pageStart": 29,
-  "pageEnd": 33,
+  "title": "Stability implies negative association",
+  "pageStart": 24,
+  "pageEnd": 25,
   "contains": [
     "library/s0894-0347-08-00618-8/blocks/prose-sec-015"
   ],
-  "derivedFrom": "library/s0894-0347-08-00618-8/manifest",
-  "sourceDocument": "library/s0894-0347-08-00618-8/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-08-00618-8/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-08-00618-8/manifest.jsonld",
   "provenance": "ingested"
 }

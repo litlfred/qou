@@ -8,102 +8,31 @@ pages: 12-14
 source_pdf: 2601.07042v1.pdf
 source_sha256: c2f3e302624e7abb
 doc_brief: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE — We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha’s Galois"
+text_source: latex
+latex_prose_ratio: 0.895
+latex_coverage_ratio: 0.64
 ---
-subsection in terms of a more concrete Tannakian category overF.
-First we define the categoryI E{F,s for a fixedsPN; its objects are triplespV, ˜Φ,DqwhereVis a finite
-dimensionalL E vector space, ˜Φis aΓ LE{F -semilinear action ofW LE{F onV, andDis a ś
-ΓE{F
-1
-s Z-
-grading ofV, such thatV paσ{sqσ has anL E-basis on whichf s
-E PW LE{F acts by ś
-σPΓE{F
-σpϖEqaσ, and that
-forxPΓ LE{F lifting¯xPΓ E{F , we have that ˜ΦpxqpVpaσqσq“V pa¯x´1σqσ. The categoryI E{F,s has a natural
-tensor structure defined such thatpV, ˜ΦqbpV 1, ˜Φ1q“pVbV 1, ˜Φb ˜Φ1qwhere ˜Φˆ ˜Φ1 is given explicitly by
-p˜Φb ˜Φ1qpσqpvbv 1q“ ˜Φpσqpvqb ˜Φ1pσqpv1q.
-The identity object1ofI E{F consists of theLE vector spaceLE with ˜Φequal to the normal Galois action.
-It is easy to check that the endomorphisms of1are in canonical bijection withF.
-We now construct a functorT:W E{F,s ÑI E{F,s. Given an objectpX,X
-fγ
-ÝÑβγpXqqofW E{F,s, we
-let the vector spaceVin theT-image ofpX,X
-fγ
-ÝÑβγpXqqbe the underlying vector space ofXand we
-let the gradingDbe the grading onX. We define ˜Φas follows. For anyσPW LE{F we can write uniquely
-σ“f n
-EsEpγqfor someγPΓ E{F . Then we define
-˜Φpσqpvq“Φ npf´1
-γ pvb1qq.
-We note thatf´1
-γ issEpγqsemilinear onVby definition.
-To show that ˜Φis indeed aΓ LE{F -action, we need to verify forσ 1,σ 2 PΓ LE{F that ˜Φpσ1q˝ ˜Φpσ2q “
-˜Φpσ1σ2q. Explicitly, ifσi“f ni
-EsEpγiq, then we must show that
-pΦn1˝f ´1
-γ1 q˝pΦ n2˝f ´1
-γ2 q“Φ n1`n2`cEpγ1,γ2qf´1
-γ1γ2.
-By construction, we have
-f´1
-γ1γ2“f ´1
-γ1 ˝f ´1
-γ2 ˝Φ´cEpγ1,γ2q,
-which implies the desired equality.
-We also need to check that ˜Φacts on the grading correctly. LetγPΓ E{F . Then we have
-˜ΦpsEpγqqpVpaσ{sqσq“f ´1
-γ pVpaσ{sqσb1q“f ´1
-γ pβγpVqpaγ´1σ{sqσq“V paγ´1σ{sqσ.
-Finally,Tis a functor because morphisms ofW E{F,s must necessarily commute with theΦandf γ maps.
-12
-We now define a functorS:I E{F,s ÑW E{F,s, giving a quasi-inverse ofT. Given an objectpV, ˜Φ,Dq
-ofI E{F,s, we define its image underSto have underlying vector space equal toVand ś
-ΓE{F
-1
-s Z-gradingD.
-We defineΦto be ˜ΦpfEq. Finally, for our fixed sections E : ΓE{F ÑW LE{F , we definef γ :VÑβ γpVq
-by
-fγ :vÞÑ ˜ΦpsEpγqq´1pvqb1.
-There are many things we need to check in the above definition. First, we check thatfγ is an isomorphism
-off E-spaces fromVtoβ γpVqfor a fixedγ. It is evidently an isomorphism of abelian groups, and isf E-
-equivariant, since we have, forvPV, the identity
-˜ΦpsEpγqq´1pfE¨vqb1“ ˜ΦpsEpγq´1qp˜ΦpfEqpvqqb1“ ˜ΦpsEpγq´1fEqpvqb1
-“ ˜ΦpfEsEpγq´1qpvqb1“f E¨p ˜ΦpsEpγq´1qpvqqb1“f E¨p ˜ΦpsEpγqq´1pvqqb1,
-where we have used thatf E is contained inZpW LE{Fq. We also haveL E-linearity due to the identity, for
-ℓPL E, given by
-˜ΦpsEpγq´1qpvbℓq“s Epγq´1pℓq˜ΦpsEpγq´1qpvqb1“ ˜ΦpsEpγq´1qpvqbℓ.
-We now check that the mapsf γ satisfy the cocycle condition with respect toβ γ andµ γ1,γ stated in the
-previous subsection. Recall that this condition is given by the equation
-pµγ1,γqpXq˝f γ1γ“β γ1pfγq˝f γ1
-for anyXPW E{F,s. In our setting, this equation is
-˜ΦpcEpγ1,γq´1q˝ ˜ΦpsEpγ1γqq´1“ ˜ΦpsEpγqq´1˝ ˜ΦpsEpγ1qq´1,
-which is trivial from the definition of the cocyclec E, since ˜Φis a group action. It follows that the above
-functor gives a well-defined object ofWE{F,s. Any morphism inI E{F,s gives a morphism inWE{F,s, since
-morphisms inIE{F,s preserve the grading by construction and commute with theWLE{F -action, and there-
-fore with the mapsf γ. Both functorsSandTare evidentlyF-linear tensor functors. We thus immediately
-obtain:
-Corollary 2.10.The gerbe overpSch{Fq fpqc corresponding to the Tannakian categoryI E{F,s overFhas
-band which is isomorphic as anF-group scheme to Res E{FpGmq.
-It is not hard to see how this generalizes to give a more concrete interpretation of the categoryRWE{F,s.
-Recall theW LE{F -action ˜ΦRE{F on the ringR E{F defined in the previous subsection. We now define the
-categoryRI E{F,s, whose objects consist of tuplespV,D, ˜ΦqwhereVis anL E-vector space andDis aś
-ΓE{F
-1
-s Z-grading onV. The graded vector spaceVis equipped with an action of the graded ringR E{F and
-we require thatVis finitely generated as anR E{F -module. Finally, ˜Φis a semilinear action ofW LE{F on
-Vsuch that ˜Φpγqprvq“ ˜ΦRE{Fpγqprq ˜ΦpγqpvqforrPR E{F , and such thatV pbσ{sqσ has anL E-basis upon
-which ˜Φpfs
-Eqacts by scaling by ś
-σPΓE{F
-σpϖEqbσ. To simplify notation, we will often denote˜Φpγqpvqsimply
-byγ¨vorγv. The categoryRI E{F,s is Tannakian overFwith identity objectR E{F . An identical argument
-to the one above proves that the functorsTandSmay be extended to inverse functors ˜S, ˜TbetweenRI E{F,s
-andRW E{F,s, showing that the former is banded by theF-group scheme Res E{Fpµsq. By “extended," we
-mean in the sense that the diagram of quotient functors
-WE{F,s IE{F,s
-RWE{F,s RIE{F,s,
-13
-where the left vertical arrow the quotient functor discussed in the previous subsection, and the right vertical
-arrow is the functor which sends the objectpV,D, ˜Φqto the objectpVb LE RE{F,D1, ˜Φb ˜ΦRE{Fq, where
-D1 is the grading induced by tensoring the grading ofVwith that ofR E{F . Fors 1{s, there is a clear tran-
-sition functor fromI E{F,s toI E{F,s1, same forRI E{F,s, and one checks that the above equivalences with
+We will now describe the Galois descent constructed in the previous subsection in terms of a more concrete Tannakian category over $F$.
+
+First we define the category $\mathcal{I}_{E/F,s}$ for a fixed $s \in \mathbb{N}$; its objects are triples $(V, \tilde{\Phi},\mathcal{D})$ where $V$ is a finite dimensional $L_E$ vector space, $\tilde{\Phi}$ is a $\Gamma_{L_E/F}$-semilinear action of $W_{L_E/F}$ on $V$, and $\mathcal{D}$ is a $\prod_{\Gamma_{E/F}} \frac{1}{s}\mathbb{Z}$-grading of $V$, such that $V_{(a_{\sigma/s}){\sigma}}$ has an $L_{E}$-basis on which $\mathfrak{f}_{E}^{s} \in W_{L_{E}/F}$ acts by $\prod\limits_{\sigma \in \Gamma_{E/F}} \sigma(\varpi_E)^{a_{\sigma}}$, and that for $x \in \Gamma_{L_E/F}$ lifting $\bar{x} \in \Gamma_{E/F}$, we have that $\tilde{\Phi}(x)(V_{(a_{\sigma})_{\sigma}}) = V_{(a_{\bar{x}^{-1}\sigma})_{\sigma}}$. The category $\mathcal{I}_{E/F,s}$ has a natural tensor structure defined such that $(V, \tilde{\Phi}) \otimes (V', \tilde{\Phi}') = (V \otimes V', \tilde{\Phi} \otimes \tilde{\Phi}')$ where $\tilde{\Phi} \times \tilde{\Phi'}$ is given explicitly by $$(\tilde{\Phi} \otimes \tilde{\Phi}')(\sigma)(v \otimes v') = \tilde{\Phi}(\sigma)(v) \otimes \tilde{\Phi}'(\sigma)(v').$$ The identity object $\mathbf{1}$ of $\mathcal{I}_{E/F}$ consists of the $L_E$ vector space $L_E$ with $\tilde{\Phi}$ equal to the normal Galois action. It is easy to check that the endomorphisms of $\mathbf{1}$ are in canonical bijection with $F$.
+
+We now construct a functor $T: \mathcal{W}_{E/F,s} \to \mathcal{I}_{E/F,s}$. Given an object $(X, X \xrightarrow{f_{\gamma}} \beta_{\gamma}(X))$ of $\mathcal{W}_{E/F,s}$, we let the vector space $V$ in the $T$-image of $(X, X \xrightarrow{f_{\gamma}} \beta_{\gamma}(X))$ be the underlying vector space of $X$ and we let the grading $\mathcal{D}$ be the grading on $X$. We define $\tilde{\Phi}$ as follows. For any $\sigma \in W_{L_E/F}$ we can write uniquely $\sigma= \mathfrak{f}_{E}^n s_E(\gamma)$ for some $\gamma \in \Gamma_{E/F}$. Then we define $$\tilde{\Phi}(\sigma)(v) =\Phi^n(f^{-1}_{\gamma}(v \otimes 1)).$$ We note that $f^{-1}_{\gamma}$ is $s_E(\gamma)$ semilinear on $V$ by definition.
+
+To show that $\tilde{\Phi}$ is indeed a $\Gamma_{L_E/F}$-action, we need to verify for $\sigma_1, \sigma_2 \in \Gamma_{L_E/F}$ that $\tilde{\Phi}(\sigma_1) \circ \tilde{\Phi}(\sigma_2) = \tilde{\Phi}(\sigma_1\sigma_2)$. Explicitly, if $\sigma_i = \mathfrak{f}_{E}^{n_i} s_E(\gamma_i)$, then we must show that $$(\Phi^{n_1} \circ f^{-1}_{\gamma_1}) \circ (\Phi^{n_2} \circ f^{-1}_{\gamma_2}) = \Phi^{n_1+n_2 + c_E(\gamma_1,\gamma_2)}f^{-1}_{\gamma_1\gamma_2}.$$ By construction, we have $$f^{-1}_{\gamma_1\gamma_2} = f^{-1}_{\gamma_1} \circ f^{-1}_{\gamma_2} \circ \Phi^{-c_E(\gamma_1,\gamma_2)},$$ which implies the desired equality.
+
+We also need to check that $\tilde{\Phi}$ acts on the grading correctly. Let $\gamma \in \Gamma_{E/F}$. Then we have $$\tilde{\Phi}(s_E(\gamma))(V_{(a_{\sigma}/s)_{\sigma}}) = f^{-1}_{\gamma}(V_{(a_{\sigma}/s)_{\sigma}}\otimes 1)=f^{-1}_{\gamma}(\beta_{\gamma}(V)_{(a_{\gamma^{-1}\sigma}/s)_{\sigma}})=V_{(a_{\gamma^{-1}\sigma}/s)_{\sigma}}.$$ Finally, $T$ is a functor because morphisms of $\mathcal{W}_{E/F,s}$ must necessarily commute with the $\Phi$ and $f_{\gamma}$ maps.
+
+We now define a functor $S: \mathcal{I}_{E/F, s} \to \mathcal{W}_{E/F, s}$, giving a quasi-inverse of $T$. Given an object $(V, \tilde{\Phi}, \mathcal{D})$ of $\mathcal{I}_{E/F, s}$, we define its image under $S$ to have underlying vector space equal to $V$ and $\prod\limits_{\Gamma_{E/F}} \frac{1}{s} \mathbb{Z}$-grading $\mathcal{D}$. We define $\Phi$ to be $\tilde{\Phi}(\mathfrak{f}_E)$. Finally, for our fixed section $s_E: \Gamma_{E/F} \to W_{L_E/F}$, we define $f_{\gamma}: V \to \beta_{\gamma}(V)$ by $$f_{\gamma}: v \mapsto \tilde{\Phi}(s_E(\gamma))^{-1}(v) \otimes 1.$$
+
+There are many things we need to check in the above definition. First, we check that $f_{\gamma}$ is an isomorphism of $\mathfrak{f}_{E}$-spaces from $V$ to $\beta_{\gamma}(V)$ for a fixed $\gamma$. It is evidently an isomorphism of abelian groups, and is $\mathfrak{f}_{E}$-equivariant, since we have, for $v \in V$, the identity $$\tilde{\Phi}(s_{E}(\gamma))^{-1}(\mathfrak{f}_{E} \cdot v) \otimes 1 = \tilde{\Phi}(s_{E}(\gamma)^{-1})(\tilde{\Phi}(\mathfrak{f}_{E})(v)) \otimes 1 = \tilde\Phi(s_{E}(\gamma)^{-1}\mathfrak{f}_{E})(v) \otimes 1$$ $$= \tilde{\Phi}(\mathfrak{f}_{E} s_{E}(\gamma)^{-1})(v) \otimes 1 = \mathfrak{f}_{E} \cdot (\tilde{\Phi}(s_{E}(\gamma)^{-1})(v)) \otimes 1 = \mathfrak{f}_{E} \cdot (\tilde{\Phi}(s_{E}(\gamma))^{-1}(v)) \otimes 1 ,$$ where we have used that $\mathfrak{f}_{E}$ is contained in $Z(W_{L_{E}/F})$. We also have $L_{E}$-linearity due to the identity, for $\ell \in L_{E}$, given by $$\tilde{\Phi}(s_{E}(\gamma)^{-1})(v \otimes \ell) = s_{E}(\gamma)^{-1}(\ell)\tilde{\Phi}(s_{E}(\gamma)^{-1})(v) \otimes 1 = \tilde{\Phi}(s_{E}(\gamma)^{-1})(v) \otimes \ell.$$
+
+We now check that the maps $f_{\gamma}$ satisfy the cocycle condition with respect to $\beta_{\gamma}$ and $\mu_{\gamma',\gamma}$ stated in the previous subsection. Recall that this condition is given by the equation $$(\mu_{\gamma',\gamma})(X) \circ f_{\gamma'\gamma} = \beta_{\gamma'}(f_{\gamma}) \circ f_{\gamma'}$$ for any $X \in \mathcal{W}_{E/F,s}$. In our setting, this equation is $$\tilde{\Phi}(c_{E}(\gamma',\gamma)^{-1}) \circ \tilde{\Phi}(s_{E}(\gamma'\gamma))^{-1} = \tilde{\Phi}(s_{E}(\gamma))^{-1} \circ \tilde{\Phi}(s_{E}(\gamma'))^{-1},$$ which is trivial from the definition of the cocycle $c_{E}$, since $\tilde{\Phi}$ is a group action. It follows that the above functor gives a well-defined object of $\mathcal{W}_{E/F,s}$. Any morphism in $\mathcal{I}_{E/F,s}$ gives a morphism in $\mathcal{W}_{E/F,s}$, since morphisms in $\mathcal{I}_{E/F,s}$ preserve the grading by construction and commute with the $W_{L_{E}/F}$-action, and therefore with the maps $f_{\gamma}$. Both functors $S$ and $T$ are evidently $F$-linear tensor functors. We thus immediately obtain:
+
+::: cor
+The gerbe over $(\text{Sch}/F)_{\text{fpqc}}$ corresponding to the Tannakian category $\mathcal{I}_{E/F,s}$ over $F$ has band which is isomorphic as an $F$-group scheme to $\text{Res}_{E/F}(\mathbb{G}_{m}).$
+:::
+
+It is not hard to see how this generalizes to give a more concrete interpretation of the category $R\mathcal{W}_{E/F,s}$. Recall the $W_{L_{E}/F}$-action $\tilde{\Phi}_{R_{E/F}}$ on the ring $R_{E/F}$ defined in the previous subsection. We now define the category $R\mathcal{I}_{E/F,s}$, whose objects consist of tuples $(V, \mathcal{D},\tilde{\Phi})$ where $V$ is an $L_E$-vector space and $\mathcal{D}$ is a $\prod\limits_{\Gamma_{E/F}} \frac{1}{s}\mathbb{Z}$-grading on $V$. The graded vector space $V$ is equipped with an action of the graded ring $R_{E/F}$ and we require that $V$ is finitely generated as an $R_{E/F}$-module. Finally, $\tilde{\Phi}$ is a semilinear action of $W_{L_E/F}$ on $V$ such that $\tilde{\Phi}(\gamma)(rv)=\tilde{\Phi}_{R_{E/F}}(\gamma)(r) \tilde{\Phi}(\gamma)(v)$ for $r \in R_{E/F}$, and such that $V_{(b_{\sigma}/s)_{\sigma}}$ has an $L_E$-basis upon which $\tilde{\Phi}(\mathfrak{f}^s_E)$ acts by scaling by $\prod\limits_{\sigma \in \Gamma_{E/F}} \sigma(\varpi_E)^{b_{\sigma}}$. To simplify notation, we will often denote $\tilde{\Phi}(\gamma)(v)$ simply by $\gamma \cdot v$ or $\gamma v$. The category $R\mathcal{I}_{E/F, s}$ is Tannakian over $F$ with identity object $R_{E/F}$. An identical argument to the one above proves that the functors $T$ and $S$ may be extended to inverse functors $\tilde{S}, \tilde{T}$ between $R\mathcal{I}_{E/F,s}$ and $R\mathcal{W}_{E/F,s}$, showing that the former is banded by the $F$-group scheme $\text{Res}_{E/F}(\mu_{s})$. By "extended,\" we mean in the sense that the diagram of quotient functors $$\begin{tikzcd}
+\mathcal{W}_{E/F,s} \arrow{d} \arrow{r} & \mathcal{I}_{E/F,s} \arrow{d} \\
+R\mathcal{W}_{E/F,s} \arrow{r} & R \mathcal{I}_{E/F,s},
+\end{tikzcd}$$ where the left vertical arrow the quotient functor discussed in the previous subsection, and the right vertical arrow is the functor which sends the object $(V, \mathcal{D}, \tilde{\Phi})$ to the object $(V \otimes_{L_{E}} R_{E/F}, \mathcal{D}', \tilde{\Phi} \otimes \tilde{\Phi}_{R_{E/F}})$, where $\mathcal{D}'$ is the grading induced by tensoring the grading of $V$ with that of $R_{E/F}$. For $s'/s$, there is a clear transition functor from $\mathcal{I}_{E/F,s}$ to $\mathcal{I}_{E/F,s'}$, same for $R\mathcal{I}_{E/F,s}$, and one checks that the above equivalences with $\mathcal{W}_{E/F,s}$ and $R\mathcal{W}_{E/F,s}$ (which also have transition maps) are compatible as we vary $s$, giving an identification of $\mathcal{W}_{E/F}$ and $R\mathcal{W}_{E/F}$ with the direct limit of the systems categories, denoted by $\mathcal{I}_{E/F}$ and $R\mathcal{I}_{E/F}$, respectively. However, when constructing our final Tannakian category, we will use slightly more interesting transition maps than these (in particular, we will also change the extension $E/F$).

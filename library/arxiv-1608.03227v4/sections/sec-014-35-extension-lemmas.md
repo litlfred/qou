@@ -8,143 +8,79 @@ pages: 16-18
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.946
+latex_coverage_ratio: 0.932
 ---
-Lemma 3.4. Let (C•,d +
-• ) be a h-equivariant complex
-C0
-d+
-1
-←−−C1
-d+
-2
-←−−...
-d+
-ℓ
-←−−Cℓ
-of C[Z] modules and F∈ C[Z]h such that
-(1) Elements of Hom<0
-d+ (C•,C •) are homotopic to 0
-(2) The element F∈ Hom0
-d+ (C•,C •) is homotopic to 0.
-Then there are homomophisms d−
-ij :Ci→Cj , i>j of C[Z]-modules such that
-[(C•,d + +d−)]per∈ MF(Z,F )
-and there are homomorphisms of C[Z], ∂−
-ij : Λ •h⊗Ci→ Λ <•h⊗Cj, j >i such that
-[(C•,d − +d+,∂ −)]per∈ MFh(Z,F ).
-We do not provide a proof of this lemma since it is a particular case of a m ore general statement that is
-proven below. The more general statement is an equivariant versio n of lemmas 3.1 and 3.2.
-Let Mod h
-per(Z) be a category of Z2-graded free C[Z] modules with endomorphisms equipped with h-
-equivariant structure. That is an object F∈ Modh
-per(Z) is the triple (M,D,∂ ),M =M 0⊕M 1,M i = C[Z]⊗
-W i where W i∈ Modh, D∈ HomC[Z](M 1,M 0)⊕ HomC[Z](M 0,M 1), ∂ = ∑
-i>j∂ij, ∂ij∈ HomC[Z](Λ ih⊗
-M, Λ jh⊗M ).
-The h-action on Mi is deﬁned by the Hopf formula and using this action one deﬁne diﬀeren tial dce
-on CE h⊗
-∆
-M . The space of morphism between two objects ( M,D,∂ ), ( ˜M, ˜D, ˜∂)∈ Modh
-per(Z) consists of
-morphisms Ψ ∈ HomC[Z](M, ˜M ) that intertwine the endomorphisms:
-Ψ◦ (D +dce +∂) = ( ˜D + ˜dce + ˜∂)◦ Ψ.
-We do not require h-equivariance for the morphisms in the category and we do not requ ire h-equivariance of
-D.
-Similarly we deﬁne Com h
-per(Z) to be the category of (not necessarily h-equivariant) complexes of objects
-of Mod h
-per(Z), we do not impose h-equivariance conditions on the morphisms and homotopies in Com h
-per(Z).
-In this setting we have the following equivariant version lemma 3.1,3.2:
-Lemma 3.5. Let (F•,d +
-• ),Fi = (Mi,D i,∂ i) be an element of Comh,ℓ
-per(Z) and F∈ C[Z]h such that
-(1) Elements of Hom<0
-d+ (F•,F•) are homotopic to 0
-(2) Element F−D2∈ Hom0
-d+ (F•,F•) is homotopic to 0
-16
-(3) Element F− (D +∂ +dce)2∈ Hom0
-d+(CEh⊗
-∆
-F•, CEh⊗
-∆
-F•) is homotopic to 0.
-Then there are maps d−
-ij :Fi→F j, i>j of elements of Modper(Z) such that
-[(F•,d + +D +d−)]per∈ MF(Z,F )
-and there are maps of elements of Modper(Z), ∂−
-ij : Λ •h⊗F i→ Λ <•h⊗F j, j >i such that
-[(F•,D +d− +d+,∂ +∂−)]per∈ MFh(Z,F ).
-Proof. In the proof we would use short hand notations Hom i, Hom i
-d+ for space morphisms Hom i(F•,F•)
-and Homi
-d+(F•,F•). We also assume that we have chosen the signs in our construction ofd+ in such that the
-equivariance condition is equivalent to [d++D,d ce+∂]+ = 0. Given linear map A∈ Hom(CEh⊗
-∆
-F•, CEh⊗
-∆
-F•)
-we denote by [ A]k the part of A that is in Hom(CE h, CEh)⊗ Homi.
-As ﬁrst step of our construction we apply the lemma 3.1 to construc t diﬀerentials d−
-ij :Fi→F j such that
-[(F•,D +d+ +d−)]per∈ MF(Z,F ).
-By the ﬁrst step and the assumption of the lemma we have
-(d+ +d− +D +∂ +dce)2−F = [d+ +d− +D,∂ +dce]+
-+ (∂ +dce)2∈ Hom(Λ ∗h, Λ ∗h)⊗ Hom≤0.
-Since∂ +dce∈ Hom(Λ •h, Λ <•h)⊗ Hom0, we conclude that there is h(−1)∈ Hom(Λ •h, Λ <•h)⊗ Hom−1 such
-that [h(−1),d +]+ = (∂ +dce)2 and hence
-d(−1) := (d+ +d− +D +∂ +dce)2−F− [h(−1),d +]+
-= [d−,∂ +dce]∈ Hom(Λ ∗h, Λ ∗h)⊗ Hom<0.
-Let us deﬁne D(0) :=d+ +D +∂ +dce +d− +h(−1) then we see that
-(D(0))2−F =d(−1) + [h(−1),d − +D +∂ +dce]+ + (h(−1))2∈ Hom(Λ •h, Λ <•)⊗ Hom<0.
-We have proved the seed of induction for the following statement. F or anyk there ish(k)∈ Hom(Λ •h, Λ <•h)⊗
-Hom−k such that
-(D(k))2−F∈ Hom(Λ •h, Λ <•h)⊗ Hom<−k, D (k) =D(k−1) +h(−k−1).
-Suppose we have constructed D(k) and h(−i), i≤ k + 1. By induction assumption we have ( D(k))2 =
-F + [(D(k))2]<−k and we see that
-0 = [D(k), (D(k))2] = [D(k), [(D(k))2]<−k] = [d+, [(D(k))2)]−k−1]
-+ [d+, [(D(k))2]<−k−1] + [D +∂ +dce +d− +
-∑
-i
-h(−i), [(D(k))2]<−k].
-the ﬁrst summand of the last expression is from Hom(Λ •h, Λ <•h)⊗ Hom−k and the last two summands are
-from Hom(Λ •h, Λ <•h)⊗ Hom<−k. Hence [( D(k))2]−k−1∈ Hom−k−1
-d+ and hence it is homotopic to 0 and thus
-there is
-h(−k−2)∈ Hom(Λ •h, Λ <•h)⊗ Hom−k−2
-17
-such that [(D(k))2]−k−1 = [d+,h (−k−2)]+. The diﬀerential D(k+1) =D(k) +h(−k−2) provides the induction
-step.
-By setting ∂− = ∑
-ih(−i) we complete our proof. ✷
-Lemma 3.6. Let (F•,d +
-• ) be an element of Comh,ℓ(Z) andF∈ C[Z]H that satisfy conditions of the previous
-lemma. Suppose there two sets of diﬀerentials d−, ˆd− :Fi→F j, ∂−
-ij, ˆ∂ij : Λ •h⊗F i→ Λ <•h⊗F j, j >i such
-that
-[(F•,D +∂ +d+ +d− +dce +∂−)]per, [(F•,D +∂ +d+ +dce + ˆd− + ˆ∂−)]per∈ MF(Z,F )
-then there is Ψ = ∑
-i≤0 Ψ i, Ψ −i∈ Hom−i(CEh⊗
-∆
-F•, CEh⊗
-∆
-F•), Ψ 0 = Id, Ψ −1 = 0, such
-Ψ◦ (D +∂ +d+ +d− +dce +∂−)◦ Ψ −1 =D +∂ +d+ + ˆd− +dce + ˆ∂−.
-Proof. Let d0 =D +∂ +dce,d− =d− +∂− and Dtot =d+ +d0 +d−, ˆd− = ˆ∂− + ˆd−, ˆDtot =d+ +d0 + ˆd−.
-Suppose we constructed Ψ −i∈ Hom−i(CEh⊗
-∆
-F•, CEh⊗
-∆
-F•),k >i≥ 0 such that Ψ (k) := ∑
-0≤i<k Ψ −i satisﬁes
-ˆDtot−D(k)
-tot∈ Hom≥−k+1, D (k)
-tot = Ψ (k)◦Dtot◦ (Ψ (k))−1.
-Let us use notation ∆ = − ˆDtot +D(k)
-tot then we have
-0 = ( ˆDtot + ∆) 2− ( ˆDtot)2 = [[∆] −k+1,d +]+ + [[∆] ≤−k,d +]+ + [∆ ,d 0 + ˆd−]+ + ∆ 2.
-Since the ﬁrst summand is from Hom −k+2 and the rest of summands are from Hom ≤−k+1 we get that
-[[∆] −k+1,d +]+ = 0. Thus there is Ψ −k∈ Hom−k such that [∆] −k+1 = [d+, Ψ −k]. The element Ψ (k+1) :=
-Ψ (k) + Ψ −k prove our inductive statement.
-✷
+We have the following analog of Lemma [\[lem: ext MF\]](#lem: ext MF){reference-type="ref" reference="lem: ext MF"} and respective uniqueness result.
+
+::: lemma
+[]{#lem: ext MF eq label="lem: ext MF eq"} Let $(C_\bullet,d_\bullet^+)$ be a $\frh$-equivariant complex $$C_0\xleftarrow{d_1^+}C_1\xleftarrow{d_2^+}\dots\xleftarrow{d_\ell^+} C_\ell$$ of $\CC[\calZ]$ modules and $F\in \CC[\calZ]^\frh$ such that
+
+1.  Elements of $\xExtdpv{<0}(C_\bullet,C_\bullet)$ are homotopic to $0$
+
+2.  The element $F\in \xExtdpv{0}(C_\bullet,C_\bullet)$ is homotopic to $0$.
+
+Then there are homomophisms $d^-_{ij}: C_i\to C_j$, $i>j$ of $\CC[\calZ]$-modules such that $$[(C_\bullet,d^++d^-)]_{per}\in \MFs(\calZ,F)$$ and there are homomorphisms of $\CC[\calZ]$, $\partial_{ij}^-: \Lambda^\bullet\frh\otimes C_i\to \Lambda^{<\bullet}\frh\otimes C_j$, $j>i$ such that $$[(C_\bullet, d^-+d^+,\partial^-)]_{per}\in \MFs_\frh(\calZ,F).$$
+:::
+
+We do not provide a proof of this lemma since it is a particular case of a more general statement that is proven below. The more general statement is an equivariant version of lemmas [\[lem: ext MF+\]](#lem: ext MF+){reference-type="ref" reference="lem: ext MF+"} and [\[lem: uniq MF+\]](#lem: uniq MF+){reference-type="ref" reference="lem: uniq MF+"}.
+
+Let $\Mod^{\frh}_{per}(\calZ)$ be a category of $\mathbb{Z} _2$-graded free $\CC[\calZ]$ modules with endomorphisms equipped with $\frh$-equivariant structure. That is an object $\calF\in \Mod^\frh_{per}(\calZ)$ is the triple $(M,D,\partial)$, $M=M^0\oplus M^1$, $M^i=\CC[\calZ]\otimes W^i$ where $W^i\in \Mod_\frh$, $D\in \Hom_{\CC[\calZ]}(M^1,M^0)\oplus \Hom_{\CC[\calZ]}(M^0,M^1)$, $\partial=\sum_{i> j} \partial_{ij}$, $\partial_{ij}\in \Hom_{\CC[\calZ]}(\Lambda^i\frh\otimes M, \Lambda^j\frh\otimes M)$.
+
+The $\frh$-action on $M_i$ is defined by the Hopf formula and using this action one define differential $d_{ce}$ on $\CE_\frh\odel M$. The space of morphism between two objects $(M,D,\partial),  (\tilde{M},\tilde{D},\tilde{\partial})\in \Mod^{\frh}_{per}(\calZ)$ consists of morphisms $\Psi\in \Hom_{\CC[\calZ]}(M,\tilde{M})$ that intertwine the endomorphisms: $$\Psi\circ(D+d_{ce}+\partial)=(\tilde{D}+\tilde{d}_{ce}+\tilde{\partial})\circ \Psi.$$ We do not require $\frh$-equivariance for the morphisms in the category and we do not require $\frh$-equivariance of $D$.
+
+Similarly we define $\Com^{\frh}_{per}(\calZ)$ to be the category of (not necessarily $\frh$-equivariant) complexes of objects of $\Mod_{per}^\frh(\calZ)$, we do not impose $\frh$-equivariance conditions on the morphisms and homotopies in $\Com^{\frh}_{per}(\calZ)$. In this setting we have the following equivariant version lemma [\[lem: ext MF+\]](#lem: ext MF+){reference-type="ref" reference="lem: ext MF+"},[\[lem: uniq MF+\]](#lem: uniq MF+){reference-type="ref" reference="lem: uniq MF+"}:
+
+::: lemma
+[]{#lem: ext MF+eq label="lem: ext MF+eq"} Let $(\calF_\bullet,d_\bullet^+)$, $\calF_i=(M_i,D_i,\partial_i)$ be an element of $\Com^{\frh,\ell}_{per}(\calZ)$ and $F\in \CC[\calZ]^\frh$ such that
+
+1.  Elements of $\xExtdpv{<0}(\calF_\bullet,\calF_\bullet)$ are homotopic to $0$
+
+2.  Element $F-D^2\in \xExtdpv{0}(\calF_\bullet,\calF_\bullet)$ is homotopic to $0$
+
+3.  Element $F-(D+\partial+d_{ce})^2\in \xExtdpv{0}(\CE_\frh\odel \calF_\bullet,\CE_\frh\odel \calF_\bullet)$ is homotopic to $0$.
+
+Then there are maps $d^-_{ij}: \calF_i\to \calF_j$, $i>j$ of elements of $\Mod_{per}(\calZ)$ such that $$[(\calF_\bullet,d^++D+d^-)]_{per}\in \MFs(\calZ,F)$$ and there are maps of elements of $\Mod_{per}(\calZ)$, $\partial_{ij}^-: \Lambda^\bullet\frh\otimes\calF_i\to \Lambda^{<\bullet}\frh\otimes \calF_j$, $j>i$ such that $$[(\calF_\bullet, D+d^-+d^+,\partial+\partial^-)]_{per}\in \MFs_\frh(\calZ,F).$$
+:::
+
+::: proof
+*Proof.* In the proof we would use short hand notations $\Hom^{i}$, $\xExtdpv{i}$ for space morphisms $\xHom^i(\calF_\bullet,\calF_\bullet)$ and $\xExtdpv{i}(\calF_\bullet,\calF_\bullet)$. We also assume that we have chosen the signs in our construction of $d_+$ in such that the equivariance condition is equivalent to $[d_++D,d_{ce}+\partial]_+=0$. Given linear map $A\in \xHom(\CE_\frh\odel \calF_\bullet,\CE_\frh\odel \calF_\bullet)$ we denote by $[A]_{k}$ the part of $A$ that is in $\xHom(\CE_\frh,\CE_\frh)\otimes \xHom^i$.
+
+As first step of our construction we apply the lemma [\[lem: ext MF+\]](#lem: ext MF+){reference-type="ref" reference="lem: ext MF+"} to construct differentials $d^-_{ij}: \calF_i\to \calF_j$ such that $$[(\calF_\bullet,D+d^++d^-)]_{per}\in \MFs(\calZ,F).$$
+
+By the first step and the assumption of the lemma we have $$\begin{gathered}
+ (d^++d^-+D+\partial+d_{ce})^2-F=[d^++d^-+D,\partial +d_{ce}]_+\\+(\partial+d_{ce})^2\in \Hom(\Lambda^*\frh,\Lambda^*\frh)\otimes \Hom^{\le 0}.
+\end{gathered}$$
+
+Since $\partial+d_{ce}\in \Hom(\Lambda^\bullet \frh,\Lambda^{<\bullet}\frh)\otimes \Hom^0$, we conclude that there is $h^{(-1)}\in \Hom(\Lambda^\bullet \frh,\Lambda^{<\bullet}\frh)\otimes \Hom^{-1}$ such that $[h^{(-1)},d_+]_+=(\partial+d_{ce})^2$ and hence $$\begin{gathered}
+  d^{(-1)}:= (d^++d^-+D+\partial+d_{ce})^2-F-[h^{(-1)},d_+]_+\\
+  =[d^-,\partial+d_{ce}]\in \Hom(\Lambda^*\frh,\Lambda^*\frh)\otimes \Hom^{<0}.
+  
+\end{gathered}$$
+
+Let us define $D^{(0)}:=d^++D+\partial+d_{ce}+d^-+h^{(-1)}$ then we see that $$(D^{(0)})^2-F=d^{(-1)}+[h^{(-1)},d^-+D+\partial+d_{ce}]_++(h^{(-1)})^2\in \Hom(\Lambda^\bullet\frh,\Lambda^{<\bullet})\otimes \Hom^{<0}.$$
+
+We have proved the seed of induction for the following statement. For any $k$ there is $h^{(k)}\in \Hom(\Lambda^{\bullet}\frh,\Lambda^{<\bullet}\frh)\otimes \Hom^{-k}$ such that $$(D^{(k)})^2-F\in \Hom( \Lambda^\bullet\frh,\Lambda^{<\bullet}\frh) \otimes \Hom^{<-k},\quad  D^{(k)}=D^{(k-1)}+h^{(-k-1)}.$$
+
+Suppose we have constructed $D^{(k)}$ and $h^{(-i)}$, $i\le k+1$. By induction assumption we have $(D^{(k)})^2=
+F+[(D^{(k)})^2]_{<-k}$ and we see that
+
+$$\begin{gathered}
+0=[D^{(k)}, (D^{(k)})^2]=[D^{(k)},[(D^{(k)})^2]_{<-k}]=[d_+, [(D^{(k)})^2)]_{-k-1}]\\+[d_+,[(D^{(k)})^2]_{<-k-1}]+[D+\partial+d_{ce}+d^-+\sum_i h^{(-i)},[(D^{(k)})^2]_{<-k}].
+\end{gathered}$$ the first summand of the last expression is from $\Hom(\Lambda^\bullet\frh,\Lambda^{<\bullet}\frh)\otimes \Hom^{-k}$ and the last two summands are from $\Hom(\Lambda^\bullet\frh,\Lambda^{<\bullet}\frh)\otimes \Hom^{<-k}$. Hence $[(D^{(k)})^2]_{-k-1}\in \Hom_{d_+}^{-k-1}$ and hence it is homotopic to $0$ and thus there is $$h^{(-k-2)}\in \Hom(\Lambda^\bullet\frh,\Lambda^{<\bullet}\frh)\otimes \Hom^{-k-2}$$ such that $[(D^{(k)})^2]_{-k-1}=[d_+,h^{(-k-2)}]_+$. The differential $D^{(k+1)}=D^{(k)}+h^{(-k-2)}$ provides the induction step.
+
+By setting $\partial^-=\sum_{i} h^{(-i)}$ we complete our proof. ◻
+:::
+
+::: lemma
+[]{#lem: uniq MF+eq label="lem: uniq MF+eq"} Let $(\calF_\bullet,d_\bullet^+)$ be an element of $\Com^{\frh,\ell}(\calZ)$ and $F\in \CC[\calZ]^H$ that satisfy conditions of the previous lemma. Suppose there two sets of differentials $d^-,\hat{d}^-: \calF_i\to \calF_j$, $\partial_{ij}^-,\hat{\partial}_{ij}: \Lambda^\bullet\frh\otimes\calF_i\to \Lambda^{<\bullet}\frh\otimes \calF_j$, $j>i$ such that $$[(\calF_\bullet, D+\partial+d^++d^-+d_{ce}+\partial^-)]_{per}, [(\calF_\bullet, D+\partial+d^++d_{ce}+\hat{d}^-+\hat{\partial}^-)]_{per}\in \MFs(\calZ,F)$$ then there is $\Psi=\sum_{i\le 0}\Psi_i$, $\Psi_{-i}\in \Hom^{-i}(\CE_\frh\odel \calF_\bullet,\CE_\frh\odel\calF_\bullet)$, $\Psi_0=\mathrm{Id}$, $\Psi_{-1}=0$,
+
+such $$\Psi\circ (D+\partial+d^++d^-+d_{ce}+\partial^-)\circ \Psi^{-1}= D+\partial+d^++\hat{d}^-+d_{ce}+\hat{\partial}^-.$$
+:::
+
+::: proof
+*Proof.* Let $d_0=D+\partial+d_{ce}$, $d_-=d^-+\partial^-$ and $D_{tot}=d^++d_0+d_-$, $\hat{d}_-=\hat{\partial}^-+\hat{d}^-$, $\hat{D}_{tot}=d^++d_0+\hat{d}_-$. Suppose we constructed $\Psi_{-i}\in \Hom^{-i}(\CE_\frh\odel \calF_\bullet,\CE_\frh\odel\calF_\bullet)$, $k>i\ge 0$ such that $\Psi^{(k)}:=\sum_{0\le i<k}\Psi_{-i}$ satisfies $$\hat{D}_{tot}-D^{(k)}_{tot}\in \Hom^{\ge -k+1},\quad  D^{(k)}_{tot}=\Psi^{(k)}\circ D_{tot}\circ (\Psi^{(k)})^{-1}.$$
+
+Let us use notation $\Delta=-\hat{D}_{tot}+D^{(k)}_{tot}$ then we have $$0=(\hat{D}_{tot}+\Delta)^2-(\hat{D}_{tot})^2=[[\Delta]_{-k+1},d_+]_+  + [[\Delta]_{\le -k},d_+]_++[\Delta,d_0+\hat{d}_-]_++\Delta^2.$$ Since the first summand is from $\Hom^{-k+2}$ and the rest of summands are from $\Hom^{\le -k+1}$ we get that $[[\Delta]_{-k+1},d_+]_+=0$. Thus there is $\Psi_{-k}\in \Hom^{-k}$ such that $[\Delta]_{-k+1}=[d^+,\Psi_{-k}]$. The element $\Psi^{(k+1)}:=\Psi^{(k)}+\Psi_{-k}$ prove our inductive statement. ◻
+:::

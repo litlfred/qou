@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2111.06645v3/blocks/prose-sec-030",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2111.06645v3/blocks/prose-sec-030",
   "kind": "prose",
   "title": "Arithmetic aspects",
   "pageStart": 63,
   "pageEnd": 63,
   "text": "../sections/sec-030-9-arithmetic-aspects.md",
-  "derivedFrom": "library/arxiv-2111.06645v3/manifest",
-  "sourceDocument": "library/arxiv-2111.06645v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
   "provenance": "ingested"
 }

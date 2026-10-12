@@ -8,122 +8,85 @@ pages: 39-41
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
 doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
+text_source: latex
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.984
 ---
-Consider h ⊂sln+1(C) the Cartan subalgebra of diagonal matrices, in particular
-a diagonal matrix in PSL n+1(C) lies in exp h.
-For a generic character χ ∈X0(M 3, PSLn+1(C)), one would like to consider
-in a neighborhood U of χ:
-logγ∶ U ⊂X0(M 3, PSLn+1(C)) → h
-χρ ↦ log ρ(γ) (39)
-but a priori this may not be well deﬁned. Notice that there are indet erminacies
-due to the action of the Weyl group (permutation of elements in the diagonal)
-and indeterminacies due to the complex logarithm. This motivates the following
-deﬁnition.
-Deﬁnition 5.10. A representation ρ ∈hom(π1M 3, PSLn+1(C)) is chamber reg-
-ular is there exists a peripheral element γ ∈π1T 2 such that ρ(γ) has n + 1
-diﬀerent eigenvalues.
-In terms of Lie groups this is a regularity condition: ρ(π1T 2) is contained
-in a Cartan subgroup and in the interior of the Weyl chamber of PSL n+1(C).
-By [60], the symmetric functions on the eigenvalues of ρ(γ) deﬁne a local
-biholomorphism in a neighborhood of ̺n, hence all eigenvalues of ρ(γ) are dif-
-ferent in a Zariski open set. Thus:
-Remark 5.11. The set of chamber regular characters is a non-empty Zariski
-open subset of X0(M 3, PSL2(C)).
-For a chamber regular character and a peripheral element γ ∈π1T 2, there
-exist a neighborhood U ⊂X0(M 3, PSLn+1(C)) such that the logarithm log γ as
-in (39) is deﬁned in U . Notice that the eigenvalues of the image of γ do not
-need to be diﬀerent, provided that there is an element in the periphe ral group
-with diﬀerent eigenvalues.
-Next consider a nonzero element a ∈h. Using the Killing form, we deﬁne
-a⋆ ∈h to be the pairing with a.
-Lemma 5.12. Let ρ be a chamber regular representation, γ a peripheral curve
-and a ∈h. Viewing H1(M 3; Adρ) as cotangent space:
-a ∩ [γ] = d(a⋆ logγ). (40)
-This must be compared with [82, Lemma 3.20]. Before proving this lemm a,
-let us discuss its consequences.
-39
-Proposition 5.13. Let χρ ∈X0(M 3, PSLn+1(C)) be a chamber regular charac-
-ter and γ a peripheral curve. Then TM,γ (χρ) ≠0 if and only if χρ is a scheme
-reduced smooth point of X0(M 3, PSLn+1(C)) and logγ is a local parameter.
-The proof follows easily from Lemma 5.12, and we just sketch it. Name ly,
-the condition of being scheme reduced and smooth is equivalent to sa ying that
-dim H 1(M 3; Adρ) = n. By the standard arguments of the long exact sequence
-of the pair (M 3, T 2) this implies that dim H 0(T 2; Adρ) = n and that {a1 ∩
-[T 2], . . . , an ∩ [T 2]} is a basis for H 2(M 3; Adρ). Then Lemma 5.12 yields that
-{a1 ∩ [γ], . . . , an ∩ [γ]} is a basis for H 1(M 3; Adρ) iﬀ log γ is a local parameter.
-For a chamber regular character, the condition of Proposition 5.13 is equiv-
-alent to the notion of γ-regularity of [55, Deﬁnition 3.2].
-Notice ﬁnally that for any non-trivial peripheral curve γ, for the lift of the
-holonomy ̺, even if it is not chamber regular, TM,γ (χ̺n ) ≠0, by [55, Theo-
-rem 3.4].
-Proposition 5.14. Let γ1, γ2 be two peripheral elements. In a Zariski open
-domain in X0(M 3, PSLn+1(C))
-T(M,γ1)
-T(M,γ2)
-= ± J(logγ1 log−1
-γ2 ).
-Notice that the Jacobian J (logγ1 log−1
-γ2 ) is well deﬁned generically on the
-distinguished component X0(M 3, PSLn+1(C)), i.e. in a non-empty open Zariski
-set, as log γ2 is a local parameter in an open set. In addition, this Jacobian
-is independent of the parametrization of h, as any change of parametrization
-cancels in the quotient. The proof of Proposition 5.14 is straightfor ward from
-Lemma 5.12 and the formula of change of basis in homology (6).
-Proposition 5.14 does not cover χ̺n , the character of Sym n of the holonomy
-of the complete hyperbolic structure, as it is not chamber regular. However,
-Corollary 5.7 and Proposition 4.21(d) yield:
-T n+1
-M,γ2(χ̺n ) = cs(γ2, γ1)n T n+1
-M,γ1(χ̺n ),
-where cs (γ2, γ1) denotes the cusp shape (Deﬁnition 3.19).
-Proof of Lemma 5.12. Assume that ρ is a generic representation so that ρ(γ)
-is diagonal with diﬀerent eigenvalues. Let h denote the Cartan algebra of di-
-agonal matrices, and choose a non-zero element a ∈h. In particular a ∩ γ ∈
-H1(M 3; Adρ). Consider the dual of a:
-a⋆∶ h → C
-h ↦ B(a, h)
-where B denotes the Killing form. Consider also a ﬁrst order deformation ρt of
-ρ, i.e.
-ρt = (1 + t ˙ρ + O(t2))ρ (41)
-where ˙ρ∶ π1M 3 → sln+1(C) is a group cocycle, that we project to H 1(M 3; Adρ).
-Consider ﬁnally the Kronecker pairing
-⟨⋅⟩∶ H k(M 3; Adρ) × Hk(M 3; Adρ) → C
-40
-deﬁned as follows. Let z ∈Ck(M 3; Adρ) be a cocycle, with z∶ Ck(/tild⟩comb.alt1M 3; Z) →
-sln+1(C), and let h ⊗ m ∈Ck(M 3; Adρ), where h ∈sln+1(C) and m ∈Ck(/tild⟩comb.alt1M 3; Z).
-At the (co-)chain level, the Kronecker pairing is
-⟨z, h ⊗ m⟩ = B(h, z(m)) (42)
-where B denotes again the Killing form. This induces a non-degenerate pair-
-ing between homology and cohomology [82]. After all those preliminarie s, to
-establish the lemma one must prove the following equality
-⟨ ˙ρ, a ∩ [γ]⟩ = d
-dt a⋆ log ρt(γ)/divid⟩s.alt3
-t=0
-. (43)
-To prove (43), start with the group cohomology version of (42) in t he current
-context (see [82]):
-⟨ ˙ρ, a ∩ [γ]⟩ = B(a, ˙ρ(γ)). (44)
-From (41) evaluated at γ and taking logarithms:
-log ρt(γ) = log ρ(γ) + t ˙ρ(γ) + O(t2)) . (45)
-Then (43) follows from a⋆ applied to (45), then diﬀerentiating and applying (44)
-to the result.
-Lemma 5.12 may be related to the results of Goldman [35].
-Example 5.15 (Volumes on X(K, SU (2))). In [21, 22] Dubois makes a relevant
-contribution of torsions as volume form on the variety of characte rs of a knot
-in SU (2). Here the Cartan algebra has dimension one and the logarithm of a
-matrix in SU (2) is an angle. Dubois volume form is, up to sign,
-voltor = ± dϕγ
-Tm,γ
-where ϕγ denotes the angle of the representation of the peripheral curve γ.
-Notice that by Proposition 5.14, this form is independent of the choic e of the
-peripheral curve. In [21, 22], using Turaev’s reﬁnement of torsio n and a good
-choice of ϕγ, Dubois avoids the sign indeterminacy. He also shows that it
-equals to a volume form deﬁned from a Heegaard splitting, ` a la Johns on (Ex-
-ample 2.25). This is related to the construction of an orientation on t he space
-of representations of Heusener [40].
-Proposition 5.14 suggests that a similar volume form can be construc ted for
-representations in SU (n + 1), taking a convenient parametrization of the Cartan
-algebra (i.e. inﬁnitesimal angles). It remains to know also whether th e variety
-of characters of a knot in SU (n+1) is non-empty and n-dimensional. This holds
-true for instance for two bridge knots. Another issue is to comput e explicitly
-the variety of SU (n + 1) characters for a knot.
+Consider $\mathfrak{h}\subset \mathfrak{sl}_{n+1}(\mathbb{C})$ the Cartan subalgebra of diagonal matrices, in particular a diagonal matrix in $\mathrm{PSL}_{n+1}(\mathbb{C})$ lies in $\exp \mathfrak{h}$.
+
+For a generic character $\chi\in X_0(M^3,\mathrm{PSL}_{n+1}(\mathbb{C}))$, one would like to consider in a neighborhood $U$ of $\chi$: $$\label{eqn:log}
+    \begin{array}{rcl}
+      \log_\gamma\colon U\subset X_0(M^3,\mathrm{PSL}_{n+1}(\mathbb{C}))&\to& \mathfrak{h}\\
+      \chi_\rho & \mapsto & \log \rho(\gamma)  
+    \end{array}$$ but a priori this may not be well defined. Notice that there are indeterminacies due to the action of the Weyl group (permutation of elements in the diagonal) and indeterminacies due to the complex logarithm. This motivates the following definition.
+
+::: definition
+[]{#defn:chamberreg label="defn:chamberreg"} A representation $\rho\in \hom(\pi_1M^3,\mathrm{PSL}_{n+1}(\mathbb{C}))$ is *chamber regular* is there exists a peripheral element $\gamma\in\pi_1 T^2$ such that $\rho(\gamma)$ has $n+1$ different eigenvalues.
+:::
+
+In terms of Lie groups this is a regularity condition: $\rho(\pi_1T^2)$ is contained in a Cartan subgroup and in the interior of the Weyl chamber of $\mathrm{PSL}_{n+1}(\mathbb{C})$.
+
+By [@MFP12b], the symmetric functions on the eigenvalues of $\rho(\gamma)$ define a local biholomorphism in a neighborhood of $\varrho^{n}$, hence all eigenvalues of $\rho(\gamma)$ are different in a Zariski open set. Thus:
+
+::: remark
+The set of chamber regular characters is a non-empty Zariski open subset of $X_0(M^3,\mathrm{PSL}_2(\mathbb{C}))$.
+:::
+
+For a chamber regular character and a peripheral element $\gamma\in\pi_1 T^2$, there exist a neighborhood $U \subset X_0(M^3,\mathrm{PSL}_{n+1}(\mathbb{C}))$ such that the logarithm $\log_\gamma$ as in [\[eqn:log\]](#eqn:log){reference-type="eqref" reference="eqn:log"} is defined in $U$. Notice that the eigenvalues of the image of $\gamma$ do not need to be different, provided that there is an element in the peripheral group with different eigenvalues.
+
+Next consider a nonzero element $a\in \mathfrak{h}$. Using the Killing form, we define $a^\star\in\mathfrak{h}$ to be the pairing with $a$.
+
+::: lemma
+[]{#lemma:pairing label="lemma:pairing"} Let $\rho$ be a chamber regular representation, $\gamma$ a peripheral curve and $a\in\mathfrak{h}$. Viewing $H_1(M^3;\operatorname{Ad}\rho)$ as cotangent space: $$\label{eqn:cotangent}
+ a\cap[\gamma] = d ( a^\star\log_\gamma).$$
+:::
+
+This must be compared with [@Memoirs Lemma 3.20]. Before proving this lemma, let us discuss its consequences.
+
+::: prop
+[]{#prop:localparameter label="prop:localparameter"} Let $\chi_\rho\in X_0(M^3,\mathrm{PSL}_{n+1}(\mathbb{C}))$ be a chamber regular character and $\gamma$ a peripheral curve. Then $\mathcal{T}_{M,\gamma}(\chi_\rho)\neq 0$ if and only if $\chi_\rho$ is a scheme reduced smooth point of $X_0(M^3,\mathrm{PSL}_{n+1}(\mathbb{C}))$ and $\log_{\gamma}$ is a local parameter.
+:::
+
+The proof follows easily from Lemma [\[lemma:pairing\]](#lemma:pairing){reference-type="ref" reference="lemma:pairing"}, and we just sketch it. Namely, the condition of being scheme reduced and smooth is equivalent to saying that $\dim H^1(M^3;\operatorname{Ad}\rho)=n$. By the standard arguments of the long exact sequence of the pair $(M^3, T^2)$ this implies that $\dim H^0(T^2;\operatorname{Ad}\rho)=n$ and that $\{a_1\cap [T^2],\ldots,a_n\cap [T^2]\}$ is a basis for $H^2(M^3;\operatorname{Ad}\rho)$. Then Lemma [\[lemma:pairing\]](#lemma:pairing){reference-type="ref" reference="lemma:pairing"} yields that $\{a_1\cap [\gamma],\ldots,a_n\cap [\gamma]\}$ is a basis for $H^1(M^3;\operatorname{Ad}\rho)$ iff $\log_{\gamma}$ is a local parameter.
+
+For a chamber regular character, the condition of Proposition [\[prop:localparameter\]](#prop:localparameter){reference-type="ref" reference="prop:localparameter"} is equivalent to the notion of $\gamma$-regularity of [@KitayamaTerashima15 Definition 3.2].
+
+Notice finally that for any non-trivial peripheral curve $\gamma$, for the lift of the holonomy $\varrho$, even if it is not chamber regular, $\mathcal{T}_{M,\gamma}(\chi_{\varrho^n})\neq 0$, by [@KitayamaTerashima15 Theorem 3.4].
+
+::: prop
+[]{#prop:change label="prop:change"} Let $\gamma_1, \gamma_ 2$ be two peripheral elements. In a Zariski open domain in $X_0(M^3,\mathrm{PSL}_{n+1}(\mathbb{C}))$ $$\frac{ \mathcal{T}_{(M,\gamma_1)} }{  \mathcal{T}_{(M,\gamma_2)} }
+= \pm \operatorname{J} (\log_{\gamma_1} \log_{\gamma_2}^{-1} ).$$
+:::
+
+Notice that the Jacobian $\operatorname{J} (\log_{\gamma_1} \log_{\gamma_2}^{-1} )$ is well defined generically on the distinguished component $X_0(M^3,\mathrm{PSL}_{n+1}(\mathbb{C}))$, i.e. in a non-empty open Zariski set, as $\log_{\gamma_2}$ is a local parameter in an open set. In addition, this Jacobian is independent of the parametrization of $\mathfrak{h}$, as any change of parametrization cancels in the quotient. The proof of Proposition [\[prop:change\]](#prop:change){reference-type="ref" reference="prop:change"} is straightforward from Lemma [\[lemma:pairing\]](#lemma:pairing){reference-type="ref" reference="lemma:pairing"} and the formula of change of basis in homology [\[eqn:change\]](#eqn:change){reference-type="eqref" reference="eqn:change"}.
+
+Proposition [\[prop:change\]](#prop:change){reference-type="ref" reference="prop:change"} does not cover $\chi_{\varrho^n}$, the character of $\operatorname{Sym}^n$ of the holonomy of the complete hyperbolic structure, as it is not chamber regular. However, Corollary [\[cor:difrentdims\]](#cor:difrentdims){reference-type="ref" reference="cor:difrentdims"} and Proposition [\[prop:propslift\]](#prop:propslift){reference-type="ref" reference="prop:propslift"}([\[item:ratiocurves\]](#item:ratiocurves){reference-type="ref" reference="item:ratiocurves"}) yield: $${\mathcal{T}_{M,\gamma_2}^{n+1}(\chi_{\varrho^n})}=  \operatorname{cs}(\gamma_2,\gamma_1)^n \, 
+{\mathcal{T}_{M,\gamma_1}^{n+1}(\chi_{\varrho^n})},$$ where $\operatorname{cs}(\gamma_2,\gamma_1)$ denotes the cusp shape (Definition [\[def:cs\]](#def:cs){reference-type="ref" reference="def:cs"}).
+
+::: proof
+*Proof of Lemma [\[lemma:pairing\]](#lemma:pairing){reference-type="ref" reference="lemma:pairing"}.* Assume that $\rho$ is a generic representation so that $\rho(\gamma)$ is diagonal with different eigenvalues. Let $\mathfrak{h}$ denote the Cartan algebra of diagonal matrices, and choose a non-zero element $a\in\mathfrak{h}$. In particular $a\cap\gamma\in H_1(M^3;\operatorname{Ad}\rho)$. Consider the dual of $a$: $$\begin{array}{rcl}
+   a^\star\colon \mathfrak{h} & \to & \mathbb{C}\\
+        h & \mapsto & B(a,h)
+ \end{array}$$ where $B$ denotes the Killing form. Consider also a first order deformation $\rho_t$ of $\rho$, i.e. $$\label{eqn:firstorder}
+\rho_t =(1+t\, \dot{\rho}+O(t^2))\rho$$ where $\dot\rho\colon\pi_1M^3\to \mathfrak{sl}_{n+1}(\mathbb{C})$ is a group cocycle, that we project to $H^1(M^3;\operatorname{Ad}\rho)$.
+
+Consider finally the Kronecker pairing $$\langle\cdot \rangle\colon H^k(M^3;\operatorname{Ad}\rho)\times H_k(M^3;\operatorname{Ad}\rho)\to \mathbb{C}$$ defined as follows. Let $z\in C^k(M^3;\operatorname{Ad}\rho)$ be a cocycle, with $z\colon C_k(\widetilde M^3;\mathbb{Z})\to \mathfrak{sl}_{n+1}(\mathbb{C})$, and let $h\otimes m\in  C_k(M^3;\operatorname{Ad}\rho)$, where $h\in  \mathfrak{sl}_{n+1}(\mathbb{C})$ and $m \in C_k(\widetilde M^3;\mathbb{Z})$. At the (co-)chain level, the Kronecker pairing is $$\label{eqn:kronecker}
+\langle z, h\otimes m\rangle = B(h,z(m))$$ where $B$ denotes again the Killing form. This induces a non-degenerate pairing between homology and cohomology [@Memoirs]. After all those preliminaries, to establish the lemma one must prove the following equality $$\label{eqn:pairing}
+ \langle \dot\rho, a\cap[\gamma]\rangle = \left.\frac{d\phantom{t}}{dt} 
+a^\star\log\rho_t(\gamma)\right\vert_{t=0} \, .$$
+
+To prove [\[eqn:pairing\]](#eqn:pairing){reference-type="eqref" reference="eqn:pairing"}, start with the group cohomology version of [\[eqn:kronecker\]](#eqn:kronecker){reference-type="eqref" reference="eqn:kronecker"} in the current context (see [@Memoirs]): $$\label{eqn:kroneckergroup}
+\langle \dot\rho , a\cap [\gamma]\rangle = B(a, \dot\rho(\gamma)).$$ From [\[eqn:firstorder\]](#eqn:firstorder){reference-type="eqref" reference="eqn:firstorder"} evaluated at $\gamma$ and taking logarithms: $$\label{eqn:loga}
+ \log \rho_t(\gamma)  =   \log \rho(\gamma) + t\, \dot{\rho}(\gamma)+ 
+O(t^2)) \, .$$ Then [\[eqn:pairing\]](#eqn:pairing){reference-type="eqref" reference="eqn:pairing"} follows from $a^\star$ applied to [\[eqn:loga\]](#eqn:loga){reference-type="eqref" reference="eqn:loga"}, then differentiating and applying [\[eqn:kroneckergroup\]](#eqn:kroneckergroup){reference-type="eqref" reference="eqn:kroneckergroup"} to the result. ◻
+:::
+
+Lemma [\[lemma:pairing\]](#lemma:pairing){reference-type="ref" reference="lemma:pairing"} may be related to the results of Goldman [@Goldman86].
+
+::: example
+[]{#ex:dubois label="ex:dubois"}
+
+In [@Dubois05; @Dubois06] Dubois makes a relevant contribution of torsions as volume form on the variety of characters of a knot in $\operatorname{SU}(2)$. Here the Cartan algebra has dimension one and the logarithm of a matrix in $\operatorname{SU}(2)$ is an angle. Dubois volume form is, up to sign, $$\operatorname{vol}_{\operatorname{tor}}= \pm \frac{d\varphi_\gamma } { \mathcal{T}_{m,\gamma}}$$ where $\varphi_\gamma$ denotes the angle of the representation of the peripheral curve $\gamma$. Notice that by Proposition [\[prop:change\]](#prop:change){reference-type="ref" reference="prop:change"}, this form is independent of the choice of the peripheral curve. In [@Dubois05; @Dubois06], using Turaev's refinement of torsion and a good choice of $\varphi_\gamma$, Dubois avoids the sign indeterminacy. He also shows that it equals to a volume form defined from a Heegaard splitting, à la Johnson (Example [\[ex:Johnson\]](#ex:Johnson){reference-type="ref" reference="ex:Johnson"}). This is related to the construction of an orientation on the space of representations of Heusener [@Heusener03].
+
+Proposition [\[prop:change\]](#prop:change){reference-type="ref" reference="prop:change"} suggests that a similar volume form can be constructed for representations in $\operatorname{SU}(n+1)$, taking a convenient parametrization of the Cartan algebra (i.e. infinitesimal angles). It remains to know also whether the variety of characters of a knot in $\operatorname{SU}(n+1)$ is non-empty and $n$-dimensional. This holds true for instance for two bridge knots. Another issue is to compute explicitly the variety of $\operatorname{SU}(n+1)$ characters for a knot.
+:::

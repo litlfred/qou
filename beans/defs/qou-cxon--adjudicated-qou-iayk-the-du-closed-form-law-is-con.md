@@ -1,14 +1,14 @@
 ---
 # qou-cxon
 title: 'ADJUDICATED (qou-iayk): the D(u) closed-form law is convention-C by construction and must be re-derived in D'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-23T19:34:02Z
-updated_at: 2026-10-10T07:47:06Z
+updated_at: 2026-10-11T07:33:41Z
 parent: qou-cdx1
 ---
 
@@ -374,7 +374,7 @@ claimed as proved.
 
 ## 2026-08-24 — the Q2 co-location rule is PROVED, not just interpreted
 
-`content/quantum-observable-universe/lean/QOU/BraidsAndKnots/AveragedCrossingCollapse.lean`
+`folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/AveragedCrossingCollapse.lean`
 — 7 theorems, sorry-free, `lean`-direct exit 0, `#print axioms` clean on all
 seven (propext / Classical.choice / Quot.sound only).
 
@@ -429,3 +429,63 @@ The D(u) closed-form law is convention-C by construction and must be re-
 derived. A landed closed form, not a binding. Live and coupled to `qou-cds1`.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## 2026-10-11: CLOSING — re-verified on `main` `33d54fd71b8`, and my own 2026-10-10 LIVE verdict was wrong
+
+The re-audit verdict above says *"Live and coupled to `qou-cds1`"*. **It is not
+live.** This bean's own body says *"qou-cxon is now fully closed"* twice, and
+every claim that rests on checks out against a tree **38,113 commits** later:
+
+**Q2's Lean mechanism — re-verified today, not taken from the August note.**
+`folio/…/QOU/BraidsAndKnots/AveragedCrossingCollapse.lean`:
+
+    lean -DautoImplicit=false -s 65536   ->  exit 0, no output
+    theorems 7      sorry 0      local `axiom` decls 0
+    native_decide 0      decide 0          (no laundering)
+
+The seven are `sq_sigma_coeff`, `sq_sigma_coeff_vanishes`,
+`sigmaCoeff_full_ne_zero`, `sigmaCoeff_identity_ne_zero`,
+`four_sq_add_sub_one_sq`, `scaledCollapseScalar_eq_cyclotomicSq`,
+`cube_eq_scalar_mul` — matching the body's description, including the two
+controls and the cube-saturation lemma. The file imports **only Mathlib**
+(`Algebra.Ring.Defs`, `Tactic.LinearCombination`, `Tactic.Ring`) and **no
+`QOU.*`**, so it is insulated from the overnight library churn — which is why
+`lean`-direct is a sound check here and not a snapshot claim. Note the flags:
+a **bare** `lean` would be a weaker check (`autoImplicit` defaults true).
+
+**The producer is properly scoped.** `computations/d_u_closed_form_proof.py:36-45`
+carries *"Everything above is **convention C** and is correct FOR C. It needs
+this scope label, not a correction — do not 'fix' any number here"*, names the
+D-frame law `(1 + u⁴)^(3A−1) = (1 + q²)^(3A−1)`, records that the **derived
+exponent `3A − 1` survives the frame change unaltered while only the base
+moves**, and cites the adjudication probe. It also flags `u^shift` as FITTED —
+openly, and as this bean records, it always was.
+
+**The original blocker is resolved.** `qou-iayk` is **`completed`**: the Habiro
+convention-D regeneration landed, and Habiro *"has moved off the C/peel side
+onto the D/Hoefsmit side — exact on three atoms"*.
+
+### What remains is OTHER beans, and that is why this one closes
+
+`qou-iayk`'s own closing note: *"The gate is still red, correctly. `peel_vs_chi`
+is unchanged because `markov_peel` remains convention C. That is `qou-cds2`'s
+Gram singularity and the TL_3 rebuild (`qou-8iru`) — a different cause,
+untouched by this."* So the surviving C surface on this axis has named owners
+and is not this bean's subject.
+
+**13a does not hold it open**: the subject is a closed-form law's convention
+frame, both sub-questions are derived/proved, and the `u^shift` fit is a
+caveat the producer states itself rather than an open conjecture this bean
+tracks.
+
+**Status: `todo` → `completed`.** Fourth bean in two days whose own body
+recorded its closure while its status said `todo` — after `qou-4bq3`,
+`qou-wgta` item 1 and `qou-34oo`.
+
+### One defect fixed in passing
+
+This bean cited the Lean file at **`content/…`**, a path that no longer exists:
+the `content/` → `folio/` rename (`qou-yqko`, #7485/#7487, merged 2026-09-29)
+removed the directory entirely. Retargeted above. **It is not an isolated
+slip** — measured corpus-wide and recorded as its own bean, because 544 beans
+carry the same dead prefix and fixing them is a sweep, which asks.

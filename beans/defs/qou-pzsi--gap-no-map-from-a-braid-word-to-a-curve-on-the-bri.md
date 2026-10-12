@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T16:50:05Z
-updated_at: 2026-10-04T15:20:16Z
+updated_at: 2026-10-10T12:30:00Z
 parent: qou-v2om
 ---
 
@@ -337,3 +337,55 @@ line, `lem:piece-a-corner-removal-obligation` without a Lean declaration).
 No Lean changed in this commit.
 
 The research target that option 2 actually names is `qou-uh5f`.
+
+
+## 2026-10-10 — route 1 run: link Möbius energy of the canonical closed-braid embedding, multi-start (owner-chosen)
+
+Owner, 2026-10-10: work the energy / O'Hara principle by **route 1**, *"Multi-start first"*, then record it. Probe: `computations/probes/ohara_link_energy/` (README there).
+
+**Numerical evidence only.** Every value is a float64 **upper bound** from gradient flow, i.e. a local minimum. No Q_β, CODATA or mass number enters anything. Existence of minimisers is **open**: these are links, and FHW Theorem B covers prime knots only (2026-09-14 entry above).
+
+**1. 🛑 Correction to this bean: the four 2-crossing gluon dressings close to TWO links, not four.** Checked by hand; the probe confirms it with matching Jones and Alexander polynomials. With `σ₁ = gen0` and `σ₂ = gen1`, `NUC9 = (σ₁σ₂)³·σ₁²σ₂`, and `Δ² = (σ₁σ₂)³` is central.
+- `σ₁²σ₂·σ₁σ₂ = σ₁³σ₂σ₁ ~ σ₁⁴σ₂` and `σ₁²σ₂·σ₁σ₁ ~ σ₁⁴σ₂`. So **`gluon_s0_s1` ≅ `gluon_s0_s0` = `nuc11_interleaved`** (class B).
+- `σ₁²σ₂σ₂σ₁ ~ σ₁³σ₂²`, and `σ₁²σ₂³ ~ σ₁³σ₂²` by conjugation with Δ. So **`gluon_s1_s0` ≅ `gluon_s1_s1`** (class A).
+
+"All four 2-crossing candidates are distinct links" (§"The gap, precisely") holds for the corpus's **q-shift-decorated letters**, not for any geometric closure. The traces that differ there are traces of the decorated elements.
+
+**2. Calibration.**
+- Hopf: `8 + 4π² = 47.4784`; the flow gives 47.4805–47.4839, with the mutual term always ≥ 2π² and within 0.012 %.
+- Trefoil: 74.42. The literature ≈74.4 is not held in `library/`, so it is unverified.
+- Möbius invariance holds to 3e-13.
+
+**3. Ranking (multi-start, pre-registered analysis).**
+
+| pair | gap | combined error | separated? |
+|---|---|---|---|
+| nuc9 (234.2) < A (≈291.0) | 56.7 | 1.1 | yes |
+| nuc9 < B (≈291.6) | 57.9 | 0.9 | yes |
+| A < gen_grouped | 23.6 | 1.0 | yes |
+| B < gen_grouped | 22.4 | 0.7 | yes |
+| **A vs B** | **1.1** | **1.2** | **no** |
+
+- Route 1's single-start A/B gap of 4.8 was an artefact: every start landed in one of B's four local minima.
+- `gen_grouped` did not converge (12 different minima from 12 starts).
+- The discrete flow undercounts the energy by a shape-dependent 0.4–0.8 at N=256, which limits how finely close minima can be ranked.
+
+**4. 🛑 What this route can never do.** The flowed link energy depends only on the isotopy class, so it **cannot separate `gluon_s0_s1` from `nuc11_interleaved`**: they are the same link. If those must be told apart, no embedding energy of the closure can do it. What distinguishes them is the decoration on the letters, not the closure.
+
+**What it does give.** An order-sensitive, parameter-free ranking that separates `nuc9` from the 11-letter dressings, and both from `gen_grouped`. It cannot currently decide between the two gluon-dressing classes.
+
+**Not claimed.** Nothing is selected or wired, and no dashboard row is re-scored. Disclosed post-hoc method changes are listed in the probe README.
+
+**Open next steps (none started).**
+- To try to settle A vs B: flow the spectral functional directly, and put more points on the knotted component. Both are method changes and would need a new pre-registration.
+- Route 2 (a Bring-surface embedding) remains undefined.
+- Route 3 (`qou-uh5f`) is untouched.
+
+## 2026-10-11 — CORRECTION: route 2 used sign-erased candidates (results_signed.md)
+
+Route 2 and options 1 through 1d (and route 1, ohara_link_energy) took the seen candidates from the sign-erased generator list in qbeta_candidate_closures_are_links_probe. The canonical nucleon (pyhecke.atom.build_nucleon_nf) has a (σ₀σ₁⁻¹)³ core and averaged ud letters, so it is a SUM OF FOUR BRAIDS. Under route 2 every proton term has a Bring loop (L = 9.21 / 15.94 / 6.37 / 20.44), whereas the sign-erased nuc11 is parabolic with no loop. Every seen-candidate read-across from route 2 is WITHDRAWN, including 1d's "Rule A → nuc11, Rule B → class A". The fresh-positive-word results stand. γγ words (σ₀σ₁⁻¹)^k never get a Bring loop under route 2's "exactly one fixed point" rule: this is a limit of the rule (3 ∤ k: no conjugate of Γ₀(2) contains the word; 3 | k: the word is pure, so all three conjugates contain it). Scope (a). The selection rule stays OPEN.
+
+
+## 2026-10-11 (PR #7695)
+
+Neutron expansion in `signed_candidates_probe.py` was wrong (uu→dd instead of ud·ud·dd); fixed and now checked against `build_nucleon_nf_mp`. Core (σ₀σ₁⁻¹)³ and 00001100011 are the same Bring loop though not conjugate. B3: under Hecke H₃(q₀) the 2×2 quantity reduces to Wedderburn characters, x = |χ_(2,1)|/√|χ_(3)χ_(1³)|, det = −([2]_q/2)⁴ for both nucleons; under Burau t = −q₀, det = χ_(3). The normalisations disagree in type on every row; neither adopted; B4 (no energy for sums) stays default. Selection still OPEN.

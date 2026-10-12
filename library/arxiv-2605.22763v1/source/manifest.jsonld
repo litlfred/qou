@@ -1,0 +1,148 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2605.22763v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Advancing Mathematics Research with AI-Driven Formal Proof Search (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.22763v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2605.22763&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2605.22763v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2605.22763v1",
+    "content_type": "application/gzip",
+    "sha256": "bdbed49a6cf73032ec0ebe13070034538e69593baea408a2fd971b7687add07c",
+    "bytes": 1322312,
+    "fetched": "2026-10-10T15:22:59+00:00",
+    "files": [
+      {
+        "path": "source/files/googledeepmind.cls",
+        "role": "cls",
+        "sha256": "b4369a865c7dcad03ec9668fc7911649f651983ff2affe4d19d30bcc7a0adff0",
+        "bytes": 11896
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "463a13d46039aac516484a40ae8f322b72cff4cf2c4eb52d30bd7401a5e9462b",
+        "bytes": 2180
+      },
+      {
+        "path": "source/files/main_arxiv_submission.tex",
+        "role": "tex",
+        "sha256": "a57e1f0296f7c8be1a698ba6a81965d80cd6a6bd911314ae71d040ee6676cbb9",
+        "bytes": 65321
+      },
+      {
+        "path": "source/files/preamble.tex",
+        "role": "tex",
+        "sha256": "bf46dc9d58fcd989b0a75302b058fb708eeaac54c1e994bb9dbd1d75576b776d",
+        "bytes": 585
+      },
+      {
+        "path": "source/files/proofs/erdos125.tex",
+        "role": "tex",
+        "sha256": "cef4b30e0c0eabc53232acb00cc8cfa01de3334ee638587b6004f63d7f2943c2",
+        "bytes": 4023
+      },
+      {
+        "path": "source/files/proofs/erdos12i.tex",
+        "role": "tex",
+        "sha256": "8cf875ea3907dbd36840fc0c26564caaba98d2442d36b67165462c72a52a1ed5",
+        "bytes": 5344
+      },
+      {
+        "path": "source/files/proofs/erdos12ii.tex",
+        "role": "tex",
+        "sha256": "d60c407476ee8704f700c9ed303cfe88ac0d42d02defae1c7d497da9e13bda70",
+        "bytes": 4920
+      },
+      {
+        "path": "source/files/proofs/erdos138.tex",
+        "role": "tex",
+        "sha256": "364b2fa7b27b98ff9a3e293e485048fb81d63529c6390af84350f98221e4148a",
+        "bytes": 1583
+      },
+      {
+        "path": "source/files/proofs/erdos152.tex",
+        "role": "tex",
+        "sha256": "a76d3279ff8e55770b24eaf90f89916d97e0a40a22aee5eaf7d0f6faa27e4489",
+        "bytes": 4132
+      },
+      {
+        "path": "source/files/proofs/erdos26.tex",
+        "role": "tex",
+        "sha256": "334e07d80d8bdde956c35988049e3fea3000fac6a131855da84b50aab7180e89",
+        "bytes": 4173
+      },
+      {
+        "path": "source/files/proofs/erdos741i.tex",
+        "role": "tex",
+        "sha256": "91698044e3b108558d9899a73e8a153d29944605f297d5e779228bbc1bed7dd9",
+        "bytes": 3320
+      },
+      {
+        "path": "source/files/proofs/erdos741ii.tex",
+        "role": "tex",
+        "sha256": "e401259447b35df48da6ff883f280a652a6827e827512731725f52feefba3a50",
+        "bytes": 2618
+      },
+      {
+        "path": "source/files/proofs/erdos846.tex",
+        "role": "tex",
+        "sha256": "4426834694d9fbbb96f37990f4c293a5bf671f6bedb96b4049ca41d049a01167",
+        "bytes": 4517
+      },
+      {
+        "path": "source/files/proofs/graph_reconstruction.tex",
+        "role": "tex",
+        "sha256": "140acdd3ee438c60dc9cda90dc4efe436db27f34d4117510185b4e6afee30021",
+        "bytes": 10494
+      },
+      {
+        "path": "source/files/proofs/hilbert.tex",
+        "role": "tex",
+        "sha256": "7ae8d0145b0a8ffcbb95bc437b93448113b88017193e1ae2b261ce772c18a2a5",
+        "bytes": 16035
+      },
+      {
+        "path": "source/files/proofs/oeis_228143.tex",
+        "role": "tex",
+        "sha256": "6e3d98833d32802aa43786e88d392a804a2af11c41f8b668d81e704d9cb93c10",
+        "bytes": 7336
+      },
+      {
+        "path": "source/files/proofs/oeis_51293.tex",
+        "role": "tex",
+        "sha256": "5064486eadea74170702bbe44e88390c6354bece2b4f981cd1d56342af2ccf11",
+        "bytes": 6059
+      },
+      {
+        "path": "source/files/proofs/woow2.tex",
+        "role": "tex",
+        "sha256": "57eebb4169137be1f9e95e36a4d52bbf7309f24fc5ca1415bdbf8cc414683f88",
+        "bytes": 5722
+      },
+      {
+        "path": "source/files/refs.bib",
+        "role": "bib",
+        "sha256": "4492ef5a05508d63b77d4266da6892d58f8365e5197755cb3c019b09872c588c",
+        "bytes": 44067
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

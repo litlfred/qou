@@ -8,56 +8,30 @@ pages: 71-72
 source_pdf: 1608.07308v1.pdf
 source_sha256: bcc3b6f1a91a55c6
 doc_brief: "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOV ANOV-ROZANSKY HOMOLOGY — We construct a categoriﬁcation of the maximal commutative subalgebra of the type A Hecke algebra."
+text_source: latex
+latex_prose_ratio: 0.991
+latex_coverage_ratio: 0.833
 ---
-comes endowed with a grading:
-V =
-⨁
-n∈Z
-Vi
-and a differentiald : V•→ V•+1 such thatd2 = 0. A vector v∈ V is called homogeneous if
-v∈Vi for some integeri. If this is the case, then we will write degv =i.
-Deﬁnition 10.1. A dg algebra A• is a dg vector space concentrated in non-positive degrees
-(An = 0 forn> 0), which is endowed with a multiplication that preserves the grading:
-Ai·Aj⊂Ai+j ∀i,j ∈ N0
-and the differential via the graded Leibniz rule:
-(10.1) d(a·a′) = (da)·a′ + (−1)degaa· (da′) ∀a,a′∈A
-We impose the usual axioms on the dg algebraA•, such as associativity and unit 1∈A0.
-All the dg algebras in this paper will be commutative, in the sense that:
-(10.2) a·a′ = (−1)(dega)(dega′)a′·a ∀a,a′∈A•
-We will write H0(A) for the 0–th cohomology of A•, which is a usual commutative algebra.
-All the dg algebras studied in this paper will be ﬁnitely generated overH0(A).
-Deﬁnition 10.2. A dg moduleM• for a dg algebraA• is a dg vector spaceM• with a map:
-A•⊗M•−→M•
-which is associative, preserves the grading, and satisﬁes the graded Leibniz rule (i.e. (10.1)
-witha′ replaced bym). Note that all the cohomologiesHi(M•) are modules forH0(A•).
-72 EUGENE GORSKY, ANDREI NEGUT , , AND JACOB RASMUSSEN
-When the grading will not be particularly crucial, we may simplify notation by writingA =
-A• andM =M•. We will only studied the derived categoryA–modules:
-A–Mod =
-{
-dg modulesM ↶A
-}
-/quasi–isomorphism
-When the dg algebra A is ﬁnitely generated over H0(A), we will call an object of A–Mod
-ﬁnitely presented if all its cohomologies have this property overH0(A). Then we write:
-A–mod⊂A–Mod
-for the full subcategory of ﬁnitely presented modules. The category of dg modules behaves
-much like that of usual modules, but with certain particular features. First of all is the existence
-of the grading shift:
-M•[1] =M•+1
-Given two A–modules M and M′, one can deﬁne the space of degree preserving homomor-
-phisms between them as HomA(M,M′). But it is more naturally to consider instead:
-(10.3) Hom•
-A(M,M′) =
-⨁
-n∈Z
-HomA(M,M′[n])
-which is actually a dg vector space with respect to:
-d(f) =d◦f− (−1)nf◦d ∀f :M→M′[n]
-The spaces (10.3) make A–Mod andA–mod into dg categories, which just means a category
-whose Hom spaces are dg vector spaces. We may inquire about the ordinary categories:
-(10.4) H0(A–Mod) and H0(A–mod)
-whose Hom spaces are, by deﬁnition, the 0–th cohomologies of (10.3). Because the zero–cycles
-of (10.3) are degree and differential preserving mapsf :M→M′, while the zero–boundaries
-are homotopies between such maps, we conclude that (10.4) is nothing but the homotopy cate-
-gory ofA–modules. So the dg categoryA–mod supersedes the homotopy category.
+[]{#sub:dg algebras label="sub:dg algebras"}
+
+A vector space $V$ will be called dg (short for "differential graded\") if it comes endowed with a grading: $$V = \bigoplus_{n\in \mathbb{Z}} V^i$$ and a differential $d : V^\bullet \rightarrow V^{\bullet+1}$ such that $d^2=0$. A vector $v \in V$ is called homogeneous if $v\in V^i$ for some integer $i$. If this is the case, then we will write $\deg v = i$.
+
+::: definition
+[]{#def:dg algebra label="def:dg algebra"}
+
+A **dg algebra** $A^\bullet$ is a dg vector space concentrated in non-positive degrees ($A^n=0$ for $n>0$), which is endowed with a multiplication that preserves the grading: $$A^i \cdot A^j \subset A^{i+j} \qquad \forall \ i,j \in \mathbb{N}_0$$ and the differential via the graded Leibniz rule: $$\label{eqn:leibniz}
+d(a \cdot a') = (d a) \cdot a' + (-1)^{\deg a} a \cdot (da') \qquad \forall \ a,a'\in A$$ We impose the usual axioms on the dg algebra $A^\bullet$, such as associativity and unit $1 \in A^0$.
+:::
+
+All the dg algebras in this paper will be commutative, in the sense that: $$\label{eqn:dg commutative}
+a \cdot a' = (-1)^{(\deg a)(\deg a')} a' \cdot a \qquad \forall \ a,a'\in A^\bullet$$ We will write $H^0(A)$ for the 0--th cohomology of $A^\bullet$, which is a usual commutative algebra. All the dg algebras studied in this paper will be finitely generated over $H^0(A)$.
+
+::: definition
+[]{#def:dg module label="def:dg module"}
+
+A **dg module** $M^\bullet$ for a dg algebra $A^\bullet$ is a dg vector space $M^\bullet$ with a map: $$A^\bullet \otimes M^\bullet \longrightarrow M^\bullet$$ which is associative, preserves the grading, and satisfies the graded Leibniz rule (i.e. [\[eqn:leibniz\]](#eqn:leibniz){reference-type="eqref" reference="eqn:leibniz"} with $a'$ replaced by $m$). Note that all the cohomologies $H^i(M^\bullet)$ are modules for $H^0(A^\bullet)$.
+:::
+
+When the grading will not be particularly crucial, we may simplify notation by writing $A = A^\bullet$ and $M = M^\bullet$. We will only studied the derived category $A$--modules: $$A\text{--Mod} = \Big\{\text{dg modules }M \curvearrowleft A \Big\}/\text{quasi--isomorphism}$$ When the dg algebra $A$ is finitely generated over $H^0(A)$, we will call an object of $A\text{--Mod}$ **finitely presented** if all its cohomologies have this property over $H^0(A)$. Then we write: $$A\text{--mod} \subset A\text{--Mod}$$ for the full subcategory of finitely presented modules. The category of dg modules behaves much like that of usual modules, but with certain particular features. First of all is the existence of the grading shift: $$M^\bullet[1] = M^{\bullet+1}$$ Given two $A$--modules $M$ and $M'$, one can define the space of degree preserving homomorphisms between them as $\mathop{\mathrm{Hom}}_A(M,M')$. But it is more naturally to consider instead: $$\label{eqn:hom dg}
+\mathop{\mathrm{Hom}}^\bullet_A(M,M') = \bigoplus_{n\in \mathbb{Z}} \mathop{\mathrm{Hom}}_A(M,M'[n])$$ which is actually a dg vector space with respect to: $$d(f) = d \circ f - (-1)^n f \circ d \qquad \forall \ f:M \rightarrow M'[n]$$ The spaces [\[eqn:hom dg\]](#eqn:hom dg){reference-type="eqref" reference="eqn:hom dg"} make $A$--Mod and $A$--mod into **dg categories**, which just means a category whose Hom spaces are dg vector spaces. We may inquire about the ordinary categories: $$\label{eqn:homotopy category}
+H^0(A\text{--Mod}) \qquad \text{and} \qquad H^0(A\text{--mod})$$ whose Hom spaces are, by definition, the 0--th cohomologies of [\[eqn:hom dg\]](#eqn:hom dg){reference-type="eqref" reference="eqn:hom dg"}. Because the zero--cycles of [\[eqn:hom dg\]](#eqn:hom dg){reference-type="eqref" reference="eqn:hom dg"} are degree and differential preserving maps $f:M \rightarrow M'$, while the zero--boundaries are homotopies between such maps, we conclude that [\[eqn:homotopy category\]](#eqn:homotopy category){reference-type="eqref" reference="eqn:homotopy category"} is nothing but the homotopy category of $A$--modules. So the dg category $A$--mod supersedes the homotopy category.

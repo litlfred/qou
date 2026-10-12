@@ -301,7 +301,7 @@ def main(argv: list[str] | None = None) -> int:
 
     by_verdict: dict[str, list[dict]] = {}
     for wp in sorted((HERE.parent).rglob("*.witness.json")):
-        if "_deprecated" in wp.parts:
+        if ("_deprecated" in wp.parts or "fsh-guts" in wp.parts):
             continue
         verdict, detail = classify(wp)
         by_verdict.setdefault(verdict, []).append(

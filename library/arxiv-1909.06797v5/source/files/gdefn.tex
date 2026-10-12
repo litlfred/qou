@@ -1,0 +1,384 @@
+%%Arghya Addition
+\newcommand{\Trr}[1]{\text{Tr}_\text{$#1$}}
+%%
+
+%\newcommand{\half}{\frac{1}{2}}
+
+%% Equation Commands
+
+%% Special Symbols
+\newcommand{\Tr}{\text{Tr}}
+\newcommand{\ex}{\text{e}}
+\newcommand{\vect}[1]{\vec{#1}}
+\newcommand{\av}[1]{\<{#1}\>}
+\newcommand{\seff}[1]{S_{\text{eff}}[{#1}]}
+\newcommand{\udag}[1]{U^{\dagger {#1}}}
+\newcommand{\tu}[1]{\Tr U^{{#1}}}
+\newcommand{\tud}[1]{\Tr U^{\dagger{#1}}}
+
+
+
+
+\newcommand{\reff}[1]{(\ref{#1})}
+
+\newcommand{\eq}[1]{Eqn. (\ref{#1})}
+\newcommand{\eqIn}[1]{(Eqn. \ref{#1})}
+
+\newcommand{\fig}[1]{Fig. (\ref{#1})}
+\newcommand{\figIn}[1]{(Fig. \ref{#1})}
+
+\newcommand{\sctn}[1]{Section (\ref{#1})}
+\newcommand{\sctnIn}[1]{(Section \ref{#1})}
+
+\newcommand{\chptr}[1]{Chapter (\ref{#1})}
+\newcommand{\chptrIn}[1]{(Chapter \ref{#1})}
+
+\newcommand{\apndx}[1]{Appendix (\ref{#1})}
+\newcommand{\apndxIn}[1]{(Appendix \ref{#1})}
+
+\newcommand{\nn}{\nonumber}
+
+\newcommand{\ben}{\begin{eqnarray}\displaystyle}
+\newcommand{\een}{\end{eqnarray}}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+
+\newcommand{\bea}[1]{\begin{align}#1\end{align}}
+\newcommand{\bem}[1]{\begin{multline}#1\end{multline}}
+\newcommand{\bee}[1]{\begin{equation}#1\end{equation}}
+
+\newcommand{\dbrk}{\right. \\ \left.}
+\newcommand{\tbrk}{\right. \right. \\ \left. \left.}
+\newcommand{\qbrk}{\right. \right. \right. \\ \left. \left. \left.}
+\newcommand{\bfrac}[2]{\lb\frac{#1}{#2}\rb}
+
+\newcommand{\sums}[3]{\sum_{#1=#2}^{#3}}
+
+\newcommand{\dsp}{\displaystyle}
+
+%% Text Commands
+
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+
+\newcommand{\eesp}{\end{split}}
+\newcommand{\bsp}{\begin{split}}
+
+
+%% Math Symbols
+
+\newcommand{\grad}{{\rm {\bf \nabla}}}
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+%\newcommand{\qed}{\begin{flushright} \ensuremath{\Box} \end{flushright}}
+\newcommand{\norm}[1]{|\!| #1 |\!|}
+
+\newcommand{\df}{\mathrm{d}}
+
+%% Symbol Shortcuts
+\renewcommand{\a}{\alpha}	%%% Redefinition
+\renewcommand{\b}{\beta}		%%% Redefinition
+\renewcommand{\c}{\chi}		%%% Redefinition
+\renewcommand{\d}{\delta}	%%% Redefinition
+
+%\newcommand{\pa}{\partial}
+\newcommand{\e}{\epsilon}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\f}{\phi}
+\newcommand{\vf}{\varphi}
+\newcommand{\g}{\gamma}
+\newcommand{\h}{\hbar}
+\newcommand{\hs}{\hslash}
+\renewcommand{\i}{\iota}		%%% Redefinition
+%\renewcommand{\j}{}
+\renewcommand{\k}{\kappa}	%%% Redefinition
+\renewcommand{\l}{\lambda}	%%% Redefinition
+\newcommand{\m}{\mu}								%%% Useless
+\newcommand{\n}{\nu}								%%% Useless
+\renewcommand{\o}{\omega}	%%% Redefinition
+\newcommand{\p}{\psi}								%%% Useless
+\newcommand{\vp}{\varpi}							%%% Useless
+\newcommand{\q}{\theta}	
+\newcommand{\vq}{\vartheta}	
+\renewcommand{\r}{\rho}		%%% Redefinition
+%\newcommand{\vr}{\varrho}	%%% Redefinition
+\newcommand{\s}{\sigma}
+\newcommand{\vs}{\varsigma}
+\renewcommand{\t}{\tau}		%%% Redefinition
+\renewcommand{\u}{\upsilon}	%%% Redefinition
+%\renewcommand{\v}{}
+%\newcommand{\w}{}
+\newcommand{\x}{\xi}								%%% Useless
+\newcommand{\bab}{\beta_{ab}}
+\newcommand{\bo}{\beta_{1}}
+\newcommand{\z}{\zeta}
+
+\newcommand{\A}{\forall}
+\newcommand{\B}{\Box}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\Delta}
+\newcommand{\E}[1]{\mathrm{e}^{#1}}
+\newcommand{\F}{\Phi}
+\newcommand{\G}{\Gamma}
+\newcommand{\I}{\infty}
+\renewcommand{\L}{\Lambda}	%%% Redefinition
+\newcommand{\M}{\mho}
+\newcommand{\N}{\nabla}
+\renewcommand{\O}{\Omega}	%%% Redefinition
+\renewcommand{\P}{\Psi}		%%% Redefinition		%%% Useless
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\Theta}
+\renewcommand{\S}{\Sigma}	%%% Redefinition
+\newcommand{\U}{\Upsilon}
+\newcommand{\X}{\Xi}								%%% Useless
+\newcommand{\Z}{\mathcal{Z}}
+
+%% Caligraphy
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+
+
+
+\newcommand{\expa}[1]{\exp\left( #1 \right)}
+\newcommand{\expb}[1]{\exp\left[ #1 \right]}
+\newcommand{\zcs}{\cZ_{\text{CS}}}
+\newcommand{\lna}[1]{\ln\left( #1 \right)}
+\newcommand{\lnb}[1]{\ln\left[ #1 \right]}
+
+
+
+
+% Set Theoretic Math
+\newcommand{\mR}{\mathbb{R}}
+\newcommand{\mC}{\mathbb{C}}
+\newcommand{\mQ}{\mathbb{Q}}
+\newcommand{\mZ}{\mathbb{Z}}
+\newcommand{\mN}{\mathbb{N}}
+
+
+
+
+
+%% Mathfrak
+\newcommand{\fA}{\mathfrak{A}}
+\newcommand{\fB}{\mathfrak{B}}
+\newcommand{\fC}{\mathfrak{C}}
+\newcommand{\fD}{\mathfrak{D}}
+\newcommand{\fE}{\mathfrak{E}}
+\newcommand{\fF}{\mathfrak{F}}
+\newcommand{\fG}{\mathfrak{G}}
+\newcommand{\fH}{\mathfrak{H}}
+\newcommand{\fI}{\mathfrak{I}}
+\newcommand{\fJ}{\mathfrak{J}}
+\newcommand{\fK}{\mathfrak{K}}
+\newcommand{\fL}{\mathfrak{L}}
+\newcommand{\fM}{\mathfrak{M}}
+\newcommand{\fN}{\mathfrak{N}}
+\newcommand{\fO}{\mathfrak{O}}
+\newcommand{\fP}{\mathfrak{P}}
+\newcommand{\fQ}{\mathfrak{Q}}
+\newcommand{\fR}{\mathfrak{R}}
+\newcommand{\fS}{\mathfrak{S}}
+\newcommand{\fT}{\mathfrak{T}}
+\newcommand{\fU}{\mathfrak{U}}
+\newcommand{\fV}{\mathfrak{V}}
+\newcommand{\fW}{\mathfrak{W}}
+\newcommand{\fX}{\mathfrak{X}}
+\newcommand{\fY}{\mathfrak{Y}}
+\newcommand{\fZ}{\mathfrak{Z}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fc}{\mathfrak{c}}
+\newcommand{\fd}{\mathfrak{d}}
+\newcommand{\fe}{\mathfrak{e}}
+\newcommand{\ff}{\mathfrak{f}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fh}{\mathfrak{h}}
+\newcommand{\fii}{\mathfrak{i}}		%%% Out of Order
+\newcommand{\fj}{\mathfrak{j}}
+\newcommand{\fk}{\mathfrak{k}}
+\newcommand{\fl}{\mathfrak{l}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fo}{\mathfrak{o}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\fr}{\mathfrak{r}}
+\newcommand{\fs}{\mathfrak{s}}
+\newcommand{\ft}{\mathfrak{t}}
+\newcommand{\fu}{\mathfrak{u}}
+\newcommand{\fv}{\mathfrak{v}}
+\newcommand{\fw}{\mathfrak{w}}
+\newcommand{\fx}{\mathfrak{x}}
+\newcommand{\fy}{\mathfrak{y}}
+\newcommand{\fz}{\mathfrak{z}}
+
+%% Standard Functions
+\newcommand{\sech}{\mathrm{sech}}
+\newcommand{\csch}{\mathrm{csch}}
+\newcommand{\sina}[1]{\sin\lb #1 \rb}
+\newcommand{\cosa}[1]{\cos\lb #1 \rb}
+\newcommand{\tana}[1]{\tan\lb #1 \rb}
+\newcommand{\cota}[1]{\cot\lb #1 \rb}
+\newcommand{\seca}[1]{\sec\lb #1 \rb}
+\newcommand{\csca}[1]{\csc\lb #1 \rb}
+\newcommand{\loga}[1]{\log\lb #1 \rb}
+\newcommand{\lnaa}[1]{\ln\lb #1 \rb}
+
+%% Symbols
+\newcommand{\ra}{\rightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\nra}{\nrightarrow}
+\newcommand{\nRa}{\nRightarrow}
+\newcommand{\lB}{\left [}
+\newcommand{\rB}{\right ]}
+\newcommand{\lb}{\left (}
+\newcommand{\rb}{\right )}
+\newcommand{\lbr}{\left \{}
+\newcommand{\rbr}{\right \}}
+\newcommand{\<}{\left\langle}
+\renewcommand{\>}{\right\rangle}		%%% Redefinition
+\newcommand{\ld}{\left.}
+\newcommand{\rd}{\right.}
+
+
+
+\newcommand{\Rp}{R'(0)}
+
+\newcommand{\vro}{\varrho}
+\newcommand{\vt}{\vartheta}
+\newcommand{\type}[1]{$\mathbb{Type \ #1}$}
+\newcommand{\tp}[1]{$\mathbb{T#1}$}
+
+\newcommand{\class}[1]{$\mathbb{Class \ #1}$}
+\newcommand{\cl}[1]{$\mathbb{C#1}$}
+
+\newcommand{\ds}{Dyson-Schwinger}
+
+
+\newcommand{\hp}{h_{+}(\theta)}
+\newcommand{\hmm}{h_{-}(\theta)}
+\newcommand{\hptx}{$h_{+}(\theta)$}
+\newcommand{\hmt}{$h_{-}(\theta)$}
+
+\newcommand{\ads}{{\it AdS}}
+
+
+\newcommand{\for}{\text{for}}
+\newcommand{\where}{\text{where}}
+\newcommand{\with}{\text{with}}
+\newcommand{\tand}{\text{and}}
+
+\newcommand{\hmin}{h_{\text{min}}}
+\newcommand{\hmax}{h_{\text{max}}}
+
+
+
+\newcommand{\bensp}{\begin{eqnarray}\begin{split}}
+\newcommand{\eensp}{\end{eqnarray}\end{split}}
+
+
+\newcommand{\bnm}{\begin{matrix}}
+\newcommand{\enm}{\end{matrix}}
+%%%%%%%%%%%%%%%%%%%%%%%        ZETA FUNCTION   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\rzf}{Riemann zeta function}
+\newcommand{\zf}{ $zeta$ function}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newcommand{\T}[{1}]{T^{#1}}
+\newcommand{\Tmn}{T^{\m\n}}
+\newcommand{\tc}{\theta_{\x}}
+
+
+
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%additional for Arghya
+%Usefull numerics
+\newcommand{\half}[1]{{#1\over 2}}
+\newcommand{\dgr}{\dagger}
+\newcommand{\ket}[1]{|#1\big>}
+\newcommand{\bra}[1]{\big<#1|}
+\newcommand{\expect}[1]{\<#1\>}
+\newcommand{\sgn}[1]{\text{sgn}(#1)}
+\newcommand{\braket}[2]{\big<#1|#2\big>}
+
+
+%greek symbols
+\newcommand{\gt}{\theta}
+\newcommand{\gl}{\lambda}
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gw}{\omega}
+\newcommand{\gr}{\rho}
+\newcommand{\gep}{\epsilon}
+\newcommand{\gz}{\zeta}
+\newcommand{\gs}{\sigma}
+%problem specific
+\newcommand{\stso}{$S^2\times S^1$}
+\newcommand{\dow}{\partial}
+\newcommand{\der}[2]{{d #1\over d #2}}
+\newcommand{\pder}[2]{{\dow #1\over\dow #2}}
+
+\newcommand{\nota}{\nonumber\\}
+
+%problem specific
+\newcommand\ord[1]{\text{ord}_{#1}}
+\newcommand\pord{\text{ord}_p}
+\newcommand{\mQp}{\mathbb{Q}_p}
+\newcommand{\mZp}{\mathbb{Z}_p}
+%norm
+\newcommand\dnorm[1]{\langle#1\rangle}
+\newcommand\pnorm[1]{\left|#1\right|_p}
+
+
+\newcommand{\cs}{Chern-Simons\ }
+\newcommand{\sm}{\cM_{(g,p)} }
+\newcommand{\smw}{Seifert manifold \ }
+\newcommand{\stwoso}{S^2\times S^1 }
+\newcommand{\un}{U(N) }
+\newcommand{\pf}{partition function}
+\newcommand{\Pf}{Partition function\ }
+\newcommand{\zcst}{\cZ_{\text{CS}}[S^3,U(N),k] }

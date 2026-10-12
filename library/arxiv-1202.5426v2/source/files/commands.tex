@@ -1,0 +1,228 @@
+
+%usage: \aleq{dependece} - \leq C_{dependence}
+\newcommand{\aleq}{\prec}
+\renewcommand{\prec}{\lesssim}
+\newcommand{\ageq}{\succ}
+\renewcommand{\succ}{\gtrsim}
+\newcommand{\aeq}{\approx}
+
+\renewcommand{\Upsilon}{Y}
+
+\newcommand{\subsubset}{\subset\subset}
+
+
+\newcommand{\Cc}{{\mathbb C}}
+\newcommand{\K}{{\mathbb K}}
+\newcommand{\LL}{{\mathbb L}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\renewcommand{\S}{{\mathbb S}}
+
+\newcommand{\PoEk}{\bar{P}} %Poissonkernel
+\newcommand{\PoIk}{\underline{P}} %Poissonkernel
+
+\newcommand{\PoEP}{\bar{\mathcal{P}}} %Poissonpotential
+\newcommand{\PoIP}{\underline{\mathcal{P}}} %Poissonpotential
+
+\newcommand{\bal}{\mu}
+
+\newcommand{\im}{ \mathbf{i}}
+
+\newcommand{\Rz}{{\mathcal{R}}} %Riesz Operator
+
+\newcommand{\Sw}{{\mathcal{S}}}
+\newcommand{\Sws}{{\Sw^{'}}}
+
+\newcommand{\fracm}[1]{{\frac{1}{#1}}}
+
+
+%\newcommand{\Hd}{{\dot{H}^{\frac{n}{2}}}}
+\newcommand{\Hf}{{H^{\frac{n}{2}}}}
+
+\newcommand{\BMO}{\operatorname{BMO}}%
+\newcommand{\diam}{\operatorname{diam}}%
+\newcommand{\supp}{\operatorname{supp}}%
+\newcommand{\dist}{\operatorname{dist}}%
+\newcommand{\conv}[1]{\operatorname{conv\left ( #1 \right )}}%
+
+\newcommand{\ddtz}{\ensuremath{{\left. \frac{d}{dt} \right \vert_{t=0}}}}%
+
+\newcommand{\Bes}{W}
+\newcommand{\Slob}{\mathcal{W}}
+
+\newcommand{\lap}{\Delta}
+% \newcommand{\Ilaps}[1]{\brac{I+ \lap}^{\frac{#1}{2}}}
+% \newcommand{\Ilapms}[1]{\brac{I+ \lap}^{-\frac{#1}{2}}}
+% \newcommand{\laps}[1]{\lap^{\frac{#1}{2}}}
+% \newcommand{\lapms}[1]{\lap^{-\frac{#1}{2}}}
+% \newcommand{\lapn}{\lap^{\frac{n}{4}}}
+% \newcommand{\lapmn}{\lap^{-\frac{n}{4}}}
+% \newcommand{\lapa}{\lap^{\frac{\alpha}{2}}}
+% \newcommand{\lapma}{\lap^{-\frac{\alpha}{2}}}
+% \newcommand{\laph}{\lap^{\frac{1}{2}}}
+% \newcommand{\lapmh}{\lap^{-\frac{1}{2}}}
+% \newcommand{\lapv}{\lap^{\frac{1}{4}}}
+% \newcommand{\lapmv}{\lap^{-\frac{1}{4}}}
+% \newcommand{\lapsv}[1]{\lap^{\frac{#1}{4}}}
+% \newcommand{\lapmsv}[1]{\lap^{-\frac{#1}{4}}}
+
+\newcommand{\Dsymbol}{\abs{D}}
+\newcommand{\Rieszsymbol}{I}
+
+\newcommand{\laps}[1]{\Dsymbol^{#1}}
+\newcommand{\lapms}[1]{\Rieszsymbol_{#1}}
+\newcommand{\lapa}{\Dsymbol^{\alpha}}
+\newcommand{\lapma}{\Rieszsymbol_{\alpha}}
+\newcommand{\laph}{\Dsymbol^{1}}
+\newcommand{\lapmh}{\Rieszsymbol_{-1}}
+\newcommand{\lapv}{\Dsymbol^{\frac{1}{2}}}
+\newcommand{\lapmv}{\Rieszsymbol_{\frac{1}{2}}}
+\newcommand{\lapsv}[1]{\Dsymbol^{\frac{#1}{2}}}
+\newcommand{\lapmsv}[1]{\Rieszsymbol_{\frac{#1}{2}}}
+
+
+\newcommand{\pbar}{\overline{p}}
+
+\newcommand{\abs}[1]{{\left \vert #1 \right \vert}}%
+\newcommand{\sabs}[1]{{\vert #1 \vert}}%
+\newcommand{\Babs}[1]{{\Big \vert #1 \Big \vert}}%
+\newcommand{\babs}[1]{{\big \vert #1 \big \vert}}%
+\newcommand{\brac}[1]{{\left ( #1 \right )}}%
+\newcommand{\sbrac}[1]{{\langle #1 \rangle}}%
+\newcommand{\Sbrac}[1]{{\left \langle #1 \right \rangle}}%
+\newcommand{\Vrac}[1]{{\left \Vert #1 \right \Vert }}%
+\newcommand{\vrac}[1]{{ \Vert #1 \Vert }}%
+\newcommand{\ebrac}[1]{{\left [ #1 \right ]}}%
+
+\newcommand{\nl}{${}$\\}
+
+\newcommand{\ontop}[2]{{\genfrac{}{}{0pt}{}{#1}{#2}}}
+
+\newcommand{\mvintl}{\mvint \limits}
+\newcommand{\intl}{\int \limits}
+\newcommand{\suml}{\sum \limits}
+
+%\newcommand{\qed}{\hfill \ensuremath{\Box}}%
+
+\newcommand{\disk}{D^2}
+\newcommand{\strich}{{'}}
+
+\newcommand{\mvint}{\fint}
+%\newcommand{\mvint}{\mvintII}
+
+%Mittelwertintegral
+\def\Xint#1{\mathchoice%
+   {\XXint\displaystyle\textstyle{#1}}%%
+   {\XXint\textstyle\scriptstyle{#1}}%%
+   {\XXint\scriptstyle\scriptscriptstyle{#1}}%%
+   {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%%
+   \!\int}%
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}%
+     \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}%
+\def\ddashint{\Xint=}%
+\def\dashint{\Xint\diagup}%
+%%
+\def\mvintII{\Xint-}%
+
+
+\newcommand{\constant}[1][]{C_{#1}}
+\newcommand{\eps}[1][]{\varepsilon_{#1}}
+
+
+%\newcommand{homs}[3]{[#1]_{#2,#3}}
+%\newcommand{homn}[2]{[#1]_{#2,\frac{n}{2}}}
+
+
+\newcommand{\sref}[2]{#1.\ref{#2}}
+
+%\newcommand{\ToDo}{\textbf{ToDo}\ }
+
+%\newcommand{\abs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\br}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\bv}[1]{\ensuremath{\left[#1\right]}}
+\renewcommand{\d}{\ensuremath{\,\mathrm{d}}}
+\newcommand{\fseq}[1]{\ensuremath{\br{#1}_{k\in\Z}}}
+\newcommand{\hnorm}[2][1,2]{\ensuremath{\left\|#2\right\|_{H^{{#1}}}}}
+\newcommand{\lnorm}[2][2]{\ensuremath{\left\|#2\right\|_{L^{{#1}}}}}
+\newcommand{\norm}[1]{\ensuremath{\left\|#1\right\|}}
+\newcommand{\snorm}[1]{\ensuremath{\|#1\|}}
+\newcommand{\seminorm}[1]{\ensuremath{\left[#1\right]}}
+\newcommand{\seq}[1]{\ensuremath{\br{#1}_{\eps>0}}}
+\newcommand{\seqn}[2][k]{\ensuremath{\br{{#2}_{#1}}_{#1\in\N}}}
+\newcommand{\seqnu}[2][k]{\ensuremath{\br{{#2}_{#1}}_{#1\in\N\cup\set0}}}
+\newcommand{\set}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\sets}[2]{\ensuremath{\left\{\left.#1\,\right|#2\right\}}}
+\newcommand{\sett}[2]{\ensuremath{\left\{#1\left|\,#2\right.\right\}}}
+\renewcommand{\sp}[1]{\ensuremath{\left\langle#1\right\rangle}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Equation numbers within section
+\numberwithin{equation}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abbreviations
+\newcommand{\B}[2]{\ensuremath{\textstyle B_{\scriptstyle #1}^{\scriptstyle #2}}}
+\newcommand{\barw}{\ensuremath{{\bar{w}}}}
+\renewcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\capH}{\ensuremath{\cap H^{\scriptstyle1,\infty}}}
+\newcommand{\CC}[1][]{\ensuremath{\mathscr{C}_{#1}}}
+\DeclareMathOperator{\const}{const}
+\newcommand{\D}[1]{{#1}(u+w)-{#1}(u)}
+\newcommand{\dd}[1][\tau]{{\textstyle\frac{\d}{\d#1}}}
+\newcommand{\dg}{{\g}'}
+\newcommand{\dgn}{{\g_0'}}
+\newcommand{\dgt}{\gt'}
+\renewcommand{\dh}{{\varphi'}}
+\newcommand{\dvp}{{\varphi}'}
+\newcommand{\dtg}{{\tilde{\g}}'}
+\newcommand{\dth}{{\tilde{h}}'}
+\newcommand{\E}[1][]{\ensuremath{E_{#1}^{(2)}}}
+\newcommand{\Ee}[1][\eps]{\ensuremath{E_{#1}^{(2)}}}
+\renewcommand{\eps}{\ensuremath{\varepsilon}}
+\newcommand{\Fe}[1][\eps]{\ensuremath{F_{#1}^{(2)}}}
+\newcommand{\g}{\gamma}
+\newcommand{\gt}[1][\tau]{\g_{#1}}
+\renewcommand{\G}[1][\g]{\ensuremath{\mathcal G_{#1}}}
+\newcommand{\h}{\ensuremath{\varphi}}
+\renewcommand{\H}[1][p]{\ensuremath{\mathcal H^{(#1)}}}
+\newcommand{\I}[1][\eps]{\ensuremath{\mathcal J_{#1}^{(\a)}}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\J}[1][\eps]{\ensuremath{J_{#1}}}
+\newcommand{\length}{\ensuremath{\mathscr L}}
+\DeclareMathOperator{\lip}{lip}
+\newcommand{\LLL}[1][\a]{L^{(#1)}}
+\renewcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Om}[1][\g]{\Omega^{(2)}_{#1}}
+\renewcommand{\P}[1][\dg(u)]{P_{#1}}
+\newcommand{\PP}[1][\dg(u)]{P_{#1}^\perp}
+\newcommand{\p}[1][s]{\partial^{#1}}
+\renewcommand{\Q}[1][2]{Q^{(#1)}}
+\newcommand{\Qe}[1][2]{Q_\eps^{(#1)}}
+\renewcommand{\R}{\ensuremath{\mathbb{R}}}
+\renewcommand{\Re}[1][\eps]{R_{#1}^{(p)}}
+\newcommand{\refeq}[2][=]{\ensuremath{\stackrel{\text{\makebox[0cm][c]{\eqref{eq:#2}}}}{#1}}}
+\renewcommand{\rho}{\ensuremath{\varrho}}
+\newcommand{\rzd}{\ensuremath{(\R/\Z,\R^n)}}
+\newcommand{\s}{\ensuremath{\sigma}}
+\newcommand{\spR}[1]{\sp{#1}_{\R^d}}
+\newcommand{\stackrl}[2][=]{\ensuremath{\stackrel{\text{\makebox[0cm][c]{#2}}}{#1}}}
+\newcommand{\T}[1]{\triangle{#1}}
+\newcommand{\tBox}{\tilde\Box}
+\newcommand{\tD}{\tilde\triangle}
+\newcommand{\tE}[1][]{\ensuremath{\tilde{\mathfrak E}_{#1}^{(p)}}}
+\newcommand{\tdg}{{\tilde\gamma'}}
+\newcommand{\tg}{\tilde{\g}}
+\renewcommand{\th}{\ensuremath{\vartheta}}
+\newcommand{\tI}{\ensuremath{\widetilde{\I[]}}}
+\newcommand{\vth}{\ensuremath{\vartheta}}
+\newcommand{\W}[1][3/2]{\ensuremath{H^{\scriptstyle #1}}}
+\newcommand{\Wia}[1][3/2]{\ensuremath{H_{\mathrm{ia}}^{#1}}}
+\newcommand{\Wint}[1][\eps]{\ensuremath{\iint_{U_{#1}}}}
+\newcommand{\Wir}[1][3/2]{\ensuremath{H_{\mathrm{ir}}^{#1}}}
+\newcommand{\Hir}[1][3/2]{\ensuremath{H_{\mathrm{ir}}^{#1}}}
+\newcommand{\We}[1][1+s]{\ensuremath{H_\text{\textnormal{e}}^{#1}}}
+\newcommand{\Wp}[1][1+s]{\ensuremath{H_\text{\textnormal{p}}^{#1}}}
+\newcommand{\X}[1][\th]{\ensuremath{X_{\g_{#1}}}}
+\newcommand{\Y}[1][\g]{\ensuremath{\Upsilon_{#1}}}

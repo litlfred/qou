@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0611941v3/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0611941v3/blocks/prose-sec-002",
   "kind": "prose",
   "title": "Irreducible representations of W and H",
   "pageStart": 2,
   "pageEnd": 4,
   "text": "../sections/sec-002-21-irreducible-representations-of-w-and-h.md",
-  "derivedFrom": "library/arxiv-math-0611941v3/manifest",
-  "sourceDocument": "library/arxiv-math-0611941v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0611941v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0611941v3/manifest.jsonld",
   "provenance": "ingested"
 }

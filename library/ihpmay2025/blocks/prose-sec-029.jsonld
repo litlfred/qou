@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ihpmay2025/blocks/prose-sec-029",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ihpmay2025/blocks/prose-sec-029",
   "kind": "prose",
-  "title": "References",
-  "pageStart": 38,
-  "pageEnd": 41,
-  "text": "../sections/sec-029-references.md",
-  "derivedFrom": "library/ihpmay2025/manifest",
-  "sourceDocument": "library/ihpmay2025/manifest",
+  "title": "The Bers-Sullivan-Thurston Density Conjecture and other consequences",
+  "pageStart": 37,
+  "pageEnd": 38,
+  "text": "../sections/sec-029-54-the-bers-sullivan-thurston-density-conjecture.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
   "provenance": "ingested"
 }

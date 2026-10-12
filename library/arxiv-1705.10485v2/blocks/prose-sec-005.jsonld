@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1705.10485v2/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1705.10485v2/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Stable distributions and mod-stable convergence",
-  "pageStart": 5,
-  "pageEnd": 6,
-  "text": "../sections/sec-005-13-stable-distributions-and-mod-stable-convergen.md",
-  "derivedFrom": "library/arxiv-1705.10485v2/manifest",
-  "sourceDocument": "library/arxiv-1705.10485v2/manifest",
+  "title": "Spaces of test functions",
+  "pageStart": 8,
+  "pageEnd": 12,
+  "text": "../sections/sec-005-22-spaces-of-test-functions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.10485v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.10485v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -96,7 +96,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 COMPUTATIONS = HERE.parent
-SKIP_PARTS = {"_deprecated", "__pycache__"}
+SKIP_PARTS = {"_deprecated", "fsh-guts", "__pycache__"}
 
 
 def _cluster_dirs() -> list[Path]:

@@ -63,7 +63,7 @@ facts: row 0 to `[d+2] − 1 = x·[d+1]` and row 1 to `[d+1] = [d] + x^d`.
 
 ## Base ring (§7c)
 
-Genuinely `ℝ`: `Seminormal.seminormalParam` is `ℝ`-valued, and using the corpus's own definition
+Generic `[Field K]`, matching `Seminormal.seminormalParam`.  Using the corpus's own definition
 rather than re-deriving the coefficient is the point — it ties these statements to the actual
 seminormal representation.
 
@@ -72,31 +72,33 @@ LaTeX label: `thm:ocneanu-markov-corner`
 
 namespace QOU.SchurWeyl
 
+variable {K : Type*} [Field K]
+
 open Finset YoungDiagram QOU.QBeta.WenzlWeight QOU.SchurWeyl.Seminormal
 
 variable {m k : ℕ}
 
-theorem seminormalParam_neg_nat (q : ℝ) (d : ℕ) :
+theorem seminormalParam_neg_nat (q : K) (d : ℕ) :
     seminormalParam q (-(d : ℤ)) = (q - q⁻¹) / (1 - q ^ (2 * d)) := by
   unfold seminormalParam
   congr 2
   rw [show (-2 : ℤ) * (-(d : ℤ)) = ((2 * d : ℕ) : ℤ) by push_cast; ring, zpow_natCast]
 
-theorem seminormalParam_pos_nat (q : ℝ) (d : ℕ) :
+theorem seminormalParam_pos_nat (q : K) (d : ℕ) :
     seminormalParam q ((d : ℤ)) = (q - q⁻¹) / (1 - (q ^ (2 * d))⁻¹) := by
   unfold seminormalParam
   congr 2
   rw [show (-2 : ℤ) * (d : ℤ) = -((2 * d : ℕ) : ℤ) by push_cast; ring, zpow_neg, zpow_natCast]
 
 
-theorem markov_corner_row0 (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
-    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (hk : k < m) :
+theorem markov_corner_row0 (q : K) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : K) ^ i ≠ 1) (hk : k < m) :
     ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (twoRow (m + 1) k (by omega))
         * seminormalParam q 1
       + ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (twoRow m (k + 1) (by omega))
         * seminormalParam q ((k : ℤ) - (m : ℤ))
       = (q ^ 3 / (q ^ 2 + 1)) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (twoRow m k hk.le) := by
-  have hq2 : (q ^ 2 : ℝ) ≠ 1 := by simpa using hgen 1 one_pos
+  have hq2 : (q ^ 2 : K) ≠ 1 := by simpa using hgen 1 one_pos
   set d := m - k with hdd
   have hd1 : 1 ≤ d := by omega
   have hcast : (k : ℤ) - (m : ℤ) = -((d : ℕ) : ℤ) := by simp [hdd]; omega
@@ -111,17 +113,17 @@ theorem markov_corner_row0 (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
     show m + 1 - k + 1 = d + 2 by omega, show m - (k + 1) + 1 = d by omega,
     show m - k + 1 = d + 1 by omega,
     show m + 1 + k = (m + k) + 1 by omega, show m + (k + 1) = (m + k) + 1 by omega]
-  have hS : (∑ i ∈ range d, (q ^ 2 : ℝ) ^ i) * (1 - q ^ 2) = 1 - (q ^ 2) ^ d :=
+  have hS : (∑ i ∈ range d, (q ^ 2 : K) ^ i) * (1 - q ^ 2) = 1 - (q ^ 2) ^ d :=
     geom_oneSub (q ^ 2) d
-  have hM : (q ^ 2 : ℝ) * (∑ i ∈ range (d + 1), (q ^ 2) ^ i) + 1
+  have hM : (q ^ 2 : K) * (∑ i ∈ range (d + 1), (q ^ 2) ^ i) + 1
       = ∑ i ∈ range (d + 2), (q ^ 2) ^ i := mul_geom_succ (q ^ 2) (d + 1)
-  have hpow : ((q ^ 2 + 1 : ℝ)) ^ (m + k) ≠ 0 := pow_ne_zero _ hq21
-  have hqd : ((q ^ 2 : ℝ)) ^ d ≠ 1 := hgen d (by omega)
-  have hden : (1 : ℝ) - q ^ (2 * d) ≠ 0 := by
-    have : (q ^ (2 * d) : ℝ) = (q ^ 2) ^ d := by rw [← pow_mul]
-    rw [this]; intro hc; exact hqd (by linarith)
-  have hS' : (∑ i ∈ range d, (q ^ 2 : ℝ) ^ i) * (1 - q ^ 2) = 1 - q ^ (2 * d) := by
-    rw [show (q : ℝ) ^ (2 * d) = (q ^ 2) ^ d by rw [← pow_mul]]; exact hS
+  have hpow : ((q ^ 2 + 1 : K)) ^ (m + k) ≠ 0 := pow_ne_zero _ hq21
+  have hqd : ((q ^ 2 : K)) ^ d ≠ 1 := hgen d (by omega)
+  have hden : (1 : K) - q ^ (2 * d) ≠ 0 := by
+    have : (q ^ (2 * d) : K) = (q ^ 2) ^ d := by rw [← pow_mul]
+    rw [this]; exact sub_ne_zero.mpr (Ne.symm hqd)
+  have hS' : (∑ i ∈ range d, (q ^ 2 : K) ^ i) * (1 - q ^ 2) = 1 - q ^ (2 * d) := by
+    rw [show (q : K) ^ (2 * d) = (q ^ 2) ^ d by rw [← pow_mul]]; exact hS
   rw [pow_succ]
   field_simp
   linear_combination
@@ -129,25 +131,25 @@ theorem markov_corner_row0 (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
       + (-((q ^ 2 + 1) * q ^ 2 * (q ^ 2) ^ k * (q ^ 2 + 1) ^ (m + k))) * hS'
 
 
-theorem seminormalParam_pos_nat' (q : ℝ) (hq : q ≠ 0) (j : ℕ) (hj : (q : ℝ) ^ (2 * j) ≠ 1) :
+theorem seminormalParam_pos_nat' (q : K) (hq : q ≠ 0) (j : ℕ) (hj : (q : K) ^ (2 * j) ≠ 1) :
     seminormalParam q ((j : ℤ)) = (q ^ 2 - 1) * q ^ (2 * j) / (q * (q ^ (2 * j) - 1)) := by
-  have hz : (q : ℝ) ^ (2 * j) ≠ 0 := pow_ne_zero _ hq
-  have hz1 : (q : ℝ) ^ (2 * j) - 1 ≠ 0 := sub_ne_zero_of_ne hj
+  have hz : (q : K) ^ (2 * j) ≠ 0 := pow_ne_zero _ hq
+  have hz1 : (q : K) ^ (2 * j) - 1 ≠ 0 := sub_ne_zero_of_ne hj
   rw [seminormalParam_pos_nat q j]
   field_simp
 
-theorem markov_corner_row1 (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
-    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (hk : k < m) :
+theorem markov_corner_row1 (q : K) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : K) ^ i ≠ 1) (hk : k < m) :
     ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (twoRow (m + 1) k (by omega))
         * seminormalParam q ((m : ℤ) - (k : ℤ) + 2)
       + ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (twoRow m (k + 1) (by omega))
         * seminormalParam q 1
       = (q ^ 3 / (q ^ 2 + 1)) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (twoRow m k hk.le) := by
-  have hq2 : (q ^ 2 : ℝ) ≠ 1 := by simpa using hgen 1 one_pos
+  have hq2 : (q ^ 2 : K) ≠ 1 := by simpa using hgen 1 one_pos
   set d := m - k with hdd
   have hcast : (m : ℤ) - (k : ℤ) + 2 = ((d + 2 : ℕ) : ℤ) := by simp [hdd]; omega
-  have hpow2 : (q : ℝ) ^ (2 * (d + 2)) = (q ^ 2) ^ (d + 2) := by rw [← pow_mul]
-  have hden : (q : ℝ) ^ (2 * (d + 2)) ≠ 1 := by
+  have hpow2 : (q : K) ^ (2 * (d + 2)) = (q ^ 2) ^ (d + 2) := by rw [← pow_mul]
+  have hden : (q : K) ^ (2 * (d + 2)) ≠ 1 := by
     rw [hpow2]; exact hgen (d + 2) (by omega)
   rw [ocneanuWeight_conventionD_eq_schurPrincipal q hq hq21,
     ocneanuWeight_conventionD_eq_schurPrincipal q hq hq21,
@@ -160,12 +162,12 @@ theorem markov_corner_row1 (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
     show m + 1 - k + 1 = d + 2 by omega, show m - (k + 1) + 1 = d by omega,
     show m - k + 1 = d + 1 by omega,
     show m + 1 + k = (m + k) + 1 by omega, show m + (k + 1) = (m + k) + 1 by omega]
-  have hA : (∑ i ∈ range (d + 2), (q ^ 2 : ℝ) ^ i) * (1 - q ^ 2) = 1 - q ^ (2 * (d + 2)) := by
+  have hA : (∑ i ∈ range (d + 2), (q ^ 2 : K) ^ i) * (1 - q ^ 2) = 1 - q ^ (2 * (d + 2)) := by
     rw [hpow2]; exact geom_oneSub (q ^ 2) (d + 2)
-  have hC : (∑ i ∈ range (d + 1), (q ^ 2 : ℝ) ^ i)
-      = (∑ i ∈ range d, (q ^ 2 : ℝ) ^ i) + (q ^ 2) ^ d := Finset.sum_range_succ _ _
-  have hpow : ((q ^ 2 + 1 : ℝ)) ^ (m + k) ≠ 0 := pow_ne_zero _ hq21
-  have hz1 : (q : ℝ) ^ (2 * (d + 2)) - 1 ≠ 0 := sub_ne_zero_of_ne hden
+  have hC : (∑ i ∈ range (d + 1), (q ^ 2 : K) ^ i)
+      = (∑ i ∈ range d, (q ^ 2 : K) ^ i) + (q ^ 2) ^ d := Finset.sum_range_succ _ _
+  have hpow : ((q ^ 2 + 1 : K)) ^ (m + k) ≠ 0 := pow_ne_zero _ hq21
+  have hz1 : (q : K) ^ (2 * (d + 2)) - 1 ≠ 0 := sub_ne_zero_of_ne hden
   rw [pow_succ]
   field_simp
   linear_combination
@@ -174,14 +176,14 @@ theorem markov_corner_row1 (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
             * (q ^ (2 * (d + 2)) - 1) * q ^ 4)) * hC
 
 
-theorem markov_corner_row1_diag (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
-    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (m : ℕ) :
+theorem markov_corner_row1_diag (q : K) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : K) ^ i ≠ 1) (m : ℕ) :
     ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (twoRow (m + 1) m (by omega))
         * seminormalParam q 2
       = (q ^ 3 / (q ^ 2 + 1)) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (twoRow m m le_rfl) := by
-  have hq2 : (q ^ 2 : ℝ) ≠ 1 := by simpa using hgen 1 one_pos
-  have hpow2 : (q : ℝ) ^ (2 * 2) = (q ^ 2) ^ 2 := by rw [← pow_mul]
-  have hden : (q : ℝ) ^ (2 * 2) ≠ 1 := by rw [hpow2]; exact hgen 2 (by omega)
+  have hq2 : (q ^ 2 : K) ≠ 1 := by simpa using hgen 1 one_pos
+  have hpow2 : (q : K) ^ (2 * 2) = (q ^ 2) ^ 2 := by rw [← pow_mul]
+  have hden : (q : K) ^ (2 * 2) ≠ 1 := by rw [hpow2]; exact hgen 2 (by omega)
   have hcast : ((2 : ℕ) : ℤ) = (2 : ℤ) := by norm_num
   rw [ocneanuWeight_conventionD_eq_schurPrincipal q hq hq21,
     ocneanuWeight_conventionD_eq_schurPrincipal q hq hq21,
@@ -192,8 +194,8 @@ theorem markov_corner_row1_diag (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0
     seminormalParam_pos_nat' q hq 2 hden,
     show m + 1 - m + 1 = 2 by omega, show m - m + 1 = 1 by omega,
     show m + 1 + m = (m + m) + 1 by omega]
-  have hpow : ((q ^ 2 + 1 : ℝ)) ^ (m + m) ≠ 0 := pow_ne_zero _ hq21
-  have hz1 : (q : ℝ) ^ (2 * 2) - 1 ≠ 0 := sub_ne_zero_of_ne hden
+  have hpow : ((q ^ 2 + 1 : K)) ^ (m + m) ≠ 0 := pow_ne_zero _ hq21
+  have hz1 : (q : K) ^ (2 * 2) - 1 ≠ 0 := sub_ne_zero_of_ne hden
   rw [pow_succ]
   norm_num [Finset.sum_range_succ]
   field_simp

@@ -253,7 +253,7 @@ def main() -> int:
         if not hits:
             continue
         rel = str(path.relative_to(root))
-        if "_deprecated" in rel and not args.include_deprecated:
+        if ("_deprecated" in rel or "fsh-guts" in rel) and not args.include_deprecated:
             deprecated += 1
             continue
         report[rel] = {

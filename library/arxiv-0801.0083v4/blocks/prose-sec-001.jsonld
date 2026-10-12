@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0801.0083v4/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "Prestacks on a Topological Space",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "text": "../sections/sec-001-2-prestacks-on-a-topological-space.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0801.0083v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0801.0083v4/manifest.jsonld",
+  "provenance": "ingested"
+}

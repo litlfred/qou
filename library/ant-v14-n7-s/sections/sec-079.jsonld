@@ -1,18 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-079",
   "@type": [
     "doco:Section"
   ],
-  "title": "3B. Calcul du complexe AK et du morphisme",
-  "pageStart": 111,
-  "pageEnd": 115,
+  "title": "2A. Rappels sur les motifs algébriques et leurs cohomologies",
+  "pageStart": 88,
+  "pageEnd": 95,
   "contains": [
-    "library/ant-v14-n7-s/blocks/prose-sec-079",
-    "library/ant-v14-n7-s/blocks/prop-sec-079-01",
-    "library/ant-v14-n7-s/blocks/prop-sec-079-02"
+    "library/ant-v14-n7-s/blocks/prose-sec-079"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"
 }

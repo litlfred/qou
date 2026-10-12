@@ -6,7 +6,11 @@
   "sha256": "f61ff2111e9a97f9e87191e3936bfc998db9efad44cec9d4fc485f5c65145efa",
   "bytes": 472351,
   "pages": 17,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -392,6 +396,144 @@
   "likely_scanned": false,
   "toc_entries": 23,
   "sections": 19,
-  "chars_total": 35515
+  "chars_total": 35515,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "investigation-of-Neumann_s-conjecture.tex",
+   "tex_sections": 26,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-14-exotic-volumes",
+     "title": "Exotic volumes",
+     "prose_ratio": 0.118,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.047,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-13-a-stronger-false-conjecture",
+     "title": "A stronger, false conjecture",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.288,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-003-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.632,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-2-background",
+     "title": "Background",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-21-cross-ratios",
+     "title": "Cross-ratios",
+     "prose_ratio": 0.313,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-24-gluing-equations",
+     "title": "Gluing Equations",
+     "prose_ratio": 0.09,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-23-the-bloch-group",
+     "title": "The Bloch group",
+     "prose_ratio": 0.65,
+     "coverage_ratio": 0.221,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-008-25-ptolemy-coordinates",
+     "title": "Ptolemy coordinates",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-26-lattice-matching",
+     "title": "Lattice matching",
+     "prose_ratio": 0.734,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-3-experimentation",
+     "title": "Experimentation",
+     "prose_ratio": 0.103,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-32-lattice-matching",
+     "title": "Lattice matching",
+     "prose_ratio": 0.185,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-31-manifold-generation",
+     "title": "Manifold generation",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-33-linear-combinations-for-exotic-volumes",
+     "title": "Linear combinations for exotic volumes",
+     "prose_ratio": 0.333,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-4-a-counter-example-to-conjecture-13",
+     "title": "A counter-example to conjecture 1.3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-5-evidence-for-conjecture-12",
+     "title": "Evidence for conjecture 1.2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-52-data-analysis",
+     "title": "Data analysis",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-6-selected-examples",
+     "title": "Selected examples",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

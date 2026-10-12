@@ -44,8 +44,8 @@ for each crossing.
 |---|------|-------------|---------|-----------|--------|
 | 1 | Volume | 2[2][7]m_e | +A | [2,1] h⁰ | DERIVED |
 | 2 | Surface | 2[4]²m_e | -A^{2/3} | [2,1] h² boundary | DERIVED |
-| 3 | Coulomb | h[6]m_e | -Z(Z-1)/A^{1/3} | [2,1] pp excess | DERIVED |
-| 4 | Asymmetry | 3[2][7]m_e | -(N-Z)²/(4A) | [2,1] h¹ Casimir | DERIVED |
+| 3 | Coulomb | h[6]m_e | -Z(Z-1)/A^{1/3} | [2,1] pp excess (label only) | STATED — no derivation in the corpus; bean qou-nxvg |
+| 4 | Asymmetry | 3[2][7]m_e | -(N-Z)²/(4A) | [2,1] h¹ Casimir (label only) | STATED — no derivation in the corpus; bean qou-nxvg |
 | 5 | Pairing | [3][7]m_e | ±1/√A | [3]+[1,1,1] descent | DERIVED |
 | 6 | Exchange | [3]/[2]m_e | -Z^{4/3}/A^{1/3} | [2,1] h³ boundary | DERIVED |
 | 7 | Shell | [2]²[3]m_e | +f_magic/A^{2/3} | [3,1] branching | DERIVED |
@@ -268,7 +268,7 @@ as the $H^2$ calibration — not an additional fit.
    >   from CODATA. Its "match to $10^{-12}$" is the identity closing, not
    >   a prediction of the measured $\alpha$.
    > - Every *"✅ resolved"* corroboration lives under
-   >   `docs/audits/_deprecated/`.
+   >   `fsh-guts/deprecated/docs/audits/`.
    > - The quoted 6.7 ppb is muon-pinned **and** measured against CODATA-
    >   **2018** (`137.035999084`; 2022 is `137.035999177`).
    >

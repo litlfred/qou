@@ -95,6 +95,12 @@ only, term **bolded**), `prop:q-dilogarithm-pentagon`, `rem:q-dilogarithm-r-matr
   drop the table glyph / exclamation and state the result in prose. (These also
   surface on the `one-voice` emoji axis — fix once.)
 
+> **Related (2026-10-11).** `clarity-stmt-pure` moves *interpretation* out of a
+> statement. Audit or agent-discussion commentary (formalisation grading,
+> corpus history, bean/PR/path references, provenance stories) is a different
+> class and leaves the paper entirely — see `one-voice-audit` Category L and
+> `folio/pipeline/paper-commentary-audit.ts`.
+
 ## The scanner
 
 `folio/pipeline/definition-clarity-audit.ts` is a qou-local, **self-contained**

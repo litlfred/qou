@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/akemann-2022-j-phys-a-math-theor-55-194002/blocks/prose-sec-009",
   "kind": "prose",
-  "title": "Analysis at finite matrix dimension",
-  "pageStart": 14,
-  "pageEnd": 14,
-  "text": "../sections/sec-009-4-analysis-at-finite-matrix-dimension.md",
-  "derivedFrom": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
-  "sourceDocument": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest",
+  "title": "Comparison to the bulk spacing distribution",
+  "pageStart": 24,
+  "pageEnd": 27,
+  "text": "../sections/sec-009-52-comparison-to-the-bulk-spacing-distribution.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
   "provenance": "ingested"
 }

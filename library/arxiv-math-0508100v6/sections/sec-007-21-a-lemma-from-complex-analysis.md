@@ -8,39 +8,101 @@ pages: 8-8
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
 doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
+text_source: latex
+latex_prose_ratio: 0.934
+latex_coverage_ratio: 0.992
 ---
-of Theorem 1.2 to the strong convergence. This uses the next lemma on normal fa milies that is sometimes
-referred to by the name of Vitali or Montel’s theorem. For a reference, see [ Hil62, Sch93]. The lemma
-exhibits the power of holomorphy, coupled with uniform boundednes s.
-Lemma 2.1. If
-fn : {z ∈ C : |z| < r } → { z ∈ C : |z| ≤ M }
-is a uniformly bounded sequence of holomorphic functions such that for every m ≥ 0, we have:
-lim
-n→∞
-f (m)
-n (0) = am.
+\lbl{sub.complex}
+
+
+To prove Theorem \ref{thm.11}, we need to improve the weak
+convergence of Theorem \ref{thm.MMR} to the strong convergence.
+This uses the next lemma on normal
+families that is sometimes referred to by the name of {\em Vitali} or
+{\em Montel's} theorem. For a reference, see \cite{Hi,Sch}. The lemma exhibits
+the power of holomorphy, coupled with uniform boundedness.
+
+
+
+
+\begin{lemma}
+\lbl{lem.complex}
+If
+$$
+f_n: \{z \in \BC \, : \, |z| < r \} \to \{z \in \BC \, : \, |z| \leq M \}
+$$
+is a uniformly bounded sequence of holomorphic functions such
+that for every $m \geq 0$, we have:
+$$
+\lim_{n \to \infty} f^{(m)}_n(0) =a_m.
+$$
 Then,
-• The limit f (z) = lim n fn(z) exists pointwise for all z with |z| < r .
-• f is holomorphic,
-• The convergence is uniform on compact subsets, and
-• For every m, f (m)(0) = am.
-In other words, weak convergence and uniform boundedness imply strong convergence.
-Proof. {fn}n is uniformly bounded, so it is a normal family, and contains a converge nt subsequence fj → f .
-Convergence is uniform on compact sets, and f is holomorphic, and for every m ≥ 0, limj f (m)
-j (0) = f (m)(0) =
-am.
-If {fn}n is not convergent (uniformly on compact sets), since it is a normal f amily, then there exist two
-subsequences that converge to f and g respectively, with f ⁄= g. Applying the above discussion, it follows
-that f and g are holomorphic functions with equal derivatives of all orders at 0. Thus, f = g, giving a
-contradiction. □
-Theorem 1.3 follows from Lemma 2.1 and the following result, whose proof will be given in Section 4.
-Theorem 2.2. (Proof in Section 4.2) For every knot K there exists an open neighborhood UK of 0 ∈ C and
-a positive number M such that for α ∈ UK, and all n ≥ 1, we have:
-|fK,n (α)| < M.
-2.2. The main diﬃculty for uniform bounds. Before we proceed with the proof of Theorem 2.2, let
-us point out the main diﬃculty. As we will see later, JK,n (q) is a Laurent polynomial in q whose span
-(i.e., the exponents of its monomials) are O(n2) and whose coeﬃcients are eO(n). In addition, due to our
-normalization, JK,n (1) = 1. In other words, the O(n2) many exponentially growing coeﬃcients of JK,n (q)
-add up to 1. When we evaluate JK,n (eα/n ), we want to bound the result independent of n. This will happen
-only if major cancellations occur. How can we control these cancella tions? The answer to this is a key
-cyclotomic expansion of the colored Jones function, which we review next.
+\begin{itemize}
+\item
+The limit $f(z)=\lim_n f_n(z)$ exists pointwise for all $z$ with $|z| < r$ .
+\item
+$f$ is holomorphic,
+\item
+The convergence is uniform on compact subsets, and
+\item
+For every $m$, $f^{(m)}(0)=a_m$.
+\end{itemize}
+In other words, weak convergence and uniform boundedness imply
+strong convergence.
+\end{lemma}
+
+
+\begin{proof}
+$\{f_n\}_n$ is uniformly bounded, so it is a normal family, and contains
+a convergent subsequence $f_j\to f$. Convergence is uniform on compact sets,
+and $f$ is holomorphic, and for every $m \geq 0$,
+$\lim_j f_j^{(m)}(0)=f^{(m)}(0)=a_m$.
+
+If $\{f_n\}_n$ is not convergent (uniformly on compact sets),
+since it is a normal family, then
+there exist two subsequences that converge to $f$ and $g$
+respectively, with $f \neq g$. Applying the above discussion, it
+follows that $f$ and $g$ are holomorphic functions with equal
+derivatives of all orders at $0$. Thus, $f=g$, giving a
+contradiction.
+\end{proof}
+
+
+ Theorem \ref{thm.11} follows from Lemma \ref{lem.complex} and
+the following result, whose proof will be given in Section
+\ref{sec.estimates}.
+
+\begin{theorem}
+\lbl{thm.boundC3} {\rm (Proof in Section \ref{sub.thm.boundC2})}
+
+For every knot $K$ there exists an open neighborhood $U_K$ of $0 \in
+\BC$ and a positive number $M$ such that for $\a \in U_K$, and all
+$n \geq 1$, we have:
+$$
+|f_{K,n}(\a)| < M.
+$$
+
+
+
+
+
+
+\end{theorem}
+
+
+
+\subsection{The main difficulty for uniform bounds}
+\lbl{sub.keydiff}
+
+Before we proceed with the proof of Theorem \ref{thm.boundC3}, let us
+point out the main difficulty. As we will see later, $J_{K,n}(q)$
+is a Laurent polynomial in $q$ whose span (i.e., the exponents
+of its monomials)
+are $O(n^2)$ and whose coefficients are $e^{O(n)}$. In addition, due to
+our normalization, $J_{K,n}(1)=1$. In other words, the $O(n^2)$ many
+exponentially growing
+coefficients of $J_{K,n}(q)$ add up to $1$. When we evaluate
+$J_{K,n}(e^{\a/n})$, we want to bound the result independent of $n$. This
+will happen only if major cancellations occur. How can we control these
+cancellations? The answer to this is a key cyclotomic expansion of the
+colored Jones function, which we review next.

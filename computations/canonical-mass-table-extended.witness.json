@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T06:43:25.567149+00:00",
-  "commitSha": "e8f196a688d9c442a6888073a6b006eacd3adeea",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-11T08:27:36.968043+00:00",
+  "commitSha": "5aeb3816af283d59d6bd662fc02a61adef833447",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 70361,
+  "durationMs": 64354,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "f923eab01fca",
-  "scriptCommitSha": "465a555201c31a610fd4a554a9da7117a54b5309",
+  "scriptHash": "c72328789986",
+  "scriptCommitSha": "615b5553363a7e159ec40fa99bb156e48be9b1c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,24 +17,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
-      "computations/canonical_mass_table_extended.py",
-      "--method",
-      "auto",
-      "--target-dps",
-      "60"
+      "computations/canonical_mass_table_extended.py"
     ],
-    "reproduce": "python3 -u computations/canonical_mass_table_extended.py --method auto --target-dps 60"
+    "reproduce": "python3 -u computations/canonical_mass_table_extended.py"
   },
   "description": "Extended canonical mass table via per-atom route: A<2 -> direct H_3 Hoefsmit (laurent_q_rust, falling back to laurent_q when pyhecke_native is absent); A>=2 -> operator-valued Wenzl branching combiner; + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
@@ -114,7 +110,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -212,7 +208,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -358,7 +354,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -385,7 +381,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -579,7 +575,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -606,7 +602,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -633,7 +629,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -827,7 +823,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -854,7 +850,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -881,7 +877,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1123,7 +1119,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1150,7 +1146,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1177,7 +1173,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1204,7 +1200,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1494,7 +1490,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1521,7 +1517,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1548,7 +1544,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1575,7 +1571,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1602,7 +1598,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1940,7 +1936,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1967,7 +1963,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -1994,7 +1990,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -2021,7 +2017,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -2048,7 +2044,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -2075,7 +2071,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -2461,7 +2457,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -2488,7 +2484,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -2515,7 +2511,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "p",
             "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "canonical_form_label": "proton intra (uud, 11 letters): (σ_0 σ_1⁻¹)³ · σ_0 ⟨σ_0⟩ ⟨σ_1⟩ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -2542,7 +2538,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -2569,7 +2565,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -2596,7 +2592,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {
@@ -2623,7 +2619,7 @@
             "crossing_type": "sigma",
             "nucleon_type": "n",
             "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "canonical_form_label": "neutron intra (udd, 11 letters): (σ_0 σ_1⁻¹)³ · ⟨σ_0⟩ ⟨σ_0⟩ σ_1⁻¹ · σ_0 σ_0 (Borromean core + quark pairs + gluon pair; ⟨σ⟩ = (σ+σ⁻¹)/2)",
             "witness_ref": null
           },
           {

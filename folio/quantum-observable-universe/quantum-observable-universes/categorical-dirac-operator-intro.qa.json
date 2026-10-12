@@ -1256,6 +1256,39 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "44d8feae95ed",
+          "ts": "baa07418ddfd"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 12,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 2,
+            "H4": 1,
+            "H5": 2,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H8: L1 'This formula defines a unique morphism in $\\mathbf C$ once $\\nabla$, $q$, and $\\xi$ are fixed' belabours the triviality that a formula defines a map; the name 'Dirac' (no Clifford action appears) is not justified. H4: 'gauge and matter terms of the categorical action' anticipates notation not yet introduced.",
+        "notes": "Milnor H1-H8 = [2, 1, 2, 1, 2, 2, 1, 1] (T=12/16, warn); weakest: H2, H4, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): 'We combine $\\nabla$, $q$ and $\\xi$ into one first-order operator $\\mathcal D_\\nabla$, interpolating between $\\nabla$ ($q=1$) and its Reeb component $\\iota_\\xi\\nabla$ ($q\\to\\infty$). We call it a Dirac operator because ...'. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -1703,6 +1736,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T01:01:54.508Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0606435v2/sections/sec-020",
   "@type": [
     "doco:Section"
   ],
-  "title": "(if q = 1) resp. σ1σ2σ−1",
-  "pageStart": 13,
-  "pageEnd": 13,
+  "title": "Positive links",
+  "pageStart": 35,
+  "pageEnd": 38,
   "contains": [
     "library/arxiv-math-0606435v2/blocks/prose-sec-020"
   ],
-  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
-  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
   "provenance": "ingested"
 }

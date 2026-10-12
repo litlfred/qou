@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1701.06567v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "BPS spectra and 3-manifold invariants (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1701.06567v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1701.06567&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1701.06567v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1701.06567v2",
+    "content_type": "application/gzip",
+    "sha256": "6e50590f85253c7ad74b3076d285b5c5ba12c18d7be01d2970121cf0d4004111",
+    "bytes": 256875,
+    "fetched": "2026-10-10T15:11:45+00:00",
+    "files": [
+      {
+        "path": "source/files/3ManBPS-10.bbl",
+        "role": "bbl",
+        "sha256": "93a441c961073c04aa9d868435fe3b3619c52856f2cbec147c9e73d9beb9df12",
+        "bytes": 22273
+      },
+      {
+        "path": "source/files/3ManBPS-10.tex",
+        "role": "tex",
+        "sha256": "ff80da3aba2b4715824e77b30f83e18d56868d59046a5015a9e6a96c67ebe686",
+        "bytes": 219813
+      },
+      {
+        "path": "source/files/JHEP3.cls",
+        "role": "cls",
+        "sha256": "41975bc63ef3aad236f88e3dce435b4f87e4d0a213a5c906676c771c55f3233c",
+        "bytes": 71897
+      },
+      {
+        "path": "source/files/jheppub.sty",
+        "role": "sty",
+        "sha256": "e73b2ddb75c396b8a366be04b661b69492d85c74326555dc6ff0b6d6fae7467d",
+        "bytes": 11816
+      },
+      {
+        "path": "source/files/mathtools.sty",
+        "role": "sty",
+        "sha256": "e394b2406ad7abcd971741d1f58e4cd73d8b5a43550ae63ea701daa0592b7b47",
+        "bytes": 35466
+      },
+      {
+        "path": "source/files/mhsetup.sty",
+        "role": "sty",
+        "sha256": "cf9f96c879ab81f4f7bb12249a7a6faf6bf61c1fa7eac448f3666fd42cbba855",
+        "bytes": 5378
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

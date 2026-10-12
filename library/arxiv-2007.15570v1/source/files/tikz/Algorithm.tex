@@ -1,0 +1,78 @@
+% Define block styles
+\tikzset{
+  decision/.style={
+        diamond,
+        draw, thick,
+        text width=5.5em,
+        text badly centered,
+        inner sep=0pt
+    },
+    block/.style={
+        rectangle,
+        draw, thick,
+        text width=10em,
+        text centered,
+        rounded corners
+    },
+    cloud/.style={
+        draw,
+        ellipse,
+        minimum height=2em
+    },
+    descr/.style={
+        fill=white,
+        inner sep=2.5pt
+    },
+    connector/.style={
+        -latex,
+        font=\scriptsize
+    },
+    rectangle connector/.style={
+        connector,
+        to path={(\tikztostart) -- ++(#1,0pt) \tikztonodes |- (\tikztotarget) },
+        pos=0.5
+    },
+    rectangle connector/.default=-2cm,
+    straight connector/.style={
+        connector,
+        to path=--(\tikztotarget) \tikztonodes
+    },
+    line/.style={>=latex,->,thick},
+    evey edge quotes/.style = {auto=right},
+}
+
+\begin{figure*}
+    \centering
+    \tikzsetnextfilename{algorithm}
+    \begin{tikzpicture}
+        \matrix (m) [matrix of nodes, column sep=1cm, row sep=6mm, align=center, nodes={anchor=center}, nodes in empty cells]    
+        {
+            |[block]| {Start} & &\\
+            |[block]| {Generate nuclear configuration} & &\\
+            |[block]| {Kick random nucleon} & &\\
+            |[block]| {Evolve propagating nucleon(s) for time $\delta t$} & &\\
+            |[decision]| {Possible interaction?} & |[decision]| {Outside nucleus?} & |[block]| {Remove from propagating particle list}\\
+            |[block]| {Generate outgoing momenta} &  & \\
+            |[decision]| {Pauli Blocked?} & |[block]|{Restore original outgoing momenta} & & \\
+            |[block]| {Update outgoing momenta of particles} & &|[block]| {Add particle to list and update formation zone}& \\
+        };
+        \path[line] (m-1-1) edge (m-2-1);
+        \path[line] (m-2-1) edge (m-3-1);
+        \path[line] (m-3-1) edge (m-4-1);
+        \path[line] (m-4-1) edge (m-5-1);
+        \path[line] (m-5-1) edge node[midway, above, text=black]{No} (m-5-2);
+        \path[line] (m-5-1) edge node[midway, right, text=black]{Yes} (m-6-1);
+        \path[line] (m-5-2) edge node[midway, above, text=black]{Yes} (m-5-3);
+        \draw[line] (m-5-2) |- node[midway, right, text=black]{No} (m-4-1);
+        \path[line] (m-6-1) edge (m-7-1);
+        \path[line] (m-7-1) edge node[midway, above, text=black]{Yes} (m-7-2);
+        \path[line] (m-7-2) edge (m-5-2);
+        \path[line] (m-7-1) edge node[midway, right, text=black]{No} (m-8-1);
+        \path[line] (m-8-1) edge (m-8-3);
+        \draw[line] (m-8-3) -- (m-7-3.center) -- (m-6-3.center) -- (m-6-2.center) -- (m-5-2);
+    \end{tikzpicture}
+    \caption{
+        The proposed algorithm for the INC model.
+        \label{fig:algorithm}
+    }
+\end{figure*}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1901.01312v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1901.01312v1/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Minimal left ideals of C𝓁(6)",
+  "title": "The Helon model",
   "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-005-32-minimal-left-ideals-of-c𝓁6.md",
-  "derivedFrom": "library/arxiv-1901.01312v1/manifest",
-  "sourceDocument": "library/arxiv-1901.01312v1/manifest",
+  "pageEnd": 5,
+  "text": "../sections/sec-005-41-the-helon-model.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1901.01312v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1901.01312v1/manifest.jsonld",
   "provenance": "ingested"
 }

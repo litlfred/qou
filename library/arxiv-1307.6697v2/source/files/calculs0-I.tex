@@ -1,0 +1,617 @@
+\section{Introduction}
+
+In this paper we are interested in obtaining representations
+of the fundamental group of a 3-manifold  into $\PGL(3,\bC)$.  They will be defined via certain topological triangulations with additional geometric data carried by the
+0-skeleton of the triangulation.
+
+The most important example being hyperbolic geometry we will mainly consider 3-manifolds which carry a complete hyperbolic structure.  That is, complete riemannian manifolds with  constant negative curvature equal to $-1$.
+
+
+ In order to simplify the description we first treat open manifolds
+which are the interior of manifolds with boundary.  If the hyperbolic manifold is complete and of finite volume one shows that its ideal boundary is a union of tori.  In that case we consider ideal triangulations such that the 0-skeleton is in the ideal boundary.  That is, identifying each boundary to a point, we consider a triangulation of the quotient space such that the 0-skeleton
+coincides with the set of boundary points.
+
+In hyperbolic space the ideal tetrahedra are described by a configuration of four points in the boundary of hyperbolic space, that is, $\CP^1$.  The cross-ratio is sufficient
+to parameterize ideal tetrahedra up to the isometry group.  Ideal triangulations were used by Thurston to obtain examples of hyperbolic manifolds (see \cite{Thurston}).  A complete hyperbolic structure
+is obtained on the manifold once a system of equations on the cross-ratio coordinates of those ideal tetrahedra are solved.  A very successful computational tool, SnapPea, was developed by Jeff Weeks (see its very readable description in \cite{Weeks}) which solves numerically the system of equations.
+
+
+Other geometric structures in 3-manifolds are associated to subgroups of $\PGL(3,\bC)$, namely, flag structures which are associated to $\PGL(3,\bR)$ and spherical Cauchy-Riemann structures (CR structures)
+which are associated to the group $\PU(2,1)$. These geometric structures are not well understood, in particular one does not know which 3-manifolds can carry one of them.
+
+The first step in trying to find a structure is to obtain a representation of the fundamental group in one of these groups (see \cite{falbeleight} for the case $\PU(2,1)$).   We will use the raw data of triangulation of 3-manifolds as obtained in SnapPea.  Then we proceed as in \cite{BFG}; to a triangulation we associate a decoration
+given by a choice of flags at each vertex of the tetrahedra.  We set equations imposing that the gluing of the tetrahedra is compatible with the decoration of flags.  The solution of the equations would give immediately a representation of the fundamental group of the 3-manifold into $\PGL(3,\bC)$ (called the holonomy representation).  Imposing that the holonomy restricted to the boundary tori be unipotent is a natural condition which is analogous to the condition of completeness in the hyperbolic case.  But more general conditions are very important too.  In particular, a condition, which is appropriate to the CR case is that the eigenvalues be of absolute value one.
+Indeed, parabolic boundary conditions in the CR case imply that condition and it would be interesting to determine if there exist CR structures corresponding to  boundary holonomies given by parabolic
+ conditions. Our methods to solve these equations are the same and we give in  section \ref{sec:m004ni}  solutions to some  non-unipotent
+systems.  More general boundary conditions could be treated by our methods.
+
+
+A generalization of the gluing equations for higher dimensions was described in \cite{GGZ}, and a simplified set of equations describing the particular case of representations into $\SL(n,\bC)$ is also described in \cite{GTZ1}.
+These equations are based on decorations of tetrahedra by affine flags (see also the $a$-coordinates for affine flags  in \cite{BFG}) but, as there were initially designed for finding representations into $\SL(n,\bC)$, they miss solutions related to  $\PGL(n,\bC)$ representations obtained via projective flags. However, the introduction of a cocycle and its computation gives access to all boundary unipotent representation in $\PGL(n,\bC)$.  This interesting method has the advantage to
+introduce quadratic equations as systems to be solved but is not adapted to non unipotent decorations and thus to describe other representations.
+On the other hand, it is not clear whether the computations are actually simpler in the affine flag case as shown by limitations in the computations in \cite{Ptolemy} (even for $\PGL(3,\bC)$).  Indeed, the use of Gröbner bases discards immediately the initial structure of the equations (symetries, sparsity, etc.) and the small degrees of the initial equations does not prevent the appearance of very large degrees during the computations. Even if some classes of examples are known to have a good behaviour (see \cite{HL2011} for $0$-dimensional systems), up to our knowledge, there does not exist any criteria on the initial equations that might help to decide if such algorithm will be well behaved or not.
+
+In this paper we deal with methods to solve the equations and obtain a list of solutions for manifolds with low complexity.  In particular we obtain all
+solutions for ideal triangulations of complete cusped hyperbolic manifolds with less than four tetrahedra.
+
+In the first sections, in order to make the paper self-contained,  we review results in \cite{BFG} (see also \cite{falbeleight} for the $\PU(2,1)$ case).  That contains the parametrization of decorated tetrahedra (configurations of four flags in $\CP^2$),  the  description of decorated ideal triangulations, the compatibility equations
+which will lead us to a system of equations and the computation of the holonomy representation.  The special case we deal mostly in this paper has unipotent boundary holonomy.
+
+In section \ref{tools} we describe the methods used to solve the system of equations.
+
+In the remaining sections we describe several important examples which illustrate the methods and the results.
+ The complete census up to three tetrahedra is shown in Table \ref{DesSols} (more details can be obtained in our webpage \href{https://who.rocq.inria.fr/Fabrice.Rouillier/SGT/Home_page.html}{.../SGT}).
+
+A very important observation which came out from the examples is that solutions of the gluing equations with unipotent boundary holonomy might not be 0-dimensional
+even in low complexity.  Computations for representations in $\PGL(2,\bC)$ show that, for cusped hyperbolic manifolds obtained with  four tetrahedra, only two have a one parameter family component (there are no examples with less than four tetrahedra), but we do not have an efficient method to decide when the solution will have
+a positive dimensional component.
+%The one dimensional components in the examples were not systematically studied in this paper.  We did not search for
+%$\PU(2,1)$ or $\PSL(3,\bR)$ solutions in these components.
+We verified that the one dimensional components (in all examples) have at most a finite number of $\PSL(2,\bC)$ solutions. Moreover, they are all in $\PSL(2,\bR)$ so the volumes presented in the table concern indeed all $\PSL(2,\bC)$ representations arising from the given triangulation.
+On the other hand, $\PU(2,1)$ solutions might appear in families (of real dimension one or two) inside 1-dimensional  components (see the worked example m003 in \cite{BFGKR} where there is a whole complex 1-dimensional component consisting of CR solutions).   In any case, all these families arise from degenerate representations.  Indeed, either
+they give rise to reducible representations or they have trivial boundary holonomy.
+
+In the case of the figure eight knot the non-hyperbolic representations in $\PGL(3,\bC)$ were  obtained in \cite{falbeleight}.  They happen to be discrete representations in $\textrm{\PU}(2,1)$ and two of them give rise to spherical structures on the complement of the figure eight knot (see \cite{DF,FW}).  In the case of the Whitehead link complement, R. Schwartz (\cite{Schwartz}) was able to analyse one  representation (obtained in a completely independent way as a subgroup of $\textrm{\PU}(2,1)$ generated by reflections) and showed that the complement of the link has a spherical CR structure.  Other representations of the fundamental group of the complement of the Whitehead link obtained similarly using reflection groups were analysed in \cite{PW}.  In their case the representations form a one parameter family parameterized by the boundary holonomy. We obtain here independently the unipotent representation which is  the holonomy of a CR structure on the complement of the Whitehead link.
+
+It turns out that for the examples of CR structures obtained until now, the boundary holonomy of the $\PU(2,1)$ representations are abelian of rank one.  This fact made us  try
+to chase  representations into $\PU(2,1)$ with rank one boundary holonomy in the hope that they will correspond to CR structures.  We enumerate all these solutions.
+  For the ideal triangulation of the Whitehead link complement with four tetrahedra there is only one unipotent
+representation with rank one  boundary holonomy (it is the same one obtained independently in \cite{PW}).
+
+Above all,  the computations encourage us to study CR structures.  There is a great proportion of $\PU(2,1)$ representations obtained among all $\PGL(3,\bC)$ representations
+and some of them might correspond to holonomies of geometric structures.
+On the other hand it is a challenging problem to decide if a 3-manifold has a geometric structure.  It is not clear when the representations obtained
+here are discrete (for general discrete subgroups of $\PGL(3,\bC)$ see \cite{CNS}) .  On the other hand, a criterium for
+ rigidity of representations is given in \cite{BFGKR} and a discussion of generic discreteness of  the boundary holonomy is given in \cite{G}.  In this paper we don't address these questions.
+
+Another interesting observation from  Table \ref{DesSols} is the fact that the hyperbolic volume is the maximum among the volumes of all unipotent $\PGL(3,\bC)$ representations.  This was shown recently using methods of bounded cohomology in \cite{BBI}.   On the other hand, $\PU(2,1)$ representations have null volume
+by cohomological reasons (see \cite{FWang}).
+
+A final remark is the fact that no numerical method is available to solve these equations. It is a remarkable fact that, due to Mostow's rigidity, one knows that  there is  at most
+one complete hyperbolic structure on a manifold.
+This structure corresponds to the unique solution with positive imaginary parts of the variables associated to a triangulation.
+The numerical scheme introduced in SnapPea should converge to this solution.
+Then, the LLL-algorithm makes the method very efficient in finding exact solutions corresponding to the hyperbolic structures.
+On the other hand, there is no knowledge of the number or location of solutions to the equations for representations in $\PGL(3,\bC)$. Therefore, there is no numerical scheme to obtain solutions and we are, for the moment, condemned to solve the equations exactly.
+
+We thank M. Thistlethwaite for introducing us to SnapPea and making available his list of cusped 3-manifolds with particularly simple generators
+for the boundary fundamental group.  We used his list for our computations.  We also thank N. Bergeron, M. Deraux, A. Guilloux,
+ M. Thistlethwaite
+and S. Tillmann for all the stimulating discussions.
+
+\section{Three geometric structures on three manifolds}
+
+
+Geometric structures on three manifolds have been extensively studied.  The usual setting is an action of
+a Lie group $G$ on a homogeneous 3-manifold $X$.  An $(X,G)$ structure on a 3-manifold $M$
+ being a family of charts $\phi_i : U_i\rightarrow X$
+from open subsets forming a cover of $M$ with transition functions $g_{ij}$ (given by $\phi_j=g_{ji}\circ \phi_i $) in the Lie group $G$.
+
+Hyperbolic structures, that is, $({\mathbb H}_{\bR}^{3},\PSL(2,\bC))$ structures (where ${\mathbb H}_{\bR}^{3}$ is hyperbolic 3-space) were shown by Thurston to be very important and his theory
+made possible, as a far reaching consequence of his ideas, to solve Poincar\'e's conjecture.   The boundary of the 3-dimensional hyperbolic space can be identified to $\CP^1$.  By embedding $\CP^1$ into $\CP^2$ as a conic
+%Defining the
+%irreducible embedding
+%\begin{eqnarray*}
+  %\P_1(\bC) & \to & \P_2(\bC) \\
+ %\left[x,y\right] & \mapsto &  [x^2,xy,y^2].
+%\end{eqnarray*}
+we observe that a point in $\CP^1$ defines a point and a line containing it in $\CP^2$.  Namely the point obtained by the embedding and the tangent line to
+the embedding passing through that point.   This justifies considering configuration of flags associated to triangulations (recall that a pair consisting of a point and a projective line containing the point is called a flag).  We will associate to each vertex of a tetrahedron
+a flag in the following section.
+
+ CR geometry is modelled on the sphere ${\mathbb S}^3$ equipped with a natural $\mathrm{PU}(2,1)$ action.  More precisely, consider the group $\mathrm{U}(2,1)$ preserving the Hermitian form
+$\langle z,w \rangle = w^*Jz$ defined on ${\bC}^{3}$ by
+the matrix
+$$
+J=\left ( \begin{array}{ccc}
+
+                        0      &  0    &       1 \\
+
+                        0       &  1    &       0\\
+
+                        1       &  0    &       0
+
+                \end{array} \right )
+$$
+and the following cones in ${\mathbb C}^{3}$;
+$$
+        V_0 = \left\{ z\in {\bC}^{3}-\{0\}\ \ :\ \
+ \langle z,z\rangle = 0 \ \right\},
+$$
+$$
+        V_-   = \left\{ z\in {\bC}^{3}\ \ :\ \ \langle z,z\rangle < 0
+\ \right\}.
+$$
+Let $\pi :{\bC}^{3}\setminus\{ 0\} \rightarrow \mathbb{CP}^{2}$ be the
+canonical projection.  Then
+${\mathbb H}_{\bC}^{2} = \pi(V_-)$ is the complex hyperbolic space and its boundary is
+$$
+\partial{\mathbb H}_{\bC}^{2} ={\mathbb S}^3= \pi(V_0)=\{ [x,y,z]\in \mathbb{CP}^{2}\ |\ x\bar z+ |y|^2+z\bar x=0\ \}.
+$$
+The group of biholomorphic transformations of ${\mathbb H}_{\bC}^{2}$ is then
+$\mathrm{PU}(2,1)$, the projectivization of $\mathrm{U}(2,1)$.  It acts on ${\mathbb S}^3$ by
+CR transformations.
+An element $x\in {\mathbb S}^3$ gives rise to a flag in ${\CP}^{2}$ where the line corresponds to the unique complex line tangent to ${\mathbb S}^3$ at $x$.
+
+A third real 3-dimensional geometry is the geometry of real flags in $\bR^3$.  That is the geometry of the space of all couples $[p,l]$ where $p\in \RP^2$ and $l$ is a projective line
+containing $p$.  The space of flags is identified to the quotient
+$$
+\SL(3,\bR)/B
+$$
+where $B$ is the Borel group of all upper triangular matrices.
+
+In the next section we describe the space of flags in $\CP^2$ which will be the common framework to describe the three geometries based on
+$\PSL(2,\bC), \PU(2,1)$ and $\PGL(3,\bR)$.
+
+\section{Flag tetrahedra}\label{ss:coord-para}
+
+
+In this section we  recall the parametrization  of configurations of four flags in the projective space $ \CP^2$ (more details can be seen in \cite{BFG}).
+Let $V=\bC^3$. A flag in $V$ is usually seen as a line and a plane, the line belonging to the plane.  Using the dual vector space $V^*$ and the projective spaces $\P(V)$ and $\P(V^*)$,
+define the spaces of  {\it flags} $\Fl$ by the following:
+\begin{eqnarray*}
+ \Fl & = & \{([x],[f])\in \P(V)\times \P(V^*) \, | \, f(x)=0\}.
+\end{eqnarray*}
+
+The natural action of $\SL(3,\bC)$ on $\Fl$
+makes us identify the space of flags  with the homogeneous space $\SL(3,\bC)/ B$, where $B$ is the Borel subgroup of upper-triangular matrices in $\SL(3,\bC)$.
+A {\it generic configuration of  flags} $([x_i],[f_i])$, $1\leq i\leq n+1$
+is given by $n+1$ points $[x_i]$ in general position and $n+1$ lines $f_i$
+in $\P(V)$ such that $f_j(x_i)\neq 0$ if $i\neq j$.
+A configuration of ordered points in $\P(V)$ is said to be in {\it general position} when they are all distinct and no three points are contained in the same line.
+
+
+%Observe that the genericity condition of flags does not imply that the lines are in a generic position.
+
+
+%We will write a point  $x\in \CP^2$ using homogeneous coordinates $x=[a,b,c]$ and a line using its dual  $f=[u,v,w]\in (\CP^2)^*$ acting on points by
+%$$
+%f(x)=au+bv+cw.
+%$$
+%Up to the action of $\SL(3)$, a generic configuration of three flags $([x_i],[f_i])_{1\leq i \leq 3}$  can be normalized, in these coordinates, as
+%\begin{itemize}
+ %\item $x_1=(1,0,0)$, $f_1=(0,0,1)$,
+ %\item $x_2=(0,0,1)$, $f_2=(1,0,0)$ and
+ %\item $x_3=(1,-1,1)$, $f_3=(X,X+1,1)$ with $X\neq 0$.
+%\end{itemize}
+Up to the action of $\PGL(3,\bC)$, a generic configuration of three flags $([x_i],[f_i])_{1\leq i \leq 3}$ has  only one invariant given by  the triple ratio
+$$
+X=\Frac{f_1(x_2)f_2(x_3)f_3(x_1)}{f_1(x_3)f_2(x_1)f_3(x_2)}\in \bC^{\times}
+$$
+
+\subsection{Coordinates for a tetrahedron of flags}
+
+%The coordinates we use for a tetrahedron of flags are the same as those used by Fock and Goncharov \cite{FG} to describe a flip in a triangulation. We may see it as a blow-up of the flip into a tetrahedron.  They also coincide with coordinates used in \cite{falbel} to describe a {\sl cross-ratio structure} on a tetrahedron (see also section \ref{CR}).
+
+
+We recall the parametrization used in \cite{BFG}.  We refer to Figure \ref{tetra} which displays the coordinates.
+
+Let $([x_i],[f_i])_{1\leq i \leq 4}$ be a generic tetrahedron.
+ We define a set of 12 coordinates on the edges of the tetrahedron (one for each oriented edge).
+To define the coordinate $z_{ij}$ associated to the edge $ij$, we first define $k$ and $l$ such that the permutation $(1,2,3,4) \mapsto (i,j,k,l)$ is even. The pencil of (projective) lines through the point $x_i$ is a projective line $\P_1(\bC)$. We have four points in this projective line: the line $\textrm{ker}(f_i)$ and the three lines through $x_i$ and one of the $x_l$ for $l\neq i$. We define $z_{ij}$ as the cross-ratio of four flags
+by
+$$z_{ij} := [\textrm{ker}(f_i),(x_ix_j),(x_ix_k),(x_ix_l)].$$
+Note that we follow the convention that the cross-ratio of four points
+$x_1, x_2 , x_3 , x_4$ on a line is the value at $x_4$ of a projective coordinate taking
+value $\infty$ at $x_1$, $0$ at $x_2$, and $1$ at $x_3$. So we employ the formula
+$$[x_1,x_2,x_3,x_4] :=\Frac{(x_1 -x_3)(x_2-x_4)}{(x_1 -x_4)(x_2-x_3)}$$ for the cross-ratio.
+
+At each face $(ijk)$ (oriented as the boundary of the tetrahedron $(1234)$), the $3$-ratio is the opposite of the product of all cross-ratios ``leaving'' this face:
+$$z_{ijk} := \Frac{f_i(x_j)f_j(x_k)f_k(x_i)}{f_i(x_k)f_j(x_i)f_k(x_j)}=- z_{il}z_{jl}z_{kl}.$$
+
+This follows from a direct computation (see \cite{BFG}).
+Observe that if the same face $(ikj)$ (with opposite orientation)  is common to a second tetrahedron $T'$ then $$z_{ikj}(T) = \Frac{1}{z_{ijk}(T')}.$$ %pvk
+\begin{figure}[!ht] \label{tetra}
+\begin{center}
+\begin{asy}
+  // % on commence par des declarations
+  // % on declare ce qu'on utilise
+  size(8cm);
+  defaultpen(1);
+  usepackage("amssymb");
+  import geometry;
+
+  // % on declare des choses pour la figure
+  point o = (8,0);
+  pair ph = (8,0);
+  pair pv = (4,4);
+
+  // % on trace la figure
+  draw(o -- o+pv -- o+ph -- o+ph-pv --cycle, blue);
+  draw(o +pv --o+ ph/2+(0,.2), blue);
+  draw(o+ph-pv -- (12,-.2), blue);
+  draw(o -- o+ph , blue);
+
+  // % on d�core des points
+  // dot(o,black+5);
+  // % d'abord les z_ij
+  label("{ $z_{kl}$}", o, 6*dir(15));
+  label(" $ z_{kj}$", o, 6*dir(-75));
+  label(" $z_{ki}$", o, 6*dir(75));
+  label("{ $k$}", o, 2*W);
+
+  label("{$z_{lk}$}", o+ph, 6*dir(180-15));
+  label(" $ z_{lj}$", o+ph, 6*dir(-110));
+  label(" $z_{li}$", o+ph, 6*dir(110));
+  label("{ $l$}", o+ph, 2*E);
+
+  label("{$z_{il}$}", o+pv, 8*dir(-35));
+  label(" $ z_{ij}$", o+pv, 8*dir(-80));
+  label(" $z_{ik}$", o+pv, 8*dir(-150));
+  label("{ $i$}", o+pv, 2*N);
+
+   label("{$z_{jl}$}", o+ph-pv, 8*dir(30));
+  label(" $ z_{ji}$", o+ph-pv, 8*dir(80));
+  label(" $z_{jk}$", o+ph-pv, 8*dir(150));
+  label("{ $j$}", o+ph -pv, 2*S);
+
+
+
+   // % quelques petits tests
+  // pair p1 = (4, 2);
+  // pair p2 = (7, -1);
+  // guide H = p1{E}..{S}p2;
+  // draw(H,red);
+
+\end{asy}
+\caption{The cross-ratio coordinates (or $z$-coordinates).} %\label{crosseight}
+\end{center}
+\end{figure}
+
+
+Of course there are relations between the whole set of coordinates, namely,
+the three cross-ratio leaving a vertex are algebraically related:
+\begin{equation}
+\begin{split}
+& z_{ik} =  \Frac{1}{1-z_{ij}},\\
+& z_{il} =   1-\Frac{1}{z_{ij}}.
+\end{split}
+\end{equation} \label{Cros}
+
+Observe that the relations follow a cyclic order around each vertex which is defined by the orientation of the tetrahedron.
+We also have
+\begin{equation} \label{3-1}
+z_{ij} \, z_{ik} \, z_{il} = -1.
+\end{equation}
+The next proposition shows that a tetrahedron is uniquely determined, up to the action of $\PGL(3,\bC)$, by four numbers.
+One can pick a variable at each vertex.  In fact, the space of flags  is a complex manifold ($\PGL(3,\bC)/B$) and, therefore, configurations of flags have
+a natural complex structure.
+\begin{proposition}\cite{BFG}\label{parameters}
+The space of generic tetrahedra is biholomorphic to $(\bC\setminus \{0, \, 1\})^4$.
+\end{proposition}
+
+One can use one  cross-ratio coordinate at each vertex, for instance $(z_{12},z_{21},z_{34},z_{43})$ or  $(z_{13},z_{21},z_{32},z_{43})$.
+
+
+\subsection{Hyperbolic ideal tetrahedra}
+
+An ideal hyperbolic tetrahedron is given by $4$ points on the boundary of $\mathbb {\mathbb H}_{\bR}^{3}$,
+i.e. $\P_1(\bC)$. Up to the action of $\PSL(2,\bC)$, these points are in homogeneous coordinates
+ $[0,1]$, $[1,0]$, $[1,1]$ and $[1,z]$ -- the complex number $z$ being the cross-ratio of these four points.
+
+
+%Identifying $\bC^3$ with the Lie algebra $\mathfrak{sl}(2,\bC)$, we have the adjoint action
+%of $\SL(2,\bC)$ on $\bC^3$ preserving the quadratic form given by the determinant,
+%given in canonical coordinates by $xz-y^2$. The group $\SL(2,\bC)$ preserves the
+%isotropic cone of this form.
+%The projectivization of this cone is identified to
+ We may embed $\P_1(\bC)$ into  $\P_2(\bC)$
+via the Veronese map $h$, given in homogeneous coordinates by
+\begin{eqnarray*}
+ %h_1 \: : \:
+% \P_1(\bC) & \to & \P_2(\bC) \\
+ h : \left[x,y\right] & \mapsto &  [x^2,xy,y^2]
+\end{eqnarray*}
+and therefore this map and its derivative define a map  from $\P_1(\bC)$ to the variety of flags $\Fl$.
+%A convenient description of that map is obtained thanks to the
+%identification between $\bC^3$ and its dual given by the quadratic form. Denote $\langle ,\rangle$
+%the bilinear form associated to the determinant. Then we have
+%\begin{eqnarray*}
+ %h \: : \:\P_1(\bC) & \to & \Fl(\bC)\\
+% p & \mapsto &  \left(h_1(p), \langle h_1(p), \cdot \rangle \right).
+%\end{eqnarray*}
+
+
+Let $T$ be the tetrahedron $h([0,1])$, $h([1,0])$, $h([1,1])$ and $h([1,z])$.  Its image in the
+variety of flags given by the above map has coordinates (see \cite{BFG})
+\begin{eqnarray}
+ z_{12}(T) = z_{21}(T)=z_{34}(T)=z_{43}(T)=z.\label{eq:hyp}
+ \end{eqnarray}
+Conversely, given parameters satisfying the equations above, they define a unique hyperbolic tetrahedron.
+
+\subsection{The CR case.}\label{CR}
+
+
+Recall that an element $x\in {\mathbb S}^3$ gives rise to an element  $([x],[f])\in \Fl(\bC)$ where $[f]$ corresponds to the unique complex line tangent to ${\mathbb S}^3$ at $x$.
+%As in the hyperbolic case we may consider the inclusion map
+%\begin{eqnarray*}
+ %h_1 \: : \:  {\mathbb S}^3 & \to & \P_2(\bC) \\
+%\end{eqnarray*}
+%and the first complex jet of that map gives a map
+%\begin{eqnarray*}
+ %h \: : \: {\mathbb S}^3 & \to & \Fl(\bC)\\
+ %x & \mapsto &  \left(h_1(x), \langle . , h_1(x) \rangle \right)
+%\end{eqnarray*}
+The following proposition  describes the space of
+generic configurations of four points in ${\mathbb S}^3$.
+
+\begin{proposition}[\cite{falbeleight,BFG}]\label{prop:generic}
+Generic configurations (up to translations by $\mathrm{PU}(2,1)$) of four points
+in ${\mathbb S}^3$ not contained in an $\bR$-circle are parametrized
+by generic configurations of four flags
+with coordinates $z_{ij}$,  $1\leq i\neq j\leq 4$ satisfying  the three complex equations
+\begin{eqnarray}\label{eq:cr}
+z_{ij}z_{ji}=\overline {z_{kl}}\, \overline{z_{lk}}
+\end{eqnarray}
+not all of them being real
+and such that  $z_{ji}z_{ki}z_{li}\neq 1$ for each face with vertices $\{ j,k,l\}$.
+\end{proposition}
+The conditions (\ref{eq:cr}) together with relation (\ref{3-1}) imply that the triple ratio of each face satisfies
+$
+\vert z_{ijk} \vert = 1.
+$
+For the tetrahedron to be
+CR we need to verify the condition   $z_{ijk}=-z_{ji}z_{ki}z_{li}\neq -1$ for each face with vertices $\{ j,k,l\}$
+(the triple ratio is never $-1$ for a CR generic triple of flags).
+\medskip\par
+Conditions $z_{ij}z_{ji}=\overline {z_{kl}}\, \overline{z_{lk}} \in \bR$ might describe other
+configurations of four flags which are not CR. From $z_{ijk}z_{ilj} = \Frac{z_{lk}z_{kl}}{z_{ij}z_{ji}}$,
+we deduce that in this case
+$z_{ijk}z_{ilj}=1$ and therefore $z_{ijk} = z_{ilj} = z_{ikl} = z_{jkl}=\pm 1$.  If the cross-ratio invariants are all real, either
+one obtains configurations contained in an $\bR$-circle (they coincide with the real hyperbolic ones with real cross ratios, that is,
+$ z_{12}(T) = z_{21}(T)=z_{34}(T)=z_{43}(T)=x\in \bR- \{0,1\}$)
+or one of the triple ratios is $-1$ and, in that case, they are not CR.
+
+%we obtain not necessarily CR configurations (when one of the triple ratios is $-1$), but including
+%the ones contained in an $\bR$-circle which coincide with the real hyperbolic ones with real cross ratio.
+%That is,
+%$$ z_{12}(T) = z_{21}(T)=z_{34}(T)=z_{43}(T)=x\in \bR- \{0,1\}.$$
+
+\subsection{The $\SL(3,\bR)$ case}\label{SLR}
+
+Clearly, a configuration contained in the space of real flags is characterized by having all its
+invariants $z_{ij}$ real.  Observe that the three cases intersect precisely for configurations corresponding to degenerate real
+hyperbolic configurations.
+
+
+
+\section{Ideal triangulations by flag tetrahedra}
+
+We use the definition of an ideal triangulation of a 3-manifold as it is used usually in computations with SnapPea.
+It is a union of 3-simplices $K= \bigcup_\nu T_\nu$ with face identifications (which are simplicial maps).  We let  $K^{(0)}$ be the union of vertices in
+$K$.  The manifold $K- K^{(0)} $ is, topologically, the interior of a compact
+manifold when the vertices $K^{(0)} $  are deleted. In fact, $K-K^{(0)}$
+is an (open) $3$-manifold  that retracts onto a compact $3$-manifold with boundary $M$ (the boundary being the link of $K^{(0)}$).
+
+Given such a compact oriented $3$-manifold $M$ with boundary, we call a triangulation $K$  as above an {\it ideal triangulation} of $M$.
+A {\it parabolic decoration} of an ideal  triangulation is the data of a flag for each vertex (equivalently a map from the $0$-skeleton of the complex to $\Fl$).
+A parabolic decoration
+together with an ordering of the vertices of each $3$-simplex  equip each tetrahedron with a set of coordinates as defined in section \ref{ss:coord-para}.
+
+From now on we fix $K$ a decorated oriented ideal triangulation of a $3$-manifold together with an ordering of the vertices of each $3$-simplex of $K$. Denote by $T_{\nu}$, $\nu =1 , \ldots , N$,  the tetrahedra of $K$ and
+$z_{ij}(T_{\nu})$ the corresponding $z$-coordinates (or cross-ratio coordinates).  We impose the following compatibility conditions which will imply the existence of a well defined representation
+of the fundamental group of the manifold $M$ into $\PGL(3,\bC)$.
+
+\subsection{Consistency relations}
+\label{sec-consistency}(cf. \cite{falbel,BFG})
+
+\medskip
+
+\emph{(Face equations)}
+Let $T$ and $T'$ be two tetrahedra  of $K$ with a common face $(ijk)$ (oriented as a boundary of $T$), then $z_{ijk}(T)z_{ikj}(T')=1$.
+
+
+\medskip
+
+For a fixed edge   $e\in K$ let $T_{\nu_1}, \ldots , T_{\nu_{n_e}}$ be the $n_e$ tetrahedra in $K$ which contain an edge which projects unto  $e\in K$ (counted with multiplicity).  For each tetrahedron in $K$ as above we consider its edge $ij$ corresponding to $e$.
+
+\medskip
+
+\emph{(Edge equations)} $z_{ij}(T_{\nu_1}) \cdots z_{ij}(T_{\nu_{n_e}})=z_{ji}(T_{\nu_1}) \cdots z_{ji}(T_{\nu_{n_e}})=1$.
+
+\medskip
+
+The face equations are clearly necessary in order to match a triple of flags from one face to a triple of another face.  The edge equations follow by considering the 1-dimensional projective space of complex lines at each vertex.  Indeed, take a vertex whose associated flag is $(p_1,l_1)$ on the edge $[(p_1,l_1),(p_2,l_2)]$.  Consider the projective space of all lines through $p_1$.  The line $l_1$ will be identified to $\infty$ and the line $[p_1,p_2]$ to 0.  All the flags (not coinciding to $\infty$ or 0) in the tetrahedra
+having this edge in common give rise to an ordered sequence of points in this 1-dimensional projective space.   Imposing that the the point corresponding to the last vertex of the last tetrahedron coincides with the point corresponding to the first vertex of the first tetrahedron amounts
+precisely to the first edge condition.  Analogously, the second condition follows if we consider the projective space of lines at the other vertex of the edge.
+
+
+One should be aware that the compatibility conditions do not imply immediately the existence of a geometric structure.
+One should think of these as sufficient conditions for the existence of a 0-skeleton compatible with the side pairings.
+Certainly it implies the existence of a representation of the fundamental group but one has yet to construct a compatible extension of
+the side pairings to 3 simplices.   In the hyperbolic case one has the advantage of the existence of convex ideal
+tetrahedra but in $\PU(2,1)$ there is no such canonical construction (see the discussion in \cite{falbeleight}).
+
+
+
+\subsection{Volume}
+\label{sec-volume}
+We recall the definition of volume of a tetrahedron of flags in \cite{BFG}.
+The {\it Bloch-Wigner dilogarithm} function is
+\begin{align*}
+D(x) & = \arg{(1-x)}\log{|x|}-\mathrm{Im} (\int_{0}^{x}\log{(1-t)}\frac{dt}{t}), \\
+& = \arg{(1-x)}\log{|x|} + \mathrm{Im}( \ln_2 (x)).
+\end{align*}
+Here  $ \ln_2 (x)=-\int_{0}^{x}\log{(1-t)}\frac{dt}{t}$ is the dilogarithm function.
+The function $D$ is well-defined and real analytic on $\bC-\{0,1\}$ and
+extends to a continuous function on $\bC P^1$ by
+defining $D(0) = D(1) = D(\infty) = 0$.
+
+Given a tetrahedron of flags with coordinates  $\left(z_{1}(T), z_{2}(T),z_{3}(T),z_{4}(T)\right)$, we define its volume as
+$$
+{\rm{Vol}}(T)=\frac{1}{4}(D(z_1)+D(z_2)+D(z_3)+D(z_4)).
+$$
+The volume of a triangulation is the sum of the volumes of its tetrahedra.  If the tetrahedron is hyperbolic this definition coincides with
+the volume of volume in hyperbolic geometry.  If the  tetrahedron is real its volume is zero.  Although CR tetrahedra have generically a non zero volume, if a triangulation is such that
+all tetrahedra are CR  then
+the total  volume is zero (\cite{FWang}).
+
+\section{Holonomy of a decoration}
+\label{sec-holonomy}
+In this section we recall how to compute the holonomy of a decoration described above (see \cite{BFG} for more details).
+A decoration of a triangulation of a manifold $M$ gives rise to a representation (called holonomy representation)
+$$
+ \rho : \pi_1(M,p_0)  \rightarrow \PGL(3,\bC).
+$$
+The base point is not important if we study representations up to conjugation.  In fact, each solution of the consistency equations gives
+a conjugacy class of representations but a special choice of base point and side pairings  is needed  in explicit computations.
+The idea is to follow a path in the fundamental group from face to face keeping track of changes using a coordinate system adapted to the faces.
+
+
+%In order to compute holonomies we first fix
+%a base point which in fact will be a face (with ordered vertices) of one of the tetrahedra.  We then follow  paths
+%representing  the generators of the  fundamental group of the manifold which we decompose  in arcs contained in each tetrahedron
+%and which are transverse to their sides or totally contained in one side. For each arc we write the contribution to the holonomy
+%as is explained in the following.
+%
+%It is useful to associate to a face three points located near each vertex of the face. The face $(ijk)$ is labelled then by the point which is in the link of the vertex $i$ and is in the segment  joining the edges $(ij)$ and $(ik)$.
+%With that convention, given a tetrahedron $(ijkl)$, the  arc going from face $(ijk)$ to face $(ijl)$ can be represented by a "left turn" arc in the link of
+%the vertex $i$.  We also consider arcs contained in one face which correspond to a permutation of the face.  For example, the permutation
+%$(ijk)\rightarrow (jki)$ is represented by the segment in the face  $(ijk)$ joining
+%the point near $i$ to the point near $j$.
+
+In order to compute holonomies we first fix
+a face (with ordered vertices) of one of the tetrahedra and a base point on  the face.  We then follow  paths
+representing  the generators of the  fundamental group of the manifold which we decompose  into arcs contained in each tetrahedron
+and which are transverse to their sides. For each arc we write the contribution to the holonomy
+as is explained in the following.
+
+
+Given a tetrahedron $(ijkl)$, the  arc going from face $(ijk)$ to face $(ijl)$ can be represented by a "left turn" arc
+ around the edge $(ij)$.
+We will also consider  permutations of a face as for example, the permutation
+$(ijk)\rightarrow (jki)$.
+
+
+To follow the change in the holonomy  along these arcs we associate to each face, that is, to a configuration of $3$ generic flags $([x_i ] , [f_i ] )_{1 \leq i \leq 3} $
+with triple ratio $X$,  a projective
+coordinate system   of $\CP^2$: take the one where the point $x_1=[1:0 : 0]^t$, $f_1=[0:0:1]$, $x_2=[0:0:1]^t$, $f_2=[1:0:0]$, the point $x_3$ has coordinates $[1:-1:1]^t$ and $f_3=[X :  X+1 : 1]$.
+
+The cyclic permutation of the flags $(ijk)\rightarrow (jki)$ with triple ratio $X$ induces the coordinate change given
+by the matrix
+$$T(X) =  \left(
+\begin{matrix}
+X & X+1 & 1 \\
+-X & -X & 0 \\
+X & 0 &  0
+\end{matrix} \right).$$
+
+It is also useful to consider the transposition $ (ijk)\rightarrow (jik)$
+which is given by the matrix
+$$
+I=\left(
+\begin{matrix}
+0& 0 & 1\\
+0 & 1 & 0 \\
+1 & 0 & 0
+\end{matrix} \right).$$
+
+Remark then that
+$$
+ T(\frac{1}{X} )=I\circ  T^{-1}(X)\circ I.
+$$
+
+
+If we have a tetrahedron of flags $(ijkl)$ with its $z$-coordinates, then the  basis
+related to the triple $(ijl)$ is obtained in the  coordinate system related to the triple $(ijk)$
+by the coordinate change given by the matrix
+%%$$E_l(z,i,j,k,l)=
+$$(ijk)\rightarrow (ijl) = \left(
+\begin{matrix}
+\Frac{1}{z_{ji}}& 0 & 0\\
+0 & 1 & 0 \\
+0 & 0 & z_{ij}
+\end{matrix} \right).$$
+
+
+\subsection{Representation of the fundamental group}
+
+We  obtain the change of coordinate matrix of a path in the triangulation by decomposing it in the
+two elementary steps described in the previous section and multiplying the change of coordinate matrices for each step from left to right.
+Finally, to obtain the representation of the fundamental group we take the inverse of the coordinate change matrix for each path
+representative of an element of the fundamental group.
+
+One has to be careful if we want to obtain a representation in $\PU(2,1)$.
+In general we need to conjugate the above representation by an element so that the group preserves a
+chosen hermitian form.
+
+Let %$f_0(T_0) =
+$(i_0j_0k_0)$ (an ordered triple of points in a face of tetrahedron $T_0$)  be the base point and $Z_0 = z_{i_0j_0k_0}(T_0)$ be its 3-ratio.
+We consider the transformation
+$
+A= \begin{pmatrix}
+-\frac{1+Z_0}{Z_0} &  0 & 0 \\
+0 & -1 & 0  \\
+0 & 0 & 1 \\
+\end{pmatrix}
+$
+such that
+$
+A \cdot
+\left (\begin{matrix}\frac{1}{1+Z_0} \\1 \\1\end{matrix} \right)=
+\left(\begin{matrix}1 \\-1\\1\end{matrix}\right).$
+The hermitian form $J$ is preserved if we conjugate the group elements by $A$,
+or equivalently the group preserves the hermitian form
+$J_0 =\t\overline{A}^{-1} J A^{-1}$ with eigenvalues $1,  1/\abs{1+Z_0}, -1/\abs{1+Z_0}$.
+We will show computations in a specific example in a future section.
+
+\subsection{Boundary holonomy}
+If we follow a path in a boundary torus of a triangulated manifold we will obtain, applying the procedure above, a coordinate change.  We obtain then a representation of the fundamental group of the boundary in $\PGL (3,\bC)$.
+Each torus is associated to a vertex and therefore the representation of its fundamental
+group fixes a flag.  Choosing the flag properly up to conjugation, we can arrange it so that the boundary representation is upper triangular.
+   Given two generators of a torus group represented by paths $a$ and $b$ one can compute easily the eigenvalues of the holonomy
+along them.
+
+ We suppose a path is contained in the link of the vertex and is transverse to the edges of the triangulation induced by the tetrahedra.
+Consider a path segment  at the link of vertex $i$ which is turning left around the edge $ij$, that is $(ijk)\to (ijl).$ Then, as before, the holonomy change of coordinate matrix is
+$$
+\left(
+\begin{matrix}
+\frac{1}{z_{ji}}& 0 & 0\\
+0 & 1 & 0 \\
+0 & 0 & z_{ij}
+\end{matrix} \right).
+$$
+Consider the path segment at the link of vertex $i$ which is turning right around the edge $ij$, that is $$(ilj)\to (ikj).$$ Then the holonomy change of coordinate matrix is
+$$
+  \begin {pmatrix}
+  \frac {z_{kl}z_{lk}}{z_{ij}}&
+  -\frac{z_{kl}}{z_{ij}z_{lj}} - \frac{1}{z_{ki}}
+&-
+\frac {z_{il}}{z_{ki}}\\ \noalign{\medskip}0
+&1&z_{il}\\ \noalign{\medskip}0&0&\frac{1}{z_{ij}}
+\end {pmatrix}.
+$$
+
+ Both matrices being upper diagonal, to find the eigenvalues we need only to multiply the diagonal terms. The eigenvalues of the boundary holonomy are
+ the diagonal elements obtained as above.  We will note $A^*$ and $A$ the two eigenvalues (the first and the third with the normalization as above so that the second eigenvalue be one) of the path $a$ and   $B^*$ and $B$ the two eigenvalues of the path $b$.
+
+\subsection{Boundary unipotent holonomy equations}\label{sec:buh}
+The boundary holonomy gives a representation of the fundamental group of the boundary tori into $\PGL(3,\bC)$.  If $t$ is the number of boundary tori, we note
+$$
+ \rho_b : (\bZ\oplus \bZ)^t \rightarrow \PGL(3,\bC).
+$$
+For knots we can define canonical generators of the boundary torus called meridian and longitude.  But, for simplicity, we will refer
+to generators of boundary tori for other manifolds as well as meridians and longitudes, denoted $m$ and $l$.
+The abelian group generated by the image of $\rho_b$ is called the peripheral group.
+It turns out that an important information on  the representations is the rank of the peripheral group.  For instance, examples
+of uniformizable CR manifolds were obtained precisely when the rank of the peripheral group is one (see \cite{Schwartz,DF,PW}).
+
+
+We say the representation is $\sl unipotent$ if the boundary holonomy is unipotent.  That is, if the boundary holonomy representation can be given by matrices (up to scalar multiplication) of the form
+$$ \left(
+\begin{matrix}
+1 & \star & \star\\
+0 & 1 & \star \\
+0 & 0 & 1
+\end{matrix} \right ) .$$
+That is, all eigenvalues are equal.
+
+ In the following we will find unipotent representations associated to parabolic decorations.  That means that for each boundary torus
+ we compute the eigenvalues  $A^*, A, B^*, B$ corresponding to generators $a$ and $b$ at each torus and impose the equations
+ $$
+ A^*= A= B^*= B=1.
+ $$
+ We remark that each eigenvalue is a rational function of the cross-ratio coordinates.
+
+

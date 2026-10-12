@@ -8,47 +8,37 @@ pages: 18-19
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
 doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
+text_source: latex
+latex_prose_ratio: 0.846
+latex_coverage_ratio: 0.797
 ---
-Deﬁnition 7.12.LetT′ be a triangulation whose edge set contains that ofT . Adescendant of
-E∈ T(T ) is an elementE′∈ T(T′) such thatE′ agrees withE on the edges ofT . IfE′∈ T(T′)
-is a descendent ofE∈ T(T ) we writeE′
-|T =E.
-Lemma 7.13.LetE∈ T(T ) be face-degenerate and suppose that there arek degenerate faces.
-IfT′ is the triangulation obtained fromT by performing a 2-3 move at each degenerate face
-then E has 2k descendants each of which is edge-degenerate.
-Proof. Performing a 2-3 move adds an edge which can be either zero or nonzero without violating
-transitivity. In either case, none of the new faces are degenerate (see Figure 13). This concludes
-the proof. □
-TRIANGULATION INDEPENDENT PTOLEMY V ARIETIES 19
-0 0
-0
-⁄= 0
-⁄= 0
-⁄= 0
-⁄= 0⁄= 0
-⁄= 0
-0 0
-0
-0
-0
-⁄= 0
-⁄= 0⁄= 0
-0
-Figure 13. A 2-3 move, face-
-degenerate edge set.
-Figure 14. A 2-3 move,
-simplex-degenerate edge set.
-Deﬁnition 7.14.Let E∈ T(T ) be face-degenerate and letT′ be the triangulation obtained
-fromT by performing 2-3 moves between all degenerate faces. Deﬁne
-(7.7) P (T,E ) =
-⋃
-E′
-|T =E
-P (T′,E′),
-where the (clearly disjoint) union is taken insideA(V (M)) or the ﬁnite-dimensionalA(W ) where
-W is the union of allV (T′). We deﬁnePσ(T,E ) andEP (T,E ) similiarly.
-Theorem 7.15. The one-to-one correspondences(7.2), (7.3), and (7.4) still hold ifE is face-
-degenerate.
-Proof. IfT′ is a decoration with edge set containingT , the set of decorations of typeE∈ T(T )
-is the disjoint union, over the descendantsE′ of E, of the sets of decorations of typeE′. The
-result now follows from Theorem 7.4. □
+::: definition
+[]{#def:Descendant label="def:Descendant"} Let $\mathcal T'$ be a triangulation whose edge set contains that of $\mathcal T$. A *descendant* of $E\in\mathop{\mathrm{T}}(\mathcal T)$ is an element $E'\in\mathop{\mathrm{T}}(\mathcal T')$ such that $E'$ agrees with $E$ on the edges of $\mathcal T$. If $E'\in\mathop{\mathrm{T}}(\mathcal T')$ is a descendent of $E\in\mathop{\mathrm{T}}(\mathcal T)$ we write $E'_{|\mathcal T}=E$.
+:::
+
+::: lemma
+Let $E\in \mathop{\mathrm{T}}(\mathcal T)$ be face-degenerate and suppose that there are $k$ degenerate faces. If $\mathcal T'$ is the triangulation obtained from $\mathcal T$ by performing a 2-3 move at each degenerate face then $E$ has $2^k$ descendants each of which is edge-degenerate.
+:::
+
+::: proof
+*Proof.* Performing a 2-3 move adds an edge which can be either zero or nonzero without violating transitivity. In either case, none of the new faces are degenerate (see Figure [\[fig:ModerateDescendant\]](#fig:ModerateDescendant){reference-type="ref" reference="fig:ModerateDescendant"}). This concludes the proof. ◻
+:::
+
+<figure id="fig:WildDescendant">
+<p><br />
+</p>
+<figcaption>A 2-3 move, simplex-degenerate edge set.</figcaption>
+</figure>
+
+::: definition
+[]{#def:PtolemyModerate label="def:PtolemyModerate"} Let $E\in \mathop{\mathrm{T}}(\mathcal T)$ be face-degenerate and let $\mathcal T'$ be the triangulation obtained from $\mathcal T$ by performing 2-3 moves between all degenerate faces. Define $$\label{eq:PtolemyVarietyModerate}
+P(\mathcal T,E)=\bigcup_{E'_{|\mathcal T}=E}P(\mathcal T',E'),$$ where the (clearly disjoint) union is taken inside $A(V(M))$ or the finite-dimensional $A(W)$ where $W$ is the union of all $V(\mathcal T')$. We define $P^\sigma(\mathcal T,E)$ and $\mathcal EP(\mathcal T,E)$ similiarly.
+:::
+
+::: theorem
+[]{#thm:OneOneModerate label="thm:OneOneModerate"} The one-to-one correspondences [\[eq:OneOneMild\]](#eq:OneOneMild){reference-type="eqref" reference="eq:OneOneMild"}, [\[eq:OneOneMildSigma\]](#eq:OneOneMildSigma){reference-type="eqref" reference="eq:OneOneMildSigma"}, and [\[eq:OneOneMildEnhanced\]](#eq:OneOneMildEnhanced){reference-type="eqref" reference="eq:OneOneMildEnhanced"} still hold if $E$ is face-degenerate.
+:::
+
+::: proof
+*Proof.* If $\mathcal T'$ is a decoration with edge set containing $\mathcal T$, the set of decorations of type $E\in\mathop{\mathrm{T}}(\mathcal T)$ is the disjoint union, over the descendants $E'$ of $E$, of the sets of decorations of type $E'$. The result now follows from Theorem [\[thm:OneOneMild\]](#thm:OneOneMild){reference-type="ref" reference="thm:OneOneMild"}. ◻
+:::

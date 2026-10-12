@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0005038v1/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0005038v1/blocks/prose-sec-004",
   "kind": "prose",
-  "title": "Notation. If α and β are arcs in D \\ P such α(s) ⁄= β(s) for all s ∈ I then",
-  "pageStart": 2,
-  "pageEnd": 4,
-  "text": "../sections/sec-004-13-notation-if-α-and-β-are-arcs-in-d-p-such-αs-β.md",
-  "derivedFrom": "library/arxiv-math-0005038v1/manifest",
-  "sourceDocument": "library/arxiv-math-0005038v1/manifest",
+  "title": "Alternative proofs",
+  "pageStart": 6,
+  "pageEnd": 6,
+  "text": "../sections/sec-004-22-alternative-proofs.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0005038v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0005038v1/manifest.jsonld",
   "provenance": "ingested"
 }

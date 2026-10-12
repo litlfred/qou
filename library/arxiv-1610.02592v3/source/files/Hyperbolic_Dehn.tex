@@ -1,0 +1,1041 @@
+\chapter{Hyperbolic Dehn filling} \label{Hyperbolic:Dehn:chapter}
+We have completely classified in Chapter \ref{Seifert:chapter} the closed three-manifolds that belong to the six Seifert geometries, and now we long for a similar catalogue that displays all the closed hyperbolic three-manifolds that exist in nature. Is there something like a ``name'' to assign to each closed hyperbolic three-manifold, together with some reasonable tables that list all possible names?
+
+There is not yet one such thing, and we do not know if there will ever be one: we still do not understand hyperbolic three-manifolds globally. The main difficulty is that there are really many hyperbolic three-manifolds around, so many that topologists often say informally that ``most three-manifolds are hyperbolic.''
+
+This folk sentence is supported by a fundamental theorem that we prove in this chapter, the \emph{Hyperbolic Dehn filling Theorem}, which says roughly that by Dehn-filling generically a cusped hyperbolic three-manifold we still get a hyperbolic manifold.\index{hyperbolic Dehn filling theorem}
+
+\section{Introduction}
+It sometimes happens in three-dimensional topology, that a topological or geometric property of a manifold is preserved under Dehn fillings, with only few exceptions.
+For instance, the Dehn filling of a Seifert manifold is again a Seifert manifold, with only one exception (a fibre-parallel Dehn filling gives a connected sum of Seifert manifolds, see Corollary~\ref{DF:Seifert:cor}).
+
+The most striking appearance of this phenomenon is the Hyperbolic Dehn filling Theorem, proved by Thurston at the end of the 1970s. This theorem says roughly that ``most'' Dehn fillings of a cusped hyperbolic manifold are still hyperbolic.
+
+\subsection{Generalised Dehn filling parameters} \label{generalised:subsection}
+In all this chapter, we consider a compact oriented three-manifold $N$ with $\partial N = T_1 \sqcup \ldots \sqcup T_c$ consisting of tori, and we fix generators $m_i,l_i$ for every $\pi_1(T_i)$. 
+
+Let a \emph{generalised Dehn filling parameter} $s=(s_1,\ldots, s_c)$ be a sequence where each $s_i$ is either the symbol $\infty$ or a rationally related pair of real numbers $(p,q) = (kp',kq') = k(p',q')$ where $k>0$ is real and $(p',q')$ are coprime integers. We think at $s_i$ as lying in the two-sphere $S^2 = \matR^2 \cup \{\infty\}$.
+
+A generalised Dehn filling parameter $s$ determines a Dehn filling $N^{\rm fill}$ of $N$ as follows:
+for every $i$, if $s_i=k(p',q')$ we fill $T_i$ by killing the slope $p'm_i + q'l_i$, while if $s_i=\infty$ we do nothing. The result is a new compact manifold, that may be closed (if there are no $\infty$ in $s$) or be bounded by some tori. We also mark the cores of the filled solid tori with the label $\alpha_i = \frac{2\pi} k>0$. 
+
+\subsection{The Hyperbolic Dehn filling Theorem}
+This chapter is mainly devoted to the proof of the following theorem. 
+
+\begin{teo} \label{DF:teo} \label{hyperbolic:Dehn:filling:teo}
+Let $M = \interior N$ be a complete orientable finite-volume cusped hyperbolic three-manifold. There is a neighbourhood $U$ of $(\infty,\ldots,\infty)$ in $S^2\times \ldots \times S^2$ such that for every generalised Dehn filling parameter $s \in U$ the interior $M^{\rm fill}$ of the manifold $N^{\rm fill}$ obtained by Dehn filling $N$ along $s$ admits a finite-volume complete hyperbolic structure with cone angles. 
+
+The cores of the filling solid tori are closed geodesics with cone angles $\alpha_i$. The singular locus of $M^{\rm fill}$ consists of the core geodesics with $\alpha_i \neq 2\pi$.
+\end{teo}
+
+If $s\in U$ is an ordinary (not extended) Dehn filling parameter (see Section \ref{DF:parameters:subsection}), that is if $s_i$ is either $\infty$ or a coprime pair $(p,q)$ for all $i$, then $\alpha_i = 2\pi$ and $N^{\rm fill}$ is a hyperbolic manifold without cone angles: this is of course the case of most interest. 
+
+\begin{cor}
+Let $M = \interior N$ be a complete orientable finite-volume hyperbolic three-manifold. For every $i=1,\ldots, c$ there is a finite set $S_i$ of slopes in $T_i$ such that for every Dehn filling parameter $s$ with $s_i \not \in S_i$ for all $i$, the filled manifold $M^{\rm fill} = \interior{N^{\rm fill}}$ is hyperbolic.
+\end{cor}
+
+When $M$ has one cusp, the corollary may be stated simply as follows.
+
+\begin{cor}
+If $M$ is a complete orientable finite-volume hyperbolic three-manifold with one cusp, all but finitely many Dehn fillings $M^{\rm fill}$ are hyperbolic.
+\end{cor}
+
+To appreciate the power of these theorems, consider for instance a hyperbolic link $L\subset S^3$ (recall that $L\subset S^3$ is hyperbolic if $S^3\setminus L$ admits a finite-volume complete hyperbolic metric). By the hyperbolic Dehn filling theorem, there is a finite subset $S\subset \matQ$ such that every surgery on $L$ with coefficients in $\matQ\setminus S$ produces a closed hyperbolic manifold.
+
+\subsection{Examples} We describe a couple of clarifying examples. We know that the figure eight knot $K\subset S^3$ is hyperbolic: by the Dehn filling Theorem, there is an open neighbourhood $U \subset S^2$ of $\infty$ such that every Dehn surgery on $K$ with parameter $s\in U$ produces a hyperbolic cone manifold. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{figure8_U-BW}{figure8_U}} 
+\nota{Hyperbolic Dehn fillings on the figure-eight knot complement.}
+\label{figure8_U:fig}
+\end{center}
+\end{figure}
+
+We will prove in the next section that the subset $U$ shown in Figure \ref{figure8_U:fig} fulfils this requirement. The only coprime pairs $(p,q)$ that are not contained in $U$ are those with $\frac pq$ equal to one of the following
+\begin{equation} \label{K:list:eqn}
+-4,-3,-2,-1,0,1,2,3,4,\infty.
+\end{equation}
+Every other surgery on $K$ yields a closed hyperbolic three-manifold. For instance, the manifold Vol2 from Table \ref{closed:census:table} can be obtained with $\frac pq = \pm 5$ (there is a symmetry of $K$ sending $\frac pq$ to $-\frac pq$).
+
+On the other hand, a $\frac pq$ surgery from the list (\ref{K:list:eqn}) does not produce a hyperbolic manifold: see Table \ref{non:hyp:table}, taken from Martelli -- Petronio \cite{MP}.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||c}
+$\frac pq$ & manifold \phantom{\Big|}\!\! \\
+\hline
+\hline
+$0$ & $T_{\matr 31{-1}0}$ \phantom{\Big|}\!\!  \\
+$\pm 1$ & $\big(S^2, (2,1), (3,1), (7,-6)\big)$  \phantom{\Big|}\!\! \\
+$\pm 2$ & $\big(S^2, (2,1), (4,1), (5,-4)\big)$  \phantom{\Big|}\!\! \\
+$\pm 3$ & $\big(S^2, (3,1), (3,1), (4,-3)\big)$  \phantom{\Big|}\!\! \\
+$\pm 4$ & $\big(D,(2,1), (2,1)\big) \bigcup_{\matr 0110} \big(D, (2,1), (3,1)\big) $\phantom{\Big|}\!\!
+\end{tabular}
+\vspace{.2 cm}
+\nota{The non-hyperbolic Dehn surgeries of the figure-eight knot. We get a torus bundle with Anosov monodromy and hence of $\Sol$ geometry, three Seifert manifolds of $\widetilde {\SL_2}$ geometry, and a graph manifold that splits into two Seifert manifolds via a map that interchanges the fibres and the boundary sections of the two portions (the map is here denoted by a matrix in the section-fibre basis).}
+\label{non:hyp:table}
+\end{center}
+\end{table}
+
+More generally, a parameter $k(p,q) \in U$ produces a hyperbolic closed manifold with a core geodesic of cone angle $\frac{2\pi}k$, which may be interpreted as an orbifold when $k\in \matN$. In particular, if $(p,q) = (1,0)$ the closed manifold is just $S^3$, because an $\infty$-surgery on a knot in $S^3$ gives $S^3$ back. Therefore by looking at Figure \ref{figure8_U:fig} we discover that for every $k\geqslant 5$ there is a hyperbolic structure on $S^3$ with cone angle $\frac{2\pi}k$ on the figure-eight knot $K$. 
+
+We now consider a link with two components.
+The \emph{Whitehead link} $L$ shown in Figure \ref{sequence:fig} is hyperbolic: it is hard to determine an explicit open set $U\subset S^2\times S^2$ in this case, but a careful computer-aided analysis carried with SnapPy \cite{Sna} shows the following, see \cite{MP}.
+
+\begin{teo}
+A surgery on the Whitehead link with coefficients $(\frac pq, \frac rs)$ produces a closed hyperbolic manifold, unless one of the following holds:
+\begin{itemize}
+\item $\frac pq$ or $\frac rs$ belongs to the set $\{0, 1, 2, 3, 4, \infty\}$,
+\item up to permutation the pair $\big( \frac pq, \frac rs \big)$ belongs to the set
+$$\left\{ (-4,-1), (-3,-1), (-2,-2), (-2,-1), \left(\tfrac 32, 5\right), \left(\tfrac 43, 5\right) \left(\tfrac 52, \tfrac 72\right) \right\}.$$
+\end{itemize}
+\end{teo}
+The proposition is symmetric in the two coefficients because the link itself has a symmetry that interchanges the two components. All the Dehn filling parameters listed in the theorem indeed produce non-hyperbolic manifolds. For instance, if $\frac pq\in \{1,2,3\}$ we get a Seifert manifold fibering over the disc with two singular fibres, see \cite{MP}.
+
+We first prove Theorem \ref{hyperbolic:Dehn:filling:teo} for the figure-eight knot, where the combinatorics is so simple that everything can be verified by hand.
+We will then prove the theorem in general in Section \ref{solution:space:section} using more sophisticated tools.
+
+\subsection{The figure-eight knot example} \label{figure:8:example:subsection}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{triangulation_figure8_2-BW}{triangulation_figure8_2}} 
+\nota{We truncate the tetrahedra and flatten their boundary. We assign a modulus $z$ and $w$ to them. The edge numbered $i=1,2,3$ has modulus $z_i$ (on the left tetrahedron) or $w_i$ (on the right tetrahedron).}
+\label{triangulation_figure8_2:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{triangulation_figure8_3-BW}{triangulation_figure8_3}} 
+\nota{The triangulated boundary is a torus obtained by identifying the opposite edges of this parallelogram. The triangulation $\calT$ has two edges, that we colour in \iftoggle{BW}{grey}{red} and white. Their endpoints are shown here.}
+\label{triangulation_figure8_3:fig}
+\end{center}
+\end{figure}
+
+We now discuss in detail the standard example: the figure-eight knot complement, one of the very few cases where the consistency and completeness equations can be solved by hand. This part will not be needed in the proof of Theorem \ref{hyperbolic:Dehn:filling:teo}, so the reader may wish to skip it and go directly to Section \ref{sketch:filling:subsection}.
+
+Let $\calT$ be the triangulation with two tetrahedra shown in Figure \ref{triangulation_figure8:fig}. The truncated version is in Figure \ref{triangulation_figure8_2:fig}. We assign the complex variable $z$ and $w$ to the left and right tetrahedron, respectively. We set
+$$z_1 = z, \quad z_2 = \frac{1}{1-z}, \quad z_3 = \frac {z-1}{z}$$
+and define $w_1,w_2,w_3$ similarly. Recall that
+\begin{equation} \label{m1:eq}
+z_1z_2z_3 = w_1w_2w_3 = -1.
+\end{equation}
+The modulus of an edge in Figure \ref{triangulation_figure8_2:fig} labeled with $i\in \{1,2,3\}$ is $z_i$ or $w_i$ depending on the tetrahedron. With some patience one sees that the boundary triangulated surface is a torus $T$ as in Figure \ref{triangulation_figure8_3:fig}. The triangulation $\calT$ has two edges shown in Figure \ref{triangulation_figure8:fig}, each yielding a consistency equation. Figure \ref{triangulation_figure8_3:fig} shows that the consistency equations are
+$$z_2^2z_3w_2^2w_3 = 1, \quad z_1^2z_3w_1^2w_3=1.$$
+Using (\ref{m1:eq}) we see that the equations are both equivalent to 
+$$z_2w_2 = z_1w_1,$$ 
+that is
+\begin{equation} \label{c:eqn}
+z(1-z)w(1-w) = 1.
+\end{equation}
+We now look at the boundary torus $T$. Let $m$ and $l$ be the generators of $\pi_1(T)$ shown in Figure \ref{triangulation_figure8_3:fig}. We have
+\begin{equation} \label{ml:eqn}
+\mu(m) = - z_1z_3w_1 = w(1-z), \quad \mu(l) = z_2^2z_3^2w_1^4w_2^2w_3^2 = \frac{z^2}{w^2}.
+\end{equation}
+The completeness equations are
+\begin{equation} \label{c2:eqn}
+w(1-z) = 1,\quad z^2 = w^2.
+\end{equation}
+
+\begin{ex}
+The only solution to (\ref{c:eqn}) and (\ref{c2:eqn}) is $z=w= e^{\frac{\pi i}3}$.
+\end{ex}
+
+We have confirmed that the figure-eight complement $M$ has a complete hyperbolic structure obtained by representing both tetrahedra with ideal regular hyperbolic tetrahedra. We now investigate the non-complete solutions of the consistency equations.
+
+The two ideal tetrahedra have moduli $w$ and $z$ and the consistency equations reduce to one equation (\ref{c:eqn}) which we rewrite as
+$$z^2 - z +\frac{1}{w(1-w)} = 0.$$
+The solutions are
+$$ z = \frac{1 \pm \sqrt{1-\frac 4{w(1-w)}}}{2}.$$
+We are only interested in solutions with $\Im z, \Im w>0$. For every $w$ with $\Im w>0$ there is a unique solution $z$ with $\Im z >0$, except when $\Delta \in \matR_{\geqslant 0}$.
+
+\begin{ex} 
+We have $\Delta = 1-\frac 4{w(1-w)}\in\matR_{\geqslant 0}$ if and only if $w$ belongs to the half-line $s = \big\{\frac 12 + yi {\rm\ with\  } y\geqslant \frac{\sqrt{15}}2\big\}$, see Figure \ref{figure8_R:fig}-(left).
+\end{ex}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{figure8_R-BW}{figure8_R}} 
+\nota{Every $w\in R$ determines a hyperbolic structure for $M$ (left). The Dehn filling generalised invariants $d$ map $R$ onto a neighbourhood of $\infty$ (right).}
+\label{figure8_R:fig}
+\end{center}
+\end{figure}
+
+We define the open region 
+$$R =  \{w\in \matC\ |\ \Im w >0 \} \setminus s.$$
+Every $w\in R$ determines a hyperbolic structure for $M$. The complete structure is obtained at $w_0=\frac 12 + \frac {\sqrt 3}2$, see Figure \ref{figure8_R:fig}-(left). 
+
+The manifold $M$ is a knot complement and hence the boundary torus $T$ is equipped with its natural meridian/longitude basis $m',l'$, see Section \ref{canonical:longitudes:subsection}. Using SnapPea we find out that
+$$m'=m, \qquad l'=l+2m.$$
+From (\ref{ml:eqn}) we get
+\begin{equation} \label{mlp:eqn}
+ \tilde\mu(m') = w(1-z), \quad \tilde\mu(l') = \frac{z^2}{w^2} w^2(1-z)^2 = z^2(1-z)^2. 
+\end{equation}
+We fix $m',l'$ as generators for $\pi_1(T)$. We defined in Section \ref{generalized:DF:subsection} the generalised Dehn surgery invariant $(p,q) = d(w)$ for every non-complete solution $w\in R \setminus \{w_0\}$. This gives a continuous map
+$$d \colon R \longrightarrow S^2$$
+that sends $w_0$ to $\infty$.
+\begin{prop}
+The image $d(R)$ contains the coloured region shown in Figure \ref{figure8_R:fig}-(right).
+\end{prop}
+\begin{proof}
+The domain $R$ is an open disc and its abstract closure $\bar R$ is homeomorphic to the closed disc. We show that $d$ extends to a continuous map $\bar R \to S^2$ which sends $\partial R$ to the almost-rectangle shown in Figure \ref{figure8_R:fig}. 
+
+The invariants $d(w) = (p,q)$ are such that
+\begin{equation} \label{pq:eqn}
+w^p(1-z)^{p+2q}z^{2q} = e^{2\pi i}.
+\end{equation}
+
+The region $R$ has two involutions (determined in fact by isometries of $M$):
+\begin{itemize}
+\item the involution $\tau(w) = z = \frac{1 \pm \sqrt{1-\frac 4{w(1-w)}}}{2}$. This involution sends $\mu(m)$ to $\mu(m)^{-1} = \mu(m^{-1})$, hence $d(\tau(w)) = -d(w)$;
+\item the involution $\sigma(w) = \overline{1-w}$: using (\ref{mlp:eqn}) we get $d(\sigma(w)) = \overline{d(w)}$.
+\end{itemize}
+Now we note that when $w$ tends to a point in the line $l_+ = [1, +\infty]$ then $z$ tends to a point in $l_- = [-\infty,0]$. Therefore the argument of $w,z,1-z$
+tends respectively to $0, \pi, 0$. Equation (\ref{pq:eqn}) implies that $q \to 1$.
+
+If $w\to 1$ then $z \to -\infty$ and (\ref{pq:eqn}) implies that $p+2q+2q=p+4q\to 0$, so $(p,q)\to (-4,1)$. If $w\to +\infty$ then $z \to 0$ and equation $z(1-z)w(1-w)=1$ implies that $|z||w|^2\to 1$; here (\ref{pq:eqn}) gives $|w|^{p-4q}\to 1$, hence $p-4q\to 0$, so $(p,q)\to (4,1)$. We have proved that $d$ maps $[1,+\infty]$ onto the segment 
+$$\overline{(-4,+1), (+4,+1)}.$$
+Using the involution $\tau$ we deduce that $d$ maps $[-\infty, 0]$ onto the segment
+$$\overline{(+4,-1),(-4,-1)}.$$
+When $w$ is near the right side of the half-line $s$, the number $z$ tends to the segment $(0,\frac 12]$. Therefore the arguments of $z$ and $1-z$ tend to $0$ and (\ref{pq:eqn}) implies that the argument of $w^p$ tends to $2\pi$. When $w\in s$ the argument of $w$ is at least $\arctan \sqrt{15} = 1.31811607\ldots $ and hence $p$ is at most $\frac{2\pi}{\arctan \sqrt{15}} = 4.374\ldots < 5$. This implies that we can connect $(4,1)$ and $(4,-1)$ while staying inside the image of $d$ with a curve as in Figure \ref{figure8_R:fig}.
+\end{proof}
+
+\subsection{A road map} \label{sketch:filling:subsection}
+The rest of this chapter is mostly devoted to the proof of Theorem \ref{hyperbolic:Dehn:filling:teo}. Here is our plan: we first study the combinatorial properties of an arbitrary ideal triangulation $\calT$ for $M$, and we prove that the solutions to the consistency equations form a complex manifold $\Def(M,\calT)$ of (complex) dimension $c$ equal to the number of cusps of $M$. The manifold $\Def(M,\calT)$ is nicely parametrized by the holonomies on any $c$ fixed curves at different cusps. 
+
+The manifold $\Def(M,\calT)$ is often empty, but since $M$ is hyperbolic we expect that there should be some ideal triangulation $\calT$ for which $\Def(M,\calT)$ is not empty and contains a solution $z$ that also satisfies the completeness equations (we are unfortunately not able to prove this in general, and this will be a technical issue). The generalised Dehn filling invariants defined in Section \ref{generalized:DF:subsection} furnish a local diffeomorphism $d\colon \Def(M,\calT) \to S^2 \times \ldots \times S^2$ that sends $z$ to $(\infty,\ldots,\infty)$. In particular this map is open and its image covers a neighbourhood $U$ of $(\infty,\ldots, \infty)$. We conclude thanks to the discussion of Section \ref{generalized:DF:subsection}. 
+
+We start by defining and exploring the solution space $\Def(M,\calT)$.
+
+\section{The solution space} \label{solution:space:section}
+In this section we study the combinatorial properties of ideal triangulations of three-manifolds in general. We study the space of solutions to the consistency equations, we prove that it is a complex manifold and exhibit a concrete parametrisation via the holonomy of peripheral curves.
+
+\subsection{Edges and tetrahedra}
+Throughout this section, we let $N$ be a compact oriented three-manifold $N$ with $\partial N = T_1 \sqcup \ldots \sqcup T_c$ consisting of tori, and define $M=\interior N$. Let $\calT$ be any ideal triangulation for $M$. 
+
+\begin{prop} \label{edges:prop}
+The ideal triangulation $\calT$ has the same number $n$ of tetrahedra and edges.
+\end{prop}
+\begin{proof}
+The total space $|\calT|$ of the triangulation $\calT$ has $v$ vertices, $e$ edges, $f$ faces, and $t$ tetrahedra. Since $\chi(\partial N) = 2\chi(N)$ for every compact 3-manifold $N$ and $\partial N$ consists of tori, we get $\chi(N)=0$. Therefore
+$$v = v + \chi(N) = \chi(|\calT|) = v-e+f-t = v-e+t$$
+since $f = 2t$. Then $e=t$.
+\end{proof}
+
+Recall that in the consistency equations we get one complex variable $z_i$ for each tetrahedron and one equation for each edge; since we have the same number of edges and tetrahedra, one would guess that the solutions form typically a discrete set of points, but this is surprisingly not the case: we now show that some equations are redundant, leaving some space for a higher-dimensional space of solutions. The origin of this redundancy lies in the combinatorial properties of three-dimensional triangulations.
+
+\subsection{Incidence matrices} \label{incidence:matrices:subsection}
+We denote respectively by $\Delta_1, \ldots, \Delta_n$ and $e_1,\ldots, e_n$ the tetrahedra and edges of $\calT$. We fix an orientation on $M$, which induces an orientation on each tetrahedron, and we assign numbers 1, 2, and 3 to pairs of opposite edges on each $\Delta_i$ in a way that is orientation-preservingly isomorphic to Figure \ref{tetrahedron_labels:fig}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {tetrahedron_labels.pdf} 
+\nota{We label the edges of every \emph{oriented} tetrahedron as shown: the labelling is determined once we chose arbitrarily a pair of opposite edges and label them with 1 (left). The vertices of every \emph{oriented} triangle in the triangulated boundary inherit labels as in the figure (right).}
+\label{tetrahedron_labels:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{ABmatrices-BW}{ABmatrices}} 
+\nota{The incidence matrices $A$ and $B$ count the incidences between edge pairs, tetrahedra, edges, and ideal vertices.}
+\label{ABmatrices:fig}
+\end{center}
+\end{figure}
+
+We now define a $2n \times 3n$ integral matrix $A$ that encodes some combinatorial adjacencies between tetrahedra. The matrix $A$ should be seen as a $2\times 3$ rectangle of $n\times n$ sub-matrices as in Figure \ref{ABmatrices:fig}-(left), where:
+\begin{itemize}
+\item each column of $A$ corresponds to a pair of opposite edges of one tetrahedron, more precisely the columns $i, i+n,$ and $i+2n$ correspond the opposite edges of type 1,2,3 of $\Delta_i$;
+\item the first $n$ rows of $A$ correspond to the tetrahedra $\Delta_1,\ldots, \Delta_n$;
+\item the last $n$ rows of $A$ correspond to the edges $e_1,\ldots, e_n$.
+\end{itemize}
+When $i\leqslant n$, the entry $A_{ij}$ is 1 or 0 depending on whether $\Delta_i$ contains the $j$-th edge pair. In other words, the top three $n\times n$ sub-matrices of $A$ are three identity matrices, see Figure \ref{ABmatrices:fig}-(left).
+
+When $i=n+i'$ with $i'>0$, the entry $A_{ij}$ counts how many edges in the $j$-th edge pair are glued to the $i'$-th edge $e_{i'}$: this number is hence 0, 1, or 2.
+
+\begin{ex}
+The entries on each column of $A$ sum to $3$.
+\end{ex}
+
+Let now $v_1,\ldots, v_c$ be the ideal vertices of $\calT$. We define another $c \times 2n$ integral matrix $B$, which consists of two $c\times n$ sub-matrices as in Figure \ref{ABmatrices:fig}-(right), where:
+\begin{itemize}
+\item the rows of $B$ correspond to the ideal vertices $v_1,\ldots, v_c$;
+\item the first $n$ columns of $B$ correspond to the $n$ tetrahedra $\Delta_1,\ldots, \Delta_n$;
+\item the last $n$ columns correspond to the edges $e_1,\ldots, e_n$.
+\end{itemize}
+
+When $j \leqslant n$, the entry $B_{ij}$ is \emph{minus} the number of times $\Delta_j$ is incident to $v_i$, and when $j = n+j'$ with $j'>0$ the entry $B_{ij}$ is \emph{plus} the number of times $e_{j'}$ is incident to $v_i$. The possible entries are $0,-1,-2,-3,-4$ and $0,1,2$ respectively.
+
+\begin{ex}
+The entries on each column of $B$ sum to $-4$ or $2$.
+\end{ex}
+
+The matrices $A$ and $B$ are designed to be interpreted as linear maps, and to be composed.
+
+\begin{prop} \label{AB:exact:prop}
+The following sequence is exact:
+$$ \matR^{3n} \stackrel{A}{\longrightarrow} \matR^{2n} \stackrel{B}{\longrightarrow} \matR^c \longrightarrow 0.$$
+\end{prop}
+The proof of this proposition splits into three lemmas. 
+
+\begin{lemma} We have $BA = 0$.
+\end{lemma}
+\begin{proof}
+The $i$-th row of $B$ corresponds to the ideal vertex $v_i$ and the $k$-th column of $A$ corresponds to the $k$-th pair of opposite edges. The sum $\sum_{j=1}^{2n} B_{ij} A_{jk}$ counts \emph{minus} the number of times $v_i$ is incident to the tetrahedron containing the edge pair, \emph{plus} the number of times it is incident to the two edges of the pair. These numbers are equal and hence we get 0.
+\end{proof}
+
+\begin{lemma} The $c$ rows in $B$ are independent vectors.
+\end{lemma}
+\begin{proof}
+Suppose there is a vanishing linear combination $\sum_{i=1}^c \lambda_i B_i = 0$ of the rows $B_i$ of $B$. If the edge $e_j$ has endpoints at $v_a$ and $v_b$, the entries in the $(n+j)$-th column $B^{n+j}$ are 1 at the rows $a$ and $b$ and zero everywhere else: therefore we get $\lambda_a+\lambda_b=0$. If we apply this argument to the three edges of a triangle we get
+$$\lambda_a+\lambda_b=0, \quad \lambda_b+\lambda_c=0, \quad \lambda_c+\lambda_a = 0$$
+which implies $\lambda_a=\lambda_b=\lambda_c=0$. Then all coefficients $\lambda_a$ vanish.
+\end{proof}
+
+\begin{lemma} \label{B:surj:lemma}
+The $c$ rows in $B$ generate $\ker(A^\intercal)$. 
+\end{lemma}
+\begin{proof}
+Since $BA=0$ implies $A^\intercal B^\intercal=0$, we already know that the rows in $B$ are contained in $\ker(A^\intercal)$, and we must prove that they generate it. We pick a generic horizontal vector $q=(q_1, \ldots, q_{2n})\in \matR^{2n}$ with $qA=0$ and we need to prove that $q$ is generated by the rows $B_i$ of $B$. 
+
+Recall that the columns $A^j, A^{j+n}, A^{j+2n}$ of $A$ correspond to the edge pairs of type 1, 2, and 3 of the tetrahedron $\Delta_j$. We label the vertices of $\Delta_j$ as $a,b,c,d$, the edges of $\Delta_j$ as pairs like $ab$, and the corresponding vertices and edges in $\calT$ as $j(a)$ and $j'(ab)$, interpreted as numbers in $\{1,\ldots,c\}$ and $\{1,\ldots, n\}$ respectively. Moreover we set $j(ab) = j'(ab)+n$. We suppose that $ab, ac, ad$ are of type 1, 2, 3.
+
+The conditions $qA^j = qA^{j+n} = qA^{j+2n}=0$ say that
+$$
+\begin{aligned}
+qA^j & = q_j + q_{j(ab)} + q_{j(cd)} = 0, \\
+qA^{j+n} & = q_j + q_{j(ac)} + q_{j(bd)} = 0, \\
+qA^{j+2n} & = q_j + q_{j(ad)} + q_{j(bc)} = 0. 
+\end{aligned}
+$$
+This implies that
+\begin{equation} \label{qq:eqn}
+q_{j(ab)} + q_{j(cd)} = q_{j(ac)} + q_{j(bd)} = q_{j(ad)} + q_{j(bc)} = - q_j.
+\end{equation}
+We now prove that $q= \sum \lambda_i B_i$ where the coefficients $\lambda_i$ are defined as follows. Consider an ideal triangle in $\Delta_j$ with vertices $a,b,c$ and define
+$$\lambda_{j(a)} = \frac{q_{j(ab)} + q_{j(ca)} - q_{j(bc)}}2.$$
+We check that $\lambda_{j(a)}$ does not depend on the ideal triangle: the triangle in $\Delta_j$ with vertices $a,b,d$ gives 
+$$\lambda_{j(a)} = \frac{q_{j(ab)} + q_{j(da)} - q_{j(bd)}}2 = \frac{q_{j(ab)} + q_{j(ca)} - q_{j(bc)}}2$$
+using (\ref{qq:eqn}). Two triangles incident to the ideal vertex $v_{j(a)}$ are connected by a path of adjacent tetrahedra and hence $\lambda_{j(a)}$ is well-defined.
+
+Finally, we need to check that indeed $q = \sum \lambda_iB_i$. We consider the edge $j(ab)$ and recall that the $(n+j(ab))$-th column of $B$ is everywhere zero except at rows $j(a)$ and $j(b)$; hence the $(n+j(ab))$-th entry of $\sum \lambda_iB_i$ is $\lambda_{j(a)} + \lambda_{j(b)}$, which by definition equals $q_{j(ab)}$, so we are done.
+
+Analogously, the $j$-th column of $B$ is everywhere zero except at the rows $j(a),j(b),j(c),j(d)$ and hence the $j$-th entry of $\sum \lambda_iB_i$ is $-(\lambda_{j(a)} + \lambda_{j(b)} + \lambda_{j(c)} + \lambda_{j(d)})$ which equals $-q_{j(ab)} - q_{j(cd)} = q_j$. The proof is complete.
+\end{proof}
+
+These three lemmas imply Proposition \ref{AB:exact:prop}. In particular we get the following:
+
+\begin{cor} \label{rk:A:cor}
+We have $\rk A = 2n-c$.
+\end{cor}
+
+\subsection{A symplectic form} \label{symplectic:form:subsection}
+We define an alternating bilinear form $\omega$ on $\matR^{3n}$ as follows: for every $i=1,\ldots, n$ consider the form
+$$\omega_i = \begin{pmatrix}
+0 & 1 & -1 \\
+-1 & 0 & 1 \\
+1 & -1 & 0
+\end{pmatrix}
+$$
+on the subspace $V_i$ generated by $e_i, e_{i+n}$, and $e_{i+2n}$, and define $\omega = \oplus_i \omega_i$. Strictly speaking, the form $\omega$ is not symplectic because it is degenerate: its radical is generated by all vectors of type $e_i+e_{i+n} + e_{i+2n}$, that is by the first $n$ rows of the matrix $A$. The form $\omega$ becomes symplectic after quotienting $\matR^3$ by the radical.
+
+\begin{prop} \label{rows:lagrangian:prop}
+The rows of $A$ generate a lagrangian subspace.
+\end{prop}
+\begin{proof}
+In other words, we need to prove that $\omega(A_j, A_k)=0$ for any rows $A_j, A_k$ of $A$. The first $n$ rows lie in the radical, hence we are left to check that $\omega(A_{n+j}, A_{n+k})=0$ for all $0 < j < k \leqslant n$ corresponding to the $j$-th and $k$-th edge of the triangulation. 
+
+Each tetrahedron $\Delta_i$ contributes to the number $\omega(A_{n+j}, A_{n+k})$ as follows: if two edges contained in some face $f$ of $\Delta_i$ correspond to the edges $j$ and $k$ of the triangulation, they contribute with a $\pm 1$; the face $f$ is also contained in an adjacent tetrahedron where they contribute with opposite sign, and hence everything sums to zero.
+\end{proof}
+
+\subsection{The solution space} \label{solution:space:subsection}
+We now employ the combinatorial results of the previous sections to study the consistency equations for $\calT$. 
+We assign the variables $z_j$, $\frac 1{1-z_j}$, and $\frac{z_j-1}{z_j}$ to the edges of type 1, 2, and 3 in each tetrahedron $\Delta_j$. These three variables lie in the upper half-plane 
+$$\matC_+ = \big\{\Im z > 0\big\}$$
+which we see as the subset $\matC_+ \subset \widetilde{\matC^*}$ consisting of all $\rho e^{i\theta}$ with $0<\theta < \pi$.
+The consistency equation at the edge $e_i$ is the following equation in $\widetilde{\matC^*}$:
+\begin{equation} \label{gi:eqn}
+g_i(z) = \prod_{j=1}^n z_j^{A_{n+i,j}} \left(\frac 1{1-z_j}\right)^{A_{n+i,n+j}} 
+\left(\frac{z_j-1}{z_j}\right)^{A_{n+i,2n+j}} = e^{2\pi i}.
+\end{equation}
+The elements $\frac{1}{1-z_j}, \frac{z_j-1}{z_j}\in\matC_{+}\subset \widetilde \matC^*$ depend holomorphically on $z_j\in\matC_{+}$.
+We have defined a complex function
+$$g \colon \matC_{+}^n \longrightarrow \big(\widetilde{\matC^*}\big)^n$$
+by setting $g=(g_1,\ldots, g_n)$. The \emph{solution space} is the set
+$$\Def(M,\calT) = g^{-1}(e^{2\pi i},\ldots, e^{2\pi i}).$$
+This space consists precisely of the solutions to the consistency equations of $\calT$. 
+Each solution $z\in \Def(M,\calT)$ gives a hyperbolic metric on $M$, which ``deforms'' as $z$ varies: this justifies the use of the symbol ``$\Def$''. We want to prove that $\Def(M,\calT)$ is a complex manifold of dimension $c$. 
+
+\subsection{Complex differentials} \label{complex:diff:subsection}
+We use the biholomorphism $\log\colon \widetilde{\matC^*} \to \matC$ and define the function $G(z) = \log g(z)$ for all $z\in \matC_+^n$. Now 
+$$\Def(M,\calT) = G^{-1}(2\pi i, \ldots, 2\pi i).$$ 
+We may write
+$$G_i(z) = \sum_{j=1}^n A_{i,j}' \log z_j + A'_{i,n+j}\log(1-z_j) + N_i\pi i$$
+where $A'$ is the $n \times 2n$ integral matrix defined by
+$$A'_{i,j} = A_{n+i,j} - A_{n+i,2n+j}, \quad A'_{i,n+j} = -A_{n+i,n+j} + A_{n+i,2n+j}$$ 
+and $N_i$ is some fixed integer that depends on the way we interpret $\log(1-z_j)$. 
+The complex differential of $G$ at $z$ splits as a composition of two linear maps
+$$ dG_{ z}\colon \matC^{n} \stackrel{Z}{\longrightarrow} \matC^{2n} \stackrel{A'}{\longrightarrow} \matC^n$$
+where
+$$Z = \begin{pmatrix}
+\frac 1{z_1} & 0 & \ldots & 0 \\
+0 & \frac 1{z_2} & \ldots & 0 \\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \ldots & \frac 1{z_n} \\
+\frac {1}{z_1-1} & 0 & \ldots & 0 \\
+0 & \frac {1}{z_2-1} & \ldots & 0 \\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \ldots & \frac {1}{z_n-1} 
+\end{pmatrix}
+$$
+is obtained by differentiating $\log z_j$ and $\log (1-z_j)$.
+Let now
+$$B'\colon \matC^n \longrightarrow \matC^c$$
+be the linear map defined by the right $(c\times n)$-sub-matrix $B'$ of $B$, that is $$B'_{i,j} = B_{i.n+j}.$$
+
+\begin{prop} \label{AB2:exact:prop}
+The following sequence is exact:
+$$ \matC^{2n} \stackrel{A'}{\longrightarrow} \matC^{n} \stackrel{B'}{\longrightarrow} \matC^c \longrightarrow 0.$$
+\end{prop}
+\begin{proof}
+Lemma \ref{B:surj:lemma} shows that $B$ is surjective, and its proof actually shows that $B'$ is surjective. Recall that $A$ decomposes into six square matrices, and via Gauss moves on columns we get 
+\begin{equation} \label{GaussA:eqn}
+A=\begin{pmatrix}
+I & I & I \\
+A^1 & A^2 & A^3 
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+0 & 0 & I \\
+A^1-A^3 & -A^2 + A^3 & A^3
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 & I \\
+A' & A^3
+\end{pmatrix}.
+\end{equation}
+Now $BA=0 \Rightarrow B'A'=0$, and $\rk A = 2n-c \Rightarrow \rk A' = n-c$.
+\end{proof}
+
+This shows in particular that the image of $G$ lies in a fixed affine subspace parallel to $\ker B'$ of complex codimension $c$. We now consider the standard symplectic form $\omega = \matr 0{I}{-I}0$ on $\matR^{2n}$. 
+\begin{prop} \label{rows:lagrangian2:prop}
+The rows of $A'$ generate a lagrangian subspace.
+\end{prop}
+\begin{proof}
+We know that the rows of $A$ generate a lagrangian subspace with respect to the degenerate form on $\matR^{3n}$ by Proposition \ref{rows:lagrangian:prop}. The Gauss moves (\ref{GaussA:eqn}) imply the assertion.
+\end{proof}
+
+\begin{prop} \label{Choi:prop}
+For every $z\in \matC_+^n$ the following sequence is exact:
+$$ \matC^n \stackrel{dG_{z}} \longrightarrow \matC^n \stackrel {B'} \longrightarrow \matC^c \longrightarrow 0.$$
+\end{prop}
+\begin{proof}
+We have $dG_{z} = A'Z$. Proposition \ref{AB2:exact:prop} gives an exact sequence
+$$ \matC^{2n} \stackrel{A'}{\longrightarrow} \matC^{n} \stackrel{B'}{\longrightarrow} \matC^c \longrightarrow 0.$$
+We only need to prove that $\Img (A'Z) = \Img A'$, that is $\rk (A'Z) = n-c$. We prefer to consider the transpose matrix $M= (A'Z)^\intercal =  Z^\intercal (A')^\intercal$. We have
+$$ Z^\intercal = \begin{pmatrix}
+\frac 1{z_1} & 0 & \ldots & 0 & \frac {1}{z_1-1} & 0 & \ldots & 0 \\
+0 & \frac 1{z_2} & \ldots & 0 & 0 & \frac {1}{z_2-1} & \ldots & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \ldots & \frac 1{z_n} & 0 & 0 & \ldots & \frac {1}{z_n-1} 
+\end{pmatrix}.
+$$
+The map $Z^\intercal\colon \matC^{2n} \to \matC^n$ is obviously not injective, but its restriction 
+$$Z^\intercal |_{\matR^{2n}}\colon \matR^{2n} \longrightarrow \matC^n$$ 
+is an isomorphism of real spaces because $\frac 1{z_i}$ and $\frac {1}{z_i-1}$ are independent over $\matR$ (we use here that $z_i\not\in \matR$).  
+
+We define a symplectic form $\Omega$ on the real vector space $\matC^n$ by pushing-forward $\omega$ along $Z^\intercal |_{\matR^{2n}}$, that is we set $\Omega(Z^\intercal v,\, Z^\intercal w) = \omega(v,w)$. By construction $\Omega$ is a sum of symplectic forms on the coordinate complex lines of $\matC^n$. Note that a symplectic form on $\matC$ is unique up to rescaling.
+
+Since $\Img z_i >0$, the complex numbers $\frac{1}{z_i}$ and $\frac{1}{z_i-1}$ form a negatively-oriented $\matR$-basis of $\matC$, and this implies that $\Omega (v,iv) < 0$ for every non-zero vector $v\in \matC^n$. In particular $\langle \cdot, \cdot \rangle = -\Omega(\cdot, i \cdot)$ is a positive-definite scalar product that induces a norm $\| \cdot \|$ on $\matC^n$. 
+
+On each coordinate complex line of $\matC^n$, the form $\Omega$ is just a rescaling of the standard symplectic form and hence $\langle,\rangle$ is a rescaling of the standard scalar product. In particular we get $\Omega(iv,iw) = \Omega(v,w)$ and $\langle iv, iw \rangle  = \langle v,w \rangle$.
+
+Finally, we suppose by contradiction that $\rk M < n-c$. Since $Z^\intercal |_{\matR^{2n}}$ is injective, the real subspace $M(\matR^{n})$ has real dimension $n-c$.
+Since $\rk M < n-c$, there are vectors $v_1,v_2\in \matR^{n}$ such that $M(v_1+iv_2) = 0$ while $Mv_1 \neq 0$ and $Mv_2 \neq 0$. Proposition \ref{rows:lagrangian2:prop} gives  
+$$\Omega(Mv_1, Mv_2)= \omega ((A')^\intercal v_1,(A')^\intercal v_2) = 0$$
+and therefore
+\begin{align*}
+0 = \|M(v_1 + iv_2)\|^2 & = \|Mv_1\|^2 + \|iM v_2\|^2 + 2\langle M v_1, iM v_2 \rangle \\
+& = \|Mv_1\|^2 + \|Mv_2\|^2 -2\Omega(M v_1, -Mv_2) \\
+& = \|Mv_1\|^2 + \|Mv_2\|^2
+\end{align*}
+implies $Mv_1 = Mv_2=0$, a contradiction.
+\end{proof}
+
+\begin{cor} \label{smooth:cor}
+The solution space $\Def(M,\calT) \subset \matC_+^n$ is either empty or a complex submanifold of dimension $c$.
+\end{cor}
+\begin{proof}
+The image of $G\colon \matC_+^n \to \matC^n$ lies entirely in a $(n-c)$-dimensional complex affine space $S$ parallel to $\ker B' \subset \matC^n$ and by the previous proposition the holomorphic map $G\colon \matC_+^n \to S$ is a submersion onto its image. Therefore the counterimage of any point is a either empty or is a complex submanifold of dimension $n-(n-c)=c$.
+\end{proof}
+
+We now want to define a nice holomorphic parametrisation for the manifold $\Def(M,\calT)$, and to this purpose we need to investigate further the combinatorial properties of $\calT$ by looking more closely at its ideal vertices.
+
+\subsection{Boundary curves} \label{boundary:curves:subsection}
+Recall that $M=\interior N$ and the ideal vertices $v_1,\ldots, v_c$ of $\calT$ correspond to the boundary tori $T_1,\ldots, T_c$ of $N$, which are triangulated by $\calT$. Recall also that there are $n$ tetrahedra $\Delta_1,\ldots, \Delta_n$ in $\calT$ and each $\Delta_i$ has three edge pairs labeled with $i, n+i,$ and $2n+i$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{path_holonomy-BW}{path_holonomy}} 
+\nota{We mark with a dot all the interior angles that $\gamma$ encounters on its right as in the picture: each dot determines an edge in some tetrahedron $\Delta_j$ and hence an edge pair (left). We also consider the ``degenerate path'' consisting of a single point ``run counterclockwise'', and recover the last $n$ rows of $A$ in this way (right).}
+\label{path_holonomy:fig}
+\end{center}
+\end{figure}
+
+Every simplicial closed oriented curve $\gamma$ in a triangulated torus $T_i$ determines an integer vector $v_\gamma \in \matR^{3n}$ that counts the (right-)incidences between $\gamma$ and the $3n$ edge pairs of $\calT$. More precisely, each interior angle of a triangle in $T_i$ determines an edge in some tetrahedron $\Delta_j$ and hence an edge pair: we define $(v_\gamma)_j$ to be the number of times $\gamma$ encounters the $j$-th edge pair on its right, as in Figure \ref{path_holonomy:fig}-(left).
+
+We defined an alternating degenerate form $\omega$ on $\matR^{3n}$ and we now want to extend Proposition \ref{rows:lagrangian:prop}. We denote by $\gamma \cdot \gamma'$ the algebraic intersection of $\gamma$ and $\gamma'$ in $H_1(\partial M, \matZ)$.
+
+\begin{prop} \label{A:gamma:gamma':prop}
+Let $\gamma, \gamma'$ be simplicial closed curves in $\partial N$. We have:
+\begin{itemize}
+\item $\omega(v_\gamma, v_{\gamma'}) = 2 \gamma \cdot \gamma'$,
+\item $\omega(v_\gamma, A_i) = 0 $ for every row $A_i$ of $A$.
+\end{itemize}
+\end{prop}
+\begin{proof}
+The row $A_i$ with $i\leqslant n$ lies in the radical of $\omega$, and $A_{n+i}$ records the incidences of the $i$-th edge $e_i$ of $\calT$ with the $3n$ edge pairs. We may write $A_{n+i} = v_{\gamma'}$ where $\gamma'$ is a ``degenerate'' closed path consisting of a single point (one of the endpoints of $e_i$), see Fig~\ref{path_holonomy:fig}-(right). Now the second assertion is just a special case of the first.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 7 cm] {\iftoggle{BW}{two_paths_holonomy-BW}{two_paths_holonomy}} 
+\nota{We draw the paths $\gamma$, $\gamma'$ and their dots in \iftoggle{BW}{dark grey}{blue} and \iftoggle{BW}{grey}{red}.}
+\label{two_paths_holonomy:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {\iftoggle{BW}{curves_dots_contribution-BW}{curves_dots_contribution}} 
+\nota{Two dots in a triangle contribute to $\omega(\gamma, \gamma')$ with $+1$, $0$, or $-1$ according to their mutual position.}
+\label{curves_dots_contribution:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{curves_near_contribution-BW}{curves_near_contribution}} 
+\nota{Two portions of \iftoggle{BW}{dark grey}{blue} and \iftoggle{BW}{grey}{red} paths that intersect the same triangle contribute to $\omega(\gamma, \gamma')$ as shown here. The contribution depends on their mutual configuration, and changes by a sign if we interchange the \iftoggle{BW}{dark grey}{blue}/\iftoggle{BW}{grey}{red} colours. If one of the two portions contains at least two edges (as in bottom-right) it determines a vector in the radical, and the contribution is always zero.}
+\label{curves_near_contribution:fig}
+\end{center}
+\end{figure}
+
+We draw the two paths $\gamma$ and $\gamma'$ in \iftoggle{BW}{dark grey}{blue} and \iftoggle{BW}{grey}{red} as in Figure \ref{two_paths_holonomy:fig}, marking with dots the angles they encounter on their right. A couple of \iftoggle{BW}{dark grey}{blue} and \iftoggle{BW}{grey}{red} dots in the same triangle contribute to $\omega(\gamma, \gamma')$ according to their mutual position as shown in Figure \ref{curves_dots_contribution:fig}. Therefore portions of \iftoggle{BW}{dark grey}{blue} and \iftoggle{BW}{grey}{red} paths intersecting the same triangle contribute to $\omega(\gamma, \gamma')$ as shown in Figure \ref{curves_near_contribution:fig}.
+
+For every contribution $+1$ as in Figure \ref{curves_near_contribution:fig}-(top-left), there is an analogous but opposite contribution $-1$ provided by the other triangle adjacent to the edge joining the coloured endpoints: these all cancel. We are left with a $+1$ every time the \iftoggle{BW}{grey}{red} path exits leftward from an intersection with the \iftoggle{BW}{dark grey}{blue} path, a $-1$ every time it enters from the left, and the opposite contributions with the \iftoggle{BW}{dark grey}{blue}/\iftoggle{BW}{grey}{red} colours interchanged. We easily get a total of $2\gamma \cdot \gamma'$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{curves_far_contribution-BW}{curves_far_contribution}} 
+\nota{When $\gamma$ and $\gamma'$ encounter in different truncated triangles of the same tetrahedron $\Delta_i$, they also contribute to $\omega(\gamma,\gamma')$.}
+\label{curves_far_contribution:fig}
+\end{center}
+\end{figure}
+
+The proof is not yet complete, because every tetrahedron $\Delta_i$ determines four triangles in $\partial N$ and some contributions to $\omega(\gamma, \gamma')$ arise also from paths intersecting distinct triangles of the same $\Delta_i$: we need to prove that these contributions all cancel.
+
+Up to symmetries of the tetrahedron and up to interchanging the colours, the possible non-zero contributions are all shown in Figure \ref{curves_far_contribution:fig}. Each configuration as in the first row cancels with an opposite one produced by the tetrahedron adjacent to the grey face. The contributions in the second row arise when $\gamma$ and $\gamma'$ cross the endpoints of an edge $e$ on opposite sides, and one checks that the contributions of all the cycle of tetrahedra incident to $e$ sum to zero (exercise).
+\end{proof}
+
+\subsection{Holonomy parameters} \label{holonomy:subsection}
+We now fix a non-trivial oriented simple closed curve $\gamma_i$ on each $T_i$ and a representation of $\gamma_i$ as a simplicial (possibly non-injective) path in the triangulated $T_i$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {\iftoggle{BW}{ABmatrices_extended-BW}{ABmatrices_extended}} 
+\nota{The enlarged matrix $\bar A$.}
+\label{ABmatrices_extended:fig}
+\end{center}
+\end{figure}
+
+We enlarge the incident $2n \times 3n$ matrix $A$ to a $(2n+c)\times 3n$ matrix $\bar A$ by adding the vectors $v_{\gamma_1}, \ldots, v_{\gamma_c}$ at its bottom, see Figure \ref{ABmatrices_extended:fig}.
+
+\begin{prop} \label{A:bar:lagrangian:prop}
+We have $\rk \bar A = 2n$. The rows of $\bar A$ generate a maximal lagrangian subspace in $\matR^{3n}$.
+\end{prop}
+\begin{proof}
+Let $\mu_i \subset T_i$ be a simplicial closed curve with $\gamma_i\cdot \mu_i = 1$. We already know that the first $2n$ rows of $\bar A$ generate a lagrangian subspace of dimension $2n-c$, and to conclude it suffices to use Proposition \ref{A:gamma:gamma':prop} and deduce that $v_{\mu_i}$ is $\omega$-orthogonal to all the rows of $\bar A$ except $\bar A_{2n+i}=v_{\gamma_i}$. Therefore $\rk \bar A = \rk A +c = 2n$.
+\end{proof}
+
+Every point $z\in \Def(M,\calT)$ determines a hyperbolic structure on $M$ and a homomorphism
+$$\tilde\mu_z \colon \pi_1(T_i) \to \widetilde{\matC^*}$$
+for each $i=1,\ldots, c$, see Definition \ref{tilde:mu:defn}. We define
+$$h_i(z) = \tilde\mu_z(\gamma_i) = e^{-|\gamma_i| \pi i } \prod_{j=1}^n z_j^{\bar A_{2n+i,j}} \left(\frac 1{1-z_j}\right)^{\bar A_{2n+i,n+j}} 
+\left(\frac{z_j-1}{z_j}\right)^{\bar A_{2n+i,2n+j}} $$
+and get a holomorphic function
+$$h\colon \matC_+^n \longrightarrow \big(\widetilde{\matC^*}\big)^c.$$
+We want to prove that $h$ furnishes a nice parametrisation for the $c$-dimensional space $\Def(M,\calT)$. The letter $h$ stands for ``holonomy'': recall that $h_i$ is the holonomy of $\gamma_i$, see Exercise \ref{tilde:rho:mu:ex}.
+
+As in Section \ref{complex:diff:subsection}, we define $H(z) = \log h(z)$. 
+We get a map
+$$G \times H \colon \matC_+^n \longrightarrow \matC^n \times \matC^c.$$
+As above, the differential splits as a composition of linear maps
+$$ d(G\times H)_{z}\colon \matC^{n} \stackrel{Z}{\longrightarrow} \matC^{2n} \stackrel{\bar A'}{\longrightarrow} \matC^n \times \matC^c$$
+where $\bar A'$ is constructed from $\bar A$ exactly as $A'$ from $A$.
+
+\begin{prop} \label{Choi2:prop}
+The differential $d(G\times H)_{z}$ is injective $\forall z \in \matC_+^n$.
+\end{prop}
+\begin{proof}
+As above, Proposition \ref{A:bar:lagrangian:prop} implies that the rows of $\bar A'$ form a lagrangian subspace of dimension $n$ and we conclude with the same proof as Proposition \ref{Choi:prop}.
+\end{proof}
+
+\begin{cor}
+The restriction
+$$h|_{\Def(M,\calT)}\colon \Def(M,\calT) \longrightarrow \big(\widetilde{\matC^*}\big)^c$$ is a local biholomorphism.
+\end{cor}
+
+A \emph{complete solution} $z\in\Def(M,\calT)$ is one that determines a complete metric on $M$, that is such that $h(z)=(1,\ldots,1)$.
+
+\begin{cor} \label{complete:isolated:cor}
+Every complete solution in $\Def(M,\calT)$ is isolated.
+\end{cor}
+
+The local biholomorphism $h$ depends on the isotopy class of the curves $\gamma_i$ chosen: different choices give different parametrisations. Note however that the condition that $h_i(z)=1$ corresponds geometrically to the completeness of $T_i$ and hence does not depend on $\gamma_i$.
+
+\section{Proof of the theorem}
+We now conclude the proof of Theorem \ref{DF:teo}.
+Through all this section, we let $M= \interior N$ be a complete orientable finite-volume cusped hyperbolic three-manifold. We have $\partial N = T_1 \cup \ldots \cup T_c$ for some $c\geqslant 1$. We also fix a positive pair $m_i, l_i$ of generators for $\pi_1(T_i)$ at each $T_i$. Recall that each $T_i$ has Euclidean structure, defined up to rescaling.
+
+\subsection{Near the complete solution} \label{near:complete:subsection}
+We now suppose that $M$ has a geometric decomposition $\calT$ into ideal hyperbolic tetrahedra, in other words the space $\Def(M,\calT)$ is non-empty and contains a complete solution $z^0$. We want to study $\Def(M,\calT)$ near $z^0$. 
+
+We defined in Section \ref{generalized:DF:subsection} the generalised Dehn filling invariant of a solution $z\in\Def(M,\calT)$ at $T_i$ to be $\infty$ if $\mu(m_i) = \mu(l_i)=1$, or the unique point $(p,q)\in \matR^2$ such that $\tilde\mu(m_i)^p \tilde\mu(l_i)^q = e^{2\pi i}$ otherwise. We denote this invariant by $d_i(z)\in S^2 = \matR^2 \cup \{\infty\}$ and get a map 
+$$d\colon \Def(M,\calT) \longrightarrow \underbrace{S^2 \times \ldots \times S^2}_c$$
+such that $d(z^0) = (\infty,\ldots,\infty)$.
+
+\begin{prop} \label{d:local:homeo:prop}
+The map $d$ is a local homeomorphism at $z^0$.
+\end{prop}
+\begin{proof}
+We set
+$$u_i = \log \tilde\mu(m_i), \qquad v_i = \log \tilde \mu(l_i).$$
+The sets $(u_1,\ldots,u_c)$ and $(v_1,\ldots, v_c)$ are both biholomorphic coordinates on $\Def(M,\calT)$ which vanish at $z^0$. Moreover $v_i$ vanishes precisely where $u_i$ does (on solutions that are complete at $T_i)$. 
+
+Recall from Exercise \ref{rho:derivative:ex} that $\mu = \rho'$ is the derivative of the holonomy $\rho$ at $T_i$. When $u_i = v_i = 0$ the solution is complete at $T_i$ and up to conjugation we have
+$$\rho(m_i)\colon z \mapsto z +1, \qquad \rho(l_i)\colon z \mapsto z + w_i$$
+for some $w_i\in \matC$ with $\Im w_i>0$ which determines the cusp shape of $T_i$. When $u_i, v_i \neq 0$ the solution is incomplete and
+$$\rho(m_i) \colon z \mapsto az, \qquad \rho(l_i) \colon z \mapsto bz$$
+for some $a,b\neq 0$.
+When $u_i, v_i \to 0$, a fundamental domain of $\Img\rho$ with vertices at $x,ax, bx, abx$ tends up to rescaling to one with vertices at $x, x+1, x+w_i, x+1+w_i$. Since $a,b \to 1$ we get
+$$v_i = \log b \sim b-1 \sim w_i(a-1) \sim w_i \log a = w_iu_i$$
+where $\sim$ means first-order equality. Therefore $\frac{v_i}{u_i} = w_i$ at the complete solution $v=u=0$. We deduce in particular that the function $\frac{v_i}{u_i}$ is analytic on $\Def(M,\calT)$.
+In what follows we only use that $\Im w_i > 0$.
+
+We consider the following map, defined whenever $(p_i,q_i) \neq (0,0)$ for all $i$:
+$$\varphi\big((p_1,q_1), \ldots, (p_c, q_c)\big) = 2\pi i \left( \frac 1 {p_1+q_1w_1}, \ldots, \frac 1{p_c + q_cw_c}\right).$$
+We extend it continuously to the case $(p_i, q_i) = \infty$ by setting the $i$-th component of the image to be zero.
+By composing $\Phi = \varphi \circ d$ we get a map $\Phi\colon \Def(M,\calT) \to \matC^c$ that sends the complete solution $u=0$ to $(0,\ldots,0)$. We prove that $\Phi$ is differentiable and $d\Phi_0$ is invertible: this will conclude the proof. When $u_j, v_j \neq 0$ we have
+$$p_ju_j + q_jv_j = 2\pi i$$
+and Proposition \ref{pq:explicit:prop} gives
+$$p_j = - 2 \pi \frac{\Re v_j}{\Im (\bar u_j v_j)}, \qquad q_j = 2 \pi \frac{\Re u_j}{\Im (\bar u_jv_j)}.$$
+Near $u=v=0$ we have $v_j \sim w_ju_j$ and hence
+$$p_j \sim - 2 \pi \frac{\Re w_j \Re u_j - \Im w_j \Im u_j}{|u_j|^2\Im w_j}, \qquad
+q_j \sim 2 \pi \frac{\Re u_j}{|u_j|^2\Im w_j}
+$$
+and therefore
+\begin{align*}
+\varphi_j & = 2\pi i \frac 1{p_j + q_jw_j} \sim i\frac{|u_j|^2 \Im w_j}{-\Re w_j \Re u_j + \Im w_j \Im u_j + w_j \Re u_j} \\
+& =
+i\frac{|u_j|^2 \Im w_j}{\Im w_j \Im u_j + i\Im w_j \Re u_j} 
+=
+i\frac{|u_j|^2 \Im w_j}{i \bar u_j \Im w_j} = u_j
+\end{align*}
+giving $d\Phi_0 = \id$. 
+\end{proof}
+
+If $M$ has a geometric decomposition $\calT$ into ideal tetrahedra, we can easily conclude the proof of Theorem \ref{DF:teo} as follows: the geometric ideal triangulation $\calT$ determines a complete solution $z^0 \in \Def(M,\calT)$, and by Proposition \ref{d:local:homeo:prop} the image of the generalised Dehn filling map $d\colon \Def(M,\calT) \to S^2\times \ldots \times S^2$ is an open set $U$ containing $(\infty, \ldots, \infty)$. The discussion in Section \ref{generalized:DF:subsection} finishes the proof.
+
+However, we still do not know if every complete cusped finite-volume $M$ decomposes into ideal tetrahedra! If that were the case, we would be done. Unfortunately we are not able to prove this, so more effort is needed to complete the proof.
+
+\subsection{Triangulations with flat tetrahedra}
+As we said, we are not able to prove that every cusped finite-volume $M$ decomposes into ideal tetrahedra. The best that we can do is to show that $M$ decomposes into ideal tetrahedra that are either ordinary or ``flat'', that is degenerated to an ideal quadrilateral. We show this using the Epstein--Penner canonical decomposition.
+
+The Epstein-Penner canonical decomposition (see Theorem \ref{EP:teo}) partitions $M$ into some ideal polyhedra $P_1,\ldots, P_k$, glued isometrically along their faces. Can we further subdivide this partition to get a geometric triangulation of $M$? We start by triangulating each $P_i$ individually.
+
+\begin{prop} \label{poly:tetra:prop}
+Every ideal polyhedron $P\subset \matH^3$ subdivides into ideal tetrahedra.
+\end{prop}
+\begin{proof}
+We can use the Klein model, so that ideal polyhedra in $\matH^3$ correspond to Euclidean polyhedra with vertices in $S^2$. We fix a vertex $v\in P$, and a vertex $v_i$ in every face $f_i$ of $P$ not incident to $P$. We triangulate each $f_i$ by coning along $v_i$, and then we triangulate $P$ by coning all the triangulated faces $f_i$ along $v$.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{layered-BW}{layered}} 
+\nota{The triangulations of two isometric faces that do not match (left) because they are obtained by coning along distinct vertices $v\neq v'$ (centre). We can add some additional ``flat'' tetrahedra to correct this (right).}
+\label{layered:fig}
+\end{center}
+\end{figure}
+
+The problem is, that we are not able to guarantee that the triangulations of the polyhedra $P_1,\ldots, P_k$ match at each pair of glued faces. The typical situation is shown in Figure \ref{layered:fig}-(left): two isometric $n$-gons (with $n\geqslant 4$) are triangulated by coning on distinct vertices $v\neq v'$.
+
+There is one thing that we can do, however: we can insert some \emph{flat} tetrahedra between the two $n$-gons that connect the two mismatching triangulations as in Figure \ref{layered:fig}-(right), and obtain a partially-flat ideal triangulation of $M$. The flat tetrahedra can be inserted as follows: if $v$ and $v'$ share an edge we insert $n-3$ flat tetrahedra as suggested by Figure \ref{layered:fig}-(right); otherwise, the diagonal joining $v$ and $v'$ is common to both triangulations and we proceed inductively on each of the two sub-polygons cut by this diagonal. 
+
+The resulting ideal triangulation $\calT$ contains $n$ tetrahedra $\Delta_1,\ldots, \Delta_n$; each $\Delta_i$ is either \emph{fat} (it lies inside some polyhedron $P_j$) or \emph{flat} (it connects two faces of the $P_j$). We now fix arbitrarily a pair of opposite edges in each $\Delta_i$ and denote by $z_i\in \matC$ the modulus of $\Delta_i$ at these edges. If $\Delta_i$ is fat, then $\Im z_i>0$ as usual; if $\Delta_i$ is flat, the modulus $z_i$ still makes sense as a number in $\matR\setminus\{0,1\}$:
+the vertex triangle of Figure \ref{tetraedro2:fig}-(left) is a degenerated flat triangle with three vertices $0,1,z_i$. The flat tetrahedron has three real moduli $z_i, \frac{z_i-1}{z_i}, \frac 1{1-z_i}$; two arguments are $0$ and one is $\pi$.
+
+We set $z^0 = (z_1,\ldots, z_n)$. By construction, the point $z^0$ satisfies the consistency equations (\ref{gi:eqn}). 
+
+\subsection{Perturbations}
+We now let $U$ be a small contractible neighbourhood of $z^0$ in $(\matC \setminus \{0,1\})^n$. Note that $U$ necessarily contains some points $z$ with $\Im z_i <0$ for some $i$. The consistency equations (\ref{gi:eqn}) make sense in $U$, and we define $\Def_U \subset U$ to be the set of solutions. We still have $\Def_U = G^{-1}(2\pi i, \ldots, 2\pi i)$.
+
+Does a solution $z\in \Def_U$ determine a hyperbolic structure on $M$? Intuitively, each modulus $z_j$ with $\Im z_j=0$ should represent a flat tetrahedron, each $z_j$ with $\Im z_j <0$ a negatively oriented fat tetrahedron, and positively and negatively oriented tetrahedra should overlap; although appealing, it is however hard (and sometimes impossible) to translate this idea into a concrete definition in general.
+
+Our aim is to prove Theorem \ref{DF:teo} by perturbing $z^0$, so we only need here to furnish a geometric interpretation for the solutions $z$ that lie in a sufficiently small neighbourhood $U$. We do this as follows. 
+
+If $z$ is sufficiently close to $z^0$, all the fat tetrahedra that triangulate a single polyhedron $P_i$ stay positively fat, and since they satisfy the consistency equations along the internal edges of $P_i$ they glue to form a possibly non-convex polyhedron $P_i(z)\subset \matH^3$. The original faces of $P_i$ are now bent in $P_i(z)$ along their diagonals.
+
+We now consider the originally flat tetrahedra joining two faces of two polyhedra $P_i(z)$ and $P_j(z)$. We assign all of them to one of the two polyhedra, say $P_i(z)$, and forget about $P_j(z)$. These tetrahedra are attached to some $n$-gonal face $f$ of $P_i(z)$, bent along its diagonals. The effect of each attached tetrahedron $\Delta_j$ is to flip a diagonal, and we modify $P_i(z)$ accordingly by replacing the two ideal triangles in $f$ incident to the old diagonal with the two triangles sharing the new one. Geometrically, this corresponds to adding $\Delta_j$ if $\Im z_i >0$, or to cut $\Delta_j$ away from $P_j(z)$ is $\Im z_j <0$. At the end of the process, we get a new polyhedron $P_j'(z)$ with the same vertices as $P_j(z)$, whose faces are bent along different diagonals.
+
+The new possibly non-convex polyhedra $P_j'(z)$ glue isometrically along their paired faces, that are now bent along the same diagonals. The consistency equations are satisfied along these diagonals, hence we get a hyperbolic structure for $M$. We summarise our discoveries:
+
+\begin{prop}
+If $U$ is sufficiently small, every solution $z \in \Def_U$ represents naturally a hyperbolic structure on $M$.
+\end{prop}
+
+\subsection{Local smoothness}
+We have seen that every solution $z$ that is sufficiently close to $z^0$ determines a hyperbolic metric on $M$. We now need to extend Corollary \ref{smooth:cor}. 
+
+\begin{prop} \label{smooth:flat:prop}
+If $U$ is sufficiently small then $\Def_U$ is a complex manifold of dimension $c$.
+\end{prop}
+\begin{proof}
+As in Corollary \ref{smooth:cor}, it suffices to prove that $dG_{z^0}\colon V^n \to \ker B'$ has maximum rank and is hence invertible.
+
+The only place where we used $\Im z_j >0$ is the proof of Proposition \ref{Choi:prop}, and we now modify it so that it applies also to our partially flat solution $z^0$. We have $M = Z^\intercal (A')^\intercal$ and we need to prove that $\rk M = \rk A' = n-c$.
+
+We needed $z_i \not \in \matR$ to prove that $Z^\intercal|_{\matR^{2n}}$ is injective: this is not the case here, since $\frac 1{z_i}$ and $\frac 1{z_i-1}$ are not $\matR$-independent when $\Delta_i$ is flat. Now we have
+$$\ker Z^\intercal |_{\matR^{2n}} = \Span \{ z_ie_i +(1-z_i)e_{i+n}\ | \ \Delta_i\ {\rm is\ flat} \}.$$
+For $\matK=\matR, \matC$ we write 
+$$\matK^{2n} = \matK^{2n}_{\rm fat} \oplus \matK^{2n}_{\rm flat}, \qquad \matK^n = \matK^n_{\rm fat} \oplus \matK^n_{\rm flat}$$
+where $\matK^{2n}_{\rm fat}$ ($\matK^{2n}_{\rm flat}$) is generated by the $e_i, e_{i+n}$ such that $\Delta_i$ is fat (flat), and similarly $\matK^{n}_{\rm fat}$ ($\matK^{n}_{\rm flat}$) is generated by the $e_i$ such that $\Delta_i$ is fat (flat).
+
+The following restriction of $Z^\intercal$ is still an isomorphism:
+$$Z^\intercal|_{\matR^{2n}_{\rm fat}}\colon \matR^{2n}_{\rm fat}
+\longrightarrow \matC^n_{\rm fat}.$$
+We use it to push-forward $\omega$ to a symplectic form $\Omega$ on $\matC^n_{\rm fat}$, and we extend it trivially to an alternating bilinear form $\Omega$ on $\matC^n$ with radical $\matC^n_{\rm flat}$.
+
+It is still true that $M(\matR^{2n})$ has real dimension $n-c$, because $(A')^\intercal(\matR^{2n})$ intersects $\ker Z^\intercal$ trivially. To prove this, suppose that a vector $v'\in\matR^{2n}$ that is $\matR$-generated by the rows of $A'$ lies in the kernel of $Z^\intercal$, that is:
+\begin{itemize}
+\item $(v_i', v_{i+n}')=(0,0)$ for every fat $\Delta_i$,
+\item $(v_i',v_{i+n}') = k_i(z_i, 1-z_i)$ for some $k_i \in \matR$, for every flat $\Delta_i$. 
+\end{itemize}
+We define $v \in \matR^{3n}$ by setting
+$$v_i = v'_i, \quad v_{n+i} = - v'_{n+i}, \quad, v_{2n+i} = 0$$
+for all $i=0,\ldots, n-1$. We note that each triple $(v_i, v_{n+i}, v_{2n+i})$ is either $(0,0,0)$, or it contains three pairwise distinct real numbers. The vector $v' \in\matR^{2n}$ is generated by the $n$ rows of $A'$ $\Longleftrightarrow$ the vector $v\in\matR^{3n}$ is generated by the $n$ rows of $A$ (exercise). 
+
+We interpret $v$ as a colouring of the $3n$ edge pairs in $\calT$. The colouring $v$ is everywhere zero on all fat tetrahedra, and on each flat tetrahedron it is either $(0,0,0)$ or consists of three pairwise distinct numbers. We must prove that it is zero everywhere.
+
+The vector $v$ is contained in the lagrangian subspace generated by the rows $A_1,\ldots, A_{2n}$ of $A$. In particular we have $\omega(v,A_{n+i})=0$ for all $i$. Every row $A_{n+i}$ corresponds to an edge $e$ of $\calT$, and this equality says that the colours on all tetrahedra incident to $e$ of the edge pairs not containing $e$ sum to zero, provided that they are counted with signs in each tetrahedron. This implies the following: if all such tetrahedra except one $\Delta_j$ have colour zero on all their edge pairs, then two edge pairs on $\Delta_j$ have the same colours, and by what just said on $v$ this implies that all colours are zero also on $\Delta_j$. 
+
+Consider a sequence $\Delta_1, \ldots, \Delta_k$ of flat tetrahedra that connects two faces of two polyhedra $P_i$ and $P_j$ of the Epstein-Penner decomposition. There is one edge of $\Delta_1$ that is incident only to fat tetrahedra except $\Delta_1$, and the above discussion implies that all the colours on $\Delta_1$ are zero; by induction we deduce that all the flat $\Delta_i$ have zero colours. Therefore $v=0$, as required.
+
+We have proved that $\dim M(\matR^{2n}) = n-c$, and we conclude as in the proof of Proposition \ref{Choi:prop}. The form $\Omega$ defines a positive semidefinite scalar product $\langle, \rangle$ on $\matC^n$ with radical $\matC^n_{\rm flat}$. If $\rk M < n-c$, there are two vectors $v_1,v_2\in \matR^n$ such that $M(v_1+iv_2) = 0$ while $Mv_1 \neq 0$ and $Mv_2 \neq 0$. We get $\|Mv_1\| = \|Mv_2\| = 0$ as in the proof of Proposition \ref{Choi:prop}, and this implies that $Mv_1, Mv_2$ both lie in the radical $\matC^n_{\rm flat}$.
+
+If $Mv_1, Mv_2 \in \matC^n_{\rm flat}$ then both $Mv_1$ and $Mv_2$ are real since $\frac 1{z_i}, \frac{1}{z_i-1} \in \matR$ for every flat $\Delta_i$. Now $0 = M(v_1+iv_2) = Mv_1 + iMv_2$ implies that $Mv_1 = Mv_2 = 0$, a contradiction.
+\end{proof}
+
+\subsection{Conclusion of the proof}
+The proof of Theorem \ref{DF:teo} finishes like in the geometric triangulation case.
+All the discussion of Section \ref{holonomy:subsection} applies here: the holonomies are defined also in this context and may be used to parametrize the complex manifold $U(z^0)$. The strategy of Section \ref{near:complete:subsection} is still valid: the generalised Dehn filling invariant map $d$ sends $U(z^0)$ to an open neighbourhood of $(\infty,\ldots, \infty)$ in $S^2\times \ldots \times S^2$ and the discussion in Section \ref{generalized:DF:subsection} finishes the proof.
+We have completed the proof of Theorem \ref{DF:teo}.
+
+\subsection{Mostow--Prasad rigidity}
+We can use the Dehn filling Theorem \ref{DF:teo} to extend Mostow Rigidity Theorem \ref{Mostow:teo} from the closed to the cusped case. The cusped case was proved by Prasad in 1973, hence the theorem is known as \emph{Mostow--Prasad Rigidity Theorem}.\index{Mostow--Prasad rigidity theorem}
+
+Let $N$ a be compact orientable three-manifold bounded by some $c\geqslant 0$ tori, and let $M=\interior N$.
+
+\begin{teo}[Mostow--Prasad rigidity]
+The manifold $M$ admits at most one finite-volume complete hyperbolic metric up to isometries homotopic to the identity.
+\end{teo}
+\begin{proof}
+The $c=0$ case is Theorem \ref{Mostow:teo}, so we suppose $c>1$. Roughly, the metric on $M$ is unique because it is the limit of hyperbolic metrics on its closed Dehn fillings, that are unique by Theorem \ref{Mostow:teo}. (We are using the hyperbolic Dehn filling theorem as a trick to extend Mostow's rigidity from the closed to the cusped case: this is certainly not Prasad's original proof, that was published before any hyperbolic Dehn filling was studied, and more importantly it applies to all dimensions $n\geqslant 3$.)
+
+More precisely, let $M$ have two finite-volume hyperbolic metrics $m_1$ and $m_2$. The Dehn filling Theorem holds for both, and yields sequences $M_i^j$ of closed hyperbolic three-manifolds obtained from $M$ by Dehn filling with parameter $s^j$ such that  $s^j \to (\infty, \ldots, \infty)$, for $i=1,2$.
+
+Mostow theorem furnishes an isometry $M_1^j \to M_2^j$ homotopic to the identity. The core closed geodesics of the filling solid tori are unique in their homotopy classes, hence by removing them we get isometric incomplete metrics. Since $m_1$ and $m_2$ are limits of these, they are also isometric.
+
+This latter sentence can be made rigorous as follows: let $\calT$ be a partially flat ideal triangulation for $M$ in the metric $m_1$. Pick an ideal tetrahedron $\Delta$ in $\calT$ and note that it can be straightened uniquely also in the incomplete metrics for $M$ close to the complete ones, just by extending the construction in the proof of Proposition \ref{straighten:incomplete:prop} from dimension two to three (an orientation of the core geodesics is needed to define the straightening unambiguously). The modulus $z\in \matC_{>0} \cup (\matR \setminus \{0,1\})$ of the straightened $\Delta$ in $M$ is intrinsically determined as the limit of the moduli of the straightenings of $\Delta$ in the $M_i^j$, hence it is the same for both metrics $m_1$ and $m_2$. It follows that $m_2$ has the same geometric ideal decomposition of $m_1$, and hence $m_1=m_2$ after a homotopy. 
+\end{proof}
+
+\section{Volumes}
+We have discovered that ``most'' Dehn fillings of a cusped finite-volume hyperbolic manifold are hyperbolic, and we now discuss their volumes.
+
+Let $M$ be a complete orientable finite-volume cusped hyperbolic three-manifold. We say that  a Dehn filling of $M$ is \emph{non-trivial} if it fills at least one boundary torus; in other words, it is determined by some Dehn filling parameter $s$ different from $(\infty, \ldots, \infty)$, after fixing some arbitrary homology bases for the boundary tori. We prove in this section the following theorem. 
+
+\begin{teo} \label{vol:vol:teo}
+If a non-trivial Dehn filling $M^{\rm fill}$ of $M$ admits a complete finite-volume hyperbolic metric, then
+$$\Vol(M^{\rm fill}) < \Vol(M).$$
+If $s^i$ is any sequence of non-trivial Dehn filling parameters converging to $(\infty,\ldots, \infty)$, and $M^i$ is the manifold obtained by filling $M$ along $s^i$, then $M^i$ is eventually hyperbolic and
+$$\Vol (M^i) \nearrow \Vol(M).$$
+The cores of the filling solid tori are eventually simple closed geodesics and their lengths tend to zero.
+\end{teo}
+
+We already know that if $s^i \to (\infty, \ldots, \infty)$ then $\Vol(M^i) \to \Vol(M)$ and the cores of the solid tori are closed geodesics whose length tend to zero: this follows from the construction of the metric on $M^i$ via geometric ideal triangulations. In some sense (that we will not make precise), the metric on $M^i$ converges to that of $M$, and the core geodesics become so short that they disappear in the limit opening the filling solid torus to a cusp.
+
+The only new fact to prove is that the volume strictly decreases under \emph{any} Dehn filling $M^{\rm fill}$, not only those that are close to $(\infty, \ldots, \infty)$: this is rather subtle, because the hyperbolic metric on $M^{\rm fill}$ might not be obtained by completing ideal triangulations of $M$. (For instance, the core tori in $M^{\rm fill}$ may not be isotopic to closed geodesics.)
+
+We prove the theorem as follows. We first consider the case where $M$ has an ideal geometric triangulation $\calT$: in that case $\Def(M,\calT)$ is a nice smooth complex manifold and we investigate the volume function 
+$$\Vol\colon \Def(M,\calT) \longrightarrow \matR_{>0}$$
+that computes the volume of each hyperbolic structure on $M$. We show that the volume function makes sense in a bigger convex set containing $\Def(M,\calT)$ and is also easier to study there. This bigger convex set is the set of \emph{angle structures} on $\calT$. We prove that the volume function is strictly concave there, and the complete solution is a global maximum.\index{angle structure} 
+
+We conclude with a couple of finite-covering tricks to pass from local (near $(\infty, \ldots, \infty)$) to global, and to deal with more general manifolds $M$ that do not decompose into hyperbolic ideal tetrahedra.
+
+\subsection{Angle structures}
+Let $M= \interior{N}$ where $N$ is an orientable compact three-manifold bounded by $c>0$ tori, equipped with an oriented ideal triangulation $\calT$ with $n$ tetrahedra $\Delta_1,\ldots, \Delta_n$ and $n$ edges $e_1,\ldots, e_n$. We identify orientation-preservingly each $\Delta_i$ with the one shown in Figure \ref{tetrahedron_labels:fig}, and we label the edge pairs of type 1, 2, 3, with the numbers $i$, $i+n$, and $i+2n$ respectively.
+
+An \emph{angle structure} $\theta$ on $M$ is the assignment of an \emph{angle} $0< \theta_j < \pi$ to the $j$-th edge pair in $\calT$, with the following requirements:
+\begin{enumerate}
+\item at each tetrahedron $\Delta_i$ we have $\theta_i + \theta_{i+n} + \theta_{i+2n} = \pi$,
+\item at each edge $e_i$, the sum of the incident angles is $2\pi$.
+\end{enumerate}
+The set of angle structures is thus a subset $\calA \subset \matR_{>0}^{3n}$. It is the intersection of the affine subspace in $\matR^{3n}$ determined by the conditions (1) and (2) with the cone $\matR_{>0}^{3n}$, so in particular it is convex. By definition this affine subspace is the solution space of the linear system
+$$A\theta = \begin{pmatrix} \pi \\ 2\pi \end{pmatrix}$$
+where $A$ is the incidence $2n \times 3n$ defined in Section \ref{incidence:matrices:subsection} and depicted in Figure \ref{ABmatrices:fig}-(left), and $\theta = (\theta_1, \ldots, \theta_{3n})\in \matR^{3n}$.
+
+What is the geometric meaning of an angle structure $\theta$ on $\calT$? Thanks to condition (1), every $\Delta_i$ is realised by a unique ideal hyperbolic tetrahedron with dihedral angles $\theta_i, \theta_{i+n}$, and $\theta_{i+2n}$ whose complex modulus is
+\begin{equation} \label{theta:z:eqn}
+z_i = \frac{\sin \theta_{i+n}}{\sin \theta_{i+2n}}e^{i\theta_i}.
+\end{equation}
+Angle structures are then in natural 1-1 correspondence with the realisations of the tetrahedra $\Delta_1,\dots, \Delta_n$ as ideal hyperbolic tetrahedra, with the mild condition (2) that their dihedral angles around each edge $e_i$ must sum to $2\pi$. 
+
+Condition (2) is only ``half'' of the consistency equation at each $e_i$, which requires the product of the complex moduli to be 1: condition (2) alone does \emph{not} guarantee that by gluing these tetrahedra we get a hyperbolic structure on $M$: some ``shearing'' may arise when you turn around an edge $e_i$.
+
+With this geometric description, the deformation space $\Def(M,\calT)$ is naturally a smooth submanifold of $\calA$. 
+
+\subsection{Dimensions}
+We will henceforth suppose that $\Def(M,\calT)$ is non-empty and contains a complete solution $z^0$, that is $\calT$ can be realised as a geometric ideal triangulation. This implies in particular that $\calA$ is also non-empty and has dimension $\dim\ker A = 3n - (2n-c) =n+c$ by Corollary \ref{rk:A:cor}. The space $\Def(M,\calT)$ is a real smooth submanifold of dimension $2c$. 
+
+The tangent space $T_\theta\calA$ at any point $\theta\in\calA$ is of course $\ker A$. We now construct an explicit set of generators for $\ker A$. Recall from Section \ref{boundary:curves:subsection} that every simplicial closed oriented curve $\gamma$ in a triangulated boundary torus $T_i$ defines an integer vector $v_\gamma \in \matR^{3n}$. 
+
+Recall the alternating form $\omega$ on $\matR^{3n}$ from Section \ref{symplectic:form:subsection}: we consider it as a matrix and write $v^* = \omega v$ for all $v\in \matR^{3n}$, so that $\omega(v,w) = \langle v, w^* \rangle$ where $\langle, \rangle$ is the Euclidean scalar product. We denote by $A_i$ the $i$-th row of $A$, considered as a vector in $\matR^{3n}$.
+
+We fix two arbitrary generators $m_i, l_i$ of $\pi_1(T_i)$ for all $i=1,\ldots, c$.
+
+\begin{prop} \label{redundant:generators:prop}
+The tangent space $T_\theta \calA = \ker A$ is generated by the (not independent) $n+2c$ vectors
+$A_{n+1}^*,\ldots, A_{2n}^*, v_{m_1}^*, v_{l_1}^*, \ldots, v_{m_c}^*, v_{l_c}^*$.
+\end{prop}
+\begin{proof}
+Propositions \ref{rows:lagrangian:prop} and \ref{A:gamma:gamma':prop} say that the rows of $A$ are $\omega$-orthogonal to themselves and to $v_\gamma$ for any $\gamma$, hence they are $\langle, \rangle$-orthogonal to all vectors $A_i^*$ and $v_\gamma^*$, in other words $A_i^*, v_\gamma^* \in \ker A$.
+
+To prove that the $n+2c$ listed vectors generate $\ker A$ it suffices to show that they span a subspace of dimension $n+c$. Proposition \ref{A:bar:lagrangian:prop} says that if we add the rows $v_{m_1}, \ldots, v_{m_c}$ to $A$ we get a rank-$2n$ matrix. The same proof shows that by further adding the rows $v_{l_1},\ldots, v_{l_c}$ we get a rank-$(2n+c)$ matrix. 
+
+The vectors $A_1,\ldots, A_{2n},v_{m_1}, v_{l_1}, \ldots, v_{m_c}, v_{l_c}$  span a dimension-$(2n+c)$ space. Since $\dim \ker \omega = n$, the vectors $A_1^*,\ldots, A_{2n}^*,v_{m_1}^*, v_{l_1}^*, \ldots, v_{m_c}^*, v_{l_c}^*$ span a space of dimension at least $2n+c-n = n+c$. Since $A_1^* = \ldots = A_n^* = 0$, we are done.
+\end{proof}
+
+\subsection{The volume function}
+The volume function on $\Def(M,\calT)$ extends naturally to a function
+$$\Vol\colon \calA \longrightarrow \matR_{>0}$$
+which assigns to each angle structure $\theta$ the sum of the volumes of the ideal hyperbolic realisations of $\Delta_1,\ldots, \Delta_n$ determined by $\theta$. 
+Recall from Section \ref{volume:tetrahedra:section} that the volume of $\Delta_i$ is
+$$\Vol(\Delta_i) = \Lambda(\theta_i) + \Lambda(\theta_{i+n}) + \Lambda(\theta_{i+2n})$$
+where $\Lambda$ is the Lobachevsky function
+$$\Lambda(\alpha) = -\int_0^\alpha \log |2\sin t| dt.$$
+We therefore get a simple-looking formula
+$$\Vol(\theta) = \sum_{j=1}^{3n} \Lambda(\theta_j)$$
+which implies immediately the following important fact.
+
+\begin{prop} \label{derivative:Vol:prop}
+For every $\theta \in \calA$ and $v\in T_\theta  \calA$ we have 
+$$\frac{\partial \Vol}{\partial v} = \sum_{j=1}^{3n} -v_j \log \sin \theta_j, \qquad 
+\frac{\partial^2 \Vol}{\partial v^2} < 0.$$
+\end{prop}
+\begin{proof}
+We consider a single addendum $\Lambda(\theta_j)$ of $\Vol(\theta)$. We have
+$$\frac{\partial \Lambda(\theta_j)}{\partial v} = 
+\Lambda'(\theta_j) \frac{\partial \theta_j}{\partial v}
+= - \log |2\sin \theta_j| v_j = -v_j\log 2 - v_j\log\sin \theta_j. $$
+Since $v\in T_\theta \calA$ we have $v_i+v_{i+n}+v_{i+2n}=0$ for all $i$ and hence $\sum_j v_j\sin 2=0$. This proves the first equality. To estimate the second derivative, we may suppose up to symmetries that $\theta_i, \theta_{i+n} < \frac \pi 2$ and we get
+\begin{align*}
+-\frac {\partial^2 \Vol(\Delta_i)}{\partial v^2} 
+& = v_i^2 \cot \theta_i + v_{i+n}^2 \cot \theta_{i+n} + v_{i+2n}^2 \cot \theta_{i+2n} \\
+& = v_i^2 \cot \theta_i + v_{i+n}^2 \cot \theta_{i+n} + 
+(v_i+v_{i+n})^2 \frac{1-\cot \theta_i\cot\theta_{i+n}}{\cot \theta_i + \cot \theta_{i+n}} \\
+& = \frac{(v_i+v_{i+n})^2 + (v_i\cot\theta_i - v_{i+n}\cot\theta_{i+n})^2}
+{\cot \theta_i + \cot \theta_{i+n}} > 0.
+\end{align*}
+Indeed the denominator is positive since $\theta_i, \theta_{i+n} < \frac \pi 2$, and if the numerator is zero we get $v_i=-v_{i+n}$ and hence $\cot \theta_i = -\cot \theta_{i+n}$, a contradiction.
+\end{proof}
+
+We have discovered that $\Vol$ is a smooth strictly concave function on $\calA$. 
+
+\subsection{The complete solution}
+We now remember that $\Def(M,\calT)$ contains a complete solution $z^0$ by assumption.
+
+\begin{prop} \label{Vol:maximum:prop}
+The function $\Vol\colon \calA \to \matR_{>0}$ has a unique global maximum at the complete solution $z^0$.
+\end{prop}
+\begin{proof}
+The complete solution $z^0$ has an angle structure $\theta$. Proposition \ref{derivative:Vol:prop} says that
+$$\frac{\partial \Vol}{\partial v} = \sum_{j=1}^{3n} -v_j \log \sin \theta_j$$
+for all $v\in T_{\theta}\calA$. At every edge $e_i$, the consistency equation is of type $\sum_j \log w_j = 2\pi i$ where $w_1,\ldots, w_k$ are the moduli of the incident tetrahedra. The imaginary part of this equation is satisfied at every point of $\calA$, so we look at the real part and using (\ref{theta:z:eqn}) we discover that 
+$$0 = \Re \sum_j \log w_j = \sum_j \log |w_j| = \sum_j \big(\log \sin \alpha_{j}^1 - \log \sin \alpha_j^2\big) $$
+where $\alpha_j^1$ and $\alpha_j^2$ are the other two angles in the tetrahedron with modulus $w_j$, in counterclockwise order. The latter expression is in fact equivalent to 
+$$-\sum_{j=1}^{3n} (A_{n+i}^*)_j\log\sin \theta_j = \frac{\partial \Vol}{\partial A_{n+i}^*}$$
+which is hence zero for all $i=1,\ldots, n$.
+
+We make some analogous considerations for the completeness equations. Since $z^0$ is complete, for every simplicial boundary curve $\gamma$ we have $\sum_j \log w_j = |\gamma|\pi i$ where $w_1,\ldots, w_k$ are the moduli encountered by $\gamma$ at its right, and the real part of this equation implies that $\frac{\partial \Vol}{\partial v_\gamma^*} = 0$.
+
+Proposition \ref{redundant:generators:prop} shows that vectors of type $A_{n+i}^*$ and $v_\gamma^*$ generate $T_{\theta}\calA$, hence the gradient of $\Vol$ vanishes at $\theta$. Since $\Vol$ is strictly concave, this critical point is the unique global maximum.
+\end{proof}
+
+\begin{cor}
+The space $\Def(M,\calT)$ contains at most one complete solution.
+\end{cor}
+
+\subsection{Volumes and Dehn filling}
+We can now prove Theorem \ref{vol:vol:teo} on manifolds having a geometric ideal triangulation. We start with a ``local'' version which also considers generalised Dehn fillings, see Section \ref{generalised:subsection}.
+
+\begin{lemma} \label{U:lemma}
+If $M$ has a geometric ideal triangulation, there is a neighbourhood $U$ of $(\infty,\ldots, \infty)$ such that $\Vol(M^{\rm fill})< \Vol(M)$ for every non-trivial generalised Dehn filling parameter $s\in U$. Moreover $\Vol(M^{\rm fill}) \nearrow \Vol(M)$ as $s$ tends to $(\infty, \ldots, \infty)$.
+\end{lemma}
+\begin{proof}
+The Dehn Filling Theorem \ref{DF:teo} says that all Dehn fillings in an open neighbourhood $U$ of $(\infty,\ldots,\infty)$ are hyperbolic and constructed by completing solutions in $\Def(M,\calT)$, and they have smaller volume than $M$ in virtue of Proposition \ref{Vol:maximum:prop}. (The completion adds a circle to $M$ which does not contribute to the volume.)
+
+The volume of $M^{\rm fill}$ depends smoothly on $s\in U$ and has a global maximum at $(\infty,\ldots,\infty)$. In particular, when $s\to (\infty, \ldots, \infty)$ we get $\Vol(M^{\rm fill}) \to \Vol(M)$ from below.
+\end{proof}
+
+We now need to drop the open set $U$ and prove that volume decreases under \emph{any} Dehn filling of $M$. 
+
+\begin{lemma} \label{strict:everywhere:lemma}
+Let $M$ have a geometric ideal triangulation. If a non-trivial Dehn filling $M^{\rm fill}$ admits a complete finite-volume hyperbolic metric, then $\Vol(M^{\rm fill}) < \Vol(M)$.
+\end{lemma}
+\begin{proof}
+Let $s=(s_1,\ldots, s_c)$ be the Dehn filling parameter giving $M^{\rm fill}$ and let
+$U$ be the open neighbourhood of $(\infty,\ldots, \infty)$ furnished by Lemma \ref{U:lemma}. For sufficiently big integer $k>0$ we have $ks \in U$ and hence $M^{\rm fill}$ also admits a hyperbolic metric with cone angles $\frac{2\pi}k$ on the core geodesics of the filling solid tori, with volume strictly smaller than $\Vol(M)$. We may interpret this metric as a hyperbolic orbifold $O$, and we have $\Vol(O)<\Vol(M)$.
+
+If $M^{\rm fill}$ is closed Proposition \ref{Vol:M:O:prop} gives $\Vol(M) > \Vol(O) \geqslant v_3\|M^{\rm fill}\| = \Vol(M^{\rm fill})$ and we are done.
+
+If $M^{\rm fill}$ is not closed, we can find some closed fillings of $M^{\rm fill}$ with volume arbitrarily close to $\Vol(O)$ that can be interpreted as orbifolds, and get $\Vol(O)\geqslant \Vol(M^{\rm fill})$ as a limit.
+\end{proof}
+
+The proof of Lemma \ref{strict:everywhere:lemma} shows also the following.
+\begin{lemma} \label{closed:decreases:lemma}
+Let $M$ have a geometric ideal triangulation. We have $v_3\|M^{\rm fill}\| < \Vol(M)$ for every closed Dehn filling $M^{\rm fill}$ of $M$.
+\end{lemma}
+
+We prove a lemma that will be useful below.
+\begin{lemma} 
+Let $M$ have a geometric ideal triangulation. If $M_i$ is a hyperbolic Dehn filling of $M$ with parameter $s^i$ and $\Vol(M_i) \to \Vol(M)$, then $s^i \to (\infty,\ldots, \infty)$.
+\end{lemma}
+\begin{proof}
+We may suppose that the $M_i$ are closed, since every sequence of Dehn fillings can be approximated by a sequence of closed ones. If $s^i$ lies definitely in the open set $U$ furnished by Theorem \ref{DF:teo}, the assertion follows because the volume function there has $\Vol(M)$ as a unique maximum (thanks to Proposition \ref{Vol:maximum:prop}). 
+
+Otherwise, there is a fixed big $k\in\matN$ such that $ks^i\in U$ for all $i$, but $ks^i$ does not converge to $(\infty,\ldots, \infty)$. Therefore $M_i$ admits a hyperbolic orbifold structure $O_i$ with $\Vol(M) - \varepsilon > \Vol(O_i) $ and Proposition \ref{Vol:M:O:prop} gives $\Vol(M) -\varepsilon > \Vol(O) \geqslant v_3\|M_i\| = \Vol(M_i)$ for all $i$. 
+\end{proof}
+
+Again, the proof shows also the following.
+\begin{lemma} \label{sse:converge:lemma}
+Let $M$ have a geometric ideal triangulation. If $M_i$ is a closed Dehn filling of $M$ with parameter $s^i$ and $v_3\|M_i\| \to \Vol(M)$, then $s^i \to (\infty, \ldots, \infty)$.
+\end{lemma}
+
+To conclude the proof of Theorem \ref{vol:vol:teo} we only need to consider the unlucky case where $M$ has no geodesic ideal triangulations. We prove that geometric triangulations exist on some finite cover of $M$, and this will suffice.
+
+\subsection{Geometric triangulations exist virtually}
+We prove here the following.
+
+\begin{teo}
+Every cusped complete finite-volume three-manifold $M$ has a finite-sheeted cover $\tilde M$ that has a geometric ideal triangulation $\calT$.
+\end{teo}
+\begin{proof}
+The Epstein-Penner decomposition subdivides $M$ into ideal polyhedra $P_1,\ldots, P_k$. If distinct vertices of $P_i$ lie in distinct cusps of $M$ for all $i$, then the decomposition can be easily subdivided into an ideal triangulation: we order the cusps, so the vertices of each $P_i$ inherit an ordering which is preserved along the matching faces; we subdivide each $P_i$ as in the proof of Proposition \ref{poly:tetra:prop} by coning on the smallest vertex at each step: the triangulations on the paired faces match and we get a geometric ideal triangulation for $M$ itself.
+
+We now show that some cover $\tilde M$ has a decomposition of this type. The decomposition of $M$ into $P_1,\ldots, P_k$ lifts in any degree-$d$ cover $\tilde M$ to a decomposition of $\tilde M$ into $P_1^i, \ldots, P_k^i$ with $i=1,\ldots, d$. We now prove that there is a $\tilde M$ such that distinct vertices of $P_j^i$ lie in distinct cusps, for all $i,j$.
+
+To do so, we prove that for every pair of vertices $v \neq v'$ of some $P_i$ there is a covering where the lifts $\tilde v, \tilde v'$ in $P_i^j$ for some $j$ lie in distinct cusps. This is enough to conclude: pick a \emph{regular} covering $\tilde M$ that covers all these finitely many coverings; since its desk transformation group acts transitively on lifts, all distinct vertices on every $P_i^j$ lie in distinct cusps.
+
+We have $M=\matH^3/_\Gamma$. We fix an arbitrary lift $\tilde P_i \subset \matH^3$ of $P_i$. Two vertices $v \neq v'$ of $P_i$ lie in the same cusp $T$ $\Leftrightarrow$ there is a $\gamma \in \Gamma$ such that $\gamma(\tilde v) = \tilde v'$, where $\tilde v, \tilde v' \in \tilde P_i$ are the lifts of $v,v'$.
+The subgroup $\Stab_\Gamma(\tilde v) = \pi_1(T)$ is separable by Corollary \ref{separable:cor} and hence there is a finite-index $H< \Gamma$ that contains $\Stab_\Gamma(\tilde v)$ but avoids $\gamma$. 
+
+No element $\varphi\in H$ is such that $\varphi(\tilde v) = \tilde v'$, otherwise we would have $\gamma^{-1}\varphi \in \Stab_\Gamma(v) < H$ and hence $\gamma \in H$, a contradiction. We have constructed a finite-cover $\matH^3/_H$ where in some lift $P_i^j$ of $P_i$ the two lifted vertices $\tilde v,\tilde v'$ lie in distinct cusps.
+\end{proof}
+
+\subsection{Conclusion of the proof}
+We can finally prove Theorem \ref{vol:vol:teo}.
+
+\dimo{vol:vol:teo}
+Some degree-$d$ cover $\tilde M$ of $M$ has an ideal geometric triangulation, hence the theorem holds for $\tilde M$. 
+
+For every Dehn filling $M^{\rm fill}$ of $M$, there is a Dehn filling $\tilde M^{\rm fill}$ of $\tilde M$ such that the cover $\tilde M \to M$ extends to a degree-$d$ map $\tilde M^{\rm fill} \to M^{\rm fill}$. 
+
+If $M^{\rm fill}$ is closed hyperbolic, we have 
+$$d\Vol(M) =\Vol(\tilde M) > v_3\| (\tilde M^{\rm fill})\|  \geqslant dv_3\|M^{\rm fill}\| =d\Vol(M^{\rm fill}) $$
+using Lemma \ref{closed:decreases:lemma}, hence $\Vol(M) > \Vol(M^{\rm fill})$. 
+
+If $M^{\rm fill}$ is cusped hyperbolic, it can be approximated by closed hyperbolic fillings $M^{\rm fill}_i$, and there are closed fillings $\tilde M^{\rm fill}_i$ of $\tilde M^{\rm fill}$ with degree-$d$ maps $\tilde M^{\rm fill}_i \to M^{\rm fill}_i$.
+By Lemma \ref{sse:converge:lemma} there is an $\varepsilon > 0$ such that 
+$$\Vol(\tilde M) - \varepsilon > v_3\|\tilde M^{\rm fill}_i\| \geqslant d v_3\|M^{\rm fill}_i\| = d\Vol(M^{\rm fill}_i)$$
+for all $i$, hence $d\Vol(M) - \varepsilon = \Vol(\tilde M) - \varepsilon \geqslant d\Vol(M^{\rm fill})$. 
+\finedimo
+
+\subsection{Bounded volume}
+How many hyperbolic manifolds are there with bounded volume? In general, infinitely many. 
+
+We have just discovered that there are infinitely many hyperbolic manifolds with volume smaller than $2v_3 = 2.0298832128 \ldots$ because the figure-eight knot complement $M$ has $\Vol(M) = 2v_3$ and every hyperbolic Dehn filling of $M$ has volume smaller than $\Vol(M)$. Moreover, the volumes of the Dehn fillings of $M$ form an indiscrete set that tends to $2v_3$ from below.
+
+Theorem \ref{vol:vol:teo} shows that this is the typical situation: the hyperbolic Dehn filling produces infinite sequences of manifolds with bounded volume. Despite this variety of manifolds, we can still control topologically the hyperbolic manifolds having bounded volume, at least in principle.
+
+\begin{teo} \label{V:teo}
+For every $V>0$ there is a compact 3-manifold $N$ bounded by tori, such that every complete finite-volume orientable hyperbolic 3-manifold $M$ with $\Vol(M)<V$ is diffeomorphic to the interior of some Dehn filling of $N$.
+\end{teo}
+\begin{proof}
+This is a consequence of the thick-thin decomposition. Let $\varepsilon>0$ be a fixed Margulis constant: every complete finite-volume $M$ decomposes along disjoint embedded tori as $M=M^{\rm thick} \cup M^{\rm thin}$ where $M^{\rm thick}$ is compact and has injectivity radius $>\varepsilon$, and $M^{\rm thin}$ consists of truncated cusps and tube neighbourhoods of short geodesics. In particular $M$ is a Dehn filling of $M^{\rm thick}$.
+
+We now show that there are only finitely many possible diffeomorphism types for $M^{\rm thick}$ with volume $<V$. This concludes the proof: by Proposition \ref{LW:bordo:prop}
+every such diffeomorphism type is realised from a link $L\cup C\subset S^3$ by surgerying along $L$ and drilling along $C$; we take a disjoint union of all these links in $S^3$, and the complement of the resulting link in $S^3$ is our $N$.
+
+Let $X\subset M^{\rm thick}$ be a \emph{maximal $\frac{\varepsilon}2$-net}, that is a finite set of points that stay at pairwise distance $\geqslant \frac{\varepsilon}2$, such that every other point in $M^{\rm thick}$ stays at distance $< \frac {\varepsilon}2$ from $X$ ($X$ exists because $M^{\rm thick}$ is compact). The $\frac{\varepsilon}4$-balls centred at the points in $X$ are embedded and disjoint: hence $X$ has cardinality at most $C(V) = V/\Vol\big(B(x, \frac{\varepsilon}4)\big)$.
+
+The set $X$ determines a cellularisation of $M^{\rm thick}$ as follows. Lift $X$ to $\tilde X\subset \matH^3$, take the Voronoi tessellation (see Section \ref{Voronoi:subsection}) determined by $\tilde X$ and project it back to $M$: this furnishes a subdivision of $M^{\rm thick}$ into polyhedra. Since $X$ is maximal, every polyhedron has at most $C'(\varepsilon)$ faces with $C'$ depending only on $\varepsilon$. Hence there are finitely many combinatorial types of polyhedra, depending only on $\varepsilon$. With at most $C(V)$ of them we obtain only finitely many manifolds. (The proof of Proposition \ref{X:triangulation:prop} applies to polyhedra and shows that the combinatorial subdivision determines the smooth manifold.)
+\end{proof}
+
+\subsection{Volumes of hyperbolic three-manifolds}
+We finish this chapter by furnishing some qualitative information on the set of volumes of hyperbolic three-manifolds. We start with the following.
+
+\begin{prop}
+Let $M_i$ be a sequence of pairwise non-diffeomorphic complete orientable hyperbolic three-manifolds of uniformly bounded volume. After passing to a subsequence, we may suppose that there is a hyperbolic manifold $M$ such that each $M_i$ is a Dehn filling of $M$ with parameter $s^i\to (\infty, \ldots, \infty)$ . 
+\end{prop}
+\begin{proof}[Proof using geometrisation]
+We know from Theorem \ref{V:teo} that there is a manifold $N$ such that each $M_i$ is a Dehn filling of $N$ with parameter $s^i$. After passing to a subsequence, we may suppose that at each boundary torus $T_j$ of $N$ the slope $s^i_j$ is either constant or goes to infinity. Let $M$ be obtained from $N$ by Dehn filling the slopes that stay constant.
+
+If $M$ is hyperbolic, we are done. Unfortunately, this may not be the case, and we use geometrisation to solve this annoying possibility (the original proof of J\o rgensen and Thurston \cite{Th} does not need geometrisation and follows from a discussion on the geometric convergence of hyperbolic manifolds: we employ geometrisation only for simplicity). If $M$ is not prime, it contains some essential spheres that always bound balls in the filled $M_i$ and hence we may cut $M$ along them and cup off with balls (reducing the components of $\partial M$). Now $M$ is prime and its geometric decomposition must contain some hyperbolic block, otherwise $M$ would be a graph manifold and no Dehn filling of $M$ would be hyperbolic (it would be a graph manifold again). The tori of the decomposition of $M$ become compressible in $M_i$, so up to passing to a subsequence we may suppose that each $M_i$ is a Dehn filling of one fixed hyperbolic block of $M$. If $s_i$ does not tend to $(\infty, \ldots, \infty)$ in this new setting, we restart from the beginning and proceed by induction on the number of boundary components of $M$.
+\end{proof}
+
+\begin{cor}
+The set of volumes of all complete orientable hyperbolic three-manifolds is well-ordered. For every value $V$ there are only finitely many such manifolds with volume $V$.
+\end{cor}
+\begin{proof}
+Suppose that there is a sequence of manifolds $M_i$ with $\Vol(M_1) > \Vol (M_2) > \ldots $ By the previous proposition these are all obtained by Dehn filling the same hyperbolic $M$ with $s^i \to (\infty,\ldots,\infty)$, and Theorem \ref{vol:vol:teo} says they should converge to $\Vol(M)$ from below, a contradiction. The same argument show that there are finitely many manifolds of any fixed volume.
+\end{proof}
+
+We deduce that the volumes of all the complete orientable hyperbolic three-manifolds are indexed by countable ordinals. The volumes $v_1< v_2< \ldots, $ of the smallest closed manifolds converge to the volume $v_\omega$ of the smallest 1-cusped manifold; the volumes $v_\omega < v_{2\omega} < \ldots$ of the smallest 1-cusped manifolds converge to the volume $v_{\omega^2}$ of the smallest 2-cusped manifold, and so on. The set of all volumes has order type $\omega^\omega$, see Figure \ref{ordinal:fig}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {Omega-exp-omega-labeled} 
+\nota{The volumes of all the complete orientable hyperbolic three-manifolds form a well-ordered subset of $\matR$ of type $\omega^\omega$.}
+\label{ordinal:fig}
+\end{center}
+\end{figure}
+
+We can also deduce the following.
+
+\begin{cor}
+For every $V>0$ and $R>0$ there are only finite many closed hyperbolic three-manifolds $M$ with $\Vol(M)<V$ and $\inj(M)>R$.
+\end{cor}
+\begin{proof}
+On a sequence of closed hyperbolic three-manifolds with bounded volume, the length of some core geodesic tends to zero.
+\end{proof}
+
+
+\subsection{References}
+To furnish a complete proof of Thurston's Dehn filling Theorem we have patched together a number of different sources. The most relevant ones are as usual Thurston's notes \cite{Th}, Benedetti -- Petronio \cite{BP}, and Ratcliffe \cite{R}, together with Neumann -- Zagier \cite{NZ}. 
+
+Some arguments have been updated here in light of some new results that were discovered more recently by some authors. The list of non-exceptional slopes for the figure-eight knot and the Whitehead link can be found in Martelli -- Petronio \cite{MP}. The smoothness of the deformation space stated in Corollary \ref{smooth:cor} has been proved by Choi \cite{Ch} in 2004. Many of the arguments of this chapter, including all the discussion on angle structures, have been taken from a nice paper of Futer -- Gu\'eritaud \cite{FG}. The first complete proof of Thurson's Dehn filling Theorem, that takes care of the annoying case of triangulations with flat tetrahedra, is due to Petronio -- Porti \cite{PP}. We diverge from that proof in the last arguments, where we extend Choi's smoothness theorem to this partially flat context in Proposition \ref{smooth:flat:prop} (this proposition is probably the only original result of this book). The virtual existence of geometric triangulations was proved by Luo -- Schleimer -- Tillmann \cite{LST} in 2008.
+
+

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/np-b250-1985-465/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/np-b250-1985-465/blocks/prose-sec-018",
   "kind": "prose",
   "title": "Summary",
   "pageStart": 46,
   "pageEnd": 48,
   "text": "../sections/sec-018-15-summary.md",
-  "derivedFrom": "library/np-b250-1985-465/manifest",
-  "sourceDocument": "library/np-b250-1985-465/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
   "provenance": "ingested"
 }

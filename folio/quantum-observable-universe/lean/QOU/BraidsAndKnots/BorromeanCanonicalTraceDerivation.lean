@@ -42,8 +42,9 @@
   Cited (not re-proved) inputs, per the honest-gap discipline: the
   Wedderburn trace decomposition over the three irreps (Mathas §3.43 —
   the `QOU.Hecke.WedderburnDecomp` class axioms, §9.4 L-1/L-2 debt) and
-  the M1–M3 uniqueness of the Markov trace at fixed `z`
-  (`QOU.Hecke.markov_trace_unique_axiom`, [jones1987]).  Everything else
+  the M1–M3 uniqueness of the Markov trace at fixed `z` ([jones1987]; now the
+  sorry-free `QOU.Hecke.markov_trace_unique`, which needs (M3) as a hypothesis —
+  the former `markov_trace_unique_axiom` omitted (M3) and was false).  Everything else
   below is proved.
 
   The 2×2 layer uses a local `M2` structure (explicit entries) rather

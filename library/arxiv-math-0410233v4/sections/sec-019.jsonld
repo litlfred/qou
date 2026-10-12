@@ -1,19 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0410233v4/sections/sec-019",
   "@type": [
     "doco:Section"
   ],
-  "title": "Finding values for tube radius",
-  "pageStart": 39,
-  "pageEnd": 41,
+  "title": "Cusp shapes of hyperbolic knots",
+  "pageStart": 31,
+  "pageEnd": 31,
   "contains": [
-    "library/arxiv-math-0410233v4/blocks/prose-sec-019",
-    "library/arxiv-math-0410233v4/blocks/lem-sec-019-01",
-    "library/arxiv-math-0410233v4/blocks/thm-sec-019-02",
-    "library/arxiv-math-0410233v4/blocks/cor-sec-019-03"
+    "library/arxiv-math-0410233v4/blocks/prose-sec-019"
   ],
-  "derivedFrom": "library/arxiv-math-0410233v4/manifest",
-  "sourceDocument": "library/arxiv-math-0410233v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0410233v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0410233v4/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,18 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ki6c/sections/sec-024",
   "@type": [
     "doco:Section"
   ],
-  "title": "Arg (1 \u0000y) + 2\u0019",
-  "pageStart": 41,
-  "pageEnd": 43,
+  "title": "Curvature of the boundary of a convex domain in a plane",
+  "pageStart": 59,
+  "pageEnd": 70,
   "contains": [
-    "library/ki6c/blocks/prose-sec-024",
-    "library/ki6c/blocks/lem-sec-024-01",
-    "library/ki6c/blocks/lem-sec-024-02"
+    "library/ki6c/blocks/prose-sec-024"
   ],
-  "derivedFrom": "library/ki6c/manifest",
-  "sourceDocument": "library/ki6c/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -6,7 +6,11 @@
   "sha256": "4ff578cb3657e4a4d5990917131b99beb2bc69ef556bfc1ec387b0d3649123c1",
   "bytes": 403915,
   "pages": 21,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -126,6 +130,59 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 5,
-  "chars_total": 52855
+  "chars_total": 52855,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "sf.tex",
+   "tex_sections": 6,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-the-skyrme-faddeev-model-and-low-charge-solitons",
+     "title": "The Skyrme-Faddeev model and low charge solitons",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-rational-maps-torus-knots-and-links",
+     "title": "Rational maps, torus knots and links",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-higher-charge-solitons",
+     "title": "Higher charge solitons",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.906,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

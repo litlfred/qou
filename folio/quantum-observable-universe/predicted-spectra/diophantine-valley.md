@@ -2,10 +2,10 @@ The nuclear stability problem is a Diophantine problem on an algebraic curve. St
 
 **The stability cubic.**
 
-Substituting $t = A^{1/3}$ into the continuous stability condition $p^*(A) = a_A A / (2a_A + 2a_C A^{2/3})$ and clearing denominators yields the stability cubic:
+Substituting $t = A^{1/3}$ into the beta-stability line $p^*(A) = A/(2 + cA^{2/3})$ of [beta stability](#prop:beta-stability) and clearing denominators yields the stability cubic:
 
 $$
-  t^3 =  2p(1 + ct^2),
+  t^3 =  p(2 + ct^2),
   \qquad
   c = \frac{a_C}{2a_A}.
 $$
@@ -32,7 +32,7 @@ $$
   = 
   \frac{A^*(p)}{p} - 1
   = 
-  1 + 2c \cdot {A^*}^{2/3} + O(1/p)
+  1 + c \cdot {A^*}^{2/3}
 $$
 
 where $A^*(p)$ solves $p = A/(2 + cA^{2/3})$. The ratio $n/p$ is a slowly growing function of $p$. Its integer-part transitions occur at specific elements.
@@ -45,4 +45,4 @@ When the pairing correction lifts $\mathcal{S}$ from genus $0$ to genus $1$, the
 
 **Connection to the substrate parameter.**
 
-The curvature parameter $c = (q - q^{-1})\lambda_C / (2a_A)$ is controlled entirely by $q$. At $q = 1$, the stability cubic degenerates to $t^3 = 2p$, a rational parametrization where all nuclei are symmetric ($n = p$). As $q$ increases from $1$, the $ct^2$ term bends the curve. The integer solutions disperse. The structure of the nuclear chart—neutron excess, stability pairs, and even-odd staggering—emerges from a single deformation parameter.
+The curvature parameter $c = \lambda_C / (2a_{\mathrm{asym}})$, with $\lambda_C = (q - q^{-1})[6]_q\,\mathfrak{m}_{\mathfrak{e}}$, is controlled entirely by $q$. At $q = 1$, the stability cubic degenerates to $t^3 = 2p$, a rational parametrization where all nuclei are symmetric ($n = p$). As $q$ increases from $1$, the $ct^2$ term bends the curve. The integer solutions disperse. The structure of the nuclear chart—neutron excess, stability pairs, and even-odd staggering—emerges from a single deformation parameter.

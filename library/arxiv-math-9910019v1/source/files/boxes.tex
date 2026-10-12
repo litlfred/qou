@@ -1,0 +1,81 @@
+% Old definitions:
+%% use in super/subscripts
+%\def\symmU{\square}
+%\def\symmUU{\boxdot}
+%\def\symmu{\boxtimes}
+%\def\symmO{{\kern0.19ex\raise0.36ex\hbox{$\scriptscriptstyle\diagup$}}}
+%\def\symmS{{\kern0.19ex\raise0.36ex\hbox{$\scriptscriptstyle\diagdown$}}}
+%\def\symmg{\circledast}
+%% use in text mode
+%\def\tsymmU{\square}
+%\def\tsymmUU{\boxdot}
+%\def\tsymmu{\boxtimes}
+%\def\tsymmO{{\kern0.19ex\raise0.36ex\hbox{$\scriptstyle\diagup$}}}
+%\def\tsymmS{{\kern0.19ex\raise0.36ex\hbox{$\scriptstyle\diagdown$}}}
+%\def\tsymmg{\circledast}
+
+% New definitions:
+\newcommand\psymmU{%
+\begin{picture}(1,1)(0,0)%
+\allinethickness{0.5pt}%
+\path(0,0)(0,1)(1,1)(1,0)(0,0)%
+\end{picture}}
+\newcommand\psymmUU{%
+\begin{picture}(1,1)(0,0)%
+\allinethickness{0.5pt}%
+\path(0,0)(0,1)(1,1)(1,0)(0,0)%
+\put(0.5,0.5){\makebox(0,0){$\cdot$}}%
+\end{picture}}
+\newcommand\psymmO{%
+\begin{picture}(1,1)(0,0)%
+\allinethickness{0.5pt}%
+\path(0,0)(0,1)(1,1)(1,0)(0,0)%
+\path(0,0)(1,1)%
+\end{picture}}
+\newcommand\psymmS{%
+\begin{picture}(1,1)(0,0)%
+\allinethickness{0.5pt}%
+\path(0,0)(0,1)(1,1)(1,0)(0,0)%
+\path(1,0)(0,1)%
+\end{picture}}
+\newcommand\psymmu{%
+\begin{picture}(1,1)(0,0)%
+\allinethickness{0.5pt}%
+\path(0,0)(0,1)(1,1)(1,0)(0,0)%
+\path(0,0)(1,1)%
+\path(0,1)(1,0)%
+\end{picture}}
+
+\newbox\tsymmUbox
+\newbox\tsymmUUbox
+\newbox\tsymmObox
+\newbox\tsymmSbox
+\newbox\tsymmubox
+\setbox\tsymmUbox =\hbox{\kern0.75pt\setlength{\unitlength}{6pt}\psymmU \kern0.75pt}
+\setbox\tsymmUUbox=\hbox{\kern0.75pt\setlength{\unitlength}{6pt}\psymmUU\kern0.75pt}
+\setbox\tsymmObox =\hbox{\kern0.75pt\setlength{\unitlength}{6pt}\psymmO \kern0.75pt}
+\setbox\tsymmSbox =\hbox{\kern0.75pt\setlength{\unitlength}{6pt}\psymmS \kern0.75pt}
+\setbox\tsymmubox =\hbox{\kern0.75pt\setlength{\unitlength}{6pt}\psymmu \kern0.75pt}
+\def\tsymmU{{\copy\tsymmUbox}}
+\def\tsymmUU{{\copy\tsymmUUbox}}
+\def\tsymmO{{\copy\tsymmObox}}
+\def\tsymmS{{\copy\tsymmSbox}}
+\def\tsymmu{{\copy\tsymmubox}}
+\newbox\symmUbox
+\newbox\symmUUbox
+\newbox\symmObox
+\newbox\symmSbox
+\newbox\symmubox
+\setbox\symmUbox =\hbox{\kern0.75pt\setlength{\unitlength}{4.5pt}\psymmU \kern0.75pt}
+\setbox\symmUUbox=\hbox{\kern0.75pt\setlength{\unitlength}{4.5pt}\psymmUU\kern0.75pt}
+\setbox\symmObox =\hbox{\kern0.75pt\setlength{\unitlength}{4.5pt}\psymmO \kern0.75pt}
+\setbox\symmSbox =\hbox{\kern0.75pt\setlength{\unitlength}{4.5pt}\psymmS \kern0.75pt}
+\setbox\symmubox =\hbox{\kern0.75pt\setlength{\unitlength}{4.5pt}\psymmu \kern0.75pt}
+\def\symmU{{\copy\symmUbox}}
+\def\symmUU{{\copy\symmUUbox}}
+\def\symmO{{\copy\symmObox}}
+\def\symmS{{\copy\symmSbox}}
+\def\symmu{{\copy\symmubox}}
+
+\def\tsymmg{\circledast}
+\def\symmg{\circledast}

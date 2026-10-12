@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1303.0720v2/sections/sec-034",
   "@type": [
     "doco:Section"
   ],
-  "title": "A priori diagonal estimates of weighted Bergman kernels",
-  "pageStart": 31,
-  "pageEnd": 31,
+  "title": "Estimation of the weighted Bergman kernel on the diagonal",
+  "pageStart": 33,
+  "pageEnd": 33,
   "contains": [
     "library/arxiv-1303.0720v2/blocks/prose-sec-034"
   ],
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.0720v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.0720v2/manifest.jsonld",
   "provenance": "ingested"
 }

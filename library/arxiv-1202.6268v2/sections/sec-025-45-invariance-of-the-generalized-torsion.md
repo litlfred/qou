@@ -8,157 +8,108 @@ pages: 26-29
 source_pdf: 1202.6268v2.pdf
 source_sha256: 209af6ae25439050
 doc_brief: "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that"
+text_source: latex
+latex_prose_ratio: 0.926
+latex_coverage_ratio: 0.955
 ---
-for the generalized torsion formula. Let M be a three-manifold with torus boundary, and ρm :
-π1(M)→ (P)SL(2, C) a representation with meridian eigenvalue m. Let T be a ρm-regular
-triangulation of M, which exists by Lemma 4.3 at least for a dense set of representations
-on the geometric component of the character variety. Choose an enhanced Neumann-Zagier
-datum (z, A, B,f ), with z = z(ρm) satisfying the deformed gluing equations ( 4.5) and f
-satisfying ( 4.10). Then, as in ( 4.1), we deﬁne
-τT (ρm) :=±1
-2 det
-(
-A∆ z′′ + B∆ −1
-z
-)
-zf ′′
-z′′−f.
-We can now prove Theorem 4.1.
-Repeating verbatim the arguments of Section 3, it is easy to see that τT is independent of
-a choice of quad type, a choice of an edge of T and a choice of a meridian loop. The crucial
-observation is that the equations AZ + BZ ′′ = iπν (including the meridian equation) are
-never used in the respective proofs. Therefore, deforming the m eridian equation by u⁄= 0
-does not aﬀect anything. For the same reason, it is not hard to see that the formula is
-invariant under ρm-regular 2–3 moves, by repeating the argument of Section 3.6.
-The only nontrivial veriﬁcation required is that τT is independent of the choice of ﬂatten-
-ing. This does use the gluing equations in a crucial way. We check it now for m⁄= 1.
-Choose logarithms (Z,Z ′,Z ′′) of the shape parameters and a logarithm u of m such that
-Z +Z ′ +Z ′′ =iπ and
-(4.14) AZ + BZ ′′ = 2u +iπν,
-where u denote the N-dimensional vector (0 , 0,...., 0,u )T . By independence of quad type
-and Lemma A.3, we may assume we are using a quad type with non-degenerate B. Now,
-THE QUANTUM CONTENT OF THE GLUING EQUATIONS 27
-suppose that (f,f ′,f ′′) and ( ~f, ~f ′,~f ′′) are two diﬀerent generalized ﬂattenings. Then:
-(Z·f ′′−Z ′′·f )−(Z· ~f ′′−Z ′′· ~f )
-=Z· (f ′′− ~f ′′) + B−1(AZ−iπν− 2u)· (f− ~f )
-=Z· (f ′′− ~f ′′) +Z· B−1A(f− ~f )−iπB−1ν· (f− ~f )− 2B−1u· (f− ˜f )
-=−iπB−1ν· (f− ~f )− 2B−1u· (f− ˜f )
-=iπ(f ′′· ~f−f· ~f ′′)− 2B−1u· (f− ˜f ),
-by manipulations similar to those of Section 3.5. The new term 2 B−1u· (f− ˜f ) is now dealt
-with with by completing the Neumann-Zagier matrices ( A B ) to a full symplectic matrix
-( A B
-C D )∈ Sp(2N, Q), whose bottom row agrees with ( C,D ). The symplectic condition implies
-that ADT− BCT =I, or B−1 = B−1ADT− CT . Then
-B−1u· (f− ˜f ) = B−1ADT u· (f− ˜f )− CT u· (f− ˜f )
-= u· DB−1A(f− ˜f )− u· C(f− ˜f )
-=−u·
-(
-C(f− ˜f ) + D(f ′′− ˜f ′′)
-)
-=−u
-(
-C· (f− ˜f ) +D· (f ′′− ˜f ′′)
-)
-.
-In this last equation, only the bottom row of C and D appears, due to the contraction with
-u = (0, 0,..., 0,u ). But this bottom row is precisely what enters the generalized ﬂatt ening
-equations (4.10); since both ﬂattenings satisfy these equations, we must have B−1u·(f− ˜f ) =
-0. Therefore, upon exponentiating, we ﬁnd
-(4.15) zf ′′
-z′′−f = (−1)f ′′· ˜f −f · ˜f ′′
-z
-˜f ′′
-z′′− ˜f =±z
-˜f ′′
-z′′− ˜f,
-which demonstrates that τT is independent of the choice of ﬂattening. Theorem
-4.1 follows.
-□
-4.6. Example: 4 1 continued. We brieﬂy demonstrate the generalized torsion formula,
-using representations on the geometric component of the charac ter varietyX41 for the ﬁgure-
-eight knot complement.
-z z′
-z′′ w
-w ′
-w ′′ 
-µ
-z
-z′
-z′′ 
-ww ′
-w ′′ 
-z z′
-z′′ w
-w ′
-w ′′ 
-z
-z′
-z′′ 
-ww ′
-w ′′ 
-λ
-Figure 8. Longitude path for the ﬁgure-eight knot complement.
-We may consider the same triangulation as in Section 2.6. The edge and meridian equa-
-tions ( 2.14) are deformed to
-(4.16) z2w2z′′w′′ = 1, zwz ′′ =−m2,
-28 TUDOR DIMOFTE AND STA VROS GAROUF ALIDIS
-with z′′ = 1−z−1, w′′ = 1−w−1 as usual. In addition, there is a longitude equation that
-may be read oﬀ from the longitude path in Figure
-8. In logarithmic (combinatorial) form,
-we have−2Z + 2Z ′ = 2v, or
-(4.17) − 4Z− 2Z ′′ = 2v− 2πi,
+[]{#sec.utorsion label="sec.utorsion"}
+
+We finally have all the required ingredients for the generalized torsion formula. Let $M$ be a three-manifold with torus boundary, and $\rho_m:\pi_1(M)\to \text{(P)SL}(2,\mathbb{C})$ a representation with meridian eigenvalue $m$. Let $\mathcal{T}$ be a $\rho_m$-regular triangulation of $M$, which exists by Lemma [\[lem.wellknown\]](#lem.wellknown){reference-type="ref" reference="lem.wellknown"} at least for a dense set of representations on the geometric component of the character variety. Choose an enhanced Neumann-Zagier datum $(z,\mathbf A,\mathbf B,f)$, with $z=z(\rho_m)$ satisfying the deformed gluing equations [\[uglue\]](#uglue){reference-type="eqref" reference="uglue"} and $f$ satisfying [\[uflat\]](#uflat){reference-type="eqref" reference="uflat"}. Then, as in [\[utor\]](#utor){reference-type="eqref" reference="utor"}, we define
+
+$$\notag
+\tau_\mathcal{T}(\rho_m) := \pm\frac12\det\big(\mathbf A\Delta_{z''}
++\mathbf B\Delta_z^{-1}\big)z^{f''}z''{}^{-f}  \,.$$
+
+We can now prove Theorem [\[thm.utor\]](#thm.utor){reference-type="ref" reference="thm.utor"}.
+
+Repeating verbatim the arguments of Section [\[sec.torsion\]](#sec.torsion){reference-type="ref" reference="sec.torsion"}, it is easy to see that $\tau_{\mathcal{T}}$ is independent of a choice of quad type, a choice of an edge of $\mathcal{T}$ and a choice of a meridian loop. The crucial observation is that the equations $\mathbf AZ+\mathbf B Z''=i\pi \nu$ (including the meridian equation) are never used in the respective proofs. Therefore, deforming the meridian equation by $u\neq 0$ does not affect anything. For the same reason, it is not hard to see that the formula is invariant under $\rho_m$-regular 2--3 moves, by repeating the argument of Section [\[sec.inv23\]](#sec.inv23){reference-type="ref" reference="sec.inv23"}.
+
+The only nontrivial verification required is that $\tau_{\mathcal{T}}$ is independent of the choice of flattening. This does use the gluing equations in a crucial way. We check it now for $m\neq 1$.
+
+Choose logarithms $(Z,Z',Z'')$ of the shape parameters and a logarithm $u$ of $m$ such that $Z+Z'+Z''=i\pi$ and
+
+$$\label{uveceqs} 
+\mathbf AZ+\mathbf BZ''=2\bm u+i\pi \nu\,,$$
+
+where $\bm{u}$ denote the $N$-dimensional vector $(0,0,....,0,u)^T$. By independence of quad type and Lemma [\[lemma.B\]](#lemma.B){reference-type="ref" reference="lemma.B"}, we may assume we are using a quad type with non-degenerate $\mathbf B$. Now, suppose that $(f,f',f'')$ and $(\widetilde f,\widetilde f',\widetilde f'')$ are two different generalized flattenings. Then:
+
+$$\begin{aligned}
+(Z\cdot f''-Z''\cdot f)-&(Z\cdot \widetilde f''-Z''\cdot \widetilde f) \\&=
+ Z\cdot (f''-\widetilde f'') + \mathbf B^{-1}(\mathbf A Z-i\pi \nu-2\bm u)\cdot (f-\widetilde f) \\
+ &= Z\cdot (f''-\widetilde f'') 
++  Z\cdot \mathbf B^{-1}\mathbf A(f-\widetilde f)-i\pi\mathbf B^{-1}\nu\cdot (f-\widetilde f) 
+-2\mathbf B^{-1}\bm u\cdot(f-\tilde f) \\
+ &= -i\pi\mathbf B^{-1}\nu\cdot (f-\widetilde f) -2\mathbf B^{-1}\bm u\cdot(f-\tilde f)\\
+ &= i\pi (f''\cdot \widetilde f-f\cdot \widetilde f'') -2\mathbf B^{-1}\bm u\cdot(f-\tilde f)\,,
+\end{aligned}$$
+
+by manipulations similar to those of Section [\[sec.invflat\]](#sec.invflat){reference-type="ref" reference="sec.invflat"}. The new term $2\mathbf B^{-1}\bm u\cdot(f-\tilde f)$ is now dealt with with by completing the Neumann-Zagier matrices $(\mathbf A\;\mathbf B)$ to a full symplectic matrix $\left(\begin{smallmatrix} \mathbf A & \mathbf B \\ \mathbf C & 
+\mathbf D\end{smallmatrix}\right) \in \mathrm{Sp}(2N,\mathbb Q)$, whose bottom row agrees with $(C,D)$. The symplectic condition implies that $\mathbf A \mathbf D^T-\mathbf B \mathbf C^T=I$, or $\mathbf B^{-1}=\mathbf B^{-1}\mathbf A\mathbf D^T-\mathbf C^T$. Then
+
+$$\begin{aligned}
+\mathbf B^{-1}\bm u\cdot(f-\tilde f) &=
+ \mathbf B^{-1}\mathbf A\mathbf D^T \bm u\cdot (f-\tilde f) 
+- \mathbf C^T \bm u\cdot (f-\tilde f) \\
+ &= \bm u\cdot \mathbf D\mathbf B^{-1}\mathbf A (f-\tilde f) 
+- \bm u\cdot \mathbf C(f-\tilde f) \\
+ &= -\bm u\cdot\big( \mathbf C(f-\tilde f)+\mathbf D(f''-\tilde f'')\big) \\
+ &= -u\big(C\cdot(f-\tilde f)+D\cdot (f''-\tilde f'')\big)\,.
+\end{aligned}$$
+
+In this last equation, only the bottom row of $\mathbf C$ and $\mathbf D$ appears, due to the contraction with $\bm u = (0,0,...,0,u)$. But this bottom row is precisely what enters the generalized flattening equations [\[uflat\]](#uflat){reference-type="eqref" reference="uflat"}; since both flattenings satisfy these equations, we must have $\mathbf B^{-1}\bm u\cdot (f-\tilde f)=0$. Therefore, upon exponentiating, we find
+
+$$z^{f''}z''{}^{-f} = (-1)^{f''\cdot \tilde f-f\cdot \tilde f''} 
+z^{\tilde f''}z''{}^{-\tilde f} = \pm z^{\tilde f''}z''{}^{-\tilde f}\,,$$
+
+which demonstrates that $\tau_{\mathcal{T}}$ is independent of the choice of flattening. Theorem [\[thm.utor\]](#thm.utor){reference-type="ref" reference="thm.utor"} follows. 0◻
+
+## Example: $\mathbf 4_1$ continued {#sec.utor41}
+
+We briefly demonstrate the generalized torsion formula, using representations on the geometric component of the character variety $X_{\mathbf{4_1}}$ for the figure-eight knot complement.
+
+![Longitude path for the figure-eight knot complement.](cusp41L){#fig.cusp41L width="4.3in"}
+
+We may consider the same triangulation as in Section [\[sec.41triang\]](#sec.41triang){reference-type="ref" reference="sec.41triang"}. The edge and meridian equations [\[41glue\]](#41glue){reference-type="eqref" reference="41glue"} are deformed to
+
+$$\label{41m} z^2w^2z''w''=1\,, \qquad zwz''=-m^2\,,$$
+
+with $z''=1-z^{-1}$, $w''=1-w^{-1}$ as usual. In addition, there is a longitude equation that may be read off from the longitude path in Figure [1](#fig.cusp41L){reference-type="ref" reference="fig.cusp41L"}. In logarithmic (combinatorial) form, we have $-2Z+2Z'=2v$, or
+
+$$\label{41L} -4Z-2Z''=2v-2\pi i\,,$$
+
 from which we identify
-(4.18) C = (−2, 0), D = (−1, 0), ν λ =−1.
-Dividing (
-4.17) by two and exponentiating, we ﬁnd
-(4.19) z−2z′′−1 =ℓ,
-with ℓ =−ev. This is the appropriate square root of ( 4.6) for lifting the geometric repre-
-sentations to SL(2, C). We can easily check it: by eliminating shape parameters from ( 4.16)
-and ( 4.19), we recover the geometric SL(2 , C) A-polynomial for the ﬁgure-eight knot,
-(4.20) Ageom
-41 (ℓ,m ) = m4− (1−m2− 2m4−m6 +m8)ℓ +m4ℓ2.
-We may also use equations (
-4.16)–(4.19) to express the shape parameters as functions of
-ℓ and m. We ﬁnd
-(4.21) z =−m2−m−2
-1 +m2ℓ , w = m2 +ℓ
-m2−m−2 .
-These are functions on the curve Y geom
-41 ={Ageom
-41 (ℓ,m ) = 0}.
-The ﬂattening (
-2.15) does not satisfy the new longitude constraint C·f +D·f ′′ =νλ , so
-we must ﬁnd one that does. The choice
-(4.22) ( fz,f ′
-z,f ′′
-z ;fw,f ′
-w,f ′′
-w) = (0, 0, 1; 0, 0, 1)
-will work. Repeating the calculation of Section
-3.1 with the same A and B but the new
-generalized ﬂattening, we now obtain
-τ41(ρm) =±1
-2 det
-(
-z′′ + 1 w′′ + 1
-1 w′′
-)
-zw
-=±1
-2 (z′′w′′− 1)zw
-=±1−m2− 2m4−m6 +m8− 2m4ℓ
-2m4(m2−m−2) .(4.23)
-This is in full agreement with the torsion found by [
-GM08, DGLZ09]. Note that for ﬁxed
-m there are two choices of representation ρm on the geometric component of the character
-variety; they correspond to the two solutions of Ageom
-41 (ℓ,m ) = 0 in ℓ.
-Remark 4.5. It is interesting to observe that the numerator of (
-4.23) is exactly ∂Ageom
-41 /∂ℓ.
-That the numerator of the geometric torsion typically carries a fac tor of ∂Ageom
-41 /∂ℓ might be
-gleaned from the structure of “ ˆA-polynomials” in [
-DGLZ09, GS], and will also be explored
-elsewhere.
-THE QUANTUM CONTENT OF THE GLUING EQUATIONS 29
+
+$$C = (-2,0)\,,\qquad D = (-1,0)\,,\qquad \nu_\lambda = -1.$$
+
+Dividing [\[41L\]](#41L){reference-type="eqref" reference="41L"} by two and exponentiating, we find
+
+$$\label{41ell} z^{-2}z''{}^{-1}=\ell\,,$$
+
+with $\ell=-e^v$. This is the appropriate square root of [\[uglueL\]](#uglueL){reference-type="eqref" reference="uglueL"} for lifting the geometric representations to $\mathrm{SL}(2,\mathbb{C})$. We can easily check it: by eliminating shape parameters from [\[41m\]](#41m){reference-type="eqref" reference="41m"} and [\[41ell\]](#41ell){reference-type="eqref" reference="41ell"}, we recover the geometric $\mathrm{SL}(2,\mathbb{C})$ A-polynomial for the figure-eight knot,
+
+$$A_{\mathbf{4_1}}^{\rm geom}(\ell,m) = m^4-(1-m^2-2m^4-m^6+m^8)\ell+m^4\ell^2\,.$$
+
+We may also use equations [\[41m\]](#41m){reference-type="eqref" reference="41m"}--[\[41ell\]](#41ell){reference-type="eqref" reference="41ell"} to express the shape parameters as functions of $\ell$ and $m$. We find
+
+$$\label{zw41m} z = -\frac{m^2-m^{-2}}{1+m^2\ell} \,,\qquad w= \frac{m^2+\ell}{m^2-m^{-2}}\,.$$
+
+These are functions on the curve $Y_{\mathbf{4_1}}^{\rm geom}=\{A_{\mathbf{4_1}}^{\rm geom}(\ell,m)=0\}$.
+
+The flattening [\[flat41\]](#flat41){reference-type="eqref" reference="flat41"} does *not* satisfy the new longitude constraint $C\cdot f+D\cdot f''=\nu_\lambda$, so we must find one that does. The choice
+
+$$(f_z,f_z',f_z'';f_w,f_w',f_w'') =(0,0,1;0,0,1)$$
+
+will work. Repeating the calculation of Section [\[sub.torexample\]](#sub.torexample){reference-type="ref" reference="sub.torexample"} with the same $\mathbf A$ and $\mathbf B$ but the new generalized flattening, we now obtain
+
+$$\begin{aligned}
+ \tau_{\mathbf{4_1}}(\rho_m) &= \pm \frac12 \det\begin{pmatrix} z''+1 & w''+1\\ 1 & w'' 
+\end{pmatrix} z w \notag \\
+&= \pm\frac12(z''w''-1)zw \notag \\
+&= \pm\frac{1-m^2-2m^4-m^6+m^8-2m^4\ell}{2m^4(m^2-m^{-2})}\,. \label{41utor}
+\end{aligned}$$
+
+This is in full agreement with the torsion found by [@GuM; @DGLZ]. Note that for fixed $m$ there are *two* choices of representation $\rho_m$ on the geometric component of the character variety; they correspond to the two solutions of $A_{\mathbf{4_1}}^{\rm geom}(\ell,m)=0$ in $\ell$.
+
+::: remark
+It is interesting to observe that the numerator of [\[41utor\]](#41utor){reference-type="eqref" reference="41utor"} is exactly $\partial A_{\mathbf{4_1}}^{\rm geom}/\partial\ell$. That the numerator of the geometric torsion typically carries a factor of $\partial A_{\mathbf{4_1}}^{\rm geom}/\partial\ell$ might be gleaned from the structure of "$\hat A$-polynomials" in [@DGLZ; @GukovS], and will also be explored elsewhere.
+:::

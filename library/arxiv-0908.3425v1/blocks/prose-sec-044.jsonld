@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0908.3425v1/blocks/prose-sec-044",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0908.3425v1/blocks/prose-sec-044",
   "kind": "prose",
   "title": "Axial and induced pseudoscalar form factors",
   "pageStart": 72,
   "pageEnd": 75,
   "text": "../sections/sec-044-axial-and-induced-pseudoscalar-form-factors.md",
-  "derivedFrom": "library/arxiv-0908.3425v1/manifest",
-  "sourceDocument": "library/arxiv-0908.3425v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0908.3425v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0908.3425v1/manifest.jsonld",
   "provenance": "ingested"
 }

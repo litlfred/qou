@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:16:57.559872+00:00",
-  "commitSha": "125b980adafecc04478c324ccfe3775f40d41b47",
+  "computedAt": "2026-10-10T10:40:21.641438+00:00",
+  "commitSha": "89be6057b51defa73bdeefead09f7ac076baf451",
   "assertions": [
     {
       "name": "hypersensitivity_is_ladder_1_over_u3_amplification",
@@ -14,9 +14,9 @@
     },
     {
       "name": "anchors_reproduced_exactly",
-      "computed": 0.0,
+      "computed": 1.0,
       "expected": 1.0,
-      "passed": false,
+      "passed": true,
       "tolerance": "0.5",
       "source": "S(proton)/S(muon) from c3_target_at match the committed anchor-blind witness"
     },
@@ -29,12 +29,12 @@
       "source": "q* at 80% muon-ward != precision-weighted mass reconciliation ~0% (proton); q* is an independent decay-sector determination of q0"
     }
   ],
-  "allPassed": false,
-  "durationMs": 4,
+  "allPassed": true,
+  "durationMs": 3,
   "computation": "qbeta-c3-imq-qstar-ladder-amplification",
   "scriptFile": "qbeta_c3_imq_qstar_ladder_amplification_probe.py",
-  "scriptHash": "ede29c7613d2",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "29a22c6abdb0",
+  "scriptCommitSha": "aa914b606a6de5e4f447e3746adaa687a9f608c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,11 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "mpmath": "1.4.1"
   },
   "invocation": {
     "argv": [
@@ -64,7 +61,7 @@
       "value": "1.109978593031523288402328",
       "frac_muon_ward_pct": "79.744448",
       "meaning": "S=0: c3 = -Vol(4_1) exactly (pure bar-even, eps=0)",
-      "anchors_reproduced": false
+      "anchors_reproduced": true
     },
     "hypersensitivity_decomp": {
       "S_prime_qstar": "3838404.458",

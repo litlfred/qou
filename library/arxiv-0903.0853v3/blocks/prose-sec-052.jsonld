@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-052",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-052",
   "kind": "prose",
-  "title": "Pure modules of arbitrary slopes . — The classiﬁcation of pure mod-",
-  "pageStart": 25,
-  "pageEnd": 25,
-  "text": "../sections/sec-052-2222-pure-modules-of-arbitrary-slopes-the-classi.md",
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "title": "Algebraic summation of the square of the Tshakaloff series",
+  "pageStart": 127,
+  "pageEnd": 127,
+  "text": "../sections/sec-052-2412-algebraic-summation-of-the-square-of-the-ts.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
   "provenance": "ingested"
 }

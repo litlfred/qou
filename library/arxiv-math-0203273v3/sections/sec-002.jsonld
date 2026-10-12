@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203273v3/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "YVES ANDR ´E ET BRUNO KAHN",
-  "pageStart": 4,
-  "pageEnd": 6,
+  "title": "Radical",
+  "pageStart": 13,
+  "pageEnd": 23,
   "contains": [
     "library/arxiv-math-0203273v3/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203273v3/manifest.jsonld",
   "provenance": "ingested"
 }

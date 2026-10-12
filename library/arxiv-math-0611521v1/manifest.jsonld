@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0611521v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0611521v1",
+  "contains": [
+    "library/arxiv-math-0611521v1/sections/sec-front-matter",
+    "library/arxiv-math-0611521v1/sections/sec-000",
+    "library/arxiv-math-0611521v1/sections/sec-001",
+    "library/arxiv-math-0611521v1/sections/sec-002",
+    "library/arxiv-math-0611521v1/sections/sec-003",
+    "library/arxiv-math-0611521v1/sections/sec-004",
+    "library/arxiv-math-0611521v1/sections/sec-005",
+    "library/arxiv-math-0611521v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0611521&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0611521v1",
+    "title_source": "slug",
+    "source_file": "0611521v1.pdf",
+    "source_sha256": "65fcd77b7b0a208e272563e93a17b681ab2075b426d28ff6d771b4e976182913",
+    "pages": 22,
+    "arxiv": {
+      "id": "math/0611521",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "17 Nov 2006"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

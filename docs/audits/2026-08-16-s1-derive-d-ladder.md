@@ -701,5 +701,5 @@ statement; recorded here is what was changed and re-verified.
   three tree-wide audit witnesses (`q0-anchor-consistency`,
   `witness-float64-padding`, `witness-raw-float64--docs-audits-scripts`)
   whose committed counts are stale for reasons unrelated to this branch —
-  the offenders live in `computations/_deprecated/`. They were **reverted
+  the offenders live in `fsh-guts/deprecated/computations/`. They were **reverted
   rather than committed**, as on the previous pass (bean `qou-pgdw`).

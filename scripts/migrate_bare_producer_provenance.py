@@ -133,7 +133,7 @@ def resolve_producer(witness_path: pathlib.Path, script_file: str):
     sib = witness_path.parent / base
     if sib.exists():
         return sib
-    cands = [c for c in COMP.rglob(base) if "_deprecated" not in c.parts]
+    cands = [c for c in COMP.rglob(base) if ("_deprecated" not in c.parts and "fsh-guts" not in c.parts)]
     return cands[0] if len(cands) == 1 else None
 
 
@@ -156,7 +156,7 @@ _MOD_SRC: dict[str, str] = {}
 
 def _module_source(mod: str) -> str:
     if mod not in _MOD_SRC:
-        cands = [c for c in COMP.rglob(mod + ".py") if "_deprecated" not in c.parts]
+        cands = [c for c in COMP.rglob(mod + ".py") if ("_deprecated" not in c.parts and "fsh-guts" not in c.parts)]
         _MOD_SRC[mod] = code_only(cands[0].read_text(errors="ignore")) if len(cands) == 1 else ""
     return _MOD_SRC[mod]
 
@@ -457,7 +457,7 @@ def population_writer_first() -> dict[str, None]:
     """
     out: dict[str, None] = {}
     for p in sorted(COMP.rglob("*.py")):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         raw = p.read_text(errors="ignore")
         src = code_only(raw)
@@ -485,7 +485,7 @@ def population_witness_first() -> dict[str, None]:
     """The original construction, kept only for comparison. Undercounts ~48 %."""
     out: dict[str, None] = {}
     for w in sorted(COMP.rglob("*.witness.json")):
-        if "_deprecated" in w.parts:
+        if ("_deprecated" in w.parts or "fsh-guts" in w.parts):
             continue
         try:
             d = json.loads(w.read_text())

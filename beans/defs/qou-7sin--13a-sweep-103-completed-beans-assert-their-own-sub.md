@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T18:13:32Z
-updated_at: 2026-10-04T15:15:58Z
+updated_at: 2026-10-10T14:48:42Z
 parent: qou-5vkl
 ---
 
@@ -147,3 +147,12 @@ says something *adjacent* is open (a sibling's scope, a downstream question, a
 residue of a mechanical subject). §13a is an agent judgement there by
 construction, and n=8 gave roughly half genuine — too thin to act on. Draining
 that tier is a real tranche and is still unclaimed.
+
+## 2026-10-10: one confirmed false positive, `qou-8p1g`
+
+`qou-8p1g` was reopened on 2026-09-08 because its body says "NOT closing … the open
+question is unchanged". The very next section of the same body is headed "the open
+question is CLOSED" and answers it with a scope-(b) exclusion, backed by a 23/23
+witness. Re-closed, with the evidence appended there. The discriminator should read the
+**last** word a bean has on its own openness, not any paragraph that asserts it, because
+these beans are append-only ledgers and supersession is always by a later section.

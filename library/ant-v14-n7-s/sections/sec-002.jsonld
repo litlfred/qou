@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-002",
   "@type": [
     "doco:Section"
   ],
-  "title": "1B. Statement of the main theorem",
-  "pageStart": 4,
-  "pageEnd": 5,
+  "title": "1A. Background",
+  "pageStart": 3,
+  "pageEnd": 4,
   "contains": [
-    "library/ant-v14-n7-s/blocks/prose-sec-002",
-    "library/ant-v14-n7-s/blocks/thm-sec-002-01"
+    "library/ant-v14-n7-s/blocks/prose-sec-002"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -5,102 +5,106 @@ import Mathlib.Tactic
 
 Canonical Lean for content block
 [`lem:topological-mass-transient-localisation`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md):
-*Transient terms localise to exceptional divisors.*
+*Transient terms are bounded by exceptional-divisor contributions.*
 
-**Lemma.** The transient component `α − τ̂ₙ(α)` has support contained in
-disjoint discs `Dᵢ` centred at the blow-up points `p₁, …, p_N`, and the
-norm of the multiplicative integral decomposes as a sum over the
-exceptional divisors `Eᵢ`:
+**Block statement.**  The transient component `α − τ̂ₙ(α)` has support in
+disjoint discs `Dᵢ` centred at the blow-up points, and the norm of its
+multiplicative integral is *bounded by* a sum over the exceptional divisors
+`Eᵢ`:
 
-  `‖MI∫_Σ (α − τ̂ₙ(α))‖ = Σᵢ ‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`.
+  `‖MI∫_Σ (α − τ̂ₙ(α))‖ ≤ Σᵢ ‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`.
 
-## Structure (hypotheses vs. derivation)
+The block stated equality until 2026-10-10, when it was restated as the
+inequality on owner ruling (bean `tmvac`); the equality is the open
+conjecture class below.
 
-The `.md` lemma's two clauses map to two genuine sub-claims, each
-stated as its own named proposition (honest `sorry` + citation per
-AGENTS.md §1, §1a item 2); the main theorem *derives* the displayed
-identity by chaining them (`trans` + `Finset.sum_congr`) — it does not
-assume its conclusion:
+## What is derived, and what is not
 
-1. `transient_disjoint_disc_additivity` — the support of
-   `α − τ̂ₙ(α)` is contained in the disjoint discs `Dᵢ`, so the
-   MI-norm over `Σ` is additive across the discs:
-   `‖MI∫_Σ (α − τ̂ₙ(α))‖ = Σᵢ ‖MI∫_{Dᵢ} (α − τ̂ₙ(α))‖`.
-2. `transient_disc_is_divisor_integral` — each disc contribution
-   evaluates to the exceptional-divisor integral (the disc `Dᵢ`
-   retracts onto `Eᵢ`):
-   `‖MI∫_{Dᵢ} (α − τ̂ₙ(α))‖ = ‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`.
+Everything is a **parameter**.  The multiplicative integrals take values in
+an arbitrary (possibly non-commutative) seminormed group `G`, so the
+disc product is an ordered `List.prod`.  The proof block's two geometric
+steps are explicit hypotheses:
 
-Both rest on the non-abelian-Stokes / multiplicative-integral
-machinery that is **not in Mathlib**; each is a *visible* sorried gap.
-The per-disc MI-norms `transientMIdisc` are genuine quantities of the
-proof narrative, not a laundering device.  (An earlier revision
-carried the decomposition as a class field `sum_of_disjoint` over
-opaque Props and projected it, which was the self-assuming-projection
-anti-pattern; a still earlier one universally quantified over
-arbitrary reals, which made the statement false as stated.)
+* `hsplit` — the transient integral is the ordered product of the disc
+  integrals (support in the disjoint discs `Dᵢ`);
+* `hsupp` — each disc integral equals the exceptional-divisor integral
+  (the integrand is supported on `Eᵢ ⊂ Dᵢ`).
 
-## Model
+From these, the **inequality** `‖MI∫_Σ‖ ≤ Σᵢ ‖MI∫_{Eᵢ}‖` is *derived*
+(`tm_transient_localisation`) from the triangle inequality of a group
+seminorm.
 
-Quantities are named `opaque` reals (an `opaque` constant needs a
-concrete inhabited carrier; the MI-norms are archimedean real values,
-so `ℝ` is the honest carrier per §7c).
+The **equality** the block formerly stated is *not* derivable from these
+hypotheses: the proof block's step "the norm of the product equals the sum
+of the norms" is false for a general group norm, and
+`norm_additivity_not_forced` exhibits data satisfying both hypotheses
+(in `Multiplicative ℝ`) for which equality fails.  The equality is
+therefore recorded as the content-bearing conjecture class
+`TransientLocalisationNormEquality`, with **no instance**.  Closing it
+needs a further structural input (e.g. that the disc integrals lie on a
+common ray on which the norm is additive — the proof block's appeal to
+commutation modulo the central band does not by itself give this).
+
+An earlier revision carried both geometric steps *and* their composite as
+fields of a data class that the all-zero instance satisfies, so the
+"localisation" said nothing; one earlier still defined
+`transientMItotal := 0`.  Bean `tmvac`.
 
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
 -/
 
 namespace QOU.LiftingDescent
 
-/-! The four primitives below are `opaque` deliberately.  An earlier revision
-*defined* them (`transientBlowupCount := 0`, `transientMItotal := 0`,
-`transientMIdisc i := transientMIdiv i`), which collapsed both "open inputs"
-into tautologies: the additivity statement became `0 = 0` over an empty range,
-and the per-disc evaluation became `rfl`.  Both then read as proved while
-asserting nothing.  Opacity is what keeps them falsifiable.  Bean `qou-t4cv`. -/
+variable {G : Type*} [SeminormedGroup G]
 
+/-- Triangle inequality for an ordered product over `List.range N`. -/
+theorem norm_prod_range_le (f : ℕ → G) (N : ℕ) :
+    ‖((List.range N).map f).prod‖ ≤ ∑ i ∈ Finset.range N, ‖f i‖ := by
+  induction N with
+  | zero => simp
+  | succ n ih =>
+    rw [List.range_succ, List.map_append, List.prod_append, Finset.sum_range_succ]
+    simp only [List.map_cons, List.map_nil, List.prod_cons, List.prod_nil, mul_one]
+    exact (norm_mul_le' _ _).trans (by linarith)
 
-class TMTransientLocalisationContext where
-  transientMIdiv : ℕ → ℝ
-  transientBlowupCount : ℕ
-  transientMItotal : ℝ
-  transientMIdisc : ℕ → ℝ
-  transient_disjoint_disc_additivity : transientMItotal = ∑ i ∈ Finset.range transientBlowupCount, transientMIdisc i
-  transient_disc_is_divisor_integral : ∀ i : ℕ, transientMIdisc i = transientMIdiv i
+/-- **Transient-term localisation, derived half (inequality).**
 
-/-- **Open input 1 — disjoint-support additivity.**  The transient
-    component is supported in the disjoint discs `Dᵢ`, so the MI-norm
-    over `Σ` decomposes as the sum of the per-disc MI-norms.  Needs
-    massive infrastructure (multiplicative-integral / non-abelian-Stokes API,
-    not in Mathlib) that cannot be added as a simple class field, so it is
-    left as a sorry. -/
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
-theorem transient_disjoint_disc_additivity [ctx : TMTransientLocalisationContext] :
-    ctx.transientMItotal
-      = ∑ i ∈ Finset.range ctx.transientBlowupCount, ctx.transientMIdisc i :=
-  ctx.transient_disjoint_disc_additivity
+Given that the transient multiplicative integral over `Σ` is the ordered
+product of the disc integrals (`hsplit`) and that each disc integral is the
+exceptional-divisor integral (`hsupp`), its norm is at most the sum of the
+exceptional-divisor norms. -/
+theorem tm_transient_localisation (MIsig : G) (disc div : ℕ → G) (N : ℕ)
+    (hsplit : MIsig = ((List.range N).map disc).prod)
+    (hsupp : ∀ i, disc i = div i) :
+    ‖MIsig‖ ≤ ∑ i ∈ Finset.range N, ‖div i‖ := by
+  have hdisc : disc = div := funext hsupp
+  subst hdisc
+  rw [hsplit]
+  exact norm_prod_range_le disc N
 
-/-- **Open input 2 — per-disc evaluation at the exceptional divisor.**
-    Each disc contribution equals the exceptional-divisor integral
-    (the disc `Dᵢ` retracts onto `Eᵢ` and the transient integrand
-    restricts to `(∇_A q, L ∧ F⁺)` there). Needs massive infrastructure
-    (multiplicative-integral / non-abelian-Stokes API) that cannot be added
-    as a simple class field, so it is left as a sorry. -/
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
-theorem transient_disc_is_divisor_integral [ctx : TMTransientLocalisationContext] :
-    ∀ i : ℕ, ctx.transientMIdisc i = ctx.transientMIdiv i :=
-  ctx.transient_disc_is_divisor_integral
+/-- **The equality is not forced by the split.**  There is data in the
+seminormed group `Multiplicative ℝ` satisfying both geometric hypotheses
+(`hsplit` with `N = 2`, and `hsupp` trivially with `div = disc`) for which
+`‖MI∫_Σ‖ ≠ Σᵢ ‖MI∫_{Eᵢ}‖`.  Scope (a): this shows the hypotheses *alone*
+do not yield the block's equality; it says nothing about the specific
+multiplicative integral of the transient integrand. -/
+theorem norm_additivity_not_forced :
+    ∃ (MIsig : Multiplicative ℝ) (disc : ℕ → Multiplicative ℝ),
+      MIsig = ((List.range 2).map disc).prod ∧
+      ‖MIsig‖ ≠ ∑ i ∈ Finset.range 2, ‖disc i‖ := by
+  refine ⟨Multiplicative.ofAdd 0,
+    fun i => if i = 0 then Multiplicative.ofAdd 1 else Multiplicative.ofAdd (-1), ?_, ?_⟩
+  · simp [List.range_succ]
+  · simp [Finset.sum_range_succ, norm_ofAdd]
+    norm_num
 
-/-- **Transient-term localisation (norm decomposition)**
-    ([`lem:topological-mass-transient-localisation`]).
-
-`‖MI∫_Σ (α − τ̂ₙ(α))‖ = Σ_{i<N} ‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`.
-*Derived* (not assumed): split over the disjoint discs (open input 1),
-then evaluate each disc at its exceptional divisor (open input 2)
-under the finite sum. -/
-theorem tm_transient_localisation [ctx : TMTransientLocalisationContext] :
-    ctx.transientMItotal
-      = ∑ i ∈ Finset.range ctx.transientBlowupCount, ctx.transientMIdiv i :=
-  transient_disjoint_disc_additivity.trans
-    (Finset.sum_congr rfl fun i _ => transient_disc_is_divisor_integral i)
+/-- **Conjecture (the block's equality).**  For the multiplicative integral
+of the transient integrand, the norm over `Σ` equals the sum of the
+exceptional-divisor norms.  Content-bearing, deliberately **without an
+instance**: by `norm_additivity_not_forced` it does not follow from the
+disc split and support hypotheses alone, and no further input that would
+force it is established in the corpus. -/
+class TransientLocalisationNormEquality (MIsig : G) (div : ℕ → G) (N : ℕ) : Prop where
+  norm_eq : ‖MIsig‖ = ∑ i ∈ Finset.range N, ‖div i‖
 
 end QOU.LiftingDescent

@@ -6,7 +6,11 @@
   "sha256": "23709542c5652a295267b45764c1bf95a1b6f9e78cf73baeb5936b58aee93c9c",
   "bytes": 799718,
   "pages": 26,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -189,6 +193,53 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 5,
-  "chars_total": 68863
+  "chars_total": 68863,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "2021-04-19_survey.tex",
+   "tex_sections": 12,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.702,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-semisimple-constructions",
+     "title": "Semisimple constructions",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-early-non-semisimple-constructions",
+     "title": "Early non-semisimple constructions",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.875,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-appendix-a-ends",
+     "title": "Appendix A. Ends",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

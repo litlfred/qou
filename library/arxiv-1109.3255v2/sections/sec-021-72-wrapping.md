@@ -8,160 +8,94 @@ pages: 64-68
 source_pdf: 1109.3255v2.pdf
 source_sha256: dd4579be8e9b7e25
 doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as"
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.973
 ---
-Floer cohomology in the mirrors of UL,U C, and UD.
-MIRROR OF THE PROJECTIVE PLANE 65
-7.2.1. Completions. Wrapped Floer cohomology is formulated in terms of noncom-
-pact manifolds containing noncompact Lagrangian submanifolds. Th ese can be de-
-ﬁned as (partial) completions of compact manifolds with boundary.
-The starting point for all three cases is the original Lefschetz ﬁbr ation X(B) →
-X(I) containing the Lagrangians {L(d)}d∈Z. We deﬁne completions ˆXL, ˆXC, and ˆXD.
-This process involves replacing a boundary component with an inﬁnite end, either on
-the base or in the ﬁber of the Lefschetz ﬁbration.
-• L: The manifold ˆXL retains a boundary component at the top horizontal
-boundary, corresponding to the ﬁber of the superpotential WL = u. The
-ﬁbers of X(B) → X(I) are completed at the other, bottom, end. The base
-annulus X(I) is completed to a cylinder ˆX(I), and the ﬁbration is extended
-over this cylinder.
-• C: The manifold ˆXC retains a boundary component at the bottom horizontal
-boundary, corresponding to the ﬁber of the superpotential WC = e−Λ v2
-uv−1 . The
-ﬁbers are completed at the other, top, end. The base annulus is co mpleted to
-a cylinder ˆX(I), and the ﬁbration is extended over this cylinder.
-• D: The manifold ˆXD has no boundary, and the ﬁbers are completed at both
-ends. The base annulus is completed to a cylinder ˆX(I), and the ﬁbration is
-extended over this cylinder.
-The torus ﬁbration on X(B) extends to these completions, and yields torus ﬁbra-
-tions over completed bases ˆBL, ˆBC, ˆBD.
-• ˆBL is a half-plane with singular aﬃne structure given by removing the bot tom
-boundary from B and extending in that direction.
-• ˆBC is a half-plane with singular aﬃne structure given by removing the top
-boundary from B and extending in that direction.
-• ˆBD is an entire plane with singular aﬃne structure given by removing all
-boundaries from B and extending in all directions.
-The Lagrangian submanifolds L(d) are extended to ˆL(d); In all cases, we extend
-L(d) into whatever ends are attached so as to be invariant under the L iouville ﬂow
-within the end. However, in the case of L, respectively C, we still have the boundary
-condition that ˆL(d) is required to end on Σ 1 (the complex hypersurface contained in
-the top boundary), respectively Σ 0 (contained in the bottom boundary).
-7.2.2. Hamiltonians. The most crucial diﬀerence between the three cases comes from
-the choices of Hamiltonians that are be used to perform the wrappin g. The Hamil-
-tonians we consider are the sum of contributions from the base and the ﬁber.
-Let Hb : ˆX(B) → R be the pullback of a function on the base cylinder which is
-a function of the radial coordinate η = log |w| only. Writing the symplectic form on
-the base as dρ ∧dθ, where ρ is a function of η, we take Hb to be a convex function
-ofρ on the compact part X(I), and linear in ρ on the ends. We also require Hb ≥ 0,
-with minimum on the central circle η = 0. Since dHb vanishes on the ﬁbers, XHb is
-horizontal.
-The ﬁber Hamiltonian Hf is chosen diﬀerently in each case. The main constraint
-is that its diﬀerential must vanish at any boundary component which may still be
-present. The construction is most convenient if we assume the com pletion preserves
-66 JAMES PASCALEFF
-theS1-symmetry that rotates the ﬁbers. If µ denotes the moment map for this action,
-we can take Hf to be a function of µ. Since XHf is tangent to the ﬁbers, we have
-(120) {Hb,H f } =ω(XHb,X Hf ) = 0
-which allows us to compute the ﬂow of Hb +Hf term by term.
-We use the same base Hamiltonian Hb for all cases. The speciﬁc choice of Hf in
-each case is as follows.
-• L: Let Hf,L ≥ 0 be a function with a minimum at the top of the ﬁber, convex
-in µ on the compact part, and linear in µ on the bottom end.
-• C: Let Hf,C ≥ 0 be a function with a minimum at the bottom of the ﬁber,
-convex in µ on the compact part, and linear in µ on the top end.
-• D: Let Hf,D ≥ 0 be a function with a minimum in the two-thirds of the
-way down from the top of the compact part of the ﬁber, convex in µ on the
-compact part, and linear in µ on the ends.
-In each case, the total Hamiltonian H = Hb +Hf achieves its minimum along a
-torus in X(B), which is one of the ﬁbers of the torus ﬁbration over B. Since L(r)
-is a section of the torus ﬁbration, H has a unique minimum on L(r), and hence
-there is a unique constant chord for L(r), which corresponds to the identity element
-er ∈HW ∗(L(r),L (r)). The cases are:
-• L: The minimum is along the torus corresponding to the midpoint of the t op
-edge of B, where the generator y lies. All of the Lagrangians L(r) for r ∈ Z
-intersect this torus at the same point. As an intersection point of L(0) and
-L(d), the minimum corresponds to qa,i for (a,i ) = (0, 0).
-• C: The minimum is along the torus corresponding to the midpoint of the
-bottom edge of B, where the generator p lies. All of the Lagrangians L(r) for
-r ∈ 2Z intersect this torus at the same point. As an intersection point of L(0)
-and L(r), the minimum corresponds to qa,i for (a,i ) = (0,r/ 2).
-• D: The minimum is along the torus two-thirds of the way from the top of
-the middle ﬁber of the map B → I, where the generator yp lies. All of
-the Lagrangians L(r) for r ∈ 3Z intersect this torus in the same point. As
-an intersection point of L(0) and L(r), the minimum corresponds to qa,i for
-(a,i ) = (0,r/ 3).
-Remark 14. The Hamiltonians we obtain as Hb +Hf are not admissible in the usual
-sense, because they vanish at some boundaries, and, even in the c aseD, are not linear
-with respect to a cylindrical end. Closer to our situations are the Lefschetz admissible
-Hamiltonians considered by Mark McLean [34], that are precisely thos e functions on
-the total space of a Lefschetz ﬁbration that are the sum of admis sible Hamiltonians
-on the base and ﬁber separately.
-7.2.3. Generators. Given Lagrangian submanifoldsL1,L 2 ofX, equipped with Hamil-
-tonianH, and r ∈ R, we get Floer cohomology complexes CF ∗(L1,L 2;rH ) generated
-by time-1 trajectories of XrH starting on L1 and ending on L2. As usual the diﬀer-
-ential counts inhomogeneous pseudo-holomorphic strips. We also h ave continuation
-maps
-(121) CF ∗(L1,L 2;rH ) →CF ∗(L1,L 2;r′H), r<r ′
-MIRROR OF THE PROJECTIVE PLANE 67
-given by counting strips where the inhomogeneous term interpolate s between r′XH
-and rXH. At the homology level, the continuation maps form an inductive syst em,
-and we deﬁne the wrapped Floer cohomology
-(122) HW ∗(L1,L 2) = lim
-r→∞
-HF ∗(L1,L 2;rH )
-Our purpose in this section is simply to set up an enumeration of the ge nerators
-of CF ∗(L(d1),L (d2);rH ) in each of the three cases. These generators can also be
-regarded as intersection points φrH (L(d1)) ∩L(d2). In order to make the situation as
-convenient as possible for our later arguments, we reﬁne our choic e of Hamiltonians so
-as to ensure that φrH (L(d)) is actually L(d′) for some d′; thus we can identify wrapped
-Floer cohomology generators with intersection points of our origina l Lagrangians.
-This is done by adjusting the slopes of our Hamiltonians on the ends.
-• We take the base Hamiltonian Hb so that the time–1 ﬂow completes 1 turn
-on the cylindrical ends of the base.
-• For cases L andC, we take the ﬁber Hamiltonian Hf so that the time–1 ﬂow
-completes 1/2 turn on the cylindrical end of the ﬁber.
-• For caseD, we take the ﬁber Hamiltonian Hf so that the time–1 ﬂow completes
-1/3 turn at the top of the ﬁber, and 1 /6 turn at the bottom of the ﬁber.
-In all cases the total Hamiltonian we use is H =Hb +Hf .
-The way to understand the ﬂow of H is to ﬁrst apply Hf , then Hb. The ﬂow of Hf
-wraps L(d) in the ﬁber, while the ﬂow of Hb, when it completes a loop in the base,
-performs the monodromy of the Lefschetz ﬁbration around that loop, which undoes
-some of the wrapping due to Hf .
-We can relate φH(L(d)) to L(d′) as follows:
-• L: we have φrH (L(d)) = L(d −r).
-• C: we have φ2rH (L(d)) = L(d −2r). Note that the same cannot be said with r
-in place of 2r; in that case the two Lagrangians intersect the bottom boundary
-(where no wrapping occurs) in diﬀerent points.
-• D: we have φ3rH (L(d)) = L(d − 3r). Again the same cannot be said with r
-in place of 3 r.
-In order to identify generators with intersection points, we pertu rb the boundary
-intersection points in a positive sense just as before. In the cases with boundary,
-where the Hamiltonian is supposed to have a minimum at the boundary, it is useful
-to perform this perturbation in an extra collar attached to the bou ndary, so that the
-Lagrangians still intersect at the minimum of H if they did prior to the perturbation.
-Once this is done, we can identify
-(123) CF ∗(L(d1),L (d2);rH ) ∼=CF ∗(φrH (L(d1)),L (d2)) ∼=CF ∗(L(d1 −r),L (d2))
-wherer ∈ Z in case L,r ∈ 2Z in case C, and r ∈ 3Z in case D. This identiﬁcation is
-compatible with the gradings, which shows that for r > d1 −d2, the Floer complex
-CF ∗(L(d1),L (d2);rH ) is concentrated in degree zero, and so has vanishing diﬀeren-
-tial. Recall that the generators of the last group are identiﬁed with B( 1
-d2−d1+r Z).
-Once we are in the range d2 − d1 + r > 0, we ﬁnd that as r increases, new
-generators are created, none are destroyed, and the generat ors that already ex-
-ist are “compressed” toward the minimum of H. This gives rise to naive inclu-
-sion maps i : CF ∗(L(d1),L (d2);rH ) → CF ∗(L(d1),L (d2);r′H) for r < r′, where
-68 JAMES PASCALEFF
-r > d1 −d2. In terms of fractional integral points, this i corresponds to the map
-B( 1
-d2−d1+r Z) →B( 1
-d2−d1+r′ Z) which is dilation by the appropriate factor centered at
-the point corresponding to the minimum of H.
-We can index the points of ˆB( 1
-dZ) with two indices. The index a ∈ Z corresponds
-to the column lying at η = a/d, while the index i that indexes points within a
-column, and which lies in {0,...,
-⌊
-d−|a|
-2
-⌋
-} in the compact case, is now unbounded
-in the positive direction in case L, in the negative direction in case C, and in both
-directions in case D. We use the notation qa,i for these points.
+[]{#sec:wrapping label="sec:wrapping"}
+
+In this subsection we describe the geometric setup for wrapped Floer cohomology in the mirrors of $U_L,U_C$, and $U_D$.
+
+### Completions {#sec:completions}
+
+Wrapped Floer cohomology is formulated in terms of noncompact manifolds containing noncompact Lagrangian submanifolds. These can be defined as (partial) completions of compact manifolds with boundary.
+
+The starting point for all three cases is the original Lefschetz fibration $X(B)\to X(I)$ containing the Lagrangians $\{L(d)\}_{d\in\Z}$. We define completions $\hat{X}_L$, $\hat{X}_C$, and $\hat{X}_D$. This process involves replacing a boundary component with an infinite end, either on the base or in the fiber of the Lefschetz fibration.
+
+-   $L$: The manifold $\hat{X}_L$ retains a boundary component at the top horizontal boundary, corresponding to the fiber of the superpotential $W_L = u$. The fibers of $X(B) \to X(I)$ are completed at the other, bottom, end. The base annulus $X(I)$ is completed to a cylinder $\hat{X}(I)$, and the fibration is extended over this cylinder.
+
+-   $C$: The manifold $\hat{X}_C$ retains a boundary component at the bottom horizontal boundary, corresponding to the fiber of the superpotential $W_C = \frac{e^{-\Lambda}v^2}{uv-1}$. The fibers are completed at the other, top, end. The base annulus is completed to a cylinder $\hat{X}(I)$, and the fibration is extended over this cylinder.
+
+-   $D$: The manifold $\hat{X}_D$ has no boundary, and the fibers are completed at both ends. The base annulus is completed to a cylinder $\hat{X}(I)$, and the fibration is extended over this cylinder.
+
+The torus fibration on $X(B)$ extends to these completions, and yields torus fibrations over completed bases $\hat{B}_L$,$\hat{B}_C$, $\hat{B}_D$.
+
+-   $\hat{B}_L$ is a half-plane with singular affine structure given by removing the bottom boundary from $B$ and extending in that direction.
+
+-   $\hat{B}_C$ is a half-plane with singular affine structure given by removing the top boundary from $B$ and extending in that direction.
+
+-   $\hat{B}_D$ is an entire plane with singular affine structure given by removing all boundaries from $B$ and extending in all directions.
+
+The Lagrangian submanifolds $L(d)$ are extended to $\hat{L}(d)$; In all cases, we extend $L(d)$ into whatever ends are attached so as to be invariant under the Liouville flow within the end. However, in the case of $L$, respectively $C$, we still have the boundary condition that $\hat{L}(d)$ is required to end on $\Sigma_1$ (the complex hypersurface contained in the top boundary), respectively $\Sigma_0$ (contained in the bottom boundary).
+
+### Hamiltonians {#sec:hamiltonians}
+
+The most crucial difference between the three cases comes from the choices of Hamiltonians that are be used to perform the wrapping. The Hamiltonians we consider are the sum of contributions from the base and the fiber.
+
+Let $H_b: \hat{X}(B) \to \R$ be the pullback of a function on the base cylinder which is a function of the radial coordinate $\eta = \log|w|$ only. Writing the symplectic form on the base as $d\rho \wedge
+d\theta$, where $\rho$ is a function of $\eta$, we take $H_b$ to be a convex function of $\rho$ on the compact part $X(I)$, and linear in $\rho$ on the ends. We also require $H_b \geq 0$, with minimum on the central circle $\eta = 0$. Since $dH_b$ vanishes on the fibers, $X_{H_b}$ is horizontal.
+
+The fiber Hamiltonian $H_f$ is chosen differently in each case. The main constraint is that its differential must vanish at any boundary component which may still be present. The construction is most convenient if we assume the completion preserves the $S^1$-symmetry that rotates the fibers. If $\mu$ denotes the moment map for this action, we can take $H_f$ to be a function of $\mu$. Since $X_{H_f}$ is tangent to the fibers, we have $$\{H_b,H_f\} = \omega(X_{H_b},X_{H_f}) = 0$$ which allows us to compute the flow of $H_b+H_f$ term by term.
+
+We use the same base Hamiltonian $H_b$ for all cases. The specific choice of $H_f$ in each case is as follows.
+
+-   $L$: Let $H_{f,L} \geq 0$ be a function with a minimum at the top of the fiber, convex in $\mu$ on the compact part, and linear in $\mu$ on the bottom end.
+
+-   $C$: Let $H_{f,C} \geq 0$ be a function with a minimum at the bottom of the fiber, convex in $\mu$ on the compact part, and linear in $\mu$ on the top end.
+
+-   $D$: Let $H_{f,D} \geq 0$ be a function with a minimum in the two-thirds of the way down from the top of the compact part of the fiber, convex in $\mu$ on the compact part, and linear in $\mu$ on the ends.
+
+In each case, the total Hamiltonian $H = H_b + H_f$ achieves its minimum along a torus in $X(B)$, which is one of the fibers of the torus fibration over $B$. Since $L(r)$ is a section of the torus fibration, $H$ has a unique minimum on $L(r)$, and hence there is a unique constant chord for $L(r)$, which corresponds to the identity element $e_r \in HW^*(L(r),L(r))$. The cases are:
+
+-   $L$: The minimum is along the torus corresponding to the midpoint of the top edge of $B$, where the generator $y$ lies. All of the Lagrangians $L(r)$ for $r \in \Z$ intersect this torus at the same point. As an intersection point of $L(0)$ and $L(d)$, the minimum corresponds to $q_{a,i}$ for $(a,i) = (0,0)$.
+
+-   $C$: The minimum is along the torus corresponding to the midpoint of the bottom edge of $B$, where the generator $p$ lies. All of the Lagrangians $L(r)$ for $r \in 2\Z$ intersect this torus at the same point. As an intersection point of $L(0)$ and $L(r)$, the minimum corresponds to $q_{a,i}$ for $(a,i)= (0,r/2)$.
+
+-   $D$: The minimum is along the torus two-thirds of the way from the top of the middle fiber of the map $B \to I$, where the generator $yp$ lies. All of the Lagrangians $L(r)$ for $r \in 3\Z$ intersect this torus in the same point. As an intersection point of $L(0)$ and $L(r)$, the minimum corresponds to $q_{a,i}$ for $(a,i) = (0,r/3)$.
+
+::: remark
+The Hamiltonians we obtain as $H_b + H_f$ are not admissible in the usual sense, because they vanish at some boundaries, and, even in the case $D$, are not linear with respect to a cylindrical end. Closer to our situations are the *Lefschetz admissible* Hamiltonians considered by Mark McLean [@mclean-lf-sh], that are precisely those functions on the total space of a Lefschetz fibration that are the sum of admissible Hamiltonians on the base and fiber separately.
+:::
+
+### Generators {#sec:generators}
+
+Given Lagrangian submanifolds $L_1, L_2$ of $X$, equipped with Hamiltonian $H$, and $r \in \R$, we get Floer cohomology complexes $CF^*(L_1,L_2;rH)$ generated by time-$1$ trajectories of $X_{rH}$ starting on $L_1$ and ending on $L_2$. As usual the differential counts inhomogeneous pseudo-holomorphic strips. We also have continuation maps $$CF^*(L_1,L_2;rH) \to CF^*(L_1,L_2;r'H), \quad r < r'$$ given by counting strips where the inhomogeneous term interpolates between $r'X_H$ and $rX_H$. At the homology level, the continuation maps form an inductive system, and we define the *wrapped Floer cohomology* $$HW^*(L_1,L_2) = \lim_{r\to \infty} HF^*(L_1,L_2;rH)$$
+
+Our purpose in this section is simply to set up an enumeration of the generators of $CF^*(L(d_1),L(d_2);rH)$ in each of the three cases. These generators can also be regarded as intersection points $\phi_{rH}(L(d_1))\cap L(d_2)$. In order to make the situation as convenient as possible for our later arguments, we refine our choice of Hamiltonians so as to ensure that $\phi_{rH}(L(d))$ is actually $L(d')$ for some $d'$; thus we can identify wrapped Floer cohomology generators with intersection points of our original Lagrangians. This is done by adjusting the slopes of our Hamiltonians on the ends.
+
+-   We take the base Hamiltonian $H_b$ so that the time--$1$ flow completes $1$ turn on the cylindrical ends of the base.
+
+-   For cases $L$ and $C$, we take the fiber Hamiltonian $H_f$ so that the time--$1$ flow completes $1/2$ turn on the cylindrical end of the fiber.
+
+-   For case $D$, we take the fiber Hamiltonian $H_f$ so that the time--$1$ flow completes $1/3$ turn at the top of the fiber, and $1/6$ turn at the bottom of the fiber.
+
+In all cases the total Hamiltonian we use is $H = H_b + H_f$.
+
+The way to understand the flow of $H$ is to first apply $H_f$, then $H_b$. The flow of $H_f$ wraps $L(d)$ in the fiber, while the flow of $H_b$, when it completes a loop in the base, performs the monodromy of the Lefschetz fibration around that loop, which undoes some of the wrapping due to $H_f$.
+
+We can relate $\phi_H(L(d))$ to $L(d')$ as follows:
+
+-   $L$: we have $\phi_{rH}(L(d)) = L(d-r)$.
+
+-   $C$: we have $\phi_{2rH}(L(d)) = L(d-2r)$. Note that the same *cannot* be said with $r$ in place of $2r$; in that case the two Lagrangians intersect the bottom boundary (where no wrapping occurs) in different points.
+
+-   $D$: we have $\phi_{3rH}(L(d)) = L(d-3r)$. Again the same cannot be said with $r$ in place of $3r$.
+
+In order to identify generators with intersection points, we perturb the boundary intersection points in a positive sense just as before. In the cases with boundary, where the Hamiltonian is supposed to have a minimum at the boundary, it is useful to perform this perturbation in an extra collar attached to the boundary, so that the Lagrangians still intersect at the minimum of $H$ if they did prior to the perturbation. Once this is done, we can identify $$CF^*(L(d_1),L(d_2);rH) \cong CF^*(\phi_{rH}(L(d_1)),L(d_2)) \cong CF^*(L(d_1-r),L(d_2))$$ where $r\in \Z$ in case $L$, $r\in 2\Z$ in case $C$, and $r\in 3\Z$ in case $D$. This identification is compatible with the gradings, which shows that for $r > d_1 - d_2$, the Floer complex $CF^*(L(d_1),L(d_2);rH)$ is concentrated in degree zero, and so has vanishing differential. Recall that the generators of the last group are identified with $B(\frac{1}{d_2-d_1+r}\Z)$.
+
+Once we are in the range $d_2-d_1 + r > 0$, we find that as $r$ increases, new generators are created, none are destroyed, and the generators that already exist are "compressed" toward the minimum of $H$. This gives rise to naive inclusion maps $i :
+CF^*(L(d_1),L(d_2);rH) \to CF^*(L(d_1),L(d_2);r'H)$ for $r < r'$, where $r > d_1-d_2$. In terms of fractional integral points, this $i$ corresponds to the map $B(\frac{1}{d_2-d_1+r}\Z) \to
+B(\frac{1}{d_2-d_1+r'}\Z)$ which is dilation by the appropriate factor centered at the point corresponding to the minimum of $H$.
+
+We can index the points of $\hat{B}(\frac{1}{d}\Z)$ with two indices. The index $a\in \Z$ corresponds to the column lying at $\eta
+= a/d$, while the index $i$ that indexes points within a column, and which lies in $\{0,\dots,\left\lfloor\frac{d-|a|}{2}\right\rfloor\}$ in the compact case, is now unbounded in the positive direction in case $L$, in the negative direction in case $C$, and in both directions in case $D$. We use the notation $q_{a,i}$ for these points.

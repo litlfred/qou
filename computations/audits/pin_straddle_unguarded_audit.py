@@ -465,7 +465,7 @@ def _sources() -> list[Path]:
     out = []
     for p in sorted((ROOT / "computations").rglob("*.py")):
         rel = str(p.relative_to(ROOT))
-        if "_deprecated" in rel or "qou-mass" in rel:
+        if ("_deprecated" in rel or "fsh-guts" in rel) or "qou-mass" in rel:
             continue
         out.append(p)
     return out
@@ -476,7 +476,7 @@ def scan() -> list[tuple[str, str]]:
     hits: list[tuple[str, str]] = []
     for p in sorted((ROOT / "computations").rglob("*.py")):
         rel = str(p.relative_to(ROOT))
-        if "_deprecated" in rel or "/audits/" in rel or "qou-mass" in rel:
+        if ("_deprecated" in rel or "fsh-guts" in rel) or "/audits/" in rel or "qou-mass" in rel:
             continue
         try:
             src = p.read_text()

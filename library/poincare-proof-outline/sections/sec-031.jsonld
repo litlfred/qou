@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/poincare-proof-outline/sections/sec-031",
   "@type": [
     "doco:Section"
   ],
-  "title": "Some elementary properties of h-betwenness",
-  "pageStart": 78,
-  "pageEnd": 78,
+  "title": "H-betwenness expressed by a cross-ratio",
+  "pageStart": 77,
+  "pageEnd": 77,
   "contains": [
     "library/poincare-proof-outline/blocks/prose-sec-031"
   ],
-  "derivedFrom": "library/poincare-proof-outline/manifest",
-  "sourceDocument": "library/poincare-proof-outline/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
   "provenance": "ingested"
 }

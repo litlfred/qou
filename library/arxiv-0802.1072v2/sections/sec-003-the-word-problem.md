@@ -8,40 +8,10 @@ pages: 4-5
 source_pdf: 0802.1072v2 (1).pdf
 source_sha256: 6f4d93f0b7ba5cd7
 doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
+text_source: latex
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 1.0
 ---
-Xu’s solution to the word problem builds directly on the anal ogous ideas in the work of Garside [13].
-Choose any word W in the symbols a1, a2, a3 and their inverses, representing an element β∈ B3.
-Using (3)(i), all inverses of generators can be traded for po wers of δ−1. Using (3)(ii), all powers
-of δ may be collected, say, at the left, so that one may rewrite W in the form δkP , where k∈ N
-and P is a positive word. Positive words contain powers of δ if and only if two adjacent letters
-ai+1ai appear, so after a simple search we may change δkP to a word of the form δqar1ar2··· ars
-where q is maximal and the positive word ar1ar2··· ars contains no adjacent letters of the form
-ai+1ai. Rewriting our word in syllable form X = δqas1
-τ1 . . . ast
-τt , we see that the subscripts must be
-strictly increasing. The integer q is the power, and the positive word is the tail. This solves the
-word problem in B3.
-4
-We give an example. The following set of moves bring the ﬂype- admissible braid W = a−2
-1 a−3
-2 a5
-1a2,
-which is not in normal form, to its normal form δ−4a2
-2a3a5
-1a2: Use (i) to modify W = a−2
-1 a−3
-2 a5
-1a2
-to ( δ−1a2)2(δ−1a3)3a5
-1a2. Now use (ii) to modify ( δ−1a2)2(δ−1a3)3a5
-1a2 to δ−2a1a2δ−3a1a2a3a5
-1a2
-and then to δ−5a1a2a1a2a3a5
-1a4
-2. Finally, observe that δ = a2a1 is a subword of the tail of
-δ−5a1a2a1a2a3a5
-1a4
-2, so we can move it to the left to obtain δ−4a2
-2a3a5
-1a2. The subscripts in the
-tail are strictly increasing, so we are done.
+Xu's solution to the word problem builds directly on the analogous ideas in the work of Garside [@Ga]. Choose any word $W$ in the symbols $a_1,a_2,a_3$ and their inverses, representing an element $\beta\in B_3$. Using ([\[E:BKL presentation\]](#E:BKL presentation){reference-type="ref" reference="E:BKL presentation"})(i), all inverses of generators can be traded for powers of $\delta^{-1}$. Using ([\[E:BKL presentation\]](#E:BKL presentation){reference-type="ref" reference="E:BKL presentation"})(ii), all powers of $\delta$ may be collected, say, at the left, so that one may rewrite $W$ in the form $\delta^kP$, where $k\in \mathbb N$ and $P$ is a *positive* word. Positive words contain powers of $\delta$ if and only if two adjacent letters $a_{i+1}a_i$ appear, so after a simple search we may change $\delta^kP$ to a word of the form $\delta^qa_{r_1}a_{r_2}\cdots a_{r_s}$ where $q$ is maximal and the positive word $a_{r_1}a_{r_2}\cdots a_{r_s}$ contains no adjacent letters of the form $a_{i+1}a_i$. Rewriting our word in syllable form $X = \delta^qa_{\tau_1}^{s_1}\dots a_{\tau_t}^{s_t}$, we see that the subscripts must be strictly increasing. The integer $q$ is the *power*, and the positive word is the *tail*. This solves the word problem in $B_3$.
+
+We give an example. The following set of moves bring the flype-admissible braid $W=a_1^{-2}a_2^{-3}a_1^5 a_2$, which is not in normal form, to its normal form $\delta^{-4}a_2^2a_3a_1^5a_2$: Use (i) to modify $W   = a_1^{-2}a_2^{-3}a_1^5 a_2$ to $(\delta^{-1}a_2)^2(\delta^{-1}a_3)^3a_1^5a_2$. Now use (ii) to modify $(\delta^{-1}a_2)^2(\delta^{-1}a_3)^3a_1^5a_2$ to $\delta^{-2} a_1a_2  \delta^{-3 }a_1 a_2a_3 a_1^5a_2$ and then to $\delta^{-5}a_1a_2 a_1a_2a_3a_1^5a_2^4$. Finally, observe that $\delta=a_2a_1$ is a subword of the tail of $\delta^{-5}a_1a_2 a_1a_2a_3a_1^5a_2^4$, so we can move it to the left to obtain $\delta^{-4}a_2^2a_3a_1^5a_2.$ The subscripts in the tail are strictly increasing, so we are done.

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-043",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-043",
   "kind": "prose",
   "title": "Algebraic Background",
   "pageStart": 49,
   "pageEnd": 51,
   "text": "../sections/sec-043-algebraic-background.md",
-  "derivedFrom": "library/on-the-garoufalidis-kashaev-state-integral-invariant/manifest",
-  "sourceDocument": "library/on-the-garoufalidis-kashaev-state-integral-invariant/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
   "provenance": "ingested"
 }

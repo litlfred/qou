@@ -1,0 +1,1420 @@
+
+
+
+\newpage
+
+%\footline={\hss\folio\hss}
+%\pageno=1
+
+\dspace
+\subhead
+5. Le groupe fondamental motivique du
+compl\'ement, dans $\dbP^1$, de $0$, $\infty$,
+et $\mu_N$
+\endsubhead
+
+\subhead
+5.1
+\endsubhead
+Soient $N$ un entier $\Ge 1$,
+$k$ engendr\'e sur $\dbQ$ par une racine
+primitive $N^{\ieme}$ de l'unit\'e
+et $\scrO$ l'anneau de ses entiers.
+Il est commode de ne pas supposer que $k$ soit
+le sous-corps $\dbQ(\exp(2\pi i/N))$ de
+$\dbC$.
+Notons $A_k$, ou simplement $A$ la droite
+affine type sur $k$ et posons
+$A^*=A-\{0\}=\Spec\,k[u,u^{-1}]$.
+Soit $X$ le compl\'ement dans $A^*$ de
+l'ensemble $\mu_N:=\mu_N(k)$ des racines
+$N^{\iemes}$ de l'unit\'e.
+S'il y a ambigu{\umi}t\'e sur $N$, on \'ecrira
+plut\^{o}t $k_N$, $\scrO_N$ et $X_N$.
+
+Le groupe dih\'edral $\dbZ/2\ltimes\mu_N$ agit
+sur $X\Subset \dbP_k^1$: le g\'en\'erateur de
+$\dbZ/2$ agit par $u\mapsto u^{-1}$, et
+$\xi\in\mu_N$ agit par $u\mapsto\xi u$.
+Pour $N=1,2$ ou $4$, le groupe des
+projectivit\'es transformant $X$ en
+lui-m\^{e}me est plus grand.
+Pour $N=1$, il s'identifie au groupe des
+permutations de $\{0,1,\infty\}$.
+Pour $N=2$, $(0,\infty,1,-1)$ est un quaterne
+harmonique, et on obtient le groupe des
+automorphismes d'un carr\'e de sommets
+cons\'ecutifs $0$, $1$, $\infty$, $-1$.
+Pour $N=4$, les points $0$, $1$, $i$, $-1$, $-i$,
+$\infty$ forment sur la sph\`ere de Riemann les
+sommets d'un octa\`edre, et on obtient le
+groupe des d\'eplacements de cet octa\`edre.
+
+\subhead
+5.2
+\endsubhead
+Si $x$ et $y$ sont deux points-base (4.3) de
+$X$, l'espace de chemins motivique $P_{y,x}$
+est un $\MT(k)$-sch\'ema affine (4.4).
+La r\'ealisation $\omega$ de $P_{y,x}$ est
+ind\'ependante de $x$ et $y$.
+C'est un $\dbQ$-sch\'ema en groupe pro-unipotent, 
+et la composition des chemins est
+la loi de groupe.
+Autre fa\c{c}on de dire: en r\'ealisation
+$\omega$, il y a un chemin canonique de $x$
+\`a $y$, et le compos\'e des chemins
+canoniques de $x$ \`a $y$ et de $y$ \`a 
+$z$ est le chemin canonique de $x$ \`a $z$.
+Bien s\^{u}r, cette trivialisation du
+$\omega(\pi_1(X,x))$-torseur $\omega(P_{y,x})$
+n'est en g\'en\'eral pas motivique, i.e. ne
+provient pas d'une trivialisation du
+$\pi_1(X,x)$-torseur $P_{y,x}$.
+L'action sur $\omega(P_{y,x})$
+du groupe des automorphismes du foncteur fibre
+$\omega$ d\'epend de $x$ et $y$.
+
+\subhead
+5.3
+\endsubhead
+Pour $z$ dans $\dbP_k^1-\{\infty\}$ et
+$\lambda$ dans $k$ nous noterons
+$\lambda_z$ le vecteur tangent en $z$ de
+coordonn\'ee
+$du(\lambda_z)=\lambda$.
+Nous noterons $\lambda_\infty$ le vecteur
+tangent en $\infty$ de coordonn\'ee
+$du^{-1}(\lambda_\infty)=\lambda$.
+
+Nous prendrons comme points-base les
+$\lambda_z$ pour $z=0$, $\infty$ ou dans
+$\mu_N$ et $\lambda$ une racine de l'unit\'e
+dans $k$.
+Ce syst\`eme de points-base est stable sous
+l'action du groupe dih\'edral
+$\dbZ/2\ltimes\mu_N$.
+Une application de 1.7 montre comme en 4.17,
+4.18 que les $P_{y,x}$ correspondants sont non
+ramifi\'es en dehors de 
+l'ensemble des places de $k$ au-dessus
+d'un nombre premier divisant $N$: ce sont
+des $\MT(\scrO[1/N])$-sch\'emas.
+Nous d\'ecrivons en 5.4 et 5.5 des structures
+sur le syst\`eme des $P_{y,x}$.
+Pour toutes ces structures, il suffit pour les
+construire de les construire dans
+$\scrR^{H+\ell}$, ce qui est fait dans
+Deligne (1989), et d'appliquer 2.14.
+
+
+\subhead
+5.4
+\endsubhead
+Soient $T$ une droite (sch\'ema vectoriel de
+dimension un) et $T^*=T-\{0\}$.
+Le $\pi_1$ motivique de $T^*$ est ab\'elien,
+ind\'ependant du point-base.
+C'est $\dbQ(1)$.
+Pour $x\in T^*(k)$, l'application
+$\lambda\mapsto\lambda x$ est un isomorphisme
+de $A^*$ avec $T^*$.
+Pour $y\in T^*(k)$, il induit un isomorphisme
+de $\dbQ(1)$-torseurs de
+$P_{y/x,1}(A^*)$ avec $P_{y,x}(T^*)$.
+Le $\dbQ(1)$ torseur $P_{t,1}(A^*)$
+est le {\it torseur de Kummer} $K(t)$, et la
+composition des chemins fournit un
+isomorphisme de torseurs $K(tu)=K(t)+K(u)$.
+
+En particulier, si $\alpha\in k^*$ est une
+racine $n^{\ieme}$ de l'unit\'e, elle fournit
+une trivialisation de $nK(\alpha)$ et, puisque la
+multiplication par $n$ est un automorphisme de
+$\dbQ(1)$, par division, une trivialisation de
+$K(\alpha)$.
+
+Pour $x\in T^*(k)$ et $\alpha$ une racine de
+l'unit\'e, le $\dbQ(1)$-torseur $P_{\alpha
+x,x}$ est ainsi trivialis\'e: on dispose d'un
+chemin motivique de $x$ \`a $\alpha x$.
+
+Prenons pour $T$ l'espace tangent \`a
+$\dbP^1$ en $0$, $\infty$ ou en
+$\zeta\in\mu_N$.
+Le groupo{\umi}de des $P_{y,x}(T^*)$, pour
+$x,y\in T^*(k)$, s'envoie dans le 
+groupo{\umi}de
+des $P_{y,x}(X)$.
+Pour $x\in T^*(k)$ et $\alpha$ une racine de
+l'unit\'e on dispose donc d'un chemin
+motivique de $x$ \`a $\alpha x$ dans $X$: une
+trivialisation du $\pi_1(X,x)$-torseur
+$P_{\alpha x,x}(X)$.
+
+Pour le syst\`eme de points base $\lambda_z$
+de 5.3, $P_{\lambda_z,\mu_t}$ ne d\'epend donc
+que de $z$ et $t$, et on \'ecrira simplement
+$P_{z,t}$ pour $P_{\lambda_z,\mu_t}$.
+Quand d'autres points-base \`a l'infini auront \`a
+\^{e}tre utilis\'es, nous retournerons \`a la
+notation $\lambda_z$.
+
+
+\subhead
+5.5
+\endsubhead
+On dispose sur le syst\`eme des
+$\MT(\scrO[1/N])$-sch\'emas $P_{y,x}$ ($x,y\in
+S:=\{0,\infty\}\Cup \mu_N$) des structures
+suivantes.
+
+\medskip\noindent
+{\sans (A)}\enspace
+La composition des chemins.
+
+\smallskip\noindent
+{\sans (B)}\enspace
+Pour chaque $x\in S$, un 
+morphisme de sch\'emas en groupe, la {\it
+monodromie locale autour de $x$}:
+$$
+\dbQ(1)\to P_{x,x}.
+$$
+
+\smallskip\noindent
+{\sans (C)}\enspace
+une \'equivariance sous le groupe dih\'edral
+$\dbZ/2\ltimes\mu_N$ de 5.1.
+
+\subhead
+5.6
+\endsubhead
+Si on applique un foncteur fibre $F$, \`a
+valeurs dans les espaces vectoriels sur un
+corps $K$, \`a $\dbQ(1)$, aux $P_{y,x}$ et 
+aux structures 5.5, on obtient une structure
+de l'esp\`ece suivante:
+
+\medskip\noindent
+(1)\enspace
+Un espace vectoriel de dimension un $K(1)$.
+
+\noindent
+(2)\enspace
+Pour chaque $x,y\in S$, un sch\'ema $P_{y,x}$
+sur $K$.
+
+\noindent
+$(3)_{\text{A}}$\enspace
+Un syst\`eme de morphismes de sch\'emas
+$$
+P_{z,y}\times P_{y,x}\to P_{z,x}\tag5.6.1
+$$
+faisant des $P_{y,x}$ un groupo{\umi}de.
+Les sch\'emas en groupe $P_{x,x}$ sont
+pro-unipotents.
+
+\noindent
+$(3)_{\text{B}}$\enspace
+Pour chaque $x\in S$, un homomorphisme
+$$
+\text{(groupe additif }
+K(1))\to P_{x,x}.\tag5.6.2
+$$
+L'alg\`ebre de Lie de $P_{x,x}$ est une
+pro-alg\`ebre de Lie.
+Parce que $P_{x,x}$ est pro-unipotent, la
+donn\'ee (5.6.2) \'equivaut \`a celle de
+$$
+K(1)\to \Lie\,P_{x,x}.\tag5.6.3
+$$
+
+\noindent
+$(3)_{\text{C}}$\enspace
+Une $\dbZ/2\ltimes\mu_N$ \'equivariance.
+
+\subhead
+5.7
+\endsubhead
+Il nous sera utile d'affaiblir une structure
+5.6 en restreignant les points-base \`a
+\^{e}tre $0$ ou dans $\mu_N$.
+Plus pr\'ecis\'ement, \`a une structure 5.6,
+on peut attacher une structure affaiblie du
+type suivant.
+
+\medskip\noindent
+(1)\enspace
+Comme en 5.6 (1).
+
+\noindent
+(2)\enspace
+Un sch\'ema en groupe pro-unipotent $P_{0,0}$
+et, pour $\zeta\in\mu_N$, un $P_{00}$-torseur
+$P_{\zeta,0}$.
+On note $P_{\zeta\zeta}$ le tordu de $P_{00}$
+par ce torseur, i.e. le sch\'ema en groupe des
+automorphismes du $P_{0,0}$-torseur
+$P_{\zeta,0}$.
+
+\noindent
+$(3)_{\text{B}}$\enspace
+Pour $x=0$ ou $x\in\mu_N$, un morphisme
+(5.6.2) ou, ce qui revient au m\^{e}me,
+(5.6.3).
+
+\noindent
+$(3)_{\text{C}}$\enspace
+Une $\mu_N$-\'equivariance.
+
+\remark{\bf Remarques} (i)
+La donn\'ee d'une structure 5.7 \'equivaut \`a
+celle de (1) et de
+
+\noindent
+$(2')$\enspace
+Un sch\'ema en groupe pro-unipotent $P_{00}$
+et un $P_{00}$-torseur $P_{10}$.
+Comme en (2), $P_{10}$ d\'efinit par torsion
+$P_{11}$.
+
+\noindent
+$(3')_{\text{B}}$\enspace
+Comme en $(3)_{\text{B}}$, pour $x=0$ ou $1$.
+
+\noindent
+$(3')_{\text{C}}$\enspace
+Une action sur $P_{00}$ de $\mu_N$, respectant
+la monodromie locale autour de $0$.
+
+On r\'ecup\`ere (2) en d\'efinissant
+$P_{\zeta,0}$ comme une copie de $P_{1,0}$,
+l'\'equivariance $(3)_{\text{C}}\,:\zeta: P_{1,0}\to
+P_{\zeta,0}$ \'etant l'identit\'e de $P_{1,0}$
+sur cette copie.
+
+\noindent
+(ii)\enspace
+Cette structure est un peu plus pr\'ecise que
+la donn\'ee de $P_{00}$, de l'action de
+$\mu_N$, de $(3)_{\text{B}}$ pour $x=0$ et de
+la classe de conjugaison ``monodromie locale
+autour de $1$'' de morphismes $\dbQ(1)\to
+P_{1,1}$: cette classe de conjugaison est un
+espace homog\`ene, qu'on peut identifier au
+quotient $P_{0,1}/\dbQ(1)$.
+\endremark
+
+\subhead
+5.8
+\endsubhead
+Prenons pour foncteur fibre le foncteur fibre
+$\omega$, et d\'ecrivons la structure
+d'esp\`ece (5.6) obtenue.
+Puisque $\omega$ est \`a valeurs dans les
+$\dbQ$-espaces vectoriels gradu\'es, les
+alg\`ebres affines des $\omega(P_{y,x})$ seront
+des $\dbQ$-alg\`ebres gradu\'ees.
+
+Soit $\scrL$ l'alg\`ebre de Lie engendr\'ee
+par des g\'en\'erateurs $e_x$, 
+$x\in\{0,\infty\}\Cup\mu_N$, soumis \`a la seule
+relation que $\sum e_x=0$.
+En cas d'ambigu{\umi}t\'e, on l'\'ecrira plus
+pr\'ecisement $\scrL_N$.
+On la gradue en donnant aux $e_x$ le degr\'e un.
+Elle est librement engendr\'ee par les $e_x$,
+$x\not=\infty$.
+
+Soit $\prod$ le groupe pro-unipotent
+$$
+\prod:=\lim\,\exp(\scrL/\text{degr\'e $\Ge
+n$)}.
+$$
+On munit son alg\`ebre affine de la graduation
+d\'eduite de celle de $\scrL$.
+L'alg\`ebre de Lie de $\prod$ est le
+compl\'et\'e $\scrL^{\uphat}
+:=\prod\limits_{n}\scrL_n$ de $\scrL$.
+
+Avec ces notations, la structure d'esp\`ece
+5.6, et les graduations, sont comme suit.
+
+\medskip\noindent
+$(1)^\omega$\enspace
+L'espace vectoriel $\dbQ$, en degr\'e un.
+
+\noindent
+$(2)^\omega$\enspace
+Pour chaque $x$, $y$, une copie
+$\prod\nolimits_{y,x}$ de $\prod$.
+
+\noindent
+$(3)_{\text{A}}^\omega$\enspace
+Morphismes (5.6.1): la loi de groupe de
+$\prod$.
+
+\noindent
+$(3)_{\text{B}}^\omega$\enspace
+Le morphisme (5.6.3) est
+$$
+\dbQ\to\scrL^{\uphat}\colon\, 1\longmapsto e_x
+$$
+
+\noindent
+$(3)_{\text{C}}^\omega$\enspace
+Pour $\sigma\in\dbZ/2\ltimes\mu_N$, agissant
+sur $\{0,\infty\}\Cup\mu_N$ comme en 5.1, $\sigma$
+envoie $\prod\nolimits_{y,x}$ sur
+$\prod\nolimits_{\sigma y,\sigma x}$.
+C'est le morphisme de groupes
+$[\sigma]\colon\,\prod\to\prod$
+qui induit sur l'alg\`ebre de Lie $e_x\mapsto
+e_{\sigma x}$.
+
+D'apr\`es 2.10, la m\^{e}me description vaut,
+sur $k$, pour le foncteur fibre $\DR$.
+
+Le groupe $G_\omega\left<\MT(\scrO[1/N])\right>$ 
+(2.1) agit sur cette structure d'esp\`ece 5.8.
+Nous nous proposons d'\'etudier cette action.
+
+
+\subhead
+5.9
+\endsubhead
+La structure 5.8 d'esp\`ece 5.6 fournit par
+oubli une structure d'esp\`ece 5.7.
+Pr\'esent\'ee comme en 5.7 Remarque (i), c'est
+la suivante.
+
+\medskip\noindent
+$(1)^\omega$\enspace
+L'espace vectoriel $\dbQ$.
+
+\noindent
+$(2)^\omega$\enspace
+Une copie $\prod\nolimits_{0,0}$ de $\prod$ et
+le $\prod\nolimits_{0,0}$ torseur trivial
+$\prod$, not\'e $\prod\nolimits_{1,0}$.
+Le tordu de $\prod\nolimits_{0,0}
+$ par ce torseur est une nouvelle copie de
+$\prod$, not\'ee $\prod\nolimits_{1,1}$.
+
+\noindent
+$(3)_{\text{B}}^\omega$\enspace
+Les morphismes (5.6.3), pour $x=0$ ou $1$ sont
+$\dbQ\to\scrL^{\uphat}\colon\, 1\to e_x$.
+
+\noindent
+$(3)_{\text{C}}^\omega$\enspace
+L'action de $\mu_N$ sur
+$\prod\nolimits_{0,0}$, donn\'ee sur
+l'alg\`ebre de Lie $\scrL^{\uphat}$  par
+$e_x\mapsto e_{\xi x}$.
+
+
+\subhead
+5.10
+\endsubhead
+Soit $H_\omega$ le sch\'ema en groupe des
+automorphismes de la structure 5.9 d'esp\`ece
+5.7.
+L'action de $H_\omega$ sur l'espace vectoriel
+de dimension un $(1)^\omega$ est un morphisme
+$$
+H_\omega\to \dbG_m.\tag5.10.1
+$$
+Soit $V_\omega$ son noyau.
+Les graduations fournissent un morphisme de
+$\dbG_m$ dans $H_\omega$.
+Puisque $(1)^\omega$ est en degr\'e un, c'est
+une section de (5.10.1).
+Elle fait de $H_\omega$ un produit
+semi-direct:
+$$
+H_\omega=\dbG_m\ltimes V_\omega.\tag5.10.2
+$$
+
+L'action de $G_\omega$ sur la structure 5.9 se
+factorise par $H_\omega$, puisque $H_\omega$ a
+\'et\'e d\'efini comme le groupe
+d'automorphismes de r\'ealisations $\omega$
+respectant des structures motiviques.
+Comparant \`a 2.1, on v\'erifie que le
+morphisme
+$$
+G_\omega=\dbG_m\ltimes U_\omega\to H_\omega
+=\dbG_m\ltimes V_\omega\tag5.10.3
+$$
+est compatible aux d\'ecompositions en
+produits semi-directs.
+
+\proclaim{Proposition 5.11}
+Notons $1_{y,x}$ l'\'el\'ement neutre de la
+copie $\prod\nolimits_{y,x}$ de $\prod$.
+Avec les notations de 5.9 et 5.10, le
+morphisme $v\mapsto v(1_{1,0})$ est un
+isomorphisme de sch\'emas de $V_\omega$ avec
+$\prod\nolimits_{1,0}$.
+\endproclaim
+
+Rappelons que pour $\xi\in\mu_N$, 
+$[\xi]$ est l'automorphisme de $\prod$
+qui induit sur l'alg\`ebre de Lie
+$e_x\mapsto e_{\xi x}$.
+On notera $\prod\nolimits_{0,1}$ le
+$\left(\prod\nolimits_{1,1},
+\prod\nolimits_{0,0}\right)$-bitorseur inverse
+du $\left(\prod\nolimits_{0,0},
+\prod\nolimits_{1,1}\right)$-bitorseur
+$\prod\nolimits_{1,0}$.
+C'est une nouvelle copie $\prod$.
+Pour $x,y,z\in\{0,1\}$, on dispose d'une
+``composition des chemins''
+$\prod\nolimits_{z,y}\times\prod\nolimits_{y,x}\to
+\prod\nolimits_{z,x}$, simplement donn\'ee par
+la loi de groupe de $\prod$.
+
+\demo{Preuve}
+Soit $v$ dans $V_\omega$ et posons
+$a:=v(1_{1,0})$.
+\enddemo
+
+Puisque $V_\omega$ agit trivialement sur
+$(1)^\omega$ et respecte
+$(3)_{\text{B}}^\omega$, on a dans
+$\Lie\,\prod\nolimits_{00}$, identifi\'e \`a
+$\scrL^{\uphat}$
+$$
+v(e_0)=e_0\qquad\qquad
+\text{(dans $\Lie\,{\tsize \prod\nolimits_{0,0})}$}
+\tag5.11.1
+$$
+et dans $\Lie\,\prod\nolimits_{1,1}$,
+\'egalement identifi\'e \`a $\scrL^{\uphat}$
+$$
+v(e_1)=e_1\qquad\qquad\text{(dans
+$\Lie\,{\tsize \prod\nolimits_{1,1}}$)}.
+$$
+Transformant par $v$ l'identit\'e
+$$
+\left(\exp(e_1)\text{ dans }{\tsize
+\prod\nolimits_{0,0}}\right)=1_{0,1} \cdot \left(\exp(e_1)
+\text{ dans }{\tsize\prod\nolimits_{11}}\right)\cdot 
+1_{1,0},
+$$
+on obtient
+$$
+v(\exp(e_1)\text{ dans }{\tsize \prod\nolimits_{0,0}})
+=a^{-1}\exp(e_1)a,
+$$
+qui \'equivaut \`a
+$$
+v(e_1\text{ dans }\Lie\,
+{\tsize\prod\nolimits_{0,0}})=
+\ad_{a^{-1}}(e_1).\tag5.11.2
+$$
+
+Par \'equivariance, (5.11.2) implique que pour
+$\zeta\in\mu_N$,
+$$
+v(e_\zeta\text{ dans }
+\Lie\,{\tsize
+\prod\nolimits_{0,0}})=\ad_{[\zeta]a^{-1}}
+(e_\zeta).\tag5.11.3
+$$
+
+Pour $a$ dans $\prod$, notons
+$\left<a\right>_0$ l'automorphisme de $\prod$
+induisant sur l'alg\`ebre de
+$\Lie\,\scrL^{\uphat}$ l'automorphisme, encore
+not\'e $\left<a\right>_0$:
+$$
+\left<a\right>_0\colon\, e_0\longmapsto
+  e_0,\quad
+e_\zeta\longmapsto
+\ad_{[\zeta]a^{-1}}(e_\zeta).
+\tag5.11.4
+$$
+Notons $\left<a\right>_{1,0}$ l'automorphisme du
+sch\'ema $\prod$
+$$
+\left<a\right>_{1,0}\colon\, g\longmapsto 
+a \cdot \left<a\right>_0(g).\tag5.11.5
+$$
+Les formules (5.11.1) et (5.11.3) montrent que
+$v$ agit par $\left<a\right>_0$ sur
+$\prod\nolimits_{0,0}$. 
+Sur le $\prod\nolimits_{0,0}$-torseur
+$\prod\nolimits_{1,0}$, $v$ agit par
+$\left<a\right>_{1,0}$: transformer par $v$
+l'identit\'e ($g$ dans $\prod\nolimits_{1,0}$)
+$=1_{1,0} \cdot (g\text{ dans
+}\prod\nolimits_{0,0})$.
+
+R\'eciproquement, quelque soit $a$ dans $\prod$,
+ces formules d\'efinissent un automorphisme
+$\left<a\right>$ de la structure 5.9
+d'esp\`ece 5.7.
+
+\subhead
+5.12
+\endsubhead
+Si on transporte \`a la copie
+$\prod\nolimits_{1,0}$ de $\prod$ la loi de
+groupe de $V_\omega$, on obtient une nouvelle
+loi de groupe $\circ$ sur le sch\'ema $\prod$.
+Elle est donn\'ee par
+$$
+a \circ b=a \cdot \left<a\right>_0(b).\tag5.12.1
+$$
+En effet, $\left<b\right>_{1,0}$ envoie
+$1_{1,0}\in\prod\nolimits_{1,0}$ sur $b$ et
+$\left<a\right>_{1,0}$ envoie
+$b=1_{1,0} \cdot b\in\prod\nolimits_{1,0}$ sur
+$a \cdot \left<a\right>_0(b)$.
+
+Prenant l'espace tangent \`a l'origine, on
+d\'eduit de 5.11 un isomorphisme de pro-espaces
+vectoriels de $\Lie\,V_\omega$ avec
+$\scrL^{\uphat}$.
+Transportons \`a $\scrL^{\uphat}$ l'action de
+$\Lie\,V_\omega$ d\'eduite de l'action de
+$V_\omega$ sur la structure 5.9.
+D\'erivant (5.11.4), on trouve que 
+$a\in \scrL^{\uphat}$ agit sur
+$\scrL^{\uphat}=\Lie
+\left(\prod\nolimits_{0,0}\right)$ par
+$$
+\partial_a\colon\, e_0\longmapsto 0,\quad
+e_\zeta\longmapsto \left[-[\zeta](a),e_\zeta\right].
+\tag5.12.2
+$$
+L'action sur $\prod\nolimits_{00}$ s'en
+d\'eduit.
+Il est clair sur (5.12.2) que
+$\partial_{e_1}=0$.
+Puisque le centralisateur de $e_1$ dans
+$\scrL^{\uphat}$ est r\'eduit aux multiples de
+$e_1$ (4.7), le noyau de $a\mapsto\partial_a$ est
+r\'eduit \`a $\dbQ e_1$.
+
+Pour \'ecrire l'action de
+$\Lie\,V_\omega=\scrL^{\uphat}$ tant sur
+$\prod\nolimits_{00}$ que sur le
+$\prod\nolimits_{00}$-torseur
+$\prod\nolimits_{1,0}$, il est commode de
+plonger ces sch\'emas affines dans le dual de
+leur alg\`ebre affine, un sch\'ema
+provectoriel dont ils sont le sous-sch\'ema
+des \'el\'ements groupaux.
+A la structure de groupe de
+$\prod\nolimits_{0,0}$ correspond une
+structure d'alg\`ebre sur ce dual, \`a celle
+de $\prod\nolimits_{0,0}$-torseur de
+$\prod\nolimits_{0,1}$ une structure de module
+\`a droite sous cette alg\`ebre:
+$$
+\spreadmatrixlines{2\jot}
+\matrix
+{\tsize\prod\nolimits_{0,1}}  &:\text{torseur
+sous}\hfill &{\tsize\prod\nolimits_{0,0}} 
+  &,\text{\'el\'ements groupaux de}\\
+\null\kern-8pt\CAP &&\null\kern-8pt\CAP &\\ 
+\dbQ\ll e_0,(e_\zeta)\gg 
+   &:\text{module \`a droite sur}\hfill 
+  &\dbQ\ll e_0,(e_\zeta)\gg &.
+\endmatrix
+$$
+
+\medskip
+Si $\dbQ[\eps]$ est l'alg\`ebre des
+nombres duaux $(\eps^2=0)$, l'action de
+$a\in\scrL^{\uphat}=\Lie(V_\omega)$ est le
+coefficient de $\eps$ dans l'action du
+$\dbQ[\eps]$-point $1+a\eps$ de $V_\omega$.
+L'action sur l'alg\`ebre $\dbQ\ll
+e_0,(e_\zeta)\gg$, duale de
+$\scrO(\prod\nolimits_{0,0})$, est $e_0\mapsto
+e_0$, $e_\zeta\mapsto
+(1+[\zeta]a\eps)^{-1}e_\zeta(1+[\zeta]a\eps)$,
+et correspond \`a l'action de a par la
+d\'erivation $\partial_a\colon\, e_0\to 0$,
+$e_\zeta\mapsto-[[\zeta]a,e_\zeta]$.
+L'action sur le module \`a droite $\dbQ\ll
+e_0,(e_\zeta)\gg$, dual de
+$\scrO(\prod\nolimits_{0,1})$, est par
+$x\mapsto (1+a\eps)(x+\partial_a x \cdot \eps)$ et
+correspond \`a l'action de a par
+$$
+x\longmapsto ax+\partial_a x.\tag5.12.3
+$$
+
+Au crochet de Lie de $\Lie\,V_\omega$
+correspond un nouveau crochet de Lie
+$\{\,\,,\,\,\}$ sur $\scrL^{\uphat}$.
+
+\proclaim{Proposition 5.13}
+On a
+$$
+\{a,b\}=[a,b]+\partial_a(b)-\partial_b(a).
+\tag5.13.1
+$$
+\endproclaim
+
+\demo{Preuve}
+V\'erifions d'abord que
+$$
+[\partial_a,\partial_b]=\partial_{[a,b]+\partial_a
+(b)-\partial_b(a)}.\tag5.13.2
+$$
+Puisque, comme $\partial_a$ et $\partial_b$,
+la d\'erivation $[\partial_a,\partial_b]$ de
+$\scrL^{\uphat}$ fixe $e_0$ et est 
+$\mu_N$-\'equivariante, il suffit de tester son action
+sur $e_1$.
+On a
+$$
+\align
+\partial_a\partial_b &\colon\, e_1\longmapsto
+  -[b,e_1]\longmapsto-[\partial_a(b),e_1]+
+  [b,[a,e_1]]\\
+\partial_b\partial_a &\colon\, e_1\longmapsto
+  -[a,e_1]\longmapsto-[\partial_b(a),e_1]
+  +[a,[b,e_1]]\\
+[\partial_a,\partial_b] &\colon\,
+e_1\longmapsto
+-[\partial_a(b)-\partial_b(a)+[a,b],e_1].
+\endalign
+$$
+\enddemo
+
+Deux m\'ethodes pour d\'eduire (5.13.1) de
+(5.13.2):
+
+\medskip\noindent
+{\sans a.}\enspace
+Le crochet $\{\,\,,\,\,\}$ est compatible aux
+graduations, toutes les constructions faites
+\'etant compatibles \`a l'action de $\dbG_m$.
+Le noyau de l'action de
+$\scrL^{\uphat}=\Lie(V_\omega)$ sur $\scrL^{\uphat}$
+\'etant r\'eduit aux multiples de $e_1$, si $a$
+et  $b$ sont homog\`enes (de degr\'e $\Ge 1$),
+il r\'esulte de (5.13.2) que les deux membres
+de (5.13.1)
+co{\umi}ncident \`a un multiple de $e_1$
+pr\`es.
+Etant homog\`ene de degr\'e $\Ge 2$, ils
+co{\umi}ncident. 
+
+\medskip\noindent
+{\sans b.}\enspace
+Testons sur (5.12.3).
+Si $\mu_a$ est la multiplication \`a gauche
+par $a$, on a
+$$
+\align
+[\mu_a+\partial_a, &\mu_b+\partial_b] =
+\mu_{[a,b]+\partial_ab-\partial_ba}+
+  [\partial_a,\partial_b]\\
+&=\mu_{[a,b]+\partial_ab-\partial_b a}+
+\partial_{[a,b]+\partial_ab-\partial_ba}.
+\endalign
+$$
+
+\remark{\bf 5.14 Remarque}\enspace
+(i) On a
+$$
+\{a,e_1\}=[a,e_1]+\partial_a(e_1)-\partial_{e_1}(a)
+=[a,e_1]-[a,e_1]+0=0:
+$$
+$e_1$ est dans le centre de
+$(\scrL^{\uphat},\{\,\,,\,\,\})$.
+
+\medskip\noindent
+(ii)
+On prendra garde que l'application
+exponentielle de Lie $V_\omega$ dans
+$V_\omega$, identifi\'ee par 5.11 et 5.12 \`a
+une application de $\scrL^{\uphat}$ dans $\prod$,
+n'est pas l'application exponentielle de
+$\scrL^{\uphat}$ dans $\prod$.
+Il resulte de 5.12.4 que, si $\mu_a$ est la
+multiplication \`a gauche par $a$, c'est
+$$
+\align
+\exp &\colon\, \Lie\,V_\omega\to V_\omega
+  \colon\,\scrL^{\uphat}\to\prod\Subset\dbQ
+\ll e_0,(e_\zeta)\gg\colon\\
+&a\longmapsto\sum (\mu_a+\partial_a)^n/n!
+\quad\text{appliqu\'e \`a $1$}.
+\endalign
+$$
+Premiers termes:
+$$
+a+(a^2+\partial_a(a))/2+(a^3+2a \cdot \partial_a(a)+
+\partial_a(a) \cdot a+\partial_a^2(a))/
+6+\cdots
+$$
+\endremark
+
+\remark{\bf Remarque 5.15}
+Ainsi que la notation le sugg\`ere, le groupe
+$H_\omega$ (resp. $V_\omega$) est la
+r\'ealisation $\omega$ d'un
+$\MT(\scrO[1/N])$-sch\'ema en groupe $H$ (resp. $V$).
+On peut d\'efinir $H$ par la propri\'et\'e que
+pour tout foncteur fibre $F$, $F(H)$ est,
+fonctoriellement en $F$, le sch\'ema en
+groupe des automorphismes de la structure 5.7
+correspondante.
+Il agit sur $\dbQ(1)$, $P_{0,0}$, et $P_{0,1}$
+et $V$ est le noyau de l'homomorphisme
+$H\to\dbQ(1)$ donnant l'action de $H$ sur
+$\dbQ(1)$.
+Il reste vrai dans $\MT(\scrO[1/N])$ que $P_{1,0}$
+est un espace principal homog\`ene sous $V$.
+\endremark
+
+Comme en 5.10, le groupe
+$G:=\pi(\MT(\scrO[1/N]))$ s'envoie dans $H$, et
+ce morphisme induit un morphisme
+$$
+U\to V\tag5.15.1
+$$
+de $\MT(\scrO[1/N])$-sch\'emas en groupes.
+Sa r\'ealisation $\omega$ est induite par
+(5.10.3).
+
+\subhead
+5.16
+\endsubhead
+Fixons un plongement $\sigma$ de $k$ dans
+$\dbC$, i.e. un isomorphisme de $\mu_N(k)$
+avec $\mu_N(\dbC)$.
+Le {\it droit chemin} du point base $1_0$ de
+$\dbC^*-\mu_N$ vers le point base $(-1)_1$ va
+par segments de droite successifs \quad
+(a) dans l'espace tangent en $0$, de $1$ \`a
+$\eps>0$; (b) de $\eps$ \`a $1-\eps$ dans
+$\dbC^*-\mu_N$; (c) de $-\eps$ \`a $-1$ dans
+l'espace tangent \`a un.
+Ce droit chemin a une image $\dch$ dans
+$(P_{(-1)_1,1_0})_\sigma$.
+Via l'isomorphisme de comparaison
+$\comp_{\sigma,\omega}$, il correspond \`a un
+\'el\'ement de 
+$$
+\dch(\sigma)\in (P_{(-1)_1,1_0})_\omega\otimes\dbC
+=\prod(\dbC) \Subset \dbC\ll
+e_0,(e_\zeta)_{\zeta\in\mu_N(k)}\gg.
+$$
+
+Les coefficients de $\dch(\sigma)$ sont
+donn\'es par 
+$$
+\spreadlines{1\jot}
+\leqalignno{
+&\text{coefficient de }e_{x_1}\ldots 
+     e_{x_n}= &(5.16.1)\cr
+&=\text{ int\'egrale it\'er\'ee de $0$ \`a $1$ de }
+\frac{dz}{z-\sigma(x_1)}\cdots
+\frac{dz}{z-\sigma(x_n)}\cr
+&=\int_0^1\left(\frac{dz_1}{z_1-\sigma(x_1)}
+\int_0^{z_1}\left(\frac{dz_2}{z_2-\sigma(x_2)}
+\cdots \int_0^{z_{n-1}}
+\frac{dz_n}{z_n-\sigma(x_n)}\right)\ldots
+\right).\cr}
+$$
+Si $x_n=0$ ou si $x_1=1$, l'int\'egrale diverge
+et doit \^{e}tre r\'egularis\'ee:
+remplacer les limites d'int\'egration $0$ et
+$1$  par $\eps$ et $1-\eta$; l'int\'egrale
+it\'er\'ee convergente obtenue a pour comportement
+asymptotique pour $\eps,\eta\to 0$
+$$
+\align
+\text{Int\'egrale it\'er\'ee}
+&=\text{polyn\^{o}me
+$(\log\,\eps,\log\,\eta)$}\\
+&\qquad +O(\sup(\eps\vert\log\,\eps\vert^A,
+\eta\vert\log\,\eta\vert^B))
+\endalign
+$$
+pour $A$ and $B$ convenables, et on prend le
+terme constant du polyn\^{o}me.
+
+Les valeurs multizeta et leur analogue
+cyclotomique apparaissent quand dans (5.16.1)
+on d\'eveloppe $dz/z-\zeta$ en s\'erie
+g\'eom\'etrique:
+$$
+\frac{dz}{z-\zeta}=\frac{-\zeta^{-1}z}{1-\zeta^{-1}z}
+\,\,\frac{dz}{z}=-\sum\limits_{n\Ge 1}(\zeta^{-1}z)^n.
+\frac{dz}{z}.
+$$
+
+\proclaim{Proposition 5.17}
+{\rm (i)}\enspace Pour $\zeta_1,\dotsc,\zeta_m$ dans
+$\mu_N(k)$ et des entiers $s_1,\dotsc,s_m\Ge
+1$, si $s_1\not=1$, le coefficient de
+$e_0^{s_1-1}e_{\zeta_1}\ldots
+e_0^{s_m-1}e_{\zeta_m}$ dans $\dch(\sigma)$ est
+$$
+(-1)^m\sum\limits_{n_1>\ldots>n_m>0}
+\frac{\sigma\left(\zeta_1^{n_2-n_1}\zeta_2^{n_3-n_2}
+\ldots \zeta_m^{-n_m}\right)}
+{n_1^{s_1}\ldots n_m^{s_m}}
+$$
+
+\noindent
+{\rm (ii)}\enspace
+$\dch(\sigma)$ est caract\'eris\'e par les
+propri\'et\'es d'\^{e}tre un \'el\'ement
+groupal (terme constant 1, et 
+$\Delta\dch(\sigma)=\dch(\sigma)\otimes
+\dch(\sigma)$) ayant les coefficients (i) et
+dont les coefficients de $e_0$ et $e_1$ sont
+nuls.
+\endproclaim
+
+Notons $\tau$ l'application de $\dbG_m$ dans
+$H_\omega$ d\'efinie par les graduations
+(5.10.2) et $\left<g\right>$ l'\'el\'ement de
+$V_\omega(\dbC)$ correspondant par 5.11 \`a
+$g\in\prod(\dbC)$.
+
+\proclaim{Proposition 5.18}
+L'\'el\'ement
+$\left<\dch(\sigma)\right>\tau(2\pi i)$
+de $H_\omega(\dbC)$ transforme les 
+$\dbQ$-formes $(P_{0,0})_\omega$ et
+$(P_{1,0})_\omega$ de
+$(P_{0,0})_\omega\otimes\dbC$ et
+$(P_{1,0})_\omega\otimes\dbC$ en les
+$\dbQ$-formes $(P_{0,0})_\sigma$ et
+$(P_{1,0})_\sigma$.
+\endproclaim
+
+\demo{Preuve}
+Les \'el\'ements de $\pi_1(X(\dbC),1_0)$ ont
+dans $\prod(\dbC)$ une image rationnelle pour
+la $\dbQ$-forme $(P_{0,0})_\sigma$.
+Ce $\pi_1$ contient la monodromie locale en
+$0$ et le chemin allant droit pr\`es de $1$,
+tournant autour de $1$, et revenant.
+Images: $\exp(2\pi i\,e_0)$ et
+$\dch(\sigma)^{-1}\exp(2\pi
+i\,e_1)\dch(\sigma)$.
+Ce sont les images de $\exp(e_0)$ et
+$\exp(e_1)$ par
+$\left<\dch(\sigma)\right)\tau(2\pi i)$.
+La $\dbQ$-forme $(P_{0,0})_\sigma$ est
+$\mu_N$-\'equivariante.
+Les images des $\exp(e_\zeta)$ par
+$\left<\dch(\sigma)\right>\tau(2\pi i)$ sont
+donc elles aussi rationnelles.
+La pro-alg\`ebre de Lie $\scrL^{\uphat}$ est
+l'unique $\dbQ$-forme de
+$\scrL_{\dbC}^{\uphat}$ pour laquelle les
+$e_0$ et $e_\zeta$ sont rationnels, et $\prod$
+est donc l'unique $\dbQ$-forme du groupe
+$\prod_{\dbC}$ pour laquelle $\exp(e_0)$ et
+les $\exp(e_\zeta)$ sont rationnels.
+Transportant par
+$\left<\dch(\sigma)\right>\tau(2\pi i)$, on
+obtient l'assertion pour $(P_{0,0})_\omega$.
+
+Montrons que la $\dbQ$-forme
+$(P_{1,0})_\sigma$ de
+$(P_{1,0})_\omega\otimes\dbC$ est l'image de
+la $\dbQ$-forme $(P_{1,0})_\omega$ par
+$\left<\dch(\sigma)\right>\tau(2\pi i)$.
+Ces deux $\dbQ$-formes sont des
+$(P_{0,0})_\sigma$-torseurs.
+Il suffit donc de montrer qu'elles admettent
+un point rationnel commun.
+L'image $\dch(\sigma)$ de $1$ par
+$\left<\dch(\sigma)\right>\tau(2\pi i)$ est en
+effet dans $(P_{1,0})_\omega(\dbQ)$ car image
+du droit chemin de $1_0$ \`a $(-1)_1$.
+\enddemo
+
+\subhead
+5.19
+\endsubhead
+Notons encore $a_\sigma$ un \'el\'ement de
+$G_\omega\left<\MT(\scrO[1/N])\right>$
+image d'un \'el\'ement\break
+ $a_\sigma\in G_\omega\left<\MT(k)\right>$ de 2.12, et
+$\iota(a_\sigma)$ son image par 5.10.3 dans
+$H_\omega$.
+De m\^{e}me pour $a_\sigma^0$ (2.12.2).
+L'\'el\'ement $\iota(a_\sigma)$ lui-aussi
+transforme les $\dbQ$-formes $\omega$ de
+$(P_{00})_\omega\otimes\dbC$ et
+$(P_{1,0})_\omega\otimes\dbC$ en les
+$\dbQ$-formes $\sigma$.
+Il existe donc $v_\sigma\in H_\omega(\dbQ)$
+tel que
+$$
+\left<\dch(\sigma)\right>\tau(2\pi
+i)=\iota(a_\sigma)v_\sigma.\tag5.19.1
+$$
+
+Si comme en (2.12.2) on a choisit $a_\sigma$
+de la forme $a_\sigma^0\tau(2\pi i)$ avec
+$a_\sigma^0\in U_\omega(\dbC)$, tant
+$\left<\dch(\sigma)\right>\tau(2\pi i)$ que
+$\iota(a_\sigma)$ ont la m\^{e}me projection
+$2\pi i$ dans le quotient $\dbG_m$ de
+$H_\omega$, $v_\sigma$ est dans
+$V_\omega(\dbQ)$ et on peut r\'ecrire (5.19.1)
+sous les formes
+$$
+\gather
+\left<\dch(\sigma)\right>=\iota(a_\sigma^0)\cdot
+  (\tau(2\pi i)v_\sigma\tau(2\pi i)^{-1})\tag5.19.2\\
+\tau(2\pi i)^{-1}\left<\dch(\sigma)\right>
+   \tau(2\pi i)=
+  (\tau(2\pi i)^{-1}\iota(a_\sigma^0)
+  \tau(2\pi i))v_\sigma.\tag5.19.3
+\endgather
+$$
+
+A ces formules correspondent deux fa\c{c}ons
+de voir les relations entre les coefficients
+(5.17.1) de $\dch(\sigma)$ impliqu\'ees par la
+th\'eorie motivique.
+
+La formule (5.19.2) implique que
+$\dch(\sigma)\in\prod(\dbC)$ est contenu dans
+la sous-vari\'et\'e alg\'ebrique d\'efinie sur
+$\dbQ$ suivante.
+Soit $\iota(U_\omega)\Subset\left(\prod,\circ\right)$
+le sous-groupe unipotent image de $U_\omega$
+par (5.10.3).
+Soit $D_\sigma$ l'image de la droite de
+coordonn\'ee $t$ par $t\mapsto
+\tau(t)v_\sigma\tau(t)^{-1}$.
+Cette application est d\'efinie en $t=0$ car
+$\scrL^{\uphat}$ est \`a degr\'es $>0$.
+On a $t=0\mapsto$ \'el\'ement neutre.
+Par (5.19.2), $\dch(\sigma)$ est contenu dans
+l'image par le produit $\circ$ de
+$\iota(U_\omega)$ et $D_\sigma$.
+Noter que $D_\sigma$ peut d\'ependre de
+$\sigma$, mais $\iota(U_\omega)$ non.
+
+La formule (5.19.3) sugg\`ere de consid\'erer
+plut\^{o}t $\tau(2\pi i)^{-1}(\dch(\sigma))$,
+de coefficients convergents donn\'es par la
+formule 5.17 (i), divis\'ee par $(2\pi
+i)^{\sum s_i}$.
+Les autres coefficients sont d\'eduits de
+ceux-l\`a par des formules rationnelles.
+L'\'el\'ement $\tau(2\pi
+i)^{-1}(\dch(\sigma))\in\prod(\dbC)$ est
+contenue dans la sous-vari\'et\'e d\'efinie
+sur $\dbQ$ $\iota(U_\omega)v_\sigma$, une
+classe lat\'erale rationnelle pouvant
+d\'ependre de $\sigma$ du sous-groupe
+$\iota(U_\omega)$ de $\left(\prod, \circ \right)$
+
+\subhead
+5.20
+\endsubhead
+Supposons que $N=1$.
+On a $k=\dbQ$; $\sigma$ est unique.
+Choisissons $a_\sigma^0$ r\'eel (2.12).
+Puisque $\dch(\sigma)$ est r\'eel, (5.12.2)
+montre que $\tau(2\pi i)v_\sigma\tau(2\pi
+i)^{-1}$ est r\'eel.
+Le logarithme de $v_\sigma$ est donc purement
+en degr\'e pair, $\tau(t)v_\sigma\tau(t)^{-1}$
+ne d\'epend que de $t^2$ et ceci permet de
+poser $d(t^2):=\tau(t)v_\sigma\tau(t)^{-1}$.
+
+Regardons $\prod$ comme l'espace des
+\'el\'ements groupaux de $\dbC\ll e_0,e_1\gg$.
+L'alg\`ebre de Lie de $U_\omega$ \'etant en
+degr\'e $\Ge 3$, les coefficients de
+$\dch(\sigma)$ et de $v_\sigma$
+co{\umi}ncident en degr\'ee $\Le 2$.
+On a 
+$$
+\dch(\sigma)=1-\zeta(2)[e_0,e_1]+\text{degr\'e}\Ge 3
+$$
+et donc, puisque $\zeta(2)=-(2\pi i)^2/24$,
+$$
+v_\sigma=1+\tfrac{1}{24}[e_0,e_1]+\text{degr\'e}\Ge 3.
+$$
+
+Pour $g\in\iota(U_\omega(\dbC))$ et $d\in
+D_\sigma$, $d=\tau(t)v_\sigma\tau(t)^{-1}$,
+$t^2$ est donc $24$ fois le coefficient de
+$e_0e_1$ dans $d$, \'egal \`a celui de $e_0e_1$
+dans $g\circ d$.
+Ceci d\'etermine $d$ \`a partir de $g\circ d$
+et
+$$
+\iota(U_\omega)\times D_\sigma\to
+\left(\prod, \circ \right)
+$$
+est un plongement ferm\'e: l'image est
+l'ensemble des $x\in\prod\Subset\dbC\ll
+e_0,e_1\gg$ tels que
+$$
+x\circ d\text{ (24.coefficient de $e_0e_1$
+dans $x$)}^{-1}\in\iota(U_\omega).
+\tag5.20.1
+$$
+
+Une variante d'une conjecture de Grothendieck
+affirme que $a_\sigma$ est Zariski-dense (sur
+$\dbQ$) dans $G_\omega$.
+Si tel est le cas, toutes les relations
+alg\'ebriques entre les coefficients de
+$\dch_\sigma$ sont donn\'ees par 5.20.1.
+
+On observera que les \'equations polynomiales
+entre les coefficients de $\dch_\sigma$
+d\'eduites de 5.20.1 ont les propri\'et\'es
+suivantes.
+
+\medskip\noindent
+{\sans (a)}\enspace
+Homog\'en\'eit\'e: toute \'equation est somme
+d'\'equations isobares, pour le poids.
+Ceci exprime que $\iota(U_\omega)\circ
+D_\sigma\Subset V_\omega$ est stable sous
+l'action int\'erieure de $\dbG_m\Subset
+H_\omega$.
+En effet, tant $\iota(U_\omega)$ que
+$D_\sigma$ le sont.
+
+\smallskip\noindent
+{\sans (b)}\enspace
+Si on ajoute l'\'equation ``$\pi^2=0$'',
+plus pr\'ecis\'ement: ``nullit\'e du
+coefficient de $e_0e_1$'', on obtient l'id\'eal 
+des \'equations d\'efinissant le
+sous-groupe $\iota(U_\omega)$ de
+$\left(\prod,0\right)$.
+
+\smallskip\noindent
+{\sans (c)}\enspace
+Si on ajoute plut\^{o}t l'\'equation
+``$\pi^2=\alpha$'', on obtient une classe
+lat\'erale de ce groupe.
+
+\medskip
+G. Racinet donne dans sa th\`ese un syst\`eme
+d'\'equations polynomiales v\'erifi\'ees par
+les coefficients de $\dch(\sigma)$ et prouve
+que ce syst\`eme v\'erifie (a) et la forme
+affaiblie suivante de (b) (c): si on ajoute
+l'\'equation ``$\pi^2=0$'', on obtient un
+sous-groupe de $\left(\prod,0\right)$, et si
+on ajoute ``$\pi^2=\alpha$'', on obtient une
+classe lat\'erale de ce sous-groupe.
+
+\subhead
+5.21
+\endsubhead
+La situation est similaire pour $N=2$,
+$\zeta(2)$ continuant \`a jouer le m\^{e}me
+r\^{o}le que pour $N=1$.
+Il n'est plus vrai que $\Lie\,U_\omega$ est en
+degr\'e $\Ge 3$, mais on est sauv\'e par la
+compatibilit\'e entre les cas $N=1$ et $N=2$:
+$$
+\spreadlines{2\jot}
+\CD
+U_\omega\left<\MT(\dbZ[1/2])\right> @>>>
+\left(\prod\text{ pour }N=2,o\right)\\
+@VVV @VVV\\
+U_\omega\left<\MT(\dbZ)\right> @>>>
+  \left(\prod\text{ pour }N=1,o\right).
+\endCD
+$$
+
+\subhead
+5.22
+\endsubhead
+Pour $N\Ge 3$, $k$ est totalement complexe.
+Le coefficient de $e_\zeta$ dans
+$\dch(\sigma)$ est $-\log(1-\sigma(\zeta))$
+(resp. $0$ pour $\zeta=1$), et le r\^{o}le
+pr\'ec\'edemment jou\'e par le coefficient
+$-\zeta(2)$ de $e_0e_1$ est jou\'e par la
+diff\'erence des coefficients de $e_\zeta$
+et de $e_{\zeta^{-1}}$, pour $\zeta\in\mu_N$
+outre que $\pm1$.
+Cette diff\'erence est un multiple rationnel
+de $2\pi i$, d\'ependant de $\sigma$.
+La courbe $D_\sigma$ est encore une droite,
+param\'etr\'ee par la difference
+$\delta_{\coeff}$ des coefficients de
+$e_\zeta$ et $e_{\zeta^{-1}}$, 
+$$
+\iota(U_\omega)\times D_\sigma\to
+\left(\prod, \circ\right)
+$$
+est un plongement ferm\'e, et l'image est
+l'ensemble des $x\in\prod\Subset\dbC\ll
+e_0,(e_\alpha)_{\alpha\in\mu_N}\gg$ tels que
+$$
+x\circ\text{(point de $D_\sigma$ donn\'e par
+$\delta_{\coeff}(x))^{-1}\in\iota(U_\omega)$}.
+\tag5.22.1
+$$
+
+La conjecture de Grothendieck affirme \`a
+nouveau que toutes les relations polynomiales
+\`a coefficients rationnels entre les
+coefficients de $\dch(\sigma)$ proviennent de
+(5.22.1).
+
+Le syst\`eme d'\'equations polynomiales
+d\'eduit de (5.22.1) a encore les
+propri\'et\'es (a), (b), (c) de 5.20, avec
+``$\pi^2$'' remplac\'e par ``$2\pi i\,$'' (plus
+pr\'ecis\'ement, par la diff\'erence des
+coefficients de $e_\zeta$ et
+$e_{\zeta^{-1}}$), et Racinet a obtenu 
+pour tout $N$ des r\'esultats semblables \`a ceux
+mentionn\'es en 5.20.
+
+\subhead
+5.23
+\endsubhead
+Permettons \`a nouveau \`a $N$ d'\^{e}tre un
+quelconque entier $\Ge 1$.
+Puisque $\dch(\sigma)$ est un \'el\'ement
+groupal de
+$\dbC\ll e_0,(e_\alpha)_{\alpha\in\mu_N}\gg$, le
+produit de deux coefficients de $\dch(\sigma)$
+est combinaison lin\'eaire \`a coefficients
+rationnels de coefficients, de sorte que
+conna{\hati}tre les relations lin\'eaires entre les
+coefficients suffit pour conna{\hati}tre  les
+relations polynomiales entre eux.
+
+\proclaim{Th\'eor\`eme 5.24}
+Soit $d_n$ la dimension en degr\'e $n$ de
+l'image de $\iota\colon\,\Lie\,U_\omega\to
+\Lie\,V_\omega$ (5.10.3).
+Soit $A$ l'alg\`ebre de polyn\^{o}mes
+gradu\'ee engendr\'ee sur $\dbQ$ par $d_n$
+g\'en\'erateurs degr\'e $n$, et par un
+g\'en\'erateur additionnel $t_0$ en degr\'e
+$1$ (resp. $2$ si $N=1$ ou $2$).
+
+Il existe un homomorphisme $\varphi_\sigma$ de
+$A$ dans $\dbC$, envoyant $t_0$ sur $2\pi i$
+(resp. $\pi^2$ si $N=1$ ou $2$), tel que les
+coefficients de mon\^{o}mes de degr\'e $d$
+dans $\dch_\sigma$ soient contenus
+dans\break
+ $\varphi_\sigma$ (partie de degr\'e $d$ de $A$).
+\endproclaim
+
+\demo{Preuve}
+On prend simplement pour $A$ l'alg\`ebre
+affine de $\iota(U_\omega)\times D_\sigma$.
+Elle a la structure dite d'alg\`ebre
+gradu\'ee, la fonction ``coefficient d'un
+mon\^{o}me de degr\'e $d$'' est de degr\'e
+$d$, et $\dch(\sigma)$ est un point de
+$\Spec(A)$ \`a valeurs dans $\dbC$, i.e. un
+homomorphisme $\varphi_\sigma$ de $A$ dans
+$\dbC$.
+Le g\'en\'erateur $t_0$ est la coordonn\'ee de
+$D_\sigma$, convenablement normalis\'ee.
+\enddemo
+
+\proclaim{Corollaire 5.25}
+Soit $D_n$ la dimension du $\dbQ$-espace
+vectoriel engendr\'e par les coefficients des
+monomes de degr\'e $n$ dans $\dch(\sigma)$.
+Le s\'erie g\'en\'eratrice $\sum D_nt^n$ est
+terme \`a terme major\'ee par la suivante:
+
+\roster
+\item"{\sans (i)}"
+Pour $N=1$: $1/(1-t^2-t^3)$.
+
+\item"{\sans (ii)}"
+$N=2$: $1/(1-t-t^2)$.
+
+\item"{\sans (iii)}"
+Pour $N\Ge 3$ ayant $\nu$ facteurs premiers:
+$1/\left(1-\left(\frac{\varphi(N)}{2}+(\nu-1)\right)
+t+(\nu-1)t^2\right)$, o\`u $\varphi$
+est l'indicateur d'Euler
+$\vert(\dbZ/N\dbZ)^*\vert$.
+\endroster
+\endproclaim
+
+\demo{Preuve}
+La s\'erie majorante est la s\'erie
+g\'en\'eratrice des dimensions des composantes
+homog\`enes de l'alg\`ebre gradu\'ee de
+polyn\^{o}me construite comme l'alg\`ebre $A$
+de 5.25, mais en partant de $\Lie(U_\omega)$
+plut\^{o}t que d'un quotient.
+En effet, cette s\'erie est le produit de
+$\frac{1}{1-t}$ (resp $\frac{1}{1-t^2}$ si
+$N=1$ ou $2$) par la s\'erie g\'en\'eratrice
+pour l'alg\`ebre enveloppante de
+$\Lie(U)_\omega^{\GR}$.
+Cette derni\`ere est une alg\`ebre associative
+libre.
+S\'erie g\'en\'eratrice: $\sum
+f(t)^n=1/(1-f(t))$, avec
+$$
+f(t)=\frac{\varphi(N)}{2}\,\,\frac{t}{1-t}+(\nu-1)t
+$$
+(resp. $f(t)=t^3/1-t^2$ si $N=1$, $t/1-t^2$ si
+$N=2$).
+Le calcul final est laiss\'e au lecteur.
+\enddemo
+
+\remark\nofrills{\bf Remarque 5.26.}\enspace
+Pour $N=1$, nous retrouvons ainsi le
+r\'esultat de Terasoma (2002).
+Terasoma consid\`ere un groupe de cohomologie
+relative, correspondant \`a un motif de Tate
+mixte sur $\dbZ$ qui est sans doute le
+suivant: dans l'alg\`ebre affine de ${}_1P_0$,
+prendre la partie de poids $\Le 2n$, puis les
+coinvariants de la monodromie locale en $0$
+et $1$, agissant \`a droite (resp. gauche) sur
+$P_{1,0}$.
+Comme la n\^{o}tre, sa preuve repose sur 1.6.
+\endremark
+
+\subhead
+5.27
+\endsubhead
+La conjonction de (a) toute relation
+$\dbQ$-lin\'eaire entre les coefficients de
+$\dch(\sigma)$ est somme de relations isobares
+(b) la borne 5.25 est atteinte \'equivaut \`a
+la conjonction de (c) la conjecture de
+Grothendieck que $a_\sigma$ est $\dbQ$-Zariski
+dense dans $U_\omega$, et (d) l'injectivit\'e
+de $\iota\colon\, U_\omega\to V_\omega$.
+La condition (d) est en g\'en\'eral fausse.
+Elle est vraie pour $N=2$, $3$ ou $4$ et on
+ignore si elle est vraie pour $N=1$.
+
+Pour obtenir une estimation raisonable, il
+faudrait conna{\hati}tre la dimension des
+composantes gradu\'ees l'image de $\Lie\,U_\omega$
+dans $\Lie\,V_\omega$.
+On ne conna{\hati}t ces dimensions que pour
+$N=2,3,4$.
+La question plus int\'eressante serait de
+d\'eterminer non seulement ces dimensions, mais
+encore l'image elle-m\^{e}me de $\Lie\,U_\omega$.
+On ne sait le faire dans aucun cas.
+
+\subhead
+5.28
+\endsubhead
+Il serait tr\`es int\'eressant de disposer
+pour les motifs de Tate mixtes de
+r\'ealisations cristallines qui, appliqu\'ees
+aux espaces de chemins motiviques, fournissent
+les r\'ealisations consid\'er\'ees en Deligne
+(1989).
+
+Dans le cas de motifs de Tate mixtes $M$ sur
+$\dbZ[1/D]$, on veut, pour chaque nombre
+premier $p$ premier \`a $D$, un automorphisme
+dit de Frobenius
+$$
+F_p\colon\, M_\sigma\otimes\dbQ_p\to
+M_\sigma\otimes\dbQ_p.
+$$
+Cet automorphisme est l'action d'un
+\'el\'ement canonique de $G_\omega(\dbQ_p)$,
+pour
+$$
+G_\omega=G_\omega\left<\MT(\dbZ[1/D])\right>.
+$$
+Sur $\dbQ(1)_\sigma\otimes\dbQ_p$, $F_p$ est
+la multiplication par $1/p$.
+
+Pour $N=1$ ou $2$, on a $k=\dbQ$ et, pour $p$
+premier \`a $N$, on disposerait donc de
+$F_p^{-1}$ de la forme
+$$
+F_p^{-1}=\varphi_p\tau(p)\in G_\omega(\dbQ_p)
+$$
+et de l'image $\iota(\varphi_p)$ de
+$\varphi_p$ dans $V_\omega(\dbQ_p)$.
+Plongeons comme d'habitude $V_\omega(\dbQ_p)$
+dans\break
+$\dbQ_p\ll e_0,e_1\gg$, pour $N=1$, ou
+$\dbQ_p\ll e_0,e_1,e_{-1}\gg$, pour $N=2$.
+Les coefficients de $\iota(\varphi_p)$
+semblent \^{e}tre des analogues $p$-adiques des
+valeurs multiz\^{e}ta (cf Deligne (1989) 3.4).
+D'apr\`es 5.20, on s'attend \`a ce qu'ils
+v\'erifient toutes les identit\'es satisfaites
+par les coefficients de $\dch(\sigma)$, ainsi
+que ``$\pi^2=0$'' (nullit\'e du coefficient de
+$e_0e_1$).
+Le formalisme cristallin esp\'er\'e prouverait
+en tout cas les identit\'es d\'eduites de
+(5.20.1), et de ``$\pi^2=0$''.
+
+Il serait int\'eressant aussi de disposer pour
+ces coefficients d'expressions $p$-adiques qui
+rendent claires qu'ils v\'erifient des
+identit\'es du type
+$$
+\align
+&\coeff(e_0^{n-1}e_1)\coeff(e_0^{m-1}e_1)=\\
+&\coeff(e_0^{n-1}e_1e_0^{m-1}e_1)+\coeff
+  (e_0^{m-1}e_1e_0^{n-1})\\
+&\qquad\qquad\qquad +\coeff(e_0^{n+m-1})e_1),
+\endalign
+$$
+qui pour $\dch(\sigma)$ expriment que
+$$
+\sum \frac{1}{k^n}.\sum \frac{1}{\ell^m}=
+\sum\limits_{k>\ell}\frac{1}{k^n}
+\frac{1}{\ell^m}+\sum\limits_{\ell>k}
+\frac{1}{k^n}\frac{1}{\ell^m}+\sum
+\frac{1}{k^{n+m}}.
+$$
+
+Pour $N\Ge 3$, le plus commode est de se
+rappeller que, m\^{e}me si les points de
+$\mu_N$ ne sont d\'efinis que sur $k$,
+$X=A^*-\mu_N$ est d\'efini sur $\dbQ$, de
+sorte que $\pi_1(X,0)$ et $P_{1,0}(X)$ sont de
+fa\c{c}on naturelle des
+$\MAT(k/\dbQ)$-sch\'emas.
+La r\'ealisation de de Rham de
+$\Lie\,\pi_1(X,0)$ est une $\dbQ$-forme
+$\scrL_{\DR}^{\uphat}$ de
+$\scrL^{\uphat}\widehat{\otimes} k$: les
+invariants de $\Gal(k/\dbQ)$ agissant sur $k$
+et permutant les $e_\zeta$ ($\zeta\in\mu_N$).
+Pour $p\nmid N$, la th\'eorie cristalline
+fournit un automorphisme de
+$\scrL_{\DR}^{\uphat}$ et du
+$\exp(\scrL_{\DR}^{\uphat})$-torseur
+$P_{1,0}(X)_{\DR}$.
+
+
+
+

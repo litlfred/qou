@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-021",
   "kind": "prose",
-  "title": "Proposition. SoitA une cat ´egorie ab ´elienne stable par limites inductives",
-  "pageStart": 12,
-  "pageEnd": 12,
-  "text": "../sections/sec-021-138-proposition-soita-une-cat-egorie-ab-elienne.md",
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "title": "Objets projectifs et injectifs",
+  "pageStart": 119,
+  "pageEnd": 126,
+  "text": "../sections/sec-021-a1-objets-projectifs-et-injectifs.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203273v3/manifest.jsonld",
   "provenance": "ingested"
 }

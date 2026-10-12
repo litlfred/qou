@@ -1,0 +1,982 @@
+\section{Proofs of lemmas}\label{sec:proofs_lemmas}
+In this section, we give proofs of lemmas used in this paper.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[Proof of Lemma~\ref{lem:converge_T}]
+Putting $x:=y\,e^{\theta\i}$, the integral becomes
+\begin{equation*}
+  \int_{C_{0}}
+  \frac{\exp\left((2z-1)y\,e^{\theta\i}\right)}
+       {y\sinh(y\,e^{\theta\i})\sinh(\gamma y\,e^{\theta\i})}
+  \,dy.
+\end{equation*}
+Noting that
+\begin{equation*}
+  \sinh(as)
+  \underset{s\to\infty}{\sim}
+  \frac{1}{2}e^{as}
+\end{equation*}
+and that
+\begin{equation*}
+  \sinh(as)
+  \underset{s\to-\infty}{\sim}
+  -\frac{1}{2}e^{-as}
+\end{equation*}
+for a complex number $a$ with $\Re(a)>0$, we have
+\begin{equation*}
+  \frac{\exp\left((2z-1)y\,e^{\theta\i}\right)}
+       {y\sinh(y\,e^{\theta\i})\sinh(\gamma y\,e^{\theta\i})}
+  \underset{y\to\infty}{\sim}
+  \frac{1}{y}
+  \exp
+  \left(
+    (2z-2-\gamma)e^{\theta\i}y
+  \right)
+\end{equation*}
+and
+\begin{equation*}
+  \frac{\exp\left((2z-1)y\,e^{\theta\i}\right)}
+       {y\sinh(y\,e^{\theta\i})\sinh(\gamma y\,e^{\theta\i})}
+  \underset{y\to-\infty}{\sim}
+  \frac{1}{y}
+  \exp
+  \left(
+    (2z+\gamma)e^{\theta\i}y
+  \right)
+\end{equation*}
+since $\Re\left(e^{\theta\i}\right)=\cos\theta>0$ and $\Re\left(\gamma e^{\theta\i}\right)=\frac{\xi}{2N\pi}\sin\theta>0$.
+So we have
+\begin{equation*}
+  \left|
+  \frac{\exp\left((2z-1)y\,e^{\theta\i}\right)}
+       {y\sinh(y\,e^{\theta\i})\sinh(\gamma y\,e^{\theta\i})}
+  \right|
+  <
+  \frac{C}{y}
+  \exp
+  \left(
+    \Re\left((2z-2-\gamma)e^{\theta\i}\right)y
+  \right)
+\end{equation*}
+when $y>0$ for a positive constant $C$, and
+\begin{equation*}
+  \left|
+  \frac{\exp\left((2z-1)y\,e^{\theta\i}\right)}
+       {y\sinh(y\,e^{\theta\i})\sinh(\gamma y\,e^{\theta\i})}
+  \right|
+  <
+  \frac{C'}{|y|}
+  \exp
+  \left(
+    -\Re\left((2z+\gamma)e^{\theta\i}\right)y
+  \right)
+\end{equation*}
+when $y<0$ for a positive constant $C'$.
+Therefore, if $-\frac{\xi\sin\theta}{4N\pi}<\Re(ze^{\theta\i})<\cos\theta+\frac{\xi\sin\theta}{4N\pi}$, then the integrals
+\begin{equation*}
+  \int_{1}^{\infty}
+  \frac{\exp\left((2z-1)y\,e^{\theta\i}\right)}
+       {y\sinh(y\,e^{\theta\i})\sinh(\gamma y\,e^{\theta\i})}
+  dy
+\end{equation*}
+and
+\begin{equation*}
+  \int_{-\infty}^{-1}
+  \frac{\exp\left((2z-1)y\,e^{\theta\i}\right)}
+       {y\sinh(y\,e^{\theta\i})\sinh(\gamma y\,e^{\theta\i})}
+  dy
+\end{equation*}
+converge and the lemma follows.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[Proof of Lemma~\ref{lem:integrals}]
+Putting $x=ye^{\i\theta}$, we have
+\begin{equation*}
+  \int_{C_{\theta}}
+  \frac{e^{(2z-1)x}}{x^m\sin{x}}\,dx
+  =
+  \frac{1}{e^{(m-1)\i\theta}}
+  \int_{C_{0}}
+  \frac{e^{(2z-1)ye^{\i\theta}}}{y^{m}\sinh\left(ye^{\i\theta}\right)}\,dy.
+\end{equation*}
+So we need to show that
+\begin{equation*}
+  \int_{1}^{r}
+  \frac{e^{(2z-1)ye^{\i\theta}}}{y^{m}\sinh\left(ye^{\i\theta}\right)}\,dy
+\end{equation*}
+and
+\begin{equation*}
+  \int_{-r}^{-1}
+  \frac{e^{(2z-1)ye^{\i\theta}}}{y^{m}\sinh\left(ye^{\i\theta}\right)}\,dy
+\end{equation*}
+converge when $r\to\infty$ for $m=0,1,2$.
+\par
+We have
+\begin{equation*}
+\begin{split}
+  \left|
+    \int_{1}^{r}
+    \frac{e^{(2z-1)ye^{\i\theta}}}{y^{m}\sinh\left(ye^{\i\theta}\right)}\,dy
+  \right|
+  &\le
+  \int_{1}^{r}
+  \frac{2e^{2y\Re\left(ze^{\i\theta}\right)-y\cos\theta}}
+       {y^{m}\left(e^{y\cos\theta}-e^{-y\cos\theta}\right)}\,dy
+  \\
+  &=
+  \int_{1}^{r}
+  \frac{2e^{2y\left(\Re(ze^{\i\theta})-\cos\theta\right)}}
+       {y^{m}(1-e^{-2y\cos\theta})}\,dy,
+\end{split}
+\end{equation*}
+which converges when $r\to\infty$ since $\Re(ze^{\i\theta})<\cos\theta$.
+\par
+We also have
+\begin{equation*}
+\begin{split}
+  \left|
+    \int_{-r}^{-1}
+    \frac{e^{(2z-1)ye^{\i\theta}}}{y^{m}\sinh(ye^{\i\theta})}\,dy
+  \right|
+  &\le
+  \int_{-r}^{-1}
+  \frac{2e^{2y\Re\left(ze^{\i\theta}\right)-y\cos\theta}}
+       {\left|y^{m}\left(e^{y\cos\theta}-e^{-y\cos\theta}\right)\right|}\,dy
+  \\
+  &=
+  \int_{-r}^{-1}
+  \frac{2e^{2y\Re(ze^{\i\theta})}}{\left|y^{m}(e^{2y\cos\theta}-1)\right|}\,dy,
+\end{split}
+\end{equation*}
+which converges when $r\to\infty$ since $\Re(ze^{\i\theta})>0$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Now we calculate the integrals in Lemma~\ref{lem:integrals} to prove Lemma~\ref{lem:L0_1_2}.
+\par
+The following lemma shows \eqref{eq:L0}.
+\begin{lem}\label{lem:L0}
+If $0<\Re(ze^{\theta\i})<\cos\theta$, then we have
+\begin{equation*}
+  \int_{C_{\theta}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  =
+  \frac{-2\pi\i}{1-e^{-2\pi\i z}}.
+\end{equation*}
+\end{lem}
+\begin{proof}
+Put $C_{0}^{r}:=C_{0}\setminus\Bigl((-\infty,-r)\cup(r,\infty)\Bigr)$ for $r>1$, $C_{\theta}^{r}:=e^{\i\theta}C_{0}^{r}$, and $C_{\theta}^{r}+\pi\i:=\{w+\pi\i\mid w\in C_{\theta}^{r}\}$.
+We first note that
+\begin{equation*}
+\begin{split}
+  \int_{C_{\theta}^{r}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  &=
+  \int_{C_{\theta}^{r}+\pi\i}\frac{e^{(2z-1)(x-\pi\i)}}{\sinh(x-\pi\i)}\,d(x-\pi\i)
+  \\
+  &=
+  e^{-2\pi\i z}
+  \int_{C_{\theta}^{r}+\pi\i}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx.
+\end{split}
+\end{equation*}
+Hence we have
+\begin{equation*}
+\begin{split}
+  &
+  \left(1-e^{-2\pi\i z}\right)
+  \int_{C_{\theta}^{r}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  \\
+  =&
+  e^{-2\pi\i z}
+  \left(
+    -\int_{C_{\theta}^{r}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+    +
+    \int_{C_{\theta}^{r}+\pi\i}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  \right)
+  \\
+  =&
+  e^{-2\pi\i z}
+  \left(
+    \int_{V_{r}^{+}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+    -
+    \int_{V_{r}^{-}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  \right)
+  \\
+  &-
+  e^{-2\pi\i z}2\pi\i\Res\left(\frac{e^{(2z-1)x}}{\sinh(x)};x=\pi\i\right),
+\end{split}
+\end{equation*}
+where $V_{r}^{\pm}$ is the vertical segment connecting $\pm re^{\i\theta}$ and $\pm re^{\i\theta}+\pi\i$, oriented upward.
+Since $\Res\left(\frac{e^{(2z-1)x}}{\sinh(x)};x=\pi\i\right)=\lim_{x\to\pi\i}\frac{e^{(2z-1)x}(x-\pi\i)}{\sinh(x)}=-e^{(2z-1)\pi\i}$, we have
+\begin{equation*}
+\begin{split}
+  &
+  \left(1-e^{-2\pi\i z}\right)
+  \int_{C_{\theta}^{r}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  \\
+  =&
+  e^{-2\pi\i z}
+  \left(
+    \int_{V_{r}^{+}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+    -
+    \int_{V_{r}^{-}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  \right)
+  -
+  2\pi\i.
+\end{split}
+\end{equation*}
+\par
+We will show that $\displaystyle\lim_{r\to\infty}\int_{V_{r}^{\pm}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx=0$.
+\par
+Since
+\begin{equation*}
+  \int_{V_{r}^{\pm}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  =
+  \pi\i
+  \int_{0}^{1}\frac{e^{(2z-1)(\pm re^{\i\theta}+\pi\i s)}}{\sinh(\pm re^{\i\theta}+\pi\i s)}\,ds
+\end{equation*}
+and $|\sinh(w)|=\frac{1}{2}\left|e^{w}-e^{-w}\right|\ge\frac{1}{2}\left|e^{\Re{w}}-e^{-\Re{w}}\right|$ for any $w\in\C$, we have
+\begin{equation*}
+\begin{split}
+  \left|
+    \int_{V_{r}^{\pm}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  \right|
+  &\le
+  \pi
+  \int_{0}^{1}
+  \left|
+    \frac{e^{(2z-1)(\pm re^{\i\theta}+\pi\i s)}}{\sinh(\pm re^{\i\theta}+\pi\i s)}
+  \right|
+  \,ds
+  \\
+  &\le
+  \pi
+  \int_{0}^{1}
+  \frac{2e^{\Re((2z-1)(\pm re^{\i\theta}+\pi\i s))}}
+       {\left|e^{\Re(\pm re^{\i\theta}+\pi\i s)}-e^{-\Re(\pm re^{\i\theta}+\pi\i s)}\right|}
+  \,ds
+  \\
+  &=
+  \frac{2\pi e^{\pm r\Re((2z-1)e^{\i\theta})}}{e^{r\cos\theta}-e^{-r\cos\theta}}
+  \int_{0}^{1}e^{-\pi s\Im(2z-1)}\,ds.
+\end{split}
+\end{equation*}
+From the assumption $0<\Re(ze^{\theta\i})<\cos\theta$, we have $\left|\Re\left((2z-1)e^{\i\theta}\right)\right|<\cos\theta$.
+Therefore we see that
+\begin{equation*}
+  \left|
+    \int_{V_{r}^{\pm}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  \right|
+  \underset{r\to\infty}{\to}0
+\end{equation*}
+and so we have
+\begin{equation*}
+  \int_{C_{\theta}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  =
+  \lim_{r\to\infty}\int_{C_{\theta}^{r}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx
+  =
+  \frac{-2\pi\i}{1-e^{-2\pi\i z}}.
+\end{equation*}
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\par
+The following lemma shows \eqref{eq:L1} and \eqref{eq:L2}.
+\begin{lem}\label{lem:L1_2}
+If $0<\Re(ze^{\theta\i})<\cos\theta$, then we have
+\begin{equation*}
+  \int_{C_{\theta}}\frac{e^{(2z-1)x}}{x\sinh(x)}\,dx
+  =
+  \begin{cases}
+    -2\log\left(1-e^{2\pi\i z}\right)&\text{if $\Im{z}\ge0$,}
+    \\[3mm]
+    -2\pi\i(2z-1)-2\log\left(1-e^{-2\pi\i z}\right)&\text{if $\Im{z}<0$.}
+  \end{cases}
+\end{equation*}
+and
+\begin{multline*}
+  \int_{C_{\theta}}\frac{e^{(2z-1)x}}{x^2\sinh(x)}\,dx
+  \\
+  =
+  \begin{cases}
+    -\dfrac{2\i}{\pi}\Li_2\left(e^{2\pi\i z}\right)&\text{if $\Im{z}\ge0$,}
+    \\[3mm]
+    -2\pi\i\left(2z^2-2z+\frac{1}{3}\right)+\dfrac{2\i}{\pi}\Li_2\left(e^{-2\pi\i z}\right)
+    &\text{if $\Im{z}<0$}.
+  \end{cases}
+\end{multline*}
+\end{lem}
+\begin{proof}
+First we assume that $\Im{z}\ge0$.
+\par
+For a real number $r>1$, let $\overline{U}_{r}^{\pm}$ be the vertical segment connecting $\pm re^{\i\theta}$ and $\pm re^{\i\theta}+r\i$, and $\overline{H}_{r}$ be the segment connecting $-re^{\i\theta}+r\i$ and $re^{\i\theta}+r\i$.
+Here we assume that $r$ is not an integer multiple of $\pi$ so that $\overline{H}_r$ avoids the poles of $\frac{e^{(2z-1)x}}{x^m\sinh(x)}$ ($m=1,2$) as a function of $x$.
+We orient $\overline{U}_{r}^{\pm}$ upward and $\overline{H}_{r}$ from left to right.
+Note that the distance between the origin and the line containing $\overline{U}_{r}^{\pm}$ is $r\cos\theta$, and that the distance between the origin and the line containing $\overline{H}_{r}$ is also $r\cos\theta$.
+\par
+By the residue theorem we have
+\begin{equation}\label{eq:L1_residue_positive}
+\begin{split}
+  &\int_{C_{\theta}^{r}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  -
+  \int_{\overline{H}_{r}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  \\
+  &+
+  \int_{\overline{U}^{+}_{r}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  -
+  \int_{\overline{U}^{-}_{r}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  \\
+  =&
+  2\pi\i
+  \sum_{k=1}^{\lfloor{r}\rfloor}
+  \Res\left(\frac{e^{(2z-1)x}}{x^m\sinh(x)};x=k\pi\i\right)
+\end{split}
+\end{equation}
+for $m=1,2$, where $\lfloor{r}\rfloor$ is the greatest integer less than or equal to $r$.
+Since the order of the pole $x=k\pi\i$ of $\frac{e^{(2t-1)x}}{x^m\sinh(x)}$ for $k=1,2,3,\dots$ is one, we have
+\begin{equation*}
+  \Res\left(\frac{e^{(2z-1)x}}{x\sinh(x)};x=k\pi\i\right)
+  =
+  \lim_{t\to k\pi\i}\frac{(x-k\pi\i)e^{(2z-1)x}}{x\sinh(x)}
+  =
+  \frac{e^{2kz\pi\i}}{k\pi\i}
+\end{equation*}
+and
+\begin{equation*}
+  \Res\left(\frac{e^{(2z-1)x}}{x^2\sinh(x)};x=k\pi\i\right)
+  =
+  \lim_{x\to k\pi\i}\frac{(x-k\i)e^{(2z-1)x}}{x^2\sinh(x)}
+  =
+  \frac{-e^{2kz\pi\i}}{k^2\pi^2}.
+\end{equation*}
+\par
+Next, we calculate integrals along $\overline{H}_r$ and $\overline{U}_r^{\pm}$.
+Note that since the distance between the origin and any point on these segments is greater than or equal to $r\cos\theta$, we have
+\begin{align*}
+  \left|
+    \int_{\overline{H}_r}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  \right|
+  &\le
+  \frac{1}{(r\cos\theta)^m}\left|\int_{\overline{H}_r}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx\right|
+  \\
+  \intertext{and}
+  \left|
+    \int_{\overline{U}_r^{\pm}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  \right|
+  &\le
+  \frac{1}{(r\cos\theta)^m}\left|\int_{\overline{U}_r^{\pm}}\frac{e^{(2z-1)x}}{\sinh(x)}\,dx\right|
+\end{align*}
+for $m=1,2$.
+\par
+Putting $x=ye^{\i\theta}+r\i$, we have
+\begin{equation*}
+\begin{split}
+  &\left|\int_{\overline{H}_{r}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx\right|
+  \\
+  \le&
+  \frac{1}{(r\cos\theta)^m}
+  \left|
+    \int_{-r}^{r}
+    \frac{e^{(2z-1)(ye^{\i\theta}+r\i)}\times e^{\i\theta}}
+         {\sinh(ye^{\i\theta}+r\i)}\,dy
+  \right|
+  \\
+  \le&
+  \frac{1}{(r\cos\theta)^m}
+  \int_{-r}^{r}
+  \frac{\left|e^{(2z-1)(ye^{\i\theta}+r\i)}\right|}{\left|\sinh(ye^{\i\theta}+r\i)\right|}\,dy
+  \\
+  =&
+  \frac{e^{-2r\Im{z}}}{(r\cos\theta)^m}
+  \int_{-r}^{r}
+  \frac{e^{y\Re\left((2z-1)e^{\i\theta}\right)}}
+       {\left|\sinh(ye^{\i\theta}+r\i)\right|}\,dy
+  \\
+  &\text{\small
+        ($M
+        :=
+        \max_{-1\le y\le1}
+        \frac{e^{y\Re\left((2z-1)e^{\i\theta}\right)}}{\left|\sinh(ye^{\i\theta}+r\i)\right|}>0$)}
+  \\
+  \le&
+  \frac{e^{-2r\Im{z}}}{(r\cos\theta)^m}
+  \\
+  &\quad\times
+  \left(
+    2M
+    +
+    \int_{-r}^{-1}
+    \frac{2e^{2y\Re\left(ze^{\i\theta}\right)-y\cos\theta}}{e^{-y\cos\theta}-e^{y\cos\theta}}\,dy
+    +
+    \int_{1}^{r}
+    \frac{2e^{2y\Re\left(ze^{\i\theta}\right)-y\cos\theta}}{e^{y\cos\theta}-e^{-y\cos\theta}}\,dy
+  \right)
+  \\
+  =&
+  \frac{2e^{-2r\Im{z}}}{(r\cos\theta)^m}
+  \left(
+    M
+    +
+    \int_{-r}^{-1}
+    \frac{e^{2y\Re\left(ze^{\i\theta}\right)}}{1-e^{2y\cos\theta}}\,dy
+    +
+    \int_{1}^{r}
+    \frac{e^{2y\Re\left(ze^{\i\theta}\right)-2y\cos\theta}}{1-e^{-2y\cos\theta}}\,dy
+  \right)
+  \\
+  \le&
+  \frac{2e^{-2r\Im{z}}}{(r\cos\theta)^m}
+  \left(
+    M
+    +
+    \frac{\int_{-r}^{-1}e^{2y\Re\left(ze^{\i\theta}\right)}\,dy}
+         {1-e^{-2\cos\theta}}
+    +
+    \frac{\int_{1}^{r}e^{2y\Re\left(ze^{\i\theta}\right)-2y\cos\theta}\,dy}
+         {1-e^{-2\cos\theta}}
+  \right)
+  \\
+  =&
+  \frac{2e^{-2r\Im{z}}}{(r\cos\theta)^m}
+  \Biggl(
+    M
+    +
+    \frac{e^{-2\Re\left(ze^{\i\theta}\right)}-e^{-2r\Re\left(ze^{\i\theta}\right)}}
+         {2\left(1-e^{-2\cos\theta}\right)\Re\left(ze^{\i\theta}\right)}
+  \\
+  &\phantom{\frac{4e^{-r\Im{z}}}{(r\cos\theta)^m}\Biggl(}
+    \quad+
+    \frac{e^{r\left(2\Re\left(ze^{\i\theta}\right)-2\cos\theta\right)}
+         -e^{2\Re\left(ze^{\i\theta}\right)-2\cos\theta}}
+         {2\left(1-e^{-2\cos\theta}\right)\left(\Re\left(ze^{\i\theta}\right)-\cos\theta\right)}
+  \Biggr).
+\end{split}
+\end{equation*}
+This converges to zero as $r\to\infty$ since $0<\Re(ze^{\i\theta})<\cos\theta$ and $\Im{z}\ge0$.
+Note that $M$ depends on $r$ but that it is bounded because it is periodic with respect to $r$.
+\par
+Putting $x=r(e^{\i\theta}+y\i)$, we have
+\begin{equation*}
+\begin{split}
+  \left|
+    \int_{\overline{U}_r^{+}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  \right|
+  &\le
+  \frac{1}{(r\cos\theta)^m}
+  \left|
+    \int_{0}^{1}\frac{e^{(2z-1)r(e^{\i\theta}+y\i)}\times r\i}{\sinh(r(e^{\i\theta}+y\i))}\,dy
+  \right|
+  \\
+  &\le
+  \frac{1}{(r\cos\theta)^m}
+  \int_{0}^{1}
+  \frac{r\left|e^{(2z-1)r(e^{\i\theta}+y\i)}\right|}{\left|\sinh(r(e^{\i\theta}+y\i))\right|}\,dy
+  \\
+  &\le
+  \frac{2re^{2r\Re\left(ze^{\i\theta}\right)-r\cos\theta}}
+       {(r\cos\theta)^m\left(e^{r\cos\theta}-e^{-r\cos\theta}\right)}
+  \times
+  \int_{0}^{1}e^{-2ry\Im{z}}\,dy
+  \\
+  &=
+  \frac{2e^{2r\Re\left(ze^{\i\theta}\right)-2r\cos\theta}}
+       {r^{m-1}\cos^m\theta\left(1-e^{-2r\cos\theta}\right)}
+  \times
+  \int_{0}^{1}e^{-2ry\Im{z}}\,dy
+  \\
+  &\to0\quad(r\to\infty)
+\end{split}
+\end{equation*}
+since $\Re(ze^{\i\theta})<\cos\theta$, noting that the last integral becomes either $1$ (if $z$ is real) or $\frac{1-e^{-2r\Im{z}}}{2r\Im{z}}$ (otherwise).
+\par
+Similarly, putting $x=r(-e^{\i\theta}+y\i)$, we have
+\begin{equation*}
+\begin{split}
+  \left|
+    \int_{\overline{U}_r^{-}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  \right|
+  &\le
+  \frac{1}{(r\cos\theta)^m}
+  \left|
+    \int_{0}^{1}\frac{e^{-(2z-1)r(e^{\i\theta}-y\i)}\times r\i}{\sinh(r(e^{\i\theta}-y\i))}\,dy
+  \right|
+  \\
+  &\le
+  \frac{1}{(r\cos\theta)^m}
+  \int_{0}^{1}
+  \frac{r\left|e^{-(2z-1)r(e^{\i\theta}-y\i)}\right|}{\left|\sinh(r(e^{\i\theta}-y\i))\right|}\,dy
+  \\
+  &\le
+  \frac{2re^{-2r\Re\left(ze^{\i\theta}\right)+r\cos\theta}}
+       {(r\cos\theta)^m\left(e^{r\cos\theta}-e^{-r\cos\theta}\right)}
+  \times
+  \int_{0}^{1}e^{-2ry\Im{z}}\,dy
+  \\
+  &=
+  \frac{2e^{-2r\Re\left(ze^{\i\theta}\right)}}
+       {r^{m-1}\cos^m\theta\left(1-e^{-2r\cos\theta}\right)}
+  \times
+  \int_{0}^{1}e^{-2ry\Im{z}}\,dy
+  \\
+  &\to0\quad(r\to\infty)
+\end{split}
+\end{equation*}
+since $0<\Re(ze^{\i\theta})$.
+Therefore from \eqref{eq:L1_residue_positive} we have
+\begin{equation*}
+  \lim_{r\to\infty}
+  \int_{C_{\theta}^{r}}\frac{e^{(2z-1)x}}{x\sinh(x)}\,dx
+  =
+  2
+  \lim_{r\to\infty}
+  \sum_{k=1}^{\lfloor{r}\rfloor}\frac{e^{2kz\pi\i}}{k},
+\end{equation*}
+which converges to $-2\log(1-e^{2\pi\i z})$ as $r\to\infty$ when $\left|e^{2z\pi\i}\right|<1$, or $e^{2z\pi\i}\ne1$ ($z\in\R$), that is, when $\Im{z}\ge0$ (Recall that we assume $0<\Re(ze^{\i\theta})<\cos\theta$).
+We also have
+\begin{equation*}
+  \lim_{r\to\infty}
+  \int_{C_{\theta}^{r}}\frac{e^{(2z-1)x}}{x^2\sinh(x)}\,dx
+  =
+  -\frac{2\i}{\pi}
+  \lim_{r\to\infty}
+  \sum_{k=1}^{\lfloor{r}\rfloor}\frac{e^{2kz\pi\i}}{k^2},
+\end{equation*}
+which converges to $-\frac{2\i}{\pi}\Li_2(e^{2\pi\i z})$ as $r\to\infty$ when $\Im{z}\ge0$ from Lemma~\ref{lem:Li_2_convergence} below.
+\par
+This completes the case where $\Im{z}\ge0$.
+\par
+Next we assume that $\Im{z}<0$.
+\par
+For $r>1$, let $\underline{U}_{r}^{\pm}$ be the vertical segment connecting $\pm re^{\i\theta}$ and $\pm re^{\i\theta}-r\i$, and $\underline{H}_{r}$ be the segment connecting $-re^{\i\theta}-r\i$ and $re^{\i\theta}-r\i$.
+We orient $\underline{U}_{r}^{\pm}$ upward and $\underline{H}_{r}$ from left to right.
+Note that the distance between the origin and the line containing $\underline{U}_{r}^{\pm}$ is $r\cos\theta$, and that the distance between the origin and the line containing $\underline{H}_{r}$ is also $r\cos\theta$.
+\par
+For $m=1,2$, we have
+\begin{equation}\label{eq:L1_residue_negative}
+\begin{split}
+  &-\int_{C_{\theta}^{r}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  +
+  \int_{\underline{H}_{r}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  \\
+  &+
+  \int_{\underline{U}_{r}^{+}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  -
+  \int_{\underline{U}_{r}^{-}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  \\
+  =&
+  2\pi\i
+  \sum_{k=0}^{\lfloor{r}\rfloor}
+  \Res\left(\frac{e^{(2z-1)x}}{x^m\sinh(x)};x=-k\pi\i\right).
+\end{split}
+\end{equation}
+Since the order of the pole $x=-k\pi\i$ of $\frac{e^{(2z-1)}}{x^m\sinh(x)}$ ($m=1,2$) for $k=1,2,3,\dots$ is one, we have
+\begin{align*}
+  \Res\left(\frac{e^{(2z-1)x}}{x\sinh(x)};x=-k\pi\i\right)
+  =
+  \lim_{x\to-k\pi\i}\frac{(x+k\pi\i)e^{(2z-1)x}}{x\sinh(x)}
+  =
+  \frac{-e^{-2k\pi\i}}{k\pi\i}
+  \\
+  \intertext{and}
+  \Res\left(\frac{e^{(2z-1)x}}{x^2\sinh(x)};x=-k\pi\i\right)
+  =
+  \lim_{x\to-k\i}\frac{(x+k\i)e^{(2z-1)x}}{x^2\sinh(x)}
+  =
+  \frac{-e^{-2k\pi\i}}{k^2\pi^2}.
+\end{align*}
+Since $e^{(2z-1)x}=1+(2z-1)x+\frac{(2z-1)^2x^2}{2}+\cdots$ and $\frac{1}{\sinh(x)}=\frac{1}{x}-\frac{x}{6}+\cdots$, we have
+\begin{align*}
+  \Res\left(\frac{e^{(2z-1)x}}{x\sinh(x)};x=0\right)
+  &=
+  2z-1
+  \\
+  \intertext{and}
+  \Res\left(\frac{e^{(2z-1)x}}{x^2\sinh(x)};x=0\right)
+  &=
+  2z^2-2z+\frac{1}{3}.
+\end{align*}
+\par
+We can prove the integrals along $\underline{H}_r$ and $\underline{U}_{r}^{\pm}$ converge to zero as $r\to\infty$ in similar ways to the cases of $\overline{H}_r$ and $\overline{U}_{r}^{\pm}$.
+\par
+Putting $x=ye^{\i\theta}-r\i$ and assuming $r>1$, we have
+\begin{equation*}
+\begin{split}
+  &\left|\int_{\underline{H}_{r}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx\right|
+  \\
+  \le&
+  \frac{1}{(r\cos\theta)^m}
+  \left|
+    \int_{-r}^{r}
+    \frac{e^{(2z-1)(ye^{\i\theta}-r\i)}\times e^{\i\theta}}
+         {\sinh(ye^{\i\theta}-r\i)}\,dy
+  \right|
+  \\
+  \le&
+  \frac{e^{2r\Im{z}}}{(r\cos\theta)^m}
+  \int_{-r}^{r}
+  \frac{e^{y\Re\left((2z-1)e^{\i\theta}\right)}}
+       {\left|\sinh(ye^{\i\theta}-r\i)\right|}\,dy
+  \\
+  &\text{\small
+    ($M
+    :=
+    \max_{-1\le y\le1}
+    \frac{e^{y\Re\left((2z-1)e^{\i\theta}\right)}}{\left|\sinh(ye^{\i\theta}-r\i)\right|}>0$)}
+  \\
+  \le&
+  \frac{e^{2r\Im{z}}}{(r\cos\theta)^m}
+  \\
+  &\quad\times
+  \left(
+    2M
+    +
+    \int_{-r}^{-1}
+    \frac{2e^{2y\Re\left(ze^{\i\theta}\right)-y\cos\theta}}{e^{-y\cos\theta}-e^{y\cos\theta}}\,dy
+    +
+    \int_{1}^{r}
+    \frac{2e^{2y\Re\left(ze^{\i\theta}\right)-y\cos\theta}}{e^{y\cos\theta}-e^{-y\cos\theta}}\,dy
+  \right),
+\end{split}
+\end{equation*}
+which converges to zero as $r\to\infty$.
+\par
+Putting $x=r(e^{\i\theta}-y\i)$, we have
+\begin{equation*}
+\begin{split}
+  \left|\int_{\underline{U}_r^{+}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx\right|
+  &\le
+  \frac{1}{(r\cos\theta)^m}
+  \left|
+    \int_{0}^{1}
+    \frac{e^{(2z-1)r(e^{\i\theta}-y\i)}\times(-r\i)}
+         {\sinh(r(e^{\i\theta}-y\i))}\,dy
+  \right|
+  \\
+  &\le
+  \frac{2re^{2r\Re\left(ze^{\i\theta}\right)-r\cos\theta}}
+       {(r\cos\theta)^m(e^{r\cos\theta}-e^{-r\cos\theta})}
+  \int_{0}^{1}e^{2ry\Im{z}}\,dy
+  \\
+  &=
+  \frac{2e^{2r\Re\left(ze^{\i\theta}\right)-2r\cos\theta}}
+       {r^{m-1}\cos^m\theta(1-e^{-2r\cos\theta})}
+  \times
+  \int_{0}^{1}e^{2ry\Im{z}}\,dy,
+\end{split}
+\end{equation*}
+since $0<\Re(ze^{\i\theta})<\cos\theta$, noting that the last integral becomes either $1$ (if $z$ is real) or $\frac{e^{2r\Im{z}}-1}{2r\Im{z}}$ (otherwise).
+\par
+Similarly, putting $x=-r(e^{\i\theta}+y\i)$, we have
+\begin{equation*}
+\begin{split}
+  \left|
+    \int_{\underline{U}_{r}^{-}}\frac{e^{(2z-1)x}}{x^m\sinh(x)}\,dx
+  \right|
+  &\le
+  \frac{1}{(r\cos\theta)^m}
+  \left|
+    \int_{0}^{1}
+    \frac{e^{-r(2z-1)(e^{\i\theta}+y\i)}\times(-r\i)}
+         {\sinh(-r(e^{\i\theta}+y\i))}\,dy
+  \right|
+  \\
+  &\le
+  \frac{2re^{-2r\Re\left(ze^{\i\theta}\right)+r\cos\theta}}
+       {(r\cos\theta)^m(e^{r\cos\theta}-e^{-r\cos\theta})}
+  \int_{0}^{1}e^{2ry\Im{z}}\,dy
+  \\
+  &=
+  \frac{2e^{-2r\Re\left(ze^{\i\theta}\right)}}
+       {r^{m-1}\cos^m\theta(1-e^{-2r\cos\theta})}
+  \times
+  \int_{0}^{1}e^{2ry\Im{z}}\,dy
+  \\
+  &\to0\quad(r\to\infty)
+\end{split}
+\end{equation*}
+since $0<\Re(ze^{\i\theta})$.
+So from \eqref{eq:L1_residue_negative} we have
+\begin{equation*}
+\begin{split}
+  \lim_{r\to\infty}
+  \int_{C_{\theta}^{r}}\frac{e^{(2z-1)x}}{x\sinh(x)}\,dx
+  &=
+  -2\pi\i
+  \lim_{r\to\infty}
+  \sum_{k=0}^{\lfloor{r}\rfloor}\Res\left(\frac{e^{(2z-1)x}}{x\sinh(x)};x=-k\pi\i\right).
+  \\
+  &=
+  -2\pi\i(2z-1)
+  +
+  2\lim_{r\to\infty}\sum_{k=1}^{\lfloor{r}\rfloor}\frac{e^{-2kz\pi\i}}{k}.
+\end{split}
+\end{equation*}
+Since this series converges to $-\log\left(1-e^{-2z\pi\i}\right)$ as $r\to\infty$ if $\Im{z}<0$ from Lemma~\ref{lem:Li_2_convergence}, we finally have
+\begin{equation*}
+  \int_{C_{\theta}}
+  \frac{e^{(2z-1)x}}{x\sinh(x)}\,dt
+  =
+  -2\pi\i(2z-1)-2\log\left(1-e^{-2z\pi\i}\right),
+\end{equation*}
+completing the proof when $\Im{z}<0$.
+\par
+Similarly, we have
+\begin{equation*}
+\begin{split}
+  \lim_{r\to\infty}
+  \int_{C_{\theta}^{r}}\frac{e^{(2z-1)x}}{x^2\sinh(x)}\,dx
+  &=
+  -2\pi\i
+  \lim_{r\to\infty}
+  \sum_{k=0}^{\lfloor{r}\rfloor}\Res\left(\frac{e^{(2z-1)x}}{x^2\sinh(x)};x=-k\pi\i\right).
+  \\
+  &=
+  -2\pi\i\left(2z^2-2z+\frac{1}{3}\right)
+  +
+  \frac{2\i}{\pi}\lim_{r\to\infty}\sum_{k=1}^{\lfloor{r}\rfloor}\frac{e^{-2kz\pi\i}}{k^2}.
+\end{split}
+\end{equation*}
+The series converges to $\Li_2\left(e^{-2z\pi\i}\right)$ and so
+\begin{equation*}
+  \int_{C_{\theta}}
+  \frac{e^{(2z-1)x}}{x^2\sinh(x)}\,dt
+  =
+  -2\pi\i\left(2z^2-2z+\frac{1}{3}\right)+\frac{2\i}{\pi}\Li_2\left(e^{-2z\pi\i}\right),
+\end{equation*}
+completing the proof when $\Im{z}<0$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We give a proof for the following well-known lemma.
+\begin{lem}\label{lem:Li_2_convergence}
+For a complex number $w$ with $|w|\le1$, the series $\sum_{k=1}^{\infty}\frac{w^k}{k^2}$ converges to $\Li_2(w)$.
+Here we use $\Li_2(w):=-\int_{0}^{w}\frac{\log(1-t)}{t}\,dt$ as the definition of the dilogarithm.
+\end{lem}
+\begin{proof}
+Put $a_k:=\frac{1}{k^2}$.
+\par
+Then we have
+\begin{equation*}
+  \left|\frac{a_{k+1}}{a_{k}}\right|
+  =
+  \left(\frac{k}{k+1}\right)^2
+  \to
+  1
+\end{equation*}
+as $k\to\infty$.
+Therefore from d'Alembert's ratio test, the radius of convergence of the power series $\sum_{k=1}^{\infty}a_kw^k$ is $1$.
+So we can differentiate it term by term if $|w|<1$, and we obtain
+\begin{equation*}
+  \frac{d}{d\,w}
+  \left(\sum_{k=1}^{\infty}\frac{w^k}{k^2}\right)
+  =
+  \sum_{k=1}^{\infty}\frac{w^{k-1}}{k}
+  =
+  -\frac{\log(1-w)}{w}.
+\end{equation*}
+Therefore we conclude that $\sum_{k=1}^{\infty}\frac{w^k}{k^2}=-\int_{0}^{w}\frac{\log(1-t)}{t}\,dt$.
+\par
+If $w=1$, the series $\sum_{k=1}^{\infty}a_k$ converges by the integral test.
+\par
+Finally, we assume that $|w|=1$ with $w\ne1$, and apply Abel's test.
+Since the sequence $\{a_k\}$ is positive and monotonically decreasing with $\lim_{k\to\infty}a_k=0$, the power series $\sum_{k=1}^{\infty}a_kw^k$ converges if $|w|=1$ ($w\ne1$).
+We can also apply Abel's theorem to conclude that $\sum_{k=1}^{\infty}a_kz^k$ converges to $\sum_{k=1}^{\infty}a_kw^k$ provided that $z$ approaches $w$ along the radius.
+Note that this includes the case $w=1$.
+Therefore we also conclude that $\sum_{k=1}^{\infty}\frac{w^k}{k^2}=-\int_{0}^{w}\frac{\log(1-t)}{t}\,dt$ for the case $|w|=1$ by choosing the integral path as the radius connecting $0$ and $w$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\par
+We prove that $\frac{1}{N}T_{N}(z)$ uniformly converges to $\frac{1}{\xi}\L_{2}(z)$.
+\begin{proof}[Proof of Proposition~\ref{prop:T_N_L_2}]
+We have
+\begin{equation*}
+\begin{split}
+  \left|
+    T_N(z)
+    -
+    \frac{N}{\xi}\L_2(z)
+  \right|
+  &=
+  \frac{1}{4}
+  \left|
+    \int_{C_{\theta}}
+    \left(
+      \frac{e^{(2z-1)x}}{x\sinh(x)\sinh(\gamma x)}
+      -
+      \frac{e^{(2z-1)x}}{\gamma x^2\sinh(x)}
+    \right)
+    \,dx
+  \right|
+  \\
+  &=
+  \frac{1}{4}
+  \left|
+    \int_{C_{\theta}}
+    \frac{e^{(2z-1)x}}{\gamma x^2\sinh(x)}
+    \left(
+      \frac{\gamma x}{\sinh(\gamma x)}-1
+    \right)
+    \,dx
+  \right|
+  \\
+  &\le
+  \frac{\pi N}{2|\xi|}
+  \int_{C_{\theta}}
+  \left|
+    \frac{e^{(2z-1)x}}{x^2\sinh(x)}
+  \right|
+  \left|
+    \frac{\gamma x}{\sinh(\gamma x)}-1
+  \right|
+  \,dx.
+\end{split}
+\end{equation*}
+Since $\frac{\gamma x}{\sinh(\gamma x)}=1-\frac{(\gamma x)^2}{6}+O((\gamma x)^4)$, $\left|\frac{\gamma x}{\sinh(\gamma x)}-1\right|<\frac{C|x|^2}{N^2}$ for a positive constant $C$ since $\gamma=\frac{\xi}{2N\pi\i}$.
+So we have
+\begin{equation*}
+  \left|
+    T_N(z)
+    -
+    \frac{N}{\xi}\L_2(z)
+  \right|
+  \le
+  \frac{C'}{N}
+  \int_{C_{\theta}}
+  \left|\frac{e^{(2z-1)x}}{\sinh(x)}\right|\,dx,
+\end{equation*}
+where $C':=\frac{C\pi}{2|\xi|}$.
+Put
+\begin{align*}
+  I_{+}
+  &:=
+  \lim_{r\to\infty}
+  \int_{e^{\i\theta}}^{re^{\i\theta}}
+  \left|\frac{e^{(2z-1)x}}{\sinh(x)}\right|\,dx,
+  \\
+  I_{-}
+  &:=
+  \lim_{r\to\infty}
+  \int_{-re^{\i\theta}}^{-e^{\i\theta}}
+  \left|\frac{e^{(2z-1)x}}{\sinh(x)}\right|\,dx,
+  \\
+  I_{0}
+  &:=
+  \int_{|x|=1,\theta\le\arg{x}\le\pi+\theta}
+  \left|\frac{e^{(2z-1)x}}{\sinh(x)}\right|\,dx.
+\end{align*}
+Putting $x:=e^{\i\theta}y$, we have
+\begin{equation*}
+\begin{split}
+  I_{+}
+  &=
+  \int_{1}^{\infty}
+  \frac{\left|e^{(2z-1)ye^{\theta\i}}\right|}{|\sinh(ye^{\i\theta})|}
+  \,dy
+  \\
+  &\le
+  \int_{1}^{\infty}
+  \frac{2e^{2y\Re(ze^{\theta\i})-y\cos\theta}}{e^{y\cos\theta}-e^{-y\cos\theta}}
+  \,dy
+  \\
+  &=
+  \int_{1}^{\infty}
+  \frac{2e^{2y\left(\Re(ze^{\theta\i})-\cos\theta\right)}}{1-e^{-2y\cos\theta}}
+  \,dy
+  \\
+  &\le
+  \frac{2}{1-e^{-2\cos\theta}}
+  \int_{1}^{\infty}
+  e^{-2y\nu}\,dy
+  \\
+  &=
+  \frac{e^{-2\nu}}{(1-e^{-2\cos\theta})\nu}.
+\end{split}
+\end{equation*}
+Here we use the assumption $\Re(ze^{\theta\i})\le\cos\theta-\nu$.
+\par
+Similarly, we have
+\begin{equation*}
+\begin{split}
+  I_{-}
+  &=
+  \int_{-\infty}^{-1}
+  \frac{\left|e^{(2z-1)ye^{\theta\i}}\right|}{|\sinh(ye^{\i\theta})|}
+  \,dy
+  \\
+  &\le
+  \int_{-\infty}^{-1}
+  \frac{2e^{2y\Re(ze^{\theta\i})-y\cos\theta}}{e^{-y\cos\theta}-e^{y\cos\theta}}
+  \,dy
+  \\
+  &=
+  \int_{-\infty}^{-1}
+  \frac{2e^{2y\Re(ze^{\theta\i})}}{1-e^{2y\cos\theta}}
+  \,dy
+  \\
+  &\le
+  \frac{2}{1-e^{-2\cos\theta}}
+  \int_{-\infty}^{-1}
+  e^{2y\nu}\,dy
+  \\
+  &=
+  \frac{e^{2\nu}}{(1-e^{-2\cos\theta})\nu}.
+\end{split}
+\end{equation*}
+Here we use the assumption $\Re(ze^{\theta\i})\ge\nu$.
+\par
+Finally, putting $x=e^{\tau\i}$ ($\theta\le\tau\le\theta+\pi$) and $L:=\min_{\theta\le\tau\le\theta+\pi}|\sinh(e^{\i\tau})|>0$, we have
+\begin{equation*}
+\begin{split}
+  I_{0}
+  &=
+  \int_{\theta}^{\theta+\pi}
+  \frac{\left|e^{(2z-1)e^{\tau\i}}\right|}{|\sinh(e^{\i\tau})|}
+  |\i e^{\tau\i}|\,d\tau
+  \\
+  &\le
+  \frac{1}{L}
+  \int_{\theta}^{\theta+\pi}
+  e^{2\Re(ze^{\tau\i})-\cos\tau}
+  \,d\tau
+  \\
+  &=
+  \frac{1}{L}
+  \int_{\theta}^{\theta+\pi}
+  e^{(2\Re{z}-1)\cos\tau-2\sin\tau\Im{z}}
+  \,d\tau,
+\end{split}
+\end{equation*}
+which is bounded from the above because both $\Re{z}$ and $\Im{z}$ are bounded.
+\par
+Therefore we conclude that $\left|T_N(z)-\frac{N}{\xi}\L_2(z)\right|\le\frac{C''}{N}$ for some constant $C''$ that does not depend on $z$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[Proof of Lemma~\ref{lem:T_special}]
+Recall that $\gamma=\frac{\xi}{2N\pi\i}$.
+\par
+By the definition of $T_N(z)$, we have
+\begin{equation*}
+\begin{split}
+  &
+  T_{N}\left(\frac{\xi}{2\pi\i}(1+\frac{1}{2N})\right)
+  -
+  T_{N}\left(\frac{\xi}{2\pi\i}(1-\frac{1}{2N})\right)
+  \\
+  =&
+  \frac{1}{4}\int_{C_{\theta}}
+  \frac{e^{\left(\frac{\xi}{\pi\i}(1+\frac{1}{2N})-1\right)x}
+       -e^{\left(\frac{\xi}{\pi\i}(1-\frac{1}{2N})-1\right)x}}
+       {x\sinh(x)\sinh(\gamma x)}
+  \,dx
+  \\
+  =&
+  \frac{1}{2}
+  \int_{C_{\theta}}\frac{e^{\left(\frac{\xi}{\pi\i}-1\right)x}}{x\sinh(x)}
+  \,dx,
+\end{split}
+\end{equation*}
+which equals $\pi\i-\xi-\log(1-e^{-\xi})$ from Lemma~\ref{lem:L1_2}.
+\begin{equation*}
+  \frac{\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1+\frac{1}{2N})\right)\right)}
+       {\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1-\frac{1}{2N})\right)\right)}
+  =
+  \frac{1}{1-e^{\xi}}.
+\end{equation*}
+\end{proof}
+\begin{rem}
+The proof of Lemma~2.3 in \cite{Murakami:JTOP2013} is wrong, which was informed by Ka Ho Wong.
+\end{rem}

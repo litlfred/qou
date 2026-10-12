@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1804.03926v3/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1804.03926v3/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "Tail bounds",
-  "pageStart": 28,
-  "pageEnd": 34,
-  "text": "../sections/sec-007-5-tail-bounds.md",
-  "derivedFrom": "library/arxiv-1804.03926v3/manifest",
-  "sourceDocument": "library/arxiv-1804.03926v3/manifest",
+  "title": "Concentration inequalities",
+  "pageStart": 21,
+  "pageEnd": 28,
+  "text": "../sections/sec-007-4-concentration-inequalities.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1804.03926v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1804.03926v3/manifest.jsonld",
   "provenance": "ingested"
 }

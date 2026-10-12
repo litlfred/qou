@@ -101,8 +101,13 @@ upgrades the QOU framework to a complete derivation of Yang–Mills
 mass gap + Wightman compliance from the categorical substrate +
 Bring's surface constraint.
 
-This also explains why the
-QOU substrate has $q = q_0 \in \mathbb{R}_{>1}$ specifically: the
-real positive range is precisely Wenzl's unitarity range. The
-choice of $q_0$ is not free — it's locked by the unitarity
-requirement that makes the Wightman QFT reconstruction possible.
+Unitarity is compatible with $q = q_0$, but it does not single
+$q_0$ out. Wenzl's unitarity range is the whole real positive line,
+so every $q \in \mathbb{R}_{>0}$ satisfies it equally. The value of
+$q_0$ is fixed by the CAL-2 calibration, not by unitarity.
+
+**Note (2026-10-10).** This paragraph previously said unitarity
+"explains why" the substrate has $q = q_0$ and that $q_0$ is "locked
+by the unitarity requirement". Both claims contradicted this block's
+own statement of Wenzl's criterion, under which the admissible range
+is all of $\mathbb{R}_{>0}$. The conjecture itself is unchanged.

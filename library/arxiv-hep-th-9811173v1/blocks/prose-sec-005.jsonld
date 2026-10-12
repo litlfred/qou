@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "How may one derive the rational invariant?",
-  "pageStart": 6,
-  "pageEnd": 6,
-  "text": "../sections/sec-005-24-how-may-one-derive-the-rational-invariant.md",
-  "derivedFrom": "library/arxiv-hep-th-9811173v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9811173v1/manifest",
+  "title": "Quartic platonic links",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "../sections/sec-005-411-quartic-platonic-links.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9811173v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9811173v1/manifest.jsonld",
   "provenance": "ingested"
 }

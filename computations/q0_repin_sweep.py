@@ -151,7 +151,7 @@ def build_graph(stems: set[str]):
     """producer stem -> (script path, its witness names, stems it reads)."""
     wit: dict[str, set[str]] = {}
     for w in HERE.rglob("*.witness.json"):
-        if "_deprecated" in w.parts:
+        if ("_deprecated" in w.parts or "fsh-guts" in w.parts):
             continue
         if w.name in ANCHOR_DEFINITIONS:
             # NOT a consumer. `q-pinning-50-digit.witness.json` DEFINES the muon
@@ -189,7 +189,7 @@ def build_graph(stems: set[str]):
         # sorted: rglob yields in os.scandir order, so a bare hits[0] picks a
         # filesystem-dependent copy for a duplicated basename. Bean qou-kcii.
         hits = sorted(p for p in HERE.rglob(f"{s}.py")
-                      if "_deprecated" not in p.parts)
+                      if ("_deprecated" not in p.parts and "fsh-guts" not in p.parts))
         if hits:
             paths[s] = hits[0]
 

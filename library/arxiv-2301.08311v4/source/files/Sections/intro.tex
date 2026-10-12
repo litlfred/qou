@@ -1,0 +1,179 @@
+\section{Introduction}\label{sec:intro}
+
+A natural question about Lagrangian submanifolds is how their invariants change if one locally modifies a Lagrangian.   We describe a local modification for Lagrangians that contain a \textit{torus segment}  and study the behavior of Lagrangian Floer cohomology under the change.  We call this modification a \textit{local higher mutation}.   Intuitively,  a local higher mutation is a surgery operation, it removes a torus segment from a Lagrangian and replaces with an opposite torus segment.  This modification of a Lagrangian is a local change inspired by Pascaleff-Tonkonog's higher mutation in \cite{wall}. 
+
+Mutations come up naturally in the context of almost toric fibrations of symplectic 4-manifolds.  One obtains a mutation of a smooth toric fiber in an almost toric fibration by varying the location of the singular fiber so that it crosses the smooth fiber, see \cite{leungsym:almosttor}. Auroux \cite{aurTdual} describes a relation between the disc potentials of two families of Hamiltonian non-isotopic Lagrangian tori that are mutations of each other. Seidel \cite{seidelLC}  shows that the Floer homology of a pair of mutated tori in dimension two is non-zero only when the local system over the tori satisfies a certain algebraic relation.  The algebraic relations that occur between the potentials also occur in the theory of \textit{cluster algebras} as algebraic mutations.  Pascaleff-Tonkonog  \cite{wall} generalizes the mutation construction to higher dimensional tori and establishes a wall-crossing formula for their disc-potential.  
+
+Mutations of two-dimensional Lagrangians can be viewed from the perspective of surgery.  Lagrangian surgery, introduced by Polterovich in \cite{pol:surg}, is a version of classical surgery technique.  Mutation of two-dimensional Lagrangians arise from different resolutions of a singular Lagrangian with transverse double intersection by Lagrangian surgery.  Fukaya-Oh-Ohta-Ono \cite{ch10} studies the effect of Lagrangian surgery on the moduli space of discs with boundaries on the Lagrangian.  Woodward-Palmer \cite{palmerwoodwardsurg} proves the invariance of the disc potential and Floer homology under Lagrangian surgery.
+
+
+ \subsection{Main result}
+
+
+The main result in this chapter is an invariance of Floer cohomology, up to a change in local system. In spirit, this result is similar to the invariance result in \cite{palmerwoodwardsurg} which proves a similar result for Lagrangian surgery.
+
+We begin with a quick recap of Lagrangian intersection Floer cohomology with local systems. For a more detailed discussion, see Section \ref{sec:floerhomo}. Let $L',K'$ be two transversely intersecting, orientable, spin, compact Lagrangians in a compact monotone symplectic manifold $M'$. Assume that $(L',K')$ forms a monotone tuple.  Let $\mathcal{E}_{L'}, \mathcal{E}_{K'}$ be flat complex line bundles over ${L'}, {K'}$ with holonomies $\rho_{L'}, \rho_{K'} $.  Define the chain complex  $CF({({L'}, \rho_{L'})},  ({K'}, \rho_{K'}))$ as follows, 
+
+\begin{equation*}
+    CF({({L'}, \rho_{L'})},  ({K'}, \rho_{K'})) = \bigoplus_{p\in {L'} \cap {K'}} \hom(\mathcal{E}_{{L'}}|_p, \mathcal{E}_{{K'}}|_p ),
+\end{equation*}
+
+\noindent  where $\mathcal{E_{K'}}|_p$,$\mathcal{E_{L'}}|_p$ refers to the fibers of the line bundles over the point $p$. The differential $\del$  on $CF({({L'}, \rho_{L'})},  ({K'}, \rho_{K'}))$ is defined by counting rigid holomorphic strips weighted by the holonomies.  Oh \cite{oh:addendum} shows that if all Maslov two discs are simple and the disc potentials $W_{L'}$ and $W_{K'}$ match,  then $\del^2 = 0$.  Later, from structural results of images of pseudoholomorphic discs proved in \cite{kwonoh:sturc}, \cite{Lazz}, it was established that all Maslov two discs with boundary on orientable monotone Lagrangians are simple.  The cohomology of the complex $CF(({L'}, \rho_{L'}), ({K'}, \rho_{K'})$ is denoted as $HF(({L'}, \rho_{L'}), ({K'}, \rho_{K'})),$ which we call the Lagrangian Floer cohomology.   
+
+Now we get back to stating the main result.  We describe relevant notations and assumptions in the following list. 
+\begin{listC}
+    \item $M$ is a compact, monotone, symplectic manifold of dimension $2n$.
+    \item $L$ is a \textit{locally mutable},  oriented,  spin, compact, connected, monotone Lagrangian manifold in $M$. See Definition \ref{defn:locallymutable} for the definition of \textit{locally mutable.}
+    \item $K$ is an oriented,  spin, compact, connected,  monotone Lagrangian manifold in $M$. 
+    \item The Lagrangian $K$ intersects $L$ transversely but does not intersect a small \textit{mutation neighborhood} $B$ of $L$. See Definition \ref{defn:mutnbd} for  the definition of \textit{mutation neighborhood}.
+    \item  $(L, K)$ forms a \textit{monotone tuple}. See Definition \ref{defn:monotup} for  the definition of \textit{monotone tuple} of Lagrangians.
+    \item $\rho_L$ and $\rho_K$ are local systems on $L$ and $K$ respectively.
+    \item In a mutation neighborhood $B$,  under the identification given by the symplectomorphism $\phi$,  $L$ is equal to the \textit{torus segment} $T_\gamma$. See Definitions \ref{defn:torusseg} for  the definition of \textit{torus segment}.
+    \item $x_1, \dots x_{n-1}$ is the image of generators of $H_1(T_\gamma)$ under the inclusion map $i:T_\gamma \hookrightarrow L$.  From Definition \ref{defn:locallymutable}, we know that the induced map $i_* : H_1(T_\gamma) \to H_1(L)$ is injective.
+    \item $(x_1, x_2, \dots, x_n,  y_1, \dots y_l)$ is a generating set of $H_1(L)$ such that $x_n \cap i_*[T_\gamma]$ where $[T_\gamma]$ is the generator of $H_{n-1}(T_\gamma)$. A Poincar\'{e} duality argument ensures the existence of such an $x_n$.
+\end{listC}
+
+
+
+Denote the evaluation of the holonomy $\rho_L$ on $H_1(L)$ as follows, 
+\begin{align}
+    \rho_L(x_i)=z_i  \label{eq:one}\\
+    \rho_L(y_i)=w_i \nonumber
+\end{align}
+
+
+\begin{defn}
+  The  \textit{mutated local system} $\rho_{L_\mu}$ on the mutated Lagrangian $L_\mu$ for the pair $(L, \rho_L)$ is given by 
+\begin{align} 
+    \rho_{L_\mu}(x_i)&=z_i \text{ for } i<n   \label{eq:two}\\
+    \rho_{L_\mu}(x_n)&=z_n(1+z_1 + \dots + z_{n-1}) \nonumber \\
+    \rho_{L_\mu}(y_i)&=w_i \nonumber.   
+\end{align}
+\end{defn}
+
+ To obtain regularity of certain moduli spaces,  we use domain-dependent perturbations.  This paradigm of transversality was introduced in \cite{CMtrans} for closed curves and extended to discs with boundary on Lagrangians in \cite{charwoodstabil}, \cite{floerflip}.  One key step in this model is to stabilize domains by adding mark points coming from intersections with a Donaldson divisor.  We assume the existence of such a divisor, which we call \textit{nice divisor},  see Definition \ref{def:nicediv}, which helps us in the regularization of broken maps. One can prove that such divisors do exist by modifying Auroux's argument in Theorem 3.3 of \cite{wall} if the symplectic form is rational and the Lagrangian $L$ satisfies certain geometric conditions.  We now state the main result of the chapter. 
+
+
+
+\begin{Theorem}[Invariance under mutation]\label{maintheorem}
+Let $M,L,K$ be manifolds as described in \textbf{C}[1-9]. Assume that there is a nice divisor $D$ in $M$. Let $L_\mu$ be a local higher mutation of $L$. Let $\rho_L$, $\rho_K$ be choices of local systems on $L, K$ such that $\rho_L$ is given as in equation (\ref{eq:one}). Let $\rho_{L_\mu}$ be the mutated local system as in equation (\ref{eq:two}).  Then,  we have an isomorphism between the disc potentials of the Lagrangians,  $$W_L(\rho_L) \cong W_{L_\mu}(\rho_{L_\mu})$$
+Moreover,  if $W_L(\rho_L)=W_K(\rho_K)$, then we have isomorphism of the vector spaces
+$$HF((L_\mu, \rho_{L_\mu}), (K, \rho_K)) \cong HF((L, \rho_L), (K, \rho_K))$$
+\end{Theorem}
+
+
+
+\begin{remark}
+The algebraic relation between the local systems in Theorem \ref{maintheorem} matches with the mutation formulae present in the literature.  When $n=2$, this formula matches with the expected change in the local system needed for invariance under Lagrangian surgery as done in \cite{aurTdual}, \cite{seidelLC}, \cite{palmerwoodwardsurg}. For higher dimensions, it agrees with the mutation formula for monotone Lagrangian torus in \cite{wall},  see the relation (\ref{eq:pasctonkmut}). 
+\end{remark}
+
+\begin{remark} We need the existence of a divisor to stabilize the disc components in the outside piece of a broken manifold. Usually, one would not require domain dependent perturbation of $J$ when the Lagrangian pair is monotone because Maslov 2 discs are simple from results in \cite{kwonoh:sturc} and \cite{lazz:frame}. To regularize holomorphic buildings, we would require a version of structural results in \cites{lazz:frame,kwonoh:sturc} which works for manifolds with cylindrical ends. To avoid this technicality, we are assuming the existence of a divisor to regularize our holomorphic buildings.
+    
+\end{remark}
+
+\begin{cor}\label{cor:chekclif}
+    Let $L_\mu$ be a higher mutation of a monotone toric fiber $L$ in $(M,\omega)$ as constructed in \cite{wall}. Equip the Lagrangians with local systems $\rho_L, \rho_{L_\mu}$ which are related by the mutation formula \ref{eq:two} and denote the Lagrangian branes as $\wt L, \wt L_\mu$. Then we have, $$HF(\wt{L}_\mu,\wt{L}) \cong HF(\wt L , \wt L).$$
+    In particular, by choosing $\rho$ to be a critical point of $W_L$, we know that $HF$ is non-vanishing. Thus, we have that the Clifford and Chekanov-type tori are Hamiltonian non-displaceable from each other.
+\end{cor}
+
+
+\subsection{Higher toric mutation}
+Higher-dimensional toric mutation,  as described by Pascaleff-Tonkonog \cite{wall},  is a non-Hamiltonian transformation of the monotone Lagrangian torus fiber in a monotone toric manifold.  We describe the simplest example of such higher mutation here.  Let $M_0=(\C^n,   \omega_{0})$, where $w_0$ is the standard symplectic form $\sum_{i=1}^{n} dx_i\wedge dy_i$ on $\C^n\cong \R^{2n}$.  Consider the fibration given by the multiplication map
+\begin{equation}\label{eq:pim}
+    \pi_m : M_0 \to \C,  \,  \,  \,  \pi_m(z_1, \dots z_n) = z_1z_2\dots z_n. 
+\end{equation}
+Given a simple closed curve $\gamma : S^1 \to \C^* $,  we can define an embedded Lagrangian torus
+\begin{equation}
+\label{eqn:lagtoru}
+T_{\gamma} = \{ (z_1, z_2, \dots z_n) \in \C^n | \, \pi_m  (z_1, z_2, \dots z_n) \in \gamma (S^1) ,   |z_1| = |z_2| = \dots |z_n|\}. 
+\end{equation}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{1}{tpic}
+    \caption{The Lagrangian torus $T_\gamma$ }
+    \label{fig:tpic}
+\end{figure}
+
+The Hamiltonian isotopy class of the Lagrangian $T_\gamma$ depends on geometric properties of the curve $\gamma$.  For a fixed area enclosed by the curve $\gamma$, with respect  to a  symplectic form $d\lambda_n$ (see Definition \ref{defn:lambdan}),  there are at most two Hamiltonian isotopy classes depending on whether the curve $\gamma$ encloses $0$ inside it.  We elaborate on constructing Hamiltonian isotopies of $T_\gamma$ in Subsection \ref{ssub:hamiso}.  When the curve  $\gamma$ encloses 0,  we say that the torus is of Clifford type,  and if it does not,  we say that it is of Chekanov type.  The process of interchanging between Clifford and Chekanov type tori is the simplest occurrence of mutation.  See \cite{chekschlenk:twisttori} for a slightly different construction of the Chekanov tori.  Pascaleff-Tonkonog use the local model $(M_0, T_\gamma)$ to define higher toric mutations in a toric manifold in \cite{wall}. We briefly discuss Pascaleff-Tonkonog's higher toric mutation now.  Assume that $X$ is a monotone toric manifold with Delzant polytope $\Delta$, whose barycenter is 0.  Let $I$ be a line joining a vertex $w$ of $\Delta$  with $0$.  The toric fibration, over a neighborhood of  the line $I$,  is symplectomorphic ( as total spaces,  not fibrations ) to the fibration $\pi_m$ over a neighborhood  of the unit circle $\gamma(\theta)=e^{i\theta} $ attached with the line segment $S$ joining the point $0$ with the point $-1$ such that the monotone torus is mapped to Clifford-type $T_\gamma$.   Choose a curve $\gamma'$ in a neighborhood of the union of curves $\gamma \cup S$, such that the area enclosed by the curve $\gamma'$ is the same as that of $\gamma$ and the Lagrangian torus $T_{\gamma'}$ is of Chekanov-type.  $T_{\gamma'}$ is the mutation of the monotone torus with respect to the vertex $w$. 
+
+We recall the definition of monotonicity.  Let $(M, \omega)$  be a  symplectic manifold. Let $I_\omega$ be the symplectic area functional and  $I_c$ be the first Chern class defined on $\pi_2(M)$. 
+
+\begin{align*}
+    &I_\omega : \pi_2(M)\to \R \\
+    &I_\omega(u) = \int_u \omega \\
+    &I_c : \pi_2(M) \to \Z\\
+    &I_c(u) = c_1(u)
+\end{align*}
+
+
+\noindent  Floer \cite{floer:symfixpoint} defines the concept of a monotone symplectic manifold.  A symplectic manifold $(M, \omega)$ is called a \textit{monotone symplectic manifold} if there exists an $\alpha>0$ such that $I_c= \alpha I_\omega$.  This relation between the symplectic area and first Chern class allowed Floer to control sphere bubbling.  Oh  \cite{ohMonotone} extends the concept of monotonicity to Lagrangians  and constructs Lagrangian intersection Floer cohomology.  Let $L$ be a Lagrangian in $(M, \omega)$ and $\mu_L$ be the Maslov index functional for discs with boundary on $L$. In addition, let $I_\omega$ be the symplectic area functional on the homotopy classes of discs with boundary on $L$. 
+
+\begin{align*}
+    & I_\omega : \pi_2(M, L) \to \R \\
+    &\mu_L : \pi_2(M, L) \to \Z  
+\end{align*}
+
+\noindent A Lagrangian $L$ is said to be a \textit{monotone Lagrangian} if there is a $\lambda>0$  such that there is a area-index relation $I_\omega = \lambda \mu_L $.  This area-index relation allows control of disc bubbling.  Initially, the construction of Lagrangian intersection Floer cohomology was based on the assumption that the minimal Maslov numbers of the Lagrangians are at least three.  An addendum, \cite{oh:addendum}, extends the construction to Lagrangians with minimal Maslov index two if the \textit{disc potential} of the Lagrangians matched.  The disc potential of a Lagrangian $L$ is the number of Maslov two discs passing through a generic point on $L$.  
+
+We follow Pascaleff-Tonkonog's exposition of disc potential with a choice of a local system.   Let $\rho:H_1(L)\to \C^*$ be a local system on $L$. We define the disc potential $W_L(\rho)$ by counting Maslov two discs with boundary on $L$.  Let $\operatorname{Tor}$ be the torsion subgroup of $H_1(L)$.  Fix a generating set $$(e_1, \dots, e_m)$$ of $H_1(L, \Z)/\operatorname{Tor} \cong \Z^m $. Let $(x_1, \dots, x_m)$ be the image of $(e_1, \dots,  e_m)$ under the holonomy map $\rho$.   The choice, $$(x_1, \dots, x_m)\in {(\C^*)}^m,$$ specifies the holonomy of a flat $\C^*$ line bundle over $L$ uniquely.  Thus we can view $({\C^*})^m$ as the space of flat line bundles over $L$.  The \textit{disc potential} is a Laurent polynomial in  $x_1, \dots, x_m$, which we interpret as a function on the space of holonomies of flat line bundles  over $L$.  $$W_L:(\C^*)^m \to \C$$ 
+$$W_L(x_1, \dots, x_m) = \sum_{u|\mu(u)=2} n_{u}. x^{\del u}$$
+
+
+
+\begin{enumerate}
+\itemsep0em 
+    \item $u$ is a $J$-holomorphic disc with a boundary marking.
+    \item $\mu$ is the Maslov index.
+    \item $n_u$ is the degree of the evaluation map at the boundary marking $ev:\mathcal{M}_J (L, u) \to L$.
+    \item $\del u$ is considered as an element of $\Z^m \cong H_1(L, \Z)/\operatorname{Tor}$.
+    \item $x^l$ for $l=(l_1, \dots, l_m)$ denotes $x_1^{l_1}x_2^{l_2}\dots x_m^{l_m}$.
+
+\end{enumerate}
+
+
+Now we restrict our attention to the disc potential of the Lagrangian torus $T_\gamma$ in a monotone toric manifold. The first homology $H_1(T_\gamma)$ is isomorphic to $\mathbb{Z}^n$. Choose a basis $([e_1], \dots, [e_n])$ of $H_1(T_\gamma)$ such that $e_1, \dots, e_{n-1}$ are cycles on a torus over a single fiber of $\pi_m$ and that $e_n$ is a cycle that descends to the curve $\gamma$.  Pascaleff-Tonkonog \cite[p.~62]{wall} shows that the  disc-potential of $T_{\gamma'}$ can be obtained from that of $T_\gamma$ by replacing $x_i$ in $W_L$ with the following method,  see equation (5.17) in \cite{wall},
+\begin{align}
+    &x_i \longrightarrow x_i \qquad\qquad\qquad \qquad  \text{ for } i<n \label{eq:pasctonkmut}\\
+    &x_n \longrightarrow x_n(1+x_1\dots + x_{n-1} ) \nonumber. 
+\end{align}
+
+
+\subsection{Motivation}
+
+
+Mutations in symplectic 4-manifolds have played a crucial role in symplectic geometry.  Vianna \cite{vianna:infinitely} proves that there are infinitely many Hamiltonian isotopy classes of monotone Lagrangians in the projective space $\CP^2$ by doing iterated mutations and comparing the disc potentials.  Mutations also have emerged to be important in mirror symmetry,  see \cite{shetruwil:combi}, \cite{hackeating:hommirrLGcal},  \cite{hackkeating:symplecto}.  
+
+Strominger-Yau-Zaslow \cite{syz:conje} conjectures that mirror Calabi-Yau manifolds carry dual torus fibration,  thus one approach to constructing mirror manifolds is to understand torus fibrations.  Higher mutations come up naturally in examples of singular special Lagrangian fibrations.  See \cite{matessi:lag3fib}\cite{gross:spclgeom}, \cite{gross:spcltop} for examples of such singular fibrations in higher dimensions.   
+
+The approach of obtaining the mutation formula presented in this chapter uses the paradigm of neck-stretching in Symplectic Field Theory (SFT) whereas \cite{wall} uses Liouville neighborhoods of the Lagrangian tori.  One advantage of using SFT neck-stretching is that, it allows us to obtain mutation formulas for Lagrangians that are not necessarily diffeomorphic to tori. The construction of local higher mutations enlarges the class of Lagrangian manifolds that can be mutated.  Thus,  understanding the relationship between the Floer theoretic invariants  might allow us to understand finer details about mirror symmetry. For example, we can apply Theorem \ref{maintheorem} to Lagrangian surfaces of higher genus. Although as stated, the theorem requires the ambient symplectic manifold to be compact, the same proof would be applicable to exact Lagrangians in non-compact symplectic manifolds. Thus, we can recover cluster-algebraic relations in the Floer theoretic invariants of exact Lagrangian surfaces under mutation, which are similar to the relations in the microlocal sheaves as found by Shende, Treumann and Williams \cite{shentreuwill:oncombinatorics}.
+
+
+Another feature of local higher mutations is that they preserve the diffeomorphism type of Lagrangians, while potentially changing the Hamiltonian isotopy class. Thus, the change in Floer theoretic invariants under local mutations can be used to prove the existence of new Hamiltonian isotopy classes of Lagrangians.   
+
+
+
+ 
+ 
+\subsection{Outline of the chapter}
+
+The proof of Theorem \ref{maintheorem} is modelled on the neck-stretching argument in Charest-Woodward \cite{floerflip}.  The idea of the proof is to study ``broken holomorphic maps" (also known as holomorphic buildings in the literature), which are the limits of a Symplectic Field Theory (SFT) neck-stretching process.  We perform a neck-stretching along a small contact sphere in a small Darboux neighborhood in the mutation neighborhood.  This setup of the neck-stretching process separates the mutation neighborhood from the rest of the manifold. Finally, we make a local comparison in the stretched mutation neighborhood to obtain the mutation formula.  
+
+ In Section \ref{sec:setup} we explain the construction of local higher mutations. We prove that mutations preserve the monotonicity of a Lagrangian. 
+ 
+ In Section \ref{sec:SFT} we explain the SFT neck-stretching process with boundary conditions and prove SFT compactness.   \cite{bhewz} proves the SFT compactness theorem for limits of closed curves with Morse-Bott Reeb orbit dynamics.  The analysis required for maps with Lagrangian boundary conditions proved so far in the literature has assumed non-degeneracy of Reeb chord dynamics,  see \cite{Abbasbook},  \cite{dylanexpconv}.  These results do not apply to the neck-stretching in our setting since Reeb chords come in families and are always degenerate.  We prove Theorem \ref{theorem:SFTCompactness},  a version of SFT compactness that applies to our setting.  The presentation here is an expanded version of the method outlined in \cite{palmerwoodwardsurg}.  In \cite{Oh-Wang2},  there is a different approach to proving exponential convergence to Reeb orbits, which is an important step for proving the SFT compactness.  It was indicated to the author by Oh that similar methods can be applied to the Morse-Bott type Reeb chord dynamics as well. 
+ 
+ In Section \ref{sec:modcons} we explain the construction of moduli space of broken maps as the intersection of a $\delbar$ section with the zero-section of a Banach bundle.  We prove that the linearization of $\delbar$ in this setting is a Fredholm operator.  We also introduce notation for domain-dependent perturbations of the almost complex structure, which we require to prove regularity of broken maps.  
+ 
+ In Section \ref{sec:reg} we show that the moduli space of rigid (expected dimension zero)  broken maps with boundary on $L, K$ is transversely cut out for a generic choice of domain-dependent perturbation away from the mutation neighborhood.  
+ 
+ In Section \ref{sec:classif} we prove that the only possible rigid broken maps have no ``neck-pieces" and the only possible configuration that can occur in the stretched mutation neighborhood can be classified explicitly.  This classification result is very similar to the classification of rigid objects already found in the literature, e.g.,  Lemma 2.16 in horizontal sections in Lefschetz fibration in \cite{seidelLongEx},  classification of curves with boundary on transversely intersecting Lagrangians and surgeries as in Theorem 60.26 in \cite{ch10} and Proposition 5.13 in \cite{palmerwoodwardsurg}. 
+ 
+ 
+ 
+In Section \ref{sec:floerhomo} we prove that we can use broken maps to define Lagrangian intersection Floer cohomology in the monotone case and that it is the same as the usual monotone Floer theory as introduced in \cite{ohMonotone}.  Finally  we prove  the main theorem at the end of this section. 
+ 
+ 
+
+
+ 

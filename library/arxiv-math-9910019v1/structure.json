@@ -7,7 +7,11 @@
   "bytes": 205933,
   "pages": 17,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
    "stamp_date": "5 Oct 1999"
   },
   "doi": null,
-  "title": "Symmetrized random permutations",
+  "title": "arXiv:math/9910019v1 [math.CO] 5 Oct 1999",
   "authors_raw": "Jinho Baik\u2217and",
   "title_lines": [
    "Symmetrized random permutations"
@@ -28,6 +32,18 @@
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20181111005029-05'00'"
+  },
+  "title_raw": "Symmetrized random permutations",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/9910019v1 [math.CO] 5 Oct 1999",
+   "heading": "Symmetrized random permutations",
+   "text": "Symmetrized random permutations",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -36,78 +52,456 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "1"
   },
   {
    "level": 1,
-   "title": "(\u2212x)3/2+",
-   "page": 6,
+   "title": "Tracy-Widom distribution functions",
+   "page": 4,
    "source": "inferred",
-   "number": "3"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
-   "title": "(\u2212x)3/2\u2212",
-   "page": 6,
+   "title": "Main Results",
+   "page": 7,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "References",
-   "page": 15,
+   "title": "Applications and related topics",
+   "page": 9,
    "source": "inferred",
-   "number": null
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "Random involutions and random signed involutions",
+   "page": 9,
+   "source": "inferred",
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "$\\beta$-Plancherel measure on the set of Young diagrams",
+   "page": 10,
+   "source": "inferred",
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "10"
+  },
+  {
+   "level": 2,
+   "title": "Random turn vicious walker model",
+   "page": 11,
+   "source": "inferred",
+   "number": "4.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "Symmetrized versions of Johansson's model",
+   "page": 12,
+   "source": "inferred",
+   "number": "4.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": "12"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "random points in a rectangle",
+   "page": 1,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "random turn vicious walkers and Young tableaux",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-front-matter",
    "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 126,
+   "n_words": 17,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 6,
-   "n_chars": 12048,
-   "n_words": 2411
+   "page_end": 4,
+   "n_chars": 7109,
+   "n_words": 1360,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
-   "id": "sec-001-3-x32",
+   "id": "sec-001-2-tracy-widom-distribution-functions",
+   "number": "2",
+   "title": "Tracy-Widom distribution functions",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 5676,
+   "n_words": 1218,
+   "label_start": "4",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-002-3-main-results",
    "number": "3",
-   "title": "(\u2212x)3/2+",
+   "title": "Main Results",
    "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 91,
-   "n_words": 25
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4817,
+   "n_words": 942,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
-   "id": "sec-002-3-x32",
-   "number": "3",
-   "title": "(\u2212x)3/2\u2212",
+   "id": "sec-003-4-applications-and-related-topics",
+   "number": "4",
+   "title": "Applications and related topics",
    "level": 1,
-   "page_start": 6,
-   "page_end": 15,
-   "n_chars": 16587,
-   "n_words": 3274
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 3,
+   "n_words": 1,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-003-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 15,
+   "id": "sec-004-41-random-involutions-and-random-signed-involuti",
+   "number": "4.1",
+   "title": "Random involutions and random signed involutions",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 5186,
+   "n_words": 991,
+   "label_start": "9",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-005-43-random-turn-vicious-walker-model",
+   "number": "4.3",
+   "title": "Random turn vicious walker model",
+   "level": 2,
+   "page_start": 11,
    "page_end": 17,
-   "n_chars": 5389,
-   "n_words": 785
+   "n_chars": 11193,
+   "n_words": 1968,
+   "label_start": "11",
+   "label_end": "17"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 4,
-  "sections": 4,
-  "chars_total": 34115
+  "toc_entries": 8,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.167,
+  "toc_inferred_method": "latex",
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 34110,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper4.tex",
+   "tex_sections": 8,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-tracy-widom-distribution-functions",
+     "title": "Tracy-Widom distribution functions",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-main-results",
+     "title": "Main Results",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-applications-and-related-topics",
+     "title": "Applications and related topics",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-41-random-involutions-and-random-signed-involuti",
+     "title": "Random involutions and random signed involutions",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-43-random-turn-vicious-walker-model",
+     "title": "Random turn vicious walker model",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.567,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s0894-0347-08-00618-8/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s0894-0347-08-00618-8/blocks/prose-sec-012",
   "kind": "prose",
-  "title": "Negative dependence theory for strongly Rayleigh measures",
-  "pageStart": 21,
-  "pageEnd": 24,
-  "text": "../sections/sec-012-4-negative-dependence-theory-for-strongly-raylei.md",
-  "derivedFrom": "library/s0894-0347-08-00618-8/manifest",
-  "sourceDocument": "library/s0894-0347-08-00618-8/manifest",
+  "title": "Interacting particle systems and exclusion evolutions",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "../sections/sec-012-35-interacting-particle-systems-and-exclusion-ev.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-08-00618-8/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-08-00618-8/manifest.jsonld",
   "provenance": "ingested"
 }

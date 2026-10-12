@@ -8,6 +8,8 @@ pages: 7-7
 source_pdf: 1702.00039v1.pdf
 source_sha256: b47ca7d1cf7b44be
 doc_brief: "Gentle introduction to Soergel bimodules I: The basics NICOLAS LIBEDINSKY — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.818
 ---
-We will denote by [n,p,q ] the Coxeter system with simple reﬂections S =
-{s,r,t} and with Coxeter matrix given bymsr =n,m st =p andmrt =q.
+We will denote by $[n,p,q]$ the Coxeter system with simple reflections $S=\{s,r,t\}$ and with Coxeter matrix given by $m_{sr}=n, m_{st}=p$ and $m_{rt}=q.$

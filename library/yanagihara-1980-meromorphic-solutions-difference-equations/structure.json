@@ -6,47 +6,400 @@
   "sha256": "c5e4a39ec3d43d8fb515eaeb693846a1c003bb01b9091c62e29ff1ac038c7872",
   "bytes": 1023938,
   "pages": 18,
-  "text_source": "ocr"
+  "text_source": "ocr",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:26Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
   "title": "Meromorphic Solutions of Some Difference Equations",
-  "authors_raw": null,
+  "authors_raw": "Niro YANAGIHARA",
+  "title_lines": [
+   "Meromorphic Solutions of Some Difference Equations"
+  ],
   "abstract": null,
   "docinfo": {
    "CreationDate": "D:20040312205259"
   },
-  "title_lines": [
-   "Niro YANAGIHARA",
-   "(Chiba University, Japan)",
-   "§1. Introduction",
-   "The purpose of this note is to investigate meromorphic solutions of non-linear",
-   "difference equation",
-   "(1.1) e+ ID=RO, yO)",
-   "where"
-  ],
-  "title_prev": "Niro YANAGIHARA (Chiba University, Japan) §1. Introduction The purpose of this note is to investigate meromorphic solutions of non-linear difference equation (1.1) e+ ID=RO, yO), where"
+  "title_raw": "Meromorphic Solutions of Some Difference Equations",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "text": "Meromorphic Solutions of Some Difference Equations",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [],
- "toc_source": "none",
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 60% of them starting on page(s) 13, 16 of 18 \u2014 a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 60% of them starting on page(s) 13, 16 of 18 \u2014 a list found ON a page, not the document's structure): one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-document",
+   "id": "page-001",
    "number": null,
-   "title": "Document",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1111,
+   "n_words": 170,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1554,
+   "n_words": 270,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1410,
+   "n_words": 262,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1760,
+   "n_words": 319,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2017,
+   "n_words": 356,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 951,
+   "n_words": 178,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1179,
+   "n_words": 213,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1695,
+   "n_words": 312,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2286,
+   "n_words": 429,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1156,
+   "n_words": 225,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1709,
+   "n_words": 308,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1363,
+   "n_words": 251,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1148,
+   "n_words": 215,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1119,
+   "n_words": 212,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1819,
+   "n_words": 320,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 860,
+   "n_words": 140,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1366,
+   "n_words": 214,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
+   "page_start": 18,
    "page_end": 18,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 1762,
+   "n_words": 246,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
-  "pages_without_text": 18,
-  "likely_scanned": true,
+  "pages_without_text": 0,
+  "likely_scanned": false,
   "toc_entries": 0,
-  "sections": 1,
-  "chars_total": 0
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 18,
+  "chars_total": 26265
  }
 }

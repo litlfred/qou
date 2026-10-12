@@ -1,0 +1,388 @@
+% !TeX root = main.tex
+\section{Introduction}
+
+The concept of a \emph{twisted sheaf} goes
+back to Giraud 
+and his formal treatment of the Brauer group in terms of \emph{gerbes}~\cite[Section~V.4]{giraud1971}.
+During the last two decades,
+twisted sheaves and their derived categories have gained a renewed interest,
+starting with the thesis of C{\u{a}}ld{\u{a}}raru \cite{caldararu2000},
+who studied moduli problems for semi-stable sheaves on varieties,
+and the work by de~Jong~\cite{dejong2004}
+and Lieblich~\cite{lieblich2004, lieblich2015}
+on the period--index problem for the Brauer group.
+For a survey on later developments,
+we refer to Lieblich~\cite[Section~4]{lieblich2017}.
+
+Although twisted sheaves have a rather elementary description in terms of 2-cocycles
+(cf.~Remark~\ref{rem-twisted-2-cocycle}),
+they are most naturally viewed as sheaves on gerbes banded by diagonalizable groups
+(see~Definition~\ref{def:twisted}).
+Our first result is the following theorem on the decomposition of the derived category associated to such a gerbe,
+generalizing a result by Lieblich~\cite[Section~2.2.4]{lieblich2004}.
+
+\begin{mtheorem}[{see Theorem~\ref{t:chi-splitting-D-qc-X}}]
+  \label{t:chi-splitting-D-qc-X-intro}
+  Let $S$ be an algebraic stack and 
+  $\pi\colon X \to S$ a gerbe banded by a diagonalizable group
+  $\Delta$ 
+  with character group $A$.
+  Then taking the coproduct defines an equivalence 
+  \begin{equation}
+    \label{eq-equivalence-derived-intro}
+    \prod_{\chi \in A} \D_{\qc, \chi}(X) \sira \D_\qc(X),
+    \qquad
+    (\mathcal{F}_\chi)_{\chi \in A} 
+    \mapsto 
+    \bigoplus_{\chi \in A} \mathcal{F}_\chi,
+  \end{equation}
+  of triangulated categories,
+  where $\D_{\qc, \chi}(X)$ denotes the full subcategory of
+  $\D_\qc(X)$ of objects with $\chi$-homogeneous quasi-coherent
+  cohomology (see Definition~\ref{def-homogeneous-sheaf}).
+\end{mtheorem}
+
+In the underived setting, 
+a splitting similar as in the theorem above (see Theorem~\ref{t-qc-gerbe-split})
+is a consequence of the well-known fact that quasi-coherent
+representations of $\Delta$ split into subrepresentations
+corresponding to the characters of the group~$\Delta$.
+
+The result by Lieblich is the decomposition in Theorem~\ref{t:chi-splitting-D-qc-X-intro}
+in the special case when $S$ is a quasi-compact, separated scheme.
+He proves and uses the fact that in this setting the obvious functor
+\begin{equation}
+\label{eq-dqcoh-vs-dqcoh}
+\D(\Qcoh(X)) \to \D_\qc(X)
+\end{equation}
+is an equivalence of categories~\cite[Proposition~2.2.4.6]{lieblich2004}.
+Note that, if the base $S$ is a scheme, the functor \eqref{eq-dqcoh-vs-dqcoh} only fails to be an equivalence
+in truly pathological situations.
+However, as shown by Hall--Neeman--Rydh \cite[Theorem~1.3]{hnr2018},
+the functor \eqref{eq-dqcoh-vs-dqcoh} fails to be an equivalence for large classes of algebraic stacks,
+including the basic case when $X$ is the classifying stack $\BB \GL_n$ of the general linear group
+(see Remark~\ref{rem-trivial-case}).
+In particular, this kind of argument cannot be used to obtain the splitting of the derived category
+of one of the most fundamental examples of gerbes banded by $\GGm$ ---
+namely the \emph{gerbe of trivializations}
+$\BB \GL_n \to \BB \PGL_n$ for the universal Brauer--Severi scheme
+(see Remark~\ref{rem-universal-gerbe-of-trivializations}).
+
+In order to prove Theorem~\ref{t:chi-splitting-D-qc-X-intro},
+we study the more general problem whether suitable torsion pairs in abelian categories induce
+semi-orthogonal decompositions on the level of derived categories.
+We achieve the following theorem of independent interest.
+
+\begin{mtheorem}[{see Theorem~\ref{t:sod-DbBA} and Theorem~\ref{t:sod-DBA}}]
+  \label{t:sod-DBA-intro}
+  Let $\mathcal{B}$ be a weak Serre subcategory of an abelian
+  category $\mathcal{A}$.
+  Let 
+  $\mathcal{T}$ and
+  $\mathcal{F}$ be abelian subcategories of $\mathcal{B}$
+  forming a torsion pair $(\mathcal{T}, \mathcal{F})$ in
+  $\mathcal{B}$.
+  Assume that 
+  \begin{equation*}
+    \Ext^n_{\mathcal{A}}(T, F)=0
+  \end{equation*}
+  for all objects $T \in \mathcal{T}$, $F \in \mathcal{F}$ and
+  all integers $n$. 
+  Then 
+  \begin{equation*}
+    \D_{\mathcal{B}}^\bd(\mathcal{A})=
+    \langle \D_{\mathcal{F}}^\bd(\mathcal{A}), 
+    \D_{\mathcal{T}}^\bd(\mathcal{A})\rangle
+  \end{equation*}
+  is a semi-orthogonal decomposition.
+  Furthermore, if the inclusion $\D_{\mathcal{B}}(\mathcal{A})
+  \subset \D(\mathcal{A})$ 
+  satisfies some technical
+  conditions on homotopy limits and colimits
+  formulated precisely in the statement of Theorem~\ref{t:sod-DBA},
+  then
+  \begin{equation*}
+    \D_{\mathcal{B}}(\mathcal{A})=
+    \langle \D_{\mathcal{F}}(\mathcal{A}), 
+    \D_{\mathcal{T}}(\mathcal{A})\rangle
+  \end{equation*}
+  is a semi-orthogonal decomposition.
+\end{mtheorem}
+
+The theory of gerbes,
+hinging on the theory of stacks,
+used to have a reputation of being inaccessible,
+and Giraud's book on non-abelian cohomology \cite{giraud1971} introducing them is notorious for being a hard read,
+even among experts.
+However,
+in recent years the theory of algebraic stacks has become a main stream part of algebraic geometry,
+much owing to the excellent text books by Laumon--Moret-Bailly~\cite{lmb2000} and Olsson~\cite{olsson2016},
+and to the Stacks Project~\cite{stacks-project}.
+Moreover,
+as explained in the thesis by Lieblich \cite{lieblich2004},
+only a small part of Giraud's theory is actually needed to
+develop a satisfactory theory of twisted sheaves.
+We illustrate the effectiveness of the language of gerbes by giving a short,
+simple and conceptually appealing proof of the following theorem,
+which generalizes a result by Bernardara \cite[Theorem~4.1]{bernardara-BS-schemes}.
+
+\begin{mtheorem}[{see Theorem~\ref{t:sod-brauer-severi} and
+    Corollary~\ref{c:sod-brauer-severi}}]
+  \label{t:sod-brauer-severi-intro}
+  Let $S$ be an algebraic stack and $\pi\colon P \to S$ a
+  Brauer--Severi 
+  scheme of relative dimension $n$ over $S$.
+  Let $\beta \in \HH^2(S_\fppf, \GGm)$ denote the Brauer class of
+  $\pi$. 
+  Then, for any $a \in \bZ$, the category $\D_\qc(P)$ admits a
+  semi-orthogonal 
+  decomposition
+  \begin{equation}
+    \label{eq:SOD-Dpf}
+    \D_\qc(P) = \langle \mathcal{D}_a, \ldots, \mathcal{D}_{a+n}
+    \rangle 
+  \end{equation}
+  into right admissible subcategories $\mathcal{D}_i$,
+  where the category $\mathcal{D}_i$ is equivalent to 
+  the category $\D_{\qc,\beta^i}(S)$
+  of $\beta^i$-twisted complexes on $S$ (see
+  Definition~\ref{def:derived-twisted} and Remark~\ref{r:image-twisted}). 
+  
+  Similarly, we have corresponding decompositions
+  for the category of perfect complexes, the category of locally bounded pseudo-coherent complexes
+  and the singularity category.  
+  In particular, we also have such a decomposition for $\D^b_\co(P)$ when
+  $S$ is Noetherian.
+\end{mtheorem}
+
+Bernardara's result is the semi-orthogonal decomposition 
+\eqref{eq:SOD-Dpf} in the case when $S$ is a Noetherian, separated
+scheme with the property that any pair of points in $S$ is
+contained in an open affine subscheme (cf.\ Remark~\ref{r:bernardara}).
+Apart from our Theorem~\ref{t:chi-splitting-D-qc-X-intro},
+the main ingredient in our proof
+of Theorem~\ref{t:sod-brauer-severi-intro} is a classical
+result by Orlov regarding a semi-orthogonal decomposition of the derived
+category of a projectivized vector bundle \cite[Theorem~2.6]{orlov1992},
+which we previously have generalized to algebraic stacks using the technique of \emph{conservative descent}
+\cite[Theorem~6.7, Corollary~6.8]{BS-conservative}.
+
+While finishing the manuscript, we were informed by Brown and~Moulinos of a result \cite[Theorem 3.1]{bm2019}
+which is similar to our Theorem~\ref{t:sod-brauer-severi-intro}.
+
+\subsection*{Outline}
+In Section~\ref{sec:torsion-pairs-decomp},
+we work mostly in the general setting of derived categories of abelian categories.
+This section contains the proof of Theorem~\ref{t:sod-DBA-intro}.
+In Section~\ref{sec:gerbes-and-twisted} and Section~\ref{sec:quasi-coher-sheav},
+we recall and collect some basic facts on gerbes,
+bandings and twisted sheaves which are scattered in the literature.
+We expect most of these results to be well known to experts.
+In Section~\ref{sec:decomp-deriv-categ}, we turn our attention to derived categories of gerbes and twisted sheaves.
+We generalize some of the fundamental results by C{\u{a}}ld{\u{a}}raru and Lieblich \cite{caldararu2000, lieblich2004}
+to the case when we work over an algebraic stack.
+Most notably we prove Theorem~\ref{t:chi-splitting-D-qc-X-intro}.
+Finally, in the last section,
+we give a brief summary on Giraud's treatment of the Brauer group \cite[Section~V.4]{giraud1971},
+and use the theory to prove Theorem~\ref{t:sod-brauer-severi-intro}.
+
+\subsection*{Acknowledgments}
+The first named author was partially supported by the Danish National
+Research Foundation through the Niels Bohr Professorship of Lars Hesselholt,
+by the Max Planck Institute for Mathematics in Bonn,
+and by the DFG through SFB/TR 45.
+The second named author was partially supported by the DFG through a postdoctoral fellowship and through SFB/TR 45.
+
+\subsection*{Notation and conventions}
+\label{sec:conventions}
+
+If $\mathcal{A}$ is an abelian category, we write
+$\D(\mathcal{A})$ for its unbounded derived category. 
+We write $\D^{\leq n}(\mathcal{A})$ and 
+$\D^{\geq n}(\mathcal{A})$ for its full subcategories of objects
+whose cohomology is concentrated in the indicated degrees, where
+$n \in \bZ$.
+The (intelligent) truncation functors on $\D(\mathcal{A})$ are
+denoted $\tau_{\leq n}$ and $\tau_{\geq n}$. 
+If $E$ and $F$ are objects of $\D(\mathcal{A})$, we 
+sometimes abbreviate
+$\Ext^n_\mathcal{A}(E,F):=\Hom_{\D(\mathcal{A})}(E, \Sigma^nF)$.
+
+By a \emph{diagonalizable group} we mean a diagonalizable group scheme
+over $\Spec \bZ$ that is isomorphic to the spectrum of the group
+ring of a finitely generated abelian group.
+
+We use the definitions of algebraic space and algebraic stack given in the stacks project
+\cite[\sptag{025Y}, \sptag{026O}]{stacks-project}.
+In particular, we do not impose any separatedness conditions. 
+The algebraic stacks form a 2-category where each 2-morphism is invertible.
+We will follow the common practice to often suppress 2-categorical details.
+For instance, we will usually simply write morphism of stacks instead of 1-morphism
+of stacks, subcategory of the category of stacks instead of 2-subcategory etc.
+
+For the theory of quasi-coherent modules and derived categories in the context of algebraic stacks,
+we basically follow the approach of Laumon--Moret-Bailly~\cite[Sections~12 and~13]{lmb2000},
+which we now briefly recapitulate.
+Let $X$ be an algebraic stack.
+We denote the topos of sheaves on the big \emph{fppf} site over $X$ by $X_\fppf$
+and the topos of sheaves on the \emph{lisse--étale} site over $X$ by $X_\liset$.
+For $\tau \in \{\fppf, \liset\}$,
+we let $\Mod(X_\tau, \mathcal{O}_X)$ denote category of $\mathcal{O}_X$-modules in $X_\tau$,
+and $\Qcoh(X_\tau, \mathcal{O}_X)$ the full subcategory of quasi-coherent modules
+(see~\cite[\sptag{03DL}]{stacks-project}).
+\begin{remark}
+\label{rem-coherator}
+The categories $\Qcoh(X_\tau, \mathcal{O}_X)$ and $\Mod(X_\tau, \mathcal{O}_X)$ are Grothendieck abelian categories
+\cite[\sptag{0781}]{stacks-project}.
+In particular,
+since the inclusion functor $\Qcoh(X_\tau, \mathcal{O}_X) \hookrightarrow \Mod(X_\tau, \mathcal{O}_X)$ is colimit preserving,
+it admits a right adjoint.
+This right adjoint is called the \emph{quasi-coherator}.
+\end{remark}
+
+The construction $(-)_\tau$ functorially associates an adjoint pair 
+\begin{equation}
+\label{eq-functorial-topos}
+f^*\colon Y_\tau \rightleftarrows X_\tau \colon f_*
+\end{equation}
+of functors to any morphism $f\colon X \to Y$ of algebraic stacks.
+Moreover, the functor $f^*$ preserves finite products.
+In particular, the adjunction \eqref{eq-functorial-topos} induces an adjunction
+\begin{equation}
+\label{eq-functorial-module}
+f^*\colon \Mod(Y_\tau, \mathcal{O}_Y) \rightleftarrows \Mod(X_\tau, \mathcal{O}_X) \colon f_*.
+\end{equation}
+Moreover, the pull-back functor $f^*$ preserves quasi-coherence.
+The functor
+\begin{equation}
+\label{eq-qc-push-forward}
+f_*\colon \Qcoh(X_\tau, \mathcal{O}_X) \to \Qcoh(Y_\tau, \mathcal{O}_Y)
+\end{equation}
+is defined as the right adjoint of the restriction of $f^*$ to
+quasi-coherent sheaves.
+The existence of such a right adjoint is guaranteed by the quasi-coherator
+(see~Remark~\ref{rem-coherator}).
+\begin{remark}
+\label{rem-qc-pf}
+If $\tau = \liset$, then the functor \eqref{eq-qc-push-forward} is the restriction of the push-forward for sheaves of modules
+provided that $f$ is quasi-compact and quasi-separated,
+but not in general.
+If $\tau = \fppf$, then \eqref{eq-qc-push-forward} seldom is the restriction of the push-forward for sheaves of modules.
+\end{remark}
+The category $\Mod(X_\tau, \mathcal{O}_X)$ has a closed symmetric monoidal
+structure with operations given by the usual tensor product  and the sheaf hom functor.
+The tensor operation preserves quasi-coherence and is preserved by pull-backs.
+In particular, we get an induced symmetric monoidal structure on $\Qcoh(X_\tau, \mathcal{O}_X)$.
+
+\begin{remark}
+\label{rem-qc-hom}
+The symmetric monoidal structure on $\Qcoh(X_\tau, \mathcal{O}_X)$ induced by the tensor product
+is also closed.
+This follows from the existence of the quasi-coherator (see~Remark~\ref{rem-coherator}).
+For $\tau = \liset$,
+the internal hom functor coincides with the sheaf hom functor provided that the first argument is of finite presentation, but not in general.
+\end{remark}
+
+There is an obvious restriction functor $X_\fppf \to X_\liset$,
+which is compatible with push-forward.
+This induces a monoidal equivalence
+\begin{equation}
+\label{eq-change-site}
+\Qcoh(X_\fppf, \mathcal{O}_X) \sira \Qcoh(X_\liset, \mathcal{O}_X),
+\end{equation}
+functorial in $X$ (see~\cite[\sptag{07B1}]{stacks-project}).
+
+We denote the derived category $\D(\Mod(X_\liset, \mathcal{O}_X))$ simply by $\D(X)$.
+The category $\D_\qc(X)$ is defined as the full subcategory of $\D(X)$ consisting of
+complexes with quasi-coherent cohomology sheaves.
+The derived tensor product on $\D(X)$ preserves objects in $\D_\qc(X)$,
+giving the latter category a symmetric monoidal structure, which is closed.
+\begin{remark}
+\label{rem-dqc-hom}
+The internal hom functor on $\D_\qc(X)$ is the restriction of the derived sheaf hom functor provided
+that the first argument is perfect, but not in general
+(see~\cite[Section~1.2]{hr2017}). 
+\end{remark}
+Given an arbitrary morphism $f\colon X \to Y$ of algebraic stacks,
+we have an adjoint pair of functors
+\begin{equation}
+\label{eq-pb-pf}
+f^*\colon \D_\qc(Y) \to \D_\qc(X), \qquad f_*\colon \D_\qc(Y) \to \D_\qc(X),
+\end{equation}
+and the formation of such pairs is functorial.
+\begin{remark}
+\label{rem-derived-pb}
+The functor $f^*$ in \eqref{eq-pb-pf} coincides with the derived pull-back between the ambient categories provided that
+$f$ is smooth.
+For general $f$, the construction of $f^*$ is somewhat technical owing to the fact that the adjunction
+\eqref{eq-functorial-topos}, for $\tau = \liset$,
+does not form a morphism of topoi,
+as was first noted by Behrend~\cite[Warning~5.3.12]{behrend-derived-l-adic-stacks}.
+The construction is worked out by Olsson~\cite{olsson2007} in the bounded case and by Laszlo--Olsson~\cite[Example~2.2.5]{lo2008} in the unbounded case.
+We refer to \cite[Section~1]{hr2017} for a concise summary on this.
+\end{remark}
+\begin{remark}
+\label{rem-derived-pf}
+The push-forward $f_*$ in \eqref{eq-pb-pf} coincides with the derived push-forward provided that
+$f$ is \emph{concentrated} \cite[Definition~2.4, Theorem~2.6(2)]{hr2017},
+but not in general.
+\end{remark}
+
+\begin{remark}
+It is also possible to construct $\D_\qc(X)$ using the topos $X_\fppf$.
+This approach is taken in the stacks project \cite[\sptag{07B6}]{stacks-project}.
+For $\tau = \fppf$ the adjunction \eqref{eq-functorial-topos} does give a morphism of topoi,
+making the construction of the pull-back in \eqref{eq-pb-pf} easier.
+On the other hand the inclusion $\Qcoh(X_\fppf, \mathcal{O}_X) \subset \Mod(X_\fppf, \mathcal{O}_X)$
+is not exact \cite[\sptag{06WU}]{stacks-project},
+making the actual construction of $\D_\qc(X)$ quite technical.
+We will not use this point of view in the present article.
+\end{remark}
+
+\begin{notation}
+\label{not-sheaf-op}
+We conclude this section by summarizing our notational conventions regarding sheaves on stacks.
+In the discussion below, we let $\tau \in \{\fppf, \liset\}$.
+\begin{enumerate}
+\item
+We simply write $\Qcoh(X)$ for any of the categories $\Qcoh(X_\tau, \mathcal{O}_X)$
+when no distinction is necessary.
+This is motivated by the functorial equivalence~\eqref{eq-change-site}.
+\item
+The monoidal operations on the categories
+$$
+\Qcoh(X_\tau, \mathcal{O}_X), \qquad
+\Mod(X_\tau, \mathcal{O}_X), \qquad
+\D(X), \qquad
+\D_\qc(X)
+$$
+are always denoted $-\otimes-$ and $\sheafHom(-,-)$, respectively.
+In particular, we omit any derived decorations.
+The precise category we are working on will always be inferable from context.
+Note that in the cases $\Qcoh(X_\tau, \mathcal{O}_X)$ and~$\D_\qc(X)$
+the functor $\sheafHom$ does not always coincide with $\sheafHom$ on
+the ambient category (cf.~Remark~\ref{rem-qc-hom} and~Remark~\ref{rem-dqc-hom}). 
+\item
+The pull-backs and push-forwards along a morphism $f\colon X \to Y$ are always denoted by $f^*$ and~$f_*$,
+respectively.
+Which of the categories
+$$
+(-)_\tau,\qquad
+\Mod((-)_\tau, \mathcal{O}_{(-)}), \qquad
+\Qcoh((-)_\tau, \mathcal{O}_{(-)}),
+$$
+$$
+\D(-), \qquad
+\D_\qc(-),
+$$
+we are working with will always be inferable from context.
+In particular, 
+we do not use any derived decorations or any particular decorations for
+push-forward of quasi-coherent sheaves (cf.~Remark~\ref{rem-qc-pf} and~Remark~\ref{rem-derived-pf}).
+\end{enumerate}
+\end{notation}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 

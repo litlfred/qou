@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1204.4824v2/blocks/prose-sec-030",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1204.4824v2/blocks/prose-sec-030",
   "kind": "prose",
   "title": "Canonical examples: the W",
   "pageStart": 56,
   "pageEnd": 56,
   "text": "../sections/sec-030-92-canonical-examples-the-w.md",
-  "derivedFrom": "library/arxiv-1204.4824v2/manifest",
-  "sourceDocument": "library/arxiv-1204.4824v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1204.4824v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1204.4824v2/manifest.jsonld",
   "provenance": "ingested"
 }

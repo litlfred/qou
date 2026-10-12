@@ -3,10 +3,12 @@
 title: PROVE(lean) queue (P4.SM)
 status: todo
 type: feature
+priority: normal
 tags:
     - reorg-2026-10-04
+    - 8f-lit
 created_at: 2026-10-04T15:22:45Z
-updated_at: 2026-10-04T15:22:45Z
+updated_at: 2026-10-10T07:16:31Z
 parent: qou-8lxd
 ---
 

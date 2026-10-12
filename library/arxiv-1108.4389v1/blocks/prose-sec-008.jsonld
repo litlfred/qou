@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1108.4389v1/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1108.4389v1/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "Its boundary is a 5-punctures sphere C. Here, we form the bipyramid from three ideal",
-  "pageStart": 15,
-  "pageEnd": 17,
-  "text": "../sections/sec-008-11-its-boundary-is-a-5-punctures-sphere-c-here-w.md",
-  "derivedFrom": "library/arxiv-1108.4389v1/manifest",
-  "sourceDocument": "library/arxiv-1108.4389v1/manifest",
+  "title": "Generalities",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "text": "../sections/sec-008-311-generalities.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.4389v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.4389v1/manifest.jsonld",
   "provenance": "ingested"
 }

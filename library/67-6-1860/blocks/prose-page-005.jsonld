@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/67-6-1860/blocks/prose-page-005",
+  "kind": "prose",
+  "title": "Page 5",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "text": "../sections/page-005.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/67-6-1860/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/67-6-1860/manifest.jsonld",
+  "provenance": "ingested"
+}

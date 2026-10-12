@@ -12,7 +12,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 del _sys, _Path, _bridge
 
-# DEPRECATION-CANDIDATE: witness was moved to computations/_deprecated/ in PR #554 (dead-exploratory).
+# DEPRECATION-CANDIDATE: witness was moved to fsh-guts/deprecated/computations/ in PR #554 (dead-exploratory).
 # This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
 """
 q-deformed Hecke character χ^λ_q(T_w) — SYMBOLIC in q.

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1712.08953v1/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "The next theorem gives bases for morphism spaces. Again, this is du e to Turaev",
-  "pageStart": 3,
-  "pageEnd": 4,
+  "title": "Branching rules and characters",
+  "pageStart": 36,
+  "pageEnd": 46,
   "contains": [
     "library/arxiv-1712.08953v1/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/arxiv-1712.08953v1/manifest",
-  "sourceDocument": "library/arxiv-1712.08953v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.08953v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.08953v1/manifest.jsonld",
   "provenance": "ingested"
 }

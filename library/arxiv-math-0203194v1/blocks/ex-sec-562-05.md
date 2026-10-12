@@ -1,1 +1,0 @@
-Already in case n = 2, the structure of ∆ = ∆ 2

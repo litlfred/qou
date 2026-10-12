@@ -8,206 +8,299 @@ pages: 3-7
 source_pdf: 1409.1198v1.pdf
 source_sha256: 13ecb6c28bab6744
 doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a high er categorical level."
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.98
 ---
-ﬁcation. One which we will refer to as the Grothendieck decategoriﬁcation which is closely connected
-to the notion of dimension, graded dimension, and Euler characteris tic. Our second notion of decate-
-goriﬁcation, which we will call the trace decategoriﬁcation, seems to generalize the Grothendieck group
-decategoriﬁcation in much the same way that the trace of linear map generalizes the dimension of a
-vector space dim(V ) = tr(1 V ). The trace decategoriﬁcation is closely connected with the usual trace
-and it gives rise to a notion of traced Euler characteristic.
-These two notions of decategoriﬁcation can actually produce the s ame results in some very interesting
-examples. One of the most spectacular examples is the categoriﬁca tion of the Jones polynomial by the
-Khovanov complex of graded /CI -modules, where the Jones polynomial can be recovered as the gra ded
-Euler characteristic [31, 32]. Bar-Natan generalized Khovanov’s co nstruction by deﬁning the so-called
-Khovanov bracket: a complex over an additive category of special 2-dimensional cobordisms. In his
-setting, one recovers the Jones polynomial by means of the trace d Euler characteristic (Theorem 6
-[4]). Hence, the functor Tr or the zeroth Hochschild–Mitchell homo logy replaces K0 in the Bar-Natan
-setting.
-This survey paper is devoted to the comparison of K0 and Tr as decategoriﬁcation functors. The
-interplay between these two notions of decategoriﬁcation is surpr isingly rich. It can be thought of as a
-categorical counterpart to the Chern character map, see for e xample [16].
-4 ANNA BELIAKOV A, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. LA UDA
-1.5. Quantum group categoriﬁcations. There is a strong interplay between quantum link invari-
-ants and algebraic objects known as quantum groups. Given the ex istence of link homology theories
-categorifying link invariants, it is perhaps not surprising to discover that quantum groups can also be
-categoriﬁed. In this article we will examine how the two notions of dec ategoriﬁcation given by the
-Grothendieck group and the trace can be applied to categoriﬁed qu antum groups.
-Quantum groups are Hopf algebras associated to Lie algebras g. They are obtained by q-deforming
-the universal enveloping algebra U(g). Lusztig’s modiﬁed, or idempotented, form ˙U(g) of the quantum
-group Uq(g) is well suited for categoriﬁcation. These algebras are equipped wit h a family of orthogonal
-idempotents 1 λ indexed by the weight lattice X of g. Any /CZ -algebra A equipped with orthogonal
-idempotents indexed by a set X can be regarded as an additive category whose objects are the ele ments
-of X. Given two elements λ,µ ∈X, /CZ -vector space of maps from λ to µ can be deﬁned by 1 µA1λ. In
-this framework, the idempotents 1 λ are thought of as identity morphisms from the object λ to itself.
-Composition in the category
-1µ′A1λ′ × 1µA1λ →δµ,λ′ 1µ′A1λ
-is given by multiplication in A.
-By thinking of a quantum group Uq(g) as a linear category in this way, we are naturally led to
-consider a categoriﬁcation of Uq(g) given by the structure of a 2-category and our decategoriﬁcat ion
-map must reduce a linear 2-category to a linear 1-category.
-Associated to a ﬁeld /CZ and a symmetrizable Kac-Moody algebra g, a 2-category ˙U (g) was deﬁned in
-[33] generalizing the sl2 case from [37]. The 2-category ˙U(g) is the idempotent completion, or Karoubi
-envelope, of a 2-category U(g) deﬁned in terms of a graphical calculus. More precisely, the objec ts of
-the category U(g) are indexed by the weight lattice X of g. The morphisms are formal direct sums of
-composites of maps 1λ : λ →λ, Ei1λ : λ →λ+αi, and Fi1λ : λ →λ−αi corresponding to the Chevalley
-basis of g. For each 1-morphism x there is also a grading shifted 1-morphism x⟨t⟩ in U(g). The 2-
-morphisms are given by k -linear degree preserving combinations of certain planar diagrams m odulo
-local relations. See Figure 1 for an example of planar diagram in U(g).
-/d79/d79/d15/d15 /d79/d79/d15/d15
-/d79/d79/d18/d18 /d15/d15/d79/d79
-i
-k
-λ′
-/d13/d13
-•
-/d15/d15
-•
-/d15/d15
-•
-/d15/d15
-•
-/d79/d79
-••
-/d80/d80/d79/d79
-/d15/d15
-/d77/d77
-•m/d77/d77
-•
-iki
-ℓ i j
-j
-ℓ •
-•
-•
-/d79/d79 /d79/d79 /d79/d79
-•
-i i k
-λ
-Figure 1. An example of a diagram representing a 2-morphism in U(g) from
-E 2
-i EℓFiFkFiEiEiEk1λ to EℓEiFjFjFiEjEiEkEi1λ⟨t⟩. The degree ⟨t⟩ of this 2-morphism
-is determined by the relationship between the simple roots i,j,k,ℓ in the Cartan datam
-associated to g.
-Extending the split Grothendieck group decategoriﬁcation map for linear categories, it is possible
-to deﬁne the split Grothendieck group K0 of a linear 2-category. It was shown in [33] for g = sln
-that applying this notion of decategoriﬁcation to the Karoubi enve lope ˙U(sln) of the 2-category U(sln)
-produces the integral idempotented form of the quantum envelop ing algebra Uq(sln). Hence, with this
-notion of decategoriﬁcation the 2-category ˙U(sln) can be viewed as a categoriﬁcation of the quantum
-group Uq(sln). The n = 2 case of this result was proven in [37] and the case of general g appears in
-[64]. For a closely related construction see [57].
-TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR 5
-More recently it has been shown that using a 2-categorical analog o f the trace as the decategoriﬁ-
-cation map produces some very rich structures [8, 65, 7]. The trac e relation can be realized diagram-
-matically by considering the diagrams for U(g) on an annulus.
-λλ′
-/d15/d15/d79/d79
-/d79/d79/d79/d79 /d15/d15 /d15/d15
-/d15/d15/d79/d79 ii
-•
-The invariance of the graphical calculus of U(g) under planar deformations allows us to slide portions
-of the diagram around the annulus imposing the trace relation.
-1.6. T races of categoriﬁed quantum groups. In this article we hope to emphasize that the trace
-decategoriﬁcation map Tr has various advantages to K0.
-• Using Tr we can work with the 2-category U(g) rather than its Karoubi envelope, since Tr does
-not change under the passage to the Karoubi envelope. This is a nic e advantage as the passage
-to the Karoubi envelope often takes us out of the purely diagramm atic world.
-• Trace is deﬁned for linear categories; in order for K0 to be deﬁned the category needs to be
-additive.
-• The trace can have a richer structure than K0 as is demonstrated by Theorems 5.1 and 6.2.
-We outline the methods and tools used in studying K0 and traces for categoriﬁed quantum groups.
-1.6.1. Trace and K0 of ˙U . Just as the Euler characteristic and traced Euler characteristic a gree for
-Khovanov homology, we will explain that the 2-categories U(g) simultaneously categorify the quantum
-group U(sln) via the Grothendieck group decategoriﬁcation functor K0 and the trace decategoriﬁcation
-functor Tr.
-Theorem 1.1 ([33, 7]) . Let /CZ be a ﬁeld of characteristic 0 and g = sln. Then there are isomorphisms
-Tr(U) ∼=K0( ˙U) ⊗
-/CI
-/CZ
-∼= ˙U.
-and HH i(U) = 0 for i> 0.
-Again, this result is somewhat surprising since these two decategor iﬁcation procedures need not
-agree in general. We will explain that there is a large class of examples c losely connected to geometric
-settings where this phenomenon is likely to occur.
-Very recently a direct connection was established between catego riﬁed quantum groups and sln link
-homology theories [40, 54]. Working in an enhanced foam category int roduced by Christian Blanchet,
-one can realize all the foam relations in a Bar-Natan like setting as aris ing from the relations in the
-categoriﬁed quantum group U(sln) via so called foamation functors ﬁrst studied in [48]. Once translat ed
-through these foamation functors, the theorem above immediate ly implies that the traced and usual
-Euler characteristics in the sln link homology theories coincide.
-Corollary 1.2. In sln link homology theories, traced and usual Euler characteristics do c oincide.
-6 ANNA BELIAKOV A, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. LA UDA
-1.6.2. Trace and K0 of U ∗. By allowing homogeneous, but not necessarily grading preserving 2-
-morphisms in U(g) we can deﬁne a version of the 2-category with larger 2-hom space s. Let U ∗(g)
-denote the 2-category with the same objects and one morphisms a s U(g), but with 2-hom spaces
-between one morphisms X1λ and Y 1λ given by
-U ∗(g)(X1λ,Y 1λ) :=
-⨁
-t∈ /CI
-U(g)(X1λ,Y 1λ⟨t⟩).
-One can alternatively think of U ∗ as the result of adding isomorphisms X1λ →X1λ⟨t⟩ for all t ∈ /CI .
-This essentially kills the grading making Grothendieck ring K0(U ∗) only a /CI -module, rather than a
-/CI [q,q −1]-module. While this version of the 2-category is less interesting from a K0 perspective, it has
-interesting consequences for the trace.
-The trace of the graded version U ∗ of the categoriﬁed quantum sl2 is isomorphic to the idempotent
-form of the current algebra U(sl2[t]) := U(sl2 ⊗ /C9 [t]) [8]. In [8] it is also shown that for the integral
-version U
-/CI
-(sl2) ( /CZ is replaced by /CI in the deﬁnition), we have
-Tr(U
-/CI
-) = K0( ˙U
-/CI
-) = K0( ˙U).
-It is interesting that one loses the q by considering the graded category U ∗, but one sees the positive
-part of the loop algebra sl2 ⊗ /C9 [t,t −1] appear.
-We expect that these results generalize to ﬁnite type simply-laced K ac-Moody algebras g. However,
-to ease the exposition in this article, we set g = sln and describe evidence for the following conjecture
-in section 5.2.
-Conjecture 1. For g = sln, we have
-K0( ˙U
-/CI
-) = Tr(U
-/CI
-) = K0( ˙U )
-and Tr(U ∗
-/CI
-) coincides with the integral idempotented version of the current a lgebra U(sln[t]) deﬁned
-in Section 5.2.
-In this paper we construct a homomorphism U(sln[t]) → Tr(U ∗(sln)) utilizing the graphical calculus
-and verifying relations directly (see Proposition 23). This implies that the center of objects Z( ˙U ) :=⨁
-λ∈X End ˙U (1λ) of ˙U (see section 6 for more details) is a module over the current algebra U(sln[t]).
+We have now described two flavors of decategorification.  One which we will refer to as the {\em Grothendieck decategorification} which is closely connected to the notion of dimension, graded dimension, and Euler characteristic.
+Our second notion of decategorification, which we will call the {\em trace decategorification}, seems to generalize the Grothendieck group decategorification in much the same way that the trace of linear map generalizes the dimension of a vector space $\dim(V) = \tr(1_V)$.   The trace decategorification is closely connected with the usual trace and it gives rise to a notion of traced Euler characteristic.
+
+These two notions of decategorification can actually produce the same results in some very interesting examples.
+One of the most spectacular examples is the categorification
+of the Jones polynomial by the Khovanov complex of graded $\Z$-modules, where
+the Jones polynomial can be recovered as the graded Euler characteristic~\cite{Kh1,Kh2}.
+Bar-Natan generalized Khovanov's construction by defining the so-called Khovanov bracket:
+a complex over an additive category of special 2-dimensional cobordisms.
+In his setting, one recovers the Jones polynomial by means of the
+traced Euler characteristic (Theorem 6 \cite{Dror}). Hence,   the
+functor $\Tr$ or the zeroth Hochschild--Mitchell homology replaces $K_0$ in the Bar-Natan setting.
+
+
+
+
+
+
+
+This survey paper is devoted to the comparison of $K_0$ and $\Tr$ as decategorification functors.  The interplay between these two notions of decategorification is surprisingly rich.  It can be thought of as a categorical counterpart to the Chern character map, see for example~\cite{CW}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Quantum group categorifications}
+
+
+
+
+
+There is a strong interplay between quantum link invariants and algebraic objects known as quantum groups. Given the existence of link homology theories categorifying link invariants, it is perhaps not surprising to discover that quantum groups can also be categorified.  In this article we will examine how the two notions of decategorification given by the Grothendieck group and the trace can be applied to categorified quantum groups.
+
+
+Quantum groups are Hopf algebras associated to Lie algebras $\mf{g}$.  They are obtained by $q$-deforming the universal enveloping algebra $\mathbf{U}(\mf{g})$.   Lusztig's modified, or idempotented, form $\dot{\mathbf{U}}(\mf{g})$ of the quantum group $\mathbf{U}_q(\mf{g})$ is well suited for categorification. These algebras are equipped with a family of orthogonal idempotents $1_{\lambda}$ indexed by the weight lattice $X$ of $\mf{g}$.  Any $\k$-algebra $A$ equipped with orthogonal idempotents indexed by a set $X$ can be regarded as an additive category whose objects are the elements of $X$.  Given two elements $\lambda, \mu \in X$,  $\k$-vector space of maps from $\lambda$ to $\mu$ can be defined by $1_{\mu} A 1_{\lambda}$.  In this framework, the idempotents $1_{\lambda}$ are thought of as identity morphisms from the object $\lambda$ to itself.  Composition in the category
+\[
+1_{\mu'} A 1_{\lambda'} \times 1_{\mu} A 1_{\lambda}\to \delta_{\mu,\lambda'} 1_{\mu'} A 1_{\lambda}
+\]
+is given by multiplication in $A$.
+
+
+
+By thinking of a quantum group $\mathbf{U}_q(\mf{g})$ as a linear category in this way, we are naturally led to consider a categorification of $\mathbf{U}_q(\mf{g})$ given by the structure of a 2-category and our decategorification map must reduce a linear 2-category to a linear 1-category.
+
+
+
+
+
+
+
+
+
+
+
+Associated to a field $\k$ and a symmetrizable Kac-Moody algebra $\mf{g}$, a 2-category $\UcatD(\mf{g})$ was defined in \cite{KL3} generalizing the $\mf{sl}_2$ case from \cite{Lau1}.   The 2-category $\UcatD(\mf{g})$ is the idempotent completion, or Karoubi envelope, of a 2-category $\Ucat(\mf{g})$ defined in terms of a graphical calculus.  More precisely, the objects of the category $\Ucat(\mf{g})$ are indexed by the weight lattice $X$ of $\mf{g}$.  The morphisms are formal direct sums of composites of maps $\onel \maps \lambda \to \lambda$, $\cal{E}_i \onel \maps \lambda \to \lambda + \alpha_i$, and $\cal{F}_i\onel \maps \lambda \to \lambda-\alpha_i$ corresponding to the Chevalley basis of $\mf{g}$.  For each 1-morphism $x$ there is also a grading shifted 1-morphism $x\la t\ra$ in $\Ucat(\mf{g})$.  The 2-morphisms are given by $\Bbbk$-linear degree preserving combinations of certain planar diagrams modulo local relations. See Figure~\ref{fig_Ucat-diagram} for an example of planar diagram in $\Ucat(\mf{g})$.
+
+\begin{figure}[h]
+ $
+ \vcenter{
+    \xy 0;/r.16pc/:
+  (-8,-4)*{\fecross};(8,-4)*{\fecross};
+  (0,2)*{\scap};(0,4)*{\lcap};
+  (0,-10)*{\scupfe};(0,-14)*{\lcupef};
+  (13,-12)*{\scs i}; (13,5)*{\scs k};
+   (-18,-18)*{\lambda'};
+  \endxy} \;\;
+  \vcenter{\xy 0;/r.16pc/:
+ (-4,-15)*{}; (-20,25) **\crv{(-3,-6) & (-20,4)}?(0)*\dir{<}?(.6)*\dir{}+(0,0)*{\bullet};
+ (-12,-15)*{}; (-4,25) **\crv{(-12,-6) & (-4,0)}?(0)*\dir{<}?(.6)*\dir{}+(.2,0)*{\bullet};
+ ?(0)*\dir{<}?(.75)*\dir{}+(.2,0)*{\bullet};?(0)*\dir{<}?(.9)*\dir{}+(0,0)*{\bullet};
+ (-28,25)*{}; (-12,25) **\crv{(-28,10) & (-12,10)}?(1)*\dir{>};
+  ?(.2)*\dir{}+(0,0)*{\bullet}?(.35)*\dir{}+(0,0)*{\bullet};
+ (-36,-15)*{}; (-36,25) **\crv{(-34,-6) & (-35,4)}?(1)*\dir{>};
+ (-28,-15)*{}; (-42,25) **\crv{(-28,-6) & (-42,4)}?(1)*\dir{>};
+ (-42,-15)*{}; (-20,-15) **\crv{(-42,-5) & (-20,-5)}?(1)*\dir{>};
+ (6,10)*{\cbub{m}{}};
+ (-23,0)*{\cbub{}{}};
+ (-2,-12)*{\scs i}; (-14,-12)*{\scs k};  (-19,-12)*{\scs i};
+    (-46,22)*{\scs \ell}; (-33,22)*{\scs i}; (-10,22)*{\scs j};
+    (8,18)*{\scs j}; (-20,7)*{\scs \ell};
+ \endxy}
+ \vcenter{ \xy 0;/r.16pc/: (-14,8)*{\xybox{
+ (0,-10)*{}; (-16,10)*{} **\crv{(0,-6) & (-16,6)}?(.5)*\dir{};
+ (-16,-10)*{}; (-8,10)*{} **\crv{(-16,-6) & (-8,6)}?(1)*\dir{}+(.1,0)*{\bullet};
+  (-8,-10)*{}; (0,10)*{} **\crv{(-8,-6) & (-0,6)}?(.6)*\dir{}+(.2,0)*{\bullet}?
+  (1)*\dir{}+(.1,0)*{\bullet};
+  (0,10)*{}; (-16,30)*{} **\crv{(0,14) & (-16,26)}?(1)*\dir{>};
+ (-16,10)*{}; (-8,30)*{} **\crv{(-16,14) & (-8,26)}?(1)*\dir{>};
+  (-8,10)*{}; (0,30)*{} **\crv{(-8,14) & (-0,26)}?(1)*\dir{>}?(.6)*\dir{}+(.25,0)*{\bullet};
+ (-18,-8)*{\scs i}; (-6,-8)*{\scs i}; (2,-8)*{\scs k};
+   }};
+ (5,0)*{\lambda};
+ \endxy}$
+\caption{An example of a diagram representing a 2-morphism in $\Ucat(\mf{g})$ from
+$
+\cal{E}_i^2\cal{E}_{\ell}\cal{F}_i \cal{F}_k \cal{F}_i \cal{E}_i\cal{E}_i \cal{E}_k \onel
+$
+to $
+ \cal{E}_{\ell} \cal{E}_i \cal{F}_j \cal{F}_j \cal{F}_i \cal{E}_j \cal{E}_i \cal{E}_k \cal{E}_i\onel\la t\ra
+$.  The degree $\la t \ra$ of this 2-morphism is determined by the relationship between the simple roots $i,j,k, \ell$ in the Cartan datam associated to $\mf{g}$.} \label{fig_Ucat-diagram}
+\end{figure}
+
+Extending the split Grothendieck group decategorification map for linear categories, it is possible to define the split Grothendieck group $K_0$ of a linear 2-category.  It was shown in \cite{KL3} for $\mf{g}=\mf{sl}_n$ that applying this notion of decategorification to the Karoubi envelope $\UcatD(\mf{sl}_n)$ of the 2-category $\Ucat(\mf{sl}_n)$ produces the integral idempotented form of the quantum enveloping algebra $\mathbf{U}_q(\mf{sl}_n)$.  Hence, with this notion of decategorification the 2-category $\UcatD(\mf{sl}_n)$ can be viewed as a categorification of the quantum group $\mathbf{U}_q(\mf{sl}_n)$.  The $n=2$ case of this result was proven in~\cite{Lau1} and the case of general $\mf{g}$ appears in \cite{Web5}.  For a closely related construction see ~\cite{Rou2}.
+
+
+More recently it has been shown that using a 2-categorical analog of the trace as the decategorification map produces some very rich structures~\cite{BHLZ,Marko,BGHL}.   The trace relation can be realized diagrammatically by considering the diagrams for $\Ucat(\mf{g})$ on an annulus.
+\[
+ \vcenter{ \xy 0;/r.16pc/:
+ (8,0)*{
+ \hackcenter{\begin{tikzpicture}
+  \path[draw,blue, very thick, fill=blue!10]
+   (-2,-.6) to (-2,.6) .. controls ++(0,1.85) and ++(0,1.85) .. (2,.6)
+   to (2,-.6)  .. controls ++(0,-1.85) and ++(0,-1.85) .. (-2,-.6);
+    \path[draw, blue, very thick, fill=white]
+    (-0.25,0) .. controls ++(0,.35) and ++(0,.35) .. (0.25,0)
+            .. controls ++(0,-.35) and ++(0,-.35) .. (-0.25,0);
+\end{tikzpicture}}
+ };
+(10,8)*{\lambda}; (-15,12)*{\lambda'};
+  (8,8)*{\lcap};
+  (8,14)*{\xlcap};
+
+ 
+ (8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};
+ (20,0)*{\sfline};
+ (28,0)*{\sfline};
+ (8,-10)*{\lcupef};
+(-2,-3)*{\scs i}; (-15,-3)*{\scs i};
+ (-10,1)*{\bullet};
+ \endxy}
+\]
+The invariance of the graphical calculus of $\Ucat(\mf{g})$ under planar deformations allows us to slide portions of the diagram around the annulus imposing the trace relation.
+
+
+
+
+
+
+
+
+\subsection{Traces of categorified quantum groups}
+
+
+
+
+In this article we hope to emphasize that the trace decategorification map $\Tr$ has various
+advantages to $K_0$.
+\begin{itemize}
+  \item Using $\Tr$ we can work with the 2-category $\Ucat(\mf{g})$ rather than its Karoubi envelope, since $\Tr$ does not change under the passage to the Karoubi envelope.  This is a nice advantage as the passage to the Karoubi envelope often takes us out of the purely diagrammatic world.
+\item Trace is defined for linear categories; in order for $K_0$ to be defined the category needs to be additive.
+  \item The trace can have a richer structure than $K_0$ as is demonstrated by Theorems \ref{qqq} and \ref{thm_main}.
+
+
+\end{itemize}
+
+We outline the methods and tools used in studying $K_0$ and traces for categorified quantum groups.
+
+
+
+
+\subsubsection{Trace and $K_0$ of $\UcatD$}
+
+
+
+Just as the Euler characteristic and traced Euler characteristic agree for Khovanov homology,  we will explain that the 2-categories $\Ucat(\mf{g})$ simultaneously categorify the quantum group $\mathbf{U}(\mf{sl}_n)$ via the Grothendieck group decategorification functor $K_0$ and the trace decategorification functor $\Tr$.
+
+\begin{thm}[\cite{KL3,BGHL}]
+Let $\k$ be a field of characteristic $0$ and $\g=\fsl_n$.
+Then there are isomorphisms
+\[
+ \Tr(\Ucat) \cong K_0(\UcatD) \otimes_\Z \k \cong \dot{\mathbf{U}}.
+\]
+and $\HH_i(\Ucat)=0$ for $i>0$.
+\end{thm}
+
+
+
+
+Again, this result is somewhat surprising since these two decategorification procedures need not agree in general.  We will explain that there is a large class of examples closely connected to geometric settings where this phenomenon is likely to occur.
+
+
+Very recently a direct connection was established between categorified quantum groups and $\mf{sl}_n$ link homology theories~\cite{LQR,QR}.  Working in an enhanced foam category introduced by Christian Blanchet, one can realize all the foam relations in a Bar-Natan like setting as arising from the relations in the categorified quantum group $\Ucat(\mf{sl}_n)$ via so called foamation functors first studied in \cite{MackFoam}.   Once translated through these foamation functors, the theorem above immediately implies that the
+traced and usual Euler characteristics in the  $\mf{sl}_n$ link homology theories coincide.
+
+\begin{cor}
+In $\fsl_n$ link homology theories, traced and usual Euler characteristics do coincide.
+\end{cor}
+
+
+
+\subsubsection{Trace and $K_0$ of $\Ucat^{\ast}$}
+
+
+
+
+
+By allowing homogeneous, but not necessarily grading preserving 2-morphisms in $\Ucat(\mf{g})$ we can define a version of the 2-category with larger 2-hom spaces.  Let $\Ucat^{\ast}(\mf{g})$ denote the 2-category with the same objects and one morphisms as $\Ucat(\mf{g})$, but with 2-hom spaces between one morphisms $X \onel$ and $Y\onel$ given by
+\[
+ \Ucat^{\ast}(\mf{g})(X\onel, Y\onel) := \bigoplus_{t\in \Z} \Ucat(\mf{g})(X\onel, Y\onel \la t \ra).
+\]
+One can alternatively think of $\Ucat^{\ast}$ as the result of adding isomorphisms $X\onel \to X\onel \la t\ra $ for all $t\in \Z$.  This essentially kills the grading making Grothendieck ring $K_0(\Ucat^{\ast})$ only a $\Z$-module, rather than a $\Z[q,q^{-1}]$-module.  While this version of the 2-category is less interesting from a $K_0$ perspective, it has interesting consequences for the trace.
+
+
+The trace of the graded version $\U^*$ of the categorified quantum $\fsl_2$ is isomorphic
+to  the idempotent form of the current algebra $\bfU(\fsl_2[t]):=\bfU(\fsl_2\otimes \Q[t])$ \cite{BHLZ}. In \cite{BHLZ}
+it is also shown that for the integral version $\U_\Z(\fsl_2)$ ($\k$ is replaced by $\Z$ in the definition), we have $$\Tr(\U_\Z)=K_0(\Udot_\Z)=K_0(\Udot)\, .$$
+It is interesting that one loses the $q$ by considering the graded category $\U^{\ast}$, but one sees the positive part of the loop algebra $\mf{sl}_2 \otimes \Q[t,t^{-1}]$ appear.
+
+
+
+We expect that these results generalize to finite type simply-laced Kac-Moody algebras $\mf{g}$.  However, to ease the exposition in this article, we set $\mf{g}=\fsl_n$ and describe evidence for the following conjecture in section~\ref{current-sln}.
+
+\begin{conjecture}
+For $\g=\fsl_n$, we have
+$$K_0(\Udot_\Z)=
+\Tr(\U_\Z)=K_0(\Udot)$$
+and $\Tr(\U^\ast_\Z)$ coincides with the integral idempotented version of the current algebra
+$\bfU(\fsl_n[t]) $ defined in Section \ref{current-sln}.
+\end{conjecture}
+
+
+
+
+In this paper we  construct a homomorphism $\bfU(\fsl_n[t]) \to \Tr(\Ucat^{\ast}(\fsl_n))$ utilizing the graphical
+calculus and verifying relations directly  (see Proposition \ref{prop-cur}).  This implies that
+
+the center of objects
+$Z(\Udot):=\bigoplus_{\lambda \in X}\End_{\Udot}(\onel)$ of $\Udot$ (see section~\ref{action} for more details) is a module over the current algebra $\bfU(\fsl_n[t])$.
 An immediate consequence of this result is the following theorem.
-Theorem 1.3. Any 2-representation U(sln) → K gives rise to an action of the current algebra U(sln[t])
-on Tr(K) and the center Z(K) of objects in K.
-This theorem is proven in Section 6. Let us discuss one implication of th is result. Brundan made the
-surprising discovery that one could deﬁne an action of the Lie algebr a ˆg := gl∞(C) on the center Z(O) =⨁
-νZ(Oν) of all integral blocks Oν of category O [12]. In this action, the Chevalley generators of ˆg
-act as certain trace maps associated to canonical adjunction map s between special translation functors
-that arise from tensoring with a g-module and its dual. In [15] it is explained that this action is closely
-connected to Ginzburg’s geometric construction of representat ions of the general linear group [25].
-Theorem 1.3 provides a context for understanding this surprising a ction by traces on category O.
-Indeed, Brundan’s action is part of a broad phenomenon that occu rs within the context of higher
-representation theory: any categoriﬁed representation of the quantum group Uq(sln) immediately gives
-rise to an action of U(sln[t]) on the center of objects in the 2-representation via categorica l traces.
-In particular, an action of ˙U(sln) on graded category O would automatically imply and generalize
-Brundan’s result. More details about this action will be given in [7].
-TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR 7
-1.6.3. Organization of this paper. This paper is organized as follows. After recalling the diagrammatics
-for the trace in pivotal categories, taking as example V ect
-/CZ
-, we deﬁne the trace functor for linear and
-additive 1- and 2-categories and study its properties. In Section 3 we recall the notion of (strongly)
-upper-triangular category from [8], which is particularly convenient for computing all Hochschild–
-Mitchell homology groups. In the next sections diﬀerent versions o f the categoriﬁed quantum sln are
-deﬁned and their decategoriﬁcations by means of K0 and Tr are compared. The last chapter is devoted
-to the proof of Theorem 1.3.
-To make this paper more accessible for graduate students, each s ection is supplied with many
-examples, exercises, pictures and references to textbooks. Pla ces where special knowledge is required
-are marked and can be ignored in the ﬁrst reading.
-Acknowledgments: A.B. and Z.G. were supported by Swiss National Science Foundation u nder
-Grant PDFMP2-141752/1. K.H. was partially supported by JSPS Gra nt-in-Aid for Scientiﬁc Research
-(C) 24540077. A.D.L was partially supported by NSF grant DMS-1255 334 and by the John Templeton
-Foundation. A.D.L is extremely grateful to Mikhail Khovanov for sha ring his insights and vision about
-higher representation theory. Some of the ideas and calculations a ppearing in this article were done as
-part of this collaboration. He is also grateful to Arun Ram for helpfu l decategoriﬁcation discussions.
-A.B. would like to thank Benjamin Cooper for helpful conversations.
+
+\begin{thm}\label{2-reps}
+Any 2-representation $\U(\fsl_n) \to \K$ gives rise to an action of the current algebra
+$\bfU(\fsl_n[t])$ on $\Tr(\K)$ and the
+center $Z(\K)$ of objects in $\K$.
+\end{thm}
+
+
+This theorem is proven in Section \ref{action}. Let us discuss one implication of this result.   Brundan made the surprising discovery that one could define an action of the Lie algebra $\hat{\mf{g}}:=\mf{gl}_{\infty}(\mathbb{C})$ on the center $Z(\cal{O}) = \bigoplus_{\nu} Z(\cal{O}_{\nu})$ of all integral blocks $\cal{O}_{\nu}$ of category $\cal{O}$~\cite{Brundan}.
+In this action, the Chevalley generators of $\hat{\mf{g}}$ act as certain trace maps associated to canonical adjunction maps between special translation functors that arise from tensoring with a $\mf{g}$-module and its dual.
+In \cite{BO} it is explained that this action is closely connected to Ginzburg's geometric construction of representations of the general linear group~\cite{Gin}.
+Theorem \ref{2-reps} provides a context  for understanding this surprising action by traces on category $\cal{O}$.  Indeed, Brundan's action is part of a broad phenomenon that occurs within the context of higher representation theory:  any categorified representation
+of the quantum group $\mathbf{U}_q(\mf{sl}_n)$ immediately gives rise to an action of $\bfU(\mf{sl}_n[t])$ on the center of objects in the 2-representation via categorical traces. In particular,
+an action of $\UcatD(\mf{sl}_n)$ on graded category $\cal{O}$ would automatically imply and generalize Brundan's result.  More details about this action will be given in \cite{BGHL}.
+
+
+
+
+
+\subsubsection{Organization of this paper}
+
+
+This paper is organized as follows. After recalling the
+ diagrammatics for the trace  in pivotal categories, taking as example
+ $\cat{Vect}_\k$,  we define the trace functor for linear and additive 1- and 2-categories and study its properties.
+In Section 3 we recall the notion of (strongly) upper-triangular category from \cite{BHLZ}, which is
+particularly convenient for computing all Hochschild--Mitchell homology groups.
+In the next sections  different versions of the categorified
+ quantum  $\fsl_n$ are defined and their decategorifications by means
+of $K_0$ and $\Tr$ are compared.
+The last chapter is devoted to the proof of Theorem \ref{2-reps}.
+
+To make this  paper more  accessible for graduate students,
+each section is supplied with many examples, exercises, pictures and references to textbooks.
+Places where special knowledge  is required
+are marked and can be ignored in the first reading.
+
+\bigskip
+
+\noindent {\bf Acknowledgments:}
+A.B. and Z.G. were  supported by Swiss National Science Foundation under Grant PDFMP2-141752/1.
+K.H. was partially supported by JSPS Grant-in-Aid for Scientific Research (C) 24540077.
+A.D.L  was partially supported by NSF grant DMS-1255334 and by the John Templeton Foundation.
+A.D.L is extremely grateful to Mikhail Khovanov for sharing his insights and vision about higher representation theory.
+Some of the ideas and calculations appearing in this article were done as part of this collaboration.  He is also grateful to Arun Ram for helpful decategorification discussions.
+A.B. would like to thank Benjamin Cooper  for helpful conversations.

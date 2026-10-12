@@ -1,0 +1,832 @@
+\section{Appendix}
+
+In this section we gather some facts most of which can already be found in 
+\cite{SchikorraIntBoundFrac11} in slightly different versions. The main aim is to prove 
+Lemma~\ref{la:tangentialpart} and \ref{lem:CriticalTerm} which both rely on 
+quasi-locality of the Riesz potential $\lapms{s}$.  Afterwards, we give an easy proof of the iteration lemma needed
+to deduce Dirichlet growth. 
+
+We will mainly deal with functions belonging to the Schwartz space $\mathcal{S}(\R)$
+of rapidly decreasing smooth functions $\R\to\R$. The statements carry over to more general situations by suitable approximation arguments.
+
+\subsection{Quasi-locality}
+
+The essential tool apart from Sobolev inequalities is the following 
+quantitative version of the \emph{quasi-locality} of the fractional Laplacian 
+and the Riesz potential.
+
+\begin{lemma}[Quasi-locality]\label{lem:QuasiLocality}
+ Let $p_1,p_2,q_1,q_2 \in [1, \infty]$, where we assume that $q_2 =1$ if $p_2=1$, $s \in (-1,1)$
+ and $\Omega_1, \Omega_2$ be disjoint domains with
+ $d:= \dist(\Omega_1, \Omega_2) >0$ and with positive and finite Lebesgue measure. 
+ Then, for any $f\in\mathcal S(\R)$, 
+ \begin{equation*}
+  \|\lap^{\frac{s}{2}} (f \chi_{\Omega_2})\|_{(p_1,q_1),\Omega_1} 
+  \aleq  d^{-1-s} |\Omega_1|^{1/p_1} |\Omega_2|^{1-1/p_2} \|f\|_{(p_2,q_2), \Omega_2}
+ \end{equation*}
+  where we set
+ \[
+  \lap^{\frac{s}{2}} := \begin{cases}
+                         \laps{s} \quad &\mbox{if $s > 0$,}\\
+			  \id \quad &\mbox{if $s = 0$,}\\
+			  \lapms{\abs{s}} \quad &\mbox{if $s < 0$.}\\
+                        \end{cases}
+ \]
+\end{lemma}
+
+Note, that $\|\cdot\|_{(1,q_1)}$, $\|\cdot\|_{(\infty,q_\infty)}$ are only considered
+in the inequalities that follow for $q_1=1$ and $q_\infty=\infty$.
+
+\begin{proof}
+ For $\tilde k_s (z) = \frac 1 {|z|^{1+s}} \chi_{\R\setminus B_d} (z)$
+ and $\supp f\subset\Omega_{2}$ we have
+ for all $x \in \Omega_1$
+ \begin{equation*}
+  \lap^{\frac{s}{2}} f(x) = c_{s}(\tilde k_s \ast f ) (x)
+ \end{equation*}
+ and hence
+ \begin{equation*}
+ |\lap^{\frac{s}{2}} f (x)| \aleq \|f\|_{1,\Omega_2} \|\tilde k_s\|_{\infty} \leq
+  d^{-1-s} \|f\|_{1,\Omega_2}.
+  \end{equation*}
+ Hence,
+ \begin{align*}
+  \|\lap^{\frac{s}{2}} f\|_{(p_1,q_1), \Omega_1} 
+  & \leq |\Omega_1|^{1/p_1} \|\lap^{\frac{s}{2}} f\|_{\infty, \Omega_1}
+  \leq d^{-1-s}|\Omega_1|^{1/p_1}\|f\|_{1, \Omega_2} \\ 
+   & \leq d^{-1-s} |\Omega_1|^{1/p_1} |\Omega_2|^{1-1/p_2} \|f\|_{(p_2,q_2), \Omega_2}. \qedhere   
+ \end{align*}
+\end{proof}
+
+A quite immediate consequence of this quasi-locality and Sobolev 
+imbeddings is the following lemma. To state it, let
+\begin{equation}\label{eq:annulus}
+ A^k_{\Lambda,r}:= B_{2^{k}\Lambda r}- B_{2^{k-1} \Lambda r}.
+\end{equation}
+
+\begin{lemma}\label{lem:QuasiLocalityOfNorms}
+Let $p \in (1,\infty), q,\tilde q \in [1,\infty]$, $s \in (-1,1/p)$ and $- \frac 1 {p^\ast} = s - \frac 1 p$.
+\begin{enumerate}
+  \item For $f \in\mathcal S(\R)$ with $\supp f \subset B_r$ we have
+    \begin{equation*}
+  \|\lap^{-\frac{s}{2}}f\|_{(p^\ast,q);\mathbb R - B_{\Lambda r}} 
+  \aleq \Lambda^{-1+\fracm p} \|f\|_{(p, \tilde q),B_{r}}
+ \end{equation*}
+ uniformly for all $\Lambda >2$.
+ 
+ \item If $s \in[0,\frac1p)$, we have for all $f \in\mathcal S(\R)$
+ \begin{equation*}
+  \|\lapms{s}f\|_{(p^\ast,q);\mathbb R - B_{\Lambda r}} 
+  \aleq \Lambda^{-1+\fracm p} \|f\|_{(p, \tilde q);B_r} + \|f\|_{(p, q);\mathbb R - B_{r}}
+ \end{equation*} 
+ uniformly for all $\Lambda >2$.
+
+ \item For $s\in[0,\frac1p)$ and any $f\in\mathcal S(\R)$, we have
+ \begin{equation*}
+    \|\lapms{s}f\|_{(p^\ast,q),B_r} 
+    \aleq \|f\|_{(p,q),B_{\Lambda r}} + \Lambda^{-\frac 1{p^\ast}}
+	\sum_{k=1}^\infty \left(2^{-k}\right)^{\frac 1 {p^\ast}}
+	\|f\|_{(p,\tilde q),A^k_{\Lambda, r}}
+ \end{equation*}
+ uniformly for all $\Lambda >2$.
+\end{enumerate}
+
+% Especially,
+% \[ \|\lapms{s}f\|_{(p^\ast,q),B_r} 
+%  \aleq \sum_{k=1}^\infty \left(\Lambda^{1-k}\right)^{\frac 1 {p^\ast}}
+%	\|f\|_{(p,q),B_{\Lambda^k r}}. \]
+\end{lemma}
+
+% \begin{lemma} \label{lem:QuasiLocalityOfNorms}
+%  Let $p \in (1,\infty), q \in [1,\infty]$, $s \in [0,1/p)$ and $- \frac 1 {p^\ast} = s - \frac 1 p$.
+%  For any $f\in\mathcal S(\R)$, we have
+%  \begin{equation*}
+%     \|\lapms{s}f\|_{(p^\ast,q),B_r} 
+%     \aleq \|f\|_{(p,q),B_{\Lambda r}} + \Lambda^{-\frac 1{p^\ast}}
+% 	\sum_{k=1}^\infty \left(2^{-k}\right)^{\frac 1 {p^\ast}}
+% 	\|f\|_{(p,q),A^k_{\Lambda, r}}
+%  \end{equation*}
+%  uniformly for all $\Lambda >2$.
+% % Especially,
+% % \[ \|\lapms{s}f\|_{(p^\ast,q),B_r} 
+% %  \aleq \sum_{k=1}^\infty \left(\Lambda^{1-k}\right)^{\frac 1 {p^\ast}}
+% %	\|f\|_{(p,q),B_{\Lambda^k r}}. \]
+% \end{lemma}
+
+\begin{proof}
+ For the first inequality we use Lemma~\ref{lem:QuasiLocality}
+ and sum up the estimate
+ \begin{equation*}
+  \|\lap^{-\frac{s}{2}} f\|_{(p^*,  q ),A^k_{\Lambda, r}} \aleq (\Lambda 2^k)^{-1+\fracm p} \|f\|_{(p, \tilde q);B_r}.
+ \end{equation*}
+
+ In the second case, we use 
+ \begin{align*}
+  \|I_sf\|_{(p^\ast, q), \mathbb R - B_{\Lambda r}}
+  &\leq \|I_s(\chi_{B_r}f)\|_{(p^\ast, q), \mathbb R - B_{\Lambda r}}
+  + \|I_s((1-\chi_{B_r})f)\|_{(p^\ast, q), \mathbb R - B_{\Lambda r}}
+% \\ 
+% &\leq \sum_{k=1}^\infty \|I_s(\chi_{B_r}f)\|_{(p^\ast, q), A^k_{\Lambda r}}
+%  + \|I_s((1-\chi_{B_r})f)\|_{(p^\ast, q), \mathbb R - B_{\Lambda r}}.
+ \end{align*}
+ and estimate the first term using~(i)
+ % Lemma~\ref{lem:QuasiLocality}
+ and the second term
+ using Sobolev's inequality to get
+ \begin{equation*}
+  \|I_sf\|_{(p^\ast, q), \mathbb R - B_{\Lambda r}} 
+%  \aleq \sum_{k=1}^\infty (\Lambda2^k)^{-1+\frac 1 p} \|f\|_{(p,\tilde q), B_r} 
+%  + \|f\|_{(p,q); \mathbb R - B_{r}}
+  \aleq \Lambda^{-1+\frac 1 p} \|f\|_{(p,\tilde q), B_r} 
+  + \|f\|_{(p,q); \mathbb R - B_{r}}.
+ \end{equation*}
+
+ To deduce the last inequality, we decompose $f= \chi_{B_{\Lambda r}} f + \sum_{k=1}^\infty \chi_{A^{k}_{\Lambda, r}} f$ 
+ and estimate using Sobolev's inequality
+ \begin{align*}
+  \|\lapms{s}(\chi_{B_{\Lambda r}}f)\|_{(p^\ast,q),B_r} \aleq \|f\|_{(p,q),B_{\Lambda r}}
+ \end{align*}
+ and using Lemma~\ref{lem:QuasiLocality}
+ \begin{align*}
+  \|\lapms{s}(\chi_{A^{k}_{\Lambda,r}}f)\|_{(p^\ast,q), B_r} 
+  \aleq (\Lambda 2^k)^{-\frac 1 {p^\ast}}\|f\|_{(p,\tilde q),A^k_{\Lambda,r}}.
+ \end{align*}
+ Summing up, this proves the last inequality.
+\end{proof}
+
+
+% \begin{proof}
+%  Since the inequality trivially holds for $s=0$ let us assume that $s>0$.
+%  We decompose $f= \chi_{B_{\Lambda r}} f + \sum_{k=1}^\infty \chi_{A^{k}_{\Lambda, r}} f$ and estimate 
+%  using Sobolev's inequality
+%  \begin{align*}
+%   \|\lapms{s}(\chi_{B_{\Lambda r}}f)\|_{(p^\ast,q),B_r} \aleq \|f\|_{(p,q),B_{\Lambda r}}
+%  \end{align*}
+%  and using Lemma~\ref{lem:QuasiLocality}
+%  \begin{align*}
+%   \|\lapms{s}(\chi_{A^{k}_{\Lambda,r}}f)\|_{(p^\ast,q), B_r} 
+%   \aleq (\Lambda 2^k)^{-\frac 1 {p^\ast}}\|f\|_{(p,q),A^k_{\Lambda,r}}
+%  \end{align*}
+%  which finishes the proof.
+% \end{proof}
+
+
+Finally, we use the quasi-locality to prove
+
+\begin{proposition}\label{pr:localcontrolelliptic}
+For $p \in (1,\infty)$, $q \in [1,\infty]$, $s,t \geq 0$ with $0< s+t < 1$
+there is a $\theta >0$ such that
+we have for any $f \in L^{p,q}(\R)$, $\Lambda > 2$, and $r>0$  
+\begin{multline*}
+ \vrac{\laps{s} f}_{(p,q), B_r}  \aleq 
+  \sup_{\ontop{\varphi \in C_0^\infty(B_{\Lambda^2 r}),}{\|\laps{t}\varphi\|_{(p',q')} \leq 1}}  \int f \laps{s+t} \varphi 
+  +  r^{-s}\Lambda^{-\theta}\ \|f\|_{(p,q);B_{\Lambda r}} + r^{-s} 
+   \Lambda^{-\theta} \sum_{l=1}^\infty 2^{-\theta l} \vrac{f}_{(p,q),A_{\Lambda, r}^l}.
+\end{multline*}
+\end{proposition}
+
+\begin{proof}
+Assume that 
+\[
+ \sup_{\varphi \in C_0^\infty(B_{\Lambda^{2} r}), \|\laps{t}\varphi\|_{(p',q')} \leq 1}
+  \int f \laps{s+t} \varphi  \leq K.
+\]
+For $g \in C_0^{\infty}(B_r)$ we consider
+\begin{align*}
+ \int_{\mathbb R} (\laps{s} f) g dx= \int_{\mathbb R} f\laps{s} g dx
+ = \int_{B_{\Lambda r}} f\laps{s} g dx+ \sum_{l=1}^\infty \int_{A^l_{\Lambda, r}} f\laps{s} g dx.
+\end{align*}
+For the first term we use a smooth partition of unity $\br{\eta_k}_{{k\in\N\cup\set0}}$
+with $\supp \eta_0 \subset B_{\Lambda^2 r}$ and 
+$\supp \eta_k \subset B_{(\Lambda^{2} 2^{k}+1)r} -B_{(\Lambda^{2} 2^{k-1}-1)r}$
+to get
+\begin{align*}
+   \left|\int_{B_{\Lambda r}} f\laps{s} g dx\right| 
+   &\leq \left|\int_{B_{\Lambda r}} f\laps{t+s} \br{\eta_0
+  \lapms{t} g} dx\right|+ \sum_{l=1}^\infty
+  \left|\int_{B_{\Lambda r}} f\laps{t+s} \br{\eta_l
+  \lapms{t} g} dx\right| \\
+  &\aleq K \| g\|_{(p',q')} + \|f\|_{(p,q); B_{\Lambda r}} \sum_{l=1}^\infty 
+   \|\laps{t+s} \br{\eta_l
+  \lapms{t} g}\|_{(p',q');B_{\Lambda r}}.
+\end{align*}
+Since by Lemma~\ref{lem:QuasiLocality} we have
+\begin{align*}
+ \|\laps{t+s} \eta_l \lapms{t} g\|_{(p',q');B_{\Lambda r}} 
+ &\aleq (\Lambda^2 2^l r)^{-1-t-s} (\Lambda r)^{1/p'} (\Lambda^2 2^l r)^{1-1/p'}
+ \|\eta_l\lapms{t} g\|_{(p',q')}  \\
+ &\leq  (2^l )^{-t-s-1/p'} \Lambda^{-(2s+2t+1/p')} r^{-s-t}
+ \|\lapms{t}g\|_{(p',q')}  
+\end{align*}
+we can estimate this further by
+%\begin{align*}
+\[  K \|g\|_{(p',q')} + \Lambda^{-\theta_{1}}r^{-s-t}\|f\|_{(p,q); B_{\Lambda r}} \|\lapms{t} g\|_{(p',q')} \]
+% &=   K \|g\|_{(p',q')} + \Lambda^{-\theta_1}r^{-s-t}\|f\|_{(p,q); B_r}  \|\lapms{t} g\|_{(p',q')}.
+%\end{align*}
+for $\theta_1 = 2t+2s+1/p'$.
+
+Since $\supp g \subset B_r$ we get a scaled Poincar\'e inequality by applying first the Sobolev and then the H\"older inequality
+\begin{equation*}
+ \|\lapms{t} g\|_{(p',q')} \aleq \norm{g}_{(\frac{p'}{p't+1},q'),B_r}
+ \aleq  r^{t} \|g\|_{(p',q')}  
+\end{equation*}
+and using the quasi-locality (Lemma~\ref{lem:QuasiLocality}) once more
+\begin{equation*}
+ \|\laps{s} g\|_{(p',q'),A^k_{\Lambda r}}
+  \aleq (2^{k}\Lambda r)^{-1-s}r^{1-1/p'}(2^{k}\Lambda r)^{1/p'}\|g\|_{(p',q')}
+  = \Lambda^{-\theta_2} 2^{-k \theta_2} r^{-s} \|g\|_{(p',q')}
+\end{equation*}
+for $\theta_2 = 1+s-1/p'$.
+
+Hence, 
+\begin{equation*}
+ \int_{\mathbb R} \br{\laps{s} f}\ g dx \leq \left(K + \Lambda ^{-\theta} r^{-s} 
+ \|f\|_{(p,q);B_{\Lambda r}} + r^{-s} \Lambda^{-\theta}
+  \sum_{l=1}^\infty 2^{-\theta l} 
+  \|f\|_{(p,q);A^l_{\Lambda, r}} \right) \|g\|_{(p',q')},
+\end{equation*}
+for $\theta = \min\{\theta_1, \theta_2\}$ which by duality proves the proposition.
+\end{proof}
+
+
+\subsection{Proofs of Lemmata~\ref{la:tangentialpart} and~\ref{lem:CriticalTerm}}
+
+The following lemma is the starting point for the 
+estimates of $H_s$ and essentially follows from the mean value theorem or a first-order Taylor expansion.
+
+\begin{lemma} \label{lem:MultiplierEstimate}
+Let $\delta \in [0,1]$, $\alpha \in (0,1)$. Then for almost all $x,y, \xi \in \mathbb R^n$
+we have
+\begin{equation*}
+ \left||x-\xi|^{-1+\alpha} - |y-\xi|^{-1+\alpha} \right| \aleq |x-y|^\delta 
+ \left( |y-\xi|^{-1+\alpha-\delta} + |x-\xi|^{-1+\alpha-\delta} \chi_{|x-y|>2|x-\xi|}\right).
+\end{equation*}
+% \begin{equation*}
+%  \left||x-\xi|^{-1+1/2} - |y-\xi|^{-1+1/2} \right| \aleq |x-y|^\delta 
+%  \left( |y-\xi|^{-1+1/2-\delta} + |x-\xi|^{-1+1/2-\delta} \chi_{|x-y|>2|x-\xi|}\right).
+% \end{equation*}
+\end{lemma}
+
+\begin{proof}
+ If $|x-y|>2|x-\xi|$ we get
+ \begin{equation*}
+  |y-\xi| \geq |y-x|-|x-\xi| % \geq \frac 1 2 |x-y|
+  > |x-\xi|
+ \end{equation*}
+ and hence
+ \begin{equation*}
+  \left||x-\xi|^{-1+\alpha} - |y-\xi|^{-1+\alpha} \right| \aleq |x-\xi|^{-1+\alpha}
+  \aleq |x-y|^{\delta} |x-\xi|^{-1+\alpha-\delta}.
+ \end{equation*}
+
+ If $|x-y|\leq 2 |x-\xi|$ we first observe that the above argument leads to
+ \begin{equation*}
+   \left||x-\xi|^{-1+\alpha} - |y-\xi|^{-1+\alpha} \right|
+  \aleq |x-y|^{\delta} |y-\xi|^{-1+\alpha-\delta}
+ \end{equation*}
+ if $|x-y|>2|y-\xi|$.
+
+ To deal with the case that both $|x-y|\leq 2 |x-\xi|$ and $|x-y|\leq 2 |y-\xi|$
+ we observe that then
+ \begin{equation*}
+  |y-\xi| \leq |x-\xi| + |x-y| \leq 3 |x-\xi|.
+ \end{equation*}
+ Hence, we get using the mean value theorem
+ \begin{align*}
+   \left||x-\xi|^{-1+\alpha} - |y-\xi|^{-1+\alpha} \right|
+   &\aleq |x-y| \max\left\{|x-\xi|^{-2+\alpha}, |y-\xi|^{-2+\alpha}\right\}  \\
+   &\aleq |x-y| |y-\xi|^{-2+\alpha} \aleq |x-y|^\delta |y-\xi|^{-1+\alpha-\delta}.\qedhere
+ \end{align*}
+\end{proof}
+
+
+We use the lemma above to derive the following pointwise estimate for $H_{1/2+s}$.
+
+\begin{lemma}[\cite{SchikorraIntBoundFrac11}]\label{lem:EstimateForH12s}
+For $s \in [0,\frac12)$ %there exists $\varepsilon_0 >0 $ such that for
+and functions $a,b\in\mathcal S(\R)$
+% \begin{equation}\label{eq:ab}
+%  a=\lapmv  \lapv  a \qquad\text{and}\qquad b= \lapmv  \lapv  b,
+% \end{equation}
+the following holds for any $\varepsilon,\eps' \in [0,\frac16-\frac s3)$:
+\begin{align*}
+ |H_{1/2+s}(a,b)| &\aleq \lapms{1/6-s/3} (\lapms{1/6-s/3-\varepsilon}|\laps{1/2-\varepsilon} a| \; \lapms{1/6-s/3-\varepsilon'}|\laps{1/2-\varepsilon'} b|) 
+   \\ &\quad+ \lapms{1/3-2s/3-\varepsilon}|\laps{1/2-\varepsilon} a| \; \lapms{1/6-s/3-\varepsilon'}|\laps{1/2-\varepsilon'} b|
+   \\ & \quad+\lapms{1/6-s/3-\varepsilon}|\laps{1/2-\varepsilon} a|\; \lapms{1/3-2s/3-\varepsilon'}|\laps{1/2-\varepsilon'} b|
+   \\ & \quad+\lapms{1/4-s/2-\varepsilon}|\laps{1/2-\varepsilon} a| \; \lapms{1/4-s/2-\varepsilon'}|\laps{1/2-\varepsilon'} b|. 
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+%Set $\varepsilon_0 := \fracm{6} - \frac{s}{3}$, and let $\varepsilon \in [0,\varepsilon_0)$, then the following arguments holds.
+In order to shorten notation, we restrict to $\eps'=\eps$;
+the general case is parallel.
+ We use the identities $a=\lapms{\fracm{2}-\varepsilon}  \laps{\fracm{2}-\varepsilon}a$ and $b = \lapms{\fracm{2}-\varepsilon}  \laps{\fracm{2}-\varepsilon} b$.
+ %For simplicity assume now $\eps = 0$.
+ Then,
+\begin{align*}
+ &|H_{1/2+s}(a,b)(x)| \\&\aleq \int \int \int \frac {\left(|y-z|^{-1+1/2-\eps}-|x-z|^{-1+1/2-\eps} \right) 
+  \left( |y-w|^{-1+1/2-\eps} - |x-w|^{-1+1/2-\eps} \right)}{|y-x|^{1+ (1/2+s)}}\cdot{}\\
+  &\qquad\qquad\qquad{}\cdot\abs{\laps{\frac{1-2\eps}2} a(z)} \,\abs{\laps{\frac{1-2\eps}2} b(w)} \d w \d z \d y .
+\end{align*}
+Applying Lemma~\ref{lem:MultiplierEstimate} we get
+\begin{align*}
+ & \frac {\left(|y-z|^{-1+1/2-\eps}-|x-z|^{-1+1/2-\eps} \right) 
+  \left( |y-w|^{-1+1/2-\eps} - |x-w|^{-1+1/2-\eps} \right)}{|y-x|^{1+ (1/2+s)}} \\
+ &\aleq \frac {\scriptstyle\left(|y-w|^{-1+1/2-\eps-\delta} + |x-w|^{-1+1/2-\eps-\delta} \chi_{|x-y|>2|x-w|} \right) 
+		\left(|y-z|^{-1+1/2-\eps-\delta} + |x-z|^{-1+1/2-\eps-\delta} \chi_{|x-y|>2|x-z|} \right)}
+	     {|x-y|^{1+1/2+s-2\delta}} \\
+ &\aleq \frac {(|y-w||y-z|)^{-1+1/2-\eps-\delta} + (|x-w||y-z|)^{-1+1/2-\eps-\delta}  
+  + (|y-w||x-z|)^{-1+1/2-\eps-\delta}}{|x-y|^{1+1/2+s-2\delta}} \\
+ & \quad{} + \frac {(|x-w||x-z|)^{-1+1/2-\eps-\delta}}{|x-y|^{1+1/2+s-2\delta}}
+    \chi_{|x-y|>2|x-w|} \ \chi_{|x-y|>2|x-z|}.
+\end{align*}
+For $\delta =1/3 + s/3$ we hence get
+\begin{align*}
+ |H_{1/2+s}(a,b)|& \aleq \lapms{1/6-s/3} (\lapms{1/6-s/3-\eps}|\laps{\frac{1-2\eps}2} a| \ \lapms{1/6-s/3-\eps}|\laps{\frac{1-2\eps}2} b|) 
+  \\ & \quad+\lapms{1/6-s/3-\eps}|\laps{\frac{1-2\eps}2} a|  \ \lapms{1/3-2s/3-\eps}|\laps{\frac{1-2\eps}2} b|
+  \\ &\quad+ \lapms{1/3-2s/3-\eps}|\laps{\frac{1-2\eps}2} a| \ \lapms{1/6-s/3-\eps}|\laps{\frac{1-2\eps}2} b|
+  + A
+\end{align*}
+where
+\begin{align*}
+ A &\aleq \int \int \brac{\int \frac {(|x-w||x-z|)^{-1+1/2-\eps-\delta}}{|x-y|^{1+1/2+s-2\delta}}
+    \chi_{|x-y|>2|x-w|} \  \chi_{|x-y|>2|x-z|}\ \d y} \	 |\laps{\frac{1-2\eps}2}  a(z)|\ |\laps{\frac{1-2\eps}2}  b(w)| \d w \d z \\
+   &\aleq \int \int   |x-w|^{-1+1/4-\eps-s/2 } |x-z|^{-1+1/4-\eps-s/2} |\laps{\frac{1-2\eps}2}  a(z)|\ |\laps{\frac{1-2\eps}2}  b(w)| \d w \d z \\
+   &\aleq \lapms{1/4-s/2-\eps}|\laps{\frac{1-2\eps}2} a|\ \lapms{1/4-s/2-\eps}| \laps{\frac{1-2\eps}2} b|. \qedhere
+\end{align*}
+\end{proof}
+
+To estimate this further, we will use the following fact about {\em lower order products}
+which we get using the quasi-locality.
+
+% \begin{lemma} [Lower order products] \label{lem:LowerOrderProducts}
+%  Let $0 \leq s_{1,\nu}, s_{2,\nu}, s_{3,\nu} < 1/2$ with
+%  $s_{1,\nu}+s_{2,\nu}+s_{3,\nu} = 1/2-s$ for some $s\in [0,1/2)$, $s + s_1 < \fracm{2}$, $q\in[1,\infty]$.
+%  There exists some $\theta > 0$ such that, if for any bilinear operator $G$ and $u,v\in\mathcal S(\R)$ the following pointwise estimate holds,
+%  \begin{equation*}
+%   |G(u,v)| \aleq \sum_{\nu=1}^N \lapms{s_{1,\nu}} \left( \lapms{s_{2,\nu}}  |u|\ 
+%   \lapms{s_{3,\nu}} |v|\right),
+%  \end{equation*}
+%  then we have for any $\Lambda>2$, $\varepsilon \in [0,s_3]$, $\delta \in [0,s_2]$, and $\fracm{q} = \fracm{q_1}+ \fracm{q_2}$
+%  \begin{align}\label{eq:Guvest}
+%     &\|G(u,v)\|_{(\frac 2 {1+2s}, q), B_r} \\ \nonumber
+%   &\aleq \|\lapms{\delta}\abs{u}\|_{(\frac2{1-2\delta},q_1),B_{\Lambda r}} \|\lapms{\eps}\abs{v}\|_{(\frac2{1-2\eps},q_2),B_{\Lambda r}} + \|\lapms{\delta}\abs{u}\|_{(\frac2{1-2\delta},q_1)}
+%     \sum_{k=2}^\infty \Lambda^{-\theta(k-1)}\|\lapms{\eps}\abs{v}\|_{(\frac2{1-2\eps},q_2),B_{\Lambda^k r}}.
+%  \end{align}
+% If $\supp \lapmv v \subset B_r$ we furthermore get for any $k \geq 2$, $\Lambda \geq 16$,
+%  \begin{equation}\label{eq:Ginversedssupport}
+%   \|G(u,v)\|_{(\frac2{1+2s},q),A^k_{\Lambda,r}} \aleq \Lambda^{-\theta k} \vrac{u}_{(2,\infty),\R}\ \|\lapms{\eps} \abs{v}\|_{(\frac 2 {1-2\eps}, 1),\R}.
+%  \end{equation}
+% \end{lemma}
+% 
+% \begin{proof}
+%  It is enough to prove the statements for the case $N=1$ and we set in this case
+%  $s_i:=s_{i,1}$ for $i=1,2,3$. Note that in case $s=0$ at least two of the parameters $s_1$, $s_2$, $s_3$ are positive.
+%  
+%  Now we use several times the quasi-locality (Lemma~\ref{lem:QuasiLocalityOfNorms}, e.g., in the first application with $\Lambda^{1/2}$ in place of $\Lambda$, for $p^*\hat=\frac{2}{1+2s}$, $q\hat=\infty$, $s\hat=s_1$, $p\hat=\frac{2}{1+2(s+s_1)}$), H\"older's and Sobolev's inequalities. Let $\eps \in [0,s_3]$, $\delta \in [0,s_2]$,
+%  \begin{align*}
+%   &\|G(u,v)\|_{(\frac 2 {1+2s},q),B_r} \\
+%   &\aleq \sum_{k=1}^\infty (\Lambda ^{(k-1)/2})^{-1/2 - s} 
+%   \|\lapms{s_2}\abs{u}\ \lapms{s_3}\abs{v}\|_{(\frac 2{1+2(s+s_1)},q), B_{\Lambda^{k/2} r}}\\
+%   &\aleq \sum_{k=1}^\infty (\Lambda ^{(k-1)/2})^{-1/2 - s} 
+% 	\|\lapms{s_2}\abs{u}\|_{(\frac 2 {1-{2s_2}},q_1),B_{\Lambda^{k/2} r}}\  
+% 	\|\lapms{s_3}\abs{v}\|_{(\frac 2 {1-2s_3}, q_2), B_{\Lambda^{k/2} r}}
+%   \\ 
+%   &\aleq
+% 	\sum_{k=1}^\infty \sum_{l_1=1}^\infty \sum_{l_2 =1}^\infty(\Lambda ^{(k-1)/2})^{-1/2 - s}
+% 	(\Lambda ^{(l_1-1)/2})^{-1/2 + s_2} (\Lambda^{(l_2 -1)/2})^{-1/2 + s_3} \cdot\\
+% 	&\qquad\qquad\qquad{}\cdot\|\lapms{\delta}\abs{u}\|_{(\frac{2}{1-2\delta}, q_1 ), B_{\Lambda^{(k+l_1)/2} r}}
+% 	\|\lapms{\eps} \abs{v}\|_{(\frac2{1-2\eps}, q_2), B_{\Lambda^{(k+l_2)/2} r}}
+%   \\
+%   &\aleq \|\lapms{\delta}\abs{u}\|_{(\frac{2}{1-2\delta},q_1),B_{\Lambda r}}  \|\lapms{\eps} \abs{v}\|_{(\frac2{1-2\eps},q_2),B_{\Lambda r}}
+%     + \|\lapms{\varepsilon}\abs{u}\|_{(\frac{2}{1-2\delta}.q_1)} 
+% 	\sum_{k=2}^\infty (\Lambda^{k-1})^{-\theta}\| \lapms{\varepsilon} \abs{v}\|_{(\frac2{1-2\varepsilon},q_2),B_{\Lambda^{k}r}},
+%  \end{align*}
+% for $\theta >0$ small enough, depending on $s_1$, $s_2$, $s_3$, but not on $\varepsilon$. 
+% As for the second estimate, using Lemma~\ref{lem:QuasiLocality} and again Lemma~\ref{lem:QuasiLocalityOfNorms}, we have for $k \geq 1$,
+% \begin{align*}
+%     \|G(u,v)\|_{(\frac2{1+2s},q),A^k_{\Lambda,r}} 
+%     &= \|\lapms{s_1}\left( \lapms{s_2} |u| \ \lapms{s_3} |v| \right)\|_{(\frac2{1+2s},q),A^k_{\Lambda,r}}
+%   \\
+%     &\aleq \Lambda^{-k \frac{1/2-s_1-s}{2}} \|\lapms{s_2} |u| \ \lapms{s_3} |v|\|_{(\frac 2 {1+2(s+s_1)}, \infty), B_{\Lambda^{k/2} r}}
+%     \\
+%     &\quad+ \|\lapms{s_2} |u| \ \lapms{s_3} |v|\|_{(\frac 2 {1+2(s+s_1)},q), B_{\Lambda^{k+2}r}-B_{\Lambda^{k/2}r}}
+%     \\
+%     &\quad + \sum_{l=2}^\infty \|\lapms{s_2} |u| \ \lapms{s_3} |v|\|_{(\frac 2 {1+2(s+s_1)}, q), A^{k+l}_{\Lambda,r}}
+%   \\
+%     &\aleq \Lambda^{-k \frac{1/2-s_1-s}{2}} \|\lapms{s_2} |u| \|_{(\frac 2 {1-2s_2},\infty),\R}\  
+% 	  \|\lapms{s_3} |v|\|_{(\frac 2 {1-2s_3}, \infty),\R}
+%     \\
+%     &\quad+ \|\lapms{s_2} |u|\|_{(\frac 2 {1-2 s_2}, \infty),\R} \ 
+%     \| \lapms{s_3} |v|\|_{(\frac 2 {1-2s_3},q), B_{\Lambda^{k+2}r}-B_{\Lambda^{k/2}r}}
+%     \\
+%     &\quad + \sum_{l=2}^\infty \|\lapms{s_2} |u| \|_{(\frac 2 {1-2s_2},\infty),\R}\ 
+%       \| \lapms{s_3} |v|\|_{(\frac 2 {1-2s_3}, q), A^{k+l}_{\Lambda,r}}
+%   \\
+%   %
+%   %
+%   &\aleq \Lambda^{-k \frac{1/2-s_1-s}{2}} \|u\|_{(2,\infty)} \|\lapms{s_3} v\|_{(\frac 2 {1-2s_3}, \infty),\R} \\
+%   &\quad+ \| u\|_{(2, \infty),\R} \ 
+%     \| \lapms{s_3} v\|_{(\frac 2 {1-2s_3},q), B_{\Lambda^{k+2}r}-B_{\Lambda^{k/2}r}}
+%     \\
+%     &\quad + \sum_{l=2}^\infty \| u \|_{(2,\infty),\R}\ 
+%       \| \lapms{s_3} v\|_{(\frac 2 {1-2s_3}, q), A^{k+l}_{\Lambda,r}}.
+% %     
+% %     
+% %     
+% %     & \quad + \Lambda^{-k(1/2-s_3)}\|u\|_{(2,\infty)} \|v\|_{2,\infty}
+% %      + \sum_{l=2}^\infty \Lambda^{-(k+l)(1/2-s_3)} \|u\|_{(2,\infty)} \|v\|_{(2,\infty)}.
+%  \end{align*}
+%  Since
+%  \[
+%   \lapms{s_3} v = \laps{\frac{1}{2}-s_3} \lapmv v,
+%  \]
+% under the assumption $\supp \lapmv v \subset \overline{B_r}$, Lemma~\ref{lem:QuasiLocality} with $s \hat= \fracm{2} - s_3$, $p_1 \hat= \frac{2}{1-2s_3}$, $p_2 \hat= \infty$, $\Omega_3 \hat= B_r$ implies (note this is a rather rough, and non-optimal Lorentz-space estimate, which nonetheless suffices for our purposes!) 
+% \[
+%  \| \lapms{s_3} v\|_{(\frac 2 {1-2s_3},q), B_{\Lambda^{k+2}r}-B_{\Lambda^{k/2}r}} \aleq \Lambda^{-k(\fracm{4}+\frac{s_3}{2})+\fracm{2}-s_3}\ \vrac{\lapmv v}_{\infty} \aleq \Lambda^{-k(\fracm{4}+\frac{s_3}{2})+\fracm{2}-s_3}\ \vrac{\lapms{s_3} v}_{(\frac 2 {1-2s_3},1)},
+% \]
+% and
+% \[
+% \| \lapms{s_3} v\|_{(\frac 2 {1-2s_3}, q), A^{k+l}_{\Lambda,r}} \aleq \Lambda^{-(k+l)+\fracm{2}-s_3} \vrac{\lapms{s_3} v}_{(\frac 2 {1-2s_3},1)}.
+% \]
+% We thus have shown,
+% \begin{align*}
+%     \|G(u,v)\|_{(\frac2{1+2s},q),A^k_{\Lambda,r}} 
+%     &\aleq \brac{\Lambda^{-k \frac{1/2-s_1-s}{2}} +  \Lambda^{-k(\fracm{4}+\frac{s_3}{2})+\fracm{2}-s_3} + \Lambda^{-k+\fracm{2}-s_3}}\ \|u\|_{(2,\infty)} \|\lapms{s_3} v\|_{(\frac 2 {1-2s_3}, 1),\R} \\
+% \end{align*}
+% This implies \eqref{eq:Ginversedssupport} for a $\theta > 0$ depending on $s_1$,$s_2$,$s_3$, but not on $\varepsilon \in [0,s_3]$.
+% \end{proof}
+\begin{lemma} [Lower order products] \label{lem:LowerOrderProducts.v2}
+  Let for $s > 0$, $0 \leq s_{1}, s_{2}, s_{3} \leq 1/2$, $s_{1} + s_{2}+ s_{3} = s$, and at least two of these $s_i$, $i=1,2,3$, non-zero. Let $p \in (1,\infty)$, $p_2 \in (1,\fracm{s_2}),p_3 \in (1,\fracm{s_3})$ and such that
+  \[
+   \fracm{p} = \fracm{p_2} + \fracm{p_3} - s.
+  \]
+Assume moreover that
+\begin{equation*}
+  |G(u,v)| \aleq \lapms{s_{1}} \left( \lapms{s_{2}}  |u|\ 
+  \lapms{s_{3}} |v|\right),
+ \end{equation*}
+ then there is some $\theta>0$ such that
+ we have for any $\Lambda>4$, and $\fracm{q} = \fracm{q_1}+ \fracm{q_2}$,
+ \begin{align}\label{eq:Guvest}
+    &\|G(u,v)\|_{(p, q), B_r} \\ \nonumber
+  &\aleq \|u\|_{(p_2,q_1),B_{\Lambda r}} \|v\|_{(p_3,q_2),B_{\Lambda r}} + \|u\|_{(p_2,q_1)}
+    \Lambda^{-\theta}\sum_{k=2}^\infty 2^{-\theta k}\|v\|_{(p_3,q_2),B_{\Lambda 2^k r}}.
+ \end{align}
+ If $\supp \laps{t}v  \subset \overline{B_r}$ for some $t \in [0,\fracm{2}]$, 
+ we furthermore get for any $k \geq 2$, $\Lambda > 16$,
+ \begin{equation}\label{eq:Ginversedssupport}
+  \|G(u,v)\|_{(p,q),A^k_{\Lambda,r}} 
+  \aleq \Lambda^{-\theta} 2^{-\theta k} \vrac{u}_{(p_2,\infty),\R}\ \|v\|_{(p_3, 1),\R}.
+ \end{equation}
+\end{lemma}
+\begin{proof}
+Let
+\[
+  \fracm{p_2^\ast} :=  \fracm{p_2} -s_2, 
+\]
+\[
+  \fracm{p_3^\ast} :=  \fracm{p_3} -s_3, 
+ \]
+\[
+  \fracm{p_1} :=  \fracm{p_2^\ast} + \fracm{p_3^\ast} = \fracm{p_2} + \fracm{p_3} - s_2 - s_3,
+\]
+and
+\[
+ \fracm{p_1^\ast} := \fracm{p} \equiv \fracm{p_2} + \fracm{p_3} - s
+ =\frac{1}{p_{1}}-s_{1}.
+\]
+
+Then by Lemma~\ref{lem:QuasiLocalityOfNorms}~(iii), for $\Lambda \hat = \sqrt{\Lambda}$, $p^\ast \hat = p_1^\ast=p$, $p \hat= p_1$, $s\hat=s_{1}$
+ \begin{align*}
+  &\|G(u,v)\|_{(p_1^\ast,q),B_r} \aleq
+  \vrac{\lapms{s_2}\abs{u} \ \lapms{s_3}\abs{v}}_{(p_1,q), B_{\Lambda^{1/2} r}} + \Lambda^{-1/2p}
+  \sum_{k=1}^\infty 2 ^{-k/p} 
+  \vrac{\lapms{s_2}\abs{u} \ \lapms{s_3}\abs{v}}_{(p_1,q), B_{\Lambda^{1/2}2^k r}} \\
+  &\aleq
+ \vrac{\lapms{s_2}\abs{u}}_{(p_2^\ast,q_1), B_{\Lambda^{1/2} r}} \ \vrac{\lapms{s_3}\abs{v}}_{(p_3^\ast,q_2), B_{\Lambda^{1/2} r}}+ \Lambda^{-1/2p}
+ \sum_{k=1}^\infty 2 ^{-k/p} 
+\vrac{\lapms{s_2}\abs{u}}_{(p_2^\ast,q_1), B_{2^k\Lambda^{1/2} r}} \ \vrac{\lapms{s_3}\abs{v}}_{(p_3^\ast,q_2), B_{2^k\Lambda^{1/2} r}}.
+ \end{align*}
+Applying yet again Lemma~\ref{lem:QuasiLocalityOfNorms}~(iii) to both factors in each sum with $\Lambda \hat = \sqrt{\Lambda}$
+we arrive at
+\begin{align*}
+    \|G(u,v)\|_{(p, q), B_r} \aleq \|u\|_{(p_2,q_1),B_{\Lambda r}} \|v\|_{(p_3,q_2),B_{\Lambda r}} + \|u\|_{(p_2,q_1)}
+    \Lambda^{-\theta}\sum_{k=2}^\infty 2^{-\theta k}\|v\|_{(p_3,q_2),B_{\Lambda 2^k r}}.
+\end{align*}
+
+As for the second estimate, we apply Lemma~\ref{lem:QuasiLocalityOfNorms}~(ii)
+with $\Lambda \hat = \sqrt{\Lambda}$ to get
+\begin{align*}
+ \|G(u,v)\|_{(p,q), \mathbb R - B_{\Lambda r}} 
+ &=\|\lapms{s_1}\left( \lapms{s_2} |u| \ \lapms{s_3} |v| \right)\|_{(p_1^\ast,q),\mathbb R - B_{\Lambda r}}
+ \\
+ &\aleq \Lambda^{-\theta_1} 
+ \|\lapms{s_2} |u| \ \lapms{s_3} |v|\|_{(p_1, \infty), B_{\Lambda^{1/2} r}}
+    + \|\lapms{s_2} |u| \ \lapms{s_3} |v|\|_{(p_1,q), \mathbb R -B_{\Lambda^{1/2}r}}
+\end{align*}
+where $\theta_{1} = \frac 1 2 - \fracm{2p_1}$.
+We estimate the first term using H\"older's inequality and Sobolev imbedding theorem to get
+\begin{equation*}
+ \Lambda^{-\theta_1} 
+ \|\lapms{s_2} |u| \ \lapms{s_3} |v|\|_{(p_1, \infty), B_{\Lambda^{1/2} r}}
+ \leq \Lambda^{-\theta_1}\|u\|_{(p_2,\infty)} \|v\|_{(p_3,1)}.
+\end{equation*}
+For the second term we use H\"older's inequality and Sobolev's imbedding theorem to get
+\begin{align*} 
+ \|\lapms{s_2} |u| \ \lapms{s_3} |v|\|_{(p_1, q), \mathbb R - B_{\Lambda^{1/2} r}}
+ &\aleq \|\lapms{s_2}\abs u\|_{(p^\ast_2,q_1), \mathbb R - B_{\Lambda^{1/2}r}} 
+ \|\lapms{s_3}\abs v\|_{(p^\ast_3,q_2), \mathbb R - B_{\Lambda^{1/2}r}} \\
+ &\aleq \|u\|_{(p_2,\infty), \mathbb R } 
+ \|\lapms{s_3}|v|\|_{(p^\ast_3,q_{2}), \mathbb R - B_{\Lambda^{1/2}r}}.
+\end{align*}
+Since
+\begin{align*}
+ \|\lapms{s_3} |v|\|_{(p^\ast_3, q_2), \mathbb R - B_{\Lambda^{1/2} r}}
+ & \aleq \Lambda^{-\theta_2} \|v\|_{(p_3,1);B_{\Lambda^{1/4}}} + \|v\|_{(p_3,q);\mathbb R - B_{\Lambda^{1/4}}}
+\end{align*}
+where $\theta_2 =  \fracm 4 - \fracm {4p_3}$ and,
+using Lemma~\ref{lem:QuasiLocalityOfNorms}~(i)
+\begin{equation*}
+\|v\|_{(p_3,q);\mathbb R - B_{\Lambda^{1/4}}}
+= \|\laps{t} (\lapms{t}v)\|_{(p_3,q);\mathbb R - B_{\Lambda^{1/4}}}
+\leq \Lambda^{-\theta_2} \|I_t v\|_{(p^{\ast \ast}_3,1)} 
+\leq \Lambda^{-\theta_2} \|I_t v\|_{(p_3,1)}
+\end{equation*}
+we deduce the statement for $\theta := \min\{\theta_1, \theta_2\}$.
+% 
+% As for the second estimate, using Lemma~\ref{lem:QuasiLocality} and
+% proceeding as in the proof of Lemma~\ref{lem:QuasiLocalityOfNorms}, we have for $k \geq 1$, $\sigma \in (1,2)$, $\theta_{p_{1},\sigma}:=(1-\frac1{p_{1}})(1-\frac1\sigma)>0$
+% \begin{align*}
+%     \|G(u,v)\|_{(p,q),A^k_{\Lambda,r}} 
+%     &= \|\lapms{s_1}\left( \lapms{s_2} |u| \ \lapms{s_3} |v| \right)\|_{(p_1^\ast,q),A^k_{\Lambda,r}}
+%   \\
+%     &\aleq \Lambda^{-\theta_{p_1,\sigma}k} \|\lapms{s_2} |u| \ \lapms{s_3} |v|\|_{(p_1, \infty), B_{\Lambda^{k/\sigma} r}}
+%     \\
+%     &\quad+ \|\lapms{s_2} |u| \ \lapms{s_3} |v|\|_{(p_1,q), B_{\Lambda^{k+2}r}-B_{\Lambda^{k/\sigma}r}}
+%     \\
+%     &\quad + \sum_{l=2}^\infty \|\lapms{s_2} |u| \ \lapms{s_3} |v|\|_{(p_1, q), A^{k+l}_{\Lambda,r}}
+%   \\
+%     &\aleq \Lambda^{-\theta_{p_1,\sigma}k} \|\lapms{s_2} |u| \|_{(p_2^\ast,\infty),\R}\  
+% 	  \|\lapms{s_3} |v|\|_{(p_3^\ast, \infty),\R}
+%     \\
+%     &\quad+ \|\lapms{s_2} |u|\|_{(p_2^\ast, \infty),\R} \ 
+%     \| \lapms{s_3} |v|\|_{(p_3^\ast,q), B_{\Lambda^{k+2}r}-B_{\Lambda^{k/\sigma}r}}
+%     \\
+%     &\quad + \sum_{l=2}^\infty \|\lapms{s_2} |u| \|_{(p_2^\ast,\infty),\R}\ 
+%       \| \lapms{s_3} |v|\|_{(p_3^\ast, q), A^{k+l}_{\Lambda,r}}
+%   \\
+%   %
+%   %
+%   &\aleq \Lambda^{-\theta_{p_1,\sigma}k} \|u\|_{(p_2,\infty)}\ \|v\|_{(p_3, \infty),\R} \\
+%   &\quad+ \| u\|_{(p_2, \infty),\R} \ 
+%     \| \lapms{s_3} \abs{v}\|_{(p_3^\ast,q), B_{\Lambda^{k+2}r}-B_{\Lambda^{k/\sigma}r}}
+%     \\
+%     &\quad + \sum_{l=2}^\infty \| u \|_{(p_2,\infty),\R}\ 
+%       \| \lapms{s_3} \abs{v}\|_{(p_3^\ast, q), A^{k+l}_{\Lambda,r}}.
+% %     
+% %     
+% %     
+% %     & \quad + \Lambda^{-k(1/2-s_3)}\|u\|_{(2,\infty)} \|v\|_{2,\infty}
+% %      + \sum_{l=2}^\infty \Lambda^{-(k+l)(1/2-s_3)} \|u\|_{(2,\infty)} \|v\|_{(2,\infty)}.
+%  \end{align*}
+%  Note that $\theta_{p_{1},\sigma} \to 0$ as $\sigma \searrow 1$.  Since $\supp \lapms{t} v \subset \overline{B_r}$, we can write, for $\lambda > 1$,
+%  \[
+%   \lapms{s_3} \abs{v} = \lapms{s_3} \abs{\laps{t} \lapms{t} v} = \lapms{s_3} \abs{\laps{t} \brac{\chi_{B_{r}}\lapms{t} v}} 
+%  \aleq \lapms{s_3} \abs{\chi_{B_{\lambda r}} v}  + \sum_{i=1}^\infty \lapms{s_3} \abs{\chi_{A^i_{\lambda r}}\laps{t} \brac{\chi_{B_{r}}\lapms{t} v}}.	 
+%  \]
+%  Using again Lemma~\ref{lem:QuasiLocality}, choosing $\sigma$ closer to $1$ as $p_3 \to 1$, we conclude.
+% % 
+% 
+% 
+% 
+% 
+% under the assumption $\supp \lapmv v \subset \overline{B_r}$, Lemma~\ref{lem:QuasiLocality} with $s \hat= \fracm{2} - s_3$, $p_1 \hat= \frac{2}{1-2s_3}$, $p_2 \hat= \infty$, $\Omega_3 \hat= B_r$ implies (note this is a rather rough, and non-optimal Lorentz-space estimate, which nonetheless suffices for our purposes!) 
+% \[
+%  \| \lapms{s_3} v\|_{(\frac 2 {1-2s_3},q), B_{\Lambda^{k+2}r}-B_{\Lambda^{k/2}r}} \aleq \Lambda^{-k(\fracm{4}+\frac{s_3}{2})+\fracm{2}-s_3}\ \vrac{\lapmv v}_{\infty} \aleq \Lambda^{-k(\fracm{4}+\frac{s_3}{2})+\fracm{2}-s_3}\ \vrac{\lapms{s_3} v}_{(\frac 2 {1-2s_3},1)},
+% \]
+% and
+% \[
+% \| \lapms{s_3} v\|_{(\frac 2 {1-2s_3}, q), A^{k+l}_{\Lambda,r}} \aleq \Lambda^{-(k+l)+\fracm{2}-s_3} \vrac{\lapms{s_3} v}_{(\frac 2 {1-2s_3},1)}.
+% \]
+% We thus have shown,
+% \begin{align*}
+%     \|G(u,v)\|_{(\frac2{1+2s},q),A^k_{\Lambda,r}} 
+%     &\aleq \brac{\Lambda^{-k \frac{1/2-s_1-s}{2}} +  \Lambda^{-k(\fracm{4}+\frac{s_3}{2})+\fracm{2}-s_3} + \Lambda^{-k+\fracm{2}-s_3}}\ \|u\|_{(2,\infty)} \|\lapms{s_3} v\|_{(\frac 2 {1-2s_3}, 1),\R} \\
+% \end{align*}
+% This implies \eqref{eq:Ginversedssupport} for a $\theta > 0$ depending on $s_1$,$s_2$,$s_3$, but not on $\varepsilon \in [0,s_3]$.
+\end{proof}
+
+
+We then have the following
+\begin{lemma}\label{lem:localizedHEst}
+There is a $\varepsilon_{0} > 0$ such that
+for $\delta,\eps\in[0,\varepsilon_{0})$,
+for any $a,b\in\mathcal S(\R)$, $\Lambda>4$
+\begin{align*}
+    &\|H_{\frac{1}{2}}(a,b)\|_{(2, q), B_r} 
+  \aleq \|\laps{1/2-\delta} a\|_{(\frac2{1-2\delta},q_1),B_{\Lambda r}} \|\laps{1/2-\eps} b\|_{(\frac2{1-2\eps},q_2),B_{\Lambda r}} + \\
+  &\qquad\qquad\qquad\qquad{}+\|\laps{1/2-\delta} a\|_{(\frac2{1-2\delta},q_1)} \Lambda^{-\theta}
+    \sum_{k=1}^\infty 2^{-\theta(k-1)}\|\laps{1/2-\eps} b\|_{(\frac2{1-2\eps},q_2),B_{2^k\Lambda r}}.
+ \end{align*}
+If $\supp b \subset B_r$ we furthermore get for any $k \geq 2$, $\Lambda > 16$, $s\in[0,\frac12)$
+ \begin{equation*}
+  \|H_{\fracm{2}}(a,b)\|_{(\frac2{1+2s},q),A^k_{\Lambda,r}} \aleq (\Lambda 2^k)^{-\theta} \vrac{\lapv a}_{(2,\infty),\R}\ \|\laps{1/2-\eps} b \|_{(\frac 2 {1-2\eps}, 1),\R}.
+ \end{equation*}
+ \end{lemma}
+ 
+\begin{proof}
+Immediately from Lemma~\ref{lem:EstimateForH12s}, Lemma~\ref{lem:LowerOrderProducts.v2} where $s = \fracm{2} - \varepsilon - \delta$. 
+\end{proof}
+
+
+We use the lemma above to estimate 
+the normal part as stated in Lemma~\ref{la:tangentialpart}. 
+
+\begin{proof}[Proof of Lemma \ref{la:tangentialpart}]
+With~\eqref{eq:Dg2} we obtain $\norm{\laps{s}\sabs{g'}^2}_{(\frac2{1+2s},\infty),B_{r}}\aleq r^{\frac12+s}$.
+In order to show~\eqref{eq:orthogpartest} by the decomposition~\eqref{eq:orthogpartHdec} it remains to treat the $H$-term.
+We rewrite
+\[
+\begin{ma}
+ \laps{s} H_{\frac{1}{2}}(a,b) 
+&=& \underbrace{H_{s+\fracm{2}}(a,b)}_{=:I}
++ \underbrace{a\lapsv{1+2s}b - \laps{s}(a \lapv b)}_{=:II}
++ \underbrace{b\lapsv{1+2s}a - \laps{s}(b \lapv a)}_{=:III}.
+\end{ma}
+\]
+We will show that all three terms satisfy the hypotheses of Lemma~\ref{lem:LowerOrderProducts.v2}.
+Due to Lemma~\ref{lem:EstimateForH12s} this is true for the term $I$.
+
+As for $II$ note that $II=0$ in case $s=0$. If $s\in(0,1)$,
+the potential definition~\eqref{eq:fraclap-} of $\laps{s}$ gives
+\begin{align*}
+ {II(x)} &= c\br{a(x)\int \frac{\lapv b(y)-\lapv b(x)}{\abs{x-y}^{1+s}}\ \d y - \int \frac{a(y)\lapv b(y)-a(x)\lapv b(x)}{\abs{x-y}^{1+s}}\ \d y} \\
+ &= c\int \frac{\br{a(x)-a(y)}\lapv b(y)}{\abs{x-y}^{1+s}}\ \d y.
+\end{align*}
+Using $a = \lapmv \lapv a$ we arrive at
+\[
+ \abs{II(x)} \aleq \int \frac{\abs{a(y)-a(x)}\abs{\lapv b(y)}}{\abs{x-y}^{1+s}}\ \d y \aleq \int \int \frac{\abs{\abs{y-z}^{-1+\frac{1}{2}}-\abs{x-z}^{-1+\frac{1}{2}}}\abs{\lapv b(y)} \abs{\lapv a(z)}}{\abs{x-y}^{1+s}} \ \d y\ \d z.
+\]
+For almost all $x,y,z$ we get from Lemma~\ref{lem:MultiplierEstimate} choosing $\delta:=\frac14+\frac s2$
+\[
+\frac{\abs{\abs{y-z}^{-1+\frac{1}{2}}-\abs{x-z}^{-1+\frac{1}{2}}}}{\abs{x-y}^{1+s}} \leq 
+\brac{\abs{x-z}\abs{x-y}}^{-1+\fracm{4}-\frac{s}{2}}
++ \brac{\abs{y-z}\abs{x-y}}^{-1+\fracm{4}-\frac{s}{2}},
+\]
+which implies, using again~\eqref{eq:fraclap-}
+\[
+ \abs{II(x)} \aleq \lapms{\frac{1-2s}{4}} \abs{\lapv a}\ \lapms{\frac{1-2s}{4}} \abs{\lapv b} + \lapms{\frac{1-2s}{4}} \brac{\abs{\lapv b}\ \lapms{\frac{1-2s}{4}} \abs{\lapv a}}.
+\]
+
+By symmetry a respective estimate holds also for the term $III$.
+Applying Lemma~\ref{lem:LowerOrderProducts.v2} one concludes.
+\end{proof}
+
+
+
+\begin{proof}[Proof of Lemma~\ref{lem:CriticalTerm}]
+ Again the proof relies on quasi-locality. First we decompose
+ \begin{align*}
+  \left|\int \lapv  g_i' \omega_{ij} H_{1/2}(g'_j,\phi) \right|
+  &\aleq  \left|\; \int_{B_{\Lambda^{1/2}r}}  \lapv  g_i' \omega_{ij} H_{1/2}(g'_j,\phi) \right|
+  + \sum_{k=1}^\infty \left|\;
+  \int_{A^k_{\Lambda^{1/2}, r}} 
+  \lapv  g_i' \omega_{ij} H_{1/2}(g'_j,\phi) \right|\\
+  &\aleq \|\lapv g'\|_{(2,\infty),B_{\Lambda^{1/2}r}} 
+  \|H_{1/2}(g'_j,\phi)\|_{(2,1), B_{\Lambda^{1/2}r}} \\ 
+  & \quad +
+  \sum_{k=1}^\infty \|\lapv  g'\|_{(2,\infty),A_{\Lambda^{1/2},r}^{k}}
+  \|H_{1/2}(g'_j,\phi)\|_{(2,1),A^k_{\Lambda^{1/2},r}}   .
+ \end{align*}
+  Using Lemma~\ref{lem:localizedHEst},
+  the first summand can be estimated by %(for some uniform $\varepsilon > 0$)
+ \begin{align*}
+ \vrac{\lapms{s}\lapv \phi}_{(\frac{2}{1-2s},1)} \ \brac{
+  \|\lapv g'\|_{(2,\infty),B_{\Lambda r}}^2 +  \|\lapv g'\|_{(2,\infty),B_{\Lambda r}}\ \Lambda^{-\theta} \sum_{l=1}^\infty 2^{-\theta l} \|\lapv  g'\|_{(2,\infty),B_{\Lambda 2^lr}}
+  }.
+ \end{align*}
+ Applying the second part of Lemma~\ref{lem:localizedHEst}, the infinite sum can be estimated by
+%  \begin{align*}
+ \[ \Lambda^{-\theta}\| \lapms{s}  \lapv \phi\|_{(\frac 2 {1-2 s},1)}\ \|\lapv g'\|_{(2,\infty)} \ \sum_{k=2}^\infty 
+  2^{-\theta k} \|\lapv  g'\|_{(2,\infty),B_{2^k\Lambda r}}.\]
+% Since 
+% $\| \lapms{\eps}  |\lapv \phi|\|_{(\frac 2 {1-2 \eps},1)}  
+%  \aleq \|\lapv \phi\|_{(2,1)}$ by Sobolev's inequality, the 
+%estimates above prove the claim.
+%  \end{align*}
+\end{proof}
+
+% 
+% \begin{lemma}\label{pr:localization}
+% We have for $s \in (0,\frac{1}{2})$, for any $\Lambda > 2$,
+% \[
+%  \vrac{\lapms{s} f}_{(\frac{2}{1-2s},\infty),B_r} 
+% \aleq \vrac{\chi_{B_{\Lambda r}}f}_{(2,\infty),B_r} + \sum_{k=1}^\infty 
+% (\Lambda 2^k)^{s-\frac 1 2}\vrac{f}_{(2,\infty),A^k_{\Lambda,r}}.
+% \]
+% Here, we set
+% \[
+%  A^k_{\Lambda,r} := B_{2^{k} \Lambda r} \backslash B_{2^{k-1} \Lambda r}.
+% \]
+% \end{lemma}
+% 
+% \begin{proof}
+% Using the triangle inequality we first get
+% \begin{equation*}
+%  \vrac{\lapms{s} f}_{(\frac{2}{1-2s},\infty),B_r} \aleq
+% \vrac{\lapms{s} \chi_{B_{\Lambda r}}f}_{(\frac{2}{1-2s},\infty),B_r}
+% + \sum_{k=1}^\infty \vrac{\lapms{s} \chi_{\eta^k_{\Lambda}}f}_{(\frac{2}{1-2s},\infty),B_r}
+% \end{equation*}
+% 
+% By Sobolev's inequality, the first term can be estimated by
+% \[
+%  \vrac{\lapms{s} \chi_{B_{\Lambda r}}f}_{(\frac{2}{1-2s},\infty),B_r} \aleq \vrac{f}_{(2,\infty),B_{\Lambda r}}.
+% \]
+% For the second term we get using Lemma~\ref{lem:QuasiLocality} that
+% \begin{align*}
+%   \vrac{\lapms{s} \chi_{\etA^k_{\Lambda,r}}f}_{(\frac{2}{1-2s},\infty),B_r} &
+%   \aleq (\Lambda 2^k r)^{-1+s} r^{1/2- s}(\Lambda r 2^k)^{1/2}\|f\|_{2,\infty; A^k_{\Lambda,r}}
+%   \aleq (\Lambda 2^k)^{-1/2+s}
+%  \end{align*}
+% which finishes the proof.
+% \end{proof}
+% 
+% \begin{remark}
+%  Note that $\displaystyle\sum_{l=1}^\infty\Lambda^{-\theta l}\norm{u}_{(p,q),B_{\Lambda^kr}}
+%  \approx\sum_{l=1}^\infty\tilde\Lambda^{-\tilde \theta l}\norm{u}_{(p,q),B_{\Lambda^kr}}$.
+% \end{remark}
+
+
+
+\subsection{Iteration lemma}
+
+In order to prove Dirichlet growth, we need an iteration lemma
+whose proof is based on the technique presented in~\cite[\href{http://www.math.ucla.edu/~tao/254a.1.01w/notes4.dvi}{notes4}, p.~11]{TaoLectures}.
+The statement is also similar to the corresponding one appearing in~\cite{DR11Sphere}.
+One should see this as a generalized version of De Giorgi's Iteration Lemma, cf., e.g., \cite{GiaquintaMI}.
+
+\begin{lemma}[Iteration lemma] \label{lem:IterationLemma}
+ Let $C<\infty$ and $\theta >0 $ be given.
+
+ If $b_k\geq 0$, $k \in \mathbb N_0$, satisfy
+ \begin{equation} \label{eq:Iteration}
+  b_{k+m} \leq \varepsilon b_{k} +
+    C\left(2^{-\theta (k+m)} + 2^{-\theta m}\sum_{l=1}^k 2^{-\theta l} b_{k-l}\right)  
+ \end{equation}
+ for all $k \in \mathbb N_0$ and $\varepsilon>0$ is small enough, $m$ is 
+ big enough, then
+ \begin{equation*}
+  b_k \aleq 2^{-\tilde \theta k} 
+ \end{equation*}
+ for all $k\in \mathbb N_0$ with $\tilde \theta = \theta /2$.
+\end{lemma}
+
+\begin{proof}
+ We will prove that
+ \begin{equation} \label{eq:sumConverges}
+   \sum_{k=0}^\infty 2^{\tilde \theta k} b_k \leq C\sum_{l=0}^m 2^{\tilde \theta l} b_l+ C.
+ \end{equation}
+ Especially, the infinite sum converges and hence the summands
+ are a null series, which proves the lemma.
+
+  Multiplying Equation~\eqref{eq:Iteration} with $2^{\tilde \theta k}$,
+  and summing over $k$ we get 
+ \begin{align*}
+    2^{-\tilde \theta m} \sum_{k=0}^\infty {2}^{\tilde \theta (k+m)} b_{k+m}
+     &\leq \varepsilon \sum_{k=0}^\infty 2^{\tilde \theta k} b_{k} 
+     + C \sum_{k=0}^\infty 2^{-\theta (k+m)} 2^{\tilde \theta k} 
+     + C 2^{-\theta m}\sum_{k=0}^\infty \sum_{l=1}^k 2^{-\theta l} 2^{\tilde \theta k} b_{k-l}\\
+     &\leq \varepsilon \sum_{k=0}^\infty  2^{\tilde \theta k} b_{k}
+     + C 2^{-\theta m} \sum_{k'=0}^\infty \sum_{l=1}^\infty 2^{-\theta l} 2^{\tilde \theta (k'+l)} b_{k'} 
+     + C 2^{-\theta m} \\
+     &\leq \varepsilon \sum_{k=0}^\infty 2^{\tilde \theta k} b_{k}
+     + \tilde C 2^{-\theta m} \sum_{k'=0}^\infty 2^{\tilde \theta k'} b_{k'}
+     + C 2^{-\theta m}.
+ \end{align*}
+  Assuming that $m$ is so large that
+  $\tilde C 2^{-m(\theta  -\tilde \theta)} = \tilde C 2^{-\frac{m\theta}2} < 1/4$ and $0<\varepsilon<\frac 1 {4} 2^{-\theta m}$
+  we get
+ \begin{align*}
+   \sum_{k=0}^\infty 2^{\tilde \theta k} b_k 
+  \leq \frac 1 2 \sum_{k=0}^\infty 2^{\tilde \theta k} b_k  + \sum_{l=0}^m  2^{\tilde \theta l} b_l+ C
+ \end{align*}
+ and hence
+ \begin{equation*}
+  \sum_{k=0}^\infty 2^{\tilde \theta k} b_k \leq C \sum_{l=0}^m 2^{\tilde \theta l}b_l + C
+ \end{equation*}
+ if the infinite series converges. 
+ If the sum is not known to converge, we apply the above argument to the cut-off series
+ \begin{equation*}
+  \begin{cases}
+   \tilde b_k =b_k &\text{ if } k \le N, \\
+   \tilde b_k = 0 &\text{ else}
+  \end{cases}
+ \end{equation*}
+ and get the uniform bound
+ $
+  \sum_{k=0}^N  2^{\tilde \theta k} b_k \aleq \sum_{l=0}^m 2^{\tilde\theta l} b_l+ 1.
+ $
+  Letting $N \rightarrow \infty$ we get \eqref{eq:sumConverges}.
+\end{proof}

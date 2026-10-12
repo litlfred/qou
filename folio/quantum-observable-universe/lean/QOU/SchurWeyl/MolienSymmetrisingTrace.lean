@@ -27,7 +27,7 @@ symmetrising trace `τ(T_w) = δ_{w,1}`.**
 * `sum_dim_molienWeight_eq_one`, `sum_addable_molienWeight` — normalisation and branching
   (generic field, `Q` not a root of unity).
 * `SeminormalRep.markov_molienWeight` — the Markov corner identity at `z = 0`.
-* `SeminormalRep.molienMarkovTrace : MarkovTraceFamily ℝ q q⁻¹ 0`.
+* `SeminormalRep.molienMarkovTrace : MarkovTraceFamily K q q⁻¹ 0`, over any field `K`.
 * `SeminormalRep.molienMarkovTrace_symmetrising` — on the coset basis it is `1` at the identity
   and `0` elsewhere; `SeminormalRep.eq_molien_of_zero` — every `z = 0` Markov trace equals it.
 
@@ -51,8 +51,8 @@ the general-`z` Ocneanu corner identity, which is not proved in the corpus.
 
 ## Base ring (§7c)
 
-Generic `[Field F]` for the weight identities; `ℝ` only where the seminormal representations
-(and hence the trace) are built.
+Generic `[Field F]` throughout; the seminormal representations, and hence the trace, are built
+over any field with `q ≠ 0` not a root of unity.  No ordering, no `ℝ`.
 
 LaTeX label: `thm:molien-symmetrising-trace`
 -/
@@ -218,42 +218,44 @@ end Generic
 
 namespace SeminormalRep
 
+variable {K : Type*} [Field K]
+
 open QOU.SchurWeyl.TableauCells QOU.SchurWeyl.Seminormal QOU.SchurWeyl.HeckeInclusion
 
 /-- **The Markov corner identity for the Molien weight, at `z = 0`.** -/
-theorem markov_molienWeight (q : ℝ) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
-    {m : ℕ} (y : Hecke ℝ q q⁻¹ m) :
+theorem markov_molienWeight (q : K) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
+    {m : ℕ} (y : Hecke K q q⁻¹ m) :
     ∑ L : {ρ : YoungDiagram // ρ.cells.card = m + 2},
         molienWeight (q ^ 2) L.1
-          * ((seminormalRep q hq hq2 (m + 1) L.2 (heckeIncl ℝ q q⁻¹ m y))
+          * ((seminormalRep q hq hq2 (m + 1) L.2 (heckeIncl K q q⁻¹ m y))
               * genMat q (m + 1) (by omega) L.2.ge).trace
       = 0 * ∑ ν : {ν : YoungDiagram // ν.cells.card = m + 1},
           molienWeight (q ^ 2) ν.1 * (seminormalRep q hq hq2 m ν.2 y).trace := by
   rw [zero_mul]
   exact sum_molienWeight_mul_eq_zero (q ^ 2) q (pow_ne_zero 2 hq) hq
-    (realGen_of_sq_ne_one hq hq2)
-    (fun L => ((seminormalRep q hq hq2 (m + 1) L.2 (heckeIncl ℝ q q⁻¹ m y))
+    (gen_of_notRootOfUnity hq2)
+    (fun L => ((seminormalRep q hq hq2 (m + 1) L.2 (heckeIncl K q q⁻¹ m y))
       * genMat q (m + 1) (by omega) L.2.ge).trace)
     (fun ν => (seminormalRep q hq hq2 m ν.2 y).trace)
-    (fun r hr => markov_wenzlWeight q hq hq2 (realGen_of_sq_ne_one hq hq2) hr y)
+    (fun r hr => markov_wenzlWeight q hq hq2 (gen_of_notRootOfUnity hq2) hr y)
 
 /-- **The Molien Markov trace**: the seminormal trace weighted by `M_μ(q²)`, a Markov trace with
 parameter `z = 0`. -/
-noncomputable def molienMarkovTrace (q : ℝ) (hq0 : q ≠ 0)
-    (hq2 : GenericParameter.NotRootOfUnity q) : HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ 0 :=
+noncomputable def molienMarkovTrace (q : K) (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) : HeckeCoset.MarkovTraceFamily K q q⁻¹ 0 :=
   markovTraceOfWeight q hq0 hq2 (molienWeight (q ^ 2)) 0
     (fun n => sum_dim_molienWeight_eq_one (q ^ 2) (pow_ne_zero 2 hq0)
-      (realGen_of_sq_ne_one hq0 hq2) n)
+      (gen_of_notRootOfUnity hq2) n)
     (fun ν => sum_addable_molienWeight (q ^ 2) (pow_ne_zero 2 hq0)
-      (realGen_of_sq_ne_one hq0 hq2) ν)
+      (gen_of_notRootOfUnity hq2) ν)
     (fun _ y => markov_molienWeight q hq0 hq2 y)
 
-theorem molienMarkovTrace_tr (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) :
+theorem molienMarkovTrace_tr (q : K) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) :
     (molienMarkovTrace q hq0 hq2).tr = wtraceW q hq0 hq2 (molienWeight (q ^ 2)) := rfl
 
 /-- **Molien equals the symmetrising trace.**  On the coset basis of every `H_n(q)`, the
 Molien-weighted seminormal trace is `1` at the identity and `0` at every other element. -/
-theorem molienMarkovTrace_symmetrising (q : ℝ) (hq0 : q ≠ 0)
+theorem molienMarkovTrace_symmetrising (q : K) (hq0 : q ≠ 0)
     (hq2 : GenericParameter.NotRootOfUnity q) (m : ℕ) (p : HeckeCoset.cosetIndex m) :
     (p = HeckeCoset.cosetOne m →
         wtraceW q hq0 hq2 (molienWeight (q ^ 2)) m (HeckeCoset.cosetFam m p) = 1) ∧
@@ -262,14 +264,14 @@ theorem molienMarkovTrace_symmetrising (q : ℝ) (hq0 : q ≠ 0)
   (molienMarkovTrace q hq0 hq2).tr_cosetFam_eq_delta m p
 
 /-- **Every `z = 0` Markov trace is the Molien-weighted seminormal trace.** -/
-theorem eq_molien_of_zero (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
-    (T : HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ 0) (n : ℕ) (x : Hecke ℝ q q⁻¹ n) :
+theorem eq_molien_of_zero (q : K) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
+    (T : HeckeCoset.MarkovTraceFamily K q q⁻¹ 0) (n : ℕ) (x : Hecke K q q⁻¹ n) :
     T.tr n x = wtraceW q hq0 hq2 (molienWeight (q ^ 2)) n x :=
   HeckeCoset.markovTrace_unique T (molienMarkovTrace q hq0 hq2) n x
 
 /-- **Molien is the `z = 0` Ocneanu trace** — the same statement read through
 `ocneanuWeight_zero_eq_molienWeight`. -/
-theorem wtraceW_ocneanu_zero_eq_molien (q : ℝ) (hq0 : q ≠ 0)
+theorem wtraceW_ocneanu_zero_eq_molien (q : K) (hq0 : q ≠ 0)
     (hq2 : GenericParameter.NotRootOfUnity q) :
     wtraceW q hq0 hq2 (ocneanuWeight q 0) = wtraceW q hq0 hq2 (molienWeight (q ^ 2)) := by
   congr 1

@@ -1,0 +1,64 @@
+
+
+\def\filename{varthm.sty}
+\def\filedate{26.1.96}
+\def\fileversion{v1.28}
+
+{\catcode`\:=\active\let:\relax
+\typeout{File `\filename' : another theorem style for
+LaTeX 2.09 <\filedate> (AS)}}
+
+
+
+\let\ea\expandafter
+\let\nx\noexpand
+
+% save `@ catcode
+\ea\xdef\csname @tempcat\endcsname{\nx\catcode`\nx\@=\the\catcode`\@}
+
+\makeatletter
+
+%\endinput
+
+
+\def\@tmpthm#1{\@thmtrue\setbox\@tempboxa=\hbox
+{#1}\dimen@\wd\@tempboxa}
+
+\newif\if@thm
+
+\let\old@begintheorem\@begintheorem
+\def\@begintheorem#1#2{\@tmpthm{\hskip\labelsep{\bf #1\ #2}}%
+\old@begintheorem{#1}{#2}}
+
+\let\old@opargbegintheorem\@opargbegintheorem
+\def\@opargbegintheorem#1#2#3{\@tmpthm{{\bf #1\ #2\ }}%
+\old@opargbegintheorem{#1}{#2}{#3}}
+
+\let\old@endtheorem\@endtheorem
+\def\@endtheorem{\@thmfalse\old@endtheorem}
+
+\let\old@newthm\newtheorem
+\def\newtheorem{\@ifnextchar>{\xx@newthm}{\old@newthm}}
+
+\def\xx@newthm>#1{\ea\let\csname thm@@#1\endcsname\@empty
+%\typeout{ theorem #1 with indentation }%
+\old@newthm{#1}}
+
+\let\old@trivlist\trivlist
+\def\trivlist{\old@trivlist\if@thm
+   \ea\ifx\csname thm@@\@currenvir\endcsname\@empty
+     \leftmargin\dimen@
+     \labelwidth\dimen@\rightmargin \z@
+     \advance \linewidth -\rightmargin \advance \linewidth -\leftmargin
+     \advance\@totalleftmargin \leftmargin \parshape \@ne
+     \@totalleftmargin \linewidth\@thmfalse
+   \fi
+ \fi}
+
+
+\@tempcat
+
+% that's all
+
+\endinput
+
