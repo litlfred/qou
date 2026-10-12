@@ -169,7 +169,13 @@ molecules, e.g. C + O → CO), the cost of "solving" sub-computations grows. Und
 disjoint-block law a chain of already-solved pieces joined by single-crossing letters
 needs only each piece's trace and one Markov value per bond: the composite trace is
 `μ₁ μ₂ · tr a · tr b · tr c`. The cost of a composite is the sum of its parts' costs plus
-`O(#bonds)`; what grows up the tower is only what a deeper window (Part E) must see. -/
+`O(#bonds)`; what grows up the tower is only what a deeper window (Part E) must see.
+
+Prior art: the same law was MEASURED on the production chains,
+`tr(atom)/tr(free) = ∏(z_D + d_kind)` to 1e-50 on D, T, ³He, ⁴He
+(`docs/audits/2026-09-16-sdp-analysis-entangled-deviation-and-light-cone-recursion.md`).
+`chain3_trace` derives it from the disjoint-block law, which the corpus holds conditional on
+`TowerSpan`; it does not remove that condition. -/
 
 /-- A single-crossing bond letter at generator `n`. -/
 def bondLetter (n : ℕ) (α β γ : R) : A := algebraMap R A α + β • T.g n + γ • T.ginv n
