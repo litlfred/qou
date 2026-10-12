@@ -3373,6 +3373,8 @@ Neutron expansion in `signed_candidates_probe.py` was wrong (uu→dd instead of 
 - Only s = 0 (all collisions on the same three strands, k = 3, 6) confines. Its χ_(2,1) leaves the q = 1 value at h⁴; the climbing placements leave at h¹ or h².
 - Scope (a): rigid shifts with top closing only. Jones pair creation, bottom closing, quarks, gluons and two nucleons were not tested. Selection stays open.
 
+**2026-10-12 — 🟧 OWNER RULING (chat): "every level" means EVERY STRAND COUNT, not only H_{3k}.** Asked in session https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB with two options (1 every strand count m = 3..n; 2 only the nucleus levels H_3, H_6, H_9, …). Owner chose 1. Measured consequence on the #7733 witness: five rows pass at level 3 and fail only at an in-between level (V s=+1 k=2 at 4; V s=+1 k=3 at 5; V s=−1 k=2 at 4; U s=+1 k=2 at 4; U s=−1 k=2 at 4). Under reading 2 they would be admissible; under the ruled reading 1 they are excluded, which is what #7733 reported. None is a genuine cascade (s=+1 telescopes to σ₀σ_k⁻¹; s=−1 k=2 is two collisions sharing two strands). Bean stays open (rule 13a).
+
 ## 2026-10-11 — quark template tracked order by order in q (reading 3)
 
 Probe `computations/probes/quark_template/` (pre-registered at 6b9dd5d172; exact over Q(q); 4/4 checks).
