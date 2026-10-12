@@ -1,6 +1,7 @@
 import QOU.KZ.NonResonantInt
 import QOU.KZ.KZShiftPhi
 import QOU.KZ.GLnKZ
+import QOU.KZ.KZHexagonCentral
 
 /-!
 # Block KZ residues on `V^{⊗N}` and the pentagon for every four-block partition
@@ -235,5 +236,63 @@ theorem pentagon_blocks :
   KZShiftPhi.pentagon_drinfeld _ (blockRes_rel n c B) _ _ _ (nr123 hc B) (nr234 hc B) _ _ _ _
 
 end Blocks
+
+/-! ### The hexagon for three blocks -/
+
+section Hexagon
+
+attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
+
+variable {n N : ℕ} {c : ℂ}
+
+/-- **The central hexagon for three disjoint blocks**, `ℏ` transcendental. With
+`t_{ab} = t_{X_a, X_b}` and `T = t₁₂ + t₂₃ + t₁₃`:
+`e^{−iπℏt₁₂} Φ(ℏt₁₃, ℏt₁₂) e^{−iπℏt₁₃} Φ(ℏt₂₃, ℏt₁₃) e^{−iπℏt₂₃} Φ(ℏt₁₂, ℏt₂₃) = e^{−iπℏT}`. -/
+theorem hexagon_blocks (hc : Transcendental ℚ c) {X1 X2 X3 : Finset (Fin N)}
+    (d12 : Disjoint X1 X2) (d13 : Disjoint X1 X3) (d23 : Disjoint X2 X3) :
+    KZHexagon.eπ (c • tB ℂ n X1 X2) *
+      KZPentagon.Φ (c • tB ℂ n X1 X3) (c • tB ℂ n X1 X2)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _) *
+      KZHexagon.eπ (c • tB ℂ n X1 X3) *
+      KZPentagon.Φ (c • tB ℂ n X2 X3) (c • tB ℂ n X1 X3)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _) *
+      KZHexagon.eπ (c • tB ℂ n X2 X3) *
+      KZPentagon.Φ (c • tB ℂ n X1 X2) (c • tB ℂ n X2 X3)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _)
+        (by rw [tB_intCast]; exact nonResonant_cast hc _) =
+    KZHexagon.eπ (c • tB ℂ n X1 X2 + c • tB ℂ n X2 X3 + c • tB ℂ n X1 X3) := by
+  have nm := @not_mem_of_disjoint N
+  have smc : ∀ {x y : Matrix (Fin N → Fin n) (Fin N → Fin n) ℂ}, Commute x y →
+      Commute (c • x) (c • y) := fun h => (h.smul_left c).smul_right c
+  -- `A = ℏt₁₂` commutes with `ℏ(t₁₃ + t₂₃) = ℏ t_{X₁ ∪ X₂, X₃}`
+  have cA : Commute (c • tB ℂ n X1 X2) (c • tB ℂ n X2 X3 + c • tB ℂ n X1 X3) := by
+    rw [← smul_add, add_comm, ← tB_union_left d12]
+    exact smc (commute_tB_tB (fun a ha b hb => by simp [ha, hb])
+      (fun a ha b hb => by simp [nm d13 ha, nm d23 hb]))
+  have cB : Commute (c • tB ℂ n X2 X3) (c • tB ℂ n X1 X2 + c • tB ℂ n X1 X3) := by
+    rw [← smul_add, ← tB_union_right d23]
+    exact smc (commute_tB_tB (fun a ha b hb => by simp [nm d12.symm ha, nm d13.symm hb])
+      (fun a ha b hb => by simp [ha, hb]))
+  have cC : Commute (c • tB ℂ n X1 X3) (c • tB ℂ n X1 X2 + c • tB ℂ n X2 X3) := by
+    rw [← smul_add, tB_comm X1 X2, ← tB_union_right d13]
+    exact smc (commute_tB_tB (fun a ha b hb => by simp [nm d12 ha, nm d23.symm hb])
+      (fun a ha b hb => by simp [ha, hb]))
+  have h := KZHexagonCentral.hexagon_central (c • tB ℂ n X1 X2) (c • tB ℂ n X2 X3)
+    (c • tB ℂ n X1 X3) (by rw [tB_intCast]; exact nonResonant_cast hc _)
+    (by rw [tB_intCast]; exact nonResonant_cast hc _)
+    (by rw [tB_intCast]; exact nonResonant_cast hc _)
+    (by
+      have e : -(c • tB ℂ n X1 X2) - c • tB ℂ n X2 X3 =
+          c • (Int.castRingHom ℂ).mapMatrix (-(tBZ n X1 X2 + tBZ n X2 X3)) := by
+        rw [tB_intCast, tB_intCast, map_neg, map_add, smul_neg, smul_add]; abel
+      rw [e]; exact nonResonant_cast hc _)
+    (by rw [add_assoc]; exact ((Commute.refl _).add_right cA).symm)
+    (by rw [add_comm (c • tB ℂ n X1 X2), add_assoc]; exact ((Commute.refl _).add_right cB).symm)
+    (by rw [add_comm _ (c • tB ℂ n X1 X3)]; exact ((Commute.refl _).add_right cC).symm)
+  exact h
+
+end Hexagon
 
 end QOU.KZ.BlockResidues
