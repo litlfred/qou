@@ -470,3 +470,9 @@ do with the corpus is put to the owner.
   with 9 ≤ A ≤ 16. Cost grows like Catalan(A): A = 14 takes about 3 min,
   A = 16 about 48 min, in Python. 19F, 20Ne, 40Ar, 40Ca and 60Co are still
   out of reach.
+- 2026-10-12 (owner "1 2 3"): the tower values are written into 49
+  certificates' `tr_markov_d` by `tools/hecke-engine/scripts/attach_tower_trace.py`
+  (textual splice, so nothing else in a file changes; pn checked against
+  `pn_count`). Each value now carries `method`: v9's own trace, or the tower
+  probe's. A Rust port (for 19F/20Ne) and a structure search for A = 40 are
+  under way.

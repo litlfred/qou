@@ -26,5 +26,12 @@
   },
   "l1_norm_f64": 1446678486568884.8,
   "net_f64": -225923132904.17078,
-  "tr_alt_f64": -256161203426.86966
+  "tr_alt_f64": -256161203426.86966,
+  "tr_markov_d": {
+    "computed": false,
+    "reason": "A > 16: beyond the two-row tower probe so far, and v9's build was stripped mid-construction",
+    "z": "q^3/(q^2+1)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "normalisation": "divided by 2^pn_count, like the *_f64 fields"
+  }
 }

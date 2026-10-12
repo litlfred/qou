@@ -26,5 +26,13 @@
     "z": 2
   },
   "net_f64": -0.02841269250403095,
-  "tr_alt_f64": -0.045970971271690746
+  "tr_alt_f64": -0.045970971271690746,
+  "tr_markov_d": {
+    "computed": true,
+    "value": "0.0104298896729138490499174423932312145040676195943813486086985",
+    "method": "two-row seminormal characters up the Hecke tower (computations/probes/markov_trace_two_row_tower_probe.py); agrees with the v9 method to 60 digits on the 12 nuclei both compute",
+    "z": "q^3/(q^2+1)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "normalisation": "divided by 2^pn_count, like the *_f64 fields"
+  }
 }
