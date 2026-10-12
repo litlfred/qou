@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ isolate a valid QOU bearing $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$ constrained by $\mathrm{tr}(\kappa_0) = \chi(A)$.
+Let $(\mathbf{C}, A, \tau)$ isolate a valid QOU whose Reeb bundle $\xi$ over the closed surface $\mathcal{S}$ has class $[\xi] \in H^1(\mathcal{S}, \mathbb{G}_m)$ and first obstruction $\kappa_0 = c_1(\xi) = e(\xi) \in H^2(\mathcal{S}, \mathbb{Z})$, with $\mathrm{tr}(\kappa_0) = \chi(A)$ ([QU-to-QOU](#thm:qu-to-qou), item 2).
 
 The strict Kummer exact sequence evaluated at any integer $n \geq 1$:
 
@@ -10,25 +10,28 @@ $$
 forces a long exact sequence mapping through cohomology:
 
 $$
-  H^2(\mathcal{S}, \mu_n)
-  \to H^2(\mathcal{S}, \mathbb{G}_m)
+  H^1(\mathcal{S}, \mathbb{G}_m)
   \xrightarrow{\cdot n}
-  H^2(\mathcal{S}, \mathbb{G}_m)
-  \to H^3(\mathcal{S}, \mu_n).
+  H^1(\mathcal{S}, \mathbb{G}_m)
+  \xrightarrow{\partial_n}
+  H^2(\mathcal{S}, \mu_n)
+  \to H^2(\mathcal{S}, \mathbb{G}_m) = 0.
 $$
 
-The [specialisation driving $q = 1$](#rem:substrate-gm-torsion) projects cleanly:
+On a closed surface $H^2(\mathcal{S}, \mathbb{G}_m) = 0$, so $\partial_n$ is surjective; its source modulo $n$ is $\mathbb{Z}/n$ via the degree (the degree-zero part of $H^1(\mathcal{S}, \mathbb{G}_m)$ is divisible), and $H^2(\mathcal{S}, \mu_n) \cong \mathbb{Z}/n$. The [specialisation driving $q = 1$](#rem:substrate-gm-torsion) projects cleanly:
 
 $$
   \kappa_0 \mapsto
-  \kappa_0 \bmod n
+  \partial_n[\xi] = \kappa_0 \bmod n
    \in 
-  H^2(\mathcal{S}, \mathbb{G}_m) / nH^2(\mathcal{S}, \mathbb{G}_m).
+  H^2(\mathcal{S}, \mu_n) \cong \mathbb{Z}/n,
 $$
 
-The resulting class avoids zero if and only if $\kappa_0$ resists $n$-divisibility. Evaluated against any QOU with $\chi(A) \neq 0$:
+which is the obstruction to an $n$-th root of $\xi$ ([QU-to-QOU](#thm:qu-to-qou), item 3).
 
-1. The exact specialisation $\kappa_0|_{q=1}$ avoids zero within $H^2(\mathcal{S}, \mathbb{G}_m)/n$ for all integers $n \nmid \chi(A)$.
+The resulting class avoids zero if and only if $n \nmid \kappa_0$, that is, if and only if $\xi$ has no $n$-th root. Evaluated against any QOU with $\chi(A) \neq 0$:
+
+1. The exact specialisation $\kappa_0|_{q=1}$ avoids zero within $H^2(\mathcal{S}, \mu_n)$ for all integers $n \nmid \chi(A)$.
 2. The integer set $\{n : n \nmid \chi(A)\}$ extends to infinity (encompassing all primes not dividing $\chi(A)$), so the obstruction remains **persistently nonzero**, piercing infinitely many levels of the Kummer tower.
 3. The obstruction vanishes only at the finite, isolated Kummer levels $n \mid \chi(A)$, which align with the finite set of roots of unity where the category's truncation is compatible with the fixed Euler class.
 
@@ -65,6 +68,8 @@ $$
 $$
 
 For $\chi(A) = -6$, $2\kappa \mid 6$ permits exclusively $\kappa \in \{1, 3\}$, corresponding to $q = e^{i\pi}$ or $q = e^{i\pi/3}$. At every other valid $\kappa$ (universally capturing all $\kappa \geq 4$), the obstruction fundamentally **persists** squarely at that root of unity.
+
+*Scope of (b).* The identification of the order of the root of unity $q$ with the Kummer level $n$ of the Reeb bundle is asserted, not derived; the arithmetic $2\kappa \nmid 6$ for $\kappa \notin \{1, 3\}$ holds independently of it. The class $\kappa_0 \bmod n$ is a global class on $\mathcal{S}$: its restriction to a one-dimensional locus lies in $H^2(\Sigma, \mu_n) = 0$.
 
 **(c) The limit as kappa goes to infinity.**
 
