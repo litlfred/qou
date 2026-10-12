@@ -54,14 +54,19 @@ quadratic (`KZQuad`), and `kzQuad_holds` then discharges it.
 * `kz_conj_jimbo_pin` — at a real pin `q₀ ≥ 1`, coupling `κ₀ = ln q₀/(2πi)`
   (`kappa_eq`: `κ(t) = −i t/(2π)`), the rescaled KZ generators are simultaneously conjugate to
   Jimbo's `Ř(q₀)`. `qOf_mem`: along the segment `q` is real in `[1, q₀]`.
+* `kz_conj_jimbo_real`, `kz_conj_jimbo_pos` — the same at every real `t`, i.e. every real
+  `q₀ > 0` (rigidity run on `[t, 0]` for `t < 0`).
 
 ## Scope
 
 * Representation space: `V^{⊗(m+1)}`, `V = ℂ²`, i.e. the KZ system with `ρ = permRep`
   (the `gl₂`-type Casimir `P − c` with an arbitrary scalar shift `c`).
-* Couplings: the real-`q` ray `κ = t/(2πi)`, `t ≥ 0`. Other couplings (complex `q`, `|q| ≠ 1`
-  off the ray, or `t < 0`) are not covered; for `t < 0` the same argument applies verbatim on
-  `[t, 0]` but is not stated here.
+* Couplings: the purely imaginary couplings `κ = t/(2πi)`, `t ∈ ℝ`, i.e. every real `q > 0`
+  (`kz_conj_jimbo_real`, `kz_conj_jimbo_pos`). Complex `q` off the positive real axis is not
+  covered.
+* The Jimbo map is `jimboRep`, built here from the universal property; it agrees with
+  `JimboActionKernel.jimbo` on generators, but that identification is not stated in Lean here
+  (that module is not compiled in this container's cache).
 * Conjugacy, not an explicit intertwiner: `U` is produced by rank comparison.
 -/
 
@@ -523,6 +528,91 @@ theorem kz_conj_jimbo_pin (c : ℂ) {q₀ : ℝ} (hq₀ : 1 ≤ q₀) :
   obtain ⟨U, hU⟩ := kz_conj_jimbo_σ' (m := m) c (Real.log_nonneg hq₀)
   refine ⟨U, fun j => ?_⟩
   rw [hU j, qOf_log (lt_of_lt_of_le one_pos hq₀)]
+
+/-! ## Every real `q > 0`: the full real line of couplings
+
+The argument above works on any closed interval containing the base point `t = 0`. Below it is
+run on `[0, t]` for `t > 0` and on `[t, 0]` for `t < 0`, with the unconditional family
+`kzHeckeRep`, so the comparison holds at every `q = e^t > 0`. -/
+
+theorem continuous_kzHeckeRep_σ (c : ℂ) (j : Fin m) :
+    Continuous (fun t => kzHeckeRep m c t (Hecke.σ ℂ (qOf t) (qOf t)⁻¹ m j)) := by
+  have hk := (continuous_kzBraidRep_σ
+    (A := Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)
+    (permRep (R := ℂ) (k := m + 1)) c j).comp continuous_kappa
+  have hc : Continuous (fun t : ℝ => kzScale c t • ((kzBraidRep permRep (kappa t) c (σ j) :
+      (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+        Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)) := by
+    refine Continuous.smul ?_ hk
+    exact Complex.continuous_exp.comp
+      (((continuous_const.mul continuous_kappa).mul continuous_const).mul continuous_const)
+  simpa only [kzHeckeRep_σ] using hc
+
+theorem kzHeckeRep_zero_σ (c : ℂ) (j : Fin m) :
+    kzHeckeRep m c 0 (Hecke.σ ℂ (qOf 0) (qOf 0)⁻¹ m j) =
+      jimboRep (qOf 0) (qOf_ne_zero 0) m (Hecke.σ ℂ (qOf 0) (qOf 0)⁻¹ m j) := by
+  rw [kzHeckeRep_σ, jimboRep_σ]
+  have hs : kzScale c 0 = 1 := by simp [kzScale, kappa_zero]
+  rw [hs, one_smul, kappa_zero, kzBraidRep_zero_σ, permRep_adjSwap, qOf_zero, inv_one]
+
+/-- Rigidity on a closed interval `S` through the base point `0`, given that the points with
+`t ≠ 0` are dense in `S`. -/
+theorem kzHeckeRep_conj_of_interval (c : ℂ) {S : Set ℝ} (hS : IsPreconnected S) (h0 : (0 : ℝ) ∈ S)
+    (hdense0 : S ⊆ closure (S ∩ {x | x ≠ 0})) {t : ℝ} (ht : t ∈ S) (ht0 : t ≠ 0) :
+    ∃ U : (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ, ∀ h,
+      (U : Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) * kzHeckeRep m c t h =
+        jimboRep (qOf t) (qOf_ne_zero t) m h * U := by
+  have hposq : ∀ x ∈ S, ∃ s : ℝ, 0 < s ∧ qOf x = s :=
+    fun x _ => ⟨Real.exp x, Real.exp_pos x, qOf_eq x⟩
+  have hdense : S ⊆ closure (S ∩ {x | GenericParameter.NotRootOfUnity (qOf x)}) := by
+    refine hdense0.trans (closure_mono fun x hx => ?_)
+    exact generic_of_pos (S := S) hposq ⟨hx.1, qOf_ne_one hx.2⟩
+  have hgen : GenericParameter.NotRootOfUnity (qOf t) :=
+    (generic_of_pos (S := S) hposq ⟨ht, qOf_ne_one ht0⟩).2
+  exact conj_of_isPreconnected_hecke (n := m) hS continuous_qOf.continuousOn
+    (fun x _ => qOf_ne_zero x) (sep_of_pos hposq) hdense
+    (kzHeckeRep m c) (fun x => jimboRep (qOf x) (qOf_ne_zero x) m)
+    (fun j => (continuous_kzHeckeRep_σ c j).continuousOn)
+    (fun j => (continuous_jimboRep_σ j).continuousOn)
+    (fun _ => Classical.arbitrary _) (x₀ := 0) h0 1
+    (fun j => by rw [kzHeckeRep_zero_σ c j]; simp) ht hgen
+
+/-- **Kohno comparison at every real coupling `κ = t/(2πi)`, `t ∈ ℝ`** (every real `q = e^t > 0`):
+the KZ representation of `H_{m+1}(q)` on `V^{⊗(m+1)}` is conjugate to Jimbo's. -/
+theorem kz_conj_jimbo_real (c : ℂ) (t : ℝ) :
+    ∃ U : (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ, ∀ h,
+      (U : Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) * kzHeckeRep m c t h =
+        jimboRep (qOf t) (qOf_ne_zero t) m h * U := by
+  rcases lt_trichotomy t 0 with hneg | h0 | hpos
+  · refine kzHeckeRep_conj_of_interval (S := Icc t 0) c isPreconnected_Icc ⟨hneg.le, le_rfl⟩ ?_
+      ⟨le_rfl, hneg.le⟩ hneg.ne
+    calc Icc t 0 = closure (Ico t 0) := (closure_Ico hneg.ne).symm
+      _ ⊆ _ := closure_mono fun x (hx : x ∈ Ico t 0) =>
+        (⟨Ico_subset_Icc_self hx, hx.2.ne⟩ : x ∈ Icc t 0 ∩ {x | x ≠ 0})
+  · subst h0
+    have he : kzHeckeRep m c 0 = jimboRep (qOf 0) (qOf_ne_zero 0) m :=
+      Hecke.hom_ext _ _ _ _ (kzHeckeRep_zero_σ c)
+    exact ⟨1, fun h => by rw [he]; simp⟩
+  · refine kzHeckeRep_conj_of_interval (S := Icc 0 t) c isPreconnected_Icc ⟨le_rfl, hpos.le⟩ ?_
+      ⟨hpos.le, le_rfl⟩ hpos.ne'
+    calc Icc 0 t = closure (Ioc 0 t) := (closure_Ioc hpos.ne).symm
+      _ ⊆ _ := closure_mono fun x (hx : x ∈ Ioc 0 t) =>
+        (⟨Ioc_subset_Icc_self hx, hx.1.ne'⟩ : x ∈ Icc 0 t ∩ {x | x ≠ 0})
+
+/-- **The Kohno comparison at every real `q₀ > 0`.** At the coupling `κ₀ = ln q₀/(2πi)` the
+rescaled KZ generators on `V^{⊗(m+1)}` are simultaneously conjugate to Jimbo's `Ř(q₀)`. -/
+theorem kz_conj_jimbo_pos (c : ℂ) (q₀ : ℝ) (hq₀ : 0 < q₀) :
+    ∃ U : (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ, ∀ j : Fin m,
+      (U : Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) *
+        (kzScale c (Real.log q₀) • ((kzBraidRep permRep (kappa (Real.log q₀)) c (σ j) :
+          (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+          Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)) =
+        strandBraid (q₀ : ℂ) (q₀ : ℂ)⁻¹ j * U := by
+  obtain ⟨U, hU⟩ := kz_conj_jimbo_real (m := m) c (Real.log q₀)
+  refine ⟨U, fun j => ?_⟩
+  have := hU (Hecke.σ ℂ (qOf (Real.log q₀)) (qOf (Real.log q₀))⁻¹ m j)
+  rw [kzHeckeRep_σ, jimboRep_σ, qOf_log hq₀] at this
+  exact this
 
 end Assembly
 
