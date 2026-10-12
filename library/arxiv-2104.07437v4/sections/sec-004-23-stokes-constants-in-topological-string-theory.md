@@ -8,6 +8,7 @@ pages: 10-10
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
 toc_source: outline
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 Stokes constants in topological string theory
 The Stokes constants deﬁned above can be ﬁnite or inﬁnite in number, depending on the cardi-

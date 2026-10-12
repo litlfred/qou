@@ -66,6 +66,7 @@ _site/
 
 # Lean build artifacts (all paper packages + root workspace)
 .lake/
+/.lake
 .lake-build.lock
 lake-packages/
 folio/*/lean/.lake/

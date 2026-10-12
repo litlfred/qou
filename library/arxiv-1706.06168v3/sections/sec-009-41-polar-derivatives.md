@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.986
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the"
 ---
 A crucial tool of classical stability theory is the polar derivative. In particular, this notion leads to Laguerre's theorem (Proposition [\[laguerre_prop\]](#laguerre_prop){reference-type="ref" reference="laguerre_prop"}), which is the main lemma toward Grace's theorem. By passing to homogeneous polynomials the polar derivative becomes conceptually simpler, and this in turn sheds further light on the general connection to $\mathop{\mathrm{SL}}_2(\mathbb{C})$-invariance and the $D$ map. One example of this, as we will see below, is that the polar derivative can be defined as the conjugation of $\partial_x$ by some $\mathop{\mathrm{SL}}_2(\mathbb{C})$ action.
 

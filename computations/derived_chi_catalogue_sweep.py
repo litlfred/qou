@@ -205,7 +205,13 @@ def derive_cell(
         chi_lambda_q_laurent=chi_pairs,
         mu_eigenvalues=["?"],
         # Hoefsmit dim = number of SYT of shape lambda; deferred follow-up.
-        k_lambda=2,  # default; per-atom SDP decides max-|μ| later
+        # 🛑 Default. The "per-atom SDP decides max-|μ| later" that stood here
+        # named a rule that is FITTED, not derived, and mislabelled: see the
+        # `k_λ` note in derived_chi_catalogue.py. The SDP route it defers to is
+        # the off-diagonal-Gram one, still recorded UNTESTED in
+        # docs/coordination/2026-05-10-non-calibrated-q-beta-mass.md. Bean
+        # qou-9f4h.
+        k_lambda=2,
         y_lambda_at_zero="?",  # T18-template extension to atoms is a follow-up
         y_star_shadow_price=None,
         tier="derived",

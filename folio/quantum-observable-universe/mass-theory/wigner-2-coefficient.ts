@@ -10,6 +10,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   authorNotes: [
+    { kind: "caveat", date: "2026-10-11", body: "Scope: this block's $C_\\lambda = w_\\lambda\\,h/2$ is not the coefficient of $-\\Delta_W T(T+1)/A$. Its headline shape $[3,2,1]$ scales as $(Z-N)(A-1)$ (interpretation block) and has three rows, so its Markov weight is zero under convention D. The $h/2$ trace theorem stands. Two inconsistent definitions of $C_\\lambda$ (bean `qou-wg3c`). `prf:unified-iterative-correction` states $C_\\lambda = m_e\\,H_q(\\lambda)$ (the $q$-hook product), while `prop:mass-coefficient-shadow-price` carries $C_\\lambda = w_\\lambda\\,h/2$ as the class field `C_eq`. At $(2,2)$ these give $6.2893$ MeV and $m_e w h/2 = 0.00887$ MeV; no stated map relates them. Neither is derived: the hook value is asserted universal and fails for six of the seven mass-formula coefficients (`qou-orjl`), and the factorisation $u^*_\\lambda = C_\\lambda S_\\lambda(Z,N,A)$ is a class field the stated LP cannot produce, since its dual constraints carry no $(Z,N)$." },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "prop:wigner-2-coefficient",

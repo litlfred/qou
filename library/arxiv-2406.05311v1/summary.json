@@ -2,43 +2,140 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2406.05311v1",
  "source_sha256": "c431fca150329547",
- "brief": "A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE — 5 sections: Introduction; A Murnaghan–Nakayama rule for (cla; A Murnagha",
- "extended": "**A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE**\n\n*C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE*\n\n34 pp, 5 sections.\n\n**Outline.** 1 Introduction; 2 A Murnaghan–Nakayama rule for (classic) coho; 3 A Murnaghan–Nakayama rule for quantum cohomo; 4 Quantum equals classical; 5 Left operators",
+ "brief": "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD — In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small)",
+ "extended": "**Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD**\n\n*C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE*\n\n34 pp, 24 sections.\n\n**Abstract.** In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small) quantum cohomology ring of the ﬂag manifold. As an inter- mediate step, we establish a formula for the multiplication of a Schubert class by a quantum Schur polynomial indexed by a hook partition. This entails a detailed analysis of chains and intervals in the quantum Bruhat order. This analysis allows us to use results of Leung–Li and of Postnikov to reduce quantum products by hook Schur polynomials to the (known) classical product.\n\n**Outline.** Front matter; 1 Introduction; 2.2 k-Bruhat order; 2 A Murnaghan–Nakayama rule for (classic) coho; 2.1 Cohomology of the flag manifold; 2.3 Grassmannian–Bruhat order; 2.4 Minimal permutations; 3 A Murnaghan–Nakayama rule for quantum cohomo; 3.1 Quantum cohomology ring of the flag manifo; 3.2 Quantum k-Bruhat order; 3.3 Minimal intervals; 4 Quantum equals classical; 5 Left operators; 5.1 Definition of the left operators; 5.3 Diagrammatic notation; 5.4 Symmetries of the quantum k-Bruhat order; 5.5 Degree two relations; 5.6 Crossing products\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: in [@LeungLi2012] is their \"quantum equals classical\" result.\n- Proposition: [\\[P:classical_hook\\]](#P:classical_hook){reference-type=\"ref\" reference=\"P:classical_hook\"} may be deduced from a stronger result of Mészáros, Panova, and Postnikov [@MPP Thm. 8].",
  "tokens": {
-  "brief": 50,
-  "extended": 98
+  "brief": 48,
+  "extended": 405
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-a-murnaghan-nakayama-rule-for-classic-cohomology",
+   "id": "sec-001-22-k-bruhat-order",
+   "title": "k-Bruhat order",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-2-a-murnaghannakayama-rule-for-classic-cohomolog",
    "title": "A Murnaghan–Nakayama rule for (classic) cohomology",
-   "pages": "2-8"
+   "pages": "2-3"
   },
   {
-   "id": "sec-002-a-murnaghan-nakayama-rule-for-quantum-cohomology",
+   "id": "sec-003-21-cohomology-of-the-flag-manifold",
+   "title": "Cohomology of the flag manifold",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-23-grassmannianbruhat-order",
+   "title": "Grassmannian–Bruhat order",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-24-minimal-permutations",
+   "title": "Minimal permutations",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-006-3-a-murnaghannakayama-rule-for-quantum-cohomolog",
    "title": "A Murnaghan–Nakayama rule for quantum cohomology",
-   "pages": "8-12"
+   "pages": "8-8"
   },
   {
-   "id": "sec-003-quantum-equals-classical",
+   "id": "sec-007-31-quantum-cohomology-ring-of-the-flag-manifold",
+   "title": "Quantum cohomology ring of the flag manifold",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-008-32-quantum-k-bruhat-order",
+   "title": "Quantum k-Bruhat order",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-009-33-minimal-intervals",
+   "title": "Minimal intervals",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-010-4-quantum-equals-classical",
    "title": "Quantum equals classical",
    "pages": "12-15"
   },
   {
-   "id": "sec-004-left-operators",
+   "id": "sec-011-5-left-operators",
    "title": "Left operators",
-   "pages": "15-34"
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-012-51-definition-of-the-left-operators",
+   "title": "Definition of the left operators",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-013-53-diagrammatic-notation",
+   "title": "Diagrammatic notation",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-014-54-symmetries-of-the-quantum-k-bruhat-order",
+   "title": "Symmetries of the quantum k-Bruhat order",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-015-55-degree-two-relations",
+   "title": "Degree two relations",
+   "pages": "23-26"
+  },
+  {
+   "id": "sec-016-56-crossing-products",
+   "title": "Crossing products",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-017-57-paths",
+   "title": "Paths",
+   "pages": "26-29"
+  },
+  {
+   "id": "sec-018-58-products-of-trees",
+   "title": "Products of trees",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-019-example",
+   "title": "Example",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-020-59-proof-of-theorem-51",
+   "title": "Proof of Theorem 5.1",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-021-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-022-references",
+   "title": "References",
+   "pages": "32-34"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles"
+   "abstract",
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

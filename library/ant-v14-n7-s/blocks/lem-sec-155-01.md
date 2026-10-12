@@ -1,1 +1,1 @@
-], which describes the action of H on the set of rational Lusztig series and will be useful
+For 1 ≤K1 ≤K2 ≤· · · ≤Kn,

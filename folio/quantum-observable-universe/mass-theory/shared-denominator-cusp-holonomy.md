@@ -175,14 +175,71 @@ Two computational witnesses bracket the conjecture's strong form:
   measures the distance between the bare algebraic seeds and SnapPy's
   tetrahedral shape parameters for $\mathtt{m004}$, $\mathtt{m003}$,
   and the Borromean rings $\mathtt{L6a4}$. The bare seeds sit at
-  distance $\sim 0.4$–$0.9$ from SnapPy's $z_k$, so the pole-to-cusp
-  bijection cannot be a literal canonical identity
-  $q_0^{-k} = z_k$. The conjecture must be interpreted as a bijection
-  of **labels** (algebraic-pole index $\leftrightarrow$ cusp index)
-  with the actual shape parameter being a non-trivial function
-  $\tau_{\mathrm{arch}}(q_0^{-k})$ of the algebraic seed; the shape
-  of that function is the subject of further work.
+  distance $\approx 0.4$–$0.9$ from the recorded $z_k$, so the
+  pole-to-shape correspondence is not the literal identity
+  $q_0^{-k} = z_k$. The producer pairs each seed against
+  `M.tetrahedra_shapes`, so what it measures is indexed by
+  **tetrahedron**, not by cusp.
 
 The two witnesses together support the conjecture's *structural*
-content (algebraic poles label cusps) while bounding its *canonical*
-form (the bare $q_0^{-k}$ are not literally the cusp shapes).
+content (algebraic poles label the ideal tetrahedra) while bounding its
+*canonical* form (the bare $q_0^{-k}$ are not literally the shape
+parameters).
+
+### No function of the seed can carry the index
+
+The identity $q_0^{-k} = z_k$ is excluded twice over, and neither
+exclusion needs the distances above.
+
+**It is already a theorem.** `seed_is_not_the_cusp_shape` (sorry-free,
+conditional on the class below) gives $z_k \neq r$ for every real $r$,
+because `im_pos` excludes every real shape and the seeds $q_0^{-k}$ are
+real. So the identity fails for a reason internal to the conjecture.
+
+**The stronger statement is that the shapes do not separate the
+indices at all.** An ideal tetrahedron carries three shape parameters —
+the relabelling orbit $z \mapsto 1/(1-z) \mapsto 1 - 1/z$, which
+`IdealTetrahedron.rotate` realises and `rotate_angles` proves leaves the
+tetrahedron unchanged — so two distinct recorded values may be one
+tetrahedron. Reading the committed witness through that orbit:
+
+| manifold | $n$ roots $q_0^{-k}$, pairwise distinct | distinct recorded values | tetrahedra up to isometry |
+|---|---|---|---|
+| $\mathtt{m004}$ | 2 | 1 | 1 |
+| $\mathtt{m003}$ | 2 | 1 | 1 |
+| $\mathtt{L6a4}$ | 8 | 2 | 1 |
+
+$\mathtt{L6a4}$'s two values $1 + i$ and $(1+i)/2$ lie in one orbit, both
+with dihedral angles $\{\pi/4, \pi/4, \pi/2\}$; $\mathtt{m004}$ and
+$\mathtt{m003}$ are two copies of the regular ideal tetrahedron
+$e^{i\pi/3}$, the orbit's fixed point. The roots are pairwise distinct
+since $q_0 \neq 1$. So on each of these triangulations an assignment
+*seed value* $\mapsto$ *shape* is **constant up to isometry**, and a
+constant map cannot recover $k$.
+
+This excludes every candidate function of the seed value — injective or
+not — on the three triangulations the corpus probes. It is a counting
+argument, and its invariant is the pigeonhole principle on a finite set;
+it does **not** exclude the conjecture.
+
+**What the conjecture asserts is not the shape.** Its displayed
+right-hand side is the pair of holonomies
+$\mathrm{Hol}_{\mu_k}, \mathrm{Hol}_{\lambda_k}$, each a product of
+shape parameters along a meridian or longitude path. A holonomy is
+path-dependent, hence index-dependent even where the shapes are all
+equal — exactly the property the shapes lack. The quantity that tests
+the conjecture is therefore the gluing residual
+$\lvert \mathrm{Hol}_{\mu_k} - 1 \rvert$ evaluated at the algebraic
+seeds, which neither witness computes.
+
+**Two indexings remain in tension and the resolution is open.** The left
+side has $n$ roots with $n$ the partial-product order; the right side is
+indexed by cusps, and the two counts differ on every manifold probed
+above (2 against 1, 2 against 1, 8 against 3). A companion cardinality
+argument reaches the same conclusion from the ideal vertices of a single
+tetrahedron. Substituting "tetrahedron" for "cusp" is not available as a
+repair, since a holonomy is cusp data; for an ideal triangulation of a
+cusped manifold the tetrahedron-indexed gluing data is the **edge**
+equation, with one edge per tetrahedron, and the cusp-completeness
+conditions are the complementary set. Which of these the conjecture
+intends is not settled here.

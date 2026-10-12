@@ -22,7 +22,8 @@ Test various forms via the Plancherel structure.
 
 - queue: research-one-plus-q-over-two-derivation (sibling)
 - queue: research-multi-nucleon-interface-operator
-- prop:option-e-binding-energy (if defined)
+- option-e-binding-energy -- RETIRED, never existed as a block; record in
+  docs/audits/2026-10-11-retired-label-records.md §C
 """
 from __future__ import annotations
 

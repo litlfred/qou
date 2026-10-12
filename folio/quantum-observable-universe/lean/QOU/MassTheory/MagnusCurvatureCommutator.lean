@@ -102,4 +102,43 @@ theorem trace_mul_commSum_eq_zero_of_commute (tr : A →ₗ[R] R)
   intro a _
   rw [hcomm a, sub_self, zero_mul, map_zero]
 
+/-- **The curvature sum is annihilated by every cyclic functional.**  `ρ = 1` in the vanishing
+corollary above: the identity commutes with everything, so `tr (Ω₂) = 0` for ANY cyclic linear
+`tr`, in every representation, with no hypothesis on `tr` beyond cyclicity. -/
+theorem trace_commSum_eq_zero (tr : A →ₗ[R] R)
+    (hcyc : ∀ x y : A, tr (x * y) = tr (y * x)) (σ : ℕ → A) (m : ℕ) :
+    tr (commSum σ m) = 0 := by
+  have h := trace_mul_commSum_eq_zero_of_commute tr hcyc 1 σ m
+    (fun a => by rw [one_mul, mul_one])
+  rwa [one_mul] at h
+
+/-- **(★★) THE `ρ = I` CONTROL IS WEIGHT-BLIND.**  Any two cyclic linear functionals agree on the
+curvature sum — both give zero.  So a control that checks `tr (Ω₂) = 0` at trivial density tests
+**cyclicity and nothing else**: it carries no information whatever distinguishing one weight
+family from another.
+
+Why this is worth stating as a theorem rather than an observation.  The Magnus-Ω₂ sign probes
+(`{deuteron,triton}_magnus_omega2_sign_probe.py`,
+`he4_magnus_omega2_sign_sparse_probe.py`) each report a `ρ = I` control confirming
+`tr(Ω₂) = 0`, and their docstrings correctly read that as *"any nonzero sign REQUIRES the
+density"*.  The tempting further step — that a passing control is evidence the aggregation
+measure is the right one — is what this refutes: the control passes for the quantum Plancherel
+measure and for the Ocneanu/Wenzl family alike, and would pass for any cyclic functional
+whatsoever, including ones nobody would propose.
+
+Consequence for `qou-za3q` decision 1: the weight family cannot be chosen on the strength of
+the control.  It is fixed instead by the Markov-trace characterisation —
+`QOU.SchurWeyl.HeckeCoset.markovTrace_unique` together with
+`QOU.SchurWeyl.SeminormalRep.eq_wtrace_of_markov`, which identify the unique Markov trace at
+`z_D = q³/(q²+1)` with the Ocneanu/Wenzl weighted seminormal trace.
+
+Note the scope precisely: this says the control cannot DISCRIMINATE.  It does not say the
+control is worthless — a control that FAILED would mean the germ or the trace was broken, which
+is exactly how the probes use it. -/
+theorem trace_commSum_indep_of_cyclic (tr₁ tr₂ : A →ₗ[R] R)
+    (h₁ : ∀ x y : A, tr₁ (x * y) = tr₁ (y * x))
+    (h₂ : ∀ x y : A, tr₂ (x * y) = tr₂ (y * x)) (σ : ℕ → A) (m : ℕ) :
+    tr₁ (commSum σ m) = tr₂ (commSum σ m) := by
+  rw [trace_commSum_eq_zero tr₁ h₁ σ m, trace_commSum_eq_zero tr₂ h₂ σ m]
+
 end QOU.MassTheory

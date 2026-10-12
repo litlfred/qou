@@ -1,7 +1,7 @@
 """term7_chi5_basis.py
 
 Computes the **χ_5 partition-weight basis** at q_0 for A ∈ {2..6}
-ahead of the full α_5 fit. Per `conj:shell-correction-term-seven`,
+ahead of the full α_5 fit. Per `shell-correction-term-seven`,
 
   χ_5(T_w) := Σ_{λ ⊢ 3A, ht(λ) = 6} w_λ(q) · χ^λ(T_w)
 
@@ -20,6 +20,11 @@ This script reports:
 
 The α_5 fit will combine this with the χ^λ(T_w) data once the
 tracker extension lands.
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir

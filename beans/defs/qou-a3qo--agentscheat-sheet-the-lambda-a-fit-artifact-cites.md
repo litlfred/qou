@@ -1,13 +1,13 @@
 ---
 # qou-a3qo
 title: 'AGENTS/cheat-sheet: "the lambda_A fit artifact" cites an audit measured 6-of-7 ROBUST'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T18:32:11Z
-updated_at: 2026-10-04T15:11:51Z
+updated_at: 2026-10-12T19:19:18Z
 parent: qou-nu9d
 ---
 
@@ -88,3 +88,26 @@ quoting its size, including when the surface is prose.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-10-12 — closed, premise re-verified on today's main
+
+Salvaged from PR #7392 (opened 2026-09-14, never merged; its base `316eafa36eb`
+is 4 weeks and one tree reorg behind). **The status flip is all that was in it,
+and the flip is still correct** — re-measured on `main` `f2540d77366` rather
+than taken from the stalled PR:
+
+| what #7392 asserted | measured today |
+|---|---|
+| the old *"λ_A fit artifact"* phrasing is gone from the cheat sheet | **0 hits** |
+| the replacement carries the 6-of-7-ROBUST figure | present, line 51, citing `audits/2026-07-17-perknot-density-rerun-execution-and-frame-reassessment.md` |
+| citations re-pointed at the resolution doc | **7** references to `canonical-mass-formula-guardrail.md` |
+| the 2026-06-24 audit still cited, but correctly scoped | yes — *"only localised the candidates"* |
+| this bean still open | `status: todo` on main, so the flip was genuinely unlanded |
+
+**§13a does not block this.** The rule forbids closing a bean whose subject is
+an open conjecture. This bean's subject is a **citation defect** — a link
+pointing at an audit whose measured conclusion ran the other way — which is
+mechanical, and the fix landed in #7389. The three beans #7392 named as staying
+open for §13a reasons (`qou-hjs8`, `qou-fi93`, `qou-brng`) are untouched here.
+
+The "Claim reset 2026-10-04" note above is superseded by this entry.

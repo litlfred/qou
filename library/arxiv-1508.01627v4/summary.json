@@ -2,53 +2,120 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1508.01627v4",
  "source_sha256": "778e60219862e371",
- "brief": "A Murnaghan-Nakayama rule for values of unipotent characters in classical groups — 7 sections: Introduction; Maximal tori in classical groups; A Murnaghan–Nakayama rule",
- "extended": "**A Murnaghan-Nakayama rule for values of unipotent characters in classical groups**\n\n*Frank Lubeck and Gunter Malle*\n\n23 pp, 7 sections.\n\n**Outline.** 1 Introduction; 2 Maximal tori in classical groups; 3 A Murnaghan–Nakayama rule; 4 Vanishing of characters; 5 Simple endotrivial modules; 6 Zeroes of characters of quasi-simple groups; 7 An application to small 1-PIMs",
+ "brief": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
+ "extended": "**REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS**\n\n23 pp, 20 sections.\n\n**Abstract.** We derive a Murnaghan–Nakayama type formula for the values of unipotent characters of ﬁnite classical groups on regular semisimple elements. This relies on Asai’s explicit decomposition of Lusztig restriction. We use our formula to show that most complex irreducible characters vanish on some ℓ-singular element for certain primes ℓ. As an application we classify the simple endotrivial modules of the ﬁnite quasi-simple classical groups. As a further application we show that for ﬁnite simple classical groups and primes ℓ≥3 the ﬁrst Cartan invariant in the principal ℓ-block is larger than 2 unless Sylow ℓ-subgroups are cyclic.\n\n**Outline.** Front matter; 1 Introduction; 2.2 Regular semisimple elements; 2 Maximal tori in classical groups; 2.1 Weyl groups and maximal tori in symplectic; 2.3 Maximal connected reductive subgroups; 3 A Murnaghan–Nakayama rule; 3.1 Lusztig restriction; 3.2 Symbols; 3.3 Unipotent characters of symplectic and ort; 3.4 Values of unipotent characters at regular ; 4.2 Unipotent characters; 4 Vanishing of characters; 4.1 Non-unipotent characters; 5 Simple endotrivial modules; 5.1 On certain unipotent characters; 5.2 Simple endotrivial modules in classical ty; 6 Zeroes of characters of quasi-simple groups\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let ℓ> 2 be a prime and G a ﬁnite quasi-simple group of ℓ-rank at least 3. Then for any\n- Theorem 2: Let G be a ﬁnite quasi-simple group of classical Lie type Bn, Cn, Dn or 2Dn with non-\n- Theorem 3: Let G be a ﬁnite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let ℓ> 2 be a\n- Theorem 7.1: Let G be a ﬁnite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let ℓ> 2 be a\n- Proposition 2: Let G be a ﬁnite simple group of Lie type in characteristic p. Then\n- Lemma 2.1: ) which may be of independent interest.",
  "tokens": {
-  "brief": 42,
-  "extended": 92
+  "brief": 49,
+  "extended": 516
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-maximal-tori-in-classical-groups",
+   "id": "sec-001-22-regular-semisimple-elements",
+   "title": "Regular semisimple elements",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-2-maximal-tori-in-classical-groups",
    "title": "Maximal tori in classical groups",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-21-weyl-groups-and-maximal-tori-in-symplectic-an",
+   "title": "Weyl groups and maximal tori in symplectic and orthogonal groups",
    "pages": "2-5"
   },
   {
-   "id": "sec-002-a-murnaghan-nakayama-rule",
-   "title": "A Murnaghan–Nakayama rule",
-   "pages": "5-9"
+   "id": "sec-004-23-maximal-connected-reductive-subgroups",
+   "title": "Maximal connected reductive subgroups",
+   "pages": "5-5"
   },
   {
-   "id": "sec-003-vanishing-of-characters",
+   "id": "sec-005-3-a-murnaghannakayama-rule",
+   "title": "A Murnaghan–Nakayama rule",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-006-31-lusztig-restriction",
+   "title": "Lusztig restriction",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-32-symbols",
+   "title": "Symbols",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-008-33-unipotent-characters-of-symplectic-and-orthog",
+   "title": "Unipotent characters of symplectic and orthogonal groups",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-009-34-values-of-unipotent-characters-at-regular-sem",
+   "title": "Values of unipotent characters at regular semisimple elements",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-010-42-unipotent-characters",
+   "title": "Unipotent characters",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-011-4-vanishing-of-characters",
    "title": "Vanishing of characters",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-012-41-non-unipotent-characters",
+   "title": "Non-unipotent characters",
    "pages": "9-14"
   },
   {
-   "id": "sec-004-simple-endotrivial-modules",
+   "id": "sec-013-5-simple-endotrivial-modules",
    "title": "Simple endotrivial modules",
-   "pages": "14-17"
+   "pages": "14-14"
   },
   {
-   "id": "sec-005-zeroes-of-characters-of-quasi-simple-groups",
+   "id": "sec-014-51-on-certain-unipotent-characters",
+   "title": "On certain unipotent characters",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-015-52-simple-endotrivial-modules-in-classical-type",
+   "title": "Simple endotrivial modules in classical type groups",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-016-6-zeroes-of-characters-of-quasi-simple-groups",
    "title": "Zeroes of characters of quasi-simple groups",
    "pages": "17-18"
   },
   {
-   "id": "sec-006-an-application-to-small-1-pims",
+   "id": "sec-017-7-an-application-to-small-1-pims",
    "title": "An application to small 1-PIMs",
-   "pages": "18-23"
+   "pages": "18-22"
+  },
+  {
+   "id": "sec-018-references",
+   "title": "References",
+   "pages": "22-23"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles"
+   "abstract",
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

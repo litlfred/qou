@@ -1,6 +1,7 @@
 """α_em substrate Coulomb-channel probe — Item 2 of PR #1708.
 
-`prop:cosh-sinh-q-bridge` (#1417): [n]_q = sinh(nλ)/sinh(λ) where the
+`cosh-sinh-q-bridge` (#1417 -- RETIRED, never existed as a block; record
+    in docs/audits/2026-10-11-retired-label-records.md §C): [n]_q = sinh(nλ)/sinh(λ) where the
 sinh channel is the COULOMB channel and cosh is the confinement
 channel, with q = e^λ ⟹ λ = ln(q).
 
@@ -38,7 +39,7 @@ the self-energy as a separate fermion-loop primitive).
 
 ## Cross-references
 
-- prop:cosh-sinh-q-bridge (#1417)
+- cosh-sinh-q-bridge (#1417; retired -- see above)
 - prop:em-coupling-bring-zero-mode (tree term)
 - alpha_em_multicell_yekutieli_probe.py (Item 1, shift REFUTED)
 """

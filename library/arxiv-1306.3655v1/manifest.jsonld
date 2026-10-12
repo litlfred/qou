@@ -9,9 +9,14 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1306.3655v1",
+  "title": "The Murnaghan-Nakayama rule and some virtual S n characters",
   "contains": [
-    "library/arxiv-1306.3655v1/sections/sec-000"
+    "library/arxiv-1306.3655v1/sections/sec-front-matter",
+    "library/arxiv-1306.3655v1/sections/sec-000",
+    "library/arxiv-1306.3655v1/sections/sec-001",
+    "library/arxiv-1306.3655v1/sections/sec-002",
+    "library/arxiv-1306.3655v1/sections/sec-003",
+    "library/arxiv-1306.3655v1/sections/sec-004"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -24,7 +29,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1306.3655v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1306.3655v1.pdf",
     "source_sha256": "45dd8bd55687ecce543089bb5f7c438a83971069dbb221f8438ab993387c2a5e",
     "pages": 11,
@@ -35,8 +42,8 @@
       "stamp_date": "16 Jun 2013"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

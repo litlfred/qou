@@ -25,9 +25,14 @@ Procedure:
        - t = q_0 ≈ 1.110
   5. Test rel_std of |Δ_λ*(K)| / V(K) across the 4 atoms for each V candidate.
 
-  Ref: [manuscript] conj:delta-lambda-categorical-closure
+  Ref: [manuscript] `delta-lambda-categorical-closure`
   Ref: docs/audits/2026-05-19-delta-lambda-phase2-findings.md
   Ref: docs/coordination/1ppb-categorical-chain.md (Phase 3 result)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

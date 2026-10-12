@@ -1,1 +1,1 @@
-C.2 (N= 1 and d= 1). For all n∈ N∗, we have
+A.9. In depth one and two and for P1 \ {0, 1, ∞}, we have

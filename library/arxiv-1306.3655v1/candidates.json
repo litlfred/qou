@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1306.3655v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "45dd8bd55687ecce543089bb5f7c438a83971069dbb221f8438ab993387c2a5e",
+  "file": "1306.3655v1.pdf"
+ },
+ "provenance": {
+  "title": "The Murnaghan-Nakayama rule and some virtual S n characters",
+  "authors": "Amitai Regev",
+  "arxiv": {
+   "id": "1306.3655",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "16 Jun 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "lemma": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "[\\[uniqueness1\\]](#uniqueness1){reference-type=\"ref\" reference=\"uniqueness1\"} allows us to prove the following formula.",
+   "section_file": "sections/sec-001-21-the-general-construction.md",
+   "section_title": "The general construction",
+   "pages": "2-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

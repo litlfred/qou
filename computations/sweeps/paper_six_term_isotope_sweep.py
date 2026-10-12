@@ -1179,7 +1179,8 @@ def q_beta_full_chain_n4_MeV() -> float:
     """Substrate-derived Q_β with the full N=4 categorical chain.
 
     Per `prop:q-beta-categorical-precision-ladder` + PRs #661, #664,
-    and `prop:kashiwara-jones-c4-categorical`:
+    and the retired `kashiwara-jones-c4-categorical` record (see
+    docs/audits/2026-10-11-retired-label-records.md §D):
 
         Q_β = Q_A · cos(α_N1)
                   · (1 − b²·ℏ_q⁴)              (c_2 = −b², N=2 Kashiwara)
@@ -1200,8 +1201,11 @@ def q_beta_full_chain_n4_MeV() -> float:
     All three of c_2, c_3, c_4 are now categorically derived (no
     empirical fit) per:
       - c_2 = b²     : PR #661 (V_(2,1) Hoefsmit alone)
-      - c_3 = −2     : `prop:hopf-jones-c3-categorical` (V_(2,1) self-fusion)
-      - c_4 = b²+1/2 : `prop:kashiwara-jones-c4-categorical` (cos-tower + half-shift)
+      - c_3 = −2     : retired `hopf-jones-c3-categorical` (V_(2,1) self-fusion)
+      - c_4 = b²+1/2 : retired `kashiwara-jones-c4-categorical` (cos-tower + half-shift)
+      (both never had a block carrier; their witnesses were removed from
+      computations/_deprecated/ in 6333715860 and survive on the
+      cat/cat-harness/fsh-guts branch — see the retired-label record §D)
 
     Story A is falsified at three levels by these proofs; Story B
     (the categorical alternation chain) is the structural account
@@ -1230,7 +1234,7 @@ def q_beta_for_source(source: str) -> float:
       - "codata"          : CODATA Q_NEUTRON_MEV (anchor; default)
       - "form_a_cos"      : Q_A · cos(α_N1) — c_2 only (PR #655 + #661)
       - "full_chain_n4"   : full N=4 categorical chain (PRs #661, #664,
-                            and prop:kashiwara-jones-c4-categorical)
+                            and the retired kashiwara-jones-c4-categorical record)
     """
     if source == "codata":
         return E_0_BETA_DECAY_MEV_DERIV
