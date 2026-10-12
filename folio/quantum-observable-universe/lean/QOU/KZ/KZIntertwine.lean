@@ -112,6 +112,34 @@ theorem Φ_intertwine (A B : Matrix ι ι ℂ) (A' B' : Matrix ι' ι' ℂ) (T :
     zero_add] at hc
   exact (Matrix.fromBlocks_inj.1 hc).2.2.1
 
+/-- **`exp` intertwines.** If `T A = A' T` then `T e^{A} = e^{A'} T`. -/
+theorem exp_intertwine (A : Matrix ι ι ℂ) (A' : Matrix ι' ι' ℂ) (T : Matrix ι' ι ℂ)
+    (hT : T * A = A' * T) :
+    T * NormedSpace.exp ℂ A = NormedSpace.exp ℂ A' * T := by
+  have hpow : ∀ n : ℕ, T * A ^ n = A' ^ n * T := by
+    intro n
+    induction n with
+    | zero => simp
+    | succ n ih => rw [pow_succ, ← Matrix.mul_assoc, ih, Matrix.mul_assoc, hT, ← Matrix.mul_assoc,
+        pow_succ]
+  let Lm : Matrix ι ι ℂ →ₗ[ℂ] Matrix ι' ι ℂ :=
+    { toFun := fun M => T * M, map_add' := Matrix.mul_add T, map_smul' := fun r M =>
+        Matrix.mul_smul T r M }
+  let Rm : Matrix ι' ι' ℂ →ₗ[ℂ] Matrix ι' ι ℂ :=
+    { toFun := fun M => M * T, map_add' := fun M N => Matrix.add_mul M N T,
+      map_smul' := fun r M => Matrix.smul_mul r M T }
+  have hL : Continuous Lm := LinearMap.continuous_of_finiteDimensional Lm
+  have hR : Continuous Rm := LinearMap.continuous_of_finiteDimensional Rm
+  rw [NormedSpace.exp_eq_tsum, NormedSpace.exp_eq_tsum]
+  have e1 : T * (∑' n : ℕ, ((n.factorial : ℂ))⁻¹ • A ^ n) =
+      ∑' n : ℕ, T * (((n.factorial : ℂ))⁻¹ • A ^ n) :=
+    (NormedSpace.expSeries_summable' (𝕂 := ℂ) A).map_tsum Lm hL
+  have e2 : (∑' n : ℕ, ((n.factorial : ℂ))⁻¹ • A' ^ n) * T =
+      ∑' n : ℕ, (((n.factorial : ℂ))⁻¹ • A' ^ n) * T :=
+    (NormedSpace.expSeries_summable' (𝕂 := ℂ) A').map_tsum Rm hR
+  rw [e1, e2]
+  exact tsum_congr fun n => by rw [Matrix.mul_smul, hpow, Matrix.smul_mul]
+
 end Blocks
 
 end QOU.KZ.KZIntertwine
