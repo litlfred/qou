@@ -449,3 +449,33 @@ Not computed: 12B (T_w-basis product exceeded container memory); every
 A > 12 certificate and v9's own 10B/10Be/12B runs strip mid-construction,
 so the stored object is not a product. No certificate data changed; what to
 do with the corpus is put to the owner.
+
+## 2026-10-11 (2) — v9 computes the trace; the 35 are regenerated (#7686, merged)
+
+Owner picks on #7685: delete `tr_markov_f64`, keep the old version on
+fsh-guts, and have v9 compute the real trace. Done, and merged as 33d54fd71b.
+
+- `tr_markov_f64` / `tr_markov_cleared` / `tr_markov_denom_power` are gone from
+  v9 and `certificate.rs`. The removed code and every certificate's old values
+  (before and after regeneration) are on `cat/cat-harness/fsh-guts` at
+  4b5f1247f9, `fsh-guts/deprecated/tools/hecke-engine/v9-tr-markov-zlen/`.
+- v9 now writes `tr_markov_d`: the element is re-expanded in the T_w basis and
+  traced exactly by `tr(x T_{n−1} y) = z·tr(xy)`, as a polynomial in z over
+  ℤ[t, t⁻¹]; then `z = q³/(q²+1)` at the 50-digit proton pin, ÷ 2^pn,
+  60 digits, with the exact terms. A runtime self-check asserts
+  `tr(σ₀σ₁σ₀) = h z² + z`.
+- It is computed only when nothing was stripped mid-construction: **12 of 35**
+  (4H 5H 5He 5Li 6H 7Be 7H 7He 8Be 8H 8He 8Li). All 12 agree with the Python
+  probe to 1e-60 relative. The other 23 record why (stripped, so not the
+  product).
+- All 35 v9 certificates are regenerated with the current crossing at the
+  proton pin. F_Pauli moved by up to three orders of magnitude (8H 0.81 → 1397);
+  word counts grew from A to as many as 23263 (13N). So the 22 fields #7606
+  re-anchored are superseded.
+
+**Still open, so the bean stays `todo`:** the 16 non-v9 certificates
+(`hecke-crt`, `hecke-modular`) that `reanchor_certificates.py` SKIPs still carry
+`*_f64` fields at the 5-digit `1.10998` anchor, and have no exact polynomial to
+re-anchor from; they need their own generators re-run. And 23 v9 nuclei have no
+trace, because v9 strips them; a strip-free build of A ≥ 9 did not fit in memory
+here (12B).

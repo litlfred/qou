@@ -114,7 +114,7 @@ Quotienting by the radical does not solve `G x = nf`; it solves
 projection. **This bean's named fix was refuted eight weeks before my triage
 called the bean live, and the triage did not check the Lean.**
 
-### 3. The committed witness is the frozen pre-guard record — new taxonomy row 57
+### 3. The committed witness is the frozen pre-guard record — new taxonomy row 58 (filed as 57; renumbered at merge, main took 57)
 
 §State reasons that keeping the red avoids the stale-artifact defect (row 10).
 It avoids row 10 and lands in its mirror image. What is on disk is the
@@ -129,7 +129,7 @@ and it is precisely the one that invites the quotient repair. Worse, it cannot
 be corrected: the guard `return 2`s at line ~204 while `WitnessBuilder` is
 constructed at ~359, so **no run of the producer can rewrite its own witness**.
 `scriptHash` drift is detected correctly and AGENTS.md §4's prescribed remedy
-("re-run the producer") is structurally unavailable. Filed as **row 57** of
+("re-run the producer") is structurally unavailable. Filed as **row 58** of
 [`the detector-blindness taxonomy`](../../docs/audits/2026-08-15-detector-blindness-taxonomy.md);
 near neighbour is row 39, and it is not the same failure — there the check
 calls a stale witness fresh, here the check is right and the fix does not

@@ -94,6 +94,12 @@ import QOU.BraidKnot.SupergradientCertificate
 --- `linear_sub_excess_le` is the scalar trade-off; the integrality defect l/4 is why the error
 --- is O(n^{1/4}) and not O(1).
 import QOU.BraidKnot.HardWallProjection
+--- Bounded excess M_n - A sqrt(2n) <= K2 (bean qou-fxym). Both O(n^{1/4}) sources removed:
+--- `rounded_pythagoras` (discrete exchange at the ROUNDED water-fill, energy >= sum d^2 - |d|
+--- with d integer, so `int_tradeoff` pays each coordinate a convergent omega_i), and
+--- `diagonal_exchange` (H = sum over cells of (i+j-1), so an l-row shape pays T_{l-k-1} with no
+--- r), capped by `extra_rows_tradeoff`.
+import QOU.BraidKnot.RoundedWaterfillExchange
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
 -- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is
