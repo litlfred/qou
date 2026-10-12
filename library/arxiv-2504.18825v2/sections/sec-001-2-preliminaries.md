@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2504.18825v2
-doc_title: "MURNAGHAN\u2013NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU"
-section_id: sec-009-preliminaries
+doc_title: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications"
+section_id: sec-001-2-preliminaries
 section_title: "Preliminaries"
 section_number: 2
-pages: 7-12
+pages: 7-11
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
-doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.864
+latex_coverage_ratio: 0.95
+doc_brief: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s"
 ---
 \subsection{Multipartitions and corresponding symmetric functions}
 The terminologies and notations about classical {\it partitions}, such as {\it length, weight, diagram}, etc, can be found in \cite[Chapter I]{Mac}. Now we introduce the corresponding notions and definitions in the context of {\em multipartitions}. A $m$-multipartition (resp. $m$-multicomposition) of $n$ is an ordered tuple $\bm{\la}=(\la^{(1)},\la^{(2)},\cdots,\la^{(m)})$ of partitions (resp. compositions) $\la^{(i)}$ such that $|\bm{\la}|=\sum_{i=1}^{m}|\la^{(i)}|=n$. We denote by $\mathcal{P}_{n,m}$ the set of all $m$-multipartitions of $n$. Let $C_{n,m}$ denote the set of $m$-tuples of nonnegative integers summing to $n$, i.e., an element in $C_{n,m}$ has the form $(c_1, c_2, \cdots, c_m)$ with $c_i$ nonnegative integer such that $\sum_{i=1}^{m}c_i=n$. 

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2504.18825v2
-doc_title: "MURNAGHAN\u2013NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU"
-section_id: sec-008-introduction
+doc_title: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications"
+section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 2-7
+pages: 1-7
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
-doc_brief: "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU — 16 sections: Introduction; Preliminaries; Murnaghan–Nakayama rule for the cy"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.964
+doc_brief: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s"
 ---
 \subsection{Background}\label{ss:Backgroud}
 The Murnaghan--Nakayama rule \cite{Mur,Nak1,Nak2} serves as a combinatorial algorithm for calculating the irreducible characters of symmetric groups $\mathfrak{S}_n$. The Iwahori--Hecke algebra $\mathscr{H}_{n}(q)$ in type $A$, which is the $q$-deformation of $\mathfrak{S}_n$, is a unital associative algebra over the field of rational functions $\mathbb{C}(q)$. Ram \cite{Ram} used the quantum Schur--Weyl duality \cite{Jim} to establish a Frobenius-type character formula for $\mathscr{H}_{n}(q)$, linking it to one-row Hall-Littlewood functions and Schur symmetric functions (see also \cite{KV, KW}). He also introduced the $q$-Murnaghan--Nakayama rule, an iterative combinatorial method for computing irreducible characters using smaller partitions. An alternative approach was explored in \cite{Pfe1}. Recent work \cite{JL1} employed the vertex operator realization of Schur functions to revisit the $q$-Murnaghan--Nakayama rule.
