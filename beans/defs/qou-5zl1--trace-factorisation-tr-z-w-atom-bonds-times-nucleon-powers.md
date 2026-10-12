@@ -36,3 +36,13 @@ lean -DautoImplicit=false -s 65536 exit 0; #print axioms [propext, Classical.cho
 **Not an existence theorem at arbitrary z.** It packages a family; the families proved to
 exist are convention D (`ocneanuMarkovTrace`) and Wenzl level r (`wenzlMarkovTrace`). The
 general-z Markov property of `ocneanuWeight q z` is open (`OcneanuWeight` says so).
+
+## 2026-10-12: step 2 DONE
+
+`QOU/Hecke/MarkovBondLetterColimit.lean`, sorry-free. `tr_bond_letter_colimit` (any family,
+any z): `tr(a (c g_i + d) b) = (c z + d) tr(ab)`. z = 0 check: `…_of_z_eq_zero` gives factor
+`d`, and `tr_bare_bond_colimit_of_z_eq_zero` gives 0 — the same scalars as
+`TauBondLetter.tau_bond_letter` / `tau_bare_bond_eq_zero`. That agreement is in FORM only: τ
+lives on `QOU.Hecke.IwahoriHecke`, the colimit on `QOU.SchurWeyl.Hecke`, and no z = 0 family is
+built on the SchurWeyl tower. Convention D corollary `tr_bond_letter_conventionD`
+(factor `c·q³/(q²+1) + d`, generic field). Axioms clean.
