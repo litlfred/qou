@@ -5,7 +5,7 @@ status: todo
 type: milestone
 priority: critical
 created_at: 2026-10-10T14:43:05Z
-updated_at: 2026-10-12T20:31:54Z
+updated_at: 2026-10-12T20:47:07Z
 ---
 
 Owner goal #1 (ofri, 2026-10-10, verbatim: 'start new session focused ONLY on showing that the trace equals the multiplicative integral. THAT IS PRIMARY GOAL #1 (GOAL #2 is 1ppq L2)').
@@ -27,3 +27,5 @@ Kohno 1987 Remark 1.3.14 (library/kohno1987-aif, p.150): Theorem 1.2.8 holds at 
 2026-10-12 — PR #7744 (Stream 2, session_01A1cKZcfvENVLgchFAKbxC4): the continuous KZ holonomy is no longer cited for the mass identity. QOU.Mass.KohnoWeighted.braidTrace_eq_kz (sorry-free): for every complex coupling kappa with q = e^{2 pi i kappa} not a root of unity, every weight w and every braid beta, braidTrace q q^-1 w wi beta = wi^{m+1} * Tr(siteWeight w * KZ(x_beta)), KZ = kzHeckeC, the Hecke-factored KZ holonomy representation on (C^2)^{tensor (m+1)} (kzBraidRep, rescaled e^{2 pi i kappa c} per crossing), x_beta = beta's image in H_{m+1}(q). Built on kz_conj_jimbo_complex + weight-space rigidity. Bean stays open: Markov's theorem, qou-0fmb, H_n/rad = TL_n, integral = counit for the actual data; roots of unity q != 1 not covered.
 
 2026-10-12 — PR #7772 (Stream 2, owner decision 1c): the mass identity is restated on braid classes. QOU/Torsion/MassTraceMarkovClass.lean (sorry-free, axioms propext/choice/Quot.sound): artinTower (Artin braid groups as a MarkovMoves.BraidTower), jonesTot_isMarkovInvariant (framing-corrected trace at w=(1,q^2) invariant under conjugation and both stabilisations), massClass (descent to Quot), exists_wordBraid (every braid is a word), massClass_wordBraid (mass identity on classes), holTrace_eq_of_markovEquiv. Content: def:mass-identity gains a braid-classes paragraph with one Alexander-Markov citation; prop:categorical-mass-markov statement and proof scope updated. The Markov's-theorem item is thereby discharged on the algebraic side per 1c (links cited only). Bean stays open: qou-0fmb, H_n/rad = TL_n, integral = counit for the actual data.
+
+2026-10-12 (cont.) — PR #7772 commit 8decf48456: QOU.Mass.KohnoWeightedClass.massClass_kz (sorry-free): mass of a braid class = framing-corrected site-weighted trace of the KZ holonomy kzHeckeC of any representative, for q=e^{2 pi i kappa} not a root of unity.
