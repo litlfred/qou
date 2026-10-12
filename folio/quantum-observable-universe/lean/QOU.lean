@@ -1626,6 +1626,7 @@ import QOU.MassTheory.CompositionFeasibilityProgram
 import QOU.MassTheory.RelativeReebDatum
 import QOU.MassTheory.SegmentCollisionDatum
 import QOU.MassTheory.ConvolutionFlowParity
+import QOU.MassTheory.ConvolutionFlowFibre
 import QOU.Brings.BringConjugationChirality
 import QOU.Brings.BringCoverTower
 import QOU.Brings.BringDescendingTower

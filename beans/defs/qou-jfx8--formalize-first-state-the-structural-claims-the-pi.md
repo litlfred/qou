@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T20:21:22Z
+updated_at: 2026-10-12T20:31:47Z
 parent: qou-v2om
 ---
 
@@ -86,3 +86,7 @@ BringUTContactChirality §6–7 + SegmentCollisionDatum Part G (both lean-direct
 
 ## 2026-10-12 — 'flow by the knot convolution operator'
 The convolution letter σ generates the flow σ^t = q^t P_S + q^{−t} e^{±iπt} P_A: on the Alt channel each crossing is a rotation by π, the full twist σ² is one full turn — the algebraic counterpart of the fibre rotation; the ± branch is the chirality, the real part q^{−t}cos(πt) is branch-free. Consequence measured: the A = 2 parity finding is cos(πt) and is scope-limited (see qou-8r6b). Open: identifying the π-per-crossing Alt phase with the geometric fibre rotation of UT(Σ₄) (a conjecture, not proved).
+
+
+## 2026-10-12 — the convolution flow's half-turn IS the fibre rotation of the relative direction (ConvolutionFlowFibre.lean, exit 0)
+Modelling reading (stated): two nearby fibre strands over p and p+r; the relative direction r/|r| is a point of the fibre UT_pΣ₄ (owner's 'relative vector in computation velocity space'). Proved: exchange fixes the centre and sends r ↦ −r (sign rep = q→1 limit of the Alt channel); the half twist r·e^{iπt} is a flow, one half twist = exchange, two = full turn; on a unit r = e^{iθ} it is the fibre Reeb flow θ ↦ θ + πt; the Alt eigenvalue −q⁻¹ has phase π and modulus q⁻¹, and the flow q^{−t}e^{iπt} = q^{−t}·halfTwist t 1. Verdict: the Alt-channel phase of σ^t is the fibre rotation of the relative direction; the q-deformation is pure modulus. Branch fixed by the right-hand rule with strands along +∂θ in the ruled orientation: σ ↔ e^{+iπ}. Not established: a geometric meaning for the modulus q^{−t}; strands not nearby.
