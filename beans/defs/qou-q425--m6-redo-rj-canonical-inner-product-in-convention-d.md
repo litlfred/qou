@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-12T18:26:57Z
+updated_at: 2026-10-12T19:04:05Z
 parent: qou-d8c7
 ---
 
@@ -118,3 +118,16 @@ New file QOU/Archimedean/RossoJonesTorusLink.lean, sorry-free; axioms are only p
 - Probe computations/probes/rj_torus_link_periodic_probe.py does exact Laurent-polynomial arithmetic with ints: 1350/1350 checks pass for r ≤ 6, p ≤ 2r+2. precision-gates.sh could not run in the sparse worktree (mpmath and qou_substrate missing), so its preflight failed and that is not a gate result. The probe contains no float.
 - Verification: lean -DautoImplicit=false -s 65536 exits 0 against a shadow holding JonesNormalForm, MarkovTransfer, TensorMarkovModel, RossoJonesGeneral and RossoJonesMiddle. Those five oleans were missing from the restored cache.
 - Still open: (2) the Schur–Weyl trace split T_m(X) = Σ_j tr(X|W_{r,j}) for q not a root of unity; (3) the modules W_{r,j}. The torus-link result does not depend on either.
+
+
+## 2026-10-12 (later): items (2) and (3) PROVED, except the full-twist scalar (PR #7737, commit 4b3439b86d)
+File: QOU/Archimedean/SchurWeylTrace.lean. Sorry-free; axioms are only propext, Classical.choice and Quot.sound. The hypothesis is QIntNonzero q r, i.e. [k]_q ≠ 0 for 1 ≤ k ≤ r. It covers q = 1 in characteristic 0.
+- (2) trace_split: tr(X|V_m) = Σ_{j≤min(m,r−m)} tr(X|W_{r,j}), with W_{r,j} := ker E ∩ V_{r−j} (Wmod). It holds for every weight-preserving X with XE = EX.
+  - Fm is the lowering operator. Em_Fm_comm and Dg_eq show [E,F] = diag([2·ones − r]).
+  - qZ is the signed q-integer, with qZ_mul and sum_qZ.
+  - Epow_inj: E^k is injective on V_m when 2m+k ≤ r.
+  - Em_transpose: E^T(q) = cmp·E(q⁻¹)·cmp. With a rank argument this gives El_surj on the upper half.
+  - trace_eq_trace_ker_add: trace across an intertwining surjection.
+- (3) Proved: WP_gam and gam_comm_Em; gamW (γ^p on W_{r,j}); T_gam_pow_split; trace_W_gam_pow_split, which says tr(Wγ^p) = Σ_{2j≤r}(Σ_{m=j}^{r−j} q^{2m}) tr(γ^p|W_{r,j}).
+- Probe computations/probes/rj_schur_weyl_trace_split_probe.py: 22504/22504 exact checks pass.
+- STILL OPEN: the full twist γ^r acts on W_{r,j} by a scalar. The probe finds the scalar q^{r(r−1) − 2j(r−j+1)} for r ≤ 6. The proof needs the ribbon element (Δ² as a function of the quantum Casimir via Jucys–Murphy elements) or irreducibility of W_{r,j} under B_r. Neither is formalised.

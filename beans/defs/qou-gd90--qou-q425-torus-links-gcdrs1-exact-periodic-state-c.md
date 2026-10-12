@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:10Z
-updated_at: 2026-10-12T18:27:26Z
+updated_at: 2026-10-12T19:04:04Z
 parent: qou-xhci
 ---
 
@@ -15,3 +15,16 @@ Owner order: (1) gcd>1 torus links, (2) Schur–Weyl trace split under q not a r
 ## 2026-10-12: torus links PROVED (branch claude/rosso-jones-torus-links-2026-10-12, PR #7737)
 The torus-link formula holds for every gcd(r,s). Proof in QOU/Archimedean/RossoJonesTorusLink.lean, sorry-free; the only axioms are propext, Classical.choice and Quot.sound. Full details are in the 2026-10-12 append on qou-q425. Main declarations: T_gam_eq_sum, card_fixSet, T_gam_pow, rossoJones_torusLink, markov_rossoJones_torusLink. The probe computations/probes/rj_torus_link_periodic_probe.py runs 1350 exact checks and all pass.
 Item (1) is done. Items (2), the Schur–Weyl trace split, and (3), the modules W_{r,j}, are still open.
+
+
+## 2026-10-12 (later): items (2) and (3) PROVED, except the full-twist scalar (PR #7737, commit 4b3439b86d)
+File: QOU/Archimedean/SchurWeylTrace.lean. Sorry-free; axioms are only propext, Classical.choice and Quot.sound. The hypothesis is QIntNonzero q r, i.e. [k]_q ≠ 0 for 1 ≤ k ≤ r. It covers q = 1 in characteristic 0.
+- (2) trace_split: tr(X|V_m) = Σ_{j≤min(m,r−m)} tr(X|W_{r,j}), with W_{r,j} := ker E ∩ V_{r−j} (Wmod). It holds for every weight-preserving X with XE = EX.
+  - Fm is the lowering operator. Em_Fm_comm and Dg_eq show [E,F] = diag([2·ones − r]).
+  - qZ is the signed q-integer, with qZ_mul and sum_qZ.
+  - Epow_inj: E^k is injective on V_m when 2m+k ≤ r.
+  - Em_transpose: E^T(q) = cmp·E(q⁻¹)·cmp. With a rank argument this gives El_surj on the upper half.
+  - trace_eq_trace_ker_add: trace across an intertwining surjection.
+- (3) Proved: WP_gam and gam_comm_Em; gamW (γ^p on W_{r,j}); T_gam_pow_split; trace_W_gam_pow_split, which says tr(Wγ^p) = Σ_{2j≤r}(Σ_{m=j}^{r−j} q^{2m}) tr(γ^p|W_{r,j}).
+- Probe computations/probes/rj_schur_weyl_trace_split_probe.py: 22504/22504 exact checks pass.
+- STILL OPEN: the full twist γ^r acts on W_{r,j} by a scalar. The probe finds the scalar q^{r(r−1) − 2j(r−j+1)} for r ≤ 6. The proof needs the ribbon element (Δ² as a function of the quantum Casimir via Jucys–Murphy elements) or irreducibility of W_{r,j} under B_r. Neither is formalised.
