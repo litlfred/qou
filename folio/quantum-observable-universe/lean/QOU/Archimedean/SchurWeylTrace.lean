@@ -359,14 +359,14 @@ theorem Em_Fm_comm (hq : q ≠ 0) (n : ℕ) :
       psi_update_self]
     by_cases hk : b k = 1
     · have hk0 : b k ≠ 0 := by rw [hk]; decide
-      simp only [hk, hk0, h10, h01, if_true, if_false, sub_zero]
+      simp only [hk, h10, if_true, if_false, sub_zero]
       rw [Function.update_eq_self_iff.mpr hk.symm]
       split_ifs <;> ring
     · have hk0 : b k = 0 := by
         rcases Fin.exists_fin_two.mp ⟨b k, rfl⟩ with h | h
         · exact h
         · exact absurd h hk
-      simp only [hk, hk0, h10, h01, if_true, if_false, zero_sub]
+      simp only [hk0, h01, if_true, if_false, zero_sub]
       rw [Function.update_eq_self_iff.mpr hk0.symm]
       split_ifs <;> ring
   simp only [hkk]
@@ -374,6 +374,200 @@ theorem Em_Fm_comm (hq : q ≠ 0) (n : ℕ) :
   · subst hab; simp [Dg]
   · simp [hab]
 
+/-! ## 4. The diagonal of `[E, F]` is the signed quantum integer `[2·ones − N]` -/
+
+theorem psi_castSucc (q : R) {N : ℕ} (k : Fin N) (c : Fin N → Fin 2) (x : Fin 2) :
+    psi q k.castSucc (Fin.snoc c x : Fin (N + 1) → Fin 2) = psi q k c := by
+  rw [psi, Fin.prod_univ_castSucc]
+  simp [Fin.snoc_castSucc, Fin.snoc_last, psi, not_lt.mpr (Fin.castSucc_lt_last k).le]
+
+theorem psi_last (q : R) {N : ℕ} (c : Fin N → Fin 2) (x : Fin 2) :
+    psi q (Fin.last N) (Fin.snoc c x : Fin (N + 1) → Fin 2) = ∏ l, kin q (c l) := by
+  rw [psi, Fin.prod_univ_castSucc]
+  simp [Fin.snoc_castSucc, Fin.castSucc_lt_last]
+
+theorem phiN_castSucc (q : R) {N : ℕ} (k : Fin N) (c : Fin N → Fin 2) (x : Fin 2) :
+    phiN q k.castSucc (Fin.snoc c x : Fin (N + 1) → Fin 2) = phiN q k c * ki q x := by
+  rw [phiN, Fin.prod_univ_castSucc]
+  simp [Fin.snoc_castSucc, Fin.snoc_last, phiN, Fin.castSucc_lt_last]
+
+theorem phiN_last (q : R) {N : ℕ} (b : Fin (N + 1) → Fin 2) : phiN q (Fin.last N) b = 1 := by
+  rw [phiN]
+  exact Finset.prod_eq_one fun l _ => if_neg (not_lt.mpr (Fin.le_last l))
+
+theorem Dg_snoc (q : R) {N : ℕ} (c : Fin N → Fin 2) (x : Fin 2) :
+    Dg q (Fin.snoc c x : Fin (N + 1) → Fin 2)
+      = Dg q c * ki q x + (if x = 1 then 1 else -1) * ∏ l, kin q (c l) := by
+  rw [Dg, Fin.sum_univ_castSucc]
+  simp only [Fin.snoc_castSucc, Fin.snoc_last, psi_castSucc, phiN_castSucc, psi_last, phiN_last,
+    Dg, Finset.sum_mul]
+  congr 1
+  · refine Finset.sum_congr rfl fun k _ => ?_; ring
+  · ring
+
+theorem prod_kin (q : R) {N : ℕ} (c : Fin N → Fin 2) :
+    (∏ l, kin q (c l)) = q ^ (N - ones c) * q⁻¹ ^ ones c := by
+  classical
+  have h : ∀ x : Fin 2, kin q x = if x = 1 then q⁻¹ else q := by
+    intro x; rcases Fin.exists_fin_two.mp ⟨x, rfl⟩ with h | h <;> simp [h, kin]
+  simp only [h]
+  rw [Finset.prod_ite, Finset.prod_const, Finset.prod_const, mul_comm]
+  have := ones_add_zeros c
+  congr 2
+  · omega
+
+/-- **The diagonal of `[E, F]`**: on a state with `o` ones and `z` zeros it is `[o − z]`. -/
+theorem Dg_eq (hq : q ≠ 0) : ∀ (N : ℕ) (b : Fin N → Fin 2), Dg q b = sq q (ones b) (N - ones b)
+  | 0, b => by simp [Dg, sq, ones]
+  | N + 1, b => by
+    have hb := Fin.snoc_init_self b
+    rw [← hb, Dg_snoc, Dg_eq hq N, prod_kin, ones_snoc]
+    have hle := ones_le (Fin.init b)
+    rcases Fin.exists_fin_two.mp ⟨b (Fin.last N), rfl⟩ with h | h
+    · rw [h]
+      simp only [show ((0 : Fin 2) = 1) ↔ False by decide, if_false, add_zero]
+      rw [show N + 1 - ones (Fin.init b) = (N - ones (Fin.init b)) + 1 by omega, sq_succ_right hq]
+      simp [ki]; ring
+    · rw [h]
+      simp only [if_true]
+      rw [show N + 1 - (ones (Fin.init b) + 1) = N - ones (Fin.init b) by omega, sq_succ_left hq]
+      simp [ki]; ring
+
+/-! ## 5. `E` is injective on the lower half -/
+
+open Matrix
+
+/-- `F` lowers the weight by one. -/
+theorem Fm_weight (q : R) {n : ℕ} (a b : Fin (n + 1) → Fin 2) (h : Fm q n a b ≠ 0) :
+    ones a + 1 = ones b := by
+  classical
+  rw [Fm_apply] at h
+  obtain ⟨k, -, hk⟩ := Finset.exists_ne_zero_of_sum_ne_zero h
+  by_cases hb : b k = 1
+  · rw [if_pos hb] at hk
+    by_cases ha : a = Function.update b k 0
+    · subst ha
+      have h0 : Function.update b k 0 k = 0 := Function.update_self _ _ _
+      have := ones_update (Function.update b k 0) k h0
+      rwa [Function.update_idem, Function.update_eq_self_iff.mpr hb.symm, eq_comm] at this
+    · rw [if_neg ha] at hk; exact absurd rfl hk
+  · rw [if_neg hb] at hk; exact absurd rfl hk
+
+/-- A vector supported on the weight-`m` states. -/
+def Supp {n : ℕ} (m : ℕ) (v : (Fin (n + 1) → Fin 2) → R) : Prop := ∀ b, ones b ≠ m → v b = 0
+
+theorem supp_Em {n m : ℕ} (q : R) {v : (Fin (n + 1) → Fin 2) → R} (hv : Supp m v) :
+    Supp (m + 1) (Em q n *ᵥ v) := by
+  intro a ha
+  simp only [Matrix.mulVec, dotProduct]
+  refine Finset.sum_eq_zero fun b _ => ?_
+  by_cases hb : ones b = m
+  · have : Em q n a b = 0 := by
+      by_contra h; exact ha (by rw [Em_weight q a b h, hb])
+    rw [this, zero_mul]
+  · rw [hv b hb, mul_zero]
+
+theorem supp_Fm {n m : ℕ} (q : R) {v : (Fin (n + 1) → Fin 2) → R} (hv : Supp (m + 1) v) :
+    Supp m (Fm q n *ᵥ v) := by
+  intro a ha
+  simp only [Matrix.mulVec, dotProduct]
+  refine Finset.sum_eq_zero fun b _ => ?_
+  by_cases hb : ones b = m + 1
+  · have : Fm q n a b = 0 := by
+      by_contra h; exact ha (by have := Fm_weight q a b h; omega)
+    rw [this, zero_mul]
+  · rw [hv b hb, mul_zero]
+
+theorem Fm_supp_zero {n : ℕ} (q : R) {v : (Fin (n + 1) → Fin 2) → R} (hv : Supp 0 v) :
+    Fm q n *ᵥ v = 0 := by
+  funext a
+  simp only [Matrix.mulVec, dotProduct, Pi.zero_apply]
+  refine Finset.sum_eq_zero fun b _ => ?_
+  by_cases h : Fm q n a b = 0
+  · rw [h, zero_mul]
+  · have := Fm_weight q a b h
+    rw [hv b (by omega), mul_zero]
+
+theorem Dg_mulVec (hq : q ≠ 0) {n m : ℕ} {v : (Fin (n + 1) → Fin 2) → R} (hv : Supp m v) :
+    Matrix.diagonal (Dg q) *ᵥ v = sq q m (n + 1 - m) • v := by
+  funext b
+  rw [Matrix.mulVec_diagonal, Pi.smul_apply, smul_eq_mul]
+  by_cases hb : ones b = m
+  · rw [Dg_eq hq, hb]
+  · rw [hv b hb, mul_zero, mul_zero]
+
+theorem Em_Fm_mulVec (hq : q ≠ 0) {n : ℕ} (v : (Fin (n + 1) → Fin 2) → R) :
+    Em q n *ᵥ (Fm q n *ᵥ v) = Fm q n *ᵥ (Em q n *ᵥ v) + Matrix.diagonal (Dg q) *ᵥ v := by
+  rw [Matrix.mulVec_mulVec, Matrix.mulVec_mulVec, ← Matrix.add_mulVec, ← Em_Fm_comm hq n]
+  abel_nf
+
+/-- The hypothesis replacing "`q` is not a root of unity": `[k] ≠ 0` for `1 ≤ k ≤ r`. -/
+def QIntNonzero (q : R) (r : ℕ) : Prop := ∀ k, 1 ≤ k → k ≤ r → qn q k ≠ 0
+
+/-- **`E` is injective on the lower half**: a weight-`m` vector with `2m < r` killed by `E`
+is zero (`r = n + 1`, `[k] ≠ 0` for `k ≤ r`). -/
+theorem Em_inj (hq : q ≠ 0) {n m : ℕ} (hqn : QIntNonzero q (n + 1)) (hm : 2 * m < n + 1)
+    {v : (Fin (n + 1) → Fin 2) → R} (hv : Supp m v) (hE : Em q n *ᵥ v = 0) : v = 0 := by
+  set w : ℕ → (Fin (n + 1) → Fin 2) → R := fun j => (fun u => Fm q n *ᵥ u)^[j] v with hw
+  have wsucc : ∀ j, w (j + 1) = Fm q n *ᵥ w j := fun j => Function.iterate_succ_apply' _ _ _
+  have hsupp : ∀ j, j ≤ m → Supp (m - j) (w j) := by
+    intro j
+    induction j with
+    | zero => intro _; simpa [hw] using hv
+    | succ j ih =>
+      intro hj
+      rw [wsucc]
+      have := ih (by omega)
+      rw [show m - j = (m - (j + 1)) + 1 by omega] at this
+      exact supp_Fm q this
+  set D := n + 1 - 2 * m with hD
+  have hc : ∀ j, j ≤ m → Em q n *ᵥ w (j + 1)
+      = (-∑ i ∈ Finset.range (j + 1), qn q (D + 2 * i)) • w j := by
+    intro j
+    induction j with
+    | zero =>
+      intro _
+      rw [wsucc, Em_Fm_mulVec hq, show w 0 = v from rfl, hE, Matrix.mulVec_zero, zero_add,
+        Dg_mulVec hq hv]
+      congr 1
+      simp only [sq]
+      rw [if_neg (by omega), show n + 1 - m - m = D by omega]
+      simp
+    | succ j ih =>
+      intro hj
+      rw [wsucc (j + 1), Em_Fm_mulVec hq, ih (by omega), Matrix.mulVec_smul, ← wsucc,
+        Dg_mulVec hq (hsupp (j + 1) hj), ← add_smul]
+      congr 1
+      rw [Finset.sum_range_succ _ (j + 1)]
+      simp only [sq]
+      rw [if_neg (by omega), show n + 1 - (m - (j + 1)) - (m - (j + 1)) = D + 2 * (j + 1) by omega]
+      ring
+  have hcne : ∀ j, j ≤ m → (-∑ i ∈ Finset.range (j + 1), qn q (D + 2 * i)) ≠ 0 := by
+    intro j hj
+    rw [neg_ne_zero, sum_qn q hq D (by omega) (j + 1)]
+    exact mul_ne_zero (hqn _ (by omega) (by omega)) (hqn _ (by omega) (by omega))
+  have htop : w (m + 1) = 0 := by
+    rw [wsucc]
+    have := hsupp m le_rfl
+    rw [Nat.sub_self] at this
+    exact Fm_supp_zero q this
+  have hdown : ∀ t, t ≤ m + 1 → w (m + 1 - t) = 0 := by
+    intro t
+    induction t with
+    | zero => intro _; simpa using htop
+    | succ t ih =>
+      intro ht
+      have h1 := hc (m - t) (by omega)
+      have hz : w (m - t + 1) = 0 := by
+        rw [show m - t + 1 = m + 1 - t by omega]; exact ih (by omega)
+      rw [hz, Matrix.mulVec_zero] at h1
+      have h2 := (smul_eq_zero.mp h1.symm).resolve_left (hcne (m - t) (by omega))
+      rwa [show m + 1 - (t + 1) = m - t by omega]
+  have := hdown (m + 1) le_rfl
+  rwa [Nat.sub_self] at this
+
 end QOU.Archimedean.SchurWeylTrace
+
+
 
 
