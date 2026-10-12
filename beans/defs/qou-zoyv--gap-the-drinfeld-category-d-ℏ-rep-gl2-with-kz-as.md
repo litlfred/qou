@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:09Z
-updated_at: 2026-10-12T19:33:38Z
+updated_at: 2026-10-12T20:18:03Z
 parent: qou-xhci
 ---
 
@@ -83,6 +83,30 @@ Do not close.
 **Still open.**
 - S2/S3: Mathlib MonoidalCategory/BraidedCategory packaging (design above).
 - S5: twist, twist_tensor, twist_dual.
+- S6: the ribbon_hecke application.
+
+Do not close.
+
+## 2026-10-12 (later) — S2 DONE (PR #7743, head 84dca08885). D_ℏ is a Mathlib MonoidalCategory.
+
+**Hypothesis.** instance MonoidalCategory (QOU.KZ.Drinfeld.DH c) for [Fact (Transcendental ℚ c)]. Sorry-free; #print axioms gives [propext, Classical.choice, Quot.sound].
+
+**Construction.**
+- Objects: tensor words in V = ℂ² (Obj); legs are Sum types.
+- Morphisms: sl₂-equivariant matrices.
+- ⊗: Kronecker product.
+- Associator: α = reidx(sumAssoc) · Φ_KZ(ℏ t_{X,Y}, ℏ t_{Y,Z}), where t_{X,Y} are block Casimirs (sums of flips).
+- Unitors: reindexing.
+
+**Proofs.**
+- pentagon_mat: reindexings are moved left with reidx_ΦB (via Φ_intertwine); whiskers are handled by map_Φ through the algebra maps X ↦ X⊗1 and X ↦ 1⊗X; what remains is BlockResidues.pentagon_blocks.
+- natural_mat: flip = sl₂ Casimir + 1/2, so the sl₂ block Casimirs are intertwined by tensor products of equivariant maps. The central-scalar shift (Φ_shift_left/right) plus KZIntertwine.Φ_intertwine finish it.
+- Triangle: Φ(0,0) = 1.
+
+**Still open, in order.**
+- S3: braiding β_{X,Y} = reidx(swap) · e^{iπℏ t_{X,Y}} and the Mathlib hexagons, from hexagon_blocks plus shift invariance.
+- S4 packaging: duals for every object, not only V. Note the duals of V exist only for |ℏ| ≤ 1/12 (ZigZag), so D_ℏ with RightRigid needs both |ℏ| ≤ 1/12 and ℏ transcendental, unless non-resonance is handled otherwise.
+- S5: twist.
 - S6: the ribbon_hecke application.
 
 Do not close.
