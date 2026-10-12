@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-11T07:42:51Z
+updated_at: 2026-10-12T18:26:57Z
 parent: qou-d8c7
 ---
 
@@ -104,3 +104,17 @@ New QOU/Archimedean/RossoJonesMiddle.lean. It is sorry-free and works over a gen
 - markov_rossoJones: the same, for every normalised cyclic Markov trace with z_D on any Hecke family, for coprime (r, s). Open item (1) of the previous entry is therefore CLOSED for coprime (r, s).
 - How it works. gam_eq_G gives an explicit matrix for γ. Three identities hold: γ = ρ + E K, ρ E = E ρ', K E = γ − ρ'. Here E is the U_q(sl2) raising operator and ρ, ρ' are weighted cyclic rotations. pow_decomp turns them into a telescoping identity. That gives T_{m+1}(γ^p) = T_{m+1}(ρ^p) + T_m(γ^p) − T_m(ρ'^p). Under gcd(n+1, p) = 1, rot^p fixes only the constant states, so the middle traces of ρ^p and ρ'^p vanish. Then T_m(γ^p) = q^{np} − (q^{n} q^{-2})^p for every 0 < m < n+1.
 STILL OPEN: the non-coprime case (torus links). The probe shows MiddleWeightTraces FAILS there, so a different statement is needed. Items (2) and (3) of the previous entry are untouched: explicit W_{r,j}, and quantum Schur–Weyl tr_q = Σ_j [j+1] tr_{W_{r,j}} / [2]^r. This bean stays open.
+
+
+## 2026-10-12 — torus links, gcd(r,s) > 1: PROVED (branch claude/rosso-jones-torus-links-2026-10-12, PR #7737, commit bdea7900f1)
+
+New file QOU/Archimedean/RossoJonesTorusLink.lean, sorry-free; axioms are only propext, Classical.choice and Quot.sound.
+- T_gam_eq_sum: T_m(γ^p) = Σ_{j≤m} T_j(ρ^p) − Σ_{j<m} T_j(ρ'^p) for every p. The telescoping step pow_decomp / T_gam_succ never needed coprimality.
+- rho_eq_wRot / rho'_eq_wRot: the weight of ρ (and ρ') at b depends only on (ones b, last letter of b).
+- lastOnes_mul: a double count gives (n+1)·S = p·ones b for every rot^p-fixed b.
+- card_fixSet: #{weight-j states fixed by rot^p} = C(d, j/e) if e | j, else 0. Here d = gcd(n+1,p) and e = (n+1)/d. The proof goes through Bezout and the d-periodic ↔ length-d word bijection perExt/restr.
+- T_gam_pow, rossoJones_torusLink, markov_rossoJones_torusLink: tr(W γ^p) and every Markov trace with z_D on (s0⋯s_{n−1})^p, given as explicit finite sums for ALL (r,s).
+- Closed form (d=gcd(r,p), e=r/d, a=p/d, j=ke): T_j(ρ^p) = C(d,k) q^{a[(r−j−1)(d−k)+(j−3)k]} and T_j(ρ'^p) = C(d,k) q^{a[(r−j−3)(d−k)+(j−1)k]}.
+- Probe computations/probes/rj_torus_link_periodic_probe.py does exact Laurent-polynomial arithmetic with ints: 1350/1350 checks pass for r ≤ 6, p ≤ 2r+2. precision-gates.sh could not run in the sparse worktree (mpmath and qou_substrate missing), so its preflight failed and that is not a gate result. The probe contains no float.
+- Verification: lean -DautoImplicit=false -s 65536 exits 0 against a shadow holding JonesNormalForm, MarkovTransfer, TensorMarkovModel, RossoJonesGeneral and RossoJonesMiddle. Those five oleans were missing from the restored cache.
+- Still open: (2) the Schur–Weyl trace split T_m(X) = Σ_j tr(X|W_{r,j}) for q not a root of unity; (3) the modules W_{r,j}. The torus-link result does not depend on either.
