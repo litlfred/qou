@@ -63,7 +63,7 @@ left here rather than taken on the render-drain PR.
    drafts. Cheapest, and loses nothing that is currently in the paper.
 3. **Park** — leave them and let `block-manifest-audit` keep reporting.
 
-Also debris from the same commit: `content/quantum-observable-universe/mass-endomorphism.ts`
+Also debris from the same commit: `folio/quantum-observable-universe/mass-endomorphism/mass-endomorphism.ts`
 is a stray 1-line file at paper level whose entire content is
 `export * from "./mass-endomorphism/qbeta-toroidal-harmonics-basis";`.
 The real chapter manifest is `mass-endomorphism/mass-endomorphism.ts`

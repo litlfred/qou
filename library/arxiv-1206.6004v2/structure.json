@@ -6,6 +6,11 @@
   "sha256": "b490672c8c3557dda09fc2e7da4095885c3cb4d17a03f7ac7aab54dd82740f3d",
   "bytes": 565648,
   "pages": 20,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:19Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -16,20 +21,27 @@
    "stamp_date": "2 Oct 2012"
   },
   "doi": "10.3842/SIGMA.2012.065",
-  "title": "Bring\u2019s Curve: its Period Matrix and the Vector of Riemann Constants \u22c6",
-  "authors_raw": "Harry W. BRADEN and Timothy P. NORTHOVER",
-  "abstract": "Bring\u2019s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr\u00b4 \u0131guez have provided the most detailed study of the curve thus far via a hyperbolic model. We will recover and extend their results via an algebraic model based on a sextic curve given by both Hulek and Craig and implicit in work of Ramanujan. In particular we recover their period matrix; further, the vector of Riemann constants will be identified.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20181009162518Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  },
+  "title": "Symmetry, Integrability and Geometry: Methods and Applications",
+  "authors_raw": "SIGMA 8 (2012), 065, 20 pages",
   "title_lines": [
-   "Bring\u2019s Curve: its Period Matrix",
-   "and the Vector of Riemann Constants \u22c6"
-  ]
+   "Symmetry, Integrability and Geometry: Methods and Applications"
+  ],
+  "abstract": "Bring\u2019s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr\u00b4\u0131guez have provided the most detailed study of the curve thus far via a hyperbolic model. We will recover and extend their results via an algebraic model based on a sextic curve given by both Hulek and Craig and implicit in work of Ramanujan. In particular we recover their period matrix; further, the vector of Riemann constants will be identified.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181009162518Z"
+  },
+  "title_raw": "Symmetry, Integrability and Geometry: Methods and Applications",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Bring\u2019s Curve: its Period Matrix and the Vector of Riemann Constants \u22c6",
+   "outline": "1 Introduction",
+   "text": "Symmetry, Integrability and Geometry: Methods and Applications",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -37,130 +49,469 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Two sextics",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Dye's sextic",
    "page": 2,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "The Hulek\u2013Craig sextic",
    "page": 3,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Details of the Hulek-Craig curve",
    "page": 3,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Special points of the Hulek\u2013Craig representation and desingularisation",
    "page": 4,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Branched covers of P1",
    "page": 4,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Real paths on the Hulek-Craig curve",
    "page": 5,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "The Riera and Rodr\u00edguez hyperbolic model",
    "page": 6,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Introduction to H",
    "page": 6,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Riera and Rodr\u00edguez basis",
    "page": 7,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Understanding the isomorphism f",
    "page": 9,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Riera and Rodr\u00edguez basis algebraically",
    "page": 12,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Vector of Riemann constants",
    "page": 15,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "The vector of Riemann constants",
    "page": 15,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Symmetries and the vector of Riemann constants",
    "page": 16,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Application to Bring's curve",
    "page": 17,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "References",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Real paths on the Hulek\u2013Craig curve as a branched cover of P1",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Riera and Rodr\u00b4\u0131guez hyperbolic model, H, of Bring\u2019s curve",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Conformal structure of P1, P2 and P3",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Intuitive action of Z near [0, 0, 1]",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Hyperbolic polygonal edges in the Hulek\u2013Craig model",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Values for [x, y, 1] on hyperbolic edges",
+   "page": 12,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "\u03b11 and \u03b12 homology cycles for the Hulek\u2013Craig branched cover. Graphs of subsequent \u03b1i are rotations of these by 2\u03c0i",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1032,
+   "n_words": 152,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -168,8 +519,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3544,
-   "n_words": 622
+   "n_chars": 3562,
+   "n_words": 639,
+   "label_start": null,
+   "label_end": "2"
   },
   {
    "id": "sec-001-2-two-sextics",
@@ -178,8 +531,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1039,
-   "n_words": 225
+   "n_chars": 1061,
+   "n_words": 244,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-22-the-hulekcraig-sextic",
@@ -188,8 +543,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2101,
-   "n_words": 406
+   "n_chars": 2111,
+   "n_words": 412,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-003-31-special-points-of-the-hulekcraig-representati",
@@ -198,8 +555,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 2363,
-   "n_words": 460
+   "n_chars": 2402,
+   "n_words": 496,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-004-32-branched-covers-of-p1",
@@ -208,8 +567,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 5513,
-   "n_words": 1097
+   "n_chars": 5555,
+   "n_words": 1136,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-005-41-introduction-to-h",
@@ -218,8 +579,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 4280,
-   "n_words": 869
+   "n_chars": 4302,
+   "n_words": 887,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
    "id": "sec-006-43-understanding-the-isomorphism-f",
@@ -228,8 +591,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 15,
-   "n_chars": 11273,
-   "n_words": 2323
+   "n_chars": 11396,
+   "n_words": 2446,
+   "label_start": "9",
+   "label_end": "15"
   },
   {
    "id": "sec-007-5-vector-of-riemann-constants",
@@ -238,8 +603,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 2371,
-   "n_words": 442
+   "n_chars": 2384,
+   "n_words": 450,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
    "id": "sec-008-52-symmetries-and-the-vector-of-riemann-constant",
@@ -248,8 +615,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 7934,
-   "n_words": 1615
+   "n_chars": 8007,
+   "n_words": 1687,
+   "label_start": "16",
+   "label_end": "19"
   },
   {
    "id": "sec-009-references",
@@ -258,16 +627,25 @@
    "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 2446,
-   "n_words": 362
+   "n_chars": 2444,
+   "n_words": 360,
+   "label_start": "19",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 18,
-  "sections": 10,
-  "chars_total": 42864,
+  "toc_inferred_entries": 0,
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 44256,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "sigma12-065.tex",
@@ -280,10 +658,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.903,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -291,7 +674,7 @@
      "id": "sec-001-2-two-sextics",
      "title": "Two sextics",
      "prose_ratio": 0.975,
-     "coverage_ratio": 0.741,
+     "coverage_ratio": 0.755,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -299,7 +682,7 @@
      "id": "sec-002-22-the-hulekcraig-sextic",
      "title": "The Hulek\u2013Craig sextic",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.96,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -307,7 +690,7 @@
      "id": "sec-003-31-special-points-of-the-hulekcraig-representati",
      "title": "Special points of the Hulek\u2013Craig representation and desingularisation",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.947,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -315,7 +698,7 @@
      "id": "sec-004-32-branched-covers-of-p1",
      "title": "Branched covers of P1",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.928,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -323,7 +706,7 @@
      "id": "sec-005-41-introduction-to-h",
      "title": "Introduction to H",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.895,
+     "coverage_ratio": 0.904,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -331,7 +714,7 @@
      "id": "sec-006-43-understanding-the-isomorphism-f",
      "title": "Understanding the isomorphism f",
      "prose_ratio": 0.967,
-     "coverage_ratio": 0.946,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -339,7 +722,7 @@
      "id": "sec-007-5-vector-of-riemann-constants",
      "title": "Vector of Riemann constants",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.938,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -347,7 +730,7 @@
      "id": "sec-008-52-symmetries-and-the-vector-of-riemann-constant",
      "title": "Symmetries and the vector of Riemann constants",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.938,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },

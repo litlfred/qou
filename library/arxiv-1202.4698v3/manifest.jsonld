@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1202.4698v3",
+  "title": "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories",
   "contains": [
+    "library/arxiv-1202.4698v3/sections/sec-front-matter",
     "library/arxiv-1202.4698v3/sections/sec-000",
     "library/arxiv-1202.4698v3/sections/sec-001",
     "library/arxiv-1202.4698v3/sections/sec-002",
@@ -35,7 +36,10 @@
     "library/arxiv-1202.4698v3/sections/sec-021",
     "library/arxiv-1202.4698v3/sections/sec-022",
     "library/arxiv-1202.4698v3/sections/sec-023",
-    "library/arxiv-1202.4698v3/sections/sec-024"
+    "library/arxiv-1202.4698v3/sections/sec-024",
+    "library/arxiv-1202.4698v3/sections/sec-025",
+    "library/arxiv-1202.4698v3/sections/sec-026",
+    "library/arxiv-1202.4698v3/sections/sec-027"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -48,7 +52,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1202.4698v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1202.4698.pdf",
     "source_sha256": "54171c652161ca5b3bfd107ccf3504d24fa91944ca3ed60b71945f6cb9f61e62",
     "pages": 32,

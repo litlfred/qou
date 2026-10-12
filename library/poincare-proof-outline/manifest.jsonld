@@ -9,8 +9,9 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "poincare-proof-outline",
+  "title": "Poincaré Disc Model",
   "contains": [
+    "library/poincare-proof-outline/sections/sec-front-matter",
     "library/poincare-proof-outline/sections/sec-000",
     "library/poincare-proof-outline/sections/sec-001",
     "library/poincare-proof-outline/sections/sec-002",
@@ -74,13 +75,18 @@
     "library/poincare-proof-outline/sections/sec-060",
     "library/poincare-proof-outline/sections/sec-061",
     "library/poincare-proof-outline/sections/sec-062",
-    "library/poincare-proof-outline/sections/sec-063"
+    "library/poincare-proof-outline/sections/sec-063",
+    "library/poincare-proof-outline/sections/sec-064",
+    "library/poincare-proof-outline/sections/sec-065",
+    "library/poincare-proof-outline/sections/sec-066"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "poincare-proof-outline",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "POINCARE-proof-outline.pdf",
     "source_sha256": "8ac25ddb38d360b4f314e6b1496f58b46e26f5a0bc13f3a00a90bb13f1e9df4f",
     "pages": 175,

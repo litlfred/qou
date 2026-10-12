@@ -1,19 +1,94 @@
 ---
 doc_id: klein-few-body-systems-in-lattice-effective-field-theory-the
-doc_title: "Few-body systems in lattice effective field theory"
+doc_title: "Few-Body Systems in Lattice Effective Field Theory"
 section_id: sec-003-effective-theory
 section_title: "Effective Theory"
 section_number: null
-pages: 9-11
+pages: 8-11
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Few-body systems in lattice effective field theory — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
+toc_source: outline
 ---
+sector, one has to use diﬀerent methods for the description of many-body physics. The reason is that
+an extension of the corresponding Faddeev-Yakubovsky equations become impractical to solve. There
+are various many-body methods whereas we just name a few in the following. Firstly we have coupled
+cluster theory or shell/no-core shell models, which use phenomenological Lagrangians as input. Secondly,
+there are Green’s function Monte Carlo methods which combine variational methods with Monte Carlo
+methods for the evaluation of integrals. This method is rather successful and details will be given below.
+In this thesis we will use a third approach, namely the nuclear lattice eﬀective ﬁeld theory (NLEFT),
+where the interactions are determined from ab initio 2N and 3N interactions based on chiral eﬀective
+theory. Moreover, the space is discretized, such that a natural cutoﬀΛ arises by the lattice spacing a,
+Λ = π/a and exact methods as well as statistical methods known from Lattice QCD are used for the
+evaluation of binding energies, phase shifts, etc. for two-, few- and many-body problems.
+1.2 Lattice QCD
+Lattice QCD is a non-perturbative method for solving QCD in the low-energy region. Generally, one
+calculates correlation functions in a discretized space-time using Monte Carlo methods. In the following
+2
+1.3 Eﬀective Theory
+we give a very short introduction with a focus on the questions which will arise throughout this thesis. A
+thorough introduction can be found in [2].
+Starting point is the partition function,
+Z =
+Z
+DADΨD ¯Ψ exp
+n
+−S F
+h
+Ψ, ¯Ψ, A
+i
+−S G[A]
+o
+,
+(1.5)
+where A is the gauge ﬁeld, and Ψ the fermion ﬁeld. S F and S G are the fermion and gauge actions. Any
+correlation function of two operators ˆO1, ˆO2 can be calculated by taking its average,
+D ˆO2(t) ˆO1(0)
+E
+= 1
+Z
+Z
+DAµDΨD ¯Ψ ˆO2
+h
+Ψ, ¯Ψ, A
+i ˆO1
+h
+Ψ, ¯Ψ, A
+i
+exp
+n
+−S F
+h
+Ψ, ¯Ψ, A
+i
+−S G [A]
+o
+.
+(1.6)
+where the imaginary time t = iτ has been introduced already for the Euclidean rotation. While the
+Eqs. (1.5) and (1.6) are only formal expression, the respective discretized version is solvable numerically.
+Therefore, we put the system in a box of size Na × Na × Na × NTaT, where a is the spatial lattice spacing
+and aT the temporal lattice spacing. N, NT are the number of nodes in spatial and temporal directions.
+For the discretization, one deﬁnes all ﬁelds and operators on the lattice points and substitutes continuous
+derivatives by ﬁnite diﬀerences. Then one uses Monte Carlo methods to calculate any observables from
+their respective correlation function. In such an approach, we have three main sources of artifacts. Firstly,
+one has to do inﬁnite time extrapolations for observables, where one mostly expects an exponential
+decay and which gives a certain uncertainty. Secondly, the volume L3 may cause an error if it is not
+large enough. Thirdly, the lattice spacing a itself produces a lattice artifact which makes an extrapolation
+to the continuum necessary or to improve the disctretization scheme. In a very simple lattice QCD
+calculation the lattice spacing error is linear, but one can use a diﬀerent discretization scheme or include
+more operators in order to push this error to higher order. Symanzik’s improvement program gives a
+clear strategy to do this [3, 4]. Note that additionally, the quark mass plays an important role for the
+eﬃciency of the algorithm, as one may be forced to do calculations at larger quark/ pion mass Mπ and to
+ﬁnally extrapolate to the physical point. Nowadays, lattice calculations use parameters in the range of
+a ∼0.05 −0.15 fm, L ∼2 −4 fm and Mπ ∼134 −450 MeV. Lattice QCD is mainly successful in the
+description of two-meson or two-baryon physics and in the near future, it may work in the three-body
+sector as well [5–8].
+1.3 Effective Theory
 Eﬀective theory played a role in particle physics already long before the discovery of quarks and the
-full formulation of the standard model. For example, Fermi’s theory of the beta decay [9],n→ pe−¯νe,
+full formulation of the standard model. For example, Fermi’s theory of the beta decay [9], n →pe−¯νe,
 where a neutron decays into a proton, an electron and a neutrino can be understood as an eﬀective theory
 of the standard model. In a modern language, the process is mediated by a W-boson with a mass of
-mW = 80 GeV as shown in Fig. 1.2. As long as we remain in the low-energy regime in which q2≪ m2
+mW = 80 GeV as shown in Fig. 1.2. As long as we remain in the low-energy regime in which q2 ≪m2
 W,
 the propagator can be replaced by a contact interaction that is equivalent to Fermi’s contact interaction.
 In the low-energy limit of quantum chromodynamics a similar approach can be employed. Due to
@@ -25,13 +100,15 @@ low-energy scale.
 For the construction of the new Lagrangian, only the symmetries of QCD must be preserved, which
 3
 Chapter 1 Introduction and Motivation
-≈ 1
+≈
+1
 q2−m2
 W
-≈ − 1
+≈−
+1
 m2
 W
-Figure 1.2: Fermi’s beta decay. Left: Exact picture. Right: Eﬀective picture for q2≪ m2
+Figure 1.2: Fermi’s beta decay. Left: Exact picture. Right: Eﬀective picture for q2 ≪m2
 W.
 leads to the emergence of inﬁnitely many terms and a non-renormalizable theory in general. Once all
 terms are included, one reproduces the underlying theory exactly, as stated by Weinberg [10],
@@ -43,18 +120,18 @@ assumed symmetry principles. "
 Fortunately, not all terms are equally important and a power counting scheme is introduced to classify
 the importance of the terms. Consequently, one has to deal only with a ﬁnite number of terms at each
 order and the theory is exact up to higher-order terms which are truncated. Such a power counting
-expands inO(Q/Λ), where Q is a small expansion parameter with respect to the breakdown scale of the
+expands in O(Q/Λ), where Q is a small expansion parameter with respect to the breakdown scale of the
 theory, Λ. Once a counting scheme is set up, it can be used to classify quantum corrections in the form of
-Feynman loops as well and now it is possible to solve the theory completely up to an accuracy ofO(Q/Λ)
+Feynman loops as well and now it is possible to solve the theory completely up to an accuracy of O(Q/Λ)
 in an energy region below Λ. To be speciﬁc, we start from the Lagrangian written in Eq. (1.2). On the
-one hand, the masses of the u-, d-, and s-quark are given by 2.2 MeV , 4.7 MeV and 96 MeV , and they
-are called light quarks. On the other hand, the masses of the c-, b- and t-quark are given by 1.28 GeV ,
-4.18 GeV and 173.1 GeV , and they are called heavy quarks. As we stay in the low-energy limit, we can
+one hand, the masses of the u-, d-, and s-quark are given by 2.2 MeV, 4.7 MeV and 96 MeV, and they
+are called light quarks. On the other hand, the masses of the c-, b- and t-quark are given by 1.28 GeV,
+4.18 GeV and 173.1 GeV, and they are called heavy quarks. As we stay in the low-energy limit, we can
 neglect the heavy quarks and integrate them out of the theory. Then Eq. (1.2) reduces to the light quark
 sector with f = 1, 2, 3. By assuming the light quark masses to vanish in the so-called chiral limit, a new
-SU(3)L× SU(3)R symmetry emerges in the ﬂavor sector, whose ground state symmetry is spontaneously
+SU(3)L × SU(3)R symmetry emerges in the ﬂavor sector, whose ground state symmetry is spontaneously
 broken to SU(3)V. Over and above neglecting the heavy quark sector, one could integrate out the s-quark
-as well, and we have a SU(2)L× SU(2)R/ SU(2)V symmetry where pions are the respective Goldstone
+as well, and we have a SU(2)L × SU(2)R/ SU(2)V symmetry where pions are the respective Goldstone
 bosons of the theory. With these symmetry groups in mind, one builds up the whole Lagrangian. In
 the meson sector, this work started in the 1980s mainly by Gasser and Leutwyler in the framework of
 chiral perturbation theory (ChPT) [11, 12]. The ﬁrst extension to the two-nucleon sector was done by
@@ -65,9 +142,9 @@ perturbation theory in the meson- and one-nucleon sector is given by [19, 20]. W
 must be formulated relativistically due to the lightness of its constituents, the meson-baryon sector can
 be formulated in both ways, and the nucleon-nucleon sector is formulated non-relativistically.
 In the formulation of the nucleon-nucleon action an important question concerning the scales appears.
-Generally, the scale is set by the breakdown scale of ChPT, ΛChPT∼ 4πF0∼ 1.2 GeV with the pion
-decay constant F0 = 92.1 MeV . However, in most of the reactions vector meson resonances play a role
-although they are not included explicitly. This results in a decrease of validity below theρ resonance,
-Mρ∼ 770 MeV . In the nucleon sector we do not use dimensional regularization or power-divergence
+Generally, the scale is set by the breakdown scale of ChPT, ΛChPT ∼4πF0 ∼1.2 GeV with the pion
+decay constant F0 = 92.1 MeV. However, in most of the reactions vector meson resonances play a role
+although they are not included explicitly. This results in a decrease of validity below the ρ resonance,
+Mρ ∼770 MeV. In the nucleon sector we do not use dimensional regularization or power-divergence
 subtraction schemes for the absorption of possible ultraviolet divergences, but we use a momentum cutoﬀ
 4

@@ -7,10 +7,10 @@ section_number: 1.2
 pages: 4-5
 source_pdf: 0603732v2.pdf
 source_sha256: 3464a2ddc2e54f3a
-doc_brief: "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS — W e show that many noetherian Hopf algebras A have a rigid du- alising complex R with R ∼= ν A1[d]."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
-latex_coverage_ratio: 0.99
+latex_coverage_ratio: 0.971
 ---
 []{#xxsec1.2 label="xxsec1.2"}
 

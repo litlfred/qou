@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-math-0411505v2
-doc_title: "A NON-COMMUT A TIVE FORMULA FOR THE COLORED JONES FUNCTION"
+doc_title: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION"
 section_id: sec-012-72-sortings-and-the-jones-polynomial
 section_title: "Sortings and the Jones polynomial"
 section_number: 7.2
 pages: 13-14
 source_pdf: 0411505v2.pdf
 source_sha256: a38cec365e0a227e
-doc_brief: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.79
-latex_coverage_ratio: 0.97
+latex_coverage_ratio: 0.99
 ---
 \lbl{sub.CJones}
 

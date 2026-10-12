@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1003.4485v2
-doc_title: "email: baez@math.ucr.edu huerta@math.ucr.edu"
+doc_title: "An Invitation to Higher Gauge Theory"
 section_id: sec-004-33-2-groups
 section_title: "2-Groups"
 section_number: 3.3
 pages: 15-21
 source_pdf: 1003.4485v2.pdf
 source_sha256: 714d73873cecd73a
-doc_brief: "An Invitation to Higher Gauge Theory — In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
-latex_coverage_ratio: 0.983
+latex_coverage_ratio: 0.982
 ---
 Just as a group was a groupoid with one object, we define a
 \define{2-group} to be a 2-groupoid with one object.  This definition

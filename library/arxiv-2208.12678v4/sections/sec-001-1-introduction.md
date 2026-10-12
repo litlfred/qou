@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2208.12678v4
-doc_title: "STATIONARY CURVES UNDER THEM ÖBIUS-PLATEAU ENERGY"
+doc_title: "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY"
 section_id: sec-001-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 2208.12678v4.pdf
 source_sha256: 406d36ff4968091d
-doc_brief: "STATIONARY CURVES UNDER THEM ÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.949
+latex_coverage_ratio: 0.984
 ---
 The problem of finding a surface of minimal area bounded by a fixed closed curve, also known as \textit{Plateau's problem}, has captivated mathematicians for over two centuries. A relevant extension to this problem is when the boundary possesses its own energy and is allowed to deform. Since most experimental realizations of Plateau's problem involve films formed by dipping closed loops of wire in soapy water, it is natural to consider boundary curves with elastic energy, defined as the integral of squared curvature. This problem, known now as the \textit{Euler-Plateau} problem has received considerable attention in recent years~\cite{bernatzki2001minimal,giomi2012minimal,gruber21,chen2014stability}. In~\cite{bernatzki2001minimal}, the authors prove the existence of loop configurations that minimize a combination of the elastic energy of curves with preferred curvature and the area of a minimal surface spanning the curve. However, they require strong assumptions to avoid self-contact of the boundary curve during energy minimization. The paper \cite{giusteri2017solution} models the boundary curve as a Kirchhoff rod and find minimizers whose boundary curves can touch without interpenetration of matter.
 

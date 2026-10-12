@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-013-32-polyhedra
 section_title: "Polyhedra"
 section_number: 3.2
 pages: 86-90
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 0.986
 ---
 A polyhedron in $\matH^n$ is a natural geometric object, that may be used to visualise discrete groups in $\Iso(\matH^n)$ and hence hyperbolic manifolds. 
 Polyhedra may sometimes be combined to form some tessellations of the space. 
