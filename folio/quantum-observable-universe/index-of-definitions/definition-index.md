@@ -1262,7 +1262,7 @@
 | [ex:co-molecular-braid-carbon-monoxide](#ex:co-molecular-braid-carbon-monoxide) | Building the carbon monoxide braid | Ch 16 | — |
 | [ex:categorical-connection-su2](#ex:categorical-connection-su2) | Categorical connection as Maurer--Cartan form on $\mathrm{SU}(2)$ | Ch 1 | — |
 | [ex:yekutieli-lifting-condition-su2](#ex:yekutieli-lifting-condition-su2) | Categorical lifting condition for $\mathrm{SU}(2)$ | Ch 4 | — |
-| [ex:yekutieli-lifting-su2](#ex:yekutieli-lifting-su2) | Categorical lifting for $\mathrm{SU}(2)$: perpetual obstruction | Ch 4 | — |
+| [ex:yekutieli-lifting-su2](#ex:yekutieli-lifting-su2) | Categorical lifting for $\mathrm{SU}(2)$: the band $\mathcal{O}^{\times}$ gives no obstruction | Ch 4 | — |
 | [ex:categorical-action-notation-su2](#ex:categorical-action-notation-su2) | Categorical-action notation for $\mathrm{SU}(2)$ | Ch 2 | — |
 | [ex:confined-particle-examples](#ex:confined-particle-examples) | Confined particles across levels: quark to compound | Ch 8 | — |
 | [ex:connection-su2](#ex:connection-su2) | Connection and curvature on $\mathcal{O}(\mathrm{SU}(2))$ | Ch 2 | `qou:QOU.Examples.su2Connection` |
