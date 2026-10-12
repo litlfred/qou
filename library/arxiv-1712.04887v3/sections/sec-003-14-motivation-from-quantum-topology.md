@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1712.04887v3
-doc_title: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture"
+doc_title: "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE"
 section_id: sec-003-14-motivation-from-quantum-topology
 section_title: "Motivation from quantum topology"
 section_number: 1.4
 pages: 6-8
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
-doc_brief: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.956
+latex_coverage_ratio: 0.975
 ---
 \label{sec.motivation}
 

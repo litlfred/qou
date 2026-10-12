@@ -5,30 +5,44 @@
   "file": "klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf",
   "sha256": "7ecafdd08255d5c6bfe843f9c11ad056beefac13bd6da459a98322f8cd1e6317",
   "bytes": 1197781,
-  "pages": 111
+  "pages": 111,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:25Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Few-body systems in lattice effective field theory",
-  "authors_raw": null,
+  "title": "Few-Body Systems in Lattice Effective Field Theory",
+  "authors_raw": "Lattice Effective Field Theory",
+  "title_lines": [
+   "Few-Body Systems in"
+  ],
   "abstract": null,
   "docinfo": {
+   "Title": "Few-Body Systems in Lattice Effective Field Theory",
    "Author": "Nico Klein",
-   "CreationDate": "D:20190118133547+01'00'",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": "Few-Body Systems in Lattice Effective Field Theory"
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20190118133547+01'00'"
   },
-  "title_lines": [
-   "Few-Body Systems in",
-   "Lattice Effective Field Theory",
-   "Dissertation",
-   "Erlangung des Doktorgrades (Dr. rer. nat.)",
-   "Mathematisch-Naturwissenschaftlichen Fakultät",
-   "Rheinischen Friedrich-Wilhelms-Universität Bonn"
-  ],
-  "title_prev": "Few-Body Systems in Lattice Effective Field Theory Dissertation Erlangung des Doktorgrades (Dr. rer. nat.) Mathematisch-Naturwissenschaftlichen Fakultät Rheinischen Friedrich-Wilhelms-Universität Bonn"
+  "title_raw": "Few-Body Systems in",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Few-Body Systems in Lattice Effective Field Theory",
+   "heading": "Few-Body Systems in Lattice E \ufb00 ective Field Theory",
+   "outline": "Introduction and Motivation",
+   "text": "Few-Body Systems in",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -36,431 +50,2287 @@
    "title": "Introduction and Motivation",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "The standard model of particle physics and quantum chromodynamics",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Lattice QCD",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Effective Theory",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "From nucleons to nuclei",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Quantum Monte Carlo methods - status and open challenges",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Theory",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "The effective theory of few-nucleon systems",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Scattering Theory",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 3,
    "title": "Basic concepts of scattering theory",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 3,
    "title": "Extension to systems with internal degrees of freedom and coupled channels",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 3,
    "title": "Scattering theory for Coulomb forces",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Correlations in Few-Body physics",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Nuclear Lattice Effective Field Theory",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Effective theory on the lattice",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "The reduced symmetry of SO(3,Z)",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Bound states on the lattice",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Scattering on the lattice",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 3,
-   "title": "Lüscher's effective range expansion in the finite volume",
+   "title": "L\u00fcscher's effective range expansion in the finite volume",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 3,
    "title": "Spherical wall and radial projection",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Exact methods",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "The auxiliary field partition function",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field Theory",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "The sign problem",
    "page": 42,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 1,
    "title": "Regularization Methods for Nuclear Lattice Effective Field Theory",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "The lattice Hamiltonian",
    "page": 46,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "The pionless theory",
    "page": 49,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "The pionful theory",
    "page": 51,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "Conclusion and Outlook",
    "page": 53,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 1,
    "title": "The Tjon band in Nuclear Lattice Effective Field Theory",
    "page": 55,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 55,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 2,
    "title": "Two-body-sector",
    "page": 57,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 3,
    "title": "Theoretical framework",
    "page": 57,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 3,
    "title": "Results",
    "page": 63,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 2,
    "title": "Three-body sector",
    "page": 65,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 3,
    "title": "Theoretical framework",
    "page": 65,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 3,
    "title": "Results",
    "page": 68,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "Four-body sector",
    "page": 69,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   },
   {
    "level": 3,
    "title": "Theoretical framework",
    "page": 69,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   },
   {
    "level": 3,
    "title": "Results",
    "page": 70,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 2,
    "title": "The Tjon band",
    "page": 71,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 3,
    "title": "Theoretical framework",
    "page": 71,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 3,
    "title": "Results",
    "page": 73,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "67"
   },
   {
    "level": 2,
    "title": "Conclusion",
    "page": 74,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 1,
    "title": "Lattice Improvement in Lattice Effective Field Theory",
    "page": 75,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "69"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 75,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "69"
   },
   {
    "level": 2,
    "title": "Bosons in one dimension",
    "page": 76,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "70"
   },
   {
    "level": 2,
    "title": "Lattice implementation",
    "page": 78,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "72"
   },
   {
    "level": 2,
    "title": "Results",
    "page": 79,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "73"
   },
   {
    "level": 2,
    "title": "Summary and outlook",
    "page": 81,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "75"
   },
   {
    "level": 1,
    "title": "Conclusions and Perspectives",
    "page": 85,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "79"
   },
   {
    "level": 1,
    "title": "Special functions and algebras",
    "page": 89,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "83"
   },
   {
    "level": 2,
    "title": "Partial wave decomposition",
    "page": 89,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "83"
   },
   {
    "level": 2,
    "title": "Pauli matrices and spin algebra",
    "page": 90,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "84"
   },
   {
    "level": 2,
    "title": "Anticommutator and Grassmann algebra",
    "page": 91,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "85"
   },
   {
    "level": 1,
    "title": "Density and current operators",
    "page": 93,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "87"
   },
   {
    "level": 1,
    "title": "Uncertainty analysis",
    "page": 95,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "89"
   },
   {
    "level": 1,
    "title": "Loop integrals",
    "page": 97,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "91"
   },
   {
    "level": 1,
    "title": "Non-perturbative calculation of lattice artifacts in the two-boson sector",
    "page": 99,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "93"
   },
   {
    "level": 1,
    "title": "Bibliography",
    "page": 103,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "97"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1.1",
+   "title": "",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "1.2",
+   "title": "Fermi\u2019s beta decay. Left: Exact picture. Right: E\ufb00ective picture for q2 \u226am2",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2.1",
+   "title": "Chiral expansion of two-and three-body forces up to N2LO. Solid dots, \ufb01lled circles and squares denote vertices with \u2206i = 0, 1 and 2 according to Eq. (2.13). Figure taken from [52]",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "2.2",
+   "title": "The original Tjon line. The dots are various predictions for di\ufb00erent local potentials. Reprinted from [24] with permission from Elsevier",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "2.3",
+   "title": "Generally, all of them are reproducing the Tjon line, but depending on the method, they also give a width or only give results for a speci\ufb01c pair of the triton and the helium-4 binding energy",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "3.1",
+   "title": "1S 0 one-pion-exchange potential for various lattice discretization schemes and continuum solutions",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "table",
+   "number": "3.1",
+   "title": "Spherical harmonics for various representations [79]",
+   "page": 30,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "table",
+   "number": "3.2",
+   "title": "Irreducible representations for angular momentum j \u22646 [79]",
+   "page": 30,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "table",
+   "number": "3.3",
+   "title": "Radial projection and binning for the \ufb01rst radii. The second line gives the value of the radii and the third line gives the counting of points with the respective radius",
+   "page": 34,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "3.2",
+   "title": "Schematic sketch of the radial wall and spherical projection method. Left \ufb01gure: The spherical wall is introduced at |\u20d7RW|. In the case of radial projection, the wave function is measured at all lattice points\u20d7r with |\u20d7RI| < |\u20d7r | < |\u20d7RO|. Right \ufb01gure: All lattice nodes and operators with the same r",
+   "page": 35,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "3.3",
+   "title": "Sketch of an example potential in spherical projection [83]",
+   "page": 35,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "3.4",
+   "title": "Schematic time steps for time evolution. Figure taken from [33]",
+   "page": 41,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "35"
+  },
+  {
+   "kind": "table",
+   "number": "4.1",
+   "title": "The \u03c9i are the coe\ufb03cients for the lattice discretization of the Laplacian and the dispersion relation",
+   "page": 46,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "40"
+  },
+  {
+   "kind": "table",
+   "number": "4.2",
+   "title": "Fit results in the Gaussian-smeared pionless EFT case for L = 34, 36, 38 and N = 3.5. The values for a 3S 1 and r 3S 1 are predictions (modulo the consistency condition Eq. (4.20))",
+   "page": 49,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "figure",
+   "number": "4.1",
+   "title": "Low-energy coupling constants and the smearing parameter b in the pionless EFT for a lattice size of L = 34, 36, 38 and two di\ufb00erent stretching factors",
+   "page": 50,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "44"
+  },
+  {
+   "kind": "figure",
+   "number": "4.2",
+   "title": "Lattice space dependence of various parameters. Upper panel: The \ufb01nite-volume deuteron bound",
+   "page": 53,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "table",
+   "number": "4.3",
+   "title": "Fit results in EFT with Gaussian-smeared contact interaction and position space regularization for the pion-nucleon interaction with N = 3.5. The lattice size is L = 34, 36, 38 for a = 0.49 . . . 1.97 fm and L = 38, 40, 42 for a = 0.39 . . . 0.28 fm. The values for a 3S 1 and r 3S 1 are predictions",
+   "page": 54,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "48"
+  },
+  {
+   "kind": "figure",
+   "number": "5.4",
+   "title": "The corresponding LECs are summarized in Tab. 5.1. When we compare the LO results for the various lattice spacings, we see that the 1S 0 phase shift is",
+   "page": 63,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "57"
+  },
+  {
+   "kind": "table",
+   "number": "5.1",
+   "title": "Summary of \ufb01t results with perturbatively improved OPE (in units of a) for the perturbative NLO+NNLO",
+   "page": 63,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "57"
+  },
+  {
+   "kind": "figure",
+   "number": "5.1",
+   "title": "LO (squares) and NNLO (circles) neutron-proton phase shifts and mixing angles for a = 1.97 fm. The Nijmegen partial wave analysis (NPWA) is given by the solid line",
+   "page": 64,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "58"
+  },
+  {
+   "kind": "figure",
+   "number": "5.2",
+   "title": "LO (squares) and NNLO (circles) neutron-proton phase shifts and mixing angles for a = 1.64 fm. The NPWA is given by the solid line",
+   "page": 65,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "59"
+  },
+  {
+   "kind": "figure",
+   "number": "5.3",
+   "title": "LO (squares) and NNLO (circles) neutron-proton phase shifts and mixing angles for a = 1.32 fm. The NPWA is given by the solid line",
+   "page": 66,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "60"
+  },
+  {
+   "kind": "figure",
+   "number": "5.5",
+   "title": "In\ufb01nite volume extrapolation for the triton and a lattice spacing of a = 1.32 fm. The triangles are included in the \ufb01t while the circles are not due to higher order \ufb01nite volume e\ufb00ects",
+   "page": 68,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "62"
+  },
+  {
+   "kind": "table",
+   "number": "5.2",
+   "title": "Triton binding energy predictions at LO, N2LO, N2LO+EM, N2LO+EM+3NF and the \ufb01t parameter cD",
+   "page": 69,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "63"
+  },
+  {
+   "kind": "figure",
+   "number": "5.6",
+   "title": "4He time extrapolation for lattice spacing of a = 1.97 fm. The triangles are included in the \ufb01t while the circles are excluded due to statistics. See Sec. 3.7 for details",
+   "page": 71,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "65"
+  },
+  {
+   "kind": "table",
+   "number": "5.3",
+   "title": "4He benchmark calculation for a = 1.97 fm and L = 4. The \ufb01rst bracket of Monte Carlo error are statistical ones, while the latter ones and the Lanczos ones are errors due to uncertainties of the LECs",
+   "page": 71,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "65"
+  },
+  {
+   "kind": "figure",
+   "number": "5.7",
+   "title": "4He time extrapolation for lattice spacing of a = 1.64 fm. The triangles are included in the \ufb01t while the circles are excluded due to statistics. See Sec. 3.7 for details",
+   "page": 72,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "66"
+  },
+  {
+   "kind": "figure",
+   "number": "5.8",
+   "title": "4He time extrapolation for lattice spacing of a = 1.32 fm. The triangles are included in the \ufb01t while the circles are excluded due to statistics. See Sec. 3.7 for details",
+   "page": 72,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "66"
+  },
+  {
+   "kind": "table",
+   "number": "5.4",
+   "title": "4He binding energy prediction at LO, N2LO, N2LO+EM, N2LO+EM+3N. The \ufb01rst brackets give the statistical error while the latter ones give the errors due to uncertainties of the LECs. All binding energies are given in MeV",
+   "page": 73,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "67"
+  },
+  {
+   "kind": "figure",
+   "number": "5.9",
+   "title": "3H-4He binding energy plot for various lattice spacings. The black dot is the physical point and the",
+   "page": 74,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "68"
+  },
+  {
+   "kind": "figure",
+   "number": "6.1",
+   "title": "One-loop diagram I2 involving two bosons in the initial and the \ufb01nal state",
+   "page": 77,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "71"
+  },
+  {
+   "kind": "figure",
+   "number": "6.2",
+   "title": "One-loop diagram I3 involving three bosons in the initial and the \ufb01nal state",
+   "page": 78,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "72"
+  },
+  {
+   "kind": "figure",
+   "number": "6.3",
+   "title": "One-loop form factor diagram I\u2032",
+   "page": 78,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "72"
+  },
+  {
+   "kind": "table",
+   "number": "6.1",
+   "title": "Continuum observables and lattice error exponents bO as de\ufb01ned in Eq. (6.21)",
+   "page": 80,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "74"
+  },
+  {
+   "kind": "table",
+   "number": "6.2",
+   "title": "Low-energy coupling constants for NLO and N2LO. All constants are in lattice units",
+   "page": 81,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "75"
+  },
+  {
+   "kind": "figure",
+   "number": "6.4",
+   "title": "Bound-state energies and root-mean-square radius versus lattice spacing for up to \ufb01ve bosons at LO. The vertical lines give the upper limits of the \ufb01t range",
+   "page": 82,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "76"
+  },
+  {
+   "kind": "figure",
+   "number": "6.5",
+   "title": "Bound-state energies and root-mean-square radius versus lattice spacing for up to \ufb01ve bosons at NLO and N2LO. The vertical lines give the upper limits of the \ufb01t range",
+   "page": 82,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "76"
+  },
+  {
+   "kind": "figure",
+   "number": "6.6",
+   "title": "E\ufb00ective mass in the two-boson sector at LO and NLO. The vertical lines gives the upper limits of the \ufb01t range",
+   "page": 83,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "77"
+  },
+  {
+   "kind": "figure",
+   "number": "6.7",
+   "title": "The two-boson inverse scattering length 1/a2 versus lattice spacing at LO and NLO. The dotted vertical",
+   "page": 83,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "77"
+  },
+  {
+   "kind": "figure",
+   "number": "6.8",
+   "title": "The dimer-boson inverse scattering length 1/a3 versus lattice spacing at LO, NLO, and N2LO. The",
+   "page": 83,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "77"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "i",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "ii",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "iii",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "iv",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "v",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "vi",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "2",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "3",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "5",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "9",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "13",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "18",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "19",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "21",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "23",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "24",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "26",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "30",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "31",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "33",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "36",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "38",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "39",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "40",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "43",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "45",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "47",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "49",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "51",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "57",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "59",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "62",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "63",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "64",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "65",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "67",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "68",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "69",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "70",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "72",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "73",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "75",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "79",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "82",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "83",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "84",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "85",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "86",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 93,
+   "label": "87",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 94,
+   "label": "88",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": "89",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "90",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": "91",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 98,
+   "label": "92",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 99,
+   "label": "93",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 100,
+   "label": "94",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 101,
+   "label": "95",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 102,
+   "label": "96",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": "97",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 104,
+   "label": "98",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 105,
+   "label": "99",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 106,
+   "label": "100",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 107,
+   "label": "101",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 108,
+   "label": "102",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 109,
+   "label": "103",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 110,
+   "label": "104",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 111,
+   "label": "105",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 9799,
+   "n_words": 2553,
+   "label_start": "i",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction-and-motivation",
    "number": null,
@@ -469,7 +2339,9 @@
    "page_start": 7,
    "page_end": 7,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-the-standard-model-of-particle-physics-and-quant",
@@ -478,8 +2350,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2837,
-   "n_words": 470
+   "n_chars": 2853,
+   "n_words": 486,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-002-lattice-qcd",
@@ -487,19 +2361,23 @@
    "title": "Lattice QCD",
    "level": 2,
    "page_start": 8,
-   "page_end": 9,
-   "n_chars": 3952,
-   "n_words": 680
+   "page_end": 8,
+   "n_chars": 71,
+   "n_words": 10,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-003-effective-theory",
    "number": null,
    "title": "Effective Theory",
    "level": 2,
-   "page_start": 9,
+   "page_start": 8,
    "page_end": 11,
-   "n_chars": 5008,
-   "n_words": 851
+   "n_chars": 8800,
+   "n_words": 1501,
+   "label_start": "2",
+   "label_end": "5"
   },
   {
    "id": "sec-004-from-nucleons-to-nuclei",
@@ -508,8 +2386,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 3134,
-   "n_words": 516
+   "n_chars": 3131,
+   "n_words": 513,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-005-quantum-monte-carlo-methods---status-and-open-ch",
@@ -518,8 +2398,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 7783,
-   "n_words": 1308
+   "n_chars": 7764,
+   "n_words": 1307,
+   "label_start": "5",
+   "label_end": "8"
   },
   {
    "id": "sec-006-theory",
@@ -529,7 +2411,9 @@
    "page_start": 14,
    "page_end": 15,
    "n_chars": 416,
-   "n_words": 62
+   "n_words": 62,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
    "id": "sec-007-the-effective-theory-of-few-nucleon-systems",
@@ -538,8 +2422,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 19,
-   "n_chars": 8451,
-   "n_words": 1571
+   "n_chars": 8487,
+   "n_words": 1607,
+   "label_start": "9",
+   "label_end": "13"
   },
   {
    "id": "sec-008-scattering-theory",
@@ -548,8 +2434,10 @@
    "level": 2,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 1765,
-   "n_words": 348
+   "n_chars": 1804,
+   "n_words": 387,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
    "id": "sec-009-basic-concepts-of-scattering-theory",
@@ -558,8 +2446,10 @@
    "level": 3,
    "page_start": 19,
    "page_end": 23,
-   "n_chars": 8337,
-   "n_words": 1460
+   "n_chars": 8374,
+   "n_words": 1513,
+   "label_start": "13",
+   "label_end": "17"
   },
   {
    "id": "sec-010-extension-to-systems-with-internal-degrees-of-fr",
@@ -568,8 +2458,10 @@
    "level": 3,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 2869,
-   "n_words": 579
+   "n_chars": 2870,
+   "n_words": 585,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
    "id": "sec-011-scattering-theory-for-coulomb-forces",
@@ -578,8 +2470,10 @@
    "level": 3,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 1061,
-   "n_words": 206
+   "n_chars": 1065,
+   "n_words": 210,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
    "id": "sec-012-correlations-in-few-body-physics",
@@ -588,8 +2482,10 @@
    "level": 2,
    "page_start": 25,
    "page_end": 27,
-   "n_chars": 5085,
-   "n_words": 860
+   "n_chars": 5080,
+   "n_words": 857,
+   "label_start": "19",
+   "label_end": "21"
   },
   {
    "id": "sec-013-nuclear-lattice-effective-field-theory",
@@ -599,7 +2495,9 @@
    "page_start": 27,
    "page_end": 27,
    "n_chars": 598,
-   "n_words": 103
+   "n_words": 103,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
    "id": "sec-014-effective-theory-on-the-lattice",
@@ -608,8 +2506,10 @@
    "level": 2,
    "page_start": 27,
    "page_end": 30,
-   "n_chars": 9187,
-   "n_words": 1570
+   "n_chars": 9235,
+   "n_words": 1618,
+   "label_start": "21",
+   "label_end": "24"
   },
   {
    "id": "sec-015-bound-states-on-the-lattice",
@@ -618,8 +2518,10 @@
    "level": 2,
    "page_start": 30,
    "page_end": 32,
-   "n_chars": 3318,
-   "n_words": 595
+   "n_chars": 3334,
+   "n_words": 621,
+   "label_start": "24",
+   "label_end": "26"
   },
   {
    "id": "sec-016-scattering-on-the-lattice",
@@ -628,8 +2530,10 @@
    "level": 2,
    "page_start": 32,
    "page_end": 32,
-   "n_chars": 1000,
-   "n_words": 213
+   "n_chars": 1009,
+   "n_words": 222,
+   "label_start": "26",
+   "label_end": "26"
   },
   {
    "id": "sec-017-spherical-wall-and-radial-projection",
@@ -638,8 +2542,10 @@
    "level": 3,
    "page_start": 32,
    "page_end": 36,
-   "n_chars": 8461,
-   "n_words": 1546
+   "n_chars": 8517,
+   "n_words": 1611,
+   "label_start": "26",
+   "label_end": "30"
   },
   {
    "id": "sec-018-exact-methods",
@@ -647,406 +2553,521 @@
    "title": "Exact methods",
    "level": 2,
    "page_start": 36,
-   "page_end": 39,
-   "n_chars": 6420,
-   "n_words": 1199
+   "page_end": 37,
+   "n_chars": 2242,
+   "n_words": 413,
+   "label_start": "30",
+   "label_end": "31"
   },
   {
-   "id": "sec-019-hybrid-monte-carlo-algorithm-for-nuclear-lattice",
+   "id": "sec-019-the-auxiliary-field-partition-function",
+   "number": null,
+   "title": "The auxiliary field partition function",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 4205,
+   "n_words": 850,
+   "label_start": "31",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-020-hybrid-monte-carlo-algorithm-for-nuclear-lattice",
    "number": null,
    "title": "Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field Theory",
    "level": 2,
    "page_start": 39,
    "page_end": 42,
-   "n_chars": 7590,
-   "n_words": 1404
+   "n_chars": 7683,
+   "n_words": 1499,
+   "label_start": "33",
+   "label_end": "36"
   },
   {
-   "id": "sec-020-the-sign-problem",
+   "id": "sec-021-the-sign-problem",
    "number": null,
    "title": "The sign problem",
    "level": 2,
    "page_start": 42,
    "page_end": 45,
-   "n_chars": 2213,
-   "n_words": 398
+   "n_chars": 2212,
+   "n_words": 397,
+   "label_start": "36",
+   "label_end": "39"
   },
   {
-   "id": "sec-021-introduction",
+   "id": "sec-022-introduction",
    "number": null,
    "title": "Introduction",
    "level": 2,
    "page_start": 45,
    "page_end": 46,
-   "n_chars": 2805,
-   "n_words": 456
+   "n_chars": 2797,
+   "n_words": 448,
+   "label_start": "39",
+   "label_end": "40"
   },
   {
-   "id": "sec-022-regularization-methods-for-nuclear-lattice-effec",
+   "id": "sec-023-regularization-methods-for-nuclear-lattice-effec",
    "number": null,
    "title": "Regularization Methods for Nuclear Lattice Effective Field Theory",
    "level": 1,
    "page_start": 46,
    "page_end": 46,
    "n_chars": 1391,
-   "n_words": 220
+   "n_words": 220,
+   "label_start": "40",
+   "label_end": "40"
   },
   {
-   "id": "sec-023-the-lattice-hamiltonian",
+   "id": "sec-024-the-lattice-hamiltonian",
    "number": null,
    "title": "The lattice Hamiltonian",
    "level": 2,
    "page_start": 46,
    "page_end": 49,
-   "n_chars": 6663,
-   "n_words": 1227
+   "n_chars": 6721,
+   "n_words": 1285,
+   "label_start": "40",
+   "label_end": "43"
   },
   {
-   "id": "sec-024-the-pionless-theory",
+   "id": "sec-025-the-pionless-theory",
    "number": null,
    "title": "The pionless theory",
    "level": 2,
    "page_start": 49,
    "page_end": 51,
-   "n_chars": 4627,
-   "n_words": 870
+   "n_chars": 4647,
+   "n_words": 890,
+   "label_start": "43",
+   "label_end": "45"
   },
   {
-   "id": "sec-025-the-pionful-theory",
+   "id": "sec-026-the-pionful-theory",
    "number": null,
    "title": "The pionful theory",
    "level": 2,
    "page_start": 51,
    "page_end": 53,
-   "n_chars": 7975,
-   "n_words": 1348
+   "n_chars": 7984,
+   "n_words": 1357,
+   "label_start": "45",
+   "label_end": "47"
   },
   {
-   "id": "sec-026-conclusion-and-outlook",
+   "id": "sec-027-conclusion-and-outlook",
    "number": null,
    "title": "Conclusion and Outlook",
    "level": 2,
    "page_start": 53,
    "page_end": 55,
-   "n_chars": 4469,
-   "n_words": 747
+   "n_chars": 4511,
+   "n_words": 789,
+   "label_start": "47",
+   "label_end": "49"
   },
   {
-   "id": "sec-027-the-tjon-band-in-nuclear-lattice-effective-field",
+   "id": "sec-028-the-tjon-band-in-nuclear-lattice-effective-field",
    "number": null,
    "title": "The Tjon band in Nuclear Lattice Effective Field Theory",
    "level": 1,
    "page_start": 55,
    "page_end": 55,
    "n_chars": 7,
-   "n_words": 1
+   "n_words": 1,
+   "label_start": "49",
+   "label_end": "49"
   },
   {
-   "id": "sec-028-introduction",
+   "id": "sec-029-introduction",
    "number": null,
    "title": "Introduction",
    "level": 2,
    "page_start": 55,
    "page_end": 57,
-   "n_chars": 7274,
-   "n_words": 1177
+   "n_chars": 7273,
+   "n_words": 1176,
+   "label_start": "49",
+   "label_end": "51"
   },
   {
-   "id": "sec-029-two-body-sector",
+   "id": "sec-030-two-body-sector",
    "number": null,
    "title": "Two-body-sector",
    "level": 2,
    "page_start": 57,
    "page_end": 57,
    "n_chars": 19,
-   "n_words": 2
+   "n_words": 2,
+   "label_start": "51",
+   "label_end": "51"
   },
   {
-   "id": "sec-030-theoretical-framework",
+   "id": "sec-031-theoretical-framework",
    "number": null,
    "title": "Theoretical framework",
    "level": 3,
    "page_start": 57,
    "page_end": 63,
-   "n_chars": 13108,
-   "n_words": 2516
+   "n_chars": 13274,
+   "n_words": 2685,
+   "label_start": "51",
+   "label_end": "57"
   },
   {
-   "id": "sec-031-results",
+   "id": "sec-032-results",
    "number": null,
    "title": "Results",
    "level": 3,
    "page_start": 63,
    "page_end": 65,
-   "n_chars": 4247,
-   "n_words": 808
+   "n_chars": 4257,
+   "n_words": 818,
+   "label_start": "57",
+   "label_end": "59"
   },
   {
-   "id": "sec-032-three-body-sector",
+   "id": "sec-033-three-body-sector",
    "number": null,
    "title": "Three-body sector",
    "level": 2,
    "page_start": 65,
    "page_end": 65,
-   "n_chars": 1390,
-   "n_words": 292
+   "n_chars": 1402,
+   "n_words": 304,
+   "label_start": "59",
+   "label_end": "59"
   },
   {
-   "id": "sec-033-theoretical-framework",
+   "id": "sec-034-theoretical-framework",
    "number": null,
    "title": "Theoretical framework",
    "level": 3,
    "page_start": 65,
    "page_end": 68,
-   "n_chars": 5340,
-   "n_words": 1080
+   "n_chars": 5377,
+   "n_words": 1116,
+   "label_start": "59",
+   "label_end": "62"
   },
   {
-   "id": "sec-034-results",
+   "id": "sec-035-results",
    "number": null,
    "title": "Results",
    "level": 3,
    "page_start": 68,
    "page_end": 69,
-   "n_chars": 1229,
-   "n_words": 225
+   "n_chars": 1231,
+   "n_words": 227,
+   "label_start": "62",
+   "label_end": "63"
   },
   {
-   "id": "sec-035-four-body-sector",
+   "id": "sec-036-four-body-sector",
    "number": null,
    "title": "Four-body sector",
    "level": 2,
    "page_start": 69,
    "page_end": 69,
-   "n_chars": 919,
-   "n_words": 163
+   "n_chars": 918,
+   "n_words": 162,
+   "label_start": "63",
+   "label_end": "63"
   },
   {
-   "id": "sec-036-theoretical-framework",
+   "id": "sec-037-theoretical-framework",
    "number": null,
    "title": "Theoretical framework",
    "level": 3,
    "page_start": 69,
    "page_end": 70,
-   "n_chars": 1372,
-   "n_words": 225
+   "n_chars": 1381,
+   "n_words": 236,
+   "label_start": "63",
+   "label_end": "64"
   },
   {
-   "id": "sec-037-the-tjon-band",
+   "id": "sec-038-the-tjon-band",
    "number": null,
    "title": "The Tjon band",
    "level": 2,
    "page_start": 70,
    "page_end": 70,
-   "n_chars": 1634,
-   "n_words": 291
+   "n_chars": 1628,
+   "n_words": 290,
+   "label_start": "64",
+   "label_end": "64"
   },
   {
-   "id": "sec-038-results",
+   "id": "sec-039-results",
    "number": null,
    "title": "Results",
    "level": 3,
    "page_start": 70,
    "page_end": 71,
-   "n_chars": 2598,
-   "n_words": 463
+   "n_chars": 2612,
+   "n_words": 477,
+   "label_start": "64",
+   "label_end": "65"
   },
   {
-   "id": "sec-039-theoretical-framework",
+   "id": "sec-040-theoretical-framework",
    "number": null,
    "title": "Theoretical framework",
    "level": 3,
    "page_start": 71,
    "page_end": 73,
-   "n_chars": 3419,
-   "n_words": 614
+   "n_chars": 3443,
+   "n_words": 638,
+   "label_start": "65",
+   "label_end": "67"
   },
   {
-   "id": "sec-040-results",
+   "id": "sec-041-results",
    "number": null,
    "title": "Results",
    "level": 3,
    "page_start": 73,
    "page_end": 74,
-   "n_chars": 3111,
-   "n_words": 562
+   "n_chars": 3162,
+   "n_words": 613,
+   "label_start": "67",
+   "label_end": "68"
   },
   {
-   "id": "sec-041-conclusion",
+   "id": "sec-042-conclusion",
    "number": null,
    "title": "Conclusion",
    "level": 2,
    "page_start": 74,
    "page_end": 75,
    "n_chars": 2300,
-   "n_words": 374
+   "n_words": 374,
+   "label_start": "68",
+   "label_end": "69"
   },
   {
-   "id": "sec-042-lattice-improvement-in-lattice-effective-field-t",
+   "id": "sec-043-lattice-improvement-in-lattice-effective-field-t",
    "number": null,
    "title": "Lattice Improvement in Lattice Effective Field Theory",
    "level": 1,
    "page_start": 75,
    "page_end": 75,
    "n_chars": 7,
-   "n_words": 1
+   "n_words": 1,
+   "label_start": "69",
+   "label_end": "69"
   },
   {
-   "id": "sec-043-introduction",
+   "id": "sec-044-introduction",
    "number": null,
    "title": "Introduction",
    "level": 2,
    "page_start": 75,
    "page_end": 76,
-   "n_chars": 3429,
-   "n_words": 539
+   "n_chars": 3433,
+   "n_words": 543,
+   "label_start": "69",
+   "label_end": "70"
   },
   {
-   "id": "sec-044-bosons-in-one-dimension",
+   "id": "sec-045-bosons-in-one-dimension",
    "number": null,
    "title": "Bosons in one dimension",
    "level": 2,
    "page_start": 76,
    "page_end": 78,
-   "n_chars": 6089,
-   "n_words": 1056
+   "n_chars": 6111,
+   "n_words": 1095,
+   "label_start": "70",
+   "label_end": "72"
   },
   {
-   "id": "sec-045-lattice-implementation",
+   "id": "sec-046-lattice-implementation",
    "number": null,
    "title": "Lattice implementation",
    "level": 2,
    "page_start": 78,
    "page_end": 79,
-   "n_chars": 491,
-   "n_words": 82
+   "n_chars": 493,
+   "n_words": 84,
+   "label_start": "72",
+   "label_end": "73"
   },
   {
-   "id": "sec-046-results",
+   "id": "sec-047-results",
    "number": null,
    "title": "Results",
    "level": 2,
    "page_start": 79,
    "page_end": 81,
-   "n_chars": 5541,
-   "n_words": 977
+   "n_chars": 5550,
+   "n_words": 986,
+   "label_start": "73",
+   "label_end": "75"
   },
   {
-   "id": "sec-047-summary-and-outlook",
+   "id": "sec-048-summary-and-outlook",
    "number": null,
    "title": "Summary and outlook",
    "level": 2,
    "page_start": 81,
    "page_end": 85,
-   "n_chars": 8301,
-   "n_words": 1412
+   "n_chars": 8376,
+   "n_words": 1487,
+   "label_start": "75",
+   "label_end": "79"
   },
   {
-   "id": "sec-048-conclusions-and-perspectives",
+   "id": "sec-049-conclusions-and-perspectives",
    "number": null,
    "title": "Conclusions and Perspectives",
    "level": 1,
    "page_start": 85,
    "page_end": 89,
-   "n_chars": 8109,
-   "n_words": 1352
+   "n_chars": 8102,
+   "n_words": 1345,
+   "label_start": "79",
+   "label_end": "83"
   },
   {
-   "id": "sec-049-special-functions-and-algebras",
+   "id": "sec-050-special-functions-and-algebras",
    "number": null,
    "title": "Special functions and algebras",
    "level": 1,
    "page_start": 89,
    "page_end": 89,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "83",
+   "label_end": "83"
   },
   {
-   "id": "sec-050-partial-wave-decomposition",
+   "id": "sec-051-partial-wave-decomposition",
    "number": null,
    "title": "Partial wave decomposition",
    "level": 2,
    "page_start": 89,
    "page_end": 90,
-   "n_chars": 2061,
-   "n_words": 400
+   "n_chars": 2069,
+   "n_words": 413,
+   "label_start": "83",
+   "label_end": "84"
   },
   {
-   "id": "sec-051-pauli-matrices-and-spin-algebra",
+   "id": "sec-052-pauli-matrices-and-spin-algebra",
    "number": null,
    "title": "Pauli matrices and spin algebra",
    "level": 2,
    "page_start": 90,
    "page_end": 91,
-   "n_chars": 343,
-   "n_words": 76
+   "n_chars": 342,
+   "n_words": 75,
+   "label_start": "84",
+   "label_end": "85"
   },
   {
-   "id": "sec-052-anticommutator-and-grassmann-algebra",
+   "id": "sec-053-anticommutator-and-grassmann-algebra",
    "number": null,
    "title": "Anticommutator and Grassmann algebra",
    "level": 2,
    "page_start": 91,
    "page_end": 93,
-   "n_chars": 1192,
-   "n_words": 247
+   "n_chars": 1204,
+   "n_words": 266,
+   "label_start": "85",
+   "label_end": "87"
   },
   {
-   "id": "sec-053-density-and-current-operators",
+   "id": "sec-054-density-and-current-operators",
    "number": null,
    "title": "Density and current operators",
    "level": 1,
    "page_start": 93,
    "page_end": 95,
-   "n_chars": 1341,
-   "n_words": 233
+   "n_chars": 1291,
+   "n_words": 183,
+   "label_start": "87",
+   "label_end": "89"
   },
   {
-   "id": "sec-054-uncertainty-analysis",
+   "id": "sec-055-uncertainty-analysis",
    "number": null,
    "title": "Uncertainty analysis",
    "level": 1,
    "page_start": 95,
    "page_end": 97,
-   "n_chars": 1243,
-   "n_words": 249
+   "n_chars": 1261,
+   "n_words": 267,
+   "label_start": "89",
+   "label_end": "91"
   },
   {
-   "id": "sec-055-loop-integrals",
+   "id": "sec-056-loop-integrals",
    "number": null,
    "title": "Loop integrals",
    "level": 1,
    "page_start": 97,
    "page_end": 99,
-   "n_chars": 1281,
-   "n_words": 319
+   "n_chars": 1278,
+   "n_words": 316,
+   "label_start": "91",
+   "label_end": "93"
   },
   {
-   "id": "sec-056-non-perturbative-calculation-of-lattice-artifact",
+   "id": "sec-057-non-perturbative-calculation-of-lattice-artifact",
    "number": null,
    "title": "Non-perturbative calculation of lattice artifacts in the two-boson sector",
    "level": 1,
    "page_start": 99,
    "page_end": 103,
-   "n_chars": 3456,
-   "n_words": 714
+   "n_chars": 3477,
+   "n_words": 735,
+   "label_start": "93",
+   "label_end": "97"
   },
   {
-   "id": "sec-057-bibliography",
+   "id": "sec-058-bibliography",
    "number": null,
    "title": "Bibliography",
    "level": 1,
    "page_start": 103,
    "page_end": 111,
-   "n_chars": 18768,
-   "n_words": 3314
+   "n_chars": 18758,
+   "n_words": 3304,
+   "label_start": "97",
+   "label_end": "105"
   }
  ],
  "diagnostics": {
   "pages_without_text": 7,
   "likely_scanned": false,
   "toc_entries": 61,
-  "sections": 58,
-  "chars_total": 227034
+  "toc_inferred_entries": 0,
+  "figure_entries": 40,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 1,
+    "items": [
+     "2.2.2 Extension to systems with internal degrees of freedom and coupled channels"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 60,
+  "chars_total": 237636
  }
 }

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1712.04887v3
-doc_title: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture"
+doc_title: "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE"
 section_id: sec-006-25-the-5-term-relation
 section_title: "The 5-term relation"
 section_number: 2.5
 pages: 15-16
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
-doc_brief: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.927
-latex_coverage_ratio: 0.918
+latex_coverage_ratio: 0.951
 ---
 []{#sub.5term label="sub.5term"}
 

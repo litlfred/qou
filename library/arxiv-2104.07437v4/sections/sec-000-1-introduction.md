@@ -7,10 +7,10 @@ section_number: 1
 pages: 2-5
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
-doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.997
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.975
+latex_coverage_ratio: 0.977
 ---
 One of the most fruitful applications of supersymmetry to geometry is the possibility to define and compute enumerative invariants 
 based on the counting of BPS states. This idea goes back to Witten's index \cite{witten-index} and has led to many important developments, 
@@ -114,8 +114,4 @@ The paper is organized as follows. In section \ref{sec-definition} we define the
 series arising in topological string theory, and we provide the necessary background from the theory of resurgence. In section \ref{sec-ex}, after 
 a short summary of the TS/ST correspondence of \cite{ghm,cgm}, we perform detailed analysis and computations in two well-known examples of toric CY threefolds: local $\IP^2$ and local $\IF_0$. In section \ref{sec-conclude} we conclude and list various problems opened by this investigation. 
 There are three Appendices. The first one summarizes properties of Faddeev's quantum dilogarithm and of $q$-series which we use repeatedly in the paper. The second one explains how to obtain efficiently one of the relevant perturbative series in local $\IP^2$. Finally, the third Appendix summarizes the Hunter--Guerrieri algorithm, which makes it possible to extract trans-series from the large order behavior of a Gevrey-1 
-series in the oscillatory case, where usual Richardson extrapolation cannot be applied. 
-
-
-\section{Defining the new invariants}
-\label{sec-definition}
+series in the oscillatory case, where usual Richardson extrapolation cannot be applied.

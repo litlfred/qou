@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-017-36-orbifolds
 section_title: "Orbifolds"
 section_number: 3.6
 pages: 109-117
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.93
 ---
 An orbifold is an object locally modelled on finite quotients of $\matR^n$. It naturally arises when we quotient a Riemannian manifold by a discrete group of isometries that may not act freely. Orbifolds behave like manifolds on many aspects.
 

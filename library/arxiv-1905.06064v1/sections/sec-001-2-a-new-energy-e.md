@@ -7,10 +7,10 @@ section_number: 2
 pages: 4-26
 source_pdf: 1905.06064v1.pdf
 source_sha256: 3ffe25c8ee62779d
-doc_brief: "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS — We develop a regularity theory for extremal knots of scale invariant knot ener- gies deﬁned by J. O’hara in 1991."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.945
-latex_coverage_ratio: 0.964
+latex_prose_ratio: 0.941
+latex_coverage_ratio: 0.993
 ---
 In this section we find a new energy $\mathcal{E}^{\alpha,p}(\solu)$ applied to maps $\solu: \R/\Z \to \S^2$ so that any critical knot (parametrized by arc-length) induces a critical $\S^2$-valued map $\solu$ and vice versa. 
 

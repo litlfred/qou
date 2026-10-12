@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-028-65-mapping-class-group
 section_title: "Mapping class group"
 section_number: 6.5
 pages: 193-199
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.974
+latex_coverage_ratio: 0.89
 ---
 \label{MCG:section}
 We have just proved that two self-diffeomorphisms of $S_g$ are homotopic if and only if they are isotopic. We have also seen that when $g=0$ there are only two self-diffeomorphisms up to isotopy: the identity and a reflection. Do we get a more complicated picture when $g\geqslant 1$? Yes, we get an interesting group, called the \emph{mapping class group} of $S_g$. The group is naturally defined on all finite-type surfaces $S_{g,b,p}$.\index{group!mapping class group}

@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-046-113-dehn-surgery
 section_title: "Dehn surgery"
 section_number: 11.3
 pages: 360-367
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.907
+latex_coverage_ratio: 0.981
 ---
 While a Dehn \emph{filling} consists of attaching a solid torus to a boundary component, a Dehn \emph{surgery} is a two-step operation that consists of drilling a tubular neighbourhood of a knot and then re-gluing it via a different map. 
 

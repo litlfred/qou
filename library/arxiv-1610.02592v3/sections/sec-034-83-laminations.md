@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-034-83-laminations
 section_title: "Laminations"
 section_number: 8.3
 pages: 246-266
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.952
+latex_coverage_ratio: 0.998
 ---
 In this section we characterize geometrically the currents $\alpha\in\calC$ contained in the ``light cone,'' \emph{i.e.}~those with $i(\alpha,\alpha)=0$. Every such current may be represented as a \emph{measured geodesic lamination}, a closed subset of $S_g$ foliated by geodesics and equipped with a transverse measure. These unexpected objects play an important part in the topology of manifolds of dimension two and three.
 

@@ -1,13 +1,13 @@
 ---
 # qou-jz80
 title: 'A6: land PR #7419 — the conflicts are TWO PATH MIGRATIONS, not a content conflict'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:50Z
-updated_at: 2026-10-10T07:03:50Z
+updated_at: 2026-10-11T07:00:00Z
 parent: qou-3e6w
 ---
 
@@ -69,3 +69,8 @@ LOSSY **1 → 0**, exit 0.  Fixed at the file, **not** by widening a baseline.
 
 `/prepare-merge` first, rebase-merge (never squash without explicit per-PR permission), and
 **explicit owner merge permission** — "looks good" is not it.
+
+## 2026-10-11 — done
+
+PR #7419 merged as a merge commit (`6e6d992da2`): the branch carried merges and the clone is
+shallow, so a rebase-merge was not available. Content unchanged by the merge.

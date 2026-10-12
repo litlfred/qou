@@ -908,7 +908,7 @@ def _stage_end() -> None:
             json.dump(rec, fh)
         os.replace(tmp, _STAGE["path"])             # atomic: a kill mid-write leaves no record
     _CKPT_LOG.append({"stage": _STAGE["name"], "restored": False, "key": _STAGE["key"],
-                      "seconds": round(secs, 1), "not_checkpointed": skipped})
+                      "seconds": round(secs), "not_checkpointed": skipped})
     _STAGE.clear()
 
 

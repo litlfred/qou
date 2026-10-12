@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-021-44-the-bieberbach-theorem
 section_title: "The Bieberbach Theorem"
 section_number: 4.4
 pages: 136-143
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.897
+latex_coverage_ratio: 0.993
 ---
 \label{Bieberbach:section}
 The Margulis Lemma for Lie groups is fairly general and has important applications also in the elliptic and flat geometries. The most important one is the Bieberbach Theorem.

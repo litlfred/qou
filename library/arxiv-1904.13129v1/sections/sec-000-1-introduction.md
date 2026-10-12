@@ -7,10 +7,10 @@ section_number: 1
 pages: 1-3
 source_pdf: 1904.13129v1.pdf
 source_sha256: dfa7fd0ebf1ab8c4
-doc_brief: "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity — W e prove the analyticity of smooth critical points for O’Har a’s knot energies E α,p , with p = 1"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.992
+latex_prose_ratio: 0.888
+latex_coverage_ratio: 0.957
 ---
 Knots have always played an important role in arts and crafts, commerce and trade, as well as in our everyday life. Therefore they naturally became a topic of interest for mathematicians. During the 19th century the study of knots strongly influenced the development of topology [@TvdG96]. Today the theory of knots appears in several branches of mathematics such as in calculus of variations, geometric analysis, topology as well as in applications to modern quantum physics (e.g. [@K05]) and biochemistry (e.g. protein molecules [@KS98] or DNA [@CKS98; @GM99]).
 

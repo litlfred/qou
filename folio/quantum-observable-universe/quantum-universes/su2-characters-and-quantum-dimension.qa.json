@@ -1005,7 +1005,44 @@
         "reviewed_sha": "596dc8a545a68075d6e6803081fce3e0ec7bac5b",
         "notes": "criterion applies to dak; block kind \"example\" is paper"
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "ab72c7f4d015",
+          "ts": "b35fce9b9f3b",
+          "lean": "c5f85a9ff087",
+          "lean_statement": "0047553786f3"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 14,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 2,
+            "H3": 2,
+            "H4": 2,
+            "H5": 2,
+            "H6": 2,
+            "H7": 1,
+            "H8": 2
+          }
+        },
+        "evidence": "H7/H1: L19 adds two 'consequences' — that $-6$ cannot be a quantum dimension, and a divergent-series remark about $\\mathcal O(\\mathrm{SU}(2))$ — that serve later chapters' arguments, not this example. | Also: proof-no-lean-mention-in-prose: L17 'The Lean sibling proves ... `su2Character_one` ...'.",
+        "notes": "Milnor H1-H8 = [1, 2, 2, 2, 2, 2, 1, 2] (T=14/16, warn); weakest: H1, H7. Suggested rewrite (not applied; owner rule 'ask before changing'): End the example at '...the evaluation of a class function at the pivotal element.' Move the positivity remark and the divergent-series remark to the block on the base curve where they are used. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   },
-  "updated_at": "2026-09-15T23:04:44.086Z"
+  "updated_at": "2026-10-10T12:00:00.000Z"
 }

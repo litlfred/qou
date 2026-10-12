@@ -6,6 +6,11 @@
   "sha256": "2781e0b34e7889d6fd306b5c62cade2f9392f1913a1887830dc59069b9ad3188",
   "bytes": 149953,
   "pages": 9,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:21Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -18,18 +23,25 @@
   "doi": null,
   "title": "GR\u00d6BNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF",
   "authors_raw": "TYPES B AND D",
-  "abstract": "For Temperley-Lieb algebras of types B and D, we construct their Gr\u00a8 obner-Shirshov bases and the corresponding standard monomials.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210722230502-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "GR \u00a8OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF",
   "title_lines": [
    "GR\u00d6BNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF"
-  ]
+  ],
+  "abstract": "For Temperley-Lieb algebras of types B and D, we construct their Gr\u00a8obner-Shirshov bases and the corresponding standard monomials.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210722230502-04'00'"
+  },
+  "title_raw": "GR\u00d6BNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "GR \u00a8 OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF TYPES B AND D 1. Introduction Originally, the Temperley-Lieb algebra appears in the context of statistical mechanics [15], and later its structure has been studied in connection with knot theory, where it is known to be a quotient of the Hecke",
+   "outline": "1. Introduction",
+   "text": "GR\u00d6BNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -37,46 +49,143 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Review of results for the Temperley-Lieb algebra of type An-1",
    "page": 3,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Gr\u00f6bner-Shirshov bases for the Temperley-Lieb algebras of type Bn",
    "page": 4,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Gr\u00f6bner-Shirshov bases for the Temperley-Lieb algebras of type Dn",
    "page": 6,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 285,
+   "n_words": 39,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -84,8 +193,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2500,
-   "n_words": 399
+   "n_chars": 2476,
+   "n_words": 375,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-preliminaries",
@@ -94,8 +205,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 3294,
-   "n_words": 714
+   "n_chars": 3240,
+   "n_words": 660,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-review-of-results-for-the-temperley-lieb-algeb",
@@ -103,32 +216,67 @@
    "title": "Review of results for the Temperley-Lieb algebra of type An-1",
    "level": 1,
    "page_start": 3,
-   "page_end": 9,
-   "n_chars": 11519,
-   "n_words": 2609
+   "page_end": 4,
+   "n_chars": 2231,
+   "n_words": 439,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-003-4-gr\u00f6bner-shirshov-bases-for-the-temperley-lieb",
+   "number": "4",
+   "title": "Gr\u00f6bner-Shirshov bases for the Temperley-Lieb algebras of type Bn",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4871,
+   "n_words": 1041,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-5-gr\u00f6bner-shirshov-bases-for-the-temperley-lieb",
+   "number": "5",
+   "title": "Gr\u00f6bner-Shirshov bases for the Temperley-Lieb algebras of type Dn",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 4026,
+   "n_words": 860,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 2440,
-   "n_words": 395
+   "n_chars": 2413,
+   "n_words": 368,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 4,
-  "chars_total": 19753,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 19542,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 5,
-   "overlaid": 3,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -136,31 +284,44 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.866,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.933,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-review-of-results-for-the-temperley-lieb-algeb",
      "title": "Review of results for the Temperley-Lieb algebra of type An-1",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.961,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.5,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
     },
     {
-     "id": "sec-003-references",
+     "id": "sec-003-4-gr\u00f6bner-shirshov-bases-for-the-temperley-lieb",
+     "title": "Gr\u00f6bner-Shirshov bases for the Temperley-Lieb algebras of type Bn",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-5-gr\u00f6bner-shirshov-bases-for-the-temperley-lieb",
+     "title": "Gr\u00f6bner-Shirshov bases for the Temperley-Lieb algebras of type Dn",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-references",
      "title": "References",
      "result": "no matching \\section"
     }
