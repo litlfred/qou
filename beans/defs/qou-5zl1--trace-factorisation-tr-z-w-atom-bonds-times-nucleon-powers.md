@@ -46,3 +46,14 @@ any z): `tr(a (c g_i + d) b) = (c z + d) tr(ab)`. z = 0 check: `…_of_z_eq_zero
 lives on `QOU.Hecke.IwahoriHecke`, the colimit on `QOU.SchurWeyl.Hecke`, and no z = 0 family is
 built on the SchurWeyl tower. Convention D corollary `tr_bond_letter_conventionD`
 (factor `c·q³/(q²+1) + d`, generic field). Axioms clean.
+
+## 2026-10-12: step 3 DONE
+
+`QOU/MathlibExt/BraidedBlockShiftTrace.lean`, sorry-free, on any braided-tower Markov trace:
+- `tr_blockProd`: blocks with `blk k ∈ H(3k+2) ∩ shifted(3k)` ⇒ `tr(blk 0⋯blk n) = ∏ tr(blk k)`
+  (one application of `disjointBlock_of_braided` per block).
+- `cyc_mul_g`: `c = g_s⋯g_{s+m-1}` satisfies `c g_t = g_{t+1} c` for `s ≤ t`, `t+1 < s+m`
+  (braid + far commutation only). Hence `tr_wordVal_shift`: a word of affine letters
+  `a•1 + b•g_{off+i}` has trace independent of `off`.
+- `tr_blockProd_pn`: proton/neutron blocks ⇒ `P_p^Z · P_n^N`.
+Inverse generators are affine letters (`ginv_letter`, from the quadratic relation).
