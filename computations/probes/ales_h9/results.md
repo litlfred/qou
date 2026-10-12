@@ -122,3 +122,37 @@ nucleus in H_{3A}?**
 Default if nothing is said: option 1 — nothing changes. My judgement (not a finding):
 option 3 is the reading most faithful to "track the towers at every step", and on the
 current data it costs nothing relative to option 1.
+
+## Answered: owner ruling 2026-10-11, option 3 (every level)
+
+The owner ruled that reading 3 applies **at every level of the tower** (recorded on
+`qou-ales` and `qou-99qc`, commit `0212ad3a68c`). On this probe's families that
+coincides with option 1, because H_3 is the binding level. So the live production
+element stays excluded (`qou-99qc` unchanged), and nothing here is re-scored.
+
+## Folded in from PR #7733: climbing the strand count by single collisions
+
+#7733 (`computations/probes/gg_ntower/`) tests the **other** way to climb the tower.
+Instead of composing whole nucleons (this probe: free products of confined triples),
+it places successive γγ collisions V = σ_iσ_{i+1}⁻¹ on new strands with a rigid
+shift s and closes the extra strands with the convention-D Markov conditional
+expectation, testing reading 3 at every level up to H_9.
+
+- **Result:** no climbing placement passes, for either vertex. Only same-strand
+  collisions pass (s = 0, k = 3, 6). s = +1 telescopes to σ₀σ_k⁻¹ (Lean,
+  `GammaGammaStaircaseTelescopes.lean`).
+- **Mechanism, already at q = 1** (`gg_ntower/explanation.md`): closing a strand is a
+  partial trace and shortens permutation cycles but never splits them. Same-strand
+  collisions compose 3-cycles on one triple, and three of them cancel. Climbing
+  collisions chain into one long cycle, which survives to level 3 as a 3-cycle, with
+  χ_(2,1) < 0.
+
+**What the two probes say together (my reading, scope (a)).** Within the families
+tested, the strand-count tower passes reading 3 at every level only when it is built
+out of **already-confined triples**, which is this probe's construction, where every
+H_3-feasible free product stays feasible at H_6 and H_9. It does **not** pass when
+single collisions walk up the strands. So in these families, confinement is a
+per-triple, same-strand property, and the multi-nucleon levels add no selection
+beyond H_3. Other closures of the climbing placements (bottom, Jones-projection pair
+closure) are pre-registered on #7733 (`closures_preregistration.md`) and reported
+there.
