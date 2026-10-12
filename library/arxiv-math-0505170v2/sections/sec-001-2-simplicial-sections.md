@@ -8,187 +8,416 @@ pages: 8-10
 source_pdf: math0505170.pdf
 source_sha256: 0846b74f9c7c55cb
 doc_brief: "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS AMNON YEKUTIELI — W e present an averaging process for sections of a torsor unde r a unipotent group."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-In this section we show how the averaging process is used to ob tain simplicial
-sections of certain bundles.
-Suppose H and G are aﬃne group schemes over K, and H acts on G by auto-
-morphisms. Namely there is a morphism of schemes H × G → G which for every
-K-scheme Y induces a group homomorphism H(Y ) → AutGroups(G(Y )). Then
-H × G has a structure of a group scheme, and we denote this group by H ⋉ G; it
-is a geometric semi-direct product.
-Recall that an aﬃne group scheme G is called pro-unipotent if it is isomorphic
-to an inverse limit lim ←i Gi of an inverse system {Gi}i≥0 of (ﬁnite type aﬃne)
-unipotent groups. One may assume that each of the morphisms G → Gi → Gi−1
-is surjective. Thus Gi ∼= G/N i where Ni is a normal closed subgroup of G.
-We will be concerned with the following geometric situation .
-Scenario 2.1. Let H ⋉ G be an aﬃne group scheme over K. Assume G is pro-
-unipotent, and moreover there exists a sequence {Ni}i≥0 of H-invariant closed
-normal subgroups of G such that G ∼= lim←i G/N i and each G/N i is unipotent.
-Let π : Z → X be an H ⋉ G -torsor over X which is locally trivial for the Zariski
-topology of X. Deﬁne ¯Z := Z/H and let ¯π : ¯Z → X be the projection.
-Theorem 2.2. Assume Scenario 2.1. Suppose U ⊂ X is an open set and
-σ 0, . . . , σ q : U → ¯Z are sections of ¯π . Then there exists a morphism
-σ : ∆ q
-K × U → ¯Z
+\label{sec2}
+
+In this section we show how the averaging process is used to 
+obtain simplicial sections of certain bundles. 
+
+Suppose $H$ and $G$ are affine group schemes over $\K$, and $H$ 
+acts on $G$ by automorphisms. Namely there is a morphism of 
+schemes $H \times G \to G$ which  for every $\K$-scheme $Y$ 
+induces a group homomorphism
+$H(Y) \to \opn{Aut}_{\cat{Groups}}(G(Y))$.
+Then $H \times G$ has a structure of a group scheme, and we denote 
+this group by $H \ltimes G$; it is a geometric semi-direct 
+product. 
+
+Recall that an affine group scheme $G$ is called
+{\em pro-unipotent} if it is isomorphic to an inverse limit
+$\lim_{\leftarrow i} G_i$ of an inverse system
+$\{ G_i \}_{i \geq 0}$ of (finite type affine) unipotent groups. 
+One may assume that each of the morphisms
+$G \to G_{i} \to G_{i-1}$ is surjective. 
+Thus $G_i \cong G / N_i$ where $N_i$ is a 
+normal closed subgroup of $G$.
+
+We will be concerned with the following geometric situation.
+
+\begin{sce} \label{sce2.1}
+Let $H \ltimes G$ be an affine group scheme over $\K$.
+Assume $G$ is pro-unipotent, and moreover there exists a 
+sequence $\{ N_i \}_{i \geq 0}$ of $H$-invariant 
+closed normal subgroups of $G$ such that 
+$G \cong \lim_{\leftarrow i} G / N_i$ and each 
+$G / N_i$ is unipotent. Let $\pi : Z \to X$ be an 
+$H \ltimes G$ -torsor over $X$ 
+which is locally trivial for the Zariski 
+topology of $X$. Define $\bar{Z} := Z / H$ and let 
+$\bar{\pi} : \bar{Z} \to X$ be the projection.
+\end{sce}
+
+\begin{thm} \label{thm5.2}
+Assume Scenario \tup{\ref{sce2.1}}.
+Suppose $U \subset X$ is an open set 
+and \linebreak
+$\sigma_0, \ldots, \sigma_q : U \to \bar{Z}$ are sections of 
+$\bar{\pi}$. Then there exists a morphism 
+\[ \sigma : \bsym{\Delta}^q_{\K} \times U \to \bar{Z} \]
 such that the diagram
-∆ q
-K × U
-σ
-− − − − →¯Z
-p2
-↓ ¯π
-↓
-U − − − − →X
-is commutative. The morphism σ depends functorially on U and simplicially on
-the sequence (σ 0, . . . , σ q). If q = 0 then σ = σ 0.
-Proof. We might as well assume that U = X. Consider the quotient Z/G . Since
-G is normal in H ⋉ G it follows that Z/G is a torsor under H × X. Let’s write
-π H : Z → ¯Z = Z/H and π G : Z → Z/G for the projections.
-Pick an open set V ⊂ X which trivializes π : Z → X. Let’s write Z|V := π−1(V ).
-Because π H |V : Z|V → ¯Z|V is a trivial torsor under H × ¯Z|V , we can lift the sections
-σ 0, . . . , σ q to sections ˜σ 0, . . . , ˜σ q : V → Z such that π H ◦ ˜σ j = σ j . Furthermore,
-since π G : Z → Z/G is H-equivariant and Z/G is a torsor under H × X, it follows
-that we can choose ˜σ 0, . . . , ˜σ q such that π G ◦ ˜σ j = τ for some section τ : V → Z/G .
-Let F ⊂ Z|V be the ﬁber over τ , i.e. F := V ×Z/G Z via the morphisms π G :
-Z → Z/G and τ : V → Z/G . Then F is a torsor under G × V , and ˜σ 0, . . . , ˜σ q ∈
-AN A VERAGING PROCESS 9
-HomX (V, F ). See diagram below.
-Z
-π H
-/d122/d122/d117 /d117 /d117 /d117 /d117 /d117 /d117 /d117 /d117
-π
-/d15/d15
-π G
-/d33/d33/d67/d67/d67/d67/d67/d67/d67 F
-⊃/d111/d111
-¯Z = Z/H
-¯π
-/d36/d36/d73/d73/d73/d73/d73/d73/d73/d73/d73 Z/G
-/d125/d125/d123/d123/d123/d123/d123/d123/d123
-X
-V
-⊃
-/d104/d104/d82 /d82 /d82 /d82 /d82 /d82 /d82 /d82 /d82 /d82 /d82 /d82 /d82 /d82 /d82
-τ
-/d88/d88/d50
-/d50
-/d50
-/d50
-/d50
-/d50
-/d50
-˜σ i
-/d79/d79/d31
-/d31
-/d31
-/d31
-/d31
-/d31
-/d31
-/d31
-/d31
-/d31σ i
-/d90/d90
-For any i deﬁne Fi := F/N i, which is a torsor under ( G/N i)×V . Let α i : F → Fi
-be the projection, so α i ◦ ˜σ j ∈ HomX (V, F i). By Theorem 1.11 we get an average
-(2.3) ρ i := wavG/N i(α i ◦ ˜σ 0, . . . , α i ◦ ˜σ q) : ∆ q
-K × V → Fi.
-The functoriality of wav says that the ρ i form an inverse system, and we let
-(2.4) ρ := lim
-←i
-ρ i : ∆ q
-K × V → F
+\[ \begin{CD}
+\bsym{\Delta}^q_{\K} \times U @>{\sigma}>>
+\bar{Z} \\
+@V{\mrm{p}_2}VV @V{\bar{\pi}}VV \\
+U @>{}>> X 
+\end{CD} \]
+is commutative. The morphism $\sigma$ depends functorially 
+on $U$ and simplicially on the sequence 
+$(\sigma_0, \ldots, \sigma_q)$.
+If $q = 0$ then $\sigma = \sigma_0$.
+\end{thm}
+
+\begin{proof}
+We might as well assume that $U = X$. Consider the quotient 
+$Z / G$. Since $G$ is normal in $H \ltimes G$ it follows that
+$Z / G$ is a torsor under $H \times X$. Let's write 
+$\pi_H : Z \to \bar{Z} = Z / H$ and 
+$\pi_G : Z \to Z / G$ for the projections. 
+
+Pick an open set $V \subset X$ which trivializes $\pi : Z \to X$. 
+Let's write $Z|_V := \pi^{-1}(V)$. 
+Because $\pi_H|_V : Z|_V \to \bar{Z}|_V$ is a trivial torsor under
+$H \times \bar{Z}|_V$, we can lift the sections 
+$\sigma_0, \ldots, \sigma_q$ to sections
+$\til{\sigma}_0, \ldots, \til{\sigma}_q : V \to Z$
+such that $\pi_H \circ \til{\sigma}_j  = \sigma_j$.
+Furthermore, since $\pi_G : Z \to Z / G$ is $H$-equivariant
+and $Z / G$ is a torsor under $H \times X$, it follows that we can 
+choose $\til{\sigma}_0, \ldots, \til{\sigma}_q$ such that 
+$\pi_G \circ \til{\sigma}_j = \tau$ for some 
+section $\tau : V \to Z / G$.
+
+Let $F \subset Z|_V$ be the fiber over $\tau$, i.e.\
+$F := V \times_{Z / G} Z$ via the morphisms 
+$\pi_G : Z \to Z / G$ and $\tau : V \to Z / G$. Then $F$ is a 
+torsor under $G \times V$, and
+$\til{\sigma}_0, \ldots, \til{\sigma}_q \in 
+\opn{Hom}_X(V, F)$.
+See diagram below. 
+\[ \UseTips  \xymatrix @C=5ex @R=5ex {
+& Z 
+\ar[dl]_{\pi_H}
+\ar[dd]_{\pi}
+\ar[dr]^{\pi_G}
+& & F 
+\ar[ll]_{\supset} \\
+\bar{Z} = Z / H 
+\ar[dr]^{\bar{\pi}}
+& & Z / G
+\ar[dl] \\
+& X \\
+& & & V
+\ar[ull]_{\supset}
+\ar@{-->}[uul]^{\tau}
+\ar@{-->}[uuu]^{\til{\sigma}_i}
+
+\ar@/^5.5ex/[llluu]^{\sigma_i}
+} \]
+
+For any $i$ define $F_i := F / N_i$, which is a torsor 
+under $(G / N_i) \times V$. Let $\alpha_i : F \to F_i$ be the 
+projection, so 
+$\alpha_i \circ \til{\sigma}_j \in \opn{Hom}_{X}(V, F_i)$.
+By Theorem \ref{thm5.1} we get an average
+\begin{equation} \label{eqn2.6}
+\rho_i := \opn{wav}_{G / N_i}(\alpha_i \circ \til{\sigma}_0, 
+\ldots, \alpha_i \circ \til{\sigma}_q) : 
+\bsym{\Delta}^q_{\K} \times V \to F_i .
+\end{equation}
+The functoriality of $\opn{wav}$ says that the $\rho_i$ form an 
+inverse system, and we let
+\begin{equation} \label{eqn2.7}
+\rho := \lim_{\leftarrow i} \rho_i : 
+\bsym{\Delta}^q_{\K} \times V \to F 
+\end{equation}
 and
-(2.5) σ := π H ◦ ρ : ∆ q
-K × V → ¯Z.
-We claim that the morphism σ does not depend on the choice of the section
-τ : V → Z/G . Suppose τ′ : V → Z/G is another such section. Let F′ be the
-ﬁber over τ′, and let ρ′ : ∆ q
-K × V → F′ be the corresponding morphism as in
-(2.4). Now τ′ = h ·τ for some morphism h : V → H. Then F′ = h ·F , and
-h : F → F′ is a G × V -equivariant morphism of torsors, with respect to the
-group-scheme automorphism Ad( h) : G × V → G × V . The new lift of σ j is
-˜σ′
-j := h ·˜σ j : V → F′. Deﬁne F′
-i := F′/N i, and let ρ′
-i : ∆ q
-K × V → F′
-i be the
-morphism as in (2.3). Since Ni × V = Ad( h)(Ni × V ), we get a group-scheme
-automorphism Ad( h) : ( G/N i) × V → (G/N i) × V , and a ( G/N i) × V -equivariant
-morphism of torsors h : Fi → h·F′
-i . By functoriality of wav (property 3 in Theorem
-1.11) it follows that ρ′
-i = h ·ρ i. Therefore ρ′ = h ·ρ , and π H ◦ ρ′ = π H ◦ ρ = σ .
-Property 2 in Theorem 1.11 implies that σ depends simplicially on ( σ 0, . . . , σ q).
-Finally take an open covering X = ⋃ Vj such that each Vj trivializes π : Z → X,
-and let σ j : ∆ q
-K × Vj → ¯Z|Vj be the morphism constructed in (2.5). Since no
-choices were made we have σ j|Vj∩Vk = σ k|Vj∩Vk for any two indices. Therefore
-these sections can be glued to a morphism σ : ∆ q
-K × X → ¯Z. The functorial and
-simplicial properties of σ are clear from its construction. □
-Let X be a K-scheme, and let X = ⋃ m
-i=0 U(i) be an open covering, with in-
-clusions g(i) : U(i) → X. We denote this covering by U . For any multi-index
-i = ( i0, . . . , i q) ∈ ∆ m
-q we write Ui := ⋂ q
-j=0 U(ij ), and we deﬁne the scheme
-Uq := ∐
-i∈∆ m
-q
-Ui. Given α ∈ ∆ q
-p and i ∈ ∆ m
-q there is an inclusion of open sets
-α∗ : Ui → Uα ∗(i). These patch to a morphism of schemes α∗ : Uq → Up, making
-{Uq}q∈N into a simplicial scheme. The inclusions g(i) : U(i) → X induce inclusions
-gi : Ui → X and morphisms gq : Uq → X; and one has the relations gp ◦ α∗ = gq
-for any α ∈ ∆ q
-p.
-10 AMNON YEKUTIELI
-Deﬁnition 2.6. Let π : Z → X be a morphism of K-schemes. A simplicial section
-of π based on the covering U is a sequence of morphisms
-σ = {σ q : ∆ q
-K × Uq → Z}q∈N
+\begin{equation} \label{eqn5.5}
+\sigma := \pi_H \circ \rho : 
+\bsym{\Delta}^q_{\K} \times V \to \bar{Z} . 
+\end{equation}
+
+We claim that the morphism $\sigma$ does not depend 
+on the choice of the section $\tau : V \to Z / G$. 
+Suppose $\tau' : V \to Z / G$ is another such section.
+Let $F'$ be the fiber over $\tau'$, and let
+$\rho' : \bsym{\Delta}^q_{\K} \times V \to F'$
+be the corresponding morphism as in (\ref{eqn2.7}). Now
+$\tau' = h \cdot \tau$ for some morphism $h : V \to H$. 
+Then $F' = h \cdot F$, and $h : F \to F'$ is a $G \times V$
+-equivariant morphism of torsors, 
+with respect to the group-scheme automorphism
+$\opn{Ad}(h) : G \times V \to G \times V$. 
+The new lift of $\sigma_j$ is 
+$\til{\sigma}'_j := h \cdot \til{\sigma}_j : V \to F'$.
+Define $F_i' := F' / N_i$,
+and let $\rho'_i : \bsym{\Delta}^q_{\K} \times V \to F'_i$
+be the morphism as in (\ref{eqn2.6}). 
+Since $N_i \times V = \opn{Ad}(h)(N_i \times V)$,
+we get a group-scheme automorphism
+$\opn{Ad}(h) : (G/N_i) \times V \to (G/N_i) \times V$,
+and a $(G/N_i) \times V$ -equivariant morphism of 
+torsors $h : F_i \to h \cdot F'_i$. 
+By functoriality of $\opn{wav}$ (property 3 in Theorem \ref{thm5.1})
+it follows that $\rho'_i = h \cdot \rho_i$. Therefore 
+$\rho' = h \cdot \rho$, and
+$\pi_{H} \circ \rho' = \pi_{H} \circ \rho = \sigma$. 
+
+Property 2 in Theorem \ref{thm5.1}
+implies that $\sigma$ depends 
+simplicially on $(\sigma_0, \ldots, \sigma_q)$.
+
+Finally take an open covering $X = \bigcup V_j$ such that each 
+$V_j$ trivializes $\pi : Z \to X$, and let
+$\sigma_j : \bsym{\Delta}^q_{\K} \times V_j \to \bar{Z}|_{V_j}$ 
+be the morphism constructed in 
+(\ref{eqn5.5}). Since no choices were made we have
+$\sigma_j|_{V_j \cap V_k} = \sigma_k|_{V_j \cap V_k}$
+for any two indices. Therefore these sections can be glued to a 
+morphism 
+$\sigma : \bsym{\Delta}^q_{\K} \times X \to \bar{Z}$. 
+The functorial and simplicial 
+properties of $\sigma$ are clear from its construction.
+\end{proof}
+
+Let $X$ be a $\K$-scheme, and let
+$X = \bigcup_{i = 0}^m U_{(i)}$ be an open covering, with 
+inclusions $g_{(i)} : U_{(i)} \to X$. We denote this covering by 
+$\bsym{U}$. For any multi-index
+$\bsym{i} = (i_0, \ldots, i_q) \in \bsym{\Delta}^m_q$
+we write $U_{\bsym{i}} := \bigcap_{j = 0}^q U_{(i_j)}$,
+and we define the scheme
+$U_{q} := \coprod_{\bsym{i} \in \bsym{\Delta}^m_q}
+U_{\bsym{i}}.$
+Given $\alpha \in \bsym{\Delta}_p^q$ and 
+$\bsym{i} \in \bsym{\Delta}^m_q$ there is an inclusion of open 
+sets
+$\alpha_* : U_{\bsym{i}} \to U_{\alpha_*(\bsym{i})}$. 
+These patch to a morphism of schemes
+$\alpha_* : U_q \to U_p$,
+making $\{ U_q \}_{q \in \mbb{N}}$ into a simplicial 
+scheme. The inclusions $g_{(i)} : U_{(i)} \to X$ induce inclusions
+$g_{\bsym{i}} : U_{\bsym{i}} \to X$
+and morphisms 
+$g_q : U_q \to X$; and one has the relations
+$g_p \circ \alpha_* = g_q$
+for any $\alpha \in \bsym{\Delta}_p^q$.
+
+\begin{dfn} \label{dfn3.2}
+Let $\pi : Z \to X$ be a morphism of $\K$-schemes.
+A {\em simplicial section of 
+$\pi$} based on the covering $\bsym{U}$ is a sequence of morphisms
+\[ \bsym{\sigma} = \{ \sigma_q : 
+\bsym{\Delta}^q_{\K} \times U_q \to Z \}_{q \in \mbb{N}}  \]
 satisfying the following conditions.
-(i) For any q the diagram
-∆ q
-K × Uq
-σ q
-− − − − →Z
-p2
-↓ π
-↓
-Uq
-gq
-− − − − →X
+\begin{enumerate}
+\rmitem{i} For any $q$ the diagram
+\[ \begin{CD}
+\bsym{\Delta}^q_{\K} \times U_q @>{\sigma_q}>>
+Z \\
+@V{\mrm{p}_2}VV @V{\pi}VV \\
+U_q @>{g_q}>> X 
+\end{CD} \]
 is commutative.
-(ii) For any α ∈ ∆ q
-p the diagram
-∆ p
-K × Up
-σ p
-/d35/d35/d71/d71/d71/d71/d71/d71/d71/d71
-∆ p
-K × Uq
-1×α ∗ /d56/d56/d113/d113/d113/d113/d113/d113/d113/d113
-α ∗×1 /d38/d38/d77/d77/d77/d77/d77/d77/d77/d77 Z
-∆ q
-K × Uq
-σ q
-/d59/d59/d119/d119/d119/d119/d119/d119/d119/d119
+
+\rmitem{ii} For any $\alpha \in \bsym{\Delta}_p^q$
+the diagram
+\[ \UseTips \xymatrix @=4.5ex {
+& \bsym{\Delta}^{p}_{\K} \times U_p
+\ar[dr]^{\sigma_{p}} 
+\\
+\bsym{\Delta}^{p}_{\K} \times U_q
+\ar[ur]^{\bsym{1} \times \alpha^*} 
+\ar[dr]_{\alpha_* \times \bsym{1}} 
+& & Z \\
+& \bsym{\Delta}^{q}_{\K} \times U_q
+\ar[ur]_{\sigma_{q}} 
+} \]
 is commutative.
-Corollary 2.7. Assume Scenario 2.1. Let U = {U(i)}m
-i=0 be an open covering of
-X. Suppose that for any i ∈ { 0, . . . , m } we are given some section σ (i) : U(i) → ¯Z
-of ¯π . Then there exists a simplicial section
-σ = {σ q : ∆ q
-K × Uq → ¯Z}q∈N
-based on U , such that σ 0|U(i) = σ (i) for all i ∈ {0, . . . , m }.
-Proof. For any multi-index i = ( i0, . . . , i q) we have sections σ (i0), . . . , σ (iq ) : Ui →
-¯Z. Let σ i : ∆ q
-K × Ui → ¯Z be the morphism provided by Theorem 2.2. For ﬁxed
-q these patch to a morphism σ q : ∆ q
-K × Uq → ¯Z. The functorial and simplicial
-properties in Theorem 2.2 imply that this is a simplicial sec tion. □
-This result (with H trivial) is illustrated in Figure 1.
+\end{enumerate}
+\end{dfn}
+
+\begin{cor} \label{cor2.1}
+Assume Scenario \tup{\ref{sce2.1}}.
+Let $\bsym{U} = \{ U_{(i)} \}_{i=0}^m$ be an open covering
+of $X$. Suppose that for any $i \in \{ 0, \ldots, m \}$ we are 
+given some section 
+$\sigma_{(i)} : U_{(i)} \to \bar{Z}$ of 
+$\bar{\pi}$. Then there exists a simplicial section
+\[ \bsym{\sigma} = \{ \sigma_q : 
+\bsym{\Delta}^q_{\K} \times U_q \to \bar{Z} \}_{q \in \mbb{N}} \]
+based on $\bsym{U}$, such that 
+$\sigma_0|_{U_{(i)}} = \sigma_{(i)}$
+for all $i \in \{ 0, \ldots, m \}$. 
+\end{cor}
+
+\begin{proof}
+For any multi-index
+$\bsym{i} = (i_0, \ldots, i_q)$ we have sections
+$\sigma_{(i_0)}, \ldots, \sigma_{(i_q)} : U_{\bsym{i}} \to 
+\bar{Z}$. 
+Let
+$\sigma_{\bsym{i}} : \bsym{\Delta}^q_{\K} \times U_{\bsym{i}} \to  
+\bar{Z}$
+be the morphism provided by Theorem \ref{thm5.2}. For fixed $q$ 
+these patch to a morphism
+$\sigma_q : \bsym{\Delta}^q_{\K} \times U_q \to \bar{Z}$.
+The functorial and simplicial properties in Theorem \ref{thm5.2} 
+imply that this is a simplicial section.
+\end{proof}
+
+This result (with $H$ trivial) is illustrated in Figure \ref{fig1}.
+
+\begin{figure}
+\includegraphics{fig1.eps}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\caption{Simplicial sections, $q = 1$. 
+We start with sections over two open sets $U_{(0)}$ and $U_{(1)}$ 
+in the left diagram; and we pass to a simplicial 
+section $\sigma_{(0, 1)}$ on the right. As can be seen, 
+$\sigma_{(0, 1)}$ interpolates between $\sigma_{(0)}$ and 
+$\sigma_{(1)}$.}
+\label{fig1}
+\end{figure}

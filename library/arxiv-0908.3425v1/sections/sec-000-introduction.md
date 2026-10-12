@@ -8,101 +8,38 @@ pages: 1-3
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
 doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.994
 ---
-in the One-Nucleon Sector
-S. Scherer
-Institut f¨ ur Kernphysik, Johannes Gutenberg-Universit¨at Mainz,
-J. J. Becher-Weg 45, D-55099 Mainz, Germany
-April 10, 2009
-Abstract
-We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some
-recent developments in the manifestly Lorentz-invariant f ormulation of the one-nucleon sector.
-Contents
-1 Introduction 2
-2 Chiral symmetry and spontaneous symmetry breaking 4
-2.1 Quantum chromodynamics and chiral symmetry . . . . . . . . . . . . . . . . . . . . . . 4
-2.1.1 The QCD Lagrangian . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
-2.1.2 Chiral limit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
-2.1.3 Global symmetry currents of the light quark sector . . . . . . . . . . . . . . . . 7
-2.1.4 Chiral algebra . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
-2.1.5 Quark masses and chiral symmetry breaking . . . . . . . . . . . . . . . . . . . . 8
-2.1.6 Green functions, chiral Ward identities, and generat ing functional . . . . . . . . 9
-2.1.7 PCAC in the presence of an external electromagnetic ﬁe ld . . . . . . . . . . . . 15
-2.2 Spontaneous symmetry breaking and Goldstone theorem . . . . . . . . . . . . . . . . . 16
-2.2.1 Linear sigma model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
-2.2.2 The hadron spectrum . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
-2.2.3 The scalar singlet quark condensate . . . . . . . . . . . . . . . . . . . . . . . . . 19
-3 Mesonic chiral perturbation theory 21
-3.1 Transformation properties of the Goldstone bosons . . . . . . . . . . . . . . . . . . . . 21
-3.1.1 General considerations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
-3.1.2 Application to QCD . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
-3.2 Eﬀective Lagrangian and power-counting scheme . . . . . . . . . . . . . . . . . . . . . . 24
-3.2.1 The lowest-order eﬀective Lagrangian . . . . . . . . . . . . . . . . . . . . . . . . 24
-3.2.2 Symmetry breaking through the quark masses . . . . . . . . . . . . . . . . . . . 25
-3.2.3 Construction of invariants . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
-1
-3.2.4 Two simple applications: Pion decay and ππ scattering . . . . . . . . . . . . . . 29
-3.2.5 Primer to dimensional regularization . . . . . . . . . . . . . . . . . . . . . . . . 33
-3.2.6 Power-counting scheme . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
-3.3 Next-to-leading order . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
-3.3.1 The O(q4) Lagrangian of Gasser and Leutwyler . . . . . . . . . . . . . . . . . . 38
-3.3.2 The eﬀective Wess-Zumino-Witten action . . . . . . . . . . . . . . . . . . . . . . 39
-3.3.3 Masses of the Goldstone bosons . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
-3.3.4 Electromagnetic polarizabilities of the pion . . . . . . . . . . . . . . . . . . . . . 46
-4 Baryonic chiral perturbation theory 49
-4.1 Lagrangian . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
-4.1.1 Transformation properties of the ﬁelds . . . . . . . . . . . . . . . . . . . . . . . 49
-4.1.2 Baryonic eﬀective Lagrangian at lowest order . . . . . . . . . . . . . . . . . . . 50
-4.2 Renormalization and power counting . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
-4.2.1 The generation of counter terms . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
-4.2.2 Power counting for renormalized diagrams . . . . . . . . . . . . . . . . . . . . . 54
-4.2.3 The power-counting problem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 54
-4.3 Solutions to the power-counting problem . . . . . . . . . . . . . . . . . . . . . . . . . . 57
-4.3.1 Heavy-baryon approach . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 57
-4.3.2 Master integral . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 59
-4.3.3 Infrared regularization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 60
-4.3.4 Extended on-mass-shell scheme . . . . . . . . . . . . . . . . . . . . . . . . . . . 62
-4.3.5 Dimensional counting analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
-5 Applications 65
-5.1 Nucleon mass and sigma term at O(q4) . . . . . . . . . . . . . . . . . . . . . . . . . . . 66
-5.2 Chiral expansion of the nucleon mass to O(q6) . . . . . . . . . . . . . . . . . . . . . . . 67
-5.3 Form factors of the nucleon . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 68
-5.3.1 Scalar form factor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 68
-5.3.2 Electromagnetic form factors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 68
-5.3.3 Axial and induced pseudoscalar form factors . . . . . . . . . . . . . . . . . . . . 72
-5.3.4 Pion-nucleon form factor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 75
-6 Conclusion 76
-1 Introduction
-Eﬀective ﬁeld theory (EFT) is a powerful tool in the descript ion of the strong interactions at low
-energies. The central idea is due to Weinberg [Weinberg, 197 9]:
-”... if one writes down the most general possible Lagrangian , including all terms consistent
-with assumed symmetry principles, and then calculates matr ix elements with this Lagrangian
-to any given order of perturbation theory, the result will si mply be the most general possible
-S–matrix consistent with analyticity, perturbative unita rity, cluster decomposition and the
-assumed symmetry principles.”
-In general, an EFT is an approximation to a (more) fundamenta l theory, designed to be valid in a
-certain kinematical domain. Instead of solving the underly ing theory, the processes under investigation
-are described in terms of a suitable set of eﬀective degrees o f freedom, dominating the phenomena
-in the particular energy region. In the context of the strong interactions, the underlying theory is
-2
-Fundamental theory Eﬀective ﬁeld theory
-Theoretical framework QCD ChPT
-Degrees of freedom Quarks and gluons Goldstone bosons (+ other hadrons)
-Parameters g3 + quark masses Low-energy coupling constants + quark masses
-Table 1: Comparison of QCD and ChPT.
-quantum chromodynamics (QCD)—a gauge theory with color SU( 3) as the gauge group. Under normal
-conditions, the fundamental degrees of freedom of QCD, name ly, quarks and gluons, do not show up as
-free particles. One assumes that any asymptotically observ ed hadron must be in a color-singlet state,
-i.e., a physically observable state is invariant under SU(3 ) color transformations. The strong increase
-of the running coupling for large distances possibly provid es a mechanism for the color conﬁnement.
-For the low-energy properties of the strong interactions an d the setting up of a corresponding EFT
-description, another phenomenon is of vital importance. Th e masses of the up and down quarks and, to
-a lesser extent, also of the strange quark are suﬃciently sma ll that the dynamics of QCD in the chiral
-limit, i.e., for massless quarks, is believed to resemble th at of the “real” world. Although a rigorous
-mathematical proof is not yet available, there are good reas ons to assume that a dynamical spontaneous
-symmetry breaking emerges from the chiral limit. Examples o f indications for this to happen are the
-comparatively small masses of the pseudoscalar octet, the a bsence of a parity doubling in the low-energy
-spectrum of hadrons, and a non-vanishing scalar singlet qua rk condensate.
-According to the Goldstone theorem, a breakdown of the chira l SU(3) L × SU(3)R symmetry at the
-Lagrangian level to the SU(3) V symmetry in the ground state implies the existence of eight m assless
-pseudoscalar Goldstone bosons. The ﬁnite masses of the pseu doscalar octet of the real world are
+Effective field theory (EFT) is a powerful tool in the description of the strong interactions at low energies. The central idea is due to Weinberg [@Weinberg:1978kz]:
+
+> \"\... if one writes down the most general possible Lagrangian, including all terms consistent with assumed symmetry principles, and then calculates matrix elements with this Lagrangian to any given order of perturbation theory, the result will simply be the most general possible S--matrix consistent with analyticity, perturbative unitarity, cluster decomposition and the assumed symmetry principles.\"
+
+In general, an EFT is an approximation to a (more) fundamental theory, designed to be valid in a certain kinematical domain. Instead of solving the underlying theory, the processes under investigation are described in terms of a suitable set of effective degrees of freedom, dominating the phenomena in the particular energy region. In the context of the strong interactions, the underlying theory is quantum chromodynamics (QCD)---a gauge theory with color SU(3) as the gauge group. Under normal conditions, the fundamental degrees of freedom of QCD, namely, quarks and gluons, do not show up as free particles. One assumes that any asymptotically observed hadron must be in a color-singlet state, i.e., a physically observable state is invariant under SU(3) color transformations. The strong increase of the running coupling for large distances possibly provides a mechanism for the color confinement.
+
+For the low-energy properties of the strong interactions and the setting up of a corresponding EFT description, another phenomenon is of vital importance. The masses of the up and down quarks and, to a lesser extent, also of the strange quark are sufficiently small that the dynamics of QCD in the chiral limit, i.e., for massless quarks, is believed to resemble that of the "real" world. Although a rigorous mathematical proof is not yet available, there are good reasons to assume that a dynamical spontaneous symmetry breaking emerges from the chiral limit. Examples of indications for this to happen are the comparatively small masses of the pseudoscalar octet, the absence of a parity doubling in the low-energy spectrum of hadrons, and a non-vanishing scalar singlet quark condensate.
+
+According to the Goldstone theorem, a breakdown of the chiral $\mbox{SU(3)}_L\times\mbox{SU(3)}_R$ symmetry at the Lagrangian level to the $\mbox{SU(3)}_V$ symmetry in the ground state implies the existence of eight massless pseudoscalar Goldstone bosons. The finite masses of the pseudoscalar octet of the real world are attributed to the explicit chiral symmetry breaking due to the quark masses in the QCD Lagrangian. Due to the vanishing of the Goldstone boson masses in the chiral limit in combination with their vanishing interactions in the zero-energy limit, a derivative and quark-mass expansion is the natural scenario for an EFT. The corresponding method is called (mesonic) chiral perturbation theory (ChPT) [@Gasser:1983yg], with the Goldstone bosons as the relevant effective degrees of freedom (see Table [1](#1:table_QCD_EFT){reference-type="ref" reference="1:table_QCD_EFT"}).
+
+::: center
+::: {#1:table_QCD_EFT}
+                            Fundamental theory               Effective field theory
+  ----------------------- ---------------------- ----------------------------------------------
+   Theoretical framework           QCD                                ChPT
+    Degrees of freedom      Quarks and gluons          Goldstone bosons (+ other hadrons)
+        Parameters         $g_3$ + quark masses   Low-energy coupling constants + quark masses
+
+  : Comparison of QCD and ChPT.
+:::
+
+[]{#1:table_QCD_EFT label="1:table_QCD_EFT"}
+:::
+
+Using these effective degrees of freedom, physical quantities are calculated in terms of an expansion in $q/\Lambda_\chi$, where $q$ stands for momenta or masses of the pseudoscalar octet that are smaller than the energy/mass scale $\Lambda_\chi={\cal O}(1\,\mbox{GeV})$ associated with spontaneous symmetry breaking. Since an EFT is based on the most general Lagrangian, which includes all terms that are compatible with the symmetries of the underlying theory, the corresponding Lagrangian contains an infinite number of terms, where each term is accompanied by a low-energy coupling constant (LEC). The method that allows one to decide which terms contribute in a calculation up to a certain accuracy is called Weinberg's power counting. In the mesonic sector, the combination of dimensional regularization with the modified minimal subtraction scheme of ChPT leads to a straightforward correspondence between the loop expansion and the chiral expansion in terms of momenta and quark masses at a fixed ratio. In actual calculations only a finite number of terms in the expansion in $q/\Lambda_\chi$ has to be considered and thus one has predictive power. What distinguishes the EFT approach from purely phenomenological approaches is the possibility of a systematic improvement. Mesonic ChPT has been tremendously successful and may be considered as a full-grown and mature area of low-energy particle physics.
+
+The situation gets more complicated once other hadronic degrees of freedom beyond the Goldstone bosons are considered. Together with such hadrons, another scale of the order of the chiral symmetry breaking scale $\Lambda_\chi$ enters the problem and the methods of the pure Goldstone-boson sector cannot be transferred one to one. For example, in the extension to the one-nucleon sector the correspondence between the loop expansion and the chiral expansion, at first sight, seems to be lost: higher-loop diagrams can contribute to terms as low as ${\cal O}(q^2)$ [@Gasser:1987rb]. For a long time this was interpreted as the absence of a systematic power counting in the relativistic formulation of ChPT. However, over the last decade new developments in devising a suitable renormalization scheme have led to a simple and consistent power counting for the renormalized diagrams of a manifestly Lorentz-invariant approach.
+
+The purpose of this article is to first provide a pedagogical introduction to the basic concepts of ChPT and to then present the more recent developments of a manifestly Lorentz-invariant approach to the one-nucleon sector. It is definitely *not* intended to give a survey of the vast literature on ChPT and its various extensions in terms of chiral effective field theories. For further information the interested reader is referred to review articles and lecture notes addressing different topics with various priorities [@Bijnens:1993xi], [@Georgi:1994qn], [@Ecker:1994gg], [@Pich:1995bw], [@Bernard:1995dp], [@Hemmert:1997ye], [@Burgess:1998ku], [@Scherer:2002tk], [@Scherer:2005ri], [@Epelbaum:2005pn], [@Bijnens:2006zp], [@Bernard:2006gx], [@Bernard:2007zu].
+
+The article is organized as follows. Section [\[section_chiral symmetry\]](#section_chiral symmetry){reference-type="ref" reference="section_chiral symmetry"} contains a discussion of the chiral symmetry of QCD, spontaneous symmetry breaking, and the Goldstone theorem. In Sec. [\[section_mchpt\]](#section_mchpt){reference-type="ref" reference="section_mchpt"}, the basic concepts of mesonic ChPT are developed. Section [\[section_bchpt\]](#section_bchpt){reference-type="ref" reference="section_bchpt"} is devoted to baryonic ChPT. The power-counting problem is illustrated and solutions in terms of suitable renormalization conditions are presented. Section [\[section_applications\]](#section_applications){reference-type="ref" reference="section_applications"} contains a few selected applications of the manifestly Lorentz-invariant approach to nucleon properties.

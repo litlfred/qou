@@ -1,0 +1,476 @@
+\def\filename{txmac.sty}
+\def\filedate{12.6.96}
+\def\fileversion{v1.73}
+
+{\catcode`\:=\active\let:\relax % this is for the french document style
+\typeout{File `\filename' (\fileversion) : some useful
+macros for LaTeX 2.09 <\filedate> (AS)}}
+
+
+% some useful abbreviations in order not to break one's fingers
+% while typing long macro names
+
+\let\ea\expandafter
+\let\nx\noexpand
+
+% save `@ catcode
+\ea\xdef\csname @tempcat\endcsname{\nx\catcode`\nx\@=\the\catcode`\@}
+\makeatletter
+
+% test for the NFSS Vers. 1
+\@ifundefined{selectfont}
+     {\@latexerr{`txmac' style option can only be used
+	       with the new font selection scheme}%\@eha
+     \endinput}{
+       \@ifundefined{fontencoding}
+	   {}
+	   {}
+% 	   {\@latexerr{`txmac' style option requires the
+% 		      old version 1 of the NFSS, sorry.}\@eha
+% 		      % \endinput
+% 		      }
+      }
+%
+
+%
+%
+% a tracing environment
+%
+%
+\let\old@enddoc\enddocument
+\def\enddocument{\if@trc\typeout{Warning : \string\tracingmacros
+\@gobble i      used during processing !!}\fi\old@enddoc}
+
+\newif\if@trc
+
+\def\tm{\global\@trctrue\tracingmacros1\relax}
+\def\ntm{\tracingmacros0\relax}
+
+
+%
+%
+% allows blank lines within \[ \] 's
+%
+%
+
+\let\old@br\[
+\def\[{\old@br\let\old@par\par\def\par{\ifmmode\else\old@par\fi}}
+\let\old@eqn\equation
+\def\equation{\bgroup\let\old@par\par\def\par{\ifmmode\@nomath{\par}%
+\else\old@par\fi}\old@eqn}
+\let\old@eeqn\endequation
+\def\endequation{\old@eeqn\egroup}
+
+
+%
+%
+% makes \em{text} behave as {\em text}
+%
+%
+\let\old@em\em
+\def\em{\@ifnextchar\bgroup{\bgroup\old@em\aftergroup\/\let\bgroup}{\old@em}}
+
+%
+\def\makedate#1#2#3{{\relax\month#2\day#1\year#3\relax\today}}
+%
+
+%
+%
+%
+% a small improvement of the capabilities of the
+% \tabular environment :
+%
+%
+%
+% write
+%
+% \begin{mytab}{|c|r|r|c|}{&\multicolumn{2}{|c|}{ }}
+% ...
+% \hline
+% \hline
+% ...
+% \end{mytab}
+%
+% and you'll get an empty line with the format
+% "&\multicolumn{2}{|c|}{ }&" between the two
+% \hline's with a proper height instead just
+% of blank space !!
+%
+% The idea is to replace the strutbox in the preamble
+% by a # and to adjust each time a macro \@tempf inserting whatever 
+% is needed in each row
+%
+
+
+\newif\if@orgcr % used to resore the original meaning of \cr for
+% processing \cline
+
+\newcount\@cline@c
+% used to reduce numbers in the argument of \cline by 1 (since we have
+% a hidden new 1st argument)
+
+\newdimen\@specvspace % extra vspace after \hline : \hline[vspace]
+
+
+\def\glet{\global\let}
+\def\gflet{\global\futurelet}
+
+
+\def\@setfrule#1#2#3{\gdef\@tempf{\hbox{\vrule\@width\z@\@height#1\@depth
+#2}&#3}}
+\def\@setf{\gdef\@tempf{}}
+\def\@setf@nd{\gdef\@tempf{&}}
+\def\@setfstrut{% we augument the height of the \@arstrutbox by
+% \@specvspace
+\@tempdima\ht\@arstrutbox\advance\@tempdima by \@specvspace\relax
+% and reset it
+\global\@specvspace\z@\relax
+% note that we have to feed the value of \@tempdima LITERALLY
+% to \@setfrule since \@tempf will be called in another environment
+\ea\@setfrule\ea{\the\@tempdima}{\dp\@arstrutbox}{}%
+% \@setfrule{\ht\@arstrutbox}{\dp\@arstrutbox}{}%
+% this call wil be for usual lines, that is, aftyer the command the entry
+% of the next row begins
+}
+
+\def\@setfnal{\noalign{\gdef\@tempf##1##2{%
+% while callinf \@tempf ##1=\noalign, ##2=argument of \noalign
+##1{##2}%
+% call the \noalign itself
+\futurelet\@tempe\@@arstrut@nil}}}
+
+\def\@setfcl{\gdef\@tempf\cline##1{\old@cr\noalign{\global\@orgcrtrue}\cline
+% call of \cline requires original meaning of \cr
+{##1}\global\@orgcrfalse\futurelet\@tempe\@@arstrut@nil}}
+
+
+\def\@@arstrut{\@@arstrut@{\old@cr}}
+\def\@@arstrut@nil{\@@arstrut@{}}
+
+
+\def\@@arstrut@#1{#1\@artest{\@setf}{\@setf}{\@setfnal}{\@setfcl}{\@setfstrut}\@tempf}
+\def\@@hlinestrut{%\glet\@tempe\@tempg
+% what is to be done while \hline is called
+\old@cr\noalign{%
+\@artest{\@setfrule{\doublerulesep}{\z@}{\empty@line\\}}{\@setf}{\@setf}{\@setf}{\@setfstrut}}\old@hline\@tempf}
+
+\def\@spacetest#1#2#3#4;#5#6{%
+\@mktesttrue\if b#1\if l#2\if a#3#5\@mktestfalse\fi\fi\fi
+\if@mktest#6\fi}
+
+\newif\if@mktest
+\@mktesttrue
+
+\def\@artest#1#2#3#4#5{% decide what to do depending on token \@tempe
+% which follows the command
+\ifx\@tempe\hline#1\else
+\ifx\@tempe\end#2\else
+\ifx\@tempe\noalign#3\else
+\ifx\@tempe\cline#4\else
+\ea\@spacetest\meaning\@tempe ;{\@setf@nd}% this hack is to test
+% whether \@tempe is `blank space'
+{#5}\fi\fi\fi\fi
+}
+
+
+\def\@setupcrhl{% setup new \hline and \cr and some other macros...
+% 
+\def\cr{\if@orgcr\def\@tempg{\old@cr}\else
+\def\@tempg{\gflet\@tempe\@@arstrut}\fi\@tempg}%
+% 
+\let\@arstrut\relax\let\old@hline\hline\def\hl@ne{\gflet\@tempe\@@hlinestrut}%
+% 
+\def\hline{\@ifnextchar[{\@sphl@ne}{\hl@ne}}% ]
+% \hline has now an optional [vspace]
+% 
+\def\@sphl@ne[##1]{\global\@specvspace##1\relax\hl@ne}%
+%
+%
+% we need \\[vspace] to work correctly, for this we need
+% to redefine \@argtabularcr, sine our redefined \cr,
+% called from \@xargarraycr{#1} (\@yargarraycr{#1} resp.),
+% will look for the next token \@tempe,
+% finding an '\else' ('\fi', resp.) and assume that this is text...
+\def\@argtabularcr[##1]{\ifnum 0=`{\fi }\ifdim ##1>\z@\def\@tempg{\unskip
+\@xargarraycr{##1}}\else\def\@tempg{\@yargarraycr {##1}}\fi\@tempg}%
+%
+} % end of \@setupcrhl
+
+% now the new evironment
+\newenvironment{mytab}[2]{%
+\let\old@cr\cr\@orgcrfalse\let\old@halign\halign
+\def\halign{\nx\@setupcrhl\nx\let\nx\halign\nx\old@halign\nx\halign}%
+\gdef\empty@line{#2}\def\@arstrut{\nx\@sharp&}%
+\let\old@@cline\@cline
+\def\@cline[##1-##2]{\noalign{\@cline@c##2\advance\@cline@c by 1\edef\@tempf{\the\@cline@c}%
+\@cline@c##1\advance\@cline@c by 1\xdef\@tempf{[\the\@cline@c-\@tempf]}}\ea\old@@cline\@tempf}%
+\def\my@cr{\nx\old@cr\nx\futurelet\nx\@tempe\nx\@@arstrut@nil}%
+\let\cr\my@cr
+\begin{tabular}{#1}}{\end{tabular}\ignorespaces}
+
+
+%
+%
+%
+% a new environemt for tales
+%
+% each first letter in the paragraph is written Huge and \lower-ed
+% like in tale-books. to turn this off for a single paragraph write
+% \nocap somewhere in it.
+%
+%
+%
+
+
+\newbox\cap@box % to store in the capitalized letter of a paragraph
+\newif\if@@capletter
+\newdimen\@parindent
+
+
+\newenvironment{tale}{\let\tale@ep\everypar%
+\@@caplettertrue\let\tale@pi\parindent%
+\@parindent\tale@pi\relax%
+\parindent0pt%
+\let\parindent\@parindent
+% since we will add a parindent manually only if no cap letter
+% should be printed, the usual \parindent has 2 B set 2 zero & we
+% use a self-made boubvle \@parindent instead. All changes of 
+% '\parindent' by the user will affect only '\@parindent'.
+
+\edef\@tempc{\the\everypar}% the current \everypar token list
+
+\def\everypar##1{\tale@ep{\def\@tempb{tale}\ifx\@tempb\@currenvir%
+% this is in case one calls '\everypar' within a tale-env.
+% It must additionally call \@capletter to what it is said to do.
+%
+\if@@capletter\def\tempp{##1\@capletter}% the usual stuff
+% of \everypar and then \@capletter called with the first letter as
+% argument.
+\else
+\def\tempp{\@@caplettertrue\kern\@parindent ##1}\fi\else
+% \if@@capletter is automatically turned on if it was tuned off
+% by \nocap. In this case make the usual indentation and noth else.
+\def\tempp{##1}\fi
+% in a subenv. of 'tale' the usual stuff only
+\tempp}}
+\ea\everypar\ea{\@tempc}%
+% install the new \everypar for the old contents.
+}
+{\let\everypar\tale@ep\let\parindent\tale@pi
+\let\tale@pi\undefined
+\let\tale@ep\undefined
+}
+
+\def\nocap{{\def\@badend{\@latexerr{\noexpand\nocap\space can be used
+only in tale-environment}\@eha}\@checkend{tale}}\@@capletterfalse}
+
+\def\@capletter#1{% typesets a big first letter in the paragraph
+\nopagebreak\setbox\cap@box=\hbox{\Huge #1}%
+\setbox\cap@box=\hbox to \wd\cap@box{\vbox{\vfilneg\hbox{\Huge #1}\vskip-0.8\baselineskip}}%
+\dp0=\baselineskip%
+\global\hangindent\wd\cap@box\global\hangafter-2\relax%
+\unskip\hbox to 0pt{\hss\copy\cap@box}\kern0pt\relax\nopagebreak%
+}
+
+
+
+
+% here is a macro to test whether a tokenlist #1 is empty
+% and depending on it to execute #2 or #3
+% NOTE: #1 is NOT expanded!
+
+\@ifundefined{@ifempty}
+{
+\def\@ifempty#1#2#3{%
+\def\@temp@h{#3}\@ifnextchar\bgroup % if #1 starts with a '{'
+% then it is not empty
+{\split@all}{\edef\@tempi{\ea\string\split@rest #1\@@tst\@@nil@@}%
+% else test whether the 1st token of '#1\@@tst@@' is '\@@tst@@'
+\edef\@tempj{\string\@@tst}%
+\ifx\@tempi\@tempj\def\@temp@h{#2}\fi\split@all}%
+#1\@@nil@@\@temp@h}%
+}{}
+
+\def\split@rest#1#2\@@nil@@{#1}
+\def\split@all#1\@@nil@@{}
+
+
+
+%
+%
+%
+% here there are some macros for scaling text in
+% mathematical sub- & superscriptions
+%
+%
+
+
+%\def\scale@size#1{\edef\f@size{#1}\selectfont}
+\def\scale@size#1{\def\baselinestretch{1.2}\relax
+\fontsize{#1}{#1pt}\selectfont}
+\def\scaled@mbox#1#2{\mbox{\scale@size{#1}#2}}
+
+
+% text boxes in script- & scriptscript-size
+
+\def\scbox#1{\scaled@mbox{\sf@size}{#1}}
+\def\ssbox#1{\scaled@mbox{\ssf@size}{#1}}
+
+% a macro to scale text without boxing it
+
+\def\scale#1{{\leavevmode\ifmmode\mathchoice
+{#1}{#1}{\scale@size{\sf@size}#1}{\scale@size{\ssf@size}#1}\else#1\fi}}
+
+%
+%
+% a macro to scale text with boxing it
+% 
+% Within the text you box
+% you can react to the current math style by checking the
+% value of the counter \mmd, which is
+% 0 if no math mode
+% 1 if displaystyle
+% 2 if texstyle
+% 3 if scriptstyle
+% 4 if scriptscriptstyle
+%
+%
+\newcount\mmd
+%\show\mmd
+\def\text#1{{\ifvmode\hbox{\mmd0\relax#1}\else\ifmmode
+\mathchoice{\mbox{\mmd1\relax#1}}{\mbox{\mmd2\relax#1}}{%
+\scbox{\mmd3\relax#1}}{\ssbox{\mmd4\relax#1}}\else
+\mbox{\mmd0\relax#1}\fi\fi}}
+
+\def\textchoose{\@ifnextchar[{\@tchs}{\@tchs[]}}
+\def\@tchs[#1]#2#3#4#5#6{\ifcase\mmd#1#2\or#1#3\or#1#4\or#1#5\or
+#1#6\or\fi}
+
+
+%
+% a ring and a bold ring accent
+%
+%
+
+\def\br#1{\leavevmode\ifmmode\def\@tempa{$}\else\def\@tempa{}\fi
+\setbox0=\hbox{\@tempa #1\@tempa}\setbox1=\hbox{h}%
+\dimen@\ht1\advance\dimen@ by -\ht0
+\vbox{\hbox{\ssbox{\hbox to \wd0{\hss$\mathord{\circ}$\hss}}}%
+\kern-\baselineskip\kern\ht0\kern.5\dimen@\kern0.15ex\box0}}
+
+
+\def\r#1{\text{\gdef\@temph{\f@size}}%
+\ifmmode\setbox0=\hbox{$#1$}\let\@tempacc\mathaccent\else
+\setbox0=\hbox{#1}\let\@tempacc\accent\fi
+\ifdim\ht0>1.05ex\dimen@\ht0\advance\dimen@ by -0.9ex
+\rlap{\raise0.67\dimen@\hbox to \wd0{\hss
+\fontfamily{cmr}\fontsize{\@temph}{\baselineskip}\selectfont\char23\hss
+}}\box0\else\fontfamily{cmr}\selectfont\@tempacc23{\box0}\fi}
+
+
+
+%
+%
+% a macro for a ``same'' symbol ------ " -------
+%
+% Write "\same[<text>]" and you'll get this symbol as wide as
+% <text> was. for each following use without changing the
+% width you can simply type "\same" instead of "\same[<text>]".
+%
+%
+
+
+\newbox\same@box
+\def\same{\@ifnextchar[{\@same}{\@same[]}}%]
+
+\def\@same[#1]{\leavevmode\@ifempty{#1}{}{\global\setbox\same@box=\hbox{#1}}%
+\hbox to \wd\same@box{%
+\leaders\hrule height0.6ex depth-0.47ex\hfill
+\kern0.7ex''\kern0.7ex\leaders\hrule height0.6ex depth-0.47ex\hfill}}
+
+
+%
+%
+% a rule over the whole textwidth
+%
+%
+\def\twrule{\centerline{\vrule width \textwidth height 0.6pt depth 0pt}}
+
+
+%
+%
+\def\rx#1{\rule{#1}{0pt}}
+\def\ry#1{\rule{0pt}{#1}}
+%
+%
+
+%
+%
+% Repeat something many times.
+% \mult{5}{<text>}=<text><text><text><text><text>
+%
+%
+\def\mult#1#2{\t@cnt#1\relax\t@mes{#2}}
+\def\t@mes#1{\ifnum\t@cnt>0\advance\t@cnt by -1\relax
+\def\@tempa{\t@mes{#1}#1}\else\let\@tempa\relax\fi
+\@tempa}
+\newcount\t@cnt
+%
+%
+\@input {\jobname .dat}
+
+% dedicationary line below headline
+\def\dedicationary{\@ifundefined{journame}{%
+This is a preprint. I would be grateful for any comments
+and corrections!}{To be submitted to \journame}.}
+
+% \web|http://www.math.toronto.edu/~stoimeno/|
+% outputs ~ well, and puts a linebreak after slashes
+% but not after 1st slash in '//' (like http://...)
+\def\firstch@r#1#2\@nil{#1}
+\def\web#1{%
+ \bgroup\let \do \@makeother\do \_\do \^%\do \~%
+ \catcode`\~=\active\def~{\~{}}
+  \gdef\myverb##1#1{%
+    \def\@tempx####1/####2\@end{%
+      \@ifempty{####2}%
+        {{\do \_\do \^\tt ####1}\egroup\let\@tempz\@gobble}%
+        {{\do \_\do \^\tt ####1/}%
+	 % put a linebreak only if #2 starts with a /
+	 \def\@tempq{\@ifnextchar/{\@gobble}{\linebreak[0]\@gobble}}%
+	 \ea\@tempq\firstch@r####2\@nil\let\@tempz\@tempx%
+	}%
+        \@tempz####2\@end%
+    }%
+    \@tempx##1/\@end%
+  }%
+ \myverb
+}%
+
+% a slightly fancier vers for putting linebreaks after the char
+% following directly after the macro
+% e.g. \webb.|http://www.math.toronto.edu/~stoimeno/| acts like
+% \web|http://www.math.toronto.edu/~stoimeno/| but put linebraks after
+% `.' rather than '/'
+\def\webb#1#2{%
+ \bgroup \let \do \@makeother\do \_\do \^\do \~%
+  \gdef\myverb##1#2{%
+    \def\@tempx####1#1####2\@end{%
+      \@ifempty{####2}%
+        {{\tt ####1}\egroup\let\@tempz\@gobble}%
+        {{\do \_\do \^\do \~\tt ####1#1}\linebreak[0]\let\@tempz\@tempx%
+	}%
+        \@tempz####2\@end%
+    }%
+    \@tempx##1#1\@end%
+  }%
+ \myverb
+}%
+
+% restore `@ catcode
+
+\@tempcat
+
+% that's all
+
+\endinput

@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2002.07369v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Gr\\\"obner-Shirshov bases for the Coxeter groups of the types $G_2,F_4,E_6,E_7$ and $E_8$ (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2002.07369v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2002.07369&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2002.07369v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2002.07369v2",
+    "content_type": "application/gzip",
+    "sha256": "042b5d34acc15cd8b90f3090d9e4367fc6a147a9f958c9308f8b50b218178800",
+    "bytes": 9752,
+    "fetched": "2026-10-10T15:15:09+00:00",
+    "files": [
+      {
+        "path": "source/files/grobner.tex",
+        "role": "tex",
+        "sha256": "bcdb0f3befc4bf50f0850c13e61281e110382bede7db33e16665d311b25f5936",
+        "bytes": 36725
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -8,14 +8,10 @@ pages: 15-16
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
 doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
+text_source: latex
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 1.0
 ---
-resentations in SL2(C)
-This section is devoted to the torsion of orientable hyperbolic 3-man ifolds, using
-the representations in SL 2(C) obtained as a lift of the holonomy representation
-(the choice of the lifts depends on the choice of a spin structure). It starts with
-closed manifolds, for which this representation is acyclic. Then it con siders
-manifolds of ﬁnite volume with one cusp, for which it is also acyclic. Besid es
-the invariant itself, it analyzes the function on the variety of chara cters deﬁned
-by the torsion. This is applied for instance to study the behavior of t orsion
-under Dehn ﬁlling.
-15
+[]{#sec:torsionSL2 label="sec:torsionSL2"}
+
+This section is devoted to the torsion of orientable hyperbolic 3-manifolds, using the representations in $\mathrm{SL}_2(\mathbb{C})$ obtained as a lift of the holonomy representation (the choice of the lifts depends on the choice of a spin structure). It starts with closed manifolds, for which this representation is acyclic. Then it considers manifolds of finite volume with one cusp, for which it is also acyclic. Besides the invariant itself, it analyzes the function on the variety of characters defined by the torsion. This is applied for instance to study the behavior of torsion under Dehn filling.

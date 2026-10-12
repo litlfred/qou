@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2401.04019v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2401.04019v1/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Proof of Theorem 1.4",
   "pageStart": 13,
   "pageEnd": 13,
   "text": "../sections/sec-006-43-proof-of-theorem-14.md",
-  "derivedFrom": "library/arxiv-2401.04019v1/manifest",
-  "sourceDocument": "library/arxiv-2401.04019v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2401.04019v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2401.04019v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,80 +8,53 @@ pages: 20-21
 source_pdf: 1004.1533v3.pdf
 source_sha256: 95c1544431e6bf37
 doc_brief: "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners."
+text_source: latex
+latex_prose_ratio: 0.934
+latex_coverage_ratio: 0.867
 ---
-and M3, we can transform an open book with any number of pages to one with
-only one page (see Figure 20). Thus, it suﬃces to prove invariance u nder M1 in
-this special case. Drawing the dual graph in the vicinity of the verte x, invariance
-under M1 is equivalent to the following equality:
-1
-D2
-∑
-j,k ∈Irr(C)
-djdk ϕ ϕ ∗
-... ...
-V1 Vn Vn V1
-Xj
-Xk
+First we consider move M1. Note that by applying M2 and M3, we can
+transform an open book  with any number of pages to one with only one page
+(see \firef{f:book}). 
+\begin{figure}[ht]
+\begin{align*}&\figscale{0.7}{figures/book0.eps}
+    \xxto{\text{add edge to each page}}
+    \figscale{0.7}{figures/book1.eps}
+    \\
+     & \xxto{\text{add faces between new edges}}
+    \figscale{0.7}{figures/book2.eps}
+     \xxto{\text{remove all pages but one}}  
+   \figscale{0.7}{figures/book3.eps} 
+   \end{align*}
+ \caption{Decomposing an open book into a single page book}\label{f:book}
+ \end{figure} 
+Thus, it suffices to prove invariance under M1 in this
+special case. Drawing the dual graph in the vicinity of the vertex,
+invariance under M1 is equivalent to the following equality:
+$$
+\frac{1}{\DD^2}\sum_{j,k\in \Irr(\C)}d_{j}d_{k}\tzPairingVII
 =
-∑
-i∈Irr(C)
-di ϕ ϕ ∗
-... ...
-V1 Vn Vn V1
-Xi
-Note the normalizing factor 1
-D2 which comes from the fact that we are removing a
+\sum_{i\in \Irr(\C)}d_{i}\tzPairingIII
+$$
+Note the normalizing factor
+$\frac{1}{\mathcal{D}^2}$ which comes from the fact that we are removing a
 vertex.
-TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT 21
-add edge to each page
-− − − − − − − − − − − − − − →
-add faces between new edges
-− − − − − − − − − − − − − − − − − − →
-remove all pages but one
-− − − − − − − − − − − − − − − →
-Figure 20. Decomposing an open book into a single page book
-Using semisimplicity of C, it is easy to see that it suﬃces to show this equality
-in the special case when V =V1 ⊗ · · · ⊗Vn is simple:
-1
-D2
-∑
-j,k ∈Irr(C)
-djdk ϕ ϕ ∗
-V V
-Xj
-Xk
+
+Using semisimplicity of $\C$, it is easy to see that it suffices to show
+this equality in the special case when $V=V_1\otimes \dots \otimes V_n$ is
+simple:
+$$
+\frac{1}{\DD^2}\sum_{j,k\in \Irr(\C)}d_{j}d_{k}\tzPairingVIII
 =
-∑
-i∈Irr(C)
-di ϕ ϕ ∗
-V V
-Xi
-By Lemma 1.1, the right-hand side is equal to coev V : 1 →V ⊗V ∗. Since Hom( 1,V ⊗
-V ∗) is one-dimensional, the left-hand side is also a multiple of coev V . Composing
-it with the evaluation morphism ev V , we get
-1
-D2
-∑
-j,k
-djdkN V jk
-1 = 1
-D2
-∑
-j,k
-N V j
-k∗ dkdj
-= 1
-D2
-∑
-j
-(∑
-k
-N V j
-k∗ dk
-)
-dj = 1
-D2
-∑
-j
-(dVdj)dj =dV,
-which proves that the left-hand side is equal to coev V .
+\sum_{i\in \Irr(\C)}d_{i}\tzPairingIX
+$$
+By \leref{l:pairing}, the right-hand side is equal to $\coev_V\colon \one
+\to V\otimes V^*$. Since $\Hom(\one, V\otimes V^*)$ is one-dimensional,
+the left-hand side is also a multiple of $\coev_V$. Composing it with the
+evaluation morphism  $\ev_V$, we get
+\begin{align*}
+&\frac{1}{\DD^2}\sum_{j,k}d_jd_kN_{1}^{Vjk} =
+\frac{1}{\DD^2}\sum_{j,k}N_{k^*}^{Vj}d_kd_j\\
+&\quad=\frac{1}{\DD^2}\sum_{j}\Bigl(\sum_{k}N_{k^*}^{Vj}d_k\Bigr)d_j=
+\frac{1}{\DD^2}\sum_{j}(d_{V}d_j)d_j=d_V,
+\end{align*}
+which proves that the left-hand side is equal to $\coev_V$.

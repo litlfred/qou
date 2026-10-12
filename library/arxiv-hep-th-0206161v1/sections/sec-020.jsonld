@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-th-0206161v1/sections/sec-020",
   "@type": [
     "doco:Section"
   ],
-  "title": "Five dimensional viewpoint",
-  "pageStart": 25,
-  "pageEnd": 26,
+  "title": "References",
+  "pageStart": 30,
+  "pageEnd": 31,
   "contains": [
     "library/arxiv-hep-th-0206161v1/blocks/prose-sec-020"
   ],
-  "derivedFrom": "library/arxiv-hep-th-0206161v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0206161v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0206161v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0206161v1/manifest.jsonld",
   "provenance": "ingested"
 }

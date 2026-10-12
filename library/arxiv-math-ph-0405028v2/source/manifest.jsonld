@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-ph-0405028v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-ph-0405028v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0405028v2/manifest.jsonld",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math-ph/0405028&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-ph-0405028v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math-ph/0405028v2",
+    "content_type": "application/gzip",
+    "sha256": "44a4a5333133468b830a1bdad97a420e9e27602e6085b125b473bb2813ffa782",
+    "bytes": 60897,
+    "fetched": "2026-10-10T15:31:35+00:00",
+    "files": [
+      {
+        "path": "source/files/brieskorn.bbl",
+        "role": "bbl",
+        "sha256": "218cf325b4e68ce151c785fc02d6d3e725fcc1dd420a72fc5d57698508f7d4e1",
+        "bytes": 7926
+      },
+      {
+        "path": "source/files/brieskorn.tex",
+        "role": "tex",
+        "sha256": "9c8c0fb6b311d2b891cebe68308933fe234b768934a2677d9cf12f849f40d4ab",
+        "bytes": 86220
+      },
+      {
+        "path": "source/files/pst-3dplot.sty",
+        "role": "sty",
+        "sha256": "128719c6856bc6f28590d48a3b39aa0396516e2379f4f33cc12d51b6a08df246",
+        "bytes": 132
+      },
+      {
+        "path": "source/files/pst-3dplot.tex",
+        "role": "tex",
+        "sha256": "ed1d1304784b9579147c535665b1b0242e106cbb4720307a24ee6a9ca9749f9e",
+        "bytes": 38341
+      },
+      {
+        "path": "source/files/pst-vue3d.tex",
+        "role": "tex",
+        "sha256": "d1b72e6b27551e20403799afa7960c5db38bb0c30c8f81a231b2fad8e2fbe905",
+        "bytes": 41765
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

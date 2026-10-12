@@ -1,0 +1,266 @@
+
+\documentclass[a4paper,10pt]{article}
+\pdfoutput=1
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath,amsxtra}
+\usepackage[varg]{txfonts}
+\usepackage[unicode]{hyperref}
+\usepackage{framed}
+\usepackage[amsmath,hyperref,framed,thmmarks]{ntheorem}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{bbm}
+\usepackage{color}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+ %vruler
+%\usepackage{vruler}
+%\setvruler[10pt][0][2][4][1][1cm][1cm][-5mm][\textheight]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorems
+\setlength{\FrameSep}{.5ex}
+\theoremseparator{.}
+\makeatletter
+\renewcommand{\newframedtheorem}[1]{%
+\theoremprework{\framed\vspace{-1.5ex}}%
+\theorempostwork{\vspace{-2ex}\endframed}%
+\newtheorem@i{#1}%
+}
+\makeatother
+\newframedtheorem{theorem}{Theorem}%[section]
+\newframedtheorem{proposition}{Proposition}[section]
+\newframedtheorem{lemma}[proposition]{Lemma}
+\newframedtheorem{corollary}[proposition]{Corollary}
+\theorembodyfont{\upshape}
+\theoremsymbol{$\Diamond$}
+\newtheorem{remark}[proposition]{Remark}
+\makeatletter
+\newtheoremstyle{proof}%
+{\item[\theorem@headerfont\hskip\labelsep ##1\theorem@separator]}%
+{\item[\ifx\@empty##3\else\theorem@headerfont\hskip \labelsep ##1\ of\ ##3\theorem@separator\fi]}
+\makeatother
+\theoremheaderfont{\itshape}
+\theoremstyle{proof}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\Box}}
+\newtheorem{proof}{Proof}
+\theoremheaderfont{\sffamily\bfseries}\theorembodyfont{\sffamily\upshape}
+\theoremstyle{plain}
+\theoremnumbering{alph}
+\theoremsymbol{$\Diamond$}
+\theoremprework{\small}
+\theorempostwork{\normalsize}
+\newtheorem{detail}{Detail}[theorem]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyperlinks in blue
+\hypersetup{
+breaklinks=true,
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paragraph layout
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{1ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% displaybreaks
+\allowdisplaybreaks
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% boldmath (from http://www.volkerschatz.com/tex/thacks.html)
+\def\bfseries{\fontseries \bfdefault \selectfont \boldmath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Roman numbers for enumerate
+\renewcommand{\theenumi}{\textup{(\roman{enumi})}}
+\renewcommand{\labelenumi}{\theenumi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% fnsymbols by asterisks
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or *\or **\or {**}* \or {**}{**}\else\@ctrerr\fi}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Brackets
+\newcommand{\abs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\br}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\bv}[1]{\ensuremath{\left[#1\right]}}
+\renewcommand{\d}{\ensuremath{\,\mathrm{d}}}
+\newcommand{\fseq}[1]{\ensuremath{\br{#1}_{k\in\Z}}}
+\newcommand{\hnorm}[2][1,2]{\ensuremath{\left\|#2\right\|_{H^{{#1}}}}}
+\newcommand{\lnorm}[2][2]{\ensuremath{\left\|#2\right\|_{L^{{\scriptsize#1}}}}}
+\newcommand{\norm}[1]{\ensuremath{\left\|#1\right\|}}
+\newcommand{\seminorm}[1]{\ensuremath{\left[#1\right]}}
+\newcommand{\seminormv}[1]{\ensuremath{\left\llbracket#1\right\rrbracket}}
+\newcommand{\seq}[1]{\ensuremath{\br{#1}_{\eps>0}}}
+\newcommand{\seqn}[2][k]{\ensuremath{\br{{#2}_{#1}}_{#1\in\N}}}
+\newcommand{\seqnu}[2][k]{\ensuremath{\br{{#2}_{#1}}_{#1\in\N\cup\set0}}}
+\newcommand{\set}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\sets}[2]{\ensuremath{\left\{\left.#1\,\right|#2\right\}}}
+\newcommand{\sett}[2]{\ensuremath{\left\{#1\left|\,#2\right.\right\}}}
+\renewcommand{\sp}[1]{\ensuremath{\left\langle#1\right\rangle}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Equation numbers within section
+\numberwithin{equation}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Circled asterisk (mathabx)
+\DeclareFontFamily{U}{matha}{\hyphenchar\font45}
+\DeclareFontShape{U}{matha}{m}{n}{
+      <5> <6> <7> <8> <9> <10> gen * matha
+      <10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
+      }{}
+\DeclareSymbolFont{matha}{U}{matha}{m}{n}
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+      <5> <6> <7> <8> <9> <10>
+      <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+      mathx10
+      }{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareMathSymbol{\oast}{2}{matha}{"66}
+\DeclareMathSymbol{\bigoast}{1}{mathx}{"C6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abbreviations
+\renewcommand{\a}{\ensuremath{\alpha}}
+\renewcommand{\angle}{\sphericalangle}
+\newcommand{\B}[2]{\ensuremath{\textstyle B_{\scriptstyle #1}^{\scriptstyle #2}}}
+\newcommand{\barw}{\ensuremath{{\bar{w}}}}
+\renewcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\CC}[1][]{\ensuremath{\mathscr{C}_{#1}}}
+\newcommand{\Cia}[1][1]{\ensuremath{C_{\mathrm{ia}}^{#1}}}
+\DeclareMathOperator{\const}{const}
+\DeclareMathOperator{\conv}{conv}
+\newcommand{\D}[3][\g]{{#1}(u+#2)-{#1}(u+#3)}
+\newcommand{\dd}[1][\tau]{{\textstyle\frac{\d}{\d#1}}}
+\newcommand{\dg}{{\gamma}'}
+\newcommand{\dgt}{\gt'}
+\renewcommand{\dh}{{h}'}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\dist}{dist}
+\newcommand{\dtg}{{\tilde{\gamma}}'}
+\newcommand{\dth}{{\tilde{h}}'}
+\newcommand{\E}[1][p,q]{\ensuremath{\mathrm{intM}^{(#1)}}}
+\newcommand{\Ee}[1][\eps]{\ensuremath{\mathrm{TP}_{#1}^{(p,q)}}}
+\newcommand{\eps}{\ensuremath{\varepsilon}}
+\DeclareMathOperator*{\essinf}{ess\,inf}
+\newcommand{\Fe}[1][\eps_{1},\eps_{2}]{\ensuremath{F_{#1}^{(p,q)}}}
+\newcommand{\fracabs}[1]{\frac{#1}{\abs{#1}}}
+\newcommand{\g}{\gamma}
+\newcommand{\gp}{g^{p}}
+\newcommand{\gt}[1][\tau]{\gamma_{#1}}
+\renewcommand{\G}[1][p]{\ensuremath{\mathcal G^{(#1)}}}
+\renewcommand{\H}[1][p]{\ensuremath{\mathcal H^{(#1)}}}
+\newcommand{\I}[1][\eps]{\ensuremath{\mathcal J_{#1}^{(\a)}}}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\image}{image}
+\newcommand{\J}[1][\eps]{\ensuremath{J_{#1}}}
+\newcommand{\length}{\ensuremath{\mathscr L}}
+\newcommand{\LLL}[1][\a]{L^{(#1)}}
+\newcommand{\Lp}[1]{\ensuremath{L^{\scriptstyle #1}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Om}[1][\g]{\Omega^{(\a)}_{#1}}
+\newcommand{\Omz}[1][\g]{\Omega^{(2)}_{#1}}
+\renewcommand{\P}[1][\dg(u)]{P_{#1}}
+\newcommand{\PP}[1][\dg(u)]{P_{#1}^\perp}
+\newcommand{\p}[1][s]{\partial^{#1}}
+\newcommand{\Q}[1][p]{Q^{(#1)}}
+\newcommand{\Qe}[1][p]{Q_\eps^{(#1)}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\renewcommand{\Re}[1][\eps]{R_{#1}^{(p)}}
+\newcommand{\refeq}[2][=]{\ensuremath{\stackrel{\text{\makebox[0ex][c]{\eqref{eq:#2}}}}{#1}}}
+\renewcommand{\rho}{\ensuremath{\varrho}}
+\newcommand{\RR}[1][p,q]{R^{(#1)}}
+\newcommand{\rzd}{\ensuremath{(\R/\Z,\R^n)}}
+\newcommand{\s}{\ensuremath{\sigma}}
+\DeclareMathOperator*{\sign}{sign}
+\newcommand{\spR}[1]{\sp{#1}_{\R^n}}
+\newcommand{\T}[3][\g]{\triangle_{#2,#3}{#1}}
+%\renewcommand{\T}[3][\g]{\D[3][\g]}
+\newcommand{\tBox}{\tilde\Box}
+\newcommand{\tD}{\tilde\triangle}
+\newcommand{\tg}{\tilde{\gamma}}
+\renewcommand{\th}{\ensuremath{\vartheta}}
+\newcommand{\tI}{\ensuremath{\widetilde{\I[]}}}
+\newcommand{\tint}{\iiint_{\R/\Z\times D}}
+\newcommand{\vth}{\ensuremath{\vartheta}}
+\newcommand{\W}[1][(3p-2)/q-1,q]{\ensuremath{W^{\scriptstyle #1}}}
+\newcommand{\Wd}[1][(3p-2)/q-2,q]{\ensuremath{W^{\scriptstyle #1}}}
+\newcommand{\Wia}[1][(3p-2)/q-1,q]{\ensuremath{W_{\mathrm{ia}}^{#1}}}
+%\newcommand{\Wint}[1][\eps]{\ensuremath{\iint_{U_{#1}}}}
+%\newcommand{\Wir}[1][(p-1)/q,q]{\ensuremath{W_{\mathrm{ir}}^{#1}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title
+\title{Towards a regularity theory \\ for integral Menger curvature}
+%\title{Regularity theory for integral Menger curvature: \\ The non-degenerate sub-critical case}
+\author{%
+ Simon Blatt\thanks{Workgroup Applied Analysis, Karlsruhe Institute of Technology, Kaiserstra{\ss}e 89 -- 93, 76133 Karlsruhe, Germany, \url{simon.blatt@kit.edu}}
+ \and
+ Philipp Reiter\thanks{Fakult\"at f\"ur Mathematik, Universit\"at Duisburg-Essen, Forsthausweg 2, 47057 Duisburg, Germany, \url{philipp.reiter@uni-due.de}}}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We generalize the notion of
+integral Menger curvature introduced by Gonzalez and Maddocks~\cite{gonz-madd} by decoupling 
+the powers in the integrand.
+This leads to a new two-parameter family
+of knot energies $\E$.
+
+We classify finite-energy curves in terms of Sobolev-Slobodecki{\u\i} spaces.
+Moreover, restricting to the range
+of parameters leading to a sub-critical Euler-Lagrange equation,
+we prove existence of minimizers within any knot class via a
+uniform bi-Lipschitz bound.
+Consequemtly, $\E$ is a knot energy in the sense of O'Hara.
+
+Restricting to the non-degenerate sub-critical case,
+a suitable decomposition of the first variation allows to
+establish a bootstrapping argument that leads to $C^{\infty}$-smoothness
+of critical points.
+
+%We will first characterize the curves of finite
+%energy $\E$ in the sub-critical range $p\in(q+2,2q+1)$ and see that those
+%are all injective and regular curves in the Sobolev-Slobodecki{\u\i} space
+%$\W[(p-1)/q,q]\rzd$. We  derive a formula for the first variation
+%that turns out to be a non-degenerate elliptic operator for the special 
+%case $q=2$ --- a fact that seems not to be the case for the original 
+%tangent-point energies. 
+%This observation allows us to prove that stationary points
+%of $\E[p,2]+\lambda\,\text{length}$, $p\in(4,5)$, $\lambda>0$,
+%are smooth --- which especially applies to all local minimizers.
+\end{abstract}
+\tableofcontents
+
+\newcommand{\secA}{Classification of finite-energy curves}
+\newcommand{\secB}{Existence of minimizers within knot classes}
+\newcommand{\secC}{Differentiability}
+\newcommand{\secD}{Regularity of stationary points}
+
+\input{intro.tex}
+\input{energy-space}
+\input{regularity}
+
+\begin{appendix}
+ \input{fractional}
+\end{appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%\bibliography{projekt}
+%\bibliographystyle{abbrvhref}
+
+\input{statpointmenger.bbl}
+
+\end{document}

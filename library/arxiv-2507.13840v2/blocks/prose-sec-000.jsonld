@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2507.13840v2/blocks/prose-sec-000",
+  "kind": "prose",
+  "title": "Efficient algorithm to measure PT negativity moment",
+  "pageStart": 30,
+  "pageEnd": 30,
+  "text": "../sections/sec-000-efficient-algorithm-to-measure-pt-negativity-mom.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "provenance": "ingested"
+}

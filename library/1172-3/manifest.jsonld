@@ -1,24 +1,26 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1172-3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On the colored Jones polynomials of some simple links",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1172-3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "1172-3",
   "contains": [
+    "library/1172-3/sections/sec-front-matter",
     "library/1172-3/sections/sec-000",
     "library/1172-3/sections/sec-001",
-    "library/1172-3/sections/sec-002",
-    "library/1172-3/sections/sec-003",
-    "library/1172-3/sections/sec-004",
-    "library/1172-3/sections/sec-005",
-    "library/1172-3/sections/sec-006",
-    "library/1172-3/sections/sec-007",
-    "library/1172-3/sections/sec-008"
+    "library/1172-3/sections/sec-002"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1172-3",
+    "title_source": "slug",
     "source_file": "1172-3.pdf",
     "source_sha256": "e9c32f59e9db7970fb39510d17d1fbeb1d26ba29609d88a308a26ba1e36ae636",
     "pages": 10,

@@ -1,0 +1,27 @@
+
+\makeatletter
+
+\newcount\case@dp
+\case@dp\z@
+
+\newenvironment{caselist}{\advance\case@dp\@ne
+\ea\def\ea\@tempa\ea{\csname case@cnt\romannumeral\case@dp\endcsname}%
+\ea\ifx\@tempa\relax\ea\global\ea\newcount\@tempa\fi
+\ea\let\ea\case@cnt\@tempa
+\ifnum\case@dp>1%
+\ea\ea\ea\def\ea\ea\ea\thecase@cnt\ea\ea\ea
+{\ea\thecase@cnt\ea.\ea\mythe\@tempa}\fi
+% \show\thecase@cnt
+% \show\@tempa
+% \show\case@cnt
+% \let\case@cnt\case@cnti
+% \show\case@cnt
+\case@cnt0\relax}%
+{}
+
+\def\case{\advance\case@cnt\@ne{\bf\relax
+Case \thecase@cnt.\ \ignorespaces}\edef\@currentlabel{\thecase@cnt}}
+
+\def\thecase@cnt{\mythe\case@cnti}
+
+\let\mythe\the

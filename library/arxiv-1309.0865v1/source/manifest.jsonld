@@ -1,0 +1,88 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1309.0865v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1309.0865v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.0865v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1309.0865&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1309.0865v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1309.0865v1",
+    "content_type": "application/gzip",
+    "sha256": "aed0f0939b1161f1bc591a5e58dd55504871e69b0fc2bb7dff2c90b1a6c3cdf7",
+    "bytes": 214992,
+    "fetched": "2026-10-10T15:08:40+00:00",
+    "files": [
+      {
+        "path": "source/files/GR4allSB.bbl",
+        "role": "bbl",
+        "sha256": "edb102fb37203ff1cf97f66c7214a0452f1992d3bd7c4e4edce7b64bf55f5135",
+        "bytes": 4600
+      },
+      {
+        "path": "source/files/GR4allSB.tex",
+        "role": "tex",
+        "sha256": "2754e06f55e80a87c0183f0117a4d0cf9c59c61d3d97e8d2442e74aa9eb61494",
+        "bytes": 15264
+      },
+      {
+        "path": "source/files/HeckeBackground.tex",
+        "role": "tex",
+        "sha256": "2b89614efaac66994082514b0592f586f74640cf80daca031124ea7647e2e526",
+        "bytes": 14496
+      },
+      {
+        "path": "source/files/Intro.tex",
+        "role": "tex",
+        "sha256": "64911be24d77f59fa3ebaae8239963409e2e4b3f668f88f16a4552f8d804c2ec",
+        "bytes": 38015
+      },
+      {
+        "path": "source/files/LLLproof.tex",
+        "role": "tex",
+        "sha256": "9e997c15a7ce8d21a00f22078fcbf981381f5cf4611d91081c4fbf55ea3d840f",
+        "bytes": 45350
+      },
+      {
+        "path": "source/files/LightLeaves.tex",
+        "role": "tex",
+        "sha256": "c27445d4e866c4beef00dd958d84534d054a24cec8aebf043c5ae2a641571c83",
+        "bytes": 44129
+      },
+      {
+        "path": "source/files/SBimBackground.tex",
+        "role": "tex",
+        "sha256": "e560e4bd6581a820d6e03db1bc0346d6e2ad2ec2d78a91a320b778e889d188ce",
+        "bytes": 47210
+      },
+      {
+        "path": "source/files/SoergelDiagrams.tex",
+        "role": "tex",
+        "sha256": "d502910b8bf3119e65842fbe3b6c788599b2c42d526a726d9679cb532469e4a8",
+        "bytes": 53122
+      },
+      {
+        "path": "source/files/StdDiagrams.tex",
+        "role": "tex",
+        "sha256": "79baf6f8801e5f98273603b22f028c02db580148b9e8417c1996521b562758ad",
+        "bytes": 16415
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

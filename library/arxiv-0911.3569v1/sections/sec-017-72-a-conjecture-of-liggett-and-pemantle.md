@@ -8,105 +8,136 @@ pages: 20-22
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
 doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.947
 ---
-Pemantle arrived independently at the following conjecture, now a theorem.
-Theorem 7.1 (Theorem 5.2 of [7]) . If the initial distribution ϕ0 of a SEP is
-deterministic ( i.e. concentrated on a single state) then ϕt is NA for all t≥ 0.
-Proof. This amounts to ﬁnding a class S of probability distributions such that:
-(1) deterministic distributions are in S,
-(2) being in S implies NA, and
-(3) time evolution of the SEP preserves membership in S.
-Borcea, Br¨ and´ en, and Liggett [7] identiﬁed such a class:ϕ is in S if and only if
-the partition function Z(ϕ) is homogeneous, multiaﬃne, and real stable. (Notice
-that ifϕ is in S thenϕa is in S for all a∈ RΛ with a> 0, by scaling.) We proceed
-to check the three claims above.
-Claim (1) is trivial, since if ϕ(S) = 1 then Z(ϕ) = xS, which is clearly homoge-
-neous, multiaﬃne, and real stable.
-To check claim (2) we verify the hypotheses of the Feder-Mihail Theorem. Hy-
-potheses (i) and (ii) hold since Z(ϕ) is multiaﬃne and homogeneous. By special-
-ization and contraction, (iii) holds. To check (iv), let a∈ RΛ with a > 0, let
-{i,j} ⊆Λ, and consider the probability distribution ϕa on Ω. The occupation
-probability for site i is
-Pr[E{i}] =
-∑
-S∈{0,1}Λ: S(i)=1
-ϕ(S)aS
-Z(ϕ; a) =ai
-∂iZ(ϕ; a)
-Z(ϕ; a) ,
-and similarly for Pr[ E{j}]. Likewise, Pr[ E{i,j}] =aiajZ(ϕ; a)−1·∂i∂jZ(ϕ; a). Now
-Pr[E{i,j}]− Pr[E{i}]· Pr[E{j}] =− aiaj
-Z(ϕ; a)2· ∆ijZ(ϕ; a)≤ 0,
-by Theorem 3.1. Thus ϕa is NC. By the Feder-Mihail Theorem, every ϕ in S is
-NA.
-To check claim (3) we need some of the theory of continuous time Markov chains.
-The time evolution of a Markov chain M with ﬁnite state space Ω is governed by
-a one-parameter semigroup T (t) of transformations of RΩ. For a function F∈ RΩ
-MULTIVARIATE STABLE POLYNOMIALS 21
-and time t≥ 0 and state S∈ Ω, (T (t)F )(S) is the expected value of F at time t,
-given that the initial distribution of M is concentrated at S with probability one
-at time 0. In particular, ϕt = T (t)ϕ0 for all t≥ 0, and all initial distributions
-ϕ0. In the case of the SEP we are considering, the inﬁnitesimal generator L of the
-semigroup T (t) is given by
-L =
-∑
-{i,j}∈E
-λij (τij− 1).
-For each{i,j}∈ E, this replaces each S∈ Ω by S◦τij at the rate λij.
-In preparation for Section 7.3, it is useful to regard L as an element of the real
-semigroup algebra A = R[E] of the semigroup E of all endofunctions f : Ω→ Ω (with
-the operation of functional composition). The left action of E on Ω is extended to
-a left action of A on C[x] as usual: for f∈ E and S∈ Ω, f(xS) = xf(S), extended
-bilinearly to all of A and C[x]. A permutation σ ∈ S(Λ) is identiﬁed with the
-endofunction fσ :S↦→S◦σ−1, so this action of A agrees with the action of S(m) in
-Section 4.2. A left action of A on RΩ is deﬁned by Z(f(F )) = f(Z(F )) for all f∈ E
-and F∈ RΩ, and linear extension. More explicitly, for f∈ E, F∈ RΩ, and S∈ Ω,
-(f(F ))(S) =F (f−1(S)) =
-∑
-{F (S′) : S′∈ Ω and f(S′) =S}.
-Consider an element of A of the form L =∑N
-i=1λi(fi− 1) with all λi > 0. Let
-λi≤L for all i∈ [N], and let K =∑N
-i=1λi. The power series
-exp(tL) = e−Kt
-∞∑
-n=0
-tn
-n!
-[ N∑
-i=1
-λifi
-]n
+In the early 2000s, Liggett and Pemantle arrived independently at
+the following conjecture, now a theorem.
+
+\begin{theorem}[Theorem 5.2 of \cite{BBL}]
+If the initial distribution $\varphi_0$ of a SEP is deterministic (\emph{i.e.}
+concentrated on a single state) then $\varphi_t$ is NA for all $t\geq 0$.
+\end{theorem}
+\begin{proof}
+This amounts to finding a class $\Stab$ of probability distributions
+such that:\\
+(1)\ deterministic distributions are in $\Stab$,\\
+(2)\ being in $\Stab$ implies NA, and\\
+(3)\ time evolution of the SEP preserves membership in $\Stab$.
+
+Borcea, Br\"and\'en, and Liggett \cite{BBL} identified such a 
+class:\ $\varphi$ is in $\Stab$ if and only if the partition function
+$Z(\varphi)$ is homogeneous, multiaffine, and real stable.
+(Notice that if $\varphi$ is in $\Stab$ then $\varphi^{\a}$ is in 
+$\Stab$ for all $\a\in\RR^{\Lambda}$ with $\a>\zero$, by scaling.)
+We proceed to check the three claims above.
+
+Claim (1) is trivial, since if $\varphi(S)=1$ then 
+$Z(\varphi)=\x^{S}$, which is clearly homogeneous, multiaffine, and real
+stable.
+
+To check claim (2) we verify the hypotheses of the Feder-Mihail 
+Theorem.  Hypotheses (i) and (ii) hold since $Z(\varphi)$ is 
+multiaffine and homogeneous.  By specialization and contraction,
+(iii) holds.  To check (iv), let $\a\in\RR^{\Lambda}$ with $\a>\zero$,
+let $\{i,j\}\subseteq \Lambda$, and consider the probability 
+distribution $\varphi^{\a}$ on $\Omega$.  The occupation 
+probability for site $i$ is
+$$
+\Pr[\E_{\{i\}}] = \sum_{S\in\{0,1\}^\Lambda:\ S(i)=1}
+\frac{\varphi(S)\a^{S}}{Z(\varphi;\a)}
 =
-∑
-f∈E
-Pf(t)· f
-in A[[t]] is such that for each f∈ E, Pf(t)∈ R[[t]] is dominated coeﬃcientwise by
-exp((LN−K)t). Thus exp(tL)∈ A[[t]] converges for all t≥ 0. The semigroup of
-transformations generated by L is exp(tL).
-To check claim (3) we will show that the semigroup T (t) of the SEP preserves
-stability for all t≥ 0: that is, if Z(ϕ0) is stable then Z(ϕt) = T (t)Z(ϕ0) is stable
-for all t≥ 0. This reduces to the case of a single pair {i,j}∈ E, as follows. If M1
-and M2 are Markov chains on the same ﬁnite state space, with semigroups T1(t)
-and T2(t) generated by L1 and L2, then the semigroup generated by L1 + L2 is
-T (t) = lim
-n→∞
-[T1(t/n)T2(t/n)]n,
-by the Trotter product formula. By Hurwitz’s Theorem, It follows that if Ti(t)
-preserves stability for all t≥ 0 and i∈{ 1, 2}, then T (t) preserves stability for all
-t≥ 0. By repeated application of this argument, in order to show that the SEP
-semigroupT (t) = exp(tL) preserves stability for all t≥ 0 it is enough to show that
-for each{i,j}∈ E,Tij(t) = exp(tλij(τij−1)) preserves stability for allt≥ 0. Now,
-since τ 2
-ij = 1,
-Tij(t) =
-(1 + e−2λijt
-2
-)
-+
-(1− e−2λijt
-2
-)
-·τij.
-By Lemma 4.3, this preserves stability for all t≥ 0. This proves Theorem 7.1. □
-22 DAVID G. WAGNER
+a_{i} \frac{\partial_{i}Z(\varphi;\a)}{Z(\varphi;\a)},
+$$
+and similarly for $\Pr[\E_{\{j\}}]$.  Likewise,
+$\Pr[\E_{\{i,j\}}] =
+a_{i}a_{j}Z(\varphi;\a)^{-1} \cdot \partial_{i}\partial_{j} Z(\varphi;\a)$.
+Now
+$$
+\Pr[\E_{\{i,j\}}]  - \Pr[\E_{\{i\}}]\cdot \Pr[\E_{\{j\}}] 
+=
+- \frac{a_{i}a_{j}}{Z(\varphi;\a)^{2}} \cdot \Delta_{ij} Z(\varphi;\a) \leq 0,
+$$
+by Theorem 3.1.  Thus $\varphi^{\a}$ is NC.
+By the Feder-Mihail Theorem, every $\varphi$ in $\Stab$ is NA.
+
+To check claim (3) we need some of the theory of continuous time Markov 
+chains.  The time evolution of a Markov chain $\MM$ with finite
+state space $\Omega$ is governed by a one-parameter semigroup $T(t)$
+of transformations of $\RR^\Omega$.  For a function $F\in\RR^\Omega$
+and time $t\geq 0$ and state $S\in \Omega$, $(T(t)F)(S)$ is the
+expected value of $F$ at time $t$, given that the initial distribution
+of $\MM$ is concentrated at $S$ with probability one at time $0$.
+In particular, $\varphi_{t} = T(t)\varphi_{0}$ for all $t\geq 0$, and
+all initial distributions $\varphi_{0}$.
+In the case of the SEP we are considering, the infinitesimal generator
+$\L$ of the semigroup $T(t)$ is given by
+$$
+\L = \sum_{\{i,j\}\in E} \lambda_{ij} \left( \tau_{ij} - 1 \right).
+$$
+For each $\{i,j\}\in E$, this replaces each $S\in\Omega$
+by $S\circ\tau_{ij}$ at the rate $\lambda_{ij}$.
+
+In preparation for Section 7.3, it is useful to regard $\L$ as an element
+of the real semigroup algebra $\Alg=\RR[\EE]$ of the semigroup
+$\EE$ of all endofunctions $\ff:\Omega\goesto\Omega$ (with the
+operation of functional composition).  The left action of $\EE$ on
+$\Omega$ is extended to a left action of $\Alg$ on $\CC[\x]$ as usual:\
+for $\ff\in\EE$ and $S\in\Omega$, $\ff(\x^S) = \x^{\ff(S)}$,
+extended bilinearly to all of $\Alg$ and $\CC[\x]$.  A permutation
+$\sigma\in\S(\Lambda)$ is identified with the endofunction $\ff_\sigma:S
+\mapsto S\circ\sigma^{-1}$, so this action of $\Alg$ agrees with
+the action of $\S(m)$ in Section 4.2.  A left action of $\Alg$ on $\RR^\Omega$
+is defined by $Z(\ff(F))=\ff(Z(F))$ for all $\ff\in\EE$ and $F\in\RR^\Omega$,
+and linear extension.  More explicitly, for $\ff\in\EE$, $F\in\RR^\Omega$,
+and $S\in\Omega$,
+$$
+(\ff(F))(S) = F(\ff^{-1}(S)) =
+\sum \{F(S'):\ S'\in\Omega\ \ \mathrm{and}\ \ \ff(S')=S\}.
+$$
+
+Consider an element of $\Alg$ of the form
+$\L = \sum_{i=1}^N \lambda_i (\ff_i-1)$ with all $\lambda_i>0$.
+Let $\lambda_i\leq L$ for all $i\in[N]$, and let $K=\sum_{i=1}^N \lambda_i$.
+The power series
+$$
+\exp(t\L) = \e^{-Kt}\sum_{n=0}^{\infty}\frac{t^{n}}{n!}
+\left[
+\sum_{i=1}^N \lambda_i \ff_i
+\right]^{n}
+=\sum_{\ff\in\EE} P_{\ff}(t)\cdot\ff
+$$
+in $\Alg[[t]]$ is such that for each $\ff\in\EE$,
+$P_{\ff}(t)\in\RR[[t]]$ is dominated coefficientwise by $\exp((LN-K)t)$.  Thus
+$\exp(t\L)\in\Alg[[t]]$ converges for all $t\geq 0$.
+The semigroup of transformations generated by $\L$ is $\exp(t\L)$.
+
+To check claim (3) we will show that the semigroup $T(t)$ of the SEP
+preserves stability for all $t\geq 0$:\ that is,
+if $Z(\varphi_0)$ is stable then $Z(\varphi_t)=T(t)Z(\varphi_0)$
+is stable for all $t\geq 0$.
+This reduces to the case of a single pair $\{i,j\}\in E$, as follows.
+If $\MM_{1}$ and $\MM_{2}$ are Markov chains
+on the same finite state space, with semigroups $T_{1}(t)$ and $T_{2}(t)$
+generated by $\L_{1}$ and $\L_{2}$, then the semigroup generated by
+$\L_{1}+\L_{2}$ is
+$$
+T(t) = \lim_{n\goesto\infty} \left[ T_{1}(t/n) T_{2}(t/n) \right]^{n},
+$$
+by the Trotter product formula.  By Hurwitz's Theorem, It follows that
+if $T_{i}(t)$ preserves stability for all $t\geq 0$ and $i\in\{1,2\}$,
+then $T(t)$ preserves stability for all $t\geq 0$.  By repeated application
+of this argument, in order to show that the SEP semigroup $T(t)=\exp(t\L)$
+preserves stability for all $t\geq 0$ it is enough to show that
+for each $\{i,j\}\in E$, $T_{ij}(t) = \exp(t\lambda_{ij}(\tau_{ij}-1))$
+preserves stability for all $t\geq 0$.  Now, since $\tau_{ij}^{2}=1$,
+$$
+T_{ij}(t)
+=
+\left(\frac{1+\e^{-2\lambda_{ij}t}}{2}\right)+
+\left(\frac{1-\e^{-2\lambda_{ij}t}}{2}\right)\cdot\tau_{ij}.
+$$
+By Lemma 4.3, this preserves stability for all $t\geq 0$.
+This proves Theorem 7.1.
+\end{proof}

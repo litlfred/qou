@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-ph-0601023v3/sections/sec-028",
   "@type": [
     "doco:Section"
   ],
-  "title": "Constraints from gauge coupling uniﬁcation",
-  "pageStart": 62,
-  "pageEnd": 62,
+  "title": "Acknowledgments",
+  "pageStart": 146,
+  "pageEnd": 147,
   "contains": [
     "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-028"
   ],
-  "derivedFrom": "library/arxiv-hep-ph-0601023v3/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-0601023v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0601023v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0601023v3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -5,7 +5,11 @@
   "file": "0810.1064v1.pdf",
   "sha256": "b2d7514c5382ceaaa1824e32bc21518f43155a83644c9967642788a5cf0c79a9",
   "bytes": 151848,
-  "pages": 9
+  "pages": 9,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +21,7 @@
   "doi": null,
   "title": "Multiple polylogarithm values at roots of unity",
   "authors_raw": "Department of Mathematics, Eckerd College, St. Petersburg, FL 33711, USA",
-  "abstract": "For any positive integer N let µ N be the group of the N th roots of unity. In this note we shall study the Q-linear relations among values of multiple polylogarithms evaluated at µ N . We show that the standard relations considered by Racinet do not provide all the pos sible relations in the following cases: (i) level N = 4, weight w = 3 or 4, and (ii) w = 2, 7 < N < 50, and N is a power of 2 or 3, or N has at least two prime factors. We further ﬁnd some (presumably all) of th e missing relations in (i) by using the octahedral symmetry of P1 − ({0, ∞} ∪ µ 4). We also prove some other results when N = p or N = p2 (p prime ≥ 5) by using the motivic fundamental group of P1 − ({0, ∞} ∪ µ N ).",
+  "abstract": "For any positive integer N let \u00b5 N be the group of the N th roots of unity. In this note we shall study the Q-linear relations among values of multiple polylogarithms evaluated at \u00b5 N . We show that the standard relations considered by Racinet do not provide all the pos sible relations in the following cases: (i) level N = 4, weight w = 3 or 4, and (ii) w = 2, 7 < N < 50, and N is a power of 2 or 3, or N has at least two prime factors. We further \ufb01nd some (presumably all) of th e missing relations in (i) by using the octahedral symmetry of P1 \u2212 ({0, \u221e} \u222a \u00b5 4). We also prove some other results when N = p or N = p2 (p prime \u2265 5) by using the motivic fundamental group of P1 \u2212 ({0, \u221e} \u222a \u00b5 N ).",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181117222526-05'00'",
@@ -55,7 +59,7 @@
   },
   {
    "level": 1,
-   "title": "Octahedral symmetry of ¶1-({0,}bold0mu mumu 4)",
+   "title": "Octahedral symmetry of \u00b61-({0,}bold0mu mumu 4)",
    "page": 3,
    "source": "outline",
    "number": null
@@ -96,6 +100,35 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 2,
-  "chars_total": 20984
+  "chars_total": 20984,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-the-motivic-setup",
+     "title": "The motivic setup",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.89,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

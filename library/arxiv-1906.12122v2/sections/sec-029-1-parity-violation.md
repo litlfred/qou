@@ -8,67 +8,58 @@ pages: 59-60
 source_pdf: 1906.12122v2.pdf
 source_sha256: 955e3eda48672e28
 doc_brief: "Nuclear effective field theory: status and perspectives — 34 sections: Contents; Two-body scattering amplitude; Power counting"
+text_source: latex
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.984
 ---
-Besides being responsible for beta decay, weak interac-
-tions also imply that there should be small P -violating
-operators in the nuclear force and currents. Since they
-stem mostly from four-quark interactions proportional to
-the Fermi constant GF ≃ 1.17· 10−5 GeV−2, NDA (9)
-suggests that for T -conserving P violation the suppres-
-sion factor is GFf2
-π∼ 10−7. The framework for the in-
-corporation of P -violating eﬀects in nuclear EFTs was
-developed by Zhu et al. (2005). A major motivation
-for this program is to understand the tension that ex-
-ists among diﬀerent experiments (Holstein, 2010), when
-analyzed with quark and meson-exchange models (Des-
-planques et al., 1980).
-In the pionless theory, P violation in the nuclear force
-is manifest as S-to-P -wave contact interactions, ﬁve of
-60
-which are independent at LO (Zhu et al., 2005; Girlanda,
-2008). Phillips et al. (2009) pointed out that Pion-
-less EFT is well suited to describe a number of existing
-and planned NN scattering experiments and calculated
-the relevant relationships between observables (typically
-spin-polarization asymmetries) at LO in the P -violating
-sector. Schindler et al. (2016) have argued that large-
-Nc arguments can be used to reduce the number of LO
-P -violating operators from ﬁve to two. Grießhammer
-and Schindler (2010) have shown that no P -violating
-3N force occurs up to and including NLO, enabling pre-
-dictions for P -violating elastic neutron-deuteron scatter-
-ing (Grießhammer et al., 2012b; Vanasse, 2012) based on
-the two-nucleon LECs. However, Vanasse (2019) con-
-cludes that a P -violating 3N force is required at NLO,
-after all.
-First pionless calculations of the deuteron anapole
-(or toroidal dipole) moment and P -violating eﬀects in
-the np → dγ capture process were presented by Sav-
-age (2001), building upon previous work in the theory
-with explicit, perturbative pions (Savage and Springer,
-1998; Kaplan et al. , 1999a; Savage and Springer, 2001).
-Schindler and Springer (2010), Vanasse and Schindler
-(2014), and Shin et al. (2010) looked at P -violating
-asymmetries in the np → dγ process. Spin polariza-
-tion in the inverse process was studied by Ando et al.
-(2011). Moeini Arani and Bayegan (2013) and Arani and
-Bayegan (2014) studied P violation in the nd→ 3Hγ
-radiative-capture reaction, and Mahboubi et al. (2016)
-included electromagnetic eﬀects to calculate polarized pd
-scattering.
-Some of these processes have also been considered
-in Chiral EFT. As far as strong interactions are con-
-cerned, the power µ of a contribution to the potential
-(see Eq. (74)) can now be negative, but of course the cor-
-responding terms are suppressed by small factors. The
-lowest orders of the T -conserving, P -violating potential
-and electromagnetic currents were obtained by Zhu et al.
-(2005), Kaiser (2007), Liu and Zhu (2008), Girlanda
-(2008), Viviani et al. (2014), and de Vries et al. (2014).
-They display new elements, such as TPE, compared to
-the one-meson-exchange potentials usually employed to
-study P violation (Desplanques et al. , 1980). Calcula-
-tions of P violation in few-nucleon systems have so far
-been based on Weinberg’s prescription, as reviewed by
-de Vries and Meißner (2016).
+Besides being responsible for beta decay, weak interactions also imply that
+there should be small $P$-violating operators in the nuclear force and currents.
+Since they stem mostly from four-quark interactions proportional to the Fermi
+constant $G_F \simeq 1.17 \cdot 10^{-5}~\GeV^{-2}$, NDA~\eqref{NDA} suggests
+that for $T$-conserving $P$ violation the suppression factor is $G_Ff_\pi^2 \sim
+10^{-7}$.  The framework for the incorporation of $P$-violating effects in
+nuclear EFTs {was developed by \textcite{Zhu:2004vw}}.  A major motivation
+for this program is to understand the tension that exists among different
+experiments~\cite{Holstein:2010zza}, when analyzed with quark and meson-exchange
+models~\cite{Desplanques:1979hn}.
+
+In the pionless theory, $P$ violation in the nuclear force is manifest as
+$S$-to-$P$-wave contact interactions, five of which are independent at
+LO~\cite{Zhu:2004vw,Girlanda:2008ts}.  \textcite{Phillips:2008hn} pointed out
+that Pionless EFT is well suited to describe a number of existing and planned
+$N\!N$ scattering experiments and calculated the relevant relationships between
+observables (typically spin-polarization asymmetries) at LO in the $P$-violating
+sector.  \textcite{Schindler:2015nga} have argued that
+{large-$N_{\rm c}$} arguments can
+be used to reduce the number of LO $P$-violating operators from five to two.
+\textcite{Griesshammer:2010nd} have shown that no $P$-violating $3N$
+force occurs up to and including NLO, enabling predictions for $P$-violating
+elastic neutron-deuteron scattering~\cite{Griesshammer:2011md,Vanasse:2011nd}
+based on the two-nucleon LECs.  {However, \textcite{Vanasse:2018buq}
+concludes that a $P$-violating $3N$ force is required at NLO, after all.}
+
+First pionless calculations of the deuteron anapole (or toroidal dipole) moment
+and $P$-violating effects in the $np \to d\gamma$ capture process were
+presented by \textcite{Savage:2000iv}, building upon previous work in the theory
+with explicit, perturbative
+pions~\cite{Savage:1998rx,Kaplan:1998xi,Savage:1999cm}.
+\textcite{Schindler:2009wd}, \textcite{Vanasse:2014sva}, and
+\textcite{Shin:2009hi} looked at $P$-violating asymmetries in the $np \to
+d\gamma$ process.  Spin polarization in the inverse process was studied by
+\textcite{Ando:2011nv}.  \textcite{Arani:2011if} and \textcite{Arani:2014eua}
+studied $P$ violation in the $nd \to \ThreeH\,\gamma$ radiative-capture
+reaction, and \textcite{Mahboubi:2016sta} included electromagnetic effects to
+calculate polarized $pd$ scattering.
+
+Some of these processes have also been considered in Chiral EFT.  As far as
+strong interactions are concerned, the power $\mu$ of a contribution to the
+potential (see Eq.~\eqref{chiralnupot}) can now be negative, but of course the
+corresponding terms are suppressed by small factors.  The lowest orders of the
+$T$-conserving, $P$-violating potential and electromagnetic currents were
+obtained by \textcite{Zhu:2004vw}, \textcite{Kaiser:2007zzb},
+\textcite{Liu:2007fn}, \textcite{Girlanda:2008ts},
+\textcite{Viviani:2014zha}, and \textcite{deVries:2014vqa}.  They display new
+elements, such as TPE, compared to the one-meson-exchange potentials usually
+employed to study $P$ violation~\cite{Desplanques:1979hn}.  Calculations of $P$
+violation in few-nucleon systems have so far been based on Weinberg's
+prescription, as reviewed by \textcite{deVries:2015gea}.

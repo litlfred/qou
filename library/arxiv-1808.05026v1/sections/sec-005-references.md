@@ -1,0 +1,44 @@
+---
+doc_id: arxiv-1808.05026v1
+doc_title: "GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF"
+section_id: sec-005-references
+section_title: "References"
+section_number: null
+pages: 9-9
+source_pdf: 1808.05026v1.pdf
+source_sha256: 2781e0b34e7889d6
+toc_source: outline
+---
+[1] G. M. Bergman, The diamond lemma for ring theory, Adv. Math. 29 (1978), 178–218.
+[2] L. A. Bokut, Imbedding into simple associative algebras, Algebra and Logic 15 (1976), 117–142.
+[3] L. A. Bokut, L.-S. Shiao, Gr¨obner-Shirshov bases for Coxeter groups, Comm. Algebra 29 (2001), 4305–4319.
+[4] B. Buchberger, An algorithm for ﬁnding the basis elements of the residue class ring of a zero dimensional
+polynomial ideal, Ph.D. thesis, Univ. of Innsbruck, 1965 (in German). Translated in: J. Symbolic Comput.
+41 (2006), 475–511.
+[5] C. K. Fan, Structure of a Hecke algebra quotient, J. Amer. Math. Soc. 10 (1997), 139–167.
+[6] G. Feinberg, K.-H. Lee, Fully commutative elements of type D and homogeneous representations of KLR-
+algebras, J. Comb. 6 (2015), 535–557.
+[7] V. F. R. Jones, Hecke algebra representations of braid groups and link polynomials, Ann. Math. 126 (1987),
+335–388.
+[8] S.-J. Kang, I.-S. Lee, K.-H. Lee, H. Oh, Hecke algebras, Specht modules and Gr¨obner-Shirshov bases, J.
+Algebra 252 (2002), 258–292.
+[9] D. Lee, Gr¨obner-Shirshov bases and normal forms for the Coxeter groups E6 and E7, In: Advances in Algebra
+and Combinatorics (Guangzhou, 2007), World Sci. Publ., 2008, pp. 243–255.
+[10] D.-I. Lee, Standard monomials for the Weyl group F4, J. Algebra Appl. 15 (2016), 1650146:1–8.
+[11] A. I. Shirshov, Some algorithmic problems for Lie algebras, Sibirk. Math. Z. 3 (1962), 292–296 (in Russian).
+Translated in: ACM SIGSAM Bull. Commun. Comput. Algebra 33 (1999) no. 2, 3–6.
+[12]
+, Selected Works of A. I. Shirshov, L. A. Bokut, V. Latyshev, I. Shestakov, E. Zelmanov (Eds.),
+Birkh¨auser, 2009.
+[13] J. R. Stembridge, Some combinatorial aspects of reduced words in ﬁnite Coxeter groups, Trans. Amer. Math.
+Soc. 349 (1997), 1285–1332.
+[14] O. Svechkarenko, Gr¨obner-Shirshov bases for the Coxeter group E8, Master thesis, Novosibirsk State Univ.,
+2007.
+[15] H. N. V. Temperley, E. H. Lieb, Relations between percolation and colouring problems and other graph
+theoretical problems associated with regular planar lattices: some exact results for the percolation problem,
+Proc. Roy. Soc. London Ser. A 322 (1971), 251–280.
+LAMFA CNRS UMR 7352, Universit´e de Picardie JV-Math´ematiques, 80039 Amiens, France, (mem-
+bre ext. IMJ-PRG Univ. Paris 7)
+E-mail address: sungsoon.kim@u-picardie.fr
+Department of Mathematics, Seoul Women’s University, Seoul 01797, Korea
+E-mail address: dilee@swu.ac.kr

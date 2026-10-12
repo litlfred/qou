@@ -386,17 +386,17 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 
 | Simulator | File |
 |-----------|------|
-| Beta Decay Braid | [`fsh-guts/deprecated/simulators/beta_decay_braid.html`](fsh-guts/deprecated/simulators/beta_decay_braid.html) |
-| Beta Decay Halflife | [`fsh-guts/deprecated/simulators/beta_decay_halflife.html`](fsh-guts/deprecated/simulators/beta_decay_halflife.html) |
-| Brings Surface | [`fsh-guts/deprecated/simulators/brings_surface.html`](fsh-guts/deprecated/simulators/brings_surface.html) |
+| Beta Decay Braid | [`simulators/beta_decay_braid.html`](simulators/beta_decay_braid.html) |
+| Beta Decay Halflife | [`simulators/beta_decay_halflife.html`](simulators/beta_decay_halflife.html) |
+| Brings Surface | [`simulators/brings_surface.html`](simulators/brings_surface.html) |
 | Double Slit | [`fsh-guts/deprecated/simulators/double_slit.html`](fsh-guts/deprecated/simulators/double_slit.html) |
-| Double Slit Simulator | [`fsh-guts/deprecated/simulators/double_slit_simulator.html`](fsh-guts/deprecated/simulators/double_slit_simulator.html) |
+| Double Slit Simulator | [`simulators/double_slit_simulator.html`](simulators/double_slit_simulator.html) |
 | Empty | [`fsh-guts/deprecated/simulators/empty.html`](fsh-guts/deprecated/simulators/empty.html) |
-| Knot Atom Diagrams | [`fsh-guts/deprecated/simulators/knot_atom_diagrams.html`](fsh-guts/deprecated/simulators/knot_atom_diagrams.html) |
-| Knot Periodic Table | [`fsh-guts/deprecated/simulators/knot_periodic_table.html`](fsh-guts/deprecated/simulators/knot_periodic_table.html) |
-| Q Double Slit | [`fsh-guts/deprecated/simulators/q_double_slit.html`](fsh-guts/deprecated/simulators/q_double_slit.html) |
-| Quantum Brings Surface | [`fsh-guts/deprecated/simulators/quantum_brings_surface.html`](fsh-guts/deprecated/simulators/quantum_brings_surface.html) |
-| Valley Stability | [`fsh-guts/deprecated/simulators/valley_stability.html`](fsh-guts/deprecated/simulators/valley_stability.html) |
+| Knot Atom Diagrams | [`simulators/knot_atom_diagrams.html`](simulators/knot_atom_diagrams.html) |
+| Knot Periodic Table | [`simulators/knot_periodic_table.html`](simulators/knot_periodic_table.html) |
+| Q Double Slit | [`simulators/q_double_slit.html`](simulators/q_double_slit.html) |
+| Quantum Brings Surface | [`simulators/quantum_brings_surface.html`](simulators/quantum_brings_surface.html) |
+| Valley Stability | [`simulators/valley_stability.html`](simulators/valley_stability.html) |
 
 <!-- folio:simulators:end -->
 
@@ -423,7 +423,7 @@ SVGs and JSON inline.
 > 2026-06-30) is deprecated to `fsh-guts/deprecated/workflows/`.
 >
 > **The branch itself is NOT removed and the links below still work.** It stays
-> as a file store: ~9,500 files under `lean/`, ~7,300 under `drafts/`, plus the
+> as a file store: ~3,000 files under `lean/` (the doc-gen4 render), ~7,300 under `drafts/`, plus the
 > paper PDFs and manifests.  Deleting it would break every chapter-PDF link in
 > the table further up this README, which is why the deprecation stops at the
 > rendering.
@@ -433,7 +433,7 @@ SVGs and JSON inline.
 | Folio landing page | [index.html](https://github.com/litlfred/qou/blob/gh-pages/index.html) |
 | Paper viewer | [papers/quantum-observable-universe/](https://github.com/litlfred/qou/tree/gh-pages/papers/quantum-observable-universe) |
 | Paper (PDF) | [quantum-observable-universe.pdf](https://github.com/litlfred/qou/blob/gh-pages/quantum-observable-universe.pdf) |
-| Lean interactive docs | [lean/docs/](https://github.com/litlfred/qou/tree/gh-pages/lean/docs) |
+| Lean interactive docs | [lean/](https://github.com/litlfred/qou/tree/gh-pages/lean) |
 | Schema docs (TypeDoc) | [schema-docs/](https://github.com/litlfred/qou/tree/gh-pages/schema-docs) |
 | Python API docs | [python-api/](https://github.com/litlfred/qou/tree/gh-pages/python-api) |
 | Rust API docs | [rust-api/](https://github.com/litlfred/qou/tree/gh-pages/rust-api) |
@@ -446,7 +446,10 @@ SVGs and JSON inline.
 > The **Blueprint** row and the `docs/` row that used to sit here have been
 > removed: neither `blueprint/` nor `docs/` exists on `gh-pages`, so both
 > links were dead in either column.  The Lean docs are published at
-> `lean/docs/`, which is what the row above points at.
+> `lean/` (index `lean/index.html`), which is what the row above points at. They
+> were rebuilt 2026-10-11 with doc-gen4, pruned to the QOU, UGB and Fred2005
+> modules and wrapped in the harness navbar; until then they sat at `lean/docs/`
+> and covered only 27 of those modules.
 >
 > `docs/` is still absent, and now deliberately so — `docs-site.yml` builds the
 > Jekyll docs site and uploads it as a **workflow artifact**; its gh-pages

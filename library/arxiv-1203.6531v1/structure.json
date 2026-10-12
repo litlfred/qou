@@ -5,7 +5,13 @@
   "file": "1203.6531v1.pdf",
   "sha256": "29541f28c1c62d8f5172503dcc5ff03c3483fc67fb685c174d51074d3daf66d0",
   "bytes": 476208,
-  "pages": 11
+  "pages": 11,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:19Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,20 +21,28 @@
    "stamp_date": "29 Mar 2012"
   },
   "doi": null,
-  "title": "Groebner-Shirshov basis and reduced words for affine Weyl group A_n",
-  "authors_raw": "V olume 00, Number 0, Pages 000–000",
-  "abstract": "Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨ obner-Shirshov bases of ~An and classify all reduced words of the aﬃne Weyl group ~An.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210726173815Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  },
-  "title_prev": "AMERICAN MATHEMATICAL SOCIETY",
+  "title": "AMERICAN MATHEMATICAL SOCIETY S 0002-9947(XX)0000-0",
+  "authors_raw": "GR\u00d6BNER-SHIRSHOV BASIS AND REDUCED WORDS FOR",
   "title_lines": [
-   "AMERICAN MATHEMATICAL SOCIETY"
-  ]
+   "AMERICAN MATHEMATICAL SOCIETY",
+   "S 0002-9947(XX)0000-0"
+  ],
+  "abstract": "Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr\u00a8obner-Shirshov bases of f An and classify all reduced words of the a\ufb03ne Weyl group f An.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210726173815Z"
+  },
+  "title_raw": "AMERICAN MATHEMATICAL SOCIETY S 0002-9947(XX)0000-0",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "GR \u00a8 OBNER-SHIRSHOV BASIS AND REDUCED WORDS FOR AFFINE WEYL GROUP f 1. Introduction Gr\u00a8obner-Shirshov bases and normal form of the elements were already found for the Coxeter groups of type A n , B n and D n in [1]. They also proposed a conjecture for the general form of Gr\u00a8obner-Shirshov bases for",
+   "outline": "1. Introduction",
+   "text": "AMERICAN MATHEMATICAL SOCIETY S 0002-9947(XX)0000-0",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -36,68 +50,245 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Gröbner-Shirshov Basis and Reduced Words",
+   "title": "Gr\u00f6bner-Shirshov Basis and Reduced Words",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Counting Reduced Words",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 412,
+   "n_words": 62,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 7,
-   "n_chars": 13947,
-   "n_words": 2453
+   "page_end": 3,
+   "n_chars": 5696,
+   "n_words": 1012,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-3-counting-reduced-words",
+   "id": "sec-001-2-gr\u00f6bner-shirshov-basis-and-reduced-words",
+   "number": "2",
+   "title": "Gr\u00f6bner-Shirshov Basis and Reduced Words",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 8673,
+   "n_words": 1903,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-counting-reduced-words",
    "number": "3",
    "title": "Counting Reduced Words",
    "level": 1,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 6253,
-   "n_words": 1175
+   "n_chars": 6661,
+   "n_words": 1583,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-references",
+   "id": "sec-003-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 2063,
-   "n_words": 312
+   "n_chars": 2053,
+   "n_words": 302,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
-  "sections": 3,
-  "chars_total": 22263
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 23495,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "makalefinal.tex",
+   "tex_sections": 3,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.908,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-gr\u00f6bner-shirshov-basis-and-reduced-words",
+     "title": "Gr\u00f6bner-Shirshov Basis and Reduced Words",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.826,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-counting-reduced-words",
+     "title": "Counting Reduced Words",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.905,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

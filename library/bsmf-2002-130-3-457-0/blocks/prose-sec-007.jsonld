@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/bsmf-2002-130-3-457-0/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/bsmf-2002-130-3-457-0/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "Realizing large angles",
-  "pageStart": 32,
-  "pageEnd": 34,
-  "text": "../sections/sec-007-6-realizing-large-angles.md",
-  "derivedFrom": "library/bsmf-2002-130-3-457-0/manifest",
-  "sourceDocument": "library/bsmf-2002-130-3-457-0/manifest",
+  "title": "Convergence of hyperideal polyhedra",
+  "pageStart": 25,
+  "pageEnd": 32,
+  "text": "../sections/sec-007-5-convergence-of-hyperideal-polyhedra.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bsmf-2002-130-3-457-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bsmf-2002-130-3-457-0/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1303.0720v2/sections/sec-042",
   "@type": [
     "doco:Section"
   ],
-  "title": "Bianalytic extensions of Bergman’s metrics and asymptotic analysis",
-  "pageStart": 37,
-  "pageEnd": 37,
+  "title": "References",
+  "pageStart": 40,
+  "pageEnd": 41,
   "contains": [
     "library/arxiv-1303.0720v2/blocks/prose-sec-042"
   ],
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.0720v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.0720v2/manifest.jsonld",
   "provenance": "ingested"
 }

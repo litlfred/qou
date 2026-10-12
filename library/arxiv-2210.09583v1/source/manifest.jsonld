@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2210.09583v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2210.09583v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2210.09583v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2210.09583&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2210.09583v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2210.09583v1",
+    "content_type": "application/gzip",
+    "sha256": "b32550b05ab97b7a2daaae73c70e0aa7da0e7fd6f6ff60b2be010b97ec0f938f",
+    "bytes": 25634,
+    "fetched": "2026-10-10T15:18:13+00:00",
+    "files": [
+      {
+        "path": "source/files/osp-link-invariant-and-categorifications.bbl",
+        "role": "bbl",
+        "sha256": "3724f83d5535d43843020b942dc293014ce540adec277a7eeaa77cc65a29be24",
+        "bytes": 7460
+      },
+      {
+        "path": "source/files/osp-link-invariant-and-categorifications.tex",
+        "role": "tex",
+        "sha256": "3c9b1b9495bf01d0171fdb43ed78b6f72197dc7f30c347d676b37e927c184bad",
+        "bytes": 104576
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

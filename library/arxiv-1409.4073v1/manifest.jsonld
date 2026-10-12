@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1409.4073v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.4073v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1409.4073v1",
   "contains": [
     "library/arxiv-1409.4073v1/sections/sec-000",
     "library/arxiv-1409.4073v1/sections/sec-001",
@@ -16,8 +21,17 @@
     "library/arxiv-1409.4073v1/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1409.4073&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1409.4073v1",
+    "title_source": "slug",
     "source_file": "1409.4073v1.pdf",
     "source_sha256": "b40be7f0022f70a14a4de02e4185d276129c7d0ba93b066bdcb8b56d6110350e",
     "pages": 35,

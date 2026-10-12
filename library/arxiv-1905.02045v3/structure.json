@@ -7,7 +7,11 @@
   "bytes": 694971,
   "pages": 39,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -236,6 +240,88 @@
   "likely_scanned": false,
   "toc_entries": 15,
   "sections": 9,
-  "chars_total": 80861
+  "chars_total": 80861,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "reciprocity13.tex",
+   "tex_sections": 14,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.78,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs",
+     "title": "Outline of the paper and sketch of the proofs",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-acknowledgment",
+     "title": "Acknowledgment",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-notation",
+     "title": "Notation",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.893,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-2-two-reciprocity-formulae-for-the-q-pochhammer",
+     "title": "Two reciprocity formulae for the q-Pochhammer symbol",
+     "prose_ratio": 0.79,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-22-first-reciprocity-formula-for-the-q-pochhamme",
+     "title": "First reciprocity formula for the q-Pochhammer symbol",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-23-sums-of-cotangents",
+     "title": "Sums of cotangents",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-24-second-reciprocity-formula-for-the-q-pochhamm",
+     "title": "Second reciprocity formula for the q-Pochhammer symbol",
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.921,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

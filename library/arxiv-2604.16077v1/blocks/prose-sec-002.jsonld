@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2604.16077v1/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2604.16077v1/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "Main result. In this paper we compute the real part of the semi-classical l imit of the",
-  "pageStart": 2,
-  "pageEnd": 4,
-  "text": "../sections/sec-002-11-main-result-in-this-paper-we-compute-the-real.md",
-  "derivedFrom": "library/arxiv-2604.16077v1/manifest",
-  "sourceDocument": "library/arxiv-2604.16077v1/manifest",
+  "title": "Triangulation-version of Theorem",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-002-12-triangulation-version-of-theorem.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2604.16077v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2604.16077v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,33 +8,27 @@ pages: 9-9
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
 doc_brief: "The Strong AJ Conjecture for the Figure 8 Knot — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ"
+text_source: latex
+latex_prose_ratio: 0.931
+latex_coverage_ratio: 1.0
 ---
-P (t, M, L) = L2 + L−2 + p1(t, M)L + p−1(t, M)L−1 + p0(t, M)
+The polynomial we are constructing is
+$$P(t, M, L)=L^2+L^{-2}+p_1(t,M)L+p_{-1}(t,M)L^{-1}+p_{0}(t,M)$$
 where
-p1(t, M) = a1(t, M)b0(t, M) + a0(t, t2M)
-a1(t, t2M) ,
-p−1(t, M) = a−1(t, M)b0(t, M) + a0(t, t−2M)
-a−1(t, t−2M) ,
-p0(t, M) = a0(t, M)b0(t, M) + a1(t, t−2M)
-a−1(t, t−2M) + a−1(t, t2M)
-a1(t, t2M) .
-Having now an explicit expression for b0, we obtain
-p1(t, M) = −1 − t16 + M 4t8(1 + t4)2 + M 2(t4 + t12) + M 6(t8 + t16) − M 8(t12 + t20)
-M 4t10 ,
-p−1(t, M) = M 4t8(1 + t4)2 − t12(1 + t8) + M 6(t4 + t12) − M 8(1 + t16) + M 2(t8 + t16)
-M 4t10 ,
-p0(t, M) = 1
-M 8t4
-(
-t8 + M 16t8 − M 4t8(2 + t4) − M 12t8(2 + t4) − M 2(t4 + t8)
-+ M 6(t4 + t8) + M 10(t4 + t8) − M 14(t4 + t8) + 2M 8(1 + t4 + 2t8 + t12)
-)
-.
-Then the polynomial P ∈ R [M ±1, L±1] constructed above satisﬁes P JE ∈ R [M ±1],
-σ(P ) = P and ε(P ) = ( A′
-E)2. We will also verify P JE ∈ R [M ±1] directly in the next
-subsection. Hence, by Lemma 2.1 we have
-√
-ε(Aσ
-E) ⊂ pE. This completes the proof of
-the strong AJ conjecture for the ﬁgure eight knot.
+\begin{eqnarray*}
+p_1(t,M) &=& a_1(t, M) b_0(t, M) + \frac{a_0(t, t^2 M)}{a_1(t, t^2 M)},  \\
+p_{-1}(t,M) &=&  a_{-1}(t, M) b_0(t, M) +  \frac{a_0(t, t^{-2} M) }{a_{-1}(t,t^{-2} M)}, \\
+p_0(t,M) &=& a_0(t, M) b_0(t, M)  + \frac{a_1(t, t^{-2} M) }{a_{-1}(t,t^{-2} M)} +  \frac{a_{-1}(t, t^2 M)}{a_1(t,t^2 M)}.
+\end{eqnarray*}
+Having now an explicit expression for $b_0$, we obtain 
+\begin{eqnarray*}
+p_1(t,M)&=&\frac{-1 - t^{16} + M^4 t^8 (1 + t^4)^2 + M^2 (t^4 + t^{12}) + 
+ M^6 (t^{8} + t^{16}) - M^8 (t^{12} + t^{20})}{M^{4}t^{10}}, \\
+ p_{-1}(t,M)&=&\frac{M^4 t^8 (1 + t^4)^2 - t^{12} (1 + t^8) + M^6 (t^4 + t^{12}) - M^8 (1 + t^{16}) + M^2 (t^8 + t^{16})}{M^4t^{10}}, \\
+p_0(t,M)&=&\frac{1}{M^8t^4}\big(t^8 + M^{16} t^8 - M^4 t^8 (2 + t^4) - M^{12} t^8 (2 + t^4) - 
+ M^2 (t^4 + t^8)\\
+ && + \, M^6 (t^4 + t^8) + M^{10} (t^4 + t^8) - M^{14} (t^4 + t^8) + 
+ 2 M^8 (1 + t^4 + 2 t^8 + t^{12})\big).
+\end{eqnarray*}
+
+Then the polynomial $P \in\mathcal{R}[M^{\pm1},L^{\pm1}]$ constructed above satisfies $PJ_E\in \mathcal{R}[M^{\pm 1}]$, $\sigma(P)=P$ and $\varepsilon(P)= ( A'_E )^{2}$. We will also verify $PJ_E\in \mathcal{R}[M^{\pm 1}]$  directly in the next subsection. Hence, by Lemma \ref{Plem} we have $\sqrt{\varepsilon(\mathcal{A}^{\sigma}_E)}\subset \mathfrak{p}_E$. This completes the proof of the strong AJ conjecture for the figure eight knot.

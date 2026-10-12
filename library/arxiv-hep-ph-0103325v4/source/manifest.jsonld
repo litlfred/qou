@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0103325v4/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-ph-0103325v4 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0103325v4/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-ph/0103325&metadataPrefix=arXiv), submitted 2002-10-16, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-ph-0103325v4",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/hep-ph/0103325v4",
+    "content_type": "application/gzip",
+    "sha256": "d07fb530f179f5e069cf7eea51801578fdd75ca34ac979eed1f07fd052405ace",
+    "bytes": 48649,
+    "fetched": "2026-10-10T15:24:05+00:00",
+    "files": [
+      {
+        "path": "source/files/kharkiv4.tex",
+        "role": "tex",
+        "sha256": "a0c22d3f57855c7316a8bc957f37a862a8b9814db3ddb15a9fe63e70a4304b00",
+        "bytes": 42885
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

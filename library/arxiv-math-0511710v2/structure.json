@@ -5,7 +5,13 @@
   "file": "0511710v2.pdf",
   "sha256": "f88f50d45908049080d3a545857aca9b09164367dbf73ecc5512c279bfbef159",
   "bytes": 358853,
-  "pages": 29
+  "pages": 29,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:24Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,152 +21,452 @@
    "stamp_date": "28 Jun 2006"
   },
   "doi": null,
-  "title": "Higher gauge theory",
-  "authors_raw": "Riverside, CA 92521, USA",
-  "abstract": "Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge theory describe s the parallel transport of 1-dimensional objects (e.g. strings) using 2- connections on 2-bundles. A 2-bundle is a categoriﬁed version of a bundle: t hat is, one where the ﬁber is not a manifold but a category with a suitable smooth structure. Where gauge theory uses Lie groups and Lie algebr as, higher gauge theory uses their categoriﬁed analogues: Lie 2-group s and Lie 2- algebras. We describe a theory of 2-connections on principa l 2-bundles and explain how this is related to Breen and Messing’s theory of con- nections on nonabelian gerbes. The distinctive feature of o ur theory is that a 2-connection allows parallel transport along paths a nd surfaces in a parametrization-independent way. In terms of Breen and Messing’s framework, this requires that the ‘fake curvature’ must van ish. In this paper we summarize the main results of our theory without pro ofs.",
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126163552-05'00'",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:math/0511710v2  [math.DG]  28 Jun 2006"
-  },
+  "title": "arXiv:math/0511710v2 [math.DG] 28 Jun 2006",
+  "authors_raw": "John Baez",
   "title_lines": [
-   "Higher Gauge Theory",
-   "John Baez",
-   "Department of Mathematics",
-   "University of California"
+   "Higher Gauge Theory"
   ],
-  "title_prev": "Higher Gauge Theory John Baez Department of Mathematics University of California"
+  "abstract": "Just as gauge theory describes the parallel transport of point particles using connections on bundles, higher gauge theory describes the parallel transport of 1-dimensional objects (e.g. strings) using 2-connections on 2-bundles. A 2-bundle is a categori\ufb01ed version of a bundle: that is, one where the \ufb01ber is not a manifold but a category with a suitable smooth structure. Where gauge theory uses Lie groups and Lie algebras, higher gauge theory uses their categori\ufb01ed analogues: Lie 2-groups and Lie 2- algebras. We describe a theory of 2-connections on principal 2-bundles and explain how this is related to Breen and Messing\u2019s theory of con- nections on nonabelian gerbes. The distinctive feature of our theory is that a 2-connection allows parallel transport along paths and surfaces in a parametrization-independent way. In terms of Breen and Messing\u2019s framework, this requires that the \u2018fake curvature\u2019 must vanish. In this paper we summarize the main results of our theory without proofs.",
+  "docinfo": {
+   "Title": "arXiv:math/0511710v2  [math.DG]  28 Jun 2006",
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20241126163552-05'00'"
+  },
+  "title_raw": "Higher Gauge Theory",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0511710v2 [math.DG] 28 Jun 2006",
+   "heading": "Higher Gauge Theory",
+   "text": "Higher Gauge Theory",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
-  {
-   "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
   {
    "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Internalization",
    "page": 8,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "If φ: C → X is a plot in X, and f : C′ → C is a smooth map between",
-   "page": 9,
+   "title": "2-Bundles",
+   "page": 13,
    "source": "inferred",
-   "number": "1"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "If iα : Cα → C is an open cover of a convex set C by convex subsets Cα ,",
-   "page": 9,
+   "title": "2-Connections",
+   "page": 19,
    "source": "inferred",
-   "number": "2"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
+   "level": 3,
    "title": "Acknowledgements",
    "page": 27,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 27,
-   "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1007,
-   "n_words": 166
+   "n_chars": 1348,
+   "n_words": 195,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 8,
-   "n_chars": 13330,
-   "n_words": 2501
+   "n_chars": 12739,
+   "n_words": 2362,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-2-internalization",
+   "id": "sec-001-2-internalization",
    "number": "2",
    "title": "Internalization",
    "level": 1,
    "page_start": 8,
-   "page_end": 9,
-   "n_chars": 3740,
-   "n_words": 657
+   "page_end": 12,
+   "n_chars": 9980,
+   "n_words": 1813,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-1-if-φ-c-x-is-a-plot-in-x-and-f-c-c-is-a-smooth",
-   "number": "1",
-   "title": "If φ: C → X is a plot in X, and f : C′ → C is a smooth map between",
+   "id": "sec-002-3-2-bundles",
+   "number": "3",
+   "title": "2-Bundles",
    "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 39,
-   "n_words": 11
+   "page_start": 12,
+   "page_end": 19,
+   "n_chars": 11666,
+   "n_words": 2159,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-2-if-iα-cα-c-is-an-open-cover-of-a-convex-set-c",
-   "number": "2",
-   "title": "If iα : Cα → C is an open cover of a convex set C by convex subsets Cα ,",
+   "id": "sec-003-4-2-connections",
+   "number": "4",
+   "title": "2-Connections",
    "level": 1,
-   "page_start": 9,
+   "page_start": 19,
    "page_end": 27,
-   "n_chars": 28377,
-   "n_words": 5488
+   "n_chars": 9445,
+   "n_words": 1775,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-acknowledgements",
+   "id": "sec-004-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
-   "level": 1,
-   "page_start": 27,
-   "page_end": 27,
-   "n_chars": 491,
-   "n_words": 76
-  },
-  {
-   "id": "sec-006-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
+   "level": 3,
    "page_start": 27,
    "page_end": 29,
-   "n_chars": 5662,
-   "n_words": 869
+   "n_chars": 6111,
+   "n_words": 892,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 52646
+  "toc_entries": 5,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 51289,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "higher.tex",
+   "tex_sections": 5,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-internalization",
+     "title": "Internalization",
+     "prose_ratio": 0.876,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-2-bundles",
+     "title": "2-Bundles",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.821,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-2-connections",
+     "title": "2-Connections",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.197,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

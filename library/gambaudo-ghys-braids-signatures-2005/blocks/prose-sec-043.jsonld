@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-sec-043",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-sec-043",
   "kind": "prose",
   "title": "(α,β ) with P 4",
   "pageStart": 24,
   "pageEnd": 24,
   "text": "../sections/sec-043-2-αβ-with-p-4.md",
-  "derivedFrom": "library/gambaudo-ghys-braids-signatures-2005/manifest",
-  "sourceDocument": "library/gambaudo-ghys-braids-signatures-2005/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
   "provenance": "ingested"
 }

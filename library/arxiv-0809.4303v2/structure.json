@@ -6,7 +6,11 @@
   "sha256": "21e28259b9c8542ffcc6146e9d27ae9e76098a4ee0db4110d0d17d6e9d61ca2f",
   "bytes": 166320,
   "pages": 12,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -16,101 +20,210 @@
    "stamp_date": "5 May 2009"
   },
   "doi": null,
-  "title": "Exact vortex solutions in an extended Skyrme-Faddeev model L. A. Ferreira 1 Instituto de F \u00b4 \u0131sica de S\u00e3o Carlos; IFSC/USP; Universidade de S\u00e3o Paulo - USP",
-  "authors_raw": "Caixa Postal 369, CEP 13560-970, S\u00e3o Carlos-SP, Brazil",
+  "title": "Exact vortex solutions in an extended Skyrme-Faddeev model",
+  "authors_raw": "Instituto de F\u00b4\u0131sica de S\u00e3o Carlos; IFSC/USP;",
   "title_lines": [
    "Exact vortex solutions in an extended Skyrme-Faddeev model",
-   "L. A. Ferreira 1",
-   "Instituto de F \u00b4 \u0131sica de S\u00e3o Carlos; IFSC/USP;",
-   "Universidade de S\u00e3o Paulo - USP"
+   "L. A. Ferreira1"
   ],
-  "abstract": "We construct exact vortex solutions in 3 + 1 dimensions to a th eory which is an extension, due to Gies, of the Skyrme-Faddeev model, and t hat is believed to describe some aspects of the low energy limit of the pure SU (2) Yang-Mills theory. Despite the e\ufb00orts in the last decades those are the \ufb01rst exact analytical solutions to be constructed for such type of theory. The exact vortices appear in a very parti- cular sector of the theory characterized by special values o f the coupling constants, and by a constraint that leads to an in\ufb01nite number of conserv ed charges. The theory is scale invariant in that sector, and the solutions s atisfy Bogomolny type equations. The energy of the static vortex is proportional t o its topological charge, and waves can travel with the speed of light along them, addin g to the energy a term proportional to a U (1) Noether charge they create. We believe such vortices may play a role in the strong coupling regime of the pure SU (2) Yang-Mills theory. 1e-mail: laf@ifsc.usp.br",
+  "abstract": "We construct exact vortex solutions in 3 + 1 dimensions to a theory which is an extension, due to Gies, of the Skyrme-Faddeev model, and that is believed to describe some aspects of the low energy limit of the pure SU(2) Yang-Mills theory. Despite the e\ufb00orts in the last decades those are the \ufb01rst exact analytical solutions to be constructed for such type of theory. The exact vortices appear in a very parti- cular sector of the theory characterized by special values of the coupling constants, and by a constraint that leads to an in\ufb01nite number of conserved charges. The theory is scale invariant in that sector, and the solutions satisfy Bogomolny type equations. The energy of the static vortex is proportional to its topological charge, and waves can travel with the speed of light along them, adding to the energy a term proportional to a U(1) Noether charge they create. We believe such vortices may play a role in the strong coupling regime of the pure SU(2) Yang-Mills theory. 1e-mail: laf@ifsc.usp.br",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181024060411-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181024060411-04'00'"
+  },
+  "title_raw": "Exact vortex solutions in an extended Skyrme-Faddeev model L. A. Ferreira1",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Exact vortex solutions in an extended Skyrme-Faddeev model",
+   "text": "Exact vortex solutions in an extended Skyrme-Faddeev model L. A. Ferreira1",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "A. Ferreira 1",
-   "page": 1,
-   "source": "inferred",
-   "number": "L"
-  },
-  {
-   "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "(\u2202\u00b5 \u20d7 n\u00b7 \u2202\u00b5 \u20d7 n)2 (1)",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
    "title": "References",
    "page": 10,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "9"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-l-a-ferreira-1",
-   "number": "L",
-   "title": "A. Ferreira 1",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 140,
-   "n_words": 26
-  },
-  {
-   "id": "sec-001-abstract",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Abstract",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 2619,
-   "n_words": 463
-  },
-  {
-   "id": "sec-002-2-\u00b5-n-\u00b5-n2-1",
-   "number": "2",
-   "title": "(\u2202\u00b5 \u20d7 n\u00b7 \u2202\u00b5 \u20d7 n)2 (1)",
-   "level": 1,
-   "page_start": 2,
    "page_end": 10,
-   "n_chars": 16440,
-   "n_words": 3305
+   "n_chars": 19057,
+   "n_words": 3527,
+   "label_start": "1",
+   "label_end": "9"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-000-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 4574,
-   "n_words": 708
+   "n_chars": 4553,
+   "n_words": 687,
+   "label_start": "9",
+   "label_end": "11"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 4,
-  "sections": 4,
-  "chars_total": 23773
+  "toc_entries": 1,
+  "toc_inferred_entries": 1,
+  "toc_inferred_mean_confidence": 0.7,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 2,
+  "chars_total": 23610
  }
 }

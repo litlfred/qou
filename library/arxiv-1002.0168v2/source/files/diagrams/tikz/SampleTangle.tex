@@ -1,0 +1,23 @@
+\begin{tikzpicture}[scale=.65]
+	\clip (0,0) circle (3cm);
+	
+	\begin{scope}[shift=(10:1cm)]	
+		\draw[shaded] (0,0)--(0:6cm)--(90:6cm)--(0,0);	
+		\draw[shaded] (0,0) .. controls ++(180:2cm) and ++(-90:2cm) .. (0,0);
+	\end{scope}
+	
+	\draw[shaded] (-150:1cm) -- (120:4cm) -- (180:4cm) -- (-150:1cm);
+	\draw[shaded] (-150:1cm) -- (-120:4cm) -- (-60:4cm) -- (-150:1cm);
+	
+	\begin{scope}[shift=(10:1cm)]	
+		\node at (0,0) [Tbox, inner sep=1mm] {\small{\textcolor{gray}{2}}};
+		\node at (90:1.5cm) [Tbox, inner sep=1mm] {\small{\textcolor{gray}{1}}};
+		\node at (-45:.7cm) {$\star$};
+		\node at (120:1.6cm) {$\star$};
+	\end{scope}
+	\node at (-150:1cm) [Tbox, inner sep=1 mm] {\small{\textcolor{gray}{3}}};
+	\node at (-120:1.6cm) {$\star$};
+	\node at (-30:2.7cm) {$\star$};
+	
+	\draw[very thick] (0,0) circle (3cm);
+\end{tikzpicture}

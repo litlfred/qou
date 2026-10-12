@@ -6,7 +6,11 @@
   "sha256": "0846b74f9c7c55cb6348ae4029e0098646a6ad6d09e92126e25213c46e7d7803",
   "bytes": 217671,
   "pages": 11,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -100,6 +104,40 @@
   "likely_scanned": false,
   "toc_entries": 4,
   "sections": 3,
-  "chars_total": 25681
+  "chars_total": 25681,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper.tex",
+   "tex_sections": 3,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-0-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-simplicial-sections",
+     "title": "Simplicial Sections",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION 2: The Milnor invariant
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vskip-.15in
+\vskip-.15in
+
+\section{The Milnor $\mu$-invariant} 
+\label{sec:milnor}
+
+Let $L$ be a three-component link in either $\br^3$ or $S^3$, with oriented components $X$, $Y$ and $Z$, and pairwise linking numbers $p$, $q$ and $r$.  Milnor's original definition of the triple linking number $\mu(L)$, typically denoted $\bar\mu_{123}(L)$, was algebraic.  The formulation in his PhD thesis \cite{Milnor57} is expressed in terms of the lower central series of the link group $G$, the fundamental group of the complement of $L$, as follows.
+
+Choose based meridians for the link components $X$, $Y$ and $Z$, and let $x$, $y$ and $z$ denote the corresponding elements of $G$.  In general, these three elements do not generate $G$, but they do generate the quotient of $G$ by the third term $[[G,G],G]$ in its lower central series.  In this quotient group, the longitude of $Z$ can be written as a word $w$ in $x$, $y$ and $z$ and their inverses.  Assign an integer $m_{xy}(w)$ to this word that counts with signs the number of times that $x$ appears before $y$ in $w$, allowing intervening letters.  More precisely, each appearance of $x\cdotsclose y$ or $x^{-1}\cdotsclose y^{-1}$ contributes $+1$ to $m_{xy}(w)$, while $x\cdotsclose y^{-1}$ or $x^{-1}\cdotsclose y$ contributes $-1$.  Then $\mu(L)$ is the element of $\bz_{\gcd(p,q,r)}$ defined by
+$$
+\mu(L) \ = \ m_{xy}(w)\ \ \textup{mod}\gcd(p,q,r).
+$$
+
+There is a geometric reformulation of this definition, found by Mellor and Melvin \cite{MellorMelvin}, that is more convenient for our purposes:  choose Seifert surfaces $F_X$, $F_Y$ and $F_Z$ for the components of $L$, and move these into general position.   Starting at any point on $X$, record its intersection with the Seifert surfaces for $Y$ and $Z$ by a word $w_X$ in $y$ and $z$.  For example a $y$ or $y^{-1}$ in $w_X$ indicates a positive or negative intersection point of $X$ with $F_Y$.  Set $m_X = m_{yz}(w_X)$, where the right hand side is computed as in the last paragraph, and similarly set $m_Y = m_{zx}(w_Y)$ and $m_Z = m_{xy}(w_Z)$.  Finally, let $t$ be the signed count of the number of triple points of intersection of the three Seifert surfaces.  Then 
+$$
+\mu(L) \ =  \ m_X+m_Y+m_Z - t \ \ \textup{mod}\gcd(p,q,r).
+$$
+It follows from this formula that $\mu(L)$ is invariant under even permutations of the components of $L$, but changes sign under odd permutations.  This is a well known property of Milnor's triple linking number.
+
+We give two sample calculations of the triple linking number, using this geometric formulation, that will feature in our inductive proof of \thmref{A} in \secref{A}.
+
+\begin{example} \label{ex:Lpqr}
+Let $L_{pqr}$ be the link shown in \figref{Lpqr}, with components $X$, $Y$ and $Z$ and with pairwise linking numbers $p$, $q$ and $r$.   Choose the Seifert surfaces $F_X$, $F_Y$ and $F_Z$ to be the obvious disks, essentially lying in the page, bounded by $X$, $Y$ and $Z$.  
+
+%%% FIGURE 3: Lpqr %%%
+\begin{figure}[h!]
+\includegraphics[height=150pt]{FigLpqr.pdf}
+\put(-80,25){$X$}
+\put(-30,90){$Y$}
+\put(-125,90){$Z$}
+\put(-58,62){\small$r$}
+\put(-96,64){\small$q$}
+\put(-78,95){\small$p$}
+\caption{The base link $L_{pqr}$ for  $p=5$, $q=3$, $r=-2$}
+\label{fig:Lpqr}
+\end{figure}
+%%%%%%%%%%%%%%%%%%
+
+Starting at appropriate points on the link components, we can read off the words 
+$$
+w_X = y^rz^q \ , \ \ w_Y = z^px^r \quad\textup{and}\quad w_Z = x^qy^p.
+$$
+Thus $m_X = qr$, $m_Y = rp$ and $m_Z = pq$.   Furthermore, it is clear that there are no triple points of intersection of the three disks.  Therefore
+$$
+\mu(L_{pqr}) \ = \ qr+rp+pq-0 \ = \ 0 \ \in \ \bz_{\gcd(p,q,r)}.
+$$  
+The links $L_{pqr}$ will serve as the {\itb base links} for our proof of \thmref{A}.
+\end{example} 
+
+\begin{example}\label{ex:delta} 
+Consider the {\itb delta move} shown in \figref{delta}, transforming the link $L$ on the left to the link $\what L$ on the right.  
+
+%%% FIGURE 4: Delta Move %%%
+\begin{figure}[h!]
+\includegraphics[height=100pt]{FigD.pdf}
+\put(-228,95){$X$}
+\put(-28,99){$\what X$}
+\put(-230,-5){$Y$}
+\put(-22,-5){$\what Y$}
+\put(-315,45){$Z$}
+\put(-113,46){$\what Z$}
+%\put(-206,72){$\small B$}
+%\put(-5,22){$\small B$}
+\caption{The delta move $L\to \what L$}
+\label{fig:delta}
+\end{figure}
+%%%%%%%%%%%%%%%%%% 
+
+This move takes place within a $3$-ball, outside of which the link is left fixed.  It does not alter the pairwise linking numbers of $L$, and may be thought of as a higher order variant of a crossing change.
+
+The delta move was introduced by Matveev \cite{Matveev}.  It was shown by Murakami and Nakanishi \cite{MurakamiNakanishi} that a suitable sequence of such moves can transform any link into any other link with the same number of components and the same pairwise linking numbers.  In particular, the base link $L_{pqr}$ above can be transformed into any other three-component link with pairwise linking numbers $p$, $q$ and $r$ by a sequence of delta moves.  The inductive step of our proof of \thmref{A} will be based on this observation, and so we determine right now the effect of the delta move on the $\mu$-invariant.   
+
+If the three arcs involved in the delta move {\it do not} come from three distinct components of the link $L$, then the change can be achieved by a link homotopy, and hence neither Milnor's $\mu$-invariant nor Pontryagin's $\nu$-invariant for $g_L$ will change.  
+
+But if the arcs {\it do} come from three distinct components of $L$ as shown in the figure, then $\mu$ increases by $1$, that is 
+$
+\mu(\what L) = \mu(L) + 1.
+$
+This can be seen as follows, using the geometric formula for the $\mu$-invariant.
+
+In \figref{seifert}, we display on the left fragments of the Seifert surfaces $F_X$, $F_Y$ and $F_Z$ before the delta move, while on the right, after the delta move, each old surface is enlarged a bit to provide new surfaces $F_{\what X}$, $F_{\what Y}$ and $F_{\what Z}$. 
+ 
+%%% FIGURE 5: Seifert Surfaces %%%
+\begin{figure}[h!]
+\includegraphics[height=120pt]{FigS.pdf}
+\put(-300,90){$F_X$}
+\put(-185,90){$F_Y$}
+\put(-275,-5){$F_Z$}
+\put(-125,90){$F_{\what  X}$}
+\put(-10,90){$F_{\what  Y}$}
+\put(-30,-3){$F_{\what  Z}$}
+\caption{A negative triple point appears}
+\label{fig:seifert}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%
+
+On the left, the three surface fragments are disjoint, while on the right, after their enlargement, they are not.  Where these surfaces now come together, we have an additional isolated triple point, and since the normals to the surfaces at this point form a left-handed frame, this triple point gets a minus sign.  Thus $t$ drops by $1$.   We also see that after the delta move, the curve $\what Z$ has two extra intersections with $F_{\what Y}$, the first positive and the second negative, and no extra intersections with $F_{\what X}$.  Since these new intersection points are adjacent along the curve, and of opposite signs,  it follows that the new count $m_{\what Z} =  m_{xy}(w_{\what Z})$ is equal to the old one $m_Z$.  Similarly $m_{\what X} = m_X$ and $m_{\what Y} = m_Y$.   Hence $\mu =  m_X + m_Y + m_Z  - t$  increases by 1,  as claimed. 
+ 
+The heart of the proof of \thmref{A} will be to show that application of the delta move increases Pontryagin's $\nu$-invariant by $2$. 
+
+\end{example}
+
+ 

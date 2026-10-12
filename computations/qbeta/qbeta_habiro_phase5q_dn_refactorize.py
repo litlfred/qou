@@ -42,6 +42,44 @@ For the Φ_8² strand-doubling chain (Φ_4 → Φ_8 → Φ_16 → Φ_32) to be
 **structural** rather than **convention-specific**, the factor must
 appear in BOTH conventions. THIS PROBE TESTS THE CANONICAL SIDE.
 
+🛑 THREE THINGS A READER OF THIS FILE NEEDS, AND NONE WAS STATED
+=================================================================
+Added 2026-10-10, bean `qou-bvk7`. Nothing below changes a number; all
+three are labels on what is already here.
+
+1. **"Convention" above means WHICH BRAID/IDENTITY, not C-vs-D, and the
+   two axes are independent.** "Witness convention" vs "Phase 5q
+   canonical" is the structural distinction documented above. Orthogonal
+   to it is the **Markov parameter**, and on that axis the Phase 5q side
+   below is **convention C**: `z(q) = 1 / (q^{1/2} + q^{-1/2})`, which is
+   `√q/(q+1) = z_C = 0.4993203342` at `q₀` exactly. Owner ruling R1
+   (2026-08-15) makes `z_D = q³/(q²+1) = 0.6126880371` canonical, so the
+   word "canonical" in "Phase 5q canonical" is about the identity route
+   and does **not** mean convention-canonical. That spelling is also one
+   of the detector-blind C forms AGENTS.md lists, which is why
+   `convention-c-producer-audit.py` does not flag this file.
+
+2. **The `D` in `tr_M_D_q0_witness` is DEUTERON, not convention D.** Same
+   for "(D − n)" and `Δa_m(D − n)` throughout. The witness field
+   `data.numerical_q0_cross_check.tr_M_D_q0_witness = 0.3882864240747888`
+   is the deuteron trace in the *witness* convention — and it is a
+   **convention-C** value (under D the same quantity is ≈ 0.5751;
+   `deuteron-real-sdp.witness.json` now records `0.5751722457697739`). A
+   reader scanning field names for convention-D artifacts will read this
+   one backwards.
+
+3. **The committed witness CANNOT be refreshed, so its `allPassed: true`
+   is unfalsifiable.** This probe refuses to run: `_qou_lnog_preflight`
+   raises `AmDifferenceInvalid` from `require_am_differenceable` because
+   the two witnesses' denominators differ, so `a_m` subtraction would
+   build `d_X·t_X − d_Y·t_Y` rather than the pair difference (beans
+   `qou-0ndb` / `qou-lnog`; the message names `trace_diff_numerator` as
+   the correct route). That refusal is **correct** and is not a crash —
+   but it means the C-frame value above is frozen and the recorded
+   `allPassed` cannot be re-derived until `qou-lnog` lands. This is the
+   `qou-2cof` lesson in its stronger form: a producer that cannot run
+   cannot report drift, and here the producer is *right* not to run.
+
 APPROACH
 ========
 

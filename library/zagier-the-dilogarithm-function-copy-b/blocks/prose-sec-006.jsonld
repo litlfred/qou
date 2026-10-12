@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/zagier-the-dilogarithm-function-copy-b/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/zagier-the-dilogarithm-function-copy-b/blocks/prose-sec-006",
   "kind": "prose",
-  "title": "Don Zagier",
-  "pageStart": 4,
-  "pageEnd": 4,
-  "text": "../sections/sec-006-6-don-zagier.md",
-  "derivedFrom": "library/zagier-the-dilogarithm-function-copy-b/manifest",
-  "sourceDocument": "library/zagier-the-dilogarithm-function-copy-b/manifest",
+  "title": "Further aspects of the dilogarithm",
+  "pageStart": 20,
+  "pageEnd": 20,
+  "text": "../sections/sec-006-ii-further-aspects-of-the-dilogarithm.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function-copy-b/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function-copy-b/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,183 @@
+{
+ "url": "https://arxiv.org/e-print/1401.5542v1",
+ "content_type": "application/gzip",
+ "sha256": "f5f17a65485df4db7a3d1281ccf1b9f86bdbe235df2bf2063848eb5969196a66",
+ "bytes": 196243,
+ "fetched": "2026-10-10T15:08:58+00:00",
+ "files": [
+  {
+   "path": "files/PtolemyField.bbl",
+   "role": "bbl",
+   "sha256": "0777ca700caff636555595648e4193404105b16ca44d7f402147f3a2956a6578",
+   "bytes": 2662
+  },
+  {
+   "path": "files/PtolemyField.tex",
+   "role": "tex",
+   "sha256": "56c10362278c803b52b4987b2636211c24b2a73b9a1f8f9bababfd3710b17534",
+   "bytes": 83060
+  },
+  {
+   "path": "files/figures_gen/BasicPtolemy.tex",
+   "role": "tex",
+   "sha256": "9cdb84b52c76230eb05e6a5717e3eba70bfa4f8ab0d2efa90bdb9cc4efa8b7b7",
+   "bytes": 1470
+  },
+  {
+   "path": "files/figures_gen/Decoration.tex",
+   "role": "tex",
+   "sha256": "3c09625ba478f8481e0704282f01a73464227e757fbc9e6b5c3adf3c45b65c35",
+   "bytes": 1024
+  },
+  {
+   "path": "files/figures_gen/DecorationToPtolemy.tex",
+   "role": "tex",
+   "sha256": "0c9711189bea739ffaebf04334a92a28f4596e2a29538e559249173f0b52e74f",
+   "bytes": 1266
+  },
+  {
+   "path": "files/figures_gen/Fig8SisterTriangulation.tex",
+   "role": "tex",
+   "sha256": "89eb766b22b830e4baf7371313846ebd2e5ff96dcbb62863ab7532da880ef130",
+   "bytes": 2805
+  },
+  {
+   "path": "files/figures_gen/Fig8Triangulation.tex",
+   "role": "tex",
+   "sha256": "66ec3cb048403beccaf292969e4fc5f13a3171fa4337cf6974940fe950fb0fde",
+   "bytes": 2799
+  },
+  {
+   "path": "files/figures_gen/ManyCuspCase.tex",
+   "role": "tex",
+   "sha256": "e4a1e13136481880caebbd9330a4579c75bd497f025fd7ca7d544cb54adbacf2",
+   "bytes": 4776
+  },
+  {
+   "path": "files/figures_gen/OneCuspBasicEven.tex",
+   "role": "tex",
+   "sha256": "b29de8e1f0b9b91bed1688e97e72d8fa445f3188b039c086a87fada7b41e05c1",
+   "bytes": 2093
+  },
+  {
+   "path": "files/figures_gen/OneCuspBasicOdd.tex",
+   "role": "tex",
+   "sha256": "65e4b776a5006842f514c6d7d2b34745f2f4ed800ab317f91ceb58396f9244b7",
+   "bytes": 2084
+  },
+  {
+   "path": "files/figures_gen/OneCycleBasic.tex",
+   "role": "tex",
+   "sha256": "91b3459ca6412030a26ddcadd5c48a5656b256af645577e5d1a3e194e1ba920c",
+   "bytes": 2977
+  },
+  {
+   "path": "files/figures_gen/PtolemyToCocycle.tex",
+   "role": "tex",
+   "sha256": "7ca941cccb6fa947145efcde837646bff7f38575380311f0e744ba58a5030e07",
+   "bytes": 1518
+  },
+  {
+   "path": "files/figures_gen/PtolemyToCocycleLong.tex",
+   "role": "tex",
+   "sha256": "a7bad58ae22bfd3951f5f302691719684ce91ca5638c619e4244778e66e212c5",
+   "bytes": 1535
+  },
+  {
+   "path": "files/figures_gen/PtolemyToCocycleShort.tex",
+   "role": "tex",
+   "sha256": "c6161921bd93bfaedaba01c81f6ec1d6f9cb6855035521a4ad008933aa33ad7e",
+   "bytes": 3116
+  },
+  {
+   "path": "files/figures_gen/PtolemyWhAfter.tex",
+   "role": "tex",
+   "sha256": "bbdaf26ecea02d9467036ded9509a5015ab28b2e5d19806612e38ab89710102d",
+   "bytes": 1466
+  },
+  {
+   "path": "files/figures_gen/PtolemyWhBefore.tex",
+   "role": "tex",
+   "sha256": "21fbdddfd1035823ef1d8d96f5eed3cf501367ead1b2c3a829ad6b43a94c14aa",
+   "bytes": 1445
+  },
+  {
+   "path": "files/figures_gen/SelfEdgeBootStrap.tex",
+   "role": "tex",
+   "sha256": "833c86bf81b4a8ecd06f3031966990527c1c46bd614f1e9902e246335edde24f",
+   "bytes": 1483
+  },
+  {
+   "path": "files/figures_gen/Test.tex",
+   "role": "tex",
+   "sha256": "df4b2e17101d7b0e82aafa85a768ae6c3b3f0c720bf39ae202044a0f06f20f61",
+   "bytes": 377
+  },
+  {
+   "path": "files/figures_gen/ThreeCuspCycle.tex",
+   "role": "tex",
+   "sha256": "11b5b2e97d79dad9098d03d3e722c9e8d1000560f53db5b99954207b7188fd5c",
+   "bytes": 4068
+  },
+  {
+   "path": "files/figures_gen/ThreeCycleBasic.tex",
+   "role": "tex",
+   "sha256": "e87c237b7efaedc4a65b512bf868576371222fc319f73cd66732cfc186eeaba1",
+   "bytes": 4060
+  },
+  {
+   "path": "files/figures_gen/TreeWithCycle.tex",
+   "role": "tex",
+   "sha256": "f92f8a03c5d53004124aff329bb7b0db3e022b3a47a59ef7027a06f4e5629682",
+   "bytes": 1035
+  },
+  {
+   "path": "files/figures_gen/TreeWithCycle_fixed.tex",
+   "role": "tex",
+   "sha256": "03e890f6337cd4e2233dc7b8e4fde966495d3224fe8ccf1ea7e4094dda9b13e1",
+   "bytes": 1729
+  },
+  {
+   "path": "files/figures_gen/TreeWithThreeCycle.tex",
+   "role": "tex",
+   "sha256": "50a4c1da98801ade02e09b578f6356b8297fac830a03f0fa87225059f4a5a077",
+   "bytes": 1460
+  },
+  {
+   "path": "files/figures_gen/TreeWithThreeCycle_fixed.tex",
+   "role": "tex",
+   "sha256": "453e29493c84b137390faed43453fc0d781331f4a0c5e3b5eae8655b8be3b1cc",
+   "bytes": 2547
+  },
+  {
+   "path": "files/figures_gen/TruncatedCocycle.tex",
+   "role": "tex",
+   "sha256": "bbbef522f73218f64870660cb02d0a64663db54ff47a36e0865a4867967853cc",
+   "bytes": 606
+  },
+  {
+   "path": "files/figures_gen/TwoCuspEdge.tex",
+   "role": "tex",
+   "sha256": "44b89a47e35d030f6fbfe649e76777cca052b3f803f9d0951cc4f916a41246f7",
+   "bytes": 1078
+  },
+  {
+   "path": "files/figures_gen/wh_link_edges_and_cusps.tex",
+   "role": "tex",
+   "sha256": "9d58c71593792531af3e6692016f21481d268550d78faf17bd6326ffad384151",
+   "bytes": 180
+  },
+  {
+   "path": "files/mathdots.sty",
+   "role": "sty",
+   "sha256": "990eb71f66cb8efe9160be69755479b906f22929fc899e5c285faa0f7483e9de",
+   "bytes": 3342
+  },
+  {
+   "path": "files/scalerel.sty",
+   "role": "sty",
+   "sha256": "b93ef47623c7db7dcd3baba18cfbe9ae19807802846d6ae586bd7412507496a6",
+   "bytes": 2728
+  }
+ ]
+}

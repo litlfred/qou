@@ -56,7 +56,7 @@ reduced words, so the functional built here *is* `tr_M`.
 factor exactly: `𝒲(q) = tr_Markov((σ₁σ₂)⁵) ≈ 0.7036` at `q = q₀`"* and reads off *"an 11 %
 reduction in transition amplitude"*. Measured this session: convention D gives `1.1875`,
 convention C gives `0.9063`. The number's source is the deprecated convention-C
-`hecke_division` pipeline — `computations/_deprecated/t35-full-calculation.py` builds
+`hecke_division` pipeline — `fsh-guts/deprecated/computations/t35-full-calculation.py` builds
 `(σ₃σ₄)⁵` on five strands and calls `div.markov_trace(·, 5)`. **Its `0.7036` was not reproduced
 this session**: the surface searched was that script's construction and the two conventions of
 the Ocneanu trace of `(σ₀σ₁)⁵`; a different Hecke normalisation inside `hecke_division` (e.g. the
@@ -113,7 +113,7 @@ the block to be coherent, and that is a producer re-run, not a wording change.
 ## CORRECTION (2026-09-05, bean `qou-ix74`) — the provenance of `0.7036` was mis-attributed above
 
 §"The published value" says the number's source is the **deprecated** convention-C
-pipeline `computations/_deprecated/t35-full-calculation.py`. **That was wrong, and it
+pipeline `fsh-guts/deprecated/computations/t35-full-calculation.py`. **That was wrong, and it
 was a guess from file names rather than a measurement.** The number is reproduced by
 the **live** engine `computations/hecke/hecke_division.py`: its former `_trace_word`
 applied only the Markov rotation `tr(x·σ_top) = z·tr(x)` and never the Hecke relation,

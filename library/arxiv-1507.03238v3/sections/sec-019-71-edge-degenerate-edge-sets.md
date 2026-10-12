@@ -8,161 +8,98 @@ pages: 16-18
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
 doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
+text_source: latex
+latex_prose_ratio: 0.915
+latex_coverage_ratio: 0.846
 ---
-at most one zero-edge.
-Proposition 7.1. Letc be a Ptolemy assignment on a simplex∆. If each face has at most one
-Ptolemy coordinate which is zero, thenc is the Ptolemy assignment of a unique decoration.
-Proof. By reordering the vertices if necessary, we may assume thatc01,c12 andc23 are nonzero.
-Let
-(7.1) g0 =I, g 1 =q(c01), g 2 =g1x( c02
-c01c12
-)q(c12), g 3 =g2x( c13
-c12c23
-)q(c23).
-The Ptolemy coordinates of the decoration(g0P,g 1P,g 2P,g 3P ) then agree withc as is shown by
-explicitly computingdet
-(
-gi ( 1
-0 ),gj ( 1
-0 )
-)
-. Uniqueness follows from Corollary 4.7 since the natural
-cocycle is determined up to coboundaries by the Ptolemy coordinates (Proposition 4.9). □
-Let C(E) be a union of disjoint cylindrical neighborhoods of the zero-edges ofE. The space
-M\C(E) decomposes as a union of truncated simplices with the zero-edges being “chopped”
-(see Figure 11).
-Corollary 7.2. A Ptolemy assignmentc of typeE canonically determines aG-cocycle on the
-space M\C(E).
-Proof. ByProposition7.1andCorollary4.7, cdeterminesuptocoboundariesaBruhatcocycleon
-each truncated simplex. By Proposition 4.9, all the long edges are canonically determined by the
-Ptolemy coordinates, but a short edge near a zero-edge is only determined up to the coboundary
-action. However, as shown in Figure 11, each chopped truncated simplex inherits canonical
-edge labelings. The fact that the chopped cocycles match up follows from the identiﬁcation
-relations. □
-The link of each zero-edge is a complexK as in Section 5 (embedded inˆ~M) and sinceE is
-only edge-degenerate, the top and bottom edges ofK are all nonzero. Hence, for a Ptolemy
-assignment of typeE the edge relations (Deﬁnition 5.2) around each zero-edge are well deﬁned.
-TRIANGULATION INDEPENDENT PTOLEMY V ARIETIES 17
-I
-I
-β123β123
-α12
-α12
-α01
-α01
-0
-1
-3
-2
-β201
-β213
-β123,0
-β123,1
-β123,2
-β123,1β123,0
-β123,N−1
-β123,2
-Figure 11. Natural cocycle af-
-ter removing a neigborhood of a
-zero-edge.
-Figure 12. The cocycle ex-
-tends if and only if the edge
-relation holds.
-Deﬁnition 7.3.LetE be edge-degenerate. The Ptolemy varietyP (T,E )is the quasi-aﬃne alge-
-braic set deﬁned by the usual relations (as in Deﬁnition 2.3) together with the edge relations (5.1)
-around zero-edges and the relationsce = 0 if e is a zero-edge andce⁄= 0 otherwise.
-Note that each element inP (T,E ) is a Ptolemy assignment of typeE.
-Theorem 7.4. LetE∈ T(T ) be edge-degenerate. There is a one-to-one correspondence
-(7.2)
-{
-Decorated, boundary-unipotent
-representations of typeE
-}
-1:1←→P (T,E ) 1:1←→
-{
-Bruhat cocycles of typeE
-up to coboundaries
-}
-Proof. By Theorem 4.8 all we need to prove is that a Ptolemy assignment of typeE determines a
-Bruhat cocycle. By Corollary 7.2, we have a canonical cocycle onM\C(E). By the van Kampen
-theorem this extends to a Bruhat cocycle onM if and only if the product of the labelings around
-each cylinder isI, which is a consequence of the edge relations. The freedom in the choice of
-extension is exactly the coboundary action (see e.g. Remark 4.10). □
-Deﬁnition 7.5.For σ ∈ H 2(ˆM; Z/2Z) deﬁnePσ(T,E ) as in Deﬁnition 7.3, but using the
-identiﬁcation relations (3.1).
-Theorem 7.6. LetE∈ T(T ) be edge-degenerate. There is a one-to-one correspondence
-(7.3)
-
-
-
-TypeE decorated
-boundary-unipotent
-π1(M)→ PSL(2, C)
-
-
- mm
-1:1
-00Pσ(T,E )1:koo k:1 //
-
-
-
-Bruhat PSL(2, C)-cocycles
-typeE, obstruction classσ
-up to coboundaries
-
-
-,
-Proof. As in the proof of Theorem 7.4 an element inPσ(T,E ) determines a Bruhat cocycle
-up to coboundaries. The fact that this map isk : 1 follows from the elementary fact that two
-Ptolemy assignments determine the same Bruhat cocycle if and only if they diﬀer by an element
-in Z1(ˆM; Z/2Z). □
-Deﬁnition 7.7.ForM as in Section 3.2 deﬁne the enhanced Ptolemy varietyEP (T,E ) as in
-Deﬁnition 7.3 using the identiﬁcation relations from Deﬁnition 3.4 and the edge relations (5.4).
-Theorem 7.8.LetE∈ T(T ) be edge-degenerate andM as in Section 3.2. There is a one-to-one
-correspondence
-(7.4)
-{
-Decorated representations
-of typeE
-}
-1:1←→EP (T,E ) 1:1←→
-{
-Fattened Bruhat cocycles of typeE
-up to coboundaries
-}
-18 MATTHIAS GOERNER AND CHRISTIAN K. ZICKERT
-Proof. The proof is identical to that of Theorem 7.4 using the fattened decomposition and the
-geometric interpretation of the edge relations (5.4) given in Figure 10. □
-7.2. Embeddings in aﬃne space.
-Deﬁnition 7.9.A virtual edgeof M is an element in the set
-(7.5) V (M) =
-(
-I(~M)×I(~M)
-)/
-π1(M)
-of pairs of ideal points in~M up to theπ1(M)-action.
-Given an ideal triangulationT , each oriented edgee ofT determines a virtual edge, namely
-the orbit of(e0,e 1). Hence,T determines a (ﬁnite) subsetV (T ) of V (M).
-For each subsetV ofV (M) letA(V ) denote the aﬃne space with coordinate ring equal to the
-polynomial ring generated byV. ForV ⊂W we have a canonical projectionπ : A(W )→A(V )
-onto a direct summand. We wish to embed the Ptolemy varietyP (T,E ) inA(V (M)). The idea
-is that a decoration assigns a Ptolemy coordinate to every virtual edge, not just the edges ofT .
-Proposition 7.10. Let E∈ T(T ) be non- or edge-degenerate. There is a canonical embedding
-of P (T,E ) in the (inﬁnite dimensional) aﬃne spaceA(V (M)). Furthermore, for each ﬁnite
-subset W of V (M) containingV (T ) the map
-(7.6) P (T,E )  //A(V (M)) π //A(W )
-is an embedding ofP (T,E ) in the ﬁnite dimensional aﬃne spaceA(W ).
-Proof. Bydeﬁnition,P (T,E )isaquasi-aﬃnesubsetof A(V (T )). ToembedP (T,E )inA(V (M)),
-we must construct a surjective map from the coordinate ringOA(V (M )) of A(V (M)) to the co-
-ordinate ringO of P (T,E ). By Corollary 7.2 we have a canonical Bruhat cocycle on the space
-M\C(E) with edges labeled by matrices inSL(2,O). This cocycle canonically lifts to a cocycle
-on ~M\C(E). Given a virtual edgee = (e0,e 1), one obtains a matrixBe in SL(2,O) by selecting
-a path in ~M\C(E) joining e0 to e1. Up to left and right multiplication by elements inP the
-matrixBe is independent of the choice of path, so the determinantce = det(( 0
-1 ),Be ( 0
-1 )) is well
-deﬁned. Moreover, ife corresponds to an edge ofT , ce is simply the Ptolemy coordinate of
-e. One thus obtains a surjectionOA(V (M ))→O by taking a virtual edgee to ce. The second
-statement is obvious. □
-Remark 7.11. The same result holds forPσ(T,E ). ForEP (T,E ) one must consider embed-
-dings into an aﬃne space generated by pairs of triangular faces of~T instead of virtual edges.
+Let $E\in\mathop{\mathrm{T}}(\mathcal T)$ be edge-degenerate. Then each face of $\mathcal T$ has at most one zero-edge.
+
+::: proposition
+[]{#prop:RecoverDec label="prop:RecoverDec"} Let $c$ be a Ptolemy assignment on a simplex $\Delta$. If each face has at most one Ptolemy coordinate which is zero, then $c$ is the Ptolemy assignment of a unique decoration.
+:::
+
+::: proof
+*Proof.* By reordering the vertices if necessary, we may assume that $c_{01}$, $c_{12}$ and $c_{23}$ are nonzero. Let $$g_0=I,\quad g_1=q(c_{01}),\quad g_2=g_1x(\frac{c_{02}}{c_{01}c_{12}})q(c_{12}),\quad g_3=g_2x(\frac{c_{13}}{c_{12}c_{23}})q(c_{23}).$$ The Ptolemy coordinates of the decoration $(g_0P,g_1P,g_2P,g_3P)$ then agree with $c$ as is shown by explicitly computing $\det\big(g_{i}\left(\begin{smallmatrix}1\\0\end{smallmatrix}\right),g_{j}\left(\begin{smallmatrix}1\\0\end{smallmatrix}\right)\big)$. Uniqueness follows from Corollary [\[cor:LocalOneToOne\]](#cor:LocalOneToOne){reference-type="ref" reference="cor:LocalOneToOne"} since the natural cocycle is determined up to coboundaries by the Ptolemy coordinates (Proposition [\[prop:ConcreteFormula\]](#prop:ConcreteFormula){reference-type="ref" reference="prop:ConcreteFormula"}). ◻
+:::
+
+Let $C(E)$ be a union of disjoint cylindrical neighborhoods of the zero-edges of $E$. The space $M\setminus C(E)$ decomposes as a union of truncated simplices with the zero-edges being "chopped" (see Figure [\[fig:ChoppedCocycle\]](#fig:ChoppedCocycle){reference-type="ref" reference="fig:ChoppedCocycle"}).
+
+::: corollary
+[]{#cor:ChoppedCocycle label="cor:ChoppedCocycle"} A Ptolemy assignment $c$ of type $E$ canonically determines a $G$-cocycle on the space $M\setminus C(E)$.
+:::
+
+::: proof
+*Proof.* By Proposition [\[prop:RecoverDec\]](#prop:RecoverDec){reference-type="ref" reference="prop:RecoverDec"} and Corollary [\[cor:LocalOneToOne\]](#cor:LocalOneToOne){reference-type="ref" reference="cor:LocalOneToOne"}, $c$ determines up to coboundaries a Bruhat cocycle on each truncated simplex. By Proposition [\[prop:ConcreteFormula\]](#prop:ConcreteFormula){reference-type="ref" reference="prop:ConcreteFormula"}, all the long edges are canonically determined by the Ptolemy coordinates, but a short edge near a zero-edge is only determined up to the coboundary action. However, as shown in Figure [\[fig:ChoppedCocycle\]](#fig:ChoppedCocycle){reference-type="ref" reference="fig:ChoppedCocycle"}, each chopped truncated simplex inherits canonical edge labelings. The fact that the chopped cocycles match up follows from the identification relations. ◻
+:::
+
+<figure id="fig:RemoveCylinder">
+<p><br />
+</p>
+<figcaption>The cocycle extends if and only if the edge relation holds.</figcaption>
+</figure>
+
+The link of each zero-edge is a complex $K$ as in Section [\[sec:EdgeRelations\]](#sec:EdgeRelations){reference-type="ref" reference="sec:EdgeRelations"} (embedded in $\scalerel*{\widehat{\widetilde M}}{\widetilde{M^2}}$) and since $E$ is only edge-degenerate, the top and bottom edges of $K$ are all nonzero. Hence, for a Ptolemy assignment of type $E$ the edge relations (Definition [\[def:EdgeRelation\]](#def:EdgeRelation){reference-type="ref" reference="def:EdgeRelation"}) around each zero-edge are well defined.
+
+::: definition
+[]{#def:PtolemyMild label="def:PtolemyMild"} Let $E$ be edge-degenerate. The Ptolemy variety $P(\mathcal T,E)$ is the quasi-affine algebraic set defined by the usual relations (as in Definition [\[def:PtolemyVariety\]](#def:PtolemyVariety){reference-type="ref" reference="def:PtolemyVariety"}) together with the edge relations [\[eq:EdgeRelations\]](#eq:EdgeRelations){reference-type="eqref" reference="eq:EdgeRelations"} around zero-edges and the relations $c_e=0$ if $e$ is a zero-edge and $c_e\neq 0$ otherwise.
+:::
+
+Note that each element in $P(\mathcal T,E)$ is a Ptolemy assignment of type $E$.
+
+::: theorem
+[]{#thm:OneOneMild label="thm:OneOneMild"} Let $E\in \mathop{\mathrm{T}}(\mathcal T)$ be edge-degenerate. There is a one-to-one correspondence $$\label{eq:OneOneMild}
+\left\{\txt{Decorated, boundary-unipotent\\representations of type $E$}\right\}\overset{\text{1:1}}{\longleftrightarrow}P(\mathcal T,E)\overset{\text{1:1}}{\longleftrightarrow}\left\{\txt{Bruhat cocycles of type $E$\\ up to coboundaries}\right\}$$
+:::
+
+::: proof
+*Proof.* By Theorem [\[thm:OneToOneGeneral\]](#thm:OneToOneGeneral){reference-type="ref" reference="thm:OneToOneGeneral"} all we need to prove is that a Ptolemy assignment of type $E$ determines a Bruhat cocycle. By Corollary [\[cor:ChoppedCocycle\]](#cor:ChoppedCocycle){reference-type="ref" reference="cor:ChoppedCocycle"}, we have a canonical cocycle on $M\setminus C(E)$. By the van Kampen theorem this extends to a Bruhat cocycle on $M$ if and only if the product of the labelings around each cylinder is $I$, which is a consequence of the edge relations. The freedom in the choice of extension is exactly the coboundary action (see e.g. Remark [\[rm:CoboundaryAction\]](#rm:CoboundaryAction){reference-type="ref" reference="rm:CoboundaryAction"}). ◻
+:::
+
+::: definition
+For $\sigma\in H^2(\widehat M;\mathbb Z/2\mathbb Z)$ define $P^\sigma(\mathcal T,E)$ as in Definition [\[def:PtolemyMild\]](#def:PtolemyMild){reference-type="ref" reference="def:PtolemyMild"}, but using the identification relations [\[eq:EdgeIdentificationsSigma\]](#eq:EdgeIdentificationsSigma){reference-type="eqref" reference="eq:EdgeIdentificationsSigma"}.
+:::
+
+::: theorem
+[]{#thm:OneOneMildSigma label="thm:OneOneMildSigma"} Let $E\in \mathop{\mathrm{T}}(\mathcal T)$ be edge-degenerate. There is a one-to-one correspondence $$\label{eq:OneOneMildSigma}
+\xy*[c]\xybox{\xymatrix{
+\left\{\txt{Type $E$ decorated\\boundary-unipotent\\$\pi_1(M)\to\mathop{\mathrm{PSL}}(2,\mathbb C)$}\right\}\ar@/_1pc/@{<->}[rr]_-{1:1}&P^\sigma(\mathcal T,E)\ar[l]_-{1:k}\ar[r]^-{k:1}&\left\{\txt{Bruhat $\mathop{\mathrm{PSL}}(2,\mathbb C)$-cocycles\\type $E$, obstruction class $\sigma$\\up to coboundaries}\right\},}}\endxy$$
+:::
+
+::: proof
+*Proof.* As in the proof of Theorem [\[thm:OneOneMild\]](#thm:OneOneMild){reference-type="ref" reference="thm:OneOneMild"} an element in $P^\sigma(\mathcal T,E)$ determines a Bruhat cocycle up to coboundaries. The fact that this map is $k:1$ follows from the elementary fact that two Ptolemy assignments determine the same Bruhat cocycle if and only if they differ by an element in $Z^1(\widehat M;\mathbb Z/2\mathbb Z)$. ◻
+:::
+
+::: definition
+For $M$ as in Section [\[sec:Enhanced\]](#sec:Enhanced){reference-type="ref" reference="sec:Enhanced"} define the enhanced Ptolemy variety $\mathcal EP(\mathcal T,E)$ as in Definition [\[def:PtolemyMild\]](#def:PtolemyMild){reference-type="ref" reference="def:PtolemyMild"} using the identification relations from Definition [\[def:EnhancedPtolemy\]](#def:EnhancedPtolemy){reference-type="ref" reference="def:EnhancedPtolemy"} and the edge relations [\[eq:EdgeEquationsEnhanced\]](#eq:EdgeEquationsEnhanced){reference-type="eqref" reference="eq:EdgeEquationsEnhanced"}.
+:::
+
+::: theorem
+[]{#thm:OneOneMildEnhanced label="thm:OneOneMildEnhanced"} Let $E\in \mathop{\mathrm{T}}(\mathcal T)$ be edge-degenerate and $M$ as in Section [\[sec:Enhanced\]](#sec:Enhanced){reference-type="ref" reference="sec:Enhanced"}. There is a one-to-one correspondence $$\label{eq:OneOneMildEnhanced}
+\left\{\txt{Decorated representations\\of type $E$}\right\}\overset{\text{1:1}}{\longleftrightarrow}\mathcal EP(\mathcal T,E)\overset{\text{1:1}}{\longleftrightarrow}\left\{\txt{Fattened Bruhat cocycles of type $E$\\ up to coboundaries}\right\}$$
+:::
+
+::: proof
+*Proof.* The proof is identical to that of Theorem [\[thm:OneOneMild\]](#thm:OneOneMild){reference-type="ref" reference="thm:OneOneMild"} using the fattened decomposition and the geometric interpretation of the edge relations [\[eq:EdgeEquationsEnhanced\]](#eq:EdgeEquationsEnhanced){reference-type="eqref" reference="eq:EdgeEquationsEnhanced"} given in Figure [\[fig:FatEdgeRelationTop\]](#fig:FatEdgeRelationTop){reference-type="ref" reference="fig:FatEdgeRelationTop"}. ◻
+:::
+
+## Embeddings in affine space
+
+::: definition
+[]{#def:VirtualEdges label="def:VirtualEdges"} A *virtual edge* of $M$ is an element in the set $$V(M) =\big(I(\widetilde M)\times I(\widetilde M)\big)\big/\pi_1(M)$$ of pairs of ideal points in $\widetilde M$ up to the $\pi_1(M)$-action.
+:::
+
+Given an ideal triangulation $\mathcal T$, each oriented edge $e$ of $\mathcal T$ determines a virtual edge, namely the orbit of $(e_0,e_1)$. Hence, $\mathcal T$ determines a (finite) subset $V(\mathcal T)$ of $V(M)$.
+
+For each subset $V$ of $V(M)$ let $A(V)$ denote the affine space with coordinate ring equal to the polynomial ring generated by $V$. For $V\subset W$ we have a canonical projection $\pi\colon A(W)\to A(V)$ onto a direct summand. We wish to embed the Ptolemy variety $P(\mathcal T,E)$ in $A(V(M))$. The idea is that a decoration assigns a Ptolemy coordinate to every virtual edge, not just the edges of $\mathcal T$.
+
+::: proposition
+[]{#prop:Embeddings label="prop:Embeddings"} Let $E\in\mathop{\mathrm{T}}(\mathcal T)$ be non- or edge-degenerate. There is a canonical embedding of $P(\mathcal T,E)$ in the (infinite dimensional) affine space $A(V(M))$. Furthermore, for each finite subset $W$ of $V(M)$ containing $V(\mathcal T)$ the map $$\xymatrix{P(\mathcal T,E)\ar@{^{(}->}[r]&A(V(M))\ar[r]^-\pi&A(W)}$$ is an embedding of $P(\mathcal T,E)$ in the finite dimensional affine space $A(W)$.
+:::
+
+::: proof
+*Proof.* By definition, $P(\mathcal T,E)$ is a quasi-affine subset of $A(V(\mathcal T))$. To embed $P(\mathcal T,E)$ in $A(V(M))$, we must construct a surjective map from the coordinate ring $\mathcal O_{A(V(M))}$ of $A(V(M))$ to the coordinate ring $\mathcal O$ of $P(\mathcal T,E)$. By Corollary [\[cor:ChoppedCocycle\]](#cor:ChoppedCocycle){reference-type="ref" reference="cor:ChoppedCocycle"} we have a canonical Bruhat cocycle on the space $M\setminus C(E)$ with edges labeled by matrices in $\mathop{\mathrm{SL}}(2,\mathcal O)$. This cocycle canonically lifts to a cocycle on $\widetilde{M\setminus C(E)}$. Given a virtual edge $e=(e_0,e_1)$, one obtains a matrix $B_e$ in $\mathop{\mathrm{SL}}(2,\mathcal O)$ by selecting a path in $\widetilde{M\setminus C(E)}$ joining $e_0$ to $e_1$. Up to left and right multiplication by elements in $P$ the matrix $B_e$ is independent of the choice of path, so the determinant $c_e=\det(\left(\begin{smallmatrix}0\\1\end{smallmatrix}\right),B_e\left(\begin{smallmatrix}0\\1\end{smallmatrix}\right))$ is well defined. Moreover, if $e$ corresponds to an edge of $\mathcal T$, $c_e$ is simply the Ptolemy coordinate of $e$. One thus obtains a surjection $\mathcal O_{A(V(M))}\to\mathcal O$ by taking a virtual edge $e$ to $c_e$. The second statement is obvious. ◻
+:::
+
+::: remark
+The same result holds for $P^\sigma(\mathcal T,E)$. For $\mathcal EP(\mathcal T,E)$ one must consider embeddings into an affine space generated by pairs of triangular faces of $\widetilde{\overline\mathcal T}$ instead of virtual edges.
+:::

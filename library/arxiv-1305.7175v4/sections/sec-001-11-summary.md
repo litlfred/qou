@@ -8,221 +8,100 @@ pages: 1-6
 source_pdf: 1305.7175v4.pdf
 source_sha256: 5a09955f4fb6a57e
 doc_brief: "NONLINEAR TRACES — W e combine the theory of traces in homotopical algebra with s heaf theory in de- rived algebraic geometry to deduce general ﬁxed point and ch aracter formulas."
+text_source: latex
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.838
 ---
-1.2. Inspirations and motivations 6
-1.3. Acknowledgements 6
-2. Overview 7
-2.1. Traces in category theory 7
-2.2. Traces in geometry 9
-2.3. Trace formulas via sheaf theories 12
-3. Traces in category theory 16
-3.1. Preliminaries 16
-3.2. Dualizability 17
-3.3. Traces and dimensions 19
-3.4. Functoriality of dimension 21
-3.5. Functoriality of traces 23
-4. Traces in Geometry 24
-4.1. Categories of correspondences 24
-4.2. Traces of correspondences 25
-4.3. Geometric functoriality of dimension 27
-4.4. Geometric functoriality of trace 29
-5. Traces for sheaves 29
-5.1. Dimensions and traces of sheaf categories: 1-categorical co nsequences 30
-5.2. Integration formulas for traces: 2-categorical consequen ces 31
-5.3. Ind-coherent sheaves and D-modules 33
-1
-2 DA VID BEN-ZVI AND DA VID NADLER
-References 36
-1. Introduction
-This paper is devoted to traces and characters in homotopical alge bra and their application to
-algebraic geometry and representation theory. We observe that many geometric ﬁxed point and
-trace formulas can be expressed as linearizations of fundamental nonlinear identities, describing
-dimensions and traces directly in the setting of correspondence ca tegories of varieties or stacks.
-This gives a simple uniform perspective on (and useful generalization s of) geometric character
-and ﬁxed point formulas of Grothendieck-Riemann-Roch and Atiyah -Bott-Lefschetz type. In
-addition, one can also specialize the universal geometric formulas to higher categorical settings
-not captured within a linear framework, such as characters of gro up actions on categories.
-The paper is organized as follows: after a brief summary in Section 1.1 , we give a detailed
-overview in Section 2, in three sections: ﬁrst, the abstract funct oriality of traces in higher
-category theory; second, their calculation in correspondence ca tegories in derived algebraic
-geometry; and third, their specialization via sheaf theories. The re st of the paper follows the
-same structure with more details provided. We emphasize the forma l nature and appealing
-simplicity of the constructions in any suﬃciently derived setting. For example, in the second
-part, we work within derived algebraic geometry, but the statemen ts and proofs should hold in
-any setting (for example, derived manifolds) with a suitable notion of ﬁber product to handle
-non-transversal intersections. The main objects appearing in tr ace formulas are the derived loop
-space (the self-intersection of the diagonal in its role as the nonline ar trace of the identity map)
-and more general derived ﬁxed point loci. The importance of a derive d setting also appears
-prominently in the third part, where the sheaf theories we apply mus t have good functorial
-properties with respect to ﬁber products. As a result, the theor y of characters in Hochschild
-and cyclic homology is expressed directly by the geometry, resulting in simpler formulations.
-For example, the Todd genus in Grothendieck-Riemann-Roch and th e denominators in the
-classical Atiyah-Bott formula arise naturally from derived calculatio ns.
-1.1. Summary. We now describe the main theorem, extending classical trace and dim ension
-formulas to a very general setting in derived algebraic geometry (in cluding equivariance for
-arbitrary Lie algebroids or aﬃne algebraic groups) without any smoo thness or transversality
-assumptions, while emphasizing that the main contribution of the pap er is the simple geometric
-formalism underlying these formulas. For our general and formal n onlinear results, we need
-not assume anything about what classes of derived stacks and mor phisms we work with. For
-applications, we need to be in a setting in which the powerful mechanis m of sheaf theory is
-fully developed [G1, DG, GR2].
-Setting 1.1. Throughout this paper, we work over a ﬁeld k of characteristic zero. A stack X
-connotes either
-(1) a QCA derived stack in the sense of [DG]. In other words X is quasicompact with
-aﬃne diagonal and the underived inertia of X is ﬁnite presentation over the underlying
-underived stack Xcl.
-(2) an ind-inf-scheme, in the sense of [GR2]. These include (derived) schemes of ﬁnite (or
-locally almost of ﬁnite) type and ind-schemes built out of un ions of the former along
-closed embeddings, as well as their quotients by arbitrary L ie algebroids, or equivalently
-formal groupoids.
-NONLINEAR TRACES 3
-By a proper map we indicate a proper and schematic map, while for ind-pro per indicates ind-
-proper and ind-inf-schematic. All appearances of proper ma ps in this paper may be replaced by
-ind-proper ones.
-Thus the class of spaces we consider includes all k-derived schemes of ﬁnite type and their
-quotients by either Lie algebroids or ﬁnite type aﬃne group schemes .
-Given a derived stack πX : X→ Speck, we denote by πLX :LX = Map(S1,X )→ Speck
-its derived loop space. In general, the derived loop space is a derived thickening of the inertia
-stack. For a map f :X→Y , we will denote by Lf :LX→LY the induced map on loops.
-Example 1.2. For many applications, the following two special cases are notewort hy.
-When X is a smooth scheme, LX≃ TX [−1] is the total space of the shifted tangent space
-by the HKR theorem. The same holds for an arbitrary scheme, if we r eplace the tangent
-space by the tangent complex, see for example [BN10b]. For f : X→ Y a map of schemes,
-Lf : TX [−1]→ TY [−1] is (the shift of) the usual tangent map.
-WhenY =BG is a classifying stack, LY ≃G/G is the adjoint quotient. For X aG-scheme,
-and f : X/G→ BG the corresponding classifying map, Lf :L(X/G)→L BG≃ G/G is the
-universal family of derived ﬁxed point loci. More precisely, for any ele mentg∈G, the derived
-ﬁxed point locus Xg⊂X is precisely the derived ﬁber Xg≃L (X/G)×G/G{g}
-We will measure stacks X by diﬀerential graded (dg) enhancements of derived categories o f
-sheaves.
-The most familiar is the assignment X↦→Q(X) of the (unbounded) category of quasicoherent
-sheaves. However, we will make essential use of Grothendieck-Se rre duality, in the guise of
-an adjunction ( f∗,f !) between push-forward and extraordinary pullback for proper m aps X.
-This duality is most naturally expressed in the setting of ind-coherent sheaves X ↦→Q!(X)
-as developed in [G1, GR2]. Ind-coherent sheaves agree with quasico herent sheaves for smooth
-schemes but diﬀer on singular schemes, where [bounded complexes o f] coherent sheaves (the
-compact objects of Q!) diﬀer from perfect complexes (the compact objects of Q). In other
-words, ind-coherent sheaves are to coherent sheaves and G-theory (the setting of Grothendieck-
-Riemann-Roch theorems) as quasicoherent sheaves are to perfe ct complexes and K-theory.
-Another sheaf theory to which the general formalism developed in [G R2] applies is the
-theory ofD-modules X→D (X), which for smooth schemes agrees with the classical notion of
-quasicoherent complexes of modules for the sheaf of diﬀerential o peratorsDX (i.e. with compact
-objects given by bounded coherent complexes of DX -modules). In general [GR1, GR2] D(X) is
-deﬁned as the category of crystals, i.e., as ind-coherent complexe s on the de Rham space of X
-D(X) :=Q!(XdR).
-The compact objects in D(X) for X a scheme are the coherent D-modules, while for X a stack
-they form a smaller class, the safeD-modules of [DG].
-The book [GR2] develops the theories Q! andD in particular as functors out of 2-categories
-of correspondences of schemes and stacks, with 1-morphisms fr om X to Y given by correspon-
-dences representable over Y and 2-morphisms given by ind-proper ind-schematic morphisms of
-correspondences. This theory encodes a huge amount of struct ure, including in particular pull-
-back and pushforward functorsf ! andf∗ satisfying base change, as well as the (f∗,f !) adjunction
-for proper (or even ind-proper) maps. They also establish symmet ric monoidal properties of
-the sheaf theory. 1 (See Sections 2.3 and 5 for more background and precise statemen ts.)
-LetS =Q! orS =D denote either of these sheaf theories.
-1W e will also need from [DG] the construction of continuous pu shforward functors for all maps of QCA stacks
-(such as the non-representable projection π X : X → pt from a stack) and their base-change property.
-4 DA VID BEN-ZVI AND DA VID NADLER
-We let ωX = π!
-XOSpeck ∈ S(X) denote the appropriate dualizing sheaf. Thus for ind-
-coherent sheaves, ωX∈Q !(X) is the algebraic dualizing sheaf, and for D-modules, ωX∈D (X)
-is the Verdier dualizing sheaf. Let ω(X) = πX∗ωX denote the corresponding complex of global
-volume forms: for ind-coherent sheaves, ω(X)∈k-mod consists of algebraic volume forms, and
-forD-modules, ω(X)∈ k-mod consists of locally constant distributions (Borel-Moore chains )
-for X a scheme.
-For X a stack we use the continuous “renormalized” pushforward funct or on D-modules
-of [DG], which roughly replaces equivariant cohomology (derived invar iants) by a shift of equi-
-variant homology (derived coinvariants, see [DG, Example 9.1.6]), so that ω(Y/G ) for a G-
-varietyY is given by a shift of G-coinvariants on Borel-Moore chains on Y . (Note that even for
-X =BG this diﬀers from the standard deﬁnition of equivariant Borel-Moore homology, which
-is identiﬁed in this case with equivariant cohomology.)
-For a proper (or ind-proper) map f : X → Y , adjunction provides an integration map∫
-f :ω(X)→ω(Y ).
-Example 1.3. Let us continue with the special cases of Example 1.2, and focus in pa rticular
-on algebraic distributions ωLX∈Q !(LX) on the loop space.
-When X is a smooth scheme, LX≃ TX [−1] is naturally Calabi-Yau, and its global volume
-forms are identiﬁed with diﬀerential forms ω(TX [−1])≃ O(TX [−1])≃ Sym•(ΩX [1]). The
-canonical “volume form” on LX is given by the Todd genus (as explained by Markarian [Ma]):
-the resulting integration of functions on LX diﬀers from the integration of diﬀerential forms on
-X by the Todd genus.
-WhenY =BG is a classifying stack, LY ≃G/G is naturally Calabi-Yau, and its global vol-
-ume forms are invariant functions ω(G/G)≃O (G/G)≃O (G)G. If G is reductive with Cartan
-subgroup T⊂ G and Weyl group W , the naive invariants O(G)G≃O (T )W are equivalent to
-the derived invariants, but in general there may be higher cohomolo gy.
-Theorem 1.4. LetS =Q! orS =D denote either the theory of ind-coherent sheaves or
-D-modules. Recall our conventions for stacks and morphisms, Setting 1.1.
-• For a stack X, there is a canonical identiﬁcation HH ∗(S(X))≃ω(LX) of the Hochschild
-homology of sheaves on X with distributions (or renormalized Borel-Moore chains) o n the loop
-space.
-• For a proper (or ind-proper) map of stacks f : X→ Y the induced map HH ∗(S(X))→
-HH ∗(S(Y )) is given by integration along the loop map Lf :LX→LY .
-• Grothendieck-Riemann-Roch: In particular, for any compact object M∈S (X) (co-
-herent sheaf or safe coherent D-module) with character [M ]∈HH ∗(S(X))≃ω(LX), there is
-a canonical identiﬁcation
-[f∗M]≃
-∫
-Lf
-[M ]∈HH ∗(S(Y ))≃ω(LY )
-In other words, the character of a pushforward along a proper map is the integral of the character
-along the induced loop map.
-• Atiyah-Bott-Lefschetz: LetG be an aﬃne group, and X a proper stack with G-action,
-or equivalently, a proper map f :X/G→BG. Then for any compact object M∈S (X/G) (G-
-equivariant coherent sheaf or safely equivariant coherent D-module on X), and element g∈G,
-there is a canonical identiﬁcation
-[f∗M ]|g≃
-∫
-Lf
-[M ]|X g
-NONLINEAR TRACES 5
-In other words, under the identiﬁcation of invariant functi ons and volume forms on the group,
-the value of the character of an induced representation at a g roup element is given by the integral
-of the original character along the corresponding ﬁxed poin t locus of the group element.
-• Extension to traces: The trace Tr (S(Z)) of the endofunctor of S(X) given by a self-
-correspondence (e.g. a self-map) X ← Z → X is given by distributions on the ﬁxed points
-ω(Z|∆ ).
-• For a map f : (X,Z )→ (Y,W ) of stacks with self-correspondences 2, the induced map
-Tr (S(Z))→Tr (S(W )) is given by integration along ﬁxed points Z|∆ X→W∆ Y .
-Example 1.5 (F robenius-Weyl Character F ormula). Here is a reminder of a well-known
-application of the Atiyah-Bott-Lefschetz formula in representat ion theory.
-• If G is a ﬁnite group, and X =G/K is a homogeneous set, and M =k[G/K] the ring of
-functions, one recovers the Frobenius character formula for th e induced representation k[G/K].
-• If G is a reductive group, X = G/B is the ﬂag variety, X/G = pt/B→ pt/G. The loop
-map
-L(X/G) = B/B≃ ~G/G→G/G
-is the (group) Grothendieck-Springer simultaneous resolution, wit h ﬁbers giving ﬁxed point
-loci on the ﬂag variety. For M =L an equivariant line bundle on G/B, and g ∈ G runs
-over a maximal torus, one recovers the Weyl character formula f or the induced representation
-H ∗(G/B,L).
-Remark 1.6. The reader will note no explicit appearance of the Todd genus in the a bove
-formulas. In other words as for K-theory, pushforward of shea ves naturally agrees with the
-pushforward in Hochschild homology. The Todd genus arises in compa ring these natural push-
-forwards with the pushforward in cohomology, i.e., integration of fo rms. It arises when one
-unwinds the integration map
-∫
-Lf :ω(LX)→ω(LY ), given by Grothendieck duality, in terms
-of functions (or diﬀerential forms) using the Hochschild-Kostant -Rosenberg theorem. In par-
-ticular, the familiar denominators in the Atiyah-Bott formula are implic it in the integration
-measure on the ﬁxed point locus.
-For instance, as mentioned above, when X is a smooth scheme, a geometric version of the
-HKR theorem asserts that the loop space is the total space of the shifted tangent complex
-LX ≃ TX [−1], and global volume forms are canonically functions ω(LX)≃O (TX [−1])≃
-Sym•(ΩX [1]). Under this identiﬁcation (as explained by Markarian [Ma]), the res ulting inte-
-gration of functions on LX diﬀers from the integration of diﬀerential forms on X by the Todd
-genus.
-Remark 1.7. The paper [KP] carries out the program described in this paper (i.e. r ecovering
-classical identities from non-linear ones) by calculating explicitly the d erived contributions in
-the case of the Atiyah-Bott formula.
-Remark 1.8. The main contribution of this paper is hidden in the statement of this t heorem: we
-establish nonlinear versions of character formulas in the setting of derived stacks, and deduce
-classical formulas and new higher categorical analogues formally by applying suitable sheaf
-theories. Thanks to the great generality of sheaf theory in derive d algebraic geometry [GR2],
-the resulting applications hold with remarkably few assumptions.
-We are particularly interested in the higher categorical variants wh ere one considers sheaves
-of categories, in particular Frobenius-Weyl character formulas f or group actions on categories.
-Since the requisite foundations are not yet fully developed, we post pone details of this to future
-2i.e., we lift f to an identiﬁcation Z ≃ X ×Y W of correspondences from X to Y
-6 DA VID BEN-ZVI AND DA VID NADLER
-works. Applications include an identiﬁcation of the character of the category of D-modules
-on the ﬂag variety with the Grothendieck-Springer sheaf, and of t he trace of a Hecke functor
-on the category of D-modules on the moduli of bundles on a curve with the cohomology of a
-Hitchin space.
+[]{#summary label="summary"} We now describe the main theorem, extending classical trace and dimension formulas to a very general setting in derived algebraic geometry (including equivariance for arbitrary Lie algebroids or affine algebraic groups) without any smoothness or transversality assumptions, while emphasizing that the main contribution of the paper is the simple geometric formalism underlying these formulas. For our general and formal nonlinear results, we need not assume anything about what classes of derived stacks and morphisms we work with. For applications, we need to be in a setting in which the powerful mechanism of sheaf theory is fully developed [@indcoh; @finiteness; @GR].
+
+::: setting
+[]{#stack conventions label="stack conventions"} Throughout this paper, we work over a field $k$ of characteristic zero. A *stack* $X$ connotes either
+
+1.  a QCA derived stack in the sense of [@finiteness]. In other words $X$ is quasicompact with affine diagonal and the underived inertia of $X$ is finite presentation over the underlying underived stack $X_{cl}$.
+
+2.  an ind-inf-scheme, in the sense of [@GR]. These include (derived) schemes of finite (or locally almost of finite) type and ind-schemes built out of unions of the former along closed embeddings, as well as their quotients by arbitrary Lie algebroids, or equivalently formal groupoids.
+
+By a *proper* map we indicate a proper and schematic map, while for ind-proper indicates ind-proper and ind-inf-schematic. All appearances of proper maps in this paper may be replaced by ind-proper ones.
+:::
+
+Thus the class of spaces we consider includes all $k$-derived schemes of finite type and their quotients by either Lie algebroids or finite type affine group schemes.
+
+Given a derived stack $\pi_X:X\to \Spec k$, we denote by $\pi_{\cL X}:\cL X = \Map(S^1, X) \to \Spec k$ its derived loop space. In general, the derived loop space is a derived thickening of the inertia stack. For a map $f:X\to Y$, we will denote by $\cL f:\cL X\to \cL Y$ the induced map on loops.
+
+::: example
+[]{#intro ex label="intro ex"} For many applications, the following two special cases are noteworthy.
+
+When $X$ is a smooth scheme, $\cL X\simeq  \BT_X[-1]$ is the total space of the shifted tangent space by the HKR theorem. The same holds for an arbitrary scheme, if we replace the tangent space by the tangent *complex*, see for example [@conns]. For $f:X\to Y$ a map of schemes, $\cL f :\BT_X[-1]\to \BT_Y[-1]$ is (the shift of) the usual tangent map.
+
+When $Y =BG$ is a classifying stack, $\cL Y\simeq G/G$ is the adjoint quotient. For $X$ a $G$-scheme, and $f:X/G\to BG$ the corresponding classifying map, $\cL f:\cL (X/G)\to \cL BG \simeq G/G$ is the universal family of derived fixed point loci. More precisely, for any element $g\in G$, the derived fixed point locus $X^g \subset X$ is precisely the derived fiber $X^g \simeq \cL(X/G) \times_{G/G} \{g\}$
+:::
+
+We will measure stacks $X$ by differential graded (dg) enhancements of derived categories of sheaves.
+
+The most familiar is the assignment $X\mapsto\cQ(X)$ of the (unbounded) category of quasicoherent sheaves. However, we will make essential use of Grothendieck-Serre duality, in the guise of an adjunction $(f_*,f^!)$ between push-forward and extraordinary pullback for proper maps $X$. This duality is most naturally expressed in the setting of *ind-coherent sheaves* $X\mapsto \cQ^!(X)$ as developed in [@indcoh; @GR]. Ind-coherent sheaves agree with quasicoherent sheaves for smooth schemes but differ on singular schemes, where \[bounded complexes of\] coherent sheaves (the compact objects of $\cQ^!$) differ from perfect complexes (the compact objects of $\cQ$). In other words, ind-coherent sheaves are to coherent sheaves and $G$-theory (the setting of Grothendieck-Riemann-Roch theorems) as quasicoherent sheaves are to perfect complexes and $K$-theory.
+
+Another sheaf theory to which the general formalism developed in [@GR] applies is the theory of $\cD$-modules $X\to \cD(X)$, which for smooth schemes agrees with the classical notion of quasicoherent complexes of modules for the sheaf of differential operators $\cD_X$ (i.e. with compact objects given by bounded coherent complexes of $\cD_X$-modules). In general [@crystals; @GR] $\cD(X)$ is defined as the category of crystals, i.e., as ind-coherent complexes on the de Rham space of $X$ $$\cD(X):=\cQ^!(X_{dR}).$$ The compact objects in $\cD(X)$ for $X$ a scheme are the coherent $\cD$-modules, while for $X$ a stack they form a smaller class, the *safe* $\cD$-modules of [@finiteness].
+
+The book [@GR] develops the theories $\cQ^!$ and $\cD$ in particular as functors out of 2-categories of correspondences of schemes and stacks, with 1-morphisms from $X$ to $Y$ given by correspondences representable over $Y$ and 2-morphisms given by ind-proper ind-schematic morphisms of correspondences. This theory encodes a huge amount of structure, including in particular pullback and pushforward functors $f^!$ and $f_*$ satisfying base change, as well as the $(f_*,f^!)$ adjunction for proper (or even ind-proper) maps. They also establish symmetric monoidal properties of the sheaf theory.[^1] (See Sections [\[sheaf intro\]](#sheaf intro){reference-type="ref" reference="sheaf intro"} and [\[sect shvs\]](#sect shvs){reference-type="ref" reference="sect shvs"} for more background and precise statements.)
+
+Let $\cS=\cQ^!$ or $\cS=\cD$ denote either of these sheaf theories.
+
+We let $\omega_X =\pi_X^!\cO_{\Spec k}\in \cS(X)$ denote the appropriate dualizing sheaf. Thus for ind-coherent sheaves, $\omega_X\in \cQ^!(X)$ is the algebraic dualizing sheaf, and for $\D$-modules, $\omega_X\in \D(X)$ is the Verdier dualizing sheaf. Let $\omega(X)=\pi_{X*}\omega_X$ denote the corresponding complex of global volume forms: for ind-coherent sheaves, $\omega(X)\in k\module$ consists of algebraic volume forms, and for $\D$-modules, $\omega(X)\in k\module$ consists of locally constant distributions (Borel-Moore chains) for $X$ a scheme.
+
+For $X$ a stack we use the continuous "renormalized\" pushforward functor on $\cD$-modules of [@finiteness], which roughly replaces equivariant cohomology (derived invariants) by a shift of equivariant homology (derived coinvariants, see [@finiteness Example 9.1.6]), so that $\omega(Y/G)$ for a $G$-variety $Y$ is given by a shift of $G$-coinvariants on Borel-Moore chains on $Y$. (Note that even for $X=BG$ this differs from the standard definition of equivariant Borel-Moore homology, which is identified in this case with equivariant cohomology.)
+
+For a proper (or ind-proper) map $f:X\to Y$, adjunction provides an integration map $\int_f:\omega(X)\to \omega(Y)$.
+
+::: example
+Let us continue with the special cases of Example [\[intro ex\]](#intro ex){reference-type="ref" reference="intro ex"}, and focus in particular on algebraic distributions $\omega_{\cL X} \in \cQ^!(\cL X)$ on the loop space.
+
+When $X$ is a smooth scheme, $\cL X \simeq  \BT_X[-1]$ is naturally Calabi-Yau, and its global volume forms are identified with differential forms $\omega( \BT_X[-1]) \simeq \cO( \BT_X[-1]) \simeq \Sym(\Omega_X[1])$.
+
+The canonical "volume form\" on $\cL X$ is given by the Todd genus (as explained by Markarian [@markarian]): the resulting integration of functions on $\cL X$ differs from the integration of differential forms on $X$ by the Todd genus.
+
+When $Y =BG$ is a classifying stack, $\cL Y \simeq G/G$ is naturally Calabi-Yau, and its global volume forms are invariant functions $\omega(G/G) \simeq \cO(G/G) \simeq \cO(G)^G$. If $G$ is reductive with Cartan subgroup $T\subset G$ and Weyl group $W$, the naive invariants $\cO(G)^G \simeq \cO(T)^W$ are equivalent to the derived invariants, but in general there may be higher cohomology.
+:::
+
+::: thm
+[]{#main label="main"} Let $\cS=\cQ^!$ or $\cS=\cD$ denote either the theory of ind-coherent sheaves or $\D$-modules. Recall our conventions for stacks and morphisms, Setting [\[stack conventions\]](#stack conventions){reference-type="ref" reference="stack conventions"}.
+
+$\bullet$ For a stack $X$, there is a canonical identification $HH_*(\cS(X))\simeq \omega(\cL X)$ of the Hochschild homology of sheaves on $X$ with distributions (or renormalized Borel-Moore chains) on the loop space.
+
+$\bullet$ For a proper (or ind-proper) map of stacks $f:X\to Y$ the induced map $HH_*(\cS(X))\to HH_*(\cS(Y))$ is given by integration along the loop map $\cL f:\cL X\to \cL Y$.
+
+$\bullet$ **Grothendieck-Riemann-Roch:** In particular, for any compact object $M\in \cS(X)$ (coherent sheaf or safe coherent $\cD$-module) with character $[M]\in HH_*(\cS(X))\simeq \omega(\cL X)$, there is a canonical identification $$[f_*\cM]\simeq\int_{\cL f}[M]\in HH_*(\cS(Y))\simeq\omega(\cL Y)$$ In other words, the character of a pushforward along a proper map is the integral of the character along the induced loop map.
+
+$\bullet$ **Atiyah-Bott-Lefschetz:** Let $G$ be an affine group, and $X$ a proper stack with $G$-action, or equivalently, a proper map $f:X/G\to BG$. Then for any compact object $M\in \cS(X/G)$ ($G$-equivariant coherent sheaf or safely equivariant coherent $\cD$-module on $X$), and element $g\in G$, there is a canonical identification $$[f_*M]|_g \simeq \int_{\cL f} [M]|_{X^g}$$ In other words, under the identification of invariant functions and volume forms on the group, the value of the character of an induced representation at a group element is given by the integral of the original character along the corresponding fixed point locus of the group element.
+
+$\bullet$ **Extension to traces:** The trace $Tr(\cS(Z))$ of the endofunctor of $\cS(X)$ given by a self-correspondence (e.g. a self-map) $X\leftarrow Z\rightarrow X$ is given by distributions on the fixed points $\omega(Z|_{\Delta})$.
+
+$\bullet$ For a map $f:(X,Z)\to (Y,W)$ of stacks with self-correspondences[^2], the induced map $Tr(\cS(Z))\to Tr(\cS(W))$ is given by integration along fixed points $Z|_{\Delta_X}\to W_{\Delta_Y}$.
+:::
+
+::: example
+Here is a reminder of a well-known application of the Atiyah-Bott-Lefschetz formula in representation theory.
+
+$\bullet$ If $G$ is a finite group, and $X=G/K$ is a homogeneous set, and $M=k[G/K]$ the ring of functions, one recovers the Frobenius character formula for the induced representation $k[G/K]$.
+
+$\bullet$ If $G$ is a reductive group, $X=G/B$ is the flag variety, $X/G=pt/B\to pt/G$. The loop map $$\cL(X/G)=B/B\simeq \wt{G}/G\to G/G$$ is the (group) Grothendieck-Springer simultaneous resolution, with fibers giving fixed point loci on the flag variety. For $M=\cL$ an equivariant line bundle on $G/B$, and $g\in G$ runs over a maximal torus, one recovers the Weyl character formula for the induced representation $H^*(G/B, \cL)$.
+:::
+
+::: remark
+The reader will note no explicit appearance of the Todd genus in the above formulas. In other words as for K-theory, pushforward of sheaves naturally agrees with the pushforward in Hochschild homology. The Todd genus arises in comparing these natural pushforwards with the pushforward in cohomology, i.e., integration of forms. It arises when one unwinds the integration map $\int_{\cL f}:\omega(\cL X) \to \omega(\cL Y),$ given by Grothendieck duality, in terms of functions (or differential forms) using the Hochschild-Kostant-Rosenberg theorem. In particular, the familiar denominators in the Atiyah-Bott formula are implicit in the integration measure on the fixed point locus.
+
+For instance, as mentioned above, when $X$ is a smooth scheme, a geometric version of the HKR theorem asserts that the loop space is the total space of the shifted tangent complex $\cL X \simeq \BT_X[-1]$, and global volume forms are canonically functions $\omega(\cL X)  \simeq \cO( \BT_X[-1]) \simeq \Sym(\Omega_X[1])$. Under this identification (as explained by Markarian [@markarian]), the resulting integration of functions on $\cL X$ differs from the integration of differential forms on $X$ by the Todd genus.
+:::
+
+::: remark
+The paper [@KP] carries out the program described in this paper (i.e. recovering classical identities from non-linear ones) by calculating explicitly the derived contributions in the case of the Atiyah-Bott formula.
+:::
+
+::: remark
+The main contribution of this paper is hidden in the statement of this theorem: we establish nonlinear versions of character formulas in the setting of derived stacks, and deduce classical formulas and new higher categorical analogues formally by applying suitable sheaf theories. Thanks to the great generality of sheaf theory in derived algebraic geometry [@GR], the resulting applications hold with remarkably few assumptions.
+
+We are particularly interested in the higher categorical variants where one considers sheaves of categories, in particular Frobenius-Weyl character formulas for group actions on categories. Since the requisite foundations are not yet fully developed, we postpone details of this to future works. Applications include an identification of the character of the category of $\D$-modules on the flag variety with the Grothendieck-Springer sheaf, and of the trace of a Hecke functor on the category of $\D$-modules on the moduli of bundles on a curve with the cohomology of a Hitchin space.
+:::
+
+[^1]: We will also need from [@finiteness] the construction of continuous pushforward functors for all maps of QCA stacks (such as the non-representable projection $\pi_X:X\to pt$ from a stack) and their base-change property.
+
+[^2]: i.e., we lift $f$ to an identification $Z\simeq X\times_Y W$ of correspondences from $X$ to $Y$

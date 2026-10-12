@@ -8,86 +8,60 @@ pages: 20-22
 source_pdf: 2601.07042v1.pdf
 source_sha256: c2f3e302624e7abb
 doc_brief: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE — We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha’s Galois"
+text_source: latex
+latex_prose_ratio: 0.965
+latex_coverage_ratio: 0.656
 ---
-Lemma 3.4.The categoryRigIsoc F is semisimple.
-Proof.We work with the category ReppE Kalqinstead, which we showed in §2.7 can be identified with
-RigIsocF . By [DM82, Proposition 2.23], it suffices to show thatE Kal is pro-reductive (in this proof by
-“reductive” we mean that the connected component of the identity is reductive). This follows from the fact
-that it can be written as a projective limit of groups of the form
-1Ñr ResE{Fpµnq
-µn
-spFqÑE E{F,nÑΓ KE{F Ñ1,
-whereKE{E{Fare finite Galois extensions, cf. [Kal16a, §3.1], which are all finite.□
-The previous lemma implies that, in order to construct all objects inRigIsoc F , the important task is to
-construct its simple objects. To facilitate this, we recall some standard facts about twisted Levi subgroups
-ofGLn.
-Recall that for a reductive groupGdefined overF, a subgroupMĂGis a twisted Levi subgroup if it is
-defined overFandM F ĂG F is a Levi subgroup. We say that a twisted LeviMĂGsubgroup iselliptic
-if theF-split rank ofZpMqequals that ofZpGq. We denote the maximal split sub-torus ofZpMqbyA M.
-Suppose thatMĂGis a non-elliptic twisted Levi subgroup. ThenL“Z GpAMqis a proper Levi subgroup
-ofGcontainingM. In particular, the elliptic twisted Levi subgroups ofGare precisely those that are not
-contained in a proper Levi subgroup.
-Lemma 3.5.The twisted Levi subgroups ofGL n overFare isomorphic to
-kź
-i“1
-ResEi{F GLni,
-whereEi{Fis a field extension of degreem i and
-kř
-i“1
-mini“n.
-Proof.This statement is well-known. See the proof given in [FS25, Lemma 4.3.4]□
-Suppose thatXPobjpRigIsoc Fq, which maps via (2) to an algebraic1-cocyclez X :E KalÑGL n with
-νX the associated algebraic homomorphism of the band.
-2We warn the reader that the first functor is not a tensor functor, but when composed with the second functor it is.
-20
-Lemma 3.6.We continue withG“GL n. One can conjugatez X byGpFqsuch thatν X has trivial Galois
-action (i.e., it gives anF-rational homomorphismuÑGL n).
-Proof.We first argue that for all twisted Levis subgroupsM, the map
-H1pF,NGpMqqÑH 1pF,NGpMq{Mq
-is surjective. Note that forMa maximal torus, this surjectivity is a corollary of Raghunathan’s theorem.
-ForG“GL n we can prove the result for a general twisted Levi. First, we assumeMis a Levi subgroup,
-and thenN GpMq ÑN GpMq{Mhas a naturalΓ F{F -equivariant splitting coming from the permutation
-matrices. This implies the surjectivity forM, and then we prove the general case by twisting.
-LetM“Z GpνXq. SinceG“GL n, we have thatMis a twisted Levi ofG E, whereEis the field
-of definition ofν X. Notice that the action onz X by coboundaries induces a conjugation action onν X and
-henceM. The groupMmight not beΓ F{F -invariant, but sinceG“GL n is split, every Levi subgroup over
-Fis conjugate to the base-change of anF-rational Levi subgroup and we can thus conjugateν X (and twist
-zX by the corresponding coboundary) such thatMis the base-change to Fof such a subgroupLofG.
-Thus we may as well assumeM“L F isΓF{F -stable. Now,zX gives a cocycle inZ 1pF,NGpLq{Lqvia
-the function
-σÞÑ¯σÞÑz Xp¯σqmodLpFq,
-where¯σis any lift ofσPΓ F{F toE Kal (the cocycle is independent of the lift). By our above argument, we
-may modifyzX by a coboundary such that this cocycle comes via projection from somezPZ 1pF,NGpLqq.
-Now, suppose there exists somehPGp Fqsuch thathν Xh´1 isΓ F{F -fixed. Then we compute this is
-equivalent toh ´1γphqz´1
-γ PLp Fqfor eachγPΓ F{F . This would certainly follow if we knew thatz γ
-came from a class inH 1pF,NGpLqqthat is trivial inH 1pF,Gq. But this latter group is trivial again because
-G“GL n. □
-From now on, we assumeνX is fixed byΓF{F .
-Remark 3.7.The cohomology setH 1
-algpEKal,Gqfor a connected reductive groupGis studied in detail in
-[DS24], which excusively works with so-called “regular” classes, which are those arising as the image of
-H1
-algpEKal,Tqfor a maximal torusTofG. Lemma 3.6 implies that every class inrzsPH 1
-algpEKal,GLnqis
-regular, as follows: One combines [DS24, Lemma 2.8] which says, whenz| u is defined overF, we have
-thatzPZ 1
-baspEKal,ZGpz|uqqwith the fact ([Kal16a, Corollary 3.7]) thatH 1
-algpEKal,TqÑH 1
-baspEKal,Mq
-is surjective for any connected reductive groupMwith elliptic maximal torusT.
-Lemma 3.8.Under the assumption above, supposeMĂGL n is a minimal twisted Levi subgroup through
-whichz X factors. IfXis simple, thenz X is basic inM(in other words,ν X factors throughZpMq) and
-Mis elliptic. On the other hand,Xis simple if and only ifz X factors through only elliptic twisted Levi
-subgroups ofGLn.
-Proof.Supposez X is not basic inM. Then letM 1ĂMbe the centralizer ofν X inM. SinceG“GL n, we
-claim thatM 1 is a twisted Levi subgroup ofMand henceG. Indeed,M 1 is the intersection of centralizers
-of commuting semisimple elements ofGLn, each of which is a twisted Levi subgroup. Moreover,M1ĂM
-is proper sinceνX is not basic. The cocyclezX factors throughM 1 sincexPE Kal liftingσPΓ F{F satisfies
-IntpxqpνXq“Intpxqpσpν Xqq“ν X, henceMis not minimal.
-IfXis simple, thenz X cannot factor through any non-elliptic twisted Levi subgroup, since by the above
-discussion this would implyzX factors through a Levi subgroup ofGand hence is not simple.
-For the second part, observe thatXis simple if and only ifz X does not factor through a proper Levi
-subgroup ofGand by the discussion before Lemma 3.5, this is equivalent toz X not factoring through any
-non-elliptic twisted twisted Levi subgroup.□
-21
+We start with a basic structural result about $\mathrm{RigIsoc}_{F}$:
+
+::: lem
+The category $\mathrm{RigIsoc}_{F}$ is semisimple.
+:::
+
+::: proof
+*Proof.* We work with the category $\text{Rep}(\mathcal{E}_{\text{Kal}})$ instead, which we showed in §[\[sec:RigIsocdef\]](#sec:RigIsocdef){reference-type="ref" reference="sec:RigIsocdef"} can be identified with $\mathrm{RigIsoc}_{F}$. By [@DM82 Proposition 2.23], it suffices to show that $\mathcal{E}_{\text{Kal}}$ is pro-reductive (in this proof by "reductive" we mean that the connected component of the identity is reductive). This follows from the fact that it can be written as a projective limit of groups of the form $$1 \to [\frac{\mathrm{Res}_{E/F}(\mu_{n})}{\mu_{n}}](\overline{F}) \to \mathcal{E}_{E/F,n} \to \Gamma_{K_{E}/F} \to 1,$$ where $K_{E}/E/F$ are finite Galois extensions, cf. [@Kalannals §3.1], which are all finite. ◻
+:::
+
+The previous lemma implies that, in order to construct all objects in $\mathrm{RigIsoc}_{F}$, the important task is to construct its simple objects. To facilitate this, we recall some standard facts about twisted Levi subgroups of $\mathrm{GL}_n$.
+
+Recall that for a reductive group $G$ defined over $F$, a subgroup $M \subset G$ is a twisted Levi subgroup if it is defined over $F$ and $M_{\overline{F}} \subset G_{\overline{F}}$ is a Levi subgroup. We say that a twisted Levi $M \subset G$ subgroup is *elliptic* if the $F$-split rank of $Z(M)$ equals that of $Z(G)$. We denote the maximal split sub-torus of $Z(M)$ by $A_M$. Suppose that $M \subset G$ is a non-elliptic twisted Levi subgroup. Then $L=Z_{G}(A_M)$ is a proper Levi subgroup of $G$ containing $M$. In particular, the elliptic twisted Levi subgroups of $G$ are precisely those that are not contained in a proper Levi subgroup.
+
+::: lem
+[]{#lem: GLntwistedlevis label="lem: GLntwistedlevis"} The twisted Levi subgroups of $\mathrm{GL}_n$ over $F$ are isomorphic to $$\prod\limits_{i=1}^k \mathrm{Res}_{E_i/F} \mathrm{GL}_{n_i},$$ where $E_i/F$ is a field extension of degree $m_i$ and $\sum\limits_{i=1}^k m_in_i=n$.
+:::
+
+::: proof
+*Proof.* This statement is well-known. See the proof given in [@FintzenSchwein Lemma 4.3.4] ◻
+:::
+
+Suppose that $X \in \mathop{\mathrm{obj}}(\mathrm{RigIsoc}_{F})$, which maps via [\[gerbeequiv\]](#gerbeequiv){reference-type="eqref" reference="gerbeequiv"} to an algebraic $1$-cocycle $z_X: \mathcal{E}_{\mathop{\mathrm{Kal}}} \rightarrow \mathrm{GL}_n$ with $\nu_X$ the associated algebraic homomorphism of the band.
+
+::: lem
+[]{#lemma:reg label="lemma:reg"} We continue with $G=\mathrm{GL}_n$. One can conjugate $z_X$ by $G(\overline{F})$ such that $\nu_X$ has trivial Galois action (i.e., it gives an $F$-rational homomorphism $u \to \mathrm{GL}_{n}$).
+:::
+
+::: proof
+*Proof.* We first argue that for all twisted Levis subgroups $M$, the map $$H^1(F, N_G(M)) \rightarrow H^1(F, N_G(M)/M)$$ is surjective. Note that for $M$ a maximal torus, this surjectivity is a corollary of Raghunathan's theorem. For $G=\mathrm{GL}_n$ we can prove the result for a general twisted Levi. First, we assume $M$ is a Levi subgroup, and then $N_G(M) \rightarrow N_G(M)/M$ has a natural $\Gamma_{\overline{F}/F}$-equivariant splitting coming from the permutation matrices. This implies the surjectivity for $M$, and then we prove the general case by twisting.
+
+Let $M= Z_{G}(\nu_X)$. Since $G=\mathrm{GL}_n$, we have that $M$ is a twisted Levi of $G_E$, where $E$ is the field of definition of $\nu_X$. Notice that the action on $z_X$ by coboundaries induces a conjugation action on $\nu_X$ and hence $M$. The group $M$ might not be $\Gamma_{\overline{F}/F}$-invariant, but since $G = \mathrm{GL}_{n}$ is split, every Levi subgroup over $\overline{F}$ is conjugate to the base-change of an $F$-rational Levi subgroup and we can thus conjugate $\nu_X$ (and twist $z_{X}$ by the corresponding coboundary) such that $M$ is the base-change to $\overline{F}$ of such a subgroup $L$ of $G$.
+
+Thus we may as well assume $M = L_{\overline{F}}$ is $\Gamma_{\overline{F}/F}$-stable. Now, $z_X$ gives a cocycle in $Z^1(F, N_G(L)/L)$ via the function $$\sigma \mapsto \bar{\sigma} \mapsto z_{X}(\bar{\sigma}) \hspace{1mm} \text{mod} \hspace{1mm} L(\overline{F}),$$ where $\bar{\sigma}$ is any lift of $\sigma \in \Gamma_{\overline{F}/F}$ to $\mathcal{E}_{\mathop{\mathrm{Kal}}}$ (the cocycle is independent of the lift). By our above argument, we may modify $z_X$ by a coboundary such that this cocycle comes via projection from some $z \in Z^1(F, N_G(L))$. Now, suppose there exists some $h \in G(\overline{F})$ such that $h\nu_Xh^{-1}$ is $\Gamma_{\overline{F}/F}$-fixed. Then we compute this is equivalent to $h^{-1}\gamma(h)z^{-1}_{\gamma} \in L(\overline{F})$ for each $\gamma \in \Gamma_{\overline{F}/F}$. This would certainly follow if we knew that $z_{\gamma}$ came from a class in $H^1(F, N_G(L))$ that is trivial in $H^1(F,G)$. But this latter group is trivial again because $G = \mathrm{GL}_{n}$. ◻
+:::
+
+From now on, we assume $\nu_X$ is fixed by $\Gamma_{\overline{F}/F}$.
+
+::: rem
+The cohomology set $H_{\text{alg}}^{1}(\mathcal{E}_{\mathop{\mathrm{Kal}}}, G)$ for a connected reductive group $G$ is studied in detail in [@DS24], which excusively works with so-called "regular" classes, which are those arising as the image of $H^{1}_{\text{alg}}(\mathcal{E}_{\mathop{\mathrm{Kal}}}, T)$ for a maximal torus $T$ of $G$. Lemma [\[lemma:reg\]](#lemma:reg){reference-type="ref" reference="lemma:reg"} implies that every class in $[z] \in H_{\text{alg}}^{1}(\mathcal{E}_{\mathop{\mathrm{Kal}}}, \mathrm{GL}_{n})$ is regular, as follows: One combines [@DS24 Lemma 2.8] which says, when $z|_{u}$ is defined over $F$, we have that $z \in Z_{\mathop{\mathrm{bas}}}^{1}(\mathcal{E}_{\mathop{\mathrm{Kal}}}, Z_{G}(z|_{u}))$ with the fact ([@Kalannals Corollary 3.7]) that $H_{\text{alg}}^{1}(\mathcal{E}_{\mathop{\mathrm{Kal}}}, T) \to H_{\mathop{\mathrm{bas}}}^{1}(\mathcal{E}_{\mathop{\mathrm{Kal}}}, M)$ is surjective for any connected reductive group $M$ with elliptic maximal torus $T$.
+:::
+
+::: lem
+[]{#lem:simple label="lem:simple"} Under the assumption above, suppose $M \subset \mathrm{GL}_n$ is a minimal twisted Levi subgroup through which $z_X$ factors. If $X$ is simple, then $z_X$ is basic in $M$ (in other words, $\nu_X$ factors through $Z(M)$) and $M$ is elliptic. On the other hand, $X$ is simple if and only if $z_X$ factors through only elliptic twisted Levi subgroups of $\mathrm{GL}_{n}$.
+:::
+
+::: proof
+*Proof.* Suppose $z_X$ is not basic in $M$. Then let $M' \subset M$ be the centralizer of $\nu_X$ in $M$. Since $G=\mathrm{GL}_n$, we claim that $M'$ is a twisted Levi subgroup of $M$ and hence $G$. Indeed, $M'$ is the intersection of centralizers of commuting semisimple elements of $\mathrm{GL}_n$, each of which is a twisted Levi subgroup. Moreover, $M' \subset M$ is proper since $\nu_X$ is not basic. The cocycle $z_X$ factors through $M'$ since $x \in \mathcal{E}_{\mathop{\mathrm{Kal}}}$ lifting $\sigma \in \Gamma_{\overline{F}/F}$ satisfies $\mathop{\mathrm{Int}}(x)(\nu_X) = \mathop{\mathrm{Int}}(x)(\sigma(\nu_X))=\nu_X$, hence $M$ is not minimal.
+
+If $X$ is simple, then $z_X$ cannot factor through any non-elliptic twisted Levi subgroup, since by the above discussion this would imply $z_X$ factors through a Levi subgroup of $G$ and hence is not simple.
+
+For the second part, observe that $X$ is simple if and only if $z_X$ does not factor through a proper Levi subgroup of $G$ and by the discussion before Lemma [\[lem: GLntwistedlevis\]](#lem: GLntwistedlevis){reference-type="ref" reference="lem: GLntwistedlevis"}, this is equivalent to $z_X$ not factoring through any non-elliptic twisted twisted Levi subgroup. ◻
+:::

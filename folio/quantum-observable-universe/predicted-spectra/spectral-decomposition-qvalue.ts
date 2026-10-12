@@ -25,4 +25,12 @@ export default corollary({
   lean: { ref: "qou:QOU.Archimedean.spectral_decomposition_qvalue",
     validation: "not_checked",
   },
+  computation: {
+    engine: "python",
+    status: "verified",
+    script: "computations/spectral_decomposition_qvalue_d.py",
+    witness: [
+      "computations/spectral-decomposition-qvalue-d.witness.json",
+    ],
+  },
 });

@@ -1,0 +1,49 @@
+---
+doc_id: yuasa-rims-kokyuroku-2163-05
+doc_title: "Twist formulas for one-row colored A» webs and sl; tails of (2, 2m)-torus links"
+section_id: page-003
+section_title: "Page 3"
+section_number: null
+pages: 3-3
+source_pdf: yuasa-rims-kokyuroku-2163-05.pdf
+source_sha256: fa2a585b45c2185d
+toc_source: undetermined
+---
+e
+
+|
+
+s)
+
+oe
+; (
+
+e
+
+An element in W(e; D) is called web and an element in G(¢; D) without crossings which
+has no internal 0-, 2-, 4-gons a basis web. Any web is described as the sum of basis webs.
+
+The Ag skein relation realize the Reidemeister moves (R1) — (R4), that is, we can show
+that webs represent diagrams in the left side and right side is the same web in W(D;c).
+
+(R1) S
+
+(R3) RO QS (R4) ZX Le Bohs.
+
+We review a diagrammatic definition of an Ag clasp introduced in [Kup96, OY97,
+Kim07] and its properties. The A2 clasp gives a coloring of strands in a web by pairs
+of non-negative integers. It plays an important role as is the case with the Jones-Wenzl
+projector.
+
+We construct a projector called the A, clasp of type (n,m) in a special web space
+TLA2(47—m, 4n_m),
+
+Definition 2.2 (the Temperley-Lieb category for Az). Let D = [0, 1] x [0, 1] and n denotes
+a set of n points on J = [0,1] dividing it into n +1 equal parts. The Temperley-Lieb
+category TL“? is a linear category over C(qe) is defined as follows:
+
+e an object is a word (finite sequence) over {+, —},
+e the tensor product of two words is defined by the product (concatenation),
+
+¢ the space of morphisms TL“?(a, 8) is the web space W(@UB; D) where & is the word
+consisting of opposite signs of a.

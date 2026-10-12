@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s-p01/sections/sec-001",
   "@type": [
     "doco:Section"
@@ -10,20 +15,20 @@
   "contains": [
     "library/ant-v14-n7-s-p01/blocks/prose-sec-001",
     "library/ant-v14-n7-s-p01/blocks/prop-sec-001-01",
-    "library/ant-v14-n7-s-p01/blocks/ex-sec-001-02",
+    "library/ant-v14-n7-s-p01/blocks/example-sec-001-02",
     "library/ant-v14-n7-s-p01/blocks/prop-sec-001-03",
-    "library/ant-v14-n7-s-p01/blocks/rem-sec-001-04",
-    "library/ant-v14-n7-s-p01/blocks/rem-sec-001-05",
+    "library/ant-v14-n7-s-p01/blocks/remark-sec-001-04",
+    "library/ant-v14-n7-s-p01/blocks/remark-sec-001-05",
     "library/ant-v14-n7-s-p01/blocks/thm-sec-001-06",
     "library/ant-v14-n7-s-p01/blocks/lem-sec-001-07",
-    "library/ant-v14-n7-s-p01/blocks/rem-sec-001-08",
-    "library/ant-v14-n7-s-p01/blocks/rem-sec-001-09",
+    "library/ant-v14-n7-s-p01/blocks/remark-sec-001-08",
+    "library/ant-v14-n7-s-p01/blocks/remark-sec-001-09",
     "library/ant-v14-n7-s-p01/blocks/prop-sec-001-10",
     "library/ant-v14-n7-s-p01/blocks/thm-sec-001-11",
     "library/ant-v14-n7-s-p01/blocks/prop-sec-001-12",
-    "library/ant-v14-n7-s-p01/blocks/rem-sec-001-13"
+    "library/ant-v14-n7-s-p01/blocks/remark-sec-001-13"
   ],
-  "derivedFrom": "library/ant-v14-n7-s-p01/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p01/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p01/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p01/manifest.jsonld",
   "provenance": "ingested"
 }

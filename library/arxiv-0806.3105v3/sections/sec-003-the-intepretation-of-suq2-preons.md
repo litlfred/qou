@@ -8,31 +8,50 @@ pages: 12-13
 source_pdf: 0806.3105v3.pdf
 source_sha256: a37b4f2e96365d30
 doc_brief: "Knots and preons — It is shown that the four quantum trefoil solitons that are describ ed by the irreducible representations D3/ 2 mm′ of the quantum algebra SLq(2) (and that may be identiﬁed with"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-The preceding discussion is based on SLq(2). One may, however, describe the knots by
-SUq(2) instead of by SLq(2) if one sets
-¯a = d
-¯b = −qc
-(4.1)
-Then the SUq(2) algebra is
-ab = qba
-a¯b = q¯ba
-a¯a + b¯b = 1
-¯aa + q2
-1¯bb = 1
-b¯b = ¯bb (4.2)
-The gauge invariance of the SUq(2) algebra is expressed by
-a′ = eiϕ aa
-¯a′ = e−iϕ a¯a
-b′ = eiϕ bb
-¯b′ = e−iϕ b¯b
-(4.3)
-The important relation (2.6) holds exactly if Dj
-mm′ refers to SUq(2) as well as to SLq(2).
-One passes from the representations of SLq(2) to those of SUq(2) by (4.1). In the SUq(2)
-language a and d are not creation operators for distinct preons but are creation o perators for
-preons and antipreons. Similarly b and c are related as antiparticles. Then all the solitons
-in Table 2 are constructed out of a and b particles and their antiparticles.
-Ref. (3) is written in the SUq(2) language, but most of this paper is written in SLq(2)
-language.
-12
+The preceding discussion is based on $SL_q(2)$.  One may,
+however, describe the knots by $SU_q(2)$ instead of by
+$SL_q(2)$ if one sets
+\be
+\begin{array}{rcl}
+\bar a &=& d \\ \bar b &=& -qc
+\end{array}
+\ee
+Then the $SU_q(2)$ algebra is
+\be
+\left.
+\begin{array}{l}
+ab=qba \\ a\bar b=q\bar ba 
+\end{array} \right. \quad \left.
+\begin{array}{l}
+a\bar a+b\bar b=1 \\ \bar aa+q_1^2\bar bb=1
+\end{array} \right. \quad
+b\bar b=\bar bb
+\ee
+The gauge invariance of the $SU_q(2)$ algebra is expressed by
+\be
+\left.
+\begin{array}{l}
+a^\prime = e^{i\varphi_a}a \\ \bar a^\prime=e^{-i\varphi_a}\bar a
+\end{array} \right. \qquad \left.
+\begin{array}{l}
+b^\prime = e^{i\varphi_b}b \\
+\bar b^\prime = e^{-i\varphi_b}\bar b
+\end{array} \right.
+\ee
+The important relation (2.6) holds exactly if ${\cal{D}}^j_{mm^\prime}$ refers to $SU_q(2)$ as well as to $SL_q(2)$.  One
+passes from the representations of $SL_q(2)$ to those of 
+$SU_q(2)$ by (4.1). In the $SU_q(2)$ language 
+$a$ and $d$ are not creation operators
+for distinct preons but are creation operators for preons and
+antipreons.  Similarly $b$ and $c$ are related as antiparticles.
+Then all the solitons in Table 2 are constructed out of $a$ and
+$b$ particles and their antiparticles.
+
+Ref. (3) is written in the $SU_q(2)$ language, but most of 
+this paper is written in $SL_q(2)$ language.
+
+\ve

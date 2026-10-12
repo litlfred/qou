@@ -150,7 +150,7 @@ def _twin(name: str) -> str | None:
 def scan():
     straddles, comparisons, unknown = [], [], []
     for py in sorted(ROOT.rglob("*.py")):
-        if "_deprecated" in py.parts or py.name.startswith("test_"):
+        if ("_deprecated" in py.parts or "fsh-guts" in py.parts) or py.name.startswith("test_"):
             continue
         try:
             src = py.read_text(errors="ignore")

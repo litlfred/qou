@@ -8,137 +8,28 @@ pages: 21-22
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.513
 ---
-construct a homomorphism from the braid group into this convolutio n algebra. This allows us to associate
-a particular matrix factorization to a braid and in the section 13 we ex plain how one can extract knot
-homology out of this matrix factorization.
-We choose coordinates on X2 = g×(G×b)2 as (X,g 1,Y 1,g 2,Y 2) and consider a G×B2-invariant potential
-on X2:
-(4.7) W (X,g 1,Y 1,g 2,Y 2) = Tr(X(Adg1 (Y1)− Adg2 (Y2))).
-The torus Tsc acts on X2 and deg TscW = t2. Consider the category of MF sc
-B2 (X2,W ) of Tsc-graded
-B2-equivariant matrix factorizations whose diﬀerentials have degree degTscD = t. The morphisms and
-homotopies in the category are assumed to be Tsc-invariant.
-Our main category is the subcategory MF sc
-B2(X2,W )G of MF sc
-B2 (X2,W ) that consists of the complexes
-that are G-equivariant in the strong sense. The G-action on X2 is free and as we show in subsection 4.4 the
-category MF sc
-B2(X2,W )G is equivalent to the category of B2-equivariant matrix factorizations on X2/G. To
-simplify notations, from now on we use notation MF sc
-B2 (X2,W ) for MF sc
-B2(X2,W )G.
-We also use notation qktm for shift functor for the weights of the action of Tsc: if V is a vector space
-with C∗
-t× C∗
-q action then qktm·V is the same vector space with q- and t-degrees shifted by k and m: for
-v∈V and (λ,µ )∈ C∗
-t× C∗
-q we deﬁne (λ,µ )· (qktmv) = λkµmqktm((λ,µ )·v). Respectively we use notation
-qktm·F∈ MFsc
-B2 (X2,W ) for the matrix factorization with the same diﬀerentials as F∈ MFsc
-B2 (X2,W ) but
-the the twisted Tsc-equivariant structure of the underlying module.
-Let us make a small clariﬁcation about the t-grading in our categories. Let F be a potential on the space
-Z andZ has Tsc = C∗
-t× C∗
-q action such that F has the weight t2. Then we deﬁne MF sc(Z,F ) to the
-homotopic category whose objects are 2-quasi-periodic complexe s:
-...
-D−1
-−−−→M0
-D0
-−−→M1
-D1
-−−→M2
-D2
-−−→...,
-such that Di+2 = Di and Mi+2 = t2·Mi and Di are of degree t. In particular, if F = 0 then for
-F = (M•,D •)∈ MFsc(Z,F ) we have well deﬁned Tsc-equivariant modules:
-Heven(F ) := H 0(M•,D •), Hodd(F ) := H 1(M•,D •).
-21
-4.3. Convolution. There are three natural projection maps π12,π 23,π 13 : X3 → X2 and π∗
-12(W ) +
-π∗
-23(W ) = π∗
-13(W ). If we extend the action of G×B2 on X2 to the action of G×B3 by natural projectors
-πij :G×B3→G×B2 then the maps πij becomeG×B3-equivariant and hence for anyF,G∈ MFsc
-B2 (X2,W )
-we can deﬁne an object
-π∗
-12(F )⊗π∗
-23(G)∈ MFsc
-B3(X3,π ∗
-13(W )).
-Naively we could deﬁne the convolution between F andG as a quotient of the tensor product by the action
-of the second copy B(2) of B inside G×B3. We deﬁne a derived quotient with the help of the Chevalley-
-Eilenberg complex, we also explain how to deﬁne the convolution in a bigg er category MF sc
-B2(Z,W ).
-LetF,G∈ MFsc
-B2(X2,W ),F = (M,D,∂ l,∂ r),G = ( ˜M, ˜D, ˜∂l, ˜∂r). The tensor product M⊗ ˜M is naturally
-a module over B3 with the action (b1,b 2,b 3)(m⊗ ˜m) = (b1,b 2)·m⊗ (b2,b 3)· ˜m, hence we can deﬁne a tensor
-product of pull backs π∗
-12(F ) and π∗
-23(G) as an object of MF sc
-B3 (X3,π ∗
-13(W )):
-π∗
-12(F )⊗π∗
-23(G) = (π∗
-12(M )⊗π∗
-23( ˜M ),D + ˜D,∂ l,∂ r + ˜∂l, ˜∂r).
-From here on we use notation n(1), n(2), n(3) for the ﬁrst, second and third copy of n on n3; respectively for
-given n3 module M we denote by d(i)
-ce the Chevalley-Eilenberg diﬀerential on CE n3⊗
-∆
-M corresponding i-th
-copy of n.
-The complex CE n is T -equivariant hence T (2)-invariant part CE n(2) (π∗
-12(F )⊗π∗
-23(G))T (2)
-is the matrix
-factorization from MF sc
-B2(X3/B(2),π ∗
-13(W )). In more details: CE n(2) (π∗
-12(F )⊗B π∗
-23(G))T (2)
-is the matrix
-factorization with underlying module
-CEn(2) (π∗
-12(M )⊗π∗
-23( ˜M ))T (2)
-:= Hom n(2) (CEn(2), CEn(2)⊗
-∆ Ä
-π∗
-12(M )⊗π∗
-23( ˜M )
-ä
-)T (2)
-,
-the matrix factorization diﬀerential D(2) := d(2)
-ce +∂r + ˜∂l +D + ˜D and n(1)× n(2) equivariant structure
-diﬀerentials are ∂l, ˜∂r.
-In particular (CE n(2) (π∗
-12(M )⊗π∗
-23( ˜M ))T (2)
-,D (2)) is a complex over the ring π∗
-13(C[X2])⊂ C[X3]b(2) and
-as such it is an object of MF sc
-B2 (X,W ) which we denote π13∗(CEn(2) (π∗
-12(F )⊗π∗
-23(G))T
-(2). The last complex
-provides us a bilinear operation on MF sc
-B2(X2,W ):
-(4.8) F ⋆G :=π13∗(CEn(2) (π∗
-12(F )⊗π∗
-23(G))T (2)
-) =
-(CEn(2) (π∗
-12(M )⊗π∗
-23( ˜M ))T (2)
-,D (2),∂ l, ˜∂r).
-The proof of the following proposition is standard: it literally repeats the proof of the associativity of the
-convolution from the book [7]:
-Proposition 4.1. The binary operation ⋆ deﬁnes a strictures of associative algebra on MFsc
-B2(X2,W ).
+There are three natural projection maps $\SymbolPrint{\pi_{12},\pi_{23},\pi_{13}}:\calX_3\to\calX_2$ and $\pi_{12}^*(W)+\pi_{23}^*(W)=\pi_{13}^*(W)$. If we extend the action of $G\times B^2$ on $\calX_2$ to the action of $G\times B^3$ by natural projectors $\pi_{ij}:G\times B^3\to G\times B^2$ then the maps $\pi_{ij}$ become $G\times B^3$-equivariant and hence
+
+for any $\calF,\calG\in \MF_{B^2}(\calX_2,W)$ we can define an object $$\pi_{12}^*(\calF)\otimes\pi_{23}^*(\calG)\in \MF_{B^3}(\calX_3,\pi_{13}^*(W)).$$
+
+Naively we could define the convolution between $\calF$ and $\calG$ as a quotient of the tensor product by the action of the second copy $B^{(2)}$ of $B$ inside $G\times B^3$. We define a derived quotient with the help of the Chevalley-Eilenberg complex, we also explain how to define the convolution in a bigger category $\MF_{B^2}(\calZ,W)$.
+
+Let $\calF,\calG\in \MF_{B^2}(\calX_2,W)$, $\calF=(M,D,\partial_l,\partial_r)$, $\calG=(\tilde{M},\tilde{D},\tilde{\partial}_l,\tilde{\partial}_r)$. The tensor product $M\otimes\tilde{M}$ is naturally a module over $B^3$ with the action $(b_1,b_2,b_3)(m\otimes\tilde{m})=(b_1,b_2)\cdot m\otimes (b_2,b_3)\cdot \tilde{m}$, hence we can define a tensor product of pull backs $\pi_{12}^*(\calF)$ and $\pi_{23}^*(\calG)$ as an object of $\MF_{B^3}(\calX_3,\pi_{13}^*(W))$: $$\pi_{12}^*(\calF)\otimes \pi_{23}^*(\calG)=(\pi_{12}^*(M)\otimes\pi_{23}^*(\tilde{M}),D+\tilde{D},\partial_l,\partial_r+\tilde{\partial}_l,\tilde{\partial}_r).$$
+
+From here on we use notation $\SymbolPrint{\frn^{(1)},\frn^{(2)},\frn^{(3)}}$ for the first, second and third copy of $\frn$ on $\frn^3$; respectively for given $\frn^3$ module $M$ we denote by $d^{(i)}_{ce}$ the Chevalley-Eilenberg differential on $\CE_{\frn^3}\odel M$ corresponding $i$-th copy of $\frn$.
+
+The complex $\CE_\frn$ is $T$-equivariant hence $T^{(2)}$-invariant part $\CE_{\frn^{(2)}}(\pi_{12}^*(\calF)\otimes\pi_{23}^*(\calG))^{T^{(2)}}$ is the matrix factorization from $\MF_{B^2}(\calX_3/B_{(2)},\pi_{13}^*(W))$. In more details: $\CE_{\frn^{(2)}}(\pi_{12}^*(\calF)\otimes_B\pi_{23}^*(\calG))^{T^{(2)}}$ is the matrix factorization with underlying module $$\CE_{\frn^{(2)}}(\pi_{12}^*(M)\otimes\pi_{23}^*(\tilde{M}))^{T^{(2)}}:=\Hom_{\frn^{(2)}}(\CE_{\frn^{(2)}},\CE_{\frn^{(2)}}\odel \left( \pi_{12}^*(M)\otimes\pi_{23}^*(\tilde{M}) \right))^{T^{(2)}},$$ the matrix factorization differential $D^{(2)}:=d^{(2)}_{ce}+\partial_r+\tilde{\partial}_l+D+\tilde{D}$ and $\frn^{(1)}\times\frn^{(2)}$ equivariant structure differentials are $\partial_l,\tilde{\partial}_r.$
+
+In particular $(\CE_{\frn^{(2)}}(\pi_{12}^*(M)\otimes\pi_{23}^*(\tilde{M}))^{T^{(2)}}, D^{(2)})$ is a complex over the ring $\pi_{13}^*(\CC[\calX_2])\subset\CC[\calX_3]^{\frb_{(2)}}$ and as such it is an object of $\MF_{B^2}(\calX,W)$ which we denote $\pi_{13*}(\CE_{\frn_{(2)}}(\pi_{12}^*(\calF)\otimes\pi_{23}^*(\calG))^T_{(2)}$. The last complex provides us a bilinear operation on $\MF_{B^2}(\calX_2,W)$: $$\begin{gathered}
+\label{eq: convolution}
+\calF\SymbolPrint{\star}\calG:=\pi_{13*}(\CE_{\frn^{(2)}}(\pi_{12}^*(\calF)\otimes\pi_{23}^*(\calG))^{T^{(2)}})=\\(\CE_{\frn^{(2)}}(\pi_{12}^*(M)\otimes\pi_{23}^*(\tilde{M}))^{T^{(2)}},D^{(2)},\partial_l,\tilde{\partial}_r).
+ 
+\end{gathered}$$ The proof of the following proposition is standard: it literally repeats the proof of the associativity of the convolution from the book [@CG]:
+
+::: proposition
+The binary operation $\star$ defines a strictures of associative algebra on $\MF_{B^2}(\calX_2,W)$.
+:::

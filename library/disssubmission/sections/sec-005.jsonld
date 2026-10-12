@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/disssubmission/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "Chapter 1 – Vanishing theorems on abelian varieties",
-  "pageStart": 18,
-  "pageEnd": 19,
+  "title": "Kodaira-Nakano-type vanishing theorems",
+  "pageStart": 20,
+  "pageEnd": 23,
   "contains": [
     "library/disssubmission/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
   "provenance": "ingested"
 }

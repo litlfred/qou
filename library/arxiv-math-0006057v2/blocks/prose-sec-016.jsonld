@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/blocks/prose-sec-016",
+  "kind": "prose",
+  "title": "Twisting of quantum groupoids",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "text": "../sections/sec-016-020-twisting-of-quantum-groupoids.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0006057v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

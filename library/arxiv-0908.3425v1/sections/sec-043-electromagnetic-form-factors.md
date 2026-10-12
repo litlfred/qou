@@ -8,254 +8,60 @@ pages: 68-72
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
 doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+text_source: latex
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.941
 ---
-Imposing the relevant symmetries such as translational inv ariance, Lorentz covariance, the discrete sym-
-metries, and current conservation, the nucleon matrix elem ent of the electromagnetic current operator
-J µ(x),
-J µ(x) = 2
-3 ¯u(x)γµu(x) − 1
-3
-¯d(x)γµd(x),
-68
-0
-20
-40
-60
-80
-100
-120
-140
--0.2 0 0.2
-t [GeV2]
-Re σ [MeV]
-0
-20
-40
-60
-80
-100
-120
-140
--0.2 0 0.2
-t [GeV2]
-Im σ [MeV]
-Figure 19: Scalar form factor σ(t) as a function
-of t at O(q4).
-0
-20
-40
-60
-80
-100
-120
-0.778 0.779 0.78 0.781
-x 10
--1
-t [GeV2]
-Re σ [MeV]
--50
--40
--30
--20
--10
-0
-0.778 0.779 0.78 0.781
-x 10
--1
-t [GeV2]
-Im σ [MeV]
-Figure 20: Real and imaginary parts of the
-scalar form factor as a function of t at O(q3)
-in the vicinity of t = 4M 2
-π. Solid lines: EOMS
-scheme; dashed lines: infrared regulariza-
-tion (IR) of Ref. [Becher and Leutwyler, 1999];
-dotted lines: HBChPT calculation of Ref.
-[Bernard et al., 1992a]. On this scale the (un-
-physical) divergence of both real and imagi-
-nary parts of the heavy-baryon result becomes
-visible.
-can be parameterized in terms of two form factors,
-⟨N(p′,s ′)|J µ(0)|N(p,s )⟩= ¯u(p′,s ′)
-[
-F N
-1 (Q2)γµ +iσµνqν
-2mp
-F N
-2 (Q2)
-]
-u(p,s ), N =p,n, (256)
-whereq =p′ −p,Q2 = −q2, and mp is the proton mass. At Q2 = 0, the so-called Dirac and Pauli form
-factors F1 and F2 reduce to the charge and anomalous magnetic moment in units o f the elementary
-chargee and the nuclear magneton e/(2mp), respectively,
-F p
-1 (0) = 1, F n
-1 (0) = 0, F p
-2 (0) = 1.793, F n
-2 (0) = −1.913.
-The Sachs form factors GE and GM are linear combinations of F1 and F2,
-GN
-E (Q2) = F N
-1 (Q2) − Q2
-4m2
-p
-F N
-2 (Q2), G N
-M (Q2) = F N
-1 (Q2) +F N
-2 (Q2), N =p,n,
-and, in the non-relativistic limit, their Fourier transforms are commonly interpreted as the distribution of
-charge and magnetization inside the nucleon. For a covarian t interpretation in terms of the transverse
-charge density see Refs. [Miller, 2007], [Carlson and Vande rhaeghen, 2008]. The description of the
-electromagnetic form factors of the nucleon presents a stri ngent test for any theory or model of the
-strong interactions (see, e.g., Ref. [Perdrisat et al., 200 7] for a recent review).
-In the framework of chiral perturbation theory, the electro magnetic form factors were calculated in
-the early relativistic approach [Gasser et al., 1988], the h eavy-baryon approach [Bernard et al., 1992a],
-[Fearing et al., 1997], the small-scale expansion [Bernard et al., 1998], the infrared regularization
-[Kubis and Meißner, 2001], and the EOMS scheme [Fuchs et al., 2004]. All these calculations have in
-common that they fail to describe the proton and nucleon form factors for momentum transfers beyond
-69
-Figure 21: The Sachs form factors of the nucleon in manifestl y Lorentz-invariant chiral pertur-
-bation theory at O(q4) without vector mesons. Full lines: results in the extended on-mass-shell
-scheme; dashed lines: results in infrared regularization. The experimental data are taken from Ref.
-[Friedrich and Walcher, 2003].
-Q2 ∼ 0.1 GeV2. Moreover, up to and including O(q4), the most general eﬀective Lagrangian provides
-suﬃciently many independent parameters such that the empir ical values of the anomalous magnetic
-moments and the charge and magnetic radii are ﬁtted rather th an predicted. Figure 21 shows the Sachs
-form factors in the momentum transfer region 0 GeV 2 ≤Q2 ≤ 0.4 GeV2 in the EOMS scheme and the
-reformulated infrared regularization [Schindler et al., 2 005].
-In Ref. [Kubis and Meißner, 2001] it was shown that the inclus ion of vector mesons can result in the
-re-summation of important higher-order contributions. In standard ChPT, such vector meson contri-
-butions manifest themselves in terms of the values of the low -energy coupling constants. Symbolically,
-the contributions to certain LECs originate from the expans ion of the vector-meson propagator,
-1
-q2 −M 2
-V
-= − 1
-M 2
-V
-
-1 + q2
-M 2
-V
-+
-(
-q2
-M 2
-V
-)2
-+ O(q6)
-
-
-combined with the relevant vector-meson vertices. However , diagrams with internal vector-meson lines
-inside loops were not considered, because a generalization of ChPT which fully includes the eﬀects of
-vector mesons as intermediate states in loops was not yet ava ilable [Kubis and Meißner, 2001]. On the
-other hand, the EOMS renormalization scheme of Ref. [Fuchs e t al., 2003a] and the reformulated version
-of infrared regularization of Ref. [Schindler et al., 2004a ] both allow to include virtual vector mesons
-systematically in the region of the applicability of baryon chiral perturba tion theory [Fuchs et al., 2003b]
-(see also Ref. [Bruns and Meißner, 2008]). The standard powe r counting determines which diagrams
-(including diagrams with vector mesons appearing in loops) should be taken into account to a given
-order in the chiral expansion.
-In Ref. [Schindler et al., 2005] the electromagnetic form fa ctors were calculated with the ρ,ω, and φ
-mesons as explicit degrees of freedom. In the vector-ﬁeld re presentation of Ref. [Ecker et al., 1989b] the
-ρ meson is represented by ρµ =ρµ
-iτi and the ω and φ mesons by ωµ and φµ, respectively. The coupling
-of the vector mesons to pions and external ﬁelds is at least of O(q3),
-L(3)
-πV = −fρTr(ρµνf +
-µν) −fωωµνf (s)
-µν −fφφµνf (s)
-µν + · · ·, (257)
-where the ﬁeld strength tensors are given by
-f (s)
-µν =∂µv(s)
-ν −∂νv(s)
-µ , f +
-µν =u+f R
-µνu +uf L
-µνu+,
-70
-/A1
-/B4/C1/B5
-/BC
-/BF
-/A2
-/B4/C1 /C1/B5
-/BD
-/BF
-/A1
-/B4/C1 /C1 /C1/B5
-/BC /BD /BC
-/A2
-/B4/C1/CE/B5
-/BC /BE /BC
-/A1
-/BD /BD /BC
-/B7 /A2
-/BC /BD /BD
-/B4/CE/B5
-Figure 22: Feynman diagrams including vector mesons that co ntribute to the electromagnetic form
-factors of the nucleon up to and including O(q4). External leg corrections are not shown. Solid, wiggly,
-and double lines refer to nucleons, photons, and vector meso ns, respectively. The numbers in the
-interaction blobs denote the order of the Lagrangian from wh ich they are obtained. The direct coupling
-of the photon to the nucleon is obtained from L(1)
-πN and L(2)
-πN .
-withf R
-µν andf L
-µν deﬁned in Eqs. (111) and (112), respectively. For the case of a coupling to an external
-electromagnetic potential Aµ, the external ﬁelds are given by Eq. (51). Furthermore, in te rms of the
-connection Γ µ of Eq. (178), we deﬁne
-ρµν = ∇µρν − ∇νρµ, ∇µρν =∂µρν + [Γ µ,ρ ν],
-and, ﬁnally,
-ωµν =∂µων −∂νωµ, φ µν =∂µφν −∂νφµ.
-The lowest-order Lagrangian for the coupling to the nucleon is given by
-L(0)
-V N = 1
-2
-∑
-V =ρ,ω,φ
-gV ¯Ψ γµVµΨ , (258)
-and the O(q) Lagrangian reads
-L(1)
-V N = 1
-4
-∑
-V =ρ,ω,φ
-GV ¯Ψ σµνVµνΨ . (259)
-The additional power-counting rules state that vertices fr om L(3)
-πV count as O(q3) and vertices from L(i)
-V N
-as O(qi), respectively, while the vector-meson propagators count as O(q0). The additional diagrams
-involving vector mesons that contribute in the calculation of the form factors up to and including
-O(q4) using the Lagrangians of Eqs. (257), (258), and (259) are sh own in Fig. 22. The parameters
-of the vector-meson Lagrangian of Eq. (257) for the coupling to external ﬁelds have been taken from
-Ref. [Ecker et al., 1989b], and those of Eqs. (258) and (259) f or the coupling of vector mesons to the
-nucleon from the dispersion relations of Refs. [Mergell et a l., 1996], [Hammer and Meißner, 2004].
-71
-Figure 23: The Sachs form factors of the nucleon in manifestl y Lorentz-invariant chiral perturbation
-theory at O(q4) including vector mesons as explicit degrees of freedom. Fu ll lines: results in the extended
-on-mass-shell scheme; dashed lines: results in infrared re gularization. The experimental data are taken
-from Ref. [Friedrich and Walcher, 2003].
-As expected on phenomenological grounds, the quantitative description of the data has improved
-considerably for Q2 ≥ 0.1 GeV 2 (see Fig. 23). The small diﬀerence between the two renormali zation
-schemes is due to the way how the regular higher-order terms o f loop integrals are treated. Numer-
-ically, the results are similar to those of Ref. [Kubis and Me ißner, 2001]. Due to the renormalization
-condition, the contribution of the vector-meson loop diagr ams either vanishes (IR) or turns out to be
-small (EOMS). Thus, in hindsight our approach puts the tradi tional phenomenological vector-meson-
-dominance model on a more solid theoretical basis. In the sen se of a strict chiral expansion in terms of
-small external momenta q and quark masses mq at a ﬁxed ratio mq/q2 [Gasser and Leutwyler, 1984], up
-to and including O(q4) the results with and without explicit vector mesons are com pletely equivalent.
-The additional vector-meson contributions up to this order are compensated by a readjustment of the
-low-energy constants pertaining to the theory including ve ctor mesons as dynamical degrees of freedom.
-On the other hand, the inclusion of vector-meson degrees of f reedom in the present framework results
-in a reordering of terms which, in an ordinary chiral expansi on, would show up at higher orders beyond
-O(q4). It is these terms which change the form factor results favo rably for larger values of Q2. It
-should be noted, however, that this re-organization procee ds according to well-deﬁned rules so that a
-controlled, order-by-order, calculation of corrections i s made possible. In contrast to the calculation
-without vector mesons, the Sachs form factors Gp
-E, Gp
-M , and Gn
-M now show suﬃcient curvature to gen-
-erate a more accurate phenomenology for values of Q2, where the ordinary chiral expansion to the same
-order is no longer reliable.
+[]{#subsectionemff label="subsectionemff"} Imposing the relevant symmetries such as translational invariance, Lorentz covariance, the discrete symmetries, and current conservation, the nucleon matrix element of the electromagnetic current operator ${\cal J}^\mu(x)$, $${\cal J}^{\mu}(x)
+=\frac{2}{3}\,\bar{u}(x)\gamma^{\mu}u(x)
+-\frac{1}{3}\,\bar{d}(x)\gamma^{\mu}d(x),$$ can be parameterized in terms of two form factors, $$\label{H1:emff:empar} \langle N(p',s')|{\cal J}^{\mu}(0)|N(p,s)\rangle=
+\bar{u}(p',s')\left[F_1^N(Q^2)\gamma^\mu
++i\frac{\sigma^{\mu\nu}q_\nu}{2m_p}F_2^N(Q^2) \right]u(p,s),\quad
+N=p,n,$$ where $q=p'-p$, $Q^2=-q^2$, and $m_p$ is the proton mass. At $Q^2=0$, the so-called Dirac and Pauli form factors $F_1$ and $F_2$ reduce to the charge and anomalous magnetic moment in units of the elementary charge $e$ and the nuclear magneton $e/(2m_p)$, respectively, $$F_1^{p}(0)=1,\quad F_1^{n}(0)=0,\quad F_2^{p}(0)=1.793,\quad
+F_2^{n}(0)=-1.913.$$ The Sachs form factors $G_E$ and $G_M$ are linear combinations of $F_1$ and $F_2$, $$G_E^N(Q^2)=F_1^N(Q^2)-\frac{Q^2}{4m_p^2}F_2^N(Q^2),\quad
+G_M^N(Q^2)=F_1^N(Q^2)+F_2^N(Q^2), \quad N=p,n,$$ and, in the non-relativistic limit, their Fourier transforms are commonly interpreted as the distribution of charge and magnetization inside the nucleon. For a covariant interpretation in terms of the transverse charge density see Refs. [@Miller:2007uy], [@Carlson:2007xd]. The description of the electromagnetic form factors of the nucleon presents a stringent test for any theory or model of the strong interactions (see, e.g., Ref. [@Perdrisat:2006hj] for a recent review).
+
+In the framework of chiral perturbation theory, the electromagnetic form factors were calculated in the early relativistic approach [@Gasser:1987rb], the heavy-baryon approach [@Bernard:1992qa], [@Fearing:1997dp], the small-scale expansion [@Bernard:1998gv], the infrared regularization [@Kubis:2000zd], and the EOMS scheme [@Fuchs:2003ir]. All these calculations have in common that they fail to describe the proton and nucleon form factors for momentum transfers beyond $Q^2\sim 0.1\, \mbox{GeV}^2$. Moreover, up to and including ${\cal O}(q^4)$, the most general effective Lagrangian provides sufficiently many independent parameters such that the empirical values of the anomalous magnetic moments and the charge and magnetic radii are fitted rather than predicted. Figure [1](#G_ohne){reference-type="ref" reference="G_ohne"} shows the Sachs form factors in the momentum transfer region $0\,{\rm GeV^2}\le Q^2\le 0.4\,{\rm GeV^2}$ in the EOMS scheme and the reformulated infrared regularization [@Schindler:2005ke].
+
+<figure id="G_ohne">
+<div class="center">
+
+</div>
+<figcaption><span id="G_ohne" label="G_ohne"></span> The Sachs form factors of the nucleon in manifestly Lorentz-invariant chiral perturbation theory at <span class="math inline">${\cal O}(q^4)$</span> without vector mesons. Full lines: results in the extended on-mass-shell scheme; dashed lines: results in infrared regularization. The experimental data are taken from Ref. <span class="citation" data-cites="Friedrich:2003iz"></span>.</figcaption>
+</figure>
+
+In Ref. [@Kubis:2000zd] it was shown that the inclusion of vector mesons can result in the re-summation of important higher-order contributions. In standard ChPT, such vector meson contributions manifest themselves in terms of the values of the low-energy coupling constants. Symbolically, the contributions to certain LECs originate from the expansion of the vector-meson propagator, $$\frac{1}{q^2-M_{V}^2}=-\frac{1}{M_{V}^2}
+\left[1+\frac{q^2}{M_{V}^2}+\left(\frac{q^2}{M_{V}^2}\right)^2+\mathcal{O}(q^6)\right]$$ combined with the relevant vector-meson vertices. However, diagrams with internal vector-meson lines *inside* loops were not considered, because a generalization of ChPT which fully includes the effects of vector mesons as intermediate states in loops was not yet available [@Kubis:2000zd]. On the other hand, the EOMS renormalization scheme of Ref. [@Fuchs:2003qc] and the reformulated version of infrared regularization of Ref. [@Schindler:2003xv] both allow to include virtual vector mesons *systematically* in the region of the applicability of baryon chiral perturbation theory [@Fuchs:2003sh] (see also Ref. [@Bruns:2008ub]). The standard power counting determines which diagrams (including diagrams with vector mesons appearing in loops) should be taken into account to a given order in the chiral expansion.
+
+In Ref. [@Schindler:2005ke] the electromagnetic form factors were calculated with the $\rho$, $\omega$, and $\phi$ mesons as explicit degrees of freedom. In the vector-field representation of Ref. [@Ecker:1989yg] the $\rho$ meson is represented by $\rho^{\mu}=\rho^{\mu}_i\tau_i$ and the $\omega$ and $\phi$ mesons by $\omega^\mu$ and $\phi^\mu$, respectively. The coupling of the vector mesons to pions and external fields is at least of ${\cal O}(q^3)$, $$\label{PionLagrange}
+   \mathcal{L}_{{\pi}V}^{(3)}=-f_\rho\mbox{Tr}(\rho^{\mu\nu}f^+_{\mu\nu})
+-f_\omega\omega^{\mu\nu}f^{(s)}_{\mu\nu}-f_\phi\phi^{\mu\nu}f^{(s)}_{\mu\nu}+\cdots,$$ where the field strength tensors are given by $$f^{(s)}_{\mu\nu}=\partial_\mu v^{(s)}_\nu-\partial_\nu
+v^{(s)}_\mu,\quad
+f^+_{\mu\nu}=u^+f^R_{\mu\nu}u+u f^L_{\mu\nu} u^+,$$ with $f^R_{\mu\nu}$ and $f^L_{\mu\nu}$ defined in Eqs. ([\[3:2:3:fr\]](#3:2:3:fr){reference-type="ref" reference="3:2:3:fr"}) and ([\[3:2:3:fl\]](#3:2:3:fl){reference-type="ref" reference="3:2:3:fl"}), respectively. For the case of a coupling to an external electromagnetic potential ${\cal A}_\mu$, the external fields are given by Eq. ([\[2:1:6:rlasu2\]](#2:1:6:rlasu2){reference-type="ref" reference="2:1:6:rlasu2"}). Furthermore, in terms of the connection $\Gamma^\mu$ of Eq. ([\[4:1:2:gamma\]](#4:1:2:gamma){reference-type="ref" reference="4:1:2:gamma"}), we define $$\rho^{\mu\nu}=\nabla^{\mu}\rho^{\nu}-\nabla^{\nu}\rho^{\mu},\quad
+    \nabla^{\mu}\rho^{\nu}=\partial^{\mu}\rho^{\nu}+\left[\Gamma^{\mu},\rho^{\nu}\right],$$ and, finally, $$\omega^{\mu\nu}=\partial^\mu\omega^\nu-\partial^\nu\omega^\mu,\quad
+\phi^{\mu\nu}=\partial^\mu\phi^\nu-\partial^\nu\phi^\mu.$$ The lowest-order Lagrangian for the coupling to the nucleon is given by $$\label{LagNV0}
+   \mathcal{L}_{VN}^{(0)}=\frac{1}{2}\sum_{V=\rho,\omega,\phi}g_V\,\bar{\Psi}\gamma^{\mu}V_{\mu}\Psi,$$ and the ${\cal O}(q)$ Lagrangian reads $$\label{LagNV1}
+   \mathcal{L}_{VN}^{(1)}=\frac{1}{4}\sum_{V=\rho,\omega,\phi}G_V
+   \bar{\Psi}\sigma^{\mu\nu}V_{\mu\nu}\Psi.$$ The additional power-counting rules state that vertices from $\mathcal{L}_{{\pi}V}^{(3)}$ count as $\mathcal{O}(q^3)$ and vertices from $\mathcal{L}_{VN}^{(i)}$ as $\mathcal{O}(q^i)$, respectively, while the vector-meson propagators count as $\mathcal{O}(q^0)$. The additional diagrams involving vector mesons that contribute in the calculation of the form factors up to and including ${\cal O}(q^4)$ using the Lagrangians of Eqs. ([\[PionLagrange\]](#PionLagrange){reference-type="ref" reference="PionLagrange"}), ([\[LagNV0\]](#LagNV0){reference-type="ref" reference="LagNV0"}), and ([\[LagNV1\]](#LagNV1){reference-type="ref" reference="LagNV1"}) are shown in Fig. [2](#Dia_mit){reference-type="ref" reference="Dia_mit"}.
+
+<figure id="Dia_mit">
+<div class="center">
+
+</div>
+<figcaption><span id="Dia_mit" label="Dia_mit"></span> Feynman diagrams including vector mesons that contribute to the electromagnetic form factors of the nucleon up to and including <span class="math inline">${\cal O}(q^4)$</span>. External leg corrections are not shown. Solid, wiggly, and double lines refer to nucleons, photons, and vector mesons, respectively. The numbers in the interaction blobs denote the order of the Lagrangian from which they are obtained. The direct coupling of the photon to the nucleon is obtained from <span class="math inline">${\cal L}_{\pi N}^{(1)}$</span> and <span class="math inline">${\cal L}_{\pi
+N}^{(2)}$</span>.</figcaption>
+</figure>
+
+The parameters of the vector-meson Lagrangian of Eq. ([\[PionLagrange\]](#PionLagrange){reference-type="ref" reference="PionLagrange"}) for the coupling to external fields have been taken from Ref. [@Ecker:1989yg], and those of Eqs. ([\[LagNV0\]](#LagNV0){reference-type="ref" reference="LagNV0"}) and ([\[LagNV1\]](#LagNV1){reference-type="ref" reference="LagNV1"}) for the coupling of vector mesons to the nucleon from the dispersion relations of Refs. [@Mergell:1995bf], [@Hammer:2003ai].
+
+As expected on phenomenological grounds, the quantitative description of the data has improved considerably for $Q^2\geq 0.1$ GeV$^2$ (see Fig. [3](#H1:emff:G:neu){reference-type="ref" reference="H1:emff:G:neu"}).
+
+<figure id="H1:emff:G:neu">
+<div class="center">
+
+</div>
+<figcaption><span id="H1:emff:G:neu" label="H1:emff:G:neu"></span> The Sachs form factors of the nucleon in manifestly Lorentz-invariant chiral perturbation theory at <span class="math inline">${\cal
+O}(q^4)$</span> including vector mesons as explicit degrees of freedom. Full lines: results in the extended on-mass-shell scheme; dashed lines: results in infrared regularization. The experimental data are taken from Ref. <span class="citation" data-cites="Friedrich:2003iz"></span>.</figcaption>
+</figure>
+
+The small difference between the two renormalization schemes is due to the way how the regular higher-order terms of loop integrals are treated. Numerically, the results are similar to those of Ref. [@Kubis:2000zd]. Due to the renormalization condition, the contribution of the vector-meson loop diagrams either vanishes (IR) or turns out to be small (EOMS). Thus, in hindsight our approach puts the traditional phenomenological vector-meson-dominance model on a more solid theoretical basis. In the sense of a strict chiral expansion in terms of small external momenta $q$ and quark masses $m_q$ at a fixed ratio $m_q/q^2$ [@Gasser:1983yg], up to and including ${\cal O}(q^4)$ the results with and without explicit vector mesons are completely equivalent. The additional vector-meson contributions up to this order are compensated by a readjustment of the low-energy constants pertaining to the theory including vector mesons as dynamical degrees of freedom. On the other hand, the inclusion of vector-meson degrees of freedom in the present framework results in a reordering of terms which, in an ordinary chiral expansion, would show up at higher orders beyond ${\cal O}(q^4)$. It is these terms which change the form factor results favorably for larger values of $Q^2$. It should be noted, however, that this re-organization proceeds according to well-defined rules so that a controlled, order-by-order, calculation of corrections is made possible. In contrast to the calculation without vector mesons, the Sachs form factors $G_E^p$, $G_M^p$, and $G_M^n$ now show sufficient curvature to generate a more accurate phenomenology for values of $Q^2$, where the ordinary chiral expansion to the same order is no longer reliable.

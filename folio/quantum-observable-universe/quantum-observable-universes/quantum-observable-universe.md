@@ -21,9 +21,8 @@ A quantum universe $(\mathbf{C}, A, \tau)$ over $R$ is a **quantum observable un
 
 A quantum universe is thus braided; a quantum observable universe is braided and rigid.
 
-**On "non-degenerate epimorphism" in condition 5.** Earlier statements of this
-definition wrote $\epsilon$ as a non-degenerate epimorphism. That phrase admits
-two readings of unequal strength, and only the stronger one does the work the
+**On "non-degenerate epimorphism" in condition 5.** The phrase "non-degenerate
+epimorphism" for $\epsilon$ admits two readings of unequal strength, and only the stronger one does the work the
 framework asks of condition 5:
 
 | reading of $\epsilon$ | dimension statement | forces |
@@ -31,8 +30,7 @@ framework asks of condition 5:
 | epimorphism onto $\mathbf{1}$ | $\binom{N}{2} \neq 0$ | $N \geq 2$ — admits the colour fibre $N = 3$ |
 | **isomorphism** $\Lambda^2 V \cong \mathbf{1}$ | $\binom{N}{2} = 1$ | $\mathbf{N = 2}$ |
 
-Both rows are proved in
-`lean/QOU/BraidsAndKnots/VolumeConstraintForcesFibreTwo.lean`
+Both rows are proved formally
 (`exteriorSquareDim_ne_zero_iff`, `exteriorSquareDim_eq_one_iff`). The
 isomorphism is the intended reading: $\det(g)$ is the scalar by which $g$ acts
 on the **top** exterior power $\Lambda^N V$, so a constraint imposed on

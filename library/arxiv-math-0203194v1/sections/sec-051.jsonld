@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203194v1/sections/sec-051",
   "@type": [
     "doco:Section"
   ],
-  "title": "The Krasner-Dwork viewpoint. ForS = A1, and K = Cp, we deduce",
-  "pageStart": 25,
-  "pageEnd": 27,
+  "title": "Triadic uniformization.",
+  "pageStart": 200,
+  "pageEnd": 211,
   "contains": [
-    "library/arxiv-math-0203194v1/blocks/prose-sec-051",
-    "library/arxiv-math-0203194v1/blocks/prop-sec-051-01"
+    "library/arxiv-math-0203194v1/blocks/prose-sec-051"
   ],
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"
 }

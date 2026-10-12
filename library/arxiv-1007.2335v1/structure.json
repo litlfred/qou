@@ -6,7 +6,11 @@
   "sha256": "a55d544d1740523fe4af458dc7fc07aa8723e99d3806dcc26753564cdfaebc48",
   "bytes": 157209,
   "pages": 11,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -115,6 +119,51 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 4,
-  "chars_total": 26225
+  "chars_total": 26225,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "nicole.tex",
+   "tex_sections": 6,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.998,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-3-initial-conditions",
+     "title": "Initial conditions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-4-numerical-results",
+     "title": "Numerical results",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-5-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.904,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1704.01735v4/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "Thus we see that from the very beginning there",
-  "pageStart": 10,
-  "pageEnd": 10,
+  "title": "Modular curve X(13) and invariant theory for",
+  "pageStart": 13,
+  "pageEnd": 30,
   "contains": [
     "library/arxiv-1704.01735v4/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/arxiv-1704.01735v4/manifest",
-  "sourceDocument": "library/arxiv-1704.01735v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.01735v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.01735v4/manifest.jsonld",
   "provenance": "ingested"
 }

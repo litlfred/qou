@@ -1,0 +1,338 @@
+\section{Summation}
+In this section, we use the quantum dilogarithm $T_N(z)$ to express $J_N(E;e^{\xi/N})$ without the product of a sequence.
+\par
+Since the figure-eight knot $E$ is amphicheiral, its colored Jones polynomial is symmetric, that is, $J_{N}(E;q)=J_{N}(E;q^{-1})$.
+So we have $J_{N}(E;e^{\xi/N})=J_{N}(E;e^{-\xi/N})$ and we do not need to consider the case where $\xi<0$.
+\par
+Recall that we choose a positive real number $\theta$ so that $\tan\theta<\frac{\pi}{\xi}$ and that we put $\gamma:=\frac{\xi}{2N\pi\i}$.
+Putting $z:=\frac{\xi}{2\pi\i}(1-l/N)$ ($0<l<N$) in \eqref{eq:lem}, we have
+\begin{equation*}
+  \frac{\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1-l/N)-\frac{\xi}{4N\pi\i}\right)\right)}
+       {\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1-l/N)+\frac{\xi}{4N\pi\i}\right)\right)}
+  =
+  1-e^{\xi(1-l/N)}
+\end{equation*}
+since
+\begin{equation*}
+  \Re\left(\frac{\xi}{2\pi\i}\left(1-\frac{l}{N}\right)e^{\theta\i}\right)
+  =
+  \frac{\xi}{2\pi}\left(1-\frac{l}{N}\right)\sin\theta
+  <
+  \frac{1}{2}\left(1-\frac{l}{N}\right)\cos\theta,
+\end{equation*}
+which is between $0$ and $\cos\theta$.
+Therefore we have
+\begin{equation*}
+\begin{split}
+  \prod_{l=1}^{k}\bigl(1-e^{(N-l)\xi/N}\bigr)
+  &=
+  \prod_{l=1}^{k}
+  \frac{\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}\left(1-\frac{2l+1}{2N}\right)\right)\right)}
+       {\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}\left(1-\frac{2l-1}{2N}\right)\right)\right)}
+  \\
+  &=
+  \frac{\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1-\frac{2k+1}{2N})\right)\right)}
+       {\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1-\frac{1}{2N})\right)\right)}.
+\end{split}
+\end{equation*}
+\par
+Similarly, putting $z:=\frac{\xi}{2\pi\i}(1+l/N)$ ($0<l<N$) in \eqref{eq:lem}, we have
+\begin{equation*}
+  \frac{\exp
+        \left(
+          T_{N}
+          \left(
+            \frac{\xi}{2\pi\i}(1+l/N)-\frac{\xi}{4N\pi\i}
+          \right)
+        \right)}
+       {\exp
+        \left(
+          T_{N}
+          \left(
+            \frac{\xi}{2\pi\i}(1+l/N)+\frac{\xi}{4N\pi\i}
+          \right)
+        \right)}
+  =
+  1-e^{\xi(1+l/N)}
+\end{equation*}
+since
+\begin{equation*}
+  \Re\left(\frac{\xi}{2\pi\i}\left(1+\frac{l}{N}\right)e^{\theta\i}\right)
+  =
+  \frac{\xi}{2\pi}\left(1+\frac{l}{N}\right)\sin\theta
+  <
+  \frac{1}{2}\left(1+\frac{l}{N}\right)\cos\theta,
+\end{equation*}
+which is between $0$ and $\cos\theta$.
+So we have
+\begin{equation*}
+\begin{split}
+  \prod_{l=1}^{k}\bigl(1-e^{(N+l)\xi/N}\bigr)
+  &=
+  \prod_{l=1}^{k}
+  \frac{\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}\left(1+\frac{2l-1}{2N}\right)\right)\right)}
+       {\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}\left(1+\frac{2l+1}{2N}\right)\right)\right)}
+  \\
+  &=
+  \frac{\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1+\frac{1}{2N})\right)\right)}
+       {\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1+\frac{2k+1}{2N})\right)\right)}.
+\end{split}
+\end{equation*}
+Therefore we have from \eqref{eq:J_N_fig8}
+\begin{equation*}
+\begin{split}
+  &J_N\bigl(E;\exp(\xi/N)\bigr)
+  \\
+  &=
+  \frac{\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1+\frac{1}{2N})\right)\right)}
+       {\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1-\frac{1}{2N})\right)\right)}
+  \\
+  &\quad\times
+  \sum_{k=0}^{N-1}
+  e^{-k\xi}
+  \frac{\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1-\frac{2k+1}{2N})\right)\right)}
+       {\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1+\frac{2k+1}{2N})\right)\right)}.
+\end{split}
+\end{equation*}
+We use the following lemma, a proof of which is given in Section~\ref{sec:proofs_lemmas}.
+\begin{lem}\label{lem:T_special}
+We have
+\begin{equation*}
+  \frac{\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1+\frac{1}{2N})\right)\right)}
+       {\exp\left(T_{N}\left(\frac{\xi}{2\pi\i}(1-\frac{1}{2N})\right)\right)}
+  =
+  \frac{1}{1-e^{\xi}}
+  =
+  \frac{-e^{-\xi/2}}{2\sinh(\xi/2)}.
+\end{equation*}
+\end{lem}
+\par
+Now we define
+\begin{equation*}
+  f_{N}(z)
+  :=
+  \frac{1}{N}
+  \left(
+    T_{N}\left(\frac{\xi(1-z)}{2\pi\i}\right)
+    -
+    T_{N}\left(\frac{\xi(1+z)}{2\pi\i}\right)
+  \right)
+  -\xi z
+  +2\pi\i z
+\end{equation*}
+so that
+\begin{equation}\label{eq:Jones_sum}
+  J_N\bigl(E;\exp(\xi/N)\bigr)
+  =
+  \frac{1}{2\sinh(\xi/2)}
+  \sum_{k=0}^{N-1}\exp\left(N\times f_{N}\left(\frac{2k+1}{2N}\right)\right).
+\end{equation}
+Since $T_{N}(z)$ is defined for $z$ with $0<\Re(z e^{\theta\i})<\cos\theta$, the function $f_{N}(z)$ is defined for $z$ with
+\begin{equation*}
+  \left|\frac{\Im{z}}{\tan\theta}+\Re{z}\right|<1
+\end{equation*}
+from the assumption $\tan\theta<\frac{\pi}{\xi}$.
+\par
+From Proposition~\ref{prop:T_N_L_2}, $f_N(z)$ converges to the following function:
+\begin{equation*}
+  F(z)
+  :=
+  \frac{1}{\xi}
+  \left(
+    \L_2\left(\frac{\xi(1-z)}{2\pi\i}\right)
+    -
+    \L_2\left(\frac{\xi(1+z)}{2\pi\i}\right)
+  \right)
+  -\xi z+2\pi\i z
+\end{equation*}
+in the region
+\begin{equation*}
+  \left\{
+    z\in\C\Bigm|
+    \left|\frac{\Im{z}}{\tan\theta}+\Re{z}\right|
+    \le
+    1-\frac{2\pi\nu}{\xi\sin\theta},
+    |\Re{z}|\le\frac{2\pi M}{\xi}-1
+  \right\}.
+\end{equation*}
+Since $\Im\left(\frac{\xi(1\pm z)}{2\pi\i}\right)=\frac{-\xi}{2\pi}(1\pm\Re{z})$,
+\begin{equation*}
+  F(z)
+  =
+  \frac{1}{\xi}
+  \left(
+    \Li_2\left(e^{-\xi(1+z)}\right)
+    -
+    \Li_2\left(e^{-\xi(1-z)}\right)
+  \right)
+  +\xi z
+\end{equation*}
+when $-1<\Re{z}<1$ from \eqref{eq:L2}.
+\begin{rem}\label{rem:F_real}
+When $x$ is real and $-1<x<1$, then $F(x)$ is also real.
+\end{rem}
+From Lemma~\ref{lem:der_L}, the first and the second derivatives of $F(z)$ are given as follows:
+\begin{align*}
+  F'(z)
+  &=
+  \L_1\left(\frac{\xi(1-z)}{2\pi\i}\right)
+  +
+  \L_1\left(\frac{\xi(1+z)}{2\pi\i}\right)
+  -\xi+2\pi\i,
+  \\
+  F''(z)
+  &=
+  \frac{\xi}{2\pi\i}
+  \left(
+    \L_0\left(\frac{\xi(1-z)}{2\pi\i}\right)
+    -
+    \L_0\left(\frac{\xi(1+z)}{2\pi\i}\right)
+  \right)
+  \\
+  &=
+  \frac{\xi(e^{-\xi z}-e^{\xi z})}{e^{\xi}+e^{-\xi}-e^{\xi z}-e^{-\xi z}}.
+\end{align*}
+Note that when $-1<\Re{z}<1$, we have
+\begin{equation}\label{eq:F'}
+\begin{split}
+  F'(z)
+  &=
+  \log(1-e^{-\xi(1-z)})+\log(1-e^{-\xi(1+z)})+\xi
+  \\
+  &=
+  \log(e^{\xi}+e^{-\xi}-e^{\xi z}-e^{-\xi z})
+\end{split}
+\end{equation}
+from  \eqref{eq:L1}, since $\Im\left(\frac{\xi(1\pm z)}{2\pi\i}\right)=-\frac{\xi}{2\pi}(1\pm\Re{z})$.
+\par
+We assume that $\xi>\kappa$, where $\kappa:=\arccosh(3/2)=\log(\frac{3+\sqrt{5}}{2})=0.962\dots$.
+Put
+\begin{equation*}
+  \varphi(\xi)
+  :=
+  \arccosh\left(\cosh(\xi)-\frac{1}{2}\right)
+  =
+  \log
+  \left(
+    \cosh(\xi)-\frac{1}{2}+\frac{1}{2}\sqrt{(2\cosh(\xi)-1)^2-4}
+  \right).
+\end{equation*}
+Note that since $\xi>\kappa$, we have $\cosh(\xi)>\cosh(\varphi(\xi))$ and $\cosh(\xi)>\cosh(\kappa)=\frac{3}{2}$.
+So we have $0<\varphi(\xi)<\xi$.
+Note also that this definition is the same as that in Section~\ref{sec:introduction}.
+\par
+Since $0<\varphi(\xi)<\xi$, we have
+\begin{align}
+  F(\varphi(\xi)/\xi)
+  &=
+  \frac{1}{\xi}
+  \left(
+    \Li_2(e^{-\xi-\varphi(\xi)})-\Li_2(e^{-\xi+\varphi(\xi)})
+  \right)
+  +\varphi(\xi),
+  \label{eq:F_phi}
+  \\
+  F'(\varphi(\xi)/\xi)
+  &=0,
+  \label{eq:F'_phi}
+  \\
+  F''(\varphi(\xi)/\xi)
+  &=
+  -\xi\sqrt{(2\cosh(\xi)-1)^2-4}.
+  \label{eq:F''_phi}
+\end{align}
+The second equality follows since
+\begin{equation*}
+  e^{\varphi(\xi)}+e^{-\varphi(\xi)}
+  =
+  e^{\xi}+e^{-\xi}-1.
+\end{equation*}
+\par
+Put
+\begin{equation*}
+  S(\xi)
+  :=
+  \xi F(\varphi(\xi)/\xi)
+  =
+  \Li_2(e^{-\xi-\varphi(\xi)})-\Li_2(e^{-\xi+\varphi(\xi)})
+  +
+  \xi\varphi(\xi).
+\end{equation*}
+Since
+\begin{equation*}
+\begin{split}
+  \frac{d\,S(\xi)}{d\,\xi}
+  &=
+  (1+\varphi'(\xi))\log(1-e^{-\xi-\varphi(\xi)})
+  -
+  (1-\varphi'(\xi))\log(1-e^{-\xi+\varphi(\xi)})
+  \\
+  &\quad
+  +\varphi(\xi)+\xi\varphi'(\xi)
+  \\
+  &=
+  \log\frac{e^{\varphi(\xi)}-e^{-\xi}}{1-e^{-\xi+\varphi(\xi)}}
+  +
+  \varphi'(\xi)\log\left(e^{\xi}+e^{-\xi}-e^{\varphi(\xi)}-e^{-\varphi(\xi)}\right)
+  \\
+  &=
+  \log\frac{e^{\varphi(\xi)}-e^{-\xi}}{1-e^{-\xi+\varphi(\xi)}}
+  >0
+\end{split}
+\end{equation*}
+and $S(\kappa)=0$, $S(\xi)>0$ for $\xi>\kappa$.
+\par
+Recalling that $F(x)\in\R$ when $x$ is real and $-1<x<1$, we have the following lemma.
+\begin{lem}
+As a function of a real variable $x$, the real-valued function $F(x)$ takes its maximum $S(\xi)/\xi$ at $x=\varphi(\xi)/\xi$ in the half open interval $[0,1)$.
+Moreover, it is strictly increasing {\rm(}decreasing, respectively{\rm)} when $x<\varphi(\xi)/\xi$ {\rm(}$x>\varphi(\xi)/\xi$, respectively{\rm)}.
+\end{lem}
+\begin{proof}
+Since we have
+\begin{equation*}
+  F'(x)
+  =
+  \log(e^{\xi}+e^{-\xi}-e^{\xi x}-e^{-\xi x}),
+\end{equation*}
+we see that $F'(x)$ is strictly decreasing.
+Since $F(0)=0$ and $F'(x)$ becomes $0$ when $x=\varphi(\xi)/\xi<1$, the lemma follows.
+\end{proof}
+We have the following corollary.
+\begin{cor}
+For any $c_{-}$ and $c_{+}$ with $0<c_{-}<\varphi(\xi)/\xi<c_{+}<1$, there exists $\delta>0$ such that $F(x)<S(\xi)/\xi-\delta$ if $x<c_{-}$ or $x>c_{+}$.
+\end{cor}
+So we have $e^{N\times F(x)}<e^{N(S(\xi)/\xi-\delta)}$ if $x\not\in[c_{-},c_{+}]$.
+Since $f_N(x)$ uniformly converges to $F(x)$ from Proposition~\ref{prop:T_N_L_2}, we also have $\left|e^{N\times f_N(x)}\right|<e^{N(S(\xi)/\xi-\delta')}$ for some $\delta'>0$ if $x\not\in[c_{-},c_{+}]$ and $N$ is sufficiently large.
+\par
+Therefore we have
+\begin{align*}
+  \left|\sum_{0<k/N<c_{-}}\exp\left(N\times f_N\left(\frac{2k+1}{2N}\right)\right)\right|
+  &<
+  c_{-}Ne^{N(S(\xi)/\xi-\delta')}
+  \\
+  \intertext{and}
+  \left|\sum_{c_{+}<k/N<1}\exp\left(N\times f_N\left(\frac{2k+1}{2N}\right)\right)\right|
+  &<
+  (1-c_{+})Ne^{N(S(\xi)/\xi-\delta')}.
+\end{align*}
+As a result, we have
+\begin{equation*}
+\begin{split}
+  &\sum_{k=0}^{N-1}\exp\left(N\times f_N\left(\frac{2k+1}{2N}\right)\right)
+  \\
+  =&
+  \sum_{c_{-}\le k/N\le c_{+}}\exp\left(N\times f_N\left(\frac{2k+1}{2N}\right)\right)
+  +
+  O\left(Ne^{N(S(\xi)/\xi-\delta')}\right).
+\end{split}
+\end{equation*}
+From \eqref{eq:Jones_sum}, we also have
+\begin{multline}\label{eq:J_summation}
+  J_N\bigl(E;\exp(\xi/N)\bigr)
+  \\
+  =
+  \frac{1}{2\sinh(\xi/2)}
+  \sum_{c_{-}\le k/N\le c_{+}}\exp\left(N\times f_N\left(\frac{2k+1}{2N}\right)\right)
+  +
+  O\left(Ne^{N(S(\xi)/\xi-\delta')}\right).
+\end{multline}

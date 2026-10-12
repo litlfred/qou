@@ -8,108 +8,66 @@ pages: 17-19
 source_pdf: 2501.00914v2.pdf
 source_sha256: d94bd6edf8544d4a
 doc_brief: "L-SPACES AND KNOT TRACES — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
+text_source: latex
+latex_prose_ratio: 0.988
+latex_coverage_ratio: 0.77
 ---
-to whichdHF(Y) has Euler characteristic|H 1(Y;Z)|if this order is finite, and 0 otherwise. We will
-write the graded pieces as dHF even(Y) and dHF odd(Y).
-Lemma 3.4.For alln≥0, we havedeg(F X◦n) = 1anddeg(F Wn+1) = 0with respect to the absolute
-Z/2Zgradings on dHF(S 3
-n(K))and dHF(S 3
-n+1(K)). Therefore, each of the elementsz n,i from(3.2)
-has odd grading.
-Proof.A Spin c cobordism (Z,t) : (Y 0,t|Y0)→(Y 1,t|Y1) between connected, nonempty 3-manifolds
-induces a cobordism map on dHFthat shifts the absoluteZ/2Zgrading by
-deg(FZ,t)≡ 1
-2(χ(Z) +σ(Z) +b 1(Y1)−b 1(Y0)) (mod 2).
-This is discussed in detail for monopole Floer homology in [KM07]: see [KM07,§22.4] for the
-reduction of the canonical plane field grading on }HM(Y) to a canonicalZ/2Zgrading, and [KM07,
-18 JOHN A. BALDWIN AND STEVEN SIVEK
-§25.4] for the computation of the mod 2 degrees of cobordism maps. In [KM07,§42.3] this is applied
-to the surgery exact triangle (3.4), and the authors show that forn≥0 the mapF X◦n has odd
-degree whileF Wn+1 and the connecting homomorphism both have even degree.
-In Heegaard Floer homology, Huang–Ramos [HR17] lifted the relativeZ/d(c 1(s))Zgrading on
-HF◦(Y,s) (itself a lift of the absoluteZ/2Zgrading) to an analogous plane field grading, and showed
-that this lift is compatible with the degree formula for cobordism maps, so the same formula used
-for deg(FZ,t) (mod 2) in }HMalso applies to dHF. In particular, since dHF(S 3)∼= Fis supported in
-even grading, it follows that the elementsz n,i =F X◦n,tn,i(1) have odd grading.□
-Lemma 3.4 tells us that the subspaces of eachdHF(S 3
-n(K)) spanned by the relative invariantsz n,i
-are also entirely in odd grading, i.e.,
-Sn⊂dHF odd(S3
-n(K))
-for alln≥0. We can also use it to deduce the following:
-Proposition 3.5.Suppose thatKhas genusg≥1, and fix nonnegative integersn≤mwith
-m≥2g−1. ThenS n = span{zn,i|i∈Z}fits into a short exact sequence
-0→S n→dHF odd(S3
-n(K))
-FVn,m
-−−−−→dHF odd(S3
-m(K))→0,
-whereV n,m is the cobordismS 3
-n(K)→S 3
-m(K)of(3.7).
-Proof.For anyk≥0, the exact triangle (3.4) has the form
-···→ dHF(S 3)
-FX◦
-k
-− −− →dHF(S 3
-k(K))
-FWk+1
-−−−−→dHF(S 3
-k+1(K)) δ− →...,
-and we recall from [KM07,§42.3] (as noted in the proof of Lemma 3.4) thatδhas even degree.
-Since its codomain dHF(S 3)∼= Fis supported in even grading, it follows that
-δ
-
-dHF odd(S3
-k+1(K))
-
-= 0
-and hence by exactness that dHF odd(S3
-k+1(K)) lies in the image ofF Wk+1. But thenF Wk+1 also has
-even degree, soF Wk+1 must restrict to a surjection
-FWk+1 :dHF odd(S3
-k(K))→ dHF odd(S3
-k+1(K))
-for allk≥0.
-To conclude, we observe thatF Vn,m is equal to the composition
-FWm◦FWm−1◦···◦F Wn+1
-of maps which are all surjective on dHF odd, and henceF Vn,m is surjective on dHF odd as well. Since
-m≥2g−1, we use Proposition 3.3 to say that the kernel ofF Vn,m is equal toS n.□
+Heegaard Floer homology has  a canonical $\Z/2\Z$ grading, with respect to which $\hfhat(Y)$ has Euler characteristic $|H_1(Y;\Z)|$ if this order is finite, and $0$ otherwise.  We will write the graded pieces as $\hfhat_\geven(Y)$ and $\hfhat_\godd(Y)$.
+
+\begin{lemma} \label{lem:cobordism-degree}
+For all $n \geq 0$, we have $\deg(F_{X^\circ_n}) = 1$ and $\deg(F_{W_{n+1}}) = 0$ with respect to the absolute $\Z/2\Z$ gradings on $\hfhat(S^3_n(K))$ and $\hfhat(S^3_{n+1}(K))$.  Therefore, each of the elements $z_{n,i}$ from \eqref{eq:zni} has odd grading.
+\end{lemma}
+
+\begin{proof}
+A $\spc$ cobordism $(Z,\spint): (Y_0,\spint|_{Y_0}) \to (Y_1,\spint|_{Y_1})$ between connected, nonempty 3-manifolds induces a cobordism map on $\hfhat$ that shifts the absolute $\Z/2\Z$ grading by
+\[ \deg(F_{Z,\spint}) \equiv \frac{1}{2}(\chi(Z)+\sigma(Z) + b_1(Y_1)-b_1(Y_0)) \pmod{2}. \]
+This is discussed in detail for monopole Floer homology in \cite{km-book}: see \cite[\S22.4]{km-book} for the reduction of the canonical plane field grading on $\HMto(Y)$ to a canonical $\Z/2\Z$ grading, and \cite[\S25.4]{km-book} for the computation of the mod 2 degrees of cobordism maps.  In \cite[\S42.3]{km-book} this is applied to the surgery exact triangle \eqref{eq:surgery-triangle}, and the authors show that for $n\geq 0$ the map $F_{X^\circ_n}$ has odd degree while $F_{W_{n+1}}$ and the connecting homomorphism both have even degree.
+
+In Heegaard Floer homology, Huang--Ramos \cite{huang-ramos} lifted the relative $\Z/d(c_1(\spinc))\Z$ grading on $\hf^\circ(Y,\spinc)$ (itself a lift of the absolute $\Z/2\Z$ grading) to an analogous plane field grading, and showed that this lift is compatible with the degree formula for cobordism maps, so the same formula used for $\deg(F_{Z,\spint}) \pmod{2}$ in $\HMto$ also applies to $\hfhat$.  In particular, since $\hfhat(S^3) \cong \F$ is supported in even grading, it follows that the elements $z_{n,i} = F_{X^\circ_n,\spint_{n,i}}({\bf 1})$ have odd grading.
+\end{proof}
+
+Lemma~\ref{lem:cobordism-degree} tells us that the subspaces of each $\hfhat(S^3_n(K))$ spanned by the relative invariants $z_{n,i}$ are also entirely in odd grading, i.e.,
+\[ \cS_n \subset \hfhat_\godd(S^3_n(K)) \]
+for all $n \geq 0$.  We can also use it to deduce the following:
+
+\begin{proposition} \label{prop:large-odd-span}
+Suppose that $K$ has genus $g \geq 1$, and fix nonnegative integers $n \leq m$ with $m \geq 2g-1$.  Then $\cS_n = \Span \{z_{n,i} \mid i\in\Z\}$ fits into a short exact sequence
+\[ 0 \to \cS_n \to \hfhat_\godd(S^3_n(K)) \xrightarrow{F_{V_{n,m}}} \hfhat_\godd(S^3_m(K)) \to 0, \]
+where $V_{n,m}$ is the cobordism $S^3_n(K) \to S^3_m(K)$ of \eqref{eq:vmn}.
+\end{proposition}
+
+\begin{proof}
+For any $k \geq 0$, the exact triangle \eqref{eq:surgery-triangle} has the form
+\[ \dots \to \hfhat(S^3) \xrightarrow{F_{X^\circ_k}} \hfhat(S^3_k(K)) \xrightarrow{F_{W_{k+1}}} \hfhat(S^3_{k+1}(K)) \xrightarrow{\delta} \dots, \]
+and we recall from \cite[\S42.3]{km-book} (as noted in the proof of Lemma~\ref{lem:cobordism-degree}) that $\delta$ has even degree.  Since its codomain $\hfhat(S^3) \cong \F$ is supported in even grading, it follows that
+\[ \delta\left(\hfhat_\godd(S^3_{k+1}(K))\right) = 0 \]
+and hence by exactness that $\hfhat_\godd(S^3_{k+1}(K))$ lies in the image of $F_{W_{k+1}}$.  But then $F_{W_{k+1}}$ also has even degree, so $F_{W_{k+1}}$ must restrict to a surjection
+\[ F_{W_{k+1}}: \hfhat_\godd(S^3_k(K)) \to \hfhat_\godd(S^3_{k+1}(K)) \]
+for all $k \geq 0$.
+
+To conclude, we observe that $F_{V_{n,m}}$ is equal to the composition
+\[ F_{W_m} \circ F_{W_{m-1}} \circ \dots \circ F_{W_{n+1}} \]
+of maps which are all surjective on $\hfhat_\godd$, and hence $F_{V_{n,m}}$ is surjective on $\hfhat_\godd$ as well.  Since $m \geq 2g-1$, we use Proposition~\ref{prop:ker-vmn} to say that the kernel of $F_{V_{n,m}}$ is equal to $\cS_n$.
+\end{proof}
+
 The main result of this section is now an immediate corollary:
-Theorem 3.6.Fix a nontrivial knotK⊂S 3 and an integern≥0. Then for all integersm≫0,
-the dimension of dHF odd(S3
-m(K))is equal to
-dimdHF odd(∂Xn(K))−dim span{F X◦n,t(1)|t∈Spin c(X◦
-n)}.
-In particular,Kis an L-space knot if and only if the elements{F X◦n,t(1)}span all of dHF odd(S3
-n(K)).
-L-SPACES AND KNOT TRACES 19
-Proof.The short exact sequence of Proposition 3.5 tells us that for allm≥max(2g−1,n), the
-dimension of dHF odd(S3
-m(K)) is equal to
-dimdHF odd(S3
-n(K))−dim span{z n,i|i∈Z}.
-But this is exactly the quantity we wanted to prove equal to dim dHF odd(S3
-m(K)).□
-Remark 3.7.The proof of Theorem 3.6 applies equally well to show thatX n(K) determines the
-odd portion of theZ/2Z-graded framed instanton homologyI #(S3
-m(K)) form≫0; in particular,
-the case whereI #
-odd(S3
-m(K)) = 0 says that for any fixedn≥0, then-traceX n(K) determines
-whether or notKis an instanton L-space knot. Indeed, the key Lemma 3.1 that we used to start
-the proof can be replaced by the original [BS23, Proposition 7.1], and then after some mild care
-with coefficients the rest of the argument follows in the same way.
-Remark 3.8.The casen= 0 of Theorem 3.6 was used in [BS22] to prove that L-space knots are
-fibered and strongly quasipositive, as follows: we know (at least forg≥2) that dHF(S 3
-0(K),sg−1)
-is nonzero [OS04], and its Euler characteristic is zero, so the portions in even and odd gradings are
-both nonzero. Theorem 3.6 says that ifKis an L-space knot then dHF odd(S3
-0(K),sg−1)̸= 0 must
-be spanned byz 0,g−1 =F X◦
-0,t0,g−1(1); but then dHF odd(S3
-0(K),sg−1)∼= F, and fiberedness follows.
-ThenF X◦
-0,t0,g−1(1)̸= 0 ultimately implies (via the Heegaard Floer contact invariant) that the open
-book forS 3 with bindingKsupports the tight contact structure onS 3, and soKmust be strongly
-quasipositive.
+
+\begin{theorem} \label{thm:trace-large-surgery}
+Fix a nontrivial knot $K \subset S^3$ and an integer $n\geq 0$.  Then for all integers $m \gg 0$, the dimension of $\hfhat_\godd(S^3_m(K))$ is equal to
+\[ \dim \hfhat_\godd(\partial X_n(K)) - \dim \Span \{ F_{X^\circ_n,\spint}({\bf 1}) \mid \spint \in \spc(X^\circ_n) \}. \]
+In particular, $K$ is an L-space knot if and only if the elements $\{ F_{X^\circ_n,\spint}({\bf 1}) \}$ span all of $\hfhat_\godd(S^3_n(K))$.
+\end{theorem}
+
+\begin{proof}
+The short exact sequence of Proposition~\ref{prop:large-odd-span} tells us that for all $m \geq \max(2g-1,n)$, the dimension of $\hfhat_\godd(S^3_m(K))$ is equal to
+\[ \dim \hfhat_\godd(S^3_n(K)) - \dim \Span\{z_{n,i} \mid i\in\Z\}. \]
+But this is exactly the quantity we wanted to prove equal to $\dim \hfhat_\godd(S^3_m(K))$.
+\end{proof}
+
+\begin{remark}
+The proof of Theorem~\ref{thm:trace-large-surgery} applies equally well to show that $X_n(K)$ determines the odd portion of the $\Z/2\Z$-graded framed instanton homology $I^\#(S^3_m(K))$ for $m \gg 0$; in particular, the case where $I^\#_\godd(S^3_m(K)) = 0$ says that for any fixed $n\geq 0$, the $n$-trace $X_n(K)$ determines whether or not $K$ is an instanton L-space knot.  Indeed, the key Lemma~\ref{lem:fw-z} that we used to start the proof can be replaced by the original \cite[Proposition~7.1]{bs-lspace}, and then after some mild care with coefficients the rest of the argument follows in the same way.
+\end{remark}
+
+\begin{remark}
+The case $n=0$ of Theorem~\ref{thm:trace-large-surgery} was used in \cite{bs-fibered-sqp} to prove that L-space knots are fibered and strongly quasipositive, as follows: we know (at least for $g\geq2$) that $\hfhat(S^3_0(K),\spinc_{g-1})$ is nonzero \cite{osz-genus}, and its Euler characteristic is zero, so the portions in even and odd gradings are both nonzero.  Theorem~\ref{thm:trace-large-surgery} says that if $K$ is an L-space knot then $\hfhat_\godd(S^3_0(K),\spinc_{g-1}) \neq 0$ must be spanned by $z_{0,g-1}=F_{X^\circ_0,\spint_{0,g-1}}({\bf 1})$; but then $\hfhat_\godd(S^3_0(K),\spinc_{g-1}) \cong \F$, and fiberedness follows.  Then $F_{X^\circ_0,\spint_{0,g-1}}({\bf 1}) \neq 0$ ultimately implies (via the Heegaard Floer contact invariant) that the open book for $S^3$ with binding $K$ supports the tight contact structure on $S^3$, and so $K$ must be strongly quasipositive.
+\end{remark}

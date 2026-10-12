@@ -7,7 +7,11 @@
   "bytes": 432304,
   "pages": 45,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -195,6 +199,79 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 9,
-  "chars_total": 88471
+  "chars_total": 88471,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 8,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-11-crystals",
+     "title": "Crystals",
+     "prose_ratio": 0.176,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-1-crystals-and-khovanov-lauda-rouquier-algebras",
+     "title": "Crystals and Khovanov-Lauda-Rouquier Algebras",
+     "prose_ratio": 0.333,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-12-khovanov-lauda-rouquier-algebras",
+     "title": "Khovanov-Lauda-Rouquier algebras",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-13-construction-of-irreducible-r-modules",
+     "title": "Construction of irreducible R-modules",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.866,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-2-description-of-nkv-for-finite-type-via-adapted",
+     "title": "Description of Nk(v) for Finite Type Via Adapted Strings",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-3-explicit-construction-of-irreducible-modules-f",
+     "title": "Explicit Construction of Irreducible Modules for Finite Classical Type",
+     "prose_ratio": 0.579,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

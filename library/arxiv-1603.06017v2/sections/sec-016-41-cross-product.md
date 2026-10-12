@@ -8,193 +8,247 @@ pages: 12-15
 source_pdf: 1603.06017v2.pdf
 source_sha256: 3ff091e40573a5dd
 doc_brief: "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata"
+text_source: latex
+latex_prose_ratio: 0.949
+latex_coverage_ratio: 0.94
 ---
-binary logical operators, i.e., &,|,∧,=>,<=>. Then we move on to quantiﬁcation in Section 4.2, explaining the construction
-of automata for predicates formed from E and A operators. In Section 4.3, we discuss construction of automata for the
-complement ∼and reverse ` operators. With these tools at our disposal, we are on the right track to construct automata for
-complex predicates formed from comparison and arithmetic operators, e.g., ∗,/,>,<=,etc. which we explain in Section 4.4.
-4.1
-Cross Product
-Let M
-¡
-Q,q0,F,δ,S1,...,Sm
-¢
-and M′¡
-Q′,q′
-0,F ′,δ′,S′
-1,...,S′
-n
-¢
-be the automaton (x1,...,xm) : P and (x′
-1,...,x′
-n) : P′ respectively.
-Let us assume that if xi = x′
-j then Si = S′
-j. Let {x′′
-1,...,x′′
-p} where p ≤m +n be the union of {x1,...,xm} and {x′
-1,...,x′
-n} and
-further assume that the x′′
-i are appearing in lexicographic order. Depending on whether x′′
-k = xi or x′′
-k = x′
-j , let S′′
-k denote Si or
-S′
-j respectively. Then the cross product of M and M′ denoted by M × M′ is the tuple
-¡
-Q ×Q′,(q0,q′
-0),δ′′,S′′
-1,...,S′′
-p
-¢
-where the transition function is deﬁned to be
-δ′′¡
-(q,q′),(γ1,...,γp)
-¢
-=
-¡
-δ(q,(α1,...,αm)),δ′(q′,(β1,...,βn))
-¢
-for γk equals αi or βj depending on whether x′′
-k = xi or x′′
-k = x′
-j respectively. Note that M × M′ is not an automaton since a
-set of ﬁnal states is not speciﬁed. For F ′′ ⊆Q ×Q′, let (M × M′)(F) denote the automaton
-¡
-Q ×Q′,(q0,q′
-0),F ′′,δ′′,S′′
-1,...,S′′
-p
-¢
-.
-Theorem 6. For F ′′ =
-©
-(q,q′) : q ∈F and q′ ∈F ′ª
-, the automaton (M × M′)(F ′′) accepts predicate P & P′. Furthermore,
-minimizing (M × M′)(F ′′), we obtain automaton (x′′
-1,...,x′′
-p) : P &P′.
-Proof. Based on the deﬁnition for cross product, for M × M′ to be deﬁned, the same variables in P and P′ have to have the
-same number systems assigned in P and P′. But that is exactly the same condition that needs to hold for number system
-annotations in P &P′ to be consistent (in the sense deﬁned in the last bullet in Page 8).
-Let t = (w1,...,wm) and t′ = (w′
-1,...,w′
-n) such that wi ∈Σ∗
-Si and w′
-j ∈Σ∗
-S′
-j where |wi| and |w′
-j | are all equal and wi = w′
-j
-whenever xi = x′
-j . Let t′′ = (w′′
-1,...,w′′
-p) such that w′′
-k = wi or w′′
-k = w′
-j depending on whether x′′
-k = xi or x′′
-k = x′
-j .
+\label{sec:cross product}
+Let $M\big(Q,q_0,F,\delta,\mathbf{S_1},\ldots,\mathbf{S_m}\big)$ and
+$M'\big(Q',q'_0,F',\delta',\mathbf{S'_1},\ldots,\mathbf{S'_n}\big)$ be
+the automaton $(x_1,\ldots,x_m):P$ and $(x'_1,\ldots,x'_n):P'$
+respectively. Let us assume that if $x_i=x'_j$ then
+$\mathbf{S_i}=\mathbf{S'_j}$. Let $\{x''_1,\ldots,x''_p\}$ where $p\leq
+m+n$ be the union of $\{x_1,\ldots,x_m\}$ and $\{x'_1,\ldots,x'_n\}$
+and further assume that the $x''_i$ are appearing in lexicographic
+order. Depending on whether $x''_k=x_i$ or $x''_k=x'_j$, let
+$\mathbf{S''_k}$ denote $\mathbf{S_i}$ or $\mathbf{S'_j}$ respectively.
+Then the cross product of $M$ and $M'$ denoted by $M\times M'$ is the
+tuple $$\big(Q\times
+Q',(q_0,q'_0),\delta'',\mathbf{S''_1},\ldots,\mathbf{S''_p}\big)$$
+where the transition function is defined to be
+$$\delta''\big((q,q'),(\gamma_1,\ldots,\gamma_p)\big)=\big(\delta(q,(\alpha_1,\ldots,\alpha_m)),\delta'(q',(\beta_1,\ldots,\beta_n))\big)$$
+for $\gamma_k$ equals $\alpha_i$ or $\beta_j$ depending on whether
+$x''_k=x_i$ or $x''_k=x'_j$ respectively. Note that $M\times M'$ is not
+an automaton since a set of final states is not specified. For
+$F''\subseteq Q\times Q'$, let $(M\times M')(F)$ denote the automaton
+$\big(Q\times
+Q',(q_0,q'_0),F'',\delta'',\mathbf{S''_1},\ldots,\mathbf{S''_p}\big)$.
+
+\begin{THM}\label{thm:cross product}
+For $F'' = \big\{(q,q'):q\in F \text{ and } q'\in F'\big\}$, the
+automaton $(M\times M')(F'')$ accepts predicate $P\mathbin{\&}P'$.
+Furthermore, minimizing $(M\times M')(F'')$, we obtain automaton
+$(x''_1,\ldots,x''_p):P\mathbin{\&}P'$.
+\end{THM}
+
+\begin{proof}
+Based on the definition for cross product, for $M\times M'$ to be
+defined, the same variables in $P$ and $P'$ have to have the same
+number systems assigned in $P$ and $P'$. But that is exactly the same
+condition that needs to hold for number system annotations in
+$P\mathbin{\&}P'$ to be consistent (in the sense defined in the last
+bullet in Page \pageref{itm:number_system_declarations}).
+
+Let $t=(w_1,\ldots,w_m)$ and $t'=(w'_1,\ldots,w'_n)$ such that $w_i \in
+\Sigma_{\mathbf{S_i}}^*$ and $w'_j\in\Sigma_{\mathbf{S'_j}}^*$ where
+$|w_i|$ and $|w'_j|$ are all equal and $w_i=w'_j$ whenever $x_i=x'_j$.
+Let $t''=(w''_1,\ldots,w''_p)$ such that $w''_k=w_i$ or $w''_k=w'_j$
+depending on whether $x''_k=x_i$ or $x''_k=x'_j$.
+
 We have the following equivalent statements:
-1. (M × M′)(F ′′) accepts t′′.
-12
-2. There is a path from (q0,q′
-0) to (q,q′) ∈F ′′ in M × M′ reading t′′.
-3. There is a path from q0 to q in M reading t, and there is a path from q′
-0 to q′ in M′ reading t′.
-4. M accepts t and M′ accepts t′.
-5. P is satisﬁed by substituting xi = [wi]Si for all i, and P′ is satisﬁed by substituting x′
-j = [w′
-j ]S′
-j for all j.
-6. P &P′ is satisﬁed by substituting x′′
-k = [w′′
-k]S′′
-k.
-Obviously both the construction of cross product and minimizing automata can be carried out using algorithmic
-procedures. Therefore Theorem 6 gives us a procedure for constructing the automaton for conjunction.
-With proper deﬁnitions for F ′′, we have similar theorems for P ⊗P′ when ⊗is any other binary logical operator.
-Let us construct the automaton (a,b) : a = 1&b = 2 from (a) : a = 1 in Figure 4.1 and (b) : b = 2 in Figure 4.2.
-Figure 4.1: Automaton (a) : a = 1
-Figure 4.2: Automaton (b) : b = 2
-Recall that transitions not depicted are transitions to a dead state. The cross product operation is depicted below:
-Figure 4.3: Cross product (a) : a = 1×(b) : b = 2
-Making (1,2) a ﬁnal state, minimizing, and renaming the states, we get the automaton in Figure 4.4.
-Figure 4.4: Automaton (a,b) : a = 1&b = 2
-13
-4.2
-Quantiﬁcation
-In this section we learn how to construct an automaton (x1,...,xi−1,xi+1,...,xm) : Exi P from automaton (x1,...,xm) : P.
-Let M
-¡
-Q,q0,F,δ,S1,...,Sm
-¢
-be the automaton (x1,...,xm) : P and let P′ be the predicate Exi P. We ﬁrst construct the
-nondeterministic automaton E(M,i)
-¡
-Q,q0,F,δ′,S1,...,Si−1,Si+1,...,Sm
-¢
-from M by eliminating the i’th input (coordinate) on all transitions, i.e., letting
-δ′¡
-q,(α1,...,αi−1,αi+1,...,αm)
-¢
+\begin{enumerate}
+\item $(M\times M')(F'')$ accepts $t''$.
+\item There is a path from $(q_0,q'_0)$ to $(q,q')\in F''$ in $M\times M'$ reading $t''$.
+\item There is a path from $q_0$ to $q$ in $M$ reading $t$, and there is a path from $q'_0$ to $q'$ in $M'$ reading $t'$.
+\item $M$ accepts $t$ and $M'$ accepts $t'$.
+\item $P$ is satisfied by substituting $x_i=[w_i]_{\mathbf{S_i}}$ for all $i$, and $P'$ is satisfied by substituting $x'_j=[w'_j]_{\mathbf{S'_j}}$ for all $j$.
+\item $P\mathbin{\&}P'$ is satisfied by substituting $x''_k=[w''_k]_{\mathbf{S''_k}}$.
+\end{enumerate}
+\end{proof}
+
+Obviously both the construction of cross product and minimizing
+automata can be carried out using algorithmic procedures. Therefore
+Theorem \ref{thm:cross product} gives us a procedure for constructing
+the automaton for conjunction.
+
+With proper definitions for $F''$, we have similar theorems for
+$P\otimes P'$ when $\otimes$ is any other binary logical operator.
+
+Let us construct the automaton $(a,b):a=1\mathbin{\&}b=2$ from $(a):a=1$ in
+Figure \ref{fig:one} and $(b):b=2$ in Figure \ref{fig:two}.
+
+\begin{figure}[h]
+\centering
+\begin{minipage}[t]{.5\textwidth}
+ 	\centering
+ 	\includegraphics[scale=.5]{one}
+ 	\caption{Automaton $(a):a=1$}
+ 	\label{fig:one}
+\end{minipage}
+\begin{minipage}[t]{.5\textwidth}
+ 	\centering
+ 	\includegraphics[scale=.5]{two}
+ 	\caption{Automaton $(b):b=2$}
+ 	\label{fig:two}
+\end{minipage}
+\end{figure}
+ Recall that transitions not depicted are transitions to a dead state. The
+cross product operation is depicted below:
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[scale=.5]{cross_product}
+ 	\caption{Cross product $(a):a=1\times(b):b=2$}
+ 	\label{fig:cross_product}
+ \end{figure}
+ 
+Making $(1,2)$ a final state, minimizing, and renaming the states, we get the automaton in Figure \ref{fig:minimized}.
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[scale=.5]{minimized}
+ 	\caption{Automaton $(a,b):a=1\mathbin{\&}b=2$}
+ 	\label{fig:minimized}
+ \end{figure}
+
+
+\subsection{Quantification}\label{sec:quantification}
+In this section we learn how to construct an automaton
+$(x_1,\ldots,x_{i-1},x_{i+1},\ldots,x_m): \text{E}x_{i}\text{ }P$ from
+automaton $(x_1,\ldots,x_m): P$. Let
+$M\big(Q,q_0,F,\delta,\mathbf{S_1},\ldots,\mathbf{S_m}\big)$ be the
+automaton $(x_1,\ldots,x_m):P$ and let $P'$ be the predicate
+$\text{E}x_{i}\text{ }P$. We first construct the nondeterministic
+automaton $E(M,i)$
+$$\big(Q,q_0,F,\delta',\mathbf{S_1},\ldots,\mathbf{S_{i-1}},\mathbf{S_{i+1}},\ldots,\mathbf{S_m}\big)$$
+from $M$ by eliminating the $i$'th input (coordinate) on all
+transitions, i.e., letting
+$$\delta'\big(q,(\alpha_1,\ldots,\alpha_{i-1},\alpha_{i+1},\ldots,\alpha_m)\big)
 =
-©
-δ(q,(α1,...,αi−1,αi,αi+1,...,αm)) : for all αi ∈ΣSi
-ª
-.
-For example, letting M be the automaton (a,b) : a = 1&b = 2 depicted in Figure 4.4, the automaton E(M,2) is depicted as
-follows:
-Figure 4.5: Non-deterministic automaton E(M,2)
-By the deﬁnition of transition function of E(M,i), i.e., δ′, it is easy to see that if M accepts (w1,...,wi−1,wi,wi+1,...,wm),
-then E(M,i) accepts
-(w1,...,wi−1,wi+1,...,wm).
-However, there might be t = (w1,...,wi−1,wi+1,...,wm) where the |w j | are equal for all j̸ = i and substitutions x j = [w j ]Sj
-for all j̸ = i, satisﬁes P′ but E(M,i) does not accept t. In other words, there are cases where E(M,i) does not accept P′.
-In our example M accepts (0n1,0n−110) for all n ≥1, and as it is clear E(M,2) accepts (0n1) for all n ≥1. However E(M,2)
-does not accept (1), whereas (1) should be accepted by any automaton accepting Eb (a = 1&b = 2).
-Therefore, we have to do more work on E(M,i), to get to an automaton for P′. However as we will see in Lemma 1,
-the automaton E(M,i) might only miss an insigniﬁcant portion of accepted tuples of an automaton accepting P′. These
-insigniﬁcant tuples missed by E(M,i) are those with leading or trailing zeros. The good news is that with a little bit of
-technical work, it is possible to revive even these insigniﬁcant tuples.
-Lemma 1. Let M,P,P′, and i be as in the discussion above, and suppose t = (w1,...,wi−1,wi+1,...,wm) is some tuple
-of same length words. If P′ is satisﬁed with substitutions x j = [w j ]Sj for j̸ = i, then there exists a constant k ≥0 and
-tk = (wk,1,...,wk,i−1,wk,i+1,...,wk,m) such that for all j̸ = i we have wk,j = 0kw j or wk,j = w j 0k depending on whether Sj is
-msd or lsd, and tk is accepted by E(M,i). It is also the case that whenever tk for any k ≥0, with the appropriate substitutions,
-is satisfying P′, then t is also satisfying P′.
-Proof. Substitutions x j = [w j ]Sj for j̸ = i satisfying predicate P′ := Exi P means that there exists a natural number v, such that
-the substitutions above together with xi = v is satisfying the predicate P. By deﬁnition of number systems, there exists a word
-wi such that v = [wi]Si. Also by deﬁnition of number systems for any integer y and word w, if we have y = [w]S, then either
-y = [0kw]S for all k ≥0 or y = [w0k]S for all k ≥0 depending on whether S is msd or lsd. Therefore there exists an integer
-k such that wk,i is either 0kwi or wi0k depending on whether Sj is msd or lsd and v = [wk,i]Si and |wk,i| = |w j |+k for all
-j̸ = i. Therefore (wk,1,...,wk,i−1,wk,i,wk,i+1,...,wk,m) is accepted by M where for all j we have wk,j = 0kw j or wk,j = w j 0k
-depending on whether Sj is msd or lsd. Now by deﬁnition of E(M,i), we know that tk = (wk,1,...,wk,i−1,wk,i+1,...,wk,m) is
-accepted by E(M,i). This completes the ﬁrst part of the lemma.
-The second part follows very easily from the same properties of number systems mentioned in the proof of the ﬁrst part
-of the lemma.
-Based on Lemma 1, to get (x1,...,xi−1,xi+1,...,xm) : Exi P we just have to construct an automaton from E(M,i) such that
-whenever tk for any k ≥0 is accepted, t is also accepted. For the case where all Sj for j̸ = i are either all msd or all lsd, we can
-come up with an easy algorithm to revive tuples t from tk. In case of all msd, let I be the set of all states in E(M,i) reachable
-14
-from the initial state by reading (0,...,0)∗, or in case of all lsd, let F ′ be the set of all states reaching to a ﬁnal state by reading
-(0,...,0)∗. We can compute I or F ′ using breadth-ﬁrst search. In the case of msd the nondeterministic automaton8
-(Q,I,F,δ′,S1,...,Si−1,Si+1,...,Sn)
-and in the case of lsd the nondeterministic automaton
-(Q,q0,F ′,δ′,S1,...,Si−1,Si+1,...,Sn)
-is equivalent to (x1,...,xi−1,xi+1,...,xm) : Exi P. Determinizing and minimizing this automaton gives us (x1,...,xi−1,xi+1,...,xm) :
-Exi P.
-In Figure 4.5, the variable a is over msd_2. So the set I is {0,1}, therefore the following nondeterministic automaton
-accepts Eb a = 1&b = 2:
-Figure 4.6: Non-deterministic automaton accepting Eb a = 1&b = 2
-Now determinizing and minimizing this automaton gives us (a) : Eb a = 1&b = 2:
-Figure 4.7: (a) : Eb a = 1&b = 2
-Currently if for (x1,...,xn) : P it is not the case that for all j̸ = i number systems Sj are all msd or all lsd, then Walnut only
-constructs E(M,i) for Exi P, which is not theoretically accurate. So the user has to be very cautious when quantifying
-predicates over mixed msd and lsd number systems, or in cases where the quantiﬁed automaton is non-arithmetic. For
-a deﬁnition of the latter see Section 5.2.
-To obtain an automaton for AxiP, note its equivalence to ∼(Exi ∼(P)), where ∼is the logical complement (negation).
-See the next section to learn about the complement operator.
-4.3
+\big\{\delta(q,(\alpha_1,\ldots,\alpha_{i-1},\alpha_i,\alpha_{i+1},\ldots,\alpha_m)):\text{
+for all } \alpha_i \in \Sigma_{S_{i}} \big\}.$$
+
+For example, letting $M$ be the automaton $(a,b):a=1\mathbin{\&}b=2$ depicted in Figure \ref{fig:minimized}, the automaton $E(M,2)$ is depicted as follows: 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.5]{quantified}
+	\caption{Non-deterministic automaton $E(M,2)$}
+	\label{fig:quantified}
+\end{figure}
+
+By the definition of transition function of $E(M,i)$, i.e., $\delta'$,
+it is easy to see that if $M$ accepts
+\allowbreak$(w_1,\ldots,w_{i-1},w_i,w_{i+1},\ldots,w_m)$, then $E(M,i)$
+accepts $$(w_1,\ldots,w_{i-1},w_{i+1},\ldots,w_m).$$ However, there
+might be $t=(w_1,\ldots,w_{i-1},w_{i+1},\ldots,w_m)$ where the $|w_j|$
+are equal for all $j\neq i$ and substitutions $x_j =
+[w_j]_{\mathbf{S_j}}$ for all $j\neq i$, satisfies $P'$ but $E(M,i)$
+does not accept $t$. In other words, there are cases where $E(M,i)$
+does not accept $P'$.
+
+In our example $M$ accepts $(0^n1,0^{n-1}10)$ for all $n\geq 1$, and as
+it is clear $E(M,2)$ accepts $(0^n1)$ for all $n\geq 1$. However
+$E(M,2)$ does not accept $(1)$, whereas $(1)$ should be accepted by any
+automaton accepting $\text{E}b\text{ }(a=1\mathbin{\&}b=2)$.
+
+Therefore, we have to do more work on $E(M,i)$, to get to an automaton
+for $P'$. However as we will see in Lemma \ref{lemma:leading zeros
+problem}, the automaton $E(M,i)$ might only miss an insignificant
+portion of accepted tuples of an automaton accepting $P'$. These
+insignificant tuples missed by $E(M,i)$ are those with leading or
+trailing zeros. The good news is that with a little bit of technical
+work, it is possible to revive even these insignificant tuples.
+
+\begin{LMA}\label{lemma:leading zeros problem} 
+Let $M$,$P$,$P'$, and $i$ be as in the discussion above, and suppose
+$t=(w_1,\ldots,w_{i-1},w_{i+1},\ldots,w_m)$ is some tuple of same
+length words. If $P'$ is satisfied with substitutions
+$x_j=[w_j]_{\mathbf{S_j}}$ for $j\neq i$, then there exists a constant
+$k\geq 0$ and\linebreak
+$t_k=(w_{k,1},\ldots,w_{k,i-1},w_{k,i+1},\ldots,w_{k,m})$ such that for
+all $j\neq i$ we have $w_{k,j}=0^kw_j$ or $w_{k,j}=w_j0^k$ depending on
+whether $\mathbf{S_j}$ is $\MSD$ or $\LSD$, and $t_k$ is accepted by
+$E(M,i)$. It is also the case that whenever $t_k$ for any $k\geq 0$,
+with the appropriate substitutions, is satisfying $P'$, then $t$ is
+also satisfying $P'$.
+\end{LMA}
+
+\begin{proof}
+Substitutions $x_j=[w_j]_{\mathbf{S_j}}$ for $j\neq i$ satisfying
+predicate $P'\coloneqq\text{E}x_i\text{ }P$ means that there exists a
+natural number $v$, such that the substitutions above together with
+$x_i=v$ is satisfying the predicate $P$.  By definition of number
+systems, there exists a word $w_i$ such that $v=[w_i]_{\mathbf{S_i}}$.
+Also by definition of number systems for any integer $y$ and word $w$,
+if we have $y=[w]_{\mathbf{S}}$, then either $y=[0^kw]_{\mathbf{S}}$
+for all $k\geq 0$ or $y=[w0^k]_{\mathbf{S}}$ for all $k\geq 0$
+depending on whether $\mathbf{S}$ is $\MSD$ or $\LSD$.  Therefore there
+exists an integer $k$ such that $w_{k,i}$ is either $0^kw_i$ or
+$w_i0^k$ depending on whether $\mathbf{S_j}$ is $\MSD$ or $\LSD$ and
+$v=[w_{k,i}]_{\mathbf{S_i}}$ and $|w_{k,i}|=|w_j|+k$ for all $j\neq i$.
+Therefore $(w_{k,1},\ldots,w_{k,i-1},w_{k,i},w_{k,i+1},\ldots,w_{k,m})$
+is accepted by $M$ where for all $j$ we have $w_{k,j}=0^kw_j$ or
+$w_{k,j}=w_j0^k$ depending on whether $\mathbf{S_j}$ is $\MSD$ or
+$\LSD$. Now by definition of $E(M,i)$, we know that
+$t_k=(w_{k,1},\ldots,w_{k,i-1},w_{k,i+1},\ldots,w_{k,m})$ is accepted
+by $E(M,i)$. This completes the first part of the lemma.
+
+The second part follows very easily from the same properties of number
+systems mentioned in the proof of the first part of the lemma.
+\end{proof}
+
+Based on Lemma \ref{lemma:leading zeros problem}, to get
+$(x_1,\ldots,x_{i-1},x_{i+1},\ldots,x_m): \text{E}x_{i}\text{ }P$ we
+just have to construct an automaton from $E(M,i)$ such that whenever
+$t_k$ for any $k\geq 0$ is accepted, $t$ is also accepted. For the case
+where all $\mathbf{S_j}$ for $j\neq i$ are either all $\MSD$ or all
+$\LSD$, we can come up with an easy algorithm to revive tuples $t$ from
+$t_k$. In case of all $\MSD$, let $I$ be the set of all states in
+$E(M,i)$ reachable from the initial state by reading $(0,\ldots,0)^*$,
+or in case of all $\LSD$, let $F'$ be the set of all states reaching to
+a final state by reading $(0,\ldots,0)^*$.  We can compute $I$ or $F'$
+using breadth-first search. In the case of $\MSD$ the nondeterministic
+automaton\footnote{This is an automaton with multiple initial states.
+One can show that for every nondeterministic automaton with multiple
+initial states, there is an equivalent automaton with only one initial
+state.}
+ $$(Q,I,F,\delta',\mathbf{S_1},\ldots,\mathbf{S_{i-1}},\mathbf{S_{i+1}},\ldots,\mathbf{S_n})$$
+and in the case of $\LSD$ the nondeterministic automaton
+$$(Q,q_0,F',\delta',\mathbf{S_1},\ldots,\mathbf{S_{i-1}},\mathbf{S_{i+1}},\ldots,\mathbf{S_n})$$
+is equivalent to $(x_1,\ldots,x_{i-1},x_{i+1},\ldots,x_m):
+\text{E}x_{i}\text{ }P$. Determinizing and minimizing this automaton
+gives us $(x_1,\ldots,x_{i-1},x_{i+1},\ldots,x_m): \text{E}x_{i}\text{
+}P$.
+
+In Figure \ref{fig:quantified}, the variable $a$ is over $\MSD[2]$. So
+the set $I$ is $\{0,1\}$, therefore the following nondeterministic
+automaton accepts $\text{E}b\text{ } a=1\mathbin{\&}b=2$:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.5]{quantified2}
+\caption{Non-deterministic automaton accepting $\text{E}b\text{ } a=1\mathbin{\&}b=2$}
+\label{fig:quantified2}
+\end{figure}
+
+Now determinizing and minimizing this automaton gives us $(a):\text{E}b\text{ } a=1\mathbin{\&}b=2$:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.5]{quantified3}
+	\caption{$(a):\text{E}b\text{ } a=1\mathbin{\&}b=2$}
+	\label{fig:quantified3}
+\end{figure}
+
+\begin{mdframed}[style=MyFrame]
+Currently if for $(x_1,\ldots,x_n): P$ it is not the case that for all
+$j\neq i$ number systems $\mathbf{S_j}$ are all $\MSD$ or all $\LSD$,
+then Walnut only constructs $E(M,i)$ for $\text{E}x_{i}\text{ }P$,
+which is not theoretically accurate. So the user has to be very
+cautious when quantifying predicates over mixed $\MSD$ and $\LSD$
+number systems, or in cases where the quantified automaton is
+non-arithmetic. For a definition of the latter see Section
+\ref{sec:non-arithmetic automata}.
+\end{mdframed}
+
+To obtain an automaton for $Ax_i P$, note its equivalence to ${\sim
+(\text{E}x_i\text{ }{\sim (P)})}$, where $\sim$ is the logical
+complement (negation). See the next section to learn about the
+complement operator.

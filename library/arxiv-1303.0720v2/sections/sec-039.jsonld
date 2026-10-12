@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1303.0720v2/sections/sec-039",
   "@type": [
     "doco:Section"
   ],
-  "title": "Analysis of the second term in the pointwise estimate I. We proceed to estimate the",
+  "title": "Digression on Hörmander-type estimates and an obstacle problem",
   "pageStart": 35,
-  "pageEnd": 35,
+  "pageEnd": 37,
   "contains": [
     "library/arxiv-1303.0720v2/blocks/prose-sec-039"
   ],
-  "derivedFrom": "library/arxiv-1303.0720v2/manifest",
-  "sourceDocument": "library/arxiv-1303.0720v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.0720v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.0720v2/manifest.jsonld",
   "provenance": "ingested"
 }

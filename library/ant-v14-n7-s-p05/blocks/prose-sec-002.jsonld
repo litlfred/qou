@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s-p05/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s-p05/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "TX/B(p∗",
-  "pageStart": 10,
-  "pageEnd": 10,
-  "text": "../sections/sec-002-1-txbp.md",
-  "derivedFrom": "library/ant-v14-n7-s-p05/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p05/manifest",
+  "title": "Duality and Euler characteristics",
+  "pageStart": 4,
+  "pageEnd": 13,
+  "text": "../sections/sec-002-2-duality-and-euler-characteristics.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p05/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p05/manifest.jsonld",
   "provenance": "ingested"
 }

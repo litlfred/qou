@@ -6,8 +6,9 @@ type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
+    - 8f-colour
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-10-04T15:46:38Z
+updated_at: 2026-10-10T13:49:31Z
 parent: qou-8lxd
 ---
 
@@ -299,3 +300,41 @@ Was in-progress with no bean update since 2026-08-07 and no main commit naming i
 
 
 Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: routes to a 3-dimensional fibre / colour SU(3) — assessed and roasted
+
+
+---
+
+## 🛑 STALE CLAIM — `prop:color-su3-from-g2` does NOT have an empty `uses[]` (verified 2026-10-10)
+
+This bean asserts the block carries no dependency edge. Measured on this branch at
+`folio/.../braids-and-knots/color-su3-from-g2.ts:23`:
+
+    uses: ["def:octonion-algebra"],
+
+and the three comment lines immediately above it record the discharge explicitly:
+
+    // def:octonion-algebra was authored 2026-08-29 (beans qou-7arp / qou-8fl1);
+    // the NOTE that used to sit here, recording its absence, is discharged.
+    // It sits immediately above this block in sec:color-algebra, so the edge
+    // reads backward.
+
+So the gap this bean names was **closed on 2026-08-29**. The same stale claim is
+carried by `qou-8p1x`, `qou-8p1e` and `qou-8p1h`, i.e. three beans repeating one
+fact that a fourth bean (`qou-8fl1`) had already fixed — the cross-bean staleness
+pattern this front's epic (`qou-8lxd`) records: **read the beans a bean cites AND
+the beans that cite it before working it.**
+
+**A residual, and it is a different defect:** that comment says the edge *"reads
+backward"* — `def:octonion-algebra` sits immediately above the block it is cited
+from in `sec:color-algebra`. That is a forward-reference/ordering question for the
+detangler arc, not an absent-edge question, and it is NOT what this bean claims.
+Recorded, not filed: it changes a block's position, so it is an owner call.
+
+Also verified: `qou-8p1x`'s route sub-beans **`qou-8p1i` and `qou-8p1j` are both
+`scrapped`**, so any item here gated on either is gated on an abandoned route.
+`qou-8p1h` in particular is blocked on nothing live.
+
+Provenance: cross-session read-only pre-read of the 15 open `8f-colour` beans
+(`/mnt/project-files/eightfold/8f-colour-preread.md`), confirmed on this branch at
+`37bdbeef6b3` rather than taken on trust — the pre-read states its own path checks
+were run partly against `main` at a different commit.

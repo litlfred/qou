@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0903.2472v1/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0903.2472v1/blocks/prose-sec-002",
   "kind": "prose",
-  "title": "Centre for Mathematical Sciences, Wilberforce Road,",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-002-3-centre-for-mathematical-sciences-wilberforce-r.md",
-  "derivedFrom": "library/arxiv-0903.2472v1/manifest",
-  "sourceDocument": "library/arxiv-0903.2472v1/manifest",
+  "title": "Classical and quantum symmetries",
+  "pageStart": 23,
+  "pageEnd": 25,
+  "text": "../sections/sec-002-23-classical-and-quantum-symmetries.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.2472v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.2472v1/manifest.jsonld",
   "provenance": "ingested"
 }

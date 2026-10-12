@@ -6,7 +6,11 @@
   "sha256": "521911fc8724f3c292c3005d2e2404f6297bda393563c94da0ca1569be05cb6e",
   "bytes": 600856,
   "pages": 37,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -178,6 +182,80 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 8,
-  "chars_total": 70975
+  "chars_total": 70975,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "input.tex",
+   "tex_sections": 31,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-invariants",
+     "title": "Invariants",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-dirichlet-eigenvalues",
+     "title": "Dirichlet eigenvalues",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-finite-dimensional-comparisons",
+     "title": "Finite dimensional comparisons",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-6-infinite-dimensional-comparisons",
+     "title": "Infinite dimensional comparisons",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-7-boundary-concentration-phenomena",
+     "title": "Boundary concentration phenomena",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

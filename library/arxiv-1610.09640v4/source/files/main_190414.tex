@@ -1,0 +1,381 @@
+   
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  
+%
+%   Amnon Yekutieli
+%
+%  written in AMSLaTex
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  journal typesetter:
+%   * command \linebreak used
+%   * please respect fonts and styles!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+% ** class etc for draft **
+
+\documentclass[10pt, a4paper]{amsart}
+% \documentclass[10pt, draft, a4paper]{amsart}
+\pdfoutput=1 
+% \includeonly{block6_190413}
+\newcommand{\mydate}{14 Apr 2019}
+% labels today from 4660
+\makeindex
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\newcommand{\thisfile}{main\_180925}
+\chead{\small Derived Categories \, | \, Amnon Yekutieli \, | \, \mydate}
+% \, | \, {\footnotesize file: \thisfile}}
+\lhead{}
+\rhead{}
+% \cfoot{\thepage \, | \, {\footnotesize file: \thisfile} }
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% change ``enumerate'' numbering format
+\renewcommand{\theenumi}{{\rm (\arabic{enumi})}}
+\renewcommand{\labelenumi}{\theenumi}
+
+% package enumitem to control list spacing 
+\usepackage{enumitem}
+\setlist{noitemsep}
+\setlist[itemize]{topsep=0ex}
+\setlist[enumerate]{topsep=0ex}
+
+
+\title{Derived Categories} 
+\dedicatory{Dedicated to Alexander Grothendieck, in Memoriam}
+%\dedicatory{ \bf preliminary - not for distribution!}
+
+\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[all, pdf]{xy}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+\usepackage{comment}
+\usepackage{hyperref}
+\hypersetup{colorlinks=false}
+% ** end class etc for draft **
+
+
+
+
+% ** top matter **
+\author{Amnon Yekutieli}
+
+\address{Department of  Mathematics
+Ben Gurion University, Be'er Sheva 84105, Israel. \newline  \indent 
+\textup{\textit{Email}: 
+\href{mailto:amyekut@math.bgu.ac.il}{\nolinkurl{amyekut@math.bgu.ac.il}}, 
+\textit{Web}: 
+\url{http://www.math.bgu.ac.il/~amyekut}.}}
+
+
+% % page dimensions
+% \setlength{\textwidth}{150mm} \addtolength{\oddsidemargin}{-13mm}
+% \addtolength{\evensidemargin}{-13mm}
+% \setlength{\textheight}{220mm} \addtolength{\topmargin}{-5mm}
+\addtolength{\footskip}{2em}
+\addtolength{\headheight}{1em}
+
+
+%\subjclass{}
+% \thanks{{\em Mathematics Subject Classification} 2000.
+% Primary: 18G50; Secondary: 18G30, 20L05.}
+% % 53D55 Deformation quantization, star products
+% % 17B40 Automorphisms, derivations, other operators (of Lie algebras)
+% % 13D10 Deformations and infinitesimal methods (rings)
+% % 14B10 Infinitesimal methods (alg geom)
+% % 16S80 Deformations of rings 
+% % 18D05 Double categories, 2-categories, bicategories and generalizations
+% \keywords{Cosimplicial crossed groupoids, descent, gerbes.}
+% \thanks{This research was supported by the Israel Science Foundation.}
+
+
+%  ** new environments **
+\newtheorem{thm}[equation]{Theorem}
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{prop}[equation]{Proposition}
+\newtheorem{lem}[equation]{Lemma}
+\theoremstyle{definition}
+\newtheorem{dfn}[equation]{Definition}
+\newtheorem{rem}[equation]{Remark}
+\newtheorem{exa}[equation]{Example}
+\newtheorem{dig}[equation]{Digression}
+\newtheorem{exer}[equation]{Exercise}
+\newtheorem{que}[equation]{Question}
+\newtheorem{hyp}[equation]{Hypothesis}
+\newtheorem{conj}[equation]{Conjecture}
+\newtheorem{warning}[equation]{Warning}
+\newtheorem{problem}[equation]{Problem}
+\newtheorem{statement}[equation]{Statement}
+\newtheorem{construction}[equation]{Construction}
+\newtheorem{setup}[equation]{Setup}
+\newtheorem{condition}[equation]{Condition}
+\newtheorem{notation}[equation]{Notation}
+\newtheorem{conv}[equation]{Convention}
+\numberwithin{equation}{subsection}
+\setcounter{tocdepth}{2}
+
+
+%  ** new commands **
+%% 20180913 - commented out extra commands 
+\newcommand{\iso}{\xrightarrow{\simeq}}
+\newcommand{\inj}{\rightarrowtail}  %{\hookrightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\xar}{\xrightarrow}
+\newcommand{\xlar}{\xleftarrow}
+\newcommand{\lar}{\leftarrow}
+\newcommand{\opn}{\operatorname}
+\newcommand{\bdot}{\bsym{\cdot}}
+\newcommand{\ul}{\underline}
+\newcommand{\ol}{\overline}
+%\newcommand{\blnk}[1]{\mbox{\hspace{#1}}}
+\newcommand{\rmitem}[1]{\item[\text{\textup{(#1)}}]}
+\newcommand{\mfrak}[1]{\mathfrak{#1}}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+%\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\msf}[1]{\mathsf{#1}}
+\newcommand{\mbf}[1]{\mathbf{#1}}
+\newcommand{\mrm}[1]{\mathrm{#1}}
+\newcommand{\mbb}[1]{\mathbb{#1}}
+% \newcommand{\mit}[1]{\mathit{#1}}
+\newcommand{\gfrac}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}}
+\newcommand{\smfrac}[2]{\textstyle \frac{#1}{#2}}
+\newcommand{\tup}[1]{\textup{#1}}
+\newcommand{\bsym}[1]{\boldsymbol{#1}}
+\newcommand{\boplus}{\bigoplus\nolimits}
+\newcommand{\botimes}{\bigotimes\nolimits}
+\newcommand{\bosum}{\sum\nolimits}
+\newcommand{\boprod}{\prod\nolimits}
+\newcommand{\ot}{\otimes}
+\newcommand{\hatotimes}[1]{\, \what{{\otimes}}_{#1} \,}
+\newcommand{\hot}{\hatotimes{}}
+\newcommand{\til}[1]{\tilde{#1}}
+\newcommand{\wtil}[1]{\widetilde{#1}}
+\newcommand{\what}[1]{\widehat{#1}}
+\newcommand{\bra}[1]{\langle #1 \rangle}
+\renewcommand{\k}{\Bbbk}
+\newcommand{\K}{\mbb{K}}
+\newcommand{\R}{\mbb{R}}
+\newcommand{\N}{\mbb{N}}
+\newcommand{\Z}{\mbb{Z}}
+\newcommand{\Q}{\mbb{Q}}
+\newcommand{\C}{\mbb{C}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\OX}{\mcal{O}_X}
+\renewcommand{\AA}{\mcal{A}}
+\newcommand{\BB}{\mcal{B}}
+\newcommand{\CC}{\mcal{C}}
+\newcommand{\LL}{\mcal{L}}
+\newcommand{\MM}{\mcal{M}}
+\newcommand{\NN}{\mcal{N}}
+\newcommand{\KK}{\mcal{K}}
+\newcommand{\PP}{\mcal{P}}
+\newcommand{\QQ}{\mcal{Q}}
+\newcommand{\RR}{\mcal{R}}
+\newcommand{\II}{\mcal{I}}
+\newcommand{\JJ}{\mcal{J}}
+\newcommand{\g}{\mfrak{g}}
+\newcommand{\m}{\mfrak{m}}
+\newcommand{\h}{\mfrak{h}}
+\newcommand{\n}{\mfrak{n}}
+\renewcommand{\a}{\mfrak{a}}
+\renewcommand{\b}{\mfrak{b}}
+\renewcommand{\c}{\mfrak{c}}
+\newcommand{\p}{\mfrak{p}}
+\newcommand{\q}{\mfrak{q}}
+\renewcommand{\r}{\mfrak{r}}
+\newcommand{\kk}{\bsym{k}}
+\newcommand{\om}{\omega}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta} 
+\newcommand{\ga}{\gamma}
+\newcommand{\la}{\lambda}
+\newcommand{\de}{\delta}
+\newcommand{\ze}{\zeta}
+\newcommand{\ep}{\epsilon}
+\renewcommand{\th}{\theta}
+\newcommand{\si}{\sigma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\Om}{\Omega}
+\newcommand{\De}{\Delta}
+\newcommand{\bwedge}{{\textstyle \bigwedge}}
+\newcommand{\sprod}{{\textstyle \prod}}
+\renewcommand{\d}{\mrm{d}}
+\newcommand{\pa}{\partial}
+% \newcommand{\cd}{\,{\cdot}\,}
+\newcommand{\cd}{\mspace{1.5mu}{\cdot}\mspace{1.5mu}} 
+% next lines define fancy "comment"
+\newcommand{\cmnt}[1]{\mbox{} \newline \noindent
+\framebox{\begin{minipage}{80ex}
+{\bf comment}: \ #1 \end{minipage}} \newline}
+% next lines define "edit note"
+\newcommand{\edit}[1]{\mbox{} \\[0.5em] \noindent
+\framebox{\begin{minipage}{80ex}
+{\bf edit}: \ #1 \end{minipage}} \\[0.5em] }
+% next lines define "later note" - old
+\newcommand{\later}[1]{\mbox{} \newline \noindent
+\framebox{\begin{minipage}{80ex}
+{\bf Later.} \ #1 \end{minipage}} \newline}
+% next lines define "later note" - new
+\newcommand{\laternote}[1]{\mbox{} \\ \noindent {[\sf Later:  #1}] \\}
+% % next lines define "hidden note", points to a hidden note intex file - new
+% \newcommand{\hnote}{{\noindent [[hnote]]}}
+% the next command does a small matrix with square brackets
+\newcommand{\sbmat}[1]{\left[ \begin{smallmatrix} #1
+\end{smallmatrix} \right]}
+% the next command does a matrix with square brackets
+\newcommand{\bmat}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\twoto}{\Rightarrow}
+\newcommand{\twoiso}{\stackrel{\simeq\ }{\Longrightarrow}}
+\newcommand{\xtwoto}[1]{\stackrel{#1 \ }{\Longrightarrow}}
+%\newcommand{\twoiso}{\xRightarrow{ \simeq\ }} 
+\newcommand{\twocong}{\stackrel{\simeq}{\Longleftrightarrow}}
+\newcommand{\gerbe}[1]{\bsym{\mcal{#1}}}
+\newcommand{\twocat}[1]{\bsym{\cat{#1}}}
+\newcommand{\twofun}[1]{\bsym{#1}}
+\newcommand{\cat}[1]{\opn{\mathsf{#1}}}
+\newcommand{\catt}[1]{\mrm{\mathsf{#1}}}
+\newcommand{\dcat}[1]{\boldsymbol{\mathsf{#1}}}
+\newcommand{\bcat}[1]{\operatorname{\boldsymbol{\mathsf{#1}}}}
+% \newcommand{\gerbe}[1]{\bsym{\mcal{#1}}}
+% \newcommand{\twocat}[1]{\operatorname{\bsym{\cat{#1}}}}
+% \newcommand{\twofun}[1]{\operatorname{\bsym{#1}}}
+\newcommand{\sub}{\subseteq}
+\newcommand{\subneq}{\varsubsetneq}
+\newcommand{\Hom}{\mcal{H}om}
+\newcommand{\End}{\mcal{E}nd}
+% \newcommand{\DR}{\mrm{R}}
+% \newcommand{\DL}{\mrm{L}}
+\newcommand{\lb}{\linebreak}
+\newcommand{\nl}{\newline}
+% \newcommand{\crvar}{\curvearrowright}
+% \newcommand{\centover}{ /_{\! \mrm{c}}\,}
+\newcommand{\centover}{/_{\mspace{-2mu} \mrm{c}} \mspace{2mu}}
+\newcommand{\cattover}[4]{\catt{#1}_{\mrm #2} /_{\! \mrm{#3}}\, #4}
+% \newcommand{\feftover}{/_{\! \mrm{feft}}\,}
+\newcommand{\feftover}{/_{\mspace{-2mu} \mrm{feft}} \mspace{2mu}}
+% \newcommand{\eftover}{/_{\! \mrm{eft}}\,}
+\newcommand{\eftover}{/_{\mspace{-2mu} \mrm{eft}} \mspace{2mu}}  
+\newcommand{\ringcfeft}[1]{\catt{Rng}_{\mrm{c}} \feftover #1}
+\newcommand{\ringceft}[1]{\catt{Rng}_{\mrm{c}} \eftover #1}
+\newcommand{\fcentover}{/_{\! \mrm{fc}}\,}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\ttev}{\opn{ev}}
+\newcommand{\tev}{\opn{ev}}
+
+% hidden note
+% \newcommand{\hnote}[1]{[[hnote #1]]}
+\newcommand{\hnote}[1]{}
+\newcommand{\lms}{}
+
+\newcommand{\mysection}{\section}
+\newcommand{\mysubsection}{\subsection}
+\newcommand{\indash}{--}
+
+\renewcommand{\thefootnote}{} 
+\newcommand{\AYcopyright}{
+\footnote[0]{This material will be published by Cambridge University Press
+as {\em Derived Categories} by Amnon Yekutieli. This prepublication version
+is free to view and download for personal use only. Not for redistribution,
+resale or use in derivative works. \textcopyright Amnon Yekutieli, 2019.}}
+
+
+% ** the document **
+
+\begin{document}
+
+\begin{abstract}
+This is the fourth (and last) prepublication version of a book on {\em derived 
+categories}, that will be published by Cambridge University Press. 
+The purpose of the book is to provide solid foundations for the theory of 
+derived categories, and to present several applications of this theory 
+in {\em commutative and noncommutative algebra}. The emphasis is on 
+constructions and examples, rather than on axiomatics.  
+ 
+Here is a brief description of the book. After a review of standard facts on 
+abelian categories, we study {\em differential graded algebra} in depth 
+(including DG rings, DG modules, DG categories and DG functors). 
+
+We then move to {\em triangulated categories}  
+and {\em triangulated functors} between them, and explain how they arise from 
+the DG background. Specifically, we talk about the homotopy category 
+$\dcat{K}(A, \cat{M})$ of DG $A$-modules in $\cat{M}$, where $A$ is a DG 
+ring and $\cat{M}$ is an abelian category. 
+The {\em derived category} $\dcat{D}(A, \cat{M})$ 
+is the localization of $\dcat{K}(A, \cat{M})$ with respect to the 
+quasi-isomorphisms. We define the left and right {\em derived functors} of a 
+triangulated functor, and prove their uniqueness. Existence of derived 
+functors relies on having enough {\em K-injective}, {\em 
+K-projective} or {\em K-flat} DG modules, as the case may be. 
+We give constructions of resolutions by such DG modules in 
+several important algebraic situations. 
+
+There is a detailed study of the derived Hom and tensor bifunctors, and the 
+related adjunction formulas. We talk about cohomological dimensions of 
+functors and how they are used. 
+
+The last sections of the book are more specialized. 
+There is a section on {\em dualizing and residue complexes} over commutative 
+noetherian rings, as defined by Grothendieck. We introduce {\em Van den Bergh 
+rigidity} in this context. The algebro-geometric applications of commutative 
+rigid dualizing complexes are outlined. 
+
+A section is devoted to {\em perfect DG modules} and {\em tilting DG bimodules} 
+over NC (noncommutative) DG rings. This includes theorems on {\em derived 
+Morita theory} and on the structure of the {\em NC derived Picard group}. 
+ 
+Three sections are on {\em NC connected graded rings}. In the first of them we 
+give some basic definitions and results on {\em algebraically graded rings}, 
+including {\em Artin-Schelter regular rings}. The second section is on {\em 
+derived torsion} for NC connected graded rings, it relation to 
+the {\em $\chi$ condition} of Artin-Zhang, and the {\em NC MGM Equivalence}.
+In the third section we introduce {\em balanced dualizing complexes}, and we 
+prove their uniqueness, existence and trace functoriality.  
+% 
+The final section of the book is on {\em NC rigid dualizing complexes}, 
+following Van den Bergh. We prove the uniqueness and existence of 
+these complexes, give a few examples, and discuss their relation to {\em 
+Calabi-Yau rings}. 
+
+Feedback from readers (corrections and suggestions) is most welcome. 
+\end{abstract}
+
+\AYcopyright
+
+\maketitle
+
+\thispagestyle{fancy} 
+
+
+\cleardoublepage
+\tableofcontents
+
+
+\include{block0_190413}
+
+\include{block1_190413}
+
+\include{block2_190413}  
+
+\include{block3_190413}
+
+\include{block4_190413}
+
+\include{block5_190413} 
+
+\include{block6_190413}
+
+\include{block7_190413}
+
+\printindex
+
+\end{document}

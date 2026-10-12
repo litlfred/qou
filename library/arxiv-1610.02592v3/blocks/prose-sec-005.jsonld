@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/blocks/prose-sec-005",
+  "kind": "prose",
+  "title": "Group actions",
+  "pageStart": 40,
+  "pageEnd": 42,
+  "text": "../sections/sec-005-15-group-actions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-ph-0105039v1/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "Quantum Dilogarithm Function and the R Operator",
-  "pageStart": 5,
-  "pageEnd": 8,
+  "title": "Asymptotic Behavior and 3-dimensional Picture",
+  "pageStart": 11,
+  "pageEnd": 14,
   "contains": [
     "library/arxiv-math-ph-0105039v1/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/arxiv-math-ph-0105039v1/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0105039v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0105039v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0105039v1/manifest.jsonld",
   "provenance": "ingested"
 }

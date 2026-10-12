@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ds15v1-2008/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ds15v1-2008/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Bailey Pairs and Bailey’s lemma",
-  "pageStart": 3,
+  "title": "Bailey’s transform. If",
+  "pageStart": 4,
   "pageEnd": 7,
-  "text": "../sections/sec-003-12-bailey-pairs-and-baileys-lemma.md",
-  "derivedFrom": "library/ds15v1-2008/manifest",
-  "sourceDocument": "library/ds15v1-2008/manifest",
+  "text": "../sections/sec-003-baileys-transform-if.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ds15v1-2008/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ds15v1-2008/manifest.jsonld",
   "provenance": "ingested"
 }

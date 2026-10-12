@@ -8,171 +8,315 @@ pages: 23-26
 source_pdf: 1412.4229v4.pdf
 source_sha256: 248d6a1e28a76a94
 doc_brief: "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — Let A → B be a homomorphism of commutative rings."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-In this section we introduce the concept of homotopy between DG ring homo-
-morphisms. Many of the ideas in this section were communicated to us privately
-by B. Keller (but of course the responsibility for correctness is ours).
-Deﬁnition 4.1.Suppose u0,u 1 :A→B are homomorphisms of DG rings.
-(1) An additive homomorphismγ: A→B of degree−1 is called a u0-u1-
-derivation if it satisﬁes this twisted graded Leibniz formula
-γ(a0·a1) =γ(a0)·u1(a1) + (−1)k0·u0(a0)·γ(a1)
-for allai∈Aki.
-(2) A DG ring homotopyγ:u0⇒u1 is u0-u1-derivationγ:A→B of degree
-−1, satisfying the homotopy formula
-dB◦γ+γ◦dA =u1−u0.
-Here are homotopy results, that are only valid for noncommutative semi-free
-DG rings (Deﬁnition 3.11(2)). Recall the notions of commutative DG ring, central
-homomorphism, and the categoryDGR≤0/ceA, from Deﬁnitions 1.6 and 3.3.
-Lemma 4.2. Let A be a commutative DG ring, and let w0,w 1 : ˜B′→˜B be
-homomorphisms inDGR≤0/ceA. Assume that ˜B′is noncommutative semi-free over
-A, with set of noncommutative semi-free ring generatorsX. Let γ: X→˜B be a
-degree−1 function.
-24 AMNON YEKUTIELI
-(1) There is a uniqueA-linearw0-w1-derivation γ: ˜B′→˜B of degree−1 that
-extends γ:X→˜B.
-(2) The homomorphismγ: ˜B′→˜B is a DG ring homotopyw0⇒w1 iﬀ
-(d◦γ+γ◦d)(x) = (w1−w0)(x)
-for allx∈X.
-Proof. (1) Deﬁne an additive homomorphismγ: Z⟨X⟩→˜B of degree−1 by letting
-γ(x1···xm) :=
-m∑
-i=1
-(−1)k1+···+ki−1·w0(x1)···w0(xi−1)·γ(xi)·w1(xi+1)···w1(xm)
-for elementsxi∈Xki. (Here is where we need˜B′to be noncommutative semi-free –
-this won’t work forZ[X] unlessw0 =w1.) Then extendγ A-linearly to all elements
-of ˜B′, using the isomorphism˜B′♮∼=A♮⊗Z Z⟨X⟩.
-(2) An easy calculation, using induction onm, shows that
-(d◦γ+γ◦d)(a·x1···xm) = (w1−w0)(a·x1···xm)
-for alla∈A and xi∈X. □
-Theorem 4.3.LetA be a commutative DG ring, and letu :A→B be a central ho-
-momorphism in DGR≤0. Suppose we are given two factorizationsA
-˜u
-− →˜B
-v
-− →B and
+\label{sec:homotopies-rings}
+
+In this section we introduce the concept of homotopy between DG ring 
+homomorphisms. Many of the ideas in this section were  communicated to us 
+privately by B. Keller (but of course the responsibility for correctness is 
+ours). 
+
+\begin{dfn} \label{dfn:70}
+Suppose $u_0, u_1 : A \to B$ are homomorphisms of DG rings.  
+\begin{enumerate}
+\item An additive homomorphism $\ga : A \to B$ of degree $-1$ is called a {\em 
+$u_0$-$u_1$-derivation} if it satisfies this twisted graded Leibniz formula
+\[ \ga(a_0 \cd a_1) = \ga(a_0) \cd u_1(a_1) 
++ (-1)^{k_0} \cd u_0(a_0) \cd \ga(a_1) \]
+for all $a_i \in A^{k_i}$.
+
+\item A {\em DG ring homotopy} $\ga : u_0 \twoto u_1$ is 
+$u_0$-$u_1$-derivation $\ga : A \to B$ of degree $-1$, satisfying the homotopy 
+formula
+\[ \d_B \circ \ga + \ga \circ \d_A = u_1 - u_0 . \]
+\end{enumerate}
+\end{dfn}
+
+Here are homotopy results, that are only valid for noncommutative semi-free DG 
+rings (Definition \ref{dfn:60}(2)). 
+Recall the notions of commutative DG ring, central homomorphism, 
+and the category $\cat{DGR}^{\leq 0} \centover A$, from 
+Definitions \ref{dfn:750} and \ref{dfn:876}. 
+
+\begin{lem} \label{lem:300}
+Let $A$ be a commutative DG ring, and let
+$w_0, w_1 : \til{B}' \to \til{B}$ be homomorphisms in 
+$\cat{DGR}^{\leq 0} \centover A$. Assume that $\til{B}'$ 
+is noncommutative semi-free over $A$, with set of noncommutative semi-free ring 
+generators $X$. Let $\ga : X \to \til{B}$ be a degree $-1$ function.
+\begin{enumerate}
+\item There is a unique $A$-linear  $w_0$-$w_1$-derivation 
+$\ga : \til{B}' \to \til{B}$ of degree $-1$ that extends $\ga : X \to \til{B}$.
+
+\item The homomorphism $\ga : \til{B}' \to \til{B}$ is a DG ring homotopy 
+$w_0 \twoto w_1$ iff 
+\[ (\d \circ \ga + \ga \circ \d)(x) = (w_1 - w_0)(x) \]
+for all $x \in X$. 
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+(1) Define an additive homomorphism 
+$\ga : \Z \bra{X} \to \til{B}$ of degree $-1$ 
+by letting 
+\[ \ali{ 
+& \ga(x_1 \cdots x_m) :=
+\\ & \qquad 
+\sum_{i = 1}^m (-1)^{k_1 + \cdots + k_{i - 1}} \cd
+w_0(x_1) \cdots w_0(x_{i - 1}) \cd \ga(x_i) \cd 
+w_1(x_{i + 1}) \cdots w_1(x_{m})
+} \]
+for elements $x_i \in X^{k_i}$.
+(Here is where we need $\til{B}'$ to be noncommutative semi-free -- this won't 
+work for $\Z[X]$ unless $w_0 = w_1$.)
+Then extend $\ga$ $A$-linearly to all elements of $\til{B}'$, using the  
+isomorphism 
+$\til{B}'^{\, \natural} \cong A^{\natural} \ot_{\Z} \Z \bra{X}$. 
+
+\medskip \noindent
+(2) An easy  calculation, using induction on $m$, shows that 
+\[ (\d \circ \ga + \ga \circ \d)(a \cd x_1 \cdots x_m) = 
+(w_1 - w_0)(a \cd x_1 \cdots x_m)  \]
+for all $a \in A$ and $x_i \in X$.
+\end{proof}
+
+\begin{thm} \label{thm:300}
+Let $A$ be a commutative DG ring, and let 
+$u : A \to B$ be a central homomorphism in $\cat{DGR}^{\leq 0}$.
+Suppose we are given two factorizations 
+$A \xar{\til{u}} \til{B} \xar{v} B$ and 
+$A \xar{\til{u}'} \til{B}' \xar{v'} B$
+of $u$ in $\cat{DGR}^{\leq 0} \centover A$, such that 
+$v$ is a surjective quasi-isomorphism, and $\til{u}'$ is noncommutative 
+semi-free. Let $w_0, w_1 : \til{B}' \to \til{B}$
+be homomorphisms in $\cat{DGR}^{\leq 0} \centover A$
+that satisfy 
+$w_i \circ \til{u}' = \til{u}$ and $v \circ w_i = v'$. 
+Then there is an $A$-linear DG ring homotopy $\ga : w_0 \twoto w_1$,
+that satisfies $v \circ \ga = 0$. 
+\end{thm}
+
+The situation is depicted in the commutative diagrams below, where $i = 0, 1$. 
+\begin{equation} \label{eqn:358}
+\UseTips \xymatrix @C=5ex @R=5ex {
+& 
+\til{B}'
+\ar[dr]^{v'}
+\\
 A
-˜u′
-−→˜B′v′
-−→B of u in DGR≤0/ceA, such thatv is a surjective quasi-isomorphism,
-and ˜u′is noncommutative semi-free. Letw0,w 1 : ˜B′→˜B be homomorphisms in
-DGR≤0/ceA that satisfywi◦˜u′= ˜u and v◦wi =v′. Then there is anA-linear DG
-ring homotopyγ:w0⇒w1, that satisﬁesv◦γ= 0.
-The situation is depicted in the commutative diagrams below, wherei = 0, 1.
-(4.4) ˜B′
-v′
-  
-A u //
-˜u′
->>NC semi-free
-˜u   
+\ar[rr]^{u}
+\ar[ur]^{\til{u}'} ="utilp"
+
+{} \save 
+[]+<-6ex,8ex> *+[F-:<3pt>]{\scriptstyle \text{NC semi-free}} 
+\ar@{..} "utilp" 
+\restore
+\ar[dr]_{\til{u}}
+& 
+&
 B
-˜B
-v
->>
-surj qu-isom
-˜B′
-v′
-  
-wi
-
+\\
+&
+\til{B}
+\ar[ur]_{v} ="v"
+
+{} \save 
+[]+<10ex,-2ex> *+[F-:<3pt>]{\scriptstyle \text{surj qu-isom}} 
+\ar@{..} "v" 
+\restore
+}
+\qquad  
+\xymatrix @C=5ex @R=5ex {
+& 
+\til{B}' 
+\ar[dr]^{v'}
+\ar[dd]_{w_i} ="wi"
+\\
 A
-˜u′
->>
-˜u   
-i=0,1
+\ar[ur]^{\til{u}'}
+\ar[dr]_{\til{u}}
+
+{} \save 
+[]+<-6ex,6ex> *+[F-:<3pt>]{\scriptstyle i = 0, 1} 
+\ar@{..} "wi" 
+\restore
+& 
+&
 B
-˜B
-v
->>
-Proof. Choose a set of noncommutative semi-free ring generatorsX = ∐
-i≤0Xi
-for ˜B′; so ˜B′♮∼= A♮⊗Z Z⟨X⟩as graded rings. For any k ≥0 let Fk(X) :=⋃
-−k≤i≤0Xi, and letFk( ˜B′) be the A-subring of ˜B′generated by Fk(X). Thus
-Fk( ˜B′) is in DGR≤0/ceA, andFk( ˜B′)♮∼= A♮⊗Z Z⟨Fk(X)⟩. We will deﬁne anA-
-linear homomorphismγk :Fk( ˜B′)→˜B of degree−1, which is a DG ring homotopy
-w0|Fk( ˜B′)⇒w1|Fk( ˜B′), recursively onk, such thatγk|Fk−1( ˜B′) =γk−1 if k≥1, and
-v◦γk = 0. Then we takeγ:= limk→γk.
-Since v◦wi = v′it follows that H(v)◦H(wi) = H( v′). Because H(v) is an
-isomorphism of graded rings, we see thatH(w0) = H(w1).
-Let us constructγ0. We will use the fact that all elements of˜B′0, ˜B0 andB0 are
-cocycles. Take anyx∈X0, and deﬁnec := w0(x)−w1(x)∈˜B0. Since v(c) = 0,
-so is its cohomology class [v(c)]∈H0(B). Because H(v) is an isomorphism, we
-see that [c] = 0 in H0( ˜B). Therefore c = d(b) for some b∈˜B−1. Consider the
-elementv(b)∈B−1. We haved(v(b)) = v(c) = 0, namelyv(b) is a cocycle. Again
-using the fact that H(v) is bijective, we can ﬁnd a cocycleb′∈˜B−1 such that
-H(v)([b′]) = [v(b)] in H−1(B). But then [v(b−b′)] = 0 in H−1(B), so there exists
-THE SQUARING OPERATION 25
-some a∈B−2 such that d(a) = v(b−b′). The surjectivity ofv says that there is
-some a′∈˜B−2 with v(a′) =a. We deﬁne
-γ0(x) :=b−b′−d(a′)∈˜B−1.
+\\
+&
+\til{B}
+\ar[ur]_{v}
+} 
+\end{equation}
+
+\begin{proof}
+Choose a set of noncommutative semi-free ring generators  
+$X = \coprod_{i \leq 0} X^i$ for $\til{B}'$; so  
+$\til{B}'^{\, \natural} \cong A^{\natural} \ot_{\Z} \Z \bra{X}$
+as graded rings. 
+For any $k \geq 0$ let 
+$F_k(X) :=  \bigcup_{-k \leq i \leq 0} X^i$, and let
+$F_k(\til{B}')$ be the $A$-subring of $\til{B}'$ generated by $F_k(X)$.
+Thus $F_k(\til{B}')$ is in $\cat{DGR}^{\leq 0} \centover A$, and  
+$F_k(\til{B}')^{\natural} \cong A^{\natural} \ot_{\Z} \Z \bra{F_k(X)}$. 
+We will define an $A$-linear homomorphism 
+$\ga_k : F_k(\til{B}') \to \til{B}$ of degree $-1$,
+which is a DG ring homotopy 
+$w_0|_{F_k(\til{B}')} \twoto w_1|_{F_k(\til{B}')}$,
+recursively on $k$, such that 
+$\ga_k|_{F_{k-1}(\til{B}')} = \ga_{k-1}$ if $k \geq 1$, 
+and $v \circ \ga_k = 0$. Then we take $\ga := \lim_{k \to} \ga_k$. 
+
+Since $v \circ w_i = v'$ it follows that 
+$\opn{H}(v) \circ \opn{H}(w_i) = \opn{H}(v')$. Because 
+$\opn{H}(v)$ is an isomorphism of graded rings, we see that 
+$\opn{H}(w_0) = \opn{H}(w_1)$.  
+
+Let us construct $\ga_0$. We will use the fact that all elements of 
+$\til{B}'^{\, 0}$, $\til{B}^0$ and $B^0$ are cocycles.
+Take any $x \in X^{0}$, and define 
+$c := w_0(x) - w_1(x) \in \til{B}^{0}$.
+Since $v(c) = 0$, so is its cohomology class 
+$[v(c)] \in \mrm{H}^0(B)$. 
+Because $\opn{H}(v)$ is an isomorphism, we see that 
+$[c] = 0$ in $\mrm{H}^0(\til{B})$. Therefore 
+$c = \d(b)$ for some $b \in \til{B}^{-1}$.
+Consider the element $v(b) \in B^{-1}$. We have
+$\d(v(b)) = v(c) = 0$, namely  $v(b)$ is a cocycle. 
+Again using the fact that $\opn{H}(v)$ is bijective, 
+we can find  a cocycle $b' \in \til{B}^{-1}$ such that 
+$\opn{H}(v)([b']) = [v(b)]$ in $\opn{H}^{-1}(B)$.
+But then $[v(b - b')] = 0$ in $\opn{H}^{-1}(B)$, 
+so there exists some $a \in B^{-2}$ such that 
+$\d(a) = v(b - b')$.  The surjectivity of $v$ says that there is
+some $a' \in \til{B}^{-2}$ with $v(a') = a$. 
+We define 
+\[ \ga_0(x) := b - b' - \d(a') \in \til{B}^{-1} . \]
 Then
-d(γ0(x)) = d(b) =c =w0(x)−w1(x),
-and
-v(γ0(x)) =v(b−b′)−d(a) = 0.
-In this way we get a functionγ0 : X0 →˜B−1. Lemma 4.2 shows that this
-function extends uniquely to a homomorphismγ0 : F0( ˜B′)→˜B, which is a DG
-ring homotopyw0|F0( ˜B′)⇒w1|F0( ˜B′), andv◦γ0 = 0.
-Now considerk≥1, and assume we already haveγk−1. Take any x∈X−k.
-Note that d(x)∈Fk−1( ˜B′). We claim that the element
-c :=w0(x)−w1(x)−γk−1(d(x))∈˜B−k
-is a cocycle. Indeed, sinceγk−1 is a DG ring homotopyw0|Fk−1( ˜B′)⇒w1|Fk−1( ˜B′),
-we have
-(d◦γk−1 +γk−1◦d)(d(x)) = (w0−w1)(d(x)).
-But d(d(x)) = 0 and wi(d(x)) = d(wi(x)), so d(c) = 0 as claimed.
-From here the proof is just like in the casek = 0. Because v◦wi = v′and
-v◦γk−1 = 0, we see thatv(c) = 0. Therefore the cohomology class[v(c)]∈H−k(B)
-is 0. Using the fact that H(v) is an isomorphism, we conclude that [c] = 0 in
-H−k( ˜B). Hence there is some b∈˜B−k−1 such that d(b) = c. Now d(v(b)) =
-v(d(b)) = v(c) = 0 , so v(b) ∈B−k−1 is a cocycle. Again using the fact that
-H(v) is bijective, we can ﬁnd a cocycleb′∈˜B−k−1 such that H(v)([b′]) = [v(b)] in
-H−k−1(B). But then [v(b−b′)] = 0 in H−k−1(B), so there exists somea∈B−k−2
-such thatd(a) =v(b−b′). The surjectivity ofv says that there is somea′∈˜B−k−2
-with v(a′) =a. We deﬁne
-γk(x) :=b−b′−d(a′)∈˜B−k−1.
+\[ \d(\ga_0(x))  = \d(b) = c = w_0(x) - w_1(x) , \]
+and 
+\[ v(\ga_0(x)) = v(b - b') - \d(a) = 0 . \]
+
+In this way we get a function 
+$\ga_0 : X^0 \to \til{B}^{-1}$. Lemma \ref{lem:300} shows that 
+this function extends uniquely to a homomorphism 
+$\ga_0 : F_0(\til{B}') \to \til{B}$, which is a DG ring homotopy
+$w_0|_{F_0(\til{B}')} \twoto w_1|_{F_0(\til{B}')}$, and 
+$v \circ \ga_0 = 0$.
+
+Now consider $k \geq 1$, and assume we already have $\ga_{k - 1}$. Take any 
+$x \in X^{-k}$. Note that $\d(x) \in F_{k - 1}(\til{B}')$. 
+We claim that the element 
+\[ c := w_0(x) - w_1(x) - \ga_{k - 1}(\d(x)) \in \til{B}^{-k} \]
+is a cocycle. Indeed, since $\ga_{k - 1}$ is a DG ring homotopy
+$w_0|_{F_{k - 1}(\til{B}')} \twoto w_1|_{F_{k - 1}(\til{B}')}$,
+we have 
+\[ (\d \circ \ga_{k - 1} + \ga_{k - 1} \circ \d)(\d(x)) = 
+(w_0 - w_1)(\d(x)) . \]
+But $\d(\d(x)) = 0$ and $w_i(\d(x)) = \d(w_i(x))$, so 
+$\d(c) = 0$ as claimed.
+
+{}From here the proof is just like in the case $k = 0$. 
+Because $v \circ w_i = v'$ and 
+$v \circ \ga_{k - 1} = 0$, we see that $v(c) = 0$.
+Therefore the cohomology class 
+$[v(c)] \in  \opn{H}^{-k}(B)$ is $0$. 
+Using the fact that $\opn{H}(v)$ is an isomorphism, we conclude that 
+$[c] = 0$ in $\opn{H}^{-k}(\til{B})$.
+Hence there is some $b \in \til{B}^{-k - 1}$ such that 
+$\d(b) = c$. 
+Now 
+$\d(v(b)) = v(\d(b)) =  v(c) = 0$,
+so $v(b) \in B^{-k - 1}$ is a cocycle.
+Again using the fact that $\opn{H}(v)$ is bijective, 
+we can find  a cocycle $b' \in \til{B}^{-k - 1}$ such that 
+$\opn{H}(v)([b']) = [v(b)]$ in $\opn{H}^{-k - 1}(B)$.
+But then $[v(b - b')] = 0$ in $\opn{H}^{-k  - 1}(B)$, 
+so there exists some $a \in B^{-k - 2}$ such that 
+$\d(a) = v(b - b')$.  The surjectivity of $v$ says that there is
+some $a' \in \til{B}^{-k - 2}$ with $v(a') = a$. 
+We define 
+\[ \ga_k(x) := b - b' - \d(a') \in \til{B}^{-k - 1} . \]
 Then
-(d◦γk +γk−1◦d)(x) =c +γk−1(d(x)) =w0(x)−w1(x),
-and v(γk(x)) = 0.
-In this way we get a functionγk : X−k→˜B−k−1. We extend it to a function
-γk :Fk(X)→˜B by deﬁningγk(x) :=γk−1(x) for x∈Fk−1(X). Lemma 4.2 shows
-that this function extends uniquely to anA-linear homomorphismγk :Fk( ˜B′)→˜B,
-which is a DG ring homotopywk|Fk( ˜B′)⇒w1|Fk( ˜B′), andv◦γk = 0. □
-DG ring homotopies can be expressed using the cylinder construction (see Deﬁ-
-nition 1.23). The next result is similar to [Ke3, Theorem 4.3(c)].
-Proposition 4.5. Let u0,u 1 : A→B be DG ring homomorphisms, and letγ:
-A→B be a Z-linear homomorphism of degree−1. The following conditions are
-equivalent.
-(i) The homomorphismγis a DG ring homotopyγ:u0⇒u1.
-(ii) The Z-linear homomorphismucyl :A→Cyl(B) with formula
-ucyl(a) :=
-)
-u0(a) ξ·γ(a)
-0 u1(a)
-[
-is a DG ring homomorphism.
-Proof. This is a straightforward calculation. □
-26 AMNON YEKUTIELI
-Remark 4.6. Let A be a commutative DG ring. If A is a ring (i.e.A = A0),
-then the categoriesDGR≤0/ceA and DGR/ceA admit Quillen model structures, in
-which the quasi-isomorphisms are the weak equivalences, and the noncommutative
-semi-free DG rings are coﬁbrant; see [BP, Theorem A.3.1]. We think it is quite
-plausible that the same is true even whenA is not a ring (i.e. it has a nontrivial
-negative part). Evidence for this is provided by Theorems 3.21, 3.22 and 4.3.
-On the other hand, we do not know whether the categories DGR≤0
-sc /A and
-DGRsc/A admit similar Quillen model structures. A negative indication is that
-Theorem 4.3 does not seem to hold for commutative semi-free DG rings. Another
-negative indication is that even whenA is a ring, this is not known (except when
-A contains Q; see [Hi]).
-Recall [AILN, Theorem 3.2], that was discussed in Subsection 0.5 of the Intro-
-duction. It deals with a commutative base ringA. The proof of this theorem hinges
-on the Quillen model structure onDGR≤0/ceA that was produced in [BP]. If such
-a model structure does exist in the more general case of a commutative DG ringA
-(as we predict above), then it would most likely imply Theorem 0.3.4 (by a proof
-similar to that in [AILN]).
-However, even if we had model structures on the categoriesDGR≤0/ceA and
-DGR≤0
-sc /A, that would probably not be suﬃcient to imply Theorem 0.3.5. This
-is because the proof of Theorem 0.3.5 (actually, the proof of the noncommutative
-variant Theorem 6.11) requires a very delicate treatment of central morphisms of
-central pairs (see Setup 6.1 and Deﬁnition 3.7), something that a Quillen model
-structure (being a rather coarse structure) does not appear able to provide.
+\[ (\d \circ \ga_k + \ga_{k - 1} \circ \d)(x)  = 
+c  + \ga_{k - 1}(\d(x))
+= w_0(x) - w_1(x) , \]
+and 
+$v(\ga_k(x)) = 0$.
+
+In this way we get a function 
+$\ga_k : X^{-k} \to \til{B}^{-k - 1}$. We extend it to a function 
+$\ga_k : F_k(X) \to \til{B}$ by defining 
+$\ga_k(x) := \ga_{k - 1}(x)$ for $x \in F_{k - 1}(X)$. 
+Lemma \ref{lem:300} shows that this function extends uniquely to an $A$-linear 
+homomorphism 
+$\ga_k : F_k(\til{B}') \to \til{B}$, which is a DG ring homotopy
+$w_k|_{F_k(\til{B}')} \twoto w_1|_{F_k(\til{B}')}$, and 
+$v \circ \ga_k = 0$.
+\end{proof}
+
+DG ring homotopies can be expressed using the cylinder construction
+(see Definition \ref{dfn:700}). The next result is similar to 
+\cite[Theorem 4.3(c)]{Ke3}.
+
+\begin{prop} \label{prop:300}
+Let $u_0, u_1 : A \to B$ be DG ring homomorphisms, and let 
+$\ga : A \to B$ be a $\Z$-linear homomorphism of degree $-1$. 
+The following conditions are equivalent. 
+\begin{enumerate}
+\rmitem{i} The homomorphism $\ga$ is a DG ring homotopy $\ga : u_0 \twoto u_1$.
+
+\rmitem{ii} The $\Z$-linear homomorphism 
+$u_{\mrm{cyl}} : A \to \opn{Cyl}(B)$ 
+with formula 
+\[ u_{\mrm{cyl}}(a) := 
+\bmat{u_0(a) & \ \xi \cd \ga(a) \\[0.3em] 0 & u_1(a)} \]
+is a DG ring homomorphism. 
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+This is a straightforward calculation.
+\end{proof}
+
+\begin{rem} \label{rem:780}
+Let $A$ be a commutative DG ring. If $A$ is a ring (i.e.\ $A = A^0$), then the 
+categories  $\cat{DGR}^{\leq 0} \centover A$ and
+$\cat{DGR} \centover A$ admit Quillen model structures, in which the 
+quasi-isomorphisms are the weak equivalences, and the
+noncommutative semi-free DG rings are cofibrant; see \cite[Theorem A.3.1]{BP}. 
+We think it is quite plausible that the 
+same is true even when $A$ is not a ring (i.e.\ it has a nontrivial negative 
+part). Evidence for this is provided by Theorems \ref{thm:305}, 
+\ref{thm:306} and \ref{thm:300}.
+
+On the other hand, we do not know  whether the categories 
+$\cat{DGR}_{\mrm{sc}}^{\leq 0} / A$ and $\cat{DGR}_{\mrm{sc}} / A$ 
+admit similar Quillen model structures. A negative indication is that Theorem 
+\ref{thm:300} does not seem to hold for commutative semi-free DG rings.
+Another negative indication is that even when $A$ is a ring, this is not known
+(except when $A$ contains $\Q$; see \cite{Hi}). 
+ 
+Recall \cite[Theorem 3.2]{AILN}, that was discussed in Subsection 
+\ref{subsec:discussion} of the Introduction. It deals with a commutative 
+base ring $A$. The proof of this theorem hinges on the Quillen model 
+structure on $\cat{DGR}^{\leq 0} \centover A$ that was produced in \cite{BP}.  
+If such a model structure does exist in the more 
+general case of a commutative DG ring $A$ (as we predict above), then it would 
+most likely imply Theorem \ref{thm:965} (by a proof similar to that in 
+\cite{AILN}). 
+
+However, even if we had model structures on the categories 
+$\cat{DGR}^{\leq 0} \centover A$ and $\cat{DGR}_{\mrm{sc}}^{\leq 0} / A$, 
+that would probably not be sufficient to imply Theorem \ref{thm:966}.
+This is because the proof of Theorem \ref{thm:966} (actually, the proof of the 
+noncommutative variant Theorem \ref{thm:840}) requires a very delicate 
+treatment of central morphisms of central pairs (see Setup \ref{set:930} and 
+Definition \ref{dfn:911}), 
+something that a Quillen model structure (being a rather coarse structure) does 
+not appear able to provide.
+\end{rem}

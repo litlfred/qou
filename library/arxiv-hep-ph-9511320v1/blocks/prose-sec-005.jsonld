@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-005",
   "kind": "prose",
-  "title": "Addition of Spin–1 Fields: Tensor Field Formulation",
-  "pageStart": 6,
-  "pageEnd": 6,
-  "text": "../sections/sec-005-21-addition-of-spin1-fields-tensor-field-formula.md",
-  "derivedFrom": "library/arxiv-hep-ph-9511320v1/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-9511320v1/manifest",
+  "title": "Construction Principles",
+  "pageStart": 19,
+  "pageEnd": 22,
+  "text": "../sections/sec-005-a-construction-principles.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9511320v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9511320v1/manifest.jsonld",
   "provenance": "ingested"
 }

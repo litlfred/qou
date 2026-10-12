@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1611.09182v1/blocks/prose-sec-039",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1611.09182v1/blocks/prose-sec-039",
   "kind": "prose",
   "title": "MTIS symmetries: su(3)c and u(1)em",
   "pageStart": 57,
   "pageEnd": 58,
   "text": "../sections/sec-039-67-mtis-symmetries-su3c-and-u1em.md",
-  "derivedFrom": "library/arxiv-1611.09182v1/manifest",
-  "sourceDocument": "library/arxiv-1611.09182v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1611.09182v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1611.09182v1/manifest.jsonld",
   "provenance": "ingested"
 }

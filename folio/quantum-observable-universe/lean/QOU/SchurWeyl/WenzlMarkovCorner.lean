@@ -45,13 +45,14 @@ lattice.  Nothing here bears on arbitrary `z`, which is off it.
 
 ## Base ring (§7c)
 
-`sum_wenzlWeight_node_weighted` is generic `[Field F]`.  `wenzlWeight_markov_corner` is `ℝ`, forced
-by `seminormalParam`; nothing archimedean is used.
+Generic `[Field F]` / `[Field K]` throughout.  No ordering, no `ℝ`.
 
 LaTeX label: `thm:wenzl-markov-corner`
 -/
 
 namespace QOU.SchurWeyl
+
+variable {K : Type*} [Field K]
 
 open YoungDiagram Finset QOU.Mathlib
 
@@ -207,18 +208,18 @@ node weight by `axialDistance_corner_addable` + `seminormalParam_node_form`.  Th
 
 Note there is **no `a = b` special case**: at `s.1 = c.1` the axial distance is `1` and the node form
 gives `(q − q⁻¹)·Q/(Q−1) = q` on its own. -/
-theorem wenzlWeight_markov_corner (q : ℝ) (hq : q ≠ 0)
-    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1)
+theorem wenzlWeight_markov_corner (q : K) (hq : q ≠ 0)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : K)) ^ k ≠ 1)
     {r : ℕ} (hr : r ≠ 0) (ν : YoungDiagram) {c : ℕ × ℕ} (hc : IsCornerCell ν c) :
     (∑ s : {s : ℕ × ℕ // IsAddableCell ν s},
         wenzlWeight r (q ^ 2) (addCell ν s.1 s.2) * seminormalParam q (axialDistance c s.1))
       = (q ^ 2) ^ r / (q * levelBracket r (q ^ 2)) * wenzlWeight r (q ^ 2) ν := by
   classical
-  have hQ0 : (q ^ 2 : ℝ) ≠ 0 := pow_ne_zero _ hq
-  have hQ1 : (q ^ 2 : ℝ) ≠ 1 := by
+  have hQ0 : (q ^ 2 : K) ≠ 0 := pow_ne_zero _ hq
+  have hQ1 : (q ^ 2 : K) ≠ 1 := by
     have h := hgen 1 one_ne_zero
     rwa [zpow_one] at h
-  have hbr : levelBracket r (q ^ 2 : ℝ) ≠ 0 := levelBracket_ne_zero hgen hr
+  have hbr : levelBracket r (q ^ 2 : K) ≠ 0 := levelBracket_ne_zero hgen hr
   by_cases hrν : ν.colLen 0 ≤ r
   · have hcr : c.1 < r := lt_of_lt_of_le (isCornerCell_row_lt hc) hrν
     -- Step 1: the subtype sum is a guarded row sum.
@@ -233,7 +234,7 @@ theorem wenzlWeight_markov_corner (q : ℝ) (hq : q ≠ 0)
       sum_addable_eq_sum_range ν (fun x : ℕ × ℕ => wenzlWeight r (q ^ 2) (addCellOrSelf ν x)
         * seminormalParam q (axialDistance c x))]
     -- Step 2: trim the row range to `range r`.
-    have hswap : ∀ (M N : ℕ) (T : ℕ → ℝ), M ≤ N → (∀ a, M ≤ a → T a = 0) →
+    have hswap : ∀ (M N : ℕ) (T : ℕ → K), M ≤ N → (∀ a, M ≤ a → T a = 0) →
         (∑ a ∈ Finset.range N, T a) = ∑ a ∈ Finset.range M, T a := by
       intro M N T hMN hz
       refine (Finset.sum_subset ?_ ?_).symm
@@ -243,7 +244,7 @@ theorem wenzlWeight_markov_corner (q : ℝ) (hq : q ≠ 0)
       · intro x _ hnx
         rw [Finset.mem_range] at hnx
         exact hz x (by omega)
-    have key : ∀ T : ℕ → ℝ, (∀ a, r ≤ a → T a = 0) → (∀ a, ν.colLen 0 + 1 ≤ a → T a = 0) →
+    have key : ∀ T : ℕ → K, (∀ a, r ≤ a → T a = 0) → (∀ a, ν.colLen 0 + 1 ≤ a → T a = 0) →
         (∑ a ∈ Finset.range (ν.colLen 0 + 1), T a) = ∑ a ∈ Finset.range r, T a := by
       intro T h1 h2
       have e1 := hswap (ν.colLen 0 + 1) (max (ν.colLen 0 + 1) r) T (le_max_left _ _) h2
@@ -298,15 +299,15 @@ theorem wenzlWeight_markov_corner (q : ℝ) (hq : q ≠ 0)
         ring
       · rw [if_neg hadd, if_neg hadd, mul_zero]
     rw [Finset.sum_congr rfl hnode, ← Finset.mul_sum,
-      sum_wenzlWeight_node_weighted (q ^ 2 : ℝ) hQ0 hQ1 hgen hrν hcr
+      sum_wenzlWeight_node_weighted (q ^ 2 : K) hQ0 hQ1 hgen hrν hcr
         (fun i hi hic => betaR_succ_ne_of_corner hc hcr hi hic)]
-    have hQm1 : (q ^ 2 : ℝ) - 1 ≠ 0 := sub_ne_zero.mpr hQ1
+    have hQm1 : (q ^ 2 : K) - 1 ≠ 0 := sub_ne_zero.mpr hQ1
     field_simp
   · push_neg at hrν
-    have hz : wenzlWeight r (q ^ 2 : ℝ) ν = 0 := (wenzlWeight_eq_zero_iff hQ0 hgen hbr ν).mpr hrν
+    have hz : wenzlWeight r (q ^ 2 : K) ν = 0 := (wenzlWeight_eq_zero_iff hQ0 hgen hbr ν).mpr hrν
     rw [hz, mul_zero]
     refine Finset.sum_eq_zero fun s _ => ?_
-    have hzz : wenzlWeight r (q ^ 2 : ℝ) (addCell ν s.1 s.2) = 0 :=
+    have hzz : wenzlWeight r (q ^ 2 : K) (addCell ν s.1 s.2) = 0 :=
       (wenzlWeight_eq_zero_iff hQ0 hgen hbr _).mpr
         (lt_of_lt_of_le hrν (colLen_zero_le_addCell s.2))
     rw [hzz, zero_mul]

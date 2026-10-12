@@ -7,7 +7,11 @@
   "bytes": 822524,
   "pages": 14,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "text-layer",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -187,6 +191,29 @@
   "likely_scanned": false,
   "toc_entries": 18,
   "sections": 2,
-  "chars_total": 58032
+  "chars_total": 58032,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 14,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-a-quantum-monte-carlo-based-approach-to-intranuc",
+     "title": "A quantum Monte Carlo based approach to intranuclear cascades",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

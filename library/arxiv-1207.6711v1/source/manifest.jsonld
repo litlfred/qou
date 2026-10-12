@@ -1,0 +1,226 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1207.6711v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1207.6711v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1207.6711v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1207.6711&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1207.6711v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1207.6711v1",
+    "content_type": "application/gzip",
+    "sha256": "223b9f37ca9660fed8cad5e284a17354ec87361bc5f19ceaa082bea08e57372c",
+    "bytes": 1197864,
+    "fetched": "2026-10-10T15:07:05+00:00",
+    "files": [
+      {
+        "path": "source/files/GluingEquations.bbl",
+        "role": "bbl",
+        "sha256": "37a32017190ce49796374622be85fd40fdaef6aca49d661292f471b575b63318",
+        "bytes": 3511
+      },
+      {
+        "path": "source/files/GluingEquations.tex",
+        "role": "tex",
+        "sha256": "da6fe512b958eb781ff0c49a7e4322045eec02ff371b71848f2132cbe13d5fa9",
+        "bytes": 163126
+      },
+      {
+        "path": "source/files/figures_gen/ActionPullback.tex",
+        "role": "tex",
+        "sha256": "af63e15d48604bc70c32e3e0613fba0777fd76f1ef39a8eee02657bc04d6a290",
+        "bytes": 669
+      },
+      {
+        "path": "source/files/figures_gen/ActionReorder.tex",
+        "role": "tex",
+        "sha256": "ebf79d03c78d3a2851aeb432ba11fd6502b7ac3f2ab0a62c95173ba44cf849cf",
+        "bytes": 669
+      },
+      {
+        "path": "source/files/figures_gen/CuspEquationTerms.tex",
+        "role": "tex",
+        "sha256": "fc6b6118436c34b6d8a8d03222250b7b9b517d1090e6183b2f4a45d1e22bcbda",
+        "bytes": 3270
+      },
+      {
+        "path": "source/files/figures_gen/EdgePointCancellation.tex",
+        "role": "tex",
+        "sha256": "0ff4d7f09d9131db22bfa0e7d717b5e3d0f33e36d234c21e4f373f14a15bbb5f",
+        "bytes": 180
+      },
+      {
+        "path": "source/files/figures_gen/FacePointSigns.tex",
+        "role": "tex",
+        "sha256": "e21478604d434c2ca2911bbcd66610d66bc3752c4edf53b26b9bdb61e770df5f",
+        "bytes": 385
+      },
+      {
+        "path": "source/files/figures_gen/FigRatioCoordinates.tex",
+        "role": "tex",
+        "sha256": "cbae8e31cc8c11628c325e1c3fe6eeacc2035465d8c7d23ede09dfef07ea13b8",
+        "bytes": 903
+      },
+      {
+        "path": "source/files/figures_gen/Figure8KnotCusp.tex",
+        "role": "tex",
+        "sha256": "da5c86907826e3071da0f26f09b6d82468bb35464760bc7875efe903d831f66d",
+        "bytes": 5151
+      },
+      {
+        "path": "source/files/figures_gen/Figure8Sister.tex",
+        "role": "tex",
+        "sha256": "11778d2a53a9b2407a1cd92acc428d8a590f92cabd4ffb42bcfb5a79d0c41b9f",
+        "bytes": 172
+      },
+      {
+        "path": "source/files/figures_gen/Figure8ordered.tex",
+        "role": "tex",
+        "sha256": "97ab7a855bcb3a7fc0fb88ee362a89c58a888f6d1a727f47e25d3f9c9fc47900",
+        "bytes": 173
+      },
+      {
+        "path": "source/files/figures_gen/LocalModelEdgeGluing.tex",
+        "role": "tex",
+        "sha256": "c8dff6aec3b04cd109b160eb7d7936e865f4d2902d1c4ab66f2ccce2261b3449",
+        "bytes": 177
+      },
+      {
+        "path": "source/files/figures_gen/LocalModelFaceGluing.tex",
+        "role": "tex",
+        "sha256": "c72a40fe72a1010a15b99fea09c77db2ed9671921d2f7dc91888ab333b263059",
+        "bytes": 179
+      },
+      {
+        "path": "source/files/figures_gen/PtolemyCoordinatesOnSimplex.tex",
+        "role": "tex",
+        "sha256": "d1fa7a7e7dff6f36e390c582327ff96f643f5aaa87e9ebba0060b4ccc8f16c9a",
+        "bytes": 186
+      },
+      {
+        "path": "source/files/figures_gen/PtolemyFaceIdentification.tex",
+        "role": "tex",
+        "sha256": "76f06dbd94cb868fe574d49059ec98e1d5a82b917552ad49ad61e84ac6df8326",
+        "bytes": 1075
+      },
+      {
+        "path": "source/files/figures_gen/Signs.tex",
+        "role": "tex",
+        "sha256": "d0adc54f821e298404d8a3f953bf2570f16d9fd973c44682f489bdcb3c7de790",
+        "bytes": 374
+      },
+      {
+        "path": "source/files/figures_gen/SubSimplices.tex",
+        "role": "tex",
+        "sha256": "502c82bbf5f8a93c314e990a2779fb30987c22e1fd352d29f71ae1f02123332f",
+        "bytes": 171
+      },
+      {
+        "path": "source/files/figures_gen/TruncatedCocycle.tex",
+        "role": "tex",
+        "sha256": "2f3ca110aa8cebdfe83185389be096fda3024d1ba44281e01590b1383d1cae5a",
+        "bytes": 175
+      },
+      {
+        "path": "source/files/figures_gen/XCoords.tex",
+        "role": "tex",
+        "sha256": "5da54339c29dd8f39335c517e0e43b434698261d35187811e198a75ba0a05617",
+        "bytes": 374
+      },
+      {
+        "path": "source/files/figures_gen/diamondCoordinatesCancellation.tex",
+        "role": "tex",
+        "sha256": "c469608b6fc919f20161913c3f05a30e1a2bb4be3d9defcec445a30d8e73d7a4",
+        "bytes": 1479
+      },
+      {
+        "path": "source/files/figures_gen/diamondCoordinatesCancellationXCoords.tex",
+        "role": "tex",
+        "sha256": "6c30ff3913bf5f8976cde1ff8b7489c16e9b93de49e8cce7724924d17ca75890",
+        "bytes": 196
+      },
+      {
+        "path": "source/files/figures_gen/diamondCoordinatesDef.tex",
+        "role": "tex",
+        "sha256": "87b897dfaa5628ab1fd35def5e4d6e1adc7a1cbd9533722fc38c7bf69a87bf3d",
+        "bytes": 2496
+      },
+      {
+        "path": "source/files/figures_gen/diamondCoordinatesWalk.tex",
+        "role": "tex",
+        "sha256": "61912785919adbe0def9031a5de47b0fc67c8f96521cc2b3fe93098157edc44a",
+        "bytes": 3386
+      },
+      {
+        "path": "source/files/figures_gen/doubleTruncatedCusp.tex",
+        "role": "tex",
+        "sha256": "e6888ba41aa4522937ad96adf2ad9707a47e67f289a0e1d533ea41ee26268d63",
+        "bytes": 2641
+      },
+      {
+        "path": "source/files/figures_gen/doublyTruncatedCocycle.tex",
+        "role": "tex",
+        "sha256": "fcf7b07980e30a2afdbbe9d910a79a3e384fe08d9a08c59f598bfab66d317535",
+        "bytes": 859
+      },
+      {
+        "path": "source/files/figures_gen/doublyTruncatedCocycle_Prism.tex",
+        "role": "tex",
+        "sha256": "3df22e3f1cb2f15effe529cada107aa1bb84c091ac45a213993de1dd4b3bdeec",
+        "bytes": 187
+      },
+      {
+        "path": "source/files/figures_gen/tetFaceGluingEquation.tex",
+        "role": "tex",
+        "sha256": "243ab2ea73c7b97bfe887baac892f13c157ab27c0aea4497b242ffaf1a583c06",
+        "bytes": 613
+      },
+      {
+        "path": "source/files/figures_gen/tetGluing1.tex",
+        "role": "tex",
+        "sha256": "7c878c6b9f0f27eec438cae04382fada8cba43d323992b657be8ca85090cc683",
+        "bytes": 169
+      },
+      {
+        "path": "source/files/figures_gen/tetInternalGluingEquation.tex",
+        "role": "tex",
+        "sha256": "27e3ae376fb9d06688a287fe8db27e794db0e39eb09fd7e19d9382c4ea1ed744",
+        "bytes": 184
+      },
+      {
+        "path": "source/files/mathdots.sty",
+        "role": "sty",
+        "sha256": "990eb71f66cb8efe9160be69755479b906f22929fc899e5c285faa0f7483e9de",
+        "bytes": 3342
+      },
+      {
+        "path": "source/files/mathdots.tex",
+        "role": "tex",
+        "sha256": "86f7b4af1b2b0e2ed2aa7498ac9ea352b4bf4367506d4ee7f2366627e1550e54",
+        "bytes": 3786
+      },
+      {
+        "path": "source/files/mathdots_test.tex",
+        "role": "tex",
+        "sha256": "8dba8b58584fcc3cf6f6b7c6268d0bd7d804996cf98afc2628749e7559686fcf",
+        "bytes": 1156
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

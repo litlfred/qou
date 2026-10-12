@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-027",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-027",
   "kind": "prose",
-  "title": "Discrete Liouville equation. It not only ideologically justiﬁes the",
-  "pageStart": 8,
-  "pageEnd": 8,
-  "text": "../sections/sec-027-22-discrete-liouville-equation-it-not-only-ideol.md",
-  "derivedFrom": "library/arxiv-hep-th-0006156v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0006156v1/manifest",
+  "title": "Integral Ramanujan identity",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-027-63-integral-ramanujan-identity.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006156v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006156v1/manifest.jsonld",
   "provenance": "ingested"
 }

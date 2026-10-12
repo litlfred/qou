@@ -1,0 +1,1220 @@
+
+
+
+
+\section{Three strands three crossings}\label{sec:  three str 3}
+
+\def\xoo{x_{11}}
+\def\xot{x_{12}}
+\def\xoh{x_{13}}
+\def\xtt{x_{22}}
+\def\xth{x_{23}}
+
+\def\yot{y_{12}}
+\def\yoh{y_{13}}
+\def\yth{y_{23}}
+
+\def\zto{z_{21}}
+\def\zho{z_{31}}
+\def\zht{z_{32}}
+
+
+\def\brh{ h }
+\def\brht{ \brh_2 }
+\def\briht{ \brh^{-1}_2 }
+\def\ybet{ \beta }
+\def\ybetth{ \ybet_{23} }
+\def\ybettt{ \ybet_{22} }
+\def\ybethh{ \ybet_{33} }
+\def\ybetoo{ \ybet_{11}}
+\def\ybetot{ \ybet_{12}}
+\def\ybetto{ \ybet_{21}}
+\def\ybetooi{ \ybet_{11}^{-1}}
+
+
+
+\def\aiv#1#2{ (a^{-1})_{#1#2}}
+\def\aioo{\aiv{1}{1}}
+\def\aiot{\aiv{1}{2}}
+\def\aioh{\aiv{1}{3}}
+\def\aito{\aiv{2}{1}}
+\def\aitt{\aiv{2}{2}}
+\def\aith{\aiv{2}{3}}
+\def\aiho{\aiv{3}{1}}
+\def\aiht{\aiv{3}{2}}
+\def\aihh{\aiv{3}{3}}
+\def\civ#1#2{ (c^{-1})_{#1#2}}
+\def\cioo{\civ{1}{1}}
+\def\ciot{\civ{1}{2}}
+\def\cioh{\civ{1}{3}}
+\def\cito{\civ{2}{1}}
+\def\citt{\civ{2}{2}}
+\def\cith{\civ{2}{3}}
+\def\ciho{\civ{3}{1}}
+\def\ciht{\civ{3}{2}}
+\def\cihh{\civ{3}{3}}
+\def\biv#1#2{ (b^{-1})_{#1#2} }
+
+
+\def\tho{ \theta_1 }
+\def\thw{ \theta_2 }
+\def\thh{ \theta_3 }
+
+
+
+\def\zXv#1{ X - x_{#1#1}\xId}
+\def\zXuv#1#2{ \bigl( \zXv{#1}\bigr)_{#2}}
+\def\zXtv#1{ \zXuv{2}{#1}}
+
+
+\def\krdlv#1{ \delta_{#1} }
+
+In this section we complete our proof theorem~\ref{thm: braids} by proving the cubic relation for the braid group generators.
+We show that two sides of the relations realize the same matrix factorization that has a geometric interpretation: the left hand side
+is realized by the extension of the complex of the minimal resolution of the ideal $I_{121}$ and the other side for the ideal $I_{212}$.
+First we introduce the ideals and discuss their properties.
+
+\subsection{Involution $D$ and the ideals $I_{121}$ and $I_{212}$}
+We use special notations  for some elements of $\CC[\frb\times G]$:
+$$f_i:=\Ad_{c^{-1}}(X-x_{22}\xId)_{2i},\quad h_i=(c^{-1}(X-x_{11}\xId))_{3i}.$$
+$$f'_i:=\Ad_{c^{-1}}(X-x_{22}\xId)_{i2},\quad h'_i=((X-x_{33}\xId)c)_{i1},$$
+$$ k_{ij}=(\Ad_{c^{-1}}(X))_{ij}-\delta_{ij} x_{4-i,4-i}.$$
+where $X=|| x_{ij}||$, $g\in G$ provide local coordinates on $\frb\times G$. Let us introduce the ideals
+$$ I_{121}=(f_1,f_2,h_2,h_3),\quad I_{212}=(f'_3,f'_2,h'_2,h'_1) \quad I=(k_{31},k_{32},k_{33},k_{21},k_{22},k_{11}).$$
+
+
+
+
+
+\begin{proposition}\label{prop: ideals aux} We have
+\begin{enumerate}
+\item $\mathrm{D}(I_{121})=I_{212}$,
+\item $\mathrm{D}(I)=I$,
+\item $I_{121}=I$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+The first two statements are immediate from our definition of the involution $\mathrm{D}$. We now show the last statement. First we show that $I\subset I_{121}$.
+
+Indeed, the conditions $c^{-1}(X-x_{11}\xId)_{31}$ because $X$ is upper triangular. Hence $h_2=0,h_3=0$ implies that the last row of $c^{-1}(X-x_{11}\xId)_{31}$ is zero and
+thus the last row of $\Ad_{c^{-1}}(X-x_{11}\xId)$ has vanishing last row. Finally, $f_1=h_2=0$ implies $\Ad_{c^{-1}}(X)_{21}=0$ and $\Ad_{c^{-1}}(X)_{22}=x_{22}$.
+Thus $\Ad_{c^{-1}}(X)\in \frb $ and combining with $\Tr(X)=\Tr(\Ad_{c^{-1}}(X))$ we obtain that $\Ad_{c^{-1}}(X)_{ii}=x_{4-i,4-i}$.
+
+Now let us show that $I_{121}\subset I$. The fact that $h_i\in I$ is immediate. Let us denote by $\vec{w},\vec{u},\vec{v}$ the first, second and third rows of $c^{-1}$.
+The relation from $I$ imply that  $c^{-1}(X)=\tilde{X} c^{-1}$ where $\tilde{X}$ is upper triangular with elements $x_{33},x_{22},x_{11}$ on the diagonal. Hence
+$\vec{v}X=x_{11}\vec{v}$ and these relations are equivalent to $h_2=h_3=0$.
+\end{proof}
+
+
+
+\subsection{Resolution for $I_{121}$}
+In this subsection we construct a free resolution of the module $\CC[\frb\times G]/I_{121}$. Let us fix notations:
+\begin{align*}
+A&=\Bigl[-\left(\Adv{c^{-1}}\xX\right)_{21},\;\;
+  \Bigl(\Adv{c^{-1}}(\xX-\xtt\xId)\Bigr)_{22},\;\;
+ c^{-1}(\xX - \xoo\xId)_{32}
+\Bigr].
+\end{align*}
+%begin{align}
+%A&=\xbmtr{asdf} ,&
+%B&=
+%\xbmtr{
+%(\xoo-\xtt)\excot +\xot\exctt
+%&
+%-\excht
+%\\
+%-((\xoo-\xtt)\excoo +\xot\excto)
+%&
+%\excho
+%\\
+%-\Bigl(\cito\xoh + \citt\xth + \cith(\xhh-\xtt)\Bigr)
+%&
+%-\cito
+%}.
+%\end{align}
+
+The direct computation shows that
+$$A=-\Bigl[\det B_{23},\;\det B_{13},\;\det B_{12}\Bigr],$$
+where
+\begin{align*}
+%A&=\xbmtr{asdf} ,&
+B&=
+\xbmtr{
+(\xoo-\xtt)\excot +\xot\exctt
+&
+-\excht
+\\
+-((\xoo-\xtt)\excoo +\xot\excto)
+&
+\excho
+\\
+-\civ{2}{i}\zXtv{i3}
+&
+-\civ{2}{i}\krdlv{i1}
+}.
+\end{align*}
+
+The Laplace formula for the $3\times 3$ matrix made of $B$ and $A$ implies that the following is a complex:
+\begin{equation}\label{eq: reso}
+K=[R^2\overset{B}{\longrightarrow} R^3\overset{A}{\longrightarrow} R]
+\end{equation}
+where $R=\CC[\frb\times G]$.
+
+Let $\tilde{I}_{121}=(f_1,f_2,h_2)$.
+Below we show that the complex $K$  is actually a resolution of the $R$-module $R/\tilde{I}_{121}$:
+\begin{proposition}\label{prop: reso K} We have:
+$$\textup{H}^0(K)=R/\tilde{I}_{121},\quad \textup{H}^{>0}(K)=0.$$
+\end{proposition}
+
+The variety $Z$ defined by the ideal generated by $\tilde{I}_{121}$ is the key geometric ingredient of the proof of theorem~\ref{thm: braids}.
+The proposition below describes the fibers of the projection map $\pi_G: Z\to G$:
+
+
+\begin{proposition} The fibers of the map $\pi_G$ are linear subspaces of $\frb$ and
+if $c\notin B$ then $\mathrm{codim}_{\frb}(\pi^{-1}_G(c))=2$, otherwise if $g\in B$, $\pi_G^{-1}(c)=\frb$.
+\end{proposition}
+\begin{proof}
+Since the second column of the matrix $B$ is a vector valued function on $G$ which is non-zero at the generic point of $G$ the linear conditions
+imposed by $f_1,f_2,h_2$ are not linearly independent at a generic point of $G$. Hence the $\mathrm{codim}_{\frb}(\pi_G^{-1}(c))\le 2$ for any $c\in G$.
+
+Let us determine the locus of $g$ such that $\mathrm{codim}_{\frb}(\pi_G^{-1}(c))\le 1$. Let us assume that $(c^{-1}_{31},c^{-1}_{32})\ne (0,0)$ and hence  $(c_{31},c_{32})\ne (0,0)$.
+Since $h_2$ is a non-zero linear function on $\frb$, the
+linear system $f_1=0,f_2=0,h_2=0$ has rank $1$ if $f_1,f_2$ are proportional to  $h_2$. If $c_{31}\ne 0$ then the condition that $f_1$ is proportional to $h_1$ implies that
+$c^{-1}_{2i}=0$ for all $i$ hence contradiction to $det(c)=1$. Similarly, if $c_{32}\ne 0$, the condition $f_2$ is proportional to $h_1$  also implies  $c^{-1}_{2i}=0$ for all $i$.
+Thus if $\mathrm{codim}_{\frb}(\pi_G^{-1}(c))\le 1$ then $c_{31}=c_{32}=c^{-1}_{31}=c^{-1}_{32}=0$.
+
+The last condition on $c$ implies $h_1=0$ and the nontrivial entries of the linear equations $f_1$ and $f_2$ are the coefficients in front of  $x_{12},x_{11},x_{22}$. These are the  vectors
+$(c^{-1}_{21} c_{21}, c_{21}^{-1} c_{11}, c_{22}^{-1}c_{21})$ and $(c^{-1}_{21} c_{22}, c_{21}^{-1} c_{12}, c_{22}^{-1}c_{12})$. If $c^{-1}_{12}\ne 0$ then these vectors are proportional
+to $(c_{21},c_{11},*)$ and $(c_{22},c_{12},*)$ and these two vectors can not be proportional because of $det(c)=1$.
+
+Thus we have shown that $\mathrm{codim}_{\frb}(\pi^{-1}_G(c))\le 1$ implies $c\in B$. Finally, it is immediate to see that if $c\in B$ then $f_1,f_2,h_2$ are zero linear functions on $\frb$.
+\end{proof}
+
+
+\begin{proof}[Proof of proposition~\ref{prop: reso K}]
+The previous proposition implies that $\mathrm{codim}_{\frb\times G}(Z)=2$. Hence we can apply the Hilbert-Burch theorem \cite{E2} which implies that $K$ is indeed a resolution of
+the module $R/\tilde{I}_{121}$.
+\end{proof}
+
+In the next subsection we need a slight refinement of the previous proposition. We define a complex
+$$ C_{121}=[R\overset{h_2}{\longrightarrow} R]\otimes K.$$
+
+\begin{proposition}We have
+$$\textup{H}^0(C_{121})=R/I_{121},\quad \textup{H}^{>0}(C_{121})=0.$$
+\end{proposition}
+\begin{proof}
+By the spectral sequence for the tensor product of complexes and the previous proposition it is enough to
+show that the complex $R/\tilde{I}_{121}\xrightarrow{h_2} R/\tilde{I}_{121}$ has no homology in non-zero degree.
+That is we need to show that $h_2$ is not a zero divisor in $R/\tilde{I}_{121}$.
+
+The variety $Z$ could have irreducible components of codimension at most $3$.
+The proposition~\ref{thm: braids} implies that $Z$ has at most two irreducible components. The first component $Z_1$ is the closure
+of $\pi_G^{-1}(G\setminus B)$ and the second component $Z_2$ is $\pi^{-1}_G(B)$. The fist component has codimension $2$ and
+the second codimension $3$. Thus we need to show that $h_2$ is no vanishing identically on any of the components $Z_i$.
+
+Since $c=1\in B$ and $h_2|_{c=1}=x_{33}-x_{11}$ and $f_1|_{c=1}=f_2|_{c=1}=h_1|_{c=1}=0$, the function $h_2$ does not vanish on $Z_2$.
+Respectively $s=E_{12}-E_{21}+E_{33}\notin B$ and $h_2|_{c=s}=x_{33}-x_{11}$, $f_1|_{c=s}=x_{12}$, $f_2|_{c=s}=x_{11}-x_{22}$, $h_1|_{c=s}=0$ we see that
+$h_2$ is not vanishing on $\pi_G^{-1}(s)$ and hence $h_2$ does not vanish on $Z_1$ and it is a zero-divisor.
+\end{proof}
+
+%\subsection{}
+
+
+
+\subsection{Convolution} Let us denote by $\overline{C}_{121}$  a complex of $R$-modules (here $R=\CC[\calXr_2]$) that is obtained by a pull back of the complex  $C_{121}$ along the
+projection map $\calXr_2\to \frb\times G$. Since the projection map is flat,
+the results of the previous subsection imply that  the complex $\overline{C}_{121}$ satisfies the conditions of the Lemmas~\ref{lem: ext MF},\ref{lem: ext uniq} with $F=\Wr$. Hence there is
+a unique (up to homotopy) matrix factorization $\bcalC^{(121)}\in \MF_{B^2}(\calXr_2,\Wr)$ that extends the complex $\overline{C}_{121}$. The main result of this section is the proof
+of the following
+
+\begin{lemma} We have
+$$\bcalC^{(1)}\bar{\star}\bcalC^{(2)}\bar{\star}\bcalC^{(1)}=\bcalC^{(121)}$$
+\end{lemma}
+\begin{proof}
+To prove the lemma we use the results of the previous section and compute the convolution
+$ \bcalC_{12}\bar{\star}\bcalC^{(1)}_+.$
+Since $\bcalC^{(1)}_+=\Indb_{12}(\bcalC_+)$ we can use the proposition~\ref{prop: small prod 1}  and subsection~\ref{ssec: conv rk 1}.
+That is for our proof,  we  analyze $T$-invariant part of $\CE_{\frn^{(2)}_2}(\calC)$ the matrix matrix factorization $\calC\in \MF_{B_3\times B_2\times B_3}(\calXr_3(G_3,G_{1,2}),\bar{\pi}_{13}^*(\Wr))$,
+$$\calC=(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bcalC_{12}\boxtimes\bcalC^{(1)}_+).$$
+
+\def\hA{\hat{A}}
+\def\adhA{\mathop{\mathrm{adj}} \hA }
+\def\vcw{ \vec{w}}
+
+First let us discuss the coordinates on the space $\calX_3(G_3,G_{1,2})$, for that we introduce the following matrices:
+
+\begin{align*}
+\xgot & = \xbmtr{\exaoo & \exaot & \exaoh\\ \exato & \exatt & \exath \\ \exaho & \exaht & \exahh}, &
+% \xgth &= \xbmtr{ 1& 0 & 0 \\ 0 & \exbtt & \exbth \\ 0 & \exbth & \exbhh} &
+\xgth &= \xbmtr{ \exboo & \exbot & 0 \\ \exbto & \exbtt & 0 \\ 0 & 0 & 1},   % &
+\end{align*}
+
+\begin{align*}
+\xgth^{-1}&=  \xbmtr{ \exbtt  & -\exbot & 0 \\ -\exbto & \exboo & 0 \\ 0 & 0 & 1 }, &
+\xgoh & = \xbmtr{\excoo & \excot & \excoh\\ \excto & \exctt & \excth \\ \excho & \excht & \exchh}
+\end{align*}
+and
+\begin{align*}
+\xX &=
+\xbmtr{ \xoo & \xot & \xoh\\ 0 & \xtt & \xth \\ 0 & 0 & \xhh}, &
+\xY & = \xbmtr{ 0 & \yot & \yoh \\ 0 & 0 & \yth \\ 0 & 0 & 0}, &
+\xtX & = \Adv{\xigot}\xX = ||\tx_{ij} ||.
+%\qquad \xgot =
+%\begin{bmatrix}
+%\exaoo &\exaot
+%\\
+%\exato &\exatt
+%\end{bmatrix}
+\end{align*}
+The Borel group $B_2^{(2)}$ corresponding to a middle factor in $B_3\times B_2\times B_3$ could be parameterized as follows:
+\[
+\brht =
+\xbmtr{ \ybetoo & \ybetot & 0 \\ 0 & \ybetooi & 0 \\ 0 & 0 & 1}
+ %\xbmtr{
+%1 & 0 & 0
+%\\
+%0 & \ybettt & \ybetth
+%\\
+%0 & 0 & \ybettt^{-1}%\ybethh
+%}
+\]
+The weights of the action of  Lie algebra element  $diag(1,-1,0)\in \Lie(B_2^{(2)})$ are
+\[
+\begin{array}{|c||c|c|c||c|c|c||c|c|c|}
+\hline
+\text{element} &\exav{i1} & \exav{i2} &\exav {i3} & \aiv{1}{i} & \aiv{2}{i} & \aiv{3}{i}
+&\exbv{1i} & \exbv{2i} & \exbv{3i}
+\\
+\hline
+\text{weight} & -1 & 1 & 0 & 1 &-1 & 0 & 1 & -1 & 0
+\\
+\hline
+\end{array}
+\]
+and the action of $\delta_{12}:=E_{12}\in \Lie(B_2^{(2)})$ is
+\def\ydltot{ \delta_{12}}
+\def\ydltoti{ \ydltot^{-1}}
+\begin{align*}
+\ydltot \exav{i2}& = -\exav{i1}, &
+\ydltot \aiv{1}{i} & = \aiv{2}{i}, &
+\ydltot \exbv{1i} & = \exbv{2i}.
+\end{align*}
+
+\def\ydv#1{ d_{#1}}
+\def\ydo{ \ydv{1}}
+\def\ydt{ \ydv{2}}
+\def\ydh{ \ydv{3}}
+\def\ydf{ \ydv{4}}
+The matrix factorization $\calC$ is generated by four Koszul differentials:
+\begin{align*}
+\ydo & = \exaho
+\\
+\ydt &= (\xoo-\xtt)\exaoo + \xot\exato
+\\
+\ydh &=(\txoo-\txtt)\exboo + \txot\exbto
+\\
+\ydf &=(\xhh-\xoo) (\exaoo\exatt-\exaot\exato) - \exaht(\exaoo\xth-\exato\xoh)
+\\
+&=(\xhh-\xoo) \aihh + \xth\aiht + \xho\aiho
+\\
+&=\aiv{3}{i}(\xX-\xoo\xId)_{i3}.
+\end{align*}
+The differentials $\ydo$, $\ydt$ and $\ydf$ come from the first two crossings and together they constitute $\bar{\pi}_{12}(\calC_{12})$; $\ydh$ comes from the last crossing, that is
+from the matrix factorization $\bar{\pi}_{23}^*(\calC_+)$.
+
+The weights of the differentials with respect to the maximal torus the Borel group $B_2^{(2)}$ are
+\[
+\begin{array}{|c||c|c|c|c|}
+\hline
+\text{differential} &\ydo &\ydt &\ydh & \ydf
+\\
+\hline
+\text{weight} & -1 &-1 & 1 & 0
+\\
+\hline
+\end{array}
+\]
+The differential $\ydf$ is completely Borel-invariant and thus for our analysis of $\CE_{\frn_2^{(2)}}(\calC)$ we need to concentrate on  the first three rows of $\calC$ that compose the matrix factorization
+$\calC'$. Moreover,
+\[
+\ydf = (\xhh-\xoo) \cihh + \xth\ciht + \xho\ciho =
+\civ{3}{i}(\xX-\xoo\xId)_{i3}.
+\]
+thus it matches with $h_3$.
+
+The differentials $\ydo$ and $\ydt$ are invariant  under $\ydltot$.
+
+Let us compute $\ydltot\ydh$. We observe that $\xtX_+ = \xtX -\xtX_{--}$, hence
+\begin{equation}
+\label{eq:xtthf}
+\ydh = - \left(\Adv{\xigth}\xtX_+\right)_{21}/\exbto
+=-\left(\Adv{\xigoh}\xX\right)_{21}/\exbto +\left(\Adv{\xigth}\xtX_{--}\right)_{21}/\exbto
+\end{equation}
+The first term here is $\ydltot$-invariant and $\exbto$ is also $\ydltot$-invariant, hence
+\[
+\ydltot\ydh = \ydltot\left(\Adv{\xigth}\xtX_{--}\right)_{21}/\exbto
+\]
+Now
+\begin{align*}
+\left(\Adv{\xigth}\xtX_{--}\right)_{21} &= \tx_{21}\exboo^2,&
+\ydltot\tx_{21}&=0, &
+\ydltot\exboo = \exbto,
+\end{align*}
+hence
+\[
+\ydltot\ydh = 2\tx_{21}\exboo.
+\]
+It remains to express $\tx_{21}$ in terms of $\ydo$ and $\ydt$. By definition,
+\[
+\tx_{21} = \aiv{2}{i} \xX_{ij} \exav{j1} = \aiv{2}{i}\zXtv{ij}\exav{j1} .
+\]
+Note that
+
+\[
+\zXtv{ij}\exav{j1} = \ydo\zXtv{i3} + \ydt \krdlv{i1}
+\]
+hence
+\def\zbetv#1{ \beta_{#1} }
+\def\zbeto{ \zbetv{1}}
+\def\zbett{ \zbetv{2}}
+\def\xcfo{\alpha_1}
+\def\xcft{\alpha_2}
+\begin{equation*}
+\label{eq:txot}
+\tx_{21} = \ydo \zbeto + \ydt \zbett,
+\end{equation*}
+where
+\begin{align}
+\label{eq.bttw}
+\zbeto & = \aiv{2}{i}\zXtv{i3}, &
+\zbett & = \aiv{2}{i}\krdlv{i1}
+\end{align}
+so
+\[
+\ydltot\ydh = 2\exboo(\zbeto \ydo + \zbett\ydt),
+\]
+
+%\noindent
+%***************************
+%
+%Note that the first column of the matrix
+%\[
+%(\xX - \xtt\xId)\xgot = \zXtv{ij}\exav{j1}
+%\]
+%has the form
+%\[
+%\ydo\xbmtr{\xoh\\ \xth \\ \xhh - \xtt} + \ydt \xbmtr{ 1 \\ 0 \\ 0}
+%=\ydo\zXtv{i3} + \ydt \krdlv{i1},
+%\]
+%hence $\tx_{21}$ being the product of the second row of $\xigot$ and the first first column of $(\xX - \xtt\xId)\xgot$ is
+%\def\xcfo{\alpha_1}
+%\def\xcft{\alpha_2}
+%\[
+%\tx_{21} = \ydo (\aito\xoh + \aitt\xth + \aith(\xhh-\xtt)) + \ydt\aito, % = \xcfo\ydo + \xcft\ydt.
+%\]
+%so
+%\[
+%\ydltot\ydh = \xcfo \ydo + \xcft\ydt,
+%%2\tx_{21}\exboo.
+%\]
+%where
+%\begin{align}
+%\xcfo &= 2\exboo \Bigl(\aito\xoh + \aitt\xth + \aith(\xhh-\xtt)\Bigr),&
+%\xcft & = 2\exboo\aito
+%\end{align}
+%\noindent
+%*************************************
+
+
+The first three differentials $d_1,d_2,d_3$ thus form the following Koszul complex $\calC'_+$ which form a positive part of the
+matrix factorization $\calC$.
+
+Below we simplify the complex $\CE_{\frn_2^{(2)}}(\calC'_+)^{T^{(2)}}$ and match the simplified complex with the complex of the minimal resolution
+of $I_{121}.$
+
+
+The complex $\CE_{\frn_2^{(2)}}(\calC'_+)$ has the form
+%\begin{center}
+%\includegraphics[trim=20mm 0mm 0mm 0mm,scale=0.5,width=7in,height=3.5in]
+%%,natwidth=610,natheight=642]
+%{dia5a.eps}
+%\end{center}
+\def\xvrt#1#2{ [#1;#2] }
+
+%\def\xvrt#1#2{ [#1;#2] }
+\[
+\begin{tikzcd}[column sep=1.75cm, row sep=1.75cm]
+&
+\xvrt{\tho\thw\thh}{0}
+\\
+\xvrt{\tho\thh}{-1}
+\ar{ur}{-\ydt}
+&
+\xvrt{\tho\thw}{1}
+\ar{u}{\ydh}
+\ar[dashed]{r}{-\xcfo}
+\ar[dashed,']{l}{\xcft}
+&
+\xvrt{\thw\thh}{-1}
+\ar[']{ul}{\ydo}
+\\
+\xvrt{\tho}{0}
+\ar{u}{-\ydh}
+\ar[near start]{ur}{-\ydt}
+\ar[dashed,']{r}{-\xcfo}
+&
+\xvrt{\thh}{-2}
+\ar[from=3-2,to=2-2,near start]{u}{\ydo}
+\ar[crossing over, near start]{ul}{\ydo}
+\ar[crossing over, near start,']{ur}{\ydt}
+\ar[from=3-3,to=2-2,crossing over,near start,"-\ydt"]
+&
+\xvrt{\thw}{0}
+\ar[dashed]{l}{-\xcft}
+\ar{u}{\ydh}
+\\
+& \xvrt{1}{-1}
+\ar{ul}{\ydo}
+\ar{u}{\ydh}
+\ar[']{ur}{\ydt}
+\end{tikzcd}
+\]
+
+
+
+In the picture $[\Theta,k]$ stands for the tensor  product  of the  monomial $\Theta$ of the odd variables from the Koszul complex and of Chevalley-Eilenberg complex for the $R\langle k\rangle:=\CC[\calXr_3(G_3,G_{1,2})]=R'\otimes \bar{\pi}_{13}^*(\CC[\calXr_2])$, $R'=\CC[G_{1,2}]=\CC[G_2]$:
+$\CE_{\frn_2^{(2)}}(R'\langle -k \rangle)\otimes\bar{\pi}_{13}^*(\calXr_2)\otimes \Theta.$
+We used  the dashed lines additional  Chevalley-Eilenberg differentials and we used a shortcut
+$$
+\xcfo = 2 \exboo \zbeto, \quad \xcft  = 2 \exboo\zbett.
+$$
+
+
+\def\ghzot{\zeta_{12}}
+Now we perform contractions along the differentials inside complexes $[\Theta,k]$. After the contraction the corresponding vertices in the diagram get replaced with
+$\textup{H}^*(\mathbb{P}^1,\calO(-k))\otimes \bar{\pi}_{13}^*(\CC[\calX_2]):$
+%\begin{center}
+%\includegraphics[scale=0.5,width=7in,height=3.5in]
+%%,natwidth=610,natheight=642]
+%{dia6a.eps}
+%\end{center}
+
+
+\[
+\begin{tikzcd}[column sep=1.75cm, row sep=1.75cm]
+&
+%\xvrt{\tho\thw\thh}{0}
+1
+\\
+%\xvrt{\tho\thh}{-1}
+%\varnothing
+0
+\ar{ur}{-\ydt}
+&
+%\xvrt{\tho\thw}{1}
+\exbto\oplus\exbtt
+\ar{u}{\ydh}
+\ar[dashed]{r}{-\xcfo}
+\ar[',dashed]{l}{\xcft}
+&
+%\xvrt{\thw\thh}{-1}
+%\varnothing
+0
+\ar[']{ul}{\ydo}
+\\
+%\xvrt{\tho}{0}
+1_1
+\ar{u}{-\ydh}
+\ar[near start]{ur}{-\ydt}
+\ar[',dashed]{r}{-\xcfo}
+&
+\xvrt{\thh}{-2}
+\ghzot
+\ar[from=3-3,to=2-2,near start]{u}{\ydo}
+\ar[crossing over, near start]{ul}{\ydo}
+\ar[crossing over, near start,']{ur}{\ydt}
+\ar[from=3-2,to=2-2,crossing over,near start,"-\ydt"]
+&
+%\xvrt{\thw}{0}
+1_2
+\ar[dashed]{l}{-\xcft}
+\ar{u}{-\ydh}
+\\
+&
+%\varnothing
+0
+\ar{ul}{\ydo}
+\ar{u}{\ydh}
+\ar[']{ur}{\ydt}
+\end{tikzcd}
+\]
+
+Thus, we obtained the complex of the form
+\[
+\begin{tikzcd}
+1_1 \oplus 1_2
+\ar{r}{B}
+&
+\exbto\oplus\exbtt\oplus \ghzot
+\ar{r}{A}
+&
+1
+\end{tikzcd}
+\]
+and the rest of the proof is devoted to demonstrating that these matrices are
+\begin{multline*}
+A=\Bigl[-\left(\Adv{\xigoh}\xX\right)_{21},\;\;
+  \Bigl(\Adv{\xigoh}(\xX-\xtt\xId)\Bigr)_{22},\;\;
+ \civ{3}{i}(\xX - \xoo\xId)_{i2}
+\Bigr]
+\\=
+-\Bigl[\det B_{23},\;\det B_{13},\;\det B_{12}\Bigr].
+\end{multline*}
+%begin{align}
+%A&=\xbmtr{asdf} ,&
+%B&=
+%\xbmtr{
+%(\xoo-\xtt)\excot +\xot\exctt
+%&
+%-\excht
+%\\
+%-((\xoo-\xtt)\excoo +\xot\excto)
+%&
+%\excho
+%\\
+%-\Bigl(\cito\xoh + \citt\xth + \cith(\xhh-\xtt)\Bigr)
+%&
+%-\cito
+%}.
+%\end{align}
+
+\begin{align*}
+%A&=\xbmtr{asdf} ,&
+B&=
+\xbmtr{
+(\xoo-\xtt)\excot +\xot\exctt
+&
+-\excht
+\\
+-((\xoo-\xtt)\excoo +\xot\excto)
+&
+\excho
+\\
+-\civ{2}{i}\zXtv{i3}
+&
+-\civ{2}{i}\krdlv{i1}
+}.
+\end{align*}
+
+We begin with $B$. Its lower row comes from a pair $-\xcfo$, $-\xcft$. Note that both have the same form
+\[
+\alpha_* = 2\exboo \aiv{2}{i}(\text{something})_i,\qquad \aiv{2}{i} = \exbv{2j}\civ{ji}.
+\]
+Now we used the fact that
+\begin{align*}
+\ydltot \exboo &= \exbto,  & \ydltot\exbot & =\exbtt, & \exboo\exbtt - \exbot\exbto = 1,
+\end{align*}
+from which we conclude that
+\begin{align*}
+\exboo\exbto\ghzot &\sim 0,&
+\exboo\exbtt\ghzot &\sim \shlf \ghzot.
+\end{align*}
+and as a result
+\[
+2\exboo\aiv{2}{i}\ghzot\sim \civ{2}{i}\ghzot
+\]
+which means that we should simply replace $\aiv{2}{i}$ with $\civ{2}{i}$ in the formulas~\eqref{eq.bttw}.
+
+The first two rows of $B$ come from $\ydo$ and $\ydt$ in which we substitute
+\[
+\exav{i1} = \excv{ij}\biv{j}{1}
+\]
+and then extract the coefficients at $\exbto$ and at $\exbtt$.
+
+Now we turn to the row-matrix $A$. Its third element $A_3$ is the simplest: it comes from two secondary differentials going from $\ghzot$ to $1$, so it is
+\[
+A_3 =  \ydo\,\ydltoti(\ydt)-\ydt\, \ydltoti (\ydo).
+\]
+Both $\ydo$ and $\ydt$ are bilinear combinations of $\ydltot$-invariants and matrix elements $\exav{i1}$. Note that $\ydltoti(\exav{i1}) = \exav{i2}$, hence if $i\neq j$, then
+\[
+\exav{i1}\, \ydltoti(\exav{j1}) - \exav{j1}\,\ydltoti(\exav{i1}) =- \exav{i1}\exav{j2}+\exav{j1}\exav{i2} =
+\pm \aiv{3k},
+\]
+where $k\neq i,j$. As a result,
+\[
+A_3 =
+% -\Bigl(
+ (\xtt-\xoo)\aiht + \xot\aiho
+ %\Bigr)
+\]
+The third row of $\xgot^{-1}$ coincides with the third row of $\xgoh^{-1}$, hence ultimately
+\[
+A_3 =
+%-\Bigl(
+(\xtt-\xoo)\ciht + \xot\ciho = \civ{3}{i}(\xX - \xoo\xId)_{i2}
+%\Bigr)
+\]
+\noindent
+
+The first and second entries of $A$ are both sums of three terms: the first one being $\ydh$ and the last two being secondary differentials
+\[
+\ydv{i} \ydltoti (\alpha_{i}\exbv{2j}) = \ydv{i}\ydltoti(2\exboo\exbv{2j}\beta_i) ,
+\qquad i=1,2.
+\]
+Let us being with $A_1$ originating from $\exbto$. According to~\eqref{eq:xtthf},
+\[
+\ydh\exbto =
+-\left(\Adv{\xigoh}\xX\right)_{21} +\left(\Adv{\xigth}\xtX_-\right)_{21} =
+-\left(\Adv{\xigoh}\xX\right)_{21} + \tx_{21}\exboo^2.
+\]
+At the same time, $\ydltot\beta_i=0$ and $\ydltot(\exboo^2)=\exboo\exbto$, hence
+\[
+\ydv{i}\ydltoti(2\exboo\exbv{21}\beta_i) = \exboo^2 \ydv{i}\beta_i,
+\]
+and
+\[
+\sum_{i=1,2} \ydv{i}\ydltoti(2\exboo\exbv{21}\beta_i) = \exboo^2 (\ydo\beta_1 + \ydt\beta_2) =
+\exboo^2 \tx_{21}
+\]
+in accordance with~\eqref{eq:txot}. Now
+\[
+A_1 = \ydh\exbto - \sum_{i=1,2}\ydv{i} \ydltoti (\alpha_{i}\exbv{21}) =
+-\left(\Adv{\xigoh}\xX\right)_{21}.
+\]
+
+In order to computer $A_2$, we use the formula
+\[
+\ydh =(\txoo-\txtt)\exboo + \txot\exbto
+\]
+In order to compute the secondary differentials,  use the relations
+\[
+\ydltot(\exboo\exbot) = \exboo\exbtt + \exbot\exbto,\qquad \exboo\exbtt-\exbot\exbto = 1,
+\]
+from which it follows that
+\[
+2\exboo\exbtt = \ydltot(\exboo\exbot) + 1.
+\]
+As a result,
+\[
+\ydv{i}\ydltoti(2\exboo\exbv{22}\beta_i)
+=
+\ydv{i}\exboo\exbot\beta_i + \ydv{i}\ydltoti(\beta_i).
+\]
+The first term yields
+\[
+\sum_{i=1,2}\exboo\exbot\ydv{i}\beta_i = \tx_{21}\exboo\exbot.
+\]
+As for the second term, from the relation~\eqref{eq:txot} and $\ydltot$-invariance of $\ydo$ and $\ydt$ of we conclude:
+\[
+\ydo \ydltoti(\zbeto) + \ydt \ydltoti(\zbett) =
+\ydltoti \Bigl( (\Adv{\xigot}\xX- \xtt\xId)_{21} \Bigr) =
+ (\Adv{\xigot}\xX- \xtt\xId)_{11} = \tx_{11} - \xtt.
+\]
+Adding all three terms together, we find
+\[
+A_2 = \ydh\exbtt - \tx_{21}\exboo\exbot - (\tx_{11}-\xtt) =(\Adv{\xigth}\xtX)_{22} - \xtt
+=(\Adv{\xigoh}\xX)_{22} - \xtt.
+\]
+
+Thus we have shown that the matrix factorization $\calC_{12}\bar{\star}\bcalC_+^{(1)}$ is a $2$-periodic folding of the matrix
+factorization that is obtain from $B_3^2$ equivariant complex $\bar{C}_{121}$ by adding the negative differentials and the differentials that
+correct equivariant structure. Moreover, since
+the complex $\bar{C}_{121}$ satisfies the conditions of the lemma~\ref{lem: ext MF eq} such matrix factorization exists and unique and the statement
+of our theorem follows.
+
+\end{proof}
+
+\subsection{End of the proof of the theorem~\ref{thm: braids}}
+\begin{corollary} \label{cor: cubic} There is a homotopy realizing relation:
+$$ \bcalC^{(1)}_+\bar{\star}\bcalC^{(2)}_+\bar{\star}\bcalC^{(1)}_+\sim\bcalC_+^{(2)}\bar{\star}\bcalC_+^{(1)}\bar{\star}\bcalC^{(2)}.$$
+\end{corollary}
+\begin{proof}
+  From the previous discussion we see that the complexes $C_{121}$ and $\mathrm{D}(C_{121})$ are minimal resolutions of the modules $R/I_{121}$ and $R/I_{212}$.
+  The ideals \(I_{212}\) and \(I_{121}\) are isomorphic hence there are morphism \(\psi,\theta: R^4\rightarrow R^4\) such that
+  \(\Psi_{<2}=(1,\psi_1)\) and \(\Theta_{<2}=(1,\theta_1)\) are morphisms between the truncated complexes \([C_{121}]_{<2}=[R\xleftarrow{d} R^4]\),
+  \([\mathrm{D}(C_{121})]_{<2}=[R\xleftarrow{\mathrm{D}(d)} R^4]\) and \(\Psi_{<2}\circ \Theta_{<2}=1\), \(\Theta_{<2}\circ \Psi_{<2}=1\).
+The morphisms could be extended to some morphism \(\Psi_{<k},\Theta_{<k}\) of \([C_{121}]_{<k}\) and \([C_{212}]_{<k}\).
+Moreover, any such extensions satisfy \(\Psi_{<k}\circ \Theta_{<k}\sim 1\), \(\Theta_{<k}\circ \Psi_{<k}\sim 1\). Let us explain
+an inductive construction for the first homotopy.
+
+Suppose constructed \(\Psi_{<k+1}=\Psi_{<k}+\psi_k\),  \(\Theta_{<k+1}=\Theta_{<k}+\theta_k\) and homotopy \(\chi_{<k}\) such that \(\Psi_{<k}\circ \Theta_{<k}-1=D\circ \chi_{<k}-
+\chi_{<k}\circ D\). Then \(D\circ \Psi_{<k+1}\circ\Theta_{<k+1}-D=-D\circ\chi_{<k}\circ D+D\circ \psi_k\circ \theta_k\) hence \(D\circ\psi_k\circ \theta_k=D\) as
+map \([C_{121}]_k\to [C_{212}]_{k+1}\). Thus there is \(\chi_k\) such that \(D\circ\chi_k=\psi_k\circ\theta_k\) and we can set \(\chi_{<k+1}=\chi_{<k}+\chi_k\).
+
+Thus we have a homotopy equivalence \(C_{121}\sim C_{212}\). The matrix factorizations
+\(\bcalC_+^{(1)}\bar{\star}\bcalC_+^{(2)}\bar{\star}\bcalC^{(1)}_+\) and
+\(\bcalC_+^{(2)}\bar{\star}\bcalC_+^{(1)}\bar{\star}\bcalC^{(2)}_+\)
+are lifts of the complexes \(C_{121}\) and \(C_{212}\). Since the complexes \(C_{121},C_{212}\) satisfy the conditions of the lemma~\ref{lem: ext mor} we lift the homotopy
+between \(C_{121}\) and \(C_{212}\) to the homotopy in the statement of corollary.
+  
+% It is  well known \cite{E2} that the minimal resolutions of the modules over the regular ring are related by the linear isomorphism (sequence of row transformations
+% Hence the minimality and the proposition~\ref{prop: ideals aux} implies that $D(\overline{C}_{121})$ is related to $\overline{C}_{121}$ by the linear isomorphism. Thus we have
+%$$ \bcalC_+^{(2)}\bar{\star}\bcalC_+^{(1)}\bar{\star}\bcalC^{(2)}_+=D(\bcalC_+^{(1)})\bar{\star}D(\bcalC_+^{(2)})\bar{\star}D(\bcalC^{(1)}_+)=D(\bcalC^{(121)})=\bcalC^{(121)}.$$
+\end{proof}
+
+
+The main conclusion of the computations in the last two section is a construction of the braid group  action on the category of matrix factorizations:
+\begin{corollary} The assignment
+  \[\sigma_i\mapsto \bcalC^{(i)}_+\bar{\star},\quad \sigma_{i}^{-1}\mapsto \bcalC^{(i)}_-\bar{\star} \]
+  extends to the homomorphism \(\Brgr_n\to End(\MF_{B^2}(\calXr_2,\Wr)).\)
+\end{corollary}
+
+
+\section{Sheaves on the Hilbert scheme}\label{sec: link inv}
+In this section we explain how for a word $\beta$ of generators of the braid group $ \Brgr_n$ one can construct a two-periodic complex $C_\beta$ of quasi-coherent sheaves on the space $\calX_\ell$ with the property that
+its homology is supported on
+a version of the Steinberg-like
+variety $\St_\ell$ that covers  the nested Hilbert Scheme $\Hilb_{1,n}$ of $n$-points on $\CC^2$.
+We show later  that $B^\ell\times G$-invariant part $\cohog{*}{C_\beta}$ is related to the isotopy   invariant of the link $L(\beta)$. First let us remind a definition of the nested Hilbert scheme.
+
+\subsection{Nested Hilbert scheme: definitions and notations}\label{ssec: NHilb defs} Direct definition of the scheme $\Hilb_{1,n}$ is the moduli space of the sequences of the ideals $I_1\subset\dots\subset I_n\subset \CC[x,y]$ such that $\dim \CC[x,y]/I_k=k$.
+We are also interested in the subvariety $\Hilb_{1,n}^L$ which consists of the sequence like above with extra condition $\supp(I_{k-1}/I_k)$ is a point on the line $L=\{ y=0\}$.
+
+
+We can also think of a point on $\Hilb_{1,n}$ as  quotient sequence \[\CC[x,y]/I_n\to\CC[x,y]/I_{n-1}\to\dots\to \CC[x,y]/I_1.\]
+Let us use notation $V_k=\CC[x,y]/I_k$.
+If we choose a basis $\{v_i\}_{i=1,\dots,n}$ of $V_n$ such that $\langle v_1,\dots,v_k\rangle=V_k$ then the operators of multiplication by $x$ and $y$ become upper triangular in this basis.
+Let us denote these operators by $X$, $Y$. Let us also notice that the fact that $V_k$ are obtained as a quotient of $\CC[x,y]$ implies that there is a special vector in $u\in V_n$ which is the image of
+$1\in \CC[x,y]$. Thus on the level of points we obtained identification of $\Hilb_{1,n}$ with the quotient of the variety
+$$\SymbolPrint{ \mathcal{CV}^{st}}_{\frb\times\frb}=\{(X,Y)\in \frb| [X,Y]=0 \mbox{ and exists } u \mbox{ such that } \CC[X,Y] u=V\}$$
+by the group $B$. Respectively, to obtain a model for $\Hilb_{1,n}^L$ one need to impose the condition $Y\in \frn$
+
+The tricky part of the previous description is the fact that we take quotient by the group $B$ which is not a reductive group.
+Thus to reveal the scheme theoretic structure of the quotient $\mathcal{CV}^{st}_{\frb\times \frb}/B$ one could consider slightly different model for $\Hilb_{1,n}$ which we describe below.
+Let us define $\tilde{C}\subset \Fl\times \gl_n\times \gl_n$ which consists of the triples $(V_{\bullet},X,Y)$ satisfying the following conditions:
+$$ X V_i\subset V_i,\quad YV_i\subset V_i, \quad [X,Y]=0.$$
+
+There is a natural action of $GL(n)$ on $\tilde{C}$ and
+analogously to the argument in \cite{Nak} one can show that the semi-stable locus $\tilde{C}^{ss}$ of the action is exactly the locus where there is a vector $u$ such that $\CC[X,Y]u=V_n$.
+Thus on the set theoretic level we established the isomorphism between $\mathcal{CV}^{st}_{\frb\times\frb}/B$ and $\tilde{C}^{ss}/GL_n$. Lastly, let us notice that the quotient $\tilde{C}^{ss}/GL_n$ has a natural
+scheme structure due to GIT theory \cite{N}.
+
+\subsection{Braid complex}\label{ssec: Cb} Now let us recall our construction of the braid group action and relate the construction of the braid group action to the knot invariants. Recall that in the previous sections we discussed
+various properties of the particular matrix factorization
+\( \calC_\epsilon^i\in \MF_{G\times B^2}(\frg\times \left( G\times \frn\right)^2,W), \):
+\[ W(X,g_1,Y_1,g_2,Y_2)=\Tr(\Ad^{-1}_{g_1}(X)Y_1-\Ad^{-1}_{g_2}(X)Y_2).\]
+
+Suppose we are given a braid $\beta=\sigma_{i_1}^{\epsilon_1}\dots \sigma_{i_\ell}^{\epsilon_\ell},$  where $\epsilon_j=\pm 1$. Then we construct the following two-periodic complex of coherent sheaves on
+$\calX_\ell:=\frg\times \left( G\times \frn \right)^N$:
+$$\calC_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}:=\pi_{12}^*(\calC^{(i_1)}_{\epsilon_1})\otimes\dots\otimes\pi_{n1}^*(\calC^{(i_\ell)}_{\epsilon_\ell})\in \MF_{B^\ell\times G}(\calX_\ell,\pi_{1,n}^*(W)),$$
+where $\pi_{i,i+1}:\calX_\ell\to \calX_2$ is the natural projection.
+
+
+
+%\subsection{} Let us define smaller space
+% $$\calXsm_\ell=\{ \{(X_i,h_i,Y_i)\}_{i=1,\dots,\ell} \in (\frg\times G\times \frb)^\ell | \Ad^{-1}_{h_i}(X_i)=X_{i+1},h_1\dots h_\ell=1\}.$$
+ %There is a natural map $\bar{\pi_\ell}:\calX_\ell \to\calXsm_\ell$, $$\bar{\pi}_\ell(X,g_1,Y_1,\dots,g_\ell,Y_\ell)=\{ (\Ad^{-1}_{g_i}(X), g_i^{-1}g_{i+1},Y_i)\}.$$
+% Respectively there is a map $\bar{\pi}_{i,i+1}:\calXsm_\ell\to \calXsm_2$:
+ %$$\bar{\pi}_\ell(X_1,h_1,Y_1,\dots,X_\ell,h_\ell,Y_\ell)=(X_i, h_i,Y_i,X_{i+1},h_i^{-1},Y_{i+1}).$$
+
+ %We will also use contracting maps $\cont_{k}: \calXsm_{\ell}\to \calXsm_{\ell-1}$
+ %$$\cont_k(X_1,Y_1,h_1,\dots,X_\ell,Y_\ell,h_\ell)=(X_1,Y_1,h_1,\dots,X_k,Y_k,h_kh_{k+1},X_{k+2},Y_{k+2},h_{k+2},\dots).$$
+
+
+
+%As it is seen from the definition of the elements $\bfX_i^{\pm }$ the differentials in the complex are $G$-invariants and there is $\bar{\bfX}_i\in \MF_{B\times B}(\calXsm_2,W)$ such that
+%$\bfX_i^{\pm}=\bar{\pi}_2^*(\bar{\bfX}_i^{\pm})$ and we can define $\bar{C}_\beta:=\bar{\pi}_{12}^*(\bar{\bfX}_{i_1}^{\epsilon_1})\otimes\dots\otimes\bar{\pi}_{\ell,1}^*(\bar{\bfX}_{i_\ell}^{\epsilon_\ell})$.
+%From the construction we see that $\bar{\pi}_\ell^*(\bar{C}_\beta)=C_\beta$.
+
+%In some cases it is more natural to work with varieties $\calXsm_\ell$ instead of varieties $\calX_\ell$. We will frequently switch between these two settings. Generally, barred notations stand for the objects related to the reduced space.
+
+%\subsection{}
+Let us define the ideal $\Icr_\ell\subset\CC[\calX_\ell]$  be generated by the partial derivatives of the functions $W_{i,i+1}:=\pi_{i,i+1}^*(W)$, $i=1,\dots,n-1$. Elements of the ideal $\Icr_\ell$  provide a morphisms of the complex $\calC_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}$  that are homotopic to $0$.
+In the next subsections of this section we construct from  $\calC_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}$
+a complex of sheaves \(\calS_\beta\), \(\beta=\sigma_{i_1}^{\epsilon_1}\dots\sigma_{i_\ell}^{\epsilon_\ell}\in \Brgr_n\) on the usual Hilbert scheme \(\Hilb_n\) that
+depends only on the conjugacy class of \(\beta\). Other words we construct a trace map \(\Brgr_n\to D^{per}_{T_{sc}}(\Hilb_n)\).
+
+
+
+
+\subsection{Geometry of the critical locus} Before we describe the last step of our construction of the knot invariant let us discuss the structure of the scheme $\SymbolPrint{\calX^{crit}_\ell}:=\Spec(R_\ell)$.  First, we describe a particular set of  generators of the ideal $\Icr_\ell$.  Let us notice that we can rewrite
+the intermediate potential $W_{i,i+1}$ as follows
+\begin{equation}\label{eq: two forms of crit}
+\SymbolPrint{W_{i,i+1}}= \Tr(\Ad^{-1}_{g_i}(X)Y_i-\Ad^{-1}_{g_{i+1}}(X)Y_{i+1})
+\end{equation}
+
+ %Let us explain how our notations are consistent with the notations from the section~\ref{sec: two}. The potential $W$ from the section~\ref{sec: two} is equal to $W_{12}$ under the following conventions:
+ %$X^{abs}$ is the absolute version of matrix $X$ that is $X^{abs}=\Ad_{g_1}(X)$, $g=g^{-1}_1 g_2$ where $X$ and $g$  are the matrices used in the section~\ref{sec: two} in the formula for the potential
+%(\ref{eq: potential with abs X}). The group $B_+\times B_+$ does not act on $X^{abs}$.
+
+As we explain in the section~\ref{sec: Knor} the potential $W_{i,i+1}$ could be rewritten as follows:
+$$
+\Tr(\tilde{X}_{i,+}\Ad_{g_{i,i+1}}(Y_{i+1}))-\Tr(\tilde{X}_{i,--}(Y_{i}-\Ad_{g_{i,i+1}}(Y_{i+1})_{++})).
+$$
+
+
+Here and everywhere below the notations are consistent with the notations of section~\ref{sec: Knor}, that is  $M_+$ ($M_-$) is the upper-triangular (lower-triangular) part of a matrix $M$ and $M_{++}$ ($M_{--}$) is the strictly upper-triangular (lower-triangular) part of $M$ and
+$$ g_{i,i+1}=g_{i}^{-1}g_{i+1},\quad \tilde{X}_{i}=\Ad_{g_{i}}^{-1}(X).$$
+Taking partial derivatives of the last function with respect to the coordinates $Y_{i+1}$, $\tilde{X}_{i,+}$, $g$, $Y_{i}-\Ad_{g_{i,i+1}}(Y_{i+1})_{++},\tilde{X}_{i,--}$ we obtain equations:
+\begin{gather}\label{eq: part ders}
+\Ad^{-1}_{g_{i,i+1}}(\tilde{X}_{i})_{--}=0,\\
+\Ad_{g_{i,i+1}}(Y_{i+1})_{-}=0,\label{eq: Y neg}\\
+ [\Ad_{g_{i,i+1}}(Y_{i+1}),\tilde{X}_{i,+}]=0,\\
+ \tilde{X}_{i,--}=0,\\
+  Y_{i}=\Ad_{g_{i,i+1}}(Y_{i+1})_{++}.\label{eq: Yi Yi+1}
+ \end{gather}
+ Let us notice that the last equations the first and  the second lines  actually imply:
+ \begin{equation}\label{eq: flag comm}
+  [Y_{i},\tilde{X}_{i,+}]=0,
+ \end{equation}
+ since $[\Ad_{g_{i,i+1}}(Y_{i+1}),\tilde{X}_{i,+}]=[\Ad_{g_{i,i+1}}(Y_{i+1})_{++},\tilde{X}_{i,+}]+[\Ad_{g_{i,i+1}}(Y_{i+1})_{-},\tilde{X}_{i,+}]$.
+
+ On the other hand if we compute the partial derivatives by $X$ of the LHS of (\ref{eq: two forms of crit}) we get
+ \begin{equation}\label{eq: AdAd}
+ \Ad_{g_i}(Y_i)=\Ad_{g_{i+1}}( Y_{i+1})
+ \end{equation}
+
+
+ Finally let us notice that the (\ref{eq: part ders}) and (\ref{eq: flag comm}) imply that $[Y_{i+1},\tilde{X}_{i+1}]=0$ and hence
+ \begin{equation}\label{eq: comm}
+ [\Ad_{g_i}Y_i,X]=0.
+ \end{equation}
+ Let us notice that because of the previous observation (\ref{eq: AdAd}), the last equations (\ref{eq: comm}) are equivalent for different values of $i$.
+
+
+
+
+ Thus we see  that the $G\times B^{\ell}$ equivariant scheme $\calX_\ell^{crit}$ comes equipped with the following maps:
+ $$pr_{i}: \calX_\ell^{crit}\to \mathcal{CV}_{\frb\times\frn}, \quad pr_i(g_\bullet,X,Y_\bullet)=(Y_i,\tilde{X}_{i,+}),$$ this map is $B$-equivariant;
+ $$pr:\calX_\ell^{crit}\to \mathcal{CV}_{\frg\times\frg}, \quad pr(g_\bullet,X,Y_\bullet)=(\Ad_{g_i}(Y_i),X),$$ this map is $G$-equivariant.
+ The varieties $\mathcal{CV}_B$ and $\mathcal{CV}_G$ are the commuting sub varieties of  $\frn\times\frb$ and $\frg\times\frg$ respectively.
+
+ \begin{proposition} The critical locus $\calX^{crit}_\ell$ consists of elements
+ $(X,g_1,Y_1,\dots,g_\ell,Y_\ell)$ satisfying
+ \begin{gather*}
+ \Ad_{g_i}(Y_i)=\Ad_{g_{i+1}}(Y_{i+1})\\
+ \Ad_{g_i}^{-1}(X)_{--}=0\\
+ [X,\Ad_{g_1}(Y_1)]=0.
+ \end{gather*}
+ \end{proposition}
+
+
+% It is probably more natural to state the results of this section in terms of variety $\calXsm$. Clearly $\Icr:=\bar{\pi}_{\ell}^*(\bar{I}_{crit})$ and
+
+% \begin{proposition} The ideal $\bar{\calI}^{crit}_\ell$ defines the following subvariety $\calXsm^{crit}_\ell$ of $(\frg\times \frn\times G)^{\ell}$:
+% $$\calXsm^{crit}_\ell=(\calC_B\times G)^{\ell}\cap  \calXsm_\ell.$$
+ %\end{proposition}
+
+%The space $\calXsm^{crit}_\ell$ has natural maps $pr_i: \calXsm^{crit}_\ell\to \calC_B$.  There is no natural map from $\calXsm^{crit}_\ell$ to $\calC_G$.
+
+%In the next subsection we explain how one could impose particular stability condition on our space so that the above maps turn into maps of Hilbert schemes.
+
+\subsection{Stability conditions on critical locus} The locally closed locus $\calX^{crit}_{\ell,st}$ defined by the condition that there is vector $u\in V$ such that
+\begin{equation}\label{eq: cyclic}
+ \CC[\Ad_{g_i}(Y_i),X]u=\CC^n.
+ \end{equation}
+From above discussion we see that the image $\pi_i(\calX^{crit}_{\ell,st})$ is inside $\mathcal{CV}_B^{st}$ because $u_i=g_i^{-1}(u)$ is cyclic
+$$\CC[Y_i,\tilde{X}_{i,+}]u_i=\CC^n.$$
+We denote intersection of $\calX^{crit}_\ell/U^\ell$ with the stable locus by $\calX^{crit}_{\ell,st}/U^\ell$.
+Let us denote $j_{st}$ the inclusion of the stable locus.
+
+% The definition of $\calXsm^{crit}_{\ell,st}$ is analogous. Let us introduce this object using framing. We define $\calXsm^{crit}_{\ell,fr}$ as subspace of $(\calC_B\times G\times V)^{\ell}$ consisting of
+% $\{(X_i,Y_i,h_i,v_i)\}_{i=1,\dots,\ell}$ such that
+% $$ \CC[X_i,Y_i]v_i=V_i, \quad h_i(v_i)=v_{i+1}.$$
+% The stable locus $\calXsm^{crit}_{\ell,st}\subset(\calC_B\times G)^{\ell} $  is the image of the projection of $\calXsm^{crit}_{\ell,fr}$.
+% Similarly we define the space $\calX^{crit}_{\ell,fr}\subset \calX^{crit}_\ell\times V$:
+% $$\calX^{crit}_{\ell,fr}=\{ (X,g_1,Y_1,\dots,g_\ell,Y_\ell,u)| \CC[ \Ad_{g_i}(Y_i), X] u=V\}.$$
+ %The image of the projection of $\calX^{crit}_{\ell,fr}$ on $\calX^{crit}_{\ell}$ is the space $\calX^{crit}_{\ell,st}$ discussed above.
+
+Let us introduce slightly bigger space $\calX^{crit}_{\ell,fr}$ that is a subvariety of $\calX^{crit}_\ell\times V$ consisting of collections of elements \((X,g_1,Y_1,\dots,g_\ell,Y_\ell,u)\)
+ satisfying conditions (\ref{eq: cyclic}). 
+The space $\calX^{crit}_{\ell,fr}$ has a natural action of the group $\hat{G}\times B^{\ell}$, $\hat{G}:=G\times \CC^*$, where $\CC^*$-factor acts on the space $V$ by rescaling.
+Let us denote by \(\St_\ell\) the quotient \(\hat{G}\backslash \calX^{crit}_{\ell,fr}/B^\ell\).
+%As we see from the previous discussion  the quotient by this
+% group have the following interpretation.
+
+ 
+
+ % There is the universal ideal sheaf $\calI$ over $\Hilb_n\times \CC^2$ and we denote by $\calO/\calI $ the rank $n$ vector bundle
+ % on $\Hilb_n$ defined as push forward $pr_{1*}(\mathcal{O}_{\CC^2}/\calI)$.
+ %   Let us introduce an analog of the Steinberg variety in our setting, $\St_\ell\subset \Hilb_n\times \Fl(\calO/\calI)^\ell$
+ %$$ \St_\ell:=\{(I, V^\bullet_1,\dots,V^\bullet_\ell) |  V^j_i\subset\CC[x,y]/I, y(V^k_i)\subset V^{k-1}_i, x(V^k_i)\subset V^k_i\}$$
+
+ % \begin{proposition}\label{prop: Steinb} We have
+ %$$ \hat{G}\backslash \calX^{crit}_{\ell,fr} /B^\ell= \St_\ell$$
+ %\end{proposition}
+
+
+ \subsection{Stability conditions for the matrix factorizations.}
+
+ We denote by \[\SymbolPrint{V^0}\subset V=\CC^n \] the subset of vectors with a non-zero last coordinate.
+ Let us define $\SymbolPrint{\calX_{\ell,fr}}$ as the subvariety  of  $\calX_\ell\times V$ consisting of collections
+ \( (X,g_1,Y_1,,\dots,g_\ell,Y_\ell,u)\) such that
+\[\CC \langle \Ad_{g_i}^{-1}(X),Y_i\rangle g^{-1}_i(u)=V,\quad g^{-1}(u)\in V^0,\quad i=1,\dots,\ell-1,\]
+
+The map that forgets framing  $\SymbolPrint{\forg }:\calX_{\ell,fr}\to \calX_\ell$  is defined as restriction of the projection \(\calX_\ell\times V\rightarrow \calX_\ell\) on the
+open subset \(\calX_{\ell,fr}\subset\calX_\ell\times V\). It
+is dominant over the open that we call
+the stable locus $\calX_{\ell,st}$. There a unique $G\times B^\ell$-equivariant structure on $\calX_{\ell,fr,i}$ that makes map $\forg$ $G\times B^\ell$-equivariant.
+%In particular the vector space $V$ is acted on by the $i$-th copy on $B$ and fixed by the other copies.
+
+
+The framed space comes equipped with the natural convolution algebra structure:
+$$ \calF\SymbolPrint{\star} \calG:=\pi_{13*}(\CE_{\frn^{(2)}}(\pi_{12}^*(\calF)\otimes\pi_{23}^*(\calG))^{T^{(2)}}),$$
+where $\pi_{ij}:\calX_{3,fr}\to \calX_{2,fr}$ are the natural projection maps.
+There is a natural pull back map \[\SymbolPrint{\forg}: \MF_{B^2}(\calX_2,W)\to \MF_{B^2}(\calX_{2,fr},W)\] and the key to what follows in the next sections is the Lemma below:
+
+\begin{lemma}\label{lem: for homom}
+  The pull-back map $\forg^*$ is the homomorpism of the convolution algebras.
+ \end{lemma}
+ \begin{proof}
+   Let us denote by $\calC$ the matrix factorization \[\pi_{12}^*(\calF)\otimes\pi_{23}^*(\calG)\in\MF_{B^2}(\calX_{3,fr},\pi_{13}^*(W)).\] Then what 
+   we need to show is that for any Zarisky open set $U\subset \calX_{2,fr}$  the matrix factorizations of
+   $\CC[U]$-modules $\forg^*(\CE_{\frn^{(2)}}(\calC)^{T^{(2)}})$ and $\CE_{\frn^{(2)}}(\forg^*(\calC))^{T^{(2)}})$ are homotopic.
+
+   It is more convenient to restate the above homotopic relation in a slightly more geometric terms.
+   Let us denote by $\calX_{3,fr,1}$ the subvariety of $\calX_3\times V$ that is defined by the stability condition:
+   $$\CC\langle \Ad_{g_1}^{-1}(X), Y_1\rangle g_1^{-1}(u)=V,\quad g_1^{-1}(u)\in V^0$$
+   Both spaces $\calX_{3,fr,1}$ and $\calX_{3,fr}$ project onto $\calX_{2,fr}$ and to distinguish these projections we denote the
+   projection from the first space by $\pi_{13}$ and from the second by $\pi_{13}^{fr}$. Thus the statement of the lemma is equivalent
+   to the homotopy equivalence of the $\CC[U]$ matrix factorizations
+\begin{equation}\label{eq: framed homotopy}
+     \CE_{\frn^{(2)}}(\calC|_{\pi_{13}^{-1}(U)})^{T^{(2)}}\sim \CE_{\frn^{(2)}}(\calC|_{\pi^{fr,-1}_{13}(U)})^{T^{(2)}}.
+\end{equation}
+   
+   From the previous discussion of the equations for the support of $\calC_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_l}^{\epsilon_l}}$ we see that
+   $$ \calX_3^{crit}\times V \cap\calX_{3,fr,1}=\calX_3^{crit}\times V \cap \calX_{3,fr}. $$
+   Finally since $Z=\calX_{3,fr,1}\setminus\calX_{3,fr}$ is the closed subvariety the equation (\ref{eq: framed homotopy}) follows from the general lemma that
+   follows the proof: we use $X=\calX_{3,fr,1}$ and $Z'=\calX_3^{crit}\times V$ in the lemma.
+ \end{proof}
+
+ Typically the stable locus is a open subset of some more natural bigger space and we are interesting in comparing the matrix factorizations on the big
+ space with the ones on the stable locus. The lemma below shows that the category does not change as we pass to the stable locus as long the unstable
+ locus does not intersect the critical locus of the potential. The lemma is shown in more general case and we do not refer to a stability a condition. 
+
+ \begin{lemma} Suppose $X$ is a quasi-affine variety and $\calF=(M,D)\in \MFs(X,W)$, $W\in \CC[X]$. The elements of \(\CC[X]\) act on
+   \(\MFs(X,W)\) by multiplication. Let us assume that
+   the elements of the ideal $I=(f_1,\dots,f_m)\subset \CC[X]$ act by zero homotopies on $\calF$ and $Z'\subset X$ is the
+   zero locus of $I$. Let $Z\subset X$ be a subvariety
+   defined by $J=(g_1,\dots,g_n)$ such that $Z\cap Z'=\emptyset$. Then $\calF$ is homotopic to $\calF|_{X\setminus Z}$ as
+   matrix factorization over $\CC[X]$.
+\end{lemma}
+\begin{proof}
+  Let us the convention $X_f$ for the open Zarisky subset of $X$ which is a complement of the zero locus of $f$.
+  By the conditions of the lemma the open sets $X_{f_i}$ and $X_{g_i}$ form a Cech cover of $X$ and we denote by the
+  $\check{C}_{f,g}(\calF)$ the Cech resolution of $\calF$. The terms of the complex $\check{C}_{f,g}(\calF)$ are the matrix factorizations
+  $\calF|_{X_{S,T}}$ where $S\subset \{ 1,\dots, m\}$ and $T\subset \{ 1,\dots, n\}$  and $X_{S,T}$ is the complement to the zero locus
+    of $\prod_{s\in S}f_s\prod_{t\in T} g_t$.
+
+    By the conditions of the lemma the matrix factorization $\calF|_{X_{S,T}}$ is contractible if $S\ne \emptyset$. Thus after performing all the
+    contractions we  are left with $\check{C}_{g}(\calF)$ which is exactly $\calF|_{X\setminus Z}$ and the lemma follows.
+\end{proof}
+
+
+
+% There is no canonical way identify $B^\ell$-equivariant matrix factorizations on
+% $\calX_{\ell,fr,i}$ and on $\calX_{\ell,fr,i+1}$ but $\calX_{\ell,fr,i}\cap \calX_{\ell}^{\Delta}=\calX_{\ell,fr,i+1}\cap \calX_{\ell}^{\Delta}$ where
+% $\calX_{\ell}^{\Delta}$ is the subvariety of $\calX_\ell$ defined by the equations
+%$$\Ad_{g_i}(Y_i)_{++}=\Ad_{g_{i+1}}(Y_{i+1})_{++}.$$
+
+% That motivates us to introduce smaller spaces $\calXu_{\ell}$ which is a completion of the space $\calX_{\ell}$ in the direction transversal to $\calX_{\ell}^{\Delta}$ that is in $\CC[\calXu_\ell]$ the variables
+%$$ \left(\Ad_{g_i}(Y_i)-\Ad_{g_{i+1}}(Y_{i+1})\right)_{kl} $$
+%are formal. In general, we use underlining to indicate the completion in the direction transversal to the diagonal variety $\calX_{\ell}^{\Delta}$.
+
+
+% The variety $\calX_{\ell,fr,i}$ is an open set inside $\calX_{\ell}\times V$. Let us define $B^\ell$-equivariant map that transports the framing
+% $tr_i: \calX_{\ell}\times V\to \calX_{\ell}\times V$ that is identity on the first factor and $v\mapsto g_{i+1}^{-1}g_i(v)$ on the second factor.
+% In general, the translation map $tr_i$ does not map $\calX_{\ell,fr,i}$ to $\calX_{\ell,fr,i+1}$. However, we have the following
+
+% \begin{proposition}\label{prop: trans} The map $tr_i$ provides $B^\ell$-equivariant identification  of $\calXu_{\ell,fr,i}$ and $\calXu_{\ell,fr,i+1}$
+%\end{proposition}
+%\begin{proof}
+%The space $\calX_{\ell,fr,i}$ has an affine cover $\calX_{\ell,fr,i}=\cup_j U_{f_j}$ where $f_j=f_j(X_i,Y_i,v)$ is $G$-equivariant and $U_{f_j}\subset \calX_{\ell}\times V$ is define by inequality
+%$f_j\ne 0$. Respectively, we can cover $\calX_{\ell,fr,i+1}$ with affine charts $U_{f'_j}$ where $f'_j=f_j(X_{i+1},Y_{i+1},v)$.
+
+% Let $\underline{U_{f_j}}=U_{f_j}\cap\calXu_{\ell}\times V$, $\underline{U_{f'_j}}=U_{f'_j}\cap\calXu_{\ell}\times V$, these open set cover $\calXu_{\ell,fr,i}$ and $\calXu_{\ell,fr,i+1}$.
+% Let $h_i=g_{i+1}^{-1}g_i$.
+% The map $tr_i$ identifies $\underline{U_{f_j}}$ and $\underline{U_{f'_j}}$ because
+%$$f_j(X_i,Y_i,v)=f_j(\Ad_{h_i}^{-1}(X_i),\Ad_{h_i}(Y_i),h_i(v))=f_j(X_{i+1},Y_{i+1}+(\Ad_{h_i}(Y_i)-Y_{i+1}),h_i(v))$$
+% and hence $f_j-tr_i^*(f_j')\in \calI^{\Delta}$ where $\calI^{\Delta}$ is the defining ideal of the variety $\calXsm^{\Delta}$. Thus
+% $\frac{1}{tr^*_i(f_j')}\in \calO(\underline{U}_{f_j})$ and the statement follows.
+%\end{proof}
+
+% As we from the proposition the space $\calXu_{\ell,fr,i}\cap \calX^{crit}_\ell$ does not depends on $i$ and it is an honest scheme (no function on the scheme is formal),
+% we use notation $\calX_{\ell,fr}^{crit}$ for this space.
+
+
+
+
+
+\subsection{Taking the $B^\ell$ quotient}
+
+Let us define the closure map: $\cl: \calX_{\ell-1}\rightarrow \calX_\ell$ by
+$$ \SymbolPrint{\cl}(X,g_1,Y_1,\dots,g_{\ell-1},Y_{\ell-1}):=(X,g_1,Y_1,\dots,g_{\ell-1},Y_{\ell-1},g_1,Y_1).$$
+This map is $G\times B^{\ell-1}$-equivariant with $B^{\ell-1}$-action on $\calX_{\ell-1}$ induced by
+the group homomorphism $\mathrm{id}_{2,\dots,\ell-1}\times \Delta_{1,\ell}$.
+
+We use the same notation
+for the maps of the framed and stable spaces. Let us notice that  the preimage  of the map $\cl$ applied to $\calX_{\ell+1,fr}$ is the cyclicly framed space \(\SymbolPrint{\calX_{\ell,fc}}\) that consists of points  \((X,g_1,Y_1,\dots,g_\ell,Y_\ell,v)\) satisfying 
+:
+$$ \CC\langle\Ad_{g_i}^{-1}(X),Y_i\rangle g^{-1}(u)=V,\quad  g^{-1}(u)\in V^0, i=1,\dots,\ell.$$
+The intersection with the zero-locus of $\mathcal{I}^{crit}_\ell$ we denote by $\calX_{\ell,fc}^{crit}$.
+
+Respectively, we have the pull back map:
+$$\cl^*:\MF_{B^{\ell-1}}(\calX_{\ell,fr},W)\to \MF_{B^{\ell-1}}(\calX_{\ell-1,fc},0),$$
+and let us denote by $C_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_\ell^{\epsilon_\ell}}$ the pull-back $\cl^*(\calC_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_\ell^{\epsilon_\ell}})$.
+We use the same nation for $\cl^*(\calC_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_\ell^{\epsilon_\ell}})\in \MF_{B^{\ell-1}}(\calX_{\ell-1},0)$, usually it is clear from the
+context which category of matrix factorizations we work with.
+
+
+% As we emphasized earlier the matrix factorizations $\calC_\pm^{(i)}$ are actually $B\times B$ equivariant. Hence we can construct Chevalley-Eilenberg resolution complex
+% $\CE_{\frn^\ell}(\calC_\beta)$ and the homology $$\cohog{*}{\CE_{\frn^\ell}(\calC_\beta)}:=\cohog{even}{\CE_{\frn^\ell}(\calC_\beta)}\oplus\cohog{odd}{\CE_{\frn^\ell}(\calC_\beta)}$$ is
+% a module over the ring of $\frn^\ell$ invariants $R_\ell^{\frn^\ell}$.  Let us fix a notation for  the affine scheme $\calX^{crit}_\ell/U^\ell:=\Spec(R_\ell^{\frn^\ell})$.
+
+
+%The ideal $U^\ell$-invariant part of the ideal $\calI^{crit}_{\ell}$ ($\bar{\calI}^{crit}_\ell$) acts by the zero homotopic maps on the complex
+%. We also use notation $\bCE(\calF)$ for Chevalley-Eilenberg complex constructed from the $B^\ell$-equivariant
+%complex $\calF\in\MF_{B^\ell}(\calXsm_\ell)$. The constructions that are discussed below for complexes $\bCE_\beta$ work for the complex $\bCE(\calF)$.
+
+%\def\MFcrit{ \MF^{\mathrm{crit}}}
+Let us denote by
+$\SymbolPrint{\MFcrit_{B^\ell}}(\calX_{\ell,fc},0)\subset  \MF_{B^\ell}(\calX_{\ell,fc},0)$, $\MFcrit_{B^\ell}(\calX_{\ell},0)\subset  \MF_{B^\ell}(\calX_{\ell},0)$
+the subcategory consisting  of  matrix factorizations
+with the property that the ideal $\calI^{crit}_\ell$ acts by zero homotopy. The element $C_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{\ell+1}^{\epsilon_{\ell+1}}}$ is an element of
+the subcategory $\MFcrit_{B^\ell}(\calX_{\ell,fc},0)$.
+
+Given an element $C\in \MFcrit_{B^\ell}(\calX_{\ell},0)$ the homology $$\cohog{*}{\CE_{\frn^\ell}(C)}:=\cohog{even}{\CE_{\frn^\ell}(C)}
+\oplus\cohog{odd}{\CE_{\frn^\ell}(C)}$$ is
+a module over the ring of $\frn^\ell$ invariants $R_\ell^{\frn^\ell}$ where $R_\ell:=\CC[\calX_{\ell}^{crit}]$.  Let us fix a notation for  the affine scheme $\calX^{crit}_{\ell}/U^\ell:=\Spec(R_{\ell}^{\frn^\ell})$.  We use notation $\mathcal{H}_U(\calX_{\ell},C)$ for $\cohog{*}{\CE_{\frn^\ell}(C)}$ considered as
+$R_\ell^{\frn^\ell}$-module.
+
+There is an natural map $\forg: \calX^{crit}_{\ell,fc}\rightarrow\calX^{crit}_{\ell}$ and by applying the respective pull-back map we obtain
+$$\SymbolPrint{\mathcal{H}_U}(\calX_{\ell,fc},C):=\forg^*(\mathcal{H}_U(\calX_\ell, C))\in \MFs_{T^{\ell}}(\calX_{\ell,fc}/U^{\ell},0).$$
+
+
+The complex of sheaves $\calH_U(\calX_{\ell,fc},C)$ is $T^\ell\times \hat{G}$-equivariant complex of sheaves on $\calX^{crit}_{\ell,fr}/U^\ell$ and we define
+$\SymbolPrint{\calH_B}(\calX_{\ell,fc},C)$ as a complex of sheaves of $T^\ell$-invariant sections of $\calH_U(\calX_{\ell,fc},C)$. Thus $\calH_B(\calX_{\ell,fc},C)$ is a
+complex of quasi-coherent sheaves on the quotient $\calX_{\ell,fc}/B^\ell$.
+%which has a geometric
+%description as scheme of \(B^\ell\)-orbits of points \( (X,Y, V^\bullet_1,\dots,V^\bullet_\ell,v)\in \frg^2\times \Fl^\ell\times V\) satisfying equations:
+%$$   XV_i^k\subset V_i^k, YV_i^{k}\subset V_i^{k-1}, [X,Y]=0, \CC[X,Y]v=V. $$
+The complex of sheaves $\calH_{B}(\calX_{\ell,fc},C)$ is $\hat{G}$-equivariant hence the complex sheaves $\calH_{B}(\calX_{\ell,fc},C)^{\hat{G}}$ of $\hat{G}$-invariant sections of $\calH_{B}(\calX_{\ell,fc},C)$ is a complex of quasi coherent sheaves on
+$\St_\ell$.% by proposition~\ref{prop: Steinb}
+
+
+
+
+%Alternatively, one can think of $\calH^*_U(\calXsm,\calF)$ as a sheaf over the categorical quotient $\calXsm^{crit}_\ell/U^\ell$.
+
+%There is a natural $T^\ell\times G\times \CC^*$-equivariant  map $\pi^{fr}:\calX_{\ell,fr}^{crit}/U^\ell\to \calXsm_{\ell,fr}^{crit}/U^\ell$ and thus $\pi_{fr}^*(\calH_U(\calXsm,\calF))$ is an equivariant sheaf.
+
+
+
+%An affine $U^\ell$-equivariant  cover of $\calXsm^{crit}_{\ell,st}$ restricts to an affine cover of $\calX^{crit}_{\ell,st}/U^\ell$. Thus using Cech complex for the affine cover we can define
+%complex $\calH^*_{U,st}(\calXsm_\ell,\calF):=j^*_{st}(\calH^*_U(\calXsm_\ell,\calF)).$
+
+
+%The sheaf $\calH^*_{U,st}(\calXsm,\calF)$ is $T^\ell$-equivariant hence it defines the sheaf on the quotient $\calXsm_{\ell,st}^{crit}/B^{\ell}$ which we denote by  $\calH^*_{B}(\calXsm_\ell,\calF)$.
+%Repeating, the above definition for $\calF\in \MF_{B^\ell\times G}(\calX_\ell)$ one obtains a construction of $G$-equivariant sheaf $\calH^*_B(\calX_\ell,\calF)$ on $\calX^{crit}_{\ell,st}/B^\ell$.
+
+
+%The natural map $\bar{\pi}:\calX^{cirt}_{\ell,st}/B^\ell\to \calXsm^{crit}_{\ell,st}/B^\ell$ is $G$-equivariant (with $G$-acting trivally on the target of the map). This map induces the isomorphisms
+%of $G$-equivariant sheaves: $\bar{\pi}^*(\calH^*_{B}(\calXsm,\bC_\beta)=\calH^*_{B}(\calX,C_\beta).$
+
+\subsection{Conjugacy class invariant} In section~\ref{ssec: Cb} we constructed for every word $\beta=\sigma_{i_1}^{\epsilon_1}\cdot\dots\cdot\sigma_{i_\ell}^{\epsilon_\ell}$
+of length $\ell$ of generators of the braid group $\Brgr_n$  complexes $C_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}\in
+\MF_{B^\ell\times G}(\calX_{\ell,fc},0)$. The group \(\hat{G}\) acts only on the first and last factors in \(\calX_{\ell,fc}\) there is a \(\hat{G}\)-equivariant projection 
+\(pr^{i}:\calX_{\ell,fc}\rightarrow \frg^2\times V\):
+\[pr^i(X,g_1,Y_1,\dots,g_\ell,Y_\ell,u)=(X,\Ad_{g_i}(Y_i),u).\]
+The image of the map \(pr^1\) restricted to \(\calX^{crit}_{\ell,fc}\) consists of stable triples \((X,Y,u)\), \([X,Y]=0,\CC[X,Y]u=V\). Thus we have a well-defined map
+\(pr^1:\St_\ell\to \Hilb_n\).
+
+Since $C_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}\in \MFcrit_{B^\ell\times G}(\calX_{\ell,fc},0)$
+we can apply the above constructions
+to obtain  a complex of  sheaves on \(\Hilb_n\) \[\SymbolPrint{\calS_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}}:=pr^1_{*}(\calH_{B}(C_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}))^{\hat{G}}.\]
+
+
+\begin{theorem} \label{thm: conj inv} The  sheaf  $\calS_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}$ depends only on conjugacy class of $\beta=\sigma_{i_1}^{\epsilon_1}\cdot\dots\cdot\sigma_{i_\ell}^{\epsilon_\ell}$:
+\begin{equation}\label{eq: 1 in mid}
+  \calS_{\sigma_{i_1}^{\epsilon_1},\dots,1,\dots,\sigma_{i_\ell}^{\epsilon_\ell}}
+  \sim\calS_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}
+\end{equation}
+\begin{equation}\label{eq: conj invce}
+  \calS_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}=\calS_{\sigma_{i_2}^{\epsilon_2},
+    \dots,\sigma_{i_\ell}^{\epsilon_\ell},\sigma_{i_1}^{\epsilon_1}}
+\end{equation}
+\begin{equation}
+\calS_{\sigma_k, \sigma_k^{-1},\sigma_{i_1}^{\epsilon_1}\dots}\sim\calS_{\sigma_{i_1}^{\epsilon_1},\dots},\quad \calS_{\sigma_k, \sigma_{k+1}, \sigma_k,\dots}=\calS_{\sigma_{k+1},\sigma_k,\sigma_{k+1},\dots}
+\end{equation}
+where \(\sim\) stands for the homotopy equivalence.
+\end{theorem}
+\begin{proof}
+  The conjugacy invariance (\ref{eq: conj invce}) follows almost immediately from the construction. Indeed, the definition of \(pr^i\) implies that
+\[  \calS_{\sigma_{i_2}^{\epsilon_2},
+  \dots,\sigma_{i_\ell}^{\epsilon_\ell},\sigma_{i_1}^{\epsilon_1}}=pr^2_*(\calH_{B}(C_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}})).\] On the other hand
+\(pr^1|_{\calX_{\ell,fc}^{crit}}=pr^2|_{\calX^{crit}_{\ell,fc}}\) and hence the equality.
+
+
+  To prove the rest of the theorem we introduce slightly more general definition:
+  \[\calS_{\beta_1,\dots,\beta_m}:=pr^1_*(\mathcal{H}_B(\calX_{m,fc},\forg^*(\cl^*(\pi_{12}^*(\calC_{\beta_1})\otimes
+    \dots\otimes  \pi_{m,m+1}^*(\calC_{\beta_m})))))^{\hat{G}}\]
+
+  Now let us observe that $pr^1=pr^1\circ \hat{\pi}_2$ where $\hat{\pi}_2:\calX_{m,fc}\rightarrow\calX_{m-1,fc}$ is the
+  projection along the second factor. Hence we have
+  \[ \calS_{\beta_1,\beta_2,\dots,\beta_m}=\calS_{\beta_1\cdot\beta_2,\dots,\beta_m}\]
+  It implies the desired equations.
+
+  
+% We first prove (\ref{eq: 1 in mid}). Let us assume the length words $\beta_1$ and $\beta_2$ adds to $\ell$ and $1$ is at $i$-th place, $\beta=\beta_1\cdot 1\cdot \beta_2$.
+% Let   $\hat{\pi}_{i}:\calX_{\ell+1}\to \calX_{\ell}$ be the projection along $i$-th factor. Let us also choose $k> i$ then
+%$$\hat{\pi}_{i*}({}^k\calH_B(C_\beta))=\CE_{\frn^{\ell}}(\underline{\forg}^*_{k}(\hat{\pi}_{i*}(\CE_{\frn^{(i)}}(C_\beta)^T)))^{T^\ell}=
+%\CE_{\frn^\ell}(\underline{\forg}^*_k(C_{\beta_1\cdot\beta_2}))^{T^\ell},$$
+%the second equality is the proposition~\ref{prop: unit}. Since $pr=pr\circ\hat{\pi}_i$ the equation (\ref{eq: 1 in mid}) follows.
+
+% The second property is immediate from our construction. The last two equations could be derived by combining theorem~\ref{thm: braids} and
+% \begin{multline*}
+% \calS_{\beta}=\calS_{1\cdot\beta}=pr_*(\underline{\forg}_1^*(\CE_{\frn^{(1)}\times\frn^{(\ell+1)}}(\pi_{1\ell}^*(\calC_\parallel)\otimes
+% \CE_{\frn^{\ell-1}}(\bigotimes_{i=2}^{\ell-1}\pi_{i,i+1}^*(\calC_{\epsilon_i}^{(k_i)}))^{T^\ell})^{T^2}))=\\
+% pr_*(\underline{\forg_1}^*(\CE_{\frn^2}(\pi_{21}^*(\calC_\parallel)\otimes \calC_{\epsilon_1}^{(k_1)}\star\dots\star\calC_{\epsilon_\ell}^{(k_\ell)})^{T^2})),
+% \end{multline*}
+% where $\beta=\sigma_{k_1}^{\epsilon_1}\dots\sigma_{k_\ell}^{\epsilon_\ell}$.
+\end{proof}
+
+For an element $\beta\in \Brgr_n$ we denote by $[\beta]$ its conjugacy class.
+Thus for any element of the braid group $\beta\in \Brgr_n$ we have a quasi-coherent sheaf $\calS_{[\beta]}$
+on $\Hilb_n$.
+
+It is not obvious to us how one could attach sheaf on the flag Hilbert scheme to a conjugacy class in the braid group. There are well-defined maps
+\(pr_i:\St_\ell\rightarrow \Hilb_{1,n}^L\) that send \((X,g_1,Y_1,\dots,g_\ell,Y_\ell,u)\) to \((\Ad_{g_i}^{-1}(X),Y_i),g^{-1}(u))\).
+Naively one could hope that
+ the push-forwards $pr_{i*}(\calH^*_B(\calX_{2,fc},C_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}))$  for some $i$ is a such sheaf
+   but it is unclear why it would satisfy the properties from the
+theorem.  However, as we will see later, the push-forwards on the flag Hilbert schemes are useful for understanding Markov moves, since there are natural maps between the
+flag Hilbert schemes of different ranks. It is also clear from the argument of the previous theorem
+that for any $\beta=\sigma_{i_1}^{\epsilon_1}\cdot\dots\cdot\sigma_{i_\ell}^{\epsilon_\ell}$ there is a well-defined complex:
+$$\SymbolPrint{\mathcal{S}_\beta}:=pr_{1,*}(\calH^*_B(\calX_{2,fc},C_{\sigma_{i_1}^{\epsilon_1},\dots,\sigma_{i_\ell}^{\epsilon_\ell}}))\in D^{per}_{T_{sc}}(\Hilb_{1,n}^L).$$
+
+
+
+
+
+
+%\begin{proposition} We have a direct sum decomposition
+%$$ \calB=\oplus_{i=2}^n \calO_{n}(-1).$$
+%\end{proposition}
+%\begin{proof}
+%In subsection~\ref{ssec: NHilb defs} we describe $\Hilb_{1,n}$ as quotient of the stable part of $\calCV_B$ by the $B$ (see also \cite{N} for more detailed discussion of this
+%construction). As it is explained in \cite{N} the other way to describe the quotient is to introduce the framed version $\calCV_{B,fr}:=\calCV_B\times V$ of the space $\calCV_B$
+%and the stable locus  $\calCV_{B,fr}^{st}$ consists of triples $(X,Y,v)$ where $v$ is cyclic: $\CC[X,Y]v=V$. Then $\Hilb_{1,n}=\calCV_{B,fr}^{st}/B$ and the vector bundle $\calB$ is
+%the sheaf of $B$-equivariant sections of rank $n-1$ bundle $\calB'$ over $\calCV_{B,fr^{st}}$ with the fiber at $(X,Y,v)$ equal $V/\langle v\rangle$.
+
+%More precisely, let $\calB''$ be the sheaf of $U$-invariant sections of $\calB'$. The sheaf $\calB''$ is the sheaf of sections of the vector bundle over the affine variety
+%$\calCV_{B,fr}/U:=Spec(\CC[\calCV_{B,fr}]^U)$. The vector bundle $\calB''$ has a natural $\hat{T}=T\times \CC^*$-equivariant structure and as such it splits into
+%sum of equivariant  vector bundle $\calB''=\oplus_{\chi\in \Hom(\hat{T},\CC^*)} L_\chi \otimes M_\chi$ where $L_\chi$ is line bundle corresponding to the character of $\chi$ (see \cite{CG})
+%and $M_\chi$ is the multiplicity space.  Moreover, in our case $M_\chi\ne 0$ iff $\chi=(\omega_i^{\vee},0)$,
+%$\omega_i=\epsilon_i-(\sum_{j=1}^n\epsilon_j)/n$ for some $i\in [2,n]$ and $M_\chi$ is one-dimensional.
+%Finally, let us observe that the line bundle $L_{(\omega_i,0)}$ descends to the line bundle $\calO_i(-1)$ on $\Hilb_{1,n}$.
+
+
+%\end{proof}
+
+
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "FinalVerMF1_Jan2017"
+%%% End:

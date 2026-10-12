@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/nrarith/sections/sec-007",
   "@type": [
     "doco:Section"
   ],
-  "title": "The following theorem is from [NR1]. Our formulation here is stronger, but the",
-  "pageStart": 7,
-  "pageEnd": 7,
+  "title": "Commensurators of chain links: proofs",
+  "pageStart": 30,
+  "pageEnd": 34,
   "contains": [
-    "library/nrarith/blocks/prose-sec-007",
-    "library/nrarith/blocks/thm-sec-007-01"
+    "library/nrarith/blocks/prose-sec-007"
   ],
-  "derivedFrom": "library/nrarith/manifest",
-  "sourceDocument": "library/nrarith/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/nrarith/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/nrarith/manifest.jsonld",
   "provenance": "ingested"
 }

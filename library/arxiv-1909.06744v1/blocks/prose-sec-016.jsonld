@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1909.06744v1/blocks/prose-sec-016",
+  "kind": "prose",
+  "title": "(generalized Springer correspondence)",
+  "pageStart": 20,
+  "pageEnd": 20,
+  "text": "../sections/sec-016-generalized-springer-correspondence.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06744v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06744v1/manifest.jsonld",
+  "provenance": "ingested"
+}

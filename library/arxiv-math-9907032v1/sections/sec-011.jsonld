@@ -1,18 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-9907032v1/sections/sec-011",
   "@type": [
     "doco:Section"
   ],
-  "title": "Remarks and Corollaries",
-  "pageStart": 19,
-  "pageEnd": 20,
+  "title": "Some applications to combinatorial geometry",
+  "pageStart": 22,
+  "pageEnd": 27,
   "contains": [
-    "library/arxiv-math-9907032v1/blocks/prose-sec-011",
-    "library/arxiv-math-9907032v1/blocks/cor-sec-011-01",
-    "library/arxiv-math-9907032v1/blocks/conj-sec-011-02"
+    "library/arxiv-math-9907032v1/blocks/prose-sec-011"
   ],
-  "derivedFrom": "library/arxiv-math-9907032v1/manifest",
-  "sourceDocument": "library/arxiv-math-9907032v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9907032v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9907032v1/manifest.jsonld",
   "provenance": "ingested"
 }

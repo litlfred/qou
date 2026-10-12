@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s40879-023-00706-0/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s40879-023-00706-0/blocks/prose-sec-017",
   "kind": "prose",
   "title": "Tritangent planes and odd characteristics",
   "pageStart": 39,
   "pageEnd": 40,
   "text": "../sections/sec-017-52-tritangent-planes-and-odd-characteristics.md",
-  "derivedFrom": "library/s40879-023-00706-0/manifest",
-  "sourceDocument": "library/s40879-023-00706-0/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40879-023-00706-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40879-023-00706-0/manifest.jsonld",
   "provenance": "ingested"
 }

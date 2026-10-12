@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/thurston/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/thurston/blocks/prose-sec-020",
   "kind": "prose",
   "title": "Thurston — The Geometry and Topology of 3-Manifolds",
   "pageStart": 30,
   "pageEnd": 32,
   "text": "../sections/sec-020-22-thurston-the-geometry-and-topology-of-3-manif.md",
-  "derivedFrom": "library/thurston/manifest",
-  "sourceDocument": "library/thurston/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/thurston/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/thurston/manifest.jsonld",
   "provenance": "ingested"
 }

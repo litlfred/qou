@@ -1,0 +1,90 @@
+\section{Serre functors}
+\label{sec:serre}
+
+In this section we review the notion of the Serre functor on $\D(X)$
+and then show how to realise the Serre functor on the derived category
+$\D(X\times Y)$ using 2-categorical language.
+
+ \subsection{The Serre functor on $\D(X)$.}
+\label{subsec:Serretrace}
+If $X$ is a space then we consider the functor
+\[\SerF\colon\D(X)\to \D(X);\qquad \cE\mapsto \omega_X[\dim
+X]\otimes \cE,\] 
+where $\omega_X$ is the canonical line bundle of $X$.  Serre duality
+then gives natural, bifunctorial isomorphisms
+\[ \eta_{\cE,\cF}\colon\Hom_{\D(X)}(\cE, \cF) \stackrel{\sim}{\lra}
+\Hom_{\D(X)}(\cF, \SerF \cE)^\chk \]
+for any objects $\cE,\cF\in \D(X)$, where ${-}^\chk$ denotes the dual
+vector space.
+
+A functor such as $\SerF$, together with isomorphisms as above, was
+called a \emph{Serre functor} by Bondal and Kapranov
+\cite{BonKapSerre} (see also~\cite{ReiVan}).  From this data, for any
+object $\cE\in\D(X)$, define the \emph{Serre trace} as follows:
+\[ \Tr\colon\Hom(\cE, \SerF \cE) \ra \k;\qquad \Tr(\alpha) := \eta_{\cE,\cE}(\id_\cE)(\alpha). \]
+Note that from this trace we can recover $\eta_{\cE,\cF}$ because
+\[ \eta_{\cE,\cF}(\alpha)(\beta)=\Tr(\beta\circ\alpha). \]
+We also have the commutativity identity
+\[ \Tr(\beta\circ \alpha) = \Tr(\SerF \alpha \circ \beta). \]
+Yet another way to encode this data is as a perfect pairing, the
+\emph{Serre pairing}:
+\[\SP{{-}}{{-}}\colon \Hom(\cE,\cF)\otimes \Hom(\cF,\SerF \cE)\to
+\k; \qquad \SP{\alpha}{\beta}:=\Tr(\beta\circ \alpha).\]
+
+ \subsection{Serre kernels and the Serre functor for $\D(X\times
+  Y)$.}
+\label{subsec:serXY}
+We are interested in kernels and the 2-category $\gVar$, so are
+interested in Serre functors for product spaces $X\times Y$, and
+these have a lovely description in the 2-categorical language.
+We can now define one of the key objects in this paper.
+
+\begin{Definition}
+For a space $X$, the \emph{Serre kernel} $\SerK_X\in \OHom_\gVar(X,X)$
+is defined to be $\Delta_*\omega_X[\dim X]\in\D(X\times X)$, the
+kernel inducing the Serre functor on $X$.  Similarly the
+\emph{anti-Serre kernel} $\SerK^{-1}_X\in \OHom_\gVar(X,X)$ is defined
+to be $\Delta_*\omega^{-1}_X[-\dim X]\in\D(X\times X)$.
+\end{Definition}
+
+\begin{Notation}
+In string diagrams the Serre kernel will be denoted by a dashed-dotted
+line, while the anti-Serre kernel will be denoted by a dashed-dotted
+line with a horizontal bar through it (see the pictures in
+Section~\ref{subsec:leftrightadjoints}).
+\end{Notation}
+\noindent
+The Serre kernel can now be used to give a natural description, in the
+2-category language, of the Serre functor on the product $X\times Y$.
+
+\begin{Proposition}
+For spaces $X$ and $Y$ the Serre functor $\SerF_{X\times Y}\colon
+\D(X\times Y)\to \D(X\times Y)$
+can be taken to be $\SerK_Y\circ{-}\circ\SerK_X$.
+\end{Proposition}
+
+\begin{Proof}
+The Serre functor on $\D(X\times Y)$ is given by
+\[\SerF_{X\times Y}(\Phi)= \Phi\otimes \pi_X^*\omega_X\otimes
+\pi_Y^*\omega_Y[\dim X+\dim Y].\]
+However, observe that if $\Phi\in \D(X\times Y)$ and $\cE\in \D(X)$
+then
+\[\Phi\circ \Delta_*\cE\cong \Phi\otimes \pi_X^* \cE,\]
+where $\pi_X\colon X\times Y \to X$ is the projection.  This is just a
+standard application of the base-change and projection formulas.
+Similarly if $\cF\in \D(Y)$ then \( \Delta_*\cF\circ\Phi\cong \pi_Y^*
+\cF\otimes\Phi.\) From this the Serre functor can be written as
+\[\SerF_{X\times Y}(\Phi)= \SerK_Y\circ\Phi\circ \SerK_X.\qedhere\]
+\end{Proof}
+
+\noindent
+This means that the Serre trace map on $X\times Y$ is a map
+\[ \Tr\colon\THom_\gVar(\Phi, \SerK_Y \circ\Phi\circ\SerK_X) \ra \k \]
+which can be pictured as
+\[\Tr\left(\pic{Trace}\right) \in \k,\]
+where the Serre kernel is denoted by the dashed-dotted line.
+
+We will see below that we have `partial trace' operations which the
+Serre trace factors through.
+
+

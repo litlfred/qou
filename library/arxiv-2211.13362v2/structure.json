@@ -5,7 +5,11 @@
   "file": "2211.13362v2.pdf",
   "sha256": "3becbeaa1135d2e1bb7eeddf3c8026586e12411ca93b963802d10ef39914f13b",
   "bytes": 8197511,
-  "pages": 15
+  "pages": 15,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -16,7 +20,7 @@
   },
   "doi": null,
   "title": "Double-slit experiment revisited",
-  "authors_raw": "Siddhant Das*, Dirk-André Deckert*, Leopold Kellers*, Simon Krekels†,‡, and Ward",
+  "authors_raw": "Siddhant Das*, Dirk-Andr\u00e9 Deckert*, Leopold Kellers*, Simon Krekels\u2020,\u2021, and Ward",
   "abstract": "The double-slit experiment is one of the quintessential quantum experiments. However, it tends to be overlooked that a theoretical account of this experiment requires the specification of the joint position and time distribution of detection at the screen, whose position marginal yields the famous interference pattern. The difficulty then arises what this distribution should be. While there exists a variety of proposals for a quantum mechanical time observable, there is no consensus about the right choice. Here, we consider Bohmian mechanics, which allows for a natural and practical approach to this problem. We simulate this distribution in the case of an initial Gaussian wave packet passing through a double-slit potential. We also consider a more challenging setup in which one of the slits is shut during flight. To experimentally probe the quantum nature of the time distribution, a sufficient longitudinal spread of the initial wave packet is required, which has not been achieved so far. Without sufficient spread, the temporal aspect of the distribution can be treated classically. We illustrate this for the case of the double-slit experiment with helium atoms by Kurtsiefer et al. Nature 386, 150 (1997), which reports the joint position and time distribution.",
   "docinfo": {
    "Author": "",
@@ -175,6 +179,76 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 8,
-  "chars_total": 41942
+  "chars_total": 41942,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "manuscript-final-prsa.tex",
+   "tex_sections": 8,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-bohmian-account-of-the-dse",
+     "title": "Bohmian account of the DSE",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-trajectories-for-the-dse",
+     "title": "Trajectories for the DSE",
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-first-passage-distribution",
+     "title": "First-passage distribution",
+     "prose_ratio": 0.597,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-dynamic-dse",
+     "title": "Dynamic DSE",
+     "prose_ratio": 0.162,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-numerical-dse",
+     "title": "Numerical DSE",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.61,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-comparison-to-the-kpm-experiment",
+     "title": "Comparison to the KPM experiment",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-concluding-remarks",
+     "title": "Concluding remarks",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.282,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1706.06168v3/sections/sec-022",
   "@type": [
     "doco:Section"
   ],
-  "title": "B.2 The Coincidence Theorem",
-  "pageStart": 35,
-  "pageEnd": 36,
+  "title": "A Tensor Product Decomposition of SL2(C) Representations",
+  "pageStart": 31,
+  "pageEnd": 34,
   "contains": [
     "library/arxiv-1706.06168v3/blocks/prose-sec-022"
   ],
-  "derivedFrom": "library/arxiv-1706.06168v3/manifest",
-  "sourceDocument": "library/arxiv-1706.06168v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.06168v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.06168v3/manifest.jsonld",
   "provenance": "ingested"
 }

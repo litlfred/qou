@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0607416v6/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0607416v6/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0607416v6",
   "contains": [
     "library/arxiv-math-0607416v6/sections/sec-000",
     "library/arxiv-math-0607416v6/sections/sec-001",
@@ -18,8 +23,17 @@
     "library/arxiv-math-0607416v6/sections/sec-009"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0607416&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-0607416v6",
+    "title_source": "slug",
     "source_file": "0607416v6.pdf",
     "source_sha256": "0705075947ce4a3d33138b0eec4cc4654ab937324801b4c67f8a2bc5b4dfaa07",
     "pages": 23,

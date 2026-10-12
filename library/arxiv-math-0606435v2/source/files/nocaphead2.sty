@@ -1,0 +1,15 @@
+
+\newif\ifbysame
+\let\o@bysame\bysame
+\def\bysame{\ifbysame A.~Stoimenow\bysamefalse\else\o@bysame\fi}
+\@ifundefined{MakeUppercase}{
+\let\old@mb\markboth
+\def\markboth#1#2{\bysametrue{\def\uppercase##1{##1}\old@mb{#1}{#2}}}
+\let\old@mr\markright
+\def\markright#1{\bysametrue{\def\uppercase##1{##1}\old@mr{#1}}}
+}{
+\let\old@mb\markboth
+\def\markboth#1#2{\bysametrue{\def\uppercase##1{##1}\def\MakeUppercase##1{##1}\old@mb{#1}{#2}}}
+\let\old@mr\markright
+\def\markright#1{\bysametrue{\def\uppercase##1{##1}\def\MakeUppercase##1{##1}\old@mr{#1}}}
+}

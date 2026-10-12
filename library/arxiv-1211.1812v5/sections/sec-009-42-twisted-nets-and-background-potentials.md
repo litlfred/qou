@@ -8,284 +8,378 @@ pages: 23-28
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
 doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
+text_source: latex
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.993
 ---
-We show how a class of twists arises when a quantum ﬁeld interacts wit h a classical background
-potential. We start by assuming that M is a globally hyperbolic spin manifold and consider the
-free Dirac ﬁeld ψ∗ interacting with a (classical) closed 1–form A ∈Z 1
-deRham(M ).
-To this end we extract some informations from A. A ﬁrst point is that, since A is closed, for
-any loop ℓ : [0, 1] → M the integral ∫
-ℓA is independent of the choice of ℓ in its homotopy class,
-thus we obtain the character
-ζA :π1(M ) → T , ζA([ℓ]) := exp 2 πi
-∫
-ℓ
-A . (4.6)
-Moreover, since any diamond o ∈ ∆ is simply connected there is a local primitive φo ∈ C∞(o, R)
-such that A|o =dφo , and we have
-φo′ |o −φo = Λ o′o ∈ R ⇒ Λo′′o′ + Λo′o = Λ o′′o , ∀o ⊆o′ ⊆o′′ ∈ ∆ .
-Let now b ∈ Σ 1(∆) and β : [0, 1] → |b| ⊂ M such that β(0) ∈∂1b , β(1) ∈∂0b . Then
-∫
-β
-A =
-∫
-β
-dφ|b| = φ|b|(β(1)) −φ|b|(β(0)) = φ∂0b(β(1)) −φ∂1b(β(0)) + Λb ,
-where Λ b := Λ |b|∂0b − Λ |b|∂1b . Note that the family Λ = {Λb} is a cocycle and it can be veriﬁed
-that it encodes the cohomology class of A (see [34, §3]). In particular the holonomy of A can be
-reconstructed as follows. Let a ∈ ∆ and p :a →a, p =bn ∗... ∗b1 ; then using the isomorphism
-(2.3) we have a homotopy class [ p] ∈ π1(M ) containing a loop ℓ : [0, 1] → M , ℓ = βn ∗... ∗β1 ,
-where each curve βk , k = 1,...,n , fulﬁls the above properties with respect to bk ∈ Σ 1(∆) (see [35,
-§2.5.1]). Thus, iterating the previous equality, we obtain
-∫
-ℓ
-A =
-∑
-k
-∫
-βk
-A =
-∑
-k
-Λbk . (4.7)
-We now deﬁne a net by means of the family φ and the free Dirac ﬁeld. To this end we consider the
-spinor bundle DM → M , the space S∞
-c (M,DM ) of compactly supported, C∞ -sections of DM
-(spinors), and, for any o ∈ ∆, the space S∞
-o (M,DM ) of spinors supported within o ∈ ∆. We note
-that we can deﬁne the product
-e2πiφos ∈S∞
-o (M,DM ) , ∀o ∈ ∆ , s ∈ S ∞
-o (M,DM ) .
-Let us consider the free Dirac ﬁeld ψ∗ : S∞
-c (M,DM ) →BH∗ in the sense of [12]. For any o ∈ ∆
-we deﬁne the operator-valued distribution
-ψo : S∞
-o (M,DM ) →BH∗ , ψo(s) := ψ∗(e2πiφos) .
-23
-Clearly, deﬁning the ﬁeld ψo corresponds to considering the local gauge transformation
-ψ∗(x) → e2πiφo(x)ψ∗(x) , x ∈o ,
-which yields in o a solution for the Dirac equation with interaction given by A. The net of von
-Neumann algebras F∗ = (F, ∗) ⊂BH∗ ,
-Fo := {ψo(s) : s ∈ S ∞
-o (M,DM )}′′ ⊂BH∗ , o ∈ ∆ ,
-coincides with the one deﬁned by ψ∗ , thus at a ﬁrst stage F∗ does not seem to preserve informations
-on the potential A; but, in the following lines, we shall show that this is not the case.
-We consider global gauge transformations αz(ψo(s)) := zψo(s), s ∈ S ∞
-o (M,DM ), z ∈ T, that
-are unitarily implemented in the fermionic Fock space H∗ by universality of the CARs,
-αz(ψo(s)) = Vzψo(s)V ∗
-z , ∀z ∈ T , (4.8)
-and set G∗ := {Vz,z ∈ T} ⊂ UH ∗ with grading element γ =V−1 . This yields the observable subnet
-R∗ = (R, ∗)∆ , Ro =Fo ∩G′
-∗ , o ∈ ∆.
-Now, for any o ⊆o′ we consider the map
-o′o(ψo(s)) := ψo′(s) = ψ∗(e2πi(φo+Λ o′ o)s) = e2πiΛ o′ oψo(s) , s ∈ S ∞
-o (M,DM ) .
-By universality, any o′o extends to a *-monomorphism o′o : Fo → Fo′ and we obtain a net
-F = (F, )∆ . A natural representation of F can be constructed as follows: we deﬁne the Hilbert net
-bundle H = (H,U )∆ ,
-Ho ≡H∗ , Uo′o := Vexp 2πiΛ o′ o , ∀o ⊆o′ ,
-and then note that, by (4.8),
-o′o(t) = αexp 2πiΛ o′ o(t) = Uo′otU ∗
-o′o , ∀o ⊆o′ , t ∈Fo .
-The holonomy of H is easily computed using (4.6) and (4.7):
-Up =
-∏
-k
-Vexp 2πiΛ bk
-= VζA([ℓ]) ∈G∗ , ℓ ∈ [p] ∈π1(M ) .
-Thus F is a twisted net faithfully represented in the Hilbert net bundle H = (H,U )∆ . Performing
-a parallel displacement around the loop p :a →a yields a phase factor aﬀecting the charged ﬁeld
-operators,
-adUp(ψa(s)) = ζA([ℓ])ψa(s) = exp 2 πi
-∫
-ℓ
-A · ψa(s) , ℓ ∈ [p] ∈π1(M ). (4.9)
-Thus, if v0 ∈ H∗ is the vacuum, then the relative phase exp 2 πi ∫
-ℓA appears between the states
-ψa(s)v0 , Upψa(s)v0 ∈H∗ (we use the notation in which ψa(s) is deﬁned by the creation operator).
-To give an example we parametrize R4 by the coordinates x0,x 1,x 2,x 3 and deﬁne M = R4 −Sδ ,
-where Sδ is the closed tube centered around the axis x3 and having ray δ >0 . The base ∆ is given
-by the one of double cones contained in M , which generates a nontrivial topology in the sense that
-π1(∆) ≃π1(M ) ≃ Z (note that M is homotopic to S1 ).
-We consider a vector potential A′ ∈ Ω 1(R4) such that F :=dA′ ∈ Ω 2(R4) is supported within
-Sδ . Note that this scenario is modeled in such a way to obtain a situation a nalogous to the one of
-the Aharonov-Bohm eﬀect, see [19, §15.5]. We can always ﬁnd such 1–forms A′ by starting from
-F ∈ Ω 2(R4) fulﬁlling the above property and deﬁning A′ as a primitive of F .
-As a ﬁnal step we deﬁne A ∈ Ω 1(M ), A :=A′|M . In this way, the previous hypothesis say that
-A is closed and we can apply the previous construction, that gives rise to the phase factor (4.9).
-This last coincides with the phase aﬀecting the wavefunctions of elec trically charged particles in the
-Aharonov-Bohm eﬀect (see [19, Eq.15.33]).
-24
-4.3 Current algebras on S1 .
-We now apply Lemma 4.1 to current algebras on S1 deﬁned as in the approach of Buchholz-Mach-
-Todorov ([6, 7]); here, at a ﬁrst stage, ﬁelds fulﬁlling braided commu tation relations appear, anyway
-after a ”bosonization” procedure a causal ﬁeld net is constructe d. For a complete discussion of the
-model we refer the reader to the above-cited references; here we limit ourselves to give the basic
-deﬁnitions, needed to see how Lemma 4.1 applies.
-The base ∆ of S1 is the one of intervals with proper closure, and we write o ⊥w ⇔o ∩e = ∅ .
-We take a ﬁxed n ∈ N (with no squares in the factor decomposition, see the above-cited references),
-parametrize S1 with complex numbers of modulus 1 , and for every o ∈ ∆ consider the space
-Vn
-o := {q ∈C∞(S1, C) : supp( q) ⊆o, zq(z) ∈ R, ∀z ∈S1,
-∮ 1
-2πiq(z)dz =
-√
-2n }. (4.10)
-Here every q ∈ Vn
-o is interpreted as a charge distribution supported within o ∈ ∆, see [6, Eq.2.24].
-A ﬁeld net Fn
-∗ = (Fn, )∆ ⊂BH∗ is deﬁned, with local von Neumann algebras
-Fn
-o = {φq ∈UH ∗ : q ∈ Vn
-o }′′ , o ∈ ∆ ,
-see [6, Eq.4.93] and the following remarks. The net Fn
-∗ is bosonic in the sense that [ φq,φq′ ] = 0
-whenever φq ∈ Fo , φq′ ∈ Fe with o ⊥ e , see the discussion after [6, Eq.4.82]. There is a gauge
-group G∗ ≃ Z2n generated by a unitary
-V = e2πi(2n)−1/2Q ∈UH ∗ : V 2n = 1 ,
-on which we deﬁne the grading element γ = 1 ; in the previous expression Q denotes an unbounded
-operator on H∗ aﬃliated with the von Neumann algebra generated by Fn , see [6, Eq.4.40], which
-is interpreted as the charge. We have
-VφqV ∗ = eiπ/nφq , ∀o ∈ ∆ , q ∈ Vn
-o , (4.11)
-see [6, Eq.4.94]. We can apply Lemma 4.1 with morphisms of the form
-χ : Z ≃π1(S1) →G∗ ,
-that are determined by the choice of χ(1) that must be of the type χ(1) = Vκ , κ ∈ {1,..., 2n − 1} .
-As a consequence of Cor.4.3, the twisted net F deﬁned by χ has observable net isomorphic to the
-untwisted net Rn
-∗ = (Rn, )∆ generated by operators in Fn
-∗ commuting with V . We note that V
-is, indeed, a central element of the von Neumann algebra ⃗Rn ⊂BH∗ generated by the family Rn ,
-see [6, Eq.4.90]. Any φq deﬁnes a localized automorphism of ⃗Rn ,
-γq := adφq , γq(t) = t, ∀t ∈Re, e⊥ supp(q) .
-Passing to the twisted net Fn we have a representation π : Fn → BH, where H = (H,U )∆ is the
-Hilbert net bundle with ﬁbres Ho ≡H∗ , o ∈ ∆, deﬁned as in Lemma 4.1,
-πo :Fn
-o →BH∗ , adUo′o ◦πo = πo′ |F no , ∀o ⊆o′ ;
-here any πo is the inclusion map Fn
-o →BH∗ , thus in the sequel it will be dropped from the notation.
-It is instructive to exhibit the eﬀect of the parallel displacement alon g a loop on the charged ﬁelds.
-To this end, to ﬁx the ideas we take κ = 1 , that means χ(1) = V . Given a ∈ ∆, the homotopy
-class of any loop p :a →a is labelled by an integer [ p] ∈ Z, thus
-adUp(φq) = V [p]φqV [p],∗ = eiπ[p]/nφq , ∀φq ∈Fn
-a ,
-and a relative phase appears between the charged ﬁeld and its para llel displacement. We note
-that the interpretation of ad Up(φq) as the displacement of the ﬁeld operator φq inducing the DHR
-automorphism γq is in accord with the standard formulation of charge transporters , see [30, §3.4.5].
-25
-4.4 Existence of ﬁeld nets with a given gauge symmetry.
-The following construction is on the line [14], where similar results are pr oven for the Minkowski
-spacetime. We prove that for every suitable compact group G0 , globally hyperbolic spacetime M
-and ﬂat bundle G → M with suitable structure group, there is a twisted ﬁeld net over which G acts
-as a group of internal symmetries. The ”untwisted” net from which we start is deﬁned by means of
-generalized free ﬁelds and yields a large class of toy models where the analysis of topologically trivial
-superselection sectors of [22, 35] can be checked, as happens fo r [14] in the Minkowski spacetime.
-In the sequel we shall consider a Z2 -graded group ( G0,γ ), not necessarily realized on a Hilbert
-space, where G0 is compact and metrizable. Let λ be a symmetric and separating set 7 of irreducible
-subrepresentations of the regular representation of G0 . We consider the corresponding Hilbert space
-Lλ := ⊕̺∈λL̺ ⊂L2(G0)
-on which G0 acts by means of the faithful unitary representation
-G0 →ULλ , g ↦→gλ := ⊕̺g̺ , (4.12)
-where any g̺ is a unitary acting on the irreducible, ﬁnite dimensional G0 -Hilbert space L̺ . The
-grading element γ induces the spectral decomposition
-Lλ =L+
-λ ⊕L−
-λ ,
-which decomposes (4.12) into
-G0 →UL ±
-λ , g ↦→g±
-λ := ⊕̺(γ)=±1g̺ . (4.13)
-Finally, we consider a real structure (that is, an antilinear, isometr ic map) J :L+
-λ →L+
-λ , J 2 = 1 ,
-commuting with (4.12) and stabilizing the subspaces L̺ for any ̺ ∈λ with ̺(γ) = 1 , so that we
-have real structures J̺ : L̺ → L̺ . We denote the real subspace of J -invariant vectors in L+
-λ by
-L+,J
-λ , which is a real Hilbert space with the scalar product induced by L+
-λ .
-Now, we say that a compactly supported f :M →L+,J
-λ is C∞ whenever the function fv(x) :=
-(f (x),v ) ∈ R, x ∈M , is C∞ for any v ∈L+,J
-λ , and denote the corresponding real vector space by
-C∞
-c (M,L +,J
-λ ). Given the decomposition f (x) = {f̺(x) ∈ L̺} , x ∈ M , we deﬁne the real vector
-space
-D+ := {f ∈C∞
-c (M,L +,J
-λ ) : f̺ ⁄= 0 for ﬁnite ̺ ∈λ} .
-The representation (4.12) induces an action by invertible linear maps ,
-G0 →GLD+ : fg(x) := g+
-λf (x) , ∀f ∈ D + , g ∈G0 , x ∈M . (4.14)
-Now, let us suppose that M has a spin structure (this is guaranteed for 4-dimensional globally
-hyperbolic spacetimes, see [25] and related references). We cons ider the spinor bundle DM →M
-(with ﬁbre C4 ), whose tensor product by L−
-λ yields the bundle of Hilbert spaces D−
-λM → M ,
-D−
-λM :=L−
-λ ⊗DM . We have the direct sum decomposition
-D−
-λM ≃ ⊕ ̺(γ)=−1D̺M ,
-where any D̺M := L̺ ⊗DM → M is a smooth vector bundle. Any section s : M → D−
-λM
-decomposes as s = {s̺ : M → D̺M } , and we say that s is C∞ whenever every s̺ is a C∞
-7With symmetric we mean that if ̺ ∈λ then the same is true for the conjugate representation ̺ , whilst the term
-separating indicates that for any g ⁄=g′ ∈G0 there is ̺ ∈λ such that ̺(g) ⁄=̺(g′) .
-26
-section. We denote the set of compactly supported, C∞ sections of D−
-λM by S∞
-c (M,D −
-λM ) and
-deﬁne
-D− := {s ∈ S ∞
-c (M,D −
-λM ) : s̺ ⁄= 0 for ﬁnite ̺ ∈λ} ,
+[]{#rem.qed label="rem.qed"}
+
+We show how a class of twists arises when a quantum field interacts with a *classical* background potential. We start by assuming that $M$ is a globally hyperbolic spin manifold and consider the free Dirac field $\psi_*$ interacting with a (classical) closed 1--form $A \in Z^1_{deRham}(M)$.
+
+To this end we extract some informations from $A$. A first point is that, since $A$ is closed, for any loop $\ell : [0,1] \to M$ the integral
+
+$\int_\ell A$
+
+is independent of the choice of $\ell$ in its homotopy class, thus we obtain the character
+
+$$\label{eq,A0}
+\zeta_A : \pi_1(M) \to {\mathbb T}\ \ , \ \ \zeta_A([\ell]) \, := \, \exp 2\pi i \int_\ell A \ .$$
+
+Moreover, since any diamond $o \in \Delta$ is simply connected there is a local primitive $\phi_o \in C^\infty(o,{\mathbb R})$ such that $A|_o = d\phi_o$, and we have
+
+$$\phi_{o'} |_o - \phi_o \, = \, \Lambda_{o'o} \in {\mathbb R}
+\ \ \Rightarrow \ \ 
+\Lambda_{o''o'} + \Lambda_{o'o} \, = \, \Lambda_{o''o}
+\ , \ 
+\forall o \subseteq o' \subseteq o'' \in \Delta
+\ .$$
+
+Let now $b \in \Sigma_1(\Delta)$ and $\beta : [0,1] \to |b| \subset M$ such that $\beta(0) \in \partial_1b$, $\beta(1) \in \partial_0b$. Then
+
+$$\int_\beta A \, = \, 
+\int_\beta d\phi_{|b|} \, = \, 
+\phi_{|b|}(\beta(1)) - \phi_{|b|}(\beta(0)) \, = \, 
+\phi_{\partial_0b}(\beta(1)) - \phi_{\partial_1b}(\beta(0)) + \Lambda_b \ ,$$
+
+where
+
+$\Lambda_b \, := \, \Lambda_{|b|\partial_0b} - \Lambda_{|b|\partial_1b}$.
+
+Note that the family $\Lambda = \{ \Lambda_b \}$ is a cocycle and it can be verified that it encodes the cohomology class of $A$ (see [@RRV08 §3]). In particular the holonomy of $A$ can be reconstructed as follows. Let $a \in \Delta$ and
+
+$p : a \to a$, $p = b_n * \ldots * b_1$;
+
+then using the isomorphism ([\[eq.back1\]](#eq.back1){reference-type="ref" reference="eq.back1"}) we have a homotopy class $[p] \in \pi_1(M)$ containing a loop
+
+$\ell : [0,1] \to M$, $\ell = \beta_n * \ldots * \beta_1$,
+
+where each curve $\beta_k$, $k=1,\ldots,n$, fulfils the above properties with respect to $b_k \in \Sigma_1(\Delta)$ (see [@Ruz05 §2.5.1]). Thus, iterating the previous equality, we obtain
+
+$$\label{eq.A}
+\int_\ell A \, = \, 
+\sum_k \int_{\beta_k} A \, = \, 
+\sum_k \Lambda_{b_k} 
+\ .$$
+
+We now define a net by means of the family $\phi$ and the free Dirac field. To this end we consider the spinor bundle $DM \to M$, the space $S^\infty_c(M,DM)$ of compactly supported, $C^\infty$-sections of $DM$ (spinors), and, for any $o \in \Delta$, the space $\mathcal S^\infty_o(M,DM)$ of spinors supported within $o \in \Delta$. We note that we can define the product
+
+$$e^{2\pi i\phi_o} s \, \in S^\infty_o(M,DM)
+\ \ , \ \ 
+\forall o \in \Delta \ , \ s \in \mathcal S^\infty_o(M,DM) \ .$$
+
+Let us consider the free Dirac field
+
+$\psi_* : \mathcal S^\infty_c(M,DM) \to BH_*$
+
+in the sense of [@Dim82]. For any $o \in \Delta$ we define the operator-valued distribution
+
+$$\psi_o : \mathcal S^\infty_o(M,DM) \to BH_*
+\ \ , \ \ 
+\psi_o(s) \, := \, \psi_*( e^{2\pi i\phi_o} s )
+\ .$$
+
+Clearly, defining the field $\psi_o$ corresponds to considering the local gauge transformation
+
+$$\psi_*(x) \, \to \, e^{2\pi i\phi_o(x)}\psi_*(x) \ \ , \ \ x \in o \ ,$$
+
+which yields in $o$ a solution for the Dirac equation with interaction given by $A$. The net of von Neumann algebras $\EuFrak{F}_* = (F,\jmath_*) \subset BH_*$,
+
+$$F_o \, := \, \{ \psi_o(s) \, : \, s \in \mathcal S^\infty_o(M,DM) \}'' \subset BH_* \ \ , \ \ o \in \Delta \ ,$$
+
+coincides with the one defined by $\psi_*$, thus at a first stage $\EuFrak{F}_*$ does not seem to preserve informations on the potential $A$; but, in the following lines, we shall show that this is not the case.
+
+We consider global gauge transformations
+
+$\alpha_z(\psi_o(s))  :=  z \psi_o(s)$, $s \in \mathcal S^\infty_o(M,DM)$, $z \in {\mathbb T}$,
+
+that are unitarily implemented in the fermionic Fock space $H_*$ by universality of the CARs,
+
+$$\label{eq.gdirac}
+\alpha_z(\psi_o(s)) \, = \, V_z \psi_o(s) V_z^* \ \ , \ \ \forall z \in {\mathbb T}\ ,$$
+
+and set $G_* := \{ V_z , z \in {\mathbb T}\} \subset UH_*$ with grading element $\gamma = V_{-1}$. This yields the observable subnet
+
+$\EuFrak{R}_* = (R,\jmath_*)_\Delta$, $R_o = F_o \cap G_*'$, $o \in \Delta$.
+
+Now, for any $o \subseteq o'$ we consider the map
+
+$$\jmath_{o'o}(\psi_o(s)) \, := \, 
+\psi_{o'}(s) \, = \, 
+\psi_*( e^{2\pi i (\phi_o + \Lambda_{o'o}) }s ) \, = \, 
+e^{2\pi i \Lambda_{o'o}} \psi_o(s)
+\ \ , \ \
+s \in \mathcal S^\infty_o(M,DM)
+\ .$$
+
+By universality, any $\jmath_{o'o}$ extends to a \*-monomorphism $\jmath_{o'o} : F_o \to F_{o'}$ and we obtain a net $\EuFrak{F}= (F,\jmath)_\Delta$. A natural representation of $\EuFrak{F}$ can be constructed as follows: we define the Hilbert net bundle $\EuFrak{H}= (H,U)_\Delta$,
+
+$$H_o \equiv H_* \ \ , \ \ U_{o'o} \, := \, V_{ \exp 2\pi i \Lambda _{o'o} } \ \ , \ \ \forall o \subseteq o' \ ,$$
+
+and then note that, by ([\[eq.gdirac\]](#eq.gdirac){reference-type="ref" reference="eq.gdirac"}),
+
+$$\jmath_{o'o}(t) \, = \, 
+\alpha_{ \exp 2\pi i \Lambda _{o'o} }(t) \, = \,
+U_{o'o} \, t \, U_{o'o}^* 
+\ \ , \ \ 
+\forall o \subseteq o' \ , \ t \in F_o \ .$$
+
+The holonomy of $\EuFrak{H}$ is easily computed using ([\[eq,A0\]](#eq,A0){reference-type="ref" reference="eq,A0"}) and ([\[eq.A\]](#eq.A){reference-type="ref" reference="eq.A"}):
+
+$$U_p \, = \, \prod_k V_{\exp 2\pi i \Lambda _{b_k}} \, = \, V_{\zeta_A([\ell])} \in G_*
+\ \ , \ \ 
+\ell \in [p] \in \pi_1(M)
+\ .$$
+
+Thus $\EuFrak{F}$ is a twisted net faithfully represented in the Hilbert net bundle $\EuFrak{H}= (H,U)_\Delta$. Performing a parallel displacement around the loop $p : a \to a$ yields a phase factor affecting the charged field operators,
+
+$$\label{eq.AB2}
+{\mathrm{ad}}U_p(\psi_a(s)) \, = \, \zeta_A([\ell]) \, \psi_a(s) \, = \, \exp 2\pi i \int_\ell A \, \cdot \, \psi_a(s)
+\ \ , \ \
+\ell \in [p] \in \pi_1(M)
+\ .$$
+
+Thus, if $v_0 \in H_*$ is the vacuum, then the relative phase $\exp 2\pi i \int_\ell A$ appears between the states $\psi_a(s)v_0$, $U_p \psi_a(s) v_0 \in H_*$ (we use the notation in which $\psi_a(s)$ is defined by the creation operator).
+
+To give an example we parametrize ${\mathbb R}^4$ by the coordinates $x_0 , x_1 , x_2 , x_3$ and define $M = {\mathbb R}^4 - S_\delta$, where $S_\delta$ is the closed tube centered around the axis $x_3$ and having ray $\delta > 0$. The base $\Delta$ is given by the one of double cones contained in $M$, which generates a nontrivial topology in the sense that
+
+$\pi_1(\Delta) \simeq \pi_1(M) \simeq {\mathbb Z}$
+
+(note that $M$ is homotopic to $S^1$).
+
+We consider a vector potential $A' \in \Omega^1({\mathbb R}^4)$ such that $F := dA' \in \Omega^2({\mathbb R}^4)$ is supported within $S_\delta$.
+
+Note that this scenario is modeled in such a way to obtain a situation analogous to the one of the Aharonov-Bohm effect, see [@Fey §15.5]. We can always find such 1--forms $A'$ by starting from $F \in \Omega^2({\mathbb R}^4)$ fulfilling the above property and defining $A'$ as a primitive of $F$.
+
+As a final step we define $A \in \Omega^1(M)$, $A := A'|_M$. In this way, the previous hypothesis say that $A$ is closed and we can apply the previous construction, that gives rise to the phase factor ([\[eq.AB2\]](#eq.AB2){reference-type="ref" reference="eq.AB2"}). This last coincides with the phase affecting the wavefunctions of electrically charged particles in the Aharonov-Bohm effect (see [@Fey Eq.15.33]).
+
+## Current algebras on $S^1$. {#sec.BMT}
+
+We now apply Lemma [\[lem.gauge1\]](#lem.gauge1){reference-type="ref" reference="lem.gauge1"} to current algebras on $S^1$ defined as in the approach of Buchholz-Mach-Todorov ([@BMT1; @BMT2]); here, at a first stage, fields fulfilling braided commutation relations appear, anyway after a \"bosonization\" procedure a causal field net is constructed. For a complete discussion of the model we refer the reader to the above-cited references; here we limit ourselves to give the basic definitions, needed to see how Lemma [\[lem.gauge1\]](#lem.gauge1){reference-type="ref" reference="lem.gauge1"} applies.
+
+The base $\Delta$ of $S^1$ is the one of intervals with proper closure, and we write $o \perp w \Leftrightarrow o \cap e = \emptyset$.
+
+We take a fixed $n \in {\mathbb N}$ (with no squares in the factor decomposition, see the above-cited references), parametrize $S^1$ with complex numbers of modulus $1$, and for every $o \in \Delta$ consider the space
+
+$$\label{eq.BMT0}
+\mathcal V^n_o \, := \, 
+\{ \, q \in C^\infty(S^1,{\mathbb C}) \, : \, {\mathrm{supp}}(q) \subseteq o \, , \, 
+                                   zq(z) \in {\mathbb R}, \forall z \in S^1 \, , \, 
+                                   
+                                   \oint \frac{1}{2\pi i} \, q(z) \, dz \, = \sqrt{2n} \, \}
+\, .$$
+
+Here every $q \in \mathcal V^n_o$ is interpreted as a charge distribution supported within $o \in \Delta$, see [@BMT1 Eq.2.24]. A field net $\EuFrak{F}^n_* = (F^n,\jmath)_\Delta \subset BH_*$ is defined, with local von Neumann algebras
+
+$$F^n_o \, = \, \{  \phi_q \in UH_* \, : \, q  \in \mathcal V^n_o \}'' \ \ , \ \ o \in \Delta \ ,$$
+
+see [@BMT1 Eq.4.93] and the following remarks. The net $\EuFrak{F}^n_*$ is bosonic in the sense that $[ \phi_q , \phi_{q'} ] = 0$ whenever $\phi_q \in F_o$, $\phi_{q'} \in F_e$ with $o \perp e$, see the discussion after [@BMT1 Eq.4.82]. There is a gauge group $G_* \simeq {\mathbb Z}_{2n}$ generated by a unitary
+
+$$V \, = \, e^{2\pi i (2n)^{-1/2} Q} \in UH_* \ \ : \ \ V^{2n} = 1 \ ,$$
+
+on which we define the grading element $\gamma = 1$; in the previous expression $Q$ denotes an unbounded operator on $H_*$ affiliated with the von Neumann algebra generated by $F^n$, see [@BMT1 Eq.4.40], which is interpreted as the charge. We have
+
+$$\label{eq.BMT1}
+V \phi_q V^* \, = \, e^{i\pi / n} \phi_q
+\ \ , \ \ 
+\forall o \in \Delta \ , \ q \in \mathcal V^n_o
+\ ,$$
+
+see [@BMT1 Eq.4.94]. We can apply Lemma [\[lem.gauge1\]](#lem.gauge1){reference-type="ref" reference="lem.gauge1"} with morphisms of the form
+
+$$\chi : {\mathbb Z}\simeq \pi_1(S^1) \to G_* \ ,$$
+
+that are determined by the choice of $\chi(1)$ that must be of the type $\chi(1) = V^\kappa$, $\kappa \in \{ 1 , \ldots , 2n-1 \}$. As a consequence of Cor.[\[cor.gauge1\]](#cor.gauge1){reference-type="ref" reference="cor.gauge1"}, the twisted net $\EuFrak{F}$ defined by $\chi$ has observable net isomorphic to the untwisted net $\EuFrak{R}^n_* = (R^n,\jmath)_\Delta$ generated by operators in $\EuFrak{F}^n_*$ commuting with $V$. We note that $V$ is, indeed, a central element of the von Neumann algebra $\vec{R}^n \subset BH_*$ generated by the family $R^n$, see [@BMT1 Eq.4.90]. Any $\phi_q$ defines a localized automorphism of $\vec{R}^n$,
+
+$$\gamma_q \, := \, {\mathrm{ad}}\phi_q 
+\ \ , \ \
+\gamma_q(t) = t \, , \, \forall t \in R_e \, , \, e \perp {\mathrm{supp}}(q) \ .$$
+
+Passing to the twisted net $\EuFrak{F}^n$ we have a representation $\pi : \EuFrak{F}^n \to \EuFrak{B}\EuFrak{H}$, where $\EuFrak{H}= (H,U)_\Delta$ is the Hilbert net bundle with fibres $H_o \equiv H_*$, $o \in \Delta$, defined as in Lemma [\[lem.gauge1\]](#lem.gauge1){reference-type="ref" reference="lem.gauge1"},
+
+$$\pi_o : F^n_o \to BH_* \ \ , \ \ {\mathrm{ad}}U_{o'o} \circ \pi_o \,= \, \pi_{o'}|_{F^n_o} \ \ , \ \ \forall o \subseteq o' \ ;$$
+
+here any $\pi_o$ is the inclusion map $F^n_o \to BH_*$, thus in the sequel it will be dropped from the notation. It is instructive to exhibit the effect of the parallel displacement along a loop on the charged fields. To this end, to fix the ideas we take $\kappa = 1$, that means $\chi(1) = V$. Given $a \in \Delta$, the homotopy class of any loop $p : a \to a$ is labelled by an integer $[p] \in {\mathbb Z}$, thus
+
+$${\mathrm{ad}}U_p(\phi_q) \, = \, V^{[p]} \phi_q V^{[p],*} \, = \, e^{i\pi [p] / n} \phi_q 
+\ \ , \ \ 
+\forall \phi_q \in F^n_a
+\ ,$$
+
+and a relative phase appears between the charged field and its parallel displacement. We note that the interpretation of ${\mathrm{ad}}U_p(\phi_q)$ as the displacement of the field operator $\phi_q$ inducing the DHR automorphism $\gamma_q$ is in accord with the standard formulation of charge transporters, see [@Rob0 §3.4.5].
+
+## Existence of field nets with a given gauge symmetry. {#sec.free}
+
+The following construction is on the line [@DP02], where similar results are proven for the Minkowski spacetime. We prove that for every suitable compact group $G_0$, globally hyperbolic spacetime $M$ and flat bundle $\mathcal G\to M$ with suitable structure group, there is a twisted field net over which $\mathcal G$ acts as a group of internal symmetries. The \"untwisted\" net from which we start is defined by means of generalized free fields and yields a large class of toy models where the analysis of topologically trivial superselection sectors of [@GLRV01; @Ruz05] can be checked, as happens for [@DP02] in the Minkowski spacetime.
+
+In the sequel we shall consider a ${\mathbb Z}_2$-graded group $(G_0,\gamma)$, not necessarily realized on a Hilbert space, where $G_0$ is compact and metrizable.
+
+Let $\lambda$ be a symmetric and separating set
+
+[^1]
+
+of irreducible subrepresentations of the regular representation of $G_0$. We consider the corresponding Hilbert space
+
+$$L_\lambda := \oplus_{\varrho \in \lambda} L_\varrho \ \subset L^2(G_0)$$
+
+on which $G_0$ acts by means of the faithful unitary representation
+
+$$\label{def.rep}
+G_0 \to UL_\lambda
+\ \ , \ \
+g \mapsto g_\lambda := \oplus_\varrho g_\varrho
+\ ,$$
+
+where any $g_\varrho$ is a unitary acting on the irreducible, finite dimensional $G_0$-Hilbert space $L_\varrho$. The grading element $\gamma$ induces the spectral decomposition
+
+$$L_\lambda = L_\lambda^+ \oplus L_\lambda^- \ ,$$
+
+which decomposes ([\[def.rep\]](#def.rep){reference-type="ref" reference="def.rep"}) into
+
+$$\label{def.rep.pm}
+G_0 \to UL_\lambda^\pm
+\ \ , \ \
+g \mapsto g_\lambda^\pm := \oplus_{\varrho(\gamma) = \pm 1} g_\varrho \ .$$
+
+Finally, we consider a real structure (that is, an antilinear, isometric map)
+
+$J : L_\lambda^+ \to L_\lambda^+$, $J^2 = 1$,
+
+commuting with ([\[def.rep\]](#def.rep){reference-type="ref" reference="def.rep"}) and stabilizing the subspaces $L_\varrho$ for any $\varrho \in \lambda$ with $\varrho(\gamma) = 1$, so that we have real structures
+
+$J_\varrho : L_\varrho \to L_\varrho$.
+
+We denote the *real* subspace of $J$-invariant vectors in $L_\lambda^+$ by $L_\lambda^{+,J}$, which is a real Hilbert space with the scalar product induced by $L_\lambda^+$.
+
+Now, we say that a compactly supported $f : M \to L_\lambda^{+,J}$ is $C^\infty$ whenever the function
+
+$f_v(x) := ( f(x),v ) \in {\mathbb R}$, $x \in M$,
+
+is $C^\infty$ for any $v \in L_\lambda^{+,J}$, and denote the corresponding real vector space by $C^\infty_c(M,L_\lambda^{+,J})$.
+
+Given the decomposition
+
+$f(x) = \{ f_\varrho(x) \in L_\varrho \}$, $x \in M$,
+
+we define the real vector space
+
+$$\mathcal D^+ \ := \ 
+\{ f \in C^\infty_c(M,L_\lambda^{+,J}) \ : \
+   f_\varrho \neq 0 \ {\mathrm{for \ finite \ }} \varrho \in \lambda  \} \ .$$
+
+The representation ([\[def.rep\]](#def.rep){reference-type="ref" reference="def.rep"}) induces an action by invertible linear maps,
+
+$$\label{eq.CON0a}
+G_0 \to GL \mathcal D^+
+\ \ : \ \
+f_g(x) := g_\lambda^+ f(x)
+\ \ , \ \qquad
+\forall f \in \mathcal D^+ \ , \ g \in G_0 \ , \ x \in M \ .$$
+
+Now, let us suppose that $M$ has a spin structure (this is guaranteed for 4-dimensional globally hyperbolic spacetimes, see [@Ish78] and related references). We consider the spinor bundle $DM \to M$ (with fibre ${\mathbb C}^4$), whose tensor product by $L_\lambda^-$ yields the bundle of Hilbert spaces
+
+$D_\lambda^- M \to M$, $D_\lambda^- M := L_\lambda^- \otimes DM$.
+
+We have the direct sum decomposition
+
+$$D_\lambda^- M \ \simeq \ \oplus_{\varrho(\gamma)=-1} D_\varrho M 
+\ ,$$
+
+where any $D_\varrho M := L_\varrho \otimes DM \to M$ is a *smooth* vector bundle. Any section $s : M \to D_\lambda^- M$ decomposes as
+
+$s = \{ s_\varrho : M \to D_\varrho M \}$,
+
+and we say that $s$ is $C^\infty$ whenever every $s_\varrho$ is a $C^\infty$ section. We denote the set of compactly supported, $C^\infty$ sections of $D_\lambda^-M$ by $\mathcal S^\infty_c(M,D_\lambda^-M)$ and define
+
+$$\mathcal D^- \ := \ 
+\{ s \in \mathcal S^\infty_c(M,D_\lambda^-M) \ : \
+   s_\varrho \neq 0 \ {\mathrm{for \ finite \ }} \varrho \in \lambda \} \ ,$$
+
 that is a complex vector space with action
-G0 →GLD− : sg(x) := {g−
-λ ⊗ 1}s(x) , ∀s ∈ D − , g ∈G0 , x ∈M . (4.15)
-Lemma 4.4 (Existence of ﬁeld nets on hyperbolic spacetimes) . For any globally hyperbolic (spin)
-manifold M and Z2 -graded group (G0,γ ), there are a Hilbert space H∗ with a faithful, strongly
-continuous representationτ :G0 →UH ∗ , and a normal (τ (G0),τ (γ))-net of von Neumann algebras
-F∗ on H∗ .
-The proof of the previous Lemma is postponed to §A and is based on the construction of a
-symplectic form on D+ and a scalar product on D− , that allow us to deﬁne, respectively,
-• a selfadjoint Klein-Gordon ﬁeld φ(f ), f ∈ D + , on the Hilbert space Hφ
-∗ ,
-• a Dirac ﬁeld ψ(s), s ∈ D − , on the Hilbert space Hψ
-∗ ,
-and then deﬁne H∗ :=Hφ
-∗ ⊗Hψ
-∗ and F∗,a , a ∈ ∆, as the von Neumann algebra generated by
-{eiφ(f ) ⊗ 1ψ , 1φ ⊗ψ(s) : f ∈ D + , s ∈ D − , supp (f ), supp (s) ⊆a} .
-We now deﬁne the (compact) normalizer group
-NλG0 := {V = ⊕̺V̺ ∈ULλ : V̺g̺V ∗
-̺ ∈̺(G0) , ∀g ∈G0} .
-Note that NλG0 acts by adjoint action on G0 and, since γ̺ = ±1 for any ̺ ∈λ, we have
-VγλV ∗ =γλ , ∀V ∈NλG0 .
-Moreover, any V ∈NλG0 splits as V =V + ⊕V − , V ± ∈UL ±
-λ .
-Theorem 4.5. Let M denote a globally hyperbolic (spin) manifold and (G0,γ ) a Z2 -graded group.
-Given a symmetric, separating set λ for G0 and a morphism
-χ :π1(M ) →NλG0 ,
-there is a Z2 -graded net of C*-algebras F = (F, )∆ endowed with:
-1. A Hilbert net bundle (H,U )∆ carrying a normal representation (π,U ) of F;
-2. A gauge action G ×∆ π(F) →π(F) with ﬁxed-point net R causally represented on (H,U )∆ ,
-where G = (G, ˆı)∆ is the group net bundle with ﬁbre G0 and holonomy adχ.
-Proof. With the notation of the previous Lemma we deﬁne G∗ :=τ (G0) ⊂UH ∗ . So ( G∗,τ (γ)) is
-a Z2 -group on H∗ , and by the previous Lemma we have a normal ( G∗,τ (γ))-net of von Neumann
-algebras F∗ on H∗ . Now, by Lemma 4.1, to prove the Theorem it suﬃces to show that th e unitary
-representation τ of the previous Lemma extends to a unitary representation τ of NλG0 taking
-values in Nτ (γ)G∗ , in fact in such a case we would have the morphism τ ◦χ :π1(M ) →Nτ (γ)G∗ .
-But the construction of the desired representation is easy, in fac t it suﬃces to deﬁne the actions
-{ fV (x) := V +f (x) , ∀x ∈M , f∈ D +
-sV (x) := {V − ⊗ 1}s(x), ∀x ∈M , s∈ D − , V ∈NλG0 ,
-27
-that yield, by universality of the CCRs and CARs, the desired extens ion τ fulﬁlling
-τV {eiφ(f ) ⊗ 1ψ}τ ∗
-V = eiφ(fV ) ⊗ 1ψ , τV {1φ ⊗ψ(s)}τ ∗
-V = 1 φ ⊗ψ(sV ) .
-The veriﬁcations that τ (NλG0) ⊆Nτ (γ)G∗ now are trivial (see (4.3)) and the Theorem is proved.
+
+$$\label{eq.CON0b}
+G_0 \to GL \mathcal D^-
+\ \ : \ \
+s_g(x) := \{ g_\lambda^- \otimes 1 \} s(x)
+\ \ , \ \
+\forall s \in \mathcal D^- \ , \ g \in G_0 \ , \ x \in M \ .$$
+
+::: lem
+[]{#lem.gauge2 label="lem.gauge2"} For any globally hyperbolic (spin) manifold $M$ and ${\mathbb Z}_2$-graded group $(G_0,\gamma)$, there are a Hilbert space $H_*$ with a faithful, strongly continuous representation
+
+$\tau : G_0 \to UH_*$,
+
+and a normal $( \tau(G_0),\tau(\gamma) )$-net of von Neumann algebras $\EuFrak{F}_*$ on $H_*$.
+:::
+
+The proof of the previous Lemma is postponed to §[\[app.sym\]](#app.sym){reference-type="ref" reference="app.sym"} and is based on the construction of a symplectic form on $\mathcal D^+$ and a scalar product on $\mathcal D^-$, that allow us to define, respectively,
+
+-   a selfadjoint Klein-Gordon field $\phi(f)$, $f \in \mathcal D^+$, on the Hilbert space $H_*^\phi$,
+
+-   a Dirac field $\psi(s)$, $s \in \mathcal D^-$, on the Hilbert space $H_*^\psi$,
+
+and then define $H_* := H_*^\phi \otimes H_*^\psi$ and $F_{*,a}$, $a \in \Delta$, as the von Neumann algebra generated by
+
+$$\{ e^{i \phi(f)} \otimes 1_\psi \ , \ 1_\phi \otimes \psi(s) \ : \ 
+   f \in \mathcal D^+ \ , \ s \in \mathcal D^- \ , \ {\mathrm{supp}} \, (f) \, , \, {\mathrm{supp}} \, (s) \subseteq a \} \ .$$
+
+We now define the (compact) normalizer group
+
+$$N^\lambda G_0 \ := \ \{ V = \oplus_\varrho V_\varrho \in UL_\lambda \ : \ 
+                        V_\varrho g_\varrho V_\varrho^* \in \varrho(G_0) \ , \ \forall g \in G_0  \} \ .$$
+
+Note that $N^\lambda G_0$ acts by adjoint action on $G_0$ and, since $\gamma_\varrho = \pm 1$ for any $\varrho \in \lambda$, we have
+
+$$V \gamma_\lambda V^* = \gamma_\lambda \ \ , \ \ \forall V \in N^\lambda G_0 \ .$$
+
+Moreover, any $V \in N^\lambda G_0$ splits as $V = V^+ \oplus V^-$, $V^\pm \in UL_\lambda^\pm$.
+
+::: thm
+[]{#thm.gauge1 label="thm.gauge1"} Let $M$ denote a globally hyperbolic (spin) manifold and $(G_0,\gamma)$ a ${\mathbb Z}_2$-graded group. Given a symmetric, separating set $\lambda$ for $G_0$ and a morphism
+
+$$\chi : \pi_1(M) \to N^\lambda G_0 \ ,$$
+
+there is a ${\mathbb Z}_2$-graded net of *C\**-algebras $\EuFrak{F}= (F,\jmath)_\Delta$ endowed with:
+
+1.  A Hilbert net bundle $(H,U)_\Delta$ carrying a normal representation $(\pi,U)$ of $\EuFrak{F}$;
+
+2.  A gauge action $\EuFrak{G}\times_\Delta \pi(\EuFrak{F}) \to \pi(\EuFrak{F})$ with fixed-point net $\EuFrak{R}$ causally represented on $(H,U)_\Delta$, where $\EuFrak{G}= (G, \hat \imath)_\Delta$ is the group net bundle with fibre $G_0$ and holonomy ${\mathrm{ad}}\chi$.
+:::
+
+::: proof
+*Proof.* With the notation of the previous Lemma we define $G_* := \tau(G_0) \subset UH_*$. So $(G_*,\tau(\gamma))$ is a ${\mathbb Z}_2$-group on $H_*$, and by the previous Lemma we have a normal $(G_*,\tau(\gamma))$-net of von Neumann algebras $\EuFrak{F}_*$ on $H_*$. Now, by Lemma [\[lem.gauge1\]](#lem.gauge1){reference-type="ref" reference="lem.gauge1"}, to prove the Theorem it suffices to show that the unitary representation $\tau$ of the previous Lemma extends to a unitary representation $\tau$ of $N^\lambda G_0$ taking values in $N_{\tau(\gamma)} G_*$, in fact in such a case we would have the morphism
+
+$\tau \circ \chi : \pi_1(M) \to N_{\tau(\gamma)} G_*$.
+
+But the construction of the desired representation is easy, in fact it suffices to define the actions
+
+$$\left\{
+\begin{array}{ll}
+f_V(x) := V^+ f(x)
+\ , \
+\forall x \in M
+\ , \
+f \in \mathcal D^+
+
+\\
+
+s_V(x) := \{ V^- \otimes 1 \} s(x)
+\ , \
+\forall x \in M
+\ , \
+s \in \mathcal D^-
+\end{array}
+\right.
+\ \ , \ \
+V \in N^\lambda G_0 \ ,$$
+
+that yield, by universality of the CCRs and CARs, the desired extension $\tau$ fulfilling
+
+$$\tau_V \{ e^{i \phi(f)} \otimes 1_\psi \} \tau_V^* \ = \ e^{i \phi(f_V)} \otimes 1_\psi 
+\ \ , \ \
+\tau_V \{ 1_\phi \otimes \psi(s) \} \tau_V^* \ = \  1_\phi \otimes \psi(s_V)
+\ .$$
+
+The verifications that $\tau(N^\lambda G_0) \subseteq N_{\tau(\gamma)} G_*$ now are trivial (see ([\[def.NG\]](#def.NG){reference-type="ref" reference="def.NG"})) and the Theorem is proved. ◻
+:::
+
+[^1]: With *symmetric* we mean that if $\varrho \in \lambda$ then the same is true for the conjugate representation $\overline\varrho$, whilst the term *separating* indicates that for any $g \neq g' \in G_0$ there is $\varrho \in \lambda$ such that $\varrho(g) \neq \varrho(g')$.

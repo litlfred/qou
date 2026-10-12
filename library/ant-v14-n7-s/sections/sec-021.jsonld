@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-021",
   "@type": [
     "doco:Section"
   ],
-  "title": "The p-adic Asai L-function",
-  "pageStart": 29,
-  "pageEnd": 29,
+  "title": "5A. Coefficients and moment maps",
+  "pageStart": 26,
+  "pageEnd": 26,
   "contains": [
     "library/ant-v14-n7-s/blocks/prose-sec-021"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"
 }

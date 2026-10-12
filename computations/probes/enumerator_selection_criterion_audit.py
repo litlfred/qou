@@ -5,7 +5,7 @@ THE QUESTION (qou-brng).  Find a carrier selection principle that is not
 minimality.  There already is one -- binding_k_enumerator.py ranks by Frobenius
 residual -- and this audit is why it does not work.  Three independent defects,
 each fatal alone, all readable off the enumerator's OWN RECORDED OUTPUT in
-computations/_deprecated/binding-k-enumerator.witness.json.  Nothing is re-run.
+fsh-guts/deprecated/computations/binding-k-enumerator.witness.json.  Nothing is re-run.
 
 CORRECTING A CORRECTION OF MINE.  The merged CarrierCrossingQuantisation header
 says the corpus's principle is residual minimisation, not minimality.  That is
@@ -61,7 +61,7 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
 import _path_bridge as _bridge  # noqa: E402, F401
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
-WITNESS = _COMP / "_deprecated" / "binding-k-enumerator.witness.json"
+WITNESS = _COMP.parent / "fsh-guts" / "deprecated" / "computations" / "binding-k-enumerator.witness.json"
 ATOMS = ["deuteron", "tritium", "he3"]
 
 

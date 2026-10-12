@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2111.06645v3/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2111.06645v3/blocks/prose-sec-004",
   "kind": "prose",
   "title": "The generalized quantum modularity conjecture",
   "pageStart": 15,
   "pageEnd": 16,
   "text": "../sections/sec-004-31-the-generalized-quantum-modularity-conjecture.md",
-  "derivedFrom": "library/arxiv-2111.06645v3/manifest",
-  "sourceDocument": "library/arxiv-2111.06645v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
   "provenance": "ingested"
 }

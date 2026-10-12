@@ -44,15 +44,19 @@ The relation is used in reverse: it is inverted for $q_0$, so it is the CAL-2 ca
 
 [*The Mass Endomorphism*](#chap:mass-endomorphism) extracts mass from the spectral data of a single categorical endomorphism. Mass is a categorical invariant: the Markov trace $\mathrm{tr}_M$ of a distinguished Hecke element. A recursive Gröbner–Shirshov reduction evaluates this trace, and the **mass endomorphism conjecture** resums the brane tower.
 
+[*Knots, Particles, and Confinement*](#chap:knots-particles-confinement) fixes the knot–particle dictionary used everywhere after it: the particle definitions, the nucleon built from pair production, the hadron algebra and its knot factorisation, and the Borromean baryon, whose mass is shown to be a knot invariant under the three Reidemeister moves.
+
+[*The Eightfold Way and Flavor Structure*](#chap:eightfold-way) asks why these particles fall into octets and decuplets. It separates two objects that share the name $A_2$: the Coxeter type of three-strand braiding, which holds by construction, and the flavour Lie algebra $\mathfrak{sl}_3$, which enters through quantum Schur–Weyl duality only when the fibre has dimension three. The meson octet and the baryon decuplet are built from the second.
+
 [*Nuclear Interactions and Binding*](#chap:nuclear-interactions) develops the interaction-selection mechanism. A **semidefinite program** selects the unique transfer operator minimizing the categorical action at each vertex. Bring's surface embeddability bound limits these operators to a **six-dimensional** basis in $H_3(q)$, covering identity, $\beta$-decay, photon handling, and pair production without free parameters.
 
-[*$q$-Hyperbolic Geometry*](#chap:climax-volume-mass) defines the topological mass formula:
+[*$q$-Hyperbolic Geometry*](#chap:climax-volume-mass) relates mass to hyperbolic volume. For a knot $K$ with complement volume $\mathrm{Vol}(K)$ and per-block density $\rho(K)$, the mass is the volume–density product in units of the electron mass:
 $$
-  \mathfrak{m}(K) = m_e \cdot \mathrm{Geom}(K) \cdot \varrho(K).
+  \frac{\mathfrak{m}(K)}{m_e} = \frac{\mathrm{Vol}(K)\,\rho(K)}{\hbar_q^{2}}.
 $$
-The geometric term $\mathrm{Geom}(K) = \mathrm{Vol}(K)/\hbar_q^{2}$ acts as a regularized Feynman path integral over finite dimensions.
+The content of this formula is the dimensionless ratio on the left: the electron mass only fixes the unit, so the formula is read through mass ratios and binding energies, never as a prediction of an absolute mass in MeV. The volume factor $\mathrm{Vol}(K)/\hbar_q^{2}$ is the [topological mass formula](#prop:topological-mass-formula) for hyperbolic knots, and it acts as a regularized Feynman path integral over finite dimensions.
 
-[*Mass Analysis*](#chap:mass-theory) traces the computational pipeline. Every mass, $\beta$-decay, and binding-energy prediction derives from three calibration inputs over $\mathbb{Q}(q)$. A **complex volume** $\mathfrak{V}$ separates binding energy (real part) from the $\beta$-decay $Q$-value (imaginary part).
+[*Mass Analysis*](#chap:mass-theory) traces the computational pipeline. Every mass-ratio, $\beta$-decay, and binding-energy prediction derives from three calibration inputs over $\mathbb{Q}(q)$. A **complex volume** $\mathfrak{V}$ separates binding energy (real part) from the $\beta$-decay $Q$-value (imaginary part).
 
 [*Gravity and Spacetime Emergence*](#chap:gravity-spacetime-emergence) explicitly extracts long-range gravity from the trace term $\mathrm{tr}(q \cdot R_{\int})$. Contact geometry dynamically constructs the spacetime arena.
 
@@ -77,4 +81,4 @@ The geometric term $\mathrm{Geom}(K) = \mathrm{Vol}(K)/\hbar_q^{2}$ acts as a re
 The [Glossary](#chap:glossary), [Knot-Periodic Table](#app:knot-periodic-table), and [Index of Definitions](#app:index-definitions) supply the formal reference data. This paper's hardest results meet at the obstruction class $\kappa_n \in H^2(S, B)$. The programme is to translate each $q$-deformed millennium problem—Navier–Stokes, Yang–Mills, P vs NP, Riemann, BSD—into the vanishing of a drift read off that class; the translations, not the vanishing calculation, carry the open content, and each is open separately. Sharing a class does not by itself make the verdicts agree: the evaluation maps land in different groups, and at $\chi(A) = -6$ two of them already disagree.
 
 **Calibration.**
-The framework requires **exactly three** calibration inputs—$m_e$, $P_{\mathrm{skew}}^{\beta}$, and $P_{\mathrm{avg}}^{\pi}$—to fix the state space's cohomology. Every other mass ratio, binding energy, and coupling is a zero-parameter prediction.
+The three calibration inputs and the standard against which every comparison is judged are stated in [Mathematics and measurement](#sec:introduction-mathematics-measurement) above; every other mass ratio, binding energy, and coupling is computed rather than fitted.

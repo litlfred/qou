@@ -8,95 +8,66 @@ pages: 15-17
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
 doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
+text_source: latex
+latex_prose_ratio: 0.964
+latex_coverage_ratio: 0.878
 ---
-(co)ends exists. All these (co)ends will be used in subseque nt sections. We
-shall use ideas from [ 25].
-LetC be a tensor category, B be a right C-module category. Since our
-deﬁnition of module category includes that the action is rig ht exact in each
-variable, hypothesis of [ 9, Thm. 2.24] are fulﬁlled. This means that, there
-exists an algebra A∈C such that
-(3.8) B≃ AC
-as module categories. Consider C as a right C-module category with the
-regular action. We shall denote by Rex C(B,C) the category of right exact
-C-module functors. The functor
-Φ : Bop→ Rex C(B,C),
-Φ(B)(D) = Hom (D,B )∗
-is an equivalence of categories, since, under identiﬁcatio n ( 3.8), the functor
-Φ is the composition of equivalences
-(AC)op (−)∗
-−−−→CA
-R−→Rex C(AC,C).
-Here R :CA→ Rex C(AC,C) is the functor given by R(V )(W ) = V⊗AW.
-Let be (F,c )∈ Rex C(B,C). In particular, we have natural isomorphisms
-cB,X :F (B⊳X )→F (B)⊗X,
-for B∈B,X ∈C . Consider the functor
-Bop×B→B ,
-(D,B )↦→D⊳ ∗F (B).
-This functor posses a C-prebalancing
-(3.9) γV
-B,D :D⊳ ∗F (B⊳V )→D⊳ ∗V⊗∗F (B),
-γV
-B,D = id D⊳ (φl
-F (B),V )−1∗(c−1
-B,V ).
-Proposition 3.7. LetB be a right C-module category. For any right exact
-C-module functor (F,c ) :B→C the coend
-~C(F,c ) =
-∮ B∈B
-(B⊳ ∗F (B),γ )∈B,
-exists. Moreover, the functor (F,c )↦→~C(F,c ) is a quasi-inverse of Φ .
-16 LENTNER AND MOMBELLI
-Proof. For any D∈B we have
-Natm(Φ(D),F )≃
-∮
-B∈B
-HomC(Φ(D)(B),F (B))
-≃
-∮
-B∈B
-HomC(HomB(B,D )∗,F (B))
-≃
-∮
-B∈B
-HomC(∗F (B), HomB(B,D ))
-≃
-∮
-B∈B
-HomB(B⊳ ∗F (B),D )
-≃ HomB(
-∮ B∈B
-B⊳ ∗F (B),D )
-= Hom Bop(D,
-∮ B∈B
-B⊳ ∗F (B)).
-The ﬁrst isomorphism is Proposition 3.3 (ii), and the ﬁfth isomorphism is
-Proposition 3.4. Observe that, to prove the existence of the fourth isomor-
-phism, one has to check that the natural isomorphisms
-HomC(∗F (B), HomB(B,D )≃ HomB(B⊳ ∗F (B),D )
-commute with the respective prebalancings and then use Prop osition 3.3
-(i). This calculation is left to the reader. This proves both , that the coend
-~C(F,c ) exists and that the quasi-inverse of Φ is given by
-¯Φ : Rex C(B,C)→B op,
-¯Φ(F,c ) =
-∮ B∈B
-(B⊳ ∗F (B),γ ).
-□
-For a pair of module functors ( F,c ), ( ~F, ˜c) :B→C , the functor
-Bop×B→C ,
-(A,B )↦→~F (B)⊗∗F (A)
-has a canonical prebalancing, given by
-βX
-A,B : ~F (B)⊗∗F (A⊳X )→ ~F (B⊳ ∗X)⊗∗F (A),
-βX
-A,B = (˜c−1
-B,∗X⊗id )(id ~F (B)⊗(φl
-F (A),X )−1∗(c−1
-A,X )).
-(3.10)
-As a consequence of Lemma 3.5, one can apply ~F to the coend in Propo-
-sition 3.7. Thus we get the next result.
-Corollary 3.8. For any pair of right exact C-module functors F, ~F :B→C ,
-the coend ∮ B∈B
-( ~F (B)⊗∗F (B),β )∈B,
-exists. □
-FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS 17
+\label{Section_coendExists}
+
+In this Section we shall prove that certain (co)ends exists. All these (co)ends will be used in subsequent sections. We shall use ideas from \cite{Sh5}.
+
+\medbreak
+
+Let $\vc$ be a tensor category, $\Bc$  be  a right $\vc$-module category. Since our definition of module category includes that the action is right exact in each variable, hypothesis  of \cite[Thm. 2.24]{DSS} are fulfilled. This means that, there exists an algebra $A\in \vc$ such that 
+\begin{equation}\label{eq-ma}
+\Bc\simeq {}_{A}\vc
+\end{equation} 
+as module categories. Consider $\vc$ as a right $\vc$-module category with the regular action. We shall denote by $\Rex_\vc(\Bc, \vc)$ the category of right exact $\vc$-module functors. The functor 
+$$\Phi:\Bc^{\op} \to \Rex_\vc(\Bc, \vc),$$
+$$\Phi(B)(D)= \uhom(D,B)^*$$
+is an equivalence of categories, since, under identification \eqref{eq-ma}, the functor $\Phi$ is the composition of equivalences
+$$ ({}_A\vc)^{\op} \xrightarrow{( -)^*} \vc_A\xrightarrow{\, R \,} \Rex_\vc({}_{A}\vc,\vc).$$
+Here $R:  \vc_{A}  \to \Rex_\vc({}_A\vc,\vc)$ is the functor given by $R(V)(W)=V\ot_{A} W.$
+Let be $(F,c)\in \Rex_\vc(\Bc, \vc)$. In particular, we have natural isomorphisms
+$$c_{B,X}: F(B \triangleleft X)\to F(B) \ot X,$$
+for $B\in\Bc, X\in\vc$. Consider the functor
+$$\Bc^{\op}\times \Bc\to \Bc, $$
+$$(D, B)\mapsto D \triangleleft {}^*F(B). $$
+ This functor posses a $\vc$-prebalancing
+\begin{equation}\label{prebalancing-gamma}
+    \gamma^V_{B,D}: D\triangleleft {}^*F(B \triangleleft V) \to D\triangleleft {}^*V\ot{}^*F(B ),
+\end{equation} 
+$$\gamma^V_{B,D}=\id_{D}\triangleleft   (\phi^l_{F(B),V})^{-1} {}^*(c^{-1}_{B,V}). $$
+\begin{prop}\label{existence-coend0} Let $\Bc$  be  a right $\vc$-module category. For any right exact $\vc$-module functor $(F,c):\Bc\to \vc$ the coend
+$$\widetilde{C}(F,c)=\oint^{B\in \Bc} (B \triangleleft {}^*F(B), \gamma)\in \Bc,$$
+exists. Moreover, the functor $(F,c)\mapsto \widetilde{C}(F,c)$ is a quasi-inverse of $\Phi$.
+\end{prop}
+\pf For any $D\in \Bc$ we have
+\begin{align*}
+\Nat_{\! m}(\Phi(D), F)& \simeq \oint_{B\in \Bc} \Hom_\vc(\Phi(D)(B), F(B))\\
+&\simeq \oint_{B\in \Bc} \Hom_\vc(\uhom_{\Bc}(B,D)^*, F(B))\\
+&\simeq \oint_{B\in \Bc} \Hom_\vc( {}^*F(B), \uhom_{\Bc}(B,D))\\
+&\simeq \oint_{B\in \Bc} \Hom_\Bc(B \triangleleft {}^*F(B), D)\\
+&\simeq \Hom_\Bc( \oint^{B\in \Bc}  B \triangleleft {}^*F(B), D)\\
+&=\Hom_{\Bc^{\op}}(D, \oint^{B\in \Bc}  B \triangleleft {}^*F(B)).
+\end{align*} 
+The first isomorphism is Proposition \ref{compilat-r} (ii), and the fifth isomorphism is Proposition \ref{int-hom}. Observe that, to prove the existence of the  fourth isomorphism, one has to check that the natural isomorphisms
+$$\Hom_\vc( {}^*F(B), \uhom_{\Bc}(B,D)\simeq \Hom_\Bc(B \triangleleft {}^*F(B), D)$$
+commute with the respective prebalancings and then use Proposition \ref{compilat-r} (i). This calculation is left to the reader.
+This proves both, that the coend  $\widetilde{C}(F,c)$ exists and that the quasi-inverse of $\Phi$ is given by 
+$$\bar{\Phi}:  \Rex_\vc(\Bc, \vc) \to\Bc^{\op}, $$ $$\bar{\Phi}(F,c)= \oint^{B\in \Bc} (B \triangleleft {}^*F(B), \gamma).$$\epf
+
+For a pair of  module functors $(F,c), (\widetilde F, \tilde c):\Bc\to \vc$, the functor
+$$\Bc^{\op}\times \Bc\to \vc, $$
+$$ (A,B)\mapsto \widetilde{F}(B)\ot {}^*F(A)$$
+ has a canonical prebalancing, given by
+\begin{equation}\label{preb-s1}\begin{split} \beta^X_{A,B}: \widetilde{F}(B)\ot {}^*F(A \triangleleft X) \to \widetilde{F}(B \triangleleft  {}^*X)\ot  {}^*F(A),\\
+\beta^X_{A,B}=(\tilde{c}^{-1}_{B, {}^*X}\ot \id)(\id_{\widetilde F(B)}\ot (\phi^l_{F(A),X})^{-1} {}^*(c^{-1}_{A,X})).
+\end{split}
+\end{equation}
+
+As a consequence of Lemma \ref{right-exact-on-coend}, one can apply $\widetilde F $ to the coend in Proposition \ref{existence-coend0}. Thus we get the next result.
+\begin{cor}\label{existence-coend1}  For any pair of right exact $\vc$-module functors $F, \widetilde F:\Bc\to \vc$, the coend
+$$\oint^{B\in \Bc} (\widetilde F(B) \ot {}^*F(B), \beta)\in \Bc,$$
+exists.\qed
+\end{cor}

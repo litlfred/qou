@@ -49,7 +49,7 @@ correct real-q archimedean face of the merged `eulerCoeff` limit is still open
 - grep for `a3plus` / `operator-form` / `joint-ji-combiner` in the canonical
   mass/binding consumers → **no match** (confirms A=3 PROBE-ONLY).
 - A large batch of exploratory witnesses (`atom-mass-*`, `brane-tower-*`,
-  `alpha-em-*`, `binding-*`) was moved to `computations/_deprecated/` this week
+  `alpha-em-*`, `binding-*`) was moved to `fsh-guts/deprecated/computations/` this week
   — actively pulled *out* of the tree.
 
 ## Wiring the two production-adjacent leads

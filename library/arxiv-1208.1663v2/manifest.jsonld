@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1208.1663v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "The 3D index of an ideal triangulation and angle structures",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1208.1663v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1208.1663v2",
   "contains": [
     "library/arxiv-1208.1663v2/sections/sec-000",
     "library/arxiv-1208.1663v2/sections/sec-001",
@@ -31,8 +36,17 @@
     "library/arxiv-1208.1663v2/sections/sec-022"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1208.1663&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1208.1663v2",
+    "title_source": "slug",
     "source_file": "1208.1663v2.pdf",
     "source_sha256": "87e94e429d58386cc727555aa0708ad989d716adb4d3e4c12e2c3b9146fcd48e",
     "pages": 29,

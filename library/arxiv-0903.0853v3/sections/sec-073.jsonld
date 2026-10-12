@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0903.0853v3/sections/sec-073",
   "@type": [
     "doco:Section"
   ],
-  "title": "Index theorems and irregularity",
-  "pageStart": 38,
-  "pageEnd": 38,
+  "title": "Extension classes of difference modules",
+  "pageStart": 161,
+  "pageEnd": 163,
   "contains": [
     "library/arxiv-0903.0853v3/blocks/prose-sec-073"
   ],
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
   "provenance": "ingested"
 }

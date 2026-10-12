@@ -8,212 +8,243 @@ pages: 1-6
 source_pdf: 1304.0323v3.pdf
 source_sha256: 92e2b9dc876e1a52
 doc_brief: "SYMMETRIC QUIVER HECKE ALGEBRAS — Let J be a set of pairs consisting of good U ′ q(g)-modules and invertible elements in the base ﬁeld C(q)."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-Convention 6
-1. Quantum groups and Khovanov-Lauda-Rouquier algebras 6
-1.1. Cartan datum 6
-1.2. Khovanov-Lauda-Rouquier algebras 8
-1.3. R-matrices for Khovanov-Lauda-Rouquier algebras 11
-Date: March 29, 2021.
-2010 Mathematics Subject Classiﬁcation. 81R50, 16G, 16T25,17B37.
-Key words and phrases. Quantum aﬃne algebra, Khovanov-Lauda-Rouquier algebra, Quan tum
-group, R-matrix, Schur-Weyl duality.
-1 This work was supported by NRF Grant # 2012-005700 and NRF Gran t # 2011-0027952.
-2 This work was partially supported by Grant-in-Aid for Scientiﬁc Rese arch (B) 22340005, Japan
-Society for the Promotion of Science.
-3 This work was partially supported by NRF Grant # 2012-005700.
-1
-2 S.-J. KANG, M. KASHIW ARA, M. KIM
-1.4. R-matrices with spectral parameters 14
-1.5. R-matrices for one-dimensional modules 19
-1.6. Uniqueness of R-matrices 21
-2. Quantum aﬃne algebras and their representations 22
-2.1. Quantum aﬃne algebras 22
-2.2. R-matrices 25
-3. Aﬃne Schur-Weyl duality via Khovanov-Lauda-Rouquier algebra s 27
-3.1. Action of Khovanov-Lauda-Rouquier algebras on ˆV⊗β 27
-3.2. The Functor F 31
-3.3. Exactness of the functor F 33
-4. Quantum aﬃne algebra U′
-q(ˆslN ) and the category CJ 34
-4.1. R-matrix for V (̟1) of U′
-q(ˆslN ) 35
-4.2. KLR-modules in A case 36
-4.3. Properties of the functor F 43
-4.4. Quotient of the category R-gmod 46
-4.5. The category T′
-J 47
-4.6. Rigidity of the tensor categories T′
-J andTJ 54
-4.7. The Category CJ 61
-Appendix A. Localization 65
-A.1. Tensor category 66
-A.2. Adjunction and Quasi-adjunction 67
-A.3. Central objects 69
-A.4. Commuting family of objects 70
-A.5. Localization 71
-A.6. Localization of tensor categories 72
-A.7. Graded case 75
-A.8. Variant 78
-A.9. Twisting of tensor structure 79
-Appendix B. Quotient categories 79
-B.1. Serre category 79
-References 81
-Introduction
-The Khovanov-Lauda-Rouquier algebras (sometimes called the quiver Hecke algebras)
-are a family of Z-graded algebras which categoriﬁes the negative half of a quantum
-group ([ 24, 25, 34]). More precisely, if Uq(g) is a quantum group associated with a
-symmetrizable Cartan datum, then there exists a family of algebras {R(n)}n∈Z≥0 such
-that the Grothendieck group of the direct sum ⨁
-n∈Z≥0
-R(n)-gproj of the categories of
-SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 3
-ﬁnitely generated projective graded R(n)-modules is isomorphic to the integral form
-U−
-A(g) of the negative half of Uq(g). Here, the multiplication of the Grothendieck group
-is given by the convolution product and the action of q is given by the grading shift
-functor. Moreover, the cyclotomic quotient RΛ (n) of R(n) provides a categoriﬁcation
-of the integrable highest weight module V (Λ) of Uq(g) ([ 15]).
-One of the motivations of these categoriﬁcation theorems originat ed from the so-
-called LLT-Ariki theory. In 1996, Lascoux-Leclerc-Thibon ([ 28]) conjectured that the
-irreducible representations of Hecke algebras of type A are controlled by the upper
-global basis ([ 17, 18]) (or dual canonical basis ([ 30])) of the basic representation of
-the quantum aﬃne algebra Uq(A(1)
-N−1). Soon after, Ariki ([ 2]) proved this conjecture by
-showing that the cyclotomic quotients of aﬃne Hecke algebras cate gorify the irreducible
-highest weight modules over U(A(1)
-N−1), the universal enveloping algebra of aﬃne Kac-
-Moody algebra of type A(1)
-N−1. In [ 4, 34], Brundan-Kleshchev and Rouquier showed
-that the aﬃne Hecke algebra of type A is isomorphic to the Khovanov-Lauda-Rouquier
-algebra of type A or of type A∞ up to a specialization and a localization. Thus the
-Khovanov-Lauda-Rouquier algebras can be understood as a grad ed version of the aﬃne
-Hecke algebras of type A and Kang-Kashiwara’s cyclotomic categoriﬁcation theorem
-is a generalization of Ariki’s theorem on type A and A∞ to all symmetrizable Cartan
+The {\em \KLRs}\ (sometimes called the {\em quiver Hecke algebras})  are
+a family of $\mathbb Z$-graded algebras which {\em categorifies}
+the negative half of a quantum group (\cite{KL09, KL11, R08}). More
+precisely, if $U_q(\g)$ is a quantum group associated with a
+symmetrizable Cartan datum, then there exists a  family of algebras
+$\{R(n)\}_{n \in \Z_{\ge 0}}$ such that the Grothendieck group of
+the direct sum $\soplus\nolimits_{n\in\Z_{\ge0}}R(n)\gproj$ of
+the categories of finitely generated projective graded $R(n)$-modules
+is isomorphic to the integral form
+$U^-_{\A}(\g)$ of the negative half of $U_q(\g)$. Here, the
+multiplication of the
+Grothendieck group is given by the convolution product and
+the action of $q$ is given by the
+grading shift functor. Moreover, the cyclotomic
+quotient $R^{\Lambda}(n)$ of $R(n)$ provides a categorification of the
+integrable highest weight module $V(\Lambda)$ of $U_q(\g)$
+(\cite{KK12}).
+
+One of the motivations of these categorification theorems originated
+from the so-called {\em LLT-Ariki theory}. In 1996,
+Lascoux-Leclerc-Thibon (\cite{LLT}) conjectured that the irreducible
+representations of Hecke algebras of type $A$ are controlled by the
+upper global basis (\cite{Kas90, Kas91})
+ (or dual canonical basis (\cite{Lus93}))
+ of the basic representation of the quantum affine algebra $U_q(A^{(1)}_{N-1})$.
+Soon after, Ariki (\cite{Ariki})  proved this conjecture by showing that the
+cyclotomic quotients of affine Hecke algebras categorify the
+irreducible highest weight modules over $U(A^{(1)}_{N-1})$, the
+universal enveloping algebra of
+ affine Kac-Moody algebra of type $A^{(1)}_{N-1}$.
+ In \cite{BK09, R08}, Brundan-Kleshchev and Rouquier showed that
+the affine Hecke algebra of type $A$ is isomorphic to the \KLR\ of
+type A or of type $A_\infty$ up to a specialization and a
+localization. Thus the \KLRs\ can be understood as a graded version
+of the affine Hecke algebras of type $A$ and Kang-Kashiwara's
+cyclotomic categorification theorem is a generalization of Ariki's
+theorem on type $A$ and $A_\infty$ to all symmetrizable Cartan
 datum.
-The purpose of this paper is to show that the Khovanov-Lauda-Ro uquier algebra
-can be regarded as a generalization of the aﬃne Hecke algebra of ty pe A in another
-context: the quantum aﬃne Schur-Weyl duality . In [ 13], M. Jimbo extended the
-classical Schur-Weyl duality to the quantum case: the duality betw een the category
-of ﬁnite-dimensional modules over the Hecke algebra Hq(n) and the category of ﬁnite-
-dimensional modules over the quantum group Uq(glN ). In [ 6, 7, 9], Chari-Pressley,
-Cherednik and Ginzburg-Reshetikhin-Vasserot introduced a quan tum aﬃne version of
-Schur-Weyl duality: they deﬁned a functor between the categor y of ﬁnite-dimensional
-modules over the aﬃne Hecke algebra H aﬀ
-q (n) and the category of ﬁnite-dimensional
-integrable modules over U′
-q(ˆslN ).
-There are two key ingredients in deﬁning this functor: (1) the R-ma trices on the
-n-fold tensor product of the fundamental representation V (̟1) which satisfy the Yang-
-Baxter equations, (2) a set of elements in H aﬀ
-q (n), called the intertwiners, which satisfy
-the braid relations. Roughly speaking, by assigning intertwiners to R -matrices, we
-obtain the quantum aﬃne Schur-Weyl duality functor.
-Now it is quite natural to ask whether this functor can be generalize d to the case of
-quantum aﬃne algebras U′
-q(g) of other types or not. Our answer to this question can
-be explained in the following way.
-Let{Vs}s∈S be a family of good U′
-q(g)-modules and let J be a subset of S× C(q)×.
-An element i∈J is denoted by i = (S(i),X (i)). We deﬁne a quiver Γ J as follows:
-4 S.-J. KANG, M. KASHIW ARA, M. KIM
-1) The set of vertices is taken to be J.
-2) For i,j ∈J, let
-Rnorm
-VS(i),VS(j) : (VS(i))u⊗(VS(j))v→ (VS(j))v⊗(VS(i))u
-be the normalized R-matrix. We put d many arrows from i toj whered is the order
-of poles of Rnorm
-VS(i),VS(j)(v/u) at v/u =X(j)/X(i).
-Then the quiver Γ J deﬁnes a Cartan datum ( A = (aij)i,j∈J,P, Π,P∨, Π∨), where A is
-determined by ( 3.1.4). Hence we obtain a Khovanov-Lauda-Rouquier algebra RJ (β)
-(β∈ Q+) with the parameters Qi,j(u,v ) = δ(i⁄=j)(u−v)dij (v−u)dji∈ k[u,v ]. Here,
-Q+ = ∑
-i∈J Z≥0αi denotes the positive root lattice.
-Let β = ∑
-i∈Jkiαi∈ Q+ with|β| := ∑
-i∈Jki = n and let Jβ ={ν = (ν1,...,ν n)∈
-Jn ; αν1 +··· +ανn =β}. For each sequence ν = (ν1,...,ν n)∈Jβ, set
-Vν = (VS(ν1))aﬀ⊗···⊗ (VS(νn))aﬀ
-and let ˆV⊗β be a certain completion of ⨁
-ν∈J β
-Vν. Then ˆV⊗β is endowed with a structure
-of (U′
-q(g),RJ (β))-bimodule. Hence we can deﬁne a functor
-Fβ : Mod gr(RJ (β))→ Mod(U′
-q(g))
+
+The purpose of this paper is to show that the \KLR\ can be regarded
+as a generalization of the affine Hecke algebra of type $A$ in
+another context: the {\em quantum affine Schur-Weyl duality}.
+In \cite{Jimbo86}, M.\ Jimbo  extended the classical
+Schur-Weyl duality to the quantum case:
+the duality between the
+category of finite-dimensional modules over the Hecke algebra $H_q(n)$ and
+the category of finite-dimensional modules over the quantum group
+$U_q(\mathfrak{gl}_N)$.
+In
+\cite{CP96, Che, GRV94}, Chari-Pressley, Cherednik and
+Ginzburg-Reshetikhin-Vasserot introduced a quantum affine version of
+Schur-Weyl duality: they
+defined a functor between the category of
+finite-dimensional modules over the affine Hecke algebra $H_q^{\aff}(n)$
+and the category of finite-dimensional
+integrable modules over $\UA$.
+
+
+There are two key ingredients in defining this functor: (1) the
+R-matrices on the $n$-fold tensor product of the fundamental
+representation $V(\varpi_1)$ which satisfy the  Yang-Baxter
+equations,  (2) a set of elements in $H_q^{\aff}(n)$, called the {\em
+intertwiners}, which satisfy the braid relations. Roughly speaking,
+by assigning  intertwiners to  R-matrices, we obtain the quantum
+affine Schur-Weyl duality functor.
+
+Now it is quite natural to ask whether this functor can be
+generalized to the case of quantum affine algebras $\uqpg$ of other
+types or not.
+Our answer to this question can be explained in the following way.
+
+Let $\{V_s\}_{s\in \mathcal{S}}$ be a family of good $\uqpg$-modules
+and let $J$ be a subset of $\mathcal{S}\times \C(q)^{\times}$. An
+element $i \in J$ is denoted by $i=({S(i)}, X(i))$. We define a
+quiver $\Gamma_J$ as follows:
+\be[{1)}]
+\item The set of vertices is taken to be $J$.
+
+\item For $i,j\in  J $, let $$\Rnorm_{V_{S(i)},V_{S(j)}}\colon
+(V_{S(i)})_u\tens (V_{S(j)})_v \to  (V_{S(j)})_v\tens(V_{S(i)})_u$$
+be the normalized R-matrix. We put $d$ many arrows from $i$ to $j$
+where $d$ is the order of poles of $\Rnorm_{V_{S(i)},V_{S(j)}}(v/u)$
+at $v/u=X(j)/X(i)$.
+\ee
+
+\noi Then the quiver $\Gamma_J$ defines a Cartan datum
+$(A=(a_{ij})_{i,j \in J}, P, \Pi, P^{\vee}, \Pi^{\vee})$, where $A$
+is determined by \eqref{eq:quiver}. Hence we obtain a
+Khovanov-Lauda-Rouquier algebra $R^J(\beta)$ $(\beta \in \rtl^+)$
+with the parameters  $Q_{i,j}(u,v) =\delta(i\not=j)
+(u-v)^{d_{ij}}(v-u)^{d_{ji}} \in \cor[u,v]$. Here,
+$\rtl^+=\sum_{i\in J} \Z_{\ge 0} \alpha_i$ denotes the positive root
+lattice.
+
+
+Let $\beta = \sum_{i \in J} k_i \alpha_i \in \rtl^{+}$ with
+$|\beta|:=\sum_{i \in J} k_i =n$ and let $J^{\beta} = \{ \nu =
+(\nu_1, \ldots, \nu_n) \in J^n \,;\, \alpha_{\nu_1} + \cdots +
+\alpha_{\nu_n} = \beta \}$. For each sequence
+$\nu=(\nu_1,\ldots,\nu_n) \in J^{\beta}$, set
+$$V_\nu = (V_{S(\nu_1)})_{\rm aff} \otimes \cdots \otimes (V_{S(\nu_n)})_{\rm aff}$$
+and let $\widehat{V}^{\otimes \beta}$ be a certain completion of
+$\soplus_{\nu \in J^{\beta}} V_{\nu}$. Then $\widehat{V}^{\otimes
+\beta}$ is endowed with a structure of $(U'_q(\g),
+R^J(\beta))$-bimodule. Hence we can define a functor
+$$\mathcal{F}_{\beta} \colon  \Modg(R^J(\beta)) \rightarrow \Mod(U'_q(\g)) $$
 by
-M↦−→ˆV⊗β⊗RJ (β)M,
-where Mod gr(RJ (β)) denotes the category of graded RJ (β)-modules and Mod( U′
-q(g))
-denotes the category of U′
-q(g)-modules. We would like to emphasize that, in general,
-the type of the quiver Γ J is irrelevant to the type of the aﬃne Lie algebra g or its
-underlying ﬁnite-dimensional simple Lie algebra g0.
-We denote by RJ (β)-gmod the category of ﬁnite-dimensional graded RJ (β)-modules
-and set RJ -gmod = ⨁
-β∈Q+
-RJ (β)-gmod. We also denote by Cg the category of ﬁnite-
-dimensional integrable U′
-q(g)-modules.
-The functorFβ enjoys two important properties:
-(1)F := ⨁
-β∈Q+
-Fβ is a tensor functor; i.e., F sends a convolution product of objects
-in RJ -gmod to a tensor product of U′
-q(g)-modules in Cg.
-(2)Fβ is exact if RJ (β) is of ﬁnite type A,D,E .
-One of the most important features of the functor F is that the category RJ -gmod,
-domain of the functor, has a Z-grading. For many years, it has been asked if the
-category Cg, the codomain of F , has a Z-grading or not. This question has arisen
-after the works of Varagnolo-Vasserot [ 36], Nakajima [ 32] and Hernandez [ 10], in which
-it was shown that the Grothendieck ring K(Cg) of Cg has interesting t-deformations.
-In particular, Nakajima provided an algorithm of calculating q-characters of simple
-SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 5
-representations [ 32] using t-deformation. Thus one would expect that there might be
-a Z-graded tensor category whose Grothendieck ring is isomorphic to one of such t-
-deformations of K(Cg). We will see in the last half of this paper that the functor F
-helps us construct such a category in type A(1)
-N−1 case.
-Precisely speaking, this is the case when J ={(V (̟1),q 2i)|i∈ Z}, where V (̟1) is
-the fundamental representation of U′
-q(ˆslN ) of weight ̟1. Then, by the construction,
-the corresponding Khovanov-Lauda-Rouquier algebra is of type A∞ and the functor
-Fn := ⨁
-|β|=n
-Fβ recovers the quantum aﬃne Schur-Weyl duality functor if we ident ify the
-objects in RJ (n)-gmod := ⨁
-|β|=n
-RJ (β)-gmod with ﬁnite-dimensional H aﬀ
-q (n)-modules in
-an appropriate way ([ 26, 34]).
-LetA = RJ -gmod and let CJ be the full subcategory of Cg consisting of U′
-q(ˆslN )-
-modules M such that every composition factor of M appears as a composition factor
-of a tensor product of modules of the form V (̟1)q2s (s∈ Z). Then CJ is an abelian
-category and is stable under taking submodules, quotients, exten sions and tensor prod-
-ucts. Moreover, CJ contains all the modules of the form V (̟i)(−q)s for 1≤i≤N− 1
-and s∈i− 1 + 2Z (see § 4.7). Then F restricts to a functor from A toCJ .
-Next, we construct a tensor category TJ in two steps. Let S be the kernel of the
-functorF . Then S is a Serre subcategory of A. The quotient category A/S has a
-structure of a tensor category with the convolution as tensor pr oduct. Secondly, we
-localize the category A/S one step further to obtain a category TJ , where the RJ -
-modules mapped to the trivial representations of U′
-q(ˆslN ) byF are isomorphic to the
-unit object inTJ . We then show that the categoryTJ is an abelian rigid tensor category;
-i.e., every object in TJ has a right dual and a left dual. To prove our assertions, we
-develop a general process of localization of tensor categories thr ough a commuting
-family of central objects . We summarize this process in Appendix A.
-Moreover, the functor F :A→C J factors through the category TJ . Hence, roughly
-speaking,TJ can be regarded as a graded version of CJ . Note that the category TJ
-is Z-graded (i.e., endowed with a grading shift functor), while the categ oryCJ is not.
-Thus the structure of the category TJ is deﬁnitely richer than that of CJ .
-One of our main results is that F induces a ring isomorphism between K(TJ )q=1,
-the Grothendieck ring of TJ forgetting the grading and the Grothendieck ring K(CJ )
-of the category CJ . Indeed, as proved in Theorem 4.7.5, K(TJ ) is isomorphic to the
-t-deformationKt of K(CJ ) introduced by Hernandez-Leclerc in [ 12] (cf. [ 36, 32, 10]).
-ThereforeTJ provides a Z-graded lifting of CJ as a rigid tensor category.
-As we have seen so far, even the simplest case yields many interestin g and deep
-applications of the functor F . We expect that a lot more exciting developments will
-follow as we take various choices of the aﬃne algebra g and J.
-6 S.-J. KANG, M. KASHIW ARA, M. KIM
-This paper is organized as follows. In the ﬁrst section, we recall the notions of
+$$M \longmapsto \widehat{V}^{\otimes \beta}  \otimes_{R^J(\beta)} M,$$
+where $\Modg(R^J(\beta))$ denotes the category of graded
+$R^J(\beta)$-modules and $\Mod(U'_q(\g))$ denotes the category of
+$U'_q(\g)$-modules. We would like to emphasize that, in general, the
+type of the quiver $\Gamma_J$ is  irrelevant to  the type of
+the affine Lie algebra $\g$ or its underlying finite-dimensional
+simple Lie algebra $\g_0$.
+
+We denote by $R^{J}(\beta)\gmod$  the category of finite-dimensional
+graded $R^{J}(\beta)$-modules and set $R^{J}\gmod = \soplus_{\beta
+\in \rtl^{+}} R^{J}(\beta)\gmod$. We also denote by $\CC_{\g}$ the
+category of finite-dimensional integrable $U'_q(\g)$-modules.
+
+The functor $\mathcal F_{\beta}$ enjoys two important properties:
+
+\begin{itemize}
+\item[(1)] $\F:=\soplus_{\beta \in \rtl^{+}}\F_{\beta}$ is a tensor functor; i.e.,
+$\F$ sends a convolution product of objects in $R^{J}\gmod$ to a
+tensor product of $\uqpg$-modules in $\CC_{\g}$.
+
+\item[(2)] $\mathcal F_{\beta}$ is exact if $R^J(\beta)$ is of finite type $A,D,E$.
+\end{itemize}
+
+\vskip1em
+
+
+One of the most important features of the functor $\mathcal F$ is that the category $R^{J}\gmod$, domain of the functor, has a $\Z$-grading.
+For many years, it has been asked if the category  $\CC_{\g}$, the codomain of $\mathcal F$, has a $\Z$-grading or not.
+This question has arisen after the works of Varagnolo-Vasserot \cite{VV02}, Nakajima \cite{Nak04} and Hernandez \cite{Her04},
+in which it was shown that the Grothendieck ring $K(\CC_{\g})$ of $\CC_{\g}$  has interesting $t$-deformations. In particular, Nakajima provided an algorithm of calculating  {\em $q$-characters} of simple representations \cite{Nak04} using $t$-deformation.
+Thus one would expect that there might be a $\Z$-graded tensor category whose Grothendieck ring is isomorphic to one of such  $t$-deformations of $K(\CC_{\g})$.
+We will see in the last half of this paper that the functor $\mathcal F$ helps us construct such a category  in type $A_{N-1}^{(1)}$ case.
+
+
+ Precisely speaking, this is  the case when $J=\set{(V(\varpi_1), q^{2i})}{i\in \Z}$,
+where $V(\varpi_1)$ is the fundamental representation of
+$\UA$ of weight $\varpi_1$. Then, by the construction, the
+corresponding \KLR\  is of type $A_\infty$ and the functor
+$\F_{n}:=\soplus_{|\beta|=n} \F_{\beta}$ recovers the quantum affine
+Schur-Weyl duality functor if  we identify the objects in
+$R^{J}(n)\gmod:= \soplus_{|\beta|=n} R^{J}(\beta)\gmod$ with
+finite-dimensional  $H_q^{\rm aff}(n)$-modules in an appropriate way
+(\cite{Kim12, R08}).
+
+
+ Let $\As = R^{J}\gmod$ and let ${\mathcal C}_{J}$ be the full
+subcategory of $\CC_{\g}$ consisting of $\UA$-modules $M$ such that
+every composition factor of $M$ appears as a composition factor of a
+tensor product of modules of the form $V(\varpi_1)_{q^{2s}}$ $(s \in
+\Z)$. Then ${\mathcal C}_{J}$ is an abelian category and is stable
+under taking submodules, quotients, extensions and tensor products.
+Moreover, ${\mathcal C}_{J}$ contains all the modules of the form
+$V(\varpi_i)_{(-q)^{s}}$ for $1 \le i \le N-1$ and $s \in i-1+2\Z$
+(see \S\;\ref{subsec:CJ}). Then  $\F$ restricts to a functor from
+$\As$ to $\mathcal C_J$.
+
+
+
+
+
+Next,  we construct a tensor category $\T_J$
+in two steps.
+ Let $\Ss$ be the kernel of the functor $\F$.
+Then $\Ss$ is a \ Serre subcategory of $\AA$. 
+ The quotient category $\As/\Ss$
+has a structure of a tensor category  with the convolution as tensor product.
+Secondly, we localize the category $\AA
+/\Ss$ one step further to obtain a category $\T_J$, where the
+$R^J$-modules mapped  to  the trivial representations of $\UA$
+ by $\F$  are  isomorphic to the unit object in $\T_J$.
+ We then show that the category $\T_J$ is an abelian
+rigid tensor category; i.e., every object in $\T_J$ has a right dual
+and a left dual. To prove our assertions, we develop a general
+process of localization of tensor categories through a {\em
+commuting family of central objects}.  We summarize this process in
+ Appendix A.
+
+
+Moreover, the functor  $\mathcal F\col \As\to\mathcal C_J$
+factors through the category $\T_J$. Hence, roughly speaking, $\T_J$
+can be regarded as a graded version of $\mathcal C_J$. Note that the
+category $\T_J$ is $\Z$-graded (i.e., endowed with a grading shift
+functor), while the category $\mathcal C_J$ is not. Thus the
+structure of the category $\T_J$ is definitely richer than that of
+$\mathcal C_J$.
+
+ One of our main results is  that $\mathcal F$ induces  a ring isomorphism
+between $K(\T_J)_{q=1}$, the Grothendieck ring of $\T_J$ forgetting
+the grading and  the Grothendieck ring $K(\mathcal C_J)$ of the
+category $\mathcal C_J$.  
+ Indeed, as proved in Theorem~\ref{th:def},
+$K(\T_J)$ is isomorphic to the $t$-deformation $\mathcal K_t$ of 
+$K(\mathcal C_J)$ introduced by Hernandez-Leclerc in \cite{HL11}
+(cf.\ \cite{VV02, Nak04, Her04}). 
+Therefore $\T_J$ provides a
+$\Z$-graded lifting of ${\mathcal C}_{J}$ as a rigid
+tensor category.
+
+
+As we have seen so far, even the simplest case yields many
+interesting and deep applications of the functor $\mathcal F$. We
+expect  that a lot more exciting developments will follow as
+we take various choices of  the affine algebra $\g$  and $J$.
+
+
+This paper is organized as follows. In the first section, we recall
+the notions of quantum groups and \KLRs.\ Next, we introduce the
+R-matrices for \KLRs\ and study their basic properties. In the
+second section, we recall the quantum affine algebras and their
+representation theory. The notion of normalized R-matrices are also
+recalled. In the third section, we define an $(R^J(\beta)),\uqpg
+)$-bimodule $\widehat{V}^{\otimes \beta}$ and a functor $\F_{\beta}$
+between the category of graded $R^J(\beta)$-modules and the category
+of $\uqpg$-modules. In the last section, we construct a category
+$\T_J$ and investigate its fundamental properties. In the
+appendices, we gather necessary lemmas and propositions on the
+localization of tensor categories and the quotient categories of an
+abelian category by a Serre subcategory.
+
+\smallskip
+
+
+\noi
+{\bf Acknowledgements.} We would like to express our gratitude to
+Bernard Leclerc for his kind explanations of his works
+and many fruitful discussions.
+The first and the third author gratefully acknowledge
+the hospitality of RIMS (Kyoto)
+ during their visit in 2011 and 2012.

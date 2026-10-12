@@ -1,60 +1,63 @@
 ---
 doc_id: klein-few-body-systems-in-lattice-effective-field-theory-the
-doc_title: "Few-body systems in lattice effective field theory"
+doc_title: "Few-Body Systems in Lattice Effective Field Theory"
 section_id: sec-012-correlations-in-few-body-physics
 section_title: "Correlations in Few-Body physics"
 section_number: null
 pages: 25-27
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Few-body systems in lattice effective field theory — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
+toc_source: outline
 ---
 one for Bessel functions in the case of vanishing Coulomb interaction,
-Fl(η,ρ )
+Fl(η, ρ)
 ρ≫1
 −−−→sin
-(
-ρ−η log(2ρ)− lπ
-2 +σl
-) η→0
+
+ρ −η log(2ρ) −lπ
+2 + σl
+ η→0
 −−−→sin
-(
-ρ− lπ
+
+ρ −lπ
 2
-)
-, (2.59)
-Gl(η,ρ )
+
+,
+(2.59)
+Gl(η, ρ)
 ρ≫1
 −−−→cos
-(
-ρ−η log(2ρ)− lπ
-2 +σl
-) η→0
+
+ρ −η log(2ρ) −lπ
+2 + σl
+ η→0
 −−−→cos
-(
-ρ− lπ
+
+ρ −lπ
 2
-)
-. (2.60)
-Here,σl = arg[Γ(l + 1 + iη)] is the Coulomb phase. Now, we already see that the asymptotic solutions
+
+.
+(2.60)
+Here, σl = arg[Γ(l + 1 + iη)] is the Coulomb phase. Now, we already see that the asymptotic solutions
 with vanishing Coulomb interaction are the same as in Eqs. (2.38) and (2.39) (up to a sign). Hence, one
 can use exactly the same strategies as already explained in the case without Coulomb interaction.
 2.3 Correlations in Few-Body physics
 Correlations between few-body systems of diﬀerent number of particles are an important test for the
 predictability of modern theory of nuclear interaction. A famous but rather technical example is the
-N-boson system in one dimension with attractive two-bodyδ-interaction Vi j = C0δ(xi− x j), where xi, x j
+N-boson system in one dimension with attractive two-body δ-interaction Vi j = C0δ(xi −xj), where xi, xj
 are the positions of the boson i, j, while C0 determines the strength of the two-body interaction. This
 model can be solved exactly for any number of particle [62] and e.g. the general binding energy for N
 bosons with mass m reads
 ENb
-B =− m
+B = −m
 24C2
-0N(N2− 1). (2.61)
+0N(N2 −1).
+(2.61)
 In the case of three dimensions, such a model is not exactly solvable anymore and one has to rely on
 numerical calculations. Instead of the Lippmann-Schwinger equations, one has to use Faddeev equations
 in the three-body sector or Faddeev-Yakubovsky equations in the four-body sector [63–65]. In the
 case of pionless EFT, there exists the special case of Skorniakov-Ter-Martirosian equations [66] and a
-formulation including dimeron ﬁelds [67]. Going beyond four particles becomes very di ﬃcult for an
+formulation including dimeron ﬁelds [67]. Going beyond four particles becomes very diﬃcult for an
 explicit calculation and one should generally deliberate other methods.
 In the three-body sector, the phenomena of universal Eﬁmov physics appear in three dimensions.
 While the exact physical system (e.g. cold atoms, nuclear physics, etc.) does not play a role, Eﬁmov
@@ -65,7 +68,7 @@ uniquely. A closely related correlation is the Philips line [23, 68, 69], which 
 between the spin-doublet neutron-deuteron scattering length a1/2
 nd and the triton binding energy E3H for
 various two-body interactions ﬁtted to the same two-body scattering observables. At the same time,
-various calculations act slightly di ﬀerently on the three-body physics and they must be ﬁxed by the
+various calculations act slightly diﬀerently on the three-body physics and they must be ﬁxed by the
 three-body force.
 In this thesis, we focus on the Tjon line or Tjon band. Tjon calculated the correlation between
 three-body and four-body systems using a two-body interaction consisting of an attractive and a repulsive
@@ -97,13 +100,20 @@ give a width or only give results for a speciﬁc pair of the triton and the hel
  30
  32
  34
- 5.5  6  6.5  7  7.5  8  8.5  9
-B(α ) [MeV]
+ 5.5
+ 6
+ 6.5
+ 7
+ 7.5
+ 8
+ 8.5
+ 9
+B(α) [MeV]
 B(t) [MeV]
-EFTLO (400MeV ≤ Λ ≤  1600MeV)
-EFTNLO (400MeV ≤ Λ ≤  700MeV)
-EFTLO (Λ =700MeV)
-EFTNLO (Λ =650MeV)
+EFTLO (400MeV ≤ Λ ≤ 1600MeV)
+EFTNLO (400MeV ≤ Λ ≤ 700MeV)
+EFTLO (Λ=700MeV)
+EFTNLO (Λ=650MeV)
  12
  14
  16
@@ -116,8 +126,15 @@ EFTNLO (Λ =650MeV)
  30
  32
  34
- 5.5  6  6.5  7  7.5  8  8.5  9
-B(α ) [MeV]
+ 5.5
+ 6
+ 6.5
+ 7
+ 7.5
+ 8
+ 8.5
+ 9
+B(α) [MeV]
 B(t) [MeV]
 EFTLO Platter et al.
  12
@@ -132,8 +149,15 @@ EFTLO Platter et al.
  30
  32
  34
- 5.5  6  6.5  7  7.5  8  8.5  9
-B(α ) [MeV]
+ 5.5
+ 6
+ 6.5
+ 7
+ 7.5
+ 8
+ 8.5
+ 9
+B(α) [MeV]
 B(t) [MeV]
 EFTNLO+3NI
 EFTNLO

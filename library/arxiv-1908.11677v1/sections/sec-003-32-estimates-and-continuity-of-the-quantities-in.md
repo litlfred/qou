@@ -8,688 +8,894 @@ pages: 12-19
 source_pdf: 1908.11677v1.pdf
 source_sha256: c53663eeb457daf9
 doc_brief: "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposedto answer the question of what is the canonical shape in a given knot typ e"
+text_source: latex
+latex_prose_ratio: 0.945
+latex_coverage_ratio: 0.591
 ---
-As we can see from Lemma 2.4, δN (τ )[φ ] and δN (τ )[φ , ψ ] may be expressed
-in terms of N (u, v) and K (u, v). First, we discuss N (u, v).
-Lemma 3.1. Assume that f is bi-Lipschitz. Then, the following properties
-hold.
-1. Let α ∈ (0, ∞) and p ∈ [1, ∞) satisfy 2 ≤ αp < 2p + 1 . If u, v ∈
-W σ, 2p(R/ LZ, Rd), then there exists C = C(f ) > 0 such that
-‖‖‖‖
-N (u, v)
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C[u]W σ, 2p [v]W σ, 2p .
-2. Let 0 < β ≤ 1. If u,v ∈ C0,β (R/ LZ, Rd), then there exists C = C(f ) > 0
-such that ‖‖‖‖D(f )α −2β N (u, v)
-‖∆f ‖α
-Rn
-‖‖‖‖
-L∞
-≤ C[u]C 0,β [v]C 0,β .
-3. Let 0 < β ≤ 1. If u,v ∈ X β (R/ LZ, Rd), then for s ∈ R/ LZ,
-lim
-(s1,s 2)→(s,s )
-|∆ s|α −2β N (u, v)
-‖∆f ‖α
-Rn
-=
-
-
-
-0 (0 < β < 1),
-1
-12u′(s) ·v′(s) ( β = 1)
-holds.
-Proof. 1. By H¨ older’s inequality and the bi-Lipschitz continuity of f , we
-have
-‖‖‖‖
-N (u, v)
-‖∆f ‖α
-Rn
-‖‖‖‖
-p
-Lp
-= 1
-2p
-∫
-R/ LZ
-∫ s2+ L
-2
-s2− L
-2
-1
-‖∆f ‖αp +2p
-Rn
-⏐⏐⏐⏐
-∫ s1
-s2
-∫ s1
-s2
-∆ 3
-4u · ∆ 3
-4vds3ds4
-⏐⏐⏐⏐
-p
-ds1ds2
-≤ C
-∫
-R/ LZ
-∫ s2+ L
-2
-s2− L
-2
-1
-|∆ s|αp +2
-∫ s1
-s2
-∫ s1
-s2
-‖∆ 3
-4u‖p
-Rd ‖∆ 3
-4v‖p
-Rdds3ds4ds1ds2
-= (†).
-We change variables
-t1 = s1 − s2, t 2 = s2, s 3 = t2 + t1t3, s 4 = t2 + t1t4
-in ( †). Then, we obtain
-(†) = C
-∫
-R/ LZ
-∫ L
-2
-− L
-2
-1
-|t1|αp
-×
-∫ 1
-0
-∫ 1
-0
-‖u(t2+t1t3)−u(t2+t1t4)‖p
-Rd ‖v(t2+t1t3)−v(t2+t1t4)‖p
-Rd dt3dt4dt1dt2
-= (‡).
-We use Fubini’s theorem and change variables
-w1 = (t3 − t4)t1, w 2 = t2 + t1t4
-12
-in ( ‡). Then, we obtain
-(‡) = C
-∫ 1
-0
-∫ 1
-0
-∫ L
-2
-− L
-2
-∫
-R/ LZ
-1
-|t1|αp
-× ‖u(t2 + t1t3) −u(t2 + t1t4)‖p
-Rd ‖v(t2 + t1t3) −v(t2 + t1t4)‖p
-Rd dt2dt1dt3dt4
-= C
-∫ 1
-0
-∫ 1
-0
-∫ L
-2 |t3−t4|
-− L
-2 |t3−t4|
-∫
-R/ LZ
-1
-|w1|αp |t3 − t4|αp −1
-× ‖u(w1 + w2) −u(w2)‖p
-Rd ‖v(w1 + w2) −v(w2)‖p
-Rd dw1dw2dt3dt4
-≤ C
-∫
-R/ LZ
-∫ L
-2
-− L
-2
-‖u(w1 + w2) −u(w2)‖p
-Rd
-|w1|
-αp
-2
-‖v(w1 + w2) −v(w2)‖p
-Rd
-|w1|
-αp
-2
-dw1dw2
-≤ C[u]p
-W σ, 2p [v]p
-W σ, 2p ,
-by H¨ older’s inequality, and the claim holds.
-2. Without loss of generality, we assume that s1, s2 ∈ R/ LZ satisfy 0 <
-|∆ s| < L/ 2. Then, we have
-⏐⏐⏐⏐|∆ s|α −2β N (u, v)
-‖∆f ‖α
-Rn
-⏐⏐⏐⏐ ≤ C|∆ s|−2β −2
-∫ s1
-s2
-∫ s1
-s2
-‖∆ 3
-4u‖Rd‖∆ 3
-4v‖Rd ds3ds4
-≤ C|∆ s|−2
-∫ s1
-s2
-∫ s1
-s2
-‖∆ 3
-4u‖Rd
-|∆ 3
-4s|β
-‖∆ 3
-4v‖Rd
-|∆ 3
-4s|β ds3ds4
-≤ C[u′]C 0,β [v′]C 0,β .
-3. First, we consider the case where 0 < β < 1, i.e. u,v ∈ h0,β (R/ LZ, Rd).
-As is well known, the little H¨ older space h0,β is characterized as
-h0,β (R/ LZ, Rd) =
-{
-u ∈ C0,β (R/ LZ, Rd)
-⏐⏐⏐⏐ lim
-R→+0
-[u]C 0,β ,R = 0
-}
-,
-where
-[u]C 0,β ,R = sup
-s1,s 2∈R/ LZ
-0<|∆ s|<R
-‖∆u‖Rd
-|∆ s|β .
-For R > 0, let s1, s2 ∈ R/ LZ satisfy 0 < |∆ s| < R. Then, we have
-⏐⏐⏐⏐|∆ s|α −2β N (u, v)
-‖∆f ‖α
-Rn
-⏐⏐⏐⏐ ≤ C[u]C 0,β ,R [v]C 0,β ,R . (3.4)
-Taking lim sup on left-hand side in (3.4), we have
-lim sup
-(s1,s 2)→(s,s )
-⏐⏐⏐⏐|∆ s|α −2β N (u, v)
-‖∆f ‖α
-Rn
-⏐⏐⏐⏐ ≤ C[u]C 0,β ,R [v]C 0,β ,R .
-Taking R → +0 on right-hand side, we obtain
-lim
-(s1,s 2)→(s,s )
-|∆ s|α −2β N (u, v)
-‖∆f ‖α
-Rn
-= 0.
-13
-Next, we assume u, v ∈ C1. If s5, s6 ∈ R/ LZ are such that ‖(s5, s 6) −
-(s, s )‖R2 is suﬃciently small, we can take ε > 0 arbitrarily such that
-‖u′(s5)−u′(s)‖Rd ≤ ε
-2(‖v′‖L∞ + 1) , ‖v′(s6)−v′(s)‖Rd ≤ ε
-2(‖u′‖L∞ + 1) .
-Then, using the fact that
-∫ s1
-s2
-∫ s1
-s2
-∫ s3
-s4
-∫ s3
-s4
-ds5ds6ds3ds4 = 1
-6 |∆ s|2,
-we have
-⏐⏐⏐⏐
-1
-|∆ s|4
-∫ s1
-s2
-∫ s1
-s2
-∫ s3
-s4
-∫ s3
-s4
-u′(s5) ·v′(s6)ds5ds6ds3ds4 − 1
-6u′(s) ·v′(s)
-⏐⏐⏐⏐
-≤ 1
-|∆ s|4
-∫ s1
-s2
-∫ s1
-s2
-∫ s3
-s4
-∫ s3
-s4
-|u′(s5) ·v′(s6) −u′(s) ·v′(s)|ds5ds6ds3ds4
-≤ 1
-|∆ s|4
-∫ s1
-s2
-∫ s1
-s2
-∫ s3
-s4
-∫ s3
-s4
-(‖u′(s5)‖Rd‖v′(s6) −v′(s)‖Rd
-+ ‖v′(s)‖Rd ‖u′(s5) −u′(s)‖Rd )ds5ds6ds3ds4
-≤ ε.
-Hence, we have
-lim
-(s1,s 2)→(s,s )
-1
-|∆ s|4
-∫ s1
-s2
-∫ s1
-s2
-∫ s3
-s4
-∫ s3
-s4
-u′(s5) ·v′(s6)ds5ds6ds3ds4
-= 1
-6u′(s) ·v′(s).
-Using this and
-lim
-(s1,s 2)→(s,s )
-|∆ s|
-‖∆f ‖Rn
-= 1
-‖τ (s)‖Rn
-= 1,
-we obtain
-|∆ s|α −2 N (u, v)
-‖∆f ‖α
-Rn
-= 1
-2
-|∆ s|α +2
-‖∆f ‖α +2
-Rn
-1
-|∆ s|4
-∫ s1
-s2
-∫ s1
-s2
-∫ s3
-s4
-∫ s3
-s4
-u′(s5) ·v′(s6)ds5ds6ds3ds4
-→ 1
-12u′(s) ·v′(s) as ( s1, s 2) → (s, s ).
-Since the function K (u, v) fulﬁlls
-|K (u, v)| ≤ C‖u′‖L∞ ‖v′‖L∞ , lim
-(s1,s 2)→(s,s )
-K (u, v) =u′(s) ·v′(s),
-we obtain estimates and continuity of δ‖∆f ‖2
-Rn[φ ]
-‖∆f ‖2
-Rn
-and δ2‖∆f ‖2
-Rn[φ , ψ ]
-‖∆f ‖2
-Rn
-from
-Lemma 2.2 as follows.
-14
-Lemma 3.2. 1. Assume that f , φ , ψ ∈ W 1, ∞(R/ LZ, Rn) and f is bi-
-Lipschitz. Then, there exists C = C(f ) > 0 such that
-‖‖‖‖
-δ‖∆f ‖2
-Rn[φ ]
-‖∆f ‖2
-Rn
-‖‖‖‖
-L∞
-≤ C‖φ ′‖L∞ ,
-‖‖‖‖
-δ2‖∆f ‖2
-Rn[φ , ψ ]
-‖∆f ‖2
-Rn
-‖‖‖‖
-L∞
-≤ C‖φ ′‖L∞ ‖ψ ′‖L∞ .
-2. Iff ,φ ,ψ ∈ C1(R/ LZ, Rn), then it follows that
-lim
-(s1,s 2)→(s,s )
-δ‖∆f ‖2
-Rn[φ ]
-‖∆f ‖2
-Rn
-=τ (s) ·φ ′(s),
-lim
-(s1,s 2)→(s,s )
-δ2‖∆f ‖2
-Rn[φ , ψ ]
-‖∆f ‖2
-Rn
-=φ ′(s) ·ψ ′(s)
-for s ∈ R/ LZ.
-To deal with S5(f ), we need estimates for τ ·φ ′. The proof is easy, therefore
-we omit the details.
-Lemma 3.3. Assume that f is bi-Lipschitz. Then, the following properties
-hold.
-1. Let α ∈ (0, ∞) and p ∈ [1, ∞) satisfy 2 ≤ αp < 2p + 1 . If f , φ ∈
-W 1+σ, 2p(R/ LZ, Rn) ∩ W 1, ∞(R/ LZ, Rd), then there exists C = C(f ) > 0
+As we can see from Lemma \ref{variation N},
+$\delta \scrN(\vectau)[\vecphi]$
+and
+$\delta \scrN(\vectau)[\vecphi,\vecpsi]$
+may be expressed in terms of
+$\scrN(\vecu,\vecv)$
+and
+$\scrK(\vecu,\vecv)$.
+First,
+we discuss
+$\scrN(\vecu,\vecv)$.
+
+\begin{lemma}\label{estimates N}
+Assume that
+$\vecf$
+is bi-Lipschitz.
+Then,
+the following properties hold.
+\begin{enumerate}\renewcommand{\labelenumi}{\upshape\textrm{\theenumi.}}
+\item
+Let
+$\alpha \in (0,\infty)$
+and
+$p \in [1,\infty)$
+satisfy
+$2 \leq \alpha p < 2p+1$.
+If
+$\vecu$,
+$\vecv \in W^{\sigma,2p}(\R/\calL\Z , \R^d)$,
+then there exists
+$C=C(\vecf)>0$
 such that
-[(τ ·φ ′)]W σ, 2p ≤ C(‖τ ‖L∞ [φ ′]W σ, 2p + [τ ]W σ, 2p ‖φ ′‖L∞ ).
-2. Let 0 < β ≤ 1. If f ,φ ∈ C1,β (R/ LZ, Rn), then it holds that
-[(τ ·φ ′)]C 0,β ≤ ‖τ ‖L∞ [φ ′]C 0,β + [τ ]C 0,β ‖φ ′‖L∞ .
-3. Let 0 < β ≤ 1. If τ , φ ′ ∈ X β (R/ LZ, Rn), then (τ ·φ ′) ∈ X β (R/ LZ, R).
-Moreover, if f ,φ ∈ C2(R/ LZ, Rn), then it holds that
-d
-ds (τ (s) ·φ ′(s)) =κ (s) ·φ ′(s) +τ (s) ·φ ′′(s)
-for s ∈ R/ LZ.
-3.3 Proof of Theorem 1.1
-In this subsection we complete the proof of Theorem 1.1 combining th e facts
-in previous subsection. First, we show the L1-estimates of the ﬁrst and second
-variational formulae for M(α,p )(f ). Using the expression of the ﬁrst and second
-15
-variational formulae for N (τ ) in Lemma 2.4, it follows that
-‖‖‖‖
-R1(f )[φ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C‖φ ′‖L∞ ,
-‖‖‖‖
-R2(f )[φ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C[φ ′]W σ, 2p ,
-‖‖‖‖
-S1(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C‖φ ′‖L∞ ‖ψ ′‖L∞ ,
-‖‖‖‖
-S2(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C{‖φ ′‖L∞ (‖ψ ′‖L∞ + [ψ ′]W σ, 2p ) + ‖ψ ′‖L∞ (‖φ ′‖L∞ + [φ ′]W σ, 2p )},
-‖‖‖‖
-S3(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C(‖ψ ′‖L∞ [φ ′]W σ, 2p + ‖φ ′‖L∞ [ψ ′]W σ, 2p ),
-‖‖‖‖
-S4(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C[φ ′]W σ, 2p [ψ ′]W σ, 2p ,
-‖‖‖‖
-S5(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C([φ ′]W σ, 2p + ‖φ ′‖L∞ )([ψ ′]W σ, 2p + ‖ψ ′‖L∞ )
-by Lemmas 3.1 and 3.3. Hence, from these estimates and Lemma 3.2, w e obtain
-‖‖‖‖
-δN (τ )[φ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C‖φ ′‖W σ, 2p∩L∞
-‖‖‖‖
-δN (τ )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-Lp
-≤ C‖φ ′‖W σ, 2p∩L∞ ‖ψ ′‖W σ, 2p∩L∞ ,
-and L1-estimates for G(α,p )(f ) and H(α,p )(f ).
-Next, we consider L∞-estimates of M(α,p )(f ), G(α,p )(f ), and H(α,p )(f ) with
-the weight |∆ s|α −2β . We assume that f ,φ ,ψ ∈ C1,β and s1, s2 ∈ R/ LZ satisfy
-0 < |∆ s| < L/ 2. Because we have
-1 − xα ≤
-(α
-2 + 1
-)
-(1 − x2)
-for all x ∈ [0, 1], it follows that
-|∆ s|α −2β Mα (f ) ≤ C 1
-|∆ s|2β
-(
-1 − ‖∆f ‖α
-Rn
-|∆ s|α
-)
-≤ C 1
-|∆ s|2β
-(
-1 − ‖∆f ‖2
-Rn
-|∆ s|2
-)
-≤ C 1
-|∆ s|2β +2
-∫ s1
-s2
-∫ s1
-s2
-‖∆ 3
-4τ ‖2
-Rnds3ds4
-≤ C. (3.5)
-16
-Moreover, by Lemmas 3.1–3.3, we have
-‖‖‖‖|∆ s|α −2β R1(f )[φ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-L∞
-≤ C‖φ ′‖L∞ ,
-‖‖‖‖|∆ s|α −2β R2(f )[φ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-L∞
-≤ C[φ ′]C 0,β ,
-‖‖‖‖|∆ s|α −2β S1(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-L∞
-≤ C‖φ ′‖L∞ ‖ψ ′‖L∞ ,
-‖‖‖‖|∆ s|α −2β S2(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-L∞
-≤ C{‖φ ′‖L∞ (‖ψ ′‖L∞ + [ψ ′]C 0,β ) + ‖ψ ′‖L∞ (‖φ ′‖L∞ + [φ ′]C 0,β )},
-‖‖‖‖|∆ s|α −2β S3(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-L∞
-≤ C(‖ψ ′‖L∞ [φ ′]C 0,β + ‖φ ′‖L∞ [ψ ′]C 0,β ),
-‖‖‖‖|∆ s|α −2β S4(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-L∞
-≤ C[φ ′]C 0,β [ψ ′]C 0,β ,
-‖‖‖‖|∆ s|α −2β S5(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-L∞
-≤ C([φ ′]C 0,β + ‖φ ′‖L∞ )([ψ ′]C 0,β + ‖ψ ′‖L∞ ).
-Therefore, we obtain
-‖‖‖‖|∆ s|α −2β δN (τ )[φ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-L∞
-≤ C‖φ ′‖C 0,β
-‖‖‖‖|∆ s|α −2β δ2N (τ )[φ , ψ ]
-‖∆f ‖α
-Rn
-‖‖‖‖
-L∞
-≤ C‖φ ′‖C 0,β ‖ψ ′‖C 0,β ,
-and the L∞-estimates for M(α,p )(f ), G(α,p )(f ), and H(α,p )(f ) with the weight
-|∆ s|α −2β .
-Lastly, we consider the continuity. Because continuity on the outs ide of the
-diagonal set is clear, we consider the property on the diagonal set . First, we
-assume f , φ , ψ ∈ h1,β with 0 < β < 1, and f is bi-Lipschitz. Let R > 0 be
-suﬃciently small. In a similar manner to the proof of (3.5), it holds that
-|∆ s|α −2β Mα (f ) ≤ ˜C[τ ]C 0,β ,R
-for 0 < |∆ s| < R, and therefore
-lim
-(s1,s 2)→(s,s )
-|∆ s|α −2β Mα (f ) = 0 ,
-where ˜C is a positive constant depending only on α , p, and Cb. Moreover, by
-Lemma 3.1, we have
-lim
-(s1,s 2)→(s,s )
-⏐⏐⏐⏐|∆ s|α −2β Ri(f )[φ ]
-‖∆f ‖α
-Rn
-⏐⏐⏐⏐ = 0, (i = 1, 2),
-lim
-(s1,s 2)→(s,s )
-⏐⏐⏐⏐|∆ s|α −2β Si(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-⏐⏐⏐⏐ = 0, (i = 1, . . . , 5).
-Considering Lemma 3.2, we obtain the desired continuity when f ,φ ,ψ ∈ h1,β
-with 0 < β < 1.
-17
-Next, we consider the case where β = 1. We denote the curvature vector of
-f byκ , i.e. κ =f ′′. Using Lemma 3.1 and L’Hospital’s theorem, we have
-|∆ s|α −2Mα (f ) = |∆ s|α −2 ϕ α (N (τ ))
-‖∆f ‖α
-Rn
-= |∆ s|α −2 ϕ 2(N (τ ))
-‖∆f ‖α
-Rn
-ϕ α (N (τ ))
-ϕ 2(N (τ ))
-= |∆ s|α −2 N (τ )
-‖∆f ‖α
-Rn
-1
-1 + N (τ )
-ϕ α (N (τ ))
-ϕ 2(N (τ ))
-→ α
-24 ‖κ (s)‖2
-Rn as ( s1, s 2) → (s, s ).
-Similarly, it follows that
-|∆ s|α −2 R1(f )[φ ]
-‖∆f ‖α
-Rn
-→ − 1
-6τ (s) ·φ ′(s)‖κ (s)‖2
-Rn ,
-|∆ s|α −2 R2(f )[φ ]
-‖∆f ‖α
-Rn
-→ 1
-6κ (s) ·φ ′′(s),
-|∆ s|α −2 S1(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-→ − 1
-6 {φ ′(s) ·ψ ′(s) − (τ (s) ·φ ′(s))(τ (s) ·ψ ′(s))}‖κ (s)‖2
-Rn ,
-|∆ s|α −2 S2(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-→ 1
-6 (τ (s) ·φ ′(s))(κ (s) ·ψ ′′(s) −τ (s) ·ψ ′(s)‖κ (s)‖2
-Rn )
-+ 1
-6 (τ (s) ·ψ ′(s))(κ (s) ·φ ′′(s) −τ (s) ·φ ′(s)‖κ (s)‖2
-Rn ),
-|∆ s|α −2 S3(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-→ − 1
-6 (τ (s) ·ψ ′(s))(κ (s) ·φ ′′(s)) − 1
-6 (τ (s) ·φ ′(s))(κ (s) ·ψ ′′(s)),
-|∆ s|α −2 S4(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-→ 1
-6φ ′′(s) ·ψ ′′(s),
-|∆ s|α −2 S5(f )[φ , ψ ]
-‖∆f ‖α
-Rn
-→ − 1
-6 {(τ (s) ·φ ′′(s)) + (φ ′(s) ·κ (s))}{(τ (s) ·ψ ′′(s)) + (ψ ′(s) ·κ (s))}
-as ( s1, s 2) → (s, s ). Hence, the desired continuity holds when f ,φ ,ψ ∈ C2.
-This completes the proof of Theorem 1.1. □
-References
-[1] A. Abrams, J. Cantarella, J. H. G. Fu, M. Ghomi, and R. Howard, Circles
-minimize most knot energies , Topology, 42 (2) (2003), 381–394.
-[2] S. Blatt, The gradient ﬂow of the M¨ obius energy near local minimizers ,
-Calc. Var. Partial Diﬀerential Equations, 43 (1) (2012), 1250010, 9 pp.
-[3] S. Blatt, Boundedness and regularizing eﬀects of O’Hara’s knot energ ies,
-J. Knot Theory Ramiﬁcations, 21 (2012), 1250010, 9pp.
-[4] S. Blatt, The gradient ﬂow of O’Hara’s knot energies , Math. Ann., 370
-(3–4) (2018), 993–1061.
-18
-[5] S. Blatt, P. Reiter, and A. Schikorra, Harmonic analysis meets critical
-knots. Critical points of the M¨ obius energy are smooth, Trans. Amer. Math.
-Soc. 368 (9) (2016), 6391–6438.
-[6] S. Blatt and P. Reiter, Stationary points of O’Hara’s knot energies ,
-Manuscripta Math., 140 (1–2) (2013), 29–50.
-[7] S. Blatt and N. Vorderobermeier, On the analyticity of critical points of the
-M¨ obius energy, Calc. Var. Partial Diﬀerential Equations, 58 (1) (2019), 28
-pp.
-[8] M. H. Freedman, Z.-X. He, and Z. Wang, M¨ obius energy of knots and
-unknots, Ann. of Math., 139 (1994), 1–50.
-[9] Z.-X. He, The Euler-Lagrange equation and heat ﬂow for the M¨ obius energy,
-Comm. Pure Appl. Math., 53 (4) (2000), 399–431.
-[10] A. Ishizeki and T. Nagasawa, A decomposition theorem of the M¨ obius energy
-I: Decomposition and M¨ obius invariance, Kodai. Math. J., 37 (3) (2014),
-737–754.
-[11] A. Ishizeki and T. Nagasawa, A decomposition theorem of the M¨ obius energy
-I I: Variational formulae and estimates, Math. Ann., 363 (1–2) (2015), 617–
-635.
-[12] A. Ishizeki and T. Nagasawa, Decomposition of generalized O’Hara’s ener-
-gies, preprint, arXiv:1904.06812 (2019).
-[13] J. O’Hara, Energy of a knot , Topology, 30 (2) (1991), 241–247.
-[14] J. O’Hara, Family of energy functionals of knots , Topology Appl., 48 (2)
-(1992), 147–161.
-[15] J. O’Hara, Energy functionals of knots I I , Topology Appl., 56 (1) (1994),
-45–61.
-[16] P. Reiter, Repulsive knot energies and pseudodiﬀerential calculus fo r
-O’Hara’s knot energy familyE(α ), α ∈ [2, 3), Math. Nachr., 285 (7) (2012),
-889–913.
-19
+\[
+	\left\|
+	\frac{ \scrN(\vecu,\vecv) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right\|_{L^p}
+	\leq
+	C [\vecu]_{W^{\sigma,2p}} [\vecv]_{W^{\sigma,2p}}.
+\]
+\item
+Let
+$0 < \beta \leq 1$.
+If
+$\vecu$,
+$\vecv \in C^{0,\beta}(\R/\calL\Z , \R^d)$,
+then there exists
+$C=C(\vecf)>0$
+such that
+\[
+	\left\|
+	\scrD(\vecf)^{\alpha-2\beta}
+	\frac{ \scrN(\vecu,\vecv) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right\|_{L^\infty}
+	\leq
+	C [\vecu]_{C^{0,\beta}} [\vecv]_{C^{0,\beta}}.
+\]
+\item
+Let
+$0 < \beta \leq 1$.
+If
+$\vecu$,
+$\vecv \in X^\beta(\R/\calL\Z , \R^d)$,
+then for
+$s \in \R/\calL\Z$,
+\[
+	\lim_{(s_1,s_2) \to (s,s)}
+	|\Delta s|^{\alpha-2\beta}
+	\frac{ \scrN(\vecu,\vecv) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	=
+	\left\{
+	\begin{array}{ll}
+		0 & (0<\beta<1),
+	\vspace{5pt}\\
+		\displaystyle \frac 1 {12} \vecu^\prime(s) \cdot \vecv^\prime(s) & (\beta=1)
+	\end{array}
+	\right.
+\]
+holds.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\begin{enumerate}
+\item
+By H\"{o}lder's inequality and the bi-Lipschitz continuity of
+$\vecf$,
+we have
+\begin{align*}
+	\left\|
+	\frac{ \scrN(\vecu,\vecv) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right\|_{L^p}^p
+	&=
+	\frac 1 {2^p}
+	\int_{\R/\calL\Z} \int_{s_2-\frac \calL 2}^{s_2+\frac \calL 2}
+	\frac 1 { \| \Delta \vecf \|_{\R^n}^{\alpha p+2p} }
+	\left|
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	\Delta_4^3 \vecu \cdot \Delta_4^3 \vecv
+	ds_3ds_4
+	\right|^p
+	ds_1ds_2
+\\
+	&\leq
+	C
+	\int_{\R/\calL\Z} \int_{s_2-\frac \calL 2}^{s_2+\frac \calL 2}
+	\frac 1 { |\Delta s|^{\alpha p+2} }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	\| \Delta_4^3 \vecu \|_{\R^d}^p \| \Delta_4^3 \vecv \|_{\R^d}^p
+	ds_3ds_4ds_1ds_2
+\\
+	&=
+	(\dagger).
+\end{align*}
+We change variables
+\[
+	t_1=s_1-s_2,
+	\quad
+	t_2=s_2,
+	\quad
+	s_3=t_2+t_1t_3,
+	\quad
+	s_4=t_2+t_1t_4
+\]
+in
+$(\dagger)$.
+Then,
+we obtain
+\begin{multline*}
+	(\dagger)
+	=
+	C
+	\int_{\R/\calL\Z} \int_{-\frac \calL 2}^{\frac \calL 2}
+	\frac 1 { |t_1|^{\alpha p} }
+\\
+	\times
+	\int_0^1 \int_0^1
+	\| \vecu(t_2+t_1t_3) - \vecu(t_2+t_1t_4) \|_{\R^d}^p
+	\| \vecv(t_2+t_1t_3) - \vecv(t_2+t_1t_4) \|_{\R^d}^p
+	dt_3dt_4dt_1dt_2
+\\
+	=
+	(\ddagger).
+\end{multline*}
+We use Fubini's theorem and change variables
+\[
+	w_1 = (t_3-t_4) t_1,
+	\quad
+	w_2 = t_2+t_1t_4
+\]
+in
+$(\ddagger)$.
+Then,
+we obtain
+\begin{align*}
+	(\ddagger)
+	&=
+	C
+	\int_0^1 \int_0^1
+	\int_{-\frac \calL 2}^{\frac \calL 2} \int_{\R/\calL\Z}
+	\frac 1 { |t_1|^{\alpha p} }
+\\
+	&\qquad
+	\times
+	\| \vecu(t_2+t_1t_3) - \vecu(t_2+t_1t_4) \|_{\R^d}^p
+	\| \vecv(t_2+t_1t_3) - \vecv(t_2+t_1t_4) \|_{\R^d}^p
+	dt_2dt_1dt_3dt_4
+\\
+	&=
+	C
+	\int_0^1 \int_0^1
+	\int_{-\frac \calL 2 |t_3-t_4|}^{\frac \calL 2 |t_3-t_4|} \int_{\R/\calL\Z}
+	\frac 1 { |w_1|^{\alpha p} }
+	|t_3-t_4|^{\alpha p-1}
+\\
+	&\qquad
+	\times
+	\| \vecu(w_1+w_2) - \vecu(w_2) \|_{\R^d}^p
+	\| \vecv(w_1+w_2) - \vecv(w_2) \|_{\R^d}^p
+	dw_1dw_2dt_3dt_4
+\\
+	&\leq
+	C
+	\int_{\R/\calL\Z} \int_{-\frac \calL 2}^{\frac \calL 2}
+	\frac{ \| \vecu(w_1+w_2) - \vecu(w_2) \|_{\R^d}^p }{ |w_1|^{\frac{\alpha p} 2} }
+	\frac{ \| \vecv(w_1+w_2) - \vecv(w_2) \|_{\R^d}^p }{ |w_1|^{\frac{\alpha p} 2} }
+	dw_1dw_2
+\\
+	&\leq
+	C [\vecu]_{W^{\sigma,2p}}^p [\vecv]_{W^{\sigma,2p}}^p,
+\end{align*}
+by H\"{o}lder's inequality,
+and the claim holds.
+\item
+Without loss of generality,
+we assume that
+$s_1$,
+$s_2 \in \R/\calL\Z$
+satisfy
+$\displaystyle 0 < |\Delta s| < \calL/2$.
+Then,
+we have
+\begin{align*}
+	\left|
+	|\Delta s|^{\alpha-2\beta}
+	\frac{ \scrN(\vecu,\vecv) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right|
+	&\leq
+	C
+	|\Delta s|^{-2\beta-2}
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	\| \Delta_4^3 \vecu \|_{\R^d} \| \Delta_4^3 \vecv \|_{\R^d}
+	ds_3ds_4
+\\
+	&\leq
+	C
+	|\Delta s|^{-2}
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	\frac{ \| \Delta_4^3 \vecu \|_{\R^d} }{ |\Delta_4^3 s|^\beta }
+	\frac{ \| \Delta_4^3 \vecv \|_{\R^d} }{ |\Delta_4^3 s|^\beta }
+	ds_3ds_4
+\\
+	&\leq
+	C [\vecu^\prime]_{C^{0,\beta}} [\vecv^\prime]_{C^{0,\beta}}.
+\end{align*}
+\item
+First,
+we consider the case where
+$0<\beta<1$,
+i.e.\ $\vecu$,
+$\vecv \in h^{0,\beta}(\R/\calL\Z , \R^d)$.
+As is well known,
+the little H\"{o}lder space
+$h^{0,\beta}$
+is characterized as
+\[
+	h^{0,\beta}(\R/\calL\Z , \R^d)
+	=
+	\left\{
+	\vecu \in C^{0,\beta}(\R/\calL\Z , \R^d)
+	\,\left|\,
+	\lim_{R \to +0} [\vecu]_{C^{0,\beta},R} = 0
+	\right.
+	\right\},
+\]
+where
+\[
+	[\vecu]_{C^{0,\beta},R}
+	=
+	\sup_{\substack{s_1,s_2 \in \R/\calL\Z\\0<|\Delta s|<R}}
+	\frac{ \| \Delta \vecu \|_{\R^d} }{ |\Delta s|^\beta }.
+\]
+For
+$R>0$,
+let
+$s_1$,
+$s_2 \in \R/\calL\Z$
+satisfy
+$0<|\Delta s|<R$.
+Then,
+we have
+\begin{equation}\label{Req}
+	\left|
+	|\Delta s|^{\alpha-2\beta}
+	\frac{ \scrN(\vecu,\vecv) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right|
+	\leq
+	C [\vecu]_{C^{0,\beta},R} [\vecv]_{C^{0,\beta},R}.
+\end{equation}
+Taking
+$\limsup$
+on left-hand side in \eqref{Req},
+we have
+\[
+	\limsup_{(s_1,s_2) \to (s,s)}
+	\left|
+	|\Delta s|^{\alpha-2\beta}
+	\frac{ \scrN(\vecu,\vecv) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right|
+	\leq
+	C [\vecu]_{C^{0,\beta},R} [\vecv]_{C^{0,\beta},R}.
+\]
+Taking
+$R \to +0$
+on right-hand side,
+we obtain
+\[
+	\lim_{(s_1,s_2) \to (s,s)}
+	|\Delta s|^{\alpha-2\beta}
+	\frac{ \scrN(\vecu,\vecv) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	= 0.
+\]
+Next,
+we assume
+$\vecu$,
+$\vecv \in C^1$.
+If
+$s_5$,
+$s_6 \in \R/\calL\Z$
+are such that
+$\| (s_5,s_6) - (s,s) \|_{\R^2}$
+is sufficiently small,
+we can take
+$\epsi>0$
+arbitrarily such that
+\[
+	\| \vecu^\prime(s_5) - \vecu^\prime(s) \|_{\R^d}
+	\leq
+	\frac \epsi { 2( \| \vecv^\prime \|_{L^\infty} + 1) },
+	\quad
+	\| \vecv^\prime(s_6) - \vecv^\prime(s) \|_{\R^d}
+	\leq
+	\frac \epsi { 2( \| \vecu^\prime \|_{L^\infty} + 1) }.
+\]
+Then,
+using the fact that
+\[
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1} \int_{s_4}^{s_3} \int_{s_4}^{s_3} ds_5ds_6ds_3ds_4 = \frac 1 6 |\Delta s|^2,
+\]
+we have
+\begin{align*}
+	&
+	\left|
+	\frac 1 { |\Delta s|^4 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1} \int_{s_4}^{s_3} \int_{s_4}^{s_3}
+	\vecu^\prime(s_5) \cdot \vecv^\prime(s_6)
+	ds_5ds_6ds_3ds_4
+	-
+	\frac 1 6 \vecu^\prime(s) \cdot \vecv^\prime(s)
+	\right|
+\\
+	&\leq
+	\frac 1 { |\Delta s|^4 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1} \int_{s_4}^{s_3} \int_{s_4}^{s_3}
+	| \vecu^\prime(s_5) \cdot \vecv^\prime(s_6) - \vecu^\prime(s) \cdot \vecv^\prime(s) |
+	ds_5ds_6ds_3ds_4
+\\
+	&\leq
+	\frac 1 { |\Delta s|^4 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1} \int_{s_4}^{s_3} \int_{s_4}^{s_3}
+	( \| \vecu^\prime(s_5) \|_{\R^d} \| \vecv^\prime(s_6) - \vecv^\prime(s) \|_{\R^d}
+\\
+	&\qquad
+	+
+	\| \vecv^\prime(s) \|_{\R^d} \| \vecu^\prime(s_5) - \vecu^\prime(s) \|_{\R^d} )
+	ds_5ds_6ds_3ds_4
+\\
+	&\leq
+	\epsi.
+\end{align*}
+Hence,
+we have
+\begin{multline*}
+	\lim_{(s_1,s_2) \to (s,s)}
+	\frac 1 { |\Delta s|^4 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1} \int_{s_4}^{s_3} \int_{s_4}^{s_3}
+	\vecu^\prime(s_5) \cdot \vecv^\prime(s_6)
+	ds_5ds_6ds_3ds_4
+\\
+	=
+	\frac 1 6 \vecu^\prime(s) \cdot \vecv^\prime(s).
+\end{multline*}
+Using this and
+\[
+	\lim_{(s_1,s_2) \to (s,s)}
+	\frac{ |\Delta s| }{ \| \Delta \vecf \|_{\R^n} }
+	=
+	\frac 1 { \| \vectau(s) \|_{\R^n} }
+	= 1,
+\]
+we obtain
+\begin{align*}
+	&
+	|\Delta s|^{\alpha-2} \frac{ \scrN(\vecu,\vecv) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+\\
+	&=
+	\frac 1 2
+	\frac{ |\Delta s|^{\alpha+2} }{ \| \Delta \vecf \|_{\R^n}^{\alpha+2} }
+	\frac 1 { |\Delta s|^4 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1} \int_{s_4}^{s_3} \int_{s_4}^{s_3}
+	\vecu^\prime(s_5) \cdot \vecv^\prime(s_6)
+	ds_5ds_6ds_3ds_4
+\\
+	&\to
+	\frac 1 {12} \vecu^\prime(s) \cdot \vecv^\prime(s)
+	\quad
+	\text{as}\ (s_1,s_2) \to (s,s).
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+Since the function
+$\scrK(\vecu,\vecv)$
+fulfills
+\[
+	| \scrK(\vecu,\vecv) | \leq C \| \vecu^\prime \|_{L^\infty} \| \vecv^\prime \|_{L^\infty},
+	\quad
+	\lim_{(s_1,s_2) \to (s,s)} \scrK(\vecu,\vecv)
+	=
+	\vecu^\prime(s) \cdot \vecv^\prime(s),
+\]
+we obtain estimates and continuity of
+$\displaystyle \frac{ \delta \| \Delta \vecf \|_{\R^n}^2 [\vecphi] }{ \| \Delta \vecf \|_{\R^n}^2 }$
+and
+$\displaystyle \frac{ \delta^2 \| \Delta \vecf \|_{\R^n}^2 [\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^2 }$
+from Lemma \ref{variation lemma} as follows.
+
+\begin{lemma}\label{estimates deltaDelta}
+\begin{enumerate}\renewcommand{\labelenumi}{\upshape\textrm{\theenumi.}}
+\item
+Assume that
+$\vecf$,
+$\vecphi$,
+$\vecpsi \in W^{1,\infty}(\R/\calL\Z,\R^n)$
+and
+$\vecf$
+is bi-Lipschitz.
+Then,
+there exists
+$C=C(\vecf)>0$
+such that
+\[
+	\left\| \frac{ \delta \| \Delta \vecf \|_{\R^n}^2[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^2 } \right\|_{L^\infty}
+	\leq
+	C \| \vecphi^\prime \|_{L^\infty},
+	\quad
+	\left\|
+	\frac{ \delta^2 \| \Delta \vecf \|_{\R^n}^2[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^2 }
+	\right\|_{L^\infty}
+	\leq
+	C \| \vecphi^\prime \|_{L^\infty} \| \vecpsi^\prime \|_{L^\infty}.
+\]
+\item
+If
+$\vecf$,
+$\vecphi$,
+$\vecpsi \in C^1(\R/\calL\Z,\R^n)$,
+then it follows that
+\begin{align*}
+	\lim_{(s_1,s_2) \to (s,s)}
+	\frac{ \delta \| \Delta \vecf \|_{\R^n}^2[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^2 }
+	&=
+	\vectau(s) \cdot \vecphi^\prime(s),
+\\
+	\lim_{(s_1,s_2) \to (s,s)}
+	\frac{ \delta^2 \| \Delta \vecf \|_{\R^n}^2[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^2 }
+	&=
+	\vecphi^\prime(s) \cdot \vecpsi^\prime(s)
+\end{align*}
+for
+$s \in \R/\calL\Z$.
+\end{enumerate}
+\end{lemma}
+
+To deal with
+$\scrS_5(\vecf)$,
+we need estimates for
+$\vectau \cdot \vecphi^\prime$.
+The proof is easy,
+therefore we omit the details.
+
+\begin{lemma}\label{estimates inner product}
+Assume that
+$\vecf$
+is bi-Lipschitz.
+Then,
+the following properties hold.
+\begin{enumerate}\renewcommand{\labelenumi}{\upshape\textrm{\theenumi.}}
+\item
+Let
+$\alpha \in (0,\infty)$
+and
+$p \in [1,\infty)$
+satisfy
+$2 \leq \alpha p < 2p+1$.
+If
+$\vecf$,
+$\vecphi \in W^{1+\sigma,2p}(\R/\calL\Z , \R^n) \cap W^{1,\infty}(\R/\calL\Z , \R^d)$,
+then there exists
+$C=C(\vecf)>0$
+such that
+\[
+	[(\vectau \cdot \vecphi^\prime)]_{W^{\sigma,2p}}
+	\leq
+	C
+	( \| \vectau \|_{L^\infty} [\vecphi^\prime]_{W^{\sigma,2p}}
+	+ [\vectau]_{W^{\sigma,2p}} \| \vecphi^\prime \|_{L^\infty} ).
+\]
+\item
+Let
+$0 < \beta \leq 1$.
+If
+$\vecf$,
+$\vecphi \in C^{1,\beta}(\R/\calL\Z , \R^n)$,
+then it holds that
+\[
+	[(\vectau \cdot \vecphi^\prime)]_{C^{0,\beta}}
+	\leq
+	\| \vectau \|_{L^\infty} [\vecphi^\prime]_{C^{0,\beta}} + [\vectau]_{C^{0,\beta}} \| \vecphi^\prime \|_{L^\infty}.
+\]
+\item
+Let
+$0 < \beta \leq 1$.
+If
+$\vectau$,
+$\vecphi^\prime \in X^\beta(\R/\calL\Z , \R^n)$,
+then
+$(\vectau \cdot \vecphi^\prime) \in X^\beta(\R/\calL\Z , \R)$.
+Moreover,
+if
+$\vecf$,
+$\vecphi \in C^2(\R/\calL\Z , \R^n)$,
+then it holds that
+\[
+	\frac d {ds} (\vectau(s) \cdot \vecphi^\prime(s))
+	=
+	\veckappa(s) \cdot \vecphi^\prime(s) + \vectau(s) \cdot \vecphi^{\prime\prime}(s)
+\]
+for
+$s \in \R/\calL\Z$.
+\end{enumerate}
+\end{lemma}
+
+
+\subsection{Proof of Theorem \ref{mainthm}}
+
+In this subsection we complete the proof of Theorem \ref{mainthm} combining the facts in previous subsection.
+First,
+we show the
+$L^1$-estimates of the first and second variational formulae for
+$\scrM_{(\alpha,p)}(\vecf)$.
+Using the expression of the first and second variational formulae for
+$\scrN(\vectau)$
+in Lemma \ref{variation N},
+it follows that
+\begin{align*}
+	\left\| \frac{ \scrR_1(\vecf)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^p}
+	&\leq
+	C \| \vecphi^\prime \|_{L^\infty},
+\\
+	\left\| \frac{ \scrR_2(\vecf)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^p}
+	&\leq
+	C [ \vecphi^\prime ]_{W^{\sigma,2p}},
+\\
+	\left\| \frac{ \scrS_1(\vecf)[\vecphi,\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^p}
+	&\leq
+	C \| \vecphi^\prime \|_{L^\infty} \| \vecpsi^\prime \|_{L^\infty},
+\\
+	\left\| \frac{ \scrS_2(\vecf)[\vecphi,\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^p}
+	&\leq
+	C
+	\{
+	\| \vecphi^\prime \|_{L^\infty}
+	( \| \vecpsi^\prime \|_{L^\infty} + [\vecpsi^\prime]_{W^{\sigma,2p}} )
+	+
+	\| \vecpsi^\prime \|_{L^\infty}
+	( \| \vecphi^\prime \|_{L^\infty} + [\vecphi^\prime]_{W^{\sigma,2p}} )
+	\},
+\\
+	\left\| \frac{ \scrS_3(\vecf)[\vecphi,\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^p}
+	&\leq
+	C ( \| \vecpsi^\prime \|_{L^\infty} [ \vecphi^\prime ]_{W^{\sigma,2p}}
+	+
+	\| \vecphi^\prime \|_{L^\infty} [ \vecpsi^\prime ]_{W^{\sigma,2p}} ),
+\\
+	\left\| \frac{ \scrS_4(\vecf)[\vecphi,\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^p}
+	&\leq
+	C [\vecphi^\prime]_{W^{\sigma,2p}} [\vecpsi^\prime]_{W^{\sigma,2p}},
+\\
+	\left\| \frac{ \scrS_5(\vecf)[\vecphi,\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^p}
+	&\leq
+	C ( [\vecphi^\prime]_{W^{\sigma,2p}} + \| \vecphi^\prime \|_{L^\infty} )
+	( [\vecpsi^\prime]_{W^{\sigma,2p}} + \| \vecpsi^\prime \|_{L^\infty} )
+\end{align*}
+by Lemmas \ref{estimates N} and \ref{estimates inner product}.
+Hence,
+from these estimates and Lemma \ref{estimates deltaDelta},
+we obtain
+\begin{align*}
+	\left\|
+	\frac{ \delta \scrN(\vectau)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right\|_{L^p}
+	&\leq
+	C \| \vecphi^\prime \|_{W^{\sigma,2p} \cap L^\infty}
+\\
+	\left\|
+	\frac{ \delta \scrN(\vectau)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right\|_{L^p}
+	&\leq
+	C \| \vecphi^\prime \|_{W^{\sigma,2p} \cap L^\infty}
+	\| \vecpsi^\prime \|_{W^{\sigma,2p} \cap L^\infty},
+\end{align*}
+and
+$L^1$-estimates for
+$\scrG_{(\alpha,p)}(\vecf)$
+and
+$\scrH_{(\alpha,p)}(\vecf)$.
+
+Next,
+we consider
+$L^\infty$-estimates of
+$\scrM_{(\alpha,p)}(\vecf)$,
+$\scrG_{(\alpha,p)}(\vecf)$,
+and
+$\scrH_{(\alpha,p)}(\vecf)$
+with the weight
+$|\Delta s|^{\alpha-2\beta}$.
+We assume that
+$\vecf$,
+$\vecphi$,
+$\vecpsi \in C^{1,\beta}$
+and
+$s_1$,
+$s_2 \in \R/\calL\Z$
+satisfy
+$\displaystyle 0<|\Delta s|<\calL/2$.
+Because we have
+\[
+	1-x^\alpha \leq \left( \frac \alpha 2 +1 \right) (1-x^2)
+\]
+for all
+$x \in [0,1]$,
+it follows that
+\begin{align}
+	|\Delta s|^{\alpha-2\beta} \scrM_\alpha(\vecf)
+	&\leq
+	C \frac 1 { |\Delta s|^{2\beta} }
+	\left( 1-\frac{ \| \Delta \vecf \|_{\R^n}^\alpha }{ |\Delta s|^\alpha } \right)
+\nonumber\\
+	&\leq
+	C \frac 1 { |\Delta s|^{2\beta} }
+	\left( 1-\frac{ \| \Delta \vecf \|_{\R^n}^2 }{ |\Delta s|^2 } \right)
+\nonumber\\
+	&\leq
+	C \frac 1 { |\Delta s|^{2\beta+2} }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1} \| \Delta_4^3 \vectau \|_{\R^n}^2 ds_3ds_4
+\nonumber\\
+	&\leq
+	C.
+\label{estimate D Malpha}
+\end{align}
+Moreover,
+by Lemmas \ref{estimates N}--\ref{estimates inner product},
+we have
+\begin{align*}
+	\left\| |\Delta s|^{\alpha-2\beta} \frac{ \scrR_1(\vecf)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^\infty}
+	&\leq
+	C \| \vecphi^\prime \|_{L^\infty},
+\\
+	\left\| |\Delta s|^{\alpha-2\beta} \frac{ \scrR_2(\vecf)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^\infty}
+	&\leq
+	C [\vecphi^\prime]_{C^{0,\beta}},
+\\
+	\left\| |\Delta s|^{\alpha-2\beta} \frac{ \scrS_1(\vecf)[\vecphi,\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^\infty}
+	&\leq
+	C \| \vecphi^\prime \|_{L^\infty} \| \vecpsi^\prime \|_{L^\infty},
+\\
+	\left\| |\Delta s|^{\alpha-2\beta} \frac{ \scrS_2(\vecf)[\vecphi,\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^\infty}
+	&\leq
+	C \{
+	\| \vecphi^\prime \|_{L^\infty}
+	( \| \vecpsi^\prime \|_{L^\infty} + [\vecpsi^\prime]_{C^{0,\beta}} )
+	+
+	\| \vecpsi^\prime \|_{L^\infty}
+	( \| \vecphi^\prime \|_{L^\infty} + [\vecphi^\prime]_{C^{0,\beta}} )
+	\},
+\\
+	\left\| |\Delta s|^{\alpha-2\beta} \frac{ \scrS_3(\vecf)[\vecphi,\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^\infty}
+	&\leq
+	C ( \| \vecpsi^\prime \|_{L^\infty} [\vecphi^\prime]_{C^{0,\beta}}
+	+
+	\| \vecphi^\prime \|_{L^\infty} [\vecpsi^\prime]_{C^{0,\beta}} ),
+\\
+	\left\| |\Delta s|^{\alpha-2\beta} \frac{ \scrS_4(\vecf)[\vecphi,\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^\infty}
+	&\leq
+	C [\vecphi^\prime]_{C^{0,\beta}} [\vecpsi^\prime]_{C^{0,\beta}},
+\\
+	\left\| |\Delta s|^{\alpha-2\beta} \frac{ \scrS_5(\vecf)[\vecphi,\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^\alpha } \right\|_{L^\infty}
+	&\leq
+	C ( [\vecphi^\prime]_{C^{0,\beta}} + \| \vecphi^\prime \|_{L^\infty} )
+	( [\vecpsi^\prime]_{C^{0,\beta}} + \| \vecpsi^\prime \|_{L^\infty} ).
+\end{align*}
+Therefore,
+we obtain
+\begin{align*}
+	\left\|
+	|\Delta s|^{\alpha-2\beta}
+	\frac{ \delta \scrN(\vectau)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right\|_{L^\infty}
+	&\leq
+	C \| \vecphi^\prime \|_{C^{0,\beta}}
+\\
+	\left\|
+	|\Delta s|^{\alpha-2\beta}
+	\frac{ \delta^2 \scrN(\vectau)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right\|_{L^\infty}
+	&\leq
+	C \| \vecphi^\prime \|_{C^{0,\beta}}
+	\| \vecpsi^\prime \|_{C^{0,\beta}},
+\end{align*}
+and the
+$L^\infty$-estimates for
+$\scrM_{(\alpha,p)}(\vecf)$,
+$\scrG_{(\alpha,p)}(\vecf)$,
+and
+$\scrH_{(\alpha,p)}(\vecf)$
+with the weight
+$|\Delta s|^{\alpha-2\beta}$.
+
+Lastly,
+we consider the continuity.
+Because continuity on the outside of the diagonal set is clear,
+we consider the property on the diagonal set.
+First,
+we assume
+$\vecf$,
+$\vecphi$,
+$\vecpsi \in h^{1,\beta}$
+with
+$0 < \beta < 1$,
+and
+$\vecf$
+is bi-Lipschitz.
+Let
+$R>0$
+be sufficiently small.
+In a similar manner to the proof of \eqref{estimate D Malpha},
+it holds that
+\[
+	|\Delta s|^{\alpha-2\beta} \scrM_\alpha(\vecf)
+	\leq
+	\tilde{C} [\vectau]_{C^{0,\beta},R}
+\]
+for
+$0<|\Delta s|<R$,
+and therefore
+\[
+	\lim_{(s_1,s_2) \to (s,s)}
+	|\Delta s|^{\alpha-2\beta} \scrM_\alpha(\vecf)
+	= 0,
+\]
+where
+$\tilde{C}$
+is a positive constant depending only on
+$\alpha$,
+$p$,
+and
+$C_{\text b}$.
+Moreover,
+by Lemma \ref{estimates N},
+we have
+\begin{align*}
+	\lim_{(s_1,s_2) \to (s,s)}
+	\left|
+	|\Delta s|^{\alpha-2\beta}
+	\frac{ \scrR_i(\vecf)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right|
+	&=
+	0,
+	\quad
+	(i=1,2),
+\\
+	\lim_{(s_1,s_2) \to (s,s)}
+	\left|
+	|\Delta s|^{\alpha-2\beta}
+	\frac{ \scrS_i(\vecf)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\right|
+	&=
+	0,
+	\quad
+	(i=1,\ldots,5).
+\end{align*}
+Considering Lemma \ref{estimates deltaDelta},
+we obtain the desired continuity when
+$\vecf$,
+$\vecphi$,
+$\vecpsi \in h^{1,\beta}$
+with
+$0<\beta<1$.
+
+Next,
+we consider the case where
+$\beta=1$.
+We denote the curvature vector of
+$\vecf$
+by
+$\veckappa$,
+i.e.\ $\veckappa = \vecf^{\prime\prime}$.
+Using Lemma \ref{estimates N} and L'Hospital's theorem,
+we have
+\begin{align*}
+	|\Delta s|^{\alpha-2} \scrM_\alpha(\vecf)
+	&=
+	|\Delta s|^{\alpha-2} \frac{ \vphi_\alpha(\scrN(\vectau)) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+\\
+	&=
+	|\Delta s|^{\alpha-2} \frac{ \vphi_2(\scrN(\vectau)) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\frac{ \vphi_\alpha(\scrN(\vectau)) }{ \vphi_2(\scrN(\vectau)) }
+\\
+	&=
+	|\Delta s|^{\alpha-2} \frac{ \scrN(\vectau) }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\frac 1 { 1+\scrN(\vectau) }
+	\frac{ \vphi_\alpha(\scrN(\vectau)) }{ \vphi_2(\scrN(\vectau)) }
+\\
+	&\to
+	\frac \alpha {24} \| \veckappa(s) \|_{\R^n}^2
+	\quad
+	\text{as}\ (s_1,s_2) \to (s,s).
+\end{align*}
+Similarly,
+it follows that
+\begin{align*}
+	|\Delta s|^{\alpha-2}
+	\frac{ \scrR_1(\vecf)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	&\to
+	-\frac 1 6 \vectau(s) \cdot \vecphi^\prime(s) \| \veckappa(s) \|_{\R^n}^2,
+\\
+	|\Delta s|^{\alpha-2}
+	\frac{ \scrR_2(\vecf)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	&\to
+	\frac 1 6 \veckappa(s) \cdot \vecphi^{\prime\prime}(s),
+\\
+	|\Delta s|^{\alpha-2}
+	\frac{ \scrS_1(\vecf)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	&\to
+	-\frac 1 6
+	\{
+	\vecphi^\prime(s) \cdot \vecpsi^\prime(s)
+	-
+	(\vectau(s) \cdot \vecphi^\prime(s)) (\vectau(s) \cdot \vecpsi^\prime(s))
+	\}
+	\| \veckappa(s) \|_{\R^n}^2,
+\\
+	|\Delta s|^{\alpha-2}
+	\frac{ \scrS_2(\vecf)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	&\to
+	\frac 1 6 ( \vectau(s) \cdot \vecphi^\prime(s) )
+	( \veckappa(s) \cdot \vecpsi^{\prime\prime}(s)
+	- \vectau(s) \cdot \vecpsi^\prime(s) \| \veckappa(s) \|_{\R^n}^2)
+\\
+	&\quad
+	+
+	\frac 1 6 ( \vectau(s) \cdot \vecpsi^\prime(s) )
+	( \veckappa(s) \cdot \vecphi^{\prime\prime}(s)
+	- \vectau(s) \cdot \vecphi^\prime(s) \| \veckappa(s) \|_{\R^n}^2),
+\\
+	|\Delta s|^{\alpha-2}
+	\frac{ \scrS_3(\vecf)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	&\to
+	- \frac 1 6
+	(\vectau(s) \cdot \vecpsi^\prime(s)) (\veckappa(s) \cdot \vecphi^{\prime\prime}(s))
+	- \frac 1 6
+	(\vectau(s) \cdot \vecphi^\prime(s)) (\veckappa(s) \cdot \vecpsi^{\prime\prime}(s)),
+\\
+	|\Delta s|^{\alpha-2}
+	\frac{ \scrS_4(\vecf)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	&\to
+	\frac 1 6 \vecphi^{\prime\prime}(s) \cdot \vecpsi^{\prime\prime}(s),
+\\
+	|\Delta s|^{\alpha-2}
+	\frac{ \scrS_5(\vecf)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	&\to
+	- \frac 1 6
+	\{ (\vectau(s) \cdot \vecphi^{\prime\prime}(s)) + (\vecphi^\prime(s) \cdot \veckappa(s)) \}
+	\{ (\vectau(s) \cdot \vecpsi^{\prime\prime}(s)) + (\vecpsi^\prime(s) \cdot \veckappa(s)) \}
+\end{align*}
+as
+$(s_1,s_2) \to (s,s)$.
+Hence,
+the desired continuity holds when
+$\vecf$,
+$\vecphi$,
+$\vecpsi \in C^2$.
+
+This completes
+the proof of Theorem \ref{mainthm}.
+\hfill
+$\square$

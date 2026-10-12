@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2406.05311v1/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2406.05311v1/blocks/prose-sec-001",
   "kind": "prose",
   "title": "A Murnaghan–Nakayama rule for (classic) cohomology",
   "pageStart": 2,
   "pageEnd": 8,
   "text": "../sections/sec-001-a-murnaghan-nakayama-rule-for-classic-cohomology.md",
-  "derivedFrom": "library/arxiv-2406.05311v1/manifest",
-  "sourceDocument": "library/arxiv-2406.05311v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2406.05311v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2406.05311v1/manifest.jsonld",
   "provenance": "ingested"
 }

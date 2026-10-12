@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9408099v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9408099v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9408099v1",
   "contains": [
+    "library/arxiv-hep-th-9408099v1/sections/sec-front-matter",
     "library/arxiv-hep-th-9408099v1/sections/sec-000",
     "library/arxiv-hep-th-9408099v1/sections/sec-001",
     "library/arxiv-hep-th-9408099v1/sections/sec-002",
@@ -30,53 +36,20 @@
     "library/arxiv-hep-th-9408099v1/sections/sec-021",
     "library/arxiv-hep-th-9408099v1/sections/sec-022",
     "library/arxiv-hep-th-9408099v1/sections/sec-023",
-    "library/arxiv-hep-th-9408099v1/sections/sec-024",
-    "library/arxiv-hep-th-9408099v1/sections/sec-025",
-    "library/arxiv-hep-th-9408099v1/sections/sec-026",
-    "library/arxiv-hep-th-9408099v1/sections/sec-027",
-    "library/arxiv-hep-th-9408099v1/sections/sec-028",
-    "library/arxiv-hep-th-9408099v1/sections/sec-029",
-    "library/arxiv-hep-th-9408099v1/sections/sec-030",
-    "library/arxiv-hep-th-9408099v1/sections/sec-031",
-    "library/arxiv-hep-th-9408099v1/sections/sec-032",
-    "library/arxiv-hep-th-9408099v1/sections/sec-033",
-    "library/arxiv-hep-th-9408099v1/sections/sec-034",
-    "library/arxiv-hep-th-9408099v1/sections/sec-035",
-    "library/arxiv-hep-th-9408099v1/sections/sec-036",
-    "library/arxiv-hep-th-9408099v1/sections/sec-037",
-    "library/arxiv-hep-th-9408099v1/sections/sec-038",
-    "library/arxiv-hep-th-9408099v1/sections/sec-039",
-    "library/arxiv-hep-th-9408099v1/sections/sec-040",
-    "library/arxiv-hep-th-9408099v1/sections/sec-041",
-    "library/arxiv-hep-th-9408099v1/sections/sec-042",
-    "library/arxiv-hep-th-9408099v1/sections/sec-043",
-    "library/arxiv-hep-th-9408099v1/sections/sec-044",
-    "library/arxiv-hep-th-9408099v1/sections/sec-045",
-    "library/arxiv-hep-th-9408099v1/sections/sec-046",
-    "library/arxiv-hep-th-9408099v1/sections/sec-047",
-    "library/arxiv-hep-th-9408099v1/sections/sec-048",
-    "library/arxiv-hep-th-9408099v1/sections/sec-049",
-    "library/arxiv-hep-th-9408099v1/sections/sec-050",
-    "library/arxiv-hep-th-9408099v1/sections/sec-051",
-    "library/arxiv-hep-th-9408099v1/sections/sec-052",
-    "library/arxiv-hep-th-9408099v1/sections/sec-053",
-    "library/arxiv-hep-th-9408099v1/sections/sec-054",
-    "library/arxiv-hep-th-9408099v1/sections/sec-055",
-    "library/arxiv-hep-th-9408099v1/sections/sec-056",
-    "library/arxiv-hep-th-9408099v1/sections/sec-057",
-    "library/arxiv-hep-th-9408099v1/sections/sec-058",
-    "library/arxiv-hep-th-9408099v1/sections/sec-059",
-    "library/arxiv-hep-th-9408099v1/sections/sec-060",
-    "library/arxiv-hep-th-9408099v1/sections/sec-061",
-    "library/arxiv-hep-th-9408099v1/sections/sec-062",
-    "library/arxiv-hep-th-9408099v1/sections/sec-063",
-    "library/arxiv-hep-th-9408099v1/sections/sec-064",
-    "library/arxiv-hep-th-9408099v1/sections/sec-065",
-    "library/arxiv-hep-th-9408099v1/sections/sec-066"
+    "library/arxiv-hep-th-9408099v1/sections/sec-024"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9408099&metadataPrefix=arXiv), submitted 1994-08-17, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-9408099v1",
+    "title_source": "slug",
     "source_file": "9408099v1.pdf",
     "source_sha256": "b534faddd2e3aa71f6de260867887df3eb8b919f9097c7fcf821040d46618f11",
     "pages": 88,

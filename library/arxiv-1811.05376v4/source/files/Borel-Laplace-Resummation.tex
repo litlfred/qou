@@ -1,0 +1,80 @@
+
+\section{Resurgence and resummation}  \label{sec:Borel}
+
+\subsection{Resurgent functions and the Borel transform}
+
+The theory of resurgence was originally developed by Écalle in \cite{Ecalle81a} and \cite{Ecalle81b}.  See \cite{MitschiSauzin16} for an introduction to the mathematical theory of resurgence and see \cite{DunneUnsal15} for an introduction to the general use of resurgence in quantum field theory. Garoufalidis \cite{Garoufalidis08} and Witten \cite{Witten11} where the pioneers of the use of resurgence in quantum Chern-Simons theory. \begin{definition} \label{def:res} For a Riemann surface $C$ with universal covering space 
+	$$ \pi: \tilde{C}\rightarrow C$$ the algebra of resurgent functions is  $\mathcal{R}(C)=\mathcal{M}(\tilde{C}).$
+\end{definition}
+
+One source of resurgent functions are the Borel transforms of Laplace integrals. We now introduce the Borel transform. Let $\Gamma \in \mathcal{M}(\C)$ be the Gamma function, which for $z \in \C$ with $\re(z)>0$ is defined by
+\begin{equation}
+\Gamma(z)= \int_0^{\infty} e^{-t} t^{z-1} \dv t.
+\end{equation}
+
+\begin{definition} \label{def:Bor}  Let $\{\alpha_j \}_{j=0}^{\infty}$ be an increasing sequence of positive real numbers,  $\{\beta_j \}_{j=0}^{\infty}$ a sequence of non-negative integers and $\{c_j\}_{j=0}^{\infty}$ a sequence of complex numbers. Consider  the formal series $$\tilde{\varphi}(\lambda)=\sum_{j=0}^{\infty} c_j \lambda^{-\alpha_j} \log(\lambda)^{\beta_j}.$$ The Borel transform of $\tilde{\varphi}(\lambda)$ is given by the formal series
+	\begin{equation} \label{def:Borel}
+	\mathcal{B}(\tilde{\varphi})(\zeta) =\sum_{j=0}^{\infty} c_j (-1)^{\beta_j} \frac{\partial^{\beta_j}}{\partial {\alpha_j}^{\beta_j}} \left( \frac{\zeta^{\alpha_j-1}}{\Gamma(\alpha_j)}  \right).
+	\end{equation}
+\end{definition}
+
+\subsection{Borel-Laplace resummation}We now discuss in more detail the relation between the Borel transform $\mathcal{B}$ and the Laplace transform, which we now introduce. Let $\gamma \subset \C$ be an oriented contour. Let $g$ be a measurable function defined in a neighbourhood of $\gamma$. Denote by $\mathcal{L}_{\gamma}(g)$ the Laplace transform given by
+\begin{equation} \label{eq:Laplacetransform}
+\mathcal{L}_\gamma (g) (\lambda) = \int_\gamma \exp(- \lambda \cdot  z ) g(z) \ \dv z,
+\end{equation}
+for all $\zeta  \in \C$ such that the integral is absolutely convergent. Here  we think of $\lambda \in \C^*$ as a large modulus asymptotics parameter.
+ For any $\alpha \in \C^*$ we let the contour $\alpha \R_+$ be oriented in the direction of $\alpha$ unless we state otherwise.
+
+That the transforms $\mathcal{B}$ and $ \mathcal{L}_{\R_+}$ are formally inverses of each other should be understood as follows. If $\alpha \in \C$ satisfies $\re(\alpha)>-1$ and $l\in \N$ then
+\begin{equation} \label{eq:Laplacedas}
+\mathcal{L}_{\R_+}\left(\zeta^{\alpha}\log(\zeta)^l\right)= \frac{\text{d}^l}{\dv \alpha^l} \left(\frac{\Gamma(\alpha+1)}{\lambda^{\alpha+1}} \right).
+\end{equation}
+We may introduce a polynomial  $Q_{\alpha,l} \in \C[x]$ of degree $l$ such that
+ \begin{equation} \label{eq:Laplacedas2}
+ \mathcal{L}_{\R_+}\left(\zeta^{\alpha}\log(\zeta)^l\right)= \lambda^{-\alpha-1}Q_{\alpha,l}(\log(\lambda)).
+ \end{equation}
+Let $z\in \C$ with $\re(z)>0$ and let $m \in \N.$ We then have that 
+\begin{align} \begin{split}
+\label{Formal inverse}
+\mathcal{L}_{\R_+}\circ \mathcal{B}(\lambda^{-z}\log(\lambda)^m)&=\lambda^{-z}\log(\lambda)^m, 
+\\ \mathcal{B} \circ \mathcal{L}_{\R_+}(\zeta^{z-1}\log(\zeta)^m ) &=\zeta^{z-1}\log(\zeta)^m .
+\end{split}
+\end{align} 
+
+\begin{lemma}  \label{lem:masterlemma}
+Let $B: \R_+ \rightarrow \C$ be a measurable function and assume the integral defining $\mathcal{L}_{\R_+}(B)(\lambda)$ is absolutely convergent for $\re(\lambda)>0$. Assume there exists an increasing sequence $\{\alpha_j\}_{j=0}^{\infty}$ of real numbers strictly greater than $-1$ and a sequence $\{\beta_j \}_{j=0}^{\infty}$ of positive integers  giving an asymptotic expansion 
+\begin{equation} \label{eq:tnearzero} B(t) \sim_{t \rightarrow 0} \sum_{j=0}^{\infty} b_{j} t^{\alpha_j} \log(t)^{\beta_j}.\end{equation}
+Then the following holds  \begin{enumerate} \item There exists for large $ \lambda $ an asymptotic expansion $\tilde{\varphi}(\lambda)$ of the form
+	\begin{equation}
+	\mathcal{L}_{\R_+}(B) (\lambda) \sim_{\lambda \rightarrow \infty} \tilde{\varphi}(\lambda)
+	\end{equation} 
+	where
+	\begin{equation} \label{eq:BorelA}
+	\tilde{\varphi}(\lambda)  = \sum_{\alpha, \beta} b_{j} \lambda^{-\alpha_j-1}Q_{\alpha_j,\beta_j}(\log(\lambda))
+	\end{equation} 
+	and $Q_{\alpha_j,\beta_j} \in \C[x]$ is the degree $\beta_j$ polynomial introdced in \eqref{eq:Laplacedas2}.
+	\item The Borel transform of $\tilde{\varphi}$ is equal to the expansion of $B$ 
+	\begin{equation} \label{eq:BorelB}
+	\mathcal{B}(\tilde{\varphi})(t)=  \sum_{j=0}^{\infty} b_{j} t^{\alpha_j} \log(t)^{\beta_j}.
+	\end{equation}  \end{enumerate}
+\end{lemma}
+
+\begin{proof} The Lemma is an elementary consequence of Equations \eqref{eq:Laplacedas2} and  \eqref{Formal inverse}.   \end{proof}
+
+The following theorem explains Borel-Laplace resummation. The content of Theorem \ref{thm:BorelLaplaceresummation} is standard in resurgence, and a proof can be found in e.g. \cite{Sauzin07}.
+
+\begin{theorem} \label{thm:BorelLaplaceresummation} Let \begin{equation} \label{eq:DivergentSolution} \tilde{\varphi}(\lambda)= \sum_{j=0}^{\infty} c_j \lambda^{\alpha_j} \log(\lambda)^{\beta_j} \end{equation} be a formal series as in Definition \ref{def:Borel} with $\alpha_0>-1.$ Assume that \begin{itemize} \item  there exists a sector $S \subset \C$, such that for all $\zeta \in S$ of sufficiently small modulus the Borel transform $\mathcal{B}(\tilde{\varphi})(\zeta)$ converges to a holomorphic function $\hat{\varphi}(\zeta)$ (possibly upon choosing a  branch of $\log(\zeta)$ defined on $S$), and that
+		\item  the function $\hat{\varphi}$ extends by analytic continuation along a half axis  $ \Gamma(\theta)=e^{2\pi i\theta}\R_+ \subset S$ (for some $\theta \in [0,1]$ say) and there exists a contant $C>0$ such that in a neighbourhood of $\Gamma(\theta)$ we have $\hat{\varphi}(z) = O(\exp(C \lvert z \rvert)).$
+		
+		\end{itemize}  Then the following holds.
+	
+	\begin{enumerate} \item  The Laplace transform $\mathcal{L}_{\Gamma(\theta)}(\hat{\varphi})$ is holomorphic on the open unbounded set $\{\lambda \in \C \mid \lvert \lambda \rvert >C,  \  \forall s \in S\setminus \{0\} \  \re(\lambda s)>0   \}.$
+		\item The Laplace transform $\mathcal{L}_{\Gamma(\theta)}(\hat{\varphi})$  has $\tilde{\varphi}$ as its large $ \lambda $ asymptotic expansion
+		\begin{equation}
+\mathcal{L}_{\Gamma(\theta)}(\hat{\varphi})(\lambda) \sim_{\lambda \rightarrow \infty} \tilde{\varphi}(\lambda)
+		\end{equation}
+		\end{enumerate}
+	\end{theorem}
+One of the goal's of Ecalle's theory \cite{Ecalle81a,Ecalle81b} is to consider the case where the formal series $\tilde{\varphi}$  \eqref{eq:DivergentSolution} is obtained as a formal solution to some dynamical problem, which can be for instance an ODE or a difference equation (with a singularity at $\lambda^{-1}=0$). In such situations, the function $\mathcal{L}_{\Gamma(\theta)}\circ \mathcal{B}(\tilde{\varphi})$ will be a holomorphic solution, and resurgence is developed as a tool to analyze the monodromy (known as Stokes phenomena), which occur upon varying the choice of direction $\theta$ in which the Laplace transform is performed.
+
+

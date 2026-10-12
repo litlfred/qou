@@ -1,23 +1,46 @@
 ## Proof
 
-The chain has three steps:
+The chain has three steps.
 
-**Step 1 (Categorical trace $\to$ Frobenius integral).**
-The categorical trace $\mathrm{tr}(f) = \mathrm{ev}_A \circ (f \otimes \mathrm{id}_{A^\vee}) \circ \mathrm{coev}_A$ descends under the fibre functor $\tau$ to the Frobenius integral $\int_A : A \to R$—the Jones–Markov trace on $H_n(R, q)$ ([RJ interpretation](#rem:rj-inner-product-interpretation)), satisfying Markov properties I and II ([vertex algebra relations](#prop:vertex-algebra-relations), QU-3).
+**Step 1 (Mass integrand = identity).**
+By definition ([mass](#def:mass-identity)), $\mathfrak{m}(\varrho) = \lVert \int_A \circ \Psi \circ \varrho \rVert$ with $\Psi = (\int_A \otimes \mathrm{id}) \circ \Delta$. The unit law and the Frobenius relation give $\Psi = L_u$, left multiplication by $u = \Psi \circ \eta$. When the Frobenius form is the counit, $\int_A = \varepsilon$, the counit law $(\varepsilon \otimes \mathrm{id}) \circ \Delta = \mathrm{id}_A$ gives $\Psi = \mathrm{id}_A$, hence
 
-**Step 2 (Nakayama automorphism = identity).**
-The mass involves $\Psi = (\int_A \otimes \mathrm{id}) \circ \Delta$, the **Nakayama automorphism** of the Frobenius algebra $A$. For Frobenius–Hopf algebras, $\Psi = S^2$. In $H_n(R, q)$ the antipode $S(\sigma_i) = \sigma_i^{-1}$ yields $S^2(\sigma_i) = \sigma_i$, hence $\Psi = \mathrm{id}_A$.
+$$
+  \mathfrak{m}(\varrho) = \Bigl\lVert \textstyle\int_A \varrho \Bigr\rVert .
+$$
+
+The reason is the counit law. It is not the Nakayama automorphism or $S^2 = \mathrm{id}$: $\Psi$ is a left multiplication, and it is the identity exactly when $u = \eta$.
+
+**Step 2 (Frobenius form = Markov trace = quantum trace of the multiplicative integral).**
+Take $\int_A$ to be the normalised Jones–Markov trace. It is realised on $V^{\otimes n}$, $V = R^2$, through Jimbo's R-matrix $\check R$. A braid word $\ell_1 \cdots \ell_k$ has transports $T(\sigma_a) = \check R_a$ and $T(\sigma_a^{-1}) = \check R_a - (q - q^{-1})$, acting at strands $a, a+1$. Its multiplicative integral is the ordered product $\mathrm{Hol}(\beta) = T(\ell_1) \cdots T(\ell_k)$, and
+
+$$
+  \textstyle\int_A \rho(\beta)
+  \;=\; (1 + q^2)^{-n} \, \mathrm{Tr}\bigl( K^{\otimes n} \cdot \mathrm{Hol}(\beta) \bigr),
+  \qquad K = \mathrm{diag}(1, q^2).
+$$
+
+This functional is cyclic. It satisfies the positive and negative Markov moves with scalars $q^3/(q^2+1)$ (convention D) and $q^{-1}/(q^2+1)$, and $\int_A 1 = 1$. The weight $K$ is not chosen: the Markov move exists only for $K = \mathrm{diag}(1, q^2)$ up to scale. This is Turaev's enhanced Yang–Baxter operator $(\check R, K, \alpha = q^2, \beta = q)$.
+
+The categorical trace of $A$ acting on itself is not this functional. It is the regular trace, which fails the Markov property: on $H_3(q)$ the normalised regular trace gives $\mathrm{tr}(\sigma_1 \sigma_2) = h^2/6$ against $\mathrm{tr}(\sigma_1)^2 = h^2/4$, with $h = q - q^{-1}$.
 
 **Step 3 (Mass = trace of cycle).**
-Substituting $\Psi = \mathrm{id}$:
+Combining Steps 1 and 2:
 
 $$
   \mathfrak{m}_{q,\mathcal{K}}
-  \;=\; \bigl\lVert \mathrm{tr}\bigl(
-    \underbrace{(\textstyle\int_A \otimes \mathrm{id}) \circ \Delta}_{= \,\mathrm{id}_A}
-    \circ\, \varrho \bigr) \bigr\rVert
-  \;=\; \Bigl|\!\int_A\! \rho(\beta_\mathcal{K})\Bigr|.
+  \;=\; \Bigl\lVert \textstyle\int_A \bigl(
+    \underbrace{(\int_A \otimes \mathrm{id}) \circ \Delta}_{= \,\mathrm{id}_A}
+    \circ\, \varrho \bigr) \Bigr\rVert
+  \;=\; \Bigl|\!\int_A\! \rho(\beta_\mathcal{K})\Bigr|
+  \;=\; (1 + q^2)^{-n} \, \bigl| \mathrm{Tr}\bigl( K^{\otimes n} \cdot \mathrm{Hol}(\beta_\mathcal{K}) \bigr) \bigr| .
 $$
+
+**Scope.** Steps 1 and 2 are proved sorry-free over a generic commutative ring: Step 1 in `QOU.Torsion.MassTraceIdentity` (`frobeniusForm_massIntegrand_of_frobeniusForm_eq_counit`), Step 2 in `QOU.Torsion.MassTraceMarkov` (`braidTrace_wordBraid`), on top of the Markov-trace arc `QOU.IwahoriHecke.{QTraceCyclic, MarkovPeel, NegativePeel, MarkovNormalized}`. Three points are not proved here.
+
+1. *Which algebra carries the Frobenius structure.* Under convention D the Ocneanu weights vanish on every three-row shape (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`). So the pairing $(x, y) \mapsto \int_A xy$ is degenerate on $H_n(q)$ for $n \ge 3$, and $(H_n(q), \int_A)$ is not a Frobenius algebra. The Frobenius object is the quotient by the radical of this pairing, $H_n(q)/\mathrm{rad}$. On it the form is positive definite for $q > 1$, because the surviving two-row weights $y_{(n-k,k)} = [n-2k+1]_q/[2]_q^{\,n}$ are strictly positive (`QOU.QBeta.TemperleyLiebTower`, §T4). That this quotient is the Temperley–Lieb algebra $\mathrm{TL}_n(q)$ is not proved here.
+2. *That the Frobenius form is the counit.* This is the hypothesis of Step 1. It holds when $\Delta$ is the coproduct induced by $\int_A$, and has to be checked for the Frobenius–Hopf data actually used.
+3. *The continuous holonomy.* $\mathrm{Hol}$ is a finite ordered product. That the holonomy of the Knizhnik–Zamolodchikov connection along a braid equals such a product of R-matrices is the Drinfeld–Kohno theorem. For $\mathfrak{sl}_2$ the precise statement is Kohno's Theorems 1.2.8 and 2.2.4: the monodromy of $\omega=\lambda\sum\Omega_{\alpha\beta}\,d\log(z_\alpha-z_\beta)$ sends $\sigma_i$ to $q^{\nu}$ times the Hecke generator, with $q=e^{-\pi i\lambda}$, and only up to conjugation by an analytic $P(\lambda)$. The scalar $q^{\nu}$ is a writhe factor. The conjugation leaves the plain trace unchanged. For the weighted trace, Kohno's particular $P(\lambda)$ is not shown to preserve total weight, but a weight-preserving replacement exists, which is all the trace needs. Write $H_{\mathrm{tot}}$ for the total weight, so that $K^{\otimes n}=q^{n}q^{-H_{\mathrm{tot}}}$. (i) $\Omega$ is $\mathfrak{g}$-invariant, so the monodromy $\theta$ commutes with the diagonal $\mathfrak{g}$-action and $V^{\otimes n}=\bigoplus_j V_j\otimes M_j$ as $\mathfrak{g}\times B_n$-modules; on the R-matrix side $V^{\otimes n}=\bigoplus_j V^{q}_j\otimes M^{q}_j$ by $q$-Schur–Weyl duality \cite{jimbo1986}, with the $M^{q}_j$ irreducible and pairwise non-isomorphic for $q$ not a root of unity. (ii) The two $B_n$-images are conjugate, so their commutants have the same dimension, $\sum_j(2j+1)^2$. On the monodromy side the commutant contains the image of $U(\mathfrak{g})$, $\bigoplus_j\mathrm{End}(V_j)\otimes 1$, of exactly that dimension, so it equals it. By the double commutant theorem the $M_j$ are irreducible and pairwise non-isomorphic, each occurring $2j+1$ times. (iii) Since $P(\lambda)$ is a $B_n$-isomorphism, irreducibles with equal multiplicity correspond, and the multiplicities $2j+1$ are distinct, so $M_j\cong M^{q}_j$ via some $\varphi_j$. Choosing weight-preserving linear isomorphisms $\psi_j:V_j\to V^{q}_j$ (each weight space is one-dimensional), $P'=\bigoplus_j\psi_j\otimes\varphi_j$ intertwines the two $B_n$-actions and commutes with $H_{\mathrm{tot}}$. Hence, for generic $\lambda$, $\mathrm{Tr}\big(K^{\otimes n}\mathrm{Hol}(\beta)\big)=q^{-\nu\,w(\beta)}\,\mathrm{Tr}\big(q^{n}q^{-H_{\mathrm{tot}}}\,\theta(\beta)\big)=q^{-\nu\,w(\beta)}\sum_j \mathrm{Tr}_{V_j}\big(q^{n}q^{-H}\big)\,\chi_{M_j}\big(\theta(\beta)\big)$, with $w(\beta)$ the writhe. Check at $n=2$: $\mathrm{Tr}(K\otimes K\,\check R)=q+q^{2}(q-q^{-1})+q^{5}=q^{3}+q^{5}$, which equals the triplet-plus-singlet sum $q(1+q^{2}+q^{4})-q^{-1}q^{2}$. Two conventions are not fixed here: the orientation $q\leftrightarrow q^{-1}$ between $e^{-\pi i\lambda}$ and the Jimbo parameter, and the normalisation of $\Omega$, which moves the per-crossing scalar. Neither changes the argument. It needs $q$ not a root of unity and says nothing about real $q_0$. This is the Drinfeld–Kohno theorem \cite{kohno1987, drinfeld1990, kassel1995}, cited, not proved. For a real level the monodromy eigenvalues lie on the unit circle, so they cannot equal the real substrate value $q_0 > 1$ (`QOU.Mass.KZUnitModulusPrune.exp_I_ne_real_gt_one`, proved). Matching $q_0$ needs an imaginary level, which is open.
 
 ## Explicit values
 

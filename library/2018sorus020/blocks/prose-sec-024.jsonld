@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/2018sorus020/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/2018sorus020/blocks/prose-sec-024",
   "kind": "prose",
-  "title": "Hyperbolic elements",
-  "pageStart": 32,
-  "pageEnd": 33,
-  "text": "../sections/sec-024-2-hyperbolic-elements.md",
-  "derivedFrom": "library/2018sorus020/manifest",
-  "sourceDocument": "library/2018sorus020/manifest",
+  "title": "Third deﬁnition : torsion of an exact complex (Cayley formula)",
+  "pageStart": 45,
+  "pageEnd": 46,
+  "text": "../sections/sec-024-153-third-deﬁnition-torsion-of-an-exact-complex.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

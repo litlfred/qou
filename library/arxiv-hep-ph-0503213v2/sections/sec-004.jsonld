@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-hep-ph-0503213v2/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "H− 0",
-  "pageStart": 4,
-  "pageEnd": 4,
+  "title": "Acknowledgements",
+  "pageStart": 6,
+  "pageEnd": 6,
   "contains": [
     "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/arxiv-hep-ph-0503213v2/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-0503213v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0503213v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0503213v2/manifest.jsonld",
   "provenance": "ingested"
 }

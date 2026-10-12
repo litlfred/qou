@@ -8,257 +8,109 @@ pages: 13-15
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
 doc_brief: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
+text_source: latex
+latex_prose_ratio: 0.899
+latex_coverage_ratio: 0.892
 ---
-we study a family of infinite series F (f;t) with weighted Gauss sums, which involves both WRT
-invariants and homological blocks. We start with the following asymptotic formula following from
-Proposition 5.4. In the following statement, we use notations ε,S,Q and so on, which we prepared in
-Sections 2 and 4.
-Corollary 5.7. For e∈{± 1}V≥3 and a C∞ function f : RV≥2→ C of rapid decay as xv→∞ for
-eachv∈V≥2, let
-Fe(f;t) :=
-X
-α∈S
-ε(α)
-X
-n∈Z
-V≥3
-≥0
-e
-1
-kQ(e(n +α))
-
-P (n)f(t(n +α))
-be a series for a variable t∈ R>0. Then, it holds that
-Fe(f;t)∼
-X
-n∈ZV≥2
-ce,nf (n)(0)t
-P
-v∈V≥2nv
-14 Y. MURAKAMI
-as t→ +0, where we define
-ce,n =
-X
-α∈S
-ε(α)
-
-Y
-v∈V2
-αnv
-v
-nv!
-
- X
-m∈Z
-V≥3
-≥0
-pm
-
- Y
-v∈V≥3
-kmv+nv
-
- X
-λ∈{0,...,k−1}V≥3
-e
-1
-kQ(e(λ +α))
-
-Bm,n(α,λ )
-for n∈ ZV≥2.
-We define two C∞ function of rapid decay f1,f 2 : RV≥2 → C as f1(x) := exp(−P
-v∈V≥2xv) and
-f2 := exp(−Q(x)) respectively. Then, WRT invariants and limit values of homological blocks can
-be written as limit values of F (f1;t) and F (f2;t) as t→ 0 shown later in Propositions 5.8 and 6.3,
-respectively.
-Here, we need to prove that F (f;t) has a limit as t→ 0, that is, cn vanishes forn∈ ZV≥3 with non-
-positive components. Such a result is called “a vanishing result of weighted Gauss sums” in [MM22],
-and it is the most important part in a proof of the conjecture of Gukov–Pei–Putrov–Vafa [GPPV20,
-Conjecture 2.1, Equation (A.28)]. In the previous works [BMM20, MM22], it is proved by direct
-calculations ([BMM20, Theorem 4.1],[MM22, Proposition 4.2]). On the other hand, our proof is based
-on the above asymptotic expansion in Corollary 5.7. Since cn is independent of f in this asymptotic
-expansion, it suffices to consider not for any f, but for f1. Since F (f1;t) is a rational function shown
-later in Lemma 5.10, vanishings results of cn is equivalent to holomorphy of F (f1;t), which is proved
-in Section 6.
-The homological block bZΓ(ζke−t2
-) can be written in term of F (f2;t) as follows.
-Proposition 5.8. It holds that
-
-(−1)|V1|q−(P
-v∈V (wv+3)+P
-i∈V1 1/wi)/4bZΓ(q)
-
+[]{#subsec:asymp_Gauss label="subsec:asymp_Gauss"}
 
-q=ζke−t2 =
-X
-e∈{±1}V≥3
-
- Y
-v∈V≥3
-edeg(v)+|v|
-v
-
-Fe(f2;t).
-This proposition follows from Proposition 4.2 for C(n) = e (Q(e(n +α))/k).
-In the last of this subsection, we prove thatF (f1;t) is a rational function related to WRT invariants.
-To begin with, we replace quadratic formsQ(n+α) as linear forms in the indices ofζk in the definition
-of F (f;t).
-Lemma 5.9. Fore∈{± 1}V≥3 and a C∞ function f : RV≥2→ C of rapid decay as xv→∞ for each
-v∈V≥2, it holds that
-Fe(f;t) = e (|V≥2|/8)
-√
-2k|V≥2|Q
-i∈V1
-p
-|wi|
-X
-µ∈ZV≥2/2kS
-
-ZV≥2
-
-e
-
-− 1
-4k
-tµS−1µ
-
-X
-α∈S
-ε(α)
-X
-n∈Z
-V≥3
-≥0
-e
-1
-k
-tµe(n +α)
-
-P (n)f(t(n +α)).
-Proof. Let
-G(2kS) :=
-X
-µ∈ZV≥2/2kS
-
-ZV≥2
-
-e
-
-− 1
-4k
-tµS−1µ
-
-.
-Then, we have G(2kS) =
-√
-2ke (−1/8)
-|V≥2|√
-detS by Proposition 3.3. Here we remark det S =Q
-i∈V1|wi| by Proposition 2.2 (ii). Then, we can write
-G(2kS)Fe(f;t)
-=
-X
-µ∈ZV≥2/2kS
-
-ZV≥2
-
-X
-α∈S
-ε(α)
-X
-n∈Z
-V≥3
-≥0
-e
-1
-k
-
-Q(e(n +α))− 1
-4
-tµS−1µ
-
-P (n)f(t(n +α)).
-By replacing µ byµ− 2Se(n +α), we obtain the claim. □
+In this subsection, we study a family of infinite series $F(f; t)$ with weighted Gauss sums, which involves both WRT invariants and homological blocks. We start with the following asymptotic formula following from [\[prop:Euler\--Maclaurin_poly\]](#prop:Euler--Maclaurin_poly){reference-type="ref" reference="prop:Euler--Maclaurin_poly"}. In the following statement, we use notations $\varepsilon, \calS, Q$ and so on, which we prepared in [\[sec:fund_data,sec:HB_false\]](#sec:fund_data,sec:HB_false){reference-type="ref" reference="sec:fund_data,sec:HB_false"}.
+
+::: cor
+[]{#cor:asymp_F(f; t) label="cor:asymp_F(f; t)"} For $e \in \{ \pm 1 \}^{V_{\ge 3}}$ and a $C^\infty$ function $f \colon \R^{V_{\ge 2}} \to \bbC$ of rapid decay as $x_v \to \infty$ for each $v \in V_{\ge 2}$, let $$F_e(f; t) \coloneqq 
+    \sum_{\alpha \in \calS} \veps(\alpha)
+    \sum_{n \in \Z_{\ge 0}^{V_{\ge 3}}}
+    \bm{e}\left( \frac{1}{k} Q(e(n + \alpha)) \right) P(n) f(t(n + \alpha))$$ be a series for a variable $t \in \R_{>0}$. Then, it holds that $$\begin{aligned}
+ \label{eq:asymp_F(f; t)}
+        F_e(f; t) 
+        \sim
+        &\sum_{n \in \Z^{V_{\ge 2}}} c_{e, n} f^{(n)}(0) t^{\sum_{v \in V_{\ge 2}} n_v}
+    
+\end{aligned}$$ as $t \to +0$, where we define $$\begin{aligned}
+        c_{e, n} = \,
+        &\sum_{\alpha \in \calS} \veps(\alpha)
+        \left( \prod_{v \in V_2} \frac{\alpha_v^{n_v}}{n_v!} \right)
+        \sum_{m \in \Z_{\ge 0}^{V_{\ge 3}}} p_m \left( \prod_{v \in V_{\ge 3}} k^{m_v + n_v} \right)
+        \sum_{\lambda \in \{ 0, \dots, k-1 \}^{V_{\ge 3}}}
+        \bm{e}\left( \frac{1}{k} Q(e(\lambda + \alpha)) \right) \bbB_{m, n}(\alpha, \lambda)
+    
+\end{aligned}$$ for $n \in \Z^{V_{\ge 2}}$.
+:::
+
+We define two $C^\infty$ function of rapid decay $f_1, f_2 \colon \R^{V_{\ge 2}} \to \bbC$ as $f_1(x) \coloneqq \exp(-\sum_{v \in V_{\ge 2}} x_v)$ and $f_2 \coloneqq \exp(-Q(x))$ respectively. Then, WRT invariants and limit values of homological blocks can be written as limit values of $F(f_1; t)$ and $F(f_2; t)$ as $t \to 0$ shown later in [\[prop:WRT_F(f_1;t),prop:HB_lim\]](#prop:WRT_F(f_1;t),prop:HB_lim){reference-type="ref" reference="prop:WRT_F(f_1;t),prop:HB_lim"}, respectively.
+
+Here, we need to prove that $F(f; t)$ has a limit as $t \to 0$, that is, $c_n$ vanishes for $n \in \Z^{V_{\ge 3}}$ with non-positive components. Such a result is called "a vanishing result of weighted Gauss sums" in [@MM], and it is the most important part in a proof of the conjecture of Gukov--Pei--Putrov--Vafa [@GPPV Conjecture 2.1, Equation (A.28)]. In the previous works [@BMM_high_depth; @MM], it is proved by direct calculations ([@BMM_high_depth Theorem 4.1],[@MM Proposition 4.2]). On the other hand, our proof is based on the above asymptotic expansion in [\[cor:asymp_F(f; t)\]](#cor:asymp_F(f; t)){reference-type="ref" reference="cor:asymp_F(f; t)"}. Since $c_n$ is independent of $f$ in this asymptotic expansion, it suffices to consider not for any $f$, but for $f_1$. Since $F(f_1; t)$ is a rational function shown later in [\[lem:F(f_1;t)\]](#lem:F(f_1;t)){reference-type="ref" reference="lem:F(f_1;t)"}, vanishings results of $c_n$ is equivalent to holomorphy of $F(f_1; t)$, which is proved in [\[sec:proof_main\]](#sec:proof_main){reference-type="ref" reference="sec:proof_main"}.
+
+The homological block $\widehat{Z}_{\Gamma} (\zeta_k e^{-t^2})$ can be written in term of $F(f_2; t)$ as follows.
+
+::: prop
+[]{#prop:HB_lim label="prop:HB_lim"} It holds that $$\restrict{\left(
+        (-1)^{\abs{V_1}} q^{-(\sum_{v \in V} (w_{v} + 3) + \sum_{i \in V_1} 1/w_i)/4} 
+        \widehat{Z}_{\Gamma} (q) 
+        \right)}{q =\zeta_k e^{-t^2}}
+    = 
+    \sum_{e \in \{ \pm 1 \}^{V_{\ge 3}}} \left( \prod_{v \in V_{\ge 3}} e_v^{\deg (v) + \abs{\overline{v}}} \right)
+    F_e(f_2; t).$$
+:::
+
+This proposition follows from [\[prop:HB_false\]](#prop:HB_false){reference-type="ref" reference="prop:HB_false"} for $C(n) = \bm{e}\left( Q(e(n + \alpha))/k \right)$.
+
+In the last of this subsection, we prove that $F(f_1; t)$ is a rational function related to WRT invariants. To begin with, we replace quadratic forms $Q(n + \alpha)$ as linear forms in the indices of $\zeta_k$ in the definition of $F(f; t)$.
+
+::: lem
+[]{#lem:F(f;t) label="lem:F(f;t)"} For $e \in \{ \pm 1 \}^{V_{\ge 3}}$ and a $C^\infty$ function $f \colon \R^{V_{\ge 2}} \to \bbC$ of rapid decay as $x_v \to \infty$ for each $v \in V_{\ge 2}$, it holds that $$\begin{aligned}
+        F_e(f; t) = 
+        &\frac{\bm{e} \left( \abs{V_{\ge 2}}/8 \right)}{\sqrt{2k}^{\abs{V_{\ge 2}}} \prod_{i \in V_1} \sqrt{\abs{w_i}}}
+        \sum_{ \mu \in \Z^{V_{\ge 2}} / 2kS \left(\Z^{V_{\ge 2}} \right) } 
+        \bm{e} \left( -\frac{1}{4k} {}^t\!\mu S^{-1} \mu \right) \\
+        &\sum_{\alpha \in \calS} \veps(\alpha)
+        \sum_{n \in \Z_{\ge 0}^{V_{\ge 3}}}
+        \bm{e}\left( \frac{1}{k} {}^t\!\mu e(n + \alpha) \right) P(n) f(t(n + \alpha)).
+    
+\end{aligned}$$
+:::
+
+::: proof
+*Proof.* Let $$G(2kS) \coloneqq
+    \sum_{ \mu \in \Z^{V_{\ge 2}} / 2kS \left(\Z^{V_{\ge 2}} \right) } 
+    \bm{e} \left( -\frac{1}{4k} {}^t\!\mu S^{-1} \mu \right).$$ Then, we have $G(2kS) = \left( \sqrt{2k} \bm{e} \left( -1/8 \right) \right)^{\abs{V_{\ge 2}}} \sqrt{\det S}$ by [\[prop:reciprocity\]](#prop:reciprocity){reference-type="ref" reference="prop:reciprocity"}. Here we remark $\det S = \prod_{i \in V_1} \abs{w_i}$ by [\[prop:S\]](#prop:S){reference-type="ref" reference="prop:S"} [\[item:prop:S2\]](#item:prop:S2){reference-type="ref" reference="item:prop:S2"}. Then, we can write $$\begin{aligned}
+        &G(2kS) F_e(f; t)  \\
+        = \,
+        &\sum_{ \mu \in \Z^{V_{\ge 2}} / 2kS \left(\Z^{V_{\ge 2}} \right) } 
+        \sum_{\alpha \in \calS} \veps(\alpha)
+        \sum_{n \in \Z_{\ge 0}^{V_{\ge 3}}}
+        \bm{e}\left( \frac{1}{k} \left( Q(e(n + \alpha)) - \frac{1}{4} {}^t\!\mu S^{-1} \mu \right) \right) P(n) f(t(n + \alpha)).
+    
+\end{aligned}$$ By replacing $\mu$ by $\mu - 2Se(n + \alpha)$, we obtain the claim. ◻
+:::
+
 By this lemma, we obtain the following representation.
-WRT INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES 15
-Lemma 5.10. Fore∈{± 1}V≥3,
-Fe(f1;t) =edeg(v)+|v|
-v
-e (|V≥2|/8)
-(2k)|V≥2|Q
-i∈V1
-p
-|wi|
-X
-µ∈ZV≥2/2kS
-
-ZV≥2
-
-e
-
-− 1
-4k
-tµS−1µ
- Y
-v∈V≥2
-Gv
-
-ζµv
-2kMve−evt/2Mv
-
-.
-In particular, Fe(f1;t) is a meromorphic function.
-Proof. By Lemma 5.9, we have
-G(2kS)Fe(f1;t) =
-X
-µ∈ZV≥2/2kS
-
-ZV≥2
-
-e
-
-− 1
-4k
-tµS−1µ
-
-X
-α∈S
-ε(α)
-X
-n∈Z
-V≥3
-≥0
-e
-1
-k
-tµe(n +α)
-
-P (n) exp
-
-−
-X
-v∈V≥3
-tv(nv +αv)
-
-.
-By applying Lemma 2.11 for this, we have
-G(2kS)Fe(f1;t) =
-X
-µ∈ZV≥2/2kS
-
-ZV≥2
-
-e
-
-− 1
-4k
-tµS−1µ
- Y
-v∈V≥2
-Gv
-
-ζevµv
-2kMve−t/2Mv
-
-.
-By Remark 2.8, we obtain the claim. □
+
+::: lem
+[]{#lem:F(f_1;t) label="lem:F(f_1;t)"} For $e \in \{ \pm 1 \}^{V_{\ge 3}}$, $$\begin{aligned}
+        F_e(f_1; t) = 
+        e_v^{\deg (v) + \abs{\overline{v}}}
+        \frac{\bm{e} \left( \abs{V_{\ge 2}}/8 \right)}{(2k)^{\abs{V_{\ge 2}}} \prod_{i \in V_1} \sqrt{\abs{w_i}}}
+        \sum_{ \mu \in \Z^{V_{\ge 2}} / 2kS \left(\Z^{V_{\ge 2}} \right) } 
+        \bm{e} \left( -\frac{1}{4k} {}^t\!\mu S^{-1} \mu \right) 
+        \prod_{v \in V_{\ge 2}} G_v \left( \zeta_{2kM_v}^{\mu_v} e^{-e_v t/2M_v} \right).
+    
+\end{aligned}$$ In particular, $F_e(f_1; t)$ is a meromorphic function.
+:::
+
+::: proof
+*Proof.* By [\[lem:F(f;t)\]](#lem:F(f;t)){reference-type="ref" reference="lem:F(f;t)"}, we have $$\begin{aligned}
+        G(2kS) F_e(f_1; t)
+        = \,
+        &\sum_{ \mu \in \Z^{V_{\ge 2}} / 2kS \left(\Z^{V_{\ge 2}} \right) } 
+        \bm{e} \left( -\frac{1}{4k} {}^t\!\mu S^{-1} \mu \right) \\
+        &\sum_{\alpha \in \calS} \veps(\alpha)
+        \sum_{n \in \Z_{\ge 0}^{V_{\ge 3}}}
+        \bm{e}\left( \frac{1}{k} {}^t\!\mu e(n + \alpha) \right) P(n) \exp \left( - \sum_{ v \in V_{\ge 3} } t_v (n_v + \alpha_{v}) \right).
+    
+\end{aligned}$$ By applying [\[lem:expansion\]](#lem:expansion){reference-type="ref" reference="lem:expansion"} for this, we have $$G(2kS) F_e(f_1; t)
+    = 
+    \sum_{ \mu \in \Z^{V_{\ge 2}} / 2kS \left(\Z^{V_{\ge 2}} \right) } 
+    \bm{e} \left( -\frac{1}{4k} {}^t\!\mu S^{-1} \mu \right)
+    \prod_{v \in V_{\ge 2}} G_v \left( \zeta_{2kM_v}^{e_v \mu_v} e^{-t/2M_v} \right).$$ By [\[rem:G_v_symmetry\]](#rem:G_v_symmetry){reference-type="ref" reference="rem:G_v_symmetry"}, we obtain the claim. ◻
+:::

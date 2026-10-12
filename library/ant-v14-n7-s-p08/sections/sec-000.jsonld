@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s-p08/sections/sec-000",
   "@type": [
     "doco:Section"
@@ -11,13 +16,13 @@
     "library/ant-v14-n7-s-p08/blocks/prose-sec-000",
     "library/ant-v14-n7-s-p08/blocks/thm-sec-000-01",
     "library/ant-v14-n7-s-p08/blocks/cor-sec-000-02",
-    "library/ant-v14-n7-s-p08/blocks/rem-sec-000-03",
+    "library/ant-v14-n7-s-p08/blocks/remark-sec-000-03",
     "library/ant-v14-n7-s-p08/blocks/cor-sec-000-04",
-    "library/ant-v14-n7-s-p08/blocks/rem-sec-000-05",
+    "library/ant-v14-n7-s-p08/blocks/remark-sec-000-05",
     "library/ant-v14-n7-s-p08/blocks/cor-sec-000-06",
-    "library/ant-v14-n7-s-p08/blocks/rem-sec-000-07"
+    "library/ant-v14-n7-s-p08/blocks/remark-sec-000-07"
   ],
-  "derivedFrom": "library/ant-v14-n7-s-p08/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p08/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p08/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p08/manifest.jsonld",
   "provenance": "ingested"
 }

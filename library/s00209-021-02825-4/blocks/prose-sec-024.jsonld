@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/s00209-021-02825-4/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/s00209-021-02825-4/blocks/prose-sec-024",
   "kind": "prose",
   "title": "Deriving the real Borcea–Brändén characterization",
   "pageStart": 29,
   "pageEnd": 30,
   "text": "../sections/sec-024-73-deriving-the-real-borceabrändén-characterizat.md",
-  "derivedFrom": "library/s00209-021-02825-4/manifest",
-  "sourceDocument": "library/s00209-021-02825-4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,44 +8,25 @@ pages: 10-11
 source_pdf: 0808.2716v4.pdf
 source_sha256: ea66f7ddcf9e9fe6
 doc_brief: "CUSP AREAS OF F AREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on t he cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2 –bridge link"
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.937
 ---
-the punctured torus, and deﬁne the following transformatio ns of X:
-α(x,y ) = (x + 1,y ), β (x,y ) = (x,y + 1), σ (x,y ) = ( −x, −y).
-Then one obtains the punctured torus as T = X/⟨α,β ⟩ and the 4–punctured sphere as
-S = X/⟨α2,β 2,σ ⟩. Both S and T are covered by the 4–punctured torus R = X/⟨α2,β 2⟩.
-Then the action of SL2(Z) on T lifts to an action on X, and descends to an action on both
-R and S. As a result, every hyperbolic punctured torus bundle M is commensurable with a
-hyperbolic 4–punctured sphere bundle N , whose monodromy can be described by the same
-word Ω. The common cover is a 4–punctured torus bundle P . In Figure 2, we see lifts of
-two pleated surfaces to the common cover.
-The 4–punctured sphere bundle N can have anywhere from one to four cusps, depending
-on the action of its monodromy on the punctures of S. Thus, for the purpose of discussing
-Ford domains, it is important to choose the right horoball ne ighborhood of the cusps. Unless
-stated otherwise (e.g. in Theorem 4.7), we shall always choo se the cusp neighborhood in N
-that comes from lifting a maximal cusp of the corresponding p unctured torus bundle M to
-the 4–punctured torus bundle P , and then projecting down to N . We call this the equivariant
-cusp neighborhood of a 4–punctured sphere bundle.
-By lifting the canonical monodromy triangulation of M to P , and projecting down to
-N , we obtain the layered monodromy triangulation of a 4–punct ured sphere bundle. Every
-tetrahedron ∆( e) of this triangulation lifts to a layer of four tetrahedra in P , and projects
-down to a layer of two tetrahedra in N . (See [31, Figure 16].) This triangulation is still
-geometrically canonical: it is dual to the Ford domain deter mined by the the equivariant cusp
-neighborhood. We refer to this Ford domain as an equivariant Ford domain. In particular, it
-still makes sense to talk about “syllables”, “zigzags”, etc . in relation to 4–punctured sphere
-bundles. Note that because of the rotational action of σ, a loop around a puncture of the
-ﬁber will only cross three edges in zigzag of N , instead of six edges as in a zigzag of the
-punctured torus bundle M .
-Deﬁnition 2.3. In a punctured torus bundle M or a 4–punctured sphere bundle N , call
-the loop about a puncture of the ﬁber the meridian of the corresponding manifold. We shall
-denote the length of a meridian in a maximal cusp of a puncture d torus bundle M by 2µ.
-With this convention, the meridian of the corresponding 4–p unctured sphere bundle N will
-have length µ in a maximal equivariant cusp.
-In the discussion of the geometry below, we will switch betwe en descriptions of 4–punctured
-sphere bundles and punctured tori, depending on which leads to the simplest discussion. Be-
-cause of the covering property, results on the geometry of th e universal cover will apply
-immediately to both types of manifolds.
-CUSP AREAS OF F AREY MANIFOLDS 11
-PSfrag replacements
-(a) (b)
-Figure 4. (a) An alternating braid between two pillowcases, describe d by
-the word Ω = R3L2R. (b) The corresponding two-bridge link K(Ω).
+[]{#sec:4ps label="sec:4ps"}
+
+Consider the universal abelian cover $X := {\mathbb{R}}^2 {\smallsetminus}{\mathbb{Z}}^2$ of the punctured torus, and define the following transformations of $X$: $$\alpha(x,y) = (x+1, y), \quad \beta(x,y) = (x,y+1), \quad
+\sigma(x,y) = (-x,-y).$$
+
+Then one obtains the punctured torus as $T = X/\langle\alpha, \beta
+\rangle$ and the $4$--punctured sphere as $S = X/\langle\alpha^2,
+\beta^2, \sigma \rangle$. Both $S$ and $T$ are covered by the 4--punctured torus $R = X/\langle\alpha^2, \beta^2 \rangle$. Then the action of $SL_2({\mathbb{Z}})$ on $T$ lifts to an action on $X$, and descends to an action on both $R$ and $S$. As a result, every hyperbolic punctured torus bundle $M$ is commensurable with a hyperbolic 4--punctured sphere bundle $N$, whose monodromy can be described by the same word $\Omega$. The common cover is a 4--punctured torus bundle $P$. In Figure [\[fig:tetrahedra\]](#fig:tetrahedra){reference-type="ref" reference="fig:tetrahedra"}, we see lifts of two pleated surfaces to the common cover.
+
+The $4$--punctured sphere bundle $N$ can have anywhere from one to four cusps, depending on the action of its monodromy on the punctures of $S$. Thus, for the purpose of discussing Ford domains, it is important to choose the right horoball neighborhood of the cusps. Unless stated otherwise (e.g. in Theorem [\[thm:4ps-area\]](#thm:4ps-area){reference-type="ref" reference="thm:4ps-area"}), we shall always choose the cusp neighborhood in $N$ that comes from lifting a maximal cusp of the corresponding punctured torus bundle $M$ to the 4--punctured torus bundle $P$, and then projecting down to $N$. We call this the *equivariant* cusp neighborhood of a $4$--punctured sphere bundle.
+
+By lifting the canonical monodromy triangulation of $M$ to $P$, and projecting down to $N$, we obtain the layered monodromy triangulation of a $4$--punctured sphere bundle. Every tetrahedron $\Delta(e)$ of this triangulation lifts to a layer of four tetrahedra in $P$, and projects down to a layer of two tetrahedra in $N$. (See [@gf:two-bridge Figure 16].) This triangulation is still geometrically canonical: it is dual to the Ford domain determined by the the equivariant cusp neighborhood. We refer to this Ford domain as an *equivariant* Ford domain. In particular, it still makes sense to talk about "syllables", "zigzags", etc. in relation to 4--punctured sphere bundles. Note that because of the rotational action of $\sigma$, a loop around a puncture of the fiber will only cross three edges in zigzag of $N$, instead of six edges as in a zigzag of the punctured torus bundle $M$.
+
+::: define
+[]{#def:fibered-meridian label="def:fibered-meridian"} In a punctured torus bundle $M$ or a $4$--punctured sphere bundle $N$, call the loop about a puncture of the fiber the *meridian* of the corresponding manifold. We shall denote the length of a meridian in a maximal cusp of a punctured torus bundle $M$ by $2\mu$. With this convention, the meridian of the corresponding $4$--punctured sphere bundle $N$ will have length $\mu$ in a maximal equivariant cusp.
+:::
+
+In the discussion of the geometry below, we will switch between descriptions of 4--punctured sphere bundles and punctured tori, depending on which leads to the simplest discussion. Because of the covering property, results on the geometry of the universal cover will apply immediately to both types of manifolds.

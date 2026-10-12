@@ -1,0 +1,185 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Brackets
+% \newcommand{\abs}[1]{\ensuremath{\left\lvert#1\right\rvert}}
+\newcommand{\br}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\hnorm}[2][1,2]{\ensuremath{\left\|#2\right\|_{H^{{#1}}}}}
+\newcommand{\lnorm}[2][2]{\ensuremath{\left\|#2\right\|_{L^{{#1}}}}}
+%\newcommand{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}
+\newcommand{\seq}[1]{\ensuremath{\br{#1}_{\eps>0}}}
+\newcommand{\seqn}[2][k]{\ensuremath{\br{{#2}_{#1}}_{#1\in\N}}}
+\newcommand{\set}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\sets}[2]{\ensuremath{\left\{\left.#1\,\right|#2\right\}}}
+\newcommand{\sett}[2]{\ensuremath{\left\{#1\,\middle|\,#2\right\}}}
+\renewcommand{\sp}[1]{\ensuremath{\left\langle#1\right\rangle}}
+\newcommand{\spp}[1]{\ensuremath{\left\langle\!\left\langle#1\right\rangle\!\right\rangle}}
+\newcommand{\sq}[1]{\ensuremath{\left[#1\right]}}
+\newcommand{\sqq}[1]{\ensuremath{\left[\!\left[#1\right]\!\right]}}
+
+
+
+%%%%%%%%%% a few more macros %%%%%%%%%
+% \newcommand{\norm}[2][]{\left \lVert #2 \right \rVert_{#1}}
+\newcommand{\halfnorm}[2][W]{\left[#2\right]_{#1}}
+\DeclareMathOperator{\hol}{H\ddot ol}
+\DeclareMathOperator{\pv}{p.v.}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Length}{Length}
+\DeclareMathOperator{\tp}{tp}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\PR}{Pr}
+\DeclareMathOperator{\Pot}{Pot}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\TC}{TC}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\ARC}{arc}
+\DeclareMathOperator{\CAPARC}{Arc}
+\DeclareMathOperator{\intM}{intM}
+\DeclareMathOperator{\ir}{ir}
+\DeclareMathOperator{\ia}{ia}
+\DeclareMathOperator{\evi}{EVI}
+\DeclareMathOperator{\AC}{AC}
+%\DeclareMathOperator{\TP}{TP}
+\DeclareMathOperator{\BiLip}{BiLip}
+\DeclareMathOperator{\ODE}{ODE}
+\DeclareMathOperator{\spann}{span}
+\DeclareMathOperator{\epi}{epi}
+%Math operators
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator{\divergenz}{div}
+\DeclareMathOperator{\clos}{clos}
+\DeclareMathOperator{\spt}{spt}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator*{\osc}{osc}
+% \DeclareMathOperator*{\reg}{reg}
+\DeclareMathOperator*{\sing}{sing}
+\DeclareMathOperator*{\esssup}{ess\,sup}
+\DeclareMathOperator*{\essinf}{ess\,inf}
+\DeclareMathOperator*{\bigcupd}{\dot{\bigcup}}
+\DeclareMathOperator{\arsinh}{Arsinh}
+\DeclareMathOperator{\arcosh}{Arcosh}
+\DeclareMathOperator{\artanh}{Artanh}
+\DeclareMathOperator{\arcoth}{Arcoth}
+\DeclareMathOperator{\BV}{BV}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\Bil}{Bil}
+\DeclareMathOperator{\Ric}{Ric}
+\newcommand{\Mpq}[1][p,q]{\ensuremath{\intM^{\left(#1\right)}}}
+
+%Letters
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\K}{\mathbb{K}}
+
+\newcommand{\AL}{\mathcal{A}}
+\newcommand{\BL}{\mathcal{B}}
+\newcommand{\CL}{\mathcal{C}}
+\newcommand{\DL}{\mathcal{D}}
+\newcommand{\EL}{\mathcal{E}}
+\newcommand{\FL}{\mathcal{F}}
+\newcommand{\GL}{\mathcal{G}}
+\newcommand{\HL}{\mathcal{H}}
+\newcommand{\IL}{\mathcal{I}}
+\newcommand{\JL}{\mathcal{J}}
+\newcommand{\KL}{\mathcal{K}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\ML}{\mathcal{M}}
+\newcommand{\NL}{\mathcal{N}}
+\newcommand{\OL}{\mathcal{O}}
+\newcommand{\PL}{\mathcal{P}}
+\newcommand{\QL}{\mathcal{Q}}
+\newcommand{\RL}{\mathcal{R}}
+\newcommand{\SL}{\mathcal{S}}
+\newcommand{\TL}{\mathcal{T}}
+\newcommand{\UL}{\mathcal{U}}
+\newcommand{\VL}{\mathcal{V}}
+\newcommand{\WL}{\mathcal{W}}
+\newcommand{\XL}{\mathcal{X}}
+\newcommand{\YL}{\mathcal{Y}}
+\newcommand{\ZL}{\mathcal{Z}}
+
+
+
+\newcommand{\Kk}{\mathrm{K}}
+% \newcommand{\X}{\mathcal{X}}
+
+\newcommand{\FS}{\mathscr{F}}
+\newcommand{\PS}{\mathscr{P}}
+
+\newcommand{\Aa}{\mathfrak{A}}
+\newcommand{\LIP}{\textnormal{Lip}}
+\newcommand{\Id}{{\mathrm{Id}}}
+\newcommand{\difference}[1]{\Delta_{#1}}
+\renewcommand{\S}{{\mathbb{S}}}
+\newcommand{\SIGMA}{{\mathfrak{S}}}
+\newcommand{\CK}{{\mathscr{C}(\mathcal{K})}}
+\newcommand{\Man}{{\ML_a}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% Energies %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\DeclareMathOperator{\tp}{tp}
+\DeclareMathOperator{\TP}{TP}
+%\DeclareMathOperator{\intM}{intM}
+%\newcommand{\Mpq}[1][p,q]{\ensuremath{\intM^{\left(#1\right)}}}
+\newcommand{\Mpz}{\Mpq[p,2]}
+\newcommand{\TPpq}[1][p,q]{\ensuremath{\TP^{\left(#1\right)}}}
+\newcommand{\TPp}{\TPpq[p,2]}
+\newcommand{\tppq}[1][p,q]{\ensuremath{\tp^{\left(#1\right)}}}
+\newcommand{\tpp}{\tppq[p,2]}
+\newcommand{\Eap}[1][\alpha,p]{\ensuremath{E^{#1}}}
+\newcommand{\ea}[1][\alpha]{\ensuremath{e_{#1}}}
+\newcommand{\eap}[1][p]{\ensuremath{\ea^{#1}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% vdm macros for iterations %%%%%%%%%%%%%%%%%
+
+\newcommand{\xx}{\mbox{\textcolor{red}{$\clubsuit$}}}
+\newcommand{\xxx}[1]{\xx{\textcolor{red}{#1}}\xx}
+\newcommand{\colory}{\color[rgb]{0,.6,.4}}
+\newcommand{\discuss}{{\color[rgb]{0,.96,0}{discuss\,\,}}}
+\newcommand{\yy}{\mbox{\textcolor{blue}{$\spadesuit$}}}
+\newcommand{\yyy}[1]{{\yy\color{blue}#1\yy}}
+\newcommand{\omitted}[1]{}
+\newcommand{\DONE}{\mbox{\textcolor{green}{$\surd $}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\zz}{\mbox{\textcolor{violet}{$\clubsuit$}}}%\diamondsuit$}}}
+
+\newcommand{\zzz}[1]{\zz{\textcolor{violet}{#1}}\zz}
+\newcommand{\philipp}[1]{{\color{violet}\ensuremath{\clubsuit}#1\ensuremath{\clubsuit}}}
+\newcommand{\phout}[1]{\philipp{\sout{#1}}}
+\newcommand{\xhout}[1]{\xxx{\sout{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% vdM formeltext macros  %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\Fo}{\,\,\,\text{for }\,\,}
+\newcommand{\Foa}{\,\,\,\text{for all }\,\,}
+\newcommand{\FoA}{\,\,\,\text{for any }\,\,}
+\newcommand{\Fae}{\,\,\,\text{for a.e.}\,\,}
+\newcommand{\Ae}{\,\,\,\text{a.e.}\,\,}
+\newcommand{\Aeon}{\,\,\,\text{a.e. on}\,\,}
+\newcommand{\With}{\,\,\,\text{with }\,\,}
+\newcommand{\In}{\,\,\,\text{in }\,\,}
+\newcommand{\If}{\,\,\,\text{if }\,\,}
+\newcommand{\Since}{\,\,\,\text{since }\,\,}
+\newcommand{\AND}{\,\,\,\text{and }\,\,}
+\newcommand{\OR}{\,\,\,\text{or }\,\,}
+\newcommand{\ON}{\,\,\,\text{on }\,\,}
+\newcommand{\Suchthat}{\,\,\,\text{such that }\,\,}
+\newcommand{\ie}{\,\,\,\text{i.e. }\,\,}
+\newcommand{\As}{\,\,\,\text{as }\,\,}
+
+\newcommand{\detail}[1]{\par {\footnotesize {\sf Detail}: #1 \par\noindent }}
+% \newcommand{\detail}[1]{}
+%\newcommand{\heikodetail}[1]{\par {\footnotesize {\sf Heiko Detail}: #1 \par\noindent }}
+\newcommand{\heikodetail}[1]{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%5 end of vdM macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

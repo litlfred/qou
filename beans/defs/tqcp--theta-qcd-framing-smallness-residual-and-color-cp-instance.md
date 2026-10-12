@@ -7,8 +7,9 @@ priority: normal
 tags:
     - sm-26
     - reorg-2026-10-04
+    - 8f-colour
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-10-04T15:20:35Z
+updated_at: 2026-10-10T07:15:42Z
 parent: qou-8lxd
 blocked_by:
     - qou-ni4b

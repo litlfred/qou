@@ -1,0 +1,32 @@
+472 A. Ram
+For each r ≥ O define the homogeneous symmetric function hr(X) to be the
+coefficient of tr in 2(Xt), i.e.
+2(Xt) = Z  hr(X)tr. (4.4)
+r≥0
+For a partition μ = (μ1, μ2, . . ., μk) define
+hu(X) = hui(X)hμz2(X). . . huk(X) 
+For any partition a  (a1, 22, : : . ), the Schur function Sa(X)in the alphabet X can
+be given by
+Sa(X) = det(hat-i+j(X)1≤i,j≤n 
+where n ≥ t(), and hr(X) = 0 for any r < 0.
+Let X, Y be two alphabets. The addition formula for Schur functions is
+Sa(X + Y) = Z Su(X)sa/u(Y) . (4.5)
+The duality formula for Schur functions is
+sa(- X) =(- 1)lalsα(X) (4.6)
+where a' denotes the conjugate partition to a.
+For a brief moment let Sa, Su, S, denote the irreducible representations of the
+symmetric group S, corresponding to the partitions a, μ, v f respectively. Set
+Caμv to be the multiplicity of the representation Sa in the Kronecker product of
+symmetric group representations Su  S,. The numbers cauv are symmetric with
+functions is
+sa(XY) = Z cauvsu(X)ss(Y) . (4.7)
+u,y
+Let ma(X) be the monomial symmetric function in the alphabet X. For any
+alphabet X,
+hu(X) = sa(X)Kau, 8 and
+Sa(X) = Z Kaumμ(X) , (4.8)
+where Kau is the Kostka number, the number of column strict fillings of the shape
+ with weight u.
+For alphabets X = xi +. . . + xn, Y= y1 +... + yn and a variable t,
+2(XY(1 - t))  1 - txiyj (4.9)
+1≤ij≤n 1 - xiyj

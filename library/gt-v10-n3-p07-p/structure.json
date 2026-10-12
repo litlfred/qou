@@ -5,29 +5,44 @@
   "file": "gt-v10-n3-p07-p.pdf",
   "sha256": "1f226aac77351a695a13977305062da3129a448946d82571018550ed2ccd5419",
   "bytes": 322212,
-  "pages": 28
+  "pages": 28,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:25Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.2140/gt.2006.10.1425",
-  "title": "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal",
-  "authors_raw": null,
-  "abstract": null,
-  "docinfo": {
-   "Producer": "pdfTeX-1.40.3",
-   "Creator": "Geometry & Topology",
-   "Author": "Joan S BirmanWilliam W Menasco",
-   "Title": "Stabilization in the braid groups II:Transversal simplicity of knots",
-   "CreationDate": "D:20080429142617+01'00'"
-  },
-  "title_prev": "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S B IRMAN WILLIAM W M ENASCO The main result of this paper is a negative answer to the question: are all transversal",
+  "title": "Stabilization in the braid groups II:Transversal simplicity of knots",
+  "authors_raw": "JOAN S BIRMAN",
   "title_lines": [
    "Stabilization in the braid groups II:",
-   "Transversal simplicity of knots",
-   "JOAN S BIRMAN",
-   "WILLIAM W MENASCO",
-   "The main result of this paper is a negative answer to the question: are all transversal"
-  ]
+   "Transversal simplicity of knots"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "Stabilization in the braid groups II:Transversal simplicity of knots",
+   "Author": "Joan S BirmanWilliam W Menasco",
+   "Producer": "pdfTeX-1.40.3",
+   "Creator": "Geometry & Topology",
+   "CreationDate": "D:20080429142617+01'00'"
+  },
+  "title_raw": "Stabilization in the braid groups II: Transversal simplicity of knots",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Stabilization in the braid groups II:Transversal simplicity of knots",
+   "heading": "Stabilization in the braid groups II: Transversal simplicity of knots 1 Introduction and description of results",
+   "text": "Stabilization in the braid groups II: Transversal simplicity of knots",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -35,88 +50,512 @@
    "title": "Introduction and description of results",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1425"
   },
   {
    "level": 1,
    "title": "The MTWS and transversal isotopies",
    "page": 4,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1428"
   },
   {
    "level": 2,
    "title": "Block-strand diagrams, templates and the MTWS",
    "page": 4,
    "source": "inferred",
-   "number": "2.1"
-  },
-  {
-   "level": 1,
-   "title": "(resp. l i",
-   "page": 6,
-   "source": "inferred",
-   "number": "0"
+   "number": "2.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1428"
   },
   {
    "level": 2,
    "title": "The construction of transversal clasp annuli",
    "page": 8,
    "source": "inferred",
-   "number": "2.2"
-  },
-  {
-   "level": 1,
-   "title": "This transversal isotopy will also correspond to a braid isotopy in",
-   "page": 12,
-   "source": "inferred",
-   "number": "C"
+   "number": "2.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1432"
   },
   {
    "level": 2,
    "title": "Braid foliations on transversal clasp annuli",
    "page": 13,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1437"
   },
   {
    "level": 2,
    "title": "A weak transversal MTWS",
    "page": 20,
    "source": "inferred",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1444"
   },
   {
    "level": 1,
    "title": "Transversal simplicity and its failure",
    "page": 24,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1448"
   },
   {
    "level": 2,
-   "title": "The failure of transversal simplicity for certain closed 3–braids",
+   "title": "The failure of transversal simplicity for certain closed 3\u2013braids",
    "page": 24,
    "source": "inferred",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1448"
   },
   {
    "level": 2,
    "title": "Future work and some open problems",
    "page": 26,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "1450"
   },
   {
    "level": 1,
    "title": "References",
    "page": 27,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1451"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "(a) Braid structure on R3; (b) 2\u2013planes in the standard contact structure on R3. Note that these 2\u2013planes are invariant under rotation about z\u2013axis and translation along the z\u2013axis (which we use as the braid axis A)",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1426"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The two destabilization templates. Each template is a pair of block-strand diagrams",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1429"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The exchange move template, w \u0015 2, braid index m \u0015 4",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1430"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The two \ufb02ype templates. The weights must satisfy k0 \u0000 w \u0015 0. Note that the device of weighted strands may conceal half-twists introduced during the \ufb02ype. See Figure 4 of [6]",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1431"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The left sketch illustrates the types of non-singular leaves in the foliation of CA. The right sketch illustrates a foliated neighborhood of a type bb\u2013singularity",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1437"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Possible tile types in the foliation of CA. The black (resp. gray) arcs represent subarcs of XC (resp. X\u0000)",
+   "page": 14,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1438"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "The graph G\u000f;\u0131 includes all singular leaves through vertices of sign \u000f and singularities of sign \u0131. The thick edges illustrate the passage of GC;C; G\u0000;\u0000; GC;\u0000; G\u0000;C through a bb\u2013tile",
+   "page": 16,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1440"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The graph G, as it appears in the annulus PA",
+   "page": 19,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "1443"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1425",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1426",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1427",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1428",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1429",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1430",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1431",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1432",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1433",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1434",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1435",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1436",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1437",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1438",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1439",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1440",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "1441",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "1442",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1443",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "1444",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "1445",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "1446",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "1447",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "1448",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "1449",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "1450",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "1451",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "1452",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 472,
+   "n_words": 75,
+   "label_start": "1425",
+   "label_end": "1425"
+  },
   {
    "id": "sec-000-1-introduction-and-description-of-results",
    "number": "1",
@@ -124,8 +563,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 7791,
-   "n_words": 1383
+   "n_chars": 7811,
+   "n_words": 1403,
+   "label_start": "1425",
+   "label_end": "1428"
   },
   {
    "id": "sec-001-2-the-mtws-and-transversal-isotopies",
@@ -135,7 +576,9 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 1278,
-   "n_words": 232
+   "n_words": 232,
+   "label_start": "1428",
+   "label_end": "1428"
   },
   {
    "id": "sec-002-21-block-strand-diagrams-templates-and-the-mtws",
@@ -143,108 +586,116 @@
    "title": "Block-strand diagrams, templates and the MTWS",
    "level": 2,
    "page_start": 4,
-   "page_end": 6,
-   "n_chars": 3055,
-   "n_words": 578
-  },
-  {
-   "id": "sec-003-0-resp-l-i",
-   "number": "0",
-   "title": "(resp. l i",
-   "level": 1,
-   "page_start": 6,
    "page_end": 8,
-   "n_chars": 4290,
-   "n_words": 824
+   "n_chars": 7452,
+   "n_words": 1499,
+   "label_start": "1428",
+   "label_end": "1432"
   },
   {
-   "id": "sec-004-22-the-construction-of-transversal-clasp-annuli",
+   "id": "sec-003-22-the-construction-of-transversal-clasp-annuli",
    "number": "2.2",
    "title": "The construction of transversal clasp annuli",
    "level": 2,
    "page_start": 8,
-   "page_end": 12,
-   "n_chars": 9493,
-   "n_words": 1795
-  },
-  {
-   "id": "sec-005-c-this-transversal-isotopy-will-also-correspond",
-   "number": "C",
-   "title": "This transversal isotopy will also correspond to a braid isotopy in",
-   "level": 1,
-   "page_start": 12,
    "page_end": 13,
-   "n_chars": 2586,
-   "n_words": 447
+   "n_chars": 12310,
+   "n_words": 2402,
+   "label_start": "1432",
+   "label_end": "1437"
   },
   {
-   "id": "sec-006-23-braid-foliations-on-transversal-clasp-annuli",
+   "id": "sec-004-23-braid-foliations-on-transversal-clasp-annuli",
    "number": "2.3",
    "title": "Braid foliations on transversal clasp annuli",
    "level": 2,
    "page_start": 13,
    "page_end": 20,
-   "n_chars": 18452,
-   "n_words": 3456
+   "n_chars": 18594,
+   "n_words": 3583,
+   "label_start": "1437",
+   "label_end": "1444"
   },
   {
-   "id": "sec-007-24-a-weak-transversal-mtws",
+   "id": "sec-005-24-a-weak-transversal-mtws",
    "number": "2.4",
    "title": "A weak transversal MTWS",
    "level": 2,
    "page_start": 20,
    "page_end": 24,
-   "n_chars": 9839,
-   "n_words": 1726
+   "n_chars": 9853,
+   "n_words": 1740,
+   "label_start": "1444",
+   "label_end": "1448"
   },
   {
-   "id": "sec-008-3-transversal-simplicity-and-its-failure",
+   "id": "sec-006-3-transversal-simplicity-and-its-failure",
    "number": "3",
    "title": "Transversal simplicity and its failure",
    "level": 1,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 1036,
-   "n_words": 175
+   "n_chars": 1040,
+   "n_words": 179,
+   "label_start": "1448",
+   "label_end": "1448"
   },
   {
-   "id": "sec-009-31-the-failure-of-transversal-simplicity-for-cer",
+   "id": "sec-007-31-the-failure-of-transversal-simplicity-for-cer",
    "number": "3.1",
-   "title": "The failure of transversal simplicity for certain closed 3–braids",
+   "title": "The failure of transversal simplicity for certain closed 3\u2013braids",
    "level": 2,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 6022,
-   "n_words": 1073
+   "n_chars": 6071,
+   "n_words": 1121,
+   "label_start": "1448",
+   "label_end": "1450"
   },
   {
-   "id": "sec-010-32-future-work-and-some-open-problems",
+   "id": "sec-008-32-future-work-and-some-open-problems",
    "number": "3.2",
    "title": "Future work and some open problems",
    "level": 2,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 2527,
-   "n_words": 420
+   "n_chars": 2525,
+   "n_words": 418,
+   "label_start": "1450",
+   "label_end": "1451"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-009-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 2535,
-   "n_words": 384
+   "n_chars": 2528,
+   "n_words": 377,
+   "label_start": "1451",
+   "label_end": "1452"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 12,
-  "sections": 12,
-  "chars_total": 68904
+  "toc_entries": 10,
+  "toc_inferred_entries": 10,
+  "toc_inferred_mean_confidence": 0.74,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 8,
+  "figure_sequence_gaps": [
+   "figure 5"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 69934
  },
  "duplicate_of": "0310280v4",
- "duplicate_note": "Same work as library/0310280v4/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+ "duplicate_note": "Same work as library/0310280v4/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted \u2014 existing citations may point here \u2014 but skipped by the ranking and the summary index so one work is not counted twice."
 }

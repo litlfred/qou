@@ -11,7 +11,7 @@ after #1591 / #1592 closed off the Hecke-character route.
 > Markov-fingerprint, **no `B_AME`**). But the per-isotope binding consumes
 > the mass-functor per-block component `M_λ(K)` (MeV), and `K`'s character
 > `χ^λ(K)` does not determine `M_λ(K)` — the only available map `χ^λ → M_λ`
-> ([`per_block_phi_q.fit_three_E0`](../../computations/_deprecated/per_block_phi_q.py))
+> ([`per_block_phi_q.fit_three_E0`](../../fsh-guts/deprecated/computations/per_block_phi_q.py))
 > *fits* per-block energy scales `E₀^λ` to `{e⁻, p, n}`. The deuteron binding
 > equation is **1 equation in `p(6)=11` unknowns `Δ_λ`** (10-dim solution set),
 > underdetermined without an external `M_λ` source (≡ `B_AME`). So GAP-A-1's
@@ -164,7 +164,7 @@ all 11 of them at H₆(q₀); with `Δ_λ ≡ 0` the Schur–Weyl identity
 `M_λ(K)`, which `χ^λ(K)` does not determine.
 
 **The only map `χ^λ → M_λ` in the repo is a fit.**
-[`per_block_phi_q.py`](../../computations/_deprecated/per_block_phi_q.py)
+[`per_block_phi_q.py`](../../fsh-guts/deprecated/computations/per_block_phi_q.py)
 (**deprecated**) gets per-block masses via `fit_three_E0` — a linear
 least-squares fit of three per-block energy scales `(E₀^sym, E₀^std, E₀^alt)`
 to `{e⁻, p, n}`. That is the circularity: to turn `K`'s character into a

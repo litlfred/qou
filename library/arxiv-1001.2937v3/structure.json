@@ -7,7 +7,10 @@
   "bytes": 150273,
   "pages": 4,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -27,86 +30,153 @@
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20181023115728-04'00'"
+  },
+  "title_raw": "Microscopic Spectrum of the Wilson Dirac Operator",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Microscopic Spectrum of the Wilson Dirac Operator",
+   "text": "Microscopic Spectrum of the Wilson Dirac Operator",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Str(M[U\u2212U\u22121])+i 1",
-   "page": 2,
+   "title": "Microscopic Spectrum of the Wilson Dirac Operator",
+   "page": 1,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Str(Z[U+U\u22121])+\u02c6a2Str(U2+U\u22122)",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Str(M[U+U\u22121])+ 1",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Str(Z[U\u2212U\u22121])\u2212\u02c6a2Str(U2+U\u22122)",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The microscopic spectrum of D5 for \u02c6m = 3, \u03bd = 0",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The microscopic spectrum of D5 for \u02c6m = 3, \u03bd = 2",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The real eigenvalues, \u03b6i, of DW repel each other and the |\u03bd| = 4 real modes are clearly visible. We have",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-strmuu1i-1",
-   "number": "2",
-   "title": "Str(M[U\u2212U\u22121])+i 1",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 40,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-2-strzuu1\u02c6a2stru2u2",
-   "number": "2",
-   "title": "Str(Z[U+U\u22121])+\u02c6a2Str(U2+U\u22122)",
+   "id": "sec-000-microscopic-spectrum-of-the-wilson-dirac-operato",
+   "number": null,
+   "title": "Microscopic Spectrum of the Wilson Dirac Operator",
    "level": 1,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 4302,
-   "n_words": 822
-  },
-  {
-   "id": "sec-002-2-strmuu1-1",
-   "number": "2",
-   "title": "Str(M[U+U\u22121])+ 1",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-003-2-strzuu1\u02c6a2stru2u2",
-   "number": "2",
-   "title": "Str(Z[U\u2212U\u22121])\u2212\u02c6a2Str(U2+U\u22122)",
-   "level": 1,
-   "page_start": 3,
+   "page_start": 1,
    "page_end": 4,
-   "n_chars": 7348,
-   "n_words": 1315
+   "n_chars": 18882,
+   "n_words": 3352,
+   "label_start": null,
+   "label_end": "4"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 4,
-  "sections": 4,
-  "chars_total": 11650
+  "toc_entries": 1,
+  "toc_inferred_entries": 1,
+  "toc_inferred_mean_confidence": 0.6,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 2,
+  "chars_total": 18922
  }
 }

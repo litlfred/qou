@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/angled-survey/sections/sec-005",
   "@type": [
     "doco:Section"
   ],
-  "title": "For each of these families of manifolds, certain angle inequalities obtained while",
-  "pageStart": 3,
-  "pageEnd": 4,
+  "title": "Extensions, applications, generalizations",
+  "pageStart": 19,
+  "pageEnd": 23,
   "contains": [
     "library/angled-survey/blocks/prose-sec-005"
   ],
-  "derivedFrom": "library/angled-survey/manifest",
-  "sourceDocument": "library/angled-survey/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/angled-survey/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/angled-survey/manifest.jsonld",
   "provenance": "ingested"
 }

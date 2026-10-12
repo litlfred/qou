@@ -6,7 +6,11 @@
   "sha256": "dd5c4660e1d08ea1abdcd646c885842b0d5c4c68567b44133dc7b5a6c52bed2a",
   "bytes": 551505,
   "pages": 31,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -151,6 +155,48 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 4,
-  "chars_total": 62892
+  "chars_total": 62892,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper.tex",
+   "tex_sections": 9,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-0-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.694,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-the-reduced-deligne-groupoid",
+     "title": "The Reduced Deligne Groupoid",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-6-the-deligne-2-groupoid",
+     "title": "The Deligne 2-Groupoid",
+     "prose_ratio": 0.862,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

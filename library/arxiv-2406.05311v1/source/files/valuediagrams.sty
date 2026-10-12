@@ -1,0 +1,195 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       value (right) diagrams                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This package is for drawing a product of transpositions acting on the quantum
+% Bruhat graph, where each transposition is represented by a line segment
+%
+% This is my first package. [modified by Nantel Bergeron to allow multiple critical widows, and by Laura for the FPSAC colors]
+%
+% (c) Franco Saliola <saliola@gmail.com>
+%
+% EXAMPLES:
+%
+%   \valuediagram{{6,7}, {7,8}, {8,9}, {9,1}, {1,3}, {3,4}}
+%   \valuediagram[height=4]{{6,7}, {7,8}, {8,9}, {9,1}, {1,3}, {3,4}}
+%   \valuediagram[padding=2]{{6,7}, {7,8}, {8,9}, {9,1}, {1,3}, {3,4}}
+%   \valuediagram[critical windows= { (2,5) }]{{6,7}, {7,8}, {8,9}, {9,1}, {1,3}, {3,4}}
+%   \valuediagram[critical windows= { (3,4), (5,6) }]{{6,7}, {7,8}, {8,9}, {9,1}, {1,2}, {2,3},{4,5}}
+%
+% OPTIONS:
+%
+%   classic color (default: LimeGreen)
+%   quantum color (default: FireBrick)
+%   height (default: automatical calculated)
+%   padding (default: 0.75)
+%   xmin (defeault: 1)
+%   xmax (default: automatical calculated)
+%   xscale (default: 0.4)
+%   yscale (default: 0.25)
+%   baseline (default: 0)
+%   critical windows (default: None)
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{valuediagrams}
+  [2017/05/08 v0.02 LaTeX package for "quantum value diagrams"]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                            load packages                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage[dvipsnames,table]{xcolor}
+
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+
+\RequirePackage{ifthen}
+
+\RequirePackage{keyval}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    define keys for keyval pairs                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\newcounter{valuediagram-height}
+\newcounter{valuediagram-xmin}
+\newcounter{valuediagram-xmax}
+\define@key{valuediagram}{classic color}{\def\valuediagram@classiccolor{#1}}
+\define@key{valuediagram}{quantum color}{\def\valuediagram@quantumcolor{#1}}
+\define@key{valuediagram}{fontsize}{\def\valuediagram@fontsize{#1}}
+\define@key{valuediagram}{xscale}{\def\valuediagram@xscale{#1}}
+\define@key{valuediagram}{yscale}{\def\valuediagram@yscale{#1}}
+\define@key{valuediagram}{scale}{\def\valuediagram@scale{#1}}
+\define@key{valuediagram}{critical windows}{\def\valuediagram@criticalwindows{#1}}
+\define@key{valuediagram}{critical window color}{\def\valuediagram@criticalwindowcolor{#1}}
+\define@key{valuediagram}{critical window padding}{\def\valuediagram@criticalwindowpadding{#1}}
+\define@key{valuediagram}{node size}{\def\valuediagram@nodesize{#1}}
+\define@key{valuediagram}{padding}{\def\valuediagram@padding{#1}}
+\define@key{valuediagram}{xmin}{\def\valuediagram@xmin{#1}}
+\define@key{valuediagram}{xmax}{\def\valuediagram@xmax{#1}}
+\define@key{valuediagram}{height}{\def\valuediagram@height{#1}}
+\define@key{valuediagram}{thickness}{\def\valuediagram@thickness{#1}}
+\define@key{valuediagram}{arrow}{\def\valuediagram@arrow{#1}}
+\define@key{valuediagram}{baseline}{\def\valuediagram@baseline{#1}}
+\define@key{valuediagram}{tikzpicture options}{\def\valuediagram@tikzpictureoptions{#1}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                     set default values for keys                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setkeys{valuediagram}{
+    classic color=DarkGreen,
+    quantum color=DarkRed,
+    fontsize=\tiny,
+    xscale=0.5,
+    yscale=0.25,
+    scale=1,
+    critical windows=None,
+    critical window color=yellow!50,
+    critical window padding=0.1,
+    node size=3pt,
+    padding=0.75,
+    xmin=1,
+    xmax=None,
+    height=None,
+    thickness={very thick},
+    arrow={-},
+    baseline=0pt,
+    tikzpicture options={},
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        value diagram macros                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\newcommand{\valuediagram}[2][]{%
+    \def\arg{#2}
+    \begingroup%
+    \setkeys{valuediagram}{#1}%
+    \begin{tikzpicture}[%
+            every node/.style={font=\valuediagram@fontsize},
+            xscale=\valuediagram@scale*\valuediagram@xscale,
+            yscale=\valuediagram@scale*\valuediagram@yscale,
+            baseline=\valuediagram@baseline,
+            \valuediagram@tikzpictureoptions]
+        \tikzstyle{node}=[circle, minimum size=\valuediagram@nodesize, inner sep=0pt]
+        \tikzstyle{classic-node}=[node, fill=\valuediagram@classiccolor, draw=\valuediagram@classiccolor]
+        \tikzstyle{quantum-node}=[node, fill=\valuediagram@quantumcolor, draw=\valuediagram@quantumcolor]
+        \tikzstyle{segment}=[\valuediagram@arrow, \valuediagram@thickness]
+        \tikzstyle{classic-segment}=[segment, color=\valuediagram@classiccolor]
+        \tikzstyle{quantum-segment}=[densely dotted, segment, color=\valuediagram@quantumcolor]
+        \tikzstyle{grid style}=[dash pattern = on 1.5pt off 1.5pt, color=lightgray]
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %  compute the height (length of the array), if not specified  %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \ifthenelse{\equal{\valuediagram@height}{None}}{%
+            \setcounter{valuediagram-height}{-1}
+            \foreach \ab in \arg {%
+                \stepcounter{valuediagram-height}%
+            }%
+            \def\height{\arabic{valuediagram-height}};%
+        }{%
+            \def\height{\valuediagram@height};%
+        }%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %  compute the width of the bounding box, if not specified  %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \ifthenelse{\equal{\valuediagram@xmax}{None}}{%
+            \setcounter{valuediagram-xmin}{1000}
+            \setcounter{valuediagram-xmax}{-1000}
+            \foreach \ab [count=\acnt] in \arg {%
+                \foreach \coord [count=\bcnt] in \ab {%
+                    \ifthenelse{\coord > \arabic{valuediagram-xmax}}{\setcounter{valuediagram-xmax}{\coord}}{}%
+                    \ifthenelse{\coord < \arabic{valuediagram-xmin}}{\setcounter{valuediagram-xmin}{\coord}}{}%
+                }%
+            }%
+            \def\valuediagram@xmin{\arabic{valuediagram-xmin}}%
+            \def\valuediagram@xmax{\arabic{valuediagram-xmax}}%
+        }{}%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %  grid: draw the bounding box  %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \draw[color=lightgray, rounded corners] (\valuediagram@xmin - \valuediagram@padding, -\valuediagram@padding) rectangle (\valuediagram@xmax + \valuediagram@padding, \height + \valuediagram@padding);
+        \foreach \x in {\valuediagram@xmin,...,\valuediagram@xmax} {\draw[grid style] (\x, -\valuediagram@padding) -- (\x, \height + \valuediagram@padding);}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        %  draw the segments  %
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \foreach \ab [count=\y from 0] in \arg {
+            \pgfmathtruncatemacro{\a}{{\ab}[0]}
+            \pgfmathtruncatemacro{\b}{{\ab}[1]}
+            \coordinate (a) at ($(\a, \y)$);
+            \coordinate (b) at ($(\b, \y)$);
+            \ifthenelse{\a < \b}{
+                \draw[classic-segment] (a) -- (b);
+                \node at (a) [classic-node] {};
+                \node at (b) [classic-node] {};
+            }{
+                \draw[quantum-segment] (a) -- (b);
+                \node at (a) [quantum-node] {};
+                \node at (b) [quantum-node] {};
+            }
+        }
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %  draw the critical window, if specified  %
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \pgfonlayer{background}
+        \ifthenelse{\equal{\valuediagram@criticalwindows}{None}}{}{%
+            \foreach \ab in \valuediagram@criticalwindows {
+            \pgfmathtruncatemacro{\a}{{\ab}[0]}
+            \pgfmathtruncatemacro{\b}{{\ab}[1]}
+            \draw[color=\valuediagram@criticalwindowcolor, fill] (\a + \valuediagram@criticalwindowpadding, -\valuediagram@padding) rectangle (\b - \valuediagram@criticalwindowpadding, \height + \valuediagram@padding);%
+            }
+        }%
+        \endpgfonlayer
+    \end{tikzpicture}
+  \endgroup%
+}
+\makeatother
+
+\endinput
+%%
+%% End of file `valuediagrams.sty'.

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/disssubmission/sections/sec-043",
   "@type": [
     "doco:Section"
   ],
-  "title": "Tannakian categories 53",
-  "pageStart": 61,
-  "pageEnd": 62,
+  "title": "The ﬁbres of multiple Abel-Jacobi maps",
+  "pageStart": 150,
+  "pageEnd": 152,
   "contains": [
     "library/disssubmission/blocks/prose-sec-043"
   ],
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
   "provenance": "ingested"
 }

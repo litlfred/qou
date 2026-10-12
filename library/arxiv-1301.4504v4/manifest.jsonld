@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1301.4504v4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Quantum Computation vs. Firewalls",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1301.4504v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1301.4504v4",
   "contains": [
     "library/arxiv-1301.4504v4/sections/sec-000",
     "library/arxiv-1301.4504v4/sections/sec-001",
@@ -30,8 +35,17 @@
     "library/arxiv-1301.4504v4/sections/sec-021"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1301.4504&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1301.4504v4",
+    "title_source": "slug",
     "source_file": "1301.4504v4.pdf",
     "source_sha256": "201acc5bb1d4b6a0fdf39f7edffb36e11b0119366d1459d968d80b8278a969f3",
     "pages": 66,

@@ -8,104 +8,44 @@ pages: 5-6
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
 doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
+text_source: latex
+latex_prose_ratio: 0.988
+latex_coverage_ratio: 0.964
 ---
-bundle. A Riemannian metric on M is a smooth section g : M→ T∗M⊗T∗M such that gx :=
-g(x)∈ T∗
-xM⊗T∗
-xM is a positive deﬁnite symmetric bilinear form on the tangent space TxM for
-every x∈ M. Intuitively, a Riemannian metric gives an inner product on TxM for every x∈ M
-and it varies smoothly with respect to x∈ M. Let G be a group and let m : G×G→ G be
-the multiplication map m(a1,a 2) = a1a2 and i : G→ G be the inversion map i(a) = a−1. Then
-G is a Lie group if it is a smooth manifold and the group operations m and i are smooth maps.
-The tangent space g of G at the identity e∈G is a Lie algebra, i.e., a vector space equipped with
-a Lie bracket, a bilinear map [ ·,·] : g× g→ g satisfying [X,Y ] =−[Y,X ] (skew-symmetry) and
-[X, [Y,Z ]]+[Z, [X,Y ]]+[Y, [Z,X ]] = 0 (Jacobi identity). For example, if G is the orthogonal group
-O(n) of all n×n real orthogonal matrices, then its Lie algebra so(n) is the vector space of all n×n
-real skew-symmetric matrices.
-For a Lie group G, we may deﬁne the left and right translation maps La,Ra : G → G by
-La(x) =m(a,x ) =ax and Ra(x) =m(x,a ) =xa. We say that a Riemannian metric g on G is left
-invariant if for all a∈G,
-gLa(x)
-(
-(dLa)x(X), (dLa)x(Y )
-)
-=gx(X,Y );
-right invariant if for all b∈G,
-gRb(x)
-(
-(dRb)x(X), (dRb)x(Y )
-)
-=gx(X,Y );
-and bi-invariant if for all a,b∈G,
-gRb◦La(x)
-(
-(d(Rb◦La))x(X), (d(Rb◦La))x(Y )
-)
-=gx(X,Y )
-over all X,Y ∈TxM.
-2.2. Homogeneous spaces. We now recall some basic deﬁnitions and facts about homogeneous
-spaces. Throughout this article, we will use double brackets JxK to denote the equivalence class of
-x.
-Deﬁnition 2.1. LetG be a Lie group acting on a smooth manifold M viaϕ :G×M→M. If the
-actionϕ is smooth and transitive, i.e., for any x,y∈M, there is some a∈G such thatϕ(a,x ) =y,
-then M is called a homogeneous space of the Lie group G.
-For a point x∈ M, the subgroup Gx ={a∈ G : ϕ(a,x ) = x} is called the isotropy group of
-x. We write G/Gx for the quotient group of G by Gx and denote by JaK∈ G/Gx the coset (or
-equivalence class) of a∈ G. Since G acts on M transitively, we see that there is a one-to-one
-correspondence F betweenG/Gx and M given by
-F :G/Gx→M, F (JaK) =ϕ(a,x ),
-for any x∈ M. In fact, F deﬁnes a diﬀeomorphism between the two smooth manifolds, which is
-the content of the following theorem [8, Theorems 9.2 and 9.3].
-Theorem 2.2. LetG be a Lie group acting on a smooth manifold M. For any x∈M, there exists
-a unique smooth structure on G/Gx such that the action
-ψ :G×G/Gx→G, ψ (a, Ja′K) = Jaa′K
-is smooth. Moreover, the map F :G/Gx→M sending JaK to ϕ(a,x ) is a G-equivariant diﬀeomor-
-phism, i.e., F is a diﬀeomorphism such that F
-(
-ψ(a, Ja′K)
-)
-=ϕ
-(
-a,F (Ja′K)
-)
-.
-The Grassmannian Gr(k,n ) ofk-dimensional subspaces in Rn is probably the best known example
-of a homogeneous space in manifold optimization. Indeed, O( n) acts transitively on Gr(k,n ) and
-as any k-dimensional subspace W⊆ Rn has isotropy group isomorphic to O( k)× O(n−k), we
-obtain the well-known characterization of Grassmannian
-Gr(k,n )∼= O(n)/
-(
-O(k)× O(n−k)
-)
-6 K. YE, K. S.-W. WONG, AND L.-H. LIM
-that is crucial for manifold optimization. Throughout this article ‘ ∼=’ will mean diﬀeomorphism.
-Let G be a Lie group and M a homogeneous space of G with action ϕ :G×M→M. Fix any
-x∈M and let H denote its isotropy group. By Theorem 2.2 we may identify M with G/H. The
-left translation map in Section 2.1 may be extended to this setting asLa :M→M,La(y) =ϕ(a,y )
-for any a∈G. In particular, if a∈H, then La(x) =x, and we have a linear isomorphism
-(dLa)x :TxM→TxM.
-Letg :M→T∗M⊗T∗M be a Riemannian metric on M. We say that g isG-invariant if for every
-y∈M and a∈G, we have
-gLa(y)
-(
-(dLa)y(X), (dLa)y(Y )
-)
-=gy(X,Y ) for all X,Y ∈TyM.
-AsM =G/H, we haveTJeKM = g/h where g and h are the Lie algebras ofG andH respectively.
-Heree∈G is the identity element. This allows us to deﬁne the adjoint representation AdH :H→
-GL(g/h), a↦→d(La◦Ra−1)JeK. In other words, for any a∈H and X∈ g/h,
-AdH(a)(X) =d(La◦Ra−1)JeK(X).
-An inner product η on the vector space g/h is said to be Ad H-invariant if for every a∈H,
-η(AdH(a)(X), AdH(a)(Y )) =η(X,Y ) for all X,Y ∈ g/h.
-We state an important result about their existence and construction [13, Proposition 3.16].
-Proposition 2.3. LetG be a connected Lie group and H a closed Lie subgroup with Lie algebras g
-and h respectively. If there is a subspace m of g such that g = m⊕ h and AdH(m)⊆ m, then there is
-a one-to-one correspondence between G-invariant metrics on M =G/H and AdH-invariant inner
-products on m.
-Proposition 2.3 says that if h⊆ g admits a complement m, then we may obtain a G-invariant
-metric g onM by an AdH-invariant inner product on m. Moreover, we may identify TxM with m,
-implying that the metric g onM is essentially determined by gx at a single arbitrary point x∈M.
-If in addition G is simple and compact, then G admits the unique bi-invariant metric called the
-canonical metric on M and (M,g ) is called a normal homogeneous space.
-Proposition 2.4. IfG is a compact Lie group, then G admits a bi-invariant metric and this metric
-induces a G-invariant metric g on M =G/H for any closed subgroup H⊆G.
+[]{#sec:Lie label="sec:Lie"} Let $M$ be a smooth manifold and $T^\ast M$ be its cotangent bundle. A *Riemannian metric* on $M$ is a smooth section $g: M \to T^\ast M \otimes T^\ast M$ such that $g_x \coloneqq g(x) \in T^\ast_xM \otimes T^\ast_x M$ is a positive definite symmetric bilinear form on the tangent space $T_xM$ for every $x\in M$. Intuitively, a Riemannian metric gives an inner product on $T_xM$ for every $x\in M$ and it varies smoothly with respect to $x\in M$. Let $G$ be a group and let $m:G\times G \to G$ be the multiplication map $m(a_1,a_2) = a_1a_2$ and $i: G \to G$ be the inversion map $i(a) = a^{-1}$. Then $G$ is a *Lie group* if it is a smooth manifold and the group operations $m$ and $i$ are smooth maps. The tangent space $\mathfrak{g}$ of $G$ at the identity $e\in G$ is a *Lie algebra*, i.e., a vector space equipped with a *Lie bracket*, a bilinear map $[\cdot, \cdot]: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g}$ satisfying $[X,Y] = -[Y,X]$ (skew-symmetry) and $[X,[Y,Z]] + [Z,[X,Y]] + [Y,[Z,X]] = 0$ (Jacobi identity). For example, if $G$ is the orthogonal group $\mathop{\mathrm{O}}(n)$ of all $n\times n$ real orthogonal matrices, then its Lie algebra $\mathfrak{so}(n)$ is the vector space of all $n\times n$ real skew-symmetric matrices.
+
+For a Lie group $G$, we may define the *left* and *right translation* maps $L_a,R_a:G \to G$ by $L_a(x) = m(a,x) = ax$ and $R_a(x) = m(x,a) = xa$. We say that a Riemannian metric $g$ on $G$ is *left invariant* if for all $a \in G$, $$g_{L_a(x)} \bigl((dL_a)_x (X), (dL_a)_x (Y)\bigr) = g_x(X,Y);$$ *right invariant* if for all $b \in G$, $$g_{R_b(x)} \bigl((dR_b)_x (X), (dR_b)_x (Y)\bigr) = g_x(X,Y);$$ and *bi-invariant* if for all $a,b\in G$, $$g_{R_b \circ L_a(x)} \bigl( (d (R_b \circ L_a))_x (X), (d (R_b \circ L_a))_x (Y)\bigr) = g_x(X,Y)$$ over all $X,Y\in T_xM$.
+
+## Homogeneous spaces
+
+We now recall some basic definitions and facts about homogeneous spaces. Throughout this article, we will use double brackets $\llbracket x\rrbracket$ to denote the equivalence class of $x$.
+
+::: definition
+Let $G$ be a Lie group acting on a smooth manifold $M$ via $\varphi: G\times M \to M$. If the action $\varphi$ is smooth and transitive, i.e., for any $x,y\in M$, there is some $a\in G$ such that $\varphi(a,x) = y$, then $M$ is called a *homogeneous space* of the Lie group $G$.
+:::
+
+For a point $x\in M$, the subgroup $G_x =\{a\in G: \varphi(a,x) = x\}$ is called the *isotropy group* of $x$. We write $G/G_x$ for the quotient group of $G$ by $G_x$ and denote by $\llbracket a \rrbracket\in G/G_x$ the *coset* (or equivalence class) of $a\in G$. Since $G$ acts on $M$ transitively, we see that there is a one-to-one correspondence $F$ between $G/G_{x}$ and $M$ given by $$F: G/G_x \to M,\quad F(\llbracket a\rrbracket) = \varphi(a,x),$$ for any $x\in M$. In fact, $F$ defines a diffeomorphism between the two smooth manifolds, which is the content of the following theorem [@Boothby1975 Theorems 9.2 and 9.3].
+
+::: theorem
+[]{#thm:homogeneous structure label="thm:homogeneous structure"} Let $G$ be a Lie group acting on a smooth manifold $M$. For any $x \in M$, there exists a unique smooth structure on $G/G_x$ such that the action $$\psi: G \times G/G_x \to G, \quad \psi(a, \llbracket a' \rrbracket) = \llbracket aa' \rrbracket$$ is smooth. Moreover, the map $F: G/G_x \to M$ sending $\llbracket a \rrbracket$ to $\varphi(a,x)$ is a $G$-equivariant diffeomorphism, i.e., $F$ is a diffeomorphism such that $F\bigl(\psi(a, \llbracket a' \rrbracket)\bigr) = \varphi \bigl(a, F(\llbracket a' \rrbracket)\bigr)$.
+:::
+
+The Grassmannian $\mathop{\mathrm{Gr}}(k,n)$ of $k$-dimensional subspaces in $\mathbb{R}^n$ is probably the best known example of a homogeneous space in manifold optimization. Indeed, $\mathop{\mathrm{O}}(n)$ acts transitively on $\mathop{\mathrm{Gr}}(k,n)$ and as any $k$-dimensional subspace $\mathbb{W} \subseteq \mathbb{R}^n$ has isotropy group isomorphic to $\mathop{\mathrm{O}}(k)\times \mathop{\mathrm{O}}(n-k)$, we obtain the well-known characterization of Grassmannian $$\mathop{\mathrm{Gr}}(k,n) \cong \mathop{\mathrm{O}}(n)/\bigl(\mathop{\mathrm{O}}(k)\times \mathop{\mathrm{O}}(n-k)\bigr)$$ that is crucial for manifold optimization. Throughout this article '$\cong$' will mean diffeomorphism.
+
+Let $G$ be a Lie group and $M$ a homogeneous space of $G$ with action $\varphi: G\times M \to M$. Fix any $x\in M$ and let $H$ denote its isotropy group. By Theorem [\[thm:homogeneous structure\]](#thm:homogeneous structure){reference-type="ref" reference="thm:homogeneous structure"} we may identify $M$ with $G/H$. The left translation map in Section [\[sec:Lie\]](#sec:Lie){reference-type="ref" reference="sec:Lie"} may be extended to this setting as $L_a : M \to M$, $L_a(y) =\varphi(a,y)$ for any $a \in G$. In particular, if $a\in H$, then $L_a(x) = x$, and we have a linear isomorphism $$(dL_a)_x : T_xM \to T_xM.$$ Let $g: M \to T^\ast M \otimes T^\ast M$ be a Riemannian metric on $M$. We say that $g$ is $G$-*invariant* if for every $y\in M$ and $a\in G$, we have $$g_{L_a(y)}\bigl((dL_a)_y(X), (dL_a)_y(Y)\bigr) = g_y (X,Y) \quad \text{for all }  X,Y\in T_yM.$$
+
+As $M  = G/H$, we have $T_{\llbracket e \rrbracket} M  = \mathfrak{g}/\mathfrak{h}$ where $\mathfrak{g}$ and $\mathfrak{h}$ are the Lie algebras of $G$ and $H$ respectively. Here $e\in G$ is the identity element. This allows us to define the *adjoint representation* $\mathop{\mathrm{Ad}}_H: H \to \mathop{\mathrm{GL}}(\mathfrak{g}/\mathfrak{h})$, $a \mapsto d(L_a \circ R_{a^{-1}})_{\llbracket e \rrbracket}$. In other words, for any $a \in H$ and $X\in \mathfrak{g}/\mathfrak{h}$, $$\mathop{\mathrm{Ad}}_H (a) (X) = d (L_a\circ R_{a^{-1}} )_{\llbracket e \rrbracket}(X).$$ An inner product $\eta$ on the vector space $\mathfrak{g}/\mathfrak{h}$ is said to be *$\mathop{\mathrm{Ad}}_H$-invariant* if for every $a\in H$, $$\eta (\mathop{\mathrm{Ad}}_H(a)(X),\mathop{\mathrm{Ad}}_H(a)(Y)) = \eta (X,Y) \quad \text{for all } X,Y\in \mathfrak{g}/\mathfrak{h}.$$
+
+We state an important result about their existence and construction [@CE2008 Proposition 3.16].
+
+::: proposition
+[]{#prop:metric inner product correspondence label="prop:metric inner product correspondence"} Let $G$ be a connected Lie group and $H$ a closed Lie subgroup with Lie algebras $\mathfrak{g}$ and $\mathfrak{h}$ respectively. If there is a subspace $\mathfrak{m}$ of $\mathfrak{g}$ such that $\mathfrak{g} = \mathfrak{m} \oplus \mathfrak{h}$ and $\mathop{\mathrm{Ad}}_H (\mathfrak{m}) \subseteq \mathfrak{m}$, then there is a one-to-one correspondence between $G$-invariant metrics on $M = G/H$ and $\mathop{\mathrm{Ad}}_H$-invariant inner products on $\mathfrak{m}$.
+:::
+
+Proposition [\[prop:metric inner product correspondence\]](#prop:metric inner product correspondence){reference-type="ref" reference="prop:metric inner product correspondence"} says that if $\mathfrak{h}\subseteq \mathfrak{g}$ admits a complement $\mathfrak{m}$, then we may obtain a $G$-invariant metric $g$ on $M$ by an $\mathop{\mathrm{Ad}}_H$-invariant inner product on $\mathfrak{m}$. Moreover, we may identify $T_xM$ with $\mathfrak{m}$, implying that the metric $g$ on $M$ is essentially determined by $g_x$ at a single arbitrary point $x \in M$.
+
+If in addition $G$ is simple and compact, then $G$ admits the unique bi-invariant metric called the *canonical metric* on $M$ and $(M,g)$ is called a *normal homogeneous space*.
+
+::: proposition
+[]{#prop:nhs label="prop:nhs"} If $G$ is a compact Lie group, then $G$ admits a bi-invariant metric and this metric induces a $G$-invariant metric $g$ on $M = G/H$ for any closed subgroup $H\subseteq G$.
+:::

@@ -1,82 +1,139 @@
 {
-  "_schema": "pdf-structure/v1",
-  "doc_id": "arxiv-2406.05311v1",
-  "source": {
-    "file": "A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf",
-    "sha256": "c431fca1503295472c64e8a979468af083bd75329242fd3d137f28ae81422b6b",
-    "bytes": 569861,
-    "pages": 34
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2406.05311v1",
+ "source": {
+  "file": "A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf",
+  "sha256": "c431fca1503295472c64e8a979468af083bd75329242fd3d137f28ae81422b6b",
+  "bytes": 569861,
+  "pages": 34,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2406.05311",
+   "version": "1",
+   "primary_class": "math.CO",
+   "stamp_date": "8 Jun 2024"
   },
-  "metadata": {
-    "arxiv": {
-      "id": "2406.05311",
-      "version": "1",
-      "primary_class": "math.CO",
-      "stamp_date": "8 Jun 2024"
-    },
-    "doi": null,
-    "title": "A QUANTUM MURNAGHAN\u2013NAKAYAMA RULE FOR THE FLAG MANIFOLD C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE",
-    "authors_raw": "C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE"
+  "doi": null,
+  "title": "A QUANTUM MURNAGHAN\u2013NAKAYAMA RULE FOR THE FLAG MANIFOLD C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE",
+  "authors_raw": "C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE"
+ },
+ "toc": [],
+ "toc_source": "headings",
+ "sections": [
+  {
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "id": "sec-000-introduction",
+   "n_chars": 5754,
+   "n_words": 907
   },
-  "toc": [],
-  "toc_source": "headings",
-  "sections": [
-    {
-      "number": "1",
-      "title": "Introduction",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 2,
-      "id": "sec-000-introduction",
-      "n_chars": 5754,
-      "n_words": 907
-    },
-    {
-      "number": "2",
-      "title": "A Murnaghan\u2013Nakayama rule for (classic) cohomology",
-      "level": 1,
-      "page_start": 2,
-      "page_end": 8,
-      "id": "sec-001-a-murnaghan-nakayama-rule-for-classic-cohomology",
-      "n_chars": 16361,
-      "n_words": 3415
-    },
-    {
-      "number": "3",
-      "title": "A Murnaghan\u2013Nakayama rule for quantum cohomology",
-      "level": 1,
-      "page_start": 8,
-      "page_end": 12,
-      "id": "sec-002-a-murnaghan-nakayama-rule-for-quantum-cohomology",
-      "n_chars": 10488,
-      "n_words": 2228
-    },
-    {
-      "number": "4",
-      "title": "Quantum equals classical",
-      "level": 1,
-      "page_start": 12,
-      "page_end": 15,
-      "id": "sec-003-quantum-equals-classical",
-      "n_chars": 8742,
-      "n_words": 1892
-    },
-    {
-      "number": "5",
-      "title": "Left operators",
-      "level": 1,
-      "page_start": 15,
-      "page_end": 34,
-      "id": "sec-004-left-operators",
-      "n_chars": 55662,
-      "n_words": 11774
-    }
-  ],
-  "diagnostics": {
-    "pages_without_text": 0,
-    "likely_scanned": false,
-    "toc_entries": 0,
-    "sections": 5,
-    "chars_total": 97903
+  {
+   "number": "2",
+   "title": "A Murnaghan\u2013Nakayama rule for (classic) cohomology",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 8,
+   "id": "sec-001-a-murnaghan-nakayama-rule-for-classic-cohomology",
+   "n_chars": 16361,
+   "n_words": 3415
+  },
+  {
+   "number": "3",
+   "title": "A Murnaghan\u2013Nakayama rule for quantum cohomology",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 12,
+   "id": "sec-002-a-murnaghan-nakayama-rule-for-quantum-cohomology",
+   "n_chars": 10488,
+   "n_words": 2228
+  },
+  {
+   "number": "4",
+   "title": "Quantum equals classical",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "id": "sec-003-quantum-equals-classical",
+   "n_chars": 8742,
+   "n_words": 1892
+  },
+  {
+   "number": "5",
+   "title": "Left operators",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 34,
+   "id": "sec-004-left-operators",
+   "n_chars": 55662,
+   "n_words": 11774
   }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "sections": 5,
+  "chars_total": 97903,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "quantum-mn-rule.tex",
+   "tex_sections": 30,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-a-murnaghan-nakayama-rule-for-classic-cohomology",
+     "title": "A Murnaghan\u2013Nakayama rule for (classic) cohomology",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-a-murnaghan-nakayama-rule-for-quantum-cohomology",
+     "title": "A Murnaghan\u2013Nakayama rule for quantum cohomology",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-quantum-equals-classical",
+     "title": "Quantum equals classical",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-left-operators",
+     "title": "Left operators",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
+ }
 }

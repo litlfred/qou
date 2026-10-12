@@ -1,27 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s-p05/sections/sec-004",
   "@type": [
     "doco:Section"
   ],
-  "title": "SL-oriented motivic spectra",
-  "pageStart": 13,
-  "pageEnd": 21,
+  "title": "Projective pushforward in twisted cohomology",
+  "pageStart": 21,
+  "pageEnd": 25,
   "contains": [
-    "library/ant-v14-n7-s-p05/blocks/prose-sec-004",
-    "library/ant-v14-n7-s-p05/blocks/lem-sec-004-01",
-    "library/ant-v14-n7-s-p05/blocks/rem-sec-004-02",
-    "library/ant-v14-n7-s-p05/blocks/rem-sec-004-03",
-    "library/ant-v14-n7-s-p05/blocks/rem-sec-004-04",
-    "library/ant-v14-n7-s-p05/blocks/lem-sec-004-05",
-    "library/ant-v14-n7-s-p05/blocks/rem-sec-004-06",
-    "library/ant-v14-n7-s-p05/blocks/rem-sec-004-07",
-    "library/ant-v14-n7-s-p05/blocks/rem-sec-004-08",
-    "library/ant-v14-n7-s-p05/blocks/rem-sec-004-09",
-    "library/ant-v14-n7-s-p05/blocks/rem-sec-004-10",
-    "library/ant-v14-n7-s-p05/blocks/prop-sec-004-11"
+    "library/ant-v14-n7-s-p05/blocks/prose-sec-004"
   ],
-  "derivedFrom": "library/ant-v14-n7-s-p05/manifest",
-  "sourceDocument": "library/ant-v14-n7-s-p05/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p05/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p05/manifest.jsonld",
   "provenance": "ingested"
 }

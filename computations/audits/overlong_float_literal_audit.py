@@ -171,7 +171,7 @@ def main() -> int:
         return selftest()
 
     hits, scanned = scan(root)
-    live = [h for h in hits if "_deprecated" not in h["file"]]
+    live = [h for h in hits if ("_deprecated" not in h and "fsh-guts" not in h)["file"]]
     dead = len(hits) - len(live)
 
     print("=" * 78)
@@ -180,7 +180,7 @@ def main() -> int:
     print(f"  files scanned            : {scanned}")
     print(f"  flagged literals         : {len(hits)}")
     print(f"    live                   : {len(live)}")
-    print(f"    in computations/_deprecated : {dead}")
+    print(f"    in fsh-guts/deprecated/computations : {dead}")
     print(f"  test                     : Decimal(token) != Decimal(float(token))")
     print(f"                             (an exact binary64 expansion is NOT a defect)")
     print()

@@ -1,156 +1,218 @@
 {
-  "_schema": "pdf-structure/v1",
-  "doc_id": "arxiv-0804.0917v1",
-  "source": {
-    "file": "0804.0917v1.pdf",
-    "sha256": "887fbd8be47a278157006ea73b1ccaff08b2d32a12b3d33f768e74c13fa7189c",
-    "bytes": 188779,
-    "pages": 16,
-    "text_source": "embedded",
-    "extractor": "pypdf"
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0804.0917v1",
+ "source": {
+  "file": "0804.0917v1.pdf",
+  "sha256": "887fbd8be47a278157006ea73b1ccaff08b2d32a12b3d33f768e74c13fa7189c",
+  "bytes": 188779,
+  "pages": 16,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0804.0917",
+   "version": "1",
+   "primary_class": "math.RA",
+   "stamp_date": "6 Apr 2008"
   },
-  "metadata": {
-    "arxiv": {
-      "id": "0804.0917",
-      "version": "1",
-      "primary_class": "math.RA",
-      "stamp_date": "6 Apr 2008"
-    },
-    "doi": null,
-    "title": "Composition-Diamond Lemma for Modules \u2217",
-    "authors_raw": "Yuqun Chen, Yongshan Chen and Chanyan Zhong",
-    "title_lines": [
-      "Composition-Diamond Lemma for Modules \u2217"
-    ],
-    "abstract": "In this paper we give some relationships among the Gr\u00a8 obner-Shirsh ov bases in free associative algebras, free left modules and \u201cdouble-free\u201d le ft modules (free modules over a free algebra). We give the Chibrikov\u2019s Composition-Diamond lem ma for modules and show that Kang-Lee\u2019s Composition-Diamond lemma follows from th is lemma. As applications, we also deal with highest weight module over the Lie algeb ra sl2, Verma module over a Kac-Moody algebra, Verma module over Lie algebra of c oe\ufb03cients of a free conformal algebra and the universal enveloping module for a Sabinin algebra.",
-    "docinfo": {
-      "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-      "CreationDate": "D:20210715192905-04'00'",
-      "Creator": "LaTeX with hyperref package",
-      "Title": "",
-      "Author": ""
-    }
-  },
-  "toc": [
-    {
-      "level": 1,
-      "title": "Introduction",
-      "page": 1,
-      "source": "outline",
-      "number": null
-    },
-    {
-      "level": 1,
-      "title": "Composition-Diamond lemma for left ideals of a free algebra",
-      "page": 2,
-      "source": "outline",
-      "number": null
-    },
-    {
-      "level": 1,
-      "title": "Composition-Diamond lemma for ``double-free\" modules",
-      "page": 4,
-      "source": "outline",
-      "number": null
-    },
-    {
-      "level": 1,
-      "title": "Highest weight modules over sl2",
-      "page": 7,
-      "source": "outline",
-      "number": null
-    },
-    {
-      "level": 1,
-      "title": "Verma module over Kac-Moody algebras",
-      "page": 8,
-      "source": "outline",
-      "number": null
-    },
-    {
-      "level": 1,
-      "title": "Verma module over the coefficient algebra of a free Lie conformal algebra",
-      "page": 10,
-      "source": "outline",
-      "number": null
-    },
-    {
-      "level": 1,
-      "title": "Universal enveloping module for a Sabinin algebra",
-      "page": 11,
-      "source": "outline",
-      "number": null
-    }
+  "doi": null,
+  "title": "Composition-Diamond Lemma for Modules \u2217",
+  "authors_raw": "Yuqun Chen, Yongshan Chen and Chanyan Zhong",
+  "title_lines": [
+   "Composition-Diamond Lemma for Modules \u2217"
   ],
-  "toc_source": "outline",
-  "sections": [
-    {
-      "id": "sec-front-matter",
-      "number": null,
-      "title": "Front matter",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 1,
-      "n_chars": 1069,
-      "n_words": 154
-    },
-    {
-      "id": "sec-000-introduction",
-      "number": null,
-      "title": "Introduction",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 2,
-      "n_chars": 1627,
-      "n_words": 309
-    },
-    {
-      "id": "sec-001-composition-diamond-lemma-for-left-ideals-of-a-f",
-      "number": null,
-      "title": "Composition-Diamond lemma for left ideals of a free algebra",
-      "level": 1,
-      "page_start": 2,
-      "page_end": 7,
-      "n_chars": 12802,
-      "n_words": 2974
-    },
-    {
-      "id": "sec-002-highest-weight-modules-over-sl2",
-      "number": null,
-      "title": "Highest weight modules over sl2",
-      "level": 1,
-      "page_start": 7,
-      "page_end": 8,
-      "n_chars": 2325,
-      "n_words": 554
-    },
-    {
-      "id": "sec-003-verma-module-over-kac-moody-algebras",
-      "number": null,
-      "title": "Verma module over Kac-Moody algebras",
-      "level": 1,
-      "page_start": 8,
-      "page_end": 11,
-      "n_chars": 6300,
-      "n_words": 1485
-    },
-    {
-      "id": "sec-004-universal-enveloping-module-for-a-sabinin-algebr",
-      "number": null,
-      "title": "Universal enveloping module for a Sabinin algebra",
-      "level": 1,
-      "page_start": 11,
-      "page_end": 16,
-      "n_chars": 8660,
-      "n_words": 1817
-    }
-  ],
-  "diagnostics": {
-    "pages_without_text": 0,
-    "likely_scanned": false,
-    "toc_entries": 7,
-    "sections": 6,
-    "chars_total": 32783
+  "abstract": "In this paper we give some relationships among the Gr\u00a8 obner-Shirsh ov bases in free associative algebras, free left modules and \u201cdouble-free\u201d le ft modules (free modules over a free algebra). We give the Chibrikov\u2019s Composition-Diamond lem ma for modules and show that Kang-Lee\u2019s Composition-Diamond lemma follows from th is lemma. As applications, we also deal with highest weight module over the Lie algeb ra sl2, Verma module over a Kac-Moody algebra, Verma module over Lie algebra of c oe\ufb03cients of a free conformal algebra and the universal enveloping module for a Sabinin algebra.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210715192905-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
   },
-  "duplicate_of": "czechmathj-60-2010-1-4"
+  {
+   "level": 1,
+   "title": "Composition-Diamond lemma for left ideals of a free algebra",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Composition-Diamond lemma for ``double-free\" modules",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Highest weight modules over sl2",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Verma module over Kac-Moody algebras",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Verma module over the coefficient algebra of a free Lie conformal algebra",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Universal enveloping module for a Sabinin algebra",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1069,
+   "n_words": 154
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1627,
+   "n_words": 309
+  },
+  {
+   "id": "sec-001-composition-diamond-lemma-for-left-ideals-of-a-f",
+   "number": null,
+   "title": "Composition-Diamond lemma for left ideals of a free algebra",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 12802,
+   "n_words": 2974
+  },
+  {
+   "id": "sec-002-highest-weight-modules-over-sl2",
+   "number": null,
+   "title": "Highest weight modules over sl2",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2325,
+   "n_words": 554
+  },
+  {
+   "id": "sec-003-verma-module-over-kac-moody-algebras",
+   "number": null,
+   "title": "Verma module over Kac-Moody algebras",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 6300,
+   "n_words": 1485
+  },
+  {
+   "id": "sec-004-universal-enveloping-module-for-a-sabinin-algebr",
+   "number": null,
+   "title": "Universal enveloping module for a Sabinin algebra",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 16,
+   "n_chars": 8660,
+   "n_words": 1817
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 6,
+  "chars_total": 32783,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 7,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-composition-diamond-lemma-for-left-ideals-of-a-f",
+     "title": "Composition-Diamond lemma for left ideals of a free algebra",
+     "prose_ratio": 0.615,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-highest-weight-modules-over-sl2",
+     "title": "Highest weight modules over sl2",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-verma-module-over-kac-moody-algebras",
+     "title": "Verma module over Kac-Moody algebras",
+     "prose_ratio": 0.603,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-universal-enveloping-module-for-a-sabinin-algebr",
+     "title": "Universal enveloping module for a Sabinin algebra",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
+ },
+ "duplicate_of": "czechmathj-60-2010-1-4"
 }

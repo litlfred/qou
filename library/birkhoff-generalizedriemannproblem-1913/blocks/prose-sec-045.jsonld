@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-045",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-045",
   "kind": "prose",
   "title": "565",
   "pageStart": 46,
   "pageEnd": 47,
   "text": "../sections/sec-045-565.md",
-  "derivedFrom": "library/birkhoff-generalizedriemannproblem-1913/manifest",
-  "sourceDocument": "library/birkhoff-generalizedriemannproblem-1913/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/birkhoff-generalizedriemannproblem-1913/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/birkhoff-generalizedriemannproblem-1913/manifest.jsonld",
   "provenance": "ingested"
 }

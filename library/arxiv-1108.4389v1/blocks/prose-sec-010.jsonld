@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1108.4389v1/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1108.4389v1/blocks/prose-sec-010",
   "kind": "prose",
-  "title": "Changing the triangulation",
-  "pageStart": 19,
-  "pageEnd": 20,
-  "text": "../sections/sec-010-25-changing-the-triangulation.md",
-  "derivedFrom": "library/arxiv-1108.4389v1/manifest",
-  "sourceDocument": "library/arxiv-1108.4389v1/manifest",
+  "title": "The octahedron",
+  "pageStart": 37,
+  "pageEnd": 39,
+  "text": "../sections/sec-010-45-the-octahedron.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.4389v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.4389v1/manifest.jsonld",
   "provenance": "ingested"
 }

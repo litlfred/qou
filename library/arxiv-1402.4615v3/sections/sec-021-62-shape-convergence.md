@@ -8,121 +8,42 @@ pages: 40-41
 source_pdf: 1402.4615v3.pdf
 source_sha256: b6e7c795cd1a7cd2
 doc_brief: "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials."
+text_source: latex
+latex_prose_ratio: 0.91
+latex_coverage_ratio: 0.96
 ---
-polynomial functions at D1/√n
-(
-Aα(λ(n))
-)
-converge towards the evaluation at Ω .
-Ivanov and Olshanski has established that, if one can prove that the support of these
-renormalized Young diagrams lies in some compact, this would imply the uniform
-convergence, that is Theorem 1.1.
-The following technical lemma, proved by Fulman [Ful04, Lem ma 6.6] will
-allow us to conclude:
-Lemma 6.3. Suppose that α > 0. Then
-(1)
-P(α)
-n
-(
-λ1 ≥ 2e
-√
-n
-α
-)
-≤ αn24−e
-√ n
-α ,
-(2)
-P(α)
-n (λ′
-1 ≥ 2e√
-nα) ≤ n2
-α 4−e√nα.
-In particular
-lim
-n→∞
-P(α)
-n
-([
-− λ′
-1
-√n ; λ1√n
-]
-⊆
-[
-−2e√α, 2e√α
-])
-= 1.
-End of proof of Theorem 1.1. It follows from Proposition 6.2 and Lemma 6.3 by
-the same argument as the one given in [IO02, Theorem 5.5]. □
-7. J ACK MEASURE : CENTRAL LIMIT THEOREM FOR JACK CHARACTERS
-In this section we prove the central limit theorem for Jack ch aracters (Theorem
-1.2) and the bound of the speed of convergence in this theorem (Theorem 1.3).
-7.1. Multivariate Stein’s method. As explained in introduction, our main tool
-will be a multivariate analog of the so-called Stein’s method due to Reinert and
-Röllin [RR09]. For any discrete random variables W, W ∗ with values in Rd,
-we say that the pair (W, W ∗) is exchangeable if for any w1, w2 ∈ Rd one has
-P(W = w1, W ∗ = w2) = P(W = w2, W ∗ = w1). Let EW (·) denotes the condi-
-tional expected value givenW . The theorem of Reinert and Röllin is the following
-[RR09, Theorem 2.1]:
-Theorem 7.1 (multivariate Stein’s theorem). Let (W, W ∗) be an exchangeable
-pair of Rd-valued random variables such that E(W ) = 0 and E(W W t) = Σ,
-where Σ ∈ Md×d(R) is symmetric and positive deﬁnite matrix. Suppose that
-EW (W ∗ − W ) = −Λ W , where Λ ∈ Md×d(R) is invertible. Then, if Z is a
-LARGE DIAGRAMS AND STRUCTURE CONSTANTS 41
-d-dimensional standard normal distribution, we have for eve ry three times differ-
-entiable function h : Rd → R,
-(21)
-⏐
-⏐
-⏐Eh(W ) − Eh(Σ1/2Z)
-⏐
-⏐
-⏐ ≤ |h|2
-4 A + |h|3
-12 B,
-where, using the notation λ(i) :=∑
-1≤m≤d |(Λ −1)m,i|,
-|h|n = sup
-i1,...,in
-‖
-‖
-‖
-‖
-∂n
-∂xi1 · · ·∂xin
-h
-‖
-‖
-‖
-‖ ,
-A =
-∑
-1≤i,j≤d
-λ(i)
-√
-VarEW (W ∗
-i − Wi)(W ∗
-j − Wj),
-B =
-∑
-1≤i,j,k≤d
-λ(i)E|(W ∗
-i − Wi)(W ∗
-j − Wj)(W ∗
-k − Wk)|.
-Let d be a positive integer. For k ≥ 2, as in the statement of Theorem 1.2, we
-deﬁne the following function of Young diagrams of size n:
-Wk = n−k/2√
-k θ(α)
-(k,1n−k) = n−k/2√
-k
-−1
-Ch(k) .
-It can be seen as a random variable on the probability space of Young diagrams of
-size n endowed with Jack measure. We also consider the correspondi ng random
-vector
-˜Wd = (W2, . . . , Wd+1).
-Theorem 1.2 states that ˜Wd converges in distribution towards a vector of indepen-
-dent Gaussian random variables. Therefore we would like to a pply the theorem
-above to this d-uplet of random variables. In the next sections, we shall co ntruct
+In the previous Section, we proved that evaluations of polynomial functions at $D_{1/\sqrt{n}} \big(A_\alpha(\lambda_{(n)})\big)$ converge towards the evaluation at $\Omega$. Ivanov and Olshanski has established that, if one can prove that the support of these renormalized Young diagrams lies in some compact, this would imply the uniform convergence, that is Theorem [\[theo:RYD-limit\]](#theo:RYD-limit){reference-type="ref" reference="theo:RYD-limit"}.
+
+The following technical lemma, proved by Fulman [@FulmanFluctuationChA2 Lemma 6.6] will allow us to conclude:
+
+::: lemma
+[]{#lem:FiniteSupport label="lem:FiniteSupport"} Suppose that $\alpha > 0$. Then
+
+1.  $$\mathbb{P}_n^{(\alpha)}\left(\lambda_1\geq 2 e\sqrt{\frac{n}{\alpha}}\right) \leq \alpha n^2 4^{-e\sqrt{\frac{n}{\alpha}}},$$
+
+2.  $$\mathbb{P}_n^{(\alpha)}(\lambda_1' \geq 2 e\sqrt{n\alpha}) \leq \frac{n^2}{\alpha} 4^{-e\sqrt{n\alpha}}.$$
+
+In particular $$\lim_{n \to \infty} \mathbb{P}_n^{(\alpha)} \left(
+ \left[-\frac{\lambda'_1}{\sqrt{n}};\frac{\lambda_1}{\sqrt{n}}\right] \subseteq \left[-2e\sqrt{\alpha}, \frac{2e}{\sqrt{\alpha}}\right]
+ \right) =1.$$
+:::
+
+*End of proof of Theorem [\[theo:RYD-limit\]](#theo:RYD-limit){reference-type="ref" reference="theo:RYD-limit"}.* It follows from Proposition [\[PropAPlanchWeakConv\]](#PropAPlanchWeakConv){reference-type="ref" reference="PropAPlanchWeakConv"} and Lemma [\[lem:FiniteSupport\]](#lem:FiniteSupport){reference-type="ref" reference="lem:FiniteSupport"} by the same argument as the one given in [@IvanovOlshanski2002 Theorem 5.5]. 0◻
+
+# Jack measure: central limit theorem for Jack characters {#sect:CLT}
+
+In this section we prove the central limit theorem for Jack characters (Theorem [\[theo:FluctuationsJackCharacters\]](#theo:FluctuationsJackCharacters){reference-type="ref" reference="theo:FluctuationsJackCharacters"}) and the bound of the speed of convergence in this theorem (Theorem [\[theo:SpeedConvergence\]](#theo:SpeedConvergence){reference-type="ref" reference="theo:SpeedConvergence"}).
+
+## Multivariate Stein's method
+
+As explained in introduction, our main tool will be a multivariate analog of the so-called *Stein's method* due to Reinert and Röllin [@ReinertRollin2009]. For any discrete random variables $W, W^*$ with values in $\mathbb{R}^d$, we say that the pair $(W,W^*)$ is *exchangeable* if for any $w_1,w_2 \in \mathbb{R}^d$ one has $\mathbb{P}(W = w_1, W^* = w_2) = \mathbb{P}(W = w_2, W^* = w_1)$. Let $\mathbb{E}^W(\cdot)$ denotes the conditional expected value given $W$. The theorem of Reinert and Röllin is the following [@ReinertRollin2009 Theorem 2.1]:
+
+::: theorem
+[]{#theo:MultivariateStein label="theo:MultivariateStein"} Let $(W,W^*)$ be an exchangeable pair of $\mathbb{R}^d$-valued random variables such that $\mathbb{E}(W) = 0$ and $\mathbb{E}(WW^t) = \varSigma$, where $\Sigma \in M_{d \times d}(\mathbb{R})$ is symmetric and positive definite matrix. Suppose that $\mathbb{E}^W(W^* - W) = - \Lambda W$, where $\Lambda \in M_{d \times d}(\mathbb{R})$ is invertible. Then, if $Z$ is a $d$-dimensional standard normal distribution, we have for every three times differentiable function $h:\mathbb{R}^d \to \mathbb{R}$, $$\left| \mathbb{E}h(W) - \mathbb{E}h(\varSigma^{1/2}Z) \right| \leq \frac{|h|_2}{4}A + \frac{|h|_3}{12}B,$$ where, using the notation $\lambda^{(i)} := \sum_{1 \leq m \leq d}|(\Lambda^{-1})_{m,i}|$, $$\begin{aligned}
+    |h|_n &= \sup_{i_1,\dots,i_n} \left\lVert \frac{\partial^n}{\partial x_{i_1} \cdots \partial x_{i_n}}h\right\rVert, \\
+ A &= \sum_{1 \leq i,j \leq d} \lambda^{(i)} \sqrt{\mathop{\mathrm{Var}}\mathbb{E}^W(W_i^* - W_i)(W_j^* - W_j)}, \\
+ B &= \sum_{1 \leq i,j,k \leq d} \lambda^{(i)} \mathbb{E}|(W_i^* - W_i)(W_j^* - W_j)(W_k^* - W_k)|.
+\end{aligned}$$
+:::
+
+Let $d$ be a positive integer. For $k \ge 2$, as in the statement of Theorem [\[theo:FluctuationsJackCharacters\]](#theo:FluctuationsJackCharacters){reference-type="ref" reference="theo:FluctuationsJackCharacters"}, we define the following function of Young diagrams of size $n$: $$W_k = n^{-k/2} \sqrt{k} \, \theta^{(\alpha)}_{(k,1^{n-k})} = n^{-k/2} \sqrt{k}^{-1} \mathop{\mathrm{Ch}}_{(k)}.$$ It can be seen as a random variable on the probability space of Young diagrams of size $n$ endowed with Jack measure. We also consider the corresponding random vector $$\tilde{W}_d = (W_2,\dots,W_{d+1}).$$ Theorem [\[theo:FluctuationsJackCharacters\]](#theo:FluctuationsJackCharacters){reference-type="ref" reference="theo:FluctuationsJackCharacters"} states that $\tilde{W}_d$ converges in distribution towards a vector of independent Gaussian random variables. Therefore we would like to apply the theorem above to this $d$-uplet of random variables. In the next sections, we shall contruct an exchangeable pair and check the hypothesis of Theorem [\[theo:MultivariateStein\]](#theo:MultivariateStein){reference-type="ref" reference="theo:MultivariateStein"}.

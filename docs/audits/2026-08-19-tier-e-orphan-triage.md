@@ -12,7 +12,7 @@ the remaining **169** have lost their producer while still being *consumed*.
 
 | Class | Count | Disposition |
 |---|---:|---|
-| Dead — no producer, no consumer, no doc reference | **13** | **Deprecated** (`git mv` to `computations/_deprecated/`) |
+| Dead — no producer, no consumer, no doc reference | **13** | **Deprecated** (`git mv` to `fsh-guts/deprecated/computations/`) |
 | False orphan — producer on disk, tool could not see it | **4** | **Categorizer fixed** (no witness touched) |
 | Live consumers, lost producer | 147 | **Keep** — see §3, needs its own workstream |
 | Prose/doc reference only | 17 | **Keep / freeze** — historical evidence (precedent below) |
@@ -407,7 +407,7 @@ warranted.
 
 `witness_producer_executes_audit.resolve()` requires a **unique** hit. The
 producer exists at **both** `computations/probes/` and
-`computations/_deprecated/` — a live script and its retired twin — so the
+`fsh-guts/deprecated/computations/` — a live script and its retired twin — so the
 uniqueness test rejected the match and the producer resolved to `None`.
 
 A `_deprecated/` copy is **by definition not the producer**. Every other scan in

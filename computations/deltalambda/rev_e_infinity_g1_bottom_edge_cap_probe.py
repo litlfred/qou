@@ -180,6 +180,14 @@ from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 
 # the corpus's recorded figure, which this probe withdraws
 RECORDED_S = 13
+# Pin the precision explicitly before building a 40-digit literal.  The `exec` above already
+# sets `mp.dps = 60` — measured, and all 40 digits round-trip exactly with residual 0.0, so this
+# changes no number — but that is a side effect of ANOTHER FILE's source several lines up, and
+# reordering the two would truncate this constant to 15 digits with no error and no diff.  It is
+# also what `module_const_precision_audit` keys on: an AST scan of this file's own text cannot
+# see a precision raise that happens inside an `exec`, so the audit reported the only LOSSY
+# constant in the corpus here and was right to, whatever the runtime value turned out to be.
+mp.dps = 60
 RECORDED_DIFF = mp.mpf("0.0198162676389039602300948111946348416306")
 
 # cap settings to sweep.  (BMAX, BUMAX); the second row is the committed one.

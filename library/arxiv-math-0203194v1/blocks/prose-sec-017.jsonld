@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-017",
   "kind": "prose",
-  "title": "Rigid analytic spaces are endowed with a Grothendieck gener alized",
-  "pageStart": 17,
-  "pageEnd": 18,
-  "text": "../sections/sec-017-131-rigid-analytic-spaces-are-endowed-with-a-gro.md",
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "title": "Conclusion and vista.",
+  "pageStart": 66,
+  "pageEnd": 69,
+  "text": "../sections/sec-017-54-conclusion-and-vista.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"
 }

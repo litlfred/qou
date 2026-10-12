@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2404.02087v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2404.02087v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2404.02087v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2404.02087&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2404.02087v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2404.02087v1",
+    "content_type": "application/gzip",
+    "sha256": "7f5c1d1afcb32332046b41744b65f46b2bf77fcacbe02d07db3b2fdaceb37349",
+    "bytes": 4556136,
+    "fetched": "2026-10-10T15:20:01+00:00",
+    "files": [
+      {
+        "path": "source/files/Extreme_plasmons.tex",
+        "role": "tex",
+        "sha256": "a7ff8fe449c7c17a0f3b0d2a08116b92f5102a88bd025fb0e4b89d5889b8e586",
+        "bytes": 80461
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

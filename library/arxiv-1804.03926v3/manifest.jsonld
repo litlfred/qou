@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1804.03926v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1804.03926v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1804.03926v3",
   "contains": [
+    "library/arxiv-1804.03926v3/sections/sec-front-matter",
     "library/arxiv-1804.03926v3/sections/sec-000",
     "library/arxiv-1804.03926v3/sections/sec-001",
     "library/arxiv-1804.03926v3/sections/sec-002",
@@ -13,11 +19,21 @@
     "library/arxiv-1804.03926v3/sections/sec-004",
     "library/arxiv-1804.03926v3/sections/sec-005",
     "library/arxiv-1804.03926v3/sections/sec-006",
-    "library/arxiv-1804.03926v3/sections/sec-007"
+    "library/arxiv-1804.03926v3/sections/sec-007",
+    "library/arxiv-1804.03926v3/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1804.03926&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1804.03926v3",
+    "title_source": "slug",
     "source_file": "1804.03926v3.pdf",
     "source_sha256": "8ad8e2d5a8881a5bcc890a08f8ec95627c0be9ef5d82e9731f9f57a1dcba0746",
     "pages": 34,

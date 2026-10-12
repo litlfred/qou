@@ -8,390 +8,161 @@ pages: 38-42
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
 doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+text_source: latex
+latex_prose_ratio: 0.975
+latex_coverage_ratio: 0.952
 ---
-The most general SU(3)L×SU(3)R-invariant Lagrangian at O(q4) is given by [Gasser and Leutwyler, 1985]
-L4 =L1
-{
-Tr[DµU(DµU)†]
-} 2
-+L2Tr
-[
-DµU(DνU)†
-]
-Tr
-[
-DµU(DνU)†
-]
-+L3Tr
-[
-DµU(DµU)†DνU(DνU)†
-]
-+L4Tr
-[
-DµU(DµU)†
-]
-Tr
-(
-χU † +Uχ †
-)
-+L5Tr
-[
-DµU(DµU)†(χU † +Uχ †)
-]
-+L6
-[
-Tr
-(
-χU † +Uχ †
-)] 2
-+L7
-[
-Tr
-(
-χU † −Uχ †
-)] 2
-+L8Tr
-(
-Uχ †Uχ † +χU †χU †
-)
-−iL9Tr
-[
-f R
-µνDµU(DνU)† +f L
-µν(DµU)†DνU
-]
-+L10Tr
-(
-Uf L
-µνU †f µν
-R
-)
-+H1Tr
-(
-f R
-µνf µν
-R +f L
-µνf µν
-L
-)
-+H2Tr
-(
-χχ†
-)
-. (140)
-The numerical values of the low-energy coupling constants Li are not determined by chiral symmetry.
-In analogy to F0 andB0 of L2 they are parameters containing information on the underlyi ng dynamics
-and should, in principle, be calculable in terms of the (rema ining) parameters of QCD, namely, the
-heavy-quark masses and the QCD scale Λ QCD. In practice, they parameterize our inability to solve
-the dynamics of QCD in the non-perturbative regime. So far th ey have either been ﬁxed using empiri-
-cal input or theoretically using QCD-inspired models, meso n-resonance saturation [Ecker et al., 1989a]
-[Pich, 2008], and lattice QCD (see Ref. [Necco, (2009)] for a recent overview).
-By construction Eq. (140) represents the most general Lagra ngian at O(q4), and it is thus possible
-to absorb the one-loop divergences by an appropriate renorm alization of the coeﬃcients Li and Hi:
-Li =Lr
-i + Γ i
-32π2R (i = 1, · · ·, 10), H i =H r
-i + ∆ i
-32π2R (i = 1, 2), (141)
-where R has already been deﬁned in Eq. (135):
-R = 2
-n − 4 − [ln(4π) + Γ ′(1) + 1],
-with n denoting the number of space-time dimensions and γE = −Γ ′(1) being Euler’s constant. The
-constants Γ i and ∆ i are given in Table 7. Except for L3 and L7, the low-energy coupling constants Li
-and the “contact terms”—i.e., pure external ﬁeld terms— H1 andH2 are required in the renormalization
-of the one-loop graphs. Since H1 andH2 contain only external ﬁelds, they are of no physical relevan ce.
-The idea of renormalization consists of adjusting the param eters of the counter terms of the most
-general eﬀective Lagrangian so that they cancel the diverge nces of (multi-) loop diagrams. In doing so,
-one still has the freedom of choosing a suitable renormaliza tion condition. For example, in the minimal
-subtraction scheme (MS) one would ﬁx the parameters of the co unter term Lagrangian such that they
-would precisely absorb the contributions proportional to 2 /(n − 4) in R, while the modiﬁed minimal
-subtraction scheme of ChPT ( ~MS) would, in addition, cancel the term in the square bracket s.
-38
-Coeﬃcient Empirical Value Γ i
-Lr
-1
-0.4 ± 0.3 3
-32
-Lr
-2
-1.35 ± 0.3 3
-16
-Lr
-3
-−3.5 ± 1.1 0
-Lr
-4
-−0.3 ± 0.5 1
-8
-Lr
-5
-1.4 ± 0.5 3
-8
-Lr
-6
-−0.2 ± 0.3 11
-144
-Lr
-7
-−0.4 ± 0.2 0
-Lr
-8
-0.9 ± 0.3 5
-48
-Lr
-9
-6.9 ± 0.7 1
-4
-Lr
-10
-−5.5 ± 0.7 − 1
-4
-Table 7: Renormalized low-energy coupling constants Lr
-i in units of 10 −3 at the scale µ = Mρ, see
-[Bijnens et al., 1995]. ∆ 1 = −1/8, ∆ 2 = 5/24.
-The renormalized coeﬃcients Lr
-i depend on the scale µ introduced by dimensional regularization
-[see Eq. (134)] and their values at two diﬀerent scales µ1 and µ2 are related by
-Lr
-i (µ2) = Lr
-i (µ1) + Γ i
-16π2 ln
-(
-µ1
-µ2
-)
-. (142)
-We will see that the scale dependence of the coeﬃcients and th e ﬁnite part of the loop-diagrams
-compensate each other in such a way that physical observable s are scale independent.
-A discussion of the two-ﬂavor Lagrangian at O(q4) [Gasser and Leutwyler, 1984] can be found in
-Appendix D of Ref. [Scherer, 2003]. For the construction of t he O(q6) Lagrangian of even intrinsic
-parity, see Refs. [Scherer and Fearing, 1995], [Fearing and Scherer, 1996] and [Bijnens et al., 1999]. For
-a status report on mesonic chiral perturbation theory beyon d the one-loop level, we refer the reader to
-Ref. [Bijnens, 2007].
-3.3.2 The eﬀective Wess-Zumino-Witten action
-The Lagrangians discussed so far have a larger symmetry than QCD [Witten, 1983]. For example, if we
-consider the case of “pure” QCD, i.e., no external ﬁelds exce pt for the quark-mass term χ = 2B0M, L2
-and L4 contain interaction terms with an even number of Goldstone b osons only (even intrinsic parity).
-In other words, they cannot describe, e.g, K +K − → π+π−π0. Analogously, L2 and L4 including a
-coupling to electromagnetic ﬁelds cannot describe π0 →γγ .
-In order to overcome this shortcoming, Witten suggested to a dd the simplest term possible which
-breaks the symmetry of having only an even number of Goldston e bosons at the Lagrangian level. For
-the case of massless Goldstone bosons without any external ﬁ elds the modiﬁed equation of motion reads
-∂µ
-(
-F 2
-0
-2 U∂ µU †
-)
-+λǫµνρσU∂ µU †U∂ νU †U∂ ρU †U∂ σU † = 0, (143)
-where λ is a (purely imaginary) constant. For the purpose of writing down an action corresponding to
-Eq. (143), we extend the range of deﬁnition of the ﬁelds to a hy pothetical ﬁfth dimension,
-U(y) = exp
-(
-iαφ(x)
-F0
-)
-, y i = (xµ,α ), i = 0, · · ·, 4, 0 ≤α ≤ 1, (144)
-39
-where Minkowski space is deﬁned as the surface of the ﬁve-dim ensional space for α = 1. The action in
-in the absence of external ﬁelds (denoted by a superscript 0) is given by [Witten, 1983]
-S0
-ano =nS0
-WZW, S 0
-WZW = − i
-240π2
-∫ 1
-0
-dα
-∫
-d4xǫijklm Tr
-(
-U L
-i · · · UL
-m
-)
-, (145)
-where
-ǫ01234 = −ǫ01234 = 1, U L
-i =U †∂U
-∂y i, λ = in
-48π2.
-A rather unusual and surprising feature of Eq. (145) is that t he action functional corresponding to the
-new term cannot be written as the four-dimensional integral of a Lagrangian expressed in terms of U
-and its derivatives. Wess and Zumino derived consistency or integrability relations which are satisﬁed by
-the anomalous Ward identities and then explicitly construc ted a functional involving the pseudoscalar
-octet which satisﬁes the anomalous Ward identities [Wess an d Zumino, 1971]. In particular, Wess and
-Zumino emphasized that their interaction Lagrangians cann ot be obtained as part of a chiral invariant
-Lagrangian. Using topological arguments Witten showed tha t the constant n appearing in Eq. (145)
-must be an integer. However, it was pointed out in Ref. [B¨ ar a nd Wiese, 2001] that the traditional
-argument relating n with the number of colors Nc is incomplete. Before discussing this argument, let
-us investigate the consequences of S0
-WZW.
-Expanding the SU(3) matrix U(y) in terms of the Goldstone boson ﬁelds, U(y) = /BD +iαφ(x)/F0 +
-O(φ2), one obtains an inﬁnite series of terms, each involving an o dd number of Goldstone bosons, i.e.,
-the WZW action S0
-WZW is of odd intrinsic parity. For each individual term the α integration can be
-performed explicitly resulting in an ordinary action in ter ms of a four-dimensional integral of a local
-Lagrangian. For example, the term with the smallest number o f Goldstone bosons reads
-S5φ
-WZW = 1
-240π2F 5
-0
-∫
-d4xǫµνρσ Tr(φ∂µφ∂νφ∂ρφ∂σφ), (146)
-which describes, e.g., K +K − →π+π−π0. In particular, the WZW action without external ﬁelds invol ves
-at least ﬁve Goldstone bosons [Wess and Zumino, 1971].
-The connection to the number of colors Nc is established by introducing a coupling to electromag-
-netism [Wess and Zumino, 1971], [Witten, 1983]. In the prese nce of external ﬁelds there will be an
-additional term in the anomalous action,
-Sano =S0
-ano +Sext
-ano =n(S0
-WZW +Sext
-WZW), (147)
-given by (see, e.g., Ref. [Bijnens, 1993])
-Sext
-WZW = − i
-48π2
-∫
-d4xǫ µνρσ Tr(Zµνρσ ) (148)
-with
-Zµνρσ = 1
-2 Ul µU †rνUl ρU †rσ +Ul µlνlρU †rσ −U †rµrνrρUl σ
-+iU∂ µlνlρU †rσ −iU †∂µrνrρUl σ +i∂µrνUl ρU †rσ −i∂µlνU †rρUl σ
-−iU L
-µlνU †rρUl σ +iU R
-µrνUl ρU †rσ −iU L
-µlνlρlσ +iU R
-µrνrρrσ
-+ 1
-2U L
-µU †∂νrρUl σ − 1
-2 U R
-µU∂ νlρU †rσ + 1
-2 U L
-µU †rνU∂ ρlσ − 1
-2 U R
-µUl νU †∂ρrσ
-−U L
-µ U L
-νU †rρUl σ + U R
-µ U R
-ν Ul ρU †rσ + 1
-2 U L
-µlνU L
-ρlσ − 1
-2 U R
-µrνU R
-ρ rσ
-+U L
-µlν∂ρlσ − U R
-µrν∂ρrσ + U L
-µ∂νlρlσ − U R
-µ∂νrρrσ
-−iU L
-µ U L
-ν U L
-ρlσ +iU R
-µ U R
-ν U R
-ρ rσ, (149)
-40
-where we deﬁned the abbreviations U L
-µ =U †∂µU and U R
-µ =U∂ µU †.
-As a special case, let us consider a coupling to external elec tromagnetic ﬁelds by inserting
-rµ =lµ = −eQAµ,
-whereQ is the quark-charge matrix. The terms involving three and fo ur electromagnetic four-potentials
-vanish upon contraction with the totally antisymmetric tensorǫµνρσ , because their contributions to Zµνρσ
-are symmetric in at least two indices, and we obtain
-nLext
-WZW = −enAµJ µ +i ne2
-48π2ǫµνρσ∂νAρAσTr[2Q2(U∂ µU † −U †∂µU) −QU †Q∂µU +QUQ∂ µU †]. (150)
-We note that the current
-J µ = ǫµνρσ
-48π2 Tr(Q∂νUU †∂ρUU †∂σUU † +QU †∂νUU †∂ρUU †∂σU), ǫ 0123 = 1, (151)
-by itself is not gauge invariant and the additional terms of E q. (150) are required to obtain a gauge-
-invariant action. The standard procedure of determining n is to investigate the interaction Lagrangian
-which is relevant to the decay π0 → γγ by expanding U = /BD +idiag(π0, −π0, 0)/F0 + · · ·. However,
-as pointed out by B¨ ar and Wiese, when considering the electr omagnetic interaction for an arbitrary
-number of colors one should replace the ordinary quark charg e matrix by
-Q =
-
-
-
-2
-3 0 0
-0 − 1
-3 0
-0 0 − 1
-3
-
-
- →
-
-
-
-1
-2Nc
-+ 1
-2 0 0
-0 1
-2Nc
-− 1
-2 0
-0 0 1
-2Nc
-− 1
-2
-
-
-.
-The corresponding eﬀective Lagrangian for π0 →γγ decay,
-Lπ0γγ = − n
-Nc
-e2
-32π2ǫµνρσ FµνFρσ
-π0
-F0
-,
-results in the decay rate
-Γ π0→γγ = α2M 3
-π0
-64π3F 2
-0
-n2
-N 2c
-= 7.6 eV ×
-(n
-Nc
-)2
-in good agreement with the experimental value (7 .7 ± 0.6) eV for n = Nc. However, the result is no
-indication for Nc = 3 [B¨ ar and Wiese, 2001]. The conclusion from their analysi s is that one should
-rather consider three-ﬂavor processes such as η → π+π−γ or Kγ → Kπ to test the expected Nc
-dependence in a low-energy reaction. For example, the Lagra ngian relevant to the decay η →π+π−γ is
-given by
-Lηπ+π−γ = ien
-12
-√
-3π2F 3
-0
-(Qu −Qd)ǫµνρσ Aµ∂νη∂ρπ+∂σπ−,
-where the quark-charge diﬀerence Qu −Qd = 1 is independent of Nc. However, by investigating the
-corresponding η and η′ decays up to next-to-leading order in the framework of the co mbined 1/Nc and
-chiral expansions, Borasoy and Lipartia have concluded tha t the number of colors cannot be determined
-from these decays due to the importance of sub-leading terms which are needed to account for the
-experimental decay widths and photon spectra [Borasoy and L ipartia, 2005].
-For a discussion of the O(q6) Lagrangian of odd intrinsic parity see Refs. [Ebertsh¨ aus er et al., 2002]
-and [Bijnens et al., 2002].
-41
-4 2
-Figure 8: Self-energy diagrams at O(q4). Vertices derived from L2n are denoted by 2n in the interaction
-blobs.
-/BP
-/B7
-/B7
-/B7
-/A1 /A1 /A1
-Figure 9: Unrenormalized propagator as the sum of irreducib le self-energy diagrams. Hatched and cross-
-hatched “vertices” denote one-particle-reducible and one -particle-irreducible contributions, respectively.
+[]{#subsubsec_clop4 label="subsubsec_clop4"} The most general $\mbox{SU(3)}_L\times\mbox{SU(3)}_R$-invariant Lagrangian at ${\cal O}(q^4)$ is given by [@Gasser:1984gg] $$\begin{aligned}
+\label{3:3:1:l4gl}
+\lefteqn{{\cal L}_4=
+L_1 \left\{\mbox{Tr}[D_{\mu}U (D^{\mu}U)^{\dagger}] \right\}^2
++ L_2 \mbox{Tr} \left [D_{\mu}U (D_{\nu}U)^{\dagger}\right]
+\mbox{Tr} \left [D^{\mu}U (D^{\nu}U)^{\dagger}\right]}\nonumber\\
+& & + L_3 \mbox{Tr}\left[
+D_{\mu}U (D^{\mu}U)^{\dagger}D_{\nu}U (D^{\nu}U)^{\dagger}
+\right ]
++ L_4 \mbox{Tr} \left [ D_{\mu}U (D^{\mu}U)^{\dagger} \right ]
+\mbox{Tr} \left( \chi U^{\dagger}+ U \chi^{\dagger} \right )
+\nonumber \\
+& & +L_5 \mbox{Tr} \left[ D_{\mu}U (D^{\mu}U)^{\dagger}
+(\chi U^{\dagger}+ U \chi^{\dagger})\right]
++ L_6 \left[ \mbox{Tr} \left ( \chi U^{\dagger}+ U \chi^{\dagger} \right )
+\right]^2
+\nonumber \\
+& & + L_7 \left[ \mbox{Tr} \left ( \chi U^{\dagger} - U \chi^{\dagger} \right )
+\right]^2
++ L_8 \mbox{Tr} \left ( U \chi^{\dagger} U \chi^{\dagger}
++ \chi U^{\dagger} \chi U^{\dagger} \right )
+\nonumber \\
+& & -i L_9 \mbox{Tr} \left [ f^R_{\mu\nu} D^{\mu} U (D^{\nu} U)^{\dagger}
++ f^L_{\mu\nu} (D^{\mu} U)^{\dagger} D^{\nu} U \right ]
++ L_{10} \mbox{Tr} \left ( U f^L_{\mu\nu} U^{\dagger} f_R^{\mu\nu} \right )
+\nonumber \\
+& & + H_1 \mbox{Tr} \left ( f^R_{\mu\nu} f^{\mu\nu}_R +
+f^L_{\mu\nu} f^{\mu\nu}_L \right )
++ H_2 \mbox{Tr} \left ( \chi \chi^{\dagger} \right ).
+\end{aligned}$$ The numerical values of the low-energy coupling constants $L_i$ are not determined by chiral symmetry. In analogy to $F_0$ and $B_0$ of ${\cal L}_2$ they are parameters containing information on the underlying dynamics and should, in principle, be calculable in terms of the (remaining) parameters of QCD, namely, the heavy-quark masses and the QCD scale $\Lambda_{\rm QCD}$. In practice, they parameterize our inability to solve the dynamics of QCD in the non-perturbative regime. So far they have either been fixed using empirical input or theoretically using QCD-inspired models, meson-resonance saturation [@Ecker:1988te] [@Pich:2008xj], and lattice QCD (see Ref. [@Necco:2009cq] for a recent overview).
+
+By construction Eq. ([\[3:3:1:l4gl\]](#3:3:1:l4gl){reference-type="ref" reference="3:3:1:l4gl"}) represents the most general Lagrangian at ${\cal O}(q^4)$, and it is thus possible to absorb the one-loop divergences by an appropriate renormalization of the coefficients $L_i$ and $H_i$: $$\label{3:3:1:lihi}
+L_i=L_i^r+\frac{\Gamma_i}{32\pi^2}R \quad (i=1,\cdots,10),\quad
+H_i=H^r_i+\frac{\Delta_i}{32\pi^2}R\quad (i=1,2),$$ where $R$ has already been defined in Eq. ([\[3:2:5:R\]](#3:2:5:R){reference-type="ref" reference="3:2:5:R"}): $$R=\frac{2}{n-4}
+-[\mbox{ln}(4\pi)+\Gamma'(1)+1],$$ with $n$ denoting the number of space-time dimensions and $\gamma_E=-\Gamma'(1)$ being Euler's constant. The constants $\Gamma_i$ and $\Delta_i$ are given in Table [1](#4:8:tableli){reference-type="ref" reference="4:8:tableli"}. Except for $L_3$ and $L_7$, the low-energy coupling constants $L_i$ and the "contact terms"---i.e., pure external field terms---$H_1$ and $H_2$ are required in the renormalization of the one-loop graphs. Since $H_1$ and $H_2$ contain only external fields, they are of no physical relevance.
+
+::: center
+::: {#4:8:tableli}
+   Coefficient    Empirical Value         $\Gamma_i$
+  ------------- ----------------- ------------------
+     $L_1^r$         $0.4\pm 0.3$     $\frac{3}{32}$
+     $L_2^r$        $1.35\pm 0.3$     $\frac{3}{16}$
+     $L_3^r$        $-3.5\pm 1.1$                $0$
+     $L_4^r$        $-0.3\pm 0.5$      $\frac{1}{8}$
+     $L_5^r$         $1.4\pm 0.5$      $\frac{3}{8}$
+     $L_6^r$        $-0.2\pm 0.3$   $\frac{11}{144}$
+     $L_7^r$        $-0.4\pm 0.2$                $0$
+     $L_8^r$         $0.9\pm 0.3$     $\frac{5}{48}$
+     $L_9^r$         $6.9\pm 0.7$      $\frac{1}{4}$
+   $L_{10}^r$       $-5.5\pm 0.7$     $-\frac{1}{4}$
+
+  : Renormalized low-energy coupling constants $L_i^r$ in units of $10^{-3}$ at the scale $\mu=M_\rho$, see [@Bijnens:1994qh:9]. $\Delta_1=-1/8$, $\Delta_2=5/24$.
+:::
+:::
+
+The idea of renormalization consists of adjusting the parameters of the counter terms of the most general effective Lagrangian so that they cancel the divergences of (multi-) loop diagrams. In doing so, one still has the freedom of choosing a suitable renormalization condition. For example, in the minimal subtraction scheme (MS) one would fix the parameters of the counter term Lagrangian such that they would precisely absorb the contributions proportional to $2/(n-4)$ in $R$, while the modified minimal subtraction scheme of ChPT ($\widetilde{\rm MS}$) would, in addition, cancel the term in the square brackets.
+
+The renormalized coefficients $L_i^r$ depend on the scale $\mu$ introduced by dimensional regularization \[see Eq. ([\[3:2:4:IMmun\]](#3:2:4:IMmun){reference-type="ref" reference="3:2:4:IMmun"})\] and their values at two different scales $\mu_1$ and $\mu_2$ are related by $$\label{3:3:1:limu1mu2}
+L^r_i(\mu_2)=L^r_i(\mu_1)
++\frac{\Gamma_i}{16\pi^2}\ln\left(\frac{\mu_1}{\mu_2}\right).$$ We will see that the scale dependence of the coefficients and the finite part of the loop-diagrams compensate each other in such a way that physical observables are scale independent.
+
+A discussion of the two-flavor Lagrangian at ${\cal O}(q^4)$ [@Gasser:1983yg] can be found in Appendix D of Ref. [@Scherer:2002tk]. For the construction of the ${\cal O}(q^6)$ Lagrangian of even intrinsic parity, see Refs. [@Scherer:1994wi], [@Fearing:1994ga] and [@Bijnens:1999sh]. For a status report on mesonic chiral perturbation theory beyond the one-loop level, we refer the reader to Ref. [@Bijnens:2006zp].
+
+### The effective Wess-Zumino-Witten action
+
+The Lagrangians discussed so far have a larger symmetry than QCD [@Witten:1983tw]. For example, if we consider the case of "pure" QCD, i.e., no external fields except for the quark-mass term $\chi=2B_0 {\cal M}$, ${\cal L}_2$ and ${\cal L}_4$ contain interaction terms with an even number of Goldstone bosons only (even intrinsic parity). In other words, they cannot describe, e.g, $K^+K^-\to\pi^+\pi^-\pi^0$. Analogously, ${\cal L}_2$ and ${\cal L}_4$ including a coupling to electromagnetic fields cannot describe $\pi^0\to\gamma\gamma$.
+
+In order to overcome this shortcoming, Witten suggested to add the simplest term possible which breaks the symmetry of having only an even number of Goldstone bosons at the Lagrangian level. For the case of massless Goldstone bosons without any external fields the modified equation of motion reads $$\label{3:3:2:modeom}
+\partial_\mu\left(\frac{F_0^2}{2}U\partial^\mu U^\dagger\right)
++\lambda \epsilon^{\mu\nu\rho\sigma} U\partial_\mu U^\dagger
+U\partial_\nu U^\dagger U\partial_\rho U^\dagger U\partial_\sigma
+U^\dagger=0,$$ where $\lambda$ is a (purely imaginary) constant. For the purpose of writing down an action corresponding to Eq. ([\[3:3:2:modeom\]](#3:3:2:modeom){reference-type="ref" reference="3:3:2:modeom"}), we extend the range of definition of the fields to a hypothetical fifth dimension, $$\label{3:2:ualpha}
+U(y)=\exp\left(i\alpha\frac{\phi(x)}{F_0}\right),
+\quad y^i=(x^\mu,\alpha),\,\,i=0,\cdots, 4,\,\, 0\leq\alpha\leq 1,$$ where Minkowski space is defined as the surface of the five-dimensional space for $\alpha =1$. The action in in the absence of external fields (denoted by a superscript 0) is given by [@Witten:1983tw] $$\label{3:2:2:sano}
+S_{\rm ano}^0=n S_{\rm WZW}^0,\quad
+S_{\rm WZW}^0=-\frac{i}{240\pi^2}\int_0^1 \mbox{d} \alpha \int \mbox{d}^4 x
+\epsilon^{ijklm} \mbox{Tr}\left( {\cal U}^L_i\cdots {\cal U}^L_m
+\right),$$ where $$\epsilon_{01234}=-\epsilon^{01234}=1,\quad {\cal U}^L_i=U^\dagger
+\frac{\partial U}{\partial y^i},\quad \lambda=\frac{in}{48\pi^2}.$$ A rather unusual and surprising feature of Eq. ([\[3:2:2:sano\]](#3:2:2:sano){reference-type="ref" reference="3:2:2:sano"}) is that the action functional corresponding to the new term cannot be written as the four-dimensional integral of a Lagrangian expressed in terms of $U$ and its derivatives. Wess and Zumino derived consistency or integrability relations which are satisfied by the anomalous Ward identities and then explicitly constructed a functional involving the pseudoscalar octet which satisfies the anomalous Ward identities [@Wess:1971yu]. In particular, Wess and Zumino emphasized that their interaction Lagrangians cannot be obtained as part of a chiral invariant Lagrangian. Using topological arguments Witten showed that the constant $n$ appearing in Eq. ([\[3:2:2:sano\]](#3:2:2:sano){reference-type="ref" reference="3:2:2:sano"}) must be an integer. However, it was pointed out in Ref. [@Bar:2001qk] that the traditional argument relating $n$ with the number of colors $N_c$ is incomplete. Before discussing this argument, let us investigate the consequences of $S^0_{\rm WZW}$.
+
+Expanding the SU(3) matrix $U(y)$ in terms of the Goldstone boson fields, $U(y)={\mathbbm 1}+i\alpha \phi(x)/F_0+O(\phi^2)$, one obtains an infinite series of terms, each involving an odd number of Goldstone bosons, i.e., the WZW action $S_{\rm WZW}^0$ is of odd intrinsic parity. For each individual term the $\alpha$ integration can be performed explicitly resulting in an ordinary action in terms of a four-dimensional integral of a local Lagrangian. For example, the term with the smallest number of Goldstone bosons reads $$\label{3:2:2:swzw5phi}
+S_{\rm WZW}^{5\phi}
+=\frac{1}{240\pi^2 F^5_0}\int \mbox{d}^4 x
+\epsilon^{\mu\nu\rho\sigma}\mbox{Tr}(\phi\partial_\mu\phi\partial_\nu\phi
+\partial_\rho\phi\partial_\sigma\phi),$$ which describes, e.g., $K^+K^-\to\pi^+\pi^-\pi^0$. In particular, the WZW action without external fields involves at least five Goldstone bosons [@Wess:1971yu].
+
+The connection to the number of colors $N_c$ is established by introducing a coupling to electromagnetism [@Wess:1971yu], [@Witten:1983tw]. In the presence of external fields there will be an additional term in the anomalous action, $$\label{4:8:sanofull}
+S_{\rm ano}=
+S_{\rm ano}^0+
+S_{\rm ano}^{\rm ext}=n(S_{\rm WZW}^0+S_{\rm WZW}^{\rm ext}),$$ given by (see, e.g., Ref. [@Bijnens:1993xi]) $$\label{3:3:2:deltaswzw}
+S_{\rm WZW}^{\rm ext}= -\frac{i}{48\pi^2}\int \mbox{d}^4 x\,
+\epsilon^{\mu\nu\rho\sigma}\mbox{Tr}(Z_{\mu\nu\rho\sigma})$$ with $$\begin{aligned}
+\label{3:3:2:zmunialphabeta}
+Z_{\mu\nu\rho\sigma}&=&
+\frac{1}{2}\ U l_\mu U^\dagger r_\nu U l_\rho U^\dagger r_\sigma
++U l_\mu l_\nu l_\rho U^\dagger r_\sigma
+ - U^\dagger r_\mu r_\nu r_\rho U l_\sigma\nonumber\\
+&&+i  U\partial_\mu l_\nu l_\rho U^\dagger r_\sigma
+ - i U^\dagger\partial_\mu r_\nu r_\rho U l_\sigma
+ +i \partial_\mu r_\nu U l_\rho U^\dagger r_\sigma
+ - i \partial_\mu l_\nu U^\dagger r_\rho U l_\sigma\nonumber\\
+&&-i {\cal U}_\mu^L l_\nu U^\dagger r_\rho U l_\sigma
+ + i {\cal U}_\mu^R r_\nu U l_\rho U^\dagger r_\sigma
+ -i {\cal U}_\mu^L l_\nu l_\rho l_\sigma
+ + i {\cal U}_\mu^R r_\nu r_\rho r_\sigma\nonumber\\
+&&+\frac{1}{2}{\cal U}_\mu^L U^\dagger\partial_\nu r_\rho U l_\sigma
+ -\frac{1}{2}{\cal U}_\mu^R U\partial_\nu l_\rho U^\dagger r_\sigma
+ +\frac{1}{2}{\cal U}_\mu^L U^\dagger r_\nu U\partial_\rho l_\sigma
+ -\frac{1}{2}{\cal U}_\mu^R U l_\nu U^\dagger\partial_\rho r_\sigma\nonumber\\
+&&-{\cal U}_\mu^L{\cal U}_\nu^L U^\dagger r_\rho U l_\sigma
+ + {\cal U}_\mu^R{\cal U}_\nu^R U l_\rho U^\dagger r_\sigma
++\frac{1}{2}\ {\cal U}_\mu^L l_\nu {\cal U}_\rho^L l_\sigma
+ - \frac{1}{2}\ {\cal U}_\mu^R r_\nu {\cal U}_\rho^R r_\sigma\nonumber\\
+&&+{\cal U}_\mu^L l_\nu\partial_\rho l_\sigma
+ - {\cal U}_\mu^R r_\nu\partial_\rho r_\sigma+{\cal U}_\mu^L\partial_\nu  l_\rho l_\sigma
+ - {\cal U}_\mu^R\partial_\nu  r_\rho r_\sigma\nonumber\\
+&&-i {\cal U}_\mu^L{\cal U}_\nu^L{\cal U}_\rho^L l_\sigma
+ + i {\cal U}_\mu^R{\cal U}_\nu^R{\cal U}_\rho^R r_\sigma,
+\end{aligned}$$ where we defined the abbreviations ${\cal U}_\mu^L=U^\dagger\partial_\mu U$ and ${\cal U}_\mu^R=U\partial_\mu U^\dagger$.
+
+As a special case, let us consider a coupling to external electromagnetic fields by inserting $$r_\mu=l_\mu=-e Q {\cal A}_\mu,$$ where $Q$ is the quark-charge matrix. The terms involving three and four electromagnetic four-potentials vanish upon contraction with the totally antisymmetric tensor $\epsilon^{\mu\nu\rho\sigma}$, because their contributions to $Z_{\mu\nu\rho\sigma}$ are symmetric in at least two indices, and we obtain $$\label{3:3:2:lanoelm}
+n{\cal L}^{\rm ext}_{\rm WZW}=-e n {\cal A}_\mu J^\mu
++i \frac{n e^2 }{48\pi^2}\epsilon^{\mu\nu\rho\sigma}
+\partial_\nu {\cal A}_\rho{\cal A}_\sigma
+\mbox{Tr}[2Q^2(U\partial_\mu U^\dagger - U^\dagger \partial_\mu U)
+- Q U^\dagger Q \partial_\mu U
++Q U Q \partial_\mu U^\dagger].$$ We note that the current $$\label{3:3:2:jmu}
+J^\mu=\frac{\epsilon^{\mu\nu\rho\sigma}}{48\pi^2}
+\mbox{Tr}(Q\partial_\nu U U^\dagger \partial_\rho U U^\dagger
+\partial_\sigma U U^\dagger
++Q U^\dagger \partial_\nu U U^\dagger \partial_\rho U U^\dagger
+\partial_\sigma U),\quad \epsilon_{0123}=1,$$ by itself is not gauge invariant and the additional terms of Eq. ([\[3:3:2:lanoelm\]](#3:3:2:lanoelm){reference-type="ref" reference="3:3:2:lanoelm"}) are required to obtain a gauge-invariant action. The standard procedure of determining $n$ is to investigate the interaction Lagrangian which is relevant to the decay $\pi^0\to\gamma\gamma$ by expanding $U={\mathbbm 1}+i\mbox{diag}(\pi^0,-\pi^0,0)/F_0+\cdots.$ However, as pointed out by Bär and Wiese, when considering the electromagnetic interaction for an arbitrary number of colors one should replace the ordinary quark charge matrix by $$Q=\left(
+\begin{array}{rrr}
+\frac{2}{3}&0&0\\
+0&-\frac{1}{3}&0\\
+0&0&-\frac{1}{3}
+\end{array}
+\right)
+\to
+\left(
+\begin{array}{ccc}
+\frac{1}{2N_c}+\frac{1}{2}&0&0\\
+0&\frac{1}{2N_c}-\frac{1}{2}&0\\
+0&0&\frac{1}{2N_c}-\frac{1}{2}
+\end{array}
+\right).$$ The corresponding effective Lagrangian for $\pi^0\to\gamma\gamma$ decay, $${\cal L}_{\pi^0\gamma\gamma}=-\frac{n}{N_c}
+\frac{e^2}{32\pi^2}\epsilon^{\mu\nu \rho\sigma}{\cal
+F}_{\mu\nu}{\cal F}_{\rho\sigma}\frac{\pi^0}{F_0},$$ results in the decay rate $$\Gamma_{\pi^0\to\gamma\gamma}= \frac{\alpha^2 M^3_{\pi^0}}{64 \pi^3
+F^2_0}\,\frac{n^2}{N_c^2}
+=7.6\,\mbox{eV}\times\left(\frac{n}{N_c}\right)^2$$ in good agreement with the experimental value $(7.7\pm 0.6)$ eV for $n=N_c$. However, the result is no indication for $N_c=3$ [@Bar:2001qk]. The conclusion from their analysis is that one should rather consider three-flavor processes such as $\eta\to\pi^+\pi^-\gamma$ or $K\gamma\to K\pi$ to test the expected $N_c$ dependence in a low-energy reaction. For example, the Lagrangian relevant to the decay $\eta\to\pi^+\pi^-\gamma$ is given by $${\cal L}_{\eta\pi^+\pi^-\gamma}=\frac{ien}{12\sqrt{3}\pi^2 F_0^3}(Q_u-Q_d)
+\epsilon^{\mu\nu\rho\sigma}{\cal A}_\mu\partial_\nu\eta\partial_\rho\pi^+
+\partial_\sigma\pi^-,$$ where the quark-charge difference $Q_u-Q_d=1$ is independent of $N_c$. However, by investigating the corresponding $\eta$ and $\eta'$ decays up to next-to-leading order in the framework of the combined $1/N_c$ and chiral expansions, Borasoy and Lipartia have concluded that the number of colors cannot be determined from these decays due to the importance of sub-leading terms which are needed to account for the experimental decay widths and photon spectra [@Borasoy:2004mf].
+
+For a discussion of the ${\cal O}(q^6)$ Lagrangian of odd intrinsic parity see Refs. [@Ebertshauser:2001nj] and [@Bijnens:2001bb].

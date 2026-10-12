@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1504.07260v3/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1504.07260v3/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Connection with moonshine",
   "pageStart": 9,
   "pageEnd": 10,
   "text": "../sections/sec-003-13-connection-with-moonshine.md",
-  "derivedFrom": "library/arxiv-1504.07260v3/manifest",
-  "sourceDocument": "library/arxiv-1504.07260v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1504.07260v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1504.07260v3/manifest.jsonld",
   "provenance": "ingested"
 }

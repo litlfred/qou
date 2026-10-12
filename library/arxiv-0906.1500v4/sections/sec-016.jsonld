@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0906.1500v4/sections/sec-016",
   "@type": [
     "doco:Section"
   ],
-  "title": "The ﬁgure eight knot exterior. We consider the ﬁgure eight knot K as in Fig-",
-  "pageStart": 12,
-  "pageEnd": 13,
+  "title": "Bridge from the polynomial torsion to the non--abelian Reidemeister torsion",
+  "pageStart": 15,
+  "pageEnd": 16,
   "contains": [
     "library/arxiv-0906.1500v4/blocks/prose-sec-016"
   ],
-  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
-  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0906.1500v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0906.1500v4/manifest.jsonld",
   "provenance": "ingested"
 }

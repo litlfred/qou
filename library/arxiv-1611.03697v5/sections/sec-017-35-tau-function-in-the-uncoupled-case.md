@@ -8,52 +8,20 @@ pages: 13-14
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
 doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+text_source: latex
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.979
 ---
-coupled, integral BPS structures over a complex manifold M. We will show that the family of
-solutions given by Theorem 3.2 has a corresponding τ -function. To describe this function we ﬁrst
-introduce the expression
-Υ( w) = e−ζ ′(−1) e
-3
-4 w2
-G(w + 1)
-(2π)
-w
-2 w
-w2
-2
-, (17)
-where G(x) is the Barnes G-function, and ζ(s) the Riemann zeta function.
-Theorem 3.4. Let (Γ , Zp, Ω p) be a framed, miniversal variation of ﬁnite, uncoupled, inte gral BPS
-structures over a complex manifold M. Then the function
-τ (Z, t) =
-∏
-Im Z(γ)/t>0
-Υ
-(Z(γ)
-2πit
-) Ω( γ)
-(18)
-is a τ -function for the family of solutions given by Theorem 3.2.
-14 TOM BRIDGELAND
-The known asymptotics of the G-function imply that τ (Z, t) has an asymptotic expansion in-
-volving the Bernoulli numbers
-log τ (Z, t)∼ 1
-24
-∑
-γ∈Γ
-Ω( γ) log
-( 2πit
-Z(γ)
-)
-+
-∑
-g≥2
-∑
-γ∈Γ
-Ω( γ)· B2g
-4g (2g− 2)
-( 2πit
-Z(γ)
-) 2g−2
-(19)
-valid as t→ 0 in any half-plane whose boundary rays are not active.
+Suppose given a miniversal variation of finite, uncoupled, integral BPS structures over a complex manifold $M$. We  will show that the family of  solutions given by Theorem \ref{one} has a corresponding $\tau$-function. To describe this function  we first introduce the expression
+\begin{equation}\Upsilon(w)=\frac{e^{-\zeta'(-1)}\, e^{\frac{3}{4}w^2} \,G(w+1)}{(2\pi)^{\frac{w}{2}}\,w^{\frac{w^2}{2}}},\end{equation}
+where $G(x)$ is the Barnes $G$-function, and $\zeta(s)$ the Riemann zeta function. 
+
+\begin{thm}
+\label{doss}
+Let $(\Gamma,Z_p,\Omega_p)$ be a framed, miniversal variation of finite, uncoupled, integral BPS structures over a complex manifold $M$. Then the function  
+\begin{equation}\tau(Z,t)=\prod_{\Im Z(\gamma)/t>0} \Upsilon\bigg(\frac{Z(\gamma)}{2\pi i t}\bigg)^{\Omega(\gamma)}\end{equation}
+is a $\tau$-function for the family of solutions given by Theorem \ref{one}.\end{thm}
+
+The known asymptotics  of the $G$-function imply  that $\tau(Z,t)$  has  an  asymptotic expansion involving the Bernoulli numbers
+\begin{equation}\log \tau(Z,t)\sim \frac{1}{24} \sum_{\gamma\in \Gamma} \Omega(\gamma)\log \bigg(\frac{2\pi i t}{Z(\gamma)}\bigg) +\sum_{g\geq 2} \sum_{\gamma\in \Gamma}   \frac{\Omega(\gamma)\cdot B_{2g}}{4g\, (2g-2)} \bigg(\frac{2\pi i t}{Z(\gamma)}\bigg)^{2g-2}\end{equation}
+valid as $t\to 0$ in any  half-plane whose boundary rays are not active.

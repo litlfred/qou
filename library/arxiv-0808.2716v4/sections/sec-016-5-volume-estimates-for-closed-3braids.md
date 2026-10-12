@@ -8,7 +8,10 @@ pages: 27-27
 source_pdf: 0808.2716v4.pdf
 source_sha256: ea66f7ddcf9e9fe6
 doc_brief: "CUSP AREAS OF F AREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on t he cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2 –bridge link"
+text_source: latex
+latex_prose_ratio: 0.895
+latex_coverage_ratio: 1.0
 ---
-In this section, we give a complete characterization of the c losed 3–braids whose com-
-plements are hyperbolic. Then, we apply Theorem 4.7 from Sec tion 4 to obtain volume
-estimates for closed 3–braids.
+[]{#sec:volume3braids label="sec:volume3braids"}
+
+In this section, we give a complete characterization of the closed $3$--braids whose complements are hyperbolic. Then, we apply Theorem [\[thm:4ps-area\]](#thm:4ps-area){reference-type="ref" reference="thm:4ps-area"} from Section [\[sec:cusp-area\]](#sec:cusp-area){reference-type="ref" reference="sec:cusp-area"} to obtain volume estimates for closed $3$--braids.

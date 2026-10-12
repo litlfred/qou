@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/1-s20-s000187089891800x-main/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Advances in Mathematics 143, 357\u0015375 (1999) Spherical Categories John W. Barrett",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s000187089891800x-main/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Spherical Categories",
   "contains": [
     "library/1-s20-s000187089891800x-main/sections/sec-000",
     "library/1-s20-s000187089891800x-main/sections/sec-001",
@@ -14,8 +19,11 @@
     "library/1-s20-s000187089891800x-main/sections/sec-005"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "1-s20-s000187089891800x-main",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "1-s2.0-S000187089891800X-main.pdf",
     "source_sha256": "9844f124dcbc7f361526fe92297abf6ea213df9d01613d6458d30e082706f392",
     "pages": 19,

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/disssubmission/sections/sec-033",
   "@type": [
     "doco:Section"
   ],
-  "title": "Perverse multiplier 37",
-  "pageStart": 45,
-  "pageEnd": 46,
+  "title": "Integral cohomology",
+  "pageStart": 114,
+  "pageEnd": 117,
   "contains": [
     "library/disssubmission/blocks/prose-sec-033"
   ],
-  "derivedFrom": "library/disssubmission/manifest",
-  "sourceDocument": "library/disssubmission/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
   "provenance": "ingested"
 }

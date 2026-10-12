@@ -5,9 +5,11 @@ status: todo
 type: task
 priority: normal
 tags:
+    - 8f-lean
+    - 8f-open
     - reorg-2026-10-04
 created_at: 2026-08-01T01:43:06Z
-updated_at: 2026-10-04T15:19:32Z
+updated_at: 2026-10-10T08:26:41Z
 parent: qou-8lxd
 ---
 
@@ -350,3 +352,28 @@ because the coefficients are symmetric functions of the sheets and hence single-
 **no** comparison with the anchors `a_D^{(n)}` — those are functions of `q` alone while
 `D_q [n]_z` is a function of `z` and `q`, so matching them would be numerology, not a
 result. `D_q` is not constructed.
+
+
+## Triaged 2026-10-10 — tagged `8f-open`; this is the arc's live research wall, not a scaffold
+
+Read as part of finishing the `8f-lean` front's triage. No re-classification of
+content needed — this bean is actively maintained, correctly scoped, and it ends
+on the sentence a reader needs: **"`D_q` is not constructed."** Tagged `8f-open`
+only so the front's queue separates research from repairs.
+
+Two things worth surfacing for anyone scoping from the front list:
+
+- **It is the downstream home of `qou-an6y`**, closed today. `an6y` established
+  (scope-(a), PR #6652 merged) that the Jackson + q-`d/dz` residue tower fails C1
+  from level 2 on the actual Σ seed, and that with free weights the level-axis
+  constraint is underdetermined — 6/10/14/18 weight values at `m = 0..3`, of
+  which 6/4/4/4 new, all linear, against one constraint per level. Its prune
+  lands here: **do not fit the weights to the recurrence, a fit always exists.**
+  The content is in where `D_q`'s weights come from, which is this bean.
+- **Its own best reusable finding is a Lean one and is not about this wall.** Two
+  of three gaps closed in it were blocked by their *formulation*, not by missing
+  Mathlib: clearing denominators turned the Möbius fixed-point condition into a
+  quadratic (no chart at `∞` needed), and clearing the inverse turned DVRSZ
+  (2.4.1) into a hypothesis with no invertibility side-condition. A prior pass
+  had recorded one of them as needing "Möbius machinery Mathlib does not carry".
+  Worth remembering the next time a gap on this arc is blamed on Mathlib.

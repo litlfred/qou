@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Moving Af into T. We have dealt with the minimization of",
   "pageStart": 40,
   "pageEnd": 45,
   "text": "../sections/sec-008-5-moving-af-into-t-we-have-dealt-with-the-minimi.md",
-  "derivedFrom": "library/pjm-v161-n1-p02-p/manifest",
-  "sourceDocument": "library/pjm-v161-n1-p02-p/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
   "provenance": "ingested"
 }

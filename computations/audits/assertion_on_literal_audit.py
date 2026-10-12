@@ -63,7 +63,7 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP_DIRS = {"_deprecated", "__pycache__", "data", "node_modules"}
+SKIP_DIRS = {"_deprecated", "fsh-guts", "__pycache__", "data", "node_modules"}
 
 #: Calls that merely WRAP a literal without computing anything.
 NUMERIC_CTORS = {"Float", "Integer", "Rational", "mpf", "mpmathify", "float",

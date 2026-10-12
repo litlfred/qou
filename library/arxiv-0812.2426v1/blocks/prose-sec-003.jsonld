@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "Hopf monads 11",
-  "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-003-3-hopf-monads-11.md",
-  "derivedFrom": "library/arxiv-0812.2426v1/manifest",
-  "sourceDocument": "library/arxiv-0812.2426v1/manifest",
+  "title": "Sovereign categories",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "text": "../sections/sec-003-12-sovereign-categories.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0812.2426v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0812.2426v1/manifest.jsonld",
   "provenance": "ingested"
 }

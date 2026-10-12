@@ -58,7 +58,7 @@ mp.dps = 50
 MAGIC = {2, 8, 20, 28, 50, 82, 126}
 
 #: delta^2 Phi at K=10, q_0, N=Z line. Reproduced from
-#: computations/_deprecated/shell_closure_compute.py --kmax 10 --zmax 32
+#: fsh-guts/deprecated/computations/shell_closure_compute.py --kmax 10 --zmax 32
 #: (PYTHONPATH over computations/ and computations/substrate/).
 D2PHI = {
     3: "-34.9520", 4: "34.3682", 5: "-33.3091", 6: "32.7154", 7: "-32.8844",

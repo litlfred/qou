@@ -8,11 +8,14 @@ pages: 21-21
 source_pdf: 2501.03424v1.pdf
 source_sha256: 53e00a30fd850a5b
 doc_brief: "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner — This paper presents an exposition of Soergel bimodules, the categ oriﬁcation of Hecke alge- bras, and their applications to"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-The geometric representation of a Coxeter system ( W, S) is a representation V of W wherein V
-is a real vector space equipped with basis {αs| s∈ S}, and bilinear form
-( , ) := ( αs, αt) =− cos π
-mst
-We are also given the familiar action of W on V with
-s(λ) = λ− 2(λ, αs)αs.
-Imporant thing: V is always faithful.
+\label{app2}
+The \textit{geometric representation} of a Coxeter system $(W,S)$ is a representation $V$ of $W$ wherein $V$ is a real vector space equipped with basis $\{\alpha_s \st s \in S\}$, and bilinear form 
+$$(\text{ } , \text{ }) := (\alpha_s, \alpha_t) = -\cos\dfrac{\pi}{m_{st}}$$
+We are also given the familiar action of $W$ on $V$ with 
+$$s(\lambda) = \lambda - 2(\lambda, \alpha_s)\alpha_s.$$
+
+Imporant thing: \textit{$V$ is always faithful.}

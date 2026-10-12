@@ -1580,6 +1580,41 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "2c0e03ee8a86",
+          "ts": "4eeca4b530ee",
+          "lean": "08fd28ff9524",
+          "lean_statement": "014591a69530"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 9,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 0,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: L1 states $A\\simeq\\omega_A^\\bullet$ for the substrate, while ex:rigid-dualizing-brings computes $\\omega_A^\\bullet\\cong A_\\sigma[-3]$ (Nakayama-twisted and shifted) for the running $q$-deformed example — so the theorem, as stated, is contradicted by the chapter's own example unless $\\sigma=\\mathrm{id}$ and $d=0$. H8: L7 'whose cone is acyclic' restates quasi-isomorphism; L9 'the composition $\\varepsilon\\circ\\mu$ factors through the Frobenius form' is unexplained. | Also: needs_owner (content): conflicts with ex:rigid-dualizing-brings (A_σ[-3]).",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 1, 0, 2, 1, 1] (T=9/16, fail); weakest: H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): State the hypotheses under which $\\omega_A\\simeq A$ (symmetric Frobenius, dimension 0), or state the twisted version $\\omega_A\\simeq A_\\sigma[d]$. Give the finite-dimensional case first: 'For a symmetric Frobenius algebra, $A\\cong A^*$ as bimodules; this is the case $d=0$.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -2113,6 +2148,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T07:01:40.642Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

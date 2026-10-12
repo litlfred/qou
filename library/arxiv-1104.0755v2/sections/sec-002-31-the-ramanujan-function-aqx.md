@@ -8,73 +8,41 @@ pages: 6-7
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
 doc_brief: "A connection formula between the Ramanujan function and the q-Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
+text_source: latex
+latex_prose_ratio: 0.658
+latex_coverage_ratio: 0.981
 ---
-The Ramanujan function appears in Ramanujan’s ”Lost notebook” [9]. Is-
-mail has pointed out that the Ramanujan function can be considere d as
-a q-analogue of the Airy function. The Ramanujan function is deﬁned b y
-following convergent series;
-Aq(x) :=
-∑
-n≥0
-qn2
-(q;q)n
-(−x)n = 0ϕ 1(−; 0;q, −qx).
-In the theory of ordinary diﬀerencial equations, the term Planche rel-
-Rotach asymptotics refers to asymptotics around the largest an d smallest
-zeros. With x = √2n + 1 − 2
-1
-2 3
-1
-3n
-1
-6t and for t ∈ C, the Plancherel-Rotach
-asymptotic formula for Hermite polynomials Hn(x) is
-lim
-n→+∞
-e− x2
-2
-3
-1
-3π − 3
-4 2
-n
-2 + 1
-4
-√
-n!
-Hn(x) = Ai(t). (3)
-In [6], Ismail shows the q-analogue of (3);
-Proposition 1 One can get
-lim
-n→∞
-qn2
-tn hn(sinhξn|q) = A q
-( 1
-t2
-)
-whereeξn =tq− n
-2 .
-Here, hn(·|q) is the q-Hermite polynomial. In this sense, we can deal with
-the Ramanujan function A q(x) as a q-analogue of the Airy function. The
-Ramanujan function satisﬁes the following q-diference equation;
-(
-qxσ 2
-q −σq + 1
-)
-u(x) = 0. (4)
-Remark 1 We remark that another solution of the equation (4) is given b y
-u(x) = θ(x)2ϕ 0(0, 0; −;q, −x).
-Here,
-2ϕ 0(0, 0; −;q, −x) =
-∑
-n≥0
-1
-(q;q)n
-{
-(−1)nq
-n(n− 1)
-2
-} −1
-(−x)n
-is a divergent series.
-6
+The Ramanujan function appears in Ramanujan's \"Lost notebook\"  [@Ramanujan]. Ismail has pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The Ramanujan function is defined by following convergent series; $$\operatorname{A}_q(x):=\sum_{n\ge 0}\frac{q^{n^2}}{(q;q)_n}(-x)^n
+={_0\varphi_1}(-;0;q,-qx).$$
+
+In the theory of ordinary differencial equations, the term Plancherel-Rotach asymptotics refers to asymptotics around the largest and smallest zeros. With $x=\sqrt{2n+1}-2^{\frac{1}{2}}3^{\frac{1}{3}}n^{\frac{1}{6}}t$ and for $t\in\mathbb{C}$, the Plancherel-Rotach asymptotic formula for Hermite polynomials $H_n(x)$ is $$\lim_{n\to +\infty}\frac{e^{-\frac{x^2}{2}}}{3^{\frac{1}{3}}\pi^{-\frac{3}{4}}2^{\frac{n}{2}+\frac{1}{4}}\sqrt{n!}}H_n(x)=\operatorname{Ai}(t). \label{pr}$$ In [@Is], Ismail shows the $q$-analogue of ([\[pr\]](#pr){reference-type="ref" reference="pr"});
+
+::: prop
+One can get $$\lim_{n\to\infty}\frac{q^{n^2}}{t^n}h_n(\sinh\xi_n|q)=\operatorname{A}_q\left(\frac{1}{t^2}\right)$$ where $e^{\xi_n}=tq^{-\frac{n}{2}}$.
+:::
+
+Here, $h_n(\cdot |q)$ is the $q$-Hermite polynomial. In this sense, we can deal with the Ramanujan function $\operatorname{A}_q(x)$ as a $q$-analogue of the Airy function. The Ramanujan function satisfies the following $q$-diference equation; $$\left(qx\sigma_q^2-\sigma_q+1\right)u(x)=0.
+\label{ram}$$
+
+::: rem
+We remark that another solution of the equation ([\[ram\]](#ram){reference-type="ref" reference="ram"}) is given by $$u(x)=\theta (x){}_2\varphi_0(0,0;-;q,-x).$$ Here, $${}_2\varphi_0(0,0;-;q,-x)=\sum_{n\ge 0}\frac{1}{(q;q)_n}\left\{(-1)^nq^{\frac{n(n-1)}{2}}\right\}^{-1}(-x)^n$$ is a divergent series.
+:::
+
+## The $q$-Airy function $\operatorname{Ai}_q(x)$
+
+The $q$-Airy function is found by K. Kajiwara, T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [@KMNOY], in their study of the $q$-Painlevé equations. This function is the special solution of the second $q$-Painlevé equations and given by the following series $$\operatorname{Ai}_q(x):=\sum_{n\ge 0}\frac{1}{(-q,q;q)_n}\left\{(-1)^nq^\frac{n(n-1)}{2}\right\}(-x)^n={}_1\varphi_1(0;-q;q,-x).$$
+
+T. Hamamoto, K. Kajiwara, N. S. Witte [@hama] proved following asymptotic expansions;
+
+::: prop
+With $q=e^{-\frac{\delta^3}{2}}$, $x=-2ie^{-\frac{s}{2}\delta^2}$ as $\delta\to 0$, $${_1\varphi_1}(0;-q;q,-qx)=2\pi^{\frac{1}{2}}\delta^{-\frac{1}{2}}
+e^{-\left(\frac{\pi i}{\delta^3}\right)\ln 2+\left(\frac{\pi i}{2\delta }\right)s+\frac{\pi i}{12}}\left[\operatorname{Ai}\left(se^{\frac{\pi i}{3}}\right)+O(\delta^2)\right],$$ $${_1\varphi_1}(0;-q;q,qx)=2\pi^{\frac{1}{2}}\delta^{-\frac{1}{2}}
+e^{-\left(\frac{\pi i}{\delta^3}\right)\ln 2-\left(\frac{\pi i}{2\delta }\right)s-\frac{\pi i}{12}}\left[\operatorname{Ai}\left(se^{-\frac{\pi i}{3}}\right)+O(\delta^2)\right]$$ for $s$ in any compact domain of $\mathbb{C}$.
+:::
+
+Here, $\operatorname{Ai}(\cdot )$ is the Airy function. From this proposition, we can regard the $q$-Airy function as a $q$-analogue of the Airy function.
+
+We can easily check out that the $q$-Airy function satisfies the second order linear $q$-difference equation $$\left(\sigma_q^2+x\sigma_q-1\right)u(x)=0.
+\label{qai}$$ Another solution of the equation ([\[qai\]](#qai){reference-type="ref" reference="qai"}) is given by $$u(x)=
+e^{\pi i\left(\frac{\log x}{\log q}\right)}{_1\varphi_1}(0;-q;q,x)
+=e^{\pi i\left(\frac{\log x}{\log q}\right)}\operatorname{Ai}_q(-x).$$

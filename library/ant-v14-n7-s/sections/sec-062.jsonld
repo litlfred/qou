@@ -1,19 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/ant-v14-n7-s/sections/sec-062",
   "@type": [
     "doco:Section"
   ],
-  "title": "5A. Fixed point equation",
-  "pageStart": 75,
-  "pageEnd": 77,
+  "title": "Iteration of the harmonic Frobenius of series",
+  "pageStart": 65,
+  "pageEnd": 65,
   "contains": [
-    "library/ant-v14-n7-s/blocks/prose-sec-062",
-    "library/ant-v14-n7-s/blocks/prop-sec-062-01",
-    "library/ant-v14-n7-s/blocks/rem-sec-062-02",
-    "library/ant-v14-n7-s/blocks/rem-sec-062-03"
+    "library/ant-v14-n7-s/blocks/prose-sec-062"
   ],
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"
 }

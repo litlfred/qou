@@ -1294,6 +1294,23 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "e34b4e1521ae",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "n/a",
+        "notes": "criterion does not apply: near-empty prose (32 whitespace words < ~50; spec §5A n/a rule for a bare statement/formula). Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -1756,6 +1773,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:02:35.849Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

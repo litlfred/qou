@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/gt-v10-n3-p07-p/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/gt-v10-n3-p07-p/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "Transversal simplicity and its failure",
-  "pageStart": 24,
-  "pageEnd": 24,
-  "text": "../sections/sec-008-3-transversal-simplicity-and-its-failure.md",
-  "derivedFrom": "library/gt-v10-n3-p07-p/manifest",
-  "sourceDocument": "library/gt-v10-n3-p07-p/manifest",
+  "title": "Future work and some open problems",
+  "pageStart": 26,
+  "pageEnd": 27,
+  "text": "../sections/sec-008-32-future-work-and-some-open-problems.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gt-v10-n3-p07-p/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gt-v10-n3-p07-p/manifest.jsonld",
   "provenance": "ingested"
 }

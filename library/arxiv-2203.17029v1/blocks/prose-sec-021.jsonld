@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2203.17029v1/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2203.17029v1/blocks/prose-sec-021",
   "kind": "prose",
   "title": "Monodromy",
   "pageStart": 40,
   "pageEnd": 42,
   "text": "../sections/sec-021-52-monodromy.md",
-  "derivedFrom": "library/arxiv-2203.17029v1/manifest",
-  "sourceDocument": "library/arxiv-2203.17029v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2203.17029v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2203.17029v1/manifest.jsonld",
   "provenance": "ingested"
 }

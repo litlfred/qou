@@ -64,7 +64,7 @@ def main() -> int:
     cnt = collections.Counter()
     total = 0
     for p in sorted((REPO / "computations").rglob("*.witness.json")):
-        if "_deprecated" in str(p):
+        if ("_deprecated" in str(p) or "fsh-guts" in str(p)):
             continue
         try:
             d = json.load(open(p))

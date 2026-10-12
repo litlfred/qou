@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9212088v1
-doc_title: "Random matrix theory and spectral sum rules for the Dirac operator in QCD1"
+doc_title: "arXiv:hep-th/9212088v1 14 Dec 1992"
 section_id: sec-004-4-sum-rules-for-one-and-two-ﬂavors
 section_title: "Sum rules for one and two ﬂavors"
 section_number: 4
 pages: 9-12
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
-doc_brief: "Random matrix theory and spectral sum rules for the Dirac operator in QCD1 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition"
+toc_source: inferred
 ---
 Sum rules for moments of the inverse squares of the eigenvalues of the Dirac operator
 can be derived for an arbitrary number of ﬂavors and for any value of the total topological

@@ -8,4146 +8,6181 @@ pages: 11-85
 source_pdf: 1608.07234v3.pdf
 source_sha256: 311730670d2fdcb7
 doc_brief: "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS AKSHAY VENKA TESH — We describe a graded extension of the usual Hecke algebra: i t acts in a graded fashion on the cohomology of an"
+text_source: latex
+latex_prose_ratio: 0.825
+latex_coverage_ratio: 0.722
 ---
-and deﬁne q so that 2q `δ “ dimY pKq. These have the same signiﬁcance as described
-in (5), at least if we suppose that the center of G is anisotropic overF .
-We will will work only with open compact subgroups with a prod uct structure, i.e.
-(19) K “
-ź
-Kv
-where Kv Ă GpFvq is an open compact subgroup, and Kv is a hyperspecial maximal
-compact of Gv for all but ﬁnitely many primes v. A prime v will be “good” for K when
-Kv is hyperspecial and the ambient group G is quasi-split at v. The “level of K” will be,
-by deﬁnition, the (ﬁnite) set of all primes v which are not good.
-G has a dual group G_, which we will regard as a split Chevalley group over Z; in
-particular, its Lie algebra is deﬁned over Z, and its points are deﬁned over any ring R. We
-regard it as equipped with a maximal torus T _ inside a Borel subgroup B_.
-In the discussion of the Taylor–Wiles method, which takes pl ace in §6 and §8, it is
-convenient to additionally assume:
-G is simply connected and G_ is adjoint.
-This is a minor issue, to avoid the usual difﬁculties of “squa re roots.” One could (better)
-replaceG_ by some version of the c-group of [7].
-When we discuss Galois cohomology, we will follow the usual c onvention that, for
-a module M under the absolute Galois group GalpL{Lq of a ﬁeld M , we denote by
-H ˚pL,M q the continuous cohomology of the proﬁnite group GalpL{Lq with coefﬁcients
-inM . For L a number ﬁeld, with ring of integers O ĂL, we denote by H 1pOr 1
-S s,M q Ă
-H 1pL,M q the subset of classes that are unramiﬁed outside S andH 1
-f pOr 1
-S s,M q Ă H 1pOr 1
-S s,M q
-the classes that are, moreover, crystalline at p.
-Warning: In the literature, the subscript f is often used to mean classes that are crys-
-talline at p and unramiﬁed at all other places, not merely at places outside S. Indeed, we
-implicitly used this notation in §1.2 and §1.3 when we wrote H 1
-f pGQ, ´q. However, in the
-remainder of the text, we will not use this convention. To avo id any confusion, on the one
-occasion (in §9) we wish to refer to classes that are crystall ine at p and unramiﬁed at all
-other places, we will use the notation H 1
-f,ur. This notation will be reprised when it is used
-so the reader need not remember it now.
-2. D ERIVED HECKE ALGEBRA
-We introduce the derived Hecke algebra (Deﬁnition 2.2) and t hen give two equivalent
-descriptions in §2.3 and §2.4. The model given in §2.3 is by fa r the most useful. We shall
-then describe the action of the derived Hecke algebra on the c ohomology of an arithmetic
-group in §2.6, and then make it a bit more concrete in §2.10. Fi nally, §2.12 discusses some
-minor points to do with change of coefﬁcient ring, and §2.13 d iscusses some other minor
-points about passage between Z{ℓn coefﬁcients and Zℓ coefﬁcients.
-Appendix A expands on various points of homological algebra that are used in the
-current section.
-2.1. As in §1.8, we ﬁx a prime v ofF , with residue ﬁeld Fv of characteristicpv and size
-qv, and set Gv “ GpFvq. We denote by Uv an open compact subgroup of Gv. Eventually,
-we will use only the case of Uv being either a maximal compact subgroup or an Iwahori
-subgroup, but there is no need to impose this. When we are work ing strictly in a local
-setting, we will abbreviate these simply to G andU :
-G “Gv, U “Uv.
-12 AKSHA Y VENKA TESH
-It will also be convenient to ﬁx
-(20) Vv “ a pro-pv, normal, ﬁnite index subgroup of Uv,
-which we again abbreviate to V when it will cause no confusion.
-Let S be a ﬁnite coefﬁcient ring in which qv is invertible. In what follows, by “ G-
-module” we mean a module M under the group algebra SG with the property that every
-m PM has open stabilizer in G. The category of G-modules is an abelian category and it
-has enough projective objects (see §A.2).
-The usual Hecke algebra for the pair pG,U q can be deﬁned as the endomorphism ring
-HomSGpSrXs,S rXsq, whereX “G{U andSrXs denotes the freeS-module on a setX.
-Motivated by this, we deﬁne:
-2.2. Deﬁnition. The derived Hecke algebra for pG,U q with coefﬁcients in S is the graded
-algebra
-(21) H pG,U qS :“ Ext˚pSrG{U s,S rG{U sq,
-where the Ext-group is taken inside the category of G-modules.
-Let us record some variants on the notation:
-- We will write simply H pG,U q when the coefﬁcients are understood to be S;
-- We write H jpG,U q or H pjqpG,U q for the component in degree j, i.e. the Extj
-summand on the right.
-- In global situations where we have ﬁxed a level structure Kv⩽ Gv for all v, or
-for almost all v, we will often write simply Hv,S for the corresponding derived
-Hecke algebra H pGv,Kvq. Again we will write simply Hv if the coefﬁcients are
-understood to be S.
-If we choose a projective resolution P of SrG{U s as G-module, then H pG,U q is
-identiﬁed with the cohomology of the differential graded al gebra HomSGpP, Pq. It will
-be convenient for later use to make an explicit choice of P: Let Q be a free resolution
-of the trivial module S in the category of SrU {V s-modules. We may take P to be the
-compact induction (from U to G) of Q. Observe that all the groups Pi of the resulting
-resolution are free S-modules.
-2.3. Description in terms of invariant functions. We may also describe H pG,U q as the
-algebra of “G-equivariant cohomology classes onG{U ˆG{U with ﬁnite support modulo
-G.” We now spell out carefully what this means; an explicit iso morphism between this
-description and Deﬁnition 2.2 is constructed in Appendix §A .
-First some notation: forx,y PG{U , we denote byGxy the pointwise stabilizer of px,y q
-insideG; it is a proﬁnite group. We denote by H ˚pGxy,S q the continuous cohomology of
-Gxy with coefﬁcients in S (discretely topologized).
-In this model, an element of H pG,U q is an assignment h that takes as input px,y q P
-G{U ˆ G{U and produces as output hpx,y q P H ˚pGxy,S q, subject to the following
-conditions:
-‚ h isG-invariant, that is to say,rgs˚hpgx,gy q “ hpx,y q, where rgs˚ :H ˚pGgx,gy q Ñ
-H ˚pGxyq is pullback by Adpgq.
-‚ h has ﬁnite support modulo G, i.e. there is a ﬁnite subset T ĂG{U ˆG{U such
-thathpx,y q “ 0 if px,y q does not lie in the G-orbit ofT .
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 1 3
-The addition andS-module structure on H pG,U q is deﬁned pointwise. The product is
-given by the rule
-(22) h1 ˚h2px,z q “
-ÿ
-yPG{U
-h1px,y qlo o omo oon
-H˚ pGxyq
-Yh2py,z qlo o omo o on
-H˚ pGyz q
-where we give the right-hand side the following meaning: The cup product on the right
-makes sense inH ˚pGxyz,S q, i.e. ﬁrst restrict h1 andh2 toH ˚pGxyz,S q, and take the cup
-product there. Now split G{U as a disjoint union šOi of orbits under Gxz; let O be one
-such orbit. We regard
-(23)
-ÿ
-yPO
-h1px,y q Yh2py,z q :“ Cores
-Gxy0 z
-Gxz ph1px,y 0q Yh2py0,z qq
-wherey0 PO is any representative, and the “trace” or corestriction is t aken fromGxy0z to
-Gxz; note that the right-hand side of (23) is independent of choi ce of y0 P O. Adding up
-over orbitsO gives the meaning of the right-hand side of (22).
-Remark. Suppose that ∆ is a compact subgroup of G that stabilizes every point of G{U .
-In this case, we can restrict h to get a functionh∆ :G{U ˆG{U ÑH ˚p∆ q. We also have
-phh1q∆ “h∆ h1
-∆ , where the right-hand multiplication is the more familiar
-(24) h∆ h1
-∆ px,z q “
-ÿ
-yPG{U
-h∆ px,y q Yh1
-∆ py,z q.
-2.4. Double coset description. Finally, we can describe H pG,U q in terms of double
-cosetsU zG{U . For x PG{U let
-Ux “U X AdpgxqU
-wheregx PG representsx (that is to say, x “gxU q. Then Ux is the stabilizer of x inU .
-Fix a set of representatives rU zG{U s Ă G{U for the left U -orbits on G{U . Then we
-have an isomorphism of S-modules
-(25)
-à
-xPrUzG{Us
-H ˚pUx,S q „Ñ H pG,U q
-given thus: Fix a class z P rU zG{U s, and a representative gz P G forz – thus z “ gzU .
-Letα P H ˚pUz,S q. Then the class of α P H ˚pUz,S q, considered as an element of the
-left-hand side of (25), is carried to the function hz,α onG{U ˆG{U characterized by the
-following properties:
-(i) hz,αpx,y q “ 0 unless px,y q belongs to the G-orbit of pz,eU q.
-(ii) hz,α sends pz,eU q toα PH ˚pUz,S q – note that Uz is exactly the common stabi-
-lizer ofz andeU .
-This gives another description of H pG,U q. It is harder to directly describe the mul-
-tiplication rule in this presentation, and we use instead th e isomorphism to the previous
-description. Later on we’ll describe explicitly the action ofhz,α on the cohomology of an
-arithmetic manifold.
-Now let us examine the “size” of H pG,U q; this discussion is really only motivational,
-and so we will be a little informal. Suppose, for example, tha tG is split andU is hyperspe-
-cial. In this case, the quotient U zG{U is parameterized by a dominant chamber X˚pAq`
-inside the co-character group X˚pAq of a maximal split torus A. Moreover, if x P G{U
-is a representative for a double coset parameterized by λ P X˚pAq, then the group Ux is,
-14 AKSHA Y VENKA TESH
-modulo a pro-p-subgroup, the Fv-points MλpFvq of the centralizer Mλ of λ. Thus we
-obtain an isomorphism of S-modules:
-H pG,U q :“
-à
-λPX˚ pAq`
-H ˚pMλpFvq,S q
-For “generic” λ – i.e., away from the walls of X˚pAq` – the group Mλ is a split torus; the
-order of its Fv-points is a power of pqv ´ 1q. Thus if pqv ´ 1q is invertible on S, all the
-terms of H pG,U q corresponding to dominant λ vanish.
-In this paper we will be primarily concerned with the case whe nqv ´ 1 “ 0 insideS.
-Although it is certainly interesting to study H pG,U q in general, the preceding discussion
-shows that this case (i.e. qv “ 1 inS) is where H pG,U q is “largest.”
-2.5. Derived invariants. IfM is any complex of G-modules, we may form the derived
-invariants
-derivedU -invariants onM :“ HomSGpSrG{U s,M q P DpModSq
-where Hom is now derived Hom in the derived category of G-modules, taking values in
-the derived category of S-modules.
-Then the derived Hecke algebra automatically acts on the coh omology of the derived
-invariants:
-(26) H pG,U q ýH ˚pderivedU -invariants onM q.
-Indeed, the derived invariants are represented by the compl ex HomSGpP,M q, where P
-is as before any projective resolution of SrG{U s. The action of HomSGpP, Pq on this
-complex furnishes the desired (right) action of H pG,U q.
-Let us describe the derived invariants in more familiar term s. Let V be as in (20), and
-consider the explicit projective resolution P discussed in §2.2; we see that the derived
-U -invariants are computed by the complex HomSU pQ,M q. This coincides with U {V -
-homomorphisms from Q to the termwise invariantsMV ; since Q is a projective resolution
-ofS in the category of U {V -modules, we see that
-(27) derived U -invariants onM » HomSU {V pS,M V q P DpModSq.
-where the right hand side is derived homomorphisms, in the de rived category of U {V -
-modules. In other words, there is an identiﬁcation
-H ˚pderivedU -invariants onM q » H˚pU {V,M V q,
-the group hypercohomology of the ﬁnite group U {V acting on the complex of termwise
-invariantsMV .
-2.6. Arithmetic manifolds. In the remainder of this section, we describe how the derived
-Hecke algebras act on the cohomology of arithmetic manifold s.
-We follow the notation of §1.8. In particular, we ﬁx K Ă GpAf q an open compact
-subgroup, which we are supposing to have a product structure K “ ś
-wKw; let us split
-this as
-K “K pvq ˆKv
-whereK pvq “ ś
-w‰vKw is the structure “away fromv.” Associated to this is an arithmetic
-manifoldY pKq, as in (17).
-We will construct an action of the derived Hecke algebra Hv “ HvpGv,Kvq on the
-cohomology of Y pKq. To do so, we will exhibit Y pKq as the derived Kv-invariants on a
-suitableGv-module, and then apply (26).
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 1 5
-ForUv any open compact subgroup of Gv, let us abridge:
-(28) C˚pUvq “ cochain complex of Y pK pvq ˆUvq withS coefﬁcients.
-Now let
-M “ limÝ ÑUv
-C˚pUvq.
-where the limit is taken over open compact subgroups Uv⩽ Gv. Visibly,M is a complex
-of smoothGv-modules. Choosing Vv ĂKv as in (20), we have
-MVv »C˚pVvq,
-since we may interchange invariants and the direct limit; and then for a ﬁnite cover X ÑY
-with Galois group D we have an isomorphism C˚pY q „ÑC˚pXqD. However, the derived
-invariants of Kv{Vv on C˚pVvq “coincide with” the cohomology of Y pKq: the natural
-map
-C˚pY pKqq “ C˚pVvqKv {Vv Ñ HomSrKv{Vv spS,C ˚pVvqq
-is a quasi-isomorphism, in the derived category of S-modules. This follows from the
-fact that the terms C˚pVvq have no higher cohomology as Kv{Vv-modules, because each
-CjpVvq is the module of S-valued functions on a free Kv{Vv-set and is in particular in-
-duced from a representation of the trivial group.
-We have exhibited a quasi-isomorphism
-C˚pY pKqq » derivedKv-invariants onM
-betweenC˚pY pKqq and a complex that represents the derived invariants of Kv acting on
-M . Thus (26) gives a natural right action of H pGv,Kvq on the cohomology of Y pKq.
-Remark. Although this is strictly a right action, we will often write it on the left, which con-
-forms more to the usual notation for Hecke operators; the rea der should therefore remem-
-ber that the multiplication needs to be appropriately switc hed at times, but this will cause
-almost no issue because the derived Hecke algebra will prove to be graded-commutative at
-all the places we use.
-Of course, this description is totally incomprehensible; t hus we now work on translating
-it to something more usable.
-2.7. Digression: pullback from a congruence quotient. We ﬁrst need a brief digression
-to construct certain cohomology classes on Y pKq. These are called “congruence classes”
-in [10], because they capitulate in congruence covers of Y pKq.
-There is a natural map
-(29) H ˚pKv,S q Ý ÑH ˚pY pKq,S q,
-where, on the left,H ˚pKv,S q is the continuous cohomology of the proﬁnite group K with
-coefﬁcients in (discretely topologized) S. Indeed, any cohomology class for H ˚pKv,S q
-is inﬂated from a quotient Kv{Kv,1. Let K1 be the preimage of Kv,1 inK. The covering
-Y pK1q Ñ Y pKq has deck group Kv{Kv,1, and thus gives rise to a map, well-deﬁned up
-to homotopy,
-(30) Y pKq Ý Ñclassifying space of Kv{Kv,1.
-We may then pull back cohomology classes along this map to get (29).
-These “congruence” cohomology classes have a very simple be havior under Hecke op-
-erators:
-16 AKSHA Y VENKA TESH
-2.8. Lemma. Let h be in the image of the map (29). F or any prime w of F that does
-not divide the level of K or the size of S, such that GpFwq is split, and any usual Hecke
-operatorT supported atw, we have
-Th “ degpT qh.
-We will give a direct proof, but let us note that one can also de duce the result from the
-commutativity of the Hecke algebra atw (which is proved, under mild restrictions on w, in
-§3). It is also likely that the assumption that GpFvq is split is unnecessary (sincew doesn’t
-divide the level of K, it is automatically quasi-split by our deﬁnitions, which s hould be
-enough for the argument below to go through).
-Proof. It is easy to verify this if w ‰v, so we examine only the case w “v.
-By the assumptions, we may suppose that Kv “ GpOvq, for a split reductive G over
-Ov. Suppose that T arises from the double coset KvavKv, where, without loss, a lies in
-a maximal split torus ApFvq that is in good position relative to Kv – i.e. it extends to a
-maximal split torus of G.
-We will show thath has the same pullback under the two natural maps
-π1,π 2 :Y pK X AdpavqKq Ñ Y pKq,
-namely, the natural map, and the map induced by multiplicati on by av; this implies the
-Lemma.
-There is an isomorphism X˚pAq » Av{pAv XKvq; let M be the centralizer in G of
-the co-character in X˚pAq that corresponds to the class of a. Let K2 be the preimage,
-underKv Ñ GpOv{̟D
-v q, of MpOv{̟D
-v q; here D is a large enough integer, and ̟v a
-uniformizer.
-Then, on the one hand, the inclusion K2 ãÑK X AdpavqK has index equal to a power
-of qv. In particular, it induces an injection on H ˚p´,S q, so it is enough to verify that
-π˚
-1h “π˚
-2h after pullback under Y pK2q Ñ Y pK X AdpavqKq.
-However, the pullback H ˚pGpFvq,S q Ñ H ˚pKv,S q is an isomorphism. The class h
-is therefore actually pulled back from GpFvq. Our assertion then follows from the fact that
-the natural maps K2 Ý ÑGpFvq – namely, the reduction map, and the conjugate of the
-reduction map by av – actually coincide. This proves that π˚
-1h “π˚
-2h, and concludes the
-proof of the Lemma. □
-This motivates the following deﬁnition:
-2.9. Deﬁnition. W e say a classh PH ˚pY pKq,S q is Hecke-trivial if, for all places v that
-do not divide the level of K and with residue characteristic invertible on S, and all Hecke
-operatorsT supported atv,
-pT ´ degpT qqnh “ 0.
-for a sufﬁciently large integer n “ npT q. W e denote by H ˚pY pKq,S qtriv the submodule
-of Hecke–trivial classes.
-2.10. Concrete expression for the action of Hv on H ˚pY pKq,S q. Let us now give a
-more down-to-earth description of the action of Hv,S onH ˚pY pKq,S q, with notation as
-above. In particular, we will show that the action of element shz,α can be described in a
-fashion that is very close to the usual deﬁnition of Hecke ope rators.
-Fromz “ gzKv P Gv{Kv, and α P H ˚pKv X AdpgzqKvq, we obtain a class hz,α P
-H pGv,Kvq, by the recipe of §2.4. Then:
-2.11. Lemma. Write
-Kz “K X AdpgzqK, K 1
-z “K X Adpg´1
-z qK.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 1 7
-Also, let xαy be the image of α underH ˚pKv X AdpgzqKvq
-(29)
-Ñ H ˚pY pKzq,S q. Then the
-action ofhz,α onH ˚pY pKq,S q coincides with the following composite
-(31) H ˚pY pKqq
-rgzs˚
-Ñ H ˚pY pKzqq
-Yxαy
-Ñ H ˚pY pKzqq Ñ H ˚pY pKqq,
-where all cohomology is taken with S coefﬁcients, and the arrows are (respectively)
-pullback by the map Y pKzq Ñ Y pKq induced by the map g ÞÑ ggz, cup with xαy, and
-push-forward for the standard map Y pKzq Ñ Y pKq.
-Note that this is almost exactly the same as a usual Hecke oper ator; we have just in-
-serted the operation of Yxαy on the way. The fact that xαy is Hecke-trivial, in the sense
-of Deﬁnition 2.9, is the key point that makes this operation c ommute with usual Hecke
-operators.
-Proof. Routine but extremely tedious; see §A. □
-Remark. Note also the following trivial case: taking gz “ 1, we see that the operation of
-“cup with α PH ˚pKv,S q” always belongs to the derived Hecke algebra.
-Remark. As an example let us write out the argument that derived Hecke operators at dif-
-ferent places always commute with one another. Fix placesv ‰w, elementsgv PGv,gw P
-Gw, and classesαv PH ˚pKv X AdpgvqKvq andαw PH ˚pKw X AdpgwqKwq. We claim
-that the composite of the two associated derived Hecke opera tors can be described in the
-following way, which makes graded commutativity clear: Pus h-pull aong
-Y pKq Ð Y pKgv XKgw q Ñ Y pKq,
-but cup in the middle with the class ofαv Yαw. To verify this claim, examine the following
-diagram:
-(32) Y pKgv X Kgw q
-ˆ gw
-/d119/d119♦♦♦♦♦♦♦♦♦♦♦
-/d39/d39❖❖❖❖❖❖❖❖❖❖❖
-Y pKgv q
-ˆ gv
-/d122/d122✉✉✉✉✉✉✉✉✉
-/d39/d39❖❖❖❖❖❖❖❖❖❖❖ Y pKgw q
-ˆ gw
-/d119/d119♦♦♦♦♦♦♦♦♦♦♦
-/d36/d36❏❏❏❏❏❏❏❏❏
-Y pKq Y pKq Y pKq
-When we write (e.g.) ˆgv we mean that the map is induced by right multiplication by gv.
-The composite of the derived Hecke operators is, by deﬁnitio n, obtained by going along
-the bottom two rows. However, the middle diagram is a ﬁber pro duct square, and so the
-two ways of going from Y pKgv q to Y pKgw q, via “push-pull” or “pull-push,” coincide.
-To prove the desired claim, then, it sufﬁces to show that the t wo pullbacks of the class
-xαvy P H ˚pY pKgv qq toH ˚pY pKgv XKgw qq – via the natural map, and via the map ˆgw
-– actually coincide.
-Equivalently, the classes obtained from αv, in the natural way on Y pKgv XgwKg ´1
-w q
-and onY pKgv Xg´1
-w Kgwq are in fact compatible, under the map ˆgw from one space to
-the other. However, these cohomology classes are obtained f rom a certain covering of the
-spaces, obtained by adding extra level at v, and the compatibility follows from the fact that
-ˆgw lifts to these coverings.
-18 AKSHA Y VENKA TESH
-2.12. Change of coefﬁcients. Let us examine what happens under a change of rings
-S Ñ S1. The description of §2.4 and the explicit action of §2.10 mea ns that there is a
-map of Hecke algebra Hv,S Ñ Hv,S 1 compatible with the actions on H ˚pY pKq,S q Ñ
-H ˚pY pKq,S 1q. However, this does not make quite clear that the change of ri ngs map is
-an algebra homomorphism. For completeness let us explain th is now, since we will want
-to freely pass between Z{ℓn coefﬁcients for various ns.
-The tensor product bSS1 is a right exact functor from SG-modules to S1G modules
-and so it can be derived to a map of derived categories. Note th at this carries projectives to
-projectives since HomS1Gv pP bSS1, ´q “ HomSGv pP, ´q.
-This derived tensor product (let us write it as b) “carries SrGv{Kvs toS1rGv{Kvs:” if
-we choose a projective replacement P ÑSrGv{Kvs the natural map
-P bSS1 Ý ÑS1rGv{Kvs
-is a quasi-isomorphism. Indeed it is possible to choose P so that each term of P is free
-as anS-module (see the explicit resolution after (21)). Then P bSS1 has no cohomology
-in higher degree (since this complex computes the TorSpSrGv{Kvs,S 1q and the former is
-free) and thus it is a resolution of S1rGv{Kvs.
+\label{introdha}
+ Let $v$ be a prime, $G_v = \GG(\Q_v)$ and $K_v$ a maximal compact subgroup. The  usual Hecke algebra at $v$, with  coefficients in a (say finite) ring $S$,  can be described as    $  \Hom_{S G_v} \left(  S[G_v/K_v],  S[G_v/K_v] \right).$
+ If in place of $\Hom$ we use $\Ext$ (see \S \ref{sec:dha} for more details)
+ we get a graded extension, which we  may call the ``local derived Hecke algebra'':
+\begin{eqnarray} \label{extdef} \mathscr{H}_{v,S} :=  \bigoplus_i \Ext^i_{S G_v} \left(  S[G_v/K_v],  S[G_v/K_v] \right) 
+\end{eqnarray}
+ 
+ Such a construction has been considered by P. Schneider \cite{Schneider} in the context of local representation theory in the case when $S$ has  characteristic $v$.  
+In the present paper, however, we are solely interested in the opposite case, when $v$ is invertible on $S$. 
+
+  
+For elementary reasons, the higher exts are ``almost'' killed by $q_v-1$, where $q_v$ is the size of the residue field; thus this algebra is of most interest when $q_v=1$ in $S$. 
+In that case we have (\S \ref{Satake}, Theorem \ref{DHA:Satake}) a {\em   Satake isomorphism}: if $q_v=1$ in $S$,  then
+  $ \mathscr{H}_{v,S}$ is isomorphic to the Weyl-invariants on the corresponding algebra for a torus (and is thus   graded-commutative).  
+  
+Now $\dHecke_{v,S}$ acts on the cohomology $H^*(Y(K), S)$  {\em in a graded fashion} -- the $\Ext^i$ component shifts degree by $+i$. (See 
+ \S \ref{sec:explication}  for an explicit version, \S \ref{Arithmeticmanifolds} for the abstract version.)  In particular,
+$\bigotimes_{v} \dHecke_{v,\Z/p^n}$  acts on $H^*(Y(K), \Z/p^n)$ and then
+  (by passing to the limit as $n \rightarrow \infty$, \S \ref{limit}) we get a  ring of endomorphisms  
+  $$ \gHecke \subset \End   \ H^*(Y(K), \Z_{p}),$$
+  the ``global derived Hecke algebra.''  
+  The degree zero component of $\gHecke$ is the usual Hecke algebra $\mathbb{T}$ -- i.e. the  subalgebra
+  of $\End \ H^*$ generated by all Hecke operators.  Here, and elsewhere in the introduction,
+  we will use in the Hecke algebra only ``good'' places $v$ relative to $K$. 
+  
+  {\color{\changecolor} 
+   It seems to us likely that $\gHecke$ is graded commutative
+   but we do not know this in general.  However, this has limited impact  for global applications because, firstly, different places commute; and secondly 
+   our analysis in \S \ref{Satake} provides a large set of ``nice primes''
+   at which the local derived Hecke algebra is graded commutative. In particular, 
+   all of our work in this paper really analyzes the subalgebra generated by these ``nice primes''  (see    after  \eqref{VV0} for definition). 
+This subalgebra is what is important  for all our applications, as will become clear from the discussion of \S \ref{sec:MV} onward. 
+In many cases,  the existence of this sub-algebra is  anyway enough to force all of $\gHecke$ to be graded commutative (see Theorem \ref{maintheoremtriv} part (ii) and Proposition \ref{P853}).  }
+  
+   
+    
+  As we have mentioned, if we decompose $H^j(Y(K), \Z_{p})$ into eigencharacters for $\mathbb{T}$,
+  one finds the same eigencharacters occuring in several different degrees $j$.  See \cite{takagi} for an elementary introduction to this phenomenon. 
+    We want to see that  $\mathbb{T}$ is rich enough to   account for this. 
+    
+    One way of formalizing  ``rich enough'' is  to  complete the cohomology at a given character $\chi: \mathbb{T} \rightarrow \mathbf{F}_{p}$ of the usual Hecke algebra,
+    and ask that $H^*(Y(K), \Z_{p})_{\chi}$  be generated over $\gHecke$ in minimal degree. In other words, we should like to check surjectivity of
+    the map \begin{equation} \label{bigenough}\gHecke \otimes H^{\BWq}(Y(K), \Z_{p})_{\chi} \rightarrow H^*(Y(K), \Z_{p})_{\chi}\end{equation}      where $\BWq$ \index{$\BWq$, minimal degree of tempered cohomology} is the minimal degree where $H^*(Y(K), \Z_{p})_{\chi}$ is nonvanishing.\footnote{{\color{\changecolor} Note that, if $\gHecke$ is not known to be graded commutative,
+    it is not a priori clear it preserves the $\chi$-eigenspace. However, under very mild assumptions it does, and this will be the
+    situation in the cases we analyze.  Alternately one
+    can switch to the graded commutative subalgebra described above. For the purpose of the introduction, then, the reader may either assume
+    that $\gHecke$ preserves $H^*_{\chi}$ or assume that $\gHecke$ is replaced by the ``strict global derived Hecke algebra''   defined in \S \ref{Hecke:resplace}.
+    }}
+    
+    
+    
+    
+    
+    
+   In Theorem \ref{maintheoremtriv} and  Theorem  \ref{mindegreeproof} we prove this in two different cases (in both cases,
+    we require the prime $p$ to be large enough): 
+    
+ Theorem \ref{maintheoremtriv}, proved in  \S \ref{Quillen}, studies the case
+   when  
+  $\mathbf{G}$ is (the $\Q$-group corresponding to) an inner form
+   of $\mathrm{SL}_n$ over an imaginary quadratic field, and   $\chi$ is the character  $T \mapsto \deg(T)$ that sends any Hecke operator $T$ to
+   its degree.  The main point is that, in this case, $H^*(Y(K), \Z_{p})_{\chi}$ can be described in terms of algebraic $K$-theory. 
+
+ Theorem \ref{mindegreeproof}, proved in   \S \ref{Patching} and \S \ref{Patching2}, treats the case of $\chi$ associated to a tempered cohomological automorphic form, {\em assuming 
+  the existence of Galois representations attached to cohomology classes on $Y(K)$,
+   satisfying the expected properties (see \S \ref{GaloisAss}). } \footnote{Our assumptions are similar to Calegari--Geraghty \cite{CG}; however we do not need
+   the assumptions on vanishing of cohomology because we allow ourselves to discard small $p$. 
+     {\color{\changecolor}   Since the first version of this paper, remarkable progress has been made in analyzing
+    the Galois representations attached to torsion classes. In particular, the paper
+    \cite[Theorem 3.11]{ManyAuthorPaper} of Allen, Calegari, Caraiani, Gee, Helm, Le Hung, Newton, Scholze, Taylor and Thorne
+    establishes, among many other results,  the key local-global compatibility needed for Taylor--Wiles patching.
+    Moreover, the paper \cite{SevenAuthorPaper} of Caraiani, Gulotta, Hsu, Johansson, Mocz, Reinecke, and Shih
+      eliminates the use of nilpotent ideals in the
+    Galois representations originally constructed by Scholze. While these do not precisely match with the inputs
+    needed for our setup of the argument, they appear to  address the key  issues,  and so to me it seems very likely that 
+    one could produce an unconditional version of our analysis in the near future.}}   In this analysis we also impose some assumptions on $\chi$ for our convenience -- e.g. ``minimal level,'' and excluding congruences with other forms --  we have not attempted
+   to be general. Here, the main tool of the proof is a very striking interaction between the derived Hecke algebra and the Taylor--Wiles method. We discuss this interaction   further in \S \ref{sec:explication}. 
+
+   
+   
+ 
+    
+
+
+
+
+
+
+ 
+The proofs of \S \ref{Quillen} and \S \ref{Patching}--\ref{Patching2} are quite different, but they have an     
+  an interesting   feature in common. In both cases, we use the derived Hecke algebra at primes $q$
+such that restriction to $G_{\Q_q}$ kills certain classes in global Galois cohomology.
+These classes live inside a certain dual Selmer group (specifically, the right hand side
+of \eqref{Letalef} below).
+
+That this particular dual Selmer group arises is quite striking, because
+it seems to be a $p$-adic avatar of a certain motivic cohomology group;
+and this same motivic cohomology group is suggested, in \cite{PV},
+to act on the rational cohomology of $Y(K)$. 
+ This brings us to the core motivation of this paper:
+the derived Hecke algebra allows one to construct a $p$-adic realization of the 
+operations on rational cohomology proposed in \cite{PV}.  
+Therefore, we   digress to describe the conjectures of \cite{PV}. 
+ We return to describe the remainder of  the current paper in 
+\S \ref{reindexing}. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+ 
+    
+    
+
+ 
+ 
+\subsection{Motivic cohomology}  \label{sec:MV} 
+ 
+ This section is solely motivational, and so we will  
+ freely assume various standard conjectures without giving complete references. We shall also allow ourselves to be slightly imprecise  
+ in the interest of keeping the exposition brief. We refer to the paper \cite{PV} for full details. 
+ 
+ Let $\chi: \mathbb{T} \rightarrow \Q$ be a character of the usual Hecke algebra, now with $\Q$ values. 
+  We will suppose that $\chi$ is tempered and cuspidal. By this, we mean that 
+  there is a collection $\pi_1, \dots, \pi_r$ of cuspidal automorphic representations, each tempered at $\infty$, 
+  such that the generalized $\chi$-eigenspace $H^*(Y(K), \C)_{\chi}$  is exactly equal to the subspace of cohomology associated to the $\pi_i$s. 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+Consider now this generalized eigenspace with rational coefficients $$H^*(Y(K), \Q)_{\chi} \subset H^*(Y(K), \Q).$$
+ One can understand its dimension data completely. To do so
+we introduce some numerical invariants: let  $\delta, \BWq$ be defined such that
+   \begin{equation} \delta  = \mathrm{rank} \  \mathbf{G}(\R) - \mathrm{rank} \ K_{\infty}. \end{equation} 
+     \begin{equation} \label{qdef0} 2 \BWq +\delta = \dim Y(K). \end{equation} 
+  Then  we have 
+ (see \cite[Theorem III.5.1]{BW}; also \cite[Cor. 5.5]{Borel2})
+\begin{equation} \label{dimeq} \dim H^{\BWq+i} (Y(K), \Q)_{\chi} = {\delta \choose i} \dim H^{\BWq}(Y(K), \Q)_{\chi}.\end{equation}
+ 
+  In \cite{PV} a conjectural explanation for this numerology is proposed. Namely, 
+ we construct a $\delta$-dimensional $\Q$-vector space  and 
+ suggest that its exterior algebra acts on $H^*(Y(K), \Q)_{\chi}$. To define the vector space requires
+a discussion first of the motive associated to $\chi$, and then of its motivic cohomology. 
+
+
+\subsubsection{The Galois representation and the motive associated to $\chi$}
+It is conjectured (and in some cases proven \cite{Scholze}) 
+that to such $\chi$ there is, for every prime $p$,  a Galois representation 
+$\rho_{\chi}: \Gal(\overline{\Q}/\Q) \rightarrow {}  \LG(\Q_{p})$, where $\LG$ is the Langlands dual group.\footnote{A priori, this takes  $\overline{\Q_{p}}$
+coefficients; we will, for simplicity, assume that it can actually be defined over $\Q_{p}$. Moreover,  in general \cite[\S 3.4]{BG}  one has to
+replace $\LG$ by a slightly different group to define $\rho_{\chi}$, but the foregoing discussion goes through with no change. 
+ } 
+ 
+ We shall suppose that $p$ is a good prime,  not dividing the level of the original arithmetic manifold $Y(K)$ (for the precise meaning of ``level,''
+ see after \eqref{prodformula}). 
+In particular, this means that $\rho_{\chi}$ should be crystalline upon restriction to $G_{\Q_p}$. 
+ 
+  
+Now we shall compose $\rho$ with the co-adjoint representation $\LG \rightarrow \Aut(\widehat{\mathfrak{g}}^*)$
+of $\LG$ on the dual of its own Lie algebra (here $\widehat{\mathfrak{g}}$ is the  Lie algebra of the dual group to $\G$, considered as a $\Q$-group, 
+and $\widehat{\mathfrak{g}}^*$ is its $\Q$-linear dual).
+The result is  
+$$  \Ad^* \rho_{\chi}: \Gal (\overline{\Q}/\Q) \longrightarrow \Aut(\widehat{\mathfrak{g}}^* \otimes \Q_{p})$$
+
+
+It is also conjectured that  $\Ad^* \rho_{\chi}$ should be motivic.   In other words, there should exist a weight zero  motive   $M_{\coad}$ over $\Q$, the ``coadjoint motive for $\chi$,'' whose Galois realization
+is isomorphic to $\Ad^* \rho_{\chi}$:
+\begin{equation} \label{Galoisrealization} H^*_{\mathrm{et}}(M_{\coad} \times_{\Q} \overline{\Q}, \Q_{p}) \simeq \Ad^* \rho_{\chi} \mbox{ (in cohomological degree $0$)}.\end{equation}
+For simplicity we shall assume that $M_{\coad}$ can be taken to be a Chow motive, and    will suppose that the coefficient field of $M_{\coad}$ is equal to $\Q$.   
+\footnote{Since \eqref{Galoisrealization} only determines the {\'e}tale realization, it is more natural to consider $M_{\coad}$ as a homological motive. Assuming standard conjectures,
+\cite[\S 7.3 Remark 3.bis]{murre}  this can be promoted (non-canonically) to a Chow motive.  The independence of 
+of the constructions that follow requires a further conjecture, e.g. the existence of the Bloch--Beilinson filtration on $K$-theory.}
+ \medskip
+
+ 
+
+
+\subsubsection{Motivic cohomology groups associated to $\chi$} \label{motivic chi} 
+For such an $M_{\coad}$, and indeed for any Chow motive $M$, we can define (after Voevodsky) a bigraded family of motivic cohomology groups  $H^{a}_{\mot}(M ,\Q(q))$; the indexing is chosen so that this  admits a comparison map to the corresponding absolute {\'e}tale cohomology group $H^a_{\mathrm{et}}(M, \Q_p(q))$. 
+
+
+
+We will be solely interested in the motivic cohomology group with $a=q=1$; 
+in this case, with the coadjoint motive,  the comparison with {\'e}tale cohomology gives
+\begin{equation} \label{saxophone} H^1_{\mot}(M_{\coad}, \Q(1))  \otimes_{\Q} \Q_q \rightarrow H^1(G_{\Q}, \Ad^* \rho_{\chi}(1)).\end{equation}
+
+
+
+
+Now Scholl \cite[Theorem 1.1.6]{scholl} has shown that one can define  (again for any Chow motive $M$ over $\Q$) 
+a natural subspace  $H^a_{\mot}(M_{\Z}, \Q(q)) \subset H^a_{\mot}(M, \Q(q))$ of its motivic cohomology, informally speaking ``those classes that extend to a good model over $\mathbf{Z}$.''
+Conjecturally, the analogue of the above map should now take values 
+  inside the $f$-cohomology of Bloch and Kato \cite{BK}; in the case of interest  the analog of \eqref{saxophone} is now 
+    $$H^1_{\mot}((M_{\coad})_{\Z}, \Q(1))  \otimes_{\Q} \Q_q \rightarrow H^1_f(G_{\Q}, \Ad^* \rho_{\chi}(1)).$$
+Moreover, this map is conjecturally (\cite[5.3(ii)]{BK})  an isomorphism. 
+
+It may be helpful to note that  Beilinson's conjecture relates this particular motivic cohomology to the value of the $L$-function for $\Ad^* \rho_{\chi}$  at the edge of the critical strip. In particular,
+Beilinson's conjectures imply
+that $$\dim_{\Q} H^1_{\mot}((M_{\coad})_{\Z}, \Q(1)) = \mbox{ order of vanishing  of $L(s, \Ad^* \rho_{\chi})$  at $s=0$.} $$
+ A routine computation with $\Gamma$-factors shows that the right-hand side should indeed be equal to $\delta$. 
+
+
+
+To keep typography simple, we will denote the group $H^1_{\mot}((M_{\coad})_{\Z},\Q(1))$ simply by $L$: 
+\begin{equation} \label{LDef} L := H^1((M_{\coad})_{\Z}, \Q(1)). \end{equation}
+so that our discussion above says that, granting standard conjectures, $L$ is a $\Q$-vector space of dimension $\delta$,  and it comes with a map
+\begin{equation} \label{Letalef} L \otimes \Q_p \rightarrow \underbrace{ H^1_f(G_{\Q}, \Ad^* \rho_{\chi}(1))}_{:= L_{\Q_p}}\end{equation}
+ 
+
+
+
+
+
+  
+
+
+   
+
+
+\subsubsection{The complex regulator on $L$ and the conjectures of \cite{PV}}
+ There is a complex analogue to \eqref{Letalef}: a complex regulator map on $L$, with target in a certain Deligne cohomology group. Since the details are not important for us,
+ we just  call the target of this map $L_{\C}$
+ and let  $L_{\C}^*$  be its
+$\C$-linear  dual.
+
+
+ In \cite{PV} we construct an action of $L_{\C}^*$ on $H^*(Y(K), \C)_{\chi}$ by degree $1$ endomorphisms, inducing
+\begin{equation} \label{PVc}  H^{\BWq}(Y(K), \C)_{\chi}  \otimes \bigwedge \nolimits^i L_{\C}^* \stackrel{\sim}{\longrightarrow}
+ H^{\BWq+i}(Y(K), \C)_{\chi} \end{equation}  
+The main conjecture of \cite{PV} is that this action preserves rational structures, i.e.  the $\Q$-linear dual $L^*$  of $L$ carries
+$H^*(Y(K), \Q)_{\chi}$  to itself.  In particular, this  means that 
+\begin{equation} \label{PC333} \mbox{There is a natural graded  action of $\wedge^* L^*$ on $H^*(Y(K), \Q)_{\chi}$.}
+\end{equation}
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Therefore, if  one accepts the conjecture 
+of \eqref{PC333},  and also believes that \eqref{Letalef} is an isomorphism, it should be possible to 
+define a ``natural''
+action of \begin{equation} \label{Denzel} \bigwedge \nolimits^* L^* \otimes \Q_p = \bigwedge \nolimits^* H^1_f(G_{\Q}, \Ad^* \rho_{\chi}(1))^*
+\acts H^*(Y(K), \Q_p)_{\chi}.
+\end{equation}
+ Now there is no explicit mention of motivic cohomology, and 
+this is where the current paper comes into the story:
+in   \S \ref{reciprocity}, we shall explain how the derived Hecke algebra 
+   can be used  to produce
+such an action.   
+
+This concludes our review of \cite{PV}; we now explain \eqref{Denzel}  a little bit more. 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+  
+  
+  
+\subsection{The derived Hecke algebra and Galois cohomology} \label{reindexing}
+  
+  The main result  of \S \ref{reciprocity} is Theorem \ref{maintheorem}, which constructs  
+  an action of 
+$   \bigwedge \nolimits^* H^1_f(G_{\Q}, \Ad^* \rho_{\chi}(1))^*$
+   on $H^*(Y(K), \Q_p)$.   This is characterized
+  in terms of the action of explicit derived Hecke operators. 
+   More precisely,    we construct in \S \ref{obstructions} an isomorphism
+\begin{equation} \label{dHeckeGalois} \gHecke \otimes \Q_p \simeq \mathbb{T} \otimes_{\Q_p} 
+ \bigwedge \nolimits^* H^1_f(G_{\Q}, \Ad^* \rho_{\chi}(1))^*\end{equation}
+ (actually, we do this in a case when $\mathbb{T}=\Z_p$, but  in general the argument  should yield the above result). 
+  Informally, \eqref{dHeckeGalois}
+gives an  ``indexing''  of derived Hecke operators by Galois cohomology. We will describe it concretely in a moment,  see \S \ref{Galoisindexing}. It can be viewed as a ``reciprocity law,''
+because it relates the action of the (derived) Hecke algebra to the Galois representation in a direct way. 
+
+
+  
+
+  
+  
+  To go further, let us assume that the map \eqref{Letalef} is indeed an isomorphism. Denote by $L^*$ the $\Q$-linear dual of $L$,
+by $L_{\Q_p}^*$ the $\Q_p$-linear dual of $L_{\Q_p}$; we get also an isomorphism $L^* \otimes \Q_p \simeq L^*_{\Q_p}$. 
+
+  
+    
+  
+  
+  
+
+ 
+Thus the derived Hecke algebra gives rise to an action of $\wedge^* L^*_{\Q_p}$
+ on $H^*(Y(K), \Q_p)$. The fundamental conjecture, formulated precisely  as Conjecture
+\ref{mainconjecture},  is then the following: 
+ \begin{quote} 
+{\em Let $\wedge^* L^*_{\Q_p}$ act
+ on $H^*(Y(K), \Q_p)$  as described above. Then $\wedge^* L ^*\subset \wedge^* L^*_{\Q_p}$ preserves rational cohomology $H^*(Y(K), \Q) \subset H^*(Y(K), \Q_p)$.  }
+\end{quote}
+
+
+ 
+ The main point of this paper was  to get to the point where we can make this conjecture!  
+What it says is that there is a hidden action of $L^*$ on the $\Q$-cohomology of $Y(K)$,
+which can be computed, after tensoring with $\Q_p$, using the derived Hecke algebra. 
+
+Here is the current status of evidence for this conjecture:
+
+ \begin{itemize}
+ \item[(i)] The most direct evidence (as of the time of writing) will be given in the paper \cite{HV}, which is joint work with
+ Michael Harris. 
+ There we develop an analog of the derived Hecke algebra in the setting of coherent cohomology, and formulate
+ an analog of the conjecture in this setting. The advantage of this is we are actually able to carry out a numerical test
+ (in the case of classical weight one modular forms) and it indeed works.
+ 
+\item[(ii)]    As we have already mentioned,  the conjecture  should be seen as a a $p$-adic analog of the conjecture of \cite{PV} (which tells the archimedean story).
+In the archimedean case, we  are able to give substantive evidence for the conjecture by other methods (periods of automorphic forms, and analytic torsion). 
+
+ \item[(iii)] Suitably phrased, the computations of \S \ref{Quillen} can be seen as supporting a modified version of the conjecture. 
+It is also easy to verify that the conjecture holds for tori, as we shall discuss in  \S \ref{pisspoor} of this paper.
+\end{itemize}
+
+
+ 
+ \begin{remark} 
+ Note that, because of our fairly strong  assumptions, \eqref{dHeckeGalois} is even true {\em integrally} in the setting of \S \ref{reciprocity},
+ i.e. the global derived Hecke algebra is an exterior algebra over $\Z_p$. I don't expect this to be true in general;
+ however, the rational statement  \eqref{dHeckeGalois} should remain valid. One might imagine that  the derived deformation ring of 
+ \cite{GV} will have better integral properties than the derived Hecke algebra. 
+ \end{remark}
+  
+
+  
+ 
+\subsection{Explication, Koszul duality, Taylor-Wiles}  \label{sec:explication}
+ 
+ We now explain the action of the derived Hecke algebra, and its relationship to Galois cohomology, 
+ as explicitly as possible, in the case  when $Y(K)$ is an arithmetic hyperbolic $3$-manifold. Besides explicating
+ the foregoing abstract discussion, this will also have the advantage that it allows us to explain the relationship
+ between the derived Hecke algebra and the Taylor--Wiles method. 
+ 
+   Suppose  $\GG$ arises from $\PGL_2$ over an imaginary quadratic field $F$, i.e. $\GG = \mathrm{Res}_{F/\Q} \PGL_2$. 
+   Let  $\OO$ be the ring of integers of $F$. 
+   Therefore the associated manifold $Y(K)$ (see \eqref{YKdef}) is a finite union of hyperbolic $3$-orbifolds. 
+Let us suppose, for simplicity, that the class number of $F$ is odd; then, at full level, the associated arithmetic manifold
+is simply the quotient of hyperbolic $3$-space $\mathbb{H}^3$ by $\PGL_2(\OO)$. 
+
+In what follows, we fix a prime $p$ and will work always with cohomology with $\Z/p^n$ coefficients. 
+
+Let $\mathfrak{q}$ be a prime ideal of $\OO$, relatively prime to $p$,  and let  $\F_{\mathfrak{q}} =  \OO/\mathfrak{q} $ the residue field. 
+Let $$\alpha:   \mathbf{F}_{\mathfrak{q}} ^*  \longrightarrow \Z/p^n$$
+be a homomorphism.   By means
+of the natural homomorphism
+$$\Gamma_0(\mathfrak{q}) \rightarrow  \F_{\mathfrak{q}}^*$$
+sending $\left( \begin{array}{cc} a & b\\ c & d \end{array}  \right) \mapsto a/d$, 
+we may regard $\alpha$ as a cohomology class $\langle \alpha \rangle \in H^1(\Gamma_0(\mathfrak{q}), \Z/p^n)$. 
+Here, $\Gamma_0(\mathfrak{q})$ is as usual defined by the condition that $c \in \mathfrak{q}$. 
+\medskip
+
+
+ Then a typical ``derived Hecke operator'' 
+of degree $+1$ is the following (see \S \ref{sec:concrete} for more): 
+\begin{equation} \label{concrete}  T_{\mathfrak{q},\alpha}: H^1 \PGL_2(\OO) \stackrel{\pi_1^*}{\leftarrow}  H^1  \Gamma_0(\mathfrak{q}) \stackrel{\cup \langle \alpha \rangle }{\longrightarrow} H^2 \Gamma_0(\mathfrak{q}) \stackrel{\pi_{2*}}{ \rightarrow}  H^2 \PGL_2(\OO).  \end{equation}
+Here  $\pi_1, \pi_2$ are the two natural maps $\Gamma_0(\mathfrak{q}) \rightarrow \PGL_2(\OO)$. 
+ 
+In words,
+we pull back to level $\Gamma_0(\mathfrak{q})$, cup with $\langle \alpha \rangle$,  and push back (the ``other way'') to level $1$. 
+If we omitted the cup product, we would have the usual Hecke operator $T_{\mathfrak{q}}$.
+The class $\alpha$ itself is rather uninteresting -- it is a ``congruence class'' in the terminology of \cite{CaVe}, i.e. it becomes trivial on a  congruence subgroup -- but nonetheless this operation seems to be new even in this case. 
+
+The  role of torsion coefficients is vital:
+
+
+If we took the coefficient ring above to be $\Z$,  there are no homomorphisms
+$\mathbf{F}_{\mathfrak{q}}^* \rightarrow \Z$; more generally, 
+  $\mathbf{F}_{\mathfrak{q}}^*$ has only torsion cohomology in  positive degree. 
+  In fact, even to obtain ``interesting'' operations with $\Z/p$ coefficients,
+we need at least that $p$ divide $\mathrm{N}(\mathfrak{q})-1$ (i.e. that $N(\mathfrak{q}) =1$ in the coefficient ring $\Z/p$,
+as we mentioned in \S \ref{introdha}). 
+
+ 
+
+
+ What that means is that  elements of $\gHecke $ in characteristic zero
+ necessarily arise in a very indirect way:
+  as a limit of operations from $\mathscr{H}_{\mathfrak{q}}$ for {\em larger and larger primes $\mathfrak{q}$.}  
+This situation is perhaps reminiscent of the Taylor-Wiles method,
+and indeed one   miracle of the story is that, although the definition of $\gHecke$
+is completely natural, it interacts in a rich way with the Taylor-Wiles method (not merely with
+its output, e.g. $R=T$ theorems, but with the internal structure of the method itself).   
+
+To see why this is so let us 
+ examine  \eqref{concrete}: the Taylor-Wiles method studies the action of 
+$\mathbf{F}_{\mathfrak{q}}^*$ on the cohomology of $\Gamma_1(\mathfrak{q})$ (these are the ``diamond operators'').   On the other hand
+when we study $T_{\mathfrak{q},\alpha}$, 
+ we are studying the action of $H^*(\mathbf{F}_p^*)$ on $H^*(\Gamma_0(\mathfrak{q}))$. In both settings
+ it is vital that  $N \mathfrak{q}-1$ be divisible by high powers of $p$.
+
+But these two  actions just mentioned are very closely related. More generally, 
+if a group $G$ acts on a space $X$, the action of $G$ on  homology of $X$
+and the action of its group cohomology $H^*(G)$ on the equivariant cohomology $H_G^*(X)$
+are closely related: when $G$ is a compact torus, 
+for example, this relationship is just Koszul duality \cite{GKM}.  This is  just the situation we are in, with $G = \mathbf{F}_{\mathfrak{q}}^*$,
+and $X$ the  classifying space of $\Gamma_1(\mathfrak{q})$. 
+
+
+
+\subsection{Relationship to Galois cohomology: the ``reciprocity law''} \label{Galoisindexing} 
+
+  Continuing our discussion from \S \ref{sec:explication},   let us describe explicitly how the operator $T_{\mathfrak{q},\alpha}$ is related to Galois cohomology.  
+  Said differently, we are explicating the indexing of derived Hecke operators by Galois cohomology that
+  is implicit in \eqref{dHeckeGalois}.
+The result could be considered to be a reciprocity law, in the same sense as the usual relationship between Hecke operators and Frobenius eigenvalues.
+  
+  This discussion is (probably inevitably) a bit more technical.  We must again localize our story to a given Hecke eigenclass and  also make some further assumptions on the prime $\mathfrak{q}$.  
+For a more precise discussion and proofs, see \S \ref{Galoisindexingproofs} of the main text. 
+
+Fix now a character $\chi: \mathbb{T} \rightarrow \Z_{p}$
+of the usual Hecke algebra at level $Y(K)$. 
+ Let $$\rho: \Gal(\bar{F}/F) \rightarrow \GL_2(\Z_{p})$$ be the  Galois representation 
+ conjecturally associated to $\chi$, 
+and let $\rho_m$ be its reduction modulo $p^m$.
+We shall assume that $\rho$ is crystalline at all primes above $p$, and also that $p >2$.  Let $\ramprimes$ be the set of finite primes  at which $\rho$ is ramified
+(necessarily including all primes above $p$). 
+
+ 
+Let $\Ad \rho$ be the composite of $\rho$ with the adjoint
+representation of $\PGL_2$; 
+we will think of the underlying space
+of $\Ad \rho$ as the space of $2 \times 2$ matrices with trace zero and entries in $\Z_{p}$. 
+Also, let 
+  $\Ad^* \rho$  be the $\Z_{p}$-linear dual to $\Ad \rho$ (this is identified with $\Ad \rho$ as a Galois module, so long as $p \neq 2$,
+   but we prefer to try to keep them conceptually separate). Finally, $\Ad^* \rho(1)$
+will be the Tate-twist of $\Ad^* \rho$. 
+ 
+ Let $\mathfrak{q} \notin \ramprimes$ be a prime of $F$ and let 
+ $F_{\mathfrak{q}}$ be the completion of $F$ at $\mathfrak{q}$.  Embed
+\begin{equation} \label{Weird-Embed} \Z_{p} \mbox{ with trivial $\Gal(\overline{F_{\mathfrak{q}}}/F_{\mathfrak{q}})$ action}  \hookrightarrow \Ad  \ \rho|_{\Gal(\overline{F_{\mathfrak{q}}}/F_{\mathfrak{q}})}\end{equation}
+$$ 1 \mapsto  2 \rho(\mathrm{Frob}_{\mathfrak{q}})-   \mathrm{trace} \rho(\mathrm{Frob}_{\mathfrak{q}}). $$
+Explicitly, $\rho(\mathrm{Frob}_{\mathfrak{q}})$ is a $2 \times 2$ matrix over $\Z_{p}$, and the right-hand side above
+is a $2\times 2$ matrix over $\Z_{p}$ with trace zero. This eccentric looking formula is a special case of a construction that makes sense for all groups, 
+see \S \ref{Galoisindexingproofs}. 
+
+
+The map \eqref{Weird-Embed} gives rise to a similar embedding $\Z/p^m \rightarrow \Ad \ \rho_m|_{G_{F_{\mathfrak{q}}}}$, and thus a pairing of $G_{F_{\mathfrak{q}}}$-modules: 
+$$\Z/p^m \times \Ad^* \ \rho(1) \rightarrow \mu_{p^m}. $$
+ Thus  by local reciprocity we get a pairing
+$$ H^1(F_{\mathfrak{q}},\Z/p^m) \times H^1(F_{\mathfrak{q}}, \Ad^* \ \rho(1)) \rightarrow \Z/p^m \Z,$$
+and then (by restricting the second argument to $F_{\mathfrak{q}}$) 
+$$ H^1(F_{\mathfrak{q}},\Z/p^m) \times H^1_f(\mathcal{O}[\frac{1}{S}],  \Ad^* \ \rho(1)) \rightarrow \Z/p^m \Z,$$
+Here $H^1(\mathcal{O}[\frac{1}{S}], -) $ denotes the subspace of classes in $H^1(F, -)$ that
+are unramified outside $S$, and the $f$ subscript means that we restrict further
+to classes that are crystalline at $p$. 
+ 
+Now take, as in
+\S \ref{sec:explication}, an
+ element $\alpha:   \F_{\mathfrak{q}}^* \rightarrow \Z/p^m$
+indexing the derived Hecke operator $T_{\mathfrak{q},\alpha}$, 
+and make an arbitrary extension  to a homomorphism $\tilde{\alpha}: F_{\mathfrak{q}}^*/(1+\mathfrak{q}) \rightarrow \Z/p^m$. 
+This defines a class $\tilde{\alpha} \in H^1(F_{\mathfrak{q}},\Z/p^m)$, well defined up to unramified classes.
+The pairing of $\tilde{\alpha}$ with $H^1_f(\mathcal{O}[\frac{1}{S}], \Ad^* \ \rho(1))$, as above, is easily seen to be independent of choice; thus from
+a prime ideal $\mathfrak{q}$ and  a homomorphism $ \F_{\mathfrak{q}}^* \rightarrow \Z/p^m$ 
+ we have  obtained a homomorphism: 
+\begin{equation} \label{padef} [\mathfrak{q}, \alpha ] : H^1_f(\mathcal{O}[\frac{1}{\ramprimes}],  \Ad^* \rho \ (1)) \longrightarrow  \Z/p^m.\end{equation}
+
+
+
+
+
+
+
+
+
+ In the main text of this paper (Lemma \ref{reciprocity law})
+  we prove  a variant  of the following statement\footnote{Namely, we only work with simply connected groups  -- i.e., we prove
+ an analogous result for $\SL_2$ rather than $\PGL_2$ -- and we impose various local conditions on the residual representations. In the introduction, we have stuck with $\PGL_2$ because it's more familiar. For example,
+for $\SL_2$, we would need to use only the squares of the usual Hecke operators.  }
+ under some further  local hypotheses on the representation $\rho$: 
+
+ 
+ \begin{quote}   {\em Claim:} There exists $N_0(m)$ such that
+ for each pair of prime ideals $\mathfrak{q},\mathfrak{q}'$ satisfying 
+\begin{itemize}
+\item[(a)] $\mathrm{Norm}(\mathfrak{q}) \equiv \mathrm{Norm}(\mathfrak{q}' ) \equiv 1$ modulo $p^{N_0(m)}$ 
+ \item[(b)] 
+  the eigenvalues of $\rho(\mathrm{Frob}_{\mathfrak{q}})$, mod $p$,  are distinct elements of $\Z/p\Z$, and the same for $\mathfrak{q}'$; 
+\item[(c)] 
+ $ [ \mathfrak{q},\alpha ] = [\mathfrak{q}', \alpha ']$  in the notation of \eqref{padef}
+ \end{itemize} 
+the actions of $T_{\mathfrak{q},\alpha}$ and $T_{\mathfrak{q}', \alpha'}$
+ on $H^*(Y(K), \Z/p^m)$ coincide.    
+ \end{quote} 
+ 
+ This is a ``reciprocity law,'' of the same nature as the reciprocity law relating Frobenius and Hecke eigenvalues.
+ It is the basis for \eqref{dHeckeGalois}. 
+ 
+ It is not as precise as one would like, because  of the annoying extra conditions on $\mathfrak{q},\mathfrak{q}'$ but it is good enough to get \eqref{dHeckeGalois}.
+ It is certainly natural to believe that $$[\mathfrak{q},\alpha] = [\mathfrak{q}',\alpha']  \stackrel{?}{\implies} T_{\mathfrak{q},\alpha} = T_{\mathfrak{q}', \alpha'}$$
+ (where the equality on the right is a an equality of endomorphisms of $\Z/p^m$-cohomology), without imposing condition (a)  or (b) above. 
+  It would be good to prove not only this  but a version that gives information at bad places.  
+ Such a formulation is presumably related to a derived deformation ring, as we  describe in the next \S. 
+ 
+ 
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+\subsection{Further discussion and problems} \label{fdp}
+
+It is not really surprising in retrospect that such cohomology operations should exist.  It took me a  long time to find   them because
+of their subtle feature of being patched together from torsion levels.   There is a relatively simple   archimedean analog made via differential forms, see \cite{PV}.  
+
+
+ Here are some metaphors and problems:
+\begin{itemize}
+\item[(a)]
+In the ``Shimura'' context a corresponding structure is provided by ``Lefschetz operators'' (although these act nontrivially
+only for nontempered representations). 
+But the derived Hecke algebra operators do not recover this structure. Indeed, for weight reasons, 
+one expects that the higher degrees of the derived Hecke algebra act trivially in the Shimura case. 
+The example of  $\GL_2$ over a field with both real and complex places shows a mixture of features, which would be interesting to study further. 
+  
+
+
+
+
+
+ \item[(b)] The theory of completed cohomology of Calegari--Emerton \cite{CE} already predicts that, if we pass up a congruence tower,
+cohomology becomes (under certain conditions) concentrated in a single degree. Said another way,
+all the degrees of cohomology have ``the same source,'' and thus one expects to be able to pass from one to another. 
+
+For this reason, it will be interesting to study the action of the {\em mod $p$ derived Hecke algebra of a {\em $p$-adic group}}; but
+we stay away from this in the current paper.   (Our results and a global-to-local argument suggest that 
+ this derived Hecke algebra might have a nice structure theory.  As mentioned this is studied in \cite{Schneider, SchneiderOllivier}; there is also recent work of Ronchetti \cite{Ronchetti}.) 
+
+
+
+
+
+
+
+ 
+ 
+ \item[(c)] There is also a   story of ``derived deformation rings,'' developed in \cite{GV};
+ there is a pro-simplicial ring $\tilde{R}$ that represents deformations of Galois representations with coefficients in 
+ simplicial rings.    
+The precise definition of $\tilde{R}$, and -- assuming similar conjectures
+to those assumed here --   a construction of its action on integral homology, are given in the paper \cite{GV}.
+ 
+ However, the relationship between $\gHecke$ and $\tilde{R}$
+is not one of equality: the former acts on cohomology, raising cohomological degree,
+and the latter naturally acts on homology, raising homological degree. See the final section of \cite{GV} for  
+a formulation of the relationship between the two actions. 
+
+Our expection is that $\tilde{R}$ will have better integral properties than $\gHecke$, in general. 
+ 
+
+
+
+
+
+
+
+
+
+   
+   \item[(d)] Numerical invariants: We can use $\gHecke$ to shift a class from degree $q$ to the complementary degree $\dim \ Y(K) - q$  and then cup
+ the resulting classes. This gives an analog of the ``Petersson norm'' which makes sense for a torsion class (or a $p$-adic class).
+What is the meaning of the resulting numerical invariants? 
+   
+
+   
+
+
+
+
+
+
+
+    
+
+ 
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+ 
+ \end{itemize}
+ 
+ 
+\subsection{Acknowledgements}
+
+  Gunnar Carlsson  pointed out to me that my original definition (which was the one presented below in \S \ref{desc2}) should be equivalent
+to the much more familiar definition with $\Ext$-groups given in the introduction.   The definition with 
+$\mathrm{Ext}$-groups, or rather a differential graded version thereof,
+was already defined  by Schneider around 2008 and published in \cite{Schneider}; I was unaware of Schneider's work at the time. In any case
+there is little overlap between our paper and \cite{Schneider}. (See also \cite{SchneiderOllivier}). 
+
+  Frank Calegari explained many ideas related to his paper \cite{CG} with Geraghty,  and, more generally, 
+  taught me (over several years!) about  Galois representations and their deformations.  He also pointed out several typos and mistakes in the manuscript.    
+The joint paper \cite{CaVe} influenced the ideas here,  e.g.  \S \ref{cong-class}.
+
+ 
+    I thank David Treumann who explained Koszul duality to me many years ago, and more recently explained to me
+ Smith theory and torus localization, which were helpful in the proof of the Satake isomorphism. 
+  
+  I had a very helpful discussion with Soren Galatius and Craig Westerland. 
+  
+  
+  
+  I am grateful to Toby Gee for writing extremely clear lecture notes on modularity lifting,   without which I am not sure I would have achieved even my current modest understanding
+  of  the Taylor--Wiles method, and to both Shekhar Khare and Michael Harris for taking an interest and for many helpful discussions.
+     
+     The referee read the paper very thoroughly and made many very helpful suggestions about exposition and clarity. I thank him or her for the substantial effort they made. 
+      
+     
+\subsection{Notation} \label{sec:notn}
+     
+We try to adhere to using $\ell$ or $p$ for the characteristic of coefficient rings,
+     and using $q$ or $v$ for the  residue field size of nonarchimedean fields. Thus we may talk about the ``$\ell$-adic Hecke algebra of a $v$-adic group.''
+     
+     $\mathbf{G}$ will denote a   reductive algebraic group over a number field $F$.  \index{$\mathbf{G}$} \index{$F$} 
+     In the local part of our paper --  \S \ref{sec:dha}, \S \ref{Satake}, \S \ref{IHA}  -- we shall work
+     over   the  completion of such an $F$ at an arbitrary finite place. 
+     In our global applications we will be more specific (just for ease of notation, e.g. not worrying about multiple primes above the residue characteristic):  \S \ref{Quillen} we take $F$ quadratic imaginary, and in \S \ref{Patching} onward we take $F=\Q$. 
+     
+     
+
+  
+          It will be convenient at many points to assume that $\mathbf{G}$ is split, and then to fix  a maximal split torus $\mathbf{A}$ inside $\mathbf{G}$, and
+     also a Borel subgroup $\mathbf{B}$ containing $\mathbf{A}$.   This endows the cocharacter lattice $X_*(\mathbf{A}) = \Hom(\mathbb{G}_m, \mathbf{A})$ \index{$X_*$}
+     with a positive cone  $X_*(\mathbf{A})^+ \subset X_*(\mathbf{A})$, the dual to the cone spanned by the roots of $\mathbf{A}$ on $\mathbf{B}$.
+     We will denote by $r = \dim X_*(\mathbf{A})$ the rank of $\mathbf{G}$. 
+      
+     For $v$ a place of $F$ we let $F_v$ be the completion of $F$ at $v$, $\mathcal{O}_v \subset F_v$ the integer ring, 
+  $\mathbf{F}_v$ the residue field and write  $q_v$ for  the cardinality of $\mathbf{F}_v$.  
+  We also put  $$G_v = \G(F_v). $$ \index{$G_v$} 
+   Attached to $\mathbf{G}$ and a choice of open compact subgroup $K \subset \mathbf{G}(\adele_{F, f})$
+     (the finite adele-points of $\mathbf{G}$) there is attached an ``arithmetic manifold'' $Y(K)$, which is a finite union of locally symmetric spaces: \index{$Y(K)$} 
+\begin{equation} \label{YKdef} Y(K) =  \G(F) \backslash ( S_{\infty} \times \G(\Afinite))/K,\end{equation} 
+where $S_{\infty}$ is the  ``disconnected symmetric space'' for $\G(F \otimes \R)$ -- the quotient of $\G(F \otimes \R)$ by a maximal compact connected subgroup. 
+Although it is a minor point, we will take $Y(K)$ as an orbifold, not a manifold, and always compute its cohomology in this sense. 
+
+As before, we introduce the integer invariants $\BWq, \delta$: 
+\begin{equation} \label{qdef} \delta = \mathrm{rank}(\mathbf{G}(F \otimes \R)) - \mathrm{rank}(\mbox{maximal compact of $\mathbf{G}(F \otimes \R)$}),\end{equation}
+and define $\BWq$ so that $2 \BWq+\delta = \dim Y(K)$. These have   the same significance as described in \eqref{dimeq},
+at least if we suppose that the center of $\mathbf{G}$ is anisotropic over $F$.
+
+We  will  will work only with open compact subgroups  with a product structure, i.e. 
+\begin{equation} \label{prodformula} K = \prod K_v \end{equation} where
+$K_v \subset \G(F_v)$ is an open compact subgroup, and $K_v$ is a hyperspecial maximal compact of $G_v$\index{$K_v$} 
+for all but finitely many primes $v$.   A prime $v$ will be ``good'' for $K$ when $K_v$ is hyperspecial
+and the ambient group $\G$ is quasi-split at $v$. \index{level of $K$}
+The ``level of $K$'' will be, by definition, the (finite) set of all primes  $v$  which are not good.   
+
+     
+     $\mathbf{G}$ has a dual group $G^{\vee}$, which we will regard as a {\em split Chevalley group over $\Z$;} in particular, its Lie algebra is defined over $\Z$,
+     and its points are defined over any ring $R$.   We regard it as equipped with a maximal torus $T^{\vee}$ inside a Borel subgroup $B^{\vee}$.
+     \index{$T^{\vee}$, dual torus} \index{$B^{\vee}$, dual Borel } 
+     
+       In the discussion of the Taylor--Wiles method, which takes place in \S \ref{Patching} and \S \ref{reciprocity},
+     it is convenient to additionally assume:
+     \begin{quote} $\mathbf{G}$ is simply connected and $G^{\vee}$ is adjoint.
+     \end{quote}
+     This is a minor issue, to avoid the usual difficulties of ``square roots.'' One could (better) replace $G^{\vee}$ by some version of the $c$-group of \cite{BG}.
+         
+      
+      When we discuss Galois cohomology, we will follow the usual convention
+that, for a module $M$ under the absolute Galois group $\mathrm{Gal}(\overline{L}/L)$ of a field $M$,
+we denote by $H^*(L,M)$ the  continuous cohomology of the profinite group    $\mathrm{Gal}(\overline{L}/L)$  with coefficients in $M$. 
+  For $L$ a number field, with ring of integers $\mathcal{O} \subset L$, we denote by $H^1(\mathcal{O}[\frac{1}{S}], M) \subset H^1(L, M)$ the subset of classes
+  that are unramified outside $S$ and $H^1_f(\mathcal{O}[\frac{1}{S}], M) \subset H^1(\mathcal{O}[\frac{1}{S}], M)$ the  classes that are, moreover, crystalline at $p$. 
+  
+  
+{\color{\changecolor} Warning: In the literature, the subscript $f$  is often used to mean classes that are crystalline at $p$ and unramified at {\em all} other places,
+ not merely at places outside $S$.   Indeed, we implicitly used this notation in \S \ref{sec:MV} and \S \ref{reindexing} when we wrote $H^1_f(G_{\Q}, -)$. 
+ However, in the remainder of the text, we will not use this convention. To avoid any confusion, on the one occasion (in \S \ref{pisspoor})
+ we wish to refer to classes that are crystalline at $p$ and unramified at all other places, we will use the notation $H^1_{f, \mathrm{ur}}$. This notation will be reprised when it is used so the reader need not remember it now.}
+    
+  
+\section{Derived Hecke algebra} \label{sec:dha}
+     
+We introduce the derived Hecke algebra (Definition \ref{Extdefn}) and then give
+two equivalent descriptions in \S \ref{desc2} and  \S \ref{doublecoset}.   The model given in \S \ref{desc2} is by far the most useful. 
+We shall then  describe the action of the derived Hecke algebra on the cohomology of an arithmetic group in 
+       \S \ref{Arithmeticmanifolds}, and then make it a bit more concrete in \S \ref{sec:concrete}. 
+       Finally, \S \ref{DHA:oddsandends1} discusses some minor points to do with change of coefficient ring,
+       and \S \ref{limit} discusses some other minor points about passage between $\Z/\ell^n$ coefficients and $\Z_{\ell}$ coefficients. 
+       
+       Appendix \ref{remedial} expands on various points of homological algebra that are used in the current section.
+                                           
+ 
+     
+     
+\subsection{}
+       As in \S \ref{sec:notn},  we fix a prime $v$ of $F$, with residue field  $\mathbf{F}_v$ of characteristic $p_v$ and size $q_v$,  and set 
+       $ G_v = \G(F_v)$. We denote by $U_v$ an open compact subgroup of $G_v$.
+              Eventually, we will use only the case of $U_v$ being either a maximal compact subgroup or an Iwahori subgroup, but there is no need to impose this. When we are working strictly in a local setting, we will abbreviate these simply to $G$ and $U$:
+       $$ G = G_v, \ \ U = U_v.$$ 
+ 
+       
+       It will also be convenient to fix 
+\begin{equation} \label{Vvdef} V_v = \mbox{a pro-$p_v$, normal, finite index subgroup of $U_v$,}\end{equation}
+which we  again abbreviate to $V$ when it will cause no confusion.        
+       
+       
+       
+        Let $S$ be a finite coefficient ring in which $q_v$ is invertible. 
+In what follows, by ``$G$-module'' we mean a module $M$ 
+under the group algebra $SG$ with the property that every  $m \in M$
+has open stabilizer in $G$.   
+       The category of $G$-modules is an abelian category and it has enough projective objects (see \S \ref{enough_proj}). 
+       
+       
+        The usual Hecke algebra  for the pair $(G, U)$ can be defined as the endomorphism ring $\Hom_{SG}(S[X], S[X])$, where $X = G/U$ and 
+$S[X]$ denotes the free $S$-module on a set $X$.  Motivated by this, we define: 
+
+
+       \begin{Definition} \label{Extdefn} \index{derived Hecke algebra}\index{$\mathscr{H}(G, U)$}
+          The derived Hecke algebra for $(G, U)$  with coefficients in $S$ is the graded algebra \begin{equation} \label{firstdef} \mathscr{H}(G,U)_{S}:= \Ext^*(S [G/U], S [G/U]),\end{equation}
+where the $\Ext$-group is taken inside the category of  $G$-modules.  
+
+ \end{Definition}
+ 
+ 
+ Let us record some variants on the notation:
+ \begin{itemize}
+ \item[-] We will write simply $\mathscr{H}(G, U)$ when the coefficients are understood to be $S$;  
+\item[-] We write $\mathscr{H}^{j}(G, U)$ or $\mathscr{H}^{(j)}(G, U)$ for the component in degree $j$,  i.e.  the $\Ext^j$ summand on the right.  \index{$\mathscr{H}^{(j)}$}\index{$\mathscr{H}^j$}
+\item[-]  In  global situations where we have  fixed a level structure $K_v \leqslant G_v$ for all $v$, or for almost all $v$, 
+we will often write simply $\mathscr{H}_{v,S}$  for the corresponding derived Hecke algebra $\mathscr{H}(G_v, K_v)$.  Again we will write simply $\mathscr{H}_v$\index{$\mathscr{H}_v$}
+if the coefficients are understood to be $S$. 
+\end{itemize} 
+ 
+If we choose a projective resolution $\mathbf{P}$ of $S[G/U]$
+as $G$-module,  then $\mathscr{H}(G, U)$ is identified with
+the  cohomology of the differential graded algebra
+$\Hom_{SG}(\mathbf{P}, \mathbf{P})$.  
+It will be convenient for later use to  make an explicit choice of $\mathbf{P}$:  
+Let $\mathbf{Q}$ be a free resolution of the trivial module $S$ in 
+the category of $S [U/V]$-modules. We may take $\mathbf{P}$ to be  
+  the compact induction  (from $U$ to $G$) of $\mathbf{Q}$. Observe that all the groups $\mathbf{P}_i$
+of the resulting resolution are free $S$-modules.  
+              
+
+
+
+ 
+
+
+\subsection{Description in terms of invariant functions}  \label{desc2} 
+We may also describe $\mathscr{H}(G, U)$ as the algebra of
+``$G$-equivariant cohomology classes on $G/U \times G/U$ with finite support modulo $G$.'' 
+We now spell out carefully what this means; 
+an explicit isomorphism
+between this description and Definition \ref{Extdefn} is constructed in Appendix \S \ref{remedial}. 
+
+First some notation: for $x,y \in G/U$, 
+we denote by $G_{xy}$  the pointwise stabilizer of $(x,y)$ inside $G$; it is a profinite group.
+We denote by $H^*(G_{xy}, S)$  the continuous cohomology of $G_{xy}$ with coefficients in $S$ (discretely topologized).
+ 
+ 
+ 
+
+In this model, an element of $\mathscr{H}(G, U)$ 
+is an assignment $h$ that takes  as input $(x,y) \in G/U \times G/U$
+and produces as output\  $h(x,y) \in H^*(G_{xy}, S)$, subject to the following conditions:
+\begin{itemize}
+\item $h$ is $G$-invariant, that is to say, $[g]^* h(gx, gy) =   h(x,y)$,
+where $[g]^*: H^*(G_{gx,gy}) \rightarrow H^*(G_{xy})$ is pullback by $\Ad(g)$. 
+ \item  $h$ has finite support modulo $G$, i.e. there is a finite subset $T \subset G/U \times G/U$  such that $h(x,y)  = 0$ if $(x,y) $ does not lie in the $G$-orbit of $T$. 
+\end{itemize}
+
+
+The addition and $S$-module structure on $\mathscr{H}(G, U)$ is defined pointwise. 
+The product is given by the rule 
+ \begin{equation} \label{explication} h_1 * h_2(x,z) = \sum_{y \in G/U} \underbrace{h_1(x,y) }_{H^*(G_{xy})} \cup \underbrace{h_2(y,z)}_{H^*(G_{yz})} \end{equation} 
+ where we give the right-hand side the following meaning: 
+  The cup product  on the right makes sense in $H^*(G_{xyz},S)$, i.e. first restrict $h_1$ and $h_2$ to $H^*(G_{xyz},S)$, 
+  and take the cup product there. 
+  Now split $G/U$ as a disjoint union $\coprod O_i$ of orbits under $G_{xz}$; let $O$ be one such orbit. 
+ We regard 
+\begin{equation} \label{glug} \sum_{y \in O}  h_1(x,y)  \cup h_2(y,z)  := \mathrm{Cores}^{G_{x y_0 z}}_{G_{xz}} \ \left( h_1(x, y_0) \cup  h_2(y_0, z) \right)\end{equation}
+ where $y_0 \in O$ is any representative, and the ``trace'' or corestriction is taken
+ from $G_{x y_0 z} $ to $G_{xz}$; note that the right-hand side of  \eqref{glug} is independent of choice of $y_0 \in O$. 
+ Adding up over orbits $O$ gives the meaning of the right-hand side of \eqref{explication}. 
+  
+  
+  \begin{remark} 
+  Suppose that $\Delta$ is a compact subgroup of $G$ that stabilizes every point of $G/U$. 
+  In this case, we can restrict $h$ to get a function $h_{\Delta}: G/U \times G/U \rightarrow H^*(\Delta)$.
+  We also have $(h h')_{\Delta}=  h_{\Delta} h'_{\Delta}$, where the right-hand multiplication
+is the more familiar
+\begin{equation} \label{easier for me} h_{\Delta} h'_{\Delta}(x,z) = \sum_{y \in G/U} h_{\Delta}(x,y) \cup h_{\Delta}'(y,z).\end{equation}
+  \end{remark}
+
+     
+\subsection{Double coset description} \label{doublecoset}
+     Finally, we can describe $\mathscr{H}(G, U)$ in terms of double cosets 
+     $U \backslash G/U$. 
+  
+ For $x \in G/U$ let   $$U_x = U \cap \Ad(g_x) U$$ where $g_x \in G$
+represents $x$ (that is to say, $x=g_x U)$. Then $U_x$ is the stabilizer of $x$ in $U$. 
+
+Fix a set of representatives $[U \backslash G/U] \subset G/U$
+for the  left $U$-orbits on $G/U$. 
+Then we have an isomorphism of $S$-modules
+\begin{equation} \label{TTspin} \bigoplus_{x \in [U \backslash G/U]}   H^*(U_x, S) \stackrel{\sim}{\rightarrow} \mathscr{H}(G,U) \end{equation} 
+ given thus:   Fix a class $z \in   [U \backslash G/U]$,   and a representative $g_z\in G$ for $z$ -- thus $z = g_z U$. Let $\alpha \in H^*(U_z, S)$. 
+  Then the class of $\alpha \in H^*(U_z, S)$, considered as an element of the left-hand side of \eqref{TTspin},
+  is carried to the function $h_{z,\alpha} $ on   $G/U \times G/U$ characterized by the following properties:
+  \begin{itemize}
+  \item[(i)]$h_{z,\alpha}(x,y) = 0$ unless    $(x, y) $ belongs to the $G$-orbit of $(z, eU)$. 
+  \item[(ii)]  $h_{z,\alpha}$ sends   $ (z, eU) $ to $\alpha \in H^*(U_z,S)$ -- note that $U_z$ is exactly the common stabilizer of $z$ and $eU$.
+  \end{itemize}
+  
+   This gives another description of $\mathscr{H}(G, U)$. It is harder to directly describe the multiplication rule in this presentation, and we use instead the isomorphism to the previous description. 
+  Later on we'll describe explicitly the action of $h_{z,\alpha}$ on the cohomology of an arithmetic manifold. 
+ 
+  Now let us examine the ``size'' of $\mathscr{H}(G, U)$; this discussion is  really only motivational, and so we will be a little informal. Suppose, for example,
+ that $G$ is split and $U$ is hyperspecial. In this case, the quotient $U \backslash G/U$
+ is parameterized by a dominant chamber  $X_*(\mathbf{A})^+$ inside the co-character group $X_*(\mathbf{A})$ of a maximal split torus $\mathbf{A}$. 
+ Moreover, if $x \in G/U$  is a representative for a double coset parameterized by $\lambda \in X_*(\mathbf{A})$, then the group $U_x$ is, modulo a pro-$p$-subgroup, 
+ the $\mathbf{F}_v$-points $M_{\lambda}(\mathbf{F}_v)$ of the   centralizer $M_{\lambda}$ of $\lambda$. 
+ Thus we obtain an isomorphism of $S$-modules:
+ $$\mathscr{H}(G, U) := \bigoplus_{\lambda \in X_*(\mathbf{A})^+}  H^*(M_{\lambda}(\mathbf{F}_v), S)$$
+For ``generic'' $\lambda$ -- i.e., away from the walls of $X_*(\mathbf{A})^+$ --
+the group
+$M_{\lambda}$ is a split torus; the order of its $\mathbf{F}_v$-points is a power   of $(q_v-1)$.  Thus if $(q_v-1)$ is invertible on $S$, 
+all the terms of $\mathscr{H}(G, U)$ corresponding to dominant $\lambda$ vanish.
+
+In this paper we will be primarily concerned with the case when $q_v-1=0$ inside $S$.  Although it is certainly interesting to study $\mathscr{H}(G, U)$ in general,
+the preceding discussion shows that this case (i.e. $q_v=1$ in $S$) is where $\mathscr{H}(G, U)$ is ``largest.'' 
+ 
+ 
+        
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Derived invariants} \label{sec:derivedinvariants} 
+
+
+ If $M$ is any  complex of $G$-modules,  we may form the derived invariants
+$$  \mbox{derived $U$-invariants on $M$} := \underline{\mathrm{Hom}}_{SG}(S [G/U], M) \in \mathbf{D}(\mathrm{Mod}_S)$$
+where $\underline{\mathrm{Hom}}$ is now  derived $\mathrm{Hom}$ in the derived category of $G$-modules,
+taking values in the derived category of $S$-modules. 
+
+
+Then the derived Hecke algebra automatically acts on the cohomology 
+of the derived invariants:
+\begin{equation} \label{HGUderived} \mathscr{H}(G, U) \acts  H^*(\mbox{derived $U$-invariants on $M$}).\end{equation}
+Indeed, the derived invariants are represented by the complex
+$\Hom_{SG}(\mathbf{P}, M)$, where $\mathbf{P}$ is as before any projective resolution of $S[G/U]$. 
+The action of $\Hom_{SG}(\mathbf{P}, \mathbf{P})$ on this complex
+furnishes the desired (right) action of $\mathscr{H}(G, U)$.
+
+
+ 
+
+Let us describe the derived invariants in more familiar terms.  Let $V$ be as in \eqref{Vvdef}, and  consider the explicit projective resolution $\mathbf{P}$ discussed in \S \ref{Extdefn}; we see 
+that the derived $U$-invariants are computed by the complex $\Hom_{SU}(\mathbf{Q}, M)$.
+This coincides with $U/V$-homomorphisms from $\mathbf{Q}$ to the termwise invariants $M^{V}$; since $\mathbf{Q}$ is a projective resolution of $S$
+in the category of $U/V$-modules, we see that 
+ \begin{equation} \label{twosteps}  \mbox{derived $U$-invariants on $M$} \simeq    \underline{\mathrm{Hom}}_{S U/V}(S, M^{V}) \in  \mathbf{D}(\mathrm{Mod}_S).  \end{equation} 
+where the right hand side is derived homomorphisms, in the derived category of $U/V$-modules.
+ In other words,  there is an identification
+ $$ H^*(\mbox{derived $U$-invariants on $M$}) \simeq \mathbb{H}^*(U/V, M^{V}),$$ 
+the group hypercohomology  of the finite group $U/V$ acting on the  complex of termwise invariants $M^{V}$.  
+
+ 
+
+
+
+
+
+\subsection{Arithmetic manifolds} \label{Arithmeticmanifolds}
+
+In the remainder of this section, we describe how the derived Hecke algebras act on the cohomology of arithmetic manifolds. 
+
+We follow the notation of \S \ref{sec:notn}.  In particular, we fix
+$K \subset \G(\Afinite)$ an open compact subgroup, 
+which we are supposing to have a product structure $K = \prod_{w} K_w$;
+let us split this as
+$$ K =  K^{(v)} \times K_v$$ where $K^{(v)} = \prod_{w \neq v} K_w$ is the structure ``away from $v$.'' 
+Associated to this is an arithmetic manifold $Y(K)$, as in \eqref{YKdef}. 
+
+We will construct an action of the derived Hecke algebra $\mathscr{H}_v = \mathscr{H}_v(G_v, K_v)$   on the cohomology of $Y(K)$.
+ To do so, we will exhibit $Y(K)$ as the derived $K_v$-invariants on a suitable $G_v$-module, and then apply \eqref{HGUderived}. 
+
+For $U_v$ any open compact subgroup of $G_v$, let us abridge:
+\begin{equation} \label{CUdef} C^*(U_v) = \mbox{cochain complex of  $Y(K^{(v)} \times U_v)$ with $S$ coefficients.}\end{equation}
+
+Now let 
+$$ M= \varinjlim_{U_v} C^* (U_v).$$ 
+where the limit is taken over  open compact subgroups $U_v \leqslant G_v$. 
+ Visibly, $M$ is a complex of smooth $G_v$-modules.  
+ Choosing $V_v \subset K_v$ as in \eqref{Vvdef},    we have
+$$M^{V_v} \simeq C^* (V_v),$$
+since we may interchange  invariants and the direct limit; and then 
+ for a finite cover $X \rightarrow Y$ with Galois group $D$
+we have an isomorphism $C^*(Y) \stackrel{\sim}{\rightarrow} C^*(X)^{D}$. 
+However, the   
+ derived invariants of $K_v/V_v$ on $C^*(V_v)$
+``coincide with'' the cohomology of $Y(K)$: the natural map
+$$   C^*(Y(K)) =   C^*(V_v)^{K_v/V_v} \rightarrow  \underline{\mathrm{Hom}}_{S[K_v/V_v]}(S, C^*(V_v)) $$
+is a quasi-isomorphism, in the derived category of $S$-modules. This follows from the fact that the terms
+$C^*(V_v)$ have no higher cohomology as $K_v/V_v$-modules, because each $C^j(V_v)$  
+  is the module of $S$-valued
+ functions on a free $K_v/V_v$-set and is in particular induced from a representation of the trivial group. 
+ 
+ 
+We have exhibited
+a quasi-isomorphism
+$$C^*(Y(K)) \simeq \mbox{derived $K_v$-invariants on $M$}$$
+between $C^*(Y(K))$ and a complex that represents the derived invariants of $K_v$ acting on $M$.  Thus \eqref{HGUderived} 
+gives a natural right action of $\mathscr{H}(G_v, K_v)$ on the   cohomology  of $Y(K)$.  
+
+\begin{remark}
+Although this is strictly a right action,  we will often write it on the left,  which conforms more to the usual notation for Hecke operators;
+the reader should therefore remember that the multiplication needs to be appropriately switched at times, but
+this will cause almost no issue because the derived Hecke algebra will prove to be graded-commutative at all the places we use. 
+\end{remark}
+
+Of course, this description is totally incomprehensible; thus we now work on translating it to something more usable.
+
+
+
+\subsection{Digression: pullback from a congruence quotient} \label{cong-class}
+ We first need a brief digression to construct certain cohomology classes on $Y(K)$. These are called ``congruence classes''  
+ in \cite{CaVe}, because they capitulate in congruence covers of $Y(K)$. 
+ 
+ There is a natural map
+\begin{equation} \label{group to manifold} H^*(K_v, S) \longrightarrow H^*(Y(K), S),\end{equation}
+where, on the left, $H^*(K_v, S)$ is the continuous cohomology of the profinite group $K$ with coefficients in (discretely topologized) $S$. 
+Indeed, any cohomology class for $H^*(K_v, S)$ is inflated from a quotient $K_v/K_{v,1}$. 
+Let $K_1$ be the preimage of $K_{v,1}$ in $K$. 
+The covering $Y(K_1) \rightarrow Y(K)$ has deck group $K_v/K_{v,1}$, and thus gives rise to a map, well-defined up to homotopy,
+\begin{equation} \label{classifyingspacemap} Y(K) \longrightarrow \mbox{classifying space of $K_v/K_{v,1}$.}\end{equation}
+We may then pull back cohomology classes along this map to get \eqref{group to manifold}.
+
+
+\begin{comment}
+ {\color{blue}
+In the following argument, it is necessary to understand the behavior of these classes under maps
+$Y(K) \rightarrow Y(K \cap g K g^{-1})$, induced by $x \mapsto xg$. 
+Note that there is a commutative square
+\begin{equation}
+\xymatrix{
+Y(K \cap g K g^{-1}) \ar[r]  \ar[d]^{x \mapsto xg} & B(K \cap g K g^{-1}) \ar[d]^{\Ad(g^{-1})}  \\
+Y(K) \ar[r] &  BK
+ }
+ \end{equation}
+ Indeed, writing $Y_{\infty}$ for the ``$K$-covering'' of $Y$,  the map
+ $k \mapsto g^{-1} k g, y_{\infty} \mapsto y_{\infty} g$ 
+ induces a map from the pair $(K \cap g K g^{-1}, Y_{\infty})$ to $(K, Y_{\infty})$. 
+ 
+
+ }
+ \end{comment}
+
+
+ 
+ These ``congruence'' cohomology classes have a very simple behavior under Hecke operators:   \begin{lemma} \label{lem:HTriv}
+ Let $h$ be in the image of the map \eqref{group to manifold}. 
+For any prime $w$ of $F$ that does not divide the level of $K$ or the size of $S$, such that $\mathbf{G}(F_w)$ is split, and any usual Hecke operator 
+$T$ supported at $w$, we have
+ $$T h= \deg(T) h.$$
+ \end{lemma}
+ We will give a direct proof, but let us note that one can also deduce the result
+from the commutativity of the Hecke algebra at $w$ (which is proved, under mild restrictions on $w$, in 
+\S \ref{Satake}).   It is also likely that the assumption that $\mathbf{G}(F_v)$ is split is unnecessary (since $w$ doesn't divide the level of $K$, it is automatically quasi-split by our definitions, which should be enough
+for the argument below to go through). 
+ 
+ \proof
+It is easy to verify this if $w \neq v$, so we examine only the case $w=v$. 
+
+
+
+By the assumptions, we may suppose that $K_v = \mathcal{G}(\mathcal{O}_v)$, for a split reductive $\mathcal{G}$ over $\mathcal{O}_v$. 
+ Suppose that $T$ arises from the double coset $K_v a_v K_v$, where, without loss,
+$a$ lies in a maximal split torus $\mathbf{A}(F_v)$ that is in good position relative to $K_v$ -- i.e.
+it extends to a maximal split torus of    $\mathcal{G}$.   
+
+We will show that  $h$ has the same pullback under the two natural maps
+$$\pi_1, \pi_2: Y(K \cap \Ad(a_v) K) \rightarrow Y(K),$$
+namely, the natural map, and the map induced by multiplication by $a_v$; this implies the Lemma.
+
+There is an isomorphism $X_*(\mathbf{A}) \simeq A_v/ (A_v \cap K_v)$;
+let $\mathcal{M}$ be the centralizer  in $\mathcal{G}$ of the co-character in $X_*(\mathbf{A})$
+that corresponds to the class of $a$. 
+Let $K_2$ be the preimage, under $K_v \rightarrow \mathcal{G}(\mathcal{O}_v/\varpi_v^D )$,
+of $\mathcal{M}(\mathcal{O}_v/\varpi_v^D)$; here $D$ is a large enough  integer, and $\varpi_v$ a uniformizer. 
+ 
+
+Then, on the one hand, the inclusion $K_2 \hookrightarrow K \cap \Ad(a_v) K$ has  index
+equal to a power of $q_v$. In particular, it induces an injection on $H^*(-, S)$, so it is enough 
+to verify that $\pi_1^* h = \pi_2^* h$ after pullback under $Y(K_2) \rightarrow Y(K \cap \Ad(a_v) K)$. 
+
+However,  the pullback $H^*(\mathbf{G}(\mathbf{F}_v), S) \rightarrow H^*(K_v, S)$ is an isomorphism. 
+The class $h$ is therefore actually pulled back from $\mathbf{G}(\mathbf{F}_v)$. Our assertion then follows from the fact that 
+the
+ natural maps
+$K_2 \longrightarrow  \mathbf{G}(\mathbf{F}_v)$ -- namely, the reduction map, 
+and the conjugate of the reduction map by $a_v$ --  actually  coincide. 
+ This proves that $\pi_1^* h = \pi_2^* h$, and concludes the proof of the Lemma. 
+ \qed
+ 
+
+ 
+ This motivates the following definition:  
+ 
+ \begin{Definition}  \label{HTriv}
+ We say a class 
+$ h \in H^*(Y(K), S)$ is {\em Hecke-trivial} if,
+for all places $v$ that do not divide the level of $K$ and  with residue characteristic invertible on $S$, 
+ and all Hecke operators $T$  supported at $v$,
+$$(T - \mathrm{deg}(T))^{n} h = 0.$$ 
+for a sufficiently large integer $n=n(T)$. 
+We denote by $H^*(Y(K), S)_{\triv}$ the submodule of Hecke--trivial classes.    \end{Definition}
+  
+  
+ 
+ 
+
+
+\subsection{Concrete expression for the action of $\mathscr{H}_v$ on $H^*(Y(K), S)$.}\label{sec:concrete}
+
+Let us now give a more down-to-earth description of the action of $\mathscr{H}_{v,S}$ on $H^*(Y(K), S)$, with notation as above.
+In particular, we will show that the action of elements $h_{z,\alpha}$ can be described in a fashion that is very close to the usual definition of Hecke operators. 
+
+From  $z = g_z K_v \in G_v/K_v$,
+and $\alpha \in H^*(K_v \cap \Ad(g_z) K_v)$,  we obtain a class $h_{z, \alpha} \in \mathscr{H}(G_v, K_v)$, by the recipe of \S \ref{doublecoset}.  Then:
+
+\begin{lemma}
+Write  $$K_z = K \cap \Ad(g_z) K,  \ \ \  K_z' = K \cap \Ad(g_z^{-1}) K.$$
+Also, let $\langle \alpha \rangle$ be the image of $\alpha$ under  $H^*(K_v \cap \Ad(g_z) K_v)  \stackrel{\eqref{group to manifold}}{\rightarrow} H^*(Y(K_z), S)$.   
+Then the action of $h_{z,\alpha}$ on $H^*(Y(K),S)$ coincides with the following composite 
+
+
+
+ \begin{equation} \label{action-explicit} H^*(Y(K))  \stackrel{[g_z]^*}{\rightarrow} H^*( Y(K_z))  \stackrel{\cup \langle \alpha \rangle}{\rightarrow} H^*(Y(K_z))  \rightarrow H^*(Y(K)),\end{equation}
+
+where all cohomology is taken with $S$ coefficients, 
+and  the arrows are (respectively) pullback by the map $Y(K_z) \rightarrow Y(K)$ induced
+by the map $g \mapsto g g_z$, 
+  cup with $\langle \alpha \rangle$, and push-forward for the standard map $Y(K_z) \rightarrow Y(K)$.  
+ \end{lemma}
+ 
+  Note that this is almost exactly the same as a usual Hecke operator; we have just inserted the operation of $\cup \langle \alpha \rangle$ on the way. 
+  The fact that $\langle \alpha \rangle$ is Hecke-trivial, in the sense of Definition \ref{HTriv},  is the key point that makes this operation commute with usual Hecke operators.
+
+
+  \proof
+Routine but extremely tedious; see \S \ref{remedial}.
+\qed 
+
+
+
+ 
+ \medskip
+ 
+
+\noindent {\bf Remark. }  Note also the following trivial case: taking $g_z = 1$, we see that  the operation of ``cup with $\alpha \in H^*(K_v, S)$''
+always belongs to the  derived Hecke algebra. 
+
+\medskip
+ 
+{\color{\changecolor}  \noindent {\bf Remark.}  As an example let us write out the argument that derived Hecke operators at different places always commute with one another.   
+ Fix places $v \neq w$, elements $g_v \in G_v, g_w \in G_w$,
+ and classes $\alpha_v \in H^*(K_v \cap \Ad(g_v) K_v)$ and $\alpha_w \in H^*(K_w \cap \Ad(g_w) K_w)$. 
+We claim that the composite of the two associated derived Hecke operators
+can be described in the following  way, which makes graded commutativity clear: Push-pull aong
+ $$Y(K) \leftarrow Y(K_{g_v} \cap K_{g_w}) \rightarrow Y(K),$$ 
+ but cup in the middle with the class of $\alpha_v \cup \alpha_w$.  To verify this claim, examine the following diagram: 
+  {\small \begin{equation}
+ \xymatrix{
+ && Y(K_{g_v} \cap K_{g_w})  \ar[ld]^{\times g_w} \ar[rd] && \\
+ & Y(K_{g_v})  \ar[ld]^{\times g_v}  \ar[rd] && Y(K_{g_w}) \ar[ld]^{\times g_w} \ar[rd] & \\ 
+ Y(K) && Y(K) && Y(K)
+ }
+ \end{equation}}
+When we write (e.g.) $\times g_v$ we mean that the map is induced by right multiplication by $g_v$. 
+The composite of the derived Hecke operators is, by definition, obtained by going along the bottom two rows.
+However, the  
+ middle diagram is a fiber product square,
+ and so the two ways of going from $Y(K_{g_v})$ to $Y(K_{g_w})$, via ``push-pull'' or ``pull-push,'' coincide. 
+ To prove the desired claim, then, it suffices to show that the two pullbacks of the class
+ $\langle \alpha_v \rangle \in H^*(Y(K_{g_v}))$  to
+ $H^*(Y(K_{g_v} \cap K_{g_w}))$ -- via the natural map, and via the map $\times g_w$ -- actually coincide.  
+ 
+ Equivalently, the classes obtained from $\alpha_v$, in the natural way
+ on $Y(K_{g_v} \cap g_w K g_w^{-1})$ and on $Y(K_{g_v} \cap g_w^{-1} K  g_w)$
+ are in fact compatible, under the map $\times g_w$ from one space to the other. 
+ However, these cohomology classes are obtained from a certain covering of the spaces,
+ obtained by adding extra level at $v$, and the compatibility follows from the fact that $\times g_w$
+ lifts to these coverings. 
+
+
+
+
+
+
+   }
+
+
+\subsection{Change of coefficients} \label{DHA:oddsandends1}
+ 
+Let us examine what happens under a change of rings $S \rightarrow S'$.  
+The description of \S \ref{doublecoset} and the explicit action of \S \ref{sec:concrete}
+means that there is a map of Hecke algebra $\mathscr{H}_{v,S} \rightarrow \mathscr{H}_{v, S'}$
+compatible with the actions on $H^*(Y(K), S) \rightarrow H^*(Y(K), S')$. However, this does not make quite clear that the change
+of rings map is an algebra homomorphism. For completeness let us explain this now, since
+we will want to freely pass between $\Z/\ell^n$ coefficients for various $n$s. 
+
+
+ 
+The  tensor product $ \otimes_{S} S'$  is a right exact functor from $SG$-modules to $S'G $ modules 
+and so it can be derived to a map 
+of derived categories.  Note that this carries projectives to projectives since $\Hom_{S'G_v}(P \otimes_{S} S', -) = \Hom_{SG_v} (P, -)$.
+
+
+This derived tensor product (let us write it as $\underline{\otimes}$) ``carries $S[G_v/K_v]$ to $S'[G_v/K_v]$:''
+if we choose a projective replacement $\mathbf{P} \rightarrow S[G_v/K_v]$ the natural map
+$$\mathbf{P} \otimes_{S} S' \longrightarrow S'[G_v/K_v]$$
+is a quasi-isomorphism. 
+Indeed it is possible to choose $\mathbf{P}$
+so that each term of $\mathbf{P}$ is free as an $S$-module (see the explicit resolution after \eqref{firstdef}). Then $\mathbf{P} \otimes_{S} S'$
+has no cohomology in higher degree (since this complex computes the $\mathrm{Tor}_S(S[G_v/K_v], S')$ and
+the former is free) and thus it is a resolution of $S'[G_v/K_v]$.
+
+
+
+ 
+
+ 
 This yields at once a map
-Hv,S Ñ Hv,S 1.
-from the Hecke algebra with S coefﬁcients, to the same with S1 coefﬁcients. Explic-
-itly, the left-hand side is represented by the cohomology of the differential graded algebra
-HomSGpP, Pq, and this dga maps to HomS1Gv pP bS S1, P bS S1q, whose cohomology
-computes Hv,S 1. This is the desired algebra map “change of coefﬁcients.”
-Consider now the obvious map
-ι : limÝ ÑUv
-C˚pUvq Ñ limÝ ÑUv
-C˚pUv;S1q,
-where the notation is as in (28), and the right-hand side is de ﬁned the same way but with
-S1 coefﬁcients. This induces
-ι1 : HomSGpP, limÝ ÑUv
-C˚pUvqq Ñ HomS1G
-˜
-P bSS1,
-˜
-limÝ ÑUv
-C˚pUv;S1q
-¸¸
-wherein we compose with ι and extend by S-linearity. There are compatible actions of
-Hv,S and Hv,S 1 on the left and right sides. On the other hand, the map ι1 induces on
-cohomology the natural map H ˚pY pKq,S q Ñ H ˚pY pKq,S 1q.
-To summarize: the actions of Hv,S on H ˚pY pKq,S q and Hv,S 1 on H ˚pY pKq,S 1q
-are compatible, with respect to the natural maps Hv,S Ñ Hv,S 1 and H ˚pY pKq,S q Ñ
-H ˚pY pKq,S 1q.
-2.13. Passage from modℓn toℓ-adic; the global derived Hecke algebra. We now write
-out in grotesque detail certain minor details of the passage from mod ℓn to ℓ-adic coef-
-ﬁcients, which will be used without comment in our later proo fs. This section should
-probably be skipped by the reader and consulted only as neede d.
-In what follows, we will describe the straightforward versi on of the global derived
-Hecke algebra using all good primes for K that do not divide ℓ; here “good” is deﬁned
-after (19). When we refer to the global derived Hecke algebra without any further remark,
-we are always referring to this version. We will remark, after the construction, how to
-make a deﬁnition using a restricted set of primes.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 1 9
-The action of the derived Hecke algebra gives an algebra of en domorphisms rTn Ă
-EndpH ˚pY pKq, Z{ℓnqq, namely the algebra of endomorphisms generated by all the de -
-rived Hecke algebras Hv,Z{ℓn wherev varies over good primes of K that are not above
-ℓ.
+$$ \mathscr{H}_{v,S} \rightarrow \mathscr{H}_{v, S'}.$$ 
+from the Hecke algebra with $S$ coefficients, to the same with $S'$ coefficients.  
+Explicitly, the left-hand side is represented by the cohomology of the differential graded algebra $\Hom_{SG}(\mathbf{P}, \mathbf{P})$, and this 
+dga maps to $\Hom_{S'G_v}(\mathbf{P}\otimes_S S', \mathbf{P} \otimes_{S} S')$, whose cohomology computes $\mathscr{H}_{v,S'}$.  This is the desired algebra map ``change of coefficients.'' 
+
+ 
+ Consider now the  obvious map
+ $$ \iota: \varinjlim_{U_v} C^*(U_v)   \rightarrow \varinjlim_{U_v} C^*(U_v; S'),$$
+ where the notation is as in  \eqref{CUdef}, and the right-hand side is defined the same way but with $S'$ coefficients. 
+This induces 
+ $$\iota':  \Hom_{SG}(\mathbf{P},  \varinjlim_{U_v} C^*(U_v)    ) \rightarrow \Hom_{S'G} \left( \mathbf{P} \otimes_S S',  \left(  \varinjlim_{U_v} C^*(U_v; S') \right) \right)$$
+ wherein we compose with $\iota$ and extend by $S$-linearity.  There are compatible actions of $\mathscr{H}_{v,S}$
+ and $\mathscr{H}_{v,S'}$ on the left and right sides.  On the other hand,  the map $\iota'$
+ induces on cohomology the natural map $H^*(Y(K), S) \rightarrow H^*(Y(K), S')$. 
+    
+To summarize: the actions of $\mathscr{H}_{v,S}$ on $H^*(Y(K), S)$ and
+  $\mathscr{H}_{v, S'}$ on $H^*(Y(K), S')$ are compatible, with respect to the natural maps $\mathscr{H}_{v,S} \rightarrow \mathscr{H}_{v,S'}$
+  and $H^*(Y(K), S) \rightarrow H^*(Y(K), S')$. 
+  
+  
+  
+  
+
+
+\subsection{Passage from mod $\ell^n$ to $\ell$-adic; the global derived Hecke algebra} \label{limit}
+
+We now write out in grotesque detail certain minor details of the  passage from mod $\ell^n$ to $\ell$-adic coefficients, which will be used without comment in our later proofs.  
+ This section should probably be skipped by the reader and consulted only as needed.  
+ 
+ {\color{\changecolor} In what follows, we will describe the straightforward version of the global derived Hecke algebra
+using all good primes for $K$ that do not divide $\ell$;  here ``good'' is defined  after \eqref{prodformula}.
+{\em When we refer to the global derived Hecke
+algebra without any further remark, we are always referring to this version. }
+We will remark, after the construction, how to make a definition
+using a restricted set of primes.  }
+
+ 
+ \index{global derived Hecke algebra} \index{$\gHecke$} 
+The action of the derived Hecke algebra gives an algebra of endomorphisms $\widetilde{\mathbb{T}}_n \subset \mathrm{End}( H^*(Y(K), \Z/\ell^n))$, namely
+the algebra of endomorphisms generated by all  the derived Hecke algebras $\mathscr{H}_{v, \Z/\ell^n}$
+where $v$ varies over good primes of $K$ that are not above $\ell$. 
+
+
 Now we have
-H ˚pY pKq, Zℓq “ limÐ ÝH ˚pY pKq, Z{ℓnq
-and we deﬁne the global derived algebra (relative to the ﬁxed set V of places) to be
-(33) ˜T Ă EndpH ˚pY pKq, Zℓqq
-to be those endomorphisms of the form limÐ Ýtn, for some compatible system tn P ˜Tn, i.e.
-tn “reduces to tm” for n ąm in the sense that the following diagram should commute:
-(34) H ˚pY pKq, Z{ℓnq
-tn /d47/d47
-/d15/d15
-H ˚pY pKq, Z{ℓnq
-/d15/d15
-H ˚pY pKq, Z{ℓmq
-tm /d47/d47H ˚pY pKq, Z{ℓmq.
-Let ˜T˚
-n be the systems of elements ptn,tn´1,...,t 1q, where tr P rTr for r ď n are
-all compatible in the sense that the above diagram should com mute for each tr,tr1. In
-particular, ˜T˚
-n acts on Z{ℓr-valued cohomology for each r ď n. The inverse limit limÐ Ý˜T˚
-n
-acts onH ˚pY pKq, Zℓq, and its image in EndH ˚pY pKq, Zℓq is precisely the global derived
-Hecke algebra ˜T.
-Fixm. For n ěm consider the map
-˜T˚
-n Ñ ˜T˚
-m.
-For increasingn and ﬁxed m, the image of this map gives a decreasing sequence of subsets
-of the ﬁnite set ˜T˚
-m. This sequence must stabilize. Call this stabilization ˜T8,m; it is a
-subring of rT˚
-m and thus acts by endomorphisms of H ˚pY pKq, Z{ℓmq; also, there exists
-Nm such that ˜T8,m coincides with the image of ˜T˚
-Nm in ˜T˚
-m.
+$$H^*(Y(K), \Z_{\ell}) = \varprojlim H^*(Y(K), \Z/\ell^n)$$ 
+and we {\em define} the global derived algebra (relative to the fixed set $V$ of places)
+to be 
+\begin{equation} \label{gHeckedef} \gHecke \subset \mathrm{End}(H^*(Y(K), \Z_{\ell}))\end{equation}
+to be those endomorphisms of the form $\varprojlim t_n$,   for some compatible system $t_n \in \gHecke_n$, i.e.
+$t_n$ ``reduces to $t_{m}$'' for $n > m$ in
+the sense that the following diagram should commute:
+
+ \begin{equation}
+ \xymatrix{
+H^*(Y(K), \Z/\ell^n)  \ar[r]^{t_n} \ar[d] & H^*(Y(K), \Z/\ell^n)  \ar[d] \\
+H^*(Y(K), \Z/\ell^{m})  \ar[r]^{t_{m}} & H^*(Y(K), \Z/\ell^{m}) . 
+ }
+\end{equation}
+
+Let $\gHecke_{n}^*$ be the  systems of elements  
+$(t_n , t_{n-1}, \dots, t_1)$, where
+$t_r \in \widetilde{\mathbb{T}}_r$ for $ r  \leq n$ are all compatible in the sense that the above diagram should commute for each $t_{r}, t_{r'}$. 
+In particular, $\gHecke_{n}^*$ acts on $\Z/\ell^r$-valued cohomology for each $  r \leq n$. 
+The inverse limit
+$\varprojlim \gHecke_n^*$ acts on $H^*(Y(K), \Z_{\ell})$, and its
+image in $\End H^*(Y(K), \Z_{\ell})$ is precisely the global derived Hecke algebra $\gHecke$. 
+
+
+ Fix $m$. For $n \geq m$  consider
+ the map
+ $$\gHecke_n^* \rightarrow \tilde{\mathbb{T}}_m^*.$$ 
+
+For increasing $n$ and fixed $m$, the image of this map  gives a decreasing sequence of subsets of  the finite set $\tilde{\mathbb{T}}_m^*$. 
+This sequence must stabilize. Call this stabilization
+$\gHecke_{\infty,m}$; it is a subring of $\widetilde{\mathbb{T}}_m^*$ and thus acts by 
+  endomorphisms of $H^*(Y(K), \Z/\ell^m)$; 
+  also,  there exists 
+$N_m$ such that $\gHecke_{\infty,m}$
+coincides with the image of $ \gHecke_{N_m}^*$
+in $\tilde{\mathbb{T}}_m^*$.  
+  
 The natural map
-(35) limÐ Ý˜T˚
-n Ñ ˜T8,m
-is onto, since we’re dealing with an inverse system of ﬁnite s ets.
-Let Hv,Z{ℓn be the local derived Hecke algebra at v with Z{ℓn-coefﬁcients. We show
-later (§3.4) that, if ℓn dividesqv ´ 1, then the natural map Hv,Z{ℓn Ñ Hv,Z{ℓm is sur-
-jective. It follows that if qv ´ 1 is divisible by ℓNm, then the image of ˜T˚
-Nm acting on
-H ˚pY pKq, Z{ℓmq contains the image of Hv,Z{ℓm . Therefore, the image of ˜T8,m acting
-onH ˚pY pKq, Z{ℓmq contains the image of Hv,Z{ℓm .
-In practice, we will establish “bigness” results of the foll owing type:
-(*) For allm ďn, there exists sets of primesQn “ tq1,...,q ru such that
-ℓn dividesqi´1 and the image of biHqi,Z{ℓm acting onH ˚pY pKq, Z{ℓmq
-is “large:” H ˚pY pKq, Z{ℓmq is generated over biHqi,Z{ℓm by elements
-of some ﬁxed degree D.
-When we prove such results, it will not be for the full cohomol ogy of Y pKq but rather
-for its localization at some ideal of the Hecke algebra, but w e suppress that for the current
-discussion.
-20 AKSHA Y VENKA TESH
-Let us prove that, under this assumption (*), H ˚pY pKq, Zℓq is generated over ˜T by
-elements of degreeD. The assumption implies (by the previous discussion, with n “Nm)
-thatH ˚pY pKq, Z{ℓmq is generated over ˜T8,m by elements of degreeD; by (35), it is also
-generated over limÐ Ý˜T˚
-n by elements of degree D. That is to say,
-plimÐ Ý˜T˚
-nq bHDpY pKq, Z{ℓmq
-surjects ontoH ˚pY pKq, Z{ℓmq for everym. By a compactness argument the same asser-
-tion holds with Zℓ-coefﬁcients.
-More generally, the same type of argument allows us to show th at various types of
-“largeness” can be passed from Z{ℓm coefﬁcients to Zℓ.
-2.14. Restricting places and the strict global derived Hecke alge bra. We can restrict
-the primes and the powers of ℓ used in the above construction. It is convenient to index
-these restrictions by a function
-V : primes Ý Ñ t0, 1, 2,..., u Y t8u
-where primesv withV pvq “ 0 will be not used at all in the deﬁnition.
-In the above construction, replace rTn by the algebra generated by Hv,Z{ℓn wheren ď
-V pvq. Proceeding as above, then, we obtain a restricted global He cke algebra ˜TpV q acting
-on cohomology with Zℓ coefﬁcients. Informally, each prime v can be used at most at
-torsion level Z{ℓV pvq.
-For example, taking
-(36) V0pvq “
-#
-0,v not good;
-largest power ofℓ dividingqv ´ 1, else ,
-the resulting algebra ˜TpV0q has the advantage that it will be graded commutative by the
-results of §3, at least if ℓ doesn’t divide the order of the Weyl group.
-It will be sometimes convenient to enlarge this by the usual H ecke algebra, i.e. deﬁning
-the “strict” global derived Hecke algebra
-˜T1 :“ algebra generated by ˜TpV0q and all underived Hecke operators at good places prime to ℓ.
-However, by default, when we write ˜T, we mean the “full” version using V “ 8 for
-all good primes not above ℓ, and V “ 0 at all other primes. Thus we have inclusions of
-algebras, each inside endomorphisms of cohomology:
-usual (underived) Hecke algebra T Ă ˜T1 Ă ˜T.
-The advantage of ˜T1 is that it is clearly graded commutative.
-Thus, for example, if m is a maximal ideal of T, the strict global derived Hecke algebra
-˜T1 induces an algebra of endomorphisms of the m-completionH ˚pY pKq, Zℓqm:
-H ˚pY pKq, Zℓqm b ˜T1 Ý ÑH ˚pY pKq, Zℓqm.
-While a priori we do not know that the full ˜T preservesH ˚pY pKq, Zℓqm, this is true under
-a mild additional assumption: For each good place w not equal to ℓ, let Tpwq be the prime-
-to-w usual Hecke algebra, and mpwq the induced maximal ideal. Suppose that the natural
-map
-(37) H ˚pY pKq, Zℓqmpwq ÑH ˚pY pKq, Zℓqm
-is an isomorphism. This is true, for example, if there exists Galois representations associ-
-ated to cohomology classes (by the argument of [20, Lemma 6.2 0]). In this case, the local
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 2 1
-derived Hecke algebra at w clearly preserves the left-hand side, and so also preserves the
-right-hand side. Since this is true for all good w not dividing ℓ, the full ˜T also preserves
-the m-completion of cohomology.
-3. T ORUS LOCALIZATION AND SATAKE ISOMORPHISM
-Our main goal here is to prove a version of the Satake isomorph ism that applies to the
-derived Hecke algebra. Namely, take m “ ℓr a prime power. Suppose q ” 1 moduloℓr.
-We show (see (40) for the precise statement)
-derived Hecke algebra for split q-adic group with Z{ℓr-coefﬁcients
-– pderived Hecke algebra for maximal torus with Z{ℓr coefﬁcients qW
-where theW superscript means Weyl-ﬁxed, and we also require that ℓ does not divide the
-order ofW .
-For example, if q ” 1 moduloℓ, the derived Hecke algebra of PGL2pQqq with coefﬁ-
-cients in Z{ℓ is isomorphic to
-Z{ℓrx0,x ´1
-0 ,y 1,z 2sZ{2
-wherex0,y 1,z 2 have (respectively) degree 0, 1, 2, and the action of Z{2 switchesx˘1
-0 and
-negatesy1,z 2.
-A consequence of our results is that (under our assumptions o nq,m ) the derived Hecke
-algebra is graded commutative. We do not know if this is valid without any assumption on
-q and the coefﬁcient ring S. Recall, however, that q ” 1 inS is precisely the case where
-the Hecke algebra is largest, by the discussion of §2.4, and u nderstanding this case will be
-enough for our global analysis.
-3.1. It is a curious fact that, in characteristic dividing qv ´ 1, the Iwahori-Hecke algebra
-of a split Fv-group is isomorphic to the group algebra of its afﬁne Weyl gr oup. A related
-interesting phenomenon is that, under the same assumptions , the Satake isomorphism
-Hecke algebra Ý ÑHecke algebra of torus
-is given simply by restriction (!)
-These points can be explained by “torus localization,” as we now explain. Using that
-method we will derive our Satake isomorphism below. Of cours e this is a little bit cheap,
-but it turns out to be exactly what we need anyway.
-I am very grateful to David Treumann for conversations about this material. In particu-
-lar, I learned about localization in the context of local geo metric Langlands from his paper
-Smith theory and geometric Hecke algebras [33].
-3.2. In this section and the next, G will be a split group over the nonarchimedean local
-ﬁeld Fv. The coefﬁcient ring for all our Hecke algebras will be taken to be S “ Z{ℓr, for
-a primeℓ andr ě 1. We shall suppose that ℓr divides pqv ´ 1q, whereqv is the cardinality
-of the residue ﬁeld Fv. We also assume that ℓ is relatively prime to the order of the Weyl
-group of G.
-We ﬁx other notations as follows: Let G be a split group over Ov whose generic ﬁber
-is identiﬁed with G. Let Kv “ GpOvq, a maximal compact subgroup of Gv “ GpFvq.
-Let A be a maximal torus in G, and B a Borel subgroup of G containing A; we suppose
-them to extend to a torus A and Borel B inside G. We write Av,Bv for the Fv-points of
-A, B. We shall use the notation ApFvq˝ for the maximal compact subgroup of ApFvq,
-and similar notation whenever the maximal compact subgroup is unique.
-22 AKSHA Y VENKA TESH
-LetW be the Weyl group for A. We write X˚ “X˚pAq for the co-character group of
-A. We identify X˚ withAv{Av XKv ĂGv{Kv by means of the map
-(38) χ PX˚ “ HompGm, Aq Ý Ñχp̟vq,
-with̟v a uniformizer.
-We write for short T “ ApFvq. The reduction map Av XKv ÑT splits uniquely, and
-so we obtain a “Teichmüller” lift
-(39) T ãÑAv XKv.
-This induces a cohomology isomorphism, with Z{ℓr coefﬁcients.
-We have a Cartan decomposition
-Gv “Kv ¨Av ¨Kv
-TheAv component of this decomposition is unique up to the action of the Weyl groupW .
-3.3. Theorem. Let notations be as above; in particular the coefﬁcient ring is alwaysS “
-Z{ℓr, whereℓr dividesqv ´ 1, andℓ does not divide the order of the W eyl group.
-Then restriction (in the model of §2.3) deﬁnes an isomorphis m
-(40)
-derived Hecke algebra for pGv,Kvq „Ý Ñ derived Hecke algebra for pAv,Av XKvqW.
-Let us explicate what we mean by “restriction.” As per §2.3, a n element h of the left-
-hand side is an association:
-px,y q P pGv{Kvq2↝ hpx,y q P H ˚pGxy,S q,
-and its image h1 on the right-hand side is obtained by restricting to Av{pAv XKvq ãÑ
-Gv{Kv and pulling back cohomology classes under the inclusion Axy ãÑ Gxy. The ele-
-menth1 is clearlyAv-invariant, and it is also W -invariant:
-rws˚h1pwx,wy q “ hpx,y q
-because of the G-invariance ofh.
-Because Axy “ Av X Kv for each x,y , and the the (Teichmüller) inclusion (39)
-T ãÑ Av X Kv induces a cohomology isomorphism, we can regard h1 as a function
-X˚ ˆX˚ Ý ÑH ˚pT,S q. We will often regard h1 as such without explicit comment.
-The multiplication in this model is usual convolution in the X˚ variable, together with
-multiplication inH ˚pT,S q. We may therefore identify the right-hand side of (40) with
-(41) pSrX˚s bH ˚pT,S qqW ,
-just as in (25), i.e. restrict to X˚ ˆ t0u and identify functions onX˚ with the group algebra
-in the obvious way.
-3.4. A useful corollary to this result is the following (alth ough even easier, as it does not
-use the algebra structure): The induced map
-derived Hecke algebra over Z{ℓn Ñ derived Hecke algebra over Z{ℓm
-is a surjection forn ą m, under our assumption that ℓn dividesqv ´ 1. (We used this in
-the discussion of §2.13).
-In fact, we’re reduced to checking the same fact when C is a cyclic group of order
-divisible byℓn, i.e.
-H ˚pC, Z{ℓnq Ñ H ˚pC, Z{ℓmq
-is surjective. This follows from a straightforward computa tion.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 2 3
-3.5. Some useful Lemmas.
-3.6. Lemma. Any nontrivial root α of A on G is nontrivial on the ℓ-Sylow of Av XKv.
-In particular ,α induces a nontrivial character ApFvq Ñ Fˆ
-v .
-Proof. This is just a matter of checking the residue characteristic is forced to be big
-enough: if the claim is not true, the root α would be divisible by ℓr inX ˚pAq; but roots
-are divisible at most by 2 because xα,α _y “ 2, and ℓ ą 2 because it’s prime to the order
-of the Weyl group. □
-3.7. Lemma. Use notation as above; in particular Fv is a ﬁnite ﬁeld of cardinality qv ” 1
-moduloℓr, and the order of the W eyl group is not divisible by ℓ.
-Then the restriction map from the cohomology H ˚pGpFvq, Z{ℓrq to W eyl-ﬁxed coho-
-mology of the torus H ˚pApFvq, Z{ℓrqW is an isomorphism.
-Proof. Write for short (and just for this proof) G,A,B for the Fv-points of G, A, B.
-Consider the composite of restrictions
-(42) H ˚pG, Z{ℓrq Ñ H ˚pB, Z{ℓrq „ÑH ˚pA, Z{ℓrq.
-The second map is an isomorphism and its inverse is speciﬁed b y corestriction. Therefore
-we can transport the W -action on H ˚pAq to a W -action on H ˚pB, Z{ℓrq; explicitly the
-action ofw is
-(43) CoresB
-A ˝ rwsA ˝ ResB
-A.
-where rwsA is pullback of cohomology classes under Adpw´1q :A ÑA.
-We will now show that ResG
-B ˝ CoresG
-B “ ř
-wPWw, where the w-action on H ˚pBq is
-that just deﬁned. Since CoresG
-BResG
-B “ |W |, which is invertible in Z{ℓr, we see that ResG
-B
-is injective and CoresG
-B is surjective; so ResG
-B is an isomorphism onto the W -invariants on
-H ˚pB, Z{ℓrq, which implies the Lemma.
-By the usual formula [6, Proposition 9.5], using the Weyl gro up W as a system of
-representatives for double cosets, the composite equalsÿ
-wPW
-CoresB
-wBw ´ 1XB ¨ Adpw´1q˚ ¨ ResB
-BXw´ 1Bw
-Butw´1Bw XB containsA, and rwBw ´1 XB :As “ 1 moduloℓr. So we can rewrite
-thew-term as
-CoresB
-wBw ´ 1XB ¨ Adpw´1q˚ ¨ CoresBXw´ 1Bw
-A ResB
-A “ CoresB
-A ¨ rwsA ¨ ResB
-A
-which is exactly the W -action onH ˚pBq, by (43). □
-3.8. Lemma. LetG1,G 2 be ﬁnite groups. Suppose that G1 ãÑ G1 ˆG2 is the natural
-inclusion, and M is a module for G1 ˆG2 killed by the order #G2 of G2. Then the
-corestriction mapH ˚pG1,M q Ñ H ˚pG1 ˆG2,M q is zero.
-Proof. Indeed, the composite H ˚pG1 ˆG2q ResÑ H ˚pG1q CoresÑ H ˚pG1 ˆG2q is multi-
-plication by the order of G2, and is therefore zero with M coefﬁcients; but the ﬁrst Res is
-surjective becauseG1 ÑG1 ˆG2 is split. □
-3.9. Lemma. Let Γ Ă Gv be a ﬁnite ℓ-subgroup. Let S be the double centralizer of Γ ,
-considered as an algebraic Fv-subgroup of G. Then:
-(a) S has component group of prime-to-ℓ order ,
-(b) the maximal compact subgroup SpFvq˝ of itsFv-points ﬁxes every point of Gv{Kv
-that is ﬁxed by Γ .
-24 AKSHA Y VENKA TESH
-Proof. Letx PGv{Kv be ﬁxed by Γ . Conjugating Γ byGv we may suppose that x “Kv,
-the identity coset in Gv{Kv.
-Now, the quotient of the orders of G and A over the ﬁnite ﬁeld Fv is congruent to |W |
-moduloℓ, because of our assumption ℓ dividesq ´ 1. Therefore there is an ℓ-Sylow ofKv
-contained inAv XKv. Thus, further conjugating Γ byKv we can further assume that that
-Γ Ă ApFvq XKv. The centralizer ZpΓ q of Γ is then a subgroup containing A. The double
-centralizer S is thus contained in A and, of course, it contains Γ .
-Because S Ă A, the maximal compact subgroup of SpFvq is contained in the maximal
-compact ApFvq XKv of A; the latter ﬁxes x. This proves (b).
-To verify the assertion about the component group of S, we ﬁrst verify that ZpΓ q is
-connected. Note that S is contained in ZpΓ q by the analysis above, so it is in fact the center
-of ZpΓ q. Then we are reduced to the following assertion: for any redu ctive group Z, the
-component group of the center of Z is only divisible by primes dividing the order of the
-Weyl group. Replacing Z by its quotient by the connected center, we can check the same
-assertion for Z semisimple; so it is enough to check for Z simply connected semisimple.
-There it is obvious case by case.
-To see that Z “ ZpΓ q is connected, we can reason as follows: A is a maximal split torus
-within Z, so any element of Z{Z0 has a representative in Z that belongs to the normalizer
-of A. Here Z0 denotes the connected component. So it is enough to show that anyFv-point
-n in the normalizer of A that belongs to Z actually belongs to Z0. Let w P AutpAq be the
-element of the Weyl group of A corresponding to such ann. Fixγ P Γ . Sincen centralizes
-Γ , we see thatw ﬁxes γ. Write N for theℓ-part ofq ´ 1. Soγ P ArN s » X˚ bµN ; ﬁxing
-a primitiveN th root, we can identify ArN s withX˚{N . Since the order of w is relatively
-prime to ℓ, we see – by taking invariants in X˚ Ñ X˚ Ñ X˚{N – that γ actually lies in
-the image of some w-ﬁxed character Gm Ñ A.
-Applying this reasoning for each γ P Γ , we see that w actually centralizes a subtorus of
-A containing Γ . But the centralizer of that torus is a connected group, thus contained in
-Z0. We conclude that Z is connected, as we claimed. □
-3.10. Lemma. Supposez P Gv{Kv does not belong to the image of X˚ (where the map
-X˚ãÑGv{Kv was deﬁned in (38)).
-Let Γ be anℓ-Sylow ofAv XKv; thus Γ is anℓ-Sylow subgroup of Gxy. Let Γz be the
-stabilizer ofz in Γ .
-Then the corestriction map H ˚pΓzq Ñ H ˚pΓ q is zero with Z{ℓr coefﬁcients.
-Proof. Note that the centralizer and so also the double centralizer of Γ is simply A. (Any
-root of A is nontrivial on the ℓ-Sylow of Av XKv, by Lemma 3.6, so the connected
-centralizer is A; the centralizer cannot be larger than A because any element of the Weyl
-group acts nontrivially on Γ »X˚pAq{ℓr).
-Let S be the double centralizer of Γz. Since Γz Ă Γ we also have S Ă A.
-Let S0 be the identity component of S; it is a split torus. Because ((a) of §3.9) the
-component group of S is prime-to-ℓ, we see that Γz lies inside S0, and thus inside the
-maximal compact subgroup of S0pFvq. Let Γ ˚
-z be theℓ-Sylow of S0pFvq. Thus Γz Ă Γ ˚
-z .
-Choose a complement S1 Ă A to S0, i.e. a subtorus with the property that S0 ˆS1 Ñ A
-is an isomorphism. Now Γ Ă ApFvq˝ is anℓ-Sylow by computation of orders, so therefore
-Γ “ Γ ˚
-z ˆ Γ 1
-where Γ 1 is theℓ-Sylow of S1pFvq˝.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 2 5
-If S1 were trivial, then S0 “ A; in that case, by (b) of §3.9, z lies in the ﬁxed set of
-ApFvq˝, which is none other 6 than
-X˚ ĂGv{Kv,
-which contradicts our assumption. Therefore, S1 is nontrivial. We see at once that the order
-of Γ 1 is divisible by the ℓ-part ofq ´ 1.
-Thus, by Lemma 3.8, the corestriction from Γ ˚
-z to Γ is zero with Z{ℓr coefﬁcients. The
-corestriction from Γz to Γ factors through this one, so it is zero too.
-□
-3.11. Proof of Theorem 3.3. Throughout the proof, as in the statement of the theorem, we
-take coefﬁcients in S “ Z{ℓr. Accordingly, we drop explicit mention of the coefﬁcients
-from the notation.
-Recall the explicit description of the Satake map, using the identiﬁcation (41) of the
-toral derived Hecke algebra:
-Given an assignment px,y q P Gv{Kv ÞÑ hpx,y q P H ˚pGxyq, we associate to it the
-functionX˚ ˆX˚ Ý ÑH ˚pT q, given by
-h1 : px,y q P pAv{Av XKvq2 ÞÑ ResGxy
-T hpx,y q P H ˚pT q
-We must show that the rule h ÞÑh1 gives an isomorphism
-(44)
-derived Hecke algebra for pGv,Kvq » derived Hecke algebra for pAv,Av XKvqW.
-We ﬁrst verify that h ÞÑh1 is bijective. Each element of the derived Hecke algebra for
-pGv,Kvq is uniquely of the form řha,α wherea P X `
-˚ andα P H ˚pKv X AdpaqKvq,
-with notation as in §2.4. The intersection of KvaKv with X˚ is precisely given by the
-W -orbit of a by uniqueness of the Cartan decomposition. So the map h ÞÑh1 sendsha,α
-to the function h1
-a,α onX˚ ˆX˚ characterized byW -invariance and:
-(i) hz,αpx,e q “ 0 unlessx PWa ;
-(ii) hz,α sends pa,e q to the image of α PH ˚pKv X AdpaqKvq Ñ H ˚pT q.
-It is enough, then, to show that each element of derived Hecke algebra for pAv,Av XKvqW
-is uniquely a sum of such elements h1
-a,α. This comes down to the fact that the map
-(45) H ˚pKv X AdpaqKvq Ý ÑH ˚pT qWa
-is an isomorphism, where Wa is the stabilizer of a in the Weyl group. But, if we write
-M for the Levi subgroup of G that centralizesa, thenKv X AdpaqKv is, modulo a pro-p-
-group, thek-pointsM pkq, andWa is identiﬁed with the Weyl group of M . So (45) follows
-from Lemma 3.7.
-6 Let N be the unipotent radical of the Borel B Ą A. If ApFvq˝ xKv “ xKv, we have x´ 1ApFvq˝ x Ă
-Kv. By using the Iwasawa decomposition, it is enough to check th at if this inclusion holds for some x “ n P
-NpFvq, then in fact n P Kv. In that case we have n´ 1an P Kv for all a P ApFvq˝ , and in particular
-n´ 1pAdpaqnq P Kv for all such a.
-Choose a generic positive element λ P X˚ pAq, giving an enumeration of the positive roots α 1, . . . , α s
-so that xα i, λ y is increasing. For each such root we have a root subspace ui : Ga Ñ N , and the product
-map uspxsqus´ 1pxs´ 1q . . . u 1px1q, from Gs
-a Ñ N, extends to an isomorphism of schemes over Ov. In this
-ordering, the commutator rui, u js involves only uk with k ą maxpi, j q.
-Let x1 be the α 1 coordinate of n. We have pα 1paq ´ 1qx1 P Ov for all a P ApFv q˝ , which implies
-x1 P Ov, cf. second paragraph of the proof of Lemma 3.10. Adjust n on the right by u1p´x1q to arrange that
-x1 is trivial. Now proceed the same way for the α 2, α 3, . . . coordinate.
-26 AKSHA Y VENKA TESH
-To show thath ÞÑh1 preserves multiplication, we compute ph1h2q1px,z q; it equals the
-restriction, fromGxz toT , of
-ÿ
-OĂGv {Kv
-ÿ
-yPO
-h1px,y q Yh2py,z q.
-the sum being grouped, as before, over orbits O ofGxz on such y. Recall that the inner
-sum is understood by computing the cup-product h1px,y q Yh2py,z q for a single y P O,
-and then corestricting from Gxyz toGxz. Therefore,
-ph1h2q1px,z q “
-ÿ
-O
-ResGxz
-T CoresGxz
-Gxyzh1px,y q Yh2py,z qloooooooooooooooooooooomoooooooooooooooooooooon
-:“HpOq
-and as usual we can express HpOq a sum over T -orbits on Gxz{Gxyz , that is to say, as a
-sum ofT orbitsO1 ĂO:
-(46) HpOq “
-ÿ
-O1
-CoresT
-Ty1 ResGxyz
-Ty1 p... q
-where we have chosen a representative y1 P O1 for each T -orbit O1 upon O; and the
-injection Ty1 Ñ Gxyz that deﬁnes the restriction map is induced by an element of Gxz
-conjugatingy1 toy.
-We saw in Lemma 3.10 that the corestriction map vanishes unle ssy1 actually belongs
-toX˚. (Indeed, writing Γ for the unique ℓ-Sylow of the abelian group T , then Γy1 is an
-ℓ-Sylow ofTy1, and the corestriction map induced by Γy1 ÑTy1 is surjective on cohomol-
-ogy.) In the case when y1 PX˚, we have Ty1 “T in which case O1 “ ty1u. We conclude
-that
-HpOq “
-ÿ
-y1POXX˚
-ResGxyz
-T ph1px,y q Yh2py,z qq
-and ﬁnally adding up all O we get
-ph1h2q1px,z q “
-ÿ
-yPX˚
-ResGxyz
-T ph1px,y q Yh2py,z qq
-“
-ÿ
-yPX˚
-ResGxy
-T h1px,y q Y ResGyz
-T h2py,z q “ h1
-1h1
-2px,z q.
-This concludes the proof of the theorem.
-4. I WAHORI -H ECKE ALGEBRA
-In this section, we collect a few important facts about Iwaho ri–Hecke algebras. In
-particular, we discuss the structure of the Iwahori–Hecke a lgebra at a Taylor–Wiles prime
-(§4.2), the relation between modules over the (usual, i.e. n on-derived) Iwahori-Hecke
-algebra and modules over the (usual) spherical Hecke algebr as (§4.4) and ﬁnally brieﬂy
-discuss a localization result for the derived Iwahori-Heck e algebra (§4.6).
-These results are presumably well-known to experts but they help us polish our presen-
-tation of the Taylor-Wiles method – indeed similar ideas app ear in the paper of Khare and
-Thorne [20].
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 2 7
-4.1. We continue with the notation of the prior section (§3.2 ). In particular, Gv is the
-Fv-points of a reductive split group.
-In this section, we will also make use of the afﬁne Weyl group ˜W attached to G; by
-deﬁnition this is the semidirect product X˚ ⋊W whereX˚ is the cocharacter group of the
-maximal torus A, andW is the Weyl group of A.
-LetS be the ring Z{ℓr, for a prime ℓ; this will be the coefﬁcient ring for all our Hecke
-algebras and derived Hecke algebras. We suppose thatqv ” 1 moduloℓr and thatℓ doesn’t
-divide the order of the Weyl group.
-Let Iv be an Iwahori subgroup of Gv contained inside Kv and in good position with
-reference to A. By this we mean that Iv stabilizes a chamber of the building that lies
-inside the apartment deﬁned by A. An explicit choice of such an Iv can be obtained from
-an integral model B of a Borel subgroup containing A:
-Iv “ preimage of BpFvq inside GpOvq,
-and the other such Ivs areW -conjugate to this one.
-It will be helpful to keep in mind that the index rKv : Ivs ” | W | moduloℓr, in par-
-ticular, this index is invertible in S. Take the Haar measure on Gv which assigns Iv mass
-1.
-4.2. The structure of the Iwahori algebra. Let HI be the Hecke algebra for Iv. We will
-understand this to be deﬁned as
-HI :“ HomSGv pSrGv{Ivs,S rGv{Ivsq.
-This is identiﬁed with the set of S-valued and ﬁnitely supported functions f onIvzGv{Iv.
-Namely, identifying such functions with measures (multipl ying by the Haar measure on
-Gv, thought of as valued inS), each such functionf acts by right convolution onSrGv{Ivs,
-and therefore deﬁnes an element of HI . Therefore, in the text, we will often produce
-elements of HI by describing the associated bi-invariant function.
-W arning:the resulting identiﬁcation
-(47) HI » pfunctions onIvzGv{Ivq
-is an anti-isomorphism of algebras if we equip the right-han d side with the convolution
-product. When we multiply elements of HI , we will always understand the multiplication
-to be that of HI , not the multiplication induced from the right hand side of ( 47).
-We similarly deﬁne
-HK “ HomSGv pSrGv{Kvs,S rGv{Kvsq,
-HIK “ HomSGv pSrGv{Kvs,S rGv{Ivsq,
-HIK “ HomSGv pSrGv{Ivs,S rGv{Kvsq.
-IfV is anyG-representation, the algebra HomSGv pSrGv{Kvs,S rGv{Kvsq acts on the
-right on VKv “ HomGv pSrGv{Kvs,V q. Similarly, elements HIK induces endomor-
-phismsVIv Ñ VKv . Indeed a useful mnemonic for the subscript “ IK ” is that, acting as
-explained above, HIK goes fromI-invariants toK-invariants, and so on. Also HIK, HKI
-are bimodules for HK and HI .
-As before, each of these can be identiﬁed with a space of funct ions. Thus, for example,
-HIK » functions onKvzGv{Iv,(48)
-and similarly for HIK, HK. As before, these identiﬁcations arise from the right convo lu-
-tion action of the functions on SrGv{Kvs orSrGv{Ivs.
-28 AKSHA Y VENKA TESH
-Note that, somewhat contrary to what the notation might sugg est, an element of HIK
-considered as a function is leftKv-invariant and rightIv-invariant. Again, we will use these
-identiﬁcations such as (48) without comment to produce elem ents inside the various Hecke
-algebras. The same warning applies here: the identiﬁcation s do not preserve multiplication;
-the order must be switched, just as (47) is an anti-automorph ism. To avoid confusion here,
-our convention is that products are always to be understood i n the sense of the HI, HK ,
-etc., and not via convolution of functions.
-It is useful later to deﬁne
-(49) eK “ 1Kv
-measurepKvq.
-Considered as an element of HI it is idempotent. When considered as an element of HIK ,
-it carries the identity coset ofSrGv{Kvs to ř
-kPK{IkIv PSrGv{Ivs, and when considered
-as an element of HKI , carries the identity coset of SrGv{Ivs to 1
-rKv :Iv seKv PSrGv{Kvs.
-In particular, eK P HIK induces the co-restriction map VIv Ñ VKv , and eK P HKI
-induces the mapVKv ÑVIv which is the natural inclusion divided by the index rKv :Ivs.
-Becauseq is congruent to 1 moduloℓr, the structure of HI is very simple. It is isomor-
-phic simply to the group algebra of the afﬁne Weyl group:
-(50) HI »Sr ˜W s
-An explicit anti-isomorphism sends the characteristic fun ction ofIvwIv to the element w,
-forw P ˜W ; in particular eK is sent to 1
-|W |
-ř
-wPWw, the sum over the usual Weyl group.
-This follows from the standard presentation of the Iwahori- Hecke algebra (for a refer-
-ence with complex coefﬁcients, see [12, Theorem 4.2]); the k ey point is that the relation
-pTs ´qqpTs ` 1q simpliﬁes to T 2
-s “ 1 whenq “ 1 in the coefﬁcients. Actually it is also
-possible to verify HI is isomorphic to Sr ˜W s by using torus localization, although we omit
-the details.
-4.3. Central element and discriminant. Every element of SrX˚sW is central in Sr ˜W s.
-Therefore, (50) yields a natural map (indeed an isomorphism ) fromZ :“SrX˚sW to the
-center of HI .
-Then HI, HK have structures ofZ-algebra and HIK, HKI have structure ofZ-module,
-all of which are compatible in the obvious way.
-For example, the ring homomorphism Z Ñ HK is given by z ÞÑ eKzeK “ eKz. In
-fact this is a ring isomorphism, as follows easily from the explicit presentation. Then e.g .
-HIK has two structures of Z-module, one via Z Ñ HI and one via Z Ñ HK , and the
-“compatibility” is that these two structures coincide.
-4.4. Iwahori Hecke algebra. The next statement asserts that the bimodules HKI, HIK
-give equivalences of categories, at least over the open subs et of SpecpZq where the “ W -
-covering” SpecSrX˚s Ñ SpecSrX˚sW is étale. 7
-4.5. Lemma. Let m be a maximal ideal of Z over which the mapZ ÑSrX˚s is étale, and
-writeZ 1 for the localization of Z at m.
-Write H1
-K “ HK bZZ 1 and deﬁne similarly H1
-I, H1
-IK, H1
-KI . Then the bimodules H1
-IK
-and H1
-KI induce inverse equivalences of categories between H1
-K modules and H1
-I modules.
-This is probably well-known in characteristic zero at least .
-7I am grateful to Peter Schneider for correcting an error. In a n earlier version of this paper, this Lemma was
-formulated over a larger open subset of Spec Z, but one step in the proof was not correct in this greater generality.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 2 9
-Proof. (Sketch).
-Let’s show, for example, that the natural map induced by mult iplication
-(51) HIK bHK HKI Ñ HI
-yields an isomorphism after localization at m. In what follows, we denote such localization
-with a prime: SrX˚s1 “SrX˚s bZZ 1.
-Note that HI is free of rankw as a right module overSrX˚s (clear from (50)) and, being
-ﬁnite étale, SrX˚s1 is free as a right module over Z 1 of rankw.
-So H1
-I is free of rankw2 overZ 1. Similarly, H1
-IK and H1
-KI are free of rankw and H1
-K is
-locally free of rank 1 as a Z 1-module. The obstruction to (51) being an isomorphism then
-given by the vanishing of a suitable determinant; it is enoug h, therefore, to show that (51)
-is onto after reducing modulo the maximal ideal m1 ofZ 1.
-We can extend the natural homomorphism Z 1 Ñ Z 1{m1 to a homomorphism χ :
-SrX˚s1 Ñ k, with k an algebraically closed ﬁeld containing the ﬁnite ﬁeld Z 1{m1. Note
-thatk has characteristicℓ, and that χ is not ﬁxed by any element of W .
-Now a homomorphism fromX˚ Ñkˆ is the same as an unramiﬁed k-valued character
-χ of the maximal torus Av; so we may identify χ to a character of Av. We form the
-corresponding induced representation V “ Vχ. Its elements consist of locally constant
-k-valued functions on Gv that transform according to χ on a Borel subgroup containing
-Av. Now VIv is ak-vector space of rank w, andVKv is ak-vector space of rank 1, andZ
-acts on these spaces via the character χ (as follows, e.g. from (53) below).
-We now show that the natural maps
-Hab bZk Ñ HompVa,V bq
-are isomorphisms fora andb belonging to tI,K u; that implies the desired claim, that is to
-say, that (51) is onto after reducing modulo m.
-Because the two sides have the same rank it is enough to check s urjectivity. In fact,
-it’s enough to show surjectivity in the case of HII and to show that all the other maps
-are nonzero (because then, for example, the image for HIK would be a nonzero subspace
-of HompVIv,V Kv q which is stable under HompVIv,V Iv q.) The other maps are clearly
-nonzero: the element eK induces a nonzero map in each of the cases IK,KI,KK . So we
-are reduced to seeing that
-(52) HI։ HompVIv,V Iv q.
-But there’s a standard basis for VIv indexed by the Weyl group: vw pw P W q, whose
-restriction to K is the characteristic function of the Bruhat cell indexed by w. The group
-algebra of W , inside HI , acts by permuting the elements vw. Also the element λ P X˚,
-considered again inside HI , acts by
-(53) λ ¨vw “ xwχ,λ yvw.
-In other words, as a representation of ˜W , this is the representation induced from the generic
-characterχ, and so clearly irreducible. The surjectivity of (52) follo ws. □
-4.6. Localization for the derived Iwahori–Hecke algebra. It will later on be helpful to
-make use of localization for the derived Iwahori–Hecke algebra.
-We deﬁne the derived Iwahori Hecke algebra as per the recipe o f §2, i.e.
-HI :“ Ext˚
-SGv pSrGv{Ivs,S rGv{Ivsq.
-30 AKSHA Y VENKA TESH
-As before this is isomorphic to the algebra of functionsh that associate to px,y q P Gv{Iv ˆ
-Gv{Iv a class hpx,y q P H ˚pGxy,S q, with the product as described in §2.3. In a similar
-way, we get derived versions HIK, HKI of the bimodules HKI, HIK deﬁned earlier.
-Now, we can consider “restriction to ˜W , ” i.e.
-(54) h1 P HII Ý Ñh1
-1 P functions ˜W ˆ ˜W ÑH ˚pT,S q
-whereT is as in §3.2 and we identify w P ˜W withwI PGv{Iv; and
-(55) h2 P HIK Ý Ñh1
-2 P functions ˜W ˆX˚ ÑH ˚pT,S q
-where here we identify x PX˚ with the associated coset xKv; and we used the fact that T
-stabilizes pointwise both ˜W ¨Iv andX˚ ¨Kv to restrict cohomology classes to T . Finally
-we have a similar map for HKI .
-Note that the right-hand side of (54) has an algebra structur e, at least restricting to
-functions supported on ﬁnitely many ˜W -orbits, by means of the formula H1H2px,y q “ř
-zP ˜W H1px,z q Y H2pz,y q (where all of x,y,z all belong to ˜W ). This algebra acts on
-the right-hand side of (55), by means of the same formula, but H2 now belongs to the
-right-hand side of (55), and therefore y is now taken to belong to X˚.
-4.7. Lemma. Under our current notation and assumptions, (see §3.2), the map (54) is
-an algebra morphism. Similarly, the map (55) is compatible with the map (54) and the
-product HII ˆ HIK Ñ HIK ; similarly for HKI .
-Proof. We want to show that (where h1,h 2 P HII )
-Resph1h2q “ h1
-1h1
-2,
-where Res means to restrict all Gv{Iv arguments to ˜W and restrict cohomology classes to
-T ; we also want similar statements for the HII -action on HKI and HIK .
-By precisely the same argument as in §3.11, we are reduced to t he following claim:
-Claim: Let y1 belong to either Gv{Kv or Gv{Iv. Let Γ be an ℓ-Sylow
-ofAv XKv. Let Γy1 be the stabilizer of y1 in Γ . Then the corestriction
-H ˚pΓy1,S q Ñ H ˚pΓ,S q vanishes, unless y1 P X˚ Ă Gv{Kv or y1 P
-˜W ĂGv{Iv.
-We repeat the reasoning of Lemma 3.10: let S be the algebraic double centralizer of Γy1.
-As before, Γy1 Ă Γ gives S Ă A. Let S0 be the identity component of S. By Lemma 3.9,
-the component group of S is prime-to-ℓ. Therefore, Γy1 lies inside S0. Let Γ ˚
-y1 Ă S0pFvq˝
-be anℓ-Sylow of the maximal compact subgroup. Thus Γy1 Ă Γ ˚
-y1.
-Choose a complement S1 Ă A to S0, i.e. a subtorus with the property that S0 ˆS1 Ñ A
-is an isomorphism. Then Γ ˚
-y1 Ă S0pFvq˝ is an ℓ-Sylow, and Γ Ă ApFvq˝ is an ℓ-Sylow.
-Therefore
-Γ “ Γ ˚
-y1 ˆ Γ 1
-where Γ 1 is theℓ-Sylow of S1pFvq˝.
-If S1 were trivial, then S0 “ A. In that case y1 lies in the ﬁxed set of ApFvq˝. In the
-case wherey1 PGv{Kv this was proved in §3.9. However, the proof of this assertion also
-applies word for word to establish the same assertion in the c asey1 PGv{Iv.
-The ﬁxed set of ApFvq˝ onGv{Kv isX˚, as before, and the ﬁxed set of ApFvq˝ on
-Gv{Iv is precisely ˜WIv ĂGv{Iv.8
-8Here is a proof of the latter claim: if gIv is ﬁxed, then gKv P X˚ Kv, and modifying g by an element
-of ApFv q, we can suppose g P Kv. We are reduced to computing the ApFvq˝ -ﬁxed points on Kv{Iv, which
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 3 1
-Otherwise, S1 is not trivial, the corestriction Γ ˚
-y1 Ñ Γ vanishes as before, and so the
-corestriction Γy1 Ñ Γ vanishes too. □
-5. T HE TRIVIAL REPRESENTATION
-In this section we give our ﬁrst piece of global evidence that the derived Hecke algebra
-can account for the “degree spreading” of Hecke eigenclasse s.
-5.1. Let D be a division algebra of dimension d2 over an imaginary quadratic ﬁeld F .
-Let G be the algebraic group of elements of norm 1 insideD. Let Y pKq be the arithmetic
-manifold (17) associated to G and a level structureK. We shall supposeK to be contained
-in the stabilizer of some maximal order OD. Observe that dimY pKq “ d2 ´ 1.
-In this section we study the derived Hecke action on “Hecke-t rivial part” (see Deﬁnition
-2.9) of the cohomology of Y pKq.
-Recall that the global derived Hecke algebra ˜T consists of all endomorphisms ofH ˚pZℓq
-that are limits (§2.13) , under H ˚pZℓq » limÐ ÝH ˚pZ{ℓnq, of endomorphisms that lie in the
-algebra generated by all Hv,Z{ℓn .
-5.2. Theorem. F or all but ﬁnitely many primes ℓ, the action of ˜T onH ˚pY pKq, Zℓq pre-
-serves the trivial summand H ˚pY pKq, Zℓqtriv, and:
-(i) The trivial part of the cohomology H ˚pY pKq, Zℓqtriv is cyclic over ˜T, generated
-by the trivial class;
-(ii) The image ˜Ttriv of ˜T in End H ˚pY pKq, Zℓqtriv is graded commutative. Also
-˜Ttriv b Qℓ coincides with Qℓ-algebra generated by H ˚pY pKq, Qqtriv acting on
-itself by means of the cup product.
-Note the signiﬁcance of the second part of the statement: ins ide the Qℓ-derived Hecke
-algebra there is a natural “preferred” rational structure. Our general conjecture (Conjecture
-8.8) says that this should be true in great generality and the preferred rational structure is
-related to motivic cohomology. Certainly the situation tha t we discuss here is quite easy
-compared to the general case, but nonetheless it has several points of interest.
-We also note that the theorem is almost certainly false (in the form stated above) if F is
-not totally imaginary, for reasons related to (a) of §1.6.
-We will deduce the Theorem from the following:
-5.3. Lemma. Notation as above, so that G is the algebraic group arising from a division
-algebra over the imaginary quadratic ﬁeld F . F or all sufﬁciently large ℓ, the following
-statement holds:
-F or each integern there are inﬁnitely many places v of the ﬁeld F , with
-qv ” 1 modulo ℓn and where the division algebra is locally split, such
-that the pullback map of (29)
-H ˚pGpFvq, Z{ℓq Ñ H ˚pY pKq, Z{ℓqtriv
-is surjective.
-Note that the map above really does take values in the Hecke-t rivial cohomology, by
-Lemma 2.8.
-amount to the torus ﬁxed points on a ﬂag variety over Fv – using Lemma 3.6 to avoid problems with small
-residue ﬁeld, these ﬁxed points are precisely the wIv with w P W , as desired.
-32 AKSHA Y VENKA TESH
-Proof. (Summary) The proof of Lemma (5.3) occupies §5.5 – §5.11. Aft er some initial
-setup, we give in §5.8 certain conditions (a), (b), (c), (d) w hich imply the Lemma; and then
-after §5.8 we check these conditions can actually be satisﬁe d. □
-First of all, let us explain why the Lemma implies the theorem :
-5.4. Lemma (5.3) implies the theorem.
-Proof. First of all, ˜T preservesH ˚pY pKq, Zℓqtriv. This follows by the argument described
-around (37). Explicitly, ﬁxing any prime w, we may ﬁnd a prime-to- w usual Hecke op-
-eratorT for which the trivial part of Zℓ-cohomology coincides with the generalized zero
-eigenspace for T ´ degpT q. (This can be checked over C, since we are supposing the
-primeℓ to be large enough. See e.g. discussion after (59)).
-By avoiding a ﬁnite set of ℓ, we may clearly suppose that H ˚pY pKq, Zq has no ℓ-
-torsion, and that ℓ ąd. Similarly, we suppose that
-H ˚pY pKq, Zqtriv bZ Z{ℓ ÑH ˚pY pKq, Z{ℓqtriv
-is an isomorphism: see §5.6 for an explanation.
-By Lemma 3.7, the mapH ˚pGpFvq, Z{ℓnq Ñ H ˚pGpFvq, Z{ℓq is surjective ifqv ” 1
-moduloℓn. It follows from this that the surjectivity assertion of Lem ma 5.3 continues to
-hold with coefﬁcients modulo ℓn.
-Now we can consider an element of H ˚pGpFvq, Z{ℓnq as an element of the derived
-Hecke algebra for G atv (see the Remark of §2.10). So the assertion implies that the c up
-product action of each h P H ˚pY pKq, Z{ℓnqtriv is contained in the action of the derived
-Hecke algebra; by passage to the limit, the cup product actio n of H ˚pY pKq, Zℓqtriv on
-itself is contained in the action of the derived Hecke algebr a.
-LetBℓ be the image of cup product H ˚pY pKq, Zℓqtriv Ñ EndpH ˚pY pKq, Zℓqtrivq.
-Let ˜Ttriv be the image of ˜T inside EndpH ˚pY pKq, Zℓqtrivq. It remains to show that these
-are equal. This comes down to the fact that ˜Ttriv is contained in the commutant of Bℓ and
-so cannot be larger than it. In more detail:
-Let ˜TpV0q
-triv be the subring of ˜Ttriv deﬁned by only using local derived Hecke algebras
-Hq,Z{ℓn with ℓn dividing q ´ 1, i.e. the restricted variant of the global derived Hecke
-algebra deﬁned after (36).
-We have inclusions
-(56) Bℓ Ă ˜TpV0q
-triv Ă ˜Ttriv,
-where the ﬁrst inclusion follows from the argument just give n. To conclude the proof,
-we will show that these are both equalities. Note, ﬁrst of all , that each element of ˜TpV0q
-triv
-commutes, in the graded sense, with each element of ˜Ttriv. Indeed, if q ” 1 moduloℓn,
-the global action of Hq,Z{ℓn is readily seen to commute with Hv,Z{ℓn forv ‰ q, and it
-commutes in the case v “q because Hq,Z{ℓn is known to be graded commutative.
-Choose nowh P ˜Ttriv. There is b PBℓ such thath.1 “b.1 (here 1 is the trivial class in
-H 0). Then ph ´bq.1 “ 0. The same is true then for both the even and odd components of
-ph ´bq. But, as we just saw, both components commute in the graded se nse, with ˜TpV0q
-triv ,
-as we just saw, so in fact both of these components kill all of H ˚
-triv. Thus h ´b “ 0, so
-h PBℓ, as required. □
-5.5. Recollections. LetN be an integer. (We will shortly ﬁx it to be “large enough.”)
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 3 3
-Let UN be the standard unitary group, the stabilizer of řN
-i“1 |zi|2. There are natural
-maps
-(57) bi-invariant differential forms on UN
-„ÑH ˚pUN, Cq Ý ÑH ˚pGLN pOF q, Cq
-obtained by the natural identiﬁcation of GLN pCq-invariant differential forms onGLN pCq{UN
-with bi-invariant differential forms on UN (and then Hodge theory). The notation is a lit-
-tle confusing: H ˚pUN q above refers to the singular cohomology of UN as a topological
-space, whereasH ˚pGLN pOF qq refers to the group cohomology of GLN pOF q.
-Moreover, the algebra of invariant differential forms on UN is a free exterior algebra
-with primitive generators Ω 1, Ω 3,..., Ω 2N ´1 in degree 1, 3, 5,..., 2N ´ 1; “primitive” is
-taken with respect to the coproduct on cohomology, induced b y UN ˆ UN Ñ UN . An
-explicit representative for Ωj can be taken as
-(58) X1,...,X j P LiepUN q ÞÑ anti-symmetrization of tracepX1 ¨ ¨ ¨Xjq
-The same symbols Ωi will also be used to denote the corresponding invariant diff erential
-forms on GLN pCq{UN . For later use, note that these can be restricted to cohomolo gy
-classes for SUN and also to invariant differential forms on SLN pCq{SUN ; these restric-
-tions kill Ω 1.
-There are natural inclusions UN ãÑ UN `1 and GLN pOF q ãÑ GLN `1pOF q. For
-ﬁxed j and large enough N , these induce isomorphisms in Hjp´, Cq. Moreover, these
-isomorphisms are compatible with increasing N . By passage to the inverse limit we get
-H ˚pU8, CqÝ ÑH ˚pGL8pOF q, Cq
-Here (e.g) GL8 means in fact limÝ ÑGLN .
-Both sides here carry compatible coproducts; for the right h and-side we can take the
-coproduct induced by “intertwining” map (see e.g. [32, Chap ter 2]) GL8 ˆGL8 Ñ GL8.
-9
-The corresponding Pontryagin product on homology will be de noted by ˚.
-In what follows, we ﬁx N to be divisible by d2 and chosen so large that
-- the inclusion GLN ãÑ GL8 induces an isomorphism of integral group homol-
-ogy in degrees ď d2, both with entries in OF and with entries in any residue
-ﬁeld. (This is possible because, by a theorem of van der Kalle n [34, p. 289], the
-range of homological stability can be taken uniformly in the se cases; indeed, van
-der Kallen’s bounds for stability involve only the Krull dim ension in the case of
-commutative rings.)
-We will denote the stabilization map
-HipGLN pOF qq Ñ HipGL8pOF qq
-bya ÞÑap8q and its inverse byb ÞÑbpN q. We will use this notation for any choice
-of coefﬁcients, not merely Z.
-9To see that the coproducts are compatible amounts to say that the group multiplication and the intertwining
-map both induce the same homomorphism on the stable cohomolo gy of UN . This follows from the Eckmann-
-Hilton argument, or more directly as follows: Embed two comm uting copies U paq
-N ˆ U pbq
-N Ñ U2N by the
-intertwining map. The group multiplication U2N ˆ U2N Ñ U2N when restricted to U paq
-N ˆ U pbq
-N on the source
-gives the intertwining map U paq
-N ˆ U pbq
-N Ñ U2N . This fact, together with stability of homology, shows that the
-two coproducts are compatible, as claimed.
-34 AKSHA Y VENKA TESH
-- The map (57) induces an surjection in degrees ă d2. (That this is possible is a
-consequence of Borel’s result [4, (7.5)] asserting that coh omology classes in suf-
-ﬁciently low degree are representable by invariant differe ntial forms on the sym-
-metric space; Borel’s result is for a semisimple group, but w e readily deduce the
-claimed result by applying it to SLN .) We have written “surjection” instead of
-isomorphism just because of the issue of working with GL rather than SL: the
-differential form corresponding to Ω 1 dies under (57)).
-In a similar way to (57), we have an isomorphisms
-(59)
-H ˚pSUd, Cq Ñ SLdpCq invariant diff. forms on SLdpCq{SUd
-„ÑH ˚pY pKq, Cqtriv.
-For the surjectivity of the ﬁnal map: if a differential form ω on Y pKq satisﬁes Tω “
-degpT qω for even one Hecke operator T , then by an easy “maximum modulus” argument
-it must be invariant, 10 i.e. represented by a GpF b Rq invariant form on the correspond-
-ing symmetric space. In particular, the cohomology H ˚pY pKq, Cqtriv is a free exterior
-algebra, generated in degrees 3, 5,..., 2d ´ 1.
-Finally let us recall (Borel) that theK-theory of OF is, modulo torsion, one-dimensional
-in each odd degree, and that (Quillen) for any ﬁnite ﬁeld F of size q, the even K-groups
-vanish and the odd K2s`1pFq » Z{pqs ´ 1q.
-5.6. The constraints on ℓ. We impose the following constraints on ℓ:
-(i) The cohomology of Y pKq with coefﬁcients in ℓ is torsion-free.
-(ii) ℓ doesn’t divide gcdvppqv ´ 1q ¨ ¨ ¨ pq2d´1
-v ´ 1qq, where the gcd is taken over all
-qv ěq0 for large enough q0. (This gcd stabilizes forq0 large enough.)
-(iii) ℓ is relatively prime to the numerator and denominator of the r ational number
-M P Q˚ deﬁned in (62).
-(iv) the cohomology H ˚pY pKq, Z{ℓqtriv is a free-exterior algebra on generators in
-degree 3,..., 2d ´ 1.
-(v) ℓ ąd2
-(vi) The cohomology of GL8pOF q is free of ℓ-torsion in degrees less than d2.
-All these assertions are automatically true for ℓ big enough. This is obvious for (i),
-(ii), (iii), (v) and follows from the standard stability res ults for (vi). We examine (iv): We
-saw after (59) that H ˚pY pKq, Qqtriv is a free exterior algebra; ﬁx generators e3,e 5,...
-that belong to H ˚pY pKq, Zq. The products of the ei are linearly independent over Q, so
-their reductions are also linearly independent over Z{ℓ for large enough ℓ. It remains to
-show that they span H ˚pY pKq, Z{ℓqtriv. But that is obvious by counting dimensions: if
-we ﬁx a Hecke operator T , then for sufﬁciently large ℓ the generalized zero eigenspace of
-T ´degpT q onH ˚pY pKq, Z{ℓq has the same dimension as the generalized zero eigenspace
-ofT ´ degpT q onH ˚pY pKq, Cq.
-This concludes the proof that all of (i) – (vi) above are autom atically valid for large
-enoughℓ. It would be interesting to see what happens for “bad” ℓ.
-5.7. Let N be a large integer, as chosen in §5.5. Fix an embedding
-(60) ι : G ãÑ SLN
-for some large N , by taking a sum of many copies of the representation that ari ses from
-the division algebra acting on itself. Then (in suitable coo rdinates) we may suppose that
-10This uses compactness of Y pKq; in the general case the answer is substantially more compli cated
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 3 5
-the open compact subgroupK is carried into the standard maximal compact ś
-v SLN pOvq
-of SLN pAf q, and the arithmetic group GpF q XK is consequently carried into SLN pOF q.
-The mapι gives rise to a map of symmetric spaces, i.e. a map
-GpCq{SUd Ñ SLN pCq{SUN,
-where we have chosen a maximal compact for GpCq, which is isomorphic to SUd, and
-then we have chosen a hermitian form on CN whose stabilizer SUN contains ιpSUdq.
-Thus we get an embedding of locally symmetric spaces, also de noted byι:
-(61) ι :Y pKq Ñ SLN pOF qzSLN pCq{SUNlooooooooooooooomooooooooooooooon
-»BpSLN pOF qq
-.
-We can further composeι with the inclusion of SLN pOF q to GLN pOF q to give a map
-Y pKq Ñ BpGLN pOF qq
-5.8. In this section, we will formulate four claims (a)–(d) t hat will imply Lemma 5.3. We
-will verify the claims in the remainder of the section.
-Let 3 ď i ď 2d ´ 1 be odd and let ai P KipOF q be chosen so that it generates
-KipOF q modulo torsion. Let rais be the image of ai inside HipGL8pOF q, Zℓq; as per
-our notation above, raispN q is its preimage under the isomorphism HipGLN pOF q, Zℓq Ñ
-HipGL8pOF q, Zℓq.
-We’ll show that (for any n) there are inﬁnitely many places v, splitting the division
-algebra and withqv ” 1 moduloℓn, and classesξi PHipGLN pFvq, Z{ℓq with the property
-that:
-(a) The image of ai inKipFvq{ℓ is nonzero. Call its image bi PKipFvq{ℓ; therefore,
-bi is a generator of KipFvq{ℓ.
-(b) The pairing xξi, rbispN qy ‰ 0 where rbis is deﬁned similarly to rais: it is the associ-
-ated homology class under KipFvq Ñ HipGL8pFvq, Z{ℓq, and correspondingly
-we have rbispN q PHipGLN pFvq, Z{ℓq.
-(c) xξ3Y¨ ¨ ¨Yξ2d´1, prb3s ˚ ¨ ¨ ¨ ˚ rb2d´1sqpN qy ‰ 0, where * is the Pontryagin product
-on the homology of GL8pFvq.
-(d) Let rY pKqs P Hd2´1pY pKq, Qq be the fundamental class of Y pKq. Then there
-existsM P Q˚ such that the image ι˚rY pKqs P H˚pGLN pOF q, Qq satisﬁes:
-(62) ι˚rY pKqs “ M ¨ pra3s ˚ ra5s ˚ ¨ ¨ ¨ ˚ ra2d´1sqpN q.
-where on the right we have the Pontryagin product for GL8pOF q, and ι is as in
-(61).
-Let us ﬁrst see why (a) – (d) implies Lemma 5.3. Recall that we c hoseℓ to not divide the
-numerator or denominator of M , and also that the cohomology of GL8pOF q and so also
-GLN pOF q isℓ-torsion free in degrees ăd2; therefore, condition (d) implies an equality in
-Zℓ-homology:
-(63) ι˚rY pKqs “ p unitq ¨ pra3s ¨ ¨ ¨ ˚ ra2d´1sqpN q.
-Letπ be the projection from GLN pOF q to GLN pFvq. Write Ξi “π˚ξi PH ˚pGLN pOF q, Z{ℓq
-andηi “ι˚Ξi PH ˚pY pKq, Z{ℓq. We have then
-xΞi, raispN qy “ xπ˚ξi, raispN qy “ xξi,π ˚raispN qy “ xξi, rbispN qy ‰ 0
-36 AKSHA Y VENKA TESH
-sinceπ˚rais “ rbis. Also, in a similar way,
-(64) xΞ 3 Y ¨ ¨ ¨ Y Ξ 2d´1, pra3s ˚ ¨ ¨ ¨ ˚ ra2d´1sqpN qy
-“ unit multiple of xξ3 Y ¨ ¨ ¨ Yξ2d´1, prb3s ˚ ¨ ¨ ¨ ˚ rb2d´1sqpN qy ‰ 0
-because the Pontryagin products and the stabilization maps are compatible with π˚. From
-this and (63) we get
-xη3 Y ¨ ¨ ¨ Yη2d´1, rY pKqsy “ x Ξ 3 Y ¨ ¨ ¨ Y Ξ 2d´1,ι ˚rY pKqsy ‰ 0.
-But the Hecke-trivial cohomology of Y pKq moduloℓ is a free exterior algebra on gen-
-erators in degrees 3,..., p2d ´ 1q. Fix such generators – call them ν3,ν 5,... . Each ηi is
-also an element of this Hecke-trivial cohomology by Lemma 2. 8. It follows that
-ηi “ unit ¨νi ` p product ofνjs withj ăiq
-because otherwise the cup product η3 Y ¨ ¨ ¨ Yη2d´1 would be trivial. We conclude that, in
-fact, the map
-(65) H ˚pGpFvq, Z{ℓq Ñ H ˚pY pKq, Z{ℓqtriv
-is onto as required. Therefore, to prove Lemma 5.3 it is sufﬁcient to prove (a)–(d) above.
-5.9. V eriﬁcation of (d) from §5.8. Since we are supposing (57) to be a surjection in
-degrees up to d2, it’s enough to verify that there is a nonzero M P C such that
-(66) xι˚rY pKqs,ω y “ M xpra3s ˚ ¨ ¨ ¨ ˚ ra2d´1sqpN q,ω y
-wheneverω is an invariant differential form on GLN pCq. We compute in the case (see
-(58) for the deﬁnition):
-ω “ ΩJ “ Ωj1 ^ ¨ ¨ ¨ ^ Ωjt
-whereJ “ tj1,...,j tu, and show that both sides are nonzero if and only ifJ “ t3, 5,..., 2d´
-1u. That is enough to prove (66).
-The right hand side of (66) equals
-(67) xra3s ˚ ¨ ¨ ¨ ˚ ra2d´1s,ω p8qy “ xra3s b ¨ ¨ ¨ b ra2d´1s, coproductpωp8qqy,
-where we allow ourselves to write ωp8q P H ˚pGL8pOF q, Cq for the stabilization of the
-cohomology class corresponding to ω. Now coprodpωp8qq is the product of various terms
-of the shape
-pΩj1 b 1 b 1 b ¨ ¨ ¨ 1 ` 1 b Ωj1 b 1 b ¨ ¨ ¨ b 1 ` ¨ ¨ ¨ qp8q
-and from this we see (just for degree reasons) that the term on the right of (67) vanishes
-if there is even one ji larger than 2d ´ 1 or one ji equal to 1. So J Ă t 3,..., 2d ´ 1u.
-Again, for degree reasons, equality must hold. That shows th e right-hand side is zero
-unlessJ “ t3, 5,..., 2d ´ 1u. When J “ t3, 5,..., 2d ´ 1u, the right-hand side becomes
-xa3, Ω 3y ¨ xa5, Ω 5y... xa2d´1, Ω 2d´1y
-and each factor xaj, Ωjy is nonzero: this is the nontriviality of the Borel regulator .
-Now let us examine the left-hand side of (66), which equals xrY pKqs,ι ˚Ωj1 ^ ¨ ¨ ¨ ^
-ι˚Ωjd y. It’s easy to see that ι˚Ω 1 vanishes. We also claim that ι˚Ωj must vanish for
-j ą 2d ´ 1. Indeed we claim that ι˚Ωj, which deﬁnes an invariant form on Y pKq and
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 3 7
-thus corresponds by (59) to an invariant differential form i n the cohomology of SUd, is
-primitive as such. For that consider this diagram:
-(68) invariant forms on SLN pCq{SUN /d47/d47
-/d15/d15
-invariant forms on GpCq{SUd
-/d15/d15
-SUN -invariant forms onisuN /d47/d47
-/d15/d15
-SUd-invariant forms onisud
-/d15/d15
-H ˚pSUN q /d47/d47H ˚pSUdq.
-where the various maps of groups arise from the map ι of (60), and the top vertical maps
-arise by restriction to the tangent space of the identity cos et. In other words, the element
-ofH ˚pSUdq corresponding toι˚Ωj is just the pull-back of the element of H ˚pUN q corre-
-sponding to Ωj under the group homomorphism
-ϕ :SUd ÑUN
-induced byι. In particular, ϕ˚Ωj is also primitive.
-This shows that the left-hand side of (66) vanishes unless J “ t 3, 5,..., 2d ´ 1u. We
-must still check that it is actually nonvanishing in this cas e. For this, we must show that
-ι˚pΩ 3 ^ ¨ ¨ ¨ ^ Ω 2d´1q is nonvanishing, equivalently that
-ϕ˚Ω 3 ^ ¨ ¨ ¨ ^ϕ˚Ω 2d´1
-is a nonvanishing element of the cohomology of SUd. Since each ϕ˚Ωj is primitive it is
-enough to see that they are all nonzero. The N -dimensional representation of SUd deﬁned
-byϕ is isomorphic to the sum of many copies of the standard repres entation of SUd. Now
-one can just compute explicitly with (58).
-5.10. V eriﬁcation of (b) and (c) from §5.8. In words, what we have to do is produce
-elementsθi P HipGL8pFvq, Z{ℓq for each odd 3 ď i ď 2d ´ 1; these θi should detect
-(pair nontrivially with) a generator ofKipFvq, and the cup productθ3 Y ¨ ¨ ¨ Yθ2d´1 should
-detect the Pontryagin product of the homology classes associated to those generators. Then
-we may take ξi “θpN q
-i PHipGLN pFvq, Z{ℓq.
-Quillen shows a natural choice for θi: an equivariant Chern class derived from the
-standard representation of GLN . In other words, write G “ GLN pFvq and write Γ for
-the Galois group of Fv. The standard representation of GLN can be considered a G-
-equivariant vector bundle on SpecpFvq, and thus we get a Chern class
-c2i PH 2i
-G,etpSpecFv, Z{ℓpiqq Ñ H 1
-etpSpecFv, Z{ℓpiqq bH 2i´1pG, Z{ℓq
-where on the left we have equivariant etale cohomology, and o n the right we have usual
-etale cohomology; the arrow is explicated in [31, II.1.2, Le mma 1]. We may identify the
-étale cohomlogy of Fv with the (continuous) group cohomology of Γ , and here Γ is acting
-trivially on µℓ, and so H 1pSpec Fv, Z{ℓpiqq “ H 1pΓ, Z{ℓpiqq is identiﬁed with simply
-µbi
-ℓ . Fix a generator α forµℓ. Thus the image of c2i is of the form αi bθ2i´1, for some
-θ2i´1 PH 2i´1pG, Z{ℓq. Similarly we can map c2i intoH 0pΓ, Z{ℓpiqq bH 2ipG, Z{ℓq; in
-that way we get a class θ1
-2i P H 2ipG, Z{ℓq so that the image of c2i isαi bθ1
-2i. The class
-c2i gives a morphism ( the “Soulé Chern class”)
-(69) s :H2i´1pG, Z{ℓq Ñ H 1pΓ, Z{ℓpiqq
-which sendsλ PH2i´1 to xθ2i´1,λ yαbi.
-38 AKSHA Y VENKA TESH
-These constructions are “stable” under increasing N – see [31, p. 257] – and so we
-can consider θ2i´1,θ 1
-2i as classes in H ˚pGL8pFvq, Z{ℓq, and the Soulé map as a map
-H2i´1pGL8pFvq, Z{ℓq Ñ H 1pΓ, Z{ℓpiqq.
-Now Soulé Chern class is known to be surjective when precompo sed with K2i´1 Ñ
-H2i´1 ([31, Prop. 5, p 284]) (so long as i ăℓ – true by assumption on ℓ). This immediately
-veriﬁes property (b), that is to say if we ﬁx a generator b2i´1 forK2i´1pFvq with associated
-homology class rb2i´1s we have
-0 ‰sprb2i´1sq “ xθ2i´1, rb2i´1syαbi
-so xθ2i´1, rb2i´1sy ‰ 0 as desired.
-To compute e.g. xθ3 Yθ5 Yθ7, rb3s ˚ rb5s ˚ rb7sy we rewrite it as
-(70) “ xcoprodpθ3qcoprodpθ5qcoprodpθ7q,b 3 bb5 bb7y
-Let us note that each rbis is primitive in homology – i.e. xrbis,α Yβy “ 0 ifα,β are
-cohomology classes both in positive degree. This is because rbis comes from the image of
-the Hurewicz mapπi ÑHi, so we can just pull back to the sphere Si and compute.
-Quillen has shown [25, Proposition 2] (see also [25, Remark 2 , p.569]) that the coprod-
-uct of (e.g.) θ7 equals
-coprodpθ7q “ θ1
-0lo omo on
-1
-bθ7 `θ1
-2 bθ5 `θ1
-4 bθ3 `θ1
-6 bθ1 ` symmetric terms.
-Thus, when we take the product coprodpθ3qcoprodpθ5qcoprodpθ7q, we get a sum of sev-
-eral terms; because of the primitivity of rbis just noted, the only terms that contribute to
-(70) will be those coming from
-p1b1bθ3` 1bθ3b1` θ3b1b1qp1b1bθ5` 1bθ5b1` θ5b1b1qp1b1bθ7` 1bθ7b1` θ7b1b1q
-and the only term of these with degree 3, 5, 7 in the ﬁrst, second and third factors is
-θ3 bθ5 bθ7. Therefore,
-xθ3 Yθ5 Yθ7, rb3s ˚ rb5s ˚ rb7sy “ x θ3 bθ5 bθ7, rb3s b rb5s b rb7sy
-“
-ź
-xθ3, rb3syxθ5, rb5syxθ7, rb7sy ‰ 0
-which gives (c) in the case d “ 4; the general case is the same.
-5.11. V eriﬁcation of (a) from §5.8. Write O1 “ OF r1{ℓs. The Soulé maps from (69) ﬁt
-in a commutative diagram
-(71) K2i´1pO1q /d47/d47
-/d15/d15
-K2i´1pFvq
-/d15/d15
-H 1pΓ, Zℓpiqq /d47/d47H 1pGalpFv{Fvq, Zℓpiqq.
-where Γ is now the Galois group of the maximal unramiﬁed extension of O1 ; note that
-OF Ñ O1 induces an isomorphism on K2i´1 for i ą 1 (see [36, Theorem 4.6]). The
-right-hand vertical arrow is an isomorphism for i ăℓ (Soulé, loc. cit. ) , and the left-hand
-vertical arrow is a surjection (see [19]).
-The map H 1pΓ, Zℓpiqq{ℓ ÑH 1pΓ, Fℓpiqq is an injection. Choose an element a2i´1 P
-K2i´1pO1q whose image inH 1pΓ, Fℓpiqq is nonzero (note thatH 1pΓ, Zℓpiqq{ℓ is nonzero,
-by computing Euler characteristic). A nontrivial class in H 1pΓ, Fℓpiqq is represented by a
-nontrivial extension
-(72) Fℓpiq Ñ M Ñ Fℓ,
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 3 9
-in other words, by a homomorphism Γ Ñ GL2pZ{ℓq of the form
-ˆ
-ωi ρ
-0 1
-˙
-Note that the image of this homomorphism must have size divis ible by ℓ; for otherwise
-the extension (72) splits. By Chebotarev density, we may ﬁnd inﬁnitely many Frobenius
-elements Frobv which map to ˆ
-1 1
-0 1
-˙
-which implies that the restriction of the extension class to H 1pFv, Fℓpiqq is nontrivial.
-In other words, the image of a2i´1 inH 1pGalpFv{Fvq, Fℓpiqq, and so also in K2i´1{ℓ,
-is nontrivial for ﬁnitely many v. This proves our assertion.
-6. S ETUP FOR PATCHING
-We continue in a global setting, but now turn to the study of te mpered cohomology.
-This study will occupy most of the remainder of the paper (§6 – §8).
-In the current section (§6) we will set up the various assumpt ions needed, and in the
-next section (§7) we will use the relationship between the Ta ylor–Wiles method and the
-derived Hecke algebra (outlined in §1.4) to prove our target theorem, Theorem 7.6: it says
-the global derived Hecke algebra actually is big enough to be able to account for the degree
-spread of cohomology.
-In §8 we will explain how to index elements of the global deriv ed Hecke algebra by a
-Selmer group, and use this to formulate our main Conjecture 8 .8.
-A few apologies are in order:
-‚ We switch notation slightly, working with modpn coefﬁcients rather than mod ℓn,
-to better make contact with the standard presentations of Ga lois representations
-and the Taylor-Wiles method.
-‚ We have made no attempt to optimize the method for small prime s, and in par-
-ticular make rather strong assumptions; in particular, we a ssume both that we are
-in the “minimal case” of formally smooth local deformation r ings, and that the
-Hecke ring at base level is isomorphic to Zp (no congruences).
-6.1. Assumptions.
-(1) Our general notations are as in §1.8, but we now specializ e to the case that the
-number ﬁeld F is Q, and that G is a simply connected, semisimple Q-group. We
-assume that G is split, and we ﬁx a Borel subgroup B and a maximal torus A
-contained inside B.
-(2) We ﬁx a level structure K0 Ă GpAf q, the “base level.” We write
-Y p1q “ Y pK0q
-for the arithmetic manifold ((17)) of level K0. We sometimes refer to this as the
-“level 1” arithmetic manifold even though it is not literally so.
-(3) Let Π be a tempered cohomological automorphic cuspidal represen tation for G,
-factorizing as Π “ Π 8 b Πf over archimedean and ﬁnite places. We suppose that
-ΠK0 ‰ 0, so that Π actually contributes to the cohomology of Y p1q.
-(4) We write TK0 for the Hecke algebra at levelK0. It will be convenient to follow the
-deﬁnition of [20] and deﬁne this in a derived sense: Consider the chain complex of
-Y pK0q, with Zp coefﬁcients, as an object in the derived category of Zp-modules;
-each (prime to the level, and to p) Hecke operator gives an endomorphism of
-40 AKSHA Y VENKA TESH
-this object. Deﬁne TK0 to be the Zp-algebra generated by such endomorphisms.
-This has the advantage that TK0 acts on cohomology with coefﬁcients in any Zp-
-module.
-We may similarly form the Hecke algebra TK at a deeper levelK ĂK0; unless
-speciﬁed, it will be generated only by Hecke operators at goo d primes for K.
-(5) We shall suppose that the coefﬁcient ﬁeld of Π is Q, for simplicity – by this, we
-mean that the eigenvalues of Hecke correspondences at all go od places for K0 lie
-in Q, or equivalently the underlying representation Πv has a Q-rational structure
-for all such v. Under this assumption, Π gives rise to a ring homomorphism
-(73) TK0 Ñ Zp.
-(6) Let T be the set of ramiﬁed places for Π , together with any places at which K0 is
-not hyperspecial.
-(7) Write
-k “ Z{pZ
-and ﬁx an algebraic closure k fork wherep ą 5 is a prime such that:
-(a) H ˚pY pK0q, Zq isp-torsion free.
-(b) p does not divide the order of the Weyl group of G, and also p RT , i.e. p is
-not a bad place for Π orK.
-(c) “No congruences between Π and other forms at level K0:”
-Consider the composite homomorphism
-(74) χ : TK0 Ñ Zp Ñk,
-where the ﬁrst map is the action on Π , and the second map the obvious one.
-Let m “ kerpχq be its kernel. We shall require that the induced map of
-completions is an isomorphism:
-(75) TK0,m
-„Ý ÑZp
-and moreover we shall assume the vanishing of homology after completion
-at the maximal ideal m:
-(76) HjpY p1q, Zpqm “ 0,j R rq, q `δs.
-Observe that in favorable situations (75) implies (76), and both should be
-true for all large enough p – see the Remark below for a further discussion.
-Informally, (75) and (76) enforce that there are no congruen ces, modulo p,
-between Π and other cohomological forms at level K0.
-Note that the deﬁnitions of χ, m make sense at any level. Thus we use the no-
-tationχ, m sometimes for the corresponding notions for other level str uctures
-Y pKq, whereK ĂK0.
-(8) We put
-S “T Y tpu,
-the collection of all primes that we have to worry about.
-Remark. We expect that 7(c) should be automatically valid for p sufﬁciently large; in
-practice, for the purposes of this paper, it is not an onerous assumption (the minimal level
-conditions, enforced in (e) of §6.2, is more restrictive).
-We give a proof that 7(c) is valid for all large enough p, for G an inner form of SLn
-such thatY pKq is compact. It is likely this can be generalized to other sett ings, with more
-work. In what follows, denote by TK0 the Hecke algebra deﬁned as above, but with Z
-coefﬁcients; this is easily seen to be ﬁnitely generated ove r Z. Firstly, the algebra TK0 b C
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 4 1
-is semisimple, because it acts faithfully on H ˚pY pK0q, Cq and this action is semisimple
-(there is an invariant metric on harmonic forms). Thus, for a ll large enough primes p,
-TK0 is étale over Z and thus (75) must be valid. If the homology in (76) is nonvani shing,
-then there exists an eigenclass for TK0 onHj whose associated character factors through
-TK0,m; by (75), this character must coincide with the action of TK0 on Π . In other words,
-the Hecke eigensystem associated to Π occurs in degree j. This eigensystem corresponds
-to an automorphic representation Π 1 such that Π 1
-v “ Πv for almost all v. By the strong
-multiplicity one theorem for GLn, this implies that Π 1
-8 is tempered cuspidal, and then it
-has nonvanishing pg,K q cohomology only in degrees rq, q `δs.
-That’s the basic setup; now for Galois representations.
-6.2. Assumptions about Galois representations; the deformatio n ring Rρ. We will
-make assumptions very close to [14, Conjecture 6.1]. We brie ﬂy summarize them and
-refer the reader to [14] for full details:
-LetK ĂK0 be a deeper level structure, TK be as above, and let TK Ñk be a character.
-We require that there exist a Galois representation
-GalpQ{Qq Ñ G_p¯kq
-satisfying the usual unramiﬁed compatibility, see (a) belo w.
-Moreover, for the speciﬁc character TK Ñ k as in (74), i.e. the map associated to
-the ﬁxed automorphic representation Π , reduced modulo p, we require more precise state-
-ments: Let m be the kernel of TK Ñk, and TK,m the completion of TK at m. We require
-there to exist a Galois representation 11
-˜ρ : GalpQ{Qq Ý ÑG_pTK,mq
-with the following properties:
-(a) (Unramiﬁed compatibility): Fix a representation τ of G_. For all primes q not
-dividing the level of K, the representation ρ is unramiﬁed at q, and the action of
-tracepτ ˝ ˜ρqpFrobqq P TK,m coincides with the image of the (Satake)-associated
-Hecke operatorTq,τ .
-(b) Let ρ be the reduction modulo p of ˜ρ, so that
-ρ : GalpQ{Qq Ñ G_pkq.
-Thenρ has big image: when restricted to the Galois group of Qpζp8q, the image
-ofρ contains the image of the k-points of the simply connected cover of G_.
-(c) (V ague version: see [14, Conjecture 6.1] for precise for mulation): There is a rea-
-sonable notion of “crystalline at p” representation into G_, and the representation
-˜ρ is “crystalline at p.”
-(d) (V ague version: see [14, Conjecture 6.1] and references therein for precise ver-
-sion): The representation ˜ρ satisﬁes the expected local constraints (“local–global
-compatibility”) when restricted to Qq; here q is a Taylor–Wiles prime (§6.3) that
-divides the level of K. We also assume a natural version of local global compati-
-bility at Iwahori level Y0pqq, formulated before Lemma 6.6.
-(e) “‘All local deformation rings are all formally smooth:” we suppose that
-H 0pQq, Adρq “ H 2pQq, Adρq “ 0 for allq PS “T Y tpu.
-11Note that the assumption that there is a T-valued Galois representation, rather than a weaker notion such as
-a determinant, is not reasonable unless one has a condition l ike “residual irreducibility.” In our case, however, we
-are assuming that the residual representation ρ has very large image anyway – see (b) below.
-42 AKSHA Y VENKA TESH
-This means that the local deformation ring of ρ at primes q P T is isomorphic to
-Zp, and the local deformation ring of ρ atq “ p is formally smooth. This keeps
-our notation as light as possible. (We also use the formal smo othness to squeeze
-the most out of the Taylor–Wiles method, but probably one can get something
-without it.)
-In particular, the natural map TK0,m Ñ Zp of (75) gives rise to a Galois representation
-valued inG_pZpq, which we shall just call ρ:
-(77) ρ : GalpQ{Qq Ý ÑG_pZpq,
-which of course lifts the residual representation:
-ρ : GalpQ{Qq Ý ÑG_pkq.
-Let Rρ be the universal crystalline deformation ring of ρ, allowing ramiﬁcation only at the
-setS. Good references for deformation rings are [13] or [15].
-Let us now set up notations for Taylor–Wiles primes.
-6.3. T aylor–Wiles primes and auxiliary level structures. A T aylor-Wiles primeof level
-n is a primeq (we will also occasionally use the letter ℓ), not dividing the level ofK0, such
-that:
-- pn dividesq ´ 1, and
-- ρpFrobqq is conjugate to a strongly regular element of T _pkq.
-Here an element t PT _pkq is strongly regular if its centralizer inside G_ is equal to T _.
-We are really interested in systems of such primes, and it is u seful to keep track of
-the strongly regular element as part of the data. Fix once and for all a sufﬁciently large
-integers. We will work with collections of such primes of cardinality s, which we call
-Taylor–Wiles data:
-- A T aylor-Wiles datumof leveln is a set of primesQn “ pq1,...,q sq together with
-strongly regular elements pFrobT
-q1,..., FrobT
-qs q P T _pkq such that
-- pn dividesqi ´ 1, and
-- ρpFrobqi q is conjugate to FrobT
-qi .
-We will usually use q to denote a typical element of a Taylor–Wiles set of
-primes, but occasionally we will also use the letter ℓ. Note that the set of possible
-choices for each FrobT
-qi has size |W |, the order of the Weyl group.
-- Let r be the rank of the maximal torus A. Set
-(78) R “rs, T _
-s “ pT _qs, W s “Ws
-thusT _
-s is a torus and R is the rank of T _
-s , andWs acts onT _
-s .
-- Level structures: If q RS is prime, we denote by
-(79) Y0pqq Ñ Y p1q
-the covering obtained by adding Iwahori level structure at q, i.e. we replace K0
-by the preimage of a Borel subgroup under K0 Ñ GpFqq. Similarly, we get
-Y1pqq by taking the preimage of a unipotent radical of a Borel subgr oup under
-the same mapping. The covering Y1pqq Ñ Y0pqq is “Galois,” with Galois group
-ApFqq » p Fˆ
-q qr.
-Suppose that pn dividesq ´ 1. In that case, deﬁne Y1pq,n q to be the unique
-subcovering of Y1pqq Ñ Y0pqq such that the covering Y1pq,n q Ñ Y0pqq has
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 4 3
-covering group pZ{pnqr. In summary:
-(80)
-ApFqq»pFˆ
-q qr
-hkkkkkkkkkkkkkkkikkkkkkkkkkkkkkkj
-Y1pqq Ñ Y1pq,n q Ñ Y0pqqlooooooooomooooooooon
-ApFqq{pn»pZ{pnqr
-- For a Taylor–Wiles datum Qn of level n, we let Y ˚
-1 pQnq be the ﬁber-product,
-overY p1q, of all the coverings Y1pqi,n q Ñ Y p1q. Similarly we deﬁne Y0pQnq.
-Therefore,Y ˚
-1 pQnq Ñ Y0pQnq is Galois; we write
-(81) Tn “ p Galois group of Y ˚
-1 pQnq Ñ Y p1q q “
-ź
-qPQn
-ApFqq{pn,
-thus we have (non-canonically)
-(82) Tn » pZ{pnqR.
-As a shorthand we write
-H˚pQn,S q :“H˚pY ˚
-1 pQnq,S q
-whereS is a ring of coefﬁcients.
-6.4. Rings of diamond operators. We now set up the rings that are generated by “dia-
-mond operators,” i.e. the deck transformation groups of our various coveringsY ˚
-1 pQnq Ñ
-Y0pQnq. Continuing with the notation of the prior section, put
-(83) Sn “ Z{pnrTns, S 1
-n “ ZprTns,
-so these act on the Z{pn and Zp-valued chain complex of Y ˚
-1 pQnq. Fixing, as in (82) , an
-isomorphism ofTn with pZ{pnqR, we can identify this ring as follows.
-(84) Sn » Z{pnrx1,...,x Rs{pp1 `xiqpn
-´ 1q.
-wherexi “ reis ´ 1,ei being a generator of the ith factor Z{pn under the isomorphism
-(82). Recall R “rs as in (78).
-Finally we form a “limit ring”
-(85) S :“ Zprrx1,...,x Rss
-The presentation (84) gives rise to obvious maps S։Sn and (compatible) augmenta-
-tions of S andSn to Zp and Z{pn respectively, carrying all the xi variables to zero; we
-denote by I andIn the corresponding kernels, so that S{I » Zp andSn{In » Z{pn. We
-need the following easy Lemma:
-Lemma. Let notations be as above. The natural map
-(86) Ext˚
-SnpZ{pn, Z{pnq Ñ Ext˚
-S{pn pZ{pn, Z{pnq
-(change of rings) is surjective. Also, the natural map
-(87) Ext˚
-S{pn pZ{pn, Z{pnq Ñ Ext˚
-S pZp, Z{pnq
-(change of ring, and functoriality of Ext in the ﬁrst argument) is an isomorphism.
-Recall that the change of ring map ExtB Ñ ExtA induced by a ring map A Ñ B
-can be realized by thinking of ExtB in terms of extensions of B-modules, and then just
-regarding it as an extension of A-modules.
-44 AKSHA Y VENKA TESH
-Proof. For (86), it is sufﬁcient to check surjectivity on Ext1 because the right hand side
-is generated by Ext0, Ext1: it can be computed to be an exterior algebra using a Koszul
-resolution, see Lemma B.1. Now “morally speaking” this is be cause it is the pullback
-on group H 1p´, Z{pnq induced by ZR
-p Ñ p Z{pnqR, but this is not a real proof (at least
-without discussing the relation between cohomology of proﬁ nite groups, and Exts over the
-corresponding “completed” group algebra).
-So we just compute both sides by using the compatible (under S{pn ÑSn) sequences
-In ÑSn Ñ Z{pn and I{pn Ñ S{pn Ñ Z{pn; taking homomorphisms into Z{pn, we get
-(88) Ext1
-SnpZ{pn, Z{pnq » HomSnpIn, Z{pnq
-`
-» HompIn{I 2
-n, Z{pnq
-˘
-and similar. (Note that the image of HomSnpSn, Z{pnq in HomSnpIn, Z{pnq is zero.)
-So we need to check that the map
-(89) I{pn ÑIn
-induces an isomorphism when we take HomSp´, Z{pnq.
-The homomorphisms HomSpIn, Z{pnq are precisely given by homomorphisms ϕ :
-Tn Ñ Z{pn, namely, we send xi “ reis ´ 1 P In to ϕpeiq, using the notation after
-(84). Since I{ppn, I2q is a free Z{pn module on x1,...,x R, it follows at once that (89)
-induces an isomorphism as desired.
-Now we discuss (87), which is not hard but we spell it out, main ly to be clear because
-I ﬁnd change of rings confusing. Let π : P Ñ Zp be the Koszul resolution of Zp as an
-S-module, and P “P {pn its reduction mod pn, so that π :P Ñ Z{pn is the Koszul res-
-olution of Z{pn as an S{pn-module. There is an identiﬁcation Ext˚
-S{pn pZ{pn, Z{pnq with
-the cohomology of HompP, Z{pnq; it sends a closed element C P HompP, Z{pnrmsq to
-the classα P Extm
-S{pn pZ{pn, Z{pnq represented by the diagram Z{pn πÐ ÝP CÑ Z{pnrms
-in the derived category of S{pn-modules (one can invert quasi-isomorphisms in the derived
-category).
-Consider now the diagram
-(90) Z{pn P„
-π/d111/d111 C /d47/d47 Z{pnrms
-Zp
-A
-/d79/d79
-P„
-π/d111/d111/d111/d111
-B
-/d79/d79
-where „ means quasi-isomorphism;A,B are the natural projections.
-Now, the image α1 P ExtSpZp, Z{pnq ofα, under the map (87), is represented by the
-map C ˝π´1 ˝A inside the derived category of S-modules, equivalently, by the com-
-position C ˝ B ˝ π´1. In other words, the image α1 of α is represented by the class
-C1 P HompP, Z{pnrmsq obtained by pulling back C P HompP, Z{pnrmsq viaP Ñ P .
-That pullback induces an isomorphism of complexes
-HomS{pn pP, Z{pnq » HomSpP, Z{pnq,
-and thus, passing to cohomology, the desired isomorphism of Ext-groups. □
-6.5. Adding level q structure: The relationship between homology at level Y p1q and
-levelY0pqq. Fix a prime q that doesn’t divide the level of K0, satisfying q ” 1 modulo
-pn. This section and the next two §6.5, §6.8, §6.11 all gather so me “standard” properties
-of passing between level 1 and level q, working with Z{pn-cohomology. We remind the
-reader that “level 1” does not literally mean level 1, but just the base level K0 at which we
-work.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 4 5
-In the current section, we discuss the relationship between the homology of Y p1q and
-Y0pqq; recall that Y0pqq was obtained by adding Iwahori level at q (see (79)).
-We can use the discussion of §4.4: For S “ Z{pn, let HI, HK and so on be the (usual,
-i.e. no “derived”!) Hecke algebras for pGq,Kqq, withS-coefﬁcients and let HIK, HKI be
-the bimodules previously deﬁned in §4.2. There are natural m aps
-(91) H ˚pY p1q,S q bHK HKI Ý ÑH ˚pY0pqq,S q,
-H ˚pY0pqq,S q bHI HIK Ý ÑH ˚pY p1q,S q.
-These maps are deﬁned by the “usual double coset formulas.” M ore formally, we may iden-
-tify HK with HomSGq pSrGq{Kqs,S rGq{Kqsq, HKI with HomSGq pSrGq{Kqs,S rGq{Iqs)
-and so forth; one may then proceed as in the discussion of §2.6 to deﬁne the maps of (91).
-Before we go further, let us formulate a natural notion of “lo cal-global compatibility”
-at level Y0pqq: the center of the Iwahori-Hecke algebra HI at level q, which is identiﬁed
-(§4.3) with the Hecke algebra HK. We shall suppose:
-(Local-global compatibility at levelY0pqq:) HK, identiﬁed with the center
-of HI as just explained, acts on H˚pY0pqq,k qm by means of the same
-(generalized) eigencharacter HK Ñk by which HK acts on Π .
-It is feasible that this assumption could be avoided entirel y but since it is very likely to
-be proven along with the other, more essential, local-globa l compatibility at Taylor-Wiles
-primes it seems harmless to assume it.
-6.6. Lemma. Let notation be as above, and assume the local-global compat ibility just
-mentioned. Suppose that the prime q is such that ρpFrobqq is conjugate to a strongly
-regular element of T _pkq. Then the maps (91) are isomorphisms when we localize at a
-maximal ideal of HK induced by m. In particular , if q is part of a T aylor-Wiles datum of
-leveln, then (91) induces
-(92) H ˚pY0pqq, Z{pnqm
-„Ð ÝH ˚pY p1q, Z{pnqm bHK HKI.
-Proof. The assertion that (92) is an isomorphism follows from the as sertion that (91) is
-an isomorphism by “localization at m” (taking a little care because the Hecke algebra for
-Y0pqq andY p1q are not quite identically deﬁned, the former omitting the pr ime above q.
-For a more detailed treatment of this point, please see [20, L emma 6.20]).
-So it is enough to prove the ﬁrst assertion. Everything will b e with Z{pn coefﬁcients.
-First note that the two natural ways of making a map
-H ˚pY p1qq bHK HKI bHI HIK Ý ÑH ˚pY p1qq.
-(i.e., ﬁrst contracting the ﬁrst two coordinates, or ﬁrst co ntracting the second two coordi-
-nates) both coincide; similarly the other way around. We mak e the rest of the argument in
-a more abstract setting.
-Suppose R1,R 2 are two rings, and we are given an pR1,R 2q-bimodule M12 and an
-pR2,R 1q-bimoduleM21, giving associated functors
-F p´q “ ´ bR1M12, Gp´q “ ´ bR2M21
-from (right)R1-modules to (right) R2-modules and vice versa, respectively.
-We assume that F,G deﬁne an equivalence of categories, i.e. there are natural e quiva-
-lences fromFG to the identity functor and from GF to the identity functor. (In our setting
-aboveR1 “ H1
-K,R 2 “ H1
-I – the primes denote localization at the ideal of HK induced by
-m – and the bimodules are H1
-KI, H1
-IK ; the assumptions are satisﬁed by Lemma 4.5.)
-46 AKSHA Y VENKA TESH
-Next letX be anR1-module, letY be anR2-module. (In our setting these are given by
-the localized homology of Y p1q andY0pqq, respectively.) Suppose also we’re given maps
-α :F pXq Ñ Y, β :GpY q Ñ X in such a way that the induced maps
-(93) GpF pXqq
-Gpαq
-Ý ÑGpY q
-β
-Ý ÑX
-(94) F pGpY qq
-F pβq
-Ý ÑF pXq αÝ ÑY
-arise from the speciﬁed maps GF Ñ id andFG Ñ id.
-Then the maps F pXq Ñ Y and GpY q Ñ X must be surjections (by inspection of
-(93) and (94)); then in the diagram GpF pXqq Ñ GpY q Ñ X we have a composite of
-surjections giving an isomorphism, so both are isomorphism s; in particular, GpY q Ñ X
-andF pXq Ñ Y must be isomorphisms.
-Applied to our original context, this concludes the proof of the ﬁrst assertion of the
-Lemma. □
-Note also that inside HI we have a copy of the monoid algebra krX `
-˚ s, namely, the
-action of “Uq-operators” IqχIq forχ PX `
-˚ (see (38) for identiﬁcation of X˚ with a coset
-space; X `
-˚ is the positive cone corresponding to the Borel subgroup B). Each element
-t PT _pkq deﬁnes a character χt :krX `
-˚ s Ñ k of this monoid algebra: t corresponds (by
-“Local Langlands”, easy in this split case) to an unramiﬁed c haracter ApQqq Ñ kˆ, i.e.
-to a homomorphism X˚ Ñkˆ and then we just take the linear extension
-(95) χt :krX `
-˚ s Ñ k.
-Using the previous Lemma, it is easy to compute the action of t his monoid algebra:
-6.7. Corollary. Suppose that q is part of a T aylor-Wiles datum. Then the generalized
-eigenvalues ofkrX `
-˚ s acting onH ˚pY0pqq,k qm are all of the formχFrobT , where FrobT P
-T _pkq is conjugate to the Frobenius at q, and the notation is deﬁned in (95).
-The corollary asserts just the usual relationship between “ Tq eigenvalues at level 1 and
-Uq eigenvalues at levelq.” We will omit the proof; it follows from the prior Lemma and a
-straightforward computaiton.
-Remark. LetH ˚pY0pqq, Z{pnqm,χFrobT be the summand ofH ˚pY0pqq, Z{pnqm correspond-
-ing to theχFrobT -eigenspace ofkrX `
-˚ s. For later use, we note that there is an isomorphism:
-(96) H ˚pY0pqq, Z{pnqm,χFrobT –H ˚pY p1q, Z{pnqm
-where the map from left to right is the pushforwardπ˚, and an inverse in the other direction
-is given by the pullback π˚ together with projection to the χFrobT eigenspace.
-To see these are inverses we compute in HI : with reference to the actions of (91), the
-forward (pushforward) map corresponds to eK P HIK , and the reverse map corresponds
-to |W |eKq P HKI whereq P SrX `
-˚ s ãÑ HI is chosen to realize to the projection on the
-χFrobT eigenspace, and eKq means the product of eK P HKI withq P HI . (See remarks
-after (49)).
-When we compose them we get |W |eKq P HI or |W |eKqeK P HK; to see, for ex-
-ample, that the former acts as the identity endomorphism on H ˚pY0pqq, Z{pnqm,χFrobT ,
-observe that it can be written as ř
-wPWewq withew “IwI , and then we just use the fact
-thatq annihilates all the krX `
-˚ s-eigenspaces except the one indexed by FrobT , whereas
-theew permutes the various eigenspaces.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 4 7
-6.8. Adding levelq structure continued: The homology at level Y1pq,n q. This section
-together with the previous and subsequent ones – §6.5, §6.8, §6.11 – all gather some “stan-
-dard” properties of passing between level 1 and levelq. So continue with q as in the prior
-§, i.e., part of a Taylor–Wiles datum of level n.
-We now consider the homology of Y1pq,n q – as deﬁned in (80) – and the action of its
-Hecke algebra at levelY1pq,n q. Now this homology is basically glued from the homology
-ofY0pqq: if we let F be the push-forward of the constant sheaf k fromY1pq,n q toY0pqq,
-then F is a successive extension of copies of the constant sheaf k, in a Hecke equivariant
-way.
-We state some consequences of this more formally:
-6.9. Lemma. Assume that q is part of a T aylor–Wiles datum of level n. Assume local-
-global compatibility for Y0pqq, in the sense described after (91); let other assumptions
-be as in §6.1. Let q,δ be as in (18). Then the homology HjpY1pq,n q, Zpqm vanishes for
-j R rq, q `δs.
-Proof. Clearly we can replace the role of Zp by Fp “ k, and then by the remark before
-the proof, it is enough to prove the same for Y0pqq. By (92), it sufﬁces to prove the same
-vanishing statement for Y p1q with Fp “k coefﬁcients. But this is part of our assumption
-(7(a) from §6.1.) □
-Now we want to say that this relationship between the homolog y ofY1pq,n q andY0pqq
-is equivariant for Hecke operators at q. The full Hecke algebra is somewhat complicated
-and we just deal with its “positive, commutative subalgebra .” Set ĂX˚ to be the quotient
-of ApQqq by the subgroup pnApZqq. Denote by ∆ q the quotient of Qˆ
-q by the subgroup
-of Zˆ
-q of index pn. Therefore ∆ q and ĂX˚ depend on n but we will suppress that from the
-notation for simplicity. We may identify
-ĂX˚ “X˚pAq b ∆ q,
-and we think of ĂX˚ as a thickened version of the character lattice X˚pAq. From the
-valuation ∆ q Ñ Z we get
-(97) ĂX˚ ÑX˚
-and we can deﬁne the “positive cone” ĂX˚
-`
-Ă ĂX˚ as the preimage of X `
-˚ .
-LetI be an Iwahori subgroup of GpQqq, andI 1⊳I the subgroup corresponding to the
-coveringY1pq,n q, i.e. I{I 1 » p Z{pnqr. Then there is a natural map from Zpr rX `
-˚ s to the
-Iwahori-Hecke algebra at level I 1 sendingχ P ĂX˚ to the coset I 1χI 1. In particular, we get
-an action of Zpr rX `
-˚ s on the homology of Y1pq,n q.
-6.10. Lemma. Any generalized eigenvalue ofkr rX `
-˚ s acting onH˚pY1pq,n q,k qm is also a
-generalized eigenvalue ofkr rX `
-˚ s acting onH˚pY0pqq,k qm via the map kr rX `
-˚ s Ñ krX `
-˚ s
-induced by (97).
-Thus, by Corollary 6.7, we get a splitting
-(98) H˚pY1pq,n q,k qm “
-à
-FrobT PT _ pkq
-FrobT „ρpFrobqq
-pH˚pY1pq,n q,k qqm,χFrobT
-into the sum of generalized eigenspaces associated to the ch aractersχFrobT :kr rX `
-˚ s Ñ k.
-(In the subscript, „ means “is conjugate to.”) Again, this is nothing but a fancy w ay of
-talking about the decomposition into “ Uq-eigenspaces.” The only point to note is that the
-decomposition is canonically indexed by elements of T _pkq conjugate to the Frobenius.
-48 AKSHA Y VENKA TESH
-Proof. Write for short G “ GpQqq; let I be an Iwahori subgroup of G, and I 1⊳ I the
-subgroup corresponding to the covering Y1pq,n q, i.e. I{I 1 » pZ{pnqr. We prove the same
-statement in cohomology and without the m; the desired statement follows by dualizing
-and localizing.
-By the discussion of §2.6 we can identify
-H ˚pY1pq,n q,k q » Ext˚
-kGpkrG{I 1s,M q
-H ˚pY0pqq,k q » Ext˚
-kGpkrG{Is,M q
-whereM is the direct limit of co-chain complexes of a family of cover ings, obtained by
-adding more and more level structure at q.
-Claim: We may ﬁlter krG{I 1s byG-submodulesF 0 ĂF 1 ĂF 2 Ă... such that:
-(i) each successive quotient Fi`1{Fi is isomorphic as G-module to a sum of copies
-ofkrG{Is,
-(ii) For every χ P ĄX `
-˚ , the action of I 1χI 1 preserves the ﬁltration, and the action on
-the quotients coincides with the action of IχI .
-Assuming the existence of this ﬁltration, the result follow s easily: we get long exact
-sequences of the form
-Extj
-kGpFi´1,M q Ñ Extj
-kGpFi,M q Ñ ExtjpkrG{Is,M q
-Àe Ñ
-and these are equivariant for the action of I 1χI 1, which acts by via IχI on the right-hand
-summand. The result follows immediately by a descending ind uction.
-To construct the desired ﬁltration regard krG{I 1s as the compact induction from I toG
-of theI-representationkrI{I 1s, i.e
-krGs bkrIskrI{I 1s
-In particular, ∆ “I{I 1 acts byG-endomorphisms onkrG{I 1s, which is the action “by right
-multiplication.” This action of δ P ∆ coincides with the action of I 1δI 1 and in particular
-commutes with the action of kr rX `
-˚ s.
-Now we ﬁlter krG{I 1s by the kernelskrG{I 1sxmjy of successive powers mj of the max-
-imal ideal m inkr∆ s. This ﬁltration is stable for kr rX `
-˚ s because the actions of ∆ ,k r rX `
-˚ s
-commute. Also the jth term of the resulting ﬁltration is thus
-Fj “krGs bkrIskr∆ sxmjy
-and the jth graded is just krGs bkrIs
-xmjy
-xmj` 1y , i.e. a direct sum of copies of krG{Is, as
-claimed.
-It remains to check assertion (ii) in the Claim. For any y P mj´1, multiplication by y
-gives a map
-Fj{Fj´1 ÑF 1 “F 1{F 0
-and a suitable sum of such maps is an isomorphism (as we see by c hecking the corre-
-sponding assertion forkr∆ s). Since these multiplication maps commute with the action o f
-kr rX `
-˚ s we are reduced to computing the action of I 1χI 1 onF 1; nowF 1 is identiﬁed with
-krG{Is is a natural way and the assertion is clear. □
-6.11. Adding level q structure continued: Galois representations for level Y1pq,n q.
-This section and the prior two §6.5, §6.8, §6.11 all gather so me “standard” properties of
-passing between level 1 and level q. We now consider more closely the action of the
-Iwahori-Hecke algebras at level Y1pq,n q and formulate local-global compatibility. First
-let us look at the Galois side.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 4 9
-6.12. Lemma. Letq be a T aylor-Wiles prime of level n and assume that the unramiﬁed
-representationρ|GQq has image inside T _. Then any deformation of ρ|GQq can be con-
-jugated to one taking values in T _. In particular , any such deformation of ρ|GQq actually
-factors throughGab
-Qq » proﬁnite completion of Qˆ
-q .
-Proof. We may present the tame quotient of GQq as xF,t : FtF ´1 “ tqy, where t is a
-generator of tame inertia.
-Suppose thatA is an Artin local ring with maximal ideal m, and md “ 0. We are given
-F,t inG_pAq that satisfy FtF ´1 “ tq, where t reduces to the identity in G_pkq andF
-reduces to (after conjugating) a strongly regular element o fT _pkq. Conjugating, we may
-suppose thatF belongs to the maximal torus T _pAq. We will prove by induction on d that
-this forces t P T _pAq too. By the inductive hypothesis (obvious for d “ 1) the image of
-t inG_pA{md´1q belongs to T _pA{md´1q. Write thus t “ t0δt wheret0 P T _pAq and
-δt PG_pAq lies in the kernel of reduction modulo md´1.
-Now in fact t0 lies in the kernel of reduction modulo m, and so t0 and δt actually
-commute; indeed, t0 commutes with anything in the kernel of reduction modulo md´1.
-Alsoδq´1
-t “e. (To check these statements, just compute in the formal grou p ofG_ at the
-identity.) Now,FtF ´1 “tq so that
-F pt0δtqF ´1pt0δtq´1 “ pt0δtqq´1 PT _pAq
-But the left hand side equals t0
-`
-AdpF qδt ¨δ´1
-t
-˘
-t´1
-0 , and so
-AdpF qδt ¨δ´1
-t PT _pAq
-and sinceF is strongly regular this means that δt PT _pAq as desired. □
-We now want to connect the Galois deformation ring relevant t o Y1pq,n q with the
-Iwahori–Hecke algebra.
-Letq be a Taylor–Wiles prime of level n. Suppose ﬁxed an element FrobT P T _pkq
-conjugate to the Frobenius at q. Consider a deformation σ : GQ Ñ G_pRq ofρ, where
-one allows now ramiﬁcation at q, and R is an Artin local ring with residue ﬁeld k. Then
-we can uniquely conjugate σ so its restriction to to GQq factors as
-Gab
-Qq » yQˆq Ý ÑT _pRq,
-and the image of a uniformizer in Qˆ
-q reduces to FrobT . This map factors through (the
-proﬁnite completion of) Qˆ
-q {p1 `qZqq. Restricting to Fˆ
-q we get
-Fˆ
-q ÑT _pRq
-and pairing with characters of T _ we get Fˆ
-q ˆX ˚pT _q Ñ R˚; by the duality of T _ and
-A, this is the same thing as
-(99) ApFqq Ñ R˚.
-We emphasize that the map (99) depended on the choice of a toral element FrobT conjugate
-to Frobenius; changing this element changes the map through the action of the Weyl group.
-LetRuniv
-SYtqu be Mazur’s universal deformation ring for ρ, allowing ramiﬁcation at q. By
-our assumptions (§6.2) on the existence of Galois represent ations, there is a map
-Runiv
-SYtqu Ñ TK1pq,nq,m,
-50 AKSHA Y VENKA TESH
-where K1pq,n q is the level structure for Y1pq,n q. By means of this map, Runiv
-SYtqu acts
-onH ˚pY1pq,n q, Zpqm, and in particular on the summand H ˚pY1pq,n q, Zpqm,FrobT
-q
-under
-(98). Thus, by (99), we get an action of ApFqq this cohomology group.
-Now the assumption of local–global compatibility alluded t o in §6.2 is a strengthened
-version of the following:
-Local global compatibility: The action ApFqq ýH ˚pY1pq,n q, Zpqm,FrobT
-q
-just deﬁned coincides with the “geometric” action, i.e. whe rein ApFqq
-acts by deck transformations on Y1pq,n q (see (80)).
-By “strengthened version”, we mean that we require a similar assertion at a derived cate-
-gory level, not just at the level of cohomology, and we also re quire the assertion for several
-auxiliary primesq rather than a single one. For details, see [14, §13.5].
-We say a deformation of ρ|GQq is of “inertial level ď n” if, when considered as a
-representation of Qˆ
-q by Lemma 6.12, and restricted to Fˆ
-q , it factors through the quotient
-Fˆ
-q {pn. We denote by Runiv,ďn
-SYtqu the quotient of Runiv
-SYtqu that classiﬁes deformations of ρ
-such thatρ|GQq has inertial level ďn. Explicitly,Runiv,ďn
-SYtqu is the quotient of
-(100) Runiv
-SYtqu{xt ´ 1 : t is in the image of pnApFqq under (99)y.
-Then local-global compatibility implies that the action of Runiv
-SYtqu on the homology of
-Y1pq,n q factors throughRuniv,ďn
-SYtqu , according to our previous discussion.
-7. P ATCHING AND THE DERIVED HECKE ALGEBRA
-We continue with the notation and assumptions of the previou s section §6; see in par-
-ticular §6.1 and §6.2. That section was primarily setup, and now we get down to proving
-that the global derived Hecke algebra is “big enough,” in the sense discussed around (2).
-The main result is Theorem 7.6.
-We use the patching of the Taylor–Wiles method; more speciﬁc ally, we use the version
-of that method that was discovered [9] by Calegari and Geragh ty, which applies to situa-
-tions where the same Hecke eigensystem occurs in multiple de grees. We also use heavily
-the presentation of the Calegari–Geraghty method given by K hare and Thorne [20].
-7.1. Deformation rings and chain complexes at level Qn. Fix now a Taylor-Wiles da-
-tumQn of leveln. (We will abusively use Qn both to denote the Taylor-Wiles datum and
-simply the set of primes associated to that datum.)
-Recall the deﬁnition of Y ˚
-1 pQnq from §6.3: it is the ﬁber-product of coverings Y1pq,n q Ñ
-Y p1q over q P Qn. We now collect together various results about the homology of
-Y ˚
-1 pQnq, which are essentially the same results as those already dis cussed for Y1pq,n q,
-but using all the primes in Qn instead of just tqu.
-7.2. Lemma. The homologyHjpY ˚
-1 pQnq, Zpqm vanishes forj R rq, q `δs.
-Proof. As in Lemma 6.9. □
-Just as in (98), this homology group is split (by “ U -operators”) into summands indexed
-by collections FrobT
-q PT _pkq pq PQnq, where each FrobT
-q is conjugate to the Frobenius
-atq. In particular, since the Taylor–Wiles datum is equipped (§ 6.3) with a speciﬁc choice
-of such a FrobT
-q for eachq PQn, we can consider the summand
-(101) H˚pY ˚
-1 pQnq, Zpqm,FrobT
-Qn
-ĂH˚pY ˚
-1 pQnq, Zpqm
-indexed by these prescribed lifts.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 5 1
-Recall from (81) that Y ˚
-1 pQnq Ñ Y0pQnq is Galois, with Galois group Tn. Let us
-introduce notation for the deformation rings of interest to us: let
-RQn “ universal deformation ring at level S šQn,
-(102)
-Rn “ quotient ofRQn classifying deformations of inertial level ďn at primes in Qn
-For example, in the case when Qn “ tqu this was the ring Runiv,ďn
-SYtqu discussed around
-(100).
-By the discussion of (99) and after, we get a morphismApFqi q{pn ÑRˆ
-n , and therefore
-we get (see (81)):
-Tn ÑRˆ
-n
-What we know (local-global compatibility, assumed in §6.11 ) is that the natural action
-of Tn (deck transformations) on homology of Y ˚
-1 pQnq is compatible with its action via
-Tn ÑRˆ
-n . To say differently, we get a map
-(103) Sn :“ Z{pnrTns Ñ Rn{pn,
-and the natural action of Sn on the Z{pn homology ofY ˚
-1 pQnq is compatible with that via
-the map to Rn{pn.
-Now consider the complex of singular chains
-rCn “ ChainspY ˚
-1 pQnq; Z{pnq
-with Z{pn coefﬁcients. We think of it as a complex of Sn modules, because of the action
-ofTn by deck transformations on Y ˚
-1 pQnq. It is quasi-isomorphic to a bounded complex
-of ﬁnite free Sn-modules and we have canonical identiﬁcations:
-(104) H˚ rCn »H˚pY ˚
-1 pQnq, Z{pnq
-(105) H ˚HomSn p rCn, Z{pnq » H ˚pY0pQnq, Z{pnq
-(106) H˚p ĂCn bSn Z{pnq » H˚pY0pQnq, Z{pnq.
-Note that rCn is a free Sn-module, with basis given by the characteristic functions o f
-an arbitrarily chosen set of representatives for Tn-orbits on singular simplices. Therefore,
-the homology of HomSn p rCn, Z{pnq computes the homomorphisms from rCn to Z{pn in
-the derived category of Sn-modules. By composition of homomorphisms in this derived
-category, we get a map
-(107) H ˚
-´
-HomSn p rCn, Z{pnq
-¯
-looooooooooooooomooooooooooooooon
-»H˚ pY0pQnq,Z{pnq
-ˆ Ext˚
-Sn pZ{pn, Z{pnqlooooooooooomooooooooooon
-»H˚ pTn,Z{pnq
-ÑH ˚
-´
-HomSnp rCn, Z{pnq
-¯
-looooooooooooooomooooooooooooooon
-»H˚ pY0pQnq,Z{pnq
-With respect to the identiﬁcations noted underneath the res pective terms, this is precisely
-the “natural” action of H ˚pTn, Z{pnq onH ˚pY0pQnq, Z{pnq. This natural action arises
-thus: the covering Y ˚
-1 pQnq Ñ Y0pQnq has covering group Tn, i.e. can be regarded as a
-map
-(108) Y0pQnq Ñ BTn
-from Y0pQnq to the classifying space of Tn; this allows one to pull back cohomology
-classes from Tn and take cup product. The coincidence of (107) and this “natu ral action”
-is a general fact; for lack of a reference we sketch a proof in § B.4.
-52 AKSHA Y VENKA TESH
-It is possible to “cut down” rCn in a fashion that corresponds to the summand (101),
-as is explained in [20] (see Lemma 2.12 thereof, and surround ing discussion). This can
-be done compatibly for Y0pQnq andY ˚
-1 pQnq and thus one gets a perfect complex Cn of
-Sn-modules, equipped with identiﬁcations that are analogous to (104) and (105):
-(109) H˚pCn; Z{pnq » H˚pY ˚
-1 pQnq, Z{pnqm,FrobT,
-(110) H ˚pHomSn pCn, Z{pnqq » H ˚pY0pQnq, Z{pnqm,FrobT
-and again the action of Ext˚
-SnpZ{pn, Z{pnq on the latter group corresponds to the natural
-action by pulling back cohomology classes via (108). 12
-7.3. Extracting the limit. Now we “pass to the limit” as per Taylor–Wiles and Calegari–
-Geraghty. The idea is roughly speaking to extract, by a compa ctness argument, a subse-
-quence of n along which the Cn,Sn,Rn are compatible, and then get limits C, S, R by
-an inverse limit. Usually in modularity lifting one is only c oncerned with the limit of the
-process; but in our case we also want to remember some facts ab out how this relates to the
-Cn,Sn,Rn. A discussion of this process which emphasizes exactly what we need is given
-in [14, §13], see in particular Theorem 13.1 therein.
-We choose a sequence of Taylor-Wiles dataQn withn Ñ 8. After replacing the Qn by
-a suitable subsequence and then reindexing – that is to say, r eplacingQi byQni for some
-ni ąi, and then regarding Qni as a set of Taylor–Wiles primes of level i – we can arrange
-that we can “pass to the limit.” After having done this, we obt ain at last the following data:
-(a) A sequence of Taylor–Wiles data Qn of leveln.
-Recall to this we have associated coverings Y ˚
-1 pQnq Ñ Y0pQnq Ñ Y p1q, as
-in §6.3, and the Galois group of the former map is called Tn; also (103) we set
-Sn “ Z{pnrTns, the group algebra of Tn.
-(b) With S “ Zprrx1,...,x Rss as in §6.4, a complex C of ﬁnite free S-modules,
-equipped with a quasi-isomorphism
-(111) C bSSn »Cn,
-whereCn is as described in §7.1: a version of the chain complex of Y ˚
-1 pQnq with
-Z{pn coefﬁcients, but localized at m and FrobT .
-(c) A quotient Rn ofRn, deﬁned as follows:
-Recall from (102) the deﬁnition of Rn; a quotient of the crystalline deformation
-ring at levelS šQn. We set
-(112) Rn “Rn{ppn, mKpnqq
-for a certain explicit function Kpnq, chosen so that e.g. action of Rn onH˚pCnq
-automatically factors through Rn. We can and will assumeKpnq ě 2n. (The main
-function ofKpnq is to make Rn Artinian, while still retaining enough information
-about all of Rn for our purposes.)
-12As a sanity check on this, note that the action of H ˚ pTn, Z{pnq on H ˚ pY0pQnq, Z{pnq indeed does
-preserve the splitting into summands of the type (101); one c an see this directly by seeing that H ˚ pTn, Z{pnq,
-considered inside the derived Iwahori-Hecke algebra, comm utes with the “positive subalgebra” used to deﬁne the
-splitting (101).
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 5 3
-(d) A “limit deformation ring” R » Zprrx1,...,x R´δss equipped with maps S Ñ R
-and maps R Ñ Rn, R։ Rρ which are compatible, in the sense that this diagram
-commutes:
-(113) S /d47/d47
-/d15/d15
-R
-/d15/d15
-/d47/d47 Rρ
-/d15/d15
-Sn /d47/d47 Rn /d47/d47 Rρ{ppn, mKpnqq
-(Recall here that Rρ is the deformation ring of ρ, with crystalline conditions
-imposed, without adding any level, cf. §6.2).
-Moreover, the composite S Ñ R Ñ Rρ factors through the augmentation S Ñ
-Zp; and also the left-hand square induces an isomorphism
-(114) R bSSn » Rn
-(e) An action of R on H˚pCq, compatible with the S action, and with the maps
-H˚pCq Ñ H˚pCnq, where R acts onH˚pCnq via R Ñ Rn.
-(f) An identiﬁcation of
-(115) H ˚pHomSpC, Zpqq „Ý ÑH ˚pY p1q, Zpqm,
-compatible under (111) with the identiﬁcation H ˚pHomSn pCn, Z{pnqq » H ˚pY p1q, Z{pnqm
-that is the composition of (110) with the pushforward. (This is described in dual
-form in [14, Theorem 13.1(d)] but one gets similarly this res ult, and the statement
-about compatibility is just a matter of looking at the deﬁnit ion of the map (115).
-(g) (These last results use heavily the formal smoothness, a ssumption (e) from §6.2):
-C has homology only in degree q, and its homology there HqpCq is free as R-
-module. Moreover, one has an “ R “T result”
-(116) R bS Zp » Rρ » image of TK0 in EndHqpY p1q, Zpqm.
-7.4. The structure of S Ñ R. The limit process has given a map of rings S Ñ R, where S
-and R are formal power series rings that represent, roughly speak ing, “limits” of the rings
-Sn,Rn asn Ñ 8.
-As in (77), the representation Π gives a liftρ to Zp of the residual representation ρ; this
-corresponds to an augmentation Rρ Ñ Zp. Thus we also get an augmentation
-f : R Ñ Zp,
-and the pullback of this to S is the natural augmentation of S Ñ Zp ((d) of §7.3). In
-particular, the kernel of f on S is precisely the ideal I.
-Our assumptions imply that the map S Ñ R is surjective. Indeed, because S is complete
-for the I-adic topology it is enough to verify that S{I Ñ R{IR is surjective. But R{I is a
-Hecke ring by (116) and so isomorphic to Zp by (75). Note in particular that this also
-means that IR is precisely the kernel of f .
-The following easy lemma is now useful for explicit computat ions.
-7.5. Lemma. W e can choose generatorsxi,yj for S, R, i.e.
-S “ Zprrx1,...,x Rss, R “ Zprry1,...,y R´δss
-such that thexi,yjs lie in the kernel of the compatible augmentations
-S Ñ R Ñ Zp,
-and the map S Ñ R is given by xi ÞÑyi fori ďR ´δ andxi ÞÑ 0 fori ąR ´δ.
-54 AKSHA Y VENKA TESH
-Proof. Write f : R Ñ Zp for the augmentation. Abstractly, R » Zprru1,...,u R´δss
-where all the ui lie in the maximal ideal. Set yi “ui ´f puiq P kerpR Ñ Zpq. Then still
-R » Zprry1,...,y R´δss. We have noted above that J :“ IR is precisely the kernel of the
-augmentation R Ñ Zp; thus, the yi freely span as Zp-module the quotient J{J2.
-Lift the yi to x1,...,x r P kerpS Ñ Zpq. Necessarily the xi span a saturated 13 Zp-
-submodule of rank s inside I{I2 » Zs
-p; they are Zp- independent because any linear re-
-lation řaixi P I2 (with ai P Zp) would give rise to a corresponding linear relation in
-R, a contradiction. Similarly, they are saturated because gi ven x1 and pa1...,a rq with
-gcdpa1,...,a rq “ 1 andpx1 “ řaixi ` I2, we would get a corresponding relation in R,
-again a contradiction.
-Now extend the xi to a full Zp-basis xr`1,...,x s for I{I2. Each xj for j ą r is
-sent under S Ñ R an element of J Ă R, which means that it can be written as a formal
-polynomialPjpy1,...,y rq iny1,...,y r, with no constant term; so replacing xj byxj ´
-Pjpx1,...,x rq we may suppose that xj ÞÑ 0 in R. □
-Now we come to the main theorem of the section.
-7.6. Theorem. Let assumptions be as in §6.1 and §6.2. The cohomology H ˚pY p1q, Zpqm
-is generated, as a module over the strict global derived Hecke algebra (see §2.13 and §2.14
-for deﬁnition with Zp coefﬁcients), by its minimal degree component H qpY p1q, Zpqm.
-Proof. We use the setup of the Taylor–Wiles limit process (§7.3), be ginning with the fact
-that the natural map
-(117) H qpHomSpC, Zpqq b Extj
-SpZp, Zpq։H q`jpHomSpC, Zpqq
-is a surjection for all j: by (g) of §7.3 and Lemma 7.5, we can choose coordinates so
-that S » Zprrx1,...,x Rss, and the complex C is quasi-isomorphic to a sum of copies of
-S{pxR,...,x R´δ`1q concentrated in a single degree. So the surjectivity of (117 ) follows
-from the “Koszul algebra” computations in §B of the Appendix .
-Examine now the diagram, where all the maps are the obvious on es;
-(118)
-H qpHomSpC, Zpqq
-“
-/d15/d15
-ˆ Exti
-SpZp, Zpq
-/d15/d15
-/d47/d47 H q` ipHomSpC, Zpqq
-V
-/d15/d15
-H qpHomSpC, Zpqq
-V
-/d15/d15
-ˆ Exti
-SpZp, Z{pnq /d47/d47 H q` ipHomSpC, Z{pnqq
-“
-/d15/d15
-H qpHomSpC, Z{pnqq ˆ
-`
-Exti
-SpZ{pn, Z{pnq
-˘ /d47/d47
-U
-/d79/d79
-H q` ipHomSpC, Z{pnqq
-H qpHomSn pC bS Sn, Z{pnqq
-f, „
-/d79/d79
-ˆ
-`
-Exti
-Sn pZ{pn, Z{pnq
-˘ Q /d47/d47
-U 1
-/d79/d79
-H q` ipHomSnpC bS Sn, Z{pnqq.
-„
-/d79/d79
-Here, the middle square “commutes” in the sense that the imag e of px,Uy q is the same
-as the image of pVx,y q, i.e. U,V are adjoint for the pairing. The top and bottom squares
-commute. All this is obvious, except for perhaps the bottom s quare which involves change
-of rings, so let us talk through it: The map S Ñ Sn induces a forgetful map T from the
-derived category ofSn-modules to the derived category of S-modules. Take
-α PH qpHomSnpC bSSn, Z{pnqq, β P Exti
-Sn pZ{pn, Z{pnq.
-13Here we say that a submodule Q of a free Zp-module Q1 is saturated if the quotient Q1{Q is torsion-free.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 5 5
-We can regardα as a map C bSSn Ñ Z{pnrqs andβ as a map Z{pnrqs Ñ Z{pnrq `is,
-both in the derived category ofSn-modules. Applying the functorT , we see thatTβ ¨Tα “
-T pβαq. On the other hand, Tα is simply the morphism C bSSn Ñ Z{pnrqs considered
-as a map of S-modules. If we pre-compose with γ : C Ñ C bSSn, considered as a map of
-S-modules, we get f pαq. Similarly, T pβαqγ “f pβαq ¨γ. So Tβ.f pαq “ f pβαq: that is
-the commutativity of the bottom square.
-It follows from the Lemma of §6.4 that the composite U ˝U 1 is surjective. Also the
-map V is surjective (because the cohomology of HomSpC, Zpq is torsion-free, by (115)
-and assumption 7(a) of §6.1). Tracing through the above diag ram, this is enough to show
-that the image of Q generates the codomain of Q.
-Now, recall from (111) the quasi-isomorphism CbSSn »Cn; we have therefore shown
-that H ˚pHomSnpCn, Z{pnqq is generated by H qpHomSn pCn, Z{pnqq as a module over
-Ext˚
-Sn pZ{pn, Z{pnq. As in the discussion after (107), this is equivalent to sayi ng that
-H ˚pY0pQnq, Z{pnqm,FrobT is generated by its degree q component as a H ˚pTn, Z{pnq-
-module, i.e.
-(119) H qpY0pQnq, Z{pnqm,FrobT bH ˚pTn, Z{pnq։H ˚pY0pQnq, Z{pnqm,FrobT.
-In what follows, let us write HI, HK for the tensor product of (derived) Iwahori-Hecke
-algebras HI,q and derived Hecke algebra Hq overq PQn; and write HK, HKI, HIK, HI
-for the (non-derived) algebras and bimodules of §6.5, but te nsoring over allq PQn. All of
-these will be taken with Z{pn coefﬁcients.
-Note that the action ofH ˚pTn, Z{pnq onH ˚pY0pQnq, Z{pnq factors through the action
-of HI (e.g. see the Remark in §2.10). So H ˚pY0pQnq, Z{pnqm,FrobT is generated in
-degree q over HI . Taking the sum over all possible lifts FrobT , as in (98), we see that
-H ˚pY ˚
-0 pQnq, Z{pnqm is also generated in degree q over the derived HI .
-Now, each of the following maps are surjective:
-H qpY p1q, Z{pnqm b HKI։H qpY0pQnq, Z{pnqm,
-H qpY0pQnq, Z{pnqm b H j
-I ։H q`jpY0pQnq, Z{pnqm,
-H q`jpY0pQnq, Z{pnqm b HIK։H q`jpY p1q, Z{pnqm,
-where the second statement is what we just proved, whereas th e ﬁrst and third statement
-come from Lemma 6.6. Also there is a map
-´
-HKI b H j
-I b HIK
-¯
-Ñ H j
-K compatible
-with the respective actions, just arising from composition of Exts. We get
-H qpY p1q, Z{pnqm b H j
-K։H q`jpY p1q, Z{pnqm.
-Passing to the limit (as in the discussion of §2.13) conclude s the proof. □
-8. T HE RECIPROCITY LAW
-In §7 we proved, conditional under assumptions (§6.1, §6.2) on the existence of Galois
-representations attached to modular forms and other assump tions that simplify the inte-
-gral situation (§6.1), that the global derived Hecke algebr a is “big enough,” in the sense
-discussed around (2).
-We now turn to the question mentioned in §1.3: we index elements of this global derived
-Hecke algebra by means of a certain dual Selmer group. This is achieved in Theorem 8.5.
-This Theorem is not an end in itself; rather, it just gives the correct language for us to
-formulate the central conjecture of the paper, Conjecture 8 .8.
-56 AKSHA Y VENKA TESH
-8.1. The coadjoint representations. We are interested in the co-adjoint representation,
-i.e. the dual of the representation of G_ on its Lie algebra g_. Denoting by rg the Z-dual
-to this Lie algebra, we obtain
-Ad˚ :G_ ÑGLprgq
-which we regard as a morphism of algebraic groups over Z. 14
-In particular given a representation σ : GQ Ñ G_pRq we denote by Ad˚σ : GQ Ñ
-GLpR bZ rgq the composition ofσ with the co-adjoint representation. When σ is valued in
-Zp, we will write Ad˚σn for the reduction of Ad˚σ modulopn.
-8.2. Galois cohomology. We will freely use the theory of Fontaine and Laffaille which
-(in good circumstances) parameterizes crystalline repres entations of GalpQp{Qpq, even
-with torsion coefﬁcients. For a summary, see §4 of [2].
-Fix once and for all the interval r´p´3
-2 , p´3
-2 s Ă N of Hodge weights. We will say
-that a representation of GalpQp{Qpq on a ﬁnitely generated Zp-module is “crystalline”
-if it is isomorphic to a subquotient of a crystalline represe ntation with Hodge weights in
-r´p´3
-2 , p´3
-2 s. This indexing of Hodge weights is useful for adjoint repres entations which
-have weights symmetric around 0.
-Recall that for any p-torsion crystallineM we can deﬁne
-H 1
-f pQp,M q Ă H 1pQp,M q
-which classiﬁes those extensions M Ñ? Ñ 1 which are crystalline; it is in fact a submod-
-ule and it is identiﬁed (by Fontaine-Laffaille theory) with a corresponding Ext-group in the
-category of ﬁltered Dieudonné modules. In particular, this allows one to check that H 1
-f is
-isomorphic to the cokernel of the map
-(120) F0DpM q 1´FrobÑ DpM q,
-whereDpM q is the associated ﬁltered Dieudonné module. Also, the kerne l of 1 ´ Frob in
-(120) is isomorphic to H 0pQp,M q. In particular, for M ﬁnite we have
-(121) #H 1
-f pQp,M q “ |DpM q|
-|F 0DpM q| ¨ #H 0pQp,M q,
-which can be effectively used to compute the size of H 1
-f (note: the size of DpM q andM
-coincide).
-We will need to know that the subspaces H 1
-f pQp,M q andH 1
-f pQp,M ˚q (withM ˚ :“
-HompM,µp8q are each other’s annihilators under the local duality pairi ngH 1pQp,M q ˆ
-H 1pQp,M ˚q » Q{Z. This follows from the fact they annihilate each other (thei r product
-would come from an Ext2 in the category of Fontaine–Laffaille modules, but the rele vant
-Ext2 vanishes by [2, Lemma 4.4]) and a size computation using (121 ).
-8.3. Selmer groups. Let QS be the largest extension of Q unramiﬁed outside S, and let
-M be a module for the Galois group of QS{Q; thusM deﬁnes an étale sheaf on Zr 1
-S s. We
-write
-H 1pZr 1
-S s,M q Ą H 1
-f pZr 1
-S s,M q
-for (respectively) the étale cohomology of M (equivalently the group cohomology of
-GalpQS{Qq with coefﬁcients in M ), and the subset of this group consisting of classes
-14Why the coadjoint representation rather than the adjoint? They are isomorphi c for G semisimple, at least
-away from small characteristic. However, canonically what comes up for us is the coadjoint; for example, when
-one works with tori, as in §9.1, the difference is important.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 5 7
-that are crystalline at p, i.e. classes whose image in H 1pQp,M q lies in the subgroup
-H 1
-f pQp,M q deﬁned above.
-Note that we impose no local condition on classes in H 1
-f pZr 1
-S s,M q except for the crys-
-talline condition at p.
-We will writeH 1
-f pQ,M q for the usual Bloch–Kato Selmer group: this is the subgroup
-of classes in H 1pGalpQ{Qq,M q which are unramiﬁed away from p, and crystalline at p.
-In general, we have an inclusion H 1
-f pQ,M q Ă H 1
-f pZr 1
-S s,M q; the former is more restric-
-tive, requiring that the cohomology class be unramiﬁed at pl aces ofS ´ tpu. However, in
-our applications,M will be a module such that H 1pQv,M q vanishes forv PS ´ tpu, and
-soH 1
-f pQ,M q “ H 1
-f pZr 1
-S s,M q.
-8.4. We will follow the notation of the previous section, des cribed in §6.1; in particu-
-lar, we have an arithmetic manifold Y p1q “ Y pK0q, an automorphic representation Π ,
-corresponding to a maximal ideal m of the Hecke algebra; and an associated Galois repre-
-sentationρ :GQ ÑG_pZpq. We let S be the set of ramiﬁed primes for ρ orK0, together
-withp.
-Put
-(122) V :“H 1
-f pZr 1
-S s, Ad˚ρp1qq_,
-where we wrote ´_ for Homp´, Zpq. We will prove in Lemma 8.9 that both the H 1
-f above
-and V are (under our assumptions) free Zp-modules of rank δ.
-We will produce an action of V onH ˚pY pKq, Zpqm. To explain it, ﬁx A a maximal
-torus of G and let q be a Taylor–Wiles prime of level n, equipped with an element of
-T _pkq conjugate to Frobenius at q. Let
-Tq “ ApFqq{pn.
-From this data we will construct:
-- A natural embedding (§8.17) of
-(123) ιq,n :H 1pTq, Z{pnq ãÑ
-´
-H p1q
-q,Z{pn
-¯
-m
-into the degree 1 component H p1q of the local, full level, derived Hecke algebra
-Hq,Z{pn . (More precisely, we will use its completion at the maximal i deal m).
-- A map
-(124) fq,n :H 1pTq, Z{pnq Ñ V{pn,
-We have already explained, in a special case, the construtio n offq,n in (16). We
-brieﬂy outline the general case: Given α P H 1pTq, Z{pnq, we obtain, by (139),
-an element α1 in the quotient of H 1pQq, Adρnq by unramiﬁed classes; now, we
-associate toα the functional sendingβ PH 1
-f pZr 1
-S s, Ad˚ρp1qq to the local pairing
-xα1,βqyq P Z{pn, whereβq is the restriction of β toH 1pQq, Ad˚ρp1qq.
-Finally recall that under our assumptions (7(a) of §6.1) ,H ˚pY p1q, Zpqm is torsion-free;
-its reduction modulo pn coincides withH ˚pY p1q, Z{pnqm.
-8.5. Theorem. Let notation and assumptions be as established in §6 (in part icular §6.1,
-§6.2). Let V be as in (122).
-There exists a function a : Zě1 Ñ Zě1 and an action of V on H ˚pY p1q, Zpqm by
-endomorphisms of degree `1 with the following property:
-58 AKSHA Y VENKA TESH
-(*) F or any n ě 1 and any prime q ” 1 modulo papnq, equipped with a strongly
-regular element of T _pkq conjugate to ρpFrobqq, the two actions of H 1pTq, Z{pnq on
-H ˚pY p1q, Z{pnqm coincide: one via fq,n and one via ιq,n.
-The property (*) uniquely characterizes the V action (this is true for any function a).
-In particular , the strict global derived Hecke algebra contains V, and so also the ex-
-terior algebra freely generated by V (the induced map from ^˚V to endomorphisms of
-H ˚pY p1q, Zpqm is injective).
-Note that the uniqueness part of the statement is straightfo rward, because the con-
-dition pins down the action of V{pr for arbitrarily large r: by Chebotarev, the images
-fq,npH 1pTq, Z{pnqq generate V{pn even when restricted to primes q ” 1 modulopapnq;
-this basically follows from the existence of Taylor–Wiles d ata (see in particular (142)).
-Finally, under a further “multiplicity one” assumption, th is result is sufﬁcient to force
-the whole derived Hecke algebra to be graded commutative. We separate this result from
-the main analysis because it is inessential to our main goals and it requires this additional
-multiplicity one assumption.
-Before we state the proposition, we note that, by the argumen t of (37) together with [20,
-Lemma 6.20], the action of global Hecke algebra ˜T on cohomology induces an action of ˜T
-on onH ˚pY p1q, Zpqm.
-8.6. Proposition. IfH qpY p1q, Zpqm “ Zp, then the image of the full global derived Hecke
-algebra ˜T inside EndH ˚pY p1q, Zpqm in fact precisely coincides with the exterior algebra
-generated by V, and in particular the global derived Hecke algebra (acting on m-part of
-cohomology) is graded commutative.
-This same conclusion of graded commutativity holds, more ge nerally, when there ex-
-ists a semisimple Qp-algebra S of (degree-preserving) endomorphisms of H ˚pY p1q, Qpq
-commuting with ˜T and such thatH qpY p1q, Zpqm b Qp has multiplicity one as a S-module.
-Remark. - A natural choice for the commuting subalgebra S in Proposition 8.6 is the
-Zp-algebra generated by the local underived Hecke algebras at all primes that are
-not good. However, the multiplicity one condition is only re alistic when there is a
-unique tempered representation π8 of GpRq with nontrivial pg, Kq-cohomology.
-If this uniqueness condition is satisﬁed, then we would like ly expect the multiplic-
-ity one condition to be valid in the great majority of cases.
-Under the assumptions we are currently working (simply conn ected group, and
-working over Q) only SL2n`1 has this property. However, this unicity of π8 in
-fact applies whenever we work over a CM base ﬁeld, or for PGLn over Q. 15
-The analysis of §6 – §8 would extend to those cases with only so me notational
-changes.
-- That we get an integral isomorphism of ˜T and ^˚V, in the ﬁrst statement of the
-Proposition, is an artifact of our simplifying hypotheses. We don’t expect ˜T to be
-an integral exterior algebra in general, but corresponding statements should remain
-valid bQ.
-In general, we would expect the ˜T to be T b ^˚V, where T is the usual Hecke
-algebra, after tensoring with Q. But here our assumptions mean that T is just Zp,
-and moreover that the conclusion is true integrally.
-15Note that, for PGLn with n even, one should enlarge S using the action of the component group of the
-archimedean maximal compact.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 5 9
-8.7. Formulation of the conjecture. We are now ready to state the conjecture, the for-
-mulation of which is the main point of this paper. (Although t he trip was fun too.)
-The formulation of the conjecture itself rests on the conjec ture of Langlands that as-
-sociates to Π a motive, or more precisely a system of motives indexed by rep resentations
-of the dual group. Unfortunately it is difﬁcult to ﬁnd a compr ehensive account of this
-conjecture in print; the reader may consult the brief remark s in [21] or the appendix of
-[24].
-Continue with notation as in Theorem 8.5. As in the discussio n of §1.2 and §1.3, let
-Mcoad be the motive with Q coefﬁcients associated to Π and the co-adjoint representation
-of G_, if it exists. A priori , one may not always be able to descend the coefﬁcients of
-Mcoad to Q, although we expect this is possible in most if not all cases. (See discussion in
-[24, Appendix, A.3]). In what follows we assume that Mcoad can indeed be descended to
-Q coefﬁcients; if not one can simply reformulate the conjectu re by replacing Q by a ﬁeld
-extension.
-Thus there is an identiﬁcation of Galois modules
-étale realization of Mcoad » Ad˚ρ b Qp
-and there is a regulator map from the motivic cohomology
-H 1
-motpQ,M coad,Zp1qq Ý ÑH 1
-f pZr 1
-S s, Ad˚ρp1qq b Qp.
-As in §1.2.2, the motivic cohomology group on the left-hand s ide has been restricted to
-classes that extend to an integral model. We assume that this regulator map is an isomor-
-phism.16 Let VQp “ V b Qp, and let VQ be those classes in VQp whose pairing with
-motivic cohomology lies in Q.
-WriteH ˚pY p1q, ´qΠ for the Hecke eigenspace for the character TK0 Ñ Z associated
-with Π (see (73)). Our assumptions imply that H ˚pY p1q, ZpqΠ “H ˚pY p1q, Zpqm.
-8.8. Conjecture. Notation as above. With reference to the action
-^˚VQp ýH ˚pY p1q, QpqΠ
-furnished by Theorem 8.5, the action of VQ preservesH ˚pY p1q, QqΠ .
-Some rather scant evidence is discussed in the next section ( §9). As we have mentioned
-in the introduction, much more compelling is that we have bee n able to obtain numerical
-evidence for a coherent analog of the conjecture, in a joint w ork with Michael Harris.
-Recall (§6.2) we assume that
-(125) H 0pQp, Adρq “ H 2pQp, Adρq “ 0
-which implies the same conclusions for Ad˚ρp1q. In particular, H 1pQp, Ad˚ρp1qq is
-torsion-free and surjects onto H 1pQp, Ad˚ρp1qq. Finally, H 1
-f pQp, Ad˚ρp1qq is a satu-
-rated submodule of H 1pQp, Ad˚ρp1qq and we have an equality of ranks
-rankZpH 1
-f pQp, Ad˚ρp1qq “ rankFpH 1
-f pQp, Ad˚ρp1qq,
-as follows from explicit computation. In particular,H 1
-f pQp, Ad˚ρp1qq surjects ontoH 1
-f pQp, Ad˚ρp1qq.
-Also observe that, because of the assumed “big image” (§6.2 a ssumption (b)) ofρ, we have
-(126) H 0pZr 1
-S s, Ad˚ρp1qq “ 0,
-16 In general, the appropriate conjecture is that the regulato r, taken to the group of classes that are crystalline
-at p and unramiﬁed at all primes in S, is an isomorphism. However, by virtue of our assumptions in §6.2, part
-(e), it is not necessary to explicitly impose “unramiﬁed at p rimes in S.”
-60 AKSHA Y VENKA TESH
-and soH 1pZr 1
-S s, Ad˚ρp1qq is torsion-free.
-8.9. Lemma. BothH 1
-f pZr 1
-S s, Ad˚ρp1qq and V are free Zp-modules of rank δ.
-Proof. First of all, because the Taylor–Wiles method in this case im plies an R “T theo-
-rem (see (116)) and we are assuming that the Hecke algebra is i somorphic to Zp (see (75))
-we get from a tangent space computation that H 1
-f pZr 1
-S s, Adρq “ 0. We now apply Tate
-global duality to this statement. It implies both the surjec tivity of
-(127) H 1pZr 1
-S s, Ad˚ρp1qq։ H 1pQp, Ad˚ρp1qq
-H 1
-f pQp, Ad˚ρp1qq,
-and the injectivity of
-(128) H 2pZr 1
-S s, Ad˚ρp1qq ãÑ
-ź
-vPS
-H 2pQv, Ad˚ρp1qq
-loooooooooooomoooooooooooon
-“0 by §6.2
-so in fact H 2pZr 1
-S s, Ad˚ρp1qq “ 0.
-The surjectivity (127) holds also for Ad˚ρp1q, not just the mod p reduction. This fol-
-lows because H 1pZr 1
-S s, Ad˚ρp1qq surjects onto H 1pZr 1
-S s, Ad˚ρp1qq, by (128); and the
-induced map
-H 1pQp, Ad˚ρp1qq
-H 1
-f pQp, Ad˚ρp1qq {p Ñ H 1pQp, Ad˚ρp1qq
-H 1
-f pQp, Ad˚ρp1qq
+\begin{equation} \label{ontoness} \varprojlim \gHecke_n^* \rightarrow \gHecke_{\infty,m}\end{equation}
+is onto, since we're dealing with an inverse system of finite sets. 
+
+
+Let $\dHecke_{v, \Z/\ell^n}$ be the local derived Hecke algebra at $v$ with $\Z/\ell^n$-coefficients.
+We show later (\S \ref{surj}) that, if $\ell^n$ divides $q_v -1$, then the natural map
+$\dHecke_{v, \Z/\ell^n} \rightarrow \dHecke_{v, \Z/\ell^m}$ is surjective.  
+ It follows that if $q_v-1$ is divisible by $\ell^{N_m}$, then  the image of 
+  $ \gHecke_{N_m}^*$ acting on $H^*(Y(K), \Z/\ell^m)$
+contains the image of $\dHecke_{v, \Z/\ell^{m}}$.  
+Therefore, the image of
+  $\gHecke_{\infty,m}$ acting on $H^*(Y(K), \Z/\ell^m)$
+contains the image of $\dHecke_{v, \Z/\ell^{m}}$.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+In practice, we will establish ``bigness'' results of the following type: 
+ \begin{quote}
+(*) \label{quotestar} For all $ m \leq n $, there exists sets of primes $Q_n = \{q_1, \dots, q_r\}$
+such that $\ell^n$ divides $q_i-1$ and 
+the image of $\otimes_i \dHecke_{q_i, \Z/\ell^m}$ acting on $H^*(Y(K), \Z/\ell^m)$
+is ``large:'' $H^*(Y(K), \Z/\ell^m)$ is generated over $\otimes_i \dHecke_{q_i, \Z/\ell^m}$    by elements  of some fixed degree $D$. \end{quote} 
+  When we prove such results, it will not be for the full cohomology of $Y(K)$ but rather for its localization at some ideal of the Hecke algebra,
+  but we suppress that for the current discussion. 
+  
+  
+  Let us prove that, under this assumption (*), $H^*(Y(K), \Z_{\ell})$ is generated over $\gHecke$ by elements  of degree $D$.  
+    The assumption implies (by the previous discussion, with $n=N_m$) that $H^*(Y(K), \Z/\ell^m)$ is generated over
+ $\gHecke_{\infty,m}$ by elements of degree $D$; by \eqref{ontoness}, it is also generated over $\varprojlim \gHecke_n^*$   by elements of degree $D$.
+ That is to say,
+ $$  (\varprojlim \gHecke_n^*) \otimes H^{D}(Y(K), \Z/\ell^m)$$
+ surjects onto $H^*(Y(K), \Z/\ell^m)$ for every $m$.  
+ By a compactness argument
+ \begin{comment}\footnote{COMMENTOUT: Given a compatible sequence $y_m \in H^*(Y(K), \Z/\ell^m)$, it
+ follows that there exists $T_{m}^{(i)}  \in  \varprojlim \gHecke_n^*$ and $x_m^{(i)} \in H^*(Y(K), \Z/\ell^m)$
+ such that $\sum_{i=1}^{I} T_m^{(i)} \cdot x_m^{(i)} = y_m$;
+ note that $I$ can be taken to be the number of generators for $H^*(Y(K), \Z/\ell^m)$ and is so bounded independent of $m$. 
+ Now, by compactness, we can find a subsequence $m_j$
+ such that the image  $\overline{T_{m_j}^{(i)}}$ of $T_{m_j}^{(i)}$ in $\gHecke_j^*$ are compatible
+ as we increase $j$, and the images $\overline{x_{m_j}^{(i)} }$ of $x_{m_j}^{(i)}$ in $H^*(Y(K), \Z/\ell^j)$
+ are compatible as we increase $j$. Thus we have 
+  $\sum_{i=1}^{I} \overline{T_{m_j}^{(i)}}  \cdot  \overline{x_{m_j}^{(i)} }= y_j$,
+  which shows the desired result.} 
+  \end{comment}  
+  the same assertion holds with $\Z_{\ell}$-coefficients.  
+ 
+
+ 
+ 
+ 
+ 
+  
+ More generally, the same type of argument allows us to show that various types of ``largeness''
+  can be passed from $\Z/\ell^m$ coefficients to $\Z_{\ell}$.   
+    {\color{\changecolor} 
+
+  
+\subsection{Restricting places and the strict global derived Hecke algebra.} \label{Hecke:resplace} 
+   We can restrict the primes and the powers of $\ell$ used in the above construction.
+It is convenient to index these restrictions by a function
+  $$V: \mbox{primes} \longrightarrow \{0, 1, 2, \dots, \} \cup \{\infty\}$$
+  where primes $v$ with $V(v) = 0$ will be not used at all in the definition.
+  
+   In the above construction, replace $\widetilde{\mathbb{T}}_n$
+   by the algebra generated by $\dHecke_{v, \Z/\ell^n}$ where $n \leq V(v)$. 
+   Proceeding as above, then,  we obtain a  restricted global Hecke algebra $\gHecke^{(V)}$
+   acting on cohomology with $\Z_{\ell}$ coefficients. Informally, 
+  each prime $v$ can be used at most at torsion level $\Z/\ell^{V(v)}$. 
+   
+   For example, taking
+\begin{equation} \label{VV0} V_0(v) = \begin{cases} 0, v \mbox{ not good}; \\ 
+   \mbox{largest power of $\ell$ dividing $q_v-1$}, \mbox{else}     \end{cases},\end{equation}
+      the resulting algebra $\gHecke^{(V_0)}$ has the advantage that
+   it will be graded commutative by the results of       \S \ref{Satake},
+   at least if $\ell$ doesn't divide the order of the Weyl group. \index{$\gHecke^{(V)}$} \index{$\gHecke^{(V_0)}$}
+   
+
+
+    It will be sometimes convenient to enlarge this by the usual Hecke algebra, i.e. defining the ``strict'' global derived Hecke algebra\index{strict global Hecke}
+   $$ \gHecke' :=  \mbox{algebra generated by $\gHecke^{(V_0)}$ and all  underived Hecke operators at good places prime to $\ell$.}$$
+  
+    However, by default, when we write $\gHecke$, we mean the ``full'' version using $V=\infty$ for all good primes not above $\ell$,
+   and $V=0$ at all other primes. 
+   Thus we have inclusions of algebras, each inside endomorphisms of cohomology:   
+   $$\mbox{usual (underived) Hecke algebra $\mathbb{T}$} \subset  \gHecke' \subset \gHecke.$$ 
+   
+
+  The advantage of $\gHecke'$ is that it is clearly graded commutative. 
+
+  Thus, for example, if $\mathfrak{m}$ is a maximal ideal of $\mathbb{T}$, 
+  the strict global derived Hecke algebra
+  $\gHecke'$ induces an algebra of endomorphisms of the $\mathfrak{m}$-completion
+  $H^*(Y(K),\Z_{\ell})_{\mathfrak{m}}$:
+  $$     H^*(Y(K),\Z_{\ell})_{\mathfrak{m}} \otimes \gHecke' \longrightarrow H^*(Y(K),\Z_{\ell})_{\mathfrak{m}}.$$
+  While {\em a priori} we do not know
+  that the full $\gHecke$ preserves $H^*(Y(K), \Z_{\ell})_{\mathfrak{m}}$, this 
+  is true under a mild additional assumption: For each good place $w$ not equal to $\ell$, 
+  let $\mathbb{T}^{(w)}$ be the prime-to-$w$ usual Hecke algebra,
+  and $\mathfrak{m}^{(w)}$ the induced maximal ideal. 
+  Suppose that the natural map
+\begin{equation} \label{removing w} H^*(Y(K), \Z_{\ell})_{\mathfrak{m}^{(w)}} \rightarrow H^*(Y(K), \Z_{\ell})_{\mathfrak{m}} \end{equation}
+  is an isomorphism. This is true, for example, if there exists Galois representations associated to cohomology classes
+  (by the argument of \cite[Lemma 6.20]{KT}).    
+In this case, the local derived Hecke algebra at $w$ clearly  preserves the left-hand side, 
+and so also preserves the right-hand  side.  Since this is true for all good $w$ not dividing $\ell$, the full $\gHecke$
+also preserves the $\mathfrak{m}$-completion of cohomology. 
+  
+
+  
+  
+  
+  
+  
+ 
+ 
+   
+   }
+  
+  \begin{comment}
+ {\color{\changecolor}  
+\begin{remark} (Graded commutativity of the global Hecke algebra):
+
+In both the situations studied in this paper (XXXXXXX), 
+the global derived Hecke algebra is graded commutative.   
+The argument in both cases is based on the following
+slightly indirect idea:  the global derived Hecke algebra $\widetilde{\mathbb{T}}$
+ is generated by local derived Hecke algebras that are known to be   commutative,
+ and is therefore itself   commutative.\footnote{Underlying this the idea is that
+ Hecke operators at different primes obviously commute; this is such a strong constraint
+ that it forces all Hecke operators to commute. A more powerful manifestation of this idea
+ is the proof of the commutativity constraint in geometric Langlands via fusion, see \cite{MV}.} 
+ 
+We explain it now
+in the abstract situation just set up, where we make the  following additional assumptions:
+  \begin{itemize}
+  \item[-] Each $\dHecke_{q_i, \Z/\ell^n}$ occurring in the statement of (*) is known to be graded commutative.
+  (In the situations we apply it this follows from YYY.)
+  \item[-] $H^D(Y(K), \Z/\ell^m)$ is cyclic, generated by a single element $h_0$ say. 
+  (In the situations we apply it this will be true by assumption, ZZZ). 
+  \end{itemize}
+ In this situation, $\gHecke$ is graded commutative, as we now argue.
+  In what follows, we drop the word ``graded'' and speak just of ``commutative'' rings.
+
+ 
+
+ 
+
+SWITCH $M$ TO $N$. 
+It is sufficient to show that  $\gHecke_n$ is commutative for each $n$. 
+ Let $\gHecke_n'$ be the subring of $\gHecke_n$ generated by 
+ the $\dHecke_{q_i, \Z/\ell^n}$, where $q_i$ are as in the statement of (*). 
+It is straightforward to verify that local derived Hecke algebras for different primes commute in the graded sense. 
+Therefore, $\gHecke_n'$ is graded commutative.
+
+Let $v$ be an arbitrary prime.   Let $t \in \gHecke_n$
+belong to the image of $\dHecke_{v, \Z/\ell^n}$ and
+be pure of some degree. It is sufficient to show that $t \in \gHecke'_n$; this will imply that
+$\gHecke_n = \gHecke_n'$.  
+
+Note that $t$ in fact commutes with $\gHecke'_n$.
+This is clear if the place $v$ from which $t$ arises is 
+not equal to any of the $q_i$s involved in the definition of $\gHecke'_n$; and if $v=q_i$ 
+for some $i$ it  follows from the assumed commutativity of the local Hecke algebra at $q_i$.
+  
+ 
+  
+ We have
+ $$t \cdot h_0 =  t' \cdot h_0$$
+ because of the assumption in (*), i.e., that $H^*$ is generated by $H^D$
+ as a $\gHecke_n'$-module. Therefore $(t-t') h_0 = 0$;
+ for any  $s' \in \gHecke'_n$, again pure of a single degree, we have
+ $$ (t-t') s' h_0 = \pm  s' (t-t')h_0 = 0.$$
+ For the middle equality  we used the fact that $s'$  commutes with $t'$ up to sign
+ (since $\gHecke_n'$ is commutative) and that it  commutes with $t$ up to the same sign
+ (because $t$ commutes with $\gHecke'_n$). 
+ 
+ Therefore, $t-t'$ annihilates every element of the form $s' h_0$, i.e. annihilates all of $H^*$,
+ so that $t=t'$.   This shows $\gHecke_n=\gHecke'_n$ and therefore the desired commutativity. 
+\end{remark}
+
+
+}
+\end{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+\section{Torus localization and Satake isomorphism} \label{Satake} 
+  
+   Our main goal here is to prove a version of the Satake isomorphism that applies to the derived Hecke algebra. Namely, 
+take $m =\ell^r$  a prime power.   Suppose $q \equiv 1$ modulo $\ell^r$. We show  
+   (see \eqref{dSatake} for the precise statement) 
+\begin{eqnarray*} \mbox{derived Hecke algebra for  split $q$-adic group with $\Z/\ell^r$-coefficients} \\  \cong  \left(\mbox{derived Hecke algebra for maximal torus with $\Z/\ell^r$ coefficients}\right)^{W} \end{eqnarray*}
+where the $W$ superscript means Weyl-fixed, and we also require that $\ell$ does not divide the order of $W$. 
+
+For example,   if $q \equiv 1$ modulo $\ell$, the derived Hecke algebra of $\PGL_2(\Q_q)$ with coefficients in $\Z/\ell$  is isomorphic to 
+   $$ \Z/\ell[x_0, x_0^{-1},  y_1, z_2]^{\Z/2}$$
+  where $x_0, y_1, z_2$ have (respectively) degree $0,1,2$, and the action of $\Z/2$ switches $x_0^{\pm 1}$ and negates $y_1, z_2$. 
+    
+ A consequence of our results is that (under our assumptions on $q, m$)  the derived Hecke algebra is graded commutative. We do not know
+ if this is valid without any assumption on $q$ and  the coefficient ring $S$.  Recall, however, that $q \equiv 1$  in $S$ is precisely the case where the Hecke algebra is largest, by 
+ the discussion of \S \ref{doublecoset}, and understanding this case will be enough for our global analysis. 
+ 
+ 
+  
+\subsection{}
+  
+  
+ 
+  It is a curious fact that, in characteristic dividing $q_v-1$, 
+  the Iwahori-Hecke algebra of a split $F_v$-group is isomorphic to the group algebra of  its affine  Weyl group.   
+  A related interesting phenomenon is that, under the same assumptions,
+  the Satake isomorphism
+  $$ \mbox{ Hecke algebra} \longrightarrow \mbox{Hecke algebra of torus}$$
+  is given simply by {\em restriction} (!) 
+  
+These points  can be explained by
+  ``torus localization,'' as we now explain.  Using that method we will derive our 
+ Satake isomorphism  below.  Of  course this is a little bit cheap,
+ but it turns out to be exactly what we need anyway.
+  
+ 
+ 
+ 
+    
+
+  
+  
+  
+  I am very grateful to David Treumann for conversations about this material.  In particular,
+I learned about localization in the context of local geometric Langlands   from his paper {\em Smith theory and geometric Hecke algebras} \cite{Treumann}.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+  
+\subsection{} \label{BasicNotn}
+  In this section and the next, $\mathbf{G}$ will be a {\em split group over
+  the nonarchimedean local field $F_v$}.
+  The coefficient ring for all our Hecke algebras will be taken to be 
+  $S= \Z/\ell^r$,  for a prime $\ell$ and $r \geq 1$. 
+We shall  suppose that $\ell^r$ divides $(q_v - 1)$, where $q_v$ is the cardinality
+  of the residue field $\mathbf{F}_v$.      We also assume that $\ell$ is relatively prime to the order of the Weyl group of $\GG$. 
+  
+
+
+
+  We fix other notations as follows: Let $\mathcal{G}$ be a split group over $\mathcal{O}_v$ \index{$\mathcal{G}$} \index{$\mathcal{A}$} \index{$\mathcal{B}$}
+  whose generic fiber is identified with $\mathbf{G}$. Let $K_v = \mathcal{G}(\mathcal{O}_v)$,
+  a maximal compact subgroup of $G_v = \mathbf{G}(F_v)$. 
+  Let $\mathbf{A}$ be a maximal torus in $\mathbf{G}$, and $\mathbf{B}$ a Borel subgroup of $\mathbf{G}$ containing $\mathbf{A}$; we suppose them to\index{$G_v$} \index{$A_v$} \index{$B_v$} 
+ extend to a torus $\mathcal{A}$ and Borel $\mathcal{B}$  inside $\mathcal{G}$.  We write $A_v, B_v$ for the $F_v$-points
+  of $\mathbf{A},\mathbf{B}$.    We shall use the notation $\mathbf{A}(F_v)^{\circ}$ for the   maximal compact subgroup of $\mathbf{A}(F_v)$,
+  and similar notation whenever the maximal compact subgroup is unique.  \index{$\mathbf{A}(F_v)^{\circ}$}
+  
+  Let $W$ be the Weyl group for $\mathbf{A}$.  
+We write $X_*= X_*(\mathbf{A})$ for the co-character group of $\mathbf{A}$. \index{$X_*$} 
+  We identify $X_*$ with $A_v/A_v\cap K_v \subset G_v/K_v$  by means of the map
+\begin{equation} \label{IWidentification} \chi \in X_* = \Hom(\mathbb{G}_m, \mathbf{A}) \longrightarrow \chi(\varpi_v),\end{equation}
+  with $\varpi_v$ a uniformizer. 
+ 
+ We write for short
+ $ T =\mathcal{A}(\mathbf{F}_v).$
+  The reduction map $A_v \cap K_v \rightarrow  T$ splits uniquely, and so we obtain
+  a ``Teichm{\"u}ller'' lift
+\begin{equation} \label{teich}  T \hookrightarrow A_v \cap K_v. \end{equation}
+This induces a cohomology isomorphism, with $\Z/\ell^r$ coefficients.     \index{$T$}
+   
+   We have a Cartan decomposition
+$$G_v = K_v \cdot A_v \cdot K_v  $$
+The $A_v$ component of this decomposition is 
+  unique up to the action of the Weyl group $W$.
+  
+  \begin{theorem} \label{DHA:Satake}  
+Let notations be as above; in particular the coefficient ring is always $S=\Z/\ell^r$, where $\ell^r$ divides $q_v-1$,
+and $\ell$ does not divide the order of the Weyl group. 
+
+
+
+Then restriction (in the model of \S  \ref{desc2}) defines an isomorphism
+   \begin{equation} \label{dSatake} \mbox{ derived Hecke algebra for $(G_v, K_v)$} 
+\stackrel{\sim}{\longrightarrow} \mbox{ derived Hecke algebra for $(A_v, A_v \cap K_v)$ }^W.
+  \end{equation}
+
+  \end{theorem}
+  
+  Let us explicate what we mean by ``restriction.''
+As per \S \ref{desc2}, an  element $h$ of the left-hand side  is an association:
+$$ (x,y) \in (G_v/K_v)^2 \rightsquigarrow h(x,y) \in H^*(G_{xy}, S),$$
+and  its image  $h'$ on the right-hand side is obtained
+  by restricting to $A_v/(A_v \cap K_v) \hookrightarrow G_v/K_v$
+  and pulling back cohomology classes under the inclusion $A_{xy} \hookrightarrow G_{xy}$. 
+  The element $h'$ is clearly $A_v$-invariant, and it is also $W$-invariant:
+  $$  [w]^* h'(wx, wy) =   h(x,y)$$
+because of the $G$-invariance of $h$. 
+ 
+Because $A_{xy} = A_v \cap K_v$ for each $x,y$, and the  the (Teichm{\"u}ller) inclusion \eqref{teich}
+$T \hookrightarrow A_v \cap K_v$ induces a cohomology isomorphism,
+we can regard $h'$  as a function $X_* \times X_* \longrightarrow H^*(T,S)$.
+We will often regard $h'$ as such without explicit comment.  
+The multiplication in this model is usual convolution in the $X_*$ variable, together with multiplication in $H^*(T, S)$. 
+ We may therefore identify the right-hand side of \eqref{dSatake} with   \begin{equation}  \label{alterpres} \left( S[X_*] \otimes H^*(T, S) \right)^W,\end{equation}
+  just as in \eqref{TTspin}, i.e. restrict to $X_* \times \{0\}$ and identify functions on $X_*$ with the group algebra in the obvious way.
+  
+    
+\subsection{} \label{surj}
+  
+  A useful corollary to this result is the following (although even easier, as it does not use the algebra structure):
+  The induced map
+$$\mbox{derived Hecke algebra  over $\Z/\ell^n$} \rightarrow \mbox{ derived Hecke algebra  over  $\Z/\ell^m$ }$$
+  is a {\em surjection} for $n > m$, under our assumption that $\ell^n$ divides $q_v-1$. 
+  (We used this in the discussion  of \S \ref{limit}). 
+  
+  In fact, we're reduced to checking the same fact when $C$ is a cyclic group of order divisible by $\ell^n$, i.e.
+  $$H^*(C, \Z/\ell^n) \rightarrow H^*(C, \Z/\ell^m)$$
+  is surjective.  This follows from a straightforward computation.
+  
+  
+  
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Some useful Lemmas}
+ 
+\begin{lemma} \label{nontriv}
+Any nontrivial root  $\alpha$ of $\mathbf{A}$ on $\mathbf{G}$ is nontrivial
+on the $\ell$-Sylow of $A_v \cap K_v$. In particular, $\alpha$ induces a nontrivial
+character  $\mathcal{A}(\mathbf{F}_v) \rightarrow \mathbf{F}_v^{\times}$. 
+\end{lemma}
+\proof
+This is just a matter of checking the residue characteristic is forced to be big enough:
+if the claim is not true,  the root $\alpha$ would be divisible 
+ by $\ell^r$ in $X^*(\mathbf{A})$;  but roots are divisible at most by $2$ because $\langle \alpha, \alpha^{\vee} \rangle =2$, 
+ and $\ell > 2$ because it's prime to the order of the Weyl group.
+ \qed
+
+ \begin{lemma}\label{finitefields} 
+Use notation as above; in particular $\mathbf{F}_v$ is a finite field of cardinality $q_v \equiv 1$ modulo $\ell^r$,
+and the order of the Weyl group is not divisible by $\ell$. 
+
+Then the restriction map from the cohomology $H^*(\mathcal{G}(\mathbf{F}_v), \Z/\ell^r)$    to Weyl-fixed cohomology of the torus $H^*(\mathcal{A}(\mathbf{F}_v), \Z/\ell^r)^W$
 is an isomorphism.
-The Euler characteristic formula, taken together with (126 ), (127) and (128), allows one
-to compute
-(129) dimH 1
-f pZr 1
-S s, Ad˚ρ p1qq “ δ.
-Now examine the short exact sequences
-(130) H 1pZr 1
-S s, Ad˚ρp1qq
-p /d47/d47
-j
-/d15/d15
-H 1pZr 1
-S s, Ad˚ρp1qq
-/d15/d15
-/d47/d47H 1pZr 1
-S s, Ad˚ρp1qq
-/d15/d15
-H1pQp,Ad˚ ρp1qq
-H1
-f pQp,Ad˚ ρp1qq
-p /d47/d47 H1pQp,Ad˚ ρp1qq
-H1
-f pQp,Ad˚ ρp1qq
-/d47/d47 H1pQp,Ad˚ ρp1qq
-H1pQp,Ad˚ ρp1qq
-Since we have seen that j is onto, it follows that the induced maps of vertical kernels is a
-short exact sequence; that and (129) imply that
-H 1
-f pZr 1
-S s, Ad˚ρp1qq » Zδ
-p,
-as claimed. □
-8.10. Cohomological vanishing in the T aylor–Wiles method. In the Taylor–Wiles method
-we choose a set of primesQ such that, withSQ “SYQ, we have the following properties:
-(a) Q is a Taylor–Wiles datum of some level, and
-(b) The map H 1pZr 1
-SQ s, Adρq Ñ H1pQp,Adρq
-H1
-f pQp,Adρq is surjective, and the mapH 2pZr 1
-SQ s, Adρq Ñ
-ś
-vPQH 2pQp, Adρq is injective.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 6 1
-(Recall that our local assumptions at S mean there is no local cohomology there: §6.2,
-assumption (e)).
-Observe also that if Q is such a set of primes, and Q1 is a further set satisfying (a) and
-(b), then certainly Q YQ1 satisﬁes (a) and (b) too. Indeed, the cohomological criteri a of
-(b) are equivalent to asking that
-(131) H 1
-f pZr 1
-SQ s, Ad˚ρ p1qq Ñ
-ź
-vPQ
-H 1pQv, Ad˚ρp1qq
-is injective, and this is stable under enlarging Q (it is equivalent to the same injectivity on
-H 1
-f pZr 1
-S s, ´q, since anything in the kernel would be unramiﬁed at Q).
-Now, if we choose a system of such data Qn of leveln, we can (by passing to a subse-
-quence and reindexing, e.g. as in [14, §13.10]) achieve a new sequenceQn which satisfy
-the “limit properties” of §7.3.
-8.11. Deﬁnition. A sequence of T aylor–Wiles data Qn of leveln is called convergent if:
-- Qn have the cohomological properties stated in (b) above and,
-- One can pass to the limit in the sense of §7.3, i.e. there exist s data R, S, C,fn,gn
-etc. satisfying all the properties enumerated in §7.3.
-In particular, any sequence of Taylor–Wiles data has a conve rgent subsequence, after
-reindexing the subsequence.
-8.12. The tangent spaces to R andS. As in §7.4 both R and S are augmented to Zp:
-S Ñ R Ñ Zp,
-and the composite S Ñ Zp is the standard augmentation of S. The kernel of these aug-
-mentations are denoted by J Ă R and I Ă S.
-First of all, we set let tR be the “tangent space” to R over Zp, that is to say
-tR » Hom˚pR, Zprεs{ε2q,
-where the subscript ˚ means that the homomorphism lifts the natural augmentation R Ñ
-Zp. Equivalently, R is the derivations of R{Zp into Zp, or the Zp-linear dual of J{J2.
-We can make exactly the same deﬁnition for S. The surjection S։ R induces a surjec-
-tion I{I2։ J{J2 and thus a natural injection tR Ñ tS with saturated image (i.e. split). We
-write W for the cokernel of the map on tangent spaces, so we have an exa ct sequence
-(132) tR ãÑ tS։ W.
-Then W is a free Zp-module of rank δ.
-8.13. T angent spaces toRn andSn. We suppose now thatQn are a convergent sequence
-(§8.10) of Taylor–Wiles data.
-Recall that S, R are deﬁned as “limits,” roughly speaking, of rings Sn Ñ Rn that occur
-at levelQn in the Taylor–Wiles process. We recall that Rn is not the full (crystalline at p)
-deformation ringRQn at levelQn, but is a “very deep” Artinian quotient of it.
-These rings are also compatibly augmented over Z{pn, i.e.
-Sn Ý ÑRn Ý ÑZ{pn
-(see the bottom row of (113), and compose with the reduction o f the map Rρ Ñ Zp which
-arises from our ﬁxed automorphic representation Π ).
-8.14. Lemma. The mapRQn Ñ Rn induces an isomorphism upon applying Hom˚p´, Z{pnrεs{ε2q,
-where Hom˚ means that the map lifts the natural augmentations to Z{pn.
-62 AKSHA Y VENKA TESH
-Proof. WriteA :“ Z{pnrεs{ε2. A map RQn ÑA gives rise to a deformation rρn :GQ Ñ
-G_pZ{pnq that lifts the modulo pn reduction ofρ.
-We want to show that RQn ÑA must factor through Rn. To do so we must show (see
-(112)) that the map dies on the Kpnqth power of the maximal ideal mRQn , and also that
-ρn automatically has inertial level ďn at primes in Qn (see page 50 for deﬁnition).
-Note that the maximal ideal pp,ε q of Z{pnrεs{ε2 satisﬁes pp,ε qn`1 “ 0. SinceKpnq ě
-n ` 1 by assumption, we only need verify that rρn has inertial level ďn at all Taylor–Wiles
-primes. After suitably conjugating, we can suppose rρn|Qq to have image in T _ (see
-Lemma 6.12). Restricted to inertia it takes image inside the kernel ofT _pZ{pnrεs{ε2q Ñ
-T _pZ{pnq; this group has exponent pn, and so rρn has inertial conductor ďn. □
-We also deﬁne
-tRn “ Hom˚pRQn, Z{pnrεs{ε2q.
-It doesn’t matter whether we useRQn or Rn in this deﬁnition, as we just showed. Similarly
-we deﬁne
-tSn “ Hom˚pSn, Z{pnrεs{ε2q.
-There is a natural map tRn Ñ tSn induced bySn Ñ Rn.
-Finally deﬁne
-(133) Wn “ cokernel ptRn Ñ tSnq.
-The maps R Ñ Rn and S Ñ Sn give rise to an isomorphism of short exact sequences
-as below:
-(134) 0 /d47/d47 tRn
-/d47/d47
-α,„
-/d15/d15
-tSn
-β,„
-/d15/d15
-/d47/d47Wn
-γ,„
-/d15/d15
-/d47/d47 0
-0 /d47/d47 tR{pn /d47/d47 tS{pn /d47/d47 W{pn /d47/d47 0
-This requires some explanation.
-First of all, we explain the maps. Note ﬁrst of all that there i s a natural map tS{pn »
-Hom˚pS, Z{pnrεs{ε2q, which is an isomorphism. Similarly for R. This means that there
-are maps
-(135) α : tSn Ñ tS{pn,β : tRn Ñ tR{pn
-that are induced by the projections S ÑSn and R Ñ Rn. This explains α,β ; and the map
-γ is the induced map on cokernels.
-Next we see that α,β,γ are isomorphisms.
-ForS this is the assertion that homomorphism S Ñ Z{pnrεs{ε2 factors through Sn.
-Indeed, referring to the coordinate presentation (84) and ( 85), each element xi must go
-to aε for some a P Z{pn, and then p1 `xiqpn
-is carried to p1 `aεqpn
-“ 1. For R,
-we use the fact (114) that we can identify Rn with R bS Sn. As above, any homomor-
-phism S Ñ Z{pnrεs{ε2 (lifting the augmentation) factors through Sn, and in particular
-any homomorphism R Ñ Z{pn, lifting the natural one, factors through Rn.
-Now, the bottom row is exact, by deﬁnition and the freeness of W. The top row is
-exact at the left because the vertical maps α,β are isomorphisms, and exact at the right by
-deﬁnition. Then it follows that γ is an isomorphism too.
-This concludes the explanation of diagram (134).
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 6 3
-8.15. T angent spaces toSn reinterpreted. Let us reinterpret the tangent space to Sn in
-a few different (canonical) ways.
-By (88) we have an isomorphism
-(136) tSn » Ext1
-Sn pZ{pn, Z{pnq
-NowSn was, by deﬁnition (§6.4) , the Z{pn- group algebra of the group Tn; thus, from
-the above equation, we get a canonical isomorphism
-(137) tSn »H 1pTn, Z{pnq.
-Next we connect tSn to Galois cohomology. Recall from Lemma 6.12 that, for any
-q PQn, a deformation ofρ|Gq can be conjugated to lie in the torus, and in particular factors
-through the proﬁnite completion of Qˆ
-q . Now we can identify H 1pGq, Adρnq with the
-set of lifts of ρn toG_pZ{pnrεs{ε2q, modulo conjugacy. This lift sends tame inertia to the
-kernel of reduction modulo ε. In particular, having ﬁxed an element of T _pkq conjugate
-toρpFrobqq, we get a canonical isomorphism
-(138) H 1pQq, Adρnq
-H 1urpQq, Adρnq » Hom
-`
-Fˆ
-q, LiepT _q b Z{pn˘
-Identifying the the Lie algebra with X˚pT _q, we get
-(139)
-H 1pQq, Adρnq
-H 1urpQq, Adρnq » HompFˆ
-q {pn, Z{pnq bX˚pT _q » HompX˚pAq b Fˆ
-q {pn
-looooooooomooooooooon
-ApFq q{pn
-, Z{pnq
-(here the subscript “ur” means unramiﬁed) and thus, from (81 ) and (137)
-(140) tSn »
-à
-qPQn
-H 1pQq, Adρnq
-H 1urpQq, Adρnq
-where we emphasize that the isomorphism depends on the choic e of an element of T _pkq
-conjugate to Frobenius at q, for each q PQn.
-There is an isomorphism similar to (136) for tS; in particular, tS » Ext1
-SpZp, Zpq and
-more usefully
-tS{pn » Ext1
-SpZp, Z{pnq
+\end{lemma}
+
+\proof   Write for short  (and just for this proof) $G, A,B$ for the $\mathbf{F}_v$-points of $\mathcal{G}, \mathcal{A}, \mathcal{B}$.
+
+ Consider the composite of restrictions 
+\begin{equation} \label{sequence} H^*(G,  \Z/\ell^r)  \rightarrow H^*(B, \Z/\ell^r) \stackrel{\sim}{ \rightarrow} H^*(A, \Z/\ell^r).\end{equation}
+The second map is an isomorphism and its inverse is specified by corestriction. 
+Therefore we can transport the $W$-action on $H^*(A)$  to a $W$-action on $H^*(B, \Z/\ell^r)$; explicitly the action of $w$ is
+\begin{equation} \label{w} \mathrm{Cores}^B_A \circ  [w]_A \circ \mathrm{Res}^{B}_A .\end{equation} 
+where $[w]_A$ is pullback of cohomology classes under $\Ad(w^{-1}): A \rightarrow A$. 
+
+We will now show that $\mathrm{Res}^G_B \circ \mathrm{Cores}^{G}_B = \sum_{w \in W} w$,
+where the $w$-action on $H^*(B)$ is that just defined. 
+Since $\mathrm{Cores}^{G}_B \mathrm{Res}^G_B = |W|$, which is invertible in $\Z/\ell^r$,
+we see that $\mathrm{Res}^G_B$ is injective and $\mathrm{Cores}^G_B$ is surjective; so 
+  $\mathrm{Res}^G_B$ is an isomorphism onto the $W$-invariants on $H^*(B, \Z/\ell^r)$,
+  which implies the Lemma.  
+   
+  
+  
+By the  usual formula \cite[Proposition 9.5]{Brown}, using the Weyl group $W$ as a system of representatives for double cosets,
+the composite equals
+$$\sum_{w \in W}  \mathrm{Cores}_{w  B w^{-1} \cap B}^B  \cdot \Ad(w^{-1})^* \cdot \mathrm{Res}^{B}_{B \cap w^{-1} B w}  $$
+But $w^{-1} B w \cap B$ contains  $A$, and  $[w B w^{-1} \cap B: A] =1$ modulo $\ell^r$.  So we can rewrite the $w$-term as 
+$$ \mathrm{Cores}_{w  B w^{-1} \cap B}^B  \cdot \Ad(w^{-1})^* \cdot  \mathrm{Cores}_{A}^{B \cap w^{-1} B w }  \mathrm{Res}^{B}_{A} = \Cores_{A}^{B} \cdot [w]_A \cdot \Res^B_A  $$
+which is exactly the $W$-action on $H^*(B)$, by  \eqref{w}. \qed 
+
+\begin{lemma}\label{ff2}  Let $G_1, G_2$ be finite groups. Suppose that $G_1 \hookrightarrow G_1 \times G_2$ is the natural inclusion, and $M$ is a module for $G_1 \times G_2$
+ killed by  the order $\# G_2$ of $G_2$. Then the corestriction map $H^*(G_1, M) \rightarrow H^*(G_1 \times G_2, M)$
+ is zero. 
+ \end{lemma}
+ \proof Indeed, the composite $H^*(G_1 \times G_2) \stackrel{Res}{\rightarrow} H^*(G_1) \stackrel{Cores}{\rightarrow} H^*(G_1 \times G_2)$
+ is multiplication by the order  of $G_2$, and is therefore zero with $M$ coefficients; but the first $\mathrm{Res}$ is surjective
+ because $G_1 \rightarrow G_1 \times G_2$ is split. 
+\qed  
+
+
+\begin{lemma}  \label{doublecentralizer} 
+ Let $\Gamma \subset G_v$ be a finite $\ell$-subgroup.
+ Let $\mathbf{S}$ be the double centralizer of $\Gamma$,
+ considered as an algebraic $F_v$-subgroup of $\mathbf{G}$.
+ Then:
+   \begin{itemize}
+  \item[(a)] $\mathbf{S}$ 
+ has component group of prime-to-$\ell$ order, 
+ \item[(b)]   the maximal compact subgroup $\mathbf{S}(F_v)^{\circ}$ of its $F_v$-points fixes
+ every point of $G_v/K_v$ that is fixed by $\Gamma$. 
+ \end{itemize} 
+  
+  \end{lemma}
+\proof  Let $x \in G_v/K_v$ be fixed by $\Gamma$. Conjugating $\Gamma$ by $G_v$ we may suppose that $x=K_v$, the identity coset
+ in $G_v/K_v$. 
+
+ Now, the quotient of  the orders of $\mathcal{G}$ and $\mathcal{A}$
+ over the finite field $\mathbf{F}_v$ is congruent to $|W|$ modulo $\ell$, because of our assumption $\ell$ divides $q-1$. Therefore there is an $\ell$-Sylow of $K_v$ contained in $A_v \cap K_v$.
+
+
+
+
+Thus, further conjugating $\Gamma$ by $K_v$ we can further assume that 
+ that $\Gamma \subset \mathbf{A}(F_v) \cap K_v$.   The centralizer $\mathbf{Z}(\Gamma)$ of $\Gamma$ is then a subgroup containing $\mathbf{A}$.
+  The double centralizer $\mathbf{S}$ is  thus contained in $\mathbf{A}$ and, of course, it contains $\Gamma$. 
+  
+  
+  
+Because $\mathbf{S} \subset \mathbf{A}$, the maximal compact subgroup 
+ of $\mathbf{S}(F_v)$ is contained in the maximal compact $\mathbf{A}(F_v) \cap K_v$ of $\mathbf{A}$; the latter fixes $x$. This
+ proves (b). 
+  
+  To verify the assertion about the component group of $\mathbf{S}$, we first verify that $\mathbf{Z}(\Gamma)$ is connected. 
+  Note that $\mathbf{S}$ is contained in $\mathbf{Z}(\Gamma)$ by the analysis above, so it is in fact the center of $\mathbf{Z}(\Gamma)$. 
+  Then we are reduced to the following assertion: 
+ for any reductive group $\mathbf{Z}$, the component group of the center of $\mathbf{Z}$
+  is only divisible by primes dividing the order of the Weyl group. Replacing $\mathbf{Z}$ by  
+  its quotient by the connected center, we can check the same assertion for $\mathbf{Z}$ semisimple;
+  so it is enough to check for $\mathbf{Z}$ simply connected semisimple. There it is obvious case by case. 
+   
+  To see that $\mathbf{Z}=\mathbf{Z}(\Gamma)  $ is connected, we can reason as follows:  $\mathbf{A}$ is a maximal split
+  torus  within  $\mathbf{Z}$, so any element of $\mathbf{Z}/\mathbf{Z}^0$ has a representative in $\mathbf{Z}$  that belongs to the normalizer of $\mathbf{A}$.
+  Here $\mathbf{Z}^0$ denotes the connected component.
+  So it is enough to show that any  $\overline{F_v}$-point $n$ in the normalizer of $\mathbf{A}$ that belongs to $\ZZ$ actually belongs to $\ZZ^0$.
+  Let $w \in \Aut(\mathbf{A})$ be the  element of the Weyl group of $\mathbf{A}$ corresponding to such an $n$. 
+  Fix $\gamma \in \Gamma$. Since $n$ centralizes $\Gamma$, we see that 
+  $w$ fixes $\gamma$. 
+Write $N$ for the $\ell$-part of $q-1$. So $\gamma \in \mathbf{A}[N] \simeq X_* \otimes \mu_{N}$;
+  fixing a primitive $N$th root, we can identify $\mathbf{A}[N]$ with $X_*/N$. 
+  Since the order of $w$ is relatively prime to $\ell$, we see -- by taking invariants in $X_* \rightarrow X_* \rightarrow X_*/N$ --
+  that $\gamma$ actually lies in the image of some $w$-fixed character $\mathbb{G}_m \rightarrow \TT$.   
+ 
+  Applying this reasoning for each $\gamma \in \Gamma$,
+  we see that $w$ actually  centralizes a subtorus of $\TT$ containing $\Gamma$. But the centralizer of that torus
+  is a connected group, thus contained in $\mathbf{Z}^0$.  We conclude that $\mathbf{Z}$ is connected, as we claimed. 
+  \qed 
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+  
+ \begin{lemma} \label{splitness}  Suppose $z \in G_v/K_v$ does not belong to the image of $X_*$
+ (where the map  $X_* {\hookrightarrow}  G_v/K_v$ was  defined in
+\eqref{IWidentification}). 
+ 
+ Let $\Gamma$ be an $\ell$-Sylow of $A_v \cap K_v$; 
+ thus $\Gamma$ is an $\ell$-Sylow subgroup of $G_{xy}$.
+ Let $\Gamma_z$ be the stabilizer of $z$ in $\Gamma$.  
+ 
+ Then the corestriction map  $H^*(\Gamma_z) \rightarrow H^*(\Gamma)$ is zero with $\Z/\ell^r$ coefficients.
+
+
+\end{lemma}
+
+
+
+ 
+ 
+ \proof  
+ 
+
+
+
+
+ 
+ Note that the centralizer  and so also the double centralizer of $\Gamma$ is simply $\mathbf{A}$. (Any root of $\mathbf{A}$ is nontrivial on the $\ell$-Sylow of $A_v \cap K_v$,  by Lemma \ref{nontriv}, so the connected centralizer is $\mathbf{A}$; 
+the centralizer cannot be larger than $\mathbf{A}$ because any element of the Weyl group acts nontrivially on $\Gamma \simeq X_*(\mathbf{A})/\ell^r$). 
+ 
+
+ 
+ 
+Let $\mathbf{S}$ be the double centralizer of   $\Gamma_z$. 
+  Since $\Gamma_z \subset \Gamma$
+we also have $\mathbf{S} \subset \mathbf{A}$. 
+
+ Let $\mathbf{S}^0$ be the identity component of $\mathbf{S}$; it is a split torus.  Because ((a) of \S \ref{doublecentralizer}) the component group of $\mathbf{S}$ is prime-to-$\ell$, we see that 
+$\Gamma_z$ lies inside $\mathbf{S}^0$, and thus inside the maximal compact subgroup of $\mathbf{S}^0(F_v)$.
+Let $\Gamma_z^*$ be the $\ell$-Sylow of $\mathbf{S}^0(F_v)$. Thus $\Gamma_z \subset \Gamma_z^*$. 
+
+
+
+
+  
+ 
+Choose a complement $\mathbf{S}' \subset \mathbf{A}$ to $\mathbf{S}^0$, i.e. a subtorus  
+with the property that $\mathbf{S}^0 \times \mathbf{S}' \rightarrow \mathbf{A}$ is an isomorphism.  
+
+Now $\Gamma \subset \mathbf{A}(F_v)^{\circ}$ is an $\ell$-Sylow by computation of orders, so
+therefore $$\Gamma = \Gamma_z^* \times \Gamma'$$
+where $\Gamma'$ is the $\ell$-Sylow of $\mathbf{S}'(F_v)^{\circ}$. 
+
+If $\mathbf{S}'$ were trivial, then $\mathbf{S}^0 = \mathbf{A}$;   in that case,  by (b) of \S \ref{doublecentralizer}, 
+$z$ lies in the fixed set of $\mathbf{A}(F_v)^{\circ}$, which is none other\footnote{ Let $\mathbf{N}$ be the unipotent radical of the Borel $\mathbf{B} \supset \mathbf{A}$. 
+If $\mathbf{A}(F_v)^{\circ} x K_v = x K_v$, we have  $x^{-1} \mathbf{A}(F_v)^{\circ} x \subset K_v$.
+By using the Iwasawa decomposition, it is enough to check that if this inclusion holds
+ for some $x=n \in \mathbf{N}(F_v)$, then in fact $n \in K_v$.   
+ In that case we have $n^{-1}  a  n \in K_v$   for all $a \in \mathbf{A}(F_v)^{\circ}$,
+ and in particular $n^{-1} ( \Ad(a) n) \in K_v$ for all such $a$.
+ 
+Choose a generic positive element $\lambda \in X_*(\mathbf{A})$, giving an enumeration of the positive roots $\alpha_1, \dots, \alpha_s$
+so that $\langle \alpha_i, \lambda \rangle$ is increasing. 
+For each such root
+ we have a root subspace $u_{i}: \mathbf{G}_a \rightarrow
+ N$, and the product map  $u_s(x_s) u_{s-1}(x_{s-1}) \dots u_1(x_1)$, 
+ from $\mathbf{G}_a^s \rightarrow \mathbf{N}$, 
+extends to an isomorphism
+ of  schemes    over $\mathcal{O}_v$. In this ordering, the commutator
+$[u_{i}, u_j]$ involves only $u_{k}$ with $k > \max(i,j)$. 
+ 
+Let $x_1$ be the $\alpha_1$ coordinate of $n$. We have $(\alpha_1(a)-1) x_1 \in \mathcal{O}_v$
+ for all $a \in \mathbf{A}(F_v)^{\circ}$, which implies $x_1 \in \mathcal{O}_v$, cf.  second paragraph of the proof of Lemma 
+\ref{splitness}. Adjust $n$ on the right by $u_{1}(-x_1)$
+ to arrange that $x_1$ is trivial. Now proceed the same way for the $\alpha_2, \alpha_3, \dots$ coordinate. 
+ } than 
+$$X_* \subset G_v/K_v,$$
+which contradicts our assumption. Therefore, $\mathbf{S}'$ is nontrivial. We see at once that the order of $\Gamma'$ is divisible
+by the $\ell$-part of $q-1$.
+
+Thus, by Lemma \ref{ff2}, the corestriction from $\Gamma_z^*$ to $\Gamma$ is zero with $\Z/\ell^r$ coefficients. 
+The corestriction from $\Gamma_z$ to $\Gamma$ factors through this one, so it is zero too. 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+  \qed
+
+  
+  
+ 
+
+\subsection{Proof of Theorem   \ref{DHA:Satake}}\label{Satake algebra proof}
+Throughout the proof, as in the statement of the theorem, we take coefficients in $S = \Z/\ell^r$. Accordingly, we drop explicit
+mention of the coefficients from the notation. 
+ 
+ 
+ Recall the explicit description of the Satake map, using the identification
+ \eqref{alterpres} of the toral derived Hecke algebra: 
+ 
+ Given an assignment
+ $(x,y) \in G_v/K_v \mapsto h(x,y) \in H^*(G_{xy})$, we associate
+ to it the  function  $X_* \times X_* \longrightarrow H^*(T)$, given by 
+ $$h': (x,y) \in (A_v/A_v \cap K_v)^2 \mapsto \mathrm{Res}^{G_{xy}}_{T} h(x,y) \in H^*(T)$$
+ 
+ 
+ 
+ We must show that  the rule
+ $h \mapsto h'$ gives  an isomorphism
+   \begin{equation} \mbox{ derived Hecke algebra for $(G_v, K_v)$} 
+  \simeq \mbox{ derived Hecke algebra for $(A_v, A_v \cap K_v)$ }^W.
+  \end{equation}
+ 
+  
+ 
+
+
+We  first verify that $h \mapsto h'$ is bijective. Each element of  the derived Hecke algebra  for $(G_v, K_v)$ is  uniquely of the form $\sum h_{a, \alpha}$
+  where $a \in X_*^+$ and $\alpha \in H^*(K_v \cap \Ad(a) K_v)$, with notation as in \S \ref{doublecoset}. 
+The intersection of $K_v a K_v$ with $X_*$
+  is precisely given by the $W$-orbit of $a$ by uniqueness of the Cartan decomposition. 
+  So the map $h \mapsto h'$ sends $h_{a, \alpha}$ to the  function $h'_{a, \alpha}$ on $X_* \times X_*$
+  characterized by $W$-invariance and:  
+   \begin{itemize}
+  \item[(i)]$h_{z,\alpha}(x,e) = 0$ unless    $x \in W a$; 
+  \item[(ii)]  $h_{z,\alpha}$ sends   $ (a, e) $ to  the image of $\alpha \in H^*(K_v \cap \Ad(a) K_v) \rightarrow H^*(T)$. 
+  \end{itemize}
+    It is enough, then, to show that each element of  $\mbox{ derived Hecke algebra for $(A_v, A_v \cap K_v)$ }^W$
+  is uniquely a sum of such elements $h'_{a,\alpha}$.  This comes down to the fact that the map
+\begin{equation} \label{isogn} H^*(K_v \cap \Ad(a) K_v) \longrightarrow  H^*(T)^{W_a} \end{equation}
+  is an isomorphism, where $W_a$ is the stabilizer of $a$ in the Weyl group. 
+  But, if we write $M$ for the Levi subgroup of $\mathcal{G}$
+  that centralizes $a$, then $K_v \cap \Ad(a) K_v$ is, modulo a pro-$p$-group,
+  the $k$-points $M(k)$, and $W_a$ is identified with the Weyl group of $M$. 
+  So \eqref{isogn} follows from Lemma \ref{finitefields}. 
+ 
+     
+
+To show that  $h \mapsto h'$ preserves multiplication, we compute $(h_1 h_2)'(x,z)$; it equals  the restriction, from $G_{xz}$ to $T$, of
+ $$ \sum_{O \subset G_v/K_v} \sum_{y \in O} h_1(x,y) \cup h_2(y,z).$$
+the sum being grouped, as before, over orbits $O$ of $G_{xz}$ on such $y$. 
+Recall that the inner sum  is understood by computing the cup-product $h_1(x,y) \cup h_2(y,z)$ for a single $y \in O$, 
+and then corestricting from $G_{xyz}$ to $G_{xz}$.  
+Therefore,
+
+$$(h_1 h_2)'(x,z)  = \sum_{O}  \underbrace{ \mathrm{Res}^{G_{xz}}_T \mathrm{Cores}^{G_{xz}}_{G_{xyz}} h_1(x,y) \cup h_2(y,z) }_{:= H(O)}$$
+and as usual we can express $H(O)$ a sum over
+ $T$-orbits on $G_{xz}/G_{xyz}$, that is to say, as a sum of $T$ orbits  $O' \subset O$:
+\begin{equation} \label{yuk}  H(O) =\sum_{O'} \mathrm{Cores}^{T}_{T_{y'}} \mathrm{Res}^{G_{xyz}}_{T_{y'}} (\dots )\end{equation}
+where we have chosen a representative $y' \in O'$ for each $T$-orbit $O'$ upon $O$; and
+  the  injection $T_{y'} \rightarrow G_{xyz}$ that defines the restriction map is induced by an element of $G_{xz}$
+conjugating $y'$ to $y$. 
+
+We saw  in Lemma \ref{splitness} that the corestriction map vanishes unless $y'$ actually belongs to $X_*$. 
+(Indeed, writing $\Gamma$ for the unique $\ell$-Sylow of  the abelian group $T$, 
+then $\Gamma_{y'}$ is an $\ell$-Sylow of $T_{y'}$,
+and the corestriction map induced by $\Gamma_{y'} \rightarrow T_{y'}$ is surjective on cohomology.)
+
+In the case when $y' \in X_*$, we have  $T_{y'} = T$ in which case $O' = \{y'\}$. We conclude that 
+$$H(O) =\sum_{y' \in O \cap X_*}  \mathrm{Res}^{G_{xyz}}_{T}(h_1(x,y) \cup h_2(y,z))
+
+$$
+
+and finally adding up all $O$ we get
+\begin{eqnarray*}(h_1 h_2)'(x,z) &=& \sum_{y \in X_*}  \mathrm{Res}^{G_{xyz}}_{T} (h_1(x,y) \cup h_2(y,z) ) \\ 
+ &=& \sum_{y \in X_*}  \mathrm{Res}^{G_{xy}}_{T}  h_1(x,y) \cup  \mathrm{Res}^{G_{yz}}_{T}  h_2(y,z)  =   h_1' h_2' (x,z).\end{eqnarray*}
+This concludes the proof of the theorem. 
+ 
+ 
+\section{Iwahori-Hecke algebra}\label{IHA}
+ In this section, we collect a few important facts about Iwahori--Hecke algebras. 
+In particular, we discuss the structure of the Iwahori--Hecke algebra at a Taylor--Wiles prime (\S \ref{Iwahori}), the
+relation between modules over the (usual, i.e. non-derived) Iwahori-Hecke algebra
+and modules over the (usual) spherical Hecke algebras (\S \ref{IwahoriHecke})
+and finally briefly discuss a localization result for the derived Iwahori-Hecke algebra
+(\S \ref{dhLocalization}). 
+
+ These results are presumably well-known to experts
+but they help us polish our presentation of the Taylor-Wiles method -- indeed similar ideas appear in the paper of Khare and Thorne \cite{KT}.
+
+
+
+\subsection{} 
+ 
+ We continue with the notation of the prior section (\S \ref{BasicNotn}). 
+ In particular, $G_v$ is the $F_v$-points of a reductive split group. 
+ 
+ In this section, we will also make use of the affine Weyl group $\tilde{W}$ attached to $\mathbf{G}$; by definition
+  \index{$\tilde{W}$} 
+ this is the semidirect product $X_*  \rtimes W$  where $X_*$ is the cocharacter group of  the maximal torus $\mathbf{A}$,
+ and $W$ is the Weyl group of $\mathbf{A}$. 
+ 
+ Let $S$ be the ring $\Z/\ell^r$, for a prime $\ell$; this will be the coefficient ring for all our Hecke algebras and derived Hecke algebras.    We suppose that $q_v \equiv 1$ modulo $\ell^r$
+ and that $\ell$ doesn't divide the order of the Weyl group.  
+
+{\color{\changecolor} Let $I_v$ be an Iwahori subgroup of $G_v$ contained inside $K_v$ and in good position with reference to $\mathbf{A}$.  By this we mean that $I_v$ stabilizes
+a chamber of the building that lies inside the apartment defined by $\mathbf{A}$. 
+ An explicit choice of such an $I_v$ can be obtained from an integral model $\mathcal{B}$ of a Borel subgroup containing $\mathbf{A}$:
+$$ I_v = \mbox{preimage of $\mathcal{B}(\mathbf{F}_v)$ inside $\mathcal{G}(\mathcal{O}_v)$,}$$
+and the other such $I_v$s are $W$-conjugate to this one. }
+
+It will be helpful to keep in mind that the index $[K_v:I_v] \equiv |W|$ modulo $\ell^r$, in particular, this index is invertible in $S$.
+  Take the Haar measure on $G_v$ which assigns $I_v$ mass $1$.
+
+  
+
+
+ 
+\subsection{The structure of the Iwahori algebra} \label{Iwahori}   
+   {\color{\changecolor} Let $\mathrm{H}_I$ be the Hecke algebra for $I_v$.
+   We will understand this to be defined as
+   $$ \mathrm{H}_I  := \Hom_{SG_v}(S[G_v/I_v], S[G_v/I_v]).$$
+
+This is identified with the 
+set of
+ $S$-valued and finitely supported functions $f$  on $I_v \backslash G_v/I_v$. Namely, 
+ identifying such functions with measures (multiplying by the Haar measure on $G_v$, thought
+ of as valued in $S$), each such 
+function $f$ acts by right convolution on $S[G_v/I_v]$, and therefore defines an element of $\mathrm{H}_I$. 
+\index{$\mathrm{H}_K$} \index{$\mathrm{H}_{IK}$} \index{$\mathrm{H}_{KI}$} \index{$\mathrm{H}_{II}$} 
+Therefore, in the text, we will often produce elements of $\mathrm{H}_I$ by describing
+the associated bi-invariant function. 
+
+{\em Warning:} the resulting identification
+\begin{equation} \label{left right sequel} \mathrm{H}_I \simeq \left(\mbox{functions on $I_v \backslash G_v/I_v$} \right)\end{equation}
+is an anti-isomorphism of algebras if we equip the right-hand side with the convolution product.  
+When we multiply elements of $\mathrm{H}_I$, we will always understand the multiplication to be that of $\mathrm{H}_I$,
+not the multiplication induced from the right hand side of \eqref{left right sequel}. 
+
+We similarly define 
+\begin{eqnarray*} \label{HKIdef} \mathrm{H}_K  =  \Hom_{SG_v}(S[G_v/K_v], S[G_v/K_v]), \\
+ \mathrm{H}_{IK} = \Hom_{SG_v} (S[G_v/K_v], S[G_v/I_v]), \\ 
+  \mathrm{H}_{IK} = \Hom_{SG_v} (S[G_v/I_v], S[G_v/K_v]).
+\end{eqnarray*}
+
+If $V$ is any $G$-representation, the algebra  $ \Hom_{SG_v}(S[G_v/K_v], S[G_v/K_v])$ 
+acts on the right on $V^{K_v} = \Hom_{G_v}(S[G_v/K_v], V)$. Similarly, elements $\mathrm{H}_{IK}$
+induces endomorphisms  $V^{I_v} \rightarrow V^{K_v}$. 
+Indeed a useful mnemonic for    the subscript ``$IK$''  is that,  acting as explained above,   $\mathrm{H}_{IK}$ goes from $I$-invariants to $K$-invariants, and so on.
+Also   $\mathrm{H}_{IK}, \mathrm{H}_{KI}$  are bimodules for $\mathrm{H}_K$ and $\mathrm{H}_I$. 
+
+
+As before, each of these can be identified with a space of functions. Thus, for example, 
+ \begin{eqnarray} \label{leftright2} \mathrm{H}_{IK} \simeq \mbox{functions on $K_v \backslash G_v/I_v$},    \end{eqnarray}
+ and similarly for $\mathrm{H}_{IK}, \mathrm{H}_K$. 
+As before, these identifications  arise  from the right convolution action of the functions
+  on $S[G_v/K_v]$ or $S[G_v/I_v]$.  
+  
+ Note that, somewhat contrary to what the notation might suggest,  an element of $\mathrm{H}_{IK}$
+  considered as a function is {\em left} $K_v$-invariant and {\em right} $I_v$-invariant.         Again, we will use these identifications such as \eqref{leftright2} without comment to produce
+  elements inside the various Hecke algebras. The same warning applies here: the identifications do not preserve multiplication; the order
+  must be switched, just as \eqref{left right sequel} is an anti-automorphism.  To avoid confusion here, our convention is that products are always to be understood
+  in the sense of the $\mathrm{H}_I, \mathrm{H}_K$, etc., and {\em not} via convolution of functions. 
+ 
+
+  
+
+  
+
+  
+  
+It is useful later to define  
+\begin{equation} \label{eK definition} e_K = \frac{1_{K_v}}{\mathrm{measure}(K_v)}.\end{equation}
+Considered as an element of $\mathrm{H}_I$ it  is idempotent. 
+When  considered as an element of $\mathrm{H}_{IK}$, it carries the identity coset of $S[G_v/K_v]$ to 
+  $\sum_{k \in K/I} k I_v \in S[G_v/I_v]$, and when considered as an element of $\mathrm{H}_{KI}$, carries the identity coset of $S[G_v/I_v]$
+  to $\frac{1}{[K_v:I_v]} eK_v \in S[G_v/K_v]$. In particular, $e_K \in \mathrm{H}_{IK}$ induces the co-restriction  map $V^{I_v} \rightarrow V^{K_v}$,
+  and $e_K \in \mathrm{H}_{KI}$ induces the map $V^{K_v} \rightarrow V^{I_v}$ which is the natural inclusion divided by the index $[K_v:I_v]$. 
+   }
+  
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+ \begin{comment}
+\begin{remark}
+There are some confusing left/right issues  that arise here. 
+
+ If $V$ is any $G$-representation, 
+ the algebras $\mathrm{H}_K$, considered as convolution algebras of measures,
+act on the {\em left} on  $V^{K_v}$.    Correspondingly the  map \eqref{left right} is not an algebra identification, but rather
+an anti-homomorphism: it identifies one side with the opposite algebra of the other.
+As a final point of confusion, the induced actions of the two sides of \eqref{left right} on $V^{K_v}$ do not coincide,
+but rather they differ by a factor of $[K_v:I_v]$. 
+
+{\color{\changecolor} 
+By and large,  these issues are not very important to the kind of computation we do. 
+However, there are a small number of places where these may become confusing. These \index{$\Hop$ $\Hop_K$ $\Hop_{KI}$ $\Hop_{IK}$}
+are the places where we must simultaneously work with ordinary and derived Hecke algebras.
+Our derived Hecke algebras are defined analogously to the right-hand side of \eqref{left right};
+as discussed in the remark of \S \ref{Arithmeticmanifolds}, they act on the right on cohomology.
+As such, their definition does not line up with $\mathrm{H}_K$.
+ 
+
+Therefore, at  certain points where these issues need clarity, we will adopt the notation
+$$ \Hop_K :=  \Hom_{SG_v}(S[G_v/K_v], S[G_v/K_v]),$$
+an algebra that is identified with the opposite algebra of $\mathrm{H}_K$ by means of \eqref{left right};
+it acts on the {\em right} of $V^{K_v}$ for any $G$-representation $V$.
+Similarly, we define $\Hop_K, \Hop_{KI}, \Hop_{IK}, \Hop_I$ e.g. 
+$\Hop_{IK} = \Hom_{SG_v}(S[G_v/K_v], S[G_v/I_v])$; it is identified with $\mathrm{H}_{IK}$, but (for example)
+$\Hop_{K}$ acts on $\Hop_{IK}$ on the right, whereas $\mathrm{H}_K$ acts on $\mathrm{H}_{IK}$ on the left. }
+
+
+
+
+ 
+
+
+
+
+
+\end{remark}
+  
+ 
+  
+{\color{blue} In debugging this the following diagram is useful in understanding what we have called either $\mathrm{H}_{AB}$ or $\mathrm{H}_{AB}^{\mathrm{op}}$: 
+{\small   \begin{equation}
+ \xymatrix{
+ \mathrm{measures}(B \backslash G/A)  \ar[r]\ar[d]  &  \Hom(S[G/B], S[G/A]) \ar[d]^{\times \mu(A)/\mu(B)} \ar[r]^s & \mbox{Functions}^G(G/A \times G/B) \ar[d]^{T(e,y)} \ar[dr]^{T(x,e)} . \\
+\mathrm{measures}(B \backslash G/A) \ar[r]  &  \Hom(V^A, V^B) &  \mbox{functions}(A \backslash G/B)  & \mbox{functions}(B \backslash G/A)   \\
+  }
+\end{equation}}
+The map at the top sends $\mu$ to the map sending $eB \mapsto \sum_{g \in G/A} \mu(B g) [gA]$, 
+whereas the map at the bottom sends $\mu$ to the map sending $v$ to $\mu \star v$, which corresponds instead to the element $\sum_{g \in G/A} \mu(gA) [gA]$. 
+The inverse of $s$ sends the function $T(x,y)$ to the map $g \in S[G/B] \mapsto Tg(x) = \sum T(x,y) g(y)$;
+thus $eB$ is sent to $\sum_{x} T(x, e) \cdot [xA]$. 
+In particular it sends $T$ onto the measure given by $\mu(Bx) = T(x, e)$; visibly $T(x, e)$ defines a function on $B \backslash G/A$. 
+
+Added later: in particular, if $\mu$ is supported on the double coset $BgA$, the associated function $T$ is supported on the $B$-orbit
+of $gA \times eB$.
+
+
+{\em The isolated veritcal arrow sends $T$ to $T(e, gA)$   will never be used. In our identifications used for the derived Hecke algebra,
+see \S \ref{doublecoset}, we use the identification given by $T(x,e)$, i.e. the vertical arrow. This corresponds to evaluating the homorphism $S[G/B] \rightarrow S[G/A]$
+on $eB$ as we just saw.} 
+
+ 
+
+Therefore, the diagram doesn't commute, but only after insertion of the $\times \mu(A)/\mu(B)$ factor.  When it comes to actions on cohomology, our convention is that we are using the ``top'' map.   
+Now we'll use the following cases:
+\begin{itemize}
+\item $A=K, B=I$ -- we want the inclusion $V^K \hookrightarrow V^I$, which comes from $e_K$ at the bottom left, but so also from 
+the map $S[G/I] \rightarrow S[G/K]$ taking $eI$ to $eK$, which corresponds to the measure $|W| e_K$ at the top left.  This corresponds to the pullback in cohomology. 
+
+\item $A=I, B=K$: we want the pushforward $V^I \rightarrow V^K$,  which comes from $|W| e_K$ at the bottom left, and so from  $e_K$ at the top left.  Equivalently,
+it comes from the map $S[G/K] \rightarrow S[G/I]$ that takes $eK$ to $\sum_{k \in K/I} kI$.  This correponds to the pushforward in cohomology. 
+\end{itemize}
+
+From the point of view of the bottom map the inclusion $V^K \hookrightarrow V^I$ corresponds to $e_K$, and the pushforward $V^I \rightarrow V^K$
+corresponds to $|W| e_K$. However, using the top map, the roles are reversed, and these correspond to $|W| e_K$ and $e_K$ respectively. 
+
+The products go like this:
+{\tiny    \begin{equation}
+ \xymatrix{
+ \underbrace{ \mathrm{meas}(C \backslash G/B)}_{\mu \in H_{BC}} \times  \underbrace{\mathrm{meas}( B \backslash G/A)}_{\nu \in H_{AB}} \ar[r]\ar[dd]  &
+  \Hom(V^B, V^C) \times \Hom(V^A, V^B) \ar[dd]   &  
+ \ar[l] 
+  \underbrace{ \Hom(S[G/B], S[G/A])}_{\nu'} \times  \underbrace{ \Hom(S[G/C], S[G/B]) }_{\mu'} \ar[d]^{\mapsto \nu' \circ \mu'}    \\
+&&    \mathrm{Fun}(G/A \times G/B) \times \mathrm{Fun}(G/B \times G/C) \ar[d]^{\sum_{y} \nu'(x,y) \mu'(y,z)}  \\ 
+  \underbrace{  \mathrm{meas}(C \backslash G/A)   }_{\mu * \nu} \ar[r]  &  \Hom(V^A, V^C)      & \ar[l] \mathrm{Fun}(G/A \times G/C) 
+   }
+\end{equation} }
+
+
+ 
+ 
+ 
+Roughly speaking, the map from measures on $B \backslash G/A$ to functions on $G/A \times G/B$
+sends a measure $\mu$ to the function given by $(x,y) \mapsto \mu(y^{-1} x)$. 
+}
+\end{comment}
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+Because $q$ is congruent to $1$ modulo $\ell^r$, the structure of $\mathrm{H}_I$ is very simple.
+ It is isomorphic simply to the group algebra 
+ of the affine Weyl group:
+ \begin{equation} \label{affineweyl} \mathrm{H}_I \simeq S[\tilde{W}] \end{equation}
+An explicit anti-isomorphism sends the characteristic function of $I_v w I_v$ to the
+ element $w$, for $w \in \tilde{W}$; in particular $e_K$ is sent
+ to $\frac{1}{|W|} \sum_{w \in W} w$, the sum over the usual Weyl group. 
+ 
+This follows from the standard presentation of the Iwahori-Hecke algebra (for a reference
+with complex coefficients, see \cite[Theorem 4.2]{ChrissGinzburg}); the key point
+is that the relation $(T_s-q)(T_s+1)$ simplifies to $T_s^2=1$ when $q=1$ in the coefficients.  
+ Actually it is also possible to verify $\mathrm{H}_I$ is isomorphic to $S[\tilde{W}]$ by using torus localization,
+although we omit the details.
+
+
+
+
+
+
+
+\subsection{Central element and discriminant} \label{Zdis} 
+Every element of $S[X_*]^W$ is central  in $S[\tilde{W}]$. Therefore, \eqref{affineweyl} yields 
+a  natural map (indeed an isomorphism) from $Z := S[X_*]^W$ to the center of $\mathrm{H}_I$.  
+ 
+Then $\mathrm{H}_I, \mathrm{H}_K$ have structures of $Z$-algebra and $\mathrm{H}_{IK}, \mathrm{H}_{KI}$
+have structure of $Z$-module, all of which are compatible in the obvious way. 
+
+For example, the  ring homomorphism $Z \rightarrow \mathrm{H}_K$
+is given by $z \mapsto e_K z e_K = e_K z$. In fact this is a ring {\em isomorphism}, as follows easily from the explicit presentation.
+Then e.g. $\mathrm{H}_{IK}$ has two structures of $Z$-module, one via $Z \rightarrow \mathrm{H}_I$ and one via
+$Z \rightarrow \mathrm{H}_K$, and the ``compatibility'' is that these two structures coincide. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Iwahori Hecke algebra} \label{IwahoriHecke}
+  
+ {\color{\changecolor}  The next statement 
+ asserts that the bimodules $\mathrm{H}_{KI}, \mathrm{H}_{IK}$ give
+ equivalences of categories, at least over the open subset of $\Spec(Z)$
+ where the ``$W$-covering'' $\Spec \ S[X_*] \rightarrow \Spec  \ S[X_*]^W$ is {\'e}tale. }
+  \footnote{{\color{\changecolor} 
+I am grateful to Peter Schneider for correcting an error. In an earlier version of this paper, this Lemma was formulated
+over a larger open subset of $\Spec \ Z$, but one step in the proof was not correct in this greater generality.}}
+     
+\begin{lemma} \label{IHequivalence}
+Let $\mathfrak{m}$ be a maximal ideal of $Z$ 
+over which the map $Z \rightarrow S[X_*]$ is {\'e}tale,
+and write $Z'$ for the localization of $Z$ at $\mathfrak{m}$. 
+ 
+ 
+  
+   Write $\mathrm{H}_K' = \mathrm{H}_K \otimes_{Z} Z'$ and define similarly
+$\mathrm{H}_I', \mathrm{H}_{IK}', \mathrm{H}_{KI}'$. 
+Then the bimodules $\mathrm{H}_{IK}'$ and $\mathrm{H}_{KI}'$
+induce inverse equivalences of categories between $\mathrm{H}_K'$ modules and $\mathrm{H}_I'$ modules. \end{lemma}  
+This is probably well-known in characteristic zero at least.
+
+
+
+
+
+\proof   (Sketch). 
+
+
+Let's show, for example, that the natural map induced by multiplication  
+
+\begin{equation} \label{targetmap}
+  \mathrm{H}_{IK} \otimes_{\mathrm{H}_K}  \mathrm{H}_{KI}
+ \rightarrow \mathrm{H}_I \end{equation}
+
+
+yields an isomorphism after localization at $\mathfrak{m}$. 
+In what follows, we denote such localization with a prime: $S[X_*]' = S[X_*] \otimes_Z Z'$. 
+
+Note that  $\mathrm{H}_I$  is  free of rank $w$ as a right module over $S[X_*]$  (clear from \eqref{affineweyl}) 
+and, being finite {\'e}tale, $S[X_*]'$ is
+\locally
+free as a right module over $Z'$
+of rank $w$.
+
+
+
+
+
+ So $\mathrm{H}_I'$ is \locally free of rank $w^2$ over $Z'$.
+Similarly, $\mathrm{H}_{IK}'$ and $\mathrm{H}_{KI}'$ are \locally free of rank $w$
+and  $\mathrm{H}_K'$ is  locally free of rank $1$ as a $Z'$-module.  The
+obstruction to \eqref{targetmap} being an isomorphism then given   by the vanishing of a suitable determinant;
+it is enough, therefore, to  show that
+\eqref{targetmap} is onto after reducing modulo the  maximal ideal $\mathfrak{m}'$ of $Z'$.
+
+  
+
+
+We can extend
+
+
+the natural homomorphism $Z' \rightarrow Z'/\mathfrak{m}'$
+to a homomorphism $\chi: S[X_*]' \rightarrow k$, 
+  with $k$ an algebraically closed field containing the finite field $Z'/\mathfrak{m}'$. 
+   Note that $k$ has characteristic $\ell$, and that $\chi$ is not fixed by any element of $W$.
+      
+ 
+ 
+
+Now  a homomorphism from $X_* \rightarrow k^{\times}$
+is the same as
+an unramified $k$-valued character $\chi$ of the maximal torus $A_v$;
+so we may identify $\chi$ to a character of $A_v$. 
+We form the corresponding induced representation $V= V_{\chi}$. 
+Its elements consist of locally constant $k$-valued functions on $G_{v}$
+that transform according to $\chi$ on a Borel subgroup containing $A_v$. 
+Now
+$V^{I_v}$ is a $k$-vector space of rank $w$, and $V^{K_v}$ is a $k$-vector space of rank $1$,
+and $Z$ acts on these spaces via the character $\chi$ (as follows, e.g.
+from \eqref{explicit00} below).   
+
+We now show that the natural maps
+$$\mathrm{H}_{ab} \otimes_Z  k \rightarrow \Hom(V^a, V^b)$$
+are isomorphisms for $a$ and $b$ belonging to $\{I, K\}$; that implies the 
+desired claim, that is to say, that \eqref{targetmap} is onto after reducing modulo $\mathfrak{m}$.
+
+Because the two sides have the same rank it is enough to check surjectivity. 
+In fact, it's enough to show surjectivity in the case of 
+$\mathrm{H}_{II}$ and to show that all the other maps are nonzero (because then, for example, the image for $\mathrm{H}_{IK}$ would be a nonzero subspace
+of $\Hom(V^{I_v}, V^{K_v})$ which is stable under $\Hom(V^{I_v}, V^{I_v})$.) 
+ The other maps are clearly nonzero: the element $e_K$ induces a nonzero map
+in each of the cases $IK, KI, KK$. So we are reduced to seeing that 
+\begin{equation} \label{moo} \mathrm{H}_{I} \twoheadrightarrow \Hom(V^{I_v}, V^{I_v}).\end{equation}
+
+But there's a standard basis for $V^{I_v}$ indexed by the Weyl group:  $v_w \ (w \in W)$, whose restriction to $K$ 
+is the characteristic function of the Bruhat cell  indexed by $w$. 
+ The group algebra of $W$, inside $\mathrm{H}_I$, acts by permuting the elements $v_w$. 
+Also the element $\lambda \in X_* $, considered again inside $\mathrm{H}_I$, acts by  \begin{equation} \label{explicit00}  \lambda \cdot v_w = \langle w \chi, \lambda \rangle v_w.\end{equation}
+In other words, as a representation of $\tilde{W}$, this is the representation
+induced from the generic character $\chi$, and so clearly irreducible.  The surjectivity of \eqref{moo} follows. 
+ \qed	
+ 
+
+  
+ 
+\subsection{Localization for the derived Iwahori--Hecke algebra} \label{dhLocalization}
+It will later on be helpful to make use of localization for the {\em derived} Iwahori--Hecke algebra.  
+
+We define the derived Iwahori Hecke algebra as per the recipe of \S \ref{sec:dha}, i.e.
+$$ \mathscr{H}_I := \Ext_{SG_v}^*(S[G_v/I_v], S[G_v/I_v]).$$
+As before this  is isomorphic to the algebra of functions  $h$ that associate to $(x,y) \in G_v/I_v \times G_v/I_v$
+a class $h(x,y) \in H^*(G_{xy}, S)$, with the product as described in \S \ref{desc2}.
+  In a similar way, we get derived versions
+$\mathscr{H}_{IK},\mathscr{H}_{KI}$ of the bimodules $\mathrm{H}_{KI}, \mathrm{H}_{IK}$ defined earlier. 
+
+
+ Now, we can consider  ``restriction to $\tilde{W}$, '' i.e.
+\begin{equation} \label{Tau1}  h_1  \in \mathscr{H}_{II} \longrightarrow  h_1' \in  \mbox{ functions $\tilde{W} \times \tilde{W} \rightarrow H^*(T,S)$} \end{equation}
+where $T$ is as in 
+\S \ref{BasicNotn}
+ and we identify $w \in \tilde{W}$ with $wI \in G_v/I_v$; and 
+\begin{equation} \label{Tau2}  h_2 \in \mathscr{H}_{IK} \longrightarrow  h_2' \in \mbox{ functions $\tilde{W} \times X_* \rightarrow H^*(T,S)$} \end{equation} where here we identify $x \in X_*$ with the associated coset $xK_v$; and we used the fact that $T$ stabilizes pointwise both  $\tilde{W} \cdot I_v$ and $X_* \cdot K_v$ to restrict cohomology classes to $T$. 
+ Finally we have a similar map for $\mathscr{H}_{KI}$.
+ 
+ 
+ Note that the right-hand side of \eqref{Tau1} has an algebra structure,   at least  restricting to functions supported on finitely many $\tilde{W}$-orbits,
+ by means of the formula $H_1 H_2 (x,y)=
+ \sum_{z \in \tilde{W}} H_1(x,z) \cup H_2(z,y)$ (where all of $x,y,z$ all belong to $\tilde{W}$). 
+  This algebra acts on the right-hand side of \eqref{Tau2}, by means 
+  of the same formula, but $H_2$ now belongs to the right-hand side of \eqref{Tau2}, 
+  and therefore $y$ is now taken to belong to $X_*$. 
+  
+  
+ 
+ \begin{lemma}
+Under our current notation and assumptions,
+(see \S \ref{BasicNotn}), 
+the map \eqref{Tau1} is an algebra morphism.
+ Similarly, the map \eqref{Tau2}  
+ is compatible with the  map \eqref{Tau1} and the product $\mathscr{H}_{II} \times \mathscr{H}_{IK} \rightarrow \mathscr{H}_{IK}$;
+similarly for $\mathscr{H}_{KI}$.
+ \end{lemma}
+ 
+ \proof 
+ 
+ We want to show that (where $h_1,h_2 \in \mathscr{H}_{II}$)
+  $$ \mathrm{Res}(h_1 h_2) = h_1'  h_2',$$
+ where $\mathrm{Res}$ means to restrict all $G_v/I_v$ arguments to $\tilde{W}$ and restrict cohomology classes to $T$; 
+we also want similar statements for the $\mathscr{H}_{II}$-action on $\mathscr{H}_{KI}$ and $\mathscr{H}_{IK}$. 
+ 
+ By precisely the same argument as in \S \ref{Satake algebra proof}, we are reduced to the following claim:
+ 
+
+
+
+
+
+
+
+
+ 
+ \begin{quote} 
+{\em Claim:}   
+Let $y'$ belong to either $G_v/K_v$ or $G_v/I_v$. Let $\Gamma$ be an $\ell$-Sylow of $A_v \cap K_v$. 
+Let $\Gamma_{y'}$ be the stabilizer of $y'$ in $\Gamma$.
+Then
+ the corestriction $H^*(\Gamma_{y'}, S) \rightarrow H^*(\Gamma, S)$ vanishes, 
+ unless $y' \in X_* \subset G_v/K_v$ or $y' \in \tilde{W} \subset G_v/I_v$.  \end{quote}
+ 
+
+ 
+ 
+ 
+We repeat
+the reasoning of Lemma \ref{splitness}:  let $\mathbf{S}$ be the algebraic double centralizer 
+ of  $\Gamma_{y'}$.  As before, $\Gamma_{y'} \subset \Gamma$ gives $\mathbf{S} \subset \mathbf{A}$. 
+ 
+Let $\mathbf{S}^0$ be the identity component of $\mathbf{S}$. By Lemma  \ref{doublecentralizer},  the component group of $\mathbf{S}$ is prime-to-$\ell$. Therefore,  
+$\Gamma_{y'}$ lies inside $\mathbf{S}^0$. Let $\Gamma_{y'}^* \subset \mathbf{S}^0(F_v)^{\circ}$ be an $\ell$-Sylow of the maximal compact subgroup.  Thus $\Gamma_{y'} \subset \Gamma_{y'}^*$.
+
+
+
+Choose a complement $\mathbf{S}' \subset \mathbf{A}$ to $\mathbf{S}^0$, i.e. a subtorus
+with the property that $\mathbf{S}^0 \times \mathbf{S}' \rightarrow \mathbf{A}$ is an isomorphism.  
+Then $\Gamma_{y'}^* \subset \mathbf{S}^0(F_v)^{\circ}$ is an $\ell$-Sylow,
+and $\Gamma \subset \mathbf{A}(F_v)^{\circ}$ is an $\ell$-Sylow. 
+Therefore $$\Gamma = \Gamma_{y'}^* \times \Gamma'$$
+where $\Gamma'$ is the $\ell$-Sylow of $\mathbf{S}'(F_v)^{\circ}$. 
+
+If $\mathbf{S}'$ were trivial, then $\mathbf{S}^0 = \mathbf{A}$.
+In that case  $y'$ lies in the fixed set of $\mathbf{A}(F_v)^{\circ}$. 
+In the case where $y' \in G_v/K_v$ this was proved in
+  \S \ref{doublecentralizer}. However, the proof of this assertion also applies word for word
+to establish the same assertion in the case $y' \in G_v/I_v$. 
+ 
+The fixed set of  $\mathbf{A}(F_v)^{\circ}$
+ on $G_v/K_v$ is $X_*$, as before, and the fixed set  of  $\mathbf{A}(F_v)^{\circ}$
+on $G_v/I_v$ is precisely $\tilde{W} I_v \subset G_v/I_v$.\footnote{Here is a proof of the latter claim: 
+if $gI_v$ is fixed, then   $g K_v \in X_* K_v$, and modifying $g$ by an element
+of $\mathbf{A}(F_v)$, we can suppose $g \in K_v$. We are reduced to computing
+the $\mathbf{A}(F_v)^{\circ}$-fixed points on $K_v/I_v$, which amount to the torus fixed points on a flag variety over $\mathbf{F}_v$ --
+using Lemma \ref{nontriv} to avoid problems with small residue field, these fixed points are precisely the $wI_v$ with $w \in W$, as desired.}
+
+ 
+Otherwise, $\mathbf{S}'$ is not trivial, the corestriction $\Gamma_{y'}^* \rightarrow \Gamma$
+vanishes as before, and so the corestriction $\Gamma_{y'} \rightarrow \Gamma$ vanishes too. 
+ \qed 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{The trivial representation} \label{Quillen}
+
+ 
+ 
+ In this section we give our first piece of global evidence that the derived Hecke algebra
+ can account for the ``degree spreading'' of Hecke eigenclasses.
+ 
+ 
+ 
+\subsection{} 
+Let $D$ be a division algebra of dimension $d^2$ over an imaginary quadratic field $F$.
+Let $\GG$ be the algebraic group of elements of norm $1$ inside $D$. 
+Let $Y(K)$ be the arithmetic manifold \eqref{YKdef}  associated to $\GG$ and a level structure $K$.
+We shall suppose  $K$ to be contained in the stabilizer of some maximal order $\mathcal{O}_D$. 
+Observe that $\dim \  Y(K) = d^2-1$. 
+ 
+ In this section we study the
+ derived Hecke action on  ``Hecke-trivial part''  (see Definition \ref{HTriv}) of the cohomology of $Y(K)$. 
+  
+ Recall that  the global derived Hecke algebra $\gHecke$ consists of all endomorphisms of $H^*(\Z_{\ell})$
+that are limits (\S \ref{limit}) , under $H^*(\Z_{\ell}) \simeq \varprojlim H^*(\Z/\ell^n)$, of
+endomorphisms that lie in the algebra generated by all $  \mathscr{H}_{v,\Z/\ell^n}$.  
+ 
+ 
+ 
+ 
+ 
+\begin{theorem}\label{maintheoremtriv} 
+For all but finitely many primes $\ell$, 
+{\color{\changecolor} the action of $\gHecke$ on $H^*(Y(K), \Z_{\ell})$ preserves the trivial summand $H^*(Y(K), \Z_{\ell})_{\triv}$, and:}
+\begin{itemize} 
+\item[(i)] The trivial part of the cohomology
+$H^*(Y(K), \Z_{\ell})_{\mathrm{triv}}$ is cyclic over $\gHecke$, generated by the trivial class;
+\item[(ii)]  The image $\gHecke_{\triv}$ of $\gHecke$ in $\End \ H^*(Y(K), \Z_{\ell})_{\triv}$
+is graded commutative. Also $\gHecke_{\triv} \otimes \Q_{\ell}$ 
+coincides with $\Q_{\ell}$-algebra generated by $H^*(Y(K), \Q)_{\triv}$ acting
+ on itself by means of the cup product. 
+ \end{itemize}
+\end{theorem}
+
+
+
+
+
+ Note the significance of the second part of the statement: inside the $\Q_{\ell}$-derived Hecke algebra there is a natural ``preferred''
+ rational structure. Our general conjecture (Conjecture \ref{mainconjecture}) says that this should be true in great generality and the preferred rational structure is related to motivic cohomology.   Certainly the situation that we discuss here is quite easy
+ compared to the general case, but nonetheless it has several points of interest. 
+ 
+We also note that the theorem  is almost certainly {\em false} (in the form stated above) if $F$ is not totally imaginary, for reasons related to  (a) of \S \ref{fdp}. 
+ 
+
+
+
+
+
+
+
+
+We will deduce the Theorem from the following: 
+ 
+\begin{lemma}  \label{pairs}
+Notation as above, so that $\mathbf{G}$ is the algebraic group arising from a division algebra over  the imaginary quadratic field $F$.     
+For all sufficiently large $\ell$, the following statement holds: 
+\begin{quote} 
+ For each integer $n$ there are infinitely many places $v$ of the field $F$, with $q_v \equiv 1 $ modulo $\ell^n$ and where the division algebra is locally split, 
+such that the pullback map   of \eqref{group to manifold}
+$$H^*(\mathbf{G}(\mathbf{F}_v), \Z/\ell) \rightarrow H^*(Y(K), \Z/\ell)_{\triv} $$
+ is surjective.  
+\end{quote}
+ \end{lemma}
+ Note that the map above really does take values in the Hecke-trivial cohomology, by Lemma \ref{lem:HTriv}.
+ 
+ 
+
+\proof (Summary)
+The proof of Lemma \eqref{pairs} occupies  \S \ref{sec:Recollections} 
+-- 
+\S \ref{sec:Chebo}.  After some initial setup, 
+we give in \S \ref{abcd} certain conditions (a), (b), (c), (d) which imply the Lemma;
+and then after \S \ref{abcd} we check these conditions can actually be satisfied. 
+\qed
+
+First of all, let us explain   why the Lemma implies the theorem:
+
+ 
+\subsection{Lemma \eqref{pairs} implies the theorem}  \label{lemmaimpliestheorem}
+ 
+  
+ \proof  
+ {\color{\changecolor} First of all, $\gHecke$ preserves $H^*(Y(K), \Z_{\ell})_{\triv}$. 
+ This follows by the argument described around \eqref{removing w}. Explicitly,
+ fixing any prime $w$, we may find  a prime-to-$w$ usual Hecke operator $T$
+for which the trivial part of $\Z_{\ell}$-cohomology coincides with the generalized zero eigenspace for $T-\deg(T)$. 
+(This can be checked over $\C$, since we are supposing the prime $\ell$ to be large enough. See e.g. discussion after \eqref{raru}).}
+
+
+
+
+ 
+By avoiding a finite set of $\ell$, we may clearly suppose    that $H^*(Y(K), \Z)$ has no $\ell$-torsion,
+and that $\ell > d$. 
+Similarly, we suppose that  
+ $$H^*(Y(K), \Z)_{\triv} \otimes_{\Z} \Z/\ell \rightarrow H^*(Y(K), \Z/\ell)_{\triv}$$
+ is an isomorphism: see \S \ref{lconstrain} for an explanation.  
+ 
+ 
+ 
+By  Lemma \ref{finitefields}, the map $H^*(\mathbf{G}(\mathbf{F}_v), \Z/\ell^n) \rightarrow H^*(\mathbf{G}(\mathbf{F}_v), \Z/\ell)$ is surjective 
+if $q_v \equiv 1$ modulo $\ell^n$.
+It follows from this that the surjectivity assertion of   Lemma \ref{pairs}  continues to hold with coefficients modulo $\ell^n$. 
+
+ Now we can consider an element of $H^*(\mathbf{G}(\mathbf{F}_v), \Z/\ell^n)$
+ as an element of the derived Hecke algebra for $\mathbf{G}$ at $v$ (see the Remark of \S \ref{sec:concrete}). 
+So the assertion implies that the cup product action of each $h \in H^*(Y(K), \Z/\ell^n)_{\triv}$ is contained
+in the action of the derived Hecke algebra; by passage to the limit,
+the cup product action of $H^*(Y(K), \Z_{\ell})_{\triv}$ on itself is contained in the action of the derived Hecke algebra. 
+
+ 
+Let $B_{\ell}$ be the  image of cup product $H^*(Y(K), \Z_{\ell})_{\triv} \rightarrow \End(H^*(Y(K), \Z_{\ell})_{\triv})$. Let
+ $\gHecke_{\triv}$ be the image of $\gHecke$ inside $\End(H^*(Y(K), \Z_{\ell})_{\triv})$.
+ It remains to show that these are equal. This comes down to the fact that $\gHecke_{\triv}$ is contained in the commutant
+ of $B_{\ell}$ and so cannot be larger than it.  In more detail:
+ 
+ {\color{\changecolor} Let $\gHecke_{\triv}^{(V_0)} $ be the subring of $\gHecke_{\triv}$ defined by only using
+local derived Hecke algebras $\dHecke_{q, \Z/\ell^n}$ with $\ell^n$ dividing $q-1$, i.e.
+the restricted variant of the global derived Hecke algebra defined after \eqref{VV0}. 
+
+We have inclusions
+\begin{equation} \label{inclusions BHH} B_{\ell} \subset \gHecke_{\triv}^{(V_0)} \subset \gHecke_{\triv},\end{equation}
+where the first inclusion follows from the argument just given.
+To conclude the proof, we will show that these are both equalities. 
+Note, first of all, that each element of $\gHecke_{\triv}^{(V_0)}$ commutes, in the graded sense, 
+with each element of $\gHecke_{\triv}$. Indeed,  if $q \equiv 1$ modulo $\ell^n$,
+the global action of $\dHecke_{q, \Z/\ell^n}$ is readily seen to commute with  $\dHecke_{v, \Z/\ell^n}$
+for $v \neq q$, and it commutes in the case $v=q$ because $\dHecke_{q, \Z/\ell^n}$ is known to be graded commutative.
+
+Choose now $h \in \gHecke_{\triv}$.  There is $b \in B_{\ell}$ such that $h.1 = b.1$ (here $1$ is the trivial class in $H^0$). 
+Then $(h-b). 1 = 0$.  
+The same is true then for both the even and odd components of $(h-b)$. 
+But, as we just saw, both components commute in the graded sense, with $\gHecke^{(V_0)}_{\triv}$,
+as we just saw, so in fact both of these components kill  all of $H^*_{\triv}$.   Thus $h-b= 0$, so
+$h \in B_{\ell}$, as required. }
+\qed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+\subsection{Recollections} \label{sec:Recollections} 
+ 
+Let $N$ be an integer. (We will shortly fix it to be ``large enough.'')
+
+Let $\mathrm{U}_N$ be the standard unitary group, the stabilizer of $\sum_{i=1}^N |z_i|^2$. 
+ There are  natural maps  
+ \begin{equation} \label{mapN} \mbox{bi-invariant differential forms on $\mathrm{U}_N$}  \stackrel{\sim}{\rightarrow}  H^*(\mathrm{U}_N, \C)   \longrightarrow H^*(\GL_N(\OO_F), \C) \end{equation}
+
+obtained by  the natural identification of  $\GL_N(\C)$-invariant differential forms on $\GL_N(\C)/\mathrm{U}_N$ 
+with bi-invariant differential forms on $\mathrm{U}_N$ (and then Hodge theory).     The notation is a little confusing:  $H^*(\mathrm{U}_N)$ above refers to the singular cohomology of $\mathrm{U}_N$ as a topological space,
+whereas $H^*(\GL_N(\OO_F))$ refers to the group cohomology of $\GL_N(\OO_F)$. 
+
+Moreover, 
+the algebra of invariant differential forms on $\mathrm{U}_N$ is a free exterior algebra with  primitive  generators
+$\Omega_1, \Omega_3, \dots, \Omega_{2N-1}$ in degree $1, 3, 5, \dots, 2N-1$;
+``primitive'' is taken with respect to the 
+coproduct on cohomology, induced by $\mathrm{U}_N\times \mathrm{U}_N \rightarrow \mathrm{U}_N$. 
+An  explicit representative for $\Omega_j$ can be taken as
+\begin{equation} \label{oinkoink} X_1, \dots, X_j \in \mathrm{Lie}(\mathrm{U}_N) \mapsto \mbox{anti-symmetrization of $\mathrm{trace}(X_1 \cdots X_j) $} \end{equation}
+The same symbols $\Omega_i$ will also be used to denote the corresponding invariant differential forms on $\GL_N(\C)/\mathrm{U}_N$. 
+For later use, note
+that these can be restricted to cohomology classes for $\mathrm{SU}_N$ and also  to invariant differential forms on $\SL_N(\C)/\mathrm{SU}_N$;
+these restrictions kill $\Omega_1$.  
+
+
+
+
+
+There are natural inclusions $\mathrm{U}_N \hookrightarrow \mathrm{U}_{N+1}$
+and $\GL_N(\OO_F) \hookrightarrow \GL_{N+1}(\OO_F)$. 
+For fixed $j$ and large enough $N$, these induce isomorphisms in $H^j(-, \C)$. Moreover,
+these isomorphisms are compatible with increasing $N$.   By passage to the inverse limit we get 
+ $$H^*(\mathrm{U}_{\infty}, \C)  {\longrightarrow} H^*(\GL_{\infty}(\OO_F), \C)$$
+ Here (e.g) $\GL_{\infty}$  means in fact $\varinjlim \GL_N$. 
+ 
+ 
+ Both sides here  carry compatible coproducts;  for the right hand-side we can take the coproduct induced by  ``intertwining'' map  (see e.g. \cite[Chapter 2]{Srinivas})
+ $\GL_{\infty} \times \GL_{\infty} \rightarrow \GL_{\infty}.$   \footnote{To see that the coproducts are compatible amounts to say that
+ the group multiplication and the intertwining map both induce the same homomorphism on the stable cohomology of $U_N$. 
+ This follows from the Eckmann-Hilton argument, or more directly as follows: Embed two commuting copies $U_N^{(a)} \times U_N^{(b)} \rightarrow U_{2N}$
+ by the intertwining map. The group multiplication $U_{2N} \times U_{2N} \rightarrow U_{2N}$  when
+ restricted to $U_N^{(a)} \times U_N^{(b)}$ on the source gives  the intertwining map   $U_N^{(a)} \times U_N^{(b)} \rightarrow U_{2N}$. This fact, together with stability of homology, shows that the two coproducts are compatible, as claimed.}
+  
+The corresponding Pontryagin product on homology will be denoted by $*$. 
+ 
+
+In what follows,  we fix $N$ to be divisible by $d^2$ and chosen so large that
+\begin{itemize}
+\item[-]  the inclusion $\GL_N \hookrightarrow \GL_{\infty}$
+induces an isomorphism of integral group homology in degrees $\leq d^2$, both
+with entries in $\mathcal{O}_F$ and with entries in any residue field. (This is possible because,
+by a theorem of van der Kallen \cite[p. 289]{vdK}, the range of homological stability
+can be taken uniformly in these cases; indeed, van der Kallen's bounds for stability involve
+only the Krull dimension in the case of commutative rings.) 
+
+ 
+
+We will denote the stabilization map  
+$$H_i(\GL_N(\OO_F)) \rightarrow H_i(\GL_{\infty}(\OO_F))$$
+by $a \mapsto a^{(\infty)}$ and its inverse by $b \mapsto b^{(N)}$. 
+We will use this notation for any choice of coefficients, not merely $\Z$. 
+ 
+
+\item[-]
+The map \eqref{mapN} induces an surjection in degrees   $< d^2$. (That this is possible is a consequence of Borel's result \cite[(7.5)]{Borel} asserting that cohomology classes 
+in sufficiently low degree are representable by invariant differential forms on the symmetric space; Borel's result is for a semisimple group, but we readily deduce the claimed result by applying it to $\SL_N$.)  We have written ``surjection'' instead of isomorphism
+just because of the issue of working with $\GL$ rather than $\SL$: the differential form corresponding to $\Omega_1$
+dies under \eqref{mapN}). 
+\end{itemize}
+
+
+
+In a similar way to \eqref{mapN}, we have  an  isomorphisms
+\begin{equation} \label{raru} H^*(\mathrm{SU}_d, \C) \rightarrow  \mbox{$\SL_d(\C)$ invariant diff. forms on $\mathrm{SL}_d(\C)/\mathrm{SU}_d$}  \stackrel{\sim}{\rightarrow} H^*(Y(K), \C)_{\triv}. \end{equation}
+For the surjectivity of the final map:  if a differential form
+$\omega$  on $Y(K)$ satisfies $T \omega = \mathrm{deg}(T) \omega$ for even one Hecke operator $T$,
+then by an easy ``maximum modulus'' argument it must be invariant,\footnote{This uses compactness of $Y(K)$; in the general case the answer is substantially more complicated} i.e. represented by a $\GG(F \otimes\R)$ invariant form on the corresponding symmetric space. In particular, the cohomology $H^*(Y(K), \C)_{\triv}$
+is a free exterior algebra, generated in degrees $3,5, \dots, 2d-1$. 
+ 
+
+
+ 
+ 
+ Finally let us recall  (Borel) that the $K$-theory of $\OO_F$ is, modulo torsion, one-dimensional in each odd degree,
+ and that (Quillen) for  any finite field $\mathbf{F}$ of size $q$, 
+ the even $K$-groups vanish and the odd $K_{2s+1}(\mathbf{F}) \simeq \Z/(q^s-1)$. 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+\subsection{The constraints on $\ell$} \label{lconstrain}
+
+We impose the following constraints on $\ell$: 
+\begin{itemize}
+\item[(i)] The cohomology of $Y(K)$ with coefficients in $\ell$ is torsion-free.
+\item[(ii)]  $\ell$ doesn't divide $  \gcd_{v} ( (q_v-1) \cdots (q_v^{2d-1}-1))$,
+where the $\gcd$ is taken over all  $q_v \geq q_0$ for large enough $q_0$. (This $\gcd$ stabilizes for $q_0$ large enough.)
+\item[(iii)]  $\ell$ is relatively prime to the numerator and denominator of the rational number  $M \in \mathbf{Q}^*$ 
+ defined in \eqref{Mdef}.
+ \item[(iv)]  the cohomology $H^*(Y(K), \Z/\ell)_{\triv}$ is a free-exterior algebra
+on generators in degree $3,\dots, 2d-1$.
+\item[(v)] $\ell > d^2$ 
+\item[(vi)] The cohomology of $\GL_{\infty}(\mathcal{O}_F)$ is  free of $\ell$-torsion in degrees less than $d^2$. 
+\end{itemize}
+
+All these assertions are automatically true for $\ell$ big enough. This is obvious for (i), (ii), (iii), (v) and follows from the standard stability results for (vi). We examine (iv): 
+We saw  after \eqref{raru} that 
+$H^*(Y(K), \Q)_{\triv} $
+is a free exterior algebra; fix generators $e_3, e_5, \dots$ that belong to $H^*(Y(K), \Z)$. 
+
+
+
+The products of the $e_i$ are linearly independent over $\Q$, so their reductions are also  linearly independent over $\Z/\ell$ for large enough $\ell$.
+It remains to show that they span $H^*(Y(K), \Z/\ell)_{\triv}$. 
+But that is obvious by counting dimensions: if we fix a Hecke operator $T$, then 
+for sufficiently large $\ell$ the generalized zero eigenspace of  $T-\deg(T)$  on $H^*(Y(K), \Z/\ell)$ 
+has the same dimension as the generalized zero eigenspace of $T-\deg(T)$ on $H^*(Y(K), \C)$.
+ 
+ 
+ This concludes the proof that all of (i) -- (vi) above are automatically valid for large enough $\ell$. 
+It would be interesting to see what happens for ``bad'' $\ell$. 
+
+\subsection{} 
+Let $N$ be a large integer, as chosen  in \S \ref{sec:Recollections}.  
+Fix an embedding 
+\begin{equation} \label{iotadef}  \iota: \GG \hookrightarrow \SL_N\end{equation}
+for some large $N$, by taking a sum of many copies of the representation
+that arises from   the division algebra  acting on itself. 
+ Then (in suitable coordinates) we may suppose that the open compact subgroup $K$ is carried into the standard maximal compact $\prod_{v} \SL_N(\mathcal{O}_{v})$ of $\SL_N(\Afinite)$,  and the arithmetic group $\GG(F) \cap K$ is consequently carried into $\SL_N(\OO_F)$. 
+
+The map $\iota$ gives rise to a map of symmetric spaces, i.e. a map $$\GG(\C)/\mathrm{SU}_d \rightarrow
+\SL_N(\C)/\mathrm{SU}_N,$$
+where we have chosen a maximal compact for $\GG(\C)$, which is isomorphic to $\mathrm{SU}_d$,
+and then we have chosen a hermitian form on $\C^N$ whose stabilizer $\mathrm{SU}_N$ contains $\iota(\mathrm{SU}_d)$. 
+Thus we get an  embedding of locally symmetric spaces,   also denoted by $\iota$: 
+\begin{equation} \label{def of iota} \iota: Y(K) \rightarrow   \underbrace{ \SL_N(\OO_F) \backslash \SL_N(\C)/\mathrm{SU}_N}_{\simeq B(\SL_N(\OO_F))}.\end{equation}
+ We can further compose $\iota$ with the inclusion of $\SL_N(\OO_F)$ to $\GL_N(\OO_F)$ to give
+ a map
+ $$Y(K) \rightarrow B(\GL_N(\OO_F))$$
+ 
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+ 
+
+\subsection{} \label{abcd} 
+In this section, we will formulate four claims (a)--(d) that will imply Lemma \ref{pairs}. We will verify the claims in the remainder of the section. 
+
+
+Let $3 \leq i \leq 2d-1$ be odd and
+let $a_i \in K_i(\mathcal{O}_F) $ be  chosen so that it generates $K_i(\mathcal{O}_F)$ modulo torsion. 
+Let $[a_i]$ be the image of $a_i$ inside $ H_i(\GL_{\infty}(\mathcal{O}_F), \Z_{\ell})$;
+as per our notation above, 
+ $[a_i]^{(N)}$ is  its preimage under the isomorphism $H_i(\GL_N(\mathcal{O}_F),\Z_{\ell}) \rightarrow H_i(\GL_{\infty}(\OO_F),\Z_{\ell})$. 
+
+
+
+
+
+We'll show that (for any $n$) there are  infinitely many places $v$, splitting the division algebra and with $q_v \equiv 1$ modulo $\ell^n$, 
+and classes  $\xi_i \in H^i( \GL_N(\mathbf{F}_v),  \Z/\ell)$ with the property that:
+
+\begin{itemize}
+\item[(a)]  The image of $a_i$ in $K_i(\mathbf{F}_v)/\ell$ is nonzero. 
+Call its image $b_i \in K_i(\mathbf{F}_v)/\ell$; therefore, 
+ $b_i$  is a generator of $K_i(\mathbf{F}_v)/\ell$.
+ 
+\item[(b)]  The pairing $ \langle \xi_i, [b_i]^{(N)} \rangle \neq 0$
+where $[b_i]$ is  defined similarly to  $[a_i]$: it is the associated homology class
+under $K_i(\mathbf{F}_v)  \rightarrow H_i (\GL_{\infty}(\mathbf{F}_v),\Z/\ell)$,
+and correspondingly we have $[b_i]^{(N)} \in H_i(\GL_N(\mathbf{F}_v), \Z/\ell)$. 
+
+
+\item[(c)]  $ \langle \xi_3 \cup \dots  \cup \xi_{2d-1} ,  \left(  [b_3]  * \cdots *  [b_{2d-1}] \right)^{(N)} \rangle \neq 0$,
+where * is  the  Pontryagin product on the homology of $\GL_{\infty}(\mathbf{F}_v)$. 
+ 
+\item[(d)]  
+Let $[Y(K)] \in H_{d^2-1}(Y(K), \Q)$ be the fundamental class of $Y(K)$. Then 
+there exists $M \in \Q^*$ such that
+the image $\iota_* [Y(K)] \in  H_*(\GL_N(\mathcal{O}_F) ,\Q) $   satisfies:
+\begin{equation} \label{Mdef}  \iota_* [Y(K)] = M \cdot   \left(  [a_3] *[a_5] * \dots * [a_{2d-1}] \right)^{(N)}. \end{equation}
+where on the right we have the Pontryagin product for $\GL_{\infty}(\mathcal{O}_F)$, and $\iota$
+is as in \eqref{def of iota}.
+\end{itemize}
+
+Let us first see why (a) -- (d) implies  Lemma \ref{pairs}.
+ Recall that we chose $\ell$ to not divide the  
+ numerator or denominator of $M$, and also that the cohomology of $\GL_{\infty}(\mathcal{O}_F)$ and so also
+ $\GL_N(\mathcal{O}_F)$ is $\ell$-torsion free in degrees $< d^2$;
+therefore,  condition (d) implies an equality in $\Z_{\ell}$-homology:
+ \begin{equation} \label{i unit} \iota_*[Y(K)] =   \left( \mbox{unit} \right) \cdot  \left(  [a_3] \dots * [a_{2d-1}] \right)^{(N)}.\end{equation}
+ 
+
+Let $\pi$ be the projection from $\GL_N(\mathcal{O}_F)$ to $\GL_N(\mathbf{F}_v)$. 
+Write $\Xi_i = \pi^* \xi_i \in H^*(\GL_N(\OO_F), \Z/\ell)$ 
+and $\eta_i = \iota^* \Xi_i \in H^*(Y(K), \Z/\ell)$. We have then
+$$ \langle \Xi_i, [a_i]^{(N)} \rangle  = \langle \pi^* \xi_i, [a_i]^{(N)} \rangle =  \langle \xi_i, \pi_* [a_i]^{(N)} \rangle = \langle \xi_i, [b_i]^{(N)} \rangle \neq 0$$ 
+since $\pi_* [a_i] = [b_i]$.  Also, in a similar way, 
+\begin{multline}  \langle \Xi_3 \cup \dots \cup \Xi_{2d-1},  \left( [a_3]* \dots  * [a_{2d-1}]  \right)^{(N)} \rangle \\
+= \mbox{unit multiple of }  \langle \xi_3 \cup \cdots \cup \xi_{2d-1},   \left( [b_3] * \dots *  [b_{2d-1}] \right)^{(N)}  \rangle \neq 0\end{multline}
+because the Pontryagin products and the stabilization maps are compatible with $\pi_*$. 
+From this and \eqref{i unit} we get
+ $$ \langle \eta_3 \cup \dots \cup \eta_{2d-1} , [Y(K)] \rangle = \langle \Xi_3 \cup \dots \cup \Xi_{2d-1}, \iota_* [Y(K)] \rangle \neq 0.$$ 
+
+ 
+ But the Hecke-trivial cohomology of $Y(K)$ modulo $\ell$ is a free exterior algebra on generators in degrees $ 3, \dots, (2d-1)$. 
+ Fix such generators -- call them $\nu_3, \nu_5, \dots$. 
+Each $\eta_i$ is  also an element of this Hecke-trivial cohomology by Lemma \ref{lem:HTriv}. It follows that
+ $$\eta_i = \mbox{ unit} \cdot \nu_i + \left(  \mbox{ product of $\nu_j$s with $j < i$}\right)$$
+ because otherwise the cup product
+ $\eta_3 \cup \dots \cup \eta_{2d-1}$ would be trivial.
+ We conclude that, in fact, the 
+ map
+\begin{equation} \label{sarge000} H^*(\mathbf{G}(\mathbf{F}_v), \Z/\ell) \rightarrow H^*(Y(K), \Z/\ell)_{\triv} \end{equation}
+ is {\em onto} as required.
+ Therefore, to prove Lemma \ref{pairs} it is sufficient to prove (a)--(d) above. 
+ 
+ 
+ 
+ 
+\subsection{Verification of (d) from \S \ref{abcd}} 
+ Since we are supposing \eqref{mapN} to be a surjection in degrees up to $d^2$, it's enough to 
+verify that there is a nonzero $M \in \mathbf{C}$ such that 
+\begin{equation} \label{Fr}  \langle \iota_* [Y(K)], \omega \rangle =   M  \langle \left(  [a_3]* \dots * [a_{2d-1}] \right)^{(N)},  \omega \rangle\end{equation}
+ whenever $\omega$ is an invariant differential form on $\GL_N(\C)$.
+We compute in the case  (see \eqref{oinkoink} for the definition):
+$$\omega = \Omega_J = \Omega_{j_1} \wedge \dots \wedge \Omega_{j_t}$$
+where $J = \{j_1, \dots, j_t\}$, and  show that both
+sides   are nonzero  if and only if $J=\{3, 5, \dots, 2d-1\}$. That is enough to prove \eqref{Fr}. 
+
+
+ 
+
+ The right hand side  of \eqref{Fr} equals 
+\begin{equation} \label{KPd} \langle  [a_3]* \dots * [a_{2d-1}] , \omega^{(\infty)}  \rangle = \langle  [a_3] \otimes  \dots \otimes [a_{2d-1}], \mathrm{coproduct}(\omega^{(\infty)}) \rangle,\end{equation}
+ where we allow ourselves to write $\omega^{(\infty)} \in H^*(\GL_{\infty}(\mathcal{O}_F), \C)$ for the  stabilization of the  cohomology class corresponding to $\omega$. 
+ Now $\coproduct(\omega^{(\infty)} ) $ 
+ is the product
+ of various terms of the shape
+  $$  \left( \Omega_{j_1} \otimes 1 \otimes 1 \otimes \cdots 1 + 1 \otimes \Omega_{j_1} \otimes 1 \otimes \dots \otimes 1 + \cdots \right)^{(\infty)} $$
+ and from this we see (just for degree reasons) that the term on the right of \eqref{KPd} vanishes if there is even one $j_i$ larger than $2d-1$
+ or one $j_i$ equal to $1$.  
+ So  $J \subset \{3, \dots, 2d-1\}$. Again, for degree reasons, equality must hold. That shows the right-hand side is zero unless  $J=\{3, 5, \dots, 2d-1\}$.
+ When $J=\{3, 5, \dots, 2d-1\}$, the right-hand side becomes 
+ $$ \langle a_3, \Omega_3 \rangle \cdot  \langle a_5, \Omega_5 \rangle \dots  \langle a_{2d-1}, \Omega_{2d-1} \rangle$$
+ and each factor $\langle a_j, \Omega_j \rangle$ is  nonzero: this is the nontriviality of the Borel regulator. 
+ 
+  
+
+
+
+
+
+
+
+
+ 
+ 
+  
+
+
+
+
+
+
+
+Now let us examine the left-hand side of \eqref{Fr}, which equals $\langle [Y(K)], \iota^* \Omega_{j_1} \wedge \dots \wedge \iota^* \Omega_{j_d} \rangle$.  It's easy to see that $\iota^* \Omega_1$ vanishes. We also  claim that $\iota^* \Omega_j$ must vanish for $j > 2d-1$.     Indeed we claim that $\iota^* \Omega_j$, which defines an invariant form on $Y(K)$
+and thus corresponds by \eqref{raru} to an invariant differential form in the cohomology of $\mathrm{SU}_d$, is {\em primitive} as such.
+  For that consider this diagram: 
+   \begin{equation}
+ \xymatrix{
+ \mbox{invariant forms on $\SL_N(\C)/\mathrm{SU}_N$} \ar[r] \ar[d] &  \mbox{invariant forms on $\mathbf{G}(\C)/SU_d$} \ \ar[d] \\
+\mbox{$\mathrm{SU}_N$-invariant forms on $i \mathfrak{su}_N$} \ar[r]\ar[d]  &  \mbox{$SU_d$-invariant forms on $i \mathfrak{su}_d$} \ar[d] . \\
+H^*(\mathrm{SU}_N) \ar[r]  & H^*(SU_d).
+ }
+\end{equation}
+where the various maps of groups arise from the map $\iota$ of \eqref{iotadef}, and the top vertical
+maps arise by restriction to the tangent space of the identity coset. 
+In other words, the element of $H^*(\mathrm{SU}_d)$ corresponding to $\iota^* \Omega_j$
+is just the pull-back of the element of $H^*(\mathrm{U}_N)$ corresponding to $\Omega_j$
+under the group homomorphism $$\varphi: SU_d \rightarrow U_N$$ 
+induced by $\iota$. In particular, $\varphi^* \Omega_j$ is also primitive. 
+
+ This shows that the left-hand side of \eqref{Fr} vanishes unless $J=\{3, 5, \dots, 2d-1\}$.  We must still check that it is actually nonvanishing in this case.
+For this, we must show that $\iota^*( \Omega_3 \wedge \dots \wedge \Omega_{2d-1}) $
+is nonvanishing, equivalently that
+$$ \varphi^* \Omega_3 \wedge \dots \wedge \varphi^* \Omega_{2d-1}$$
+is a nonvanishing element of the cohomology of $\mathrm{SU}_d$. Since each $\varphi^* \Omega_j$ is primitive it is enough
+to see that they are all nonzero.    The $N$-dimensional representation of $\mathrm{SU}_d$ defined by $\varphi$ is 
+ isomorphic to the sum of many copies of the standard representation of $\mathrm{SU}_d$. Now one can just compute explicitly with \eqref{oinkoink}. 
+
+ 
+  
+ 
+\subsection{Verification of  (b) and  (c) from \S \ref{abcd}}
+ In words, what we have to do is produce elements $\theta_i \in H^i(\GL_{\infty}(\mathbf{F}_v), \Z/\ell)$
+ for each odd $3 \leq i \leq 2d-1$; these $\theta_i$ should  detect (pair nontrivially with) a generator  of $K_i(\mathbf{F}_v)$, and the cup product
+ $\theta_3 \cup \dots \cup \theta_{2d-1}$ 
+should detect the Pontryagin product of  the homology classes associated to those generators.   Then we 
+ may take $\xi_i = \theta_i^{(N)}  \in H^i(\GL_N(\mathbf{F}_v),\Z/\ell)$.
+ 
+ 
+ Quillen shows a natural choice for $\theta_i$:  an equivariant Chern class derived from the standard representation of $\GL_N$.  
+ In other words, write $G = \GL_N(\mathbf{F}_v)$ and write $\Gamma$ for the Galois group of $\mathbf{F}_v$.   
+ The standard representation of $\GL_N$ can be considered a $G$-equivariant vector bundle on $\mathrm{Spec}(\mathbf{F}_v)$, and thus we get a Chern class
+  $$c_{2i} \in H^{2i}_{G, \et}(\Spec \mathbf{F}_v , \Z/\ell(i)) \rightarrow H^1_{\et}(\Spec \mathbf{F}_v,  \Z/\ell(i)) \otimes H^{2i-1}(G, \Z/\ell)$$
+  where on the left we have equivariant etale cohomology, and on the right we have usual etale cohomology; the arrow is explicated
+  in  \cite[II.1.2, Lemma 1]{Soule}. 
+   We may identify the {\'e}tale cohomlogy of $\mathbf{F}_v$ with the (continuous) group cohomology of $\Gamma$, and here $\Gamma$ 
+  is acting trivially on $\mu_{\ell}$, and so $H^1(\Spec \ \mathbf{F}_v, \Z/\ell(i)) = H^1(\Gamma, \Z/\ell(i))$ is identified with simply $\mu_{\ell}^{\otimes i}$.
+ Fix a generator  $\alpha$ for $\mu_{\ell}$. 
+  Thus the image of $c_{2i}$ is of the form  $\alpha^i \otimes \theta_{2i-1}$,
+  for some $\theta_{2i-1} \in H^{2i-1}(G, \Z/\ell)$. 
+    Similarly we can map $c_{2i}$
+  into $H^0(\Gamma, \Z/\ell(i)) \otimes H^{2i}(G, \Z/\ell)$; in that way we get a class $\theta_{2i}' \in H^{2i}(G, \Z/\ell)$ so that the image of $c_{2i}$
+  is $\alpha^i \otimes \theta_{2i}'$. 
+  The class $c_{2i}$ gives a morphism ( the ``Soul{\'e} Chern class'')
+\begin{equation} \label{Soule} s: H_{2i-1}(G, \Z/\ell) \rightarrow H^1(\Gamma, \Z/\ell(i))\end{equation}
+  which sends $\lambda \in H_{2i-1}$ to $\langle  \theta_{2i-1}, \lambda \rangle \alpha^{\otimes i}$. 
+   
+ 
+These constructions are ``stable'' under increasing $N$ -- see \cite[p. 257]{Soule} -- 
+and so we can consider $\theta_{2i-1}, \theta_{2i}'$ as classes in $H^*(\GL_{\infty}(\mathbf{F}_v), \Z/\ell)$,
+and the Soul{\'e} map as a map $H_{2i-1}(\GL_{\infty}(\mathbf{F}_v), \Z/\ell) \rightarrow H^1(\Gamma, \Z/\ell(i))$.
+
+  
+Now Soul{\'e} Chern class is  known to be surjective when precomposed with $K_{2i-1} \rightarrow H_{2i-1}$ (\cite[Prop. 5, p 284]{Soule})
+(so long as $i < \ell$ -- true by assumption on $\ell$). 
+This immediately verifies property (b), that is to say if we fix a generator $b_{2i-1}$
+for $K_{2i-1}(\mathbf{F}_v)$ with associated homology class $[b_{2i-1}]$  we have
+$$ 0 \neq s([b_{2i-1}]) = \langle \theta_{2i-1}, [b_{2i-1}] \rangle \alpha^{\otimes i}$$
+so $\langle \theta_{2i-1}, [b_{2i-1}] \rangle \neq 0$ as desired.
+ 
+
+    To compute e.g. $\langle \theta_3 \cup  \theta_5 \cup \theta_7,  [b_3]  *  [b_5] * [b_7] \rangle $ we rewrite it as 
+\begin{equation} \label{todo}   
+= \langle \coproduct(\theta_3) \coproduct(\theta_5) \coproduct(\theta_7), b_3 \otimes b_5 \otimes b_7 \rangle  \end{equation}
+
+Let us note that each $[b_i]$ is primitive in homology -- i.e. $\langle [b_i], \alpha \cup \beta \rangle = 0$ if $\alpha, \beta$ are cohomology classes both in positive degree. 
+This is because $[b_i]$ comes from the image of the  Hurewicz map $\pi_i \rightarrow H_i$, so we can just pull back to the sphere $S^i$ and compute. 
+
+
+  Quillen has shown \cite[Proposition 2]{QuillenFp} (see also \cite[Remark 2, p.569]{QuillenFp})   that  the coproduct of (e.g.) $\theta_7$ equals  $$\coproduct( \theta_7)= \underbrace{\theta_0'}_{1} \otimes  \theta_7 + \theta_2' \otimes \theta_5 +  \theta_4' \otimes \theta_3 +\theta_6' \otimes \theta_1 + \mbox{symmetric terms}.$$
+Thus, when we take the product $\coproduct(\theta_3) \coproduct(\theta_5) \coproduct(\theta_7)$,
+we get a sum of several terms; because of the 
+  {\em primitivity} of $[b_i]$ just noted, 
+  the only terms that contribute to \eqref{todo} will be
+  those coming from
+{\small   $$(1 \otimes 1 \otimes \theta_3 + 1 \otimes \theta_3 \otimes 1+ \theta_3 \otimes 1 \otimes 1) (1 \otimes 1 \otimes \theta_5 + 1 \otimes \theta_5 \otimes 1+ \theta_5 \otimes 1 \otimes 1) 
+ (1 \otimes 1 \otimes \theta_7 + 1 \otimes \theta_7 \otimes 1+ \theta_7 \otimes 1 \otimes 1) $$}
+  and the only term of these with degree $3,5,7$ in the first, second and third factors is $\theta_3 \otimes \theta_5 \otimes \theta_7$. 
+Therefore, 
+\begin{align*} \langle \theta_3 \cup  \theta_5 \cup \theta_7,  [b_3]  *  [b_5] * [b_7] \rangle &=&  \langle  \theta_3 \otimes \theta_5 \otimes \theta_7, [b_3] \otimes [b_5] \otimes [b_7] \rangle  \\ &=& \prod \langle \theta_{3},[b_3] \rangle \langle \theta_5, [b_5] \rangle \langle \theta_7, [b_7] \rangle \neq 0 \end{align*}
+which gives (c) in the case $d=4$; the general case is the same. 
+ 
+ 
+ 
+   
+\subsection{Verification of (a) from \S \ref{abcd}} \label{sec:Chebo}
+Write $\mathcal{O}' = \mathcal{O}_F[1/\ell]$. 
+The  Soul{\'e} maps from \eqref{Soule}  fit in a commutative diagram 
+ \begin{equation}
+ \xymatrix{
+ K_{2i-1}(\mathcal{O}')  \ar[r] \ar[d] & K_{2i-1}(\mathbf{F}_v) \ar[d] \\
+ H^1(\Gamma, \Z_{\ell}(i)) \ar[r] & H^1(\mathrm{Gal}(\overline{\mathbf{F}_v}/\mathbf{F}_v), \Z_{\ell}(i))  .
+ }
+\end{equation}
+where $\Gamma$ is  now the Galois group of  the maximal unramified extension  of $\mathcal{O}'$ ; note that  
+ $\mathcal{O}_F \rightarrow \mathcal{O}'$ induces an isomorphism on $K_{2i-1}$ for $i > 1$ (see \cite[Theorem 4.6]{Weibel}). 
+The right-hand vertical arrow is an isomorphism for $i <\ell$ (Soul{\'e}, {\em loc. cit.}) , and   the left-hand vertical arrow is a surjection (see \cite{Kahn}).
+ 
+ 
+The map $H^1(\Gamma, \Z_{\ell}(i))/\ell \rightarrow H^1(\Gamma, \mathbf{F}_{\ell}(i))$ 
+is an injection.  Choose an element $a_{2i-1} \in K_{2i-1}(\mathcal{O}')$ whose image in $ H^1(\Gamma, \mathbf{F}_{\ell}(i))$
+is nonzero (note that $H^1(\Gamma, \mathbf{Z}_{\ell}(i))/\ell$ is nonzero, by computing Euler characteristic). 
+A nontrivial class in $H^1(\Gamma, \mathbf{F}_{\ell}(i))$ is represented by a nontrivial extension 
+\begin{equation} \label{exli} \mathbf{F}_{\ell}(i) \rightarrow M \rightarrow \mathbf{F}_{\ell},\end{equation} in other words, by a homomorphism
+$\Gamma \rightarrow \GL_2(\Z/\ell)$ of the form 
+ $$ \left( \begin{array}{cc} \omega^i & \rho \\ 0 & 1 \end{array}\right) $$ 
+ Note that the image of this homomorphism must have size divisible by $\ell$; 
+for otherwise the extension \eqref{exli} splits. By Chebotarev density, we may find infinitely many Frobenius elements $\mathrm{Frob}_v$ which map
+ to 
+  $$ \left( \begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array}\right) $$ 
+ which  implies that the restriction of the extension class to $H^1(\mathbf{F}_v, \mathbf{F}_{\ell}(i))$ is nontrivial.
+ 
+ In other words, the image of $a_{2i-1}$ in $H^1(\mathrm{Gal}(\overline{\mathbf{F}_v}/\mathbf{F}_v), \mathbf{F}_{\ell}(i)) $,
+ and so also in $K_{2i-1}/\ell$, 
+ is nontrivial for finitely many $v$.  This proves our assertion. 
+
+
+
+\section{Setup for patching}  \label{Patching} 
+
+We continue in a global setting, but now turn to the study of tempered cohomology. This study 
+will occupy most of the remainder of the paper (\S \ref{Patching} -- \S \ref{reciprocity}). 
+
+ In the current section (\S \ref{Patching}) we will set up  the various assumptions needed,
+ and in the next section (\S \ref{Patching2}) we will use the relationship between
+ the Taylor--Wiles method and the derived Hecke algebra (outlined in \S \ref{sec:explication})
+ to prove our target theorem, Theorem \ref{mindegreeproof}: it says the global derived Hecke algebra
+actually is big enough to be able to account for the degree spread of cohomology.  
+
+
+
+In \S \ref{reciprocity} we will explain how to index elements of the global derived Hecke algebra by a Selmer group,
+and use this to formulate our main Conjecture \ref{mainconjecture}.
+
+
+A few apologies are in order:
+ \begin{itemize}
+ 
+
+\item 
+ We   switch notation slightly, working with mod $p^n$ coefficients rather than mod $\ell^n$, to better
+make contact with the standard presentations of Galois representations and the Taylor-Wiles method.
+
+\item We have made no attempt to optimize the method for small primes,
+and in particular make rather strong assumptions; in particular, we assume both that 
+we are in the ``minimal case'' of formally smooth local deformation rings, and that
+the Hecke ring at base level is isomorphic to $\Z_p$ (no congruences). 
+
+\end{itemize}
+
+
+\subsection{Assumptions}  \label{Sec:assumptions}
+  
+ 
+ \begin{enumerate}
+ 
+ \item Our general notations are  as in \S \ref{sec:notn}, but we now specialize
+ to the case that the number field $F$ is $\Q$, and that 
+  $\mathbf{G}$ is  a {\em simply connected},  semisimple $\Q$-group.  We assume that $\mathbf{G}$ is split,  and we fix a Borel subgroup $\mathbf{B}$ and a maximal torus $\mathbf{A}$ contained inside $\mathbf{B}$. 
+ 
+ 
+
+\item 
+We fix a level structure $K_0 \subset   \mathbf{G}(\Afinite)$, the ``base level.''   \index{$K_0$} \index{$Y(1)$}
+   We write $$Y(1)=Y(K_0)$$ for the arithmetic manifold (\eqref{YKdef}) of level $K_0$.
+   We sometimes refer to this as the ``level $1$'' arithmetic manifold even though it is not literally so. 
+
+   \item Let $\Pi$ be a tempered  cohomological automorphic cuspidal representation for $\mathbf{G}$, factorizing
+as $\Pi = \Pi_{\infty} \otimes \Pi_f$ over archimedean and finite places.  \index{$\Pi$}   
+We suppose that $\Pi^{K_0} \neq 0$, so that $\Pi$ actually contributes to the cohomology of $Y(1)$. 
+      
+   \item We write $\mathbb{T}_{K_0}$ for the Hecke algebra at level $K_0$. It will be convenient to follow the definition of
+   \cite{KT} and define this in a derived sense:
+   Consider the chain complex of $Y(K_0)$, with $\Z_p$ coefficients,  as an object in the derived category of $\Z_p$-modules; each
+  (prime to the level, and to $p$) Hecke operator gives an endomorphism of this object. Define 
+   $\mathbb{T}_{K_0}$ to be the  $\Z_p$-algebra generated by such endomorphisms.  
+This has the advantage that $\mathbb{T}_{K_0}$ acts on cohomology with coefficients
+in any $\Z_p$-module. 
+
+We may similarly form the Hecke algebra $\mathbb{T}_K$ at a deeper level $K \subset K_0$; 
+unless specified, it will be generated only by Hecke operators at good primes for $K$. 
+   
+  \item  We shall suppose that the coefficient field of $\Pi$ is $\Q$, for simplicity -- by this, we mean that  the eigenvalues of Hecke correspondences at 
+ all good places for $K_0$ lie in $\Q$,
+  or equivalently the underlying representation $\Pi_v$ has a $\Q$-rational structure for  all such $v$. 
+Under this assumption,  $\Pi$ gives
+   rise to a ring homomorphism 
+\begin{equation} \label{oort}  \mathbb{T}_{K_0} \rightarrow \Z_p.\end{equation}
+   
+   
+\index{$\Pi$} \index{$R$} 
+ 
+ \item 
+Let $T$ be the set of ramified places for $\Pi$, together with
+any places at which $K_0$ is not hyperspecial.  \index{$T$ (set of places)} 
+
+ 
+ 
+ \item 
+ Write
+ $$k =\Z/p\Z$$ and fix an algebraic closure $\overline{k}$ for $k$
+ where  $p > 5$ is a prime such that:
+  
+ \begin{itemize}
+ \item[(a)]  $H^*(Y(K_0), \Z)$ is $p$-torsion free.\item[(b)] $p$ does not 
+divide the order of the Weyl group of $\GG$, and also $p \notin T$, i.e. $p$ is not a bad 
+place for $\Pi$ or $K$. 
+
+      \item[(c)]  
+``No congruences between $\Pi$ and other forms at level $K_0$:''
+
+Consider the composite homomorphism
+\begin{equation} \label{chi_def}  \chi: \mathbb{T}_{K_0} \rightarrow \Z_p \rightarrow k,\end{equation}
+where the first map is the action on $\Pi$, and the second map the obvious one.
+Let $\mathfrak{m} = \ker(\chi) $ be its kernel.  \index{$\mathfrak{m}$} 
+We  shall require that  the induced map of completions is an {\em isomorphism}:  
+\begin{equation} \label{nocong0} \mathbb{T}_{K_0, \mathfrak{m}} \stackrel{\sim}{\longrightarrow} \Z_p\end{equation}
+and moreover we shall assume the vanishing of   homology after completion at the maximal ideal $\mathfrak{m}$:
+ \begin{equation} \label{nocong2} H_j(Y(1), \Z_p)_{\mathfrak{m}} =  0,   j  \notin  [\BWq, \BWq+\delta].  \end{equation} 
+ Observe that in favorable situations \eqref{nocong0} implies \eqref{nocong2}, and both should be true for all large enough $p$ -- 
+  see the Remark below
+for a further discussion.    Informally, \eqref{nocong0} and \eqref{nocong2} enforce
+that there are no congruences, modulo $p$, between $\Pi$ and other cohomological forms at level $K_0$. 
+
+Note that the definitions of $\chi, \mathfrak{m}$ make sense at any level.  Thus we use the notation $\chi, \mathfrak{m}$ sometimes for the corresponding notions for other level structures $Y(K)$,
+where $K \subset K_0$. 
+  
+
+
+
+
+
+
+
+
+
+ 
+ 
+\end{itemize}
+ 
+\item We put $$\ramprimes  = T \cup \{p\},$$ the collection of all primes that we have to worry about.  \index{$S$ (set of ramified places)}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+  
+\end{enumerate}
+
+ 
+ \begin{remark}
+We expect that  7(c) should be automatically valid for $p$ sufficiently large; in practice, for the purposes of this paper,
+it is not an onerous assumption (the minimal level conditions, enforced in (e) of \S \ref{GaloisAss}, is more restrictive).
+
+We give a proof that 7(c) is valid for all large enough $p$,  for $\mathbf{G}$ an  inner form of $\mathrm{SL}_n$ such that $Y(K)$ is compact.
+It is likely this can be generalized to other settings, with more work.    In what follows, denote by $\mathbb{T}_{K_0}$
+ the Hecke algebra defined as above, but with $\Z$ coefficients; this is easily seen to be finitely generated over $\Z$.   Firstly,  the algebra $\mathbb{T}_{K_0} \otimes \C$ is semisimple,
+ because it acts faithfully on $H^*(Y(K_0), \C)$ and this action is semisimple (there is an invariant metric on harmonic forms). 
+ Thus, for all large enough primes $p$, $\mathbb{T}_{K_0}$ is {\'e}tale over $\mathbf{Z}$ and thus \eqref{nocong0} must be valid. 
+If  the homology in \eqref{nocong2} is nonvanishing, then 
+there exists an eigenclass for $\mathbb{T}_{K_0}$  on $H_j$ whose associated character
+factors through $\mathbb{T}_{K_0, \mathfrak{m}}$;  by \eqref{nocong0}, this character must coincide with the action of $\mathbb{T}_{K_0}$
+ on $\Pi$.  In other words,  the Hecke eigensystem associated to $\Pi$ occurs in degree $j$.  
+ This eigensystem corresponds to an automorphic representation $\Pi'$ such that $\Pi'_v = \Pi_v$
+ for almost all $v$.  By the strong multiplicity one theorem for $\mathbf{GL}_n$, this implies that $\Pi'_{\infty}$ is tempered cuspidal, and then
+ it has nonvanishing $(\mathfrak{g}, K)$ cohomology only in degrees $[\BWq, \BWq+\delta]$. 
+  \end{remark}
+
+That's the basic setup; now 
+for Galois representations. 
+
+
+\subsection{Assumptions about Galois representations; the deformation ring $\defring$ } \label{GaloisAss}
+ We will make assumptions very close to \cite[Conjecture 6.1]{GV}.
+ We briefly summarize them and refer the reader to  \cite{GV} for full details:
+ 
+
+Let $K \subset K_0$ be a deeper level structure, $\mathbb{T}_K$ be as above, and let $\mathbb{T}_K \rightarrow k$
+be a character. {\color{\changecolor} We require that there exist a   Galois representation
+$$\mathrm{Gal}(\overline{\Q}/\Q) \rightarrow G^{\vee}(\bar{k})$$
+satisfying the usual unramified compatibility, see (a) below.  }
+
+Moreover, for the specific character $\mathbb{T}_K \rightarrow k$ 
+  as 
+in  \eqref{chi_def}, i.e. 
+the map associated to  the fixed automorphic representation $\Pi$,
+reduced modulo $p$, we require more precise statements:
+Let $\mathfrak{m}$ be the kernel of $\mathbb{T}_K \rightarrow k$, and $\mathbb{T}_{K,\mathfrak{m}}$ the completion of $\mathbb{T}_K$ at $\mathfrak{m}$. 
+We require there to exist a Galois representation\footnote{Note that the assumption that there is a $\mathbb{T}$-valued Galois representation,
+rather than a weaker notion such as a determinant, is not reasonable unless one has a condition like ``residual irreducibility.'' In our case, however, we are assuming that
+the residual representation $\rhobar$ has very large image anyway -- see (b) below.} 
+$$ \tilde{\rho}: \mathrm{Gal}(\overline{\Q}/\Q) \longrightarrow   G^{\vee}(\mathbb{T}_{K, \mathfrak{m}})$$
+ with the following properties: 
+
+\begin{itemize}
+\item[(a)]
+(Unramified compatibility): Fix a representation $\tau$ of $G^{\vee}$.
+For all primes $q$ not dividing the level of $K$, 
+the representation $\rho$ is unramified at $q$, and  the action of $\mathrm{trace}(\tau \circ \tilde{\rho})(\mathrm{Frob}_q) \in   \mathbb{T}_{K, \mathfrak{m}}$
+coincides with the image of  the (Satake)-associated Hecke operator 
+$T_{q, \tau}$.
+
+  
+ \item[(b)]  Let $\rhobar$ be the reduction modulo $p$ of $\tilde{\rho}$, so that
+$$\rhobar: \Gal(\overline{\Q}/\Q) \rightarrow G^{\vee}(k).$$ 
+ Then $\rhobar$ has big image:  when restricted to the Galois
+ group of $\Q(\zeta_{p^{\infty}})$, 
+ the image of $\rhobar$   contains the image of the $k$-points of the simply connected cover of $G^{\vee}$.
+ 
+ \item[(c)] (Vague version: see \cite[Conjecture 6.1]{GV} for precise formulation): There is a reasonable notion of ``crystalline at $p$'' representation into $G^{\vee}$,
+ and the representation $\tilde{\rho}$ is ``crystalline at $p$.'' 
+ 
+ \item[(d)] (Vague version: see \cite[Conjecture 6.1]{GV} and references therein for precise version): The representation
+ $\tilde{\rho}$ satisfies the expected local constraints (``local--global compatibility'') when restricted to $\Q_{q}$; 
+ here $q$ is a Taylor--Wiles prime (\S \ref{TWprimes stuff}) that divides the level of $K$.  We {\em also} assume a natural version of local global compatibility
+ at Iwahori level $Y_0(q)$, formulated  before  Lemma \ref{needaref}. 
+ 
+ \item[(e)] ```All local deformation rings are all formally smooth:''   we suppose that   $$H^0(\Q_q, \Ad \rhobar) = H^2(\Q_q, \Ad \rhobar)=0 \ \ \ \mbox{ for all } q \in \ramprimes = T \cup \{p\}.$$
+This means that the local deformation ring of $\rhobar$ at primes $q \in T$  is isomorphic to $\Z_p$,
+{\em and} the  local deformation ring of $\rhobar$ at $q=p$ is formally smooth.  This keeps our notation as light as possible. (We also use the formal smoothness
+to squeeze the most out of the Taylor--Wiles method, but 
+probably one can get something without it.)
+ \end{itemize}
+ 
+ In particular, the natural map $\mathbb{T}_{K_0,\mathfrak{m}} \rightarrow \Z_p$  of \eqref{nocong0} gives rise to a Galois representation
+ valued in $G^{\vee}(\Z_p)$, which we shall just call $\rho$: \index{$\rho$} 
+\begin{equation} \label{Zplift} \rho: \Gal(\overline{\Q}/\Q) \longrightarrow G^{\vee}(\Z_p),\end{equation}
+ which of course lifts the residual representation:
+ $$\rhobar: \Gal(\overline{\Q}/\Q) \longrightarrow G^{\vee}(k).$$ \index{$\rhobar$} 
+ \index{$\defring$} 
+ Let $\defring$ be the universal  crystalline deformation ring of $\rhobar$, allowing ramification only at the set $\ramprimes$.    
+Good references for deformation rings  are \cite{CHT} 
+or \cite{AWS}.
+ 
+ 
+ 
+  
+
+ 
+ 
+Let us now set up notations for Taylor--Wiles primes.  
+
+
+
+
+
+\subsection{Taylor--Wiles primes and auxiliary level structures} \label{TWprimes stuff}
+\index{Taylor--Wiles prime}
+A {\em Taylor-Wiles prime} of level $n$ is a prime $q$ (we will also occasionally use the letter $\ell$), not dividing the level of $K_0$, 
+such that:
+\begin{itemize}
+\item[-] $p^n$ divides $q-1$, and 
+\item[-] $\rhobar(\Frob_q)$ is conjugate to a strongly regular element of $T^{\vee}(k)$.
+\end{itemize}
+Here an element $t \in T^{\vee}(k)$ is {\em strongly regular} if its centralizer inside $G^{\vee}$ is equal to $T^{\vee}$. \index{strongly regular elememnt}
+
+
+We are really interested in systems of such primes, and it is useful to keep track of the  strongly regular element as part of the data.
+Fix once and for all a sufficiently large integer $s$. We will work with collections of such primes of cardinality $s$, \index{$s$ (size of Taylor--Wiles datum)} 
+which we call Taylor--Wiles data:
+
+\begin{itemize}
+
+\item[-]   A {\em Taylor-Wiles datum} of level $n$ is   a set of primes $Q_n = (q_1, \dots, q_s)$  together with strongly regular elements $(\Frob_{q_1}^T, \dots, \Frob_{q_s}^T) \in T^{\vee}(k)$  \index{$\Frob_q^T$}
+ such that 
+\begin{itemize}
+\item[-]    $p^{n}$ divides $q_i-1$, and 
+\item[-]  $\rhobar(\Frob_{q_i})$ is  conjugate to  $\Frob_{q_i}^T$.
+\end{itemize} 
+  
+ We will usually use $q$ to denote a typical element of a Taylor--Wiles set of primes, but occasionally we will also use the letter $\ell$.
+Note that the set of possible choices for each $\Frob_{q_i}^T$ has size $|W|$, the order of the Weyl group. 
+
+  
+ 
+
+ 
+
+
+
+\item[-] 
+Let $r$ be the rank of the maximal torus $\TT$. Set \begin{equation}  \label{Tsdef}  R=rs, \ \ \ T^{\vee}_s = (T^{\vee})^s, \ \ \ \  W_s = W^s \end{equation} 
+ thus $T^{\vee}_s$ is a torus and $R$ is the rank of $T^{\vee}_s$, and $W_s$ acts on $T^{\vee}_s$.  \index{$W_s$} 
+  
+
+\item[-]  Level structures: 
+If $q \notin \ramprimes$ is prime, we denote by  \index{$Y_0(q)$} 
+\begin{equation} \label{Y0ldef} Y_0(q) \rightarrow Y(1)\end{equation} 
+the covering obtained by adding Iwahori level structure at $q$, i.e. we replace $K_0$
+by the preimage of a Borel subgroup under $K_0 \rightarrow \GG(\F_{q})$. 
+Similarly, we get $Y_1(q)$ by taking the preimage of a unipotent radical of a Borel subgroup under the same mapping.  \index{$Y_1(q)$}
+The covering $Y_1(q) \rightarrow Y_0(q)$ is ``Galois,'' with Galois group $ \mathbf{A}(\mathbf{F}_{q}) \simeq (\mathbf{F}_{q}^{\times})^r$.
+ 
+
+  Suppose that  $p^{n}$ divides $q-1$. In that case,  define $Y_1(q,n) $ to be  \index{$Y_1(q,n)$} 
+the unique subcovering of $Y_1(q) \rightarrow Y_0(q)$ such that
+the covering $Y_1(q, n) \rightarrow Y_0(q)$
+has covering group $(\Z/p^n)^{r}$. In summary:
+\begin{equation} \label{Y1def}  \overbrace{ Y_1(q) \rightarrow  \underbrace{ Y_1(q, n) \rightarrow Y_0(q)}_{\mathbf{A}(\mathbf{F}_{q})/p^n \simeq (\Z/p^n)^{r}}}^{ \mathbf{A}(\mathbf{F}_{q}) \simeq (\mathbf{F}_{q}^{\times})^{r}} \end{equation}
+ 
+
+ 
+
+
+\item[-] For a Taylor--Wiles  datum $Q_n$ of level $n$, we  let   \index{$Y_1^*(Q_n)$} 
+ $Y_1^*(Q_n)$ be the fiber-product, over $Y(1)$, of all the coverings $Y_1(q_i,n) \rightarrow Y(1)$. 
+ Similarly we define $Y_0(Q_n)$. \index{$Y_0(Q_n)$} 
+Therefore, $Y_1^*(Q_n) \rightarrow Y_0(Q_n)$ is Galois;  \index{$T_n$}
+we write 
+\begin{equation} \label{idontcare} T_n = \left(  \mbox{ Galois group of  $Y_1^*(Q_n) \rightarrow Y(1)$ }  \right) = \prod_{q \in Q_n} \mathbf{A}(\mathbf{F}_q)/p^n,\end{equation}
+thus we have (non-canonically) 
+\begin{equation} \label{identifT} T_n   \simeq (\Z/p^n)^R.\end{equation}
+
+
+   As a shorthand we write
+$$H_*(Q_n, S) := H_*(Y_1^*(Q_n), S)$$
+where $S$ is a ring of coefficients.   
+
+
+
+ \end{itemize}
+ 
+
+
+\subsection{Rings of diamond operators} \label{sec:diamond} 
+We now set up the rings that are generated by ``diamond operators,'' i.e. the deck transformation groups of our various coverings $Y_1^*(Q_n) \rightarrow Y_0(Q_n)$. 
+Continuing  with the notation of the prior section, put   \index{$S_n$} 
+\begin{equation} \label{sndef} S_n  = \Z/p^n[T_n], \ \ S_n' =  \Z_p [T_n], \end{equation}
+so these act on  the $\Z/p^n$ and $\Z_p$-valued chain complex of $Y_1^*(Q_n)$. 
+Fixing, as in \eqref{identifT} , an isomorphism of $T_n$ with $(\Z/p^n)^R$, we can identify this ring as follows.
+\begin{equation} \label{explicit} S_n \simeq    \Z/p^n[x_1, \dots, x_R]/( (1+x_i)^{p^n}-1). \end{equation} 
+where $x_i = [e_i]- 1$, $e_i$ being a generator of the $i$th factor $\Z/p^n$ under the isomorphism \eqref{identifT}.   Recall $R=rs$ as in \eqref{Tsdef}. 
+
+
+Finally we form  a ``limit ring''  \index{$\Sinf$} 
+\begin{equation} \label{Sinfdef} \Sinf := \Z_p[[x_1, \dots, x_R]]\end{equation}
+
+ 
+The presentation \eqref{explicit} gives rise to obvious maps
+ $ \Sinf \twoheadrightarrow S_n$ and  (compatible) augmentations of $\Sinf$ and $S_n$ to $\Z_p$ and $\Z/p^n$ respectively, carrying all the $x_i$ variables to zero; we denote by $\Iinf$ and $I_n$ the corresponding kernels,
+so that $\Sinf/\Iinf \simeq \Z_p$ and $S_n/I_n \simeq \Z/p^n$. 
+We need the following easy Lemma:
+ \begin{lemma*}
+Let notations be as above. The natural map
+\begin{equation} \label{toinfinity} \Ext^*_{S_n }(\Z/p^n, \Z/p^n) \rightarrow \Ext^*_{\Sinf/p^n}(\Z/p^n, \Z/p^n) \end{equation}
+(change of rings) is {\em surjective}. Also,  the natural map
+\begin{equation} \label{corfunct} \Ext^*_{\Sinf/p^n}(\Z/p^n, \Z/p^n) \rightarrow \Ext^*_{\Sinf}(\Z_p, \Z/p^n)\end{equation} 
+ (change of ring, and functoriality of $\Ext$ in the first argument) is an isomorphism. 
+ 
+\end{lemma*}
+
+ Recall that the change of ring map  $\Ext_B \rightarrow \Ext_A$ induced by a ring map $A \rightarrow B$  can be realized by thinking of $\Ext_B$ in terms of extensions of $B$-modules, and then
+ just regarding it as an extension of $A$-modules.  
+ 
+\proof 
+\iflongproof
+For \eqref{toinfinity}, it is sufficient to check surjectivity on  $\Ext^1$ because the right hand side
+is generated by $\Ext^0, \Ext^1$: it can be computed  to be an exterior algebra using a Koszul resolution, see Lemma \ref{KoszulExtComputation}.
+  Now ``morally speaking''  this is because it is the pullback on  group $H^1(-, \Z/p^n)$ induced
+by $\Z_p^R \rightarrow (\Z/p^n)^R$, but  this is not a real proof  (at least without discussing the relation between cohomology of profinite groups, 
+and $\Ext$s over the corresponding ``completed'' group algebra).
+
+
+ 
+So we just compute both sides by using the  compatible (under $\Sinf/p^n \rightarrow S_n$) sequences
+$I_n \rightarrow S_n \rightarrow \Z/p^n$ and $\Iinf/p^n \rightarrow \Sinf/p^n \rightarrow \Z/p^n$;
+taking homomorphisms into $\Z/p^n$, we get 
+\begin{equation} \label{coocoo} \Ext^1_{S_n}(\Z/p^n, \Z/p^n) \simeq \Hom_{S_n}(I_n, \Z/p^n) \left( \simeq \Hom(I_n/I_n^2, \Z/p^n) \right) \end{equation}
+and similar.    (Note that the image of $\Hom_{S_n}(S_n, \Z/p^n)$ in $\Hom_{S_n}(I_n, \Z/p^n)$ is zero.) 
+
+So we need to check that the map 
+\begin{equation} \label{godot} \Iinf/p^n \rightarrow I_n\end{equation}
+induces an isomorphism when we take $\Hom_{\Sinf}(-, \Z/p^n)$.
+
+The homomorphisms $\Hom_{\Sinf}(I_n, \Z/p^n)$ are precisely given by homomorphisms
+$\varphi: T_n \rightarrow \Z/p^n$, namely, we send $x_i = [e_i] -1 \in I_n$  to  $\varphi(e_i)$,
+using the notation after \eqref{explicit}.  
+Since $\Iinf/(p^n, \Iinf^2)$ is a free $\Z/p^n$ module on $x_1, \dots, x_{R}$,
+it follows at once that \eqref{godot} induces an isomorphism as desired. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ Now we discuss \eqref{corfunct}, which is not hard but we spell it out, mainly to be clear because 
+ I find change of rings confusing.  
+ Let $\pi: P \rightarrow \Z_p$ be the Koszul  resolution of $\Z_p$
+ as an $\Sinf$-module, and $\overline{P} = P/p^n$ its reduction mod $p^n$, 
+ so that $\overline{\pi}: \overline{P} \rightarrow \Z/p^n$ is the Koszul resolution of $\Z/p^n$ as an $\Sinf/p^n$-module.  
+ There is an identification $\Ext^*_{\Sinf/p^n}(\Z/p^n, \Z/p^n)$
+ with the cohomology of $\Hom(\overline{P}, \Z/p^n)$; it sends a closed element $C \in  \Hom(\overline{P}, \Z/p^n[m])$ to the class 
+  $\alpha \in \Ext^m_{\Sinf/p^n}(\Z/p^n, \Z/p^n)$
+  represented by   the diagram $\Z/p^n \stackrel{\overline{\pi}}{\longleftarrow} \overline{P}  \stackrel{C}{\rightarrow} \Z/p^n[m]$
+ in the derived category of $\Sinf/p^n$-modules (one can invert quasi-isomorphisms in the derived category).  
+ 
+ Consider now the diagram  
+ \begin{equation} \label{feeling_groovy0}
+ \xymatrix{
+\Z/p^n    & \overline{P}   \ar[l]^{\sim}_{ \overline{\pi}} \ar[r]^C  & \Z/p^n[m]   \\
+\Z_p    \ar[u]^{A}  & \ar[l]^{\sim}_{\pi} P \ar[l] \ar[u]^B   \\
+ }
+ \end{equation}
+ where $\sim$ means quasi-isomorphism; $A,B$ are the natural projections.
+
+   Now, the image $\alpha'  \in \Ext_{\Sinf}(\Z_p, \Z/p^n)$ of $\alpha$, under the map \eqref{corfunct}, 
+is represented by the map $C \circ \overline{\pi}^{-1} \circ A$  inside the derived category of $\Sinf$-modules, equivalently, by the composition
+$C \circ B \circ \pi^{-1}$.  
+In other words, the image $\alpha'$ of $\alpha$ is represented by the class $C' \in \Hom(P, \Z/p^n[m])$ obtained by pulling back
+$ C \in \Hom(\overline{P}, \Z/p^n[m])$ via $P \rightarrow \overline{P}$.  That  pullback induces an isomorphism of complexes 
+$$\Hom_{\Sinf/p^n}(\overline{P}, \Z/p^n) \simeq \Hom_{\Sinf}(P, \Z/p^n),$$ and thus, passing to cohomology, the desired isomorphism of $\Ext$-groups. 
+\fi
+\qed 
+
+  
+ 
+  
+ 
+  
+  
+
+
+
+\subsection{ Adding level $q$ structure: The relationship between homology at level $Y(1)$ and level $Y_0(q)$ } \label{Morita}
+
+Fix a prime $q$ that doesn't divide the level of $K_0$, satisfying
+$q \equiv 1$ modulo $p^n$. 
+This section and the next two \S \ref{Morita}, \S \ref{HYln},   \S \ref{Lgcompat} all gather some ``standard'' properties of passing  between level $1$ and level $q$,
+working with $\Z/p^n$-cohomology. 
+We   remind the reader that ``level $1$'' does not literally mean level $1$, but just the base level $K_0$ at which we work.
+
+
+In the current section, we discuss the relationship between the homology of $Y(1)$ and $Y_0(q)$; recall that $Y_0(q)$ was obtained
+by adding Iwahori level at $q$ (see \eqref{Y0ldef}). 
+
+
+   
+
+
+We can use the discussion of \S \ref{IwahoriHecke}:  
+For $S=\Z/p^n$,  let $\mathrm{H}_I, \mathrm{H}_K$ and so on be the (usual, i.e. no ``derived''!) Hecke algebras for $(G_{q}, K_{q})$, with $S$-coefficients 
+ and let $\mathrm{H}_{IK}, \mathrm{H}_{KI}$ be the bimodules previously defined in \S \ref{Iwahori}. 
+ There are  natural maps
+\begin{equation} \label{juin} H^*(Y(1),S) \otimes_{\mathrm{H}_{K}} \mathrm{H}_{KI} \longrightarrow H^*(Y_0(q),S),\end{equation}
+$$   \ \ H^*(Y_0(q),S) \otimes_{\mathrm{H}_{I}} \mathrm{H}_{IK} \longrightarrow H^*(Y(1),S).
+$$  
+These maps are defined by the ``usual double coset formulas.'' More formally, we may identify  $\mathrm{H}_K$ with $\Hom_{SG_q} (S[G_q/K_q], S[G_q/K_q])$,  
+$\mathrm{H}_{KI}$ with $\Hom_{SG_q}(S[G_q/K_q], S[G_q/I_q]$) and so forth;   one may then   proceed as in the discussion of
+\S \ref{Arithmeticmanifolds}  to define the maps of \eqref{juin}. 
+ 
+ Before we go further, let us formulate a natural notion of   ``local-global compatibility'' at level $Y_0(q)$: 
+  the center of the Iwahori-Hecke algebra $\mathrm{H}_I$ at level $q$,
+which is identified (\S \ref{Zdis}) with the Hecke algebra $\mathrm{H}_K$. We shall suppose:  \begin{quote} (Local-global compatibility at level $Y_0(q)$:) 
+$\mathrm{H}_K$, identified with the center of $\mathrm{H}_I$ as just explained, acts on $H_*(Y_0(q), k)_{\mathfrak{m}}$ by means of the same (generalized)  eigencharacter $\mathrm{H}_K \rightarrow k$
+by which $\mathrm{H}_K$ acts on $\Pi$.  
+\end{quote} 
+
+It is feasible that this assumption could be avoided entirely but since it is very likely to be proven along with the other, more essential,
+local-global compatibility at Taylor-Wiles primes it seems harmless to assume it. 
+ 
+ \begin{lemma}  \label{needaref}
+ Let notation be as above,
+and assume the local-global compatibility just mentioned. 
+ {\color{\changecolor} Suppose that the prime $q$ is such that $\rhobar(\mathrm{Frob}_q)$ is conjugate
+ to a strongly regular element of $T^{\vee}(k)$.}
+Then the maps \eqref{juin} are   isomorphisms when  we localize
+at a maximal ideal of $\mathrm{H}_K$ induced by $\mathfrak{m}$. 
+In particular, if $q$ is part of a Taylor-Wiles datum of level $n$, then \eqref{juin} induces 
+\begin{equation} \label{Twloc} H^*(Y_0(q), \Z/p^n)_{\mathfrak{m}}  \stackrel{\sim}{\longleftarrow} H^*(Y(1), \Z/p^n)_{\mathfrak{m}} \otimes_{\mathrm{H}_K} \mathrm{H}_{KI}.\end{equation}
+  \end{lemma}
+  
+ 
+ 
+
+ 
+\proof 
+
+ 
+
+
+The assertion that  \eqref{Twloc} is an isomorphism follows from the assertion that \eqref{juin} is an isomorphism by  ``localization at $\mathfrak{m}$'' (taking a little care because the Hecke algebra for $Y_0(q)$ and $Y(1)$ 
+are not quite identically defined, the former omitting the prime above $q$. For a more detailed treatment of this point, please see \cite[Lemma 6.20]{KT}).   
+
+\begin{comment}
+We want to verify that the localization of $Y(1)$ using the Hecke algebra $T'$ away from $q$ is the same as that using the full Hecke algebra. 
+Let $m'$ be the restriction of $m$ to $T'$. There is a map $T' \rightarrow T$ and $T$ is finite over $T'$. Then there is only one prime ideal
+$m$ of $T$ containing $m'$, because two such primes would give two different Galois representations with exactly the same frobenius traces away from $q$.
+ It follows that a power of $m$ is contained in $m' T$, and so they define the same completion. 
+ \end{comment}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+So it is enough to prove the first assertion. 
+Everything will be with  $\Z/p^n$ coefficients.  First  note that  the two natural ways of making a map
+$$H^*(Y(1)) \otimes_{\mathrm{H}_K} \mathrm{H}_{KI} \otimes_{\mathrm{H}_I} \mathrm{H}_{IK} \longrightarrow H^*(Y(1)).$$
+(i.e., first contracting the first two coordinates, or first contracting the second two coordinates)
+both coincide; similarly  the other way around. 
+We make the rest of the argument in a more abstract setting. 
+ 
+ 
+Suppose $R_{1}, R_2$ are two rings, 
+and we are given an $(R_1, R_2)$-bimodule $M_{12}$ and an $(R_2,R_1)$-bimodule $M_{21}$,
+giving associated functors $$F(-) =  - \otimes_{R_1} M_{12}, \ \ G(-) = - \otimes_{R_2} M_{21}$$ 
+from (right) $R_1$-modules to (right) $R_2$-modules and vice versa, respectively.
+
+We assume that $F,G$ define an equivalence of categories, i.e. there are natural equivalences
+from $FG$ to the identity functor and from $GF$ to the identity functor. 
+(In our setting above $R_1=\mathrm{H}_K', R_2 = \mathrm{H}_I'$ -- the primes denote localization at the ideal of $\mathrm{H}_K$ induced 
+by $\mathfrak{m}$ --   
+and the bimodules are $\mathrm{H}_{KI}',  \mathrm{H}_{IK}'$; the assumptions are satisfied by  Lemma \ref{IHequivalence}.)
+ 
+  Next let $X$ be an $R_1$-module, let $Y$ be an $R_2$-module. (In our setting these are given by the  localized homology of $Y(1)$ and $Y_0(q)$, respectively.) 
+Suppose also we're given 
+maps $\alpha: F(X) \rightarrow Y, \ \beta: G(Y) \rightarrow X$ in such a way that the induced maps
+\begin{equation} \label{oq}  G(F(X)) \stackrel{G(\alpha)}{ \longrightarrow }G(Y)  \stackrel{\beta}{\longrightarrow}  X \end{equation} 
+\begin{equation} \label{oq2}   F(G(Y))  \stackrel{F(\beta)}{\longrightarrow}  F(X)  \stackrel{\alpha}{\longrightarrow }  Y \end{equation} 
+arise from the specified maps $GF \rightarrow \mathrm{id}$ and $FG \rightarrow \mathrm{id}$. 
+
+ 
+
+Then the maps $F(X) \rightarrow Y$ and $G(Y) \rightarrow X$ must be  surjections
+(by inspection of \eqref{oq} and  \eqref{oq2}); then in the diagram
+$ G(F(X)) \rightarrow G(Y) \rightarrow X$
+we have a composite of surjections giving an isomorphism,  so both are isomorphisms; in particular,
+$G(Y) \rightarrow X$ and $F(X) \rightarrow Y$ must be isomorphisms.    
+
+Applied to our original context, this concludes the proof of the first assertion of the Lemma.
+\qed 
+
+\medskip
+
+ 
+ Note also that inside $\mathrm{H}_I$ we have a copy of the monoid algebra  
+ $k[X_*^+]$, namely, the action of ``$U_{q}$-operators'' $I_q \chi I_q$
+ for $\chi \in X_*^+$ (see \eqref{IWidentification} for identification of $X_*$ with a coset space; $X_*^+$
+ is the positive cone corresponding to the Borel subgroup $\mathbf{B}$). 
+ Each element $t \in T^{\vee}(k)$ defines a character  $\chi_t: k[X_*^+] \rightarrow k$ of this monoid algebra: 
+ $t$ corresponds 
+  (by ``Local Langlands'', easy in this split case)
+ to an unramified character $\mathbf{A}(\Q_{q}) \rightarrow k^{\times}$, i.e. to a homomorphism $X_* \rightarrow k^{\times}$
+ and then we just take the linear extension
+\begin{equation} \label{chitdef} \chi_{t}: k[X_*^+] \rightarrow k.\end{equation}  \index{$\chi_t$} 
+ Using the  previous Lemma, it is easy to compute the action of this monoid algebra:
+  \begin{corollary} \label{MoritaCor}   
+  Suppose that $q$ is part of a Taylor-Wiles datum. Then  the generalized  eigenvalues of $k[X_*^+]$ acting on $H^*(Y_0(q), k)_{\mathfrak{m}}$
+are all of the  form $\chi_{\Frob^T}$, \index{$\chi_{\Frob^T}$}
+where    $\Frob^T \in T^{\vee}(k)$ is conjugate to the Frobenius at $q$, and the notation is defined in \eqref{chitdef}. 
+\end{corollary} 
+The corollary asserts just the usual 
+ relationship between ``$T_{q}$ eigenvalues at level $1$ and $U_{q}$ eigenvalues at level $q$.''  We will omit the proof; it follows
+ from the prior Lemma and a straightforward computaiton.
+
+\begin{remark}  Let $H^*(Y_0(q), \Z/p^n)_{\mathfrak{m}, \chi_{\Frob^T}}$ be the summand of $H^*(Y_0(q), \Z/p^n)_{\mathfrak{m}}$
+corresponding to the $\chi_{\Frob^T}$-eigenspace of $k[X_*^+]$. 
+For later use, we note that there is an isomorphism:
+\begin{equation}\label{doubleprojremark} H^*(Y_0(q), \Z/p^n)_{\mathfrak{m}, \chi_{\Frob^T}} \cong H^*(Y(1), \Z/p^n)_{\mathfrak{m}}\end{equation}
+where  the map from left to right is the  pushforward $\pi_*$, and an inverse in the other direction is given   by the pullback  $\pi^*$ together with projection to the
+$\chi_{\Frob^T}$ eigenspace.  
+
+ To see these are inverses we compute in $\mathrm{H}_{I}$: with reference to the actions of \eqref{juin}, the forward (pushforward) map corresponds  
+to $e_K \in \mathrm{H}_{IK}$, and the reverse map corresponds to
+ $|W| e_K q  \in \mathrm{H}_{KI}$ where $q \in S[X_*^+] \hookrightarrow \mathrm{H}_I$
+is chosen to realize to the projection on the $\chi_{\Frob^T}$ eigenspace,
+and $e_K q$ means the product of $e_K \in \mathrm{H}_{KI}$ with $q \in \mathrm{H}_I$.
+ (See remarks after \eqref{eK definition}). 
+
+
+
+
+ 
+ When we compose them we get
+$|W| e_K q \in \mathrm{H}_{I}$ or $|W| e_K q e_K \in \mathrm{H}_K$; to see, for example, that    the former acts as the identity endomorphism
+on $H^*(Y_0(q), \Z/p^n)_{\mathfrak{m}, \chi_{\Frob^T}}$, 
+observe that it  can be written as $ \sum_{w \in W} e_w q$ with $e_w = I w I$,
+ and then we just use the fact that $q$ annihilates all the  $k[X_*^+]$-eigenspaces  except the one indexed by $\Frob_T$,
+ whereas the $e_w$ permutes the various eigenspaces. 
+\end{remark} 
+   
+   
+\subsection{Adding level $q$ structure continued: The homology at level $Y_1(q, n)$} \label{HYln} 
+   
+   This section together with the previous and subsequent ones -- \S \ref{Morita}, \S \ref{HYln},   \S \ref{Lgcompat} --  all gather some ``standard'' properties of passing between level $1$ and level $q$. So  continue with $q$ as in the prior \S, i.e., part of a Taylor--Wiles datum of level $n$. 
+   
+   We now consider the  homology of $Y_1(q, n)$ -- as defined in \eqref{Y1def} -- and the action of its  Hecke algebra at level $Y_1(q, n)$. 
+   Now this homology is basically glued from the homology of $Y_0(q)$:
+   if we let  
+   $\mathcal{F}$ be the push-forward of  the constant sheaf $k$
+ from $Y_1(q,n)$ to $Y_0(q)$, then $\mathcal{F}$ is  a successive extension of copies of the constant sheaf  $k$,
+ in a Hecke equivariant way. 
+   
+    We state  some consequences of this more formally:
+   
+   \begin{lemma}  \label{vanishing lemma BW} Assume that $q$ is part of a Taylor--Wiles datum of level $n$. 
+   Assume local-global compatibility for $Y_0(q)$, in the sense described after \eqref{juin};
+   let other assumptions be as in  \S \ref{Sec:assumptions}.
+   Let  $\BWq,\delta$ be as in   \eqref{qdef}.  
+   Then the homology $H_j(Y_1(q,n), \Z_p)_{\mathfrak{m}}$
+  vanishes for $j \notin [\BWq, \BWq+\delta]$.   \end{lemma} 
+ 
+\proof
+Clearly we can replace the role of $\Z_p$ by $\mathbf{F}_p = k$, and then 
+by the remark before the proof, it is enough to prove the same for  $Y_0(q)$.  
+By \eqref{Twloc}, it suffices to prove the same vanishing statement for $Y(1)$
+with $\mathbf{F}_p = k$ coefficients.  But this is part of our assumption (7(a) from 
+ \S \ref{Sec:assumptions}.) \qed
+
+ 
+
+   Now  we want to say that this relationship between the homology of $Y_1(q, n)$ and $Y_0(q)$ is equivariant
+   for Hecke operators at $q$.  The full Hecke algebra is somewhat complicated and we just deal with its ``positive, commutative subalgebra.''  \index{$\widetilde{\mathcal{X}_*}$}
+ Set $\widetilde{\mathcal{X}_*}$ to be the quotient of $\mathbf{A}(\Q_{q})$
+   by the subgroup  $p^n \mathbf{A}(\Z_{q})$.       Denote by $\Delta_{q}$ the quotient of $\Q_{q}^{\times}$ by the subgroup of $\Z_{q}^{\times}$ of index $p^n$. Therefore $\Delta_{q}$ and  $\widetilde{\mathcal{X}_*}$ depend on $n$ but we will suppress that from the notation for simplicity.  We may identify
+      $$\widetilde{\mathcal{X}_*} = X_*(\mathbf{A}) \otimes \Delta_{q},$$
+      and we think of $\widetilde{\mathcal{X}_*}$ as a thickened version of the character lattice $X_*(\mathbf{A})$.  
+ From the valuation $\Delta_{q} \rightarrow \Z$ we get
+\begin{equation} \label{reduction} \widetilde{\mathcal{X}_*} \rightarrow  X_* \end{equation}
+and we can define the ``positive cone'' $\widetilde{\mathcal{X}_*} ^+  \subset \widetilde{\mathcal{X}_*}$ as the preimage of $X_*^+$. 
+
+
+Let   $I$ be an Iwahori subgroup of $\G(\Q_q)$, and $I' \vartriangleleft I$
+ the subgroup corresponding to the covering $Y_1(q, n)$, i.e. $I/I' \simeq (\Z/p^n)^r$. 
+Then there is a natural map from $\Z_p[\widetilde{\mathcal{X}}_*^+]$  
+to the Iwahori-Hecke algebra  at level $I'$ 
+sending $\chi \in \widetilde{\mathcal{X}_*}$ to the coset $I'  \chi   I'$. 
+In particular, we get an action of $\Z_p[\widetilde{\mathcal{X}}_*^+]$
+on the homology of $Y_1(q, n)$.  
+
+ 
+\begin{lemma}
+Any generalized eigenvalue of $k[\widetilde{\mathcal{X}}_*^+]$
+acting on $H_*(Y_1(q, n),k)_{\mathfrak{m}} $ is also
+a generalized eigenvalue of $k[\widetilde{\mathcal{X}}_*^+] $ acting on
+$H_*(Y_0(q),k)_{\mathfrak{m}}$ via the map $k[\widetilde{\mathcal{X}}_*^+]  \rightarrow k[X_*^+]$ induced by \eqref{reduction}. 
+ \end{lemma}
+ 
+ 
+ Thus, by  Corollary
+\ref{MoritaCor}, we get a splitting  
+ \begin{equation} \label{bigsplit} H_*(Y_1(q, n),k)_{\mathfrak{m}} = \bigoplus_{\stackrel{ \Frob^T \in T^{\vee}(k)}{\Frob^T \sim \rhobar(\Frob_q)}} \left( H_* (Y_1(q,n), k) \right)_{\mathfrak{m},\chi_{\Frob^T}}\end{equation} 
+   into   the  sum of generalized eigenspaces associated to the characters $\chi_{\Frob^T}: k[\widetilde{\mathcal{X}}_*^+] \rightarrow k$. (In the subscript, $\sim$ means ``is conjugate to.'') 
+ Again, this is nothing but a fancy way of talking about the decomposition into ``$U_{q}$-eigenspaces.''  The only point to note is that the decomposition is
+canonically  indexed by elements of $T^{\vee}(k)$ conjugate to the Frobenius. 
+
+ \proof   
+  \iflongproof Write for short $G = \G(\Q_{q})$; let $I$ be an Iwahori subgroup of $G$, and $I' \vartriangleleft I$
+ the subgroup corresponding to the covering $Y_1(q, n)$, i.e. $I/I' \simeq (\Z/p^n)^r$. 
+ We prove the same statement in cohomology and without the $\mathfrak{m}$; the desired
+ statement follows by dualizing and localizing.
+  
+ By the discussion of \S \ref{Arithmeticmanifolds} we can identify
+ $$H^*(Y_1(q, n), k) \simeq \Ext^*_{kG} (k[G/I'], M)$$
+ $$ H^*(Y_0(q), k) \simeq \Ext^*_{kG}(k[G/I], M)$$
+ 
+ where $M$ is the direct limit of co-chain complexes of  a family of coverings, obtained
+ by adding more and more level structure at $q$.  
+ 
+ {\em Claim:} We may filter $k[G/I']$ by $G$-submodules 
+ $F^0 \subset F^1 \subset F^2 \subset \dots $
+such that: 
+ \begin{itemize}
+ \item[(i)] each successive quotient $F^{i+1}/F^i$ is isomorphic as $G$-module to a sum of copies of $k[G/I]$,
+ \item[(ii)] For every $\chi \in \widetilde{\mathcal{X}_*^+}$,  the action of $I' \chi I'$ preserves the filtration, and  the action on the quotients coincides with the action of $I \chi I$. 
+ \end{itemize}
+ 
+Assuming the existence of this filtration, the result follows easily: we get  long exact sequences  of the form $$ \Ext^j_{kG}(F^{i-1}, M) \rightarrow \Ext^j_{kG}(F^i, M) \rightarrow \Ext^j( k[G/I], M )^{\bigoplus e}  \rightarrow $$
+ and these are equivariant for the action of $I' \chi I'$, which acts by via $I \chi I$ on the right-hand summand.
+ The result follows immediately by a descending induction.
+ 
+ 
+To construct the desired filtration regard $k[G/I']$ as the  compact induction from $I$ to $G$ of the $I$-representation $k[I/I']$, i.e
+ $$k[G]\otimes_{k[I]} k[I/I'] $$
+ In particular, $\Delta=I/I'$ acts  by $G$-endomorphisms on $k[G/I']$, which is the action ``by right multiplication.'' This action 
+ of $\delta \in \Delta$ coincides with the action of $I' \delta I'$ and in particular 
+ commutes with the action of $k[\widetilde{\mathcal{X}}_*^+]$. 
+ 
+ Now we filter $k[G/I']$ by the kernels  $k[G/I'] \langle \mathfrak{m}^j \rangle$ of successive powers  $\mathfrak{m}^j$ of the maximal 
+ideal  $\mathfrak{m}$  in $k[\Delta]$.    This filtration  is stable
+for  $k[\widetilde{\mathcal{X}}_*^+]$ because the actions of $\Delta, k[\widetilde{\mathcal{X}}_*^+]$ commute. 
+Also 
+the $j$th term of the resulting filtration is thus
+$$F^j= k[G] \otimes_{k[I]}  k[\Delta]\langle \mathfrak{m}^j \rangle$$
+and the $j$th graded is just $k[G] \otimes_{k[I]} \frac{\langle  \mathfrak{m}^j \rangle}{\langle \mathfrak{m}^{j+1} \rangle}$, 
+i.e. a direct sum of copies of $k[G/I]$, as claimed.
+
+ It remains to check assertion (ii) in the {\em Claim.} For any $y \in \mathfrak{m}^{j-1}$, multiplication by $y$ gives a map
+$$F^{j}/F^{j-1} \rightarrow F^1 = F^1/F^0$$
+and a suitable sum of such maps is an isomorphism (as we see by checking the corresponding assertion for $k[\Delta]$). 
+Since these multiplication maps commute with the action of $k[\widetilde{\mathcal{X}}_*^+]$
+we are reduced to computing the action of $I' \chi I'$ on $F^1$;
+now $F^1$ is identified with $k[G/I]$ is a natural way and the assertion is clear.
+ \fi 
+  \qed 
+
+ 
+ 
+ 
+   
+      
+\subsection{Adding level $q$ structure continued:  Galois representations for level  $Y_1(q ,n)$} \label{Lgcompat}
+      
+      This section and the prior two \S \ref{Morita}, \S \ref{HYln},   \S \ref{Lgcompat} all gather some ``standard'' properties of passing between level $1$ and level $q$.
+      We now consider more closely the action of the Iwahori-Hecke algebras at level  $Y_1(q ,n)$
+      and formulate local-global compatibility. First let us look at the Galois side. 
+      
+        
+  
+\begin{lemma} \label{TWdeflem}  Let $q$ be a Taylor-Wiles prime of level $n$
+and assume that the unramified representation $\rhobar|G_{\Q_q}$ has image inside $T^{\vee}$. Then any deformation
+  of  $\rhobar|_{G_{\Q_{q}}}$ can be conjugated to one
+taking values in $T^{\vee}$.    In particular, any such deformation of $\rhobar|_{G_{\Q_{q}}}$ actually factors through $G_{\Q_{q}}^{\ab} \simeq \mbox{profinite completion of }\Q_{q}^{\times}$.  
+\end{lemma}
+
+
+
+  
+    
+   
+   \proof 
+   \iflongproof
+     We may present the tame quotient of $G_{\Q_{q}}$ as $\langle F, t: F t F^{-1} = t^{q} \rangle$,
+  where $t$ is a generator of tame inertia. 
+   
+   Suppose that $A$ is an Artin local ring with maximal ideal $\mathfrak{m}$, and $\mathfrak{m}^d=0$.   We are given $F, t$
+   in $G^{\vee}(A)$ 
+   that satisfy $ F t F^{-1} = t^{q}$,
+ where $t$ reduces to the identity in $G^{\vee}(k)$ and $F$ reduces to  (after conjugating) a strongly regular element of $T^{\vee}(k)$. 
+ Conjugating, we may suppose
+   that $F$ belongs to the maximal torus $T^{\vee}(A)$.  We will prove by induction on $d$ 
+   that this  forces $t \in T^{\vee}(A)$ too. 
+   By the inductive hypothesis (obvious for $d=1$) 
+  the image of $t$ in $G^{\vee}(A/\mathfrak{m}^{d-1})$
+   belongs to $T^{\vee}(A/\mathfrak{m}^{d-1})$. 
+   Write thus $t =t_0   \delta_t$ where $t_0 \in T^{\vee}(A)$ and $\delta_t \in G^{\vee}(A)$ 
+   lies in the kernel of reduction modulo $\mathfrak{m}^{d-1}$.
+   
+     Now
+in fact $t_0 $ lies in the kernel of reduction modulo $\mathfrak{m}$, and so $t_0$ and $\delta_t$ actually commute; indeed, $t_0$
+commutes with anything in the kernel of reduction modulo $\mathfrak{m}^{d-1}$.  Also   $\delta_t^{q-1} = e$.   (To check these statements,
+just compute in the formal group of $G^{\vee}$ at the identity.) 
+ Now,    
+$F t F^{-1} = t^{q}$ so that $$ F (t_0 \delta_t)  F^{-1} (t_0 \delta_t)^{-1} =  (t_0 \delta_t)^{q-1}  \in T^{\vee}(A)$$
+But the left hand side equals 
+ $t_0  \left( \Ad(F)\delta_t  \cdot \delta_t^{-1}\right) t_0^{-1} $, and so 
+ $$\Ad(F) \delta_t \cdot \delta_t^{-1}  \in T^{\vee}(A) $$
+and  since $F$ is strongly regular this means that $\delta_t \in T^{\vee}(A)$ as desired. \fi
+   \qed
+   
+   \medskip
+   
+   We now want to connect the Galois deformation ring relevant to $Y_1(q,n)$ with the Iwahori--Hecke algebra. 
+   
+   
+   
+   
+
+ Let $q$ be a Taylor--Wiles prime of level $n$. 
+   Suppose fixed an element $\Frobl \in T^{\vee}(k)$ conjugate to the Frobenius at $q$. 
+Consider a deformation   $\sigma: G_{\Q} \rightarrow G^{\vee}(R)$
+    of $\rhobar$, where one allows now ramification at $q$,
+    and $R$ is an Artin local ring with residue field $k$. 
+     Then we can  uniquely conjugate
+   $\sigma$ so its restriction to     to $G_{\Q_{q}}$ factors as 
+$$ G_{\Q_{q}}^{\ab} \simeq  \widehat{\Q_{q}^{\times}} \longrightarrow T^{\vee}(R),$$
+and the image of a uniformizer in $\Q_q^{\times}$ reduces to $\Frobl$.  This map  factors through (the profinite completion of) 
+$\Q_q^{\times}/(1+q \Z_q)$. Restricting to $\mathbf{F}_{q}^{\times}$ we get
+$$\mathbf{F}_{q}^{\times} \rightarrow T^{\vee}(R)$$
+and pairing with characters of $T^{\vee}$ we get
+$ \mathbf{F}_{q}^{\times} \times X^*(T^{\vee}) \rightarrow R^*$;
+by the duality of $T^{\vee}$ and $\mathbf{A}$, this is the same thing as
+\begin{equation} \label{rgh}  \mathbf{A}(\mathbf{F}_{q}) \rightarrow R^*. \end{equation}
+We emphasize that the map \eqref{rgh} depended on the choice of a toral element $\Frobl$ conjugate to Frobenius; changing this element
+changes the map through the action of the Weyl group. 
+
+ Let $R^{\univ}_{\ramprimes \cup \{q\}}$ be Mazur's universal deformation ring for $\rhobar$, allowing ramification at $q$.  
+By our assumptions  (\S \ref{GaloisAss}) on the existence of Galois representations, there is a map $$R^{\univ}_{\ramprimes \cup \{q\}} \rightarrow \mathbb{T}_{K_1(q,n), \mathfrak{m}},$$
+where $K_1(q,n)$ is the level structure for $Y_1(q,n)$.
+By means of this map, $R^{\univ}_{\ramprimes \cup \{q\}}$ acts on $H^*(Y_1(q,n), \Z_p)_{\mathfrak{m}}$,
+and in particular on the summand $H^*(Y_1(q,n), \Z_p)_{\mathfrak{m}, \Frob_q^T}$ under \eqref{bigsplit}. 
+Thus, by \eqref{rgh}, we get an action of $\mathbf{A}(\mathbf{F}_{q})$ this cohomology group. 
+
+Now the assumption of local--global compatibility alluded to in \S \ref{GaloisAss}
+is a strengthened version of the following:
+\begin{quote}
+{\em Local global compatibility: }
+The action  $\mathbf{A}(\mathbf{F}_q) \acts H^*(Y_1(q,n), \Z_p)_{\mathfrak{m}, \Frob_q^T}$ 
+just defined coincides with the ``geometric'' action, i.e.
+wherein $\mathbf{A}(\mathbf{F}_q)$ acts by deck transformations   on $Y_1(q,n)$ (see \eqref{Y1def}).
+\end{quote}
+By ``strengthened version'', we mean that we require a similar assertion at a derived category level, not just at the level of cohomology,
+and we also require the assertion for several auxiliary primes $q$ rather than a single one. 
+For details, see \cite[\S 13.5]{GV}. 
+
+
+
+
+
+
+
+
+
+
+
+  
+ We say a deformation  of $\rhobar|G_{\Q_{q}}$ is of ``inertial level $\leq n$'' \index{inertial level}  \label{inertial level}
+ if,  when considered as a representation of $\Q_{q}^{\times}$ by  Lemma \ref{TWdeflem},  and restricted to $\mathbf{F}_{q}^{\times}$,  
+ it factors through the quotient $\mathbf{F}_{q}^{\times}/p^n$. 
+ We denote by $R^{\univ, \leq n}_{\ramprimes \cup \{q\}}$ the quotient of $R^{\univ}_{\ramprimes \cup \{q\}}$ that classifies deformations of $\rhobar$
+ such that $\rhobar|G_{\Q_{q}}$ has inertial  level $\leq n$.  
+ Explicitly, $R^{\univ,\leq n}_{\ramprimes \cup \{q\}}$ is the quotient of 
+\begin{equation} \label{Rndef} R^{\univ}_{\ramprimes \cup \{q\}} / \langle t-1: \mbox{ $t$ is in the image of  $p^n \mathbf{A}(\mathbf{F}_{q})$ under \eqref{rgh}} \rangle.\end{equation}
+  Then local-global compatibility implies that the action of $R^{\univ}_{\ramprimes \cup \{q\}}$ on the homology of $Y_1(q, n)$ factors through $R^{\univ, \leq n}_{\ramprimes \cup \{q\}}$, according to our previous discussion. 
+  
+   
+ 
+
+
+\section{Patching and the derived Hecke algebra} \label{Patching2}
+
+
+We continue with the notation  and assumptions of the previous section \S \ref{Patching}; see in particular
+\S  \ref{Sec:assumptions} and \S \ref{GaloisAss}. 
+That section was primarily setup, and now we get down to proving that the global derived Hecke algebra is ``big enough,''
+in the sense discussed around 
+\eqref{bigenough}. 
+The main result is
+Theorem \ref{mindegreeproof}. 
+
+We use the patching of the Taylor--Wiles method; more specifically, we use the 
+version of that method  that was discovered \cite{CG} by Calegari and Geraghty,
+which applies to situations where the same Hecke eigensystem occurs in multiple degrees.
+We also use heavily the presentation of the Calegari--Geraghty method 
+given by Khare and Thorne \cite{KT}. 
+
+\subsection{Deformation rings and chain complexes at level $Q_n$.}  \label{Qnchain}
+
+ Fix now a Taylor-Wiles datum $Q_n$ of level $n$. 
+  (We will   abusively use $Q_n$ both to denote the Taylor-Wiles datum and simply the set of primes associated to that datum.)
+  
+  Recall the definition of $Y_1^*(Q_n)$ from \S \ref{TWprimes stuff}: it is the fiber-product of coverings $Y_1(q, n) \rightarrow Y(1)$
+  over $q \in Q_n$. 
+ We now collect together various results about the homology of $Y_1^*(Q_n)$, which are essentially the same
+ results as those already discussed for $Y_1(q,n)$, but using all the primes in $Q_n$ instead of just $\{q\}$. 
+ 
+ 
+ \begin{lemma} The homology $H_j(Y_1^*(Q_n), \Z_p)_{\mathfrak{m}}$
+  vanishes for $j \notin [\BWq, \BWq+\delta]$. 
+ \end{lemma} 
+ \proof As in Lemma \ref{vanishing lemma BW}. \qed
+ 
+ Just as in \eqref{bigsplit}, this homology group is split (by ``$U$-operators'') into summands
+ indexed by collections $\Frob^T_q \in T^{\vee}(k) \ \ (q \in Q_n)$, where each $\Frob^T_q$
+ is conjugate to the Frobenius at $q$. 
+  In particular, since the Taylor--Wiles datum is equipped (\S \ref{TWprimes stuff}) with a specific choice of such a $\Frob_q^T$ for each $q \in Q_n$, we
+  can consider  the summand 
+\begin{equation} \label{Weylsplitting}  H_*(Y_1^*(Q_n), \Z_p)_{\mathfrak{m},\Frob^T_{Q_n}}  \subset H_*(Y_1^*(Q_n), \Z_p)_{\mathfrak{m}}  \end{equation}
+indexed by  these prescribed lifts. 
+
+  Recall  from \eqref{idontcare}  that $Y_1^*(Q_n) \rightarrow Y_0(Q_n)$ is Galois, with Galois group $T_n$.  \index{$R_n$} \index{$R_{Q_n}$} 
+Let us introduce notation for the deformation rings of interest to us: let 
+ $$R_{Q_n} = \mbox{universal deformation ring at level $\ramprimes \coprod Q_n$,}$$
+ \begin{equation} \label{RnRn}  R_n = \mbox{ quotient of $R_{Q_n}$ classifying   deformations of inertial level $\leq n$ at primes in $Q_n$}
+ \end{equation}
+  For example,  in the case when $Q_n = \{q\}$ this was the ring $R^{\univ,\leq n}_{\ramprimes \cup \{q\}}$ discussed around \eqref{Rndef}.  
+ 
+  By the discussion  of  \eqref{rgh}  and after, we get a morphism
+   $\mathbf{A}(\mathbf{F}_{q_i})/p^n \rightarrow R_n^{\times}$, and therefore we get (see \eqref{idontcare}): 
+ $$T_n \rightarrow R_n^{\times}$$
+ What we know (local-global compatibility, assumed in \S \ref{Lgcompat})  is that the natural action of $T_n$  (deck transformations) on homology of $Y_1^*(Q_n)$ 
+is compatible with its action via $T_n \rightarrow R_n^{\times}$.  
+ To say differently, we get a map \begin{equation} \label{Sndef} S_n := \Z/p^n[T_n] \rightarrow R_n/p^n, \end{equation}  and the natural action of $S_n$ on the $\Z/p^n$ homology of $Y_1^*(Q_n)$ is compatible
+ with that via the map to $R_n/p^n$.   
+ 
+  
+  Now consider the complex of singular chains   $$ \widetilde{C}_n = \Chains(Y_1^*(Q_n); \Z/p^n)$$
+  with $\Z/p^n$ coefficients.  We think of it as a complex of $S_n$ modules, because of the action of $T_n$ by deck transformations on $Y_1^*(Q_n)$.   It is quasi-isomorphic to a bounded complex of finite free $S_n$-modules
+  and we have canonical identifications:
+  
+ \begin{equation} \label{id1} H_* \widetilde{C}_n \simeq H_*(Y_1^*(Q_n), \Z/p^n)\end{equation}
+\begin{equation} \label{id2} H^*\Hom_{S_n}(\widetilde{C}_n, \Z/p^n) \simeq H^*(Y_0(Q_n), \Z/p^n)\end{equation}
+\begin{equation} \label{id0} H_*( \widetilde{C_n} \otimes_{S_n} \Z/p^n) \simeq  H_*(Y_0(Q_n), \Z/p^n).\end{equation}
+
+  Note that $\widetilde{C}_n$ is a free $S_n$-module, with basis given by the characteristic functions of an arbitrarily chosen set of representatives
+  for $T_n$-orbits on singular simplices. 
+  Therefore, the homology  of $\Hom_{S_n}(\widetilde{C}_n, \Z/p^n)$ computes the homomorphisms from $\widetilde{C}_n$ to $\Z/p^n$
+  in the derived category of $S_n$-modules. 
+  By composition of homomorphisms in this derived category, we get a map
+ \begin{equation} \label{above} \underbrace{H^*  \left( \Hom_{S_n}(\widetilde{C}_n, \Z/p^n) \right) }_{\simeq H^*(Y_0(Q_n),\Z/p^n)} \times  \underbrace{ \Ext^*_{S_n}(\Z/p^n, \Z/p^n) }_{\simeq H^*(T_n,\Z/p^n)} \rightarrow  \underbrace{ H^* \left( \Hom_{S_n}(\widetilde{C}_n, \Z/p^n)\right) }_{\simeq H^*(Y_0(Q_n),\Z/p^n)} \end{equation}
+   With respect to the identifications noted underneath the respective terms, this is precisely the ``natural'' action of $H^*(T_n, \Z/p^n)$ on $H^*(Y_0(Q_n), \Z/p^n)$.
+  This natural action arises thus: 
+   the covering $Y_1^*(Q_n) \rightarrow Y_0(Q_n)$ has covering group $T_n$, i.e. can be regarded as a map
+\begin{equation} \label{BTmap} Y_0(Q_n) \rightarrow \mathrm{B}T_n\end{equation} 
+   from $Y_0(Q_n)$ to the classifying space of $T_n$; this allows one to pull back cohomology classes from $T_n$ and take cup product. 
+      The coincidence of \eqref{above} and this ``natural action'' is a general fact; for lack of a reference we sketch a proof in \S \ref{sec:remedialtopology}. 
+ 
+ 
+
+
+It is possible to ``cut down'' $\widetilde{C}_n$ in a fashion that corresponds to  the summand
+  \eqref{Weylsplitting}, as is explained in \cite{KT} (see Lemma 2.12 thereof,  and surrounding discussion).  
+  This can be done compatibly for $Y_0(Q_n)$ and $Y_1^*(Q_n)$ and thus one gets 
+  a perfect complex $C_n$ of $S_n$-modules, equipped with identifications 
+that are analogous to \eqref{id1} and \eqref{id2}: 
+ \begin{equation} \label{id3} H_*(C_n; \Z/p^n) \simeq H_*(Y_1^*(Q_n), \Z/p^n)_{\mathfrak{m}, \Frob^T}, \end{equation} 
+\begin{equation} \label{id4} H^*(\Hom_{S_n}(C_n, \Z/p^n)) \simeq H^*(Y_0(Q_n), \Z/p^n)_{\mathfrak{m}, \Frob^T}\end{equation}
+  and again the action of $\Ext^*_{S_n}(\Z/p^n , \Z/p^n)$ on the latter group corresponds to the natural action    by pulling back cohomology classes via \eqref{BTmap}.\footnote{As a sanity check on this, note that the action of $H^*(T_n, \Z/p^n)$ on $H^*(Y_0(Q_n), \Z/p^n)$ indeed
+  does preserve the splitting into  summands of the type \eqref{Weylsplitting}; one can see this directly  
+  by seeing that $H^*(T_n, \Z/p^n)$, considered inside the  derived Iwahori-Hecke algebra, commutes   with the ``positive subalgebra'' used to define the splitting \eqref{Weylsplitting}.}
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+\subsection{Extracting the limit}  \label{extraction}    Now we ``pass to the limit'' as per Taylor--Wiles and  Calegari--Geraghty.
+ The idea is roughly speaking to extract, by a compactness argument, a subsequence of $n$ along which
+the $C_n, S_n, R_n$ are compatible, and then get limits $\Cinf, \Sinf, \Rinf$ by an inverse limit. Usually in modularity lifting
+one is only concerned with the limit of the process; but in our case we also want to remember
+some facts about how this relates to the $C_n, S_n, R_n$. 
+A discussion of this process which emphasizes exactly what we need is given in \cite[\S 13]{GV}, see in particular Theorem 13.1 therein.
+
+ 
+ We choose a sequence of Taylor-Wiles data $Q_n$ with  $n \rightarrow \infty$.  
+ After replacing the $Q_n$ by a suitable subsequence and then reindexing  -- that is to say, 
+ replacing $Q_i$ by $Q_{n_i}$ for some $n_i > i$, and then regarding $Q_{n_i}$ as a set of Taylor--Wiles primes of level  $i$ -- 
+ we can arrange that we  can ``pass to the limit.''
+After having done this, we obtain at last the following data:   
+  
+\begin{itemize}
+ 
+\item[(a)] A sequence of Taylor--Wiles data $Q_n$ of level $n$.
+
+ Recall to this we have associated coverings $Y_1^*(Q_n) \rightarrow  Y_0(Q_n) \rightarrow Y(1)$,
+as in \S \ref{TWprimes stuff}, and the Galois group of the former map is called $T_n$; also \eqref{Sndef} we set $S_n = \Z/p^n[T_n]$, the group algebra of $T_n$. 
+
+\item[(b)] With $\Sinf = \Z_p[[x_1, \dots, x_R]]$ as in
+\S \ref{sec:diamond}, 
+a complex $\Cinf$ of finite free $\Sinf$-modules, 
+equipped with 
+a quasi-isomorphism \begin{equation} \label{Descent} \Cinf \otimes_{\Sinf} S_n  \simeq C_n,\end{equation}   
+where $C_n$ is as described in \S \ref{Qnchain}: a version of the chain complex of $Y_1^*(Q_n)$ with $\Z/p^n$ coefficients,
+but localized at $\mathfrak{m}$ and $\Frob^T$. 
+
+
+
+
+
+
+
+
+
+
+
+\medskip
+\item[(c)]  
+ A quotient $\usbR_n$ of $R_n$,   \index{$\usbR_n$} 
+defined as follows:
+
+Recall   from \eqref{RnRn} the definition of $R_n$; a quotient of the crystalline deformation ring
+at level  $\ramprimes \coprod Q_n$.  We set \begin{equation} \label{goef} \usbR_n = R_n/(p^n, \mathfrak{m}^{K(n)})\end{equation}
+for a certain explicit function $K(n)$, chosen so that  e.g.  action of $R_n$ on $H_*(C_n)$  
+automatically factors through $\usbR_n$.  We can and will assume $K(n) \geq 2n$.   (The main function of $K(n)$ is to make $\usbR_n$ Artinian, 
+while still retaining enough information about all of $R_n$ for our purposes.) 
+
+\item[(d)]
+
+ A ``limit deformation ring'' $\Rinf \simeq \Z_p[[x_1, \dots, x_{R-\delta}]]$  equipped with 
+maps  $\Sinf \rightarrow \Rinf$ and maps $\Rinf \rightarrow \usbR_n, \Rinf \twoheadrightarrow \defring$   which are compatible,
+in the sense that this diagram commutes: 
+    \begin{equation} \label{SinftySn}
+ \xymatrix{
+\Sinf  \ar[r] \ar[d] &   \Rinf  \ar[d] \ar[r]  & \defring   \ar[d] \\
+S_n   \ar[r]   &   \usbR_n   \ar[r] & \defring/  (p^n, \mathfrak{m}^{K(n)}) }
+\end{equation}
+
+(Recall here that $\defring$ is the deformation ring of $\rhobar$, with crystalline conditions imposed, without adding any level, 
+cf. \S \ref{GaloisAss}). 
+
+Moreover, the composite $\Sinf \rightarrow \Rinf \rightarrow \defring$ factors through 
+the augmentation $\Sinf \rightarrow \Z_p$; and also the  left-hand square induces an isomorphism
+ \begin{equation} \label{second-iso}  \Rinf \otimes_{\Sinf} S_n \simeq  \usbR_n \end{equation}
+ 
+ 
+\item[(e)] An  action of $\Rinf$ on $H_*(\Cinf)$, compatible with the $\Sinf$ action,
+and with the maps $H_*(\Cinf) \rightarrow H_*(C_n)$, where
+$\Rinf$ acts on $H_*(C_n)$ via $\Rinf \rightarrow  \usbR_n$. 
+
+ 
+
+\item[(f)]   An identification of  \begin{equation} \label{logstructure} H^*(\Hom_{\Sinf}(\Cinf, \Z_p)) \stackrel{\sim}{\longrightarrow} H^*(Y(1), \Z_p)_{\mathfrak{m}},\end{equation}   
+compatible under \eqref{Descent} with 
+the identification $H^*(\Hom_{S_n}(C_n, \Z/p^n)) \simeq H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$
+that is the composition of \eqref{id4} with the pushforward. (This is described in dual form in \cite[Theorem 13.1(d)]{GV} but one gets
+similarly this result, and the statement about compatibility is just a matter of looking at the definition of the map \eqref{logstructure}. 
+\begin{comment} \footnote{COMMENT: This is only described in dual form in the quoted reference,
+so we briefly describe it.  We have identifications of $H^*(Y(1), \Z_p)_{\mathfrak{m}} $ with 
+\begin{eqnarray*}  \varprojlim_n H^*(Y(1), \Z/p^n)_{\mathfrak{m}}    \stackrel{\eqref{doubleprojremark}}{\simeq }  \varprojlim_n H^*(Y_0(Q_n), \Z/p^n)_{\mathfrak{m}, \Frob_Q} 
+  \stackrel{\eqref{id4}}{ \simeq} \varprojlim_n  H^* \Hom_{S_n}(C_n, \Z/p^n)   \\  \stackrel{\eqref{Descent}}{=} \varprojlim_n H^* \Hom_{\Sinf}(\Cinf, \Z/p^n) 
+ = H^* \varprojlim \Hom_{\Sinf}(\Cinf, \Z/p^n) =  H^* \Hom_{\Sinf} (\Cinf, \Z_p).  \end{eqnarray*}
+Here, the structure of inverse system on the second and third terms is determined by their isomorphisms with the first term;
+the fact that this is compatible with the natural structure of inverse system on $ \Hom_{\Sinf}(\Cinf, \Z/p^n) $
+is part of the way the limit process is set up. In fact, \cite[\S 13.9(iv)]{GV}
+says that the various maps   $C_n \otimes_{S_n} \Z/p^n \rightarrow C_*(Y(1),  \Z/p^n)_{\mathfrak{m}}$
+are compatible with one another, and so the various maps 
+$\Cinf \otimes_{\Sinf} \Z/p^n \rightarrow C_*(Y(1), \Z/p^n)_{\mathfrak{m}}$ 
+are all compatible with reference to the isomorphisms
+$C_*(Y(1), \Z/p^{n+1})_{\mathfrak{m}} \underline{\otimes}_{\Z/p^{n+1}} \Z/p^n \simeq C_*(Y(1), \Z/p^n)_{\mathfrak{m}}$
+in the derived category of $\Z/p^n$-modules.  Now if $h \in H^*(Y(1), \Z/p^{n+1})$ is a cohomology class,
+considered as a homomorphism $C_*(Y(1), \Z/p^n) \stackrel{f_h}{ \rightarrow} \Z/p^{n+1}[?]$ in the derived category of $\Z/p^{n+1}$-modules,
+then the image $\bar{h} \in H^*(Y(1), \Z/p^n)$ is  represented by the derived tensor product $f_h \underline{\otimes} \Z/p^n$. 
+The claim follows from this. 
+}
+\end{comment}
+
+  
+
+\item[(g)]
+
+(These last results use heavily the formal smoothness, assumption (e) from  \S \ref{GaloisAss}):
+ $\Cinf$  has homology only in degree $q$, and its homology there $H_q(\Cinf)$ is free   as $\Rinf$-module. Moreover, one has 
+an ``$R=T$ result''
+\begin{equation} \label{first-iso} \Rinf \otimes_{\Sinf} \Z_p \simeq \defring \simeq \mbox{ image of $\mathbb{T}_{K_0} $ in  $\End \ H_q(Y(1), \Z_p)_{\mathfrak{m}}$}. \end{equation}
+
+ \end{itemize}
+ 
+ 
+  
+ 
+\subsection{The structure of $\Sinf \rightarrow \Rinf$} \label{SR} 
+ 
+ The limit process has given a map of rings $\Sinf \rightarrow \Rinf$, 
+ where $\Sinf$ and $\Rinf$ are formal power series rings that represent, roughly speaking,
+ ``limits'' of the rings $S_n, R_n$ as $n \rightarrow \infty$. 
+  
+As in \eqref{Zplift}, the  representation $\Pi$ gives a lift $\rho$ to $\Z_p$ of the residual representation $\rhobar$;
+ this corresponds to an augmentation $\defring \rightarrow \Z_p$.  
+Thus we also get an augmentation $$f: \Rinf \rightarrow \Z_p,$$
+and the pullback of this to $\Sinf$ is the natural augmentation of $\Sinf \rightarrow \Z_p$ ((d) of \S \ref{extraction}).
+In particular, the kernel of $f$ on $\Sinf$ is precisely the ideal
+$\Iinf$. 
+ 
+ 
+ Our assumptions imply that the map $\Sinf \rightarrow \Rinf$ is surjective.
+ Indeed, because $\Sinf$ is complete for the $\Iinf$-adic topology
+ it is enough to verify that $\Sinf/\Iinf \rightarrow \Rinf/\Iinf \Rinf$
+ is surjective.  But
+ $\Rinf/\Iinf$ is a Hecke ring by \eqref{first-iso} and so isomorphic to $\Z_p$
+ by \eqref{nocong0}. 
+  Note in particular that this also means that $\Iinf \Rinf$ is precisely the kernel of $f$. 
+ 
+ 
+ The following easy  lemma is now useful for explicit computations. 
+ 
+ \begin{lemma} \label{straightening} We can choose generators  $x_i, y_j$ for $\Sinf, \Rinf$, i.e.
+  $$\Sinf = \Z_p[[x_1, \dots, x_R]],  \ \ \Rinf = \Z_p[[y_1, \dots, y_{R-\delta}]]$$ 
+ such that the $x_i, y_j$s lie in the kernel of the compatible augmentations 
+ $$\Sinf \rightarrow \Rinf \rightarrow \Z_p,$$  and 
+the map $\Sinf \rightarrow \Rinf$  is given by $x_i \mapsto y_i$ for $i \leq R-\delta$ and $x_i \mapsto 0 $ for $i > R-\delta$. 
+ \end{lemma}
+
+\proof 
+  
+ 
+ Write $f: \Rinf \rightarrow \Z_p$ for the augmentation. 
+  Abstractly, $\Rinf \simeq \Z_p[[u_1, \dots, u_{R-{\delta}}]]$ where all the $u_i$ lie in the maximal ideal.  
+Set  $y_i = u_i - f(u_i) \in  \ker(\Rinf \rightarrow \Z_p)$. Then still $\Rinf \simeq \Z_p[[y_1, \dots, y_{R-\delta}]]$. 
+We have noted above that $\Jinf := \Iinf \Rinf$ is precisely the kernel of the augmentation $\Rinf \rightarrow \Z_p$; thus, 
+  the $y_i$ freely span as $\Z_p$-module the quotient $\Jinf/\Jinf^2$.  
+ 
+ Lift the $y_i$ to $x_1, \dots, x_r \in \ker(\Sinf \rightarrow \Z_p)$. 
+Necessarily the $x_i$  span a saturated\footnote{Here we say that a submodule $Q$ of a free $\Z_p$-module $Q'$ is saturated if the quotient
+$Q'/Q$ is torsion-free.} $\Z_p$-submodule of rank $s$ inside $\Iinf/\Iinf^2 \simeq \Z_p^s$; 
+they are $\Z_p$- independent because any linear relation $\sum a_i x_i \in \Iinf^2$ (with $a_i \in \Z_p$) 
+would give rise to a corresponding linear relation in $\Rinf$, a contradiction. Similarly, they are saturated because 
+given $x'$  and $(a_1 \dots, a_r)$ with $\gcd(a_1, \dots, a_r) =1$ and  $p x' = \sum a_i x_i + \Iinf^2$, we would get a corresponding relation in $\Rinf$, again a contradiction. 
+
+Now  extend  the $x_i$ to a full $\Z_p$-basis
+$x_{r+1}, \dots, x_s$ for $\Iinf/\Iinf^2$.  Each $x_j$ for $j > r$
+is sent under $\Sinf \rightarrow \Rinf$ an element of $\Jinf \subset \Rinf$, which means that it can be written
+as a formal polynomial  $P_j(y_1, \dots, y_r)$ in  $y_1, \dots, y_r$, with no constant term; so  replacing $x_j$ by $x_j - P_j(x_1, \dots, x_r)$ we may  suppose that $x_j \mapsto 0$ in $\Rinf$. 
+\qed 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now we come to the main theorem of the section.  
+
+\begin{theorem}  \label{mindegreeproof} 
+Let assumptions be as in \S \ref{Sec:assumptions}
+and \S \ref{GaloisAss}. 
+The cohomology  $H^*(Y(1), \Z_p)_{\mathfrak{m}}$
+  is generated, as a module over the strict global derived Hecke algebra (see \S \ref{limit} and \S \ref{Hecke:resplace} for definition with $\Z_p$ coefficients), by its minimal degree component $H^{\BWq}(Y(1), \Z_p)_{\mathfrak{m}}$.
+ \end{theorem}
+ 
+ 
+ \proof 
+
+
+
+
+
+
+
+
+
+We use the setup of the Taylor--Wiles limit process (\S \ref{extraction}), beginning   with the fact that the natural map 
+\begin{equation} \label{cyclicity2}H^{\BWq}(\Hom_{\Sinf}(\Cinf, \Z_p)) \otimes \Ext^j_{\Sinf}(\Z_p, \Z_p) \twoheadrightarrow   H^{\BWq+j}(\Hom_{\Sinf}(\Cinf, \Z_p))    \end{equation}
+is a surjection for all $j$: by   (g) of \S \ref{extraction} and Lemma \ref{straightening}, 
+we can choose coordinates so that $\Sinf \simeq \Z_p[[x_1, \dots, x_R]]$,
+and the complex $\Cinf$ is quasi-isomorphic to {\color{\changecolor} a sum of copies of } $\Sinf/(x_{R}, \dots, x_{R-\delta+1})$
+concentrated in a single degree.   So   the surjectivity of \eqref{cyclicity2} follows from the ``Koszul algebra'' computations in \S \ref{AppendixB} of the Appendix. 
+
+
+   Examine now the diagram, where all the maps are the obvious ones;
+
+
+
+
+
+{\small     \begin{equation} \label{previousstory}
+ \xymatrix{
+ H^{\BWq}(\Hom_{\Sinf}(\Cinf, \Z_p))^{} \ar[d]^{=} & \times  &    \Ext^{i}_{\Sinf}(\Z_p, \Z_p)  \ar[d]  \ar[r] &  H^{\BWq+i}(\Hom_{\Sinf}(\Cinf, \Z_p)) \ar[d]^V \\
+  H^{\BWq}(\Hom_{\Sinf}(\Cinf, \Z_p))   \ar[d]^{V}  & \times&  \Ext^{i}_{\Sinf}(\Z_p, \Z/p^n)    \ar[r]&   H^{\BWq+i}(\Hom_{\Sinf}(\Cinf,  \Z/p^n))\ar[d]^{=}\\
+  H^{\BWq}(\Hom_{\Sinf}(\Cinf, \Z/p^n))^{}   & \times & \left( \Ext^{i}_{\Sinf}(\Z/p^n, \Z/p^n) \right) \ar[r]   \ar[u]^U  &  H^{\BWq+i}(\Hom_{\Sinf}(\Cinf, \Z/p^n))   \\
+ H^{\BWq}(\Hom_{S_n}(\Cinf \otimes_{\Sinf} S_n, \Z/p^n))^{} \ar[u]^{f, \sim} & \times  &   \left( \Ext^{i}_{S_n}(\Z/p^n, \Z/p^n) \right) \ar[r]^{\mathfrak{Q} \ \  \ \ \ \ \ } \ar[u]^{U'} &  \ar[u]^{\sim} H^{\BWq+i}(\Hom_{S_n}(\Cinf \otimes_{\Sinf} S_n, \Z/p^n)). \\
+  }
+  \end{equation}
+  }
+Here, the middle square ``commutes'' in the sense that the image of $(x, Uy)$ is the same as the image
+  of $(Vx, y)$, i.e. $U, V$ are adjoint for the pairing.  The top and bottom squares commute.   
+  All this is obvious, except for perhaps the bottom square which involves change of rings, so let us talk through it: 
+The map $\Sinf \rightarrow S_n$ induces a forgetful map $T$
+from the derived category of
+$S_n$-modules to the derived category of $\Sinf$-modules.  
+Take $$\alpha \in H^{\BWq}(\Hom_{S_n}(\Cinf \otimes_{\Sinf} S_n, \Z/p^n)), \ \ \beta \in   \Ext^{i}_{S_n}(\Z/p^n, \Z/p^n).$$ 
+We can regard $\alpha$ as a map $\Cinf \otimes_{\Sinf} S_n \rightarrow \Z/p^n[q]$
+and $\beta$ as a map $\Z/p^n[q] \rightarrow \Z/p^n[q+i]$,  both in the derived category of $S_n$-modules.
+Applying the functor $T$, we see that $T \beta \cdot T\alpha  = T(\beta \alpha)$. On the other hand,
+$T \alpha$ is  simply the morphism
+$\Cinf \otimes_{\Sinf} S_n \rightarrow \Z/p^n[q]$ considered as a map of $\Sinf$-modules.
+If we pre-compose with $\gamma: \Cinf \rightarrow \Cinf \otimes_{\Sinf} S_n$, considered
+as a map of $\Sinf$-modules, we get $f(\alpha)$. 
+ Similarly, $  T(\beta \alpha) \gamma  = f(\beta \alpha) \cdot \gamma$.
+So $T \beta . f(\alpha) = f(\beta \alpha)$: that is the  commutativity of the bottom square.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+ 
+  
+  
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+     
+    
+It follows  from the Lemma of \S \ref{sec:diamond}  that the composite $U \circ U'$ is surjective.  
+  Also the map $V$ is surjective (because the cohomology of $\Hom_{\Sinf}(\Cinf, \Z_p)$ is torsion-free, by \eqref{logstructure} and
+  assumption 7(a) of \S \ref{Sec:assumptions}). 
+    Tracing through the above diagram, this is enough to show that the image of  $\mathfrak{Q}$ generates the codomain of $\mathfrak{Q}$. 
+
+
+Now,  recall  from \eqref{Descent} the quasi-isomorphism $\Cinf \otimes_{\Sinf} S_n  \simeq C_n$; 
+    we have therefore shown that 
+   $   H^*(\Hom_{S_n}(C_n, \Z/p^n))$  is generated  by $ H^{\BWq}(\Hom_{S_n}(C_n, \Z/p^n))$ as a module   over $\Ext^*_{S_n}(\Z/p^n, \Z/p^n) $.
+   As in the discussion after \eqref{above}, this  is equivalent to saying that
+ $H^*(Y_0(Q_n), \Z/p^n)_{\mathfrak{m},\Frob^T}$ is generated by  its degree $q$ component as a $H^*(T_n, \Z/p^n)$-module, i.e.  
+\begin{equation} \label{bencumber}H^{\BWq}(Y_0(Q_n), \Z/p^n)_{\mathfrak{m}, \Frob^T} \otimes H^*(T_n,\Z/p^n) \twoheadrightarrow H^*(Y_0(Q_n),\Z/p^n)_{\mathfrak{m}, \Frob^T}.\end{equation}
+   
+      
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\label{randompageref}
+In what follows, let us write $\mathscr{H}_I, \mathscr{H}_K$ for the tensor product \index{$\mathscr{H}_I$} \index{$\mathscr{H}_K$} 
+of (derived) Iwahori-Hecke algebras  $\mathscr{H}_{I,q}$ and derived Hecke algebra $\mathscr{H}_{q}$  over  $q \in Q_n$;
+and write $\mathrm{H}_K, \mathrm{H}_{KI}, \mathrm{H}_{IK}, \mathrm{H}_I$ for the (non-derived) algebras and bimodules
+of \S \ref{Morita}, but tensoring over all $q \in Q_n$.  All of these will be taken with $\Z/p^n$ coefficients. 
+ 
+Note that the action of $H^*(T_ n, \Z/p^n)$  on $H^*(Y_0(Q_n), \Z/p^n)$ factors through the action of $\mathscr{H}_I$ (e.g. see the Remark in \S \ref{sec:concrete}). 
+  So $H^*(Y_0(Q_n), \Z/p^n)_{\mathfrak{m}, \Frob^T}$ is    generated in degree  $\BWq$ over  $\mathscr{H}_I$. 
+  Taking the sum over all possible lifts $\Frob^T$,  as in \eqref{bigsplit}, we see that
+  $H^*(Y_0^*(Q_n), \Z/p^n)_{\mathfrak{m}}$
+  is also generated in degree $q$ over the derived $\mathscr{H}_I$.   
+  
+  
+  Now,  each of the following maps are surjective:
+  
+  
+\begin{eqnarray*}
+H^{\BWq}(Y(1),\Z/p^n)_{\mathfrak{m}} \otimes \mathrm{H}_{KI} \twoheadrightarrow H^{\BWq}(Y_0(Q_n), \Z/p^n)_{\mathfrak{m}}, \\    H^{\BWq}(Y_0(Q_n), \Z/p^n)_{\mathfrak{m}} \otimes \mathscr{H}_I^j \twoheadrightarrow   H^{\BWq+j}(Y_0(Q_n), \Z/p^n)_{\mathfrak{m}},\\
+H^{\BWq+j}(Y_0(Q_n) , \Z/p^n)_{\mathfrak{m}}\otimes \mathrm{H}_{IK} \twoheadrightarrow H^{\BWq+j}(Y(1),\Z/p^n)_{\mathfrak{m}}, \end{eqnarray*}
+where the second statement is what we just proved, 
+whereas the first and third statement come from Lemma \ref{needaref}.
+Also there is a map  $\left( \mathrm{H}_{KI}  \otimes \mathscr{H}_I^j  \otimes \mathrm{H}_{IK} \right)  \rightarrow \mathscr{H}_K^j$ compatible with the respective actions, just arising  
+from composition of Exts. We get  
+$$   H^{\BWq}(Y(1), \Z/p^n)_{\mathfrak{m}}  \otimes  \mathscr{H}_K^j 
+\twoheadrightarrow H^{\BWq+j}(Y(1), \Z/p^n)_{\mathfrak{m}}. $$
+
+Passing to the limit (as in  the discussion of \S \ref{limit})    concludes the proof.  \qed
+
+
+
+ 
+
+
+
+
+\section{The reciprocity law} \label{reciprocity} 
+
+
+In \S \ref{Patching2} we proved, conditional under assumptions (\S \ref{Sec:assumptions}, \S \ref{GaloisAss}) on the existence of Galois representations attached to modular forms
+and other assumptions that simplify the integral situation (\S \ref{Sec:assumptions}), 
+that the global derived Hecke algebra is ``big enough,'' in the sense discussed around \eqref{bigenough}.  
+
+
+We now turn to the question mentioned in \S \ref{reindexing}: 
+we index elements of this global derived Hecke algebra by means of a certain dual Selmer group.
+This is achieved in Theorem \ref{maintheorem}.  
+This Theorem is not an end in itself; rather, it just gives the correct language for us to formulate the central conjecture of the paper, 
+Conjecture \ref{mainconjecture}.
+ 
+ 
+ 
+\subsection{The coadjoint representations}
+
+We are interested in the co-adjoint representation, i.e. the dual of the 
+representation of $G^{\vee}$ on its Lie algebra $\mathfrak{g}^{\vee}$.  
+Denoting by $\dualLiedual$ the $\Z$-dual to this Lie algebra, we obtain  \index{$\Ad^*$} 
+$$\Ad^*: G^{\vee} \rightarrow GL(\dualLiedual)$$ 
+which we regard as a morphism of algebraic groups over $\Z$. 
+\footnote{Why the {\em coadjoint} representation rather than the adjoint? They are isomorphic
+for $G$ semisimple, at least away from small characteristic. However, canonically what comes up for us is the coadjoint;
+for example,  when one works with tori, as in \S \ref{tori}, the difference is important. }
+ 
+
+In particular given a representation $\sigma: G_{\Q} \rightarrow G^{\vee}(R)$ we denote by   
+$\Ad^* \sigma: G_{\Q} \rightarrow \GL(R \otimes_{\Z} \dualLiedual)$ 
+the composition of $\sigma$ with the co-adjoint representation.  
+When $\sigma$ is valued in $\Z_p$, we will write
+$\Ad ^* \sigma_n$ for the reduction of $\Ad ^* \sigma$ modulo $p^n$.  
+
+
+
+\subsection{Galois cohomology} 
+
+We will freely use the theory of Fontaine and Laffaille which (in good circumstances) parameterizes
+crystalline representations of $\Gal(\overline{\Q_p}/\Q_p)$, even with torsion coefficients. For a summary, see \S 4 of \cite{BK}. 
+
+Fix once and for all the interval $[-\frac{p-3}{2}, \frac{p-3}{2}] \subset \mathbb{N}$ of Hodge weights. 
+We will say that a  representation   of $\Gal(\overline{\Q_p}/\Q_p)$  on a finitely generated $\Z_p$-module is  ``crystalline''
+if it is isomorphic to a subquotient of a crystalline representation with Hodge weights in $[-\frac{p-3}{2}, \frac{p-3}{2}]$. 
+This indexing of Hodge weights is useful for  adjoint representations  which have weights symmetric around $0$.
+
+Recall that for any $p$-torsion  crystalline $M$   \index{$H^1_f$}
+we can define
+$$  H^1_f(\Q_p, M) \subset H^1(\Q_p, M) $$
+which classifies those extensions $M \rightarrow  ? \rightarrow 1$ which are crystalline;
+it is in fact a submodule and it is identified (by Fontaine-Laffaille theory) with a corresponding Ext-group in the category
+of filtered Dieudonn{\'e} modules. In particular,  this allows one to check that
+$H^1_f$ is isomorphic to the cokernel of the map 
+\begin{equation} \label{kitty}
+\mathrm{F}^0 D(M) \stackrel{1 - \mathrm{Frob}}{\rightarrow} D(M),\end{equation}
+where $D(M)$ is the associated filtered Dieudonn{\'e} module. 
+Also, the kernel of  $1-\mathrm{Frob}$  in \eqref{kitty} is isomorphic to $H^0(\Q_p, M)$. In particular, for $M$ finite we have 
+\begin{equation} \label{goo-goo} \# H^1_f(\Q_p, M) = \frac{ | D(M)|}{|F^0 D(M)|} \cdot \# H^0(\Q_p, M),\end{equation} 
+ which can be effectively 
+ used to compute the size of $H^1_f$ (note: the size of $D(M)$ and $M$ coincide).
+ 
+We will need to know that the subspaces $H^1_f(\Q_p, M)$ and $H^1_f(\Q_p, M^*)$
+(with $M^* := \Hom(M, \mu_{p^{\infty}})$ are each other's annihilators \index{$M^*$, dual of a  Galois module}
+under the local duality pairing $H^1(\Q_p, M) \times H^1(\Q_p, M^*) \simeq \Q/\Z$. 
+This follows from the fact they annihilate each other  (their product would come from an $\Ext^2$
+in the category of Fontaine--Laffaille modules, but the relevant $\Ext^2$ vanishes by \cite[Lemma 4.4]{BK})  and a size computation
+using \eqref{goo-goo}.
+
+
+\subsection{Selmer groups}
+
+Let $\Q_{\ramprimes}$ 
+be the largest extension of $\Q$ unramified outside 
+$\ramprimes$, and let $M$ be a module for the Galois group of $\Q_{\ramprimes}/\Q$;
+thus $M$ defines an {\'e}tale sheaf on $\Z[\frac{1}{\ramprimes}]$. 
+We write
+
+$$H^1(\Z[\frac{1}{S}], M) \supset H^1_f(\Z[\frac{1}{S}], M)$$
+for (respectively) the {\'e}tale cohomology of $M$ (equivalently the group cohomology
+of $\Gal(\Q_{\ramprimes}/\Q)$ with coefficients in $M$),
+and the subset of this group consisting of classes that are crystalline at $p$, i.e. classes
+whose image in $H^1(\Q_p, M)$ lies in the subgroup $H^1_f(\Q_p, M)$ defined above.
+
+Note that we impose {\em no} local condition on  classes in $H^1_f(\Z[\frac{1}{S}], M)$ except  for the crystalline condition  at $p$. 
+ 
+ We will write $H^1_f(\Q, M)$ for the usual Bloch--Kato Selmer group: this is 
+the subgroup of classes in $H^1(\Gal(\overline{\Q}/\Q), M)$ which
+are unramified away from $p$, {\em and} crystalline at $p$.
+In general, we have an inclusion $H^1_f(\Q, M) \subset H^1_f(\Z[\frac{1}{S}], M)$;
+the former is more restrictive, requiring that the cohomology class be unramified
+at places of $\ramprimes - \{p\}$. However, in our applications, 
+$M$ will be a module such that $H^1(\Q_v, M)$ vanishes for $v \in \ramprimes - \{p\}$,
+and so $H^1_f(\Q, M) = H^1_f(\Z[\frac{1}{S}], M)$. 
+ 
+
+
+
+
+\subsection{}  \label{mMain}
+
+We will follow the notation of the previous section, described in \S \ref{Sec:assumptions};
+in particular, we have an arithmetic manifold $Y(1) =Y(K_0)$, an automorphic
+representation $\Pi$,  corresponding to a maximal ideal $\mathfrak{m}$ of the Hecke algebra;
+and an associated Galois representation $\rho: G_{\Q} \rightarrow G^{\vee}(\Z_p)$. 
+We let $\ramprimes$ be the set of ramified primes for $\rho$ or $K_0$, together with $p$.
+ 
+\index{$\Vinf$} 
+ Put  \begin{equation} \label{Vdef} \mathsf{V} :=   H^1_f(\Z[\frac{1}{\ramprimes}], \Ad^* \rho(1))^{\vee},\end{equation}
+where  we wrote  $-^{\vee}$ for $\Hom(-, \Z_p)$. 
+We will prove in Lemma \ref{DeltaDimensional} that both the $H^1_f$ above and  $\mathsf{V}$   are (under our assumptions)   free $\Z_p$-modules of rank $\delta$.
+
+
+We will produce an action of $\mathsf{V}$ on   $H^*(Y(K), \Z_p)_{\mathfrak{m}}$.
+To explain it, fix $\mathbf{A}$   a maximal torus of $\mathbf{G}$ and
+let $q$ be a Taylor--Wiles prime of level $n$, 
+equipped with an element of $T^{\vee}(k)$ conjugate to  Frobenius at $q$. 
+Let $$T_q = \mathbf{A}(\F_q)/p^n.$$  \index{$T_q$} 
+From this data we  will construct: \index{$\iota_{q,n}$} 
+\begin{itemize}
+\item[-] 
+A natural embedding (\S \ref{Vnaction})  of  
+ \begin{equation} \label{iotaqndef1} \iota_{q,n}: H^1(T_q,\Z/p^n) \hookrightarrow \left( \mathscr{H}^{(1)}_{q,\Z/p^n}\right)_{\mathfrak{m}} \end{equation} into the  degree $1$ component $ \mathscr{H}^{(1)}$ of the  local, full level,  derived Hecke algebra
+$\mathscr{H}_{q, \Z/p^n}  $. (More precisely, we will use its completion at the maximal ideal $\mathfrak{m}$).   
+\item[-]  A map \begin{equation} \label{fqndef} f_{q,n}: H^1(T_q, \Z/p^n) \rightarrow \mathsf{V}/p^n, \end{equation} \index{$f_{q,n}$}
+We have already explained, in a special case, the constrution of $f_{q,n}$ in \eqref{padef}.
+We briefly outline the general case: 
+Given $\alpha \in H^1(T_q, \Z/p^n)$,
+we obtain, by \eqref{brst}, an element  $\alpha'$ in the quotient of $H^1(\Q_q, \Ad \rho_n)$
+by unramified classes;  now,  we associate to $\alpha$
+the functional  sending $\beta \in H^1_f(\Z[\frac{1}{\ramprimes}], \Ad^* \rho(1))$ 
+to the local pairing $\langle \alpha' , \beta_q \rangle_q  \in \Z/p^n$, where $\beta_q$ is the restriction of $\beta$ to $H^1(\Q_q, \Ad^* \rho(1))$. 
+\end{itemize} 
+
+ 
+Finally recall that under our assumptions (7(a) of \S \ref{Sec:assumptions}) , $H^*(Y(1), \Z_p)_{\mathfrak{m}}$ is torsion-free;
+its reduction modulo $p^n$ coincides with  $H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$.
+\begin{theorem} \label{maintheorem}
+Let notation and assumptions be as established in \S \ref{Patching}
+(in particular \S \ref{Sec:assumptions},  \S \ref{GaloisAss}). 
+Let $\Vinf$ be as in \eqref{Vdef}. 
+
+
+ 
+There  exists a function $a: \mathbf{Z}_{\geq 1} \rightarrow \mathbf{Z}_{\geq 1}$ and 
+an action of $\Vinf$ on $H^*(Y(1), \Z_p)_{\mathfrak{m}}$ 
+by endomorphisms of degree $+1$ 
+with the  following property:
+
+(*) For any $n \geq 1$ and any  prime $q \equiv 1$ modulo $p^{a(n)}$,
+equipped with a strongly regular  element  of $T^{\vee}(k)$ conjugate to 
+$\rhobar(\mathrm{Frob}_q)$, 
+ the two actions of $H^1(T_q, \Z/p^{n})$  on $H^*(Y(1), \Z/p^{n})_{\mathfrak{m}}$ coincide:
+one via $f_{q,n}$  and one via $\iota_{q,n}$.
+ 
+The property (*) uniquely characterizes the $\Vinf$ action (this is true for any function $a$). 
+ 
+ In particular, the {\color{\changecolor} strict} global derived Hecke algebra
+ contains $\mathsf{V}$, and so also the exterior algebra freely generated by $\mathsf{V}$
+(the induced map from $\wedge^* \mathsf{V}$ 
+ to endomorphisms of    $H^*(Y(1), \Z_p)_{\mathfrak{m}}$ is injective). 
+ \end{theorem}
+
+
+
+
+ Note that the
+ uniqueness part of the statement is straightforward, because the condition pins down the action of $\mathsf{V}/p^r$ for arbitrarily large $r$:
+by Chebotarev, 
+  the images $f_{q,n}(H^1(T_q, \Z/p^n))$ generate $\mathsf{V}/p^n$ even when restricted to primes $q \equiv 1$ modulo $p^{a(n)}$;
+  this basically  follows from the existence of Taylor--Wiles data (see in particular  \eqref{tsnvsurj}). 
+
+
+{\color{\changecolor}  Finally,   under a further ``multiplicity one'' assumption, this result is sufficient to force the whole
+derived Hecke algebra to be graded commutative.  We separate this result
+from the main analysis because it is inessential to our main goals and it requires this additional multiplicity one assumption.
+
+Before we state the proposition, we note that, by the argument of \eqref{removing w}
+together with \cite[Lemma 6.20]{KT}, the action of global Hecke algebra $\gHecke$ 
+on cohomology induces an action of $\gHecke$ on 
+  on $H^*(Y(1), \Z_p)_{\mathfrak{m}}$.
+
+
+\begin{prop} \label{P853}
+  If   $H^{\BWq}(Y(1), \Z_p)_{\mathfrak{m}}  = \Z_p$,
+then the 
+image of the full global derived Hecke algebra $\gHecke$ inside $\End \ H^*(Y(1), \Z_p)_{\mathfrak{m}}$ in fact precisely coincides with the exterior algebra generated by $\mathsf{V}$,
+and in particular the global derived Hecke algebra (acting on $\mathfrak{m}$-part of cohomology) is graded commutative.
+ 
+This same conclusion of graded commutativity holds, more generally, when there exists a semisimple  $\Q_p$-algebra $\mathsf{S}$ of   (degree-preserving) endomorphisms of $H^*(Y(1), \Q_p)$
+ commuting with $\gHecke$ and such that $H^{\BWq}(Y(1), \Z_p)_{\mathfrak{m}} \otimes \Q_p$ has multiplicity one as a $\mathsf{S}$-module.   \end{prop}}
+ 
+
+ 
+ \begin{remark}
+ \begin{itemize}
+\item[-] {\color{\changecolor}  A natural choice for the commuting subalgebra $\mathsf{S}$ in Proposition \ref{P853} is
+  the $\Z_p$-algebra generated by the local underived Hecke algebras at all primes that are not good.
+  However, the multiplicity one condition is only realistic  when there is a  {\em unique} tempered representation $\pi_{\infty}$ of $\mathbf{G}(\R)$ with nontrivial $(\mathfrak{g}, \mathrm{K})$-cohomology.
+  If this uniqueness condition is satisfied, then we would likely expect the multiplicity one condition to be valid in the great majority of cases. 
+ 
+
+
+
+
+
+
+ 
+
+Under the assumptions we are currently working (simply connected group, and working over $\Q$) only $\SL_{2n+1}$
+has this property. However, this unicity of $\pi_{\infty}$ in fact applies
+whenever we work over a CM base field, or for $\PGL_n$ over $\Q$. \footnote{Note that, for $\PGL_n$ with $n$ even, 
+one should enlarge $\mathsf{S}$ using the action of the component group of the archimedean maximal compact.} 
+The analysis of \S \ref{Patching} -- \S \ref{reciprocity}
+would extend to those cases with only some  notational changes.   } 
+ 
+ 
+ 
+ 
+
+\item[-] That we get an {\em integral} isomorphism of $\gHecke$ and $\wedge^* \Vinf$, in the first statement of the Proposition, is an artifact of our simplifying hypotheses. We don't expect $\gHecke$
+to be an integral exterior algebra in general, but corresponding statements should remain valid $\otimes \Q$. 
+ 
+ In general,
+ we would expect the $\gHecke$ to be $\mathbb{T} \otimes \wedge^* \mathsf{V}$, where $\mathbb{T}$
+ is the usual Hecke algebra,   after tensoring with $\Q$. But here our assumptions mean that $\mathbb{T}$ is just $\Z_p$,
+ and moreover that the conclusion is true integrally.
+\end{itemize}
+\end{remark}
+
+\medskip
+
+
+
+
+
+
+
+\subsection{Formulation of the conjecture}
+We are now ready to state the conjecture, the formulation of which is the main point of this paper. 
+(Although the trip was fun too.) 
+
+The formulation of the conjecture itself rests on the conjecture of Langlands that associates  
+to $\Pi$ a motive, or more precisely a system of motives indexed by representations of the dual group. 
+ Unfortunately it is difficult to find a comprehensive account of this conjecture in print;  the reader may consult
+the brief remarks in \cite{Langlands} or the appendix of \cite{PV}.  
+
+
+Continue with notation as in Theorem \ref{maintheorem}.   
+As in    the discussion of \S \ref{sec:MV} and \S \ref{reindexing},
+let $M_{\coad}$ be the motive  with $\Q$ coefficients associated to $\Pi$ and the co-adjoint representation of $G^{\vee}$, if it  exists. {\em A priori},
+one may not always be able to descend the coefficients of $M_{\coad}$ to $\Q$, although we expect this is possible in most if not all cases.  (See discussion
+in \cite[Appendix, A.3]{PV}).  In what follows we assume that $M_{\coad}$ can indeed be descended to $\Q$ coefficients; if not 
+one can simply reformulate the conjecture by replacing $\Q$ by a field extension. 
+
+
+Thus there is an identification of Galois modules
+$$ \mbox{ {\'e}tale realization of $M_{\coad}$}  \simeq \Ad^* \rho  \otimes \Q_p$$
+ and there is 
+ a regulator map   from the motivic cohomology 
+ $$H^1_{\mot}(\Q, M_{\coad,\Z}(1)) \longrightarrow H^1_f(\Z[\frac{1}{S}], \Ad^* \rho(1)) \otimes  \Q_p.$$
+  As in \S \ref{motivic chi}, the motivic cohomology group on the left-hand side has been restricted
+to classes that extend to an integral model.
+  We assume that this regulator map is an isomorphism.\footnote{
+  In general, the appropriate conjecture is that the regulator, taken to the group of classes that are crystalline at $p$
+  {\em and unramified at all primes in $S$}, is an isomorphism. However, by virtue of our assumptions in 
+  \S \ref{GaloisAss}, part (e), it is not necessary to explicitly impose ``unramified at primes in $S$.''}
+ Let $\mathsf{V}_{\Q_p} = \mathsf{V} \otimes  \Q_p$,
+ and let $\mathsf{V}_{\Q}$ be those classes in $\mathsf{V}_{\Q_p}$
+ whose pairing with  motivic cohomology
+ lies in $\Q$. 
+ 
+ Write $H^*(Y(1), -)_{\Pi}$ for the 
+Hecke eigenspace for the character $\mathbb{T}_{K_0} \rightarrow \mathbf{Z}$
+ associated with $\Pi$ (see \eqref{oort}).   Our assumptions imply that $H^*(Y(1), \Z_p)_{\Pi}
+ = H^*(Y(1), \Z_p)_{\mathfrak{m}}$. 
+
+\begin{conjecture}     \label{mainconjecture} 
+ Notation as above. With reference to the action
+ $$ \wedge^* \mathsf{V}_{\Q_p} \acts H^*(Y(1), \Q_p)_{\Pi}$$
+ furnished by Theorem \ref{maintheorem}, the action of $\mathsf{V}_{\Q}$
+ preserves $H^*(Y(1), \Q)_{\Pi}$. 
+\end{conjecture} 
+
+
+
+  Some rather scant evidence is discussed in the next section  (\S \ref{pisspoor}).   As we have mentioned in the introduction, 
+  much more compelling is that we have been able
+to obtain numerical evidence for a coherent analog of the conjecture, in a joint work with Michael Harris. 
+
+
+ 
+ 
+  
+ 
+Recall  (\S \ref{GaloisAss}) 
+we assume that 
+
+
+
+
+
+\begin{equation} \label{recall} H^0(\Q_p, \Ad \rhobar) = H^2(\Q_p, \Ad \rhobar) = 0\end{equation} 
+which implies the same conclusions for $\Ad^* \rhobar(1)$. 
+In  particular,  $H^1(\Q_p, \Ad^* \rho(1))$ is torsion-free and surjects
+ onto $H^1(\Q_p, \Ad^* \rhobar(1))$. 
+  Finally, $H^1_f(\Q_p, \Ad^* \rho(1))$ is a saturated submodule of $H^1(\Q_p, \Ad^* \rho(1))$ and we have an equality of ranks
+ $$\mathrm{rank}_{\Z_p} H^1_f(\Q_p, \Ad^* \rho(1)) = \mathrm{rank}_{\mathbf{F}_p} H^1_f(\Q_p, \Ad^* \rhobar(1)),$$
+ as follows from explicit computation. In particular, $H^1_f(\Q_p,\Ad^* \rho(1))$ surjects onto $H^1_f(\Q_p, \Ad^* \rhobar(1))$.  
+Also   observe that, because of the assumed ``big image'' (\S \ref{GaloisAss} assumption (b)) of $\rhobar$, we have 
+\begin{equation} \label{h00} H^0(\Z[\frac{1}{\ramprimes}], \Ad^* \rhobar(1)) = 0,\end{equation}
+  and so $H^1(\Z[\frac{1}{\ramprimes}], \Ad^* \rho(1))$ is torsion-free. 
+
+ \begin{lemma} \label{DeltaDimensional}  Both $ H^1_f(\Z[\frac{1}{\ramprimes}], \Ad^* \rho(1))$ and $\mathsf{V}$ are  free  $\Z_p$-modules of rank $\delta$.
+ \end{lemma}
+ \proof  
+ 
+ First of all, because the Taylor--Wiles method in this case implies an $R=T$ theorem (see \eqref{first-iso})
+ and  we are assuming   that the Hecke algebra is isomorphic to $\Z_p$  (see \eqref{nocong0}) we get from a tangent space computation that
+ $H^1_f ( \Z[\frac{1}{\ramprimes}], \Ad \rhobar ) = 0.$
+ We now apply Tate global duality to this statement. It implies  both the surjectivity of
+\begin{equation} \label{sarge} H^1(\Z[\frac{1}{\ramprimes}], \Ad ^*  \rhobar(1)) \twoheadrightarrow \frac{ H^1(\Q_p, \Ad^* \rhobar (1)) }{ H^1_f(\Q_p, \Ad^* \rhobar (1)) }, \end{equation}
+and  the injectivity  of
+\begin{equation} \label{Vanishing} H^2(\Z[\frac{1}{\ramprimes}],\Ad^* \rhobar(1))  \hookrightarrow \underbrace{ \prod_{v \in \ramprimes} H^2(\Q_v, \Ad^* \rhobar(1)) }_{=0 \mathrm{  \ by  \ \S \ref{GaloisAss}}} \end{equation}
+  so in fact $ H^2(\Z[\frac{1}{\ramprimes}],\Ad^* \rhobar(1))=0$. 
+ 
+
+The surjectivity \eqref{sarge} holds also for $\Ad^* \rho(1)$, not just the mod $p$ reduction.
+This follows because $H^1(\Z[\frac{1}{\ramprimes}], \Ad^* \rho(1))$ surjects onto  $H^1(\Z[\frac{1}{\ramprimes}], \Ad^* \rhobar(1))$, by \eqref{Vanishing};
+and the induced map
+$$\frac{ H^1(\Q_p, \Ad^* \rho (1)) }{ H^1_f(\Q_p, \Ad^* \rho (1)) }/p  \rightarrow \frac{ H^1(\Q_p, \Ad^* \rhobar (1)) }{ H^1_f(\Q_p, \Ad^* \rhobar (1)) } $$
+is an isomorphism. 
+
+
+
+
+ 
+ 
+The Euler characteristic formula, taken together with \eqref{h00}, \eqref{sarge} and \eqref{Vanishing}, allows one to compute  \begin{equation}
+\label{EC} \dim H^1_f(\Z[\frac{1}{\ramprimes}], \Ad^* \rhobar \ (1)) = \delta.\end{equation}
+Now examine  the short exact sequences  
+ 
+ \begin{equation} \label{feeling_groovy1}
+ \xymatrix{
+H^1(\Z[\frac{1}{\ramprimes}], \Ad^*  \rho (1)) \ar[r]^{p}\ar[d]^j   & H^1(\Z[\frac{1}{\ramprimes}], \Ad^* \rho  (1))\ar[d]   \ar[r]  &H^1(\Z[\frac{1}{\ramprimes}], \Ad^* \rhobar (1))   \ar[d] \\
+\frac{H^1(\Q_p,\Ad^* \rho (1))}{H^1_f (\Q_p, \Ad^* \rho(1))} \ar[r]^{p}   & \frac{H^1(\Q_p,\Ad^* \rho  (1))}{H^1_f(\Q_p,\Ad^* \rho  (1))} \ar[r] &\frac{H^1(\Q_p,\Ad^* \rhobar (1))}{H^1(\Q_p,\Ad^* \rhobar (1))} \\
+ }
+ \end{equation} 
+ Since we have seen that $j$ is onto, 
+ it follows that the induced maps of vertical kernels is a short exact sequence;
+that and \eqref{EC} imply that
+ $$ H^1_f(\Z[\frac{1}{\ramprimes}], \Ad^* \rho(1)) \simeq \Z_p^{\delta},$$
+ as claimed. 
+   \qed 
+ 
+ 
+
+
+\subsection{ Cohomological vanishing in the  Taylor--Wiles method} \label{TWrecall} 
+In  the Taylor--Wiles method we choose a set of primes $Q$ such that, with $SQ=  \ramprimes \cup Q$, we have the following properties:
+\begin{itemize}
+\item[(a)]  $Q$ is a Taylor--Wiles datum of some level, and
+\item[(b)]  The map $H^1(\Z[\frac{1}{SQ}], \Ad \rhobar) \rightarrow \frac{H^1(\Q_p, \Ad \rhobar)}{H^1_f(\Q_p, \Ad \rhobar)}$ is surjective,
+and the map $H^2(\Z[\frac{1}{SQ}], \Ad  \rhobar) \rightarrow \prod_{v \in Q} H^2(\Q_p, \Ad \rhobar )$ is injective. 
+
+
+\end{itemize} 
+(Recall that our local assumptions at $S$ mean there is no local cohomology there: \S \ref{GaloisAss}, assumption (e)). 
+
+
+
+
+
+
+Observe also that if $Q$ is such a set of primes, and $Q'$ is a further set satisfying (a) and (b), then certainly $Q \cup Q'$ satisfies (a) and (b) too.
+Indeed, the cohomological criteria of (b) are equivalent to asking that \begin{equation} \label{dual-inj} H^1_f(\Z[\frac{1}{SQ}], \Ad^* \rhobar \ (1)) \rightarrow \prod_{v \in Q} H^1(\Q_v, \Ad^* \rhobar(1))\end{equation}  is injective,  and this  is stable under enlarging $Q$ (it is equivalent to the same injectivity on $H^1_f(\Z[\frac{1}{S}], -)$,
+since anything in the kernel would be unramified at $Q$). 
+
+Now, if we choose a system of such data $Q_n$ of level $n$, we can 
+(by passing to a subsequence and reindexing, e.g. as in \cite[\S 13.10]{GV}) achieve 
+a new sequence $Q_n$ which satisfy the ``limit properties'' of \S \ref{extraction}.  
+
+\begin{Definition} \label{TWconvgt}  \index{convergent (Taylor--Wiles data)}  
+A sequence of Taylor--Wiles data $Q_n$ of level $n$ is called {\em convergent} if:
+\begin{itemize} \item[-] $Q_n$ have  the cohomological properties stated in (b) above and, 
+\item[-] One can pass to the limit in the sense of \S \ref{extraction}, i.e. there exists data $\Rinf, \Sinf, \Cinf, f_n, g_n$ etc. 
+satisfying all the properties enumerated in \S \ref{extraction}.
+\end{itemize}
+ \end{Definition}
+ 
+ In particular, any sequence of Taylor--Wiles data has a convergent subsequence, after reindexing the subsequence.
+
+ 
+
+
+\subsection{The tangent spaces to $R$ and $S$} \label{tangentRS}
+As in \S \ref{SR} both $\Rinf$ and $\Sinf$ are augmented to $\Z_p$:
+$$ \Sinf \rightarrow \Rinf \rightarrow \Z_p,$$
+and the composite $\Sinf \rightarrow \Z_p$ is the standard augmentation of $\Sinf$. 
+ The kernel of these augmentations are denoted by $\Jinf \subset \Rinf$ and $\Iinf \subset \Sinf$. 
+ 
+ 
+  First of all, we set let $\mathfrak{t}_{\Rinf}$ be the ``tangent space'' to $\Rinf$  {\em over $\Z_p$}, that is to say \index{$\mathfrak{t}_{\Rinf}$}
+$$\mathfrak{t}_{\Rinf} \simeq \Hom_{*}(\Rinf, \Z_p[\varepsilon]/\varepsilon^2),$$ 
+where the subscript $*$ means that the homomorphism lifts the natural augmentation $\Rinf \rightarrow \Z_p$.   Equivalently, $\Rinf$ is the derivations of $\Rinf/\Z_p$ into $\Z_p$, 
+or the $\Z_p$-linear dual of $\Jinf/\Jinf^2$. 
+
+We can make exactly the same definition for $\Sinf$.  The surjection $\Sinf \twoheadrightarrow \Rinf$ induces 
+a surjection $\Iinf/\Iinf^2 \twoheadrightarrow \Jinf/\Jinf^2$ and thus 
+ a natural injection $\mathfrak{t}_{\Rinf} \rightarrow \mathfrak{t}_{\Sinf}$ with saturated image (i.e. split). 
+We write  $\Winf$ for the cokernel of the map on tangent spaces, so we have an exact sequence 
+\begin{equation} \label{Vdef2}  \mathfrak{t}_{\Rinf} \hookrightarrow \mathfrak{t}_{\Sinf}  \twoheadrightarrow \Winf.  \end{equation} 
+ Then $\Winf$ is a free $\Z_p$-module of rank $\delta$.
+ 
+ 
+
+ 
+\subsection{Tangent spaces to $\usbR_n$ and $S_n$}  \label{tnRnSn}
+ 
+ We suppose now that $Q_n$ are a convergent sequence (\S \ref{TWrecall}) of Taylor--Wiles data.  
+  
+Recall that $\Sinf, \Rinf$ are defined as ``limits,'' roughly speaking,
+of rings $S_n \rightarrow \usbR_n$ that occur at level $Q_n$ in the Taylor--Wiles process.
+We recall that $\usbR_n$ is not the full (crystalline at $p$) deformation ring  $R_{Q_n}$ at level $Q_n$, but is a ``very deep'' Artinian quotient of 
+it. 
+
+ These rings are also compatibly  augmented over $\Z/p^n$, i.e.
+$$S_ n  \longrightarrow   \usbR_n \longrightarrow \Z/p^n$$
+(see the bottom row of  \eqref{SinftySn}, and compose with the reduction of the map $\defring \rightarrow \Z_p$
+which arises from our fixed automorphic representation $\Pi$). 
+
+  
+ 
+
+
+\begin{lemma}
+The map  $R_{Q_n} \rightarrow \usbR_n$ 
+induces an isomorphism  upon applying $\Hom_*(-, \Z/p^n[\varepsilon]/\varepsilon^2)$, 
+where $\Hom_*$ means that the map lifts the natural augmentations to $\Z/p^n$. 
+\end{lemma}
+\proof
+Write $A :=   \Z/p^n[\varepsilon]/\varepsilon^2$. 
+A map $R_{Q_n} \rightarrow  A$ gives rise to a deformation 
+ $\widetilde{\rho}_n: G_{\Q} \rightarrow G^{\vee}(\Z/p^n)$
+ that lifts the modulo $p^n$ reduction of $\rho$.   
+
+
+We want to show that $R_{Q_n} \rightarrow A$ must factor through  $\usbR_n$. 
+To do so we must show (see \eqref{goef})  that
+the map dies on the $K(n)$th power of the maximal ideal $\mathfrak{m}_{R_{Q_n}}$,
+and also that $\rho_n$ automatically has inertial level $\leq n$ at primes in $Q_n$ (see page \pageref{inertial level} for definition). 
+
+Note that the maximal ideal $(p, \varepsilon)$ of $\Z/p^n[\varepsilon]/\varepsilon^2$
+satisfies $(p, \varepsilon)^{n+1} = 0$. Since $K(n)  \geq n+1$ by assumption,  we only need verify that $\widetilde{\rho}_n$ has inertial level $\leq n$
+at all Taylor--Wiles primes. 
+After suitably conjugating, we can suppose $\widetilde{\rho}_n|\Q_q$
+to have image in $T^{\vee}$ (see Lemma \ref{TWdeflem}).  Restricted to inertia it takes image inside 
+ the kernel of $T^{\vee}(\Z/p^n[\varepsilon]/\varepsilon^2) \rightarrow T^{\vee}(\Z/p^n)$; 
+ this group has exponent $p^n$, and  so $\widetilde{\rho}_n$ has inertial conductor $\leq n$. 
+\qed 
+
+
+
+
+
+
+We also define $$\mathfrak{t}_{R_n} = \Hom_*(R_{Q_n}, \Z/p^n[\varepsilon]/\varepsilon^2).$$ 
+  \index{$\mathfrak{t}_{R_n}$}    It doesn't matter whether we use $R_{Q_n}$ or $\usbR_n$ in this definition, as we just showed.
+  Similarly we define $$\mathfrak{t}_{S_n} = \Hom_*(S_n, \Z/p^n[\varepsilon]/\varepsilon^2).$$  There is a natural map $\mathfrak{t}_{R_n} \rightarrow \mathfrak{t}_{S_n}$
+  induced by $S_n \rightarrow \usbR_n$.  \index{$\mathfrak{t}_{S_n}$} 
+
+Finally define  \index{$W_n$} 
+\begin{equation} \label{Wndef} W_n = \mathrm{cokernel} \left( \mathfrak{t}_{R_n} \rightarrow \mathfrak{t}_{S_n}\right). 
+\end{equation}
+
+
+ 
+
+ 
+
+The maps $\Rinf \rightarrow \usbR_n$ and $\Sinf \rightarrow S_n$ give rise to an isomorphism 
+of short exact sequences as below: 
+ 
+ \begin{equation} \label{feeling_groovy2}
+ \xymatrix{
+ 0 \ar[r] & \mathfrak{t}_{R_n} \ar[r]\ar[d]^{\alpha, \sim}  & \mathfrak{t}_{S_n} \ar[d]^{\beta,\sim}  \ar[r]  & W_n   \ar[d]^{\gamma, \sim} \ar[r] & 0  \\
+ 0 \ar[r] & \mathfrak{t}_{\Rinf}/p^n \ar[r]    &\mathfrak{t}_{\Sinf}/p^n  \ar[r] & \Winf/p^n  \ar[r] &0 \\
+ }
+ \end{equation} 
+ 
+This requires some explanation.   
+
+First of all,  we explain the maps.  Note first of all
+that there is a natural map  $\mathfrak{t}_S/p^n \simeq \Hom_{*}(\Sinf, \Z/p^n[\varepsilon]/\varepsilon^2)$,
+which is an isomorphism. Similarly for $\Rinf$. 
+ This means that there are maps 
+\begin{equation} \label{gogo}   \alpha: \mathfrak{t}_{S_n} \rightarrow \mathfrak{t}_{\Sinf}/p^n,   \beta:  \mathfrak{t}_{R_n} \rightarrow \mathfrak{t}_{\Rinf}/p^n\end{equation} 
+that are induced by the projections $\Sinf \rightarrow S_n$ and $\Rinf \rightarrow \usbR_n$.
+This explains $\alpha, \beta$; and the map $\gamma$ is the induced map on cokernels.  
+
+Next we see that $\alpha, \beta, \gamma$ are isomorphisms. 
+
+For $S$ this is the assertion that homomorphism $\Sinf \rightarrow \Z/p^n[\varepsilon]/\varepsilon^2$ 
+factors through $S_n$. Indeed,  referring to the coordinate presentation \eqref{explicit} and \eqref{Sinfdef},  each element $x_i$ must go to   $a\varepsilon$ for some $a \in \Z/p^n$, 
+and then $(1+x_i)^{p^n}$ is carried to $(1+a \varepsilon)^{p^n} = 1$. 
+For $R$, we use the fact \eqref{second-iso}    that   we can identify $\usbR_n$ with $\Rinf\otimes_{\Sinf} S_n$. 
+As above, any homomorphism $\Sinf \rightarrow \Z/p^n[\varepsilon]/\varepsilon^2$  (lifting the augmentation) factors through
+$S_n$,  and in particular any homomorphism $\Rinf \rightarrow \Z/p^n$, lifting the natural one,
+factors  through $\usbR_n$. 
+
+Now, the bottom row is exact, by definition and the freeness of $\Winf$. The top row
+is exact at the left because the  vertical maps $\alpha, \beta$ are isomorphisms,
+and exact at the right by definition. 
+Then it follows that $\gamma$ is an isomorphism too. 
+
+This concludes the explanation of diagram \eqref{feeling_groovy2}.
+
+
+
+\subsection{Tangent spaces  to $S_n$ reinterpreted}
+Let us reinterpret the tangent space to $S_n$ in a few different  (canonical) ways. 
+
+\label{DDR REF1}
+
+
+By \eqref{coocoo} we have an isomorphism
+
+
+
+
+
+
+
+
+\begin{equation}\label{ExtT} \mathfrak{t}_{S_n} \simeq \Ext^1_{S_n}(\Z/p^n, \Z/p^n)\end{equation} 
+
+Now $S_n$ was, by definition (\S \ref{sec:diamond}) , the $\Z/p^n$- group algebra of the group $T_n$; thus, from the above equation,  we get a canonical isomorphism
+\begin{equation} \label{tsnTn}\mathfrak{t}_{S_n} \simeq H^1(T_n, \Z/p^n).\end{equation}
+ 
+ Next we connect $\mathfrak{t}_{S_n}$ to Galois cohomology. Recall from  Lemma \ref{TWdeflem}
+  that, for any $q \in Q_n$, a deformation of $\rho|G_{q}$
+can be conjugated to lie in the torus, and in particular factors through the profinite completion of $\Q_q^{\times}$. 
+Now we can identify $H^1(G_q, \Ad \ \rho_n)$
+with the set of lifts  of $\rho_n$ to $G^{\vee}(\Z/p^n[\varepsilon]/\varepsilon^2)$, modulo conjugacy. 
+This lift sends tame inertia to the kernel of reduction modulo $\varepsilon$. 
+In particular, having fixed an element of $T^{\vee}(k)$ conjugate to $\rhobar(\mathrm{Frob}_q)$, we get a canonical isomorphism 
+\begin{equation} \label{TqH} \frac{ H^1(\Q_q, \Ad \rho_n)}{H^1_{\ur}(\Q_q, \Ad \rho_n) } \simeq 
+\mathrm{Hom}\left( \ \mathbf{F}_q^{\times},  
+\mathrm{Lie}(T^{\vee}) \otimes \Z/p^n\right)\end{equation}
+Identifying the the Lie algebra
+with $X_*(T^{\vee})$, we get 
+\begin{equation}   \label{brst}
+ \frac{ H^1(\Q_q, \Ad \rho_n)}{H^1_{\ur}(\Q_q, \Ad \rho_n) }  \simeq \Hom(\mathbf{F}_q^{\times}/p^n,  \Z/p^n) \otimes X_*(T^{\vee})  \simeq \Hom(\underbrace{X_*(\mathbf{A}) \otimes \mathbf{F}_q^{\times}/p^n}_{\mathbf{A}(\mathbf{F}_q)/p^n}, \Z/p^n)\end{equation} 
+(here the subscript ``ur'' means unramified) and thus, from \eqref{idontcare} and  \eqref{tsnTn} 
+\begin{equation} \label{tSn Galois} \mathfrak{t}_{S_n} \simeq  \bigoplus_{q \in Q_n}  \frac{ H^1(\Q_q, \Ad \rho_n)}{H^1_{\ur}(\Q_q, \Ad \rho_n)} \end{equation} 
+where we emphasize that the isomorphism depends on the choice of  an element of $T^{\vee}(k)$ conjugate to Frobenius at $q$, for each $q \in Q_n$. 
+ 
+  
+
+
+  There is an isomorphism similar to \eqref{ExtT} for
+ $\mathfrak{t}_{\Sinf}$; in particular,
+ $ \mathfrak{t}_{\Sinf} \simeq \Ext^1_{\Sinf}(\Z_p, \Z_p)$
+ and more usefully
+$$ \mathfrak{t}_{\Sinf}/p^n \simeq \Ext^1_{\Sinf}(\Z_p, \Z/p^n)$$
+
+ 
 The composite
-(141) Ext1
-Sn pZ{pn, Z{pnqÝ ÑExt1
-SpZ{pn, Z{pnq Ñ Ext1
-SpZp, Z{pnq.
-gives the natural identiﬁcation – map β from (134) – of Ext1
-Sn pZ{pn, Z{pnq “ tSn with
-Ext1
-SpZp, Z{pnq “ tS{pn.
-8.16. Vn and Galois cohomology. We exhibit now a canonical surjection
-(142) tSn։ V{pn
-In fact, this surjection uses no more than the fact that Qn is a Taylor–Wiles datum. If we
-suppose that Qn are a convergent sequence (§8.10) of Taylor–Wiles data, we w ill see that
-this actually descends to an isomorphism
-(143) Wn » V{pn,
-i.e.Wn (deﬁned in (133)) is isomorphic to HompH 1
-f pZr 1
-S s, Ad˚ρ p1qq, Z{pnq.
-64 AKSHA Y VENKA TESH
-As before, let SQn be the union of the set S with the set Qn. Examine:
-(144) Hom˚pRQn, Z{pnrεs{ε2q /d47/d47
-„
-/d15/d15
-Hom˚pSn, Z{pnrεs{ε2q /d47/d47
-„
-/d15/d15
-Wn
-“
-/d15/d15
-H 1
-f pZr 1
-SQn
-s, Adρnq
-ϕ /d47/d47 ś
-vPQn
-H1pQv,Adρnq
-H1urpQv,Adρnq
-/d47/d47Wn.
-The ﬁrst vertical map is just the computation of tangent spac es to deformation rings (work-
-ing over Z{pn rather than a ﬁeld), the second vertical map is (140), and ϕ is restriction in
-Galois cohomology.
-There is now a natural pairing :
-(145) H 1
-f pZr 1
-S s, Ad˚ρn p1qq ˆWn Ý ÑZ{pn
-which, we emphasize again, depends on the choice of toral elements conjugate to Frobenius
-at each prime in Qn. To be explicit, an element of Wn is represented by a collection
-pβvq P
-ź
-vPQn
-H 1pQv, Adρnq
-H 1urpQv, Adρnq,
-modulo imagepϕq; to pair α P H 1
-f pZr 1
-S s, Ad˚ρnp1qq with pβvqvPQn we take the sum of
-local pairings
-(146) pα, pβvqvPQn q ÞÑ
-ÿ
-pαv,βvqv
-where the local pairing is deﬁned by restricting α to Qv and using local reciprocity. This
-pairing (146) is well-deﬁned because each αv, i.e. the restriction of α to Qv, is actually
-unramiﬁed. Moreover, if the collection pβvq come from a class in H 1
-f pZr 1
-SQn
-s, Adρnq,
-the value of (146) is zero by global reciprocity: our local as sumptions means that the local
-pairings forv PS vanishes. Thus the pairing (146) descends to the quotient of ś
-vPQnH 1
-by imagepϕq. This concludes our discussion of (145).
-We have also seen (§8.13, and similar arguments to Lemma 8.9) that both Wn and
-H 1
-f pZr 1
-S s, Ad˚ρn p1qq are free Z{pn-modules of dimension δ. Let us check that (145) is
-a perfect pairing of Z{pn modules, i.e. the map
-Wn ÑH 1
-f pZr 1
-S s, Ad˚ρnp1qq_
-is an isomorphism, where _ means homomorphisms to Z{pn. Since both sides have the
-same size, it is enough to check that the map is surjective, an d thus enough to show that
-the induced map
-(147) tSn ÑH 1
-f pZr 1
-S s, Ad˚ρ p1qq_
-is surjective, where _ now means homomorphisms to Z{p.
-Now the Taylor-Wiles setQn is chosen (131) so thatH 1
-f pZr 1
-S s, Ad˚ρ p1qq ãÑ ś
-vPQnH 1pQv, Ad˚ρp1qq.
-The image of this map consists of classes unramiﬁed at Qn, so we also have
-H 1
-f pZr 1
-S s, Ad˚ρ p1qq ãÑ
-ź
-vPQn
-H 1pQv, Ad˚ρp1qqur
-When we dualize this, and apply local duality at primes in Qn, we get the surjectivity of
-(147).
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 6 5
-8.17. The injection H 1pTqq ãÑ H p1q
-q . In this section, we suppose that Qn is a Taylor–
-Wiles datum of level n, but do not assume that it is part of a convergent sequence (§8 .10)
-of Taylor–Wiles data. Let q P Qn, thus equipped with FrobT
-q P T _pkq. We will work
-exclusively with S “ Z{pn coefﬁcients. As before, Hq denotes the local derived Hecke
-algebra atq, and H p1q
-q denotes its degree 1 component. Let Tq “ ApFqq{pn.
-We are going to describe the map (123), which is necessary for the formulation of the
-Theorem. More precisely, we are going to describe a map
-(148) θ :H 1pTqq Ñ
-´
-H p1q
-q
-¯
-m
-,
-where the subscript means that we complete at the ideal of the Hecke algebra (i.e., the
-degree zero component of Hq) corresponding to m.
-The easiest way to think about θ is probably through the following property: for each
-α PH 1pTqq, the action of θpαq onH ˚pY p1q, Z{pnqm is thus:
-(149) Pullback to Y0pqq, project to FrobT
-q -eigenspace, cup with α, pushdown to Y p1q.
-where the projection is done with reference to the splitting of Corollary 6.7.
-The formal deﬁnition of the map θ is given in (154), and the validity of (149) will follow
-from the Lemma below.
-The Satake isomorphism of §3 gives
-Hq
-„Ý Ñ pSrX˚s bH ˚pApFqqqqW
-and in particular with Z{pn coefﬁcients the map H 1pTqq Ñ H 1pApFqqq is an isomor-
-phism, so
-H p1q
-q
-„Ý Ñ
-`
-SrX˚s bH 1pTqq
-˘W
-Now FrobT
-q P T _pkq gives a map X˚pAq “ X ˚pT _q Ñ kˆ, i.e. it gives rise to a
-character χFrobT
-q
-: SrX˚s Ñ k. The pullback of this to SrX˚sW deﬁnes the maximal
-ideal m (using the Satake isomorphism). Let us denote by rm the extension of the ideal
-m back to SrX˚s; we caution that it is no longer maximal, and rather it cuts ou t FrobT
-q
-together with all its W -conjugates. We have an identiﬁcation of completions
-(150) SrX˚s rm –
-à
-wPW
-SrX˚swχ,
-where we have denoted by SrX˚swχ the completion of SrX˚s at the maximal ideal that is
-the kernel of wχ.
-Next the natural inclusion
-(151) pSrX˚s bH ˚pTqqqW ãÑSrX˚s bH ˚pTqq
-induces the ﬁrst map of
-(152) pSrX˚s bH ˚pTqqqW
-m
-(151)
-Ñ SrX˚s rm bH ˚pTqq
-(150)
-Ñ SrX˚sχ bH ˚pTqq.
-The composite map of (152) is an isomorphism, and thus by comp osing with the Satake
-isomorphism we get an isomorphism
-(153)
-´
-H p1q
-q
-¯
-m
-„ÑSrX˚sχ bH 1pTqq.
-We then deﬁne the map θ :H 1pTqq Ñ
-´
-H p1q
-q
-¯
-m
-by the rule
-(154) θ :h PH 1pTqq ÞÑ 1 bh PSrX˚sχ bH 1pTqq
-(153)´ 1
-Ý Ñ
-´
-H p1q
-q
-¯
-m
-66 AKSHA Y VENKA TESH
-where the superscript 1 refers to cohomological degree, and the ﬁnal map is the inver se of
-(153). Note that this embedding depends on the choice of FrobT
-q ; if we replace FrobT
-q by
-wFrobT
-q then the embedding is modiﬁed by means of the natural action o fw onTq.
-This concludes the description of the map H 1pTqq Ñ H p1q
-q . We now want to justify
-(149). For this we will describe an explicit preimage of θpαq under the map
-(155) pHKI b HI b HIK q Ñ HK
-in the case of the group GpQqq, where notation is as before (see, e.g. the proof of Theorem
-7.6); note that HK coincides with what was previously called Hq. Observe that everything
-here is a compatibly a module under the center of HII , which is identiﬁed (§4.3) with
-SrX˚sW . In particular, it makes sense to complete at m.
-Now let eλ P HII correspond to the characteristic function of IqλIq, where λ P X˚.
-Thenλ ÞÑeλ deﬁnes an embedding SrX˚s Ñ HII , and, completing, an embedding
-(156) SrX˚s rm Ñ pHII qm
-As before (§4.2) we let eK be the characteristic function of Kq, divided by its measure;
-if we write ew for the characteristic function of IqwIq, we have eK “ 1
-|W |
-ř
-wPWew. It
-can be considered, as in §4.2, as an element of HKI or HIK . Also |W |eKeλ P HKI (i.e.
-the product of |W |eK P HKI witheλ P HII ) corresponds to the characteristic function of
-IqλKq.
-8.18. Lemma. Let Θ P SrX˚s rm be chosen so that it projects under (150) to the identity
-inSrX˚sχ and to zero in all SrX˚swχ, forw PW not the identity. W e use the same letter
-for its image Θ P pHII qm under (156).
-F orh P H 1pTqq let xhy be the associated element of H p1q
-I , i.e. xhy is supported on
-the identity double coset of I, and the associated cohomology class is obtained from h by
-means of the restriction isomorphism H 1pIq „ÑH 1pTqq.
-Then the m-completion of (155) sends |W |eKΘ b xhy beK toθphq.
-As above, the product eKΘ is understood as the product of eK P HKI with Θ P HII .
-In words, this amounts precisely to the description (149) fo rθ, taking into account that Θ
-realizes precisely the projection onto the FrobT
-q component for the splitting (98).
-Proof. Consider the map (no completions, at the moment)
-(157)
-´
-HKI b H p1q
-I b HIK
-¯
-Ñ H p1q
-K Ñ
-`
-SrX˚s bH 1pTqq
-˘W
-We show it sends A :“eKeλ b xhy beK, forλ dominant, to the “ W -average” of λ bh,
-i.e. |W |´1 ř
-wPWw ¨ pλ bhq.
-The claimed result will follow easily from this: Consider an element Θ 1 “ řcλλ P
-SrX˚s with the property that cλ is nonzero only for λ dominant, and also Θ ” Θ 1 modulo
-some high power of rm. Our claim implies that |W |eKΘ 1 b xhy beK is sent to the sum of
-Weyl translates of řcλpλ bhq. The image of řcλpλ bhq in À
-wPWSrX˚swχ bH 1pTqq
-is very close to 1 bh in thew “ 1 factor, and very close to zero in the other factors; after
-summing over W , its projection to the w “ 1 factor remains very close to 1 bh. Here
-“very close” is taken in the topology of the complete local ri ngsSrX˚swχ. In other words,
-θphq and the image of |W |eKΘ 1 b xhy beK under (155) and (153) are very close; in the
-limit, this shows the desired result.
-We will now consider everything in the “function model” of §2 .3. Let a1 P HKI,a 2 P
-HIK be the images ofeKeλ,eK in the function model. Thena1 corresponds to the function
-sending pxK,yI q to |W |´1 precisely when Iy ´1xK “ IλK , equivalently Kx ´1yI “
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 6 7
-KλI, where we write λ P X˚ for the negative of λ. Also a2 corresponds to the function
-pxI,yK q which is 1 exactly whenxK “yK . Moreover, the function xhy is supported on
-the diagonal in G{I and sends pI,I q toh PH 1pTqq » H 1pIq.
-The second map of (157) is given by restricting arguments to t he torus, and restricting
-cohomology classes toTq. We can compute this restriction using the “localization” r esults
-of §4.6; these results assert that restriction to the torus a ctually preserves multiplication.
-We restrict to the torus. Suppose that µ P X˚ is dominant, with negative µ P X˚. We
-compute:
-ApK,µKq “
-ÿ
-yP ˜W
-a1pK,yI qxhypyI,yI qa2pyI,µKq
-The ﬁrst term is nonzero only for those y satisfyingKyI “KλI, i.e. y P ˜W XKλI. This
-implies thaty “wλ, withw PW . So this equals
-“ |W |´1 ÿ
-wPW
-xhypwλI,wλIqa2pwλI,µKq
-The ﬁnal term is nonzero (and equals 1) exactly whenµK “wλK. Recall that both λ and
-µ are dominant. Thus this only happens if λ “µ andw PWµ:
-(158) ApK,µKq “ |W |´1δλµ
-ÿ
-wPWµ
-xhypwλI,wλIq
-On the right, xhypwλI,wλI q P H 1pTqq equalsw ¨h PH 1pTqq.
-Now, the image of A under the derived Satake map is the W -invariant element of the
-derived Hecke algebra of the torus deﬁned by
-µ ÞÑ restriction toTq ofApµK,K q.
-As we have just computed, for µ dominant,ApµK,K q “ ApK,µKq is nonvanishing only
-whenµ “λ, where its value is |W |´1 ř
-wPWµ wh. Therefore the image of A under (157)
-is theW -average ofλ bh as claimed. □
-8.19. Producing an action of V{pn on the cohomology at level 1. LetQn be a conver-
-gent sequence of Taylor–Wiles data (§8.10). For each intege rn we will produce an action
-of V{pn on automorphic cohomologyH ˚pY p1q, Z{pnqm. A priori these actions will not be
-guaranteed to be compatible with one another; later we will s ee at least that they “converge
-asn Ñ 8” to give an action of V onH ˚pY p1q, Zpqm.
-More exactly, we begin by constructing an action of tSn, then prove (the Lemma below)
-that it factors through Wn, and ﬁnally we have identiﬁed Wn » V{pn in (143). This gives
-the desired action, and we will discuss the “convergence as n Ñ 8” in the next section.
-Thus, letQn be a convergent sequence of Taylor–Wiles data.
-We have
-(159) tSn
-(137)
-– H 1pTn, Z{pnq
-(148)
-ãÑ degree 1 component of bqPQn pHqqm,
-where the Hecke algebras are taken with Z{pn coefﬁcients. The composite embedding will
-be denoted
-(160) ιQn : tSn Ñ bqPQn pHqqm.
-This gives rise to an action of tSn by degree `1 endomorphisms of automorphic coho-
-mologyH ˚pY p1q, Z{pnqm, whose explicit description is essentially that already gi ven in
-(149), just replacing the role of one prime by many.
-68 AKSHA Y VENKA TESH
-The embedding (137) and so also this action depends on the choice of elements FrobT
-q P
-T _pkq for each primeq PQn. Should we modify FrobT
-q by an elementwq PW , the Weyl
-group, the action of tSn is also modiﬁed (see comments after (154)) by the action of wq in
-the obvious way.
-8.20. Lemma. Let Qn be a convergent sequence of T aylor–Wiles data, as in Deﬁniti on
-8.11. Then, for each n, the action of tSn onH ˚pY p1q, Z{pnqm (viaιQn ) is trivial on the
-image of tRn, and thus factors through the map tSn ÑWn.
-Proof. Consider the diagrams (118) of our previous story, now with i dentiﬁcations with tS
-and tSn included:
-(161)
-H ˚pHomSpC, Zpqq
-“
-/d15/d15
-ˆ
-tShkkkkkkikkkkkkj
-Ext1
-SpZp, Zpq Q ˜v
-/d15/d15
-/d47/d47H ˚pHomSpC, Zpqq
-/d15/d15
-˜x PH ˚pHomSpC, Zpqq
-V
-/d15/d15
-ˆ Ext1
-SpZp, Z{pnq Q v /d47/d47H ˚pHomSpC, Z{pnqq
-“
-/d15/d15
-x PH ˚pHomSpC, Z{pnqq ˆ
-`
-Ext1
-SpZ{pn, Z{pnq
-˘ /d47/d47
-U
-/d79/d79
-H ˚pHomSpC, Z{pnqq
-H ˚pHomSn pC bSSn, Z{pnqq
-„
-/d79/d79
-ˆ
-`
-Ext1
-SnpZ{pn, Z{pnq
-˘
-loooooooooooomoooooooooooon
-tSn
-/d47/d47
-/d79/d79
-H ˚pHomSn pC bSSn, Z{pnqq.
-„
-/d79/d79
-In particular, letx PH ˚pHomSn pCbSSn, Z{pnqq be liftable to ˜x PH ˚pHomSpC, Zpqq;
-letv P tSn » tS{pn be lifted to ˜v P tS. Then the image of px,v q in the bottom row is ob-
-tained from projecting the image of p˜x, ˜vq at the top row.
-Let us recall from §7.3 part (g) that C is quasi-isomorphic to R as an S-module in a
-single degree. Thus we can explicitly compute what goes on in the top row. This explicit
-computation (see Lemma B.1 in Appendix §B) shows that any ele ment ˜v P tS that lies in
-the image of tR acts trivially onH ˚pHomSpC, Zpqq.
-For later use, note that these explicit computations also sh ow that
-(162) H ˚pHomSpC, Zpqq is free over ^˚tS{tR.
-From (134) it then follows that imageptRn Ñ tSn q acts trivially on
-H ˚pHomSn pC bSSn, Z{pnqq » H ˚pY0pQnq, Z{pnqm,FrobT,
-where the action of tSn “H 1pTn, Z{pnq is by cup product, as in (119).
-By (149) this means that the action of ιQn ptSnq on H ˚pY p1q, Z{pnqm is trivial on
-imageptRn Ñ tSnq. Thus, this action of tSn onH ˚pY p1q, Z{pnqm factors throughWn as
-claimed. □
-8.21. Summary. Let us summarize more carefully what we have said to date:
-For any Taylor–Wiles datum Qn we have an action of tSn “ HompTn, Z{pnq on
-H ˚pY p1q, Z{pnqm constructed via an embedding
-ιQn : HompTn, Z{pnq ãÑ derived Hecke algebra
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 6 9
-(see (159)). On the other hand, we have a surjective morphism (see §8.16)
-fQn : HompTn, Z{pnq։ V{pn.
-These constructions, for a given n, depend only on Qn; they do not involve the Taylor–
-Wiles limit process.
-8.22. Deﬁnition. W e say that a T aylor–Wiles datum Qn of level n is strict of level n (or
-just strict) if the map
-tSn
-ιQn
-Ý ÑEndH ˚pY p1q, Z{pnqm
-factors throughfQn . Thus, a strict T aylor-Wiles datum of leveln gives rise to an action of
-V{pn onH ˚pY p1q, Z{pnqm.
+ \begin{equation} \label{compositemap} \Ext^1_{S_n}(\Z/p^n, \Z/p^n)  {\longrightarrow} \Ext^1_{\Sinf}(\Z/p^n, \Z/p^n) \rightarrow \Ext^1_{\Sinf}(\Z_p, \Z/p^n).\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+gives the natural identification  -- map $\beta$ from \eqref{feeling_groovy2}
+ -- of $\Ext^1_{S_n}(\Z/p^n, \Z/p^n) = \mathfrak{t}_{S_n}$
+ with $ \Ext^1_{\Sinf}(\Z_p, \Z/p^n) = \mathfrak{t}_{\Sinf}/p^n$.
+ 
+ 
+ 
+
+
+
+
+
+\subsection{$V_n$ and Galois cohomology} \label{Vnhstar}
+
+\label{DDR REF2}
+
+  We  exhibit now a canonical surjection 
+\begin{equation} \label{tsnvsurj}  \mathfrak{t}_{S_n} \twoheadrightarrow \Vinf/p^n\end{equation}
+In fact, this surjection uses no more than the fact that $Q_n$ is a Taylor--Wiles datum. If we suppose
+that $Q_n$ are a convergent sequence (\S \ref{TWrecall}) of Taylor--Wiles data,   we will see that this actually descends to an isomorphism
+\begin{equation} \label{brrr} W_n  \simeq \Vinf/p^n,\end{equation}
+    i.e. $W_n$ (defined in \eqref{Wndef})  is isomorphic to $ \Hom( H^1_f(\Z[\frac{1}{S}], \Ad^* \rho \ (1)  ), \Z/p^n)$.     
+     
+  
+ 
+  As before, let $SQ_n$ be the union of the set $\ramprimes$ with the set $Q_n$.   Examine: 
+  \begin{equation}
+ \xymatrix{
+ \Hom_{*}(R_{Q_n}, \Z/p^n[\varepsilon]/\varepsilon^2) \ar[r] \ar[d]^{\sim} & \Hom_{*}(S_n, \Z/p^n[\varepsilon]/\varepsilon^2) \ar[r]\ar[d]^{\sim} &  W_n \ar[d]^{=}\\ 
+  H^1_f(\Z[\frac{1}{SQ_n}], \Ad \rho_n)  \ar[r]^{\varphi} &     \prod_{v \in Q_n} \frac{H^1(\Q_v, \Ad \rho_n)}{H^1_{\mathrm{ur}}(\Q_v, \Ad \rho_n)}   \ar[r] &  W_n.
+ 
+ }
+ \end{equation} 
+ The first  vertical map is just the computation of tangent spaces  to deformation rings (working over $\Z/p^n$ rather than a field),  the second vertical map 
+ is \eqref{tSn Galois}, and $\varphi$ is restriction in Galois cohomology.
+ 
+ There is now a natural pairing :\begin{equation} \label{pairing}  H^1_f(\Z[\frac{1}{\ramprimes}], \ \Ad^* \rho_n \ (1)) \times W_n \longrightarrow \Z/p^n \end{equation}
+which, we emphasize again, depends on the choice of toral elements conjugate to Frobenius at each prime in $Q_n$. 
+To  be explicit,  
+an element of $W_n$ is represented by a collection
+ $$(\beta_v) \in  \prod_{v \in Q_n} \frac{H^1(\Q_v, \Ad \rho_n)}{H^1_{\mathrm{ur}}(\Q_v, \Ad \rho_n)},$$  modulo $\mathrm{image}(\varphi)$;  
+to pair $\alpha \in H^1_f(\Z[\frac{1}{\ramprimes}], \Ad ^* \rho_n(1))$ with  $(\beta_v)_{v \in Q_n}$ 
+ we take the sum of local pairings
+\begin{equation} \label{abovemoo}   (\alpha, (\beta_v)_{v \in Q_n}) \mapsto \sum (\alpha_v, \beta_v)_v\end{equation}
+where the local pairing is defined by restricting $\alpha$ to $\Q_v$ and using local reciprocity. 
+This pairing \eqref{abovemoo} is well-defined because each $\alpha_v$, i.e. the restriction of $\alpha$ to $\Q_v$,  is actually unramified.   Moreover, if the collection $(\beta_v)$ come from a class in $H^1_f(\Z[\frac{1}{SQ_n}], \Ad \rho_n)$, 
+the value of \eqref{abovemoo} is zero by global reciprocity: our local assumptions means that the local pairings
+for $v \in \ramprimes$ vanishes.   Thus the pairing \eqref{abovemoo} descends to the quotient of
+$\prod_{v \in Q_n} H^1$ by $\mathrm{image}(\varphi)$. 
+ This concludes our discussion of \eqref{pairing}. 
+ 
+We have also seen (\S  \ref{tnRnSn},  and similar arguments to Lemma \ref{DeltaDimensional}) that both $W_n$ and $H^1_f(\Z[\frac{1}{\ramprimes}], \Ad^*  \rho_n \ (1))$ are free $\Z/p^n$-modules of dimension $\delta$. 
+Let us check that     \eqref{pairing} is a perfect pairing of $\Z/p^n$ modules, i.e.
+the map
+$$ W_n \rightarrow H^1_f(\Z[\frac{1}{\ramprimes}], \Ad^* \rho_n (1))^{\vee}$$
+is an isomorphism, where $\vee$ means homomorphisms to $\Z/p^n$.   Since both sides have the same size, it is enough to check that the map  
+is surjective, and thus enough to show that the induced map
+\begin{equation} \label{lunytunes} \mathfrak{t}_{S_n} \rightarrow H^1_f(\Z[\frac{1}{\ramprimes}], \Ad^* \rhobar \ (1))^{\vee}\end{equation} 
+is surjective, where $\vee$ now means homomorphisms to $\Z/p$. 
+
+  Now the Taylor-Wiles set $Q_n$ is chosen \eqref{dual-inj} so that 
+ $ H^1_f(\Z[\frac{1}{\ramprimes}],  \Ad^* \rhobar \ (1)) \hookrightarrow \prod_{v \in Q_n} H^1(\Q_v, \Ad^* \rhobar(1))$.
+ The image of this map consists of classes unramified at $Q_n$, so we also have
+  $$H^1_f(\Z[\frac{1}{\ramprimes}], \Ad^* \rhobar\ (1)) \hookrightarrow \prod_{v \in Q_n} H^1(\Q_v, \Ad^* \rhobar(1))^{\mathrm{ur}}$$
+When we dualize this, and apply local duality at primes in $Q_n$,  we get the surjectivity of \eqref{lunytunes}. 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+\subsection{The injection $H^1(T_q) \hookrightarrow \mathscr{H}_q^{(1)}$} \label{Vnaction}  
+ 
+ 
+ In this section, we suppose that $Q_n$ is a Taylor--Wiles datum of level $n$, but do not assume  that it is part of a convergent sequence (\S \ref{TWrecall}) of Taylor--Wiles data. 
+ Let $q \in Q_n$, thus equipped with $\Frob_q^T \in T^{\vee}(k)$.   We will work exclusively with $S=\Z/p^n$ coefficients. 
+   As before, $\mathscr{H}_q$ denotes the local derived Hecke algebra at $q$, and $\mathscr{H}_q^{(1)}$ denotes its degree $1$ component. 
+   Let
+   $T_q = \mathbf{A}(\F_q)/p^n.$ 
+   
+ 
+ We are going to describe the map \eqref{iotaqndef1}, which is necessary for the formulation of the Theorem. 
+More precisely, we are going to describe a map \begin{equation} \label{thetaref} \theta: H^1(T_q) \rightarrow  \left( \mathscr{H}_q^{(1)}\right)_{\mathfrak{m}},\end{equation}
+  where the subscript means that we complete at the ideal of the Hecke algebra  (i.e., the degree zero component of $\mathscr{H}_q$) 
+ corresponding to $\mathfrak{m}$. 
+ 
+ The easiest way to think about $\theta$ is probably through  the following property: 
+for each $\alpha \in H^1(T_q)$, the action of $\theta(\alpha)$ on $H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$ is thus: 
+   \begin{equation}  \label{explicit-action} \mbox{Pullback to $Y_0(q)$, project
+ to $\Frob^T_q$-eigenspace,  cup with  $\alpha$,  pushdown to $Y(1)$. } \end{equation} 
+ where the projection is done
+ with reference to the splitting 
+ of Corollary \ref{MoritaCor}.  
+ 
+  The formal definition of the map $\theta$ is given in
+\eqref{embedH1T}, and the validity of \eqref{explicit-action} will follow from the Lemma below.
+
+  
+ 
+ \medskip
+ 
+ The Satake isomorphism of \S \ref{Satake} gives
+ $$\mathscr{H}_q \stackrel{\sim}{\longrightarrow}  \left(  S[X_*] \otimes  H^*(\mathbf{A}(\F_q) ) \right)^W$$
+ and in particular with $\Z/p^n$ coefficients the map $H^1(T_q) \rightarrow H^1(\mathbf{A}(\F_q))$ is an isomorphism, so 
+  $$\mathscr{H}_q ^{(1)}\stackrel{\sim}{\longrightarrow}  \left(  S[X_*] \otimes  H^1(T_q ) \right)^W$$
+
+ 
+ Now $\Frob_q^T \in T^{\vee}(k)$ gives a map $X_*(\mathbf{A}) = X^*(T^{\vee}) \rightarrow k^{\times}$, 
+ i.e. it gives rise to a character $\chi_{\Frob_q^T}: S[X_*] \rightarrow k$.  The pullback of this to $S[X_*]^W$
+ defines the maximal ideal $\mathfrak{m}$ (using the Satake isomorphism). 
+ Let us denote by $\widetilde{\mathfrak{m}}$ the extension of the ideal $\mathfrak{m}$ back to $S[X_*]$;
+ we caution that it is  no longer maximal, and rather it cuts out $\Frob_q^T$ together with all its $W$-conjugates. 
+ We have an identification of completions
+\begin{equation} \label{wsplit} S[X_*]_{\widetilde{\mathfrak{m}}} \cong \bigoplus_{w \in W} S[X_*]_{w \chi},\end{equation}
+where we have denoted by $S[X_*]_{w\chi}$ the completion of $S[X_*]$ at the maximal ideal
+that is the kernel of $w \chi$.
+
+Next 
+the natural inclusion  
+\begin{equation} \label{inc}   \left( S[X_*] \otimes H^*(T_q) \right) ^{W} \hookrightarrow S[X_*] \otimes H^*(T_q) \end{equation}
+induces the first map of  
+\begin{equation} \label{composite iso}  \left( S[X_*] \otimes H^*(T_q) \right) ^{W}_{\mathfrak{m}} \stackrel{\eqref{inc}}{   \rightarrow}   S[X_*]_{\widetilde{\mathfrak{m}}} \otimes H^*(T_q) \stackrel{\eqref{wsplit}}{\rightarrow}  S[X_*]_{\chi} \otimes H^*(T_q). \end{equation}  
+The composite map of \eqref{composite iso} is an isomorphism, and thus by composing with the Satake isomorphism we get an isomorphism
+\begin{equation} \label{ciso2} \left( \mathscr{H}_q^{(1)} \right)_{\mathfrak{m}} \stackrel{\sim}{\rightarrow} S[X_*]_{\chi} \otimes H^1(T_q). \end{equation} 
+ 
+ 
+ We then define the map $\theta: H^1(T_q) \rightarrow \left( \mathscr{H}_{q}^{(1)}\right)_{\mathfrak{m}} $ by the rule  
+\begin{equation} \label{embedH1T} \theta:  h \in H^1(T_q) \mapsto 1 \otimes h \in S[X_*]_{\chi} \otimes H^1(T_q) \stackrel{\eqref{ciso2}^{-1}}{\longrightarrow}  \left( \mathscr{H}_{q}^{(1)}\right)_{\mathfrak{m}} \end{equation} 
+where the superscript $1$ refers to cohomological degree, and the final map is the inverse of \eqref{ciso2}.
+   Note that this embedding depends on the choice of $\Frob^T_q$; if we 
+replace $\Frob^T_q$ by $w \Frob^T_q$ then the embedding is modified by means of the natural action of $w$ on $T_q$. 
+
+
+This concludes the description of the map $H^1(T_q) \rightarrow \mathscr{H}_q^{(1)}$.  We now want    to justify \eqref{explicit-action}.     For this
+we will describe an explicit preimage of $\theta(\alpha)$ under the map  
+\begin{equation} \label{blastfromthepast} \left( \mathrm{H}_{KI}  \otimes \mathscr{H}_I  \otimes \mathrm{H}_{IK} \right)  \rightarrow   \mathscr{H}_K \end{equation}
+in the case of the group $\G(\Q_q)$, where notation is as before (see, e.g. the proof of Theorem \ref{mindegreeproof});
+
+
+
+note that $\mathscr{H}_K$ coincides
+with what was previously called $\mathscr{H}_q$. 
+Observe that everything here is a compatibly a module under the center of $\mathrm{H}_{II}$,   which 
+is identified (\S 
+\ref{Zdis})
+with $S[X_*]^W$. In particular, it makes sense to complete at $\mathfrak{m}$. 
+
+
+Now let $e_{\lambda} \in \mathrm{H}_{II}$ correspond to the characteristic function of $I_q \lambda  I_q$, where $\lambda \in X_*$.
+Then $\lambda \mapsto e_{\lambda}$ defines an embedding $S[X_*] \rightarrow \mathrm{H}_{II}$, and, completing,
+an embedding
+\begin{equation} \label{completed embedding} S[X_*]_{\widetilde{\mathfrak{m}}} \rightarrow (\mathrm{H}_{II})_{\mathfrak{m}} \end{equation}
+
+As before (\S \ref{Iwahori}) we let $e_K$ be   the characteristic function of $K_q$, divided by its measure; 
+if we write $e_w$ for the characteristic function of $I_q w I_q$, we have $e_K = \frac{1}{|W|} \sum_{w \in W} e_w$. 
+It can be considered, as in \S \ref{Iwahori}, as an element of $\mathrm{H}_{KI}$ or $\mathrm{H}_{IK}$. 
+
+Also $|W|   e_K e_{\lambda}   \in \mathrm{H}_{KI}$ 
+{\color{\changecolor} (i.e.  the product of $|W| e_K \in \mathrm{H}_{KI}$ with $e_{\lambda} \in \mathrm{H}_{II}$)} corresponds to the characteristic function of $I_q \lambda K_q$.  
+
+\begin{lemma} \label{Theta explicit}
+ Let $\Theta  \in  S[X_*]_{\widetilde{\mathfrak{m}}}$
+ be chosen so that it projects under \eqref{wsplit} to the identity in $S[X_*]_{\chi}$
+ and to zero in all $S[X_*]_{w \chi}$, for $w \in W$ not the identity.  
+We use the same letter for its image $\Theta \in  (\mathrm{H}_{II})_{\mathfrak{m}}$
+ under \eqref{completed embedding}. 
+ 
+ 
+For $h \in H^1(T_q)$ let $\langle h \rangle$ be the associated element of $\mathscr{H}_{I}^{(1)}$, i.e.
+$\langle h \rangle$ is supported on the identity double coset of $I$, and 
+the associated cohomology class is obtained from $h$ by means of the restriction isomorphism
+$H^1(I) \stackrel{\sim}{\rightarrow} H^1(T_q)$. 
+
+  
+Then the $\mathfrak{m}$-completion of
+ \eqref{blastfromthepast} sends  $|W|  e_K \Theta \otimes \langle h  \rangle \otimes  e_K$  to $\theta(h)$.
+  \end{lemma}
+  
+  
+  {\color{\changecolor} As above, the product $e_K \Theta$ is understood as the product of $e_K \in \mathrm{H}_{KI}$ with $\Theta \in \mathrm{H}_{II}$. }
+   In words, this amounts precisely to the description \eqref{explicit-action}   for $\theta$,  taking into account that $\Theta$ realizes
+ precisely the  projection onto the $\Frob_q^T$ component for the splitting \eqref{bigsplit}.  
+  
+ \proof 
+ 
+ 
+ 
+ 
+  
+Consider the map (no completions, at the moment)    
+\begin{equation} \label{compo}  \left( \mathrm{H}_{KI}  \otimes \mathscr{H}_I^{(1)}  \otimes \mathrm{H}_{IK}  \right)  \rightarrow   \mathscr{H}_K^{(1)} \rightarrow \left(  S[X_*] \otimes  H^1(T_q ) \right)^W\end{equation} 
+  We show it sends $A := e_{K} e_{\lambda} \otimes \langle h \rangle  \otimes e_K$, for $\lambda$ dominant,   to the ``$W$-average'' of $\lambda \otimes h$,
+i.e. $ |W|^{-1} \sum_{w \in W} w \cdot (\lambda \otimes h)$.
+  
+   The claimed result will follow easily from this: Consider an element $\Theta' = \sum c_{\lambda} \lambda \in S[X_*]$
+ with the property that $c_{\lambda}$ is nonzero only for $\lambda$ dominant, and also $\Theta \equiv \Theta'$ modulo some high power of $\widetilde{\mathfrak{m}}$. 
+Our claim implies that  $|W|   e_K \Theta'  \otimes \langle h \rangle \otimes e_K$ is sent to the  sum of Weyl translates of $\sum c_{\lambda} (\lambda \otimes h)$. 
+The image of $\sum c_{\lambda} (\lambda \otimes h)$ in $\bigoplus_{w \in W} S[X_*]_{w \chi} \otimes H^1(T_q)$  is
+ very close to  $1 \otimes h$ in the $w=1$ factor, and very close  to zero in the other factors; 
+ after summing over $W$, its projection  
+ to the $w=1$ factor remains very close  to $1 \otimes h$.
+  Here ``very close'' is taken in the topology
+ of the complete local rings $S[X_*]_{w \chi}$. 
+In other words, $\theta(h)$ and the image of $|W|   e_K \Theta'  \otimes \langle h \rangle \otimes  e_K$ 
+ under \eqref{blastfromthepast}  and \eqref{ciso2} are very close;
+ in the limit, this  shows the desired result. 
+ 
+ We will now consider  everything in the ``function model'' of \S \ref{desc2}. 
+ Let $a_1 \in \mathrm{H}_{KI}, a_2 \in \mathrm{H}_{IK}$ be the images of $e_K e_{\lambda} , e_K$ in the function model. Then 
+ $a_1$ corresponds to  the function sending $(xK, yI)$ to $|W|^{-1}$ precisely when $I y^{-1} x K= I \lambda K$, 
+ 
+ 
+ 
+ equivalently $K x^{-1} y I = K \lambdabar I$, where we write $\lambdabar \in X_*$ for the negative of $\lambda$.
+ Also $a_2$ 
+ corresponds to  the function $(xI, yK)$ which is $1$ exactly when $xK = yK$.   
+\begin{comment} { \color{\changecolor} Explanation: at the measure level, $e_K e_{\lambda}$ is a measure supported on $K \lambda I$ of total mass equal to the total mass of $I \lambda I$.
+ Now the measure of $K \lambda I$ and the measure of $I \lambda I$ differ by $W$, so as a function it has value $|W|^{-1}$ everwyhere.} \end{comment}
+ Moreover, the function $\langle h \rangle$ is supported on the diagonal in $G/I$ and sends $(I, I)$ to $h \in H^1(T_q) \simeq H^1(I)$. 
+  
+ The second map of \eqref{compo} is  given by restricting arguments to the torus,
+ and restricting cohomology classes to $T_q$. 
+   We can compute this restriction using the ``localization'' results of \S \ref{dhLocalization};
+   these results assert that  restriction to the torus actually preserves multiplication. 
+   
+  \begin{comment}
+ {  \color{blue} { 
+   
+   
+   
+ $$A (\mu K,  K) = \sum_{  y \in   \tilde{W}} a_1(\mu K,yI) \langle h \rangle (yI,yI)  a_2(yI,  K)$$
+ The first term is nonzero only 
+ for those $y$ satisfying $I y^{-1} \mu K=I \lambda K$, i.e.
+ $y^{-1} \mu \in \tilde{W} \in I \lambda K$. 
+ This implies that $y^{-1} \mu = \lambda w$ with $w \in W$,
+ i.e. $y = \mu w^{-1} \lambda^{-1}  = w \cdot (w \mu -\lambda)$. 
+ 
+So this equals 
+ $$ = |W|^{-1} \sum_{w \in W} \langle h \rangle ( \dots)  \underbrace{ a_2(   \mu w^{-1} \lambda^{-1} I,   K) }_{=a_2(w^{-1} \lambda^{-1} I, \mu^{-1} K) $$
+ The final term is nonzero (and equals $1$) exactly when $w^{-1} \lambda^{-1} K  = \mu^{-1} K$.   Now both $\lambda, \mu$ are dominnat. 
+ Thus  this only happens if $\lambda = \mu$ and $w \in W_{\mu}$: 
+\begin{equation} \label{Derived} A(K,  \mubar K) =   |W|^{-1} \delta_{\lambda \mu}  \sum_{w \in W_{\mu}} \langle h \rangle (w \lambdabar I, w \lambdabar I) \end{equation} 
+   On the right, $\langle h \rangle (w \lambda I, w \lambda I) \in H^1(T_q)$
+equals   $w \cdot h \in H^1(T_q)$.  
+
+   }}
+   
+ \end{comment}
+   
+   
+   
+We restrict to the torus. Suppose that $\mu \in X_*$  is  dominant, with negative $\mubar \in X_*$.  We compute: 
+
+ $$A (K,\mubar K) = \sum_{  y \in   \tilde{W}} a_1(K,yI) \langle h \rangle (yI,yI)  a_2(yI, \mubar K)$$
+ The first term is nonzero only 
+ for those $y$ satisfying $K y I = K \lambdabar I$, i.e. $y \in \tilde{W} \cap K  \lambdabar I$. 
+This implies that
+  $y = w \lambdabar$, with $w \in W$. 
+So this equals 
+ $$ = |W|^{-1} \sum_{w \in W} \langle h \rangle (w \lambdabar I, w \lambdabar I) a_2(w \lambdabar I, \mubar K)  $$
+ The final term is nonzero (and equals $1$) exactly when $\mubar K  =  w \lambdabar K$.    Recall  that both $\lambda$ and $\mu$ are dominant.
+  Thus  this only happens if $\lambda = \mu$ and $w \in W_{\mu}$: 
+\begin{equation} \label{Derived} A(K,  \mubar K) =   |W|^{-1} \delta_{\lambda \mu}  \sum_{w \in W_{\mu}} \langle h \rangle (w \lambdabar I, w \lambdabar I) \end{equation} 
+   On the right, $\langle h \rangle (w \lambda I, w \lambda I) \in H^1(T_q)$
+equals   $w \cdot h \in H^1(T_q)$.  
+
+Now, the image of $A$ under the derived Satake map
+is the $W$-invariant element of the derived Hecke algebra of the torus
+defined by
+  $$\mu \mapsto \mbox{restriction to $T_q$ of }A(\mu K,   K).$$
+As we have just computed,   for $\mu$ dominant, $A(\mu K, K) = A(K, \mubar K)$   is nonvanishing only when $\mu=\lambda$, where its value is $|W|^{-1} \sum_{w \in W_{\mu}} wh$. 
+Therefore the image of $A$ under \eqref{compo} is the $W$-average of $\lambda \otimes h$ as claimed. 
+\qed 
+
+
+
+\subsection{Producing an action of $\Vinf/p^n$ on the cohomology at level $1$} \label{tSnaction} 
+Let $Q_n$ be a convergent sequence of Taylor--Wiles data (\S \ref{TWrecall}). For each integer $n$ we 
+will produce an action of $\Vinf/p^n$
+on   automorphic cohomology $H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$. 
+ {\em A priori} these actions will not be guaranteed to be compatible with one another; later
+ we will see at least that they ``converge as $n \rightarrow \infty$'' to give an action of $\Vinf$ on $H^*(Y(1), \Z_p)_{\mathfrak{m}}$. 
+
+More exactly, we
+begin by constructing an action of $\mathfrak{t}_{S_n}$, then prove (the Lemma below)
+that it factors through $W_n$, and finally we have identified $W_n \simeq \Vinf/p^n$ in \eqref{brrr}. 
+This gives the desired action, and we will discuss the ``convergence as $n \rightarrow \infty$'' in the next section.
+
+Thus, let $Q_n$ be a convergent sequence of Taylor--Wiles data.  
+
+ 
+We have   \begin{equation} \label{embed} \mathfrak{t}_{S_n} \stackrel{\eqref{tsnTn}}{\cong} H^1(T_n, \Z/p^n) \stackrel{\eqref{thetaref}}{\hookrightarrow} \mbox{degree $1$ component of }\otimes_{q \in Q_n}  \left(  \mathscr{H}_q\right)_{\mathfrak{m}} ,\end{equation}
+where   the Hecke algebras are taken with $\Z/p^n$ coefficients. The composite embedding will be denoted
+\begin{equation} \label{iotaQndef}  \iota_{Q_n}: \mathfrak{t}_{S_n} \rightarrow  \otimes_{q \in Q_n} \left(  \mathscr{H}_q\right)_{\mathfrak{m}}.\end{equation}
+
+This gives rise to an  action of $ \mathfrak{t}_{S_n}$
+by degree $+1$ endomorphisms of  automorphic cohomology
+$H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$, whose explicit description is essentially that already given in 
+\eqref{explicit-action}, just replacing the role of one prime by many.  
+
+
+
+
+ 
+
+The embedding \eqref{tsnTn} and so also this action depends on the choice of elements $\Frob_q^T \in T^{\vee}(k)$ for each prime $q \in Q_n$. 
+Should we modify $\Frob_q^T$ by an element $w_q \in W$, the Weyl group, the action of $\mathfrak{t}_{S_n}$
+is also modified (see  comments after \eqref{embedH1T})  by the action of $w_q$  in the obvious way.  
+ 
+ \begin{lemma} 
+   \label{Vnfactor}
+   Let $Q_n$ be a convergent sequence of Taylor--Wiles data, as in Definition \ref{TWconvgt}.    
+   Then, for each $n$, 
+the action of $\mathfrak{t}_{S_n}$ on $H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$  (via $\iota_{Q_n}$)  is trivial on the image of $\mathfrak{t}_{R_n}$, and thus  factors through the map $\mathfrak{t}_{S_n} \rightarrow  W_n$. 
+  \end{lemma}
+  
+  \proof 
+ Consider the diagrams \eqref{previousstory} of our previous story, now with identifications with $\mathfrak{t}_S$ and $\mathfrak{t}_{S_n}$ included: 
+ \begin{equation} \label{BigDog}
+ \xymatrix{
+ H^*(\Hom_{\Sinf}(\Cinf, \Z_p))^{} \ar[d]^{=} & \times  &   \protect\overbrace{ \Ext^1_{\Sinf}(\Z_p, \Z_p) }^{\mathfrak{t}_{\Sinf}}\owns \tilde{v} \ar[d]  \ar[r] &  H^*(\Hom_{\Sinf}(\Cinf, \Z_p)) \ar[d] \\ 
+   \tilde{x} \in H^*(\Hom_{\Sinf}(\Cinf, \Z_p))   \ar[d]^{V}  &  \times&  \Ext^1_S(\Z_p, \Z/p^n)     \owns  v \ar[r]  &   H^*(\Hom_{\Sinf}(\Cinf,  \Z/p^n))\ar[d]^{=}  \\
+x \in  H^*(\Hom_{\Sinf}(\Cinf, \Z/p^n))^{}   & \times & \left( \Ext^1_{\Sinf}(\Z/p^n, \Z/p^n) \right) \ar[r]   \ar[u]^U  &  H^*(\Hom_{\Sinf}(\Cinf, \Z/p^n))   \\
+ H^*(\Hom_{S_n}(\Cinf \otimes_{\Sinf} S_n, \Z/p^n))^{} \ar[u]^{\sim} & \times  &  \protect\underbrace{ \left( \Ext^1_{S_n}(\Z/p^n, \Z/p^n) \right) }_{\mathfrak{t}_{S_n}} \ar[r] \ar[u] &  \ar[u]^{\sim} H^*(\Hom_{S_n}(\Cinf \otimes_{\Sinf} S_n, \Z/p^n)). \\
+  }
+  \end{equation}
+  
+
+  
+     
+   In particular,   let $x \in  H^*(\Hom_{S_n}(\Cinf \otimes_{\Sinf} S_n, \Z/p^n)) $ be liftable to $\tilde{x} \in  H^*(\Hom_{\Sinf}(\Cinf, \Z_p))$;
+   let $v \in \mathfrak{t}_{S_n} \simeq \mathfrak{t}_{\Sinf/p^n}$ be lifted to $\tilde{v} \in \mathfrak{t}_S$. Then the image of $(x,v)$
+   in the bottom row is obtained from projecting the image of $(\tilde{x}, \tilde{v})$ at the top row. 
+   
+
+
+
+   Let us recall from \S \ref{extraction} part (g)  that $\mathsf{C}$ is quasi-isomorphic to $\mathsf{R}$ as an $\mathsf{S}$-module in a single degree.  
+   Thus we can explicitly compute what goes on in the top row. This explicit computation
+   (see Lemma  \ref{KoszulExtComputation} in Appendix \S \ref{AppendixB}) shows that 
+   any element   $\tilde{v} \in \mathfrak{t}_{\Sinf}$
+that lies in the image of $\mathfrak{t}_{\Rinf}$  acts {\em trivially}  on $H^*(\Hom_{\Sinf}(\Cinf, \Z_p))$.
+
+ For later use, note that these  explicit computations also show that 
+\begin{equation} \label{watney} \mbox{ $H^*(\Hom_{\Sinf}(\Cinf, \Z_p))$ 
+is free over
+$\wedge^* \mathfrak{t}_{\Sinf}/\mathfrak{t}_{\Rinf}$.} \end{equation}
+
+From 
+\eqref{feeling_groovy2}
+it then follows that 
+ $\mathrm{image}(\mathfrak{t}_{R_n} \rightarrow \mathfrak{t}_{S_n})$  
+acts trivially on  $$H^*(\Hom_{S_n}(\Cinf \otimes_{\Sinf} S_n, \Z/p^n)) \simeq H^*(Y_0(Q_n), \Z/p^n)_{\mathfrak{m}, \Frob^T},$$
+where the action of $\mathfrak{t}_{S_n} = H^1(T_n, \Z/p^n)$  is by cup product, as in \eqref{bencumber}. 
+
+By \eqref{explicit-action} this means that the action of $\iota_{Q_n}(\mathfrak{t}_{S_n})$
+on $H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$   is trivial on  $\mathrm{image}(\mathfrak{t}_{R_n} \rightarrow \mathfrak{t}_{S_n})$. 
+ Thus, this action of $\mathfrak{t}_{S_n}$ on $H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$ factors  
+   through $W_n$ as claimed.  \qed   
+   
+   
+  
+
+\subsection{Summary} \label{Strictsequence}
+Let us summarize more carefully what we have said to date:
+
+For any Taylor--Wiles datum $Q_n$ we have an action of $\mathfrak{t}_{S_n} = \Hom(T_n, \Z/p^n)$ on $H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$  
+constructed via an embedding $$\iota_{Q_n}:\Hom(T_n, \Z/p^n) \hookrightarrow \mbox{derived Hecke algebra} $$
+ (see \eqref{embed}). 
+On the other hand, we have a  surjective morphism  (see \S \ref{Vnhstar}) 
+$$ f_{Q_n}: \Hom(T_n, \Z/p^n) \twoheadrightarrow \Vinf/p^n.$$ 
+ These constructions, for a given $n$, depend only on $Q_n$; they do not involve the Taylor--Wiles limit process.
+
+
+\begin{Definition} \label{strictdef}  \index{strict Taylor--Wiles datum}
+We say that a Taylor--Wiles datum $Q_n$ of level $n$ is {\em strict of level $n$} (or just {\em strict})
+if the map   
+$$ \mathfrak{t}_{S_n} \stackrel{ \iota_{Q_n}}{\longrightarrow} \End \ H^*(Y(1), \Z/p^n)_{\mathfrak{m}} $$
+   factors through $f_{Q_n}$. Thus, a strict Taylor-Wiles datum of level $n$
+gives rise to an action of $\Vinf/p^n$ on $H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$.  
+\end{Definition}
+
 What we have proved, then, amounts to the following:
-8.23. Lemma. If theQn are a convergent sequence of T aylor–Wiles data (Deﬁnition 8 .11),
-then eachQn is strict, in the sense of Deﬁnition 8.22.
-Note we do not know that the resulting actions of V{pn are compatible for different n,
-in any sense.
-8.24. Dependence of our construction on choices. We now study dependence on choices.
-Using the results of this §, we will conclude the proof of Theo rem 8.5 in §8.26.
-First we discuss a minor point, the choice of FrobT
-q s: Suppose we choose two different
-such choices for a given set Qn, differing by the action of w PWs. (Recall from §6.3 that
-Ws is just a product of copies of the Weyl group, one copy for each prime inQn). Then the
-actions of tSn on cohomology differ by the action of w PWs (comment after (154)). Also,
-w : tSn Ñ tSn is compatible with the pairings previously constructed, i. e. this diagram
-commutes
-(163) tSn
-w
-/d15/d15
-ˆ H 1
-f pZr 1
-S s, Ad˚ρn p1qq
-“
-/d15/d15
-FrobT
-q /d47/d47 Z{pn
-tSn ˆ H 1
-f pZr 1
-S s, Ad˚ρn p1qq
-wFrobT
-q /d47/d47 Z{pn
-This shows that the action of V{pn onH ˚pY p1q, Z{pnqm did not depend on the choice of
-FrobT
-q s forq PQn.
-We now discuss the more serious issue of choice of Taylor–Wil es data.
-8.25. Lemma. Given two sequences Qn,Q 1
-n of strict T aylor–Wiles data, there is a subse-
-quence J of the integers with following property:
-F or eachk ě 1, there is j0 such that, for each j P J,j ě j0, the two actions V
-onH ˚pY p1q, Z{pkqm – arising from reducing modulo pk the “ Qj-action" and the “ Q1
-j-
-action" – coincide with one another . 17
-Proof. It will be convenient to relabel the sequences of strict Taylor–Wiles data as Qp1q
-n ,Q p2q
-n .
-It will be harmless to suppose that the sets of primes underly ingQp1q
-n andQp2q
-n are disjoint
-(otherwise, we can e.g. just compare both of them with a third set, disjoint from both of
-them).
-17Recall that we are supposing that H ˚ pY p1q, Zpq is free over Zp.
-70 AKSHA Y VENKA TESH
-We will compare them both to Qn :“Qp1q
-n
-šQp2q
-n (with the obvious choice of FrobT
-q
-for q P Qn). Of course Qn is bigger than either Qp1q
-n or Qp2q
-n . However it still a se-
-quence of Taylor–Wiles data. Let Tn,T p1q
-n ,T p2q
-n be the analogues of Tn forQn,Q p1q
-n ,Q p2q
-n
-respectively; then Tn “ T p1q
-n ˆ T p2q
-n , and correspondingly tSn “ tp1q
-Sn ‘ tp2q
-Sn , where
-tSn “ HompTn, Z{pnq, etc.
-We have a diagram
-(164) tp1q
-Sn
-/d47/d47
-αp1q
-/d39/d39❖❖❖❖❖❖❖❖❖❖❖❖❖ tSn
-α
-/d15/d15
-tp2q
-Sn
-αp2q
-/d119/d119♦♦♦♦♦♦♦♦♦♦♦♦♦/d111/d111
-H 1
-f pZr 1
-S s, Ad˚ρnp1qq_
-where all the α-maps are as in §8.16.
-The upper maps are compatible for the actions on cohomology p reviously deﬁned
-(§8.19), and everything maps compatibly to the bottom group H 1
-f pZr 1
-S s, Ad˚ρnp1qq_.
-Moreover the action of tp1q
-Sn and tp2q
-Sn on mod pn cohomology factors through the bottom
-row by the assumed strictness. However, we do not know that th e action of tSn factors
-throughα.
-What is missing is control of the deformation ring after addi ng level Qn. To obtain
-this, we must run now the Taylor–Wiles limit process for Qn. That involves passing to a
-subsequence. In other words, all we are guaranteed is that th ere is a subsequence nj such
-that pQnj,j q form a convergent sequence of Taylor–Wiles data of level j. It is possible that
-nj is very much larger than j. Our prior analysis of convergent data (Lemma 8.23) implies
-that the action of HompTnj, Z{pjq on modpj cohomology of Y p1q factors through V{pj,
-or to say it explicitly:
-(*) The action of tSnj onH ˚pY p1q, Z{pjqm, via its embedding ιQnj into
-the derived Hecke algebra, followed by reduction to Z{pj coefﬁcients,
+\begin{lemma}  \label{Convergent implies strict} 
+If the $Q_n$ are a convergent sequence of Taylor--Wiles data (Definition \ref{TWconvgt}), then 
+each $Q_n$ is strict, in the sense of Definition \ref{strictdef}. 
+\end{lemma}
+
+
+Note we do not know that the resulting actions  of $\Vinf/p^n$ are compatible for different $n$, in any sense. 
+ 
+
+ 
+ 
+ 
+
+\subsection{Dependence of our construction on  choices} \label{obstructions}
+We now study dependence on choices.  Using the results of this \S, we will conclude the proof of  Theorem  \ref{maintheorem}
+in \S \ref{finalesec}. 
+
+First we discuss a minor point,  the choice of $\Frob_q^T$s: 
+Suppose we choose two different such choices for a given set $Q_n$,   differing by the action of $w \in W_s$.  (Recall from 
+\S \ref{TWprimes stuff} that $W_s$ is just a product of copies of the Weyl group, one copy for each prime in $Q_n$). 
+Then  the actions of $\mathfrak{t}_{S_n} $ on cohomology differ
+by the action of $w \in W_s$ (comment after \eqref{embedH1T}). 
+
+
+
+Also, $w : \mathfrak{t}_{S_n} \rightarrow \mathfrak{t}_{S_n}$  is compatible with the pairings previously constructed, i.e. 
+this diagram commutes
+ \begin{equation} \xymatrix{
+\mathfrak{t}_{S_n}  \ar[d]^{w} & \times  & H^1_f(\Z[\frac{1}{S}], \ \Ad^* \rho_n \ (1))  \ar[d]^{=}   \ar[r]^{ \ \ \qquad \Frob_q^T}  & \Z/p^n  \\ 
+\mathfrak{t}_{S_n} & \times  & H^1_f(\Z[\frac{1}{S}], \ \Ad^* \rho_n \ (1))    \ar[r]^{\ \ \qquad w \Frob_q^T} & \Z/p^n  \\ 
+  } \end{equation}
+ This shows that the action of $\Vinf/p^n$ on $H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$
+ did not depend on the choice of $\Frob_q^T$s for $q \in Q_n$. 
+
+
+We now discuss the more serious issue of choice of Taylor--Wiles data. 
+ 
+ \begin{lemma}  \label{EqualityOfTwo}
+Given  two sequences $Q_n, Q_n'$ of {\em strict} Taylor--Wiles data, 
+there is a subsequence $\mathcal{J}$ of  the integers with following property:
+
+For each $k \geq 1$,  there is $j_0$ such that, for  each $j \in \mathcal{J}, j \geq j_0$,  the  two actions $\Vinf$ on $H^*(Y(1),  \Z/p^{k})_{\mathfrak{m}}$
+-- arising from reducing modulo $p^k$ the ``$Q_{j}$-action" and the ``$Q_{j}'$-action"  -- coincide with one another.\footnote{Recall that we are supposing that $H^*(Y(1), \Z_p)$ is
+free over $\Z_p$.}  
+
+
+\end{lemma}
+
+ \proof 
+ It will be convenient to relabel the sequences of strict Taylor--Wiles data as $Q_n^{(1)},  Q_n^{(2)}$.  It will be harmless to suppose that  the sets of primes underlying 
+  $Q_n^{(1)}$ and $Q_n^{(2)}$ are disjoint (otherwise, we can  e.g. just compare both of them with a third set, disjoint from both of them). 
+
+
+   
+We will compare them both to $Q_n := Q_n^{(1)} \coprod Q_n^{(2)}$  (with the obvious choice of $\Frob_q^T$ for $q \in Q_n$). 
+  Of course $Q_n$ is bigger than either $Q_n^{(1)}$ or $Q_n^{(2)}$. However it still a
+  sequence of Taylor--Wiles data.   
+  Let $T_n, T_n^{(1)}, T_n^{(2)}$ be the analogues of $T_n$ for $Q_n, Q_n^{(1)}, Q_n^{(2)}$ respectively;
+  then $T_n = T_n^{(1)} \times T_n^{(2)}$,
+  and correspondingly $\mathfrak{t}_{S_n} = \mathfrak{t}_{S_n}^{(1)} \oplus \mathfrak{t}_{S_n}^{(2)}$,
+  where $\mathfrak{t}_{S_n} = \Hom(T_n, \Z/p^n)$, etc. 
+  
+  
+  
+ We have a diagram 
+ \begin{equation} \label{tvlift} 
+ \xymatrix{
+\mathfrak{t}_{S_n}^{(1)} \ar[r] \ar[rd]^{\alpha^{(1)}}   &     \mathfrak{t}_{S_n}  \ar[d]^{\alpha}     &  \mathfrak{t}_{S_n}^{(2)} \ar[ld]^{\alpha^{(2)}} \ar[l].\\
+  & H^1_f(\Z[\frac{1}{S}], \Ad^* \rho_n(1))^{\vee}  & 
+ }
+ \end{equation} 
+ where all the $\alpha$-maps are as in   \S \ref{Vnhstar}.
+
+ 
+ The upper maps are compatible for the actions on cohomology previously defined (\S \ref{tSnaction}),
+ and everything maps compatibly to the bottom group $H^1_f(\Z[\frac{1}{S}], \Ad^* \rho_n(1))^{\vee} $. Moreover the  action of $\mathfrak{t}_{S_n}^{(1)}$ and $\mathfrak{t}_{S_n}^{(2)}$ on  
+mod $p^n$ cohomology factors through the bottom row  by the assumed strictness. However, we do not know that the action of $\mathfrak{t}_{S_n}$ factors through $\alpha$.
+
+   
+   
+
+
+ 
+
+
+What is missing is control of the deformation ring after adding level $Q_n$. To obtain this,  we must run now the Taylor--Wiles limit process for $Q_n$. That involves passing   to a subsequence. 
+In other words, all we are guaranteed is that there is a subsequence $n_j$ such 
+that $(Q_{n_j}, j)$ form a  convergent sequence  of Taylor--Wiles  data of level $j$. 
+It is possible that $n_j$ is very much larger than $j$. Our prior analysis of convergent data (Lemma \ref{Convergent implies strict})  implies
+that the action of $\Hom(T_{n_j}, \Z/p^j)$  on mod $p^j$ cohomology of $Y(1)$
+factors through $\Vinf/p^j$, or to say it explicitly: 
+
+ \begin{quote} (*)  The action of  $\mathfrak{t}_{S_{n_j}}$   
+on $H^*(Y(1), \Z/p^j)_{\mathfrak{m}}$, 
+via its embedding $\iota_{Q_{n_j}}$  into the derived Hecke algebra,  followed by reduction to $\Z/p^j$ coefficients, 
 factors through the map
-fQnj : tSnj ÑH 1
-f pZr 1
-S s, Ad˚ρjp1qq_.
-The proof of the Lemma easily follows. We take J to be the subsequence of njs. Let
-k be as in the Lemma. Take n “ nj, for any j ě k, and take wpiq P tpiq
-Sn that have the
-same image in H 1
-f pZr 1
-S s, Ad˚ρnp1qq_. The images of wpiq in tSn have the same image
-in H 1
-f pZr 1
-S s, Ad˚ρjp1qq_, (we are using the fact that the map H 1pZr 1
-S s, Adρnp1qq Ñ
-H 1pZr 1
-S s, Adρjp1qq is surjective, by discussion before (126)) and therefore th ey act the
-same way on mod pk cohomology by (*) above. □
-8.26. Conclusion of the proof of Theorem 8.5. Let us call a sequence of Taylor–Wiles
-dataQn of leveln (where we do not require n to vary through all the integers, but possibly
-some subsequence thereof) V-convergent if:
-‚ EachQn is strict (Deﬁnition 8.22) thus giving an action of V onH ˚pY p1q, Z{pnqm.
-‚ The actions converge to an action of of V on H ˚pY p1q, Zpqm. In other words,
-if we ﬁx k, the action of V onH ˚pY p1q, Z{pkqm arising from reducing the Qn-
-action is eventually constant.
-By Lemma 8.23 and passing to a further subsequence, we see tha t V-convergent se-
-quences exist. By Lemma 8.25, if Q,Q 1 are two V-convergent sequences, the resulting
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 7 1
-actions of V on cohomology coincide. Thus at this point we have deﬁned an a ction of
-V on cohomology that is independent of choices, namely, the ac tion arising from any V-
-convergent sequence. This action has the following propert y:
-p:q: For any sequence Qn of Taylor–Wiles data, there is a subsequence
-Qnr such that (for everyr) the following two actions of tSnr onH ˚pY p1q, Z{prqm
-coincide:
-‚ The action viaι : tSnr Ñ derived Hecke algebra with Z{pr coefﬁcients
-(see (160)).
-‚ The action obtained from the V-action, via f : tSnr ։ V{pr (see
-(142) ).
-To see this, we ﬁrst pass from Qn to a convergent subsequence pQmr,r q, where we regard
-Qmr as having levelr; by Lemma 8.23 this means that Qmr is a strict datum of levelr. We
-then pass to a further subsequence m1
-r to extract a V-convergent sequence; this gives the
-assertions above, but with Z{pr and V{pr replaced by Z{pkprq, V{pkprq wherekprq Ñ 8
-withr. Passing to a further subsequence gives the desired result.
-Proof. (of Theorem 8.5, using p:q): We have already constructed an action of V; let us
-prove, by contradiction, that it has property (*) from the Th eorem. Suppose that there is
-an integer A and an inﬁnite sequence of primes qn ” 1 modulo pn such that the pull-
-back of the action via fqn,A :H 1pTq, Z{pAq Ñ V{pA fails to coincide with the action of
-H 1pTq, Z{pAq via the embedding ιqn,A into the derived Hecke algebra with Z{pA coefﬁ-
-cients. We can choose a Taylor–Wiles system Qn containingqn and then get a contradic-
-tion to p:q as soon as r ąA. This proves (*).
-Now let us show that the image of ^˚V in endomorphisms of cohomology coincides
-with the global derived Hecke algebra.
-Refer to the diagram (161), constructed with a convergent se quence of Taylor–Wiles
-data Qn. We will only use a subsequence of ns which is V-convergent. Consider for
-n ěk the map
-(165) W “ tS{tR
-(134)
-Ý ÑtSn {tRn
-(142)
-Ý ÑV{pk.
-By (134) and the discussion after (142), the composite actua lly gives an isomorphism
-(166) W{pk » V{pk.
-For ﬁxed k and large n, the map (165) is independent of n: Choose ˜v P tS. Let vn,vm
-be its image in tSn, tSm. As we saw in the diagram (161), the actions of vn,vm on modpk
-cohomology must coincide, because both can be computed by me ans of the lift ˜v. For this
-we are implicitly using (115) to see that the composite map
-(167)
-H ˚ pHomSpC, Zpqq Ñ H ˚ pHomSnpCbSSn, Z{pnqq
-„
-Ñ H ˚ pY p1q, Z{pnqm Ñ H ˚ pY p1q, Z{pkqm
-is independent ofn, forn ěk.
-So the images of vn,vm in V{pk have the same actions on mod pk cohomology. The
-V{pk action on modpk cohomology is faithful (by (166) and (162)) so this forces the image
-ofvn,vm in V{pk to coincide as claimed.
-Therefore, passing to the limit overn, we get a map W{pk Ñ V{pk, which is easily seen
-to be compatible as we increase k; thus the inverse limit over k deﬁnes an isomorphism
-(168) W „Ñ V.
-72 AKSHA Y VENKA TESH
-Next, referring to (161) the action of Ext˚
-S pS{I, S{Iq » ^ ˚tS on H ˚pHomSpC, Zpqq
-certainly factors through ^˚W; this action of ^˚W onH ˚pHomSpC, Zpqq is compatible
-under the identiﬁcations (115) and (168) with the action of ^˚V onH ˚pY p1q, Zpqm.
-Therefore, by (162), V freely generates an exterior algebra inside EndpH ˚q, and H ˚
-is freely generated over ^˚V byH qpY p1q, Zpqm, its minimal degree component. On the
-other hand, the image of ^˚V in EndpH ˚q is contained in the global derived Hecke algebra
-– the action of an element V is, by deﬁnition, a limit of actions of elements in the derive d
-Hecke algebra. Indeed, V lies inside the strict global derived Hecke algebra. □
-8.27. Proof of Proposition 8.6. . In our current situation, we have an inclusion
-(169) ^˚ V Ă ˜T
-and we have seen that H ˚pY p1q, Zpqm is generated by its lowest nonvanishing degree H q
-as a ^˚V-module. If we know that H ˚pY p1q, Zpqm “ Zp, we argue that (169) is an
-equality just as in the corresponding argument after (56).
-If we are given S as in the statement of the Proposition, let M “H qpY p1q, ZpqmbZp Qp
-as a S-module. It is semisimple by assumption, and the natural map
-M b ^˚VQp ÑH ˚pY p1q, Zpqm b Qp
-is now an isomorphism of S b ^˚VQp modules. However,
-(graded) commutant of S b ^˚VQp on M b ^˚VQp “ S1 b ^˚VQp,
-as can be veriﬁed by computing in steps: the commutant of S alone equals S1bEndp^˚VQp q,
-and then inside here the (graded) commutant of ^˚VQp is S1 b ^˚VQp .
-Since this commutant contains the image of ˜T acting on Qp-cohomology, the latter is
-also graded commutative, since S1 is commutative by the multiplicity one hypothesis. Note
-that the action on Qp cohomology is faithful because of our torsion freeness assu mption,
-see 7(a) of §6.1. □
-8.28. The action of Hecke operators. To conclude, let us translate what we have proved
-into a more concrete assertion about the action of a derived H ecke operator.
-Letq be a unramiﬁed prime for ρ, with q ” 1 modulopn, and such that ρpFrobqq is
-conjugate to a strongly regular element of T _pkq. Let ν P X˚pAq` be strictly dominant
+$$ f_{Q_{n_j}} :  \mathfrak{t}_{S_{n_j}} \rightarrow H^1_f(\Z[\frac{1}{\ramprimes}], \Ad^* \rho_j(1))^{\vee}.$$
+\end{quote}
+ 
+The proof  of the Lemma easily follows. We take $\mathcal{J}$ to be the subsequence of $n_j$s.  Let $k$ be as in the Lemma.
+Take $n= n_j$, for any $j \geq k$,  and take $w^{(i)} \in \mathfrak{t}_{S_n}^{(i)}$ that have the same image in  $H^1_f(\Z[\frac{1}{S}], \Ad^* \rho_n(1))^{\vee}$.  
+
+The images of $w^{(i)}$ in $\mathfrak{t}_{S_n}$ have the same image in $H^1_f(\Z[\frac{1}{S}], \Ad^* \rho_j(1))^{\vee}$, 
+ (we are using the fact that the map  $H^1(\Z[\frac{1}{S}], \Ad \rho_n(1)) \rightarrow H^1(\Z[\frac{1}{S}], \Ad \rho_j (1))$ is surjective, by discussion  before \eqref{h00}) and therefore they act the same way on mod $p^k$ cohomology by  (*) above. 
+ \qed 
+ 
+ 
+ 
+\subsection{Conclusion of the proof of  Theorem \ref{maintheorem}. } \label{finalesec}  
+ 
+ \label{DDR REF3} 
+ Let us call a sequence of Taylor--Wiles data $Q_n$ of level $n$ (where we do not 
+ require $n$ to vary through all the integers, but possibly some subsequence thereof)
+ {\em $\Vinf$-convergent} if: \index{$\Vinf$-convergent} 
+ \begin{itemize} 
+ \item Each $Q_n$ is strict (Definition \ref{strictdef}) thus giving an action of $\Vinf$ on $H^*(Y(1), \Z/p^n)_{\mathfrak{m}}$. 
+ \item The actions  converge to  an action of of $\Vinf$ on $H^*(Y(1), \Z_p)_{\mathfrak{m}}$.
+In other words, if we fix $k$,  the action of $\Vinf$ on $H^*(Y(1), \Z/p^k)_{\mathfrak{m}}$ 
+ arising from reducing the $Q_n$-action   is eventually constant.
+ 
+ \end{itemize}
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+By Lemma \ref{Convergent implies strict} and passing to a further subsequence,
+we see that $\Vinf$-convergent sequences exist. 
+By Lemma \ref{EqualityOfTwo}, if $Q, Q'$ are two $\Vinf$-convergent sequences, 
+  the resulting actions of $\Vinf$ on cohomology coincide.  
+Thus at this point we have defined an action of $\Vinf$ on cohomology that is independent of choices, namely,
+the action arising from any $\Vinf$-convergent sequence. 
+This 
+  action has the following property: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ \begin{quote}  $(\dagger)$:  For any sequence $Q_n$ of Taylor--Wiles data,  
+there is a subsequence $Q_{n_r}$ 
+ such that  (for every $r$) the following two actions of $\mathfrak{t}_{S_{n_r}}$ on  $H^*(Y(1), \Z/p^r)_{\mathfrak{m}}$ coincide:
+ 
+ \begin{itemize}
+\item  The action via $\iota: \mathfrak{t}_{S_{n_r}} \rightarrow \mbox{ derived Hecke algebra with $\Z/p^r$ coefficients}$ (see \eqref{iotaQndef}). 
+ \item The action obtained from the $\Vinf$-action, via   $f: \mathfrak{t}_{S_{n_r}} \twoheadrightarrow \Vinf/p^r$
+(see   \eqref{tsnvsurj} ). 
+\end{itemize} 
+   \end{quote}  
+  To see this, we first pass from $Q_n$ to a convergent subsequence 
+  $(Q_{m_r}, r)$, where we regard $Q_{m_r}$ as having level $r$;
+by Lemma \ref{Convergent implies strict} this means 
+that  $Q_{m_r}$ is
+  a strict datum of level $r$. We then pass to a further  subsequence $m_r'$
+  to extract a $\Vinf$-convergent sequence; this gives the assertions above,
+  but with $\Z/p^r$ and $\Vinf/p^r$ replaced by $\Z/p^{k(r)}, \Vinf/p^{k(r)}$
+  where $k(r) \rightarrow \infty$ with $r$. Passing to a further subsequence gives the desired result. 
+  
+   
+  
+ 
+
+ 
+
+ 
+ 
+ 
+  
+ \proof (of Theorem \ref{maintheorem}, using $(\dagger)$): 
+We have already constructed an action of $\Vinf$; let us prove, by contradiction, that it has property (*)
+from the Theorem. 
+Suppose that there is an integer $A$ and an infinite sequence of primes $q_n \equiv 1$ modulo $ p^n$
+such that the pullback of the action via $ f_{q_n,A}: H^1(T_q, \Z/p^A) \rightarrow \Vinf/p^A$ 
+fails to coincide with the action of $H^1(T_q, \Z/p^A)$ via the  embedding $\iota_{q_n, A}$ into the derived Hecke algebra with $\Z/p^A$ coefficients. 
+We can choose a Taylor--Wiles system $Q_n$  containing $q_n$ and then get a contradiction to $(\dagger)$
+as soon as $r > A$.  This proves (*). 
+ 
+Now let us show that the image of $\wedge^* \Vinf$  in endomorphisms
+of cohomology coincides with the global derived Hecke algebra.
+
+ 
+Refer to the diagram \eqref{BigDog}, constructed with a   convergent sequence of Taylor--Wiles data $Q_n$. 
+We will only use a subsequence of $n$s which is $\Vinf$-convergent. 
+Consider for $n \geq k$ the map
+\begin{equation} \label{Banjo} \Winf   = \mathfrak{t}_{S}/\mathfrak{t}_R  \stackrel{\eqref{feeling_groovy2}}{\longrightarrow} \mathfrak{t}_{S_n}/\mathfrak{t}_{R_n} 
+\stackrel{\eqref{tsnvsurj}}{ \longrightarrow} \Vinf/p^k. \end{equation}
+By \eqref{feeling_groovy2} and the discussion after \eqref{tsnvsurj}, 
+the composite actually gives an isomorphism \begin{equation} \label{Banjo2} \Winf/p^k \simeq \Vinf/p^k.\end{equation}  
+\label{DDR REF4} For fixed $k$ and large $n$, the map \eqref{Banjo} is independent of $n$: Choose $\tilde{v} \in \mathfrak{t}_S$. Let $v_n, v_m$
+ be its image in $\mathfrak{t}_{S_n}, \mathfrak{t}_{S_m}$.
+ As we saw in the diagram \eqref{BigDog}, the actions of $v_n, v_m$ on mod $p^k$ cohomology must coincide, 
+ because both can be computed by means of the lift $\tilde{v}$. 
+For this we are implicitly using  \eqref{logstructure} to see that  the composite map
+{\small  \begin{equation}
+ H^*(\Hom_{\Sinf}(\Cinf, \Z_p)) \rightarrow 
+ H^*(\Hom_{S_n}(\Cinf \otimes_{\Sinf} S_n, \Z/p^n))   \stackrel{\sim}{ \rightarrow}
+  H^*(Y(1), \Z/p^n)_{\mathfrak{m}}  
+ \rightarrow   H^*(Y(1), \Z/p^k)_{\mathfrak{m}}
+  \end{equation}}
+is {\em independent of $n$}, for $n \geq k$.
+
+
+
+
+
+
+
+ So the images of $v_n, v_m$ in $\Vinf/p^k$ have the same actions on mod $p^k$ cohomology. 
+The $\Vinf/p^k$ action on mod $p^k$ cohomology is faithful (by \eqref{Banjo2} and \eqref{watney}) so this forces  the image of $v_n, v_m$
+in $\Vinf/p^k$ to coincide as claimed.  
+  
+Therefore, passing to the limit over $n$, we get a map $\Winf/p^k \rightarrow \Vinf/p^k$, 
+which is easily seen to be compatible as we increase $k$; thus the inverse limit over $k$
+defines an isomorphism \begin{equation} \label{bo} \Winf  \stackrel{\sim}{\rightarrow} \Vinf.\end{equation}
+
+
+Next, referring to \eqref{BigDog} the action of $\Ext_{\Sinf}^*(\Sinf/\Iinf, \Sinf/\Iinf) \simeq \wedge^* \mathfrak{t}_S$
+on $H^*(\Hom_{\Sinf}(\Cinf,  \Z_p))$ certainly factors through $\wedge^*  \Winf $;
+this action of $\wedge^* \Winf$ on $H^*(\Hom_{\Sinf}(\Cinf, \Z_p))$  is compatible
+under the identifications  \eqref{logstructure} and  \eqref{bo} with the action of $\wedge^* \Vinf$ on  $H^*(Y(1), \Z_p)_{\mathfrak{m}}$. 
+
+  Therefore, by \eqref{watney},  $\Vinf$ freely generates an exterior algebra inside $\mathrm{End}(H^*)$, and $H^*$ is freely generated over $\wedge^* \Vinf$
+  by $H^{\BWq}(Y(1), \Z_p)_{\mathfrak{m}}$, its minimal degree component. 
+ On the other hand, the image of $\wedge^* \Vinf$ in $\mathrm{End}(H^*)$ is contained in the global derived Hecke algebra --
+ the action of an element $\Vinf$ is, by definition, a limit of actions of elements in the derived Hecke algebra.  Indeed,
+ $\Vinf$ lies inside the strict global derived Hecke algebra. 
+  \qed 
+
+
+\subsection{Proof of Proposition \ref{P853}} \label{P853proof}
+
+ {\color{\changecolor} . In our current situation, we have an inclusion
+\begin{equation} \label{xyyzzww} \wedge^* \mathsf{V} \subset \gHecke\end{equation}
+and we have seen that $H^*(Y(1), \Z_p)_{\mathfrak{m}}$
+ is generated by its lowest nonvanishing degree $H^{\BWq}$ as a  
+ $\wedge^* \mathsf{V}$-module.  
+ If we know that $H^*(Y(1), \Z_p)_{\mathfrak{m}} = \Z_p$, 
+ we argue that \eqref{xyyzzww} is an equality
+ just as in the corresponding argument after  \eqref{inclusions BHH}.
+ 
+ If we are given $\mathsf{S}$ as in the statement of the Proposition, 
+ let $\mathsf{M} = H^{\BWq}(Y(1), \Z_p)_{\mathfrak{m}} \otimes_{\Z_p} \Q_p$
+ as a $\mathsf{S}$-module. It is semisimple by assumption, and the natural map
+ $$ \mathsf{M} \otimes \wedge^* \mathsf{V}_{\Q_p}      \rightarrow H^*(Y(1), \Z_p)_{\mathfrak{m}} \otimes \Q_p$$
+ is now an isomorphism of $\mathsf{S} \otimes \wedge^* \mathsf{V}_{\Q_p}$ modules. 
+ However,
+$$\mbox{(graded) commutant of $\mathsf{S} \otimes \wedge^* \mathsf{V}_{\Q_p}$   on $\mathsf{M} \otimes \wedge^* \mathsf{V}_{\Q_p}$} =   \mathsf{S}' \otimes  \wedge^* \mathsf{V}_{\Q_p},$$
+as can be verified by computing in steps:  the commutant of $\mathsf{S}$ alone
+ equals $  \mathsf{S}' \otimes \mathrm{End}(\wedge^* \mathsf{V}_{\Q_p})$,
+ and then inside here the (graded) commutant of $\wedge^* \mathsf{V}_{\Q_p}$   is $\mathsf{S}' \otimes \wedge^* \mathsf{V}_{\Q_p} $.  
+ 
+
+Since this commutant contains  the image of $\gHecke$
+acting on $\Q_p$-cohomology, the latter is also graded commutative, since $\mathsf{S}'$ is commutative by the multiplicity one hypothesis.   Note that the action on $\Q_p$ cohomology
+is faithful because of our torsion freeness assumption, see 7(a) of  \S \ref{Sec:assumptions}.
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+\qed
+
+
+
+
+ 
+\subsection{The action of Hecke operators}  \label{Galoisindexingproofs}
+ To conclude, let us translate what we have proved into a more concrete   assertion about the action of a derived Hecke operator. 
+ 
+ Let $q$ be a unramified prime for $\rho$,  with $q \equiv 1$ modulo $p^n$, and such that
+ $\rhobar(\Frob_q)$ is conjugate to a strongly regular element of $T^{\vee}(k)$. Let $\nu \in X_*(\mathbf{A})^+$ be strictly dominant 
 and let
-α PH 1pApFqq, Z{pnq.
-To this we can associate in a natural way (see below) a derived Hecke operator Tq,ν,α as
-well as an element rq,ν,α s P V{pn; we will prove that the actions of these are compatible
-(see Lemma below), justifying the assertions made in §1.5.
-First of all, a small piece of linear algebra. Let k be a ﬁeld. Suppose given a ﬁxed
-characterψ P X ˚pT _q. Let g P G_pkq be regular semisimple, with centralizer Zg; this
-data allows us to construct a homomorphism of k-vector spaces
-eψ,g : LiepT _q Ñ LiepZgq,
-eψ,g :
-ÿ
-φ:T _ „ÑZg
-xψ,φ ´1pgqy ¨dφ
-where the sum is taken over all conjugations of T _ toZg over ¯k; the morphism is nonethe-
-less deﬁned over k.
-Example: if G_ “ SL2, take T _,B _ in the standard way to be the diagonal sub-
-group and upper triangular matrices, and take ψ :
-ˆ
-x 0
-0 x´1
-˙
-ÞÑ x. Then eψ,g sends
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 7 3
-ˆ
-1 0
-0 ´1
-˙
-P LiepT _q to the element 2g ´ tracepgq P M2pkq: it’s enough to check this
-forg PT _, where the result is clear.
-Letq,ν,α be as described at the start of this subsection. We can then co nstruct a class
-rq,ν,α s P V{pn
-in the following way: regarding ν as a character of T _, and use the linear algebra con-
-struction mentioned with k “ Qp to make the ﬁrst map of
-(170) LiepT _q
-eν, Frobq
-Ý Ñ LiepZρpFrobqqq ãÑ LiepG_q
-(at ﬁrst we get this bQp but then it preserves the integral structures, with referen ce to the
-natural Zp-models of the three groups above). The resulting embedding LiepT _q Ñ Adρ
-is a morphism of GalpQq{Qqq-modules, where LiepT _q is taken to have the trivial action.
+  $$\alpha \in H^1(\mathbf{A}(\F_q), \Z/p^n).$$ 
+  To this we can associate in a natural way (see below) a derived Hecke operator $T_{q, \nu, \alpha}$
+  as well as an element $[q, \nu, \alpha] \in \Vinf/p^n$; we will prove
+  that the actions of these are compatible (see Lemma below), 
+ justifying the assertions made in \S \ref{Galoisindexing}. 
+
+
+First of all,
+a small piece of linear algebra. Let $k$ be a field.  Suppose given a  fixed character $\psi \in X^*(T^{\vee})$. 
+Let $g \in G^{\vee}(k)$ be regular semisimple, with centralizer $Z_g$; 
+this data allows us to construct a homomorphism of $k$-vector spaces
+$$e_{\psi,g}: \mathrm{Lie}(T^{\vee}) \rightarrow \Lie(Z_g),$$ 
+$$ e_{\psi,g}:  \sum_{\phi: T^{\vee} \stackrel{\sim}{\rightarrow} Z_g} \langle \psi, \phi^{-1}(g) \rangle \cdot d\phi$$
+where the sum is taken over all conjugations of $T^{\vee}$ to $Z_g$ over $\bar{k}$;
+the morphism is nonetheless defined over $k$. 
+
+{\em Example:}   if $G^{\vee}=\SL_2$, take $T^{\vee}, B^{\vee}$ in the standard way to be the diagonal subgroup and upper triangular matrices, and take $\psi: \left( \begin{array}{cc} x & 0 \\ 0 & x^{-1} \end{array} \right) \mapsto x$.  Then $e_{\psi, g}$ sends $  \left( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array} \right) \in \Lie(T^{\vee})$ 
+to the element  $  2g - \mathrm{trace}(g) \in M_2(k)$: it's enough to check this for $g \in T^{\vee}$, where the result is clear. 
+
+
+
+\medskip
+
+Let $q, \nu, \alpha$ be as described at the start of this subsection. We can then construct a class 
+  $$ [q, \nu, \alpha] \in \Vinf/p^n$$
+  in the following way:  regarding $\nu$ as a character of
+  $T^{\vee}$,  and use the linear algebra construction mentioned with $k = \Q_p$ to make the first map of   \begin{equation} \label{cheeseboard} \mathrm{Lie}(T^{\vee}) \stackrel{e_{\nu, \Frob_q}}{\longrightarrow } \Lie(Z_{\rho(\Frob_q)}) \hookrightarrow \Lie(G^{\vee})\end{equation}
+  (at first we get this $\otimes \Q_p$ but then it preserves the integral structures, with reference to the natural $\Z_p$-models of the three groups above). 
+  The resulting embedding $\mathrm{Lie}(T^{\vee}) \rightarrow  \Ad \rho$
+    is a morphism of $\Gal(\overline{\Q_q}/\Q_q)$-modules,
+  where $\mathrm{Lie}(T^{\vee})$ is taken to have the trivial action. 
+ 
+  
 As before, we may identify
-H 1pApFqq, Z{pnq “ H 1pX˚pAq b Fˆ
-q, Z{pnq “ HompFˆ
-q,X ˚pT _q{pnq
-and so from α we obtain a class
-α1 P H 1pQq, LiepT _q{pnq
-H 1urpQq, LiepT _q{pnq.
-Here LiepT _q is taken as a trivial Galois module. We can then form
-pushforward ofα1via (170) P H 1pQq, Adρnq
-H 1urpQq, Adρnq.
-and, as usual, this can be paired with H 1
-f pZr 1
-S s, Ad˚ρp1qq by means of local reciprocity.
-In this way we obtain a functional H 1
-f pZr 1
-S s, Ad˚ρp1qq Ñ Z{pn, which we denote as
-rq,ν,α s P V{pn.
-8.29. Lemma. Letq,ν,α be as above. Let rq,ν,α s P V{pn be as deﬁned above.
-LetTq,ν,α be the derived Hecke operator with Z{pn coefﬁcients which is supported on
-theGq-orbit of pνKq,Kqq and whose value at pνKq,Kqq which corresponds to α under
-the cohomology isomorphism H ˚pKq XνKqν´1, Z{pnq – H ˚pApFqq, Z{pnq.
-ThenTq,ν,α corresponds to rq,ν,α s P V{pn, in the following asymptotic sense:
-There isN0pmq such that forq,ν,α as above withq ” 1 modulopN0pmq, the actions of
-Tq,ν,α and rq,ν,α s onH ˚pY p1q, Z{pmqm coincide.
-Proof. Under the derived Satake isomorphism, Tq,ν,α is sent to
-ÿ
-w
-wν bwα P
-`
-SrX˚s bH 1pApFqqq
-˘W
-.
-With notation as in §8.17, let Θ ν PSrX˚sW
-m be deﬁned so that its image under SrX˚sW
-m ãÑ
-SrX˚s ˜m ÑSrX˚sχ is equal to ν. Here, we regard ν PX˚ ãÑSrX˚s.
-Then, after completing at m, we have an equality
-SatakepTq,ν,αq “
-ÿ
-wPW
-Θ wν ¨ Satakepθpwαqq P pSrX˚s bH 1pApFqqqqW
-m
-where θ is as in (154). (We can check this using the isomorphism (152) : it gives an
-isomorphism of the target group with SrX˚sχ bH 1pTqq, under which θpwαq is, by its
-very deﬁnition, sent to 1 bwα; under the same isomorphism Θ wν is sent to wν b 1, and
-the result follows.)
-74 AKSHA Y VENKA TESH
-As before we have ﬁxed FrobT
-q P T _pFpq an element conjugate to ρpFrobqq; ﬁx a
-lift tq P T _pZpq that is conjugate to ρpFrobqq. Then Θ wν (more exactly, its preimage
-under Satake) acts on H ˚pY p1q, Zpqm by xwν,tqy (this makes sense: wν PX ˚pT _q and
-tq P T _pZpq, so they can be paired to get an element of Zˆ
-p ). Using Theorem 8.5, we
-see that the action of Tq,ν,α onH ˚pY p1q, Zpqm corresponds (in the sense of the lemma
-statement) to the element
-ÿ
-wPW
-xwν,tqy ¨fq,npwαq “
-ÿ
-wPW
-xν,w ´1tqy fq,npwαq P V{pn.
-Winding through the deﬁnitions, this element of V{pn is exactly rq,ν,α s. □
-9. S OME VERY POOR EVIDENCE FOR THE MAIN CONJECTURE : T ORI AND THE
-TRIVIAL REPRESENTATION
-We verify that the main conjecture (Conjecture 8.8) holds in the case when G is an
-anisotropic torus. This is straightforward, but still slig htly comforting.
-One may also verify that a certain analogous statement to Con jecture 8.8 holds in the
-situation studied in §5, but there we do not understand the si tuation clearly at present –
-hopefully it will eventually prove to be a specialization of the general conjecture to the
-nontempered case.
-9.1. Setup. Let T be an anisotropic F -torus; let O be the ring of integers of F . Let us
-ﬁx a ﬁnite set of places S such that T admits a smooth model over Or 1
-S s. We assume it
-contains all places ℘ above the rational prime p.
-The associated symmetric space
-S “ TpF b Rq{maximal compact
-hasq,δ invariants (see (18)):
-q “ 0,δ “ dimpSq.
-The arithmetic manifold Y pKq associated to a level structure K is a disjoint union of
-copies of S{∆ , where ∆ is a congruence subgroup of TpOq. Moreover the quotient S{∆
-is a union of compact tori, and thus the rank of ∆ , i.e. dimQp∆ b Qq, equals δ. We will
-suppose thatK is chosen so small that ∆ is free of p-torsion.
-9.2. Galois cohomology. Let M be the motive associated to the ﬁrst homology group
-H1pTq of T.
-LetX˚pTq be the co-character group of T. It carries an action of GalpF {F q. Coming
-fromX˚ bZ Gm
-„Ñ T, we get an isomorphism of GalpF {F q-modules
-Mp :“p-adic realization of M “X˚pTq bZ Zpp1q » limÐ ÝTrpns,
-thep-adic Tate module of T. Computing with the Kummer sequence,
-(171) H 1pOr 1
-S s,Mpq » TpOr 1
-S sq b Zp.
-Inside the left-hand side, we can consider those classes tha t are crystalline at p and unram-
-iﬁed at all primes away from p, including primes in S. We will denote this subgroup by
-H 1
-f,urpF,Mpq. 18
-18For a precise deﬁnition we refer to [2]: the group we have call ed H 1
-f, ur is the group denoted by H 1
-f,U in [2,
-Deﬁnition 5.1] with U taken to be all ﬁnite places. This group is often simply writt en H 1
-f pF, ´q in the literature.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 7 5
-The subgroup on the right-hand side corresponding to H 1
-f,urpF,Mpq, call it
-∆ 1 Ă TpOr 1
-S sq b Zp,
-is commensurable to the image of ∆ b Zp in the right-hand side of (171). Indeed, the
-constraint that a point t P TpOr 1
-S sq have cohomology class in H 1
-f,ur is equivalent to
-forcing t to belong to a suitable open compact subgroup of TpFvq for each v P S; see
-[18, Theorem 2.3.1] for this statement in the trickier case w henv is abovep. We suppose
-(shrinking ∆ a little if necessary) that ∆ b Zp Ă ∆ 1.
-Also, the motivic cohomologyH 1
-motpM, Qp1qq is identiﬁed with with the TpQq b Q,
-as we may see by ﬁrst passing to an extension that trivializes the torus T. Presumably the
-following is valid, but I did not try to check it:
-Assumption: The subgroup of “integral classes” H 1
-motpMZ, Qp1qq (see
-discussion after (7)) is identiﬁed with the image of ∆ b Q inside TpQq b
-Q.
-Now a cohomological automorphic form Π for T is trivial on the connected component
-of TpF b Rq, i.e. they are the ﬁnite order idèle class characters of T. However, the
-associated co-adjoint motive (see §1.2) doesn’t depend on w hich idele class character: we
-have simply
-p coadjoint motive for Π q p1q » M,
-the motiveM described above. 19
-Now let us examine Conjecture 8.8 in this case. Put
-V “H 1
-f,urpF,Mpq_,
-whereMp is thep-adic etale realization, and _ denotes Zp-linear dual; thus V “ Homp∆ 1, Zpq.
-The notationH 1
-f,ur was deﬁned after (171).
-There is a natural action of V onH ˚pY, Zpq, obtained from the maps
-(172) V “H 1p∆ 1, Zpq Ñ H 1p∆ , Zpq.
-Moreover, motivic cohomology gives a lattice in V b Q “H 1p∆ 1, Qpq (the classes which
-are Q-valued on ∆ Ă ∆ 1) and obviously this lattice indeed preserves H ˚pY, Qq, in the
-Q-linear extension of the action of V.
-The only point to be discussed is that the action (172) is inde ed that resulting from the
-same formalism as §8. We describe this only brieﬂy. Let v be a ﬁnite place not belonging
-toS, so that T extends to a smooth torus over Ov. As usual we have an injection,
-HompTpOvq, Z{pnq ãÑ derived Hecke algebra at v,
-and thus an action of the left-hand group on the cohomology of H ˚pY, Z{pnq; explicitly,
-this action is obtained by pulling back cohomology classes v ia ∆ Ñ TpOvq, and cup
-product. By just the same procedure as that described in (124 ), we can construct a map
-HompTpOvq, Z{pnq Ñ V{pn
-lo omo on
-»Homp∆ 1,Z{pnq
-,
-19 Indeed, the the Zp-linear dual of ˆT is identiﬁed with
-LiepT _q_ » pLiepGmq b X˚ pT _qq_ » X ˚ pT _q b Zp » X˚ pTq b Zp
-where we have ﬁxed an isomorphism Z » LiepGmq.
-76 AKSHA Y VENKA TESH
-and one veriﬁes this is the map induced by ∆ 1 Ñ TpOvq b Zp. Then the action of V{pn
-on H ˚pY, Z{pnq is compatible with the “derived Hecke” action of HompTpOvq, Z{pnq
-for allv; and in fact this compatibility determines the action of V{pn.
-APPENDIX A. R EMEDIAL ALGEBRA
-In this section we ﬁll in some “intuitively obvious” claims i n the text in grotesque detail,
-in particular the identiﬁcations between various differen t models of the derived Hecke
-algebra. (The word “remedial” in the title of this section re fers to my own lack of ﬂuency
-with homological algebra.)
-An action of a topological group will be called smooth if the stabilizer of every point
-is an open subgroup. We will ﬁx a ﬁnite ring S of cardinality prime to p. A “smooth
-representation of G”, in this section, will be a smooth action of G on an S-module. We
-writeSG (or occasionallySrGs when typography requires) for the group algebra ofG with
-coefﬁcients in S. We will write HomSG for homomorphisms of SG-modules; in §A.11
-we abbreviate this to HomG because other notation becomes very dense.
-Note that the usage of U andK in this section do not precisely match their usage in the
-main text.
-A.1. Let K be a proﬁnite group, which admits a pro- p open normal compact subgroup
-U . Then the category C of smooth representations ofK is an abelian category with enough
-projectives. In fact, if Q is a projective K{U module, then considering Q as a smooth
-K-module ˜Q it remains projective: HomSK p ˜Q,V q “ HomSrK{UspQ,V U q andV ÞÑVU
-is exact by the hypothesis on U . (One can lift U -invariants under a surjection V1։V2 by
-averaging.)
-In this situation, restriction to a ﬁnite index subgroup K 1 Ă K preserves projectivity.
-Indeed HomSK 1pResK
-K 1A,B q “ HomSK pA, IndK
-K 1Bq and the induction functor is exact.
-A.2. Now let G “ Gv be the points of a reductive group over a p-adic ﬁeld, or any
-open subgroup thereof. Then the category of smooth represen tations of Gv is an abelian
-category and it has enough projectives.
-Indeed, considerW “SrG{U s for an open pro-p compactU ĂG. Then
-HomSGpW,V q » VU,
-which is obviously exact in V . So W is projective, and now given any other V we choose
-generatorsvi forV , open pro-p compact subgroupsUi ﬁxing vi, corresponding projectives
-Wi, and then get ÀWi։V .
-Throughout the remainder of this section, we suppose that G is as above, that K is an
-open compact subgroup of G (in particular, K is proﬁnite), and that U Ă K is a pro-p
-open normal compact subgroup of K.
-A.3. Fix a resolution of the trivial K-representation by projective smooth K-modules:
-(173) Q : ¨ ¨ ¨ ÑQi Ñ ¨ ¨ ¨ Ñ Q1 ÑS.
-(Here, and in what follows, we will use boldface letters to de note complexes.) To be
-explicit, let us take Q to be the standard “bar” resolution of S by free SrK{U s-modules,
-considered as a complex of smooth K-representations.
-Then HompQ, Qq computes H ˚pK,S q, the continuous cohomology of the proﬁnite
-groupK withS coefﬁcients: indeed, the the cohomology of HompQ, Qq is identiﬁed with
-H ˚pK{U,S q, which is identiﬁed by pullback with the continuous cohomol ogyH ˚pK,S q.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 7 7
-The complex HompQ, Qq has the structure of differential graded algebra arising fr om
-composition, and the resulting multiplication on H ˚pK,S q coincides with the cup product
-(this reduces to a corresponding statement for a ﬁnite group ; for that see [37]).
-IfK 1 Ă K is a ﬁnite index subgroup, then HomSK 1pQ, Qq still computes H ˚pK 1,S q
-(see remarks above). Moreover, the averaging operator ř
-K{K 1 – that is to say, the map
-sending
-f P HomSK 1pQ, Qq ÞÑ
-ÿ
-κ
-κfκ ´1 P HomSK p... q
-realizes the corestriction map H ˚pK 1,S q Ñ H ˚pK,S q, where the κ sum is taken over a
-set of coset representatives for K{K 1 inK.
-A.4. Induction and Frobenius reciprocity. We use the word “induction” for the functor
-fromK-modules toG modules
-(174) M↝ SG bSK M.
-This is isomorphic to the usual “compact” induction, namely space of functions
-indG
-KpM q :“ t f :G ÑM :f pgkq “ k´1f pgq,(175)
-f is supported on ﬁnitely many left translates of Ku
-where the action of h PG is by left translation, i.e. lhf pxq “ f ph´1xq. We will drop the
-word “compact” and simply refer to (175) or (174) as “inducti on”; we refer to the model
-(175) for induction as the “function model.”
-We can deﬁne inverse isomorphisms between (175) and (174) as follows: deﬁne indG
-KpM q Ñ
-SrGs bSrKsM via
-f ÞÑ
-ÿ
-xPpG{Kq
-gx bf pgxq,
-wheregx PG is a representative forx PG{K; in the other direction, we send g bm to the
-function supported on gK whose value ong equalsm
-A.5. Frobenius reciprocity. We have Frobenius reciprocity
-HomSGpindG
-K M,N q » HomSK pM,N q
-and therefore induction carries projective K-modules to projective G-modules. Explicitly
-anSK -homomorphismf : M Ñ N is sent to its obvious G-linear extension SG bSK
-M ÑN .
-IfG ĄK has ﬁnite index, we also have the reverse adjointness (since “compact induc-
-tion” and “induction” coincide): to give a K-mapf : M Ñ M 1 is the same as giving a
-mapFf :M Ñ indG
-KM 1. Explicitly, in the function model for the induced represen tation,
-Ff is characterized by the property Ff pmqpeq “ f pmq, and so
-Ff pmqpgq “ lg´ 1Ff pmqpeq “ Ff pg´1mqpeq “ f pg´1mq
-and thus in the tensor product model
-(176) Ff pmq “
-ÿ
-xPpG{Kq
-gx bf pg´1
-x mq
-78 AKSHA Y VENKA TESH
-A.6. Restriction of induced representations. Let Q be a smooth representation of K.
-The restriction of indG
-KQ toK is isomorphic to
-(177)
-à
-xPKzG{K
-SrKgxKs bSK Q »
-à
-K
-SrKs bSKxQx »
-à
-x
-indK
-KxQx
-wherex “gxK runs through a set of representatives for K-orbits on G{K, and we write
-Kx “ K XgxKg ´1
-x ; moreover for a K-module Q, we denote by Qx the Kx-module
-whose underlying space is Q, but for which the action ˚ ofKx onQ is deﬁned thus:
-(178) κ ˚q “
-`
-Adpg´1
-x qκ
-˘
-q.
-The ﬁrst map of (177) is given explicitly by
-(179) k1gxk2 bq “k1gx bk2q ÞÑk1 bk2q
-and the inverse map sends
-(180) k bq ÞÑkgx bq.
-In the function model of the induced representations, the co mposite map of (177) sends
-F : KgxK Ñ Q to the function F 1 : k ÞÑ F pkgxq. In the reverse direction, given a
-functionF 1 in the function model of indK
-KxQx, the inverse of (177) sends it to
-(181)
-ÿ
-kPK{Kx
-kgx bf pkq P SrKgxKs bSK Q.
-A.7. Derived Hecke algebra. The derived Hecke algebra for the pair pG,K q with coef-
-ﬁcients in S is deﬁned as
-à
-i
-Exti
-SGpSrG{Ks,S rG{Ksq
-where the Ext-groups are taken in the category of smooth S-representations.
-We can construct an explicit model as follows. Let Q be as in (173). Then P “ indQ
-is a projective resolution of SrG{Ks. In particular, HomSGpP, Pq has the structure of a
-differential graded algebra and its cohomology gives the de rived Hecke algebra.
-A.8. We will now explicitly describe the isomorphism (25) be tween the derived Hecke
-algebra and its “double coset model.”
-Let P, Q be as in §A.7.
-We have
-(182) HomSGpP, Pq “ HomSK pQ, indG
-KQq
-(177)
-Ð Ý
-à
-xPKzG{K
-HomSK pQ, indK
-KxQxq
-looooooooooooooooooomooooooooooooooooooon
-“HomSKx pQ,Qxq
-,
-where x varies now through KzG{K, again gxK is a representative for x and Kx “
-K X AdpgxqK, and the twist operation Qx is as described in (178).
-Note that the last map induces a cohomology isomorphism. We must see thatH ˚pHomSK pQ, ´qq
-commutes with the inﬁnite direct sum À
-x indK
-KxQx. However, Qx is cohomologically
-concentrated in degree 0, and so the same is true for indK
-KxQx; it is enough to show, then,
-for anyK-modulesMi, the obvious map
-à
-i
-HomSK pQ,Miq Ý ÑHomSK pQ,
-à
-i
-Miqq
-is a quasi-isomorphism. But this follows from the fact that t akingU invariants commutes
-with inﬁnite direct sum, as does the functor H ˚pK{U, ´q.
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 7 9
-Note that the cohomology of HomSKxpQ, Qxq is identiﬁed with H ˚pKx,S q, because
-Q and Qx are resolutions of S, and moreover Q is a complex of projective Kx-modules.
-Thus, (182) gives rise to an isomorphism:
-(183) H ˚ pHomSGpP, Pqq »
-à
-x
-H ˚pKx,S q.
-For later use, we explicate the map of (182), going from right to left: An element f P
-HomSKxpQ, Qxq must satisfyf pκqq “ pg´1
-x κgxqf pqq forκ PKx; the associated element
-of HomSK pQ, indG
-KQq is given in the tensor product model of the induced represent ation
-by the formula of (176):
-q P Q ÞÑ
-ÿ
-kPK{Kx
-kgx bf pk´1qq
-which is well-deﬁned.
-A.9. Action of derived Hecke algebra on derived invariants. Now suppose that M
-is a complex of smooth G-representations. There is a natural action of EndSGpPq on
-HomSGpP, Mq. Moreover, the latter complex computes the hypercohomolog y H˚pK, Mq
-ofK with coefﬁcients in the complex M.
-Thus, because of (183), we get an action of H ˚pKx,S q on H˚pK, Mq. Let us de-
-scribe the action of hx PH ˚pKx,S q on H˚pK, Mq as explicitly as possible, in particular
-justifying the claims of §2.10:
-A.10. Lemma. With notation as above, the action of hx is given by the following compos-
-ite:
-H˚pK, Mq
-Adpg´ 1
-x q˚
-Ý Ñ H˚pKx, Mxq
-mÞÑgxm
-Ý Ñ H˚pKx, Mq Yhx
-Ý ÑH˚pKx, Mq CoresÝ ÑH˚pK, Mq.
-Here the ﬁrst map is the pull-back induced by Adpg´1
-x q : Kx ãÑ K, which pulls back M
-to Mx.
-Proof. Chooseh1
-x P HomSK pQ, indK
-KxQxq representinghx. For f P HomSGpP, Mq we
-denote byfx P HomSK pindK
-KxQx, Mq the restriction. We denote by rh1
-xs P HomSKxpQ, Qxq
-and rfxs P HomSKxpQx, Mq the elements obtained from h1
-x,fx using Frobenius reci-
-procity (but using the two different versions of Frobenius r eciprocity).
-We want to compare the composition fx ˝h1
-x and rfxs ˝ rh1
-xs i.e.
-(184)
-h1
-x P HomSK pQ, indK
-Kx Qxq ˆ fx P HomSK pindK
-Kx Qx, Mq /d47/d47 HomSK pQ, Mq
-rh1
-xs P HomSKxpQ, Qxq
-„
-/d79/d79
-ˆ r fxs P HomSKx pQx, Mq /d47/d47
-„
-/d79/d79
-HomSKx pQ, Mq
-We compute
-fx ˝h1
-xpqq
-(176)
-“ fx
-¨
-˝ ÿ
-kiPK{Kx
-ki b rh1
-xspk´1
-i qq
-˛
-‚“
-ÿ
-ki
-kirfxs ˝ rh1
-xspk´1
-i qq
-i.e., this is what we get by averaging rfxs˝rh1
-xs over the action ofK{Kx. The cohomology
-class of the composition rfxs ˝ rh1
-xs simply amounts (at the level of cohomology) to the
-cup product of the class rfxs P H˚pKx, Mq (hypercohomology) with the class rh1
-xs P
-H ˚pKx,S q. So to prove the lemma it remains to show:
-80 AKSHA Y VENKA TESH
-Subclaim: The class rfxs P H˚pKx, Mq is obtained from rf s P H˚pK, Mq via
-H˚pK, Mq
-Adpg´ 1
-x q˚
-Ý Ñ H˚pKx, Mxq
-mÞÑgxm
-Ý Ñ H˚pKx, Mq
-At the chain level this map is given by the composite
-HomSK pQ, Mq Ñ HomSKxpQx, Mxq Ñ HomSKxpQx, Mq
-where the ﬁrst map is the trivial map, just considering maps o fK modules asKx-modules
-via Adpg´1
-x q : Kx Ñ K; and the second map Mx Ñ M is given by m ÞÑ gxm. To
-check the subclaim, note that rfxs P HomSKxpQx, Mq sendsq P Qx to the value of fx
-on the element 1 bq P indK
-KxQ, which is carried by the isomorphism inverse to (177) to
-gx bq P indG
-KQ; thus,
-rfxs :q ÞÑgxf pqq
-where here, on the right hand side, we regard f as a map Q Ñ M by Frobenius reciprocity
-(i.e. we pull it back via the obvious embedding Q ãÑ P,q ÞÑ 1 bq). This concludes the
-justiﬁcation of the subclaim. □
-A.11. Multiplication in the derived Hecke algebra. We ﬁnally analyze composition (i.e.
-multiplication) in the derived Hecke algebra, explicating it with respect to the isomorphism
-(183), and thus justifying the description given in §2.3.
-Letα,β,γ PG{K with representativesgα,gβ,gγ PG. Suppose given hα PH ˚pKgα q
-and similarly for β. We will compute the product hβhα considered as elements of the
-derived Hecke algebra – or more precisely the H ˚pKgγ q component of their product.
-As in (182) we represent hα by an element h1
-α P HomKpQ, indG
-KQq, and denote by
-rh1
-αs the corresponding element of HomKgα pQ, Qgα q and similarly for hβ. By (176) we
-have the explicit formula
-h1
-α :q PQ ÞÑ
-ÿ
-kPK{Kα
-kgα b rh1
-αspk´1qq P SrKgαKs bSK Q,
-where we make a modest abuse of notation by identifying K{Kα to a set of representatives
-for it inK. Now applyh1
-β to the right-hand side, regardingh1
-β P HomSGpP, Pq. The result
-is:
-(185)
-ÿ
-kPK{Kα
-ÿ
-k1PK{Kβ
-kgαk1gβ b rh1
-βsk1´1rh1
-αsk´1 P HomKpQ,SG bSK Qq
-The desired H ˚pKgγ q component of the product hβ ¨hα is given by considering all k,k 1
-for whichkgαk1gβ PKgγK, i.e. it is represented by
-(186)
-ÿ
-kgα k1gβ PKgγK
-kgαk1gβ b rh1
-βsk1´1rh1
-αsk´1 P HomKpQ,S rKgγKs bSK Qq
-By “dual” Frobenius reciprocity (see before (176)) the righ t-hand side can be identiﬁed
-with HomKpQ, indK
-Kγ Qγq » HomKγ pQ, Qγq. If we write kgαk1gβ “ k1gγk2, an ex-
-plicit formula for the corresponding element of HomKpQ, indK
-Kγ Qγq is given (179) by
-q ÞÑ
-ÿ
-kgα k1gβ “k1gγk2
-k1 bk2rh1
-βsk1´1rh1
-αsk´1pqqloooooooooooooooomoooooooooooooooon
-PSK bSKγ Qγ
-where the right-hand sum is over the same k,k 1 as before, and we consider only those k,k 1
-such thatkgαk1gβ PKgγK. Then the corresponding element of HomKγ pQ, Qγq is given
-(see (176)) by picking out those terms for which k1 P Kγ; in that case we can rewrite
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 8 1
-k1gγk2 “ gγpAdpgγq´1k1qk2 and so we may as well suppose that k1 “ 1. Thus, the
-desired result is
-(187) ÿ
-k,k1 :kgα k1gβ “gγk2
-k2 rh1
-βsk1´1
-looomooon
-HomKAdpkgα qKk1 gβ
-pQkgα ,Qkgα k1gβ q
-rh1
-αsk´1
-looomooon
-HomKkgα pQ,Qkgα q
-P HomKγ pQ, Qγq
-Here we observed that
-rh1
-α s˝ k´ 1 P HomKkgα pQ, Qkgα q, rh1
-β s˝ k1´ 1 P HomKk1 gβ
-pQ, Qk1gβ q » HomAdpgqKk1 gβ
-pQg, Qgk1gβ q
-(the last isomorphism is the obvious one and we apply it to g “ kgα). 20 Returning to
-(187), set
-x “kgαk1gβK “gγK, y “kgαK, z “eK, U “ stabilizerpx,y,z q
-Then x,y are in relative position β, and y,z are in relative position α, and x,z are in
-relative positionγ.
-Note also that
-U “Kkgα X AdpkgαqKk1gβ “K X AdpkgαqK X Adpkgαk1gβqK.
-Therefore, the composite occurring in (187)
-F “
-HomKAdpkgα qKk1 gβ
-pQkgα ,Qkgα k1gβ q
-hkkkikkkj
-rh1
-βsk1´1 ˝ r h1
-αsk´1
-looomooon
-HomKgα pQ,Qkgα q
-actually belongs to HomU pQ, Qkgα k1gβ q; as such F deﬁnes a cohomology class for U .
-This cohomology class is given by taking the classeshα,hβ, transporting them to classes in
-H ˚pKkgα q andH ˚pAdpkgαqK 1
-k1gβ q, by means of Adpkq :Kgα »Kkgα and Adpkgαk1q :
-Kβ » AdpkgαqK 1
-k1gβ , restricting to U , and taking the cup product.
-Said differently, let us think of hα as a G-invariant associationHα from pairs pu,v q P
-G{K ˆG{K to cohomology classes in H ˚pGuvq – the one whose value at pgαK,e q is
-given by the original cohomology class in H ˚pKgα q. Similarly for hβ. Then,
-cohomology class of F “Hβpx,y q YHαpy,z q P H ˚pGxyz q
-NowKγ “Gxz acts on the set of pk,k 1,k 2q as above, i.e. satisfying kgαk1gβ “gγk2,
-via
-κ : pk,k 1,k 2q ÞÑ pκk,k 1, Adpg´1
-γ qκk2q.
-For ﬁxed pk,k 1,k 2q the stabilizer of this Kγ-action is just U . The contribution of a single
-Kγ-orbit is given by ÿ
-κPKγ {U
-Adpg´1
-γ qκ ˝F ˝κ´1
-which is to say that it averages F , considered as an element of HompQ, Qγq, over the
-cosets of Kγ{U . (The Adg´1
-γ accounts for the twisted action on Qγ). This precisely
-realizes the corestriction from U toKγ.
-20For example, to check the ﬁrst, note that for z P Kkgα and q P Q we have
-rh1
-α s ˝ k´ 1pzqq “ r h1
-α s
-`
-pk´ 1zkqpk´ 1qq
-˘
-“ pg´ 1
-α k´ 1zkg α qrh1
-α s ˝ k´ 1pqq
-Indeed, rh1
-α s represents the class in H ˚ pKkgα q, obtained by applying Adpkq to the class hα P H ˚ pKgα q.
-82 AKSHA Y VENKA TESH
-In summary, we have recovered the description of multiplica tion in the derived Hecke
-algebra given in §2.3.
-APPENDIX B. K OSZUL ALGEBRA ; OTHER ODDS AND ENDS
-LetB be a commutative ring with 1. Let
-Brrx1,...,x rss “ S ιÝ ÑR “Brry1,...,y r´δss
-whereι sendsxi toyi fori ďr ´δ, andxi to zero for i ąr ´δ.
-Let pS be the kernel of the natural augmentation S ÑB, and similarly for R. Write tS
-for theB-linear dual of for pS{p2
-S and similarly for tR. Just as in (88) we have a canonical
-identiﬁcation
-Ext1
-SpB,B q » tS.
-We will prove:
-B.1. Lemma. Ext˚
-SpB,B q is a free exterior algebra over its degree 1 component; thus we
-have Ext˚
-SpB,B q » ^ ˚tS as graded B-algebra. Moreover , there is an identiﬁcation of
-Ext˚
-SpR,B q with ^˚ptS{tRq in such a way that the natural action of Ext˚
-SpB,B q » ^ ˚tS
-is the natural one obtained from the algebra map ^˚tS Ñ ^ ˚ptS{tRq.
-This will follow from the computations of §B.2 (more precise ly, with the precisely
-analogous computations wherein one replaces the role of sym metric algebras by power
-series algebras).
-B.2. Koszul algebra. LetW be a free module of rank e over a base ring B and consider
-the ringR “ SymBpW q, i.e. “the ring of functions on W _.” In what follows we will omit
-theB subscript on SymB.
-We have a resolution
-¨ ¨ ¨ Ñ SympW q b ^2W Ñ SympW q bW Ñ SympW qlooooooooooooooooooooooooooooooooooomooooooooooooooooooooooooooooooooooon
-K
-ÑB,
-where the differential sends
-r bw1 ^ ¨ ¨ ¨ ^wr P SympW q b ^iW ÞÑ
-ÿ
-i
-p´1qi´1rwi bw1 ^... xwi ^...w r.
-There is a corresponding resolution where we replace SympW q by its completion with
-respect to the augmentation SympW q Ñ B, i.e. when we replace a symmetric algebra by
-a formal power series algebra.
-In particular, we get
-HomRpK,B q »
-`
-^iW
-˘_
-with zero differentials.
-and thus an identiﬁcation of Exti
-RpB,B q with
-`
-^iW
-˘_
-.
-In fact, Ext˚
-RpB,B q is a free exterior algebra, where the algebra structure on th e Ext-
-groups arising from their identiﬁcation with the cohomolog y of the differential graded
-algebra
-HomRpK, Kq.
-To see this, one veriﬁes that each element of w P W _, considered as acting on K by
-contractions, actually deﬁnes a degree ´1 endomorphism of K; the resulting inclusion
-ľ˚
-pW _q ãÑ HomRpK, Kq
-gives a quasi-isomorphism of differential graded algebras .
-DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS 8 3
-Suppose now that U is a free submodule of W such that W {U is also free. In this
-situation we have a quotient map
-R “ SympW q Ñ SympW {U q :“ ¯R
-We have a resolution ofR-modules (where the differential is given by the same formul a as
-before):
-¨ ¨ ¨ Ñ SympW q b ^2U Ñ SympW q bU Ñ SympW qloooooooooooooooooooooooooooooooooomoooooooooooooooooooooooooooooooooon
-Q
-„Ý Ñ ¯R,
-and from this we identify Ext˚
-Rp ¯R,B q with p^˚U q_.
-B.3. Lemma. The action of Ext˚
-RpB,B q » p^ ˚W q_ on this is the natural one that arises
-from the mapW _ ÑU _.
-Proof. It is enough to check this for the action of Ext1
-RpB,B q. We have identiﬁcations:
-Ext˚
-Rp ¯R,B q » H ˚ pHomRpQ,B qq “ H ˚ pHomRpQ, Kqq.
-Explicitly, a class in ωj P p^jU q_ » Extj
-Rp ¯R,B q is represented by a map of complexes
-Q Ñ K as follows:
-(188) ¨ ¨ ¨ /d47/d47R b ^j`1U /d47/d47
-f
-/d15/d15
-R b ^jU /d47/d47
-ωj P^jU _
-/d15/d15
-R b ^j´1U
-¨ ¨ ¨ /d47/d47K1 “R bW /d47/d47K0 “R /d47/d47 0.
-(since this lifts the map Q ÑBrjs associated toωj).
-Fix a basise1,...,e r forU and extend it to a basise1,...,e e forW . ForI Ă t1,...,e u
-with cardinality r, we deﬁne eI P ^rW thus: write I “ ti1,...,i ru withi1 ă ¨ ¨ ¨ ă ir
-and puteI “ei1 ^ei2 ^ ¨ ¨ ¨ ^eir . We may choose f to be given, explicitly, as
-eJ P ^j`1U ÞÑ
-ÿ
-kPJ
-p´1qrks´1ωjpeJ´kq bek PR bW,
-where rks means the position of k inJ (i.e. if J is ordered in increasing order, then 1 for
-the smallest element, two for the second smallest, etc.)
-To compute, now, the action ofβ PW _ “ Ext1
-RpB,B q on the class ωj, we just regard
-β as anR-module mapK1 “R bW ÑR, and then compose
-β ˝f P HomRp^j`1U bR,R q “
-`
-^j`1U
-˘_
-.
-Explicitly,
-β ˝f :eJ ÞÑ
-ÿ
-kPJ
-p´1qrks´1βpekqωjpeJ´kq “ pβ ^ωj,eJ q
-i.e.β ^ωj, whereβ is the image of β inU _. This concludes the proof. □
-B.4. A result in topology. Suppose that π : X Ñ Y is a covering of pointed Hausdorff
-topological spaces, with Galois group ∆ . This covering is classiﬁed by a map Y Ñ B∆
-fromY to the classifying space of ∆ .
-There are two natural actions of H ˚p∆ ,E q (withE a coefﬁcient ring) on H ˚pY,E q:
-(a) The ﬁrst arises from pullback of cohomology classes unde rY Ñ B∆ together
-with cup product.
-84 AKSHA Y VENKA TESH
-(b) The second arises from the identiﬁcation of the cochain c omplex of Y , with E
-coefﬁcients, with
-C˚pY ;Eq » HomE∆ pC˚pX,E q;Eq
-where C˚pX;Eq is the cochain complex of X (or e.g. the complex of a ∆ -
-equivariant cell structure), thought of as a complex of E∆ -modules. Then one
-composes with self maps of E in the derived category of E∆ -modules.
-For lack of a reference, we will prove the coincidence of thes e actions. For this we
-will use the following standard Lemma concerning the coinci dence of singular and sheaf
-cohomology (see [30] for a careful discussion; however this reference does not discuss the
-product structures):
-B.5. Lemma. F or any locally contractible Hausdorff space M , and any E-module A,
-letA be the constant sheaf on M with constant value A, considered as an object of the
-category of sheaves S ofE-modules onM .
-Then the complex of local chains U ÞÑ C˚pU,A q deﬁnes a presheaf on M ; let C˚
-A be
-its sheaﬁﬁcation. Then A Ñ C˚
-A is a ﬂasque resolution of A. Moreover , the natural maps
-C˚pM,A q Ñ Γ pM, C˚
-Aq “ HomSpA, C˚
-Aq
-induces, at the level of cohomology, an isomorphism
-(189) H ˚pM,A q » Ext˚
-SpA,A q
-which carries the cup product on the left to the Ext-product to the right.
-Proof. (that (a) and (b) coincide): Observe, ﬁrst of all, that every E∆ -moduleM gives a
-locally constant sheafM onY , namely, the one represented by the coveringpXˆM q{∆ Ñ
-Y . The cochains C˚pY,M q are then given by HomE∆ pC˚pX,E q,M q.
-Fixα∆ P Hmp∆ ,E q. It gives rise to a homomorphism α :E ÑErms in the derived
-category ofE∆ -modules, which can be represented by a diagram E „ÐP ÑErms where
-P is a complex of projective E∆ -modules. Thus we get a diagram of locally constant
-sheaves onY :
-α :E „ÐP ÑErms.
-This gives a map in the derived category of sheaves on Y , and thus an element of
-Extm
-S pE,E q; this element represents the pullback αY of α∆ to Y . or rather its image
-under (189).
-By the ﬁnal sentence of the Lemma, the cup product with αY is given, at the level of
-cohomology, by the Ext-product, which is explicitly the composite:
-H ˚pY,E q „ÐH ˚pY,P q Ñ H ˚pY,E rmsq
-By the lemma, these groups are naturally identiﬁed with the c ohomology of the corre-
-sponding cochain groups; so the above composite coincides w ith
-HomE∆ pC˚pX,E q,E q „Ð HomE∆ pC˚pX,E q,P q Ñ HomE∆ pC˚pX,E q,E q
-where the middle term is now the Hom-complex between two complexes.
-But this composite is also given by the Ext-product, in the category of E∆ -modules,
-with the class of α. This concludes the proof of the coincidence of (a) and (b). □
+  $$H^1(\mathbf{A}(\F_q), \Z/p^n) = H^1(X_*(\mathbf{A}) \otimes \F_q^{\times} , \Z/p^n) = \Hom(\F_q^{\times}, X_*(T^{\vee}) /p^n)$$
+and so from $\alpha$ we obtain a class  
+$$\alpha' \in   \frac{ H^1(\Q_q, \Lie(T^{\vee})/p^n)}{H^1_{\ur}(\Q_q, \Lie(T^{\vee})/p^n)}.$$
+   Here $\Lie(T^{\vee})$ is taken as a trivial Galois module.
+We can then form 
+$$\mbox{pushforward of } \alpha' \mbox{via \eqref{cheeseboard}}  \in   \frac{ H^1(\Q_q, \Ad \rho_n)}{H^1_{\ur}(\Q_q, \Ad \rho_n)}. $$ 
+  and, as usual, this can be paired with  $H^1_f(\Z[\frac{1}{S}], \Ad^* \rho (1))$ by means of local reciprocity.
+  In this way we obtain a functional $H^1_f(\Z[\frac{1}{S}], \Ad^* \rho (1)) \rightarrow \Z/p^n$, which we denote as
+$$[q, \nu, \alpha] \in \Vinf/p^n.$$ 
+  
+  \begin{lemma} \label{reciprocity law}
+Let $q, \nu, \alpha$ be as above.   Let $[q, \nu, \alpha] \in \Vinf/p^n$ be as defined above. 
+
+  
+Let $T_{q, \nu,\alpha}$ be the derived Hecke operator with $\Z/p^n$ coefficients which is 
+supported on the $G_q$-orbit of $(\nu K_q, K_q)$ and 
+whose value at $(\nu K_q, K_q)$
+which corresponds to $\alpha$ under the   cohomology isomorphism $H^*(K_q \cap \nu K_q \nu^{-1}, \Z/p^n) \cong H^*(\mathbf{A}(\F_q), \Z/p^n)$. 
+
+Then $T_{q,\nu,\alpha}$ corresponds to $[q, \nu,\alpha] \in \Vinf/p^n$, in the following asymptotic sense:
+
+ There is $N_0(m)$ such that  for  $q ,\nu, \alpha$ as above with 
+ $q \equiv 1$ modulo $p^{N_0(m)}$, 
+ the actions of  $T_{q, \nu, \alpha}$ and $[q, \nu,\alpha]$
+ on $H^*(Y(1), \Z/p^m)_{\mathfrak{m}}$ coincide. 
+\end{lemma}
+  \proof
+Under the derived Satake isomorphism, $T_{q,\nu, \alpha}$ is sent to  
+$$\sum_{w} w \nu\otimes w \alpha
+\in \left(S[X_*] \otimes H^1(\mathbf{A}(\F_q))\right)^W.$$   
+
+With notation as in \S \ref{Vnaction}, 
+let $\Theta_{\nu} \in S[X_*]_{\mathfrak{m}}^W$ be  defined
+so that its image under $S[X_*]_{\mathfrak{m}}^W \hookrightarrow S[X_*]_{\tilde{\mathfrak{m}}} \rightarrow S[X_*]_{\chi}$
+is equal to $\nu$. Here, we regard $\nu \in X_* \hookrightarrow S[X_*]$. 
+
+
+
+ 
+ Then, after completing at $\mathfrak{m}$, we have an equality
+  $$\mathrm{Satake}(T_{q,\nu,\alpha}) =   \sum_{w \in W}  \Theta_{w \nu} \cdot  \mbox{Satake}(\theta(w \alpha)) \in (S[X_*] \otimes H^1(\mathbf{A}(\F_q)))^W_{\mathfrak{m}}$$
+ where $\theta$ is as in \eqref{embedH1T}.  (We can check this using the isomorphism  \eqref{composite iso}:
+ it gives an isomorphism of the target group with  $S[X_*]_{\chi} \otimes H^1(T_q)$,
+ under which $\theta(w \alpha)$ is, by its very definition,  sent to $1 \otimes w \alpha$; under the same isomorphism $\Theta_{w \nu}$ 
+ is sent to $w \nu \otimes 1$, and the result follows.) 
+ 
+
+  
+ 
+
+As before we have fixed $\Frob^T_q \in T^{\vee}(\F_p)$ an element conjugate to $\rhobar(\Frob_q)$;
+fix a lift $t_q \in T^{\vee}(\Z_p)$ that is conjugate to $\rho(\Frob_q)$. 
+Then  $ \Theta_{w \nu}$  (more exactly, its preimage under Satake) acts on $H^*(Y(1), \Z_p)_{\mathfrak{m}}$
+by  $\langle w \nu, t_q \rangle$ (this makes sense: $w \nu \in X^*(T^{\vee})$ and $t_q \in T^{\vee}(\Z_p)$, so they can be paired to get an element of $\Z_p^{\times}$).   Using Theorem \ref{maintheorem}, we see that the action of $T_{q,\nu, \alpha}$ on $H^*(Y(1), \Z_p)_{\mathfrak{m}}$
+corresponds (in the sense  of the lemma statement) to the element
+$$ \sum_{w \in W} \langle w \nu, t_q \rangle \cdot f_{q,n}(w \alpha)  =  \sum_{w \in W} \langle \nu, w^{-1} t_q \rangle \ \  f_{q,n}(w \alpha) \in  \Vinf/p^n.$$
+Winding through the definitions, this element of $\Vinf/p^n$ is  exactly $[q, \nu, \alpha]$. \qed 
+
+ 
+ 
+ 
+\section{Some very poor evidence for the main conjecture: Tori and the trivial representation} \label{pisspoor}
+ 
+ We verify that the main conjecture  (Conjecture \ref{mainconjecture})
+  holds in the case when $\mathbf{G}$ is an anisotropic torus.  This is straightforward,  but still slightly comforting. 
+  
+  One may also verify that  a certain analogous statement to Conjecture \ref{mainconjecture}
+  holds in the situation studied in  \S \ref{Quillen},
+but there we do not understand the situation clearly at present --  hopefully it will eventually prove to be a specialization
+ of the general conjecture to the nontempered case.
+    
+  
+\subsection{Setup} \label{tori}
+
+Let $\mathbf{T}$ be an anisotropic $F$-torus; let $\mathcal{O}$ be the ring of integers of $F$. 
+Let us fix a finite set of places $\ramprimes$ such that $\mathbf{T}$ admits a smooth model over $\mathcal{O}[\frac{1}{\ramprimes}]$. 
+We assume it contains all places $\wp$ above the rational prime $p$. 
+
+
+
+  The associated symmetric space 
+$$ \mathcal{S} =  \mathbf{T}(F \otimes \R)/\mbox{maximal compact}$$
+has  $q,\delta$ invariants (see \eqref{qdef}):
+$$ q= 0 , \delta = \dim(\mathcal{S}).$$ 
+
+
+The arithmetic manifold $Y(K)$ associated to a level structure $K$  is
+a disjoint union of copies of $\mathcal{S}/\Delta$, where 
+  $\Delta$ is a congruence subgroup of $\mathbf{T}(\mathcal{O})$. 
+Moreover  the quotient $ \mathcal{S}/\Delta$ is a union of compact tori, and thus 
+the rank of $\Delta$, i.e. $\dim_{\Q} (\Delta \otimes \Q)$, equals $\delta$.  
+  We will suppose that $K$ is chosen so small that $\Delta$ is free of $p$-torsion.
+ 
+
+
+
+\subsection{Galois cohomology}
+
+Let $M$ be the motive associated to the first homology group $H_1(\mathbf{T})$ of $\mathbf{T}$. 
+
+Let $X_*(\mathbf{T})$ be the co-character group of $\mathbf{T}$. It carries an action of $\Gal(\overline{F}/F)$. 
+Coming from $X_* \otimes_{\Z} \mathbb{G}_m \stackrel{\sim}{\rightarrow} \mathbf{T}$, we get  an isomorphism of $\Gal(\overline{F}/F)$-modules 
+$$M_p := \mbox{$p$-adic realization of $M$} = X_*(\mathbf{T}) \otimes_{\Z} \Z_{p}(1) \simeq \varprojlim \mathbf{T}[p^n],$$
+the $p$-adic Tate module of $\mathbf{T}$. 
+Computing with the Kummer sequence,
+\begin{equation} \label{cococo} H^1(\mathcal{O}[\frac{1}{\ramprimes}] ,  M_p) \simeq \mathbf{T}(\mathcal{O}[\frac{1}{\ramprimes}]) \otimes \Z_p.  \end{equation}
+Inside the left-hand side, we can consider those classes  that are crystalline at $p$ and 
+ unramified at {\em all primes away from $p$, including primes in $S$.} We will denote this subgroup by $H^1_{f, \mathrm{ur}}(F, M_p)$. \footnote{For a precise
+ definition we refer to \cite{BK}: the group we have called $H^1_{f, \mathrm{ur}}$  is the group denoted by $H^1_{f, U}$ in \cite[Definition 5.1]{BK} with $U$ taken to be all finite places. This group is often 
+simply written $H^1_f(F, -)$ in the literature.}
+
+ The subgroup on the right-hand side corresponding to $H^1_{f, \mathrm{ur}}(F, M_p)$, call it
+$$ \Delta' \subset  \mathbf{T}(\mathcal{O}[\frac{1}{\ramprimes}]) \otimes \Z_p,$$ 
+ is  commensurable to the image of  $\Delta \otimes \Z_p$ in the right-hand side of \eqref{cococo}.
+{\color{\changecolor} Indeed, the constraint that a point $t \in  \mathbf{T}(\mathcal{O}[\frac{1}{\ramprimes}])$
+have cohomology class in $H^1_{f, \mathrm{ur}}$ is equivalent
+to forcing $t$ to belong to a suitable open compact subgroup of $\mathbf{T}(F_v)$
+for each $v \in S$; see   \cite[Theorem 2.3.1]{HK} for this statement in the trickier case when $v$ is above $p$.} 
+
+
+
+
+We suppose (shrinking $\Delta$ a little if necessary) that $\Delta \otimes \Z_p \subset \Delta'$.
+  
+Also, the {\em motivic} cohomology $H^1_{\mot}(M, \Q(1))$
+is identified with  with the $\mathbf{T}(\Q) \otimes \Q$,  as we may see by first passing to an extension that trivializes the torus $\mathbf{T}$. Presumably
+the following is valid, but I did not try to check it:
+
+\begin{quote} {\em Assumption:} The subgroup of ``integral classes'' $H^1_{\mot}(M_{\Z}, \Q(1))$ (see discussion after \eqref{saxophone}) is identified  with the image of $\Delta \otimes \Q$ inside $\mathbf{T}(\Q) \otimes \Q$. 
+\end{quote}
+
+Now a cohomological automorphic form $\Pi$ for $\mathbf{T}$ is trivial on the connected component of $\mathbf{T}(F \otimes \R)$, i.e.
+they are the {\em finite order}  id{\`e}le class characters of $\mathbf{T}$.   
+However, the associated co-adjoint motive (see \S \ref{sec:MV}) doesn't depend on which idele class character: we have simply 
+$$ \left(\mbox{ coadjoint motive for $\Pi$}  \right) (1) \simeq M,$$
+the motive $M$ described above. \footnote{
+ Indeed, the the $\Z_{p}$-linear dual of $\hat{T}$ is identified with 
+$$ \Lie(T^{\vee})^{\vee} \simeq \left( \Lie(\mathbf{G}_m) \otimes X_*(T^{\vee}) \right)^{\vee} \simeq X^*(T^{\vee})  \otimes \Z_p \simeq X_*(\mathbf{T}) \otimes \Z_{p}$$
+where we have fixed an isomorphism $\Z \simeq \Lie(\mathbf{G}_m)$.  }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now let us examine Conjecture \ref{mainconjecture} in this case. Put 
+$$\mathsf{V} = H^1_{f, \mathrm{ur}}(F,  M_p)^{\vee},$$
+where $M_p$ is the $p$-adic etale realization, and $\vee$ denotes $\Z_p$-linear dual; thus $\mathsf{V} = \Hom(\Delta',\Z_p)$. 
+The notation $H^1_{f, \mathrm{ur}}$ was defined after \eqref{cococo}. 
+ 
+ 
+There is a natural action of $\mathsf{V}$ on $H^*(Y, \Z_p)$,
+obtained from the maps
+\begin{equation} \label{frow} \mathsf{V} = H^1(\Delta', \Z_p) \rightarrow H^1(\Delta, \Z_p). \end{equation}
+Moreover, motivic cohomology gives a lattice in $\mathsf{V} \otimes \Q = H^1(\Delta', \Q_p)$
+(the classes which are $\Q$-valued on $\Delta \subset \Delta'$)
+and obviously this lattice indeed preserves $H^*(Y, \Q)$, in the
+$\Q$-linear extension of the action of $\mathsf{V}$. 
+
+
+The only point to be discussed is that the action \eqref{frow} is indeed that 
+resulting from the  same formalism as \S \ref{reciprocity}.  We describe this only briefly. 
+
+
+Let $v$ be a finite place not belonging to $S$, so that $\mathbf{T}$ extends to a smooth torus over $\mathcal{O}_v$. 
+As usual we have an injection, 
+ $$  \Hom(\mathbf{T}(\mathcal{O}_v), \Z/p^n) \hookrightarrow \mbox{ derived Hecke algebra at $v$,}$$
+ and thus an action of  the left-hand group on the cohomology
+ of $H^*(Y,\Z/p^n)$; explicitly, this action is obtained by pulling back cohomology classes via $\Delta \rightarrow \mathbf{T}(\mathcal{O}_v)$, and cup product. 
+ By just the same procedure as  that described  in \eqref{fqndef}, we can construct a map  
+
+
+
+
+
+
+
+
+
+
+
+ $$ \Hom(\mathbf{T}(\mathcal{O}_v), \Z/p^n)  \rightarrow \underbrace{ \mathsf{V}/p^n}_{\simeq \Hom(\Delta',\Z/p^n)} ,$$
+and one verifies this is the  map induced by $\Delta' \rightarrow \mathbf{T}(\mathcal{O}_v) \otimes \Z_p$. 
+ Then the action of $\mathsf{V}/p^n$  on $H^*(Y, \Z/p^n)$ is compatible with the ``derived Hecke'' action of $\Hom(\mathbf{T}(\mathcal{O}_v), \Z/p^n) $ for all $v$;
+ and in fact this compatibility determines the action of $\mathsf{V}/p^n$.

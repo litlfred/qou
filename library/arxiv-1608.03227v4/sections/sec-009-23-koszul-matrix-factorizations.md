@@ -8,69 +8,30 @@ pages: 11-12
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.972
 ---
-factorization that is ubiquitous in our work and in the previous work t hat relates matrix factorizations to
-knot invariants [26]. We need slightly more general setting than the one from [26] because we work with
-equivariant matrix factorizations. We state some simple properties of these factorizations that are used later
-in the paper.
-SupposeZ is a variety with the action of a group G and F is a G-invariant potential. An object of
-the category MF str
-B2 (Z,F ) is a free B2-equivariant Z2-graded C[Z]-module M with the odd G-invariant
-diﬀerential D such that D2 = F /BD
-M . In particular, a free G-equivariant C[Z]-module V with two elements
-dl∈V , dr∈V ∗ such that (dl,d r) = F , determines a Koszul matrix factorization K( V ;dl,d r) = ⋀ •V with
-the diﬀerential Dv = dl∧v +dr·v for v∈ ⋀ •V . We use a more detailed notation by choosing a basis
-θ1,...,θ n∈V and presenting dl anddr in terms of components: dl =a1θ1 +··· anθn,dr =b1θ∗
-1 +··· +bnθ∗
-n:
-(2.3) K( V ;dl,d r) =
-
-
-a1 b1 θ1
-... ... ...
-an bn θn
-
-
-The structure of G-module is described by specifying the action of G on the basis θ1,...,θ n. In some cases
-when G-equivariant structure of the module M is clear from the context we omit the last columns from
-the notations. We call a matrix presenting Koszul matrix factoriza tion Koszul matrix. For example, if we
-change the basis θ1,...,θ n to the basis θ1,...,θ i +cθj,...,θ j,...,θ n the i-th and j-th rows of the Koszul
-matrix will change: ñ
-ai bi θi
-aj bj θj
-ô
-↦→
-ñ
-ai +caj bi θi +cθj
-aj bj−cbi θj
-ô
-Suppose a1,...,a n ∈ C[Z] is a regular sequence and F ∈ (a1,...,a n). We can choose bi such that
-F = ∑
-iaibi and dl and dr are as above: dl =a1θ1 +··· anθn,dr =b1θ∗
-1 +··· +bnθ∗
-n. In general, there is no
-unique choice for bi but all choices lead to homotopy equivalent Koszul matrix factoriza tions (in the non-
-equivariant case they would be simply isomorphic). In other words, if b′
-i is a another collection of elements
-11
-such that F = ∑ aib′
-i and d′
-r = b′
-1θ∗
-1 +··· +b′
-nθ∗
-n then Lemma 2.2 implies that the complexes K( V ;dl,d r)
-and K(V ;dl,d ′
-r) are homotopy equivalent.
-Indeed, we need to apply Lemma 2.2 for ( C•,d +
-• ) = ( ˜C•, ˜d+
-• ) = (Λ •V,d l). The elements ai form a regular
-sequence hence Λ •V,d l is homotopic toO = C[Z]/I,I = (a1,...,a n) and we conclude that Hom <0
-d+ (C•,C •) =
-Hom<0
-d+ (O,C •) = 0. Moreover, the diﬀerentials dr and d′
-r are homotopies between F ∈ Hom 0
-d+(C•,C •)
-and 0. Thus there is a homotopy between K( V ;dl,d r) and K( V ;dl,d ′
-r) and from now on we use notation
-KF (a1,...,a n) for such matrix factorization.
+[]{#ssec: str eq Kosz label="ssec: str eq Kosz"} In this subsection we set notations for a particular type of matrix factorization that is ubiquitous in our work and in the previous work that relates matrix factorizations to knot invariants [@KR]. We need slightly more general setting than the one from [@KR] because we work with equivariant matrix factorizations. We state some simple properties of these factorizations that are used later in the paper.
+
+Suppose $\calZ$ is a variety with the action of a group $G$ and $F$ is a $G$-invariant potential.
+
+An object of the category $\MFs_{B^2}^{str}(\calZ,F)$ is a free $B^2$-equivariant $\Zt$-graded $\CC[\calZ]$-module $\xxM$ with the odd $G$-invariant differential $\xD$ such that $\xD^2 = F\xIdv{M}$. In particular, a free $G$-equivariant $\CC[\calZ]$-module $\xxV$ with two elements $\xdl\in\xxV$, $\xdr\in\xxV^*$ such that $(d_l,d_r)=F$, determines a Koszul matrix factorization $\SymbolPrint{\Kszvvv{\xxV}{\xdl}{\xdr}} = \bigwedge^{\bullet}\xxV$ with the differential $Dv = \xdl\wedge v + \xdr\cdot v$ for $v\in \bigwedge^{\bullet}\xxV$. We use a more detailed notation by choosing a basis $\ktht_1,\ldots,\ktht_n\in \xxV$ and presenting $\xdl$ and $\xdr$ in terms of components: $\xdl=a_1\ktht_1 +\cdots a_n\ktht_n$, $\xdr=b_1\ktht^*_1+\cdots + b_n\ktht^*_n$: $$\label{eq:kszm}
+\Kszvvv{\xxV}{\xdl}{\xdr} = \kmtr{a_1 & b_1 &\ktht_1\\ \vdots & \vdots & \vdots \\
+a_n & b_n & \ktht_n}$$ The structure of $G$-module is described by specifying the action of $G$ on the basis $\ktht_1,\ldots,\ktht_n$. In some cases when $G$-equivariant structure of the module $\xxM$ is clear from the context we omit the last columns from the notations. We call a matrix presenting Koszul matrix factorization Koszul matrix. For example,
+
+if we change the basis $\theta_1,\dots, \theta_n$ to the basis $\theta_1,\dots,\theta_i+c\theta_j,\dots, \theta_j,\dots,\theta_n$ the $i$-th and $j$-th rows of the Koszul matrix will change: $$\begin{bmatrix}
+a_i& b_i&\theta_i\\
+a_j& b_j&\theta_j
+\end{bmatrix}
+\mapsto
+\begin{bmatrix}
+a_i+ca_j& b_i&\theta_i+c\theta_j\\
+a_j& b_j-cb_i&\theta_j
+\end{bmatrix}$$
+
+Suppose $a_1,\dots,a_n\in \CC[\calZ]$ is a regular sequence and $F\in (a_1,\dots,a_n)$. We can choose $b_i$ such that $F=\sum_i a_i b_i$ and $\xdl$ and $\xdr$ are as above: $\xdl=a_1\ktht_1 +\cdots a_n\ktht_n$, $\xdr=b_1\ktht^*_1+\cdots + b_n\ktht^*_n$. In general, there is no unique choice for $b_i$ but all choices lead to homotopy equivalent Koszul matrix factorizations (in the non-equivariant case they would be simply isomorphic).
+
+In other words, if $b'_i$ is a another collection of elements such that $F=\sum a_i b'_i$ and $\xdr'=b'_1\ktht^*_1+\cdots + b'_n\ktht^*_n$ then Lemma [\[lem: ext uniq\]](#lem: ext uniq){reference-type="ref" reference="lem: ext uniq"} implies that the complexes $\Kszvvv{\xxV}{\xdl}{\xdr}$ and $\Kszvvv{\xxV}{\xdl}{\xdr'}$ are homotopy equivalent.
+
+Indeed, we need to apply Lemma [\[lem: ext uniq\]](#lem: ext uniq){reference-type="ref" reference="lem: ext uniq"} for $(C_\bullet,d^+_\bullet)=(\tilde{C}_\bullet,\tilde{d}_\bullet^+)=(\Lambda^\bullet V,\xdl)$. The elements $a_i$ form a regular sequence hence $\Lambda^\bullet V,\xdl$ is homotopic to $\mathcal{O}=\CC[Z]/I$, $I=(a_1,\dots,a_n)$ and we conclude that $\Hom_{d_+}^{<0}(C_\bullet,C_\bullet)=\Hom_{d_+}^{<0}(\mathcal{O},C_\bullet)=0$. Moreover, the differentials $\xdr$ and $\xdr'$ are homotopies between $F\in Hom_{d_+}^0(C_\bullet,C_\bullet)$ and $0$. Thus there is a homotopy between $\Kszvvv{\xxV}{\xdl}{\xdr}$ and $\Kszvvv{\xxV}{\xdl}{\xdr'}$ and from now on we use notation $\SymbolPrint{\mathrm{K}^F}(a_1,\dots,a_n)$ for such matrix factorization.

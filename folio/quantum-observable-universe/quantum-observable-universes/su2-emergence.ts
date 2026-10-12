@@ -23,6 +23,7 @@ export default theorem({
   lean: { ref: "qou:QOU.su2_emergence_rank_forced", validation: "not_checked" },
   title: "Emergence of the gauge group",
   authorNotes: [
+    { kind: "note", date: "2026-10-11", body: "Relocated from the block prose by the paper-voice commentary audit: stating the two conclusions as one conjunction is deliberate — an earlier formulation derived \"which subgroup\" and reported it as though it had also derived \"which rank\". `QOU.su2_emergence_rank_forced` is sorry-free." },
     {
       kind: "note",
       date: "2026-08-16",

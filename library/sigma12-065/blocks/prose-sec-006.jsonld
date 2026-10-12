@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/sigma12-065/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/sigma12-065/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Understanding the isomorphism f",
   "pageStart": 9,
   "pageEnd": 15,
   "text": "../sections/sec-006-43-understanding-the-isomorphism-f.md",
-  "derivedFrom": "library/sigma12-065/manifest",
-  "sourceDocument": "library/sigma12-065/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sigma12-065/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sigma12-065/manifest.jsonld",
   "provenance": "ingested"
 }

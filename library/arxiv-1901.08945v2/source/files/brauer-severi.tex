@@ -1,0 +1,220 @@
+% !TeX root = main.tex
+\section{Semi-orthogonal decompositions for Brauer--Severi schemes}
+\label{sec:brau-severi-vari}
+In this section, we demonstrate how to use the theory of gerbes developed by Giraud to obtain a
+simple and conceptually appealing proof for the existence of the semi-orthogonal decomposition
+of the derived category of a Brauer--Severi scheme given by Bernardara~\cite[Theorem~4.1]{bernardara-BS-schemes}.
+We start by recalling some basic facts on Brauer--Severi schemes and their trivializing gerbes
+from \cite[Example~V.4.8]{giraud1971}.
+
+Let $S$ be an arbitrary algebraic stack.
+An algebraic stack $P$ over $S$ is called a \emph{Brauer--Severi scheme} over $S$
+if it is \emph{fppf}-locally (on $S$) isomorphic to a projectivized
+vector bundle.
+Of course $P$ need not be a scheme in general;
+the terminology is motivated by the fact that the structure
+morphism to $S$ is
+representable by schemes. 
+
+Given a Brauer--Severi scheme $\pi\colon P \to S$, we consider
+its \emph{gerbe of trivializations} and denote it by
+$\beta\colon B \to S$.  Let $t\colon T \to S$ be a morphism.  The
+$t$-points of $B$ are pairs $(\mathcal{V}, v)$, where
+$\mathcal{V}$ is a finite locally free sheaf of
+$\mathcal{O}_T$-modules 
+and
+$v\colon P_{T} \xrightarrow{\sim} \mathbb{P}(\mathcal{V}^\vee)$
+is an isomorphism over $T$.
+The gerbe $B$ is endowed with a tautological
+finite locally free sheaf $\mathcal{E}$ of $\mathcal{O}_{B}$-modules.
+This is obtained on $t$-points $(\mathcal{V}, v)$ as above by
+simply forgetting the isomorphism $v$.  The gerbe $B$ also has an
+obvious banding by $\GGm$ given on $t$-points as above by the
+usual action by $\mathcal{O}^\times_{T}(T)$ on $\mathcal{V}$. 
+In particular,
+the tautological
+sheaf $\mathcal{E}$ is a $\beta$-twisted sheaf over $S$ in the
+sense of Definition~\ref{def:twisted}.
+
+Note that by construction, the gerbe of trivializations fits into a 2-cartesian diagram
+\begin{equation}
+  \label{eq:tautological-triv}
+  \xymatrix{
+    {\bP(\mathcal{E}^\vee)} \ar[r]^-{\gamma}\ar[d]_-{\rho} 
+    & 
+    {P} \ar[d]^-\pi\\
+    {B} \ar[r]_-\beta 
+    & {S,}
+  }
+\end{equation}
+which we call the \emph{tautological trivialization diagram}.
+
+The class $[\beta]$ of $\beta \colon B \ra S$ (see Theorem~\ref{t:gerbes-H2}) in $\HH^2(S_\fppf, \GGm)$
+is called the \emph{Brauer class} of the Brauer--Severi scheme $\pi\colon P \to S$.
+This class vanishes if and only if~$P$
+is a projectivized vector bundle over~$S$.
+
+\begin{remark}
+\label{rem-universal-gerbe-of-trivializations}
+Consider the Brauer--Severi scheme $\pi\colon [\bP^{n - 1}/\PGL_n] \to \BB \PGL_n$.
+Its gerbe of trivializations can be identified with the $\GGm$-gerbe
+$\alpha \colon \BB \GL_n \to \BB \PGL_n$
+in Example~\ref{ex-gerbes}.\ref{it-universal-projective}.
+Note that the stack $\BB \PGL_n$ classifies Brauer--Severi schemes.
+Given a Brauer--Severi scheme $P$ over an arbitrary algebraic stack $S$,
+its gerbe of trivializations can be identified with the pull-back of $\alpha$
+along the morphism $S \to \BB \PGL_n$ corresponding to $P$.
+\end{remark}
+
+\begin{theorem}
+  \label{t:sod-brauer-severi}
+  Let $S$ be an algebraic stack and $\pi\colon P \to S$ a
+  Brauer--Severi scheme of relative dimension $n \geq 0$ over $S$.
+  Using the notation from above,
+  we consider the tautological trivialization diagram~\eqref{eq:tautological-triv}.
+  Then the functors 
+  \begin{equation}
+  \label{eq:BS-full-faithful}
+  \Phi_i \colon \D_{\qc, i}(B) \to \D_{\qc}(P), \qquad
+  \mathcal{F} \mapsto \gamma_*(\mathcal{O}(i)\otimes \rho^*\mathcal{F}),
+  \end{equation}
+  are fully faithful for each $i$.
+  Moreover, for each $a \in \mathbb{Z}$,
+  we have a semi-orthogonal decomposition
+  \begin{equation}
+  \label{eq:BS-sod}
+  \D_\qc(P) = \langle \im \Phi_a, \ldots, \im \Phi_{a + n} \rangle
+  \end{equation}
+  into right admissible categories.
+\end{theorem}
+\begin{remark}
+  \label{r:image-twisted}
+  In particular (see~Corollary~\ref{cor:twisted-power-derived}),
+  the essential image $\im \Phi_i$ is equivalent to the
+  category $\D_{\qc, \beta^i}(S)$ of
+  $\beta^i$-twisted complexes on $S$ 
+  in the sense of Definition~\ref{def:derived-twisted}.
+  Recall that, as explained above,
+  $[\beta] \in \HH^2(S_\fppf, \GGm)$ is the Brauer class of $P$.
+\end{remark}
+\begin{proof}
+Since $\rho$ is the projectivization of a vector bundle of rank $n + 1$,
+it follows from \cite[Theorem~6.7]{BS-conservative} that the functors
+$$
+\Psi_i \colon \D_\qc(B) \to \D_{\qc}(\mathbb{P}(\mathcal{E}^\vee)), \qquad
+\mathcal{F} \mapsto \mathcal{O}(i)\otimes \rho^*\mathcal{F},
+$$
+are fully faithful and that
+$$
+\D_\qc(\mathbb{P}(\mathcal{E}^\vee)) = \langle \im \Psi_{a}, \ldots,  \im \Psi_{a + n}\rangle
+$$
+is a semi-orthogonal decomposition for any $a \in \mathbb{Z}$.
+Since both $\beta$ and $\gamma$ are $\GGm$-gerbes,
+Theorem~\ref{t:chi-splitting-D-qc-X} provides equivalences
+  \begin{equation*}
+    \prod_{d \in \bZ} \D_{\qc, d}(B) 
+    \sira 
+    \D_\qc(B),
+    \qquad
+    \prod_{d \in \bZ} \D_{\qc, d}(\bP(\mathcal{E}^\vee)) 
+    \sira
+    \D_\qc(\bP(\mathcal{E}^\vee)).
+  \end{equation*}
+By Proposition~\ref{p:pull-back-grading-derived},
+the pull-back $\rho^*$ preserves $d$-homogeneous objects for each
+$d \in \bZ$.
+Since $\mathcal{E}^\vee$ is homogeneous of degree -1 we see from
+the canonical surjection $\rho^*(\mathcal{E}^\vee) \to
+\mathcal{O}(1)$ and~Theorem~\ref{t:chi-splitting-D-qc-X} that
+$\mathcal{O}(1)$ is homogeneous of degree -1. This shows that
+$\Psi_i$ shifts the degree by $-i$.
+Hence we get a semi-orthogonal decomposition
+$$
+\D_{\qc, 0}(\mathbb{P}(\mathcal{E}^\vee)) = \langle \im \Psi'_{a}, \ldots,  \im \Psi'_{a + n}\rangle,
+$$
+where $\Psi'_i$ denotes the restriction of $\Psi_i$ to $\D_{\qc, i}(B)$.
+Since $\gamma$ is a gerbe, the pull-back $\gamma^*$ is fully faithful with essential image
+$\D_{\qc, 0}(\mathbb{P}(\mathcal{E}^\vee))$ by
+Proposition~\ref{t:equivalence-epi-derived}.
+Therefore the theorem follows from the identities $\Phi_i = \gamma_*\circ\Psi'_i$.
+\end{proof}
+
+\begin{remark}
+Note that Theorem~\ref{t:sod-brauer-severi} differs from the corresponding decomposition
+in \cite[Theorem~4.1]{bernardara-BS-schemes} with respect to the sign of the Brauer class $\beta$.
+This is simply due to different sign conventions.
+We follow the convention used by Giraud in \cite[Example~V.4.8]{giraud1971}.
+\end{remark}
+
+Similarly, as in the corresponding theorem for projectivized vector bundles
+(see \cite[Theorem~6.7, Corollary~6.8]{BS-conservative}),
+we also get semi-orthogonal decompositions for the categories of
+perfect complexes, of
+locally bounded pseudo-coherent complexes, and for the singularity categories, respectively.
+Following the notation from \cite[Section~2.3]{BS-conservative},
+we denote these categories by $\D_\pf(P)$, $\D^\locbd_\pc(P)$ and~$\D^\sg_\pc(P)$,
+respectively.
+
+\begin{corollary}
+\label{c:sod-brauer-severi}
+Keep the assumptions from Theorem~\ref{t:sod-brauer-severi}.
+The functors $\Phi_i$ induce functors
+\begin{align*}
+\Phi^\pf_i & \colon \D_{\pf, i}(B) \to \D_{\pf}(P), \qquad
+\Phi^\pc_i \colon \D^\locbd_{\pc, i}(B) \to \D^\locbd_{\pc}(P),\\
+\Phi^\sg_i & \colon \D_{\sg, i}(B) \to \D_{\sg}(P),
+\end{align*}
+where the source categories are the full subcategories of
+$i$-homogeneous objects in the categories
+$\D_{\pf}(B)$, $\D^\locbd_{\pc}(B)$ and~$\D_\sg(B)$ introduced above,
+respectively.
+Furthermore, for each $a \in \mathbb{Z}$, this yields a semi-orthogonal decomposition
+\begin{align}
+\label{eq-sod-perfect}
+\D_\pf(P) & = \langle \im \Phi^\pf_a, \ldots, \Phi^\pf_{a + n}\rangle,
+\intertext{%
+into admissible subcategories and semi-orthogonal decompositions
+}
+\D^\locbd_\pc(P) & = \langle \im \Phi^\pc_a, \ldots, \Phi^\pc_{a + n}\rangle,\\
+\D_\sg(P) & = \langle \im \Phi^\sg_a, \ldots, \Phi^\sg_{a + n}\rangle
+\end{align}
+into right admissible subcategories.
+In particular, if $S$ is Noetherian, we get the corresponding decomposition of $\D^\bd_\co(P) = \D^\locbd_\pc(P)$.
+\end{corollary}
+
+\begin{proof}
+The functors $\Phi_i$ and their right adjoints restrict to the subcategories
+of perfect complexes and the subcategories of locally bounded pseudo-coherent
+complexes, respectively.
+Indeed, this follows from the corresponding properties for $\Psi_i$ (cf.~\cite[Corollary~6.8]{BS-conservative})
+using the notation in the proof of Theorem~\ref{t:sod-brauer-severi}.
+Hence the decompositions in the corollary into right admissible categories
+follow formally from Theorem~\ref{t:sod-brauer-severi} (see~\cite[Corollary~5.19]{BS-conservative}).
+Moreover, the restriction of each $\Psi_i$ to the category of
+perfect complexes has a left adjoint
+(cf.~\cite[Corollary~6.8]{BS-conservative}).
+\end{proof}
+
+\begin{remark}
+\label{r:bernardara}
+Let us explain why Bernardara's Theorem~4.1 from~\cite{bernardara-BS-schemes} is a special case of the semi-orthogonal
+decomposition~\eqref{eq-sod-perfect}.
+In Bernardara's setting,
+the base $S$ is a Noetherian, separated scheme with the additional property that any two points is
+contained in an open affine.
+In fact, he only states that $S$ should be locally noetherian with the extra condition on points,
+but the other properties are used implicitly since he uses results from C{\u{a}}ld{\u{a}}raru's thesis,
+where the stronger assumptions are in effect \cite[Section~2.1]{caldararu2000}.
+Bernardara's category $\D(S, \alpha)$ is the derived category of perfect complexes of $\alpha$-twisted coherent sheaves.
+By the comparison by Lieblich mentioned in Remark~\ref{rem-twisted-2-cocycle},
+this is equivalent to $\D_\pf(\coh_\alpha(S))$,
+which is easily seen to be equivalent to $\D_\pf(\Qcoh_\alpha(S))$ by using that every quasi-coherent
+sheaf on the gerbe corresponding to $\alpha$ is a direct limit of its coherent subsheaves~\cite[Theorem~15.4]{lmb2000}.
+Now this category is equivalent to $\D_{\pf, \alpha}(S)$ since the functor \eqref{eq-equiv-qcoh} is an equivalence
+under the assumptions on $S$ (see~Remark~\ref{rem-trivial-case}).
+\end{remark}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 

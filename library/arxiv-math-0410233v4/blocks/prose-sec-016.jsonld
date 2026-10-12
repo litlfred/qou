@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0410233v4/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0410233v4/blocks/prose-sec-016",
   "kind": "prose",
-  "title": "Bounding the meridian",
-  "pageStart": 28,
-  "pageEnd": 31,
-  "text": "../sections/sec-016-5-bounding-the-meridian.md",
-  "derivedFrom": "library/arxiv-math-0410233v4/manifest",
-  "sourceDocument": "library/arxiv-math-0410233v4/manifest",
+  "title": "Selecting local deformations",
+  "pageStart": 19,
+  "pageEnd": 21,
+  "text": "../sections/sec-016-42-selecting-local-deformations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0410233v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0410233v4/manifest.jsonld",
   "provenance": "ingested"
 }

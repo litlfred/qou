@@ -9,7 +9,7 @@ computed at
 
     q0_retired = 1.1099785955541805752815940796095093779932822799587
 
-which survives only in `computations/_deprecated/` and is neither live anchor. It
+which survives only in `fsh-guts/deprecated/computations/` and is neither live anchor. It
 is the **CODATA-2018 vintage of the muon pin** — recovered by inverting CAL-2 at
 `m_mu/m_e = 206.7682830` — and the 2026-08-15 substrate fix that moved to the
 NIST table reached `computations/` and `tools/` but not `content/`.
@@ -275,7 +275,7 @@ def main() -> int:
             "1.109978595642739046681795129380001752700065561029011556974045769999095 "
             "from the canonical q-pinning-50-digit witness. The retired value is the "
             "CODATA-2018 vintage of the muon anchor and survives only in "
-            "computations/_deprecated/; the 2026-08-15 substrate fix reached "
+            "fsh-guts/deprecated/computations/; the 2026-08-15 substrate fix reached "
             "computations/ and tools/ but not content/. Refreshes per BLOCK, not per "
             "figure: an earlier pass substituted only the six sweep-flagged figures "
             "and was reverted because each table's other q0-derived rows were never "

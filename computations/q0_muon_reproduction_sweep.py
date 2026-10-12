@@ -114,7 +114,7 @@ def _witness_for(producer: Path) -> Path | None:
     `probes/` entries.
 
     The old rglob fallback also had no `_deprecated` filter and resolved
-    `hecke_character_symbolic` to `computations/_deprecated/…`; `witness_path`
+    `hecke_character_symbolic` to `fsh-guts/deprecated/computations/…`; `witness_path`
     skips leading-underscore dirs, so that is closed too.
 
     Bean `qou-kcii`.

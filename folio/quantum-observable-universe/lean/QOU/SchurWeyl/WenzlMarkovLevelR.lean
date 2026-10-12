@@ -28,12 +28,15 @@ arbitrary `z`, which is off it.
 
 ## Base ring (§7c)
 
-`ℝ`, forced by `seminormalParam` and by `Hecke ℝ q q⁻¹`.
+Generic `[Field K]`.  The one step that used order, `q² + 1 ≠ 0`, now follows from `q` not being
+a root of unity (`q⁴ ≠ 1`).
 
 LaTeX label: `thm:wenzl-markov-level-r`
 -/
 
 namespace QOU.SchurWeyl
+
+variable {K : Type*} [Field K]
 namespace SeminormalRep
 
 open QOU.Mathlib QOU.SchurWeyl.TableauCells QOU.SchurWeyl.Seminormal QOU.SchurWeyl.HeckeInclusion
@@ -48,12 +51,12 @@ the `w`-weighted trace of `y` over those of size `m + 1`, with
 `hgen` — `Q` is not a root of unity — is the single genericity hypothesis the whole level-`r` chain
 runs on; `hq2` is what `seminormalRep` itself needs, and is implied by `hgen` but has to be named
 because it appears in the statement. -/
-theorem markov_wenzlWeight (q : ℝ) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
-    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r : ℕ} (hr : r ≠ 0) {m : ℕ}
-    (y : Hecke ℝ q q⁻¹ m) :
+theorem markov_wenzlWeight (q : K) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : K)) ^ k ≠ 1) {r : ℕ} (hr : r ≠ 0) {m : ℕ}
+    (y : Hecke K q q⁻¹ m) :
     ∑ L : {ρ : YoungDiagram // ρ.cells.card = m + 2},
         wenzlWeight r (q ^ 2) L.1
-          * ((seminormalRep q hq hq2 (m + 1) L.2 (heckeIncl ℝ q q⁻¹ m y))
+          * ((seminormalRep q hq hq2 (m + 1) L.2 (heckeIncl K q q⁻¹ m y))
               * genMat q (m + 1) (by omega) L.2.ge).trace
       = (q ^ 2) ^ r / (q * levelBracket r (q ^ 2))
         * ∑ ν : {ν : YoungDiagram // ν.cells.card = m + 1},
@@ -66,16 +69,22 @@ theorem markov_wenzlWeight (q : ℝ) (hq : q ≠ 0) (hq2 : GenericParameter.NotR
 `z_2 = (q²)²/(q·[2]_{q²}) = q³/(q²+1) = z_D` and `wenzlWeight 2 (q²) = ocneanuWeight q z_D`, so
 `markov_wenzlWeight` at `r = 2` reproduces `MarkovConventionD.markov_conventionD` on the nose — the
 general-level theorem specialises back to what #5575 proved, rather than merely resembling it. -/
-theorem markov_wenzlWeight_two (q : ℝ) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
-    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {m : ℕ} (y : Hecke ℝ q q⁻¹ m) :
+theorem markov_wenzlWeight_two (q : K) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : K)) ^ k ≠ 1) {m : ℕ} (y : Hecke K q q⁻¹ m) :
     ∑ L : {ρ : YoungDiagram // ρ.cells.card = m + 2},
         ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) L.1
-          * ((seminormalRep q hq hq2 (m + 1) L.2 (heckeIncl ℝ q q⁻¹ m y))
+          * ((seminormalRep q hq hq2 (m + 1) L.2 (heckeIncl K q q⁻¹ m y))
               * genMat q (m + 1) (by omega) L.2.ge).trace
       = (q ^ 3 / (q ^ 2 + 1)) * ∑ ν : {ν : YoungDiagram // ν.cells.card = m + 1},
           ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 * (seminormalRep q hq hq2 m ν.2 y).trace := by
-  have hq21 : (q : ℝ) ^ 2 + 1 ≠ 0 := by positivity
-  have hz : (q ^ 2 : ℝ) ^ 2 / (q * levelBracket 2 (q ^ 2)) = q ^ 3 / (q ^ 2 + 1) := by
+  have hq21 : (q : K) ^ 2 + 1 ≠ 0 := by
+    intro h
+    have h2 : q ^ 2 = -1 := eq_neg_of_add_eq_zero_left h
+    exact hq2 4 (by norm_num) (by
+      calc q ^ 4 = (q ^ 2) ^ 2 := by ring
+        _ = 1 := by rw [h2]; ring)
+  have hz : (q ^ 2 : K) ^ 2 / (q * levelBracket 2 (q ^ 2)) = q ^ 3 / (q ^ 2 + 1) := by
+    have h12 : (1 : K) + q ^ 2 ≠ 0 := by rw [add_comm]; exact hq21
     rw [levelBracket_two]
     field_simp
     ring

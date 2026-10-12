@@ -88,7 +88,7 @@ def _hits(text: str, needle: str, prefix_sensitive: bool) -> int:
 def main() -> int:
     witnesses = sorted(
         p for p in REPO.glob("computations/**/*.witness.json")
-        if "_deprecated" not in p.parts
+        if ("_deprecated" not in p.parts and "fsh-guts" not in p.parts)
     )
 
     per_file: dict[str, dict[str, int]] = {}

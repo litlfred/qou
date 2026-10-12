@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2608.25107v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+  "contains": [
+    "library/arxiv-2608.25107v1/sections/sec-000",
+    "library/arxiv-2608.25107v1/sections/sec-001",
+    "library/arxiv-2608.25107v1/sections/sec-002",
+    "library/arxiv-2608.25107v1/sections/sec-003",
+    "library/arxiv-2608.25107v1/sections/sec-004",
+    "library/arxiv-2608.25107v1/sections/sec-005",
+    "library/arxiv-2608.25107v1/sections/sec-006",
+    "library/arxiv-2608.25107v1/sections/sec-007",
+    "library/arxiv-2608.25107v1/sections/sec-008",
+    "library/arxiv-2608.25107v1/sections/sec-009",
+    "library/arxiv-2608.25107v1/sections/sec-010",
+    "library/arxiv-2608.25107v1/sections/sec-011",
+    "library/arxiv-2608.25107v1/sections/sec-012",
+    "library/arxiv-2608.25107v1/sections/sec-013",
+    "library/arxiv-2608.25107v1/sections/sec-014",
+    "library/arxiv-2608.25107v1/sections/sec-015",
+    "library/arxiv-2608.25107v1/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2608.25107&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2608.25107v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2608.25107v1.pdf",
+    "source_sha256": "6dca8b99a1f32db4eda7f780e3e31f5ad403be23d6ea268df5472513dcf21c04",
+    "pages": 22,
+    "arxiv": {
+      "id": "2608.25107",
+      "version": "1",
+      "primary_class": "hep-ex",
+      "stamp_date": "25 Aug 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/poincare-proof-outline/sections/sec-059",
   "@type": [
     "doco:Section"
   ],
-  "title": "Lower dimension axiom",
-  "pageStart": 143,
-  "pageEnd": 143,
+  "title": "Segment construction axiom",
+  "pageStart": 138,
+  "pageEnd": 140,
   "contains": [
     "library/poincare-proof-outline/blocks/prose-sec-059"
   ],
-  "derivedFrom": "library/poincare-proof-outline/manifest",
-  "sourceDocument": "library/poincare-proof-outline/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
   "provenance": "ingested"
 }

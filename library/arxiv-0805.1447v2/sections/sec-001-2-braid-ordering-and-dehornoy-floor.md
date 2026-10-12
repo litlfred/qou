@@ -8,97 +8,54 @@ pages: 4-6
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
 doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
+text_source: latex
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.723
 ---
-In this section we review some of fundamental facts of Dehornoy
-ordering and Dehornoy ﬂoor. Braid group Bn is, by deﬁnition, a group
-which is presented by
-⟨σ1, · · · , σ n−1|σiσjσi = σjσiσj if |i − j| = 1, σ iσj = σjσi if |i − j| ≥ 2⟩.
-Geometrically, elements of braid group β ∈ Bn are represented by
-braided n-strands which move from above to below, oriented downward.
-By connecting their endpoints of strands canonically, we obtain an
-oriented link. We denote this link by ˆβ and call closed braid or closure
-of β .
-We call the braid ( σ1σ2 · · · σn−1)(σ1σ2 · · ·σn−2) · · ·(σ1σ2)(σ1) Gar-
-side’s fundamental braid and denote it by ∆. The Garside fundamental
-braid∆ plays an important role in braid groups. It is known that ∆ 2
-generates the center of Bn, which is an inﬁnite cyclic group. For these
-basic facts about braid group, see [B].
-2.1. Dehornoy ordering, Dehornoy ﬂoor. In this section we give
-a brief exposition of left-invariant total ordering of braid groups c alled
-Dehornoy ordering, and deﬁne Dehornoy ﬂoor. Dehornoy ﬂoor is ﬁ rst
-introduced in [MN], though they do not use term Dehornoy ﬂoor. This
-is a measure of how far braid is from the identity elements with respec t
-to Dehornoy ordering and can be seen as some kinds of complexity of
-BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID 5
-braids. We describe fundamental results about Dehornoy ﬂoor, p roved
-in [MN],[Ma].
-A braid β ∈ Bn is called σ-positive if β can be represented by a word
-which contains at least one σi, and contains no σ ±1
-1 , σ ±1
-2 · · · , σ ±1
-i−1, σ −1
-i
-for some 1 ≤ i ≤ n − 1. we say α < β is true if and only if the
-braid α −1β is σ-positive. It is known that the relation < deﬁnes left-
-invariant total ordering of Bn; That is, < is total ordering and if braids
-α, β ∈ Bn satisfy α < β , then for all braid γ ∈ Bn, γα < γβ holds. We
-call this ordering Dehornoy ordering. Dehornoy ordering has following
-nice property, called property S or Subword property.
-Propotition 1 (Property S ([DDR W])). For any braids β1, β 2 ∈ Bn
-and 1 ≤ i ≤ n − 1,
-β1σiβ2 > β 1β2 > β 1σ −1
-i σ2
-holds.
-As we mentioned at introduction, there are many other interpreta -
-tion and deﬁnition of Dehornoy ordering. See [DDR W] for those oth er
-deﬁnitions and meanings. We will describe one of the geometrical def -
-inition later. Using Dehornoy ordering, we deﬁne Dehornoy ﬂoor of
-braids [ β ]D as follows.
-Deﬁnition 1. Dehornoy ﬂoor [β ]D of braid β ∈ Bn is a minimal
-non-negative integer m which satisﬁes β ∈ (∆ −2m−2, ∆ 2m+2), where
-(∆ −2m−2, ∆ 2m+2) = {α ∈ Bn | ∆ −2m−2 < α < ∆ 2m+2}.
-Now we remark one important facts. We must be careful that when
-we think about Dehornoy ﬂoor, which Bn a braid β belongs to is very
-important. For example, for a braid β = ( σ1σ2)4, [ β ]D = 1 if we
-consider β ∈ B3, and [ β ]D = 0 if we consider β ∈ B4. Fortunately,
-if we use braid groups to describe links, the number of strands are
-always implicit, so there might be no confusion about the number of
-braid strands. So in most cases, we omit to write which Bn a braid
-β belongs to. we also remark that Dehornoy ﬂoor is not a conjugacy
-invariant of braids. For example, 3-braid ∆ 2σ1σ −1
-2 has Dehornoy ﬂoor
-1 but its conjugation ∆ −1(∆ 2σ1σ −1
-2 )∆ = ∆ 2σ2σ −1
-1 has zero Dehornoy
-ﬂoor. This is mainly because Dehornoy ordering is not right-invariant ;
-That is, it does not hold that for every γ ∈ Bn, αγ < βγ whenever
-α < β . Thus, Dehornoy ﬂoor is far from knot invariant.
-The most important property of Dehornor ﬂoor is that it can be see n
-as some kinds of restriction for admissibility of braid moves. We sum-
-marize the basic properties of Dehornoy ﬂoor, all of which are prov ed
-in [MN], or [Ma].
-6 TETSUYA ITO
-Propotition 2 ([MN],[Ma]). Let α, β ∈ Bn. Then following holds.
-(1) If braid β ∈ Bn is represented by braid word which contains s oc-
-currence of σ1 and k occurrence of σ −1
-1 , then [β ]D < max{s, k }.
-(2) |[β ]D − [β ′]D| ≤ 1 if β and β ′ are conjugate.
-(3) [ αβ ]D ≤ 1 + [α ]D + [β ]D.
-(4) If closure of braid β ∈ Bn admit destabilization or exchange
-move, [β ]D ≤ 1.
-(5) For every n, there exist positive integer r(n) such that for every
-β ∈ Bn, if [β ]D > r (n) then ˆβ is the unique closed n-braid
-representative of link types represented by its closure. Th at is,
-if ˆβ = ˆβ ′ holds for some β ′ ∈ Bn, β and β ′ are conjugate.
-We remark that Dehornoy ﬂoor is not a conjugacy invariant but
-proposition 2 (2) shows taking conjugate changes Dehornoy ﬂoor at
-most by one.
-Remark 1. Our deﬁnition of Dehornoy ﬂoor is slightly diﬀerent from
-one in [Ma]. Our deﬁnition is rather after [MN]. We adopt this deﬁni-
-tion because for application of knot theory, this formulation seems to
-be more natural and makes statement of results simple.
-Remark 2. There exist an inﬁnite family of left-invariant total order-
-ing of braid groups, containing Dehornoy ordering, called Thurston-
-type ordering (See [DDR W] or [SW]). Most of results in this paper can
-be stated by using Thurston-type ordering instead of using Dehor noy
-ordering, especially using ”Thurston ﬂoor” deﬁned by the similar way .
+In this section we review some of fundamental facts of Dehornoy ordering and Dehornoy floor. Braid group $B_{n}$ is, by definition, a group which is presented by $$\langle \sigma_{1},\cdots,\sigma_{n-1}| \sigma_{i}\sigma_{j}\sigma_{i}=\sigma_{j}\sigma_{i}\sigma_{j} \textrm{ if } |i-j|=1, \; \sigma_{i}\sigma_{j}=\sigma_{j}\sigma_{i} \textrm{ if } |i-j|\geq 2  \rangle .$$ Geometrically, elements of braid group $\beta \in B_{n}$ are represented by braided $n$-strands which move from above to below, oriented downward. By connecting their endpoints of strands canonically, we obtain an oriented link. We denote this link by $\widehat{\beta}$ and call *closed braid* or *closure* of $\beta$.
+
+We call the braid $(\sigma_{1}\sigma_{2}\cdots\sigma_{n-1})(\sigma_{1}\sigma_{2}\cdots\sigma_{n-2})\cdots(\sigma_{1}\sigma_{2})(\sigma_{1})$ *Garside's fundamental braid* and denote it by $\Delta$. The Garside fundamental braid$\Delta$ plays an important role in braid groups. It is known that $\Delta^{2}$ generates the center of $B_{n}$, which is an infinite cyclic group. For these basic facts about braid group, see [@b].
+
+## Dehornoy ordering, Dehornoy floor
+
+In this section we give a brief exposition of left-invariant total ordering of braid groups called Dehornoy ordering, and define Dehornoy floor. Dehornoy floor is first introduced in [@mn], though they do not use term Dehornoy floor. This is a measure of how far braid is from the identity elements with respect to Dehornoy ordering and can be seen as some kinds of complexity of braids. We describe fundamental results about Dehornoy floor, proved in [@mn],[@ma].
+
+A braid $\beta \in B_{n}$ is called $\sigma$-$positive$ if $\beta$ can be represented by a word which contains at least one $\sigma_{i}$, and contains no $\sigma_{1}^{\pm1},\sigma_{2}^{\pm1}\cdots,\sigma_{i-1}^{\pm 1},\sigma_{i}^{-1}$ for some $1\leq i \leq n-1$. we say $\alpha < \beta$ is true if and only if the braid $\alpha^{-1}\beta$ is $\sigma$-positive. It is known that the relation $<$ defines left-invariant total ordering of $B_{n}$; That is, $<$ is total ordering and if braids $\alpha,\beta \in B_{n}$ satisfy $\alpha < \beta$ , then for all braid $\gamma \in B_{n}$, $\gamma \alpha < \gamma \beta$ holds. We call this ordering *Dehornoy ordering*. Dehornoy ordering has following nice property, called *property $S$* or *Subword property*.
+
+::: prop
+[]{#prop:Property-S label="prop:Property-S"} For any braids $\beta_{1},\beta_{2} \in B_{n}$ and $1\leq i \leq n-1$, $$\beta_{1}\sigma_{i}\beta_{2} > \beta_{1}\beta_{2} > \beta_{1}\sigma_{i}^{-1}\sigma_{2}$$ holds.
+:::
+
+As we mentioned at introduction, there are many other interpretation and definition of Dehornoy ordering. See [@ddrw] for those other definitions and meanings. We will describe one of the geometrical definition later. Using Dehornoy ordering, we define Dehornoy floor of braids $[\beta]_{D}$ as follows.
+
+::: defn
+Dehornoy floor $[\beta]_{D}$ of braid $\beta \in B_{n}$ is a minimal non-negative integer $m$ which satisfies $\beta \in (\Delta^{-2m-2},\Delta^{2m+2})$, where $(\Delta^{-2m-2},\Delta^{2m+2})= \{ \alpha \in B_{n} \;| \; \Delta^{-2m-2} < \alpha  <\Delta^{2m+2} \}$.
+:::
+
+Now we remark one important facts. We must be careful that when we think about Dehornoy floor, which $B_{n}$ a braid $\beta$ belongs to is very important. For example, for a braid $\beta = (\sigma_{1}\sigma_{2})^{4}$, $[\beta]_{D}=1$ if we consider $\beta \in B_{3}$, and $[\beta]_{D}=0$ if we consider $\beta \in B_{4}$. Fortunately, if we use braid groups to describe links, the number of strands are always implicit, so there might be no confusion about the number of braid strands. So in most cases, we omit to write which $B_{n}$ a braid $\beta$ belongs to. we also remark that Dehornoy floor is not a conjugacy invariant of braids. For example, 3-braid $\Delta^{2}\sigma_{1}\sigma_{2}^{-1}$ has Dehornoy floor $1$ but its conjugation $\Delta^{-1}(\Delta^{2}\sigma_{1}\sigma_{2}^{-1})\Delta = \Delta^{2}\sigma_{2}\sigma_{1}^{-1}$ has zero Dehornoy floor. This is mainly because Dehornoy ordering is not right-invariant; That is, it does not hold that for every $\gamma \in B_{n}$, $\alpha\gamma < \beta\gamma$ whenever $\alpha < \beta$. Thus, Dehornoy floor is far from knot invariant.
+
+The most important property of Dehornor floor is that it can be seen as some kinds of restriction for admissibility of braid moves. We summarize the basic properties of Dehornoy floor, all of which are proved in [@mn], or [@ma].
+
+::: prop
+[]{#prop:dehornoyfloor label="prop:dehornoyfloor"} Let $\alpha,\beta \in B_{n}$. Then following holds.
+
+1.  If braid $\beta \in B_{n}$ is represented by braid word which contains $s$ occurrence of $\sigma_{1}$ and $k$ occurrence of $\sigma_{1}^{-1}$, then $[\beta]_{D} < max\{s,k\}$.
+
+2.  $|[\beta]_{D}-[\beta']_{D}|\leq 1$ if $\beta$ and $\beta'$ are conjugate.
+
+3.  $[\alpha \beta]_{D} \leq 1+[\alpha]_{D}+[\beta]_{D}$.
+
+4.  If closure of braid $\beta \in B_{n}$ admit destabilization or exchange move, $[\beta]_{D} \leq 1$.
+
+5.  For every $n$, there exist positive integer $r(n)$ such that for every $\beta \in B_{n}$, if $[\beta]_{D}>r(n)$ then $\widehat{\beta}$ is the unique closed $n$-braid representative of link types represented by its closure. That is, if $\widehat{\beta} = \widehat{\beta'}$ holds for some $\beta' \in B_{n}$, $\beta$ and $\beta'$ are conjugate.
+:::
+
+We remark that Dehornoy floor is not a conjugacy invariant but proposition [\[prop:dehornoyfloor\]](#prop:dehornoyfloor){reference-type="ref" reference="prop:dehornoyfloor"} (2) shows taking conjugate changes Dehornoy floor at most by one.
+
+::: rem
+Our definition of Dehornoy floor is slightly different from one in [@ma]. Our definition is rather after [@mn]. We adopt this definition because for application of knot theory, this formulation seems to be more natural and makes statement of results simple.
+:::
+
+::: rem
+There exist an infinite family of left-invariant total ordering of braid groups, containing Dehornoy ordering, called *Thurston-type ordering* (See [@ddrw] or [@sw]). Most of results in this paper can be stated by using Thurston-type ordering instead of using Dehornoy ordering, especially using \"Thurston floor\" defined by the similar way.
+:::

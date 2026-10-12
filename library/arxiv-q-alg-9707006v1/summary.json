@@ -1,0 +1,56 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-q-alg-9707006v1",
+ "source_sha256": "b9513be9294f56d9",
+ "brief": "Drinfeld twist for quantum su(2) in the adjoint representation — We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2).",
+ "extended": "**Drinfeld twist for quantum su(2) in the adjoint representation**\n\n*Chryssomalis Chryssomalakos*\n\n11 pp, 7 sections.\n\n**Abstract.** We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2). We also discuss, as applications, the computation of the universal R-matrix in this representation and the problem of symmetrization of identical-particle states with quantum su(2) symmetry. ∗e-mail address: chryss@stp.dias.ie\n\n**Outline.** Front matter; 10 Burlington Road; Abstract; Introduction; Preliminaries; References; Appendix",
+ "tokens": {
+  "brief": 48,
+  "extended": 149
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-10-burlington-road",
+   "title": "Burlington Road",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-introduction",
+   "title": "Introduction",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-003-preliminaries",
+   "title": "Preliminaries",
+   "pages": "5-10"
+  },
+  {
+   "id": "sec-004-references",
+   "title": "References",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-005-appendix",
+   "title": "Appendix",
+   "pages": "11-11"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

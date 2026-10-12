@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-007",
   "kind": "prose",
-  "title": "(p2−p′",
-  "pageStart": 8,
-  "pageEnd": 9,
-  "text": "../sections/sec-007-2-p2p.md",
-  "derivedFrom": "library/arxiv-math-ph-0105039v1/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0105039v1/manifest",
+  "title": "Hyperbolicity Condition for Surface",
+  "pageStart": 18,
+  "pageEnd": 20,
+  "text": "../sections/sec-007-52-hyperbolicity-condition-for-surface.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0105039v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0105039v1/manifest.jsonld",
   "provenance": "ingested"
 }

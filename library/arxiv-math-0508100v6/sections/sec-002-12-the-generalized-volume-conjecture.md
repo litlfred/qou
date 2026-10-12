@@ -8,95 +8,166 @@ pages: 4-5
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
 doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
+text_source: latex
+latex_prose_ratio: 0.964
+latex_coverage_ratio: 0.982
 ---
-Volume Conjecture; the latter connects two very diﬀerent appro aches to knot theory, namely Topological
-Quantum Field Theory and Riemannian (mostly Hyperbolic) Geometry.
-Conjecture 1.7. [
-Kas97, MM01] For every hyperbolic knot K in S3 we have:
-lim
-n→∞
-log |fK,n (2πi)|
-n = 1
-2π vol(ρ2πi ),
-where vol( ρ2πi ) is the hyperbolic volume of the the knot complement S3 − K.
-In other words, the sequence fK,n (2πi) of complex numbers grows exponentially with respect to n, and
-the exponential growth-rate is proportional to the volume of a hy perbolic knot.
-One can deﬁne the volume function vol( ρ) of every representation ρ : π1(S3 \ K) → SL2(2, C), see
-[Dun99, CCG+94, Thu77], and vol( ρ2πi ) is exactly the value of this volume function with ρ2πi being the
-discrete faithful representation of the knot group.
-The idea of the Generalized Volume Conjecture (formulated in part b y Gukov in [Guk05]) is that we should
-use other representations of the knot complement in SL(2 , C). For α nearby 2πi, in a small neighborhood of
-ρ2πi there is a unique (up to conjugation) representation
-ρα : π1(S3 − K) − →SL(2, C)
-which satisﬁes
-(7) ρα (meridian) =
-(
-eα ⋆
-0 e−α
-)
-.
-Alas, there is an additional diﬃculty. Namely, when α/(2πi) is rational, we should distinguish two cases:
-α/(2πi) = 1 or α/(2πi) ⁄= 1. The Generalized Volume Conjecture for α suﬃciently close to 2 πi may now be
-stated as follows.
-Conjecture 1.8. If α/(2πi) ∈ (R − Q) ∪ {1} is suﬃciently close to 1 then
-(8) lim
-n→∞
-log |fK,n (α)|
-n = cα vol(ρα ),
-and if α/(2πi) ∈ Q − {1}, then
-lim sup
-n→∞
-log |fK,n (α)|
-n = cα vol(ρα ),
-lim inf
-n→∞
-log |fK,n (α)|
-n = 0 ,
-where cα ⁄= 0 are some nonzero constants.
-The distinction of α/(2πi) being rational or not is a bit with odds with the notion of hyperbolic Dehn
-surgery developed by Thurston in [ Thu77]. When α/(2πi) is a rational number, the hyperbolic Dehn surgery
-theorem associates an orbifold ﬁlling to the knot complement whose v olume is vol( ρα ). Orbifolds are mild
-generalizations of manifolds. On the other hand, when α/(2πi) is irrational, hyperbolic Dehn surgery asso-
-ciates a space which is topologically a 1-point compactiﬁcation of the k not complement, with volume vol( ρα ).
-In the following, we will refer to the parameter α in the Generalized Volume Conjecture as the angle , making
+\lbl{sub.volume}
+
+
+In this section we state some new information about the Volume Conjecture;
+the latter connects two very different approaches to knot theory,
+namely Topological Quantum Field Theory and Riemannian
+(mostly Hyperbolic) Geometry.
+
+\begin{conjecture}
+\lbl{conj.vc}\cite{K,MM}
+For every hyperbolic knot $K$ in $S^3$ we have:
+\begin{equation*}
+\lbl{eq.VC}
+\lim_{n \to \infty} \frac{\log| f_{K,n}(2 \pi i)|}{n}=
+\frac{1}{2 \pi}\, \vol(\rho_{2\pi i}),
+\end{equation*}
+where $\vol(\rho_{2 \pi i})$ is the {\em hyperbolic volume} of the
+ the knot complement $S^3-K$.
+\end{conjecture}
+
+In other words, the sequence $f_{K,n}(2 \pi i)$ of complex numbers
+grows exponentially with respect to $n$, and the exponential
+growth-rate is proportional to the volume of a hyperbolic knot.
+
+One can define the volume function $\vol(\rho)$ of every
+representation $\rho: \pi_1(S^3\setminus K)\to \SL_2(2,\BC)$, see
+\cite{Du,CCGLS,Th}, and $\vol(\rho_{2\pi i})$ is exactly the value of this
+volume function with $\rho_{2\pi i}$ being the discrete faithful
+representation of the knot group.
+
+The idea of the Generalized Volume Conjecture (formulated in part by
+Gukov in \cite{Gu}) is that we should use other representations of
+the knot complement in $\SL(2,\BC)$. For $\a$ nearby $2 \pi i$, in a
+small neighborhood of $\rho_{2\pi i}$ there is a unique (up to
+conjugation) representation
+$$
+\rho_{\a}: \pi_1(S^3-K) \longto \SL(2,\BC)
+$$
+which satisfies
+\begin{equation}
+\lbl{eq.meridian}
+\rho_{\a}(\text{meridian})=
+\mat {e^{\a}} {\star} 0 {e^{-\a}} .
+\end{equation}
+Alas, there is an additional difficulty. Namely, when $\a/(2 \pi i)$ is rational, we should distinguish
+two cases: $\a/(2 \pi i)=1 $ or $\a/(2 \pi i)\neq 1$.
+The Generalized Volume Conjecture for $\a$ sufficiently close to $2 \pi i$
+may now be stated as follows.
+
+\begin{conjecture}
+\lbl{conj.gvc}
+\lbl{eq.gvc}
+If $\a/(2 \pi i) \in (\BR-\BQ) \cup \{1\}$ is sufficiently close to $1$
+then
+\begin{equation}
+\lbl{eq.GVC}
+\lim_{n \to \infty} \frac{\log| f_{K,n}(\a)|}{n} =
+c_{\a}\, \vol(\rho_{\a}),
+\end{equation}
+and if $\a/(2 \pi i) \in \BQ- \{1\}$, then
+\begin{eqnarray*}
+\lbl{eq.GVCa}
+\limsup_{n \to \infty} \frac{\log| f_{K,n}(\a)|}{n} &=&
+c_{\a}\, \vol(\rho_{\a}),   \\
+\lbl{eq.GVCb}
+\liminf_{n \to \infty} \frac{\log| f_{K,n}(\a)|}{n} &=& 0,
+\end{eqnarray*}
+where $c_{\a} \neq 0$ are some nonzero constants.
+\end{conjecture}
+
+The distinction of $\a/(2 \pi i)$ being rational or not is a bit
+with odds with the notion of {\em hyperbolic Dehn surgery}
+developed by Thurston in \cite{Th}. When
+$\a/(2 \pi i) $ is a rational number, the hyperbolic Dehn surgery
+theorem associates an orbifold filling to the knot complement whose
+volume is $\vol(\rho_{\a})$. Orbifolds are mild generalizations of
+manifolds. On the other hand, when $\a/(2 \pi i)$ is irrational,
+hyperbolic Dehn surgery associates a space which is topologically a
+1-point compactification of the knot complement, with volume
+$\vol(\rho_{\a})$. In the following, we will refer to the parameter
+$\a$ in the Generalized Volume Conjecture as {\em the angle}, making
 contact with standard terminology from hyperbolic geometry.
-There are two rather independent parts in the Volume Conjecture :
-ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT 5
-(a) To show that the limit exists in ( 8),
-(b) To identify the limit with the volume of the corresponding Dehn ﬁlling .
-At the moment, the Generalized Volume Conjecture is known only for the 4 1 knot and certain values of
-α; see Murakami, [ Mur04].
-One may further ask what happens to the Generalized Volume Conje cture when the angle α is small.
-For α = 0, it is natural to deﬁne ρ0 to be the trivial representation. Then for α small enough, there is a
-unique (up to conjugation) abelian SL2(C) representation ρα that satisﬁes ( 7). Abelian representations have
-0 volume (see eg, [ CCG+94]). On the other hand, for small enough α, we have ∆ K(eα ) ∼ ∆ K (1) = 1. Thus
-Theorem 1.3 implies that
-Theorem 1.9. For every knot K there exists an open neighborhood UK of 0 ∈ C, such that for α ∈ UK, we
-have:
-lim
-n→∞
-log |fK,n (α)|
-n = 0 = vol( ρα ).
-In other words, Theorem 1.3 settles the Generalized Volume Conjecture for small complex angles .
-1.3. The Generalized V olume Conjecture near 2πi. Our next result states that the volume conjecture
-can only be barely true.
-Theorem 1.10. (Proof in Section
-9) For every knot K and every ﬁxed integer m ⁄= 0
-lim
-n→∞
-1
-n log |JK,n +m(exp(2πi/n))| = 0.
-It follows that the double-scaling limit
-lim
-n,k
-1
-n log |JK,n (exp(2πi/k))|
-when n, k → ∞ and n/k → 1 does not exist, or equals to 0; with the latter case in contradiction with the
-Volume Conjecture. Our next result conﬁrms the strange behavio r in the Generalized Volume Conjecture
-when α/(2πi) is rational, not equal to 1.
-Theorem 1.11. (Proof in Section 9) For every knot K there exist a neighborhood VK of 1 ∈ C such that
-when α/(2πi) ∈ VK is rational and not equal to 1, then
-lim inf
-n→∞
-|fK,n (α)|
-n = 0.
+
+
+There are two rather independent parts in the Volume Conjecture:
+\begin{itemize}
+\item[(a)]
+To show that the limit exists in \eqref{eq.GVC},
+\item[(b)]
+To identify the limit with the volume of the corresponding Dehn filling.
+\end{itemize}
+
+At the moment, the Generalized Volume Conjecture is known only for the $4_1$
+knot and certain values of $\a$; see Murakami, \cite{M1}.
+
+
+
+
+One may further ask what happens to the Generalized Volume
+Conjecture when the angle $\a$ is small. For $\a=0$, it is natural
+to define $\rho_0$ to be the {\em trivial} representation. Then for
+$\a$ small enough, there is a unique (up to conjugation) {\em
+abelian} $\SL_2(\BC)$ representation $\rho_{\a}$ that satisfies
+\eqref{eq.meridian}.
+Abelian representations have $0$ volume (see eg, \cite{CCGLS}).
+On the other hand, for small enough
+$\a$, we have $\D_K(e^{\a}) \sim \D_K(1)=1$. Thus Theorem \ref{thm.11}
+implies that
+
+\begin{theorem}
+\lbl{thm.1alt}
+For every knot $K$ there exists an open neighborhood $U_K$ of $0 \in \BC$,
+such that for $\a \in U_K$, we have:
+$$
+\lim_{n \to \infty} \frac{\log| f_{K,n}(\a)|}{n}=0=\vol(\rho_{\a}).
+$$
+\end{theorem}
+
+In other words, Theorem \ref{thm.11} settles the Generalized Volume
+Conjecture for small complex angles.
+
+
+
+
+
+\subsection{The Generalized Volume Conjecture near $2 \pi i$}
+\lbl{sub.faithfulresults}
+
+
+
+Our next result states that the volume conjecture can only be barely true.
+
+\begin{theorem}
+\lbl{thm.near1} {\rm (Proof in Section \ref{sec.cyclotomic})}
+For every knot $K$ and every fixed integer $m \neq
+0$
+$$
+\lim_{n\to\infty}  \frac{1}{n} \log|J_{K,n+m}(\exp(2 \pi i/n))| =0.
+$$
+\end{theorem}
+
+It follows that the {\em double-scaling limit}
+$$
+\lim_{n,k} \frac{1}{n} \log|J_{K,n}(\exp(2 \pi i/k))|
+$$
+when $n,k \to \infty$ and $n/k \to 1$ does not exist, or equals to $0$;
+with the latter case in contradiction with the Volume Conjecture.
+Our next result confirms the strange behavior in the Generalized Volume
+Conjecture when $\a/(2 \pi i)$ is rational, not equal to $1$.
+
+\begin{theorem}
+\lbl{thm.near2} {\rm (Proof in Section \ref{sec.cyclotomic})}
+For every knot $K$ there exist a neighborhood $V_K$
+of $1 \in \BC$ such that when  $\a/(2 \pi i) \in V_K$ is rational
+and not equal to $1$, then
+$$
+\liminf_{n\to\infty} \frac{|f_{K,n}(\a)|}{n} =0.
+$$
+\end{theorem}

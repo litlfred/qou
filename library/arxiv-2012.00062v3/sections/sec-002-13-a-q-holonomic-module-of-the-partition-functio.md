@@ -8,88 +8,171 @@ pages: 4-6
 source_pdf: 2012.00062v3.pdf
 source_sha256: 2aacb7fa43f5e0da
 doc_brief: "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY — The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional"
+text_source: latex
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.897
 ---
-section we discuss aq-holonomic module associated to the partition function and its de-
-scendants. This module and its fundamental solutions are crucial to our exact computation
-of the Stokes matrices in Section 1.4 below. One advantage of introducing this module
-before we discuss resurgence of perturbative series is that the former has been established
-mathematically in many cases, whereas the latter remains a mathematical challenge.
+\label{sub.results}
+
+In this section we discuss a $q$-holonomic module associated to the
+partition function and its descendants. This module and its
+fundamental solutions are crucial to our exact computation of the
+Stokes matrices in Section~\ref{sub.pert} below. One advantage of
+introducing this module before we discuss resurgence of perturbative
+series is that the former has been established mathematically in many
+cases, whereas the latter remains a mathematical challenge.
+
 We begin our discussion with a factorization of the state-integral
-ZM(ub;τ) =B(˜x, ˜q−1)T ∆(τ)B(x;q), (τ∈ C \ R ) (1)
+\begin{equation}
+  \label{Zfacx}
+  Z_M(\ub;\tau) = B(\tx,\tq^{-1})^T \Delta(\tau) B(x;q),
+  \qquad (\tau \in \BC\setminus\BR)
+\end{equation}
 where
-ub = u
-2πb (2)
-(this rescaling is dictated by the asymptotics of Faddeev’s quantum dilogarithm),∆(τ) is
-a diagonal matrix with diagonal entries a 24-th root of unity times an integer power of
-e
-πi
-24 (τ+τ−1), B(x;q) = (B(j)(x;q))r
-j=1 is a vector of holomorphic blocks, and
-q = e2πiτ, ˜q = e−2πi/τ, x = eu, ˜x = eu/τ, τ = b2. (3)
-TheabovenotationisconsistentwiththeliteratureinmodularformsandJacobiforms[EZ85]
-and indicates thatu∈ C can be thought of as a Jacobi variable. The factorization (1) was
-ﬁrst noted in a related context in [Pas12] and further developed in complex Chern–Simons
-theory in [BDP14, Dim15]. We ﬁnd that this factorization persists to descendant state-
-integrals parametrized by a pair of (Jacobi-like) variablesm andµ (see Equations (125) and
-(240) for the deﬁnition of descendant state-integrals for the knots41, 52)
-ZM,m,µ(ub;τ) = (−1)m+µqm/2˜qµ/2B−µ(˜x; ˜q−1)T ∆(τ)Bm(x;q), (m,µ∈ Z ) (4)
-where ZM,0,0 =ZM. The holomorphic blocks determine a matrixWm(x;q) deﬁned by
-Wm(x;q) =
-
-
-B(1)
-m (x;q) ... B (r)
-m (x;q)
-... ...
-B(1)
-m+r−1(x;q) ... B (r)
-m+r−1(x;q)
-
- (5)
+\begin{equation}
+  \label{ub}
+  \ub = \frac{u}{2\pi \bb} \,
+\end{equation}
+(this rescaling is dictated by the asymptotics of Faddeev's quantum
+dilogarithm), $\Delta(\tau)$ is a diagonal matrix with diagonal
+entries a 24-th root of unity times an integer power of
+$\re^{\frac{\pi \ri}{24}(\tau+\tau^{-1})}$, 
+$B(x;q)=(B^{(j)}(x;q))_{j=1}^r$ is a vector of holomorphic blocks, and
+\begin{equation}
+  \label{xq}
+  q=\re^{2\pi \ri \tau}, \qquad \tq= \re^{-2 \pi \ri/\tau}, \qquad
+  x=\re^{u}, \qquad \tx = \re^{u/\tau}, \qquad \tau=\bb^2 \,.
+
+
+\end{equation}
+The above notation is consistent with the literature in modular forms
+and Jacobi forms~\cite{EZ} and indicates that $u \in \BC$ can be thought of
+as a Jacobi variable. The
+factorization~\eqref{Zfacx} was first noted in a related context in
+\cite{pas} and further developed in complex Chern--Simons theory
+in~\cite{Beem,dimofte-state}. We find that this factorization persists
+to descendant state-integrals parametrized by a pair of (Jacobi-like)
+variables $m$ and $\mu$ (see Equations \eqref{Z41x-desc} and
+\eqref{Z52x-desc} for the definition of descendant state-integrals for
+the knots $\knot{4}_1$, $\knot{5}_2$) 
+
+\begin{equation}
+  \label{ZM-desc}
+  Z_{M,m,\mu}(\ub;\tau) 
+  =
+  (-1)^{m+\mu} q^{m/2}\tq^{\mu/2} B_{-\mu}(\tx;\tq^{-1})^T
+  \Delta(\tau) B_m(x;q), \qquad (m, \mu \in \BZ)
+\end{equation}
+where $Z_{M,0,0}=Z_M$. The holomorphic blocks determine a matrix
+$W_m(x;q)$ defined by
+\begin{equation}
+  \label{Wm}
+  W_m(x;q) =
+  \begin{pmatrix}
+    B^{(1)}_{m}(x;q) & \ldots & B^{(r)}_{m}(x;q) \\
+    \vdots & & \vdots \\
+    B^{(1)}_{m+r-1}(x;q) & \ldots & B^{(r)}_{m+r-1}(x;q)
+  \end{pmatrix}
+\end{equation}
 with the following properties
-PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY 5
-(a) The entries ofWm(x;q) are holomorphic functions of|q|⁄ = 1, meromorphic functions
-ofx∈ C ∗ with poles inx∈qZ of order at mostr, and have Taylor series expansions
-in (1−x)−rZ [x±][[q
-1
-2 ]] whose monomialsxkqn/2 satisfy n =O(k2).
-In other words, the support of the monomials inx andq in (1−x)rWm(x;q) is similar to the
-one of Jacobi forms (in their holomorphic version of Eichler-Zagier [EZ85, Eqn.(3)] or the
-meromorphic version from Zweger’s thesis [Zwe01, Chpt.3]) and of the admissible functions
-of Kontsevich-Soibelman [KS11].
-(b) The matrix
-Wm,µ(u;τ) =W−µ(˜x; ˜q−1)∆(τ)Wm(x;q)T (6)
-deﬁned forτ = C \ R , extends to a holomorphic function ofτ∈ C ′ and u∈ C for
-all integersm and µ.
-More precisely, if we deﬁne the normalized descendant integral
-zM,m,µ(u;τ) = (−1)m+µq−m/2˜q−µ/2ZM,m,µ(u;τ), (7)
-thenWm,µ(u;τ) = (zm+i,µ+j(ub;τ))r−1
-i,j=0. The above statement is remarkable in two ways: (i)
-Wm(x;q) is a holomorphic function ofτ∈ C \ R that cannot be extended holomorphically
-over the positive reals, yetWm,µ(u;τ) holomorphically extends over the positive reals and
-(ii) Wm(x;q) is a meromorphic function ofu with singularities, yetWm,µ(u;τ) is an entire
-function ofu. Property (ii) is common in quantum mechanics, where the wave-function is
-often entire whereas its WKB expansion is singular at the turning points. The same behavior
-is also observed in the case of open topological strings in [MnZ17].
-(c) We have an orthogonality relation
-W−1(x;q)W−1(x;q−1)T∈ GL(r, Z [x±]). (8)
-(d) The columns ofWm(x;q), as functions of(x,m ), form aq-holonomic module of rank
-r.
-The factorization (4) and (d) implies that the annihilatorIM of zM,m,µ(ub;τ) as a function
-of (x,m ) coincides with the annihilator ofWm(x;q). The latter is a left ideal in the Weyl
-algebraW over Q [q±] generated by the pairs(Sx,x ) and (Sm,qm) ofq-commuting operators
-which act on a functionf(x,m ;q) by
-(Sxf)(x,m ;q) =f(qx,m ;q) ( xf)(x,m ;q) =xf(x,m ;q) (9)
-(Smf)(x,m ;q) =f(x,m + 1;q) ( qmf)(x,m ;q) =qmf(x,m ;q). (10)
-Properties (a)-(d) above deﬁne meromoprhic quantum Jacobi forms, a concept which is
-further studied in [GMZ]. Although the above statements are largely conjectural for the
-partition function of complex Chern–Simons theory, we have the following result (see Theo-
-rems 14, 16, 22, 24 below).
-Theorem 1.The above statements hold for the41 and 52 knots.
-We also study the Taylor series expansion of Equations (4), (6) and (8) atu = 0 noting
-that the left hand side of the above equations are entire functions ofu whereas the right hand
-side are a priori meromorphic functions ofu with a pole of orderr at zero. More precisely,
-in Sections 3.1 and 3.2 we prove the following.
-6 STA VROS GAROUF ALIDIS, JIE GU, AND MARCOS MARIÑO
-Theorem 2.For the41 and 52 knots, Equations(4), (6) and (8) can be expanded in Taylor
-series atu = 0 whose constant terms are expressed in terms of theq-series of[GGMn].
+
+\begin{itemize}
+\item[(a)] The entries of $W_m(x;q)$ are holomorphic functions of
+  $|q| \neq 1$, meromorphic functions of $x \in \BC^*$ with poles in
+  $x \in q^\BZ$ of order at most $r$, and have Taylor series
+  expansions in $(1-x)^{-r}\BZ[x^\pm][[q^{\frac{1}{2}}]]$ whose
+  monomials $x^k q^{n/2}$ satisfy $n= O(k^2)$.
+\end{itemize}
+In other words, the support of the monomials in $x$ and $q$
+in $(1-x)^r W_m(x;q)$ is similar to the one of Jacobi forms (in their
+holomorphic version of Eichler-Zagier~\cite[Eqn.(3)]{EZ} or the
+meromorphic version from Zweger's thesis~\cite[Chpt.3]{Zwegers:thesis})
+and of the admissible functions of Kontsevich-Soibelman~\cite{KS}.
+
+\begin{itemize}
+\item[(b)] The matrix 
+  \begin{equation}
+    \label{Zfacx-desc}
+    W_{m,\mu}(u;\tau) =
+    W_{-\mu}(\tx;\tq^{-1}) \Delta(\tau) W_{m}(x;q)^T
+  \end{equation}
+  defined for $\tau=\BC\setminus\BR$, extends to a holomorphic
+  function of $\tau \in \BC'$ and $u \in \BC$ for
+  all integers $m$ and $\mu$.
+\end{itemize}
+More precisely, if we define the normalized descendant integral
+\begin{equation}
+  \label{Zr}
+  z_{M,m,\mu}(u;\tau) =
+  (-1)^{m+\mu}q^{-m/2}\tq^{-\mu/2}
+  Z_{M,m,\mu}(u;\tau) \,,
+\end{equation}
+then $W_{m,\mu}(u;\tau) =(z_{m+i,\mu+j}(\ub;\tau))_{i,j=0}^{r-1}$.
+The above statement is remarkable in two ways: (i) $W_m(x;q)$ is a
+holomorphic function of $\tau \in \BC\setminus\BR$ that cannot be
+extended holomorphically over the positive reals, yet
+$W_{m,\mu}(u;\tau)$ holomorphically extends over the positive reals
+and (ii) $W_m(x;q)$ is a meromorphic function of $u$ with
+singularities, yet $W_{m,\mu}(u;\tau)$ is an entire function of $u$.
+Property (ii) is common in quantum mechanics, where the wave-function
+is often entire whereas its WKB expansion is singular at the turning
+points. The same behavior is also observed in the case of open topological
+strings in~\cite{Marino:exact}.
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{itemize}
+\item[(c)] We have an orthogonality relation
+  \begin{equation}
+    \label{Wortho}
+    W_{-1}(x;q) \, W_{-1}(x;q^{-1})^T \in \GL(r,\BZ[x^\pm]) \,.
+  \end{equation}
+\item[(d)] The columns of $W_m(x;q)$, as functions of $(x,m)$, form a
+  $q$-holonomic module of rank $r$.
+\end{itemize}
+The factorization~\eqref{ZM-desc} and (d) implies that the
+annihilator $\calI_M$ of $z_{M,m,\mu}(\ub;\tau)$ as a function of
+$(x,m)$ coincides with the annihilator of $W_m(x;q)$.  The latter is a
+left ideal in the Weyl algebra $\calW$ over $\BQ[q^\pm]$ generated by
+the pairs $(S_x,x)$ and $(S_m,q^m)$ of $q$-commuting operators which
+act on a function $f(x,m;q)$ by
+\begin{align}
+  (S_x f)(x,m;q) &= f(qx,m;q) & (x f)(x,m;q) &= xf(x,m;q) \\
+  (S_m f)(x,m;q) &= f(x,m+1;q) & (q^m f)(x,m;q) &= q^m f(x,m;q) \,.
+\end{align}
+Properties (a)-(d) above define meromoprhic quantum Jacobi forms, a
+concept which is further studied in~\cite{GMZ}.  Although the above
+statements are largely conjectural for the partition function of
+complex Chern--Simons theory, we have the following result (see
+Theorems~\ref{thm.41a}, \ref{thm.41b}, \ref{thm.52a}, \ref{thm.52b}
+below).
+  
+\begin{theorem}
+  \label{thm.4152W}
+  The above statements hold for the $\knot{4}_1$ and $\knot{5}_2$
+  knots.
+\end{theorem}
+
+We also study the Taylor series expansion of
+Equations~\eqref{ZM-desc}, \eqref{Zfacx-desc} and~\eqref{Wortho} at
+$u=0$ noting that the left hand side of the above equations are entire
+functions of $u$ whereas the right hand side are a priori meromorphic
+functions of $u$ with a pole of order $r$ at zero.  More precisely, in
+Sections~\ref{sub.41x=1} and~\ref{sub.52x=1} we prove the following.
+    
+\begin{theorem}
+  \label{thm.Zu=0}
+  For the $\knot{4}_1$ and $\knot{5}_2$ knots,
+  Equations~\eqref{ZM-desc}, \eqref{Zfacx-desc} and~\eqref{Wortho} can
+  be expanded in Taylor series at $u=0$ whose constant terms are
+  expressed in terms of the $q$-series of~\cite{GGM:resurgent}.
+\end{theorem}

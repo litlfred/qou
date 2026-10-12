@@ -6,7 +6,11 @@
   "sha256": "b40be7f0022f70a14a4de02e4185d276129c7d0ba93b066bdcb8b56d6110350e",
   "bytes": 520862,
   "pages": 35,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -205,6 +209,77 @@
   "likely_scanned": false,
   "toc_entries": 12,
   "sections": 8,
-  "chars_total": 108222
+  "chars_total": 108222,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "monoidality.general.tex",
+   "tex_sections": 10,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-notation",
+     "title": "Notation",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-2-sheafification-functors",
+     "title": "Sheafification functors.",
+     "prose_ratio": 0.844,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-3-yoneda-embeddings",
+     "title": "Yoneda embeddings.",
+     "prose_ratio": 0.835,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-group-schemes-and-representations",
+     "title": "Group schemes and representations.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-5-tannaka-reconstruction-for-stacks-with-the-res",
+     "title": "Tannaka reconstruction for stacks with the resolution property.",
+     "prose_ratio": 0.769,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

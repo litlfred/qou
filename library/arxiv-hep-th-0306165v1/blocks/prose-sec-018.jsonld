@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0306165v1/blocks/prose-sec-018",
   "kind": "prose",
-  "title": "(dv +dv)∧ (du +du)− 1",
-  "pageStart": 23,
-  "pageEnd": 23,
-  "text": "../sections/sec-018-4-dv-dv-du-du-1.md",
-  "derivedFrom": "library/arxiv-hep-th-0306165v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0306165v1/manifest",
+  "title": "The A-Polynomial and the Generalized Volume Conjecture",
+  "pageStart": 38,
+  "pageEnd": 41,
+  "text": "../sections/sec-018-52-the-a-polynomial-and-the-generalized-volume-c.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0306165v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0306165v1/manifest.jsonld",
   "provenance": "ingested"
 }

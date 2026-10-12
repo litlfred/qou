@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "K 0",
-  "pageStart": 3,
-  "pageEnd": 3,
-  "text": "../sections/sec-003-6-k-0.md",
-  "derivedFrom": "library/arxiv-hep-ph-9302246v1/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-9302246v1/manifest",
+  "title": "The non-anomalous sector",
+  "pageStart": 16,
+  "pageEnd": 19,
+  "text": "../sections/sec-003-5-the-non-anomalous-sector.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9302246v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9302246v1/manifest.jsonld",
   "provenance": "ingested"
 }

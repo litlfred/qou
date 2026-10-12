@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2506.10206v2/blocks/prose-sec-019",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2506.10206v2/blocks/prose-sec-019",
   "kind": "prose",
-  "title": "Elliptic 4F3-series",
-  "pageStart": 13,
-  "pageEnd": 15,
-  "text": "../sections/sec-019-4-elliptic-4f3-series.md",
-  "derivedFrom": "library/arxiv-2506.10206v2/manifest",
-  "sourceDocument": "library/arxiv-2506.10206v2/manifest",
+  "title": "Acknowledgements",
+  "pageStart": 38,
+  "pageEnd": 40,
+  "text": "../sections/sec-019-acknowledgements.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
   "provenance": "ingested"
 }

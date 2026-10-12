@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-022",
   "kind": "prose",
-  "title": "Hopf monads",
-  "pageStart": 11,
-  "pageEnd": 11,
-  "text": "../sections/sec-022-3-hopf-monads.md",
-  "derivedFrom": "library/arxiv-0812.2426v1/manifest",
-  "sourceDocument": "library/arxiv-0812.2426v1/manifest",
+  "title": "Relations with modules",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "text": "../sections/sec-022-39-relations-with-modules.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0812.2426v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0812.2426v1/manifest.jsonld",
   "provenance": "ingested"
 }

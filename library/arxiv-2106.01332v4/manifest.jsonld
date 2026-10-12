@@ -1,24 +1,33 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2106.01332v4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Braided matter interactions in quantum gravity via 1-handle attachment",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2106.01332v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Braided matter interactions in quantum gravity via 1 -handle attachment",
   "contains": [
-    "library/arxiv-2106.01332v4/sections/sec-000",
-    "library/arxiv-2106.01332v4/sections/sec-001",
-    "library/arxiv-2106.01332v4/sections/sec-002",
-    "library/arxiv-2106.01332v4/sections/sec-003",
-    "library/arxiv-2106.01332v4/sections/sec-004",
-    "library/arxiv-2106.01332v4/sections/sec-005",
-    "library/arxiv-2106.01332v4/sections/sec-006",
-    "library/arxiv-2106.01332v4/sections/sec-007",
-    "library/arxiv-2106.01332v4/sections/sec-008"
+    "library/arxiv-2106.01332v4/sections/sec-front-matter",
+    "library/arxiv-2106.01332v4/sections/sec-000"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2106.01332&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2106.01332v4",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2106.01332v4.pdf",
     "source_sha256": "44c19a99624997bfbc59bdd31e9e1f3bdf8ed67ce44ef8e239bf2cd45244ce41",
     "pages": 15,

@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2506.10206v2/sections/sec-017",
   "@type": [
     "doco:Section"
   ],
-  "title": "Identities related of an evaluation for the inverse tangent in-",
-  "pageStart": 12,
-  "pageEnd": 13,
+  "title": "Five-term ladder relations, part 1",
+  "pageStart": 34,
+  "pageEnd": 35,
   "contains": [
-    "library/arxiv-2506.10206v2/blocks/prose-sec-017",
-    "library/arxiv-2506.10206v2/blocks/thm-sec-017-01"
+    "library/arxiv-2506.10206v2/blocks/prose-sec-017"
   ],
-  "derivedFrom": "library/arxiv-2506.10206v2/manifest",
-  "sourceDocument": "library/arxiv-2506.10206v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
   "provenance": "ingested"
 }

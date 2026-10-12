@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0707.3799v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Equivariant Satake category and Kostant-Whittaker reduction (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.3799v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0707.3799&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0707.3799v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0707.3799v3",
+    "content_type": "application/gzip",
+    "sha256": "0818ab63cef2ca7a4a3760ccbee0e1c78175be383b4367c950df9e46cbf65a00",
+    "bytes": 41505,
+    "fetched": "2026-10-10T15:00:09+00:00",
+    "files": [
+      {
+        "path": "source/files/qsatake_final_corrected.tex",
+        "role": "tex",
+        "sha256": "c5625710b58e9ffc7016c3a41dd58a49fa9166ee355bdb20feadfe64757d71d1",
+        "bytes": 148008
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

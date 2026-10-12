@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1006.1099v3/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1006.1099v3/blocks/prose-sec-015",
   "kind": "prose",
   "title": "Higher order products",
   "pageStart": 19,
   "pageEnd": 21,
   "text": "../sections/sec-015-32-higher-order-products.md",
-  "derivedFrom": "library/arxiv-1006.1099v3/manifest",
-  "sourceDocument": "library/arxiv-1006.1099v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
   "provenance": "ingested"
 }

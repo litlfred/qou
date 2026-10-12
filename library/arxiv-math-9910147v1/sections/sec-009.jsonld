@@ -1,16 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-9910147v1/sections/sec-009",
   "@type": [
     "doco:Section"
   ],
-  "title": "Z we deﬁne",
-  "pageStart": 3,
-  "pageEnd": 5,
+  "title": "Asymptotics of Intertwiners",
+  "pageStart": 28,
+  "pageEnd": 34,
   "contains": [
     "library/arxiv-math-9910147v1/blocks/prose-sec-009"
   ],
-  "derivedFrom": "library/arxiv-math-9910147v1/manifest",
-  "sourceDocument": "library/arxiv-math-9910147v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9910147v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9910147v1/manifest.jsonld",
   "provenance": "ingested"
 }

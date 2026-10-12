@@ -8,59 +8,68 @@ pages: 13-14
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
 doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
+text_source: latex
+latex_prose_ratio: 0.981
+latex_coverage_ratio: 0.867
 ---
-stable polynomial of degree at most m: say f(x) = c(x−ξ1)··· (x−ξn) in which
-c⁄= 0,n≤m, and ξi⁄∈ H for all i∈ [n]. Then the polynomial F0∈ C[x] deﬁned by
-F0(x1,...,x m) =c(x1−ξ1)··· (xn−ξn)
-is multiaﬃne and stable, and F0(x,...,x ) = f(x). Let Σ = ( {ik,jk} : k ∈ N)
-be a sequence of two-element subsets of [ m], and for each k∈ N let Tk = T (1/2)
-ikjk
-and deﬁne Fk+1 = Tk(Fk). By induction using Lemma 4.3, each Fk∈ S[x]MA is
-multiaﬃne and stable, andFk(x,...,x ) =f(x) for allk∈ N. We will construct such
-a sequence Σ for which (Fk : k∈ N) converges to Polmf.
-Let P∈ C[x]MA be multiaﬃne, say P (x) =∑
-S⊆[m]c(S)xS. For{i,j}⊆ [m] let
-ωij(P ) =
-∑
-S⊆[m]
-|c(S)−c(τij(S))|
-be theij-th imbalance ofP , and let||P|| =∑
-{i,j}⊆[m]ωij(P ) be the total imbalance
-of P .
-Exercise 4.5. (a) Let (Pk : k∈ N) be polynomials in C[x]MA for which there is a
-p∈ C[x] such that Pk(x,...,x ) = p(x) for all k∈ N. If ||Pk||→ 0 as k→ 0, then
-(Pk : k∈ N) converges to a limit P∈ C[x]MA, and||P|| = 0.
-(b) For P∈ C[x]MA,||P|| = 0 if and only if P is invariant under all permutations
-of [m]. Thus, in part (a) the limit is P = Polmp.
-14 DAVID G. WAGNER
-Exercise 4.6. Let P∈ C[x]MA, let{i,j}⊆ [m], and let Q =T (1/2)
-ij P .
-(a) Then ωij(Q) = 0.
-(b) Ifh∈ [m] r{i,j} thenωhi(Q)≤ (ωhi(P )+ωhj(P ))/2, and similarly forωhj(Q).
-(c) If{h,k}⊆ [m] r{i,j} then ωhk(Q) =ωhk(P ).
-(d) Consequently,||Q||≤|| P||− ωij(P ).
-Now we choose the sequence Σ = ({ik,jk} : k∈ N) as follows: for each k∈ N,
-{ik,jk}⊆ [m] is any pair of indices {i,j} for which ωij(Fk) attains its maximum
-value. Then ωikjk(Fk)≥
-(m
-2
-)−1
-||Fk||, so that by Exercise 4.6(d) and induction on
-k∈ N,
-||Fk+1||≤
-(
-1−
-(m
-2
-)−1)
-||Fk||≤
-(
-1−
-(m
-2
-)−1)k+1
-||F0||.
-Thus, by Exercise 4.5, Fk converges to Polmf, the m-th polarization of f. Finally,
-since each Fk is stable (and the limit is a polynomial), Hurwitz’s Theorem implies
-that Polmf is stable. This completes the proof of Lemma 4.2, and hence of Theorem
-4.1.
+Let $0\not\equiv f(x)\in\Stab[x]$ be a univariate stable polynomial of degree
+at most $m$:\ say $f(x) = c(x-\xi_1)\cdots(x-\xi_n)$ in which $c\neq 0$,
+$n\leq m$, and $\xi_i\not\in\HH$ for all $i\in[n]$.  Then the polynomial
+$F_0\in\CC[\x]$ defined by
+$$
+F_0(x_1,...,x_m)=c(x_1-\xi_1)\cdots(x_n-\xi_n)
+$$
+is multiaffine and stable, and $F_0(x,...,x)=f(x)$.
+Let $\Sigma=(\{i_k,j_k\}:\ k\in\NN)$ be a sequence of two-element subsets of
+$[m]$, and for each $k\in\NN$ let $T_k = T_{i_k j_k}^{(1/2)}$ and define
+$F_{k+1} = T_k(F_k)$.  By induction using Lemma 4.3, each
+$F_k\in\Stab[\x]^\ma$ is multiaffine and stable, and
+$F_k(x,...,x)=f(x)$ for all $k\in\NN$.  We will construct such
+a sequence $\Sigma$ for which $(F_k:\ k\in\NN)$ converges to $\Pol_m f$.
+
+Let $P\in\CC[\x]^\ma$ be multiaffine, say $P(\x)=\sum_{S\subseteq[m]} c(S)\x^S$.
+For $\{i,j\}\subseteq [m]$ let
+$$
+\omega_{ij}(P) = \sum_{S\subseteq[m]} |c(S)-c(\tau_{ij}(S))|
+$$
+be the \emph{$ij$-th imbalance} of $P$, and let
+$||P||=\sum_{\{i,j\}\subseteq[m]} \omega_{ij}(P)$
+be the \emph{total imbalance} of $P$.
+
+\begin{exercise}
+\textup{(a)}\
+Let $(P_k:\ k\in\NN)$ be polynomials in $\CC[\x]^\ma$  for which
+there is a $p\in\CC[x]$ such that $P_k(x,...,x)=p(x)$ for all $k\in\NN$.
+If $||P_k||\goesto 0$ as $k\goesto 0$, then $(P_k:\ k\in\NN)$ converges to
+a limit $P\in\CC[\x]^\ma$, and $||P||=0$.\\
+\textup{(b)}\
+For $P\in\CC[\x]^\ma$, $||P||=0$ if and only if $P$ is invariant under
+all permutations of $[m]$.  Thus, in part (a) the limit is $P=\Pol_m p$.
+\end{exercise}
+
+\begin{exercise}
+Let $P\in\CC[\x]^\ma$, let $\{i,j\}\subseteq [m]$, and let $Q=T_{ij}^{(1/2)}
+P$.\\
+\textup{(a)}\ Then $\omega_{ij}(Q)=0$.\\
+\textup{(b)}\ If $h\in[m]\drop\{i,j\}$ then
+$\omega_{hi}(Q)\leq (\omega_{hi}(P)+\omega_{hj}(P))/2$,
+and similarly for $\omega_{hj}(Q)$.\\
+\textup{(c)}\ If $\{h,k\}\subseteq[m]\drop\{i,j\}$ then
+$\omega_{hk}(Q)=\omega_{hk}(P)$.\\
+\textup{(d)}\ Consequently, $||Q|| \leq ||P|| - \omega_{ij}(P).$
+\end{exercise}
+
+Now we choose the sequence $\Sigma=(\{i_k,j_k\}:\ k\in\NN)$ as follows:\
+for each $k\in\NN$, $\{i_k,j_k\}\subseteq[m]$ is any pair of indices
+$\{i,j\}$ for which $\omega_{ij}(F_k)$ attains its maximum value.  Then
+$\omega_{i_k j_k}(F_k)\geq\binom{m}{2}^{-1}||F_{k}||$, so that by
+Exercise 4.6(d) and induction on $k\in\NN$,
+$$
+||F_{k+1}||\leq \left(1-\binom{m}{2}^{-1}\right)||F_k||
+\leq \left(1-\binom{m}{2}^{-1}\right)^{k+1} ||F_0||.
+$$
+Thus, by Exercise 4.5, $F_k$ converges to $\Pol_m f$,
+the $m$-th polarization of $f$.  Finally, since each $F_k$ is stable 
+(and the limit is a polynomial),  Hurwitz's Theorem implies that $\Pol_m f$
+is stable.  This completes the proof of Lemma 4.2, and hence of 
+Theorem 4.1.

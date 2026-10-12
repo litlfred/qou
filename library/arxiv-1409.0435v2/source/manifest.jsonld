@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1409.0435v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.0435v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1409.0435&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1409.0435v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1409.0435v2",
+    "content_type": "application/gzip",
+    "sha256": "bb3c6cbcf960a160626194389291662ebbcad23c44264c2a735a9e7ec22674e2",
+    "bytes": 88267,
+    "fetched": "2026-10-10T15:09:23+00:00",
+    "files": [
+      {
+        "path": "source/files/manuscriptCharlierClaeys.tex",
+        "role": "tex",
+        "sha256": "ca99b5f52f7813e54faaf630044fb4b68c5c23d2069d40c0a82757a0a6f0d182",
+        "bytes": 91224
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

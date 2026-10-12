@@ -1,13 +1,14 @@
 ---
 # qou-rydq
 title: 'FINDING: the link of the Bring cone singularity is the unit tangent circle bundle of Sigma_4 (Euler number chi_eu = -6), NOT a 3-Sasakian S^3/Gamma; BringCone.lean models H = C^2, the cone over S^3'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - 8f-decide
 created_at: 2026-09-15T21:23:32Z
-updated_at: 2026-10-04T15:19:10Z
+updated_at: 2026-10-10T10:14:21Z
 parent: qou-8lxd
 ---
 
@@ -15,3 +16,56 @@ Measured 2026-09-15 while answering the owner's 'obstruction to tetraplectic bei
 
 
 2026-09-15 LEAN + REMARK LANDED; the lemma rewording stays OWNER-GATED. lean/QOU/Brings/BringConeLinkEulerNumber.lean: canonical_link_euler_eq_chi (for a canonically embedded curve the link's Seifert Euler number −deg K = 2 − 2g equals χ_eu), bring_link_euler (−6), hopf_link_euler (the quaternionic model is the cone over the Hopf bundle, Euler number −1), bring_over_hopf (factor 6); Orlik–Wagreich cited (orlik-wagreich1971 added to references.ts, not ingested). rem:spatial-realization-base-generality (models-of-qous) records the singular-base consequence: the vertex is what "ordinary smooth manifold" excludes; the link is a circle bundle over the curve with infinite π₁, and the quaternionic (3-Sasakian) picture is a local model of the smooth fibre, not the link. NOT enacted: the rewording of the corpus's lemma lem:bring-cone-reeb-quaternionic-twist / rem:tetraplectic-su2-gauge-reading (options recorded above; recommendation unchanged: restate link = UT(Σ₄), Euler number −6, scope the triad as local). Awaiting the owner's pick.
+
+
+## Re-filed `8f-lean` -> `8f-decide`, 2026-10-10 — the Lean half is DONE; what is left is the owner's pick
+
+**The Lean landed and is verified on the live tree.**
+`folio/quantum-observable-universe/lean/QOU/Brings/BringConeLinkEulerNumber.lean`
+(66 lines, sorry-free — its only `sorry` match is the docstring's "no `sorry`"):
+`canonical_link_euler_eq_chi`, `bring_link_euler` (−6), `hopf_link_euler` (−1),
+`bring_over_hopf`.
+
+**So this bean carries no agent work.** Its own last line is *"Awaiting the
+owner's pick"*, and the three options are a **content change** to
+`lem:bring-cone-reeb-quaternionic-twist` / `rem:tetraplectic-su2-gauge-reading`,
+which the 2026-09-07 ask-first rule reserves to the owner (it neither increases
+precision nor is derived from the corpus — it *corrects* the corpus against an
+outside geometric fact). Filing it under `8f-lean` made it look like a
+scaffolding task. It is not.
+
+Same mis-filing class as `qou-skgn`, and for the same reason: **the front tags
+were assigned from TITLES.** This title opens "FINDING:", which reads as
+measurement-complete rather than decision-pending.
+
+Options, costs and the recommendation are unchanged and stated in the body above
+(recommendation: (2)+(3) — restate the link as `UT(Σ₄)` with Euler number −6 and
+scope the quaternionic triad as local/frame). **Default if unanswered: nothing
+changes; the lemma keeps a prose identification that is true of the local model
+`ℍ = ℂ²` and not of the Bring cone, and `rem:spatial-realization-base-generality`
+already records the correct statement elsewhere.**
+
+
+## ENACTED 2026-10-10 — owner chose option (2)+(3), the recommendation
+
+Owner decision taken on PR #7553. `lem:bring-cone-reeb-quaternionic-twist` now
+leads with what the link **is** — `UT(Σ₄)`, Seifert Euler number **−6**,
+`SL̃₂` geometry, split `sl₂(ℝ)` triad — and scopes the compact `su(2)` bracket
+to the quaternionic model `ℍ = ℂ²` (own link: the Hopf fibration, Euler number
+−1). Three arguments are stated, with their scopes kept apart; the `su(2)`
+survives as the structure group of the resolvent bundle, and
+`rem:tetraplectic-su2-gauge-reading` now opens with that scope. The `-proof`
+sibling's closing line is scoped the same way.
+
+**This turned out NOT to be new analysis, and that is the reusable part.** The
+manifest's own `authorNotes` have carried both halves since **2026-09-03** —
+including the `BringConeSplit.lean` sign flip and `split_ne_compact` — while the
+*statement* went on asserting 3-Sasakian. A caveat is for author tracking
+(AGENTS.md §4d); it is not a place to park the correction to a false claim. So
+the work was promotion, not derivation, and a `status` note records it.
+
+**No Lean changed.** `reeb_twist_ij/jk/ki` are quaternion identities; the
+restatement makes the prose *more* faithful to them.
+
+`qou-xlw1` contributed the third argument (dimension ≥ 7 for a non-degenerate
+quaternionic-contact structure) and is closed with this.

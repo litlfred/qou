@@ -185,7 +185,7 @@ def scan_repo(root: Path) -> list[dict]:
         # permanently RED for reasons unrelated to any diff -- and a gate that
         # is always red is a gate agents learn to skip.  `.claude/` carries no
         # tracked `.py` at all, so excluding the whole directory loses nothing.
-        if set(f.parts) & {"_deprecated", "node_modules", ".claude"}:
+        if set(f.parts) & {"_deprecated", "fsh-guts", "node_modules", ".claude"}:
             continue
         try:
             src = f.read_text(encoding="utf-8")

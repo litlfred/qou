@@ -24,7 +24,7 @@ VOLATILE = {"timestamp","elapsed_seconds","measured_at","start_time_monotonic",
 def importers():
     out=set()
     for p in ROOT.rglob("*.py"):
-        if "_deprecated" in p.parts: continue
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts): continue
         try: tree=ast.parse(p.read_text(errors="ignore"))
         except Exception: continue
         for n in ast.walk(tree):

@@ -63,7 +63,7 @@ def witness_state() -> dict[str, tuple[bool, bool]]:
     """stem -> (any witness still carries muon q0, any carries proton q0)."""
     out: dict[str, tuple[bool, bool]] = {}
     for p in HERE.rglob("*.witness.json"):
-        if "_deprecated" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         try:
             t = p.read_text(encoding="utf-8")

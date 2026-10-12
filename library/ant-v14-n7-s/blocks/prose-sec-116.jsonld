@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s/blocks/prose-sec-116",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s/blocks/prose-sec-116",
   "kind": "prose",
-  "title": "2A. Setup and notations",
-  "pageStart": 232,
-  "pageEnd": 232,
-  "text": "../sections/sec-116-2a-setup-and-notations.md",
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "title": "Main proposition",
+  "pageStart": 197,
+  "pageEnd": 206,
+  "text": "../sections/sec-116-3-main-proposition.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"
 }

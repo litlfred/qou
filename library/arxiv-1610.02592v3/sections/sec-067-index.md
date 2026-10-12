@@ -1,31 +1,32 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-067-index
 section_title: "Index"
 section_number: null
 pages: 491-494
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 ---
 Dn, 49
 Hn, 53
 In, 45
-L(p,q ), 97
+L(p, q), 97
 O(n, 1), 47
 O+(n, 1), 47
-[X,Y ], 113
+[X, Y ], 113
 Λ(Γ), 135
 Nil geometry, 386
 Ω(Γ), 137
 SO(3), 167
 Sol geometry, 396
-M, 242
-ML, 242
-S, 208
+M , 242
+M L, 242
+S , 208
 RPn, 96
-~SL2 geometry, 392
+g
+SL2 geometry, 392
 3-torus, 323
 Alexander theorem, 275
 Alexander trick, 181
@@ -84,7 +85,8 @@ essential disc, 285
 domain of discontinuity, 137
 earthquake, 194
 483
-484 INDEX
+484
+INDEX
 earthquake map, 195
 elliptic manifold, 73
 with cone angles, 101
@@ -184,7 +186,8 @@ innermost argument, 175
 intersection form in homology, 36
 intersection form on currents, 231
 isometry, 21
-INDEX 485
+INDEX
+485
 elliptic, parabolic, and hyperbolic
 isometry, 62
 isometry group, 33
@@ -283,7 +286,8 @@ prime decomposition of three-manifolds,
 283
 principal congruence subgroup, 77
 pseudo-Anosov mapping class, 259
-486 INDEX
+486
+INDEX
 pseudo-isometry, 144
 pseudosphere, 112
 quasi-isometry, 143
@@ -329,7 +333,7 @@ subspace
 incident, asymptotically parallel,
 ultra-parallel subspaces, 61
 surface
-∂-compressible and∂-incompressible
+∂-compressible and ∂-incompressible
 surface, 290
 ∂-parallel surface, 285
 classiﬁcation of surfaces, 155
@@ -338,7 +342,7 @@ surface, 288
 essential surface, 301
 genus of a surface, 154
 surface of ﬁnite type, 156
-surface bundle overS1, 359
+surface bundle over S1, 359
 symplectic basis, 156
 symplectic form, 36
 tangent space, 9

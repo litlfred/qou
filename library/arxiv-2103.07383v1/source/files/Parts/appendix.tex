@@ -1,0 +1,148 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_GB
+% !TeX root = ../Analyticity-Menger.tex
+
+\section{Properties of analytic functions}
+
+In this section we aim to recall some statements related to analytic functions, which are used in the paper. For further information on analytic functions we refer the reader for instance to \cite{KrantzParks:2002:Aprimerofrealanalyticfunctions}. 
+First we note that analytic functions can be characterized as follows, cf.\ for example \cite[Corollary~3.2]{Vorderobermeier:2019:CriticalOHara}.
+
+\begin{proposition} \label{cor:TayloranalyticSob}
+	Let $f\in C^\infty (\mathbb R / \mathbb Z,\R^n)$ and $s>0$. Then the function $f$ is analytic on $\R/\Z$ if  there are positive constants $r$ and $C$ such that
+	\begin{align*}
+	\|f^{(k)}\|_{H^{1+s}} \leq C \frac{k!}{r^{k}}
+	\end{align*}
+	holds for all integers $k \geq 0$.
+\end{proposition}
+
+This can be seen by using \cite[Proposition~1.2.12]{KrantzParks:2002:Aprimerofrealanalyticfunctions} together with a standard covering argument, Morrey's inequality (see e.g. \cite[Paragraph~4.16]{AdamsFournier:2003:SobolevSpaces}), the equivalence of the $W^{1,2}$- and the $H^1$-norm on $\mathbb R / \mathbb Z$ (cf.~\cite[Lem.~1.2]{Reiter:2012:RepulsiveKnotEnergies} or \cite[7.62]{AdamsFournier:2003:SobolevSpaces}) as well as the embedding $H^s\subseteq H^t$ for any $t < s$ (cf.~\cite[Chapter~4,~Proposition~3.4]{Taylor:1996:PartialDifferentialEquationsa}).
+
+
+In addition, we need a special case of the Cauchy-Kovalevsky theorem, which can be derived for example from \cite[(1.25)]{Folland:1995}.
+
+
+\begin{theorem}[Cauchy-Kovalevsky -- ODE case]\label{thm:CK}
+	Suppose the function $G: \R^{2n} \rightarrow \R^n$ is real analytic around $(c_0,c_1)$ for some $c_0,c_1 \in\R^n$, and the function $f \in C^\infty((-\varepsilon, \varepsilon),\R^n)$ of the form $f(x)= (f_1(x),\ldots,f_n(x))$, for any $ \varepsilon > 0$, is a solution of the initial value problem 
+	\begin{align*}
+	f''(x) & = G(f(x), f'(x)) \textnormal{ for } x \in (-\varepsilon,\varepsilon) \textnormal{ with}\\
+	f(0)& =c_0, \textnormal{ and}\\
+	f'(0) & = c_1. 
+	\end{align*}
+	Then the function $f$ is real analytic around $0$.
+\end{theorem}
+
+The statement can be proven by the \emph{method of majorants}, e.g.\ as explained in the proof of  \cite[2.4.1]{KrantzParks:2002:Aprimerofrealanalyticfunctions}. At this point we remark that the strategy of proof for the main statement, \thref{thm:main}, is motivated from this method.
+
+
+
+\section{Faà di Bruno's formula}
+
+Faà di Bruno's formula generalizes the chain rule to higher derivatives. In particular, the $k$-th derivative of the composition of two functions $f, g\in C^k (\R,\R)$ can be written as
+\begin{align*}
+&\left(\tfrac{d}{dt}\right)^k g(f(t)) = \\
+&\sum_{\substack{m_1+2m_2+ \cdots km_k=k, \\ m_1,\ldots,m_k\in\N_0}} \frac{k!}{m_1!1!^{m_1}m_2!2!^{m_2}\ldots m_k!k!^{m_k}} g^{(m_1+\cdots +m_k)}(f(t))\prod_{j=1}^{k} (f^{(j)} (t))^{m_j}.
+\end{align*}
+R. Mishkov generalized Faà di Bruno's formula to the multivariate case \cite{Mishkov:2000:GeneralizationFormulaFaa}.
+The following lemma and notation via the universal polynomial are taken directly from \cite[Section~2.3]{BlattVorderobermeier:2019:CriticalMoebius}.
+\begin{lemma}\label{lem:FaadiBruno}
+	Let $U\subseteq\R$ be a neighborhood of $0$ and $f\in C^k(U, \R^n)$, $n\in\N_0$. Moreover, let $V\subseteq\R^n$ be a neighborhood of $f(0)$ such that $f(U)\subseteq V$ and $g\in C^k(V, \R)$. Then we have for any $k\in\N$ and $x\in U$ 
+	\begin{align*}
+	\left(\!\tfrac{d}{dx}\!\right)^k g(f(x)) \!=\! \sum_0 \sum_1 \cdots \sum_k \frac{k!}{\prod_{i=1}^k (i!)^{r_i} \prod_{i=1}^k\prod_{j=1}^nq_{ij}! }  (\partial^\alpha g) (f(x)) \prod_{i=1}^k ( f_1^{(i)}(x))^{q_{i1}} \cdots ( f_n^{(i)}(x))^{q_{in}}
+	\end{align*}
+	where the sums are over all non-negative integer solutions of the following equations
+	\begin{align*}
+	& \sum_0 :  r_1 + 2r_2 + \cdots + k r_k = k, \\
+	& \sum_1 : q_{11} + q_{12} + \cdots + q_{1n} = r_1 \\
+	& \ \ \vdots  \\
+	& \sum_k  : q_{k1} + q_{k2} + \cdots + q_{kn} = r_k
+	\end{align*}
+	and $\alpha := (\alpha_1,\ldots,\alpha_n)$ with $\alpha_j := q_{1j} + q_{2j} + \cdots + q_{kj}$ for $1\leq j \leq n$. 	
+\end{lemma}
+
+In the following we seldom need the precise form of Faà di Bruno's formula in the multivariate case but only the fact that there is a universal polynomial $p_k^{(n)}$ with non-negative coefficients independent of $f,g$ such that 
+\begin{align}\label{universalpoly}
+\left(\tfrac{d}{dx}\right)^k g(f(x)) = p_k^{(n)} (\{\partial_\alpha g\}_{|\alpha|\leq k}, \{ f^{(j)}_i\}_{i=1, \ldots, n, j=1, \ldots, k} )
+\end{align}
+for all $f \in C ^k (\mathbb R, \mathbb R ^n)$ and $g \in C^k(\mathbb R ^n, \mathbb R).$ Furthermore, $p_k^{(n)}$ is one-homogeneous in the first entries.
+
+\begin{lemma}
+	\label{lemma:estimateAnalyticFaaDiBruno}
+	Let $k,n \in \N$, $C_x,C_y>0$, $x_j^{(i)}>0$ and 
+	\begin{align}\label{eq:lemmaUpperBound}
+	y_\alpha \in \left(0,C_y \frac {(\abs{\alpha} +1)!} {r^{\abs{\alpha} +1}}\right)
+	\end{align}
+	for all $\alpha \in \N_0^n$ with $\abs{\alpha} \le k$, $i \in \{1,\ldots,k\}$ and $j \in \{1,\ldots,n\}$.
+	Then, for $C:=\max\{1,C_x\}$
+	\[
+	p_k^{(n)}(\{y_\alpha\}_{\abs{\alpha}\le k}, \{C_x x_j^{(i)}\}_{\substack{i = 1, \ldots, k\\j =1, \ldots, n}})
+	\le C_y p_k^{(n)}\left(\left\{\frac {(\abs{\alpha} +1)!} {\left(\frac r C\right)^{\abs{\alpha} +1}}\right\}_{\abs{\alpha}\le k}, \{x_j^{(i)}\}_{\substack{i = 1, \ldots, k\\j =1, \ldots, n}}\right).
+	\]
+\end{lemma}
+Note that as soon as $y_\alpha = \abs{\partial^\alpha g}$ for some function $g$ which is analytic away from the origin, the upper bound for $y_\alpha$ in \eqref{eq:lemmaUpperBound} automatically holds, see the proof of \cite[Theorem 7.2]{BlattVorderobermeier:2019:CriticalMoebius}.
+\begin{proof}
+	Using the explicit form, we may compute
+	\[
+	\begin{split}
+	&p_k^{(n)}(\{y_\alpha\}_{\abs{\alpha}\le k}, \{C_x x_i^{(j)}\}_{\substack{i = 1, \ldots, k\\j =1, \ldots, n}})\\
+	=&\sum_0 \sum_1 \cdots \sum_k  \frac{k!}{\prod_{i=1}^k (i!)^{r_i} \prod_{i=1}^k\prod_{j=1}^nq_{ij}! }  y_\alpha \prod_{i=1}^k \prod_{j=1}^n (C_x x_j^{(i)})^{q_{ij}}\\
+	\le& C_y \sum_0 \sum_1 \cdots \sum_k  \frac{k!}{\prod_{i=1}^k (i!)^{r_i} \prod_{i=1}^k\prod_{j=1}^nq_{ij}!} \frac {(\abs{\alpha} +1)!} {r^{\abs{\alpha} +1}} C_x^{\abs{\alpha}} \prod_{i=1}^k \prod_{j=1}^n (x_j^{(i)})^{q_{ij}},
+	\end{split}
+	\]
+	as the sum of all $q_{ij}$ is exactly $\abs{\alpha}$.
+	Estimating $C_x^{\abs{\alpha}} \le C^{\abs{\alpha} +1}$ yields the desired result.
+\end{proof}
+
+The explicit formula also allows us to estimate the norm of a Faà di Bruno polynomial in a Banach algebra.
+\begin{lemma}
+	\label{lemma:estimateFaaDiBrunoBanachAlgebra}
+	Let $\XL$ be a Banach algebra with norm $\norm{\cdot}$ in the sense that there is a universal constant $b$ such that for $x,y \in \XL$, $\norm{xy} \le b \norm{x}\norm{y}$.    
+	
+	Furthermore, let $k \in \N$ and $x_j^{(i)},y_\alpha \in \XL$ for all $\alpha \in \N_0^n$ with $\abs{\alpha} \le k$, $i \in \{1,\ldots,k\}$ and $j \in \{1,\ldots,n\}$.    
+	Then,
+	\[
+	\norm*{p_k^{(n)}(\{y_\alpha\}_{\abs{\alpha}\le k}, \{x_j^{(i)}\}_{\substack{i = 1, \ldots, k\\j =1, \ldots, n}})}
+	\le p_k^{(n)}(\{b^{\abs{\alpha}}\norm{y_\alpha}\}_{\abs{\alpha}\le k}, \{\norm{x_j^{(i)}}\}_{\substack{i = 1, \ldots, k\\j =1, \ldots, n}}.
+	\]
+\end{lemma}
+Note that in our application scenario, the product is just pointwise multiplication between functions mapping to $\R$.
+\begin{proof}
+	The statement follows from the estimate $\norm{\prod_{l=1}^m z_l} \le b^{m-1} \prod_{l=1}^m \norm{z_l}$ for all $z_l \in \XL$ and the fact that the $q_{ij}$ sum up to $\abs{\alpha}$ together with the explicit formula
+    of Faa di Bruno's polynomial in Lemma \ref{lem:FaadiBruno}, in particular the one-homogeneity of its first entry.
+\end{proof}
+
+
+\section{An inequality for Sobolev Norms}
+
+\begin{lemma}
+    \label{lemma:equivalentSobolevNormsDerivative}
+    Let $m>1$ and $f \in H^m(\R/\Z,\R^n)$ with $\int_0^1 f(x) \d x =0$.
+    Then,
+    \[
+        \frac 1 {2\pi} \norm[H^{m-1}]{f'}
+        \le \norm[H^m]{f}
+        \le \frac 1 {\sqrt{2} \pi} \norm[H^{m-1}]{f'}
+        \le \norm[H^{m-1}]{f'}.
+    \]
+\end{lemma}
+\begin{proof}
+    By \cite[Proposition~3.1.2~(10)]{Grafakos:2014:ClassicalFourierAnalysis}, we have $\widehat{f'}(k) = 2\pi i k \hat f(k)$ for all $k \in \Z$ and thus for $k \ne 0$,
+    \[
+        \abs{\hat f(k)}^2 = \frac 1 {(2 \pi k)^2} \abs{\widehat{f'}(k)}^2.
+    \]
+    Note that
+    \[
+        \hat f(0) = \int_0^1 f(x)e^{-2\pi \cdot 0 \cdot x} \d x =\int_0^1 f(x) \d x =0
+    \]
+    with the same holding for $\widehat{f'}(0)$ as $f$ is periodic and continuous.
+    Keeping the estimates $k^2 \le 1+k^2 \le 2 k^2$ in mind, we obtain
+    \begin{align*}
+        \frac 1 {(2\pi)^2} \norm[H^{m-1}]{f'}^2
+        &= \sum_{k\in \Z \setminus \{0\}} \frac 1 {(2\pi)^2} (1+k^2)^{m-1} \abs{\widehat{f'}(k)}^2
+        = \sum_{k\in \Z \setminus \{0\}} (1+k^2)^{m-1}  k^2 \abs{\hat f(k)}^2\\
+        &\le \sum_{k\in \Z \setminus \{0\}} (1+k^2)^m \abs{\hat f(k)}^2
+        = \norm[H^m]{f}^2\\
+        &= \sum_{k\in \Z \setminus \{0\}} (1+k^2)^m \frac 1 {(2 \pi k)^2} \abs{\widehat{f'}(k)}^2
+        \le \frac 2 {(2\pi)^2}  \sum_{k\in \Z \setminus \{0\}} (1+k^2)^{m-1} \abs{\widehat{f'}(k)}^2\\
+        &= \frac 1 {2\pi^2} \norm[H^{m-1}]{f'}^2.
+    \end{align*}
+\end{proof}

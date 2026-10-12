@@ -7,105 +7,182 @@ section_number: 3
 pages: 9-12
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
-doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
-duplicate_of: "arxiv-2304.12545v1"
+toc_source: inferred
 ---
-The Bloch group of a field is an ana logue of its mul ti plic at ive group, but with the
-re la tion  sat is fied by the log ar ithm func tion re placed by the func ‐
-tion al equa tion of the di log ar ithm. In this sec tion we re call its defin i tion and the
-defin i tion of the “ex ten ded Bloch group” that was in tro duced by Wal ter [4] and
-fur ther de veloped by Zick ert and Goette [e15], [e26], and ex plain their con nec ‐
-tions with the volume and com plexi fied volume. The next sec tion tells how these
-things re late to the sym plect ic struc ture. We should men tion that parts of both
-sec tions have been trans ferred here from the arX iv ver sion of [e33] and also ed ited
-some what for the pur pose of the present ex pos i tion.
-The di log ar ithm func tion , defined for  as  and then ex ‐
-ten ded ana lyt ic ally to either the cut plane  or to the uni ver sal cov er of 
-, sat is fies a fam ous func tion al equa tion called the five-term re ‐
-la tion. This func tion al equa tion was dis covered re peatedly dur ing the 19th cen ‐
-tury and can be writ ten in many equi val ent forms, each say ing that a sum of five
-di log ar ithm val ues is a lin ear com bin a tion of products of simple log ar ithms. The
-func tion  is many-val ued, but the mod i fied di log ar ithm (5) is a single-val ued
-real ana lyt ic func tion from  to  that ex tends con tinu ously to
-all of  and sat is fies “clean” ver sions of the five-term re la tions with no log ar ‐
-ithmic cor rec tion terms. Since  also sat is fies the two func tion al equa tions
- (im ply ing that  for the
-three shape para met ers of an ori ented ideal hy per bol ic tet ra hed ron), this “clean”
-func tion al equa tion still can be writ ten in many dif fer ent forms, one stand ard one
-be ing
-for  in . An oth er nice ver sion is the cyc lic one
- if  is a se quence of com plex num bers sat is fy ing
- for all  (which im plies by a short cal cu la tion that they have⇧
-8/8/26, 4:27 AM Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/ 9/27
-peri od 5). Yet an oth er, with a clear in ter pret a tion in terms of 3-di men sion al hy ‐
-per bol ic geo metry, says that the signed sum of  is 0 if  are the
-cross-ra tios of the five sub sets of car din al ity 4 of a set of five dis tinct points in 
+The Bloch group of a field is an analogue of its multiplicative group, but with the
+relation 
+ satisfied by the logarithm function replaced by the func‐
+tional equation of the dilogarithm. In this section we recall its definition and the
+definition of the “extended Bloch group” that was introduced by Walter [4] and
+further developed by Zickert and Goette [e15], [e26], and explain their connec‐
+tions with the volume and complexified volume. The next section tells how these
+things relate to the symplectic structure. We should mention that parts of both
+sections have been transferred here from the arXiv version of [e33] and also edited
+somewhat for the purpose of the present exposition.
+The dilogarithm function 
+, defined for 
+ as 
+ and then ex‐
+tended analytically to either the cut plane 
+ or to the universal cover of 
+, satisfies a famous functional equation called the five-term re‐
+lation. This functional equation was discovered repeatedly during the 19th cen‐
+tury and can be written in many equivalent forms, each saying that a sum of five
+dilogarithm values is a linear combination of products of simple logarithms. The
+function 
+ is many-valued, but the modified dilogarithm (5) is a single-valued
+real analytic function from 
+ to 
+ that extends continuously to
+all of 
+ and satisfies “clean” versions of the five-term relations with no logar‐
+ithmic correction terms. Since 
+ also satisfies the two functional equations
+ (implying that 
+ for the
+three shape parameters of an oriented ideal hyperbolic tetrahedron), this “clean”
+functional equation still can be written in many different forms, one standard one
+being
+for 
+ in 
+. Another nice version is the cyclic one
+ if 
+ is a sequence of complex numbers satisfying
+ for all  (which implies by a short calculation that they have
+⇧
+8/8/26, 4:27 AM
+Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
+https://celebratio.org/Neumann_WD/article/1106/
+9/27
+period 5). Yet another, with a clear interpretation in terms of 3-dimensional hy‐
+perbolic geometry, says that the signed sum of 
+ is  0 if 
+ are the
+cross-ratios of the five subsets of cardinality 4 of a set of five distinct points in 
 .
-The five ar gu ments  of any ver sion of the five-term re la tion sat is fy
-, where the sum is taken in the second ex ter i or power of the
-mul ti plic at ive group of . For in stance, for the “cyc lic ver sion” above we have
-The Bloch group  of an ar bit rary field , in tro duced by Bloch [e1] in 1978, is
-mo tiv ated by this ob ser va tion and is defined as the quo tient of the ker nel of the
-map  send ing  to  for  (and to 0 for
-) by the sub group gen er ated by the five-term re la tion of the di log ar ithm.
-The pre cise defin i tion var ies slightly in the lit er at ure be cause of del ic ate 2- and 3-
-tor sion is sues arising from the par tic u lar defin i tion of the ex ter i or square (for in ‐
-stance, does one re quire  for all  or just ?), wheth er one
-re quires  and  to van ish or merely to be tor sion, and the par tic u lar ver ‐
-sion of the five-term re la tion used. We will gloss over this point for now, but will
-come back to it in con nec tion with the ex ten ded Bloch group.
-From our point of view, the clearest mo tiv a tion for the defin i tion of the Bloch
-group is the fact that the shape para met ers  for any ideal tri an gu la tion
- of a com plete hy per bol ic 3-man i fold  sat is fy
-(This is a con sequence of the sym plect ic nature of the NZ re la tions, as we will ex ‐
-plain in more de tail in the next sec tion.) Thus to any such tri an gu la tion we can as ‐
-so ci ate a class  in the Bloch group. But this class is in fact in de pend ent of
-the tri an gu la tion, since (mod ulo some tech nic al points con cern ing the fact that
-the shapes can de gen er ate to 0 or 1 un der 2-3 Pach ner moves) any two tri an gu la ‐
-tions are linked by a series of “2-3 Pach ner moves” in which two tet ra hedra shar ‐
-ing a com mon face are re placed by the three tet ra hedra defined by their two non ‐
-shared and two of their three shared ver tices, and the (signed) sum of the shape
-para met ers of these five tet ra hedra is pre cisely the five-term re la tion and does not
-af fect the class of  in the Bloch group. Thus one has a class .
-Moreover, from the very defin i tion of the Bloch group it fol lows that the func tion 
- ex tends to a lin ear map from  to , and from the dis cus sion in the last sec ‐
-tion we see that the value of  on the class  is equal to the volume of . Al ‐
-though we will not use it, we men tion that by a res ult of Suslin the Bloch group⇧
-8/8/26, 4:27 AM Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/ 10/27
- of any field  is iso morph ic up to tor sion to the al geb ra ic -group ,
-with  cor res pond ing to the Borel reg u lat or map from  to  in the case 
+The five arguments 
+ of any version of the five-term relation satisfy
+, where the sum is taken in the second exterior power of the
+multiplicative group of  . For instance, for the “cyclic version” above we have
+The Bloch group 
+ of an arbitrary field  , introduced by Bloch [e1] in 1978, is
+motivated by this observation and is defined as the quotient of the kernel of the
+map 
+ sending 
+ to 
+ for 
+ (and to  0 for
+) by the subgroup generated by the five-term relation of the dilogarithm.
+The precise definition varies slightly in the literature because of delicate 2- and 3-
+torsion issues arising from the particular definition of the exterior square (for in‐
+stance, does one require 
+ for all  or just 
+?), whether one
+requires 
+ and 
+ to vanish or merely to be torsion, and the particular ver‐
+sion of the five-term relation used. We will gloss over this point for now, but will
+come back to it in connection with the extended Bloch group.
+From our point of view, the clearest motivation for the definition of the Bloch
+group is the fact that the shape parameters 
+ for any ideal triangulation
+ of a complete hyperbolic 3-manifold 
+ satisfy
+(This is a consequence of the symplectic nature of the NZ relations, as we will ex‐
+plain in more detail in the next section.) Thus to any such triangulation we can as‐
+sociate a class 
+ in the Bloch group. But this class is in fact independent of
+the triangulation, since (modulo some technical points concerning the fact that
+the shapes can degenerate to 0 or 1 under 2-3 Pachner moves) any two triangula‐
+tions are linked by a series of “2-3 Pachner moves” in which two tetrahedra shar‐
+ing a common face are replaced by the three tetrahedra defined by their two non‐
+shared and two of their three shared vertices, and the (signed) sum of the shape
+parameters of these five tetrahedra is precisely the five-term relation and does not
+affect the class of 
+ in the Bloch group. Thus one has a class 
 .
-On the oth er hand, as de scribed at the end of the last sec tion, the hy per bol ic
-volume should ac tu ally be seen as the ima gin ary part of a com plexi fied volume
-tak ing val ues in , so we would like to re place the func tion  by some
-com plex-val ued ver sion of the di log ar ithm which, even though it may be many-
-val ued at in di vidu al ar gu ments , be comes one-val ued mod ulo  if we take a
-lin ear com bin a tion of its val ues with ar gu ments be long ing to the Bloch group.
-This is the idea be hind the pas sage from the ori gin al Bloch group to the ex ten ded
-one. The first ob ser va tion (see [e9]) is that the func tion  has
-the de riv at ive , which is mero morph ic and has residues in , so
-that  it self lifts to a well-defined func tion from  to  and sat is ‐
-fies the func tion al equa tion
-We now in tro duce the com plex 1-man i fold
-This is an abeli an cov er of  via , with Galois group
-iso morph ic to . The ex ten ded Bloch group  as defined in [e15] or [e26] is
-the ker nel of the map , where  is defined by re quir ing
-only  (rather than , which is stronger by 2-tor sion)
-and where  maps  to , di vided by an ap pro pri ate lif ‐
-ted ver sion of the five-term re la tion, namely, the -span of the set of ele ments
- of  sat is fy ing
-There is an ex ten ded reg u lat or map from  to  giv en by map ping
- to , where
-which one can check van ishes mod ulo  on the lif ted five-term re la tion. One
-can also define  for any sub field  of , such as an em bed ded num ber field,
-by re pla cing  by the sub set  con sist ing of pairs  with .
-As a fi nal re mark, one can won der to what ex tent study ing just hy per bol ic 3-man ‐
-i folds lets one un der stand the full Bloch group of . For in stance, does every ele ‐
-ment of  oc cur as a ra tion al lin ear com bin a tion of the Bloch group in vari ants⇧
-8/8/26, 4:27 AM Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/ 11/27
-of some hy per bol ic 3-man i folds? Even more ba sic ally, does every num ber field
-with at least one non real em bed ding oc cur as the trace field of some hy per bol ic 3-
-man i fold? The lat ter ques tion was posed ex pli citly by Wal ter in [3].
+Moreover, from the very definition of the Bloch group it follows that the function 
+ extends to a linear map from 
+ to  , and from the discussion in the last sec‐
+tion we see that the value of 
+ on the class 
+ is equal to the volume of 
+. Al‐
+though we will not use it, we mention that by a result of Suslin the Bloch group
+⇧
+8/8/26, 4:27 AM
+Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
+https://celebratio.org/Neumann_WD/article/1106/
+10/27
+ of any field  is isomorphic up to torsion to the algebraic 
+-group 
+,
+with 
+ corresponding to the Borel regulator map from 
+ to 
+ in the case 
+.
+On the other hand, as described at the end of the last section, the hyperbolic
+volume should actually be seen as the imaginary part of a complexified volume
+taking values in 
+, so we would like to replace the function 
+ by some
+complex-valued version of the dilogarithm which, even though it may be many-
+valued at individual arguments  , becomes one-valued modulo 
+ if we take a
+linear combination of its values with arguments belonging to the Bloch group.
+This is the idea behind the passage from the original Bloch group to the extended
+one. The first observation (see [e9]) is that the function 
+ has
+the derivative 
+, which is meromorphic and has residues in 
+, so
+that  itself lifts to a well-defined function from 
+ to 
+ and satis‐
+fies the functional equation
+We now introduce the complex 1-manifold
+This is an abelian cover of 
+ via 
+, with Galois group
+isomorphic to 
+. The extended Bloch group 
+ as defined in [e15] or [e26] is
+the kernel of the map 
+, where 
+ is defined by requiring
+only 
+ (rather than 
+, which is stronger by 2-torsion)
+and where  maps 
+ to 
+, divided by an appropriate lif‐
+ted version of the five-term relation, namely, the 
+-span of the set of elements
+ of 
+ satisfying
+There is an extended regulator map from 
+ to 
+ given by mapping
+ to 
+, where
+which one can check vanishes modulo 
+ on the lifted five-term relation. One
+can also define 
+ for any subfield  of  , such as an embedded number field,
+by replacing  by the subset  consisting of pairs 
+ with 
+.
+As a final remark, one can wonder to what extent studying just hyperbolic 3-man‐
+ifolds lets one understand the full Bloch group of 
+. For instance, does every ele‐
+ment of 
+ occur as a rational linear combination of the Bloch group invariants
+⇧
+8/8/26, 4:27 AM
+Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
+https://celebratio.org/Neumann_WD/article/1106/
+11/27
+of some hyperbolic 3-manifolds? Even more basically, does every number field
+with at least one nonreal embedding occur as the trace field of some hyperbolic 3-
+manifold? The latter question was posed explicitly by Walter in [3].

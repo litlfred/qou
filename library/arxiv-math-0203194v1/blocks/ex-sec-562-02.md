@@ -1,1 +1,0 @@
-(Cf. [ Ber90, 1.5].) Let K be a non archimedean complete

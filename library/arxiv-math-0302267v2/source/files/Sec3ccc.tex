@@ -1,0 +1,1167 @@
+
+
+\newpage
+
+%\footline={\hss\folio\hss}
+%\pageno=1
+
+\dspace
+\subhead
+3. Cohomologie et groupe fondamental 
+\endsubhead
+
+\subhead
+3.1
+\endsubhead
+Soit $X$ un espace topologique s\'epar\'e et
+connexe.
+On note ${}_bP_a$ l'ensemble des classes
+d'homotopie de chemins de $a$ \`a $b$, et
+$\delta\gamma$ la composition des chemins
+$_cP_b\times{} _bP_a\to {}_cP_a$.
+Noter l'ordre des facteurs, choisi pour que si
+$V$ est un syst\`eme local sur $X$ et que
+$\gamma v\in V_b$ denote le transport de $v\in
+V_a$ le long de $\gamma\in {}_bP_a$, on ait
+$(\delta\gamma)v=\delta(\gamma v)$.
+
+Nous ferons sur $X$ les hypoth\`eses (a) (b)
+(c) suivantes.
+(a) La th\'eorie classique du $\pi_1$
+s'applique.
+Par exemple: $X$ localement connexe par arcs
+et localement simplement connexe.
+(b) Le groupe fondamental est de type fini.
+(c) Pour une projection $p\colon\, X^n\times
+X^m\to X^n$ et un faisceau constant, $Rp_*$
+commute au passage aux fibres.
+Ces conditions sont remplies pour $X$
+hom\'eomorphe au compl\'ement dans un poly\`edre
+fini d'un sous-poly\`edre, par exemple pour
+$X$ une vari\'et\'e alg\'ebrique complexe.
+
+Fixons un corps $k$, le corps des
+coefficients.
+Soient $a\in X$, $\Lambda$ l'alg\`ebre de
+groupe $k[\pi_1(X,a)]$ et $I$ son id\'eal
+d'augmentation.
+La donn\'ee d'un $\Lambda$-module \`a gauche
+$V$, i.e. d'une repr\'esentation lin\'eaire de
+$\pi_1(X,a)$ sur un $k$-espace vectoriel,
+\'equivaut \`a celle d'un syst\`eme local 
+$V\uptil$ sur $X$ de fibre $V$ en $a$.
+Si on prend pour $V$ le $\Lambda$-module
+$\Lambda$, on obtient le syst\`eme local de
+fibre en $x$ l'espace vectoriel $k[{}_xP_a]$
+de base ${}_xP_a$.
+La structure de $\Lambda$-module \`a droite de
+$\Lambda$ en fournit une sur ce syst\`eme
+local $\Lamuptil$, i.e. une action \`a
+droite de $\pi_1(X,a)$.
+L'\'el\'ement $\gamma$ de $\pi_1(X,a)$ agit
+sur ${}_xP_a$ par composition \`a droite.
+Le syst\`eme local $(\Lambda/I^n)\uptil$ est
+le quotient $\Lamuptil \otimes_\Lambda
+\Lambda/I^n$ de $\Lamuptil$.
+
+Le syst\`eme local $(\Lambda/I^n)\uptil$ est
+extension it\'er\'ee des $n$ syst\`emes locaux
+triviaux $I^p/I^{p+1}$ ($0\Le p<n$).
+Sa fibre $(\Lambda/I^n)_a\!\!\!\uptil$ en $a$
+est $\Lambda/I^n$ et l'unit\'e $1$ d\'efinit
+$$
+k\to (\Lambda/I^n)_a\!\!\!\uptil\colon\,
+\lambda\longmapsto \lambda.1.
+\tag3.1.1
+$$
+Le syst\`eme local $(\Lambda/I^n)\uptil$
+est universel parmi les syst\`emes locaux $E$
+extension it\'er\'ee de $n$ syst\`emes locaux
+triviaux et munis de $k\to E_a$, car
+$(\Lambda/I^n,1)$ est universel parmi les
+$\Lambda$-modules $M$ tels que $I^nM=0$ munis
+de $m_0\in M$.
+
+\subhead
+3.2
+\endsubhead
+Dans ce qui suit, nous laisserons de nombreux
+signes ambigus.
+Plusieurs conventions sont possibles, et
+aucune ne nous semble clairement meilleure.
+Elles n'importent gu\`ere, car elles
+conduisent \`a des complexes isomorphe, avec
+pour l'isomorphisme au pis l'ambigu{\umi}t\'e
+d'un signe global.
+Typiquement, changer de convention remplace un
+complexe par un autre ayant les m\^{e}mes
+composantes, et l'isomorphisme est donn\'e par
+des signes d\'ependant de multidegr\'es.
+
+\subhead
+3.3
+\endsubhead
+Fixons $a,b\in X$ et consid\'erons dans $X^n$
+les sous-espaces $b=t_1$,
+$t_1=t_2,\dotsc,t_n=a$, not\'es $Y_0,\dots,Y_n$.
+Pour $J\Subset\Delta_n:=\{0,1,\dotsc,n\}$,
+soient $Y_J$ l'intersection des $Y_j$ ($j\in
+J$) et $k_J$ le faisceau constant $k$ sur
+$Y_J$, prolong\'e par z\'ero sur $X^n$.
+Pour $J\Subset K$, on a $Y_K\Subset Y_J$ et on
+dispose d'un morphisme de restriction $k_J\to
+k_K$.
+Si, pour $K=\{k_0,\dotsc,k_p\}$, les $k_\ell$
+\'etant pris dans l'ordre croissant, et
+$J=\{k_0,\dotsc,\khat_i,\dotsc,k_p\}$, on
+l'affecte du signe $(-1)^i$, on obtient les
+composantes de la diff\'erentielle d'un
+complexe de faisceaux sur $X^n$:
+$$
+\underbark\to\oplus k_{\{j\}}\to\cdots\to
+\oplusop_{\vert J\vert=p}
+k_J\to\cdots\to k_{\Delta_n}.\tag3.3.1
+$$
+Noter que le dernier terme $k_{\Delta_n}$ est
+nul sauf pour $n=0$ ou $a=b$, auxquels cas il
+est r\'eduit \`a $k$ en $t_1=\ldots=t_n=a$.
+Si on supprime le premier terme et qu'on
+convient que les degr\'es vont de $0$ \`a $n$,
+on obtient la r\'esolution \v{C}echiste
+altern\'ee du faisceau constant $k$ sur la
+r\'eunion $\cup Y_i$ des $Y_i$ pour le
+recouvrement ferm\'e fini par les $Y_i$,
+prolong\'ee par $0$ sur $X^n$.
+
+D\'efinissons ${}_b\scrK_a\left<n\right>$,
+ou simplement ${}_b\scrK_a$, comme \'etant le
+complexe (3.3.1),
+avec $k_{\Delta_n}$ omis, et les degr\'es
+allant de $0$ \`a $n$.
+Si $n>0$ et que $a\not=b$, c'est une
+r\'esolution du prolongement par $0$ du
+faisceau constant $k$ sur $X^n-\cup Y_i$, et
+$$
+\dbH^*(X^n,{}_b\scrK_a)=H^*(X^n\mod\,\cup
+Y_i,k)\quad\text{(pour $n\not=0$,
+$a\not=b$)}\tag3.3.2
+$$
+
+Si $a=b$, la derni\`ere diff\'erentielle
+(3.3.1) fournit un morphisme de complexes
+$$
+\align
+&{}_a\scrK_a\to k_{t_1=\cdots=
+t_n=a}[-n],\tag3.3.3\\
+\intertext{qui induit}
+&\dbH^n(X^n,{}_a\scrK_a)\to k.\tag3.3.4
+\endalign
+$$
+
+Si on r\'ep\`ete ces constructions en prenant
+$a$ et $b$ comme param\`etres, on obtient un
+complexe ${}_*\scrK_a$ sur $X\times X^n\times
+X$, et, pour $p$ la projection $X\times
+X^n\times X\to X\times X$, la restriction de
+${}_*\scrK_*$ \`a $X^n\simover p^{-1}(b,a)$
+s'identifie \`a ${}_b\scrK_a$.
+Traitant seulement $b$ comme param\`etre, on
+obtient de m\^{e}me ${}_*\scrK_a$ sur $X\times
+X^n$.
+Les $\dbH^i(X^n,{}_b\scrK_a)$ sont les fibres
+du syst\`eme local $R^ip_*({}_*\scrK_*)$ sur
+$X\times X$.
+
+Nous allons, d'apr\`es Beilinson, v\'erifier la
+
+\proclaim{Proposition 3.4}
+(i) Pour $i<n$, $\dbH^i(X^n,{}_b\scrK_a)=0$.
+\ (ii) Pour $b$ variable, le syst\`eme local
+sur $X$ des $\dbH^n(X^n,{}_b\scrK_a)$, muni en
+$b=a$ de (3.3.4), est le dual du syst\`eme
+local $(\Lambda/I^{n+1})\uptil$ de 3.1, muni
+du transpos\'e de (3.1.1).
+\endproclaim
+
+\demo{Preuve}
+Pour $n=0$, $X^n$ est r\'eduit \`a un point,
+${}_b\scrK_a$ est le faisceau constant $k$ en
+degr\'e $0$ et (i) (ii) sont clairs.
+Prouvons 3.4 par r\'ecurrence sur $n\Ge 1$;
+l'hypoth\`ese de r\'ecurrence est la
+validit\'e de 3.4 pour $m$ si $m<n$.
+
+Soit $q$ la premi\`ere projection: $X^n\to X$.
+Nous utiliserons la suite spectrale de Leray
+pour $q$.
+Ceci revient \`a \'ecrire que
+$R\Gamma(X^n,\quad)=R\Gamma(X,Rq_*\quad)$ et
+\`a filtrer $Rq_*$ par la filtration canonique
+$\tau$.
+Plus pr\'ecis\'ement, nous utiliserons une
+filtration ayant une description uniforme pour
+$a=b$ ou $a\not=b$, et qui revient \`a la
+filtration canonique si $a\not=b$.
+
+Un d\'evissage montre que la formation de
+$Rq_*{}_b\scrK_a$ commute au passage aux
+fibres.
+Si on \'ecrit $X^n$ comme $X\times X^{n-1}$,
+${}_b\scrK_a$ sur $X^n$ s'identifie au
+c\^{o}ne$[-1]$ de
+$$
+\align
+{}_*\scrK_a\left<n-1\right>\to{}_b\scrK_a\left<
+n-1\right> &\quad\text{sur}\quad \{b\}\times
+  X^{n-1}\tag3.4.1\\
+\oplus~k_{\b{$\ssize t$}=a} &\quad\text{sur}\quad
+\{a\}\times X^{n-1}
+\endalign
+$$
+(complexe simple associ\'e au complexe double
+de premi\`ere (resp. deuxi\`eme) colonne la
+source (resp. but) de (3.4.1)).
+\enddemo
+
+On reconna{\hati}t \`a gauche les $k_J$ pour
+$0\notin J$ et $J\not=\{1,\dotsc,m\}$, \`a
+droite les $k_J$ d'une part pour $0\in J$, de
+l'autre pour $J=\{1,\dotsc,n\}$.
+
+Si $a\not=b$, la restriction de ${}_b\scrK_a$
+\`a $q^{-1}(t)=X^{n-1}$ est donc: pour
+$t\not=a,b$: ${}_t\scrK_a\left<n-1\right>$;
+pour $t=b$: le c\^{o}ne$[-1]$ de
+l'application identique de
+${}_b\scrK_a\left<n-1\right>$; pour $t=a$: le
+c\^{o}ne$[-1]$ de (3.3.3).
+D'apr\`es l'hypoth\`ese de r\'ecurrence,
+$R^iq_*{}_b\scrK_a=0$ si $i<n-1$.
+Pour $i=n-1$, c'est un sous-faisceau du
+syst\`eme local $(\Lambda/I^n)\uptil\upcheck$.
+Il co{\umi}ncide avec
+$(\Lambda/I^n)\uptil\upcheck$ si $t\not=a,b$,
+est nul en $t=b$ et la fibre en a est le noyau
+du transpos\'e de (3.3.1).
+Pour $i\Ge n$, $R^iq_*{}_b\scrK_a$ est un
+syst\`eme local sur $X-\{b\}$ prolong\'e par
+$0$ sur $X$.
+La suite spectrale de Leray v\'erifie donc
+$E_2^{pq}=0$ pour $q\Le n-2$ ou $p=0$, et
+$$
+\align
+&\dbH^i(X^n,{}_b\scrK_a)=0\quad\text{pour}\quad
+ i<n\tag3.4.2\\
+&\dbH^n(X^n,{}_b\scrK_a)=\dbH^1(X,R^{n-1}q_*
+  {}_b\scrK_a)\quad\text{(pour $a\not=b$).}
+\endalign
+$$
+Ce $\dbH^1$ est le groupe des extensions du
+faisceau constant $k$ par
+$(\Lambda/I^n)\uptil\upcheck$, trivialis\'ees
+en $t=b$, et trivialis\'ees apr\`es avoir
+pouss\'e par $(\Lambda/I^n)\upcheck\to k$ en
+$t=a$.
+Dualement, c'est le groupe des extensions
+$\Etil$ de $(\Lambda/I^n)\uptil$ par $k$,
+trivialis\'ees en $t=b$, et trivialis\'ees
+au-dessus de $k\Subset\Lambda/I^n$ en $t=a$.
+
+Traduisons en termes de $\Lambda$-modules.
+A $\Etil$ correspond un $\Lambda$-module $E$,
+extension de  $\Lambda/I^n$ par le module
+d'augmentation $k$.
+Il est annul\'e par $I^{n+1}$.
+La donn\'ee additionelle en a est celle d'un
+rel\`evement $\tilde{1}$ du g\'en\'erateur $1$
+de $\Lambda/I^n$ dans $E$.
+Soit $\alpha\colon\, I^n/I^{n+1}\to k$ la
+restriction \`a $I^n/I^{n+1}$ du morphisme de
+$\Lambda/I^{n+1}$ dans $E\colon\,
+\lambda\mapsto\lambda \tilde{1}$.
+L'extension $E$ est l'extension $E_\alpha$ de
+l'extension $\Lambda/I^{n+1}$ de $\Lambda/I^n$
+par $I^n/I^{n+1}$ en poussant par $\alpha$:
+$$
+\minCDarrowwidth{13pt}
+\CD
+0 @>>> I^n/I^{n+1} @>>> \Lambda/I^{n+1}
+  @>>> \Lambda/I^n @>>> 0\\
+@. @VV{\alpha}V @VVV @VVV\\
+0 @>>> \dbQ @>>> E @>>> \Lambda/I^{n+1} @>>>
+0.
+\endCD
+\tag3.4.3
+$$
+
+Pour $\alpha\colon\, I^n/I^{n+1}\to k$.
+L'extension $E_\alpha\!\!\!\uptil$ de
+$(\Lambda/I^n)\uptil$ par le syst\`eme local
+trivial $k$ se d\'eduit de
+$(\Lambda/I^{n+1})\uptil$ en poussant par
+$$
+\alpha\colon\text{ (syst\`eme local trivial
+$I^n/I^{n+1})$}\to k.
+$$
+La trivialisation $\beta$ en $b$ fournit un
+diagramme
+$$
+\minCDarrowwidth{13pt}
+\CD
+0 @>>> I^n/I^{n+1} @>>>
+(\Lambda/I^{n+1})_b\!\!\!\uptil @>>>
+(\Lambda/I^n)_b\!\!\!\uptil @>>> 0\\
+@. @VV{\alpha}V @VVV @|\\
+0 @>>> \dbQ @>>> (E_\alpha)_b\!\!\!\uptil
+  &{\overset{\sssize\beta}\to\leftrightarrows} 
+&(\Lambda/I^n)_b\!\!\!\uptil @>>> 0.
+\endCD
+\tag3.4.4
+$$
+De $\alpha$ et $\beta$ on d\'eduit une forme
+lin\'eaire $\gamma$ sur
+$(\Lambda/I^{n+1})_b\!\!\!\uptil$: \`a
+$x\in(\Lambda/I^{n+1})_b\!\!\!\uptil$, d'image
+$\xbar$ dans $(\Lambda/I^n)_b\!\!\!\uptil$,
+attacher
+$$
+\gamma(x):=\image(x)-\beta(\xbar)\in\dbQ
+\Subset(E_\alpha\!\!\!\uptil)_b.
+$$
+On a $\alpha=\gamma\vert(I^n/I^{n+1})$, et
+$\gamma$ d\'etermine $\beta$.
+Ceci fournit l'isomorphisme
+$$
+\dbH^n(X^n,{}_b\scrK_a)=
+((\Lambda/I^{n+1})_b\!\!\!\uptil)\upvee
+$$
+annonc\'e.
+
+Pr\'esent\'es un peu diff\'erement, ces
+arguments continuent \`a s'appliquer pour
+$a=b$.
+L'image par $Rq_*$ du complexe ${}_b\scrK_a$,
+c\^{o}ne$[-1]$ de (3.4.1) est encore un
+c\^{o}ne$[-1]$.
+On d\'efinit sa filtration croissante $\Fil$
+en filtrant source et but par la filtration
+canonique $\tau_{\Le}$.
+Le gradu\'e $\Gr_i^{\Fil}$ s'envoie par un
+quasi-isomorphisme sur le complexe
+$$
+R^iq_*{}_*\scrK_a\left<n-1\right>\to
+\text{ (sa fibre en a)}_a\oplus
+(k\text{ si }i=n-1)\tag3.4.5
+$$
+en degr\'es $0$ et $1$, translat\'e par
+$[-i]$.
+Pour $i<n-1$, (3.4.5) est nul.
+Pour tout $i$, $\dbH^0((3.4.5))=0$.
+La suite spectrale pour $R\Gamma(X,\quad)$ et
+$\Fil$ donne donc
+$$
+\align
+&\dbH^i(X^n,{}_b\scrK_a)=0\quad\text{pour
+$i<n$}\tag3.4.6\\
+&H^n(X^n,{}_b\scrK_a)=\dbH^1(X,(3.4.5)_{i=n-1}).
+\endalign
+$$
+Ce $\dbH^1$ classifie les extensions du
+faisceaux constant $k$ par
+$(\Lambda/I^n)\uptil\upvee=R^{n-1}q_*{}_*\scrK_a
+\left<n-1\right>$, trivialis\'ees apr\`es
+avoir pouss\'e par le morphisme (3.4.5), et
+les arguments donn\'es pour $a\not=b$ peuvent
+\^{e}tre r\'ep\'et\'e.
+
+Il reste, pour $a=b$, \`a identifier (3.3.4).
+Le complexe (3.3.1) (degr\'es $0$ \`a $n+1$)
+est le complexe simple associ\'e au complexe
+triple de faisceaux sur $X^n=X\times X^{n-1}$:
+$$
+\CD
+{}_*\scrK_a\left<n-1\right> @>>>{}_a\scrK_a
+  \left<n-1\right>\text{ sur }q^{-1}(a)\\
+@VVV @VVV\\
+k[-(n-1)]_{{\b{$\ssize t$}}=a} @>{\sim}>> 
+  k[-(n-1)]_{{\b{$\ssize t$}}=a}
+\endCD
+$$
+et (3.3.4) est induit par le morphisme
+$$
+\CD
+{}_*\scrK_a\left<n-1\right> @>>> 
+  {}_a\scrK_a
+  \left<n-1\right>\text{sur $\pr^{-1}(a)$}\\
+@VVV \null\kern-3.0 cm @VVV\\
+k[-(n-1)]_{{\b{$\ssize t$}}=a}
+  @>>> \null\kern-3.0 cm 0
+\endCD
+\quad
+\longrightarrow
+\quad
+\CD
+0 @>>> \null\kern-25pt0\\
+@VVV \null\kern-25pt@VVV\\
+0 @>>> k[-(n-1)].
+\endCD
+$$
+
+Filtrant comme pr\'ec\'edemment, on en
+d\'eduit que (3.2.1) est le $\dbH^1$ du
+morphisme de complexes
+$$
+\CD
+(\Lambda/I^n)\upvee\uptil @>>>
+(\Lambda/I^n)_a\!\!\!\uptil \oplus k_a\\
+@VVV @VVV\\
+0 @>>> k_a
+\endCD
+$$
+(La fl\`eche verticale droite donnant le
+morphisme est la diff\'erence entre
+l'\'evaluation sur $k\Subset\Lambda/I^n$ et
+l'identit\'e de $k_a$.)
+
+Une extension de $k$ par
+$(\Lambda/I^n)\upvee\uptil$, trivialis\'ee
+apr\`es avoir poun\'e par (3.3.4), se dualise
+en une extension de $(\Lambda/I^n)\uptil$ par
+$k$ qui en $a$ est et trivialis\'ee, et
+trivialis\'ee au-desus de $k\Subset\Lambda/I^n
+=(\Lambda/I^n)_a\!\!\!\uptil$.
+On lui attache la diff\'erence au-desus de $k$
+entre ces deux trivialisations.
+On laisse au lecteur le soin de v\'erifier que
+cela revient \`a \'evaluer en $1$ une forme
+lin\'eaire sur $\Lambda/I^{n+1}$.
+
+\remark\nofrills{\bf 3.5 Remarque.}\enspace
+Dans cette identification de 
+$(k[{}_bP_a]\otimes_{\Lambda}\Lambda/I^{n+1})\upvee$
+avec le groupe des extensions de
+$(\Lambda/I^n)\uptil$ par $k$, munies de
+trivialisations convenables en $a$ et $b$, le
+sous-espace $(k[{}_bP_a]\otimes_\Lambda
+\Lambda/I^n)\upvee$ est celui des extensions
+triviales, avec la trivialisation \'evidente en
+$a$ et une trivialisation en $b$.
+L'injection de $(k[{}_bP_a]/I^n)\upvee\to
+(k{}_aP_b]/I^{n+1})\upvee$ est donc le
+$\dbH^n$ de
+$$
+\left({}_b\scrK_a\left<n-1\right>\text{ sur }
+\{b\}\times X^{n+1}\right)[-1]\to
+{}_b\scrK_a\text{ sur }X^n\tag3.5.1
+$$
+d\'eduit de la description du second membre
+comme c\^{o}ne$[-1]$ de (3.4.1).
+\endremark
+
+\subhead
+3.6
+\endsubhead
+Nous regarderons un objet simplicial
+tant\^{o}t comme un foncteur contravariant sur la
+cat\'egorie de tous les ensembles totalement
+ordonn\'es finis non vides, tant\^{o}t comme un
+foncteur sur la sous-cat\'egorie des
+$\Delta_n=\{0,\dotsc,n\}$.
+Cela revient au m\^{e}me (\'equivalence de
+cat\'egories).
+Si la valeur sur $\Delta_n$ d'un objet
+simplicial $S$ est not\'ee $S_n$, on notera
+$S_I$ sa valeur sur $I$ totalement ordonn\'e.
+Elle est fonctorielle en $I$ et si $I$ a $n+1$
+\'el\'ement, l'unique isomorphisme de $I$ avec
+$\Delta_n$ fournit un isomorphisme de $S_I$
+avec $S_n$.
+
+Le morphismes $\Delta_n\to\Delta_1$ sont les
+$$
+\varphi_i\colon\, 0,\dotsc,i-1\longmapsto
+0;\,\,
+i,\dotsc,n\longmapsto 1\qquad
+(0\Le i\Le n+1).\tag3.6.1
+$$
+Nous identifierons par cette num\'erotation
+$X^{\Hom(\Delta_n,\Delta_1)}$ \`a $X\times
+X^n\times X$.
+L'ensemble simplicial
+$\Delta_n\mapsto\Hom(\Delta_n,\Delta_1)$
+contient l'ensemble simplicial
+$\Delta_n\mapsto\Hom(\Delta_n,\partial\Delta_1)=
+\{\varphi_0,\varphi_{n+1}\}$.
+L'espace cosimplicial $\Delta_n\mapsto
+X^{\Hom(\Delta_n,\Delta_1)}$ se projette donc sur
+l'espace cosimplicial $\Delta_n\mapsto
+X^{\Hom(\Delta_n,\partial\Delta_1)}=
+X\times X$.
+Prenant la fibre en $(b,a)$, on obtient un
+espace cosimplicial $\Delta_n\mapsto X^n$.
+Les $\partial_i\colon\, X^{n-1}\to X^n$
+($0\Le i\Le n$) sont les
+$$
+\alignat2
+t_1,\dotsc,t_{n-1}\longmapsto
+  &~b,t_1,\dotsc,t_{n-1} &\quad &(i=0)\\
+&~t_1,\dotsc,t_i,t_i,\dotsc,t_{n-1} 
+  &\quad &(i\not=0,n)\\
+&~t_1,\dotsc,t_{n-1},a &\quad &(i=n)\,\,,
+\endalignat
+$$
+d'images les $Y_i$ de 3.3.
+Plus g\'en\'eralement, pour $J\Subset\{
+0,\dotsc,n\}$ de compl\'ement $I$, suppos\'e
+non vide, $p=\vert I\vert-1$ et $\varphi_I$
+l'inclusion de $I$, le morphisme cosimplicial
+$\varphi_I\colon\, X^p\to X^n$ identifie $X^p$
+avec $Y_J\Subset X^n$.
+Pour $J$, $J'$ de compl\'ements $I$, $I'$ et
+$p=\vert I\vert-1$, $p'=\vert I'\vert-1$, si
+$J\Subset J'$ et que $\varphi_{II'}$ est
+l'inclusion de $I'$ dans $I$, le morphisme
+cosimplicial $\varphi_{II'}\colon\, X^{p'}\to
+X^p$ s'identifie \`a l'inclusion de $Y_{J'}$
+dans $Y_J$.
+Noter que pour $J=\{j_0,\dotsc,\Hatj_k,\dotsc,j_p
+\}\Subset J'=\{j_0,\dotsc,j_p\}$ donnant lieu
+\`a $I'=\{i_0,\dotsc,{\Hati}_\ell,\dotsc,i_q\}
+\Subset I=\{i_0,\dotsc,i_q\}$ (les $i$ et $j$
+sont pris dans l'ordre croissant), on a
+$p+q=n$, $k+\ell=i_\ell=j_k$, et le signe
+$(-1)^k$ que nous avons employ\'e en 3.3 peut
+se r\'ecrire
+$$
+(-1)^k=(-1)^\ell\cdot
+(-1)^{j_k}=\eps(J)(-1)^\ell\eps(J')
+$$
+pour
+$$
+\eps(J)=\prod\limits_{j\in J}(-1)^j.\tag3.6.2
+$$
+
+\subhead
+3.7
+\endsubhead
+Choisissons des complexes $S_m^*$ qui
+calculent la cohomologie des $X^m$, et soient
+fonctoriels pour les morphismes cosimpliciaux
+entre les $X^m$.
+Plus pr\'ecis\'ement: on prend pour $S_m^*$ le
+complexe des sections globales d'une
+r\'esolution fonctorielle $\scrS_m^*$ du
+faisceau constant $k$ sur $X^m$, telle que
+$\Gamma(X^m,\scrS_m^*)\to
+R\Gamma(X^m,\scrS_m^*)$ soit un
+quasi-isomorphisme.
+A $m$ variable, les $S_m^*$ forment un
+syst\`eme simplicial de complexes.
+Les $\scrS_m^*$ fournissent une r\'esolution
+de ${}_b\scrK_a\left<n\right>$ sur $X^n$:
+avec les notations de 3.6, r\'esoudre $k_J$
+par $\varphi_{I*}\scrS_I^*$ et utiliser la
+fonctorialit\'e de $\scrS_I^*$ en $I$.
+
+Un {\it syst\`eme de coefficients} $c$ sur le
+simplexe standard $\Delta_n$, \`a valeurs dans
+une cat\'egorie additive, attache \`a chaque
+facette $F\Subset\Delta_m$ un objet $c(F)$,
+contravariant en $F$ pour les morphismes
+d'inclusion.
+Il d\'efinit un complexe de cha{\hati}nes
+$$
+C_p(\Delta_n,c)=\bigoplus\limits_{\vert F\vert
+=p+1}c(F).
+$$
+Dualement, un cosyst\`eme: $c(F)$ covariant en
+$F$, d\'efinit un complexe de cocha{\hati}nes.
+
+Si $s_{\smbul}$ est un objet simplicial, on
+note encore $C_*(\Delta_n,s_{\smbul})$ le
+complexe $C_*(\Delta_n,c)$ pour $c(F):=s_F$.
+Dualement pour $s^{\smbul}$ cosimplicial.
+
+Le complexe
+$$
+\Gamma(X^n,\text{ r\'esolution de
+${}_b\scrK_a$ d\'efinie par $\scrS_{\smbul}$}),
+$$
+calcule l'hypercohomologie de ${}_b\scrK_a$.
+Il s'identifie (avec les signes (3.6.2)) au
+complexe simple associ\'e au complexe double
+($=$ complexe de complexes)
+$$
+C_*(\Delta_n,S_{\smbul}^*),
+$$
+translat\'e par $[-n]$, et 3.4 (ii) se
+r\'ecrit
+$$
+(k[{}_b P_a]\otimes_\Lambda
+\Lambda/I^{n+1})\upvee=H^0C_*(\Delta_n, S_{\smbul}^*).
+\tag3.7.1
+$$
+
+\example\nofrills{3.8 Exemple:}\enspace
+prenons pour $S_m^*$ le complexe des cocha{\hati}nes
+singuli\`eres de $X^m$.
+Il ne rentre pas tout \`a fait dans le cadre
+pr\'ec\'edent, mais on peut l'y ramener: si
+$\scrS_m^*$ est le complexe des cocha{\hati}nes
+singuli\`eres localis\'ees sur $X^m$ (le
+faisceau associ\'e au pr\'efaisceau des
+cocha{\hati}nes singuli\`eres),
+$S_m^*\to\Gamma(X^m,\scrS_m^*)$ est un
+quasi-isomorphisme.
+Le complexe $S_m^*$ des cocha{\hati}nes
+singuli\`eres est le dual du complexe $S_*^m$
+des cha{\hati}nes singuli\`eres.
+A $m$ variable, $S_*^m$ est cosimplicial en $m$,
+et $C_*(\Delta_n,S_{\smbul}^*)$ est le dual de
+$C^*(\Delta_n,S_*^{\smbul})$.
+On a donc
+$$
+k[{}_b P_a]\otimes_\Lambda
+\Lambda/I^{n+1}=H^0C^*(\Delta_n,S_*^{\smbul})
+\tag3.8.1
+$$
+
+Pour $X=[0,1]$, $a=0$ et $b=1$, ${}_b P_a$ est
+r\'eduit \`a un \'el\'ement et chaque
+$k[{}_bP_a]\otimes_\Lambda \Lambda/I^{n+1}$
+est r\'eduit \`a $k$.
+Au membre de gauche, les
+$C^*(\Delta_n,S_*^{\smbul})$ forment un
+syst\`eme projectif, de morphismes de
+transition d\'eduit, apr\`es dualisation, de
+(3.5.1\quad):
+$$
+C^*(\Delta_n,S_*^{\smbul})\to
+C^*(\Delta_{n-1},
+S_*^{\smbul})
+$$
+est induit par $\partial_0\colon\,\Delta_{n-1}
+\hookrightarrow\Delta_n$.
+\endexample
+
+Pour qu'un cocycle de degr\'e zero de
+$C^*(\Delta_n,S_*^{\smbul})$ corresponde au
+chemin de $0$ \`a $1$, il faut et il suffit
+que sa valeur en $\{n\}=\partial_0^n(\Delta_0)\Subset
+\Delta_n$ soit $1\in S^0$, le complexe des
+cha{\hati}nes singuli\`eres du point.
+On a $[0,1]=\vert\Delta_1\vert$.
+Soit $\sigma_m$ le simplexe
+$\vert\Delta_m\vert
+\to\vert\Delta_1\vert^m=[0,1]^m$ de
+coordonn\'ees les d\'eg\'en\'erescences
+$\varphi_i$ ($1\Le i\le m$) de (3.6.1).
+Son image est $\{\underbart\vert 1\Ge
+t_1\Ge\ldots\Ge t_m\Ge 0\}$.
+Comme cocycle, on peut prendre celui qui \`a
+chaque face de dimension $p$ de $\Delta_n$
+attache $\pm\sigma_p$, le signe \'etant $+$
+pour $p=0$ et d\'ependant des conventiones de
+signes d\'efinissant
+$C^*(\Delta_n,S_*^{\smbul})$ pour $p>0$.
+
+Par fonctorialit\'e en $X$, on en d\'eduit
+que, pour $X$, l'image dans
+$H^0C^*(\Delta_n,S_*)$ d'un chemin
+$\gamma\colon\, [0,1]\to X$ de $a$ \`a $b$ est
+repr\'esent\'ee par le cocycle qui \`a chaque
+face de dimension $p$ de $\Delta_n$ attache
+$\pm\gamma\circ\sigma_p$:
+$\vert\Delta_p\vert\to[0,1]^p\to X^p$, le
+signe \'etant comme ci-desssus.
+
+\subhead
+3.9
+\endsubhead
+La litt\'erature donne une autre recette pour
+d\'eduire $(k[{}_bP_a]\otimes_\Lambda
+\Lambda/I^{n+1})\upvee$ de l'objet simplicial
+$S_{\smbul}^*$ de la cat\'egorie des complexes
+consid\'er\'e en 3.7:
+
+\medskip\noindent
+{\sans (a)}\enspace
+prendre le complexe normalis\'e
+$NS_{\smbul}^*$ de cet objet simplicial;
+
+\smallskip\noindent
+{\sans (b)}\enspace
+prendre le tronqu\'e $\sigma_{\Ge -n}
+NS_{\smbul}^*$ qui ne garde que les
+$NS_m^*$ pour $m\Le n$;
+
+\smallskip\noindent
+{\sans (c)}\enspace
+prendre le complexe simple associ\'e au complexe
+double $\sigma_{\Ge -n}NS_{\smbul}^*$ et son
+$H^0$.
+
+\medskip
+L'\'equivalence entre les deux constructions
+r\'esulte du lemme suivant.
+Rappelons qu'une {\it cat\'egorie karoubienne}
+est une cat\'egorie additive dans laquelle
+tout endomorphisme idempotent admet un noyau,
+et que l'\'equivalence de Dold-Puppe:
+(objet simplicial
+$S_{\smbul}$)$\to$ (complexe $NS_{\smbul}$ \`a
+degr\'es $\Le 0$) est disponible dans une
+telle cat\'egorie ($NS_k$ est facteur
+direct de $S_k$)
+
+\proclaim{Proposition 3.10}
+Si $S_{\smbul}$ est un objet simplicial d'une
+cat\'egorie karoubienne, le complexe 
+$C_*(\Delta_n,S_{\smbul})$ et le
+tronqu\'e normalis\'e $\sigma_{\Ge
+-n}NS_{\smbul}$ sont fonctoriellement homotopes.
+\endproclaim
+
+Nous v\'erifierons par la m\'ethode des
+mod\`eles acycliques l'\'enonc\'e dual, pour
+un objet cosimplicial $S^{\smbul}$,
+$\sigma_{\Le n}NS^{\smbul}$ et
+$C^*(\Delta_n,S^{\smbul})$.
+
+\demo{Preuve}
+Nous noterons $C_{\dbZ}$ la cat\'egorie
+pr\'eadditive ayant les m\^{e}mes objets
+qu'une cat\'egorie $\scrC$, pour laquelle
+$\Hom(A,B)$ est le groupe ab\'elien librement
+engendr\'e par $\Hom_{\scrC}(A,B)$.
+Nous noterons $\scrC_{\kar}$ son enveloppe
+karoubienne, obtenue par adjonction formelle
+de sommes finies et de facteurs directs
+noyaux d'endomorphismes idempotents.
+Le foncteur contravariant
+$$
+X\longmapsto h_{\dbZ}^X\colon\,
+\scrC_{\kar}\to\HOM(\scrC,Ab),\quad 
+h_{\dbZ}^X(Y)=\Hom_{\scrC_{\kar}}(X,Y)
+$$
+est pleinement fid\`ele.
+Il induit une \'equivalence de $\scrC_{\kar}$
+avec la sous-cat\'egorie de la cat\'egorie
+ab\'elienne $\HOM(\scrC,Ab)$ d'objets les
+facteurs directs de sommes finies de
+foncteurs
+$$
+Y\longmapsto\text{ groupe ab\'elien librement
+engendr\'e par $\Hom_{\scrC}(X,Y)$},
+$$
+pour $X$ dans $\scrC$.
+Ces foncteurs sont des objets projectifs de la
+cat\'egorie ab\'elienne $\HOM(\scrC,Ab)$, car
+pour $C$ dans $\scrC$
+$$
+\Hom(h_{\dbZ}^C,F)=F(C)
+$$
+(variante du lemme de Yoneda).
+\enddemo
+
+Si $\Delta$ est la cat\'egorie des $\Delta_n$,
+l'objet cosimplicial $(\Delta_n)$ de
+$\Delta_{kar}$ est universel en ce sens que,
+pour $\scrA$ une cat\'egorie karoubienne,
+$F\mapsto F((\Delta_n))$ est un \'equivalence
+$$
+\text{(foncteurs $\Delta_{\kar}\to\scrA)\to$
+(objets cosimpliciaux de $\scrA$)}
+$$
+Pour v\'erifier l'\'enonc\'e $(3.10)^*$ dual de
+3.10, et montrer que l'\'equivalence
+d'homotopie peut \^{e}tre donn\'ee par des
+formules universelles, il suffit de v\'erifier
+$(3.10)^*$ dans le cas universel: pour l'objet
+$(\Delta_n)$ de $\Delta_{\kar}$.
+Si $\Delta_{\Le n}$ est la sous-cat\'egorie de
+$\Delta$ d'objets les $\Delta_m$ pour $m\Le
+n$, tant $\sigma_{\Ge-n}N\Delta_{\smbul}$ que
+$C_*(\Delta_n,\Delta_{\smbul})$ sont dans
+$(\Delta_{\Le n})_{\kar}$, et c'est dans
+$(\Delta_{\Le n})_{\kar}$ que nous
+travaillerons.
+
+Appliquons le foncteur $X\mapsto h_{\dbZ}^X$
+\`a $\sigma_{\Le n}N\Delta^{\smbul}$ et \`a
+$C^*(\Delta_n,\Delta^{\smbul})$.
+On obtient deux complexes d'objets projectifs
+de la cat\'egorie ab\'elienne
+$\HOM(\Delta_{\Le n},Ab)$.
+Nous montrerons qu'il sont l'un et l'autre une
+r\'esolution projective du foncteur constant
+$\dbZ$, donc sont homotopes, et on conclut par la
+pleine fid\'elit\'e de $X\mapsto h_{\dbZ}^X$.
+Si on \'evalue en $\Delta_p$ ($p\Le n$), on
+obtient les complexes $\sigma_{\Ge
+-n}NS_{\smbul}$ et $C_*(\Delta_n,S_{\smbul})$
+de 3.10 pour $S_{\smbul}$ le complexe
+cha{\hati}nes simpliciales de $\Delta_p$.
+Ce sont
+
+\medskip\noindent
+{\sans (a)}\enspace
+le complexe des cha{\hati}nes non
+d\'eg\'en\'er\'ees de $\Delta_p$, \'egal \`a
+son tronqu\'e car $p\le n$.
+
+\smallskip\noindent
+{\sans (b)}\enspace
+le complexe des cha{\hati}nes combinaisons
+lin\'eaires de
+$\Delta_q\to\Delta_n\times\Delta_p$, avec la
+premi\`ere projection injective.
+
+\medskip
+Ces deux complexes sont augment\'es vers $\dbZ$,
+fonctoriellement en $\Delta_p$.
+Puisque $\vert\Delta_p\vert$ est contractile,
+et que le complexe (a) calcule son homologie,
+il est une r\'esolution de $\dbZ$.
+Le complexe (b) est le complexe des
+cha{\hati}nes non d\'eg\'en\'er\'ees du
+sous-polytope simplicial suivant de
+$\vert\Delta_n\times\Delta_p\vert$:
+
+\parindent=40pt
+\medskip\noindent
+\Item{(3.10.1)}
+la r\'eunion, pour $\varphi\colon\,
+\Delta_n\to\Delta_p$, des graphes
+$\Gamma_\varphi$ des morphismes
+$\vert\varphi\vert\colon\,\vert\Delta_n\vert\to
+\vert\Delta_p\vert$.
+
+\parindent=20pt
+\medskip
+Pour v\'erifier que le complexe (b) est une
+r\'esolution de $\dbZ$, il suffit donc de
+v\'erifier le
+
+\proclaim{Lemme 3.10.2}
+L'espace (3.10.1) est contractile.
+\endproclaim
+
+\demo{Preuve}
+Ordonnons lexicographiquement l'ensemble des
+applications croissantes
+$$
+\varphi\colon\,\{0,\dotsc,n\}\to
+\{0,\dotsc,p\}.
+$$
+Montrons que pour tout $\varphi\not=0$,
+$$
+\Gamma_\varphi\CAP\bigcup\limits_{\varphi' < \varphi}
+\Gamma_{\varphi'}
+$$
+est une union non vide de faces du simplexe
+$\Gamma_{\varphi}$, mais non de toutes les faces
+de $\Gamma_\varphi$, de sorte que
+$\bigcup\limits_{\varphi'<\varphi}\Gamma_{\varphi'}$
+est r\'etracte par d\'eformation de
+$\bigcup\limits_{\varphi'\Le
+\varphi}\Gamma_{\varphi'}$.
+
+Quels que soient $\varphi'$ et $\varphi$, si
+$F\Subset\{0,\dotsc,n\}$ est l'ensemble des
+$i$ tels que $\varphi(i)=\varphi'(i)$, et
+$\vert F\vert$ la facette correspondante
+$\Delta_m$, $\Gamma_\varphi\CAP
+\Gamma_{\varphi'}$ est le graphe de la
+restriction de $\vert\varphi\vert$ ou
+$\vert\varphi'\vert$ \`a $\vert F\vert$.
+
+Identifions $\Gamma_\varphi$ \`a
+$\vert\Delta_m\vert$ par la projection sur
+$\Delta_m$.
+Si $\varphi'<\varphi$, soit $i$ minimal tel
+que $\varphi'(i)<\varphi(i)$.
+Si $\varphi''$ est d\'efini par
+$\varphi''(j)=\varphi'(j)$ (resp.
+$\varphi(j)$) pour $j\le i$ (resp. $j>i$), on
+a $\varphi''<\varphi$ et
+$\Gamma_\varphi\CAP\Gamma_{\varphi'}\Subset
+\Gamma_\varphi\CAP\Gamma_{\varphi''}$, qui
+s'identifie \`a la face d'indice $i$ de
+$\vert\Delta_m\vert$.
+L'intersection
+$\Gamma_\varphi\CAP\bigcup\limits_{\varphi'<\varphi}
+\Gamma_{\varphi'}$ est donc r\'eunion non vide
+de faces.
+
+Pour que la face d'indice $i$ soit obtenue, il
+faut et il suffit que $\varphi(i)\not=0$, et
+que, si $i\not=0$, on ait
+$\varphi(i-1)<\varphi(i)$.
+Parce que $n\Ge p$, toute les faces ne sont
+pas obtenues: soit $\varphi(i)=\varphi(i+1)$
+pour un $i$, soir $n=m$, $\varphi$ est
+l'identit\'e, et $\varphi(0)=0$.
+\enddemo
+
+\subhead
+3.11
+\endsubhead
+Si $X$ est une vari\'et\'e diff\'erentiable,
+que $k=\dbR$ et que, dans 3.7, on calcule la
+cohomologie de $X^n$ \`a l'aide du complexe de
+de Rham, on obtient un objet simplicial
+$\Omega^p(X^n)$ de la cat\'egorie des
+complexes (degr\'e diff\'erentiel gradu\'e $p$,
+degr\'e simplicial $n$).
+Soit $N\Omega^*(X^*)$ son normalis\'e, et
+$\bfs N\Omega^*X^*$ le complexe simple
+associ\'e, dont la composante de degr\'e $k$
+est $\oplusop_{p-n=k}N\Omega^p(X^k)$.
+C'est un proche cousin du complexe des
+int\'egrales it\'er\'ees de Chen.
+Nous nous proposons d'expliquer la relation
+entre les deux.
+
+Une $q$-forme $\beta$ sur l'espace
+${}_b\Omega_a(X)$ des chemins $C^\infty$ de
+$a$ \`a $b$ est pour Chen la donn\'ee, pour
+toute vari\'et\'e $U$ et toute famille
+$C^\infty$ $^\colon\, U\to {}_b\Omega_a(X)$
+de chemins de $a$ \`a $b$ param\'etr\'ee par
+$U$, d'une $q$-forme (not\'ee
+$\gamma^*\beta$) sur $U$, cette donn\'ee
+v\'erifiant que pour $f\colon\, V\to U$ on
+a $(\gamma f)^*\beta=f^*(\gamma^*\beta)$.
+A une $p$-forme sur $X^n$, Chen attache comme
+suit une $(p-n)$-forme sur ${}_b\Omega_a(X)$:
+
+\medskip\noindent
+{\sans (a)}\enspace
+r\'ep\'etant avec param\`etres la construction
+de 3.8, on attache \`a une famille $\gamma$ de
+chemins param\'etr\'ee par $U$ un morphisme
+$$
+\gamma_n=\gamma\circ\sigma_n\colon\,
+U\times\vert\Delta_n\vert\to
+U\times[0,1]^n\to X^n;
+$$
+
+\noindent
+{\sans (b)}\enspace
+\`a la forme $\alpha$ sur $X^n$ on attache
+l'int\'egrale de $\gamma_n^*\alpha$ le long
+des fibres de $U\times\vert\Delta_n\vert\to U$.
+Plus pr\'ecis\'ement, on attache
+$$
+\left<\alpha\right>=(-1)^{n(n+1)/2}\int_{U\times
+\vert\Delta_n\vert/U}\gamma_n^*\alpha,
+$$
+o\`u l'int\'egrale le long des fibres est
+d\'efinie de sorte que pour $\beta'$ sur
+$U$ et $\beta''$ sur $\vert\Delta_n\vert$,
+on ait 
+$$
+\int_{U\times\vert\Delta_n\vert/U}
+\pr_1^*\beta'\w \pr_2^*\beta''=\beta'.
+\int_{\vert\Delta_n\vert}\beta''.
+$$
+
+Le signe est choisi pour avoir, si $\alpha$
+est de degr\'e $p$
+$$
+d\left<\alpha\right>=\left<d\alpha\right>+
+(-1)^p\left<\sum(-1)^ij_i^*\alpha\right>\,\,:
+$$
+compatibilit\'e de la diff\'erentielle
+ext\'erieure sur ${}_b\Omega_a(X)$ avec la
+diff\'erentielle $D$ du complexe simple
+associ\'e au complexe double des
+$\Omega^*(X^n)$ (pour * le premier degr\'e).
+
+Pour la diff\'erentielle transpos\'ee de
+$\Sing_*X^*$, si $\gamma$ est un chemin de $a$
+\`a $b$, c'est $\sum(-1)^p\gamma\circ\sigma_p$
+qui est un cycle.
+
+Chen remplace les $\Omega^*X^n$ par le
+syst\`eme simplicial de sous-complexes
+$\otimesop^{n}\Omega^*(X)$.
+Le {\it complexe des int\'egrale it\'er\'ees}
+de Chen est l'image par $\left<\quad\right>$
+de la somme des $\otimesop^{n} \Omega^*(X)$.
+Cette image est form\'ee des sommes de 
+$$
+\left<\alpha_1\vert\ldots\vert\alpha_n\right>:=
+\left<\pr_1^*\alpha_1\w\ldots\w\pr_n^*\alpha_n
+\right>.
+$$
+
+Les d\'eg\'en\'erescences $s_i\colon\, X^n\to
+X^{n-1}$ sont les projections $(x_1\ldots
+x_n)\to
+(x_1\ldots\xhat_i\ldots x_n)$ et le complexe
+normalis\'e de $\otimesop^{n}\Omega^*X$, dans
+sa version ``diviser par les $\im(s_i)$'' est
+$$
+N\otimesop^{n}\Omega^*X=\otimesop^{n}(\Omega^*X/
+\text{constantes}).\tag3.11.1
+$$
+Par K\"unneth, les $\otimesop^{n}\Omega^*X$
+sont quasi-isomorphes aux $\Omega^*X^n$, et
+donc les $N\otimesop^{n}\Omega^*X$ aux
+$N\Omega^*X^n$.
+
+Si un des $\alpha_i$ est de degr\'e $0$,
+$\left<\alpha_1\vert\ldots\vert\alpha_n\right>$
+est nul et $\left<\quad\right>$ induit donc
+$$
+\left<\quad\right>\colon\,
+N\otimesop^{n}\Omega^*X\to\text{complexe des
+int\'egrales it\'erees.}
+$$
+Les deux membres sont filtr\'es par $n$; par
+les $\oplusop_{m\Le n}N\otimesop^{m}\Omega^*X$
+et leurs images.
+Chen (1973) (Lemme 4.3.1) prouve 
+que, pour cette filtration $\Fil$ du complexe
+des int\'egrales it\'eries, $\Gr_n^{\Fil}$ est
+le quotient $\otimesop^{n}(\tau_{\Ge 1}\Omega^*X)$
+de $\otimesop^{n}\Omega^*X$.
+Le complexe $\tau_{\Ge 1}\Omega^*X$ est le
+quotient de $\Omega^*X$ par $\Omega^0X$ et son
+image par $d$.
+La vari\'et\'e $X$ \'etant connexe, le
+morphisme de $(\Omega^*X/\text{constantes})$
+dans $\tau_{\Ge 1}\Omega^*X$ est un
+quasi-isomorphisme, et les
+$$
+\Fil_nN\otimesop^{n}\Omega^*X
+\to\Fil_n(\text{int\'egrales it\'er\'ees})
+$$
+sont donc des quasi-isomorphismes.
+
+\remark{Remarque}
+On peut donner du complexe des int\'egrales
+it\'er\'ees une description directe, en terme
+de l'alg\`ebre gradu\'ee $\Omega^*(X)$ et des
+morphismes d'\'evaluation en $a$ et $b$, sans
+invoquet
+les formes diff\'erentielles sur
+${}_b\Omega_a$: l'image de $\oplusop_{m\Le
+n}\otimesop^{m}\Omega_X^*$ est son quotient par
+les $\alpha_1\otimes\ldots\otimes\alpha_m$
+tels qu'un $\alpha_i$ soit de degr\'e $0$, et
+leurs diff\'erentielles (construction bar
+r\'eduite de Chen 1976).
+\endremark
+
+\subhead
+3.12
+\endsubhead
+Soit $X$ une vari\'et\'e alg\'ebrique lisse
+connexe sur un corps $K$ et $a,b\in X(K)$.
+Comme dans le cas topologique 3.6, le sch\'ema
+cosimplicial $X^{\Hom(\Delta_n,\Delta_1)}$
+s'envoie dans le sch\'ema cosimplicial constant
+$X\times
+X=X^{\Hom(\Delta_n,\partial\Delta_1)}$ et,
+prenant la fibre en $(b,a)\in X\times X$, on
+obtient un sch\'ema cosimplicial
+$\Delta_n\mapsto X^n$.
+Regardons-le comme un objet cosimplicial de la
+cat\'egorie additive $\SmCor(K)$.
+Quel que soit $n$, on peut lui attacher le
+complexe
+$$
+C^*(\Delta_n,X^*)[n]
+$$
+(3.7) de $\SmCor(K)$, ou, dans l'enveloppe
+karoubienne $\SmCor(K)_{\kar}$ de $\SmCor(K)$,
+le complexe homotope $\sigma_{\Le n}NX^*$.
+Ces complexes fournissent des objets,
+naturellement isomorphes d'apr\`es 3.10, de la
+cat\'egorie triangul\'ee motivique $\DM(K)$.
+Notons les ${}_b\Omega_a^{[n]}(X)$.
+
+Appliquons \`a ${}_b\Omega_a^{[n]}(X)$ le
+foncteur ``r\'ealisation''  cohomologique,
+suivi de $H^0$.
+D'apr\`es 3.4, pour tout plongement complexe
+$\sigma$ de $K$, dans la r\'ealisation de
+Betti $H_\sigma$ correspondante (coefficients
+rationnels), on obtient
+$(\dbQ[{}_bP_a]\otimes_\Lambda
+\Lambda/I^{n+1})\upvee$ pour $X(\dbC)$.
+
+Supposons que $X$, comme objet de $\DM(K)$,
+soit de Tate mixte, i.e. dans $\DMT(K)$.
+Les ${}_b\Omega_a^{[n]}(X)$ sont alors
+\'egalement dans $\DMT(K)$.
+Si $K$ est un corps de nombres, ou plus
+g\'en\'eralement quand on dispose de la
+conjecture d'annulation de Beilinson-Soul\'e,
+on peut, apr\`es tensorisation avec $\dbQ$,
+appliquer $H^0$ et dualiser pour obtenir un
+objet de la cat\'egorie $\MT(K)$ des motifs de
+Tate mixtes sur $K$.
+
+Si on travaille avec $\sigma_{\Le n}NX^*$, les
+formules classiques en topologie (voir 
+Wojtkowiak (1993)) fournissent, apr\`es
+passage \`a la limite inductive en $n$, une
+structure d'alg\`ebre commutative dans la
+cat\'egorie des $\Ind$-objets de $\MT(K)$, et
+$$
+{}_bA_a(X):=\colim_n(H^0\sigma_{\Le
+n}NX^*)\upvee
+$$
+m\'erite le nom d'alg\`ebre affine de l'espace
+motivique des chemins de $a$ \`a $b$.
+Pour trois points $a$, $b$, $c$, on dispose
+aussi (loc. cit.)d'un coproduit
+$$
+{}_c A_a(X)(X)\to {}_cA_b(X)\otimes
+{}_bA_a(X)
+$$
+correspondant \`a la composition des chemins.
+Pour $a=b$, $\Spec({}_aA_a(X))$ est le {\it
+groupe fondamental rendu unipotent motivique}.
+
+\subhead
+3.13
+\endsubhead
+Prenons pour $X$ le compl\'ement, dans une
+droite projective $P$ sur $K$, d'un ensemble
+fini de points rationnels, et montrons comment
+comparer ces constructions \`a celles de
+Deligne (1989).
+En r\'ealisation de de Rham, $X$ fournit le
+complexe (\`a diff\'erentielle nulle) des
+formes diff\'erentielles \`a p\^{o}les
+logarithmiques:
+$$
+K\mapright{0}\Omega_P^1(\log\,S).\tag3.13.1
+$$
+Pour $X^n$, on obtient la uissance tensorielle
+$n^{\ieme}$ de (3.13.1).
+Ces puissances tensorielles forment un
+syst\`eme simplicial de complexes.
+Normalisant, ce qui revient \`a supprimer $K$
+dans (3.13.1) (cf. (3.11.1)), on obtient
+apr\`es troncation en $n$
+$$
+\oplusop_{m\Le n}\Omega_p^1(\log\,S)^{\otimes m}.
+\tag3.13.2
+$$
+
+La comparaison avec la r\'ealisation de Betti
+est par les int\'egrales it\'er\'ees de Chen,
+et ceci est compatible aux constructions de
+Deligne (1989).
+Quant \`a la r\'ealisation en cohomologie
+$\ell$-adique, les arguments prouvant 3.4
+s'appliquent aussi bien dans le cadre
+$\ell$-adique.
+
+

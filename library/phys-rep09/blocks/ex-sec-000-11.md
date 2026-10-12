@@ -1,1 +1,0 @@
-MoanandNiesen[ 71]considerthecoefficientmatrix

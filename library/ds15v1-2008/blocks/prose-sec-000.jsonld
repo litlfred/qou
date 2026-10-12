@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ds15v1-2008/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ds15v1-2008/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "Abstract",
+  "title": "Theta Functions",
   "pageStart": 1,
   "pageEnd": 1,
-  "text": "../sections/sec-000-abstract.md",
-  "derivedFrom": "library/ds15v1-2008/manifest",
-  "sourceDocument": "library/ds15v1-2008/manifest",
+  "text": "../sections/sec-000-11-theta-functions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ds15v1-2008/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ds15v1-2008/manifest.jsonld",
   "provenance": "ingested"
 }

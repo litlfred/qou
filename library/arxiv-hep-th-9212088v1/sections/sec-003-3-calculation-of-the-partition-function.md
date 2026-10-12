@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9212088v1
-doc_title: "Random matrix theory and spectral sum rules for the Dirac operator in QCD1"
+doc_title: "arXiv:hep-th/9212088v1 14 Dec 1992"
 section_id: sec-003-3-calculation-of-the-partition-function
 section_title: "Calculation of the partition function"
 section_number: 3
 pages: 6-9
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
-doc_brief: "Random matrix theory and spectral sum rules for the Dirac operator in QCD1 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition"
+toc_source: inferred
 ---
 In order to evaluate the partition function (2.2) the determinant is written as an
 integral over Grassmann variables

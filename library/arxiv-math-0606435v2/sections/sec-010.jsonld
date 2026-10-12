@@ -1,17 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0606435v2/sections/sec-010",
   "@type": [
     "doco:Section"
   ],
-  "title": "Semiadequacy 7",
-  "pageStart": 7,
-  "pageEnd": 8,
+  "title": "Polynomial invariants",
+  "pageStart": 15,
+  "pageEnd": 17,
   "contains": [
-    "library/arxiv-math-0606435v2/blocks/prose-sec-010",
-    "library/arxiv-math-0606435v2/blocks/thm-sec-010-01"
+    "library/arxiv-math-0606435v2/blocks/prose-sec-010"
   ],
-  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
-  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
   "provenance": "ingested"
 }

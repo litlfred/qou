@@ -1,0 +1,544 @@
+\bs
+\ni{\bf Lemma 4.1.20} If $c\in V_k$ and $d\in V_{k'}$, then
+\begin{verse}
+(i) \ $\a_{d,j+k}\a_{c,i}=\a_{c,i}\a_{d,j}$ \ for \ 
+$i\leq j$.
+
+(ii) For \ $i < j$, \ $a_{j-1}a_i=a_ia_j$,  \
+ $\mu_{j-1}\mu_i=\mu_i\mu_j$. \newline
+For \ $i\leq j$, \ $\eta_{j+1}\eta_i=\eta_i\eta_j$, \
+$\kappa_{j+1}\kappa_i=\kappa_i\kappa_j$.
+
+(iii) For $i\leq j$,
+\begin{eqnarray*}
+   a_{j+k}\a_{c,i}=\a_{c,i}a_j &
+a_{j-1}\a_{c,j}=\a_{c,j-1}a_{i-1} \\
+\mu_{j+k+1}\a_{c,i}=\a_{c,i}\mu_{j+1} &
+\mu_{i-1}\a_{c,j}=\a_{c,j-1}\mu_{i-1} \\
+\eta_{j+k}\a_{c,i}=\a_{c,i}\eta_j &
+\eta_{i-1}\a_{c,j-1}=\a_{c,j}\eta_{i-1} \\
+\kappa_{j+k}\a_{c,i}=\a_{c,i}\kappa_j & \kappa_{i-1}\a_{c,j}=\a_{c,j+1}
+\kappa_{i-1}
+\end{eqnarray*}
+
+(iv) For $i < j$,
+\begin{eqnarray*}
+\mu_j a_i =a_i\mu_{j+1} & \mu_ia_j=a_{j-1}\mu_i\\
+\eta_{j-1}a_i=a_i\eta_j &   \eta_{i+1}a_j=a_{j+1}\eta_{i+1}\\
+\kappa_{j-1}a_i=a_i\kappa_j &  \kappa_ia_j=a_{j+1}\kappa_i\\
+\eta_{j-1}\mu_i=\mu_i\eta_j &  \eta_i\mu_j=\mu_{j+1}\eta_i\\
+\kappa_{j-2}\mu_i=\mu_i\kappa_{j-1} &  \kappa_i\mu_j=\mu_{j+1}\kappa_i\\
+\kappa_j\eta_i =\eta_i\kappa_{j-1} &  \kappa_i\eta_j=\eta_{j+1}\kappa_i
+\end{eqnarray*}
+
+(v) 
+\begin{eqnarray*}
+a_i\kappa_i={\op{id}} \\
+\mu_i\eta_i={\op{id}} \\
+a_{i+1}\kappa_i={\op{id}} \\
+\mu_{i+1}\eta_i={\op{id}} 
+\end{eqnarray*}
+
+(vi) 
+\begin{eqnarray*}
+a_j\eta_j=\d{\op{id}} \\
+\mu_{j+1}\kappa_j=\d{\op{id}}.
+\end{eqnarray*}
+\end{verse}
+(These identities hold when $i, \ j$ and $k$ are such that all the
+maps involved are defined by 4.1.19.)
+
+\bigskip
+{\sc Proof.} Almost all cases of identities (i)--(iv) are trivial
+as they  can be written so as to involve distant tensor product
+indices: thus they just amount to a renumbering.
+The ones that involve some interaction between the tensor product
+components are
+$$
+\mu_i\mu_i=\mu_i\mu_{i+1} \ , \ \
+\kappa_{i+1}\kappa_i=\kappa_i\kappa_i \ , \ \
+\kappa_{i-1}\mu_i=\mu_i\kappa_i \ , \ \
+\kappa_i\mu_{i+1}=\mu_{i+2}\kappa_i \ .
+$$
+These all follow easily from associativity of multiplication and\\
+$\dsize{\sum_{b\in B}\!b\!\otimes\! b^*x\!=\!\sum_{b\in B}}xb \otimes b^*$
+for $x\in M$, which is 4.1.2.
+
+\begin{eqnarray*}
+{\mbox{For (v):}}\ a_i\kappa_i& = &{\op{id}}\ {\mbox{follows from}} \sum_{b\in B} E_N(xb)b^*=x \ \ \ (4.1.4)\\
+\mu_i\eta_i & = & {\op{id}}\  {\mbox{follows from}}  x1=x\\
+a_{i+1}\kappa_i & = & {\op{id}}\  {\mbox{follows from}} 
+\sum_{b\in B} bE(b^*x)=x \ \ \ \ (4.1.4)\\
+\mu_{i+1}\eta_i & = &{\op{id}}\   {\mbox{follows from}}\  x1=x
+\end{eqnarray*}
+
+\begin{eqnarray*}
+{\mbox{For (vi):}}\   a_j\eta_j & = & \d{\op{id}}\   {\mbox{follows from}}\ E_N(1)=1\\
+\mu_{j+1}\kappa_j&=&\d{\op{id}}\  {\mbox{follows from}}\ \sum_{b\in B} bb^*=\d^2{\op{id}} \ \ \ (4.1.3)
+\end{eqnarray*}
+\qed
+
+\medskip
+\ni{\bf Lemma 4.1.21} \ If \ $x\in M$, \
+$2\leq r\leq k$, then \
+$v_kxv_r=v_{r-2}xv_k$ (where $v_0=1$), and
+$v_kxv_1=\d E_N(x)v_k$.
+
+\bigskip
+{\sc Proof.} Simple manipulation of 4.1.8 and 4.1.9. \qed
+
+\medskip
+\ni{\bf Lemma 4.1.22} \ If \ $x\in \otimes^k_N M$, \ then \
+\begin{verse}
+(i)  $\th^{-1}E_{M_{k-2}}\th(x)=\d^{-1}
+a_{m+1}(x)$ \ if \ $k$ is odd, $k=2m+1$.
+
+(ii) $\th^{-1}E_{M_{k-2}}\th(x)=\d^{-1}\mu_{m+1}(x)$ \ if \ $k$ is even, $k=2m$.
+\end{verse}
+
+\bigskip
+{\sc Proof.} Let $x$ be of the form $x_1\otimes
+x_2\otimes\dots\otimes x_k$. Then
+$$
+E_{M_{k-2}}(\th(x))=
+E_{M_{k-2}}(x_1v_1x_2v_2\dots v_{k-1}x_k) =
+\d^{-1}x_1v_1x_2v_2\dots x_{k-2}v_{k-2}x_{k-1}v_{k-2}x_k
+$$
+
+\ni${\underline{\mbox{Case (i)}}}$. If \ $k=2m+1$ we may apply
+4.1.21
+$m\!-\!1$ times to obtain
+\begin{eqnarray*}
+E_{M_{k-2}}(\th(x)) & = \d^{-1}x_1v_1\dots x_mv_m x_{m+1}v_1
+x_{m+2}v_{m+1}\dots x_{k-1}v_{k-2}x_k\\
+&= x_1v_1\dots x_mv_m E(x_{m+1})x_{m+2}v_{m+1}\dots
+x_{k-1}v_{k-2}x_k \\
+&= \d^{-1}\th(a_{m+1}(x))
+\end{eqnarray*}
+${\underline{\mbox{Case (ii)}}}$. If \ $k=2m$ we  apply 4.1.21
+$m\!-\!1$ times to obtain
+\begin{eqnarray*}
+E_{M_{k-2}}(\th(x)) & = \d^{-1}x_1v_1\dots x_mv_m x_{m+1}v_0
+ x_{m+2}v_{m+1}\dots x_{k-1}v_{k-2}x_k\\
+&= \d^{-1}\th(\mu_{m+2}(x)) \quad {\text{(since}} \ v_0\!=\!1).
+\end{eqnarray*}
+\qed
+
+\bs
+\ni{\bf Lemma 4.1.23} \ If \ $y\in \otimes^k_N M$ \ and \
+$x,z\in M$, then
+$$
+xv^*_k\th(y)v_{k+1}z=\th(x\otimes y\otimes z)
+$$
+
+\bs
+{\sc Proof.} Simple commutation of $E_i$ with $M$ and $E_j$'s
+$j\leq i-2$. \qed
+
+\bs
+In the next lemma, let $\chi_j=a_j\mu_{j+1}$, \
+$j=1,2,\dots k-1$.
+
+\bs
+\ni{\bf Lemma 4.1.24} \ If \ $x,y\in \otimes^k_N M$, \ then \
+$\th(x)\th(y)=$
+\begin{verse}
+(i) $\th(\chi_{m+1}\chi_{m+2}\dots\chi_k(x\otimes_N y))$ \
+if $k$ is even, $k=2m$.
+
+(ii) $\th(\mu_{m+2}\chi_{m+2}\dots\chi_k(x\otimes_N y))$ \
+if $k$ is odd, $k=2m+1$.
+\end{verse}
+
+\bs
+{\sc Proof.}  By induction on $k$. Let $x=x_1\otimes
+x_2\dots\otimes x_{k+1}$, \ $y=y_1\otimes
+y_2\dots\otimes y_{k+1}$, \ then
+
+\begin{eqnarray*}
+\th(x)\th(y) & = & x_1v^*_k kx_2v^*_{k-1}\dots v^*_1x_{k+1}y_1v_1y_2v_2 \dots y_kv_ky_{k+1} \\
+&= & \d x_1v^*_{k-1} E_{M_{k-2}}(\th(x_2\otimes x_3\otimes\dots\otimes x_{k+1})\th(y_1\otimes\dots\otimes y_k))
+v_ky_{k+1}
+\end{eqnarray*}
+
+(i) If $k$ is even, $k=2m$, by the inductive hypothesis we have
+\begin{eqnarray*}
+\th(x)\th(y) & = &\d x_1v^*_{k-1} E_{M_{k-2}} (\th(\chi_{m+1}\chi_{m+2}\dots\chi_k(x_2\otimes\dots\otimes x_{k+1}\otimes y_1\otimes\dots\otimes y_k)))v_ky_{k+1} \\
+& = & x_1v^*_{k-1} \th(\mu_{m+1}\chi_{m+1}\dots\chi_k (x_2\otimes\dots\otimes y_k))v_ky_{k+1} \ \ \mbox{(by\  Lemma\ 4.1.22)}\\
+& = &\th(x_1\otimes (\mu_{m+1}\chi_{m+1}\chi_{m+2}\dots \chi_k(x_2\otimes\dots\otimes y_k)\otimes y_{k+1})) \ \ \mbox{(by Lemma 4.1.23)}\\
+& = &\th(\mu_{m+2}\chi_{m+2}\chi_{m+3}\dots \chi_{k+1}(x_1\otimes x_2\otimes x_{k+1}\otimes y_1 \otimes\dots\otimes y_{k+1}))
+\end{eqnarray*}
+
+(ii) If $k$ is odd, $k=2m+1$,
+\begin{eqnarray*}
+\th(x)\th(y) & = & x_1 v^*_{k-1} E_{M_{k-2}} (\th(\mu_{m+2}\chi_{m+2}\chi_{m+3}\dots\chi_k (x_2\otimes\dots x_{k+1}\otimes y_1 \otimes\dots\otimes y_k)))v_ky_{k+1} \\
+& & \mbox{(by the induction hypothesis)} \\
+& = & x_1v^*_{k-1}\th(a_{m+1}\mu_{m+2}\chi_{m+2}\chi_{m+3}\dots \chi_k(x_2\otimes\dots\otimes y_k))v_ky_{k+1}\\
+& & \mbox{(by Lemma 4.1.22)}\\
+& = & \th(x_1\otimes \chi_{m+1}\chi_{m+2}\dots \chi_k(x_2\otimes\dots\otimes y_k)\otimes y_{k+1})) \quad \mbox{(by Lemma 4.1.23)}\\
+& = &\th(\chi_{m+2}\chi_{m+3}\dots \chi_{k+1}(x_1\otimes x_2 \dots\otimes y_{k+1})) \ .
+\end{eqnarray*}
+It only remains to check the formula for $k\!=\!1, \ (m\!=\!0)$.
+Then $\th(x)=x$, \ $\th(y)=y$ and the formula reads
+\[
+\th(x)\th(y)=xy=\th(\mu_2(x\otimes y))=\th(xy) \ .
+\]
+\qed
+
+\bs
+\ni{\bf Lemma 4.1.25}
+For $m=1,2,\dots$, and $x_{m+1},x_{m+2},\dots x_{2m}\in M$,
+$$
+v_mv_{m+1}x_{m+1}v_{m+2}x_{m+2}v_{m+3}\dots
+v_{2m}x_{2m}=v_mx_{m+1}v_{m+1}x_{m+2}\dots v_{2m-1}x_{2m} \  .
+$$
+
+\bigskip
+{\sc Proof.} Induction on $m$.
+
+For $m=1$ the formula reads $E_1E_2E_1x_2=E_1x_2$ which is correct.
+Now suppose the formula holds for $m$, then
+$$
+v_{m+1}v_{m+2}x_{m+2} =v_{m+1}x_{m+2}E_{m+2}E_{m+1}\dots E_3 \qquad
+\mbox{(by 4.1.8)}
+$$
+so
+$$
+v_{m+1}v_{m+2}x_{m+2} v_{m+3}x_{m+3}\dots v_{2m+2}x_{2m+2} =
+(v_{m+1}x_{m+2}) V_mV_{m+1} y_{m+1}V_{m+2}y_{m+2}\dots
+V_{2m}y_{2m}
+$$
+where \  $V_n=E_{n+2}E_{n+1}\dots E_3$ \ and \
+$y_n=E_2E_1x_{n+2}$.
+
+We may now apply the inductive hypothesis to the subfactor
+$M_1\subset M_2$ (for which the $E_i$'s are just those for
+$N\subset M$, shifted by 2), to obtain
+$$
+v_{m+1}x_{m+2}V_my_{m+1}\dots V_{2m}y_{2m}=
+v_{m+1}x_{m+2}v_{m+2}x_{m+3}\dots v_{2m+1}x_{2m+2}
+$$
+\qed
+
+\bs
+\ni{\bf Corollary 4.1.26} \ With notation as above, for \
+$m=2,3,4,\dots,$
+\begin{eqnarray*}
+& E_mE_{m-1}\dots E_2(v_{m+1}x_{m+1})(v_{m+2}x_{m+2})\dots
+(v_{2m-1}x_{2m-1}) \\
+&\quad =
+(v_m\dots x_{m+1})(v_{m+1}x_{m+2})\dots (v_{2m-2}x_{2m-1})
+\end{eqnarray*}
+
+\bs
+{\sc Proof.} Write \ $V_n=E_{n+1}E_{n-1}\dots E_2$, \
+$y_n=E_1x_{n+1}$ and apply the 4.1.25 to the subfactor $M\subset
+M_1$. \qed
+
+\bs
+\ni{\bf Lemma 4.1.27} \ For
+$p=1,2,\dots,$
+\[
+\sum_{b_1,b_2,\dots b_p\in B} (b_1v_1)(b_2v_2)\dots
+(b_pv_p)v_{p+1}v_{p+2} b^*_{p}v_{p+3}b^*_{p-1} v_{p+4}\dots
+v_{2p+1}b^*_1 = \d^p E_{2p+1}
+\]
+
+\bs
+{\sc Proof.}
+By induction on $p$. For $p=1$ the formula reads
+$$
+\sum_{b\in B} bE_1E_2E_1E_3E_2E_1b^* = E_3 \sum_{b\in B}
+bE_1b^* = \d E_3  \ ,
+$$
+which is correct. Now observe that
+$$
+\sum_b bv_p v_{p+1}v_{p+2}b^*v_{p+3}=\d
+E_p E_{p-1}\dots E_2 V_{p-1}V_p V_{p+1} E_2E_1
+$$
+where $V_n=E_{n+2}E_{n+1}\dots E_3$, and that
+$$
+b_1v_1b_2v_2\dots b_{p-1}v_{p-1}E_pE_{p-1}\dots E_2=
+y_1V_1y_2V_2\dots y_{p-2}V_{p-2}y_{p-1}
+$$
+where $y_i=b_iE_1E_2$, so that
+\begin{eqnarray*}
+&\dsize{\sum_{b_1,\dots ,b_p\in B} b_1v_1b_2v_2\dots b_pv_p v_{p+1}v_{p+2}b^*_p v_{p+3}b^*_{p-1} v_{p+4}\dots v_{2p+1}b^*_1} \\
+& = \dsize{\d \sum_{y_1\dots y_{p-1}\in BE_1E_2} y_1V_1y_2V_2\dots y_{p-2}V_{p-2}y_{p-1}V_{p-1}V_pV_{p+1} y^*_{p-1}V_{p+2}\dots V_{2p-1}y^*_1}
+\end{eqnarray*}
+so since $\{ bE_1E_2\mid b\in B\}$ is a basis for $M_2$ over $M_1$,
+we are through by induction. \qed
+
+\ni{\bf Corollary 4.1.28} \ For
+$p=1,2,\dots,$
+$$
+\sum_{b_1,b_2,\dots ,b_{p+1}\in B}
+(b_1v_1)(b_2v_2)\dots (b_pv_p)b^*_p b_{p+1}v_{p+1}
+b^*_{p+1}v_{p+2} b^*_{p-1}\dots v_{2p}b^*_1 =\d^{p+1}E_{2p}
+$$
+
+\bigskip
+{\sc Proof.} Observe that
+$$
+\sum_{b_p,b_{p+1}\in B} b_pv_p b^*_pb_{p+1} v_{p+1}
+b^*_{p+1}v_{p+2} = \d^2 V_{p-1}V_p V_{p+1}E_1 \ ,
+$$
+where $V_n=E_{n+1}E_n\dots E_2$, so the left-hand side of the
+equation becomes
+$$
+\d^2\sum_{y_1,\dots ,y_{p-1}} y_1V_1y_2V_2\dots y_{p-1}
+V_{p-1} V_pV_{p+1} y^*_{p-1}V_{p+2}\dots V_{2p-1}y^*_1
+$$
+where $y_n=b_nE_1$, and this is $\d^{p+1}E_{2p}$ by 4.1.27 applied
+to the subfactor $M\subset M_1$ with basis $\{bE_1\mid b\in B\}$.
+\qed
+
+\bs\bs\noindent{\bf 4.2 \ Subfactors give planar algebras}
+
+\smallskip We keep the notation of $\S$4.1.
+The next theorem legitimizes the use of pictures to prove
+subfactor results.
+
+\ni{\bf Theorem 4.2.1} Let $N\subset M$ be an extremal type
+$II_1$ subfactor with $[M:N]^{\frac 12}=\d <\i$. For each $k$ let
+$P^{N\subset M}_k=N'\cap M_{k-1}$ (isomorphic via $\th$ to $V_k$,
+i.e.
+$N$-central vectors in $\bigotimes^k_N M$). Then
+$P^{N\subset M}=\bigcup_k P^{N\subset M}_k$ has a
+spherical
+$C^*$-planar algebra structure (with labelling set $P^{N\subset
+M}$) for which
+$\Phi(\tangle{x})=x$ and, suppressing the
+presenting map~$\Phi$,
+\begin{verse}
+(i) For $i=1,2,\dots k-1,\boxj = E_i$ \bs
+
+(ii) $\boxh{x} = \d E_{M'}(x)$ , \ \
+ $\boxl{x} \ = \d E_{M_{k-2}}(x)$ \bs
+
+(iii) $\tangle{x}\ \  \vln = \tangle{x}$ 
+(where on the right, $x$ is considered as an element of $M_{k+1}$)
+\bs
+
+(iv) $Z(\boxrloop{x})=\d^k {\op{tr}}(x)$ \ \
+$(x\in P^{N\subset M}_k)$
+\end{verse}
+\bs
+Moreover, any other spherical planar algebra structure $\Phi'$ with
+$\Phi'(\tangle{x})=x$ and {\rm (i),(ii),(iv)} for
+$\Phi'$ is equal to $\Phi$.
+
+\bigskip
+{\sc Proof.}  The idea of the proof is fairly simple but it will
+involve a lot of details, so we begin with an informal description
+of the idea. We must show how to associate an element $\Phi(T)$ in
+$N'\cap M_{k-1}$ to a tangle $T$  whose boxes are labelled by
+elements of the appropriate $N'\cap M_j$. An example with $k=5$ is
+given in Figure 4.2.2.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\[
+	\input{xfig/pic84}
+\]
+\begin{center}
+Figure 4.2.2
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bs Shade the regions black and white and observe that a smooth
+oriented curve starting and ending on the left-hand boundary, and
+missing the internal boxes, will generically pass through a
+certain number of black regions. Number the connected components of
+the intersection of the curve with the black
+ regions $1,2,\dots
+n$ in the order they are crossed.
+The regions on the curve will be used to index the tensor product
+components in
+$\bigotimes^n_N M$.
+
+We will start with our curve close to the boundary so that it
+crosses no black regions, and allow it to bubble outwards until it
+is very close to the outside boundary at which point it will cross
+$k$ black regions. As the curve bubbles out, it will pass through
+non-generic  situations with respect to the strings of the tangle,
+and it will envelop internal boxes. At generic times we will
+associate an $N$-central element of $\bigotimes^n_N M$ with the
+curve. As the curve passes through exceptional situations we will
+change the element of $\bigotimes^n_N M$ according to certain
+rules, the main one of which being that, when the curve envelops a
+box labelled by a tensor, we will insert that label into the
+tensor on the curve at the appropriate spot, as illustrated in
+Figure~\ref{pic85}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\[
+        \input{xfig/pic85}
+\]
+\begin{center}
+Figure 4.2.3: Tensor on bubbling curve: $\dots\otimes           
+a\otimes b\otimes\dots
+\ \to \ \dots\otimes a\otimes x \otimes
+y\otimes z \otimes b\otimes\dots$
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bs\ni When the curve arrives very close to the boundary it will
+have associated to it a central element of $\bigotimes^k_N M$ which
+gives an element of $N'\cap M_{k-1}$ via $\th$. This element will
+be $\Phi(T)$.
+
+This strategy meets several obstacles.
+\begin{verse}
+(1) We must show that $\Phi(T)$ is well defined -- note that the
+insertions of 4.2.3 are {\bf not} well defined for the tensor
+product over $N$.
+
+(2) $\Phi(T)$ must be central. This will require either
+enveloping the boxes only starting from the white region touching
+the first boundary point, or projecting onto central vectors at
+each step. We will adopt the former policy.
+
+(3)$\Phi(T)$ must be independent of isotopy of $T$ and the
+choice of the path. Since we must show isotopy invariance
+eventually, we might as well suppose that the tangles are in a
+convenient standard form, since any two ways of arriving at that
+standard form from a given $T$ will only differ by an isotopy.
+\end{verse}
+
+We begin the formal proof by describing the standard form.
+
+\medskip A $k${\it -picture} (or just ``picture"
+ if the value of $k$ is clear) will be the intersection of the unit
+square $[0,1]\x [0,1]$ in the $x\!-\!y$ plane with a system of
+smooth curves, called strings, meeting only in finitely many
+isolated  singularities, called ``cusps", where $2m$ strings meet
+in a single point. The strings must meet the boundary of $[0,1]\x
+[0,1]$ transversally in just $2k$ points on the boundary line
+$[0,1]\x
+\{1\}$.  A cusp $(x,y)$ will be said to be in {\it standard form} \
+if, in some neighborhood of $(x,y)$ the $y$-coordinates of points
+on the strings are all greater than $y$. A picture may always be
+shaded black and white with the $y$-axis being part of the boundary
+of a white region.
+
+A picture $\Theta$ will be said to be {\it standard} \ if
+\begin{verse}
+(i) All its cusps are in standard form, and the region
+immediately below the cusp is white.
+
+(ii) The $y$-coordinate, restricted to strings, has only
+generic singularities, i.e., isolated maxima and minima.
+
+(iii) The $y$-coordinates of all cusps and  all maxima and
+minima are distinct. This set will be written
+$\frak S(\Theta)=\{ y_1,y_2,y_3,\dots ,y_c\}$ with
+$y_i < y_{i+1}$ for $1\leq i < c$.
+\end{verse}
+
+\ni An example of a standard $k$-picture with $k=6$ is in Figure
+4.2.4.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\[
+	\input{xfig/pic86}
+\]
+\begin{center}
+	Figure 4.2.4:  A standard 6-picture with
+$\frak S(\Theta)=\{ y_1,y_2,y_3,\dots ,y_{10}\}$.
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bs
+A standard $k$ picture $\Theta$ will be {\it labelled} \ if there is a
+function from the cusps of $\Theta$ to $\coprod_m V_m$ so that a
+cusp where $2m$ strings meet is assigned an element of
+$V_m$ (or $N'\cap M_{m-1}$, via $\th$). We now describe  how to
+associate an element $Z_{\Theta}$ of $N'\cap M_{k-1}$ to a
+labelled standard $k$-picture $\Theta$, using the operators of
+definition 4.1.19.
+
+Let $\Theta$ be a labelled standard $k$-picture with
+$\frak S(\Theta)=\{ y_1,y_2,y_3,\dots ,y_c\}$. We define a locally
+constant function $Z:[0,1]\backslash\frak S(\Theta)\to V_{k(y)}$,
+where $k(y)$ is the number  of distinct intervals of
+$[0,1]\times \{y\}$ which are the connected components of its
+intersection with all the black regions of $\Theta$. For instance, if
+$\Theta$ is as in Figure 4.2.4 and $y_8 < y < y_9$ then $k(y)=4$.
+Obviously $k(y)$ is locally constant and $k(y)=k$ for $y_c < y < 1$.
+For $y < y_1$, \ $V_0=\Bbb C$ and we set $Z(y)=1$. There are five
+possible ways for $Z$ to change as $y$ goes from a value $y_-$,
+just less than $y_i$, to $y_+$, just bigger than $y_i$. We define
+$Z(y_+)$ from $Z(y_-)$ in each case:
+
+\medskip${\underline{\mbox{Case (i)}}}$. $y_i$ is the
+$y$-coordinate of a cusp, between the $(j-1)^{\text{th}}$ and
+$j^{\text{th}}$ connected components of the intersection of
+$[0,1]\x y_-$ with the black regions, as below
+\[
+	\input{xfig/pic87}
+\]
+
+\bs
+
+\ni Set \ $Z(y_+)=\a_{j,c}(Z(y_-))$ where $c$ is the label
+(in $V_{k(y_-)}$) associated with the cusp.
+
+\bs ${\underline{\mbox{Case (ii)}}}$. $y_i$ is the
+$y$-coordinate of a minimum, with numbering and shading as below:
+\[
+	\input{xfig/pic88}
+\]
+\bs
+
+\ni Set \ $Z(y_+)=\kappa_j(Z(y_-))$.
+
+\newpage ${\underline{\mbox{Case (iii)}}}$. $y_i$ is the
+$y$-coordinate of a minimum, with numbering and shading as below:
+\[
+	\input{xfig/pic89}
+\]
+
+\bs
+
+\ni Set \ $Z(y_+)=\eta_j(Z(y_-))$.
+
+
+\bs ${\underline{\mbox{Case (iv)}}}$. $y_i$ is the
+$y$-coordinate of a maximum, with numbering and shading as below:
+\[
+	\input{xfig/pic90}
+\]
+
+\bs
+
+\ni Set \ $Z(y_+)=\mu_{j+1}(Z(y_-))$.
+
+\bs ${\underline{\mbox{Case (v)}}}$. $y_i$ is the
+$y$-coordinate of a maximum  with shading as below:
+\[
+	\input{xfig/pic91}
+\]
+
+\bs
+
+\ni Set \ $Z(y_+)=a_j(Z(y_-))$.
+
+\medskip
+Finally, we define \ $Z_{\Theta}=\th(Z(y))$ for $y > y_c$,
+also written $Z_1(\Theta)$.
+Our main job is now to prove that $Z_{\Theta}$ is unchanged if $\Theta$
+is changed by isotopy to another standard picture $\Theta'$, with
+labels transported by the isotopy. If the isotopy passes only
+through standard pictures, critical points can never change order
+or be annihilated or created. The pattern of connected components of
+the intersection of the black regions with horizontal lines cannot
+be changed either as such a change would have to involve two
+maxima, minima or cusps having the same $y$ coordinate. So
+isotopies through standard pictures do not change $Z_{\Theta}$.
+
+We next argue that if $\phi_t$, $0\leq t\leq 1$ is an isotopy which
+preserves the standard form of each cusp, then
+$Z_{\Theta}=Z_{\phi_1(\Theta)}$. For now $Z_{\phi_t(\Theta)}$ can
+only change if the singularities of the $y$-coordinate function
+change. By putting the isotopy in general position we see that this
+can be supposed to happen in only two ways (see e.g. [Tu], or
+note that this argument can be made quite combinatorial by using
+piecewise linear strings).
+
+
+

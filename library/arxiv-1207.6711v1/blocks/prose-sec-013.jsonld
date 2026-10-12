@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1207.6711v1/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1207.6711v1/blocks/prose-sec-013",
   "kind": "prose",
   "title": "The pullback of a shape assignment under a symmetry",
   "pageStart": 13,
   "pageEnd": 14,
   "text": "../sections/sec-013-45-the-pullback-of-a-shape-assignment-under-a-sy.md",
-  "derivedFrom": "library/arxiv-1207.6711v1/manifest",
-  "sourceDocument": "library/arxiv-1207.6711v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1207.6711v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1207.6711v1/manifest.jsonld",
   "provenance": "ingested"
 }

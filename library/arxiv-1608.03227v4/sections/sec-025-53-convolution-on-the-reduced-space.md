@@ -8,40 +8,29 @@ pages: 26-26
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.917
+latex_coverage_ratio: 0.914
 ---
-consider the space X 3 := b×G2× n with the following B3-action
-(b1,b 2,b 3)· (X,g 12,g 23,Y ) = (Ad b1 (X),b 1g12b−1
-2 ,b 2g23b−1
-3 , Adb3 (Y )).
-There are the following maps ¯πij : X 3→ X 2:
-¯π12(X,g 12,g 13,Y ) = (X,g 12, Adg23 (Y )++),
-¯π23(X,g 12,g 13,Y ) = (Ad −1
-g12 (X)+,g 23,Y ),
-¯π13(X,g 12,g 13,Y ) = (X,g 12g23,Y ).
-Proposition 5.3. ¯π∗
-12(W ) + ¯π∗
-23(W ) = ¯π∗
-13(W ).
-Proof. Indeed we have
-¯π∗
-12(W ) + ¯π∗
-23(W ) = Tr(XAdg12 (Adg23 (Y )++)) + Tr(Ad−1
-g12 (X)+Adg23 (Y )) =
-Tr(Ad−1
-g12 (X)Adg23 (Y )++) + Tr(Ad−1
-g12 (X)+Adg23 (Y )).
-Thus the statement follows is implied by
-Tr(AB++) + Tr(A+B) = Tr(AB)− Tr(AB−) + Tr(A+B−)
-= Tr(AB) + Tr(A−B−) = Tr(AB).
-✷
-For givenF,G∈ MFsc
-B×B(X 2,W ) it is tempting to deﬁne
-(5.12) F ¯⋆G := ¯π13∗(CEn(2) (¯π∗
-12(F )⊗ ¯π∗
-23(G))))T (2)
-,
-where n(2), T (2) are the subalgebras of the middle factor in b3 acting on X 3. The only issue with this
-deﬁnition is that the maps ¯π12 and ¯π23 are not B3 equivariant. Thus we have to deﬁne the B3-equivariant
-structure on the pull back ¯π∗
-12(F )⊗ ¯π∗
-23(G) and we do it below.
+In order to define the convolution on the smaller space $\calXr_2$, consider
+
+the space $\SymbolPrint{\calXr_3}:=\frb\times G^2\times\frn$ with the following $B^3$-action $$(b_1,b_2,b_3)\cdot (X,g_{12},g_{23},Y)=(\Ad_{b_1}(X),b_1 g_{12} b_2^{-1}, b_2 g_{23} b_3^{-1}, \Ad_{b_3}(Y)).$$ There are the following
+
+maps $\SymbolPrint{\bar{\pi}_{ij}}:\calXr_3\to\calXr_2$: $$\bar{\pi}_{12}(X,g_{12},g_{13},Y)=(X,g_{12},\Ad_{g_{23}}(Y)_{++}),$$ $$\bar{\pi}_{23}(X,g_{12},g_{13},Y)=(\Ad_{g_{12}}^{-1}(X)_+,g_{23},Y),$$ $$\bar{\pi}_{13}(X,g_{12},g_{13},Y)=(X,g_{12}g_{23},Y).$$
+
+::: proposition
+$\bar{\pi}_{12}^*(\Wr)+\bar{\pi}_{23}^*(\Wr)=\bar{\pi}_{13}^*(\Wr)$.
+:::
+
+::: proof
+*Proof.* Indeed we have $$\begin{gathered}
+\bar{\pi}_{12}^*(\Wr)+\bar{\pi}_{23}^*(\Wr)=\Tr(X\Ad_{g_{12}}(\Ad_{g_{23}}(Y)_{++}))+\Tr(\Ad_{g_{12}}^{-1}(X)_+\Ad_{g_{23}}(Y))=\\
+\Tr(\Ad^{-1}_{g_{12}}(X)\Ad_{g_{23}}(Y)_{++})+\Tr(\Ad^{-1}_{g_{12}}(X)_+\Ad_{g_{23}}(Y)).
+\end{gathered}$$ Thus the statement follows is implied by $$\begin{gathered}
+ \Tr(A B_{++})+\Tr(A_+B)=\Tr(AB)-\Tr(AB_-)+\Tr(A_+B_-)\\
+  =\Tr(AB)+\Tr(A_-B_-)=\Tr(AB).
+\end{gathered}$$ ◻
+:::
+
+For given $\calF,\calG\in \MF_{B\times B}(\calXr_2,W)$ it is tempting to define $$\label{eq: red convolution prelim}
+\calF\SymbolPrint{\bar{\star}}\calG:=\bar{\pi}_{13*}(\CE_{\frn^{(2)}}( \bar{\pi}_{12}^*(\calF)\otimes\bar{\pi}_{23}^*(\calG))))^{T^{(2)}},$$ where $\frn^{(2)}$, $T^{(2)}$ are the subalgebras of the middle factor in $\frb^3$ acting on $\calXr_3$. The only issue with this definition is that the maps $\bar{\pi}_{12}$ and $\bar{\pi}_{23}$ are not $B^3$ equivariant. Thus we have to define the $B^3$-equivariant structure on the pull back $\bar{\pi}_{12}^*(\calF)\otimes\bar{\pi}_{23}^*(\calG)$ and we do it below.

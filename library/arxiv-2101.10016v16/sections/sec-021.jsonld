@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Vertex operator algebras, the linear category Rep(V ) and Zhu algebra A(V )",
+  "pageStart": 133,
+  "pageEnd": 138,
+  "contains": [
+    "library/arxiv-2101.10016v16/blocks/prose-sec-021",
+    "library/arxiv-2101.10016v16/blocks/def-sec-021-01",
+    "library/arxiv-2101.10016v16/blocks/def-sec-021-02",
+    "library/arxiv-2101.10016v16/blocks/def-sec-021-03",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-021-04",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-021-05",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-021-06",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-021-07",
+    "library/arxiv-2101.10016v16/blocks/def-sec-021-08",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-021-09"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,1 @@
+An amenable dimension function on Gr(C) is unique among weak dimension functions satisfying the equivalent properties of Prop. 16.2 and is given by D(ρ) =

@@ -8,20 +8,18 @@ pages: 9-9
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
 doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.782
 ---
-gories.Afiber functoron a finite tensor categoryCis an exact faithful tensor functor
-F:C→Vec k. We use the monoidal constraints
-F2 :F(X)⊗F(Y)
-∼
-− →F(X⊗Y), F 0 :k
-∼
-− →F(1),
-and identify fiber functors that are monoidally naturally isomorphic. AC-module
-category hasrank oneif its underlying abelian category is equivalent toVeck.
-Proposition 3.1.There is a bijection between equivalence classes of fiber functors
-onCand equivalence classes of exactC-module categories of rank one.
-Proof.Module structures onVec k correspond to tensor functorsC→Vec k [EGNO15,
-Proposition 7.3.3 and Example 7.4.6]. Such functors are exact and faithful, and the
-module category is exact becauseVeck is semisimple. Transport along an equivalence
-withVec k gives the converse, while module equivalences correspond to monoidal nat-
-ural isomorphisms.□
+A *fiber functor* on a finite tensor category $\mathcal{C}$ is an exact faithful tensor functor $F:\mathcal{C}\to\mathop{\mathrm{Vec}}_{{\Bbbk}}$. We use the monoidal constraints $$F_2:F(X)\otimes F(Y)\xrightarrow{\sim}F(X\otimes Y),
+\qquad
+F_0:{\Bbbk}\xrightarrow{\sim}F(\mathbf1),$$ and identify fiber functors that are monoidally naturally isomorphic. A $\mathcal{C}$-module category has *rank one* if its underlying abelian category is equivalent to $\mathop{\mathrm{Vec}}_{{\Bbbk}}$.
+
+::: proposition
+[]{#prop:fiber_rank_one label="prop:fiber_rank_one"} There is a bijection between equivalence classes of fiber functors on $\mathcal{C}$ and equivalence classes of exact $\mathcal{C}$-module categories of rank one.
+:::
+
+::: proof
+*Proof.* Module structures on $\mathop{\mathrm{Vec}}_{{\Bbbk}}$ correspond to tensor functors $\mathcal{C}\to\mathop{\mathrm{Vec}}_{{\Bbbk}}$ [@EGNO15 Proposition 7.3.3 and Example 7.4.6]. Such functors are exact and faithful, and the module category is exact because $\mathop{\mathrm{Vec}}_{{\Bbbk}}$ is semisimple. Transport along an equivalence with $\mathop{\mathrm{Vec}}_{{\Bbbk}}$ gives the converse, while module equivalences correspond to monoidal natural isomorphisms. ◻
+:::

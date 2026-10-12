@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-026",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-026",
   "kind": "prose",
   "title": "Firewalls are Fragile",
   "pageStart": 59,
   "pageEnd": 60,
   "text": "../sections/sec-026-161-firewalls-are-fragile.md",
-  "derivedFrom": "library/arxiv-1810.11563v1/manifest",
-  "sourceDocument": "library/arxiv-1810.11563v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
   "provenance": "ingested"
 }

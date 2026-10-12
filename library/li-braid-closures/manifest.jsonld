@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/li-braid-closures/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Knot polynomials on braid closures Eddy Li",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "li-braid-closures",
   "contains": [
     "library/li-braid-closures/sections/sec-000",
     "library/li-braid-closures/sections/sec-001",
@@ -18,8 +23,10 @@
     "library/li-braid-closures/sections/sec-009"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "li-braid-closures",
+    "title_source": "slug",
     "source_file": "Li-braid-closures.pdf",
     "source_sha256": "f7410e7be5bc187e038f6354fe46bdada6fccf4bbc7810344a29ce54bb8d07d6",
     "pages": 16,

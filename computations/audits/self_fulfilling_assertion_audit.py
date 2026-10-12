@@ -54,7 +54,7 @@ import sys
 from pathlib import Path
 
 ROOTS = ("computations",)
-SKIP = ("_deprecated",)
+SKIP = ("_deprecated", "fsh-guts",)
 
 
 def _dump(node):

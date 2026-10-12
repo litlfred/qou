@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/equations-aux-q-differences/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/equations-aux-q-differences/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "Prolongement m´eromorphe. Un des buts de la th´eorie est la classi-",
-  "pageStart": 7,
-  "pageEnd": 7,
-  "text": "../sections/sec-008-26-prolongement-meromorphe-un-des-buts-de-la-the.md",
-  "derivedFrom": "library/equations-aux-q-differences/manifest",
-  "sourceDocument": "library/equations-aux-q-differences/manifest",
+  "title": "Quelques g´en´eralit´es",
+  "pageStart": 19,
+  "pageEnd": 22,
+  "text": "../sections/sec-008-41-quelques-generalites.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/equations-aux-q-differences/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/equations-aux-q-differences/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,192 +1,320 @@
 {
-  "_schema": "pdf-structure/v1",
-  "doc_id": "arxiv-2504.18825v2",
-  "source": {
-    "file": "2504.18825v2.pdf",
-    "sha256": "829f97190cb1c8adcc6c5fcfa347fc73b8fb5100ad16b2b8d8e2653c0a5d78a0",
-    "bytes": 890868,
-    "pages": 56
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2504.18825v2",
+ "source": {
+  "file": "2504.18825v2.pdf",
+  "sha256": "829f97190cb1c8adcc6c5fcfa347fc73b8fb5100ad16b2b8d8e2653c0a5d78a0",
+  "bytes": 890868,
+  "pages": 56,
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2504.18825",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "11 Mar 2026"
   },
-  "metadata": {
-    "arxiv": {
-      "id": "2504.18825",
-      "version": "2",
-      "primary_class": "math.RT",
-      "stamp_date": "11 Mar 2026"
-    },
-    "doi": null,
-    "title": "MURNAGHAN\u2013NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU",
-    "authors_raw": "ALGEBRA AND APPLICATIONS"
+  "doi": null,
+  "title": "MURNAGHAN\u2013NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU",
+  "authors_raw": "ALGEBRA AND APPLICATIONS"
+ },
+ "toc": [],
+ "toc_source": "headings",
+ "sections": [
+  {
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "id": "sec-000-introduction",
+   "n_chars": 0,
+   "n_words": 0
   },
-  "toc": [],
-  "toc_source": "headings",
-  "sections": [
-    {
-      "number": "1",
-      "title": "Introduction",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 1,
-      "id": "sec-000-introduction",
-      "n_chars": 0,
-      "n_words": 0
-    },
-    {
-      "number": "2",
-      "title": "Preliminaries",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 1,
-      "id": "sec-001-preliminaries",
-      "n_chars": 0,
-      "n_words": 0
-    },
-    {
-      "number": "3",
-      "title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 1,
-      "id": "sec-002-murnaghan-nakayama-rule-for-the-cyclotomic-hecke",
-      "n_chars": 0,
-      "n_words": 0
-    },
-    {
-      "number": "4",
-      "title": "Special cases of the Murnaghan\u2013Nakayama rule",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 1,
-      "id": "sec-003-special-cases-of-the-murnaghan-nakayama-rule",
-      "n_chars": 0,
-      "n_words": 0
-    },
-    {
-      "number": "5",
-      "title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 1,
-      "id": "sec-004-a-dual-murnaghan-nakayama-rule-via-vertex-operat",
-      "n_chars": 0,
-      "n_words": 0
-    },
-    {
-      "number": "6",
-      "title": "Application I: Regev-type formula",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 1,
-      "id": "sec-005-application-i-regev-type-formula",
-      "n_chars": 0,
-      "n_words": 0
-    },
-    {
-      "number": "7",
-      "title": "Application II: Lu\u0308beck\u2013Prasad\u2013Adin\u2013Roichman-type formula",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 1,
-      "id": "sec-006-application-ii-lu-beck-prasad-adin-roichman-type",
-      "n_chars": 0,
-      "n_words": 0
-    },
-    {
-      "number": "8",
-      "title": "Multiple bitrace for the irreducible characters",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 2,
-      "id": "sec-007-multiple-bitrace-for-the-irreducible-characters",
-      "n_chars": 460,
-      "n_words": 63
-    },
-    {
-      "number": "1",
-      "title": "Introduction",
-      "level": 1,
-      "page_start": 2,
-      "page_end": 7,
-      "id": "sec-008-introduction",
-      "n_chars": 14189,
-      "n_words": 2221
-    },
-    {
-      "number": "2",
-      "title": "Preliminaries",
-      "level": 1,
-      "page_start": 7,
-      "page_end": 12,
-      "id": "sec-009-preliminaries",
-      "n_chars": 11385,
-      "n_words": 2596
-    },
-    {
-      "number": "3",
-      "title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
-      "level": 1,
-      "page_start": 12,
-      "page_end": 18,
-      "id": "sec-010-murnaghan-nakayama-rule-for-the-cyclotomic-hecke",
-      "n_chars": 10961,
-      "n_words": 2341
-    },
-    {
-      "number": "4",
-      "title": "Special cases of the Murnaghan\u2013Nakayama rule",
-      "level": 1,
-      "page_start": 18,
-      "page_end": 20,
-      "id": "sec-011-special-cases-of-the-murnaghan-nakayama-rule",
-      "n_chars": 5267,
-      "n_words": 1080
-    },
-    {
-      "number": "5",
-      "title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
-      "level": 1,
-      "page_start": 20,
-      "page_end": 25,
-      "id": "sec-012-a-dual-murnaghan-nakayama-rule-via-vertex-operat",
-      "n_chars": 9473,
-      "n_words": 2111
-    },
-    {
-      "number": "6",
-      "title": "Application I: Regev-type formula",
-      "level": 1,
-      "page_start": 25,
-      "page_end": 34,
-      "id": "sec-013-application-i-regev-type-formula",
-      "n_chars": 17999,
-      "n_words": 3994
-    },
-    {
-      "number": "7",
-      "title": "Application II: Lu\u0308beck\u2013Prasad\u2013Adin\u2013Roichman-type formula",
-      "level": 1,
-      "page_start": 34,
-      "page_end": 43,
-      "id": "sec-014-application-ii-lu-beck-prasad-adin-roichman-type",
-      "n_chars": 18602,
-      "n_words": 4186
-    },
-    {
-      "number": "8",
-      "title": "Multiple bitrace for the irreducible characters",
-      "level": 1,
-      "page_start": 43,
-      "page_end": 56,
-      "id": "sec-015-multiple-bitrace-for-the-irreducible-characters",
-      "n_chars": 26312,
-      "n_words": 5239
-    }
-  ],
-  "diagnostics": {
-    "pages_without_text": 0,
-    "likely_scanned": false,
-    "toc_entries": 0,
-    "sections": 16,
-    "chars_total": 116995
+  {
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "id": "sec-001-preliminaries",
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "number": "3",
+   "title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "id": "sec-002-murnaghan-nakayama-rule-for-the-cyclotomic-hecke",
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "number": "4",
+   "title": "Special cases of the Murnaghan\u2013Nakayama rule",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "id": "sec-003-special-cases-of-the-murnaghan-nakayama-rule",
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "number": "5",
+   "title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "id": "sec-004-a-dual-murnaghan-nakayama-rule-via-vertex-operat",
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "number": "6",
+   "title": "Application I: Regev-type formula",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "id": "sec-005-application-i-regev-type-formula",
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "number": "7",
+   "title": "Application II: Lu\u0308beck\u2013Prasad\u2013Adin\u2013Roichman-type formula",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "id": "sec-006-application-ii-lu-beck-prasad-adin-roichman-type",
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "number": "8",
+   "title": "Multiple bitrace for the irreducible characters",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "id": "sec-007-multiple-bitrace-for-the-irreducible-characters",
+   "n_chars": 460,
+   "n_words": 63
+  },
+  {
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 7,
+   "id": "sec-008-introduction",
+   "n_chars": 14189,
+   "n_words": 2221
+  },
+  {
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 12,
+   "id": "sec-009-preliminaries",
+   "n_chars": 11385,
+   "n_words": 2596
+  },
+  {
+   "number": "3",
+   "title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 18,
+   "id": "sec-010-murnaghan-nakayama-rule-for-the-cyclotomic-hecke",
+   "n_chars": 10961,
+   "n_words": 2341
+  },
+  {
+   "number": "4",
+   "title": "Special cases of the Murnaghan\u2013Nakayama rule",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "id": "sec-011-special-cases-of-the-murnaghan-nakayama-rule",
+   "n_chars": 5267,
+   "n_words": 1080
+  },
+  {
+   "number": "5",
+   "title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 25,
+   "id": "sec-012-a-dual-murnaghan-nakayama-rule-via-vertex-operat",
+   "n_chars": 9473,
+   "n_words": 2111
+  },
+  {
+   "number": "6",
+   "title": "Application I: Regev-type formula",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 34,
+   "id": "sec-013-application-i-regev-type-formula",
+   "n_chars": 17999,
+   "n_words": 3994
+  },
+  {
+   "number": "7",
+   "title": "Application II: Lu\u0308beck\u2013Prasad\u2013Adin\u2013Roichman-type formula",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 43,
+   "id": "sec-014-application-ii-lu-beck-prasad-adin-roichman-type",
+   "n_chars": 18602,
+   "n_words": 4186
+  },
+  {
+   "number": "8",
+   "title": "Multiple bitrace for the irreducible characters",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 56,
+   "id": "sec-015-multiple-bitrace-for-the-irreducible-characters",
+   "n_chars": 26312,
+   "n_words": 5239
   }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "sections": 16,
+  "chars_total": 116995,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 26,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-murnaghan-nakayama-rule-for-the-cyclotomic-hecke",
+     "title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-special-cases-of-the-murnaghan-nakayama-rule",
+     "title": "Special cases of the Murnaghan\u2013Nakayama rule",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-a-dual-murnaghan-nakayama-rule-via-vertex-operat",
+     "title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-application-i-regev-type-formula",
+     "title": "Application I: Regev-type formula",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-application-ii-lu-beck-prasad-adin-roichman-type",
+     "title": "Application II: Lu\u0308beck\u2013Prasad\u2013Adin\u2013Roichman-type formula",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-multiple-bitrace-for-the-irreducible-characters",
+     "title": "Multiple bitrace for the irreducible characters",
+     "prose_ratio": 0.054,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-murnaghan-nakayama-rule-for-the-cyclotomic-hecke",
+     "title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-special-cases-of-the-murnaghan-nakayama-rule",
+     "title": "Special cases of the Murnaghan\u2013Nakayama rule",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-a-dual-murnaghan-nakayama-rule-via-vertex-operat",
+     "title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-application-i-regev-type-formula",
+     "title": "Application I: Regev-type formula",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-application-ii-lu-beck-prasad-adin-roichman-type",
+     "title": "Application II: Lu\u0308beck\u2013Prasad\u2013Adin\u2013Roichman-type formula",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-multiple-bitrace-for-the-irreducible-characters",
+     "title": "Multiple bitrace for the irreducible characters",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.483,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
+ }
 }

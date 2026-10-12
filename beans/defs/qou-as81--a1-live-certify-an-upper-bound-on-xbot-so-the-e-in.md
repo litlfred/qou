@@ -1,13 +1,13 @@
 ---
 # qou-as81
 title: 'A1 (live): certify an UPPER bound on Xbot so the e_inf join needs no G1'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:48Z
-updated_at: 2026-10-10T08:52:56Z
+updated_at: 2026-10-11T08:00:00Z
 parent: qou-3e6w
 blocking:
     - qou-jz80
@@ -193,3 +193,96 @@ What is still unmeasured, and would decide it: the two remaining frames, the `la
 and R6's actual cut width.
 
 **Do not quote 1.23x. Do not merge #7419 until R5/R6 complete.**
+
+## 2026-10-10 (afternoon) — integer hi_j floor, checkpoint, and the Murota lead CHECKED
+
+**Integer box (`hi_j` floor), scope (a) negative.** Rounding the per-row confinement box to
+`[ceil lo_j, floor U_j]` (sound: Xbot is an integer maximum) moves the all-T bound at `lam*`,
+`JPAD = 26` from `3.377121604817151150672` to `3.376047226439865682559` at `pe = 8`
+(gain 1.07e-3; pe 6/7 gain < 1e-12). Ratio 1.5636x -> 1.5631x; the cut stays 48. The boxes are
+wide (U 12..35) and the ascended rows carry gradient ~1e-12, so almost nothing is charged.
+
+**Checkpoint.** R1–R5 are keyed (sha256 of source-to-stage-end + evaluator + q0 + dps + env);
+restore measured at 2.2 s, stdout and witness identical apart from timestamps. Commit f3556b276.
+
+**The L♮ (Murota) lead holds, and it is the route.** `G(u) = sum_j phi_j(u_j) +
+sum_{j<j'} psi_{jj'}(u_j' - u_j)` with every piece univariate concave and a domain cut out by
+box and difference constraints — the L♮-concave form (Murota, *Discrete Convex Analysis*, 2003).
+For such functions an integer point is a global maximum iff no move `u ± chi_S` improves it,
+and the best move is an s–t min cut (the gain is supermodular with pairwise structure).
+
+Measured with a scratch script (not committed; `/tmp/claude-0/hj/lnat.py`):
+- split form of `G` equals the probe's `G` to 8e-25; zero-padding leaves `G` unchanged.
+- steepest ascent from `u = 0`, exact min-cut moves, converges in <= 2 steps in every frame.
+  Integer max per frame: pe 0: 1.0762795, 1: 1.7009977, 2: 2.0254822, and **pe = 3..20:
+  2.159802376118285961604** (N = 40 rows), the same profile shifted up by one row per frame.
+  This equals the BMAX=10/BUMAX=3 enumeration exactly — the enumeration cap was not binding.
+- brute force over every `S ⊆ 10 rows`, both signs, all 9 frames at the found optimum:
+  best gain **-0.000759** (pe = 2). No improving move exists, so the min cut is right there.
+- Frame identity, exact: frame `pe+1` with `u_0 = 0` IS frame `pe` shifted — the one-body term
+  `R(b) - R(b+u)` is precisely the pair interaction with the infinite sea of rows below.
+
+**What it would buy.** With `B_bot = 2.159802376118285961604` the G1-free cut is **25**
+(`xrun(25) = -1.96143 > threshold -1.97424 >= xrun(26) = -2.01360`), against 48 now and the
+enumerability limit 32. That would close this bean's goal.
+
+**Still open — do not quote 2.1598 as certified for all T and all pe until both land:**
+1. *Tail lemma (all T).* Rows above the support never help. Sketch: split `S = S1 ∪ S2` with S2
+   in the zero region; each maximal run in the gap-2 AP loses `sum_d mult(d)[delta(2d-1) -
+   delta(2d)] > 0` by reflection symmetry, plus `eps(b_j+1) - ln(q0)/2` per row, plus terms
+   `O(T2^{-2m})` from the support `m` rows below.
+2. *All pe.* Wall rows satisfy `u_j <= u_{j+1}` (gap 1) and pay `ln q0 (pe - j)` each, so deep
+   wall rows cost quadratically against bounded gains.
+Also pending: the midpoint-concavity spot test (running).
+
+## 2026-10-10 (evening) — final checkpointed run recorded
+
+**Final full run** (witness `rev-e-infinity-xbot-relaxation.witness.json`, computedAt
+2026-10-10T18:15:06Z, two windows from the R1–R5 checkpoint): R1, R2, R3, R4, R5, R5b **pass**;
+R6 **fails by design**. R6 asserts the G1-free cut is enumerable (<= 32). With
+`B_bot = 3.37604722643986568255` (integer box, 1.563x the enumerated maximum 2.1598) the G1-free
+cut is **48**, against **27** via G1 (6,325,874 blocks). So the script exits 1; the red check is
+this bean's open goal, not a defect. PR #7419 carries this run.
+
+**Midpoint-concavity spot test: result NOT recorded.** It was running in the previous session's
+scratch (`/tmp/claude-0/hj/`), and that container was reclaimed before its output was written
+anywhere durable. Absence of a recorded result is not a result; re-run it in the Murota follow-up.
+The scratch `lnat.py` (steepest ascent / min-cut check) was lost the same way, so the follow-up
+re-implements it in-repo rather than porting it.
+
+**Next:** the Murota / L♮ certificate as a new PR (owner decision 2026-10-10: new PR after
+#7419), targeting R6 green at cut 25, with the tail lemma (all T) and the all-pe lemma still open.
+
+## 2026-10-10 (night) — L♮ certificate committed as a probe
+
+`computations/deltalambda/rev_e_infinity_xbot_lnatural_probe.py` (re-implements the lost scratch
+`lnat.py`): M1–M6 pass at `pe = 0..20`, `N = 40` rows, `ELLMAX = 3000`. Integer maximum
+**2.159802376118285961604** for every `pe >= 3` (pe 0/1/2: 1.0762795 / 1.7009977 / 2.0254822),
+each certified by min cut; the best NON-EMPTY move at any optimum loses >= 0.000759 (pe = 2).
+Cut **25** (threshold -1.97424; xrun(25) = -1.96143, xrun(26) = -2.01360), limit 32.
+**Still conditional** on the tail lemma (T > 40) and the all-pe lemma (pe > 20); this bean stays open.
+
+## 2026-10-11 — CLOSED: both lemmas proved, e_inf join certified with no G1
+
+**Lemmas** (proofs in the `rev_e_infinity_xbot_lnatural_probe.py` docstring, "The two lemmas"):
+- *Tail (all T > N):* on the bi-infinite lattice the antisymmetric ψ terms cancel, so displacing
+  rows above N gains at most `eps(b_N + 1) + cbar_N`, which is below `ln q0 / 2` at every certified
+  frame (M7). The padded optimum at T = N + 4 and N + 12 has no improving ±χ_S move (M7b).
+- *All pe > 20:* `G_{pe+1}(0, u) = G_pe(u)` exactly (M8, 40 random points). Displacing the bottom
+  row of a deep wall costs at least `ln q0 · (pe + 1)` and gains at most `eps(1) = 1.66947`, and
+  `eps(1) / ln q0 = 16.0002 < 21` (M9).
+
+Full run (`pe = 0..20`, `N = 40`): **10/10**, witness `rev-e-infinity-xbot-lnatural.witness.json`,
+`open_gaps = []`. Cut **25**.
+
+**Join without G1** (`rev_e_infinity_xbot_join_probe.py`, 4/4, witness
+`rev-e-infinity-xbot-join.witness.json`). The per-sum bottom bound comes from a Lagrange multiplier:
+`Xbot(s) ≤ h(μ) + μ s`, with h(μ) certified by the same min-cut method for
+μ ∈ {0.4, …, 0}. With μ ≥ 0 the tail condition relaxes to `bracket < ln q0/2 + μ` and the wall
+condition to `eps(1) − μ < ln q0 · (pe + 1)` (J2, J3). Over the window `s_t + s_b ≤ 25`, the
+maximum of `Xblock(s_t) + xrun(s_t + s_b) + Xbot(s_b)` is **2.439296455120784027065** at
+(8, 8), equal to e_inf (J4). The bottom bound equals the top block at s = 1, 3, 6, 7, 8, 11..14.
+
+**Single external input:** Murota (2003), Ch. 7, which says the best ±χ_S move of an L♮-concave
+function is a min cut (`murota2003`). Everything else is computed at mp.dps 25/30 at the proton q0.
+Not Lean-formalised; that is a possible follow-up, not this bean's goal.

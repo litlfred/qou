@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/sections/sec-033",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Loop groups, primary fields, tensor product theorem for initial terms",
+  "pageStart": 214,
+  "pageEnd": 220,
+  "contains": [
+    "library/arxiv-2101.10016v16/blocks/prose-sec-033",
+    "library/arxiv-2101.10016v16/blocks/def-sec-033-01",
+    "library/arxiv-2101.10016v16/blocks/def-sec-033-02",
+    "library/arxiv-2101.10016v16/blocks/def-sec-033-03",
+    "library/arxiv-2101.10016v16/blocks/prop-sec-033-04",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-033-05",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-033-06",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-033-07",
+    "library/arxiv-2101.10016v16/blocks/prop-sec-033-08",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-033-09",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-033-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "provenance": "ingested"
+}

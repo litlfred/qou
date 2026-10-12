@@ -50,7 +50,7 @@ sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
 # the two disagree at a_0 itself (neutron 8 vs 2, deuteron 96 vs 192), and
 # 2 / 192 are the values bean `qou-lrnd` corrected the corpus to on 2026-08-23.
 COEFFS = REPO / "computations" / "habiro" / "habiro-coefficients-atomic.witness.json"
-DEPRECATED_COEFFS = REPO / "computations" / "_deprecated" / "habiro-coefficients-atomic-fast.witness.json"
+DEPRECATED_COEFFS = REPO / "fsh-guts" / "deprecated" / "computations" / "habiro-coefficients-atomic-fast.witness.json"
 COMMITTED_NORM_WITNESS = HERE / "habiro-frobenius-norm-probe.witness.json"
 
 PRIMES = [2, 3, 5, 7, 11, 13]

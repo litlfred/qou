@@ -8,259 +8,363 @@ pages: 12-15
 source_pdf: 1105.2919v1.pdf
 source_sha256: 6d94496f2093ddd0
 doc_brief: "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
+text_source: latex
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.992
 ---
-The relativistic treatment of baryons in chiral perturbation theory leads to problems. The reason for
-the problems is the fact that the time-derivative of a relativistic baryon ﬁeld generates a factor E≈ M
-(where M denotes the baryon mass) which is not small as compared to the chiral-symmetry breaking scale
-Λχ≈ 1 GeV; in fact, MN/Λχ≈ 1. Note also that the nucleon mass does not vanish in the chiral limit.
-The consequence of all this is that the one-to-one correspondence between the expansion in pion loops, on
-the one hand, and the expansion in terms of small external momenta and pion masses, on the other side, is
-destroyed [49, 118, 119].
-A solution to these problems has been proposed by Jenkins and Manohar [120] using eﬀective ﬁeld theory
-techniques originally developed by Georgi [121] for the study of heavy quark systems. The basic idea is to
-treat the baryons as heavy static sources (“extreme non-relativistic limit”) such that the momentum transfer
-between baryons by pion exchange is small as compared to the baryon mass. The expansion is performed
-in terms of these small momenta over the baryon mass and has become known as heavy baryon (HB) chiral
-perturbation theory (HBChPT). We will now brieﬂy sketch this approach.
+The relativistic treatment of baryons in chiral perturbation
+theory leads to problems. The reason for the problems is
+the fact that the time-derivative of a relativistic baryon field generates
+a factor $E\approx M$ (where $M$ denotes the baryon mass)
+which is not small as compared to the chiral-symmetry breaking
+scale $\Lambda_\chi \approx 1$ GeV; in fact,
+$M_N/\Lambda_\chi \approx 1$.
+Note also that the nucleon mass does not vanish in the chiral limit.
+The consequence of all this is that the one-to-one correspondence
+between the expansion in pion loops, on the one hand,
+and the expansion in terms of small external momenta and pion masses,
+on the other side, is destroyed~\cite{GSS88,Ber92,BKM95}.
+
+A solution to these problems has been proposed by Jenkins and
+Manohar~\cite{JM91} using effective field theory techniques
+originally developed by Georgi~\cite{Geo90}
+for the study of heavy quark systems.
+The basic idea is to treat the baryons
+as heavy static sources (``extreme non-relativistic limit'')
+such that the momentum transfer between
+baryons by pion exchange is small as compared to the baryon mass.
+The expansion is performed in terms of these small momenta
+over the baryon mass and has become known as
+heavy baryon (HB)  
+chiral perturbation theory (HBChPT).
+We will now briefly sketch this approach.
+
 The four-momentum of the heavy baryon is parametrized as
-pµ =Mvµ +lµ (2.42)
-where vµ is the four-velocity satisfying v2 = 1 and lµ is a small residual momentum, v·l≪ M. Deﬁning
-projection operators
-P±
-v = 1±γµvµ
-2 , P +
-v +P−
-v = 1, (2.43)
-12
-we introduce the so-called velocity-dependent ﬁelds
-N =eiMv·xP +
-v Ψ, h =eiMv·xP−
-v Ψ, (2.44)
-such that the relativistic four-component Dirac spinor ﬁeld representing the baryon can be written as
-Ψ =e−iMv·x(N +h). (2.45)
-The exponential factor in Eq. (2.44) eliminates the kinematical dependence on the baryon mass. To make
-the meaning of the ﬁelds N and h more transparent, consider a positive-energy plane wave solution of the
-Dirac equation
-ψp(x) =u(⃗ p,s)e−ip·x, u (⃗ p,s) =
-√
-E +M
-2M
-( I
-⃗ σ·⃗ p
-E+M
-)
-χs, (2.46)
-whereI is the two-dimensional identity matrix, p0 =E =
-√
-⃗ p2 +M2, and χs a Pauli spinor describing the
-spin state of the baryon. Assuming for the four-velocity vµ = (1, 0, 0, 0), which is what we have in the rest
-frame of the baryon, the explicit expressions for the wave function components Np and hp are
-Np =
-√
-E +M
-2M
-(
-χs
-0
-)
-e−i(E−M)t+i⃗ p·⃗ x↦−→
-(
-χs
-0
-)
-e−i(E−M)t+i⃗ p·⃗ x, (2.47)
-hp =
-√
-E +M
-2M
-( 0
-⃗ σ·⃗ p
-E+Mχs
-)
-e−i(E−M)t+i⃗ p·⃗ x, (2.48)
-where the 0 represents a column vector that consists of two zeros. The arrow indicates the properly normal-
-ized spinor at leading order. So, for vµ = (1, 0, 0, 0), Np represents the large/upper component and hp the
-small/lower component of the Dirac wave function ψp. Note also that the energy of Np and hp is diﬀerent
-from ψp; namely, they carry the small residual energy [cf. Eq. (2.42)]
-l0 =E−M≈ 0 + ⃗ p2
-2M +... . (2.49)
-Thus,l0 is zero in leading order and ⃗ p2/2M at next-to-leading order (NLO).
-To derive the leading-order heavy-baryon Lagrangian, we start from the leading-order relativistic one,
-L(1)
-πN = ¯Ψ
-(
-iγµDµ−M + gA
-2 γµγ5uµ
-)
-Ψ, (2.50)
-and insert Eq. (2.45), assuming vµ = (1, 0, 0, 0) for simplicity 4. One immediate result is that the e−iMt
-factor of Eq. (2.45) generates a term γ0M which kills the troublesome baryon mass term (−M) in the upper
-component projection yielding
-L(1)
-πN = ¯N
-(
-iγµDµ + gA
-2 γµγ5uµ
-)
-N +... (2.51)
-where the ellipsis stands for additional expressions involving the lower-component ﬁeld h. Since N contains
-only upper components, Eq. (2.51) collapses to
-ˆL(1)
-πN = ¯N
-(
-iD0− gA
-2 ⃗ σ·⃗ u
-)
-N (2.52)
-plus 1/M corrections which are generated by expressing h in terms of N via the equations of motion for N
-and h. The ﬁrst such 1/M corrections are shown in Eq. (2.56), below.
-4For a full-ﬂedged derivation, see Ref. [113]
-13
-Equation (2.52) is the leading order πN Lagrangian in the HB formalism (as indicated by the hat).
-Expanding in numbers of pion ﬁelds, this Lagrangian reads
-ˆL(1)
-πN = ¯N
-{
-i∂0− 1
-4f2π
-τ· (π×∂0π)− gA
-2fπ
-τ· (⃗ σ·⃗∇)π
-+gA(4α− 1)
-4f3π
-(τ·π)
-[
-π· (⃗ σ·⃗∇)π
-]
-+ gAα
-2f3π
-π2
-[
-τ· (⃗ σ·⃗∇)π
-]}
-N +... (2.53)
-where the ellipsis stands for terms involving four or more pions.
-At dimension two , the relativistic πN Lagrangian reads
-L(2)
-πN =
-4∑
-i=1
-ci ¯ΨO(2)
-i Ψ. (2.54)
-The various operators O(2)
-i are given in Ref. [122]. The fundamental rule by which this Lagrangian—as well
-as all the other ones—are assembled is that they must contain all terms consistent with chiral symmetry
-and Lorentz invariance (apart from other trivial symmetries) at a given chiral dimension (here: order two).
-The parameters ci are known as low-energy constants (LECs) and are determined empirically from ﬁts to
-πN data.
-The HB projected πN Lagrangian at order two is most conveniently broken up into two pieces,
-ˆL(2)
-πN = ˆL(2)
-πN, ﬁxed + ˆL(2)
-πN, ct, (2.55)
+\begin{equation}
+p^\mu=Mv^\mu+l^\mu
+\label{eq_pmu}
+\end{equation}
+where $v^\mu$ is the four-velocity satisfying $v^2=1$ and
+$l^\mu$ is a small residual momentum, $v\cdot l \ll M$.
+Defining projection operators
+\begin{equation}
+P_v^\pm=\frac{1\pm \gamma_\mu v^\mu}{2} \,,
+\quad \quad \quad
+P_v^+ + P_v^- = 1 \,,
+\end{equation}
+we introduce the so-called velocity-dependent fields
+\begin{equation}
+N=e^{iMv\cdot x} P_v^+ \Psi \,,
+\quad \quad \quad
+h=e^{iMv\cdot x} P_v^- \Psi \,,
+\label{eq_Nh}
+\end{equation}
+such that the relativistic four-component 
+Dirac spinor field representing the baryon can be written as
+\begin{equation}
+\Psi=e^{-iMv\cdot x}(N+h) \,.
+\label{eq_PsiNh}
+\end{equation}
+The exponential factor in Eq.~(\ref{eq_Nh}) eliminates the kinematical dependence
+on the baryon mass.
+To make the meaning of the fields $N$ and $h$ more
+transparent, consider a positive-energy plane wave solution of
+the Dirac equation
+\begin{equation}
+\psi_p(x)=u(\vec p,s) e^{-i p\cdot x} \,,
+\quad \quad
+	u(\vec p,s) = \sqrt{\frac{E+M}{2M}} 
+        \left(
+	\begin{array}{c}
+	  I   \\
+	\frac{\vec \sigma \cdot \vec p}{E+M}
+	\end{array}
+	\right)
+        \chi_s
+\,,
+\end{equation}
+where $I$ is the two-dimensional identity matrix, 
+$p^0=E=\sqrt{{\vec p}~^2+M^2}$, and $\chi_s$ a Pauli 
+spinor describing the spin state of the baryon.
+Assuming for the four-velocity $v^\mu = (1,0,0,0)$,
+which is what we have in the rest frame of the baryon,
+the explicit expressions for the wave function components
+$N_p$ and $h_p$ are
+\begin{eqnarray}
+N_p&=&\sqrt{\frac{E+M}{2M}}
+        \left(
+	\begin{array}{c}
+	 \chi_s\\
+	   0
+	\end{array}
+	\right)
+  e^{-i(E-M)t+i\vec p \cdot \vec x} 
+\longmapsto 
+        \left(
+	\begin{array}{c}
+	 \chi_s\\
+	   0
+	\end{array}
+	\right)
+  e^{-i(E-M)t+i\vec p \cdot \vec x} 
+\,,
+\\
+h_p&=&\sqrt{\frac{E+M}{2M}}
+        \left(
+	\begin{array}{c}
+	   0   \\
+	\frac{\vec \sigma \cdot \vec p}{E+M}\chi_s
+	\end{array}
+	\right)
+  e^{-i(E-M)t+i\vec p \cdot \vec x} \,,
+\end{eqnarray}
+where the $0$ represents a column vector that consists
+of two zeros.
+The arrow indicates the properly normalized spinor at leading order.
+So, for $v^\mu=(1,0,0,0)$, 
+$N_p$ represents the large/upper component
+and $h_p$ the small/lower component of the 
+Dirac wave function $\psi_p$.
+Note also that the energy of 
+$N_p$ and $h_p$ 
+is different
+from $\psi_p$; namely,  
+they carry the small
+residual energy
+[cf.\ Eq.~(\ref{eq_pmu})]
+\begin{equation}
+l_0=E-M\approx 0 + \frac{{\vec p}~^2}{2M} + \ldots \,.
+\end{equation}
+Thus, $l_0$ is zero in leading order and ${\vec p}~^2/2M$ at 
+next-to-leading order (NLO).
+
+To derive the leading-order heavy-baryon Lagrangian,
+we start from the leading-order relativistic one,
+\begin{equation}
+{\cal L}^{(1)}_{\pi N}  =  
+ \bar{\Psi} \left(i\gamma^\mu {D}_\mu 
+ - M
+ + \frac{g_A}{2} \gamma^\mu \gamma_5 u_\mu
+  \right) \Psi  
+\,,
+\end{equation}
+and insert 
+Eq.~(\ref{eq_PsiNh}),
+assuming $v^\mu=(1,0,0,0)$ for simplicity\footnote{For a 
+full-fledged derivation, see Ref.~\cite{Sch03}}.
+One immediate result is that the $e^{-iMt}$ factor of
+Eq.~(\ref{eq_PsiNh})
+generates a term $\gamma_0 M$ which kills the
+troublesome baryon mass term $(-M)$ in the upper component
+projection yielding
+\begin{equation}
+{\cal L}^{(1)}_{\pi N}  =  
+ \bar{N} \left(i\gamma^\mu {D}_\mu 
+ + \frac{g_A}{2} \gamma^\mu \gamma_5 u_\mu
+  \right) N  
+ + \ldots
+\label{eq_L1relN}
+\end{equation}
+where the ellipsis stands for additional expressions 
+involving the lower-component
+field $h$. Since $N$ contains only upper components, 
+Eq.~(\ref{eq_L1relN})
+collapses to
+\begin{equation}
+\widehat{\cal L}^{(1)}_{\pi N} 
+ =  
+\bar{N} \left(
+ i {D}_0 
+ - \frac{g_A}{2} \; 
+\vec \sigma \cdot \vec u
+\right) N  
+\label{eq_L1HB}
+\end{equation}
+plus $1/M$ corrections which are generated by expressing $h$
+in terms of $N$ via the equations of motion for $N$ and $h$. 
+The first such $1/M$ corrections are shown in
+Eq.~(\ref{eq_L2fixed}), below.
+
+Equation~(\ref{eq_L1HB}) is the leading order $\pi N$
+Lagrangian in the HB formalism (as indicated by the hat).
+Expanding in numbers of pion fields, 
+this Lagrangian reads
+\begin{eqnarray}
+\widehat{\cal L}^{(1)}_{\pi N} 
+& = & 
+\bar{N} \left\{ 
+i \partial_0 
+- \frac{1}{4f_\pi^2} \;
+\mbox{\boldmath $\tau$} \cdot 
+ ( \mbox{\boldmath $\pi$}
+\times
+ \partial_0 \mbox{\boldmath $\pi$})
+- \frac{g_A}{2f_\pi} \;
+\mbox{\boldmath $\tau$} \cdot 
+ ( \vec \sigma \cdot \vec \nabla )
+\mbox{\boldmath $\pi$} 
+\right. 
+\nonumber \\ && 
+\left.
++ \frac{g_A(4\alpha-1)}{4f_\pi^3} \;
+(\mbox{\boldmath $\tau$} \cdot 
+\mbox{\boldmath $\pi$}) 
+\left[ \mbox{\boldmath $\pi$} \cdot 
+ ( \vec \sigma \cdot \vec \nabla )
+\mbox{\boldmath $\pi$} \right]
++ \frac{g_A\alpha}{2f_\pi^3} \;
+\mbox{\boldmath $\pi$}^2 
+\left[ \mbox{\boldmath $\tau$} \cdot 
+ ( \vec \sigma \cdot \vec \nabla )
+\mbox{\boldmath $\pi$} 
+\right]
+\right\} N 
++ \ldots
+\label{eq_L1}
+\end{eqnarray}
+where the ellipsis stands for terms involving four
+or more pions.
+
+{\it At dimension two},
+the relativistic $\pi N$ Lagrangian reads
+\begin{equation}
+{\cal L}^{(2)}_{\pi N} 
+= \sum_{i=1}^{4} c_i \bar{\Psi} O^{(2)}_i \Psi \, .
+\label{eq_L2rel}
+\end{equation}
+The various operators $O^{(2)}_i$ are given in Ref.~\cite{Fet00}.
+The fundamental rule by which this Lagrangian---as well as all 
+the other
+ones---are assembled is that they must contain {\it all\/} terms
+consistent with chiral symmetry and Lorentz invariance 
+(apart from other trivial
+symmetries) at a given chiral dimension (here: order two).
+The parameters $c_i$ are known as low-energy constants (LECs)
+and are determined empirically from fits to $\pi N$ data.
+
+The HB projected $\pi N$ Lagrangian at order two 
+is most conveniently broken up into two pieces,
+\begin{equation}
+\widehat{\cal L}^{(2)}_{\pi N} \, = \,
+\widehat{\cal L}^{(2)}_{\pi N, \, \rm fixed} \, + \,
+\widehat{\cal L}^{(2)}_{\pi N, \, \rm ct} \, ,
+\label{eq_L2}
+\end{equation}
 with
-ˆL(2)
-πN, ﬁxed = ¯N
-[ 1
-2MN
-⃗D· ⃗D +i gA
-4MN
-{⃗ σ· ⃗D,u 0}
-]
-N
-= ¯N
-{ ⃗∇2
-2MN
-− igA
-4MNfπ
-τ·
-[
-⃗ σ·
-(←
-∇∂0π−∂0π
-→
-∇
-)]
-− i
-8MNf2π
-τ·
-[←
-∇·(π×⃗∇π)− (π×⃗∇π)·
-→
-∇
-]}
-N +... (2.56)
+\begin{eqnarray}
+\widehat{\cal L}^{(2)}_{\pi N, \, \rm fixed}  
+ & = &  
+ \bar{N} \left[
+\frac{1}{2M_N}\: \vec D \cdot \vec D
++ i\, \frac{g_A}{4M_N}\: \{\vec \sigma \cdot \vec D, u_0\}
+ \right] N
+\nonumber \\ & = & 
+ \bar{N} \left\{
+ \frac{{\vec \nabla}^2}{2M_N} 
+-\frac{ig_A}{4M_Nf_\pi} 
+\mbox{\boldmath $\tau$} \cdot 
+\left[
+\vec \sigma \cdot
+\left( \stackrel{\leftarrow}{\nabla} 
+\partial_0 \mbox{\boldmath $\pi$}
+ -
+\partial_0 \mbox{\boldmath $\pi$}
+\stackrel{\rightarrow}{\nabla} \right)
+\right]
+\right.
+\nonumber \\ &&
+\left.
+- \frac{i}{8M_N f_\pi^2}
+\mbox{\boldmath $\tau$} \cdot 
+\left[
+\stackrel{\leftarrow}{\nabla} 
+\cdot
+( \mbox{\boldmath $\pi$} \times \vec\nabla \mbox{\boldmath $\pi$} )
+   -   
+( \mbox{\boldmath $\pi$} \times \vec\nabla \mbox{\boldmath $\pi$} )
+\cdot
+\stackrel{\rightarrow}{\nabla} 
+\right]
+\right\} N 
+ + \ldots
+\label{eq_L2fixed}
+\end{eqnarray}
 and
-ˆL(2)
-πN, ct = ¯N
-[
-2c1m2
-π (U +U†) +
-(
-c2− g2
-A
-8MN
-)
-u2
-0 + c3uµuµ + i
-2
-(
-c4 + 1
-4MN
-)
-⃗ σ· (⃗ u×⃗ u)
-]
-N
-= ¯N
-[
-4c1m2
-π− 2c1
-f2π
-m2
-ππ2 +
-(
-c2− g2
-A
-8MN
-) 1
-f2π
-(∂0π·∂0π) + c3
-f2π
-(∂µπ·∂µπ)
-−
-(
-c4 + 1
-4MN
-) 1
-2f2π
-ϵijkϵabcσiτa(∂jπb)(∂kπc)
-]
-N + ..., (2.57)
-where we neglected the isospin-breaking c5-term proportional to ( mu−md); the ellipsis represents terms
-involving more pions.
-Note that ˆL(2)
-πN, ﬁxed is created entirely from the HB expansion of the relativistic L(1)
-πN and thus has no
-free parameters (“ﬁxed”), while ˆL(2)
-πN, ct is made up by the new πN contact terms proportional to the ci
-parameters (plus those 1 /MN corrections which happen to have the same mathematical structure as ci
-terms).
-At dimension three, the relativistic πN Lagrangian can be formally written as
-L(3)
-πN =
-31∑
-i=1
-di ¯ΨO(3)
-i Ψ, (2.58)
-14
-with the operators, O(3)
-i , listed in Refs. [122, 123]; not all 31 terms will be of interest here. The new LECs
-that occur at this order are the di. Similar to the order two case, the HB projected Lagrangian at order
-three can be broken into two pieces,
-ˆL(3)
-πN = ˆL(3)
-πN, ﬁxed + ˆL(3)
-πN, ct, (2.59)
-with ˆL(3)
-πN, ﬁxed and ˆL(3)
-πN, ct given in Refs. [122, 123].
+\begin{eqnarray}
+\widehat{\cal L}^{(2)}_{\pi N, \, \rm ct}
+& = & 
+ \bar{N} \left[
+ 2\, c_1
+\, m_\pi^2\, (U+U^\dagger)
+\, + \, 
+\left( c_2 - \frac{g_A^2}{8M_N}\right) u_0^2
+ \, + \,
+c_3
+\, u_\mu  u^\mu
+
++ \, \frac{i}{2} 
+\left( c_4 + \frac{1}{4M_N} \right) 
+  \vec \sigma \cdot ( \vec u \times \vec u)
+ \right] N 
+\nonumber \\ & = & 
+ \bar{N} \left[
+ 4c_1m_\pi^2
+-\frac{2 c_1}{f_\pi^2} \, m_\pi^2\, \mbox{\boldmath $\pi$}^2 
+\, + \, 
+\left( c_2 - \frac{g_A^2}{8M_N}\right) 
+\frac{1}{f_\pi^2}
+(\partial_0 \mbox{\boldmath{$\pi$}} \cdot 
+ \partial_0 \mbox{\boldmath{$\pi$}})
+
+ + \, \frac{c_3}{f_\pi^2}\,
+(\partial_\mu \mbox{\boldmath{$\pi$}} \cdot 
+\partial^\mu \mbox{\boldmath{$\pi$}})
+\right.  
+\nonumber \\ && \left.
+ - \, \left( c_4 + \frac{1}{4M_N} \right) 
+\frac{1}{2f_\pi^2}
+\epsilon^{ijk} \epsilon^{abc} \sigma^i \tau^a
+(\partial^j \pi^b) (\partial^k \pi^c)
+ \right] N 
+\, + \, \ldots ,
+\label{eq_L2ct}
+\end{eqnarray}
+where we neglected the isospin-breaking $c_5$-term
+proportional to $(m_u-m_d)$;
+the ellipsis represents terms involving 
+more pions.
+
+Note that 
+$\widehat{\cal L}^{(2)}_{\pi N, \, \rm fixed}$  
+is created entirely from the HB expansion of the relativistic
+${\cal L}^{(1)}_{\pi N}$ and thus has no free parameters (``fixed''),
+while 
+$\widehat{\cal L}^{(2)}_{\pi N, \, \rm ct}$
+is made up by the new $\pi N$ contact terms proportional to the
+$c_i$ parameters (plus those $1/M_N$ corrections
+which happen to have the same mathematical structure as
+$c_i$ terms).
+
+{\it At dimension three},
+the relativistic $\pi N$ Lagrangian can be formally written as
+\begin{equation}
+{\cal L}^{(3)}_{\pi N} 
+= \sum_{i=1}^{31} d_i \bar{\Psi} O^{(3)}_i \Psi \, ,
+\label{eq_L3rel}
+\end{equation}
+with the operators, $O^{(3)}_i$, listed in Refs.~\cite{Fet00,FMS98}; 
+not all 31 terms will be of interest here.
+The new LECs that occur at this order are the $d_i$.
+Similar to the order two case,
+the HB projected Lagrangian at order three can be broken into two pieces,
+\begin{equation}
+\widehat{\cal L}^{(3)}_{\pi N} \, = \,
+\widehat{\cal L}^{(3)}_{\pi N, \, \rm fixed} \, + \,
+\widehat{\cal L}^{(3)}_{\pi N, \, \rm ct} \, ,
+\label{eq_L3}
+\end{equation}
+with
+$\widehat{\cal L}^{(3)}_{\pi N, \, \rm fixed}$
+and
+$\widehat{\cal L}^{(3)}_{\pi N, \, \rm ct}$
+given in Refs.~\cite{Fet00,FMS98}.

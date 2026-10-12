@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/helicity03mmj/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/helicity03mmj/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Linking of a curve with a foliation",
   "pageStart": 12,
   "pageEnd": 14,
   "text": "../sections/sec-008-41-linking-of-a-curve-with-a-foliation.md",
-  "derivedFrom": "library/helicity03mmj/manifest",
-  "sourceDocument": "library/helicity03mmj/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
   "provenance": "ingested"
 }

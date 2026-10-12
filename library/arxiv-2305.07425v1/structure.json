@@ -6,7 +6,11 @@
   "sha256": "2f7d2ac5818b6af4df9a1e8a59a370236de653084ad1e143a0b0ee7349b96639",
   "bytes": 300103,
   "pages": 20,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -258,6 +262,105 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 12,
-  "chars_total": 60290
+  "chars_total": 60290,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 13,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-21-haccessibility",
+     "title": "H\u2013accessibility",
+     "prose_ratio": 0.305,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-11-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.737,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": null,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-22-projection-axioms",
+     "title": "Projection axioms",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-23-croke-kleiner-admissible-groups",
+     "title": "Croke-Kleiner admissible groups",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-3-croke-kleiner-admissible-groups-and-hinaccessi",
+     "title": "Croke-Kleiner admissible groups and H\u2013inaccessibility",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-31-construction-of-group-actions",
+     "title": "Construction of group actions",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-4-haccessibility-of-3-manifold-groups",
+     "title": "H\u2013accessibility of 3-manifold groups",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-42-haccessibility-of-non-elementary-graph-manifo",
+     "title": "H\u2013accessibility of non-elementary graph manifolds",
+     "prose_ratio": 0.759,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-43-theorem-11",
+     "title": "Theorem 1.1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

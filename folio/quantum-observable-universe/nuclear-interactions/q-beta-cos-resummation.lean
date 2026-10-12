@@ -6,34 +6,41 @@ import Mathlib.Tactic
 
 
 /-!
-# QOU.Interactions.QBetaCosResummation — `cos((z-1)h/2)` tightening of Form A
+# QOU.Interactions.QBetaCosResummation — `cos((z_D-1)h/2)` dressing of a `Q_β` base (convention D)
 
-The single-wrap `Q_β^A` prediction (per `prop:neutron-qvalue-symbolic`) admits
-a tighter symbolic refinement via the **classical cosine** of the half
-eigenphase:
+The block `prop:q-beta-cos-resummation` dresses a `Q_β` base by the classical
+cosine of the half eigenphase:
 
-  `Q_β^{A,cos} = Q_β^A · cos((z-1) h / 2)`
+  `Q_β^{cos} = Q_β^{base} · cos α`,  `α = (z_D − 1) h / 2`,  `z_D = q³/(q²+1)`.
 
-This file:
+**Restated in convention D, 2026-10-10 (bean `qou-zuva`).** This file:
 
-1. Axiomatises the spectral identification (transfer-matrix eigenphase
-   `α = (z-1) h / 2` on the 2-d irrep `V_{(2,1)}` of `H_3(q)`) as a Lean
-   `class`, since the underlying combinatorial fact lives in
-   `prop:beta-decay-transfer-matrix` and is not yet machine-proved.
+1. Defines the canonical convention-D eigenphase `eigenphase` from
+   `markovZD q = q³/(q²+1)`.
 
-2. Proves the **Markov-cyclicity constraint**: the resummation must be
-   **even** in `α`, hence the leading symmetric series is the cosine.
+2. Proves the convention-D **bar defect**: `z_D(q⁻¹) ≠ z_D(q)` and
+   `α_D(q⁻¹) ≠ −α_D(q)` for every `q > 0`, `q ≠ 1`, with the exact
+   bar-even part `α_D(q⁻¹) + α_D(q) = (q²−1)²/(2q²)`. So the
+   Markov-cyclicity argument that forced an **even** resummation under
+   convention C does **not** go through under D, and the cosine is a
+   *definition being tested*, not a derived consequence.
 
-3. Records the cos-resummation theorem as a conditional result under the
-   class, with the polynomial identity at `O(α⁴)` discharged by `ring`.
+3. Keeps the convention-C bar antisymmetry (`eigenphaseC_bar_involution`) as
+   an explicitly labelled **C-historical** statement: it is true for C, false
+   for D, and is not used by the D results below.
+
+4. Records the cos-resummation theorem as a conditional result under the
+   spectral-identification class (now stated with the D eigenphase).
 
 LaTeX label: `prop:q-beta-cos-resummation`
 -/
 
 namespace QOU.Interactions
 
-/-- Markov-Jones parameter `z(q) = 1 / (√q + 1/√q)`. (Defined locally to
-    avoid a circular import with `QBetaSpectralBridge`.)
+/-- **CONVENTION C — HISTORICAL, not canonical.** Markov-Jones parameter
+    `z_C(q) = 1 / (√q + 1/√q)`, kept only so that the convention-C
+    bar antisymmetry `eigenphaseC_bar_involution` remains statable. Nothing
+    convention-D in this file uses it; the canonical parameter is `markovZD`.
 
     **Convention C, deliberately, and this file cannot be migrated to D by
     swapping the body** (bean `qou-cxjq`, 2026-08-26).
@@ -67,24 +74,38 @@ noncomputable def markovZC (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)�
 /-- Hecke-Skein quantum-integer differential `h(q) = q - q⁻¹`. -/
 noncomputable def heckeH (q : ℝ) : ℝ := q - q⁻¹
 
-/-- Single-wrap transfer-matrix eigenphase on the 2-d irrep `V_{(2,1)}`. -/
-noncomputable def eigenphase (q : ℝ) : ℝ := (markovZC q - 1) * heckeH q / 2
+/-- **Convention D (canonical).** Markov parameter `z_D(q) = q³/(q²+1)`.
+    Matches `QOU.QBeta.EigenphaseBarMixedD.zD` and the canonical
+    `QOU.BraidKnot.JonesNuclearQuotient.markovZ`; defined locally because this
+    content-block sibling imports Mathlib only. -/
+noncomputable def markovZD (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
 
-/-! ## Markov-cyclicity ⇒ even resummation
+/-- **Convention D (canonical).** Single-wrap transfer-matrix eigenphase on the
+    2-d irrep `V_{(2,1)}`: `α_D = (z_D − 1)·h / 2`. At the proton pin
+    `q₀ ≈ 1.1099785827513808` this is `α_D ≈ −0.0404857773`,
+    `cos α_D ≈ 0.9991805629` (mpmath,
+    `computations/qbeta/qbeta_cos_resummation_d_probe.py`). -/
+noncomputable def eigenphase (q : ℝ) : ℝ := (markovZD q - 1) * heckeH q / 2
 
-`τ_M` is cyclic; under the bar involution `q ↦ q⁻¹` the generator
-`σ_i` is sent to `σ_i⁻¹`, hence the eigenphase `α ↦ −α`. Any trace
-expression in `α` must therefore be **even**: only `α^{2k}` powers
-survive in the resummation. -/
+/-- **CONVENTION C — HISTORICAL.** The convention-C eigenphase
+    `α_C = (z_C − 1)·h / 2`, which the block used until 2026-10-10. -/
+noncomputable def eigenphaseC (q : ℝ) : ℝ := (markovZC q - 1) * heckeH q / 2
 
-/-- Bar-involution symmetry: `α(q⁻¹) = −α(q)`.
+/-! ## Convention C (historical): Markov-cyclicity ⇒ even resummation
 
-    Reason: `z(q⁻¹) = z(q)` (palindromic in `√q ↔ 1/√q`) but
-    `h(q⁻¹) = q⁻¹ − q = −h(q)`. So
-    `α(q⁻¹) = (z(q⁻¹) − 1) · h(q⁻¹) / 2 = (z(q) − 1) · (−h(q)) / 2
-            = −α(q)`. -/
-theorem eigenphase_bar_involution (q : ℝ) (hq : 0 < q) :
-    eigenphase q⁻¹ = - eigenphase q := by
+Under convention C, `τ_M` cyclicity plus the bar involution `q ↦ q⁻¹`
+(sending `σ_i ↦ σ_i⁻¹`) sends `α_C ↦ −α_C`, because `z_C` is bar-even and
+`h` is bar-odd. That is what made the cosine *derived* under C. The
+statement is kept, labelled, because it is true **for C**. -/
+
+/-- **CONVENTION C — HISTORICAL.** Bar-involution antisymmetry
+    `α_C(q⁻¹) = −α_C(q)`.
+
+    Reason: `z_C(q⁻¹) = z_C(q)` (palindromic in `√q ↔ 1/√q`) but
+    `h(q⁻¹) = −h(q)`. **False under convention D** — see
+    `eigenphase_not_bar_odd`. -/
+theorem eigenphaseC_bar_involution (q : ℝ) (hq : 0 < q) :
+    eigenphaseC q⁻¹ = - eigenphaseC q := by
   -- Ref: [manuscript] prop:q-beta-cos-resummation §"Markov cyclicity"
   -- Ref: [jones1985] doi:10.2307/1971403
   -- Reduce to algebraic identity:
@@ -97,7 +118,7 @@ theorem eigenphase_bar_involution (q : ℝ) (hq : 0 < q) :
   have hq_ne : q ≠ 0 := ne_of_gt hq
   have hsq_ne : Real.sqrt q ≠ 0 := by
     rw [ne_eq, Real.sqrt_eq_zero (le_of_lt hq)]; exact hq_ne
-  unfold eigenphase markovZC heckeH
+  unfold eigenphaseC markovZC heckeH
   rw [Real.sqrt_inv]
   -- markovZC(q⁻¹) factor: 1/(1/√q + (1/√q)⁻¹) = 1/(1/√q + √q) = same as markovZC(q)
   -- heckeH(q⁻¹) factor: q⁻¹ - (q⁻¹)⁻¹ = q⁻¹ - q
@@ -108,6 +129,81 @@ theorem eigenphase_bar_involution (q : ℝ) (hq : 0 < q) :
   --   = -((1 / (√q + (√q)⁻¹) - 1) · (q - q⁻¹)) / 2
   -- LHS denominator (√q)⁻¹ + √q = √q + (√q)⁻¹  (commutativity of +)
   ring
+
+/-- **Legacy name, CONVENTION C — HISTORICAL.** Until 2026-10-10 this name
+    carried the convention-C bar antisymmetry, when `eigenphase` itself was
+    convention C. `eigenphase` is now convention D, for which the statement is
+    **false** (`eigenphase_not_bar_odd`), so this name now states the C fact
+    about `eigenphaseC` and is deprecated. It is kept because several library
+    docstrings and probes cite it as the C statement. -/
+@[deprecated eigenphaseC_bar_involution (since := "2026-10-10")]
+theorem eigenphase_bar_involution (q : ℝ) (hq : 0 < q) :
+    eigenphaseC q⁻¹ = - eigenphaseC q :=
+  eigenphaseC_bar_involution q hq
+
+/-! ## Convention D: the bar involution does NOT fix `z_D`, and `α_D` is not bar-odd
+
+These are the convention-D replacements for the C bar antisymmetry above. They
+show the evenness argument has no D analog: the cosine in the D block is a
+definition under test, not a consequence of Markov cyclicity. Ordering is used
+for nonvanishing, hence `ℝ` (AGENTS.md §7c). Same content as
+`QOU.QBeta.EigenphaseBarMixedD.twoAlphaD_bar_even_sum`, restated here for the
+block's own `eigenphase`. -/
+
+/-- `z_D(q⁻¹) = 1/(q³ + q)`. -/
+theorem markovZD_inv (q : ℝ) (hq : q ≠ 0) :
+    markovZD q⁻¹ = 1 / (q ^ 3 + q) := by
+  unfold markovZD
+  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
+  have h2 : q ^ 3 + q ≠ 0 := by
+    have : q ^ 3 + q = q * (q ^ 2 + 1) := by ring
+    rw [this]; exact mul_ne_zero hq h1
+  field_simp
+  ring
+
+/-- **The bar involution does not fix `z_D`**: `z_D(q⁻¹) ≠ z_D(q)` for every
+    `q > 0`, `q ≠ 1`. (Equality would force `q⁴ = 1`.) Contrast `markovZC`,
+    which is bar-even identically. -/
+theorem markovZD_bar_ne (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) :
+    markovZD q⁻¹ ≠ markovZD q := by
+  intro h
+  rw [markovZD_inv q hq.ne'] at h
+  unfold markovZD at h
+  have h1 : (0 : ℝ) < q ^ 2 + 1 := by positivity
+  have h2 : (0 : ℝ) < q ^ 3 + q := by positivity
+  rw [div_eq_div_iff h2.ne' h1.ne'] at h
+  have hq2 : (q - 1) * (q + 1) * (q ^ 2 + 1) ^ 2 = 0 := by linear_combination -h
+  have h3 : (q ^ 2 + 1) ^ 2 ≠ 0 := by positivity
+  have h4 : q + 1 ≠ 0 := by linarith
+  have h5 : q - 1 ≠ 0 := sub_ne_zero.mpr hq1
+  exact mul_ne_zero (mul_ne_zero h5 h4) h3 hq2
+
+/-- **Exact bar-even part of the D eigenphase**:
+    `α_D(q⁻¹) + α_D(q) = (q² − 1)² / (2 q²)`. A bar-odd phase would give `0`. -/
+theorem eigenphase_bar_even_sum (q : ℝ) (hq : q ≠ 0) :
+    eigenphase q⁻¹ + eigenphase q = (q ^ 2 - 1) ^ 2 / (2 * q ^ 2) := by
+  unfold eigenphase markovZD heckeH
+  have h1 : q ^ 2 + 1 ≠ 0 := by positivity
+  have h2 : (q⁻¹) ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **`α_D` is not bar-odd**: for every `q > 0`, `q ≠ 1`,
+    `α_D(q⁻¹) ≠ −α_D(q)`. This is the convention-D negation of
+    `eigenphaseC_bar_involution`, and it is why the Markov-cyclicity derivation
+    of the cosine does not transfer to D. -/
+theorem eigenphase_not_bar_odd (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) :
+    eigenphase q⁻¹ ≠ - eigenphase q := by
+  intro h
+  have hsum := eigenphase_bar_even_sum q hq.ne'
+  rw [h, neg_add_cancel] at hsum
+  have h4 : q + 1 ≠ 0 := by linarith
+  have h5 : q - 1 ≠ 0 := sub_ne_zero.mpr hq1
+  have hq2 : q ^ 2 - 1 ≠ 0 := by
+    have : q ^ 2 - 1 = (q - 1) * (q + 1) := by ring
+    rw [this]; exact mul_ne_zero h5 h4
+  have : (0 : ℝ) < (q ^ 2 - 1) ^ 2 / (2 * q ^ 2) := by positivity
+  linarith
 
 /-! ## Spectral-identification class
 
@@ -264,8 +360,10 @@ Markov trace itself) requires the class hypothesis. -/
 -- not carry in a directly-applicable form (`exact?` fails on it), so it is left
 -- undone rather than re-faked.
 
-/-- The cos resummation is **even** in `α`: under `α ↦ −α`, the value is
-    preserved. (Trivially from `cos(−x) = cos x`.) -/
+/-- The cosine factor is **even** in `α`: under `α ↦ −α`, the value is
+    preserved. (From `cos(−x) = cos x`.) Under convention D this does **not**
+    make the factor bar-invariant, because the bar involution does not send
+    `α_D` to `−α_D` (`eigenphase_not_bar_odd`). -/
 theorem cos_resummation_even (α : ℝ) :
     Real.cos (-α) = Real.cos α := by
   exact Real.cos_neg α
@@ -278,10 +376,11 @@ theorem cos_resummation_even (α : ℝ) :
 
       `Q_β^A · (tr M / 2) = Q_β^A · cos α`,  `α = (z(q) − 1) · h(q) / 2`.
 
-    Per §"Markov cyclicity" of `prop:q-beta-cos-resummation`, the resummation
-    must be even in `α` (by `eigenphase_bar_involution` + cyclicity of `τ_M`),
-    so the cosine is the unique entire even analytic function matching the
-    spectral-bridge perturbative expansion at every order.
+    **Convention D.** `α` here is `eigenphase q = (z_D − 1)·h/2`. Under
+    convention C the cosine was *derived* from evenness in `α` (bar
+    antisymmetry `eigenphaseC_bar_involution` + cyclicity of `τ_M`); under D
+    that step fails (`eigenphase_not_bar_odd`), so the cosine is the
+    definition under test, carried by the class, not a consequence.
 
     **This is a genuine implication**, verified by negative control: drop the
     instance binder and the goal `formA * M.trace * (1/2) = formA * cos α` is
@@ -291,11 +390,14 @@ theorem cos_resummation_even (α : ℝ) :
     while its *hypothesis* remains circularly dischargeable; see the section
     note above.
 
-    **Empirical evidence** (from `q-beta-tightening-landscape.witness.json`):
-    at `q_0 ≈ 1.110`, the cos-resummed prediction has CODATA residual
-    `+305.7 ppm`, compared to `+1677.5 ppm` for bare Form A — a `5.49×`
-    tightening. That number is evidence *for the open identification*, not a
-    consequence of this theorem. -/
+    **Numbers (convention D, proton pin, mpmath; witness
+    `computations/qbeta/qbeta-cos-resummation-d.witness.json`).** On the
+    ruled `z_D` base `0.4447004085` MeV (`−431571.8` ppm vs CODATA) the cos
+    factor `0.9991805629` gives `−432037.5` ppm — away from zero, as it must
+    be, since the required factor exceeds 1 while `cos α ≤ 1`. On the retired
+    Form A base it gives `+1677.6 → +856.8` ppm. The superseded convention-C
+    figure (`+1677.5 → +305.7` ppm, `5.49×`) is historical. None of these is
+    a consequence of this theorem, and neither base is selected by residual. -/
 -- Ref: [manuscript] prop:q-beta-cos-resummation
 -- Ref: [jones1985] doi:10.2307/1971403   (Markov trace on H_n(q))
 -- Ref: [wenzl1988] doi:10.1007/BF01239526   (Wenzl-bridge `y_λ`)
@@ -322,3 +424,9 @@ theorem cos_resummation_contracts (q : ℝ) (M : Matrix (Fin 2) (Fin 2) ℝ)
   constructor <;> linarith
 
 end QOU.Interactions
+
+#print axioms QOU.Interactions.markovZD_bar_ne
+#print axioms QOU.Interactions.eigenphase_bar_even_sum
+#print axioms QOU.Interactions.eigenphase_not_bar_odd
+#print axioms QOU.Interactions.eigenphaseC_bar_involution
+#print axioms QOU.Interactions.q_beta_cos_resummation

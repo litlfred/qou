@@ -1,0 +1,379 @@
+\appendix
+
+\section{Duality and partial trace}
+\label{sec:duality}
+
+In this appendix we show that given a kernel $\Phi\colon X\ra Y$ and
+its dual kernel \(\Phi^\chk\colon Y \ra X\) there are canonical
+2-morphisms
+\[ \SerK_X^{-1} \ra \Phi^\chk \circ \Phi\quad\text{and}\quad \Phi
+\circ \SerK_X \circ \Phi^\chk \ra \Id_Y \]
+giving rise to a variety of natural adjunctions satisfying
+a number of compatibility relations.
+
+The notion of duality in $\gVar$ is seen to be a middle-ground between
+the operations $\tau_L$ and $\tau_R$: it is an involution, unlike
+$\tau_L$ and $\tau_R$, but it does not respect composition, which
+$\tau_L$ and $\tau_R$ do.
+
+ \subsection{Polite duality.}
+Recall from Section~\ref{subsec:serXY} that for every space $X$ there
+is the Serre kernel $\SerK_X\colon X \ra X$ such that for spaces $X$
+and $Y$ the functor
+\[ \SerK_Y \circ {-} \circ \SerK_X\colon \bHom_\gVar(X, Y) \ra
+\bHom_\gVar(X, Y) \]
+is a Serre functor for the category $\bHom_\gVar(X,Y)$.
+
+\begin{Definition}
+\label{def:dualpair}
+If $\Phi\colon X \ra Y$ and $ \pd{\Phi}\colon Y \ra X$ are kernels then
+a \emph{polite duality} between them, denoted \( \Phi \dual \pd{\Phi}
+\), consists of adjunctions as follows (numbered as shown)
+\begin{gather*}
+  \pd{\Phi} \circ \SerK_Y \adjoint_1 \Phi \adjoint_2 \SerK_X \circ
+  \pd{\Phi},
+  \\
+  \Phi \circ \SerK_X \adjoint_3 \pd{\Phi} \adjoint_4 \SerK_Y \circ \Phi,
+\end{gather*}
+such that the following compatibility relations hold.
+\begin{quote}
+\begin{itemize}
+\item[(1+2).] For kernels $\Theta\colon Z\ra X$ and $\Psi\colon Z\ra
+  Y$, the diagram of isomorphisms below commutes:
+  \[
+  \begin{diagram}[height=2em,width=2em,labelstyle=\scriptstyle]
+    \Hom(\Psi, \Phi \circ\Theta) & \rTeXto^1 &
+    \Hom(\pd{\Phi} \circ\SerK_Y\circ \Psi, \Theta) \\
+    \dTeXto^{\text{Serre}} & &
+    \dTeXto^{\text{Serre}} \\
+    \Hom(\Phi\circ\Theta, \SerK_Y\circ \Psi \circ \SerK_Z)^\chk &
+    \rTeXto^2 & \Hom(\Theta, \SerK_X\circ \pd{\Phi}\circ \SerK_Y\circ
+    \Psi\circ \SerK_Z)^\chk.
+  \end{diagram}
+  \]
+\item[(2+3).] The composite map
+  \[ \Hom(\Theta, \pd{\Phi}\circ\Psi) \xrightarrow[3]{\sim}
+  \Hom(\Phi\circ\SerK_X\circ\Theta, \Psi) \xrightarrow[2]{\sim}
+  \Hom(\SerK_X\circ\Theta, \SerK_X\circ \pd{\Phi}\circ \Psi) \]
+  is the one induced by composition with $\SerK_X$.
+\item[(3+4).] Same as (1+2), but for adjunctions 3 and 4.
+\item[(1+4).] Same as (2+3), but for adjunctions 1 and 4.
+\end{itemize}
+\end{quote}
+\end{Definition}
+
+
+It is useful to think of this definition in terms of string diagrams.
+For each of the four adjunctions we get a unit and a counit.  Denoting
+$\Phi$ by an upward oriented line and $\pd{\Phi}$ by a downward oriented
+line, we can draw the units and counits as follows.
+\begin{gather*}
+\eta_1\colon\pic{eta1}\quad
+\eta_2\colon\pic{eta2}\quad
+\eta_3\colon\pic{eta3}\quad
+\eta_4\colon\pic{eta4}\\
+\epsilon_1\colon\pic{epsilon1}\quad
+\epsilon_2\colon\pic{epsilon2}\quad
+\epsilon_3\colon\pic{epsilon3}\quad
+\epsilon_4\colon\pic{epsilon4}
+\end{gather*}
+
+Relation (2+3) can be represented graphically in the following way:
+for any $\alpha\in\Hom(\Theta,\pd{\Phi}\circ\Psi)$ we have
+\[\pic{R2and3a}=\pic{R2and3b}.\]
+From this we can deduce the equality
+\[\pic{Y23a}=\pic{Y23b},\]
+so we define the following diagram to be this common morphism:
+\[\gamma_\Phi:\qquad\pic{Y23c}.\]
+Similarly we can deduce that the counits $\epsilon_2$ and $\epsilon_3$
+are equal, and we define the following diagram to be the common
+morphism:
+\[\rote_\Phi:\qquad\pic{M23}.\]
+Likewise, using the relation (1+4), from the units $\eta_1$ and
+$\eta_4$, and the counits $\epsilon_1$ and $\epsilon_4$ we obtain the
+common morphisms denoted as follows.
+\[\gamma_{\Phi^\chk}:\quad\pic{Y14}\qquad \rote_{\Phi^\chk}:\quad \pic{M14}\]
+So the four units and four counits are obtained from these two
+M-shaped and two Y-shaped morphisms.
+
+Relations (1+2) and (3+4) in the definition of polite duality are
+essentially equivalent to the invariance of the Serre trace under a
+partial trace in the following sense.  Given a polite duality
+$\Phi\dual\pd{\Phi}$ and a morphism $\alpha\in
+\Hom(\Phi\circ\Theta,\SerK\circ \Phi\circ \Psi)$ we can define the
+left partial trace in $\Hom(\Theta,\SerK\circ \Psi)$ with respect to
+$\pd{\Phi}$ as drawn below.
+\[\pic{PartialTraceLeft}\]
+Similarly we can define a right partial trace when the $\Phi$ is on
+the right rather than on the left.  So the following diagram is the
+right partial trace with respect to $\Phi$ and $\pd{\Phi}$ of a morphism
+$\alpha'\in \Hom(\Theta'\circ\Phi,\Psi'\circ \Phi\circ\SerK)$.
+\[\pic{PartialTraceRight}\]
+
+\begin{Theorem}
+  If $\Phi$ and $\pd{\Phi}$ form a politely dual pair of kernels, then
+  the Serre trace is invariant under partial trace with respect to
+  $\Phi$:
+  \[\Tr\left(\pic{ApPT1}\right)=\Tr\left(\pic{ApPT2}\right);
+  \quad \Tr\left(\pic{ApPT1b}\right)=\Tr\left(\pic{ApPT2b}\right).\]
+\end{Theorem}
+
+\begin{Proof}
+  We will just prove the left partial trace case.  Relation (1+2) says
+  that for $\beta\in \Hom (\Psi,\Phi\circ\Theta)$ and $\gamma\in
+  (\Theta,\SerK\circ\pd{\Phi}\circ\SerK\circ\Psi\circ\SerK)$ we have the
+  equality
+  \[\Tr\left(\pic{ApPT3}\right)=\Tr\left(\pic{ApPT4}\right).\]
+  Applying this with
+  \[\beta:=\pic{ApPT6}\quad\text{and}\quad
+  \gamma:=\pic{ApPT5}\] we obtain the equality
+  \[\Tr\left(\pic{ApPT7}\right)=\Tr\left(\pic{ApPT8}\right).\]
+  The result follows from the commutativity property of the Serre
+  trace, namely that $\Tr(\beta\circv \alpha)=\Tr(\SerF(\alpha)\circv
+  \beta)$.
+\end{Proof}
+
+\begin{Proposition}
+\label{prop:compduals}
+  Polite dualities $\Phi \dual \pd{\Phi}$ and $\Psi \dual \pd{\Psi}$ for
+  two kernels $\Phi\colon X\ra Y$ and $\Psi\colon Y\ra Z$ canonically
+  induce a polite duality
+  \[ \Psi \circ \Phi \dual \pd{\Phi} \circ \SerK_Y \circ \pd{\Psi}. \]
+\end{Proposition}
+
+\begin{Proof}
+  The required adjunctions are constructed in the obvious fashion,
+  using the fact that the composition, in reverse order, of adjoints
+  (left or right) of composable functors is naturally an adjoint (in
+  the same direction) of the composition of the functors.  The
+  compatibilities required by the polite duality follow from straight
+  forward checks.
+\end{Proof}
+
+Adjunctions are intrinsic parts of a polite duality.  Conversely, the
+following proposition shows that any adjunction induces a polite
+duality in a natural way.
+
+\begin{Proposition}
+\label{prop:adjgivesdual}
+Given an adjunction $\Psi \adjoint \Phi$, define $\pd{\Phi}:= \Psi \circ
+\SerK_Y^{-1}$.  Then there exists a polite duality $\Phi \dual
+\pd{\Phi}$ where the adjunction $\adjoint_1$ is the given one
+$\Psi\adjoint \Phi$.
+\end{Proposition}
+
+\begin{Proof}
+  As $\SerK_X\circ \pd{\Phi}= \SerK_X\circ\Psi\circ\SerK^{-1}_Y$, compatibility relation (1+2) yields an adjunction
+  \[ \Phi \adjoint_2 \SerK_X
+  \circ \pd{\Phi}. \] Similarly, relations (1+4) and (2+3) force
+  adjunctions
+  \[ \Phi \circ \SerK_X \adjoint_3 \pd{\Phi} \adjoint_4 \SerK_Y \circ
+  \Phi, \]
+  and it is easy to see that relation (3+4) is then automatically
+  satisfied.
+\end{Proof}
+
+\begin{Proposition}
+\label{prop:existdual}
+Let $\Phi\in\D(X\times Y)$ be a kernel, and let
+$\Phi^\chk\in\D(Y\times X)$ be the dual $\mathbf{R}\sHom_{X\times
+  Y}(\Phi, \cO_{X\times Y})$, regarded as a kernel from $Y$ to $X$.
+Then there exists a canonical polite duality \(\Phi \dual \Phi^\chk\).
+\end{Proposition}
+
+\begin{Proof}
+For kernels $\Theta \in \D(Z\times X)$ and $\Psi\in \D(Z\times Y)$
+consider the sequence of isomorphisms
+\begin{align*}
+\Hom_{\D(Z\times Y)} & (\Psi, \Phi \circ \Theta) \\*
+  & \iso \Hom_{\D(Z\times Y)}(\Psi, \pi_{ZY, *}
+      (\pi_{ZX}^* \Theta \otimes \pi_{XY}^* \Phi)) \\
+  & \iso \Hom_{\D(Z\times X)}(\pi_{ZX,!}
+    (\pi_{ZY}^* \Psi \otimes \pi_{YX}^* \Phi^\chk), \Theta) \\
+  & = \Hom_{\D(Z\times X)}(\pi_{ZX, *}
+      (\pi_{ZY}^*\Psi \otimes \pi_{YX}^*
+        (\Phi^\chk \otimes \omega_Y[\dim Y])), \Theta) \\
+  & = \Hom_{\D(Z\times Y)}((\Phi^\chk\circ \SerK_Y)\circ\Psi, \Theta).
+\end{align*}
+Taking $Z = Y$, $\Theta = \Phi^\chk \circ \SerK_Y$ and $\Psi=\Id_Y$
+yields a morphism {\em of kernels}
+\[ \Id_Y \ra \Phi \circ \Phi^\chk\circ \SerK_Y; \]
+in a similar fashion we obtain a morphism
+\[ \Phi^\chk \circ \SerK_Y \circ \Phi \ra \Id_X. \]
+These two morphisms satisfy the identities needed to make $\Phi^\chk
+\circ \SerK_Y$ the left adjoint of $\Phi$.
+Proposition~\ref{prop:adjgivesdual} gives the result.
+\end{Proof}
+
+ \subsection{Reflexively polite kernels.}
+We still need to address one more compatibility between the dualities
+constructed above.  Given a kernel $\Phi$, the previous proposition
+yields a polite duality
+\[ \Phi \dual \Phi^\chk. \]
+Given any polite duality $\Phi\dual \pd{\Phi}$, we get, symmetrically, a polite
+duality $\pd{\Phi}
+\dual \Phi$ by switching the adjunctions $1$ and  $3$ and the adjunctions
+$2$ and $4$.  Thus there is a natural polite duality
+\[ \Phi^\chk \dual \Phi. \]
+On the other hand, applying Proposition~\ref{prop:existdual} to the
+kernel $\Phi^\chk$ we get a polite duality
+\( \Phi^\chk \dual \Phi^{\chk\chk}\)
+and then, using the canonical identification $\Phi^{\chk\chk} \iso
+\Phi$, we get {\em another} polite duality
+\[ \Phi^\chk \dual \Phi.\]
+The fundamental question is whether these two polite dualities are the same.
+
+\begin{Definition}
+  Let $\Phi\colon X\ra Y$ be a kernel.  We shall say that $\Phi$ is
+  \emph{reflexively polite} if the two dualities above are equal.
+\end{Definition}
+
+\noindent Immediately we get the following result.
+
+\begin{Proposition}
+  If a kernel $\Phi$ is reflexively polite then so is $\Phi^\chk$.
+\end{Proposition}
+
+\begin{Proposition}
+\label{prop:politecompduals}
+If $\Phi\colon X \ra Y$ and $\Psi\colon Y \ra Z$ are reflexively
+polite kernels then so is $\Psi \circ \Phi$.
+\end{Proposition}
+
+\begin{Proof}
+  This follows at once from the fact that the adjunctions defined in
+  Proposition~\ref{prop:compduals} are canonical.
+\end{Proof}
+
+\begin{Proposition}
+\label{prop:dualbox}
+Suppose that $\Phi\colon X\ra Y$ and $\Psi\colon X'\ra Y'$ are
+reflexively polite kernels then so is $\Phi\boxtimes \Psi\colon X
+\times X' \ra Y\times Y'$, the kernel defined by
+\[ \Phi\boxtimes \Psi := \pi_{XY}^* \Phi \otimes \pi_{X'Y'}^*\Psi. \]
+\end{Proposition}
+
+\begin{Proof}
+  This is obvious once one realises that all operations decompose with
+  respect to the box product operation, and the canonical bundle of a
+  product of spaces is the box product of the canonical bundles of the
+  factors.
+\end{Proof}
+
+\begin{Proposition}
+\label{prop:dualker}
+Let $\Delta\colon X \ra X\times X$ denote the diagonal map, let $\cE$
+be an object in $\D(X)$, then the kernel $\Delta_*\cE\colon X \ra X$
+is reflexively polite.
+\end{Proposition}
+
+\begin{Proof}
+  The dual $(\Delta_*\cE)^\chk$ of $\Delta_*\cE$ is naturally
+  identified with 
+  \[ \Delta_* (\cE^\chk \otimes \omega_X^{-1}[-\dim X]). \] The result
+  now follows from Proposition~\ref{prop:deltalstar} and the fact that
+  the functor given by tensoring with an object of the derived
+  category is left and right adjoint to the one obtained by tensoring
+  with the dual object.
+\end{Proof}
+
+\begin{Proposition}
+\label{prop:dualcox}
+Let $X$ be a space, then the kernel $\cO_X$ considered as a kernel
+$X\ra \pt$ is reflexively polite, and so also is $\cO_X^\chk\colon
+\pt\to X$.
+\end{Proposition}
+
+\begin{Proof}
+  First, observe that checking reflexive duality amounts to checking
+  the equality of two quadruples of adjunctions.  In each quadruple,
+  any one of the adjunctions determines the remaining three, and thus
+  in order to check the equality it suffices to check that one of the
+  compatibilities (1+2), (1+3), {etc}.\ holds with one adjunction
+  chosen from one duality, and the other one from the second duality.
+
+  Furthermore, adjunctions are completely determined by their
+  respective units and counits, and these are determined by considered
+  functors {\em between derived categories} of the form
+  \[ \Phi \circ {-} \colon \D(Z\times X) =:\bHom_\gVar(Z, X) \ra
+  \bHom_\gVar(Z, \pt) := \D(Z), \]
+  and analogues for $\Phi^\chk \circ {-}$, for various choices of the
+  space $Z$.  Thus, if we argue that the desired equality holds for
+  the adjunctions between these induced functors (for arbitrary choice
+  of $Z$), we will have argued that $\Phi$ is reflexively polite.
+
+  For ease of notation, write $\Phi$ for the kernel $\cO_X\colon X\to \pt$.  For a given space $Z$, let $\pi_Z\colon X\times Z \ra Z$ denote the
+  projection.  The functors $\Phi \circ {-}$ and $\Phi^\chk \circ
+  {-}$ are then naturally identified with $\pi_{Z,*}$ and $\pi_Z^*$,
+  respectively.  Adjunctions $1$ and $2$ from the polite duality
+  $\Phi\dual \Phi^\chk$ correspond to the classical adjunctions
+  \begin{align*}
+    \pi_Z^* & \adjoint \pi_{Z,*} \adjoint \pi_Z^!, \intertext{while
+      the same ones from the polite duality $\Phi^\chk\dual
+      \Phi^{\chk\chk}$ correspond to} \pi_{Z,!} & \adjoint \pi_Z^*
+    \adjoint \pi_{Z,*}.
+  \end{align*}
+  Indeed, the standard way (see~\cite[Theorem 4.6]{CalSkim}) to define
+  the adjunctions $\pi_{Z,*} \adjoint \pi_Z^!$ and $\pi_{Z,!}\adjoint
+  \pi_Z^*$ is to require them to satisfy the analogue of condition
+  (1+2) from the definition of a polite duality.
+
+  The condition of polite duality can now can be stated as the
+  statement that the composite isomorphism
+  \begin{align*}
+    \Hom_{X\times Z}(\Theta, & \pi_Z^* \Psi) \iso \Hom_Z(\pi_{Z,!}
+    \Theta, \Psi) =
+    \Hom_Z\left(\pi_{Z,*}\SerF(\Theta), \Psi\right) \\
+    & \iso \Hom_{X\times Z}\left(\SerF(\Theta), \pi_Z^! \Psi\right)
+    = \Hom_{X\times Z}\left(\SerF(\Theta), \SerF (\pi_Z^*
+      \Psi)\right)
+  \end{align*}
+  is the one induced by the functor $\SerF({-}) = {-} \otimes
+  \pi_X^* \omega_X[\dim X]$, where $\pi_X$ denotes the projection from
+  $X\times Z$ to $X$.  This fact corresponds to the fact that the
+  diagram marked (!) below commutes {\small
+    \[
+    \begin{diagram}[height=2em,width=2em,labelstyle=\scriptstyle]
+      \Hom(\Theta, \pi^* \Psi) & \rLine^\sim & \Hom(\SerF ^{-1} \pi_*
+      \SerF \Theta, \Psi) &
+      \rLine^\sim & \Hom(\pi_* \SerF \Theta, \SerF \Psi) & \rLine^\sim & \Hom(\SerF \Theta, \SerF \pi_* \Psi) \\
+      \dLine^\sim & \mbox{Serre} & \dLine^\sim & \mbox{(!)} &
+      \dLine^\sim &
+      \mbox{Serre} & \dLine^\sim \\
+      \Hom(\pi^*\Psi, \SerF \Theta)^\chk & \rLine^\sim & \Hom(\Psi,
+      \pi_*\SerF \Theta)^\chk & \rEq & \Hom(\Psi, \pi_*\SerF
+      \Theta)^\chk & \rLine^\sim & \Hom(\pi^*\Psi, \Theta)^\chk.
+    \end{diagram}
+    \]}
+
+\end{Proof}
+
+\begin{Proposition}
+\label{prop:pulldualpush}
+Let $\pi_X\colon X \times Y \ra X$ be the projection, and (abusing
+notation) denote by $\pi_{X,*}\colon X\times Y \ra X$ and
+$\pi_X^*\colon X\ra X\times Y$ the kernels represented in $\D(X\times
+X \times Y)$ by the structure sheaf of the graph of $\pi_X$.  Then
+$\pi_{X,*}$ and $\pi_X^*$ are reflexively polite.
+\end{Proposition}
+
+\begin{Proof}
+  Both kernels are of the form $\cO_{\Delta_X} \boxtimes \cO_Y$, and
+  the result then follows from
+  Propositions~\ref{prop:dualcox},~\ref{prop:dualker},
+  and~\ref{prop:dualbox}.
+\end{Proof}
+
+\begin{Theorem}
+  Every kernel is reflexively polite.
+\end{Theorem}
+
+\begin{Proof}
+  With notation as in Proposition~\ref{prop:pulldualpush}, any kernel
+  $\Phi\colon X\to Y$ decomposes as
+\[ \Phi = \pi_{Y,*} \circ ({-} \otimes \Phi) \circ \pi_X^*. \]
+Since the claim of the theorem holds for each individual kernel in the
+decomposition (Propositions~\ref{prop:pulldualpush}
+and~\ref{prop:dualker}), the result follows from
+Proposition~\ref{prop:compduals}.
+\end{Proof} 

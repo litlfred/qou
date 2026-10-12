@@ -8,70 +8,37 @@ pages: 8-10
 source_pdf: 1806.09450v1.pdf
 source_sha256: 8556b67d97856446
 doc_brief: "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗ — We continue the study undertaken in [DV] of the exceptional Jordan algebra"
+text_source: latex
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 0.974
 ---
-Equivalent constructions of the Lie algebras en with n = 6, 7, 8 have been pro-
-posed by Freudenthal and Tits around 1958, with improved formulations pub-
-lished later. In the summary below we follow [BS], as well as [B] where more
-references to the early work can be found.
-Let K be a real composition algebra and J a real Jordan algebra with unit 1 I
-and with an inner product satisfying⟨X,Y ◦Z⟩ =⟨X◦Y,Z⟩ (2.10). Let further
-K0 andJ0 be the subspaces of K andJ orthogonal to the unit element. Denote
-by∗ the product in J0 obtained from the Jordan product projected back to J0:
-X∗Y =X◦Y− 1
-n⟨X,Y⟩ 1 I where n =⟨1 I, 1 I⟩ = tr 1 I (3.12)
-(the notation being chosen to ﬁt the case J =Hn(K′)). Tits deﬁnes (in 1966) a
-Lie algebra structure on the vector space
-T (K,J ) = Der (K) ˙+ Der (J) ˙+ K0⊗J0 (3.13)
-by setting
-[x⊗X,y⊗Y ] = 1
-n⟨X,Y⟩Dx,y−⟨x,y⟩[LX,LY ] + [x,y ]⊗X∗Y (3.14)
-where x,y ∈ K0, X,Y ∈ J0 and the square brackets in the right hand side
-denote commutators in K0 and End (J);Dx,y is the derivation in K0 deﬁned by
-(2.4). Tits proves that the brackets (3.14) deﬁne a Lie algebra structure using
-the identity
-nX 3− (trX 3) 1 I = (trX 2)X for X∈J0, J =Hn(K′) (3.15)
-(for K′ = O, n≤ 3). Tits obtains the magic square of Lie algebras by viewing
-T (K,J ) forJ =H3(K′) as a Lie algebraL(K, K′) depending on two composition
-algebras K and K′:
-L(K, K′) =T (K,H 3(K′)). (3.16)
-For the Lie algebras of compact real forms one thus obtains the following sym-
-metric table:
-8
-K\ K′ R C H O
-R so (3) su (3) sp (6) f4
-C su (3) su (3)⊕u(3) su (6) e6
-H sp (6) su (6) so (12) e7
-O f4 e6 e7 e8
-T able 1. Magic square of Lie algebras L(K, K′) (sp (6) being the
-rank 3 unitary symplectic Lie algebra).
-Following Tits construction the symmetry of the square comes as a surprise.
-In fact, it has been predicted in a non-rigorous visionary 1956 paper of the
-Russian mathematician and historian of science Boris Rosenfeld who proposed
-to view E6,E 7,E 8 as isometry groups of projective planes over the algebras
-K⊗ O for K = C, H, O, respectively, just as F4 is the isometry group of P2(O)
-= P2(R⊗ O) (see [B] for references and for a more detailed discussion; Rosenfeld
-provides a later expositon of his views in Chapter VII of [R]). The realization
-of this idea has problems since K⊗ O is not a division algebra except for K =
-R. A construction of the exceptional Lie algebras generalizing (3.11), however,
-does exist with Der (K)⊕ Der (O) instead of Der (O) and sa3(O) substituted by
-sa3(K⊗ O). This is Vinberg’s (1966) approach to constructing L(K, K′), that
-is manifestly symmetric with respect to the two algebras K and K′. The Lie
-brackets in L(K, K′) are given as follows.
-(i) Der ( K) and Der (K′) are commuting Lie subalgebras of L(K, K′).
-(ii) The bracket of D∈ Der (K)⊕ Der (K′) with X ∈ sa3(K⊗ K′) is given
-by applying D to every entry of the matrix X using the natural action of
-Der (K) and Der (K′) as derivations on K⊗ K′.
-(iii) Given X,Y ∈sa3(K⊗ K′), we set
-[X,Y ] = [X,Y ]0 + 1
-3
-3∑
-i,j=1
-Dxij,yij. (3.17)
-Here [X,Y ]0 is the traceless part of the 3 × 3 matrix [X,Y ], and given
-x,y ∈ K⊗ K′, we deﬁne Dx,y ∈ Der (K)⊕ Der (K′) as real bilinear in
-a,b∈ K, a′,b′∈ K′ such that
-Da⊗a′b⊗b′ =⟨a′,b′⟩Da,b +⟨a,b⟩Da′,b′ (3.18)
-where a,b∈ K, a′,b′∈ K′, and Da,b, Da′,b′ are deﬁned as in Eq. (2.4).
-For the equivalence of Tits’ and Vinberg’s constructions of the magic square
-and for its triality construction we refer to [B, BS].
-9
+Equivalent constructions of the Lie algebras ${\mathfrak e}_n$ with $n  = 6,7,8$ have been proposed by Freudenthal and Tits around 1958, with improved formulations published later. In the summary below we follow [@BS], as well as [@B] where more references to the early work can be found.
+
+Let ${\mathbb K}$ be a real composition algebra and $J$ a real Jordan algebra with unit ${\rm 1\mkern-4mu I}$ and with an inner product satisfying $\langle X , Y \circ Z \rangle = \langle X \circ Y , Z \rangle$ ([\[eq210\]](#eq210){reference-type="ref" reference="eq210"}). Let further ${\mathbb K}_0$ and $J_0$ be the subspaces of ${\mathbb K}$ and $J$ orthogonal to the unit element. Denote by $*$ the product in $J_0$ obtained from the Jordan product projected back to $J_0$: $$\label{eq312}
+X * Y = X \circ Y - \frac1n \, \langle X,Y \rangle \, {\rm 1\mkern-4mu I}\quad \mbox{where} \quad n = \langle {\rm 1\mkern-4mu I}, {\rm 1\mkern-4mu I}\rangle = {\rm tr} \, {\rm 1\mkern-4mu I}$$ (the notation being chosen to fit the case $J = H_n ({\mathbb K}')$). Tits defines (in 1966) a Lie algebra structure on the vector space $$\label{eq313}
+T ({\mathbb K} , J) = {\rm Der} \, ({\mathbb K}) \, \dot + \, {\rm Der} \, (J) \, \dot + \, {\mathbb K}_0 \otimes J_0$$ by setting $$\label{eq314}
+[x \otimes X , y \otimes Y] = \frac1n \, \langle X,Y \rangle \, D_{x,y} - \langle x,y \rangle [L_X , L_Y] + [x,y] \otimes X * Y$$ where $x,y \in {\mathbb K}_0$, $X,Y \in J_0$ and the square brackets in the right hand side denote commutators in ${\mathbb K}_0$ and ${\rm End} \, (J)$; $D_{x,y}$ is the derivation in ${\mathbb K}_0$ defined by ([\[eq24\]](#eq24){reference-type="ref" reference="eq24"}). Tits proves that the brackets ([\[eq314\]](#eq314){reference-type="ref" reference="eq314"}) define a Lie algebra structure using the identity $$\label{eq315}
+n \, X^3 - ({\rm tr} \, X^3) \, {\rm 1\mkern-4mu I}= ({\rm tr} \, X^2) \, X \quad \mbox{for} \quad X \in J_0 \, , \ J = H_n ({\mathbb K}')$$ (for ${\mathbb K}' = {\mathbb O}$, $n \leq 3$). Tits obtains the magic square of Lie algebras by viewing $T({\mathbb K} , J)$ for $J = H_3 ({\mathbb K}')$ as a Lie algebra $L({\mathbb K} , {\mathbb K}')$ depending on two composition algebras ${\mathbb K}$ and ${\mathbb K}'$: $$\label{eq316}
+L({\mathbb K} , {\mathbb K}') = T ({\mathbb K} , H^3 ({\mathbb K}')) \, .$$ For the Lie algebras of compact real forms one thus obtains the following symmetric table:
+
+::: tabular
+\|C1cm\|C2cm\|C2cm\|C2cm\|C2cm\| ${\mathbb K} \ \backslash \ {\mathbb K}'$ &${\mathbb R}$ &${\mathbb C}$ &${\mathbb H}$ &${\mathbb O}$\
+${\mathbb R}$ &$so \, (3)$ &$su \, (3)$ &$sp \, (6)$ &${\mathfrak f}_4$\
+${\mathbb C}$ &$su \, (3)$ &$su \, (3) \oplus u(3)$ &$su \, (6)$ &${\mathfrak e}_6$\
+${\mathbb H}$ &$sp \, (6)$ &$su \, (6)$ &$so \, (12)$ &${\mathfrak e}_7$\
+${\mathbb O}$ &${\mathfrak f}_4$ &${\mathfrak e}_6$ &${\mathfrak e}_7$ &${\mathfrak e}_8$\
+:::
+
+> Magic square of Lie algebras $L({\mathbb K} , {\mathbb K}')$ ($sp \, (6)$ being the rank 3 unitary symplectic Lie algebra).
+
+Following Tits construction the symmetry of the square comes as a surprise. In fact, it has been predicted in a non-rigorous visionary 1956 paper of the Russian mathematician and historian of science Boris Rosenfeld who proposed to view $E_6 , E_7 , E_8$ as isometry groups of projective planes over the algebras ${\mathbb K} \, \otimes \, {\mathbb O}$ for ${\mathbb K} = {\mathbb C} , {\mathbb H}, {\mathbb O}$, respectively, just as $F_4$ is the isometry group of ${\mathbb P}^2 ({\mathbb O})$ $=$ ${\mathbb P}^2 ({\mathbb R} \, \otimes \, {\mathbb O})$ (see [@B] for references and for a more detailed discussion; Rosenfeld provides a later expositon of his views in Chapter VII of [@R]). The realization of this idea has problems since ${\mathbb K} \otimes {\mathbb O}$ is not a division algebra except for ${\mathbb K} = {\mathbb R}$. A construction of the exceptional Lie algebras generalizing ([\[eq311\]](#eq311){reference-type="ref" reference="eq311"}), however, does exist with ${\rm Der} \, ({\mathbb K}) \oplus {\rm Der} \, ({\mathbb O})$ instead of ${\rm Der} \, ({\mathbb O})$ and $sa_3 ({\mathbb O})$ substituted by $sa_3 ({\mathbb K} \otimes {\mathbb O})$. This is Vinberg's (1966) approach to constructing $L({\mathbb K} , {\mathbb K}')$, that is manifestly symmetric with respect to the two algebras ${\mathbb K}$ and ${\mathbb K}'$. The Lie brackets in $L({\mathbb K} , {\mathbb K}')$ are given as follows.
+
+1.  ${\rm Der} \, ({\mathbb K})$ and ${\rm Der} \, ({\mathbb K}')$ are commuting Lie subalgebras of $L ({\mathbb K} , {\mathbb K}')$.
+
+2.  The bracket of $D \in {\rm Der} \, ({\mathbb K}) \oplus {\rm Der} \, ({\mathbb K}')$ with $X \in sa_3 ({\mathbb K} \otimes {\mathbb K}')$ is given by applying $D$ to every entry of the matrix $X$ using the natural action of ${\rm Der} \, ({\mathbb K})$ and ${\rm Der} \, ({\mathbb K}')$ as derivations on ${\mathbb K} \otimes {\mathbb K}'$.
+
+3.  Given $X,Y \in sa_3 ({\mathbb K} \otimes {\mathbb K}')$, we set $$\label{eq317}
+    [X,Y] = [X,Y]_0 + \frac13 \sum_{i,j=1}^3 D_{x_{ij} , y_{ij}} \, .$$ Here $[X,Y]_0$ is the traceless part of the $3 \times 3$ matrix $[X,Y]$, and given $x,y \in {\mathbb K} \otimes {\mathbb K}'$, we define $D_{x,y} \in {\rm Der} \, ({\mathbb K}) \oplus {\rm Der} \, ({\mathbb K}')$ as real bilinear in $a,b \in {\mathbb K}$, $a',b' \in {\mathbb K}'$ such that $$\label{eq318}
+    D_{a \otimes a' \, b \otimes b'} = \langle a',b' \rangle \, D_{a,b} + \langle a,b \rangle \, D_{a',b'}$$ where $a,b \in {\mathbb K}$, $a',b' \in {\mathbb K}'$, and $D_{a,b}$, $D_{a',b'}$ are defined as in Eq. ([\[eq24\]](#eq24){reference-type="ref" reference="eq24"}).
+
+For the equivalence of Tits' and Vinberg's constructions of the magic square and for its triality construction we refer to [@B; @BS].

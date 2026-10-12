@@ -8,150 +8,29 @@ pages: 32-34
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
 doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
+text_source: latex
+latex_prose_ratio: 0.967
+latex_coverage_ratio: 0.957
 ---
-combination of equivalence classes of cyclic words in CQ. Such a W is called
-a potential. A potential W induces a function Tr(W ) on M, deﬁned as follows.
-Firstly, assume that W lifts to a single cyclic word c = ar . . . a0 in CQ. Then a
-CQ-module F determines an endomorphism
-F (ar) ◦ . . . ◦ F (a0) : F (s(a0)) → F (s(a0)),
-and Tr(F (ar) ◦ . . . ◦ F (a0)) determines a function on X(Q)d, for each d ∈ NQ0 . By
-cyclic invariance of the trace, this function is Gd-invariant, and does not depend
-on the lift c of W . Extending by linearity, we deﬁne for general W ∈ CQ/[CQ, CQ]
-the induced function
-Tr(W )d : Md → C.
-COHAS AND QUANTUM ENVELOPING ALGEBRAS 33
-We denote by Tr(W )ζ
-d the restriction of this function to Mζ -ss
-d , and by
-T r(W )ζ
-d : Mζ -ss
-d → C
-the unique function through which Tr(W )ζ
-d factors. Similarly, we deﬁne
-T r(W )ζ
-f ,d := T r(W )ζ
-d ◦πζ
-f ,d : Mζ
-f ,d → C,
-and we deﬁne Tr(W )ζ
-d′,d′′ to be the composition
-Mζ -ss
-d′,d′′֒→Mζ -ss
-d′ + d′′
-Tr(W )ζ
-d′ + d′′
-− − − − − − − − →C.
-Associated to the data ( Q, W ) is the Jacobi algebra
-Jac(Q, W ) := CQ/⟨∂W/∂a | a ∈ Q1⟩.
-Here the noncommutative derivatives ∂W/∂a are deﬁned as follows. First assume
-that W lifts to a single cyclic word c ∈ CQ. Then
-∂W/∂a :=
-∑
-c=c′ac′′
-c′′c′.
-We then extend the deﬁnition to general W by linearity. We deﬁne MW , the stack
-of ﬁnite-dimensional Jac( Q, W )-modules, in the same way as the stack of ﬁnite-
-dimensional CQ-modules. In particular there is a natural closed embedding of
-stacks MW ⊂ M, and it is easy to show that MW = crit( Tr(W )) as substacks of
-M.
-In order to keep to Assumption 2.14 we will assume that W ∈ ⟨∂W/∂a |a ∈ Q1⟩,
-for then crit( Tr(W )) ⊂ Tr(W )−1(0). One very common set of circumstances in
-which this requirement is met is when there is a grading of the arrows Q1 with in-
-tegers such that W is homogeneous of nonzero weight. As mentioned after Assump-
-tion 2.14, we can drop this requirement at the expense of slightly mor e complicated
-deﬁnitions.
-Proposition 3.11. Let W ∈ CQ/[CQ, CQ] be a potential. Then
-φ mon
-T r(W )ζ
-µ
-: D≥,lf(
-MHM(Mζ -ss
-µ )
-)
-→ D ≥,lf(
-MMHM(Mζ -ss
-µ )
-)
-is a symmetric monoidal functor.
-Proof. Let F , G ∈ MHM(Mζ -ss
-µ ). Let π : Mζ -ss
-µ × Mζ -ss
-µ → Mζ -ss
-µ × Mζ -ss
-µ be the
-map swapping arguments. The statement follows from exactness o fφ mon
-T r(W )ζ
-µ
-and
-biexactness of ⊠⊕ and the claim that the following diagram is commutative,
-φ mon
-T r(W )ζ
-µ
-(F ⊠⊕ G) /d47/d47
-/d15/d15
-φ mon
-T r(W )ζ
-µ
-(G ⊠⊕ F )
-/d15/d15
-φ mon
-T r(W )ζ
-µ
-F ⊠⊕φ mon
-T r(W )ζ
-µ
-G /d47/d47
-φ mon
-T r(W )ζ
-µ
-G ⊠⊕φ mon
-T r(W )ζ
-µ
-F ,
-where the horizontal maps are induced by the symmetrizing natura l isomorphisms
-of Section 3.2, and the vertical maps are given by the Thom-Sebast iani natural
-isomorphism. By faithfulness of the functor forg mon
-Mζ -ss
-µ
-deﬁned in (28), it is enough to
-prove commutativity of the diagram at the level of perverse sheav es, or constructible
-complexes. Since ⊕ is ﬁnite, by natural commutativity of vanishing cycle functors
-34 BEN DA VISON AND SVEN MEINHARDT
-with proper maps, it is enough to prove commutativity of the diagram
-(53) φ T r(W )ζ
-µ
-(F ⊠ G) [−1] /d47/d47
-/d15/d15
-φ T r(W )ζ
-µ
-(G ⊠ F ) [−1]
-/d15/d15φ T r(W )ζ
-µ
-F [−1] ⊠φ T r(W )ζ
-µ
-G[−1] /d47/d47
-φ T r(W )ζ
-µ
-G[−1] ⊠φ T r(W )ζ
-µ
-F [−1].
-Let ι : Mζ
-µ → X be an embedding inside a smooth scheme, let f be a function on X
-extending T r(W )ζ
-µ and consider F as a perverse sheaf on X via the direct image.
-Then we deﬁne the functor on the category of constructible shea ves on X
-Γf −1(R≤0)F (U ) := ker
-(
-F (U ) → F (U \ f −1(R≤0))
-)
-and we may alternatively deﬁneφ f F [−1] := (RΓf −1(R≤0)F )|f −1(0). By [5, Prop.A.2]
-[32] the Thom–Sebastiani isomorphism is given by the natural morph ism
-α : RΓf −1(R≤0)×f −1(R≤0) (• ⊠ •) → RΓ(f ⊞f )−1(R≤0) (• ⊠ •)
-induced by the inclusion
-f −1(R≤0) × f −1(R≤0) ⊂ (f ⊞ f )−1(R≤0),
-and the horizontal maps in (53) are induced by the natural morphis m
-F ⊠ G
-π #
-− − →π ∗ (G ⊠ F )
-on both sides. Applying the natural isomorphism α to this morphism, we obtain
-the diagram (53). □
+Let $W\in\mathbb{C} Q/[\mathbb{C}Q,\mathbb{C}Q]$ be a finite linear combination of equivalence classes of cyclic words in $\mathbb{C} Q$. Such a $W$ is called a *potential*. A potential $W$ induces a function $\mathfrak{Tr}(W)$ on $\mathfrak{M}$, defined as follows. Firstly, assume that $W$ lifts to a single cyclic word $c=a_r\ldots a_0$ in $\mathbb{C} Q$. Then a $\mathbb{C}Q$-module $F$ determines an endomorphism $$F(a_r)\circ\ldots\circ F(a_0)\colon F(s(a_0))\rightarrow F(s(a_0)),$$ and $\mathop{\mathrm{Tr}}(F(a_r)\circ\ldots\circ F(a_0))$ determines a function on $X(Q)_{\mathop{\mathrm{\mathbf{d}}}}$, for each $\mathop{\mathrm{\mathbf{d}}}\in\mathbb{N}^{Q_0}$. By cyclic invariance of the trace, this function is $G_{\mathop{\mathrm{\mathbf{d}}}}$-invariant, and does not depend on the lift $c$ of $W$. Extending by linearity, we define for general $W\in\mathbb{C}Q/[\mathbb{C}Q,\mathbb{C}Q]$ the induced function $$\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}}\colon \mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}}\rightarrow \mathbb{C}.$$
+
+We denote by $\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}$ the restriction of this function to $\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$, and by $$\mathcal{T}r(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}\colon \mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}\rightarrow\mathbb{C}$$ the unique function through which $\mathfrak{Tr}(W)^{\upzeta}_{\mathop{\mathrm{\mathbf{d}}}}$ factors. Similarly, we define $$\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\colonequals \mathcal{T}r(W)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\circ\uppi\hspace{0.05em}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\colon \mathcal{M}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\rightarrow \mathbb{C},$$ and we define $\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta}$ to be the composition $$\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}',\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}}}\hookrightarrow\mathfrak{M}_{\mathop{\mathrm{\mathbf{d}}}'+\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta\mathop{\mathrm{-ss}}}\xrightarrow{\mathfrak{Tr}(W)_{\mathop{\mathrm{\mathbf{d}}}'+\mathop{\mathrm{\mathbf{d}}}''}^{\upzeta}}\mathbb{C}.$$
+
+Associated to the data $(Q,W)$ is the Jacobi algebra $$\mathop{\mathrm{Jac}}(Q,W)\colonequals \mathbb{C} Q/\langle \partial W/\partial a\;|\;a\in Q_1\rangle.$$ Here the *noncommutative derivatives* $\partial W/\partial a$ are defined as follows. First assume that $W$ lifts to a single cyclic word $c\in\mathbb{C}Q$. Then $$\partial W/\partial a\colonequals \sum_{c=c'ac''}c''c'.$$ We then extend the definition to general $W$ by linearity. We define $\mathfrak{M}_{W}$, the stack of finite-dimensional $\mathop{\mathrm{Jac}}(Q,W)$-modules, in the same way as the stack of finite-dimensional $\mathbb{C} Q$-modules. In particular there is a natural closed embedding of stacks $\mathfrak{M}_W\subset \mathfrak{M}$, and it is easy to show that $\mathfrak{M}_W=\mathop{\mathrm{crit}}(\mathfrak{Tr}(W))$ as substacks of $\mathfrak{M}$.
+
+In order to keep to Assumption [\[phicheat\]](#phicheat){reference-type="ref" reference="phicheat"} we will assume that $W\in \langle \partial W/\partial a|a\in Q_1\rangle$, for then $\mathop{\mathrm{crit}}(\mathfrak{Tr}(W))\subset\mathfrak{Tr}(W)^{-1}(0)$. One very common set of circumstances in which this requirement is met is when there is a grading of the arrows $Q_1$ with integers such that $W$ is homogeneous of nonzero weight. As mentioned after Assumption [\[phicheat\]](#phicheat){reference-type="ref" reference="phicheat"}, we can drop this requirement at the expense of slightly more complicated definitions.
+
+::: proposition
+[]{#TSeq label="TSeq"} Let $W\in\mathbb{C}Q/[\mathbb{C}Q,\mathbb{C}Q]$ be a potential. Then $$\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\colon\mathcal{D}^{\geq, \mathrm{lf}}\left(\mathop{\mathrm{MHM}}(\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu})\right)\rightarrow\mathcal{D}^{\geq, \mathrm{lf}}\left(\mathop{\mathrm{MMHM}}(\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu})\right)$$ is a symmetric monoidal functor.
+:::
+
+::: proof
+*Proof.* Let $\mathcal{F},\mathcal{G}\in\mathop{\mathrm{MHM}}(\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu})$. Let $\uppi\hspace{0.05em}\colon \mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu}\times\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu}\rightarrow\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu}\times\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\upmu}$ be the map swapping arguments. The statement follows from exactness of $\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}$ and biexactness of $\boxtimes_{\oplus}$ and the claim that the following diagram is commutative, $$\xymatrix{
+\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\left(\mathcal{F}\boxtimes_{\oplus}\mathcal{G}\right)\ar[r]\ar[d]&\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\left(\mathcal{G}\boxtimes_{\oplus}\mathcal{F}\right)\ar[d]\\
+\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\mathcal{F}\boxtimes_{\oplus}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\mathcal{G}\ar[r]&\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\mathcal{G}\boxtimes_{\oplus}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\mathcal{F},
+}$$ where the horizontal maps are induced by the symmetrizing natural isomorphisms of Section [\[prodss\]](#prodss){reference-type="ref" reference="prodss"}, and the vertical maps are given by the Thom-Sebastiani natural isomorphism. By faithfulness of the functor $\mathop{\mathrm{forg}}^{\mathop{\mathrm{mon}}}_{\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}}$ defined in ([\[formDef\]](#formDef){reference-type="ref" reference="formDef"}), it is enough to prove commutativity of the diagram at the level of perverse sheaves, or constructible complexes. Since $\oplus$ is finite, by natural commutativity of vanishing cycle functors with proper maps, it is enough to prove commutativity of the diagram $$\label{liftSymTS}
+\xymatrix{
+\upphi_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\left(\mathcal{F}\boxtimes\mathcal{G}\right)[-1]\ar[r]\ar[d]&\upphi_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\left(\mathcal{G}\boxtimes\mathcal{F}\right)[-1]\ar[d]\\
+\upphi_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\mathcal{F}[-1]\boxtimes\upphi_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\mathcal{G}[-1]\ar[r]&\upphi_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\mathcal{G}[-1]\boxtimes\upphi_{\mathcal{T}r(W)_{\upmu}^{\upzeta}}\mathcal{F}[-1].
+}$$ Let $\iota\colon\mathcal{M}_{\upmu}^{\upzeta}\rightarrow X$ be an embedding inside a smooth scheme, let $f$ be a function on $X$ extending $\mathcal{T}r(W)_{\upmu}^{\upzeta}$ and consider $\mathcal{F}$ as a perverse sheaf on $X$ via the direct image. Then we define the functor on the category of constructible sheaves on $X$ $$\Upgamma_{f^{-1}(\mathbb{R}_{\leq 0})}\mathcal{F}(U)\colonequals \ker\left(\mathcal{F}(U)\rightarrow \mathcal{F}(U\setminus f^{-1}(\mathbb{R}_{\leq 0}))\right)$$ and we may alternatively define $\upphi_f\mathcal{F}[-1]\colonequals (R\Upgamma_{f^{-1}(\mathbb{R}_{\leq 0})}\mathcal{F})|_{f^{-1}(0)}$. By [@Br12 Prop.A.2] [@Ma01] the Thom--Sebastiani isomorphism is given by the natural morphism $$\upalpha\colon R\Upgamma_{f^{-1}(\mathbb{R}_{\leq 0})\times f^{-1}(\mathbb{R}_{\leq 0})}\left(\bullet \boxtimes\bullet\right)\rightarrow R\Upgamma_{(f\boxplus f)^{-1}(\mathbb{R}_{\leq 0})}\left(\bullet\boxtimes\bullet\right)$$ induced by the inclusion $$f^{-1}(\mathbb{R}_{\leq 0})\times f^{-1}(\mathbb{R}_{\leq 0})\subset (f\boxplus f)^{-1}(\mathbb{R}_{\leq 0}),$$ and the horizontal maps in ([\[liftSymTS\]](#liftSymTS){reference-type="ref" reference="liftSymTS"}) are induced by the natural morphism $$\mathcal{F}\boxtimes \mathcal{G}\xrightarrow{\uppi\hspace{0.05em}^\#}\uppi\hspace{0.05em}_*\left(\mathcal{G}\boxtimes\mathcal{F}\right)$$ on both sides. Applying the natural isomorphism $\upalpha$ to this morphism, we obtain the diagram ([\[liftSymTS\]](#liftSymTS){reference-type="ref" reference="liftSymTS"}). ◻
+:::

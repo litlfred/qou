@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1512.04993v2/blocks/prose-sec-039",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1512.04993v2/blocks/prose-sec-039",
   "kind": "prose",
   "title": "A.1 Comments on Hamiltonian locality and gate simplicity",
   "pageStart": 57,
   "pageEnd": 64,
   "text": "../sections/sec-039-a1-comments-on-hamiltonian-locality-and-gate-sim.md",
-  "derivedFrom": "library/arxiv-1512.04993v2/manifest",
-  "sourceDocument": "library/arxiv-1512.04993v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1512.04993v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1512.04993v2/manifest.jsonld",
   "provenance": "ingested"
 }

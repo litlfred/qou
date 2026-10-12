@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1704.01735v4/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Modular curves, invariant theory and E 8 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.01735v4/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1704.01735&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1704.01735v4",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1704.01735v4",
+    "content_type": "application/gzip",
+    "sha256": "0b476ab659942d4b5fd849ca6d80f491482a68dd8a47274574061776fcf6dff6",
+    "bytes": 23800,
+    "fetched": "2026-10-10T15:12:00+00:00",
+    "files": [
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "d78fcf6c2fba9c29955130add857542c784c8d5ca2d7ff1b45b165b3ca0965c8",
+        "bytes": 95235
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

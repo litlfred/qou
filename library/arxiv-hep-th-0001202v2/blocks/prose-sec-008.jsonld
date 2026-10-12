@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0001202v2/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0001202v2/blocks/prose-sec-008",
   "kind": "prose",
-  "title": "Table 2 shows that there is a further inequivalent 2-primitive, at we ight",
-  "pageStart": 9,
-  "pageEnd": 9,
-  "text": "../sections/sec-008-2-table-2-shows-that-there-is-a-further-inequiva.md",
-  "derivedFrom": "library/arxiv-hep-th-0001202v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0001202v2/manifest",
+  "title": "Natural growth by appending sums of forests",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "text": "../sections/sec-008-54-natural-growth-by-appending-sums-of-forests.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0001202v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0001202v2/manifest.jsonld",
   "provenance": "ingested"
 }

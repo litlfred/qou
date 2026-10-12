@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ihpmay2025/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ihpmay2025/blocks/prose-sec-013",
   "kind": "prose",
-  "title": "Quasiconformal maps and Beltrami differentials",
-  "pageStart": 21,
-  "pageEnd": 22,
-  "text": "../sections/sec-013-31-quasiconformal-maps-and-beltrami-differential.md",
-  "derivedFrom": "library/ihpmay2025/manifest",
-  "sourceDocument": "library/ihpmay2025/manifest",
+  "title": "A proof of the Local-to-global principle",
+  "pageStart": 19,
+  "pageEnd": 21,
+  "text": "../sections/sec-013-23-a-proof-of-the-local-to-global-principle.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
   "provenance": "ingested"
 }

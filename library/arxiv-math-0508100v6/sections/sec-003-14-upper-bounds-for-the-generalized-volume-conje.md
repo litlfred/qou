@@ -8,64 +8,123 @@ pages: 5-7
 source_pdf: 0508100v6.pdf
 source_sha256: 9cc100a86b40c336
 doc_brief: "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT — To a knot in 3-space, one can associate a sequence of Laurent p olynomials, whose nth term is the nth colored Jones polynomial."
+text_source: latex
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 0.962
 ---
-the Generalized Volume Conjecture. Let ℜ(α) denote the real part of α.
-Theorem 1.12. (Proof in Section 6.3) For every knot K with c + 2 crossings and every α ∈ C, we have
-lim sup
-n→∞
-log |fK,n (α)|
-n ≤ c log 4 + c + 2
-2 |ℜ(α)|.
-1.5. Relation with hyperbolic geometry , and asymptotically sha rp bounds. When α = 2 πi, the
-upper bound in Theorem 1.12 is not optimal, and does not reveal any relationship between the lim su p and
-hyperbolic geometry. Our next theorem ﬁlls this gap.
-Theorem 1.13. (Proof in Section
-8.5) For every knot K with c + 2 crossings we have
-lim sup
-n→∞
-log |fK,n (2πi)|
-n ≤ v8
-2π c,
+\lbl{sub.results}
+
+Our next theorem is an upper bound for the Generalized Volume Conjecture. Let $\Re(\a)$ denote the real part of $\a$.
+
+\begin{theorem}
+\lbl{thm.up}
+{\rm (Proof in Section \ref{sub.thmup})}
+For every knot $K$ with $c+2$ crossings and every $\a \in \BC$, we have
+$$
+\limsup_{n \to \infty} \frac{\log|f_{K,n}(\a)|}{n} \leq c  \log 4 +
+\frac{c+2}{2}|\Re(\a)|.
+$$
+\end{theorem}
+
+
+
+
+
+
+
+
+\subsection{Relation with hyperbolic geometry, and asymptotically sharp bounds}
+\lbl{sub.hypgeom}
+
+When $\a=2 \pi i$, the upper bound in Theorem \ref{thm.up} is not
+optimal, and does not reveal any relationship between the $\limsup$
+and hyperbolic geometry. Our next theorem fills this gap.
+
+\begin{theorem}
+\lbl{thm.4}
+{\rm (Proof in Section \ref{sub.thm4})}
+For every knot $K$ with $c+2$ crossings we have
+$$
+ \limsup_{n \to \infty} \frac{\log|f_{K,n}(2\pi i)|}{n}
+\leq  \frac{v_8}{2 \pi} c,
+$$
 where
-v8 = 8Λ( π/4) ≈ 3.6638623767088760602 . . .
-is the volume of the regular ideal octahedron –see [Thu77].
-6 STA VROS GAROUF ALIDIS AND THANG TQ L ˆE
-Using an ideal decomposition of a knot complement by placing one octa hedron per crossing, it follows
-that for every knot K with c + 2 crossings, we have
-(9) vol(S3 − K) ≤ v8c,
-where vol( S3 − K) is the hyperbolic volume of the knot complement. On the other hand , if the volume
-conjecture holds for α = 2πi, then
-lim
-n→∞
-log |fK,n (2πi)|
-n = 1
-2π vol(S3 − K) ≤ v8
-2π c.
-One may ask whether ( 9) (and therefore, whether the bound in Theorem 1.13) is optimal. This may be a
-little surprising, since it involves all knots (and not just alternating o nes) and their number of crossings,
-an invariant that carries little known geometric information. In conv ersations with I.Agol and D.Thurston,
-it was communicated to us that the upper bound in ( 9) is indeed optimal. Moreover a class of knots that
-achieves (in the limit) the optimal ratio of volume to number of crossin gs is obtained by taking a large chunk
-of the following weave, and closing it up to a knot:
-The complement of the weave has a complete hyperbolic structure a ssociated with the square tessellation of
-the Euclidean plane:
-Optimality follows along similar lines as the Appendix of [ Lac04], using a stronger estimate for the lower
-bound of the volume of Haken manifolds, cut along an incompressible s urface: If M is a hyperbolic ﬁnite
-volume 3-manifold containing a properly imbedded orientable, bounda ry incompressible, incompressible
-surface S, then
-vol(M ) ≥ vol(Guts(M − int(nbd(S))),
-where vol stands for volume, and the Guts terminology are deﬁned in [ AST07a]. The proof of this stronger
-statement (of Agol-Dunﬁeld-Storm-W.Thurston [ AST07b]) uses, among other things, work of Perelman.
-The reader may compare ( 9) with the following result of Agol-Lackenby-D.Thurston [ Lac04]: If K is an
-alternating knot with a planar projection having t twist, then
-v3(t − 1)/2 < vol(S3 − K) < 10v3(t − 1),
-where v3 = 2Λ( π/3) ≈ 1.01494 . . . is the volume of the regular ideal tetrahedron. Moreover, the clas s of
-knots obtained by Dehn ﬁlling on the chain link has asymptotic ratio of volume by twist number equal to
-10v3. The corresponding tessellation of the Euclidean plane is given by the star of David .
-ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT 7
-So far, we have formulated a Generalized Volume Conjecture for α near 0 and α near 2 πi, using repre-
-sentations near the trivial or near the discrete faithful. How can w e connect these choices for other complex
-angles α? A natural answer to this question requires analyzing asymptotics of solutions of diﬀerence equa-
-tions with a parameter. This is a diﬀerent subject that we will not disc uss here; instead we will refer the
-curious reader to [ GG06], and forthcoming work of the ﬁrst author. For a further discuss ion, see also Section
-11.
+$$
+v_8=8 \La(\pi/4) \approx 3.6638623767088760602 \dots
+$$
+is the volume of the {\em regular ideal octahedron}--see \cite{Th}.
+\end{theorem}
+
+Using an ideal decomposition of a knot complement by placing one octahedron
+per crossing, it follows that for every knot $K$ with $c+2$ crossings, we have
+\begin{equation}
+\lbl{eq.vol8}
+\vol(S^3-K) \leq v_8 c,
+\end{equation}
+where $\vol(S^3-K)$ is the hyperbolic volume of the knot complement.
+On the other hand, if the volume conjecture holds for $\a=2 \pi i$, then
+$$
+ \lim_{n \to \infty} \frac{\log|f_{K,n}(2\pi i)|}{n}
+= \frac{1}{2 \pi} \vol(S^3-K) \leq \frac{v_8}{2 \pi} c.
+$$
+One may ask whether \eqref{eq.vol8} (and therefore, whether the
+bound in Theorem \ref{thm.4}) is optimal. This may be a little surprising,
+since it involves all knots (and not just alternating ones)
+and their number of crossings, an invariant that carries little known
+geometric information.
+In conversations with I.Agol and D.Thurston, it was communicated to us
+that the upper bound in \eqref{eq.vol8} is indeed optimal. Moreover a class
+of knots that achieves (in the limit) the optimal ratio of volume
+to number of crossings is obtained by
+taking a large chunk of the following {\em weave}, and closing it up to a knot:
+$$
+\psdraw{weavelink}{1.7in}
+$$
+The complement of the weave has a complete hyperbolic structure associated
+with the {\em square tessellation} of the Euclidean plane:
+$$
+\psdraw{weavetilling}{1.7in}
+$$
+Optimality follows along similar lines as the Appendix of \cite{La},
+using a stronger estimate for the lower bound of the volume of Haken
+manifolds, cut along an incompressible surface: If M is a hyperbolic
+finite volume 3-manifold containing a properly imbedded orientable,
+boundary incompressible, incompressible surface $S$, then
+$$
+\vol(M) \geq \vol(\mathrm{Guts}(M-\mathrm{int(nbd(}S))),
+$$
+where $\vol$ stands for volume, and the $\mathrm{Guts}$ terminology
+are defined in \cite{Ag}. The proof of this
+ stronger statement (of
+Agol-Dunfield-Storm-W.Thurston \cite{ADST}) uses, among other
+things, work of Perelman.
+
+
+
+
+The reader may compare \eqref{eq.vol8} with the following result of
+Agol-Lackenby-D.Thurston \cite{La}:  If $K$ is an alternating knot
+with  a planar projection having $t$ twist, then
+$$
+v_3 (t-1)/2 <  \vol(S^3-K) < 10 v_3 (t-1),
+$$
+where $v_3=2 \La(\pi/3)\approx 1.01494\dots$ is the volume of the regular ideal
+tetrahedron.
+Moreover, the class of knots obtained by Dehn filling on the {\em chain link}
+has asymptotic ratio of volume by twist number equal to $10 v_3$.
+The corresponding tessellation of the Euclidean plane is given by the
+{\em star of David}.
+
+
+
+
+So far, we have formulated a Generalized Volume Conjecture for $\a$
+near $0$ and $\a$ near $2\pi i$, using representations near the
+trivial or near the discrete faithful. How can we
+connect these choices for other complex angles $\a$? A natural
+answer to this question requires analyzing asymptotics of solutions
+of difference equations with a parameter. This is a different
+subject that we will not discuss here; instead we will refer the
+curious reader to \cite{GG}, and forthcoming work of the first
+author. For a further discussion, see also Section
+\ref{sec.physics}.

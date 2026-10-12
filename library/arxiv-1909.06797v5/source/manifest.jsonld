@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1909.06797v5/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quantum Mechanics of Plancherel Growth (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06797v5/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1909.06797&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1909.06797v5",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1909.06797v5",
+    "content_type": "application/gzip",
+    "sha256": "c325495d3821a13511592c7d4cb37ceff315000c248383076a325502038645e5",
+    "bytes": 167678,
+    "fetched": "2026-10-10T15:14:43+00:00",
+    "files": [
+      {
+        "path": "source/files/PlancherelNotes.bib",
+        "role": "bib",
+        "sha256": "873c55fc479590cae3404312916f8ded7e28acee990fcbf70cb7a7b2be9d7624",
+        "bytes": 74844
+      },
+      {
+        "path": "source/files/Plancherel_growth_modified.bbl",
+        "role": "bbl",
+        "sha256": "f460efc89930463444ac523bf9d89e8d12d8a5facdba8e691a27e7b1b82987ce",
+        "bytes": 10555
+      },
+      {
+        "path": "source/files/Plancherel_growth_modified.tex",
+        "role": "tex",
+        "sha256": "152149e650476310055ef5046b9bf6279f893b59c3b3bce4483dbccc7fe15da6",
+        "bytes": 88865
+      },
+      {
+        "path": "source/files/elsarticle.cls",
+        "role": "cls",
+        "sha256": "56cab688f0ccdbaedd4a00d69c66547e1a344b7b59f6c1e8c03f2ded2c755d92",
+        "bytes": 33494
+      },
+      {
+        "path": "source/files/gdefn.tex",
+        "role": "tex",
+        "sha256": "ef0d25a0d3aed02b244594efd58cff90e1b295187756aa433c219ae8e8073fd3",
+        "bytes": 10192
+      },
+      {
+        "path": "source/files/wrapfig.sty",
+        "role": "sty",
+        "sha256": "4695b760c84ded2507b1ddc33e15e299c718f9a556cd330983f0a000f0d10de7",
+        "bytes": 26220
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

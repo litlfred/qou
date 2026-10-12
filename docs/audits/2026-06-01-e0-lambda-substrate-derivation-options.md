@@ -57,7 +57,7 @@ $$B(K) = m_e \sum_{\lambda \vdash 3A} y_\lambda(q_0)\, \chi^\lambda(\beta_K)\, \
   χ^λ(K) does NOT determine M_λ(K).
 
 **The only existing χ^λ → M_λ map in the repo** is
-`computations/_deprecated/per_block_phi_q.py :: fit_three_E0` — a linear
+`fsh-guts/deprecated/computations/per_block_phi_q.py :: fit_three_E0` — a linear
 least-squares fit of THREE free scales `(E₀^sym, E₀^std, E₀^alt)` to the three anchors
 {e⁻, p, n} (3 equations, 3 unknowns, rank 3, exact). That is the thing to **replace** with
 a derivation. Its per-block MeV outputs on {e⁻, p, n} are the falsification target: a real
@@ -314,7 +314,7 @@ above; it must report the raw eigenphase-vs-anchor numbers whether they match or
 - `docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md` — ρ_w summed-diagonal-trace = χ^λ (closed); names off-diagonal/eigenphase as un-tried.
 - `docs/audits/2026-05-31-casimir-derivation-attempt.md` + `2026-05-31-casimir-as-functor.md` — Casimir mode-indexed ε_n obstruction.
 - `docs/canonical-derivation-cheat-sheet.md` §"Bind" (lines 113, 131–139) — per-rep q-Reeb phase closes ³H−³He to 2%, B_D to −9%; μ₀ derived.
-- `computations/_deprecated/per_block_phi_q.py` — the deprecated `fit_three_E0` (the thing to replace).
+- `fsh-guts/deprecated/computations/per_block_phi_q.py` — the deprecated `fit_three_E0` (the thing to replace).
 - `computations/binding_reeb_phase_decomposition.py` — rotation-vs-growth channel split (Candidate 3 infrastructure).
 - `computations/option_e_{q_reeb_phase_probe_v4,canonical_reeb_v5,v6_combined_canonical}.py` — eigenphase probes (v4 misses 94–99.8%; v6 re-introduces γ).
 - `computations/rho_k_h3a_co_casimir.py` — co-Casimir = 1/dim_q(λ), τ-invariant (vortex-blind, Option B).

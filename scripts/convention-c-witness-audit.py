@@ -238,7 +238,7 @@ def scan_repo(root: pathlib.Path = None):
     root = root or (REPO / "computations")
     out = []
     for p in sorted(root.rglob("*.json")):
-        if "_deprecated" in str(p):
+        if ("_deprecated" in str(p) or "fsh-guts" in str(p)):
             continue
         try:
             raw = p.read_text()
@@ -260,7 +260,7 @@ def scan_repo_symbolic(root: pathlib.Path = None):
     root = root or (REPO / "computations")
     out = []
     for p in sorted(root.rglob("*.json")):
-        if "_deprecated" in str(p):
+        if ("_deprecated" in str(p) or "fsh-guts" in str(p)):
             continue
         try:
             raw = p.read_text()

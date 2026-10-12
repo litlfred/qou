@@ -1,0 +1,148 @@
+
+\documentclass[10pt]{amsart}
+
+\usepackage{amssymb,amsmath,amscd,a4,graphicx,latexsym,psfrag,epsfig}
+
+\setlength{\textwidth}{155mm} \setlength{\textheight}{225mm}
+\setlength{\oddsidemargin}{0mm} \setlength{\evensidemargin}{10mm}
+\setlength{\topmargin}{-10mm} \setlength{\headheight}{20mm}
+\setlength{\headsep}{10mm} \setlength{\footskip}{20mm}
+\setlength{\parindent}{0mm}
+
+%\usepackage[all]{xy}
+
+\everymath{\displaystyle}
+
+\newtheorem{teo}{Theorem}[section]
+\newtheorem{lem}[teo]{Lemma}
+\newtheorem{cor}[teo]{Corollary}
+\newtheorem{exa}[teo]{Example}
+\newtheorem{prop}[teo]{Proposition}
+\newtheorem{defi}[teo]{Definition}
+\newtheorem{ques}[teo]{Question}
+\newtheorem{conj}[teo]{Conjecture}
+\newtheorem{remark}[teo]{Remark}
+\newtheorem{remarks}[teo]{Remarks}
+\newtheorem{prob}[teo]{Problem}
+\newtheorem{defis}[teo]{Definitions}
+
+%% math simboli  Riccardo%%
+\newcommand{\mr}{\mathbb{R}}
+\newcommand{\mc}{\mathbb{C}}
+\newcommand{\mz}{\mathbb{Z}}
+\newcommand{\mh}{\mathbb{H}}
+\newcommand{\mk}{\mathbb{K}}
+\newcommand{\mn}{\mathbb{N}}
+\newcommand{\mq}{\mathbb{Q}}
+\newcommand{\mm}{\mathbb{M}}
+\newcommand{\mi}{\mathbb{I}}
+\newcommand{\mx}{\mathbb{X}}
+\newcommand{\ma}{\mathbb{A}}
+
+%%%%%%%%% calligraphic %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Aa}{{\mathcal A}}
+\newcommand{\Bb}{{\mathcal B}}
+\newcommand{\Cc}{{\mathcal C}}
+\newcommand{\Dd}{{\mathcal D}}
+\newcommand{\Ee}{{\mathcal E}}
+\newcommand{\Ff}{{\mathcal F}}
+\newcommand{\Gg}{{\mathcal G}}
+\newcommand{\Hh}{{\mathcal H}}
+\newcommand{\Ii}{{\mathcal I}}
+\newcommand{\Jj}{{\mathcal J}}
+\newcommand{\Kk}{{\mathcal K}}
+\newcommand{\Ll}{{\mathcal L}}
+\newcommand{\Mm}{{\mathcal M}}
+\newcommand{\Nn}{{\mathcal N}}
+\newcommand{\Oo}{{\mathcal O}}
+\newcommand{\Pp}{{\mathcal P}}
+\newcommand{\Rr}{{\mathcal R}}
+\newcommand{\Ss}{{\mathcal S}}
+\newcommand{\Tt}{{\mathcal T}}
+\newcommand{\Uu}{{\mathcal U}}
+\newcommand{\Ww}{{\mathcal W}}
+\newcommand{\Vv}{{\mathcal V}}
+\newcommand{\Qq}{{\mathcal Q}}
+\newcommand{\Zz}{{\mathcal Z}}
+%%%%%%%%% boldface %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\CC}{{\bf C}}
+\newcommand{\HH}{{\bf H}}
+\newcommand{\NN}{{\bf N}}
+\newcommand{\PP}{{\bf P}}
+\newcommand{\RR}{{\bf R}}
+\newcommand{\ZZ}{{\bf Z}}
+
+\newcommand{\lL}{{\mathbf l}}
+\newcommand{\mM}{{\mathbf m}}
+\newcommand{\kaK}{{\mathbf \kappa}}
+
+%%%%%%%%% gothic symbols %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\aG}{{\mathfrak a}}
+\newcommand{\bG}{{\mathfrak b}}
+\newcommand{\cG}{{\mathfrak c}}
+\newcommand{\HG}{{\mathfrak H}}
+\newcommand{\WG}{{\mathfrak W}}
+\newcommand{\TG}{{\mathfrak T}}
+%%%%%%%%% vectors  symbols %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\naV}{{\vec{\nabla}}}
+
+%%%%%%%%%  hat symbols %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\hF}{{\widehat{F}}}
+\newcommand{\hN}{{\widehat{N}}}
+\newcommand{\hQ}{{\widehat{Q}}}
+\newcommand{\hT}{{\widehat{T}}}
+\newcommand{\hX}{{\widehat{X}}}
+\newcommand{\hU}{{\widehat{U}}}
+\newcommand{\hW}{{\widehat{W}}}
+%%%%%%%%% canonical symbols %%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\A}{{\mathbb A}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PROOF
+%\newcommand{\proof}{\noindent{\it Proof.}\hfill $\Box$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Quantum Hyperbolic Geometry}
+
+\author {St\'ephane Baseilhac$^1$ and Riccardo Benedetti$^2$}
+
+%\date{}
+
+\begin{document}
+
+\maketitle
+
+\vspace{0.5cm}
+
+\noindent $^1$ Universit\'e Grenoble I, Institut Joseph Fourier,
+UMR CNRS 5582, 100 rue des Maths, B.P. 74, 38402 Saint Martin
+d'H\`eres Cedex, FRANCE
+
+\smallskip
+
+\noindent $^2$ Dipartimento di Matematica, Universit\`a di Pisa,
+Largo Bruno Pontecorvo 5, I-56127 Pisa, ITALY\medskip
+
+\centerline{Emails: stephane.baseilhac@ujf-grenoble.fr \ \ and\ \
+benedett@dm.unipi.it}
+
+\tableofcontents
+
+\input 5QHGI.tex
+\input 5QHGP.tex
+\input 5QHGB.tex
+\input 5QHGT.tex
+\input 5QHGPF.tex
+\input 5QHGBIB.tex
+
+\end{document}

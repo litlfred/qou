@@ -6,7 +6,11 @@
   "sha256": "782034b674f958af57632cf8cab5c42015ed7cd01702930740b8d541141c0051",
   "bytes": 36934,
   "pages": 4,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -112,6 +116,51 @@
   "likely_scanned": false,
   "toc_entries": 4,
   "sections": 4,
-  "chars_total": 14121
+  "chars_total": 14121,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "boundary_slopes.tex",
+   "tex_sections": 4,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-revised-table",
+     "title": "Revised table",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-preparing-the-table",
+     "title": "Preparing the table",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-getting-the-program",
+     "title": "Getting the program",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

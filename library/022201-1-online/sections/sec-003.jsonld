@@ -1,18 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/022201-1-online/sections/sec-003",
   "@type": [
     "doco:Section"
   ],
-  "title": "THE QUANTUM CLUSTER EXPANSION",
+  "title": "THE ABSTRACT CLUSTER EXPANSION",
   "pageStart": 3,
-  "pageEnd": 4,
+  "pageEnd": 3,
   "contains": [
-    "library/022201-1-online/blocks/prose-sec-003",
-    "library/022201-1-online/blocks/lem-sec-003-01",
-    "library/022201-1-online/blocks/cor-sec-003-02"
+    "library/022201-1-online/blocks/prose-sec-003"
   ],
-  "derivedFrom": "library/022201-1-online/manifest",
-  "sourceDocument": "library/022201-1-online/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/022201-1-online/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/022201-1-online/manifest.jsonld",
   "provenance": "ingested"
 }

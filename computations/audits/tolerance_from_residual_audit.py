@@ -611,7 +611,7 @@ def iter_py(extra: list[Path] | None = None):
         return
     for r in ROOTS:
         for p in (REPO / r).rglob("*.py"):
-            if "_deprecated" in p.parts or ".lake" in p.parts:
+            if ("_deprecated" in p.parts or "fsh-guts" in p.parts) or ".lake" in p.parts:
                 continue
             yield p
 

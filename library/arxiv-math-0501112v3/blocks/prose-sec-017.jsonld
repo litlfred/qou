@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0501112v3/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0501112v3/blocks/prose-sec-017",
   "kind": "prose",
-  "title": "Generalized Young diagrams. Let λ be a Young diagram. We assign",
-  "pageStart": 7,
-  "pageEnd": 7,
-  "text": "../sections/sec-017-26-generalized-young-diagrams-let-λ-be-a-young-d.md",
-  "derivedFrom": "library/arxiv-math-0501112v3/manifest",
-  "sourceDocument": "library/arxiv-math-0501112v3/manifest",
+  "title": "Examples",
+  "pageStart": 13,
+  "pageEnd": 18,
+  "text": "../sections/sec-017-32-examples.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0501112v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0501112v3/manifest.jsonld",
   "provenance": "ingested"
 }

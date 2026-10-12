@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0808.1533v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0808.1533v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.1533v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0808.1533&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0808.1533v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0808.1533v3",
+    "content_type": "application/gzip",
+    "sha256": "9d7a656d0bdf333c2f746fbe8ab8b249bdb1df24111154fbf1889c43af3ef245",
+    "bytes": 437271,
+    "fetched": "2026-10-10T15:01:07+00:00",
+    "files": [
+      {
+        "path": "source/files/unlinked-tubes.tex",
+        "role": "tex",
+        "sha256": "d1d962dc0c81ae4808159632ff394e1b6110a598fd1e8c2262dfd8ec3c027daf",
+        "bytes": 96817
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

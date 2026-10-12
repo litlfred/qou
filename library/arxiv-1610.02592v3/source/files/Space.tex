@@ -1,0 +1,944 @@
+\chapter{Hyperbolic space} \label{spazio:chapter} \label{space:chapter}
+In every dimension $n\geqslant 2$ there exists a unique simply connected complete Riemannian manifold with constant sectional curvature $1$, $0$, or $-1$. These are the sphere $S^n$, the Euclidean space $\matR^n$, and the hyperbolic space $\matH^n$. 
+
+These manifolds are the three most important spaces in Riemannian geometry. We introduce in this chapter the least familiar and the most interesting of the three: hyperbolic space. 
+
+\section{The models of hyperbolic space}
+In contrast with $S^n$ and $\matR^n$, the hyperbolic space $\matH^n$ may be described in various different ways, no-one of which is prevalent in the literature. Each description is a \emph{model} for $\matH^n$. We first introduce the hyperboloid model, which has a more algebraic flavour, and then we turn to the disc and half-space models that are somehow more geometric (and easier to visualise in dimensions $n=2$ and $3$).
+
+\subsection{Hyperboloid}
+The sphere $S^n$ is the set of all points with norm 1 in $\matR^{n+1}$, equipped with the Euclidean scalar product. Analogously, we may define $\matH^n$ as the set of all points of norm $-1$ in $\matR^{n+1}$, equipped with the usual \emph{Lorentzian} scalar product. This set forms a hyperboloid with two sheets, and we choose one. 
+\index{Lorentzian scalar product}
+
+\begin{defn} The \emph{Lorentzian scalar product} on $\matR^{n+1}$ is:
+$$\langle x, y \rangle = \sum_{i=1}^n x_iy_i - x_{n+1}y_{n+1}.$$
+It has signature $(n,1)$. A vector $x \in \matR^{n+1}$ is \emph{time-like}, \emph{light-like}, or \emph{space-like} if $\langle x, x \rangle$ is negative, null, or positive respectively.
+The \emph{hyperboloid model} $I^n$ is defined as follows:
+\index{vector!time-like, light-like, and space-like vector} \index{hyperbolic space} \index{hyperbolic space!hyperboloid model}
+$$I^n = \big\{x \in \matR^{n+1}\ \big| \ \langle x, x \rangle = -1, \ x_{n+1} > 0 \big\}.$$
+\end{defn}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {\iftoggle{BW}{Hyperboloid2-BW}{640px-Hyperboloid2}}
+\nota{The hyperboloid with two sheets defined by the equation $\langle x, x \rangle = -1$. The model $I^n$ for $\matH^n$ is the upper sheet.}
+\label{Hyperboloid2:fig}
+\end{center}
+\end{figure}
+
+The set of points $x$ with $\langle x,x \rangle = -1$ is a \emph{hyperboloid with two sheets}, and $I^n$ is the connected component (sheet) with $x_{n+1}>0$. Let us prove a general fact. For us, a scalar product is a real non-degenerate symmetric bilinear form.\index{$I^n$}
+
+\begin{prop}
+Let $\langle, \rangle$ be a scalar product on $\matR^{n+1}$. The function $f\colon \matR^n \to \matR$ given by
+$$f(x) = \langle x,x\rangle$$
+is everywhere smooth and has differential  
+$$df_x(y) = 2\langle x,y\rangle.$$
+\end{prop}
+\begin{proof}
+The following equality holds:
+$$\langle x+y, x+y\rangle = \langle x,x\rangle + 2 \langle x,y \rangle + \langle y, y \rangle.$$
+The component $\langle x,y\rangle $ is linear in $y$ while $\langle y,y \rangle$ is quadratic. 
+\end{proof}
+\begin{cor}
+The hyperboloid $I^n$ is a Riemannian manifold.
+\end{cor}
+\begin{proof}
+The hyperboloid is the set of points with $f(x)=\langle x,x\rangle = -1$. For all $x\in I^n$ the differential $y\mapsto 2\langle x,y\rangle $ is surjective and hence the hyperboloid is a differentiable submanifold of codimension 1. 
+
+The tangent space $T_xI^n$ at $x\in I^n$ is the hyperplane
+$$T_x = \ker df_x = \big\{ y \ \big| \ \langle x, y \rangle = 0 \big\} = x^\bot$$
+orthogonal to $x$ in the Lorentzian scalar product. Since $x$ is time-like, the restriction of the Lorentzian scalar product to $x^\bot$ is positive definite and hence defines a metric tensor on $I^n$. \end{proof}
+
+The hyperboloid $I^n$ is a model for hyperbolic space $\matH^n$. We will soon prove that it is simply connected, complete, and has constant curvature $-1$. 
+
+\subsection{Isometries of the hyperboloid}
+The isometries of $I^n$ are easily classified using linear algebra. 
+
+Let $O(n,1)$ be the group of linear isomorphisms $f$ of $\matR^{n+1}$ that preserve the Lorentzian scalar product, \emph{i.e.}~such that $\langle v,w\rangle = \langle f(v),  f(w) \rangle$ for any $v,w \in \matR^n$. An element in $O(n,1)$ preserves the hyperboloid with two sheets, and the elements preserving the upper sheet $I^n$ form a subgroup of index two in $O(n,1)$ that we indicate with $O^+(n,1)$.\index{$O(n,1)$}\index{$O^+(n,1)$}
+
+\begin{prop} \label{isom:prop}
+The following equality holds:
+$$\Iso (I^n) = O^+(n,1).$$
+\end{prop}
+\begin{proof}
+Pick $f\in O^+(n,1)$. If $x\in I^n$ then $f(x) \in I^n$ and $f$ sends $x^\bot$ to $f(x)^\bot$ isometrically, hence $f \in\Iso (I^n)$. Therefore $O^+(n,1) \subseteq \Iso (I^n)$.
+
+To prove the converse inclusion we show that for every pair $x,y \in I^n$ and every
+linear isometry $g\colon x^\bot \to y^\bot$ there is an element $f\in O^+(n,1)$ such that $f(x)=y$ and $f|_{x^\bot} = g$. Since isometries are determined by their first-order behaviour at a point $x$, this implies $\Iso(I^n) \subseteq O^+(n,1)$.
+
+Via elementary linear algebra we prove that $O^+(n,1)$ acts transitively on $I^n$ and hence we may suppose that $x=y=(0,\ldots,0,1)$. Now $x^\bot = y^\bot$ is the horizontal hyperplane and $g\in O(n)$.  To define $f$ simply take
+$$f = \begin{pmatrix} g & 0 \\ 0 & 1 \end{pmatrix}.$$
+The proof is complete.
+\end{proof}
+
+The isometry groups of $S^n$ and $\matR^n$ are described analogously:
+\begin{prop} \label{isom2:prop}
+The following equalities hold:
+\begin{align*}
+\Iso(S^n) & = O(n+1), \\
+\Iso(\matR^n) & = \big\{x \mapsto Ax+b\ \big| \ A\in O(n), b \in \matR^n\big\}.
+\end{align*}
+\end{prop}
+\begin{proof}
+The proof is analogous to the one above.
+\end{proof}
+
+We have also proved the following fact. A \emph{frame} at a point $p$ in a Riemannian manifold $M$ is an orthonormal basis for $T_pM$.
+
+\begin{cor} \label{riferimento:cor}
+Let $M= S^n$, $\matR^n$, or $\matH^n$. Given two points $p,q \in M$ and two frames at $p$ and $q$, there is a unique isometry that carries the first frame to the second.
+\end{cor}
+
+\subsection{Subspaces}
+We introduce the following natural objects. \index{hyperbolic space!subspace of hyperbolic space}
+
+\begin{defn}
+A $k$-dimensional \emph{subspace} of $\matR^n$, $S^n$, $I^n$ is respectively:
+\begin{itemize}
+\item an affine $k$-dimensional space in $\matR^n$,
+\item the intersection of a $(k+1)$-dimensional vector subspace of $\matR^{n+1}$ with $S^n$,
+\item the intersection of a $(k+1)$-dimensional vector subspace of $\matR^{n+1}$ with $I^n$, when it is non-empty.
+\end{itemize}
+\end{defn}
+\begin{oss}
+Elementary linear algebra shows that the following conditions are equivalent for any $(k+1)$-dimensional vector subspace $W\subset\matR^{n+1}$:
+\begin{enumerate}
+\item $W\cap I^n \neq \emptyset$,
+\item $W$ contains at least a time-like vector,
+\item the signature of $\langle,\rangle|_W$ is $(k,1)$.
+\end{enumerate}
+\end{oss}
+
+A $k$-subspace in $\matR^n, S^n, \matH^n$ is itself isometric to $\matR^k, S^k, \matH^k$. 
+The non-empty intersection of two subspaces is always a subspace. An isometry of $\matR^n, S^n, \matH^n$ sends $k$-subspaces to $k$-subspaces. 
+
+\begin{ex}
+Let $S$ be a $k$-subspace in $\matR^n, S^n$, or $\matH^n$ and $p\in S$ a point. There is a unique $(n-k)$-subspace $S'$ intersecting $S$ orthogonally in $p$.
+\end{ex}
+
+\subsection{Reflections} \label{reflections:subsection}
+We now introduce a basic kind of isometry.
+The \emph{reflection} $r_S$ along a subspace $S$ in $I^n$ is an isometry of $I^n$ defined as follows. By definition $S=I^n \cap W$ with $\langle,\rangle|_W$ non-degenerate, hence $\matR^{n+1} = W \oplus W^\bot$ and we set $r_S|_W = \id$ and $r_S|_{W^\bot} = -\id$.
+Analogous definitions work for subspaces of $S^n$ and $\matR^n$. 
+\index{reflection}
+
+\begin{ex}
+The reflection $r_S$ has fixed set $S$ and preserves all the subspaces orthogonal to $S$. It is orientation-preserving if and only if $S$ has even codimension.
+\end{ex}
+
+\begin{prop} \label{reflections:generate:prop}
+Reflections along hyperplanes generate the isometry groups of $S^n$, $\matR^n$, and $\matH^n$.
+\end{prop}
+\begin{proof}
+It is a standard linear algebra fact that orthogonal reflections along vector hyperspaces
+generate $O(n)$. This proves the case $S^n$ and shows that reflections generate the stabiliser of any point in $\matR^n$ and $\matH^n$. To conclude it suffices to check that reflections act transitively on points: to send $x$ to $y$, reflect along the hyperplane orthogonal to the segment connecting $x$ to $y$ in its midpoint.
+\end{proof}
+
+\subsection{Lines}
+A $1$-subspace is a \emph{line}. We now show that lines and geodesics are the same thing. We recall the hyperbolic trigonometric functions: \index{line}
+$$\sinh (t) = \frac{e^t-e^{-t}}2, \quad \cosh (t) = \frac{e^t+e^{-t}}2.$$
+
+\begin{prop} \label{lines:prop}
+A non-trivial complete geodesic in $S^n$, $\matR^n$, or $\matH^n$ is a line run at constant speed. Concretely, let $p\in M$ be a point and $v\in T_pM$ a unit vector. The geodesic $\gamma$ exiting from $p$ with velocity $v$ is:
+\begin{itemize}
+\item $\gamma(t) = \cos (t) \cdot p + \sin (t) \cdot v$ if $M=S^n$,
+\item $\gamma(t) = p + tv$ if $M=\matR^n$,
+\item $\gamma(t) = \cosh (t) \cdot p + \sinh (t) \cdot v$ if $M=I^n$.
+\end{itemize}
+\end{prop}
+\begin{proof}
+Let $p\in I^n$ be a point, $v\in T_pM$ a unit vector, and $\gamma$ the geodesic exiting from $p$ with velocity $v$.
+The plane $W\subset \matR^{n+1}$ generated by $p$ and $v$ intersects $I^n$ into a line $l$ containing $p$ and tangent to $v$. To prove that $l$ is the support of $\gamma$ we use a symmetry argument: the reflection $r_l$ fixes $p$ and $v$ and hence $\gamma$, therefore $\gamma$ is forced to be contained in its fixed locus, which is $l$. This shows that non-trivial geodesics are lines run at constant speed.
+
+We now consider the curve $\alpha(t) = \cosh (t) \cdot p + \sinh(t) \cdot v$. We have $\alpha(0) = p$ and $\alpha'(0) = v$. It remains to prove that $\alpha$ parametrizes $l$ with unit speed, and from this we deduce that $\gamma = \alpha$. We note that 
+\begin{align*}
+\langle \alpha (t), \alpha(t) \rangle & = \cosh^2(t) \langle p,p \rangle + 2\cosh(t)\sinh(t) \langle p,v \rangle + \sinh^2(t) \langle v,v\rangle \\
+ & = -\cosh^2(t) + \sinh^2(t) = -1.
+ \end{align*}
+Therefore $\alpha$ parametrizes $l$. Its velocity is 
+$$\alpha'(t) = \cosh'(t)\cdot p + \sinh'(t)\cdot v = \sinh(t)\cdot p + \cosh(t) \cdot v$$
+whose squared norm is $-\sinh^2(t) + \cosh^2(t) = 1$. Therefore $\gamma=\alpha$. The proofs for $S^n$ and $\matR^n$ are analogous.
+\end{proof}
+
+\begin{cor}
+The spaces $S^n$, $\matR^n$, and $\matH^n$ are complete.
+\end{cor}
+\begin{proof}
+The previous proposition shows that geodesics are defined on $\matR$, hence the space is complete by the Hopf -- Rinow Theorem \ref{HR:teo}.
+\end{proof}
+
+It is easy to show that two points in $\matH^n$ are contained in a unique line.
+\index{Euclid's V postulate}
+\begin{oss}
+Euclid's fifth postulate holds only in $\matR^2$. Given a line $r$ and a point $P\not\in r$, there is exactly one line passing through $P$ and disjoint from $r$ in $\matR^2$, there is no-one in $S^2$, and there are infinitely many in $\matH^2$.
+\end{oss}
+
+We can easily calculate the distance between two points.
+
+\begin{prop}
+Let $p, q\in M$ be two points. We have
+\begin{itemize}
+\item $\cos (d(p,q)) = \langle p,q \rangle $ if $M=S^n$,
+\item $\cosh (d(p,q)) = -\langle p,q \rangle $ if $M=I^n$.
+\end{itemize}
+\end{prop}
+\begin{proof}
+Let $\gamma$ be a geodesic that goes from $p$ to $q$ at unit speed. We have $\gamma(0)=p$ and $\gamma(t)=q$ with $t=d(p,q)$. Set $v=\gamma'(0)$ and use Proposition \ref{lines:prop} to conclude.
+\end{proof}
+
+\subsection{The Poincar\'e disc} \label{Poincare:subsection}
+We introduce two models of $\matH^n$, the \emph{disc} and the \emph{half-space}, that are easier to visualise especially in the dimensions $n=2,3$ we are interested in. The first model is the \emph{Poincar\'e disc}\index{$D^n$}
+$$D^n = \big\{x\in \matR^n\ \big| \ \|x\|<1 \big\}.$$
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{bigezione-BW}{bigezione}}
+\nota{The projection towards $P=(0,\ldots,0,-1)$ induces a bijection between the hyperboloid model $I^n$ and the disc model $D^n$.}
+\label{bigezione:fig}
+\end{center}
+\end{figure}
+
+The metric tensor on $D^n$ is obviously not the Euclidean one of $\matR^n$, but instead is induced by a particular diffeomorphism between $I^n$ and $D^n$ that we construct now. We identify $\matR^n$ with the horizontal hyperplane $x_{n+1}=0$ in $\matR^{n+1}$ and note that the projection towards $P=(0,\ldots,0,-1)$ depicted in Figure \ref{bigezione:fig} induces a bijection between $I^n$ and the horizontal disc $D^n\subset \matR^n$. 
+The projection $p$ may be written as:
+$$p(x_1,\ldots,x_{n+1}) = \frac {(x_1,\ldots, x_n)}{x_{n+1} +1}$$
+and is indeed a diffeomorphism $p\colon I^n \to D^n$ that transports the metric tensor on $I^n$ to some metric tensor $g$ on $D^n$. \index{hyperbolic space!disc model}
+
+\begin{prop}
+The metric tensor $g$ at $x\in D^n$ is:
+$$g_x = \left( \frac 2 {1-\|x\|^2}\right)^2 \cdot g^E_x$$
+where $g^E$ is the Euclidean metric tensor on $D^n \subset \matR^n$.
+\end{prop}
+\begin{proof}
+The inverse $q\colon D^n \to I^n$ of $p$ is:
+$$q(x) = \left( \frac{2x_1}{1-\|x\|^2}, \ldots, \frac{2x_n}{1-\|x\|^2}, \frac{1+\|x\|^2}{1-\|x\|^2}\right).$$
+Pick $x\in D^n$. Rotations around the $x_{n+1}$ axis are isometries of $I^n$ and commute with $p$, therefore they are isometries of $(D^n, g)$ too. Up to rotating we may take
+$x = (x_1,0,\ldots, 0)$ and
+find
+$$dq_x = 
+\frac {2}{1-x_1^2} \cdot
+\begin{pmatrix}
+\frac{1+x_1^2}{1-x_1^2} & 0 & \cdots & 0 \\
+0 & 1 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & 1 \\
+2\frac{x_1}{1-x_1^2} & 0 & \cdots & 0
+\end{pmatrix}.
+$$
+The column vectors form an orthonormal basis of $T_{q(x)}I^n$. Hence $dq_x$  stretches all vectors of a constant $\frac 2{1-x_1^2}$. Therefore $g_x =\frac 4{(1-x_1^2)^2} g^E_x$. 
+\end{proof}
+
+The Poincar\'e disc is a \emph{conformal} model of $\matH^n$: it is a model where the metric differs from the Euclidean metric only by multiplication by a positive scalar $\big(\frac 2{1-\|x\|^2}\big)^2$ that depends smoothly on $x$. We note that the scalar tends to infinity when $x$ tends to $\partial D^n$. On a conformal model the lengths of vectors are different from the Euclidean lengths, but the angles formed by two adjacent vectors coincide with the Euclidean ones. Shortly: lengths are distorted but angles are preserved. \index{hyperbolic space!conformal model}
+
+Let us see how we can easily visualise $k$-subspaces in the disc model.
+
+\begin{prop}
+The $k$-subspaces in $D^n$ are the intersections of $D^n$ with $k$-spheres and $k$-planes of $\matR^n$ orthogonal to $\partial D^n$.
+\end{prop}
+\begin{proof}
+Since every $k$-subspace is an intersection of hyperplanes, we easily restrict to the case $k=n-1$. A hyperplane in $I^n$ is $I^n\cap v^\bot$ for some space-like vector $v$. If $v$ is horizontal (\emph{i.e.}~its last coordinate is zero) then $v^\bot$ is vertical and $p(I^n\cap v^\bot) = D^n \cap v^\bot$, a hyperplane orthogonal to $\partial D^n$.
+
+If $v$ is not horizontal, up to rescaling and rotating around $x_{n+1}$ we may suppose $v=(\alpha,0,\ldots, 0, 1)$ with $\alpha>1$. The hyperplane is
+$$\big\{x_1^2 +\ldots + x_n^2 - x_{n+1}^2 = -1 \big\} \cap \big\{x_{n+1} = \alpha x_1 \big\}.$$
+On the other hand the sphere in $\matR^n$ of centre $(\alpha,0,\ldots,0)$ and radius $\sqrt{\alpha^2 -1}$ is orthogonal to $\partial D^n$ and is described by the equation
+$$\left\{(y_1-\alpha)^2 +y_2^2 + \ldots + y_n^2 = \alpha^2 - 1\right\} =
+\left\{y_1^2 + \ldots + y_n^2 - 2\alpha y_1 = -1 \right\}$$
+which is equivalent to $||y||^2 = -1 + 2\alpha y_1$. If $y = p(x)$ the relations
+$$y_1 = \frac {x_1}{x_{n+1}+1}, \quad \|y\|^2 = \frac{x_{n+1}-1}{x_{n+1}+1}$$
+transform the latter equation in $x_{n+1}=\alpha x_1$.
+\end{proof}
+
+Three lines in $D^2$ delimiting a hyperbolic triangle are drawn in Figure \ref{Triangolo_iperbolico:fig}. Since the disc is a conformal model, the inner angles $\alpha, \beta, \gamma$ are the ones we see on the picture. In particular we verify easily that $\alpha+\beta+\gamma<\pi$. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 4 cm] {\iftoggle{BW}{Triangolo_iperbolico-BW}{Triangolo_iperbolico}}
+\nota{Three lines that determine a hyperbolic triangle in the Poincar\'e disc. The inner angles $\alpha, \beta,$ and $\gamma$ coincide with the Euclidean ones, and we have $\alpha + \beta + \gamma < \pi$.}
+\label{Triangolo_iperbolico:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{Order-5_tetrakis_square_tiling-BW}{Order-5_tetrakis_square_tiling}}%{square_tiling_nitido}}
+\nota{A \emph{tessellation} of $S^2$, $\matR^2$ o $\matH^2$ is a subdivision of the plane into polygons. The tessellation of $\matH^2$ shown here is obtained by drawing infinitely many lines in the plane. The triangles have inner angles $\frac \pi 2, \frac \pi {5}, \frac \pi {5}$ and are all isometric.}
+\label{square_tiling:fig}
+\end{center}
+\end{figure}
+
+\begin{ex} For any triple of positive angles $\alpha,\beta,\gamma$ with $\alpha+\beta+\gamma < \pi$ there is a triangle with inner angles $\alpha,\beta,\gamma$. This triangle is unique up to isometry.
+\end{ex}
+
+\subsection{Inversions} \label{inversions:subsection}
+To construct our second conformal model we need to introduce a geometric transformation called inversion. \index{sphere inversion}
+
+\begin{defn}
+Let $S=S(x_0,r)$ be the sphere in $\matR^n$ centred in $x_0$ and with radius $r$. The \emph{inversion} along $S$ is the map $\varphi\colon \matR^n\setminus\{x_0\} \to \matR^n\setminus \{x_0\}$ defined as follows:
+$$\varphi(x) = x_0 + r^2 \frac {x-x_0}{\|x-x_0\|^2}.$$
+\end{defn}
+The map may be extended continuously on the whole sphere $S^n$, identified with $\matR^n \cup \{\infty\}$ through the stereographic projection, by setting $\varphi(x_0) = \infty$ and $\varphi(\infty) = x_0$. A geometric description is shown in Figure \ref{Inversion_illustration1:fig}. 
+
+We have already talked about conformal models. More generally, a diffeomorphism $f\colon M\to N$ between two oriented Riemannian manifolds is \emph{conformal} (respectively, \emph{anticonformal}) if for any $p\in M$ the differential $df_p$  
+is the product of a scalar dilation $\lambda_p >0$ and an isometry that preserves (respectively, inverts) the orientation. 
+The scalar $\lambda_p$ depends smoothly on $p$. A conformal map preserves the angle between two tangent vectors but multiplies their lengths by $\sqrt{\lambda_p}$.
+
+\begin{ex} The stereographic projection is conformal.
+\end{ex}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 4 cm] {\iftoggle{BW}{Inversion_illustration1-BW}{Inversion_illustration1}}
+\includegraphics[width = 4 cm] {\iftoggle{BW}{Inversion_illustration2-BW}{Inversion_illustration2}}
+\includegraphics[width = 4 cm] {\iftoggle{BW}{Inversion_illustration3-BW}{Inversion_illustration3}}
+\nota{The inversion trough a sphere of centre $O$ and radius $r$ moves $P$ to $P'$ so that $OP \times OP' = r^2$ (left). It transforms a $k$-sphere $S$\iftoggle{BW}{}{ (blue)} into a $k$-plane\iftoggle{BW}{}{ (green)} if $O\in S$ (centre) or into a $k$-sphere\iftoggle{BW}{}{ (green)} if $O\not\in S$ (right).}
+\label{Inversion_illustration1:fig}
+\end{center}
+\end{figure}
+
+\begin{prop} \label{inversione:prop}
+The following hold:
+\begin{enumerate}
+\item every inversion is a smooth and anticonformal map;
+\item inversions send $k$-spheres and $k$-planes to $k$-spheres and $k$-planes.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Up to conjugating with translations and dilations we may suppose $x_0=0$ and $r=1$. The inversion is $\varphi(x) = \frac{x}{\|x\|^2}$ and we show that $d\varphi_x$ is $\frac 1{\|x\|^2}$ times a reflection with respect to the hyperplane orthogonal to $x$. We may suppose $x=(x_1,0,\ldots,0)$ and calculate the partial derivatives:
+$$ 
+\varphi(x_1,\ldots,x_n) = \frac{(x_1,\ldots, x_n)}{\|x\|^2}, \qquad
+\frac{\partial \varphi_i}{\partial x_j} = \frac{\delta_{ij} \|x\|^2 - 2x_ix_j}{\|x\|^4}.
+$$
+The partial derivatives at $x=(x_1,0,\ldots, 0)$ are
+$$\frac{\partial \varphi_1}{\partial x_1} = -\frac {1}{x_1^2}, \quad  \frac{\partial \varphi_i}{\partial x_i} = \frac {1}{x_1^2}, \quad \frac{\partial \varphi_j}{\partial x_k} = 0$$
+for all $i>1$ and $j\neq k$. This proves our assertion.
+
+The fact that an inversion preserves sphere and planes may be easily reduced to the two-dimensional case (with circles and lines), a classical fact of Euclidean geometry.
+\end{proof}
+
+\subsection{The half-space model}
+We introduce another conformal model. The \emph{half-space model} is the space
+\index{hyperbolic space!half-space model}\index{$H^n$}
+$$H^n = \big\{(x_1,\ldots,x_n)\in \matR^n \ \big|\ x_n>0\big\}.$$
+It is obtained from the disc model $D^n$ by an inversion in $\matR^n$ with centre $C=(0,\ldots,0,-1)$ and radius $\sqrt 2$ as shown in Figure \ref{inversion:fig}. The boundary $\partial H^n$ is the horizontal hyperplane $\{x_n=0\}$, to which we add the point $\infty$ at infinity to get a bijective correspondence between $\partial H^n$ and $\partial D^n$ through the inversion.
+
+\begin{prop} The half-space $H^n$ is a conformal model for $\matH^n$. Its $k$-subspaces are the $k$-planes and $k$-spheres in $\matR^n$ orthogonal to $\partial H^n$. 
+\end{prop}
+\begin{proof}
+The inversion is anticonformal and hence preserve angles, moreover it transforms $k$-spheres and $k$-planes in $D^n$ orthogonal to $\partial D^n$ into $k$-spheres and $k$-planes in $H^n$ orthogonal to $\partial H^n$.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{inversion-BW}{inversion}}
+\nota{The inversion along the sphere with centre $C=(0,\ldots,0,-1)$ and radius $\sqrt 2$ transforms the Poincar\'e disc $D^n$ into the half-space model $H^n$. Here $n=2$.}
+\label{inversion:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {\iftoggle{BW}{semispazio-BW}{semispazio}}
+\nota{Lines and planes in the half-space model for $\matH^3$.}
+\label{semispazio:fig}
+\end{center}
+\end{figure}
+
+Some lines and planes in $H^3$ are drawn in Figure \ref{semispazio:fig}. The metric tensor $g$ on $H^n$ has a particularly nice form. 
+
+\begin{prop}
+The metric tensor on $H^n$ is:
+$$g_x = \frac 1 {x_n^2} \cdot g^E$$
+where $g^E$ is the Euclidean metric tensor on $H^n \subset \matR^n$.
+\end{prop}
+\begin{proof}
+The inversion $\varphi\colon D^n \to H^n$ is the function
+\begin{align*}
+\varphi(x_1,\ldots, x_n) & = (0,\ldots,0,-1) + 2\frac{(x_1,\ldots,x_{n-1},x_n+1)}{\|(x_1,\ldots,x_{n-1},x_n+1)\|^2} \\
+& = \frac{(2x_1,\ldots,2x_{n-1},1-\|x\|^2)}{\|x\|^2 +2x_n+1}.
+\end{align*}
+As seen in the proof of Proposition \ref{inversione:prop}, the inversion $\varphi$ is anticonformal with scalar dilation
+$$\frac{2}{\|(x_1,\ldots,x_{n-1},x_n+1)\|^2} = \frac{2}{\|x\|^2+2x_n+1}.$$
+The map $\varphi$ hence transforms the metric tensor $\left(\frac 2 {1-\|x\|^2}\right)^2\cdot g^E$ in $x\in D^n$ into the following metric tensor in $\varphi(x) \in H^n$:
+$$\left( \frac 2 {1-\|x\|^2}\right)^2 \cdot \left(\frac{\|x\|^2+2x_n+1}2\right)^2
+\cdot g^E = 
+\frac 1 {\varphi_n(x)^2}\cdot g^E.$$
+The proof is complete.
+\end{proof}
+
+\subsection{Geodesics in the conformal models}
+The disc $D^n$ and the half-space $H^n$ are conformal models for $\matH^n$. In both models the hyperbolic metric differs from the Euclidean one only by a multiplication with some function.
+
+In the half-space $H^n$ the lines are Euclidean vertical half-lines or half-circles orthogonal to $\partial H^n$ as in Figure \ref{semispazio:fig}. Vertical geodesics have a particularly simple form.
+\begin{prop} \label{verticale:prop}
+The vertical geodesic in $H^n$ passing through the point $(x_1,\ldots,x_{n-1},1)$ at time $t=0$ and pointing upward with unit speed is:
+$$\gamma(t) = (x_1,\ldots,x_{n-1},e^t).$$
+\end{prop}
+\begin{proof}
+A tangent vector $v$ at $(x_1,\ldots,x_n) \in H^n$ has norm $\frac{\|v\|^E}{x_n}$ where $\|v\|^E$ indicates the Euclidean norm. We get 
+$$\|\gamma'(t)\| = \|(0,\ldots,0,e^t)\| = \frac {e^t}{e^t} = 1.$$
+Therefore $\gamma(t)$ runs on a line at unit speed.
+\end{proof}
+We can easily deduce a parametrisation for the geodesics in $D^n$ passing through the origin. Recall the hyperbolic tangent:
+$$\tanh (t) = \frac {\sinh (t)}{\cosh (t)} = \frac{e^t-e^{-t}}{e^t+e^{-t}} = \frac{e^{2t} -1}{e^{2t}+1}.$$
+\begin{prop}
+The geodesic in $D^n$ passing through the origin at time $t=0$ and pointing towards $x \in S^{n-1}$ at unit speed is:
+$$\gamma(t) = \frac{e^{t}-1}{e^{t}+1}\cdot x = \left(\tanh \tfrac {t}2\right)\cdot x.$$
+\end{prop}
+\begin{proof}
+We can suppose $x=(0,\ldots,0,1)$ and obtain this parametrisation from that of the vertical line in $H^n$ through inversion.
+\end{proof}
+
+We obtain in particular:
+\begin{cor} \label{exp:cor}
+The exponential map $\exp_0\colon T_0D^n \to D^n$ at the origin $0 \in D^n$ is the diffeomorphism:
+$$\exp_0(x) = \frac{e^{\|x\|}-1}{e^{\|x\|}+1}\cdot \frac{x}{\|x\|} = \left(\tanh\tfrac{\|x\|}2 \right)\cdot \frac x{\|x\|}.$$
+\end{cor}
+
+Since the isometries of $\matH^n$ act transitively on points, we deduce that the exponential map at any $p\in \matH^n$ is a diffeomorphism. As a consequence, the injectivity radius of $\matH^n$ is $\infty$, as in the Euclidean $\matR^n$.
+
+\subsection{Isometries of the conformal models}
+In the half-space model it is easy to identify some isometries:
+
+\begin{prop} \label{traslazioni:prop}
+The following are isometries of $H^n$:
+\begin{itemize}
+\item horizontal translations $x \mapsto x+b$ with $b=(b_1,\ldots, b_{n-1}, 0)$,
+\item dilations $x \mapsto \lambda x$ with $\lambda>0$,
+\item inversions with respect to spheres orthogonal to $\partial H^n$.
+\end{itemize}
+\end{prop}
+\begin{proof}
+Horizontal translations obviously preserve the metric tensor $g= \frac 1{x_n^2}\cdot g^E$. 
+We indicate by $\|\cdot \|$ and $\|\cdot\|^E$ the hyperbolic and Euclidean norm of tangent vectors. On a dilation $\varphi( x)= \lambda x$ we get 
+$$\|d\varphi_x(v)\| = \frac{\|d\varphi_x(v)\|^E}{\varphi(x)_n} =
+\frac{\lambda \|v\|^E}{\lambda x_n} = 
+\frac{\|v\|^E}{x_n} = \|v\|.
+$$
+
+Concerning inversions, up to conjugating by translations and dilations it suffices to consider the map $\varphi(x) = \frac{x}{\|x\|^2}$. We have already seen that $d\varphi_x$ is $\frac {1}{\|x\|^2}$ times a linear reflection. Therefore
+$$\|d\varphi_x(v)\| = \frac{\|d\varphi_x(v)\|^E}{\varphi(x)_n} =
+\frac{\|v\|^E/\|x\|^2 }{x_n/\|x\|^2} = 
+\frac{\|v\|^E}{x_n} = \|v\|.
+$$
+This completes the proof.
+\end{proof}
+
+In the disc model we can easily write the isometries that fix the origin:
+
+\begin{prop}
+The group $O(n)$ acts isometrically on $D^n$.
+\end{prop}
+\begin{proof}
+The metric tensor on $D^n$ has a spherical symmetry.
+\end{proof}
+
+It is harder to write the isometries that fix another point of $D^n$ or $H^n$. 
+
+\begin{prop} \label{generate:Hn:prop}
+On the conformal models $D^n$ and $H^n$, the isometry group is generated by inversions along spheres and reflections along Euclidean planes orthogonal to the boundary.
+\end{prop}
+\begin{proof}
+We know from Proposition \ref{traslazioni:prop} that these maps are isometries of $H^n$. One such isometry fixes a hyperplane $S$, hence it is the hyperbolic reflection $r_S$ (which is the unique non-trivial isometry fixing $S$). Hyperbolic reflections generate the isometry group by Proposition \ref{reflections:generate:prop}. 
+
+In $D^n$ the proof is the same, we leave as an exercise to prove that a sphere inversion preserves the metric tensor and is hence an isometry.
+\end{proof}
+
+\subsection{Balls in the conformal models}
+How does a metric ball $B(x_0,r)$ in the hyperbolic space look like? The answer in the conformal models is surprisingly  simple. 
+
+\begin{prop} \label{sfere:prop}
+In the conformal models balls are Euclidean balls.
+\end{prop}
+\begin{proof}
+In the disc model $B(0,r)$ is a ball centred at $0$ by symmetry. The ball $B(x_0,r)$ at another point $x_0$ is obtained from $B(0,r)$ by composing inversions, which send spheres to spheres and hence balls to balls. The inversion $D^n \to H^n$ also sends balls to balls. 
+\end{proof}
+
+The centre of the ball is not its Euclidean centre in general!
+
+\subsection{The Klein model} \label{Klein;subsection}
+There is a fourth model for the hyperbolic space that is some kind of intermediate version between the hyperboloid and the Poincar\'e disc model.\index{hyperbolic space!Klein model}\index{hyperbolic space!projective model}
+
+The \emph{Klein} or \emph{projective model} for $\matH^n$ is obtained by embedding the hyperboloid $I^n$ inside $\matRP^n$ via the projection $\matR^{n+1}\setminus \{0\} \to \matRP^n$. The image of this embedding is an open disc $K^n\subset \matRP^n$ bounded by the quadric $x_1^2+\ldots +x_n^2-x_{n+1}^2 = 0$. We equip $K^n$ with the metric tensor transported from $I^n$ , so that $K^n$ is indeed a model for $\matH^n$. 
+
+When read in the chart $x_{n+1} = 1$, the Klein model $K^n$ becomes the open disc $x_1^2 + \ldots + x_n^2 < 1$. It is like the Poincar\'e disc $D^n$, but with a different metric tensor! 
+
+The Klein model $K^n$ is not conformal and its metric tensor is a bit more complicated than that of $D^n$ or $H^n$. On the other hand, the subspaces in $K^n$ are easier to identify: by definition, these are just the projective subspaces of $\matRP^n$ intersected with the open disc $K^n$. Therefore lines are straight lines, but the angles and distances are distorted. Note also that the isometries of $K^n$ are projective transformations. The distance function is particularly nice:
+
+\begin{ex}
+The distance of two distinct points $p, q$ in $K^n$ is 
+$$d(p,q) = \frac 12 | \log \beta (p,q,r,s) |$$
+where $r,s$ are the intersections of the projective line $l$ containing $p$ and $q$ with $\partial K^n$, and $\beta(p,q,r,s)$ is the cross-ratio of the four points.\index{cross-ratio}
+\end{ex}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 4.5 cm] {\iftoggle{BW}{Klein-BW}{Klein}}
+\nota{A tessellation of $\matH^2$ into regular triangles and heptagons in the Klein model.}
+\label{uniform_tiling:fig}
+\end{center}
+\end{figure}
+
+\section{Compactification and isometries of hyperbolic space}
+In this section we compactify the hyperbolic space $\matH^n$ by adding some ``points at infinity''. The compactification will then be used to classify the isometries of $\matH^n$ into three types. We also study the mutual position of two subspaces and define some peculiar hyperbolic objects: the horospheres. 
+
+\subsection{Points at infinity}
+Let a \emph{geodesic half-line} in $\matH^n$ be a geodesic $\gamma\colon [0,+\infty) \to \matH^n$ with constant unit speed. \index{geodesic!geodesic half-line}
+\begin{defn} The set $\partial \matH^n$ of the \emph{points at infinity} in $\matH^n$ is the set of all geodesic half-lines, considered up to the following equivalence relation:
+$$\gamma_1 \sim \gamma_2 \ \Longleftrightarrow \sup_{t\in [0,+\infty)}\big\{d\big(\gamma_1(t), \gamma_2(t)\big) \big\} < + \infty.$$
+\end{defn}
+
+We add its points at infinity to $\matH^n$ by defining
+$$\overline {\matH^n} = \matH^n \cup \partial \matH^n.$$
+
+\begin{prop} \label{bordo:prop}
+On the disc model there is a natural 1-1 correspondence between $\partial D^n$ and $\partial \matH^n$ and hence between the closed disc $\overline{D^n}$ and $\overline{\matH^n}$.
+\end{prop}
+\begin{proof}
+A geodesic half-line $\gamma$ in $D^n$ is a circle or line arc orthogonal to $\partial D^n$ and hence the Euclidean limit $\lim_{t\to\infty}\gamma(t)$ is a point in $\partial D^n$. We now prove that two half-lines converge to the same point if and only if they lie in the same equivalence class.
+
+Suppose that two half-geodesics $\gamma_1$, $\gamma_2$ converge to the same point $p\in\partial D^n$. Up to isometries and inversions, we can change the conformal model to $H^n$ and take $p= \infty$. In this nicer setting $\gamma_1$ and $\gamma_2$ are vertical lines:
+$$\gamma_1(t) = (x_1,\ldots,x_{n-1},x_ne^t), \quad
+\gamma_2(t) = (y_1,\ldots,y_{n-1},y_ne^t). $$ 
+The geodesic
+$$\gamma_3(t) = (y_1,\ldots,y_{n-1},x_ne^t) $$ 
+is equivalent to $\gamma_2$ since $d(\gamma_2(t),\gamma_3(t))=|\ln \frac{y_n}{x_n}|$ for all $t$ and is also equivalent to $\gamma_1$ because $d(\gamma_1(t),\gamma_3(t))\to 0$ as shown in Figure \ref{verticali:fig}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {\iftoggle{BW}{verticali-BW}{verticali}}
+\nota{Two vertical lines $\gamma_1$ and $\gamma_3$ in the half-space model $H^n$ at \emph{Euclidean} distance $d$. The \emph{hyperbolic} length of the horizontal segment between them at height $x_n$ is $\frac d{x_n}$ and hence tends to zero as $x_n\to\infty$ (left). 
+Using as a height parameter the more intrinsic hyperbolic arc-length, we see that the two vertical geodesics $\gamma_1$ and $\gamma_3$ approach at exponential rate, since $d(\gamma_1(t), \gamma_3(t))\leqslant de^{-t}$ (right).}
+\label{verticali:fig}
+\end{center}
+\end{figure}
+
+Suppose that $\gamma_1$ and $\gamma_2$ converge to distinct points in $\partial D^n$. We can use the half-space model again and suppose that $\gamma_1$ is upwards vertical and $\gamma_2$ tends to some other point in $\{x_n=0\}$. In that case we easily see that $d(\gamma_1(t), \gamma_2(t))\to \infty$: for any $M>0$ there is a $t_0>0$ such that $\gamma_1(t)$ and $\gamma_2(t)$ lie respectively in $\{x_{n+1}>M\}$ and $\left\{x_n<\frac 1M\right\}$ for all $t>t_0$. Whatever curve connects these two open sets, it has length at least $\ln{M^2}$, hence $d(\gamma_1(t), \gamma_2(t)) > \ln{M^2}$ for all $t>t_0$.
+\end{proof}
+
+\subsection{The compactification}
+We can give $\overline{\matH^n}$ the topology of $\overline{D^n}$, and in that way we have \emph{compactified} $\matH^n$ by adding its points at infinity. The interior of $\overline{\matH^n}$ is $\matH^n$, and the points at infinity form a sphere $\partial \matH^n$. \index{hyperbolic space!compactification of hyperbolic space}
+
+The topology on $\overline {\matH^n}$ may also be defined intrinsically: for any $p\in\partial \matH^n$ we define a system of open neighbourhoods of $p$ in $\overline{\matH^n}$ as follows. Let $\gamma$ be a half-line with $[\gamma] = p$ and $V$ be an open neighbourhood of the vector $\gamma'(0)$ in the unitary sphere in $T_{\gamma(0)}\matH^n$. Pick $r>0$ and define the subset of $\overline{\matH^n}$:
+\begin{align*}
+U(\gamma, V, r) & = \left\{\alpha(t)\ \big|\ \alpha(0) = \gamma(0), \ \alpha'(0) \in V, \ t>r \right\} \\
+& \bigcup \left\{[\alpha] \ \big|\ \alpha(0) = \gamma(0), \ \alpha'(0) \in V \right\}
+\end{align*}
+where $\alpha$ indicates a half-line in $\matH^n$ and $[\alpha]\in\partial\matH^n$ its class, see Figure \ref{intorno:fig}. We define an open neighbourhoods system $\{U(\gamma, V, r)\}$ for $p$ by letting $\gamma$, $V$, and $r$ vary. The resulting topology on $\overline{\matH^n}$ coincides with that induced by $\overline{D^n}$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{intorno-BW}{intorno}}
+\nota{An open neighbourhood $U(\gamma, V, r)$ of $p\in\partial\matH^n$\iftoggle{BW}{ (in light grey)}{ (in yellow)}. We use the Klein model here.}
+\label{intorno:fig}
+\end{center}
+\end{figure}
+
+Note that $\matH^n$ is a complete Riemannian manifold (and hence a complete metric space), while its compactification $\overline{\matH^n}$ is only a topological space: a point in $\partial \matH^n$ has infinite distance from any other point in $\overline{\matH^n}$.
+
+\subsection{Klein model} \label{projective:compactification:subsection}
+In the Klein model $K^n\subset \matRP^n$, the compactification is obtained by adding the quadric $\partial K^n = \{x_1^2 + \ldots + x_n^2 - x_{n+1}^2=0\}$, which is the image of the light cone in $\matR^{n+1}$. Analogously, in the hyperboloid model $I^n$ we may represent $\partial I^n$ as the set of rays in the light cone.
+
+A nice feature of the Klein model is that the points $x\in\matRP^n$ that lie ``beyond the infinity'', that is outside $\overline {K^n}$, can also be given a natural geometric interpretation. One such $x\in \matRP^n \setminus \overline{K^n}$ is a space-like ray in $\matR^{n+1}$ and as such it defines a hyperplane $x^\bot$ of signature $(n-1,1)$ in $\matR^{n+1}$, which projects to a hyperbolic hyperplane in $K^n$. The points beyond the infinity are in 1-1 correspondence with the hyperbolic hyperplanes in $K^n$.
+
+\subsection{Incident, parallel, and ultraparallel subspaces}
+A $k$-subspace $S\subset \matH^n$ has a topological closure $\overline S$ in the compactification $\overline{\matH^n}$. The boundary $\partial S = \overline S\cap \partial\matH^n$ of $S$ is a $(k-1)$-sphere.
+
+For instance, the boundary of a line $l$ consists of two distinct points, the \emph{endpoints} of $l$. The boundary of a plane is a circle. Two distinct points in $\partial \matH^n$ are the endpoints of a unique line. A circle in the sphere $\partial D^3$ is the boundary of a unique plane in the disc model.
+
+The usual \emph{distance} $d(A,B)$ between two subsets $A,B$ in a metric space is defined as 
+$$d(A,B) = \inf_{x\in A, y\in B} \big\{d(x,y)\big\}.$$
+
+There are three types of configurations for two subspaces in $\matH^n$, depicted in Figure \ref{lines:fig}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{lines-BW}{lines}}
+\nota{Two incident, asymptotic parallel, and ultraparallel lines.}
+\label{lines:fig}
+\end{center}
+\end{figure}
+
+
+\begin{prop} \label{sottospazi:prop}
+Let $S$ and $S'$ be subspaces in $\matH^n$ of arbitrary dimension. Precisely one of the following holds: 
+\begin{enumerate}
+\item $S\cap S' \neq \emptyset$,
+\item $S\cap S' = \emptyset$ and $\overline S \cap \overline {S'}$ is a point in $\partial \matH^n$; moreover $d(S,S')=0$ and there is no geodesic orthogonal to both $S$ and $S'$,
+\item $\overline S\cap \overline{S'} = \emptyset$; moreover $d=d(S,S')>0$ and there is a unique geodesic $\gamma$ orthogonal to both $S$ and $S'$: the segment of $\gamma$ between $S$ and $S'$ is the unique arc connecting them of length $d$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+If $\overline S \cap \overline{S'}$ contains two points then it contains the line connecting them and hence $S\cap S'\neq \emptyset$.
+
+In (2) we use the half-space model and send $\overline S\cap \overline {S'}$ at infinity. Then $S$ and $S'$ are Euclidean vertical subspaces and Figure \ref{verticali:fig} shows that $d(S,S')=0$. Geodesics are vertical or half-circles and cannot be orthogonal to both $S$ and $S'$.
+
+In (3), let $x_i \in S$ and $x'_i \in S'$ be such that $d(x_i,x_i')\to d$. Since $\overline{\matH^n}$ is compact, on a subsequence $x_i\to x\in \overline S$ and $x_i'\to x'\in\overline {S'}$. By hypothesis $x\neq x'$ and hence $x,x' \in \matH^n$ since $d<\infty$. Therefore $d>0$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 4 cm] {\iftoggle{BW}{unica_geodetica-BW}{unica_geodetica}}
+\nota{Two ultraparallel subspaces $S, S'$ and a line $\gamma$ orthogonal to both.}
+\label{unica_geodetica:fig}
+\end{center}
+\end{figure}
+
+Let $\gamma$ be the line passing through $x$ and $x'$. The segment between $x$ and $x'$ has length $d(x,x') = d$. The line is orthogonal to $S$ and $S'$: if it had an angle smaller than $\frac\pi 2$ with $S'$ we could find another point $x''\in S'$ near $x'$ with $d(x,x'')<d$. We can draw $S, S', \gamma$ as in Figure \ref{unica_geodetica:fig} by placing the origin between $x$ and $x'$: no other line can be orthogonal to both $S$ and $S'$.
+\end{proof}
+
+Two subspaces of type (1), (2) or (3) are called respectively \emph{incident}, \emph{asymptotically parallel}, and \emph{ultra-parallel}.
+\index{subspace!incident, asymptotically parallel, ultra-parallel subspaces}
+
+\subsection{The conformal sphere at infinity}
+The sphere at infinity $\partial \matH^n$ has no metric structure, but it has instead a \emph{conformal structure}, that is a Riemannian structure considered up to conformal transformations. Before defining it we note the following.
+
+\begin{prop}
+Every isometry $\varphi \colon \matH^n \to \matH^n$ extends to a unique homeomorphism $\varphi:\overline{\matH^n} \to \overline{\matH^n}$. An isometry $\varphi$ is determined by its trace $\varphi|_{\partial \matH^n}$ at the boundary.
+\end{prop}
+\begin{proof}
+The extension of $\varphi$ to $\partial \matH^n$ is defined intrinsically: a boundary point is a class $[\gamma]$ of geodesic half-lines and we set $\varphi ([\gamma]) = [\varphi(\gamma)]$. 
+
+To prove the second assertion we show that an isometry $\varphi$ that fixes the points at infinity is the identity. The isometry $\varphi$ fixes every line as a set (because it fixes its endpoints), and since every point is the intersection of two lines it fixes also every point.
+\end{proof}
+
+We give $\partial \matH^n$ the conformal structure of the sphere $\partial D^n$. The group $\Iso(\matH^n)$ is generated by sphere inversions, which act conformally: although the metric tensor of $\partial D^n$ is not preserved by this action, its conformal class is preserved and hence the conformal structure on $\partial \matH^n$ is well-defined.
+
+\subsection{Elliptic, parabolic, and hyperbolic isometries}
+It is convenient to classify the isometries of $\matH^n$ into three types.
+\index{isometry!elliptic, parabolic, and hyperbolic isometry}
+
+\begin{prop} \label{fixed:prop}
+Let $\varphi$ be a non-trivial isometry of $\matH^n$. Precisely one of the following holds: 
+\begin{enumerate}
+\item $\varphi$ has at least one fixed point in $\matH^n$, 
+\item $\varphi$ has no fixed points in $\matH^n$ and has exactly one in $\partial \matH^n$,
+\item $\varphi$ has no fixed points in $\matH^n$ and has exactly two in $\partial \matH^n$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+The extension $\varphi:\overline{\matH^n} \to \overline{\matH^n}$ is continuous and has a fixed point by Brouwer's Theorem. We only need to prove that if $\varphi$ has three fixed points $P_1, P_2, P_3$ at the boundary then it has some fixed point in the interior. The isometry $\varphi$ fixes the line $r$ with endpoints $P_1$ and $P_2$.
+There is only one line $s$ with endpoint $P_3$ and orthogonal to $r$ (exercise): the isometry $\varphi$ must also fix $s$ and hence fixes the point $r\cap s$.
+\end{proof}
+Isometries of type (1), (2), and (3) are called respectively \emph{elliptic}, \emph{parabolic}, and \emph{hyperbolic}. A hyperbolic isometry fixes two points $p,q\in \partial \matH^n$ and hence preserves the unique line $l$ with endpoints $p$ and $q$. The line $l$ is the \emph{axis} of the hyperbolic isometry, which acts on $l$ as a translation.
+
+\subsection{Horospheres} \label{orosfere:subsection}
+Parabolic transformations are related to some objects in $\matH^n$ called horospheres. \index{horosphere}
+
+\begin{defn} Let $p$ be a point in $\partial\matH^n$. A \emph{horosphere} centred in $p$ is a connected complete hypersurface orthogonal to all the lines exiting from $p$.
+\end{defn}
+
+Horospheres may be easily visualised in the half-space model $H^n$ by sending $p$ at infinity. The lines exiting from $p$ are the Euclidean vertical lines and the horospheres centred at $p$ are precisely the horizontal hyperplanes $\{x_n = k\}$ with $k>0$. 
+
+\begin{oss}
+Since the metric tensor $g = \frac 1{x_n^2}g^E$ is constant on each hyperplane $\{x_n = k\}$, each horosphere is \emph{isometric} to the Euclidean $\matR^n$. 
+\end{oss}
+
+The horospheres centred at $p\neq \infty$ in $\partial H^n$ or at any point $p\in \partial D^n$ are precisely the Euclidean spheres tangent in $p$ to the sphere at infinity. The horospheres in $\matH^2$ are circles and are called \emph{horocycles}, see Figure \ref{Horocycle_normals:fig}. The portion of $\matH^n$ delimited by a horosphere is called a \emph{horoball}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{Horocycle_normals-BW}{Horocycle_normals}}
+\nota{A horocycle in $\matH^2$ centred in $p\in\partial\matH^2$ is a circle tangent to $p$. It is orthogonal to all the lines exiting from $p$.}
+\label{Horocycle_normals:fig}
+\end{center}
+\end{figure}
+
+Let us go back to the isometries of $\matH^n$. We sometimes write a point in the half-space $H^n$ as a pair $(x,t)$ with $x\in \matR^{n-1}$ and $t>0$. Isometries with nice fixed points have nice expressions in the conformal models. 
+
+\begin{prop} \label{tre:prop}
+Let $\varphi$ be an isometry of $\matH^n$:
+\begin{enumerate}
+\item if $\varphi$ is elliptic with fixed point $0\in D^n$ then
+$$\varphi(x) = Ax$$
+for some matrix $A\in \On(n)$; 
+\item if $\varphi$ is parabolic with fixed point $\infty$ in $H^n$ then
+$$\varphi (x,t) = (Ax+b, t)$$ 
+for some matrix $A\in \On(n-1)$ and some vector $b$;
+\item if $\varphi$ is hyperbolic with fixed points $0$ and $\infty$ in $H^n$ then
+$$\varphi (x,t) = \lambda(Ax,t)$$
+for some matrix $A\in \On(n-1)$ and some positive scalar $\lambda\neq 1$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Point (1) is obvious. In (2) the isometry $\varphi$ fixes $\infty$ and hence permutes the horospheres centred at $\infty$: we first prove that this permutation is trivial. The map $\varphi$ sends a horosphere $O_0$ at height $t=t_0$ to a horosphere $O_1$ at some height $t=t_1$. If  $t_1\neq t_0$, up to changing $\varphi$ with its inverse we may suppose that $t_1<t_0$. 
+
+We know that the map $\psi\colon O_1 \to O_0$ sending $(x,t_1)$ to $(x,t_0)$ is a contraction: hence $\varphi\circ\psi \colon O_1 \to O_1$ is a contraction and thus has a fixed point $(x,t_1)$. Therefore $\varphi(x,t_0) = (x,t_1)$. Since $\varphi(\infty)=\infty$, the vertical geodesic passing through $(x,t_0)$ and $(x,t_1)$ is preserved by $\varphi$, and hence we have found another fixed point $(x,0)\in\partial \matH^n$, a contradiction.
+
+We now know that $\varphi$ preserves the horosphere $O$ at height $t$, for all $t$.
+The metric tensor on $O$ is Euclidean (rescaled by $\frac 1{t^2}$), hence $\varphi$ acts on $O$ like an isometry $x\mapsto Ax+b$.
+Since $\varphi$ sends vertical geodesics to vertical geodesics, it acts with the same formula on each horosphere and we are done.
+
+Concerning (3), the axis $l$ of $\varphi$ is the vertical line with endpoints $0=(0,0)$ and $\infty$, and $\varphi$ acts on $l$ by translations: hence it sends $(0,1)$ to some $(0,\lambda)$. The differential $d\varphi$ at $(0,1)$ is necessarily $\matr A 0 0 \lambda$ for some $A\in \On(n-1)$ and hence $\varphi$ is globally as stated. The case $\lambda = 1$ is excluded because $(0,1)$ would be a fixed point in $\matH^n$.
+\end{proof}
+
+The \emph{minimum displacement} $d=d(\varphi)$ of an isometry $\varphi$ of $\matH^n$ is \index{minimum displacement}
+$$d(\varphi) = \inf_{x\in\matH^n} d\big(x,\varphi(x)\big).$$
+A point $x$ realises the minimum displacement if $d(x,\varphi(x)) = d(\varphi)$.
+\begin{cor} \label{spostamento:cor}
+The following hold:
+\begin{enumerate}
+\item an elliptic transformation $\varphi$ has $d=0$ realised on its fixed points;
+\item a parabolic transformation $\varphi$ with fixed point $p\in \partial\matH^n$ has $d=0$ realised nowhere and fixes every horosphere centred in $p$; 
+\item a hyperbolic transformation $\varphi$ with fixed points $p,q\in\partial\matH^n$ has $d>0$ realised on its axis.
+\end{enumerate}
+\end{cor}
+\begin{proof}
+Point (1) is obvious. Point (2) was already noticed while proving Proposition \ref{tre:prop}. Concerning (3), let $l$ be the axis of the hyperbolic transformation $\varphi$. The hyperplane orthogonal to $l$ at a point $x\in l$ is sent to the hyperplane orthogonal to $l$ in $\varphi(x)$. The two hyerplanes are ultraparallel and by Proposition \ref{sottospazi:prop} their minimum distance is realised at the points $x$ and $\varphi(x)$. Hence the points on $l$ realise the minimum displacement for $\varphi$.
+\end{proof}
+
+\section{Isometry groups in dimensions two and three} \label{isometry:2:3:section}
+With the hyperboloid model the isometry group $\Iso(\matH^n)$ is the matrix group $O^+(n,1)$. We now see that in dimensions $n=2$ and $3$ the group $\Iso^+(\matH^n)$ is also isomorphic to some familiar groups of $2\times 2$ matrices. 
+
+We start with a concise tour on M\"obius transformations. 
+\index{M\"obius transformation and anti-transformation}
+
+\subsection{M\"obius transformations}
+Let the \emph{Riemann sphere} be $S=\matC \cup \{\infty\}$, homeomorphic to $S^2$. Consider the group
+$$ \PSLC = \SLC/_{\pm I} = \GLC/_{\{ \lambda I\}} = \PGLC $$
+of all $2\times 2$ invertible complex matrices considered up to scalar multiplication. The group $\PSLC$ acts on $S$ as follows: a matrix $\matr abcd \in \PSLC$ determines the \emph{M\"obius transformation} 
+$$z \mapsto \frac{az+b}{cz+d}$$
+which is an orientation-preserving self-diffeomorphism of $S$, and in fact also a  biolomorphism.
+
+\begin{ex} \label{Mobius:freely:ex}
+M\"obius transformations act freely and transitively on triples of distinct points in $S$.
+\end{ex}
+
+A matrix $ \matr abcd\in \PSLC$ also determines a \emph{M\"obius anti-transformation}
+$$z \mapsto \frac{a\bar z+b}{c\bar z+d}$$
+which is an orientation-reversing self-diffeomorphism of $S$. The composition of two anti-transformations is a M\"obius transformation. Transformations and anti-transformations together form a group $\Conf(S)$ which contains the M\"obius transformations as an index-two subgroup.
+
+\begin{prop}
+Circle inversions and line reflections are both M\"obius anti-transformations and generate $\Conf(S)$.
+\end{prop}
+\begin{proof}
+By conjugating with translations $z\mapsto z+b$ and complex dilations $z \mapsto az$ every circle inversion transforms into the inversion along the unit circle $z\mapsto \frac{1}{\bar z}$, and every line reflection transforms into $z\mapsto \bar z$.
+
+By composing line reflections we get all translations and rotations, and by composing circle inversions we get all dilations. With these operations and the inversion $z\mapsto \frac 1 {\bar z}$ one can easily act transitively on triples of points. They generate $\Conf(S)$ by Exercise \ref{Mobius:freely:ex}.
+\end{proof}
+
+\subsection{M\"obius transformations of $H^2$}
+We consider the half-plane $H^2\subset \matC$ as $H^2 = \{z\ |\ \Im z >0\}$ and denote by $\Conf(H^2)$ the subgroup of $\Conf(S)$ consisting of all maps that preserve $H^2$.
+
+\begin{rem}
+By standard results in complex analysis, the two groups $\Conf(S)$ and $\Conf(H^2)$ contain precisely all the conformal diffeomorphisms of $S$ and $H^2$, whence their names. We will not use this fact here.
+\end{rem}
+
+\begin{prop}
+The maps in $\Conf(H^2)$ are of the form
+$$z \mapsto \frac{az+b}{cz+d} \qquad {\rm and}
+\qquad z \mapsto \frac{a\bar z+b}{c\bar z+d}$$
+with $a,b,c,d \in \matR$ and having $ad-bc$ equal to $1$ and $-1$, respectively. 
+\end{prop}
+\begin{proof}
+The transformations listed have real coefficients and hence preserve the line $\matR\cup \infty$ and permute the two half-planes in $\matC\setminus \matR$. The sign condition on $ad-bc = \pm 1$ ensures precisely that $i$ is sent to some point in $H^2$ and hence $H^2$ is preserved.
+
+On the other hand, a transformation that preserves $H^2$ must preserve $\partial H^2 = \matR\cup \infty$ and it is easy to see that since the images of $0,1,\infty$ are real all the coefficients $a,b,c,d$ can be taken in $\matR$.
+\end{proof}
+
+The M\"obius transformations in $\Conf(H^2)$ form a subgroup of index two which is naturally isomorphic to
+$$\PSLR = \SLR/_{\pm I}.$$
+
+An ordered triple of distinct points in $\matR\cup \infty$ is \emph{positive} if they are oriented counterclockwise, like $0,1, \infty$.
+
+\begin{ex} \label{triple:ex}
+The group $\PSLR$ acts freely and transitively on positive triples of points in $\matR\cup \infty$. 
+\end{ex}
+
+Let $C\subset \matC$ be a circle or line orthogonal to $\matR$. The inversion or reflection along $C$ preserves $H^2$ and is hence an element of $\Conf(H^2)$.
+
+\begin{prop} \label{H2:generate}
+Inversions along circles and reflections along lines orthogonal to $\matR$ generate $\Conf(H^2)$.
+\end{prop}
+\begin{proof}
+Composing reflections we obtain all horizontal translations $z \mapsto z+b$ with $b\in\matR$, composing inversions we obtain all dilations $z \mapsto \lambda z$ with $\lambda \in \matR^*$. These maps together with the inversion $z \mapsto \frac {1}{\bar z}$ act transitively on positive triples of points in $\matR\cup \infty$.
+\end{proof}
+
+\begin{ex}
+The inversion sending $H^2$ to $D^2$ is 
+\begin{equation*} \label{anti:eq}
+z \mapsto \frac{\bar z+i}{i\bar z+1}.
+\end{equation*}
+\end{ex}
+
+\subsection{Isometries of $H^2$}
+After this short detour on M\"obius transformations, we turn back to our hyperbolic spaces. We can characterise the isometry group of $H^2$. 
+\begin{prop} \label{H2:prop}
+We have $\Iso(H^2) = \Conf(H^2)$.
+\end{prop}
+\begin{proof}
+Both groups are generated by inversions along circles and reflections along lines orthogonal to $\partial H^2 = \matR$ by Propositions \ref{generate:Hn:prop} and \ref{H2:generate}.
+\end{proof}
+
+In particular we have
+$$\Iso^+(H^2) = \PSLR.$$
+We will henceforth identify these two groups.
+The trace of an element in $\PSLR$ is well-defined up to sign and carries some relevant information:
+\begin{prop} \label{PSLR:prop}
+A non-trivial isometry $A\in \PSLR$ is elliptic, parabolic, hyperbolic $\Longleftrightarrow$ respectively $|\tr A|<2$, $|\tr A|=2$, $|\tr A|>2$.
+\end{prop}
+\begin{proof}
+Take $A=\big(\begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\big)$ with $\det A = ad-bc = 1$. The M\"obius transformation $z\mapsto \frac {az+b}{cz+d}$ has a fixed point $z\in\matC$ if and only if
+$$\frac{az+b}{cz+d} = z \Longleftrightarrow cz^2+(d-a)z-b = 0.$$
+We find
+$$\Delta = (d-a)^2 +4bc = (d+a)^2 - 4 = \tr^2 A - 4.$$
+There is a fixed point in $H^2$ if and only if $\Delta <0$; if $\Delta > 0$ we find two fixed points in $\matR\cup\{\infty\}$ and if $\Delta = 0$ only one.
+\end{proof}
+
+\subsection{Isometries of $H^3$}
+We have proved that $\Iso^+(H^2) = \PSLR$. Quite surprisingly, the isometry group $\Iso^+(H^3)$ is also isomorphic to a group of $2\times 2$ matrices! To prove this, we make the following identifications:
+$$\matR^3 = \matC \times \matR = \{(z,t)\ |\ z\in\matC, t\in\matR\}$$
+hence $H^3 = \{(z,t)\ |\ t >0\}$.
+We also write $\matC$ for $\matC \times \{0\}$. The boundary trace of an isometry of $H^3$ is a homeomorphism of the Riemann sphere
+$$\partial H^3 = \matC \cup\{\infty\} = S.$$
+\begin{prop} \label{H3:prop}
+The boundary trace induces an identification
+$$\Iso(H^3) = \Conf(S).$$
+\end{prop}
+\begin{proof}
+The group $\Iso(H^3)$ is generated by inversions along spheres and reflections along planes orthogonal to $\partial H^3$. Their traces are inversions along circles and reflections along lines in $S$. These generate $\Conf(S)$.
+\end{proof}
+In particular we have
+$$ \Iso^+(H^3) = \PSLC.$$
+We will also henceforth identify these two groups. As above, the trace of an element in $\PSLC$ is well-defined up to sign and carries some information:
+\begin{prop}
+A non-trivial isometry $A\in \PSLC$ is elliptic, parabolic, hyperbolic if and only if respectively $\tr A\in (-2,2)$, $\tr A=\pm 2$, $\tr A\in\matC \setminus [-2,2]$.
+\end{prop}
+\begin{proof}
+Every non-trivial matrix $A\in\SLC$ is conjugate to one of:
+$$\pm\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \quad 
+\begin{pmatrix} \lambda & 0 \\ 0 & \lambda^{-1} \end{pmatrix} $$
+for some $\lambda \in \matC^*$, and these represent the following isometries:
+$$(z,t) \longmapsto (z + 1,t), \quad (z,t) \longmapsto (\lambda^2 z, |\lambda|^2 t).$$
+In the first case $\tr A = \pm 2$ and $A$ is parabolic with fixed point $\infty$, in the second case $A$ has a fixed point in $H^3$ if and only if $|\lambda|=1$, \emph{i.e.}~$\tr A = \lambda + \lambda^{-1}\in (-2,2)$, the fixed point being $(0,1)$. If $|\lambda|\neq 1$ there are two fixed points $0$ and $\infty$ at infinity and hence $A$ is hyperbolic.
+\end{proof}
+
+Summing up, we have
+$$\Iso^+(H^2) = \PSLR, \qquad \Iso^+(H^3) = \PSLC.$$
+The group $\PSLR$ acts directly on $H^2$, while $\PSLC$ acts on the boundary sphere of $H^3$.
+
+\section{Geometry of hyperbolic space}
+We study the geometry of $\matH^n$. We prove that $\matH^n$ has constant sectional curvature $-1$, that the distance function along lines is convex, we define convex combinations and barycenters, and study parallel transport along lines. Finally, we prove that $\Iso(\matH^n)$ is a unimodular Lie group.
+
+\subsection{Area and curvature}
+We can verify that $\matH^n$ has constant sectional curvature $-1$. It should be no surprise that $\matH^n$ has constant curvature, since it has many symmetries (\emph{i.e.}~isometries). To calculate its sectional curvature we compute the area of a disc. 
+
+\begin{prop}
+The disc of radius $r$ in $\matH^2$ has area 
+$$A(r) = \pi \left(e^{\frac r2} -e ^{-\frac r2}\right)^2 =  4\pi \sinh^2 {\tfrac r2} = 2\pi (\cosh r -1).$$
+\end{prop}
+\begin{proof}
+Recall that the volume form is
+$$\omega = \sqrt{\det g} \cdot dx_1\cdots dx_n.$$
+Let $D(r)$ be a disc in $\matH^2$ of radius $r$. If we centre it in $0$ in the disc model, its Euclidean radius is $\tanh \frac r2$ by Corollary \ref{exp:cor} and we get
+\begin{align*}
+A(r) & = \int_{D(r)} \sqrt{\det g} \cdot dxdy = \int_{D(r)} \left(\frac 2{1-x^2-y^2}\right)^2dxdy \\
+ & = \int_0^{2\pi} \int_0^{\tanh\frac r2} \left(\frac {2}{1-\rho^2}\right)^2 \rho \cdot d\rho d\theta = 2\pi\left[ \frac 2{1-\rho^2}\right]_0^{\tanh \frac r2} \\
+ & = 4\pi \left(\frac 1{1-{\tanh^2 \frac r2}} - 1 \right) = 4\pi \sinh^2 \tfrac r2.
+\end{align*}
+The proof is complete.
+\end{proof}
+
+\begin{cor}
+The hyperbolic space $\matH^n$ has sectional curvature $-1$.
+\end{cor}
+\begin{proof}
+Pick $p\in \matH^n$ and $W\subset T_p$ a 2-dimensional subspace. The image $\exp_p(W)$ is the hyperbolic plane tangent to $W$ in $p$. On a hyperbolic plane 
+$$A(r) = 2\pi(\cosh r - 1) = 2\pi \left(\frac {r^2}{2!} + \frac {r^4}{4!} + o(r^4)\right) = \pi r^2 + \frac{\pi r^4}{12} + o(r^4)$$
+and hence $K=-1$ following the area formula in Section \ref{gauss:subsection}.
+\end{proof}
+
+\subsection{Convexity of the distance function}
+We recall that a function $f\colon \matR^n \to \matR$ is \emph{strictly convex} if 
+$$f(tv+(1-t)w)< tf(v) + (1-t)f(w)$$
+for any pair $v,w \in \matR^n$ of distinct points and any $t\in (0,1)$. 
+\begin{ex} A positive strictly convex function is continuous and admits a minimum if and only if it is proper.
+\end{ex}
+
+We now prove that the distance function is strictly convex on disjoint lines of $\matH^n$. Given two lines $l, l'\subset \matH^n$, we fix an isometry of each line with $\matR$ and we get an identification of $l\times l'$ with the Euclidean plane $\matR\times\matR$.\index{convexity of the distance function}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9cm] {\iftoggle{BW}{convex-BW}{convex}}
+\nota{Distance between points in disjoint lines is a strictly convex function in hyperbolic space.}
+\label{convex:fig}
+\end{center}
+\end{figure}
+
+\begin{prop} \label{distanza:convessa:prop}
+Let $l,l'\subset \matH^n$ be two disjoint lines. The map
+\begin{align*}
+l \times l' & \longrightarrow \matR_{\geqslant 0} \\
+(x,y) & \longmapsto d(x, y)
+\end{align*}
+is strictly convex; it is proper if and only if the lines are ultraparallel. 
+\end{prop}
+\begin{proof}
+With our identifications we have $(x,y) \in \matR \times \matR$. The function $d$ is clearly continuous, hence to prove its convexity it suffices to show that  
+$$d\left(\frac{x_1+x_2}2, \frac{y_1+y_2}2\right) < \frac{d(x_1,y_1) + d(x_2,y_2)}2$$
+for any pair of distinct points $(x_1,y_1), (x_2,y_2) \in l\times l'$. Suppose $x_1\neq x_2$ and denote by $m$ and $n$ the midpoints $\frac{x_1+x_2}2$ and $\frac{y_1+y_2}2$ as in Figure \ref{convex:fig}. 
+
+Let $\sigma_p$ be the reflection at the point $p\in\matH^n$. The isometry $\tau = \sigma_n\circ \sigma_m$ translates the line $r$ containing the segment $mn$ by the quantity $2d(m,n)$: hence it is a hyperbolic transformation with axis $r$. We draw the points  $o = \tau(m)$ and $z_i = \tau(x_i)$ in the figure and note that $z_1 = \sigma_n(x_2)$, hence $d(x_2,y_2) = d(z_1,y_1)$. The triangular inequality implies that
+$$d(x_1, z_1) \leqslant d(x_1,y_1) + d(y_1, z_1) = d(x_1,y_1) + d(x_2, y_2).$$
+A hyperbolic transformation has minimum displacement on its axis $r$ and $x_1 \neq m$ is not in $r$, hence
+$$2d(m,n) = d(m,o) = d(m,\tau(m)) < d(x_1, \tau(x_1)) = d(x_1,z_1).$$
+Finally we get $2d(m,n) <  d(x_1,y_1) + d(x_2, y_2)$ and hence $d$ is convex. 
+
+The function $d$ is proper, that is it has minimum, if and only if the two lines are ultraparallel by Proposition \ref{sottospazi:prop}.
+\end{proof}
+
+\begin{ex}
+The distance function on parallel lines in $\matR^n$ is not strictly convex (it is only convex).
+\end{ex}
+
+\subsection{Convex combinations} \label{convex:subsection}
+Let $p_1,\ldots, p_k$ be $k$ points in $\matH^n, \matR^n$, or $S^n$ and $t_1,\ldots, t_k$ be non-negative numbers with $t_1+\ldots + t_k=1$. The \emph{convex combination}  \index{convex combination} 
+$$p = t_1p_1+ \ldots + t_kp_k$$ 
+is another point in the space defined as follows:
+\begin{align*}
+{\rm in\ } \matR^n: \quad p & =  t_1p_1+ \ldots + t_kp_k \\
+{\rm in\ } I^n,S^n: \quad p & = \frac{t_1p_1+ \ldots + t_kp_k}{\| t_1p_1+ \ldots + t_kp_k\|} 
+\end{align*}
+where $\|v\| = \sqrt{-\langle v, v \rangle}$ on $I^n$. Using convex combination we may define the \emph{barycenter} of the points as $\frac 1k p_1 + \ldots + \frac 1k p_k$. The barycenter may in turn be used to prove the following.
+\index{barycenter}
+
+\begin{prop} \label{iterate:prop}
+Let $\varphi\colon \matH^n \to \matH^n$ be a non-trivial isometry and $k\geqslant 2$:
+\begin{itemize}
+\item if $\varphi$ is elliptic then $\varphi^k$ is elliptic or trivial; 
+\item if $\varphi$ is parabolic then $\varphi^k$ is parabolic;
+\item if $\varphi$ is hyperbolic then $\varphi^k$ is hyperbolic.
+\end{itemize}
+\end{prop}
+\begin{proof}
+If $\varphi\colon \matH^n \to\matH^n$ is an isometry with no fixed points, then $\varphi^k$ also is: if $\varphi^k(x)=x$ then $\varphi$ fixes the finite set $\{x, \varphi(x), \ldots, \varphi^{k-1}(x)\}$ and hence also its barycenter.
+
+If $\varphi$ is parabolic then it fixes the horospheres centred at some point $p\in\partial\matH^n$ and also $\varphi^k$ does, hence it is still parabolic (it cannot be hyperbolic). If $\varphi$ is hyperbolic it has two fixed points at infinity, and $\varphi^k$ too.
+\end{proof}
+
+\begin{prop} \label{finite:fixed:prop}
+Every finite group $\Gamma<\Iso(\matH^n)$ fixes a point in $\matH^n$.
+\end{prop}
+\begin{proof}
+The barycenter of any orbit is fixed by $\Gamma$.
+\end{proof}
+
+\subsection{Parallel transport} \label{parallel:subsection}
+On Riemannian manifolds, the parallel transport is a way to slide frames along geodesics. On $\matH^n$ we can do this simply as follows: for every geodesic $\gamma$, we put $\gamma$ into vertical position in the half-space model $H^n$, and slide the frames vertically in the obvious way.  \index{parallel transport}
+
+This construction furnishes in particular, for every pair $x,y \in \matH^n$ of points, a canonical isometry between $T_x\matH^n$ and $T_y\matH^n$, obtained by sliding frames along the unique geodesic $\gamma$ containing $x$ and $y$.
+
+This canonical identification is of course not transitive on a triple of non-collinear points $x,y,z$: the curvature of $\matH^n$ is responsible for that.
+
+\subsection{Unimodularity}
+The following is a consequence of Corollary \ref{O:unimodular:cor}.
+
+\begin{cor} \label{unimodular:cor}
+The isometry group $\Isomet(\matH^n)$ is unimodular.
+\end{cor}
+
+\begin{oss} \label{Haar:oss}
+A Haar measure for $\Iso(\matH^n)$ may be constructed concretely as follows: fix a point $x\in \matH^n$ and define the measure of a Borel set $S\subset \Iso(\matH^n)$ as the measure of $S(x) = \cup_{\varphi\in S} \varphi(x)\subset\matH^n$. This measure is obviously left-invariant, and is hence also right-invariant since $\Iso(\matH^n)$ is unimodular. As a consequence, it does not depend on the choice of $x$.
+\end{oss}
+
+\subsection{References}
+The hyperbolic space is introduced in various books: two standard references are Benedetti -- Petronio \cite{BP} and Ratcliffe \cite{R}, and most of the arguments presented here were borrowed from these two sources. The proof of Proposition \ref{distanza:convessa:prop} was taken from Farb -- Margalit \cite{FM}.
+Thurston's notes contain some useful trigonometric formulae that we have omitted, see \cite[Chapter 2]{Th}.
+

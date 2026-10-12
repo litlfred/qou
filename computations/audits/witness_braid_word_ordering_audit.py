@@ -89,7 +89,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent.parent
 
 SEARCH_ROOTS = ["computations", "qou-mass"]
-SKIP_PARTS = {"_deprecated", ".git", "node_modules", "__pycache__", ".lake"}
+SKIP_PARTS = {"_deprecated", "fsh-guts", ".git", "node_modules", "__pycache__", ".lake"}
 
 # A field holding a braid word. Matched on the JSON path, case-insensitively.
 WORD_KEY = re.compile(r"braid|(^|[/_])word|generator", re.I)

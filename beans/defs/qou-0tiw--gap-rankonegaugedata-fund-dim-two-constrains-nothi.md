@@ -5,9 +5,11 @@ status: todo
 type: task
 priority: normal
 tags:
+    - 8f-lean
     - reorg-2026-10-04
+    - 8f-open
 created_at: 2026-08-17T22:44:34Z
-updated_at: 2026-10-04T15:20:21Z
+updated_at: 2026-10-10T07:56:53Z
 parent: qou-8lxd
 ---
 
@@ -47,3 +49,15 @@ conjecture class. Its docstring is honest that Tannaka duality is absent from
 Mathlib, but per AGENTS.md 'Axiomatization is NOT a Proof' an axiom is the one
 disposition that hides from #print axioms' sorryAx and from the vacuity audits.
 Worth converting to a conjecture class; not done here.
+
+
+## Triaged 2026-10-10 — OPEN, not mechanical; tagged `8f-open`
+
+Read while working the `8f-lean` front. **This bean already explains why it
+cannot be fixed inline**, under its own heading THE HARD PART: tying
+`fund_dim_two` to `qou.fundamentalObj` needs the spin indexing that
+`SpinDecomposition` supplies, and `SpinDecomposition` is the **conclusion**
+`su2_emergence` produces. The hypothesis would need the conclusion.
+
+So it is open formalisation work with a circularity to break, not a repair.
+The 1bc67fbe docstring scope-warning remains the honest interim state.

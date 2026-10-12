@@ -5,9 +5,10 @@ status: todo
 type: task
 priority: normal
 tags:
+    - 8f-decide
     - reorg-2026-10-04
 created_at: 2026-09-14T18:08:47Z
-updated_at: 2026-10-04T15:11:54Z
+updated_at: 2026-10-10T07:15:36Z
 parent: qou-8lxd
 ---
 

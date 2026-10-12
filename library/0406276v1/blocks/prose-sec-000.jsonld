@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/0406276v1/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/0406276v1/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "References",
-  "pageStart": 38,
-  "pageEnd": 40,
-  "text": "../sections/sec-000-references.md",
-  "derivedFrom": "library/0406276v1/manifest",
-  "sourceDocument": "library/0406276v1/manifest",
+  "title": "Linking integrals in S3 and H3 .",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "text": "../sections/sec-000-1-linking-integrals-in-s3-and-h3.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406276v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406276v1/manifest.jsonld",
   "provenance": "ingested"
 }

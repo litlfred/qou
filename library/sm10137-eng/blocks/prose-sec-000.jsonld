@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/sm10137-eng/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/sm10137-eng/blocks/prose-sec-000",
   "kind": "prose",
-  "title": "(b) + λ2cS",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-000-1-b-λ2cs.md",
-  "derivedFrom": "library/sm10137-eng/manifest",
-  "sourceDocument": "library/sm10137-eng/manifest",
+  "title": "Bibliography",
+  "pageStart": 25,
+  "pageEnd": 26,
+  "text": "../sections/sec-000-bibliography.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
   "provenance": "ingested"
 }

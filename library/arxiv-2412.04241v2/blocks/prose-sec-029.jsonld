@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2412.04241v2/blocks/prose-sec-029",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2412.04241v2/blocks/prose-sec-029",
   "kind": "prose",
   "title": "Functions near roots of unity and the naive Habiro ring",
   "pageStart": 59,
   "pageEnd": 63,
   "text": "../sections/sec-029-51-functions-near-roots-of-unity-and-the-naive-h.md",
-  "derivedFrom": "library/arxiv-2412.04241v2/manifest",
-  "sourceDocument": "library/arxiv-2412.04241v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2412.04241v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2412.04241v2/manifest.jsonld",
   "provenance": "ingested"
 }

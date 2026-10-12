@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/nrarith/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/nrarith/blocks/prose-sec-001",
   "kind": "prose",
-  "title": "PSL2C has algebraic integer trace if and only if it has algebraic",
-  "pageStart": 3,
-  "pageEnd": 4,
-  "text": "../sections/sec-001-2-psl2c-has-algebraic-integer-trace-if-and-only.md",
-  "derivedFrom": "library/nrarith/manifest",
-  "sourceDocument": "library/nrarith/manifest",
+  "title": "Trace-ﬁelds",
+  "pageStart": 4,
+  "pageEnd": 7,
+  "text": "../sections/sec-001-2-trace-ﬁelds.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/nrarith/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/nrarith/manifest.jsonld",
   "provenance": "ingested"
 }

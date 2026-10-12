@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/drinfeld1991-quasitriangular/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "drinfeld1991-quasitriangular",
+  "contains": [
+    "library/drinfeld1991-quasitriangular/sections/sec-front-matter",
+    "library/drinfeld1991-quasitriangular/sections/sec-000",
+    "library/drinfeld1991-quasitriangular/sections/sec-001",
+    "library/drinfeld1991-quasitriangular/sections/sec-002",
+    "library/drinfeld1991-quasitriangular/sections/sec-003",
+    "library/drinfeld1991-quasitriangular/sections/sec-004",
+    "library/drinfeld1991-quasitriangular/sections/sec-005",
+    "library/drinfeld1991-quasitriangular/sections/sec-006",
+    "library/drinfeld1991-quasitriangular/sections/sec-back-matter"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "meta": {
+    "doc_id": "drinfeld1991-quasitriangular",
+    "title_source": "slug",
+    "source_file": "drinfeld1991-quasitriangular.pdf",
+    "source_sha256": "1a1d279e92445fdc15830f12d3f8226731290d9e516651971d846250cf7469ba",
+    "pages": 17,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

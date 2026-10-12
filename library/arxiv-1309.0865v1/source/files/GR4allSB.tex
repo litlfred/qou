@@ -1,0 +1,504 @@
+\documentclass[12pt]{amsart}
+
+\IfFileExists{srcltx.sty}{\usepackage{srcltx}}
+
+\numberwithin{equation}{section}
+
+\usepackage[latin1]{inputenc}
+\usepackage{xspace,amssymb,amsfonts,euscript}
+\usepackage{amsthm,amsmath}
+\usepackage{palatino}
+\usepackage{euscript}
+\usepackage[dvips]{epsfig}
+\usepackage{pinlabel}
+
+\usepackage[hmargin=3cm,vmargin=3.5cm]{geometry}
+
+\usepackage{psfrag}
+
+\input xy \xyoption {all}
+%\input comments.sty
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\RequirePackage{color}
+\definecolor{myred}{rgb}{0.75,0,0}
+\definecolor{mygreen}{rgb}{0,0.5,0}
+\definecolor{myblue}{rgb}{0,0,0.65}
+
+\RequirePackage{ifpdf}
+\ifpdf
+  \IfFileExists{pdfsync.sty}{\RequirePackage{pdfsync}}{}
+  \RequirePackage[pdftex,
+   colorlinks = true,
+   urlcolor = myblue, % \href{...}{...} external (URL)
+   citecolor = mygreen, % \cite{...}
+   linkcolor = myred, % \ref{...} and \pageref{...}
+   pagebackref,
+%   pdfpagemode=Non,e
+   bookmarksopen=true]{hyperref}
+\else
+  \RequirePackage[hypertex]{hyperref}
+\fi
+
+%\RequirePackage{ae, aecompl, aeguill} % to have pretty pdf
+
+% gothic, blackboard
+
+\def\AG{{\mathfrak A}}  \def\ag{{\mathfrak a}}  \def\AM{{\mathbb{A}}}
+\def\BG{{\mathfrak B}}  \def\bg{{\mathfrak b}}  \def\BM{{\mathbb{B}}}
+\def\CG{{\mathfrak C}}  \def\cg{{\mathfrak c}}  \def\CM{{\mathbb{C}}}
+\def\DG{{\mathfrak D}}  \def\dg{{\mathfrak d}}  \def\DM{{\mathbb{D}}}
+\def\EG{{\mathfrak E}}  \def\eg{{\mathfrak e}}  \def\EM{{\mathbb{E}}}
+\def\FG{{\mathfrak F}}  \def\fg{{\mathfrak f}}  \def\FM{{\mathbb{F}}}
+\def\GG{{\mathfrak G}}  \def\gg{{\mathfrak g}}  \def\GM{{\mathbb{G}}}
+\def\HG{{\mathfrak H}}  \def\hg{{\mathfrak h}}  \def\HM{{\mathbb{H}}}
+\def\IG{{\mathfrak I}}  
+%\def\ig{{\mathfrak i}}
+\def\IM{{\mathbb{I}}}
+\def\JG{{\mathfrak J}}  \def\jg{{\mathfrak j}}  \def\JM{{\mathbb{J}}}
+\def\KG{{\mathfrak K}}  \def\kg{{\mathfrak k}}  \def\KM{{\mathbb{K}}}
+\def\LG{{\mathfrak L}}  \def\lg{{\mathfrak l}}  \def\LM{{\mathbb{L}}}
+\def\MG{{\mathfrak M}}  \def\mg{{\mathfrak m}}  \def\MM{{\mathbb{M}}}
+\def\NG{{\mathfrak N}}  \def\ng{{\mathfrak n}}  \def\NM{{\mathbb{N}}}
+\def\OG{{\mathfrak O}}  \def\og{{\mathfrak o}}  \def\OM{{\mathbb{O}}}
+\def\PG{{\mathfrak P}}  \def\pg{{\mathfrak p}}  \def\PM{{\mathbb{P}}}
+\def\QG{{\mathfrak Q}}  \def\qg{{\mathfrak q}}  \def\QM{{\mathbb{Q}}}
+\def\RG{{\mathfrak R}}  \def\rg{{\mathfrak r}}  \def\RM{{\mathbb{R}}}
+\def\SG{{\mathfrak S}}  \def\sg{{\mathfrak s}}  \def\SM{{\mathbb{S}}}
+\def\TG{{\mathfrak T}}  \def\tg{{\mathfrak t}}  \def\TM{{\mathbb{T}}}
+\def\UG{{\mathfrak U}}  \def\ug{{\mathfrak u}}  \def\UM{{\mathbb{U}}}
+\def\VG{{\mathfrak V}}  \def\vg{{\mathfrak v}}  \def\VM{{\mathbb{V}}}
+\def\WG{{\mathfrak W}}  \def\wg{{\mathfrak w}}  \def\WM{{\mathbb{W}}}
+\def\XG{{\mathfrak X}}  \def\xg{{\mathfrak x}}  \def\XM{{\mathbb{X}}}
+\def\YG{{\mathfrak Y}}  \def\yg{{\mathfrak y}}  \def\YM{{\mathbb{Y}}}
+\def\ZG{{\mathfrak Z}}  \def\zg{{\mathfrak z}}  \def\ZM{{\mathbb{Z}}}
+
+% bold, mathcal
+
+\def\AB{{\mathbf A}}  \def\ab{{\mathbf a}}  \def\AC{{\mathcal{A}}}
+\def\BB{{\mathbf B}}  \def\bb{{\mathbf b}}  \def\BC{{\mathcal{B}}}
+\def\CB{{\mathbf C}}  \def\cb{{\mathbf c}}  \def\CC{{\mathcal{C}}}
+\def\DB{{\mathbf D}}  \def\db{{\mathbf d}}  \def\DC{{\mathcal{D}}}
+\def\EB{{\mathbf E}}  \def\eb{{\mathbf e}}  \def\EC{{\mathcal{E}}}
+\def\FB{{\mathbf F}}  \def\fb{{\mathbf f}}  \def\FC{{\mathcal{F}}}
+\def\GB{{\mathbf G}}  \def\gb{{\mathbf g}}  \def\GC{{\mathcal{G}}}
+\def\HB{{\mathbf H}}  \def\hb{{\mathbf h}}  \def\HC{{\mathcal{H}}}
+\def\IB{{\mathbf I}}  \def\ib{{\mathbf i}}  \def\IC{{\mathcal{I}}}
+\def\JB{{\mathbf J}}  \def\jb{{\mathbf j}}  \def\JC{{\mathcal{J}}}
+\def\KB{{\mathbf K}}  \def\kb{{\mathbf k}}  \def\KC{{\mathcal{K}}}
+\def\LB{{\mathbf L}}  \def\lb{{\mathbf l}}  \def\LC{{\mathcal{L}}}
+\def\MB{{\mathbf M}}  \def\mb{{\mathbf m}}  \def\MC{{\mathcal{M}}}
+\def\NB{{\mathbf N}}  \def\nb{{\mathbf n}}  \def\NC{{\mathcal{N}}}
+\def\OB{{\mathbf O}}  \def\ob{{\mathbf o}}  \def\OC{{\mathcal{O}}}
+\def\PB{{\mathbf P}}  \def\pb{{\mathbf p}}  \def\PC{{\mathcal{P}}}
+\def\QB{{\mathbf Q}}  \def\qb{{\mathbf q}}  \def\QC{{\mathcal{Q}}}
+\def\RB{{\mathbf R}}  \def\rb{{\mathbf r}}  \def\RC{{\mathcal{R}}}
+\def\SB{{\mathbf S}}  \def\sb{{\mathbf s}}  \def\SC{{\mathcal{S}}}
+\def\TB{{\mathbf T}}  \def\tb{{\mathbf t}}  \def\TC{{\mathcal{T}}}
+\def\UB{{\mathbf U}}  \def\ub{{\mathbf u}}  \def\UC{{\mathcal{U}}}
+\def\VB{{\mathbf V}}  \def\vb{{\mathbf v}}  \def\VC{{\mathcal{V}}}
+\def\WB{{\mathbf W}}  \def\wb{{\mathbf w}}  \def\WC{{\mathcal{W}}}
+\def\XB{{\mathbf X}}  \def\xb{{\mathbf x}}  \def\XC{{\mathcal{X}}}
+\def\YB{{\mathbf Y}}  \def\yb{{\mathbf y}}  \def\YC{{\mathcal{Y}}}
+\def\ZB{{\mathbf Z}}  \def\zb{{\mathbf z}}  \def\ZC{{\mathcal{Z}}}
+
+% EuScript
+
+\def\AS{{\EuScript A}}
+\def\BS{{\EuScript B}}
+\def\CS{{\EuScript C}}
+\def\DS{{\EuScript D}}
+\def\ES{{\EuScript E}}
+\def\FS{{\EuScript F}}
+\def\GS{{\EuScript G}}
+\def\HS{{\EuScript H}}
+\def\IS{{\EuScript I}}
+\def\JS{{\EuScript J}}
+\def\KS{{\EuScript K}}
+\def\LS{{\EuScript L}}
+\def\MS{{\EuScript M}}
+\def\NS{{\EuScript N}}
+\def\OS{{\EuScript O}}
+\def\PS{{\EuScript P}}
+\def\QS{{\EuScript Q}}
+\def\RS{{\EuScript R}}
+\def\SS{{\EuScript S}}
+\def\TS{{\EuScript T}}
+\def\US{{\EuScript U}}
+\def\VS{{\EuScript V}}
+\def\WS{{\EuScript W}}
+\def\XS{{\EuScript X}}
+\def\YS{{\EuScript Y}}
+\def\ZS{{\EuScript Z}}
+
+% greek
+
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\G{\Gamma}
+\newcommand{\oG}{\overline{\Gamma}}
+\def\d{\delta}
+\def\D{\Delta}
+\def\e{\varepsilon}
+\def\ph{\varphi}
+\def\l{\lambda}
+\def\L{\Lambda}
+\def\O{\Omega}
+\def\o{\omega}
+\def\r{\rho}
+\def\s{\sigma}
+\def\th{\theta}
+\def\Th{\Theta}
+\def\t{\tau}
+\def\w{\omega}
+\def\z{\zeta}
+
+
+
+\newcommand{\nc}{\newcommand} \newcommand{\renc}{\renewcommand}
+
+\newcommand{\rdots}{\mathinner{ \mkern1mu\raise1pt\hbox{.}
+    \mkern2mu\raise4pt\hbox{.}
+    \mkern2mu\raise7pt\vbox{\kern7pt\hbox{.}}\mkern1mu}}
+
+\def\mini{{\mathrm{min}}}
+\def\maxi{{\mathrm{max}}}
+\def\top{{\mathrm{top}}}
+\def\sing{{\mathrm{sing}}}
+
+\def\reg{{\mathrm{reg}}}
+\def\subreg{{\mathrm{subreg}}}
+\def\res{{\mathrm{res}}}
+\def\rs{{\mathrm{rs}}}
+
+\def\red{{\mathrm{red}}}
+
+\def\modules{{\text{-mod}}}
+
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\Res}{Res}
+
+\DeclareMathOperator{\HOM}{\mathcal{H}om}
+
+\def\pr{{\mathrm{pr}}}
+\newcommand{\elem}[1]{\stackrel{#1}{\longto}}
+\DeclareMathOperator{\RHOM}{R\underline{Hom}}
+
+\def\wh{\widehat}
+\def\wt{\widetilde}
+\def\ov{\overline}
+\def\un{\underline}
+
+\def\p{{}^p}
+
+\def\to{\rightarrow}
+\def\from{\leftarrow}
+\def\longto{\longrightarrow}
+\def\longfrom{\longleftarrow}
+\def\injto{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+\nc{\triright}{\stackrel{[1]}{\to}}
+\nc{\longtriright}{\stackrel{[1]}{\longto}}
+
+
+\nc{\Br}{\mathcal{B}}
+\nc{\HotRR}{{}_R\mathcal{K}_R}
+\nc{\HotR}{\mathcal{K}_R}
+\nc{\excise}[1]{}
+\nc{\defect}{\text{df}}
+\nc{\h}[1]{\underline{H}_{#1}}
+
+
+\nc{\Ga}{\mathbb{G}_a} % additive group
+\nc{\Gm}{\mathbb{G}_m} % multiplicative group
+
+\nc{\Perv}{{\mathbf{P}}}
+
+%\nc{\A}{\mathbb{A}} % affine space 
+\nc{\IH}{{\mathrm{IH}}}
+%\nc{\sH}{\mathcal{H}} % sheaf cohomology
+
+\nc{\ic}{\mathbf{IC}}
+
+\nc{\gl}{{\mathfrak{gl}}}
+\renc{\sl}{{\mathfrak{sl}}}
+\renc{\sp}{{\mathfrak{sp}}}
+
+\nc{\HBM}{H^{BM}}
+
+\DeclareMathOperator{\codim}{{\mathrm{codim}}}
+\DeclareMathOperator{\im}{{\mathrm{Im}}}
+\DeclareMathOperator{\For}{For} % Forgetful functor
+\DeclareMathOperator{\Char}{char} \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\supp}{supp} \DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\End}{End} %\DeclareMathOperator{\BS}{BS}
+\DeclareMathOperator{\Proj}{Proj} \DeclareMathOperator{\Rep}{Rep}
+\DeclareMathOperator{\Loc}{Loc_{f}}
+\DeclareMathOperator{\id}{Id}
+\DeclareMathOperator{\Bs}{BS}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\grk}{grk}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{deth}[thm]{Definition/Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{claim}[thm]{Claim}  
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{assumption}[thm]{Assumption}
+
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{constr}[thm]{Construction}
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{ex}[thm]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{question}[thm]{Question}
+
+
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\coeq}{coeq}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\cone}{cone}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\hocolim}{hocolim}
+\DeclareMathOperator{\holim}{holim}
+\DeclareMathOperator{\Iso}{Iso}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\Tot}{Tot}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Specf}{Specf}
+\DeclareMathOperator{\Ob}{Ob}
+
+\newcommand{\nn}{\nonumber} \newcommand{\nid}{\noindent}
+\newcommand{\ra}{\rightarrow} \newcommand{\la}{\leftarrow}
+\newcommand{\xra}{\xrightarrow} \newcommand{\xla}{\xleftarrow}
+
+\newcommand{\into}{\hookrightarrow}
+
+\newcommand{\weq}{\xrightarrow{\sim}}
+\newcommand{\cofib}{\rightarrowtail}
+\newcommand{\fib}{\twoheadrightarrow}
+
+\newcommand{\qchoose}[2]
+{ \left [ \begin{array}{c}
+    #1 \\ #2 \end{array} \right ]}
+
+\def\iff{\Leftrightarrow}
+\def\Iff{\Longleftrightarrow}
+
+\def\bfA{\mathbf A}
+\def\uk{\underline{k}}
+\def\del{\partial}
+\def\pt{{\mathrm{pt}}}
+\def\op{{\mathrm{op}}}
+
+\DeclareMathOperator{\RGa}{R\G}
+\DeclareMathOperator{\RGc}{R\G_c}
+\DeclareMathOperator{\RHom}{RHom}
+
+
+\def\Gr{{\EuScript Gr}}
+\def\Gras{\Gr}
+
+\def\simpleroots{\Delta}
+\def\Omin{{\OC_\mini}}
+\def\hsr{{\alpha_0}}
+
+\def\extend{k' \stackrel{L}{\otimes}}
+\def\Mod{\mathrm{Mod}}
+\def\Bim{\mathrm{Bim}}
+\def\Vect{\mathrm{Vect}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{bbm}
+\def\C{{\mathbbm C}}
+\def\N{{\mathbbm N}}
+\def\R{{\mathbbm R}}
+\def\Z{{\mathbbm Z}}
+\def\Q{{\mathbbm Q}}
+\def\1{\mathbbm{1}}
+
+
+\newcommand{\ul}{\underline}
+\newcommand{\ubr}[2]{\underbrace{#1}_{#2}}
+\newcommand{\Zvv}{\ZM[v^{\pm 1}]}
+\newcommand{\Nvv}{\ZM_{\ge 0}[v,v^{-1}]}
+\newcommand{\ot}{\otimes}
+\newcommand{\LL}{LL}
+\newcommand{\oLL}{\overline{LL}}
+\newcommand{\LLL}{\mathbb{LL}}
+\newcommand{\LLspan}{<\LL>}
+\newcommand{\LLLspan}{<\LLL>}
+\newcommand{\LLspangen}{<\LL>^{\textrm{any}}}
+\newcommand{\BSBim}{\mathbb{BS}\textrm{Bim}}
+\newcommand{\SBim}{\mathbb{S}\textrm{Bim}}
+\newcommand{\StdBim}{Std\textrm{Bim}}
+\newcommand{\pa}{\partial}
+\newcommand{\co}{\colon}
+\newcommand{\define}{\stackrel{\mbox{\scriptsize{def}}}{=}}
+\newcommand{\sumset}{\stackrel{\scriptstyle{\oplus}}{\scriptstyle{\subset}}}
+\newcommand{\std}{\textrm{std}}
+\newcommand{\new}{\textrm{new}}
+\newcommand{\DStd}{\DC^\std}
+\newcommand{\FStd}{\FC^\std}
+\newcommand{\Kar}{\textrm{Kar}}
+\newcommand{\StdF}{\mathcal{S}td}
+%\newcommand{\IC}{\textrm{IC}}
+
+\newcommand{\ig}[2]
+{\vcenter{\xy (0,0)*{\includegraphics[scale=#1]{fig/#2}} \endxy}}
+\newcommand{\igc}[2]
+{\begin{center} \includegraphics[scale=#1]{fig/#2} \end{center}}
+\newcommand{\ige}[2]
+{\includegraphics[scale=#1]{fig/#2}}
+
+\newcommand{\simto}{\stackrel{\sim}{\longrightarrow}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\psfrag{f}[cc][cc]{\small{$f$}}
+\psfrag{soff}[cc][cc]{\small{$s(f)$}}
+\psfrag{as}[cc][cc]{\small{$\a_s$}}
+\psfrag{at}[cc][cc]{\small{$\a_t$}}
+\psfrag{parab}[cc][cc]{\small{$\pa_r(\a_b)$}}
+\psfrag{JWmm1}[cc][cc]{\small{$JW_{m-1}$}}
+\psfrag{pasf}[cc][cc]{\small{$\pa_s(f)$}}
+\psfrag{i1}[cc][cc]{\small{$i_1$}}
+\psfrag{i2}[cc][cc]{\small{$i_2$}}
+\psfrag{p1}[cc][cc]{\small{$p_1$}}
+\psfrag{p2}[cc][cc]{\small{$p_2$}}
+\psfrag{half}[cc][cc]{\small{$\frac{1}{2}$}}
+\psfrag{a}[cc][cc]{\tiny{$JW$}}
+\psfrag{JW}[cc][cc]{\small{$JW$}}
+\psfrag{b}[cc][cc]{\small{$b$}}
+\psfrag{1overa}[cc][cc]{\small{$\frac{1}{\a_s}$}}
+\psfrag{1overar}[cc][cc]{\small{$\frac{1}{\a_r}$}}
+\psfrag{1overag}[cc][cc]{\small{$\frac{1}{\a_g}$}}
+\psfrag{1overab}[cc][cc]{\small{$\frac{1}{\a_b}$}}
+\psfrag{1overa2}[cc][cc]{\small{$\frac{1}{\a_s^2}$}}
+\psfrag{LLk}[cc][cc]{\small{$\LL_k$}}
+\psfrag{LLk-1}[cc][cc]{\small{$\LL_{k-1}$}}
+\psfrag{wk-1}[cc][cc]{\small{$w_{k-1}$}}
+\psfrag{wk}[cc][cc]{\small{$w_k$}}
+\psfrag{phik}[cc][cc]{\small{$\phi_k$}}
+\psfrag{s}[cc][cc]{\small{$s$}}
+\psfrag{LLkpn}[cc][cc]{\small{$\LL_{k+n}$}}
+\psfrag{LLnplwk}[cc][cc]{\small{$\LL_{n+l(w_k)}$}}
+\psfrag{ab2ar}[cc][cc]{\small{$\a_b^2\a_r$}}
+\psfrag{abararb}[cc][cc]{\small{$\a_b\a_r(\a_b+\a_r)$}}
+\psfrag{alpha}[cc][cc]{\small{$\a$}}
+\psfrag{beta}[cc][cc]{\small{$\b$}}
+\psfrag{gamma}[cc][cc]{\small{$\gamma$}}
+\psfrag{LLspan}[cc][cc]{\small{$\LLspangen$}}
+\psfrag{lenm1}[cc][cc]{\small{$\le n-1$}}
+\psfrag{isin}[cc][cc]{\small{$\in$}}
+\psfrag{len}[cc][cc]{\small{$\le n$}}
+
+\psfrag{1over2}{\Large{$\frac{1}{[2]}$}}
+\psfrag{1over3}{\Large{$\frac{1}{[3]}$}}
+\psfrag{2over3}{\Large{$\frac{[2]}{[3]}$}}
+\psfrag{1overx}{\Large{$\frac{1}{x}$}}
+\psfrag{1overxym1}{\Large{$\frac{1}{xy-1}$}}
+\psfrag{xoverxym1}{\Large{$\frac{x}{xy-1}$}}
+\psfrag{yoverxym1}{\Large{$\frac{y}{xy-1}$}}
+\psfrag{JW1}{$JW_1$}
+\psfrag{JW2}{$JW_2$}
+\psfrag{JW2sm}{\tiny{$JW_2$}}
+\psfrag{JW3}{$JW_3$}
+
+\psfrag{fgtofgeqfsg}[cc][cc]{\small{$f \ot g \mapsto f \ot g = fs(g) \ot 1$}}
+\psfrag{1tomess}[cc][cc]{\small{$1\ot 1 \mapsto \d \ot 1 - 1 \ot \d$}}
+\psfrag{m1m}[cc][cc]{\small{$(-1)^m$}}
+\psfrag{1overrho}[cc][cc]{\small{$\frac{1}{\rho}$}}
+
+\psfrag{gl}[cc][cc]{\small{$g_l$}}
+\psfrag{psi}[cc][cc]{\small{$\psi$}}
+\psfrag{phiM}[cc][cc]{\small{$\phi_M$}}
+\psfrag{eta}[cc][cc]{\small{$\eta$}}
+\psfrag{xb}[cc][cc]{\small{$\xb$}}
+\psfrag{yb}[cc][cc]{\small{$\yb$}}
+\psfrag{zb}[cc][cc]{\small{$\zb$}}
+\psfrag{Mm1}[cc][cc]{\small{$M-1$}}
+\psfrag{lk}[cc][cc]{\small{$< k$}}
+\psfrag{k}[cc][cc]{\small{$k$}}
+
+\psfrag{lll}[cc][cc]{\small{$\lambda$}}
+\psfrag{lli}[cc][cc]{\small{$\lambda^{-1}$}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+
+\title{Soergel calculus}
+
+\author{Ben Elias} \address{Massachusetts Institute of Technology,
+  Boston, USA}
+\email{belias@mit.edu}
+\author{Geordie Williamson} \address{Max-Planck-Institut f\"ur
+  Mathematik, Bonn, Germany}
+\email{geordie@mpim-bonn.mpg.de}
+
+\maketitle
+
+\begin{center}
+  \emph{\small{ To Mikhail Khovanov and Rapha\"el Rouquier, who taught us generators and relations.}}
+\end{center}
+
+\begin{abstract}
+%We present the monoidal category of Soergel bimodules
+%  by generators and relations, using the language of planar diagrammatics.
+The monoidal category of Soergel bimodules is an
+  incarnation of the Hecke category, a fundamental object in
+  representation theory. We present
+  this category by generators and relations, using the language of
+  planar diagrammatics. We show that Libedinsky's light leaves give a
+  basis for morphism spaces and give
+  a new proof of Soergel's classification of the indecomposable
+  Soergel bimodules.
+\end{abstract}
+
+%\tableofcontents
+
+ \input{Intro}
+
+ \input{HeckeBackground}
+
+\input{SBimBackground}
+ 
+\input{StdDiagrams}
+
+ \input{SoergelDiagrams} 
+
+ \input{LightLeaves}
+
+\input{LLLproof}
+
+\input{GR4allSB.bbl}
+
+%\bibliographystyle{myalpha}
+%\bibliography{GR4allSB}
+
+\end{document}
+
+\begin{thebibliography}{10}
+
+\end{thebibliography}

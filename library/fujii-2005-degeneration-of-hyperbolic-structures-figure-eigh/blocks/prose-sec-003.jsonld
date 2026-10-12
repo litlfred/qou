@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/blocks/prose-sec-003",
   "kind": "prose",
-  "title": "X2 + X0X2",
-  "pageStart": 6,
-  "pageEnd": 6,
-  "text": "../sections/sec-003-1-x2-x0x2.md",
-  "derivedFrom": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest",
-  "sourceDocument": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest",
+  "title": "Points of ﬁnite order on the elliptic curve E and Dehn ﬁlling on the ﬁgure-eight knot",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "text": "../sections/sec-003-4-points-of-ﬁnite-order-on-the-elliptic-curve-e.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,202 @@
+\section{Floer Cohomology and Mutations}\label{sec:floerhomo}
+We begin this section with recalling the notion of Lagrangian Intersection Floer cohomology with local systems. After setting up the conventions and the review of the Floer cohomology, we prove the invariance of Floer cohomology under mutation. This review follows the exposition in Section 2 of \cite{wall} and the local system version follows the exposition in \cite{aurBeg}. 
+
+\subsection{Floer Cohomology with local system} \label{subsec:flohomloc}
+
+We explain the construction of Floer cohomology with local system for monotone Lagrangians. This was first introduced by Oh in \cite{ohMonotone}, \cite{oh:addendum}. Let $(L,K)$ be a monotone pair of compact orientable spin Lagrangians in a compact monotone symplectic manifold $M$ that transversely intersect where $L$ is locally mutable and $K$ is outside the mutation neighborhood. Assume the minimal Maslov number of $L,K$ are at least 2. Let $\mathcal{E}_L,\mathcal{E}_K$ be flat $\C$ line bundles over $L,K$ with holonomy $\rho_L,\rho_K $. We denote the tuple $(L,\rho_L)$ and $(K,\rho_K)$ by $\wt L , \wt K$. We define the chain complex  $CF(\wt L, \wt K)$ as follows.
+
+\begin{equation*}
+    CF(\wt L, \wt K) = \bigoplus_{p\in L \cap K} \hom(\mathcal{E}_{\wt {L}}|_p,\mathcal{E}_{\wt {K}}|_p )
+\end{equation*}
+
+We explain the relevant moduli spaces of strips that we use to define a coboundary operator. Fix a $t$-dependent almost complex structure $J_t$ such that $J_t=J_{std}$ in the mutation neighborhood and makes all the holomorphic strips $u:\R \times \interval \to M$ with $u(\R \times \{0\})\sub L$ and $u(\R \times \{1\})\sub K$ regular by using classical transversality results such as Proposition 3.2 in \cite{ohMonotone}.  We denote the moduli space of unparameterized (i.e., quotiented by the $\R$ translation of the domain) holomorphic strips by $\mathcal{M}(L,K)$ and we use $\mathcal{M}(L,K)_0$ to denote the moduli space of strips of index one. To ensure that a regular $J$ such that it restricts to the standard $J_{std}$ in the mutation neighborhood, we just note that there are no holomorphic strips or discs contained completely in the mutation with boundary on $L$ or $K$. We can also ensure that $J_0,J_1$ are chosen generically such that the Maslov $2$ discs with boundary on $L,K$ are regular.   The disc potential of $\wt L$ is defined as follows. Let $\beta \in H_2(M,L)$, we denote the moduli space of Maslov $2$ disc in the homology class $\beta$  by $\mathcal{M}(L,
+\beta)$.  These  moduli spaces have an evaluation map $ev : \mathcal{M}(L) \to L$ after choosing a boundary point, and $n_\beta$ denotes the degree of the evaluation map. 
+
+\begin{equation} \label{eq:discpot}
+    W(\wt L) = \sum_{\beta \in \mathcal{M}(L,\beta)} n_\beta . \rho_L (\del \beta)
+\end{equation}
+
+We can similarly define the disc potential $W(\wt K)$ for the Lagrangian $K$. Given a rigid holomorphic strip $u\in \mathcal{M}(L,K)_0$ such that $\lim_{s\to -\infty}u(s,t)=p$ and $\lim_{s\to \infty }u(s,t)=q$. We denote the parallel transport map along $u(s,0)$ on the line bundle $\mathcal{E}_{\wt L}$ by  $\psi_L(u): \mathcal{E}_{\wt L}|_p \to \mathcal{E}_{\wt L}|_q $.  Similarly, define $\psi_K(u)$ to be the parallel transport along $u(s,1)$.
+
+We now define the Floer coboundary  operator. Denote the coboundary operator as $\del : CF(\wt L, \wt K) \to CF(\wt L, \wt K) $, we will explain how  it acts on an element $\eta \in \hom (\mathcal{E}_{\wt {L}}|_p,\mathcal{E}_{\wt {K}}|_p )$ of a summand in $CF(\wt L, \wt K)$ and then extend it linearly.
+
+\begin{equation*}
+    \del \eta = \sum_{u\in \mathcal{M}(L,K)_0} \psi_K(u) \of \eta \of \psi_L(u)\inv
+\end{equation*}
+
+\noindent We can check that for a generic choice of $J$ we can arrange $\del^2 x = (W(\wt L) - W(\wt K)) x$, thus when the disc potentials are equal, we have that $\del$ is an actual differential.
+
+\begin{Theorem}[\cite{ohMonotone},\cite{oh:addendum}]
+
+If the disc potentials of the Lagrangians in the monotone pair match, i.e.,  $W(\wt L ) = W(\wt K)$, for a generic choice of $J_t$ we have that $\del^2=0$. We define the Lagrangian Intersection Floer homology $HF$ of $(\wt L$, $\wt K)$ as the homology of the chain complex $(CF(\wt L, \wt K),\del)$. $$HF (\wt L, \wt K) = \frac{\ker \del }{\im \del}$$
+
+\end{Theorem}
+
+We explain the properties on the almost complex that we require while counting strips.  We call a $t$-dependent family $J_t$ of almost complex structure \textit{regular for Floer theory} if it satisfies the following properties:
+\begin{itemize}
+    \item $J_0$,$J_1$ makes the moduli space of Maslov 2 discs with 1 boundary marking with boundary on $L$ or $K$ regular and the evaluation at boundary is transverse to $L \cap K$.
+    \item No Chern 1 $J_t$ holomorphic sphere intersects $L\cap K$ for all $t \in \interval$.
+    \item All Maslov index 1 $J_t$ holomorphic strips are regular.
+    \item There are no negative index $J_t$ holomorphic strips.
+\end{itemize}
+
+\noindent Although we don't enforce regularity of index two strips, counting the index one $J_t$ holomorphic strips for a $J_t$ that is regular for Floer theory gives us a correct Floer coboundary operator $\del$. This follows from the fact that the space of regular $\J^{reg}$ of t-dependent almost complex structures is dense, and regularity of index one strips imply by a implicit function theorem argument and Gromov compactness argument that the disc count for $J_t$ is constant for small perturbations. 
+
+\begin{remark}
+Since the Lagrangian $L$ is exact in the mutation neighborhood, there are no holomorphic discs or spheres lying completely inside the mutation neighborhood. Thus, we can choose any almost complex structure in the mutation neighborhood, and then we can assume that throughout our perturbation scheme, we don't change the almost complex structure in the mutation neighborhood. We can also ensure that $J_0 = J_1$ since Maslov two discs are simple by \cite{Lazz} and the usual transversality arguments for simple holomorphic maps show that for a Baire dense set one attains regularity.
+\end{remark} 
+
+\subsection{Bulk deformed monotone Floer theory with domain dependent perturbations}
+
+We will explain a version of monotone Lagrangian Floer cohomology where we use domain dependent almost complex structure.  In Section \ref{sec:modcons} and Section \ref{sec:reg} we obtain a domain dependent choice of almost complex structure such that the constrained moduli space of rigid holomorphic strips with markings going to a nice divisor $D$ are in bijection with rigid broken strips. We will define a deformation of the Floer coboundary $\del$ by counting strips with interior markings going to a nice divisor $D$ and show that the resulting Floer homology is the same as the usual one which we defined in the previous subsection. For more details on the construction of domain dependent Lagrangian intersection theory, see \cite{charwoodstabil}
+
+We explain describe domain dependent almost complex structure for marked strips. We define $\M^s_k$ to be the moduli space of strips with $k$ interior markings and $\mathcal{U}^s_k \xrightarrow{\wt \pi^s_k} \M^s_k$ be the universal moduli space. A domain dependent choice of almost complex structure $\mathcal {J}_k$ for $k\geq 1$ is a map $\mathcal{J}_k : \mathcal{U}^s_k \to \mathcal{J}(M,\omega,D)$. A collection of domain dependent almost complex structure is said to be coherent if it satisfies certain properties under gluing and breaking as defined in Definition 3.14 in \cite{charwoodstabil}. A map $u:S_{\textbf{z}} \to (M,L,K)$  from a $k$ marked strip $S_{\textbf{z}} = \wt {\pi^s_k} \inv ([\textbf{z}]) $ with boundary lying on $L,K$ and the endpoints going to the intersection points in $L\cap K $, where $[\textbf{z}] \in \M^s_k$ is called  holomorphic with respect to the domain dependent almost complex structure $\mathcal{J}$ if it satisfies the domain dependent version of the Cauchy Riemann equation 
+\begin{equation*}
+   du(z) + \J_k(z,(u(z)))\of du \of j_S = 0 .
+\end{equation*}
+
+
+\subsubsection{Choosing perturbations}\label{ssec:cp}
+
+We explain how to choose a domain dependent almost complex structure to achieve regularity of strips. We choose perturbation scheme $\mathcal{P}$ inductively on the number of interior marked points. For $k=0$ marked points, we choose a $t-$dependent almost complex structure that is regular for Floer theory and the index 2 strips are also regular. For a disc with one interior and one boundary marking, we set a domain dependent almost complex structure that makes the moduli space of discs with boundary on $L$ and $K$ regular and the evaluation map of interior marked point to $D$ with multiplicity $d$ and boundary marked point going to $L\cap K$ regular for all $d$.  For $k=1$ marked strip, the domain dependent perturbations on the boundary strata  are determined from the ones on the disc with one interior marking and the t-dependent $J_t$ chosen for $k=0$. We extend the choice to the whole of $\mathcal{U}^s_1$ so that near the end points (input and output) of the strip, $\J_1(z)= J_t(z)$ and we require any $\J_1$ holomorphic strip with the interior marking mapping to $D$ with multiplicity $d$ regular in the constrained moduli space. This can be attained by following the treatment of regularity of tangency conditions as done in \cite{CMtrans}. We proceed inductively to get a coherent perturbation data $\mathcal{P}$ that achieves the following regularity results:
+\begin{itemize}
+    \item  \textbf{(R1)} Any unbroken strip with the $k$ markings meeting $D$ with differing intersection multiplicities is regular in the constrained moduli space where we enforce the intersection numbers at the markings.
+    \item \textbf{(R2)}Every rigid strip has no tangency to $D$ at the interior markings and is regular.
+\end{itemize}
+
+Using the transversality theorem 4.1 in \cite{charwoodstabil} we can show that there is a comeagre set of coherent perturbation data which achieves the regularity results \textbf{(R1-2)} as given above. Let $\M^{\mathcal{P}}(M,L,K,D)_0$ be the moduli space of rigid marked holomorphic strips with respect to a coherent perturbation data $\mathcal{P}$ that achieves the regularity result \textbf{(R1-2)}. Since $L,K$ is a  monotone pair of Lagrangians, there is an upper bound on the energy of index 1 strips, thus by a Gromov compactness argument we see $\M^{\mathcal{P}}(M,L,K,D)_0$ is compact. Thus, regularity enforces that there are only finitely many rigid strips with interiors marking going to $D$. From \textbf{(R2)} we also get that any rigid strip intersects $D$ transversally.
+
+
+\subsubsection{The $\del^{\mathcal{P}}_D$ coboundary operator}
+
+We define a coboundary operator by counting rigid strips with marked points mapping to a nice divisor. Assume line bundles with flat connection have been chosen on $L,K$.  We define the chain complex  $CF^{\mathcal{P}}_D(\wt L, \wt K)$ 
+
+\begin{equation*}
+    CF^{\mathcal{P}}_D(\wt L, \wt K) = \bigoplus_{p\in L \cap K} \hom(\mathcal{E}_{\wt {L}}|_p,\mathcal{E}_{\wt {K}}|_p ).
+\end{equation*}
+
+\noindent It is the same vector space as $CF(\wt L,\wt K)$, we will now define the deformed Floer coboundary as follows
+\begin{equation*}
+    \del^{\mathcal{P}}_D \eta = \sum_{u\in \M^{\mathcal{P}}(M,L,K,D)_0}  \psi_K(u) \of \eta \of \psi_L(u)\inv.
+\end{equation*}
+
+The above expression for $\del^{\mathcal{P}}_D$ is a finite sum because we can apply Gromov compactness to the set of index 1 strips since $(L,K)$ is a monotone pair. We define deformed disc potential map $W_D(\wt L)$ and $W_D(\wt K)$ similar to Equation (\ref{eq:discpot}) by counting Maslov 2 discs with interior marking going to $D$. Since our Lagrangians are monotone, we can show that $W_D = W$. We can do so by choosing a generic path connecting the almost complex structures that gives us a cobordism between the space of rigid disc,  since there is no sphere or disc bubbling owing to monotonicity of the Lagrangians.
+
+\begin{Theorem}
+
+If the disc potentials of the Lagrangians in the monotone pair match, i.e.  $W(\wt L ) = W(\wt K)$, for a generic choice of perturbation scheme domain dependent almost complex structure $\mathcal{P}$, we have that ${\del^{\mathcal{P}}_D}^2=0$. We define the bulk $D$ deformed Lagrangian Intersection Floer homology $HF^{\mathcal{P}}_D$ of $(\wt L$, $\wt K)$ as the homology of the chain complex $(CF(\wt L, \wt K),\del)$. $$HF^{\mathcal{P}}_D(\wt L , \wt K) = \frac{\ker \del^{\mathcal{P}}_D }{\im \del^{\mathcal{P}}_D}$$
+
+\end{Theorem}
+
+\begin{proof}
+
+We study the compactified one dimensional moduli space of strips to show when the deformed disc potentials match, we can define a Floer cohomology.  Consider the one dimensional moduli space $\M^{\mathcal{P}}(M,L,K,D)_1$, the boundary of this moduli space is obtained by strip breaking or Maslov two disc bubbling as in the case of $J_t$ strips. Although we have possible disc or sphere bubbling by interior markings going to boundary, or coming together, these situations can't occur. Indeed, since the nice divisor $D$ is disjoint from $L \cup K$ any disc bubbling caused by interior marking going to boundary has to be non-constant on the disc, thus at least Maslov two from monotonicity assumptions. Since the moduli space of strips with interior markings tangent to $D$ is regular, constant sphere bubbles formed due to collision of interior marking can't occur because of index reasons. Thus, we get the boundary of   $\M^{\mathcal{P}}(M,L,K,D)_1$   consists of Maslov 2 disc bubbles and strip breaking.  The Maslov two disc bubbles in the boundary gives us the usual relation, 
+$${\del^{\mathcal{P}}_D}^2 = W_D(\wt L) - W_D(\wt K)=W(\wt L) - W(\wt K).$$ When the disc potentials are equal, we define the bulk $D$ deformed Floer homology as  $HF^{\mathcal{P}}_D(\wt L , \wt K) = \frac{\ker \del^{\mathcal{P}}_D }{\im \del^{\mathcal{P}}_D}$ .
+
+\end{proof}
+
+\subsubsection{Chain homotopy and isomorphism of Floer cohomologies}
+We will prove that this deformed Floer cohomology is isomorphic to the usual Lagrangian Floer cohomology. We will show that if we choose a $t$ dependent almost complex structure $J_t$ that makes evaluation from an interior marked strip transverse to $D$ and it's higher jet bundles (equivalent to saying tangency constrained moduli spaces are regular), the usual $\del$ Floer coboundary is chain homotopic to $\del^{\mathcal{P}}_D$. We can choose such a $J_t$ because there are countably many constraints and every non-constant strip is $s-$somewhere injective as shown in \cite{FlHStrans} and then countable intersection of comeagre sets are comeagre we get that all the constraints can be cut out regularly for a comeagre set of $t$-dependent almost complex structure. This choice of $J_t$ can be viewed as a coherent perturbation data $\mathcal{P}_t$ that is translation invariant under the $\R$ action on the strip, thus $\del_{D}^{\mathcal{P}_t} = \del$ since we can just forget the markings that go to $D$ to get a bijection between the moduli space of rigid $\mathcal{P}_t$ strips and $J_t$ strips.
+
+\begin{lemma}\label{lemm:bulkissame}
+ The bulk deformed monotone Lagrangian Floer cohomology is isomorphic to monotone Lagrangian Floer cohomology as defined in \cite{ohMonotone} i.e. $HF^{\mathcal{P}}_D(\wt L , \wt K) \cong HF(\wt L,\wt K)$
+\end{lemma}
+
+\begin{proof}
+The idea of showing chain homotopy is the same as in the proof of independence of Floer homology from the choice of almost complex structure $J_t$. A parameterized strip with $k$ interior markings and one boundary marking which is a ``fake" marking added to parameterize the strip, intuitively this boundary marking on the strip fixes the $0$ in the $s$ coordinate of $(s,t) \in \R \times \interval$. We define a homotopy $\J_h$ between $J_t$ and $\J_k$ such that for $s<-1$, $\J_h = J_t$ and  for $s>1$, $\J_h = \J_k$. We create a map $\phi_h : CF(\wt L,\wt K) \to CF^{\mathcal{P}}_D(\wt L,\wt K)$  by counting rigid (Maslov index 0) parameterized $\J_h$ holomorphic strips between intersection points in $L \cap K$. We denote the moduli space of  rigid $\J_h$ parameterized strips by $\M_{par}^{\J_h}(M,L,K,D)_{0}$. By the usual generic transversality results, we know that a generic homotopy $\J_h$ would be enough to achieve regularity.  
+
+\begin{equation*}
+    \phi_h \eta = \sum_{u\in \M_{par}^{\J_h}(M,L,K,D)_{0}}  \psi_K(u) \of \eta \of \psi_L(u)\inv
+\end{equation*}
+
+We can check that $\phi_h$ is a chain map i.e. $\del^{\mathcal{P}}_D \of \phi_h = \phi_h \of \del$ by considering the breaking of $1$ dimensional( Maslov index 1) moduli space $\J_h$ strips. The only breaking that occurs is when there is a strip breaking. If the strip breaking occurs near $-\infty$ of, the parameterized strip  contributes to the count in $\phi_h \of \del$ and when strip breaking occurs near $+\infty$ it contributes to the count in $\del^{\mathcal{P}}_D \of \phi_h$.
+
+We define $\J_{h\inv}$ on a parameterized strip by $\J_{h\inv}(s,t) = \J_h(-s,t)$. We can count index 0 solutions to get a map $\phi_{h\inv}$. We can show $\phi_h \of \phi_{h\inv}$ is chain homotopic to identity by considering a twice-parameterized moduli space of holomorphic strips. Twice parameterization refers to choosing two boundary markings $w_1,w_2$ on a strip such that $w_1 \leq w_2$ in the $s-$coordinate. In the universal moduli space of twice parameterized  strips with $k$ markings, we define a complex structure $\J_{ch}$ such when $w_1 = w_2$, $\J_{ch} = J_t$ and at the lower dimensional strata of strip breaking with $w_1$ and $w_2$ lying in different strips, $\J_{ch}= \J_h$ in the strip component with $w_1$ and  $\J_{ch}= \J_{h\inv} $ in the component with $w_2$. We now count rigid $\J_h$ holomorphic twice parameterized strips  (Maslov index -1) to create a chain homotopy map $H:CF(\wt L,\wt K) \to CF(\wt L,\wt K) $. By considering the breaking of index 0 strips, we get that $H\of \del + \del \of H=\phi_h \of \phi_{h\inv} - Id$. Hence, we get that homologies are the same, $HF^{\mathcal{P}}_D(\wt L , \wt K) \cong HF(\wt L,\wt K)$.
+
+\end{proof}
+
+
+
+\subsection{Proof of Mutation formula}
+
+We have now all the materials needed to prove the invariance of $HF$ under mutation up to a change in the local system. 
+
+We recall  the notations and conventions we introduced in Section \ref{sec:intro}.
+% \begin{listC}
+%     \item $M$ is a compact monotone symplectic manifold.
+%     \item $L$ is a locally mutable, oriented, spin, monotone Lagrangian manifold in $M$.
+%     \item $K$ is an oriented, spin, monotone Lagrangian manifold in $M$ that is transverse to $L$.
+%     \item  $(L,K)$ forms a monotone tuple in the sense of Definition 4.1.2 in \cite{quilt}, see Definition \ref{defn:monotup}.
+%     \item $\rho_L$ and $\rho_K$ are local systems (holonomies of flat line bundles).
+%     \item in a mutation neighborhood $B$, under the identification given by the symplectomorphism $\phi$ (see \ref{defn:locallymutable}), $L$ is equal to the torus segment $T_\gamma$.
+%     \item $x_1,\dots x_{n-1}$ is the image of generators of $H_1(T_\gamma)$ under the inclusion map $i:T_\gamma \hookrightarrow L$. Recall from the definition of locally mutable, we have that the map $i_*$ induced from the inclusion is injective on $H_1$.
+%     \item $(x_1,x_2,\dots,x_n, y_1,\dots y_l)$ is a generating set of $H_1(L)$ such that $x_n \cap i_*[T_\gamma]$ where $[T_\gamma]$ is the generator of $H_{n-1}(T_\gamma)$.
+% \end{listC}
+\begin{listC}
+    \item $M$ is a compact, monotone, symplectic manifold of dimension $2n$.
+    \item $L$ is a \textit{locally mutable},  oriented,  spin, compact, connected, monotone Lagrangian manifold in $M$. 
+    \item $K$ is an oriented,  spin, compact, connected,  monotone Lagrangian manifold in $M$. 
+    \item The Lagrangian $K$ intersects $L$ transversely but does not intersect a small \textit{mutation neighborhood} $B$ of $L$. 
+    \item  $(L, K)$ forms a \textit{monotone tuple}. 
+    \item $\rho_L$ and $\rho_K$ are local systems on $L$ and $K$ respectively.
+    \item In a mutation neighborhood $B$,  under the identification given by the symplectomorphism $\phi$ ,  $L$ is equal to the \textit{torus segment} $T_\gamma$. 
+    \item $x_1, \dots x_{n-1}$ is the image of generators of $H_1(T_\gamma)$ under the inclusion map $i:T_\gamma \hookrightarrow L$.  
+    \item $(x_1, x_2, \dots, x_n,  y_1, \dots y_l)$ is a generating set of $H_1(L)$ such that $x_n \cap i_*[T_\gamma]$ where $[T_\gamma]$ is the generator of $H_{n-1}(T_\gamma)$. A Poincar\'{e} duality argument ensures the existence of such an $x_n$.
+\end{listC}
+
+
+Given a flat line bundle over $L$, we denote the holonomies $\rho(x_i)=z_i$, $\rho(y_i)=w_i$. The  \textit{mutated local system} on the mutation $L_\mu$ is equal to $\rho^\mu(x_i)=z_i$ for $i<n$ and $\rho^\mu(x_n)=z_n(1+z_1 + \dots + z_{n-1})$  and $\rho^\mu(y_i)=w_i$ for all $i$. We denote the mutated Lagrangian with this local system as $\wt{ L_{\mu}}$.
+
+
+\begin{Theorem}[Mutation]\label{premain}
+The disc potential is invariant under mutation if the local system $\rho$  is changed to $\rho^\mu$ ie. $W(\wt L) = W(\wt L_\mu)$. Moreover, if $W(\wt L) = W(\wt K)$ then the Floer homology is invariant up to the same change of local system i.e. $HF(\wt L,\wt K) \cong HF(\wt{ L_{\mu}},\wt K)$.
+\end{Theorem}
+
+\begin{proof}
+
+We can use a Hamiltonian perturbation on $L$ so that it is identified to the torus segment  $T_{\gamma'}$ in the mutation neighborhood such that near 0, $\gamma' = c\gamma$ for a very small $c$. For any $\e>0$ we can choose $c$ small enough that $T_{\gamma'}$ is cylindrical near a contact sphere $S^{2n-1}_\e$ of radius $\e$. Thus, we can do a neck stretching along the hypersurface $S^{2n-1}_\e$. We choose a perturbation scheme $\mathcal{P}$ as given in Theorem \ref{thm:ultimatetransversality}, thus  from the Lemma \ref{lemm:2level} and Theorem \ref{lemm:onlysimple} we get that the only rigid broken strips or rigid broken disc with point constraint have simple discs. We know gluing results in Corollary \ref{corr:rigidregularbijection} give us a bijection between rigid broken strips and rigid strips of a neck-stretched manifold $M^T$ with boundary on $L^T$ or ${L_\mu}^T$ and $K$. We similarly get a bijection between the rigid broken disc with point constraints and the rigid unbroken disc with point constraints.
+
+Note that the broken discs with boundaries lying entirely on the outside under mutation do not change. Thus, we only need to study the broken discs which have inside pieces with boundaries lying on the Lagrangians.
+
+The classification results in Theorems \ref{thm:classif} and \ref{thm:flattenning} give us that for a fixed Reeb chord $\xi$ of length $\pi/n$, there is  one upper disc(simple discs that are sections over the positive half-space) and $n$ lower discs(simple disc over negative half space) with boundary on $L_{in}$. On the other hand, for ${L_\mu}_{in}$ there are $n$ upper discs and $1$ lower disc going to the Reeb chord $\xi$. See Remark \ref{remark:counting discs}. Thus, there is  a $n\longleftrightarrow1$ and $1\longleftrightarrow n$ correspondence between rigid broken strips with boundary on $\mathbb{L}$ and $\mathbb{L}^\mu$. There is a similar correspondence between broken discs.
+
+Applying the gluing result in Corollary \ref{corr:rigidregularbijection}, we get that there is a $1\leftrightarrow n$ and $n\leftrightarrow1$ correspondence between the rigid strips with respect to the glued perturbation scheme $\mathcal{P}^{gl}$ in the stretched manifold $M^T$. Since all the  $\mathcal{P}^{gl}$ holomorphic rigid strips are regular, and by monotonicity, there is an upper bound on energy, we get that for a generic perturbation data $\wt {\mathcal{P}}$ close to $\mathcal{P}^{gl}$, the count of rigid strips don't change. We choose a domain-dependent perturbation as in subsection \ref{ssec:cp}. A similar argument works for broken discs with point constraints. Thus, by comparing the homology classes under the $1\leftrightarrow n$ and $n\leftrightarrow1$ correspondence we get the invariance of disc potential,
+
+\begin{equation*}
+    W(\wt L) = W(\wt L_\mu).
+\end{equation*}
+
+
+Similarly, using the $1\leftrightarrow n$ and $n\leftrightarrow1$ correspondence, and keeping track of the homology classes, we see that the coboundary operators match up exactly,
+
+$$(\del^{\wt {\mathcal{P}}}_D)_{(\wt L,\wt K)}  = (\del^{\wt {\mathcal{P}}}_D)_{(\wt {L_\mu} ,\wt K)}  $$
+
+\noindent where $(\del^{\wt {\mathcal{P}}}_D)_{(\wt L,\wt K)}$ is the bulk $D$ deformed Floer coboundary for the pair $(\wt L,\wt K)$  and $(\del^{\wt {\mathcal{P}}}_D)_{(\wt L,\wt K)}$  is the bulk $D$ deformed Floer coboundary for $(\wt {L_\mu} ,\wt K)$. Thus, we have $ HF^{\mathcal{P}}_D(\wt L , \wt K) \cong HF^{\mathcal{P}}_D(\wt {L_\mu} , \wt K) $. Now using Lemma \ref{lemm:bulkissame} we get that the Floer homologies are the same.
+
+
+\end{proof}
+
+Now, Theorem \ref{maintheorem} directly follows from Theorem \ref{premain}.
+
+\subsection{Applications}
+
+\begin{figure}
+    \centering
+    \incfig{0.8}{clifchek}
+    \caption{Clifford and Chekanov type tori}
+    \label{clifchek}
+\end{figure}
+\begin{proof}[Proof of Corollary \ref{cor:chekclif}]
+    We will apply Theorem \ref{maintheorem} to $L,\phi(L)$ where $\phi(L)$ is a Hamiltonian perturbation of $L$ such that  $\phi(L) \cap L$ is away from the mutation neighborhood. Such a perturbation always exists for Clifford type torus in \cite{wall}, see Figure \ref{clifchek}. By applying Theorem \ref{maintheorem} to $L, K = \phi(L)$. We have 
+    $$HF(\wt L , \wt \phi(L)) \cong HF (\wt L_\mu , \wt \phi(L)).$$
+    Now using invariance of $HF$ under Hamiltonian isotopy we have $$HF(\wt L, \wt L) \cong HF(\wt L_\mu, \wt L).$$
+    Thus we have that the Clifford and Chekanov tori are Hamiltonian non-dis placeable.
+\end{proof}
+
+\begin{remark}[Non-Displaceability of Chekanov tori and Real Projective spaces in odd dimensions]\footnote{This answers a question raised in Remark 3.2.3  of \cite{kawashelu}.}
+    
+One straightforward generalization of Theorem \ref{maintheorem} can be obtained by considering Lagrangians with local-systems coming from $\mathbb{F}-$line bundles, where $\mathbb{F}$ is any field. The proof of Theorem \ref{maintheorem} is based on comparing moduli space of rigid broken disks. The field $\mathbb{C}$ was not essential in any part of the proof, thus we can replace the complex local system with $\mathbb{F}$-local systems defined by the holonomy map $\rho_L: H_1(L) \to \mathbb{F}^\times $.
+
+An application of such a generalization would let us show that for odd $n$, the higher mutation $T_{Ch}$ of the Clifford torus $T_{Cl}$ in $\mathbb{P}^n$ is non-displaceable from $\mathbb{RP}^n$. This follows from the computation of $HF(T_{Cl},\mathbb{RP}^n)$ in \cite{alston} and  from using $\Z_2$ coefficients in Theorem \ref{maintheorem} and seeing that the mutation formula 
+ fixes the trivial local system, i.e. $(1,1,\dots, 1) = (1,1,\dots, n) \mod 2$ when $n$ is odd. 
+\end{remark}

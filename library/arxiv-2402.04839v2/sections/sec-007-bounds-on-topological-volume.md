@@ -8,7 +8,11 @@ pages: 8-8
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
 doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.947
 ---
-Bounds on the topological volume of manifolds in terms of covers and branched covers were
-determined in Section 2.4Section 2.4. We now give upper and lower bounds arising from topological or
-algebraic properties of a non-hyperbolic 3–manifold.
+\label{sec:bounds}
+
+Bounds on the topological volume of manifolds in terms of covers and branched covers were determined in \Cref{sec:covers}. 
+We now give upper and lower bounds arising from topological or algebraic properties of a non-hyperbolic 3--manifold.

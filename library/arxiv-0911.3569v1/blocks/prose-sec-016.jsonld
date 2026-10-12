@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0911.3569v1/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0911.3569v1/blocks/prose-sec-016",
   "kind": "prose",
   "title": "Negative correlation and negative association.",
   "pageStart": 19,
   "pageEnd": 20,
   "text": "../sections/sec-016-71-negative-correlation-and-negative-association.md",
-  "derivedFrom": "library/arxiv-0911.3569v1/manifest",
-  "sourceDocument": "library/arxiv-0911.3569v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.3569v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.3569v1/manifest.jsonld",
   "provenance": "ingested"
 }

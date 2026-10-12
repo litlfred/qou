@@ -8,40 +8,85 @@ pages: 5-6
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
 doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
+text_source: latex
+latex_prose_ratio: 0.775
+latex_coverage_ratio: 0.957
 ---
-We assume that the reader is familiar with the notions of Lie groupoids , smooth functors and
-smooth natural transformations. In this paper, the following exa mples of Lie groupoids appear:
-Example 2.1.1.
-(a) Every smooth manifold M deﬁnes a Lie groupoid denoted by Mdis whose objects and morphisms
-are M , and all of whose structure maps are identities.
-(b) Every Lie group G deﬁnes a Lie groupoid denoted by BG, with one object, with G as its smooth
-manifold of morphisms, and with the composition g2 ◦g1 :=g2g1.
-(c) Suppose X is a smooth manifold and ρ :H ×X /d47/d47 X is a smooth left action of a Lie group
-H on X. Then, a Lie groupoid X/ /His deﬁned with objects X and morphisms H ×X, and
-with
-s(h,x ) := x , t(h,x ) := ρ(h,x ) and id x := (1,x ).
+We assume that the reader is familiar with the notions of Lie groupoids, smooth functors and smooth natural transformations. 
+\begin{comment}
+\textsf{}A \emph{Lie category} is a small category $\mathcal{C}$ whose sets $\mathcal{C}_0$ of objects and $\mathcal{C}_{1}$ morphisms are smooth manifolds, its target and source maps $t,s: \mathcal{C}_1 \to \mathcal{C}_0$ are surjective submersions, the identity map $\id: \mathcal{C}_0 \to \mathcal{C}_1$ is an embedding and the composition $\circ: \mathcal{C}_1 \lli{s}\times_t \mathcal{C}_1 \to \mathcal{C}_1$ is smooth. A functor $F:\mathcal{C} \to \mathcal{C}'$ between Lie categories is called \emph{smooth}, if its components $F_0:C_0 \to C_0'$ and $F_1: \mathcal{C}_1 \to \mathcal{C}_1'$ are smooth maps. Finally, a natural transformation $\eta: F \Rightarrow F'$ between functors $F,F': \mathcal{C} \to \mathcal{C}'$ is called smooth, if its component map $\eta: \mathcal{C}_0 \to \mathcal{C}_1'$ is smooth. A \emph{Lie groupoid} is a Lie category $\mathcal{C}$ in which all morphisms are invertible, and the inversion $i: \mathcal{C} \to \mathcal{C}$ is smooth.  
+\end{comment}
+In this paper, the following examples of Lie groupoids  appear:
+
+\begin{example}
+\label{example_groupoids}
+\label{exliecat}
+\begin{enumerate}[(a)]
+\item \label{exM}
+Every smooth manifold $M$ defines a Lie groupoid  denoted by $\idmorph{M}$ whose objects and morphisms are $M$, and all of whose structure maps are identities.
+
+\item \label{exBG}
+Every Lie group $G$ defines a Lie groupoid denoted by $\mathcal{B}G$, with one object, with $G$ as its smooth manifold of morphisms, and with the composition  $g_2 \circ g_1 := g_2g_1$.
+
+\item
+Suppose $X$ is a smooth manifold and $\rho:H \times X \to X$ is a smooth left action of a Lie group $H$  on $X$. Then, a Lie groupoid $\act X H$ is defined with objects $X$ and morphisms $H \times X$, and with
+\begin{equation*}
+s(h,x) := x
+\quad\text{, }\quad
+t(h,x) := \rho(h,x) 
+\quad\text{ and }\quad
+\id_x := (1,x)\text{.}
+\end{equation*}
 The composition is
-(h2,x 2) ◦ (h1,x 1) := (h2h1,x 1),
-– 5 –
-where x2 =ρ(h1,x 1). The Lie groupoid X/ /His called the action groupoid of the action of H
-on X.
-(d) Let t :H /d47/d47 G be a homomorphism of Lie groups. Then,
-ρ :H ×G /d47/d47 G : (h,g ) ✤ /d47/d47 (t(h)g)
-deﬁnes a smooth left action of H on G. Thus, we have a Lie groupoid G/ /H.
-(e) To every Lie groupoid Γ one can associate an opposite Lie groupoid Γ op which has the source
-and the target map exchanged.
-We say that a right action of a Lie groupoid Γ on a smooth manifold M is a pair (α,ρ ) consisting
-of smooth maps α :M /d47/d47 Γ 0 and ρ :M α ×t Γ 1 /d47/d47 M such that
-ρ(ρ(x,g ),h ) = ρ(x,g ◦h) , ρ(x, idα (x)) = x and α(ρ(x,g )) = s(g)
-for all possible g,h ∈ Γ 1,p ∈ Γ 0 andx ∈M . The map α is called anchor. Later on we will replace
-the letter ρ for the action by the symbol ◦ that denotes the composition of the groupoid. A left
-action of Γ on M is a right action of the opposite Lie groupoid Γ op. A smooth map f :M /d47/d47 M ′
-between Γ-spaces with actions ( α,ρ ) and (α′,ρ ′) is called Γ -equivariant if
-α′ ◦f =α and f (ρ(x,g )) = ρ′(f (x),g ).
-Example 2.1.2.
-(a) Let Γ be a Lie groupoid. Then, Γ acts on the right on its morphisms Γ 1 byα :=s and ρ := ◦ .
-It acts on the left on its morphisms by α :=t and ρ := ◦ .
-(b) Let G be a Lie group. Then, a right/left action of the Lie groupoid BG (see Example 2.1.1 (b))
-on M is the same as an ordinary smooth right/left action of G on M .
-(c) Let X be a smooth manifold. A right/left action of Xdis (see Example 2.1.1 (a)) on M is the
-same as a smooth map α :M /d47/d47 X.
+\begin{equation*}
+(h_2,x_2) \circ (h_1,x_1) := (h_2h_1,x_1)\text{,}
+\end{equation*}
+where $x_2 = \rho(h_1,x_1)$. The Lie groupoid $\act X H$ is called the \emph{action groupoid} of the action of $H$ on $X$.
+
+\item \label{extHG}
+Let $t: H \to G$ be a homomorphism of Lie groups. Then, 
+\begin{equation*}
+\rho: H \times G \to G: (h,g) \mapsto (t(h)g)
+\end{equation*}
+defines a smooth left action of $H$ on $G$. Thus, we have a Lie groupoid $\act G H$. 
+
+\item
+To every Lie groupoid $\Gamma$ one can associate an \emph{opposite Lie groupoid} $\Gamma^{\mathrm{op}}$ which has the source and the target map exchanged.
+
+\end{enumerate}
+\end{example}
+
+
+We say that a \emph{right action} of a Lie groupoid $\Gamma$ on a smooth manifold $M$
+is a pair $(\alpha,\rho)$ consisting of smooth maps $\alpha: M \to \Gamma_0$ and $\rho: M \lli \alpha \times_{t} \Gamma_1 \to M$ such that
+\begin{equation*}
+\rho(\rho(x,g),h)= \rho(x,g \circ h)
+\quad\text{, }\quad
+\rho(x,\id_{\alpha(x)})=x
+\quad\text{ and }\quad
+\alpha(\rho(x,g)) = s(g)
+\end{equation*}
+for all possible $g,h\in \Gamma_1$, $p\in \Gamma_0$ and $x\in M$. The map $\alpha$ is  called  \emph{anchor}. Later on we will replace the letter $\rho$ for the action by the symbol $\circ$ that denotes the composition of the groupoid.  A \emph{left action} of $\Gamma$ on $M$ is a right action of the opposite Lie groupoid $\Gamma^{\mathrm{op}}$. A smooth map $f:M \to M'$ between  $\Gamma$-spaces with actions $(\alpha,\rho)$ and $(\alpha',\rho')$ is called \emph{$\Gamma$-equivariant} if 
+\begin{equation*} 
+\alpha' \circ f=\alpha
+\quad\text{ and }\quad
+f(\rho(x,g)) = \rho' (f(x),g)\text{.}
+\end{equation*}
+
+
+
+\begin{example}
+\label{exliegroupoidact}
+\begin{enumerate}[(a)]
+\item
+Let $\Gamma$ be a Lie groupoid. Then, $\Gamma$ acts on the right on its morphisms $\Gamma_1$ by  $\alpha :=s$ and $\rho := \circ\;$. It acts on the left on its morphisms by $\alpha:= t$ and $\rho:=\circ\;$. 
+
+
+\item
+Let $G$ be a Lie group. Then, a right/left action of the Lie groupoid $\mathcal{B}G$ (see Example \ref{example_groupoids} \erf{exBG}) on $M$ is the same as an ordinary smooth right/left action of $G$ on  $M$. 
+
+\item
+Let $X$ be a smooth manifold. A right/left action of $\idmorph X$ (see Example \ref{example_groupoids} \erf{exM}) on $M$ is the same as a smooth map $\alpha: M \to X$. 
+
+\end{enumerate}
+\end{example}

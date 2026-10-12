@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/ant-v14-n7-s/blocks/prose-sec-156",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/ant-v14-n7-s/blocks/prose-sec-156",
   "kind": "prose",
-  "title": "3A1. A general set-up",
-  "pageStart": 298,
-  "pageEnd": 302,
-  "text": "../sections/sec-156-3a1-a-general-set-up.md",
-  "derivedFrom": "library/ant-v14-n7-s/manifest",
-  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "title": "7A. Proof of Corollaries 1.3 and 1.4",
+  "pageStart": 276,
+  "pageEnd": 278,
+  "text": "../sections/sec-156-7a-proof-of-corollaries-13-and-14.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
   "provenance": "ingested"
 }

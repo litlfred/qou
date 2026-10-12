@@ -8,14 +8,30 @@ pages: 8-8
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
 doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
+text_source: latex
+latex_prose_ratio: 0.959
+latex_coverage_ratio: 1.0
 ---
-The Cheeger-Chern-Simons classes [ 6, 7] are characteristic classes of principal bundles with con-
-nection. For general bundles, the characteristic classes a re diﬀerential characters [ 6], but for ﬂat
-bundles they reduce to ordinary (singular) cohomology clas ses. In this paper we will focus exclu-
-sively on ﬂat bundles. Let F denote either R or C, and let Λ be a proper subring of F. Let G be a
-Lie group over F with ﬁnitely many components. There is a characteristic cla ss SP,u for each pair
-(P, u) consisting of an invariant polynomial P ∈ I k(G; F) and a class u ∈ H 2k(BG; Λ) , whose image
-in H 2k(BG; F) equals W (P ), where W is the Chern-Weil homomorphism
-(2.1) W : I k(G; F) → H 2k(BG; F).
-The characteristic class SP,u associates to each ﬂat G-bundle E → M a cohomology class SP,u(E) ∈
-H 2k−1(M ; F/Λ) .
+\lbl{sec.CCS}
+
+
+
+
+
+The Cheeger-Chern-Simons classes~\cite{CheegerSimons,ChernSimons} are 
+characteristic classes of principal bundles with connection. For general 
+bundles, the characteristic classes are differential 
+characters~\cite{CheegerSimons}, but for flat bundles they reduce to 
+ordinary (singular) cohomology classes. In this paper we will focus 
+exclusively on flat bundles. 
+Let $\F$ denote either $\R$ or $\C$, and let $\Lambda$ be a proper subring 
+of $\F$. Let $G$ be a Lie group over $\F$ with finitely many components. 
+There is a characteristic class $S_{P,u}$ for each pair $(P,u)$ consisting 
+of an invariant polynomial $P\in I^k(G;\F)$ and a class 
+$u\in H^{2k}(BG;\Lambda)$, whose image in $H^{2k}(BG;\F)$ equals $W(P)$, 
+where $W$ is the Chern-Weil homomorphism
+\begin{equation}
+W\colon I^k(G;\F)\to H^{2k}(BG;\F).
+\end{equation}
+The characteristic class $S_{P,u}$ associates to each flat $G$-bundle 
+$E\to M$ a cohomology class $S_{P,u}(E)\in H^{2k-1}(M;\F/\Lambda)$.

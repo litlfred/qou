@@ -1,19 +1,21 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2109.04664v4/sections/sec-006",
   "@type": [
     "doco:Section"
   ],
-  "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
-  "pageStart": 8,
-  "pageEnd": 10,
+  "title": "Proofs of lemmas",
+  "pageStart": 16,
+  "pageEnd": 27,
   "contains": [
-    "library/arxiv-2109.04664v4/blocks/prose-sec-006",
-    "library/arxiv-2109.04664v4/blocks/rem-sec-006-01",
-    "library/arxiv-2109.04664v4/blocks/lem-sec-006-02",
-    "library/arxiv-2109.04664v4/blocks/cor-sec-006-03"
+    "library/arxiv-2109.04664v4/blocks/prose-sec-006"
   ],
-  "derivedFrom": "library/arxiv-2109.04664v4/manifest",
-  "sourceDocument": "library/arxiv-2109.04664v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2109.04664v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2109.04664v4/manifest.jsonld",
   "provenance": "ingested"
 }

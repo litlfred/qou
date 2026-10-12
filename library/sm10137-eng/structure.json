@@ -6,21 +6,20 @@
   "sha256": "afd51b0231f4dc415c1ae3298eb3241cb3d7193594e736b467bc3e9e63c9270a",
   "bytes": 624888,
   "pages": 26,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:26Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.4213/sm10137e",
-  "title": "Sbornik: Mathematics 215:12 1607\u20131632 Matematicheski\u02d8\u0131 Sbornik 215:12 30\u201355 Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel S. M. Gorbunov",
-  "authors_raw": null,
+  "title": "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
+  "authors_raw": "Matematicheski\u02d8\u0131 Sbornik",
   "title_lines": [
    "Sbornik: Mathematics",
-   "215:12 1607\u20131632",
-   "Matematicheski\u02d8\u0131 Sbornik",
-   "215:12 30\u201355",
-   "Rate of convergence in the central limit theorem",
-   "for the determinantal point process with Bessel kernel",
-   "S. M. Gorbunov"
+   "215:12 1607\u20131632"
   ],
   "abstract": "We consider a family of linear operators diagonalized by the Hankel transform. We express explicitly the Fredholm determinants of these operators, as restricted to L2[0, R], so that the rate of their conver- gence as R \u2192\u221ecan be found. We use the link between these determinants and the distribution of additive functionals in a determinantal point process with Bessel kernel and estimate the distance in the Kolmogorov\u2013Smirnov metric between the distribution of these functionals and the Gaussian dis- tribution. Bibliography: 27 titles.",
   "docinfo": {
@@ -29,770 +28,416 @@
    "Producer": "MiKTeX pdfTeX-1.40.22",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20250222191906+03'00'"
+  },
+  "title_raw": "Sbornik: Mathematics 215:12 1607\u20131632",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
+   "heading": "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
+   "outline": "\u00a71 Introduction",
+   "text": "Sbornik: Mathematics 215:12 1607\u20131632",
+   "corroborated_by": [
+    "heading",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "(b) + \u03bb2cS",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
+   "title": "\u00a71 Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1607"
   },
   {
    "level": 1,
-   "title": "(b))QS",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "title": "\u00a72 Statement of the result",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1609"
   },
   {
    "level": 1,
-   "title": "(b) and cS",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(b) = 0. The second result is a precise formula for the remain-",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(b) = 0. In this paper we derive a precise expression for QB",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(R) \u2295H\u2212",
-   "page": 4,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(b) + cB",
-   "page": 4,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(b) + cB",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(b))QB",
-   "page": 4,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(b) = bb(0),",
-   "page": 4,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(b) = \u2212\u03bd",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(b) = 1",
-   "page": 4,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(b) = 1/2. Then",
-   "page": 4,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(f) + cS",
+   "title": "\u00a73 Structure of the paper",
    "page": 5,
-   "source": "inferred",
-   "number": "1"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1611"
   },
   {
    "level": 1,
-   "title": "(f))QS",
-   "page": 5,
-   "source": "inferred",
-   "number": "2"
+   "title": "\u00a74 Trace class and Hilbert\u2013Schmidt operators",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1612"
   },
   {
    "level": 1,
-   "title": "(f) = bf(0),",
-   "page": 5,
-   "source": "inferred",
-   "number": "1"
+   "title": "\u00a75 A link between the Bessel operator and the determinantal point process with Bessel kernel",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1613"
   },
   {
    "level": 1,
-   "title": "(f) = 1",
-   "page": 5,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(R) = {f \u2208H1(R): supp bf \u2282R\u00b1}",
+   "title": "\u00a76 Wiener\u2013Hopf factorization on $H_1(\\mathbb{R})$",
    "page": 10,
-   "source": "inferred",
-   "number": "1"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1616"
   },
   {
    "level": 1,
-   "title": "(R). Then W, as restricted",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(R), is a Banach algebra homomorphism. As before, we consider H1(R+) to",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(R) \u2295C = {f + c: f \u2208H\u00b1",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(R), c \u2208C}",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(R) with adjoined unit. Then for b \u2208H\u00b1",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(R) \u2295C",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(R) : f 7\u2192Wf defines Banach algebra homo-",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "For b\u00b1 \u2208H\u00b1",
-   "page": 10,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(R) \u2295C we have",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "For b\u00b1 \u2208H\u00b1",
-   "page": 10,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(R). We give proofs",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(R); the case of H\u2212",
-   "page": 10,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "By Lemma 4 Wiener\u2013Hopf operators have kernels. Let a and b be functions",
-   "page": 11,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "(R). Since bb\u00b1(x) = \u03c7R\u00b1(x)bb\u00b1(x), we have",
-   "page": 11,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Since \u03c7[0,R](x)\u03c7R+(x \u2212y) = \u03c7[0,R](x)\u03c7R+(x \u2212y)\u03c7[0,R](y) for all (x, y) \u2208R+,",
-   "page": 11,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "This is similar to the first part and follows from the equality",
-   "page": 11,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(L2[R, \u221e)), where A \u2208B(L2[R, \u221e) acts on J \u2217",
+   "title": "\u00a77 Proof of Lemma 3",
    "page": 12,
-   "source": "inferred",
-   "number": "1"
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1618"
   },
   {
    "level": 1,
-   "title": "(L2[R, \u221e))",
-   "page": 12,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "The decomposition (7.11). It can be verified directly that (7.11) holds if we",
-   "page": 16,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The decomposition (7.12). We integrate the expression for T(x, y) by parts:",
-   "page": 17,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "An estimate for R1. We have",
-   "page": 18,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "An estimate for S. Using (7.7) we obtain",
-   "page": 18,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "An estimate for T0. Again, Proposition 4 in combination with (7.7) gives",
-   "page": 18,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "An estimate for T1. Using estimate (7.8) we obtain",
-   "page": 19,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "An estimate for Z(x, y) + Z(y, x). We denote the operator induced by this",
-   "page": 19,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "(b)),",
-   "page": 23,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(J2",
-   "page": 23,
-   "source": "inferred",
-   "number": "2"
+   "title": "\u00a78 Proof of Theorems 1 and 2",
+   "page": 20,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1626"
   },
   {
    "level": 1,
    "title": "Bibliography",
    "page": 25,
-   "source": "inferred",
-   "number": null
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1631"
   }
  ],
- "toc_source": "inferred",
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1607",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1608",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1609",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1610",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1611",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1612",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1613",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1614",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1615",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1616",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1617",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1618",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1619",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1620",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1621",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1622",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "1623",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "1624",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1625",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "1626",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "1627",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "1628",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "1629",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "1630",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "1631",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "1632",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-b-\u03bb2cs",
-   "number": "1",
-   "title": "(b) + \u03bb2cS",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-001-2-bqs",
-   "number": "2",
-   "title": "(b))QS",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 68,
-   "n_words": 16
-  },
-  {
-   "id": "sec-002-1-b-and-cs",
-   "number": "1",
-   "title": "(b) and cS",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 111,
-   "n_words": 17
-  },
-  {
-   "id": "sec-003-1-b-0-the-second-result-is-a-precise-formula-for",
-   "number": "1",
-   "title": "(b) = 0. The second result is a precise formula for the remain-",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 1201,
-   "n_words": 194
-  },
-  {
-   "id": "sec-004-1-b-0-in-this-paper-we-derive-a-precise-expressi",
-   "number": "1",
-   "title": "(b) = 0. In this paper we derive a precise expression for QB",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 4,
-   "n_chars": 3069,
-   "n_words": 541
-  },
-  {
-   "id": "sec-005-1-r-h",
-   "number": "1",
-   "title": "(R) \u2295H\u2212",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 418,
-   "n_words": 79
-  },
-  {
-   "id": "sec-006-1-b-cb",
-   "number": "1",
-   "title": "(b) + cB",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 10,
-   "n_words": 4
-  },
-  {
-   "id": "sec-007-3-bqb",
-   "number": "3",
-   "title": "(b))QB",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 20,
-   "n_words": 4
-  },
-  {
-   "id": "sec-008-1-b-bb0",
-   "number": "1",
-   "title": "(b) = bb(0),",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-009-2-b-\u03bd",
-   "number": "2",
-   "title": "(b) = \u2212\u03bd",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 10,
-   "n_words": 3
-  },
-  {
-   "id": "sec-010-3-b-1",
-   "number": "3",
-   "title": "(b) = 1",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 1030,
-   "n_words": 192
-  },
-  {
-   "id": "sec-011-3-b-12-then",
-   "number": "3",
-   "title": "(b) = 1/2. Then",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 5,
-   "n_chars": 394,
-   "n_words": 72
-  },
-  {
-   "id": "sec-012-1-f-cs",
-   "number": "1",
-   "title": "(f) + cS",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-013-2-fqs",
-   "number": "2",
-   "title": "(f))QS",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 14,
-   "n_words": 3
-  },
-  {
-   "id": "sec-014-1-f-bf0",
-   "number": "1",
-   "title": "(f) = bf(0),",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 2,
-   "n_words": 1
-  },
-  {
-   "id": "sec-015-2-f-1",
-   "number": "2",
-   "title": "(f) = 1",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 10,
-   "n_chars": 11379,
-   "n_words": 1955
-  },
-  {
-   "id": "sec-016-1-r-f-h1r-supp-bf-r",
-   "number": "1",
-   "title": "(R) = {f \u2208H1(R): supp bf \u2282R\u00b1}",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 128,
-   "n_words": 25
-  },
-  {
-   "id": "sec-017-1-r-then-w-as-restricted",
-   "number": "1",
-   "title": "(R). Then W, as restricted",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 5,
-   "n_words": 2
-  },
-  {
-   "id": "sec-018-1-r-is-a-banach-algebra-homomorphism-as-before-w",
-   "number": "1",
-   "title": "(R), is a Banach algebra homomorphism. As before, we consider H1(R+) to",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 111,
-   "n_words": 20
-  },
-  {
-   "id": "sec-019-1-r-c-f-c-f-h",
-   "number": "1",
-   "title": "(R) \u2295C = {f + c: f \u2208H\u00b1",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-020-1-r-c-c",
-   "number": "1",
-   "title": "(R), c \u2208C}",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 25,
-   "n_words": 5
-  },
-  {
-   "id": "sec-021-1-r-with-adjoined-unit-then-for-b-h",
-   "number": "1",
-   "title": "(R) with adjoined unit. Then for b \u2208H\u00b1",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 402,
-   "n_words": 81
-  },
-  {
-   "id": "sec-022-1-r-f-7wf-defines-banach-algebra-homo",
-   "number": "1",
-   "title": "(R) : f 7\u2192Wf defines Banach algebra homo-",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 33,
-   "n_words": 6
-  },
-  {
-   "id": "sec-023-2-for-b-h",
-   "number": "2",
-   "title": "For b\u00b1 \u2208H\u00b1",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-024-1-r-c-we-have",
-   "number": "1",
-   "title": "(R) \u2295C we have",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 281,
-   "n_words": 45
-  },
-  {
-   "id": "sec-025-1-r-we-give-proofs",
-   "number": "1",
-   "title": "(R). We give proofs",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 6,
-   "n_words": 2
-  },
-  {
-   "id": "sec-026-1-r-the-case-of-h",
-   "number": "1",
-   "title": "(R); the case of H\u2212",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 11,
-   "n_chars": 80,
-   "n_words": 14
-  },
-  {
-   "id": "sec-027-1-by-lemma-4-wienerhopf-operators-have-kernels-l",
-   "number": "1",
-   "title": "By Lemma 4 Wiener\u2013Hopf operators have kernels. Let a and b be functions",
-   "level": 1,
-   "page_start": 11,
-   "page_end": 11,
-   "n_chars": 5,
-   "n_words": 2
-  },
-  {
-   "id": "sec-028-1-r-since-bbx-\u03c7rxbbx-we-have",
-   "number": "1",
-   "title": "(R). Since bb\u00b1(x) = \u03c7R\u00b1(x)bb\u00b1(x), we have",
-   "level": 1,
-   "page_start": 11,
-   "page_end": 11,
-   "n_chars": 240,
-   "n_words": 47
-  },
-  {
-   "id": "sec-029-2-since-\u03c70rx\u03c7rx-y-\u03c70rx\u03c7rx-y\u03c70ry-for-all-x-y-r",
-   "number": "2",
-   "title": "Since \u03c7[0,R](x)\u03c7R+(x \u2212y) = \u03c7[0,R](x)\u03c7R+(x \u2212y)\u03c7[0,R](y) for all (x, y) \u2208R+,",
-   "level": 1,
-   "page_start": 11,
-   "page_end": 11,
-   "n_chars": 252,
-   "n_words": 34
-  },
-  {
-   "id": "sec-030-3-this-is-similar-to-the-first-part-and-follows",
-   "number": "3",
-   "title": "This is similar to the first part and follows from the equality",
-   "level": 1,
-   "page_start": 11,
-   "page_end": 12,
-   "n_chars": 2470,
-   "n_words": 407
-  },
-  {
-   "id": "sec-031-1-l2r",
-   "number": "1",
-   "title": "(L2[R, \u221e))",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 12,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-032-1-l2r-where-a-bl2r-acts-on-j",
-   "number": "1",
-   "title": "(L2[R, \u221e)), where A \u2208B(L2[R, \u221e) acts on J \u2217",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 16,
-   "n_chars": 6897,
-   "n_words": 1325
-  },
-  {
-   "id": "sec-033-2-the-decomposition-711-it-can-be-verified-direc",
-   "number": "2",
-   "title": "The decomposition (7.11). It can be verified directly that (7.11) holds if we",
-   "level": 1,
-   "page_start": 16,
-   "page_end": 17,
-   "n_chars": 164,
-   "n_words": 37
-  },
-  {
-   "id": "sec-034-3-the-decomposition-712-we-integrate-the-express",
-   "number": "3",
-   "title": "The decomposition (7.12). We integrate the expression for T(x, y) by parts:",
-   "level": 1,
-   "page_start": 17,
-   "page_end": 18,
-   "n_chars": 1194,
-   "n_words": 256
-  },
-  {
-   "id": "sec-035-1-an-estimate-for-r1-we-have",
-   "number": "1",
-   "title": "An estimate for R1. We have",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 765,
-   "n_words": 157
-  },
-  {
-   "id": "sec-036-2-an-estimate-for-s-using-77-we-obtain",
-   "number": "2",
-   "title": "An estimate for S. Using (7.7) we obtain",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 337,
-   "n_words": 89
-  },
-  {
-   "id": "sec-037-3-an-estimate-for-t0-again-proposition-4-in-comb",
-   "number": "3",
-   "title": "An estimate for T0. Again, Proposition 4 in combination with (7.7) gives",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 19,
-   "n_chars": 574,
-   "n_words": 113
-  },
-  {
-   "id": "sec-038-4-an-estimate-for-t1-using-estimate-78-we-obtain",
-   "number": "4",
-   "title": "An estimate for T1. Using estimate (7.8) we obtain",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 645,
-   "n_words": 143
-  },
-  {
-   "id": "sec-039-5-an-estimate-for-zx-y-zy-x-we-denote-the-operat",
-   "number": "5",
-   "title": "An estimate for Z(x, y) + Z(y, x). We denote the operator induced by this",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 23,
-   "n_chars": 6629,
-   "n_words": 1148
-  },
-  {
-   "id": "sec-040-3-b",
-   "number": "3",
-   "title": "(b)),",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 23,
-   "n_chars": 571,
-   "n_words": 121
-  },
-  {
-   "id": "sec-041-2-j2",
-   "number": "2",
-   "title": "(J2",
-   "level": 1,
-   "page_start": 23,
+   "page_start": 1,
    "page_end": 25,
-   "n_chars": 2192,
-   "n_words": 481
+   "n_chars": 46655,
+   "n_words": 8492,
+   "label_start": "1607",
+   "label_end": "1631"
   },
   {
-   "id": "sec-042-bibliography",
+   "id": "sec-000-bibliography",
    "number": null,
    "title": "Bibliography",
    "level": 1,
    "page_start": 25,
    "page_end": 26,
    "n_chars": 4138,
-   "n_words": 614
+   "n_words": 614,
+   "label_start": "1631",
+   "label_end": "1632"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 46,
-  "sections": 43,
-  "chars_total": 45872
+  "toc_entries": 9,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 2,
+  "chars_total": 50793
  }
 }

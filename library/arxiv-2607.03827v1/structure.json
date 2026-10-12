@@ -6,7 +6,11 @@
   "sha256": "965d69603381942abe2ab6ff20195f17afbbf9e7f215c098634664b1f87a98f7",
   "bytes": 684846,
   "pages": 32,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -199,6 +203,86 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 9,
-  "chars_total": 73449
+  "chars_total": 73449,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "CKL-2026Juli04.tex",
+   "tex_sections": 9,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-determinants-for-affine-cellular-algebras",
+     "title": "Determinants for affine Cellular Algebras",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-homomorphisms-between-affine-cell-ideals",
+     "title": "Homomorphisms between affine cell ideals.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-the-asymptotic-algebra-of-an-affine-cellular-a",
+     "title": "The asymptotic algebra of an affine cellular algebra",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-properties-of-the-embedding-into-the-asymptoti",
+     "title": "Properties of the embedding into the asymptotic algebra",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-6-examples-and-methods",
+     "title": "Examples and methods",
+     "prose_ratio": 0.308,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-61-an-explicit-example",
+     "title": "An explicit example",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.625,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-63-gram-determinants-and-jucys-murphy-elements",
+     "title": "Gram determinants and Jucys Murphy elements",
+     "prose_ratio": 0.629,
+     "coverage_ratio": 0.848,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

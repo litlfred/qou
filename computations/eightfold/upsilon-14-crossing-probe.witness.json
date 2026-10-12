@@ -1,0 +1,128 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-10-10T18:11:50.874716+00:00",
+  "commitSha": "43869dc7c96150d3711edb85959289294abf2dd2",
+  "assertions": [
+    {
+      "name": "",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "label": "kaon control reproduces the published 290 ppm row (|rel| < 1e-3)"
+    },
+    {
+      "name": "",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "label": "phi control reproduces prop:gen3-meson-phi-hecke-seifert (7.32)"
+    },
+    {
+      "name": "",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "label": "R1 equals the phi slot exactly (construction cannot separate phi from Upsilon)"
+    },
+    {
+      "name": "",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "label": "R1 misses Upsilon by more than 50 %"
+    },
+    {
+      "name": "",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "label": "neither R2 diagnostic lands within 50 %"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "upsilon-14-crossing-probe",
+  "scriptFile": "upsilon_14_crossing_probe.py",
+  "scriptHash": "c613d9c0dbb8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "56da610cbcf4b215"
+  },
+  "invocation": {
+    "argv": [
+      "computations/eightfold/upsilon_14_crossing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/eightfold/upsilon_14_crossing_probe.py"
+  },
+  "description": "Upsilon(1S) = b bbar via the dictionary's meson construction m_X/m_pi = chi^(2,1)(sigma_1^n) * (V_S(T(2,n))/V_S(T(2,3)))^2. R1 (generation index n=7) is fully defined and equals the phi slot; R2 (14 crossings, n=14) needs a Seifert volume for the LINK T(2,14), which the corpus does not define -- two extensions shown as diagnostics only.",
+  "bean": "qou-eo5q",
+  "owner_decision": "3a + try compute 14 (2026-10-10)",
+  "q0Anchor": "proton",
+  "q0": "1.10997858275138080759166909561076887987449912187360000000000",
+  "construction": {
+    "formula": "m_X/m_pi = (q^n + (-1/q)^n) * (V_S(T(2,n))/V_S(T(2,3)))^2",
+    "sources": [
+      "prop:meson-kaon-pion-hecke-seifert",
+      "prop:gen3-meson-phi-hecke-seifert",
+      "computations/meson_gen3_eta_phi.py"
+    ],
+    "n_q": 2,
+    "index_n_means": "torus knot of the row (3, 5, 7), not the constituent crossing total"
+  },
+  "observed": {
+    "m_upsilon_1S_MeV": "9460.30000000000000000000000000000000000000000000000000000000",
+    "m_upsilon_1S_err_MeV": "0.260000000000000000000000000000000000000000000000000000000000",
+    "m_pi_pm_MeV": "139.570390000000000000000000000000000000000000000000000000000",
+    "ratio": "67.7815688556863672875027432394507173047234445644237291305126",
+    "ratio_err": "0.00186285930704929605770966176994991559456128194526073904357507"
+  },
+  "controls": {
+    "kaon": {
+      "pred": "3.53609392168237228325862848713415720967902143612797157227192",
+      "obs": "3.53711843894682819185358728309063261913934610342494564928851",
+      "rel": "-0.000289647429719926795055777736405981894613691424269143081599955"
+    },
+    "phi_n7": {
+      "pred": "7.32010538893715264205112798521895509267181106709966716689383",
+      "obs": "7.30427850778377849341826729867273423825784251229791648500803",
+      "rel": "0.00216679595890385187918550374847473093790818152083965483090259"
+    }
+  },
+  "R1_generation_index_n7": {
+    "status": "construction applies with zero new choices",
+    "pred": "7.32010538893715264205112798521895509267181106709966716689383",
+    "rel_residual": "-0.892004485695478993294017490688781138264464043144359405584012",
+    "note": "identical to the phi slot; b = T(2,7)^sigma mirror leaves |ratio| unchanged"
+  },
+  "R2_crossing_count_n14": {
+    "status": "construction does NOT extend without a new choice",
+    "missing_choice": "V_S of the 2-component torus LINK T(2,14); the corpus defines V_S(T(2,n)) only for odd n via Euler number e = 1 - 1/2 - 1/n",
+    "chi21_sigma14": "4.54133426005446576497490788033053551341057854293627957450011",
+    "required_seifert_ratio_to_hit_target": "3.86335016993165463282779665271415797813796348638895306793858",
+    "diagnostics_not_adopted": {
+      "R2a_literal_pi_n_minus_2_over_n": {
+        "seifert_ratio": "18/7",
+        "pred": "30.0284142909723858745279623107570103335719887328847873905722",
+        "rel_residual": "-0.556982601643437377700669242453446811677148445554122427283570"
+      },
+      "R2b_link_base_orbifold_euler": {
+        "seifert_ratio": "36/7",
+        "pred": "120.113657163889543498111849243028041334287954931539149562289",
+        "rel_residual": "0.772069593426250489197323030186212753291406217783510290865719"
+      }
+    }
+  },
+  "verdict": "scope-(a): the dictionary's meson construction, alone and as-is, does not reproduce m_Upsilon/m_pi. Under the only zero-choice reading (n=7) it returns the phi value, -89 % against Upsilon; the 14-crossing reading is undefined in the corpus."
+}

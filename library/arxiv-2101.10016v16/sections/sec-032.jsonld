@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "From AW(g, q, ℓ) to a compatible unitary coboundary wqh structure on A(V_g^k)",
+  "pageStart": 204,
+  "pageEnd": 214,
+  "contains": [
+    "library/arxiv-2101.10016v16/blocks/prose-sec-032",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-032-01",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-032-02",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-032-03",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-032-04",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-032-05",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-032-06",
+    "library/arxiv-2101.10016v16/blocks/def-sec-032-07",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-032-08",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-032-09",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-032-10",
+    "library/arxiv-2101.10016v16/blocks/lem-sec-032-11",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-032-12",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-032-13"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "provenance": "ingested"
+}

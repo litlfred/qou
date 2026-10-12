@@ -6,7 +6,11 @@
   "sha256": "ebebcae0c18232176f5306e63cc95112e6285f7707fdaf85432d955cc7a0f76c",
   "bytes": 167760,
   "pages": 14,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -150,6 +154,64 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 6,
-  "chars_total": 24129
+  "chars_total": 24129,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Conjecture-5.tex",
+   "tex_sections": 6,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-jones-slopes-of-cable-knots",
+     "title": "Jones slopes of cable knots",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-two-fusion-knots",
+     "title": "Two-fusion knots",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-31-the-highest-degree-and-the-jones-slope",
+     "title": "The highest degree and the Jones slope.",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-32-calculating-the-linear-term",
+     "title": "Calculating the linear term",
+     "prose_ratio": 0.872,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

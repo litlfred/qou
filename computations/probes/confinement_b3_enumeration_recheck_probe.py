@@ -91,7 +91,7 @@ B3 = (0, -2, 0, -2, 0, -2)
 MIRROR = (-1, 1, -1, 1, -1, 1)
 NUCLEONS = (("proton", ["u", "u", "d"]), ("neutron", ["u", "d", "d"]))
 
-# Verbatim from `computations/_deprecated/confinement-lp.py` so the
+# Verbatim from `fsh-guts/deprecated/computations/confinement-lp.py` so the
 # comparison is against the same arithmetic, not a reimplementation.
 
 

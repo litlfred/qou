@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1011.1343v1/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1011.1343v1/blocks/prose-sec-000",
   "kind": "prose",
   "title": "The early days at Stony Brook",
   "pageStart": 1,
   "pageEnd": 4,
   "text": "../sections/sec-000-1-the-early-days-at-stony-brook.md",
-  "derivedFrom": "library/arxiv-1011.1343v1/manifest",
-  "sourceDocument": "library/arxiv-1011.1343v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.1343v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.1343v1/manifest.jsonld",
   "provenance": "ingested"
 }

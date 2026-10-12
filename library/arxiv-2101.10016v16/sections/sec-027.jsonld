@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/sections/sec-027",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Hermitian coboundary wqh and relation with Hermitian ribbon wqh",
+  "pageStart": 173,
+  "pageEnd": 180,
+  "contains": [
+    "library/arxiv-2101.10016v16/blocks/prose-sec-027",
+    "library/arxiv-2101.10016v16/blocks/def-sec-027-01",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-027-02",
+    "library/arxiv-2101.10016v16/blocks/def-sec-027-03",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-027-04",
+    "library/arxiv-2101.10016v16/blocks/example-sec-027-05",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-027-06",
+    "library/arxiv-2101.10016v16/blocks/prop-sec-027-07",
+    "library/arxiv-2101.10016v16/blocks/prop-sec-027-08",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-027-09",
+    "library/arxiv-2101.10016v16/blocks/remark-sec-027-10",
+    "library/arxiv-2101.10016v16/blocks/prop-sec-027-11",
+    "library/arxiv-2101.10016v16/blocks/def-sec-027-12",
+    "library/arxiv-2101.10016v16/blocks/thm-sec-027-13",
+    "library/arxiv-2101.10016v16/blocks/prop-sec-027-14",
+    "library/arxiv-2101.10016v16/blocks/prop-sec-027-15",
+    "library/arxiv-2101.10016v16/blocks/prop-sec-027-16"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "provenance": "ingested"
+}

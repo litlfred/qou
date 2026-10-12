@@ -1,0 +1,173 @@
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{framed}
+\usepackage[english]{babel}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{stmaryrd,mathtools}
+\mathtoolsset{showonlyrefs}
+\usepackage{bbm}
+%\usepackage{tikz}
+%\usepackage{xfrac}
+%\usetikzlibrary{arrows,chains,matrix,positioning,scopes}
+\usepackage{tikz-cd}
+%\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+%\usetikzlibrary{knots,calc}
+%\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage[footnote,draft,danish,silent,nomargin]{fixme}
+%\usepackage[bookmarks,colorlinks]{hyperref}
+\usepackage{enumerate}
+% Preamble og styles
+%\input{Preamble}
+\usepackage[titletoc,title]{appendix}
+%\usepackage{hyperref}
+\usepackage{url}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={150mm,237mm},
+	left=30mm,
+	top=20mm,
+}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{question}{Question}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{conjecture*}{Conjecture}
+\newtheorem{theorem*}{Theorem}
+\newtheorem*{Theorem*}{Theorem A}
+\newtheorem*{Ttheorem*}{Theorem B}
+\newtheorem{ftheorem}[theorem]{Main Theorem}
+\newtheorem*{ftheorem*}{Main Theorem} % uden nummer
+\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{corollary*}{Corollary}
+\newtheorem{ex}{Example}[]
+\newtheorem*{ex*}{Example}
+\newtheorem{pr}{Problem}[]
+\newtheorem*{pr*}{Problem}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand\emptyarg{{}\cdot{}}
+
+\DeclareMathOperator*{\maks}{maks} % Maks funktion
+\DeclareMathOperator{\tr}{tr} % Trace funktion
+\DeclareMathOperator{\Ad}{Ad} % Adjoint
+\DeclareMathOperator{\ad}{ad} % adjoint
+\DeclareMathOperator{\End}{End} % Endomorphism (bundle)
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Li}{Li} % Endomorphism (bundle)
+
+\DeclareMathOperator{\spn}{span}    
+\DeclareMathOperator{\Spin}{Spin^c} 
+\DeclareMathOperator{\im}{Im}       
+\DeclareMathOperator{\id}{Id}       
+\DeclareMathOperator{\GL}{GL} 
+\DeclareMathOperator{\U}{U}        
+\DeclareMathOperator{\SU}{SU}   
+\DeclareMathOperator{\odd}{odd}
+\DeclareMathOperator{\even}{even}                 
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}    
+\DeclareMathOperator{\Aut}{Aut}     
+\DeclareMathOperator{\gl}{\lie{gl}} 
+\DeclareMathOperator{\supp}{supp}   
+\DeclareMathOperator{\ev}{ev}              
+\DeclareMathOperator{\Tr}{tr}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ham}{Ham}     
+\DeclareMathOperator{\z}{Z}
+\DeclareMathOperator{\m}{M}
+\DeclareMathOperator{\V}{V}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\dom}{dom}    
+\DeclareMathOperator{\Sym}{\mathcal{S}}
+\DeclareMathOperator{\vol}{Vol}
+\DeclareMathOperator{\CS}{CS}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\s}{S_{CS}}
+\DeclareMathOperator{\dv}{{d}\hskip-.6mm}
+\DeclareMathOperator{\dl}{Li_2}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\modu}{mod}
+\DeclareMathOperator{\Hol}{Hol}
+\DeclareMathOperator{\dimension}{dim}
+%\newcommand{\dv}{{d}}
+\DeclareMathOperator{\h}{H}
+\DeclareMathOperator{\VC}{\mathcal V}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\Lto}{L^{2}}
+\DeclareMathOperator{\I}{I}
+\DeclareMathOperator{\g}{G}
+\DeclareMathOperator{\Color}{Col}
+\DeclareMathOperator{\Pa}{P} 
+\DeclareMathOperator{\Ball}{B}
+\DeclareMathOperator{\Disc}{D}
+\DeclareMathOperator{\Sph}{S}   
+\DeclareMathOperator{\Ci}{C} 
+\DeclareMathOperator{\Normal}{N} 
+\DeclareMathOperator{\Flat}{Flat}
+			
+\bibliographystyle{plain}
+
+\begin{document}
+
+
+
+
+\input{Intro}
+ 
+\input{WRTSeifert}
+
+ \input{GPPVSeifert}
+
+\begin{appendices}
+
+
+\input{Borel-Laplace-Resummation}
+
+\end{appendices}
+%
+
+
+\bibliography{bibo}
+
+
+\noindent 
+       Jørgen Ellegaard Andersen\footnote{This work is supported in part by the center of excellence grant "Center for Quantum Geometry of Moduli Spaces" from the Danish National Research Foundation (DNRF95) and by the ERC-Synergy grant "ReNewQuantum".} \\
+      Center for Quantum Mathematics\\
+      Danish Institute for Advanced Study\\
+        University of Southern Denmark\\
+        DK-5000 Odense C, Denmark\\
+     jea-qm{\@@}mci.sdu.dk
+     \\\\
+     William Elbæk Mistegård\footnote{This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 754411.}  \\
+      IST Austria \\
+        AT-3400, Austria \\
+    william.mistegaard{\@@}ist.ac.at
+
+
+
+\end{document}

@@ -8,425 +8,280 @@ pages: 1-10
 source_pdf: 2011.13340v1.pdf
 source_sha256: e73876ed2c923608
 doc_brief: "A Matrix Bernstein Inequality for Strong Rayleigh Distributions* — The Entropy method provides a powerful framework for provin g scalar concentration in- equalities by establishing functional"
+text_source: latex
+latex_prose_ratio: 0.738
+latex_coverage_ratio: 1.0
 ---
-Concentration inequalities bound tail probabilities of ge neral functions of random variables. Sev-
-eral methods have been known to prove such inequalities, inc luding martingale methods, infor-
-mation theoretic methods, Talagrand’s induction method as well as a variety of problem-speciﬁc
-methods. Ledoux (see [ Led99] for a survey) developed a powerful framework known as the "e n-
-tropy method" for proving concentration inequalities. Thi s framework is concerned with proving
-functional inequalities (like Poincare and log-Sobolev in equalities) which bound some global di-
-vergence of any function whose concentration properties ar e of interest to us by quantities which
-measure "local variation" of this function under some di ﬀusion process whose stationary measure
-is our measure of interest. This framework can be used to reco ver strong forms of concentration
-results for scalar functions which seem to be inaccessible through many other strategies for proving
-*This paper was submitted to STOC 2020, during the process of w hich another paper [ ABY19] appeared which
-proves a slightly stronger result. This note is being releas ed in its unedited form.
-concentration. One prominent example of this is concentrat ion of scalar Lipshitz functionals of
-distributions which are the stationary measure of some rapi d mixing markov chain. We refer to
-the excellent book [ BLM13] for details on this and other methods for proving scalar con centration
-inequalities. The entropy method has also been immensely us eful in proving deep theorems in the
-analysis of boolean functions and we refer the reader to [O’D14] for more details on this fascinating
-topic.
-The ﬁeld of Matrix valued concentration of measure is concerne d with the phenomenon of
-matrix valued functions being close (usually in spectral no rm) to their expected value with high
-probability . In comparison to scalar concentration inequa lities, results on Matrix concentration
-are much more recent. However, they have already had tremend ous applications in the ﬁeld
-of computer science, statistics and information theory . So me examples include applications to
-spectral graph theory , statistical learning problems, dee p learning, sketching . While a large
-class of applications can be handled using matrix concentra tion of sums of independent random
-matrices, there are several applications where there is som e dependence structure in the sums of
-random matrices. Some examples of such applications are sim plifying Laplacian linear equations
-(cite), semi-streaming graph sparsiﬁcation among others.
-Despite the recent ﬂurry of activity in proving and using mat rix concentration inequalities,
-as pointed out by [ CT13], one frequently encounters random matrices that do not sub mit to
-existing techniques and the study of matrix concentration i nequalities remains an active area of
-investigation.
-Negative dependence of random variables is an intuitive pro perty that suggests that it might
-help with concentration of measure. A class of negatively dependent measures are strong Rayleigh
-measures which were introduced and deeply studied in the wor k of [ BBL09]. Examples of such
-distributions include determinantal measures and random s panning tree distributions. [ BBL09]
-show that strong Rayleigh distributions satisfy the strong est form of negative dependence prop-
-erties. These negative dependence properties were recentl y exploited to design approximation
-algorithms (cite) They have also been used in numerical line ar algebra and algorithmic fairness
-for selecting subsets of elements which maximize some notio n of diversity .
-In this paper, we are interested in understanding matrix con centration of random matrices
-whose distribution is coming from the stationary distribut ion of a Markov chain. While some
-results in this line of work exist in the work of [ PMT16, MJC+14] which extends Chaterjee’s work
-[Cha05] on proving scalar concentration inequalities via Stein’s method. The kind of markov
-chains that this line of work can handle is fairly restricted as it requires a stringent condition
-known as the Dobrushin condition which is not always to prove . Nevertheless, these results
-imply strong matrix concentration results in a variety of sc enarios, most notably matrix Efron
-Stein inequalities. Another line of work is the paper of Chen and Tropp [ CT13] where they are
-interested in extending the entropy method to the matrix val ued case. However, their results are
-fairly restrictive since they require rotational symmetry of the random matrices. The reason for the
-rotational symmetry requirement is the need for a "Herbst ar gument" which requires building a
-diﬀerential equation for the exponential moment generating fu nction. However, since [ CT13] can
-only control trace of quantities similar to variance and Dir ichlet form (which we also study here).
-Since they are only controlling the trace, they can only tran sform the trace of those functions into a
-2
-diﬀerential form assuming rotational symmetry of those matric es which lets them ignore any non-
-commutative structure of the sums of those random matrices. We refer the reader to [ CT13] for a
-more detailed discussion. Our main idea here is to construct matrix valued functional inequalities
-and show how these can be used to derive matrix concentration inequalities without any rotational
-symmetry assumption. While we cannot prove matrix valued (m odiﬁed) log-Sobolev inequalities
-we do show that matrix concentration by establishing matrix valued Poincare inequalities (which
-are far more common for various markov chains as opposed to mo diﬁed log-sobolev). While our
-techniques seem to be fairly general, we illustrate it for de riving matrix concentration for strongly
-Rayleigh measures.
-We now formally deﬁne strong Rayleigh measures. Let µ : 2 [n] → R+ be a probability distri-
-bution on the subsets of [ n] = {1, 2, . . . ,n}. In particular, we assume that µ(·) is nonnegative and∑
-S⊆[n]
-µ(S) = 1. We associate a multi-a ﬃne polynomial with variables z1, . . . ,zn to µ
-/g1µ(z1, . . . ,zn) =
-∑
-S⊆[n]
-µ(S)
-∏
-i∈S
-zi
-The polynomial /g1µ is known as the generating polynomial of µ. We say µ is k-homogenous if /g1µ
-is a homegenous polynomial of degree k. A polynomial p(z1, . . . ,zn) ∈ C[z1, . . . ,zn] is said to be
-stable if whenever Im( zi) > 0 for all i ∈ [n], p(z1, . . . ,zn) /nequal0. We say p is real stable is p is stable
-and all its coe ﬃcients are real. Anari et al. [ AGR16] proved a mixing time bound by proving
-a poincare constant for a bases exchange markov chain associ ated to strong Rayleigh measures.
-Hermon and Salez[ HS19] gave a uniﬁed proof of a log-sobolev and Poincare inequality in the
-scalar case. One of our main results is showing that one can e ﬀortlessly follow their exact proof
-and make minor modiﬁcations(using operator convexity of cer tain functions) to prove a matrix
-valued Poincare inequality (which has also been consideredin [CHT15, CH15, CH16]). Our second
-main result implies that one can use matrix valued Poincare i nequalities to prove matrix Bernstein
-like concentration inequalities. See [ Led99] for how to prove similar concentration inequalities for
-scalar lipshitz valued functions using Poincare and log-so bolev inequalities. Combining our two
-main theorems, we get the following result.
-Theorem 1.1. Given a k-homogenous strong Rayleigh measure π supported on n elements and given a
-L-Lipshitz matrix valued function F : {0, 1}n → Sd and let µ = Ex∼π[F(x)]. We have for all t > 0,
-Prx∼π[‖F(x) − µ‖/greaterorequalslantt] ⩽ 2de−t2/32(kL2+t
-√
-kL)
-A matrix valued function F : Ω → Sd is L-Lipshitz if for all x, y ∈ Ω
-‖F(x) − F(y)‖⩽ L · d(x, y)
-with respect to some distance function between states d(x, y). In this paper, we will use the
-hamming distance. We remark that a matrix Cherno ﬀbound for strong Rayleigh measures was
-proven by [ KS18] by martingale arguments inspired by the scalar concentrat ion case by [ PP14].
-Their application was to prove that spanning trees can be use d to construct spectral sparsiﬁers.
-While our concentration result can’t prove a similar statem ent, our result can be used in situations
-theirs cant. We compare our result with theirs in Section 4.
-3
-We ﬁnally deﬁne some terminology we will require pertaining to Markov chains and refer the
-reader to [ MT06, LPW09] for more details. Let the stationary distribution of a reve rsible Markov
-chain with state space Ωbe µ
-Eµ[F] =
-∑
-x∈Ω
-µ(x)F(x)
-V arµ[F] = Eµ[F2] − (E(F(x))2
-Consider a generator for the Markov chain Q ∈ RΩ×Ω with non-negative oﬀ-diagonal entries with
-each row summing up to 0 and satisfying the local balance equa tions
-π(x)Q(x, y) = π(y)Q(y, x)
-For normalized generators, one can associate a stochastic matrix P such that Q = P − I. In
-such cases, P also satsiﬁes local balance. Finally , the Dirchlet form for s calar functions is
-EQ[ f, /g1] = ∑
-x∈Ω,y∈Ω π(x)Q(x, y)( f (x) − f (y))2. It is easy to see that EQ[ f, /g1] = EP[ f, /g1]. For ma-
-trix valued functions F, G : Ω → Sd, the dirchlet form is deﬁned as EQ[F, G] = EP[F, G] =∑
-x∈Ω,y∈Ω π(x)Q(x, y)(F(x) − F(y))2 where Sd is the space of symmetric matrices of size d × d.
-2 Matrix V alued Poincare Inequality for Strong Rayleigh mea sures
-In this section, we prove our matrix valued Poincare inequality for measures satisfying the stochas-
-tic covering property (SCP). We ﬁrst need some notation in ord er to deﬁne SCP measures. Let
-{ei}n
-i=1 be the coordinate basis of Rn. For x, y ∈ { 0, 1}n, we write x ⊲ y if x can be obtained by y by
-increasing at most one coordinate from 0 to 1, i.e.,
-x = y or ∃i ∈ [n], x = y + ei
-This covering relation can be lifted to measures on {0, 1}n by writing π ⊲ π ′ whenever there is a
-coupling of π and π′ which is supported on the set {(x, y) : x ⊲ y}. We say that π has the SCP if for
-any S ⊆ [n] and x, y ∈ {0, 1}S, we have
-x ⊲ y =⇒ π(XSc = ·|XS = y) ⊲ π(XSc = ·|XS = x)
-This property was proposed by Pemantle and Peres [PP14] and they proved that all strong Rayleigh
-measures satisfy the SCP . However, there are examples of matroids for which the uniform distribu-
-tion has the SCP but do not have the strong Rayleigh property . Hermon and Salez [HS19] consider
-the following local dynamics :
-x ∼ y ⇐ ⇒ x, y diﬀer by a ﬂip or a swap
-where x, y diﬀer by a ﬂip if x = y ± ei for some i and by a swap if y = x + ej − ek for distinct j and k.
-And then they say that Q is a ﬂip-swap walk Markov generator for π which is reversible under π
-and we have
-Qxy > 0 ⇐ ⇒ x ∼ y
-4
-If in addition, we have ∆(Q) = max{−Qxx : x ∈ Ω} ⩽ 1, we say that Q is normalized and Q may
-hence be written as Q = P−I for some stochastic matrix P. [ HS19] proved that there is a normalized
-ﬂip-swap walk for an SCP distribution has a modiﬁed log-Sobol ev and Poincare constant 1/2k. We
-will prove using their proof strategy that this walk actually has it’s Matrix valued Poincare constant
-also 1/2k.
-Theorem 2.1. If π is a k-homogenous SCP measure, then there is a normalized ﬂip -swalk walk Q for π
-such that for any matrix valued function f : Ω → Sd
-λV ar[f] ≼ E(f, f)
-with λ /greaterorequalslant1
-2k . Furthermore, the conclusion remains valid without the homogeneity assumption, with k = n/2
-The proof of the scalar equivalent of the above statement in [ HS19] follows the chain decom-
-position framework of [ JSTV04] which we elaborate on next. Let Q be any reversible Markov
-generator with respect to some probability distribution π on a ﬁnite set Ω. Consider any partition
-of the state space :
-Ω =
-⋃
-i∈I
-Ωi
-We deﬁne two chains using this partition. Let the projection chain induced by this partition be the
-Markov chain whose state space is I and whose Markov generator ˆQ is deﬁned as follows: for any
-i, j ∈ Ω,
-ˆQ(i, j) = 1
-ˆπ(i)
-∑
-x∈Ωi,y∈Ωj
-π(x)Q(x, y) where ˆπ(i) =
-∑
-x∈Ωi
-π(x)
-Note that ˆπ is a probability distribution on I and that it is reversible under ˆQ,i.e.,
-ˆπ(i)ˆQ(i, j) = ˆπ(j)ˆQ(j, i)
-We also have, that for each i ∈ I, the restriction chain on Ωi is the Markov chain whose state space
-is Ωi and whose Markov geneator Qi is deﬁned as: for any states x, y ∈ Ωi,
-Qi(x, y) = Q(x, y)
-with the diagonal entries being adjusted so that the rows of Qi sum to zero. Clearly , then we have
-ˆπi(x) = π(x)
-ˆπ(i)
-which is reversible under Qi. Now suppose that for each ( i, j) ∈ I 2 with ˆQi j > 0, we are given a
-coupling κi j : Ωi × Ωj → [0, 1] of the probability distribution πi and πj,i.e.,
-∀x ∈ Ωi,
-∑
-y∈Ωj
-κi j(x, y) = πi(x)
-5
-∀y ∈ Ωj,
-∑
-x∈Ωi
-κi j(x, y) = πj(y)
-We will also need the following measure of quality of the coup ling
-χ = min
-{ π(x)Q(x, y)
-ˆπ(i)ˆQ(i, j)κi j(x, y)
-}
-where the minimum runs over all ( x, y, i, j) such that the denominator is positive.
-The main idea of [ JSTV04] is to relate the Poincare and (modiﬁed) log-Sobolev constan ts of the
-original chain to the projection and restriction chains. Gi ven the above setup, we would now like
-to prove recursive functional inequalities over the restriction and projection chains. Inequalities of
-this form are the workhorse of all applications of the induction/chain decomposition idea [JSTV04].
-Our next lemma establishes that scalar recursive Poincare i nequalities can be lifted to matrix
-Poincare inequalities, using operator convexity properti es of the square function. We ﬁrst need
-the following proposition.
-Proposition 2.2. The function f (X, Y) = (X − Y)2 is jointly operator convex.
-Proof. For any t ∈ [0, 1], X1, X2, Y1, Y2, we have
-(
-(tX1 + (1 − t)X2) − (tY1 + (1 − t)Y2)
-) 2
-=
-(
-t(X1 − Y1) + (1 − t)(X2 − Y2)
-) 2
-≼t(X1 − Y1)2 + (1 − t)(X1 − Y1)2
-where the last step follows from the operator convexity of th e square function applied to X1 − Y1
-and X2 − Y2 □
-Lemma 2.3. [Recursive Poincare inequalities] With the above notation, w e have
-λ(Q) /greaterorequalslantmin
-{
-χλ(ˆQ), min
-i∈I
-λ(Qi)
-}
-where the λ(·) represent the constant in the matrix valued Poincare inequali ty for the associated generator.
-Proof. Let F : Ω→ Sd. The Dirichlet form can be written as
-E(F, F) = 1
-2
-∑
-x,y∈Ω
-π(x)Q(x, y)(F(x) − F(y))2
-We can also deﬁne the projection of a function ˆF : I → Sd by ˆF(i) = Eπi [F]. Hence, we can also
-decompose the variance and Dirichlet form of a matrix valued function as follows:
-V arπ[F] =
-∑
-i∈I
-ˆπ(i)V arπi[F] + V arˆπ[ˆF]
-Eπ(F, F) =
-∑
-i∈I
-ˆπ(i)Eπi (F, F) + 1
-2
-∑
-i/nequalj
-∑
-x∈Ωi,y∈Ωj
-π(x)Q(x, y)(F(x) − F(y))2
-6
-We would now like to make a term-by-term comparison between the right hand sides of the above
-two equations. In order to do this, we would like to replace th e second term in the Dirichlet form
-equation by the Dirichlet form for Eˆπ(ˆF,ˆF). This is where the coupling is useful. Consider any pair
-(i, j) ∈ I such that ˆQ)i, j>0 . Since κi j is a coupling of πi and πj, we have
-ˆF(i) =
-∑
-x∈Ωi,y∈Ωj
-κi j(x, y)F(x)
-ˆF(j) =
-∑
-x∈Ωi,y∈Ωj
-κi j(x, y)F(y)
-We can now use Lemma 2.2 and operator Jensen’s inequality (Lemma 3.2) to conclude that
-∑
-x∈Ωi,y∈Ωj
-κi j(x, y)(F(x) − F(y))2 ≽(ˆF(i) − ˆF(j))
-Multiplying the above equation by χˆπ(i)ˆQ(i, j) we have
-∑
-x∈Ωi,y∈Ωj
-π(x)Q(x, y)(F(x) − F(y))2 ≽χˆπ(i)ˆQ(i, j)(ˆF(i) − ˆF(j))2
-It is easy to see that the above equation also holds when ˆQ(i, j) = 0 rather than just when ˆQ(i, j) = 0.
-Now, summing up over all distinct i, j ∈ I, we get that
-1
-2
-∑
-i/nequalj
-∑
-x∈Ωi,y∈Ωj
-π(x)Q(x, y)(F(x) − F(y))2 ≽χEˆπ[ˆF,ˆF]
-=⇒ E π[F, F] ≽
-∑
-i∈I
-ˆπ(i)Eπi [F, F] + χEˆπ[ˆF,ˆF]
+Concentration inequalities bound tail probabilities of general functions of random variables. Several methods have been known to prove such inequalities, including martingale methods, information theoretic methods, Talagrand's induction method as well as a variety of problem-specific methods. Ledoux (see \cite{Led} for a survey) developed a powerful framework known as the "entropy method" for proving concentration inequalities. This framework is concerned with proving functional inequalities (like Poincare and log-Sobolev inequalities) which bound some global divergence of any function whose concentration properties are of interest to us by quantities which measure "local variation" of this function under some diffusion process whose stationary measure is our measure of interest. This framework can be used to recover strong forms of concentration results for scalar functions which seem to be inaccessible through many other strategies for proving concentration. One prominent example of this is concentration of scalar Lipshitz functionals of distributions which are the stationary measure of some rapid mixing markov chain. We refer to the excellent book \cite{BLM13} for details on this and other methods for proving scalar concentration inequalities. The entropy method has also been immensely useful in proving deep theorems in the analysis of boolean functions and we refer the reader to \cite{OD} for more details on this fascinating topic.
+
+The field of Matrix valued concentration of measure is concerned with the phenomenon of matrix valued functions being close (usually in spectral norm) to their expected value with high probability. In comparison to scalar concentration inequalities, results on Matrix concentration are much more recent. However, they have already had tremendous applications in the field of computer science, statistics and information theory. Some examples include applications to spectral graph theory, statistical learning problems, deep learning, sketching . While a large class of applications can be handled using matrix concentration of sums of independent random matrices, there are several applications where there is some dependence structure in the sums of random matrices. Some examples of such applications are simplifying Laplacian linear equations (cite), semi-streaming graph sparsification among others.
+
+Despite the recent flurry of activity in proving and using matrix concentration inequalities, as pointed out by \cite{CT13}, one frequently encounters random matrices that do not submit to existing techniques and the study of matrix concentration inequalities remains an active area of investigation.
+
+Negative dependence of random variables is an intuitive property that suggests that it might help with concentration of measure. A class of negatively dependent measures are strong Rayleigh measures which were introduced and deeply studied in the work of \cite{BBL09}. Examples of such distributions include determinantal measures and random spanning tree distributions. \cite{BBL09} show that strong Rayleigh distributions satisfy the strongest form of negative dependence properties. These negative dependence properties were recently exploited
+to design approximation algorithms  (cite) They have also been used in numerical linear algebra and algorithmic fairness for selecting subsets of elements which maximize some notion of diversity.
+
+In this paper, we are interested in understanding matrix concentration of random matrices whose distribution is coming from the stationary distribution of a Markov chain. While some results in this line of work exist in the work of \cite{PMT,MJCFT} which extends Chaterjee's work \cite{Chaterjee} on proving scalar concentration inequalities via Stein's method. The kind of markov chains that this line of work can handle is fairly restricted as it requires a stringent condition known as the Dobrushin condition which is not always to prove. Nevertheless, these results imply strong matrix concentration results in a variety of scenarios, most notably matrix Efron Stein inequalities. Another line of work is the paper of Chen and Tropp \cite{CT13} where they are  interested in extending the entropy method to the matrix valued case. However, their results are fairly restrictive since they require rotational symmetry of the random matrices. The reason for the rotational symmetry requirement is the need for a "Herbst argument" which requires building a differential equation for the exponential moment generating function. However, since \cite{CT13} can only control trace of quantities similar to variance and Dirichlet form (which we also study here). Since they are only controlling the trace, they can only transform the trace of those functions into a differential form assuming rotational symmetry of those matrices which lets them ignore any non-commutative structure of the sums of those random matrices. We refer the reader to \cite{CT13} for a more detailed discussion. Our main idea here is to construct matrix valued functional inequalities and show how these can be used to derive matrix concentration inequalities without any rotational symmetry assumption. While we cannot prove matrix valued (modified) log-Sobolev inequalities we do show that matrix concentration by establishing matrix valued Poincare inequalities (which are far more common for various markov chains as opposed to modified log-sobolev). While our techniques seem to be fairly general, we illustrate it for deriving matrix concentration for strongly Rayleigh measures.
+
+We now formally define strong Rayleigh measures. Let $\mu : 2^{[n]}\rightarrow \mathbb{R}_{+}$ be a probability distribution on the subsets of $[n]=\{1,2,\ldots,n\}$. In particular, we assume that $\mu(\cdot)$ is nonnegative and $\sum\limits_{S \subseteq [n]}\mu(S)=1$. We associate a multi-affine polynomial with variables $z_1,\ldots,z_n$ to $\mu$
+\begin{align*}
+  g_\mu(z_1,\ldots,z_n)=\sum\limits_{S \subseteq [n]}\mu(S)\prod_{i\in S}z_i
+\end{align*}
+The polynomial $g_\mu$ is known as the generating polynomial of $\mu$. We say $\mu$ is $k$-homogenous if $g_\mu$ is a homegenous polynomial of degree $k$. A polynomial $p(z_1,\ldots,z_n)\in \mathbb{C}[z_1,\ldots,z_n]$ is said to be stable if whenever Im$(z_i)>0$ for all $i\in[n]$, $p(z_1,\ldots,z_n)\neq 0$. We say $p$ is real stable is $p$ is stable and all its coefficients are real.
+Anari et al. \cite{AGR16} proved a mixing time bound by proving a poincare constant for a bases exchange markov chain associated to strong Rayleigh measures. Hermon and Salez\cite{HS19} gave a unified proof of a log-sobolev and Poincare inequality in the scalar case. One of our main results is showing that one can effortlessly follow their exact proof and make minor modifications(using operator convexity of certain functions) to prove a matrix valued Poincare inequality (which has also been considered in \cite{CHT15,CH15,CH16}). Our second main result implies that one can use matrix valued Poincare inequalities to prove matrix Bernstein like concentration inequalities. See \cite{Led} for how to prove similar concentration inequalities for scalar lipshitz valued functions using Poincare and log-sobolev inequalities. Combining our two main theorems, we get the following result.
+
+\begin{theorem}\label{thm:srBern} Given a $k$-homogenous strong Rayleigh measure $\pi$ supported on $n$ elements and given a L-Lipshitz matrix valued function $\mathbf{F}:\{0,1\}^n\rightarrow\mathbb{S}_d$ and let $\mathbf{\mu}=\mathbb{E}_{x\sim\pi}[\mathbf{F(x)}]$. We have for all $t>0$,
+  \begin{align*}
+    \mathsf{Pr}_{x \sim \pi}[\|\mathbf{F(x)-\mathbf{\mu}}\|\geq t]\leq 2 de^{-t^2/32(kL^2 + t\sqrt{k}L)}
+  \end{align*}
+\end{theorem}
+A matrix valued function $\mathbf{F}:\Omega\rightarrow \mathbb{S}_d$ is L-Lipshitz if for all $x,y \in \Omega$
+\begin{align*}
+  \|\mathbf{F(x)}-\mathbf{F(y)}\|\leq L\cdot d(x,y)
+\end{align*}
+with respect to some distance function between states $d(x,y)$. In this paper, we will use the hamming distance.
+We remark that a matrix Chernoff bound for strong Rayleigh measures was proven by \cite{KyngSong18} by martingale arguments inspired by the scalar concentration case by \cite{PP14}. Their application was to prove that spanning trees can be used to construct spectral sparsifiers. While our concentration result can't prove a similar statement, our result can be used in situations theirs cant. We compare our result with theirs in Section \ref{sec:ks}.
+
+We finally define some terminology we will require pertaining to Markov chains and refer the reader to \cite{MT06,LPW} for more details.  Let the stationary distribution of a reversible Markov chain with state space $\Omega$ be $\mu$
+\begin{align*}
+  \mathbb{E}_\mu[\mathbf{F}]&= \sum\limits_{x \in \Omega}\mu(x)\mathbf{F(x)}\\
+  \mathbf{Var}_\mu[\mathbf{F}]&=\mathbb{E}_\mu[\mathbf{F}^2]-(\mathbb{E}(\mathbf{F(x)})^2
+\end{align*}
+Consider a generator for the Markov chain $Q\in\mathbb{R}^{\Omega\times\Omega}$ with non-negative off-diagonal entries with each row summing up to 0 and satisfying the local balance equations
+\begin{align*}
+  \pi(x)Q(x,y) = \pi(y)Q(y,x)
+\end{align*}
+For \textit{normalized} generators, one can associate a stochastic matrix $P$ such that $Q=P-I$. In such cases, $P$ also satsifies local balance. Finally, the Dirchlet form for scalar functions is $\mathcal{E}_Q[f,g]=\sum_{x\in\Omega,y\in\Omega}\pi(x)Q(x,y)(f(x)-f(y))^2$. It is easy to see that $\mathcal{E}_Q[f,g]=\mathcal{E}_P[f,g]$. For matrix valued functions $\mathbf{F,G}:\Omega\rightarrow \mathbb{S}_d$, the dirchlet form is defined as $\mathcal{E}_Q[\mathbf{F},\mathbf{G}]=\mathcal{E}_P[\mathbf{F},\mathbf{G}]=\sum_{x\in\Omega,y\in\Omega}\pi(x)Q(x,y)(\mathbf{F(x)}-\mathbf{F(y)})^2$
+where $\mathbb{S}_d$ is the space of symmetric matrices of size $d\times d$.
+
+
+\section{Matrix Valued Poincare Inequality for Strong Rayleigh measures}
+In this section, we prove our matrix valued Poincare inequality for measures satisfying the stochastic covering property (SCP). We first need some notation in order to define SCP measures. Let $\{e_i\}_{i=1}^{n}$ be the coordinate basis of $\mathbb{R}^n$. For $x,y \in \{ 0,1\}^n$, we write $x\triangleright y$ if $x$ can be obtained by $y$ by increasing at most one coordinate from 0 to 1, i.e.,
+\begin{align*}
+  x=y \ \text{ or } \ \exists i \in [n], \ x=y+e_i
+\end{align*}
+This \textit{covering} relation can be lifted to measures on $\{ 0,1\}^n$ by writing $\pi \triangleright \pi'$ whenever there is a coupling of $\pi$ and $\pi'$ which is supported on the set $\{(x,y): x \triangleright y\}$. We say that $\pi$ has the SCP if for any $S \subseteq [n]$ and $x,y \in \{0,1\}^S$, we have
+\begin{align*}
+  x \triangleright y \implies \pi(X_{S^c} = \cdot | X_S = y)\triangleright \pi(X_{S^c} = \cdot | X_S = x)
+\end{align*}
+This property was proposed by Pemantle and Peres \cite{PP14} and they proved that all strong Rayleigh measures satisfy the SCP. However, there are examples of matroids for which the uniform distribution has the SCP but do not have the strong Rayleigh property. Hermon and Salez \cite{HS19} consider the following local dynamics :
+\begin{align*}
+  x \sim y \iff x,y \text{ differ by a flip or a swap}
+\end{align*}
+where $x,y$ differ by a flip if $x=y \pm e_i$ for some $i$ and by a swap if $y=x+e_j-e_k$ for distinct $j$ and $k$. And then they say that $Q$ is a flip-swap walk Markov generator for $\pi$ which is reversible under $\pi$ and we have
+\begin{align*}
+  Q_{xy} > 0 \iff x\sim y
+\end{align*}
+If in addition, we have $\Delta(Q) = \max\{-Q_{xx} : x \in \Omega\} \leq 1$, we say that $Q$ is normalized and $Q$ may hence be written as $Q=P-I$ for some stochastic matrix $P$. \cite{HS19} proved that there is a normalized flip-swap walk for an SCP distribution has a modified log-Sobolev and Poincare constant $1/2k$. We will prove using their proof strategy that this walk actually has it's Matrix valued Poincare constant also $1/2k$.
+\begin{theorem}\label{thm:mpc} If $\pi$ is a $k$-homogenous SCP measure, then there is a  normalized flip-swalk walk $Q$ for $\pi$ such that for any matrix valued function $\mathbf{f} : \Omega \rightarrow \mathbb{S}_d$
+  \begin{align*}
+    \lambda\mathbf{Var}[\mathbf{f}]\preceq \mathcal{E}(\mathbf{f},\mathbf{f})
+  \end{align*}
+  with $\lambda \geq \frac{1}{2k}$. Furthermore, the conclusion remains valid without the homogeneity assumption, with $k=n/2$
+\end{theorem}
+The proof of the scalar equivalent of the above statement in \cite{HS19} follows the chain decomposition framework of \cite{JSTV04} which we elaborate on next. Let $Q$ be any reversible Markov generator with respect to some probability distribution $\pi$ on a finite set $\Omega$. Consider any partition of the state space :
+\begin{align*}
+  \Omega = \bigcup\limits_{i \in \mathcal{I}}\Omega_i
+\end{align*}
+We define two chains using this partition. Let the \textit{projection chain} induced by this partition be the Markov chain whose state space is $\mathcal{I}$ and whose Markov generator $\hat{Q}$ is defined as follows: for any $i,j \in \Omega$,
+\begin{align*}
+  \hat{Q}(i,j) = \frac{1}{\hat{\pi}(i)}\sum\limits_{x \in \Omega_i, y \in \Omega_j} \pi(x) Q(x,y) \ \ \text{ where } \hat{\pi}(i) = \sum\limits_{x \in \Omega_i} \pi(x)
+\end{align*}
+Note that $\hat{\pi}$ is a probability distribution on $\mathcal{I}$ and that it is reversible under $\hat{Q}$,i.e.,
+\begin{align*}
+  \hat{\pi}(i) \hat{Q}(i,j) =   \hat{\pi}(j) \hat{Q}(j,i)
+\end{align*}
+We also have, that for each $i \in \mathcal{I}$, the \textit{restriction chain} on $\Omega_i$ is the Markov chain whose state space is $\Omega_i$ and whose Markov geneator $Q_i$ is defined as: for any states $x,y \in \Omega_i$,
+\begin{align*}
+  Q_i(x,y) = Q(x,y)
+  \end{align*}
+with the diagonal entries being adjusted so that the rows of $Q_i$ sum to zero. Clearly, then we have \begin{align*}\hat{\pi}_i(x) = \frac{\pi(x)}{\hat{\pi}(i)}\end{align*}
+which is reversible under $Q_i$. Now suppose that for each $(i,j) \in \mathcal{I}^2$ with $\hat{Q}_{ij} > 0$, we are given a coupling $\kappa_{ij} : \Omega_i \times \Omega_j \rightarrow [0,1]$ of the probability distribution $\pi_i$ and $\pi_j$,i.e.,
+\begin{align*}
+  \forall x \in \Omega_i, \ \sum\limits_{y \in \Omega_j}\kappa_{ij}(x,y) = \pi_i(x)\\
+  \forall y \in \Omega_j, \ \sum\limits_{x \in \Omega_i}\kappa_{ij}(x,y) = \pi_j(y)
+\end{align*}
+We will also need the following measure of quality of the coupling
+\begin{align*}
+  \chi = \min\bigg\{\frac{\pi(x)Q(x,y)}{\hat{\pi}(i)\hat{Q}(i,j)\kappa_{ij}(x,y)}\bigg\}
+\end{align*}
+where the minimum runs over all $(x,y,i,j)$ such that the denominator is positive.
+
+The main idea of \cite{JSTV04} is to relate the Poincare and (modified) log-Sobolev constants of the original chain to the projection and restriction chains. Given the above setup, we would now like to prove recursive functional inequalities over the restriction and projection chains. Inequalities of this form are the workhorse of all applications of the induction/chain decomposition idea \cite{JSTV04}. Our next lemma establishes that scalar recursive Poincare inequalities can be lifted to matrix Poincare inequalities, using operator convexity properties of the square function. We first need the following proposition.
+\begin{proposition}\label{prop:diffOC} The function $f(\mathbf{X},\mathbf{Y}) = (\mathbf{X}-\mathbf{Y})^2$ is jointly operator convex.
+\end{proposition}
+\begin{proof}
+For any $t\in [0,1]$, $\mathbf{X}_1,\mathbf{X}_2,\mathbf{Y}_1,\mathbf{Y}_2$, we have
+  \begin{align*}
+    \big( (t \mathbf{X}_1 + (1-t)\mathbf{X}_2) - (t \mathbf{Y}_1 + (1-t)\mathbf{Y}_2)\big)^2&=\big( t (\mathbf{X}_1-\mathbf{Y}_1) + (1-t)(\mathbf{X}_2 -\mathbf{Y}_2)\big)^2\\
+    &\preceq t(\mathbf{X}_1-\mathbf{Y}_1)^2+(1-t)(\mathbf{X}_1-\mathbf{Y}_1)^2
+  \end{align*}
+  where the last step follows from the operator convexity of the square function applied to $\mathbf{X}_1-\mathbf{Y}_1$ and $\mathbf{X}_2-\mathbf{Y}_2$
+\end{proof}
+
+\begin{lemma}{[Recursive Poincare inequalities]}\label{lem:recPI} With the above notation, we have
+  \begin{align*}\lambda(Q) \geq \min\big\{\chi\lambda(\hat{Q}),\min\limits_{i \in \mathcal{I}}\lambda(Q_i)\big\}
+  \end{align*}
+  where the $\lambda(\cdot)$ represent the constant in the matrix valued Poincare inequality for the associated generator.
+\end{lemma}
+\begin{proof}
+  Let $\mathbf{F}:\Omega \rightarrow \mathbb{S}_d$. The Dirichlet form can be written as
+  \begin{align*}
+    \mathcal{E}(\mathbf{F},\mathbf{F}) = \frac{1}{2}\sum\limits_{x,y\in\Omega}\pi(x)Q(x,y)(\mathbf{F(x)}-\mathbf{F(y)})^2
+\end{align*}
+We can also define the projection of a function $\hat{\mathbf{F}}:\mathcal{I}\rightarrow \mathbb{S}_d$ by $\hat{\mathbf{F}}(i)=\mathbb{E}_{\pi_i}[\mathbf{F}]$. Hence, we can also decompose the variance and Dirichlet form of a matrix valued function as follows:
+\begin{align*}
+  \mathbf{Var}_\pi[\mathbf{F}]&=\sum\limits_{i \in \mathcal{I}}\hat{\pi}(i)\mathbf{Var}_{\pi_i}[\mathbf{F}] + \mathbf{Var}_{\hat{\pi}}[\hat{\mathbf{F}}]\\
+  \mathcal{E}_\pi(\mathbf{F},\mathbf{F}) &= \sum\limits_{i \in \mathcal{I}}\hat{\pi}(i)\mathcal{E}_{\pi_i}(\mathbf{F},\mathbf{F})+\frac{1}{2}\sum\limits_{i \neq j}\sum\limits_{x\in\Omega_i, y \in \Omega_j}\pi(x)Q(x,y)(\mathbf{F(x)}-\mathbf{F(y)})^2
+\end{align*}
+We would now like to make a term-by-term comparison between the right hand sides of the above two equations. In order to do this, we would like to replace the second term in the Dirichlet form equation by the Dirichlet form for $\mathcal{E}_{\hat{\pi}}(\mathbf{\hat{F}},\mathbf{\hat{F}})$. This is where the coupling is useful. Consider any pair $(i,j)\in\mathcal{I}$ such that $\hat{Q})i,j$>0
+. Since $\kappa_{ij}$ is a coupling of $\pi_i$ and $\pi_j$, we have
+\begin{align*}
+  \mathbf{\hat{F}}(i) &= \sum\limits_{x\in\Omega_i,y\in\Omega_j}\kappa_{ij}(x,y)\mathbf{F}(x)\\
+  \mathbf{\hat{F}}(j) &= \sum\limits_{x\in\Omega_i,y\in\Omega_j}\kappa_{ij}(x,y)\mathbf{F}(y)\\
+\end{align*}
+We can now use Lemma \ref{prop:diffOC} and operator Jensen's inequality (Lemma \ref{lem:jensen}) to conclude that
+\begin{align*}
+  \sum\limits_{x\in\Omega_i, y\in\Omega_j}\kappa_{ij}(x,y)(\mathbf{F(x)}-\mathbf{F(y)})^2 \succeq (\mathbf{\hat{F}(i)}-\mathbf{\hat{F}(j)})
+\end{align*}
+Multiplying the above equation by $\chi\hat{\pi}(i)\hat{Q}(i,j)$ we have
+\begin{align*}
+  \sum\limits_{x\in\Omega_i,y\in\Omega_j}\pi(x)Q(x,y)(\mathbf{F(x)}-\mathbf{F(y)})^2 \succeq \chi \hat{\pi}(i)\hat{Q}(i,j)(\mathbf{\hat{F}(i)}-\mathbf{\hat{F}(j)})^2
+\end{align*}
+It is easy to see that the above equation also holds when $\hat{Q}(i,j)=0$ rather than just when $\hat{Q}(i,j)=0$. Now, summing up over all distinct $i,j\in \mathcal{I}$, we get that
+\begin{align*}
+  \frac{1}{2}\sum\limits_{i \neq j}\sum\limits_{x\in\Omega_i, y \in \Omega_j}\pi(x)Q(x,y)(\mathbf{F(x)}-\mathbf{F(y)})^2&\succeq\chi \mathcal{E}_{\hat{\pi}}[\mathbf{\hat{F}},\mathbf{\hat{F}}]\\
+  \implies \mathcal{E}_\pi[\mathbf{F},\mathbf{F}]\succeq \sum\limits_{i \in \mathcal{I}}\hat{\pi}(i)\mathcal{E}_{\pi_i}[\mathbf{F},\mathbf{F}]+\chi\mathcal{E}_{\hat{\pi}}[\mathbf{\hat{F}},\mathbf{\hat{F}}]
+  \end{align*}
 Comparing this with the Variance decomposition, we get
-
-Eˆπ[ˆF,ˆF] ≽ˆκV arˆπ[ˆF]
-Eπi[F, F] ≽κiV arπi [F]∀i ∈ I,
-=⇒ E π[F] ≽min{χˆκ, min
-i∈I
-κi}V arπ[F]
-Since we did not assume anything about our function F, we get the desired conclusion. □
-We will also need the following estimate on the quality of the coupling. Since the proof does
-not depend on the function (and hence there is no di ﬀerence in the scalar and matrix valued case),
-we present the lemma without proof.
-Lemma 2.4. [Crude lower-bound on χ, Lemma 2 in [ HS19]] We always have
-π(x)Q(x, y)
-ˆπ(i)ˆQ(i, j)κi j(x, y)
-/greaterorequalslantmax
-{Q(x, y)
-ˆQ(i, j)
-, Q(y, x)
-ˆQ(j, i)
-}
-7
-2.1 Proof of Theorem 2.1
-To prove Theorem 2.1, we will ﬁrst need to use the inductive framework to prove some functional-
-analytic estimates for SCP measures.
-Lemma 2.5. Given a generator ˆQ for a two state ({0, 1}) chain. We have for any F : {0, 1} → Sd,
-(a + b)V ar[F] ≼ EˆQ[F, F]
-Proof. It is easy to prove that for a Markov chain with generator Q, the stationary distribution π
-satisﬁes π(1) = a
-a+b and π(0) = b
-a+b . Now we can focus on understanding the Dirichlet form and
-variance of any matrix valued function F .
-E[F, F] = b
-a + b · a(F(0) − F(1))2
-V ar[F] = E[F2] − (E[F])2
-= 1
-a + b (bF(0)2 + aF(1)2) − 1
-(a + b)2 (bF(0) + a[F](1))2
-= ab
-(a + b)2 (F(0) − F(1))2
-which concludes that the Poincare constant is ( a + b) □
-We will also need the following lemma which characterizes th e quality of the couplings for
-SCP measures.
-Lemma 2.6. [Exploiting the SCP , Lemma 4 in [HS19]] If π has the SCP , then there is a couplingκ of π0, π1
-supported on
-{(x, y) ∈ Ω0 × Ω1 : x ∼ y}
-In particular, taking κ01 and κ10 to be κ and its transpose respectively, we obtain
-χ /greaterorequalslantM(Q)
-max{a, b}
-where M(Q) = min
-x,y∈Ω
-x∼y
-max{Q(x, y), Q(y, x)}
-We will now prove theorem 2.1.
-Proof. [of Theorem 2.1] The proof is unchanged from the proof in [ HS19]. We will induct on the
-number of elementsn. We will change the normalization of the generator : For any distribution π on
-{0, 1}n with the SCP , our goal is to prove the existence of a ﬂip-swap walk Q for π such that λ(Q) /greaterorequalslant1
-and ∆(Q) ⩽
-
-n always
-2k if π is k-homogenous
-Once we have established this, after dividing Q by ∆(Q),
-we will be done. As before, take a coordinate ℓ ∈ [n] and deﬁne the sets Ω0 = {x ∈ Ω : xℓ = 0}
-8
-and Ω1 = {x ∈ Ω : xℓ = 1} are both non-empty . We now consider the projection and restr iction
-chains. Let their stationary distributions be ˆπ, π0, π1 respectively . We can of course view π0, π1
-as distributions on {0, 1}n−1 and both distributions are SCP . If π is k-homogenous, then π0 is also
-k-homogenous while π1 is ( k − 1)-homogenous. Thus, using our induction hypothesis, we ca n
-say that there exists a ﬂip-swap walk generator Qi for πi (for i =0,1) satisfying λ(Qi) /greaterorequalslant1 and
-∆(Qi) ⩽
-
-n − 1 always
-2(k − i) if π is k-homogenous
-We also have, from Lemma 2.6, a coupling κ of π0 and
-π1 supported on {x ∈ Ω0, y ∈ Ω1 : x ∼ y}. □
-Hermon and Salez [HS19] deﬁne the following ﬂip-swap walk Q for π as follows : for x /nequaly ∈ Ω,
-Q(x, y) =
-
-Q0(x, y) if ( x, y) ∈ Ω0 × Ω0
-Q1(x, y) if ( x, y) ∈ Ω1 × Ω1
-ˆπ(0)ˆπ(1)κ(x,y)
-π(x) if (x, y) ∈ Ω0 × Ω1
-ˆπ(0)ˆπ(1)κ(y,x)
-π(y) if (x, y) ∈ Ω1 × Ω0
+  \begin{align*}\begin{cases}
+  \mathcal{E_{\hat{\pi}}}[\mathbf{\hat{F}},\mathbf{\hat{F}}]&\succeq \hat{\kappa}\mathbf{Var}_{\hat{\pi}}[\mathbf{\hat{F]}}\\
+  \mathcal{E}_{\pi_i}[\mathbf{F},\mathbf{F}]&\succeq \kappa_{i}\mathbf{Var}_{\pi_{i}}[\mathbf{F}]\forall i\in\mathcal{I},
+  \end{cases}\implies\mathcal{E}_{\pi}[\mathbf{F}]\succeq\min\{\chi\hat{\kappa},\min_{i\in\mathcal{{I}}}\kappa_{i}\}\mathbf{Var}_{\pi}[\mathbf{F}]
+\end{align*}
+Since we did not assume anything about our function $\mathbf{F}$, we get the desired conclusion.
+\end{proof}
+
+We will also need the following estimate on the quality of the coupling. Since the proof does not depend on the function (and hence there is no difference in the scalar and matrix valued case), we present the lemma without proof.
+\begin{lemma}{[Crude lower-bound on $\chi$, Lemma 2 in \cite{HS19}]} We always have
+  \begin{align*}
+    \frac{\pi(x) Q(x,y)}{\hat{\pi}(i) \hat{Q}(i,j)\kappa_{ij}(x,y)}\geq \max\bigg\{\frac{Q(x,y)}{\hat{Q}(i,j)},\frac{Q(y,x)}{\hat{Q}(j,i)}\bigg\}
+  \end{align*}
+\end{lemma}
+
+\subsection{Proof of Theorem \ref{thm:mpc}}
+
+
+  
+
+To prove Theorem \ref{thm:mpc}, we will first need to use the inductive framework to prove some functional-analytic estimates for SCP measures.
+
+  
+    
+  
+  
+
+
+
+  
+
+
+
+  
+  
+  \begin{lemma}\label{lem:2stPI} Given a generator $\hat{Q}$ for a two state $(\{ 0,1\})$ chain. We have for any $\mathbf{F}:\{ 0,1\}\rightarrow \mathbb{S}_d$,
+    \begin{align*}
+      (a+b)\mathbf{Var}[\mathbf{F}]\preceq \mathcal{E}_{\hat{Q}}[\mathbf{F},\mathbf{F}]
+    \end{align*}
+  \end{lemma}
+  \begin{proof}
+    It is easy to prove that for a Markov chain with generator Q, the stationary distribution $\pi$ satisfies $\pi(1)=\frac{a}{a+b}$ and $\pi(0)=\frac{b}{a+b}$.
+    Now we can focus on understanding the Dirichlet form and variance of any matrix valued function $\mathbf{F}$ .
+    \begin{align*}
+      \mathcal{E}[\mathbf{F},\mathbf{F}] &= \frac{b}{a+b}\cdot a(\mathbf{F}(0)-\mathbf{F}(1))^2\\
+      \mathbf{Var}[\mathbf{F}] &= \mathbb{E}[\mathbf{F}^2] - (\mathbb{E}[\mathbf{F}])^2\\
+      &=\frac{1}{a+b}(b\mathbf{F}(0)^2 + a\mathbf{F}(1)^2) - \frac{1}{(a+b)^2}(b\mathbf{F}(0) + a\mathbf[F](1))^2\\
+      &=\frac{ab}{(a+b)^2}(\mathbf{F}(0)-\mathbf{F}(1))^2
+    \end{align*}
+    which concludes that the Poincare constant is $(a+b)$
+  \end{proof}
+We will also need the following lemma which characterizes the quality of the couplings for SCP measures.
+\begin{lemma}{[Exploiting the SCP, Lemma 4 in \cite{HS19}]}\label{lem:lem4} If $\pi$ has the SCP, then there is a coupling $\kappa$ of $\pi_0, \pi_1$ supported on
+  \begin{align*}
+    \{(x,y)\in \Omega_0 \times \Omega_1 : x \sim y\}
+  \end{align*}
+  In particular, taking $\kappa_{01}$ and $\kappa_{10}$ to be $\kappa$ and its transpose respectively, we obtain
+  \begin{align*}
+    \chi \geq \frac{\overline{\mathscr{M}}(Q)}{\max\{a,b\}}
+  \end{align*}
+  where $\overline{\mathscr{M}}(Q) = \min\limits_{\substack{x,y\in\Omega\\x\sim y}}\max\{Q(x,y),Q(y,x)\}$
+\end{lemma}
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+We will now prove theorem \ref{thm:mpc}.
+\begin{proof}{[of Theorem \ref{thm:mpc}]} The proof is unchanged from the proof in \cite{HS19}. We will induct on the number of elements $n$. We will change the normalization of the generator : For any distribution $\pi$ on $\{0,1\}^n$ with the SCP, our goal is to prove the existence of a flip-swap walk $Q$ for $\pi$ such that $\lambda(Q)\geq 1$ and $\Delta(Q)\leq \begin{cases}
+n& \text{always}\\
+2k&\text{ if } \pi \text{ is k-homogenous}
+\end{cases}$
+Once we have established this, after dividing $Q$ by $\Delta(Q)$, we will be done.
+As before, take a coordinate $\ell\in[n]$ and define the sets $\Omega_0 = \{x\in\Omega : x_\ell =0\}$ and $\Omega_1 = \{x\in\Omega : x_\ell = 1\}$ are both non-empty. We now consider the projection and restriction chains. Let their stationary distributions be $\hat{\pi},\pi_0,\pi_1$ respectively. We can of course view $\pi_0,\pi_1$ as distributions on $\{ 0,1 \}^{n-1} $ and both distributions are SCP. If $\pi$ is $k$-homogenous, then $\pi_0$ is also $k$-homogenous while $\pi_1$ is $(k-1)$-homogenous. Thus, using our induction hypothesis, we can say that there exists a flip-swap walk generator $Q_i$ for $\pi_i$ (for i=0,1) satisfying $\lambda(Q_i)\geq 1$ and $\Delta(Q_i)\leq \begin{cases}
+n-1& \text{always}\\
+2(k-i)&\text{ if } \pi \text{ is k-homogenous}
+\end{cases}$
+We also have, from Lemma \ref{lem:lem4}, a coupling $\kappa$ of $\pi_0$ and $\pi_1$ supported on $\{x\in\Omega_0,y\in\Omega_1 : x\sim y\}$.
+\end{proof}
+Hermon and Salez \cite{HS19} define the following flip-swap walk $Q$ for $\pi$ as follows : for $x\neq y \in\Omega$,
+$Q(x,y)=\begin{cases}
+Q_0(x,y) & \text{if } (x,y) \in \Omega_0\times\Omega_0\\
+Q_1(x,y) & \text{if } (x,y) \in \Omega_1\times\Omega_1\\
+\frac{\hat{\pi}(0)\hat{\pi}(1)\kappa(x,y)}{\pi(x)} & \text{if } (x,y) \in \Omega_0\times\Omega_1\\
+\frac{\hat{\pi}(0)\hat{\pi}(1)\kappa(y,x)}{\pi(y)} & \text{if } (x,y) \in \Omega_1\times\Omega_0
+\end{cases}$
 and the diagonal is adjusted to make the row sums 0.
-We will now use Lemma 2.3 with Ω0, Ω1 as our partition and the couplings κ01 being κ and κ10
-being transpose of κ. We also have that the projection generator ˆQ satisﬁes λ(ˆQ) /greaterorequalslantˆQ(0, 1) + ˆQ(1, 0)
-from Lemma 2.5. We also have that for any x ∈ Ω0, y ∈ Ω1 with κ(x, y) > 0,
-π(x)Q(x, y)
-ˆπ(0)ˆQ(0, 1)κ01(x, y)
-= ˆπ(1)
-ˆQ(0, 1)
-= ˆπ(0)
-ˆQ(1, 0)
-= π(y)Q(y, x)
-ˆπ(1)ˆQ(1, 0)κ01(y, x)
-where the second equality follows from reversibility . Hence, we get
-χ = ˆπ(0)
-ˆQ(1, 0)
-= ˆπ(1)
-ˆQ(0, 1)
-Finally combining the two inequalities above, we get
-χλ(ˆQ) /greaterorequalslantˆπ(0) + ˆπ(1) = 1
-From our induction hypothesis, we had λ(Qi) /greaterorequalslant1, so we can use Lemma 2.3 to get that λ(Q) /greaterorequalslant1.
-We just need to bound the diagonal of Q now. For x ∈ Ω0, we have by construction
-−Q(x, x) =
-∑
-y∈Ω0/downslopex
-Q0(x, y) + ˆπ(0)ˆπ(1)
-π(x)
-∑
-y∈Ω1
-κ(x, y)
-Using the deﬁnition of ∆(Q0) and the fact that the ﬁrst marginal of κ is π0, we deduce that
-−Q(x, x) ⩽ ∆(Q0) + ˆπ(1) = ∆(Q0) + Eπ[Xℓ]
-Similarly , ifx ∈ Ω1, we have
-−Q(x, x) ⩽ ∆(Q1) + ˆπ(0) ⩽ ∆(Q1) + xℓ
-9
-as xℓ = 1. So using the induction hypothesis on ∆(Qi), we get that for all x ∈ Ω,
-∆(Q) ⩽
-
-n always
-2k + Eπ[Xℓ] − xℓ if π is k-homogenous
-Finally to bound the second line by 2 k, we average over the coordinate ℓ. The generator will be
-written as Q(ℓ) to denote the dependence on ℓ.For each ell ∈ [n], the construction of our generator
-produces a ﬂip-swap walk Q(ℓ) for π which satisﬁes λ(Q(ℓ)) /greaterorequalslant1 and ∆(Q(ℓ)) ⩽ n. Now we crucially
-notice that the matrix valued variance is unchanged under av eraging (because it doesnt depend
-on the generator) and the Dirchlet form has a linear dependen ce on the generator Q(ℓ). Hence,
-λ(Q) and ∆(Q) is preserved under convex combinations. So we can deﬁne an av erage generator
-Q∗ = 1
-n
-n∑
-ℓ=1
-Q(ℓ) automatically satisﬁes λ(Q∗) /greaterorequalslant1 and ∆(Q∗) ⩽ n. If π is k-homogenous, then for
-every x ∈ Ω, we get
-−Q∗(x, x) = − 1
-n
-n∑
-ℓ=1
-Q(ℓ)(x, x) ⩽ 1
-n
-n∑
-ℓ=1
-(2k + E[Xℓ] − xℓ) = 2k
-Thus Q∗ satisﬁes our desired properties and we are done.
+We will now use Lemma \ref{lem:recPI} with $\Omega_0,\Omega_1$ as our partition and the couplings $\kappa_{01}$ being $\kappa$ and $\kappa{10}$ being transpose of $\kappa$. We also have that the projection generator $\hat{Q}$ satisfies $\lambda(\hat{Q})\geq \hat{Q}(0,1)+\hat{Q}(1,0)$ from Lemma \ref{lem:2stPI}. We also have that for any $x\in\Omega_0, y\in\Omega_1$ with $\kappa(x,y)>0$,
+\begin{align*}
+  \frac{\pi(x)Q(x,y)}{\hat{\pi}(0)\hat{Q}(0,1)\kappa_{01}(x,y)} = \frac{\hat{\pi}(1)}{\hat{Q}(0,1)} =\frac{\hat{\pi}(0)}{\hat{Q}(1,0)} = \frac{\pi(y)Q(y,x)}{\hat{\pi}(1)\hat{Q}(1,0)\kappa_{01}(y,x)}
+  \end{align*}
+  where the second equality follows from reversibility. Hence, we get
+  \begin{align*}
+    \chi = \frac{\hat{\pi}(0)}{\hat{Q}(1,0)}=\frac{\hat{\pi}(1)}{\hat{Q}(0,1)}
+  \end{align*}
+  Finally combining the two inequalities above, we get
+  \begin{align*}
+    \chi\lambda(\hat{Q})\geq \hat{\pi}(0)+\hat{\pi}(1) = 1
+  \end{align*}
+  From our induction hypothesis, we had $\lambda(Q_i)\geq 1$, so we can use Lemma \ref{lem:recPI} to get that $\lambda(Q)\geq 1$. We just need to bound the diagonal of $Q$ now. For $x \in \Omega_0$, we have by construction
+  \begin{align*}
+    -Q(x,x)=\sum\limits_{y \in \Omega_0 \diagdown x}Q_0(x,y) + \frac{\hat{\pi}(0)\hat{\pi}(1)}{\pi(x)}\sum\limits_{y\in\Omega_1}\kappa(x,y)
+  \end{align*}
+Using the definition of $\Delta(Q_0)$ and the fact that the first marginal of $\kappa$ is $\pi_0$, we deduce that
+\begin{align*}
+  -Q(x,x) \leq \Delta(Q_0) + \hat{\pi}(1) = \Delta(Q_0)+\mathbb{E}_{\pi}[X_\ell]
+\end{align*}
+Similarly, if $x\in\Omega_1$, we have
+\begin{align*}
+  -Q(x,x) \leq \Delta(Q_1)+\hat{\pi}(0)\leq\Delta(Q_1)+x_\ell
+\end{align*}
+as $x_\ell=1$. So using the induction hypothesis on $\Delta(Q_i)$, we get that for all $x\in\Omega$,
+\begin{align*}\Delta(Q)\leq \begin{cases}
+n& \text{always}\\
+2k+\mathbb{E}_\pi[X_\ell]-x_\ell&\text{ if } \pi \text{ is k-homogenous}
+\end{cases}\end{align*}
+Finally to bound the second line by $2k$, we average over the coordinate $\ell$. The generator will be written as $Q^{(\ell)}$ to denote the dependence on $\ell$.For each $ell\in[n]$, the construction of our generator produces a flip-swap walk $Q^{(\ell)}$ for $\pi$ which satisfies $\lambda(Q^{(\ell)})\geq 1$ and $\Delta(Q^{(\ell)})\leq n$. Now we crucially notice that the matrix valued variance is unchanged under averaging (because it doesnt depend on the generator) and the Dirchlet form has a linear dependence on the generator $Q^{(\ell)}$. Hence, $\lambda(Q)$ and $\Delta(Q)$ is preserved under convex combinations. So we can define an average generator $Q^*=\frac{1}{n}\sum\limits_{\ell=1}^{n}Q^{(\ell)}$ automatically satisfies $\lambda(Q^*)\geq 1$ and $\Delta(Q^*)\leq n$. If $\pi$ is $k$-homogenous, then for every $x\in\Omega$, we get
+\begin{align*}
+  -Q^*(x,x)=-\frac{1}{n}\sum\limits_{\ell=1}^{n}Q^{(\ell)}(x,x) \leq \frac{1}{n}\sum\limits_{\ell=1}^{n}(2k + \mathbb{E}[X_\ell] - x_\ell) = 2k
+\end{align*}
+Thus $Q^{*}$ satisfies our desired properties and we are done.

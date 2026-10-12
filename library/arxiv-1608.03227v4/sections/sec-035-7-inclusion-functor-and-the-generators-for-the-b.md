@@ -8,8 +8,10 @@ pages: 38-38
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
 doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+text_source: latex
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 1.0
 ---
-This section collects various facts about the matrix factorization c onvolution algebra, mostly property
-that do not require intense computations but these properties will be used later. In particular, the relation
-(7.25) implies that matrix factorizations corresponding commuting e lementary braids commute inside the
-convolution algebra.
+[]{#sec: inc fun gens label="sec: inc fun gens"}
+
+This section collects various facts about the matrix factorization convolution algebra, mostly property that do not require intense computations but these properties will be used later. In particular, the relation ([\[eq: commuting\]](#eq: commuting){reference-type="ref" reference="eq: commuting"}) implies that matrix factorizations corresponding commuting elementary braids commute inside the convolution algebra.

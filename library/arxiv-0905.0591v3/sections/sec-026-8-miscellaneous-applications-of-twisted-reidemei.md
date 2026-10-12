@@ -8,7 +8,10 @@ pages: 26-26
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
 doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+text_source: latex
+latex_prose_ratio: 0.923
+latex_coverage_ratio: 0.923
 ---
-theory
-In this section we will summarize various applications of tw isted Alexander polynomials
-to the study of knots and links.
+\label{section:misc}
+
+In this section we will summarize various  applications of twisted Alexander polynomials to the study of knots and links.

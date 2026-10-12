@@ -1,8 +1,13 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/hdr/manifest",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
   "@type": [
-    "folio:SourceDocument"
+    "cat-harness:SourceDocument"
   ],
   "title": "Hecke algebras, generalisations and representation theory",
   "contains": [
@@ -35,8 +40,11 @@
     "library/hdr/sections/sec-026"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
   "meta": {
     "doc_id": "hdr",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "HDR.pdf",
     "source_sha256": "35c190fd2d2a393c8cdfc7083bd44d308c4e37611e0f09fce9929668ec1a91d6",
     "pages": 75,

@@ -8,546 +8,510 @@ pages: 19-23
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
 doc_brief: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices)"
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 ---
-The deﬁnition of the series Φ Ξ (ℏ) requires some choices, some of which were described and
-dealt with in the previous Section 4. What remains to complete the proof of Theorem 1.1 is
-the independence of Φ Ξ (ℏ) under the choice of a nondegenerate quad, and the independenc e
-under the 2–3 Pachner moves that connect two ideal triangulation s.
-In this section, we will prove that Φ Ξ (ℏ) is independent of the choice of a nondegenerate
-quad. Recall that to each pair of opposite edges of an ideal tetrah edron there is an associated
-variable called a shape variable. When deﬁning Neumann–Zagier data ( see Section 2.2), we
-must choose an edge for each tetrahedron, which associates one of these shapes. There
-are three possible choices, which leads to the action on /CI /3 /CI on the each column of the
-Neumann–Zagier data. All in all, for a triangulation with N tetrahedra, this leads to 3 N
-choices on of Neumann–Zagier data. On the other hand, the deﬁnit ion of the series Φ Ξ (ℏ)
-requires a choice of a nondegenerate quad, i.e., one for which det( B) ⁄= 0 (such quads always
-exist [ 11, Lem.A.3]). In this section, we will show that any of the 3 N choices of quad with
-det(B) ⁄= 0 lead to the same Φ Ξ (ℏ) series.
-Theorem 5.1. The series Φ Ξ (ℏ) is independent of the choice of a nondegenerate quad.
-Proof. Fix two non–degenerate NZ data Ξ = ( A,B,ν,z,f,f ′′) and ~Ξ = ( ~A,~B,~ν,~z,~f, ~f ′′)
-related by a quad change of the same ideal triangulation. The nonde generacy assumption
-implies that det(B) ⁄= 0 and det( ~B) ⁄= 0.
-After reordering the tetrahedra (which does not change the Φ Ξ (ℏ) series, as follows from
-Section 4), we can assume that ~Ξ is obtained by applying a change in quad that ﬁxes the
-ﬁrst N0 shapesz(0), replaces the next N1 shapes z(1) byz′(1) and replaces the next N2 shapes
-z(2) byz′(2). (Recall that z′ = 1/(1 −z) and z′′ = 1 − 1/z).
-This partitions the shapes z = (z(0),z (1),z (2)) into three sets of size N0,N 1,N 2 and the
-matrices A and B into three block matrices Ai and Bi of size N ×Ni for i = 0, 1, 2
-A = ( A0 |A1 |A2), B = ( B0 |B1 |B2), (71)
-and similarly for the ﬂattening f = (f (0),f (1),f (2)) and f ′′ = (f ′′(0),f ′′(1),f ′′(2)). After the
-quad moves, the corresponding matrices and vectors are given by
-˜A = ( A0 | −B1 | −A2 +B2), ˜B = ( B0 |A1 −B1 | −A2),
-˜ν = ν −B11 −A21, ˜z = ( z(0),z ′(1),z ′′(2)),
-˜f = ( f (0), 1 −f (1) −f ′′(1),f ′′(2)), ˜f ′′ = ( f ′′(0),f (2), 1 −f (2) −f ′′(2)).
-(72)
-We also partition the vector of formal Gaussian integration variable sx = (x(0),x (1),x (2)), as
-well as the symmetric matrix Q :=B−1A
-Q =
-
-
-Q00 Q01 Q02
-Qt
-01 Q11 Q12
-Qt
-02 Qt
-12 Q22
-
- . (73)
+\label{sec.quad}
+
+The definition of the series $\Phi^\Xi(\hbar)$ requires some choices,
+some of which were described and dealt with in the previous
+Section~\ref{sec.elementary}. What remains to complete the proof of
+Theorem~\ref{thm.1} is the independence of $\Phi^\Xi(\hbar)$
+under the choice of a nondegenerate quad, and the independence
+under the 2--3 Pachner moves that connect two ideal triangulations.
+
+In this section, we will prove that $\Phi^\Xi(\hbar)$ is independent
+of the choice of a nondegenerate quad. Recall that to each pair of opposite
+edges of an ideal tetrahedron there is an associated variable
+called a shape variable. When defining Neumann--Zagier data (see
+Section~\ref{sub.NZ}), we must
+choose an edge for each tetrahedron, which associates one of these shapes.
+There are three possible choices, which leads to the action on $\BZ/3\BZ$ on
+the each column of the Neumann--Zagier data. All in all, for a triangulation
+with $N$ tetrahedra, this leads to $3^{N}$ choices on of Neumann--Zagier
+data. On the other hand, the definition of the series $\Phi^{\Xi}(\hbar)$
+requires a choice of a nondegenerate quad, i.e., one for which $\det(B) \neq 0$
+(such quads always exist~\cite[Lem.A.3]{DG}). In this section, we will show
+that any of the $3^N$ choices of quad with $\det(B) \neq 0$
+lead to the same $\Phi^{\Xi}(\hbar)$ series.
+
+\begin{theorem}
+\label{thm.quadinvariance}  
+The series $\Phi^{\Xi}(\hbar)$ is independent of the choice of a nondegenerate
+quad. 
+\end{theorem}
+
+\begin{proof}
+Fix two non--degenerate NZ data $\Xi=(A,B,\nu,z,f,f'')$ and 
+$\widetilde{\Xi}=(\widetilde{A},\widetilde{B},\widetilde{\nu},\widetilde{z},
+\widetilde{f},\widetilde{f}'')$ related by a quad change of the same ideal
+triangulation. The nondegeneracy assumption implies that $\det(B) \neq 0$ and 
+$\det(\widetilde{B})\neq0$. 
+
+After reordering the tetrahedra (which does not change the $\Phi^\Xi(\hbar)$
+series, as follows from Section~\ref{sec.elementary}), we can assume
+that $\widetilde{\Xi}$ is obtained by applying a change in quad that fixes
+the first $N_0$ shapes $z^{(0)}$, replaces the next $N_1$ shapes $z^{(1)}$
+by $z'^{(1)}$ and replaces the next $N_2$ shapes $z^{(2)}$ by $z'^{(2)}$. (Recall
+that $z'=1/(1-z)$ and $z''=1-1/z$).
+
+\medskip
+
+This partitions the shapes $z=(z^{(0)},z^{(1)},z^{(2)})$ into three sets of 
+size $N_0,N_1,N_2$ and the matrices $A$ and $B$ into three block matrices
+$A_i$ and $B_i$ of size $N \times N_i$ for $i=0,1,2$
+\bea
+A &\= (A_0\,|\,A_1\,|\,A_2)\,,\qquad
+B &\= (B_0\,|\,B_1\,|\,B_2)\,,\qquad
+\eea
+and similarly for the flattening $f=(f^{(0)},f^{(1)},f^{(2)})$ and
+$f''=(f''^{(0)},f''^{(1)},f''^{(2)})$. After the quad moves, the corresponding
+matrices and vectors are given by
+\bea
+\tilde A &\= (A_0\,|-B_1\,|-A_2+B_2)\,,\quad
+& &\tilde B & &\!\!\!=\; (B_0\,|\,A_1-B_1\,|-A_2)\,,\\
+\tilde \nu &\= \nu - B_1  1 - A_2 1\,,\quad
+& &\tilde z & &\!\!\!=\; 
+(z^{(0)},z'^{(1)},z''^{(2)})\,,\\
+\tilde f &\= (f^{(0)},1-f^{(1)}-f''^{(1)},f''^{(2)})\,,\quad
+& &\tilde f'' & &\!\!\!=\; 
+(f''^{(0)},f^{(2)},1-f^{(2)}-f''^{(2)})\,.
+\eea
+We also partition the vector of formal Gaussian integration variables
+$x=(x^{(0)},x^{(1)},x^{(2)})$, as well as the symmetric matrix $Q:=B^{-1}A$
+\be
+Q\=
+\begin{pmatrix}
+Q_{00} & Q_{01} & Q_{02}\\
+Q_{01}^t & Q_{11} & Q_{12}\\
+Q_{02}^t & Q_{12}^t & Q_{22}\\
+\end{pmatrix}\,.
+\ee
 With the above notation, we have
-Φ Ξ (ℏ) = ⟨I0⟩x,Λ 0 (74)
-20 STA VROS GAROUF ALIDIS, MATTHIAS STORZER, AND CAMPBELL WH EELER
+\be
+\Phi^{\Xi}(\hbar) \= \langle I_0 \rangle_{x,\Lambda_0}
+\ee
 where
-I0 = exp
-(ℏ
-8ftB−1Af − ℏ
-1
-2
-2 xt(B−1ν − 1)
-) N∏
-j=1
-ψℏ(xj,zj)
+\[
+I_0 \= \exp\Big(\frac\hbar8 f^t B^{-1} A f
+-\frac{\hsqrt}2 x^t(B^{-1}\nu-1)\Big)
+\prod_{j=1}^N \psi_{\hbar}(x_j,z_j)
+\]
 and
-Λ 0 = diag( z′) −Q.
-Applying the ﬁrst quad move as in Theorem 3.4 to the ψℏ with arguments of z(1) and the
-second quad move as in its Corollary 3.5 to the ψℏ with arguments z(2), we obtain that
-Φ Ξ (ℏ) = ⟨I1⟩(x,y,w),Λ 1 (75)
+\begin{equation*}
+\Lambda_0\=\diag(z')-Q \,.
+\end{equation*}
+
+Applying the first quad move as in Theorem~\ref{thm.fourier} to the $\psi_\hbar$
+with arguments of $z^{(1)}$ and the second quad move as in its
+Corollary~\ref{cor.fourier} to the $\psi_\hbar$ with arguments $z^{(2)}$, we obtain
+that
+\be
+\Phi^{\Xi}(\hbar) \= \langle I_1 \rangle_{(x,y,w), \Lambda_1}
+\ee
 where
-I1 = exp
-(ℏ
-8ftB−1Af − ℏ
-1
-2
-2 x(0)t
-(B−1ν − 1)(0) −N1ℏ
-24 − ℏ
-1
-2
-2 x(1)t
-(B−1ν − 1)(1)
+\begin{align*}
+I_1 &\= 
+\exp\Big(\frac\hbar8 f^t B^{-1} A f-\frac{\hsqrt}2{x^{(0)}}^t(B^{-1}\nu-1)^{(0)}
+-
+\frac{N_1\hbar}{24}
+- \frac \hsqrt 2 {x^{(1)}}^t(B^{-1}\nu-1)^{(1)}\\
+&\qquad\qquad\quad+ \sum_{j=1}^{N_1}
+\Big(y_j+\frac{x_j^{(1)}z_j^{(1)}}{1-z_j^{(1)}}\Big)
+\frac\hsqrt2
 +
-N1∑
-j=1
-(
-yj + x(1)
-j z(1)
-j
-1 −z(1)
-j
-) ℏ
-1
-2
-2 + N2ℏ
-24 − ℏ
-1
-2
-2 x(2)t
-(B−1ν − 1)(2) −
-N2∑
-j=1
-x(2)
-j
-ℏ
-1
-2
-2
-)
-×
-N0∏
-j=1
-ψℏ(x(0)
-j ,z (0)
-j )
-N1∏
-j=1
-ψℏ
-(
-yj + x(1)
-j z(1)
-j
-1 −z(1)
-j
-, 1
-1 −z(1)
-j
-) N2∏
-j=1
-ψℏ
-(
-wj − x(2)
-j
-1 −z(2)
-j
-, 1 −z(2)
-j
-−1)
-,
-y and w are vectors of size N1 and N2, respectively, and
-Λ 1 =
-
-
-Λ 0 0
-0 diag( z′′(1)) 0
-0 0 diag( z(2)) −I
-
- .
-Making the change of variables yj ↦→yj −
-x(1)
-j z(1)
-j
-1−z(1)
-j
-andwj ↦→wj +
-x(2)
-j
-1−z(2)
-j
-and using Lemma 3.1
+\frac{N_2\hbar}{24}
+- \frac \hsqrt 2 {x^{(2)}}^t(B^{-1}\nu-1)^{(2)}
+-\sum_{j=1}^{N_2}x_j^{(2)} \frac\hsqrt2\Big)\\
+&\times\prod_{j=1}^{N_0} \psi_{\hbar}(x_j^{(0)},z_j^{(0)})
+\prod_{j=1}^{N_1}\psi_{\hbar}\Big(y_j+\frac{x_j^{(1)}z_j^{(1)}}{1-z_j^{(1)}},
+\frac1{1-z_j^{(1)}}\Big)
+\prod_{j=1}^{N_2}
+\psi_{\hbar}\Big(w_j - \frac{x_j^{(2)}}{1-z_j^{(2)}},1-{z_j^{(2)}}^{-1}\Big),
+\end{align*}
+$y$ and $w$ are vectors of size $N_1$ and $N_2$, respectively, and  
+\[
+\Lambda_1 \= 
+\begin{pmatrix}
+\Lambda & 0 & 0 \\
+0 & \diag(z''^{(1)}) & 0 \\
+0 & 0 & \diag(z^{(2)})-I
+\end{pmatrix} \,.
+\]
+Making the change of variables
+$y_j \mapsto y_j - \frac{x_j^{(1)}z_j^{(1)}}{1-z_j^{(1)}}$
+and $w_j \mapsto w_j + \frac{x_j^{(2)}}{1-z_j^{(2)}}$ and using Lemma~\ref{lem.ff1}
 we obtain that
-Φ Ξ (ℏ) = ⟨I2⟩(x,y,w),Λ 2 (76)
+\be
+\Phi^{\Xi}(\hbar) \= \langle I_2 \rangle_{(x,y,w), \Lambda_2}
+\ee
 where
-I2 = exp
-(ℏ
-8ftB−1Af − ℏ
-1
-2
-2 x(0)t
-(B−1ν − 1)(0) − N1ℏ
-24 − ℏ
-1
-2
-2 x(1)t
-(B−1ν − 1)(1)
-+yt1 ℏ
-1
-2
-2 + N2ℏ
-24 − ℏ
-1
-2
-2 x(2)t
-(B−1ν)(2)
-)
-×
-N0∏
-j=1
-ψℏ(x(0)
-j ,z (0)
-j )
-N1∏
-j=1
-ψℏ
-(
-yj, 1
-1 −z(1)
-j
-) N2∏
-j=1
-ψℏ
-(
-wj, 1 −z(2)
-j
-−1)
+\begin{align*}
+I_2 &\= \exp\Big(\frac\hbar8 f^t B^{-1} A f
+-\frac{\hsqrt}2{x^{(0)}}^t(B^{-1}\nu-1)^{(0)}
+-
+\frac{N_1\hbar}{24}
+- \frac \hsqrt 2 {x^{(1)}}^t(B^{-1}\nu-1)^{(1)}\\
+&\qquad\qquad\quad+ y^{t}1\frac\hsqrt2
++
+\frac{N_2\hbar}{24}
+- \frac \hsqrt 2 {x^{(2)}}^t(B^{-1}\nu)^{(2)}
+\Big)\\
+&\qquad\qquad\times\prod_{j=1}^{N_0} \psi_{\hbar}(x_j^{(0)},z_j^{(0)})
+\prod_{j=1}^{N_1}\psi_{\hbar}\Big(y_j,\frac1{1-z_j^{(1)}}\Big)
+\prod_{j=1}^{N_2}
+\psi_{\hbar}\big(w_j,1-{z_j^{(2)}}^{-1}\big)
+\end{align*}
 and
-Λ 2 =
-
-
-
-
-
-
-
-
-diag(z′(0)) −Q00 −Q01 −Q02 0 0
-−Qt
-01 I −Q11 −Q12 I 0
-−Qt
-02 −Qt
-12 −Q22 0 −I
-0 I 0 diag( z′′(1)) 0
-0 0 −I 0 diag( z(2)) −I
-
-
-
-
-
-
-
-
-.
-PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS 21
-Note that x(1) and x(2) do not appear in the arguments of ψℏ. Moreover, since BQ =A, we
-see that
+\[
+\Lambda_2 \=
+\left(\!\!
+\def\arraystretch{1.25}
+\begin{array}{ccc|cc}
+\diag(z'^{(0)}) - Q_{00}
+& -Q_{01} & -Q_{02} & 0 & 0\\
+-Q_{01}^t & I-Q_{11} & -Q_{12} & I & 0\\
+-Q_{02}^t & -Q_{12}^t & -Q_{22} & 0 & -I\\
+\hline
+0 & I & 0 & \diag(z''^{(1)})& 0 \\
+0 & 0 & -I & 0 & \diag(z^{(2)})-I
+\end{array}
+\!\!\right) \,.
+\]
+Note that $x^{(1)}$ and $x^{(2)}$ do not appear in the arguments of $\psi_\hbar$.
+Moreover, since $BQ=A$, we see that
+\be\label{eq.BBt}
 B
-
-
-I Q 01 Q02
-0 Q11 −I Q 12
-0 Qt
-12 Q22
-
-
-
-
-I 0 0
-0 I 0
-0 0 −I
-
- = ( B0 |A1 −B1 | −A2) = ~B, (77)
+\begin{pmatrix}
+I & Q_{01} & Q_{02}\\
+0 & Q_{11}-I & Q_{12}\\
+0 & Q_{12}^{t} & Q_{22}
+\end{pmatrix}
+\begin{pmatrix}
+I & 0 & 0\\
+0 & I & 0\\
+0 & 0 & -I
+\end{pmatrix}
+\=
+(B_0\,|\,A_1-B_1\,|-A_2)
+\=
+\widetilde{B}\,,
+\ee
 which implies that
-det
-(
-Q11 −I Q 12
-Qt
-12 Q22
-)
-⁄= 0, and
-(
-Q11 −I Q 12
-Qt
-12 Q22
-) −1
-=
-(
-0 I 0
-0 0 −I
-)
-~B−1B
-
-
-0 0
-I 0
-0 I
-
- .
-(78)
-Therefore, we can apply Fubini’s Theorem (Lemma
-3.1) with the integration variables
-x(1),x (2), and use Lemma 5.2 and the equality Qf +f ′′ =B−1ν to obtain that
-Φ Ξ (ℏ) = ecℏ⟨I3⟩~x,Λ 3. (79)
-where~x = (x(0),y,w ),c ∈ 1
-24
-/CI
-I3 = exp
-(ℏ
-8
-~ft~B−1~A~f − ℏ
-1
-2
-2 ~xt(~B−1~ν − 1)
-) N∏
-j=1
-ψℏ(~xj,~zj)
+\be
+\det
+\begin{pmatrix}
+Q_{11}-I & Q_{12}\\
+Q_{12}^{t} & Q_{22}
+\end{pmatrix}\neq0\,,
+\quad\text{and}\quad
+\begin{pmatrix}
+Q_{11}-I & Q_{12}\\
+Q_{12}^{t} & Q_{22}
+\end{pmatrix}^{-1}
+\=
+\begin{pmatrix}
+0 & I & 0\\
+0 & 0 & -I\\
+\end{pmatrix}
+\widetilde{B}^{-1}B
+\begin{pmatrix}
+0 & 0\\
+I & 0\\
+0 & I
+\end{pmatrix}\,.
+\ee
+Therefore, we can apply Fubini's Theorem (Lemma~\ref{lem.ff1}) with the
+integration variables $x^{(1)},x^{(2)}$,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+and use Lemma~\ref{lem.quad.inv} and
+the equality $Qf+f''=B^{-1}\nu$
+to obtain that 
+\be
+\label{eq.qpf}
+\Phi^{\Xi}(\hbar) \= e^{c\hbar}\langle I_3 \rangle_{\widetilde{x}, \Lambda_3}\,.
+\ee
+where $\widetilde{x}=(x^{(0)},y,w)$, $c\in\frac{1}{24}\BZ$
+\begin{equation*}
+I_3 \= \exp\Big(\frac\hbar8 \widetilde{f}^t \widetilde{B}^{-1}\widetilde{A}
+\widetilde{f}
+-\frac{\hsqrt}2 \widetilde{x}^t(\widetilde{B}^{-1}\widetilde{\nu}-1)\Big)
+\prod_{j=1}^N \psi_{\hbar}(\widetilde{x}_j,\widetilde{z}_j)
+\end{equation*}
 and
-Λ 3 = diag( ~z′) − ~B−1~A.
-The right hand side of Equation ( 79) is exactly equal to ecℏΦ ~Ξ (ℏ), completing the proof of
-Theorem 5.1. □
-Lemma 5.2. With the notation as in the proof of Theorem 5.1, we have the following
-identities
-~B−1~A =
-
-
-Q00 0 0
-0 0 0
-0 0 −I
-
- +
-
-
-Q01 Q02
-−I 0
-0 I
-
-
-(
-Q11 −I Q 12
-Qt
-12 Q22
-) −1(
-Qt
-01 −I 0
-Qt
-02 0 I
-)
-, (80)
-~B−1~ν − 1 =
-
-
-I 0 0
-0 0 0
-0 0 0
-
- (B−1ν − 1) −
-
-
-0
-1
-0
-
-
+\begin{equation*}
+\Lambda_3\=\diag(\widetilde{z}')-\widetilde{B}^{-1}\widetilde{A}\,.
+\end{equation*}
+The right hand side of Equation~\eqref{eq.qpf} is exactly equal to
+$e^{c\hbar}\Phi^{\widetilde{\Xi}}(\hbar)$, completing the proof of
+Theorem~\ref{thm.quadinvariance}.
+\end{proof}
+
+\begin{lemma}
+\label{lem.quad.inv}
+With the notation as in the proof of Theorem~\ref{thm.quadinvariance}, we have
+the following identities
+\begin{align}
+\label{eq.ABtildeq}
+\widetilde{B}^{-1}\widetilde{A}
+&\=
+\begin{pmatrix}
+Q_{00} & 0 & 0\\
+0 & 0 & 0 \\
+0 & 0 & -I
+\end{pmatrix}
 +
-
-
-−Q01 −Q02
-I 0
-0 −I
-
-
-(
-Q11 −I Q 12
-Qt
-12 Q22
-) −1((
-0 I 0
-0 0 I
-)
-B−1ν −
-(
-1
-0
-))
-(81)
-and for some d ∈
-/CI
-~f~B−1~ν = ftB−1ν +d
-−
-(
-(B−1ν)t
-
-
-0 0
-I 0
-0 I
-
- −
-(1 0 ) ) (
-Q11 −I Q 12
-Qt
-12 Q22
-) −1((
-0 I 0
-0 0 I
-)
-B−1ν −
-(
-1
-0
-))
-.
-(82)
-22 STA VROS GAROUF ALIDIS, MATTHIAS STORZER, AND CAMPBELL WH EELER
-Proof. We will show that boths sides of Equation ( 80) and Equation ( 81) are equal after
-multiplying by the invertible matrix ~B. Denote
-(
-Q11 −I Q 12
-Qt
-12 Q22
-) −1
-=
-(
-Γ 11 Γ 12
-Γt
-12 Γ 22
-)
-, (83)
+\begin{pmatrix}
+Q_{01} & Q_{02}\\
+-I & 0 \\
+0 & I
+\end{pmatrix}
+\begin{pmatrix}
+Q_{11}-I & Q_{12}\\
+Q_{12}^{t} & Q_{22}
+\end{pmatrix}^{-1}
+\begin{pmatrix}
+Q_{01}^t & -I & 0 \\
+Q_{02}^t & 0 & I
+\end{pmatrix},\\
+\widetilde{B}^{-1}\widetilde{\nu}-1
+&\=
+\begin{pmatrix}
+I & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix}(B^{-1}\nu-1)
+-\begin{pmatrix}0\\ 1 \\ 0\end{pmatrix}\notag\\
+&\qquad+\begin{pmatrix}
+-Q_{01} & -Q_{02}\\
+I & 0 \\
+0 & -I
+\end{pmatrix}
+\begin{pmatrix}
+Q_{11}-I & Q_{12}\\
+Q_{12}^{t} & Q_{22}
+\end{pmatrix}^{-1}\left(\begin{pmatrix}0 & I & 0\\0 & 0 & I \end{pmatrix}B^{-1}\nu
+-\begin{pmatrix}1 \\ 0\end{pmatrix}\right)\label{eq.Bvtildeq}
+\end{align}
+and for some $d\in\BZ$
+\be\label{eq.fftildeq}
+\begin{aligned}
+&\widetilde{f}\widetilde{B}^{-1}\widetilde{\nu}
+\=
+f^tB^{-1}\nu+d\\
+&-\Big((B^{-1}\nu)^t\begin{pmatrix}
+0 & 0\\
+I & 0\\
+0 & I
+\end{pmatrix}
+-\begin{pmatrix}1 & 0\end{pmatrix}
+\Big)
+\begin{pmatrix}
+Q_{11}-I & Q_{12}\\
+Q_{12}^{t} & Q_{22}
+\end{pmatrix}^{-1}
+\left(\begin{pmatrix}0 & I & 0\\0 & 0 & I \end{pmatrix}B^{-1}\nu
+-\begin{pmatrix}1 \\ 0\end{pmatrix}\right).
+\end{aligned}
+\ee
+\end{lemma}
+
+\begin{proof}
+We will show that boths sides of Equation~\eqref{eq.ABtildeq} and
+Equation~\eqref{eq.Bvtildeq} are equal after multiplying by the invertible
+matrix $\widetilde{B}$. Denote
+\be
+\begin{pmatrix}
+Q_{11}-I & Q_{12}\\
+Q_{12}^{t} & Q_{22}
+\end{pmatrix}^{-1}
+\=
+\begin{pmatrix}
+\Gamma_{11} & \Gamma_{12}\\
+\Gamma_{12}^{t} & \Gamma_{22}
+\end{pmatrix}\,,
+\ee
 and note that
-~B
-
-
-−Q01 −Q02
-I 0
-0 −I
-
-
-( Q11 −I Q 12
-Qt
-12 Q22
-) −1
-= ~B
-
-
-−Q01Γ 11 −Q02Γ t
-12 −Q01Γ 12 −Q02Γ 22
-Γ 11 Γ 12
-−Γ t
-12 −Γ 22
-
-
-= ( −B0Q01Γ 11 −B0Q02Γ t
-12 + (A1 −B1)Γ 11 +A2Γ t
-12 | − B0Q01Γ 12 −B0Q02Γ 22 + (A1 −B1)Γ 12 +A2Γ 22)
-= (( B1(Q11 −I) +B2Qt
-12)Γ 11 + (B1Q12 +B2Q22)Γ t
-12 | (B1(Q11 −I) +B2Qt
-12)Γ 12 + (B1Q12 +B2Q22)Γ 22)
-= ( B1 |B2).
-(84)
+\be\label{eq.qlq}
+\begin{tiny}
+\begin{aligned}
+&
+\widetilde{B}
+\begin{pmatrix}
+-Q_{01} & -Q_{02}\\
+I & 0 \\
+0 & -I
+\end{pmatrix}
+\begin{pmatrix}
+Q_{11}-I & Q_{12}\\
+Q_{12}^{t} & Q_{22}
+\end{pmatrix}^{-1}
+\=
+\widetilde{B}
+\begin{pmatrix}
+  -Q_{01}\Gamma_{11}-Q_{02}\Gamma_{12}^t
+  &-Q_{01}\Gamma_{12}-Q_{02}\Gamma_{22}\\
+  \Gamma_{11} & \Gamma_{12}\\
+  -\Gamma_{12}^{t} &-\Gamma_{22}
+\end{pmatrix}\\
+&\=
+(
+-B_{0}Q_{01}\Gamma_{11}-B_0Q_{02}\Gamma_{12}^t+(A_1-B_1)\Gamma_{11}+A_2\Gamma_{12}^{t}
+\;|\;-B_0Q_{01}\Gamma_{12}-B_0Q_{02}\Gamma_{22}+(A_1-B_1)\Gamma_{12}+A_2\Gamma_{22}
+)
+\\
+&\=
+(
+(B_1(Q_{11}-I)+B_2Q_{12}^t)\Gamma_{11}+(B_1Q_{12}+B_2Q_{22})\Gamma_{12}^t
+\;|\;(B_1(Q_{11}-I)+B_2Q_{12}^t)\Gamma_{12}+(B_1Q_{12}+B_2Q_{22})\Gamma_{22}
+)
+\\
+&\=
+(
+B_1\;|\;B_2
+)\,.
+\end{aligned}
+\end{tiny}
+\ee
 Therefore, since
-~B
-
-
-Q00 0 0
-0 0 0
-0 0 −I
-
- = ( B0Q00 | 0 | −A2), (85)
-we see that multiplying the right hand side of Equations (
-80) on the left by ~B we have
-(B0Q00 +B1Qt
-01 +B2Qt
-02 | −B1 | −A2 +B2) = ~A, (86)
-which completes the proof of Equation (
-80). Similarly, since
-~B
-
-
-I 0 0
-0 0 0
-0 0 0
-
- (B−1ν − 1) − ~B
-
-
-0
-1
-0
-
- = B0(B−1ν)(0) −B01 −A11 +B11 (87)
-we see that multiplying the right hand side of Equations (
-81) on the left by ~B we have
-B0(B−1ν)(0) −B01 −A11 +B11 +B1(B−1ν)(1) −B11 +B2(B−1ν)(2) = ~ν − ~B1, (88)
-which completes the proof of Equation ( 81). For Equation ( 82), we will compute the three
-terms that appear there. Firstly, use Equation ( 81) to obtain that
-(
-0 I 0
-0 0 −I
-)
-(~B−1~ν − 1) = −
-(
-1
-0
-)
+\be
+\widetilde{B}
+\begin{pmatrix}
+Q_{00} & 0 & 0\\
+0 & 0 & 0 \\
+0 & 0 & -I
+\end{pmatrix}
+\=(B_0Q_{00}\;|\;0\;|-A_2)\,,
+\ee
+we see that multiplying the right hand side of
+Equations~\eqref{eq.ABtildeq} on the left by $\widetilde{B}$ we have
+\be
+  (B_0Q_{00}+B_1Q_{01}^t+B_{2}Q_{02}^t\;|-B_1\;|-A_2+B_2)
+  \=\widetilde{A}\,,
+\ee
+which completes the proof of Equation~\eqref{eq.ABtildeq}.
+Similarly, since
+\be
+\widetilde{B}
+\begin{pmatrix}
+I & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix}(B^{-1}\nu-1)
+-\widetilde{B}\begin{pmatrix}0\\ 1 \\ 0\end{pmatrix}
+\=
+B_0(B^{-1}\nu)^{(0)}-B_01
+-A_11+B_11
+\ee
+we see that multiplying the right hand side of
+Equations~\eqref{eq.Bvtildeq} on the left by $\widetilde{B}$ we have
+\be
+  B_0(B^{-1}\nu)^{(0)}-B_01
+  -A_11+B_11
+  +B_1(B^{-1}\nu)^{(1)}-B_11
+  +B_2(B^{-1}\nu)^{(2)}
+  \=\widetilde{\nu}-\widetilde{B}1\,,
+\ee
+which completes the proof of Equation~\eqref{eq.Bvtildeq}.
+For Equation~\eqref{eq.fftildeq}, we will compute the three terms that appear there.
+Firstly, use Equation~\eqref{eq.Bvtildeq} to obtain that
+\be
+\begin{pmatrix}
+0 & I & 0\\
+0 & 0 & -I
+\end{pmatrix}
+(\widetilde{B}^{-1}\widetilde{\nu}-1)
+\=
+-\begin{pmatrix}
+1\\0
+\end{pmatrix}
 +
-(
-Q11 −I Q 12
-Qt
-12 Q22
-) −1((
-0 I 0
-0 0 I
-)
-B−1ν −
-(
-1
-0
-))
-, (89)
+\begin{pmatrix}
+Q_{11}-I & Q_{12}\\
+Q_{12}^{t} & Q_{22}
+\end{pmatrix}^{-1}\left(\begin{pmatrix}0 & I & 0\\0 & 0 & I \end{pmatrix}B^{-1}\nu
+-\begin{pmatrix}1 \\ 0\end{pmatrix}\right),
+\ee
 to obtain that
-
-(B−1ν)t
-
-
-0 0
-I 0
-0 I
-
- −
-(1 0 )
-
-
-((
-0 I 0
-0 0 −I
-)
-(~B−1~ν − 1) +
-(
-1
-0
-))
-= (( B−1ν)(1)t
-− 1)(~B−1~ν)(1) − (B−1ν)(2)t
-(~B−1~ν)(2) + (B−1ν)(2)t
-1.
-(90)
-PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS 23
+\be\label{eq.lem.qinter}
+\begin{aligned}
+&\left((B^{-1}\nu)^t\begin{pmatrix}
+0 & 0\\
+I & 0\\
+0 & I
+\end{pmatrix}
+-\begin{pmatrix}1 & 0\end{pmatrix}
+\right)
+\left(
+\begin{pmatrix}
+0 & I & 0\\
+0 & 0 & -I
+\end{pmatrix}
+(\widetilde{B}^{-1}\widetilde{\nu}-1)+\begin{pmatrix}1 \\ 0\end{pmatrix}
+\right)\\
+&\=
+({(B^{-1}\nu)^{(1)}}^t-1)
+(\widetilde{B}^{-1}\widetilde{\nu})^{(1)}
+-{(B^{-1}\nu)^{(2)}}^t
+(\widetilde{B}^{-1}\widetilde{\nu})^{(2)}+{(B^{-1}\nu)^{(2)}}^t1\,.
+\end{aligned}
+\ee
 Secondly, expanding out
-~ft~B−1~ν = f (0)(~B−1~ν)(0) + (1 −f (1) −f ′′(1))(~B−1~ν)(1) +f ′′(2)(~B−1~ν)(2)
-= f (0)(~B−1~ν)(0)
-+ (1 −f (1) − (B−1ν)(1)t
-+f (0)Q01 +f (1)Q11 +f (2)Qt
-12)(~B−1~ν)(1)
-+ ((B−1ν)(2)t
-−f (0)Q02 −f (1)Q12 −f (2)Q22)(~B−1~ν)(2).
-(91)
-Finally, using Equation (
-77) we obtain that
-ftB−1ν −f (1)1 +f ′′(2)1 = ftB−1ν −f (1)1 −ftQ(0, 0, 1)t + (B−1ν)(2)t
-1
-= ftB−1~ν + (B−1ν)(2)t
-1
-= f (0)(~B−1~ν)(0)
-+ (f (0)Q01 +f (1)(Q11 −I) +f (2)Qt
-12)(~B−1~ν)(1)
-− (f (0)Q02 +f (1)Q12 +f (2)Q22)(~B−1~ν)(2) + (B−1ν)(2)t
-1.
-(92)
-□
+\be
+\begin{aligned}
+\widetilde{f}^t\widetilde{B}^{-1}\widetilde{\nu}
+&\=
+f^{(0)}(\widetilde{B}^{-1}\widetilde{\nu})^{(0)}
++(1-f^{(1)}-f''^{(1)})(\widetilde{B}^{-1}\widetilde{\nu})^{(1)}
++f''^{(2)}(\widetilde{B}^{-1}\widetilde{\nu})^{(2)}\\
+&\=
+f^{(0)}(\widetilde{B}^{-1}\widetilde{\nu})^{(0)}\\
+&\qquad+(1-f^{(1)}-{(B^{-1}\nu)^{(1)}}^t+f^{(0)}Q_{01}+f^{(1)}Q_{11}+f^{(2)}Q_{12}^t)
+(\widetilde{B}^{-1}\widetilde{\nu})^{(1)}\\
+&\qquad+({(B^{-1}\nu)^{(2)}}^t-f^{(0)}Q_{02}-f^{(1)}Q_{12}-f^{(2)}Q_{22})
+(\widetilde{B}^{-1}\widetilde{\nu})^{(2)}\,.
+\end{aligned}
+\ee
+Finally, using Equation~\eqref{eq.BBt} we obtain that
+\be
+\begin{aligned}
+f^tB^{-1}\nu
+-f^{(1)}1
++f''^{(2)}1
+&\=
+f^tB^{-1}\nu
+-f^{(1)}1
+-f^{t}Q(0,0,1)^t
++{(B^{-1}\nu)^{(2)}}^t1\\
+&\=f^tB^{-1}\widetilde{\nu}+{(B^{-1}\nu)^{(2)}}^t1\\
+&\=
+f^{(0)}(\widetilde{B}^{-1}\widetilde{\nu})^{(0)}\\
+&\qquad+(f^{(0)}Q_{01}+f^{(1)}(Q_{11}-I)+f^{(2)}Q_{12}^t)
+(\widetilde{B}^{-1}\widetilde{\nu})^{(1)}\\
+&\qquad-(f^{(0)}Q_{02}+f^{(1)}Q_{12}+f^{(2)}Q_{22})
+(\widetilde{B}^{-1}\widetilde{\nu})^{(2)}
++{(B^{-1}\nu)^{(2)}}^t1\,.
+\end{aligned}
+\ee
+\end{proof}

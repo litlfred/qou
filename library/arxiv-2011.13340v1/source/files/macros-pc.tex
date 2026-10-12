@@ -1,0 +1,254 @@
+% paper-specific packages
+\usepackage{relsize}
+\usepackage[font=footnotesize]{caption}
+\usepackage{yfonts}
+
+% abbreviations and paper-specific macros
+\newcommand{\Id}{\mathop{\mathrm{Id}}\!\mathinner{}}
+\newcommand{\pE}{\tilde {\mathbb E}}
+
+\let\cL\relax
+\DeclareMathOperator{\cL}{\mathcal L}
+% this is a big hack but idk who's defining a bad version of argmax
+\let\argmax\undefined
+\DeclareMathOperator*{\argmax}{\arg \, \max}
+
+\newcommand{\Span}{\mathsf{Span}}
+
+\newcommand*{\annotaterel}[2]{\stackrel{\scriptscriptstyle\text{#1}}{#2}}
+
+\DeclareUrlCommand\email{}
+
+\newcommand{\tO}{\tilde O}
+\newcommand{\tOmega}{\tilde \Omega}
+\newcommand{\tTheta}{\tilde \Theta}
+\newcommand{\Err}{\text{Err}}
+\newcommand{\Lsym}{\text{Lsym}}
+\newcommand{\Rsym}{\text{Rsym}}
+\newcommand{\pEs}{{\pE^*}}
+\newcommand{\Conn}{\mathsf{conn}}
+\newcommand{\Connk}{k\mathsf{conn}}
+\newcommand{\omegan}{{\left( \frac{\omega}{n} \right)}}
+\newcommand{\omegasqn}{{\left( \frac{\omega^2}{n} \right)}}
+\newcommand{\fR}{\mathfrak{R}}
+\newcommand{\fI}{\mathfrak{I}}
+\newcommand{\fV}{\mathfrak{V}}
+\newcommand{\fU}{\mathfrak{U}}
+\newcommand{\fD}{\mathfrak{D}}
+
+
+% Pravesh Kothari's Macros
+%\newcommand{\pnote}[1]{\textcolor{blue}{\small{[Pravesh: #1]}}}
+\usepackage{appendix}
+\usepackage{amssymb}
+ %\setlength\parindent{0pt}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{amsmath}
+
+% Ankur Moitra's Macros
+\newcommand{\anote}[1]{\textcolor{green}{\small{[Ankur: #1]}}}
+
+\usepackage[T1]{fontenc}
+\usepackage{fullpage,appendix}
+\usepackage{dsfont}
+\usepackage[capitalize]{cleveref}
+
+\usepackage{color}
+\usepackage{tikz}
+
+\newcommand{\eqdef}{\stackrel{\textrm{def}}{=}}
+\newcommand{\spn}{\S^{n-1}}
+\newcommand{\tm}{\tilde{m}}
+\newcommand{\ignore}[1]{}
+\definecolor{corlinks}{RGB}{64,128,128}
+\definecolor{cormenu}{RGB}{0,37,94}
+\definecolor{corurl}{RGB}{0,46,91}
+
+%\setlength{\parindent}{0in}
+\newcommand{\on}{\{-1,1\}}
+\newcommand{\1}{\mathds{1}}
+
+\newcommand{\bkets}[1]{\left(#1\right)}
+\newcommand{\sbkets}[1]{\left[#1\right]}
+\newcommand{\braces}[1]{\left\{#1\right\}}
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+
+\newcommand{\dcdf}{\mathsf{dcdf}}
+\newcommand{\cor}{\mathsf{cor}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\BPP}{\mathbf{BPP}}
+%\newcommand{\E} {\mathbb{E}}
+\DeclareMathOperator*{\ex}{\mathbb{E}}
+\DeclareMathOperator*{\pr}{\mathsf{Pr}}
+%\newcommand{\R}{\mathbb{R}}
+\newcommand{\size}{\mathsf{size}}
+\newcommand{\erf}{ \mathsf{erf} }
+\newcommand{\D}{\mathcal{D}}
+%\renewcommand{\H}{\mathbb{H}}
+%\newcommand{\cH}{\mathcal{H}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\V}{\mathcal{V}}
+\renewcommand{\Top}{\mathsf{Top}}
+%\newcommand{\N}{\mathbb{N}}
+%\newcommand{\cN}{\mathcal{N}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\transposed}{\dagger}
+%\newcommand{\cC}{\mathcal{C}}
+%\newcommand{\C}{\mathcal{C}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\U}{\mathcal{U}}
+%\newcommand{\cU}{\mathcal{U}}
+\newcommand{\SO}{\mathsf{SO}}
+\newcommand{\SU}{\mathsf{SU}}
+% \newcommand{\sign}{\mathsf{sign}}
+\renewcommand{\L}{\mathcal{L}}
+\renewcommand{\O}{\mathcal{O}}
+%\newcommand{\g}{\text{\frakfamily g}}
+\newcommand{\g}{G}
+%changing this to $G_{e}$ notation
+\newcommand{\h}{\text{\frakfamily h}}
+\newcommand{\CQ}{\mathsf{CQ}}
+\newcommand{\tmu} {\tilde{\mu}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\tnu}{\tilde{\nu}}
+\newcommand{\M}{\mathcal{M}}
+% \newcommand{\card}[1]{\lvert#1\rvert}
+% \newcommand{\norm}[1]{\lVert#1\rVert}
+% \newcommand{\poly}{\mathsf{poly}}
+% \newcommand{\Prob}{\Pr}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\STAT}{\mathsf{STAT}}
+%\newcommand{\CSTAT}{\mathsf{CSTAT}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}
+\newcommand{\zo}{\{0, 1\}}
+
+%complexity classes
+\newcommand{\Ppoly}{\mathsf{P/poly}}
+\newcommand{\BPTIME}{\mathsf{BPTIME}}
+\newcommand{\EXP}{\mathsf{EXP}}
+\newcommand{\NP}{\mathsf{NP}}
+\newcommand{\DTIME}{\mathsf{DTIME}}
+\newcommand{\PSPACE}{\mathsf{PSPACE}}
+\newcommand{\PH}{\mathsf{PH}}
+\newcommand{\SIZE}{\mathsf{SIZE}}
+\newcommand{\NEXP}{\mathsf{NEXP}}
+\newcommand{\CSTAT}{\mathsf{CSTAT}}
+\newcommand{\Maj}{\mathsf{MAJ}}
+\renewcommand{\cal}[1]{\mathcal{#1}}
+% \newcommand{\eps}{\epsilon}
+%\newtheorem{fact}{Fact}[section]
+%
+\newtheorem*{notation}{Notation}
+%\newtheorem*{untheorem}{Theorem}
+%\newtheorem{theorem}[fact]{Theorem}
+%\newtheorem{lemma}[fact]{Lemma}
+%\newtheorem{corollary}[fact]{Corollary}
+%\newtheorem{observation}[fact]{Observation}
+%\newtheorem{proposition}[fact]{Proposition}
+%\newtheorem{problem}[fact]{Problem}
+%\newtheorem{claim}[fact]{Claim}
+%\newtheorem{conjecture}[fact]{Conjecture}
+%\newtheorem*{note}{Note}
+%\newtheorem{remark}[fact]{Remark}
+%\newtheorem{question}{Question}
+%\theoremstyle{definition}
+%\newtheorem{definition}[fact]{Definition}
+%
+
+%
+%\floatstyle{plain}
+%\newfloat{myalgo}{tbhp}{mya}
+%
+%\newenvironment{Algorithm}[2][tbh]%
+%{\begin{myalgo}[#1]
+%\centering
+%\begin{minipage}{#2}
+%\begin{algorithm}[H]}%
+%{\end{algorithm}
+%\end{minipage}
+%\end{myalgo}
+%}
+%\newcounter{Algo}
+%\floatstyle{plain}
+%\newfloat{myalgo}{tbhp}{mya}
+%
+%\newenvironment{Algorithm}[2][tbh]%
+%{\begin{myalgo}[#1]
+%\refstepcounter{Algo}
+%\centering
+%\begin{minipage}{#2}
+%\begin{algorithm}[H]}%
+%{\end{algorithm}
+%\end{minipage}
+%\end{myalgo}}
+
+
+\newcommand{\MCSP} {\textsc{Max}}%\text{-}\mathsf{CSP}}
+\newcommand{\tE}{\tilde{\mathbb{E}}}
+% \newcommand{\Span}{\mathsf{Span}}
+\newcommand{\tchi}{\tilde{\chi}}
+\newcommand{\tv}{\tilde{v}}
+% \newcommand{\dist}{\mathsf{dist}}
+\newcommand{\cl}{\mathsf{cl}}
+\newcommand{\Ball}{\mathsf{Ball}}
+\newcommand{\bchi}{\bar{\chi}}
+\newcommand{\Proj}{\mathsf{Proj}}
+\newcommand{\eg}{e.~g.}
+\newcommand{\zon}{\{0,1\}^n}
+
+
+%\newcommand{\e}{\epsilon}
+\newcommand{\pmo}{\{\pm 1\}}
+%\newcommand\Hastad{H{\aa}stad }
+%\newcommand\cR{\mathcal{R}}
+%\newcommand\cD{\mathcal{D}}
+%\newcommand\cP{\mathcal{P}}
+%\newcommand\pE{\Tilde{\mathbb{E}}}
+
+
+\newcommand{\rlin}{\textsc{Real}-\textsc{LIN} }
+\renewcommand{\int}{\mathsf{int}}
+
+%newly defined stuff
+\newcommand{\MaxC}{\textsc{MAX CLIQUE}}
+\newcommand{\nchoose}[1]{{{[n]} \choose {#1}}}
+\newcommand{\nperm}[1]{ [n, {#1}]}
+\newcommand{\sE}{\mathcal{E}}
+
+\DeclareMathOperator{\lex}{lex}
+
+\renewcommand{\top}{\dagger}
+
+\renewcommand{\1}{\mathbf{1}}
+
+\renewcommand{\hat}{\widehat}
+
+
+\renewcommand{\on}[1]{\tfrac{\binom{\omega}{#1}}{\binom{n}{#1}}}
+
+\newcommand{\hpE}[1]{\hat{\pE[#1]}}
+
+\newcommand{\xor}{\oplus}
+
+\renewcommand{\emptyset}{\varnothing}
+
+
+
+\makeatletter
+\let\orgdescriptionlabel\descriptionlabel
+\renewcommand*{\descriptionlabel}[1]{%
+  \let\orglabel\label
+  \let\label\@gobble
+  \phantomsection
+  \edef\@currentlabel{#1}%
+  %\edef\@currentlabelname{#1}%
+  \let\label\orglabel
+  \orgdescriptionlabel{#1}%
+}
+\makeatother
+
+%%% Local Variables:
+%%% mode: latex

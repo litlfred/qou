@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/mcmullen-braids-hodge-2013/sections/sec-000",
   "@type": [
     "doco:Section"
@@ -10,7 +15,7 @@
   "contains": [
     "library/mcmullen-braids-hodge-2013/blocks/prose-sec-000"
   ],
-  "derivedFrom": "library/mcmullen-braids-hodge-2013/manifest",
-  "sourceDocument": "library/mcmullen-braids-hodge-2013/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mcmullen-braids-hodge-2013/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mcmullen-braids-hodge-2013/manifest.jsonld",
   "provenance": "ingested"
 }

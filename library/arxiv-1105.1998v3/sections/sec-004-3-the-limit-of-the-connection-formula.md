@@ -8,715 +8,174 @@ pages: 6-11
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
 doc_brief: "A Connection Formula of the Hahn-Exton q-Bessel Function — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
+text_source: latex
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 0.951
 ---
-In this section, we show that the limit p → 1− of the connection formula gives a connection
-formula of the Bessel function. At first, we assume that 0 < p < 1 and 0 < √
-p < 1. For the
-Bessel function, we set the Hankel function of the first and t he second kind H (1)
-ν (z) and H (2)
-ν (z).
-Deﬁnition 3. The Hankel function of the first kind is given by
-H (1)
-ν (z) := Γ
-(1
-2 − ν
-)
-πi √π
-(z
-2
-)ν∫ (1+)
-1+∞ i
-eizt(
-t2 − 1
-)ν− 1
-2 dt, −π < arg z < 2π.
-The Hankel function of the second kind is defined by
-H (2)
-ν (z) := Γ
-(1
-2 − ν
-)
-πi √π
-(z
-2
-)ν∫ (− 1− )
-− 1+∞ i
-eizt(
-t2 − 1
-)ν− 1
-2 dt, −2π < arg z < π.
-The contour for H (1)
-ν (z) is a path starting from t = +1 + ∞i, rounding the circle around
-t = 1 counterclockwise, and going back to t = +1 + ∞i. Moreover, the contour for H (2)
-ν (z) is
-a path starting from t = −1 + ∞i, rounding the circle around t = 1 clockwise, and going back
-to t = −1 + ∞i.
-The Hankel functions can be written by Jν (z):
-H (1)
-ν (z) = ie− νπi
-sin νπ
-{
-Jν (z) − eνπi J− ν (z)
-}
-, (8)
-H (2)
-ν (z) = − ieνπi
-sin νπ
-{
-Jν (z) − e− νπi J− ν (z)
-}
-. (9)
-The Hankel functions have asymptotic expansions around z = 0 [4]:
-H (1)
-ν (z) ∼
-( 2
-πz
-)1
-2
-eiζ∑
-s≥ 0
-is As(ν)
-zs , −π + δ ≤ arg z ≤ 2π − δ,
-H (2)
-ν (z) ∼
-( 2
-πz
-)1
-2
-e− iζ∑
-s≥ 0
-(−i)s As(ν)
-zs , −2π + δ ≤ arg z ≤ π − δ,
-as z → ∞. Here, δ is an any small constant,
-As(ν) = (4ν2 − 12)(4ν2 − 32) · · ·
-{
-4ν2 − (2s − 1)2}
-s!8s
-and
-ζ = z − 1
-2 νπ − 1
-4 π.
-In this sense, (8) and (9) considered as connection formula o f the Bessel equation.
-A Connection Formula of the Hahn–Exton q-Bessel Function 7
-3.1 Limit of the connection formula
-We rewrite the connection formula in Theorem 1 in order to tak e a limit p → 1− . We set new
-functions hν (t; p) and J ±
-ν (x; p). We set hν (t; p) := ( p1/ 2, p 1/ 2; p)∞ z(t). For any x ∈ C∗ \ [−λ; p]
-and λ ∈ C∗, J +
-ν,λ (x; p) is
-J +
-ν,λ (x; p) := (pν+1; p)∞
-(p; p)∞
-θp
-(
-λp ν
-x
-)
-θp
-(λ
-x
-) 1ϕ 1
-(
-0; p1+2ν ; p, x
-)
-.
-Similarly, J −
-ν,λ (x; p) is
-J −
-ν,λ (x; p) := (pν+1; p)∞
-(p; p)∞
-θp
-(
-λp ν
-x
-)
-θp
-(λ
-x
-) 1ϕ 1
-(
-0; p1+2ν ; p, p 2ν x
-)
-.
-We remark that the function θp(λp ν /x )/θ p(λ/x ) satisfies the following q-difference equation
-u(px) = pν u(x),
-which is also satisfied by the function u(x) = xν . We remark that the pair ( J +
-ν,λ (x; p), J −
-− ν,λ (x; p))
-gives a fundamental system of solutions of equation (6) if ν ⁄∈Z. We set the function C +
-ν (λ, t ; p)
-and C −
-ν (λ, t ; p) as follow:
-Deﬁnition 4. For any λ ∈ C∗, C +
-ν (λ, t ; p) is
-C +
-ν (λ, t ; p) := (p
-1
-2 , p
-1
-2 ; p)∞
-(pν+1, p − 2ν ; p)∞
-θp(−p2ν+2t)
-θp(−pν+2t)
-θp(λt)
-θp(λp ν t) .
-Similarly, the function C −
-ν (λ, t ; p) is
-C −
-ν (λ, t ; p) := (p
-1
-2 , p
-1
-2 ; p)∞
-(p− ν+1, p 2ν ; p)∞
-θp(−p2t)
-θp(−pν+2t)
-θp(λt)
-θp(λp − ν t) .
-Then, C +
-ν (λ, t ; p) and C −
-ν (λ, t ; p) are single valued as a function of t. The function C +
-ν (λ, t ; p)
-and C −
-ν (λ, t ; p) are the p-elliptic functions. By using these new functions, our conn ection formula
-is rewritten by
-hν
-(1
-x ; p
-)
-= C +
-ν
-(
-λ, 1
-x ; p
-)
-J +
-ν (x; p) + C −
-ν
-(
-λ, 1
-x ; p
-)
-J −
-− ν,λ (x; p).
-Theorem 2. For any x ∈ C∗ \ (−∞, 0] where arg x ∈ (−π, π ), we have
-lim
-p→ 1−
-hν
-( 1
-(1 − p)2x ; p
-)
-= −ie− νπi H (2)
-2ν (2√x).
-Here, H (2)
-2ν (·) is the Hankel function of the second kind.
+[]{#section3 label="section3"}
+
+In this section, we show that the limit $p\to 1^-$ of the connection formula gives a connection formula of the Bessel function. At first, we assume that $0<p<1$ and $0<\sqrt{p}<1$. For the Bessel function, we set the Hankel function of the first and the second kind $H_\nu^{(1)}(z)$ and $H_\nu^{(2)}(z)$.
+
+::: definition
+The Hankel function of the first kind is given by $$H_\nu^{(1)}(z):=\frac{\Gamma \left(\frac{1}{2}-\nu\right)}{\pi i\sqrt{\pi}}\left(\frac{z}{2}\right)^\nu\int_{1+\infty i}^{(1+)}e^{izt}\left(t^2-1\right)^{\nu -\frac{1}{2}}dt,\qquad -\pi <\arg z<2\pi .$$ The Hankel function of the second kind is defined by $$H_\nu^{(2)}(z):=\frac{\Gamma \left(\frac{1}{2}-\nu\right)}{\pi i\sqrt{\pi}}\left(\frac{z}{2}\right)^\nu\int_{-1+\infty i}^{(-1-)}e^{izt}\left(t^2-1\right)^{\nu -\frac{1}{2}}dt,\qquad -2\pi <\arg z<\pi .$$
+:::
+
+The contour for $H_\nu^{(1)}(z)$ is a path starting from $t=+1+\infty i$, rounding the circle around $t=1$ counterclockwise, and going back to $t=+1+\infty i$. Moreover, the contour for $H_\nu^{(2)}(z)$ is a path starting from $t=-1+\infty i$, rounding the circle around $t=1$ clockwise, and going back to $t=-1+\infty i$.
+
+The Hankel functions can be written by $J_\nu (z)$: $$\begin{gathered}
+H_\nu^{(1)}(z) =\frac{ie^{-\nu\pi i}}{\sin\nu\pi}\left\{J_\nu (z)-e^{\nu\pi i}J_{-\nu}(z)\right\},\label{ha1}\\
+H_\nu^{(2)}(z) =-\frac{ie^{\nu\pi i}}{\sin\nu\pi}\left\{J_\nu (z)-e^{-\nu\pi i}J_{-\nu}(z)\right\}.\label{ha2}
+\end{gathered}$$ The Hankel functions have asymptotic expansions around $z=0$ [@Ol]: $$\begin{gathered}
+H_\nu^{(1)}(z) \sim \left(\frac{2}{\pi z}\right)^{\frac{1}{2}}e^{i\zeta}\sum_{s\ge 0}i^s\frac{A_s(\nu )}{z^s},\qquad -\pi +\delta \leq \arg z\leq 2\pi -\delta ,\\
+H_\nu^{(2)}(z) \sim \left(\frac{2}{\pi z}\right)^{\frac{1}{2}}e^{-i\zeta}\sum_{s\ge 0}(-i)^s\frac{A_s(\nu )}{z^s},\qquad -2\pi +\delta \leq \arg z\leq \pi -\delta ,
+\end{gathered}$$ as $z\to \infty$. Here, $\delta$ is an any small constant, $$A_s(\nu )=\frac{(4\nu^2-1^2)(4\nu^2-3^2)\cdots \left\{4\nu^2-(2s-1)^2\right\}}{s!8^s}$$ and $$\zeta =z-\frac{1}{2}\nu\pi -\frac{1}{4}\pi .$$ In this sense, ([\[ha1\]](#ha1){reference-type="ref" reference="ha1"}) and ([\[ha2\]](#ha2){reference-type="ref" reference="ha2"}) considered as connection formula of the Bessel equation.
+
+## Limit of the connection formula {#section3.1}
+
+We rewrite the connection formula in Theorem [\[theorem1\]](#theorem1){reference-type="ref" reference="theorem1"} in order to take a limit $p\to 1^-$. We set new functions $h_\nu (t;p)$ and $J_\nu^{\pm}(x;p)$. We set $h_\nu (t;p):=(p^{1/2},p^{1/2};p)_\infty z(t)$. For any $x\in\mathbb{C}^*\setminus [-\lambda ;p]$ and $\lambda\in\mathbb{C}^*$, $J_{\nu ,\lambda}^{+}(x;p)$ is $$J_{\nu ,\lambda}^{+}(x;p):=\frac{(p^{\nu +1};p)_\infty}{(p;p)_\infty}\frac{\theta_p\left(\frac{\lambda p^{\nu}}{x}\right)}{\theta_p\left(\frac{\lambda}{x}\right)}{}_1\varphi_1\left(0;p^{1+2\nu};p,x\right).$$ Similarly, $J_{\nu ,\lambda}^{-}(x;p)$ is $$J_{\nu ,\lambda}^{-}(x;p):=\frac{(p^{\nu +1};p)_\infty}{(p;p)_\infty}\frac{\theta_p\left(\frac{\lambda p^{\nu}}{x}\right)}{\theta_p\left(\frac{\lambda}{x}\right)}{}_1\varphi_1\left(0;p^{1+2\nu};p,p^{2\nu }x\right).$$ We remark that the function $\theta_p(\lambda p^\nu /x)/\theta_p(\lambda /x)$ satisfies the following $q$-difference equation $$u(px)=p^\nu u(x),$$ which is also satisfied by the function $u(x)=x^\nu$. We remark that the pair $(J_{\nu,\lambda}^{+}(x;p),J_{-\nu,\lambda}^{-}(x;p))$ gives a fundamental system of solutions of equation ([\[b3\]](#b3){reference-type="ref" reference="b3"}) if $\nu\not\in\mathbb{Z}$. We set the function $C^+_\nu (\lambda ,t;p)$ and $C^-_\nu (\lambda ,t;p)$ as follow:
+
+::: definition
+For any $\lambda\in\mathbb{C}^*$, $C^+_\nu (\lambda ,t;p)$ is $$C^+_\nu (\lambda ,t;p):=
+\frac{(p^{\frac{1}{2}},p^{\frac{1}{2}};p)_\infty}{(p^{\nu +1},p^{-2\nu};p)_\infty}\frac{\theta_p(-p^{2\nu +2}t)}{\theta_p(-p^{\nu +2}t)}\frac{\theta_p(\lambda t)}{\theta_p(\lambda p^\nu t)}.$$ Similarly, the function $C^-_\nu (\lambda ,t;p)$ is $$C^-_\nu (\lambda ,t;p):=
+\frac{(p^{\frac{1}{2}},p^{\frac{1}{2}};p)_\infty}{(p^{-\nu +1},p^{2\nu};p)_\infty}\frac{\theta_p(-p^2t)}{\theta_p(-p^{\nu +2}t)}\frac{\theta_p(\lambda t)}{\theta_p(\lambda p^{-\nu }t)}.$$
+:::
+
+Then, $C^+_\nu (\lambda ,t;p)$ and $C^-_\nu (\lambda ,t;p)$ are single valued as a function of $t$. The function $C^+_\nu (\lambda ,t;p)$ and $C^-_\nu (\lambda ,t;p)$ are the $p$-elliptic functions. By using these new functions, our connection formula is rewritten by $$h_\nu\left(\frac{1}{x};p\right)=C_{\nu}^+\left(\lambda ,\frac{1}{x};p\right)J_{\nu}^{+}(x;p)
++C_\nu^-\left(\lambda ,\frac{1}{x};p\right)J_{-\nu ,\lambda}^{-}(x;p).$$
+
+::: theorem
+[]{#limitbessel label="limitbessel"}For any $x\in \mathbb{C}^*\setminus (-\infty ,0]$ where $\arg x\in (-\pi ,\pi )$, we have $$\lim_{p\to 1^-}h_\nu \left(\frac{1}{(1-p)^2x};p\right)
+=-ie^{-\nu\pi i}H_{2\nu}^{(2)}(2\sqrt{x}).$$ Here, $H_{2\nu}^{(2)}(\cdot )$ is the Hankel function of the second kind.
+:::
+
 The aim of this section is to give a proof of the theorem above.
-By the definition, hν
-(
-1/ {(1 − p)2x}; p
-)
-can be described as follows
-hν
-( 1
-(1 − p)2x ; p
-)
-=
-{
-(p
-1
-2 , p
-1
-2 ; p)∞
-(p− 2ν , p ; p)∞
-(1 − p)2ν
-} 
-
-
-θp
-(
-− p2ν +2
-x(1− p)2
-)
-θp
-(
-− pν +2
-x(1− p)2
-)(1 − p)− 2ν
-
-
- .
-×
-{
-1ϕ 1
-(
-0; p1+2ν ; p, (1 − p)2x
-)}
-8 T. Morita
-+
-{
-(p
-1
-2 , p
-1
-2 ; p)∞
-(p2ν , p ; p)∞
-(1 − p)− 2ν
-} 
-
-
-θp
-(
-− p2
-x(1− p)2
-)
-θp
-(
-− pν +2
-x(1− p)2
-)(1 − p)2ν
-
-
-
-×
-{
-1ϕ 1
-(
-0; p1− 2ν ; p, p − 2ν (1 − p)2x
-)}
-. (10)
-We consider the limit of each part {·}.
-Lemma 4. For any ν ∈ C∗ \ Z, we have
-lim
-p→ 1−
-(p
-1
-2 , p
-1
-2 ; p)∞
-(p− 2ν , p ; p)∞
-(1 − p)2ν = − 1
-sin(2νπ )Γ(2 ν + 1) .
-Proof . We can check out as follows
-(p
-1
-2 , p
-1
-2 ; p)∞
-(p− 2ν , p ; p)∞
-(1 − p)2ν =
-(p;p)∞
-(p− 2ν ;p)∞
-(1 − p)1+2ν
-{
-(p;p)∞
-(p
-1
-2 ;p)∞
-(1 − p)
-1
-2
-}{
-(p;p)∞
-(p
-1
-2 ;p)∞
-(1 − p)
-1
-2
-} = Γ p(−2ν)
-Γ p
-(1
-2
-)
-Γ p
-(1
-2
-).
-Here, Γ q(·) is Jackson’s q-gamma function which is defined by
-Γ q(x) := (q; q)∞
-(qx; q)∞
-(1 − q)1− x, 0 < q < 1.
-This function satisfies lim
-q→ 1−
-Γ q(x) = Γ( x) [2]. Therefore,
-lim
-p→ 1−
-(p
-1
-2 , p
-1
-2 ; p)∞
-(p− 2ν , p ; p)∞
-(1 − p)2ν = Γ( −2ν)
-Γ
-(1
-2
-)
-Γ
-(1
-2
-).
-By Euler’s reflection formula of the gamma function, we get
-Γ( −2ν)
-Γ
-(1
-2
-)
-Γ
-(1
-2
-)= − 1
-sin(2νπ )Γ(2 ν + 1) .
-Therefore, we get the conclusion. ■
-If we replace ν by −ν, we get the limit
-lim
-p→ 1−
-(p
-1
-2 , p
-1
-2 ; p)∞
-(p2ν , p ; p)∞
-(1 − p)− 2ν = 1
-sin(2νπ )Γ(1 − 2ν) .
-In [8], the following proposition can be found:
-Proposition 1. For any x ∈ C∗ (−π < arg x < π ), we have
-lim
-p→ 1−
-θp
-(
-pν 1
-(1− p2)x
-)
-θp
-(
-pν 2
-(1− p2)x
-)(
-1 − p2)ν2− ν1
-= xν1− ν2,
-and
-lim
-p→ 1−
-θp
-(
-− pν 1
-(1− p2)x
-)
-θp
-(
-− pν 2
-(1− p2)x
-)(
-1 − p2)ν2− ν1
-= (−x)ν1− ν2.
-A Connection Formula of the Hahn–Exton q-Bessel Function 9
-Lemma 5. For any x ∈ C∗ (−π < arg x ≤ π ) and ﬁxed constant K, we have
-θp(−√p)θp
-(
-− K
-x
-)
-= θ√ p
-(√
-K
-x
-)
-θ√ p
-(
-−
-√
-K
-x
-)
-.
-Proof . From Jacobi’s triple product identity and ( a2; q2)n = (a, −a; q)n, we obtain
-(√p; √p)∞
-(−√p; √p)∞
-θp
-(
-− K
-x
-)
-= θ√ p
-(√
-K
-x
-)
-θ√ p
-(
-−
-√
-K
-x
-)
-.
-We remark that ( √p; √p)∞ / (−√p; √p)∞ can be rewritten as follows [2]:
-(√p; √p)∞
-(−√p; √p)∞
-=
-∑
-n∈ Z
-(−1)n(√p)n2
-= θp(−√p).
-We obtain the conclusion. ■
+
+By the definition, $h_\nu \left(1/\{(1-p)^2x\};p\right)$ can be described as follows $$\begin{gathered}
+ h_\nu\left(\frac{1}{(1-p)^2x};p\right)
+ =\left\{\frac{(p^{\frac{1}{2}},p^{\frac{1}{2}};p)_\infty}{(p^{-2\nu},p;p)_\infty}(1-p)^{2\nu}\right\}
+\left\{\frac{\theta_p\left(-\frac{p^{2\nu +2}}{x(1-p)^2}\right)}{\theta_p\left(-\frac{p^{\nu +2}}{x(1-p)^2}\right)}(1-p)^{-2\nu}\right\} \notag.\\
+ \hphantom{h_\nu\left(\frac{1}{(1-p)^2x};p\right) =}{}
+  \times\left\{{}_1\varphi_1\left(0;p^{1+2\nu};p,(1-p)^2x\right)\right\}\notag\\
+\hphantom{h_\nu\left(\frac{1}{(1-p)^2x};p\right) =}{}  +
+\left\{\frac{(p^{\frac{1}{2}},p^{\frac{1}{2}};p)_\infty}{(p^{2\nu},p;p)_\infty}(1-p)^{-2\nu}\right\}
+\left\{\frac{\theta_p\left(-\frac{p^2}{x(1-p)^2}\right)}{\theta_p\left(-\frac{p^{\nu +2}}{x(1-p)^2}\right)}(1-p)^{2\nu}\right\} \notag\\
+\hphantom{h_\nu\left(\frac{1}{(1-p)^2x};p\right) =}{} \times
+\left\{{}_1\varphi_1\left(0;p^{1-2\nu};p,p^{-2\nu}(1-p)^2x\right)\right\}.\label{limit}
+\end{gathered}$$ We consider the limit of each part $\{\cdot \}$.
+
+::: lemma
+[]{#limgam label="limgam"}For any $\nu \in\mathbb{C}^*\setminus \mathbb{Z}$, we have $$\lim_{p\to 1^-}
+\frac{(p^{\frac{1}{2}},p^{\frac{1}{2}};p)_\infty}{(p^{-2\nu},p;p)_\infty}(1-p)^{2\nu}
+=-\frac{1}{\sin (2\nu\pi )\Gamma (2\nu +1)}.$$
+:::
+
+::: proof
+*Proof.* We can check out as follows $$\begin{gathered}
+\frac{(p^{\frac{1}{2}},p^{\frac{1}{2}};p)_\infty}{(p^{-2\nu},p;p)_\infty}(1-p)^{2\nu} =\frac{\frac{(p;p)_\infty}{(p^{-2\nu};p)_\infty}(1-p)^{1+2\nu}}
+{\left\{\frac{(p;p)_\infty}{(p^{\frac{1}{2}};p)_\infty}(1-p)^{\frac{1}{2}}\right\}
+\left\{\frac{(p;p)_\infty}{(p^{\frac{1}{2}};p)_\infty}(1-p)^{\frac{1}{2}}\right\}
+} =\frac{\Gamma_p(-2\nu )}{\Gamma_p\left(\frac{1}{2}\right)\Gamma_p\left(\frac{1}{2}\right)}.
+\end{gathered}$$ Here, $\Gamma_q(\cdot )$ is Jackson's $q$-gamma function which is defined by $$\Gamma_q(x):=\frac{(q;q)_\infty}{(q^x;q)_\infty}(1-q)^{1-x},\qquad 0<q<1.$$ This function satisfies $\lim\limits_{q\to 1^-}\Gamma_q(x)=\Gamma (x)$ [@GR]. Therefore, $$\lim_{p\to 1^-}
+\frac{(p^{\frac{1}{2}},p^{\frac{1}{2}};p)_\infty}{(p^{-2\nu},p;p)_\infty}(1-p)^{2\nu}
+=\frac{\Gamma (-2\nu )}{\Gamma \left(\frac{1}{2}\right)\Gamma \left(\frac{1}{2}\right)}.$$ By Euler's reflection formula of the gamma function, we get $$\frac{\Gamma (-2\nu )}{\Gamma\left(\frac{1}{2}\right)\Gamma\left(\frac{1}{2}\right)}=
+-\frac{1}{\sin (2\nu\pi )\Gamma (2\nu +1)}.$$ Therefore, we get the conclusion. ◻
+:::
+
+If we replace $\nu$ by $-\nu$, we get the limit $$\lim_{p\to 1^-}
+\frac{(p^{\frac{1}{2}},p^{\frac{1}{2}};p)_\infty}{(p^{2\nu},p;p)_\infty}(1-p)^{-2\nu}=\frac{1}{\sin (2\nu\pi )\Gamma (1-2\nu )}.$$ In [@Z1], the following proposition can be found:
+
+::: proposition
+[]{#propo1 label="propo1"} For any $x\in\mathbb{C}^*$ $(-\pi <\arg x<\pi )$, we have $$\lim_{p\to 1^-}\frac{\theta_p\left(\frac{p^{\nu_1}}{(1-p^2)x}\right)}{\theta_p\left(\frac{p^{\nu_2}}{(1-p^2)x}\right)}\left(1-p^2\right)^{\nu_2-\nu_1}=x^{\nu_1-\nu_2},$$and $$\lim_{p\to 1^-}\frac{\theta_p\left(-\frac{p^{\nu_1}}{(1-p^2)x}\right)}{\theta_p\left(-\frac{p^{\nu_2}}{(1-p^2)x}\right)}\left(1-p^2\right)^{\nu_2-\nu_1}=(-x)^{\nu_1-\nu_2}.$$
+:::
+
+::: lemma
+For any $x\in\mathbb{C}^*$ $(-\pi <\arg x\leq\pi )$ and fixed constant $K$, we have $$\theta_p(-\sqrt{p})\theta_p\left(-\frac{K}{x}\right)
+=\theta_{\sqrt{p}}\left(\sqrt{\frac{K}{x}}\right)\theta_{\sqrt{p}}\left(-\sqrt{\frac{K}{x}}\right).$$
+:::
+
+::: proof
+*Proof.* From Jacobi's triple product identity and $(a^2;q^2)_n=(a,-a;q)_n$, we obtain $$\frac{(\sqrt{p};\sqrt{p})_\infty}{(-\sqrt{p};\sqrt{p})_\infty}\theta_p\left(-\frac{K}{x}\right)
+=\theta_{\sqrt{p}}\left(\sqrt{\frac{K}{x}}\right)\theta_{\sqrt{p}}\left(-\sqrt{\frac{K}{x}}\right).$$ We remark that $(\sqrt{p};\sqrt{p})_\infty /(-\sqrt{p};\sqrt{p})_\infty$ can be rewritten as follows [@GR]: $$\frac{(\sqrt{p};\sqrt{p})_\infty}{(-\sqrt{p};\sqrt{p})_\infty}
+=\sum_{n\in\mathbb{Z}}(-1)^n(\sqrt{p})^{n^2}=\theta_p(-\sqrt{p}).$$ We obtain the conclusion. ◻
+:::
+
 Therefore, we obtain the following relation.
-Corollary 1. For any x ∈ C∗ (−π < arg x ≤ π ), we have
-θp
-(
-p2ν+2 − 1
-(1− p)2x
-)
-θp
-(
-pν+2 − 1
-(1− p)2x
-) =
-θ√ p
-(
-pν+1 1
-(1− p)√ x
-)
-θ√ p
-(
-pν+1 − 1
-(1− p)√ x
-)
-θ√ p
-(
-p
-ν
-2 +1 1
-(1− p)√ x
-)
-θ√ p
-(
-p
-ν
-2 +1 − 1
-(1− p)√ x
-) (11)
-and
-θp
-(
-p2 − 1
-(1− p)2x
-)
-θp
-(
-pν+2 − 1
-(1− p)2x
-) =
-θ√ p
-(
-p 1
-(1− p)√ x
-)
-θ√ p
-(
-p − 1
-(1− p)√ x
-)
-θ√ p
-(
-p
-ν
-2 +1 1
-(1− p)√ x
-)
-θ√ p
-(
-p
-ν
-2 +1 − 1
-(1− p)√ x
-). (12)
-We consider the limit p → 1− (i.e., √p → 1− ) of (11) and (12).
-Lemma 6. For any x ∈ C∗ \ (−∞, 0] ( −π < arg x ≤ π ), we have
-1. lim
-p→ 1−
-θp
-(
-− p2ν +2
-x(1− p)2
-)
-θp
-(
-− pν +2
-x(1− p)2
-)(1 − p)− 2ν = eνπi xν and
-2. lim
-p→ 1−
-θp
-(
-− p2
-x(1− p)2
-)
-θp
-(
-− pν +2
-x(1− p)2
-)(1 − p)2ν = e− νπi x− ν .
-Proof . Combining Proposition 1 and Corollary 1, we consider the lim it √p → 1− as follows:
-θp
-(
-p2ν+2 − 1
-(1− p)2x
-)
-θp
-(
-pν+2 − 1
-(1− p)2x
-)(1 − p)− 2ν =
-θ√ p
-(
-pν+1 1
-(1− p)√ x
-)
-θ√ p
-(
-pν+1 − 1
-(1− p)√ x
-)
-θ√ p
-(
-p
-ν
-2 +1 1
-(1− p)√ x
-)
-θ√ p
-(
-p
-ν
-2 +1 − 1
-(1− p)√ x
-)(1 − p)− 2ν
-=
-
-
-
-θ√
-p
-(
-(√p)2ν+2 1
-(1− (√ p)2)√ x
-)
-θ√ p
-(
-(√p)ν+2 1
-(1−{ √ p)2)√ x
-){
-1 − (√p)2} − ν
-
-
-
-×
-
-
-
-θ√
-p
-(
-−(√p)2ν+2 1
-(1− (√ p)2)√ x
-)
-θ√ p
-(
-−(√p)ν+2 1
-(1−{ √ p)2)√ x
-){
-1 − (√p)2} − ν
-
-
-
-→ (√
-x)ν · (−√x)ν = (−x)ν = eνπi xν , √p → 1− .
-Similarly, we can prove the latter one. We obtain the conclus ion. ■
-10 T. Morita
+
+::: corollary
+[]{#kei2 label="kei2"}For any $x\in\mathbb{C}^*$ $(-\pi <\arg x\leq\pi )$, we have $$\begin{gathered}
+\frac{\theta_p\left(p^{2\nu +2}\frac{-1}{(1-p)^2x}\right)}{\theta_p\left(p^{\nu +2}\frac{-1}{(1-p)^2x}\right)}
+=\frac{\theta_{\sqrt{p}}\left(p^{\nu +1}\frac{1}{(1-p)\sqrt{x}}\right) \theta_{\sqrt{p}}\left(p^{\nu +1}\frac{-1}{(1-p)\sqrt{x}}\right)}
+{\theta_{\sqrt{p}}\left(p^{\frac{\nu}{2}+1}\frac{1}{(1-p)\sqrt{x}}\right)\theta_{\sqrt{p}}
+\left(p^{\frac{\nu}{2}+1}\frac{-1}{(1-p)\sqrt{x}}\right)}\label{th1}
+\end{gathered}$$ and $$\begin{gathered}
+\frac{\theta_p\left(p^2\frac{-1}{(1-p)^2x}\right)}{\theta_p\left(p^{\nu +2}\frac{-1}{(1-p)^2x}\right)}
+=\frac{\theta_{\sqrt{p}}\left(p\frac{1}{(1-p)\sqrt{x}}\right)\theta_{\sqrt{p}}\left(p\frac{-1}{(1-p)\sqrt{x}}\right)}
+{\theta_{\sqrt{p}}\left(p^{\frac{\nu}{2}+1}\frac{1}{(1-p)\sqrt{x}}\right)\theta_{\sqrt{p}}\left(p^{\frac{\nu}{2}+1}\frac{-1}{(1-p)\sqrt{x}}\right)}.\label{th2}
+\end{gathered}$$
+:::
+
+We consider the limit $p\to 1^-$ (i.e., $\sqrt{p}\to 1^-$) of [\[th1\]](#th1){reference-type="eqref" reference="th1"} and [\[th2\]](#th2){reference-type="eqref" reference="th2"}.
+
+::: lemma
+For any $x\in\mathbb{C}^*\setminus (-\infty ,0]$ $(-\pi <\arg x\leq\pi )$, we have []{#limthe label="limthe"}
+
+1.  $\displaystyle{\lim_{p\to 1^-}\frac{\theta_p\left(-\frac{p^{2\nu +2}}{x(1-p)^2}\right)}
+    {\theta_p\left(-\frac{p^{\nu +2}}{x(1-p)^2}\right)}(1-p)^{-2\nu}=e^{\nu \pi i}x^\nu}$  and
+
+2.  []{#limtheta label="limtheta"}$\displaystyle{\lim_{p\to 1^-}\frac{\theta_p\left(-\frac{p^{2}}{x(1-p)^2}\right)}
+    {\theta_p\left(-\frac{p^{\nu +2}}{x(1-p)^2}\right)}(1-p)^{2\nu}=e^{-\nu \pi i}x^{-\nu}}$.
+:::
+
+::: proof
+*Proof.* Combining Proposition [\[propo1\]](#propo1){reference-type="ref" reference="propo1"} and Corollary [\[kei2\]](#kei2){reference-type="ref" reference="kei2"}, we consider the limit $\sqrt{p}\to 1^-$ as follows: $$\begin{gathered}
+ \frac{\theta_p\left(p^{2\nu +2}\frac{-1}{(1-p)^2x}\right)}{\theta_p\left(p^{\nu +2}\frac{-1}{(1-p)^2x}\right)}(1-p)^{-2\nu}
+=\frac{\theta_{\sqrt{p}}\left(p^{\nu +1}\frac{1}{(1-p)\sqrt{x}}\right) \theta_{\sqrt{p}}\left(p^{\nu +1}\frac{-1}{(1-p)\sqrt{x}}\right)}
+{\theta_{\sqrt{p}}\left(p^{\frac{\nu}{2}+1}\frac{1}{(1-p)\sqrt{x}}\right)\theta_{\sqrt{p}}\left(p^{\frac{\nu}{2}+1}\frac{-1}{(1-p)\sqrt{x}}\right)}
+(1-p)^{-2\nu}\\
+ \hphantom{\frac{\theta_p\left(p^{2\nu +2}\frac{-1}{(1-p)^2x}\right)}{\theta_p\left(p^{\nu +2}\frac{-1}{(1-p)^2x}\right)}(1-p)^{-2\nu}}{}
+ =\left\{\frac{\theta_{\sqrt{p}}\left((\sqrt{p})^{2\nu +2}\frac{1}{(1-(\sqrt{p})^2)\sqrt{x}}\right) }{\theta_{\sqrt{p}}\left((\sqrt{p})^{\nu +2}\frac{1}{(1-\{\sqrt{p})^2)\sqrt{x}}\right)}\left\{1-(\sqrt{p})^2\right\}^{-\nu}\right\}\\
+\hphantom{\frac{\theta_p\left(p^{2\nu +2}\frac{-1}{(1-p)^2x}\right)}{\theta_p\left(p^{\nu +2}\frac{-1}{(1-p)^2x}\right)}(1-p)^{-2\nu}=}{}
+\times
+\left\{\frac{\theta_{\sqrt{p}}\left(-(\sqrt{p})^{2\nu +2}\frac{1}{(1-(\sqrt{p})^2)\sqrt{x}}\right) }{\theta_{\sqrt{p}}\left(-(\sqrt{p})^{\nu +2}\frac{1}{(1-\{\sqrt{p})^2)\sqrt{x}}\right)}\left\{1-(\sqrt{p})^2\right\}^{-\nu}\right\}\\
+\hphantom{\frac{\theta_p\left(p^{2\nu +2}\frac{-1}{(1-p)^2x}\right)}{\theta_p\left(p^{\nu +2}\frac{-1}{(1-p)^2x}\right)}(1-p)^{-2\nu}}{}
+ \to (\sqrt{x})^\nu\cdot (-\sqrt{x})^\nu=(-x)^\nu
+=e^{\nu\pi i}x^\nu , \qquad \sqrt{p}\to 1^-.
+\end{gathered}$$ Similarly, we can prove the latter one. We obtain the conclusion. ◻
+:::
+
 We consider the last part.
-Lemma 7. For any x ∈ C∗, we have
-lim
-p→ 1− 1ϕ 1
-(
-0; p1+2ν ; p, (1 − p)2x
-)
-= 0F1 (−, 1 + 2ν; −x)
-and
-lim
-p→ 1− 1ϕ 1
-(
-0; p1− 2ν ; p, p − 2ν (1 − p)2x
-)
-= 0F1 (−, 1 − 2ν; −x) .
-Proof . We check each of the term of
-1ϕ 1
-(
-0; p1+2ν ; p, (1 − p)2x
-)
-=
-∑
-n≥ 0
-1
-(p1+2ν , p ; p)n
-(−1)np
-n(n− 1)
-2
-{
-(1 − p)2x
-} n
-.
-For any n ≥ 0,
-1
-(p1+2ν , p ; p)n
-(−1)np
-n(n− 1)
-2
-{
-(1 − p)2x
-} n
-= (1 − p)n(1 − p)n
-(p1+2ν ; p)n(p; p)n
-p
-n(n− 1)
-2 (−x)n → 1
-(1 + 2ν)n · n! (−x)n , p → 1− .
-Summing up all terms, we get
-∑
-n≥ 0
-1
-(1 + 2ν)n · n! (−x)n = 0F1 (−, 1 + 2ν; −x) .
-Therefore, we obtain the conclusion. Similarly, we can prov e the latter. ■
-We give the proof of Theorem 2.
-Proof . Apply Lemma 4, Lemma 6 and Lemma 7 to (10), we obtain
-hν
-( 1
-(1 − p)2x ; p
-)
-→
-{
-− 1
-sin(2νπ )Γ(1 + 2 ν)
-}
-eνπi xν 0F1 (−, 1 + 2ν; −x)
-+
-{ 1
-sin(2νπ )Γ(1 − 2ν)
-}
-e− νπi x− ν 0F1 (−, 1 − 2ν; −x)
-= −eνπi J2ν (2√x) + e− νπi J− 2ν (2√x)
-sin(2νπ )
-= e− νπi
-i H (2)
-2ν
-(
-2√x
-)
-, p → 1− .
-Therefore, we acquire the conclusion. ■
-Acknowledgements
-The author would like to express his deepest gratitude to Pro fessor Yousuke Ohyama for many
-valuable comments. The author also expresses his thanks to P rofessor Lucia Di Vizio for fruitful
-discussions when she was invited to the University of Tokyo i n the winter 2011. The author
-would like to give thanks to the referee for some useful comme nts.
-A Connection Formula of the Hahn–Exton q-Bessel Function 11
+
+::: lemma
+[]{#limbas label="limbas"}For any $x\in\mathbb{C}^*$, we have $$\lim_{p\to 1^-}{}_1\varphi_1\left(0;p^{1+2\nu};p,(1-p)^2x\right)={}_0F_1\left(-,1+2\nu ;-x\right)$$ and $$\lim_{p\to 1^-}{}_1\varphi_1\left(0;p^{1-2\nu};p,p^{-2\nu }(1-p)^2x\right)={}_0F_1\left(-,1-2\nu ;-x\right).$$
+:::
+
+::: proof
+*Proof.* We check each of the term of $${}_1\varphi_1\left(0;p^{1+2\nu};p,(1-p)^2x\right)
+=\sum_{n\ge 0}\frac{1}{(p^{1+2\nu},p;p)_n}(-1)^np^{\frac{n(n-1)}{2}}\left\{(1-p)^2x\right\}^n.$$ For any $n\ge 0$, $$\begin{gathered}
+\frac{1}{(p^{1+2\nu},p;p)_n}(-1)^np^{\frac{n(n-1)}{2}}
+\left\{(1-p)^2x\right\}^n \\
+\qquad {}=\frac{(1-p)^n(1-p)^n}{(p^{1+2\nu};p)_n(p;p)_n}p^{\frac{n(n-1)}{2}}\left(-x\right)^n
+ \to \frac{1}{(1+2\nu )_n\cdot n!}\left(-x\right)^n, \qquad p\to 1^-.
+\end{gathered}$$ Summing up all terms, we get $$\sum_{n\ge 0}\frac{1}{(1+2\nu )_n\cdot n!}\left(-x\right)^n
+={}_0F_1\left(-,1+2\nu ;-x\right).$$ Therefore, we obtain the conclusion. Similarly, we can prove the latter. ◻
+:::
+
+We give the proof of Theorem [\[limitbessel\]](#limitbessel){reference-type="ref" reference="limitbessel"}.
+
+::: proof
+*Proof.* Apply Lemma [\[limgam\]](#limgam){reference-type="ref" reference="limgam"}, Lemma [\[limthe\]](#limthe){reference-type="ref" reference="limthe"} and Lemma [\[limbas\]](#limbas){reference-type="ref" reference="limbas"} to ([\[limit\]](#limit){reference-type="ref" reference="limit"}), we obtain $$\begin{gathered}
+h_\nu \left(\frac{1}{(1-p)^2x};p\right)\to  \left\{-\frac{1}{\sin (2\nu\pi )\Gamma (1+2\nu )}\right\}e^{\nu\pi i}x^{\nu}{}_0F_1\left(-,1+2\nu ;-x\right)\\
+\hphantom{h_\nu \left(\frac{1}{(1-p)^2x};p\right)\to}{}
++\left\{\frac{1}{\sin (2\nu\pi )\Gamma (1-2\nu )}\right\}e^{-\nu\pi i}x^{-\nu}{}_0F_1\left(-,1-2\nu ;-x\right)\\
+\hphantom{h_\nu \left(\frac{1}{(1-p)^2x};p\right)}{}
+=\frac{-e^{\nu\pi i}J_{2\nu}\left(2\sqrt{x}\right)+
+e^{-\nu\pi i}J_{-2\nu}\left(2\sqrt{x}\right)}{\sin (2\nu\pi )}\\
+\hphantom{h_\nu \left(\frac{1}{(1-p)^2x};p\right)}{}
+=\frac{e^{-\nu\pi i}}{i}H_{2\nu}^{(2)}\left(2\sqrt{x}\right)
+,\qquad p\to 1^-.
+\end{gathered}$$ Therefore, we acquire the conclusion. ◻
+:::
+
+## Acknowledgements
+
+The author would like to express his deepest gratitude to Professor Yousuke Ohyama for many valuable comments. The author also expresses his thanks to Professor Lucia Di Vizio for fruitful discussions when she was invited to the University of Tokyo in the winter 2011. The author would like to give thanks to the referee for some useful comments.

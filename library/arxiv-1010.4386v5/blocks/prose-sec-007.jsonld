@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1010.4386v5/blocks/prose-sec-007",
+  "kind": "prose",
+  "title": "Derived Localization",
+  "pageStart": 28,
+  "pageEnd": 32,
+  "text": "../sections/sec-007-7-derived-localization.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1010.4386v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1010.4386v5/manifest.jsonld",
+  "provenance": "ingested"
+}

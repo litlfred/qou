@@ -1,11 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1304.2934v4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "MOD-φ CONVERGENCE, I:",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.2934v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
   "contains": [
+    "library/arxiv-1304.2934v4/sections/sec-front-matter",
     "library/arxiv-1304.2934v4/sections/sec-000",
     "library/arxiv-1304.2934v4/sections/sec-001",
     "library/arxiv-1304.2934v4/sections/sec-002",
@@ -47,11 +53,33 @@
     "library/arxiv-1304.2934v4/sections/sec-038",
     "library/arxiv-1304.2934v4/sections/sec-039",
     "library/arxiv-1304.2934v4/sections/sec-040",
-    "library/arxiv-1304.2934v4/sections/sec-041"
+    "library/arxiv-1304.2934v4/sections/sec-041",
+    "library/arxiv-1304.2934v4/sections/sec-042",
+    "library/arxiv-1304.2934v4/sections/sec-043",
+    "library/arxiv-1304.2934v4/sections/sec-044",
+    "library/arxiv-1304.2934v4/sections/sec-045",
+    "library/arxiv-1304.2934v4/sections/sec-046",
+    "library/arxiv-1304.2934v4/sections/sec-047",
+    "library/arxiv-1304.2934v4/sections/sec-048",
+    "library/arxiv-1304.2934v4/sections/sec-049",
+    "library/arxiv-1304.2934v4/sections/sec-050",
+    "library/arxiv-1304.2934v4/sections/sec-051",
+    "library/arxiv-1304.2934v4/sections/sec-052"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1304.2934&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1304.2934v4",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1304.2934v4.pdf",
     "source_sha256": "b7ed2a9e85264568cfaa4edb008fc4e3c3fc7bd3a1bc0996e76df2ad59a1f783",
     "pages": 103,

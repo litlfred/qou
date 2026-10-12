@@ -9,7 +9,15 @@ $$
   \frac{A}{2 + a_C  A^{2/3} / (2a_A)}
 $$
 
-*where $a_C = (q - q^{-1}) \cdot \lambda_C$ is the Coulomb coefficient from the crossing asymmetry, and $a_A$ is the Pauli asymmetry coefficient.*
+*where $a_C$ is the Coulomb coefficient from the crossing asymmetry and $a_A$ the Pauli asymmetry coefficient. Both are fixed by the $q$-integer coefficient assignments of the seven-term mass formula:*
+
+$$
+  a_C \;=\; \lambda_C \;=\; (q - q^{-1})\,[6]_q\,\mathfrak{m}_{\mathfrak{e}},
+  \qquad
+  a_A \;=\; a_{\mathrm{asym}} \;=\; 3\,[2]_q\,[7]_q\,\mathfrak{m}_{\mathfrak{e}} .
+$$
+
+*The factor $(q - q^{-1})$ belongs to $\lambda_C$ and appears once: writing $a_C = (q - q^{-1})\cdot\lambda_C$ would apply it twice.*
 
 *Equivalently, for a given $p$, the stable mass number is the fixed point of:*
 

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/symmetry-11-01298/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/symmetry-11-01298/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Reconstructing a Spacetime: The K3 Surface and Particle Physics",
   "pageStart": 5,
   "pageEnd": 9,
   "text": "../sections/sec-006-reconstructing-a-spacetime-the-k3-surface-and-pa.md",
-  "derivedFrom": "library/symmetry-11-01298/manifest",
-  "sourceDocument": "library/symmetry-11-01298/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
   "provenance": "ingested"
 }

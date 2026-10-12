@@ -8,415 +8,173 @@ pages: 41-48
 source_pdf: 1409.2849v1.pdf
 source_sha256: 7bf9646716fbb247
 doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
+text_source: latex
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 0.968
 ---
-tion, we now have to gather the estimates given by Theorem 21 to get the asymptotics
-of the cumulants κ(2r)(Mn) of the magnetization.
-42 PIERRE-LOÏC MÉLIOT AND ASHKAN NIKEGHBALI
-5.2.1. Reordering of indices and compositions. Since the joint cumulants of spins have
-been computed for ordered spins i1 ≤ i2 ≤ . . .≤ i2r, in the right-hand side of the
-expansion
-κ(2r)(Mn) =
-n
-∑
-i1,...,i2r=1
-κ(σ(i1), . . . ,σ(i2r)),
-we need to reorder the indices i1, . . . ,i2r, and take care of the possible identities be-
-tween these indices. We shall say that a sequence of indices i1, . . . ,ir has type c =
-(c1, . . . ,cl) with the ci positive integers and|c| = ∑l
-i=1 ci = r if, after reordering, the
-sequence of indices writes as
-i′
-1 = i′
-2 = . . . = i′
-c1 < i′
-c1+1 = i′
-c1+2 =··· = i′
-c1+c2 < i′
-c1+c2+1 =··· .
-Here, i′
-k stands for the k-th element of the reordered sequence. For instance, the se-
-quence of indices (3, 2, 3, 5, 1, 2) becomes after reordering (1, 2, 2, 3, 3, 5), so it has type
-(1, 2, 2, 1). The type of a sequence of indices of length r can be any composition of size
-r, and we denote Cr the set of these compositions. Conversely, given a composition of
-size r and length l, in order to construct a sequence of indices (i1, . . . ,ir) with type c
-and with values in [ [1, n] ], one needs:
-• to choose which indices i will fall into each class (i′
-1, . . . ,i′
-c1), (i′
-2, . . . ,i′
-c1+c2), etc.;
-there are (r
-c
-)
-= r!
-c1! c2!··· cl!
+As explained in the introduction, we now have to gather the estimates given by Theorem \ref{thm:jointcumulant} to get the asymptotics of the cumulants $\kappa^{(2r)}(M_n)$ of the magnetization. 
+
+
+\subsubsection{Reordering of indices and compositions} Since the joint cumulants of spins have been computed for ordered spins $i_1\leq i_2\leq\ldots\leq i_{2r}$, in the right-hand side of the expansion
+ $$\kappa^{(2r)}(M_n)=\sum_{i_1,\ldots,i_{2r}=1}^n\kappa(\sigma(i_1),\ldots,\sigma(i_{2r})),$$
+we need to reorder the indices $i_1,\ldots,i_{2r}$, and take care of the possible identities between these indices. We shall say that a sequence of indices $i_1,\ldots,i_{r}$ has type $c=(c_1,\ldots,c_l)$ with the $c_i$ positive integers and $|c|=\sum_{i=1}^l c_i = r$ if, after reordering, the sequence of indices writes as
+$$i_1'=i_2'=\ldots=i_{c_1}'<i_{c_1+1}'=i_{c_1+2}'=\cdots = i_{c_1+c_2}'<i_{c_1+c_2+1}' = \cdots.$$
+Here, $i_k'$ stands for the $k$-th element of the reordered sequence. For instance, the sequence of indices $(3,2,3,5,1,2)$ becomes after reordering $(1,2,2,3,3,5)$, so it has type $(1,2,2,1)$. The type of a sequence of indices of length $r$ can be any composition of size $r$, and we denote $\cym_{r}$ the set of these compositions. Conversely, given a composition of size $r$ and length $l$, in order to construct a sequence of indices $(i_1,\ldots,i_r)$ with type $c$ and with values in $\lle 1,n\rre$, one needs:\vspace{1mm}
+\begin{itemize}
+\item  to choose which indices $i$ will fall into each class $(i_1',\ldots,i_{c_1}')$, $(i_2',\ldots,i_{c_1+c_2}')$, \emph{etc}.; there are
+$$\binom{r}{c}=\frac{r!}{c_1!\,c_2!\cdots c_l!}$$
 possibilities there.
-• and then to choose 1 ≤ j1 < j2 <··· < jl ≤ n so that j1 = i′
-1 =··· = i′
-c1,
-j2 = i′
-2 =··· = i′
-c1+c2, etc.
+\vspace{1mm}
+\item and then to choose $1\leq j_1<j_2<\cdots <j_l \leq n$ so that $j_1=i_1'=\cdots=i_{c_1}'$, $j_2=i_2'=\cdots=i_{c_1+c_2}'$, \emph{etc}.\vspace{1mm}
+\end{itemize}
 As a consequence,
-κ(2r)(Mn) = ∑
-c∈C2r
-∑
-1≤j1<j2<···<j𝓁(c)≤n
-(2r
-c
-)
-κ
-(
-σ(j1)c1, . . . ,σ(j𝓁(c))c𝓁(c)
-)
-= (−1)r−1
-∑
-c∈C2r
-∑
-δ∈D∗
-2r
-(2r
-c
-)
-C(δ) B(n, c, δ)
-where C(δ) = ∏2r−1
-i=1 δi is the quantity computed in the previous paragraph, and
-B(n, c, δ) = ∑
-1≤j1<j2<···<j𝓁(c)≤n
-x∑{a<b}∈ν(δ)(ib−ia),
-the indices i being computed from the indices j according to the rule previously ex-
-plained, namely,
-j1 = i1 =··· = ic1;
-j2 = ic1+1 =··· = ic1+c2;
-... ...
-j𝓁(c) = ic1+···+c𝓁(c)−1+1 =··· = i2r.
-MOD-GAUSSIAN CONVERGENCE AND APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS43
-Example. Suppose r = 1. There are two compositions of size 2, namely, (2) and (1, 1),
-and one trivial tree with 0 edge; therefore,
-κ(2)(Mn) = B(n, (2),•) + 2 B(n, (1, 1),•)
-=
-n
-∑
-j1=1
-1 + 2 ∑
-1≤j1<j2≤n
-xj2−j1.
-The double geometric sum has the same asymptotics as ∑n
-j1=1 ∑∞
-j2=j1+1 xj2−j1 = n x
-1−x,
-so
-κ(2)(Mn)≃ n 1 + x
-1− x = n e2β.
-It is not hard to convince oneself that the approximation performed in the previous
-example can be done in any case, so that a correct estimate ofB(n, c, δ) is n B(c, δ), with
-B(c, δ) = ∑
-0=j1<j2<···<j𝓁(c)
-x∑{a<b}∈ν(δ)(ib−ia).
-In this new expression, the indices j are unbounded (except the ﬁrst one, ﬁxed to 0),
-and what we mean by approximation is that
-n B(c, δ) = B(n, c, δ) + O(1),
-with a positive remainder corresponding to terms of the geometric series with indices
-larger than n. So:
-Proposition 23. An upper bound, and in fact an estimate of|κ(2r)(Mn)| is
-|κ(2r)(Mn)|≤ n ∑
-c∈C2r
-∑
-δ∈D∗
-2r
-(2r
-c
-)
-B(c, δ) C(δ).
-5.2.2. Computation of the functional B. There is a simple algorithm that allows to com-
-pute B(c, δ) for any Dyck path δ and any composition c. Let us explain it with the
-path δ associated to the non-crossing pairing ν of Figure 9 and with the composition
-c = ( 3, 2, 1, 2, 2). This composition c corresponds to some identiﬁcations of indices,
-which we make appear on the diagram of the pairing ν as follows:
-18
-FIGURE 18. Identiﬁcations of indices corresponding to the composition
-c = (3, 2, 1, 2, 2).
-We now contract the green edges added above, obtaining thus:
-44 PIERRE-LOÏC MÉLIOT AND ASHKAN NIKEGHBALI
-j1 j2 j3 j4 j5
-19
-FIGURE 19. Contraction of the diagram of a non-crossing partition along
-a composition.
-This new diagram corresponds to the following simpliﬁcation of the sum B(c, δ):
-B(c, δ) = ∑
-0=i1=i2=i3<i4=i5<i6<i7=i8<i9=i10
-xi10+i9+i8−i7+i6−i5−i4+i3−i2−i1
-= ∑
-0=i1<i4<i6<i7<i9
-x2i9+i5−2i4−i1 because of the identities of indices;
-= ∑
-0=j1<j2<j3<j4<j5
-x(j5−j1)+(j5−j2)+(j3−j2) by relabeling the indices.
-So, the new diagram, which we call the contraction of ν along c and denote ν↓c, can be
-read similarly as the previous diagrams of pairings, that is to say that
-B(c, δ) = ∑
-0=j1<j2<j3<j4<j5
-x(ν(δ))↓c,
-where xν↓c stands for the product of factors xb−a,{a < b} running over the bonds of
-the contracted diagram ν↓c.
-Given a contracted diagram ρ = ν↓c of length 𝓁(c), denote δ1(ρ) the number of
-bonds opened between j1 and j2; δ2(ρ) the number of bonds opened between j2 and j3;
-δ3(ρ) the number of bonds opened between j3 and j4; etc. up to δ𝓁(c)−1(ρ). For instance,
-in the previous example, there is one bond opened between j1 and j2 (the one starting
-from j1); 3 bonds opened between j2 and j3 (the previous bond, which has not been
-closed, and the two bonds starting from j2); and 2 bonds opened between j3 and j4 and
-between j4 and j5. So (δ1, δ2, δ3, δ4) = ( 1, 3, 2, 2).
-Proposition 24. Set ρ = ( ν(δ))↓c. One has
-B(c, δ) =
-𝓁(c)−1
-∏
-i=1
-xδi(ρ)
-1− xδi(ρ) .
-Example. Consider the previous contracted diagram ρ5, and the corresponding sum
-B5 = ∑
-0=j1<j2<j3<j4<j5
-x(j5−j1)+(j5−j2)+(j3−j2).
-MOD-GAUSSIAN CONVERGENCE AND APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS45
-We reduce inductively the size of the contracted diagram as follows. We ﬁrst write
-B5 = ∑
-0=j1<j2<j3<j4<j5
-x2(j5−j4)+(j4−j1)+(j4−j2)+(j3−j2)
-=
-(
-∑
-0=j1<j2<j3<j4
-x(j4−j1)+(j4−j2)+(j3−j2)
-)(
-∞
-∑
-j5=j4+1
-x2(j5−j4)
-)
-= x2
-1− x2
-(
-∑
-0=j1<j2<j3<j4
-x(j4−j1)+(j4−j2)+(j3−j2)
-)
-= xδ4
-1− xδ4
-B4,
-where B4 is the sum corresponding to the diagram ρ4 which is obtained from ρ5 by
-identifying j4 and j5:
-j1 j2 j3 j4
-20
-FIGURE 20. Reduction of the diagram of Figure 19.
-We can then do it again to go to size 3:
-B4 = ∑
-0=j1<j2<j3<j4
-x2(j4−j3)+(j3−j1)+(j3−j2)+(j3−j2)
-=
-(
-∑
-0=j1<j2<j3
-x(j3−j1)+2(j3−j2)
-)(
-∞
-∑
-j4=j3+1
-x2(j4−j3)
-)
-= x2
-1− x2
-(
-∑
-0=j1<j2<j3
-x(j3−j1)+2(j3−j2)
-)
-= xδ3
-1− xδ3
-B3,
-where B3 is the sum corresponding to the diagram ρ3 which is obtained from ρ4 by
-identifying j3 and j4:
-j1 j2 j3
-21
-FIGURE 21. Further reduction of the diagram of Figure 19.
-Two more operations yield similarly the factors xδ2
-1−xδ2 and xδ1
-1−xδ1 .
-Proof of Proposition 24. The algorithm presented above on the example gives clearly a
-proof of the formula by induction on 𝓁(c). Indeed, at each step of the induction, the
-term that is factorized is
-∞
-∑
-j𝓁(c)=j𝓁(c)−1+1
-xδ𝓁(c)−1(j𝓁(c)−j𝓁(c)−1) = xδ𝓁(c)−1
-1− xδ𝓁(c)−1
-,
-46 PIERRE-LOÏC MÉLIOT AND ASHKAN NIKEGHBALI
-because δ𝓁(c)−1 is the number of bonds ending at j𝓁(c). Then, as for the other factor, one
-obtains it by replacing j𝓁(c) by j𝓁(c)−1 in the sum B(c, δ), and this amounts to do the
-identiﬁcation between j𝓁(c)−1 and j𝓁(c) in the contracted diagram. This identiﬁcation
-and reduction to lower length does not change the valuesδ1, . . . ,δ𝓁(c)−2, so the formula
-is proven. □
-We recall that a descent of a composition c = (c1, . . . ,c𝓁) is one of the integers
-c1, c1 + c2, c1 + c2 + c3, . . . ,c1 +··· + c𝓁−1.
-For instance, the descents of c = (3, 2, 1, 2, 2) are 3, 5, 6 and 8. The set of descents D(c)
-of a composition c of size r can be any subset of [ [1, r− 1] ], so in particular, card Cr =
-2r−1. The contraction of diagrams along compositions presented at the beginning of
-this paragraph satisﬁes the rule:
-{δ1(ρ), . . . ,δ𝓁(c)−1(ρ)} ={δd, d∈ D(c)} if ρ = ( ν(δ))↓c .
-So, B(c, δ) = ∏d∈D(c)
-xδd
-1−xδd , and Proposition 23 becomes:
-Theorem 25. An upper bound, and in fact an estimate of|κ(2r)(Mn)| is
-|κ(2r)(Mn)|
-n ≤ ∑
-c∈C2r
-∑
-δ∈D∗
-2r
-A(c) B(c, δ) C(δ)
-with A(c) = (2r
-c ), B(c, δ) = ∏d∈D(c)
-xδd
-1−xδd and C(δ) = ∏2r−1
-i=1 δi.
-Example. Suppose r = 2. There is one Dyck path inD∗
-4, with C(δ) = 2 since δ1 = δ3 = 1
-and δ2 = 2. The compositions of size 4 are (4), (3, 1), (2, 2), (1, 3), (2, 1, 1), (1, 2, 1),
-(1, 1, 2) and (1, 1, 1, 1); their contributions A(c) B(c, δ) are equal to
-1, 4x
-1− x, 6x2
-1− x2 , 4x
-1− x, 12x3
-(1− x)(1− x2), 12x2
-(1− x)2 , 12x3
-(1− x)(1− x2), 24x4
-(1− x)2(1− x2).
+\begin{align*}\kappa^{(2r)}(M_n)&=\sum_{c \in \cym_{2r}} \sum_{1\leq j_1<j_2<\cdots <j_{\ell(c)} \leq n} \binom{2r}{c}\, \kappa\left(\sigma(j_1)^{c_1},\ldots,\sigma(j_{\ell(c)})^{c_{\ell(c)}}\right)\\
+&=(-1)^{r-1}\sum_{c\in \cym_{2r}}\sum_{\delta \in \dym_{2r}^*}  \binom{2r}{c}\, C(\delta)\,B(n,c,\delta)
+\end{align*}
+where $C(\delta)=\prod_{i=1}^{2r-1} \delta_i$ is the quantity computed in the previous paragraph, and 
+$$B(n,c,\delta)=\sum_{1\leq j_1<j_2<\cdots <j_{\ell(c)} \leq n} x^{\sum_{\{a<b\}\in \nu(\delta)} (i_b-i_a)},$$
+the indices $i$ being computed from the indices $j$ according to the rule previously explained, namely,
+\begin{align*}
+j_1&=i_1=\cdots=i_{c_1};\\
+j_2&=i_{c_1+1}=\cdots=i_{c_1+c_2};\\
+\vdots & \qquad\qquad \qquad \vdots\\
+j_{\ell(c)}&=i_{c_1+\cdots+c_{\ell(c)-1}+1}=\cdots=i_{2r}.
+\end{align*}
+
+\begin{example}
+Suppose $r=1$. There are two compositions of size $2$, namely, $(2)$ and $(1,1)$, and one trivial tree with $0$ edge; therefore,
+\begin{align*}
+\kappa^{(2)}(M_n)&=B(n,(2),\bullet)+2\,B(n,(1,1),\bullet)\\ 
+&=\sum_{ j_1 =1}^{ n} 1 \,\,\,\,+\,\,2\!\!\!\sum_{1\leq j_1<j_2 \leq n} x^{j_2-j_1}. \end{align*}
+The double geometric sum has the same asymptotics as $\sum_{j_1 =1}^n\sum_{j_2=j_1+1}^\infty x^{j_2-j_1} = n\,\frac{x}{1-x},$
+so $$\kappa^{(2)}(M_n) \simeq n\,\frac{1+x}{1-x} = n\,\E^{2\beta}.$$
+\end{example}\bigskip
+
+It is not hard to convince oneself that the approximation performed in the previous example can be done in any case, so that a correct estimate of $B(n,c,\delta)$ is $n\, B(c,\delta)$, with
+$$B(c,\delta)=\sum_{0=j_1<j_2<\cdots<j_{\ell(c)}} x^{\sum_{\{a<b\}\in \nu(\delta)} (i_b-i_a)}.$$
+In this new expression, the indices $j$ are unbounded (except the first one, fixed to $0$), and what we mean by approximation is that $$n\,B(c,\delta)= B(n,c,\delta)+O(1),$$ with a positive remainder corresponding to terms of the geometric series with indices larger than $n$. So:
+
+\begin{proposition}\label{prop:firstestimate}
+An upper bound, and in fact an estimate of $|\kappa^{(2r)}(M_n)|$ is
+$$|\kappa^{(2r)}(M_n)|\leq n\,\sum_{c \in\cym_{2r}}\sum_{\delta \in \dym_{2r}^*} \binom{2r}{c}\,B(c,\delta)\,C(\delta).$$
+\end{proposition}
+
+
+
+
+\subsubsection{Computation of the functional $B$}
+There is a simple algorithm that allows to compute $B(c,\delta)$ for any Dyck path $\delta$ and any composition $c$. Let us explain it with the path $\delta$ associated to the non-crossing pairing $\nu$ of Figure \ref{fig:restriction} and with the composition $c=(3,2,1,2,2)$. This composition $c$ corresponds to some identifications of indices, which we make appear on the diagram of the pairing $\nu$ as follows:
+\figcap{identification.pdf}{Identifications of indices corresponding to the composition $c=(3,2,1,2,2)$.}
+We now contract the green edges added above, obtaining thus: \vspace{-2mm}
+\figcap{rho5.pdf}{Contraction of the diagram of a non-crossing partition along a composition.\label{fig:contracteddiagram}}
+This new diagram corresponds to the following simplification of the sum $B(c,\delta)$:
+\begin{align*}
+B(c,\delta)&= \sum_{0=i_1=i_2=i_3<i_4=i_5<i_6<i_7=i_8<i_9=i_{10}} x^{i_{10}+i_9+i_8-i_7+i_6-i_5-i_4+i_3-i_2-i_1}\\
+&=\sum_{0=i_1<i_4<i_6<i_7<i_9} x^{2i_9+i_5-2i_4-i_1}\qquad \text{because of the identities of indices};\\
+&=\sum_{0=j_1<j_2<j_3<j_4<j_5} x^{(j_5-j_1)+(j_5-j_2)+(j_3-j_2)}\qquad \,\,\text{by relabeling the indices}.
+\end{align*}
+So, the new diagram, which we call the \emph{contraction of $\nu$ along $c$} and denote $\nu\!\downarrow_c$, can be read similarly as the previous diagrams of pairings, that is to say that
+$$B(c,\delta)=\sum_{0=j_1<j_2<j_3<j_4<j_5} x^{(\nu(\delta))\downarrow_c},$$
+where $x^{\nu\downarrow_c}$ stands for the product of factors $x^{b-a}$, $\{a<b\}$ running over the bonds of the contracted diagram $\nu\!\downarrow_c$.\bigskip
+
+Given a contracted diagram $\rho=\nu\!\downarrow_c$ of length $\ell(c)$, denote $\delta_1(\rho)$ the number of bonds opened between $j_1$ and $j_2$; $\delta_2(\rho)$ the number of bonds opened between $j_2$ and $j_3$; $\delta_3(\rho)$ the number of bonds opened between $j_3$ and $j_4$; \emph{etc.} up to $\delta_{\ell(c)-1}(\rho)$. For instance, in the previous example, there is one bond opened between $j_1$ and $j_2$ (the one starting from $j_1$); $3$ bonds opened between $j_2$ and $j_3$ (the previous bond, which has not been closed, and the two bonds starting from $j_2$); and $2$ bonds opened between $j_3$ and $j_4$ and between $j_4$ and $j_5$. So $(\delta_1,\delta_2,\delta_3,\delta_4)=(1,3,2,2)$.
+
+\begin{proposition}\label{prop:functionalB}
+Set $\rho=(\nu(\delta))\!\downarrow_c$. One has
+$$B(c,\delta)=\prod_{i=1}^{\ell(c)-1}\frac{x^{\delta_i(\rho)}}{1-x^{\delta_i(\rho)}}.$$
+\end{proposition}
+
+\begin{example}
+Consider the previous contracted diagram $\rho_5$, and the corresponding sum $$B_5=\sum_{0=j_1<j_2<j_3<j_4<j_5} x^{(j_5-j_1)+(j_5-j_2)+(j_3-j_2)}.$$ We reduce inductively the size of the contracted diagram as follows. We first write
+\begin{align*}B_5&=\sum_{0=j_1<j_2<j_3<j_4<j_5} x^{2(j_5-j_4)+(j_4-j_1)+(j_4-j_2)+(j_3-j_2)}\\
+&=\left(\sum_{0=j_1<j_2<j_3<j_4} x^{(j_4-j_1)+(j_4-j_2)+(j_3-j_2)}\right)\left( \sum_{j_5=j_4+1}^\infty x^{2(j_5-j_4)} \right)\\
+&=\frac{x^2}{1-x^2}\left(\sum_{0=j_1<j_2<j_3<j_4} x^{(j_4-j_1)+(j_4-j_2)+(j_3-j_2)}\right)=\frac{x^{\delta_4}}{1-x^{\delta_4}}\,B_4,
+\end{align*}
+where $B_4$ is the sum corresponding to the diagram $\rho_4$ which is obtained from $\rho_5$ by identifying $j_4$ and $j_5$:
+\figcap{rho4.pdf}{Reduction of the diagram of Figure \ref{fig:contracteddiagram}.}
+We can then do it again to go to size $3$:
+\begin{align*}B_4&=\sum_{0=j_1<j_2<j_3<j_4} x^{2(j_4-j_3)+(j_3-j_1)+(j_3-j_2)+(j_3-j_2)}\\
+&=\left(\sum_{0=j_1<j_2<j_3} x^{(j_3-j_1)+2(j_3-j_2)}\right)\left( \sum_{j_4=j_3+1}^\infty x^{2(j_4-j_3)} \right)\\
+&=\frac{x^2}{1-x^2}\left(\sum_{0=j_1<j_2<j_3} x^{(j_3-j_1)+2(j_3-j_2)}\right)=\frac{x^{\delta_3}}{1-x^{\delta_3}}\,B_3,
+\end{align*}
+where $B_3$ is the sum corresponding to the diagram $\rho_3$ which is obtained from $\rho_4$ by identifying $j_3$ and $j_4$:
+\figcap{rho3.pdf}{Further reduction of the diagram of Figure \ref{fig:contracteddiagram}.}
+Two more operations yield similarly the factors $\frac{x^{\delta_2}}{1-x^{\delta_2}}$ and $\frac{x^{\delta_1}}{1-x^{\delta_1}}$.
+\end{example}
+
+\begin{proof}[Proof of Proposition \ref{prop:functionalB}]
+The algorithm presented above on the example gives clearly a proof of the formula by induction on $\ell(c)$. Indeed, at each step of the induction, the term that is factorized is $$\sum_{j_{\ell(c)}=j_{\ell(c)-1}+1}^\infty x^{\delta_{\ell(c)-1}(j_{\ell(c)}-j_{\ell(c)-1})}=\frac{x^{\delta_{\ell(c)-1}}}{1-x^{\delta_{\ell(c)-1}}},$$
+because $\delta_{\ell(c)-1}$ is the number of bonds ending at $j_{\ell(c)}$. Then, as for the other factor, one obtains it by replacing $j_{\ell(c)}$ by $j_{\ell(c)-1}$ in the sum $B(c,\delta)$, and this amounts to do the identification between $j_{\ell(c)-1}$ and $j_{\ell(c)}$ in the contracted diagram. This identification and reduction to lower length does not change the values $\delta_1,\ldots,\delta_{\ell(c)-2}$, so the formula is proven.
+\end{proof}
+\bigskip
+
+We recall that a descent of a composition $c=(c_1,\ldots,c_\ell)$ is one of the integers $$c_1, c_1+c_2, c_1+c_2+c_3,\ldots,c_1+\cdots+c_{\ell-1}.$$ For instance, the descents of $c=(3,2,1,2,2)$ are $3$, $5$, $6$ and $8$. The set of descents $D(c)$ of a composition $c$ of size $r$ can be any subset of $\lle 1,r-1\rre$, so in particular, $\mathrm{card}\,\cym_r=2^{r-1}$. The contraction of diagrams along compositions presented at the beginning of this paragraph satisfies the rule:
+$$\{\delta_1(\rho),\ldots,\delta_{\ell(c)-1}(\rho)\}=\{\delta_d,\,\,d \in D(c)\} \quad \text{if }\rho=(\nu(\delta))\!\downarrow_c.$$
+So, $B(c,\delta)=\prod_{d \in D(c)} \frac{x^{\delta_d}}{1-x^{\delta_d}}$, and Proposition \ref{prop:firstestimate} becomes:
+
+\begin{theorem}
+An upper bound, and  in fact an estimate of $|\kappa^{(2r)}(M_n)|$ is
+$$\frac{|\kappa^{(2r)}(M_n)|}{n}\leq\sum_{c \in \cym_{2r}} \sum_{\delta \in \dym_{2r}^*} A(c)\,B(c,\delta)\,C(\delta)$$
+with $A(c)=\binom{2r}{c}$, $B(c,\delta)=\prod_{d \in D(c)}\frac{x^{\delta_d}}{1-x^{\delta_d}}$ and $C(\delta)=\prod_{i=1}^{2r-1}\delta_i$.
+\end{theorem}\bigskip
+
+\begin{example}
+Suppose $r=2$. There is one Dyck path in $\dym_4^*$, with $C(\delta)=2$ since $\delta_1=\delta_3=1$ and $\delta_2=2$. The compositions of size $4$ are $(4)$, $(3,1)$, $(2,2)$, $(1,3)$, $(2,1,1)$, $(1,2,1)$, $(1,1,2)$ and $(1,1,1,1)$; their contributions $A(c)\,B(c,\delta)$ are equal to
+$$1,\,\,\frac{4x}{1-x},\,\,\frac{6x^2}{1-x^2},\,\,\frac{4x}{1-x},\,\,\frac{12x^3}{(1-x)(1-x^2)},\,\,\frac{12x^2}{(1-x)^2},\,\,\frac{12x^3}{(1-x)(1-x^2)},\,\,\frac{24x^4}{(1-x)^2(1-x^2)}.$$
 So,
-|κ(4)(Mn)|≃ 2n
-(
-1 + 8x
-1− x + 6x2
-1− x2 + 12x2
-(1− x)2 + 24x3
-(1− x)(1− x2) + 24x4
-(1− x)2(1− x2)
-)
-≃ 2n (1 + x)(1 + 4x + x2)
-(1− x)3 = n (3 e6β− e2β).
-5.2.3. Explicit bound on cumulants and the mod-Gaussian convergence. By examining the
-asymptotics of the ﬁrst cumulants written as rational functions in x, one is lead to the
-following result. Set
-Pr(x) =
-
- ∑
-c∈C2r
-∑
-δ∈D∗
-2r
-A(c) B(c, δ) C(δ)
-
- (1− x)2r−1.
-For instance, P1(x) = 1 + x and P2(x) = 2 (1 + x)(1 + 4x + x2).
-MOD-GAUSSIAN CONVERGENCE AND APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS47
-Proposition 26. For every r≥ 1 and every x∈ (0, 1),
-0≤ Pr(x)≤ (2r)!
-r!
-(2r− 2)!
-(r− 1)! .
-Proof. For every composition c and every path δ, B(c, δ) (1− x)2r−1 is a non-negative
-and convex function of x on [0, 1]. Therefore, 0 ≤ Pr(x) ≤ x Pr(0) + ( 1− x) Pr(1).
-When x = 1, all the rational functions B(c, δ) (1− x)2r−1 vanish, except when c has
-2r− 1 descents, that is to say that c = (1, 1, . . . , 1). Then, A(c) = ( 2r)!, and
-lim
-x→1
-B(c, δ) =
-2r−1
-∏
-i=1
-1
-δi
-= 1
-C(δ).
-Therefore,
-Pr(1) = ( 2r)! (card D∗
-2r) = (2r)!
-r!
-(2r− 2)!
-(r− 1)! .
-On the other hand, when x = 0, all the rational functions B(c, δ) (1− x)2r−1 vanish,
-except when c has no descent, that is to say that c = (2r). Then, A(c) = 1 and
-Pr(0) = Q(r) = ∑
-δ∈D∗
-2r
-A(δ).
-Among all Dyck paths in D∗
-2r, the one with the maximal product of values G(δ) is
-(0, 1, 2, . . . ,r− 1, r, r− 1, . . . , 2, 1, 0). So,
-Pr(0)≤ r! (r− 1)! (card D∗
-2r) = ( 2r− 2)!≤ Pr(1).
-It follows that Pr(x)≤ x Pr(1) + (1− x) Pr(1) = Pr(1). □
-Corollary 27. For every r,
-|κ(2r)(Mn)|≤ n (2r− 1)!! (2r− 3)!! (e2β + 1)2r−1.
-Proof. Indeed,
-|κ(2r)(Mn)|≤ n
-
- ∑
-c∈C2r
-∑
-δ∈D∗
-2r
-A(c) B(c, δ) C(δ)
-
- = n Pr(x)
-(1− x)2r−1
-≤ n Pr(1)
-(1− x)2r−1 = n
-( 1
-1− x
-)2r−1 (2r)!
-r!
-(2r− 2)!
-(r− 1)! .
-Replacing x by tanh β allows to conclude, and this gives another proof of Theorem 3.
-We rewrite the logarithm of the Laplace transform of n−1/4Mn as
-∞
-∑
-r=1
-κ(2r)(Mn)
-(2r)! z2r n−r/2 = κ(2)(Mn) z2
-2n1/2 + κ(4)(Mn) z4
-24n +
-∞
-∑
-r=3
-κ(2r)(Mn)
-(2r)! z2r n−r/2.
-48 PIERRE-LOÏC MÉLIOT AND ASHKAN NIKEGHBALI
+\begin{align*}|\kappa^{(4)}(M_n)| &\simeq 2n\,\left(1+\frac{8x}{1-x}+\frac{6x^2}{1-x^2}+\frac{12x^2}{(1-x)^2}+\frac{24x^3}{(1-x)(1-x^2)}+\frac{24x^4}{(1-x)^2(1-x^2)}\right)\\
+&\simeq 2n \,\,\frac{(1+x)(1+4x+x^2)}{(1-x)^3}=n\,(3\,\E^{6\beta}-\E^{2\beta}).
+\end{align*}
+\end{example}
+
+
+
+
+\subsubsection{Explicit bound on cumulants and the mod-Gaussian convergence}
+By examining the asymptotics of the first cumulants written as rational functions in $x$, one is lead to the following result. Set 
+$$P_r(x) = \left(\sum_{c \in \cym_{2r}} \sum_{\delta \in \dym_{2r}^*} A(c)\,B(c,\delta)\,C(\delta)\right)\,(1-x)^{2r-1}.$$
+For instance, $P_1(x)=1+x$ and $P_2(x)=2\,(1+x)(1+4x+x^2)$. 
+
+\begin{proposition}\label{prop:polynomial}
+For every $r \geq 1$ and every $x \in (0,1)$, $$0 \leq P_r(x) \leq \frac{(2r)!}{r!}\,\frac{(2r-2)!}{(r-1)!}.$$
+\end{proposition}
+
+\begin{proof}For every composition $c$ and every path $\delta$, $B(c,\delta)\,(1-x)^{2r-1}$ is a non-negative and convex function of $x$ on $[0,1]$. Therefore, $0\leq P_r(x) \leq x\,P_r(0)+(1-x)\,P_r(1)$. When $x=1$, all the rational functions $B(c,\delta)\,(1-x)^{2r-1}$ vanish, except when $c$ has $2r-1$ descents, that is to say that $c=(1,1,\ldots,1)$. Then, $A(c)=(2r)!$, and
+$$\lim_{x \to 1}\, B(c,\delta)= \prod_{i=1}^{2r-1} \frac{1}{\delta_i}=\frac{1}{C(\delta)}.$$
+Therefore, 
+$$P_r(1)=(2r)!\,(\card \,\dym_{2r}^*) = \frac{(2r)!}{r!}\,\frac{(2r-2)!}{(r-1)!}.$$
+On the other hand, when $x=0$, all the rational functions $B(c,\delta)\,(1-x)^{2r-1}$ vanish, except when $c$ has no descent, that is to say that $c=(2r)$. Then, $A(c)=1$ and 
+$$P_r(0)=Q(r)=\sum_{\delta \in \dym_{2r}^*}A(\delta).$$
+Among all Dyck paths in $\dym_{2r}^*$, the one with the maximal product of values $G(\delta)$ is 
+$(0,1,2,\ldots,r-1,r,r-1,\ldots,2,1,0)$. So,
+$$
+P_r(0) \leq r!\,(r-1)!\,(\card \,\dym_{2r}^*) = (2r-2 )! \leq P_r(1).
+$$
+It follows that $P_r(x) \leq x\,P_r(1)+(1-x)\,P_r(1)=P_r(1)$. 
+\end{proof}
+\bigskip
+
+\begin{corollary}
+For every $r$,
+$$|\kappa^{(2r)}(M_n)|\leq n\,(2r-1)!!\,(2r-3)!! \,(\E^{2\beta}+1)^{2r-1}.$$
+\end{corollary}
+
+\begin{proof}
+Indeed,
+\begin{align*}
+|\kappa^{(2r)}(M_n)| &\leq n \, \left(\sum_{c \in \cym_{2r}} \sum_{\delta \in \dym_{2r}^*} A(c)\,B(c,\delta)\,C(\delta)\right) = n\,\frac{P_r(x)}{(1-x)^{2r-1}} \\
+&\leq n\,\frac{P_r(1)}{(1-x)^{2r-1}} = n\,\left(\frac{1}{1-x}\right)^{2r-1}\,\frac{(2r)!}{r!}\,\frac{(2r-2)!}{(r-1)!}. 
+\end{align*}
+Replacing $x$ by $\tanh \beta$ allows to conclude, and this gives another proof of Theorem \ref{thm:modgaussising}. We rewrite the logarithm of the Laplace transform of $n^{-1/4}M_n$ as
+$$\sum_{r=1}^\infty \frac{\kappa^{(2r)}(M_n)}{(2r)!}\,z^{2r}\,n^{-r/2} = \frac{\kappa^{(2)}(M_n)\,z^2}{2n^{1/2}}+\frac{\kappa^{(4)}(M_n)\,z^4}{24n}+\sum_{r=3}^\infty \frac{\kappa^{(2r)}(M_n)}{(2r)!}\,z^{2r}\,n^{-r/2}.$$
 The series on the right-hand side is smaller than
-∞
-∑
-r=3
-(2r− 1)!! (2r− 3)!!
-(2r)! (eβ + 1)2r−1 z2r n1−r/2≤ n−1/2
-∞
-∑
-r=3
-((e2β + 1)z)2r n−(r−3)/2
-≤ n−1/2 ((e2β + 1)z)6
-1− ((e2β + 1)z)2 n−1/2 ,
-so it goes uniformly to zero on every compact set of the plane. On the other hand, we
-have seen that κ(2)(Mn) = n e2β− O(1) and−κ(4)(Mn) = n (3 e6β− e2β)− O(1), so we
-conclude that
-E
-[
-ez Mn
-n1/4
-]
-e− n1/2e2β z2
-2 = e− (3 e6β−e2β) z4
-24
-(
-1 + O(n−1/2)
-)
-,
-and this is indeed the content of Theorem 3. □
+\begin{align*}\sum_{r=3}^\infty \frac{(2r-1)!!\,(2r-3)!!}{(2r)!} \, (\E^\beta+1)^{2r-1}\,z^{2r}\,n^{1-r/2} &\leq n^{-1/2}\sum_{r=3}^\infty ((\E^{2\beta} + 1)z)^{2r} \,n^{-(r-3)/2}\\
+&\leq n^{-1/2}\,\,\frac{((\E^{2\beta} + 1)z)^{6}}{1-((\E^{2\beta} + 1)z)^{2}\,n^{-1/2}},
+\end{align*}
+so it goes uniformly to zero on every compact set of the plane. On the other hand, we have seen that $\kappa^{(2)}(M_n)=n\,\E^{2\beta} - O(1)$ and $-\kappa^{(4)}(M_n)=n\,(3\,\E^{6\beta}-\E^{2\beta}) - O(1)$, so we conclude that
+$$\esper\!\left[\E^{z\,\frac{M_n}{n^{1/4}}}\right]\,\E^{-\frac{n^{1/2}\E^{2\beta}\,z^2}{2}}=\E^{-\frac{(3\,\E^{6\beta}-\E^{2\beta})\,z^4}{24}}\,\left(1+O(n^{-1/2})\right),$$
+and this is indeed the content of Theorem \ref{thm:modgaussising}.
+\end{proof}
+
+
+\bibliographystyle{alpha}

@@ -20,4 +20,4 @@ The inductive reduction for $A = 16$ requires at most 15 Hecke multiplications. 
 
 ## Doubly magic prediction
 
-The periodic table deficit conjecture predicts that $\mathcal{A}(8, 8)$ minimizes $|\mathrm{def}|$ among all $A = 16$ isotopes. Testing this requires computing $\mathcal{A}(Z, 16 - Z)$ for all $0 \leq Z \leq 16$ and comparing deficit magnitudes. If both the proton and neutron shells independently achieve deficit closure, the doubly-magic nucleus attains $|\mathrm{def}| = 0$, indicating complete stability.
+The periodic table deficit conjecture predicts that $\mathcal{A}(8, 8)$ minimizes $|\mathrm{dem}|$ among all $A = 16$ isotopes. Testing this requires computing $\mathcal{A}(Z, 16 - Z)$ for all $0 \leq Z \leq 16$ and comparing deficit magnitudes. If both the proton and neutron shells independently achieve deficit closure, the doubly-magic nucleus attains $|\mathrm{dem}| = 0$, indicating complete stability.

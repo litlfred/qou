@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1904.13129v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1904.13129v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1904.13129&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1904.13129v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1904.13129v1",
+    "content_type": "application/gzip",
+    "sha256": "e8b7526ea6d00525a28b6e378dfe18ad57868b7c0839d59fc58858d973ef9d24",
+    "bytes": 22048,
+    "fetched": "2026-10-10T15:14:08+00:00",
+    "files": [
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "7afacdf9ddd16f1e8c0484dbc12286b9d0c57976b35d6ca4d38e4aa4c981077e",
+        "bytes": 85669
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -51,6 +51,9 @@ import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
+# The deprecated tree, mounted from the `cat/cat-harness/fsh-guts` branch
+# store (bean qou-6u3n). Absent unless `state:mount` has run.
+_FSH_GUTS_DEPRECATED = _HERE.parent / "fsh-guts" / "deprecated" / "computations"
 
 
 def _add_to_path(p: Path) -> None:
@@ -170,8 +173,24 @@ def witness_path(name: str, prefer_dir: "Path | None" = None) -> Path:
     # Deliberately NOT a general un-deprecation: it fires only when no live
     # copy exists, which is precisely the broken-dependency case. Bean
     # `qou/ftuv`.
-    deprecated = _HERE / "_deprecated" / name
+    #
+    # MOVED 2026-10-10 (owner; bean qou-6u3n, issue #7621): the deprecated
+    # tree is no longer on `main`. It lives on the branch store
+    # `cat/cat-harness/fsh-guts` and is read MOUNTED, at
+    # `fsh-guts/deprecated/computations/` under the repository root — run
+    # `bun run state:mount` from `folio-assistant/` to put it there. An
+    # unmounted checkout simply has no copy, so the reader gets the usual
+    # FileNotFoundError at the path below; the warning says why.
+    deprecated = _FSH_GUTS_DEPRECATED / name
     if deprecated.exists():
         return deprecated
+    if not _FSH_GUTS_DEPRECATED.is_dir():
+        import warnings
+        warnings.warn(
+            f"witness_path({name!r}): no live copy, and the fsh-guts branch "
+            f"store is not mounted at {_FSH_GUTS_DEPRECATED}. If this witness "
+            "was deprecated, run `bun run state:mount` from folio-assistant/.",
+            stacklevel=2,
+        )
 
     return (prefer_dir if prefer_dir is not None else _HERE) / name

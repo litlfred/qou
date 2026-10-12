@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2605.20846v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Topological Field Theories and the Algebraic Structures of the Two-Sphere (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.20846v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2605.20846&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2605.20846v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2605.20846v1",
+    "content_type": "application/gzip",
+    "sha256": "d572c089b92d8043f34e4210e5949a653a635303488f702e23f7776006c7b145",
+    "bytes": 3174140,
+    "fetched": "2026-10-10T15:22:55+00:00",
+    "files": [
+      {
+        "path": "source/files/citations.bib",
+        "role": "bib",
+        "sha256": "a8267bc38dd70dcb32626edbf00543ccef87e195c59c0d83e94bf3237aa49200",
+        "bytes": 13093
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "e958b8ae2acd3efd8a6134917958f49416dd3eb51be16cb57ff3b49798eda4fb",
+        "bytes": 325044
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -6,7 +6,11 @@
   "sha256": "ef34611620cfd0bd4f2242e448ce23f82032c6a92447d5bbfcec63e3ce6eb3d4",
   "bytes": 736390,
   "pages": 68,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex",
+  "mtime": null,
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": {
@@ -397,6 +401,124 @@
   "likely_scanned": false,
   "toc_entries": 28,
   "sections": 16,
-  "chars_total": 177478
+  "chars_total": 177478,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Mstuff.tex",
+   "tex_sections": 49,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.298,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-2-structure-types",
+     "title": "Structure Types",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-3-structure-types-and-the-harmonic-oscillator",
+     "title": "Structure Types and the Harmonic Oscillator",
+     "prose_ratio": 0.787,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-31-the-quantum-harmonic-oscillator",
+     "title": "The Quantum Harmonic Oscillator",
+     "prose_ratio": 0.71,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-32-structure-types-and-the-weyl-algebra",
+     "title": "Structure Types and the Weyl Algebra",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-4-stuff-types",
+     "title": "Stuff Types",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-41-groupoids",
+     "title": "Groupoids",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-5-stuff-types-and-quantum-mechanics",
+     "title": "Stuff Types And Quantum Mechanics",
+     "prose_ratio": 0.744,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-7-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.705,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-72-other-generalizations",
+     "title": "Other Generalizations",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-8-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-appendix-a-a-little-higher-dimensional-algebra",
+     "title": "Appendix A. A Little Higher-Dimensional Algebra",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-appendix-b-slice-categories-and-2-categories",
+     "title": "Appendix B. Slice Categories and 2-Categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-appendix-c-categorical-approaches-to-generalizin",
+     "title": "Appendix C. Categorical Approaches to Generalizing Species",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-c1-generalized-species",
+     "title": "C.1. Generalized Species",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }
