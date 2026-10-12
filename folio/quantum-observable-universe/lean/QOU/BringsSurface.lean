@@ -314,9 +314,10 @@ structure YekutieliLiftingData where
     (An earlier docstring asserted `H²(Σ₄, ℤ/2) = 0`; that was false.)
 
     **The statement below is vacuous**: it only builds a record whose single
-    field is `9 > 0`, and says nothing about the obstruction class. Whether
-    to restate the real obstruction (`sorry` + `-- Ref:`) or demote this to a
-    conjecture is pending an owner decision.
+    field is `9 > 0`, and says nothing about the obstruction class. It is no
+    longer the formalisation of `prop:yekutieli-lifting`: that block now
+    points at `QOU.YekutieliLifting` (sibling `yekutieli-lifting.lean`),
+    which carries the general lift-iff-obstruction-vanishes criterion.
 
     LaTeX: `\label{prop:brings-is-qou}` (item 3) -/
 -- Ref: [yekutieli2015] Amnon Yekutieli, *Nonabelian Multiplicative Integration on Surfaces*, 2015
