@@ -13,9 +13,9 @@ export default theorem({
   proofs: ["prf:qu-to-qou"],
   authorNotes: [
     {
-      kind: "caveat",
+      kind: "refined-framing",
       date: "2026-10-12",
-      body: "Items 2 and 3 depend on the band B, which is not constructed anywhere in the corpus (six incompatible readings). For the archimedean band O^x on a closed surface, H^2(S, O^x) = 0: item 2 fails there (kappa_0 = 0 but e = -6 on Bring), and item 3 is vacuous (its non-torsion hypothesis is never met). Both are coherent only for a band whose H^2 contains the integral Euler class (e.g. Z). Items 1, 4 and 5 do not use the obstruction group. Scope note added to prf:qu-to-qou; open work in beans qou-lx8f, qou-2a2o, qou-n2aa.",
+      body: "Items 2 and 3 restated (owner decision). Item 2 now names the extension ℤ → ℝ → U(1) and gives κ₀ = c₁(ξ) = e(ξ) = χ(S). Item 3, perpetual obstruction in the jet tower, is retracted on closed surfaces and replaced by Kummer persistence: the obstruction to an n-th root is χ mod n in H²(S, μₙ). Item 6 (lifting criterion) is new and proved in Lean (QOU.CentralExtension.PresheafCentralExtension.exists_lift_iff). The jet tower is discussed in rem:jet-tower-splitting-bring. The lean.ref target qu_to_qou proves only Euler-characteristic stability and encodes none of items 2, 3 or 6. Evidence: docs/audits/2026-10-12-jet-tower-band-construction.md, docs/audits/2026-10-12-atiyah-jet-classes-bring.md.",
       see: "prf:qu-to-qou",
     },
   ],
