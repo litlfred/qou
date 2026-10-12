@@ -226,6 +226,14 @@ import QOU.HeckeAlgebra.SeminormalDimSmall
 import QOU.Glossary
 import QOU.KZ.AssociatorKZ
 import QOU.KZ.BlockResidues
+import QOU.KZ.Drinfeld.Assoc
+import QOU.KZ.Drinfeld.Category
+import QOU.KZ.Drinfeld.Kron
+import QOU.KZ.Drinfeld.Legs
+import QOU.KZ.Drinfeld.Pentagon
+import QOU.KZ.Drinfeld.Reindex
+import QOU.KZ.Drinfeld.Transport
+import QOU.KZ.Drinfeld.Whisker
 import QOU.KZ.Flat2D
 import QOU.KZ.FuchsianAnalytic
 import QOU.KZ.FuchsianConvergence

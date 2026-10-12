@@ -124,7 +124,7 @@ theorem ρ_eq_diag (X : Obj) (a : Matrix (Fin 2) (Fin 2) ℂ) : Obj.ρ X a = dia
     rw [diag, Fintype.sum_unique]
     simp only [Obj.ρ, leafOp, Matrix.of_apply]
     rw [if_pos (fun j hj => absurd (Subsingleton.elim j default) hj), mul_one]
-    rfl
+    try rfl
   | tensor X Y hX hY =>
     rw [Obj.ρ_tensor, hX, hY, diag, diag, diag]
     erw [Fintype.sum_sum_type]

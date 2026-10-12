@@ -32,7 +32,7 @@ inductive Obj : Type
 namespace Obj
 
 /-- The tensor legs of a word. -/
-def Leaves : Obj → Type
+@[reducible] def Leaves : Obj → Type
   | unit => Empty
   | V => Unit
   | tensor X Y => Leaves X ⊕ Leaves Y
