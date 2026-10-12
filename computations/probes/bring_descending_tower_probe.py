@@ -129,7 +129,8 @@ def main() -> int:
         w.add_assertion(name, computed="1" if ok else "0", expected="1", source=src)
     out = w.save({
         "q0Anchor": "independent",
-        "q0_anchor_reason": "pure algebraic geometry of Bring's curve; no q",
+        "q0_anchor_reason": "pure algebraic geometry of Bring curve; no q",
+        "q0AnchorReason": "pure algebraic geometry of Bring curve (S5 action on Sigma x = Sigma x^2 = Sigma x^3 = 0); imports only sympy and the witness builder, never q",
         "description": ("PROBE (bean qou-6082): exact fixed-point counts of each S5 conjugacy class on Bring's curve and "
                         "Riemann–Hurwitz for the cyclic quotients. Only 3-cycles generate a free subgroup; B/C3 is an "
                         "unramified genus-2 curve; the descending unramified tower is Σ4 → C2 and stops."),

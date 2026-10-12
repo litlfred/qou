@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-10-12T19:27:43.351716+00:00",
-  "commitSha": "eb04354e39816f38c7ad251a7b60f463ee0f8364",
+  "computedAt": "2026-10-12T19:39:16.279333+00:00",
+  "commitSha": "4b67f92626234f870b3e788ee49f0c42d721a316",
   "assertions": [
     {
       "name": "fixed_points_of_(12)_lie_on_curve",
@@ -118,11 +118,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 15,
   "computation": "bring-descending-tower",
   "scriptFile": "bring_descending_tower_probe.py",
-  "scriptHash": "26384961dd82",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "70cb94e8f9e8",
+  "scriptCommitSha": "4b67f92626234f870b3e788ee49f0c42d721a316",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -144,7 +144,8 @@
     "reproduce": "python3 -u computations/probes/bring_descending_tower_probe.py"
   },
   "q0Anchor": "independent",
-  "q0_anchor_reason": "pure algebraic geometry of Bring's curve; no q",
+  "q0_anchor_reason": "pure algebraic geometry of Bring curve; no q",
+  "q0AnchorReason": "pure algebraic geometry of Bring curve (S5 action on Sigma x = Sigma x^2 = Sigma x^3 = 0); imports only sympy and the witness builder, never q",
   "description": "PROBE (bean qou-6082): exact fixed-point counts of each S5 conjugacy class on Bring's curve and Riemann–Hurwitz for the cyclic quotients. Only 3-cycles generate a free subgroup; B/C3 is an unramified genus-2 curve; the descending unramified tower is Σ4 → C2 and stops.",
   "fixed_point_counts": {
     "(12)": 6,
