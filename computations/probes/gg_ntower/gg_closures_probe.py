@@ -53,10 +53,43 @@ def flip(letters, n):
 _CACHE = {}
 
 
+K = g.K
+_YK = {}
+
+
+def _y(lam):
+    if lam not in _YK:
+        _YK[lam] = K.from_sympy(sp.cancel(g.y_lambda(lam)))
+    return _YK[lam]
+
+
+def _level_chars_K(letters, n):
+    """Same formula as gg_ntower_probe.level_chars, kept in the field QQ(q)
+    (no sympy factor/cancel), returning K elements."""
+    diag = {}
+    for lam in g.two_row_shapes(n):
+        R = g.rep(lam)
+        M = R.word(letters)
+        diag[lam] = [(T, M[i, i].element) for i, T in enumerate(R.basis)]
+    out = {}
+    for m in range(3, n + 1):
+        for mu in g.two_row_shapes(m):
+            acc = K.zero
+            for lam, entries in diag.items():
+                sm = K.zero
+                for T, v in entries:
+                    if (m - sum(T[:m]), sum(T[:m])) == mu:
+                        sm += v
+                if sm:
+                    acc += _y(lam) / _y(mu) * sm
+            out[(m, mu)] = acc
+    return out
+
+
 def chars_top(letters, n):
     key = (tuple(map(tuple, letters)), n)
     if key not in _CACHE:
-        _CACHE[key] = g.level_chars([tuple(x) for x in letters], n)
+        _CACHE[key] = _level_chars_K([tuple(x) for x in letters], n)
     return _CACHE[key]
 
 
@@ -110,8 +143,9 @@ def q1_level3(letters, n, mode):
 # ------------------------------------------------------------- sign helper
 def sign_info(f):
     """Exact sign of a rational function on (1, inf) via Sturm counts;
-    roots isolated only if a count is nonzero."""
-    f = sp.cancel(f)
+    roots isolated only if a count is nonzero. f: K element or sympy expr."""
+    if not isinstance(f, sp.Basic):
+        f = K.to_sympy(f)
     if f == 0:
         return {"identically_zero": True, "at_q0": "0", "nonneg_at_q0": True,
                 "nonneg_on_(1,inf)": True, "roots_gt_1": []}
@@ -124,16 +158,16 @@ def sign_info(f):
     roots = sorted(set(roots), key=lambda r: sp.N(r, 30))
     pts = [sp.Integer(1)] + roots
     samples = [(pts[i] + pts[i + 1]) / 2 for i in range(len(pts) - 1)] + [pts[-1] + 1]
-    nonneg = all(sp.sign(sp.N(f.subs(q, x), 50)) >= 0 for x in samples)
-    v = mp.mpf(str(sp.N(f.subs(q, g.Q0_RAT), 80)))
+    nonneg = all(sp.sign(num.eval(x) * den.eval(x)) >= 0 for x in samples)
+    r = num.eval(g.Q0_RAT) / den.eval(g.Q0_RAT)
+    v = mp.mpf(int(sp.numer(r))) / mp.mpf(int(sp.denom(r)))
     return {"identically_zero": False, "at_q0": mp.nstr(v, 25),
             "nonneg_at_q0": bool(v >= 0), "nonneg_on_(1,inf)": bool(nonneg),
             "roots_gt_1": [mp.nstr(mp.mpf(str(sp.N(r, 40))), 20) for r in roots]}
 
 
 def jones(R, i):
-    K = g.K
-    return (R.eye * K.from_sympy(q) - R.gen[i]) * K.from_sympy(1 / (q + 1 / q))
+    return (R.eye * g.K.from_sympy(q) - R.gen[i]) * g.K.from_sympy(1 / (q + 1 / q))
 
 
 def chars_pair(letters, n):
@@ -153,7 +187,7 @@ def chars_pair(letters, n):
             P = M
             for r in range(j):
                 P = P * jones(R, n - 2 - 2 * r)
-            out[(m, mu)] = sp.factor(g.tr(P))
+            out[(m, mu)] = sum((P[i, i].element for i in range(P.shape[0])), K.zero)
         j += 1
     return out
 
@@ -167,7 +201,19 @@ CLOSURES = {"top": chars_top, "bottom": chars_bottom,
 
 
 def h_order(f):
-    return g.h_order(f)
+    """value at q=1 and leading order in t of f(1+t) - f(1), via polys."""
+    if not isinstance(f, sp.Basic):
+        f = K.to_sympy(f)
+    if f == 0:
+        return "0", None
+    num, den = sp.fraction(sp.together(f))
+    N = sp.Poly(sp.expand(num), q).compose(sp.Poly(1 + t, t))
+    D = sp.Poly(sp.expand(den), q).compose(sp.Poly(1 + t, t))
+    f1 = sp.Rational(N.eval(0), D.eval(0))
+    diff = (N - D * f1)
+    if diff.is_zero:
+        return str(f1), None
+    return str(f1), int(min(m[0] for m in diff.monoms()))
 
 
 # ------------------------------------------------------------------ checks
@@ -182,8 +228,8 @@ def run_checks():
         c = chars_top(letters, n)
         log(f"K1 {key}")
         for (m, mu), f in c.items():
-            ref = sp.sympify(e["rows"][f"m={m} mu={mu}"]["chi"], locals={"q": q})
-            ok &= sp.cancel(f - ref) == 0
+            ref = K.from_sympy(sp.sympify(e["rows"][f"m={m} mu={mu}"]["chi"], locals={"q": q}))
+            ok &= (f - ref) == K.zero
             cnt += 1
     checks["K1_top_reproduces_7733"] = bool(ok)
     checks["K1_count"] = cnt
@@ -195,7 +241,7 @@ def run_checks():
         n, letters = e["n"], [tuple(x) for x in e["letters"]]
         a, b = chars_top(letters, n), chars_bottom(letters, n)
         for mu in g.two_row_shapes(n):
-            ok &= sp.cancel(a[(n, mu)] - b[(n, mu)]) == 0
+            ok &= (a[(n, mu)] - b[(n, mu)]) == K.zero
     checks["K2_flip_inner_top_level"] = bool(ok)
     log(f"K2 {ok}")
 
@@ -204,7 +250,7 @@ def run_checks():
     for key, e in wit.items():
         n, letters = e["n"], [tuple(x) for x in e["letters"]]
         for mode, fn in (("top", chars_top), ("bottom", chars_bottom)):
-            c = fn(letters, n)[(3, (2, 1))]
+            c = K.to_sympy(fn(letters, n)[(3, (2, 1))])
             w, pr, val = q1_level3(letters, n, mode)
             ok &= sp.cancel(c.subs(q, 1) - sp.Rational(val.numerator, val.denominator)) == 0
     checks["K3_q1_permutation_model"] = bool(ok)
@@ -221,8 +267,9 @@ def run_checks():
             for mu in g.two_row_shapes(m - 1):
                 lam = (mu[0] + 1, mu[1] + 1)
                 R = g.rep(lam)
-                lhs = g.tr(R.word(y) * jones(R, m - 1))
-                ok &= sp.cancel(lhs - Ey[(m - 1, mu)]) == 0
+                P = R.word(y) * jones(R, m - 1)
+                lhs = sum((P[i, i].element for i in range(P.shape[0])), K.zero)
+                ok &= (lhs - Ey[(m - 1, mu)]) == K.zero
     checks["K4_jones_absorption_on_characters"] = bool(ok)
     log(f"K4 {ok}")
     return checks
@@ -235,7 +282,7 @@ U_RATIO = None
 def single_vertex_ratio(vertex):
     letters = [(0, 1), (1, -1 if vertex == "V" else 1)]
     c = chars_top(letters, 3)
-    return sp.cancel(c[(3, (2, 1))] / c[(3, (3, 0))])
+    return K.to_sympy(c[(3, (2, 1))] / c[(3, (3, 0))])
 
 
 def main():
@@ -258,7 +305,7 @@ def main():
                     for (m, mu), f in chars.items():
                         si = sign_info(f)
                         v1, o = h_order(f)
-                        rows[f"m={m} mu={mu}"] = {"chi": str(f), **si, "q1": v1, "t_order": o}
+                        rows[f"m={m} mu={mu}"] = {"chi": str(K.to_sympy(f)), **si, "q1": v1, "t_order": o}
                         good = si["identically_zero"] or si["nonneg_at_q0"]
                         levels[m] = levels.get(m, True) and good
                     verdict_levels = {m: v for m, v in levels.items() if m >= 3}
@@ -266,8 +313,8 @@ def main():
                     c3 = chars.get((low, (low, 0)))
                     c21 = chars.get((low, (low - 1, 1)))
                     prop = None
-                    if low == 3 and c3 is not None and c3 != 0:
-                        prop = bool(sp.cancel(c21 / c3 - ratio[vertex]) == 0
+                    if low == 3 and c3 is not None and c3 != K.zero:
+                        prop = bool(sp.cancel(K.to_sympy(c21 / c3) - ratio[vertex]) == 0
                                     and sign_info(c3)["nonneg_on_(1,inf)"])
                     row["closures"][name] = {
                         "reading3_by_level_at_q0": levels,
@@ -281,6 +328,8 @@ def main():
                 row["verdicts_agree"] = len(set(verdicts.values())) == 1
                 results[f"{vertex} s={s:+d} k={k}"] = row
                 log(f"{vertex} s={s:+d} k={k} n={n} {verdicts}")
+                (HERE / "gg-closures.partial.json").write_text(
+                    json.dumps({"checks": checks, "results": results}, default=str) + "\n")
                 k += 1
     out = {
         "recipe": "computations/probes/gg_ntower/closures_preregistration.md (152a15575e)",
