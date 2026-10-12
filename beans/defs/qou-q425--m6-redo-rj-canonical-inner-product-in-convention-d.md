@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-11T07:42:51Z
+updated_at: 2026-10-12T19:17:52Z
 parent: qou-d8c7
 ---
 
@@ -104,3 +104,7 @@ New QOU/Archimedean/RossoJonesMiddle.lean. It is sorry-free and works over a gen
 - markov_rossoJones: the same, for every normalised cyclic Markov trace with z_D on any Hecke family, for coprime (r, s). Open item (1) of the previous entry is therefore CLOSED for coprime (r, s).
 - How it works. gam_eq_G gives an explicit matrix for γ. Three identities hold: γ = ρ + E K, ρ E = E ρ', K E = γ − ρ'. Here E is the U_q(sl2) raising operator and ρ, ρ' are weighted cyclic rotations. pow_decomp turns them into a telescoping identity. That gives T_{m+1}(γ^p) = T_{m+1}(ρ^p) + T_m(γ^p) − T_m(ρ'^p). Under gcd(n+1, p) = 1, rot^p fixes only the constant states, so the middle traces of ρ^p and ρ'^p vanish. Then T_m(γ^p) = q^{np} − (q^{n} q^{-2})^p for every 0 < m < n+1.
 STILL OPEN: the non-coprime case (torus links). The probe shows MiddleWeightTraces FAILS there, so a different statement is needed. Items (2) and (3) of the previous entry are untouched: explicit W_{r,j}, and quantum Schur–Weyl tr_q = Σ_j [j+1] tr_{W_{r,j}} / [2]^r. This bean stays open.
+
+
+## 2026-10-12 — coordinator: owner-ordered chain complete on PR #7737 (head 18b8fc706b), re-verified
+Torus links any gcd (markov_rossoJones_torusLink); Schur–Weyl trace split (trace_split); W_{r,j} = ker E ∩ V_{r−j}, dim = C(r,j)−C(r,j−1) (finrank_Wmod); full twist scalar q^{r(r−1)−2j(r−j+1)} (gamW_fullTwist); per-module trace for every p (trace_gamW, markov_gam_pow_explicit). Hypothesis [k]_q ≠ 0 for k ≤ r. lean -DautoImplicit=false -s 65536 exit 0; #print axioms clean; probes 1350/1350, 22932/22932. Left open in this bean (not part of the owner's chain): linear independence of the Jones words in the presented algebra Pres. Bean kept open for the owner.
