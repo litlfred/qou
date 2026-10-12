@@ -468,6 +468,8 @@ import QOU.OrientedSkein.Model.GLnTrace
 import QOU.OrientedSkein.Model.GLnCrossCheck
 import QOU.OrientedSkein.Model.GLnDatum
 import QOU.OrientedSkein.Model.GLnLift
+import QOU.OrientedSkein.Model.GLnClosure
+import QOU.OrientedSkein.Model.GLnClosureLift
 import QOU.SchurWeyl.HeckeCoset
 import QOU.SchurWeyl.HeckeDim3
 import QOU.SchurWeyl.HeckeDim3Dim
