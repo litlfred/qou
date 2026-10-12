@@ -37,6 +37,9 @@ counterpart of "the obstruction class is defined" in Yekutieli 2010, Thm 4.17
   coboundary, so its class does not depend on `ξ`.
 * `obstruction_pull`: pulling back along a refinement of the cover pulls the
   obstruction back (`pullOneCochain`, `pullOneCocycle`, `pullTwoCochain`).
+* `isCoboundary_obstruction_iff`, `isCoboundary_pull`: whether the obstruction
+  class vanishes does not depend on the local lift, and vanishing survives
+  refinement.
 * `exists_lift_iff`: `γ` lifts to a 1-**cocycle** of `𝓔` iff the obstruction is
   the coboundary `α_ij α_jk α_ik⁻¹` of some 1-cochain `α` of `𝒜`.
 
@@ -300,6 +303,28 @@ theorem exists_lift_iff :
       (X.exact _ _).2 ⟨_, rfl⟩
     change X.π.app (op T) (X.ι.app (op T) (α.ev i j a b)⁻¹ * ξ.ev i j a b) = _
     rw [map_mul, h1, one_mul, hξ]
+
+/-- A 2-cochain of `𝒜` is a **coboundary** if it is `α_ij α_jk α_ik⁻¹` for a
+1-cochain `α` of `𝒜`. -/
+def IsCoboundary (c : TwoCochain U 𝒜) : Prop :=
+  ∃ α : PresheafOfGroups.OneCochain 𝒜 U, ∀ (i j k : I) ⦃T : C⦄ (a : T ⟶ U i)
+    (b : T ⟶ U j) (d : T ⟶ U k), c.ev i j k a b d = α.ev i j a b * α.ev j k b d * (α.ev i k a d)⁻¹
+
+/-- **The vanishing of the obstruction class does not depend on the local
+lift.** Both sides are equivalent to the existence of a lift of `γ`. -/
+theorem isCoboundary_obstruction_iff (ξ' : PresheafOfGroups.OneCochain 𝓔 U)
+    (hξ' : ∀ (i j : I) ⦃T : C⦄ (a : T ⟶ U i) (b : T ⟶ U j),
+      X.π.app (op T) (ξ'.ev i j a b) = γ.ev i j a b) :
+    IsCoboundary (X.obstruction γ ξ hξ) ↔ IsCoboundary (X.obstruction γ ξ' hξ') :=
+  (X.exists_lift_iff γ ξ hξ).symm.trans (X.exists_lift_iff γ ξ' hξ')
+
+/-- **Vanishing is preserved by refinement.** If the obstruction is a coboundary
+on the cover `U`, its pullback to a refinement `V` is a coboundary there. -/
+theorem isCoboundary_pull {J : Type w'} {V : J → C} (r : J → I) (f : ∀ j, V j ⟶ U (r j))
+    {c : TwoCochain U 𝒜} (hc : IsCoboundary c) :
+    IsCoboundary (pullTwoCochain U r f c) := by
+  obtain ⟨α, hα⟩ := hc
+  exact ⟨pullOneCochain U r f α, fun j j' j'' T a b d => hα _ _ _ _ _ _⟩
 
 end PresheafCentralExtension
 
