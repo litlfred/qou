@@ -1,0 +1,248 @@
+{
+  "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+  "computedAt": "2026-10-11T07:31:04.054182+00:00",
+  "computation": {
+    "script": "computations/deltalambda/rev_e_infinity_xbot_join_probe.py"
+  },
+  "bean": "qou-as81",
+  "anchor": "physical_proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "description": "Per-sum upper bound on the bottom edge, Xbot(s) <= h(mu) + mu s, with h(mu) the certified integer maximum of the L-natural-concave G - mu sum u.  With the exact top value per sum, the join over the L-natural cut's window peaks at e_inf, so e_inf is the join's maximum without G1.",
+  "params": {
+    "N": 40,
+    "cut": 25,
+    "B_bot": "2.159802376118285961604"
+  },
+  "multipliers": [
+    {
+      "mu": "0.4",
+      "h": "0.1819531864438767969772",
+      "pe_star": 12,
+      "argmax_pe": 2,
+      "argmax_sum": 1
+    },
+    {
+      "mu": "0.3",
+      "h": "0.3525758066084261764722",
+      "pe_star": 13,
+      "argmax_pe": 2,
+      "argmax_sum": 3
+    },
+    {
+      "mu": "0.2",
+      "h": "0.6525758066084261764722",
+      "pe_star": 14,
+      "argmax_pe": 2,
+      "argmax_sum": 3
+    },
+    {
+      "mu": "0.15",
+      "h": "0.8787186643996741388259",
+      "pe_star": 14,
+      "argmax_pe": 3,
+      "argmax_sum": 6
+    },
+    {
+      "mu": "0.12",
+      "h": "1.070226181365656473749",
+      "pe_star": 14,
+      "argmax_pe": 3,
+      "argmax_sum": 7
+    },
+    {
+      "mu": "0.05",
+      "h": "1.565444371077749996131",
+      "pe_star": 15,
+      "argmax_pe": 3,
+      "argmax_sum": 8
+    },
+    {
+      "mu": "0.045",
+      "h": "1.614192647479678445684",
+      "pe_star": 15,
+      "argmax_pe": 4,
+      "argmax_sum": 11
+    },
+    {
+      "mu": "0.04",
+      "h": "1.671115432106013449567",
+      "pe_star": 15,
+      "argmax_pe": 4,
+      "argmax_sum": 12
+    },
+    {
+      "mu": "0.005",
+      "h": "2.091693167813466520995",
+      "pe_star": 15,
+      "argmax_pe": 4,
+      "argmax_sum": 13
+    },
+    {
+      "mu": "0.0025",
+      "h": "2.124802376118285961604",
+      "pe_star": 15,
+      "argmax_pe": 3,
+      "argmax_sum": 14
+    },
+    {
+      "mu": "0.0",
+      "h": "2.159802376118285961604",
+      "pe_star": 16,
+      "argmax_pe": 3,
+      "argmax_sum": 14
+    }
+  ],
+  "per_sum": [
+    {
+      "s": 1,
+      "top": "0.5819531864438767969772",
+      "bottom_bound": "0.5819531864438767969772"
+    },
+    {
+      "s": 2,
+      "top": "0.8665517327505225731843",
+      "bottom_bound": "0.9525758066084261764722"
+    },
+    {
+      "s": 3,
+      "top": "1.252575806608426176472",
+      "bottom_bound": "1.252575806608426176472"
+    },
+    {
+      "s": 4,
+      "top": "1.426862486300793119222",
+      "bottom_bound": "1.452575806608426176472"
+    },
+    {
+      "s": 5,
+      "top": "1.575823968073848565493",
+      "bottom_bound": "1.628718664399674138826"
+    },
+    {
+      "s": 6,
+      "top": "1.778718664399674138826",
+      "bottom_bound": "1.778718664399674138826"
+    },
+    {
+      "s": 7,
+      "top": "1.910226181365656473749",
+      "bottom_bound": "1.910226181365656473749"
+    },
+    {
+      "s": 8,
+      "top": "1.965444371077749996131",
+      "bottom_bound": "1.965444371077749996131"
+    },
+    {
+      "s": 9,
+      "top": "1.993985001872683715154",
+      "bottom_bound": "2.015444371077749996131"
+    },
+    {
+      "s": 10,
+      "top": "2.029360245858113610495",
+      "bottom_bound": "2.064192647479678445684"
+    },
+    {
+      "s": 11,
+      "top": "2.109192647479678445684",
+      "bottom_bound": "2.109192647479678445684"
+    },
+    {
+      "s": 12,
+      "top": "2.151115432106013449567",
+      "bottom_bound": "2.151115432106013449567"
+    },
+    {
+      "s": 13,
+      "top": "2.156693167813466520995",
+      "bottom_bound": "2.156693167813466520995"
+    },
+    {
+      "s": 14,
+      "top": "2.159802376118285961604",
+      "bottom_bound": "2.159802376118285961604"
+    },
+    {
+      "s": 15,
+      "top": "2.153474421834854004787",
+      "bottom_bound": "2.159802376118285961604"
+    },
+    {
+      "s": 16,
+      "top": "2.130189157005537712925",
+      "bottom_bound": "2.159802376118285961604"
+    },
+    {
+      "s": 17,
+      "top": "2.096535730787041200134",
+      "bottom_bound": "2.159802376118285961604"
+    },
+    {
+      "s": 18,
+      "top": "2.056356286166377875747",
+      "bottom_bound": "2.159802376118285961604"
+    },
+    {
+      "s": 19,
+      "top": "2.011998971398407478748",
+      "bottom_bound": "2.159802376118285961604"
+    },
+    {
+      "s": 20,
+      "top": "1.964939249876395417771",
+      "bottom_bound": "2.159802376118285961604"
+    },
+    {
+      "s": 21,
+      "top": "1.916120146452548356296",
+      "bottom_bound": "2.159802376118285961604"
+    },
+    {
+      "s": 22,
+      "top": "1.866150867991885480545",
+      "bottom_bound": "2.159802376118285961604"
+    },
+    {
+      "s": 23,
+      "top": "1.815963167259797846379",
+      "bottom_bound": "2.159802376118285961604"
+    },
+    {
+      "s": 24,
+      "top": "1.765605842831550001911",
+      "bottom_bound": "2.159802376118285961604"
+    }
+  ],
+  "join": {
+    "max": "2.439296455120784027065429",
+    "at": [
+      8,
+      8
+    ],
+    "e_inf": "2.43929645512078402706542882159",
+    "difference": "-1.91152e-25"
+  },
+  "checks": [
+    {
+      "name": "J1 every h(mu) is a certified integer maximum",
+      "ok": true,
+      "detail": "11 multipliers, every frame up to pe*(mu), N = 40: no +-chi_S move improves (gain <= 1.0e-18) and every support ends below row 34"
+    },
+    {
+      "name": "J2 the tail lemma holds with the multiplier",
+      "ok": true,
+      "detail": "max over frames and multipliers of [eps(b_N + 1) + cbar_N] - [(ln q0)/2 + mu] = -0.051671287"
+    },
+    {
+      "name": "J3 the wall inequality closes the frames",
+      "ok": true,
+      "detail": "eps(1) - mu < ln q0 (pe + 1) from pe* <= 16 at every multiplier, so with the shift identity (L-natural M8) frames beyond pe* add nothing"
+    },
+    {
+      "name": "J4 the window's join is e_inf with no G1",
+      "ok": true,
+      "detail": "over s_t + s_b <= 25 (s_t, s_b >= 1, as in block-sup P9), Xblock(s_t) + xrun(s_t + s_b) + min_mu [h(mu) + mu s_b] peaks at 2.439296455120784027065429 at (8, 8), against e_inf = 2.439296455120784027065429 (difference -1.912e-25).  Outside the window the L-natural cut applies.  So e_inf is the maximum of the join with G1 nowhere in the argument.  The bottom bound equals the top value at s = [1, 3, 6, 7, 8, 11, 12, 13, 14]"
+    }
+  ]
+}

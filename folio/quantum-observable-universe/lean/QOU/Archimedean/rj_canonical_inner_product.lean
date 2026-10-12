@@ -66,7 +66,8 @@ Markov parameter `z = q³/(q² + 1) = q²/[2]` (convention D).
   `QOU.Hecke.MarkovTrace`, `QOU.IwahoriHecke.MarkovTrace` carry the trace as class
   data. `QOU.Hecke.markov_trace_unique` was proved from `markov_trace_unique_axiom`,
   which was **false** and has been removed; it is now a theorem that takes the
-  cross-level Markov property `MarkovTrace.IsMarkov` as a hypothesis.)
+  cross-level Markov property `MarkovTrace.IsMarkov` as a hypothesis; the concrete
+  traces on `H₂`, `H₃`, `H₄` satisfy it, `QOU.Hecke.MarkovTraceIsMarkov`.)
 
 ## History
 

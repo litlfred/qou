@@ -1087,6 +1087,39 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "dc0040dfc9d4",
+          "ts": "2e232b9f2587"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 10,
+          "max": 16,
+          "rubric": {
+            "H1": 1,
+            "H2": 1,
+            "H3": 2,
+            "H4": 1,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H8/H5: L1 'Each of these structures is forced by the QOU axioms' and '... establishing the observability axiom directly from the Frobenius pairing' — an axiom is assumed, not established. H4: 'intrinsic contact affine chart', 'realize it physically within the left-covariant calculus' are undefined.",
+        "notes": "Milnor H1-H8 = [1, 1, 2, 1, 1, 2, 1, 1] (T=10/16, fail); weakest: H1, H2, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): 'We now build first-order structure on $A$: a vector field $\\xi$ generating the torus action (the Reeb derivation), the projective line $A/\\ldots$ with its affine chart, and an involution relating $\\mathbb P^1$ to a coadjoint orbit. For $\\mathrm{SU}(2)$ these are the Hopf circle action, $S^2=\\mathbb{CP}^1$, and the sphere as an orbit in $\\mathfrak{su}(2)^*$.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -1544,6 +1577,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T00:53:51.132Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

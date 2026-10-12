@@ -7,10 +7,10 @@ section_number: 6
 pages: 17-18
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
-doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.739
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.969
 ---
 []{#Cops_sect label="Cops_sect"}
 

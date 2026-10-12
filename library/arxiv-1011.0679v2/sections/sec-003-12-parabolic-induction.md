@@ -7,10 +7,10 @@ section_number: 1.2
 pages: 6-9
 source_pdf: 1011.0679v2.pdf
 source_sha256: 6fa4bbcf4e908373
-doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.936
+latex_coverage_ratio: 0.943
 ---
 For a set of simple roots $P \subset F_0$ we introduce the notations
 \begin{equation}\label{eq:parabolic}

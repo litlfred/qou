@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.17",
-  "computedAt": "2026-10-10T11:05:03.825320+00:00",
-  "commitSha": "06c3cdb02f90c5fed9fba302e35a6c54c1b2e9a6",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-11T07:34:39.738112+00:00",
+  "commitSha": "33d54fd71b8a630455396b77b5d91ab3cd8d0f5e",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "4ab05cb8f97e",
-  "scriptCommitSha": "44127769ed20003c58c3e6d9289f20adff0699f2",
+  "scriptHash": "f1ce4d069538",
+  "scriptCommitSha": "9aa412a25b9cc75a58eb4752c7dcfe43e20a83e1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.17",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "2986fe4aa825b156"
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -278,7 +278,9 @@
       "price_witness": "qbeta/qbeta-zd-rescore-price.witness.json",
       "second_rescore_due_after": "qou-pdix (phase) -> qou-cds1 (ladder); bean qou-iagg",
       "element_scored": "nuc11_interleaved (gamma-gamma-selected nucleon word)",
-      "element_is_ruled": true,
+      "element_is_ruled": false,
+      "element_ruled_status": "partial",
+      "element_ruled_status_rationale": "6/11 letters (the core (sigma_0 sigma_1^-1)^3) are gamma-gamma-reachable, and even those are conditional on the provisional confinement reading 3 and on excluding the empty word (frobeniusSelected_borromean / frobeniusSelected_nil); the other 5 letters (3-letter quark template + sigma_0 sigma_0 gluon pair) are chosen -- the gluon pair's 'ILP-derived' citation is dead and it fails reading 3 (qou-99qc). Source: word-provenance audit 2026-10-11; False set at owner request 2026-10-11",
       "element_ruled_letters": 6,
       "element_census_letters": 5,
       "element_ruled_scope": "the 6-letter core (sigma_0, sigma_1)^3 = three gamma-gamma vertices. The 3-letter quark block is odd and the 2-letter gluon pair has both letters positive, so neither is gamma-gamma reachable -- gammaGamma_length_even, sorry-free. qou-ales says 'shouldn't use census' and 5 of 11 letters are still census-derived; those 5 have no derived constraint and are where a closing Delta would have to come from (bean qou-99qc, 2026-09-12)",

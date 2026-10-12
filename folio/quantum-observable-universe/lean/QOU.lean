@@ -224,6 +224,19 @@ import QOU.HeckeAlgebra.WedderburnUnconditional
 -- on a classical value the corpus had not written down (bean qou-v7ms).
 import QOU.HeckeAlgebra.SeminormalDimSmall
 import QOU.Glossary
+import QOU.KZ.AssociatorKZ
+import QOU.KZ.Flat2D
+import QOU.KZ.FuchsianAnalytic
+import QOU.KZ.FuchsianConvergence
+import QOU.KZ.FuchsianFormal
+import QOU.KZ.FuchsianParam
+import QOU.KZ.KZ4
+import QOU.KZ.KZComplex
+import QOU.KZ.KZCorner
+import QOU.KZ.KZEdge
+import QOU.KZ.KZHalfMonodromy
+import QOU.KZ.KZHexagon
+import QOU.KZ.KZPentagon
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding
 import QOU.Knot.RademacherReversible

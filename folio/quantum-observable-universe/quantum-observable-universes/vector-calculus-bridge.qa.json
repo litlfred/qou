@@ -1123,6 +1123,39 @@
     ],
     "expo-milnor-clarity": [
       {
+        "field_hash": {
+          "md": "d2ad7bb9fd33",
+          "ts": "f27aac903247"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 15,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 2,
+            "H3": 2,
+            "H4": 1,
+            "H5": 2,
+            "H6": 2,
+            "H7": 2,
+            "H8": 2
+          }
+        },
+        "evidence": "H4 (minor): L5 'the curl $d\\alpha$ on a 1-form' and 'gradient $df$' identify forms with vector fields without the $\\sharp$/$\\star$ that does it (the curl is $\\star d\\alpha$ in dimension 3); $n$ is used before it is introduced. Otherwise a model reminder-remark for the primary reader.",
+        "notes": "Milnor H1-H8 = [2, 2, 2, 1, 2, 2, 2, 2] (T=15/16, warn); weakest: H4. Suggested rewrite (not applied; owner rule 'ask before changing'): '... gives the gradient $(df)^\\sharp$ and, in dimension $n=3$, the curl $(\\star d\\alpha)^\\sharp$.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
@@ -1574,6 +1607,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T07:01:44.582Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

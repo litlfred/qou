@@ -9,14 +9,16 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1904.13129v1",
+  "title": "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity",
   "contains": [
     "library/arxiv-1904.13129v1/sections/sec-front-matter",
     "library/arxiv-1904.13129v1/sections/sec-000",
     "library/arxiv-1904.13129v1/sections/sec-001",
     "library/arxiv-1904.13129v1/sections/sec-002",
     "library/arxiv-1904.13129v1/sections/sec-003",
-    "library/arxiv-1904.13129v1/sections/sec-004"
+    "library/arxiv-1904.13129v1/sections/sec-004",
+    "library/arxiv-1904.13129v1/sections/sec-005",
+    "library/arxiv-1904.13129v1/sections/sec-006"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -29,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1904.13129v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1904.13129v1.pdf",
     "source_sha256": "dfa7fd0ebf1ab8c446310a306cbed479e9da1fbec96dfdefdcedbfb6b801d8fa",
     "pages": 24,

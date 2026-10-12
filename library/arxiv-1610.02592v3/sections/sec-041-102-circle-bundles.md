@@ -1,15 +1,15 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-041-102-circle-bundles
 section_title: "Circle bundles"
 section_number: 10.2
 pages: 318-320
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
+latex_prose_ratio: 0.611
 latex_coverage_ratio: 1.0
 ---
 We now introduce another simple class of 3-manifolds, the orientable circle bundles over some compact surface $S$. We will discover that there is essentially only one circle bundle if $S$ has boundary, and infinitely many if $S$ is closed, distinguished by an integer called the \emph{Euler number}.

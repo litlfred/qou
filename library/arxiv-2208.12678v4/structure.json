@@ -7,7 +7,10 @@
   "bytes": 792522,
   "pages": 14,
   "text_source": "embedded",
-  "extractor": "pypdf",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T13:07:21Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "math_source": "latex"
  },
  "metadata": {
@@ -18,18 +21,26 @@
    "stamp_date": "9 Mar 2025"
   },
   "doi": null,
-  "title": "STATIONARY CURVES UNDER THEM \u00d6BIUS-PLATEAU ENERGY",
+  "title": "STATIONARY CURVES UNDER THE M\u00d6BIUS-PLATEAU ENERGY",
   "authors_raw": "MAX LIPTON AND GOKUL G. NAIR",
   "title_lines": [
-   "STATIONARY CURVES UNDER THEM \u00d6BIUS-PLATEAU ENERGY"
+   "STATIONARY CURVES UNDER THE M\u00d6BIUS-PLATEAU ENERGY"
   ],
-  "abstract": "Plateau problems with elastic boundary energies have been of recent theoretical and applied interest. However, strong assumptions have to be made to avoid self-intersections of the boundary curve during energy minimization. We introduce a class of Plateau problems for boundaries with self-repulsive energies that obviates self-contact in energy minimization problems. For the self-repulsive energy, we choose the M\u00a8 obius Energy introduced by O\u2019Hara due to its myriad regularity properties shown by Freedman et al. We first prove an existence theorem for this M\u00a8 obius-Plateauproblem in the class of closed Lipschitz curves of a given irreducible knot-type spanned by immersed discs. We then turn our attention to M\u00a8 obius-Plateau variations of helicoidal strips, which are classified as \u201cscrew-like\u201d or \u201cribbon-like\u201d based on the signs of the radii of the boundary helices. By analyzing the Euler-Lagrange equations, we show that screw-like solutions are plentiful, whilst ribbon-like solutions impose strong constraints on their parameters: they must have high frequency (equivalently, low pitch), thin width in comparison to the frequency, and remain close to the axis.",
+  "abstract": "Plateau problems with elastic boundary energies have been of recent theoretical and applied interest. However, strong assumptions have to be made to avoid self-intersections of the boundary curve during energy minimization. We introduce a class of Plateau problems for boundaries with self-repulsive energies that obviates self-contact in energy minimization problems. For the self-repulsive energy, we choose the M\u00a8obius Energy introduced by O\u2019Hara due to its myriad regularity properties shown by Freedman et al. We first prove an existence theorem for this M\u00a8obius-Plateau problem in the class of closed Lipschitz curves of a given irreducible knot-type spanned by immersed discs. We then turn our attention to M\u00a8obius-Plateau variations of helicoidal strips, which are classified as \u201cscrew-like\u201d or \u201cribbon-like\u201d based on the signs of the radii of the boundary helices. By analyzing the Euler-Lagrange equations, we show that screw-like solutions are plentiful, whilst ribbon-like solutions impose strong constraints on their parameters: they must have high frequency (equivalently, low pitch), thin width in comparison to the frequency, and remain close to the axis.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20250311012043Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.25",
-   "Title": ""
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20250311012043Z"
+  },
+  "title_raw": "STATIONARY CURVES UNDER THE M\u00d6BIUS-PLATEAU ENERGY",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "STATIONARY CURVES UNDER THE M \u00a8 OBIUS-PLATEAU ENERGY 1. Introduction The problem of finding a surface of minimal area bounded by a fixed closed curve, also known as Plateau\u2019s problem , has captivated mathematicians for over two centuries. A relevant extension to this problem is when the boundary pos",
+   "outline": "1. Introduction",
+   "text": "STATIONARY CURVES UNDER THE M\u00d6BIUS-PLATEAU ENERGY",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -38,73 +49,271 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Problem Formulation",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Energy Minimization",
    "page": 2,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Lower Semicontinuity of Plateau Energy",
    "page": 4,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Equicontinuity at the Boundary",
    "page": 4,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Convergence in the Interior",
    "page": 5,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Necessary Conditions of M\u00f6bius-Plateau Critical Helix Pairs",
    "page": 6,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 11,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Appendix A. Estimating the negative contribution",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "References",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Two stationary helicoidal screws with identical parameters A = \u22121, \u03c9 = 2, except B \u22486.15375 in the figure on the left, whilst B = 1 in the figure on the right. In these examples, we set \u03b1 = 2, \u03b2 = 1",
+   "page": 8,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A graph of the integrand in (15) with A = 0.1, B = 1, and \u03c9 = 10, as a function of v",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Contours in the AB-plane for (15) and (17), with \u03b1 = \u03b2 = 1, \u03c9 = 10, and approximate region of integration [\u221210000, 10000]. The intersection of the contour curves is (A, B) \u2248(0.810515, 0.818991) which is in the valid parameter space {(A, B) : 0 < A < B, A + B < 2}",
+   "page": 11,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -113,8 +322,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 286,
-   "n_words": 42
+   "n_chars": 285,
+   "n_words": 41,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-000-3-energy-minimization",
@@ -123,8 +334,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 873,
-   "n_words": 130
+   "n_chars": 871,
+   "n_words": 128,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-1-introduction",
@@ -133,8 +346,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4206,
-   "n_words": 642
+   "n_chars": 4199,
+   "n_words": 635,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-002-2-problem-formulation",
@@ -143,8 +358,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 7797,
-   "n_words": 1403
+   "n_chars": 7826,
+   "n_words": 1432,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-003-32-equicontinuity-at-the-boundary",
@@ -153,8 +370,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 3215,
-   "n_words": 588
+   "n_chars": 3290,
+   "n_words": 663,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-004-33-convergence-in-the-interior",
@@ -162,52 +381,79 @@
    "title": "Convergence in the Interior",
    "level": 2,
    "page_start": 5,
-   "page_end": 11,
-   "n_chars": 17240,
-   "n_words": 3149
+   "page_end": 6,
+   "n_chars": 838,
+   "n_words": 146,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-005-5-acknowledgements",
+   "id": "sec-005-4-necessary-conditions-of-m\u00f6bius-plateau-critica",
+   "number": "4",
+   "title": "Necessary Conditions of M\u00f6bius-Plateau Critical Helix Pairs",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 11,
+   "n_chars": 16515,
+   "n_words": 3174,
+   "label_start": "6",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-006-5-acknowledgements",
    "number": "5",
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 523,
-   "n_words": 83
+   "n_chars": 522,
+   "n_words": 82,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-006-appendix-a-estimating-the-negative-contribution",
+   "id": "sec-007-appendix-a-estimating-the-negative-contribution",
    "number": null,
    "title": "Appendix A. Estimating the negative contribution",
    "level": 1,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 4848,
-   "n_words": 1032
+   "n_chars": 4964,
+   "n_words": 1148,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 2603,
-   "n_words": 395
+   "n_chars": 2586,
+   "n_words": 378,
+   "label_start": "14",
+   "label_end": "14"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 9,
-  "chars_total": 41591,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 41896,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 8,
-   "overlaid": 4,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -228,8 +474,8 @@
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -237,40 +483,48 @@
      "id": "sec-002-2-problem-formulation",
      "title": "Problem Formulation",
      "prose_ratio": 0.955,
-     "coverage_ratio": 0.346,
+     "coverage_ratio": 0.348,
      "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-32-equicontinuity-at-the-boundary",
      "title": "Equicontinuity at the Boundary",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.934,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-33-convergence-in-the-interior",
      "title": "Convergence in the Interior",
-     "prose_ratio": 0.918,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.942,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-5-acknowledgements",
+     "id": "sec-005-4-necessary-conditions-of-m\u00f6bius-plateau-critica",
+     "title": "Necessary Conditions of M\u00f6bius-Plateau Critical Helix Pairs",
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-5-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-appendix-a-estimating-the-negative-contribution",
+     "id": "sec-007-appendix-a-estimating-the-negative-contribution",
      "title": "Appendix A. Estimating the negative contribution",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-007-references",
+     "id": "sec-008-references",
      "title": "References",
      "result": "no matching \\section"
     }

@@ -757,14 +757,45 @@ def _qbeta_ruled_base() -> dict:
         # matters because qou-ales is "shouldn't use census". Measured and
         # surfaced to the owner on bean qou-99qc (2026-09-12); the counts are
         # emitted below as `element_ruled_letters` / `element_census_letters`.
-        # `element_is_ruled` is left True DELIBERATELY -- it is an owner-facing
+        # `element_is_ruled` WAS left True DELIBERATELY -- it is an owner-facing
         # provenance label and re-meaning it is the owner's call, not an agent's.
+        #
+        # 🟧 CHANGED TO False 2026-10-11, AT THE OWNER'S REQUEST (ofri, in
+        # session, 2026-10-11T07:22Z: draft the fix for review). The boolean now
+        # answers "is the WHOLE scored element ruled?", and the answer is no:
+        #   * 6/11 letters (the core) are gamma-gamma-reachable, and even that
+        #     selection is CONDITIONAL -- on confinement reading 3, which is
+        #     provisional ("try ... 3 for now", qou-ales), and on excluding the
+        #     empty word, which reading 3 otherwise selects
+        #     (GammaGammaFrobeniusSelection.frobeniusSelected_borromean /
+        #     frobeniusSelected_nil, sorry-free);
+        #   * 5/11 letters are CHOSEN: the 3-letter quark template and the
+        #     sigma_0 sigma_0 gluon pair, whose "ILP-derived" citation is dead
+        #     and which fails reading 3 (bean qou-99qc).
+        # Evidence: word-provenance audit
+        # (mass-endomorphism/klambda/word-provenance.md, 2026-10-11).
+        # `element_ruled_status` carries the partial verdict as a string.
+        # Consumer check at the change: no code reads `element_is_ruled`; the
+        # only other mentions are prose in
+        # qbeta_scored_element_is_not_gamma_gamma_produced_probe.py (and its
+        # witness), which warns against reading True as "gamma-gamma-produced".
         #
         # So the figure is scoped twice over, not once: no ladder (above), AND
         # an element whose 5 free letters have no derived constraint. Do not read
         # it as the framework's Q_beta.
         "element_scored": _ELEMENT + " (gamma-gamma-selected nucleon word)",
-        "element_is_ruled": True,
+        "element_is_ruled": False,
+        "element_ruled_status": "partial",
+        "element_ruled_status_rationale": (
+            "6/11 letters (the core (sigma_0 sigma_1^-1)^3) are gamma-gamma-"
+            "reachable, and even those are conditional on the provisional "
+            "confinement reading 3 and on excluding the empty word "
+            "(frobeniusSelected_borromean / frobeniusSelected_nil); the other "
+            "5 letters (3-letter quark template + sigma_0 sigma_0 gluon pair) "
+            "are chosen -- the gluon pair's 'ILP-derived' citation is dead and "
+            "it fails reading 3 (qou-99qc). Source: word-provenance audit "
+            "2026-10-11; False set at owner request 2026-10-11"
+        ),
         # The boolean cannot express a partial selection; these two can, and
         # they are what the parity bound in the comment above measures. Kept
         # ALONGSIDE the boolean so no consumer breaks. 6 + 5 = 11 letters.
