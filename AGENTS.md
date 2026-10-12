@@ -3253,7 +3253,7 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **fifty-six** rows (re-counted 2026-10-10, twice in one day as `main` appended a row each time; 46 landed 2026-09-14
+>   catalogues **fifty-eight** rows (re-counted 2026-10-12 with the anchored regex after #7583 merged as row 57 and #7734 as row 58, both renumbered on merge; previously fifty-six, re-counted 2026-10-10, twice in one day as `main` appended a row each time; 46 landed 2026-09-14
 >   in `81a8ac98b9` after this line last said forty-five, then 47 and 48 landed,
 >   49 is PR #7401's — which arrived numbered 46 and had to be renumbered on
 >   merge — then PR #7318's two merged in at 50-51, main took 52-54, and **55 is
