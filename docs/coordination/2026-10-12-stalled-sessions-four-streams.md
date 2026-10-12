@@ -69,5 +69,5 @@ qou-99qc, reading 3 at every level).
 1. ~~**Ω₂ reconciliation (qou-uir6)**~~ — **RULED 2026-10-12: (ii)+(iii)**; relayed to stream 4; beans stay open.
 2. **Quark sign (#7718)** — stream 3.
 3. ~~**Dead-label group B (#7586)**~~ — **RULED 2026-10-12: point at removal commits**; already done on the branch (`da68fa0a32`, audit 0 dead).
-4. ~~**KG viewer publish path**~~ — **RULED 2026-10-12: B** — publish at `gh-pages/STAGING/lean-kg/`, no doc-gen4 compatibility stubs (old `lean/…` links will break at the eventual swap). Static `lean/` untouched. Note: this publishes to `gh-pages` despite the 2026-09-27 deprecation ruling in AGENTS.md; the owner picked B with that conflict on the table.
+4. ~~**KG viewer publish path**~~ — **RULED 2026-10-12: B** — publish at `gh-pages/STAGING/lean/` (owner: "clean cut to.. STAGING/lean"), no doc-gen4 compatibility stubs (old `lean/…` links will break at the eventual swap). Static `lean/` untouched. Note: this publishes to `gh-pages` despite the 2026-09-27 deprecation ruling in AGENTS.md; the owner picked B with that conflict on the table.
 5. **wedderburn-weight-canonical status / qou-ng7j vocabulary** — stream 1.
