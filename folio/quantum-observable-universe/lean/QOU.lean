@@ -463,6 +463,8 @@ import QOU.OrientedSkein.OS.Interpret
 import QOU.OrientedSkein.OS.Universal
 import QOU.OrientedSkein.OS.NonVacuity
 import QOU.OrientedSkein.OS.Unique
+import QOU.OrientedSkein.Model.GLnRMatrix
+import QOU.OrientedSkein.Model.GLnTrace
 import QOU.SchurWeyl.HeckeCoset
 import QOU.SchurWeyl.HeckeDim3
 import QOU.SchurWeyl.HeckeDim3Dim
