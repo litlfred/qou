@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:09Z
-updated_at: 2026-10-12T19:14:28Z
+updated_at: 2026-10-12T19:33:38Z
 parent: qou-xhci
 ---
 
@@ -57,5 +57,32 @@ This is engineering (casts Fin((l+m)+k) vs Fin(l+(m+k)), and naturality from com
 (S5) Twist e^{iπℏC}, twist_tensor and twist_dual depend on S4.
 
 (S6) Blocked on S4.
+
+Do not close.
+
+## 2026-10-12 (later) — S4 done on |ℏ| ≤ 1/12 by the small-ℏ route (PR #7743, commit 2a5bb23674). Sorry-free; #print axioms gives [propext, Classical.choice, Quot.sound].
+
+**SmallHbar.lean — explicit bound on ‖Φ − 1‖.**
+- The bound: ‖Φ_KZ(A,B) − 1‖ ≤ (1+δₑ)²(1 + a/(1−3a))(1 + a/(1−4a)) − 1, where ‖A‖, ‖B‖ ≤ a and δₑ = e^{a·log 2} − 1.
+- Ingredients: coefficient estimate ‖H_{k+1}‖ ≤ β(1+β)^k with β = a/(1−2a); series bound ‖H(1/2) − 1‖ ≤ a/(1−3a); Neumann-series inverse; exp bound.
+- Consequence: norm_Φ_sub_one_lt_half gives ‖Φ − 1‖ < 1/2 for a ≤ 1/12.
+
+**ZigZag.lean — duals for V = ℂ².**
+- nonResonant_of_norm_lt: 2‖A‖ < 1 implies non-resonance. So for |ℏ| < 1/2 there is no ℚ or transcendence hypothesis.
+- zig_scalar: the zigzag (1⊗ε)Φ(η⊗1) = ν·1. Proof by SL₂-equivariance, via commutation with g^{⊗3} and the two unipotent generators.
+- zag_eq_zig: the second zigzag equals the first. Proof by conjugation with P₁₃ plus map_Φ.
+- zig_ne_zero: ν ≠ 0 for |ℏ| ≤ 1/12, since zig(1) = −1 and ‖zig Φ − zig 1‖ ≤ 2‖Φ − 1‖ < 1.
+- zigzag_identities: with ε' = ν⁻¹ε, both zigzag identities hold exactly.
+
+**Comparison, docstring only (not in any proof).** |ℏ₀| = log q₀/π ≈ 0.0332, which is less than 1/12.
+
+**Caveats.**
+- Residues are the gl₂ flips P_ij. The sl₂ Casimir differs by scalars, so its associator is the same Φ by Φ_shift_left/right.
+- ε and η are SL₂-equivariant, not GL₂-equivariant. So D_ℏ must use sl₂-equivariant morphisms.
+
+**Still open.**
+- S2/S3: Mathlib MonoidalCategory/BraidedCategory packaging (design above).
+- S5: twist, twist_tensor, twist_dual.
+- S6: the ribbon_hecke application.
 
 Do not close.
