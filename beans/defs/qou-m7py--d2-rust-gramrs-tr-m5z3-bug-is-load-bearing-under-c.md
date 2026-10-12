@@ -490,3 +490,25 @@ bits, q0 from its 50-digit string, rayon over columns (4 threads). Self-checks a
 Validated against the Python witness, all 60 printed digits identical: 6Li, 9Be, 12C, 16O.
 16O: 71 s wall (Python: ~48 min). Throughput ~6e7 factor-applications/s on 4 threads;
 projected 19F ≈ 1.4 h, 20Ne ≈ 6 h. Runs launched; results to follow.
+
+## 2026-10-12 — follow-up (3): Yang–Baxter / R-matrix structure for A = 40. FINDINGS ONLY, no result.
+
+Probe `computations/probes/v9_element_ybe_structure_probe.py`, 5/5, exact sympy over Q(q), no float.
+
+- **B1 Baxterisation (holds).** All three v9 factors are the Jones-Baxterised R-matrix
+  `R(x) = xσ − x⁻¹σ⁻¹` up to scalars: pp = lim x⁻¹R(x) (x→∞), nn = lim −xR(x) (x→0), pn = −iR(i).
+- **B2 YBE (holds).** `R₁(x)R₂(xy)R₁(y) = R₂(y)R₁(xy)R₂(x)` on every irrep of H₃.
+- **B3 — but no difference-type spectral parameters fit.** A vertex-model reading needs
+  `x_ik = u_i/u_k`; pp would need `R(1)`, and `R(1) = h·1` is a scalar, not σ. (A product form
+  `x_ik = u_i u_k` fits only in the degenerate limit u_p→∞, u_n = i/u_p→0.)
+- **B4 — and the labels are by POSITION, not strand.** At A = 6, 13 of 15 crossings carry an (i,k)
+  label that is not the pair of strands actually meeting there. So the v9 element is not a vertex-model
+  partition function on its own braid diagram, and commuting-transfer-matrix / Bethe-ansatz
+  integrability does not apply to it as defined.
+- **B5 — the one exact reduction:** the last factor is the only use of σ_{A−2}, so
+  `tr(E) = (a + b z_D)·tr(E')` (Markov). It does not iterate (σ_{A−3} is used twice).
+
+**Cost wall for A = 40.** The irrep decomposition is already optimal for this element:
+column work `L·Catalan(A)` ≈ 780 × 2.6e21. No route to A = 40 was found. Scope (a): this is about the
+v9 element *as constructed*; whether a strand-labelled element (a modelling change, owner's call)
+would be integrable is untested.
