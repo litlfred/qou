@@ -33,3 +33,13 @@ Task: re-derive or honestly re-scope every step that relied on kappa_n != 0 for 
   - two interpretive remarks plus `observability-independent-motivation`;
   - the `motivic-perpetual-obstruction` sketch (same zero-group error).
 - Bean stays in-progress: the open items are owner decisions plus the open dynamical question.
+
+## 2026-10-12: owner chose B, implemented
+`thm:ns-singularity-descartes` is restated as true topology only:
+1. e(ξ) = −6, so there is no nowhere-vanishing section.
+2. n-th roots exist iff n ∈ {1, 2, 3, 6}.
+3. Every such class restricts to 0 on a 1-dimensional Σ.
+
+The label is kept; the title is now "Topology of the Reeb bundle of the Descartes universe". The proof covers items 1–3 and keeps the old 4-step NS argument, marked retracted. `uses` changed from thm:observability-q-independent to thm:qu-to-qou. Lean: the self-assuming `NsSingularityDescartesContext` carrier is removed; `descartes_kummer_root_levels` (sorry-free, arithmetic only, labelled as such) replaces it, and lean.ref now points to it. lean-direct exits 0; axioms are standard.
+
+**Still open:** the interpretive blocks (ns-singularity-descartes-interpretation, ns-obstruction-computation-interpretation, observability-independent-motivation), plus the consumers leray-profile and torus-ns-regular, still speak of NS-singularity. The owner chose B only, so they are not rewritten. Rescue exploration continues in qou-ocof.
