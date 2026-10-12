@@ -132,6 +132,69 @@ theorem bridge_cannot_separate (hD : DisjointBlockMultiplicative T) (n : ℕ)
       = T.tr (a' * (algebraMap R A α + β • T.g n + γ • T.ginv n) * b) := by
   rw [bridge_local_state T hD n a ha b hb, bridge_local_state T hD n a' ha' b hb, htr]
 
+/-! ### Part E — a k-segment window is blind until it reaches a bond
+
+A particle word factors as `a = L * N`: everything up to and including its top inter-nucleon
+bond (`L ∈ H m`) times its top nucleon block (`N ∈ shifted m`). A collision window that
+stays above the bond (`x ∈ shifted m`) sees `a` only through `tr L` and the top block. So
+two particles with the same top block are separated by no window that stops short of the
+bond. For the production `A = 3` chains the top block is 3 strands, so the window must be
+at least 4 segments deep on that side (`segment_collision_probe.py`, part Q4). -/
+
+/-- **Window factorisation.** -/
+theorem window_factor (hD : DisjointBlockMultiplicative T) (m : ℕ)
+    (L : A) (hL : L ∈ T.H m) (N : A) (hN : N ∈ shifted T m) (x : A) (hx : x ∈ shifted T m) :
+    T.tr (L * N * x) = T.tr L * T.tr (N * x) := by
+  rw [mul_assoc]
+  exact hD m L hL (N * x) ((shifted T m).mul_mem hN hx)
+
+/-- **Same top block ⇒ same window state.** Stated without division:
+`tr(a x)·tr(a') = tr(a' x)·tr(a)` for `a = L N`, `a' = L' N`. -/
+theorem window_cannot_separate (hD : DisjointBlockMultiplicative T) (m : ℕ)
+    (L L' : A) (hL : L ∈ T.H m) (hL' : L' ∈ T.H m) (N : A) (hN : N ∈ shifted T m)
+    (x : A) (hx : x ∈ shifted T m) :
+    T.tr (L * N * x) * T.tr (L' * N) = T.tr (L' * N * x) * T.tr (L * N) := by
+  have h1 := window_factor T hD m L hL N hN x hx
+  have h2 := window_factor T hD m L' hL' N hN x hx
+  have h3 := window_factor T hD m L hL N hN 1 (shifted T m).one_mem
+  have h4 := window_factor T hD m L' hL' N hN 1 (shifted T m).one_mem
+  simp only [mul_one] at h3 h4
+  rw [h1, h2, h3, h4]
+  ring
+
+/-! ### Part F — the computational tower: solved sub-collisions compose by traces
+
+Owner, 2026-10-12 (bean `qou-a1hh`): composing collisions up a tower (nucleons → nuclei →
+molecules, e.g. C + O → CO), the cost of "solving" sub-computations grows. Under the
+disjoint-block law a chain of already-solved pieces joined by single-crossing letters
+needs only each piece's trace and one Markov value per bond: the composite trace is
+`μ₁ μ₂ · tr a · tr b · tr c`. The cost of a composite is the sum of its parts' costs plus
+`O(#bonds)`; what grows up the tower is only what a deeper window (Part E) must see. -/
+
+/-- A single-crossing bond letter at generator `n`. -/
+def bondLetter (n : ℕ) (α β γ : R) : A := algebraMap R A α + β • T.g n + γ • T.ginv n
+
+/-- **Three solved pieces, two single-crossing bonds**: the composite trace is the product
+of the pieces' traces and the two bonds' Markov values. -/
+theorem chain3_trace (hD : DisjointBlockMultiplicative T) (n m : ℕ) (hnm : n + 1 ≤ m)
+    (a : A) (ha : a ∈ T.H n) (b : A) (hb : b ∈ shifted T (n + 1)) (hbm : b ∈ T.H m)
+    (c : A) (hc : c ∈ shifted T (m + 1)) (α₁ β₁ γ₁ α₂ β₂ γ₂ : R) :
+    T.tr (a * bondLetter T n α₁ β₁ γ₁ * b * bondLetter T m α₂ β₂ γ₂ * c)
+      = (α₁ + β₁ * T.z + γ₁ * T.zinv) * (α₂ + β₂ * T.z + γ₂ * T.zinv)
+          * (T.tr a * T.tr b * T.tr c) := by
+  have hl : bondLetter T n α₁ β₁ γ₁ ∈ T.H m := by
+    have hle : T.H (n + 1) ≤ T.H m := T.H_mono hnm
+    refine (T.H m).add_mem ((T.H m).add_mem ((T.H m).algebraMap_mem α₁) ?_) ?_
+    · exact (T.H m).smul_mem (hle (T.g_mem n)) β₁
+    · exact (T.H m).smul_mem (hle (T.ginv_mem n)) γ₁
+  have hab : a * bondLetter T n α₁ β₁ γ₁ * b ∈ T.H m :=
+    (T.H m).mul_mem ((T.H m).mul_mem (T.H_mono (by omega) ha) hl) hbm
+  have h2 := bridge_local_state T hD m _ hab c hc α₂ β₂ γ₂
+  have h1 := bridge_local_state T hD n a ha b hb α₁ β₁ γ₁
+  unfold bondLetter at *
+  rw [h2, h1]
+  ring
+
 end PartA
 
 /-! ## Part B — the two fundamental channels -/
