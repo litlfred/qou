@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:10Z
-updated_at: 2026-10-12T19:13:18Z
+updated_at: 2026-10-12T19:16:31Z
 parent: qou-xhci
 ---
 
@@ -40,3 +40,10 @@ File: QOU/Archimedean/SchurWeylTrace.lean. Sorry-free; axioms are only propext, 
 - trace_W_fullTwist and markov_fullTwist: per-module Rosso–Jones for the full twists.
 - The probe's exact checks now also compare the scalar with the Lean twistScalar and the dims with the binomial formula: 22624/22624 pass.
 - Not done: per-module Rosso–Jones for general s, not a multiple of r. That needs the action of γ (not only γ^r) on W_{r,j}, e.g. its eigenvalues. The torus-link formula itself is already proved in RossoJonesTorusLink.
+
+
+## 2026-10-12: per-module trace of γ^p for EVERY p, PROVED (PR #7737, commit 61b4fc2a10)
+SchurWeylTrace §12, sorry-free.
+- trace_gamW (2j ≤ r): tr(γ^p|W_{r,0}) = q^{np}. For j ≥ 1, tr(γ^p|W_{r,j}) = rhoTr q n p j − rho'Tr q n p (j−1), where rhoTr and rho'Tr are the periodic-state closed forms. Proof: invert the triangular system T_gam_pow_split at m = j and m = j−1, then apply T_gam_succ.
+- trace_W_gam_pow_explicit and markov_gam_pow_explicit: the per-module Rosso–Jones formula for every torus link T(r,p).
+- Probe check (f) added: 22932/22932 exact checks pass.
