@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T11:54:27Z
-updated_at: 2026-10-12T20:18:18Z
+updated_at: 2026-10-12T20:35:49Z
 parent: qou-59vq
 ---
 
@@ -403,3 +403,21 @@ Survey first, so nothing is duplicated: S1-S4 on the SchurWeyl side were already
 Verification: lean-direct `-DautoImplicit=false -s 65536` exit 0, 0 warnings, against a shadow in which all 24 QOU modules of the import cone were rebuilt from this branch's source (the restored cache lacked 8 of them). `#print axioms` on all 19 decls: `[propext, Classical.choice, Quot.sound]`. 0 sorry.
 
 **Still open, assumed nowhere:** (1) the Coxeter-side tower — there is still no inclusion `HeckeAlgebra K Q (Aₙ n) → HeckeAlgebra K Q (Aₙ (n+1))` commuting with `skeinBalancedEquiv`, so the instance is not transported onto `Defn.IwahoriHecke`/`BalancedHecke`; (2) faithfulness — the tensor model is the two-row (TL) quotient, so this trace kills the radical; (3) the identification `trT = trLim` over `ℝ` at generic `q` (should follow from uniqueness, but `wtrace`'s Markov property at levels `k < n` in `HeckeFamily` form is not available; not stated). Bean stays `todo` (§13a: the titled Coxeter-side wiring is not complete).
+
+
+--------
+
+**2026-10-12 (later) — the Coxeter-side tower is BUILT and the braided Markov trace is on it.** Commit `9d2b8bfd78`, PR #7771.
+
+- `QOU/MathlibExt/AlgebraTowerColimit.lean` (generic): colimit `Lim G f` of an ℕ-tower of K-algebras, `inclLE`, `DirectedSystem`, `Algebra.ofModule` instance (no SMul diamond), `ofₐ`, `ofₐ_comp`, range filtration `H` / `H_mono`.
+- `QOU/IwahoriHecke/CoxeterTower.lean`:
+  - `coxIncl K Q n : HeckeAlgebra K Q (Aₙ n) →ₐ HeckeAlgebra K Q (Aₙ (n+1))`, `T_i ↦ T_{castSucc i}` (any CommRing, any Q; `AMat_castSucc`).
+  - `skeinBalancedEquiv_σ` (σᵢ ↦ q⁻¹•Tᵢ), `skeinBalancedEquiv_heckeIncl` (**e_{n+1} ∘ heckeIncl = coxIncl ∘ e_n**), `skeinBalancedEquiv_inclLE`.
+  - `CoxLim q`, `colimEquiv hq : HeckeLim K q q⁻¹ ≃ₐ[K] CoxLim q` (`colimEquiv_ofLim`: it is e_n on level n).
+  - generic `transportMarkovTrace` + `braidedTower_transport`.
+  - `coxeterMarkovTrace hq hq1 : MarkovTrace K (CoxLim q)`; `coxeterMarkovTrace_H` (H n = image of the Coxeter level n), `coxeterMarkovTrace_g` (g n = `Balanced.sigma` = q⁻¹·T_n at level n+1), `coxeterMarkovTrace_tr_ofₐ`, `coxeterMarkovTrace_z` (= q³/(q²+1)).
+  - `braidedTower_coxeter` (h = q − q⁻¹), `towerSpan_coxeter`, `disjointBlock_coxeter`.
+
+Hypotheses `[Field K]`, `q ≠ 0`, `q²+1 ≠ 0`. lean-direct `-DautoImplicit=false -s 65536` exit 0, 0 warnings, against a shadow with every cone module rebuilt from branch source (27 + the 3 new). `#print axioms` on 28 decls: ⊆ `[propext, Classical.choice, Quot.sound]`; 0 sorry.
+
+**What this does NOT close, so the bean stays `todo` (§13a):** (1) faithfulness — the trace is the tensor-model (two-row TL) trace, not faithful; (2) the level maps into `CoxLim` are not shown injective (`H n` is an image; cf. qou-ejde); (3) the `Set.univ`-indexed `Defn.IwahoriHecke` / `TypeA.IwahoriHeckeOfSn` are not touched — the Coxeter tower here is the `HeckeAlgebra K Q (Aₙ n)` family. If the owner reads the title as satisfied by the `HeckeAlgebra (Aₙ n)` tower, the remaining items are (1)–(2), which are the subjects of other beans.
