@@ -245,4 +245,63 @@ theorem reebM_j_ray_free {p : BringCone R} {c : R}
   apply hcancel _ p _ hp
   rw [add_smul, one_smul, ← h2, neg_add_cancel]
 
+/-! ## The second complex structure is forced into the commutant of the Reeb triad
+
+Bean `qou-wqto`, issue #7774. The grading `Γ = L_i ∘ M_i` above uses a **left**
+multiplication, and gap 1 of the previous section was that nothing attaches it to
+the Reeb field. This section attaches it, in the strongest form available on this
+model.
+
+- Left multiplications commute with every Reeb operator (`leftMul_comm_reebM_*`,
+  which is associativity).
+- **Conversely**, an `R`-linear map that commutes with all three Reeb operators is
+  left multiplication by `f 1` (`commutes_reeb_triad_iff_leftMul`).
+
+So the operators commuting with the Reeb triad are **exactly** the left
+multiplications. Any second complex structure that commutes with the Reeb field,
+which is what "commuting complex structures" means in the `Γ = J·J′` construction,
+has to be `L_u` for some `u`. The freedom left over is the choice of `u`, not the
+kind of map.
+
+🛑 Still a candidate. `BringCone` is the Hopf model, not Bring's own cone
+(`qou-rydq`), and no map from V10's `Gen1Quark` labels into these rays exists.
+-/
+
+/-- Left multiplication by `u`. -/
+def leftMul (u p : BringCone R) : BringCone R := u * p
+
+theorem leftMul_comm_reebM_i (u p : BringCone R) :
+    leftMul u (reebM_i p) = reebM_i (leftMul u p) := by
+  simp [leftMul, reebM_i, mul_assoc]
+
+theorem leftMul_comm_reebM_j (u p : BringCone R) :
+    leftMul u (reebM_j p) = reebM_j (leftMul u p) := by
+  simp [leftMul, reebM_j, mul_assoc]
+
+theorem leftMul_comm_reebM_k (u p : BringCone R) :
+    leftMul u (reebM_k p) = reebM_k (leftMul u p) := by
+  simp [leftMul, reebM_k, mul_assoc]
+
+/-- `leftI` is the left multiplication by `i`. -/
+theorem leftI_eq_leftMul (p : BringCone R) : leftI p = leftMul ⟨0, 1, 0, 0⟩ p := rfl
+
+/-- **The commutant of the Reeb triad is the left multiplications.** An `R`-linear
+map commuting with `M_i`, `M_j`, `M_k` is left multiplication by `f 1`. -/
+theorem commutes_reeb_triad_iff_leftMul (f : BringCone R →ₗ[R] BringCone R)
+    (hi : ∀ p, f (reebM_i p) = reebM_i (f p))
+    (hj : ∀ p, f (reebM_j p) = reebM_j (f p))
+    (hk : ∀ p, f (reebM_k p) = reebM_k (f p)) (p : BringCone R) :
+    f p = leftMul (f 1) p := by
+  have hp : p = p.re • (1 : BringCone R) + p.imI • reebM_i 1
+      + p.imJ • reebM_j 1 + p.imK • reebM_k 1 := by
+    dsimp [reebM_i, reebM_j, reebM_k]
+    ext <;> simp
+  have e : f p = p.re • f 1 + p.imI • reebM_i (f 1)
+      + p.imJ • reebM_j (f 1) + p.imK • reebM_k (f 1) := by
+    conv_lhs => rw [hp]
+    simp only [map_add, map_smul, hi, hj, hk]
+  rw [e]
+  dsimp [leftMul, reebM_i, reebM_j, reebM_k]
+  ext <;> simp <;> ring
+
 end QOU.Tetraplectic
