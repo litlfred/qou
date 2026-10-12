@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-04T15:12:39Z
+updated_at: 2026-10-12T18:38:16Z
 parent: qou-v2om
 ---
 
@@ -39,3 +39,18 @@ QOU/MassTheory/RelativeReebDatum.lean: class over BranchingData ℝ A₁ A₁ A 
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-12 — owner reformulation: segment collision (replaces the light-cone reading)
+
+Owner: only ONE braid segment from each particle meets at p on the exceptional divisor; history enters as the categorical trace of the γγ tower; incoming angle = relative minimum of local rotational energy (O'Hara + Bring), starting the Reeb/geodesic flow (cf. qou-rydq: the Bring cone link is UT(Σ₄), so the Reeb flow is the geodesic flow of Σ₄ and an incoming direction at p is a point of UT(Σ₄)).
+
+Landed (Lean `QOU/MassTheory/SegmentCollisionDatum.lean`, lean-direct exit 0 with -DautoImplicit=false, 14 theorems, axioms propext/Classical.choice/Quot.sound only; probe `computations/probes/segment_collision_probe.py`, 9/9):
+
+- **A. Single-segment marginal is UNIVERSAL** (conditional on DisjointBlockMultiplicative, itself conditional on TowerSpan): tr(a·(α+βσ+γσ⁻¹)·b) = (α+βz+γz⁻)·tr a·tr b. Measured on p, n, core × p, n, σ³ in H₆: ratios (1, z_D, z_D−h) to 4e-50. So the "unknown initial photonic state" provably drops out — but so does everything else: a single-segment collision CANNOT separate particles of equal trace (`bridge_cannot_separate`).
+- **Dichotomy**: a two-segment probe (σ₁σ₂, one strand into a's history) is NOT universal: p 1.2441, n 1.4706, core 0.3801 (depends on a only).
+- **B. Channels**: Sym (q⁴+q²+1)/(q²+1)² = 0.75270, Alt q²/(q²+1)² = 0.24730 — exactly y_(2), y_(1,1) at n = 2; both live.
+- **C. Local O'Hara cross term is chirality-blind** (θ↦π−θ and d↦−d, both proved); a reflection-symmetric energy with a unique minimiser selects θ = π/2 (proved). Measured min at π/2 for ℓ/d ∈ {0.5,2,10,50}; log coefficient → 2π/sin θ.
+- **D. `SegmentCollisionDatum` class, no instance**: θ* = π/2 whenever the Bring term is achiral. Any σ-vs-σ⁻¹ selection must come from a chiral Bring term. Note: `isMin` is unused by that theorem (only uniqueness is).
+
+Promising? Partly. The localisation is clean and the history-forgetting is a theorem, but it makes the single-segment collision blind to which particles collide, and O'Hara alone picks the achiral perpendicular angle. Live directions: (i) widen the collision window to k segments from each (k = 2 already sees history), (ii) derive a chiral Bring term on UT(Σ₄). Status stays todo: open conjecture class.
