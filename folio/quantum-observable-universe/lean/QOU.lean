@@ -241,6 +241,7 @@ import QOU.KZ.KZFunctorial
 import QOU.KZ.KZHalfMonodromy
 import QOU.KZ.KZHexagon
 import QOU.KZ.KZHexagonCentral
+import QOU.KZ.KZIntertwine
 import QOU.KZ.KZPentagon
 import QOU.KZ.KZShift
 import QOU.KZ.KZShiftPhi
