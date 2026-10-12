@@ -63,7 +63,7 @@ def _y(lam):
     return _YK[lam]
 
 
-def _level_chars_K(letters, n):
+def _level_chars_K(letters, n, mmin=3):
     """Same formula as gg_ntower_probe.level_chars, kept in the field QQ(q)
     (no sympy factor/cancel), returning K elements."""
     diag = {}
@@ -72,7 +72,7 @@ def _level_chars_K(letters, n):
         M = R.word(letters)
         diag[lam] = [(T, M[i, i].element) for i, T in enumerate(R.basis)]
     out = {}
-    for m in range(3, n + 1):
+    for m in range(mmin, n + 1):
         for mu in g.two_row_shapes(m):
             acc = K.zero
             for lam, entries in diag.items():
@@ -263,7 +263,7 @@ def run_checks():
     for m in range(3, 6):
         ext = samples + [[(m - 2, 1), (0, -1)], [(m - 2, -1), (m - 3, 1), (m - 2, 1)]]
         for y in ext:
-            Ey = chars_top(y, m)
+            Ey = _level_chars_K(y, m, mmin=2)
             for mu in g.two_row_shapes(m - 1):
                 lam = (mu[0] + 1, mu[1] + 1)
                 R = g.rep(lam)
