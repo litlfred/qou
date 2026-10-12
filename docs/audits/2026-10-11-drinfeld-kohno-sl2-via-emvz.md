@@ -202,7 +202,13 @@ Two gaps stand between these and the full theorem (gap 1 below is closed by `Loc
 
 **Identification of the Jimbo map.** `jimboRep_eq_jimbo`: `jimboRep q hq m = JimboActionKernel.jimbo q hq m` (both send `σ_j ↦ Ř_{j,j+1}`; `Hecke.hom_ext`).
 
+**The weighted trace (link to the mass identity).** `QOU/Mass/KohnoWeighted.lean`. Conjugacy by an arbitrary `U` does not transport `Tr(K^{⊗n} X)`, so this step is separate:
+- both families preserve every total-weight subspace `V_k ⊆ (ℂ²)^{⊗(m+1)}`: on the KZ side because anything commuting with the permutation action commutes with every KZ transport (`commute_kzBraidRep`, by uniqueness for the transport ODE); on the Jimbo side because `Ř` preserves weight entrywise;
+- the restrictions to each `V_k` are again continuous families of `H_{m+1}(q)`-representations equal at `κ = 0`, so they are conjugate at every `κ` with `q` not a root of unity and have equal traces (`trace_res_kz_eq_jimbo`);
+- hence `Tr(D · KZ(h)) = Tr(D · Jimbo(h))` for every `D` acting by a scalar on each `V_k` (`weighted_trace_kz_eq_jimbo`), in particular `D = K^{⊗(m+1)}` for every diagonal `K = diag(w₀, w₁)` (`siteWeight_trace_kz_eq_jimbo`);
+- and the left side of PR #7632's `braidTrace_wordBraid` is the KZ-side weighted trace: `braidTrace q q⁻¹ w wi β = wi^{m+1} · Tr(K^{⊗(m+1)} · KZ(x_β))`, `x_β` the image of `β` in `H_{m+1}(q)` (`braidTrace_eq_kz`).
+
 **Not proved.**
 - Roots of unity `q ≠ 1` (`κ ∈ ℚ ∖ {0}`). There `H_n(q)` is not semisimple and the rank comparison does not apply; whether KZ and Jimbo are still conjugate there is not addressed.
-- An explicit intertwiner. `U` is produced by comparing ranks of block idempotents; nothing identifies it (e.g. with the weight-preserving intertwiner of #7632).
+- An explicit intertwiner, and a single weight-preserving `U` on all of `V^{⊗(m+1)}`. The block-wise `U_k` exist (`trace_res_kz_eq_jimbo` uses them), but their block-diagonal sum is not assembled in Lean; only the trace consequence is stated.
 - `V ≠ ℂ²`, i.e. other representations of `𝔤𝔩_N`/`𝔰𝔩_N`, and the Drinfeld–Kohno theorem in its general form (associator, quasi-Hopf twist).
