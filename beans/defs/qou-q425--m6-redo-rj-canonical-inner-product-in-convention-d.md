@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-12T19:16:31Z
+updated_at: 2026-10-12T20:14:03Z
 parent: qou-d8c7
 ---
 
@@ -150,3 +150,5 @@ SchurWeylTrace §12, sorry-free.
 - trace_gamW (2j ≤ r): tr(γ^p|W_{r,0}) = q^{np}. For j ≥ 1, tr(γ^p|W_{r,j}) = rhoTr q n p j − rho'Tr q n p (j−1), where rhoTr and rho'Tr are the periodic-state closed forms. Proof: invert the triangular system T_gam_pow_split at m = j and m = j−1, then apply T_gam_succ.
 - trace_W_gam_pow_explicit and markov_gam_pow_explicit: the per-module Rosso–Jones formula for every torus link T(r,p).
 - Probe check (f) added: 22932/22932 exact checks pass.
+
+**2026-10-12 — Jones normal words are linearly independent in Pres (sorry-free).** New file `QOU/IwahoriHecke/JonesWordsIndependent.lean`: `presEquivHecke : Pres N (q-qi) (q*qi) ≃ₐ[R] QOU.SchurWeyl.Hecke R q qi N` (same presentation, generator to generator; any CommRing R, any q qi); `presBasis` (via `HeckeCoset.stdBasisAny`, regular rep); `card_words_pres`: exactly (N+1)! distinct normal words; `words_pres_linearIndependent` and `wordsBasis` (words are a basis), `words_pres_linearIndependent_of_le` (every level n ≤ N). Hypotheses: [CommRing R] [Nontrivial R]; quadratic of the form s²=(q−qi)s+q·qi — covers convention D (qi=q⁻¹) and the unbalanced (qi=1) relation. NOT covered: a general pair (a,b) not of that form. Proof: span + rank condition gives |words| ≥ (N+1)!, with card_words_le equality; surjective endomorphism of R^{words} injective (OrzechProperty). Verified lean -DautoImplicit=false -s 65536 exit 0; #print axioms = propext, Classical.choice, Quot.sound. The remaining q425 items (closed Rosso–Jones for general r) are untouched.

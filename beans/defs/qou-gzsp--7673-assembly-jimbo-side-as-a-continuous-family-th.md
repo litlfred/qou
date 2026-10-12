@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:31:38Z
-updated_at: 2026-10-12T19:37:48Z
+updated_at: 2026-10-12T20:14:04Z
 parent: qou-xhci
 ---
 
@@ -16,3 +16,5 @@ parent: qou-xhci
 2026-10-12 (third pass): kz_conj_jimbo_complex / _complex_sigma: every complex kappa with q = e^{2 pi i kappa} not a root of unity (root-of-unity couplings countable, complement path-connected and dense; rigidity set = {q^2-integers separate}, contains kappa=0). jimboRep_eq_jimbo proved after rebuilding JimboActionKernel's stale cone (59 modules, 0 red). Remaining open: roots of unity q != 1 (non-semisimple); explicit U; V != C^2 / general Drinfeld-Kohno.
 
 2026-10-12 (fourth pass, PR #7744): QOU/Mass/KohnoWeighted.lean, sorry-free. Weight-space rigidity: commute_kzBraidRep (KZ equivariance via ODE uniqueness), both families preserve each total-weight space V_k, trace_res_kz_eq_jimbo, weighted_trace_kz_eq_jimbo (any D scalar on each V_k), siteWeight_trace_kz_eq_jimbo, braidTrace_eq_kz (PR #7632's Markov trace = wi^{m+1} Tr(K^{tensor} KZ(x_beta))), all at q not a root of unity. Not done: the assembled block-diagonal U on all of V^{tensor n} (only its trace consequence).
+
+**2026-10-12 — single intertwiner assembled (sorry-free).** `QOU/Mass/KohnoIntertwiner.lean`: `kz_jimbo_intertwiner` gives ONE unit U, weight-preserving (commutes with every `wproj`), with U·kzHeckeC(h) = jimboRep(h)·U for all h, every complex κ with q(κ) not a root of unity; `braidTrace_eq_kz_of_intertwiner` recovers the KZ-side mass identity by conjugation. PR #7767, bean qou-dgsw.
