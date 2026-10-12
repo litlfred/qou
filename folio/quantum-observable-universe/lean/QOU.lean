@@ -230,6 +230,7 @@ import QOU.KZ.Drinfeld.Assoc
 import QOU.KZ.Drinfeld.Category
 import QOU.KZ.Drinfeld.Kron
 import QOU.KZ.Drinfeld.Legs
+import QOU.KZ.Drinfeld.Monoidal
 import QOU.KZ.Drinfeld.Casimir
 import QOU.KZ.Drinfeld.Natural
 import QOU.KZ.Drinfeld.Pentagon
