@@ -474,6 +474,8 @@ $$
 
 In Hecke generators: at every brane level, there exist braid words $\beta_{n+1} \in H_{n+1}(q)$ that cannot be expressed as $L_{-1}(\mathcal{B}_n)$ for any $\mathcal{B}_n \in H_n(R, q)$. The jet corrections and the base obstruction occupy complementary subgroups; cancellation is impossible.
 
+*Scope.* This restates item 3 of [QU-to-QOU](#thm:qu-to-qou), which is conditional. For the bands used in this corpus the complementary-subgroup step is not established on a closed surface such as Bring's. There $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish. For the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. For $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope note in the [proof of QU-to-QOU](#prf:qu-to-qou).
+
 ### C-6: Betti numbers and spectral sequence
 
 The Leray--Serre spectral sequence controls the Betti numbers $b_k = \dim H^k(\mathcal{S}_n, \mathbb{R})$. In knot variables, $b_k$ counts linearly independent $k$-fold products of Hecke generators modulo the de Rham relation:
