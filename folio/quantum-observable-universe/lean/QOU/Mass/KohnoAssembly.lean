@@ -3,6 +3,7 @@ import QOU.Mass.KZHolonomy.Continuity
 import QOU.Mass.BraidHeckeFactor
 import QOU.SchurWeyl.JMProjectorContinuity
 import QOU.IwahoriHecke.TensorEmbedding
+import Mathlib.Analysis.Matrix
 
 /-!
 # Assembly of the Kohno comparison: KZ is conjugate to Jimbo on the real segment
@@ -257,5 +258,164 @@ theorem conj_of_isPreconnected_hecke (hS : IsPreconnected S)
   simpa using this
 
 end Interface
+
+/-! ## The assembly on the real segment
+
+Couplings `κ(t) = t / (2πi)`, `t ∈ [0, L]`, so `2πiκ = t` and `q = e^{t}` is real in `[1, e^L]`.
+The framework's real pin `q₀` corresponds to `L = ln q₀`. -/
+
+section Assembly
+
+attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
+
+/-- The KZ coupling along the segment: `κ(t) = t / (2πi)`, purely imaginary. -/
+noncomputable def kappa (t : ℝ) : ℂ := (t : ℂ) / (2 * (Real.pi * I))
+
+theorem two_kappa (t : ℝ) : 2 * kappa t * (Real.pi * I) = t := by
+  have hπ : (Real.pi : ℂ) ≠ 0 := by exact_mod_cast Real.pi_ne_zero
+  unfold kappa
+  field_simp
+
+theorem kappa_zero : kappa 0 = 0 := by simp [kappa]
+
+theorem continuous_kappa : Continuous kappa :=
+  Complex.continuous_ofReal.div_const _
+
+/-- The Hecke parameter of the KZ representation at `κ(t)`: `q = e^{2πiκ(t)}`. -/
+noncomputable def qOf (t : ℝ) : ℂ := Complex.exp (2 * kappa t * (Real.pi * I))
+
+/-- **Along the segment the Hecke parameter is the positive real `e^t`.** -/
+theorem qOf_eq (t : ℝ) : qOf t = (Real.exp t : ℂ) := by
+  rw [qOf, two_kappa, Complex.ofReal_exp]
+
+theorem qOf_ne_zero (t : ℝ) : qOf t ≠ 0 := Complex.exp_ne_zero _
+
+theorem qOf_zero : qOf 0 = 1 := by rw [qOf_eq, Real.exp_zero, Complex.ofReal_one]
+
+theorem qOf_ne_one {t : ℝ} (ht : t ≠ 0) : qOf t ≠ 1 := by
+  rw [qOf_eq]
+  intro h
+  have h' : Real.exp t = 1 := by exact_mod_cast h
+  exact ht (Real.exp_eq_one_iff t |>.mp h')
+
+theorem continuous_qOf : Continuous qOf :=
+  Complex.continuous_exp.comp ((continuous_const.mul continuous_kappa).mul continuous_const)
+
+variable {m : ℕ}
+
+/-- The scalar `s = e^{2πiκc}` by which each KZ crossing is rescaled. -/
+noncomputable def kzScale (c : ℂ) (t : ℝ) : ℂ := Complex.exp (2 * kappa t * (Real.pi * I) * c)
+
+/-- **Hypothesis H1 (gap 1).** At coupling `κ(t)`, the first KZ generator on `m + 1` strands
+(with `ρ = permRep`, i.e. on `V^{⊗(m+1)}`, `V = ℂ²`), rescaled by `e^{2πiκc}`, satisfies the
+Hecke quadratic with `q = e^{2πiκ}`. Proved for `m = 1` (`kzTwoStrand_isHeckeQuad`); open for
+`m ≥ 2`. This is exactly the shape of `KZTwoStrandHecke.kzTwoStrand_isHeckeQuad`. -/
+def KZQuad (m : ℕ) (c : ℂ) (t : ℝ) : Prop :=
+  ∀ hm : 0 < m, IsHeckeQuad (kzScale c t) (qOf t) (qOf t)⁻¹
+    ((kzBraidRep (permRep (R := ℂ) (k := m + 1)) (kappa t) c (σ ⟨0, hm⟩) :
+      (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+      Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)
+
+/-- The KZ representation through `H_{m+1}(q)` along the segment (`σ_j ↦ e^{2πiκc} θ_κ(σ_j)`);
+off the segment it is set to the Jimbo map, which plays no role. -/
+noncomputable def kzHecke (c : ℂ) {L : ℝ} (H1 : ∀ t ∈ Icc (0 : ℝ) L, KZQuad m c t) (t : ℝ) :
+    Hecke ℂ (qOf t) (qOf t)⁻¹ m →ₐ[ℂ] Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ :=
+  if h : t ∈ Icc (0 : ℝ) L then
+    heckeOfBraidRepOfZero (s := kzScale c t) (kzBraidRep permRep (kappa t) c) (H1 t h)
+  else jimboRep (qOf t) (qOf_ne_zero t) m
+
+theorem kzHecke_σ (c : ℂ) {L : ℝ} (H1 : ∀ t ∈ Icc (0 : ℝ) L, KZQuad m c t) {t : ℝ}
+    (ht : t ∈ Icc (0 : ℝ) L) (j : Fin m) :
+    kzHecke c H1 t (Hecke.σ ℂ (qOf t) (qOf t)⁻¹ m j) =
+      kzScale c t • ((kzBraidRep permRep (kappa t) c (σ j) :
+        (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+        Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) := by
+  simp only [kzHecke, dif_pos ht, heckeOfBraidRepOfZero, heckeOfBraidRep_σ]
+
+theorem continuousOn_kzHecke_σ (c : ℂ) {L : ℝ} (H1 : ∀ t ∈ Icc (0 : ℝ) L, KZQuad m c t)
+    (j : Fin m) :
+    ContinuousOn (fun t => kzHecke c H1 t (Hecke.σ ℂ (qOf t) (qOf t)⁻¹ m j)) (Icc 0 L) := by
+  have hc : Continuous (fun t : ℝ => kzScale c t • ((kzBraidRep permRep (kappa t) c (σ j) :
+      (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+        Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)) := by
+    have hk := (continuous_kzBraidRep_σ
+      (A := Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)
+      (permRep (R := ℂ) (k := m + 1)) c j).comp continuous_kappa
+    refine Continuous.smul ?_ hk
+    exact Complex.continuous_exp.comp
+      (((continuous_const.mul continuous_kappa).mul continuous_const).mul continuous_const)
+  exact hc.continuousOn.congr fun t ht => kzHecke_σ c H1 ht j
+
+theorem continuous_jimboRep_σ (j : Fin m) :
+    Continuous (fun t => jimboRep (qOf t) (qOf_ne_zero t) m (Hecke.σ ℂ (qOf t) (qOf t)⁻¹ m j)) := by
+  simp only [jimboRep_σ, qOf]
+  exact (continuous_strandBraid_exp j).comp
+    ((continuous_const.mul continuous_kappa).mul continuous_const)
+
+/-- **The base point.** At `t = 0` (coupling `0`, `q = 1`) the KZ and Jimbo maps agree on the
+generators: both send `σ_j` to the permutation matrix of `(j, j+1)`. -/
+theorem kzHecke_zero_σ (c : ℂ) {L : ℝ} (hL : 0 ≤ L) (H1 : ∀ t ∈ Icc (0 : ℝ) L, KZQuad m c t)
+    (j : Fin m) :
+    kzHecke c H1 0 (Hecke.σ ℂ (qOf 0) (qOf 0)⁻¹ m j) =
+      jimboRep (qOf 0) (qOf_ne_zero 0) m (Hecke.σ ℂ (qOf 0) (qOf 0)⁻¹ m j) := by
+  rw [kzHecke_σ c H1 ⟨le_rfl, hL⟩, jimboRep_σ]
+  have hs : kzScale c 0 = 1 := by simp [kzScale, kappa_zero]
+  rw [hs, one_smul, kappa_zero, kzBraidRep_zero_σ, permRep_adjSwap, qOf_zero, inv_one]
+
+/-- **The assembled Kohno comparison on the real segment.** Fix `c ∈ ℂ` and `L ≥ 0`. Assume
+only **H1**: along the couplings `κ(t) = t/(2πi)`, `t ∈ [0, L]`, the first KZ generator
+satisfies the Hecke quadratic with `q = e^{t}` (gap 1). Then at every `t ∈ [0, L]` the KZ
+representation of `H_{m+1}(e^t)` on `V^{⊗(m+1)}` is conjugate to the Jimbo representation by
+an invertible matrix.
+
+The Wedderburn continuity and the base point at `q = 1` (gaps 2 and 3) are not hypotheses:
+they are discharged by `JMProjectorContinuity` and `permRep_adjSwap`. -/
+theorem kz_conj_jimbo (c : ℂ) {L : ℝ} (H1 : ∀ t ∈ Icc (0 : ℝ) L, KZQuad m c t)
+    {t : ℝ} (ht : t ∈ Icc (0 : ℝ) L) :
+    ∃ U : (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ, ∀ h,
+      (U : Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) * kzHecke c H1 t h = jimboRep (qOf t) (qOf_ne_zero t) m h * U := by
+  have hL : 0 ≤ L := ht.1.trans ht.2
+  rcases eq_or_lt_of_le ht.1 with h0 | hpos
+  · -- base point: the two maps are equal
+    subst h0
+    have he : kzHecke c H1 0 = jimboRep (qOf 0) (qOf_ne_zero 0) m :=
+      Hecke.hom_ext _ _ _ _ (kzHecke_zero_σ c hL H1)
+    exact ⟨1, fun h => by rw [he]; simp⟩
+  have hLpos : 0 < L := hpos.trans_le ht.2
+  have hposq : ∀ x ∈ Icc (0 : ℝ) L, ∃ s : ℝ, 0 < s ∧ qOf x = s :=
+    fun x _ => ⟨Real.exp x, Real.exp_pos x, qOf_eq x⟩
+  have hdense : Icc (0 : ℝ) L ⊆
+      closure (Icc (0 : ℝ) L ∩ {x | GenericParameter.NotRootOfUnity (qOf x)}) := by
+    have h1 : Ioc (0 : ℝ) L ⊆ Icc (0 : ℝ) L ∩ {x | GenericParameter.NotRootOfUnity (qOf x)} := by
+      intro x hx
+      exact (generic_of_pos (S := Icc (0 : ℝ) L) hposq
+        ⟨Ioc_subset_Icc_self hx, qOf_ne_one (ne_of_gt hx.1)⟩)
+    calc Icc (0 : ℝ) L = closure (Ioc 0 L) := (closure_Ioc hLpos.ne).symm
+      _ ⊆ _ := closure_mono h1
+  have hgen : GenericParameter.NotRootOfUnity (qOf t) := by
+    have := generic_of_pos (S := Icc (0 : ℝ) L) hposq ⟨ht, qOf_ne_one (ne_of_gt hpos)⟩
+    exact this.2
+  exact conj_of_isPreconnected_hecke (n := m) isPreconnected_Icc continuous_qOf.continuousOn
+    (fun x _ => qOf_ne_zero x) (sep_of_pos hposq) hdense
+    (kzHecke c H1) (fun x => jimboRep (qOf x) (qOf_ne_zero x) m)
+    (continuousOn_kzHecke_σ c H1) (fun j => (continuous_jimboRep_σ j).continuousOn)
+    (fun _ => Classical.arbitrary _) (x₀ := 0) ⟨le_rfl, hL⟩ 1
+    (fun j => by rw [kzHecke_zero_σ c hL H1]; simp) ht hgen
+
+/-- **Generator form.** Under H1, at every `t ∈ [0, L]` there is one invertible `U` with
+`U · (e^{2πiκc} θ_κ(σ_j)) · U⁻¹ = Ř_{j,j+1}(q)` for every generator, `κ = t/(2πi)`, `q = e^t`. -/
+theorem kz_conj_jimbo_σ (c : ℂ) {L : ℝ} (H1 : ∀ t ∈ Icc (0 : ℝ) L, KZQuad m c t)
+    {t : ℝ} (ht : t ∈ Icc (0 : ℝ) L) :
+    ∃ U : (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ, ∀ j : Fin m,
+      (U : Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ) * (kzScale c t • ((kzBraidRep permRep (kappa t) c (σ j) :
+        (Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)ˣ) :
+        Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) ℂ)) =
+        strandBraid (qOf t) (qOf t)⁻¹ j * U := by
+  obtain ⟨U, hU⟩ := kz_conj_jimbo c H1 ht
+  refine ⟨U, fun j => ?_⟩
+  have := hU (Hecke.σ ℂ (qOf t) (qOf t)⁻¹ m j)
+  rwa [kzHecke_σ c H1 ht, jimboRep_σ] at this
+
+end Assembly
 
 end QOU.Mass.KohnoAssembly
