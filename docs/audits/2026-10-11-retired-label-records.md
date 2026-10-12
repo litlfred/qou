@@ -170,3 +170,23 @@ So its citations are **redirected there, not removed**: a blanket "group C
 → delete" would have thrown away a live pointer. The two spellings differing
 only in prefix is why the three-way split has to be read per label and not
 per group.
+
+## D — carried only by a deprecated witness filename (2 labels, 4 citations; added 2026-10-12)
+
+Found when #7586 was merged with `main`. The carrier audit counts any tracked
+path containing the label's stem as a carrier, so these two were "alive" only
+through `computations/_deprecated/{hopf-jones-c3,kashiwara-jones-c4}-categorical.witness.json`.
+Neither ever had a `.ts` block. `6333715860` (fsh-guts cut-over, bean `qou-6u3n`)
+removed `computations/_deprecated/` from `main`, and the ratchet went 0 -> 2.
+Disposed of per the owner's 2026-10-12 group-B ruling (point at the removal commit).
+
+| label | carried by | removed in | recover |
+|---|---|---|---|
+| `prop:hopf-jones-c3-categorical` | `computations/_deprecated/hopf-jones-c3-categorical.witness.json` | `6333715860` | `git show 6333715860^:computations/_deprecated/hopf-jones-c3-categorical.witness.json`, or the `cat/cat-harness/fsh-guts` branch |
+| `prop:kashiwara-jones-c4-categorical` | `computations/_deprecated/kashiwara-jones-c4-categorical.witness.json` | `6333715860` | same, `kashiwara-jones-c4-categorical.witness.json` |
+
+Cited from `computations/sweeps/paper_six_term_isotope_sweep.py` (docstrings of
+the N=4 chain and `q_beta_for_source`). That docstring also calls `c_3`/`c_4`
+"categorically derived (no empirical fit)"; the AGENTS.md `c_k` banners scope
+that ladder as convention-C and its rungs as near-matches, so the claim is
+stale — recorded here, not edited, as it is outside this re-pointing.
