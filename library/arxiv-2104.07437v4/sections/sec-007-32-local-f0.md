@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
 toc_source: outline
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 by results in the 4d limit of the theory [78], it has been suggested that q-Painlev´e equations could
 play such a rˆole [79], but a complete description is still lacking. Recently, and following the same

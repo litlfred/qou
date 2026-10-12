@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.935
 latex_coverage_ratio: 0.983
+doc_brief: "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
 ---
 []{#sec:vanish label="sec:vanish"} In this section we prove Theorem [\[thmA:zeroes\]](#thmA:zeroes){reference-type="ref" reference="thmA:zeroes"} for quasi-simple groups of classical type. So let ${\mathbf{G}}$ be a simply-connected simple algebraic group of type $B_n$ with $n \geq 3$, $C_n$ with $n \geq 2$ or $D_n$ with $n \geq 4$, and let $F$ be a Steinberg morphism of ${\mathbf{G}}$ (we exclude the ${}^3\!D_4$ case) with $G ={\mathbf{G}}(q) := {\mathbf{G}}^F$. We consider the corresponding finite groups $G={\operatorname{Spin}}_{2n+1}(q)$ only for odd $q$, and ${\operatorname{Sp}}_{2n}(q)$ and ${\operatorname{Spin}}^\pm_{2n}(q)$ for any $q$, respectively.
 

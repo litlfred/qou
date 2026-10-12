@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.895
 latex_coverage_ratio: 0.962
+doc_brief: "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
 ---
 []{#subsec:symb label="subsec:symb"} We now specialise to simple groups of classical type. By Lusztig's results their unipotent characters are parameterised by so-called *symbols*. Here, a symbol is an unordered pair of finite sets of non-negative integers, usually denoted as $${\mathcal{S}}=\binom{X}{Y}=\begin{pmatrix} \la_1& \la_2& \ldots& \la_r\\
   \mu_1& \mu_2& \ldots& \mu_s\end{pmatrix}$$ with $\la_1<\la_2<\ldots<\la_r$ and $\mu_1<\mu_2<\ldots<\mu_s$ where $r,s\ge0$. Two symbols are said to be *equivalent* if one can be obtained from the other by a sequence of shift operations $${\mathcal{S}}\mapsto \begin{pmatrix} 0& \la_1+1& \la_2+1& \ldots& \la_r+1\\

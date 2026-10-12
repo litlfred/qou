@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 1.0
+doc_brief: "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
 ---
 []{#subsec:maxred label="subsec:maxred"} The following lemma will allow us to decide if a collection of classes of maximal tori of a classical group has representatives inside the centraliser of a semisimple element:
 

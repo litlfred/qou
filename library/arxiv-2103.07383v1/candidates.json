@@ -1,0 +1,151 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2103.07383v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "9dca35ea16490ad864811e4b8eb0aacc6b34421bc333fb948f1d89b7258d1294",
+  "file": "2103.07383v1.pdf"
+ },
+ "provenance": {
+  "title": "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case",
+  "authors": "Daniel Steenebr\u00fcgge",
+  "arxiv": {
+   "id": "2103.07383",
+   "version": "1",
+   "primary_class": "math.AP",
+   "stamp_date": "12 Mar 2021"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "corollary": 1,
+   "lemma": 5,
+   "proposition": 1,
+   "theorem": 2
+  },
+  "formalization_candidates": 9
+ },
+ "candidates": [
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "5.1",
+   "name": null,
+   "statement": "Let \u03b3 \u2208C\u221e(R/Z, Rn) be a critical point of intM(p,2) with respect to \ufb01xed length",
+   "section_file": "sections/sec-007-51-recursive-estimate-and-iteration.md",
+   "section_title": "Recursive estimate and iteration",
+   "pages": "18-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.2",
+   "name": null,
+   "statement": "Let \u03b3 \u2208C\u221e(R/Z, Rn) parametrized by arc-length be a critical point of intM(p,2)",
+   "section_file": "sections/sec-007-51-recursive-estimate-and-iteration.md",
+   "section_title": "Recursive estimate and iteration",
+   "pages": "18-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "A.1. Let f \u2208C\u221e(R/Z, Rn) and s > 0. Then the function f is analytic on R/Z if",
+   "section_file": "sections/sec-010-a-properties-of-analytic-functions.md",
+   "section_title": "A Properties of analytic functions",
+   "pages": "25-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "A.2 (Cauchy-Kovalevsky \u2013 ODE case). Suppose the function G : R2n \u2192Rn is",
+   "section_file": "sections/sec-010-a-properties-of-analytic-functions.md",
+   "section_title": "A Properties of analytic functions",
+   "pages": "25-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.2",
+   "name": null,
+   "statement": ", is motivated from this method.",
+   "section_file": "sections/sec-010-a-properties-of-analytic-functions.md",
+   "section_title": "A Properties of analytic functions",
+   "pages": "25-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "B.1. Let U \u2286R be a neighborhood of 0 and f \u2208Ck(U, Rn), n \u2208N0. Moreover, let",
+   "section_file": "sections/sec-010-a-properties-of-analytic-functions.md",
+   "section_title": "A Properties of analytic functions",
+   "pages": "25-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "B.2. Let k, n \u2208N, Cx, Cy > 0, x(i)",
+   "section_file": "sections/sec-010-a-properties-of-analytic-functions.md",
+   "section_title": "A Properties of analytic functions",
+   "pages": "25-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "B.3. Let X be a Banach algebra with norm \u2225\u00b7\u2225in the sense that there is a universal",
+   "section_file": "sections/sec-010-a-properties-of-analytic-functions.md",
+   "section_title": "A Properties of analytic functions",
+   "pages": "25-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "C.1. Let m > 1 and f \u2208Hm(R/Z, Rn) with",
+   "section_file": "sections/sec-011-c-an-inequality-for-sobolev-norms.md",
+   "section_title": "C An inequality for Sobolev Norms",
+   "pages": "27-31",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

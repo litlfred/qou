@@ -1,1 +1,1 @@
-Letφ(x)= x2− 1, letα∈ K , and assume that the pair (φ,α) is stable over K and that
+Let G be a ﬁnite group and let p be a prime. Suppose that B is a block of G with a normal

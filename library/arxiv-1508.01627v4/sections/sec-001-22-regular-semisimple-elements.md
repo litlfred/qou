@@ -8,6 +8,7 @@ pages: 2-2
 source_pdf: 1508.01627v4.pdf
 source_sha256: 778e60219862e371
 toc_source: outline
+doc_brief: "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
 ---
 Lemma 2.1) which may be of independent interest.
 We then apply this vanishing result in order to classify simple endotrivial modules over ﬁelds k of

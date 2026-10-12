@@ -1,1 +1,1 @@
-A.1. Let δ∈ N∗, and a map S: N∗∩[δ,+∞[→ K such that we have , for all a∈
+B.1. For all ˜α0, ˜α ∈N∗such that ˜α0 | ˜α, we have

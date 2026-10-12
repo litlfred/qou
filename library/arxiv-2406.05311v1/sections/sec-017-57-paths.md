@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.932
 latex_coverage_ratio: 0.728
+doc_brief: "Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD — In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small)"
 ---
 []{#ss:Paths label="ss:Paths"} We turn our attention to nonzero paths and simply call them paths from now on. Thus a composition ${\mathbf v}={\mathbf v}_{a_r b_r}\dotsb{\mathbf v}_{a_1 b_1}$ is a if it is nonzero, its graph is a path with $a_1$ or $b_1$ an endpoint, and $\#(\{a_i,b_i\}\cap\{a_{i+1},b_{i+1}\})=1$ for all $i$.
 

@@ -8,6 +8,7 @@ pages: 8-8
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
 toc_source: outline
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the"
 ---
 An Important Invariant Map, and Apolarity
 To aide in our investigation of inner tensor products of SL2(C) representations, we now deﬁne an important
