@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T20:07:19Z
+updated_at: 2026-10-12T20:12:02Z
 parent: qou-v2om
 ---
 
@@ -78,3 +78,7 @@ The Hecke↔skein identification is the corpus's own dictionary (AGENTS.md §7a:
 
 ## 2026-10-12 — CORRECTION: two Reeb flows, opposite chirality (owner question: why was strands-follow-Reeb not clear?)
 My previous entry said the σ/σ⁻¹ preference is 'derived, no convention left'. That holds only for strands following the GEODESIC flow. UT(Σ₄) has two canonical contact forms: Liouville α (Reeb = geodesic spray) and the connection form η = dθ + dx/y (Reeb = fibre rotation ∂_θ, the Seifert circle action = Sasakian Reeb of the cone link). Proved (BringUTContactChirality §5, exit 0; probe 13/13): α∧dα = −1/y², η∧dη = +1/y² — OPPOSITE orientations; each flow is Legendrian for the other (η(R) = 0, α(∂θ) = 0). The corpus never states that strands follow the Reeb flow; fermion-boson-knot-link-proof has strands WIND AROUND 'the Reeb direction' (vertical = fibre), with signed winding ±1 — the fibre reading. Owner (2026-10-12): strands follow 'Reeb flow/geodesic' — these are different flows, so this is a modelling decision, not a Lean proof. Not affected: everything else (window, towers, descending step). Contaminated: my issue #7740 comment of 670ff8c658 ('no convention left'), corrected there.
+
+
+## 2026-10-12 — 🟧 OWNER RULING: strands follow the FIBRE Reeb flow ('2 fibre'); chirality wired; both flows checked
+BringUTContactChirality §6–7 + SegmentCollisionDatum Part G (both lean-direct exit 0). Fibre reading: orientation +dx∧dy∧dθ independent of fibre direction ((−η)∧d(−η) = η∧dη); e = −6; chiral invariant = torsion linking residue of the fibre class ℓ = −1/e = 1/6 ∈ ℚ/ℤ (H₁ = ℤ⁸ ⊕ ℤ/6), ℓ ≢ −ℓ. Geodesic reading (checked on owner request): reversed orientation, e = +6, ℓ = −1/6 ≡ 5/6, also chiral. So both flows give chirality, mirror-image; the flow fixes only its sign. Part G: for a covariant Bring energy E(π−θ, ℓ) = E(θ, −ℓ), reflection symmetry ⇔ residue-evenness; a residue-sensitive E is chiral and Part D's θ* = π/2 no longer follows. Fit check: fermion-boson-knot-link-proof's opposite vertical windings ±1 read naturally as particle/antiparticle = oppositely oriented fibre strands (supports, does not prove, the ruling). NOT derived: E's residue dependence (a formula for the Bring energy). Owner follow-up (2026-10-12, mid-turn): 'flow by the knot convolution operator' — queued.

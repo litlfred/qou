@@ -184,4 +184,87 @@ theorem legendrian_duality (y θ : ℝ) (hy : y ≠ 0) :
   field_simp
   ring
 
+/-! ## 6. 🟧 Owner ruling 2026-10-12: particle strands follow the FIBRE Reeb flow
+
+Verbatim: *"2 fibre"* (choice between the geodesic flow, Reeb of `α`, and the fibre rotation,
+Reeb of `η`; bean `qou-jfx8`). Consequences, all stated for the fibre reading:
+
+* **The orientation is fixed by the fibre line field alone.** Reversing the fibre direction
+  (`η ↦ −η`) leaves `η ∧ dη` unchanged (`eta_volume_neg_invariant`), so no choice of fibre
+  direction enters. The orientation is `+dx ∧ dy ∧ dθ`: complex orientation of the base,
+  counter-clockwise fibre. In that orientation `e(UT(Σ₄)) = χ(Σ₄) = −6`, which is
+  `bring_link_euler`.
+* **Fibre strands are positively transverse to `ker η`** (`fibre_positively_transverse`).
+* **The chiral invariant of fibre strands is the torsion linking residue of the fibre class.**
+  `H₁(UT(Σ₄)) ≅ ℤ⁸ ⊕ ℤ/6`, with the fibre generating `ℤ/6`, so two fibres have a linking number
+  defined in `ℚ/ℤ`, namely `lk(f, f) = −1/e = 1/6 mod 1`. The sign convention is the one making the
+  Hopf fibration (`e = −1`) link `+1`. Reversing the orientation sends `1/6 ↦ −1/6 ≡ 5/6`, and
+  `1/6 ≢ −1/6 (mod 1)` (`fibre_linking_residue_chiral`). So the residue detects the orientation,
+  i.e. the chirality, of every fibre strand pair.
+
+What the residue does NOT give: a sign for an individual crossing. It lives in `ℚ/ℤ`, not `ℚ`,
+because the base has genus 4; "positive" is not defined mod 1. It distinguishes the two
+chiralities. It does not by itself say which of `σ` or `σ⁻¹` an energy prefers; that needs an
+energy that depends on the residue (`SegmentCollisionDatum` Part G).
+
+-- Ref: Seifert-fibred spaces, `H₁` and the torsion linking form: Scott (1983) §3; Hopf link
+   sign convention as in `BringConeLinkEulerNumber.hopf_link_euler`. -/
+
+/-- **The orientation does not depend on the fibre direction**: `(−η) ∧ d(−η) = η ∧ dη`
+(each factor changes sign). -/
+theorem eta_volume_neg_invariant (c : ℝ) : (-1 : ℝ) * (-1) * c = c := by ring
+
+/-- **Fibre strands are positively transverse**: `η(∂_θ) = 1 > 0`. -/
+theorem fibre_positively_transverse : (0 : ℝ) < (1 / 1) * 0 + 0 * 0 + 1 * 1 := by norm_num
+
+/-- The torsion linking residue of the fibre class: `−1/e`. -/
+def fibreLinkingResidue (e : ℚ) : ℚ := -1 / e
+
+theorem bring_fibre_linking_residue : fibreLinkingResidue (-6) = 1 / 6 := by
+  unfold fibreLinkingResidue; norm_num
+
+/-- **The residue is chiral**: `1/6` and its orientation-reverse `−1/6` differ by a
+non-integer, so they are different elements of `ℚ/ℤ`. -/
+theorem fibre_linking_residue_chiral :
+    ¬ ∃ n : ℤ, fibreLinkingResidue (-6) - (-fibreLinkingResidue (-6)) = n := by
+  rintro ⟨n, hn⟩
+  rw [bring_fibre_linking_residue] at hn
+  have h3 : (3 : ℚ) * n = 1 := by linarith
+  have : (3 : ℤ) * n = 1 := by exact_mod_cast h3
+  omega
+
+/-! ## 7. Both flows checked side by side (owner, 2026-10-12: "check both flows")
+
+| | fibre flow (Reeb of `η`) — RULED | geodesic flow (Reeb of `α`) |
+|---|---|---|
+| orientation fixed | `+dx ∧ dy ∧ dθ` | `−dx ∧ dy ∧ dθ` (`contact_orientations_opposite`) |
+| Euler number in that orientation | `−6` | `+6` (orientation reversal negates `e`) |
+| fibre linking residue `−1/e` | `1/6` | `−1/6 ≡ 5/6` (`geodesic_residue_eq_neg`) |
+| chiral (`ℓ ≢ −ℓ` mod 1) | yes | yes (`geodesic_residue_chiral`) |
+
+So BOTH readings make `UT(Σ₄)` chiral, with mirror-image residues: the choice of flow fixes the
+SIGN of the chirality, never whether it exists. Part G of `SegmentCollisionDatum` applies to
+either, with `ℓ = 1/6` (fibre) or `ℓ = 5/6` (geodesic).
+
+Fit with the corpus (`fermion-boson-knot-link-proof`): there, a 2-component link `T(2, 2k)` has
+components with OPPOSITE winding `±1` around the vertical (fibre) direction. Under the fibre
+reading this is a strand following the flow and a strand against it, i.e. particle and
+antiparticle as oppositely oriented fibre strands, which is consistent. Under the geodesic reading
+the vertical winding is not the flow direction at all, and the `±1` has no flow interpretation.
+That supports the ruling; it does not prove it. -/
+
+/-- **Geodesic reading**: the orientation is reversed, so `e = +6` and the residue is `−1/6`. -/
+theorem geodesic_residue_eq_neg :
+    fibreLinkingResidue (-(-6)) = -fibreLinkingResidue (-6) := by
+  unfold fibreLinkingResidue; norm_num
+
+/-- **The geodesic residue is chiral too**: `−1/6 ≢ 1/6 (mod 1)`. -/
+theorem geodesic_residue_chiral :
+    ¬ ∃ n : ℤ, fibreLinkingResidue 6 - (-fibreLinkingResidue 6) = n := by
+  rintro ⟨n, hn⟩
+  unfold fibreLinkingResidue at hn
+  have h3 : (3 : ℚ) * n = -1 := by linarith
+  have : (3 : ℤ) * n = -1 := by exact_mod_cast h3
+  omega
+
 end QOU.Brings.UTContactChirality

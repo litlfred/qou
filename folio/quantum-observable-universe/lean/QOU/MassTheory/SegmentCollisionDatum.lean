@@ -69,6 +69,7 @@ angle, with the two clauses that make the selection well posed (minimiser, uniqu
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import QOU.MathlibExt.DisjointBlockTraceLaw
+import QOU.Brings.BringUTContactChirality
 
 namespace QOU.MassTheory.SegmentCollision
 
@@ -320,5 +321,54 @@ theorem θstar_eq_pi_div_two_of_achiral (d ℓ : ℝ) [D : SegmentCollisionDatum
     (fun θ => by simp only [segEnergy_reflect, hB]) D.θstar D.θstar_mem D.unique
 
 end PartD
+
+/-! ## Part G — chirality wired in (owner ruling 2026-10-12: strands follow the fibre Reeb flow)
+
+Part D derived `θ* = π/2` from an ACHIRAL Bring term. Under the fibre ruling
+(`BringUTContactChirality` §6) the ambient `UT(Σ₄)` carries a chiral invariant, the fibre linking
+residue `ℓ = 1/6 ∈ ℚ/ℤ`. Its orientation-reverse is `−ℓ ≡ 5/6`, and `ℓ ≢ −ℓ`.
+
+A local Bring energy on the oriented manifold is a function `E θ ℓ` of the crossing angle and the
+residue. The mirror configuration (crossing sign flipped) lives in the orientation-reversed
+manifold, so `E` is **covariant**: `E (π − θ) ℓ = E θ (−ℓ)`. Then:
+
+* `mirror_symmetric_iff_residue_even`: `E` is reflection-symmetric at `ℓ` iff it is even in the
+  residue at `ℓ`;
+* `chiral_of_residue_odd`: if `E` sees the residue (`E θ ℓ ≠ E θ (−ℓ)` for some `θ`), it is not
+  reflection-symmetric, Part D's achirality hypothesis is unavailable, and `θ*` is no longer forced
+  to `π/2`;
+* `bring_residue_not_self_mirror`: at the Bring residue `1/6`, `ℓ` and `−ℓ` are different points of
+  `ℚ/ℤ`, so for an `E` that is periodic in `ℓ` the residue-evenness test is a genuine condition and
+  not a tautology.
+
+**Still not derived:** the residue dependence of the Bring energy itself, i.e. a formula for `E`.
+What is derived is where chirality enters (through `ℓ` alone) and that it cannot cancel
+(`ℓ ≠ −ℓ` mod 1). -/
+
+section PartG
+
+open Real QOU.Brings.UTContactChirality
+
+/-- **Reflection symmetry at a residue is residue-evenness**, for a covariant energy. -/
+theorem mirror_symmetric_iff_residue_even (E : ℝ → ℚ → ℝ)
+    (hcov : ∀ θ ℓ, E (π - θ) ℓ = E θ (-ℓ)) (ℓ : ℚ) :
+    (∀ θ, E (π - θ) ℓ = E θ ℓ) ↔ (∀ θ, E θ (-ℓ) = E θ ℓ) := by
+  constructor
+  · intro h θ; rw [← hcov]; exact h θ
+  · intro h θ; rw [hcov]; exact h θ
+
+/-- **A residue-sensitive energy is chiral**: Part D's achirality hypothesis fails. -/
+theorem chiral_of_residue_odd (E : ℝ → ℚ → ℝ) (hcov : ∀ θ ℓ, E (π - θ) ℓ = E θ (-ℓ))
+    (ℓ : ℚ) (θ₀ : ℝ) (hodd : E θ₀ (-ℓ) ≠ E θ₀ ℓ) : ¬ ∀ θ, E (π - θ) ℓ = E θ ℓ := by
+  intro h
+  exact hodd ((mirror_symmetric_iff_residue_even E hcov ℓ).1 h θ₀)
+
+/-- **The Bring residue is not its own mirror in `ℚ/ℤ`**: no integer shift takes `1/6` to `−1/6`. -/
+theorem bring_residue_not_self_mirror :
+    ∀ n : ℤ, -fibreLinkingResidue (-6) ≠ fibreLinkingResidue (-6) + n := by
+  intro n h
+  exact fibre_linking_residue_chiral ⟨-n, by push_cast; linarith⟩
+
+end PartG
 
 end QOU.MassTheory.SegmentCollision
