@@ -57,7 +57,7 @@ qou-99qc, reading 3 at every level).
 |---|---|---|
 | qou-5zl1 trace factorisation | Lean agent relaunched; uncommitted `MarkovBondLetter.lean` | 4 steps: tower instance via `heckeIncl` + T2, bond-letter law, disjoint-block multiplicativity, factorisation; reuse IsMarkov n=2,3,4 from #7729 |
 | #7612 bond-letter (qou-slz5) | open | land with/under 5zl1 |
-| qou-uir6 Ω₂ vs D7 | **owner decision pending** (i/ii/iii; rec. ii+iii) | none until ruled |
+| qou-uir6 Ω₂ vs D7 | **owner decision pending** (i/ii/iii; rec. ii+iii) | ruled (ii)+(iii) 2026-10-12: report full-window scan as the result; relabel D numbers as a two-row diagnostic; keep beans open |
 | #7728 certificates + tower trace to A=16 | owner picked 1+2+3 | Rust/MPFR port (19F, 20Ne); write `tr_markov_d` from tower probe; Yang–Baxter structure for A=40; note f_pauli truncation-knob finding |
 | #7579 Xbot complement (qou-as81) | green, rebased | merge on owner go; then qou-r9a6 (ingest Murota vs prove L♮ criterion) |
 | qou-fxym REV lower bound | owner said "go" after #7731 | prove M_n ≥ A√(2n) − O(1) |
@@ -66,8 +66,8 @@ qou-99qc, reading 3 at every level).
 
 ## Owner decisions still open (one place)
 
-1. **Ω₂ reconciliation (qou-uir6)** — stream 4.
+1. ~~**Ω₂ reconciliation (qou-uir6)**~~ — **RULED 2026-10-12: (ii)+(iii)**; relayed to stream 4; beans stay open.
 2. **Quark sign (#7718)** — stream 3.
-3. **Dead-label group B (#7586)** — stream 1.
+3. ~~**Dead-label group B (#7586)**~~ — **RULED 2026-10-12: point at removal commits**; already done on the branch (`da68fa0a32`, audit 0 dead).
 4. **KG viewer publish path** — stream 1 (explanation owed first).
 5. **wedderburn-weight-canonical status / qou-ng7j vocabulary** — stream 1.
