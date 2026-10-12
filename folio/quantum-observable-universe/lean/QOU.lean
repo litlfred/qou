@@ -1628,3 +1628,4 @@ import QOU.MassTheory.SegmentCollisionDatum
 import QOU.Brings.BringConjugationChirality
 import QOU.Brings.BringCoverTower
 import QOU.Brings.BringDescendingTower
+import QOU.Brings.BringUTContactChirality
