@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:09Z
-updated_at: 2026-10-12T20:18:03Z
+updated_at: 2026-10-12T20:41:54Z
 parent: qou-xhci
 ---
 
@@ -110,3 +110,11 @@ Do not close.
 - S6: the ribbon_hecke application.
 
 Do not close.
+
+
+### 2026-10-12 — S3 DONE: BraidedCategory (DH c), sorry-free
+- Braiding β_{X,Y} = reidx(swap)·exp(iπℏ t^{sl}_{X,Y}) (Drinfeld/Braiding.lean): equivariant, invertible, natural. sl₂ residue required (gl₂ scalar ½|X||Y| breaks naturality across word lengths).
+- Block hexagon hexagon_sl (Drinfeld/Hexagon.lean) from BlockResidues.hexagon_blocks via KZHexagonCentral.hexagon_rearranged; gl₂/sl₂ scalars central and cancel.
+- Matrix hexagons hexagon_fwd_mat / hexagon_rev_mat (reverse = forward block identity with blocks reversed); instance in Drinfeld/Braided.lean.
+- #print axioms instBraidedCategoryDH = [propext, Classical.choice, Quot.sound]. Commits 0fa2667266, 3f4d77881f (PR #7743).
+- OPEN: S4 rigidity for all objects (ν ≠ 0 currently only for ‖ℏ‖ ≤ 1/12, ZigZag.lean; transcendental ∧ small needed jointly); S5 twist/ribbon; S6.
