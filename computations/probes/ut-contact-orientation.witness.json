@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-10-12T19:51:21.321508+00:00",
-  "commitSha": "4b34e5dbe1b77717eaf74901970d9f42ec88dd73",
+  "computedAt": "2026-10-12T20:01:42.426443+00:00",
+  "commitSha": "e1d51cccd4ed4c892ac5596a6e4dca594410b479",
   "assertions": [
     {
       "name": "contact_volume_eq_minus_one_over_y_squared",
@@ -38,14 +38,42 @@
       "expected": "1",
       "passed": true,
       "source": "Lean iota_lift_det"
+    },
+    {
+      "name": "geodesic_spray_is_reeb_alpha_R_eq_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean reeb_alpha_eq_one"
+    },
+    {
+      "name": "geodesic_spray_is_reeb_contraction_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean reeb_contraction_zero"
+    },
+    {
+      "name": "dalpha_components_match_lean_hand_entries",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "hand-entered derivatives in BringUTContactChirality.lean"
+    },
+    {
+      "name": "spray_at_theta_pi_over_2_is_vertical_geodesic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "x = const is a geodesic of the upper half-plane"
     }
   ],
   "allPassed": true,
   "durationMs": 14,
   "computation": "ut-contact-orientation",
   "scriptFile": "ut_contact_orientation_probe.py",
-  "scriptHash": "a25503a49772",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5b8e593887e7",
+  "scriptCommitSha": "e1d51cccd4ed4c892ac5596a6e4dca594410b479",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

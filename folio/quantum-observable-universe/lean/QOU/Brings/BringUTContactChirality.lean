@@ -48,7 +48,8 @@ reversed (§3), and conjugation does not touch it (§2). So once `q₀ > 1` is f
 preference between `σ` and `σ⁻¹` is determined. What remains is a single **global** sign
 convention, "a positive crossing is positive for `α ∧ dα`", not a per-collision choice. That bit
 is equivalent to `q₀ > 1` versus `q₀ < 1`, which the framework has already spent. It is a
-convention to record, not a parameter to fit.
+convention to record, not a parameter to fit. **§4 below removes even that bit** for strands that
+follow the Reeb flow: `α` fixes their direction and the ambient orientation together.
 
 The per-collision `ChiralityMatching` class (`letterSign_conj`) has the wrong shape for
 `UT(Σ₄)`: chirality there is global, not a property of where on `Σ₄` a collision sits.
@@ -103,5 +104,46 @@ theorem euler_chiral (e : ℤ) (he : e ≠ 0) : e ≠ -e := by
 theorem bring_link_chiral :
     linkEulerNumber (canonicalDegree 4) ≠ -linkEulerNumber (canonicalDegree 4) := by
   rw [bring_link_euler]; norm_num
+
+/-! ## 4. The geodesic spray is the Reeb field, and Reeb strands are positively transverse
+
+The unit-speed geodesic spray on the upper half-plane (metric `(dx² + dy²)/y²`) is
+`R = y cos θ ∂ₓ + y sin θ ∂_y − cos θ ∂_θ`. It is the Reeb field of `α`: `α(R) = 1`
+(`reeb_alpha_eq_one`) and `ι_R dα = 0` (`reeb_contraction_zero`, with the components of `dα`
+entered by hand: `dα_{xy} = cos θ / y²`, `dα_{xθ} = sin θ / y`, `dα_{yθ} = −cos θ / y`; checked
+symbolically in `ut_contact_orientation_probe.py`).
+
+**Consequence (the one bit, removed).** A strand that follows the Reeb flow has `α > 0` on its
+tangent, i.e. it is *positively transverse* to `ξ = ker α`. So `α` alone fixes both the
+direction of every strand and the orientation `α ∧ dα` of the ambient manifold, and with them
+the sign of every crossing between two such strands (Bennequin: closed braids transverse to a
+contact structure have crossing signs measured in the contact orientation). Together with the
+corpus's Hecke ↔ skein dictionary (`σ = L₊`, AGENTS.md §7a) and `q₀ > 1`, the preference between
+`σ` and `σ⁻¹` at a collision of Reeb strands is **derived**: no convention is left to choose.
+
+What this rests on, stated rather than hidden: the owner's picture that particle strands follow
+the Reeb (geodesic) flow of `UT(Σ₄)`. That is the framework's modelling input, not a theorem here.
+
+-- Ref: Bennequin, *Entrelacements et équations de Pfaff* (1983); Geiges, *An Introduction to
+   Contact Topology*, §1.5 (geodesic flow as Reeb flow). -/
+
+/-- **`α(R) = 1`** for the geodesic spray `R = (y cos θ, y sin θ, −cos θ)`. -/
+theorem reeb_alpha_eq_one (y θ : ℝ) (hy : y ≠ 0) :
+    (cos θ / y) * (y * cos θ) + (sin θ / y) * (y * sin θ) + 0 * (-cos θ) = 1 := by
+  have h := sin_sq_add_cos_sq θ
+  field_simp
+  linear_combination h
+
+/-- **`ι_R dα = 0`**: the three components `Σᵢ Rⁱ dα_{ij}` vanish. -/
+theorem reeb_contraction_zero (y θ : ℝ) (hy : y ≠ 0) :
+    (y * sin θ) * (-(cos θ / y ^ 2)) + (-cos θ) * (-(sin θ / y)) = 0 ∧
+    (y * cos θ) * (cos θ / y ^ 2) + (-cos θ) * (cos θ / y) = 0 ∧
+    (y * cos θ) * (sin θ / y) + (y * sin θ) * (-(cos θ / y)) = 0 := by
+  refine ⟨?_, ?_, ?_⟩ <;> field_simp <;> ring
+
+/-- **Reeb strands are positively transverse**: `α(R) > 0`. -/
+theorem reeb_positively_transverse (y θ : ℝ) (hy : y ≠ 0) :
+    0 < (cos θ / y) * (y * cos θ) + (sin θ / y) * (y * sin θ) + 0 * (-cos θ) := by
+  rw [reeb_alpha_eq_one y θ hy]; norm_num
 
 end QOU.Brings.UTContactChirality

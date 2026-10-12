@@ -68,6 +68,22 @@ def main() -> int:
     check("conjugation_lift_is_orientation_preserving", sp.simplify(sp.sympify(rows["conjugation z -> -conj(z)"]["jacobian_det"]) - 1) == 0,
           "Lean iota_lift_det")
 
+    # the geodesic spray R = (y cosθ, y sinθ, −cosθ) is the Reeb field: α(R) = 1, ι_R dα = 0
+    R = [y * sp.cos(t), y * sp.sin(t), -sp.cos(t)]
+    alphaR = sp.simplify(sum(a * r for a, r in zip(ALPHA, R)))
+    dd = lambda i, j: sp.diff(ALPHA[j], V[i]) - sp.diff(ALPHA[i], V[j])  # noqa: E731
+    contr = [sp.simplify(sum(R[i] * dd(i, j) for i in range(3))) for j in range(3)]
+    comps = {"dxy": sp.simplify(dd(0, 1)), "dxθ": sp.simplify(dd(0, 2)), "dyθ": sp.simplify(dd(1, 2))}
+    print("alpha(R) =", alphaR, "  iota_R dalpha =", contr, "  dalpha components:", comps)
+    check("geodesic_spray_is_reeb_alpha_R_eq_1", sp.simplify(alphaR - 1) == 0, "Lean reeb_alpha_eq_one")
+    check("geodesic_spray_is_reeb_contraction_zero", all(c == 0 for c in contr), "Lean reeb_contraction_zero")
+    check("dalpha_components_match_lean_hand_entries",
+          sp.simplify(comps["dxy"] - sp.cos(t) / y ** 2) == 0 and sp.simplify(comps["dxθ"] - sp.sin(t) / y) == 0
+          and sp.simplify(comps["dyθ"] + sp.cos(t) / y) == 0, "hand-entered derivatives in BringUTContactChirality.lean")
+    # vertical geodesic sanity: at θ = π/2 the spray is y ∂_y (the geodesic x = const)
+    check("spray_at_theta_pi_over_2_is_vertical_geodesic", [sp.simplify(r.subs(t, sp.pi / 2)) for r in R] == [0, y, 0],
+          "x = const is a geodesic of the upper half-plane")
+
     ok_all = all(ok for _, ok, _ in checks)
     w = WitnessBuilder("ut-contact-orientation", engine="sympy")
     for name, ok, src in checks:

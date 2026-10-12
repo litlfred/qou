@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T19:58:52Z
+updated_at: 2026-10-12T20:02:06Z
 parent: qou-v2om
 ---
 
@@ -70,3 +70,7 @@ CORRECTION to my earlier claim 'metric-only Bring energies are achiral': that ho
 2. Conjugation lifts to a STRICT contactomorphism (pullback α = α, det +1); α is metric-defined so every isometry's lift preserves it (dilation, inversion checked). Conjugation cannot carry chirality on UT(Σ₄).
 3. UT(Σ₄) is chiral: e = −6 ≠ 0, no fibre-preserving orientation reversal (fibre-preservation of homeos for SL̃₂ geometry is cited, not proved).
 Verdict: on UT(Σ₄) the σ/σ⁻¹ preference is fixed by (canonical contact orientation, q₀ > 1) up to ONE global sign convention ('positive crossing = positive for α∧dα'), equivalent to the q₀ > 1 choice already made. ChiralityMatching (per-collision, via conjugation) has the wrong shape for UT(Σ₄) and should not get an instance. Remaining derivation gap (unchanged): that the Hecke q is the quantization parameter of Σ₄ / UT(Σ₄). Note: the probe's first run failed on the inversion check because my pushed-angle formula had a spurious +π (w' = 1/z², angle θ − 2 arg z); fixed before commit.
+
+
+## 2026-10-12 — the last bit removed (for Reeb strands)
+The Hecke↔skein identification is the corpus's own dictionary (AGENTS.md §7a: σ = L₊, Hecke relation ↔ L₊ − L₋ = (q − q⁻¹)L₀), so 'is the Hecke q the skein parameter' is settled by convention; the open question was only what orients crossings in UT(Σ₄). Proved (BringUTContactChirality §4, exit 0; probe 9/9): the geodesic spray R = (y cos θ, y sin θ, −cos θ) is the Reeb field of α (α(R) = 1, ι_R dα = 0), so Reeb strands are positively transverse to ker α. α then fixes both strand direction and ambient orientation, hence every crossing sign (Bennequin, cited). With §7a and q₀ > 1, the σ/σ⁻¹ preference at a collision of Reeb strands is DERIVED, no convention left. Input stated, not proved: the owner's picture that strands follow the Reeb flow. Deliberately not done: an instance of ChiralityMatching (wrong shape on UT).
