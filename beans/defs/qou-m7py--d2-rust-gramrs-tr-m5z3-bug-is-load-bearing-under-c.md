@@ -476,3 +476,17 @@ do with the corpus is put to the owner.
   `pn_count`). Each value now carries `method`: v9's own trace, or the tower
   probe's. A Rust port (for 19F/20Ne) and a structure search for A = 40 are
   under way.
+
+## 2026-10-12 (stream 4, session_01PmZzY27QHceKGXwNivRt64) — Rust/MPFR port of the tower trace
+
+`tools/hecke-engine/src/bin/two_row_tower_trace.rs` (`two-row-tower-trace <Z> <N>`). Same element,
+same convention-D two-row weights, same seminormal basis as the Python probe, but computed
+**column by column**: `chi(E) = Σ_j (E e_j)_j`, each `E e_j` by applying the sparse factors
+`a + bσ_i` to one vector in reverse order. Memory O(d) per thread instead of O(Catalan(A)),
+which is what makes A = 19, 20 possible at all (Catalan(20) ≈ 6.6e9 entries). rug/MPFR at 300
+bits, q0 from its 50-digit string, rayon over columns (4 threads). Self-checks as the probe
+(worst residual 1.2e-89).
+
+Validated against the Python witness, all 60 printed digits identical: 6Li, 9Be, 12C, 16O.
+16O: 71 s wall (Python: ~48 min). Throughput ~6e7 factor-applications/s on 4 threads;
+projected 19F ≈ 1.4 h, 20Ne ≈ 6 h. Runs launched; results to follow.
