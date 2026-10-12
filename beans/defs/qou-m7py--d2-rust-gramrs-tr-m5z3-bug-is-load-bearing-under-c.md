@@ -479,3 +479,66 @@ fsh-guts, and have v9 compute the real trace. Done, and merged as 33d54fd71b.
 re-anchor from; they need their own generators re-run. And 23 v9 nuclei have no
 trace, because v9 strips them; a strip-free build of A ≥ 9 did not fit in memory
 here (12B).
+
+## 2026-10-11 (3) — the other 16 certificates, and the trace past A = 8
+
+- `hecke-modular` (v11) evaluated at a local literal `1.10998` while recording
+  `gram::Q_0`. Fixed, and all 15 hecke-crt / hecke-modular certificates are
+  regenerated at the proton pin (`4he-crt` carries residues only). Issue #7717.
+- **Finding:** for builds that strip words mid-construction, `f_pauli`
+  depends on the strip threshold, not only on the nucleus. Measured on 11B:
+  0.31 / 0.89 / 2.92 / 2.80 / 9.25 / 31.9 / 81.4 at thresholds
+  1e3 / 5e3 / 1e4 / 2e4 / 5e4 / 1e5 / 2e5. The old 11B/12C/14N/16O
+  certificates recorded no argv, so their threshold cannot be recovered.
+- **Trace for A ≥ 9:** `computations/probes/markov_trace_two_row_tower_probe.py`.
+  Under convention D only two-row shapes carry weight,
+  `y_(n-k,k) = [n-2k+1]_q / [2]_q^n`, so the trace is a sum of two-row
+  seminormal characters built up the Hecke tower (Gelfand–Tsetlin basis,
+  each level embedded block-diagonally into the next). It agrees with v9's
+  `tr_markov_d` to all 60 printed digits on all 12 nuclei v9 could do. 63
+  isotopes computed (Z = 1…8, A ≤ 16), covering every certificate nucleus
+  with 9 ≤ A ≤ 16. Cost grows like Catalan(A): A = 14 takes about 3 min,
+  A = 16 about 48 min, in Python. 19F, 20Ne, 40Ar, 40Ca and 60Co are still
+  out of reach.
+- 2026-10-12 (owner "1 2 3"): the tower values are written into 49
+  certificates' `tr_markov_d` by `tools/hecke-engine/scripts/attach_tower_trace.py`
+  (textual splice, so nothing else in a file changes; pn checked against
+  `pn_count`). Each value now carries `method`: v9's own trace, or the tower
+  probe's. A Rust port (for 19F/20Ne) and a structure search for A = 40 are
+  under way.
+
+## 2026-10-12 (stream 4, session_01PmZzY27QHceKGXwNivRt64) — Rust/MPFR port of the tower trace
+
+`tools/hecke-engine/src/bin/two_row_tower_trace.rs` (`two-row-tower-trace <Z> <N>`). Same element,
+same convention-D two-row weights, same seminormal basis as the Python probe, but computed
+**column by column**: `chi(E) = Σ_j (E e_j)_j`, each `E e_j` by applying the sparse factors
+`a + bσ_i` to one vector in reverse order. Memory O(d) per thread instead of O(Catalan(A)),
+which is what makes A = 19, 20 possible at all (Catalan(20) ≈ 6.6e9 entries). rug/MPFR at 300
+bits, q0 from its 50-digit string, rayon over columns (4 threads). Self-checks as the probe
+(worst residual 1.2e-89).
+
+Validated against the Python witness, all 60 printed digits identical: 6Li, 9Be, 12C, 16O.
+16O: 71 s wall (Python: ~48 min). Throughput ~6e7 factor-applications/s on 4 threads;
+projected 19F ≈ 1.4 h, 20Ne ≈ 6 h. Runs launched; results to follow.
+
+## 2026-10-12 — follow-up (3): Yang–Baxter / R-matrix structure for A = 40. FINDINGS ONLY, no result.
+
+Probe `computations/probes/v9_element_ybe_structure_probe.py`, 5/5, exact sympy over Q(q), no float.
+
+- **B1 Baxterisation (holds).** All three v9 factors are the Jones-Baxterised R-matrix
+  `R(x) = xσ − x⁻¹σ⁻¹` up to scalars: pp = lim x⁻¹R(x) (x→∞), nn = lim −xR(x) (x→0), pn = −iR(i).
+- **B2 YBE (holds).** `R₁(x)R₂(xy)R₁(y) = R₂(y)R₁(xy)R₂(x)` on every irrep of H₃.
+- **B3 — but no difference-type spectral parameters fit.** A vertex-model reading needs
+  `x_ik = u_i/u_k`; pp would need `R(1)`, and `R(1) = h·1` is a scalar, not σ. (A product form
+  `x_ik = u_i u_k` fits only in the degenerate limit u_p→∞, u_n = i/u_p→0.)
+- **B4 — and the labels are by POSITION, not strand.** At A = 6, 13 of 15 crossings carry an (i,k)
+  label that is not the pair of strands actually meeting there. So the v9 element is not a vertex-model
+  partition function on its own braid diagram, and commuting-transfer-matrix / Bethe-ansatz
+  integrability does not apply to it as defined.
+- **B5 — the one exact reduction:** the last factor is the only use of σ_{A−2}, so
+  `tr(E) = (a + b z_D)·tr(E')` (Markov). It does not iterate (σ_{A−3} is used twice).
+
+**Cost wall for A = 40.** The irrep decomposition is already optimal for this element:
+column work `L·Catalan(A)` ≈ 780 × 2.6e21. No route to A = 40 was found. Scope (a): this is about the
+v9 element *as constructed*; whether a strand-labelled element (a modelling change, owner's call)
+would be integrable is untested.

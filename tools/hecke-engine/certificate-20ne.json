@@ -1,17 +1,37 @@
 {
-  "elapsed_seconds": 345.818900258,
+  "elapsed_seconds": 439.297377625,
   "engine": {
     "name": "hecke-modular",
     "version": "0.11.0"
   },
-  "f_pauli_f64": 1.1338339951516179,
+  "f_pauli_f64": 1.1338422946512736,
+  "generation": {
+    "argv": [
+      "hecke-modular",
+      "10",
+      "10"
+    ],
+    "binary": "hecke-modular",
+    "commit": "33d54fd71b",
+    "engine_version": "0.8.0",
+    "q0": 1.1099785827513808,
+    "q0_pin": "proton",
+    "reproduce": "cargo run --release --bin hecke-modular -- 10 10"
+  },
   "isotope": {
     "a": 20,
     "n": 10,
     "symbol": "ne",
-    "z": 10,
-    "name": "20Ne"
+    "z": 10
   },
-  "net_f64": -225944879588.4866,
-  "tr_alt_f64": -256183985507.86502
+  "l1_norm_f64": 1446678486568884.8,
+  "net_f64": -225923132904.17078,
+  "tr_alt_f64": -256161203426.86966,
+  "tr_markov_d": {
+    "computed": false,
+    "reason": "A > 16: beyond the two-row tower probe so far, and v9's build was stripped mid-construction",
+    "z": "q^3/(q^2+1)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "normalisation": "divided by 2^pn_count, like the *_f64 fields"
+  }
 }
