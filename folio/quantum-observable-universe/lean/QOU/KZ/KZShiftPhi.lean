@@ -79,6 +79,31 @@ theorem Φ_shift_left (A B z : R) (hA : NonResonant A) (hB : NonResonant B)
   calc _ = Φ (A + z) B hAz hB * (Φ B A hB hA * Φ A B hA hB) := by rw [i2, mul_one]
     _ = _ := by rw [← mul_assoc, i1, one_mul]
 
+/-- **`Φ(0, B) = 1`** (the unitor compatibility of the associator). -/
+theorem Φ_zero_left (B : R) (h0 : NonResonant (0 : R)) (hB : NonResonant B) :
+    Φ 0 B h0 hB = 1 := by
+  have e₁ : H0 B 0 hB = delta0 :=
+    formalGauge_unique _ _ _ (fun k hk => (hB k hk).1) (H0_zero _ _ hB) (by simp [delta0])
+      (H0_gauge _ _ hB) (isFormalGauge_delta0 B)
+  obtain ⟨-, hΦ⟩ := phiKZ_spec (0 : R) B (H0 0 B h0) (H0 B 0 hB) (H0_zero _ _ h0)
+    (H0_gauge _ _ h0) (H0_zero _ _ hB) (H0_gauge _ _ hB)
+  have ht : (1 / 2 : ℝ) ∈ Set.Ioo (0 : ℝ) 1 := ⟨by norm_num, by norm_num⟩
+  have h := hΦ (1 / 2) ht
+  have hbin := series_eq_tpow_one_sub B (H0 0 B h0) (H0_zero _ _ h0) (H0_gauge _ _ h0) ht
+  have hG₁ : G₁ B (H0 B 0 hB) (1 / 2) = FuchsianAnalytic.tpow B (1 - 1 / 2) := by
+    rw [G₁, e₁, series_delta0, one_mul]
+  have hG₀ : G₀ 0 (H0 0 B h0) (1 / 2) = FuchsianAnalytic.tpow B (1 - 1 / 2) := by
+    rw [G₀, tpow_zero, mul_one, hbin]
+  rw [hG₀, hG₁] at h
+  have hu := isUnit_tpow B (1 - 1 / 2)
+  exact (hu.mul_left_cancel ((mul_one _).trans h)).symm
+
+/-- **`Φ(A, 0) = 1`.** -/
+theorem Φ_zero_right (A : R) (hA : NonResonant A) (h0 : NonResonant (0 : R)) :
+    Φ A 0 hA h0 = 1 := by
+  have := (Φ_swap_mul A 0 hA h0).1
+  rwa [Φ_zero_left A h0 hA, one_mul] at this
+
 theorem Φ_congr {A A' B B' : R} (eA : A = A') (eB : B = B') (hA : NonResonant A)
     (hB : NonResonant B) (hA' : NonResonant A') (hB' : NonResonant B') :
     Φ A B hA hB = Φ A' B' hA' hB' := by

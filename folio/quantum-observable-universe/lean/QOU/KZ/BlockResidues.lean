@@ -1,0 +1,239 @@
+import QOU.KZ.NonResonantInt
+import QOU.KZ.KZShiftPhi
+import QOU.KZ.GLnKZ
+
+/-!
+# Block KZ residues on `V^{⊗N}` and the pentagon for every four-block partition
+
+Stage S2 of bean `qou-zoyv`. For pairwise disjoint sets of tensor legs `X, Y ⊆ {0, …, N−1}`
+the block Casimir is `t_{X,Y} = ∑_{i ∈ X, j ∈ Y} P_{ij}` (`tB`). This is the split `𝔤𝔩_n`
+Casimir between the sub-tensor products `V^{⊗X}` and `V^{⊗Y}`
+(`GLnResidues.casimirLeg_eq_flipP`). It is the residue of the associator `α_{X,Y,Z}` of the
+Drinfeld category.
+
+* `commute_flip_tB`: `P_{ab}` commutes with `t_{X,Y}` when the transposition `(ab)` preserves
+  `X` and `Y`. Conjugation by `P_{ab}` permutes the summands.
+* `blockRes_rel`: the infinitesimal pure-braid relations `KZ4.Res.Rel` for the block residues
+  of any four pairwise disjoint blocks.
+* `nonResonant_smul_tB…`: every block residue and every sum of block residues is an integer
+  matrix, so `ℏ` times it is non-resonant for transcendental `ℏ`
+  (`NonResonantInt.nonResonant_smul_intMatrix`).
+* `pentagon_blocks`: Drinfeld's pentagon `Φ^{234} Φ^{1,23,4} Φ^{123} = Φ^{1,2,34} Φ^{12,3,4}` for
+  the block residues of any four disjoint blocks. This is the identity behind Mathlib's
+  `MonoidalCategory.pentagon` for `α_{X,Y,Z} = Φ(ℏ t_{X,Y}, ℏ t_{Y,Z})`.
+
+Sorry-free.
+
+-- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-/
+
+namespace QOU.KZ.BlockResidues
+
+open QOU.KZ.FuchsianFormal QOU.KZ.GLnResidues QOU.KZ.KZ4
+
+section Algebra
+
+variable (K : Type*) [Field K] (n : ℕ) {N : ℕ}
+
+/-- The block Casimir `t_{X,Y} = ∑_{i ∈ X, j ∈ Y} P_{ij}`. -/
+def tB (X Y : Finset (Fin N)) : Matrix (Fin N → Fin n) (Fin N → Fin n) K :=
+  ∑ i ∈ X, ∑ j ∈ Y, flipP K n i j
+
+variable {K n}
+
+/-- Conjugation of a flip by a flip. -/
+theorem flip_mul_flip (a b i j : Fin N) :
+    flipP K n a b * flipP K n i j =
+      flipP K n (Equiv.swap a b i) (Equiv.swap a b j) * flipP K n a b := by
+  simp only [flipP, permP_mul]
+  congr 1
+  rw [Equiv.swap_apply_apply, Equiv.swap_inv]
+  simp only [← mul_assoc, Equiv.swap_mul_self, one_mul]
+
+/-- Reindexing a sum over a set preserved by a transposition. -/
+theorem sum_swap_eq {M : Type*} [AddCommMonoid M] (a b : Fin N) (X : Finset (Fin N))
+    (hX : ∀ x, Equiv.swap a b x ∈ X ↔ x ∈ X) (g : Fin N → M) :
+    ∑ i ∈ X, g (Equiv.swap a b i) = ∑ i ∈ X, g i :=
+  Finset.sum_bij' (fun i _ => Equiv.swap a b i) (fun i _ => Equiv.swap a b i)
+    (fun i hi => (hX i).2 hi) (fun i hi => (hX i).2 hi) (fun i _ => by simp)
+    (fun i _ => by simp) (fun i _ => rfl)
+
+/-- `P_{ab}` commutes with `t_{X,Y}` when `(ab)` preserves both blocks. -/
+theorem commute_flip_tB (a b : Fin N) (X Y : Finset (Fin N))
+    (hX : ∀ x, Equiv.swap a b x ∈ X ↔ x ∈ X) (hY : ∀ x, Equiv.swap a b x ∈ Y ↔ x ∈ Y) :
+    Commute (flipP K n a b) (tB K n X Y) := by
+  show flipP K n a b * tB K n X Y = tB K n X Y * flipP K n a b
+  simp only [tB, Finset.mul_sum, Finset.sum_mul]
+  calc ∑ i ∈ X, ∑ j ∈ Y, flipP K n a b * flipP K n i j
+      = ∑ i ∈ X, ∑ j ∈ Y, flipP K n (Equiv.swap a b i) (Equiv.swap a b j) * flipP K n a b :=
+        Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ => flip_mul_flip a b i j
+    _ = ∑ i ∈ X, ∑ j ∈ Y, flipP K n i (Equiv.swap a b j) * flipP K n a b :=
+        sum_swap_eq a b X hX (fun i => ∑ j ∈ Y,
+          flipP K n i (Equiv.swap a b j) * flipP K n a b)
+    _ = _ := Finset.sum_congr rfl fun i _ =>
+        sum_swap_eq a b Y hY (fun j => flipP K n i j * flipP K n a b)
+
+/-- A transposition of two points both inside or both outside `X` preserves `X`. -/
+theorem swap_mem_iff {a b : Fin N} {X : Finset (Fin N)} (h : a ∈ X ↔ b ∈ X) (x : Fin N) :
+    Equiv.swap a b x ∈ X ↔ x ∈ X := by
+  by_cases hxa : x = a
+  · subst hxa; simp [h]
+  · by_cases hxb : x = b
+    · subst hxb; simp [h]
+    · rw [Equiv.swap_apply_of_ne_of_ne hxa hxb]
+
+theorem tB_union_left {X X' Y : Finset (Fin N)} (h : Disjoint X X') :
+    tB K n (X ∪ X') Y = tB K n X Y + tB K n X' Y := by
+  simp only [tB, Finset.sum_union h]
+
+theorem tB_union_right {X Y Y' : Finset (Fin N)} (h : Disjoint Y Y') :
+    tB K n X (Y ∪ Y') = tB K n X Y + tB K n X Y' := by
+  simp only [tB, Finset.sum_union h, Finset.sum_add_distrib]
+
+theorem tB_comm (X Y : Finset (Fin N)) : tB K n X Y = tB K n Y X := by
+  rw [tB, tB, Finset.sum_comm]
+  simp only [flipP, Equiv.swap_comm]
+
+/-- A flip `P_{ab}` with `a ∈ X₁`, `b ∈ X₂` commutes with `t_{U,W}` if each of `U`, `W` contains
+both or neither of `a, b`. -/
+theorem commute_tB_tB {X₁ X₂ U W : Finset (Fin N)}
+    (hU : ∀ a ∈ X₁, ∀ b ∈ X₂, (a ∈ U ↔ b ∈ U)) (hW : ∀ a ∈ X₁, ∀ b ∈ X₂, (a ∈ W ↔ b ∈ W)) :
+    Commute (tB K n X₁ X₂) (tB K n U W) :=
+  Commute.sum_left _ _ _ fun a ha => Commute.sum_left _ _ _ fun b hb =>
+    commute_flip_tB a b U W (swap_mem_iff (hU a ha b hb)) (swap_mem_iff (hW a ha b hb))
+
+end Algebra
+
+/-! ### The four-block residues -/
+
+section Blocks
+
+variable (n : ℕ) {N : ℕ}
+
+/-- Four pairwise disjoint blocks of tensor legs. -/
+structure Blocks (N : ℕ) where
+  X1 : Finset (Fin N)
+  X2 : Finset (Fin N)
+  X3 : Finset (Fin N)
+  X4 : Finset (Fin N)
+  d12 : Disjoint X1 X2
+  d13 : Disjoint X1 X3
+  d14 : Disjoint X1 X4
+  d23 : Disjoint X2 X3
+  d24 : Disjoint X2 X4
+  d34 : Disjoint X3 X4
+
+attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
+
+/-- The KZ residues `ℏ t_{X_a, X_b}` of a four-block partition. -/
+noncomputable def blockRes (c : ℂ) (B : Blocks N) : Res (Matrix (Fin N → Fin n) (Fin N → Fin n) ℂ) where
+  t12 := c • tB ℂ n B.X1 B.X2
+  t13 := c • tB ℂ n B.X1 B.X3
+  t23 := c • tB ℂ n B.X2 B.X3
+  t24 := c • tB ℂ n B.X2 B.X4
+  t34 := c • tB ℂ n B.X3 B.X4
+
+theorem not_mem_of_disjoint {X Y : Finset (Fin N)} (h : Disjoint X Y) {a : Fin N} (ha : a ∈ X) :
+    a ∉ Y := Finset.disjoint_left.1 h ha
+
+/-- **The infinitesimal pure-braid relations for block residues.** -/
+theorem blockRes_rel (c : ℂ) (B : Blocks N) : (blockRes n c B).Rel := by
+  have nm := @not_mem_of_disjoint N
+  have smc : ∀ {x y : Matrix (Fin N → Fin n) (Fin N → Fin n) ℂ}, Commute x y →
+      Commute (c • x) (c • y) := fun h => (h.smul_left c).smul_right c
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩
+  · -- [t12, t34]
+    exact smc (commute_tB_tB
+      (fun a ha b hb => by simp [nm B.d13 ha, nm B.d23 hb])
+      (fun a ha b hb => by simp [nm B.d14 ha, nm B.d24 hb]))
+  · -- [t13, t24]
+    exact smc (commute_tB_tB
+      (fun a ha b hb => by simp [nm B.d12 ha, nm B.d23.symm hb])
+      (fun a ha b hb => by simp [nm B.d14 ha, nm B.d34 hb]))
+  · -- [t12, t13 + t23]
+    show Commute (c • tB ℂ n B.X1 B.X2) (c • tB ℂ n B.X1 B.X3 + c • tB ℂ n B.X2 B.X3)
+    rw [← smul_add, ← tB_union_left B.d12]
+    exact smc (commute_tB_tB (fun a ha b hb => by simp [ha, hb])
+      (fun a ha b hb => by simp [nm B.d13 ha, nm B.d23 hb]))
+  · -- [t23, t12 + t13]
+    show Commute (c • tB ℂ n B.X2 B.X3) (c • tB ℂ n B.X1 B.X2 + c • tB ℂ n B.X1 B.X3)
+    rw [← smul_add, ← tB_union_right B.d23]
+    exact smc (commute_tB_tB (fun a ha b hb => by simp [nm B.d12.symm ha, nm B.d13.symm hb])
+      (fun a ha b hb => by simp [ha, hb]))
+  · -- [t23, t24 + t34]
+    show Commute (c • tB ℂ n B.X2 B.X3) (c • tB ℂ n B.X2 B.X4 + c • tB ℂ n B.X3 B.X4)
+    rw [← smul_add, ← tB_union_left B.d23]
+    exact smc (commute_tB_tB (fun a ha b hb => by simp [ha, hb])
+      (fun a ha b hb => by simp [nm B.d24 ha, nm B.d34 hb]))
+  · -- [t24, t23 + t34]
+    show Commute (c • tB ℂ n B.X2 B.X4) (c • tB ℂ n B.X2 B.X3 + c • tB ℂ n B.X3 B.X4)
+    rw [← smul_add, tB_comm B.X2 B.X3, ← tB_union_right B.d24]
+    exact smc (commute_tB_tB (fun a ha b hb => by simp [nm B.d23 ha, nm B.d34.symm hb])
+      (fun a ha b hb => by simp [ha, hb]))
+
+/-! ### Integrality and non-resonance -/
+
+/-- The integer permutation matrix of `σ` on `V^{⊗N}`. -/
+def permZ (σ : Equiv.Perm (Fin N)) : Matrix (Fin N → Fin n) (Fin N → Fin n) ℤ :=
+  Matrix.of fun x y => if y ∘ σ = x then 1 else 0
+
+/-- The integer block Casimir. -/
+def tBZ (X Y : Finset (Fin N)) : Matrix (Fin N → Fin n) (Fin N → Fin n) ℤ :=
+  ∑ i ∈ X, ∑ j ∈ Y, permZ n (Equiv.swap i j)
+
+theorem permP_intCast (σ : Equiv.Perm (Fin N)) :
+    permP ℂ n σ = (Int.castRingHom ℂ).mapMatrix (permZ n σ) := by
+  ext x y
+  simp only [permP, permMat, permZ, RingHom.mapMatrix_apply, Matrix.map_apply, Matrix.of_apply,
+    Function.comp_def]
+  split_ifs <;> simp
+
+theorem tB_intCast (X Y : Finset (Fin N)) :
+    tB ℂ n X Y = (Int.castRingHom ℂ).mapMatrix (tBZ n X Y) := by
+  simp only [tB, tBZ, map_sum, flipP, permP_intCast]
+
+variable {n}
+
+/-- `ℏ M` is non-resonant for an integer matrix `M` and transcendental `ℏ`. -/
+theorem nonResonant_cast {c : ℂ} (hc : Transcendental ℚ c) (M : Matrix (Fin N → Fin n)
+    (Fin N → Fin n) ℤ) : NonResonant (c • (Int.castRingHom ℂ).mapMatrix M) :=
+  NonResonantInt.nonResonant_smul_intMatrix M c hc
+
+variable {c : ℂ} (hc : Transcendental ℚ c) (B : Blocks N)
+include hc
+
+theorem nr12 : NonResonant (blockRes n c B).t12 := by
+  simp only [blockRes, tB_intCast]; exact nonResonant_cast hc _
+theorem nr23 : NonResonant (blockRes n c B).t23 := by
+  simp only [blockRes, tB_intCast]; exact nonResonant_cast hc _
+theorem nr34 : NonResonant (blockRes n c B).t34 := by
+  simp only [blockRes, tB_intCast]; exact nonResonant_cast hc _
+theorem nr123 : NonResonant (blockRes n c B).T123 := by
+  simp only [Res.T123, blockRes, tB_intCast, ← smul_add, ← map_add]; exact nonResonant_cast hc _
+theorem nr234 : NonResonant (blockRes n c B).T234 := by
+  simp only [Res.T234, blockRes, tB_intCast, ← smul_add, ← map_add]; exact nonResonant_cast hc _
+theorem nr1213 : NonResonant ((blockRes n c B).t12 + (blockRes n c B).t13) := by
+  simp only [blockRes, tB_intCast, ← smul_add, ← map_add]; exact nonResonant_cast hc _
+theorem nr2434 : NonResonant ((blockRes n c B).t24 + (blockRes n c B).t34) := by
+  simp only [blockRes, tB_intCast, ← smul_add, ← map_add]; exact nonResonant_cast hc _
+theorem nr2324 : NonResonant ((blockRes n c B).t23 + (blockRes n c B).t24) := by
+  simp only [blockRes, tB_intCast, ← smul_add, ← map_add]; exact nonResonant_cast hc _
+theorem nr1323 : NonResonant ((blockRes n c B).t13 + (blockRes n c B).t23) := by
+  simp only [blockRes, tB_intCast, ← smul_add, ← map_add]; exact nonResonant_cast hc _
+
+/-- **The pentagon for every four-block partition of `V^{⊗N}`**, `ℏ` transcendental:
+`Φ^{234} Φ^{1,23,4} Φ^{123} = Φ^{1,2,34} Φ^{12,3,4}` with `t_{ab} = ℏ t_{X_a, X_b}`. -/
+theorem pentagon_blocks :
+    KZPentagon.Φ (blockRes n c B).t23 (blockRes n c B).t34 (nr23 hc B) (nr34 hc B) *
+      KZPentagon.Φ ((blockRes n c B).t12 + (blockRes n c B).t13)
+        ((blockRes n c B).t24 + (blockRes n c B).t34) (nr1213 hc B) (nr2434 hc B) *
+      KZPentagon.Φ (blockRes n c B).t12 (blockRes n c B).t23 (nr12 hc B) (nr23 hc B) =
+    KZPentagon.Φ (blockRes n c B).t12 ((blockRes n c B).t23 + (blockRes n c B).t24)
+        (nr12 hc B) (nr2324 hc B) *
+      KZPentagon.Φ ((blockRes n c B).t13 + (blockRes n c B).t23) (blockRes n c B).t34
+        (nr1323 hc B) (nr34 hc B) :=
+  KZShiftPhi.pentagon_drinfeld _ (blockRes_rel n c B) _ _ _ (nr123 hc B) (nr234 hc B) _ _ _ _
+
+end Blocks
+
+end QOU.KZ.BlockResidues

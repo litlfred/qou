@@ -225,6 +225,7 @@ import QOU.HeckeAlgebra.WedderburnUnconditional
 import QOU.HeckeAlgebra.SeminormalDimSmall
 import QOU.Glossary
 import QOU.KZ.AssociatorKZ
+import QOU.KZ.BlockResidues
 import QOU.KZ.Flat2D
 import QOU.KZ.FuchsianAnalytic
 import QOU.KZ.FuchsianConvergence
