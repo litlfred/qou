@@ -1,0 +1,16 @@
+---
+doc_id: ant-v14-n7-s
+doc_title: "Algebra & Number Theory"
+section_id: sec-078-2-motifs-algébriques-et-motifs-rigides
+section_title: "Motifs algébriques et motifs rigides"
+section_number: 2
+pages: 88-88
+source_pdf: ant-v14-n7-s.pdf
+source_sha256: ab695eddd565addf
+toc_source: outline
+---
+On commence cette section avec des rappels sur les motifs (algébriques et rigides) qui serviront dans
+la suite. On donne ensuite la construction du foncteur g
+Rig∗(voir (1-7)) et on démontre le théorème 1.7.
+On termine avec une construction de foncteurs de réalisation à valeurs dans les modules sur certaines
+dg-algèbres. On ﬁxe une Q-algèbre commutative 3 et on écrit souvent « ⊗» au lieu de « ⊗3 ».

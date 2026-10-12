@@ -9,7 +9,7 @@
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2103.07383v1",
+  "title": "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case",
   "contains": [
     "library/arxiv-2103.07383v1/sections/sec-front-matter",
     "library/arxiv-2103.07383v1/sections/sec-000",
@@ -22,7 +22,8 @@
     "library/arxiv-2103.07383v1/sections/sec-007",
     "library/arxiv-2103.07383v1/sections/sec-008",
     "library/arxiv-2103.07383v1/sections/sec-009",
-    "library/arxiv-2103.07383v1/sections/sec-010"
+    "library/arxiv-2103.07383v1/sections/sec-010",
+    "library/arxiv-2103.07383v1/sections/sec-011"
   ],
   "provenance": "ingested",
   "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
@@ -35,7 +36,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2103.07383v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2103.07383v1.pdf",
     "source_sha256": "9dca35ea16490ad864811e4b8eb0aacc6b34421bc333fb948f1d89b7258d1294",
     "pages": 31,

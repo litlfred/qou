@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-10-11T06:18:36Z
+updated_at: 2026-10-11T07:42:51Z
 parent: qou-d8c7
 ---
 
@@ -73,6 +73,17 @@ STILL OPEN (general r): the general-r model. That means the TL standard modules 
 **Still open.** No instance in the tree is yet proved to satisfy IsMarkov (markovTraceH2 / H3A / H4A would be the first); until one is, markov_trace_unique has no proved application. Dated audit docs citing the axiom were left as historical records.
 
 
+
+## 2026-10-11 — the concrete Markov traces satisfy (M3); markov_trace_unique now has applications (branch claude/markov-crosslevel-instances-2026-10-11, head 4add0ad405)
+
+New QOU/Hecke/MarkovTraceIsMarkov.lean, sorry-free, lean-direct -DautoImplicit=false -s 65536 exit 0 against a private shadow with the whole 43-module import cone rebuilt (cached oleans dated 2026-08-24 predate the sources). #print axioms on all 7 results: propext, Classical.choice, Quot.sound.
+- isMarkov_H2 / isMarkov_H3A / isMarkov_H4A: (markovTraceH2 R q z).IsMarkov, (markovTraceH3A K q z).IsMarkov, (markovTraceH4A K q z).IsMarkov, for EVERY z (Ocneanu's trace exists for every z; convention D is one specialisation). No instance failed (M3).
+- Method: closure lemma mem_of_mem_adjoin_of_mul_mem (a submodule containing 1 and closed under right multiplication by S contains adjoin S). Level 0: K·1. H3 level 1: coords 2..5 vanish, peel = H3.trM_markov_σ₁. H4 level 2: image of iota34, peel = trM4_markov_σ₂ + trM4_iota34_stabilizes. H4 level 1: iota34 of the H3 level-1 subspace, iota34_mulσ₁ + H3.trM_markov_σ₁. No word enumeration needed.
+- Payoff: markovTraceH2_unique / markovTraceH3A_unique / markovTraceH4A_unique — every MarkovTrace on the tree's H_n (n = 2,3,4) satisfying IsMarkov equals the concrete trace at its own z_param (first applications of markov_trace_unique). mixMarkov_not_isMarkov: the class-satisfying counterexample t_Z of MarkovTraceClassNotUnique is NOT (M3) (over fields with 6 != 0) — IsMarkov is exactly the missing condition.
+- Docstrings updated: Hecke/MarkovTrace.lean, IwahoriHecke/JonesNormalForm.lean, Archimedean/rj_canonical_inner_product.lean (comment-only). Recompiled importers: MarkovTransfer, MarkovBondFactor, hecke_mass_trace, tmli_constituent_composite_agreement, RossoJonesH4 (exit 0). NOT rebuilt (comment-only upstream change): JonesNormalFormQuot, Hecke/Wedderburn, ClosedFormInterfaceFactors, QOU/Hecke.lean.
+STILL OPEN: general-r Rosso–Jones; Ocneanu existence on H_n for n >= 5 (no MarkovTrace constructed there); linear independence of Jones words.
+
+
 ## 2026-10-11 — general-r infrastructure (branch claude/tl-standard-modules-2026-10-11, head 2842f35b43)
 
 Route taken: the V^{(x)r} Jimbo R-matrix model (V = R^2), uniformly in r, rather than explicit link-state W_{r,j}. All sorry-free, lean-direct exit 0 with -DautoImplicit=false, axioms propext/Classical.choice/Quot.sound. Generic [Field R], convention D z_D = q^3/(q^2+1).
@@ -83,3 +94,13 @@ Route taken: the V^{(x)r} Jimbo R-matrix model (V = R^2), uniformly in r, rather
 - computations/probes/rj_weight_space_trace_probe.py (exact sympy): MiddleWeightTraces (q^{2s} T_m = q^{s(r+1)} - q^{s(r-1)}, 0<m<r) holds for every coprime (r,s), r=2..5, s<=2r+1, and FAILS for every non-coprime case tested.
 
 STILL OPEN (not proved): (1) MiddleWeightTraces for general coprime (r,s) — the coprime vanishing is now isolated to this single weight-space statement; (2) explicit standard modules W_{r,j} as separate objects; (3) quantum Schur-Weyl identification tr_q = sum_j [j+1] tr_{W_{r,j}} / [2]^r. The task's piece 3 (traces on each W_{r,j}) is therefore not done in its stated form.
+
+
+## 2026-10-11 — MiddleWeightTraces proved for every coprime (r, s) (branch claude/rj-middle-weight-2026-10-11)
+
+New QOU/Archimedean/RossoJonesMiddle.lean. It is sorry-free and works over a generic [Field R]. Checked lean-direct with -DautoImplicit=false -s 65536: exit 0, against a private shadow in which the RossoJonesGeneral cone was rebuilt. #print axioms gives propext, Classical.choice, Quot.sound only.
+- middleWeightTraces_of_coprime (hq : q ≠ 0) (hcop : Nat.Coprime (n+1) p) : MiddleWeightTraces q n p.
+- rossoJones_of_coprime: unconditional Rosso–Jones on V^{(x)(n+1)} for gcd(n+1, p) = 1.
+- markov_rossoJones: the same, for every normalised cyclic Markov trace with z_D on any Hecke family, for coprime (r, s). Open item (1) of the previous entry is therefore CLOSED for coprime (r, s).
+- How it works. gam_eq_G gives an explicit matrix for γ. Three identities hold: γ = ρ + E K, ρ E = E ρ', K E = γ − ρ'. Here E is the U_q(sl2) raising operator and ρ, ρ' are weighted cyclic rotations. pow_decomp turns them into a telescoping identity. That gives T_{m+1}(γ^p) = T_{m+1}(ρ^p) + T_m(γ^p) − T_m(ρ'^p). Under gcd(n+1, p) = 1, rot^p fixes only the constant states, so the middle traces of ρ^p and ρ'^p vanish. Then T_m(γ^p) = q^{np} − (q^{n} q^{-2})^p for every 0 < m < n+1.
+STILL OPEN: the non-coprime case (torus links). The probe shows MiddleWeightTraces FAILS there, so a different statement is needed. Items (2) and (3) of the previous entry are untouched: explicit W_{r,j}, and quantum Schur–Weyl tr_q = Σ_j [j+1] tr_{W_{r,j}} / [2]^r. This bean stays open.
