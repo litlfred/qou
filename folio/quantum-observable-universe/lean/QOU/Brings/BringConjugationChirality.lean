@@ -18,6 +18,22 @@ a unique minimiser selects `φ = 0` (`even_unique_minimiser_eq_zero`): neither c
 **No metric-only Bring term is chiral.** It can be chiral only at a point that has been
 singled out from its conjugate.
 
+## 🛑 Scope of that exclusion: Σ × I, NOT UT(Σ₄) (added 2026-10-12)
+
+The exclusion reads a crossing sign off the surface picture (two segments on Σ, over/under
+by the normal coordinate), i.e. links in `Σ × I`. There `ι × id` reverses the 3-manifold's
+orientation (`sigmaI_lift_reverses`, Jacobian `diag(1, −1, 1)`), so it swaps `σ ↔ σ⁻¹`.
+
+The corpus places the Reeb flow on `UT(Σ₄)`. The natural lift of `ι` there is its
+differential, which in local coordinates `(x, y, θ)` is `(x, −y, −θ)`: it reverses the base
+AND the fibre angle, so its Jacobian `diag(1, −1, −1)` has determinant `+1`
+(`ut_lift_preserves`). **On `UT(Σ₄)` conjugation preserves orientation, hence preserves
+crossing signs.** So on `UT(Σ₄)` the argument above does not exclude a chiral metric term, and
+the `letterSign_conj` clause of `ChiralityMatching` below is the `Σ × I` reading; under the
+natural lift to `UT(Σ₄)` it fails. Pointed out by a literature check (skein theory:
+an orientation-reversing map of the 3-manifold sends `A ↦ A⁻¹` and links to mirrors;
+arXiv:1610.04728), and verified here.
+
 ## The chiral datum that IS there (generic, exact, `ZMod 5`)
 
 Let `g` be the 5-cycle `x_k ↦ x_{k+1}`. Its fixed points on the curve are `p_j = (ζ^{jk})_k`
@@ -110,6 +126,19 @@ theorem even_unique_minimiser_eq_zero (E : ℝ → ℝ) (hE : ∀ φ, E (-φ) = 
   have hmem' : -φs ∈ Set.Ioo (-a) a := ⟨by linarith [hmem.2], by linarith [hmem.1]⟩
   have h := huniq (-φs) hmem' (hE φs)
   linarith
+
+/-! ## Part 2b — which lift reverses orientation -/
+
+/-- `ι × id` on `Σ × I`, locally `(x, y, t) ↦ (x, −y, t)`: orientation-REVERSING. -/
+theorem sigmaI_lift_reverses :
+    (Matrix.diagonal ![(1 : ℤ), -1, 1]).det = -1 := by
+  simp [Matrix.det_diagonal, Fin.prod_univ_three]
+
+/-- The differential of `ι` on `UT(Σ)`, locally `(x, y, θ) ↦ (x, −y, −θ)`:
+orientation-PRESERVING. -/
+theorem ut_lift_preserves :
+    (Matrix.diagonal ![(1 : ℤ), -1, -1]).det = 1 := by
+  simp [Matrix.det_diagonal, Fin.prod_univ_three]
 
 /-! ## Part 3 — the matching rule, a primary conjecture class (no instance) -/
 

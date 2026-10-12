@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T19:02:37Z
+updated_at: 2026-10-12T19:28:26Z
 parent: qou-v2om
 ---
 
@@ -59,3 +59,7 @@ Promising? Partly. The localisation is clean and the history-forgetting is a the
 ## 2026-10-12 (later) — k-window and chiral Bring term
 - k-window (probe segment_window_bring_chirality_probe.py, 11/11; Lean Part E window_cannot_separate): on the production T and ³He words, windows k = 1, 2, 3 on the colliding side give identical states (≤ 1e-50); k = 4, the first window reaching the bond at generator 5, separates them (worst |φ_T − φ_He| = 0.921 on x = σ₇σ₅). The minimal separating depth is FORCED by the 3-strand nucleon block, not chosen: one segment past the top block.
 - Chiral Bring term: NOT derived as an energy. Proved (BringConjugationChirality.lean): Bring's curve is real, so conjugation is a fixed-point-free orientation-reversing isometry; any metric-only energy averaged over a conjugate pair is even and selects no crossing sign. The chiral DATUM that exists: the 5-cycle rotates the tangent line at its fixed point p_j by ζ^(−j) (proved in ZMod 5, checked by Jacobian kernel to 1e-60); conjugate points carry conjugate rotations, none real. The corpus Reeb angle arccos(χ(C₅)/dim) keeps only the real part, i.e. discards exactly this sign. Turning it into a σ-vs-σ⁻¹ preference needs the rule bar involution ↔ conjugation: ChiralityMatching class, no instance — owner decision.
+
+
+## 2026-10-12 — chirality: scope correction and the q-metric literature
+CORRECTION to my earlier claim 'metric-only Bring energies are achiral': that holds for links in Σ × I (ι × id has Jacobian det −1, swaps σ ↔ σ⁻¹). On UT(Σ₄), where the corpus puts the Reeb flow, the natural lift of ι is its differential (x,y,θ) ↦ (x,−y,−θ), det +1: orientation-preserving, so it does NOT swap crossing signs. Lean: sigmaI_lift_reverses, ut_lift_preserves. ChiralityMatching's letterSign_conj is the Σ × I reading and fails under the natural UT lift. Literature (agent, verified algebra): quantum disc relation z*z − q²zz* = 1 − q² (held: arxiv-2507.13873v1) becomes the q⁻¹ relation under z ↔ z*; skein theory: orientation reversal of the 3-manifold sends A ↦ A⁻¹ and links to mirrors (arXiv:1610.04728; Bonahon–Wong 1009.0084 for genus g); DGG (held arxiv-1112.5179v1): conjugation = q ↦ q⁻¹ at |q| = 1. Corpus block c-equals-bar-iff-all-1dim: σ ↦ σ⁻¹ and q ↦ q⁻¹ agree on characters only if all irreps are 1-dim, so 'conjugation = bar' can only be a joint symmetry. Reading: on a 3-manifold, chirality is set by q₀ > 1 against the ambient orientation, not by position on Σ₄. Derived for Σ × I; open (motivated) for UT(Σ₄): the gap is that the Hecke q is the quantization parameter of Σ₄.

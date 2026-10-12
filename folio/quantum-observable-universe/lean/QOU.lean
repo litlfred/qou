@@ -1627,3 +1627,4 @@ import QOU.MassTheory.RelativeReebDatum
 import QOU.MassTheory.SegmentCollisionDatum
 import QOU.Brings.BringConjugationChirality
 import QOU.Brings.BringCoverTower
+import QOU.Brings.BringDescendingTower
