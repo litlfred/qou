@@ -21,11 +21,14 @@ Stokes step supplies *what* the period integrates to:
 
 1. **Yekutieli non-abelian Stokes (`prop:hecke-spectral-sequence`) — CONJECTURAL, see
    `QOU.Mass.HeckeMonodromy` (2026-09-06).** The abelianised Cartan
-   connection on the exceptional divisor `S_c` is *conjectured* to have curvature 2-form
-   `F(σ) = σ² − (q − q⁻¹)σ − 1`; the corpus does not construct it (cheat-sheet §2a). Its
+   connection on the exceptional divisor `S_c` is *conjectured* to have exchange monodromy
+   satisfying the monodromy quadratic `F(σ) = σ² − (q − q⁻¹)σ − 1` (an eigenvalue relation of a
+   flat connection, not a curvature); the corpus does not construct the connection (cheat-sheet
+   §2a). For the 𝔰𝔩₂ KZ connection on two points the quadratic is derived
+   (`QOU.Mass.KohnoTwoPoint.kzExchange_quad`). Its
    `q = 1` shadow — a reflection — IS derived (Picard–Lefschetz monodromy of the colour cubic,
    `HeckeQuadraticClassicalShadow.lean`); only the deformation `1 ↦ q` is the hypothesis.
-   Granting it, flatness `F = 0` gives the Hecke quadratic, whose
+   Granting it, the Hecke quadratic holds, whose
    two roots are the Stokes/Hecke eigenvalues `λ₊ = q` (symmetric `L₊`),
    `λ₋ = −q⁻¹` (antisymmetric `L₋`) — `QOU.Mass.HeckeStokes.stokes_curvature_factors`.
 2. **Holonomy = multiplicative surface integral.** The loop holonomy
@@ -158,7 +161,7 @@ Writing `q = e^ξ` (`ξ = log q`), the two Stokes/Hecke eigenvalue combinations 
 hyperbolic functions of `ξ`:
 
   `[2]_q = q + q⁻¹ = 2 cosh ξ`     (the **gap** `λ₊ − λ₋`; **bar-even**, `q ↦ q⁻¹` invariant)
-  `q − q⁻¹ = 2 sinh ξ`             (the **curvature coefficient** `λ₊ + λ₋`; **bar-odd**)
+  `q − q⁻¹ = 2 sinh ξ`             (the **linear coefficient** `λ₊ + λ₋` of the monodromy quadratic; **bar-odd**)
 
 The Hecke bar-involution `q ↦ q⁻¹` is `ξ ↦ −ξ`, under which `cosh` is even and `sinh` is odd.
 This is exactly the "even/odd" split: `τ` is a rational function of the **even** gap alone
@@ -168,7 +171,7 @@ substrate-algebra regime (no `Real.cosh`/`exp` needed; the bar-involution carrie
 The bar-odd `q − q⁻¹` is the `sinh`-partner whose physical face is the bar-odd `Q_β` scale
 (canonical cheat sheet: `Q_β` = the `sinh` partner of the bar-even `cosh` meson scale `m_π`). -/
 
-/-- **Bar-odd (sinh) partner of the eigenvalue gap.** The curvature coefficient `q − q⁻¹`
+/-- **Bar-odd (sinh) partner of the eigenvalue gap.** The linear coefficient `q − q⁻¹` of the monodromy quadratic
 flips sign under the Hecke bar-involution `q ↦ q⁻¹`: `q⁻¹ − (q⁻¹)⁻¹ = −(q − q⁻¹)`. Contrast
 `QOU.Mass.HeckeStokes.quantum_dim_bar_even` (the gap `[2]_q`, bar-**even**, cosh). The two
 combinations are the `sinh`/`cosh` of `ξ = log q` under `ξ ↦ −ξ`. (A pure bar-involution

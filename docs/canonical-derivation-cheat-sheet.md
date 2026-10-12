@@ -147,7 +147,7 @@ per [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md
    step 1. Cat action  ↓  ρ_n : B_n → Aut_𝐂(V^⊗n) via R-matrix
                             │
    step 2. Stokes (Yekutieli)  ↓  σ_i² = (q − q⁻¹)σ_i + 1
-                            │           (curvature 2-form ⇒ Hecke relation)
+                            │           (monodromy quadratic of a flat connection ⇒ Hecke relation)
                             ▼
                        𝐇_n(q)  ─── Iwahori-Hecke algebra
                             │
@@ -234,6 +234,20 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 > `content/` — the only occurrences are those two docstrings and this document. The
 > 2026-07-05 currency audit cleared "all 14 §2 step-table paper labels" by **stem**-grep;
 > two of its fourteen do not resolve by label, so it is not clearance.
+>
+>
+> **Update 2026-10-11 (owner pick "Derive it"): the polynomial is not a curvature at all.**
+> `F(σ)` is the eigenvalue relation satisfied by the exchange monodromy of a **flat**
+> connection; a curved connection has path-dependent holonomy and gives no braid
+> representation. For the 𝔰𝔩₂ Knizhnik–Zamolodchikov connection on two points it is now
+> **derived** from the Casimir eigenvalues `½` / `−3/2`:
+> `QOU.Mass.KohnoTwoPoint.kzExchange_quad` (`β² = (q − q⁻¹)β + 1`, `q = e^c`) and
+> `kzExchange_shadow_involution` (at `q = 1` the exchange is the flip), both sorry-free. Flatness
+> of the 𝔰𝔩₂ KZ connection ⇔ the infinitesimal pure braid relations is proved for 3 points in
+> `mass-endomorphism/kz-connection-sl2.lean`. Still open: the braid relation for `n ≥ 3`
+> (holonomy on configuration space, bean `qou-9634`), and whether the substrate connection *is*
+> KZ (bean `qou-d0qq`; as the corpus stands it is not). The declaration name
+> `stokes_curvature_factors` keeps the historical word.
 >
 > This is AGENTS.md §"Derive-then-check" item 8 verbatim: *if it is true by unfolding or
 > by `ring`, it is notation, not a theorem.*
