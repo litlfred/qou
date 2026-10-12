@@ -1,17 +1,16 @@
 ---
 doc_id: arxiv-1206.6004v2
-doc_title: ""
+doc_title: "Symmetry, Integrability and Geometry: Methods and Applications"
 section_id: sec-002-22-the-hulekcraig-sextic
 section_title: "The Hulek–Craig sextic"
 section_number: 2.2
 pages: 3-4
 source_pdf: 1206.6004v2.pdf
 source_sha256: b490672c8c3557dd
-doc_brief: "Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆ — Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5."
-duplicate_of: "sigma12-065"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.96
+latex_coverage_ratio: 0.968
 ---
 []{#section2.2 label="section2.2"}
 

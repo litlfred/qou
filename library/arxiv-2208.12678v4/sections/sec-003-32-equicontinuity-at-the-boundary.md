@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-2208.12678v4
-doc_title: "STATIONARY CURVES UNDER THEM ÖBIUS-PLATEAU ENERGY"
+doc_title: "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY"
 section_id: sec-003-32-equicontinuity-at-the-boundary
 section_title: "Equicontinuity at the Boundary"
 section_number: 3.2
 pages: 4-5
 source_pdf: 2208.12678v4.pdf
 source_sha256: 406d36ff4968091d
-doc_brief: "STATIONARY CURVES UNDER THEM ÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.934
+latex_coverage_ratio: 0.95
 ---
 We first prove the following simple lemma,
 \begin{lemma}\label{lemma:diameter-convergence}

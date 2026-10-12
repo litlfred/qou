@@ -1659,6 +1659,43 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93",
+          "lean": "2b4dad95379e",
+          "lean_statement": "7eea4804eb89"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 5,
+          "max": 16,
+          "rubric": {
+            "H1": 0,
+            "H2": 1,
+            "H3": 1,
+            "H4": 1,
+            "H5": 0,
+            "H6": 2,
+            "H7": 0,
+            "H8": 0
+          }
+        },
+        "evidence": "H5/H8: the 'if and only if' (L1-7) holds because a '$q$-dilogarithm datum' is defined as something satisfying the five-term relation (L20 'the reverse reads the datum's five-term field') — a tautology presented as 'the precise sense in which the $q$-dilogarithm is forced by the rigid-monoidal axioms' (L9), which L24 then says is not proved. The five-term functional equation is called 'the Mac Lane pentagon' (L1). L9 cites prop:q-dilogarithm-exists for uniqueness. L18-20 is a Lean section in prose. | Also: proof-no-lean-mention-in-prose: L15, L18-20 name `QOU.BringsSurface.PentagonTwist.assoc_pentagon`, `pentagon_iff_isDilog`, `#print axioms`, Mathlib, `QRogersAnalyticContinuation`.",
+        "notes": "Milnor H1-H8 = [0, 1, 1, 1, 0, 2, 0, 0] (T=5/16, fail); weakest: H1, H2, H3, H4, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Restate as what it is: 'By definition, a $q$-dilogarithm is a solution of the five-term relation. That this relation is the image of the Mac Lane pentagon is the Faddeev–Kashaev identification [cite], not proved here.' Remove the Lean section; fix the uniqueness citation. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      }
     ]
   },
   "source_hashes": {
@@ -1667,6 +1704,6 @@
     "lean": "191f29154baa",
     "lean_statement": "7eea4804eb89"
   },
-  "updated_at": "2026-08-22T00:54:35.385Z",
+  "updated_at": "2026-10-10T12:00:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

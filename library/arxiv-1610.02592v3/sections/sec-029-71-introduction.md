@@ -1,16 +1,16 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+doc_title: "An Introduction to Geometric Topology Bruno Martelli"
 section_id: sec-029-71-introduction
 section_title: "Introduction"
 section_number: 7.1
 pages: 199-202
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
-doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.942
-latex_coverage_ratio: 0.846
+latex_coverage_ratio: 0.957
 ---
 Let $S_g$ be as usual a closed orientable surface of genus $g$. We know that $S_g$ admits an elliptic, flat, or hyperbolic metric if and only if $g=0$, $g=1$, or $g\geqslant 2$ respectively. The elliptic metric on the two-sphere is unique up to isometries, but the flat and hyperbolic metrics on the other surfaces are not.
 
