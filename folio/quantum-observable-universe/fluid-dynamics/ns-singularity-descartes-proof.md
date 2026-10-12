@@ -1,38 +1,14 @@
 *Proof.*
-The [NS obstruction](#def:ns-obstruction) is
-$\mathrm{NS}(A) = \kappa_0|_\Sigma$ where
-$\mathrm{tr}(\kappa_0) = \chi(A) = -6$.
+Item 1: by [QU-to-QOU](#thm:qu-to-qou), item 2, $e(\xi) = c_1(\xi) = \chi(\mathcal{S}) = -6$ for the unit tangent bundle. A nowhere-vanishing section would trivialise $\xi$ and force $e(\xi) = 0$.
 
-**Step 1** (arithmetic).
-For $\kappa \geq 4$, $2\kappa \geq 8 > 6 = |\chi(A)|$, so
-$2\kappa \nmid -6$.  By the
-[Kummer specialisation](#prop:ns-kummer-specialisation),
-$\kappa_0 \bmod 2\kappa \neq 0$ in $H^2(\mathcal{S}, \mu_{2\kappa}) \cong \mathbb{Z}/2\kappa$ for all $\kappa \geq 4$.  The
-obstruction to a $2\kappa$-th root of the Reeb bundle survives through infinitely many levels of the
-Kummer tower. This is a statement about the global class on $\mathcal{S}$; its restriction to the one-dimensional $\Sigma$ lies in $H^2(\Sigma, \mu_{2\kappa}) = 0$.
+Item 2: by [QU-to-QOU](#thm:qu-to-qou), item 3, $\xi$ has an $n$-th root if and only if $n \mid \chi(\mathcal{S}) = -6$, with obstruction $-6 \bmod n$; see also the [Kummer specialisation](#prop:ns-kummer-specialisation). The positive divisors of $6$ are $1, 2, 3, 6$. The arithmetic is checked in Lean as `QOU.FluidDynamics.descartes_kummer_root_levels`.
 
-**Step 2** (algebra).
-The [perpetual obstruction](#thm:qu-to-qou) (item 3) says
-$\kappa_0$ and the jet corrections $\delta_n$ live in
-complementary subgroups of $H^2(\mathcal{S}, \mathcal{B})$.
-The total obstruction $\kappa_n|_\Sigma = \kappa_0|_\Sigma +
-\delta_n|_\Sigma$ is nonzero because the topological term
-$\kappa_0|_\Sigma \neq 0$ cannot be cancelled by the analytic
-term $\delta_n|_\Sigma$.
+Item 3: $\Sigma$ has dimension $1$, so $H^2(\Sigma, M) = 0$ for every coefficient group $M$ (Godement II.5.12).
 
-*Scope of Step 2.* It inherits item 3 of [QU-to-QOU](#thm:qu-to-qou) in its earlier, jet-tower form, which is retracted. Item 3 now states persistence in the Kummer tower (the obstruction $\chi(\mathcal{S}) \bmod n$ to an $n$-th root of the Reeb bundle), not at every level of the jet tower. For the bands used in this corpus the complementary-subgroup step is not established on a closed surface such as Bring's. There $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish. For the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. For $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope note in the [proof of QU-to-QOU](#prf:qu-to-qou). Moreover $\kappa_0|_\Sigma = 0$ because $\Sigma$ is one-dimensional, so there is no non-zero term for the step to protect.
+*Retracted argument.* Earlier versions of this theorem asserted that the Descartes universe is NS-singular, $\mathrm{NS}(A) = e(\xi)|_\Sigma \neq 0$. They argued in four steps:
+1. Kummer survival of $\kappa_0 \bmod 2\kappa$ for $\kappa \geq 4$;
+2. a complementary-subgroup non-cancellation between $\kappa_0|_\Sigma$ and the jet corrections $\delta_n|_\Sigma$ (item 3 of QU-to-QOU in its jet-tower form);
+3. non-degeneracy of the Levi form via the [core-Levi equivalence](#prop:core-levi-form);
+4. the [vorticity lower bound](#prop:vorticity-lower-bound) and [BKM divergence](#thm:q-bkm).
 
-**Step 3** (geometry).
-$\mathrm{NS}(A) \neq 0$ implies, via the
-[core-Levi equivalence](#prop:core-levi-form), that the
-Levi form stays non-degenerate at the collision locus: the
-contact structure does not degenerate.
-
-**Step 4** (dynamics).
-Non-degenerate Levi form implies bounded core aspect ratio,
-which gives the [vorticity lower
-bound](#prop:vorticity-lower-bound)
-$\|\omega\|_\infty \geq c/(T^*-t)$, which gives
-[BKM divergence](#thm:q-bkm) $\int \|\omega\|_\infty \, dt = \infty$.
-
-*Scope of Steps 3 and 4.* Both consume the premise $\mathrm{NS}(A) \neq 0$, which Steps 1 and 2 do not establish. They remain conditional implications.
+Step 1 survives as item 2 above, but it is a statement about the global class on $\mathcal{S}$. Step 2 fails: the jet-tower form of item 3 is retracted, the corrections $\delta_n$ lie in the image of $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, and $e(\xi)|_\Sigma = 0$ by item 3 above. Steps 3 and 4 remain valid as conditional implications from a non-vanishing obstruction on $\Sigma$, but no such class exists on a one-dimensional $\Sigma$. The full analysis is in the audit `docs/audits/2026-10-12-ns-chain-after-item3-retraction.md`. Whether the model's actual Reeb field vanishes on $\Sigma$ is a dynamical question, which this theorem does not address.
