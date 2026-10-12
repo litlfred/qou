@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-10-12T18:38:16Z
+updated_at: 2026-10-12T19:02:37Z
 parent: qou-v2om
 ---
 
@@ -54,3 +54,8 @@ Landed (Lean `QOU/MassTheory/SegmentCollisionDatum.lean`, lean-direct exit 0 wit
 - **D. `SegmentCollisionDatum` class, no instance**: θ* = π/2 whenever the Bring term is achiral. Any σ-vs-σ⁻¹ selection must come from a chiral Bring term. Note: `isMin` is unused by that theorem (only uniqueness is).
 
 Promising? Partly. The localisation is clean and the history-forgetting is a theorem, but it makes the single-segment collision blind to which particles collide, and O'Hara alone picks the achiral perpendicular angle. Live directions: (i) widen the collision window to k segments from each (k = 2 already sees history), (ii) derive a chiral Bring term on UT(Σ₄). Status stays todo: open conjecture class.
+
+
+## 2026-10-12 (later) — k-window and chiral Bring term
+- k-window (probe segment_window_bring_chirality_probe.py, 11/11; Lean Part E window_cannot_separate): on the production T and ³He words, windows k = 1, 2, 3 on the colliding side give identical states (≤ 1e-50); k = 4, the first window reaching the bond at generator 5, separates them (worst |φ_T − φ_He| = 0.921 on x = σ₇σ₅). The minimal separating depth is FORCED by the 3-strand nucleon block, not chosen: one segment past the top block.
+- Chiral Bring term: NOT derived as an energy. Proved (BringConjugationChirality.lean): Bring's curve is real, so conjugation is a fixed-point-free orientation-reversing isometry; any metric-only energy averaged over a conjugate pair is even and selects no crossing sign. The chiral DATUM that exists: the 5-cycle rotates the tangent line at its fixed point p_j by ζ^(−j) (proved in ZMod 5, checked by Jacobian kernel to 1e-60); conjugate points carry conjugate rotations, none real. The corpus Reeb angle arccos(χ(C₅)/dim) keeps only the real part, i.e. discards exactly this sign. Turning it into a σ-vs-σ⁻¹ preference needs the rule bar involution ↔ conjugation: ChiralityMatching class, no instance — owner decision.
