@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T11:43:18.719961+00:00",
-  "commitSha": "dc0990ef2f2f82fb6b87d54e35bcc69082ac2664",
+  "computedAt": "2026-10-13T11:47:47.053058+00:00",
+  "commitSha": "9c6f715760cbd23b9b2b100720f1b8bbb09959ec",
   "assertions": [
     {
       "name": "molien_sums_to_one_at_every_n_in_range",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 60,
+  "durationMs": 45,
   "computation": "molien-blast-radius-remainder-triage",
   "scriptFile": "molien_blast_radius_remainder_triage_probe.py",
   "scriptHash": "2c3a8ea45a9a",
-  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "scriptCommitSha": "8c239cf0e86ee5f39b0e186a2d7edbb6169b8041",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,7 @@
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
