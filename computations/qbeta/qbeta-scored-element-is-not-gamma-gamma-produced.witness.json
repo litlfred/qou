@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T11:04:37.695281+00:00",
-  "commitSha": "f18e3e01a4597ef5e41cdb6866e348fdcee46bc1",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:29:41.678543+00:00",
+  "commitSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
   "assertions": [
     {
       "name": "alt_char_satisfies_hecke_relation",
@@ -69,11 +69,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1225,
+  "durationMs": 1340,
   "computation": "qbeta-scored-element-is-not-gamma-gamma-produced",
   "scriptFile": "qbeta_scored_element_is_not_gamma_gamma_produced_probe.py",
-  "scriptHash": "3317202be593",
-  "scriptCommitSha": "8e4498bc48c40986edecbcfce0930b9e463d9038",
+  "scriptHash": "3d79493fdb2e",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,14 +81,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -141,5 +141,7 @@
     "degree_argument": "deg a_k = |k| - 1 for |k| >= 1, so a_k is the constant 1 only at k = +-1; the finite scan -8..8 corroborates the degree argument, it does not stand in for it.",
     "scope": "CHECK 4 is scope-(b): a STRUCTURAL EXCLUSION of the scored element from the gamma-gamma class, with the invariant named -- the alternating character, fixed at 1 by QOU.Mass.GammaGammaWordSelection.altChar_eq_one (sorry-free). A character is an algebra hom, so this is ELEMENT-level and survives any rewriting of the word, unlike the word-level parity argument (gammaGamma_length_even) which re-padding to even length defeats.",
     "what_this_does_not_say": "(1) The gamma-gamma ROUTE is not excluded: the 6-letter core IS gamma-gamma-produced, altChar 1 (CHECK 3). Only THIS element is excluded. (2) No contradiction with the owner ruling qou-ales, which used a gamma-gamma criterion to DISCRIMINATE BETWEEN two census candidates and did not certify either as gamma-gamma-produced; what fails is reading the witness field element_is_ruled: true as 'the scored element is gamma-gamma-produced'. (3) It identifies no replacement element and does not claim one exists."
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
 }

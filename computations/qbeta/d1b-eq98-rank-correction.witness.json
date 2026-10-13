@@ -1,8 +1,8 @@
 {
   "engine": "exact-integer-rank-and-smith-normal-form",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T10:36:12.455836+00:00",
-  "commitSha": "21bf60bc52c4070e82d19761f413952973686915",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:29:38.239285+00:00",
+  "commitSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
   "assertions": [
     {
       "name": "C1_eq98_rank_is_2_not_3",
@@ -65,8 +65,8 @@
   "durationMs": 4,
   "computation": "d1b-eq98-rank-correction",
   "scriptFile": "d1b_eq98_rank_correction_probe.py",
-  "scriptHash": "44740f16e9d2",
-  "scriptCommitSha": "21bf60bc52c4070e82d19761f413952973686915",
+  "scriptHash": "ad5edffacb29",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,14 +74,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -135,5 +135,7 @@
       "wired": false,
       "fit": false
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
 }

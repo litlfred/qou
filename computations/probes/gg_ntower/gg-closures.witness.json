@@ -2,6 +2,7 @@
  "recipe": "computations/probes/gg_ntower/closures_preregistration.md (152a15575e)",
  "follows": "PR #7733, issue #7727",
  "q0": "1.1099785827513808075916690956107688798744991218736",
+ "q0Anchor": "proton",
  "checks": {
   "K1_top_reproduces_7733": true,
   "K1_count": 672,
@@ -28617,5 +28618,5 @@
    "verdicts_agree": true
   }
  },
- "wall_seconds": 371
+ "wall_seconds": 436
 }

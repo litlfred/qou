@@ -1,8 +1,9 @@
 {
   "computation": "m1-site-density-jensen-reduction",
+  "q0Anchor": "proton",
   "description": "M_1>0 (qou-k5r5): the VKLS local drop density rho(u) = 1/2 - arcsin(u/2)/pi is strictly CONCAVE on (0,2) (rho'' = -u/(pi(4-u^2)^{3/2})), so by Jensen the omega-averaged site density E_kappa[rho] is bounded by rho evaluated at the kappa-MEAN. This reduces the open input for the telescoping route from the whole kappa distribution to a lower bound on its first moment. The producer's clamped rho~ is NOT concave across u=2, so the bound is taken on the conditioned law (JENSEN-C). Bounds the VKLS-predicted density, NOT the finite-n empirical one.",
   "scope": "same-sign edges only; S_opp (~36% of S) untouched; not an asymptotic claim",
-  "elapsed_sec": 22.504,
+  "elapsed_sec": 32.107,
   "allPassed": true,
   "assertions_passed": 7,
   "assertions_failed": [],
