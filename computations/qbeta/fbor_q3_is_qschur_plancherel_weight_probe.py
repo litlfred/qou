@@ -42,7 +42,8 @@ Scope-(a). This does not refute F_Bor and does not touch the Lean-proved
 |tr_M(b_Bor)|. It identifies the PROVENANCE of the /q^3 and shows the
 provenance is a different weight family from the trace it is applied to.
 
-  Ref: [manuscript] prop:q-schur-y-lambda-closed-form
+  Ref: [manuscript] `q-schur-y-lambda-closed-form` -- RETIRED, deleted in
+    edf658ff19; record in docs/audits/2026-10-11-retired-label-records.md §B
   Ref: [manuscript] conj:kashaev-density-equals-sdp-multiplicity
   Ref: [jones1987] Hecke algebra representations of braid groups and link
        polynomials, Ann. of Math. 126 (1987) 335-388

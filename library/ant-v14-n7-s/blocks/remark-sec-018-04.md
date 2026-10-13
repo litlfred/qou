@@ -1,1 +1,1 @@
-Since this lemma is crucial to the proof, we expand slightly on what part (i) really says.
+The change of sign appears because we are comparing left and right actions.

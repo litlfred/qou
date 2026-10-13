@@ -10,7 +10,7 @@ where V_i ≈ 0.98 > q⁻¹ ≈ 0.90.
 
 ## The bar-pair Archimedean realization
 
-Per `prop:li2q-phiq-bar-symmetrization`, the realization functor
+Per `li2q-phiq-bar-symmetrization`, the realization functor
 maps the pre-Archimedean Li_2^q to:
 
   Archim_τ(Li_2^q(z)) = (log Φ_q(z) + log Φ_{q⁻¹}(z)) / 2
@@ -50,9 +50,14 @@ higher-order brane tower).
 ## Ref
 
 - `docs/audits/2026-05-25-gap-closure-structural-analysis.md`
-- `prop:li2q-phiq-bar-symmetrization`
+- `li2q-phiq-bar-symmetrization`
 - compact quantum dilogarithm zeta-regularization (standard
   technique in quantum-dilog literature)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

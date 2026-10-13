@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.6
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the"
 ---
 Borcea and Brändén obtain the following characterization of weak real stability preserving linear operators. Recall the notion of *proper position* (denoted by $\ll$) given in Definition [\[pp_def\]](#pp_def){reference-type="ref" reference="pp_def"}.
 

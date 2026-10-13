@@ -22,9 +22,14 @@ This script performs (a) and (b) using existing witness data; (c) is
 documented as the structural diagnostic needed to nail down O(h^4)
 vs O(h^5) vs other.
 
-  Ref: conj:constit-factor-2q-minus-1.md
+  Ref: `constit-factor-2q-minus-1`
   Ref: PR #819 Phase 5c.1 (constit factor measurement, 50 dps)
   Ref: PR #831 Phase 5g (categorical search, 0.033 % match)
+
+Retired-label note: a block named above with a backticked stem and no
+`prop:`/`conj:` prefix has NO carrier in folio/ — it was demoted to
+_deprecated/ and is recorded in docs/audits/2026-10-11-retired-label-records.md §A,
+with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 

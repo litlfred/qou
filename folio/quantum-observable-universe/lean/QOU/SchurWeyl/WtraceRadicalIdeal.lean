@@ -54,10 +54,10 @@ of a quotient type, because that connection is the missing isomorphism.
 Convention **D** (`z = q³/(q²+1)`) throughout — the vanishing that makes the two-row part
 the whole story is `ocneanuWeight_conventionD_eq_zero_of_three_rows`.  Base ring `ℝ`,
 inherited from `wtrace`; `heckeProduct` itself is generic over `[Field K] [CharZero K]`, so
-the pin enters only through the trace.  Genericity hypotheses are **not** uniform across
-the inputs: `hgen : ∀ k, 0 < k → (q²)^k ≠ 1` is strictly stronger than
-`hq2 : NotRootOfUnity q` as used, and is needed for the ⊆ half, so the ideal identity
-inherits it.
+the pin enters only through the trace.  The ⊆ half takes `hgen : ∀ k, 0 < k → (q²)^k ≠ 1`
+as a separate hypothesis, but it is **implied** by `hq2 : NotRootOfUnity q`, since
+`(q²)^k = q^(2k)` (corrected 2026-10-11; this said "strictly stronger"). The generic-field
+restatement `QOU.SchurWeyl.TraceQuotGeneric` takes only `hq0` and `hq2`.
 -/
 
 namespace QOU.SchurWeyl.WtraceRadicalIdeal

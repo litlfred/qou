@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.996
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 In this section, $X$ will be a CY threefold, compact or non-compact. 
 We will denote by $\boldsymbol{T}=(T_1, \cdots, T_r)$ its complexified K\"ahler moduli. In the case of toric CY threefolds, K\"ahler moduli can be of two types: ``true" moduli, denoted by $\bt$, or mass parameters $\bm=(m_1, \cdots, m_s)$ (see e.g. \cite{hkp}). In topological string theory, the basic 

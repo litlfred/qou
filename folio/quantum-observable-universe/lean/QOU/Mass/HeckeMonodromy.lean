@@ -18,6 +18,14 @@ its classical shadow — under a ring map `ε` to the `q = 1` target — is the 
 involution measured in `colour_cubic_branch_monodromy_probe.py`.* The fields carry exactly that
 content; nothing is `True`, nothing is empty.
 
+**The KZ model case is derived, not assumed.** For the 𝔰𝔩₂ Knizhnik–Zamolodchikov connection
+on two points, the `quad` and `shadow_involution` fields are theorems:
+`QOU.Mass.KohnoTwoPoint.kzExchange_quad` and `kzExchange_shadow_involution` (sorry-free; the
+`braid`/`far_comm` fields are vacuous for one generator). For `n ≥ 3` the braid relation needs
+holonomy over configuration space (bean `qou-9634`); and that the substrate connection *is* KZ is
+open (bean `qou-d0qq`). The polynomial `F(σ)` is the eigenvalue relation of the monodromy of a
+flat connection; "curvature" in older text means this.
+
 What the file **derives** from the class (sorry-free, unconditional given the instance):
 
 * `hecke_factor` — the generator factors as `(g − q)(g + q⁻¹) = 0` in the algebra: the two

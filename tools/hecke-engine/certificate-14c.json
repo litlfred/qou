@@ -17861,8 +17861,9 @@
   "tr_alt_f64": 1.9027563548114778e-6,
   "net_f64": 9.663354105998237e-7,
   "tr_markov_d": {
-    "computed": false,
-    "reason": "element was stripped mid-construction, so it is not the crossing product and its trace is not defined here",
+    "computed": true,
+    "value": "-0.0000589287874240407215510908816550105655498194114845604600253154",
+    "method": "two-row seminormal characters up the Hecke tower (computations/probes/markov_trace_two_row_tower_probe.py); agrees with the v9 method to 60 digits on the 12 nuclei both compute",
     "z": "q^3/(q^2+1)",
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "normalisation": "divided by 2^pn_count, like the *_f64 fields"

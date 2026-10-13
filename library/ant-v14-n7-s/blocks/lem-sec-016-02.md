@@ -1,1 +1,1 @@
-If n| n′ are two ideals of OF with the same prime factors, then pushforward along the map
+If ρ denotes the involution of Y1(N) corresponding to x + iy 7→−x + iy on H, then

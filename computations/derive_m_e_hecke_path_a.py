@@ -33,7 +33,8 @@ The Frobenius per-vortex co-Casimir tr_M(C_dim_q) at H_2 is
     tr_M(C_dim_q)|_{H_2} = z · ([2]_q · 1 + 1 · 1)
                          = z · ([2]_q + 1)
 
-per the master formula `prop:frobenius-co-casimir-master`. In MeV
+per the master formula (`frobenius-co-casimir-master` -- RETIRED, never
+existed as a block; record in docs/audits/2026-10-11-retired-label-records.md §C). In MeV
 the framework defines T4 = m_e · tr_M(C_dim_q), so for the
 electron (CAL-1 anchor):
 
@@ -42,7 +43,8 @@ electron (CAL-1 anchor):
 Note that for the proton at H_3 the analogous expression yields
 T4(p) = 1.27611... MeV (in mass-formula-6term-mpfr-50dps.witness),
 confirming the master-formula instantiation per
-`prop:proton-mass-frobenius-co-casimir`.
+`proton-mass-frobenius-co-casimir` (RETIRED, never existed as a block;
+record in docs/audits/2026-10-11-retired-label-records.md §C).
 
 ══════════════════════════════════════════════════════════════════
  DIMENSIONAL CARE

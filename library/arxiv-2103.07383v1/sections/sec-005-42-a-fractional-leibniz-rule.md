@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.928
 latex_coverage_ratio: 0.995
+doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
 ---
 \label{subsec:FractionalLeibnizRule}
 

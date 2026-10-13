@@ -173,4 +173,52 @@ theorem contentDoubled_neg_iff {a b : ℕ} (hab : b ≤ a) :
   · rintro ⟨rfl, rfl⟩
     norm_num [contentDoubled]
 
+/-! ## The isospin-type class under the row cap has nothing above level 4
+
+The same question for `c(λ) = 0`. With three or more columns in the first row,
+`a(a-1) ≥ 6` beats the second row's floor of `-2`, so the content sum is
+strictly positive. The content-zero two-row shapes are therefore `∅`, `(1)`,
+`(2,1)` and `(2,2)`, all of size at most 4.
+
+Consequence for the nuclear programs, which live at `n = 3A` strands: for
+`A ≥ 2` (`n ≥ 6`) no Wedderburn block with nonzero convention-D weight is
+isospin-type, so no shadow price of such a program can carry the
+content-zero scaling `T(T+1)/A`. Bean `qou-wg3c`. -/
+
+/-- With three or more columns in the first row the content sum is strictly
+positive. -/
+theorem contentDoubled_pos_of_three_le {a b : ℕ} (ha : 3 ≤ a) :
+    0 < contentDoubled a b := by
+  have h1 : (3 : ℤ) ≤ (a : ℤ) := by exact_mod_cast ha
+  have h2 := two_le_row_two_content b
+  have h3 : (6 : ℤ) ≤ (a : ℤ) * ((a : ℤ) - 1) := by nlinarith
+  simp only [contentDoubled]
+  linarith
+
+/-- **The isospin-type class the row cap admits is `{∅, (1), (2,1), (2,2)}`.** -/
+theorem contentDoubled_eq_zero_iff {a b : ℕ} (hab : b ≤ a) :
+    contentDoubled a b = 0 ↔
+      (a = 0 ∧ b = 0) ∨ (a = 1 ∧ b = 0) ∨ (a = 2 ∧ b = 1) ∨ (a = 2 ∧ b = 2) := by
+  constructor
+  · intro h
+    have ha : a < 3 := by
+      by_contra hc
+      exact absurd h (ne_of_gt (contentDoubled_pos_of_three_le (by omega)))
+    interval_cases a <;> interval_cases b <;> simp_all [contentDoubled]
+  · rintro (⟨rfl, rfl⟩ | ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩) <;>
+      norm_num [contentDoubled]
+
+/-- A content-zero two-row shape has at most four boxes. -/
+theorem size_le_four_of_contentDoubled_eq_zero {a b : ℕ} (hab : b ≤ a)
+    (h : contentDoubled a b = 0) : a + b ≤ 4 := by
+  rcases (contentDoubled_eq_zero_iff hab).mp h with
+    ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩ <;> norm_num
+
+/-- **No isospin-type two-row block at a nuclear level `n = 3A` with `A ≥ 2`.** -/
+theorem no_contentZero_two_row_at_nuclear_level {a b A : ℕ} (hab : b ≤ a)
+    (hA : 2 ≤ A) (hn : a + b = 3 * A) : contentDoubled a b ≠ 0 := by
+  intro h
+  have := size_le_four_of_contentDoubled_eq_zero hab h
+  omega
+
 end QOU.Hecke.IsospinClassSingleton

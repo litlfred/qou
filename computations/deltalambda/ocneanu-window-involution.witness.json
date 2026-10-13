@@ -1,0 +1,140 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-10-10T18:29:53.800246+00:00",
+  "commitSha": "bc7606cf6f42fb7073dedad668572496b361ac41",
+  "assertions": [
+    {
+      "name": "transpose_identity_all_mu_n_le_7",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "bar_identity_all_mu_n_le_7",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "transpose_symmetry_n2_forces_h_half",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "bar_invariance_does_not_single_out_h_half",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "bar_invariant_in_window_param_other_than_h_half",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "zD_equals_rank2_parameter",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "control_z0_not_bar_invariant",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "ocneanu-window-involution",
+  "scriptFile": "ocneanu_window_involution_probe.py",
+  "scriptHash": "7ec2b4b85b1b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "832ce4e14a00d523"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/ocneanu_window_involution_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/ocneanu_window_involution_probe.py"
+  },
+  "parameters": {
+    "n_max": "7"
+  },
+  "data": {
+    "by_n": [
+      {
+        "n": 1,
+        "partitions": 1,
+        "T_holds": true,
+        "B_holds": true
+      },
+      {
+        "n": 2,
+        "partitions": 2,
+        "T_holds": true,
+        "B_holds": true
+      },
+      {
+        "n": 3,
+        "partitions": 3,
+        "T_holds": true,
+        "B_holds": true
+      },
+      {
+        "n": 4,
+        "partitions": 5,
+        "T_holds": true,
+        "B_holds": true
+      },
+      {
+        "n": 5,
+        "partitions": 7,
+        "T_holds": true,
+        "B_holds": true
+      },
+      {
+        "n": 6,
+        "partitions": 11,
+        "T_holds": true,
+        "B_holds": true
+      },
+      {
+        "n": 7,
+        "partitions": 15,
+        "T_holds": true,
+        "B_holds": true
+      }
+    ],
+    "bar_invariant": {
+      "h/2": true,
+      "z_1": true,
+      "h - z_1": true,
+      "z_2": true,
+      "h - z_2": true,
+      "z_3": true,
+      "h - z_3": true,
+      "z_4": true,
+      "h - z_4": true,
+      "z_5": true,
+      "h - z_5": true,
+      "zD = q^3/(q^2+1)": true,
+      "z = 0 (control)": false
+    }
+  }
+}

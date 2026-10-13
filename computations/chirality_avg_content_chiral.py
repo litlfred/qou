@@ -66,7 +66,8 @@ Output: `chirality-avg-content-chiral.witness.json`.
 
 Refs:
 - prop:chirality-writhe-ribbon-derivation (the first-order ansatz)
-- conj:chirality-ribbon-frobenius (the all-orders conjecture; now
+- `chirality-ribbon-frobenius` -- RETIRED, cut in e8086e521f ("cut 9
+  exploratory/falsified probe blocks"); record in docs/audits/2026-10-11-retired-label-records.md §B. (The all-orders conjecture; now
   split into amphichiral closed / chiral open)
 - companion: `chirality_avg_content.py` (amphichiral case at H_3,
   plus the minimal-level trefoil at H_2)

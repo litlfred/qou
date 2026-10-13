@@ -116,6 +116,11 @@ pub struct MarkovTraceD {
     pub exact_z_t: Option<Vec<(usize, i32, String)>>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub reason: Option<String>,
+    /// How the value was obtained, when it was. v9 traces its own T_w
+    /// expansion; certificates whose build was stripped carry a value from
+    /// the two-row tower probe instead, which recomputes the element itself.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub method: Option<String>,
     pub z: String,
     pub q0: String,
     pub normalisation: String,

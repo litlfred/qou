@@ -1,1 +1,1 @@
-Let t1≤ t2≤···≤ tn be a ﬁxed nondecreasing sequence of real
+Let 1 ≥1 be ﬁxed. Let F ∈Z[x1, . . . , xn] and suppose F factors as F = G1H with
