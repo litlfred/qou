@@ -54,14 +54,14 @@ from q_parameter import Q_MP as Q_0_MP  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
 from _precision import COMPUTE_DPS  # noqa: E402
-# Imported HERE, not inside the cached kernel: `y_lambda_su_n` calls
-# `set_compute_dps(50)` at import, which REASSIGNS the global `mp.dps`. Done
-# inside the kernel's `mp.workdps(dps)` block, that silently dropped the rest of
-# the block to 50 digits (measured: a_K moved at the 51st digit). At module
-# scope the side effect lands exactly where the old lazy import inside
-# `y_lambda_at` put it — on the first a_K call — so callers see no change in
-# global state; the kernel itself is protected by its own workdps and by the
-# dps assertion before the final sum.
+# Imported HERE, not inside the cached kernel: until 2026-10-13
+# `y_lambda_su_n` called `set_compute_dps(50)` at import, which REASSIGNED the
+# global `mp.dps`. Done inside the kernel's `mp.workdps(dps)` block, that
+# silently dropped the rest of the block to 50 digits (measured: a_K moved at
+# the 51st digit). That module now builds its constants in a local
+# `mp.workdps` and no longer touches the global; the module-scope import and
+# the dps assertion before the final sum are kept as a guard against any
+# other import in the cone doing the same.
 from y_lambda_su_n import y_lambda_su_n  # noqa: E402
 
 
@@ -230,8 +230,8 @@ def aK_v2(Z: int, N: int, q_val=None):
 
     Returns an `mp.mpf` computed in mpf end to end at
     `max(mp.dps, COMPUTE_DPS)`, and returned AT that precision: it is not
-    re-rounded to the caller's ambient dps (which is 50 in any process that
-    has imported `y_lambda_su_n`). Serialize it with `_precision.fmt`.
+    re-rounded to the caller's ambient dps. Serialize it with
+    `_precision.fmt`.
     """
     total, _, _, _ = _aK_v2_cached(*_cache_args(Z, N, q_val))
     return total
