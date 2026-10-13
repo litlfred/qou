@@ -45,11 +45,11 @@ mp.mp.dps = 50
 
 # Proton pin (owner directive 2026-08-07), carried as a decimal string so no
 # float64 value enters the mpmath computation.
-try:
-    from qou_substrate.constants import Q_50_DIGIT_STR as _Q0_STR
-    Q0 = mp.mpf(_Q0_STR)
-except Exception:  # pragma: no cover - documented pin string
-    Q0 = mp.mpf("1.1099785827513808")
+# No fallback: a 17-digit copy of the pin truncated it to float64 grade
+# (reference-literal ratchet), and silently, exactly when the substrate is
+# missing. Fail instead -- the convention the substrate's own fallbacks follow.
+from qou_substrate.constants import Q_50_DIGIT_STR as _Q0_STR  # noqa: E402
+Q0 = mp.mpf(_Q0_STR)
 
 
 def toroidal_harmonic_P(n, m, x):
