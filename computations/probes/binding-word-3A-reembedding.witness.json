@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T11:53:20.470303+00:00",
-  "commitSha": "35d40c3d5cd7f4293a6a68b044f73eb5974fe25c",
+  "computedAt": "2026-10-13T11:59:47.538956+00:00",
+  "commitSha": "8f1b70555159d7e170bef87c379448651b822c55",
   "assertions": [
     {
       "name": "binding word couples EVERY nucleon pair: inter letters = C(A,2), all pairs distinct (A = 2..6, measured from _step_chain_generic)",
@@ -141,7 +141,7 @@
       "source": "binding_word_3A_reembedding_probe"
     },
     {
-      "name": "the collapse has a measured price at A = 3: the level-local mass word costs 0.347 s over all 30 partitions of 9 while the conjugated binding word, in the SAME algebra over the SAME partitions, costs 46.835 s (135x) -- the path sum has degenerated to the dense seminormal trace the route was meant to avoid",
+      "name": "the collapse has a measured price at A = 3: the level-local mass word costs 0.435 s over all 30 partitions of 9 while the conjugated binding word, in the SAME algebra over the SAME partitions, costs 46.163 s (106x) -- the path sum has degenerated to the dense seminormal trace the route was meant to avoid",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -150,11 +150,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 15,
   "computation": "binding-word-3A-reembedding",
   "scriptFile": "binding_word_3A_reembedding_probe.py",
   "scriptHash": "04101b58993f",
-  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "scriptCommitSha": "d71811a5d8f358eccb0e2edb5f29b0f4c7a904df",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -168,6 +168,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
@@ -569,8 +570,8 @@
       }
     ],
     "A2_path_sum_cost_s": {
-      "fixed_Hk": "0.11722091699994053",
-      "three_A": "0.014234026999929483"
+      "fixed_Hk": "0.15681736300030025",
+      "three_A": "0.0246751959998619"
     }
   },
   "caveats": [

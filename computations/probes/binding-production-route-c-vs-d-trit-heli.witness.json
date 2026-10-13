@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-10-13T11:50:04.736554+00:00",
-  "commitSha": "9c6f715760cbd23b9b2b100720f1b8bbb09959ec",
+  "computedAt": "2026-10-13T11:58:55.403801+00:00",
+  "commitSha": "8f1b70555159d7e170bef87c379448651b822c55",
   "assertions": [
     {
       "name": "tritium_delta_tr_changes_under_D",
@@ -20,7 +20,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 29,
   "computation": "binding-production-route-c-vs-d-trit-heli",
   "scriptFile": "binding_production_route_C_vs_D_probe.py",
   "scriptHash": "1de6ba5f0c7d",
@@ -38,6 +38,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {

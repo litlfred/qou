@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T11:47:46.495795+00:00",
-  "commitSha": "9c6f715760cbd23b9b2b100720f1b8bbb09959ec",
+  "computedAt": "2026-10-13T11:57:02.002281+00:00",
+  "commitSha": "8f1b70555159d7e170bef87c379448651b822c55",
   "assertions": [
     {
       "name": "block_321_is_occupied_at_N3_not_N2",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 287,
+  "durationMs": 299,
   "computation": "beta-ew-n3-second-trace",
   "scriptFile": "beta_ew_n3_second_trace_probe.py",
   "scriptHash": "1f1979532526",
@@ -31,6 +31,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
