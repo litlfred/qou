@@ -318,6 +318,31 @@ worth anything once it reproduces the first.
 them is SILENT at `n >= 4` (it just evaluates a different word) and only panics
 at small `n`, where the index falls out of range.
 
+## TRAP — `binding_energy` depends on whether cvxpy is INSTALLED, and no stamp records it
+
+Measured 2026-10-13, same commit, same proton pin: `binding_energy(1, 1)` =
+**−15.814194895935406** without cvxpy and **+0.5381481252873015** with it (cvxpy
+1.9.3 in a private `--target` dir). `sdp_cross_channel` falls back to a scalar LP
+when `import cvxpy` fails; its status is then not `optimal`, so the SDP leg is
+silently **0.0**. With cvxpy the leg is ≈ +16.35 MeV. The witness `environment`
+block lists python/numpy/scipy/sympy/mpmath/clarabel and **not cvxpy**, so a
+committed binding number cannot be traced to its branch. This is the first
+CONFIRMED environment case (the 48 % `binding_canonical` case was import-cone).
+Install extras with `pip install --target <scratch>` and delete any numpy it
+drags in, or you change the environment of every sibling on the container.
+
+## TRAP — the convention-D zero-weight skip does NOT apply to `binding_energy`
+
+Its accumulator weights by `lp_shadow_price = w/d − 1/[k]_q!` (Plancherel-based)
+and its Frobenius leg by Plancherel `w_λ` — neither vanishes on ≥3-row shapes.
+Exactly-zero scale occurs only on the twelve 1-dim trivial/sign blocks (and not
+on (7),(8),(9),(11) and their columns: `w/d − 1/[k]!` cancels only to a
+rounding residue, scale 5e-74 … 1.3e-73 MeV, measured). ≥3-row shapes
+are 96–98.5 % of kernel time (k = 8, 9), so a convention-D re-weighting would
+be a ~25–70× speedup (from those shares) — and a PHYSICS change, owner-gated. What did ship is a
+byte-identical memo: the accumulator, the SDP leg and the Frobenius
+`include_inter=True` leg send the kernel the IDENTICAL request.
+
 ## TRAP — `git checkout -- computations/` (what the gate PRINTS) eats your source edits
 
 `precision-gates.sh` says, of the regenerated contended audit witnesses (**six**
@@ -390,7 +415,8 @@ Everything here is a *method*, not an answer.
 | producers that genuinely fail | the seven-requirement runner above | 2 (`su4_1111_markov_trace_probe`, `qbeta_habiro_element_probe`) | 2026-08-24 |
 | missing-dual LP/SDP witnesses | `python3 computations/lp_dual_witness_validator.py` | run it — do not cite a dated baseline | — |
 | `path_bridge` bootstrap defects | `python3 computations/audits/path_bridge_bootstrap_audit.py` | 6 | 2026-08-29 |
-| `binding_energy(1,1)` wall cost | `hecke_core_legacy.binding_energy(1, 1)`, kernel live | **1233.9 s** (1278.5 s on `origin/main`) for the SMALLEST bound atom; A ≥ 3 strictly worse — `uic_binding_a_series_kernel_live_probe` exits 124 at 2400 s with no rows | 2026-09-12 |
+| `binding_energy(1,1)` cost | cProfile per term, proton pin, no cvxpy | **1052 s** clean: UIC 333 + Frobenius 719 (two kernel passes); **99.75 %** in `lp_accumulator_step_traces_mpfr`. After the kernel memo: ²H-with-cvxpy CPU 1267 → 628 s, ³H CPU 1654 → 1091 s. Cost ≈ 15.5 s × total chain letters (all partitions); full 16-bound-atom table ≈ 64 h → 38 h. | 2026-10-13 |
+| `binding_energy(1,1)` wall cost | `hecke_core_legacy.binding_energy(1, 1)`, kernel live | **1233.9 s** (1278.5 s on `origin/main`) for the SMALLEST bound atom; A ≥ 3 strictly worse — `uic_binding_a_series_kernel_live_probe` exits 124 at 2400 s with no rows | 2026-09-12 (superseded row, kept for its method) |
 
 **Read the over-flag row's history before quoting anything near it.** Two
 earlier figures were wrong in opposite directions and both were an agent's
@@ -646,3 +672,9 @@ TRAPs.
   ruling cited is itself stale on main (canonical deuteron 0.151968…). Measure what the
   literal actually FEEDS before swapping it. Baseline drains: write `old − measured_fixed`
   by hand, never `--rebaseline` (main carried 51 NEW unstamped / 25 NEW copies).
+- 2026-10-13 (`binding_energy` profile, branch `claude/binding-energy-profile-2026-10-13`):
+  99.75 % in one Rust call; memoised it byte-identically (²H, ³H, ²H+cvxpy:
+  every per-step mpf `_mpf_`-equal). Gates `--changed`: my file in 0 of 609
+  lines, raw-float64 NEW 0 / REGRESSED 0. Two TRAPs above (cvxpy dependence;
+  conv-D skip inapplicable). The `float(_tr)` narrowing in `atom_character_raw`
+  is already on bean `qou-w2vy`; the Frobenius mpf carries a 52-bit mantissa.
