@@ -1,9 +1,11 @@
 {
   "schema": "qou-witness/v1",
-  "computedAt": "2026-09-13T10:32:20.406228+00:00",
+  "computedAt": "2026-10-13T15:07:33.689325+00:00",
   "computation": "rev_energy_gap_rigidity_probe.py",
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_energy_gap_rigidity_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "The energy trade-off that any pair-term lower bound must price. The penalty for a mean-beta-gap deviation is quadratic and of order n^{3/2} against a prize of order sqrt n, so a maximiser's mean gap is pinned to 2 + O(1/sqrt n). Also runs the discriminator between that model's shrinking-excess prediction and #7279's growing measurement.",
   "constants": {

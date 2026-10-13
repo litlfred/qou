@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T23:04:15.281797+00:00",
-  "commitSha": "8739a9e80450d4be416607ea43ce417016c6ae56",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:07:44.872902+00:00",
+  "commitSha": "cf13de45381038fe90515829757a2d4b8ed809af",
   "assertions": [
     {
       "name": "S0.1 every C_lambda weight is lambda-only (unchanged across two atoms)",
@@ -162,11 +162,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 8,
   "computation": "uic_per_block_log_valley_scan_probe",
   "scriptFile": "uic_per_block_log_valley_scan_probe.py",
   "scriptHash": "4e8a50021043",
-  "scriptCommitSha": "8739a9e80450d4be416607ea43ce417016c6ae56",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -174,14 +174,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -394,5 +394,7 @@
     "The exact defect identity of S2 and the factorisation of S3 are proved for a TWO-BRANCH block (two distinct crossing eigenvalues on one generator) -- the twoStrandTrace of ChainTraceFactor. The UIC's general lambda-block spreads crossings over several generators via the cyclic map, where the matrices do not commute and the two-branch form does not apply. S2/S3 are the MECHANISM by which a per-block log can leave the additive class, not a closed form for the production accumulator.",
     "The production functional returns NEGATIVE binding for every cell scanned, reproducing docs/audits/2026-09-05-uic-sign-forced-by-gate.md. This probe does not re-open that; it is noted so no reader takes an argmax over negative numbers for a binding-energy prediction.",
     "The content block unified-iterative-correction.md and the producer DISAGREE on the functional in three ways (no resolvent factor, u_lambda named as an LP shadow price the producer's own docstring disclaims, and no Pass-2 gate in the block at all). The producer is what is scanned here, since it is what runs. Reported as a finding in the audit, not resolved."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

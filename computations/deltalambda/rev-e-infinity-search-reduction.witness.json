@@ -1,11 +1,13 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-09-14T07:42:34.907396+00:00",
+  "computedAt": "2026-10-13T15:01:23.691497+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_search_reduction_probe.py"
   },
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_e_infinity_search_reduction_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "The e_inf three-piece maximisation is COERCIVE -- eps convex decreasing linearises every pair term for both signs, the pair sum telescopes to top-minus-bottom, and the quadratic cost dominates, giving a uniform bound B_rig on every valid block with no cap on its length or entries.  So only finitely many (s_t, s_b) can win, as a matter of the inequality rather than of any table.  Separately and NEGATIVELY: the marginal of Xblock is NOT monotone -- it re-crosses ln q0/2 upward at s = 11 -- so the greedy / first-crossing exchange argument that would close the search is refuted.  Within the measured cut the enumeration carries no effective cap and the join is maximised at (8, 8), reproducing #7335's searched e_inf; that closure is CONDITIONAL on two named gaps, Xbot <= Xblock and B being the true supremum.",
   "constants": {

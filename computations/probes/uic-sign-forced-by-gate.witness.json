@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T08:19:24.583582+00:00",
-  "commitSha": "5812e613183d7e5da1bd304aad531359f867affe",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:00:01.188566+00:00",
+  "commitSha": "cf13de45381038fe90515829757a2d4b8ed809af",
   "assertions": [
     {
       "name": "C_lambda >= 0 on every partition",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "uic-sign-forced-by-gate",
   "scriptFile": "uic_sign_forced_by_gate_probe.py",
   "scriptHash": "508870deae9b",
-  "scriptCommitSha": "216616ce876e1e61f62ac5452c998ea54776f040",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,14 +74,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -153,5 +153,7 @@
       "frac_big_when_pos": "0.341463414634146341463414634146341463414634146341463414634146",
       "frac_big_when_nonpos": "0.0344827586206896551724137931034482758620689655172413793103448"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

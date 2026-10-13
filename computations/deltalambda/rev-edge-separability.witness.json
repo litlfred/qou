@@ -1,9 +1,11 @@
 {
  "schema": "qou-witness/v1",
- "computedAt": "2026-09-13T19:42:14.041355+00:00",
+ "computedAt": "2026-10-13T15:06:00.783786+00:00",
  "computation": "rev_edge_separability_probe.py",
  "bean": "qou-hok7",
  "anchor": "physical_proton",
+ "q0Anchor": "proton",
+ "scriptFile": "rev_edge_separability_probe.py",
  "q0Value": "1.1099785827513808075916690956107688798744991218736",
  "description": "Tests whether e_k is ADDITIVE over its two edges.  The cost is exactly separable once the forced run length l = S_top + S_bot is substituted into sum u^2; this measures whether the gain separates too, by comparing the exact excess of both edges together against the sum of each alone.  Every value is the exact O(L^2) excess in scaled integers, with the cost from the Lean identity staircase_two_mul_hookSum_sub.",
  "k": 40,
