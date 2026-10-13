@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-tower-log-z-and-roast",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "a_proton_proton_bond_is_exactly_one_markov_reduction",
@@ -242,8 +243,8 @@
     ]
   },
   "provenance": {
-    "headSha": "6bfbf0b533aeae4f31996a710d9ae1824cbc9895",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_tower_log_z_and_roast_probe.py",
-    "elapsed_sec": 2.415
+    "elapsed_sec": 2.683
   }
 }

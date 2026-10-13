@@ -1,5 +1,7 @@
 {
   "computation": "qbeta-layout-conflict",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "assertions": [
     {
       "name": "no_ordering_satisfies_both_demands",
@@ -88,8 +90,8 @@
     ]
   },
   "provenance": {
-    "headSha": "6ac687ff65cf007b00e4b94bb1e20026938569de",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_layout_conflict_probe.py",
-    "elapsed_sec": 1.845
+    "elapsed_sec": 1.546
   }
 }

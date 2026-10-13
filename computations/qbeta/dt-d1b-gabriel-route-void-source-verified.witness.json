@@ -1,8 +1,8 @@
 {
   "engine": "exact-integer-source-verification",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T04:16:05.987664+00:00",
-  "commitSha": "5dc7cc6b80a87c5b41b64e97db99ece8c20d8ceb",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:53:10.943338+00:00",
+  "commitSha": "eb645d81e7fe1646342513e676f6498caab4a229",
   "assertions": [
     {
       "name": "C1_source_matrices_reproduce",
@@ -65,8 +65,8 @@
   "durationMs": 4,
   "computation": "dt-d1b-gabriel-route-void-source-verified",
   "scriptFile": "dt_d1b_gabriel_route_void_source_verified_probe.py",
-  "scriptHash": "e669ff6d5a1a",
-  "scriptCommitSha": "5dc7cc6b80a87c5b41b64e97db99ece8c20d8ceb",
+  "scriptHash": "50334c2860f4",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,14 +74,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -183,13 +183,13 @@
       "P3_max_omega_exceeds_one": true
     },
     "wall_crossing_scaffolding_is_orphaned": {
-      "module": "content/quantum-observable-universe/lean/QOU/Mathlib/WallCrossing.lean",
+      "module": "folio/quantum-observable-universe/lean/QOU/Mathlib/WallCrossing.lean",
       "carries": "ChargeLattice (antisymmetric integral Euler pairing), CentralCharge, BPSState, BPSSpectrum, Wall, KSWallCrossing",
       "instances_of_ChargeLattice": 0,
       "instances_of_KSWallCrossing": 0,
       "importers": 0,
       "mentions_anywhere_else_in_the_paper_tree": 0,
-      "importers_is_NOT_the_interesting_number": "CORRECTED 2026-09-04 in the same session it was written. '0 importers' was reported as though it were a finding; it is not. Measured over the QOU tree: 866 of 2566 modules (33.8%) are never imported anywhere, and this is a long-tracked class with its own detector (content/pipeline/lean-orphan-audit.ts, beans qou-orph / qou-kljb). Being unimported makes this module ORDINARY. The library is glob-declared so it still compiles",
+      "importers_is_NOT_the_interesting_number": "CORRECTED 2026-09-04 in the same session it was written. '0 importers' was reported as though it were a finding; it is not. Measured over the QOU tree: 866 of 2566 modules (33.8%) are never imported anywhere, and this is a long-tracked class with its own detector (folio/pipeline/lean-orphan-audit.ts, beans qou-orph / qou-kljb). Being unimported makes this module ORDINARY. The library is glob-declared so it still compiles",
       "what_is_actually_specific": "ZERO INSTANCES of ChargeLattice and KSWallCrossing anywhere in the tree. That is a different and stronger statement than unimported -- an imported module can have no instances, and an unimported one can have instances inside itself -- and it is the fact that blocks the D1-b Dirac-pairing test. Quote the instance count, not the importer count",
       "qou_modules_total": 2566,
       "qou_modules_never_imported": 866,
@@ -203,5 +203,7 @@
       "wired": false,
       "fit": false
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
 }

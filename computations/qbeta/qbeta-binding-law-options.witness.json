@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-binding-law-options",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "proton_bonds_bind_less_than_neutron_bonds",
@@ -223,8 +224,8 @@
     }
   },
   "provenance": {
-    "headSha": "e9f956591268a61f454b60f781a60f18f497f767",
+    "headSha": "eb645d81e7fe1646342513e676f6498caab4a229",
     "producer": "computations/qbeta/qbeta_binding_law_options_probe.py",
-    "elapsed_sec": 1.062
+    "elapsed_sec": 1.1
   }
 }
