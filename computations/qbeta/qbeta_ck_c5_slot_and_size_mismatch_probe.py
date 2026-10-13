@@ -215,7 +215,7 @@ def main() -> int:
                   "SURVIVES on magnitude under the live family and does not "
                   "under the superseded one.",
         "scope": "(a); c_3 hardcoded at the proton extraction, proton pin only",
-        "q0": mp.nstr(q, 20), "q0_pin": "proton (q_at)", "dps": DPS,
+        "q0": mp.nstr(q, 20), "q0_pin": "proton (q_at)", "q0Anchor": "proton", "dps": DPS,
         "u": mp.nstr(u, 20),
         "c5_live": mp.nstr(c5_live, 20),
         "c5_superseded": mp.nstr(c5_super, 20),

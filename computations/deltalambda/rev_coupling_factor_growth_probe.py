@@ -292,7 +292,7 @@ def main() -> int:
         "probe": "rev_coupling_factor_growth_probe",
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "q0_anchor": "physical_proton",
+        "q0_anchor": "physical_proton", "q0Anchor": "proton",
         "dps": mp.dps,
         "method": ("local search gives configurations whose energy UPPER-bounds P_min, hence "
                    "upper-bounds the coupling ratio; calibrated against brute force at l = 4..8"),

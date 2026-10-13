@@ -429,7 +429,7 @@ def main() -> int:
         "probe": "rev_pair_term_even_gap_probe",
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "q0_anchor": "physical_proton",
+        "q0_anchor": "physical_proton", "q0Anchor": "proton",
         "dps": mp.dps,
         "claim": ("P_min(l, W) has NO closed form of the conjectured shapes: the even multiset "
                   "is not the minimiser in any arrangement, and Jensen is already optimal "

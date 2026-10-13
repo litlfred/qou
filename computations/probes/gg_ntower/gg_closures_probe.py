@@ -334,7 +334,7 @@ def main():
     out = {
         "recipe": "computations/probes/gg_ntower/closures_preregistration.md (152a15575e)",
         "follows": "PR #7733, issue #7727",
-        "q0": g.Q_50_DIGIT_STR,
+        "q0": g.Q_50_DIGIT_STR, "q0Anchor": "proton",
         "checks": checks,
         "single_vertex_ratio_chi21_over_chi3": {v: str(r) for v, r in ratio.items()},
         "results": results,

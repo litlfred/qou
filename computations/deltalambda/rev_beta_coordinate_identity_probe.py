@@ -445,7 +445,7 @@ def main() -> int:
         "probe": "rev_beta_coordinate_identity_probe",
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "q0_anchor": "physical_proton",
+        "q0_anchor": "physical_proton", "q0Anchor": "proton",
         "dps": mp.dps,
         "identity": ("R_lambda = sum_i F(beta_i) - sum_{i<j} eps_(beta_i-beta_j) - F(n); "
                      "H = sum_i beta_i(beta_i+1)/2 - sum_{i<j}(beta_i-beta_j); "

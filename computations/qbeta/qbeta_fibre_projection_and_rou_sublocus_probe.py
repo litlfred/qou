@@ -283,7 +283,7 @@ def main() -> int:
         "degeneracy": {k: v for k, v in degen.items()},
         "theta_required": mp.nstr(theta, 20),
         "pi_over_3_over_theta": mp.nstr(ratio, 20),
-        "q0": mp.nstr(q0, 20), "q0_pin": "proton (q_at)", "dps": DPS,
+        "q0": mp.nstr(q0, 20), "q0_pin": "proton (q_at)", "q0Anchor": "proton", "dps": DPS,
         "assertions": [{"name": n, "passed": ok, "detail": d} for n, ok, d in results],
         "allPassed": allp,
     }

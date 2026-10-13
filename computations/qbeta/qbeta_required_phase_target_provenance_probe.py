@@ -197,7 +197,7 @@ def main() -> int:
         "required_N1_factor": mp.nstr(required, 20),
         "scope": "(a) -- about the provenance of the target, not about any candidate",
         "q0": mp.nstr(q, 20),
-        "q0_pin": "proton (q_at)",
+        "q0_pin": "proton (q_at)", "q0Anchor": "proton",
         "dps": DPS,
         "Q_A_MeV": mp.nstr(Q_A, 20),
         "Q_exp_MeV": mp.nstr(Q_exp, 20),
