@@ -104,7 +104,9 @@ def sparse_word(word, shape):
 
 
 def tr_prod(M, K):
-    return mp.fsum(M[j][i] * w for i in range(len(K)) for j, w in K[i].items())
+    """tr(M K). K[i] is column i of K, i.e. {j: K_ji}, so tr(MK) = sum_ij M_ij K_ji.
+    (Until 2026-10-13 this read M[j][i], i.e. tr(M^T K); the identity-M cross-check could not see it.)"""
+    return mp.fsum(M[i][j] * w for i in range(len(K)) for j, w in K[i].items())
 
 
 def proton_block():
@@ -198,6 +200,19 @@ def main() -> int:
         if abs(tr_prod(M, sparse_word(w6, l)) - mjw.chi(l, w6)) > TOL:
             ok = False
     check("sparse_trace_matches_mjw_chi_n6", ok, "two independent products")
+
+    # the cross-check that matters: a NON-identity prefix M, tr(M K) against chi of the concatenated word.
+    # (The identity-M check above cannot distinguish tr(MK) from tr(M^T K).)
+    pre6 = electron(0) + sinv(2) + [(ONE, ZERO, 3), (ONE, -H, 4), (ONE, ZERO, 3)]
+    k6 = [(ONE, -H, 1), (ONE, ZERO, 2), (ONE, -H, 1), (ONE, ZERO, 2)]
+    ok = True
+    for l in mjw.two_row(6):
+        dim = cols(l)[1]
+        I = [[ONE if i == j else ZERO for j in range(dim)] for i in range(dim)]
+        Mp = right_apply(I, pre6, l)
+        if abs(tr_prod(Mp, sparse_word(k6, l)) - mjw.chi(l, pre6 + k6)) > TOL:
+            ok = False
+    check("prefix_times_operator_trace_matches_chi_of_concatenation_n6", ok, "non-identity prefix")
 
     cand = candidates(4)
     log("single-component reduced 3-strand words per length: " + str({L: len(v) for L, v in cand.items()}))

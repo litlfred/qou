@@ -36,3 +36,10 @@ Owner: "try both" (electron = corpus T_w0 σ0σ1σ0, which closes to a Hopf link
 - p–e OFF, junction letter ON: T_w0 electron: full LP selects σ0⁻³σ1^± (true inverse trefoil) for e|p, unknot words for e|e; γγ selects nothing for e|p and the vertex for e|e. Trefoil electron: NO K feasible at all (full and γγ) in either orientation.
 - γγ never selects 4₁ (min crossing picks the length-2 vertex whenever any γγ word is feasible).
 - Corpus naming: σ0σ1σ0 "trefoil" closes to a Hopf link; σ0σ1 "Hopf link" closes to the unknot. Algebra unaffected; names shifted. Not edited (owner call).
+
+## 2026-10-13 — 🛑 RETRACTION: both H₂ ⊗_K runs (e1ef182f22, 94552dacf2) computed tr(Mᵀ K), not tr(M K)
+- Bug: knot_convoluted_tensor_h2_probe.py::tr_prod indexed M[j][i]; K[i] is column i ({j: K_ji}), so it returned tr(MᵀK). The probe's cross-check used M = identity, which cannot see a transpose.
+- Invalidated: EVERY x·K figure — ratios, reading 3 on x·K, trace-decrease, hence every "LP selects" / "γγ selects" / "none feasible" row in the 2026-10-13 entry above and in the PR #7741 comments 6147812696 / 6147079940-follow-ups and chat.
+- NOT affected: reading 3 on the H₂ state x itself (chi_x is read off the prefix diagonal) — "p–e letter on ⇒ x fails reading 3" stands; the knot-vs-link closure checks; the Lean file.
+- Fix: M[i][j], plus a cross-check with a NON-identity prefix against chi of the concatenated word (old formula misses by 1.92, new by 4.6e-41). Re-run in progress.
+- Found by a locality test (owner pick "try 1"): with the correct product, the ratio of σ0⁻³σ1^± at the e|p junction is identical on 6-, 9- and 12-strand windows (0.52575295871417605185 / 0.45095163122811970554 at 40 dps), and disagreed with the witness's 0.8865 / 0.8117.
