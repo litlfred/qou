@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
   "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T12:00:14.821779+00:00",
-  "commitSha": "8f1b70555159d7e170bef87c379448651b822c55",
+  "computedAt": "2026-10-13T14:59:58.504718+00:00",
+  "commitSha": "cf13de45381038fe90515829757a2d4b8ed809af",
   "assertions": [
     {
       "name": "C_lambda >= 0 on every partition, to tolerance 1.0e-40",
@@ -102,11 +102,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "uic-sign-decomposition",
   "scriptFile": "uic_sign_decomposition_probe.py",
   "scriptHash": "e51b3858966e",
-  "scriptCommitSha": "8c239cf0e86ee5f39b0e186a2d7edbb6169b8041",
+  "scriptCommitSha": "3e377a368384538adab53a835eab0fb1bf34ca67",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -295,5 +295,7 @@
       "reconstruction_not_producer": "Sums are over |lambda| <= cap with ordering ['p']*Z + ['n']*N and one kernel call per partition; the producer uses the alternating ground-state ordering and its own k_exact ladder. Agreement is checked at 2H k=6 only.",
       "not_the_entanglement_result": "computations/meson/binding_cut_entropy_sign_is_forced_probe.py concludes 'the sign is forced' about entanglement entropy across the proton|neutron cut, where positivity is a theorem. Unrelated."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
