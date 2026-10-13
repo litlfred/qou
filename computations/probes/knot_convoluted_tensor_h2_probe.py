@@ -24,6 +24,14 @@ UNFIXED, ALL VALUES RUN (nothing selected):
   pe_letter    the intra-atom p–e letter sigma^-1 (molecular-crossing-table p_i e_j) present or absent.
   cmol         the inter-atomic crossing-table letter at the junction cut present or absent.
 
+ELECTRON WORD (owner 2026-10-13, "try both"): both run.
+  Tw0_s0s1s0        the corpus H_3 electron T_{w0} (particle-nf-table, covalent-bond-shared-trefoil); closes to a Hopf link.
+  trefoil_s0s0s0s1  a true trefoil on 3 strands (sigma_1^3 in B_2, ChiralFermionBraidWords, stabilised once).
+
+GAMMA-GAMMA RESTRICTION (owner ruling 2026-09-08, bean qou-ales: select words by gamma-gamma + SDP, not census):
+  K restricted to products of the vertex sigma_s sigma_{s+1}^-1 that close to a knot: the vertex itself (unknot) and its
+  square (figure-eight 4_1); the cube is the Borromean link (3 components). Reported as gg_lp_selected beside the full LP.
+
 ALSO RECORDED: the corpus "trefoil" sigma0 sigma1 sigma0 has permutation (0 2), i.e. its closure is a 2-component
 link, not a knot. Checked mechanically below.
 
@@ -104,8 +112,20 @@ def proton_block():
     return [(c, d, off) for c, d, off in blocks[0]]
 
 
+ELECTRONS = {
+    # corpus particle-nf-table / covalent-bond-shared-trefoil: the Hecke basis element T_{w0}; closes to a Hopf link
+    "Tw0_s0s1s0": lambda b: [(ONE, ZERO, b), (ONE, ZERO, b + 1), (ONE, ZERO, b)],
+    # a true trefoil on 3 strands: sigma_1^3 in B_2 (ChiralFermionBraidWords) stabilised once
+    "trefoil_s0s0s0s1": lambda b: [(ONE, ZERO, b), (ONE, ZERO, b), (ONE, ZERO, b), (ONE, ZERO, b + 1)],
+}
+ELECTRON = "Tw0_s0s1s0"
+
+
 def electron(base):
-    return [(ONE, ZERO, base), (ONE, ZERO, base + 1), (ONE, ZERO, base)]
+    return ELECTRONS[ELECTRON](base)
+
+
+GG_WORDS = {"s0+s1-", "s0+s1-s0+s1-"}   # gamma-gamma: products of the vertex sigma_i sigma_{i+1}^-1 that close to knots
 
 
 def sinv(g):
@@ -165,9 +185,10 @@ def main() -> int:
     shapes = [l for l in mjw.two_row(N) if y[N][l] != 0]
     log(f"n={N}: two-row blocks with y>0: {shapes}")
 
-    corpus_trefoil = electron(0)
+    corpus_trefoil = ELECTRONS["Tw0_s0s1s0"](0)
+    check("true_trefoil_electron_is_one_component", perm_cycles(ELECTRONS["trefoil_s0s0s0s1"](0)) == 1, "(0 1)^3(1 2)")
     check("corpus_trefoil_s0s1s0_closure_is_two_component", perm_cycles(corpus_trefoil) == 2, "permutation (0 2)")
-    check("s0s1s0s1_closure_is_one_component", perm_cycles(electron(0)[:2] * 2) == 1, "permutation (0 1 2)^2")
+    check("s0s1s0s1_closure_is_one_component", perm_cycles(ELECTRONS["Tw0_s0s1s0"](0)[:2] * 2) == 1, "permutation (0 1 2)^2")
 
     # cross-check sparse product against mjw.chi on a small case
     w6 = shift(electron(0), 1) + sinv(0) + [(ONE, ZERO, 4)]
@@ -182,51 +203,59 @@ def main() -> int:
     log("single-component reduced 3-strand words per length: " + str({L: len(v) for L, v in cand.items()}))
     check("no_single_component_word_of_length_1", len(cand[1]) == 0, "transposition")
 
+    global ELECTRON
     results = {}
-    for atom2 in ("pe", "ep"):
-        for pe_letter in (True, False):
-            for cmol in (True, False):
-                tag = f"atom2={atom2},pe_letter={int(pe_letter)},cmol={int(cmol)}"
-                w1, lab1 = atom("pe", pe_letter)
-                w2, lab2 = atom(atom2, pe_letter)
-                pair = (lab1[-1], lab2[0])
-                x = w1 + shift(w2, 6)
-                if cmol:
-                    x += sinv(JCUT) if set(pair) == {"p", "e"} else ([(ONE, ZERO, JCUT)] if pair == ("e", "e") else [])
-                prefix = {}
-                for l in shapes:
-                    dim = cols(l)[1]
-                    I = [[ONE if i == j else ZERO for j in range(dim)] for i in range(dim)]
-                    prefix[l] = right_apply(I, x, l)
-                log(f"{tag}: prefix built (junction pair {pair})")
-                chi_x = {l: mp.fsum(prefix[l][i][i] for i in range(cols(l)[1])) for l in shapes}
-                tr_x = mp.fsum(y[N][l] * chi_x[l] for l in shapes)
-                r3_x = all(chi_x[l] >= -TOL for l in shapes)
-                rows, feasible_by_len, decreasing_by_len = [], {}, {}
-                for L in (2, 3, 4):
-                    for name, kw in cand[L]:
-                        for s in (4, 5):
-                            kws = shift(kw, s)
-                            chis = {l: tr_prod(prefix[l], sparse_word(kws, l)) for l in shapes}
-                            tr = mp.fsum(y[N][l] * chis[l] for l in shapes)
-                            r3 = all(chis[l] >= -TOL for l in shapes)
-                            dec = tr < tr_x - TOL
-                            neg = [str(l) for l in shapes if chis[l] < -TOL]
-                            rows.append({"word": name, "site": s, "len": L, "ratio": mp.nstr(tr / tr_x, 25),
-                                         "reading3": r3, "trace_decreases": bool(dec), "negative_blocks": neg})
-                            if r3 and dec:
-                                feasible_by_len.setdefault(L, []).append(f"{name}@{s}")
-                            if dec:
-                                decreasing_by_len.setdefault(L, []).append(f"{name}@{s}")
-                lp_len = min(feasible_by_len) if feasible_by_len else None
-                results[tag] = {
-                    "junction_pair": list(pair), "tr_x": mp.nstr(tr_x, 30), "reading3_x": r3_x,
-                    "chi_x_negative_blocks": [str(l) for l in shapes if chi_x[l] < -TOL],
-                    "lp_selected_length": lp_len,
-                    "lp_selected": feasible_by_len.get(lp_len, []) if lp_len else [],
-                    "trace_decreasing_by_length": decreasing_by_len, "rows": rows}
-                log(f"{tag}: reading3(x)={r3_x}; LP length={lp_len}; selected={results[tag]['lp_selected']}; "
-                    f"trace-decreasing at L=2: {decreasing_by_len.get(2, [])}")
+    for ELECTRON in ELECTRONS:
+     for atom2 in ("pe", "ep"):
+         for pe_letter in (True, False):
+             for cmol in (True, False):
+                 tag = f"electron={ELECTRON},atom2={atom2},pe_letter={int(pe_letter)},cmol={int(cmol)}"
+                 w1, lab1 = atom("pe", pe_letter)
+                 w2, lab2 = atom(atom2, pe_letter)
+                 pair = (lab1[-1], lab2[0])
+                 x = w1 + shift(w2, 6)
+                 if cmol:
+                     x += sinv(JCUT) if set(pair) == {"p", "e"} else ([(ONE, ZERO, JCUT)] if pair == ("e", "e") else [])
+                 prefix = {}
+                 for l in shapes:
+                     dim = cols(l)[1]
+                     I = [[ONE if i == j else ZERO for j in range(dim)] for i in range(dim)]
+                     prefix[l] = right_apply(I, x, l)
+                 log(f"{tag}: prefix built (junction pair {pair})")
+                 chi_x = {l: mp.fsum(prefix[l][i][i] for i in range(cols(l)[1])) for l in shapes}
+                 tr_x = mp.fsum(y[N][l] * chi_x[l] for l in shapes)
+                 r3_x = all(chi_x[l] >= -TOL for l in shapes)
+                 rows, feasible_by_len, decreasing_by_len = [], {}, {}
+                 for L in (2, 3, 4):
+                     for name, kw in cand[L]:
+                         for s in (4, 5):
+                             kws = shift(kw, s)
+                             chis = {l: tr_prod(prefix[l], sparse_word(kws, l)) for l in shapes}
+                             tr = mp.fsum(y[N][l] * chis[l] for l in shapes)
+                             r3 = all(chis[l] >= -TOL for l in shapes)
+                             dec = tr < tr_x - TOL
+                             neg = [str(l) for l in shapes if chis[l] < -TOL]
+                             rows.append({"word": name, "site": s, "len": L, "ratio": mp.nstr(tr / tr_x, 25),
+                                          "reading3": r3, "trace_decreases": bool(dec), "negative_blocks": neg})
+                             if r3 and dec:
+                                 feasible_by_len.setdefault(L, []).append(f"{name}@{s}")
+                             if dec:
+                                 decreasing_by_len.setdefault(L, []).append(f"{name}@{s}")
+                 gg_feasible = [f"{r['word']}@{r['site']}" for r in rows if r["word"] in GG_WORDS and r["reading3"] and r["trace_decreases"]]
+                 gg_rows = [r for r in rows if r["word"] in GG_WORDS]
+                 gg_len = min((len(w.split("@")[0]) // 3 for w in gg_feasible), default=None)
+                 lp_len = min(feasible_by_len) if feasible_by_len else None
+                 results[tag] = {
+                     "junction_pair": list(pair), "tr_x": mp.nstr(tr_x, 30), "reading3_x": r3_x,
+                     "chi_x_negative_blocks": [str(l) for l in shapes if chi_x[l] < -TOL],
+                     "lp_selected_length": lp_len,
+                     "lp_selected": feasible_by_len.get(lp_len, []) if lp_len else [],
+                     "trace_decreasing_by_length": decreasing_by_len,
+                     "gg_lp_selected": [w for w in gg_feasible if len(w.split("@")[0]) // 3 == gg_len] if gg_len else [],
+                     "gg_rows": gg_rows, "rows": rows}
+                 log(f"{tag}: reading3(x)={r3_x}; LP length={lp_len}; selected={results[tag]['lp_selected']}; "
+                     f"gg selected={results[tag]['gg_lp_selected']}; "
+                     f"gg ratios={[(r['word'], r['site'], r['ratio'][:10], r['reading3']) for r in gg_rows]}")
 
     ok_all = all(ok for _, ok, _ in checks)
     wb = WitnessBuilder("knot-convoluted-tensor-h2", engine="mpmath")
