@@ -344,7 +344,8 @@ def main() -> int:
             "Hecke h, not by an EM coupling), not an electromagnetic one."
         ),
         "bean": "qou-o6ml",
-        "q0Anchor": "physical_proton",
+        "q0Anchor": "proton",
+        "q0AnchorReason": "Physical-Observations layer (manifest key physical_proton): q0 = Q_50_DIGIT_STR, the proton m_p/m_e pin",
         "q0Value": mp.nstr(q, 30),
         "bond_factors": {
             "f_pp": mp.nstr(f_pp, 30),

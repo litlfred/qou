@@ -322,7 +322,7 @@ def main() -> int:
         "engine": "mpmath",
         "scriptFile": Path(__file__).name,
         "commitSha": _head_sha(),
-        "q0Anchor": "physical_proton",
+        "q0Anchor": "proton",
         "q0AnchorReason": "seeded from Q_50_DIGIT_STR; convention D (z = q^3/(q^2+1))",
         "description": (
             "Measures whether the gamma-gamma-selected bond G^3 = (sigma_2 sigma_3^-1)^3 "

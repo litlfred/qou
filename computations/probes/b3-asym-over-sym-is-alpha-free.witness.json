@@ -1,7 +1,8 @@
 {
   "description": "b3_asym/b3_sym is an alpha-free prediction of the chain assembly. Derived from B = -alpha[(Z-1)ln f_pp + ln f_pn + (N-1)ln f_nn]; alpha cancels in the ratio. Accuracy is REPORTED, not asserted. A nonzero result is an ISOSPIN-LABELLING asymmetry (f_pp and f_nn differ by the Hecke h, not by an EM coupling), not an electromagnetic one.",
   "bean": "qou-o6ml",
-  "q0Anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "q0AnchorReason": "Physical-Observations layer (manifest key physical_proton): q0 = Q_50_DIGIT_STR, the proton m_p/m_e pin",
   "q0Value": "1.10997858275138080759166909561",
   "bond_factors": {
     "f_pp": "0.612688037146465251595829863946",
@@ -92,5 +93,5 @@
       "detail": "derived b3_asym = 0.87353662138 MeV; AME b3_asym = 0.38187744 MeV.  Both positive."
     }
   ],
-  "computedAt": "2026-09-14T16:14:50.923177+00:00"
+  "computedAt": "2026-10-13T11:32:14.363852+00:00"
 }
