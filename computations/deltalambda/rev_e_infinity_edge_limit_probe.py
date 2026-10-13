@@ -884,6 +884,10 @@ _wit = {
     "computation": {"script": "computations/deltalambda/rev_e_infinity_edge_limit_probe.py"},
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "e_inf, the last unknown constant in the REV_n asymptotics, as a three-piece "

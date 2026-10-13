@@ -449,6 +449,10 @@ _wit = {
         "script": "computations/deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py"},
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "G1 -- Xbot(s) <= Xblock(s), the last conditionality on e_inf -- has one recorded "

@@ -224,7 +224,12 @@ BMAX = int(os.environ.get("REV_XBOT_BMAX", "10"))
 BUMAX = int(os.environ.get("REV_XBOT_BUMAX", "3"))
 
 E_INF_7335 = mp.mpf("2.43929645512078402706542884314")
-B_TOP_CERT = mp.mpf("2.25373556700090488296611")   # #7349's certified top-edge bound
+# #7349's certified top-edge bound, READ from the witness that certifies it
+# (rev-e-infinity-block-sup-relaxation, certificate_P8.bound) rather than typed
+# (witness-value copy ratchet).
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       "rev-e-infinity-block-sup-relaxation.witness.json"), encoding="utf-8") as _fh:
+    B_TOP_CERT = mp.mpf(json.load(_fh)["certificate_P8"]["bound"])
 
 CHECKS: list[tuple[str, bool, str]] = []
 
@@ -1469,6 +1474,10 @@ _wit = {
         "script": "computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py"},
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "The bottom edge of the e_inf staircase is concave in the displacement vector for the "
