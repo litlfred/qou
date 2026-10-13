@@ -1,8 +1,8 @@
 {
   "engine": "exact-integer-axis-vector-and-involution",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T12:26:16.898467+00:00",
-  "commitSha": "de12130617d6dcefdaaa6a99fc7b9593e0f99106",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:48:02.306504+00:00",
+  "commitSha": "eb645d81e7fe1646342513e676f6498caab4a229",
   "assertions": [
     {
       "name": "C1_eq100_forces_a_equals_b",
@@ -50,7 +50,7 @@
       "expected": "PASS",
       "passed": true,
       "tolerance": "exact",
-      "source": "CORRECTION of a claim I made minutes earlier in this same probe. An earlier run of this grep pair returned ZERO for the second count and I wrote 'no bar involution is defined on the NZ lattice anywhere in this corpus'. Re-run correctly: 449 files mention 'bar involution' and 35 of them touch gluing / Neumann / tetrahedra. A FALSE NEGATIVE from my own detector, believed because it agreed with the shape of the previous finding (R1). What is actually there: QOU/QBeta/CuspShapeBarParity.lean carries barEven/barOdd on the CUSP SHAPE and states that the sqrt(-3) driving the Neumann-Zagier deformation CVol(u) = Vol - (tau/4)u^2 + ... IS barOdd(omega), with BarParityZeta4Swap.lean as the carrier. So bar parity DOES act on NZ-adjacent geometric data. Two caveats keep it from closing (ii): it is 4_1 and not 5_2, and it acts on the cusp SHAPE (a scalar) rather than on a lattice DIRECTION. The machinery is far closer than my retracted claim said, and the 5_2 analogue is the concrete next object"
+      "source": "CORRECTION of a claim I made minutes earlier in this same probe. An earlier run of this grep pair returned ZERO for the second count and I wrote 'no bar involution is defined on the NZ lattice anywhere in this corpus'. Re-run correctly: 485 files mention 'bar involution' and 35 of them touch gluing / Neumann / tetrahedra. A FALSE NEGATIVE from my own detector, believed because it agreed with the shape of the previous finding (R1). What is actually there: QOU/QBeta/CuspShapeBarParity.lean carries barEven/barOdd on the CUSP SHAPE and states that the sqrt(-3) driving the Neumann-Zagier deformation CVol(u) = Vol - (tau/4)u^2 + ... IS barOdd(omega), with BarParityZeta4Swap.lean as the carrier. So bar parity DOES act on NZ-adjacent geometric data. Two caveats keep it from closing (ii): it is 4_1 and not 5_2, and it acts on the cusp SHAPE (a scalar) rather than on a lattice DIRECTION. The machinery is far closer than my retracted claim said, and the 5_2 analogue is the concrete next object"
     },
     {
       "name": "C7_near_miss_isometric_to_mirror_is_vacuous",
@@ -65,8 +65,8 @@
   "durationMs": 4,
   "computation": "d1b-null-direction-is-mirror-symmetric",
   "scriptFile": "d1b_null_direction_is_mirror_symmetric_probe.py",
-  "scriptHash": "1e60842680ec",
-  "scriptCommitSha": "de12130617d6dcefdaaa6a99fc7b9593e0f99106",
+  "scriptHash": "6780a4929aa7",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,14 +74,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -155,5 +155,7 @@
       "wired": false,
       "fit": false
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
 }
