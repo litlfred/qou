@@ -608,3 +608,15 @@ TRAPs.
   long `timeout`. Most refill NEWs are ONE producer each: there is no
   many-witnesses group, and the mechanical groups are by fix SHAPE (manifest,
   near-miss key, save(extra)).
+- 2026-10-13 (PR #7791, aK_v2 import-cone refresh, 7 witnesses): only **1 of 7** was a
+  clean cone refresh (vhat, 37 fields, 5.35e-15). The two-arm run (parent of the fix
+  commit vs HEAD) split the rest: `proton-mass-full-tower` carried both the 5e-15 fix
+  delta AND 0.416 drift that predates the fix. `d-from-scratch` (1.43) and
+  `cross-check-trM-1ppb` (an allPassed True->False flip) had fix delta 0. Held all
+  three. Skipped: mass_formula_6term (li2q guard crash at both arms), six_term_model_b
+  (refuses, `qou-imkb`), and term5_aK_audit (>34 min; it never calls aK_v2). **TRAP:**
+  a list of "import-cone stale" witnesses is not a list of fix-attributable moves.
+  Without the base arm, three would have shipped large drift under a 1e-14 label.
+  **TRAP:** the pip editable installs of qou-substrate/pyhecke pointed at a sibling
+  worktree (`/home/user/wt-pgt`). Set PYTHONPATH to your own `tools/*/python`. Gates:
+  the red set was identical to pristine main (10).
