@@ -43,3 +43,13 @@ Owner: "try both" (electron = corpus T_w0 σ0σ1σ0, which closes to a Hopf link
 - NOT affected: reading 3 on the H₂ state x itself (chi_x is read off the prefix diagonal) — "p–e letter on ⇒ x fails reading 3" stands; the knot-vs-link closure checks; the Lean file.
 - Fix: M[i][j], plus a cross-check with a NON-identity prefix against chi of the concatenated word (old formula misses by 1.92, new by 4.6e-41). Re-run in progress.
 - Found by a locality test (owner pick "try 1"): with the correct product, the ratio of σ0⁻³σ1^± at the e|p junction is identical on 6-, 9- and 12-strand windows (0.52575295871417605185 / 0.45095163122811970554 at 40 dps), and disagreed with the witness's 0.8865 / 0.8117.
+
+## 2026-10-13 — corrected H₂ ⊗_K run (6/6 checks, tr(MK) fixed); owner pick "try 1" = drop p–e letter, keep junction letter
+Option-1 cells (pe_letter=0, cmol=1), 40 dps, measured:
+- Corpus orientation p|e|p|e (the interleaved ordering h2-lp-dual-binding selects) + corpus electron T_w0: full LP selects K = σ1^{±1}σ0⁻³ at site 4 (min crossing 4). Both close to the INVERSE TREFOIL — the knot prop:ilp-covalent-bond names. Ratios tr(xK)/tr(x): 0.88645508185181440444 (σ1σ0⁻³), 0.81165375436575805813 (σ1⁻¹σ0⁻³). The LP's min-crossing objective does not break that tie.
+- Same cell, γγ-restricted (σσ⁻¹ unknot, its square 4₁): NOTHING feasible — all four raise the trace (1.31–1.60).
+- Conjugate braid reps of the same knot are NOT interchangeable: σ0⁻³σ1 at site 4 gives 0.52575 but fails reading 3 on (6,6); σ1σ0⁻³ gives 0.88646 and passes. The bond value depends on the braid word, not only the knot.
+- e|e orientation: LP selects length-2 words (unknot closures), 6-way tie, ratios 0.6588 / 0.7723 / 0.8865; γγ nothing.
+- True-trefoil electron σ0³σ1: nothing feasible in either orientation.
+- Locality (this config): ratio identical on 6-, 9-, 12-strand windows → CO can be done on a junction window, conditional on chain multiplicativity (not proved).
+Still open (owner): tie-break between the two inverse-trefoil braids; γγ ruling vs ilp-covalent-bond conflict on H₂.
