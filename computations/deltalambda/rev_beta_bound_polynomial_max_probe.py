@@ -472,7 +472,7 @@ def main() -> int:
         "probe": "rev_beta_bound_polynomial_max_probe",
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "q0_anchor": "physical_proton", "q0Anchor": "proton",
+        "q0_anchor": "physical_proton",
         "dps": mp.dps,
         "relaxation": ("M_n <= max_(l,W) [ l*C - J(l,W) - F(n) - (Hhat(n,l,W) - H_min(n)) ln q0 ], "
                        "with 2*Hhat = min over admissible lambda_1 of "
