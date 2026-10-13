@@ -185,6 +185,28 @@ def tr_m_bar_norm(Z: int, N: int, *, include_free: bool = True, dps: int = 50):
     return bar_a, bar_f
 
 
+def _deuteron_reference() -> str:
+    """Deuteron tr_M from the Hoefsmit producer's proton witness, as its string.
+
+    Refuses if that witness was computed at a different q₀ than this producer
+    runs at: a reference from the other pin is a straddle, and the muon/proton
+    gap moves the deuteron trace by 4.3e-8, far outside the 1e-12 tolerance.
+    """
+    import json
+    src = _path_bridge.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json",
+                                    Path(__file__).resolve().parent)
+    W = json.loads(Path(src).read_text())
+    with mp.workdps(60):
+        if abs(mp.mpf(str(W["q0Value"])) - Q0) > mp.mpf(10) ** -45:
+            raise SystemExit(
+                f"reference witness q0 {str(W['q0Value'])[:24]}… != this "
+                f"producer's q0 {mp.nstr(Q0, 24)}…; refusing a cross-pin check")
+    for row in W["results"]:
+        if str(row.get("Z")) == "1" and str(row.get("N")) == "1":
+            return str(row["tr_M_at_q0_50dps"])
+    raise SystemExit("reference witness carries no deuteron row")
+
+
 def main() -> int:
     atoms = sys.argv[1:] or ["D", "T", "3He", "4He", "6Li", "7Li"]
     set_compute_dps()
@@ -237,15 +259,21 @@ def main() -> int:
     if by_partition:
         w.add_data("by_partition", by_partition)
     if d_check is not None:
+        # The expected value is READ from the Hoefsmit producer's proton
+        # witness, never typed. It was typed twice and went stale twice:
+        # 0.388357 (convention C) and then 0.5751722439177718708 — which is the
+        # GROUPED intra-nucleon word, superseded by the 2026-09-05 owner ruling
+        # (bean `qou-hu1f`, `atom_braid_word_3A(intra_order="borromean")`).
+        # grouped/borromean = 3.784816 at the deuteron, the qou-hu1f R_quark
+        # factor, so the assertion FAILED against a correct computation.
+        ref = _deuteron_reference()
         w.add_assertion(
             "trM_atom_deuteron_matches_canonical_branching",
-            computed=str(d_check), expected="0.5751722439177718708265353439861808891524943528928", tolerance="1e-12",
-            source=("three independent methods 2026-08-19 (bean `qou-r9dv`): "
-                    "this transfer, the Hoefsmit atomic_tr_m_mpfr_50dps + "
-                    "markov_peel path (exact to every digit), and "
-                    "canonical_tr_m_via_branching (1.4e-4). REFRESHED from a "
-                    "stale 0.388357 that no live path produced and that this "
-                    "witness recorded as PASSING."),
+            computed=str(d_check), expected=ref, tolerance="1e-12",
+            source=("atomic-tr-m-mpfr-50dps-proton.witness.json results[deuteron]"
+                    ".tr_M_at_q0_50dps (Hoefsmit + Wenzl bridge, borromean "
+                    "ordering, convention D, proton pin; q0 checked equal). "
+                    "Bean qou-r9dv (three methods) / qou-hu1f (ordering)."),
         )
     w.add_assertion(
         "free_chi_matches_parabolic_lr_50dps",
