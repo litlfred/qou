@@ -60,6 +60,27 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
+
+def _env_anchor() -> "str | None":
+    """`QOU_Q0_ANCHOR`, normalised to the substrate's anchor vocabulary.
+
+    The chi-cache filenames carry a `-{anchor}` suffix, and producer and
+    consumer used to build it from the RAW env string. The substrate treats
+    `ideal`, `muon` and `canonical` as one anchor (`resolve_q0_anchor`), and the
+    corpus documents the muon run as `QOU_Q0_ANCHOR=ideal`, so that run wrote
+    and looked for `-ideal` files while the committed muon caches are `-muon`.
+    The consumer then fell back to the PROTON numeric cache for T/3He/4He (a
+    straddle: proton chi with muon y) and to the GROUPED-word symbolic caches
+    for p/n/D (2026-10-13, deuteron tr_M adjudication). Unrecognised values
+    pass through unchanged; unset returns None.
+    """
+    raw = os.environ.get("QOU_Q0_ANCHOR")
+    if not raw:
+        return None
+    from qou_substrate.witness import resolve_q0_anchor
+    a = resolve_q0_anchor(__file__, env={"QOU_Q0_ANCHOR": raw})[0]
+    return a if a in ("muon", "proton") else raw
+
 def _load_numerical_chi_cache(atom_name: str, n: int) -> dict | None:
     """Load the numerical χ^λ@q_0 cache built by
     `chi_at_q0_via_hoefsmit_mpfr.py`, if present. Returns None when
@@ -77,7 +98,7 @@ def _load_numerical_chi_cache(atom_name: str, n: int) -> dict | None:
     # proton). anchor_of_q0() is NOT usable here — it returns None for the
     # muon Q_50_DIGIT_STR (the 2022-CODATA value ...56427390..., which differs
     # from the frozen canonical muon ...5573347... at the 13th digit).
-    _anchor = os.environ.get("QOU_Q0_ANCHOR", "proton")
+    _anchor = _env_anchor() or "proton"
     candidates = []
     if _anchor and _anchor != "proton":
         candidates.append(HERE / f"chi-{atom_name}-h{n}-at-q0-50dps-{_anchor}.witness.json")
