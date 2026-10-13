@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-tower-ruling-bound",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "the_tower_form_reduces_violations_by_an_order_of_magnitude",
@@ -112,8 +113,8 @@
     "scale_freedom_pct": "0.9914519137"
   },
   "provenance": {
-    "headSha": "d3c8eb4d87c5bda8fcbfaf1cbd350267d5845355",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_tower_ruling_bound_probe.py",
-    "elapsed_s": 0.206
+    "elapsed_s": 0.257
   }
 }

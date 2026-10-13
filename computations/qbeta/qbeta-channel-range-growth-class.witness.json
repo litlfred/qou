@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-channel-range-growth-class",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "only_the_massless_channel_is_super_extensive",
@@ -173,8 +174,8 @@
     ]
   },
   "provenance": {
-    "headSha": "1771f64dfb20a84e0c8382905dd6e0aa603e97a6",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_channel_range_growth_class_probe.py",
-    "elapsed_s": 0.006
+    "elapsed_s": 0.007
   }
 }
