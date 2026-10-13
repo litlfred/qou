@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T11:42:04.659466+00:00",
-  "commitSha": "b5f559e7229ad9a3666957b75142f7d7722ef3df",
+  "computedAt": "2026-10-13T11:47:46.809350+00:00",
+  "commitSha": "9c6f715760cbd23b9b2b100720f1b8bbb09959ec",
   "assertions": [
     {
       "name": "flavor_split_pair_product_half_ceiling",
@@ -18,7 +18,7 @@
   "computation": "flavor-split-pair-product-half-ceiling",
   "scriptFile": "flavor_split_pair_product_half_ceiling_probe.py",
   "scriptHash": "e41ecc7caa53",
-  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "scriptCommitSha": "dc0990ef2f2f82fb6b87d54e35bcc69082ac2664",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,7 @@
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
