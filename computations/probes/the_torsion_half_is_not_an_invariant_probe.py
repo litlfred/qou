@@ -410,7 +410,7 @@ def main() -> int:
         wb.add_caveat(
             "Per component only. A realisation of the whole chain link is not "
             "constructed; the principle does not depend on it.")
-        print(f"\nWitness: {wb.save()}")
+        print(f"\nWitness: {wb.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
 

@@ -183,6 +183,6 @@ if WitnessBuilder is not None:
     for label, ok, detail in ASSERTS:
         w.add_assertion(f"{label}{' -- ' + detail if detail else ''}",
                         computed="true" if ok else "false", expected="true")
-    w.save()
+    w.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
     print("witness written")
 sys.exit(1 if failures else 0)

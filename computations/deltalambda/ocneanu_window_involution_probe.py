@@ -139,7 +139,7 @@ def main() -> int:
     w.add_parameter("n_max", str(NMAX))
     w.add_data("by_n", rows)
     w.add_data("bar_invariant", {k: bool(v) for k, v in bar.items()})
-    w.save()
+    w.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
     ok = alt_in_window and t_ok and b_ok and t_forces_half and many_bar and zD_is_z2 and not bar["z = 0 (control)"]
     return 0 if ok else 1
 

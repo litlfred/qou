@@ -151,7 +151,7 @@ def main():
     ok = all(add(add({(): 1 / q}, sigma(i, -1), -1), {(i,): Q2}, -1) == {} for i in (0, 1))
     checks["T2_bar_fixes_e"] = bool(ok)
 
-    out = {"letters": {}, "gg_words": {}, "nucleons": {}}
+    out = {"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal", "letters": {}, "gg_words": {}, "nucleons": {}}
     # letters
     for name, sgn, rule in templates():
         for a, b in [("u", "u"), ("u", "d"), ("d", "d")]:

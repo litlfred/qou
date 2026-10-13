@@ -161,7 +161,7 @@ def main():
     checks["K2_h0_is_permutation"] = bool(k2)
     checks["K3_V3_identity"] = bool(k3)
     checks["K4_flip_V_is_Vinv"] = bool(k4)
-    out = {"recipe": "computations/probes/gg_quark_letters/preregistration.md (bca743c8b98)",
+    out = {"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal", "recipe": "computations/probes/gg_quark_letters/preregistration.md (bca743c8b98)",
            "issue": 7754, "checks": checks, "rows": rows}
     (HERE / "gg-quark-letters-h1.witness.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
     print(checks)

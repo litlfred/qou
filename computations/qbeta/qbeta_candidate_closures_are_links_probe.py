@@ -284,7 +284,7 @@ CONSEQUENCE for bean qou-pzsi
         "exhaustive over the census: all 16 constructed readings included",
     ], 1):
         wb.add_assertion(f"{i}. {nm}", "FAIL" if nm in failures else "PASS", "PASS")
-    out = wb.save()
+    out = wb.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
     print(f"Witness: {out}")
     return 1 if failures else 0
 

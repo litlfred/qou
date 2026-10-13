@@ -224,7 +224,7 @@ def main() -> int:
                      computed=str(bool(excluded)), expected="True")
     wb.add_assertion("required_layout_contradicts_forced",
                      computed=str(s_required > s), expected="True")
-    wb.save(extra={"auditOnly": True})
+    wb.save(extra={"auditOnly": True, "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
 
     print("=== channel asymmetry: the crossing-budget class bound ===")
     print(f"  s = {s} strands/nucleon (FORCED, H2)")

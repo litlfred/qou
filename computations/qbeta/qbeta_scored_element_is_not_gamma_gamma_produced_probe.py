@@ -266,7 +266,7 @@ def main() -> int:
         "scored element is gamma-gamma-produced'. (3) It identifies no "
         "replacement element and does not claim one exists."
     ))
-    w.save()
+    w.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
 
     print()
     if FAILED:

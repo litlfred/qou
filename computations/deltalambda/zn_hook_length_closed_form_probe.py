@@ -504,6 +504,8 @@ def main() -> int:
     print("=" * 78)
 
     payload = {
+
+        "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
         "probe": "zn_hook_length_closed_form_probe",
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),

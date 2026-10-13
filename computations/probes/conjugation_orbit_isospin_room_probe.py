@@ -171,7 +171,7 @@ def main() -> int:
                      expected="False")
     wb.add_assertion("h6_block_count_is_eleven",
                      computed=str(six["n_blocks"]), expected="11")
-    wb.save(extra={"auditOnly": True})
+    wb.save(extra={"auditOnly": True, "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
 
     print("=== charge-conjugation room for a total-isospin label ===")
     for n in (2, 6):

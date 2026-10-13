@@ -201,6 +201,8 @@ record(
 )
 
 out = {
+
+    "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
     "probe": _HERE.stem,
     "bean": "qou-cds1",
     "question": "can QbetaHabiroTaylorBridgeClass be worked as a Lean target?",
