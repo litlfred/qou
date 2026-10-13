@@ -196,6 +196,17 @@ contributions. **Absolute** shifts were ~1e-17 MeV everywhere, including there �
 report both, and say which one the "floor" claim is about. Neither direction rescues
 the old value: agreement at the floor never was evidence of correct rounding.
 
+## TRAP — an IMPORT can reassign the global `mp.dps` inside your `workdps`
+
+`y_lambda_su_n` calls `set_compute_dps(50)` at module scope, which ASSIGNS
+`mp.dps = 50`. A lazy `from y_lambda_su_n import …` inside a
+`with mp.workdps(70):` block drops the rest of that block to 50 digits, and
+there is no signal. Measured 2026-10-13 (PR #7785, `aK_v2`): a_K moved at the
+51st digit; contributions summed outside the block disagreed with the total
+computed inside it by 1.2e-51. Import such modules at module scope, and
+assert `mp.mp.dps == dps` before the final reduction. Same mechanism makes the
+six-term isotope sweep run at 50 dps from its first `aK_v2` call onward.
+
 ## TRAP — `chi_all_lambda_any` carries its OWN `dps=50`, not the ambient `mp.dps`
 
 `chi_general_word.chi_all_lambda_any(word, n, *, dps=50, …)` computes at its
@@ -561,4 +572,8 @@ TRAPs.
   lower. Blocked producers worth knowing: `rho_binding_constancy_probe` and
   `saddle_offset_zero_location_probe` CRASH at HEAD; `qbeta_derived_w_overdetermined_test_probe`
   hits tr_m_word_lq Case C (do not chain, see above).
-
+- 2026-10-13 (PR #7785): `aK_v2` float64 -> mpf. Sweep witness padding 45 -> 0;
+  gates `--changed` 9 reds = pristine-main's 10 minus `float64-padding`. HEAD
+  producer reproduced the committed witness first (0 moves), so all 227 moves
+  (max rel 2.3e-14) are the fix. Kernel got 7x FASTER (7m32s -> 1m07s) by
+  skipping y=0 (>2-row) shapes. New TRAP above (import reassigns dps).
