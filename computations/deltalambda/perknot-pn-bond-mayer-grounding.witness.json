@@ -3,7 +3,7 @@
   "description": "Categorical grounding of the inverse-product per-bond weight w(a,b)=1/(tr_M(a)tr_M(b)) behind the T/3He mu_ext-split LEAD (bean qou-r1sr, PR #3841). Structural reduction to (tr_p/tr_n)^2, Mayer/ideal-gas pair-correlation normalization (b2 level of the Ursell cluster expansion), and correct Coulomb/isospin sign. EXPLORATORY; scope-(a); no fit.",
   "audit_only": true,
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "assertions": [
     {
       "name": "split_reduces_to_trp_trn_squared",
@@ -12,7 +12,7 @@
     },
     {
       "name": "split_matches_target_under_5pct",
-      "detail": "|rel err| = 1.378% < 5% (pred 1.33145 vs 1.35005)",
+      "detail": "|rel err| = 2.605% < 5% (pred 1.33145 vs 1.36707)",
       "passed": true
     },
     {
@@ -32,22 +32,22 @@
     "split_pred": "1.331453532235317247960653200610521107804",
     "structural_reduction": "(tr_p/tr_n)^2",
     "structural_reduction_exact": true,
-    "target_mu_ratio": "1.350054177187680499445041125539456482919",
-    "rel_err_pct": "-1.37777",
-    "true_exponent": "2.0969255",
+    "target_mu_ratio": "1.367066471600697764024473361369026964559",
+    "rel_err_pct": "-2.60506",
+    "true_exponent": "2.1844122",
     "model_exponent": 2,
     "categorical_home": "Mayer/ideal-gas normalization 1/(Z_a Z_b) of the pair correlation g2=tr(ab)/(tr(a)tr(b))-1; tr_M = Plancherel-weighted partition sum Sum_lambda y_lambda chi_lambda. b2 (pairwise) level of B/m_e = Sum_k b_k.",
     "physics": "tr_n<tr_p => w(nn)>w(pp) => nn binds more => 3He less bound; correct Coulomb/isospin sign (AME B(T)=8.482 > B(3He)=7.718).",
     "honest_bounds": "b2/pairwise object. Main's Ursell frame: pairwise b2 is the SATURATED ceiling; the OPEN magnitude gap is the CONNECTED b4. Grounds the p!=n isospin discriminator but is ORTHOGONAL to the extensivity magnitude closure (does not reproduce full non-monotone mu_ext; 4He not max).",
-    "anti_numerology_flag": "true exponent 2.097 ~ 2.093 (4He super-pairwise excess). COINCIDENCE, NOT fit (Ursell-doc guardrail, Rule-14 hidden DOF).",
-    "verdict": "GROUNDED (partial): the inverse-product weight is the Mayer b2 normalization, the T/3He split reduces exactly to (tr_p/tr_n)^2 with correct Coulomb sign and -1.38% magnitude. It is a categorically-grounded p!=n isospin discriminator, ORTHOGONAL to the open connected-b4 extensivity magnitude gap. Scope-(a); no wiring."
+    "anti_numerology_flag": "true exponent 2.184 (model exactly 2). With the stale mu targets this read 2.097 and was flagged as near 2.093 (4He super-pairwise excess); at the live targets that proximity no longer holds. Either way: COINCIDENCE, NOT fit (Ursell-doc guardrail, Rule-14 hidden DOF).",
+    "verdict": "GROUNDED (partial): the inverse-product weight is the Mayer b2 normalization, the T/3He split reduces exactly to (tr_p/tr_n)^2 with correct Coulomb sign and -2.605% magnitude. It is a categorically-grounded p!=n isospin discriminator, ORTHOGONAL to the open connected-b4 extensivity magnitude gap. Scope-(a); no wiring."
   },
-  "scriptHash": "4b506cdf9bcf",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
-  "computedAt": "2026-09-05T18:02:50.501076+00:00",
+  "scriptFile": "perknot_pn_bond_mayer_grounding_probe.py",
+  "scriptHash": "8c0b5c38b7a2",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "commitSha": "25e7f84b95cb3d8470cc01fe61162a8777b48484",
+  "computedAt": "2026-10-13T17:39:33.590795+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "perknot_pn_bond_mayer_grounding_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

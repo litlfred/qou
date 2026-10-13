@@ -5,7 +5,8 @@
 The LEAD (perknot_pn_bond_resolved_extensivity_probe.py): the parameter-free
 inverse-product per-bond weight w(a,b) = 1/(tr_M(a)*tr_M(b)) on the p!=n-distinct
 Markov traces reproduces the T/3He extensivity-multiplier split
-mu_ext(T)/mu_ext(3He) = 4.444/3.292 = 1.3501 to -1.38%, a split every
+mu_ext(T)/mu_ext(3He) to a few percent (-1.38% against the stale targets
+4.444/3.292; -2.61% against the live 6.706/4.905, 2026-10-13), a split every
 symmetric/equal-weight bond model gives as exactly 1.000.
 
 This probe answers the open "why inverse?" question three ways, honestly:
@@ -37,9 +38,10 @@ HONEST BOUNDS (keeps this a scope-(a) grounded LEAD, not a closure):
   grounds the p!=n isospin discriminator but is ORTHOGONAL to the extensivity
   magnitude closure (it does not reproduce the full non-monotone mu_ext; 4He
   is not the maximum).
-- true exponent is 2.097, not exactly 2 (the -1.38%).  NOTE 2.097 ~ 2.093
-  (the measured 4He super-pairwise excess) — flagged as a COINCIDENCE NOT to
-  fit, per the Ursell-doc anti-numerology guardrail (Rule-14 hidden DOF).
+- true exponent is not exactly 2: 2.184 at the live mu targets (it read 2.097
+  against the stale ones, which sat near the 2.093 4He super-pairwise excess —
+  that proximity was an artefact of the stale targets).  Never fit it
+  (Ursell-doc anti-numerology guardrail, Rule-14 hidden DOF).
 
 EXPLORATORY; production_wired: false; no fit, no BW, scope-(a).
 """
@@ -66,9 +68,19 @@ set_compute_dps()
 TR_P = mp.mpf("1.065306238075878215688040411687927620546686279347")
 TR_N = mp.mpf("0.92323330514983772546573530276491123416377319107628")
 
-# mu_ext targets (deltalambda-extensivity-gap-synthesis.witness.json)
-MU_T = mp.mpf("4.444146924325849")
-MU_3HE = mp.mpf("3.2918285794896933")
+# mu_ext targets, READ from their owning witness
+# (deltalambda-extensivity-gap-synthesis.witness.json,
+# `extensivity_multipliers_target`). Until 2026-10-13 these were typed
+# literals 4.444146924325849 / 3.2918285794896933, stale against that witness
+# (which carries 6.706071811638838 / 4.905446773035623). Parsed with
+# parse_float=str so the witness's decimal text reaches mp.mpf verbatim and
+# never passes through a Python float.
+_MU_SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       "deltalambda-extensivity-gap-synthesis.witness.json")
+with open(_MU_SRC) as _f:
+    _MU = json.load(_f, parse_float=str)["extensivity_multipliers_target"]
+MU_T = mp.mpf(_MU["T"])
+MU_3HE = mp.mpf(_MU["3He"])
 
 # AME binding energies (MeV) — direction cross-check only
 B_T_AME = AME_B_TRITIUM_MEV_VALIDATION
@@ -176,13 +188,17 @@ def main():
                 "non-monotone mu_ext; 4He not max)."
             ),
             "anti_numerology_flag": (
-                "true exponent 2.097 ~ 2.093 (4He super-pairwise excess). "
-                "COINCIDENCE, NOT fit (Ursell-doc guardrail, Rule-14 hidden DOF)."
+                f"true exponent {mp.nstr(true_exp, 4)} (model exactly 2). With the "
+                "stale mu targets this read 2.097 and was flagged as near 2.093 "
+                "(4He super-pairwise excess); at the live targets that "
+                "proximity no longer holds. Either way: COINCIDENCE, NOT fit "
+                "(Ursell-doc guardrail, Rule-14 hidden DOF)."
             ),
             "verdict": (
                 "GROUNDED (partial): the inverse-product weight is the Mayer "
                 "b2 normalization, the T/3He split reduces exactly to "
-                "(tr_p/tr_n)^2 with correct Coulomb sign and -1.38% magnitude. "
+                "(tr_p/tr_n)^2 with correct Coulomb sign and "
+                f"{mp.nstr(relerr, 4)}% magnitude. "
                 "It is a categorically-grounded p!=n isospin discriminator, "
                 "ORTHOGONAL to the open connected-b4 extensivity magnitude gap. "
                 "Scope-(a); no wiring."
