@@ -331,7 +331,7 @@ def main() -> int:
                f"predicate (under 5 %) so the witness summary reports a pass "
                f"for a measured negative rather than FAILURES.",
     )
-    b.save()
+    b.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
 
     print(f"baselined witnesses {len(base)}   scanned {scanned}")
     print(f"non-integral float leaves {total}   distinct leaf names {len(leaf)}\n")

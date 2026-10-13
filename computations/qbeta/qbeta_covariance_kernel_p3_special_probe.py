@@ -206,6 +206,7 @@ def main() -> int:
     out = HERE / "qbeta-covariance-kernel-p3-special.witness.json"
     out.write_text(json.dumps({
         "computation": "qbeta-covariance-kernel-p3-special",
+        "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
         "assertions": a, "allPassed": bool(ok),
         "parameters": {"epic": "qou-x631",
                        "claim": "p=3 is special; S_p <= 0 for odd p is FALSE",

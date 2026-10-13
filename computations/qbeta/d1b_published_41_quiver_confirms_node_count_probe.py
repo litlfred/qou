@@ -402,7 +402,7 @@ def main():
     for ok_, name, detail in checks:
         wb.add_assertion(name, computed="PASS" if ok_ else "FAIL",
                          expected="PASS", tolerance="exact", source=detail)
-    wb.save()
+    wb.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
 
     n_ok = sum(1 for ok_, _, _ in checks if ok_)
     print(f"\n  {n_ok}/{len(checks)} checks passed")

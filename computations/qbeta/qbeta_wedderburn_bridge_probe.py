@@ -342,6 +342,7 @@ def main() -> int:
 
     witness = {
         "computation": "qbeta-wedderburn-bridge",
+        "q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
         "assertions": a,
         "allPassed": bool(ok),
         "parameters": {

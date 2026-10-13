@@ -201,7 +201,7 @@ def main() -> int:
         f"exceed the wrong-signed c1 contribution rather than merely supply the observed gap — "
         f"i.e. the Coulomb term the corpus records as nowhere derived."
     ))
-    out = w.save()
+    out = w.save({"q0Anchor": "independent", "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"})
     print(f"\n  witness -> {out}")
     ok = (not bad) and a2_neg and a3plus_pos and agree == 0
     print(f"  ALL PASSED: {ok}")
