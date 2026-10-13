@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T16:27:42.649126+00:00",
-  "commitSha": "4e03604e68b897786166db895935d0baa468c84a",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:11:24.906829+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
   "assertions": [
     {
       "name": "bar_h_is_minus_h",
@@ -118,11 +118,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1333,
+  "durationMs": 1522,
   "computation": "qbeta-bar-parity-separates-admissible-functionals",
   "scriptFile": "qbeta_bar_parity_separates_admissible_functionals_probe.py",
-  "scriptHash": "3f7cd1941a64",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7d7315a6f83b",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -130,14 +130,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -213,5 +213,7 @@
       "NOT_established": "that bar-parity characterises admissibility — the criterion defines an infinite family and CHECK 4 exhibits a member that is not an admissible root",
       "use": "a candidate Q_beta functional FAILING the parity is excluded; one passing it is not thereby admissible. Runs with no anchor and no experimental input, so it prunes before any number is computed."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

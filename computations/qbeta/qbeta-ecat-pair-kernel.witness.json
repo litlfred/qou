@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T18:46:36.084632+00:00",
-  "commitSha": "d7562f1d43d05ee9fd6ee7d45d3f48146ecd09e9",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:13:31.057121+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
   "assertions": [
     {
       "name": "all_four_candidates_are_tied_by_every_letter_sum",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 65,
+  "durationMs": 57,
   "computation": "qbeta-ecat-pair-kernel",
   "scriptFile": "qbeta_ecat_pair_kernel_probe.py",
-  "scriptHash": "e69ff42dd665",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b9de3c0c05c6",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,14 +46,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -110,5 +110,7 @@
     },
     "q0_pin": "proton",
     "q0_value": "1.1099785827513808075916690956107688798744991218736"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
