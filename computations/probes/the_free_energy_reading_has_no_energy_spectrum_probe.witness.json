@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T17:36:58.959262+00:00",
-  "commitSha": "f1e4e39fb38388fac6756dbaeef1d2ec77928673",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T16:18:08.434146+00:00",
+  "commitSha": "bd6cd22b8c7092ad8fd1ac2a69e2ff2b10ce48e2",
   "assertions": [
     {
       "name": "the (1,1) block's factor lambda_- + d is NEGATIVE for every bond — the state sum is signed, not a partition function",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 7,
   "computation": "the_free_energy_reading_has_no_energy_spectrum_probe",
   "scriptFile": "the_free_energy_reading_has_no_energy_spectrum_probe.py",
   "scriptHash": "655eda6d7089",
-  "scriptCommitSha": "bdf98d7704391b0b62cb685c63e74e31079b2b15",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -95,5 +95,7 @@
     "Nothing is retracted. L remains a correct, exactly computable, convention-D canonical quantity in all 80 files that compute it; the free-energy DESCRIPTION is also correct, since signed free energies over quasi-probabilities are legitimate objects.",
     "The Gibbs-Helmholtz corollary in the docstring (U ~ 0 if one grants kT = alpha) is INDICATIVE ONLY and is not asserted here: varying q changes the block eigenvalues as well as the scale, so q is not a pure temperature. The finding needs no temperature.",
     "No new binding formula. This removes a candidate justification; it does not supply one, and says nothing about the Reeb-flow or Wigner channels."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
