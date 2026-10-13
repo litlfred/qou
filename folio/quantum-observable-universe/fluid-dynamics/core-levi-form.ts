@@ -55,7 +55,13 @@ export default proposition({
         "banner and the two `uses` are dropped. Consumers still written against " +
         "the old statement: `rem:core-levi-interpretation` (asserts " +
         "\"NS blows up iff Levi non-degenerate\", the withdrawn branch (A)), " +
-        "and the trichotomy library file `levi_growth_trichotomy.lean`. " +
+        "`rem:hyperbolic-overlap-saturation` (branch (A), \"both eigenvalues stay " +
+        "bounded away from zero\"), `rem:observability-fluid-context`, " +
+        "`rem:q-metric-contact-deformation`, " +
+        "`rem:observability-independent-motivation`, `prop:ns-obstruction-tower`, " +
+        "`rem:ns-obstruction-tower-summary`, and the trichotomy library files " +
+        "`levi_growth_trichotomy.lean` / `levi_pair_channel_branch_b.lean`. " +
+        "None is edited here. " +
         "Audits: `docs/audits/2026-10-12-ns-v1-geometric-depletion.md` §3.3–3.4, " +
         "`docs/audits/2026-10-12-ns-attack-vectors-unforced.md` §2 (D1, D2). " +
         "Beans `qou-fm7s`, `qou-0ueg`.",
