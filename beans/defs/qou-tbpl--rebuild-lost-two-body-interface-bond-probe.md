@@ -9,7 +9,7 @@ tags:
     - provenance
 parent: qou-ales
 created_at: 2026-10-13T14:10:00Z
-updated_at: 2026-10-13T14:10:00Z
+updated_at: 2026-10-13T16:00:00Z
 ---
 
 Owner ruling 2026-10-13 (option 1, "delete + bean"): the producer
@@ -33,3 +33,5 @@ commit message of `079fd5e51b`:
 provenance, `scripts/precision-gates.sh --changed` clean). Anti-fit: the rebuilt numbers stand
 on their own — do **not** tune anything to reproduce the figures above; a disagreement is a
 finding to report, not a bug to fit away.
+
+2026-10-13 follow-up: the 0-byte witness `computations/probes/two-body-interface-bond-probe.witness.json` (hyphenated name, missed by the first underscore grep) is also deleted under the same ruling; the q0 audit had been reporting it as `Q0_PARSE_ERROR`.
