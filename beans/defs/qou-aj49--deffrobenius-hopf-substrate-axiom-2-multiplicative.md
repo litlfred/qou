@@ -1,11 +1,11 @@
 ---
 # qou-aj49
 title: def:frobenius-hopf-substrate axiom 2 (multiplicative counit) + Frobenius relation + counit law forces A = k·1
-status: todo
+status: in-progress
 type: bug
 priority: high
 created_at: 2026-10-12T20:13:17Z
-updated_at: 2026-10-13T17:34:49Z
+updated_at: 2026-10-13T17:35:03Z
 parent: qou-xhci
 ---
 
