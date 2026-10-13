@@ -1,11 +1,11 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T20:12:02.360726+00:00",
-  "commitSha": "aff750371d46faf0e986b843169c1e7d98d2b83f",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T11:55:51.220131+00:00",
+  "commitSha": "d71811a5d8f358eccb0e2edb5f29b0f4c7a904df",
   "assertions": [
     {
-      "name": "all three B_OVER_ME literals reproduce AME B/m_e -- worst rel 0.000256 -- so B_OVER_ME carries NO convention; calling it a C-era assignment was wrong and overstated the remaining straddle",
+      "name": "all three B_OVER_ME literals reproduce AME B/m_e -- worst rel 0.000254 -- so B_OVER_ME carries NO convention; calling it a C-era assignment was wrong and overstated the remaining straddle",
       "computed": "true",
       "expected": "true",
       "passed": true
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "a3-vol-is-pseudovolume-not-convention",
   "scriptFile": "a3_vol_is_pseudovolume_not_convention_probe.py",
-  "scriptHash": "6301be468593",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "dc9ff823d860",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,14 +60,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -79,18 +79,18 @@
   "data": {
     "B_over_me_is_experimental": {
       "D": {
-        "B_exp_MeV": "2.224566",
-        "B_over_me_computed": "4.353367061",
+        "B_exp_MeV": "2.2245662",
+        "B_over_me_computed": "4.353367452",
         "literal_in_producer": "4.353"
       },
       "3He": {
-        "B_exp_MeV": "7.718058",
-        "B_over_me_computed": "15.10386272",
+        "B_exp_MeV": "7.71804132",
+        "B_over_me_computed": "15.10383008",
         "literal_in_producer": "15.1"
       },
       "4He": {
-        "B_exp_MeV": "28.295673",
-        "B_over_me_computed": "55.37325069",
+        "B_exp_MeV": "28.2956624",
+        "B_over_me_computed": "55.37322995",
         "literal_in_producer": "55.37"
       }
     },

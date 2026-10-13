@@ -98,16 +98,25 @@ Scope (a), a scope-limited negative.  UNTOUCHED: the Lean channel decomposition;
 NO FLOAT64: mpmath at 50 dps throughout; `float()` appears only inside f-strings.
 """
 import sys
+from pathlib import Path
 
-from mpmath import mp, mpf, nstr
+_COMP = Path(__file__).resolve().parents[1]
+sys.path[:0] = [str(_COMP), str(_COMP / "substrate")]
+
+from mpmath import mp, mpf, nstr  # noqa: E402
 
 mp.dps = 50
 
-# Substrate q0, proton pin (AGENTS.md owner directive 2026-08-07: proton is the default).
-Q0 = mpf("1.1099785827513808")
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_E_MEV as _M_E_MEV_REGISTRY  # noqa: E402
 
-# CAL-1 electron scale, CODATA, MeV.
-M_E_MEV = mpf("0.51099895000")
+# Substrate q0, proton pin (AGENTS.md owner directive 2026-08-07: proton is the default).
+# Read BY NAME (reference-literal ratchet): the 17-digit literal truncated the pin.
+Q0 = mpf(Q_50_DIGIT_STR)
+
+# CAL-1 electron scale, CODATA 2022, MeV -- read from the registry. The literal
+# 0.51099895000 was the CODATA-2018 value (1.35 ppb off; reference-literal ratchet).
+M_E_MEV = _M_E_MEV_REGISTRY
 
 # Both cumulants, MeV, from computations/probes/pair-locality-shortfall.witness.json.
 # b_2 is the one that refutes T4; b_3 is the A=3 shortfall.
