@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T19:48:11.129114+00:00",
-  "commitSha": "398af28aabdf62a2071584fa49db970d8926881f",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:16:22.902712+00:00",
+  "commitSha": "266c147ee39666e932727287228d9e48d3b84a5c",
   "assertions": [
     {
       "name": "the_markov_parameter_is_convention_D_verified_by_value",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 16,
   "computation": "qbeta-operator-basis-radical-calibration",
   "scriptFile": "qbeta_operator_basis_radical_calibration_probe.py",
-  "scriptHash": "cf5c8b5522b6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7e0b39cca42f",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,14 +53,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -109,5 +109,7 @@
     },
     "q0_pin": "proton",
     "q0_value": "1.1099785827513808075916690956107688798744991218736"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
