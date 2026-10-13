@@ -9,15 +9,16 @@ import Mathlib.Tactic.Group
 # Two-body interface bonds: what the arity classes allow, and why the cheapest
 # straddling γγ word is split
 
-Bean `qou-ales` (owner "explore all", item 2). Companion probe
-`computations/probes/two_body_interface_bond_probe.py`.
+Bean `qou-ales` (owner "explore all", item 2). The companion probe
+`computations/probes/two_body_interface_bond_probe.py` was committed empty and is lost;
+its numbers are unverified until rebuilt (bean `qou-tbpl`). Nothing here depends on it.
 
 `QOU.Mass.OneBodyBondOrdering` proves that a **one-body** pair functional ties the unlike pair
 to a like pair. A bond that escapes it must reach **both** nucleons. The γγ vertices that do
 are exactly `vertex 1 = σ₁σ₂⁻¹` and `vertex 2 = σ₂σ₃⁻¹`
 (`InterfaceVertexArity.straddles_iff`), so the γγ candidates for a non-one-body bond are words
 over those two letters that use both. This file records three structural facts about that
-class; the numbers are in the probe.
+class.
 
 1. **The cheapest straddling word in one order is split.** `vertex 1 ++ vertex 2` is
    `σ₁σ₂⁻¹σ₂σ₃⁻¹`, whose middle pair cancels in **any** group: it is `σ₁σ₃⁻¹`, which carries no
