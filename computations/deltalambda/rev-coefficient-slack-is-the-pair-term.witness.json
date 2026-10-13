@@ -1,9 +1,11 @@
 {
   "schema": "qou-witness/v1",
-  "computedAt": "2026-09-13T09:34:46.186017+00:00",
+  "computedAt": "2026-10-13T14:11:07.184236+00:00",
   "computation": "rev_coefficient_slack_is_the_pair_term_probe.py",
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_coefficient_slack_is_the_pair_term_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "The Theta(sqrt n) coefficient bracket [A*sqrt2, C*sqrt2] has ratio exactly C/A = 1.712, and C - A = E_2 is the staircase's pair term \u2014 the term the row-tangent bound discards when it uses R <= (l-1)C. Relocates the open problem from shape-search to a pair-term lower bound.",
   "constants": {
