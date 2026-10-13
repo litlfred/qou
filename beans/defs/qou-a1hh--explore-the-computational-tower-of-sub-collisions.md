@@ -28,3 +28,11 @@ Owner: "there is a knot-convoluted tensor product that acts on braids, part of d
 - Corpus match for the owner's operator: prop:ilp-covalent-bond (molecular-construction/ilp-covalent-bond.md): the bond is a KNOT OPERATOR K acting by x ↦ NF(x·K), chosen in the LP's DUAL space ("the dual space of the LP is the knot operator space"); K = T_{2,3}^{-1}, min crossing s.t. G·NF(x·K) ≥ 0, tr(x·K) ≤ tr(x). Acting by multiplication on existing strands, k operators need NO new strands, so the contiguity obstruction does not arise.
 - Corpus CONFLICT found: covalent-bond-shared-trefoil says "Hopf linking" of shared trefoils; ilp-covalent-bond says knots not links and "the Hopf link gives repulsive or weak binding". #7773 followed the former under the 2026-10-12 ruling "corpus L_b".
 - Not fixed by the corpus: which strands of A⊗B the operator K acts on; and whether order k is K^k on one site or k sites. Existing producer molecular-trefoil-scan.py uses a 2-generator crossing-list "vertex volume" model in float64 with α_em/E_mol, not a Hecke product. Its D0(H₂) 0.1% figure is not re-derived here.
+
+## 2026-10-13 — H₂ corpus LP for ⊗_K, both electron words, γγ-restricted (probe 5/5, KnotConvolutedTensor.lean exit 0)
+Owner: "try both" (electron = corpus T_w0 σ0σ1σ0, which closes to a Hopf link; vs true trefoil σ0³σ1) and γγ-restricted K (σ_sσ_{s+1}⁻¹ = unknot, its square = 4₁). 8 configurations each (atom2 pe/ep, intra-atom p–e letter on/off, junction crossing-table letter on/off).
+- p–e letter ON: reading 3 fails on the H₂ state itself in all 8 (both electrons) → no K feasible. Measured, scope (a).
+- p–e OFF, junction letter OFF: γγ LP selects the vertex σσ⁻¹ (unknot) for both electrons, both orientations.
+- p–e OFF, junction letter ON: T_w0 electron: full LP selects σ0⁻³σ1^± (true inverse trefoil) for e|p, unknot words for e|e; γγ selects nothing for e|p and the vertex for e|e. Trefoil electron: NO K feasible at all (full and γγ) in either orientation.
+- γγ never selects 4₁ (min crossing picks the length-2 vertex whenever any γγ word is feasible).
+- Corpus naming: σ0σ1σ0 "trefoil" closes to a Hopf link; σ0σ1 "Hopf link" closes to the unknot. Algebra unaffected; names shifted. Not edited (owner call).
