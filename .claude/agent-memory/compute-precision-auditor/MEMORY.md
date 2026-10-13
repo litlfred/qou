@@ -678,3 +678,22 @@ TRAPs.
   lines, raw-float64 NEW 0 / REGRESSED 0. Two TRAPs above (cvxpy dependence;
   conv-D skip inapplicable). The `float(_tr)` narrowing in `atom_character_raw`
   is already on bean `qou-w2vy`; the Frobenius mpf carries a 52-bit mantissa.
+- 2026-10-13 (PR #7795, owner-authorised "owning deuteron tr_M"). Canonical = borromean word,
+  convention D, proton pin `0.151968339204231607592665697751`; 0.575 is the GROUPED word
+  (qou-hu1f ruling 2026-09-05, factor R_quark 3.784816689 reproduced by `intra_order` alone);
+  0.388 is grouped + convention C. Three TRAPs, all found by building the full grid
+  (ordering × word-pin × eval-pin) instead of reading witnesses:
+  * **TRAP — a prefix-keyed anchor map silently retires with its pin.** `tr_m_wenzl_bridge_mpfr`
+    keyed muon on `1.10997859555` (retired pin A); the live muon pin C (`…564…`) got anchor None
+    and the PROTON y_λ table → muon word/χ with proton y, 1.19e-8 on the deuteron. And the
+    parsed-table cache key carried no q, so a proton call answered every later muon call. The
+    tell was internal: bridge-vs-peel agreed to 1e-51 at proton and 1e-8 at muon. A pin change
+    moves both methods together; a method SPLIT that appears at one pin only is a straddle.
+  * **TRAP — env `QOU_Q0_ANCHOR=ideal` vs file suffix `-muon`.** The chi-cache producer and
+    consumer built filenames from the RAW env string; the substrate maps ideal/muon/canonical
+    to one anchor. Under the documented `=ideal` run the consumer missed every `-muon` cache and
+    fell back to proton χ (T/3He/4He) or the GROUPED symbolic caches (p/n/D) — with no error.
+    Normalise through `qou_substrate.witness.resolve_q0_anchor`.
+  * **Two agents "contradicting" each other can both be right about different FILES**:
+    "the chi-cache gives 0.152" (proton witness) vs "0.575" (`-muon` witness, built 2026-08-30,
+    before the ordering ruling). Resolve by naming the file, then measure.
