@@ -87,7 +87,9 @@ Q0 = Q_MP
 Q0_PIN = "proton (experimental layer), m_p/m_e"
 
 # The empirical slope the conjecture is measured against (PR #656 v6 fit).
-KAPPA_EMPIRICAL = -mp.mpf("1.0707907503265857")
+# Read from kappa-provenance.witness.json (parameters.published_kappa_MeV)
+# rather than typed, so the copy cannot go stale (witness-value copy ratchet).
+KAPPA_EMPIRICAL = mp.mpf(json.loads((Path(__file__).resolve().parent / "kappa-provenance.witness.json").read_text(encoding="utf-8"))["parameters"]["published_kappa_MeV"])
 
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
 

@@ -33,12 +33,15 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from hecke_characters import chi_lambda_braid
 from mass_at_3A_proper import atom_braid_word_3A
-from q_parameter import Q
+from q_parameter import Q, Q_MP
 from witness_base import WitnessBuilder
 from _precision import set_compute_dps  # noqa: E402
 
 
-HA = 0.20906032198987945  # h = q − q⁻¹ at q_0
+# h = q − q⁻¹ at q_0, derived from the anchor rather than typed (the typed
+# float64 0.20906032198987945 was a copy of a witness value; witness-value
+# copy ratchet). Used only as a branch-classification tag below.
+HA = Q_MP - 1 / Q_MP
 H_HALF = HA / 2
 
 

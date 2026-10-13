@@ -112,7 +112,9 @@ for p in (HERE, HERE / "substrate"):
 import coulomb_energy as ce  # noqa: E402
 
 SOURCE = HERE.parent / "fsh-guts" / "deprecated" / "computations" / "interface-type-resolved-coupling-probe.witness.json"
-KAPPA_PUBLISHED = -mp.mpf("1.0707907503265857")
+# Read from kappa-provenance.witness.json (parameters.published_kappa_MeV)
+# rather than typed, so the copy cannot go stale (witness-value copy ratchet).
+KAPPA_PUBLISHED = mp.mpf(json.loads((Path(__file__).resolve().parent / "kappa-provenance.witness.json").read_text(encoding="utf-8"))["parameters"]["published_kappa_MeV"])
 
 # `ce.R0_FM` and `alpha_em_hbar_c_mev_fm()` are already full-precision mpf; the
 # float() casts threw that away and the serializer padded the binary64 remains
