@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T13:23:15Z
-updated_at: 2026-10-10T08:01:19Z
+updated_at: 2026-10-13T19:30:00Z
 parent: qou-2002
 ---
 
@@ -289,3 +289,34 @@ NOT explain the spread. Full table on `qou-46ab`.
 
 Not actioned here — the consumer docstring is corrected and this bean's own
 subject (the witness's staleness) is untouched.
+
+
+## 2026-10-13 — the exact-method legs are GREEN: 6/6 certified at 1 ppQ (PR #7795)
+
+Owner-authorised "owning deuteron tr_M" tranche. The red this bean tracks had
+three live causes on 2026-10-13, none of them the C/D split recorded above
+(that one was drained by the convention-D cascade):
+
+1. **Word ordering.** The committed witness (2026-09-07) read `allPassed True`
+   only because its peel and chi-cache legs were BOTH the grouped intra-nucleon
+   word (deuteron 0.57517233159876), superseded by the 2026-09-05 ruling
+   (`qou-hu1f`). When the peel witness was regenerated borromean (2026-09-13)
+   and `canonical-tr-m-via-chi-cache-muon` was not, a fresh run went 6/6
+   DIVERGE. The aggregate ratios are exactly R_quark: 1.8206 / 2.0789 /
+   3.7848 / 7.8682 / 6.8907 / 14.3248.
+2. **Bridge pin straddle.** `tr_m_wenzl_bridge_mpfr._load_y_lambda` keyed the
+   muon layer on the retired pin-A prefix, so a live-muon caller got PROTON
+   y_lambda (and the cache key had no q). Hoefsmit vs peel: 1.19e-8 at muon,
+   exact at proton. Fixed.
+3. **Env-suffix mismatch.** `QOU_Q0_ANCHOR=ideal` wrote/looked for `-ideal`
+   chi caches while the committed ones are `-muon`; the consumer fell back to
+   proton chi (T/3He/4He) or grouped symbolic caches (p/n/D). Normalised
+   through `resolve_q0_anchor`; p/n/D muon caches added.
+
+After: deuteron 0.1519683457609422 on Hoefsmit, peel and chi-cache; worst
+exact-method |delta| 1.7e-50; 6 compared, 6 certified, 0 divergent.
+
+**Still open here: the Habiro leg** (`habiro-coefficients-extended`) is still
+the grouped word (0.5751723316 at D). It is informational, not gating, and its
+regeneration is the `qou-iayk` item. Status left `todo` for that reason.
+
