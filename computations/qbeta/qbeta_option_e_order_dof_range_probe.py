@@ -197,7 +197,7 @@ def main() -> int:
     import json as _json
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                            "qbeta-delta-candidate-census.witness.json"), encoding="utf-8") as _fh:
-        want = mp.mpf(_json.load(_fh)["data"]["nuc11_gen_grouped_nucleon_gen_chains"]["net_at_q0"])
+        want = mp.mpf(_json.load(_fh)["data"]["nuc11_gen_grouped_nucleon_gen_chains/net_at_q0"])
     check("gen_grouped_coordinate_sum_matches_census",
           abs(gg_delta_net - want) < mp.mpf("1e-30"),
           f"{mp.nstr(gg_delta_net, 25)}")
