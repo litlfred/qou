@@ -420,6 +420,10 @@ _out = {
     "computation": os.path.basename(__file__),
     "bean": "qou-hok7",
     "anchor": "physical_proton",
+    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
+    # a near-miss spelling they cannot see), plus scriptFile provenance.
+    "q0Anchor": "proton",
+    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description": (
         "The energy trade-off that any pair-term lower bound must price. The penalty for a "
