@@ -7,7 +7,7 @@ No morphism $\phi \colon \mathbf{1} \to \mathrm{Ad}(A)$ exists within $\mathbf{C
 $H^0(M, \mathrm{Ad}(P)) = 0$: no nonzero section of the adjoint bundle $\mathrm{Ad}(P) = P \times_G \mathfrak{g}$ remains gauge-equivariant. Every infinitesimal gauge transformation operates nontrivially against some observable.
 
 **No contact-geometric translation.**
-An earlier version of this remark translated observability as "the Levi form $\mathcal{L}_\varTheta$ is non-degenerate everywhere". That translation is withdrawn (2026-10-13). On the three-dimensional flow domain the chapter's plane field is $\ker\varTheta = \xi^\perp$, with $\xi$ the vorticity direction, and its Levi datum is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ ([core Levi form](#prop:core-levi-form)). No result in this chapter links the non-vanishing of that scalar to $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$.
+An earlier version of this remark translated observability as "the Levi form $\mathcal{L}_\varTheta$ is non-degenerate everywhere". That translation is withdrawn. On the three-dimensional flow domain the chapter's plane field is $\ker\varTheta = \xi^\perp$, with $\xi$ the vorticity direction, and its Levi datum is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ ([core Levi form](#prop:core-levi-form)). No result in this chapter links the non-vanishing of that scalar to $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$.
 
 **Fluid-dynamical translation.**
 Evaluated on the [brane fluid](#sec:brane-fluid):
