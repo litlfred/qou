@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T20:57:49Z
-updated_at: 2026-10-13T00:00:00Z
+updated_at: 2026-10-13T12:00:00Z
 parent: qou-vo9t
 ---
 
@@ -33,3 +33,12 @@ Owner (2026-10-12): pursue NS attack vectors 1, 2, 3 and 5 (unforced NS). This b
 **Audit:** `docs/audits/2026-10-12-ns-v5-beltrami-reeb.md`. §5 is the draft proposition for the owner; it was NOT added as a content block.
 
 **Status stays `in-progress`.** Adding the proposition is an owner decision. The underlying regularity question on M stays open.
+
+## 2026-10-13: Q3 done (owner "Q3 y"), commit dfd4df94f0 on `ns-q2q3`
+
+The audit section 5 draft is now a content block triple in `fluid-dynamics/`, listed after `torus-ns-regular` in `sec:ns-obstruction-tower-mtc`:
+- `prop:reeb-beltrami-regular-flow` (`reeb-beltrami-regular-flow.{ts,md}`). Its `lean.ref` is `qou:QOU.FluidDynamics.BeltramiSteadyEuler.L3.deformation_V`, the existing library declaration; no new sibling `.lean`. The statement gives the `(X,Y,V)` frame, `g_s = diag(1,1,s^2)`, and the curl convention `(curl u)^flat = * d u^flat`, plus the three viscous operators with explicit solutions `aV` (deformation, steady), `a e^{-nu s^2 t} V` (Hodge) and `a e^{-nu s^2 t/2} V` (Bochner).
+- `prf:reeb-beltrami-regular-flow`: the hand proof and the Lean lemma list. Not formalised: the descent to `Gamma\PSL2(R)`, the manifold-operator identification, and the PDE reduction.
+- `rem:reeb-beltrami-regular-flow-scope`: one family on one manifold, nothing about generic data, regularity on M as open as on `T^3`. Topology carries the solution, so no bundle invariant forces blow-up. The identification of `V` with the cone-link Boothby-Wang Reeb field is inherited, not re-derived. `s` is free and not fitted.
+- Gate: render preflight balanced; run-validate shows 8 issues, equal to the baseline; qa-sweep shows 0 fail and 0 warn on all three blocks.
+- The proposition is fully proved modulo standard [S] steps, with the identification moved to the remark. No conjecture is closed or introduced. The bean stays in-progress for the owner to close.
