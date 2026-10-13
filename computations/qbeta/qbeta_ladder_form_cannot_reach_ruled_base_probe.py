@@ -80,6 +80,7 @@ from mpmath import mp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 from q_parameter import q_at  # noqa: E402
+from qbeta_utils import c3_proton_extracted  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 DPS = 50
@@ -264,7 +265,7 @@ def main() -> int:
     # F is cos * prod_k (1 + c_k u^k). Check 3 bounds only the N=2 truncation.
     # Every c_k the corpus records or derives is NEGATIVE, so every factor is
     # below 1 and the product is below 1 at EVERY truncation order.
-    C3 = mp.mpf("-2.0693425728")          # recorded, proton extraction
+    C3 = c3_proton_extracted()            # proton extraction, recomputed (qbeta_ck_cache's)
     c5 = -(b ** 2 + mp.mpf(1) / 2)        # derived form -(b^2 + 1/2)
     LADDER = [(2, mp.mpf(-1)), (3, C3), (5, c5)]
     factors = [(k, 1 + c * u ** k) for k, c in LADDER]
@@ -364,7 +365,7 @@ def main() -> int:
         "ladder_sup_over_all_phases": fmt(cap),
         "full_ladder_is_reducing": (
             "every c_k the corpus records or derives is NEGATIVE (c_2 = -1 "
-            "structural, c_3 = -2.0693425728 recorded, c_5 = -(b^2+1/2) derived), "
+            f"structural, c_3 = {mp.nstr(C3, 12)} recorded, c_5 = -(b^2+1/2) derived), "
             "so each factor (1 + c_k u^k) < 1 and F is strictly below 1 at EVERY "
             "truncation order -- not merely at the N=2 one check 3 bounds. "
             "Reaching F > 1 needs a POSITIVE coefficient; none of the derived "
