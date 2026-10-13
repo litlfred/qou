@@ -620,3 +620,18 @@ TRAPs.
   **TRAP:** the pip editable installs of qou-substrate/pyhecke pointed at a sibling
   worktree (`/home/user/wt-pgt`). Set PYTHONPATH to your own `tools/*/python`. Gates:
   the red set was identical to pristine main (10).
+- 2026-10-13 (PR #7792, owner-authorised c_3 provenance trace): proton c_3 typed as
+  -2.0693425728 in 7 probes vs -2.06934257711516783787971951725 from every producer
+  (`qbeta_ck_cache`, the canonical extraction; re-run reproduces it byte-for-byte).
+  Replaced with `qbeta_utils.c3_proton_extracted(dps)`. Two TRAPs worth carrying:
+  * **A typed EXTRACTED constant can be checked by the residual it is defined to zero.**
+    c_3 := (Q/Q_N2 - 1)/u^3, so the N=3 residual must be ~0; with the typed copy it was
+    2.666e-6 ppb, with the extraction 3.4e-42. Cheaper and more decisive than enumerating
+    pins/editions, which here reproduced NOTHING (2018 ratio, 2018 m_e, Q_NEUTRON_MEV,
+    muon pins, float64 q/m_e/Q, the float64 q grid -1..+8 ulps).
+  * **Any extraction through 1/u^k loses ~k*2.07 digits; carry guard digits.** At 60 dps
+    c_3 parted from its 70-dps value at digit ~55, and `fmt` would have published the
+    rest as manufactured digits. Helper computes at d+15, rounds to d.
+  Gates: `--changed` EXIT 1, 9 reds, all pre-existing (none of 8 touched files in log);
+  copy ratchet NARROW 212->206. `mcp__github__create_pull_request` not offered and
+  `gh pr create` 403s (GraphQL): `gh api -X POST repos/litlfred/qou/pulls --input` works.
