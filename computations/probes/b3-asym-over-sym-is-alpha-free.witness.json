@@ -16,11 +16,11 @@
     "b3_asym_MeV_at_live_alpha": "0.873536621380459821746434074985"
   },
   "ame": {
-    "b3_sym_MeV": "1.426220160000000181099721885402686893939971923828125",
-    "b3_asym_MeV": "0.3818774400000000124322241390473209321498870849609375",
-    "ratio_asym_over_sym": "0.267754902581099375247847953683"
+    "b3_sym_MeV": "1.426220160000000000000000000000000000000000000000010625263498411031408",
+    "b3_asym_MeV": "0.3818774400000000000000000000000000000000000000000069370842570629967591",
+    "ratio_asym_over_sym": "0.267754902581099400530139750654"
   },
-  "relative_miss_on_ratio_pct": "-218.97720143794615707",
+  "relative_miss_on_ratio_pct": "-218.97720143794614583",
   "prior_candidates_same_discriminant": [
     {
       "candidate": "product_beyond_pairwise",
@@ -64,9 +64,9 @@
     }
   ],
   "alpha_free_identity": {
-    "model_asym_over_observed_asym": "2.2874789916378924958",
-    "model_sym_over_observed_sym": "-1.9226195976974225951",
-    "quotient": "-1.1897720143794615707",
+    "model_asym_over_observed_asym": "2.2874789916378925703",
+    "model_sym_over_observed_sym": "-1.9226195976974228392",
+    "quotient": "-1.1897720143794614583",
     "note": "qou-1pig reports the antisym overshoot as 2.287479x on the (3H - 3He) convention; it is linear in alpha. The quotient of the two overshoots is not, and is the content of this probe."
   },
   "sources": [
@@ -93,5 +93,5 @@
       "detail": "derived b3_asym = 0.87353662138 MeV; AME b3_asym = 0.38187744 MeV.  Both positive."
     }
   ],
-  "computedAt": "2026-10-13T11:32:14.363852+00:00"
+  "computedAt": "2026-10-13T11:42:04.347264+00:00"
 }

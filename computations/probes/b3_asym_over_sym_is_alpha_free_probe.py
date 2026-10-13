@@ -182,6 +182,10 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 # figures, and they are still the wrong thing to write: a transcribed constant
 # cannot follow AME when it moves, and the rounding had already propagated into
 # the reported ratio (0.26775450 against the derived 0.26775451).
+# Module scope runs before main()'s set_compute_dps(); without this the
+# subtraction below executes at mpmath's default 15 dps and `str()` later
+# prints that 53-bit result padded to 70 digits (float64-padding gate).
+set_compute_dps()
 _B3_EMPIRICAL = {
     "T": AME_B_TRITIUM_MEV_VALIDATION - 3 * AME_B_DEUTERON_MEV_VALIDATION,
     "3He": AME_B_HE3_MEV_VALIDATION - 3 * AME_B_DEUTERON_MEV_VALIDATION,
