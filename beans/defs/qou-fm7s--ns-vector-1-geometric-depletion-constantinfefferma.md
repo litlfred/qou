@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T20:57:48Z
-updated_at: 2026-10-12T20:57:48Z
+updated_at: 2026-10-13T14:11:42Z
 parent: qou-vo9t
 ---
 
@@ -50,3 +50,18 @@ Owner decision, verbatim: "Q1 Θ = f·ξ♭". The Levi chain is re-scoped onto t
   - `rem:core-levi-interpretation` and `rem:hyperbolic-overlap-saturation` both assert the withdrawn branch (A).
   - `rem:observability-fluid-context`, `rem:q-metric-contact-deformation`, `rem:observability-independent-motivation`, `prop:ns-obstruction-tower` and `rem:ns-obstruction-tower-summary` use Levi eigenvalues or the condition number.
   - The library files `levi_growth_trichotomy.lean` and `levi_pair_channel_branch_b.lean` still carry the β / condition-number encoding.
+
+
+## 2026-10-13 — consumers re-scoped (owner option 2), branch `ns-levi-consumers`
+
+Base `f56e6d2b1f`. All nine consumers named above as "not edited" are re-scoped onto the Levi scalar ξ·curl ξ:
+
+- `rem:core-levi-interpretation`: "NS blows up ⟺ Levi non-degenerate ⟺ κ=O(1)", both outcome readings and the root-of-unity aspect-ratio-as-Levi bound withdrawn; restated as what ξ·curl ξ measures + open branch (B) + cited BdV–B contrapositive. Title changed; uses drops prop:root-of-unity-truncation.
+- `rem:hyperbolic-overlap-saturation`: ODE lock κ² = πν/(2Γ+πν) > 0 kept as a core-shape result (Lean unchanged); "Levi non-degenerate / both eigenvalues / branch (A) ⇒ blow-up" withdrawn. Stale πν/Γ in the opening corrected to its own boxed value.
+- `rem:observability-fluid-context`, `rem:q-metric-contact-deformation`, `rem:observability-independent-motivation` (+ table row): Levi-translation sentences withdrawn, other readings untouched.
+- `prop:ns-obstruction-tower`: proof step (d) (H¹ ≠ 0 ⟺ λ∥,λ⊥ > 0 ⟺ κ ∈ (0,∞)) withdrawn; statement and Lean unaffected (no Levi field), kind stays proposition. `rem:ns-obstruction-tower-summary` follows.
+- Lean: `LeviGrowthTrichotomy` → `GrowthExponent` (branchA/branchB/leviNonDegenerate removed, `levi_branches_exclusive` removed); `linear_condNumber_degenerate` withdrawn; `linear_seq_forces_beta_one` kept as an aspect-ratio statement. Old theorem names kept as deprecated aliases. lean-direct exit 0, axioms ⊆ {propext, Classical.choice, Quot.sound}.
+
+Old text of every block is recorded verbatim in its authorNotes. run-validate 9 → 8 (the drop is the no-orphan-sidecar warning clearing once qa-sweep created test/results; no content change).
+
+**Still carrying withdrawn statements, NOT in the nine and NOT edited (owner call):** `QOU/FluidDynamics/yekutieli_levi_unification.lean` (step (d) as a class field; branch A/B theorems), `QOU/FluidDynamics/qou_ns_in_qou.lean` (`QOUFluidUniverseLevi`, `qou_levi_nondegenerate`, branch A), `ns-singularity-descartes-proof.md` (lists "non-degeneracy of the Levi form via the core-Levi equivalence" as input 3 of the NS-singularity theorem), `ns-singularity-descartes-interpretation.md` ("core-Levi bounding"), and the stale titles for prop:core-levi-form / conj:levi-degeneracy in `index-of-definitions/definition-index.md`. The conjecture (branch B) remains open; this bean stays in-progress.
