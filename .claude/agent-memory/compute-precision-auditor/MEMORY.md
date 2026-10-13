@@ -317,6 +317,48 @@ Revert only what the gate named: `git checkout -- computations/witness-*-audit.w
 Or commit source edits BEFORE running the gates; a clean index going in is the
 cheapest protection.
 
+## TRAP — a gate that is ALREADY red hides every new red in the same gate
+
+On 2026-10-13, 10 of the 11 RED gates on `main` were already red at the shallow-clone
+boundary (`7d0e674f04`, 2026-10-05), so each new defect landed as "same RED set".
+Worked case: `079fd5e51b` committed `two_body_interface_bond_probe.py` AND its witness
+as **0-byte files** and its message says *"precision-gates --changed: same RED set and
+counts"* -- true of the gate NAMES, while it added a `Q0_PARSE_ERROR`. **Compare the
+per-gate COUNTS before/after, never the RED list.** Dating trick that works on a shallow
+clone: a detached worktree at the boundary commit (1.9 G here) + the 11 gate scripts run
+directly with `PYTHONPATH` set to that tree's substrate -- ~5 min, says "already red then".
+
+## TRAP — `physical_proton` is a MANIFEST KEY, not a `q0Anchor` token
+
+`q0_anchor_manifest.json` groups stems under `physical_proton` / `ideal_muon`; the
+witness field takes `proton` / `muon` / `ambiguous` / `independent` / `comparison`.
+Five probes wrote the key name and were filed `Q0_ANCHOR_UNRECOGNISED` (= "nothing
+checked", and blocking under `--strict`). Watch for duplicate `q0AnchorReason` keys
+when adding a reason to a dict literal that already has one -- Python keeps the LAST.
+
+## TRAP — four detector blind spots seen 2026-10-13 (none fixed; owner-gated)
+
+- `mpf_import_time_dps_audit`: a probe that `exec()`s another probe's prelude inherits
+  its `mp.dps = 25`; the AST pass cannot see it (deltalambda `rev_e_infinity_xbot_*`).
+- `codata_truncation_audit`: a literal split across two ADJACENT string literals is
+  read as its first piece only -> a full 70-digit pin reported "TRUNCATED"
+  (`intra_ordering_value_fingerprint_audit.py:87`).
+- `codata_corpus_literal_scan` counts the literal TEXT of an f-string inside `print()`
+  as a CODE site (e.g. `"CODATA 1/a = 137.035999084"`); its own footer says it is
+  "NOT a gate by default", yet the runner passes `--strict`.
+- raw-float64 timing carve-out is a substring test on `dur`/`elapsed`: `wall_seconds`
+  is read as payload. Rename at the producer to a declared key (`elapsed_seconds`);
+  do NOT widen the mask (`qou-ywee`).
+
+## TRAP — re-running in a thin container DOWNGRADES the environment stamp
+
+The masked diff hides it (`environment` is ephemeral). This container had mpmath 1.3.0
+and no clarabel; 9 re-run witnesses silently recorded the weaker env (4 of them also mpmath 1.4.1 -> 1.3.0). Before re-running
+any producer: `pip install mpmath==1.4.1 clarabel==0.11.1` (match what the witness
+records), then diff `environment` against `origin/main` for every touched witness. If a
+witness itself records 1.3.0, re-run under 1.3.0: mpmath renders `str(mpf('inf'))` as
+`+inf` in 1.3.0 and `inf` in 1.4.1, which churns unrelated fields.
+
 ## BASELINE — re-measure, do not quote
 
 Everything here is a *method*, not an answer.
@@ -511,3 +553,12 @@ TRAPs.
   from 2026-09-04 seen from the other side — commit before a 5-minute gate run, not
   after; and **`q_at(mp.dps)` is the right anchor call for a probe** (proton pin,
   production default) with explicit rational controls beside it.
+- 2026-10-13 (#7735 triage, `claude/precision-gates-triage-2026-10-13`): full family on
+  `main` `e43d2617f2` = **11 RED**; 10 were already red at the 2026-10-05 boundary
+  (raw-float64 went red 2026-10-10, `4dea60d6e5`). Fixed at producers: q0 token (5 probes),
+  module-scope dps (8), READ-value / timing / L_inf padding (4), registry literals (5),
+  stale E_0 witnesses (3). After: **10 RED** (raw-float64 green), every other count equal or
+  lower. Blocked producers worth knowing: `rho_binding_constancy_probe` and
+  `saddle_offset_zero_location_probe` CRASH at HEAD; `qbeta_derived_w_overdetermined_test_probe`
+  hits tr_m_word_lq Case C (do not chain, see above).
+
