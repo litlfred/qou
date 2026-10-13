@@ -88,7 +88,7 @@ This constructs a rigid 4-dimensional space. It remains **nonzero** if and only 
 
 **(d) Connection to core aspect ratio (withdrawn).**
 
-This step formerly asserted that $H^1_{\mathfrak{m}_p}(A) \neq 0$ holds if and only if both Levi eigenvalues $\lambda_\parallel(p), \lambda_\perp(p)$ are positive, if and only if the core aspect ratio $\kappa(p)$ lies in $(0, \infty)$. It is withdrawn (2026-10-13). By the [core Levi form](#prop:core-levi-form), the Levi datum of the vorticity plane field on the three-dimensional flow domain is the single scalar $\xi\cdot\mathrm{curl}\,\xi$. There is no pair of Levi eigenvalues, and the core aspect ratio is not a Levi quantity. No replacement link between $H^1_{\mathfrak{m}_p}(A)$ and the Levi scalar is established. Step (e) below no longer draws on (d).
+This step formerly asserted that $H^1_{\mathfrak{m}_p}(A) \neq 0$ holds if and only if both Levi eigenvalues $\lambda_\parallel(p), \lambda_\perp(p)$ are positive, if and only if the core aspect ratio $\kappa(p)$ lies in $(0, \infty)$. It is withdrawn. By the [core Levi form](#prop:core-levi-form), the Levi datum of the vorticity plane field on the three-dimensional flow domain is the single scalar $\xi\cdot\mathrm{curl}\,\xi$. There is no pair of Levi eigenvalues, and the core aspect ratio is not a Levi quantity. No replacement link between $H^1_{\mathfrak{m}_p}(A)$ and the Levi scalar is established. Step (e) below no longer draws on (d).
 
 **(e) The NS obstruction as an Euler-class residue.**
 
