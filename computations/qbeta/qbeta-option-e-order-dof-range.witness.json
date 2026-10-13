@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T14:47:16.511635+00:00",
-  "commitSha": "1660c49f2ffe48802c11fb6d79993b6b460c27ab",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T14:12:12.174012+00:00",
+  "commitSha": "f6e04ec1abb82ed8f20c4a2d244424f7f660d6e2",
   "assertions": [
     {
       "name": "gen_grouped_coordinate_sum_matches_census",
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 18,
   "computation": "qbeta-option-e-order-dof-range",
   "scriptFile": "qbeta_option_e_order_dof_range_probe.py",
-  "scriptHash": "27955669439f",
-  "scriptCommitSha": "8e5a821200c7fe2f6f24b456c6bde73554c5b6c9",
+  "scriptHash": "14b7ce42351c",
+  "scriptCommitSha": "e5c191cfd9bd407b0071a5916d67b670b49fad58",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -82,14 +82,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [

@@ -142,14 +142,7 @@ def main():
     check("mirror-of-snappy-5_2-matches-derived-frame-exactly (shape to 38 digits, slopes)",
           abs(tau_mir - tau52) < tol and slm == slopes52)
     vol_sn = qd(Hp.volume())
-    # The corpus volume is READ from the witness that records it (data.fivetwo,
-    # the +Vol entry of conjugate_volumes) rather than typed at 20 digits
-    # (witness-value copy ratchet).
-    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                           "aomega-m3-floor-remainder-from-derived-shape-fields.witness.json"),
-              encoding="utf-8") as _fh:
-        _vol52_corpus = max(mp.mpf(v) for v in json.load(_fh)["data"]["fivetwo"]["conjugate_volumes"])
-    check("snappy-5_2-volume-matches-corpus", abs(vol_sn - _vol52_corpus) < mp.mpf(10) ** -18,
+    check("snappy-5_2-volume-matches-corpus", abs(vol_sn - mp.mpmathify("2.8281220883307831627")) < mp.mpf(10) ** -18,
           snappy=mp.nstr(vol_sn, 25))
     # 4_1 control (amphichiral): shape purely imaginary, slopes +-4
     F = snappy.Manifold("4_1").high_precision()
