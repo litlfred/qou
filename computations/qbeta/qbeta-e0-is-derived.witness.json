@@ -1,5 +1,6 @@
 {
   "computation": "qbeta-e0-is-derived",
+  "q0Anchor": "proton",
   "assertions": [
     {
       "name": "the_planck_form_and_the_closed_form_are_the_same_number",
@@ -72,7 +73,7 @@
     ]
   },
   "provenance": {
-    "headSha": "6ac687ff65cf007b00e4b94bb1e20026938569de",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_e0_is_derived_probe.py",
     "elapsed_s": 0.005
   }

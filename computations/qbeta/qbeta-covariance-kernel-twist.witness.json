@@ -1,5 +1,7 @@
 {
   "computation": "qbeta-covariance-kernel-twist",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "assertions": [
     {
       "name": "self_dual_part_changes_sign",
@@ -117,8 +119,8 @@
     }
   },
   "provenance": {
-    "headSha": "4e031cefb1eab4ec9e6a42e4cc420342afe0afa6",
+    "headSha": "eacf7ca73101030f04c9f788e9f705839bef23c3",
     "producer": "computations/qbeta/qbeta_covariance_kernel_twist_probe.py",
-    "elapsed_s": 2.276
+    "elapsed_s": 0.022
   }
 }
