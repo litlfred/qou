@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-13T17:34:21Z
-updated_at: 2026-10-13T17:34:21Z
+updated_at: 2026-10-13T17:40:29Z
 ---
 
 Owner, 2026-10-13: option A2 (keep the antipode, general coproduct). Measured that A2 is already the general form: def:mass-identity has m(ϱ) = ‖∫(u·ϱ)‖ with u = (∫⊗id)Δ(1). MassTraceIdentity.lean proves massIntegrand_eq_leftMul_density, frobeniusForm_massIntegrand and massTrace_eq_functional_hol with no counit hypothesis. The four _of_frobeniusForm_eq_counit theorems are the special case u = 1.
@@ -22,3 +22,13 @@ The open part is a structural argument selecting the coproduct. Selecting by agr
 ALSO. Under convention D y_(1³) = 0, so tr_M is degenerate on H_n for n ≥ 3. The Frobenius object is then H/rad ≃ TL (proved over CharZero fields, #7768), and u vanishes on three-row blocks.
 
 Do not close until the coproduct is derived (AGENTS §13a).
+
+2026-10-13: Plancherel-density probe landed (computations/deltalambda/plancherel_density_u_probe.py; docs/audits/2026-10-13-plancherel-density-u-vs-cocasimir.md). Results:
+- u^(b)_λ = y_λ[n]_q!/dim_q(λ). It is not proportional to the co-Casimir.
+- It is non-negative on every block, so it cannot equal the signed Δ_λ (scope b).
+- It fails the deuteron test (scope a).
+- It vanishes on blocks with 3 or more rows.
+- ε = tr_M is not a counit on H_n for n ≥ 3; it is one only on TL.
+Neither (a) nor (b) yields a usable density. Candidate (c), a coproduct fixed by some other framework principle, stays open.
+Side finding: the corpus carries two distinct 'Plancherel trace' objects (with and without q^{-κ_λ}).
+Side finding: the Lean coCasimirSum constant 0.14496 is stale against the witness value 0.17312. The inequalities still hold.
