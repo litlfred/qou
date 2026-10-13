@@ -774,6 +774,43 @@ const ORDER: Array<FileSlot | Reference> = [
   // ── Nature Physics: Scheeler et al. 2014 ────────────────────────
   { id: "scheeler2014" },
 
+  // ── Adv. Math.: Enciso, Lucà & Peralta-Salas 2017 ───────────────
+  // Smooth NS solutions reconnecting vortex lines/tubes of any topology.
+  ref({
+    id: "enciso2017",
+    type: "article-journal",
+    title: "Vortex reconnection in the three dimensional Navier–Stokes equations",
+    author: [
+      { family: "Enciso", given: "Alberto" },
+      { family: "Lucà", given: "Renato" },
+      { family: "Peralta-Salas", given: "Daniel" },
+    ],
+    "container-title": "Advances in Mathematics",
+    volume: "309",
+    page: "452-486",
+    DOI: "10.1016/j.aim.2017.01.025",
+    issued: { "date-parts": [[2017]] },
+    URL: "https://arxiv.org/abs/1606.06176",
+  }),
+
+  // ── Ann. Math.: Ebin & Marsden 1970 ─────────────────────────────
+  // Incompressible flow on a compact Riemannian manifold; the
+  // deformation-tensor form of the viscous term.
+  ref({
+    id: "ebin-marsden1970",
+    type: "article-journal",
+    title: "Groups of diffeomorphisms and the motion of an incompressible fluid",
+    author: [
+      { family: "Ebin", given: "David G." },
+      { family: "Marsden", given: "Jerrold E." },
+    ],
+    "container-title": "Annals of Mathematics",
+    volume: "92",
+    issue: "1",
+    page: "102-163",
+    issued: { "date-parts": [[1970]] },
+  }),
+
   // ── PRL: Christenson et al. 1964 (CP violation in kaons) ────────
   { id: "christenson1964" },
 

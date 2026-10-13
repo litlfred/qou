@@ -8,5 +8,6 @@ export default proposition({
     "rem:braid-fluid",
     "prop:discrete-vortex-spectrum",
   ],
+  cites: ["moffatt-ricca-helicity"],
   tags: ["helicity", "topological-invariant", "conservation", "fluid-dynamics", "knot"],
 });
