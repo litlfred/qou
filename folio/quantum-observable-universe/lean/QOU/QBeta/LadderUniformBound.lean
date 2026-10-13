@@ -61,7 +61,7 @@ asserted here — this file proves the implication only):
     G  = ∑_{k≥2} uᵏ = u²/(1-u) = 7.31664602858e-5
     F  = 1.20016236389                     (required factor, LIVE scored cell)
     ⇒  the SMALLEST uniform bound C that could possibly reach F is 2279.45
-    ⇒  against the corpus's largest |cₖ| = 2.0693425728, a factor of 1101.5
+    ⇒  against the corpus's largest |cₖ| = 2.0693425771, a factor of 1101.5
 
 **THE CONCLUSION IS NOT NEW; THE REASON IS.**  That the `Q_β` L2 residual is a
 base/assembly problem rather than a rung problem is *already* the corpus's
