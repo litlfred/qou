@@ -33,6 +33,12 @@ sys.path.insert(0, str(HERE.parent / "substrate"))
 
 import mpmath as mp  # noqa: E402 — anchor read-by-name (bean qou-9ugp)
 from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# Every mpf this probe builds was constructed at mpmath's default 15 dps:
+# the exact Fractions were divided at 53 bits and then printed at 30 digits
+# (float64-padding gate; never-raises-dps ratchet). Raise it first.
+set_compute_dps()
 
 
 def leading_ratio(q):
