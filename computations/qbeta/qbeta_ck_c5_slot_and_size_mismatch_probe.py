@@ -91,6 +91,7 @@ from codata_constants import M_E_MEV, Q_BETA_MEV               # noqa: E402
 from q_parameter import q_at                                   # noqa: E402
 
 DPS = 50
+mp.dps = DPS   # before the module-scope mpf literals below (import-time dps ratchet)
 C3_PROTON = mp.mpf("-2.0693425728")     # recorded extraction; see Caveat
 AGENTS_QUOTED_OMITTED_TERM = mp.mpf("0.577")   # ppb, as written into AGENTS.md
 

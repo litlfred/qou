@@ -4,7 +4,7 @@
   "question": "is the branch-3 required eigenphase experimentally anchored, or is it the ladder form's own output?",
   "answer": "anchored -- the circularity worry is unfounded. But the QUOTED target 0.0565947 is |alpha - u/2| (the form), not arccos(Q_exp/(Q_A(1-u^2))) = 0.0566173 (the experiment); 4.0e-4 apart.",
   "correct_target_theta": "0.056617300794061032363",
-  "quoted_target_theta": "0.056594699999999997786",
+  "quoted_target_theta": "0.0565947",
   "form_theta_convention_C": "0.056594737543306909893",
   "required_N1_factor": "0.99839766871925518854",
   "scope": "(a) -- about the provenance of the target, not about any candidate",

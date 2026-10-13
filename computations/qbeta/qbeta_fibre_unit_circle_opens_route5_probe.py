@@ -99,6 +99,7 @@ from codata_constants import M_E_MEV, Q_BETA_MEV               # noqa: E402
 from q_parameter import q_at                                   # noqa: E402
 
 DPS = 50
+mp.dps = DPS   # before the module-scope mpf literals below (import-time dps ratchet)
 TARGET_OWN_UNCERTAINTY = mp.mpf("4.0e-4")   # form-vs-experiment gap, PR #6688
 
 results: list[tuple[str, bool, str]] = []
