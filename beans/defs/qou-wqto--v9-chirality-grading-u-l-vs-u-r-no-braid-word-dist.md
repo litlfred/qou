@@ -9,7 +9,7 @@ tags:
     - 8f-gen
     - 8f-open
 created_at: 2026-08-10T18:57:48Z
-updated_at: 2026-10-11T08:34:21Z
+updated_at: 2026-10-13T12:00:00Z
 parent: qou-8lxd
 ---
 
@@ -412,5 +412,38 @@ Still open (rule 13a, stays `todo`):
 1. Which u. The commutant does not pick one.
 2. Bring's own cone versus the Hopf model (`qou-rydq`).
 3. A map from V10's eight `Gen1Quark` labels into the rays.
+
+Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+## 2026-10-13 — which unit `u`: the shape is forced, the point is not (STOP per owner ordering)
+
+Owner's ordering, relayed: fix `u` from structure only, before testing anything about chirality; if nothing forces `u`, stop and do not move on to Bring's own cone or the `Gen1Quark` → rays map. **Nothing forces `u`, so this tranche stops at (a).**
+
+Lean added to `QOU/BringCone.lean` (generic `CommRing`, sorry-free, lean-direct `-DautoImplicit=false -s 65536` exit 0 on it and on its dependent `BringConeSplit`; axioms ⊆ propext / Classical.choice / Quot.sound on all 21):
+
+| what | declaration |
+|---|---|
+| `L_u` is a complex structure iff `u·u = −1` | `leftMul_complex_iff` |
+| for pure `u`: iff `normSq u = 1` | `sq_eq_neg_one_iff_normSq_of_pure` |
+| over a domain, `2 ≠ 0`, `−1` not a square (e.g. ℝ): every root of `−1` is pure | `re_eq_zero_of_sq_eq_neg_one` |
+| `Γ_u := L_u ∘ M_i` is a grading for every such `u` | `chiralGammaU_sq` |
+| for EVERY `u`: `M_i` commutes, `M_j`, `M_k` anticommute with `Γ_u` | `chiralGammaU_comm_reebM_i`, `_anticomm_reebM_j`, `_anticomm_reebM_k` |
+| `L_{1−vu}` (commutes with the triad) carries `Γ_u` to `Γ_v` | `intertwiner_mul`, `leftMul_intertwines_chiralGammaU` |
+| `L_{q̄} ∘ L_q = normSq q •`, `normSq(1−vu) = 2(1+u·v)` | `leftMul_star_leftMul`, `normSq_intertwiner` |
+| `Γ_{−u} = −Γ_u` (the global L↔R flip) | `chiralGammaU_neg` |
+| radial unit `p` is a `Γ_u = −1` eigenvector iff `u = p·i·p̄` (Hopf image; pure, norm `normSq p²`) | `chiralGammaU_eigen_iff`, `re_hopf`, `normSq_hopf` |
+
+**Forced:** `u` is a pure unit quaternion (a point of `S²`). Over a ring where `−1` is a square (ℂ) the scalar `√−1` also qualifies; excluded by hypothesis, not hidden.
+
+**Free, exactly:** one point `u ∈ S²` of pure units.
+- No condition relating `Γ_u` to the Reeb triad distinguishes points: all commutation relations hold for every `u`.
+- Any two points with `1 + u·v` invertible (times 2) are conjugate by `L_{1−vu}`, an automorphism commuting with the whole triad. Antipodal points are related by the sign `Γ_{−u} = −Γ_u`, which only relabels L↔R (V10's `reeb_odd_grading_unique_up_to_flip`).
+- The one thing that does pick `u` is a base point: requiring a chosen radial direction `p` to be a chirality eigenvector gives `u = p·i·p̄`, the Hopf projection of `p`. That is choosing a point of the Hopf base, not deriving one.
+
+So on the model cone the choice of `u` is inessential up to triad-commuting automorphisms plus the orientation sign — but it is still a choice, and nothing in the corpus makes it. Corpus-grep for a selecting structure (Lean: `leftMul`, `second complex structure`, `pure unit quaternion`, Hopf map; `docs/`, `beans/defs/`, `library/INDEX.md`, `library/*/ocr` for 3-Sasakian / quaternionic structure): no hit that selects a unit. That is a statement about those surfaces, not a proof that no selecting structure could exist.
+
+**Not attempted, by the owner's ordering:** (b) moving the Reeb involution onto Bring's own cone (link `UT(Σ₄)`, `qou-rydq`), and (c) a `Gen1Quark` → rays map. Note for whoever picks up (b): on Bring's cone the analogue of "a point of the Hopf base" would be a point (or section) over `Σ₄`, and the Euler number −6 of the link fibration (vs −1 for Hopf) is the known obstruction to a global quaternionic triad there.
+
+Stays `todo` (rule 13a).
 
 Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
