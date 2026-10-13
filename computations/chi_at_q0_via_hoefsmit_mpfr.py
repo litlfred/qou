@@ -551,6 +551,11 @@ def save_witness(record: dict) -> Path:
         "n_partitions": record["n_partitions"],
         "compute_time_sec": record["compute_time_sec"],
         "tr_M_at_q0": record["tr_M_at_q0"],
+        # The `y_lambda` column below is the Markov/Wenzl weight at this q₀
+        # (`load_y_lambda_for_q0`, convention D) — NOT the quantum Plancherel
+        # measure. Declared so a reader need not infer it (y_lambda conflation
+        # audit, check D).
+        "weight_family": "markov_y_lambda_convention_D",
         "by_partition": record["by_partition"],
     }
     # Stamp provenance rather than hand-rolling it. `WitnessBuilder` was
