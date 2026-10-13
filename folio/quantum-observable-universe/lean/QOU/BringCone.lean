@@ -304,4 +304,212 @@ theorem commutes_reeb_triad_iff_leftMul (f : BringCone R →ₗ[R] BringCone R)
   dsimp [leftMul, reebM_i, reebM_j, reebM_k]
   ext <;> simp <;> ring
 
+/-! ## Which unit `u`: what the structure forces, and what it leaves free
+
+Bean `qou-wqto`. The previous section forces the second complex structure to be a
+left multiplication `L_u`; it does not fix `u`. This section asks which structure
+on the model cone could fix it, and proves the answer: **only the shape of `u`
+is forced, not `u` itself.**
+
+1. **Forced: `u` is a pure unit.** `L_u` is a complex structure iff `u * u = −1`
+   (`leftMul_complex_iff`). For pure `u` that is `normSq u = 1`
+   (`sq_eq_neg_one_iff_normSq_of_pure`), and over a domain of characteristic `≠ 2`
+   in which `−1` is not a square (so in `ℝ`) every solution is pure
+   (`re_eq_zero_of_sq_eq_neg_one`). Over `ℂ` the scalar `√−1` also solves it; that
+   case is excluded by the hypothesis, not hidden.
+2. **Not forced by the Reeb triad.** For every `u`, `Γ_u := L_u ∘ M_i` commutes
+   with `M_i` and anticommutes with `M_j`, `M_k` (`chiralGammaU_comm_reebM_i`,
+   `chiralGammaU_anticomm_reebM_j`, `chiralGammaU_anticomm_reebM_k`), and it is a
+   grading for every complex-structure `u` (`chiralGammaU_sq`). No compatibility
+   condition with the Reeb operators distinguishes one `u` from another.
+3. **All choices are equivalent up to the commutant and one sign.** For square
+   roots `u`, `v` of `−1`, left multiplication by `q = 1 − v·u` commutes with the
+   Reeb triad and carries `Γ_u` to `Γ_v` (`intertwiner_mul`,
+   `leftMul_intertwines_chiralGammaU`), and `L_{q̄} ∘ L_q = normSq q • id`
+   (`leftMul_star_leftMul`) with `normSq q = 2·(1 + u·v)` for pure units
+   (`normSq_intertwiner`), so `L_q` is invertible whenever `2·(1 + u·v)` is a
+   unit. The antipodal pair `v = −u` is the global flip: `Γ_{−u} = −Γ_u`
+   (`chiralGammaU_neg`), which exchanges the two chirality labels, matching V10's
+   `reeb_odd_grading_unique_up_to_flip`.
+4. **What does pick `u` is a base point, i.e. a choice.** Asking a given unit
+   vector `p` (a radial direction) to be a `Γ_u = −1` eigenvector forces
+   `u = p·i·p̄` (`chiralGammaU_eigen_iff`), the Hopf image of `p`, which is pure
+   and has norm `normSq p ^ 2` (`re_hopf`, `normSq_hopf`). So `u` ranges over the
+   Hopf base `S²`, and fixing it is fixing a point there. Nothing in the corpus
+   selects such a point.
+
+So on this model the residual freedom is exactly one point of the sphere of pure
+unit quaternions, up to automorphisms commuting with the Reeb triad, plus the
+global orientation sign `u ↦ −u`. That freedom is a gap for the owner, not a
+choice made here.
+-/
+
+/-- The quaternionic unit `i` on the cone, named so that proofs can manipulate it. -/
+def unitI : BringCone R := ⟨0, 1, 0, 0⟩
+
+theorem unitI_mul_unitI : (unitI : BringCone R) * unitI = -1 := by
+  ext <;> simp [unitI]
+
+theorem unitI_mul_neg_unitI : (unitI : BringCone R) * -unitI = 1 := by
+  ext <;> simp [unitI]
+
+theorem reebM_i_eq_mul_unitI (p : BringCone R) : reebM_i p = p * unitI := rfl
+
+/-- The chirality grading built from an arbitrary left unit: `Γ_u = L_u ∘ M_i`,
+`p ↦ u · p · i`. -/
+def chiralGammaU (u p : BringCone R) : BringCone R := leftMul u (reebM_i p)
+
+/-- `Γ_i` is the grading `chiralGamma` of the earlier section. -/
+theorem chiralGammaU_i (p : BringCone R) :
+    chiralGammaU unitI p = chiralGamma p := rfl
+
+/-- **`L_u` is a complex structure iff `u * u = −1`.** -/
+theorem leftMul_complex_iff (u : BringCone R) :
+    (∀ p, leftMul u (leftMul u p) = -p) ↔ u * u = -1 := by
+  constructor
+  · intro h
+    have := h 1
+    simpa [leftMul] using this
+  · intro h p
+    simp [leftMul, ← mul_assoc, h]
+
+/-- For a pure `u`, `u * u = −1` iff `normSq u = 1`. -/
+theorem sq_eq_neg_one_iff_normSq_of_pure (u : BringCone R) (hre : u.re = 0) :
+    u * u = -1 ↔ Quaternion.normSq u = 1 := by
+  have hsq : u * u = ⟨-(u.imI * u.imI + u.imJ * u.imJ + u.imK * u.imK), 0, 0, 0⟩ := by
+    ext <;> simp [hre] <;> ring
+  rw [hsq, Quaternion.normSq_def']
+  constructor
+  · intro h
+    have := congrArg (fun x : BringCone R => x.re) h
+    simp at this
+    rw [hre]
+    linear_combination -this
+  · intro h
+    rw [hre] at h
+    ext <;> simp
+    linear_combination -h
+
+/-- **Every square root of `−1` is pure**, over a domain of characteristic `≠ 2` in
+which `−1` is not a square. -/
+theorem re_eq_zero_of_sq_eq_neg_one [IsDomain R] (h2 : (2 : R) ≠ 0)
+    (hns : ∀ x : R, x * x ≠ -1) {u : BringCone R} (h : u * u = -1) : u.re = 0 := by
+  by_contra ha
+  have hI := congrArg (fun x : BringCone R => x.imI) h
+  have hJ := congrArg (fun x : BringCone R => x.imJ) h
+  have hK := congrArg (fun x : BringCone R => x.imK) h
+  have hR := congrArg (fun x : BringCone R => x.re) h
+  simp at hI hJ hK hR
+  have h2a : (2 : R) * u.re ≠ 0 := mul_ne_zero h2 ha
+  have hb : u.imI = 0 := by
+    have : (2 * u.re) * u.imI = 0 := by linear_combination hI
+    exact (mul_eq_zero.mp this).resolve_left h2a
+  have hc : u.imJ = 0 := by
+    have : (2 * u.re) * u.imJ = 0 := by linear_combination hJ
+    exact (mul_eq_zero.mp this).resolve_left h2a
+  have hd : u.imK = 0 := by
+    have : (2 * u.re) * u.imK = 0 := by linear_combination hK
+    exact (mul_eq_zero.mp this).resolve_left h2a
+  apply hns u.re
+  rw [hb, hc, hd] at hR
+  linear_combination hR
+
+/-- `Γ_u` is a grading for every complex-structure `u`. -/
+theorem chiralGammaU_sq {u : BringCone R} (hu : u * u = -1) (p : BringCone R) :
+    chiralGammaU u (chiralGammaU u p) = p := by
+  simp only [chiralGammaU, leftMul, reebM_i_eq_mul_unitI]
+  calc u * (u * (p * unitI) * unitI) = (u * u) * p * (unitI * unitI) := by
+        simp only [mul_assoc]
+    _ = p := by rw [hu, unitI_mul_unitI]; simp
+
+/-- `M_i` commutes with `Γ_u`, for every `u`. -/
+theorem chiralGammaU_comm_reebM_i (u p : BringCone R) :
+    chiralGammaU u (reebM_i p) = reebM_i (chiralGammaU u p) := by
+  simp [chiralGammaU, leftMul, reebM_i, mul_assoc]
+
+/-- `M_j` anticommutes with `Γ_u`, for every `u`. -/
+theorem chiralGammaU_anticomm_reebM_j (u p : BringCone R) :
+    chiralGammaU u (reebM_j p) = -reebM_j (chiralGammaU u p) := by
+  have h : (⟨0, 0, 1, 0⟩ : BringCone R) * ⟨0, 1, 0, 0⟩
+      = -((⟨0, 1, 0, 0⟩ : BringCone R) * ⟨0, 0, 1, 0⟩) := by ext <;> simp
+  simp only [chiralGammaU, leftMul, reebM_i, reebM_j, mul_assoc, h, mul_neg]
+
+/-- `M_k` anticommutes with `Γ_u`, for every `u`. -/
+theorem chiralGammaU_anticomm_reebM_k (u p : BringCone R) :
+    chiralGammaU u (reebM_k p) = -reebM_k (chiralGammaU u p) := by
+  have h : (⟨0, 0, 0, 1⟩ : BringCone R) * ⟨0, 1, 0, 0⟩
+      = -((⟨0, 1, 0, 0⟩ : BringCone R) * ⟨0, 0, 0, 1⟩) := by ext <;> simp
+  simp only [chiralGammaU, leftMul, reebM_i, reebM_k, mul_assoc, h, mul_neg]
+
+/-- **The antipodal unit is the global flip**: `Γ_{−u} = −Γ_u`. -/
+theorem chiralGammaU_neg (u p : BringCone R) :
+    chiralGammaU (-u) p = -chiralGammaU u p := by
+  simp [chiralGammaU, leftMul]
+
+/-- For two square roots of `−1`, `q = 1 − v·u` satisfies `q·u = v·q`. -/
+theorem intertwiner_mul {u v : BringCone R} (hu : u * u = -1) (hv : v * v = -1) :
+    (1 - v * u) * u = v * (1 - v * u) := by
+  rw [sub_mul, mul_sub, one_mul, mul_one, mul_assoc, hu, ← mul_assoc, hv]
+  simp [add_comm]
+
+/-- `L_q`, which commutes with the Reeb triad, carries `Γ_u` to `Γ_v`. -/
+theorem leftMul_intertwines_chiralGammaU {u v : BringCone R}
+    (hu : u * u = -1) (hv : v * v = -1) (p : BringCone R) :
+    leftMul (1 - v * u) (chiralGammaU u p) = chiralGammaU v (leftMul (1 - v * u) p) := by
+  simp only [chiralGammaU, leftMul, reebM_i]
+  rw [← mul_assoc, ← mul_assoc, intertwiner_mul hu hv]
+  simp only [mul_assoc]
+
+/-- `L_{q̄} ∘ L_q = normSq q • id`: `L_q` is invertible when `normSq q` is a unit. -/
+theorem leftMul_star_leftMul (q p : BringCone R) :
+    leftMul (star q) (leftMul q p) = Quaternion.normSq q • p := by
+  simp only [leftMul, ← mul_assoc, Quaternion.star_mul_self]
+  ext <;> simp
+
+/-- For pure units `u`, `v`, `normSq (1 − v·u) = 2·(1 + u·v)`. -/
+theorem normSq_intertwiner {u v : BringCone R} (hu0 : u.re = 0) (hv0 : v.re = 0)
+    (hu1 : Quaternion.normSq u = 1) (hv1 : Quaternion.normSq v = 1) :
+    Quaternion.normSq (1 - v * u)
+      = 2 * (1 + (u.imI * v.imI + u.imJ * v.imJ + u.imK * v.imK)) := by
+  rw [Quaternion.normSq_def'] at hu1 hv1 ⊢
+  simp [hu0, hv0] at hu1 hv1 ⊢
+  linear_combination (v.imI ^ 2 + v.imJ ^ 2 + v.imK ^ 2) * hu1 + hv1
+
+/-- **A radial direction is a chirality eigenvector only at its Hopf image.** For
+a unit vector `p`, `Γ_u p = −p` iff `u = p·i·p̄`. -/
+theorem chiralGammaU_eigen_iff {p : BringCone R} (hp : Quaternion.normSq p = 1)
+    (u : BringCone R) :
+    chiralGammaU u p = -p ↔ u = p * unitI * star p := by
+  have hps : p * star p = 1 := by
+    rw [Quaternion.self_mul_star, hp]; rfl
+  have hsp : star p * p = 1 := by
+    rw [Quaternion.star_mul_self, hp]; rfl
+  simp only [chiralGammaU, leftMul, reebM_i_eq_mul_unitI]
+  constructor
+  · intro h
+    have h1 : u * p = p * unitI := by
+      calc u * p = u * p * (unitI * -unitI) := by rw [unitI_mul_neg_unitI, mul_one]
+        _ = (u * (p * unitI)) * -unitI := by simp only [mul_assoc]
+        _ = p * unitI := by
+          rw [h, neg_mul_neg]
+    calc u = u * (p * star p) := by rw [hps, mul_one]
+      _ = (u * p) * star p := by rw [mul_assoc]
+      _ = p * unitI * star p := by rw [h1]
+  · intro h
+    rw [h]
+    calc p * unitI * star p * (p * unitI)
+        = p * unitI * (star p * p) * unitI := by simp only [mul_assoc]
+      _ = -p := by rw [hsp, mul_one, mul_assoc, unitI_mul_unitI]; simp
+
+/-- The Hopf image `p·i·p̄` is pure. -/
+theorem re_hopf (p : BringCone R) : (p * unitI * star p).re = 0 := by
+  simp [unitI]; ring
+
+/-- The Hopf image has norm `normSq p ^ 2`, so it is a pure unit when `p` is. -/
+theorem normSq_hopf (p : BringCone R) :
+    Quaternion.normSq (p * unitI * star p) = Quaternion.normSq p ^ 2 := by
+  have hi : Quaternion.normSq (unitI : BringCone R) = 1 := by
+    rw [Quaternion.normSq_def']; simp [unitI]
+  simp only [map_mul, Quaternion.normSq_star, hi, mul_one, sq]
+
 end QOU.Tetraplectic
