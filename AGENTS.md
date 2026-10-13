@@ -2170,7 +2170,7 @@ possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
 > twin** of the "≈ 3 %" swing this document already corrects two sections
 > up: both were computed from the pre-#1422 muon `c_3 = -2.0097` and its
 > 2.88 % swing, and both should have been re-derived at the same time.
-> With the live anchors (`c_3(p) = -2.0693425728`, `c_3(μ) =
+> With the live anchors (`c_3(p) = -2.0693425771`, `c_3(μ) =
 > -2.0202002328`, `Δq = 1.28e-8`) three independent routes agree:
 > **3.8375e6** by secant, **3.8320e6** from `2.37/u³` at `u = 0.00852`,
 > and `3838404.458` recorded in `rem-qstar`'s own witness as
@@ -2178,6 +2178,16 @@ possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
 > 3.84e6 is just as impossible for a smooth real `f` as 4.6e6, the
 > **prune stands and the real-q c₃ family stays killed** — only the
 > quoted magnitude was wrong.
+>
+> **Proton `c_3` corrected 2026-10-13 (PR #7792):** it read `-2.0693425728`,
+> a typed copy no producer reproduces; the canonical extraction
+> (`qbeta_ck_cache.py`, `qbeta_utils.c3_proton_extracted`) gives
+> `-2.06934257711516783787971951725`, and with the typed copy the N=3
+> residual it is defined to zero was 2.7e-6 ppb instead of ~0. The secant
+> moves by 0.34, invisible at the precision quoted. The muon `-2.0202002328`
+> is the CODATA-2018-era figure (that extraction now gives `-2.0202002350`;
+> the live CODATA-2022 muon pin gives `-2.0198603119`); it is kept because
+> the secant is quoted as of that pin, not re-derived here.
 >
 > **🛑 "five other sites" was wrong by an order of magnitude, and wrong
 > about WHERE (corrected 2026-08-29, bean `qou-kt8o`).** Measured on
