@@ -207,6 +207,16 @@ computed inside it by 1.2e-51. Import such modules at module scope, and
 assert `mp.mp.dps == dps` before the final reduction. Same mechanism makes the
 six-term isotope sweep run at 50 dps from its first `aK_v2` call onward.
 
+**Root cause FIXED 2026-10-13 (branch `claude/sweep-global-dps-2026-10-13`):**
+`y_lambda_su_n` now builds its constants in a local `mp.workdps(COMPUTE_DPS)`
+and leaves the global alone (the import-time-dps and module-const audits both
+accept `workdps` at module scope). Sweep re-run: 440 fields moved, max rel
+8.78e-49; baseline arm reproduced the committed witness with 0 moved. The
+GENERAL trap stands: any module-scope `set_compute_dps(N)` in a LIBRARY
+module is this bug — grep for it before trusting a caller's declared dps.
+The `qou-mass/_internal/` mirror still carries the old line until a
+`sync-qou-mass-vendor.py --apply` (12 modules already drifted on main).
+
 ## TRAP — `chi_all_lambda_any` carries its OWN `dps=50`, not the ambient `mp.dps`
 
 `chi_general_word.chi_all_lambda_any(word, n, *, dps=50, …)` computes at its
