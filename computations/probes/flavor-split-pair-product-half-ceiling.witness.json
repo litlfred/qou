@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T11:47:46.809350+00:00",
-  "commitSha": "9c6f715760cbd23b9b2b100720f1b8bbb09959ec",
+  "computedAt": "2026-10-13T11:59:47.866321+00:00",
+  "commitSha": "8f1b70555159d7e170bef87c379448651b822c55",
   "assertions": [
     {
       "name": "flavor_split_pair_product_half_ceiling",
@@ -32,6 +32,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {

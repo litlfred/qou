@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
   "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T11:48:11.882763+00:00",
-  "commitSha": "9c6f715760cbd23b9b2b100720f1b8bbb09959ec",
+  "computedAt": "2026-10-13T12:00:14.821779+00:00",
+  "commitSha": "8f1b70555159d7e170bef87c379448651b822c55",
   "assertions": [
     {
       "name": "C_lambda >= 0 on every partition, to tolerance 1.0e-40",
@@ -102,7 +102,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "uic-sign-decomposition",
   "scriptFile": "uic_sign_decomposition_probe.py",
   "scriptHash": "e51b3858966e",
@@ -120,6 +120,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-10-13T11:50:47.910271+00:00",
-  "commitSha": "36ee298d855b75a7608e9afd5bb327ebfdd7aa06",
+  "computedAt": "2026-10-13T12:00:15.875317+00:00",
+  "commitSha": "8f1b70555159d7e170bef87c379448651b822c55",
   "assertions": [
     {
       "name": "gram-matrix-symmetric",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 274,
+  "durationMs": 281,
   "computation": "qbeta-markov-trace-norm-probe",
   "scriptFile": "qbeta_markov_trace_norm_probe.py",
   "scriptHash": "a78bcb4cfd63",
-  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "scriptCommitSha": "d5e7b46038ca75c2b42438697ccf8a8793992a5c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,6 +54,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
