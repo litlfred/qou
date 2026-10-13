@@ -136,6 +136,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 _COMPUTATIONS = os.path.dirname(_HERE)
 if _COMPUTATIONS not in sys.path:
     sys.path.insert(0, _COMPUTATIONS)
+import _path_bridge  # noqa: E402, F401 -- puts substrate/ (where _precision lives) on sys.path
 
 from mpmath import mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
