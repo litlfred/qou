@@ -7507,6 +7507,44 @@ export const references: Reference[] = [
     URL: "https://doi.org/10.3934/dcds.2019187",
   }),
 
+  // ── Vorticity-direction regularity criteria (geometric depletion) ──
+  // Used by fluid-dynamics/core-levi-form.md and
+  //          fluid-dynamics/levi-degeneracy-conjecture.md (Q1 re-scope,
+  //          owner 2026-10-13). Bibliographic data confirmed via secondary
+  //          sources (docs/audits/2026-10-12-ns-v1-geometric-depletion.md §1);
+  //          primary texts not held in library/, DOI not verified, so omitted.
+  ref({
+    id: "constantin1993",
+    type: "article-journal",
+    title:
+      "Direction of vorticity and the problem of global regularity for the Navier-Stokes equations",
+    author: [
+      { family: "Constantin", given: "Peter" },
+      { family: "Fefferman", given: "Charles" },
+    ],
+    "container-title": "Indiana University Mathematics Journal",
+    issued: { "date-parts": [[1993]] },
+    volume: "42",
+    issue: "3",
+    page: "775-789",
+  }),
+
+  ref({
+    id: "beiraodaveiga2002",
+    type: "article-journal",
+    title:
+      "On the regularizing effect of the vorticity direction in incompressible viscous flows",
+    author: [
+      { family: "Beirão da Veiga", given: "Hugo" },
+      { family: "Berselli", given: "Luigi C." },
+    ],
+    "container-title": "Differential and Integral Equations",
+    issued: { "date-parts": [[2002]] },
+    volume: "15",
+    issue: "3",
+    page: "345-356",
+  }),
+
   // ── Townsend: viscous vortex-core strain dynamics ───────────────
   // Used by fluid-dynamics/townsend-biot-savart-strain.md and
   //          fluid-dynamics/hyperbolic-overlap-saturation.md
