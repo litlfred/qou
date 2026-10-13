@@ -244,6 +244,7 @@ def main() -> int:
 
     witness = {
         "computation": "qbeta-colour-does-not-license-the-asymmetry",
+        "q0Anchor": "proton",
         "assertions": a,
         "allPassed": bool(ok),
         "parameters": {"q0": mp.nstr(Q0, 30), "dps": DPS,

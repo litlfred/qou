@@ -382,6 +382,7 @@ def main() -> int:
 
     witness = {
         "computation": "qbeta-binding-law-options",
+        "q0Anchor": "proton",
         "assertions": a,
         "allPassed": bool(ok),
         "parameters": {
