@@ -1048,6 +1048,7 @@ import QOU.Archimedean.InvariantFormTransport
 import QOU.Archimedean.GaugeGroupThreeScale
 import QOU.Archimedean.GramDetRatioCongruence
 import QOU.Archimedean.SchwingerMeasureShape
+import QOU.Molecular.KnotConvolutedTensor
 import QOU.Molecular.PalindromicityOrbitalType
 import QOU.Molecular.ShellCapacitySelfSquare
 import QOU.Molecular.ShellClosureNfTermCount
