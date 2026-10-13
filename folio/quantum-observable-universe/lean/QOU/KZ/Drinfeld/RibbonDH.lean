@@ -2,6 +2,7 @@ import QOU.KZ.Drinfeld.Twist
 import QOU.KZ.Drinfeld.Linear
 import QOU.KZ.Drinfeld.Duals
 import QOU.MathlibExt.RibbonHeckeDimension
+import Mathlib.Analysis.SpecialFunctions.Complex.Log
 
 noncomputable section
 
@@ -153,5 +154,182 @@ instance ribbon : QOU.MathlibExt.RibbonCategory (DH c) where
     exact eps_twist c (ε_ X Xᘁ)
 
 end Ribbon
+
+
+/-! ### A scaled Hecke relation fixes the ribbon quantum dimension -/
+
+section ScaledHecke
+
+open QOU.MathlibExt BraidedCategory
+
+variable {C : Type*} [Category C] [MonoidalCategory C] [BraidedCategory C] [Preadditive C]
+  [MonoidalPreadditive C] {k : Type*} [Field k] [Linear k C] [MonoidalLinear k C]
+  [RightRigidCategory C] [RibbonCategory C]
+
+/-- **Scaled Hecke relation ⟹ dimension.** If `s·β − s⁻¹·β⁻¹ = (q − q⁻¹)·𝟙` on `V ⊗ V`,
+`θ_V = a·𝟙` and `dim_q V = d·𝟙`, then `((q − q⁻¹)·d)·𝟙_V = (s·a − s⁻¹·a⁻¹)·𝟙_V`. With `s = 1` this
+is `ribbon_hecke_dimension`. -/
+theorem ribbon_hecke_dimension_scaled (V : C) (s q a d : k) (ha : a ≠ 0)
+    (hHecke : s • (β_ V V).hom - s⁻¹ • (β_ V V).inv = (q - q⁻¹) • 𝟙 (V ⊗ V))
+    (hθ : BalancedCategory.twist V = a • 𝟙 V)
+    (hd : qDimTwistedWith V Vᘁ = d • 𝟙 (𝟙_ C)) :
+    ((q - q⁻¹) * d) • 𝟙 V = (s * a - s⁻¹ * a⁻¹) • 𝟙 V := by
+  have hinv : inv (BalancedCategory.twist V) = a⁻¹ • 𝟙 V := by
+    apply IsIso.inv_eq_of_hom_inv_id
+    rw [hθ]; simp [smul_smul, ha]
+  have h := congrArg (ptrTwistWith V V Vᘁ) hHecke
+  rw [ptrTwistWith_sub, ptrTwistWith_smul, ptrTwistWith_smul, ptrTwistWith_braiding,
+    ptrTwistWith_braiding_inv, ptrTwistWith_smul, ptrTwistWith_id, hd, hinv, hθ] at h
+  rw [sub_smul, mul_smul, mul_smul, mul_smul, h]
+  simp [MonoidalLinear.whiskerLeft_smul, smul_smul]
+
+end ScaledHecke
+
+/-! ### The braiding on `V ⊗ V` -/
+
+section Hecke
+
+/-- The flip of the two legs of `V ⊗ V`. -/
+abbrev PV : EndL (Leaves (tensor V V)) := flipL ℂ 2 (Sum.inl ()) (Sum.inr ())
+
+theorem PV_mul_PV : PV * PV = 1 := by
+  rw [PV, flipL, permL_mul, Equiv.swap_mul_self]
+  ext y x
+  simp [permL, permMat, Matrix.one_apply, eq_comm]
+
+theorem reidx_swapLegs_VV : reidx (swapLegs V V) = PV := by
+  have key : ∀ x y : Idx (tensor V V),
+      (x = y ∘ swapLegs V V) ↔ (x ∘ Equiv.swap (Sum.inl ()) (Sum.inr ()) = y) := by
+    intro x y
+    constructor
+    · rintro rfl; funext k; rcases k with ⟨⟩ | ⟨⟩ <;> simp [swapLegs]
+    · rintro rfl; funext k; rcases k with ⟨⟩ | ⟨⟩ <;> simp [swapLegs]
+  ext y x
+  simp only [reidx, PV, flipL, permL, permMat, Matrix.of_apply, key]
+
+theorem bL_VV : bL V V = {Sum.inl ()} := by
+  ext k; rcases k with ⟨⟩ | ⟨⟩ <;> simp [bL]
+
+theorem bR_VV : bR V V = {Sum.inr ()} := by
+  ext k; rcases k with ⟨⟩ | ⟨⟩ <;> simp [bR]
+
+/-- On `V ⊗ V` the `sl₂` block Casimir is `t = P − ½`. -/
+theorem tsl_VV : tsl (bL V V) (bR V V) = PV - (1 / 2 : ℂ) • 1 := by
+  have h := tB_eq_tsl (disj_bLR V V)
+  rw [bL_VV, bR_VV] at h ⊢
+  rw [tB, sum_singleton, sum_singleton, card_singleton] at h
+  rw [eq_sub_of_add_eq h.symm, card_singleton]; norm_num
+
+/-- `exp(iπ r·1) = e^{iπr}·1`. -/
+theorem expi_smul_one {L : Type*} [Fintype L] [DecidableEq L] (r : ℂ) :
+    expi (r • (1 : EndL L)) = Complex.exp (Real.pi * Complex.I * r) • 1 := by
+  unfold expi
+  rw [smul_smul, ← Algebra.algebraMap_eq_smul_one, ← NormedSpace.algebraMap_exp_comm,
+    ← Complex.exp_eq_exp_ℂ, Algebra.algebraMap_eq_smul_one]
+
+/-- The two spectral projections of the flip. -/
+def Pp : EndL (Leaves (tensor V V)) := (1 / 2 : ℂ) • (1 + PV)
+def Pm : EndL (Leaves (tensor V V)) := (1 / 2 : ℂ) • (1 - PV)
+
+theorem Pp_mul_PV : Pp * PV = Pp := by
+  rw [Pp, Matrix.smul_mul, Matrix.add_mul, PV_mul_PV, Matrix.one_mul, add_comm]
+
+theorem Pm_mul_PV : Pm * PV = -Pm := by
+  rw [Pm, Matrix.smul_mul, Matrix.sub_mul, PV_mul_PV, Matrix.one_mul, ← smul_neg, neg_sub]
+
+theorem Pp_add_Pm : Pp + Pm = 1 := by
+  rw [Pp, Pm, ← smul_add]; module
+
+theorem PV_eq : PV = Pp - Pm := by
+  rw [Pp, Pm]; module
+
+theorem Pp_mul_Pp : Pp * Pp = Pp := by
+  show Pp * ((1 / 2 : ℂ) • (1 + PV)) = Pp
+  rw [Matrix.mul_smul, Matrix.mul_add, Matrix.mul_one, Pp_mul_PV, ← two_smul ℂ Pp, smul_smul]
+  norm_num
+
+theorem Pm_mul_Pm : Pm * Pm = Pm := by
+  show Pm * ((1 / 2 : ℂ) • (1 - PV)) = Pm
+  rw [Matrix.mul_smul, Matrix.mul_sub, Matrix.mul_one, Pm_mul_PV, sub_neg_eq_add, ← two_smul ℂ Pm,
+    smul_smul]
+  norm_num
+
+theorem Pp_mul_Pm : Pp * Pm = 0 := by
+  conv_lhs => rw [show (Pm : EndL _) = (1 / 2 : ℂ) • (1 - PV) from rfl]
+  rw [Matrix.mul_smul, Matrix.mul_sub, Matrix.mul_one, Pp_mul_PV, sub_self, smul_zero]
+
+theorem Pm_mul_Pp : Pm * Pp = 0 := by
+  conv_lhs => rw [show (Pp : EndL _) = (1 / 2 : ℂ) • (1 + PV) from rfl]
+  rw [Matrix.mul_smul, Matrix.mul_add, Matrix.mul_one, Pm_mul_PV, add_neg_cancel, smul_zero]
+
+variable (c : ℂ)
+
+/-- `e^{iπℏ/2}`, the eigenvalue of `β_{V,V}` on `Sym² V`. -/
+def sV : ℂ := Complex.exp (Real.pi * Complex.I * (c / 2))
+/-- `e^{−3iπℏ/2}`, minus the eigenvalue of `β_{V,V}` on `Λ² V`. -/
+def tV : ℂ := Complex.exp (Real.pi * Complex.I * (-(3 * c / 2)))
+/-- `q = e^{iπℏ}`. -/
+def qV : ℂ := Complex.exp (Real.pi * Complex.I * c)
+
+theorem Pp_mul_expi : Pp * expi (c • tsl (bL V V) (bR V V)) = sV c • Pp := by
+  have h : Pp * (c • tsl (bL V V) (bR V V)) = Pp * ((c / 2) • (1 : EndL _)) := by
+    rw [tsl_VV, Matrix.mul_smul, Matrix.mul_sub, Pp_mul_PV, Matrix.mul_smul, Matrix.mul_one,
+      Matrix.mul_smul, Matrix.mul_one]
+    module
+  rw [mul_expi_congr Pp (commute_scalar (c / 2) _).symm h, expi_smul_one, Matrix.mul_smul,
+    Matrix.mul_one]
+  rfl
+
+theorem Pm_mul_expi : Pm * expi (c • tsl (bL V V) (bR V V)) = tV c • Pm := by
+  have h : Pm * (c • tsl (bL V V) (bR V V)) = Pm * ((-(3 * c / 2)) • (1 : EndL _)) := by
+    rw [tsl_VV, Matrix.mul_smul, Matrix.mul_sub, Pm_mul_PV, Matrix.mul_smul, Matrix.mul_one,
+      Matrix.mul_smul, Matrix.mul_one]
+    module
+  rw [mul_expi_congr Pm (commute_scalar (-(3 * c / 2)) _).symm h, expi_smul_one, Matrix.mul_smul,
+    Matrix.mul_one]
+  rfl
+
+theorem βmat_VV : βmat c V V = sV c • Pp - tV c • Pm := by
+  rw [βmat, reidx_swapLegs_VV, PV_eq, Matrix.sub_mul, Pp_mul_expi, Pm_mul_expi]
+
+theorem sV_ne_zero : sV c ≠ 0 := Complex.exp_ne_zero _
+theorem tV_ne_zero : tV c ≠ 0 := Complex.exp_ne_zero _
+
+theorem βinv_VV : βinv c V V = (sV c)⁻¹ • Pp - (tV c)⁻¹ • Pm := by
+  have hs := sV_ne_zero c
+  have ht := tV_ne_zero c
+  have h1 : βmat c V V * ((sV c)⁻¹ • Pp - (tV c)⁻¹ • Pm) = 1 := by
+    rw [βmat_VV]
+    simp only [Matrix.sub_mul, Matrix.mul_sub, Matrix.smul_mul, Matrix.mul_smul]
+    rw [Pp_mul_Pp, Pm_mul_Pm, Pp_mul_Pm, Pm_mul_Pp]
+    conv_rhs => rw [← Pp_add_Pm]
+    match_scalars <;> field_simp
+  calc βinv c V V = βinv c V V * (βmat c V V * ((sV c)⁻¹ • Pp - (tV c)⁻¹ • Pm)) := by
+        rw [h1, Matrix.mul_one]
+    _ = _ := by rw [← Matrix.mul_assoc, βinv_mul_βmat, Matrix.one_mul]
+
+theorem sV_mul_sV : sV c * sV c = qV c := by
+  unfold sV qV; rw [← Complex.exp_add]; ring_nf
+
+theorem sV_mul_tV : sV c * tV c = (qV c)⁻¹ := by
+  unfold sV tV qV; rw [← Complex.exp_add, ← Complex.exp_neg]; ring_nf
+
+/-- **The Hecke skein relation in `D_ℏ`** (matrix form): with `s = e^{iπℏ/2}`, `q = e^{iπℏ}`,
+`s·β − s⁻¹·β⁻¹ = (q − q⁻¹)·1` on `V ⊗ V`. -/
+theorem tV_eq : tV c = ((sV c) ^ 3)⁻¹ := by
+  unfold tV sV; rw [← Complex.exp_nat_mul, ← Complex.exp_neg]; ring_nf
+
+theorem qV_eq : qV c = sV c ^ 2 := by rw [sq, sV_mul_sV]
+
+/-- **The Hecke skein relation in `D_ℏ`** (matrix form): with `s = e^{iπℏ/2}`, `q = e^{iπℏ}`,
+`s·β − s⁻¹·β⁻¹ = (q − q⁻¹)·1` on `V ⊗ V`. -/
+theorem hecke_mat :
+    sV c • βmat c V V - (sV c)⁻¹ • βinv c V V = (qV c - (qV c)⁻¹) • 1 := by
+  have hs := sV_ne_zero c
+  rw [βmat_VV, βinv_VV, tV_eq, qV_eq]
+  conv_rhs => rw [← Pp_add_Pm]
+  match_scalars <;> field_simp <;> ring
+
+end Hecke
 
 end QOU.KZ.Drinfeld
