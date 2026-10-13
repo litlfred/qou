@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T10:27:40.761526+00:00",
-  "commitSha": "3003d25de4e7350ee2f18362030dca169d634718",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:48:04.701591+00:00",
+  "commitSha": "eb645d81e7fe1646342513e676f6498caab4a229",
   "assertions": [
     {
       "name": "unique_bar_fixed_shift_is_minus_h_over_2",
@@ -60,11 +60,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1496,
+  "durationMs": 1410,
   "computation": "qbeta-quark-block-is-the-bar-fixed-letters",
   "scriptFile": "qbeta_quark_block_is_the_bar_fixed_letters_probe.py",
-  "scriptHash": "6be4d3380147",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "aaee3236bf10",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,14 +72,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -158,5 +158,7 @@
     },
     "scope": "scope-(a). CHECK 1-3 CHARACTERISE the quark block as the bar-fixed part of the census word; they do not DERIVE it and select nothing. CHECK 4 is a recorded negative. CHECK 5 is an observation on two points. Assumed but not proved here: bar is an order-preserving ring automorphism of H_3(q) -- CHECK 1-3 are per-letter and independent of that, any word-level reading is not.",
     "open_gap": "Which two of the three quark slots carry -h/2, their generator indices, and the gluon pair, remain census-derived. qou-99qc stays todo: this narrows the search, it does not close it."
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
 }

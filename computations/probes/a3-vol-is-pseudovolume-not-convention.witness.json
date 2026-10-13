@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T11:55:51.220131+00:00",
-  "commitSha": "d71811a5d8f358eccb0e2edb5f29b0f4c7a904df",
+  "computedAt": "2026-10-13T15:52:36.688901+00:00",
+  "commitSha": "eb645d81e7fe1646342513e676f6498caab4a229",
   "assertions": [
     {
       "name": "all three B_OVER_ME literals reproduce AME B/m_e -- worst rel 0.000254 -- so B_OVER_ME carries NO convention; calling it a C-era assignment was wrong and overstated the remaining straddle",
@@ -51,8 +51,8 @@
   "durationMs": 3,
   "computation": "a3-vol-is-pseudovolume-not-convention",
   "scriptFile": "a3_vol_is_pseudovolume_not_convention_probe.py",
-  "scriptHash": "dc9ff823d860",
-  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "scriptHash": "2e370d175042",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -113,5 +113,7 @@
     ],
     "convention_migration_complete": true,
     "still_open_and_NOT_a_convention_question": "whether a Z-clustered pseudo-volume of a degenerate triangulation is the right geometric input at all (flagged 2026-06-05, unresolved)"
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
 }

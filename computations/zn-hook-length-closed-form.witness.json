@@ -36,7 +36,7 @@
   "checks_passed": 6,
   "checks_total": 6,
   "closed_form": "Z_n(q) = q^{-n} sum_{lambda|-n} q^{H(lambda)} [n]_{q^2}! / prod_c [h(c)]_{q^2}",
-  "computedAt": "2026-09-07T06:38:59.872278+00:00",
+  "computedAt": "2026-10-13T15:48:35.860661+00:00",
   "d2_deg": {
     "10": 1,
     "11": 2,
@@ -121,6 +121,8 @@
     "9": 26
   },
   "probe": "zn_hook_length_closed_form_probe",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "triangular_exceptions_found": [
     3,
     6,
