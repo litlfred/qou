@@ -537,7 +537,8 @@ def main() -> int:
                 "and the multiplicativity defect is such an object."
             ),
         },
-        "q0Anchor": "physical_proton",
+        "q0Anchor": "proton",
+        "q0AnchorReason": "Physical-Observations layer (manifest key physical_proton): q0 = Q_50_DIGIT_STR, the proton m_p/m_e pin",
         "convention": "D (z = q^3/(q^2+1))",
         "mirror_map": "d -> -h - d  (p<->n on each bond; exchanges d_pp=0 and d_nn=-h)",
         "verdict": {

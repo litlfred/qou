@@ -201,7 +201,7 @@ def main() -> int:
         "engine": "mpmath",
         "scriptFile": Path(__file__).name,
         "commitSha": _head_sha(),
-        "q0Anchor": "physical_proton",
+        "q0Anchor": "proton",
         "q0AnchorReason": "seeded from Q_50_DIGIT_STR; the bond series are in eps = q - 1",
         "description": (
             "Takes over qou-qqm4's unanswered target from #7097 and computes rho_pp "
