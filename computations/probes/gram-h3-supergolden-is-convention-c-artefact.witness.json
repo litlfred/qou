@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.17",
-  "computedAt": "2026-10-10T08:34:30.948287+00:00",
-  "commitSha": "38f760df095589f24efc897e7daa4304910a10ec",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:21:37.318157+00:00",
+  "commitSha": "607fa41877ecf00f1a0bfb9a85e8cd21594a50a3",
   "assertions": [
     {
       "name": "supergolden_divides_zC_minus_q_exactly",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 18,
   "computation": "gram-h3-supergolden-is-convention-c-artefact",
   "scriptFile": "gram_h3_supergolden_is_convention_c_artefact_probe.py",
-  "scriptHash": "100ec0d873a7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e4c7c74dbfb6",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,14 +60,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.17",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "2986fe4aa825b156"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -114,5 +114,7 @@
       "that no supergolden feature exists elsewhere in the framework"
     ],
     "tracked_by": "qou-zf9n (item 3)"
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal"
 }

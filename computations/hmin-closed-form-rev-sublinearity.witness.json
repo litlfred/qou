@@ -31,11 +31,12 @@
   ],
   "checks_passed": 5,
   "checks_total": 5,
-  "computedAt": "2026-09-07T06:31:17.913036+00:00",
+  "computedAt": "2026-10-13T15:17:23.062572+00:00",
   "corrects": "D5 of deuteron_qborel_slope_derivation_probe.py: the n^{3/2} residual is the DEGREE part, not REV",
   "deg_Z_closed_form": "deg Z_n = n^2 - H_min(n)",
   "dps": 60,
   "probe": "hmin_closed_form_and_rev_sublinearity_probe",
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0_anchor": "physical_proton",
   "rev_table": [
