@@ -635,3 +635,14 @@ TRAPs.
   Gates: `--changed` EXIT 1, 9 reds, all pre-existing (none of 8 touched files in log);
   copy ratchet NARROW 212->206. `mcp__github__create_pull_request` not offered and
   `gh pr create` 403s (GraphQL): `gh api -X POST repos/litlfred/qou/pulls --input` works.
+- 2026-10-13 (rulings D/E/G/H on #7788 leftovers). **TRAP — a stale tag literal + a bare
+  `except` = a vacuous PASS.** `atom_braid_active_partitions` compared letters to a typed
+  `HA` 1.11e-7 off at 1e-12; every word raised `ValueError`, `except` stored `None`, and
+  "0 active <= bound" passed for months against a 2026-05-25 audit recording the opposite.
+  Grep `except Exception` near any threshold test before trusting its PASS. **TRAP — a
+  "stale literal" may be DEAD code or in a mismatched normalisation**: `rho_f_categorical`'s
+  0.388 fallback is overridden by the peel witness at import; `deuteron_delta_i_audit` is
+  dead by construction and pairs D with p/n in another basis. And the "live" 0.5751 the
+  ruling cited is itself stale on main (canonical deuteron 0.151968…). Measure what the
+  literal actually FEEDS before swapping it. Baseline drains: write `old − measured_fixed`
+  by hand, never `--rebaseline` (main carried 51 NEW unstamped / 25 NEW copies).
