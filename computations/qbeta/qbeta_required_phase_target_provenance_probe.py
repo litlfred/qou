@@ -76,6 +76,7 @@ from codata_constants import M_E_MEV, Q_BETA_MEV               # noqa: E402
 from q_parameter import q_at                                   # noqa: E402
 
 DPS = 50
+mp.dps = DPS   # before the module-scope mpf literals below (import-time dps ratchet)
 QUOTED_TARGET = mp.mpf("0.0565947")     # as quoted by HolonomySpectrumSignObstruction
 
 results: list[tuple[str, bool, str]] = []
