@@ -749,8 +749,11 @@ def main() -> int:
     w.add_data("complete_coupling_destroys_contiguity", dilemma_rows)
     w.add_data("reembedded_segmentation", seg_rows)
     w.add_data("A2_character_comparison", chi_rows)
-    w.add_data("A2_path_sum_cost_s", {"fixed_Hk": fmt(mp.mpf(t_fixed)),
-                                      "three_A": fmt(mp.mpf(t_re))})
+    # Wall-clock seconds from time.monotonic(): a binary64 by origin. fmt() of
+    # an mpf built from it printed the double's 60-digit expansion as though
+    # measured (float64-padding gate); fmt() of the float itself is its repr.
+    w.add_data("A2_path_sum_cost_s", {"fixed_Hk": fmt(t_fixed),
+                                      "three_A": fmt(t_re)})
     w.add_caveat(
         "scope-(b) for the contiguous-layout coupling graph (P_A and nothing "
         "more; QOU/Hecke/ContiguousCouplingGraph.lean, sorry-free, general A) "
