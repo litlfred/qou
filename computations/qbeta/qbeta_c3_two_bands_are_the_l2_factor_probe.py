@@ -13,7 +13,7 @@ TWO BANDS ARE NOW IN THE CORPUS FOR THE SAME NUMBER:
           [0.807, 3.331] agrees at least as well"
 
   (2) L2 TOLERANCE, PR #6353 via #6342
-      c_3 = -2.0693425728 +/- 0.01262   (0.61 %)
+      c_3 = -2.069342577 +/- 0.01262   (0.61 %)   [c_3 recomputed live; see below]
       -> "c_3 = -2 = J_Hopf(q=1) is 5.495x outside"
 
 **They are the same sigma divided by 100.**  Band (2) is band (1) scaled by the
@@ -49,10 +49,16 @@ justified: **structurally, not empirically**, until the neutron Q-value improves
 by the 32x (proton pin) / 130x (muon pin) the source block quotes.
 
 Exact mpmath; no float64; emits no witness (it audits two published bands).
+
+c_3 is RECOMPUTED, not typed: `qbeta_utils.c3_proton_extracted()` is the same
+extraction `qbeta_ck_cache.py` performs (proton pin, CODATA 2022, convention C).
+It used to carry a typed copy that no producer reproduces (2026-10-13).
 """
 import sys
 
 import mpmath as mp
+
+from qbeta_utils import c3_proton_extracted
 
 mp.mp.dps = 50
 
@@ -60,7 +66,7 @@ mp.mp.dps = 50
 def main() -> int:
     checks = []
 
-    c3 = mp.mpf("-2.0693425728")
+    c3 = c3_proton_extracted()
     cand = mp.mpf(-2)
     gap = abs(cand - c3)
 
