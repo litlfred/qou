@@ -1,11 +1,13 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-09-15T08:17:07.944310+00:00",
+  "computedAt": "2026-10-13T14:16:49.611186+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_xbot_coercivity_probe.py"
   },
   "bean": "qou-hok7",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
+  "scriptFile": "rev_e_infinity_xbot_coercivity_probe.py",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "G1 (Xbot(s) <= Xblock(s)) is the last conditionality on e_inf, and no enumeration can settle it: a capped maximum is a LOWER bound on its own supremum and a lower bound can only refute an inequality.  What is needed is an UPPER bound on Xbot, of the kind #7349 built for Xblock -- and it would also BYPASS G1, since the join needs a certified cut rather than a pointwise inequality.  This probe asks whether #7349's per-row linearisation transfers to the bottom edge's own evaluator.  It is not a formality: staircase_beta is TWO environments glued at a wall (gap 2 above, gap 1 below) and the bottom block straddles them, delta_excess carries a one-body term that ap_value lacks entirely (F is saturated at the top edge, not at the wall), and it pays an extra linear cost lin = sum_{i>k}(i-k)u_i worth ln(q0)*lin and reaching 0.7304 at the maximisers.  The bound under test is rebuilt from the frame's own distances using the DISCRETE step delta(m) = eps(m) - eps(m+1) -- the object SearchCoercivity.sub_le_mul_of_antitone_step is stated over -- so a clean result is licensed by a sorry-free lemma rather than by a derivative argument.  Ghat_bot is a DIFFERENCE, not a sum: rows below a displaced row are a gain and rows above are a loss, and deep in the staircase there are ~k rows above, which is the substantive question.",
   "constants": {

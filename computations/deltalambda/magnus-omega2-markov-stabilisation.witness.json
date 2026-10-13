@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-13T09:19:59.831497+00:00",
-  "commitSha": "66abf128ccfa967b6ba0e4a8d3e8d5b7c778fda8",
+  "computedAt": "2026-10-13T14:20:17.362414+00:00",
+  "commitSha": "d3fc1984798d417519e0e0a4d07c80a6e62169b6",
   "assertions": [
     {
       "name": "tr_one_equals_one_under_wenzl",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 17,
   "computation": "magnus-omega2-markov-stabilisation",
   "scriptFile": "magnus_omega2_markov_stabilisation_probe.py",
   "scriptHash": "4a6b8a43f61b",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,14 +54,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -131,5 +131,7 @@
     "The identity is a NECESSARY condition for the pairing to be a function of the link rather than of the braid word, not a proof that the binding functional must be a link invariant. That premise is stated, not derived, and is the remaining work in qou-gba1.",
     "The sign of P never enters this test. The two weight families disagree on the sign at A=3 and A=4 (bean qou-za3q), so a criterion that used the sign would be selection against the target (AGENTS.md). Stabilisation covariance is independent of it.",
     "Positive stabilisation only. The other Markov move, conjugation beta -> alpha beta alpha^-1, needs negative crossings, which this germ machinery does not build; it is untested here."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
