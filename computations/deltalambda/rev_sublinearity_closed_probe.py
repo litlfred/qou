@@ -325,7 +325,7 @@ def main() -> int:
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "q0Value": mp.nstr(Q0, 50),
-        "q0_anchor": "physical_proton",
+        "q0_anchor": "physical_proton", "q0Anchor": "proton",
         "dps": mp.dps,
         "L2_prime": "H(lambda) >= r^2 - r + 1, r = min(ell, lambda_1)",
         "repairs": ("L2 'H >= 3r^2-3r+1' refuted in rev_sublinearity_proof_probe.py; L2' uses only "

@@ -191,7 +191,7 @@ def main() -> int:
         "probe": "rev_sharpness_discriminator_control_probe",
         "bean": "qou-hok7",
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "q0_anchor": "physical_proton",
+        "q0_anchor": "physical_proton", "q0Anchor": "proton",
         "dps": mp.dps,
         "conclusion": ("the M/n^{3/4}-vs-M/sqrt(n) discriminator does not discriminate at "
                        "reachable n; a provably Theta(sqrt n) control shows the same flatness "

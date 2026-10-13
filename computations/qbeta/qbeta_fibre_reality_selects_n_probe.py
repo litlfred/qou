@@ -212,7 +212,7 @@ def main() -> int:
         "theta_required": mp.nstr(theta, 20),
         "reading_A_nearest_over_theta": mp.nstr(nearestA / theta, 20),
         "reading_B_nearest_over_theta": mp.nstr(nearestB / theta, 20),
-        "q0": mp.nstr(q0, 20), "q0_pin": "proton (q_at)", "dps": DPS,
+        "q0": mp.nstr(q0, 20), "q0_pin": "proton (q_at)", "q0Anchor": "proton", "dps": DPS,
         "consonance_not_evidence": "N = 5 is not foreign here (Bring, S_5/A_5, "
                                    "binary icosahedral 2I, the s5-so3 keystone). "
                                    "Recorded as consonance; NOT offered as support, "
