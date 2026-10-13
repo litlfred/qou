@@ -564,10 +564,6 @@ _out = {
     "computation": "rev_exact_maximiser_small_n_probe.py",
     "bean": "qou-hok7",
     "anchor": "physical_proton",
-    # Canonical anchor key read by the q0 audits/ratchet (the "anchor" key above is
-    # a near-miss spelling they cannot see), plus scriptFile provenance.
-    "q0Anchor": "proton",
-    "scriptFile": os.path.basename(__file__),
     "q0Value": Q_50_DIGIT_STR,
     "description":
         "M_n by EXHAUSTIVE enumeration over every partition of n, for triangular n up to "
