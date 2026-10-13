@@ -18,6 +18,28 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-10-13",
+      body:
+        "**Consumers re-scoped (owner option 2, follow-up to Q1).** The consumers " +
+        "named in the caveat below as \"not edited here\" have since been " +
+        "re-scoped: `rem:core-levi-interpretation`, " +
+        "`rem:hyperbolic-overlap-saturation`, `rem:observability-fluid-context`, " +
+        "`rem:q-metric-contact-deformation`, " +
+        "`rem:observability-independent-motivation` (+ its table), " +
+        "`prop:ns-obstruction-tower` (proof step (d) withdrawn) and " +
+        "`rem:ns-obstruction-tower-summary`. In Lean, " +
+        "`levi_growth_trichotomy.lean` now carries `GrowthExponent` (no Levi " +
+        "reading, no branch fields) and `levi_pair_channel_branch_b.lean` keeps " +
+        "`linear_seq_forces_beta_one` as an aspect-ratio statement; the old " +
+        "theorem names survive as deprecated aliases. Still carrying the " +
+        "withdrawn statements and NOT edited: `yekutieli_levi_unification.lean` " +
+        "(step (d) as a class field), `qou_ns_in_qou.lean` " +
+        "(`QOUFluidUniverseLevi`, branch A), `ns-singularity-descartes-proof` " +
+        "(lists the core-Levi equivalence as an input) and " +
+        "`ns-singularity-descartes-interpretation`. Bean `qou-fm7s`.",
+    },
+    {
       kind: "caveat",
       date: "2026-10-13",
       body:
