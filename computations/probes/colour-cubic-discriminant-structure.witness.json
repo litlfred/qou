@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T09:41:42.461580+00:00",
-  "commitSha": "e4fc1bd5e95c52f78d9d03de448f735e1c923aa1",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T15:21:35.388869+00:00",
+  "commitSha": "607fa41877ecf00f1a0bfb9a85e8cd21594a50a3",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "colour-cubic-discriminant-structure",
   "scriptFile": "colour_cubic_discriminant_structure_probe.py",
-  "scriptHash": "1956da506e86",
-  "scriptCommitSha": "ddeb84427e329447affb5ea5514c19bab1f2dab1",
+  "scriptHash": "67e2fe7967b7",
+  "scriptCommitSha": "b66bb4547db13638c8099f077e34464f80e426d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -32,6 +32,8 @@
     ],
     "reproduce": "python3 -u computations/probes/colour_cubic_discriminant_structure_probe.py"
   },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0_independence_checker: the fully-resolved import cone reads no q0 and the source carries no q0-shaped literal",
   "description": "Structure of the colour-tube cubic's discriminant locus (the Bring-side divergent points) and a direct test of the identification resurgence would need. NEW: the sextic is palindromic, its roots pair reciprocally, one conjugate pair lies exactly on the unit circle as a pure phase that is NOT a root of unity at n in {5,7,10,12,20,24}, and the palindromic reduction 16w^3+24w^2-13w+2 has exact integer discriminant -80000 = -2^7*5^4. NEGATIVE: xi = 1/sqrt(2), the Borel-side level-1/2 singularity, is not simply related to any tested invariant of z_c. Scope-(a): the cheap identification fails; the action integral along a Picard-Lefschetz thimble was NOT computed and is the honest test.",
   "checks": [
     {
