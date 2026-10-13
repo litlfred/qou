@@ -259,3 +259,11 @@ The bare U = σ₀σ₁ is φ-symmetric at every power and cannot separate the g
 - S+ vs S− on the neutron differs at t¹ only in the through coefficient.
 
 A derivation of the sign map must therefore fix each produced line's through parity; the pair structure cannot. Nothing adopted; the bean stays open. Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
+
+**2026-10-13 — option 4, step 3 (issue #7777, PR #7781, `computations/probes/gg_quark_letters_parity/`).** Pre-registered at 74045a7695d, 4/4 checks, exact over ℚ(q). Five candidate rules for deriving a quark letter's through parity from γγ, including the owner-requested Jones-pair closure.
+- **No rule fixes the flavour sign map (outcome iv).** Every rule depends only on the generator, so proton and neutron get the same element; u ↔ q versus u ↔ q⁻¹ is a bar-swapped pair that nothing in V, V³ or its closures distinguishes.
+- **Generator parities disagree (outcome iii):** vertex inheritance gives (g0, g1) = (q, q⁻¹), the h³ residue the opposite, pair-production balance [2]/2 on both.
+- **Jones-pair closure:** on one vertex it returns the other crossing with its own parity only for the adjacent closure (ambiguous overall); on the core V³ no closure gives q^{±1}, since every survivor coefficient has (q²−1)² in its denominator.
+- No rule fixes the placement.
+
+The gap is a flavour-to-line dictionary, possibly from a construction above three strands. Nothing adopted; the bean stays open (rule 13a). Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
