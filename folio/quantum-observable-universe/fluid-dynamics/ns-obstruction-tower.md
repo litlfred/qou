@@ -34,9 +34,7 @@ Following the [QU-to-QOU theorem](#thm:qu-to-qou), the base obstruction is exact
 $$
   \kappa_n
   = 
-  \kappa_0
-  + 
-  \delta_n,
+  \kappa_0 + \delta_n,
   \qquad
   \delta_n \in \mathrm{im}\!\bigl(
     H^2(\mathcal{S}, \mathcal{O}_\mathcal{S})
@@ -100,8 +98,7 @@ $$
   \kappa_n\big|_\Sigma
   = 
   \mathrm{lk}(\varrho_1, \varrho_2)
-  \cdot e(\xi)\big|_\Sigma
-  +  \delta_n\big|_\Sigma,
+  \cdot e(\xi)\big|_\Sigma +  \delta_n\big|_\Sigma,
 $$
 
 where $\mathrm{lk}(\varrho_1, \varrho_2)$ tracks the explicit linking number separating the two filaments, and $e(\xi)|_\Sigma$ evaluates the Euler class of the Reeb bundle precisely on $\Sigma$.
