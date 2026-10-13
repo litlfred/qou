@@ -587,3 +587,24 @@ TRAPs.
   producer reproduced the committed witness first (0 moves), so all 227 moves
   (max rel 2.3e-14) are the fix. Kernel got 7x FASTER (7m32s -> 1m07s) by
   skipping y=0 (>2-row) shapes. New TRAP above (import reassigns dps).
+- 2026-10-13 (PR #7788, owner-authorised sweep): refill ratchet 202→51, value-copy
+  35→25, all at the producer. Four TRAPs, each one cost me something:
+  * **Emitting `scriptFile` can CREATE a copy-ratchet NEW.** The copy audit drops a
+    script's own witness from the carrier set, so `E_INF_7335` fell from 4 carriers
+    (SHARED, unreported) to 3 (NARROW, NEW). It was a real copy, so I fixed it with a
+    read. Re-measure the copy ratchet after any provenance change.
+  * **A typed constant can be a STALE PIN, not just a short one.**
+    `atom_braid_active_partitions.HA` was h at an earlier q0 (off by 1.1e-7). It was
+    used as a 1e-12 classification tag, so the exact h flips D's verdict
+    (allPassed True→False). Run origin/main's producer beside yours before you
+    commit a "same value" read.
+  * **A batch restore keyed on "finished but not OK" will eat good results if the
+    reviewer that defines OK crashes silently** (a missing `.res` file). That cost
+    6 re-runs. Make the review step fail loudly and gate the restore on it.
+  * **`pkill -f <pattern>` kills the Bash call that runs it** when the pattern is in
+    its own command line (exit 144). Use `pgrep -f '[p]attern'`.
+  The rest is operational. gmpy2 is absent here, so `pip install --target <scratch>`
+  and put it on PYTHONPATH per run. Background tasks die at 30 min unless given a
+  long `timeout`. Most refill NEWs are ONE producer each: there is no
+  many-witnesses group, and the mechanical groups are by fix SHAPE (manifest,
+  near-miss key, save(extra)).
