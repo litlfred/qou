@@ -146,7 +146,11 @@ DEPTH4 = int(mp.ceil(TARGET_DIGITS * _LN10 / (4 * LNQ))) + 5
 TOL = mp.mpf(10) ** (-(TARGET_DIGITS - 5))
 
 # The coercivity cut is taken against #7335's searched value, which this probe does not recompute.
-E_INF_7335 = mp.mpf("2.43929645512078402706542884314")
+# READ from the witness that searches it (rev-e-infinity-edge-limit, e_infinity.value)
+# rather than typed (witness-value copy ratchet).
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       "rev-e-infinity-edge-limit.witness.json"), encoding="utf-8") as _fh:
+    E_INF_7335 = mp.mpf(json.load(_fh)["e_infinity"]["value"])
 
 CHECKS: list[tuple[str, bool, str]] = []
 
