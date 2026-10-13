@@ -38,7 +38,7 @@
   ],
   "checks_passed": 6,
   "checks_total": 6,
-  "computedAt": "2026-10-12T18:49:52.093445+00:00",
+  "computedAt": "2026-10-13T15:44:46.716328+00:00",
   "constants": {
     "A": "3.603377725719857264313303015738948753938",
     "B": "5.189369144059340161116934009478310752498",
@@ -52,6 +52,7 @@
   "n_scan": 40,
   "n_shape": 40,
   "probe": "rev_bounded_excess_lower_bound_probe",
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0_anchor": "physical_proton",
   "statements": {
