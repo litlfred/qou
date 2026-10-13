@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T11:29:10.103862+00:00",
-  "commitSha": "aaf43db63f9ea342abfff798831ba4c9e93a5551",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T14:31:05.731837+00:00",
+  "commitSha": "d6019fd4c044f86ed6c0ef36b5a6ea3244375302",
   "assertions": [
     {
       "name": "no_chi_structural_zeros",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 18,
   "computation": "chi_structural_zero_q_sweep_probe",
   "scriptFile": "chi_structural_zero_q_sweep_probe.py",
   "scriptHash": "6ec986a8360f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,12 +24,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -135,5 +137,7 @@
   "caveats": [
     "A negative result over four nuclei (n ≤ 12), not a theorem. It does not rule out a character selection rule at larger n or for a different word; re-run this probe rather than assuming it extends.",
     "The sweep points are irrational deliberately. A simple value like q = 1.3 is exactly recoverable from its own float64 — `pyhecke.atom.reject_float64_q` refuses it — and a 17-digit q would cap χ near 1e-17, making the 1e-30 tolerance vacuous."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

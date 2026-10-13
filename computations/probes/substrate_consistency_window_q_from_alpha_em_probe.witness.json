@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T13:10:35.847207+00:00",
-  "commitSha": "f9b4565ad070b40b0559484cd9437ffab960d613",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-13T14:33:25.315437+00:00",
+  "commitSha": "d6019fd4c044f86ed6c0ef36b5a6ea3244375302",
   "assertions": [
     {
       "name": "both published figures are the correct roundings of the bare-form inversion at their CODATA vintage — the numbers were right, only unwitnessed",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "substrate_consistency_window_q_from_alpha_em_probe",
   "scriptFile": "substrate_consistency_window_q_from_alpha_em_probe.py",
-  "scriptHash": "0d8417958845",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9455f98a1296",
+  "scriptCommitSha": "02cc36cd7b121a22e9878f7695e56e9d66e025a2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,11 +36,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -60,5 +63,7 @@
   "caveats": [
     "Says nothing about whether the bare form is the right model of alpha_EM; that is rem:em-coupling-chern-simons and rem:alpha-em-derivation-open-problems, explicitly open.",
     "These q values are NOT the substrate anchor q0 and are not meant to equal it. The block does not claim they do."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
