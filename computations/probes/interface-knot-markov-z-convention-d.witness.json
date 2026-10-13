@@ -1,6 +1,6 @@
 {
-  "commitSha": "3a71395875bbbccd1cd0db64e69660851b99ec0c",
-  "computedAt": "2026-10-10T13:42:41.345612+00:00",
+  "commitSha": "dc0990ef2f2f82fb6b87d54e35bcc69082ac2664",
+  "computedAt": "2026-10-13T11:43:15.978772+00:00",
   "constit_multiplicativity_rel_err": {
     "3He": "1.24e-50",
     "4He": "1.49e-50",
@@ -11,6 +11,7 @@
   "description": "qou-7xpx: interface-knot full/constit Markov trace re-measured at convention D, proton pin, MPFR route.",
   "dps": 70,
   "durationMs": 0,
+  "elapsed_seconds": 372.2,
   "engine": "python",
   "h": "0.2090602987956393154308462131296749438598",
   "per_Z_steps": {
@@ -217,13 +218,12 @@
     "tr(s1^-1)": "0.0",
     "tr(s1^2)": "0.0"
   },
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4dea60d6e56793f81a8bbf9f68f2199ad16130ca",
   "scriptFile": "interface_knot_markov_z_convention_d_probe.py",
-  "scriptHash": "a7efdb36cdfe",
+  "scriptHash": "27468ecae39b",
   "tr_neutron": "0.4751335171556822125060902326750057995584",
   "tr_proton": "0.6293284022029219181653457467784859276002",
   "two_q_minus_1": "1.219957165502761615183338191221537759749",
-  "wall_seconds": 1659.3,
   "zD_two_q_minus_1": "0.7474531611346524652671263045889829861069",
   "z_D": "0.6126880371464652515958298639458992480263"
 }
