@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:09Z
-updated_at: 2026-10-12T20:41:54Z
+updated_at: 2026-10-13T11:39:48Z
 parent: qou-xhci
 ---
 
@@ -118,3 +118,10 @@ Do not close.
 - Matrix hexagons hexagon_fwd_mat / hexagon_rev_mat (reverse = forward block identity with blocks reversed); instance in Drinfeld/Braided.lean.
 - #print axioms instBraidedCategoryDH = [propext, Classical.choice, Quot.sound]. Commits 0fa2667266, 3f4d77881f (PR #7743).
 - OPEN: S4 rigidity for all objects (ν ≠ 0 currently only for ‖ℏ‖ ≤ 1/12, ZigZag.lean; transcendental ∧ small needed jointly); S5 twist/ribbon; S6.
+
+
+### 2026-10-13 — S5 + S6 DONE (sorry-free), RibbonDH.lean
+- S5: `Linear.lean` (Preadditive/Linear ℂ/MonoidalPreadditive/MonoidalLinear ℂ on DH c); `Twist.lean` (θ_X = exp(iπℏΩ_X), Ω = sl₂ Casimir; natural; θ_{X⊗Y} = (θ_X⊗θ_Y)β_{Y,X}β_{X,Y}); `RibbonDH.lean`: `balanced` (BalancedCategory, ℏ transcendental), `ribbon` (RibbonCategory, + ‖ℏ‖ ≤ 1/12). Ribbon axiom via: invariant pairing ε gives ε(Ω⊗1)=ε(1⊗Ω) ⇒ ε(θ⊗1)=ε(1⊗θ) (`eps_twist`) + mates detected by evaluation (`eq_of_whiskerRight_comp_evaluation`).
+- Hecke: `hecke_DH`: s·β_{V,V} − s⁻¹·β⁻¹ = (q−q⁻¹)·𝟙, s=e^{iπℏ/2}, q=e^{iπℏ}. The UNSCALED relation β−β⁻¹ ∈ ℂ·𝟙 is FALSE for every transcendental ℏ (`not_hecke_unscaled`, proved): sl₂ braiding has eigenvalues s on Sym², −s⁻³ on Λ². So ribbon_hecke_qDim_eq_qint_two does not apply verbatim; used `ribbon_hecke_dimension_scaled` (same proof, generic ribbon category).
+- S6: `qDim_V_eq_qint_two`: qDimTwistedWith V Vᘁ = (q + q⁻¹)•𝟙_𝟙 in DH c, q = e^{iπℏ}, θ_V = e^{3iπℏ/2} = q^{3/2}; hypotheses Fact(Transcendental ℚ ℏ), Fact(‖ℏ‖ ≤ 1/12) (jointly satisfiable: exists_admissible). #print axioms: propext, Classical.choice, Quot.sound only.
+- Still open (stream goal): identification of the KZ braid rep with Jimbo's (β on V^{⊗n} vs Jimbo R-matrix) — this bean's dimension result is one input.

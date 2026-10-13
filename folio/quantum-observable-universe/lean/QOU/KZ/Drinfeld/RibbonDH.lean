@@ -4,6 +4,29 @@ import QOU.KZ.Drinfeld.Duals
 import QOU.MathlibExt.RibbonHeckeDimension
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 
+/-!
+# `D_ℏ` is a ribbon category, and `dim_q V = [2]_q`
+
+Stages S5–S6 of bean `qou-zoyv`. Sorry-free.
+
+* `balanced` — `D_ℏ` (`ℏ` transcendental) is balanced with twist `θ_X = exp(iπℏ Ω_X)`, `Ω_X` the
+  `sl₂` Casimir of `V^{⊗X}` (`Twist`).
+* `ribbon` — with `‖ℏ‖ ≤ 1/12` (so that `D_ℏ` is right rigid, `Duals`), the ribbon axiom
+  `θ_{Xᘁ} = (θ_X)ᘁ` holds. Proof: an invariant pairing `ε : Xᘁ ⊗ X → 𝟙` satisfies
+  `ε(ρ(a) ⊗ 1) = −ε(1 ⊗ ρ(a))`, hence `ε(Ω ⊗ 1) = ε(1 ⊗ Ω)` and `ε(θ ⊗ 1) = ε(1 ⊗ θ)`
+  (`eps_twist`); mates are detected by the evaluation (`eq_of_whiskerRight_comp_evaluation`).
+* `hecke_DH` — with `s = e^{iπℏ/2}`, `q = e^{iπℏ}`:
+  `s·β_{V,V} − s⁻¹·β_{V,V}⁻¹ = (q − q⁻¹)·𝟙`. The braiding uses the `sl₂` Casimir `t = P − ½`, so
+  `β` has eigenvalues `s` on `Sym²V` and `−s⁻³` on `Λ²V`. The *unscaled* relation
+  `β − β⁻¹ ∈ ℂ·𝟙` is false for every transcendental `ℏ` (`not_hecke_unscaled`), so
+  `ribbon_hecke_qDim_eq_qint_two` does not apply verbatim; its scaled form
+  `ribbon_hecke_dimension_scaled` (same proof) is used.
+* `qDim_V_eq_qint_two` — `qDimTwistedWith V Vᘁ = (q + q⁻¹)·𝟙_𝟙`, `q = e^{iπℏ}`.
+  Convention: `θ_V = e^{3iπℏ/2} = q^{C_V}`, `C_V = 3/2`.
+
+-- Ref: [manuscript] beans/defs/qou-zoyv (stages S5, S6)
+-/
+
 noncomputable section
 
 namespace QOU.KZ.Drinfeld
@@ -331,5 +354,170 @@ theorem hecke_mat :
   match_scalars <;> field_simp <;> ring
 
 end Hecke
+
+/-! ### S6: `dim_q V = [2]_q` in `D_ℏ` -/
+
+section Dimension
+
+open QOU.MathlibExt BraidedCategory
+
+theorem casimir_V : tsl (univ : Finset (Leaves V)) univ = (3 / 2 : ℂ) • 1 := by
+  have hu : (univ : Finset (Leaves V)) = {()} := rfl
+  have hb : ∀ a, blk ({()} : Finset (Leaves V)) a = leafOp () a := fun a => by
+    simp [blk]
+  have hm : eS * fS + fS * eS + (1 / 2 : ℂ) • (hS * hS) = (3 / 2 : ℂ) • 1 := by
+    ext i j; fin_cases i <;> fin_cases j <;> simp [eS, fS, hS] <;> norm_num
+  rw [hu, tsl, hb, hb, hb, leafOp_mul_same, leafOp_mul_same, leafOp_mul_same, ← leafOp_smul,
+    ← leafOp_add, ← leafOp_add, hm, leafOp_smul, leafOp_one]
+
+variable (c : ℂ)
+
+/-- `e^{3iπℏ/2}`, the twist of `V` (`θ_V = q^{C_V}` with `C_V = 3/2`). -/
+def aV : ℂ := Complex.exp (Real.pi * Complex.I * (c * (3 / 2)))
+
+theorem θmat_V : θmat c V = aV c • 1 := by
+  rw [θmat, casimir_V, smul_smul, expi_smul_one]; rfl
+
+theorem aV_eq : aV c = sV c ^ 3 := by
+  unfold aV sV; rw [← Complex.exp_nat_mul]; ring_nf
+
+theorem qV_sub_inv_ne_zero (hc : Transcendental ℚ c) : qV c - (qV c)⁻¹ ≠ 0 := by
+  intro h
+  have hq0 : qV c ≠ 0 := Complex.exp_ne_zero _
+  have h2 : qV c * qV c = 1 := by
+    have := congrArg (qV c * ·) h
+    simp only [mul_sub, mul_inv_cancel₀ hq0, mul_zero] at this
+    exact sub_eq_zero.1 this
+  have he : Complex.exp (c * (2 * Real.pi * Complex.I)) = 1 := by
+    rw [← h2]; unfold qV; rw [← Complex.exp_add]; ring_nf
+  obtain ⟨n, hn⟩ := Complex.exp_eq_one_iff.1 he
+  have h2pi : (2 * Real.pi * Complex.I : ℂ) ≠ 0 := by
+    simp [Real.pi_ne_zero, Complex.I_ne_zero]
+  have hcn : c = n := mul_right_cancel₀ h2pi hn
+  exact hc (hcn ▸ isAlgebraic_int (R := ℚ) (A := ℂ) n)
+
+/-- `V` as an object of `D_ℏ`. -/
+def Vd (c : ℂ) : DH c := Obj.V
+
+variable [hc : Fact (Transcendental ℚ c)]
+
+/-- **The Hecke skein relation in `D_ℏ`**: `s·β_{V,V} − s⁻¹·β_{V,V}⁻¹ = (q − q⁻¹)·𝟙`,
+`s = e^{iπℏ/2}`, `q = e^{iπℏ}`. -/
+theorem hecke_DH :
+    sV c • (β_ (Vd c) (Vd c)).hom - (sV c)⁻¹ • (β_ (Vd c) (Vd c)).inv
+      = (qV c - (qV c)⁻¹) • 𝟙 (Vd c ⊗ Vd c) :=
+  hom_ext (hecke_mat c)
+
+/-- **The twist of `V`** is the scalar `e^{3iπℏ/2}`. -/
+theorem twist_V : BalancedCategory.twist (Vd c) = aV c • 𝟙 (Vd c) :=
+  hom_ext (θmat_V c)
+
+/-- `End(𝟙) = ℂ`. -/
+theorem end_unit_eq (f : (𝟙_ (DH c)) ⟶ 𝟙_ (DH c)) :
+    f = (f.1 default default) • 𝟙 (𝟙_ (DH c)) := by
+  apply hom_ext
+  ext y x
+  have hy : y = default := Subsingleton.elim _ _
+  have hx : x = default := Subsingleton.elim _ _
+  subst hy hx
+  erw [smul_val, id_val]
+  simp
+
+omit hc in
+theorem id_V_ne_zero : 𝟙 (Vd c) ≠ 0 := by
+  intro h
+  have := congrArg Subtype.val h
+  rw [id_val, zero_val] at this
+  exact one_ne_zero this
+
+variable [hsm : Fact (‖c‖ ≤ 1 / 12)]
+
+/-- **S6: `dim_q V = [2]_q` in `D_ℏ`.** For `ℏ` transcendental with `‖ℏ‖ ≤ 1/12`, the ribbon
+quantum dimension of `V = ℂ²` in the Drinfeld category is `q + q⁻¹` with `q = e^{iπℏ}`. -/
+theorem qDim_V_eq_qint_two :
+    qDimTwistedWith (Vd c) (Vd c)ᘁ = (qV c + (qV c)⁻¹) • 𝟙 (𝟙_ (DH c)) := by
+  have hd := end_unit_eq c (qDimTwistedWith (Vd c) (Vd c)ᘁ)
+  set d := (qDimTwistedWith (Vd c) (Vd c)ᘁ).1 default default
+  have hs := sV_ne_zero c
+  have ha : aV c ≠ 0 := Complex.exp_ne_zero _
+  have h := ribbon_hecke_dimension_scaled (Vd c) (sV c) (qV c) (aV c) d ha (hecke_DH c)
+    (twist_V c) hd
+  have h0 : (qV c - (qV c)⁻¹) * d - (sV c * aV c - (sV c)⁻¹ * (aV c)⁻¹) = 0 := by
+    have h' := sub_eq_zero.mpr h
+    rw [← sub_smul] at h'
+    exact (smul_eq_zero.mp h').resolve_right (id_V_ne_zero c)
+  have hq := qV_sub_inv_ne_zero c hc.out
+  have hdq : d = qV c + (qV c)⁻¹ := by
+    apply mul_left_cancel₀ hq
+    rw [aV_eq] at h0
+    rw [qV_eq] at h0 ⊢
+    field_simp at h0 ⊢
+    linear_combination h0
+  rw [hd, hdq]
+
+end Dimension
+
+/-! ### The unscaled Hecke relation fails in the `sl₂` normalisation
+
+`ribbon_hecke_qDim_eq_qint_two` assumes `β − β⁻¹ = (q − q⁻¹)·𝟙`. In `D_ℏ` the braiding is built
+from the `sl₂` Casimir `t = P − ½` (forced by naturality, see `Braiding`), so its eigenvalues are
+`s = e^{iπℏ/2}` on `Sym²V` and `−s⁻³` on `Λ²V`; `β − β⁻¹` is then **not** a scalar for any
+transcendental `ℏ`. Only the rescaled braiding `s·β` satisfies the Hecke relation (`hecke_DH`),
+which is why `ribbon_hecke_dimension_scaled` is used. -/
+
+section Unscaled
+
+theorem Pp_ne_zero : Pp ≠ 0 := by
+  intro h
+  have := congrFun (congrFun h (fun _ => 0)) (fun _ => 0)
+  have hc : (fun _ : Leaves (tensor V V) => (0 : Fin 2)) ∘ ⇑(Equiv.swap (Sum.inl ()) (Sum.inr ()))
+      = fun _ => 0 := rfl
+  simp [Pp, PV, permL, permMat] at this
+  rw [if_pos hc] at this
+  norm_num at this
+
+theorem Pm_ne_zero : Pm ≠ 0 := by
+  intro h
+  set y : Idx (tensor V V) := Sum.elim (fun _ => 0) (fun _ => 1)
+  have hy : ¬ (y ∘ Equiv.swap (Sum.inl ()) (Sum.inr ()) = y) := by
+    intro e
+    have := congrFun e (Sum.inl ())
+    simp [y] at this
+  have := congrFun (congrFun h y) y
+  simp [Pm, PV, permL, permMat, hy] at this
+
+theorem not_hecke_unscaled (c : ℂ) (hc : Transcendental ℚ c) :
+    ¬ ∃ r : ℂ, βmat c V V - βinv c V V = r • 1 := by
+  rintro ⟨r, hr⟩
+  have hs := sV_ne_zero c
+  rw [βmat_VV, βinv_VV, ← Pp_add_Pm] at hr
+  have hp := congrArg (Pp * ·) hr
+  have hm := congrArg (Pm * ·) hr
+  simp only [Matrix.mul_sub, Matrix.mul_add, Matrix.mul_smul] at hp hm
+  rw [Pp_mul_Pp, Pp_mul_Pm] at hp
+  rw [Pm_mul_Pp, Pm_mul_Pm] at hm
+  have e1 : (sV c - (sV c)⁻¹) • Pp = r • Pp := by
+    rw [show r • Pp = r • (Pp + 0) by rw [add_zero], ← hp]; module
+  have e2 : ((tV c)⁻¹ - tV c) • Pm = r • Pm := by
+    rw [show r • Pm = r • (0 + Pm) by rw [zero_add], ← hm]; module
+  have f1 := smul_left_injective ℂ Pp_ne_zero e1
+  have f2 := smul_left_injective ℂ Pm_ne_zero e2
+  have e : sV c - (sV c)⁻¹ = (tV c)⁻¹ - tV c := f1.trans f2.symm
+  rw [tV_eq, inv_inv] at e
+  have h8 : sV c ^ 8 = 1 := by
+    field_simp at e
+    linear_combination (exp := 1) (-(sV c ^ 2 + 1)) * e
+  have he : Complex.exp ((2 * c) * (2 * Real.pi * Complex.I)) = 1 := by
+    rw [← h8]; unfold sV; rw [← Complex.exp_nat_mul]; ring_nf
+  obtain ⟨n, hn⟩ := Complex.exp_eq_one_iff.1 he
+  have h2pi : (2 * Real.pi * Complex.I : ℂ) ≠ 0 := by
+    simp [Real.pi_ne_zero, Complex.I_ne_zero]
+  have hcn : c = ((n / 2 : ℚ) : ℂ) := by
+    have := mul_right_cancel₀ h2pi hn
+    push_cast
+    linear_combination this / 2
+  exact hc (hcn ▸ isAlgebraic_algebraMap (R := ℚ) (A := ℂ) ((n : ℚ) / 2))
+
+end Unscaled
 
 end QOU.KZ.Drinfeld
