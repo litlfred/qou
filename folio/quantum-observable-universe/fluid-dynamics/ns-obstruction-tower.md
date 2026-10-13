@@ -88,25 +88,13 @@ $$
 
 This constructs a rigid 4-dimensional space. It remains **nonzero** if and only if both individual filaments successfully provide nontrivial local sections at $p$ — that is, when the discrete vortex cores have not dissolved into a continuous sheet.
 
-**(d) Connection to core aspect ratio.**
+**(d) Connection to core aspect ratio (withdrawn).**
 
-Relying on [core-Levi equivalence](#prop:core-levi-form), the local cohomology holds a nonzero value if and only if the Levi form maintains strict non-degeneracy at $p$. Algebraically:
-
-$$
-  H^1_{\mathfrak{m}_p}(A) \neq 0
-  \quad\Longleftrightarrow\quad
-  \lambda_\parallel(p) > 0
-   \text{ and }
-  \lambda_\perp(p) > 0
-  \quad\Longleftrightarrow\quad
-  \kappa(p) = a_\perp/a_\parallel \in (0, \infty).
-$$
-
-If the core flattens completely ($\kappa \to 0$ or $\kappa \to \infty$), one Levi eigenvalue collapses. The local cohomology subsequently degenerates from $V_{1/2}^{\oplus 2}$ down to a quotient, forcing the obstruction class $\kappa_n|_\Sigma$ to deform safely toward zero.
+This step formerly asserted that $H^1_{\mathfrak{m}_p}(A) \neq 0$ holds if and only if both Levi eigenvalues $\lambda_\parallel(p), \lambda_\perp(p)$ are positive, if and only if the core aspect ratio $\kappa(p)$ lies in $(0, \infty)$. It is withdrawn (2026-10-13). By the [core Levi form](#prop:core-levi-form), the Levi datum of the vorticity plane field on the three-dimensional flow domain is the single scalar $\xi\cdot\mathrm{curl}\,\xi$. There is no pair of Levi eigenvalues, and the core aspect ratio is not a Levi quantity. No replacement link between $H^1_{\mathfrak{m}_p}(A)$ and the Levi scalar is established. Step (e) below no longer draws on (d).
 
 **(e) The NS obstruction as an Euler-class residue.**
 
-Synthesising (a)--(d), the exact NS obstruction at level $n$, forcibly restricted to the collision locus, yields
+Synthesising (a)--(c), the exact NS obstruction at level $n$, forcibly restricted to the collision locus, yields
 
 $$
   \kappa_n\big|_\Sigma
