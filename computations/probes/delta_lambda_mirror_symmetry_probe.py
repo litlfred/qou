@@ -226,10 +226,15 @@ def main() -> int:
 
     checks["rho_invariance_Phi"] = bool(all(abs(ph[("T", p, "rev(W.s)")] - ph[("T", p, "W.s")]) < tol
                                             for p in ("pn", "np")))
+    # The predecessor's values are READ from its witness, not typed, so this check
+    # tracks the predecessor if it is ever re-run (witness-value copy ratchet).
+    _pred = json.loads((Path(__file__).resolve().parent
+                        / "delta-lambda-binding-reading-probe.witness.json").read_text(encoding="utf-8"))
+    _pred_phi = _pred["data"]["results"]["Phi"]
     checks["T_reproduces_predecessor_pn"] = bool(abs(ph[("T", "pn", "W.s")] - mp.mpf(
-        "0.543179931756614185781525015683270206654912924163928241733778")) < tol)
+        _pred_phi["pn"]["W.s"])) < tol)
     checks["T_reproduces_predecessor_np"] = bool(abs(ph[("T", "np", "W.s")] - mp.mpf(
-        "0.249376701399049628089830425140863226420484288215898276309274")) < tol)
+        _pred_phi["np"]["W.s"])) < tol)
     checks["T_bond_pn_ne_np"] = bool(abs(ph[("T", "pn", "W.s")] - ph[("T", "np", "W.s")]) > mp.mpf(10) ** -20)
     for pl in ("R", "L"):
         checks[f"{pl}_bond_pn_eq_np_by_F"] = bool(abs(ph[(pl, "pn", "W.s")] - ph[(pl, "np", "W.s")]) < tol)

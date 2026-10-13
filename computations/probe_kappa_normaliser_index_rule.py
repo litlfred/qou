@@ -70,7 +70,9 @@ from codata_constants import M_E_MEV
 Q0 = mp.mpf("1.1099785827513808")
 Q0_PIN = "proton (experimental layer), m_p/m_e"
 M_E_MEV = M_E_MEV
-KAPPA_EMPIRICAL = -mp.mpf("1.0707907503265857")
+# Read from kappa-provenance.witness.json (parameters.published_kappa_MeV)
+# rather than typed, so the copy cannot go stale (witness-value copy ratchet).
+KAPPA_EMPIRICAL = mp.mpf(json.loads((Path(__file__).resolve().parent / "kappa-provenance.witness.json").read_text(encoding="utf-8"))["parameters"]["published_kappa_MeV"])
 
 
 def bracket(q: float, n: int) -> float:
