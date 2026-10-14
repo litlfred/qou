@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "bilson-thompson2005",
+  "library": {
+    "docId": "arxiv-hep-ph-0503213v2",
+    "dir": "library/arxiv-hep-ph-0503213v2",
+    "pdf": "library/arxiv-hep-ph-0503213v2/0503213v2.pdf",
+    "stage": "candidates",
+    "pages": 6,
+    "sections": 14,
+    "arxiv": "hep-ph/0503213v2"
+  },
+  "type": "article",
+  "title": "A topological model of composite preons",
+  "author": [
+    {
+      "family": "Bilson-Thompson",
+      "given": "Sundance O."
+    }
+  ],
+  "container-title": "arXiv preprint",
+  "issued": {
+    "date-parts": [
+      [
+        2005
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/hep-ph/0503213",
+  "note": "arXiv:hep-ph/0503213. The helon model: first-generation SM fermions and EW bosons as framed 3-braids; electric charge read off ribbon TWIST (±2π ↔ ±e/3), colour off the strand permutation (odd-man-out), generations off braiding pattern, bosons = identity-permutation triplets. Uploaded library/arxiv-hep-ph-0503213v2/0503213v2.pdf; analysed in docs/audits/2026-07-31-sm-lit-analysis-bean-workplan.md (twist-vs-writhe as candidate second crossing invariant for the hypercharge gap, bean qou-q377)."
+}

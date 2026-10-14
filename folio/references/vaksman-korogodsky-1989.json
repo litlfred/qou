@@ -1,0 +1,28 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "vaksman-korogodsky-1989",
+  "type": "article-journal",
+  "title": "An algebra of bounded functions on the quantum group of the motions of the plane, and q-analogues of Bessel functions",
+  "author": [
+    {
+      "family": "Vaksman",
+      "given": "L. L."
+    },
+    {
+      "family": "Korogodsky",
+      "given": "L. I."
+    }
+  ],
+  "container-title": "Soviet Mathematics - Doklady",
+  "issued": {
+    "date-parts": [
+      [
+        1989
+      ]
+    ]
+  },
+  "volume": "39",
+  "issue": "1",
+  "page": "173-177",
+  "note": "Origin of the q-Bessel = quantum-group-matrix-coefficient identification: the Hahn–Exton q-Bessel functions arise as matrix coefficients of the irreducible unitary representations of E_q(2), the quantum group of plane motions — the q-analogue of Vilenkin's classical J_ν = matrix-coefficient-of-E(2). Underpins the QOU claim that the Reeb-phase brane-tower object is the SU_q(2)→E_q(2) contraction limit. See docs/audits/2026-06-13-reeb-phase-qbessel-identification.md."
+}

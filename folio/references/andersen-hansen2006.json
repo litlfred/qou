@@ -1,0 +1,38 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "andersen-hansen2006",
+  "library": {
+    "docId": "arxiv-math-0506456v1",
+    "dir": "library/arxiv-math-0506456v1",
+    "pdf": "library/arxiv-math-0506456v1/0506456v1.pdf",
+    "stage": "candidates",
+    "pages": 70,
+    "sections": 72,
+    "arxiv": "math/0506456v1"
+  },
+  "type": "article",
+  "title": "Asymptotics of the quantum invariants for surgeries on the figure 8 knot",
+  "author": [
+    {
+      "family": "Andersen",
+      "given": "Jørgen Ellegaard"
+    },
+    {
+      "family": "Hansen",
+      "given": "Søren Kold"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2006
+      ]
+    ]
+  },
+  "container-title": "Journal of Knot Theory and Its Ramifications",
+  "volume": "15",
+  "issue": "4",
+  "page": "479-548",
+  "DOI": "10.1142/S0218216506004555",
+  "note": "Rigorous asymptotic analysis of quantum invariants associated with the figure-eight knot; together with Ohtsuki's saddle-point/Borel-resummation analysis it supplies the literature backing for the figure-eight case of the Kashaev volume conjecture carried by the class \\texttt{VolumeConjecture41} (whose instance is, since 2026-07-26, machine-proved sorry-free in-repo by an elementary Riemann-sum squeeze).PDF library/arxiv-math-0506456v1/ — joined 2026-08-16. The library copy was unlinked because its extracted title was the World Scientific masthead; OCR recovered the real title, which matched this entry. A batch-7 entry drafted from that OCR (id andersen2005, first author only — the byline runs into the affiliations in the transcription) was dropped in favour of this one. "
+}

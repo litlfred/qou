@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "meilhan-yasuhara2012",
+  "type": "article-journal",
+  "title": "Milnor invariants and the HOMFLYPT polynomial",
+  "author": [
+    {
+      "family": "Meilhan",
+      "given": "Jean-Baptiste"
+    },
+    {
+      "family": "Yasuhara",
+      "given": "Akira"
+    }
+  ],
+  "container-title": "Geometry & Topology",
+  "issued": {
+    "date-parts": [
+      [
+        2012
+      ]
+    ]
+  },
+  "volume": "16",
+  "issue": "2",
+  "page": "889-917",
+  "DOI": "10.2140/gt.2012.16.889",
+  "URL": "https://doi.org/10.2140/gt.2012.16.889",
+  "note": "Extracts the lowest-degree Milnor μ̄-invariants (including the length-A Brunnian μ̄(12…A)) from the finite-type / HOMFLYPT expansion, confirming the exact leading Vassiliev degree 2(A−1). Corroborating literature input for the BrunnianVassilievBridge conjecture class (MilnorVassilievBridge.lean). Added 2026-08-01."
+}

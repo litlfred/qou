@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "portoles-2007-largeNC",
+  "library": {
+    "docId": "arxiv-hep-ph-0702179v1",
+    "dir": "library/arxiv-hep-ph-0702179v1",
+    "pdf": "library/arxiv-hep-ph-0702179v1/0702179v1.pdf",
+    "stage": "candidates",
+    "pages": 8,
+    "sections": 4,
+    "arxiv": "hep-ph/0702179v1"
+  },
+  "type": "paper-conference",
+  "title": "Large-N_C estimate of the chiral low-energy constants",
+  "author": [
+    {
+      "family": "Portoles",
+      "given": "J."
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2007
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/hep-ph/0702179",
+  "note": "PDF library/arxiv-hep-ph-0702179v1/ — arXiv:hep-ph/0702179v1, stamped 18 Feb 2007. Page 1: 'IFIC/07-10 report. Talk given at the Final Euridice Meeting, 24th-27th August 2006, Kazimierz (Poland).' Distinct from [portoles-2007-status] despite a reused introduction — library-find-duplicates scores the pair at 0.361 and it is a false positive. Registered from library intake."
+}

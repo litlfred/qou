@@ -1,0 +1,36 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "loeffler-williams2020",
+  "library": {
+    "docId": "ant-v14-n7-s-p01",
+    "dir": "library/ant-v14-n7-s-p01",
+    "pdf": "library/ant-v14-n7-s-p01/ant-v14-n7-s-p01.pdf",
+    "stage": "candidates",
+    "pages": 42,
+    "sections": 13
+  },
+  "type": "article-journal",
+  "title": "p-adic Asai L-functions of Bianchi modular forms",
+  "author": [
+    {
+      "family": "Loeffler",
+      "given": "David"
+    },
+    {
+      "family": "Williams",
+      "given": "Chris"
+    }
+  ],
+  "container-title": "Algebra & Number Theory",
+  "volume": "14",
+  "issue": "7",
+  "issued": {
+    "date-parts": [
+      [
+        2020
+      ]
+    ]
+  },
+  "DOI": "10.2140/ant.2020.14.1669",
+  "note": "PDF library/ant-v14-n7-s-p01/ — paper 1 of the bound issue ant-v14-n7-s, split out by scripts/split-bound-volume.py. DOI read from its title page."
+}

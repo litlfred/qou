@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "habiro2004cyclotomic",
+  "library": {
+    "docId": "arxiv-math-0209324v1",
+    "dir": "library/arxiv-math-0209324v1",
+    "pdf": "library/arxiv-math-0209324v1/0209324v1.pdf",
+    "stage": "candidates",
+    "pages": 18,
+    "sections": 24,
+    "arxiv": "math/0209324v1"
+  },
+  "type": "article-journal",
+  "title": "Cyclotomic completions of polynomial rings",
+  "author": [
+    {
+      "family": "Habiro",
+      "given": "Kazuo"
+    }
+  ],
+  "container-title": "Publications of the Research Institute for Mathematical Sciences",
+  "issued": {
+    "date-parts": [
+      [
+        2004
+      ]
+    ]
+  },
+  "volume": "40",
+  "issue": "4",
+  "page": "1127-1146",
+  "DOI": "10.2977/prims/1145475444",
+  "URL": "https://arxiv.org/abs/math/0209324",
+  "note": "Publ. RIMS Kyoto Univ. 40 (2004), no. 4, 1127-1146; arXiv:math/0209324. The canonical definition of the Habiro ring Ẑ[q] = cyclotomic completion of ℤ[q] (the q-Pochhammer / cyclotomic-completion object QOU's mass-side Habiro-ring constructions use). Added 2026-06-07 to untangle the overloaded [habiro2002] key: most QOU citers intended this ring-definition paper, not 'Bottom tangles' (habiro2002) or 'colored Jones of simple links' (habiro2000). Verified via EMS Press / arXiv."
+}

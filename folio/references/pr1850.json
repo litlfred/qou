@@ -1,0 +1,20 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "pr1850",
+  "type": "webpage",
+  "title": "Q_β direction-sanity gate: §4(d) order-of-magnitude invariant (refuted the trace-level Markov-stabilization attack)",
+  "author": [
+    {
+      "literal": "QOU project (litlfred/qou)"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026
+      ]
+    ]
+  },
+  "URL": "https://github.com/litlfred/qou/pull/1850",
+  "note": "Internal QOU pull request #1850. Any candidate Habiro element must have |F(q_0)| within an order of magnitude of the target ratio; the trace-level Markov-stabilization attack (refuted-class row C12) was killed because z(q_0) ≈ 0.4993 < 1 cannot reach linking_weight ≈ 2.53. Cited by q-beta-direction-sanity-gate.lean, q-beta-bar-even-kernel-typeclass.lean."
+}

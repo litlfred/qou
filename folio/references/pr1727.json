@@ -1,0 +1,20 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "pr1727",
+  "type": "webpage",
+  "title": "Q_β radius-of-convergence gate: §4(a) simple-pole-at-u_substrate test for candidate Habiro elements",
+  "author": [
+    {
+      "literal": "QOU project (litlfred/qou)"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026
+      ]
+    ]
+  },
+  "URL": "https://github.com/litlfred/qou/pull/1727",
+  "note": "Internal QOU pull request #1727. Asymptotic-pole test (qbeta_singularity_type_probe.py) establishing a simple pole at u_substrate for the canonical SDP-pinned c_k (branch-fit β ≈ 1). Cited by q-beta-radius-of-convergence-gate.lean, q-beta-bar-even-kernel-typeclass.lean."
+}

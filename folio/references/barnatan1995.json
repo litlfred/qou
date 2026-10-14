@@ -1,0 +1,26 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "barnatan1995",
+  "type": "article-journal",
+  "title": "On the Vassiliev knot invariants",
+  "author": [
+    {
+      "family": "Bar-Natan",
+      "given": "Dror"
+    }
+  ],
+  "container-title": "Topology",
+  "issued": {
+    "date-parts": [
+      [
+        1995
+      ]
+    ]
+  },
+  "volume": "34",
+  "issue": "2",
+  "page": "423-472",
+  "DOI": "10.1016/0040-9383(95)93237-2",
+  "URL": "https://doi.org/10.1016/0040-9383(95)93237-2",
+  "note": "Foundational finite-type (Vassiliev) invariant paper: chord diagrams, the one-term (framing) and four-term (4T) relations, the algebra of weight systems, and Kontsevich's universality (the symbol of a finite-type invariant is a weight system, and every weight system is realized). Literature input for the QOU/KnotTheory/Vassiliev finite-type scaffold (ChordDiagram/FourTermRelation/WeightSystem/FiniteTypeInvariant) and the SymbolIsWeightSystem conjecture class in MilnorVassilievBridge.lean. Added 2026-08-01 (Vassiliev-infra scaffold for the #4471 exact-order Milnor bridge)."
+}

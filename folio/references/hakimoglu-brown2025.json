@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "hakimoglu-brown2025",
+  "library": {
+    "docId": "arxiv-2506.10206v2",
+    "dir": "library/arxiv-2506.10206v2",
+    "pdf": "library/arxiv-2506.10206v2/2506.10206v2.pdf",
+    "stage": "candidates",
+    "pages": 40,
+    "sections": 64,
+    "arxiv": "2506.10206v2"
+  },
+  "type": "article",
+  "title": "Analytic dilogarithm identities",
+  "author": [
+    {
+      "family": "Hakimoglu-Brown",
+      "given": "Cetin"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2025
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/2506.10206",
+  "note": "arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Supplies the analytic backing for the golden-ratio (ℚ(√5)) value Li₂(φ⁻²) = π²/15 − ln²φ used to evaluate the 4₁ real-q Habiro-tail resurgent action A₀ = π²/5 (QOU/QBeta/HabiroTailAction.lean; probe qbeta\\_fourone\\_habiro\\_tail\\_action). PDF read in-sandbox 2026-07-18 (library/arxiv-2506.10206v2/2506.10206v2.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation."
+}

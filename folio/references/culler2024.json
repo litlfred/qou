@@ -1,0 +1,33 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "culler2024",
+  "type": "webpage",
+  "title": "SnapPy, a computer program for studying the geometry and topology of 3-manifolds",
+  "author": [
+    {
+      "family": "Culler",
+      "given": "Marc"
+    },
+    {
+      "family": "Dunfield",
+      "given": "Nathan M."
+    },
+    {
+      "family": "Goerner",
+      "given": "Matthias"
+    },
+    {
+      "family": "Weeks",
+      "given": "Jeffrey R."
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2024
+      ]
+    ]
+  },
+  "URL": "https://snappy.computop.org",
+  "note": "Includes the SnapPy census of hyperbolic 3-manifolds; the reference hyperbolic-volume database used throughout this paper."
+}

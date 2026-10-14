@@ -1,0 +1,22 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "frobenius1898",
+  "type": "article-journal",
+  "title": "Über Relationen zwischen den Charakteren einer Gruppe und denen ihrer Untergruppen",
+  "author": [
+    {
+      "family": "Frobenius",
+      "given": "Ferdinand Georg"
+    }
+  ],
+  "container-title": "Sitzungsberichte der Königlich Preußischen Akademie der Wissenschaften zu Berlin",
+  "page": "501-515",
+  "issued": {
+    "date-parts": [
+      [
+        1898
+      ]
+    ]
+  },
+  "note": "Verified 2026-06-23 (doth): Frobenius's original paper on the character relations now called Frobenius reciprocity; Sitzungsberichte Preuß. Akad. (Berlin) 1898, pp. 501–515. Pre-DOI archival source (1898 Sitzungsberichte has no DOI). Cited in DepthStratifiedFrobeniusReciprocity.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §F."
+}

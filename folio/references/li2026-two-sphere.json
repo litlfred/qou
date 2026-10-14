@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "li2026-two-sphere",
+  "library": {
+    "docId": "arxiv-2605.20846v1",
+    "dir": "library/arxiv-2605.20846v1",
+    "pdf": "library/arxiv-2605.20846v1/2605.20846v1.pdf",
+    "stage": "candidates",
+    "pages": 99,
+    "sections": 17,
+    "arxiv": "2605.20846v1"
+  },
+  "type": "article",
+  "title": "Topological Field Theories and the Algebraic Structures of the Two-Sphere",
+  "author": [
+    {
+      "family": "Li",
+      "given": "Chris"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/2605.20846",
+  "note": "arXiv:2605.20846 (math.AT, 20 May 2026; 99 pp, 17 sections; thesis-style). Two presentations of the S^2-sector Cob(3)_{S^2} of the oriented 3d bordism category: Thm 1.0.8 (= Thm 3.3.6) a canonical isomorphism Cob(2) ≅ Cob(3)_{S^2,CF} — the commutative-Frobenius part of the S^2 sector IS the 2d cobordism category; Thms 1.0.5/1.0.6 (= 4.4.13, 4.3.2) the full presentation adds one generator per closed oriented irreducible prime 3-manifold p (a unit 1_p : ∅ → S^2, equivalently an endomorphism p×× of S^2) subject to commutative-Frobenius + 'legs' relations; Def 5.1.7 / Lemma 5.1.2 package this as P-monoids ≅ L-monoids (commutative Frobenius monoids in a symmetric monoidal category with prime-labelled units). Cited as the theorem behind rem:tqft-context's sentence that the Frobenius–Hopf object A 'carries the 2d cobordism data' of the 3d TQFT: Z(S^2) is a commutative Frobenius monoid for every 3d TFT. Caveat for that use: Li's monoids are commutative and live in a SYMMETRIC monoidal target; QOU's A is a Hopf algebra in a BRAIDED category and is not assumed commutative, so the match is at the Frobenius level only. Preprint, no DOI. Ingested 2026-09-06 (e5afe5ea7b); triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md."
+}

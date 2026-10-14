@@ -1,0 +1,25 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "andrews1976",
+  "type": "book",
+  "title": "The Theory of Partitions",
+  "author": [
+    {
+      "family": "Andrews",
+      "given": "George E."
+    }
+  ],
+  "publisher": "Addison-Wesley",
+  "publisher-place": "Reading, MA",
+  "issued": {
+    "date-parts": [
+      [
+        1976
+      ]
+    ]
+  },
+  "collection-title": "Encyclopedia of Mathematics and its Applications",
+  "collection-number": "2",
+  "ISBN": "978-0-201-13501-3",
+  "note": "Andrews's canonical monograph on integer partitions — Chapter 1 covers the partition function $p(n)$ and Table 1 lists values for $n \\le 200$ as used in QOU \\texttt{a8-partition-function-identity.lean}."
+}

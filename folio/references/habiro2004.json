@@ -1,0 +1,34 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "habiro2004",
+  "library": {
+    "docId": "arxiv-math-0605314v1",
+    "dir": "library/arxiv-math-0605314v1",
+    "pdf": "library/arxiv-math-0605314v1/0605314v1.pdf",
+    "stage": "candidates",
+    "pages": 66,
+    "sections": 106,
+    "arxiv": "math/0605314v1"
+  },
+  "type": "article-journal",
+  "title": "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres",
+  "author": [
+    {
+      "family": "Habiro",
+      "given": "Kazuo"
+    }
+  ],
+  "container-title": "Inventiones Mathematicae",
+  "issued": {
+    "date-parts": [
+      [
+        2008
+      ]
+    ]
+  },
+  "volume": "171",
+  "page": "1-81",
+  "DOI": "10.1007/s00222-007-0071-0",
+  "note": "PDF library/arxiv-math-0605314v1/ — identified 2026-08-16 by title match; the entry previously claimed library/habiro2004.pdf, which was never committed. Preprint 2004; introduces the Habiro ring cyclotomic expansion.",
+  "URL": "https://arxiv.org/abs/math/0605314"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "jing-liu-2021",
+  "library": {
+    "docId": "arxiv-2104.06067v1",
+    "dir": "library/arxiv-2104.06067v1",
+    "pdf": "library/arxiv-2104.06067v1/2104.06067v1.pdf",
+    "stage": "candidates",
+    "pages": 21,
+    "sections": 5,
+    "arxiv": "2104.06067v1"
+  },
+  "type": "article",
+  "title": "On irreducible characters of the Iwahori-Hecke algebra in type A",
+  "author": [
+    {
+      "family": "Jing",
+      "given": "Naihuan"
+    },
+    {
+      "family": "Liu",
+      "given": "Ning"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2021
+      ]
+    ]
+  },
+  "container-title": "arXiv preprint",
+  "URL": "https://arxiv.org/abs/2104.06067",
+  "note": "arXiv:2104.06067. Added 2026-05-19 from library/ gap audit. DIRECT fit with QOU's chi-character Hecke type-A work (chi-v3-closed-form-proof.lean, chi-per-irrep-cyclotomic-closed-forms.lean, etc.). Potential citation target."
+}

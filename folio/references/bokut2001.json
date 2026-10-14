@@ -1,0 +1,27 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "bokut2001",
+  "type": "article-journal",
+  "title": "Gröbner-Shirshov bases for Coxeter groups",
+  "author": [
+    {
+      "family": "Bokut",
+      "given": "L. A."
+    },
+    {
+      "family": "Shiao",
+      "given": "L.-S."
+    }
+  ],
+  "container-title": "Communications in Algebra",
+  "volume": "29",
+  "page": "4305-4319",
+  "issued": {
+    "date-parts": [
+      [
+        2001
+      ]
+    ]
+  },
+  "note": "NOT READ — metadata only, reconciled from three agreeing bibliographies (see comment above). TWO SCOPE CAVEATS, both established from other documents rather than from this one. (1) COXETER GROUPS, NOT H_n(q): every document that cites it describes it as constructing GS bases for Coxeter groups W = sgp⟨Σ | (ss′)^m = 1⟩ at q = 1; none mentions the Iwahori–Hecke deformation. The q-deformed type-A statement appears to be Kang–Lee–Lee–Oh, J. Algebra 252 (2002) 258-292 §6 (not yet held; bean qou-qspu). (2) NOT GENERAL COXETER: [chenliu2009] Example 3.2 refutes the Bokut–Shiao conjecture that a GS basis of an arbitrary Coxeter group follows from S = {(1),(2),(3′)} with commuting relations; the positive results are for finite Coxeter groups, which does cover type A_{n-1}. It is cited in this folio for the COMPLETION family $\\sigma_i\\sigma_{i-1}\\cdots\\sigma_j\\sigma_i \\to \\sigma_{i-1}\\sigma_i\\sigma_{i-1}\\cdots\\sigma_j$ that HeckeGS.lean §4e names as missing from `heckeRewritingSystem`; the axiom `hecke_is_gs_basis` that formerly cited 'Bokut & Shiao 2001, Thm 3.5' was deleted as FALSE for the uncompleted system (NotAGSBasis.hecke_not_gs_basis_four)."
+}

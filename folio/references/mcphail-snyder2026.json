@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "mcphail-snyder2026",
+  "library": {
+    "docId": "arxiv-2601.05136v2",
+    "dir": "library/arxiv-2601.05136v2",
+    "pdf": "library/arxiv-2601.05136v2/2601.05136v2.pdf",
+    "stage": "candidates",
+    "pages": 19,
+    "sections": 15,
+    "arxiv": "2601.05136v2"
+  },
+  "type": "article",
+  "title": "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant",
+  "author": [
+    {
+      "family": "McPhail-Snyder",
+      "given": "Calvin"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026
+      ]
+    ]
+  },
+  "container-title": "arXiv preprint",
+  "URL": "https://arxiv.org/abs/2601.05136",
+  "note": "arXiv:2601.05136 (v2, May 2026). Expresses the McPhail-Snyder– Reshetikhin geometric-twist invariant Zψ_N(K,ρ,µ) (a quantization of the SL₂(ℂ) CS invariant / geometric twist of the Kashaev invariant) as a sum of state integrals built **directly from a knot diagram**: a discrete state-sum over crossings with a per- edge integer vector k ∈ Z^E, holonomy R-matrices, and a log-meridian µ / log-longitude λ. Worked for the 5₂ Kashaev invariant. This is the DIAGRAMMATIC (braid/crossing) route to the integer state-integral data — the complement to the Neumann–Zagier–datum route of fantini-wheeler2024, and the most direct literature realisation of the QOU 'braid word → integer cusp data' map (bean qou-qnnq): the k ∈ Z^E per-edge integers are attached to the diagram, and (µ,λ) are the cusp holonomy. Registered 2026-08-01 (c₃-via-Borel literature sweep)."
+}

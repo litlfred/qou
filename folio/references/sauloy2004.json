@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "sauloy2004",
+  "library": {
+    "docId": "arxiv-math-0409393v1",
+    "dir": "library/arxiv-math-0409393v1",
+    "pdf": "library/arxiv-math-0409393v1/0409393v1.pdf",
+    "stage": "sections",
+    "pages": 26,
+    "sections": 3,
+    "arxiv": "math/0409393v1"
+  },
+  "type": "article",
+  "title": "Algebraic construction of the Stokes sheaf for irregular linear q-difference equations",
+  "author": [
+    {
+      "family": "Sauloy",
+      "given": "Jacques"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2004
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/math/0409393",
+  "note": "arXiv:math/0409393. Registered 2026-09-07 from the title page, owner upload for the Stokes / q-difference arc. An algebraic route to the RSZ local analytic classification: Thm 2.5/2.6 (recalled from RSZ) F(M0) ≅ H^1(E_q, Λ_I(M0)); Thm 3.7 the canonical resummation F_D(U,V) of the formal isomorphism along a divisor 'direction' D on E_q, unique subject to a divisor bound on the over-diagonal blocks; Thm 3.18 the bijection F(M0) ≅ H^1(E_q, Λ_I(M0)) proved algebraically via the Čech cocycle (F_{D,D'}(U)); §4 the q-Gevrey filtration on the Stokes sheaf — Prop 4.1: λ_I(M0) is the sheaf of sections of the holomorphic vector bundle over E_q associated to End^{>0}(M0) = ⊕_{μ_i > μ_j} Hom(P_j, P_i), so a single-slope (pure isoclinic) M0 has End^{>0}(M0) = 0 and a trivial Stokes sheaf; Prop 4.2 the associated graded of the filtration. Cited by ramis-sauloy2006 as its reference [28]. The Astérisque placement (vol. 296, 2004) is recalled and NOT verified in-sandbox."
+}

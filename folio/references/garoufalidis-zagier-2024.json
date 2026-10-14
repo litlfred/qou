@@ -1,0 +1,38 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "garoufalidis-zagier-2024",
+  "library": {
+    "docId": "arxiv-2111.06645v3",
+    "dir": "library/arxiv-2111.06645v3",
+    "pdf": "library/arxiv-2111.06645v3/2111.06645v3.pdf",
+    "stage": "candidates",
+    "pages": 87,
+    "sections": 39,
+    "arxiv": "2111.06645v3"
+  },
+  "type": "article-journal",
+  "title": "Knots, Perturbative Series and Quantum Modularity",
+  "author": [
+    {
+      "family": "Garoufalidis",
+      "given": "Stavros"
+    },
+    {
+      "family": "Zagier",
+      "given": "Don"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2024
+      ]
+    ]
+  },
+  "container-title": "Symmetry, Integrability and Geometry: Methods and Applications (SIGMA)",
+  "volume": "20",
+  "page": "055",
+  "DOI": "10.3842/SIGMA.2024.055",
+  "URL": "https://arxiv.org/abs/2111.06645",
+  "note": "arXiv:2111.06645, SIGMA 20 (2024) 055. Added 2026-06-04 from library/arxiv-2111.06645v3/2111.06645v3.pdf. Rigorous all-orders refinement of the Kashaev volume conjecture: a matrix invariant whose ($\\sigma_0$, $\\sigma_1$) entry is the Kashaev invariant in the Habiro ring ($\\sigma_0$ = trivial rep / unknot column). DIRECT fit with QOU's Kashaev / Habiro-ring content (QOU.Kashaev.VolumeConjecture, $\\Phi_q$ / $\\mathrm{Li}_2^q$). Preferred citation for the Kashaev-on-trivial-knot sub-part over the bare 1995 conjecture."
+}

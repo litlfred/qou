@@ -1,0 +1,38 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "jansen2022cluster",
+  "library": {
+    "docId": "s10955-022-02992-6",
+    "dir": "library/s10955-022-02992-6",
+    "pdf": "library/s10955-022-02992-6/s10955-022-02992-6.pdf",
+    "stage": "candidates",
+    "pages": 47,
+    "sections": 15
+  },
+  "type": "article-journal",
+  "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
+  "author": [
+    {
+      "family": "Jansen",
+      "given": "Sabine"
+    },
+    {
+      "family": "Kolesnikov",
+      "given": "Leonid"
+    }
+  ],
+  "container-title": "Journal of Statistical Physics",
+  "issued": {
+    "date-parts": [
+      [
+        2022
+      ]
+    ]
+  },
+  "volume": "189",
+  "issue": "3",
+  "page": "33",
+  "DOI": "10.1007/s10955-022-02992-6",
+  "URL": "https://doi.org/10.1007/s10955-022-02992-6",
+  "note": "PDF library/s10955-022-02992-6/ — registered 2026-08-30 from the cluster-expansion upload drop. Cite for §3.1 'Forest Partition Schemes: Alternating Sign Property', which states the classical alternating-sign property of the Ursell functions, φᵀ_n = (−1)ⁿ|φᵀ_n|, for NON-NEGATIVE (purely repulsive) pair potentials — the paper attributes it to its ref [8, Eq. (2.8)] and gives two independent proofs of the multi-rooted generalisation (a forest-graph equality, and Lemma 3.4). At n = 3 that is φᵀ₃ ≤ 0, the same conclusion QOU.MassTheory.MayerThreeBodySign.lt_of_b3_pos reaches by a different route. The paper's own result is a new convergence condition valid for POSSIBLY NEGATIVE pair potentials, if-and-only-if in the non-negative case; that generalisation is the interesting direction for the corpus, since the sign obstruction is carried by the positivity hypothesis. Do NOT cite it as establishing that the corpus's b₃ IS an Ursell function in its sense — that identification is open, see the audit doc."
+}

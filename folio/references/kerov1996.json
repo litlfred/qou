@@ -1,0 +1,23 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "kerov1996",
+  "type": "article-journal",
+  "title": "A differential model for the growth of Young diagrams",
+  "author": [
+    {
+      "family": "Kerov",
+      "given": "Sergei V."
+    }
+  ],
+  "container-title": "Proceedings of the St. Petersburg Mathematical Society",
+  "volume": "4",
+  "page": "165-192",
+  "issued": {
+    "date-parts": [
+      [
+        1996
+      ]
+    ]
+  },
+  "note": "Introduces the q-deformed hook walk: a Markov chain on Young diagrams whose stationary measure is the q-Plancherel measure. The transition kernel projects step-by-step onto each partition, with branching weights determined by q-hook products."
+}

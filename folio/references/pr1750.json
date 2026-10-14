@@ -1,0 +1,20 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "pr1750",
+  "type": "webpage",
+  "title": "Markov-trace SHAPE collapse: T_β = S · 1 (substrate min-norm Markov–Frobenius collapse theorem)",
+  "author": [
+    {
+      "literal": "QOU project (litlfred/qou)"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026
+      ]
+    ]
+  },
+  "URL": "https://github.com/litlfred/qou/pull/1750",
+  "note": "Internal QOU pull request #1750 (merged). Proves the SDP min-norm element satisfying τX = S is X = S·1 in the substrate model (A = R, τ = id) via the completing-the-square identity; applied to the Iwahori–Hecke algebra with the Jones–Markov trace this gives T_β = S·1. Cited by t-beta-markov-collapse-general-lift.lean, markov-trace-frobenius-selection.lean, t-beta-markov-frobenius-collapse.lean. Companion audit: docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md."
+}

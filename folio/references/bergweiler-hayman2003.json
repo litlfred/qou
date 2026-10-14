@@ -1,0 +1,29 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "bergweiler-hayman2003",
+  "type": "article-journal",
+  "title": "Zeros of Solutions of a Functional Equation",
+  "author": [
+    {
+      "family": "Bergweiler",
+      "given": "Walter"
+    },
+    {
+      "family": "Hayman",
+      "given": "Walter K."
+    }
+  ],
+  "container-title": "Computational Methods and Function Theory",
+  "volume": "3",
+  "page": "55-78",
+  "issued": {
+    "date-parts": [
+      [
+        2003
+      ]
+    ]
+  },
+  "DOI": "10.1007/BF03321025",
+  "URL": "https://doi.org/10.1007/BF03321025",
+  "note": "Registered 2026-08-01 (awzero, bean qou-k16h) at METADATA-VERIFICATION level only: title/authors/journal/volume/pages/DOI corroborated by two independent search-index hits on the Springer landing page; the full text was NOT retrievable in this environment (proxy 403 on Springer), so no theorem statement is imported from it. Springer renders the online year as 2004 for CMFT volume 3 (nominally the 2003 volume). Classical home of the geometric-progression zero asymptotics for entire solutions of q-functional equations with a Newton–Puiseux hypothesis — the literature context (not the source) of the A_w zero localization proved independently in docs/audits/2026-08-01-awzero-asymptotics.md."
+}
