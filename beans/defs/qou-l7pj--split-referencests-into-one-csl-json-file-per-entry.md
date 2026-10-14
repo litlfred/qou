@@ -1,14 +1,14 @@
 ---
 # qou-l7pj
 title: 'Bibliography: split references.ts into one CSL-JSON file per entry in a declared directory (each a Reference node), keep LaTeX/BibTeX output identical'
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
     - migration
     - content
 created_at: 2026-10-14T17:50:00Z
-updated_at: 2026-10-14T17:50:00Z
+updated_at: 2026-10-14T19:30:00Z
 parent: qou-8tlx
 ---
 
@@ -58,3 +58,33 @@ This supersedes one line of the C9 plan (`docs/audits/2026-10-04-workplan-and-mi
 ## Order
 
 After `folio-assistant-63q4`'s schema step, so files carry the right `$schema` from the start. The split can go first with `$schema` added in a second pass, if the owner prefers.
+
+## Progress, 2026-10-14 (branch `claude/l7pj-references-per-entry-split`)
+
+Done on the branch, not merged:
+
+- **Split.** 913 entries are `folio/references/<id>.json`: `$schema` first, then the CSL item as the module evaluated it. 48 comment lines that sat inside an entry are that file's `_comment` array (dropped on load).
+- **Built by code, still inline:** `leitner2026` (from `paperIdentity`).
+- **Order.** The `ORDER` list in `references.ts` holds one `{ id: … }` line per entry, plus the 742 comment lines between entries. The loader refuses a duplicate, a missing file or an unlisted file. The `id:` spelling keeps the key-only text scanners working (platform `bib-cite-resolves`, `check-citation-keys.py`).
+- **`sync-references-library.py`** writes per-entry files and refuses the old layout (exit 2).
+- **Seven Python text scanners** read the entries through `scripts/lib/references_dir.py`.
+
+Measured:
+
+- the exported array equals main's;
+- `references.bib` is byte-identical (clock frozen, sha256 `b523e450…`);
+- `run-validate-references` output is identical (0 errors / 183 warnings / 460 info);
+- all 913 files pass core `ReferenceNodeSchema`;
+- with the declaration added, core's `bibliography-page` `collect()` at platform main reads 913 entries, 0 invalid.
+
+**Still open:**
+
+1. **The `qou.json` declaration is NOT committed.** At the pinned platform (`c56b73b`), `readDeclaration` throws `unknown graph typology "references"`. That misroots every platform script, the trap `.folio-assistant-pin` records. The declaration needs a pin bump past a core that registers `references`, which is an owner call.
+2. **Platform-side text readers of `references.ts`** still scan for entry bodies and will see only `leitner2026`:
+   - `source-ledger-index.ts` (ids, arXiv, URL);
+   - `audit-tex-source.ts` Rule A (title/note);
+   - core `src/routes/relevance.ts`.
+
+   `bib-cite-resolves` is unaffected because ORDER keeps `id:`.
+3. **Done-when item 4** (63q4's `references/<key>.jsonld` generator) belongs to the platform.
+4. **Skills docs** under `skills/local/` still say "add a `ref()` in references.ts".
