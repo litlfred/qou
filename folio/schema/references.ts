@@ -234,8 +234,8 @@ export const REFERENCES_DIR = join(dirname(fileURLToPath(import.meta.url)), ".."
 type FileSlot = { id: string };
 
 /** A slot that is only `{ id }` names a file; any other slot is a `ref()` built here. */
-function isFileSlot(slot: FileSlot | Reference): slot is FileSlot {
-  return Object.keys(slot).length === 1;
+function isBuiltHere(slot: FileSlot | Reference): slot is Reference {
+  return Object.keys(slot).length > 1;
 }
 
 /** Read one entry file, drop `$schema` and the `_` note keys, and validate it with `ref()`. */
@@ -272,7 +272,7 @@ function assemble(order: Array<FileSlot | Reference>): Reference[] {
   const out = order.map((slot) => {
     if (seen.has(slot.id)) throw new Error(`references.ts ORDER lists "${slot.id}" twice`);
     seen.add(slot.id);
-    if (!isFileSlot(slot)) {
+    if (isBuiltHere(slot)) {
       if (onDisk.has(slot.id)) {
         throw new Error(`"${slot.id}" is built in references.ts and also has folio/references/${slot.id}.json; keep one`);
       }
