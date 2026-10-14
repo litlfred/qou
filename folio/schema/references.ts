@@ -28,14 +28,15 @@
  * ## Order is kept by ORDER, below
  *
  * `references.bib` is emitted in array order, so the order is part of the
- * output. {@link ORDER} lists every entry, one `{ id: "<key>" }` line each,
+ * output. {@link ORDER} lists every entry, one `{ id: <key> }` line each
+ * (the key a double-quoted string),
  * in the order the array had. The comments between entries stayed where
  * they were. The loader is strict: an id listed twice, a listed id with no
  * file, or a file that ORDER does not list is an error at import. A
  * directory listing alone would sort by file name and reorder the `.bib`.
  *
- * The `id: "<key>"` spelling is kept on purpose. Text scanners collect keys
- * by matching `id: "..."` in this file, for example the platform's
+ * The `id:` spelling is kept on purpose. Text scanners collect keys by
+ * matching `id:` plus a quoted string in this file, for example the platform's
  * `bib-cite-resolves` checker (`qa-checkers-extended.ts` `loadBibIdSet`) and
  * `scripts/check-citation-keys.py`. Keeping that spelling keeps those
  * scanners working.
@@ -44,7 +45,7 @@
  *
  * 1. Write `folio/references/<id>.json` with `"$schema": "folio-reference/v1"`
  *    and the CSL fields.
- * 2. Add `{ id: "<id>" },` to ORDER, where it should appear in
+ * 2. Add a `{ id: <id> },` line to ORDER, where it should appear in
  *    `references.bib`. New entries usually go at the end.
  *
  * Fields follow the CSL-JSON spec: https://citeproc-js.readthedocs.io/en/latest/csl-json/markup.html
@@ -284,7 +285,7 @@ function assemble(order: Array<FileSlot | Reference>): Reference[] {
   if (unlisted.length) {
     throw new Error(
       `folio/references/ holds ${unlisted.length} file(s) that references.ts ORDER does not list: ${unlisted.join(", ")}. ` +
-        `Add { id: "<key>" } to ORDER where the entry belongs in references.bib.`,
+        "Add a { id: <key> } line to ORDER where the entry belongs in references.bib.",
     );
   }
   return out;
