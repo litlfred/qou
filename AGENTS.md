@@ -4316,7 +4316,8 @@ consult `LEAN_PACKAGES` for the list of valid prefixes.
 sorry
 ```
 
-- The `[key]` must match an entry in `folio/schema/references.ts` exactly (case-sensitive).
+- The `[key]` must match a bibliography key exactly (case-sensitive): a
+  `folio/references/<key>.json` file, loaded by `folio/schema/references.ts`.
   (`references.bib` is auto-generated from `references.ts` — the `export-bibtex`
   shortcut was dropped in the miga migration, pending re-wiring).
 - If no published reference exists, use `[manuscript]` and cite chapter/section.
@@ -5375,7 +5376,8 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 | `folio-assistant/content/pipeline/validate.ts` | Three-level validation |
 | `folio-assistant/content/pipeline/render-latex.ts` | Block → LaTeX + AST validation |
 | `folio-assistant/content/pipeline/build.ts` | Full document build |
-| `folio/schema/references.ts` | **Bibliography source of truth** (CSL-JSON) |
+| `folio/references/<id>.json` | **Bibliography source of truth** (CSL-JSON, one entry per file) |
+| `folio/schema/references.ts` | Loads `folio/references/` in `ORDER`; exports the registry |
 | `folio-assistant/content/pipeline/export-bibtex.ts` | Generates `references.bib` from CSL-JSON |
 | `folio-assistant/content/pipeline/validate-references.ts` | Bibliography + citation cross-checks |
 | `folio-assistant/content/pipeline/citations.ts` | `\cite{}` extraction from .md content |
@@ -5383,12 +5385,23 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 
 ### Bibliography architecture
 
-The bibliography is managed as **typed CSL-JSON** in
-`folio/schema/references.ts`. BibTeX (`references.bib`) is a downstream
-render target, auto-generated from `references.ts` (the `bun run export-bibtex`
-shortcut was dropped in the miga migration — pending re-wiring).
+The bibliography is managed as **typed CSL-JSON**, one entry per file in
+`folio/references/<id>.json` (bean `qou-l7pj`, owner 2026-10-14 "1 + 2").
+`folio/schema/references.ts` loads those files in the order its `ORDER` list
+gives, validates each with `ref()`, and exports the registry (`references`,
+`referenceMap`, `getRef`) that every consumer imports. BibTeX
+(`references.bib`) is a downstream render target, generated in `ORDER`
+(`bun run scripts/check-references-bib.ts` checks the committed copy).
 
-- **Adding a reference**: use the `ref()` builder in `references.ts`
+- **Adding a reference**: write `folio/references/<id>.json` with
+  `"$schema": "folio-reference/v1"` first, then add a `{ id: <id> }` line to
+  `ORDER` in `references.ts` (the loader refuses a file `ORDER` does not list).
+  Only an entry whose values are computed stays inline as a `ref({...})`
+  call (today `leitner2026`).
+- **Do not regex `references.ts` for entry fields** — it holds no entry
+  bodies. Python reads the entries through `scripts/lib/references_dir.py`.
+  Its `{ id: ... }` lines are kept so key-only scanners
+  (`bib-cite-resolves`, `check-citation-keys.py`) keep working.
 - **Block citations**: `cites: string[]` field on blocks (auto-extracted
   from `\cite{}` in .md by the pipeline, or set explicitly in .ts)
 - **Chapter bibliography**: aggregated at build time from all block cites
