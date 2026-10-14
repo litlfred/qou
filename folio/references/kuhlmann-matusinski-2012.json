@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "kuhlmann-matusinski-2012",
+  "library": {
+    "docId": "arxiv-1203.4538v1",
+    "dir": "library/arxiv-1203.4538v1",
+    "pdf": "library/arxiv-1203.4538v1/1203.4538v1.pdf",
+    "stage": "candidates",
+    "pages": 15,
+    "sections": 7,
+    "arxiv": "1203.4538v1"
+  },
+  "type": "article",
+  "title": "The exponential-logarithmic equivalence classes of surreal numbers",
+  "author": [
+    {
+      "family": "Kuhlmann",
+      "given": "Salma"
+    },
+    {
+      "family": "Matusinski",
+      "given": "Mickaël"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2012
+      ]
+    ]
+  },
+  "container-title": "arXiv preprint",
+  "URL": "https://arxiv.org/abs/1203.4538",
+  "note": "arXiv:1203.4538. Added 2026-05-19 from library/ gap audit. Fits QOU's Surreal Numbers appendix content (alongside berarducci2018, ehrlich2012, gonshor1986). Potential citation target."
+}

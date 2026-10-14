@@ -1,0 +1,43 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "baik-deift-johansson1999",
+  "library": {
+    "docId": "arxiv-math-9810105v2",
+    "dir": "library/arxiv-math-9810105v2",
+    "pdf": "library/arxiv-math-9810105v2/9810105v2.pdf",
+    "stage": "sections",
+    "pages": 60,
+    "sections": 57,
+    "arxiv": "math/9810105v2"
+  },
+  "type": "article-journal",
+  "title": "On the distribution of the length of the longest increasing subsequence of random permutations",
+  "author": [
+    {
+      "family": "Baik",
+      "given": "Jinho"
+    },
+    {
+      "family": "Deift",
+      "given": "Percy"
+    },
+    {
+      "family": "Johansson",
+      "given": "Kurt"
+    }
+  ],
+  "container-title": "Journal of the American Mathematical Society",
+  "volume": "12",
+  "page": "1119-1178",
+  "issue": "4",
+  "issued": {
+    "date-parts": [
+      [
+        1999
+      ]
+    ]
+  },
+  "DOI": "10.1090/S0894-0347-99-00307-0",
+  "URL": "https://arxiv.org/abs/math/9810105",
+  "note": "The foundational EDGE result: (λ₁ − 2√θ)/θ^{1/6} → Tracy–Widom (Airy), with convergence of moments, via the Riemann–Hilbert double-scaling analysis of the Plancherel Toeplitz determinant. Supplies the RH double-scaling METHOD + the edge half of the asymptotic — NOT the global linear-statistic (Kerov-CLT) variance rate the qou-k5r5 (CS) margin needs. PDF library/arxiv-math-9810105v2/."
+}

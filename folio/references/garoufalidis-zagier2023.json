@@ -1,0 +1,38 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "garoufalidis-zagier2023",
+  "library": {
+    "docId": "arxiv-2111.06645",
+    "dir": "library/arxiv-2111.06645",
+    "pdf": "library/arxiv-2111.06645/2304.09377v2.pdf",
+    "stage": "candidates",
+    "pages": 39,
+    "sections": 23,
+    "arxiv": "2111.06645"
+  },
+  "type": "article-journal",
+  "title": "Knots and Their Related $q$-Series",
+  "author": [
+    {
+      "family": "Garoufalidis",
+      "given": "Stavros"
+    },
+    {
+      "family": "Zagier",
+      "given": "Don"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2023
+      ]
+    ]
+  },
+  "container-title": "Symmetry, Integrability and Geometry: Methods and Applications (SIGMA)",
+  "volume": "19",
+  "page": "082",
+  "DOI": "10.3842/SIGMA.2023.082",
+  "URL": "https://arxiv.org/abs/2304.09377",
+  "note": "arXiv:2304.09377, SIGMA 19 (2023) 082. Added 2026-07-17 from library/arxiv-2111.06645/2304.09377v2.pdf. The factorized $q$-series / matrix-valued invariant attached to a knot, with Habiro-ring / state-integral holomorphic-block structure; companion to the resurgence pair (garoufalidis-gu-marino2021, garoufalidis-gu-marino2023peacock). Relevant to the QOU $\\Phi_q$ / $\\mathrm{Li}_2^q$ odd-carrier and the 1ppq $A_\\omega$ Stokes program."
+}

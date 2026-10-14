@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "codata2022",
+  "library": {
+    "docId": "revmodphys97025002pdf",
+    "dir": "library/revmodphys97025002pdf",
+    "pdf": "library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf",
+    "stage": "candidates",
+    "pages": 62,
+    "sections": 73
+  },
+  "type": "dataset",
+  "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
+  "author": [
+    {
+      "literal": "CODATA Task Group on Fundamental Constants"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2022
+      ]
+    ]
+  },
+  "URL": "https://physics.nist.gov/cgi-bin/cuu/Value?mmusme",
+  "publisher": "NIST Standard Reference Database",
+  "DOI": "10.1103/RevModPhys.97.025002",
+  "note": "Muon--electron mass ratio $m_\\mu/m_e = 206.768\\,2830(46)$. PDF library/revmodphys97025002pdf/ — the Rev. Mod. Phys. version. This entry supplies CAL-1 (m_e) and the CODATA comparison values used throughout, and had no copy recorded.DOI added 2026-08-15, read off the held copy: the library holds this as its Rev. Mod. Phys. 97, 025002 publication (Mohr, Newell, Taylor). `type` is left as `dataset` deliberately — the blocks citing this key cite the CODATA *values*, not the review article, and those are arguably different objects. Revisit if a block ever cites the paper as a paper."
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "conway1976",
+  "type": "book",
+  "title": "On Numbers and Games",
+  "author": [
+    {
+      "family": "Conway",
+      "given": "John H."
+    }
+  ],
+  "publisher": "Academic Press",
+  "publisher-place": "London",
+  "issued": {
+    "date-parts": [
+      [
+        1976
+      ]
+    ]
+  },
+  "note": "Original construction of the surreal numbers $\\mathbf{No}$ as a proper-class real-closed field via the recursive $\\{L \\mid R\\}$ construction.  Basis for the birthday filtration and sign-sequence grading used in the surreal appendix."
+}

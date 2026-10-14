@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "murakami2004",
+  "library": {
+    "docId": "arxiv-math-0401084v3",
+    "dir": "library/arxiv-math-0401084v3",
+    "pdf": "library/arxiv-math-0401084v3/0401084v3.pdf",
+    "stage": "candidates",
+    "pages": 17,
+    "sections": 6,
+    "arxiv": "math/0401084v3"
+  },
+  "type": "article",
+  "title": "Some limits of the colored Jones polynomials of the figure-eight knot",
+  "author": [
+    {
+      "family": "Murakami",
+      "given": "Hitoshi"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2004
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/math/0401084",
+  "note": "arXiv:math/0401084. Title recorded from the arXiv listing; the corpus cites it for the deformed volume-conjecture normalisation q_eval = exp((u + 2*pi*i)/N). NOT independently verified against the published text - arxiv.org is egress-blocked from the agent sandbox, so a reader should confirm before relying on the exact wording."
+}

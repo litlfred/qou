@@ -1,0 +1,26 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "shi2002",
+  "type": "article-journal",
+  "title": "Both Toffoli and Controlled-NOT need little help to do universal quantum computation",
+  "author": [
+    {
+      "family": "Shi",
+      "given": "Y."
+    }
+  ],
+  "container-title": "Quantum Information and Computation",
+  "volume": 3,
+  "issue": 1,
+  "page": "84-92",
+  "issued": {
+    "date-parts": [
+      [
+        2003
+      ]
+    ]
+  },
+  "DOI": "10.26421/QIC3.1-7",
+  "URL": "https://arxiv.org/abs/quant-ph/0205115",
+  "note": "arXiv:quant-ph/0205115 (2002). THE source for Toffoli+Hadamard quantum universality. Added 2026-08-29 (bean qou-nmqd): the q-GoL proof cited fredkin1982 + toffoli1980 for this result, which are classical reversible-computation papers predating it by two decades and cannot carry it. Note the theorem is about the STANDARD Toffoli; a q-deformed gate needs its own argument."
+}

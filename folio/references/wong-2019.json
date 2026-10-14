@@ -1,0 +1,21 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "wong-2019",
+  "type": "article",
+  "title": "Asymptotics of some quantum invariants of the Whitehead chains",
+  "author": [
+    {
+      "family": "Wong",
+      "given": "Ka Ho"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2019
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/1912.10638",
+  "note": "Directly on van der Veen's family, and a NEAR MISS for the constant: it proves only the exponential GROWTH RATE (the volume of a possibly-incomplete structure) at t = e^{2 pi i/(N+1/2)}, and yields the volume conjecture for Turaev-Viro invariants of all Whitehead chain complements. Full text read in-sandbox (local copy 1912.10638v2.pdf): no occurrence of '1-loop', 'subleading' or 'constant term', and the only torsion mentions are a single bibliography entry. Recorded so the near miss is not re-searched."
+}

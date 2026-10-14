@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "chlouveraki2016-hdr",
+  "library": {
+    "docId": "hdr",
+    "dir": "library/hdr",
+    "pdf": "library/hdr/HDR.pdf",
+    "stage": "candidates",
+    "pages": 75,
+    "sections": 27
+  },
+  "type": "thesis",
+  "title": "Hecke algebras, generalisations and representation theory",
+  "author": [
+    {
+      "family": "Chlouveraki",
+      "given": "Maria"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2016
+      ]
+    ]
+  },
+  "genre": "Habilitation à Diriger des Recherches",
+  "publisher": "Université de Versailles Saint-Quentin",
+  "URL": "https://theses.hal.science/tel-01411063",
+  "note": "Verified 2026-06-23 (doth): HDR thesis, UVSQ, defended 25 Nov 2016; HAL handle tel-01411063 (https://theses.hal.science/tel-01411063). Title corrected from 'Hecke algebras and their representations'. Cited in QOU for Theorem 6.20. HAL theses carry no DOI. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §C."
+}

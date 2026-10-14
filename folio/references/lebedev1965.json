@@ -1,0 +1,21 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "lebedev1965",
+  "type": "book",
+  "title": "Special Functions and Their Applications",
+  "author": [
+    {
+      "family": "Lebedev",
+      "given": "Nikolai N."
+    }
+  ],
+  "publisher": "Prentice-Hall (Dover reprint 1972)",
+  "issued": {
+    "date-parts": [
+      [
+        1965
+      ]
+    ]
+  },
+  "note": "Standard reference for toroidal coordinates and the separated harmonics $\\sqrt{\\cosh\\eta-\\cos\\theta}\\,P^{\\mu}_{\\nu-1/2}(\\cosh\\eta)\\,e^{i\\mu\\theta}e^{i\\nu\\varphi}$: the two phase windings are the two local 1-d channel oscillations and the half-integer-degree Legendre factor is the decaying radial profile off the core torus (toroidal channel-interpolation audit, 2026-07-06)."
+}

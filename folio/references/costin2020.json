@@ -1,0 +1,13 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "costin2020",
+  "type": "book",
+  "title": "Asymptotics and Borel Summability",
+  "author": [
+    {
+      "family": "Costin",
+      "given": "Ovidiu"
+    }
+  ],
+  "note": "Title and the cited chapter are written verbatim at the citing site: `-- Ref: [costin2020] Asymptotics and Borel Summability, Ch. 3` (Mathlib/BorelSingularity.lean:23, paired with [sokal1980] for the Borel-disc radius argument). Author from the key, corroborated by the existing `costin1995` and `costin-ehrlich-friedman2015` entries (family Costin). NO YEAR IS RECORDED ON PURPOSE: the key asserts 2020, while this book is standardly dated to its Chapman and Hall/CRC monograph edition, which is NOT 2020. Rather than pick one and silently overwrite the author's key, the field is left out; a printing/edition check will settle it. Likewise UNVERIFIED and omitted: publisher, series, edition. Registered by the dangling-citation drain, bean qou-ghy5."
+}

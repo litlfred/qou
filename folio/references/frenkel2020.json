@@ -1,0 +1,33 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "frenkel2020",
+  "type": "article",
+  "title": "q-Opers, QQ-Systems, and Bethe Ansatz",
+  "author": [
+    {
+      "family": "Frenkel",
+      "given": "Edward"
+    },
+    {
+      "family": "Koroteev",
+      "given": "Peter"
+    },
+    {
+      "family": "Sage",
+      "given": "Daniel S."
+    },
+    {
+      "family": "Zeitlin",
+      "given": "Anton M."
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2020
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/2002.07344",
+  "note": "Cited in QOU/Mathlib/QOper.lean. arXiv:2002.07344. The Lean's inline URL was arXiv:2007.11786, which is a DIFFERENT paper (Koroteev-Zeitlin, 'Toroidal q-Opers') -- the key 'frenkel2020' names the Frenkel-first-author q-Opers/QQ-system paper, so the URL was repointed to 2002.07344 in the same change (bib triage 2026-09-03). arXiv id from web search; JEMS DOI not verifiable this session, so omitted."
+}

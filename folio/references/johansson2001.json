@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "johansson2001",
+  "library": {
+    "docId": "arxiv-math-9906120v3",
+    "dir": "library/arxiv-math-9906120v3",
+    "pdf": "library/arxiv-math-9906120v3/9906120v3.pdf",
+    "stage": "sections",
+    "pages": 38,
+    "sections": 14,
+    "arxiv": "math/9906120v3"
+  },
+  "type": "article-journal",
+  "title": "Discrete orthogonal polynomial ensembles and the Plancherel measure",
+  "author": [
+    {
+      "family": "Johansson",
+      "given": "Kurt"
+    }
+  ],
+  "container-title": "Annals of Mathematics",
+  "volume": "153",
+  "page": "259-296",
+  "issue": "1",
+  "issued": {
+    "date-parts": [
+      [
+        2001
+      ]
+    ]
+  },
+  "DOI": "10.2307/2661375",
+  "URL": "https://arxiv.org/abs/math/9906120",
+  "note": "Lemma 3.9 (eq 3.41): explicit super-exponential Bessel tail bound past the edge (the Olver-free tail). Lemma 3.8 (eq 3.38): de-Poissonization with explicit C/N^2 error. Bulk sine-kernel stated as a limit (defers to BOO). PDF library/arxiv-math-9906120v3/."
+}

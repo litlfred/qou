@@ -1,0 +1,41 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "riera-rodriguez-1992",
+  "library": {
+    "docId": "pjm-v154-n1-p09-s",
+    "dir": "library/pjm-v154-n1-p09-s",
+    "pdf": "library/pjm-v154-n1-p09-s/pjm-v154-n1-p09-s.pdf",
+    "stage": "candidates",
+    "pages": 25,
+    "sections": 8,
+    "alternates": [
+      "the-period-matrix-of-bring-s-curve-1hik02mwva"
+    ]
+  },
+  "type": "article-journal",
+  "title": "The period matrix of Bring's curve",
+  "author": [
+    {
+      "family": "Riera",
+      "given": "Gonzalo"
+    },
+    {
+      "family": "Rodríguez",
+      "given": "Rubí E."
+    }
+  ],
+  "container-title": "Pacific Journal of Mathematics",
+  "issued": {
+    "date-parts": [
+      [
+        1992
+      ]
+    ]
+  },
+  "volume": "154",
+  "issue": "1",
+  "page": "179-200",
+  "DOI": "10.2140/pjm.1992.154.179",
+  "URL": "https://doi.org/10.2140/pjm.1992.154.179",
+  "note": "Original explicit period matrix Z = τ₀·C (C the 4×4 matrix with diagonal 4, off-diagonals ±1) of the genus-4 Bring curve (Aut = S₅); the natural isogeny diagonalises Z to (5τ,5τ,5τ,τ), recovering Serre's Jac ~ E⁴. Resolves the Sage tool-block noted in docs/audits/2026-06-24-keystone-bring-jacobian-E4-elliptic-W-plane.md. CAVEAT: this paper SWAPS the two j-invariant equations (a typographical error flagged by Braden–Northover 2012, braden-northover-2012). Registered 2026-07-18 from library/ intake; metadata from the uploaded PDF."
+}

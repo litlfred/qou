@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "koelink-swarttouw-1994",
+  "type": "article-journal",
+  "title": "On the zeros of the Hahn-Exton q-Bessel function and associated q-Lommel polynomials",
+  "author": [
+    {
+      "family": "Koelink",
+      "given": "H. T."
+    },
+    {
+      "family": "Swarttouw",
+      "given": "R. F."
+    }
+  ],
+  "container-title": "Journal of Mathematical Analysis and Applications",
+  "issued": {
+    "date-parts": [
+      [
+        1994
+      ]
+    ]
+  },
+  "volume": "186",
+  "issue": "3",
+  "page": "690-710",
+  "DOI": "10.1006/jmaa.1994.1330",
+  "URL": "https://doi.org/10.1006/jmaa.1994.1330",
+  "note": "q-Hankel (q-Fourier–Bessel) transform built from the orthogonality of the Hahn–Exton q-Bessel zeros; the q-Lommel three-term recurrence. Reference for the q-Bessel contiguity ⟹ coefficient-recurrence derivation (QBesselContiguityRecurrence.lean)."
+}

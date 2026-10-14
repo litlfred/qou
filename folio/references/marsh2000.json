@@ -1,0 +1,31 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "marsh2000",
+  "library": {
+    "docId": "arxiv-math-0008040v1",
+    "dir": "library/arxiv-math-0008040v1",
+    "pdf": "library/arxiv-math-0008040v1/0008040v1.pdf",
+    "stage": "candidates",
+    "pages": 21,
+    "sections": 12,
+    "arxiv": "math/0008040v1"
+  },
+  "type": "article",
+  "title": "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A",
+  "author": [
+    {
+      "family": "Marsh",
+      "given": "R. J."
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2000
+      ]
+    ]
+  },
+  "container-title": "arXiv preprint",
+  "URL": "https://arxiv.org/abs/math/0008040",
+  "note": "Corrected 2026-06-23 (doth): id was 'carter-leal-saliola-2000' with author 'R. W. Carter' — a misidentification. arXiv:math/0008040 is single-author R. J. Marsh (per arXiv author listing; sandbox 403'd the page, so link-title confidence). No Carter/Leal/Saliola. Renamed to marsh2000; do not conflate with the distinct Marsh paper math/0008035. Journal publication (possibly J. Algebra) UNVERIFIED. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §B."
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "folio-reference/v1",
+  "_comment": [
+    "Key in .lean files reads \"chlouveraki2016\"; the canonical reference",
+    "is the 2009 LNM monograph. Kept the .lean key; metadata is the 2009",
+    "edition (LNM 1981).",
+    "Note: the bib KEY is chlouveraki2016 but the entry below",
+    "remains the 2009 LNM monograph (kept per the wrong-work-split",
+    "triage 2026-05-19; QOU citations that refer to the LNM book",
+    "continue using this key). A new chlouveraki2016-hdr entry",
+    "below covers the actually-2016 HDR thesis."
+  ],
+  "id": "chlouveraki2016",
+  "type": "book",
+  "title": "Blocks and Families for Cyclotomic Hecke Algebras",
+  "author": [
+    {
+      "family": "Chlouveraki",
+      "given": "Maria"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2009
+      ]
+    ]
+  },
+  "publisher": "Springer",
+  "collection-title": "Lecture Notes in Mathematics",
+  "collection-number": "1981",
+  "ISBN": "9783642030635"
+}

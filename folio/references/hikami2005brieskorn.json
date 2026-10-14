@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "hikami2005brieskorn",
+  "library": {
+    "docId": "arxiv-math-ph-0405028v2",
+    "dir": "library/arxiv-math-ph-0405028v2",
+    "pdf": "library/arxiv-math-ph-0405028v2/0405028v2.pdf",
+    "stage": "candidates",
+    "pages": 26,
+    "sections": 3,
+    "arxiv": "math-ph/0405028v2"
+  },
+  "type": "article-journal",
+  "title": "On the quantum invariant for the Brieskorn homology spheres",
+  "author": [
+    {
+      "family": "Hikami",
+      "given": "Kazuhiro"
+    }
+  ],
+  "container-title": "International Journal of Mathematics",
+  "volume": "16",
+  "issue": "6",
+  "page": "661-685",
+  "issued": {
+    "date-parts": [
+      [
+        2005
+      ]
+    ]
+  },
+  "DOI": "10.1142/S0129167X05003004",
+  "URL": "https://arxiv.org/abs/math-ph/0405028",
+  "note": "WRT invariant of Sigma(p1,p2,p3) as a finite Gauss sum (eq. 2.11); odd characters chi^(l1,l2,l3) (eq. 3.1); D x D vector-valued modular S-matrix (eq. 3.8); exact Theorem 10 / Corollary 12 asymptotics. Primary source for the keystone Sigma(2,3,5) transcription, machine-validated in-repo (keystone_valuemap_genuine_smatrix_s013; lr_modulus_identification_sigma235)."
+}

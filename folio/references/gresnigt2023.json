@@ -1,0 +1,45 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "gresnigt2023",
+  "library": {
+    "docId": "arxiv-2306.13098v2",
+    "dir": "library/arxiv-2306.13098v2",
+    "pdf": "library/arxiv-2306.13098v2/2306.13098v2.pdf",
+    "stage": "candidates",
+    "pages": 18,
+    "sections": 12,
+    "arxiv": "2306.13098v2",
+    "alternates": [
+      "s10052-023-11923-y-a"
+    ]
+  },
+  "type": "article-journal",
+  "title": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions",
+  "author": [
+    {
+      "family": "Gresnigt",
+      "given": "Niels"
+    },
+    {
+      "family": "Gourlay",
+      "given": "Liam"
+    },
+    {
+      "family": "Varma",
+      "given": "Abhinav"
+    }
+  ],
+  "container-title": "The European Physical Journal C",
+  "volume": "83",
+  "page": "747",
+  "issued": {
+    "date-parts": [
+      [
+        2023
+      ]
+    ]
+  },
+  "DOI": "10.1140/epjc/s10052-023-11923-y",
+  "URL": "https://arxiv.org/abs/2306.13098",
+  "note": "PDF library/arxiv-2306.13098v2/ (canonical) — the library also holds the published copy at library/s10052-023-11923-y-a/, marked duplicate_of the arXiv one. Volume, page and DOI were read off that published copy, so unlike the neighbouring intake entries they are verified against the publisher record rather than extracted from a preprint."
+}

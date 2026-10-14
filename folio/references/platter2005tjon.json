@@ -1,0 +1,43 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "platter2005tjon",
+  "library": {
+    "docId": "arxiv-nucl-th-0409040v2",
+    "dir": "library/arxiv-nucl-th-0409040v2",
+    "pdf": "library/arxiv-nucl-th-0409040v2/0409040v2.pdf",
+    "stage": "candidates",
+    "pages": 7,
+    "sections": 2,
+    "arxiv": "nucl-th/0409040v2"
+  },
+  "type": "article-journal",
+  "title": "On the correlation between the binding energies of the triton and the alpha-particle",
+  "author": [
+    {
+      "family": "Platter",
+      "given": "L."
+    },
+    {
+      "family": "Hammer",
+      "given": "H.-W."
+    },
+    {
+      "family": "Meißner",
+      "given": "Ulf-G."
+    }
+  ],
+  "container-title": "Physics Letters B",
+  "issued": {
+    "date-parts": [
+      [
+        2005
+      ]
+    ]
+  },
+  "volume": "607",
+  "issue": "3-4",
+  "page": "254-258",
+  "DOI": "10.1016/j.physletb.2004.12.068",
+  "URL": "https://arxiv.org/abs/nucl-th/0409040",
+  "note": "PDF library/arxiv-nucl-th-0409040v2/ — joined 2026-08-16. This branch had drafted a separate entry [platter2004] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. arXiv:nucl-th/0409040v2; read in full 2026-08-15 from library/arxiv-nucl-th-0409040v2/0409040v2.pdf. Registered to source the premise of QOU.MassTheory.TjonSimplexForm, which had cited it by bare arXiv number with no bib key. The load-bearing claims: (i) at leading order in ℓ/|a| an SU(4)-symmetric ONE-parameter three-nucleon interaction suffices to renormalise the four-nucleon system — no four-nucleon force is needed, and the empirical Tjon correlation 'follows immediately' from that absence, being swept out by variation of the three-body parameter L₃ (abstract; §Summary); (ii) the numbers, p. 5 — inputs B_d = 2.22 MeV and B_t = 8.48 MeV (fixing L₃ = 21.2 fm⁻¹ from a_t, or 19.8 fm⁻¹ from B_d) give B_α = 29.5 MeV (a_t input) or 26.9 MeV (B_d input), against the Coulomb-corrected experimental B_α^exp = 29.0 ± 0.1 MeV, i.e. agreement to within 10% and inside the ~30% LO error estimate; (iii) p. 6 — the LO Tjon line is SHIFTED from the empirical one because finite-range effects are neglected. CAUTION for QOU citers: 'no four-body parameter' is NOT the same statement as the simplex baseline μ₄ = 0. This paper's four-body answer is the Yakubovsky solution, a nonlinear parameter-free function of the two- and three-body inputs; the corpus baseline M(4) = 4M(3) − 6M(2) is a linear inclusion-exclusion form. The two are provably inequivalent: QOU.MassTheory.TjonSimplexForm.universal_ratio_not_in_tjon_baseline (sorry-free) shows the μ₄ = 0 baseline has M(4) < 4M(3) strictly for any μ₂ > 0, so it cannot reach the universal ratio 5 of [hammer2007fourbody]. Cite it for why a nonzero μ₄ is a meaningful signal, never as a derivation of the simplex form."
+}

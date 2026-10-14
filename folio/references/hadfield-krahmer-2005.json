@@ -1,0 +1,38 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "hadfield-krahmer-2005",
+  "library": {
+    "docId": "arxiv-math-0405249v5",
+    "dir": "library/arxiv-math-0405249v5",
+    "pdf": "library/arxiv-math-0405249v5/0405249v5.pdf",
+    "stage": "sections",
+    "pages": 0,
+    "sections": 17,
+    "arxiv": "math/0405249v5"
+  },
+  "type": "article-journal",
+  "title": "Twisted homology of quantum SL(2)",
+  "author": [
+    {
+      "family": "Hadfield",
+      "given": "Tom"
+    },
+    {
+      "family": "Krähmer",
+      "given": "Ulrich"
+    }
+  ],
+  "container-title": "K-Theory",
+  "volume": "34",
+  "page": "327-360",
+  "issued": {
+    "date-parts": [
+      [
+        2005
+      ]
+    ]
+  },
+  "DOI": "10.1007/s10977-005-3118-2",
+  "URL": "https://arxiv.org/abs/math/0405249",
+  "note": "The dimension drop of the Hochschild homology of O_q(SL_2) in top degree and its repair by the modular-automorphism twist; the one-dimensional top group reappears only in the twisted theory. Cited by thm:qou-obstruction-reduction (proof, Step 2). Ingested 2026-09-15 (owner upload 8a3c9a474)."
+}

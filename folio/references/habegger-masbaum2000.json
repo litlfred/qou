@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "habegger-masbaum2000",
+  "type": "article-journal",
+  "title": "The Kontsevich integral and Milnor's invariants",
+  "author": [
+    {
+      "family": "Habegger",
+      "given": "Nathan"
+    },
+    {
+      "family": "Masbaum",
+      "given": "Gregor"
+    }
+  ],
+  "container-title": "Topology",
+  "issued": {
+    "date-parts": [
+      [
+        2000
+      ]
+    ]
+  },
+  "volume": "39",
+  "issue": "6",
+  "page": "1253-1289",
+  "DOI": "10.1016/S0040-9383(99)00041-5",
+  "URL": "https://doi.org/10.1016/S0040-9383(99)00041-5",
+  "note": "Identifies Milnor's μ̄ link invariants with the lowest-degree (tree) part of the Kontsevich integral; the bridge between Milnor invariants and finite-type theory. For an A-component Brunnian link the first non-vanishing Vassiliev invariant is at degree 2(A−1) and equals ±μ̄(12…A). Literature input for the BrunnianVassilievBridge conjecture class (MilnorVassilievBridge.lean) — the exact-order refinement #4471's general MilnorExactOrder needs. Added 2026-08-01."
+}

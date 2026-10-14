@@ -1,0 +1,50 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "ame2020",
+  "library": {
+    "docId": "huang-2021-chinese-phys-c-45-030002",
+    "dir": "library/huang-2021-chinese-phys-c-45-030002",
+    "pdf": "library/huang-2021-chinese-phys-c-45-030002/Huang_2021_Chinese_Phys._C_45_030002.pdf",
+    "stage": "sections",
+    "pages": 343,
+    "sections": 1
+  },
+  "type": "article-journal",
+  "title": "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "W. J."
+    },
+    {
+      "family": "Wang",
+      "given": "Meng"
+    },
+    {
+      "family": "Kondev",
+      "given": "F. G."
+    },
+    {
+      "family": "Audi",
+      "given": "Georges"
+    },
+    {
+      "family": "Naimi",
+      "given": "Sarah"
+    }
+  ],
+  "container-title": "Chinese Physics C",
+  "issued": {
+    "date-parts": [
+      [
+        2021
+      ]
+    ]
+  },
+  "volume": "45",
+  "issue": "3",
+  "page": "030002",
+  "DOI": "10.1088/1674-1137/abddb0",
+  "URL": "https://doi.org/10.1088/1674-1137/abddb0",
+  "note": "Author order CORRECTED 2026-08-15 (bean qou-wy51): the entry carried the title, page and DOI of paper (I) but the author order of paper (II) — Wang first instead of Huang. The header of library/mass_1.mas20.txt states it directly: paper (I) at Chin. Phys. C45 030002 is 'by W.J.Huang, M.Wang, F.G.Kondev, G.Audi and S.Naimi', paper (II) at 030003 'by M.Wang, W.J.Huang, ...'. Corroborated by qou-mass/src/qou_mass/data/ame2020.json's _metadata, which records Huang-first for 030002. This is the paper covering mass.mas20 — the file computations/deltalambda/tjon_external_cross_check_probe.py parses for B(2H), B(3H), B(4He); see ame2020tables for the companion (II). PDF library/huang-2021-chinese-phys-c-45-030002/ — the paper. This entry's ledger source.file names library/mass_1.mas20.txt, which is the AME 2020 mass TABLE the compute reads; both are held, and the ledger keeps pointing at the table."
+}

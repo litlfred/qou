@@ -1,0 +1,33 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "deturck-gluck-electrodynamics2008",
+  "library": {
+    "docId": "0510388v1",
+    "dir": "library/0510388v1",
+    "pdf": "library/0510388v1/0510388v1.pdf",
+    "stage": "candidates",
+    "pages": 108,
+    "sections": 10
+  },
+  "type": "article",
+  "title": "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space",
+  "author": [
+    {
+      "family": "DeTurck",
+      "given": "Dennis"
+    },
+    {
+      "family": "Gluck",
+      "given": "Herman"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2008
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/math/0510388",
+  "note": "PDF library/0510388v1/ — split out 2026-08-16 from [deturck-gluck2008], which had two source-ledger rows claiming it: one for this 108-page paper and one for the 40-page 'The Gauss linking integral on the 3-sphere and in hyperbolic 3-space'. They are different papers — the duplicate detector scored the pair 0.038 and it was adjudicated different-work in docs/audits/library-duplicate-ledger.json — so the entry described one and linked the other. Title extracted from the PDF, not verified against the publisher record."
+}

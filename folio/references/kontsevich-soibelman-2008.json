@@ -1,0 +1,35 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "kontsevich-soibelman-2008",
+  "library": {
+    "docId": "arxiv-0811.2435v1",
+    "dir": "library/arxiv-0811.2435v1",
+    "pdf": "library/arxiv-0811.2435v1/0811.2435v1.pdf",
+    "stage": "candidates",
+    "pages": 148,
+    "sections": 43,
+    "arxiv": "0811.2435v1"
+  },
+  "type": "article",
+  "title": "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations",
+  "author": [
+    {
+      "family": "Kontsevich",
+      "given": "Maxim"
+    },
+    {
+      "family": "Soibelman",
+      "given": "Yan"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2008
+      ]
+    ]
+  },
+  "container-title": "arXiv preprint",
+  "URL": "https://arxiv.org/abs/0811.2435",
+  "note": "arXiv:0811.2435 (148 pp, arXiv-only). Added 2026-06-04 from library/arxiv-0811.2435v1/0811.2435v1.pdf. Comparison with QOU in docs/audits/2026-06-04-kontsevich-soibelman-0811.2435-qou-comparison.md: source of the special-Lagrangian <-> central/trace-observable dictionary, the Euler-form <-> Frobenius-pairing analogy, and the multiplicative wall-crossing formula QOU avoids by pinning q_0. RIGOR CAVEAT: many KS proofs are sketches (Thm 3/4 say 'details to the reader'); admit to QOU content only if Lean-backable."
+}

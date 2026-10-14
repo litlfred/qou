@@ -1,0 +1,38 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "brown-zhang-2008",
+  "library": {
+    "docId": "arxiv-math-0603732v2",
+    "dir": "library/arxiv-math-0603732v2",
+    "pdf": "library/arxiv-math-0603732v2/0603732v2.pdf",
+    "stage": "sections",
+    "pages": 0,
+    "sections": 42,
+    "arxiv": "math/0603732v2"
+  },
+  "type": "article-journal",
+  "title": "Dualising complexes and twisted Hochschild (co)homology for Noetherian Hopf algebras",
+  "author": [
+    {
+      "family": "Brown",
+      "given": "Kenneth A."
+    },
+    {
+      "family": "Zhang",
+      "given": "James J."
+    }
+  ],
+  "container-title": "Journal of Algebra",
+  "volume": "320",
+  "page": "1814-1850",
+  "issued": {
+    "date-parts": [
+      [
+        2008
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.jalgebra.2008.03.028",
+  "URL": "https://arxiv.org/abs/math/0603732",
+  "note": "Twisted Poincaré duality for Noetherian AS-Gorenstein Hopf algebras: HH^i(H, M) = HH_{d-i}(H, nu M) with nu the Nakayama automorphism. Cited by thm:qou-obstruction-reduction (proof, Step 2) as the correct form of the duality the block previously stated untwisted and cohomology-to-dual-cohomology. Ingested 2026-09-15 (owner upload 8a3c9a474)."
+}

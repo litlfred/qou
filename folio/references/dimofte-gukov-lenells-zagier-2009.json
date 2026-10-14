@@ -1,0 +1,45 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "dimofte-gukov-lenells-zagier-2009",
+  "library": {
+    "docId": "arxiv-0903.2472v1",
+    "dir": "library/arxiv-0903.2472v1",
+    "pdf": "library/arxiv-0903.2472v1/0903.2472v1.pdf",
+    "stage": "candidates",
+    "pages": 61,
+    "sections": 73,
+    "arxiv": "0903.2472v1"
+  },
+  "type": "article-journal",
+  "title": "Exact results for perturbative Chern-Simons theory with complex gauge group",
+  "author": [
+    {
+      "family": "Dimofte",
+      "given": "Tudor"
+    },
+    {
+      "family": "Gukov",
+      "given": "Sergei"
+    },
+    {
+      "family": "Lenells",
+      "given": "Jonatan"
+    },
+    {
+      "family": "Zagier",
+      "given": "Don"
+    }
+  ],
+  "container-title": "Communications in Number Theory and Physics",
+  "issued": {
+    "date-parts": [
+      [
+        2009
+      ]
+    ]
+  },
+  "volume": "3",
+  "page": "363-443",
+  "URL": "https://arxiv.org/abs/0903.2472",
+  "note": "arXiv:0903.2472; local copy library/arxiv-0903.2472v1/0903.2472v1.pdf. THE source of the 1-loop prefactor form this corpus uses: eq (2.1) expands Z^(rho) with an explicit hbar-power -(1/2)delta log hbar, delta = h1 - h0 (2.2), and eq (2.3) identifies the one-loop coefficient with the Ray-Singer torsion, S_1 = (1/2) log(T(M;E_rho)/2), for a GENERAL 3-manifold M with a flat G_C bundle — unrestricted by knot/link or cusp number. A physics derivation (one-loop saddle point / Feynman diagrams, citing Witten 1989, Bar-Natan-Witten 1991, Gukov-Murakami), NOT a theorem. Its multiplicative constant is convention: a /2 in (2.3), a +log 2 in (4.5) between S_1 and the colored-Jones coefficient s_1, and a log(pi) shift against Gukov-Murakami (fn 24), with the S_n integration constants fixed 'by comparison to the asymptotics of the colored Jones polynomial'. Body read in-sandbox 2026-08-08 via pdfminer; journal volume/pages carried over from the pre-existing references.bib entry and NOT independently verified."
+}

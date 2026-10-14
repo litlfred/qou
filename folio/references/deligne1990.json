@@ -1,0 +1,34 @@
+{
+  "$schema": "folio-reference/v1",
+  "_comment": [
+    "Merged 2026-08-16 with deligne2007, a second entry for the same",
+    "chapter — same title, same pages 111-195 — recorded against the 2007",
+    "Modern Birkhauser Classics reprint (DOI 10.1007/978-0-8176-4575-5_3)",
+    "rather than the 1990 original kept here. Both DOIs are real; one work.",
+    "The pair escaped an earlier duplicate-title sweep because one title",
+    "was written with a \\u00e9 escape and the other with a literal e-acute,",
+    "so they differed as raw text and matched only once parsed."
+  ],
+  "id": "deligne1990",
+  "type": "chapter",
+  "title": "Catégories tannakiennes",
+  "author": [
+    {
+      "family": "Deligne",
+      "given": "Pierre"
+    }
+  ],
+  "container-title": "The Grothendieck Festschrift",
+  "collection-title": "Progress in Mathematics",
+  "issued": {
+    "date-parts": [
+      [
+        1990
+      ]
+    ]
+  },
+  "volume": "87",
+  "page": "111-195",
+  "publisher": "Birkhäuser",
+  "DOI": "10.1007/978-0-8176-4576-2_4"
+}

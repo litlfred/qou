@@ -1,0 +1,23 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "schlesinger2001",
+  "library": {
+    "docId": "arxiv-math-0111022v1",
+    "dir": "library/arxiv-math-0111022v1",
+    "pdf": "library/arxiv-math-0111022v1/0111022v1.pdf",
+    "stage": "candidates",
+    "pages": 11,
+    "sections": 3,
+    "arxiv": "math/0111022v1"
+  },
+  "type": "article",
+  "title": "Some remarks on q-deformed multiple polylogarithms",
+  "author": [
+    {
+      "family": "Schlesinger",
+      "given": "Karl-Georg"
+    }
+  ],
+  "URL": "https://arxiv.org/abs/math/0111022",
+  "note": "Registered 2026-08-08. PDF library/arxiv-math-0111022v1/0111022v1.pdf. arXiv:math/0111022. Defines q-deformed multiple polylogarithms as q-SERIES, e.g. Li_{1,1}(z1,z2,q) = sum_{0<j<k} z1^j z2^k / ((1-q^j)(1-q^k)), and shows their rational span is an algebra, with a noncommutative/noncocommutative Hopf structure on q-deformed multiple zeta values and a conjectural link to a quantum Grothendieck-Teichmüller group. IMPORTANT SCOPE NOTE for anyone using this to q-deform the {0,1,∞} picture: this paper contains NO q-difference module and NO singular locus. It is a q-series/Hopf-algebra construction, not a q-analogue of the KZ connection on P^1 minus {0,1,∞}. It therefore does not by itself supply a map from a q-difference module with singularities at 0, [1], infinity. See bean qou-qbf0."
+}
