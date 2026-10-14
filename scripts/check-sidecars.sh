@@ -573,7 +573,8 @@ if printf '%s\n' "${files[@]}" | grep -qE '\.(ts|lean)$'; then
         --files "${citefiles[@]}" --strict 2>&1); then
     action=1
     echo "⚠ dangling citation key(s) in files you changed — add the entry to"
-    echo "  folio/schema/references.ts, or use a documented convention."
+    echo "  bibliography (folio/references/<key>.json + ORDER in folio/schema/references.ts),"
+    echo "  or use a documented convention."
     printf '%s\n' "$cite_out" | grep -A1 -E '^\s+[0-9]+\s+(ts-cites|lean-ref|md-cite)' | sed 's/^/    /'
   fi
 fi
