@@ -73,7 +73,7 @@ jobs:
         # bpmn-node: Task_Publish (processes/tools/compute-qa.bpmn).
         # Only from main: the entry is keyed main/<sha>.
         if: always() && github.ref == 'refs/heads/main'
-        run: bun run folio-assistant/cat-harness/scripts/qa-store.ts publish --ref "main/${{ github.sha }}" --root test/results/compute-qa
+        run: bun run folio-assistant/cat-harness-tools/scripts/qa-store.ts publish --ref "main/${{ github.sha }}" --root test/results/compute-qa
 
       - name: Verdict
         # bpmn-node: Gateway_Verdict (processes/tools/compute-qa.bpmn).

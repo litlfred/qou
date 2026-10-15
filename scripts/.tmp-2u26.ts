@@ -1,4 +1,4 @@
-import { resolveCanonicalLean } from "../folio-assistant/cat-harness/content/pipeline/qa-utils";
+import { resolveCanonicalLean } from "../folio-assistant/cat-harness-tools/pipeline/qa-utils";
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join } from "node:path";
 const ROOT = "/workspace/qou";
