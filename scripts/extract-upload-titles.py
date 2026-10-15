@@ -2,7 +2,7 @@
 """Seed the source-ledger join by matching upload titles to the bibliography (folio/references/).
 
 The source-ledger indexer
-(``folio-assistant/cat-harness/content/pipeline/source-ledger-index.ts``) resolves an
+(``folio-assistant/cat-harness-tools/pipeline/source-ledger-index.ts``) resolves an
 upload to a reference when the *filename* carries an arXiv id.  Most of the
 corpus does not: books, journal PDFs, and pre-arXiv scans arrive under
 opaque names.  This helper reads the first page of each document and reports
@@ -19,7 +19,7 @@ Usage::
     python3 scripts/extract-upload-titles.py                 # report
     python3 scripts/extract-upload-titles.py -o matches.json
 
-    bun run folio-assistant/cat-harness/content/pipeline/source-ledger-index.ts \\
+    bun run folio-assistant/cat-harness-tools/pipeline/source-ledger-index.ts \\
         --write --matches matches.json
 
 Requires ``pypdf``.  Documents with no text layer (scans) are reported so

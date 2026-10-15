@@ -11,12 +11,12 @@
 import { resolve } from "path";
 import { realpathSync } from "fs";
 import { execFileSync } from "child_process";
-import { configureValueRegistry } from "../folio-assistant/cat-harness/content/pipeline/value-registry-di";
-import { configureReferenceRegistry } from "../folio-assistant/cat-harness/content/pipeline/references-registry-di";
+import { configureValueRegistry } from "../folio-assistant/cat-harness-tools/pipeline/value-registry-di";
+import { configureReferenceRegistry } from "../folio-assistant/cat-harness-tools/pipeline/references-registry-di";
 import { WITNESSED_VALUES, lookupValue, verifiedNames } from "../folio/values/registry";
-import { configureLeanPackages } from "../folio-assistant/cat-harness/content/pipeline/lean-formal-ref";
+import { configureLeanPackages } from "../folio-assistant/cat-harness-tools/pipeline/lean-formal-ref";
 import { LEAN_PACKAGES } from "../schemas/lean-packages";
-import { validateObjects } from "../folio-assistant/cat-harness/content/pipeline/validate";
+import { validateObjects } from "../folio-assistant/cat-harness-tools/pipeline/validate";
 
 // Inject the domain-specific registries into the generic platform.
 configureValueRegistry({

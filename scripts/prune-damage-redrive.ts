@@ -28,7 +28,7 @@
  */
 import { readFileSync } from "fs";
 import { resolve } from "path";
-import { buildContentGraph } from "../folio-assistant/cat-harness/content/pipeline/content-graph";
+import { buildContentGraph } from "../folio-assistant/cat-harness-tools/pipeline/content-graph";
 
 const REPO = resolve(import.meta.dir, "..");
 const AUDIT = resolve(REPO, "docs/audits/2026-08-10-transitive-prune-overreach.md");

@@ -58,8 +58,8 @@ envsubst '${FOLIO_DOMAIN} ${MCP_INTERNAL_PORT}' \
   < deploy/Caddyfile.folio.template \
   > deploy/Caddyfile
 
-cp -r folio-assistant/cat-harness/viewer deploy/viewer 2>/dev/null || true
-cp -r folio-assistant/cat-harness/ui deploy/assistant 2>/dev/null || true
+cp -r folio-assistant/cat-harness-tools/viewer deploy/viewer 2>/dev/null || true
+cp -r folio-assistant/cat-harness-tools/ui deploy/assistant 2>/dev/null || true
 
 cd deploy
 docker compose -f docker-compose.folio.yml pull

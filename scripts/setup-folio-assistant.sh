@@ -7,7 +7,7 @@
 # the `folio/schema/*.ts` shims import the platform through the in-repo
 # path `folio-assistant/` (e.g. `folio/schema/builders.ts` re-exports the
 # builders from `../../folio-assistant/cat-harness/schemas/builders`), and the
-# package.json scripts run `../folio-assistant/cat-harness/content/pipeline/*.ts`.
+# package.json scripts run `../folio-assistant/cat-harness-tools/pipeline/*.ts`.
 # Both resolve to `<repo-root>/folio-assistant/`.
 #
 # This script makes `<repo-root>/folio-assistant/` resolve by:

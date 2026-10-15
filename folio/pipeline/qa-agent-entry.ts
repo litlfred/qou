@@ -105,7 +105,7 @@ const REPO_ROOT = resolve(import.meta.dir, "..", "..");
  * left `needs-agent` at 1 immediately after being written.
  *
  * Resolution is DELEGATED, not reimplemented. `resolveCanonicalLean` is the
- * resolver the sweep itself uses (`folio-assistant/cat-harness/content/pipeline/qa-utils.ts`
+ * resolver the sweep itself uses (`folio-assistant/cat-harness-tools/pipeline/qa-utils.ts`
  * §"Canonical lean.ref resolution (single source of truth)"), and its rules
  * are not obvious — it rejects a direct module-path hit whose file does not
  * declare the named decl, so an import-only aggregator like `QOU/BraidKnot.lean`
@@ -120,7 +120,7 @@ const REPO_ROOT = resolve(import.meta.dir, "..", "..");
 async function resolveLean(): Promise<string | undefined> {
   const sibling = join(dir, `${root}.lean`);
   if (existsSync(sibling)) return sibling;
-  const utils = join(REPO_ROOT, "folio-assistant/cat-harness/content/pipeline/qa-utils.ts");
+  const utils = join(REPO_ROOT, "folio-assistant/cat-harness-tools/pipeline/qa-utils.ts");
   if (!existsSync(tsPath) || !existsSync(utils)) return undefined;
   const m = readFileSync(tsPath, "utf8").match(/ref:\s*"([^"]+)"/);
   if (!m) return undefined;
@@ -143,7 +143,7 @@ async function resolveLean(): Promise<string | undefined> {
  * indistinguishable from the file having changed.
  */
 async function statementHash(path: string): Promise<string | undefined> {
-  const sig = join(REPO_ROOT, "folio-assistant/cat-harness/content/pipeline/lean-signature.ts");
+  const sig = join(REPO_ROOT, "folio-assistant/cat-harness-tools/pipeline/lean-signature.ts");
   if (!existsSync(sig)) return undefined;
   try {
     const { leanStatementHash } = await import(sig);
