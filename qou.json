@@ -28,6 +28,14 @@
       "description": "L1 source content: one directory per ingested document, and reference DATASETS (e.g. CODATA) whose values are addressable as {{ qou.library.<entry>.<slug> }}."
     },
     {
+      "id": "references",
+      "path": "folio/references/",
+      "graphTypologies": [
+        "references"
+      ],
+      "description": "The bibliography: one CSL-JSON entry per file, `<key>.json`, each a `folio-reference/v1` Reference node; folio/schema/references.ts loads them in its ORDER list and references.bib is generated from them (bean qou-l7pj)."
+    },
+    {
       "id": "computations",
       "path": "computations/",
       "description": "Python computations and the witnesses they write (<name>.witness.json). A witness value is addressable in prose as {{ qou.computations.<witness>.<json path> }}, resolved once for the PDF, the blueprint and the site.",
