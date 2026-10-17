@@ -153,6 +153,20 @@ SchurWeylTrace §12, sorry-free.
 
 **2026-10-12 — Jones normal words are linearly independent in Pres (sorry-free).** New file `QOU/IwahoriHecke/JonesWordsIndependent.lean`: `presEquivHecke : Pres N (q-qi) (q*qi) ≃ₐ[R] QOU.SchurWeyl.Hecke R q qi N` (same presentation, generator to generator; any CommRing R, any q qi); `presBasis` (via `HeckeCoset.stdBasisAny`, regular rep); `card_words_pres`: exactly (N+1)! distinct normal words; `words_pres_linearIndependent` and `wordsBasis` (words are a basis), `words_pres_linearIndependent_of_le` (every level n ≤ N). Hypotheses: [CommRing R] [Nontrivial R]; quadratic of the form s²=(q−qi)s+q·qi — covers convention D (qi=q⁻¹) and the unbalanced (qi=1) relation. NOT covered: a general pair (a,b) not of that form. Proof: span + rank condition gives |words| ≥ (N+1)!, with card_words_le equality; surjective endomorphism of R^{words} injective (OrzechProperty). Verified lean -DautoImplicit=false -s 65536 exit 0; #print axioms = propext, Classical.choice, Quot.sound. The remaining q425 items (closed Rosso–Jones for general r) are untouched.
 
+**2026-10-12 — quantum Schur–Weyl for the whole braid algebra (sorry-free; branch `claude/rj-schur-weyl-2026-10-12`).** New file `QOU/IwahoriHecke/TensorSchurWeyl.lean`, importing `SchurWeylTrace` (qou-gd90). It does not restate anything that file already proves. Contents:
+- The U_q(sl₂) coproduct built recursively on V^{⊗n} by Kronecker products: E_{n+1} = E_n⊗k + 1⊗e, F_{n+1} = F_n⊗1 + K⁻¹⊗f, K_{n+1} = K_n⊗k.
+- `S_comm_E` / `S_comm_F` / `S_comm_K` / `S_comm_Ki`: every strand braid S q N i commutes with E, F, K and K⁻¹. Proved by induction on N (each braid is either S⊗1 or 1⊗Ř).
+- `braidAlg_spec`: the same for every element of adjoin(range S), which also preserves weight.
+- `E_eq_Em`: the coproduct E_{n+1} equals RossoJonesMiddle's `Em q n`.
+- `trace_W_split`: tr(W X) = Σ_{2j≤r} (Σ_{m=j}^{r−j} q^{2m}) tr(X|W_{r,j}) for any weight-preserving X with X Em = Em X. This generalises `trace_W_gam_pow_split` from γ^p to all such X.
+- `braidAlg_trace_split` and `braidAlg_trace_W_split`: both forms for every element of the braid algebra, under `QIntNonzero`.
+- Verification: lean -DautoImplicit=false -s 65536 exit 0. `#print axioms` = propext, Classical.choice, Quot.sound.
+
+Still open:
+- The individual tr(X|W_{r,j}) are not computed for X other than γ^p.
+- F-side / lowest-weight mirror. Not needed for the split.
+- Status unchanged.
+
 
 ## 2026-10-12 — torus links re-checked; coprime and full-twist specialisations added (branch claude/rj-torus-links-2026-10-12)
 A session was sent to prove the torus-link Rosso–Jones formula on the premise that the earlier attempt was lost in a container restart. It was not lost: RossoJonesTorusLink.lean (c35183cdca) is on main and already proves T_gam_pow, card_fixSet, rossoJones_torusLink and markov_rossoJones_torusLink for every gcd(r, s). This session first re-proved the same results independently in a standalone RossoJonesLinks.lean. That version used Euclid's gcd induction where main uses Bezout, and it also compiled sorry-free. It was then cut down, because it duplicated main's declaration names in the same namespace. What remains is new: it imports RossoJonesTorusLink and adds
