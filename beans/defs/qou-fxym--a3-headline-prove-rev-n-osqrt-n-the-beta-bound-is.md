@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:49Z
-updated_at: 2026-10-11T14:00:00Z
+updated_at: 2026-10-17T00:00:00Z
 parent: qou-3e6w
 ---
 
@@ -271,6 +271,57 @@ to be slack in the argument, and each one is removed by one discrete statement.
   - Try a shape that interpolates between `δ_k` and `δ_{k+1}` with `O(1)` pair-term cost, rather
     than adding corners one at a time.
 - After that, formalise the assembly, starting with the hook-sum = cell-weight identity.
+
+## 2026-10-17 — the matching LOWER bound: `M_n ≥ A√(2n) − K₃` for every `n ≥ 1`, `K₃ = 21.955`
+
+So `e_n = M_n − A√(2n)` is now **bounded on both sides**: `−21.955 ≤ e_n ≤ 85.37`.
+
+**The family.** Take the staircase `δ_k` and add its `r` **top** outer corners as one contiguous
+block. The row lengths are `k+1, k, …, k+2−r, k−r, …, 1`, and `n = T_k + r` with `0 ≤ r ≤ k`.
+Its hook multiset splits exactly into three parts:
+
+    hooks(δ_r) + hooks(δ_{k−r}) + 2·hooks(r × (k−r+1) rectangle)
+
+Every hook that turns even sits in one rectangle. Doubling those hooks gives `ε(2h)`, a positive
+convergent series. That is why the block costs `O(1)`, where adding corners one at a time
+costs `O(r)`.
+
+**Steps.**
+- (L1) `Σε(h) = S_δ(r) + S_δ(k−r) + G`, with `G ≥ 0`. Lean `cornerBlock_hookSum`.
+- (L2) `S_δ(m) = Am − B + R(m)`, with `R ≥ 0`.
+- (L3) `H(μ) = H_min(n)`. The cells are `δ_k` plus `r` cells on antidiagonal `k+1`.
+- (L4) `√(2n) < k + 3/2`.
+
+Together these give `Ψ(μ) ≥ Ak − 2B − C > A√(2n) − K₃`, where `K₃ = 3A/2 + 2B + C`.
+
+**Evidence.** `computations/deltalambda/rev_lower_bound_probe.py`, 8/8 checks, mpmath 60 dps,
+no float64. Witness: `computations/rev-lower-bound.witness.json`.
+- (L1) holds as exact multisets for all 1891 shapes with `a + c ≤ 60`.
+- Checked against brute-force `M_n` for `n ≤ 40`. `μ` is the exact maximiser at 14 of the 40 `n`.
+  The largest gap is `M_n − Ψ(μ) = 1.023`, at `n = 34`.
+- Closed-form scan over all `r` for `k ≤ 120`, plus sampled `k` up to 2000. The measured family
+  deficit `min Ψ(μ) − A√(2n)` is `−15.01`; at `k = 2000` it is `−14.88`.
+
+**Lean.** `QOU/BraidKnot/CornerBlockHookMultiset.lean` is sorry-free. Theorems:
+- `cornerBlock_hookSum`, `cornerBlock_hookSum_ge`, `cornerBlockYD_card`;
+- the three per-region hook formulas;
+- `rowLen` and `colLen`.
+
+Checked with lean-direct `-DautoImplicit=false`, exit 0. Axioms are
+`propext`/`Classical.choice`/`Quot.sound` only.
+
+**Not established — scope it exactly.**
+- Convergence of `e_n`, and the value `κ = −10.72317`. Both remain conjectural.
+- `K₃` is crude: it drops `G` and `R` and takes the worst case of `√(2n) − k`.
+- MEASURED only: "the top block never lowers `Σε(h)` below `δ_k`". The minimum gain is 0.634 for
+  `r ≥ 1`.
+- (L2)–(L4) and the ε-valued assembly are not in Lean.
+- (L3) rests on statement (A) of the upper-bound probe: `H = Σ(i+j−1)`, the classical
+  `n(λ) + n(λ′) + n` identity. For this family that is checked against brute force only up to
+  `n ≤ 40`.
+
+**Status.** Still OPEN, per directive 13a. Two-sided `O(1)` is now proved (modulo the steps
+above that are not in Lean). The limit `κ` is not.
 
 ## 2026-10-12 — the excess is BOUNDED BELOW too: `e_n ≥ −K₃ = −21.955` for every `n ≥ 1`
 

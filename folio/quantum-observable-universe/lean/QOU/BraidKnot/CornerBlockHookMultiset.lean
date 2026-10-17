@@ -102,6 +102,8 @@ theorem cornerBlock_hook_stairC (a c i j : ℕ) (hi : a ≤ i) (hj : j ≤ c) (h
   simp only [h1, h2, if_false]
   omega
 
+-- `all_goals simp only` uses each lemma on only some of the five goals.
+set_option linter.unusedSimpArgs false in
 /-- **Hook-sum decomposition of the corner block.**  For any `g` into an additive commutative
 monoid,
 
@@ -130,25 +132,15 @@ theorem cornerBlock_hookSum {N : Type*} [AddCommMonoid N] (g : ℕ → N) (a c :
       = ∑ x ∈ range a ×ˢ range (c + 1), g (2 * (x.1 + x.2 + 1)) := by
     refine Finset.sum_nbij' (fun x => (a - 1 - x.1, c - x.2)) (fun y => (a - 1 - y.1, c - y.2))
       ?_ ?_ ?_ ?_ ?_
-    · rintro ⟨i, j⟩ hx
-      simp only [mem_filter, hcell] at hx
-      simp only [Finset.mem_coe, Finset.mem_product, mem_range]
-      omega
-    · rintro ⟨i, j⟩ hy
-      simp only [Finset.mem_coe, Finset.mem_product, mem_range] at hy
-      simp only [Finset.mem_coe, mem_filter, hcell]
-      omega
-    · rintro ⟨i, j⟩ hx
-      simp only [Finset.mem_coe, mem_filter, hcell] at hx
-      simp only [Prod.mk.injEq]
-      omega
-    · rintro ⟨i, j⟩ hy
-      simp only [Finset.mem_coe, Finset.mem_product, mem_range] at hy
-      simp only [Prod.mk.injEq]
-      omega
-    · rintro ⟨i, j⟩ hx
-      simp only [mem_filter, hcell] at hx
-      rw [hμ, cornerBlock_hook_rect a c i j hx.1.2 hx.2]
+    all_goals rintro ⟨i, j⟩ hx
+    all_goals dsimp only at hx ⊢
+    all_goals simp only [mem_filter, hcell, Finset.mem_product, mem_range,
+      Prod.mk.injEq, true_and, and_true] at hx ⊢
+    · omega
+    · omega
+    · omega
+    · omega
+    · rw [hμ, cornerBlock_hook_rect a c i j hx.1.2 hx.2]
       congr 1
       omega
   -- δ_a block
@@ -157,24 +149,14 @@ theorem cornerBlock_hookSum {N : Type*} [AddCommMonoid N] (g : ℕ → N) (a c :
       = ∑ x ∈ (staircaseYD a).cells, g (QOU.QBeta.WenzlWeight.hook (staircaseYD a) x) := by
     refine Finset.sum_nbij' (fun x => (x.1, x.2 - (c + 1))) (fun y => (y.1, y.2 + (c + 1)))
       ?_ ?_ ?_ ?_ ?_
-    · rintro ⟨i, j⟩ hx
-      simp only [Finset.mem_coe, mem_filter, hcell] at hx
-      simp only [Finset.mem_coe, hst]
-      omega
-    · rintro ⟨i, j⟩ hy
-      simp only [Finset.mem_coe, hst] at hy
-      simp only [Finset.mem_coe, mem_filter, hcell]
-      omega
-    · rintro ⟨i, j⟩ hx
-      simp only [Finset.mem_coe, mem_filter, hcell] at hx
-      simp only [Prod.mk.injEq]
-      omega
-    · rintro ⟨i, j⟩ hy
-      simp only [Prod.mk.injEq]
-      omega
-    · rintro ⟨i, j⟩ hx
-      simp only [mem_filter, hcell] at hx
-      have hlt : i + (j - (c + 1)) < a := by omega
+    all_goals rintro ⟨i, j⟩ hx
+    all_goals dsimp only at hx ⊢
+    all_goals simp only [mem_filter, hcell, hst, Prod.mk.injEq, true_and, and_true] at hx ⊢
+    · omega
+    · omega
+    · omega
+    · omega
+    · have hlt : i + (j - (c + 1)) < a := by omega
       rw [hμ, cornerBlock_hook_stairA a c i j hx.1.2 (by omega) (by omega),
         staircase_hook a i (j - (c + 1)) hlt]
       congr 1
@@ -184,24 +166,14 @@ theorem cornerBlock_hookSum {N : Type*} [AddCommMonoid N] (g : ℕ → N) (a c :
       = ∑ x ∈ (staircaseYD c).cells, g (QOU.QBeta.WenzlWeight.hook (staircaseYD c) x) := by
     refine Finset.sum_nbij' (fun x => (x.1 - a, x.2)) (fun y => (y.1 + a, y.2))
       ?_ ?_ ?_ ?_ ?_
-    · rintro ⟨i, j⟩ hx
-      simp only [Finset.mem_coe, mem_filter, hcell] at hx
-      simp only [Finset.mem_coe, hst]
-      omega
-    · rintro ⟨i, j⟩ hy
-      simp only [Finset.mem_coe, hst] at hy
-      simp only [Finset.mem_coe, mem_filter, hcell]
-      omega
-    · rintro ⟨i, j⟩ hx
-      simp only [Finset.mem_coe, mem_filter, hcell] at hx
-      simp only [Prod.mk.injEq]
-      omega
-    · rintro ⟨i, j⟩ hy
-      simp only [Prod.mk.injEq]
-      omega
-    · rintro ⟨i, j⟩ hx
-      simp only [mem_filter, hcell] at hx
-      have hlt : (i - a) + j < c := by omega
+    all_goals rintro ⟨i, j⟩ hx
+    all_goals dsimp only at hx ⊢
+    all_goals simp only [mem_filter, hcell, hst, Prod.mk.injEq, true_and, and_true] at hx ⊢
+    · omega
+    · omega
+    · omega
+    · omega
+    · have hlt : (i - a) + j < c := by omega
       rw [hμ, cornerBlock_hook_stairC a c i j (by omega) (by omega) (by omega),
         staircase_hook c (i - a) j hlt]
       congr 1

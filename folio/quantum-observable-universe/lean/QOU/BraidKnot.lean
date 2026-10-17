@@ -101,6 +101,9 @@ import QOU.BraidKnot.HardWallProjection
 --- `diagonal_exchange` (H = sum over cells of (i+j-1), so an l-row shape pays T_{l-k-1} with no
 --- r), capped by `extra_rows_tradeoff`.
 import QOU.BraidKnot.RoundedWaterfillExchange
+-- The REV_n lower bound (bean qou-fxym): hooks of delta_k plus a top corner block split as
+-- delta_r + delta_(k-r) + 2*(r x (k-r+1) rectangle), so M_n >= A sqrt(2n) - K3.
+import QOU.BraidKnot.CornerBlockHookMultiset
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
 -- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is
